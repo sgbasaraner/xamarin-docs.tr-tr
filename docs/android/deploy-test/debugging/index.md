@@ -1,0 +1,41 @@
+---
+title: "Hata Ayıklama"
+description: "Test ve Xamarin.Android uygulamanızın hatalarını ayıklama"
+ms.topic: article
+ms.prod: xamarin
+ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
+ms.technology: xamarin-android
+author: mgmclemore
+ms.author: mamcle
+ms.date: 02/16/2018
+ms.openlocfilehash: feb35c041349f3ce78490c8a2fc6a829f9d84a6d
+ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 02/27/2018
+---
+# <a name="debugging"></a>Hata Ayıklama
+
+## <a name="debuggin-overview"></a>Debuggin genel bakış
+
+Android uygulamaları geliştirme uygulama ya da fiziksel donanım üzerinde çalışan veya bir öykünücü veya benzetici kullanarak gerektirir. Donanım kullanarak en iyi yaklaşımı, ancak her zaman en kullanışlı değildir. Çoğu durumda, daha basit ve daha düşük maliyetli aşağıda açıklanan Öykünücüler birini kullanarak Android donanım benzetimini/benzetmek için olabilir.
+
+
+### <a name="android-sdk-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Android SDK öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+
+Bu makaleler, Android SDK'sı ile sağlanan varsayılan öykünücü kullanacak şekilde açıklanmaktadır. Bu öykünücüsü Windows için Visual Studio ve Mac için Visual Studio için kullanılabilir
+
+### <a name="visual-studio-android-emulatorandroiddeploy-testdebuggingvisual-studio-android-emulatormd"></a>[Visual Studio Android öykünücüsü](~/android/deploy-test/debugging/visual-studio-android-emulator.md)
+
+Bu makalede, hata ayıklama ve Visual Studio 2015 yerleşik Android öykünücüsünü kullanarak Xamarin.Android uygulamanızı test etme açıklanmaktadır. Visual Studio 2015 kullanıyorsanız ve özel cihaz profillerini gerekmez bu öykünücü iyi bir seçimdir.
+
+### <a name="debugging-on-a-deviceandroiddeploy-testdebuggingdebug-on-devicemd"></a>[Bir cihazda hata ayıklama](~/android/deploy-test/debugging/debug-on-device.md)
+
+Bu makalede, fiziksel bir Android cihazı Xamarin.Android uygulaması için doğrudan ya da Visual Studio veya Visual Studio veya Mac üzerinden dağıtılabilir şekilde yapılandırmak gösterilmektedir
+
+### <a name="android-debug-logandroiddeploy-testdebuggingandroid-debug-logmd"></a>[Android hata ayıklama günlüğü](~/android/deploy-test/debugging/android-debug-log.md)
+
+Yaygın eli geliştiriciler kullandığınız kendi uygulamalarında hata ayıklamasını kullanarak `Console.WriteLine`. Ancak, Android gibi mobil platformda yoktur konsol yok. Android cihazları, uygulamaları yazarken kullanmak için gereken büyük olasılıkla günlük sağlar. Bu bazen olarak adlandırılır **logcat** nedeniyle bunu almak için yazdığınız komutu. Bu makalede nasıl kullanılacağını açıklar **logcat**.
+
+> [!WARNING]
+> Unutmayın **Xamarin Android Player** kullanım dışı bırakıldı. Daha fazla bilgi için bkz: [bu blog gönderisine Duyuruda](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/).

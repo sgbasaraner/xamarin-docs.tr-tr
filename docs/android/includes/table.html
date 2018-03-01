@@ -1,0 +1,293 @@
+<table width="100%" border="1px">
+<tr>
+    <td><b>Özellik</b></td>
+    <td><b>Açıklama</b></td>
+    <td><b>Seçenekler</b></td>
+</tr>
+<tr>
+    <td><code> abi.Type </code></td>
+    <td><strong>ABI türü</strong> – benzetilmiş aygıt ABI (uygulama ikili arabirimi) türünü belirtir. <code>X86</code> seçenektir "x86" veya "IA-32." sık başvurulan ayarlama yönergeleri <code>X86_64</code> seçenektir 64-bit x86 için yönerge kümesi. <code>Pushservice-v7a</code> seçeneğinin v7 bir ARM uzantılarıyla ayarlamak ARM yönergesi içindir. <code>Arm64 v8a</code> AArch64 destekleyen ARM yönerge kümesi için bir seçenektir.  </td>
+    <td> x86, x86_64, pushservice-v7a, arm64 v8a </td>
+</tr>
+<tr>
+    <td><code> disk.cachePartition </code></td>
+    <td><strong>Önbellek bölüm</strong> – benzetilmiş aygıt kullanıp kullanmayacağını belirler bir <strong>/önbelleğe</strong> cihazda bölüm. <strong>/Önbelleğe</strong> başlangıçta boş olan) bölümü (sık erişilen verileri ve uygulama bileşenleri Android depoladığı konumdur. Varsa kümesine <code>hiçbir</code>, öykünücü kullanmaz bir <strong>/önbelleğe</strong> bölüm ve diğer <code>disk.cache</code> ayarları yok sayılacak.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> disk.cachePartition.path </code></td>
+    <td><strong>Önbellek bölüm yolu</strong> – bir önbellek bölüm görüntü dosyası geliştirme bilgisayarınızda belirtir. Öykünücü bu dosya için kullanacağı <strong>/önbelleğe</strong> bölüm. Mutlak bir yol veya öykünücü'nın göreli bir yol girin <strong>veri</strong> dizin. Ayarlanmadı, öykünücü adlı boş bir geçici dosya oluşturur, <strong>cache.img</strong> geliştirme bilgisayarınızda. Dosya yoksa boş bir dosya oluşturulur. Bu seçenek yoksayılır <code>disk.cachePartition</code> ayarlanır <code>hiçbir</code>. </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.cachePartition.size </code></td>
+    <td><strong>Önbellek bölüm boyutu</strong> – (megabayt cinsinden) önbellek bölüm dosyasının boyutu. Normal uygulama 66 megabayt varsayılan önbellek boyutundan büyük olan çok büyük dosyaları indirme sürece bu seçeneği belirlemek gerekmez. Bu seçenek yoksayılır <code>disk.cachePartition</code> ayarlanır <code>hiçbir</code>.</td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.dataPartition.initPath </code></td>
+    <td><strong>Veri bölümü ilk yoluna</strong> – ilk veri bölümü içeriğini belirtir. Kullanıcı verilerini temizlendikten sonra öykünücü belirtilen dosyanın içeriğini kullanıcı verilerini kopyalar (varsayılan olarak, <strong>userdata qemu.img</strong>) kullanmak yerine <strong>userdata.img</strong> ilk sürüm olarak. </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.dataPartition.path </code></td>
+    <td><strong>Veri bölümü yoluna</strong> – kullanıcı veri bölümü dosyayı belirtir. Kalıcı kullanıcı veri dosyası yapılandırmak için geliştirme bilgisayarınızda bir dosya adı ve bir yol girin. Dosya yoksa, öykünücü görüntüyü varsayılan dosyasından oluşturur. <strong>userdata.img</strong>, tarafından belirtilen dosya adını depolar <code>disk.dataPartition.path</code>, ve kullanıcı verilerini devam ediyorsa, öykünücü kapanır. Bir yol belirtmezseniz, varsayılan dosya adlı <strong>userdata qemu.img</strong>. Özel değerini <code>&lt; temp ></code> oluşturma ve geçici bir dosya kullanma öykünücü neden olur. Varsa <code>disk.dataPartition.initPath</code> , içeriği kopyalanır, ayarlanmış olduğundan <code>disk.dataPartition.path</code> önyükleme zamanında dosya. Bu seçeneği boş bırakılamaz unutmayın.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.dataPartition.size </code></td>
+    <td><strong>Veri bölüm boyutu</strong> – kullanıcı veri bölümün boyutunu megabayt cinsinden belirtir.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.Ramdisk.Path </code></td>
+    <td><strong>Ramdisk yolu</strong> – önyükleme bölümü (ramdisk) görüntüsü yolu. Ramdisk görüntü Sistem görüntüsünü takılı önce çekirdek tarafından yüklenen sistem görüntüsünü bir alt kümesidir. Ramdisk görüntü genellikle önyükleme zamanı ikili dosyaları ve başlatma komut dosyaları içerir. Bu seçenek belirtilmezse, varsayılan değer <strong>ramdisk.img</strong> öykünücüsü Sistem dizinindeki.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.snapStorage.path </code></td>
+    <td><strong>Anlık görüntü depolama yolu</strong> – yoluna <i>anlık görüntü depolama dosyası</i> tüm anlık görüntülerin depolandığı. Yürütme sırasında yapılan tüm anlık görüntüleri bu dosyaya kaydedilir. Bu dosyada kaydedilmiş anlık görüntüleri çalıştırmak öykünücüsü sırasında geri yüklenebilir. Bu seçenek belirtilmezse, varsayılan değer <strong>snapshots.img</strong> öykünücüsü veri dizininde.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.systemPartition.initPath </code></td>
+    <td><strong>Sistem bölümü init yolu</strong> –; özellikle, sistem kitaplıkları ve API düzeyini ve her değişken için karşılık gelen verileri içeren bölüm sistemi resim dosyasının salt okunur kopyasını yolu. Bu yol belirtilmezse, varsayılan değer <strong>system.img</strong> öykünücüsü Sistem dizinindeki.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.systemPartition.path </code></td>
+    <td><strong>Sistem bölümü yolu</strong> – okuma/yazma sistemi bölümü görüntüsünün yolunu. Bu yol ayarlanmamışsa, geçici bir dosya oluşturulur ve tarafından belirtilen dosya içeriğinden başlatılan <code>disk.systemPartition.initPath</code>. </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> disk.systemPartition.size </code></td>
+    <td><strong>Sistem bölüm boyutu</strong> – ideal boyutu sistem bölümü (megabayt cinsinden). Gerçek sistem bölümü resim bu boyuttan büyükse boyutu göz ardı edilir; Aksi takdirde, sistem bölümü dosyasının büyüyebileceği boyut üst sınırını belirtir.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> HW.accelerometer </code></td>
+    <td><strong>Accelerometer</strong> – benzetilmiş aygıt accelerometer algılayıcı içerip içermediğini belirler. Accelerometer (Otomatik döndürme için kullanılır) yönlendirmesini belirlemek cihaz yardımcı olur. Accelerometer üç algılayıcı eksen boyunca aygıt ivmesini bildirir.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.audioInput </code></td>
+    <td><strong>Ses kaydını Destek</strong> – benzetilmiş aygıt ses kaydı olup olmadığını belirler.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.audioOutput </code></td>
+    <td><strong>Ses çalma desteği</strong> – benzetilmiş aygıt ses yürütebilirsiniz olup olmadığını belirler.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> HW.Battery </code></td>
+    <td><strong>Pil Destek</strong> – benzetilmiş aygıt pille çalıştırılıp çalıştırılamayacağını belirler.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.camera </code></td>
+    <td><strong>Kamera desteği</strong> – benzetilmiş aygıt kamera olup olmadığını belirler.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.camera.back </code></td>
+    <td><strong>Geri dönük kamera</strong> – Geri dönük kamera (kullanıcı çıktığınızda Mercek yazıtipleri) yapılandırır. Benzetilmiş aygıttaki Geri dönük kamerayı benzetimini yapmak için geliştirme bilgisayarınızda bir Web kamerası kullanıyorsanız, bu değer ayarlanmalıdır <code>Web kamerası<i>n</i></code>, burada <i>n</i> seçer Web kamerası (yalnızca bir Web kamerası varsa, seçin <code>webcam0</code>). Varsa kümesine <code>benzetilmiş</code>, öykünücü yazılım kamera benzetimini yapar. Geri dönük kamerayı devre dışı bırakmak için bu değeri ayarlamak <code>hiçbiri</code>. Geri dönük kamerayı devre dışı bırakırsanız, ayrıca etkinleştirmeyi unutmayın <code>hw.camera</code>.  </td>
+    <td> , none, webcam0 benzetilmiş </td>
+</tr>
+<tr>
+    <td><code> hw.camera.front </code></td>
+    <td><strong>Ön dönük kamera</strong> – ön dönük kamera (kullanıcı doğru Mercek yazıtipleri) yapılandırır. Benzetilmiş aygıttaki öne bakan kamerayı benzetimini yapmak için geliştirme bilgisayarınızda bir Web kamerası kullanıyorsanız, bu değer ayarlanmalıdır <code>Web kamerası<i>n</i></code>, burada <i>n</i> seçer Web kamerası (yalnızca bir Web kamerası varsa, seçin <code>webcam0</code>). Varsa kümesine <code>benzetilmiş</code>, öykünücü yazılım kamera benzetimini yapar. Ön dönük kamerayı devre dışı bırakmak için bu değeri ayarlamak <code>hiçbiri</code>. Ön dönük kamerayı devre dışı bırakırsanız, ayrıca etkinleştirmeyi unutmayın <code>hw.camera</code>.  </td>
+    <td> , none, webcam0 benzetilmiş </td>
+</tr>
+<tr>
+    <td><code> hw.camera.maxHorizontalPixels </code></td>
+    <td><strong>En fazla yatay kamera piksel</strong> – maksimum yatay çözünürlük benzetilmiş cihazın kamera (piksel cinsinden) yapılandırır.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.camera.maxVerticalPixels </code></td>
+    <td><strong>En fazla dikey kamera piksel</strong> – maksimum Dikey Çözünürlük benzetilmiş cihazın kamera (piksel cinsinden) yapılandırır.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> HW.CPU.arch </code></td>
+    <td><strong>CPU mimarisi</strong> – sanal cihaz tarafından öykündüğü için CPU mimarisi. Donanım hızlandırmasını Intel HAXM kullanıyorsanız seçin <code>x86</code> 32-bit CPU için. Seçin <code>x86_64</code> HAXM hızlandırılmış bir 64-bit aygıt için. (SDK Yöneticisi'nde karşılık gelen Intel x86 sistem yansıması yüklediğinizden emin olun: Örneğin, <strong>Intel x86 Atom</strong> veya <strong>Intel x86 Atom_64</strong>.) ARM CPU benzetimini yapmak için seçin <code>arm</code> için 32 bit veya select <code>arm64</code> 64-bit ARM CPU için. ARM tabanlı sanal aygıtların donanım hızlandırmasını ARM için kullanılabilir olmadığından, x86 tabanlı olandan çok daha yavaş çalışır aklınızda bulundurun.  </td>
+    <td> x86, x86_64, arm, arm64 </td>
+</tr>
+<tr>
+    <td><code> hw.cpu.model </code></td>
+    <td><strong>CPU modeli</strong> – bu değer genellikle unset bırakılır (türetilmiş bir değere ayarlanacak <code>hw.cpu.arch</code> açıkça ayarlanmazsa). Ancak, bir öykünücü özgü dize Deneysel kullanılmak için ayarlanabilir.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.dPad </code></td>
+    <td><strong>DPad anahtarları</strong> – benzetilmiş aygıt yön paneli (DPad) anahtarları destekleyip desteklemediğini belirler. Bir DPad genellikle Yön denetim göstermek için dört anahtarı yok.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.gps </code></td>
+    <td><strong>GPS desteği</strong> – benzetilmiş aygıt GPS (Genel Konumlandırma Sistemi) alıcı olup olmadığını belirler.  </td>
+    <td> Evet, Hayır </td>
+<tr>
+</tr>
+<tr>
+    <td><code> HW.GPU.Enabled </code></td>
+    <td><strong>GPU öykünme</strong> – benzetilmiş aygıt GPU öykünme destekleyip desteklemediğini belirler. Etkinleştirildiğinde, GPU öykünme açık GL Embedded Systems (OpenGL ES) 2B ve 3B grafik ekranında çizmek için kullanır ve ilişkili GPU öykünme modu ayarı GPU öykünme nasıl uygulandığını belirler.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.gpu.mode </code></td>
+    <td><strong>GPU öykünme modu</strong> – GPU öykünme öykünücü tarafından nasıl uygulandığını belirler. Seçerseniz <code>otomatik</code>, öykünücü geliştirme bilgisayar kurulumunuzu temel alarak donanım ve yazılım hızlandırma seçeceksiniz. Seçerseniz <code>konak</code>, öykünücü geliştirme bilgisayarınızın grafik işlemcisi GPU öykünme daha hızlı işleme için gerçekleştirmek için kullanın. GPU öykünücü ile uyumlu değildir ve Windows eminseniz deneyebilirsiniz <code>açı</code> yerine <code>konak</code>. <code>Açı</code> modu benzer performans sağlamak için DirectX kullanır <code>konak</code>. Seçerseniz <code>mesa</code>, öykünücü Mesa 3B yazılım kitaplığı grafik oluşturmak için kullanın. Seçin <code>mesa</code> geliştirme bilgisayarınızın grafik işlemcisi oluşturma sorunları varsa. <code>Swiftshader</code> modu, yazılım, bilgisayarınızın GPU kullanmaktan biraz daha az performans grafiklerini işlemek için kullanılabilir. <code>Kapalı</code> (devre dışı bırak grafik donanım öykünmesi) seçenektir bazı hatalı işleme neden olan kullanım dışı bir seçenek öğeleri ve bu nedenle önerilmez. </td>
+    <td> Otomatik, ana bilgisayar, mesa, açı, swiftshader, devre dışı </td>
+</tr>
+<tr>
+    <td><code> hw.gsmModem </code></td>
+    <td><strong>GSM modem desteği</strong> – benzetilmiş aygıt GSM (mobil iletişim için genel sistem) telefon radyo sistem destekleyen bir modem içerip içermediğini belirler.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.initialOrientation </code></td>
+    <td><strong>Başlangıç ekran yönünü</strong> – ilk ekran yönünü benzetilmiş aygıtta (dikey veya yatay modu) yapılandırır. Dikey ekran boyunun eninden modundadır. Yatay modunda ekran uzunluğundan daha geniş değil. Cihaz profili dikey ve yatay destekleniyorsa benzetilmiş aygıt çalıştırırken yönlendirmesini değiştirebilirsiniz.  </td>
+    <td> Dikey, yatay </td>
+</tr>
+<tr>
+    <td><code> HW.Keyboard </code></td>
+    <td><strong>Klavye Destek</strong> – benzetilmiş aygıt QWERTY klavye destekleyip desteklemediğini belirler.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> HW.Keyboard.charmap </code></td>
+    <td><strong>Klavye charmap adı</strong> – bu aygıt için donanım charmap adı. Not: Bu her zaman varsayılan olmalıdır <code>qwerty2</code> Sistem görüntüsünü uygun şekilde değiştirilmedikçe. Bu ad, önyükleme sırasında çekirdeğe gönderilir. Hatalı bir ad kullanarak bir kullanılamaz sanal cihazı neden olur.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> HW.Keyboard.lid </code></td>
+    <td><strong>Klavye kapak Destek</strong> – klavye desteği etkinleştirilirse, bu ayar olup QWERTY klavye kapalı/gizlenecek veya açık/görünür belirler. Bu ayar dikkate <code>hw.keyboard</code> ayarlanır <code>false</code>. Not: varsayılan değerdir <code>false</code> benzetilmiş aygıt API düzeyi 12 veya daha yüksek hedefliyorsa.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.backlight </code></td>
+    <td><strong>LCD arka</strong> – LCD arka benzetilmiş aygıt tarafından benzetimli olup olmadığını belirler.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.density </code></td>
+    <td><strong>LCD yoğunluğu</strong> – yoğunluğu bağımsız piksel cinsinden ölçülür benzetilmiş LCD ekran yoğunluğunu veya <i>dp</i> (dp olan bir sanal piksel birimi). Ayar 160 olduğunda dp, her dp bir fiziksel piksel karşılık gelir. Çalışma zamanında Android seçin ve doğru görüntü işleme için uygun kaynaklar/varlıkları ölçeklemek için bu değeri kullanır.  </td>
+    <td> 120, 160, 240, 213, 320 </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.depth </code></td>
+    <td><strong>LCD renk derinliği</strong> – LCD ekran yürüten için bit eşlem tutan benzetilmiş framebuffer renk bit derinliği. Bu değer, (65.536 olası renkleri) 16 bit veya 32 bit (16,777,216 renkleri artı saydamlık) olabilir. 32-bit öykünücü biraz daha yavaş ancak daha iyi renk doğruluk ile çalışma ayarlayabilir.  </td>
+    <td> 16, 32 </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.height </code></td>
+    <td><strong>LCD piksel yükseklik</strong> – benzetilmiş LCD ekran dikey boyut oluşturur piksel sayısı.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.lcd.width </code></td>
+    <td><strong>LCD piksel genişliği</strong> – benzetilmiş LCD ekran yatay boyut oluşturur piksel sayısı.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.mainKeys </code></td>
+    <td><strong>Donanım arka/giriş anahtarları</strong> – benzetilmiş aygıt donanım geri destekleyip desteklemediğini ve giriş gezinti düğmeleri belirler. Bu değer ayarlamak <code>Evet</code> düğmeleri yalnızca yazılımda uygulanması durumunda. Varsa <code>hw.mainKeys</code> ayarlanır <code>Evet</code>öykünücü gezinti düğmeleri ekranda görüntülenmez, ancak "Bu düğmeleri tuşuna basması" öykünücü yan panel kullanabilirsiniz.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.ramSize </code></td>
+    <td><strong>Cihaz RAM boyutu</strong> – fiziksel RAM miktarını megabayt cinsinden benzetilmiş cihazın. Varsayılan değer ekran boyutu veya bir dış sürümünden hesaplanan. Boyutunun artırılması, daha hızlı Öykünücüsü işlem sağlayabilir, ancak daha fazla kaynak Geliştirme bilgisayarınızdan yoğun ödün verme pahasına.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.screen </code></td>
+    <td><strong>Ekran türü touch</strong> – benzetilmiş cihazda ekran türünü tanımlar. A <code>çok dokunma</code> ekran dokunma arabirimde iki veya daha fazla parmakları izleyebilirsiniz. A <code>touch</code> ekran yalnızca tek parmak dokunma olayları algılayabilir. A <code>değmeden</code> ekran dokunma olayları algılamak değil.  </td>
+    <td> dokunma, çok dokunma, değmeden </td>
+</tr>
+<tr>
+    <td><code> hw.sdCard </code></td>
+    <td><strong>SDCard Destek</strong> – benzetilmiş cihaz ekleme ve kaldırma sanal (Güvenli Dijital) SD kartların destekleyip desteklemediğini belirler. Gerçek SD kart cihazları bölümlerini benzetimini yapmak için geliştirme bilgisayarınızda depolanan edilebilme disk görüntüleri öykünücüsü kullanır (bkz <code>hw.sdCard.path</code>).  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> sdcard.size </code></td>
+    <td><strong>SDCard boyutu</strong> – tarafından belirtilen konumda sanal SD kart dosyasının boyutunu belirtir <code>hw.sdCard.path</code>. aygıt (bayt cinsinden) kullanılabilir. Boyutu basit bir tam sayı ise, boyutunu bayt cinsinden belirtir. Ayrıca boyutu kilobayt, megabayt ve gigabayt K, M ya da G boyutuna ekleyerek belirtebilirsiniz. En küçük boyut 9 M ve en büyük boyutu 1023 G.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> hw.sdCard.path </code></td>
+    <td><strong>SDCard görüntü yolu</strong> – geliştirme bilgisayarınızda SD kart bölüm görüntü dosyasının yolu ve dosya adını belirtir. Örneğin, bu yol ayarlanabilir <strong>C:\sd\sdcard.img</strong> Windows.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> HW.Sensors.magnetic_field </code></td>
+    <td><strong>Manyetik alan algılayıcı</strong> – benzetilmiş aygıt manyetik alan algılayıcı destekleyip desteklemediğini belirler. Manyetik alan algılayıcısı (magnetometer olarak da bilinir) ortam geomagnetic alanı üç algılayıcı eksen boyunca ölçülen olarak bildirir. Bir pusula okuma erişimi olması gereken uygulamalar için bu ayarı etkinleştirin. Örneğin, bir gezinti uygulaması bu algılayıcı hangi yöne algılamak için kullanmak kullanıcı yüzeyleri.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> HW.Sensors.Orientation </code></td>
+    <td><strong>Yönlendirme algılayıcı</strong> – benzetilmiş aygıt algılayıcı değerlerini yönlendirmesini sağlar olup olmadığını belirler. Yönlendirme algılayıcı tüm üç fiziksel eksenlerinde (x, y, z) bir aygıtı yapar döndürme derece ölçer. Yönlendirme algılayıcı Android 2.2 (API düzeyi 8) sürümünden itibaren kullanımdan kaldırılmıştır unutmayın.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> HW.Sensors.Proximity </code></td>
+    <td><strong>Yakınlık algılayıcısı</strong> – benzetilmiş aygıt yakınlık algılayıcı destekleyip desteklemediğini belirler. Bu algılayıcı bir aygıtı Görünümü ekranında göre bir nesne yakınlık ölçer. Bu algılayıcı genellikle ahize kişinin kulak Tutuluyor olup olmadığını belirlemek için kullanılır.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> HW.Sensors.temperature </code></td>
+    <td><strong>Sıcaklık algılayıcısı</strong> – benzetilmiş aygıt sıcaklık algılayıcısı destekleyip desteklemediğini belirler. Bu algılayıcı derece derece (° C) aygıtı sıcaklık ölçer.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.touchScreen </code></td>
+    <td><strong>Dokunmatik ekran Destek</strong> – benzetilmiş aygıtın dokunmatik ekran destekleyip desteklemediğini belirler. Dokunmatik ekran ekranında nesnelerin doğrudan işleme için kullanılır.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.trackBall </code></td>
+    <td><strong>Topu Destek</strong> – benzetilmiş aygıt bir topu destekleyip desteklemediğini belirler.  </td>
+    <td> Evet, Hayır </td>
+</tr>
+<tr>
+    <td><code> hw.useext4 </code></td>
+    <td><strong>EXT4 dosya sistemi desteği</strong> – benzetilmiş aygıt bölümler için Linux EXT4 dosya sistemi kullanıp kullanmadığını belirler. Dosya sistemi türü artık otomatik olarak algılanır olduğundan, bu seçeneği kullanım dışı ve yoksayıldı.  </td>
+    <td> Yok </td>
+</tr>
+<tr>
+    <td><code> kernel.newDeviceNaming </code></td>
+    <td><strong>Çekirdek aygıt yeni adlandırma</strong> – çekirdek yeni bir cihaz adlandırma şeması gerekli olup olmadığını belirtmek için kullanılır. Bu genellikle Linux 3.10 tekrar ve daha sonra kullanılır. Varsa kümesine <code>otomatik algıla</code>, öykünücü çekirdek yeni bir cihaz adlandırma şeması gerekip gerekmediğini otomatik olarak algılar.  </td>
+    <td> Otomatik algıla, yes, no </td>
+</tr>
+<tr>
+    <td><code> Kernel.Parameters </code></td>
+    <td><strong>Çekirdek parametreleri</strong> – Linux çekirdek önyükleme parametreleri dizesini belirtir. Varsayılan olarak, bu ayarı boş bırakılır.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> Kernel.Path </code></td>
+    <td><strong>Çekirdek yolu</strong> – Linux çekirdek yolunu belirtir. Bu yol belirtilmezse, öykünücü öykünücüsü sistem dizinini arar. <code>çekirdek ranchu</code>.  </td>
+    <td>  </td>
+</tr>
+<tr>
+    <td><code> kernel.supportsYaffs2 </code></td>
+    <td><strong>YAFFS2 bölüm Destek</strong> – çekirdek YAFFS2 destekleyip desteklemediğini belirler (henüz başka bir Flash dosya sistemi 2) bölümler. Genellikle, bu yalnızca Linux 3.10 önce tekrar uygulanır. Varsa kümesine <code>otomatik algıla</code> çekirdek YAFFS2 dosya sistemleri bağlayabilir öykünücü otomatik olarak algılar.  </td>
+    <td> Otomatik algıla, yes, no </td>
+</tr>
+<tr>
+    <td><code> Skin.Name </code></td>
+    <td><strong>Dış Görünüm adı</strong> – bir Android öykünücüsü kaplama adı. Bir dış görsel tanımlayan dosyaları koleksiyonudur ve denetim öğeleri bir öykünücü görüntüsünün; Bu AVD pencerenin geliştirme bilgisayarınızda nasıl görüneceğini açıklar. Bir dış ekran boyutu, düğmeler ve genel tasarım açıklanmaktadır, ancak işlemi, uygulamanızın etkilemez. </td>
+    <td> </td>
+</tr>
+<tr>
+    <td><code> Skin.Path </code></td>
+    <td><strong>Dış Görünüm yolunu</strong> – öykünücüsünü içeren dizinin yolunu kaplama belirtilen dosyaları <code>skin.name</code> bu dizini içeren <code>hardware.ini</code> Düzen dosyaları ve görüntü dosyaları görüntülemek için Dış öğeleri. </td>
+    <td> </td>
+</tr>
+<tr>
+    <td><code> Skin.Dynamic </code></td>
+    <td><strong>Dış Görünüm dinamik</strong> – dış dinamik olup olmadığını. Öykünücü belirtilen genişlik ve yükseklik göre belirli bir boyutta bir dış görünümü oluşturmak için öykünücüsü kaplama dinamik kaplama ise. </td>
+    <td> Yok </td>
+</tr>
+</table>
