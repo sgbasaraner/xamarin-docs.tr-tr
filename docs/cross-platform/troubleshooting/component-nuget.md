@@ -1,0 +1,126 @@
+---
+title: "NuGet bileşen başvurularını güncelleştirme"
+description: "Bileşen başvuruları uygulamalarınızı gelecekteki sağlaması için NuGet paketleri ile değiştirin."
+ms.topic: article
+ms.prod: xamarin
+ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
+ms.technology: xamarin-cross-platform
+author: asb3993
+ms.author: amburns
+ms.date: 11/22/2017
+ms.openlocfilehash: f3dbfb52d4fbcb4dd65f695a862f6b041d2b22c0
+ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 02/27/2018
+---
+# <a name="updating-component-references-to-nuget"></a>NuGet bileşen başvurularını güncelleştirme
+
+_Bileşen başvuruları uygulamalarınızı gelecekteki sağlaması için NuGet paketleri ile değiştirin._
+
+Bu kılavuz, NuGet paketlerini bileşen başvuruları değiştirmek için varolan Xamarin çözümleri güncelleştirme açıklanmaktadır.
+
+- [NuGet paketlerini içeren bileşenleri](#contain)
+- [NuGet değişikliklerini bileşenleriyle](#replace)
+
+Çoğu bileşenleri yukarıdaki kategoriden ayrılır.
+Görünmeyen bir eşdeğer NuGet paketine sahip, okumak için bir bileşen kullanıyorsanız [NuGet geçiş yolu olmayan bileşenler](#require-update) bölümüne bakın.
+
+Daha ayrıntılı yönergeler için NuGet paketlerini eklemek için bu sayfalara bakın [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) veya [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+
+<a name="contain" />
+
+## <a name="components-that-contain-nuget-packages"></a>NuGet paketlerini içeren bileşenleri
+
+Birçok bileşen zaten NuGet paketlerini içerir ve geçiş yolu yalnızca component başvurusu silmektir.
+
+Bileşen zaten bir NuGet paketi çözüm bileşeni çift tıklayarak içerip içermeyeceğini belirleyebilirsiniz:
+
+![Genişletilmiş bileşenleri düğümü](component-nuget-images/solution-sml.png)
+
+**Paketleri** sekmesini bileşeni dahil herhangi bir NuGet paketinin listeler:
+
+![NuGet Paketleri sekmesi içerir](component-nuget-images/packages-tab-sml.png)
+
+Unutmayın **derlemeleri** sekmesi boş olacaktır:
+
+![Derlemeleri sekmesini boştur](component-nuget-images/assemblies-tab-empty-sml.png)
+
+### <a name="updating-the-solution"></a>Çözüm güncelleştiriliyor
+
+Çözümünüzü güncelleştirmek için silme **bileşen** çözümden girişi:
+
+![Bileşen Sil](component-nuget-images/delete-component-sml.png)
+
+NuGet paketi olarak listelenen kalacak **paketleri** düğümü ve uygulamanızı derlenir ve her zamanki gibi çalıştırın. Gelecekte, bu paket için güncelleştirmeleri aracılığıyla gerçekleştirilir **Nuget** güncelleştirme özelliği:
+
+![NuGet paketi güncelleştirme](component-nuget-images/nuget-update-sml.png)
+
+
+<a name="replace" />
+
+## <a name="components-with-nuget-replacements"></a>NuGet değişikliklerini bileşenleriyle
+
+Varsa bileşen bilgileri sayfası **derlemeleri** sekmesi, aşağıda gösterildiği gibi girişleri içerir, eşdeğer NuGet paketi el ile bulmak gerekir.
+
+![Derlemeleri içerir](component-nuget-images/assemblies-tab-sml.png)
+
+Unutmayın **paketleri** sekmesini büyük olasılıkla boş olacaktır:
+
+![](component-nuget-images/packages-tab-empty-sml.png)
+
+_NuGet bağımlılıkları içerebilir, ancak bunlar göz ardı._
+
+
+NuGet paket var. değiştirme onaylamak için arama [NuGet.org](https://www.nuget.org/packages), bileşen adı kullanarak veya alternatif olarak yazar tarafından.
+
+Örnek olarak, popüler bulabilirsiniz **sqlite net pcl** için arayarak paketi:
+
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) – Ürün adı.
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – Yazar profili.
+
+
+### <a name="updating-the-solution"></a>Çözüm güncelleştiriliyor
+
+Bileşen NuGet içinde kullanılabilir doğruladıktan sonra aşağıdaki adımları izleyin:
+
+#### <a name="delete-the-component"></a>Bileşen Sil
+
+Çözüm bileşeni sağ tıklayın ve seçin **kaldırmak**:
+
+![Bileşen kaldırma](component-nuget-images/remove-component-sml.png)
+
+Bu bileşen ve tüm başvuruları siler. Değiştirmek için eşdeğer NuGet paketi ekleyene kadar bu yapılandırma, çalışmamasına neden olur.
+
+#### <a name="add-the-nuget-package"></a>NuGet paketi ekleme
+
+1. Sağ **paketleri** düğümü seçin **paketleri Ekle...** .
+2. Adı veya yazar tarafından NuGet değiştirme arayın:
+
+  ![](component-nuget-images/nuget-search-sml.png)
+
+3. Tuşuna **paket ekleme**.
+
+NuGet paketini projenize tüm bağımlılıklarla birlikte eklenir.
+Bu yapı sorununu çözer. Yapı başarısız olmaya devam ederse, API farklarını bileşeni ve NuGet paketi olup olmadığını görmek için her bir hata araştırın.
+
+<a name="require-update" />
+
+## <a name="components-without-a-nuget-migration-path"></a>Bir NuGet geçiş yolu olmayan bileşenler
+
+Uygulamanızda kullanılan bileşenler için yenileme hemen bulamazsanız endişelenmeyin. Var olan bileşenlerin Visual Studio 15,5 içinde çalışmaya devam edecek ve **bileşenleri** düğümü görünür çözümünüzde her zamanki gibi.
+
+Ancak, sonraki Visual Studio sürüm olacak _değil_ geri yükleyin veya güncelleştirin bileşenleri.
+Bu çözüm yeni bir bilgisayarda açarsanız, bileşen karşıdan yüklenen ve bırakılır anlamına gelir; ve yazar güncelleştirmeleriyle sağlamak mümkün olmaz. İçin planlamanız gerekir:
+
+* Derlemeleri bileşeninden ayıklayın ve bunları doğrudan projenizde başvuru.
+* Bileşen yazarına başvurun ve Nuget'e geçirmek için planları hakkında isteyin.
+* Alternatif NuGet paketleri araştırın veya bileşen açık kaynaklı ise kaynak kodunu arama.
+
+Birçok bileşen satıcıları için NuGet geçirme hala çalışmaktadır ve diğerleri (dahil olmak üzere ticari koşulların elverdiği oranda kullanılabilir ürünler) alternatif teslim seçeneklerini İnceleme.
+
+
+## <a name="related-links"></a>İlgili bağlantılar
+
+- [Yükleme ve bir NuGet paketi (Windows) kullanma](https://docs.microsoft.com/nuget/quickstart/use-a-package)
+- [Bir NuGet paketi (Mac) dahil olmak üzere](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)
