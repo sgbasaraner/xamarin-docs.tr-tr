@@ -1,0 +1,69 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: "Xamarin.Forms Örnekleri"
+metadata:
+  description: "Mobil uygulama geliştiricileri için Xamarin.Forms örnek uygulamaları ve kod tanıtımları."
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/17/2018
+  ms.topic: article
+  ms.openlocfilehash: 2cd0a8019df09c8da0f19812b5217bcad5f0c2e9
+  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.translationtype: HT
+  ms.contentlocale: tr-TR
+  ms.lasthandoff: 02/28/2018
+abstract:
+  description: "Xamarin.Forms’u kullanmaya başlamanıza ve Xamarin.Forms’taki kavramları anlamanıza yardımcı olacak Xamarin.Forms örnek uygulamaları ve kod tanıtımları."
+  menu:
+    items:
+    - href: https://developer.xamarin.com/samples/xamarin-forms/all/
+      text: "Tüm Xamarin.Forms Örnekleri"
+sections:
+- title: 
+  items:
+  - type: list
+    style: cards
+    className: cardsW
+    items:
+    - href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
+      html: "Bu örnek, verilerin depolandığı ve verilere yerel bir SQLite veritabanından erişildiği bir Yapılacaklar listesi uygulamasını gösterir."
+      image:
+        src: images/todo.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
+      title: Todo
+    - href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
+      html: "Bu yeni bir sürpriz sunan, bilindik bir oyundur. 9x9 kutucuktan oluşan bir kılavuzda on böcek gizlenmiştir. Kazanmak için bu on böceğin hepsini bulup işaretlemeniz gerekir."
+      image:
+        src: images/bugsweeper.png
+        href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
+      title: BugSweeper
+    - href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
+      html: "Bir RPN (Ters Polonyalı Yazımı) hesaplayıcı, parantez veya eşittir tuşu olmadan sayı ve işlemlerin girilmesine olanak sağlar."
+      image:
+        src: images/rpncalc.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
+      title: "RPN Hesaplayıcı"
+    - href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
+      html: "Program, parmağınızla dokunarak veya parmağınızı hareket ettirerek boyama yapabileceğiniz bir döner diskin benzetimini yapar. SpinPaint, parmağınızın altına bir boyayla çizgi çizerek dokunmaya yanıt verir, ancak boyanan çizgiyi, diskin diğer üç çeyrek dilimindeki üç yansıma görüntüsünde de çoğaltır."
+      image:
+        src: images/spinpaint.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
+      title: SpinPaint
+    - href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
+      html: "XAML (eXtensible Application Markup Language), geliştiricilerin kod yerine biçimlendirme kullanarak Xamarin.Forms uygulamalarında kullanıcı arabirimlerini tanımlamasına olanak sağlar."
+      image:
+        src: images/xaml.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
+      title: "XAML Örnekleri"
+    - href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
+      html: "XAML (eXtensible Application Markup Language), geliştiricilerin kod yerine biçimlendirme kullanarak Xamarin.Forms uygulamalarında kullanıcı arabirimlerini tanımlamasına olanak sağlar."
+      image:
+        src: images/xuzzle.png
+        href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
+      title: Xuzzle
+    - href: https://developer.xamarin.com/samples/xamarin-forms/all/
+      html: "Xamarin.Forms örnek uygulamalarından ve kod tanıtımlarından oluşan tam bir set."
+      image:
+        src: ~/media/shared/sample-download.svg
+        href: https://developer.xamarin.com/samples/xamarin-forms/all/
+      title: "Tüm Xamarin.Forms örnekleri"
