@@ -9,7 +9,7 @@ ms.author: chape
 ms.date: 04/14/2017
 ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 02/27/2018
 ---
@@ -27,7 +27,7 @@ Bu geliştirmek sabit `SKMatrix` yalnızca iki boyut içinde çalışma Dönüş
 
 Üç boyutlu bir koordinat sistemi kavramsal z adlı üçüncü bir eksen ekler, dik ekranına Z ekseni altındadır. 3B uzaydaki koordinat noktaları üç numaralarıyla belirtilir: (x, y, z). 3B koordinat sistemi X değerleri artırma bu makalede kullanılan sağa doğru olan ve artan Y değerini aşağı, yalnızca iki boyut olduğu gibi gidin. Artan pozitif Z değerleri dışında ekrana gelir. Kaynak 2B grafik olduğu gibi yalnızca sol üst köşesindeki ' dir. Ekranın XY düzlemi dik bu düzlemi için adresindeki Z ekseni ile olarak düşünebilirsiniz.
 
-Bu bir sol koordinat sistemi çağrılır. Noktası varsa, sol taraftaki pozitif X yönünde erişebildiğinizden (sağa) düzenler ve (aşağı), ardından Flash noktalarınızı, Z koordinatları & #x 2014 artan yönde artan Y yönünde, Orta parmak düzenler; out ekranından genişletme.
+Bu bir sol koordinat sistemi çağrılır. Noktası varsa, sol taraftaki pozitif X yönünde erişebildiğinizden (sağa) düzenler ve (aşağı), ardından Flash noktalarınızı, Z koordinatları &#x2014; artan yönde artan Y yönünde, Orta parmak düzenler; out ekranından genişletme.
 
 3B grafik dönüşümler 4 x 4 matris üzerinde temel alır. 4 x 4 kimlik matris şöyledir:
 
@@ -109,7 +109,7 @@ Z ekseni etrafında döndürme 2B grafik olduğu gibi aynıdır:
 |    0       0     0  1  |
 </pre>
 
-Döndürme yönünü koordinat sistemini el kullanımı tarafından kapsanır. Sol sistem budur bunu belirli eksen & #x 2014; değerlerini artırma doğrultusunda, sol kaydırma noktası X ekseni etrafında döndürme sağa aşağı için dönüş Y ekseni etrafında ve sizin doğru Z ekseni & #x 2014; etrafında döndürme Ardından, diğer parmakları eğrisini pozitif açıları dönüş yönünü belirtir.
+Döndürme yönünü koordinat sistemini el kullanımı tarafından kapsanır. Sol sistem budur bunu belirli eksen &#x2014; değerlerini artırma doğrultusunda, sol kaydırma noktası X ekseni etrafında döndürme sağa aşağı için dönüş Y ekseni etrafında ve sizin doğru Z ekseni &#x2014; etrafında döndürme Ardından, diğer parmakları eğrisini pozitif açıları dönüş yönünü belirtir.
 
 `SKMatrix44` statik genelleştirilmiş [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) ve [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) döndürme oluştuğu eksen belirtmenize olanak veren yöntemleri:
 
@@ -442,7 +442,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing` Geçersiz kılma tanımlayan üç Xamarin.Forms `Animation` hale getirmeyi nesnelere `xRotationDegrees`, `yRotationDegrees`, ve `zRotationDegrees` farklı hızlarda alanları. Animasyonlarına dönemlerini asal sayılar & #x 2014 olarak ayarlanır; 5 saniye, 7 saniye ve 11 saniye & #x 2014; Genel birleşimi yalnızca her 385 saniye ya da 10 dakikadan fazla yinelenecek şekilde:
+`OnAppearing` Geçersiz kılma tanımlayan üç Xamarin.Forms `Animation` hale getirmeyi nesnelere `xRotationDegrees`, `yRotationDegrees`, ve `zRotationDegrees` farklı hızlarda alanları. Animasyonlarına dönemlerini asal sayılar &#x2014; olarak ayarlanır; 5 saniye, 7 saniye ve 11 saniye &#x2014; Genel birleşimi yalnızca her 385 saniye ya da 10 dakikadan fazla yinelenecek şekilde:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage

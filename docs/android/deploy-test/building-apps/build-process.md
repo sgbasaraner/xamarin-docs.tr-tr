@@ -9,7 +9,7 @@ ms.author: mamcle
 ms.date: 02/15/2018
 ms.openlocfilehash: 68ddb9baa008ec8222b4399a5ab25330fda2afd1
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 02/27/2018
 ---
@@ -316,7 +316,7 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     Xamarin.Android 7.2 eklendi.
 
--   **AndroidVersionCodeProperties** &ndash; A string property which allows the developer to define custom items to use with the [AndroidVersionCodePattern](#AndroidVersionCodePattern).
+-   **AndroidVersionCodeProperties** &ndash; Geliştiricinin [AndroidVersionCodePattern ](#AndroidVersionCodePattern) ile kullanmak için özel öğeleri tanımlamasına izin veren bir dizgi özelliği.
     Biçiminde olan bir `key=value` çifti. Tüm öğeleri `value` tamsayı değeri olmalıdır. Örneğin: `screen=23;target=$(_SupportedApiLevel)`.
     Mevcut veya özel MSBuild kullanma yapabilir gördüğünüz dize özellikleri.
 
