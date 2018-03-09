@@ -10,7 +10,7 @@ ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: ecea0f55360fcde7a50c52bb33c45a2c5fff5eeb
 ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 02/28/2018
 ---
@@ -22,7 +22,7 @@ _Xamarin.Forms düzenleri mantıksal yapılara kullanıcı arabirimi denetimleri
 
 ## <a name="layouts"></a>Düzenleri
 
-[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Xamarin.Forms sınıfında türdür bir özel düzenler veya görünümleri bir kapsayıcı gibi diğer davranır görünümünün. Genellikle, alt öğelerinin boyutunu ve konumunu Xamarin.Forms uygulamalarda ayarlamak için mantığını içerir.
+[`Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Xamarin.Forms sınıfında türdür bir özel düzenler veya görünümleri bir kapsayıcı gibi diğer davranır görünümünün. Genellikle, alt öğelerinin boyutunu ve konumunu Xamarin.Forms uygulamalarda ayarlamak için mantığını içerir.
 
  [ ![](layouts-images/layouts-sml.png "Xamarin.Forms yerleşim türleri")](layouts-images/layouts.png "Xamarin.Forms yerleşim türleri")
 
