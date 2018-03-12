@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 3990b226b74c17fb5cccc907dd50b46578c3ef6b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d8f805d8a3fcadd9c2a6758f1dc5592c03fe3ed4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-a-monogame-uwp-project"></a>MonoGame UWP projesi oluşturma
 
@@ -45,15 +45,11 @@ Tüm gerekli kaynakları yüklü ve Windows 10 makinede Geliştirici modu etkinl
 1. Seçin **dosya** > **yeni** > **proje...**
 1. Seçin **yüklü** > **şablonları** > **Visual C#** > **MonoGame** kategorisi: 
 
-
     ![](uwp-images/image1.png "MonoGame kategorisi")
-
 
 1. Seçin **MonoGame Windows 10 Universal projesi** seçeneği: 
 
-
     ![](uwp-images/image2.png "MonoGame Windows 10 Universal projesi seçeneğini belirleyin")
-
 
 1. Yeni proje için bir ad girin ve tıklayın **Tamam**.
 Visual Studio, Tamam'ı tıklattıktan sonra herhangi bir hata görüntülerse, Windows 10 araçları yüklü olduğunu ve aygıtın geliştirici modunda olduğunu doğrulayın. 

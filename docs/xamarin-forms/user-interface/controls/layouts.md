@@ -1,6 +1,6 @@
 ---
 title: "Xamarin.Forms düzenleri"
-description: "Xamarin.Forms düzenleri mantıksal yapılara kullanıcı arabirimi denetimlerini oluşturmak için kullanılır."
+description: "Xamarin.Forms düzenleri visual yapılara kullanıcı arabirimi denetimlerini oluşturmak için kullanılır."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
@@ -8,148 +8,106 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: ecea0f55360fcde7a50c52bb33c45a2c5fff5eeb
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: aa16c5aa0304b012aa6197e192ef073b472817cc
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms düzenleri
 
-_Xamarin.Forms düzenleri mantıksal yapılara kullanıcı arabirimi denetimlerini oluşturmak için kullanılır._
+_Xamarin.Forms düzenleri visual yapılara kullanıcı arabirimi denetimlerini oluşturmak için kullanılır._
 
-<style>.tableimg { max-width: none !important;}</style>
+[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Ve [ `Layout<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) Xamarin.Forms sınıflarda olan görünümleri ve diğer düzenleri için kapsayıcı olarak hareket görünümlerinin özelleştirilmiş subtypes. `Layout` Sınıfının kendisi türer [ `View` ](views.md). A `Layout` türevi genellikle alt öğelerinin boyutunu ve konumunu Xamarin.Forms uygulamalarda ayarlamak için mantık içerir.
 
-## <a name="layouts"></a>Düzenleri
+ [ ![](layouts-images/layouts-sml.png "Xamarin.Forms yerleşim türleri")](layouts-images/layouts.png#lightbox "Xamarin.Forms yerleşim türleri")
 
-[`Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Xamarin.Forms sınıfında türdür bir özel düzenler veya görünümleri bir kapsayıcı gibi diğer davranır görünümünün. Genellikle, alt öğelerinin boyutunu ve konumunu Xamarin.Forms uygulamalarda ayarlamak için mantığını içerir.
+Öğesinden türetilen sınıflar `Layout` iki kategoriye ayrılabilir:
 
- [ ![](layouts-images/layouts-sml.png "Xamarin.Forms yerleşim türleri")](layouts-images/layouts.png "Xamarin.Forms yerleşim türleri")
+## <a name="layouts-with-single-content"></a>Tek içerikle düzenleri
 
-<br clear="all" />
+Bu sınıf türetin [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/), tanımlayan [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) ve [ `IsClippedToBounds` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.IsClippedToBounds/) özellikleri.
 
-Xamarin.Forms destekler:
+<a name="contentView" />
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-<thead>
-    <th>
-      <strong>Türü</strong>
-    </th>
-    <th>
-      <strong>Açıklama</strong>
-    </th>
-    <th style="min-width:400px">
-      <strong>ekran görüntüsü</strong>
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/">ContentPresenter</a>
-    </td>
-    <td valign="top">
-Şablonlu görünümleri için Düzen Yöneticisi. İçinde kullanılan bir <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/">ControlTemplate</a> sunulması için içeriği göründüğü işaretlenecek.
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/Templates/ControlTemplates/SimpleTheme/SimpleTheme/App.xaml"><img src="layouts-images/ContentPresenter.png" title="ContentPresenter örneği" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/">ContentView</a>
-    </td>
-    <td valign="top">
-Tek bir içeriği olan bir öğe. ContentView çok az kullanımını kendi sahiptir. Amacı kullanıcı tanımlı bileşik görünümler için temel sınıf olarak görev yapmaktır.
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/ContentViewDemoPage.cs"><img src="layouts-images/ContentView.png" title="ContentView örneği" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/">Çerçeve</a>
-    </td>
-    <td valign="top">
-Bazı çerçeveleme seçenekleri ile tek bir alt öğe içeren bir öğe. Çerçeve sahip varsayılan bir <a href="https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/">Xamarin.Forms.Layout.Padding</a> 20.
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/FrameDemoPage.cs"><img src="layouts-images/Frame.png" title="Çerçeve örneği" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/">ScrollView</a>
-    </td>
-    <td valign="top">
-İçerik ise kaydırma yeteneğine sahip bir öğe gerektirir.
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/ScrollViewDemoPage.cs"><img src="layouts-images/ScrollView.png" title="ScrollView örneği" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/">TemplatedView</a>
-    </td>
-    <td valign="top">
-Bir denetim şablonu ve için temel sınıfı olan içeriği görüntüleyen bir öğe <a href=""/api/type/Xamarin.Forms.ContentView/">ContentView</a>.
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/tree/master/Templates/ControlTemplates/"><img src="layouts-images/TemplatedView.png" title="TemplatedView örneği" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/">AbsoluteLayout</a>
-    </td>
-    <td valign="top">
-Alt öğeler istenen Mutlak Konumlar yerleştirir. Bağlayıcıları ve sınırları atanan kullanıcı konumu ve boyutu denetiminin tanımlar.
-    </td>
-    <td valign="top">
-      <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/AbsoluteLayoutDemoPage.cs"><img src="layouts-images/AbsoluteLayout.png" title="AbsoluteLayout örneği" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/">Kılavuz</a>
-    </td>
-    <td valign="top">
-Satırları ve sütunları düzenlenmiş görünümleri içeren düzeni.
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/GridDemoPage.cs"><img src="layouts-images/Grid.png" title="Kılavuz örneği" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/">RelativeLayout</a>
-    </td>
-    <td valign="top">
-A <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/%601">düzeni</a> kullanan <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/">kısıtlaması</a>s Düzen alt.
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/RelativeLayoutDemoPage.cs"><img src="layouts-images/RelativeLayout.png" title="RelativeLayout örneği" class="tableimg">
-    </a></td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/">StackLayout</a>
-    </td>
-    <td valign="top">
-A <a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/">düzeni</a> dikey veya yatay olarak yönlendirilebilir tek bir satır içinde alt öğe yerleştirir. Bu düzen alt sınırları otomatik olarak bir düzen döngüsü sırasında ayarlar. Sınırların atanan kullanıcı üzerine yazılır ve bu nedenle bir alt öğe üzerinde kullanıcı tarafından ayarlanmamalıdır.
-    </td>
-    <td>
-    <a href="https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/StackLayoutDemoPage.cs"><img src="layouts-images/StackLayout.png" title="StackLayout örneği" class="tableimg">
-    </a></td>
-  </tr>
-  </tbody>
-</table>
+### <a name="contentview"></a>ContentView
 
+|     |     |
+| --- | --- |
+| [`ContentView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) ile ayarlamak tek bir alt içeren [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) özelliği. `Content` Özelliği herhangi biri ayarlanabilir `View` diğer dahil olmak üzere türevi `Layout` türevleri. `ContentView` genellikle bir yapısal öğesi olarak kullanılır ve için temel sınıf olarak görev yapar [ `Frame` ](#frame).<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) | [![ContentView örnek](layouts-images/ContentView.png "ContentView örnek")](layouts-images/ContentView-Large.png#lightbox "ContentView örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+|     |     |
 
+<a named="frame" />
+
+### <a name="frame"></a>Çerçeve
+
+|     |     |
+| --- | --- |
+| [ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/) Sınıfı türer [ `ContentView` ](#contentView) ve kendi alt etrafında dikdörtgen kare görüntüler. `Frame` bir varsayılan [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) 20 değerini ve ayrıca tanımlar [ `OutlineColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.OutlineColor/), [ `CornerRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.CornerRadius/), ve [ `HasShadow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.HasShadow/)özellikleri.<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/) | [![Çerçeve örnek](layouts-images/Frame.png "çerçeve örnek")](layouts-images/Frame-Large.png#lightbox "çerçeve örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+|     |     |
+
+<a name="scrollView" />
+
+### <a name="scrollview"></a>ScrollView
+
+|     |     |
+| --- | --- |
+| [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) içeriği kaydırma yeteneğine sahiptir. Ayarlama [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ScrollView.Content/) özelliği bir görünüm veya düzeni çok büyük ekranda sığmayacak. (İçeriğini bir `ScrollView` çok genellikle bir [ `StackLayout` ](#stackLayout).) Ayarlama [ `Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ScrollView.Orientation/) kaydırma dikey olup olmayacağını belirtmek için özelliği yatay ya da her ikisini de.<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) / [Kılavuzu](~/xamarin-forms/user-interface/layouts/scroll-view.md) / [örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![ScrollView örnek](layouts-images/ScrollView.png "ScrollView örnek")](layouts-images/ScrollView-Large.png#lightbox "ScrollView örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+|     |     |
+
+### <a name="templatedview"></a>TemplatedView
+
+|     |     |
+| --- | --- |
+| [`TemplatedView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/) bir denetim şablonu ile içeriğini görüntüler ve temel sınıfı olan [ `ContentView` ](#contentView).<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/) / [Kılavuzu](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md) | [![TemplatedView örnek](layouts-images/TemplatedView.png "TemplatedView örnek")](layouts-images/TemplatedView.png#lightbox "TemplatedView örneği") |
+|     |     |
+
+### <a name="contentpresenter"></a>ContentPresenter
+
+|     |     |
+| --- | --- |
+| [`ContentPresenter`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) içinde kullanılan şablonlu görünümleri için bir düzen yöneticisi olan bir [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) sunulacak olan içerik göründüğü işaretlenecek.<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) / [Kılavuzu](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md) | [![ContentPresenter örnek](layouts-images/ContentPresenter.png "ContentPresenter örnek")](layouts-images/ContentPresenter.png#lightbox "ContentPresenter örneği") |
+|     |     |
+
+## <a name="layouts-with-multiple-children"></a>Birden fazla alt düzenleri
+
+Bu sınıf türetin [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/).
+
+<a name="stackLayout" />
+
+### <a name="stacklayout"></a>StackLayout
+
+|     |     |
+| --- | --- |
+| [`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ya da yatay veya dikey temel yığındaki alt öğelerini konumlandırır [ `Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/) özelliği. [ `Spacing` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Spacing/) Özelliği alt arasındaki boşluğu yönetir ve 6'ın varsayılan bir değeri yok.<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) / [Kılavuzu](~/xamarin-forms/user-interface/layouts/stack-layout.md) / [örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)| [![StackLayout örnek](layouts-images/StackLayout.png "StackLayout örnek")](layouts-images/StackLayout-Large.png#lightbox "StackLayout örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StackLayoutDemoPage.cs) / [XAML sayfası]((https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StackLayoutDemoPage.xaml)) |
+|     |     |
+
+<a name="grid" />
+
+### <a name="grid"></a>Kılavuz
+
+|     |     |
+| --- | --- |
+| [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) alt öğeleri satırları ve sütunları kılavuzunda yerleştirir. Çocuk konumu kullanarak belirtilen [ekli özellikler](~/xamarin-forms/xaml/attached-properties.md) [ `Row` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/), [ `Column` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/), [ `RowSpan` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/), ve [ `ColumnSpan` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/).<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) / [Kılavuzu](~/xamarin-forms/user-interface/layouts/grid.md) / [örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![Kılavuz örnek](layouts-images/Grid.png "kılavuz örnek")](layouts-images/Grid-Large.png#lightbox "kılavuz örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/GridDemoPage.cs) / [XAML sayfası]((https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/GridDemoPage.xaml)) |
+|     |     |
+
+### <a name="absolutelayout"></a>AbsoluteLayout
+
+|     |     |
+| --- | --- |
+| [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) alt öğe üst göre belirli konumlara yerleştirir. Çocuk konumu kullanarak belirtilen [ekli özellikler](~/xamarin-forms/xaml/attached-properties.md) [ `LayoutBounds` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty/) ve [ `LayoutFlags` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty/). Bir `AbsoluteLayout` görünümleri konumlarını animasyon için yararlıdır.<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) / [Kılavuzu](~/xamarin-forms/user-interface/layouts/absolute-layout.md) / [örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![AbsoluteLayout örnek](layouts-images/AbsoluteLayout.png "AbsoluteLayout örnek")](layouts-images/AbsoluteLayout-Large.png#lightbox "AbsoluteLayout örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutdDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayout.xaml) ile [arka plan kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayout.xaml.cs) |
+|     |     |
+
+### <a name="relativelayout"></a>RelativeLayout
+
+|     |     |
+| --- | --- |
+| [`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) alt öğelerine göreli konumlandırır `RelativeLayout` kendisini veya kendi eşdüzey. Çocuk konumu kullanarak belirtilen [ekli özellikler](~/xamarin-forms/xaml/attached-properties.md) türündeki nesnelere ayarlamak [ `Constraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/) ve [ `BoundsConstraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/).<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/)/ [Kılavuzu](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![RelativeLayout örnek](layouts-images/RelativeLayout.png "RelativeLayout örnek")](layouts-images/RelativeLayout-Large.png#lightbox "RelativeLayout örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML sayfası]((https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml)) |
+|     |     |
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Xamarin.Forms giriş](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [Xamarin.Forms Galerisi (örnek)](https://developer.xamarin.com/samples/FormsGallery/)
-- [Xamarin.Forms örnekleri](https://developer.xamarin.com/samples/tag/Xamarin.Forms/)
-- [Xamarin.Forms API belgeleri](https://developer.xamarin.com/api/namespace/Xamarin.Forms)
+- [Xamarin.Forms FormsGallery örnek](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms Örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms API belgeleri](https://developer.xamarin.com/api/root/Xamarin.Forms/)
