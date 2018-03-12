@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 08/02/2017
 ms.openlocfilehash: 402b17ddbb28fb8896ad0f158fe8dbcd17689f40
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 02/27/2018
 ---
@@ -28,7 +28,7 @@ Uygulama ve kullanarak makaleyi kapsar [Seçici](#picker) ve [tarih seçici](#da
 
 ### <a name="implementing-a-picker"></a>Bir seçici uygulama
 
-Bir seçici yeni bir örneği tarafından uygulanan [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/):
+Bir seçici yeni bir örneği tarafından uygulanan [`UIPickerView`](https://developer.xamarin.com/api/type/UIKit.UIPickerView/):
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
