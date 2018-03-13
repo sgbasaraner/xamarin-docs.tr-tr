@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 29b405c61b745c26c74318243f75e5809ecfdd7d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a33993bdef16191b66127dcc68c57661636c0f8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-references"></a>Yerel başvuruları
 
@@ -78,13 +78,13 @@ Bu sorunu çözmek için `lipo` komut satırı aracı, iki veya daha fazla çer�
 1. Yeni bir oluşturun veya varolan bir Xamarin.iOS, Xamarin.Mac veya bağlama projesini açın.
 2. İçinde **Çözüm Gezgini**, proje adına sağ tıklayın ve seçin **Ekle** > **yerel başvuru Ekle**: 
 
-    [ ![](native-references-images/ref01.png "Çözüm Gezgini'nde proje adına sağ tıklayın ve yerel başvuru Ekle seçin")](native-references-images/ref01.png)
+    [![](native-references-images/ref01.png "Çözüm Gezgini'nde proje adına sağ tıklayın ve yerel başvuru Ekle seçin")](native-references-images/ref01.png#lightbox)
 3. Gelen **açık** iletişim kutusunda, eklemek ve istediğiniz yerel Framework adını seçin **açık** düğmesi: 
 
-    [ ![](native-references-images/ref02.png "Yerel katıştırmak ve Aç düğmesini tıklatın Framework'ün adı seçin")](native-references-images/ref02.png)
+    [![](native-references-images/ref02.png "Yerel katıştırmak ve Aç düğmesini tıklatın Framework'ün adı seçin")](native-references-images/ref02.png#lightbox)
 4. Framework projenin ağacına eklenecek: 
 
-    [ ![](native-references-images/ref03.png "Framework projeleri ağacına eklenemez")](native-references-images/ref03.png)
+    [![](native-references-images/ref03.png "Framework projeleri ağacına eklenemez")](native-references-images/ref03.png#lightbox)
 
 Projesi derlendiğinde yerel Framework uygulamanın pakette katıştırılır.
 

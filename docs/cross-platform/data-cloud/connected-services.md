@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: cc2deb11d544bc4e933e690d6089eb001a186c79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c9ae8d65a2bfdd035cccb6b911448ea047f8c40
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="connected-services-walkthrough"></a>Bağlı hizmetler gözden geçirme
 
@@ -24,22 +24,22 @@ Bu kılavuzda, bulut verilerini depolama, kimlik doğrulama ve platformlar aras�
 1.  Başlangıç çift tıklayarak **bağlantılı Hizmetler** getirir çözüm düğümünde **Services Galerisi**.
   Bu uygulama türü için tüm kullanılabilir hizmetler listesidir. Bir hizmet seçin (gibi **Azure uygulama hizmetiyle mobil arka uç**) üzerinde tıklatarak.
 
-  [ ![](connected-services-images/image001-sml.png "Mac için Visual Studio hizmetler düğümünde bağlı")](connected-services-images/image001.png)
+  [![](connected-services-images/image001-sml.png "Mac için Visual Studio hizmetler düğümünde bağlı")](connected-services-images/image001.png#lightbox)
 
 2. Hizmet Ayrıntıları sayfası, hizmeti ve bağımlılıklarını yüklenmesi için bir açıklama vardır.
   Tıklatın **Ekle** düğmesi bağımlılıkları uygulamaya eklemek için:
 
-  [ ![](connected-services-images/image002-sml.png "Azure ile mobil arka uç")](connected-services-images/image002.png)
+  [![](connected-services-images/image002-sml.png "Azure ile mobil arka uç")](connected-services-images/image002.png#lightbox)
 
 3. Bağımlılıkları hem PCL ve platforma özgü projelerine çalışmaya eklenmesi gerekir.
   Hizmet (doğrudan veya dolaylı olarak) başvurur her projeye eklemek için onay kutularını seçin:
 
-  [ ![](connected-services-images/image003-sml.png "Hizmet başvurması gereken tüm projeleri denetleyin")](connected-services-images/image003.png)
+  [![](connected-services-images/image003-sml.png "Hizmet başvurması gereken tüm projeleri denetleyin")](connected-services-images/image003.png#lightbox)
 
 4. Seçin **kabul** üzerinde **lisans kabulünü** iletişim kutuları için NuGet paketleri.
   Kabul etmek için MobileClient ve bağımlılıklar için diğeri SQLiteStore için çevrimdışı veri eşitleme için gerekli olan iki iletişim kutuları olabilir:
 
-  [ ![](connected-services-images/image004-sml.png "Lisans sözleşmelerini kabul edin")](connected-services-images/image004.png)
+  [![](connected-services-images/image004-sml.png "Lisans sözleşmelerini kabul edin")](connected-services-images/image004.png#lightbox)
 
   ![](connected-services-images/image005.png "Lisans kabulünü penceresi")
 
@@ -48,7 +48,7 @@ Bu kılavuzda, bulut verilerini depolama, kimlik doğrulama ve platformlar aras�
 
 6. Bir uygulama hizmeti listeden seçin. Bu şablon kodunu doldurur `MobileServiceClient` Azure uygulama hizmeti karşılık gelen URL'sini nesnesiyle:
 
-  [ ![](connected-services-images/image006-sml.png "Uygulama hizmeti listeden seçin")](connected-services-images/image006.png)
+  [![](connected-services-images/image006-sml.png "Uygulama hizmeti listeden seçin")](connected-services-images/image006.png#lightbox)
 
   Listelenen hiçbir Hizmetleri varsa tıklatın **yeni** düğmesini (bkz. adım 9.)
 
@@ -59,12 +59,12 @@ Bu kılavuzda, bulut verilerini depolama, kimlik doğrulama ve platformlar aras�
 
 8. Belgelerde izleyin **sonraki adımlar** eklemek verileri, çevrimdışı eşitleme, kimlik doğrulama ve uygulamanıza anında iletme bildirimleri için:
 
-  [ ![](connected-services-images/image008-sml.png "Sonraki adımlar yönergeleri gözden geçirin")](connected-services-images/image008.png)
+  [![](connected-services-images/image008-sml.png "Sonraki adımlar yönergeleri gözden geçirin")](connected-services-images/image008.png#lightbox)
 
 10. Mevcut tüm uygulama hizmetleri yoksa, Mac için Visual Studio içinde yeni hizmetlerinden oluşturabilirsiniz.
   Tıklatın **yeni** açmak için hizmetleri listesinin altındaki sol düğmesini **yeni uygulama hizmeti** iletişim:
 
-  [ ![](connected-services-images/image009-sml.png "Mac için Visual Studio'da yeni bir uygulama hizmeti oluşturma")](connected-services-images/image009.png)
+  [![](connected-services-images/image009-sml.png "Mac için Visual Studio'da yeni bir uygulama hizmeti oluşturma")](connected-services-images/image009.png#lightbox)
 
 Yeni bir hizmet aşağıdaki parametreleri gerektirir:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: cbabaf36ba8bfaa74ec17b0af0cd97e29f72d270
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 996723db83a1f972cce26090d1253f97b6c818d3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="contacts-and-contactsui"></a>Kişiler ve ContactsUI
 
@@ -27,7 +27,7 @@ _Bu makalede, bir Xamarin.iOS uygulaması içinde çerçeve yeni kişiler ve ki�
 
 - [**ContactsUI** ](#contactsui) -sağlar Xamarin.iOS UI öğelerini görüntülemek için düzenleme, seçin ve iOS cihazlarda kişileri oluşturun.
 
-[ ![](contacts-images/add01.png "Bir iOS cihazında bir örnek kişi listesi")](contacts-images/add01.png)
+[![](contacts-images/add01.png "Bir iOS cihazında bir örnek kişi listesi")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
 > **Not:** varolan `AddressBook` ve `AddressBookUI` çerçeveler iOS 8 kullandığı (ve önceki) iOS 9'u kullanım dışı bırakıldı ve yeni değiştirilmelidir `Contacts` ve `ContactsUI` varolan tüm Xamarin.iOS için mümkün olan en kısa sürede çerçeveler uygulama. Yeni uygulamalar karşı yeni çerçeveleri yazılması gerekir.
@@ -43,11 +43,13 @@ Aşağıdaki bölümlerde, biz bu yeni çerçeveler ve bunların bir Xamarin.iOS
 
 Kişiler Framework kullanıcının kişi bilgilerini Xamarin.iOS erişim sağlar. Çoğu uygulamalar yalnızca salt okunur erişim gerektirdiğinden bu framework iş parçacığı güvenli, salt okunur erişim için optimize edilmiştir.
 
+<a name="Contact_Objects" />
+
 ### <a name="contact-objects"></a>Kişi nesneleri
 
 `CNContact` Sınıf adını, adresini veya telefon numaraları gibi bir kişinin özellikleri iş parçacığı güvenli, salt okunur erişim sağlar. `CNContact` gibi işlev bir `NSDictionary` ve içeren birden çok, salt okunur özelliklerinin koleksiyonlarından oluşan (örneğin, adresler veya telefon numarası):
 
-[ ![](contacts-images/contactobjects.png "Kişi nesne genel bakış")](contacts-images/contactobjects.png)
+[![](contacts-images/contactobjects.png "Kişi nesne genel bakış")](contacts-images/contactobjects.png#lightbox)
 
 (Örneğin, e-posta adresi veya telefon numarası) birden çok değer sağlayabilirsiniz herhangi bir özellik için bunlar bir dizi temsil edilir `NSLabeledValue` nesneleri. `NSLabeledValue` etiketleri salt okunur kümesinden oluşan bir iş parçacığı güvenli tanımlama grubu olan ve burada etiket değeri (örneğin ev veya iş e-posta) kullanıcıya tanımlar değerleri. Önceden tanımlanmış etiketleri seçimi kişiler çerçevesi sağlar (aracılığıyla `CNLabelKey` ve `CNLabelPhoneNumberKey` statik sınıflar) uygulamanızda kullanabilirsiniz veya gereksinimleriniz için özel etiketler tanımlama seçeneğiniz vardır.
 
@@ -111,7 +113,7 @@ else
 
 Bu kodu iOS 9 cihazında çalıştırırsanız, yeni bir kişi kullanıcının koleksiyonuna eklenir. Örneğin:
 
-[ ![](contacts-images/add01.png "Kullanıcının koleksiyona eklenen yeni bir ilgili kişi")](contacts-images/add01.png)
+[![](contacts-images/add01.png "Kullanıcının koleksiyona eklenen yeni bir ilgili kişi")](contacts-images/add01.png#lightbox)
 
 ### <a name="contact-formatting-and-localization"></a>Kişi biçimlendirme ve yerelleştirme
 
@@ -194,7 +196,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 
 Bir kullanıcı, kişi kendi veritabanında (gibi iCloud, Facebook veya Google Mail) tek bir kişinin iletişim bilgilerini farklı kaynaklarının sahip olabilir. İOS ve OS X uygulamaları, bu kişi bilgilerini otomatik olarak birbirine bağlı ve olması olarak tek bir kullanıcıya görüntülenen _birleşik başvurun_:
 
-[ ![](contacts-images/unified01.png "Birleşik kişiler genel bakış")](contacts-images/unified01.png)
+[![](contacts-images/unified01.png "Birleşik kişiler genel bakış")](contacts-images/unified01.png#lightbox)
 
 Bu birleşik başvurun, (gerekirse kişi yeniden getirmesi için kullanılması gereken) kendi benzersiz tanımlayıcısı verilecek bağlantı bilgilerini, geçici, bellek içi bir görünümüdür. Varsayılan olarak, mümkün olduğunda birleşik kişi kişiler framework döndürür.
 
@@ -259,11 +261,11 @@ Bir kişi değiştirildiğinde, kişi deposu yazılarını bir `CNContactStoreDi
 
 Kullanıcının kişilerinin veya yerel olarak kullanıcının aygıtındaki (Facebook veya Google gibi) bir veya daha fazla sunucu hesaplarından aygıta eşitlenen kişiler olarak bulunabilir. Her kişilerin kendi sahip havuzu _kapsayıcı_ ve belirli bir kişi bir kapsayıcıda yalnızca bulunabilir.
 
-[ ![](contacts-images/containers01.png "Kapsayıcılar ve gruplara genel bakış")](contacts-images/containers01.png)
+[![](contacts-images/containers01.png "Kapsayıcılar ve gruplara genel bakış")](contacts-images/containers01.png#lightbox)
 
 Bir veya daha fazla düzenlenmesini kişiler için bazı kapsayıcıları izin _grupları_ veya _alt gruplar_. Bu davranış, verilen bir kapsayıcı yedekleme deposu bağımlıdır. Örneğin, iCloud yalnızca bir kapsayıcıya sahip ancak birçok grupları (ancak hiçbir alt grubu) sahip olabilir. Diğer taraftan, Microsoft Exchange grupları desteklemez ancak birden çok kapsayıcı (her Exchange klasörü için bir tane) sahip olabilir.
 
-[ ![](contacts-images/containers02.png "Kapsayıcılar ve grupları içinde çakışıyor")](contacts-images/containers02.png)
+[![](contacts-images/containers02.png "Kapsayıcılar ve grupları içinde çakışıyor")](contacts-images/containers02.png#lightbox)
 
 <a name="contactsui" />
 

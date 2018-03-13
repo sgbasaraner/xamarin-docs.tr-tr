@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: eb310b13a97e345bab68bf4e878f81a6187da691
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c31dbfeea3134de95f3275a7fa79c508a94d6a91
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="handling-rotation"></a>İşleme döndürme
 
 _Bu konu Xamarin.Android cihaz yönlendirmesini değişiklikleri nasıl ele alınacağını açıklar. Program aracılığıyla yönlendirmesini işlemek için değişiklikleri nasıl belirli cihaz yönlendirmesini de için kaynakları otomatik olarak yüklemek için Android kaynak sistemiyle çalışacak şekilde nasıl kapsar._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -30,7 +29,6 @@ Bu kılavuz aşağıdaki yönlendirmesini konular inceler:
 
 -   **Programsal düzeni döndürme** &ndash; denetimlerini programlı olarak nasıl ekleneceğini ve bunun yanı sıra yönlendirme değişiklikleri el ile nasıl ele alınacağını.
 
-<a name="Handling_Rotation_Declaratively_with_Layouts" />
 
 ## <a name="handling-rotation-declaratively-with-layouts"></a>Döndürme bildirimli olarak düzenleri ile işleme
 
@@ -41,13 +39,12 @@ Yönlendirmeyi değiştiğinde adlandırma kurallarına uygun klasörlerde dosya
 
 -   *Drawable kaynakları* &ndash; hangi drawables her yön için yüklenen belirtme.
 
-<a name="Layout_Resources" />
 
 ### <a name="layout-resources"></a>Düzen kaynakları
 
 Varsayılan olarak, Android XML (AXML) dosyaları dahil **kaynakları/düzeni** klasörü için bir etkinlik için işleme görünümleri kullanılır. Özellikle yatay için hiçbir ek Düzen kaynak sağlanırsa bu klasörün kaynakları dikey ve yatay yönlendirme için kullanılır. Varsayılan proje şablonu tarafından oluşturulan proje yapısını göz önünde bulundurun:
 
-[ ![Varsayılan proje şablonu yapısı](handling-rotation-images/00.png)](handling-rotation-images/00.png)
+[![Varsayılan proje şablonu yapısı](handling-rotation-images/00.png)](handling-rotation-images/00.png#lightbox)
 
 Bu proje tek bir oluşturur **Main.axml** dosyasını **kaynakları/düzeni** klasör. Zaman Etkinliğin `OnCreate` yöntemi çağrıldığında, görünümü içinde tanımlı Şişir **Main.axml,** XML aşağıda gösterildiği gibi bir düğme bildirir:
 
@@ -67,9 +64,8 @@ Bu proje tek bir oluşturur **Main.axml** dosyasını **kaynakları/düzeni** kl
 
 Cihaz, etkinlik 's yatay döndürülüp döndürülmeyeceğini `OnCreate` yöntemi tekrar çağrılır ve aynı **Main.axml** dosyası şişirileceğini, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[ ![Aynı ekran ancak yatay yönde](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png)
+[![Aynı ekran ancak yatay yönde](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png#lightbox)
 
-<a name="Orientation-Specific_Layouts" />
 
 #### <a name="orientation-specific-layouts"></a>Yönlendirme özgü düzenleri
 
@@ -105,9 +101,8 @@ Bir klasör içeren ek bir düzen kara adlı varsa **Main.axml** dosya yatay zam
 
 Bu kodu çalıştırmak ve yatay olarak dikey aygıttan döndürme yeni XML yükleme aşağıda gösterildiği gibi gösterir:
 
-[ ![Dikey moda yazdırma yatay ve dikey ekran görüntüleri](handling-rotation-images/02.png)](handling-rotation-images/02.png)
+[![Dikey moda yazdırma yatay ve dikey ekran görüntüleri](handling-rotation-images/02.png)](handling-rotation-images/02.png#lightbox)
 
-<a name="Drawable_Resources" />
 
 ### <a name="drawable-resources"></a>Drawable kaynakları
 
@@ -126,15 +121,13 @@ Döndürme sırasında Android drawable kaynakları düzeni kaynaklara benzer ş
 
 Daha fazla, varsayalım farklı bir sürümünü **Monkey.png** altında bulunan **kaynakları/drawable-kara**. Düzen dosyalarla cihaz gibi yalnızca, belirli yönlendirme için drawable değişiklikleri aşağıda gösterildiği gibi döndürülmüş:
 
-[ ![Dikey ve yatay modlarında gösterilen Monkey.png farklı sürümü](handling-rotation-images/03.png)](handling-rotation-images/03.png)
+[![Dikey ve yatay modlarında gösterilen Monkey.png farklı sürümü](handling-rotation-images/03.png)](handling-rotation-images/03.png#lightbox)
 
-<a name="Handling_Rotation_Programmatically" />
 
 ## <a name="handling-rotation-programmatically"></a>Döndürme programlı olarak işleme
 
 Bazen düzenleri kodda tanımlarız. Bu, çeşitli nedenlerle, teknik kısıtlamalar, geliştirici tercih vb. de dahil olmak üzere için meydana gelebilir. Biz denetimlerini programlı olarak eklediğinizde uygulamanın el ile XML kaynakları kullanırız bağlandığınızda otomatik olarak gerçekleştirilir cihaz yönlendirmesini için dikkate alması gerekir.
 
-<a name="Adding_Controls_in_Code" />
 
 ### <a name="adding-controls-in-code"></a>Kodda denetimler ekleme
 
@@ -178,9 +171,8 @@ protected override void OnCreate (Bundle bundle)
 
 Bu kod örneği oluşturur bir `RelativeLayout` sınıfı ve kümelerini kendi `LayoutParameters` özelliği. `LayoutParams` Denetimleri yeniden kullanılabilir bir şekilde nasıl konumlandırılacağını Kapsüllenen Android'ın yolu bir sınıftır. Bir düzen örneği oluşturulduktan sonra denetimleri oluşturulur ve kendisine eklenir. Denetimler de `LayoutParameters`, gibi `TextView` Bu örnekte. Sonra `TextView` eklemeyi oluşturulur, `RelativeLayout` ve ayarı `RelativeLayout` uygulama görüntüleme içerik görünümü sonuçları olarak `TextView` gösterildiği gibi:
 
-[ ![Dikey ve yatay modlarında gösterilen artışı sayaç düğmesi](handling-rotation-images/04.png)](handling-rotation-images/04.png)
+[![Dikey ve yatay modlarında gösterilen artışı sayaç düğmesi](handling-rotation-images/04.png)](handling-rotation-images/04.png#lightbox)
 
-<a name="Detecting_Orientation_in_Code" />
 
 ### <a name="detecting-orientation-in-code"></a>Kodda yönlendirmesini algılama
 
@@ -226,9 +218,8 @@ protected override void OnCreate (Bundle bundle)
 
 Bu kod ayarlar `TextView` pikseller yukarıdan konumlandırılmış 100 olacak şekilde otomatik olarak yeni düzene yatay olarak aşağıda gösterildiği gibi döndürülmüş zaman animasyon ekranın sol:
 
-[ ![Görünüm durumu üzerinde dikey ve yatay modları korunur](handling-rotation-images/05.png)](handling-rotation-images/05.png)
+[![Görünüm durumu üzerinde dikey ve yatay modları korunur](handling-rotation-images/05.png)](handling-rotation-images/05.png#lightbox)
 
-<a name="Preventing_Activity_Restart" />
 
 ### <a name="preventing-activity-restart"></a>Etkinlik yeniden önleme
 
@@ -292,7 +283,6 @@ Burada `TextView's` düzeni parametreleri yatay ve dikey için başlatılır. S�
 
 Biz uygulamayı çalıştırdığınızda, Android cihaz rotasyonu oluşur ve etkinlik yeniden başlatmamasını gibi kullanıcı arabirimi değişiklikleri yükler.
 
-<a name="Preventing_Activity_Restart_for_Declarative_Layouts" />
 
 ## <a name="preventing-activity-restart-for-declarative-layouts"></a>Bildirim temelli düzenleri için engelleme etkinliğini yeniden başlatma
 
@@ -300,7 +290,6 @@ Biz düzeni XML'de tanımlarsanız etkinlik yeniden aygıt döndürme neden de e
 
 Bunu yapmak için biz programlı bir düzen kullanırız aynı yordamı izleyin. Basitçe `ConfigurationChanges` içinde `ActivityAttribute`yaptığımız gibi `CodeLayoutActivity` daha önce. Yönlendirmesini değiştirme yeniden uygulanabilir için çalıştırmak için gereken herhangi bir kod `OnConfigurationChanged` yöntemi.
 
-<a name="Maintaining_State_During_Orientation_Changes" />
 
 ## <a name="maintaining-state-during-orientation-changes"></a>Yönlendirme değişiklikleri sırasında durum koruma
 
@@ -308,7 +297,6 @@ Döndürme işleme bildirimli olarak veya program aracılığıyla olsun, tüm A
 
 Android kalıcı durumda üzerinde daha fazla bilgi için bkz [etkinlik yaşam döngüsü](~/android/app-fundamentals/activity-lifecycle/index.md) Kılavuzu.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -319,6 +307,6 @@ Bu makalede ele alınan Android'ın yerleşik özellikleri döndürme ile çalı
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Döndürme Demo (örnek)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/RotationDemo/)
-- [Etkinlik yaşam döngüsü](~/android/app-fundamentals/activity-lifecycle/index.md)
+- [Etkinlik Yaşam Döngüsü](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Çalışma zamanı değişiklikleri işleme](http://developer.android.com/guide/topics/resources/runtime-changes.html)
 - [Hızlı ekran yönünü değiştirme](http://android-developers.blogspot.com/2009/02/faster-screen-orientation-change.html)

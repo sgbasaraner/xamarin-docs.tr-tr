@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/03/2017
-ms.openlocfilehash: a13de7fbb4b6e1f9fa2853ce599f3a038a5e4040
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: affe58d9276bd0b687089fb42a14ca964c570c9c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="complications"></a>Zorluklar
 
@@ -24,7 +24,7 @@ Her watchOS uygulama yalnızca bir olası sahip unutmayın.
 
 Başlangıç okuyarak [Apple'nın belgeleri](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html) uygulamanız için bir olası uygun olup olmadığını belirlemek için. 5 vardır `CLKComplicationFamily` aralarından seçim yapabileceğiniz görüntü türleri:
 
-[ ![](complications-images/all-complications-sml.png "5 CLKComplicationFamily türleri kullanılabilir: döngüsel küçük, modüler küçük, modüler büyük, faydalı olması küçük, faydalı olması büyük")](complications-images/all-complications.png)
+[![](complications-images/all-complications-sml.png "5 CLKComplicationFamily türleri kullanılabilir: döngüsel küçük, modüler küçük, modüler büyük, faydalı olması küçük, faydalı olması büyük")](complications-images/all-complications.png#lightbox)
 
 Uygulamalar, yalnızca bir stil veya beş, görüntülenen verilerin bağlı olarak uygulayabilirsiniz.
 Kullanıcı dijital Dama yapma kapatır gibi geçmiş ve/veya gelecekteki saatlere değerleri sağlayarak zaman seyahat destekler.
@@ -83,7 +83,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 Gözcü uzantının **Info.plist** dosyası adını belirtmeniz gerekir `CLKComplicationDataSource` ve desteklemek istediğiniz hangi olası aileleri:
 
-[ ![](complications-images/complications-config-sml.png "Olası ailesi türleri")](complications-images/complications-config.png)
+[![](complications-images/complications-config-sml.png "Olası ailesi türleri")](complications-images/complications-config.png#lightbox)
 
 **Veri kaynağı sınıfı** girdi listesi, o alt sınıf adları gösterir `CLKComplicationDataSource` olası mantığı içeren bir alt kümesi.
 

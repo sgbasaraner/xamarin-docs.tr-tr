@@ -3,16 +3,16 @@ title: ".xib dosyaları"
 description: "Bu makalede, Xcode'nın arabirimi Oluşturucu'da oluşturmak ve Xamarin.Mac uygulama için kullanıcı arabirimleri korumak için oluşturulan .xib dosyaları ile çalışma kapsar."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 8ca187b86126c9a0f2d9931f63d75e99ac4d2b23
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: 9a4b8ac68da7bcb25ea55906e8fe060b7c7fdee9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xib-files"></a>.xib dosyaları
 
@@ -27,7 +27,7 @@ C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı kullanıcı arabirim
 
 .Xib dosya macOS tarafından oluşturulmuş ve korunan uygulamanızın kullanıcı arabirimi (örneğin, menüler, Windows, görünümler, etiketler, metin alanları) öğelerini grafik Xcode'nın arabirimi Oluşturucusu'nda tanımlamak için kullanılır.
 
-[![Çalışan uygulama örneği](xib-images/intro01.png "çalışan uygulama örneği")](xib-images/intro01-large.png)
+[![Çalışan uygulama örneği](xib-images/intro01.png "çalışan uygulama örneği")](xib-images/intro01-large.png#lightbox)
 
 Bu makalede, biz Xamarin.Mac uygulama .xib dosyaları ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri kapsar gibi ilk olarak, makalesi.
 
@@ -43,7 +43,7 @@ Xcode bir parçası olarak, Apple Kullanıcı Arabiriminizin Tasarımcısı'nda 
 
 Bir .xib dosyasını Visual Studio'dan xcode'da Mac için açtığınızda, ile açılır bir **Proje Gezgini** sol taraftaki **arabirimi hiyerarşi** ve **arabirimi Düzenleyicisi** ortasında ve bir **özellikleri & yardımcı programları** sağdaki bölümü:
 
-[![Xcode UI bileşenlerinin](xib-images/xcode03.png "Xcode UI bileşenleri")](xib-images/xcode03-large.png)
+[![Xcode UI bileşenlerinin](xib-images/xcode03.png "Xcode UI bileşenleri")](xib-images/xcode03-large.png#lightbox)
 
 Bir göz atalım hangi bunların her biri Xcode yapar ve Xamarin.Mac uygulamanız için arabirim oluşturmak için bunları nasıl kullanacağını bölümler.
 
@@ -75,7 +75,7 @@ Başlangıçta bu bölümde ancak neredeyse boş bir öğedeki seçerseniz **ara
 
 İçinde **özellikleri** bölümünde, 8 farklı *denetçisi sekmeleri*, aşağıdaki çizimde gösterildiği gibi:
 
-[![Tüm denetçiler genel bir bakış](xib-images/xcode05.png "tüm denetçiler genel bakış")](xib-images/xcode05-large.png)
+[![Tüm denetçiler genel bir bakış](xib-images/xcode05.png "tüm denetçiler genel bakış")](xib-images/xcode05-large.png#lightbox)
 
 Soldan sağa, aşağıdaki sekmelerden şunlardır:
 
@@ -123,17 +123,17 @@ Geçiş yapmak için bir .xib kullanarak UI tabanlı, aşağıdakileri yapın:
 10. İçinde **çözüm paneli**, çift **Info.plist** dosyayı düzenlemek için açın.
 11. Seçin `MainMenu` gelen **ana arabirimi** açılır:
 
-    [![Ana menü ayarı](xib-images/setup05.png "ana menüye ayarlama")](xib-images/setup05-large.png)
+    [![Ana menü ayarı](xib-images/setup05.png "ana menüye ayarlama")](xib-images/setup05-large.png#lightbox)
 12. İçinde **çözüm paneli**, çift **MainMenu.xib** dosyayı Xcode'nın arabirimi Oluşturucusu'nda düzenlemek için açın.
 13. İçinde **kitaplığı denetçisi**, türü `object` arama alanına sonra yeni bir sürükleyin **nesne** tasarım yüzeyine:
 
-    [![Ana menü düzenleme](xib-images/setup06.png "ana menüye düzenleme")](xib-images/setup06-large.png)
+    [![Ana menü düzenleme](xib-images/setup06.png "ana menüye düzenleme")](xib-images/setup06-large.png#lightbox)
 14. İçinde **kimlik denetçisi**, girin `AppDelegate` için **sınıfı**:
 
-    [![Uygulama temsilci seçme](xib-images/setup07.png "uygulama temsilci seçme")](xib-images/setup07-large.png)
+    [![Uygulama temsilci seçme](xib-images/setup07.png "uygulama temsilci seçme")](xib-images/setup07-large.png#lightbox)
 15. Seçin **dosyanın sahibi** gelen **arabirimi hiyerarşi**, geçiş **bağlantı denetçisi** ve temsilci atamak için bir satır sürükleyin `AppDelegate` **Nesne** yalnızca projeye eklendi:
 
-    [![Uygulama temsilci bağlanma](xib-images/setup08.png "uygulama temsilci bağlanma")](xib-images/setup08-large.png)
+    [![Uygulama temsilci bağlanma](xib-images/setup08.png "uygulama temsilci bağlanma")](xib-images/setup08-large.png#lightbox)
 16. Değişiklikleri kaydetmek ve Mac için Visual Studio'ya geri dönün
 
 Tüm bu değişikliklerle yerinde, düzenleme **AppDelegate.cs** dosya ve şu şekilde görünür yapın:
@@ -168,13 +168,13 @@ namespace MacXib
 }
 ```
 
-Bir .xib tanımlanmış bir uygulamanın ana penceresi artık (işletim sistemi **X*- **ı**arabirimi **B**uilder) otomatik olarak bir pencere eklerken projeye dahil dosyası Denetleyici. Windows tasarımınızı düzenlemek için **çözüm paneli**, çift tıklayarak **MainWindow.xib** dosyası:
+İçinde tanımlanmış bir uygulamanın ana penceresi artık bir **.xib** otomatik olarak bir pencere denetleyicisi eklerken projeye dahil dosyası. Windows tasarımınızı düzenlemek için **çözüm paneli**, çift tıklayarak **MainWindow.xib** dosyası:
 
 ![MainWindow.xib dosya seçme](xib-images/edit01.png "MainWindow.xib dosya seçme")
 
 Bu pencere tasarım Xcode'nın arabirimi Oluşturucusu'nda açın:
 
-[![MainWindow.xib düzenleme](xib-images/edit02.png "MainWindow.xib düzenleme")](xib-images/edit02-large.png)
+[![MainWindow.xib düzenleme](xib-images/edit02.png "MainWindow.xib düzenleme")](xib-images/edit02-large.png#lightbox)
 
 
 ### <a name="standard-window-workflow"></a>Standart pencere iş akışı
@@ -205,22 +205,22 @@ Bir kullanıcı arabirimi arabirimi Oluşturucusu'nda uğradı yerleştirme işl
 
 1. Xcode'da, sürükleyin bir **düğme** gelen **kitaplığı bölüm**:
 
-    [![Kitaplıktan bir düğmesini seçerek](xib-images/xcode07.png "kitaplıktan bir düğme seçme")](xib-images/xcode07-large.png)
+    [![Kitaplıktan bir düğmesini seçerek](xib-images/xcode07.png "kitaplıktan bir düğme seçme")](xib-images/xcode07-large.png#lightbox)
 2. Düğmeyi üzerine bırakın **penceresi** içinde **arabirimi Düzenleyicisi**:
 
-    [![Düğme penceresine ekleme](xib-images/xcode08.png "penceresine düğme ekleme")](xib-images/xcode08-large.png)
+    [![Düğme penceresine ekleme](xib-images/xcode08.png "penceresine düğme ekleme")](xib-images/xcode08-large.png#lightbox)
 3. Tıklayın **başlık** özelliğinde **özniteliği denetçisi** düğmenin başlık değiştirip `Click Me`:
 
     ![Düğme özniteliklerini ayarlama](xib-images/xcode09.png "düğmesi özniteliklerini ayarlama")
 4. Sürükleme bir **etiket** gelen **kitaplığı bölüm**:
 
-    [![Kitaplıkta bir etiket seçme](xib-images/xcode10.png "kitaplıkta bir etiket seçme")](xib-images/xcode10-large.png)
+    [![Kitaplıkta bir etiket seçme](xib-images/xcode10.png "kitaplıkta bir etiket seçme")](xib-images/xcode10-large.png#lightbox)
 5. Etiketin üzerine bırakma **penceresi** düğmesinin yanındaki **arabirimi Düzenleyicisi**:
 
-    [![Bir etiket penceresine ekleme](xib-images/xcode11.png "pencereyi bir etiket ekleme")](xib-images/xcode11-large.png)
+    [![Bir etiket penceresine ekleme](xib-images/xcode11.png "pencereyi bir etiket ekleme")](xib-images/xcode11-large.png#lightbox)
 6. Etiket sağ tutamacı alın ve pencerenin kenarına olana kadar sürükleyin:
 
-    [![Etiket yeniden boyutlandırma](xib-images/xcode12.png "etiket yeniden boyutlandırma")](xib-images/xcode12-large.png)
+    [![Etiket yeniden boyutlandırma](xib-images/xcode12.png "etiket yeniden boyutlandırma")](xib-images/xcode12-large.png#lightbox)
 7. Halen seçili etiketin **arabirimi Düzenleyicisi**, geçiş **boyutu denetçisi**:
 
     ![Boyutu denetçisi seçme](xib-images/xcode13.png "boyutu denetçisi seçme")
@@ -256,7 +256,7 @@ Aşağıdakileri yapın:
 2. Seçin `NSWindowController` tasarım yüzeyine içinde.
 3. Geçiş **kimlik denetçisi** görüntüleyin ve girin `WindowController` olarak **sınıf adı**:
 
-    [![Sınıf adı düzenleme](xib-images/windowcontroller01.png "sınıf adını düzenleme")](xib-images/windowcontroller01-large.png)
+    [![Sınıf adı düzenleme](xib-images/windowcontroller01.png "sınıf adını düzenleme")](xib-images/windowcontroller01-large.png#lightbox)
 4. Değişikliklerinizi kaydetmek ve Visual Studio eşitlemek için Mac için geri dönün.
 5. A **WindowController.cs** dosya projenizde eklenecek **çözüm paneli** Mac için Visual Studio'da:
 
@@ -264,7 +264,7 @@ Aşağıdakileri yapın:
 6. Xcode'nın arabirimi Oluşturucu film şeridi yeniden açın.
 7. **WindowController.h** dosya kullanılabilir olacaktır:
 
-    [![Xcode eşleşen .h dosyasında](xib-images/windowcontroller03.png "Xcode eşleşen .h dosyasında")](xib-images/windowcontroller03-large.png)
+    [![Xcode eşleşen .h dosyasında](xib-images/windowcontroller03.png "Xcode eşleşen .h dosyasında")](xib-images/windowcontroller03-large.png#lightbox)
 
 
 ### <a name="outlets-and-actions"></a>Çıkışlar ve eylemleri
@@ -278,7 +278,7 @@ Xcode'da, doğrudan kodda eklenen çıkışlar ve eylemleri *denetimini sürükl
 
 Xamarin.Mac geliştiriciler için bu eylem ve çıkış oluşturmak istediğiniz C# dosyasına karşılık gelen Objective-C saplama dosyalarıyla sürükleyin anlamına gelir. Mac için Visual Studio'nun oluşturduğu adlı bir dosya **MainWindow.h** arabirimi Oluşturucusu'nu kullanmak için oluşturulan bir Xcode projesi dolgusu bir parçası olarak:
 
-[![Xcode'da .h dosyası örneği](xib-images/xcode16.png "xcode'da .h dosyası örneği")](xib-images/xcode16-large.png)
+[![Xcode'da .h dosyası örneği](xib-images/xcode16.png "xcode'da .h dosyası örneği")](xib-images/xcode16-large.png#lightbox)
 
 Bu saplama .h dosyası yansıtan **MainWindow.designer.cs** Xamarin.Mac projeye yeni bir otomatik olarak eklenen `NSWindow` oluşturulur. Bu dosya arabirimi Oluşturucu tarafından yapılan değişiklikleri eşitlemek için kullanılır ve böylece kullanıcı Arabirimi öğeleri için C# kodu gösterilen burada çıkışlar ve eylemleri oluşturacağız.
 
@@ -291,22 +291,22 @@ Aşağıdakileri yapın:
 
 1. Ekranın üst eldeki sağda köşesindeki Xcode'da tıklatın **çift daire** açmak için düğmeye **Yardımcısı Düzenleyicisi**:
 
-    [![Yardımcısı Düzenleyicisi'ni seçerek](xib-images/outlet01.png "Yardımcısı Düzenleyici seçme")](xib-images/outlet01-large.png)
+    [![Yardımcısı Düzenleyicisi'ni seçerek](xib-images/outlet01.png "Yardımcısı Düzenleyici seçme")](xib-images/outlet01-large.png#lightbox)
 2. Xcode ile bölünmüş görünüm moduna geçiş yapar **arabirimi Düzenleyicisi** bir tarafında ve **Kod düzenleyicisinde** diğer.
 3. Xcode otomatik olarak çekilen bildirimi **MainWindowController.m** dosyasını **Kod düzenleyicisinde**, hatalı olduğu. Çıkışlar ve eylemleri yukarıda nelerdir bizim bilgi gelen unutmayın, biz gerek **MainWindow.h** seçili.
 4. Üstündeki **Kod düzenleyicisinde** tıklayın **otomatik bağlantı** seçip **MainWindow.h** dosyası:
 
-    [![Doğru .h dosyası seçme](xib-images/outlet02.png "doğru .h dosyası seçme")](xib-images/outlet02-large.png)
+    [![Doğru .h dosyası seçme](xib-images/outlet02.png "doğru .h dosyası seçme")](xib-images/outlet02-large.png#lightbox)
 5. Xcode şimdi seçili doğru dosya olmalıdır:
 
-    [![Seçili doğru dosya](xib-images/outlet03.png "seçili doğru dosya")](xib-images/outlet03-large.png)
+    [![Seçili doğru dosya](xib-images/outlet03.png "seçili doğru dosya")](xib-images/outlet03-large.png#lightbox)
 6. **Son adım çok önemlidir!** Seçili doğru dosya yoksa, çıkışlar oluşturmak mümkün olmayacaktır ve C# yanlış sınıf için bir eylem veya bunlar sunulur!
 7. İçinde **arabirimi Düzenleyicisi**, basılı **denetim** anahtar klavyede ve tıklatıp sürükleme oluşturduğumuz Yukarıdaki kod düzenleyicisinde etiketi yalnızca aşağıda `@interface MainWindow : NSWindow { }` kod:
 
-    [![Yeni bir çıkış oluşturmak için sürükleme](xib-images/outlet04.png "yeni çıkışı oluşturmak için sürükleme")](xib-images/outlet04-large.png)
+    [![Yeni bir çıkış oluşturmak için sürükleme](xib-images/outlet04.png "yeni çıkışı oluşturmak için sürükleme")](xib-images/outlet04-large.png#lightbox)
 8. Bir iletişim kutusu görüntülenir. Bırakın **bağlantı** çıkışı için ayarlayabilir ve girin `ClickedLabel` için **adı**:
 
-    [![Çıkış özelliklerini ayarlama](xib-images/outlet05.png "çıkışı özelliklerini ayarlama")](xib-images/outlet05-large.png)
+    [![Çıkış özelliklerini ayarlama](xib-images/outlet05.png "çıkışı özelliklerini ayarlama")](xib-images/outlet05-large.png#lightbox)
 9. Tıklatın **Bağlan** düğmesi çıkış oluşturmak için:
 
     ![Tamamlanan çıkışı](xib-images/outlet06.png "tamamlanmış çıkışı")
@@ -322,13 +322,13 @@ Aşağıdakileri yapın:
 1. Biz yine olduğundan emin olun **Yardımcısı Düzenleyicisi** ve **MainWindow.h** dosyasıdır görünür **Kod düzenleyicisinde**.
 2. İçinde **arabirimi Düzenleyicisi**, basılı **denetim** anahtar klavyede ve oluşturduğumuz Yukarıdaki kod düzenleyicisinde düğmesini tıklatıp sürükleme yalnızca aşağıda `@property (assign) IBOutlet NSTextField *ClickedLabel;` kod:
 
-    [![Bir eylem oluşturmak için sürükleme](xib-images/action01.png "bir eylem oluşturmak için sürükleme")](xib-images/action01-large.png)
+    [![Bir eylem oluşturmak için sürükleme](xib-images/action01.png "bir eylem oluşturmak için sürükleme")](xib-images/action01-large.png#lightbox)
 3. Değişiklik **bağlantı** eylem türü:
 
-    [![Bir eylem türü seçin](xib-images/action02.png "bir eylem türü seçin")](xib-images/action02-large.png)
+    [![Bir eylem türü seçin](xib-images/action02.png "bir eylem türü seçin")](xib-images/action02-large.png#lightbox)
 4. Girin `ClickedButton` olarak **adı**:
 
-    [![Eylem yapılandırma](xib-images/action03.png "eylemi yapılandırma")](xib-images/action03-large.png)
+    [![Eylem yapılandırma](xib-images/action03.png "eylemi yapılandırma")](xib-images/action03-large.png#lightbox)
 5. Tıklatın **Bağlan** düğmesi eylemi oluşturmak için:
 
     ![Tamamlanan eylem](xib-images/action04.png "tamamlanan eylem")
@@ -341,7 +341,7 @@ Kullanıcı arabirimiyle kablolu yukarı ve C# kodundaki için Visual Studio'ya 
 
 Oluşturulan, kullanıcı arabirimi ve kodu çıkışlar ve eylemleri aracılığıyla kullanıma sunulan kullanıcı Arabirimi öğeleri ile programınızı hayata geçirin için kodu yazmaya hazırsınız. Örneğin, açık **MainWindow.cs** dosyasını çift tıklatarak düzenleme için **çözüm paneli**:
 
-[![MainWindow.cs dosya](xib-images/code01.png "MainWindow.cs dosyası")](xib-images/code01-large.png)
+[![MainWindow.cs dosya](xib-images/code01.png "MainWindow.cs dosyası")](xib-images/code01-large.png#lightbox)
 
 Ve aşağıdaki kodu ekleyin `MainWindow` sınıfı, yukarıda oluşturduğunuz örnek çıkış çalışmak için:
 
@@ -407,7 +407,7 @@ Xcode Mac için Visual Studio'ya geri döndüğünüzde, Xcode'da yaptığınız
 
 Seçerseniz **MainWindow.designer.cs** içinde **çözüm paneli** nasıl bizim çıkışı ve eylem yukarı bizim C# kodunda kablolu görmeye devam:
 
-[![Xcode ile değişiklikler eşitleniyor](xib-images/sync01.png "Xcode ile değişiklikler eşitleniyor")](xib-images/sync01-large.png)
+[![Xcode ile değişiklikler eşitleniyor](xib-images/sync01.png "Xcode ile değişiklikler eşitleniyor")](xib-images/sync01-large.png#lightbox)
 
 Bildirim nasıl iki tanımlarında **MainWindow.designer.cs** dosyası:
 
@@ -447,10 +447,10 @@ Yeni bir pencere eklemek için aşağıdakileri yapın:
 3. Girin `PreferencesWindow` için **adı** tıklatıp **yeni** düğmesi.
 4. Çift **PreferencesWindow.xib** dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın:
 
-    [![Xcode penceresinde düzenleme](xib-images/new02.png "Xcode penceresinde düzenleme")](xib-images/new02-large.png)
+    [![Xcode penceresinde düzenleme](xib-images/new02.png "Xcode penceresinde düzenleme")](xib-images/new02-large.png#lightbox)
 5. Arabiriminizin tasarım:
 
-    [![Windows düzeni tasarlama](xib-images/new03.png "windows düzeni tasarlama")](xib-images/new03-large.png)
+    [![Windows düzeni tasarlama](xib-images/new03.png "windows düzeni tasarlama")](xib-images/new03-large.png#lightbox)
 6. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 Aşağıdaki kodu ekleyin **AppDelegate.cs** yeni penceresini görüntülemek için:
@@ -488,7 +488,7 @@ Yeni bir görünüm eklemek için aşağıdakileri yapın:
 3. Girin `SubviewTable` için **adı** tıklatıp **yeni** düğmesi.
 4. Çift **SubviewTable.xib** arabirimi Oluşturucusu'nda düzenlemek için açın ve kullanıcı arabirimini tasarlamak için dosya:
 
-    [![Xcode'da yeni görünüm tasarlama](xib-images/view02.png "xcode'da yeni görünümü tasarlama")](xib-images/view02-large.png)
+    [![Xcode'da yeni görünüm tasarlama](xib-images/view02.png "xcode'da yeni görünümü tasarlama")](xib-images/view02-large.png#lightbox)
 5. Tüm gerekli eylemleri ve çıkışlar bağlayın.
 6. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -529,7 +529,7 @@ public enum SubviewType
 
 Görünüm harcayan ve görüntülemeden pencerenin .xib dosyasını düzenleyin. Ekleme bir **Özel Görünüm** , davranacağı kapsayıcı olarak görünüm için C# kodu ve prizine kendisine adlı sunmaya tarafından belleğe yüklenmiş bir kez `ViewContainer`:
 
-[![Gerekli çıkışı oluşturma](xib-images/view03.png "gerekli çıkışı oluşturma")](xib-images/view03-large.png)
+[![Gerekli çıkışı oluşturma](xib-images/view03.png "gerekli çıkışı oluşturma")](xib-images/view03-large.png#lightbox)
 
 Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -577,7 +577,7 @@ DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 
 Bu yeni görünüm için Görünüm görüntülenecek denetleyicisi yeni bir örneğini oluşturur, türünü (projeye eklenen enum tarafından belirtildiği şekilde) ayarlar ve kullandığı `DisplaySubview` gerçekten görüntülemek için pencerenin sınıfına eklediğiniz yöntemi. Örneğin:
 
-[![Örnek uygulamayı çalıştıran](xib-images/view04.png "örnek uygulamayı çalıştırma")](xib-images/view04-large.png)
+[![Örnek uygulamayı çalıştıran](xib-images/view04.png "örnek uygulamayı çalıştırma")](xib-images/view04-large.png#lightbox)
 
 Xamarin.Mac uygulamasında Windows ile çalışma hakkında daha fazla bilgi için lütfen bkz bizim [Windows](~/mac/user-interface/window.md) ve [iletişim kutularını](~/mac/user-interface/dialog.md) belgeleri.
 
@@ -590,9 +590,9 @@ Bu makalede Xamarin.Mac uygulamasında .xib dosyalarıyla çalışma ayrıntıl�
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacImages (örnek)](https://developer.xamarin.com/samples/mac/MacImages/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Windows](~/mac/user-interface/window.md)
-- [Menüleri](~/mac/user-interface/menu.md)
-- [İletişim kutuları](~/mac/user-interface/dialog.md)
+- [Menüler](~/mac/user-interface/menu.md)
+- [İletişim Kutuları](~/mac/user-interface/dialog.md)
 - [İmajlarla çalışma](~/mac/app-fundamentals/image.md)
 - [macOS İnsan Arabirimi yönergelerine](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

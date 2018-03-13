@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f02c5cfd75fd9d9cd97d28ca276b32808f7a45ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-basics"></a>Yol temelleri
 
@@ -99,7 +99,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Çağrı ilk dağılımı oluşan [ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/) X ve Y koordinatları kullanarak yerine bir `SKPoint` değeri, üç çağrı arkasından [ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/) üç yanlarından çizmek için üçgen. Yalnızca iki çağrıları ikinci dağılımı sahip `LineTo` ancak çağrısıyla dağılımı sonlanana [ `Close` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/), dağılımı kapatır. Fark önemlidir:
 
-[![](paths-images/twotrianglecontours-small.png "Üçlü sayfasının ekran görüntüsü iki üçgen dağılımlarını")](paths-images/twotrianglecontours-large.png "Üçlü sayfasının ekran görüntüsü iki üçgen dağılımlarını")
+[![](paths-images/twotrianglecontours-small.png "Üçlü sayfasının ekran görüntüsü iki üçgen dağılımlarını")](paths-images/twotrianglecontours-large.png#lightbox "Üçlü sayfasının ekran görüntüsü iki üçgen dağılımlarını")
 
 Gördüğünüz gibi ilk dağılım açıkça üç bağlantılı çizgilerin dizisi olan, ancak son başlayarak bağlanmıyor. İki satır en üstünde çakışıyor. İkinci dağılımı açıkça kapatılır ve daha az biriyle gerçekleştirilmiştir `LineTo` çağırır çünkü `Close` yöntemi otomatik olarak dağılımı kapatmak için son bir satır ekler.
 
@@ -189,7 +189,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Üç platformlarda çalışan program şöyledir:
 
-[![](paths-images/strokejoins-small.png "Üçlü sayfasının ekran görüntüsü vuruş birleştirir")](paths-images/strokejoins-large.png "Üçlü sayfasının ekran görüntüsü vuruş birleştirir")
+[![](paths-images/strokejoins-small.png "Üçlü sayfasının ekran görüntüsü vuruş birleştirir")](paths-images/strokejoins-large.png#lightbox "Üçlü sayfasının ekran görüntüsü vuruş birleştirir")
 
 Gönye satırları eriştikleri sharp noktası oluşur. İki satır küçük bir açıda katıldığında, gönye oldukça uzun olabilir. Aşırı uzun Köşeden birleştirmeler önlemek için gönye uzunluğu değeriyle sınırlı [ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/) özelliği `SKPaint`. Bu uzunluğunu aşan gönye devre dışı bir Eğim birleştirme olmasını kesilmiş Tasarımlı.
 

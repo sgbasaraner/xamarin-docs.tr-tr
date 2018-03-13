@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: e09ac502298296277d9264bcd18f1ce1cbbf0c55
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 53309be2712f14c79b84c2eabb519b86dd73a404
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-controltemplate"></a>ControlTemplate oluşturma
 
@@ -100,7 +100,7 @@ Bu yöntem etkin değiştirir [ `ControlTemplate` ](https://developer.xamarin.co
 ![](creating-images/aqua-theme.png "Açık mavi denetim şablonu")
 
 > [!NOTE]
-> **Not**: üzerinde bir `ContentPage`, `Content` özelliği atanabilir ve `ControlTemplate` özelliği de ayarlanabilir. Bu meydana geldiğinde, varsa `ControlTemplate` içeren bir `ContentPresenter` örneği, atanmış içerik `Content` özelliği tarafından sunulabilir `ContentPresenter` içinde `ControlTemplate`.
+> Üzerinde bir `ContentPage`, `Content` özelliği atanabilir ve `ControlTemplate` özelliği de ayarlanabilir. Bu meydana geldiğinde, varsa `ControlTemplate` içeren bir `ContentPresenter` örneği, atanmış içerik `Content` özelliği tarafından sunulabilir `ContentPresenter` içinde `ControlTemplate`.
 
 ### <a name="setting-a-controltemplate-with-a-style"></a>ControlTemplate bir stil ile ayarlama
 
@@ -148,7 +148,7 @@ Oluşturma yanı sıra [ `ControlTemplate` ](https://developer.xamarin.com/api/t
 
 Eklerken bir [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) sayfa düzeyinde bir [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) eklenen [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)ve ardından `ControlTemplate` örnekleri dahil içinde `ResourceDictionary`.
 
-## <a name="creating-a-controltemplate-in-c35"></a>C &#35;ControlTemplate oluşturma;
+## <a name="creating-a-controltemplate-in-c35"></a>C'de ControlTemplate oluşturma&#35;
 
 Tanımlamak için bir [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) uygulama düzeyinde bir `class` bu temsil oluşturulmalıdır `ControlTemplate`. Sınıf türetin [düzeni](~/xamarin-forms/user-interface/layouts/index.md) şablonu, aşağıdaki kod örneğinde gösterildiği gibi kullanılan:
 
@@ -213,7 +213,7 @@ Bu makalede nasıl oluşturulacağı ve denetim şablonları kullanma gösterilm
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Stilleri](~/xamarin-forms/user-interface/styles/index.md)
+- [Stiller](~/xamarin-forms/user-interface/styles/index.md)
 - [Basit tema (örnek)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/)
 - [ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
 - [ContentPresenter](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)

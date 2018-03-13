@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a6749ca9d8a793372ec088433780d622f2f05b41
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7ca863b92d8d7af46f4ce18f5d088347b9ca04ee
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-and-home-screen-widget-enhancements"></a>Arama ve giriş ekranı pencere öğesi geliştirmeleri
 
@@ -25,7 +25,7 @@ Pencere öğeleri (olarak da bilinen bugün uzantıları), az miktarda yararlı 
 
 Pencere öğeleri tümüyle özelleştirilebilir ve metin, görüntüler, düğmeleri, vb. gibi kullanıcı Arabirimi öğeleri içerebilir. Ayrıca, geliştirici, kendi pencere düzenini daha fazla özelleştirebilirsiniz.
 
-[ ![](widgets-images/widgets01.png "Örnek pencere öğeleri")](widgets-images/widgets01.png)
+[![](widgets-images/widgets01.png "Örnek pencere öğeleri")](widgets-images/widgets01.png#lightbox)
 
 Bir kullanıcının görüntüleyebileceği ve bir uygulamanın pencere öğeleri ile etkileşim, iki ana basamak vardır:
 

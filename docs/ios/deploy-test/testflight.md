@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8de7b91e5854e5c660788cdca055860b2ba0139e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: adc08009de308598041adb79dc02bf83bcf4a2f2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-testflight"></a>TestFlight kullanma
 
@@ -43,7 +43,7 @@ Derlemeleriniz TestFlight ile test etmek için oluşturmanız gerekecektir bir *
 
 Dağıtım profilinizi beta yetkilendirme içerdiğini onaylamak zaman [yapınızın xcode'da doğrulama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)aşağıda gösterildiği gibi:
 
-[ ![](testflight-images/validate-build.png "Apple App gönderiliyor")](testflight-images/validate-build.png)
+[![](testflight-images/validate-build.png "Apple App gönderiliyor")](testflight-images/validate-build.png#lightbox)
 
 
 ## <a name="testflight-workflow"></a>TestFlight iş akışı
@@ -66,7 +66,7 @@ Aşağıdaki iş akışı Beta uygulamanızı test etmek için TestFlight kullan
 1.  Oturum açma [iTunes Bağlan Portal](https://itunesconnect.apple.com/) Apple Geliştirici kimlik bilgilerinizi kullanarak.
 2.  Seçin **uygulamalarım**:
 
-    [ ![](testflight-images/my-apps.png "Uygulamalarım seçin")](testflight-images/my-apps.png)
+    [![](testflight-images/my-apps.png "Uygulamalarım seçin")](testflight-images/my-apps.png#lightbox)
 
 
 3.  Üzerinde **My uygulamaları** ekranında, tıklayın  **+**  yeni bir uygulama eklemek için ekranın sol üst köşesindeki düğmesi. Mac ve iOS Geliştirici hesabınız varsa, burada yeni uygulama türü seçmek için istenir.
@@ -81,8 +81,8 @@ Yeni bir iTunes Connect kaydı oluşturma hakkında daha fazla bilgi için başv
 
 Form, aşağıda gösterildiği gibi tam olarak, uygulamanızın Info.plist dosyasındaki bilgileri yansıtması gerekir:
 
-[ ![](testflight-images/infoplist.png "Uygulamanın Info.plist") ](testflight-images/infoplist.png) 
- [ ![ ] (testflight-images/newiosapp.png "form üzerinde iTunes Bağlan")](testflight-images/newiosapp.png)
+[![](testflight-images/infoplist.png "Uygulamanın Info.plist")](testflight-images/infoplist.png#lightbox)
+[![](testflight-images/newiosapp.png "form üzerinde iTunes Bağlan")](testflight-images/newiosapp.png#lightbox)
 
 -  **Ad** — uygulama paketi ayarlarken kullanılan tanımlayıcı adı. Bu bir tam eşleşme olmalıdır **uygulama adı** girişi, `Info.plist`.
 -  **Birincil dili** — uygulama içinde kullanılan temel dili. Bu genellikle konuşurken herhangi bir dil olur.
@@ -104,7 +104,7 @@ Connect kaydı iTunes oluşturulduktan sonra yeni derlemeler yükleyebildiğini 
 
  Mac için Visual Studio'da bir ikili oluşturmak için kullanmanız gerekecektir _arşiv_ işlevi. Projeye sağ tıklayın ve seçin **arşiv yayımlama için**aşağıda gösterildiği gibi:
 
- [ ![](testflight-images/new-archive.png "Yayımlama Arşivi'ni seçin")](testflight-images/new-archive.png)
+ [![](testflight-images/new-archive.png "Yayımlama Arşivi'ni seçin")](testflight-images/new-archive.png#lightbox)
 
 
  Başvurmak [Distributable oluşturma](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) daha fazla bilgi için Kılavuzu.
@@ -113,11 +113,11 @@ Connect kaydı iTunes oluşturulduktan sonra yeni derlemeler yükleyebildiğini 
 
  Bir arşiv oluşturma otomatik olarak açılır **arşivler Görünüm**, çözümü tarafından gruplandırılmış tüm arşivlenmiş projeleri görüntüleme. Uygulamanızı imzalamak ve dağıtım için hazırlamak üzere seçin **oturum ve Dağıt...** , aşağıda gösterilen:
 
-[ ![](testflight-images/archive-view.png "Bir arşiv oluşturma arşivler Görünüm otomatik olarak açılır")](testflight-images/archive-view.png)
+[![](testflight-images/archive-view.png "Bir arşiv oluşturma arşivler Görünüm otomatik olarak açılır")](testflight-images/archive-view.png#lightbox)
 
  Bu, Yayımlama Sihirbazı'nı açar. Seçin **App Store** dağıtım kanal paket oluşturmak ve uygulama Yükleyicisi'ni açın. Sağlama profili ekranında, imzalama kimliğinize ve sağlama profili seçin veya başka bir kimlikle yeniden oturum açın. Paketinizi ayrıntılarını doğrulayın ve tıklatın **Yayımla** kaydetmek için `.ipa`
 
-[ ![](testflight-images/group.png "Kimlik imzalama ve sağlama profili seçin veya başka bir kimlikle yeniden imzalama")](testflight-images/group.png)
+[![](testflight-images/group.png "Kimlik imzalama ve sağlama profili seçin veya başka bir kimlikle yeniden imzalama")](testflight-images/group.png#lightbox)
 
  Başvurmak [uygulamanızı apple'a gönderme](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) adımları hakkında daha fazla bilgi için bölüm.
 
@@ -156,11 +156,11 @@ Dönme üzerine **My uygulamaları** bölüm iTunes Bağlan uygulamanız başar�
 
 TestFlight'ı kullanmaya başlamak için Gözat **yayın öncesi** , uygulamanızın sekmesi. Yapılar, iç Sınayıcılar ve dış sınayıcılar listesini gösteren üç sekme aşağıda gösterildiği gibi görmeniz gerekir:
 
-[ ![](testflight-images/app-uploaded.png "Yapılar, iç Sınayıcılar ve dış sınayıcılar sekmeleri")](testflight-images/app-uploaded.png)
+[![](testflight-images/app-uploaded.png "Yapılar, iç Sınayıcılar ve dış sınayıcılar sekmeleri")](testflight-images/app-uploaded.png#lightbox)
 
 Meta veri uygulamanıza eklemek için yapı numarası TestFlight sonra'ni tıklatın:
 
-[ ![](testflight-images/metadata.png "Add Metadata")](testflight-images/metadata.png)
+[![](testflight-images/metadata.png "Add Metadata")](testflight-images/metadata.png#lightbox)
 
 Altında **Test bilgileri**, örneği için uygulamanız ile ilgili önemli bilgiler ile sınayıcılar sağlayabilir:
 
@@ -178,11 +178,11 @@ Unutmayın bu meta veriler **değil** iç Sınayıcılar için gerekli ancak **o
 
 Uygulamanızı test etme başlatmaya hazır olduğunuzda Aç **TestFlight Beta test** geçiş sürümünüz için:
 
-[ ![](testflight-images/turn-on-testing.png "TestFlight Beta test anahtarda Aç")](testflight-images/turn-on-testing.png)
+[![](testflight-images/turn-on-testing.png "TestFlight Beta test anahtarda Aç")](testflight-images/turn-on-testing.png#lightbox)
 
 Her için etkin bir yapıdır **60 gün** TestFlight Beta anahtarı açık tarihinden itibaren. Her bir derlemesi için kaç gün sol görebilirsiniz **Test bilgileri** sayfa:
 
-[ ![](testflight-images/daysleft.png "Test bilgileri sayfası")](testflight-images/daysleft.png)
+[![](testflight-images/daysleft.png "Test bilgileri sayfası")](testflight-images/daysleft.png#lightbox)
 
 Sınama herhangi bir zamanda kapatılabilir.
 
@@ -198,25 +198,25 @@ Her yapı en fazla 25 üyeleri ile paylaşılabilir.
 
 Sınayıcılar eklemek için Gözat **kullanıcılar ve roller** ana iTunes bağlanma ekranında:
 
-[ ![](testflight-images/users-and-roles.png "Kullanıcılar ve roller ana iTunes bağlanma ekranında")](testflight-images/users-and-roles.png)
+[![](testflight-images/users-and-roles.png "Kullanıcılar ve roller ana iTunes bağlanma ekranında")](testflight-images/users-and-roles.png#lightbox)
 
 Varolan iTunes Bağlan kullanıcılar listesinde görünür. Bunları seçmek için bunların adını tıklatın, Aç **iç Tester** geçin ve tıklatın **kaydetmek**:
 
-[ ![](testflight-images/internal-tester.png "İç Tester anahtarda Aç")](testflight-images/internal-tester.png)
+[![](testflight-images/internal-tester.png "İç Tester anahtarda Aç")](testflight-images/internal-tester.png#lightbox)
 
 Listede olmayan bir kullanıcı eklemek için seçin  **+**  düğmesine *kullanıcılar*ve bir hesap oluşturmak için ilk adını, soyadını ve e-posta adresi sağlayın. Kullanıcı hesabını etkinleştirmek için e-postalarına onaylamanız gerekir:
 
-[ ![](testflight-images/add-new-user.png "Kullanıcı ekleme")](testflight-images/add-new-user.png)
+[![](testflight-images/add-new-user.png "Kullanıcı ekleme")](testflight-images/add-new-user.png#lightbox)
 
 İçin dönerseniz **My uygulamaları > yayın öncesi > iç sınayıcılar**, beta TestFlight iç test için eklenen kullanıcıları artık görürsünüz:
 
-[ ![](testflight-images/select-users.png "Beta TestFlight iç test için eklenen kullanıcıların listesi")](testflight-images/select-users.png)
+[![](testflight-images/select-users.png "Beta TestFlight iç test için eklenen kullanıcıların listesi")](testflight-images/select-users.png#lightbox)
 
 Kişinin adını seçerek ve tıklatarak bu sınayıcılar davet edebilirsiniz **davet** düğmesi. Bunlar uygulamanızı test etmek için bir davet içeren bir e-posta alırsınız.
 
 Kullanıcıların davet iç sınayıcılar sayfasının Durum sütununda durumunu görebilirsiniz:
 
-[ ![](testflight-images/status-added.png "Davet durumu")](testflight-images/status-added.png)
+[![](testflight-images/status-added.png "Davet durumu")](testflight-images/status-added.png#lightbox)
 
 
 ### <a name="external-testers"></a>Dış sınayıcılar
@@ -225,13 +225,13 @@ Beta uygulamanızı test etmek için harici sınayıcılar davet önce onu Beta 
 
 Gözden geçirme için uygulamanızı göndermek için tıklatın **göndermek için Beta uygulama gözden** metnin yanında yapınızın, aşağıdaki resimde gösterildiği gibi:
 
-[ ![](testflight-images/beta-app-review.png "Beta uygulama İnceleme için Gönder")](testflight-images/beta-app-review.png)
+[![](testflight-images/beta-app-review.png "Beta uygulama İnceleme için Gönder")](testflight-images/beta-app-review.png#lightbox)
 
 Uygulamanızı gözden geçirmek, tüm gerekli meta veriler TestFlight Beta Bilgileri sayfasında girmeniz gerekir.
 
 Şimdi davetleri hazırlamak ve en fazla 2000 dış sınayıcılar dış sınayıcılar sekmesi aracılığıyla kendi e-posta, ad ve Soyadı, aşağıdaki ekran görüntüsünde gösterildiği gibi girerek eklemek başlatabilirsiniz. Girdiğiniz e-posta kendi Apple kimliği olmak zorunda değildir; Bu, yalnızca üzerinde daveti alacak e-postadır.
 
-[ ![](testflight-images/add-external.png "Sınayıcılar davet et")](testflight-images/add-external.png)
+[![](testflight-images/add-external.png "Sınayıcılar davet et")](testflight-images/add-external.png#lightbox)
 
 Çok sayıda dış sınayıcılar varsa, kullanabileceğiniz **Dosya Al** almak için bağlantı bir `CSV` dosya her satır aşağıdaki biçimde:
 
@@ -243,7 +243,7 @@ Dış sınayıcılar düzenlenmiş, sınayıcılar tutmaya yardımcı olmak içi
 
 Dış sınayıcılar ayrıntılarını girdikten sonra tıklatın **Ekle** ve bunları davet etmek için onay kullanıcıların sahip onaylayın:
 
-[ ![](testflight-images/confirm-consent.png "Bunları davet etmek için onay kullanıcınız onaylayın")](testflight-images/confirm-consent.png)
+[![](testflight-images/confirm-consent.png "Bunları davet etmek için onay kullanıcınız onaylayın")](testflight-images/confirm-consent.png#lightbox)
 
 Yalnızca bir başarılı Beta uygulama gözden geçirdikten sonra dış Test edenlere Davetleri Gönder mümkün olacaktır. Bu noktada, altındaki metin **dış** sayfa değiştirir üzerinde yapı **Gönder başvurulmasını**. Tüm Test edenlere önceden eklediğiniz davetiye göndermek için burayı tıklatın.
 
@@ -253,13 +253,13 @@ Uygulamanızı reddedilirse gösterilen sorunları giderin gerekecek **çözüml
 
 Tester davet sonra bunlar aşağıdaki ekran görüntüsünde benzer bir e-postası alır:
 
-[ ![](testflight-images/tester-email.png "Bir örnek davet e-posta")](testflight-images/tester-email.png)
+[![](testflight-images/tester-email.png "Bir örnek davet e-posta")](testflight-images/tester-email.png#lightbox)
 
 Bunlar tıkladığınızda **TestFlight içinde açmak** uygulamanızı TestFlight uygulamada açılır veya önceden indirilmiş taşınmadığından, uygulama mağazası doğrudan ve bunları indirme izin düğmesi.
 
 Bir kez, uygulama açıldığında TestFlight içinde ne sınamak Ayrıntılar gösterilir ve uygulama, iOS 8.0 (veya üstü) aygıtınız yüklenecek tester ister:
 
-[ ![](testflight-images/install-app.png "TestFlight ne sınamak Ayrıntılar gösterilir")](testflight-images/install-app.png)
+[![](testflight-images/install-app.png "TestFlight ne sınamak Ayrıntılar gösterilir")](testflight-images/install-app.png#lightbox)
 
 Test derlemeleri uygulama adı önceki bir turuncu noktayla aygıtın giriş ekranında gösterilir.
 
@@ -269,7 +269,7 @@ Sınayıcılar TestFlight uygulama üzerinden geri bildirimde bulunun ve bu bilg
 
 Beta sürümü test tamamlandıktan sonra uygulamanızı Apple App Store gözden geçirme için şimdi gönderebilirsiniz. Bu işlem çok straightforwardly iTunes Bağlan tıklayarak yapılır **gözden geçirme için gönderme** düğmesi, aşağıda gösterildiği gibi:
 
-[ ![](testflight-images/submit-for-review.png "Gözden geçirme düğmesi için Gönder'i tıklatın")](testflight-images/submit-for-review.png)
+[![](testflight-images/submit-for-review.png "Gözden geçirme düğmesi için Gönder'i tıklatın")](testflight-images/submit-for-review.png#lightbox)
 
 ## <a name="summary"></a>Özet
 
@@ -278,6 +278,6 @@ Bu makalede, Apple'nın TestFlight Beta test iTunes Bağlan aracılığıyla kul
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Bir iTunes Connect kaydı oluşturma](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md#creating)
-- [Uygulama mağazası yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [App Store’da Yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Uygulama mağazası dağıtım için bir uygulama sağlama](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#provisioning)
 - [Apple TestFlight Beta kullanma](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/BetaTestingTheApp.html#//apple_ref/doc/uid/TP40011225-CH35-SW2)

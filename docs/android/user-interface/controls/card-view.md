@@ -7,18 +7,17 @@ ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: b8f643c8158c5a3a849a3d8ee3dd8d0e7e30addf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 46eec10bbabec74719affabce1e8033a083680be
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cardview"></a>Kart görünümü
 
 _Kart görünümü pencere öğesi kartları benzer görünümlerde metin ve resim içerik sunan UI bir bileşendir. Bu kılavuz, Android önceki sürümleriyle geriye dönük uyumluluk korurken Xamarin.Android uygulamalarda kart görünümü özelleştirmek ve kullanmak açıklanmaktadır._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -59,7 +58,6 @@ Eklenecek `Xamarin.Android.Support.v7.CardView` Visual Studio'da paket:
 Bir Android 5.0 uygulama projesi yapılandırma konusunda bilgi edinmek için [ayarı oluşturan bir Android 5.0 proje](~/android/platform/lollipop.md).
 NuGet paketlerini yükleme hakkında daha fazla bilgi için bkz: [izlenecek yol: de dahil olmak üzere bir NuGet projenizdeki](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-<a name="basic" />
 
 ## <a name="introducing-cardview"></a>Kart görünümü Tanıtımı
 
@@ -94,11 +92,10 @@ Varolan içeriğini değiştirmek için bu XML kullanıyorsanız **Main.axml**, 
 
 Bu düzen örnek varsayılan oluşturur `CardView` tek bir çizgi aşağıdaki ekran görüntüsünde gösterildiği gibi bir metin:
 
-[![Kart görünümü ekran beyaz arka plan ve metin satırı ile](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png)
+[![Kart görünümü ekran beyaz arka plan ve metin satırı ile](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
 
 Bu örnekte, uygulama stili ışık malzeme tema ayarlanır (`Theme.Material.Light`) böylece `CardView` gölgeleri ve kenarları daha kolay. Tema Android 5.0 uygulamalar hakkında daha fazla bilgi için bkz: [malzeme tema](~/android/user-interface/material-theme.md). Sonraki bölümde, biz nasıl özelleştirileceğini öğreneceksiniz `CardView` bir uygulama için.
 
-<a name="customizing" />
 
 ## <a name="customizing-cardview"></a>Kart görünümü özelleştirme
 
@@ -159,30 +156,28 @@ Bu ad alanı çağırabilirsiniz `card_view` ve hatta `myapp` seçerseniz (yaln�
 
 Görüntüyü bir fotoğraf görüntüleme uygulaması görüntülemek için bu düzeni örneği kullanıldığında `CardView` aşağıdaki ekran görüntüsünde gösterildiği gibi bir fotoğraf anlık görünüm vardır:
 
-[![Bir resim ve görüntü altına resim yazısı kart görünümü](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png)
+[![Bir resim ve görüntü altına resim yazısı kart görünümü](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png#lightbox)
 
 Bu ekran alınırlar [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer) kullanan örnek uygulaması bir `RecyclerView` kaydırma listesini sunmak için pencere öğesi `CardView` fotoğraf görüntüleme için görüntüler. Hakkında daha fazla bilgi için `RecyclerView`, bkz: [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) Kılavuzu.
 
 Dikkat bir `CardView` birden fazla alt görünümü içerik alanında görüntüleyebilirsiniz. Örneğin, yukarıdaki fotoğraf uygulama örneği görüntüleme içerik alanının oluşur bir `ListView` içeren bir `ImageView` ve `TextView`. Ancak `CardView` örnekleri genellikle düzenlenir dikey, ayrıca bunları yatay düzenleyebilirsiniz (bkz [özel görünüm stili oluşturma](~/android/user-interface/material-theme.md#customview) örnek bir ekran görüntüsü için).
 
-<a name="layout" />
 
 ### <a name="cardview-layout-options"></a>Kart görünümü Düzen Seçenekleri
 
 `CardView` doldurma, yükseltme, köşe yarıçapı ve arka plan rengi etkileyen bir veya daha fazla öznitelikleri ayarlayarak düzenleri özelleştirilebilir:
 
-[![Kart görünümü öznitelikleri diyagramı](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png)
+[![Kart görünümü öznitelikleri diyagramı](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png#lightbox)
 
 Her öznitelik da dinamik olarak bir karşılık gelen çağırarak değiştirilebilir `CardView` yöntemi (hakkında daha fazla bilgi için `CardView` yöntemleri bkz [kart görünümü sınıf başvurusu](https://developer.android.com/reference/android/support/v7/widget/CardView.html)).
 Bu öznitelikler (dışında arka plan rengi) birim tarafından izlenen bir ondalık sayı bir boyut değeri kabul unutmayın. Örneğin, `11.5dp` 11.5 yoğunluğu bağımsız piksel belirtir.
 
-<a name="padding" />
 
 #### <a name="padding"></a>Doldurma
 `
 CardView` kart içinde konumlandırmak için beş doldurma öznitelikleri sunar. Düzen XML ayarlayabilirsiniz veya benzer yöntemleri kodunuzda çağırabilirsiniz:
 
-[![Öznitelikleri doldurma kart görünümü diyagramı](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png)
+[![Öznitelikleri doldurma kart görünümü diyagramı](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 
 Doldurma öznitelikleri gibi açıklanmıştır:
 
@@ -200,13 +195,12 @@ Doldurma öznitelikleri gibi açıklanmıştır:
 Örneğin, varsa `contentPadding` yeterince fotoğraf görüntüleme uygulamada daha fazla `CardView` görüntü ve kart üzerinde gösterilen metin kırpma.
 
 
-<a name="elevation" />
 
 #### <a name="elevation"></a>Yükseltme
 
 `CardView` kendi ayrıcalık denetlemek için iki ayrıcalık öznitelik sağlar ve sonuç olarak, gölgesini boyutu:
 
-[![Kart görünümü ayrıcalık öznitelikleri diyagramı](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png)
+[![Kart görünümü ayrıcalık öznitelikleri diyagramı](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png#lightbox)
 
 Yükseltme öznitelikleri gibi açıklanmıştır:
 
@@ -217,13 +211,12 @@ Yükseltme öznitelikleri gibi açıklanmıştır:
 Daha büyük değerlerini `cardElevation` yapmak için gölge boyutunu artırın `CardView` float arka plan üstüne yüksek görünüyor. `cardElevation` Özniteliği de görünümler çakışan çizim sırası belirler; bu, `CardView` başka bir çakışan görünümü ve daha düşük bir yükseltme ayarı çakışan herhangi görünümlerle üstü daha yüksek bir ayrıcalık ayar ile altında çizilmiştir.
 `cardMaxElevation` Ayardır uygulamanızı ayrıcalık dinamik olarak değiştiğinde için yararlı &ndash; bu ayarlarla tanımladığınız sınırı aşan genişletme gölge engeller.
 
-<a name="radius" />
 
 #### <a name="corner-radius-and-background-color"></a>Köşe yarıçapı ve arka plan rengi
 
 `CardView` köşe yarıçapı ve arka plan rengini denetlemek için kullanabileceğiniz özniteliklerin sunar. Bu iki özellik genel stilini değiştirme izin `CardView`:
 
-[![Kart görünümü köşe radious ve arka plan rengi özniteliklerini diyagramı](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png)
+[![Kart görünümü köşe radious ve arka plan rengi özniteliklerini diyagramı](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png#lightbox)
 
 Bu öznitelikler aşağıda açıklanmıştır:
 
@@ -233,8 +226,6 @@ Bu öznitelikler aşağıda açıklanmıştır:
 
 Bu diyagramda `cardCornerRadius` daha yuvarlak 10dp için ayarlanır ve `cardBackgroundColor` ayarlanır `"#FFFFCC"` (Açık Sarı).
 
-
-<a name="compatibility" />
 
 ## <a name="compatibility"></a>Uyumluluk
 
@@ -255,7 +246,6 @@ Bu uyumluluk farklılıklar yönetimine yardımcı olmak için `CardView` , düz
 
 Android önceki sürümleriyle uyumluluk bakımı hakkında daha fazla bilgi için bkz: [Bakımı Uyumluluk](https://developer.android.com/training/material/compatibility.html).
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

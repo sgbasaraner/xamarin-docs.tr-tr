@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 742780ad87672bd8a3e2bb3cb66ca582a680d44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 28218bcbf6527c818fdf2988375d1c353e9f1d27
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icon"></a>Uygulama simgesi
 
@@ -122,7 +122,7 @@ Aşağıdakileri yapın:
     ![AppIcons.appiconset düzenleme](app-icon-images/intro01.png "AppIcons.appiconset düzenleme")
 2. Gerekli her simge boyutu için simgesine tıklayın ve yukarıda oluşturulan karşılık gelen görüntü dosyasını seçin: 
 
-    [![Bir simge görüntüsü seçme](app-icon-images/intro02.png "bir simge görüntüsü seçme")](app-icon-images/intro02-large.png)
+    [![Bir simge görüntüsü seçme](app-icon-images/intro02.png "bir simge görüntüsü seçme")](app-icon-images/intro02-large.png#lightbox)
 3. Değişikliklerinizi kaydedin.
 
 
@@ -135,7 +135,7 @@ Aşağıdakileri yapın:
 1. Çift **Info.plist** içinde **çözüm paneli** açmak için **proje seçenekleri**.
 2. İçinde **Mac OS X uygulaması hedefi** 'ye tıklayın **uygulama simgeleri** seçmek için `AppIcons.appiconset` dosyası: 
 
-    [![Simge ayarlanmasını](app-icon-images/icon01.png "simge kümesi ayarlama")](app-icon-images/icon01-large.png)
+    [![Simge ayarlanmasını](app-icon-images/icon01.png "simge kümesi ayarlama")](app-icon-images/icon01-large.png#lightbox)
 3. Değişiklikleri kaydedin.
 
 Uygulama çalıştırıldığında yeni simgesine yerleştirme görüntülenir:
@@ -151,7 +151,7 @@ Bu makalede, bir simge paketleme macOS uygulama simgesini oluşturmak için gere
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacImages (örnek)](https://developer.xamarin.com/samples/mac/MacImages/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Görüntülerle Çalışma](~/mac/app-fundamentals/image.md)
 - [macOS İnsan Arabirimi yönergelerine - simgeleri ve görüntüleri](https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/image-size-and-resolution/)
 - [OS X için yüksek çözünürlüğü hakkında](https://developer.apple.com/library/content/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Introduction/Introduction.html)

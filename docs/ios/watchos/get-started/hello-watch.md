@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/14/2016
-ms.openlocfilehash: 88f9a86173756738d44f099b13177489226fa0e1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 732fd9808ded4bf97e99e7ab0e6ab63b989452d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-watch"></a>Merhaba, izleme
 
@@ -150,7 +150,7 @@ Zaten başlangıç projesi değilse,
 
 1. Tuşuna **hata ayıklama** yapı ve simulator başlatma tetiklemek için düğmesi.
 
-    [ ![](hello-watch-images/readytodebug-sml.png "Visual Studio arabirim öğeleri")](hello-watch-images/readytodebug.png)
+    [![](hello-watch-images/readytodebug-sml.png "Visual Studio arabirim öğeleri")](hello-watch-images/readytodebug.png#lightbox)
 
 Simulator başlattığında, etiket artırılacağını düğmesine basın.
 Tebrikler, kendinize bir izleme uygulaması var!
@@ -161,5 +161,5 @@ Tebrikler, kendinize bir izleme uygulaması var!
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Başlarken (örnek)](https://developer.xamarin.com/samples/monotouch/WatchKit/GettingStarted/)
-- [Kurulum ve yükleme](~/ios/watchos/get-started/installation.md)
+- [Kurulum ve Yükleme](~/ios/watchos/get-started/installation.md)
 - [İlk izleme uygulama video](http://blog.xamarin.com/your-first-watch-kit-app/)

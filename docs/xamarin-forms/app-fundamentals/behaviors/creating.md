@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: c70e4c9ec49b48c3bf6ecc6a4944d992f8ae930a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 160dd4b2326529abbb456e77391f0f73ee374f50
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms Behaviors
 
@@ -85,7 +85,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 `NumericValidationBehavior` Türetilen [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) sınıfı, burada `T` olan bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/). [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Yöntemi için bir olay işleyicisi kaydeder [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) olay ile [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) XML'dekikaydetmeyöntemi`TextChanged`bellek önlemek için olay sızdırıyor. Davranış çekirdek işlevselliğini tarafından sağlanan `OnEntryTextChanged` kullanıcı tarafından girilen değer ayrıştırır yöntemi `Entry`ve ayarlar [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) özelliğini değer değilse kırmızı bir `double`.
 
 > [!NOTE]
-> **Not**: Xamarin.Forms ayarlı değil `BindingContext` bir davranış çünkü davranışları paylaşılan ve birden çok denetim stilleri aracılığıyla uygulanır.
+> Xamarin.Forms ayarlı değil `BindingContext` bir davranış çünkü davranışları paylaşılan ve birden çok denetim stilleri aracılığıyla uygulanır.
 
 ## <a name="consuming-a-xamarinforms-behavior"></a>Xamarin.Forms davranışı kullanma
 
@@ -108,10 +108,10 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 Çalışma zamanında göre davranışı uygulama denetimi ile etkileşim için davranış yanıt. Aşağıdaki ekran görüntüleri için geçersiz giriş yanıt davranış gösterir:
 
-[ ![](creating-images/screenshots-sml.png "Örnek uygulama Xamarin.Forms davranışı")](creating-images/screenshots.png "örnek uygulama Xamarin.Forms davranışı")
+[![](creating-images/screenshots-sml.png "Örnek uygulama Xamarin.Forms davranışı")](creating-images/screenshots.png#lightbox "örnek uygulama Xamarin.Forms davranışı")
 
 > [!NOTE]
-> **Not**: davranışları, belirli bir denetim türünü (veya birçok denetimlere uygulayabileceğiniz bir üst sınıf) yazılır ve bunlar yalnızca uyumlu bir denetim eklenmesi gerekir. Uyumsuz bir denetim için bir davranış ekleme girişiminde oluşturulan bir özel durum neden olur.
+> Belirli bir denetim türünü (veya birçok denetimlere uygulayabileceğiniz bir üst sınıf) için davranışlar yazılır ve bunlar yalnızca uyumlu bir denetim eklenmesi gerekir. Uyumsuz bir denetim için bir davranış ekleme girişiminde oluşturulan bir özel durum neden olur.
 
 ### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Xamarin.Forms davranışı bir stil ile kullanma
 
@@ -181,7 +181,7 @@ Aşağıdaki örnekte gösterildiği kod bir *açık* için stil `NumericValidat
 Stilleri hakkında daha fazla bilgi için bkz: [stilleri](~/xamarin-forms/user-interface/styles/index.md).
 
 > [!NOTE]
-> **Not**: bağlanabilir özelliklerini ayarlamak veya, davranışları oluşturursanız, XAML sorgulanan bir davranış durumuna sahip ekleyebilirsiniz ancak bunlar denetimlerinde arasında Paylaşılmaması gereken bir `Style` içinde bir `ResourceDictionary`.
+> Bağlanabilir özelliklerini ayarlamak veya, davranışları oluşturursanız, XAML sorgulanan bir davranış durumuna sahip ekleyebilirsiniz ancak bunlar denetimlerinde arasında Paylaşılmaması gereken bir `Style` içinde bir `ResourceDictionary`.
 
 ### <a name="removing-a-behavior-from-a-control"></a>Bir davranış denetimden kaldırma
 

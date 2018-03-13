@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 593e17096d92d9a9764545149991817fa616e2fc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6dabba30c5242d6e7e9ef42a4025f87826a5b89e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-alerts"></a>Uyarılarla çalışma
 
@@ -21,7 +21,7 @@ _Bu makalede kullanıcı Xamarin.tvOS için bir uyarı iletisi görüntülenecek
 
 TvOS kullanıcı dikkatini veya (örneğin, bir dosyayı silmek) zararlı bir eylemi gerçekleştirmek için izni isteyin gerekiyorsa, kullanarak bir uyarı iletisi sunabilir `UIAlertViewController`:
 
-[ ![](alerts-images/alert01.png "Bir örnek UIAlertViewController")](alerts-images/alert01.png)
+[![](alerts-images/alert01.png "Bir örnek UIAlertViewController")](alerts-images/alert01.png#lightbox)
 
 İleti görüntüleme yanı sıra, düğmeler ve metin alanları eylemlerine yanıt ve geri bildirim sağlamak kullanıcının izin vermek için bir uyarı ekleyebileceğiniz durumunda.
 
@@ -31,7 +31,7 @@ TvOS kullanıcı dikkatini veya (örneğin, bir dosyayı silmek) zararlı bir ey
 
 Yukarıda belirtildiği gibi uyarıları kullanıcının dikkatini ve bunları app veya istek görüşlerinizi durumunu bildirmek için kullanılır. Uyarıları bir başlık sunması gerekir, bunlar isteğe bağlı olarak bir ileti ve bir veya daha fazla düğme veya metin alanları olabilir.
 
-[ ![](alerts-images/alert04.png "Bir örnek uyarı")](alerts-images/alert04.png)
+[![](alerts-images/alert04.png "Bir örnek uyarı")](alerts-images/alert04.png#lightbox)
 
 Apple uyarıları ile çalışmak için aşağıdaki önerileri vardır:
 
@@ -118,11 +118,11 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 
 Eylemler (düğme) için uyarı ekleme ek olarak, kullanıcı kimliklerini ve parolaları gibi bilgileri doldurmak izin vermek için uyarı metin alanları ekleyebilirsiniz:
 
-[ ![](alerts-images/alert02.png "Bir uyarı metin alanı")](alerts-images/alert02.png)
+[![](alerts-images/alert02.png "Bir uyarı metin alanı")](alerts-images/alert02.png#lightbox)
 
 Kullanıcı metin alanı seçerse, standart tvOS klavye alan için bir değer girmesini vermeden görüntülenir:
 
-[ ![](alerts-images/alert03.png "Metin girme")](alerts-images/alert03.png)
+[![](alerts-images/alert03.png "Metin girme")](alerts-images/alert03.png#lightbox)
 
 Aşağıdaki kod bir Tamam/iptal uyarı tek bir metin alanı ile bir değer girmek için görüntüler:
 
@@ -373,7 +373,7 @@ Bu makalede ele alınan çalışmak `UIAlertController` Xamarin.tvOS kullanıcı
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 92cacd7ca5ff52a2bfe9060f47332b57d637609e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ae209f8099925cc160e16cb5365625e48e6c384d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-an-aar"></a>Bağlama bir. AAR
 
@@ -35,7 +35,6 @@ Bu kılavuzda, biz tek bir için bağlamaları kitaplığı oluşturma temelleri
 > [!IMPORTANT]
 > Bir bağlama proje yalnızca birini içerebilir. AAR dosyası. Varsa. Diğer AAR bağımlılıkları. AAR sonra bu bağımlılıkların kendi bağlama projesinde bulunan ve ardından başvurulan. Bkz: [hata 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573).
 
-<a name="walkthrough" />
 
 ## <a name="walkthrough"></a>İzlenecek yol
 
@@ -72,12 +71,11 @@ public class TextCounter
 
 Ayrıca, bu örnek uygulaması alıp içinde paketlenmiş bir görüntü kaynağı görüntüleyin **textanalyzer.aar**:
 
-[ ![Xamarin monkey görüntüsü](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png)
+[![Xamarin monkey görüntüsü](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
 
 Bu görüntü kaynağı konumunda bulunan **res/drawable/monkey.png** içinde **textanalyzer.aar**.
 
 
-<a name="creating" />
 
 ### <a name="creating-the-bindings-library"></a>Bağlamaları kitaplığı oluşturma
 
@@ -85,36 +83,35 @@ Aşağıdaki adımlarla başlatmadan önce lütfen örnek indirin [textanalyzer.
 
 1.  Android bağlamaları kitaplığı şablonu ile başlayarak yeni bir bağlamaları kitaplığı projesi oluşturun. Mac için Visual Studio veya Visual Studio (Visual Studio aşağıdaki ekran görüntüleri gösterir, ancak Mac için Visual Studio çok benzer) kullanabilirsiniz. Çözüm adı **AarBinding**:
 
-    [ ![AarBindings projesi oluşturma](binding-an-aar-images/01-new-bindings-library-vs-sml.png)](binding-an-aar-images/01-new-bindings-library-vs.png)
+    [![AarBindings projesi oluşturma](binding-an-aar-images/01-new-bindings-library-vs-sml.png)](binding-an-aar-images/01-new-bindings-library-vs.png#lightbox)
 
 2.  Şablon içeren bir **Jar'lar** eklediğiniz klasörü. AAR(s) bağlamaları kitaplığı projesine. Sağ **Jar'lar** klasörü ve select **Ekle > varolan öğeyi**:
 
-    [ ![Varolan öğeyi Ekle](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png)
+    [![Varolan öğeyi Ekle](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png#lightbox)
 
 
 3.  Gidin **textanalyzer.aar** dosyasını indirdiğiniz daha önce sunucuyu seçin ve tıklatın **Ekle**:
 
-    [ ![Textanalayzer.AAR Ekle](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png)
+    [![Textanalayzer.AAR Ekle](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
 
 
 4.  Doğrulayın **textanalyzer.aar** dosyası projeye başarıyla eklendi:
 
-    [ ![Textanalyzer.aar dosya eklendi](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png)
+    [![Textanalyzer.aar dosya eklendi](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
 5.  Yapı eylem için **textanalyzer.aar** için `LibraryProjectZip`. Mac için Visual Studio'da sağ **textanalyzer.aar** yapı eylemi ayarlamak için. Visual Studio'da, yapı eylemi ayarlanabilir **özellikleri** bölmesi):
 
-    [ ![Ayar için LibraryProjectZip textanalyzer.aar yapı eylemi](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png)
+    [![Ayar için LibraryProjectZip textanalyzer.aar yapı eylemi](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
 6.  Projeyi yapılandırmak için özelliklerini açmak *hedef Framework*. Varsa. AAR tüm Android API'lerini kullanır, API düzeyi hedef Framework'ü ayarlayın. AAR bekliyor. (Hedef Framework ayarını ve genel Android API düzeyleri hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md).)
 
     API düzeyi hedef bağlamaları kitaplığınızı ayarlayın. Bu örnekte, biz çünkü en son platform API düzeyini (API düzeyi 23) kullanmak boş bizim **textanalyzer** bir bağımlılık Android API yok:
 
-    [ ![API 23 hedef düzeyini ayarlama](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png)
+    [![API 23 hedef düzeyini ayarlama](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
 7.  Bağlamaları kitaplığı oluşturun. Bağlamaları kitaplığı projesi başarılı bir şekilde oluşturmak ve bir çıktı oluşturmak gerekir. DLL şu konumda: **AarBinding/bin/Debug/AarBinding.dll**
 
 
-<a name="using" />
 
 ### <a name="using-the-bindings-library"></a>Bağlamaları kitaplığı kullanma
 
@@ -122,29 +119,28 @@ Bu kullanmak için. DLL'si Xamarin.Android uygulamanıza ilk bağlamaları kitap
 
 1.  Bu kılavuzda basitleştirmek için bağlamaları kitaplığı olarak aynı çözümde bu uygulamayı oluşturuyoruz. (Bağlamaları kitaplığı tüketen uygulamayı da farklı bir çözümde bulunan.) Yeni bir Xamarin.Android uygulaması oluşturma: çözüme sağ tıklayın ve seçin **Yeni Proje Ekle**. Yeni proje adı **BindingTest**:
 
-    [ ![Yeni BindingTest projesi oluşturma](binding-an-aar-images/07-add-new-project-vs-sml.png)](binding-an-aar-images/07-add-new-project-vs.png)
+    [![Yeni BindingTest projesi oluşturma](binding-an-aar-images/07-add-new-project-vs-sml.png)](binding-an-aar-images/07-add-new-project-vs.png#lightbox)
 
 2.  Sağ **başvuruları** düğümünün **BindingTest** proje ve seçin **Başvuru Ekle...** :
 
-    [ ![Başvuru Ekle'yi tıklatın](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png)
+    [![Başvuru Ekle'yi tıklatın](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
 
 3.  Seçin **AarBinding** daha önce oluşturduğunuz proje ve tıklatın **Tamam**:
 
-    [ ![AAR bağlama proje denetleyin](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png)
+    [![AAR bağlama proje denetleyin](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
 
 4.  Açık **başvuruları** düğümünün **BindingTest** doğrulamak için proje **AarBinding** başvuru varsa:
 
-    [ ![AarBinding başvuruları altında listelenir](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png)
+    [![AarBinding başvuruları altında listelenir](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
 
 
 Bağlama kitaplığı projesi içeriğini görüntülemek istiyorsanız, başvuru içinde açmak için çift tıklayarak **Nesne Tarayıcısı**. Eşlenen içeriğini görebilir `Com.Xamarin.Textcounter` ad alanı (Java eşlenen `com.xamarin.textanalyzezr` paket) ve üyeleri görüntüleyebilir `TextCounter` sınıfı:
 
-[ ![Nesne Tarayıcısı görüntüleme](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png)
+[![Nesne Tarayıcısı görüntüleme](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
 
 Yukarıdaki ekran iki vurgular `TextAnalyzer` örnek uygulama çağıracak yöntemleri: `NumConsonants` (temel Java sarmalar `numConsonants` yöntemi), ve `NumVowels` (temel Java sarmalar `numVowels` yöntemi).
 
 
-<a name="accessing_types" />
 
 ### <a name="accessing-aar-types"></a>Erişme. AAR türleri
 
@@ -264,12 +260,11 @@ namespace BindingTest
 
 Derleme ve çalıştırma **BindingTest** projesi. Uygulamayı başlatın ve sol tarafta ekran sunmak ( `EditText` bazı metinle başlatılır, ancak bunu değiştirmek için dokunun). Dokunduğunuzda **sayısı sesli harf**, sağ tarafta gösterildiği gibi bir bildirim sesli harf sayısını görüntüler:
 
-[ ![BindingTest çalışmasını ekran görüntüleri](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png)
+[![BindingTest çalışmasını ekran görüntüleri](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
 
 Dokunmayı deneyin **sayısı ÜNSÜZLER** düğmesi. Ayrıca, metin satırının değiştirin ve tekrar için farklı sesli test etmek için bu düğmeleri dokunun ve sessiz sayar.
 
 
-<a name="accessing_resources" />
 
 ### <a name="accessing-aar-resources"></a>Erişme. AAR kaynakları
 
@@ -305,13 +300,12 @@ Düzen **BindingTest** Düzen (**Main.axml**) ve ekleme bir `ImageView` sonuna `
 
 Derleme ve çalıştırma **BindingTest** projesi. Uygulamayı başlatın ve sol tarafta ekran sunmak &ndash; dokunduğunuzda **sayısı ÜNSÜZLER**, sonuçlar sağ tarafta gösterildiği gibi görüntülenir:
 
-[ ![BindingTest ünsüz sayısı görüntüleme](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png)
+[![BindingTest ünsüz sayısı görüntüleme](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
 
 Tebrikler! Java kitaplığı başarıyla bağladınız. AAR!
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -322,7 +316,7 @@ Ayrıca, biz erişmek ve bulunan bir görüntü kaynağı görüntülemek için 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Java bağlamaları kitaplığı (video) oluşturma](https://university.xamarin.com/classes#10090)
-- [Bağlama bir. JAR](~/android/platform/binding-java-library/binding-a-jar.md)
-- [Java kitaplığı bağlama](~/android/platform/binding-java-library/index.md)
+- [.JAR’ı Bağlama](~/android/platform/binding-java-library/binding-a-jar.md)
+- [Java Kitaplığını Bağlama](~/android/platform/binding-java-library/index.md)
 - [AarBinding (örnek)](https://developer.xamarin.com/samples/monodroid/JavaIntegration/AarBinding)
 - [Hata 44573 bir proje birden çok .aar dosyaları bağlanamıyor](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7e6621dc580e478873ce2db7139b04284bee355c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fcfd1fd2ec9271bb5e8d9e09b43b7dc4cf3b3f12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="advanced-message-app-extensions"></a>Gelişmiş iletisi uygulama uzantıları
 
@@ -50,11 +50,11 @@ Ayrıca iOS 10'da, kullanıcının bir uygulamayı kolay bulmasına olanak veren
 
 Özel ileti Kabarcık sunmak ve ileti uygulama uzantısı tarafından sağlanan etkileşimli iletileri. İleti giriş alanında Ekle etkileşimli ileti içeriği oluşturmak verin ve gönderebilirsiniz.
 
-[ ![](advanced-message-app-extensions-images/interactive01.png "Etkileşimli ileti içeriği oluşturma")](advanced-message-app-extensions-images/interactive01.png)
+[![](advanced-message-app-extensions-images/interactive01.png "Etkileşimli ileti içeriği oluşturma")](advanced-message-app-extensions-images/interactive01.png#lightbox)
 
 Alıcı kullanıcı, kendi ileti Kabarcık oluşturulduğu ileti uygulamasının uzantısı yüklenemedi ileti geçmişinde dokunarak etkileşimli iletisine yanıt verebilir. Uzantı başlatılan tam ekran olmalı ve bir yanıt oluşturan ve gönderen kullanıcıya geri göndermek izin verin.
 
-[ ![](advanced-message-app-extensions-images/interactive02.png "Tam ekran uzantısı başlattı")](advanced-message-app-extensions-images/interactive02.png)
+[![](advanced-message-app-extensions-images/interactive02.png "Tam ekran uzantısı başlattı")](advanced-message-app-extensions-images/interactive02.png#lightbox)
 
 
 Aşağıdaki konular aşağıda ayrıntılı olarak ele alınacaktır:
@@ -68,7 +68,7 @@ Aşağıdaki konular aşağıda ayrıntılı olarak ele alınacaktır:
 
 Kullanıcı tarafından çağrıldığında bir ileti uygulama uzantısı compact görünüm modunda ileti geçmişi sonundaki görüntülenir:
 
-[ ![](advanced-message-app-extensions-images/interactive03.png "İletileri API genel bakış")](advanced-message-app-extensions-images/interactive03.png)
+[![](advanced-message-app-extensions-images/interactive03.png "İletileri API genel bakış")](advanced-message-app-extensions-images/interactive03.png#lightbox)
 
 1. `MSMessageAppViewController` Nesnesidir ileti uygulama uzantısı'nda uzantının görünüm kullanıcıya görüntülendiğinde çağrılan ana sınıfı.
 2. Konuşma olarak kullanıcıya sunulan bir `MSConversation` nesne örneği.
@@ -80,7 +80,7 @@ Kullanıcı tarafından çağrıldığında bir ileti uygulama uzantısı compac
 
 Bir ileti uygulama etkin hale uzantısı işlemi göz atın:
 
-[ ![](advanced-message-app-extensions-images/interactive04.png "Bir ileti uygulama etkin hale uzantısı işlemi")](advanced-message-app-extensions-images/interactive04.png)
+[![](advanced-message-app-extensions-images/interactive04.png "Bir ileti uygulama etkin hale uzantısı işlemi")](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
 1. Bir uzantı (örneğin uygulama bölümü) başlatıldığında, ileti uygulamasını bir işlem başlatır.
 2. `DidBecomeActive` Yöntemi çağrılır ve geçirilen bir `MSConversation` ileti uygulama uzantısının çalıştığı konuşma temsil eder.
@@ -88,7 +88,7 @@ Bir ileti uygulama etkin hale uzantısı işlemi göz atın:
 
 Ardından, bir ileti uygulama devre dışı olma uzantısı işlemi göz atın:
 
-[ ![](advanced-message-app-extensions-images/interactive05.png "Bir ileti uygulama devre dışı olma uzantısı işlemi")](advanced-message-app-extensions-images/interactive05.png)
+[![](advanced-message-app-extensions-images/interactive05.png "Bir ileti uygulama devre dışı olma uzantısı işlemi")](advanced-message-app-extensions-images/interactive05.png#lightbox)
 
 1. İleti uygulaması uzantısını devre dışı bırakıldığında, `ViewWillDisappear` yöntemi önce çağrılır.
 2. Ardından `ViewDidDisappear` yöntemi çağrılır.
@@ -128,7 +128,7 @@ Kullanıcı ileti Kabarcık macOS üzerinde konuşmadaki üzerinde tıklarsa, Ma
 
 `AccessibilityLabel` Özelliği, kullanıcıya konuşma dökümü okumak için ekran okuyucular tarafından kullanılır. `Layout` Özellik belirtir nasıl iletisi, şu anda yalnızca görüntülenir `MSMessageTemplateLayout` desteklenir ve aşağıdaki gibi görünür:
 
-[ ![](advanced-message-app-extensions-images/interactive06.png "MSMessageTemplateLayout şablonu")](advanced-message-app-extensions-images/interactive06.png)
+[![](advanced-message-app-extensions-images/interactive06.png "MSMessageTemplateLayout şablonu")](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
 `Image` Özelliği `MSMessageTemplateLayout` ekranında MessageBubble ana gövdesi için içerik sağlar. `MediaFileUrl` Özelliği de ileti Kabarcık gövdesi için içerik sağlar ancak tarafından desteklenmeyen içerik için verir `UIImage` (örneğin, arka planda döngü bir video dosyası). Her iki `Image` ve `MediaFileUrl` özellikleri sağlanır, `Image` özelliği öncelik alır. `MediaFileUrl` PNG, JPEG, GIF ve videoda (Media Player çerçevesi tarafından yürütülen herhangi bir formatta) desteklediği medya biçimleri.
 
@@ -140,7 +140,7 @@ Varlıkları alıcıya gönderildiğinde bağlı herhangi bir ortam otomatik ola
 
 `Caption`, `SubCaption`, `TrailingCaption` Ve `TrailingSubcaption` özellikleri daha fazla görüntü açıklar ve görüntüsünün altındaki bir bölümdeki çizilir. Tüm bu özellikler ayarlanması `null` resim yazısı alan olmadan ileti Kabarcık oluşturacak:
 
-[ ![](advanced-message-app-extensions-images/interactive07.png "Bir ileti Kabarcık Resim yazısı alan olmadan")](advanced-message-app-extensions-images/interactive07.png)
+[![](advanced-message-app-extensions-images/interactive07.png "Bir ileti Kabarcık Resim yazısı alan olmadan")](advanced-message-app-extensions-images/interactive07.png#lightbox)
 
 Not etmek için son Messages uygulamasının ileti Kabarcık üst sol alt köşesindeki ileti uygulama uzantının simgesi çizin şeydir.
 
@@ -181,7 +181,7 @@ Yeni içerik giriş alanı eklendiğinde, kullanıcı mavi dokunarak ileti gönd
 
 Bir ileti uygulama uzantısı iki farklı görünüm modlarından birini görüntülenebilir:
 
-[ ![](advanced-message-app-extensions-images/interactive08.png "İki farklı görünüm modda görüntülenen bir ileti uygulama uzantısı: Sıkıştır & Genişletilmiş")](advanced-message-app-extensions-images/interactive08.png)
+[![](advanced-message-app-extensions-images/interactive08.png "İki farklı görünüm modda görüntülenen bir ileti uygulama uzantısı: Sıkıştır & Genişletilmiş")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
 - **Compact** -burada ileti uygulama uzantısı alt % 25'ini ileti görünümünü alır varsayılan mod budur. Compact modunda uygulama klavye, yatay kaydırma veya sağdan hareketi tanıyıcıları erişimi yok. Uygulama giriş alanı için erişime sahip ve çağrılar `InsertMessage` vardır kullanıcıya anında görüntülenir.
 - **Genişletilmiş** -ileti uygulama uzantısı tüm ileti görünümü doldurur. Giriş alanı için erişime sahip değil, ancak klavye, yatay kaydırma ve manyetik hareketi tanıyıcıları erişimi yok.
@@ -384,7 +384,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 Bir ileti uygulama uzantısı bir ileti yanıtlarken işlemesi gereken iki durum vardır:
 
-[ ![](advanced-message-app-extensions-images/interactive09.png "Etkin ve etkin modda ileti uygulama uzantısı")](advanced-message-app-extensions-images/interactive09.png)
+[![](advanced-message-app-extensions-images/interactive09.png "Etkin ve etkin modda ileti uygulama uzantısı")](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
 - **Uzantı devre dışı olduğundan** -bir ileti uygulama uzantının ileti Kabarcık kullanıcı uzantıları etkinleştirmek ve etkileşimli konuşma devam etmek için dokunabilirsiniz ileti dökümü içinde.
 - **Uzantısıdır etkin** -kullanıcı ileti uygulama uzantının ileti Kabarcık Genişletilmiş Görünüm modu girin ve etkileşimli sürecin bıraktığı yerden devam etmek için bu ileti dökümü içinde dokunabilirsiniz.
@@ -393,7 +393,7 @@ Bir ileti uygulama uzantısı bir ileti yanıtlarken işlemesi gereken iki durum
 
 İleti dökümü kullanıcı tarafından bir ileti Kabarcık dokunduğunuz ve ileti uygulaması uzantısının etkin olduğunda, aşağıdaki süreç gerçekleşir:
 
-[ ![](advanced-message-app-extensions-images/interactive10.png "Etkin olmayan bir ileti Kabarcık işleme")](advanced-message-app-extensions-images/interactive10.png)
+[![](advanced-message-app-extensions-images/interactive10.png "Etkin olmayan bir ileti Kabarcık işleme")](advanced-message-app-extensions-images/interactive10.png#lightbox)
 
 1. Kullanıcı uzantının ileti Kabarcık dokunur.
 2. Uzantı başlatıldığında, ileti uygulamasını bir işlem başlatır.
@@ -406,7 +406,7 @@ Bir ileti uygulama uzantısı bir ileti yanıtlarken işlemesi gereken iki durum
 
 İleti dökümü kullanıcı tarafından bir ileti Kabarcık dokunduğunuz ve ileti uygulaması uzantısının etkin olduğunda, aşağıdaki süreç gerçekleşir:
 
-[ ![](advanced-message-app-extensions-images/interactive11.png "Etkin bir ileti Kabarcık işleme")](advanced-message-app-extensions-images/interactive11.png)
+[![](advanced-message-app-extensions-images/interactive11.png "Etkin bir ileti Kabarcık işleme")](advanced-message-app-extensions-images/interactive11.png#lightbox)
 
 1. Kullanıcı uzantının ileti Kabarcık dokunur.
 2. İleti uygulama uzantısı zaten etkin olduğundan `WillTransition` yöntemi `MSMessagesAppViewController` sıkıştırma kaynağı Genişletilmiş Görünüm moda geçişi işlemek üzere çağrılır.
@@ -457,11 +457,11 @@ Seçili iletiyi ileti uygulama uzantının kullanıcı Arabiriminde gösterilece
 
 Etkileşimli bir konuşma farklı adımları iki kullanıcının konuşmadaki arasında gönderme sürecinde kısmen tamamlanmış ileti balonları ileti dökümü dağıtmayı başlatmak için:
 
-[ ![](advanced-message-app-extensions-images/interactive12.png "Kısmen tamamlanmış ileti balonları ileti dökümü alanınızda karışıklık olabilir")](advanced-message-app-extensions-images/interactive12.png)
+[![](advanced-message-app-extensions-images/interactive12.png "Kısmen tamamlanmış ileti balonları ileti dökümü alanınızda karışıklık olabilir")](advanced-message-app-extensions-images/interactive12.png#lightbox)
 
 Bunun yerine, ileti uygulama uzantısı ileti dökümü kısa bir açıklama içine önceki iletiyi balonları daraltın:
 
-[ ![](advanced-message-app-extensions-images/interactive13.png "İleti dökümü içinde önceki iletiyi balonları daraltma")](advanced-message-app-extensions-images/interactive13.png)
+[![](advanced-message-app-extensions-images/interactive13.png "İleti dökümü içinde önceki iletiyi balonları daraltma")](advanced-message-app-extensions-images/interactive13.png#lightbox)
 
 Bu kullanarak işlenir bir `MSSession` tüm mevcut adımlar daraltmak için. Bu nedenle `DidSelectMessage` yöntemi `MSMessagesAppViewController` sınıfı şu şekilde görünür için değiştirilmesi:
 
@@ -516,7 +516,7 @@ Bir ileti uygulama uzantısı Kullanıcıları grubu görüşmeleri (kişilerle 
 
 Aşağıdaki etkileşim üç kullanıcılarla Grup konuşmada göz atın:
 
-[ ![](advanced-message-app-extensions-images/interactive14.png "Bir grup konuşma üç kullanıcılarla etkileşimi")](advanced-message-app-extensions-images/interactive14.png)
+[![](advanced-message-app-extensions-images/interactive14.png "Bir grup konuşma üç kullanıcılarla etkileşimi")](advanced-message-app-extensions-images/interactive14.png#lightbox)
 
 1. 1 kullanıcı grubu etkileşimli ileti gönderir kullanıcı 2 ve kullanıcı 3 belirtti burger seçmenizi isteyen.
 2. Kullanıcı 2 tomatoes seçer.
@@ -531,7 +531,7 @@ Kullanıcı bir ileti gönderdiğinde, bir oturum belirteci oluşturulur ve geç
 
 Bir ileti gönderen tanımlayıcısını erişme tartışmak için yukarıda verilen bir grup konuşma örneği alın:
 
-[ ![](advanced-message-app-extensions-images/interactive15.png "Grup konuşma tanımlayıcıları gönderme")](advanced-message-app-extensions-images/interactive15.png)
+[![](advanced-message-app-extensions-images/interactive15.png "Grup konuşma tanımlayıcıları gönderme")](advanced-message-app-extensions-images/interactive15.png#lightbox)
 
 1. Kullanıcı 1 bir grup etkileşimli ileti yeniden gönderir kullanıcı 2 ve kullanıcı 3 belirtti burger seçmenizi isteyen.
 2. Kullanıcı 3 pickles seçer.

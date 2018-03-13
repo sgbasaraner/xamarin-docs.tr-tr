@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 7eea7231ec4300a368e4612cbed2ba4ebc044a26
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 807ae6554d029120ad28f8fb8cc6c57ba3b58c8c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="annotations-and-overlays--walkthrough"></a>Ek açıklamalar ve yer paylaşımları – izlenecek yol
 
 Bu kılavuzda yapı oluşturacağız uygulama aşağıda gösterilmiştir:
 
- [![](ios-maps-walkthrough-images/00-map-overlay.png "Bir örnek MapKit uygulama")](ios-maps-walkthrough-images/00-map-overlay.png)
+ [![](ios-maps-walkthrough-images/00-map-overlay.png "Bir örnek MapKit uygulama")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
  
 Tamamlanan kodu bulabilirsiniz **MapsWalkthroughComplete** klasör içinde [harita gösterim örneği](https://developer.xamarin.com/samples/monotouch/MapDemo/).
 
@@ -279,7 +279,7 @@ Bu kodda tamamlar `ViewDidLoad`. Uygulamak ihtiyacımız artık bizim `MapDelega
 
 Uygulamayı çalıştırın. Özel ek açıklama ve bir katmana ile etkileşimli bir harita şimdi sahibiz! Ek açıklamayı dokunun ve aşağıda gösterildiği gibi Ankara'da görüntüsü görüntülenir:
 
- [![](ios-maps-walkthrough-images/01-map-image.png "Ek açıklamayı dokunun ve Ankara'da görüntüsü görüntülenir")](ios-maps-walkthrough-images/01-map-image.png)
+ [![](ios-maps-walkthrough-images/01-map-image.png "Ek açıklamayı dokunun ve Ankara'da görüntüsü görüntülenir")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
 ## <a name="summary"></a>Özet
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 55a9e56585521a0a7b89a7b881dfecd4e1c14b08
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b970ff3570079c0e9fba10718ddcd75fbe857f2c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="new-user-interface-styles"></a>Yeni kullanıcı arabirimi stilleri
 
@@ -29,11 +29,11 @@ Yukarıda belirtildiği gibi tvOS tüm yapı içinde Uıkit denetler otomatik ol
 
 Kullanıcı Bu tema giderek geçebilirsiniz **ayarları** > **genel** > **Görünüm** ve arasında geçiş yapma **açık**  ve **koyu**:
 
-[ ![](user-interface-styles-images/theme01.png "Ayarları uygulama")](user-interface-styles-images/theme01.png)
+[![](user-interface-styles-images/theme01.png "Ayarları uygulama")](user-interface-styles-images/theme01.png#lightbox)
 
 Zaman **koyu** tema seçildiğinde, tüm kullanıcı arabirimi öğeleri koyu arka plan üzerinde açık metin geçer:
 
-[ ![](user-interface-styles-images/theme02.png "Koyu tema")](user-interface-styles-images/theme02.png)
+[![](user-interface-styles-images/theme02.png "Koyu tema")](user-interface-styles-images/theme02.png#lightbox)
 
 Kullanıcı tema herhangi bir zamanda geçiş seçeneği yoktur ve bu nedenle Apple TV bulunduğu geçerli etkinliği veya günün saatini göre yapabilecek.
 
@@ -51,10 +51,10 @@ Katılımı açık ve koyu tema desteği için aşağıdakileri yapın:
 2. Seçin **kaynak** görünümünden (düzenleyicisinin alt).
 3. Yeni bir anahtar ekleyin ve bunu `UIUserInterfaceStyle`: 
 
-    [ ![](user-interface-styles-images/theme03.png "UIUserInterfaceStyle anahtarı")](user-interface-styles-images/theme03.png)
+    [![](user-interface-styles-images/theme03.png "UIUserInterfaceStyle anahtarı")](user-interface-styles-images/theme03.png#lightbox)
 4. Ayarlanan tür bırakın `String` ve değeri girin `Automatic`: 
 
-    [ ![](user-interface-styles-images/theme04.png "Otomatik girin")](user-interface-styles-images/theme04.png)
+    [![](user-interface-styles-images/theme04.png "Otomatik girin")](user-interface-styles-images/theme04.png#lightbox)
 5. Değişiklikleri dosyaya kaydedin.
 
 Üç olası değerler için `UIUserInterfaceStyle` anahtarı:
@@ -173,13 +173,13 @@ Ayırdedici nitelik koleksiyonu desteğini etkinleştirmek için aşağıdakiler
 
 1. Film şeridi dosya üzerinde sağ **Çözüm Gezgini** seçip **birlikte Aç** > **Xcode arabirimi Oluşturucu**: 
 
-    [ ![](user-interface-styles-images/theme05.png "Xcode arabirimi Oluşturucu ile Aç")](user-interface-styles-images/theme05.png) 
+    [![](user-interface-styles-images/theme05.png "Xcode arabirimi Oluşturucu ile Aç")](user-interface-styles-images/theme05.png#lightbox) 
 2. Ayırdedici nitelik koleksiyonu desteğini etkinleştirmek için geçiş **dosya denetçisi** ve denetleyin **kullanım ayırdedici nitelik Çeşitlemeler** özelliğinde **arabirimi Oluşturucu belge** bölümü: 
 
-    [ ![](user-interface-styles-images/theme06.png "Ayırdedici nitelik koleksiyonu desteğini etkinleştir")](user-interface-styles-images/theme06.png)
+    [![](user-interface-styles-images/theme06.png "Ayırdedici nitelik koleksiyonu desteğini etkinleştir")](user-interface-styles-images/theme06.png#lightbox)
 3. Ayırdedici nitelik Çeşitlemeler kullanma değişikliğini onaylayın: 
 
-    [ ![](user-interface-styles-images/theme07.png "Ayırdedici nitelik Çeşitlemeler uyarı kullanın")](user-interface-styles-images/theme07.png)
+    [![](user-interface-styles-images/theme07.png "Ayırdedici nitelik Çeşitlemeler uyarı kullanın")](user-interface-styles-images/theme07.png#lightbox)
 4. Film şeridi dosyasındaki değişiklikleri kaydedin.
 
 Apple tvOS film şeritleri arabirimi Oluşturucu düzenlerken aşağıdaki yeteneklerini ekledi:
@@ -188,20 +188,20 @@ Apple tvOS film şeritleri arabirimi Oluşturucu düzenlerken aşağıdaki yeten
     
     * Şimdi çeşitli özelliklere sahip bir  **+**  hangi UI tema belirli bir sürümü eklemek için tıklattığınız yanlarında: 
 
-        [ ![](user-interface-styles-images/theme08.png "UI tema belirli bir sürümü ekleme")](user-interface-styles-images/theme08.png) 
+        [![](user-interface-styles-images/theme08.png "UI tema belirli bir sürümü ekleme")](user-interface-styles-images/theme08.png#lightbox) 
     
     * Geliştirici yeni bir özellik belirtin veya tıklatın **x** düğmesini kaldırmak için: 
 
-        [ ![](user-interface-styles-images/theme09.png "Yeni bir özellik belirtin veya kaldırmak için x düğmesini tıklatın.")](user-interface-styles-images/theme09.png)
+        [![](user-interface-styles-images/theme09.png "Yeni bir özellik belirtin veya kaldırmak için x düğmesini tıklatın.")](user-interface-styles-images/theme09.png#lightbox)
 * Geliştirici açık veya koyu temayı arabirimi oluşturucu içinde UI tasarımında önizlemesini görüntüleyebilirsiniz:
     
     * Tasarım yüzeyine alt geçerli UI tema geçiş yapmak Geliştirici sağlar: 
 
-        [ ![](user-interface-styles-images/theme10.png "Tasarım yüzeyine alt")](user-interface-styles-images/theme10.png)
+        [![](user-interface-styles-images/theme10.png "Tasarım yüzeyine alt")](user-interface-styles-images/theme10.png#lightbox)
         
     * Yeni temayı arabirimi Oluşturucusu'nda görüntülenir ve ayırdedici nitelik koleksiyon belirli ayarlamaları görüntülenir: 
 
-        [ ![](user-interface-styles-images/theme11.png "Arabirim Oluşturucusu'nda görüntülenen tema")](user-interface-styles-images/theme11.png)
+        [![](user-interface-styles-images/theme11.png "Arabirim Oluşturucusu'nda görüntülenen tema")](user-interface-styles-images/theme11.png#lightbox)
 
 Ayrıca, Simulator tvOS şimdi kolayca tvOS uygulama hata ayıklama sırasında açık ve koyu tema arasında geçiş yapmak Geliştirici izin vermek için bir klavye kısayolu vardır. Kullanım **komutu-Shift-D** klavye açık ve koyu arasında geçiş yapmak için dizisi.
 
@@ -215,5 +215,5 @@ Bu makalede ele alınan açık ve koyu UI temalar, Apple tvOS için 10 ve nasıl
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [TvOS 10 yenilikler nelerdir?](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

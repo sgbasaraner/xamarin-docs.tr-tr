@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: cc4407be9dee7e19dbf1f3cc03b3b88191717e6f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0c68d2cfd43eb535fe2e02b5662250cb6e453ddd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML biçimlendirme uzantıları kullanma
 
@@ -137,7 +137,7 @@ Son örnek görüntüler `Device.RuntimePlatform` değeri. `Environment.NewLine`
 
 Aşağıda, tüm üç platformlarda çalışan örnek verilmiştir:
 
-[![x: Static Demo](consuming-images/staticdemo-small.png "x: Static Demo")](consuming-images/staticdemo-large.png "x: Static Tanıtımı")
+[![x: Static Demo](consuming-images/staticdemo-small.png "x: Static Demo")](consuming-images/staticdemo-large.png#lightbox "x: Static Tanıtımı")
 
 <a name="reference" />
 
@@ -181,7 +181,7 @@ Aşağıda, tüm üç platformlarda çalışan örnek verilmiştir:
 
 Her ikisi de `x:Reference` ifadeleri kullanma kısaltılmış `ReferenceExtension` sınıfı adı ve ortadan `Name=` ifade parçası. İlk örnekteki `x:Reference` biçimlendirme uzantısı katıştırılmış `Binding` biçimlendirme uzantısı. Dikkat `Source` ve `StringFormat` ayarları virgülle ayrılır. Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
 
-[![x:Reference Demo](consuming-images/referencedemo-small.png "x:Reference Demo")](consuming-images/referencedemo-large.png "x:Reference Demo")
+[![x:Reference Demo](consuming-images/referencedemo-small.png "x:Reference Demo")](consuming-images/referencedemo-large.png#lightbox "x:Reference Demo")
 
 <a name="type" />
 
@@ -236,7 +236,7 @@ Bunun nasıl Gezinti menüsünde `MainPage` içinde **biçimlendirme uzantılar�
 
 Ana sayfası açılıyor işte **biçimlendirme uzantıları**:
 
-[![Ana sayfa](consuming-images/mainpage-small.png "ana sayfa")](consuming-images/mainpage-large.png "ana sayfası")
+[![Ana sayfa](consuming-images/mainpage-small.png "ana sayfa")](consuming-images/mainpage-large.png#lightbox "ana sayfası")
 
 Her `CommandParameter` özelliği ayarlanmış bir `x:Type` diğer sayfalardan birini başvuran biçimlendirme uzantısı. `Command` Özelliği adlı bir özelliğe bağlı `NavigateCommand`. Bu özellik tanımlanan `MainPage` arka plan kod dosyası:
 
@@ -319,7 +319,7 @@ public partial class TypeDemoPage : ContentPage
 
 Yöntemi yürütülmesi bir `Button` basıldığında bağımsız değişkeni yeni bir örneğini oluşturur, ayarlar, `VerticalOptions` özelliği ve ona ekler `StackLayout`. Üç `Button` öğeleri dinamik olarak oluşturulan görünümlerle sonra sayfanın paylaşımı:
 
-[![x:Type Demo](consuming-images/typedemo-small.png "x:Type Demo")](consuming-images/typedemo-large.png "x:Type Demo")
+[![x:Type Demo](consuming-images/typedemo-small.png "x:Type Demo")](consuming-images/typedemo-large.png#lightbox "x:Type Demo")
 
 <a name="array" />
 
@@ -376,7 +376,7 @@ Yöntemi yürütülmesi bir `Button` basıldığında bağımsız değişkeni ye
 
 `ViewCell` Basit bir oluşturur `BoxView` her renk girişi için:
 
-[![x: Array Demo](consuming-images/arraydemo-small.png "x: Array Demo")](consuming-images/arraydemo-large.png "x: Array Tanıtımı")
+[![x: Array Demo](consuming-images/arraydemo-small.png "x: Array Demo")](consuming-images/arraydemo-large.png#lightbox "x: Array Tanıtımı")
 
 Tek tek belirtmek için çeşitli yollar vardır `Color` Bu dizideki öğeler. Kullanabileceğiniz bir `x:Static` biçimlendirme uzantısı:
 
@@ -449,7 +449,7 @@ Aşağıdakilerden birini olduğunu fark sonra `Label` öğeleri, tüm özellik 
 
 Üç platformlarda çalışan program şöyledir:
 
-[![x: Null Demo](consuming-images/nulldemo-small.png "x: Null Demo")](consuming-images/nulldemo-large.png "x: Null Tanıtımı")
+[![x: Null Demo](consuming-images/nulldemo-small.png "x: Null Demo")](consuming-images/nulldemo-large.png#lightbox "x: Null Tanıtımı")
 
 Duyuru bu dört `Label` öğelerine sahip bir serif yazı tipi Merkezi `Label` varsayılan sans-serif yazı tipi vardır.
 
@@ -462,6 +462,6 @@ Xamarin.Forms içinde bulunmayan XAML biçimlendirme uzantısı gereksinimini ka
 
 - [Biçimlendirme uzantıları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 - [XAML biçimlendirme uzantıları bölüm Xamarin.Forms defterinden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [Kaynak sözlükleri](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Dinamik stilleri](~/xamarin-forms/user-interface/styles/dynamic.md)
+- [Kaynak Sözlükler](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Dinamik Stiller](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Veri Bağlama](~/xamarin-forms/app-fundamentals/data-binding/index.md)

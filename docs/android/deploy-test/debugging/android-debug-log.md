@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 99b9ed9e3c71766f483f7b00996137aae7a247d1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 26ac42e4b7acbe19dee746130fc335fdf18ffc46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-debug-log"></a>Android hata ayıklama günlüğü
 
@@ -36,7 +36,6 @@ Araç penceresi görüntülendiğinde, fiziksel aygıt aygıtlar açılan kutusu
 Bu araç penceresi sağlar: günlük girişlerini, cihaz seçimi için açılan kutu, günlük girişlerini, arama kutusuna ve Dur/Yürüt/Duraklat düğmeleri temizlemek için bir yol tablosu. 
 
 
-<a name="Accessing_from_the_Command_Line" />
 
 ## <a name="accessing-from-the-command-line"></a>Komut satırından erişme
 
@@ -52,7 +51,6 @@ Birden çok aygıt bağlıysa, aygıt tanımlanmalıdır. Örneğin `adb -d logc
 
 Daha fazla komut yalnızca çalıştırarak bulunabilir **adb**.
 
-<a name="Writing_to_the_Debug_Log" />
 
 
 ## <a name="writing-to-the-debug-log"></a>Hata ayıklama günlüğüne yazma
@@ -75,7 +73,6 @@ W/myapp   (11103): this is a warning message
 E/myapp   (11103): this is an error message
 ```
 
-<a name="Interesting_Messages" />
 
 ## <a name="interesting-messages"></a>İlginç iletileri
 

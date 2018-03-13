@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d84473ee4379cd9a39315635017b81a2714da162
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a8ae55f9cc3e2dd4818dec96a35017c76cc9623
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="notifications-in-xamarinios"></a>Xamarin.iOS bildirimleri
 
@@ -44,7 +44,7 @@ var settings = UIUserNotificationSettings.GetSettingsForTypes(
 UIApplication.SharedApplication.RegisterUserNotificationSettings (settings);
 ```
 
-  [ ![](local-notifications-in-ios-images/image0-sml.png "Yerel bir bildirim gönderme olanağı onaylama")](local-notifications-in-ios-images/image0.png)
+  [![](local-notifications-in-ios-images/image0-sml.png "Yerel bir bildirim gönderme olanağı onaylama")](local-notifications-in-ios-images/image0.png#lightbox)
 
 Oluşturduğunuz yerel bir bildirim zamanlamak için bir `UILocalNotification` nesne, ayarlamak `FireDate`, ile zamanla `ScheduleLocalNotification` yöntemi `UIApplication.SharedApplication` nesnesi. Aşağıdaki kod parçacığını gelecekte bir dakika yangın ve bir uyarı iletisi ile görüntülemek bir bildirim zamanlamak nasıl yapacağınızı gösterir:
 
@@ -59,7 +59,7 @@ UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
 Aşağıdaki ekran görüntüsünde Göster bu uyarı benzer:
 
-  [ ![](local-notifications-in-ios-images/image2-sml.png "Bir örnek uyarı")](local-notifications-in-ios-images/image2.png)
+  [![](local-notifications-in-ios-images/image2-sml.png "Bir örnek uyarı")](local-notifications-in-ios-images/image2.png#lightbox)
 
 Kullanıcı seçerseniz unutmayın *izin* bildirimleri sonra hiçbir şey görüntülenir.
 

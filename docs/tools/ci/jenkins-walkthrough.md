@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: eb1602a96b304919fe563d1bb9ea0a15722e436b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8d23211e28cb1b1dae13d67e32462888c66ff065
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Jenkins Xamarin ile kullanma
 
@@ -34,7 +34,7 @@ Jenkins yapılandırılır ve gerekli tüm eklentileri yüklü sonra Xamarin.And
 
 Bu kılavuz, her biri bu noktalarını kapsayan bir Jenkins server kurulumunu nasıl aracılığıyla yol gösterir. Bunu sonu biz Kurulum ve Jenkins IPA APK'ın bizim Xamarin mobil projelerde oluşturup yapılandırmak nasıl bir iyi anlamış olmanız gerekir.
 
-# <a name="requirements"></a>Gereksinimler
+## <a name="requirements"></a>Gereksinimler
 
 İdeal yapı sunucu oluşturma ve büyük olasılıkla uygulamayı test etme tek amacı ayrılmış tek başına bir bilgisayardır. Diğer roller (örneğin, bir web sunucusunun) için gerekli olabilecek yapıları yapı zarar verme değil, özel bir bilgisayar sağlar. Örneğin, yapı sunucunun de bir web sunucusu gibi davranan, web sunucusu bazı ortak kitaplığı çakışan bir sürümünü gerektirebilir. Bu çakışma nedeniyle web sunucusunda düzgün çalışmayabilir ya da Jenkins kullanıcılara dağıtıldığında çalışmıyor derlemeleri oluşturabilir.
 
@@ -42,7 +42,7 @@ Xamarin mobil uygulamaları için yapı sunucu çok benzer bir geliştiricinin i
 
 Aşağıdaki diyagram tipik Jenkins derleme sunucusundaki bu öğelerin tümünü gösterir:
 
- [ ![](jenkins-walkthrough-images/image1.png "Bu diyagram tipik Jenkins derleme sunucusundaki bu öğelerin tümünü gösterir")](jenkins-walkthrough-images/image1.png)
+ [![](jenkins-walkthrough-images/image1.png "Bu diyagram tipik Jenkins derleme sunucusundaki bu öğelerin tümünü gösterir")](jenkins-walkthrough-images/image1.png#lightbox)
 
 iOS uygulamaları yalnızca yerleşik ve Mac OS X çalıştıran bir bilgisayarda oturum. Mac Mini makul bir daha düşük maliyetli seçeneği ancak OS X 10.10 (Yosemite) çalıştırabilen herhangi bir bilgisayar veya üzeri yeterli değil.
 
@@ -50,7 +50,7 @@ TFS kaynak kodu denetimi için kullanılıyorsa, yüklemek istediğiniz [Takım 
 
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
-# <a name="installing-jenkins"></a>Jenkins yükleme
+## <a name="installing-jenkins"></a>Jenkins yükleme
 
 Jenkins kullanarak ilk yüklemek için bir görevdir. Jenkins OS X: üzerinde çalıştırmak için üç yolu vardır
 
@@ -63,57 +63,57 @@ Jenkins kullanarak ilk yüklemek için bir görevdir. Jenkins OS X: üzerinde ç
 
 Jenkins.App Jenkins yüklemek için kullanışlı bir yoludur. Bu bir başlangıç basitleştirir AppleScript sarmalayıcı ve durdurma Jenkins sunucusunun adıdır. Bir bash kabuğunda çalıştırmak yerine Jenkins bir uygulama olarak yerleştirme simgesiyle aşağıdaki ekran görüntüsünde gösterildiği gibi çalışır:
 
- [ ![](jenkins-walkthrough-images/image2.png "Bir bash kabuğunda çalıştırmak yerine Jenkins bir uygulama olarak yerleştirme simgesiyle bu ekran görüntüsünde gösterildiği gibi çalışır")](jenkins-walkthrough-images/image2.png)
+ [![](jenkins-walkthrough-images/image2.png "Bir bash kabuğunda çalıştırmak yerine Jenkins bir uygulama olarak yerleştirme simgesiyle bu ekran görüntüsünde gösterildiği gibi çalışır")](jenkins-walkthrough-images/image2.png#lightbox)
 
 Başlatma veya durdurma Jenkins başlatma veya durdurma Jenkins.App olarak basit bir işlemdir.
 
 Jenkins.App yüklemek için aşağıdaki ekran görüntüsünde gösterilen projenin indirme sayfasından en son sürümünü yükleyin:
 
- [ ![](jenkins-walkthrough-images/image3.png "Uygulama, en son projeleri sürümü bu ekran görüntüsünde gösterilen sayfasında, yükleme")](jenkins-walkthrough-images/image3.png)
+ [![](jenkins-walkthrough-images/image3.png "Uygulama, en son projeleri sürümü bu ekran görüntüsünde gösterilen sayfasında, yükleme")](jenkins-walkthrough-images/image3.png#lightbox)
 
 Zip dosyasını ayıklayın `/Applications` yapı sunucunuz ve onu olduğu gibi başka bir OS X uygulaması başlangıç klasörü.
 İlk kez Jenkins.App başlattığınızda Jenkins karşıdan bildiren bir iletişim kutusu sunacaktır:
 
- [ ![](jenkins-walkthrough-images/image4.png "Uygulama, Jenkins karşıdan bildiren bir iletişim kutusu sunacaktır")](jenkins-walkthrough-images/image4.png)
+ [![](jenkins-walkthrough-images/image4.png "Uygulama, Jenkins karşıdan bildiren bir iletişim kutusu sunacaktır")](jenkins-walkthrough-images/image4.png#lightbox)
 
 Jenkins.App, yükleme tamamlandıktan sonra Jenkins başlangıç özelleştirmek aşağıdaki ekran görüntüsünde görülen isteyip istemediğinizi soran başka bir iletişim kutusu görüntülenir:
 
- [ ![](jenkins-walkthrough-images/image5.png "Uygulama, yükleme tamamlandı, başka bir iletişim kutusu, Jenkins başlangıç özelleştirmek bu ekran görüntüsünde görülen isteyip istemediğinizi soran görüntülenir")](jenkins-walkthrough-images/image5.png)
+ [![](jenkins-walkthrough-images/image5.png "Uygulama, yükleme tamamlandı, başka bir iletişim kutusu, Jenkins başlangıç özelleştirmek bu ekran görüntüsünde görülen isteyip istemediğinizi soran görüntülenir")](jenkins-walkthrough-images/image5.png#lightbox)
 
 Jenkins özelleştirme isteğe bağlıdır ve Jenkins çoğu durumlarda çalışabilmesi için uygulama başlatıldığında – her zaman varsayılan ayarları gerçekleştirilmesi gerekmez.
 
 Jenkins özelleştirmek gerekliyse, tıklayın **varsayılanları değiştirmek** düğmesi. Bu iki ardışık iletişim kutuları ile sunacaktır: Java komut satırı parametrelerini soran, diğeri için Jenkins komut satırı parametreleri soran. Aşağıdaki iki ekran görüntüleri, bu iki iletişim kutularının göster:
 
- [ ![](jenkins-walkthrough-images/image6.png "Bu ekran iletişim kutuları gösterir")](jenkins-walkthrough-images/image6.png)
+ [![](jenkins-walkthrough-images/image6.png "Bu ekran iletişim kutuları gösterir")](jenkins-walkthrough-images/image6.png#lightbox)
 
- [ ![](jenkins-walkthrough-images/image7.png "Bu ekran iletişim kutuları gösterir")](jenkins-walkthrough-images/image7.png)
+ [![](jenkins-walkthrough-images/image7.png "Bu ekran iletişim kutuları gösterir")](jenkins-walkthrough-images/image7.png#lightbox)
 
 Jenkins çalışmaya başladıktan sonra bilgisayarda kullanıcı oturumu içinde her seferinde başlayacak şekilde bir oturum açma öğesi olarak ayarlamak isteyebilirsiniz. Yuva Jenkins simgesine sağ tıklayıp seçerek bunu yapabilirsiniz **seçenekleri... Oturum Aç**aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
- [ ![](jenkins-walkthrough-images/image8.png "Yuva Jenkins simgesine sağ tıklayarak ve oturum açma, adresindeki OptionsOpen seçerek bu ekran görüntüsünde gösterildiği gibi bunu yapabilirsiniz")](jenkins-walkthrough-images/image8.png)
+ [![](jenkins-walkthrough-images/image8.png "Yuva Jenkins simgesine sağ tıklayarak ve oturum açma, adresindeki OptionsOpen seçerek bu ekran görüntüsünde gösterildiği gibi bunu yapabilirsiniz")](jenkins-walkthrough-images/image8.png#lightbox)
 
 Bu her zaman otomatik olarak başlatılacak şekilde Jenkins.App neden olacak kullanıcı oturum açtığında, ancak değil bilgisayar önyüklendiğinde ayarlama. OS X önyükleme sırasında otomatik olarak ile oturum açma için kullanacağı bir kullanıcı hesabı belirtmek mümkündür. Açık **sistem tercihleri**seçip **kullanıcı & grupları** bu ekran görüntüsünde gösterildiği gibi simgesi:
 
- [ ![](jenkins-walkthrough-images/image9.png "Sistem tercihleri açın ve bu ekran görüntüsünde gösterildiği gibi kullanıcı grupları simgesini seçin")](jenkins-walkthrough-images/image9.png)
+ [![](jenkins-walkthrough-images/image9.png "Sistem tercihleri açın ve bu ekran görüntüsünde gösterildiği gibi kullanıcı grupları simgesini seçin")](jenkins-walkthrough-images/image9.png#lightbox)
 
 Tıklayın **oturum açma seçenekleri** düğmesine tıklayın ve ardından OS X için oturum açma önyükleme sırasında kullanacağı hesabı seçin.
 
 Bu noktada Jenkins yüklendi. Xamarin mobil uygulamalar istiyoruz, ancak biz bazı eklentiler yüklemeniz gerekir.
 
 
-## <a name="installing-plugins"></a>Eklenti yükleme
+### <a name="installing-plugins"></a>Eklenti yükleme
 
 Jenkins.App yükleyici tamamlandığında, Jenkins başlatın ve http://localhost: 8080, URL ile web tarayıcısı aşağıdaki ekran görüntüsünde gösterildiği gibi başlatın:
 
- [ ![](jenkins-walkthrough-images/image10.png "Bu ekran görüntüsünde gösterildiği gibi 8080")](jenkins-walkthrough-images/image10.png)
+ [![](jenkins-walkthrough-images/image10.png "Bu ekran görüntüsünde gösterildiği gibi 8080")](jenkins-walkthrough-images/image10.png#lightbox)
 
 Bu sayfadan seçin **Jenkins > yönetmek Jenkins > eklentileri yönetme** üst sol alt köşedeki aşağıdaki ekran görüntüsünde gösterildiği gibi menüsünden:
 
- [ ![](jenkins-walkthrough-images/image11.png "Bu sayfadan üst sol alt köşedeki menüsünden Jenkins yönetmek Jenkins yönetmek eklentileri seçin")](jenkins-walkthrough-images/image11.png)
+ [![](jenkins-walkthrough-images/image11.png "Bu sayfadan üst sol alt köşedeki menüsünden Jenkins yönetmek Jenkins yönetmek eklentileri seçin")](jenkins-walkthrough-images/image11.png#lightbox)
 
 Bu görüntüler **Jenkins eklentisi Yöneticisi** sayfası. Kullanılabilir sekmesinde tıklarsanız, indirilir ve yüklenir 600'den fazla eklentiniz listesini görürsünüz. Bu, aşağıdaki ekran görüntüsünde gösterilen:
 
- [ ![](jenkins-walkthrough-images/image12.png "Kullanılabilir sekmesini tıklatın, indirilir ve yüklenir 600'den fazla eklentiniz listesini görürsünüz")](jenkins-walkthrough-images/image12.png)
+ [![](jenkins-walkthrough-images/image12.png "Kullanılabilir sekmesini tıklatın, indirilir ve yüklenir 600'den fazla eklentiniz listesini görürsünüz")](jenkins-walkthrough-images/image12.png#lightbox)
 
 Tüm 600 birkaç can sıkıcı olabilir bulmak için eklenti ve hataya kaydırma. Jenkins arabirimi sağ üst köşesinde filtre arama alanı sağlar. Aramak için bu filtre alanına kullanarak bulmayla ve yüklü biri veya tümü aşağıdaki eklenti basitleştirir:
 
@@ -125,22 +125,22 @@ Jenkins Git herhangi bir ek eklentiniz destekler.
 
 Tüm eklentileri yükledikten sonra Jenkins yeniden başlatın ve her eklenti için genel ayarları yapılandırma istersiniz. Bir eklenti için genel ayarları seçerek bulunabilir **Jenkins > yönetmek Jenkins > yapılandırma sistem** üst sol Köşeden aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
- [ ![](jenkins-walkthrough-images/image13.png "Bir eklenti için genel ayarları Jenkins seçerek bulunabilir / yönetmek Jenkins / sol üst yapılandırma sistemden el köşesi")](jenkins-walkthrough-images/image13.png)
+ [![](jenkins-walkthrough-images/image13.png "Bir eklenti için genel ayarları Jenkins seçerek bulunabilir / yönetmek Jenkins / sol üst yapılandırma sistemden el köşesi")](jenkins-walkthrough-images/image13.png#lightbox)
 
 Bu menü seçeneğini seçtiğinizde, ne götürülürsünüz **yapılandırma sistemi [Jenkins]** sayfası. Bu sayfa Jenkins kendisini yapılandırmak ve bazı genel eklentisi değerleri ayarlamak için bölümleri içerir.  Aşağıdaki ekran görüntüsünde, bu sayfanın bir örnek gösterilmektedir:
 
- [ ![](jenkins-walkthrough-images/image14.png "Bu ekran bu sayfasının bir örneği gösterir")](jenkins-walkthrough-images/image14.png)
+ [![](jenkins-walkthrough-images/image14.png "Bu ekran bu sayfasının bir örneği gösterir")](jenkins-walkthrough-images/image14.png#lightbox)
 
 
-### <a name="configuring-the-msbuild-plugin"></a>MSBuild eklentisi yapılandırma
+#### <a name="configuring-the-msbuild-plugin"></a>MSBuild eklentisi yapılandırma
 
 MSBuild eklentisini kullanmak için yapılandırılmalıdır **/Library/Frameworks/Mono.framework/Commands/xbuild** Visual Studio için Mac çözüm ve proje dosyalarını derlemek için. Aşağı kaydırarak **yapılandırma sistemi [Jenkins]** kadar sayfa **eklemek MSBuild** düğmesi görünür, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
- [ ![](jenkins-walkthrough-images/image15.png "MSBuild Ekle düğmesi görününceye kadar yapılandırma sistem Jenkins sayfayı aşağı kaydırın")](jenkins-walkthrough-images/image15.png)
+ [![](jenkins-walkthrough-images/image15.png "MSBuild Ekle düğmesi görününceye kadar yapılandırma sistem Jenkins sayfayı aşağı kaydırın")](jenkins-walkthrough-images/image15.png#lightbox)
 
 Bu düğmesini tıklatın ve doldurmak **adı** ve **yolu** için **MSBuild** görünen formdaki alanları. Adını, **MSBuild** yükleme sırasında anlamlı bir şey olmalıdır **MSBuild yolu** yolu olmalıdır `xbuild`, normalde **/Library/çerçeveler / Mono.framework/Commands/xbuild**. Biz kaydetme veya sayfanın altındaki Uygula düğmesini tıklatarak değişiklikleri kaydettikten sonra Jenkins kullanabilmek için `xbuild` çözümünüzü derlemek için.
 
-### <a name="configuring-the-tfs-plugin"></a>TFS eklentisi yapılandırma
+#### <a name="configuring-the-tfs-plugin"></a>TFS eklentisi yapılandırma
 
 Bu bölümde, kaynak kodu denetimi için TFS kullanmak istiyorsanız zorunludur.
 
@@ -160,34 +160,34 @@ TFS sunucusu ile etkileşim bir OS X iş istasyonu için sırayla Takım Gezgini
 
 TFS için komut satırı istemcisi yüklendikten sonra Jenkins tam yolu yapılandırılmalıdır `tf` komut satırı istemcisi. Aşağı kaydırarak **yapılandırma sistemi [Jenkins]** Team Foundation Server bölümünü bulana kadar aşağıdaki ekran görüntüsünde gösterildiği gibi sayfa:
 
- [ ![](jenkins-walkthrough-images/image17.png "Team Foundation Server bölümünü bulana kadar yapılandırma sistem Jenkins sayfayı aşağı kaydırın")](jenkins-walkthrough-images/image17.png)
+ [![](jenkins-walkthrough-images/image17.png "Team Foundation Server bölümünü bulana kadar yapılandırma sistem Jenkins sayfayı aşağı kaydırın")](jenkins-walkthrough-images/image17.png#lightbox)
 
 Tam yolunu girin `tf` tıklayın ve komut **kaydetmek** düğmesi.
 
-## <a name="configure-jenkins-security"></a>Jenkins güvenliği yapılandırma
+### <a name="configure-jenkins-security"></a>Jenkins güvenliği yapılandırma
 
 Ayarlayın ve her türlü iş anonim olarak çalıştırmak herhangi bir kullanıcı için mümkündür ilk yüklendiğinde, Jenkins devre dışı, güvenlik vardır. Bu bölümde kimlik doğrulama ve yetkilendirme yapılandırmak için Jenkins kullanıcı veritabanını kullanarak güvenliğinin nasıl yapılandırılacağı ele alınmaktadır.
 
 Güvenlik ayarları seçerek bulunabilir **Jenkins > yönetmek Jenkins > Genel Güvenlik Yapılandırması**bu ekran görüntüsünde gösterildiği gibi:
 
- [ ![](jenkins-walkthrough-images/image18.png "Güvenlik ayarları Jenkins seçerek bulunabilir / yönetmek Jenkins / genel güvenlik yapılandırması")](jenkins-walkthrough-images/image18.png)
+ [![](jenkins-walkthrough-images/image18.png "Güvenlik ayarları Jenkins seçerek bulunabilir / yönetmek Jenkins / genel güvenlik yapılandırması")](jenkins-walkthrough-images/image18.png#lightbox)
 
 Üzerinde **genel güvenlik yapılandırması** sayfasında, onay **etkinleştir güvenlik** onay kutusunu ve **erişim denetimi** form görünmelidir, sonraki ekran görüntüsüne benzer:
 
- [ ![](jenkins-walkthrough-images/image19.png "Genel Güvenlik Yapılandırması sayfasında etkinleştir güvenlik denetimi onay ve erişim denetimi formun görünmelidir, bu ekran görüntüsüne benzer")](jenkins-walkthrough-images/image19.png)
+ [![](jenkins-walkthrough-images/image19.png "Genel Güvenlik Yapılandırması sayfasında etkinleştir güvenlik denetimi onay ve erişim denetimi formun görünmelidir, bu ekran görüntüsüne benzer")](jenkins-walkthrough-images/image19.png#lightbox)
 
 Değiştirme için radyo düğmesi **Jenkins kendi kullanıcı veritabanı** içinde **güvenlik bölgesi bölümü**ve emin olun **kaydolmak kullanıcıların** Ayrıca, gösterilen olarak denetlenir Aşağıdaki ekran görüntüsü:
 
- [ ![](jenkins-walkthrough-images/image20.png "Değiştirme güvenlik bölgesi bölümünde Jenkins kendi kullanıcı veritabanı için radyo düğmesi ve kaydolmak için kullanıcıların ver de kullanıma emin olun")](jenkins-walkthrough-images/image20.png)
+ [![](jenkins-walkthrough-images/image20.png "Değiştirme güvenlik bölgesi bölümünde Jenkins kendi kullanıcı veritabanı için radyo düğmesi ve kaydolmak için kullanıcıların ver de kullanıma emin olun")](jenkins-walkthrough-images/image20.png#lightbox)
 
 Son olarak, Jenkins yeniden başlatın ve yeni bir hesap oluşturun. Oluşturulan ilk hesap kök hesabıdır ve bu hesap için bir yönetici otomatik olarak yükseltilir. Geri gidin **genel güvenlik yapılandırması** sayfasında ve onay kutusunu temizleyin **matris tabanlı güvenlik** radyo düğmesi. Kök hesabı tam erişim verilmesi ve aşağıdaki ekran görüntüsünde gösterildiği gibi salt okunur erişim, anonim hesap verilmelidir:
 
- [ ![](jenkins-walkthrough-images/image21.png "Kök hesabı tam erişim verilmesi ve anonim hesap salt okunur erişim verilmesi gerekir")](jenkins-walkthrough-images/image21.png)
+ [![](jenkins-walkthrough-images/image21.png "Kök hesabı tam erişim verilmesi ve anonim hesap salt okunur erişim verilmesi gerekir")](jenkins-walkthrough-images/image21.png#lightbox)
 
 Bu ayarları kaydedilir ve Jenkins yeniden başlatıldıktan sonra güvenlik açılır.
 
 
-### <a name="disabling-security"></a>Güvenlik devre dışı bırakma
+#### <a name="disabling-security"></a>Güvenlik devre dışı bırakma
 
 Unutulan parolayı veya Jenkins genelinde kilitleme olması durumunda, aşağıdaki adımları izleyerek güvenlik devre dışı bırakmak mümkündür:
 
@@ -199,7 +199,7 @@ Unutulan parolayı veya Jenkins genelinde kilitleme olması durumunda, aşağıd
 4. Silme `<authorizationstrategy></authorizationstrategy>` ve `<securityrealm></securityrealm>` dosyasından öğeleri.
 5. Jenkins yeniden başlatın.
 
-# <a name="setting-up-a-job"></a>Proje ayarlama
+## <a name="setting-up-a-job"></a>Proje ayarlama
 
 En üst düzeyde Jenkins tüm yazılımına oluşturmak için gereken çeşitli görevleri düzenler bir *iş*. Bir işi, kaynak kodu derleme ne sıklıkla çalışmalı, yapı için gerekli olan tüm özel değişkenler almak nasıl ve yapı başarısız olursa, geliştiricilerin bildirmek nasıl gibi yapı hakkında bilgi sağlayan ilişkili meta verileri de vardır.
 
@@ -226,11 +226,11 @@ Bu klasör, tüm dosyaları ve yapıları işe günlükleri, yapılandırma dosy
  - Bir veya daha fazla *Eylemler yapı* projeye eklenmelidir. Bu adımları veya görevleri uygulama oluşturmak için gerekli olan.
  - Bir iş atanmalıdır *tetikleyici yapı* – kodunu alabilir ve son projeyi derlemek için ne sıklıkta Jenkins bildiren yönergeler kümesi.
 
-## <a name="configuring-source-code-control"></a>Kaynak kodu denetimi yapılandırma
+### <a name="configuring-source-code-control"></a>Kaynak kodu denetimi yapılandırma
 
 Jenkins mu ilk görevi olan almak kaynak kodunu kaynak kodu yönetim sisteminden. Jenkins popüler kaynak kodu yönetimi sistemleri günümüzün çoğunu destekler. Bu bölüm iki popüler sistemleri, Git ve Team Foundation Server kapsar. Bu kaynak kodu Yönetimi sistemlerinin her biri aşağıdaki bölümlerde daha ayrıntılı olarak ele alınmıştır.
 
-### <a name="using-git-for-source-code-control"></a>Kaynak kodu denetimi için Git kullanma
+#### <a name="using-git-for-source-code-control"></a>Kaynak kodu denetimi için Git kullanma
 
 Kaynak kodu denetimi için TFS kullanıyorsanız [atla](#Using_TFS_for_Source_Code_Management) bu bölümünde ve TFS kullanarak bir sonraki bölüme geçin.
 
@@ -240,7 +240,7 @@ Jenkins hiçbir ek eklentileri gerekli Git kutu dışı – destekler. Git kulla
 
 Değişiklikler kaydedildikten sonra Git yapılandırma tamamlanmış olur.
 
-### <a name="using-tfs-for-source-code-management"></a>Kaynak kodu yönetimi için TFS kullanma
+#### <a name="using-tfs-for-source-code-management"></a>Kaynak kodu yönetimi için TFS kullanma
 
 Bu bölüm, yalnızca TFS kullanıcılar için geçerlidir.
 
@@ -253,7 +253,7 @@ TFS için gerekli bilgileri sağlayın. Aşağıdaki ekran görüntüsünde tama
 
 ![](jenkins-walkthrough-images/image27.png "Bu ekran görüntüsünde tamamlanan formun örneği gösterilmektedir")
 
-### <a name="testing-the-source-code-control-configuration"></a>Kaynak kodu denetimi yapılandırmasını sınama
+#### <a name="testing-the-source-code-control-configuration"></a>Kaynak kodu denetimi yapılandırmasını sınama
 
 Uygun kaynak kodu denetimi yapılandırıldıktan sonra tıklatın **kaydetmek** değişiklikleri kaydedin. Bu, aşağıdaki ekran görüntüsüne benzer iş için giriş sayfasına döndürür:
 
@@ -273,7 +273,7 @@ Jenkins derleme bir parçası olarak doğabilecek sorunları gidermeye yardımc�
 
 ![](jenkins-walkthrough-images/image31.png "Bu ekran görüntüsü, konsol çıktısı bağlantı yanı sıra bazı başarılı bir işin çıktısını gösterir")
 
-### <a name="location-of-build-artifacts"></a>Derleme yapıları konumu
+#### <a name="location-of-build-artifacts"></a>Derleme yapıları konumu
 
 Jenkins adlı özel bir klasöre tüm kaynak kodu alacaktır bir *çalışma*. Bu dizin, aşağıdaki konumda klasör içinde bulunabilir:
 
@@ -285,7 +285,7 @@ Bir iş için giriş sayfasına giderek ve üzerinde tıklatarak Jenkins çalı�
 
 ![](jenkins-walkthrough-images/image32.png "Bu ekran HelloWorld adlı bir işi için çalışma örneği gösterilmektedir.")
 
-## <a name="build-triggers"></a>Tetikleyiciler derleme
+### <a name="build-triggers"></a>Tetikleyiciler derleme
 
 Jenkins derlemelerde başlatma için birkaç farklı stratejiler vardır – bunlar olarak bilinir *Tetikleyicileri yapı*. Yapı tetikleyici Jenkins bir iş başlatabilir ve projeyi derlemek karar vermenize yardımcı olur. İki daha yaygın yapı tetikleyicileri şunlardır:
 
@@ -297,7 +297,7 @@ Bir geliştirici ayırmak yapı neden değişiklikleri onayladığında, hızlı
 Dönemsel derlemeleri genellikle dağıtılabilir sınayıcılar uygulamaya bir sürümünü oluşturmak için kullanılır. Örneğin, böylece QA takım üyeleri iş önceki haftanın test düzenli bir yapı için Cuma Akşam zamanlanmış.
 
 
-## <a name="compiling-a-xamarinios-applications"></a>Xamarin.iOS uygulamaları derleme
+### <a name="compiling-a-xamarinios-applications"></a>Xamarin.iOS uygulamaları derleme
 Xamarin.iOS projeleri komut satırını kullanarak derlenmesi `xbuild` veya `msbuild`. Kabuk komutu Jenkins çalıştıran kullanıcı hesabının bağlamında yürütülür. Böylece uygulama dağıtım için düzgün şekilde paketlenmiş kullanıcı hesabı sağlama profili erişimi olduğundan önemlidir. Bu kabuk komut iş yapılandırma sayfasına eklemek mümkündür.
 
 Ekranı aşağı kaydırarak **yapı** bölümü. Tıklatın **Ekle derleme adımı** düğmesine tıklayın ve ardından **Kabuk yürütme**tarafından aşağıdaki ekran görüntüsünde gösterildiği gibi:
@@ -307,7 +307,7 @@ Ekranı aşağı kaydırarak **yapı** bölümü. Tıklatın **Ekle derleme adı
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
-## <a name="building-a-xamarinandroid-project"></a>Building a Xamarin.Android Project
+### <a name="building-a-xamarinandroid-project"></a>Building a Xamarin.Android Project
 
 Bir Xamarin.Android projesi oluşturma bir Xamarin.iOS projesi oluşturmayı çok benzer. Bir APK bir Xamarin.Android projesinde oluşturmak için Jenkins aşağıdaki iki adımdan gerçekleştirecek şekilde yapılandırılması gerekir:
 
@@ -316,7 +316,7 @@ Bir Xamarin.Android projesi oluşturma bir Xamarin.iOS projesi oluşturmayı ço
 
 Bu iki adımı sonraki iki bölümlerde daha ayrıntılı olarak ele alınacaktır.
 
-## <a name="creating-the-apk"></a>APK oluşturma
+### <a name="creating-the-apk"></a>APK oluşturma
 
 Tıklayın **Ekle derleme adımı** düğmesine tıklayın ve ardından **Visual Studio Proje ya da MSBuild kullanma çözüm yapı**, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
@@ -337,7 +337,7 @@ Aşağıdaki ekran görüntüsü bu APK örneği gösterilmektedir:
 
 Bu APK, özel bir anahtar ile imzalanmamış ve zip hizalanmalıdır dağıtım için hazır değil.
 
-### <a name="signing-and-zipaligning-the-apk-for-release"></a>İmzalama ve Zipaligning sürüm APK
+#### <a name="signing-and-zipaligning-the-apk-for-release"></a>İmzalama ve Zipaligning sürüm APK
 
 İmzalama ve zipaligning APK iki ayrı komut satırı araçları'ndan Android SDK'sı tarafından gerçekleştirilen teknik olarak iki ayrı görevlerdir. Ancak, bir yapı eylemi gerçekleştirmek uygundur. İmzalama ve zipaligning bir APK hakkında daha fazla bilgi için bir Android uygulaması yayın için hazırlama Xamarin'ın belgelerine bakın.
 
@@ -410,12 +410,12 @@ Aşağıdaki ekran görüntüsü girmek nasıl bir örneği gösterir `jarsigner
 
 Tüm yapı eylemleri yerinde olduktan sonra her şeyin çalıştığını doğrulamak için el ile bir derlemeyi tetiklemeyi iyi bir uygulamadır. Derleme başarısız olursa, **konsol çıktısı** ne yapılandırmanın başarısız olmasına neden hakkında bilgi için gözden geçirilmesi gerekir.
 
-## <a name="submitting-tests-to-test-cloud"></a>Testleri Test buluta gönderiliyor
+### <a name="submitting-tests-to-test-cloud"></a>Testleri Test buluta gönderiliyor
 
 Otomatikleştirilmiş testler için Test Kabuk komutları kullanarak bulut gönderilebilir. Bir Test çalışmasında Xamarin Test Cloud ayarlama hakkında daha fazla bilgi için Kılavuzlar kullanmak için sahip olduğumuz [Xamarin.UITest](https://developer.xamarin.com/guides/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/) veya [Calabash](https://developer.xamarin.com/guides/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/).
 
 
-#<a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuzdaki biz Jenkins Mac OS X üzerinde bir yapı sunucu olarak sunulan ve derlemek ve Xamarin mobil uygulamalar yayın için hazırlamak için yapılandırılmış. Derleme işlemi desteklemek için birden fazla eklenti ile birlikte bir Mac OS X bilgisayarda Jenkins yüklü. Biz oluşturulur ve kod TFS veya Git çekme ve sonra bu kodu bir yayın hazır uygulamasına derleme bir işi yapılandırılmış. Biz de işleri çalıştırılması gereken zaman zamanlamak için iki farklı şekilde incelediniz.
 

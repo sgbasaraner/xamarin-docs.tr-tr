@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/05/2017
-ms.openlocfilehash: a6bfebb5272da3fd50f4f165fc25bb75574a0b63
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4bcbd14b88f19dc48dc9d0694fb30aed31708153
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="maps-application"></a>MAPS uygulama
 
 Aşağıda gösterilen yerleşik eşlemeleri uygulama yararlanmak için Xamarin.Android eşlemelerinin çalışmak için en basit yolu verilmiştir:
 
-[![Örnek uygulamasının ekran görüntüsü yerleşik Google haritalar](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png)
+[![Örnek uygulamasının ekran görüntüsü yerleşik Google haritalar](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 Harita eşlemeleri uygulama kullandığınızda, uygulamanızın parçası olmaz. Bunun yerine, uygulamanız eşlemeleri uygulamasını başlatma ve eşlemi dışarıdan yükleme. Sonraki bölümde Xamarin.Android yukarıdaki benzer eşlemeleri başlatmak için nasıl kullanılacağını inceler.
 
-<a name="Creating_the_Intent" />
 
 ## <a name="creating-the-intent"></a>Amacı oluşturma
 
@@ -35,7 +34,6 @@ StartActivity (mapIntent);
 
 Bu kod, önceki ekran görüntüsünde gösterildiği harita başlatmak için gereken şeydir. Enlem ve boylam belirtmeye ek olarak birçok seçenek eşlemeleri için URI şeması destekler.
 
-<a name="Geo_Uri_Scheme" />
 
 ## <a name="geo-uri-scheme"></a>Coğrafi URI düzeni
 
@@ -52,10 +50,9 @@ Yukarıdaki kod coğrafi düzeni bir URI oluşturmak için kullanılır. Bu URI 
 
 Sorgulama (yani sokak adresi veya arama terimleri) URI sürümleri Google geocoder hizmet sonra haritada görüntülenmelerini konumunu almak için kullanın. Örneğin, URI `geo:0,0?q=coop+Cambridge` aşağıda gösterilen harita sonuçlanıyor:
 
-[![Google Haritalar ile bir arama terimi gösteren örnek ekran görüntüsü](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png)
+[![Google Haritalar ile bir arama terimi gösteren örnek ekran görüntüsü](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 
-<a name="Street_View" />
 
 Coğrafi URI düzeni hakkında daha fazla bilgi için bkz: [bir konumu haritada Göster](http://developer.android.com/guide/components/intents-common.html#Maps).
 
@@ -64,7 +61,7 @@ Coğrafi URI düzeni hakkında daha fazla bilgi için bkz: [bir konumu haritada 
 
 Coğrafi düzeni yanı sıra bir amaçtan Sokak görünümler yükleniyor Android de destekler. Xamarin.Android başlatılan Sokak görünümü uygulaması örneği aşağıda verilmiştir:
 
-[![Sokak görünümünün örnek ekran görüntüsü](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png)
+[![Sokak görünümünün örnek ekran görüntüsü](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
 Sokak görünüm başlatmak için yalnızca kullanmak `google.streetview` aşağıdaki kodda gösterildiği gibi URI şeması:
 

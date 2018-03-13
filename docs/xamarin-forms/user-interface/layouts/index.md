@@ -5,18 +5,25 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 65030DA3-C7C1-4A02-B478-811073C39139
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1fe290983bf7b130dee6f1a1878a32dce3efc4c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ede9bbb47f398a82d6eae5d827122f469ad6ea4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layouts"></a>Düzenleri
 
-Xamarin.Forms birçok düzenleri ve ekran içeriğini düzenlemek için özellikler içerir. Her bir düzen denetimi, ekran yönünü değişiklikleri işlemesi hakkında ayrıntılar yanı sıra aşağıda verilmektedir:
+Xamarin.Forms birçok düzenleri ve ekran içeriğini düzenlemek için özellikler içerir. 
+
+> [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
+
+**Xamarin.Forms düzenleri, göre [Xamarin Üniversitesi](https://university.xamarin.com/)**
+
+Her bir düzen denetimi, ekran yönünü değişiklikleri işlemesi hakkında ayrıntılar yanı sıra aşağıda verilmektedir:
 
 * **[StackLayout](stack-layout.md)**  &ndash; görünümleri doğrusal olarak, düzenlemek için kullanılan yatay veya dikey olarak. Bir StackLayout görünümlerde için sola veya sağa düzeninin merkezi hizalanabilir.
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash; koordinatları ayarlayarak görünümleri düzenleme & Mutlak değerler veya oranları bakımından boyutu için kullanılır. AbsoluteLayout yanı sıra görünümleri katman sol, sağ veya center bağlamak için kullanılabilir.
@@ -35,7 +42,7 @@ Platform denetimleri de kullanılabilir doğrudan Xamarin.Forms düzenleriyle [ 
 
 Aşağıdaki grafikte düzen denetimleri visualizes:
 
-[ ![](images/layouts-sml.png "Xamarin.Forms düzenleri")](images/layouts.png "Xamarin.Forms düzenleri")
+[![](images/layouts-sml.png "Xamarin.Forms düzenleri")](images/layouts.png#lightbox "Xamarin.Forms düzenleri")
 
 ## <a name="choosing-the-right-layout"></a>Sağ Düzen seçme
 
@@ -156,7 +163,7 @@ Yukarıdaki kod şu yönlerini dikkat edin:
 
 [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) Yapısı hizalama ve kendi üst göreli bir görünüm için genişletme tanımlamak için kullanılabilir.
 
-### <a name="margin-and-paddingmargin-and-paddingmd"></a>[Kenar boşluğu bırakma ve doldurma](margin-and-padding.md)
+### <a name="margin-and-paddingmargin-and-paddingmd"></a>[Kenar Boşlukları ve Doldurma](margin-and-padding.md)
 
 [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Ve [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) özellikleri, bir öğenin kullanıcı arabiriminde işlendiğinde düzen davranışını denetler.
 
@@ -168,7 +175,7 @@ Her öğeye sahip bir [ `InputTransparent` ](https://developer.xamarin.com/api/p
 
 Bu özellik, değer aktarımları alt öğeleri için bir düzen sınıfı gibi bir kapsayıcı sınıfını ayarlandığında. Bu nedenle, ayarı [ `InputTransparent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.InputTransparent/) özelliğine `true` bir düzen giriş almıyor düzeni içinde öğelerin sınıfı sonuçlanır.
 
-### <a name="device-orientationdevice-orientationmd"></a>[Cihaz yönlendirmesini](device-orientation.md)
+### <a name="device-orientationdevice-orientationmd"></a>[Cihaz Yönü](device-orientation.md)
 
 Xamarin.Forms ve yerleşik düzenleri cihaz yönlendirmesini değişiklikleri işleyebilir. Uygulamanızı destekler, de hale getireceğiz nasıl hangi yönler göz önünde bulundurun yatay ve dikey modlarında sağlanan alanı kullanın.
 
@@ -176,11 +183,11 @@ Xamarin.Forms ve yerleşik düzenleri cihaz yönlendirmesini değişiklikleri i�
 
 iOS, Android ve Windows platformları üzerinde büyük ekran boyutlarına desteklemez tablet aygıtları (yanı sıra dizüstü ve masaüstü bilgisayarlar Windows için). Xamarin.Forms cihaz türüne ve sayfa düzeni ayarlama algılama veya farklı bir sayfa için büyük ekranlar tamamen kullanarak uygulamanızı büyük ekranlar için en iyi hale getirmenize olanak tanır.
 
-### <a name="creating-a-custom-layoutcustommd"></a>[Özel bir düzen oluşturma](custom.md)
+### <a name="creating-a-custom-layoutcustommd"></a>[Özel Düzen Oluşturma](custom.md)
 
 Xamarin.Forms tanımlar dört düzeni sınıfları - [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/), [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/), ve [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), ve her alt farklı bir şekilde düzenler. Ancak, bazen bir düzen kullanmayan sayfa içeriği düzenlemek için gerekli sağlanan tarafından Xamarin.Forms. Bu makalede, nasıl özel yerleşim sınıfı yazılacağını açıklar ve yönlendirme duyarlı gösteren `WrapLayout` , alt öğelerini yatay sayfa boyunca düzenler ve ek satırlar sonraki alt öğelerini görüntüsünü sarmalar sınıfı.
 
-### <a name="layout-compressionlayout-compressionmd"></a>[Düzenini sıkıştırma](layout-compression.md)
+### <a name="layout-compressionlayout-compressionmd"></a>[Düzen Sıkıştırma](layout-compression.md)
 
 Düzenini sıkıştırma belirtilen düzenleri sayfa işleme performansı girişimi görsel ağaç kaldırır. Bu teslim performans avantajı bir sayfa, kullanılan işletim sistemi sürümü ve uygulamanın çalıştığı aygıt karmaşıklığına bağlı olarak değişir. Ancak, büyük performans artışı eski cihazlarda görülür.
 

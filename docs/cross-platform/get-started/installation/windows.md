@@ -7,27 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: b68e03251b83192bdc5836af6ea54446ddaad24a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bffc6bb1bc6537745fe9603906b5938fc3c34fe1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installing-xamarin-in-visual-studio-on-windows"></a>Xamarin Windows Visual Studio yükleme
 
 Xamarin ile artık bulunduğundan hiçbir ek Visual Studio'ya'nin tüm sürümlerinde maliyet ve ayrı bir lisansı gerektirmez, Visual Studio yükleyicisi indirmek ve Xamarin Araçları'nı yüklemek için kullanabilirsiniz.
 
--   [Gereksinimler](#requirements)
--   [Yükleme](#installation)
--   [Visual Studio 2017 Xamarin ekleme](#vs2017)
--   [Visual Studio 2015 için Xamarin ekleme](#vs2015)
--   [Yüklemeyi doğrulama](#verifying)
--   [Sonraki adımlar](#nextsteps)
-
-
 <a name="requirements" />
 
-# <a name="requirements"></a>Gereksinimler
+## <a name="requirements"></a>Gereksinimler
 
 Visual Studio Araçları için Xamarin yüklemek için gerekli şunlardır:
 
@@ -44,7 +36,7 @@ Yükleme ve Xamarin kullanma önkoşulları hakkında daha fazla bilgi için bkz
 
 <a name="installation" />
 
-# <a name="installation"></a>Yükleme
+## <a name="installation"></a>Yükleme
 
 Xamarin yeni bir Visual Studio yüklemesinin bir parçası olarak yüklenebilir.
 Bunun için aşağıdaki adımları kullanın:
@@ -55,7 +47,7 @@ Bunun için aşağıdaki adımları kullanın:
 
 3. Seçin **.NET ile Mobil Geliştirme** iş yükü yükleme ekranında: 
 
-    [![İş yükleri ekranında .NET seçimi ile Mobil Geliştirme](windows-images/01-mobile-dev-workload-sml.png)](windows-images/01-mobile-dev-workload.png)
+    [![İş yükleri ekranında .NET seçimi ile Mobil Geliştirme](windows-images/01-mobile-dev-workload-sml.png)](windows-images/01-mobile-dev-workload.png#lightbox)
 
 4. Sırada **.NET ile Mobil Geliştirme** olan seçili göz atın sahip **Özet** sağ panelde. Burada, yüklemek istiyor musunuz mobil geliştirme seçenekleri seçimini kaldırabilirsiniz. Varsayılan olarak, aşağıdaki ekran görüntüsünde gösterilen tüm seçenekleri yüklenir (**Xamarin çalışma kitaplarını**, **Xamarin profil oluşturucu**, **Xamarin düğümlerde Simulator**,  **Android NDK**, **Android SDK**, **Java SE Geliştirme Seti**, **Google Android öykünücüsü**, **F # Destek**, ve **Intel HAXM**):
 
@@ -76,7 +68,7 @@ Bunun için aşağıdaki adımları kullanın:
 
 <a name="vs2017" />
 
-## <a name="adding-xamarin-to-visual-studio-2017"></a>Visual Studio 2017 Xamarin ekleme
+### <a name="adding-xamarin-to-visual-studio-2017"></a>Visual Studio 2017 Xamarin ekleme
 
 Visual Studio 2017 zaten yüklediyseniz, iş yüklerini değiştirmek için Visual Studio yükleyicisi yeniden çalıştırarak Xamarin ekleyebilirsiniz (bkz [değiştirmek Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) Ayrıntılar için). Ardından, Xamarin yüklemek için yukarıda listelenen adımları izleyin.
 
@@ -85,7 +77,7 @@ Visual Studio 2017 yükleyip hakkında daha fazla bilgi için bkz: [yükleme Vis
 
 <a name="vs2015" />
 
-## <a name="adding-xamarin-to-visual-studio-2015"></a>Visual Studio 2015 için Xamarin ekleme
+### <a name="adding-xamarin-to-visual-studio-2015"></a>Visual Studio 2015 için Xamarin ekleme
 
 Visual Studio 2015 mevcut bir yüklemeye Xamarin.Android eklemek için aşağıdaki adımları kullanın:
 
@@ -104,7 +96,7 @@ Visual Studio 2015 mevcut bir yüklemeye Xamarin.Android eklemek için aşağıd
 
 <a name="verifying" />
 
-## <a name="verifying-installation"></a>Yüklemeyi doğrulama
+### <a name="verifying-installation"></a>Yüklemeyi doğrulama
 
 Visual Studio 2017 içinde Xamarin tıklayarak yüklendiğini doğrulayabilirsiniz **yardımcı** menüsü. Xamarin yüklediyseniz görmelisiniz bir **Xamarin** bu ekran görüntüsünde gösterildiği gibi menü öğesi:
 
@@ -118,11 +110,11 @@ Sürüm bilgileri bulma hakkında daha fazla bilgi için bkz: [nereden bulabilir
 
 <a name="nextsteps" />
 
-# <a name="next-steps"></a>Sonraki Adımlar
+## <a name="next-steps"></a>Sonraki Adımlar
 
 Xamarin için Visual Studio Araçları yükleme, uygulamalarınız için kod yazma başlatmanızı sağlar, ancak ek kurulum geliştirmek ve simulator, öykünücüsü ve cihaz uygulamalarınızı dağıtma gerektirir. Yüklemenizi tamamlamak ve platformlar arası uygulamalar oluşturmaya başlamak için aşağıdaki Kılavuzlar ziyaret edin.
 
-## <a name="ios"></a>iOS
+### <a name="ios"></a>iOS
 
 Daha ayrıntılı bilgi için bkz: [yükleme Xamarin.iOS Windows](~/ios/get-started/installation/windows/index.md) Kılavuzu. 
 
@@ -131,13 +123,13 @@ Daha ayrıntılı bilgi için bkz: [yükleme Xamarin.iOS Windows](~/ios/get-star
 3. [iOS Developer Kurulumu](~/ios/get-started/installation/windows/index.md#developersetup) (cihazda uygulamanızı çalıştırmak için).
 4. [Visual Studio Mac yapı ana bilgisayara bağlanma](~/ios/get-started/installation/windows/index.md#connectingtomac)
 5. [Düğümlerde iOS simülatörü](~/tools/ios-simulator.md)
-6. [Visual Studio Xamarin.iOS için giriş](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
+6. [Visual Studio için Xamarin.iOS’a Giriş](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 
-## <a name="android"></a>Android
+### <a name="android"></a>Android
 
 Daha ayrıntılı bilgi için bkz: [yükleme Xamarin.Android Windows](~/android/get-started/installation/windows.md) Kılavuzu.
 
 1. [Xamarin.Android Configuration](~/android/get-started/installation/windows.md#configuration)
 2. [Xamarin Android SDK Yöneticisi'ni kullanma](~/android/get-started/installation/android-sdk.md?ide=vs)
-3. [Android SDK öykünücüsü](~/android/get-started/installation/android-emulator/index.md)
-4. [Aygıtı geliştirme için ayarlama](~/android/get-started/installation/set-up-device-for-development.md)
+3. [Android SDK Emulator](~/android/get-started/installation/android-emulator/index.md)
+4. [Cihazı Dağıtım için Ayarlama](~/android/get-started/installation/set-up-device-for-development.md)

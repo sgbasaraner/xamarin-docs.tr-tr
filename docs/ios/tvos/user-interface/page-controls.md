@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4da50dac901628b9baf10a07650d232a977a653
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f77eac8179f9e368e767bb4b586ccaa3f93e40a3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-page-control"></a>Sayfa denetimiyle çalışma
 
@@ -20,7 +20,7 @@ _Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde sayfa denetimiyle çalı
 
 Bazen sayfaları veya görüntüleri bir dizi Xamarin.tvOS uygulamanızda görüntülenecek gerekebilir. Sayfası denetimi, bir kullanıcı üzerinde en fazla sayfa sayısını dışında hangi sayfasını açıkça göstermek için tasarlanmıştır. Bir sayfa denetimi bir dizi arka plan şeklinde bir koyu, oval karşı nokta görüntüler. Geçerli sayfa dolu nokta görüntülenir, diğer tüm sayfalar boş noktalar göster. Varsa, arka plan alanında sığması için çok fazla sayfa denetimini dış çoğu nokta küçük.
 
-[ ![](page-controls-images/page01.png "Örnek sayfası denetimi")](page-controls-images/page01.png)
+[![](page-controls-images/page01.png "Örnek sayfası denetimi")](page-controls-images/page01.png#lightbox)
 
 Yalnızca kullanıcı geri bildirim sağlamak için tasarlanmış etkileşimli olmayan bir öğe sayfa denetiminde. Geçerli sayfa numarası (örneğin, hareketleri veya düğmeleri) değiştirmek için diğer denetimleri eklemeniz gerekir.
 
@@ -41,14 +41,14 @@ Xamarin.tvOS uygulamada sayfa denetimleri ile çalışmak için en kolay yolu, o
 1. İçinde **çözüm paneli**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **sayfası denetimi** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](page-controls-images/page02.png "Bir sayfa denetimi")](page-controls-images/page02.png)
+    [![](page-controls-images/page02.png "Bir sayfa denetimi")](page-controls-images/page02.png#lightbox)
 1. İçinde **pencere öğesi sekmesini** , **özellikleri paneli**, gibi çeşitli özellikleri sayfasında denetiminin ayarlayın, **geçerli sayfa** ve **# sayfa**: 
 
-    [ ![](page-controls-images/page03.png "Pencere öğesi sekmesi")](page-controls-images/page03.png)
+    [![](page-controls-images/page03.png "Pencere öğesi sekmesi")](page-controls-images/page03.png#lightbox)
 1. Ardından, denetimleri veya hareketleri geri taşımak ve sayfaları toplulukta iletmek için görünümüne ekleyin.
 1. Son olarak, Ata **adları** denetimlere için C# kodunda yanıt vermesi. Örneğin: 
 
-    [ ![](page-controls-images/page04.png "Ad denetimi")](page-controls-images/page04.png)
+    [![](page-controls-images/page04.png "Ad denetimi")](page-controls-images/page04.png#lightbox)
 1. Değişikliklerinizi kaydedin.
     
 
@@ -58,14 +58,14 @@ Xamarin.tvOS uygulamada sayfa denetimleri ile çalışmak için en kolay yolu, o
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **sayfası denetimi** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](page-controls-images/page02-vs.png "Bir sayfa denetimi")](page-controls-images/page02-vs.png)
+    [![](page-controls-images/page02-vs.png "Bir sayfa denetimi")](page-controls-images/page02-vs.png#lightbox)
 1. İçinde **pencere öğesi sekmesini** , **özellikleri Explorer**, gibi çeşitli özellikleri sayfasında denetiminin ayarlayın kendi **geçerli sayfa** ve **sayfalarısayısı**: 
 
-    [ ![](page-controls-images/page03-vs.png "Pencere öğesi sekmesi")](page-controls-images/page03-vs.png)
+    [![](page-controls-images/page03-vs.png "Pencere öğesi sekmesi")](page-controls-images/page03-vs.png#lightbox)
 1. Ardından, denetimleri veya hareketleri geri taşımak ve sayfaları toplulukta iletmek için görünümüne ekleyin.
 1. Son olarak, Ata **adları** denetimlere için C# kodunda yanıt vermesi. Örneğin: 
 
-    [ ![](page-controls-images/page04-vs.png "Ad denetimi")](page-controls-images/page04-vs.png)
+    [![](page-controls-images/page04-vs.png "Ad denetimi")](page-controls-images/page04-vs.png#lightbox)
 1. Değişikliklerinizi kaydedin.
     
 
@@ -177,7 +177,7 @@ Bu makalede, tasarlama ve Xamarin.tvOS uygulama içinde sayfa denetimiyle çalı
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

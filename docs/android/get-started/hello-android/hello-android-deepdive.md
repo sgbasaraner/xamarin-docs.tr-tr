@@ -3,16 +3,16 @@ title: "Merhaba, Android: Derinlemesine bakış"
 description: "Bu iki parçalı Kılavuzu'nda ilk Xamarin.Android uygulamanızı oluşturmak ve Xamarin ile Android uygulaması geliştirme ile ilgili temel bilgileri bir anlayış geliştirmek. Yol boyunca araçları, kavramlar ve oluşturmak ve bir Xamarin.Android uygulaması dağıtmak için gerekli adımları görülecektir."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: AD3BAE9A-963C-4CF7-9733-111033034289
+ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: de6037b9cfeb66ee1c26c12c2e81913a4a2f1e79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e9e554da80218d2e89ff79c6e89886d707b1ed95
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-deep-dive"></a>Merhaba, Android: Derinlemesine bakış
 
@@ -83,13 +83,13 @@ Mac için Visual Studio aşağıdaki koda düzenleme Visual Studio uygulama _ç�
 
 Aşağıdaki ekran görüntüsünde çözümün içeriği listeler. Bu dizin yapısını ve tüm Çözümle ilişkili dosyaları içeren Çözüm Gezgini oluşur:
 
-[![Çözüm Gezgini](hello-android-deepdive-images/vs/02-solution-structure-sml.png )](hello-android-deepdive-images/vs/02-solution-structure.png)
+[![Çözüm Gezgini](hello-android-deepdive-images/vs/02-solution-structure-sml.png)](hello-android-deepdive-images/vs/02-solution-structure.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Aşağıdaki ekran görüntüsünde çözümün içeriği listeler. Bu çözüm, dizin yapısını ve tüm Çözümle ilişkili dosyaları içeren Pad'i oluşur:
 
-[![Çözüm paneli](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png)
+[![Çözüm paneli](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png#lightbox)
 
 -----
 
@@ -135,26 +135,26 @@ Android, bu benzersiz özellik son derece yararlı uygulamalar tasarlama karmaş
 
 Açtığınızda **Phoneword** uygulama ilk kez bir öykünücü veya cihaz işletim sistemi oluşturur ilk *etkinlik*. Tek bir uygulama ekranına karşılık gelen özel bir Android sınıfı bir etkinliktir ve çizim ve kullanıcı arabirimini destekleyen sorumludur. Android uygulamanın ilk etkinlik oluşturduğunda, tüm uygulama yükler:
 
-[![Etkinlik yükleme](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png)
+[![Etkinlik yükleme](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png#lightbox)
 
 Hiçbir doğrusal progression (birkaç nokta uygulamasından başlatabilirsiniz) bir Android uygulaması olduğundan, Android uygulama ne sınıfları ve dosyaları sunun izlemek için benzersiz bir şekilde sahiptir. İçinde **Phoneword** örnek, uygulamayı oluşturan bölümleri adlı özel bir XML dosyası ile kaydedilen tüm **Android derleme bildirimi**. Rolü **Android derleme bildirimi** uygulama içeriği, özellikler ve izinleri izlemek ve Android işletim sistemine ifşa sağlamaktır. Düşünebilirsiniz **Phoneword** uygulama tek bir etkinlik (ekran) ve Android bildirim dosyası tarafından Aşağıdaki diyagramda gösterildiği gibi birbirine bağlı Yardımcısı ve kaynak dosyaları koleksiyonu olarak:
 
-[![Kaynak Yardımcıları](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png)
+[![Kaynak Yardımcıları](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png#lightbox)
 
 Sonraki birkaç bölümleri, çeşitli kısımlarını ilişkileri keşfetmek **Phoneword** uygulama; bu sağlayacağını, daha iyi yukarıdaki diyagramı anlamak ile. Bu keşif Android Tasarımcısı ve düzeni dosyaları anlatılmaktadır kullanıcı arabirimi ile başlar.
 
 
-## <a name="user-interface"></a>Kullanıcı arabirimi
+## <a name="user-interface"></a>Kullanıcı Arabirimi
 
 `Main.axml` kullanıcı arabirimi düzeni uygulamanın ilk ekranda dosyasıdır. .axml bu Android Tasarımcısı dosyasına gösterir (AXML anlamına gelir *Android XML*). Adı *ana* Android'ın açısından bakıldığında rastgeledir &ndash; düzeni dosyasını başka bir adlandırılmış. Açtığınızda **Main.axml** adlı Android düzeni dosyaları için görsel Düzenleyicisi yukarı getirir IDE içinde *Android Tasarımcısı*:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Android Tasarımcısı](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Tasarımcısı")](hello-android-deepdive-images/vs/03-android-designer.png)
+[![Android Tasarımcısı](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Tasarımcısı")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Android Tasarımcısı](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png)
+[![Android Tasarımcısı](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
 
 -----
 
@@ -162,11 +162,11 @@ Sonraki birkaç bölümleri, çeşitli kısımlarını ilişkileri keşfetmek **
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![TranslateButton kimliği ayarı](hello-android-deepdive-images/vs/04-translatebutton-sml.png "TranslateButton kimliği ayarı")](hello-android-deepdive-images/vs/04-translatebutton.png)
+[![TranslateButton kimliği ayarı](hello-android-deepdive-images/vs/04-translatebutton-sml.png "TranslateButton kimliği ayarı")](hello-android-deepdive-images/vs/04-translatebutton.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![TranslateButton kimliği ayarı](hello-android-deepdive-images/xs/04-translatebutton-sml.png)](hello-android-deepdive-images/xs/04-translatebutton.png)
+[![TranslateButton kimliği ayarı](hello-android-deepdive-images/xs/04-translatebutton-sml.png)](hello-android-deepdive-images/xs/04-translatebutton.png#lightbox)
 
 -----
 
@@ -179,11 +179,11 @@ Tasarım yüzeyine tanımlanan her şeyi kullanmak Xamarin.Android için XML ver
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tasarımcı kaynağı görünümü](hello-android-deepdive-images/vs/05-source-view-sml.png "Tasarımcısı kaynağı görünümü")](hello-android-deepdive-images/vs/05-source-view.png)
+[![Tasarımcı kaynağı görünümü](hello-android-deepdive-images/vs/05-source-view-sml.png "Tasarımcısı kaynağı görünümü")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Tasarımcı kaynağı görünümü](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png)
+[![Tasarımcı kaynağı görünümü](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png#lightbox)
 
 -----
 
@@ -223,7 +223,7 @@ Artık temel bilgileri `MainActivity` silinmiş kapsamında, etkinlik koda daha 
 
 Android, etkinlikleri yaşam döngüsü kullanıcı ile etkileşimlerini bağlı olarak farklı aşamaları gidin. Başlatılan ve duraklatılmış, sürdürüldü ve yok etme ve vb. etkinlikleri oluşturulabilir. `Activity` Sınıfı ekranının yaşam döngüsü belirli noktalarında sistem çağırır yöntemlerini içerir. Aşağıdaki diyagram tipik bir aktivite ömrünü ve aynı zamanda ilgili yaşam döngüsü yöntemleri gösterir:
 
-[![Etkinlik yaşam döngüsü](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png)
+[![Etkinlik yaşam döngüsü](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png#lightbox)
 
 Geçersiz kılma tarafından `Activity` yaşam döngüsü yöntemleri nasıl etkinlik, kullanıcıya nasıl tepki verdiğini yükler denetlemek ve hatta aygıt ekranından kaybolur sonra ne olur. Örneğin, bazı önemli görevleri gerçekleştirmek için yukarıdaki diyagramda yaşam döngüsü yöntemleri geçersiz kılabilirsiniz:
 
@@ -320,21 +320,20 @@ Cihaz yapılandırıldıktan sonra kendisine ondan seçerek, takarak dağıtabil
 
 Cihaz yapılandırıldıktan sonra kendisine tuşlarına basarak, takarak dağıtabilirsiniz **başlangıç (Çalıştır)**, ondan seçme **aygıtı Seç** iletişim ve tuşlarına basarak **Tamam**:
 
-[![Select hata ayıklama cihaz](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png)
+[![Select hata ayıklama cihaz](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
 
 -----
 
 Bu aygıttaki uygulama başlatır:
 
-[![Phoneword girin](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png)
+[![Phoneword girin](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png#lightbox)
 
-<a name="densities" />
 
 ### <a name="set-icons-for-different-screen-densities"></a>Farklı ekran Densities için simgeler ayarlama
 
 Android aygıtlar farklı ekran boyutlarına ve çözümlemeleri gelir ve tüm görüntüleri tüm ekranlarda iyi bakın. Örneğin, bir ekran görüntüsünü yüksek yoğunluklu bir Nexus 5 düşük yoğunluklu simgesinde aşağıdadır. Nasıl bulanık onu çevresindeki simgeleri karşılaştırılır dikkat edin:
 
-[![Bulanık simgesi](hello-android-deepdive-images/06-blurry-icon-sml.png)](hello-android-deepdive-images/06-blurry-icon.png)
+[![Bulanık simgesi](hello-android-deepdive-images/06-blurry-icon-sml.png)](hello-android-deepdive-images/06-blurry-icon.png#lightbox)
 
 Bu hesap için farklı çözümler simgeleri eklemek için iyi bir uygulamadır **kaynakları** klasör. Android sağlar farklı sürümlerini **mipmap** farklı densities Başlatıcısı simgeleri işlemek için klasör *mdpi* Orta, *hdpi* yüksek için ve  *xhdpi*, *xxhdpi*, *xxxhdpi* çok yüksek yoğunluk ekranlar için. Farklı boyutlarda simgeler uygun depolanır **mipmap -** klasörler:
 
@@ -344,13 +343,13 @@ Bu hesap için farklı çözümler simgeleri eklemek için iyi bir uygulamadır 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Mipmap klasörlerinde](hello-android-deepdive-images/xs/07-mipmap-folders-sml.png)](hello-android-deepdive-images/xs/07-mipmap-folders.png)
+[![Mipmap klasörlerinde](hello-android-deepdive-images/xs/07-mipmap-folders-sml.png)](hello-android-deepdive-images/xs/07-mipmap-folders.png#lightbox)
 
 -----
 
 Android uygun yoğunluğu simgesiyle seçer:
 
-[![Uygun yoğunluğu simgeleri](hello-android-deepdive-images/07-appropriate-density-sml.png)](hello-android-deepdive-images/07-appropriate-density.png)
+[![Uygun yoğunluğu simgeleri](hello-android-deepdive-images/07-appropriate-density-sml.png)](hello-android-deepdive-images/07-appropriate-density.png#lightbox)
 
 ### <a name="generate-custom-icons"></a>Özel simge oluşturma
 
@@ -393,15 +392,15 @@ Tüm Google Play Hizmetleri'nin kitaplıklarına bağlamaları tek bir paket bi�
 
 Bir veya daha fazla Google Play Hizmeti'ni kitaplıkları eklemek için sağ tıklatın **paketleri** tıklayın ve proje ağacı düğümünde **Google Play Hizmeti'ni Ekle...** :
 
-[![Add Google Play Service](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png)
+[![Add Google Play Service](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
 
 Zaman **Google Play Hizmetleri Ekle** iletişim sunulur, projenize eklemek istediğiniz paketleri (nugets) seçin:
 
-[![Paketleri seçin](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png)
+[![Paketleri seçin](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png#lightbox)
 
 Ne zaman bir hizmeti seçin ve tıklatın **Paketi Ekle**, Mac için Visual Studio indirir ve bunu gerektiren tüm bağımlı Google Play Hizmetleri'nin paketler yanı sıra seçtiğiniz paketi yükler. Bazı durumlarda, görebileceğiniz bir **lisans kabulünü** tıklatın gerektirir iletişim **kabul** paketler yüklenmeden önce:
 
-[![Lisans Kabulünü](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png)
+[![Lisans Kabulünü](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png#lightbox)
 
 -----
 

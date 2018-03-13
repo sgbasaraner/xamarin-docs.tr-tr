@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: bf9d292acf43bbbe3e4ba76b5a264a11288b7225
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 732f60a413077bc15018679fe8f8bc0a18227246
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-architecture"></a>iOS mimarisi
 
@@ -20,7 +20,7 @@ Xamarin.iOS uygulamaları Mono yürütme ortamında çalıştırın ve ARM assem
 
 Aşağıdaki diyagramda Bu mimarinin temel bir bakış gösterilir:
 
-[ ![](architecture-images/ios-arch-small.png "Şimdi, zaman Tıkların derleme mimarisi temel bir bakış Bu diyagramda gösterilmektedir")](architecture-images/ios-arch.png)
+[ ![](architecture-images/ios-arch-small.png "Şimdi, zaman Tıkların derleme mimarisi temel bir bakış Bu diyagramda gösterilmektedir")](architecture-images/ios-arch.png#lightbox)
 
 ## <a name="native-and-managed-code-an-explanation"></a>Yerel ve yönetilen kod: bir açıklama
 
@@ -36,7 +36,7 @@ Herhangi bir Xamarin platform uygulamasını derlerken Mono C# (veya F #) derley
 Ancak, iOS, bir cihazda dinamik olarak üretilen kod yürütmeyi izin vermez Apple tarafından ayarlanan güvenlik sınırlaması yoktur.
 Biz bu güvenlik protokolleri uyması emin olmak için Xamarin.iOS yerine şimdi, zaman Tıkların derleyici yönetilen kodu derlemek için kullanır. Bu, isteğe bağlı olarak LLVM ile Apple'nın ARM tabanlı işlemci üzerinde dağıtılabilir, cihazlar için en iyi duruma getirilmiş ikili, bir yerel iOS oluşturur. Bu birlikte nasıl uyduğunu kaba diyagramı aşağıda gösterilmiştir:
 
-[ ![](architecture-images/aot.png "Bu birlikte nasıl uyduğunu kaba diyagramı")](architecture-images/aot-large.png)
+[![](architecture-images/aot.png "Bu birlikte nasıl uyduğunu kaba diyagramı")](architecture-images/aot-large.png#lightbox)
 
 Uygulama Nesne AĞACI kullanarak sahip bir dizi ayrıntıları sınırlama [sınırlamalar](~/ios/internals/limitations.md) Kılavuzu. Ayrıca bazı geliştirmeler JIT başlangıç zamanı ve çeşitli performans iyileştirmelerini azalma aracılığıyla sağlar
 
@@ -101,7 +101,7 @@ Kaydedicilerin Xamarin.iOS – dinamik ve statik kullanılan iki tür vardır:
 
 - **Statik kaydedicilerin** – statik kayıt şirketi sonra bir statik kitaplık içine derlenmiş ve yürütülebilir bağlanmış derleme sırasında Objective-C kodunu oluşturur. Bu daha hızlı bir başlangıç için sağlar, ancak derleme sırasında daha uzun sürer. Cihaz derlemeler için bu varsayılan olarak kullanılır. Statik kayıt de ile iOS simülatörü geçirerek kullanılabilir `--registrar:static` olarak bir `mtouch` aşağıda gösterildiği gibi projenizin yapı Seçenekler'de, öznitelik:
 
-    [ ![](architecture-images/image1.png "Ayar ek mtouch bağımsız değişkenleri")](architecture-images/image1.png)
+    [![](architecture-images/image1.png "Ayar ek mtouch bağımsız değişkenleri")](architecture-images/image1.png#lightbox)
 
 Xamarin.iOS tarafından kullanılan türü kayıt sistemi iOS özellikleri hakkında daha fazla bilgi için bkz [türü kayıt](~/ios/internals/registrar.md) Kılavuzu.
 
@@ -179,7 +179,7 @@ Xamarin.iOS uygulamaları, keşfedilen Xamarin.iOS ve Objective-C ilişkisini de
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Sınırlamalar](~/ios/internals/limitations.md)
-- [Objective-C bağlama](~/cross-platform/macios/binding/overview.md)
+- [Objective-C’yi Bağlama](~/cross-platform/macios/binding/overview.md)
 - [Objective-C seçiciler](~/ios/internals/objective-c-selectors.md)
 - [Kayıt türü](~/ios/internals/registrar.md)
-- [Linker](~/ios/deploy-test/linker.md)
+- [Bağlayıcı](~/ios/deploy-test/linker.md)

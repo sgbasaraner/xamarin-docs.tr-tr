@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: baf1ae7d4cc533af0db482e8d7c31fc3c8b4edbf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4e93696f8eef44030ffacbdbaa8ebcd860a402f6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="free-provisioning"></a>Ücretsiz sağlama
 
@@ -43,29 +43,29 @@ Mac veya Visual Studio için Visual Studio Xcode imzalama kimlik ve sağlama pro
 2. Xcode açın ve **Xcode > Tercihler**.
 3. Altında **hesapları**, kullanın  **+**  var olan Apple kimliğinizi Ekle düğmesi Aşağıdaki ekran görüntüsüne benzer görünmelidir:
 
-  [ ![](free-provisioning-images/launchapp1.png "Xcode Tercihler hesapları")](free-provisioning-images/launchapp1.png)
+  [![](free-provisioning-images/launchapp1.png "Xcode Tercihler hesapları")](free-provisioning-images/launchapp1.png#lightbox)
 
 4. Xcode'da yeni bir boş tek görünüm iOS projesi oluşturun ve dağıtmak istediğinizden iOS cihazını takın. Ayarlama **takım** eklemiş olduğunuz Apple kimliği açılır. Benzer bir biçimde olmalıdır `your name (Personal Team - your Apple ID)`:
 
-  [ ![](free-provisioning-images/launchapp2.png "İmzalama kimlik oluşturma")](free-provisioning-images/launchapp2.png)
+  [![](free-provisioning-images/launchapp2.png "İmzalama kimlik oluşturma")](free-provisioning-images/launchapp2.png#lightbox)
 
 5. Altında **genel > kimlik** bölümünde, paket tanımlayıcısı eşleştiğinden emin olun _tam olarak_ Xamarin.iOS uygulamanızı paket tanımlayıcısını ve dağıtım hedef eşleşen veya değerinden daha düşük emin olun bağlı iOS Cihazınızı. Xcode yalnızca bir açık uygulama kimliği ile bir sağlama profili oluşturacak şekilde bu adım çok önemlidir:
 
-  [![](free-provisioning-images/launchapp5.png "Bir açık uygulama kimliği ile bir sağlama profili oluşturun")](free-provisioning-images/launchapp5.png)
+  [![](free-provisioning-images/launchapp5.png "Bir açık uygulama kimliği ile bir sağlama profili oluşturun")](free-provisioning-images/launchapp5.png#lightbox)
 
 6. İmzalama bölümünde **otomatik olarak yönetme imzalama** ve ekibinizin aşağı açılan listeden seçin:
 
-  [![](free-provisioning-images/launchapp6.png "Otomatik olarak yönetme imzalama ve açılır listeden ekibinizin seçin")](free-provisioning-images/launchapp6.png)
+  [![](free-provisioning-images/launchapp6.png "Otomatik olarak yönetme imzalama ve açılır listeden ekibinizin seçin")](free-provisioning-images/launchapp6.png#lightbox)
 
 7. Önceki adımda otomatik olarak bir sağlama profili ve imzalama kimliğinize sizin için oluşturur. Bu, sağlama profili yanındaki bilgi simgesine tıklayarak görüntüleyebilirsiniz:
 
-  [![](free-provisioning-images/launchapp7.png "Sağlama profili görüntüleyin")](free-provisioning-images/launchapp7.png)
+  [![](free-provisioning-images/launchapp7.png "Sağlama profili görüntüleyin")](free-provisioning-images/launchapp7.png#lightbox)
 
 8. Xcode'da test etmek için çalışma düğmesine tıklayarak Cihazınızı boş uygulamayı dağıtın.
 
 9. Prize takılı aynı aygıt, IDE, dönün ve açmak için Xamarin.iOS proje adına sağ tıklayın **proje seçenekleri** iletişim. İOS paket imzalama bölümüne göz atın ve açıkça kimlik imzalama ve sağlama profili ayarlayın:
 
-  [![](free-provisioning-images/launchapp8.png "Kimlik imzalama ve sağlama profili Ayarla")](free-provisioning-images/launchapp8.png)
+  [![](free-provisioning-images/launchapp8.png "Kimlik imzalama ve sağlama profili Ayarla")](free-provisioning-images/launchapp8.png#lightbox)
 
 IDE içinde imzalama kimliğinizi veya doğru sağlama profili göremiyorsanız, onu yeniden başlatmanız gerekebilir.
 

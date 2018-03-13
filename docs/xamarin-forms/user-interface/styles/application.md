@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: d258d993d8452c0c93c53d875d81683a294f80d3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc728e5817a7d1d61d7745120bca7f05641ce76f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="global-styles"></a>Genel stiller
 
@@ -60,7 +60,7 @@ Aşağıdaki kod örneğinde XAML uygulama sayfası gösterilir `buttonStyle` sa
 
 Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
 
-[![](application-images/application-styles-1.png "Genel stiller örnek")](application-images/application-styles-1-large.png "genel stiller örneği")
+[![](application-images/application-styles-1.png "Genel stiller örnek")](application-images/application-styles-1-large.png#lightbox "genel stiller örneği")
 
 Bir sayfanın içinde stilleri oluşturma hakkında bilgi için [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), bkz: [açık stilleri](~/xamarin-forms/user-interface/styles/explicit.md) ve [örtülü stiller](~/xamarin-forms/user-interface/styles/implicit.md).
 
@@ -98,9 +98,9 @@ Stilleri görünüm hiyerarşinin alt düzeylerindeki yukarı yüksek tanımlana
 
 Özgün `buttonStyle`, uygulama düzeyinde tanımlanan, tarafından geçersiz kılınır `buttonStyle` sayfa düzeyinde tanımlanan örneği. Ayrıca, sayfa düzeyi stili denetim düzeyi tarafından geçersiz kılınmış `buttonStyle`. Bu nedenle, [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) örnekleri aşağıdaki ekran görüntülerinde gösterildiği gibi mavi metinle görüntülenir:
 
-[![](application-images/application-styles-2.png "Stilleri örnek geçersiz kılma")](application-images/application-styles-2-large.png "stilleri örnek geçersiz kılma")
+[![](application-images/application-styles-2.png "Stilleri örnek geçersiz kılma")](application-images/application-styles-2-large.png#lightbox "stilleri örnek geçersiz kılma")
 
-## <a name="creating-a-global-style-in-c35"></a>C &#35;genel bir stil oluşturma;
+## <a name="creating-a-global-style-in-c35"></a>C'de genel bir stil oluşturma&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) örnek uygulamanın eklenebilir [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) yeni oluşturarak koleksiyonu C# [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)ve ardından ekleyerek `Style` için örnekler `ResourceDictionary`, olarak Aşağıdaki kod örneğinde gösterildiği:
 
@@ -156,7 +156,7 @@ Stilleri kullanılabilir hale getirebilir genel olarak uygulamanın ekleyerek [ 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Temel stilleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Stilleri (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

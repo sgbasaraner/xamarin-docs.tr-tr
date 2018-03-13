@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 6d2a454665691c028fe8307940a5662a98ab9c98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f35256529d6d72a3f5e563dc88b9d5883a9724d4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="appearance-api"></a>Görünüm API
 
@@ -32,7 +32,7 @@ iOS uygulamanızı uygulanmasını istediğiniz marka uygun standart denetimleri
 
 Görünüm örnek uygulaması, bu ekran görüntülerinde gösterildiği gibi tüm üç yöntemi gösterilmektedir:
 
- [ ![](introduction-to-the-appearance-api-images/appearance01.png "Görünüm örnek uygulaması üçünü gösterir")](introduction-to-the-appearance-api-images/appearance01.png)
+ [![](introduction-to-the-appearance-api-images/appearance01.png "Görünüm örnek uygulaması üçünü gösterir")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 İOS 8 itibariyle görünüm proxy TraitCollections için genişletilmiştir.
  `AppearanceForTraitCollection` Varsayılan görünüm üzerinde belirli ayırdedici nitelik koleksiyonu ayarlamak için kullanılabilir. Daha fazla bilgiyi bu konuda [film şeritleri giriş](~/ios/user-interface/storyboards/unified-storyboards.md) Kılavuzu.
@@ -87,11 +87,11 @@ sg1.TintColor = UIColor.Magenta;
 
 Alternatif olarak, değer Tasarımcısı özellikleri defterinde ayarlayın: 
 
-[ ![](introduction-to-the-appearance-api-images/propertiespadtint.png "Özellikler paneli TINT")](introduction-to-the-appearance-api-images/propertiespadtint.png)
+[![](introduction-to-the-appearance-api-images/propertiespadtint.png "Özellikler paneli TINT")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
 Aşağıdaki resimde bu TINT 'sg1' adlı denetiminde ayarlayan gösterilmektedir.
 
- [ ![](introduction-to-the-appearance-api-images/image53.png "Bireysel denetim TINT ayarlama")](introduction-to-the-appearance-api-images/image53.png)
+ [![](introduction-to-the-appearance-api-images/image53.png "Bireysel denetim TINT ayarlama")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
 Böylece biz yerine statik ayarlayabilirsiniz birçok denetimleri bu şekilde ayarlamak için tamamen verimsiz olacaktır `Appearance` sınıf özelliği. Bu kodda gösterilir:
 
@@ -101,7 +101,7 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 Aşağıdaki görüntü iki parçalı denetimleri için macenta ayarlamak görünümle şimdi gösterilmektedir:
 
- [ ![](introduction-to-the-appearance-api-images/image54.png "Görünüm denetim TINT ayarlama")](introduction-to-the-appearance-api-images/image54.png)
+ [![](introduction-to-the-appearance-api-images/image54.png "Görünüm denetim TINT ayarlama")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
 `Appearance` özellikleri ayarlanmalıdır erken uygulama yaşam döngüsündeki gibi AppDelegate içinde 's `FinishedLaunching` olayı veya etkilenen denetimleri görüntülenmeden ViewController.
 

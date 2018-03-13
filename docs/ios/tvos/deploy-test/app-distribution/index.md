@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c0cfe437b03a1f0dea05a506b1dfce62a4658bb4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e96e98f90c7f4c849a9f679b2de819ccaabfec0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-distribution-overview"></a>Uygulama dağıtım genel bakış
 
@@ -22,7 +22,7 @@ _Bu belge Xamarin.tvOS uygulaması için kullanılabilen dağıtım teknikleri g
 Xamarin.tvOS uygulamanızı geliştirilen sonra yazılım geliştirme yaşam döngüsü sonraki adımda uygulamanızı, kullanıcılara dağıtmak için aşağıdaki çizimde vurgulanan bölümünde gösterilen aynıdır:
 
 
-[![Yazılım geliştirme yaşam döngüsü genel bakış](images/publishingdiagram.png)](images/publishingdiagram.png)
+[![Yazılım geliştirme yaşam döngüsü genel bakış](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
 
 
 Apple Xamarin.tvOS tarafından desteklenmeyen bir tvOS uygulama dağıtmak için aşağıdaki yöntemleri sağlar:
@@ -70,7 +70,7 @@ Adlandırılan *kurumsal dağıtım*, şirket içi dağıtım verir üyeleri **A
 
 Kurulum ve uygulamanız şirket içinde dağıtmak nasıl alma ile ilgili daha fazla bilgi için lütfen başvurmak [şirket içi Dağıtım Kılavuzu'na](~/ios/deploy-test/app-distribution/in-house-distribution.md). Bu belgede iOS özeldir, ancak aynı teknikleri tvOS uygulamalar için kullanılır.
 
-<a name="Ad-Hoc-Distribution" />
+<a name="Ad_Hoc_Distribution"/>
 
 ## <a name="ad-hoc-distribution"></a>Geçici dağıtım
 
@@ -88,7 +88,7 @@ Bu makalede, Xamarin.tvOS uygulamaları için kullanılabilir dağıtım mekaniz
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

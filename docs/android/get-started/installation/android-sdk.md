@@ -7,12 +7,12 @@ ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/24/2018
-ms.openlocfilehash: 66ed0965f1ed01be129f22996e50bdea89a95287
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 585bcac193d6824bc7c96092c14e40fd7971b0e2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-sdk-setup"></a>Android SDK Kurulumu
 
@@ -30,7 +30,7 @@ Bu kılavuz yüklemek ve Windows'da Visual Studio için Xamarin Android SDK Yön
 Bu kılavuz yüklemek ve Mac için Visual Studio için Xamarin Android SDK Yöneticisi'ni kullanmak nasıl açıklar (veya [Windows için](?tabs=vswin)).
 
 > [!NOTE]
-> **Not:** bu kılavuz yalnızca Visual Studio 2017 ve Visual Studio için Mac için geçerlidir  
+> Bu kılavuz yalnızca Visual Studio 2017 ve Visual Studio için Mac için geçerlidir  
 
 -----
 
@@ -38,8 +38,6 @@ Xamarin Android SDK Manager Xamarin.Android uygulamanıza geliştirmek için ger
 Google'nın tek başına kullanım dışı bırakılmış SDK Manager değiştirir.
 
 Neden yerine SDK'sı Android SDK ile birlikte gelen Yöneticisi Xamarin Android SDK Yöneticisi'ni kullanmak istiyor? Sürümünde Android SDK Araçları paketini 25.2.3, Google Android SDK korumak için yeni bir aracı kullanıma sunuldu. Bu yeni araç  **[sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)**, Android SDK'sı için tek başına UI Yöneticisi değiştiren bir komut satırı yardımcı programıdır. Bu nedenle, SDK Araçları sürüme (Android 8.0 için gereklidir) 26.0.1 güncelleştirirseniz veya üstü ve Android SDK'sını bir kullanıcı Arabirimi arabirimi üzerinden yönetmek devam etmek istiyorsanız, Xamarin Android SDK Yöneticisi'ni kullanmanız gerekir.
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -64,10 +62,8 @@ Xamarin Android SDK Yöneticisi ayrıca Java Geliştirme Seti (hangi Xamarin.And
 Xamarin.Android kullanan [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), API düzeyi 24 için geliştirme veya daha büyük olduğunda gerekli olduğu (JDK 8 de destekler API düzeylerini 24'den önceki). Kullanmaya devam edebilirsiniz [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) API düzeyi 23 için özellikle geliştirme veya önceki bir sürümünü kullanıyorsanız.
 
 > [!IMPORTANT]
-> **Not:** Xamarin.Android JDK 9 desteği yok.
+> Xamarin.Android JDK 9 desteklemez.
 
-
-<a name="installation" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -86,7 +82,6 @@ Tıkladığınızda **Araçlar > Android > Android SDK Manager** (anlatıldığ�
  
 -----
 
-<a name="sdk-manager" /> 
  
 ## <a name="sdk-manager"></a>SDK Yöneticisi 
 
@@ -94,11 +89,11 @@ Tıkladığınızda **Araçlar > Android > Android SDK Manager** (anlatıldığ�
 
 Visual Studio SDK Yöneticisi'ni başlatmak için tıklatın **Araçlar > Android > Android SDK Manager**:
 
-[![Android SDK Manager menü öğesi konumu](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png)
+[![Android SDK Manager menü öğesi konumu](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png#lightbox)
 
 **Xamarin Android SDK Manager** açılır **Android SDK'lar ve Araçlar** ekran. Bu ekran iki sekme bulunur &ndash; **platformları** ve **Araçları**:
 
-[![Android SDK Yöneticisi'nin ekran görüntüsü platformlar sekmesindeki açın](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png)
+[![Android SDK Yöneticisi'nin ekran görüntüsü platformlar sekmesindeki açın](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
 
 **Android SDK'lar ve Araçlar** ekran aşağıdaki bölümlerde daha ayrıntılı olarak açıklanmaktadır.
 
@@ -117,7 +112,6 @@ Xamarin Android SDK Manager'ın Sekmeler aşağıdaki bölümlerde açıklanmı�
 -----
 
 
-<a name="sdkmanager-locations" /> 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -151,7 +145,6 @@ Genellikle, kullandığınız **konumları** Android SDK ve/veya Java JDK konumu
 
 -----
 
-<a name="sdkmanager-tools" /> 
 
 ### <a name="tools-tab"></a>Araçlar sekmesi
 
@@ -162,7 +155,7 @@ Ayrıca, Android öykünücüsü yükleyebilmek için alt düzey hata ayıklayı
 
 Örneğin, Google Android öykünücüsü paketini indirmek için onay işaretine yanındaki tıklayın **Android öykünücüsü** tıklatıp **değişikliklerini uygula** düğmesi:
 
-[![Android öykünücüsünde araçları sekmesinden yükleme](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png)
+[![Android öykünücüsünde araçları sekmesinden yükleme](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -188,7 +181,6 @@ Bir iletişim kutusu iletisi ile gösterilebilir _bazı bileşenleri güncelleş
 Tıklatın **kabul** hüküm ve koşulları kabul ediyorsanız. Pencerenin alt kısmında bir ilerleme çubuğu indirme ve yükleme ilerlemesini gösterir. Yükleme tamamlandıktan sonra **Araçları** sekmesi seçili araçları ve ek özellikler yüklendiğini gösterir.
 
 
-<a name="xvs-platforms" /> 
 
 ### <a name="platforms-tab"></a>Platformlar sekmesi
 
@@ -196,7 +188,7 @@ Tıklatın **kabul** hüküm ve koşulları kabul ediyorsanız. Pencerenin alt k
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Platformlar bölmesinin ekran görüntüsü](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png)
+[![Platformlar bölmesinin ekran görüntüsü](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -224,7 +216,7 @@ Başka bir platform SDK eklemek için onay işaretine kadar platform yanındaki 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Örnek Android SDK'sı Android 7.1 Nougat bileşenleri ekleme](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png)
+[![Örnek Android SDK'sı Android 7.1 Nougat bileşenleri ekleme](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -236,7 +228,7 @@ Yalnızca SDK tıklatın platform yanındaki kutuya bir kez yüklemek için. Ard
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Bazı Android 7.1 bileşenleri ekleme örneği](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png)
+[![Bazı Android 7.1 bileşenleri ekleme örneği](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -270,7 +262,6 @@ Tıklatın **kabul** hüküm ve koşulları kabul ediyorsanız. Bu iletişim bir
 Artık uygulamanız için en son, en büyük Android API düzeyini geliştirmek hazırsınız!
 
 
-<a name="summary" />
  
 ## <a name="summary"></a>Özet
 
@@ -287,7 +278,7 @@ Bu kılavuz Xamarin Android SDK Manager aracının Visual Studio'da Mac için na
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Android SDK Araçları yapılan değişiklikler](~/android/troubleshooting/sdk-cli-tooling-changes.md)
+- [Android SDK Aracı Üzerindeki Değişiklikler](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 - [Android API düzeylerini anlama](~/android/app-fundamentals/android-api-levels.md)
 - [Sürüm Notları (Google) SDK Araçları](https://developer.android.com/studiohttps://developer.xamarin.com/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)

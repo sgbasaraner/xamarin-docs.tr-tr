@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d878f922b74ea3e95fd0e1ebce9e7445063a2946
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>Arka planda bir uygulamayı güncelleştirme
 
@@ -44,7 +44,7 @@ Arka plan işleme için konum izleme kullanan uygulamalar kullanıma bir kusur i
 
 Arka planda getirmeye uygulamak için düzenleme *Info.plist* ve denetleme **arka plan modlarını etkinleştir** ve **arka planda getirmeye** onay kutularını:
 
- [ ![](updating-an-application-in-the-background-images/fetch.png "Info.plist düzenleyin ve arka plan modlarını etkinleştir ve arka plan Fetch onay kutularını işaretleyin")](updating-an-application-in-the-background-images/fetch.png)
+ [![](updating-an-application-in-the-background-images/fetch.png "Info.plist düzenleyin ve arka plan modlarını etkinleştir ve arka plan Fetch onay kutularını işaretleyin")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
 İleri ' `AppDelegate`, geçersiz kılma `FinishedLaunching` minimum fetch aralığını ayarlamak için yöntem. Bu örnekte, genellikle yeni içerik almak nasıl karar OS sağlar:
 
@@ -106,7 +106,7 @@ Anında iletme bildirimleri olan bir sağlayıcıdan bir aygıt tarafından yolu
 
 Uzak bildirimleri uygulamak için düzenleme *Info.plist* ve denetleme **arka plan modlarını etkinleştir** ve **uzak bildirimler** onay kutularını:
 
- [ ![](updating-an-application-in-the-background-images/remote.png "Arka plan modlarını etkinleştir ve Uzaktan bildirimler için arka plan modunu ayarlama")](updating-an-application-in-the-background-images/remote.png)
+ [![](updating-an-application-in-the-background-images/remote.png "Arka plan modlarını etkinleştir ve Uzaktan bildirimler için arka plan modunu ayarlama")](updating-an-application-in-the-background-images/remote.png#lightbox)
 
 Ardından, ayarlayın `content-available` anında iletme bildirimi kendisini 1 bayrağı. Bu uyarı görüntülenmeden önce yeni içerik almak için bilmeniz uygulama sağlar:
 
@@ -153,7 +153,7 @@ Normal ve sessiz bildirimleri Geliştirici açısından büyük birbirinden sess
 
 Ancak, APNs sessiz bildirimleri "Paketle" normal uzaktan bildirim veya tutma yanıt yanında sağlayacaktır. Normal bildirimleri oranı sınırlı olduğundan, bunlar cihaza APNs anında yukarı saklı sessiz bildirimler için tarafından Aşağıdaki diyagramda gösterildiği gibi kullanılabilir:
 
- [ ![](updating-an-application-in-the-background-images/silent.png "Normal bildirimleri cihaza APNs anında saklı sessiz bildirimler için tarafından bu diyagramda gösterildiği gibi kullanılabilir")](updating-an-application-in-the-background-images/silent.png)
+ [![](updating-an-application-in-the-background-images/silent.png "Normal bildirimleri cihaza APNs anında saklı sessiz bildirimler için tarafından bu diyagramda gösterildiği gibi kullanılabilir")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > **Not**: Apple uygulama gerektirir ve let APNs zamanlama kendi teslim sessiz anında iletme bildirimleri göndermek için geliştiricilere önerir.

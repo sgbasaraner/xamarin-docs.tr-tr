@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 0846dc8bdb3ac722838faa4173f5d30233912ecc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 86514dbd6b40e9d59ea9a598395cf6f0a3f4889a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Uygulama mağazası yayımlama
 
@@ -32,7 +32,7 @@ Bu belgede, Visual Studio Mac ve Xcode için bir Apple Developer hesabı kurmak 
 
 Eklediğinizde [Mac Developer Program](https://developer.apple.com/devcenter/mac/) aşağıdaki ekran görüntüsünde gösterildiği gibi bir kişi veya bir şirket katılmak için bir seçenek Geliştirici sunulur:
 
-[![Apple Geliştirici Portalı](images/image1.png "Apple Geliştirici Portalı")](images/image1-large.png)
+[![Apple Geliştirici Portalı](images/image1.png "Apple Geliştirici Portalı")](images/image1-large.png#lightbox)
 
 Durumunuz için doğru kayıt türü seçin.
 
@@ -40,7 +40,7 @@ Durumunuz için doğru kayıt türü seçin.
 > **Not**: Burada yapılan seçimler bazı ekranlar bir geliştirici hesabını yapılandırırken görünecek şekilde etkiler. Bu belgede ekran görüntüleri ve açıklamaları perspektifinden yapılır bir **tek tek** Geliştirici hesabı. İçinde bir **şirket**, bazı seçenekler yalnızca kullanılabilir **takım Yönetim** kullanıcılar.
 
 
-### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[Sertifikalar ve tanımlayıcıları](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)
+### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[Sertifikalar ve Tanımlayıcılar](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)
 
 Bu kılavuz gerekli sertifikaları ve Xamarin.Mac uygulama yayımlamak için gereken tanımlayıcıları oluşturmada size yol gösterir.
 
@@ -50,22 +50,22 @@ Bu kılavuz gerekli sertifikaları ve Xamarin.Mac uygulama yayımlamak için ger
 Bu kılavuz gerekli sağlama Xamarin.Mac uygulamayı yayımlamak için gerekli profilleri oluşturmada size yol gösterir.
 
 
-### <a name="mac-app-configurationmacdeploy-testpublishing-to-the-app-storeapp-configurationmd"></a>[Mac uygulama yapılandırması](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
+### <a name="mac-app-configurationmacdeploy-testpublishing-to-the-app-storeapp-configurationmd"></a>[Mac Uygulama Yapılandırması](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
 
 Bu kılavuzda, yayın için Xamarin.Mac uygulamasını nasıl yapılandıracağınız anlatılmaktadır.
 
 
-### <a name="sign-with-developer-idmacdeploy-testpublishing-to-the-app-storesigningmd"></a>[Geliştirici ID ile oturum](~/mac/deploy-test/publishing-to-the-app-store/signing.md)
+### <a name="sign-with-developer-idmacdeploy-testpublishing-to-the-app-storesigningmd"></a>[Geliştirici Kimliği ile İmzala](~/mac/deploy-test/publishing-to-the-app-store/signing.md)
 
 Bu kılavuzda, yayım için bir geliştirici kimliği Xamarin.Mac uygulamayla imzalama aracılığıyla anlatılmaktadır.
 
 
-### <a name="bundle-for-mac-app-storemacdeploy-testpublishing-to-the-app-storebundlingmd"></a>[Mac App Store için paket](~/mac/deploy-test/publishing-to-the-app-store/bundling.md)
+### <a name="bundle-for-mac-app-storemacdeploy-testpublishing-to-the-app-storebundlingmd"></a>[Mac App Store için Paket Grubu](~/mac/deploy-test/publishing-to-the-app-store/bundling.md)
 
 Bu kılavuzda, Mac App Store yayını için bir Xamarin.Mac Uygulama paketleme aracılığıyla anlatılmaktadır.
 
 
-### <a name="upload-to-mac-app-storemacdeploy-testpublishing-to-the-app-storeuploadingmd"></a>[Mac App Store için karşıya yükleme](~/mac/deploy-test/publishing-to-the-app-store/uploading.md)
+### <a name="upload-to-mac-app-storemacdeploy-testpublishing-to-the-app-storeuploadingmd"></a>[Mac App Store’a Yükle](~/mac/deploy-test/publishing-to-the-app-store/uploading.md)
 
 Bu kılavuzda, Xamarin.Mac uygulama yayının Mac App Store karşıya aracılığıyla anlatılmaktadır.
 

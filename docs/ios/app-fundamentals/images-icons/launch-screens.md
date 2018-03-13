@@ -3,16 +3,16 @@ title: "Ekranlar başlatma"
 description: "Bu makalede, tüm iOS cihazları için uygulama başlatma ekranı herhangi çözümleme ve yönü, tek bir birleşik film şeridi kullanarak oluşturun açıklanmaktadır."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 7A3F3C94-2578-4F53-9B8E-25714F48BDD6
+ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/19/2018
-ms.openlocfilehash: 48dc2e7a270c4e12c4e3dc9d1e2ce14fb0d41249
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 54ec41636f491708ea72585d3889fbbca85c8eb1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="launch-screens"></a>Ekranlar başlatma
 
@@ -225,8 +225,8 @@ Yeni film şeridi başlatma ekranı kullanmak için aşağıdakileri yapın:
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Dinamik başlatma ekranlar (örnek)](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)
-- [Birleşik film şeritleri](~/ios/user-interface/storyboards/unified-storyboards.md)
-- [iOS Tasarımcısı temelleri](~/ios/user-interface/designer/index.md)
+- [Birleşik Görsel Taslaklar](~/ios/user-interface/storyboards/unified-storyboards.md)
+- [Temel iOS Designer Bilgileri](~/ios/user-interface/designer/index.md)
 - [Bir varlık Kataloğu görüntüsüne ekleme görüntüleri ayarlama](~/ios/app-fundamentals/images-icons/displaying-an-image.md#asset-catalogs)
 - [İOS için Xamarin Tasarımcısı ile otomatik Düzenle](~/ios/user-interface/designer/designer-auto-layout.md)
 - [İnsan Arabirimi yönergelerine: Başlatma ekranı](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

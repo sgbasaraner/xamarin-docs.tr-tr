@@ -8,27 +8,25 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d1cb0f6a329604dcac4943eaf39f838bcba38793
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 956b9e4e280545c8e11925697fced4b9d4e40693
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-sdk-emulator"></a>Android SDK öykünücüsü
 
 _Bu kılavuz, Visual Studio ile Google Android SDK öykünücüsü kullanmayı açıklar._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
 Google Android SDK'sı Android öykünücüsünde farklı cihaz benzetimini yapmak için yapılandırmaları çeşitli çalıştırabilirsiniz. Bu yapılandırmalar her biri olarak oluşturulan bir _sanal aygıt_. Bu kılavuzda, Visual Studio'dan öykünücü başlatma ve sık karşılaşılan sorunları giderme öğreneceksiniz.
 
-<a name="sections" />
 
 ## <a name="sections"></a>Bölümler
 
-### <a name="running-the-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorrunning-the-emulatormd"></a>[Öykünücüsünün çalışır durumda](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
+### <a name="running-the-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorrunning-the-emulatormd"></a>[Öykünücüyü Çalıştırma](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
 
 Visual Studio'dan Android SDK öykünücüsü başlatmak nasıl.
 
@@ -39,7 +37,6 @@ Tanımlamak ve ortak Android SDK öykünücüsü sorunları gidermek nasıl.
 Yeni sanal cihaz oluşturma ve Android SDK öykünücüsü yapılandırma hakkında daha fazla bilgi için bkz: [Android öykünücüsü Kurulumu](~/android/get-started/installation/android-emulator/index.md).
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

@@ -3,16 +3,16 @@ title: "Gelişmiş Kullanıcı bildirimleri"
 description: "Bu makalede, yeni kullanıcı bildirimleri framework daha derin göz ve bunu bir Xamarin.iOS uygulaması içinde yararlanmak nasıl alır."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4e1ff652-28f0-4566-b383-9d12664401a4
+ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6408f3b45f93413fa814e410f07e7b71179b7338
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e20c9f068fe92e0dd711e0c20d31d713a0d03f0d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="advanced-user-notifications"></a>Gelişmiş Kullanıcı bildirimleri
 
@@ -81,7 +81,7 @@ Bir uzak hizmet uzantısı tarafından değiştirilecek bildirimi için yükü o
 
 Aşağıdaki işlemine genel bakış göz atın:
 
-[ ![](advanced-user-notifications-images/extension02.png "Medya ekleri işlem ekleme")](advanced-user-notifications-images/extension02.png)
+[![](advanced-user-notifications-images/extension02.png "Medya ekleri işlem ekleme")](advanced-user-notifications-images/extension02.png#lightbox)
 
 Uzak bildirim (APN) üzerinden aygıta teslim sonra hizmet uzantısı sonra gerekli görüntüsü istenen herhangi bir yöntem aracılığıyla yükleyebilirsiniz (gibi bir `NSURLSession`) ve görüntünün aldıktan sonra bildirim ve görüntü içeriğini değiştirebilirsiniz Bu kullanıcı için.
 
@@ -157,7 +157,7 @@ Kullanıcı bildirimi ile kullanıcı etkileşimi desteklemek için özel eyleml
 
 Özel kullanıcı Arabirimi ile bir kullanıcı bildirimi kullanıcıya sunulduğunda, aşağıdaki öğeleri olacaktır:
 
-[ ![](advanced-user-notifications-images/customui01.png "Özel kullanıcı Arabirimi öğeleri içeren bir Kullanıcı bildirim")](advanced-user-notifications-images/customui01.png)
+[![](advanced-user-notifications-images/customui01.png "Özel kullanıcı Arabirimi öğeleri içeren bir Kullanıcı bildirim")](advanced-user-notifications-images/customui01.png#lightbox)
 
 Kullanıcı (bildirim gösterilen) özel eylemler ile etkileşime giren, belirli bir eylem çağrıldığında ne olarak kullanıcı geribildirim vermek için kullanıcı arabirimi güncelleştirilebilir.
 
@@ -171,13 +171,13 @@ Kullanıcı (bildirim gösterilen) özel eylemler ile etkileşime giren, belirli
 2. Çözüm adına sağ tıklayın **çözüm paneli** seçip **Ekle** > **Yeni Proje Ekle**.
 3. Seçin **iOS** > **uzantıları** > **bildirim içerik uzantıları** tıklatıp **sonraki** düğmesi: 
 
-    [ ![](advanced-user-notifications-images/notify01.png "Bildirim içerik uzantıları seçin")](advanced-user-notifications-images/notify01.png)
+    [![](advanced-user-notifications-images/notify01.png "Bildirim içerik uzantıları seçin")](advanced-user-notifications-images/notify01.png#lightbox)
 4. Girin bir **adı** tıklatın ve uzantı için **sonraki** düğmesi: 
 
-    [ ![](advanced-user-notifications-images/notify02.png "Uzantı için bir ad girin")](advanced-user-notifications-images/notify02.png)
+    [![](advanced-user-notifications-images/notify02.png "Uzantı için bir ad girin")](advanced-user-notifications-images/notify02.png#lightbox)
 5. Ayarlama **proje adı** ve/veya **çözüm adı** gerekli ve tıklatırsanız **oluşturma** düğmesi: 
 
-    [ ![](advanced-user-notifications-images/notify03.png "Proje adı ve/veya çözüm adı")](advanced-user-notifications-images/notify03.png)
+    [![](advanced-user-notifications-images/notify03.png "Proje adı ve/veya çözüm adı")](advanced-user-notifications-images/notify03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -185,7 +185,7 @@ Kullanıcı (bildirim gösterilen) özel eylemler ile etkileşime giren, belirli
 2. Çözüm adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **Yeni Proje Ekle**.
 3. Seçin **iOS** > **uzantıları** > **bildirim içerik uzantıları**: 
 
-    [ ![](advanced-user-notifications-images/notify01w.png "Bildirim içerik uzantıları seçin")](advanced-user-notifications-images/notify01w.png)
+    [![](advanced-user-notifications-images/notify01w.png "Bildirim içerik uzantıları seçin")](advanced-user-notifications-images/notify01w.png#lightbox)
 4. Girin bir **adı** tıklatın ve uzantı için **Tamam** düğmesi.
 
 -----
@@ -254,7 +254,7 @@ Sistem, uygulamanın bildirim içerik uzantısı için yanıt belirli kategorile
 3. Genişletme `NSExtension` anahtarı.
 4. Ekleme `UNNotificationExtensionCategory` anahtar türü olarak **dize** uzantısı ait olduğu kategoriyi değeriyle (Bu örnekte ' olay davet): 
 
-    [ ![](advanced-user-notifications-images/customui02.png "UNNotificationExtensionCategory anahtarı Ekle")](advanced-user-notifications-images/customui02.png)
+    [![](advanced-user-notifications-images/customui02.png "UNNotificationExtensionCategory anahtarı Ekle")](advanced-user-notifications-images/customui02.png#lightbox)
 5. Değişikliklerinizi kaydedin.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -263,7 +263,7 @@ Sistem, uygulamanın bildirim içerik uzantısı için yanıt belirli kategorile
 3. Genişletme `NSExtension` anahtarı.
 4. Ekleme `UNNotificationExtensionCategory` anahtar türü olarak **dize** uzantısı ait olduğu kategoriyi değeriyle (Bu örnekte ' olay davet): 
 
-    [ ![](advanced-user-notifications-images/customui02w.png "UNNotificationExtensionCategory anahtarı Ekle")](advanced-user-notifications-images/customui02w.png)
+    [![](advanced-user-notifications-images/customui02w.png "UNNotificationExtensionCategory anahtarı Ekle")](advanced-user-notifications-images/customui02w.png#lightbox)
 5. Değişikliklerinizi kaydedin.
 
 -----
@@ -272,11 +272,11 @@ Bildirim içerik uzantısı kategorileri (`UNNotificationExtensionCategory`) bil
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui03.png "Bildirim içerik uzantısı kategorileri")](advanced-user-notifications-images/customui03.png)
+[![](advanced-user-notifications-images/customui03.png "Bildirim içerik uzantısı kategorileri")](advanced-user-notifications-images/customui03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui03w.png "Bildirim içerik uzantısı kategorileri")](advanced-user-notifications-images/customui03w.png)
+[![](advanced-user-notifications-images/customui03w.png "Bildirim içerik uzantısı kategorileri")](advanced-user-notifications-images/customui03w.png#lightbox)
 
 -----
 
@@ -286,11 +286,11 @@ Burada özel bildirim UI görüntüleme aynı içerik bildirim (başlık, alt ba
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui04.png "Varsayılan bilgileri bulma")](advanced-user-notifications-images/customui04.png)
+[![](advanced-user-notifications-images/customui04.png "Varsayılan bilgileri bulma")](advanced-user-notifications-images/customui04.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui04w.png "Varsayılan bilgileri bulma")](advanced-user-notifications-images/customui04w.png)
+[![](advanced-user-notifications-images/customui04w.png "Varsayılan bilgileri bulma")](advanced-user-notifications-images/customui04w.png#lightbox)
 
 -----
 
@@ -367,11 +367,11 @@ Bu etkiyi ortadan kaldırmak için Düzenle `Info.plist` dosya uzantısı ve kü
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui05.png "UNNotificationExtensionInitialContentSizeRatio anahtarı")](advanced-user-notifications-images/customui05.png)
+[![](advanced-user-notifications-images/customui05.png "UNNotificationExtensionInitialContentSizeRatio anahtarı")](advanced-user-notifications-images/customui05.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui05w.png "UNNotificationExtensionInitialContentSizeRatio anahtarı")](advanced-user-notifications-images/customui05w.png)
+[![](advanced-user-notifications-images/customui05w.png "UNNotificationExtensionInitialContentSizeRatio anahtarı")](advanced-user-notifications-images/customui05w.png#lightbox)
 
 -----
 

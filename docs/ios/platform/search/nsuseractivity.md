@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: de37fd1e014938edcacec187ceeed572e573b379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8376ce2ccff6732fa0c89d6030b9af36d29c5085
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-nsuseractivity"></a>NSUserActivity ile arama
 
@@ -20,7 +20,7 @@ Ardından uygulamanızı farklı iOS cihaz üzerinde çalışan başka bir örne
 
 İOS 9, yeni `NSUserActivity` (genel ve özel olarak) dizine ve Spotlight arama ve Safari aranır. İşaretleyerek bir `NSUserActivity` aranabilir ve ekleme dizine olarak meta veriler, iOS cihazında arama sonuçlarında etkinlik listelenebilir.
 
-[ ![](nsuseractivity-images/apphistory01.png "Uygulama geçmişi genel bakış")](nsuseractivity-images/apphistory01.png)
+[![](nsuseractivity-images/apphistory01.png "Uygulama geçmişi genel bakış")](nsuseractivity-images/apphistory01.png#lightbox)
 
 Kullanıcı, uygulamanızdan bir etkinliğe ait arama sonucu seçerse, uygulama başlatılır ve etkinlik açıklanan tarafından `NSUserActivity` yeniden ve kullanıcıya sunulmaz.
 
@@ -58,7 +58,7 @@ Etkinlik türü tanımlayıcısı oluşturulurken kullanılan bir `NSUserActivit
 
 Bu davranış desteklemek için gerekli etkinlik türü tanımlayıcıları oluşturmak için düzenleyin **Info.plist** dosya ve geçiş **kaynak** görünümü. Ekleme bir `NSUserActivityTypes` anahtarı ve tanımlayıcıları aşağıdaki biçimde oluşturun:
 
-[ ![](nsuseractivity-images/type01.png "NSUserActivityTypes anahtarı ve plist düzenleyicisinde gerekli tanımlayıcıları")](nsuseractivity-images/type01.png)
+[![](nsuseractivity-images/type01.png "NSUserActivityTypes anahtarı ve plist düzenleyicisinde gerekli tanımlayıcıları")](nsuseractivity-images/type01.png#lightbox)
 
 Yukarıdaki örnekte oluşturduğumuz arama etkinliği için yeni bir etkinlik türü tanımlayıcısı (`com.xamarin.platform`). Kendi uygulamaları oluştururken Değiştir `NSUserActivityTypes` etkinlikleri belirli etkinlik türü tanımlayıcıları ile uygulamanızı dizi destekler.
 
@@ -87,7 +87,7 @@ activity.BecomeCurrent();
 
 Daha fazla ayrıntı ayarlayarak eklediğimiz `ContentAttributeSet` özelliği bizim `NSUserActivity` gibi:
 
-[ ![](nsuseractivity-images/apphistory02.png "Ek arama ayrıntıları genel bakış")](nsuseractivity-images/apphistory02.png)
+[![](nsuseractivity-images/apphistory02.png "Ek arama ayrıntıları genel bakış")](nsuseractivity-images/apphistory02.png#lightbox)
 
 Kullanarak bir `ContentAttributeSet` etkileşim için son kullanıcı ikna zengin arama sonuçları oluşturabilirsiniz.
 
@@ -114,7 +114,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 Bu iletimi isteklerine yanıt vermek için kullanılan aynı yöntemi geçersiz kılma olduğuna dikkat edin. Artık kullanıcı Spotlight arama sonuçlarında bizim uygulamasından bir bağlantıyı tıklattığında, uygulamamıza ön plana duruma (veya kaldırılacak zaten çalışıyorsa başlatıldı) ve içerik, gezinti veya bu bağlantı tarafından temsil edilen özelliği görüntülenir:
 
-[ ![](nsuseractivity-images/apphistory03.png "Önceki duruma geri araması")](nsuseractivity-images/apphistory03.png)
+[![](nsuseractivity-images/apphistory03.png "Önceki duruma geri araması")](nsuseractivity-images/apphistory03.png#lightbox)
 
 <a name="indexing" />
 

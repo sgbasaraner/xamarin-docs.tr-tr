@@ -7,11 +7,11 @@ ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 63faa0c46abfb509a6834efa647f23ad0ed7f454
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1a5e4ab73c9090cbb743dc8cb339d6f50c5ff527
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>İzlenecek yol: bir JSON öğesini kullanarak bir kullanıcı arabirimi oluşturmak için
 
@@ -22,7 +22,7 @@ YÜKSEKLİĞİNDEKİ D JSON içinde bildirilen oluşturma kullanıcı arabirimin
 
 YÜKSEKLİĞİNDEKİ D JSON kullanırken öğeleri API'SİNDE kullanılabilen özellikleri tam aralığını destekler. Örneğin, aşağıdaki ekran görüntüsünde uygulamada tamamen JSON kullanarak bildirilmiş:
 
-[ ![](json-element-walkthrough-images/01-load-from-file.png "Örneğin, JSON kullanarak tamamen bu ekran uygulamada bildirilmiş") ](json-element-walkthrough-images/01-load-from-file.png) [ ![ ] (json-element-walkthrough-images/02-load-from-file-details.png "Örneğin bu ekran uygulamada tamamen kullanarak bildirildi JSON")](json-element-walkthrough-images/02-load-from-file-details.png)
+[![](json-element-walkthrough-images/01-load-from-file.png "Örneğin, JSON kullanarak tamamen bu ekran uygulamada bildirilmiş") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "Örneğin bu ekran uygulamada tamamen kullanarak bildirildi JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 Şimdi örnekten yeniden ziyaret [öğeleri API izlenecek](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) kullanarak bir görev ayrıntı ekran eklemek nasıl gösteren öğretici.
 
@@ -30,7 +30,7 @@ YÜKSEKLİĞİNDEKİ D JSON kullanırken öğeleri API'SİNDE kullanılabilen ö
 
 Bu kılavuzda örneğin oluşturulacak görevlerin olanak sağlar. Bir görev ilk ekranda seçildiğinde, ayrıntı ekranı gösterildiği gibi sunulur:
 
- [ ![](json-element-walkthrough-images/03-task-list.png "Bir görev ilk ekranda seçildiğinde, gösterildiği gibi bir ayrıntı ekranı sunulur")](json-element-walkthrough-images/03-task-list.png)
+ [![](json-element-walkthrough-images/03-task-list.png "Bir görev ilk ekranda seçildiğinde, gösterildiği gibi bir ayrıntı ekranı sunulur")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>JSON oluşturma
 
@@ -166,7 +166,7 @@ _rootElement = new RootElement ("Json Example"){
 
 Çalışma zamanında dosyası alınır ve yüksekliğindeki tarafından ayrıştırılan Kullanıcı, aşağıdaki ekran görüntüsünde gösterildiği gibi ikinci görünümüne gittiğinde D:
 
- [ ![](json-element-walkthrough-images/04-json-web-example.png "Dosya alınır ve yüksekliğindeki tarafından ayrıştırılan Kullanıcı ikinci görünümüne gittiğinde D")](json-element-walkthrough-images/04-json-web-example.png)
+ [![](json-element-walkthrough-images/04-json-web-example.png "Dosya alınır ve yüksekliğindeki tarafından ayrıştırılan Kullanıcı ikinci görünümüne gittiğinde D")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
  <a name="Summary" />
 

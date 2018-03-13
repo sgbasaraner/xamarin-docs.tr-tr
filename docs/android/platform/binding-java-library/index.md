@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 01708f12340ec57bf1cb0e2bd076b680c99dff39
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f336767cb6aea8bd8c7ce44f6479850a63d473a6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-a-java-library"></a>Java kitaplığı bağlama
 
@@ -30,7 +30,7 @@ Bu kılavuz, ilk seçenek açıklar: oluşturmak nasıl bir *bağlamaları Kitap
 
 Xamarin.Android kullanarak bağlamaları uygulayan *yönetilen aranabilir sarmalayıcılar* (*MCW*). Yönetilen kod Java kod çağırma gerektiğinde, kullanılan JNI köprü MCW olur. Yönetilen aranabilir sarmalayıcılar Java türleri sınıflara ve Java türlerinde sanal yöntemleri geçersiz kılmak için de destek sağlar. Yönetilen kod çağırmak Android çalışma zamanı (resim) kod istediği zaman, benzer şekilde, bunu Android aranabilir sarmalayıcıları (ACW olarak) bilinen başka bir JNI köprüsü aracılığıyla yapar. Bu [mimarisi](~/android/internals/architecture.md) Aşağıdaki diyagramda gösterilmiştir:
 
-[ ![Android JNI köprüsü mimarisi](images/architecture.png)](images/architecture.png)
+[![Android JNI köprüsü mimarisi](images/architecture.png)](images/architecture.png#lightbox)
 
 Java türleri için yönetilen aranabilir sarmalayıcılar içeren bir derleme bağlamaları kitaplığıdır. Örneğin, bir Java türü işte `MyClass`, bağlamaları kitaplığa sarmalamak istiyoruz:
 
@@ -74,7 +74,6 @@ Varolan bir Android kitaplığıdır bağlanırken, aşağıdaki noktaları göz
 
 * **JDK hangi sürümünün kitaplık derlemek için kullanılan?** &ndash; Android kitaplığı Xamarin.Android tarafından kullanımda JDK farklı bir sürümü ile oluşturulmuş bağlama hataları oluşabilir. Mümkünse, Xamarin.Android yüklemenizin tarafından kullanılan JDK'ın aynı sürümünü kullanarak Android kitaplığı yeniden derleyin.
 
-<a name="BUILD_ACTIONS" />
 
 ## <a name="build-actions"></a>Eylemler derleme
 
@@ -127,7 +126,6 @@ Xamarin.Android bağlama Oluşturucu bazı Java deyimleri ve desenler .NET desen
 -   Bir _iç sınıfı_ Java'da olduğu bir _iç içe geçmiş sınıf_ C# örnek oluşturucu ile.
 
 
-<a name="BINDING_SCENARIOS" />
 
 ## <a name="binding-scenarios"></a>Bağlama senaryoları
 
@@ -148,4 +146,4 @@ Aşağıdaki bağlama senaryo kılavuzları kurulduğu uygulamanız için bir Ja
 
 - [JNI ile çalışma](~/android/platform/java-integration/working-with-jni.md)
 - [GAPI Metadata](http://www.mono-project.com/GAPI#Metadata)
-- [Yerel kitaplıklarını kullanma](~/android/platform/native-libraries.md)
+- [Yerel Kitaplıkları Kullanma](~/android/platform/native-libraries.md)

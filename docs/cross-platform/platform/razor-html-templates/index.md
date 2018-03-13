@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 7e4d1cab532a5c81da1dfc47df33aa0628c7f6c6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c69b8e71cac5d9f0385728ca75a5f311cb24fc0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>Razor şablonları kullanarak yapı HTML görünümleri
 
@@ -34,7 +34,7 @@ Oluşturmak ve C# kullanarak HTML görüntülemek kolaydır Xamarin hem iOS hem 
 
 Xamarin.iOS UIWebView denetimindeki HTML görüntüleme, yalnızca birkaç satırlık bir kod alır:
 
-```
+```csharp
 var webView = new UIWebView (View.Bounds);
 View.AddSubview(webView);
 string contentDirectoryPath = Path.Combine (NSBundle.MainBundle.BundlePath, "Content/");
@@ -48,7 +48,7 @@ Bkz: [iOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_vi
 
 HTML Xamarin.Android kullanarak bir Web görünümü denetiminde görüntüleme birkaç kod satırıyla, gerçekleştirilir:
 
-```
+```csharp
 // webView is declared in an AXML layout file
 var webView = FindViewById<WebView> (Resource.Id.webView);
 var html = "<html><h1>Hello</h1><p>World</p></html>";
@@ -61,19 +61,19 @@ Bkz: [Android WebView](http://docs.xamarin.com/recipes/android/controls/webview/
 
 Her iki platformlarda HTML sayfası için temel dizin belirten bir parametre yok. Bu görüntüleri ve CSS dosyaları gibi kaynaklarına göreli başvuruları çözümlemek için kullanılan cihazın dosya sisteminde konumdur. Örneğin, etiketler gibi
 
-
-    <link rel="stylesheet" href="style.css" />
-    <img src="monkey.jpg" />
-    <script type="text/javascript" src="jscript.js">
-
+```html
+<link rel="stylesheet" href="style.css" />
+<img src="monkey.jpg" />
+<script type="text/javascript" src="jscript.js">
+```
 
 Bu dosyalara başvuran: **style.css**, **monkey.jpg** ve **jscript.js**. Temel dizin ayar sayfasına yüklenmiş olması bu dosyaların bulunduğu web görünümü söyler.
 
 #### <a name="ios"></a>iOS
 
-Şablon çıktısı aşağıdaki kodla C ## iOS oluşturulur:
+Şablon çıktısı aşağıdaki C# kodu ile iOS oluşturulur:
 
-```
+```csharp
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 ```
 
@@ -89,7 +89,7 @@ Tüm statik içerik dosyaları için yapı eylemi olmalıdır **BundleResource**
 
 Android, aynı zamanda bir web görünümü html dizeleri görüntülendiğinde parametre olarak geçirilecek temel bir dizin gerektirir.
 
-```
+```csharp
 webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
 ```
 
@@ -101,30 +101,30 @@ Tüm statik içerik dosyaları için yapı eylemi olmalıdır **AndroidAsset**.
 
  ![Android projesi yapı eylemi: AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>C ## HTML ve Javascript çağırma
+### <a name="calling-c-from-html-and-javascript"></a>C# HTML ve Javascript çağırma
 
 Html sayfası web görünümüne yüklendiğinde, sayfa bir sunucudan yüklendiyse olduğu gibi bağlantıları ve formlar değerlendirir. Bu, kullanıcı bir bağlantıya tıklar ya da bir formu gönderdikten web görünümü belirtilen hedef gitmek deneyeceğini anlamına gelir.
 
 Bağlantı için bir dış sunucu (örneğin, google.com) ise web görünümü (bir internet bağlantısı varsayılarak) dış Web sitesi yük dener.
 
-```
+```html
 <a href="http://google.com/">Google</a>
 ```
 
 Bağlantıyı göreli değilse temel dizinden içeriği yüklemek web görünümü dener. İçerik cihaza uygulamanın içinde saklandığı şekilde açıkça ağ bağlantısı yok Bunun çalışması için gereklidir.
 
-```
+```html
 <a href="somepage.html">Local content</a>
 ```
 
 Form eylemlerini aynı kural izleyin.
 
-```
+```html
 <form method="get" action="http://google.com/"></form>
 <form method="get" action="somepage.html"></form>
 ```
 
-İstemci web sunucusunda barındırmak için başlatacağınız değil; Ancak, HTTP GET Hizmetleri çağırmak için bugünün esnek tasarım desenleri işe aynı sunucu iletişimi teknikleri kullanan ve Javascript yayma tarafından yanıtları zaman uyumsuz olarak işleyen (veya arama Javascript zaten web görünümünde barındırılan). Bu, kolayca geri koda C ## işleme sonra sonuçları HTML sayfasında geri görüntü için HTML veri iletmek sağlar.
+İstemci web sunucusunda barındırmak için başlatacağınız değil; Ancak, HTTP GET Hizmetleri çağırmak için bugünün esnek tasarım desenleri işe aynı sunucu iletişimi teknikleri kullanan ve Javascript yayma tarafından yanıtları zaman uyumsuz olarak işleyen (veya arama Javascript zaten web görünümünde barındırılan). Bu, kolayca veri işleme sonra sonuçları HTML sayfasında geri görüntü için C# kod uygulamasına geri HTML aktarmak sağlar.
 
 İOS ve Android uygulama kodu (gerekliyse) yanıt vermesi bu gezinti olayları izlemesine uygulama kodu için bir mekanizma sağlar. Bu özellik, yerel kod web görünümü ile etkileşime izin verdiğinden karma uygulamalar oluşturmak için önemlidir.
 
@@ -132,7 +132,7 @@ Form eylemlerini aynı kural izleyin.
 
 İOS web görünümünde ShouldStartLoad olayı (örneğin, bir bağlantıyı tıklatın) gezinti isteği işlemek üzere uygulama kodu izin vermek için geçersiz kılınabilir. Yöntem parametreleri tüm bilgileri sağlayın
 
-```
+```csharp
 bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType) {
     // return true if handled in code
     // return false to let the web view follow the link
@@ -141,7 +141,7 @@ bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNa
 
 ve olay işleyicisi atayabilirsiniz:
 
-```
+```csharp
 webView.ShouldStartLoad += HandleShouldStartLoad;
 ```
 
@@ -149,7 +149,7 @@ webView.ShouldStartLoad += HandleShouldStartLoad;
 
 Android'de yalnızca bir alt WebViewClient ve sonra Gezinti isteğine yanıt vermek için uygulama kodu.
 
-```
+```csharp
 class HybridWebViewClient : WebViewClient {
     public override bool ShouldOverrideUrlLoading (WebView webView, string url) {
         // return true if handled in code
@@ -160,19 +160,19 @@ class HybridWebViewClient : WebViewClient {
 
 ve ardından istemci web görünümünde ayarlayın:
 
-```
+```csharp
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
 ### <a name="calling-javascript-from-c"></a>Arama JavaScript'ten C#
 
-Yeni bir HTML dosyası yüklemek için bir web görünümü belirten ek olarak, C ## kod ayrıca Javascript içinde görüntülenmekte olan sayfası çalıştırabilirsiniz. Tüm Javascript kod blokları C ## dizeleri kullanılarak oluşturulan ve yürütülen veya Javascript sayfasında zaten kullanılabilir yöntem çağrılarını oluşturabileceği `script` etiketler.
+Yeni bir HTML dosyası yüklemek için bir web görünümü belirten ek olarak, C# kod ayrıca Javascript içinde görüntülenmekte olan sayfası çalıştırabilirsiniz. Tüm Javascript kod blokları C# dizeleri kullanılarak oluşturulan ve yürütülen veya Javascript sayfasında zaten kullanılabilir yöntem çağrılarını oluşturabileceği `script` etiketler.
 
 #### <a name="android"></a>Android
 
 Yürütülebilir ve ardından önüne Javascript kodu oluşturmak "javascript:" ve bu dizeyi yüklemek için web görünümü bildirin:
 
-```
+```csharp
 var js = "alert('test');";
 webView.LoadUrl ("javascript:" + js);
 ```
@@ -181,7 +181,7 @@ webView.LoadUrl ("javascript:" + js);
 
 iOS web görünümleri Javascript özellikle çağrılacak bir yöntem sağlar:
 
-```
+```csharp
 var js = "alert('test');";
 webView.EvaluateJavascript (js);
 ```
@@ -192,8 +192,8 @@ Bu bölümde web görünümü denetimleri Android ve Xamarin ile karma uygulamal
 
 -  HTML kodunda oluşturulan dizelerden Yükleme özelliğini,
 -  Özelliği yerel dosyaları (CSS, Javascript, görüntüleri veya diğer HTML dosyaları), başvuru
--  C ## kodda Gezinti isteklerin kesilmesi özelliği,
--  JavaScript C ## kodundan çağırma yeteneği.
+-  C# kodunda gezinme istekleri müdahale özelliği,
+-  C# kodundan JavaScript çağırma yeteneği.
 
 
 Sonraki bölüm kullanmak için HTML karma uygulamalar oluşturmak kolaylaştırır Razor tanıtır.
@@ -202,7 +202,7 @@ Sonraki bölüm kullanmak için HTML karma uygulamalar oluşturmak kolaylaştır
 
 Razor başlangıçta sunucu üzerinde çalışan ve web tarayıcıları sunulması için HTML oluşturmak için ASP.NET MVC ile sunulan bir şablon altyapısıdır.
 
-Böylece düzeni express ve CSS stil sayfaları ve Javascript kolayca birleştirmek Razor şablon motoru standart HTML sözdizimi ile C ## genişletir. Şablonu herhangi bir özel türü olabilen ve özelliklerini şablonu doğrudan erişilebilir bir Model sınıfı başvuruda bulunabilir. Kendi ana avantajları de HTML ve C ## sözdizimi kolayca karışık yeteneğidir.
+Böylece düzeni express ve CSS stil sayfaları ve Javascript kolayca birleştirmek Razor şablon motoru standart HTML sözdizimi C# ile genişletir. Şablonu herhangi bir özel türü olabilen ve özelliklerini şablonu doğrudan erişilebilir bir Model sınıfı başvuruda bulunabilir. Kendi ana avantajları de HTML ve C# sözdizimi kolayca karışık yeteneğidir.
 
 Razor şablonları için sunucu tarafı kullanım sınırlı değildir, Xamarin uygulamaları da eklenebilir. Program aracılığıyla web görünümleri ile çalışmak için Razor şablonları özelliği ile birlikte kullanarak, Gelişmiş platformlar arası karma uygulamaların Xamarin ile oluşturulan olanak sağlar.
 
@@ -214,7 +214,7 @@ Razor şablon dosyalarını sahip bir **.cshtml** dosya uzantısı. Metin şablo
 
 Basit bir Razor şablon ( **RazorView.cshtml**) aşağıda gösterilmiştir.
 
-```
+```html
 @model string
 <html>
     <body>
@@ -225,18 +225,18 @@ Basit bir Razor şablon ( **RazorView.cshtml**) aşağıda gösterilmiştir.
 
 Normal bir HTML dosyası aşağıdaki farkları dikkat edin:
 
--  `@` Simgesi Razor şablonlarında özel bir anlamı olan – ifadesini değerlendirilecek C ## olduğunu gösterir.
+-  `@` Simgesi Razor şablonlarında özel bir anlamı olan – ifadesini değerlendirilecek C# olduğunu gösterir.
 - `@model` yönergesi her zaman bir Razor şablon dosyası ilk satır görünür.
 -  `@model` Yönergesi türü tarafından uyulması. Bu örnekte basit bir dize şablona geçirilmiş, ancak bu özel bir sınıf olabilir.
 -  Zaman `@Model` başvurulan isteğe bağlı olarak şablon (bir dize olarak bu örnekte) oluşturulduğunda şablona geçirilen nesnesine başvuru sağlar.
 -  IDE parçalı sınıf şablonları için otomatik olarak oluşturur (ile dosyaları **.cshtml** uzantısı). Bu kodu görüntüleyebilirsiniz, ancak düzenlenemez.
- ![RazorView.cshtml](images/image6_125x34.png) .cshtml şablon dosya adı ile eşleşmesi için RazorView adlı kısmi sınıfı. C ## kod şablonunda başvurmak için kullanılan bu adıdır.
+ ![RazorView.cshtml](images/image6_125x34.png) .cshtml şablon dosya adı ile eşleşmesi için RazorView adlı kısmi sınıfı. C# kodu şablonunda başvurmak için kullanılan bu adıdır.
 - `@using` deyimleri de ek ad alanlarını dahil etmek için bir Razor şablon üstünde dahil edilebilir.
 
 
-Son HTML çıktı sonra aşağıdaki C ## kodla oluşturulabilir. "Hello, işlenen şablon çıktısı birleştirilir World" bir dize olacak şekilde Model belirttiğimiz unutmayın.
+Son HTML çıktı sonra aşağıdaki C# kod ile oluşturulabilir. "Hello, işlenen şablon çıktısı birleştirilir World" bir dize olacak şekilde Model belirttiğimiz unutmayın.
 
-```
+```csharp
 var template = new RazorView () { Model = "Hello World" };
 var page = template.GenerateString ();
 ```
@@ -249,7 +249,7 @@ Bir web görünümü iOS simülatörü ve Android öykünücüsü gösterilen ç
 
 Bu bölümde başlamanıza yardımcı olması için bazı temel Razor sözdizimi tanıtmak için yapacağız bunu kullanma. Bu bölümdeki örnekleri aşağıdaki sınıf verilerle doldurmak ve Razor kullanarak görüntüleyin:
 
-```
+```csharp
 public class Monkey {
     public string Name { get; set; }
     public DateTime Birthday { get; set; }
@@ -259,7 +259,7 @@ public class Monkey {
 
 Tüm örnekler aşağıdaki veri başlatma kodunu kullanın
 
-```
+```csharp
 var animal = new Monkey {
     Name = "Rupert",
     Birthday=new DateTime(2011, 04, 01),
@@ -272,7 +272,7 @@ var animal = new Monkey {
 
 Model bir sınıf özelliklerine sahip olduğunda, bunlar Razor şablonunda kolayca bu örnek şablonda gösterildiği gibi başvurulur:
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -284,7 +284,7 @@ Model bir sınıf özelliklerine sahip olduğunda, bunlar Razor şablonunda kola
 
 Bu, aşağıdaki kodu kullanarak bir dizeye oluşturulabilir:
 
-```
+```csharp
 var template = new RazorView () { Model = animal };
 var page = template.GenerateString ();
 ```
@@ -293,11 +293,11 @@ Son çıkışı burada web görünümü iOS simülatörü ve Android öykünüc�
 
  ![Rupert](images/image8_516x160.png)
 
-#### <a name="c-statements"></a>C ## deyimleri
+#### <a name="c-statements"></a>C# deyimleri
 
-Daha karmaşık C ## Model özelliği güncelleştirmeleri ve bu örnekte yaş hesaplama gibi şablon eklenebilir:
+Daha karmaşık C# Model özelliği güncelleştirmeleri ve bu örnekte yaş hesaplama gibi şablon eklenebilir:
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -312,15 +312,15 @@ Daha karmaşık C ## Model özelliği güncelleştirmeleri ve bu örnekte yaş h
 </html>
 ```
 
-Kodla çevreleyen tarafından (yaş biçimlendirme gibi) karmaşık tek satırlı C ## ifadeler yazabilirsiniz `@()`.
+Kodla çevreleyen tarafından (yaş biçimlendirme gibi) karmaşık tek satırlı C# ifadeler yazabilirsiniz `@()`.
 
-Birden çok C ## deyimleri ile çevreleyen tarafından yazılabilir `@{}`.
+Birden çok C# deyimleri ile çevreleyen tarafından yazılabilir `@{}`.
 
 #### <a name="if-else-statements"></a>İf-else ifadeleri
 
 Kod dalları ifade edilir ile `@if` bu şablonu örnekte gösterildiği gibi.
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -341,7 +341,7 @@ Kod dalları ifade edilir ile `@if` bu şablonu örnekte gösterildiği gibi.
 
 Döngü yapıları gibi `foreach` de eklenebilir. `@` Öneki döngü değişkeni kullanılabilir ( `@food` bu durumda) HTML oluşturulacak.
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -372,9 +372,9 @@ Bu bölümde, basit salt okunur görünümlerde işlemek için Razor şablonlar�
 
 Bu bölümde, Mac için Visual Studio'da Çözüm şablonları kullanarak kendi karma uygulama yapı kullanmak üzere açıklanmaktadır Üç şablonları listesinden kullanılabilir **Dosya > Yeni > çözüm...**  penceresi:
 
--  Android > Uygulama > Android WebView uygulama
--  iOS > Uygulama > WebView uygulama
-- ASP.NET MVC Project
+- **Android > Uygulama > Android WebView uygulama**
+- **iOS > Uygulama > WebView uygulama**
+- **ASP.NET MVC Project**
 
 
 
@@ -382,7 +382,7 @@ Bu bölümde, Mac için Visual Studio'da Çözüm şablonları kullanarak kendi 
 
  ![İPhone ve Android çözümleri oluşturma](images/image13_1139x959.png)
 
-Kolayca ekleyebilirsiniz Not bir **.cshtml** Razor şablon *herhangi* Xamarin projesi var, bu çözüm şablonları kullanmak ise gerekli değildir. iOS projeleri Razor ya da kullanılacak film şeridi gerektirmez; yalnızca bir UIWebView denetimi için herhangi bir görünüm programlı olarak ekleyin ve Razor şablonları C ## kodda tüm hale getirebilir.
+Kolayca ekleyebilirsiniz Not bir **.cshtml** Razor şablon *herhangi* Xamarin projesi var, bu çözüm şablonları kullanmak ise gerekli değildir. iOS projeleri Razor ya da kullanılacak film şeridi gerektirmez; yalnızca bir UIWebView denetimi için herhangi bir görünüm programlı olarak ekleyin ve Razor şablonları tüm C# kodunda hale getirebilir.
 
 İPhone ve Android projeleri için varsayılan şablon çözüm içeriğini aşağıda verilmiştir:
 
@@ -406,7 +406,7 @@ Statik içerik CSS stil sayfaları, görüntüler, Javascript dosyaları veya ge
 
 Şablon projelerini karma uygulamanızda statik içerik dahil etmek nasıl göstermek için bir en az stil sayfası içerir. CSS stil şablonu bu gibi başvurulur:
 
-```
+```html
 <link rel="stylesheet" href="style.css" />
 ```
 
@@ -414,7 +414,7 @@ Hangi stil ve JQuery gibi çerçeveleri dahil olmak üzere, gereksinim Javascrip
 
 ### <a name="razor-cshtml-templates"></a>Razor cshtml şablonları
 
-Bir Razor şablon içerir **.cshtml** HTML/Javascript ve C# arasında veri iletmek için kod önceden yazmıştır dosya. Bu, olanak tanır yok yalnızca Model salt okunur verileri görüntülemek, ancak ayrıca HTML uygulamasında kullanıcı girdisi kabul etmek ve bu geçirin Gelişmiş karma uygulamalar başa işleme veya depolama C ## kod derleme.
+Bir Razor şablon içerir **.cshtml** HTML/Javascript ve C# arasında veri iletmek için kod önceden yazmıştır dosya. Bu, olanak tanır yok yalnızca Model salt okunur verileri görüntülemek, ancak ayrıca HTML uygulamasında kullanıcı girdisi kabul etmek ve bu geçirin Gelişmiş karma uygulamalar başa işleme veya depolama için C# kod derleme.
 
 #### <a name="rendering-the-template"></a>Şablon oluşturma
 
@@ -422,23 +422,23 @@ Bir Razor şablon içerir **.cshtml** HTML/Javascript ve C# arasında veri iletm
 
  ![Razor akış çizelgesi](images/image12_700x421.png)
 
-#### <a name="calling-c-code-from-the-template"></a>Şablondan C ## kodu çağırma
+#### <a name="calling-c-code-from-the-template"></a>Şablondan C# kod çağırma
 
-İletişimi geri çağırma C ## için işlenen web görünümünden web görünümü URL'sini ayarlama ve web görünümü yeniden olmadan yerel isteği işlemek için istekte C ## kesintiye uğratan gerçekleştirilir.
+C# için geri çağırma işlenmiş web görünümü gelen iletişimi, web görünümü URL'sini ayarlayarak ve web görünümü yeniden olmadan yerel isteği işlemek üzere talep C# kesintiye uğratan yapılır.
 
 Örnek RazorView'ın düğmesi nasıl işleneceğini görülebilir. Aşağıdaki HTML düğmesi bulunur:
 
-```
+```html
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
 `InvokeCSharpWithFormValues` Javascript işlevi okur, tüm değerleri, ayarlar ve HTML Form `location.href` web görünümü için:
 
-```
+```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
 ```
 
-Bu URL yaptık yukarı özel bir şema ile web görünümüne gitmek çalışır (`hybrid:`)
+Bu URL (ör. özel bir şema ile web görünümüne gitmek çalışır `hybrid:`)
 
 ```
 hybrid:UpdateLabel?textbox=SomeValue&UpdateLabel=Click
@@ -448,31 +448,31 @@ Yerel web görünümü bu gezinti isteği işlerken, müdahale fırsatı sahibiz
 
 Bu iki Gezinti dinleyiciler içyüzü temelde aynıdır.
 
-İlk olarak, biz web görünümü yüklenmeye çalışılıyor URL'yi denetleyin ve özel bizim düzeniyle başlamazsa (`hybrid:`), gerçekleşmesi Gezinti normal olarak izin veriyoruz.
+İlk olarak, web görünümü yüklenmeye çalışılıyor URL'yi denetleyin ve özel düzeniyle başlamazsa (`hybrid:`), gerçekleşmesi Gezinti normal olarak izin.
 
-Bizim Özel URL şeması için biz her şeyi düzeni arasında URL'de kabul eder ve "?" Yöntem adı (Bu durumda "UpdateLabel") ele. Sorgu dizesindeki her şeyi yöntemi çağrısına parametre olarak kabul edilir:
+Özel URL şeması için her şeyi düzeni arasında URL ve "?" (Bu durumda "UpdateLabel") işlenecek yöntemi adıdır. Sorgu dizesindeki her şeyi yöntemi çağrısına parametre olarak kabul edilir:
 
-```
+```csharp
 var resources = url.Substring(scheme.Length).Split('?');
 var method = resources [0];
 var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 ```
 
-Bu örnekteki UpdateLabel mu textbox parametresi en az bir dize düzenlemesi miktarı (eklenmesini "diyor C ##'" dizesi) ve web görünümüne geri çağırır.
+`UpdateLabel` Bu örnekte en düşük düzeyde dize düzenlemesi ("diyor" C# dizeye eklenmesini) textbox parametresindeki yapar ve web görünümüne geri çağırır.
 
-Böylece web görünümü bizim Özel URL'ye geçerken son çalışmaz bizim URL işleme sonunda, biz Gezinti durdur.
+Böylece web görünümü özel URL'ye geçerken son çalışmaz URL işleme sonra Gezinti yöntemi durdurur.
 
 #### <a name="manipulating-the-template-from-c"></a>C# şablondan düzenleme
 
-C ## gelen iletişimi için işlenen HTML web görünümü web görünümünde Javascript çağırarak yapılır. İos'ta, bu çağırarak yapılır `EvaluateJavascript` UIWebView üzerinde:
+C# gelen iletişimi için işlenen HTML web görünümü web görünümünde Javascript çağırarak yapılır. İos'ta, bu çağırarak yapılır `EvaluateJavascript` UIWebView üzerinde:
 
-```
+```csharp
 webView.EvaluateJavascript (js);
 ```
 
 Android, Javascript web görünümünde kullanarak bir URL olarak Javascript yükleyerek çağrılabilir `"javascript:"` URL şeması:
 
-```
+```csharp
 webView.LoadUrl ("javascript:" + js);
 ```
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: b7756c63901d3b4fbfea70587b3fdf8e5cf9df72
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 965d4987c154acc5a2f95d4ca622266ebdc2a1c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Azure Mobile Apps ile çevrimdışı veri eşitleme
 
@@ -133,7 +133,7 @@ public async Task SyncAsync()
 Çekme tarafından gerçekleştirilir `IMobileServiceSyncTable.PullAsync` tek bir tabloda yöntemi. İlk parametre olarak `PullAsync` yalnızca mobil aygıtta kullanılan bir sorgu adı bir yöntemdir. Azure Mobile istemci SDK'sı işlemlerinde adı sonuçları bir null olmayan sorgu sağlayarak bir *Artımlı eşitleme*, her seferinde bir çekme işlemi sonuçları, en son döndüğü `updatedAt` sonuçlarından zaman damgası, yerel depolanır Sistem tabloları. Sonraki çekme işlemleri sonra yalnızca kayıtları sonra zaman damgası alın. Alternatif olarak, *tam eşitleme* geçirerek sağlanabilir `null` sorgu adı hangi sonuçlanıyor her çekme işleminde alınan tüm kayıtları. Herhangi bir eşitleme işlemi alınan veriler yerel depolama alanına eklenir.
 
 > [!NOTE]
-> **Not**: çekme bekleyen yerel güncelleştirmeleri içeren bir tablo karşı yürütülürse, çekme ilk push eşitleme bağlamda yürütülür. Bu zaten kuyruğa alınmış değişiklikleri ve yeni verileri Azure Mobile Apps örneğinden arasındaki çakışmaları en aza indirir.
+> Bir çekme bekleyen yerel güncelleştirmeleri içeren bir tablo karşı yürütülürse, çekme push eşitleme bağlamda ilk yürütün. Bu zaten kuyruğa alınmış değişiklikleri ve yeni verileri Azure Mobile Apps örneğinden arasındaki çakışmaları en aza indirir.
 
 `SyncAsync` Yöntemi de aynı kayıt hem yerel depodaki ve Azure Mobile Apps örneğinde değiştiğinde çakışmalarını işleme için temel bir uygulama içerir. Çakışma Yerel Depodaki ve Azure Mobile Apps örneğindeki veri güncelleştirildi olduğunda `SyncAsync` yöntemi verileri yerel depodaki Azure Mobile Apps örneğinde depolanan verileri güncelleştirir. Diğer bir çakışma meydana geldiğinde `SyncAsync` yöntemi yerel değişiklik atar. Bu senaryo Azure Mobile Apps örnekten silinmiş veriler için yerel bir değişiklik bulunduğu işler.
 
@@ -150,7 +150,7 @@ await todoTable.PurgeAsync(todoTable.Where(item => item.Done));
 Çağrı `PurgeAsync` da anında iletme işlemi tetikler. Bu nedenle, yerel depodan kaldırılmadan önce yerel olarak tamamlandı olarak işaretlenmiş tüm öğeleri, Azure Mobile Apps örneğine'e gönderilir. Ancak, Azure Mobile Apps örneğiyle eşitleme bekleyen işlemler varsa, temizleme özel durum oluşturacak bir `InvalidOperationException` sürece `force` parametrenin ayarlanmış `true`. Alternatif bir strateji incelemektir `IMobileServiceSyncContext.PendingOperations` Özelliği Azure Mobile Apps örneğine gönderilen henüz ve özelliği sıfırsa temizleme yalnızca gerçekleştirmek işlemlerinin bekleyen sayısını döndürür.
 
 > [!NOTE]
-> **Not**: çağırma `PurgeAsync` ile `force` parametre kümesine `true` bekleyen tüm değişiklikleri kaybedeceksiniz.
+> Çağırma `PurgeAsync` ile `force` parametre kümesine `true` bekleyen tüm değişiklikleri kaybedeceksiniz.
 
 ## <a name="initiating-synchronization"></a>Eşitleme başlatılıyor
 

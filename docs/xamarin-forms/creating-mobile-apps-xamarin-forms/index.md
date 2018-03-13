@@ -8,15 +8,15 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/03/2016
-ms.openlocfilehash: b6054b4037b14a73cb5bfe50b619e805fdcf1737
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: caee0d685838f7c0a54e19611fdf72df5730c037
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book-first-edition"></a>Xamarin.Forms defteri ilk Edition'la mobil uygulamaları oluşturma
 
-<p><img src="Images/Cover-sml.png" title="Xamarin.Forms defteriyle mobil uygulamaları oluşturma" align="left"/>Charles Petzold'un'ın en son rehberi - <i>Xamarin.Forms ile Mobile Apps oluşturma</i> - (elektronik) tuşuna gönderilen ve şimdi indirme için kullanılabilir!</p>
+<p><img src="Images/Cover-sml.png" title="Xamarin.Forms defteriyle mobil uygulamaları oluşturma" align="left" />Charles Petzold'un'ın en son rehberi - <i>Xamarin.Forms ile Mobile Apps oluşturma</i> - (elektronik) tuşuna gönderilen ve şimdi indirme için kullanılabilir!</p>
 
 Bu *ilk edition* 27 bölümler vardır ve Xamarin.Forms kapsayan&nbsp;animasyon, MVVM, Tetikleyiciler, davranışları, özel düzenler, özel oluşturucu ve daha fazlasını dahil olmak üzere 2.x.
 Bölüm 28 de çevrimiçi aşağıda listelenen tek tek bölüm arasında kullanıma sunulmuştur.

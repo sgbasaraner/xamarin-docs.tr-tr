@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 423240949daf45d8d179a3ca9f89677f490cc24d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d01130989336ada855e936a6597b517fab5ee69
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ad-hoc-distribution"></a>Geçici dağıtım
 
@@ -51,15 +51,15 @@ Sonraki bölümde dağıtım sertifikası ve sağlama dağıtım profili nasıl 
 3. Tıklatın  **+**  yeni bir sertifika oluşturmak için düğmeye.
 4. Altında *üretim* başlığını seçin **şirket içi ve geçici**, veya **App Store ve geçici**program üyeliğinizi bağlı olarak:
 
-  [ ![](ad-hoc-distribution-images/cert-first-small.png "Şirket içi ve Ad Hoc seçin veya uygulama depolama ve geçici")](ad-hoc-distribution-images/cert-first-large.png)
+  [![](ad-hoc-distribution-images/cert-first-small.png "Şirket içi ve Ad Hoc seçin veya uygulama depolama ve geçici")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. Devam'ı tıklatın ve bir sertifika imzalama isteği Anahtarlık erişim aracılığıyla oluşturmak için yönergeleri izleyin:
 
-  [ ![](ad-hoc-distribution-images/createcertmanually02.png "Sertifika imzalama isteği Anahtarlık erişim aracılığıyla oluşturma")](ad-hoc-distribution-images/createcertmanually02.png)
+  [![](ad-hoc-distribution-images/createcertmanually02.png "Sertifika imzalama isteği Anahtarlık erişim aracılığıyla oluşturma")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. CSR belirtildiği şekilde oluşturduktan sonra devam'ı tıklatın ve üye Merkezi'nde CSR dosyasını karşıya yükleyin:
 
-  [ ![](ad-hoc-distribution-images/createcertmanually03.png "Üye Merkezi CSR dosyasını karşıya yükleyin")](ad-hoc-distribution-images/createcertmanually03.png)
+  [![](ad-hoc-distribution-images/createcertmanually03.png "Üye Merkezi CSR dosyasını karşıya yükleyin")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. Bir sertifika oluşturmak için Oluştur'u tıklatın.
 8. Son olarak, tamamlanan sertifika indirmek ve yüklemek için dosyaya çift tıklayın.
@@ -67,9 +67,9 @@ Sonraki bölümde dağıtım sertifikası ve sağlama dağıtım profili nasıl 
 
 Alternatif olarak, xcode'da Tercihler iletişim kutusu üzerinden sertifika istemek mümkündür. Bunu yapmak için aşağıdaki adımları izleyin:
 
-1.   Ekibinizin seçin ve tıklayın **sertifikaları Yönet...** : [ ![ ] (ad-hoc-distribution-images/selectteam.png "Takım seçme")](ad-hoc-distribution-images/selectteam.png)
+1.   Ekibinizin seçin ve tıklayın **sertifikaları Yönet...** : [ ![ ] (ad-hoc-distribution-images/selectteam.png "Takım seçme")](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2.   Bundan sonra öğesini **artı (+)** düğmesine tıklayın ve ardından **iOS App Store'da**: [ ![ ] (ad-hoc-distribution-images/selectcert.png "iOS App Store'da seçme")](ad-hoc-distribution-images/selectcert.png)
+2.   Bundan sonra öğesini **artı (+)** düğmesine tıklayın ve ardından **iOS App Store'da**: [ ![ ] (ad-hoc-distribution-images/selectcert.png "iOS App Store'da seçme")](ad-hoc-distribution-images/selectcert.png#lightbox)
 
 <a name="createprofile" />
 
@@ -91,23 +91,23 @@ Olarak herhangi diğer sağlama oluşturduğunuz profil ile bir uygulama kimliğ
 
 Dağıtım profili oluşturmak için gerekli gerekli bileşenleri olduktan sonra onu oluşturmak için aşağıdaki adımları izleyin:
 
-1. Apple sağlama Portalı'na dönün ve seçin **sağlama > Dağıtım**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "seçin sağlama > Dağıtım")](ad-hoc-distribution-images/distribute01.png)
+1. Apple sağlama Portalı'na dönün ve seçin **sağlama > Dağıtım**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "seçin sağlama > Dağıtım")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
 2. Tıklatın  **+**  düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **geçici**:
 
-    [ ![](ad-hoc-distribution-images/distribute02.png "Bir geçici dağıtım türü oluşturma")](ad-hoc-distribution-images/distribute02.png)
+    [![](ad-hoc-distribution-images/distribute02.png "Bir geçici dağıtım türü oluşturma")](ad-hoc-distribution-images/distribute02.png#lightbox)
 
 3. Tıklatın **devam** düğmesini tıklatın ve uygulama kimliği için bir dağıtım profili oluşturmak istediğiniz aşağı açılan listeden seçin:
 
-    [ ![](ad-hoc-distribution-images/distribute03.png "Uygulama Kimliği açılır listeden seçin")](ad-hoc-distribution-images/distribute03.png)
+    [![](ad-hoc-distribution-images/distribute03.png "Uygulama Kimliği açılır listeden seçin")](ad-hoc-distribution-images/distribute03.png#lightbox)
 
 4. Tıklatın **devam** düğmesi ve select dağıtım sertifikası gerekli uygulamayı imzalamak için:
 
-    [ ![](ad-hoc-distribution-images/distribute04.png "Uygulamayı imzalamak için gereken select dağıtım sertifikası")](ad-hoc-distribution-images/distribute04.png)
+    [![](ad-hoc-distribution-images/distribute04.png "Uygulamayı imzalamak için gereken select dağıtım sertifikası")](ad-hoc-distribution-images/distribute04.png#lightbox)
 
 6. Tıklatın **devam** düğmesini tıklatın ve girin bir **adı** yeni dağıtım profili için:
 
-    [ ![](ad-hoc-distribution-images/distribute06.png "Yeni dağıtım profili için bir ad girin")](ad-hoc-distribution-images/distribute06.png)
+    [![](ad-hoc-distribution-images/distribute06.png "Yeni dağıtım profili için bir ad girin")](ad-hoc-distribution-images/distribute06.png#lightbox)
 
 7. Tıklatın **Generate** düğmesine yeni profil oluşturmak ve işlemini sonlandırabilir.
 
@@ -183,7 +183,7 @@ Bu makalede Xamarin.iOS uygulamaları test etmek için gerekli olan geçici dağ
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Uygulama mağazası dağıtım](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [App Store Dağıtımı](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
 - [Şirket içi dağıtım](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [İTunesMetadata.plist dosyası](~/ios/deploy-test/app-distribution/itunesmetadata.md)
-- [IPA desteği](~/ios/deploy-test/app-distribution/ipa-support.md)
+- [iTunesMetadata.plist Dosyası](~/ios/deploy-test/app-distribution/itunesmetadata.md)
+- [IPA Desteği](~/ios/deploy-test/app-distribution/ipa-support.md)

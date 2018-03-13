@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ab6124e2b11d26d4c10330e7b824e4761ebf4603
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95098cd5c97ccc8357531feb79e55600f53a4be5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="wide-color"></a>Geniş rengi
 
@@ -38,19 +38,19 @@ Aşağıdaki kavramları rengi renk macOS ve iOS daha derin göz çıkarmadan ö
 
 Bir renk alanını içinde renkleri temsil karşılaştırıldığında ve yönetilebilen bir ortamıdır. Renk bileşenlerinden yoğunluğu tarafından tanımlanan bir dörde boyutlu alanı olabilir. 
 
-[ ![](wide-color-images/color00.png "Bir renk alanını")](wide-color-images/color00.png)
+[![](wide-color-images/color00.png "Bir renk alanını")](wide-color-images/color00.png#lightbox)
 
 ### <a name="color-channels"></a>Renk kanalları
 
 Renk bileşenleri, ayrıca renk kanalları başvuruda bulunulabilir. Bazı bilinen Beyanları RGB alanları, gri alanları, CMYK alanları veya aygıt bağımsız alanları olacaktır. 
 
-[ ![](wide-color-images/color02.png "Renk bileşenleri de için renk kanalları belirtilebilir")](wide-color-images/color02.png)
+[![](wide-color-images/color02.png "Renk bileşenleri de için renk kanalları belirtilebilir")](wide-color-images/color02.png#lightbox)
 
 ### <a name="color-primaries"></a>Renk ana
 
 Renk ana karşılaştırın ve renkleri hesaplamak için kullanılan koordinat sistemi sağlar. Renk ana genellikle bir renk kanal içinde oluşturulan belirli rengi en yoğun sürümü ayrılır.
 
-[ ![](wide-color-images/color01.png "Renk ana karşılaştırın ve renkleri hesaplamak için kullanılan koordinat sistemi sağlama")](wide-color-images/color01.png)
+[![](wide-color-images/color01.png "Renk ana karşılaştırın ve renkleri hesaplamak için kullanılan koordinat sistemi sağlama")](wide-color-images/color01.png#lightbox)
 
 RGB renk yukarıda gösterilen alanı söz konusu olduğunda, renk ana yeri olan `1.0` koordinatları bağlantılı (gibi `[1.0, 0.0, 0.0]` kırmızı için).
 
@@ -58,7 +58,7 @@ RGB renk yukarıda gösterilen alanı söz konusu olduğunda, renk ana yeri olan
 
 Tüm tek tek renk kanalları verin renk alanını içinde bir birleşimi olarak tanımlı renklerin renk skalasını başvuruyor.
 
-[ ![](wide-color-images/color03.png "Renk skalasını örneği")](wide-color-images/color03.png)
+[![](wide-color-images/color03.png "Renk skalasını örneği")](wide-color-images/color03.png#lightbox)
 
 ## <a name="what-is-wide-color"></a>Geniş renk nedir
 
@@ -80,7 +80,7 @@ Ham biçimde dijital görüntüleri yakalama kullanıcılar, cihazlarında sRGB 
 
 2015'te Apple renk alanını sRGB tarafından oluşturulan sorunlarını gidermek için yeni görünen P3 renk alanını sağlayan yeni ürünler (iMac ve iPad Pro 9.7") yayımladı.
 
-[ ![](wide-color-images/color04.png "Yeni görünen P3 renk alanını")](wide-color-images/color04.png)
+[![](wide-color-images/color04.png "Yeni görünen P3 renk alanını")](wide-color-images/color04.png#lightbox)
 
 Görüntü P3 renk alanını aşağıdaki özelliklere sahiptir:
 
@@ -112,7 +112,7 @@ Tarafından değerleri sıfırdan için izin verme ve daha büyük bir performan
 
 Sıfır ve bir dışında değerler genişletilmiş aralık sRGB Renk alanını nasıl çalıştığını görmek için aşağıdaki örneği uygulamanız görüntü P3 renk uzayındaki kullanılabilir en doymuş kırmızı:
 
-[ ![](wide-color-images/color05.png "Sıfır ve bir dışında değerler genişletilmiş aralık sRGB Renk alanını nasıl çalışır?")](wide-color-images/color05.png)
+[![](wide-color-images/color05.png "Sıfır ve bir dışında değerler genişletilmiş aralık sRGB Renk alanını nasıl çalışır?")](wide-color-images/color05.png#lightbox)
 
 Görüntü P3 içinde bu renk olarak temsil edilir `[1.0, 0.0, 0.0]` ve onu olacaktır genişletilmiş aralık sRGB `[1.358, -0.074, -0.012]`. SRGB değerleri tam olduğundan görüntü P3 içinde kapsanan ve görüntü P3 değerleri "dış" sRGB aralıklarını düzenleyin.
 

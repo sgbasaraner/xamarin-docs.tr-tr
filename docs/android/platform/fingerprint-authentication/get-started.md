@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: ea9046c0c546a2f331aefd2332008e10ec6db3c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e3c986b03408dae98a5a79f257029c10909aeabd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started-with-fingerprint-authentication"></a>Parmak izi kimlik doğrulaması ile çalışmaya başlama
 
@@ -27,13 +27,13 @@ Başlamak için şimdi ilk böylece uygulama parmak izi kimlik doğrulaması kul
 
 Bir Android uygulamasını istemelidir `USE_FINGERPRINT` bildiriminde izni. Aşağıdaki ekran görüntüsünde, Visual Studio 2015'te uygulama bu izni eklemek gösterilmektedir:
 
-[![Kullanım etkinleştirme\_Android derleme bildirimi ekranında parmak İZİ](get-started-images/fingerprint-01-vs.png)](get-started-images/fingerprint-01-vs.png) 
+[![Kullanım etkinleştirme\_Android derleme bildirimi ekranında parmak İZİ](get-started-images/fingerprint-01-vs.png)](get-started-images/fingerprint-01-vs.png#lightbox) 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Bir Android uygulamasını istemelidir `USE_FINGERPRINT` bildiriminde izni. Aşağıdaki ekran görüntüsünde Mac için Visual Studio'da uygulama bu izni eklemeyi gösterir:
 
-[![Android uygulaması ekranında UseFingerprint etkinleştirme](get-started-images/fingerprint-01-xs.png)](get-started-images/fingerprint-01-xs.png) 
+[![Android uygulaması ekranında UseFingerprint etkinleştirme](get-started-images/fingerprint-01-xs.png)](get-started-images/fingerprint-01-xs.png#lightbox) 
 
 -----
 

@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6b4958c6a82b824f19cc041b124e79034eba4c86
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9bae3c56c5f6c445618f41d877c3188a86167be1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Amazon uygulama mağazası yayımlama
 
 Amazon mobil uygulama dağıtım programı uygulamalarını Amazon yayımlamak mobil uygulama geliştiricileri sağlar. Bu bölümde, Android için Amazon App Store kısaca ele alınmaktadır. 
 
-[![Amazon App Store ekranında](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png)
+[![Amazon App Store ekranında](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png#lightbox)
 
 Amazon APKs boyutunu sınırlamaz. Bir APK 30 MB'den büyük olursa, ancak daha sonra FTP Amazon mobil uygulama dağıtım portalı yerine dağıtım için kullanır.
 
-<a name="Submitting_Apps:_Binary_Info" />
 
 ## <a name="submitting-apps-binary-info"></a>Gönderen uygulamalar: İkili bilgisi
 
@@ -34,7 +33,6 @@ Amazon uygulama mağazası uygulama gönderme, Google Play uygulamaya göndermek
 -  Beş videolar güncelleştirmeleri sağlanabilir.
 
 
-<a name="Approval_Process" />
 
 ## <a name="approval-process"></a>Onay işlemi
 

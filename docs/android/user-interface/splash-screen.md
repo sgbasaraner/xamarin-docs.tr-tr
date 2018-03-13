@@ -7,18 +7,17 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 9acb1ad6ab1425edb98b938e8c03edc3704f50ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 9f88899d390f7f268f1b2f435617dc952f9eb205
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="splash-screen"></a>Giriş ekranı
 
 _Android uygulaması özellikle zaman uygulama önce bir aygıtta başlatıldıktan yukarı başlatmak için biraz zaman alır. Karşılama ekranı başlangıç görüntülenebilir yukarı ilerleme kullanıcıya veya markalama belirtmek için._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -32,10 +31,8 @@ Bu kılavuz bir Android uygulamasını Karşılama ekranı uygulamak için bir y
 
 3.  Önceki adımda oluşturduğunuz tema tarafından tanımlanan giriş ekranı olarak kullanılacak uygulama için yeni bir etkinlik ekleniyor.
 
-[![Uygulama ekran tarafından izlenen örnek Xamarin logosu giriş ekranı](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png)
+[![Uygulama ekran tarafından izlenen örnek Xamarin logosu giriş ekranı](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -43,7 +40,6 @@ Bu kılavuz uygulamasını Android API düzeyi 15 (Android 4.0.3) hedefleyen var
 
 Tüm kod ve bu kılavuzdaki XML bulunabilir [KarşılamaEkranı](https://developer.xamarin.com/samples/monodroid/SplashScreen) bu kılavuz için örnek proje.
 
-<a name="implement" />
 
 ## <a name="implementing-a-splash-screen"></a>Bir giriş ekranının uygulama
 
@@ -51,7 +47,6 @@ Tüm kod ve bu kılavuzdaki XML bulunabilir [KarşılamaEkranı](https://develop
 
 Giriş ekranı markalı görüntüleyen bir etkinlik olarak uygulanan drawable, tüm başlatmaları gerçekleştirir ve tüm görevleri başlatır. Uygulama ten sonra giriş ekranı etkinlik ana etkinlik başlatır ve kendisini uygulama arka yığından kaldırır.
 
-<a name="drawable" />
 
 ### <a name="creating-a-drawable-for-the-splash-screen"></a>Bir Drawable için giriş ekranı oluşturma
 
@@ -79,7 +74,6 @@ Bu dosyaya koyun **kaynakları/drawable** klasörünü (örneğin, **Resources/d
 
 Drawable giriş ekranı oluşturulduktan sonra sonraki adıma giriş ekranı için bir tema oluşturmaktır.
 
-<a name="theme" />
 
 ### <a name="implementing-a-theme"></a>Bir tema uygulama
 
@@ -103,7 +97,6 @@ Giriş ekranı etkinlik için özel bir tema oluşturmak için Düzenle (veya ek
 
 **MyTheme.Splash** çok spartan olan &ndash; penceresi arka plan bildirir, açıkça başlık çubuğunda penceresinden kaldırır ve tam ekran olduğunu bildirir. Kullanıcı Arabirimi, uygulamanızın ilk düzeni etkinlik Şişir önce öykünen bir giriş ekranı oluşturmak istiyorsanız, kullanabileceğiniz `windowContentOverlay` yerine `windowBackground` stili tanımında. Bu durumda, aynı zamanda değiştirmeniz gerektiğini **splash_screen.xml** drawable böylece UI bir öykünmesini görüntüler.
 
-<a name="activity" />
 
 ### <a name="create-a-splash-activity"></a>Bir giriş etkinlik oluşturmak
 
@@ -161,7 +154,6 @@ public class MainActivity : AppCompatActivity
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 011b6d184e55c9054a845d4922687b4565221859
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bbbf3fb09edb802f1315977fb14ecfe154b2572f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-a-jar"></a>Bağlama bir. JAR
 
@@ -75,7 +75,6 @@ Picasso.With (this)
 
 ```
 
-<a name="creating" />
 
 ### <a name="creating-the-bindings-library"></a>Bağlamaları kitaplığı oluşturma
 
@@ -83,19 +82,19 @@ Aşağıdaki adımlarla başlatmadan önce lütfen indirin [picasso 2.x.x.jar](h
 
 İlk olarak, yeni bağlamalar kitaplık projesi oluşturun. Visual Studio'da Mac veya Visual Studio için yeni bir çözüm oluşturun ve seçin *Android bağlamaları Kitaplığı* şablonu. (Bu kılavuzda ekran görüntüleri Visual Studio'yu kullanın, ancak Mac için Visual Studio çok benzer.) Çözüm adı **JarBinding**: 
 
-[ ![JarBinding kitaplığı projesi oluşturma](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png)
+[![JarBinding kitaplığı projesi oluşturma](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png#lightbox)
 
 Şablon içeren bir **Jar'lar** eklediğiniz klasörü. Bağlamaları kitaplık projesine JAR(s). Sağ **Jar'lar** klasörü ve select **Ekle > varolan öğeyi**: 
 
-[ ![Varolan öğeyi Ekle](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png)
+[![Varolan öğeyi Ekle](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png#lightbox)
 
 Gidin **picasso 2.x.x.jar** dosyası karşıdan daha önce seçin ve **Ekle**: 
 
-[ ![Jar dosyasını seçin ve Ekle'yi tıklatın](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png)
+[![Jar dosyasını seçin ve Ekle'yi tıklatın](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
 
 Doğrulayın **picasso 2.x.x.jar** dosyası projeye başarıyla eklendi: 
 
-[ ![Jar projesine eklendi](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png)
+[![Jar projesine eklendi](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
 
 Bir Java bağlamaları kitaplığı projesi oluşturduğunuzda, belirtmelisiniz olup olmadığını. JAR bağlamaları Kitaplığı'nda katıştırılmış veya ayrı olarak paketlenmiş sağlamaktır. Bunu yapmak için aşağıdakilerden birini belirtmeniz *Eylemler yapı*: 
 
@@ -107,19 +106,18 @@ Genellikle, kullandığınız **EmbeddedJar** derleme eylemi böylece. JAR bağl
 
 Yapı eyleminin kümesine **EmbeddedJar**: 
 
-[ ![EmbeddedJar yapı eylemi seçin](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png)
+[![EmbeddedJar yapı eylemi seçin](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png#lightbox)
 
 Ardından, projeyi yapılandırmak için özellikler açmak *hedef Framework*. Varsa. JAR tüm Android API'lerini kullanır, API düzeyi hedef Framework'ü ayarlayın. JAR bekliyor. Genellikle, geliştiricisi. Hangi API düzeyi (veya düzeyleri) JAR dosyasını gösterilir,. JAR ile uyumludur. (Hedef Framework ayarını ve genel Android API düzeyleri hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md).)
 
 Hedef API'den bağlamaları kitaplığınızda düzeyi ayarlayın (Bu örnekte, API düzeyi 19 kullanıyoruz): 
 
-[ ![API 19 hedef API düzeyini ayarlayın](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png)
+[![API 19 hedef API düzeyini ayarlayın](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
 
 
 Son olarak, bağlamaları kitaplığı oluşturun. Bazı uyarı iletilerini görüntülenebilir ancak bağlamaları kitaplığı proje başarılı bir şekilde oluşturmak ve bir çıktı üretir. DLL şu konumda: **JarBinding/bin/Debug/JarBinding.dll**
     
 
-<a name="using" />
 
 ### <a name="using-the-bindings-library"></a>Bağlamaları kitaplığı kullanma
 
@@ -133,19 +131,19 @@ Aşağıdaki adımlarda, indirin ve görüntüyü görüntülemek için bağlama
 
 İlk olarak, bağlamaları kitaplığı tüketir yeni bir Xamarin.Android uygulaması oluşturma. Çözüme sağ tıklayın ve seçin **Yeni Proje Ekle**; yeni proje adı **BindingTest**. Bu uygulama bağlamaları kitaplığı olarak aynı çözümde bu kılavuzda basitleştirmek için oluşturuyoruz; Ancak, bağlamaları kitaplığı tüketen uygulamayı bunun yerine, farklı bir çözümde bulunan olabilir: 
 
-[ ![Yeni BindingTest proje ekleyin](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png)
+[![Yeni BindingTest proje ekleyin](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png#lightbox)
 
 Sağ **başvuruları** düğümünün **BindingTest** proje ve seçin **Başvuru Ekle...** :
 
-[ ![Sağ başvuru ekleme](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png)
+[![Sağ başvuru ekleme](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png#lightbox)
 
 Denetleme **JarBinding** daha önce oluşturduğunuz proje ve tıklatın **Tamam**:
 
-[ ![JarBinding projesini seçin](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png)
+[![JarBinding projesini seçin](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png#lightbox)
 
 Açık **başvuruları** düğümünün **BindingTest** proje ve doğrulayın **JarBinding** başvuru varsa: 
 
-[ ![JarBinding başvuruları altında görünür](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png)
+[![JarBinding başvuruları altında görünür](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png#lightbox)
 
 Değiştirme **BindingTest** Düzen (**Main.axml**) tek bir sahip olması `ImageView`:
 
@@ -191,11 +189,10 @@ public class MainActivity : Activity
 
 Derleme ve çalıştırma **BindingTest** projesi. Uygulama başlatılacak ve (bağlı olarak ağ koşulları) kısa bir gecikmeyle indirin ve aşağıdaki ekran görüntüsüne benzer bir resmi görüntüle:
 
-[ ![Ekran görüntüsü, BindingTest çalışıyor](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png)
+[![Ekran görüntüsü, BindingTest çalışıyor](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
 
 Tebrikler! Java kitaplığı başarıyla bağladınız. JAR ve Xamarin.Android uygulamanıza kullanılır.
  
-<a name="summary" />
  
 ## <a name="summary"></a>Özet
 
@@ -206,4 +203,4 @@ Bu kılavuzda, üçüncü taraf bağlamaları kitaplığının oluşturduk. En a
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Java bağlamaları kitaplığı (video) oluşturma](https://university.xamarin.com/classes#10090)
-- [Java kitaplığı bağlama](~/android/platform/binding-java-library/index.md)
+- [Java Kitaplığını Bağlama](~/android/platform/binding-java-library/index.md)

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 523d79adbc5d4f88d4a2670b6422a58fb9256ab2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e40fd215d23e7da6f1356bba17fac84ce91007ae
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="polylines-and-parametric-equations"></a>Kullansa ve parametrik denklemini
 
@@ -109,7 +109,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Sonuç olarak da adlandırılan bir *aritmetik spiral* her döngü arasındaki uzaklığı sabit olduğundan:
 
-[![](polylines-images/archimedeanspiral-small.png "Üçlü sayfasının ekran görüntüsü Archimedean Spiral")](polylines-images/archimedeanspiral-large.png "Üçlü sayfasının ekran görüntüsü Archimedean Sarmal")
+[![](polylines-images/archimedeanspiral-small.png "Üçlü sayfasının ekran görüntüsü Archimedean Spiral")](polylines-images/archimedeanspiral-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Archimedean Sarmal")
 
 Dikkat `SKPath` oluşturulan bir `using` bloğu. Bu `SKPath` daha fazla bellek tüketir `SKPath` öneren önceki programları nesneleri bir `using` blok yönetilmeyen tüm kaynaklarını silmek daha uygun.
 

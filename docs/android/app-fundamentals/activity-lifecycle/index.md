@@ -7,12 +7,12 @@ ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ccd55d4d7f1aea55110e109bed1fbd4ebc90b93f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="activity-lifecycle"></a>Etkinlik yaşam döngüsü
 
@@ -44,7 +44,7 @@ Android etkinlik yaşam döngüsü, bir kaynak yönetimi çerçevesiyle Gelişti
 
 Android işletim sistemi kendi durumuna bağlı etkinlikler istemlerde. Bu, artık bellek ve kaynakları geri kazanmak işletim sistemi izin vererek kullanımda olan etkinliklerini belirlemek Android yardımcı olur. Aşağıdaki diyagram, bir etkinlik yaşam süresi boyunca Git durumlarını gösterir:
 
-[ ![Etkinlik durumları diyagramı](images/image1-sml.png)](images/image1.png)
+[![Etkinlik durumları diyagramı](images/image1-sml.png)](images/image1.png#lightbox)
 
 Bu durumlar 4 ana gruplar halinde şu şekilde ayrılabilir:
 
@@ -69,7 +69,7 @@ Daha sonra bu konuda şu konulara değineceğiz [durumu ömrü boyunca yönetme]
 
 Android SDK ve uzantıya göre Xamarin.Android framework sağlayan güçlü bir model bir uygulama içinde etkinliklerin durumunu yönetmek için. Bir etkinliğin durumunu değiştirirken, etkinlik bu etkinlik belirli yöntemlerini çağıran işletim sistemi tarafından bildirilir. Aşağıdaki diyagram ilişkide etkinlik yaşam döngüsü için bu yöntemleri gösterir:
 
-[ ![Etkinlik yaşam döngüsü akış çizelgesi](images/image2-sml.png)](images/image2.png)
+[![Etkinlik yaşam döngüsü akış çizelgesi](images/image2-sml.png)](images/image2.png#lightbox)
 
 Bir geliştirici olarak, bir etkinlik bu yöntemi geçersiz kılarak durum değişiklikleri işleyebilir. Ancak, tüm yaşam döngüsü yöntemleri kullanıcı Arabirimi iş parçacığı üzerinde olarak adlandırılır ve yeni etkinlik, vb. görüntüleme geçerli etkinlik gizleme gibi kullanıcı Arabirimi iş, sonraki parçası gerçekleştirmeyi OS engeller unutmayın önemlidir. Bu nedenle, bu yöntemleri kodda düzgün çalışıp eşitleyerek uygulama yapmak mümkün olduğunca kısa olmalıdır. Tüm uzun süre çalışan görevler arka plan iş parçacığında yürütülmelidir.
 
@@ -205,7 +205,7 @@ Sonra çağrılan sonraki yaşam döngüsü yöntemi `OnRestart` olacaktır `OnS
 
 İki ayrı düğmeleri birçok Android cihazları vardır: bir "Geri" düğmesi ve bir "Home" düğmesi. Bunun bir örneğini Android 4.0.3 aşağıdaki ekran görüntüsünde görebilirsiniz:
 
-[ ![Geri ve giriş düğmeleri](images/image4-sml.png)](images/image4.png)
+[![Geri ve giriş düğmeleri](images/image4-sml.png)](images/image4.png#lightbox)
 
 Bir uygulama arka planda yerleştirme aynı etkiye sahip görünse de iki düğmeler arasındaki zarif bir fark yoktur. Bir kullanıcı geri düğmesine tıkladığında, bunların etkinliği ile yapılır Android söylemiş olursunuz. Android etkinlik yok. Kullanıcı Giriş düğmesini tıklattığında buna karşılık, etkinliği yalnızca arka plan içine yerleştirildiğinde &ndash; Android değil etkinlik sonlandırın.
 
@@ -225,7 +225,6 @@ Bu durumu kaydedildi, örnek durumu adlandırılır. Android örnek durum etkinl
 
 Bu kılavuz, ilk iki seçeneği kapsar.
 
- <a name="Bundle_State" />
 
 
 ### <a name="bundle-state"></a>Paket durumu
@@ -241,7 +240,7 @@ Bir etkinlik kaydetme ve paketteki örnek durumu alınırken yardımcı olmak i�
 
 Aşağıdaki diyagramda, bu yöntemleri nasıl kullanıldığı gösterilmektedir:
 
-[ ![Paket durumları akış çizelgesi](images/image3-sml.png)](images/image3.png)
+[![Paket durumları akış çizelgesi](images/image3-sml.png)](images/image3.png#lightbox)
 
 #### <a name="onsaveinstancestate"></a>OnSaveInstanceState
 
@@ -276,7 +275,7 @@ protected override void OnCreate (Bundle bundle)
 
 Yukarıdaki kod adlı bir tamsayı artırır `c` adlı bir düğmeye zaman `incrementCounter` tıklandığında, sonuçta görüntüleyen bir `TextView` adlı `output`. Bir yapılandırma değişikliği - Örneğin, gerçekleştiğinde ne zaman cihaz Döndürülmüş - yukarıdaki kodu değerini kaybeder `c` çünkü `bundle` olacaktır `null`aşağıdaki şekilde gösterildiği gibi:
 
-[ ![Görüntü önceki değeri göstermiyor](images/07-sml.png)](images/07.png)
+[![Görüntü önceki değeri göstermiyor](images/07-sml.png)](images/07.png#lightbox)
 
 Değerini korumak için `c` Bu örnekte, etkinlik kılabilirsiniz `OnSaveInstanceState`, aşağıda gösterildiği gibi pakete değer kaydetme:
 
@@ -295,10 +294,9 @@ c = bundle.GetInt ("counter", -1);
 ```
 
 > [!NOTE]
-> **Not:** , her zaman önemli çağrısı temel uygulamasıdır `OnSaveInstanceState` böylece hiyerarşisini görüntüleme durumunu da kaydedilebilir.
+> Bu her zaman önemli çağrısı temel uygulamasıdır `OnSaveInstanceState` böylece hiyerarşisini görüntüleme durumunu da kaydedilebilir.
 
 
-<a name="View_State" />
 
 ##### <a name="view-state"></a>Görünüm durumu
 
@@ -312,7 +310,7 @@ Geçersiz kılma `OnSaveInstanceState` yukarıdaki örnekte sayacı gibi yönlen
 
 Bu yana `EditText` denetimi sahip bir `id` atanan kullanıcı bazı veriler girdiği ve cihaz döndürür, verilerin yine, aşağıda gösterildiği gibi görüntülenir:
 
-[ ![Veri yatay modunda korunur](images/08-sml.png)](images/08.png)
+[![Veri yatay modunda korunur](images/08-sml.png)](images/08.png#lightbox)
 
 #### <a name="onrestoreinstancestate"></a>OnRestoreInstanceState
 
@@ -334,8 +332,6 @@ Durumu geri zaman geçici bazı esneklik sağlamak için bu yöntem bulunmaktad�
 Durum kullanan kaydetme örneği için bir `Bundle`, başvurmak [izlenecek - kaydetme etkinlik durumu](saving-state.md).
 
 
-<a name="Bundle_Limitations" />
-
 #### <a name="bundle-limitations"></a>Paket sınırlamaları
 
 Ancak `OnSaveInstanceState` kolaylaştırır kolayca geçici verileri kaydetmek için bazı sınırlamalar vardır:
@@ -348,7 +344,6 @@ Ancak `OnSaveInstanceState` kolaylaştırır kolayca geçici verileri kaydetmek 
 
 Ancak paket durumu kadar bellek kullanmayan basit veriler için kullanışlı *yapılandırma olmayan örnek veri* olan daha karmaşık veri ya da almak pahalıdır veriler için kullanışlıdır, örneğin bir web hizmeti çağrısı veya bir karmaşık veritabanı sorgusu. Olmayan yapılandırma örneği verileri gerektiğinde bir nesneyi kaydedildi. Sonraki bölümde tanıtır `OnRetainNonConfigurationInstance` daha karmaşık veri türleri yapılandırma değişikliklerini aracılığıyla koruma bir yolu olarak.
 
-<a name="Persisting_Complex_Data" />
 
 ### <a name="persisting-complex-data"></a>Karmaşık veri kalıcı yapma
 
@@ -407,7 +402,7 @@ public class NonConfigInstanceActivity : ListActivity
 
 Bu kod sonuçları JSON olarak biçimlendirilmiş web alır, bunları ayrıştırır ve ardından sonuçları aşağıdaki ekran görüntüsünde gösterildiği gibi bir liste sunar:
 
-[ ![Ekranda gösterilen sonuçları](images/06-sml.png)](images/06.png)
+[![Ekranda gösterilen sonuçları](images/06-sml.png)](images/06.png#lightbox)
 
 Bir aygıt döndürüldüğünde - bir yapılandırma değişikliği - Örneğin, oluştuğunda kodu işlem yinelenir. Başlangıçta alınan sonuçları yeniden kullanmak ve gereksiz, yedekli ağ çağrıları neden değil için biz kullanabilirsiniz `OnRetainNonconfigurationInstance` aşağıda gösterildiği gibi sonuçları kaydetmek için:
 
@@ -492,5 +487,5 @@ Android etkinlik yaşam döngüsü, bir uygulamadaki etkinlik durumu yönetimi i
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [İşleme döndürme](~/android/app-fundamentals/handling-rotation.md)
+- [Döndürmeyi İşleme](~/android/app-fundamentals/handling-rotation.md)
 - [Android Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)

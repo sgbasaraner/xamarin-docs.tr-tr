@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: ea91dbcf7148651cb5d10acae4ada8bb6758c39e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc7643d89b4a45b6f6fb87bb027edb1c339a20ec
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="ios-localization"></a>iOS yerelleştirme
 
@@ -26,48 +26,39 @@ Bu bölümde iOS içindeki yerelleştirme özelliklerinden bazıları açıklanm
 
 ### <a name="language"></a>Dil
 
-Kullanıcılar kendi dilini seçin **ayarları** uygulama. Bu ayar, işletim sistemi yanı sıra dil ayarları algılayan uygulamaları görüntülenen görüntüleri ve dil dizeleri etkiler.
+Kullanıcılar kendi dilini seçin **ayarları** uygulama. Bu ayar, uygulamalar ve işletim sistemi tarafından görüntülenen görüntüleri ve dil dizeleri etkiler. 
 
-Kullanıcıların İngilizce, İspanyolca, Japonca, Fransızca veya kendi uygulamalarında görüntülenen başka bir dilde görmek isteyip istemediklerini burada karar verir budur.
-
-Gerçek iOS 7 desteklenen dillerin listesi: İngilizce (ABD), İngilizce (Birleşik Krallık), Çince (Basitleştirilmiş), Çince (Geleneksel), Fransızca, Almanca, İtalyanca, Japonca, Korece, İspanyolca, Arapça, Katalanca, Hırvatça, Çekçe, Danca, Felemenkçe, Fince, Yunanca, İbranice Macarca, Endonezya dili, Malayca, Norveççe, Lehçe, Portekizce, Portekizce (Brezilya), Rumence, Rusça, Slovakça, İsveççe, Tay dili, Türkçe, Ukrayna dili, Vietnam dili, İngilizce (Avustralya), İspanyolca (Meksika).
-
-Geçerli dil ilk öğesi erişerek sorgulanabilir `PreferredLanguages` dizi:
+Bir uygulamada kullanılan dil belirlemek için ilk öğesi almak `NSBundle.MainBundle.PreferredLocalizations`:
 
 ```csharp
 var lang = NSBundle.MainBundle.PreferredLocalizations[0];
 ```
 
-Bu değer bir dil kodu gibi olacaktır `en` İngilizce ' `es` İspanyolca için `ja` Japonca için vb. _Döndürülen değer (en iyi eşleşmeyi belirlemek için geri dönüş kurallarını kullanarak) uygulama tarafından desteklenen yerelleştirmeler birini sınırlıdır._
+Bu değer bir dil kodu gibi olacaktır `en` İngilizce ' `es` İspanyolca için `ja` Japonca için vb. Döndürülen değer (en iyi eşleşmeyi belirlemek için geri dönüş kurallarını kullanarak) uygulama tarafından desteklenen yerelleştirmeler birini sınırlıdır.
 
-Uygulama kodu bu değer için - Xamarin denetlemek her zaman gerekmez ve iOS hem de otomatik olarak kullanıcının dil için doğru dize veya kaynak sağlamak için yardımcı olan özellikler sağlar. Bu belgenin geri kalanında bu özellikleri açıklanmaktadır.
+Uygulama kodu bu değer için – Xamarin denetlemek her zaman gerekmez ve iOS hem de otomatik olarak kullanıcının dil için doğru dize veya kaynak sağlamak için yardımcı olan özellikler sağlar. Bu belgenin geri kalanında bu özellikleri açıklanmaktadır.
 
 > [!NOTE]
-> **Not:** iOS 9 önce önerilen kodu: `var lang = NSLocale.PreferredLanguages [0];`.
->
-> İOS 9 - değiştirilen bu kodu tarafından döndürülen sonuçları görmek [Teknik Not TN2418](https://developer.apple.com/library/content/technotes/tn2418/_index.html) daha fazla bilgi için.
->
-> Kullanmaya devam edebilirsiniz `NSLocale.PreferredLanguages [0]` kullanıcı tarafından seçilen gerçek değerler belirlemek için (yerelleştirmeler bağımsız olarak uygulamanız destekler).
+> Kullanım `NSLocale.PreferredLanguages` uygulama tarafından desteklenen yerelleştirmeler bakılmaksızın kullanıcının dil tercihlerini belirlemek için. İOS 9 değiştirilen bu yöntem tarafından döndürülen değer; bkz: [Teknik Not TN2418](https://developer.apple.com/library/content/technotes/tn2418/_index.html) Ayrıntılar için.
 
 ### <a name="locale"></a>Yerel Ayar
 
-Kullanıcıların kendi yerel ayarda seçim **ayarları** uygulama. Bu ayar, tarihler, saatler, sayılar ve para birimi biçimlendirileceğini biçimini etkiler.
+Kullanıcıların kendi yerel ayarda seçim **ayarları** uygulama. Bu ayar, tarih, saat, sayılar ve para birimi biçimlendirildiğini biçimini etkiler.
 
-Bu, kullanıcıların kendi ondalık ayırıcı virgül veya bir nokta, gün, ay ve yıl içinde tarih görüntüleme sırasını olup olmadığını ve saat biçimleri, 12 veya 24 saat Bkz seçin sağlar.
+Bu, kullanıcıların kendi ondalık ayırıcı virgül veya bir nokta, gün, ay ve yıl içinde tarih görüntüleme sırasını olup olmadığını ve 12 veya 24 saat saat biçimleri Bkz seçin sağlar.
 
-Xamarin ile hem Apple'nın iOS sınıfları erişiminiz (`NSNumberFormatter`) System.Globalization .NET sınıflarda yanı sıra. Her kullanılabilen farklı özellikler gibi daha iyi kendi gereksinimlerine göre uygun olan geliştiriciler değerlendirmelidir. Özellikle, alma ve StoreKit kullanarak, uygulama içi satın alma fiyatlar görüntüleme döndürülen fiyat bilgileri için Apple'nın biçimlendirme sınıfları kesinlikle kullanmalısınız.
+Xamarin ile hem Apple'nın iOS sınıfları erişiminiz (`NSNumberFormatter`) System.Globalization .NET sınıflarda yanı sıra. Her kullanılabilen farklı özellikler gibi daha iyi kendi gereksinimlerine göre uygun olan geliştiriciler değerlendirmelidir. Özellikle, alma ve uygulama içi satın alma fiyatları StoreKit kullanarak görüntüleme döndürülen fiyat bilgileri için Apple'nın biçimlendirme sınıfları kullanmanız gerekir.
 
-Geçerli yerel ya da sorgulanabilir:
+Geçerli yerel iki yöntemden birini sorgulanabilir:
 
 - `NSLocale.CurrentLocale.LocaleIdentifier`
 - `NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier`
 
 İlk değeri işletim sistemi tarafından önbelleğe alınabilir ve böylece her zaman kullanıcının şu anda seçili yerel gösterebilir değil. Seçili yerel edinmek için ikinci değeri kullanın.
 
-
 ### <a name="nscurrentlocaledidchangenotification"></a>NSCurrentLocaleDidChangeNotification
 
-iOS oluşturan bir `NSCurrentLocaleDidChangeNotification` kullanıcı kendi yerel zaman güncelleştirir. Uygulamalar bu bildirim için dinleme çalıştırıyorsanız ve kullanıcı Arabirimi için uygun değişiklikleri yapın.
+iOS oluşturan bir `NSCurrentLocaleDidChangeNotification` kullanıcı kendi yerel zaman güncelleştirir. Çalıştıran ve uygun değişiklikleri UI yapabilirsiniz uygulamalar bu bildirim için dinleme.
 
 <a name="basics" />
 
@@ -75,24 +66,47 @@ iOS oluşturan bir `NSCurrentLocaleDidChangeNotification` kullanıcı kendi yere
 
 İOS aşağıdaki özelliklerini kolayca, kullanıcıya görünen için yerelleştirilmiş kaynaklar sağlamak için Xamarin de yararlanılabilir. Başvurmak [TaskyL10n örnek](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) bu fikirleri uygulamak nasıl görmek için.
 
-### <a name="infoplist"></a>Info.plist
+### <a name="specifying-default-and-supported-languages-in-infoplist"></a>Varsayılan ve desteklenen dilleri Info.plist dosyasında belirtme
 
-Başlamadan önce yapılandırma **Info.plist** aşağıdaki anahtarları dosyasıyla:
+İçinde [teknik Q & A QA1828: iOS uygulamanızı için dil nasıl belirlediğini](https://developer.apple.com/library/content/qa/qa1828/_index.html), Apple iOS bir uygulamada kullanmak için bir dil nasıl seçtiği açıklar. Aşağıdaki etmenlere hangi dilde görüntülenir etkileyebilir:
 
-- `CFBundleDevelopmentRegion` -Uygulama (geliştiriciler tarafından konuşulan ve film şeritleri ve dize ve görüntü kaynakları kullanılan genellikle dili) için varsayılan dili. Aşağıdaki örnekte **tr** (İngilizce için) belirtilir.
-- `CFBundleLocalizations` -bir dizi de gibi dil kodlarını kullanarak bir uygulama tarafından desteklenen diğer yerelleştirmeler **es** (İspanyolca) ve **pt-PT** (Portekizce Portekiz içinde açıkça söylenir).
+- Kullanıcı tercih edilen dilleri (bulunan **ayarları** uygulama)
+- (.Lproj klasörleri) uygulamayla birlikte yerelleştirmeler
+- `CFBundleDevelopmentRegion` (**Info.plist** değeri uygulama için varsayılan dili belirtme)
+- `CFBundleLocalizations` (**Info.plist** desteklenen tüm yerelleştirmeler belirtme dizi)
+
+Teknik Q & A belirtildiği gibi `CFBundleDevelopmentRegion` bir uygulamanın varsayılan bölge ve dil temsil eder. Uygulama açıkça herhangi bir kullanıcının tercih edilen dilleri desteklemiyorsa, bu alana göre belirtilen dili kullanır. 
+
+> [!IMPORTANT]
+> iOS 11 işletim sisteminin önceki sürümlere kıyasla kesinlikle bu dil seçimi mekanizması uygular. Bu nedenle, açıkça desteklenen kendi yerelleştirmeler – .lproj klasörler dahil olmak üzere veya bir değeri ayarlanırken bildirmiyor herhangi bir iOS 11 uygulama `CFBundleLocalizations` – iOS 10 kıyasla iOS 11 farklı bir dilde görüntülenebilir.
+
+Varsa `CFBundleDevelopmentRegion` içinde belirtilmemiş **Info.plist** dosyasını Xamarin.iOS derleme araçları şu anda varsayılan değeri kullanın `en_US`. Bu sonraki sürümlerde değişebilir, ancak varsayılan dil İngilizce olduğu anlamına gelir.
+
+Uygulamanızı beklenen bir dil seçer emin olmak için aşağıdaki adımları uygulayın:
+
+- Bir varsayılan dil belirtin. Açık **Info.plist** ve **kaynak** görünüm için bir değer ayarlamak için `CFBundleDevelopmentRegion` anahtar; XML'de, aşağıdakine benzer görünmelidir:
 
 ```xml
 <key>CFBundleDevelopmentRegion</key>
-<string>en</string>
+<string>es</string>
+```
+
+Bu örnekte "es" İspanyolca için varsayılan bir kullanıcının hiçbiri tercih edilen zaman diller desteklenir belirtmek için kullanılır.
+
+- Desteklenen tüm yerelleştirmeler bildirin. İçinde **Info.plist**, kullanın **kaynak** görünüm için bir dizi ayarlamak için `CFBundleLocalizations` anahtar; XML'de, aşağıdakine benzer görünmelidir:
+
+```xml
 <key>CFBundleLocalizations</key>
 <array>
-  <string>de</string>
-  <string>es</string>
-  <string>ja</string>
-  ...
+    <string>en</string>
+    <string>es</string>
+    ...
 </array>
 ```
+
+.Resx dosyaları bu sağlamalısınız gibi .NET mekanizmalarını kullanarak yerelleştirilmiş Xamarin.iOS uygulamaları **Info.plist** değerleri de.
+
+Bunlar hakkında daha fazla bilgi için **Info.plist** anahtarları, Apple'nın göz ele [bilgi özellik listesi anahtar başvurusu](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html).
 
 ### <a name="localizedstring-method"></a>LocalizedString yöntemi
 
@@ -106,9 +120,9 @@ Başlamadan önce yapılandırma **Info.plist** aşağıdaki anahtarları dosyas
 
 Bir dizi farklı olabilir **.strings** her dil dizindeki dosyaları:
 
-- **Localizable.strings** -yerelleştirilmiş metin ana listesi.
-- **InfoPlist.strings** - belirli özel anahtarları, uygulama adı gibi şeyleri çevirmek için bu dosyada verilir.
-- **< film şeridi-adı > .strings** -film şeridi kullanıcı arabirimi öğeleri için çeviriler içeren isteğe bağlı bir dosya.
+- **Localizable.strings** – yerelleştirilmiş metin ana listesi.
+- **InfoPlist.strings** – belirli özel anahtarları, uygulama adı gibi şeyler çevirmek için bu dosyada verilir.
+- **< film şeridi-adı > .strings** – film şeridi kullanıcı arabirimi öğeleri için çeviriler içeren isteğe bağlı bir dosya.
 
 **Yapı eylemi** bu dosyaları olmalıdır **paket kaynak**.
 
@@ -116,7 +130,7 @@ Bir dizi farklı olabilir **.strings** her dil dizindeki dosyaları:
 
 Yerelleştirilmiş dize değerlerini sözdizimi aşağıdaki gibidir:
 
-```csharp
+```console
 /* comment */
 "key"="localized-value";
 ```
@@ -129,7 +143,7 @@ Aşağıdaki karakterleri dizelere kaçış:
 
 Bir örnek **es/Localizable.strings** (örn. Örnek dosyasından İspanyolca):
 
-```csharp
+```console
 "<new task>" = "<new task>";
 "Task Details" = "Detalles de la tarea";
 "Name" = "Nombre";
@@ -162,7 +176,7 @@ Görüntü için belirli bir dil yoksa, iOS varsayılan yerel dili klasörüne g
 
 Başlatma görüntüleri (ve XIB veya film şeridi iPhone 6 modelleri için) için standart adlandırma kuralları kullanmak bunları yerleştirirken **.lproj** her dil için dizinler.
 
-```csharp
+```console
 Default.png
 Default@2x.png
 Default-568h@2x.png
@@ -173,7 +187,7 @@ LaunchScreen.xib
 
 Yerleştirme bir **InfoPlist.strings** dosyasını bir **.lproj** dizin uygulamanın bazı değerleri geçersiz kılmanıza olanak tanır **Info.plist**, uygulama adı dahil olmak üzere:
 
-```csharp
+```console
 "CFBundleDisplayName" = "LeónTodo";
 ```
 
@@ -182,23 +196,6 @@ Yerleştirme bir **InfoPlist.strings** dosyasını bir **.lproj** dizin uygulama
 - CFBundleName
 - CFBundleShortVersionString
 - NSHumanReadableCopyright
-
-
-<!--
-## App icon
-
-Does not seem to be possible (although it definitely used to be!).
--->
-
-### <a name="localization-native-development-region"></a>Yerelleştirme yerel geliştirme bölge
-
-Varsayılan dizeleri (bulunan **Base.lproj** klasörü) 'geri dönüş' dili olarak varsayılacak. Bunun anlamı bir çeviri kodda istenen ve için bulunamadı bir geçerli dil **Base.lproj** klasörü varsayılan dizeyi kullanmak arama yapılır (eşleşme bulunamazsa, çeviri tanımlayıcı dizesinde kendisi ise görüntülenen).
-
-Geliştiriciler, geri dönüş plist anahtarını ayarlayarak olması için farklı bir dil seçebilirsiniz `CFBundleDevelopmentRegionKey`. Değeri, yerel geliştirme dilini dil kodu ayarlanmalıdır. Bu ekran görüntüsü, yerel geliştirme bölgesiyle Xamarin Studio'da plist İspanyolca (es) ayarlamak gösterir:
-
-![](images/cfbundledevelopmentregion.png "InfoPList.strings özelliği")
-
-Film şeritleri ve kodunuz genelinde kullanılan varsayılan dil İngilizce değilse, uygulama kodunuzda kullanılan yerel dili yansıtmak için bu değeri ayarlayın.
 
 ### <a name="dates-and-times"></a>Tarihler ve saatler
 
@@ -222,7 +219,7 @@ Debug.WriteLine ("Medium,None: " + df.StringFor(date));
 
 Amerika Birleşik Devletleri İngilizce için sonuçları:
 
-```csharp
+```console
 Full,Long: Friday, August 7, 2015 at 10:29:32 AM PDT
 Short,Short: 8/7/15, 10:29 AM
 Medium,None: Aug 7, 2015
@@ -230,7 +227,7 @@ Medium,None: Aug 7, 2015
 
 İspanyolca İspanya için sonuçları:
 
-```csharp
+```console
 Full,Long: viernes, 7 de agosto de 2015, 10:26:58 GMT-7
 Short,Short: 7/8/15 10:26
 Medium,None: 7/8/2015
@@ -244,20 +241,19 @@ Apple'a başvuran [tarih Biçimlendiricileri](https://developer.apple.com/librar
 
 iOS RTL algılayan uygulamaları oluşturmaya yardımcı olmak üzere birçok özellik sağlar:
 
-* Kullanım **Otomatik Düzen** `leading` ve `trailing` denetim aligment öznitelikleri (için karşılık geldiği *sol* ve *sağ* İngilizce için örneğin, ancak. RTL dilleri için tersine).
+* Kullanım Otomatik Düzeni'nın `leading` ve `trailing` (hangi sol ve sağ İngilizce için karşılık gelen ancak RTL dilleri için ters) denetim aligment için öznitelikler.
   [ `UIStackView` ](~/ios/user-interface/controls/uistackview.md) Denetim, RTL bulundurmanız denetimleri yerleştirmek için özellikle yararlıdır.
-* Kullanım `TextAlignment = UITextAlignment.Natural` metin hizalaması için (hangi *sol* çoğu diller için ancak *sağ* RTL için).
+* Kullanım `TextAlignment = UITextAlignment.Natural` (hangi çoğu dil ancak sağ RTL bırakılır) metin hizalaması için.
 * `UINavigationController` otomatik olarak geri düğmesini çevirir ve geçirme yönünü tersine çevirir.
 
-Aşağıdaki ekran görüntüleri Göster [yerelleştirilmiş **Tasky** örnek](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) Arapça ve İbranice (İngilizce alanları girilmiş rağmen):
+Aşağıdaki ekran görüntüleri Göster [yerelleştirilmiş Tasky örnek](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) Arapça ve İbranice (İngilizce alanları girilmiş rağmen):
 
-[ ![](images/rtl-ar-sml.png "Arapça yerelleştirme")](images/rtl-ar.png "Arabic") 
+[![](images/rtl-ar-sml.png "Arapça yerelleştirme")](images/rtl-ar.png#lightbox "Arabic") 
 
-[ ![](images/rtl-he-sml.png "İbranice yerelleştirme")](images/rtl-he.png "Hebrew")
+[![](images/rtl-he-sml.png "İbranice yerelleştirme")](images/rtl-he.png#lightbox "Hebrew")
 
 iOS otomatik olarak ters çevrilip `UINavigationController`, ve diğer denetimlerin içine yerleştirilen `UIStackView` veya otomatik düzeniyle hizalı.
 RTL metin yerelleştirilmiş kullanarak **.strings** dosyaları aynı şekilde LTR metin olarak.
-
 
 <a name="code"/>
 
@@ -267,17 +263,15 @@ RTL metin yerelleştirilmiş kullanarak **.strings** dosyaları aynı şekilde L
 
 ### <a name="project-structure"></a>Proje yapısı
 
-
-
 ![](images/solution-code.png "Kaynakları ağacı")
 
 ### <a name="localizablestrings-file"></a>Localizable.strings dosyası
 
-Yukarıda açıklandığı gibi **Localizable.strings** dosya biçimi belirten bir kullanıcı tarafından seçilen dize olduğu anahtarla anahtar-değer çiftlerini oluşur
+Yukarıda açıklandığı gibi **Localizable.strings** dosya biçimi anahtar-değer çiftlerini oluşur. Anahtarını dize amacını açıklayan ve uygulamada kullanılacak çevrilmiş metni değerdir.
 
 İspanyolca (**es**) yerelleştirmeler örnek aşağıda gösterilmektedir:
 
-```csharp
+```console
 "<new task>" = "<new task>";
 "Task Details" = "Detalles de la tarea";
 "Name" = "Nombre";
@@ -318,10 +312,10 @@ Dil dizinlerinin, mevcut bir geçersiz kılmak için yerelleştirilmiş tüm gö
 
 Oluştururken ve film şeridi denetimlerinde düzenleme, her bir denetimi seçin ve yerelleştirme için kullanmak üzere kimlik denetleyin:
 
-* Mac için Visual Studio'da bu özellikleri defterinde bulunan ve adlı **yerelleştirme kimliği**.
+* Mac için Visual Studio'da bulunur **özellikleri paneli** ve çağrılır **yerelleştirme kimliği**.
 * Xcode'da, adlı **nesne kimliği**.
 
-Bu genellikle gibi bir form içeren bir dize değeridir **"NF3 h8 xmR"**:
+Bu dize değeri, genellikle aşağıdaki ekran görüntüsünde gösterildiği gibi "NF3-h8-xmR" gibi bir biçime sahiptir:
 
 ![](images/xs-designer-localization-id.png "Film şeridi yerelleştirme Xcode görünümü")
 
@@ -333,7 +327,7 @@ Film şeridi çeviri dosyasının biçimi benzer **Localizable.strings** dosya d
 
 Örnekte **Mainstoryboard.strings** aşağıda görebilirsiniz `UITextField`s sahip bir `placeholder` yerelleştirilebilir; metin özelliği `UILabel`s sahip bir `text` özellik; ve `UIButton`s varsayılan metin kullanılarak ayarlanır `normalTitle`:
 
-```csharp
+```console
 "SXg-TT-IwM.placeholder" = "nombre de la tarea";
 "Pqa-aa-ury.placeholder"= "otra información de tarea";
 "zwR-D9-hM1.text" = "Detalles de la tarea";
@@ -344,33 +338,9 @@ Film şeridi çeviri dosyasının biçimi benzer **Localizable.strings** dosya d
 ```
 
 > [!IMPORTANT]
-> **Film şeridi boyutu sınıflarıyla kullanarak** görüntülenmiyor Çeviriler neden olabilir. Bu büyük olasılıkla ilgili [bu sorunu](http://stackoverflow.com/questions/24989208/xcode-6-does-not-localize-interface-builder) Apple belgeleri nerede diyor: film şeridi veya XIB değil yerelleştirme doğru aşağıdaki üç koşulların tümü doğruysa, yerelleştirme: film şeridi veya XIB boyutu sınıfları kullanır. Temel yerelleştirme ve yapı hedefi Evrensel ayarlanır. Yapı iOS 7.0 hedefler.
-İki özdeş dosyalarıyla film şeridi dizeleri dosyanızı çoğaltmak için durumda düzeltme: **MainStoryboard~iphone.strings** ve **MainStoryboard~ipad.strings**:
-
+> Film şeridi boyutu sınıflarıyla kullanarak uygulamada görünmez çevirileri neden olabilir. [Apple'nın Xcode sürüm notları](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html) üç şey doğruysa film şeridi veya XIB doğru yerelleştirme değil gerektiğini belirtin: boyutu sınıfları kullanır, temel yerelleştirme ve yapı hedefi Evrensel ayarlanır ve yapı iOS 7.0 hedefler. İki özdeş dosyalarıyla film şeridi dizeleri dosyanızı çoğaltmak için durumda düzeltme: **MainStoryboard~iphone.strings** ve **MainStoryboard~ipad.strings**, aşağıdaki ekran görüntüsünde gösterildiği gibi:
+> 
 > ![](images/xs-dup-strings.png "Dizeleri dosyaları")
-
-
-<!--
-# Native Formatting
-
-Xamarin.iOS applications can take advantage of the .NET framework's formatting options for localizing
-numbers and dates.
-
-### Date string formatting
-
-https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369-SW1
-
-
-NSDateFormatter formatter = new NSDateFormatter ();
-formatter.DateFormat = "MMMM/dd/yyyy";
-NSString dateString = new NSString (formatter.ToString (d));
-
-
-### Number formatting
-
-https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfNumberFormatting10_4.html#//apple_ref/doc/uid/TP40002368-SW1
-
--->
 
 <a name="appstore" />
 
@@ -378,26 +348,11 @@ https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/DataForma
 
 Apple'nın SSS izleyen [App Store yerelleştirme](https://itunespartner.apple.com/en/apps/faq/App%20Store_Localization) uygulamanızı indirimde olan her ülke çevirileri girmek için. Uygulamanızı da bir yerelleştirilmiş içeriyorsa görünecek çevirileri yalnızca kendi uyarı Not **.lproj** dil için dizin.
 
-<!--
-
-Once you’ve entered your application into iTunes Connect the default language
-metadata and screenshots will appear as shown:
-
-![]( "itunes connect 1")
-
-Use the language list on the right to select other languages to provide
-translated application name, description, search keywords, URLs and screenshots.
-The complete list of languages is shown in this screenshot:
-
-![]( "itunes connect 2")
--->
-
 ## <a name="summary"></a>Özet
 
 Bu makalede yerleşik kaynak işleme ve film şeridi özelliklerini kullanarak iOS uygulamaları yerelleştirme temelleri kapsar.
 
 İçinde (Xamarin.Forms dahil) iOS, Android ve platformlar arası uygulamalar için i18n ve L10n hakkında daha fazla öğrenebilirsiniz [bu platformlar arası kılavuz](~/cross-platform/app-fundamentals/localization.md).
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

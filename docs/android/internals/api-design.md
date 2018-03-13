@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1b0b1db6bf73b03eed99c5ede038d07bb3ccf284
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 23aa944b88fe3e743b6b29810c29d1843f2efc29
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="api-design"></a>API tasarım
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -23,7 +22,6 @@ Mono parçası olan bir temel sınıf kitaplıkları çekirdek yanı sıra Xamar
 
 Çekirdeği Xamarin.Android vardır birlikte çalışma altyapısı bu Java world köprüleri C# dünyayla ve C# veya diğer .NET dilleri ile erişim geliştiriciler Java API sağlar.
 
-<a name="Design_Principles" />
 
 ## <a name="design-principles"></a>Tasarım ilkeleri
 
@@ -64,7 +62,6 @@ Bu bizim tasarım ilkeleri Xamarin.Android bağlama için bazıları
     - Rastgele Java kitaplıkları çağırmak için bir mekanizma sağlar ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)).
 
 
-<a name="Assemblies" />
 
 ## <a name="assemblies"></a>Derlemeler
 
@@ -72,11 +69,9 @@ Xamarin.Android oluşturan derlemeler çeşitli içerir *MonoMobile profil*. [De
 
 Android platformu için bağlamaları bulunan `Mono.Android.dll` derleme. Bu derleme Süren Android API için tüm bağlama ve Android çalışma zamanı VM ile iletişim kurarken içerir.
 
-<a name="Binding_Design" />
 
 ## <a name="binding-design"></a>Tasarım bağlama
 
-<a name="Collections" />
 
 ### <a name="collections"></a>Koleksiyonlar
 
@@ -112,7 +107,6 @@ if (goodSource.Count != 4) // false
     throw new InvalidOperationException ("should not be reached.");
 ```
 
-<a name="Properties" />
 
 ### <a name="properties"></a>Özellikler
 
@@ -127,7 +121,6 @@ Java yöntemleri özelliklerini, uygun olduğunda dönüştürülür:
 -  Özellikleri *değil* özellik türü bir dizi olacaksa oluşturulur.
 
 
-<a name="Events_and_Listeners" />
 
 ### <a name="events-and-listeners"></a>Olaylar ve dinleyicileri
 
@@ -177,7 +170,6 @@ Biz diğer yöntemleri ve oluşturucuları temsilci tabanlı bağlantı kullanı
 
 Tüm dinleyicileri arabirimlerin uygulamak [ `Android.Runtime.IJavaObject` ](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) dinleyicisi sınıflar bu arabirimi uygulamalıdır şekilde bağlamanın uygulama ayrıntıları nedeniyle arabirimi. Bu dinleyici arabirimi öğesinin bir alt uygulama tarafından yapılabilir [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) veya diğer bir Android etkinliği gibi Java nesne Sarmalanan.
 
-<a name="Runnables" />
 
 ### <a name="runnables"></a>Runnables
 
@@ -188,7 +180,6 @@ Java yararlanan [java.lang.Runnable](https://developer.xamarin.com/api/type/Java
 
 Biz sol [IRunnable](https://developer.xamarin.com/api/type/Java.Lang.IRunnable/) çeşitli türleri arabirimini uygulayan ve bu nedenle için bunları değiştirme yerine yerinde aşırı bayraklarıdır runnables doğrudan.
 
-<a name="Inner_Classes" />
 
 ### <a name="inner-classes"></a>İç sınıflar
 
@@ -227,7 +218,6 @@ class CubeWallpaper : WallpaperService {
 
 Not nasıl `CubeWallpaper.CubeEngine` içinde iç içe `CubeWallpaper`, `CubeWallpaper` içeren sınıfından devralan `WallpaperService.Engine`, ve `CubeWallpaper.CubeEngine` bildiri türü--alan bir kurucusunun `CubeWallpaper` bu durumda--tüm olarak yukarıda belirtilen.
 
-<a name="Interfaces" />
 
 ### <a name="interfaces"></a>Arabirimler
 
@@ -254,7 +244,7 @@ Java arabirimleri iki türlerine dönüştürülür:
 
 
 > [!NOTE]
-> **Not:** Xamarin.Android 1.9 ile başlayarak, Java arabirimi sabittir <em>yinelenen</em> Java taşıma basitleştirmek için kod. Bu dayanan taşıma Java kod geliştirmeye yardımcı [android sağlayıcısı](http://developer.android.com/reference/android/provider/package-summary.html) sabitleri arabirim.
+> Xamarin.Android 1.9 ile başlayarak, Java arabirimi sabittir <em>yinelenen</em> Java taşıma basitleştirmek için kod. Bu dayanan taşıma Java kod geliştirmeye yardımcı [android sağlayıcısı](http://developer.android.com/reference/android/provider/package-summary.html) sabitleri arabirim.
 
 Yukarıdaki türlerine ek olarak dört başka değişiklikler vardır:
 
@@ -277,7 +267,6 @@ Daha önce bu deyim için C# bağlantı noktası için hangi türünden görmek 
 
 Son olarak, ile türleri bir *Consts* gibi soneki *Android.OS.ParcelableConsts* kullanılmaz, yeni sunulan InterfaceConsts dışında türlerin olan. Xamarin.Android 3. 0'kaldırılır.
 
-<a name="Resources" />
 
 ## <a name="resources"></a>Kaynaklar
 
@@ -323,7 +312,6 @@ public class Resource {
 
 Ardından kullanırsınız `Resource.Drawable.icon` başvuru `drawable/icon.png` dosyası veya `Resource.Layout.main` başvuru `layout/main.xml` dosya, veya `Resource.String.first_string` sözlük dosyasını ilk dizesinde başvurmak için `values/strings.xml`.
 
-<a name="Constants_and_Enumerations" />
 
 ## <a name="constants-and-enumerations"></a>Sabitler ve Numaralandırmalar
 

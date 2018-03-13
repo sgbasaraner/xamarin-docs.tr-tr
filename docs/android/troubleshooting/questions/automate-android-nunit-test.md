@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: a5f98fc351c879be55475808b5ab412449dadc7d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 11b693193b36a80b55a61308d98b76f4f6984e8a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Bir Android NUnit Test projesinin nasıl otomatikleştirmek?
 
 > [!NOTE]
-> **Not:** bu kılavuz bir Android NUnit test projesi Xamarin.UITest proje adımlarını kapsar. Xamarin.UITest kılavuzları bulunabilir [burada](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
+> Bu kılavuz, bir Android NUnit test projesi Xamarin.UITest proje adımlarını kapsar. Xamarin.UITest kılavuzları bulunabilir [burada](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
 
 Bir Android birim testi projesi [Mac için Visual Studio] veya birim testi uygulama (Android) [Visual Studio] oluşturduğunuzda, varsayılan olarak otomatik olarak testlerinizi çalışmayacaktır.
 Android birim testi otomatik hale getirmek için: hedef cihazda NUnit testleri çalıştırmak için kullanırız bir `Android.App.Instrumentation` oluşturulan ve kullanılarak gerçekleştirilen bir alt `adb shell am instrument` komutu.

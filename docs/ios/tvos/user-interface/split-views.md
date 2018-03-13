@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8787913c04b11a84828cd98960407f0cc27aa391
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 86a7690d4cf7291a4e44507a6250e3469c8f7ed2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-split-view-controllers"></a>Bölme görünüm denetleyicileri ile çalışma
 
@@ -21,7 +21,7 @@ _Bu makalede tasarlama ve bölme görünüm denetleyicileriyle Xamarin.tvOS uygu
 
 Bir bölme görünüm denetleyicisi sunar ve bir ana ve ayrıntı görünümü denetleyicisi yan yana, aynı anda ekranda yönetir. Bölme görünüm denetleyicileri kalıcı, odaklanabilir içerik ana görünümü (sol küçük bölümüne) sunmak için kullanılan ve ilgili ayrıntıları Ayrıntılar görünümünde (sağdaki büyük bölümü).
 
-[ ![](split-views-images/intro01.png "Örnek bölünmüş görünümü")](split-views-images/intro01.png)
+[![](split-views-images/intro01.png "Örnek bölünmüş görünümü")](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers" />
 
@@ -31,7 +31,7 @@ Yukarıda belirtildiği gibi bir bölme görünüm denetleyicisini ana ve yan ya
 
 Ana görünüm denetleyicisini can gizlenmediği ya da gösterilen ek olarak, gerektiği gibi: 
 
-[ ![](split-views-images/intro02.png "Ana görünüm gizli denetleyicisi")](split-views-images/intro02.png)
+[![](split-views-images/intro02.png "Ana görünüm gizli denetleyicisi")](split-views-images/intro02.png#lightbox)
 
 Bölünmüş görünümler denetleyicileri genellikle kullanacağı ana görünüm kategorileri ve ayrıntı görünümü filtrelenen sonuçları filtrelenebilir içerik listesini sunmak için. Bu genellikle sol taraftaki tablo görünüm olarak sunulan ve bir [koleksiyon görünümü](~/ios/tvos/user-interface/collection-views.md) sağdaki.
 
@@ -54,18 +54,18 @@ Bölme görünüm denetleyicileriyle Xamarin.tvOS uygulamada çalışmaya en kol
 1. İçinde **çözüm paneli**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **bölme görünüm denetleyicileri** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](split-views-images/activity01.png "Bir bölme görünüm denetleyicisi")](split-views-images/activity01.png)
+    [![](split-views-images/activity01.png "Bir bölme görünüm denetleyicisi")](split-views-images/activity01.png#lightbox)
 1. Varsayılan olarak, iOS Tasarımcısı asıl görünümünde bir gezinti denetleyici ve görünüm denetleyici yükler. Yalnızca bu, uygulamanızın gereksinimlerine uygun değilse, bunları silin.
 1. Varsayılan ana görünümü kaldırırsanız, yeni bir görünüm denetleyicisi tasarım yüzeyine sürükleyin: 
 
-    [ ![](split-views-images/activity02.png "Bir görünüm denetleyicisi")](split-views-images/activity02.png)
+    [![](split-views-images/activity02.png "Bir görünüm denetleyicisi")](split-views-images/activity02.png#lightbox)
 1. Denetim tıklatın ve yeni ana görünüm denetleyiciye bölme görünüm denetleyicisinden sürükleyin. 
 1. Seçin **ana** gelen **menü**: 
 
-    [ ![](split-views-images/activity03.png "Asıl açılır menüden seçin")](split-views-images/activity03.png)
+    [![](split-views-images/activity03.png "Asıl açılır menüden seçin")](split-views-images/activity03.png#lightbox)
 1. Ana ve ayrıntı görünümleri içeriğini tasarım: 
 
-    [ ![](split-views-images/activity04.png "Örnek düzeni")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "Örnek düzeni")](split-views-images/activity04.png#lightbox)
 1. Ata **adları** içinde **pencere öğesi sekmesini** , **özellikleri paneli** UI denetimlerinizi C# kodunda çalışmak için.
 1. Yaptığınız değişiklikleri kaydedin ve Mac için Visual Studio'ya geri dönün
 
@@ -74,18 +74,18 @@ Bölme görünüm denetleyicileriyle Xamarin.tvOS uygulamada çalışmaya en kol
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **bölme görünüm denetleyicileri** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](split-views-images/activity01-vs.png "Bir bölme görünüm denetleyicisi")](split-views-images/activity01-vs.png)
+    [![](split-views-images/activity01-vs.png "Bir bölme görünüm denetleyicisi")](split-views-images/activity01-vs.png#lightbox)
 1. Varsayılan olarak, iOS Tasarımcısı Gezinti denetleyici ve görünüm denetleyici asıl görünümünde ekleyeceksiniz. Yalnızca bu, uygulamanızın gereksinimlerine uygun değilse, bunları silin.
 1. Varsayılan ana görünümü kaldırırsanız, yeni bir görünüm denetleyicisi tasarım yüzeyine sürükleyin: 
 
-    [ ![](split-views-images/activity02-vs.png "Bir görünüm denetleyicisi")](split-views-images/activity02-vs.png)
+    [![](split-views-images/activity02-vs.png "Bir görünüm denetleyicisi")](split-views-images/activity02-vs.png#lightbox)
 1. Denetim tıklatın ve yeni ana görünüm denetleyiciye bölme görünüm denetleyicisinden sürükleyin. 
 1. Seçin **ana** gelen **menü**: 
 
-    [ ![](split-views-images/activity03-vs.png "Asıl açılır menüden seçin")](split-views-images/activity03-vs.png)
+    [![](split-views-images/activity03-vs.png "Asıl açılır menüden seçin")](split-views-images/activity03-vs.png#lightbox)
 1. Ana ve ayrıntı görünümleri içeriğini tasarım: 
 
-    [ ![](split-views-images/activity04.png "İçerik düzeni")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "İçerik düzeni")](split-views-images/activity04.png#lightbox)
 1. Ata **adları** içinde **pencere öğesi sekmesini** , **özellikleri Explorer** UI denetimlerinizi C# kodunda çalışmak için.
 1. Değişikliklerinizi kaydedin.
     
@@ -179,7 +179,7 @@ Bu makalede, tasarlama ve bölme görünüm denetleyicileriyle Xamarin.tvOS uygu
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

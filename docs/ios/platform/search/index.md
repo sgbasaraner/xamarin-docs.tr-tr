@@ -7,11 +7,11 @@ ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2d802a96fcc8dad1d610b99a1cddffdc4398da38
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6ec8cb9b6fdb391afcb8f9baaa641da5aec38f6d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="new-search-apis"></a>Yeni arama API'leri
 
@@ -21,7 +21,7 @@ Arama iOS 9 bilgilere ve bir Xamarin.iOS uygulaması içindeki özelliklere eri�
 
 Ayrıca, yeni arama API'leri, önceki arama uygulaması deneyimi olmadan, uygulamanızda arama tümleştirmek kolaylaştırır. Bu nedenle, Apple genellikle bir iOS 9 uygulamanın içeriği Evrensel aranabilir uygulama arama'yı kullanarak yapmak için birkaç saat sürer talepleri.
 
-[ ![](images/intro01.png "İOS 9 uygulama içeriğini uygulama arama'yı kullanarak evrensel aranabilir örneği")](images/intro01.png)
+[![](images/intro01.png "İOS 9 uygulama içeriğini uygulama arama'yı kullanarak evrensel aranabilir örneği")](images/intro01.png#lightbox)
 
 Uygulama arama üç ayrı API'lerinin oluşur:
 

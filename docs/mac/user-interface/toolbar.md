@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 641f62d5e646607b2ff61db412a5defce63a211d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 92b90f8d4655ea89b67e81f3235b6fd9b6d92833
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbars"></a>Araç Çubukları
 
@@ -82,7 +82,7 @@ C# kodu çıkışlar ve Eylemler, Xamarin.Mac uygulama için kullanıcı Arabiri
 2. Tasarım yüzeyine penceresi denetleyicisinde seçin.
 3. Geçiş **kimlik denetçisi** ve "WindowController" olarak girin **sınıf adı**: 
 
-    [![Pencere denetleyicisi için özel bir sınıf adı ayarlama](toolbar-images/windowcontroller01.png "penceresi denetleyicisi için özel bir sınıf adı ayarlama")](toolbar-images/windowcontroller01-large.png) 
+    [![Pencere denetleyicisi için özel bir sınıf adı ayarlama](toolbar-images/windowcontroller01.png "penceresi denetleyicisi için özel bir sınıf adı ayarlama")](toolbar-images/windowcontroller01-large.png#lightbox) 
 
 4. Değişikliklerinizi kaydetmek ve Visual Studio eşitlemek için Mac için geri dönün.
 5. A **WindowController.cs** dosya projenizde eklenecek **çözüm paneli** Mac için Visual Studio'da: 
@@ -92,7 +92,7 @@ C# kodu çıkışlar ve Eylemler, Xamarin.Mac uygulama için kullanıcı Arabiri
 6. Xcode'nın arabirimi Oluşturucu film şeridi yeniden açın.
 7. **WindowController.h** dosya kullanılabilir olacaktır: 
 
-    [![WindowController.h dosya](toolbar-images/windowcontroller03.png "WindowController.h dosyası")](toolbar-images/windowcontroller03-large.png)
+    [![WindowController.h dosya](toolbar-images/windowcontroller03.png "WindowController.h dosyası")](toolbar-images/windowcontroller03-large.png#lightbox)
 
 ## <a name="creating-and-maintaining-toolbars-in-xcode"></a>Oluşturma ve araç çubuklarını xcode'da koruma
 
@@ -188,7 +188,7 @@ Buradan, arabirimi Oluşturucu arama alanı yapılandırmak ve bir eylem veya ç
 
 Birkaç Cocoa kullanıcı Arabirimi öğeleri varsayılan olarak standart araç çubuğu öğeleri ile etkileşim. Örneğin, sürükleyin bir **metin görünümü** uygulamanın penceresi üzerine ve içerik alanı dolduracak şekilde yerleştir:
 
-[![Metin görünümü uygulamaya ekleme](toolbar-images/edit09.png "uygulamaya metin görünümü ekleme")](toolbar-images/edit09-large.png)
+[![Metin görünümü uygulamaya ekleme](toolbar-images/edit09.png "uygulamaya metin görünümü ekleme")](toolbar-images/edit09-large.png#lightbox)
 
 Visual Studio için Xcode ile eşitleme, uygulamayı çalıştırın, bazı metinleri girin, seçin ve'Mac dönün belgeyi kaydetmek **renkleri** araç çubuğu öğesi. Metin görünümü ile Renk Seçici otomatik olarak çalışır dikkat edin:
 
@@ -201,7 +201,7 @@ Kullanarak bir **görüntü araç çubuğu öğesi**, herhangi bir bit eşlem g�
 1. Mac için Visual Studio içinde **çözüm paneli**, sağ tıklatın **kaynakları** klasörü ve seçin **Ekle** > **dosyaları Ekle** .
 2. Gelen **dosyaları Ekle** iletişim kutusunda, istenen görüntülere gidin, bunları seçin ve tıklatın **açık** düğmesi: 
 
-    [![Eklemek için görüntüleri seçme](toolbar-images/edit11.png "eklemek için görüntüleri seçme")](toolbar-images/edit11-large.png)
+    [![Eklemek için görüntüleri seçme](toolbar-images/edit11.png "eklemek için görüntüleri seçme")](toolbar-images/edit11-large.png#lightbox)
 
 3. Seçin **kopyalama**, denetleme **aynı eylem seçilen tüm dosyaları için kullanan**, tıklatıp **Tamam**:
 
@@ -225,7 +225,7 @@ Kullanarak bir **görüntü araç çubuğu öğesi**, herhangi bir bit eşlem g�
 
 9. Sürükleme bir **ayırıcı araç çubuğu öğesi** gelen **kitaplığı denetçisi** araç çubuğunun için **izin araç çubuğu öğeleri** alanı: 
 
-    [![Araç çubuğu öğeleri izin alan ayırıcı araç çubuğu öğesi eklenen](toolbar-images/edit17.png "bir ayırıcı araç çubuğu öğesi izin araç çubuğu öğeleri bölgesine eklenen")](toolbar-images/edit17-large.png)
+    [![Araç çubuğu öğeleri izin alan ayırıcı araç çubuğu öğesi eklenen](toolbar-images/edit17.png "bir ayırıcı araç çubuğu öğesi izin araç çubuğu öğeleri bölgesine eklenen")](toolbar-images/edit17-large.png#lightbox)
 
 10. Ayırıcı öğenin ve "Çöp" öğesine sürükleyin **varsayılan araç çubuğu öğeleri** alan ve araç sırasını öğeleri kümesi soldan sağa aşağıdaki gibi (renkleri, yazı tipi, ayırıcı, çöp, esnek boşluk, yazdırma): 
 
@@ -244,7 +244,7 @@ Bir araç veya araç çubuğu öğesi kodda erişmek için bu prizine veya bir e
 1. İçinde **çözüm paneli**, çift **Main.storyboard** Xcode'da açın.
 2. "WindowController", ana pencereyi denetleyicisine atanmış özel bir sınıf emin **kimlik denetçisi**:
 
-    [![Pencere denetleyici için özel bir sınıf ayarlamak için kimlik Inspector'ı kullanarak](toolbar-images/edit20a.png "penceresi denetleyici için özel bir sınıf ayarlamak için kimlik Inspector'ı kullanarak")](toolbar-images/edit20a-large.png)
+    [![Pencere denetleyici için özel bir sınıf ayarlamak için kimlik Inspector'ı kullanarak](toolbar-images/edit20a.png "penceresi denetleyici için özel bir sınıf ayarlamak için kimlik Inspector'ı kullanarak")](toolbar-images/edit20a-large.png#lightbox)
 
 3. Ardından, araç çubuğu öğesi seçin **arabirimi hiyerarşi**: 
 
@@ -253,11 +253,11 @@ Bir araç veya araç çubuğu öğesi kodda erişmek için bu prizine veya bir e
 4. Açık **Yardımcısı Görünüm**seçin **WindowController.h** dosya ve denetim sürükleme araç çubuğu öğesi için **WindowController.h** dosya.
 5. Ayarlama **bağlantı** için yazın **eylem**, "trashDocument" girin **adı**, tıklatıp **Bağlan** düğmesi: 
 
-    [![Araç çubuğu öğesi için bir eylem yapılandırma](toolbar-images/edit23.png "araç çubuğu öğesi için bir eylem yapılandırma")](toolbar-images/edit23-large.png)
+    [![Araç çubuğu öğesi için bir eylem yapılandırma](toolbar-images/edit23.png "araç çubuğu öğesi için bir eylem yapılandırma")](toolbar-images/edit23-large.png#lightbox)
 
 6. Kullanıma **metin görünümü** "documentEditor" adlı bir çıkış olarak **ViewController.h** dosyası: 
 
-    [![Metin görünümü için bir çıkış yapılandırma](toolbar-images/edit24.png "prizine metin görünümü için yapılandırma")](toolbar-images/edit24-large.png)
+    [![Metin görünümü için bir çıkış yapılandırma](toolbar-images/edit24.png "prizine metin görünümü için yapılandırma")](toolbar-images/edit24-large.png#lightbox)
 
 7. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -362,6 +362,6 @@ Bu makalede, araç çubukları ve Xamarin.Mac uygulama araç çubuğu öğeleri 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacToolbar (örnek)](https://developer.xamarin.com/samples/mac/MacToolbar/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Araç çubukları için İnsan Arabirimi yönergelerine](https://developer.apple.com/macos/human-interface-guidelines/windows-and-views/toolbars/)
 - [Araç çubukları giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Toolbars/Toolbars.html)

@@ -7,18 +7,17 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 5a8b51f6c63d8632e71d1cddabb0c37758ee02f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 907af0948e9d081f05cc201c49f94629a513c935
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-android-api-levels"></a>Android API düzeylerini anlama
 
 _Xamarin.Android Android birden çok sürümü ile uygulama uyumluluğunu belirlemek birkaç Android API düzeyi ayarlarına sahiptir. Bu kılavuz, bu ayarları anlamı, bunların nasıl yapılandırılacağı ve hangi etkisi açıklar çalışma zamanında uygulamanıza sahiptirler._
 
-<a name="quick" />
 
 ## <a name="quick-start"></a>Hızlı Başlangıç
 
@@ -37,30 +36,30 @@ Projeniz için bir API düzeyi yapılandırmadan önce bu API düzeyi için SDK 
 Normalde, tüm üç Xamarin.Android API düzeylerini aynı değere ayarlanır. Üzerinde **uygulama** sayfasında **Android sürümü (hedef Framework) kullanılarak derleme** en son kararlı API sürümüne (veya en azından, gereksinim duyduğunuz özelliklerin tümü, Android sürümü için).
 Aşağıdaki ekran görüntüsünde, hedef Framework'ü ayarlamak **Android 7.1 (API düzeyi 25 - Nougat)**:
 
-[![Hedef Framework sürümü varsayılanlara Android sürümünü kullanarak derleme](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png)
+[![Hedef Framework sürümü varsayılanlara Android sürümünü kullanarak derleme](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png#lightbox)
 
 Üzerinde **Android derleme bildirimi** sayfasında, Minimum Android sürümü kümesine **SDK sürümü kullanarak kullanım derleme** ve hedef Android sürümü hedef Framework sürümünü (aşağıdaki aynı değere ayarlayın ekran görüntüsü, hedef Android Framework'ü ayarlanmış **Android 7.1 (Nougat)**):
 
-[![Hedef Framework sürümü için en az ve hedef Android sürümleri ayarlayın](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png)
+[![Hedef Framework sürümü için en az ve hedef Android sürümleri ayarlayın](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png#lightbox)
 
 Android önceki bir sürümü ile geriye dönük uyumluluğu korumak istiyorsanız, **hedef için Minimum Android sürümü** desteklemek için uygulamanızın istediğiniz en eski sürümünü Android için. (API düzeyi 14 için gerekli en az API düzeyi olduğuna dikkat edin [Google Play hizmetlerini ve Firebase Destek](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html).) Aşağıdaki örnek yapılandırma API düzeyi 25 aracılığı API Düzey 14 Android sürümlerini destekler:
 
-[![API düzeyi 25 kullanılarak derleme Nougat, Minimum Android sürümü 14 API düzeyine ayarlayın](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png)
+[![API düzeyi 25 kullanılarak derleme Nougat, Minimum Android sürümü 14 API düzeyine ayarlayın](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Normalde, tüm üç Xamarin.Android API düzeylerini aynı değere ayarlanır. Ayarlama **hedef framework** en son kararlı API sürümüne (veya en azından, gereksinim duyduğunuz özelliklerin tümü, Android sürümü için). Ayarlamak için **hedef framework**, gitmek **Yapı > Genel** içinde **proje seçenekleri**. Aşağıdaki ekran görüntüsünde, hedef Framework'ü ayarlamak **son yüklü platform (8.0) kullanmak**:
 
-[![Hedef framework son yüklenmiş platform için varsayılan olarak ayarlanıyor](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png)
+[![Hedef framework son yüklenmiş platform için varsayılan olarak ayarlanıyor](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png#lightbox)
 
 En az ve hedef Android sürümü ayarlar altında bulunabilir **Yapı > Android uygulaması** içinde **proje seçenekleri**. Minimum Android sürümü kümesine **otomatik - kullanım hedef framework sürümü** ve hedef Android sürümü hedef Framework sürümü ile aynı değere ayarlayın. Aşağıdaki ekran görüntüsünde, hedef Android Framework'ü ayarlamak **Android 8.0 (API düzeyi 26)** yukarıdaki hedef Framework ayarını eşleştirmek için:
 
-[![Hedef ve framework düzeylerini proje seçenekleri ayarlama](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png)
+[![Hedef ve framework düzeylerini proje seçenekleri ayarlama](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png#lightbox)
 
 Android önceki bir sürümü ile geriye dönük uyumluluğu korumak isterseniz, değiştirmek **Minimum Android sürümü** Android eski sürümüne desteklemek için uygulamanızın istiyor. API Düzey 14 için gerekli en az API düzeyi olduğuna dikkat edin [Google Play hizmetlerini ve Firebase Destek](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html).
 Örneğin, aşağıdaki yapılandırma API Düzey 14 gibi erken Android sürümlerini destekler:
 
-[ ![Minimum otomatik olarak - ayarlamak hedef sürümlerini kullanan hedef framework sürümü](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png)
+[![Minimum otomatik olarak - ayarlamak hedef sürümlerini kullanan hedef framework sürümü](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png#lightbox)
 
 -----
 
@@ -68,13 +67,11 @@ Android önceki bir sürümü ile geriye dönük uyumluluğu korumak isterseniz,
 Uygulamanız birden çok Android sürümlerini destekliyorsa, kodunuzu uygulamanızı Minimum Android sürümü ayarıyla çalıştığından emin olmak için çalışma zamanı denetimleri eklemeniz gerekir (bkz [çalışma zamanı denetler Android sürümleri için](#runtimechecks) aşağıda Ayrıntılar için). Kullanma veya bir kitaplığı oluşturmak, bkz: [API düzeyleri ve kitaplıkları](#libraries) aşağıda API yapılandırmada en iyi uygulamalar için ayarları kitaplıkları düzeyi.
 
 
-<a name="verslevels" />
 
 ## <a name="android-versions-and-api-levels"></a>Android sürümleri ve API düzeyleri
 
 Android platformu dönüşmesi ve yeni Android sürümlerini yayımlandığında olarak her Android sürümü olarak adlandırılan bir benzersiz tamsayı tanımlayıcı atanmış *API düzeyi*. Bu nedenle, her bir Android sürümü, tek bir Android API düzeyine karşılık gelir. Kullanıcıların eski de olarak en son sürümlerine ilişkin Android uygulamaları yüklemek için gerçek Android uygulamaları birden çok Android API düzeyi ile çalışmak için tasarlanmış olması gerekir.
 
-<a name="versions" />
 
 ### <a name="android-versions"></a>Android sürümleri
 
@@ -145,7 +142,6 @@ Ayrıca, Xamarin.Android tanımlar *sürüm kodlarını yapı* şu anda bilinen 
 
 Bu liste da anlaşılacağı gibi yeni Android sürümlerini sık yayımlanan &ndash; yıllık bazen çeşitli yayınlar. Sonuç olarak, uygulamanızı çalışabilir Android cihazları universe çok çeşitli eski ve yeni Android sürümlerini içerir. Nasıl uygulamanızı tutarlı ve güvenilir bir şekilde çok sayıda farklı sürümlerine ilişkin Android çalışacağını garanti edebilir mi? Android'ın API düzeylerini, bu sorunu yönetmenize yardımcı olabilir.
 
-<a name="apilevels" />
 
 ### <a name="android-api-levels"></a>Android API düzeyleri
 
@@ -159,13 +155,11 @@ Bir uygulama yapılandırıldığında, aşağıdaki API düzeyi bilgileri içer
 
 Bu ayarlar, yükleme zamanında uygulamanın düzgün çalışması için gerekli işlevselliği Android cihazında kullanılabilir olduğundan emin olmak için kullanılır. Aksi durumda, bu cihazda çalışan uygulama engellenir. Bir Android cihaz API düzeyini uygulamanız için belirttiğiniz en düşük API düzeyini daha düşük ise, örneğin, Android cihazı kullanıcı uygulamanızı yüklemenize engel olmaz.
 
-<a name="settings" />
 
 ## <a name="project-api-level-settings"></a>Proje API düzeyi ayarları
 
 Aşağıdaki bölümlerde SDK Manager hedeflemek istediğiniz API düzeylerini izleyen için yapılandırma hakkında ayrıntılı açıklamalar tarafından geliştirme ortamınızı hazırlama için nasıl kullanılacağı açıklanmaktadır *hedef Framework*, *en az Android sürüm*, ve *hedef Android sürümü* Xamarin.Android ayarlar.
 
-<a name="sdk" />
 
 ### <a name="android-sdk-platforms"></a>Android SDK'sı platformlar
 
@@ -182,7 +176,7 @@ Uygulamanızı karşı bağlı olduğu hangi kitaplık sürümleri hedef Framewo
 Her zaman ile derleme olmasını öneririz *son* kullanılabilir hedef Framework sürümü. Bunun yapılması kodunuz tarafından çağrılan tüm kullanım dışı API'leri ile yararlı uyarı iletilerini sağlar. En son hedef Framework sürümünü kullanarak önemlidir özellikle en son destek kitaplığı Çıkanlar kullandığınızda &ndash; her kitaplık uygulamanızı destek kitaplığın en düşük API düzeyinde derlenmiş veya büyük bir değer bekler. 
 
 > [!NOTE]
-> **Not:** Ağustos 2018 başlayarak, Google Play konsol yeni uygulamalar API düzeyi (Android 8.0) 26 hedef gerektirir ya da daha yüksek.
+> Ağustos 2018 başlayarak, Google Play konsol yeni uygulamalar API düzeyi (Android 8.0) 26 hedef gerektirir ya da daha yüksek.
 Var olan uygulamaları API düzeyi 26 ya da daha yüksek Kasım 2018'den itibaren hedef gerekecektir. Daha fazla bilgi için bkz: [uygulama güvenliği ve performansı gelmesini Google play'de yıllık geliştirme](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 
@@ -190,7 +184,7 @@ Var olan uygulamaları API düzeyi 26 ya da daha yüksek Kasım 2018'den itibare
 
 Visual Studio'da hedef Framework ayarını erişmek için Proje Özellikleri'nde açın **Çözüm Gezgini** seçip **uygulama** sayfa:
 
-[![Uygulama sayfası proje özellikleri](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png)
+[![Uygulama sayfası proje özellikleri](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png#lightbox)
 
 Hedef Framework'ü altında açılır menüde bir API düzeyi seçerek ayarlayın **Android sürümüyle derleme** yukarıda gösterildiği gibi.
 
@@ -198,7 +192,7 @@ Hedef Framework'ü altında açılır menüde bir API düzeyi seçerek ayarlayı
 
 Mac için Visual Studio hedef Framework ayarını erişmek için proje adına sağ tıklayın ve seçin **seçenekleri**; bu açılır **proje seçenekleri** iletişim. Bu iletişim kutusunda gidin **Yapı > Genel** aşağıda gösterildiği gibi:
 
-[![Proje seçenekleri sayfasının genel bölümü oluşturma](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png)
+[![Proje seçenekleri sayfasının genel bölümü oluşturma](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png#lightbox)
 
 Hedef Framework'ü sağındaki açılan menüde bir API düzeyi seçerek ayarlayın **hedef framework** yukarıda gösterildiği gibi.
 
@@ -219,7 +213,7 @@ Uygulamanızı başarıyla oluşturmak ve platformlar üzerinde bu aralıkta yü
 
 Visual Studio Minimum Android sürümü ayarında erişmek için Proje Özellikleri'nde açın **Çözüm Gezgini** seçip **Android derleme bildirimi** sayfası. Altında açılan menüde **Minimum Android sürümü** Minimum Android sürümü, uygulamanız için seçebilirsiniz:
 
-[![En düşük Android SDK sürümünü kullanarak derlemek için ayarlanan hedef seçeneği için](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png)
+[![En düşük Android SDK sürümünü kullanarak derlemek için ayarlanan hedef seçeneği için](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png#lightbox)
 
 Seçerseniz **SDK sürümü kullanarak kullanım derleme**, Minimum Android sürümü hedef Framework ayarını aynı olacaktır.
 
@@ -228,7 +222,7 @@ Seçerseniz **SDK sürümü kullanarak kullanım derleme**, Minimum Android sür
 Mac için Visual Studio hedef Framework ayarını erişmek için proje adına sağ tıklayın ve seçin **seçenekleri**; bu açılır **proje seçenekleri** iletişim. Gidin **Yapı > Android uygulaması**.
 Sağındaki açılan menüsünü kullanarak **Minimum Android sürümü**, uygulamanız için Minimum Android sürümü ayarlayabilirsiniz:
 
-[ ![Otomatik - kullanım hedef framework sürümü kümesi minimum Android sürümü](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png)
+[![Otomatik - kullanım hedef framework sürümü kümesi minimum Android sürümü](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png#lightbox)
 
 Seçerseniz **otomatik &ndash; hedef framework sürümünü kullanmak**, Minimum Android sürümü hedef Framework ayarını aynı olacaktır.
 
@@ -247,7 +241,7 @@ Hedef Framework'ü ve çok benzer adlara sahip sırasında hedef Android sürüm
 
 Bu ayar Visual Studio'da erişmek için Proje Özellikleri'nde açın **Çözüm Gezgini** seçip **Android derleme bildirimi** sayfası. Altında açılan menüde **hedef Android sürümü** hedef Android sürümü, uygulamanız için seçebilirsiniz:
 
-[![Hedef Android sürümü SDK sürümüyle derlemek için ayarlama](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png)
+[![Hedef Android sürümü SDK sürümüyle derlemek için ayarlama](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png#lightbox)
 
 Hedef Android sürümü açıkça uygulamanızı test etmek için kullandığınız Android son sürüme ayarlamanızı öneririz. İdeal olarak, en son Android SDK sürüm ayarlanmalıdır &ndash; Bu davranış değişiklikleri aracılığıyla çalışma önce yeni API'ları kullanmanızı sağlar. Çoğu geliştiriciler için biz *sağlamadığı* hedef Android sürümü ayarlanması önerilir **SDK sürümü kullanarak kullanım derleme**.
 
@@ -256,7 +250,7 @@ Hedef Android sürümü açıkça uygulamanızı test etmek için kullandığın
 Mac için Visual Studio hedef Framework ayarını erişmek için proje adına sağ tıklayın ve seçin **seçenekleri**; bu açılır **proje seçenekleri** iletişim. Gidin **Yapı > Android uygulaması**.
 Sağındaki açılan menüsünü kullanarak **hedef Android sürümü**, hedef Android sürümü, uygulamanız için ayarlayabilirsiniz:
 
-[![Android sürüm değeri otomatik olarak ayarlanmış hedef - hedef framework sürümü kullanın](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png)
+[![Android sürüm değeri otomatik olarak ayarlanmış hedef - hedef framework sürümü kullanın](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png#lightbox)
 
 Hedef Android sürümü açıkça uygulamanızı test etmek için kullandığınız Android son sürüme ayarlamanızı öneririz. İdeal olarak, kullanılabilir en son Android SDK sürüme ayarlanmalıdır &ndash; Bu davranış değişiklikleri aracılığıyla çalışma önce yeni API'ları kullanmanızı sağlar. Çoğu geliştiriciler için hedef Android sürümü ayarını önermiyoruz **otomatik - kullanım hedef framework sürümü**.
 
@@ -311,14 +305,14 @@ Veya bir veya daha fazla API'leri eksik eski Android sürümlerine çalıştığ
 
 (Örneğin, bir sınıf kitaplığı veya bağlamaları kitaplık) bir Xamarin.Android kitaplığı projesi oluşturduğunuzda, yalnızca hedef Framework ayarını yapılandırabilirsiniz &ndash; Minimum Android sürümü ve hedef Android sürümü ayarlar kullanılamaz. Yoktur çünkü hiçbir **Android derleme bildirimi** sayfa:
 
-[![Yalnızca Android sürümü seçeneği kullanılarak derleme kullanılabilir](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png)
+[![Yalnızca Android sürümü seçeneği kullanılarak derleme kullanılabilir](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Xamarin.Android kitaplığı projesi oluşturduğunuzda, var olan hiçbir **Android uygulaması** yapılandırabileceğiniz Minimum Android sürümü hem de hedef Android sürümü sayfa &ndash; Minimum Android sürümü ve hedef Android sürüm ayarlar kullanılamaz.
 Yoktur çünkü hiçbir **Yapı > Android uygulaması** sayfa):
 
-[ ![Derleme en az ve hedef sürüm seçenekleri olmadan genel sayfası](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png)
+[![Derleme en az ve hedef sürüm seçenekleri olmadan genel sayfası](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png#lightbox)
 
 -----
 

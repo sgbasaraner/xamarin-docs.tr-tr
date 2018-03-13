@@ -2,16 +2,16 @@
 title: Bir Web video oynatma
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
+ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 2e44d32f199d5c85bbae242d9168a43e028c73d9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a5a98df4346c8720ae25fae4f27b5294993111c4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="playing-a-web-video"></a>Bir Web video oynatma
 
@@ -462,7 +462,7 @@ Bu özellikler üç Oluşturucu, uygulama ile bir URL kaynaktan çalmasına müm
 
 `VideoSourceConverter` Sınıfı dizeye dönüştürür bir `UriVideoSource`. Ne zaman gezinmek için **Web Video Yürüt** sayfası, video başlar yükleme ve yeterli bir miktar veri indirilir ve arabelleğe çalma başlatır. Video yaklaşık 10 dakika uzunluğu şöyledir:
 
-[![Web çalmasına](web-videos-images/playwebvideo-small.png "Web Video Oynat")](web-videos-images/playwebvideo-large.png "Web Video Oynat")
+[![Web çalmasına](web-videos-images/playwebvideo-small.png "Web Video Oynat")](web-videos-images/playwebvideo-large.png#lightbox "Web Video Oynat")
 
 Kullanılmayan ancak video dokunarak görüntülemek üzere geri her üç platformlar üzerinde bir aktarım denetimlerini Kıs.
 

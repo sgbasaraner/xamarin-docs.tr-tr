@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2016
-ms.openlocfilehash: d68d84671028ded14b4b885f2c134656fc639f9e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b5e9a4c449bc99bd88fc415f5ebb969d2c2a08a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-platform-features"></a>Android platformu özellikleri
 
@@ -28,14 +28,14 @@ Malzeme tasarım temaları Xamarin.Forms Android projenize eklemek için izleyin
 
 Burada **Yapılacaklar** varsayılan örnek `FormsApplicationActivity`:
 
-[ ![](images/before-appcompat-sml.png "Yapılacaklar örnek uygulamayı uygulama olmadan")](images/before-appcompat.png "uygulama olmadan Yapılacaklar örnek uygulama")
+[![](images/before-appcompat-sml.png "Yapılacaklar örnek uygulamayı uygulama olmadan")](images/before-appcompat.png#lightbox "uygulama olmadan Yapılacaklar örnek uygulama")
 
 Ve bunlar aynı kodu kullanmak için proje yükselttikten sonra `FormsAppCompatActivity` (ve ek tema bilgileri ekleme):
 
-[ ![](images/post-appcompat-sml.png "Uygulama ve tema ile Yapılacaklar örnek uygulaması")](images/post-appcompat.png "uygulama ve tema ile Yapılacaklar örnek uygulaması")
+[![](images/post-appcompat-sml.png "Uygulama ve tema ile Yapılacaklar örnek uygulaması")](images/post-appcompat.png#lightbox "uygulama ve tema ile Yapılacaklar örnek uygulaması")
 
 > [!NOTE]
-> **Not**: kullanırken `FormsAppCompatActivity`, [temel sınıflar için Android bazı özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) farklı olacaktır.
+> Kullanırken `FormsAppCompatActivity`, [temel sınıflar için Android bazı özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) farklı olacaktır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

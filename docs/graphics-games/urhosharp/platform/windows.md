@@ -1,17 +1,17 @@
 ---
 title: "UrhoSharp Windows desteği"
-description: "Windows özel kurulum ve özellikleri"
+description: "Windows özel kurulum ve UrhoSharp özellikleri."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: ec4fec01aa27e522aeec6df09041f14b1c3db080
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0deefe0e00ec96a21317bfa2e8bf4894d5deae47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-windows-support"></a>UrhoSharp Windows desteği
 
@@ -27,11 +27,11 @@ Bu konuda kullanmayı gösteren tam örnek görebilirsiniz bizim [örnekleri](ht
 
 # <a name="standalone-project"></a>Standalone Project
 
-## <a name="creating-a-project"></a>Proje Oluşturma
+### <a name="creating-a-project"></a>Proje Oluşturma
 
 Bir konsol projesi oluşturun, Urho NuGet başvuru ve varlıkları (veri dizinini içeren dizinler) bulabilir emin olun.
 
-## <a name="configuring-and-launching-urho"></a>Urho başlatma ve yapılandırma
+### <a name="configuring-and-launching-urho"></a>Urho başlatma ve yapılandırma
 
 Uygulamanızı başlatmak için bunu yapın:
 
@@ -39,17 +39,17 @@ Uygulamanızı başlatmak için bunu yapın:
 DesktopUrhoInitializer.AssetsDirectory = "../Assets";
 new MyGame().Run();
 ```
-## <a name="example"></a>Örnek
+### <a name="example"></a>Örnek
 
 [Tam örnek](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/Desktop)
 
-# <a name="integrated-with-wpf"></a>WPF ile tümleşik
+## <a name="integrated-with-wpf"></a>WPF ile tümleşik
 
-## <a name="creating-a-project"></a>Proje Oluşturma
+### <a name="creating-a-project"></a>Proje Oluşturma
 
 Bir WPF projesi oluşturma Urho NuGet başvuru ve (veri dizinini içeren dizinler) varlıklar bulabilir emin olun.
 
-## <a name="configuring-and-launching-urho-from-wpf"></a>WPF gelen Urho başlatma ve yapılandırma
+### <a name="configuring-and-launching-urho-from-wpf"></a>WPF gelen Urho başlatma ve yapılandırma
 
 Öğesinin bir alt kümesi oluşturmak `Window` ve varlıklarınızı bu gibi yapılandırın:
 
@@ -83,17 +83,17 @@ Bir WPF projesi oluşturma Urho NuGet başvuru ve (veri dizinini içeren dizinle
     }
 ```
 
-## <a name="example"></a>Örnek
+### <a name="example"></a>Örnek
 
 [Tam örnek](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/WPF)
 
-# <a name="integrated-with-uwp"></a>UWP ile tümleşik
+## <a name="integrated-with-uwp"></a>UWP ile tümleşik
 
-## <a name="creating-a-project"></a>Proje Oluşturma
+### <a name="creating-a-project"></a>Proje Oluşturma
 
 UWP projesi oluşturun, Urho NuGet başvuru ve varlıkları (veri dizinini içeren dizinler) bulabilir emin olun.
 
-## <a name="configuring-and-launching-urho-from-uwp"></a>UWP gelen Urho başlatma ve yapılandırma
+### <a name="configuring-and-launching-urho-from-uwp"></a>UWP gelen Urho başlatma ve yapılandırma
 
 Öğesinin bir alt kümesi oluşturmak `Window` ve varlıklarınızı bu gibi yapılandırın:
 
@@ -116,17 +116,17 @@ UWP projesi oluşturun, Urho NuGet başvuru ve varlıkları (veri dizinini içer
     }
 ```
 
-## <a name="example"></a>Örnek
+### <a name="example"></a>Örnek
 
 [Tam örnek](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/UWP)
 
-# <a name="integrated-with-windowsforms"></a>Windows.Forms ile tümleşik
+## <a name="integrated-with-windowsforms"></a>Windows.Forms ile tümleşik
 
-## <a name="creating-a-project"></a>Proje Oluşturma
+### <a name="creating-a-project"></a>Proje Oluşturma
 
 Windows.Forms projesi oluşturun, Urho NuGet başvuru ve varlıkları (veri dizinini içeren dizinler) bulabilir emin olun.
 
-## <a name="configuring-and-launching-urho-from-windowsforms"></a>Yapılandırma ve Urho Windows.Forms öğesinden başlatma
+### <a name="configuring-and-launching-urho-from-windowsforms"></a>Yapılandırma ve Urho Windows.Forms öğesinden başlatma
 
 Formdan Urho başlatmak için bkz: [tam örnek](https://github.com/xamarin/urho-samples/blob/master/FeatureSamples/WinForms/SamplesForm.cs)
 

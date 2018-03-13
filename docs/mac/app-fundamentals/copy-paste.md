@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 115f3340c5678c0ead06cf773e193fbdc4ba3d07
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ba937a6eae7f0f74bcf044f1248d49a421e82de5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="copy-and-paste"></a>Kopyala ve Yapıştır
 
@@ -27,7 +27,7 @@ Bu makalede biz çalışma alanına Xamarin.Mac uygulamada kullanmak için iki a
 1. **Standart veri türleri** -çalışma alanı işlemleri genellikle iki ilişkisiz uygulamalar arasında gerçekleştirilen olduğundan, diğer destekleyen veri türlerini hiçbiri uygulama bilir. Paylaşım olası en üst düzeye çıkarmak için çalışma alanına (ortak veri türleri standart bir dizi kullanarak) belirli bir öğe birden çok gösterimlerini tutabilir, kendi gereksinimleriniz için en uygun sürümünü seçmek alıcı uygulamanın bu imkan tanır.
 2. **Özel veri** - kopyalama ve yapıştırma çalışma alanı'nı tarafından işlenecek bir özel veri türü tanımlayabilirsiniz, Xamarin.Mac içindeki karmaşık verilerin desteklemek için. Örneğin, bir vektör çizim uygulama, kullanıcının birden çok veri türleri ve noktaları oluşan karmaşık şekiller kopyalayıp izin verir.
 
-[![Çalışan uygulama örneği](copy-paste-images/intro01.png "çalışan uygulama örneği")](copy-paste-images/intro01-large.png)
+[![Çalışan uygulama örneği](copy-paste-images/intro01.png "çalışan uygulama örneği")](copy-paste-images/intro01-large.png#lightbox)
 
 Bu makalede, biz çalışma alanında desteklenmesi için kopyalama ve yapıştırma işlemlerini Xamarin.Mac uygulama ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -50,14 +50,14 @@ Aşağıdakileri yapın:
 1. Mac ve tıklatın için Visual Studio'yu başlatın **yeni proje...**  bağlantı.
 2. Seçin **Mac** > **uygulama** > **Cocoa uygulama**, ardından **sonraki** düğmesi: 
 
-    [![Yeni bir Cocoa uygulama projesi oluşturma](copy-paste-images/sample01.png "yeni Cocoa uygulama projesi oluşturma")](copy-paste-images/sample01-large.png)
+    [![Yeni bir Cocoa uygulama projesi oluşturma](copy-paste-images/sample01.png "yeni Cocoa uygulama projesi oluşturma")](copy-paste-images/sample01-large.png#lightbox)
 3. Girin `MacCopyPaste` için **proje adı** ve varsayılan olarak bir şey tutun. İleri'yi tıklatın: 
 
-    [![Proje adını ayarlama](copy-paste-images/sample01a.png "projesinin adı ayarlama")](copy-paste-images/sample01a-large.png)
+    [![Proje adını ayarlama](copy-paste-images/sample01a.png "projesinin adı ayarlama")](copy-paste-images/sample01a-large.png#lightbox)
 
 4. Tıklatın **oluşturma** düğmesi: 
 
-    [![Yeni proje ayarlarını onaylama](copy-paste-images/sample02.png "yeni proje ayarlarını onaylama")](copy-paste-images/sample02-large.png)
+    [![Yeni proje ayarlarını onaylama](copy-paste-images/sample02.png "yeni proje ayarlarını onaylama")](copy-paste-images/sample02-large.png#lightbox)
 
 ### <a name="add-an-nsdocument"></a>Bir NSDocument ekleyin
 
@@ -265,7 +265,7 @@ Yerinde bu belgeyle Xamarin.Mac uygulama için kullanıcı arabirimi oluşturaca
 
 Çift **Main.storyboard** dosyayı Xcode'da açın. Ardından, bir araç ve görüntünün iyi ekleyebilir ve bunları aşağıdaki gibi yapılandırabilirsiniz:
 
-[![Düzenleme araç çubuğunu](copy-paste-images/sample04.png "araç düzenleme")](copy-paste-images/sample04-large.png)
+[![Düzenleme araç çubuğunu](copy-paste-images/sample04.png "araç düzenleme")](copy-paste-images/sample04-large.png#lightbox)
 
 Bir kopyası ekleyin ve Yapıştır **görüntü araç çubuğu öğesi** araç çubuğunun sol tarafında için. Biz kısayolları olarak kopyalamak ve yapıştırmak Düzen menüsünden için kullanırsınız. Ardından, dört eklemek **görüntü araç çubuğu öğeleri** araç çubuğunun sağ tarafında için. Bu görüntü bazı varsayılan görüntüleri ile iyi doldurmak için kullanacağız.
 
@@ -273,7 +273,7 @@ Araç çubukları ile çalışma hakkında daha fazla bilgi için lütfen bkz bi
 
 Ardından, şimdi aşağıdaki çıkışlar ve bizim araç çubuğu öğeleri ve görüntü için Eylemler de kullanıma:
 
-[![Çıkışlar ve eylemleri oluşturma](copy-paste-images/sample05.png "çıkışlar ve eylemleri oluşturma")](copy-paste-images/sample05-large.png)
+[![Çıkışlar ve eylemleri oluşturma](copy-paste-images/sample05.png "çıkışlar ve eylemleri oluşturma")](copy-paste-images/sample05-large.png#lightbox)
 
 Çıkışlar ve Eylemler ile çalışma hakkında daha fazla bilgi için lütfen bkz [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) bölümünü bizim [Hello, Mac](~/mac/get-started/hello-mac.md) belgeleri.
 
@@ -1281,6 +1281,6 @@ Bu makalede, çalışma alanı'nı desteklenmesi için kopyalama ve yapıştırm
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacCopyPaste (örnek)](https://developer.xamarin.com/samples/mac/MacCopyPaste/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Çalışma alanı Programlama Kılavuzu](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
 - [macOS İnsan Arabirimi yönergelerine](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

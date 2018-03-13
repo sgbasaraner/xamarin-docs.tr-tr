@@ -4,14 +4,15 @@ description: "İOS 11 kullanılarak okuma yakın arama alan iletişimi (NFC) eti
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-ios
+ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2016
-ms.openlocfilehash: 4975b4008c635ad2355ca2806ba867636dd50201
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 72c19ef09843c137514983b1d7ee7104e3cb32c5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="core-nfc"></a>Çekirdek NFC
 
@@ -62,7 +63,7 @@ Uygulamanızı istemelidir **yakın alan iletişimi etiketi okuma** aşağıdaki
 
 Yeni bir **uygulama kimliği** ve emin **NFC etiketi okuma** hizmet işaretlendiğinden:
 
-[ ![Geliştirici Portalı yeni uygulama kimliği sayfasıyla NFC etiketi seçili okuma](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png)
+[![Geliştirici Portalı yeni uygulama kimliği sayfasıyla NFC etiketi seçili okuma](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
 
 Ardından, bu uygulama kimliği için yeni bir sağlama profili oluşturun ardından indirmeli ve geliştirme Mac üzerinde yükleme
 

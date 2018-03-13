@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 20b18cd79eeaabab8019c367e241a4975dc37b0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7db9082f05ea4db41ddb84d34be2ec9113f2ad5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-core-spotlight"></a>Çekirdek Spotlight arama
 
@@ -46,7 +46,7 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 Bu bilgiler, arama sonucu olarak aşağıdaki gibi görünür:
 
-[ ![](corespotlight-images/corespotlight01.png "Çekirdek Spotlight arama sonucu genel bakış")](corespotlight-images/corespotlight01.png)
+[![](corespotlight-images/corespotlight01.png "Çekirdek Spotlight arama sonucu genel bakış")](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>Bir öğeyi geri yükleme
 
@@ -80,7 +80,7 @@ Bu süre biz etkinlik sahip olmak için onay olduğuna dikkat edin bir `Activity
 Bir dizin ile çekirdek Spotlight oluşturduğumuz öğe gerektiğinde değiştirilmesine izin gibi bir değişiklik başlık veya küçük resim gereklidir zamanlar olabilir. Bu değişikliği yapmak için aynı yöntemi başlangıçta dizini oluşturmak için kullanılan kullanırız.
 Yeni oluşturduğumuz `CSSearchableItem` öğesi oluşturun ve yeni bir eklemek için kullanılan aynı Kimliğini kullanarak `CSSearchableItemAttributeSet` değiştirilmiş özelliklere sahip:
 
-[ ![](corespotlight-images/corespotlight02.png "Güncelleştirmeye öğesi genel bakış")](corespotlight-images/corespotlight02.png)
+[![](corespotlight-images/corespotlight02.png "Güncelleştirmeye öğesi genel bakış")](corespotlight-images/corespotlight02.png#lightbox)
 
 Bu öğe aranabilir dizine yazıldığında varolan öğeyi yeni bilgilerle güncelleştirilir.
 

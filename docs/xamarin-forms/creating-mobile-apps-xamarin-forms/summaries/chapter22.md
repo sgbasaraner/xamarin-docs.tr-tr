@@ -3,14 +3,15 @@ title: "Bölüm 22 özeti. Animasyon"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0ee99881a43b625cc8a70fb59e54710705c2d07a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df0647e869fcf37a3a1dfdeb6f3dbf1e7d07ad95
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-22-animation"></a>Bölüm 22 özeti. Animasyon
 
@@ -110,7 +111,7 @@ Program sonlanana kadar diğer uçta animasyonları "sonsuza kadar" çalıştır
 
 [**RotatingSpokes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotatingSpokes) döner `BoxView` Tekerlek Parmağı ekran merkezi etrafında ve her spoke ilginç kalıpları oluşturmak için kendisini döndürür:
 
-[![Üçlü ekran döndürme Tekerlek Parmağı görüntüsü](images/ch22fg21-small.png "döndürme Tekerlek Parmağı")](images/ch22fg21-large.png "döndürme Tekerlek Parmağı")
+[![Üçlü ekran döndürme Tekerlek Parmağı görüntüsü](images/ch22fg21-small.png "döndürme Tekerlek Parmağı")](images/ch22fg21-large.png#lightbox "döndürme Tekerlek Parmağı")
 
 Ancak, aşamalı olarak artırmak `Rotation` özelliği, bir öğenin çalışmayabilir uzun vadede olarak [ **RotationBreakdown** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotationBreakdown) örnek gösterilmektedir.
 
@@ -124,7 +125,7 @@ Yalnızca genişletme yönteminde `ViewExtensions` henüz gösterilen olan [ `La
 
 [ **XamagonXuzzle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle) örnek kullanır `LayoutTo` taşımak için bir Klasik uygulamasında numaralı döşeme yerine karıştırılmış görüntü görüntüler 15-16 Bulmacanın kutucuklar:
 
-[![Üçlü ekran görüntüsü Xamarin Xuzzle](images/ch22fg26-small.png "Xuzzle Bulmaca oyun")](images/ch22fg26-large.png "Xuzzle Bulmaca oyun")
+[![Üçlü ekran görüntüsü Xamarin Xuzzle](images/ch22fg26-small.png "Xuzzle Bulmaca oyun")](images/ch22fg26-large.png#lightbox "Xuzzle Bulmaca oyun")
 
 ### <a name="your-own-awaitable-animations"></a>Kendi bildirdiğimize animasyonları
 

@@ -4,14 +4,15 @@ description: "Küçük grafik yollara belirli alanları ve bölgeler oluşturmak
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: b1c5b64725a163e15f07d2aecaea4e56b7ecec2e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>Kırpma yolları ve bölgeler
 
@@ -98,7 +99,7 @@ canvas.ClipPath(keyholePath);
 
 `PaintSurface` İşleyici sonra çağrısıyla dönüşümler sıfırlar `ResetMatrix` ve tam ekran yüksekliğine genişletmek için bit eşlem çizer. Bu kod bit eşlem bu belirli bit eşlemi olan kare, olduğunu varsayar. Bit eşlem yalnızca kırpma yolu tarafından tanımlanan alanda oluşturulur:
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Üçlü ekran görüntüsü anahtar deliği sayfa aracılığıyla Monkey")](clipping-images/monkeythroughkeyhole-large.png "anahtar deliği sayfa aracılığıyla Monkey Üçlü ekran görüntüsü")
+[![](clipping-images/monkeythroughkeyhole-small.png "Üçlü ekran görüntüsü anahtar deliği sayfa aracılığıyla Monkey")](clipping-images/monkeythroughkeyhole-large.png#lightbox "anahtar deliği sayfa aracılığıyla Monkey Üçlü ekran görüntüsü")
 
 Kırpma yolunu yürürlükte dönüşümler konu olduğunda `ClipPath` yöntemi çağrılır ve değil dönüşümler etkin olduğunda (örneğin, bir bit eşlem) bir grafik nesnesi görüntülenir. Kırpma yolu ile kaydedilen tuvale durumu parçası olan `Save` yöntemi ve geri yüklenen ile `Restore` yöntemi.
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Ne sol bu dört daire kesişimi şöyledir:
 
-[![](clipping-images//fourcircleintersectclip-small.png "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük")](clipping-images/fourcircleintersectclip-large.png "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük")
+[![](clipping-images//fourcircleintersectclip-small.png "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük")](clipping-images/fourcircleintersectclip-large.png#lightbox "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük")
 
 [ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/) Numaralandırma yalnızca iki üye vardır:
 
@@ -175,13 +176,13 @@ Ne sol bu dört daire kesişimi şöyledir:
 
 Dört değiştirirseniz `SKClipOperation.Intersect` değişkenlerinde `FourCircleIntersectClipPage` ile sınıf `SKClipOperation.Difference`, aşağıdaki görürsünüz:
 
-[![](clipping-images//fourcircledifferenceclip-small.png "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük fark işlemi ile")](clipping-images/fourcircledifferenceclip-large.png "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük fark işlemi ile")
+[![](clipping-images//fourcircledifferenceclip-small.png "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük fark işlemi ile")](clipping-images/fourcircledifferenceclip-large.png#lightbox "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük fark işlemi ile")
 
 Dört çakışan daire kırpma alanı'ndan kaldırıldı.
 
 **Küçük işlemleri** sayfası yalnızca daireler çifti ile bu iki işlem arasındaki farkı gösterir. Soldaki ilk daire varsayılan küçük işlemini kırpma alanıyla eklenen `Intersect`, sağdaki ikinci daire metin etiketi tarafından belirtilen küçük işlemi ile kırpma bölgesine eklenir:
 
-[![](clipping-images//clipoperations-small.png "Üçlü sayfasının ekran görüntüsü küçük işlemleri")](clipping-images/clipoperations-large.png "Üçlü sayfasının ekran görüntüsü küçük işlemleri")
+[![](clipping-images//clipoperations-small.png "Üçlü sayfasının ekran görüntüsü küçük işlemleri")](clipping-images/clipoperations-large.png#lightbox "Üçlü sayfasının ekran görüntüsü küçük işlemleri")
 
 [ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Sınıfı tanımlayan iki `SKPaint` nesne alanları olarak ve ardından iki dikdörtgen alanlarına ekran böler. Bu alanlar telefon dikey veya yatay modunda olmasına bağlı olarak farklılık gösterir. `DisplayClipOp` Sınıfı ardından görüntüler çağrıları ve metin `ClipPath` her küçük işlemi göstermek için iki daire yollar ile:
 
@@ -282,7 +283,7 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 Aşağıdaki ekran görüntüsünde altı bölge işlemlerde dayalı kırpma alanlarını gösterir. Sol daire bölgedir, `Op` yöntemi çağrılır ve sağ daire geçirilen bölgedir `Op` yöntemi:
 
-[![](clipping-images//regionoperations-small.png "Üçlü sayfasının ekran görüntüsü bölge işlemleri")](clipping-images/regionoperations-large.png "Üçlü sayfasının ekran görüntüsü bölge işlemleri")
+[![](clipping-images//regionoperations-small.png "Üçlü sayfasının ekran görüntüsü bölge işlemleri")](clipping-images/regionoperations-large.png#lightbox "Üçlü sayfasının ekran görüntüsü bölge işlemleri")
 
 Bu iki daire birleştirmenin bu tüm olanakları misiniz? İçinde görülen, kendilerini tarafından bir bileşimidir üç bileşeni olarak sonuç görüntü göz önünde bulundurun `Difference`, `Intersect`, ve `ReverseDifference` işlemleri. Toplam bileşimleri üçüncü güç için iki veya sekiz sayısıdır. Eksik olan iki özgün bölge olan (değil çağırma sonuçları `Op` hiç) ve tamamen boş bir bölge.
 
@@ -423,7 +424,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `DrawRegion` Çağrısı doldurur turuncu, bölgede sırada `DrawPath` çağrısı mavi karşılaştırma için kullanılacak özgün yolu konturlar:
 
-[![](clipping-images//regionpaint-small.png "Üçlü sayfasının ekran görüntüsü bölge boyama")](clipping-images/regionpaint-large.png "Üçlü sayfasının ekran görüntüsü bölge boyama")
+[![](clipping-images//regionpaint-small.png "Üçlü sayfasının ekran görüntüsü bölge boyama")](clipping-images/regionpaint-large.png#lightbox "Üçlü sayfasının ekran görüntüsü bölge boyama")
 
 Bölge açıkça ayrık koordinatları dizisidir.
 
@@ -509,7 +510,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Gerçekten dört – yaprak Yonca gibi görünmüyor ancak Aksi halde olmadan kırpma işlemek sabit olabilecek bir görüntü değil:
 
-[![](clipping-images//fourleafclover-small.png "Üçlü sayfasının ekran görüntüsü dört – yaprak Yonca")](clipping-images/fourleafclover-large.png "Üçlü sayfasının ekran görüntüsü dört – yaprak Yonca")
+[![](clipping-images//fourleafclover-small.png "Üçlü sayfasının ekran görüntüsü dört – yaprak Yonca")](clipping-images/fourleafclover-large.png#lightbox "Üçlü sayfasının ekran görüntüsü dört – yaprak Yonca")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

@@ -3,16 +3,16 @@ title: "Kullanıcı bildirimleri Framework"
 description: "Bu makalede tüm kullanıcılara bildirim iOS 10 ve bunları bir Xamarin.iOS uygulaması nasıl kullanacağınızı tarafından geliştirilmiştir yoldan yer almaktadır."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 223FCE25-A3E6-4255-BCFC-0E3136F4E987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/01/2016
-ms.openlocfilehash: 473f9b4d4fa2a034c7f39ce309fb3f921d809a10
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1ab0a4add92db21c352dbaeadc71a3ff1e3d0cf9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="user-notifications-framework"></a>Kullanıcı bildirimleri Framework
 
@@ -25,11 +25,11 @@ Ayrıca, uygulama veya uzantı alabilir (ve büyük olasılıkla değiştirmek) 
 Yeni Kullanıcı bildirim UI framework uygulaması veya uygulama kullanıcıya sunulan hem yerel hem de uzak bildirimler görünümünü özelleştirmek için uzantı sağlar.
 
 
-## <a name="enhanced-user-notificationsiosplatformuser-notificationsenhanced-user-notificationsmd"></a>[Gelişmiş Kullanıcı bildirimleri](~/ios/platform/user-notifications/enhanced-user-notifications.md)
+## <a name="enhanced-user-notificationsiosplatformuser-notificationsenhanced-user-notificationsmd"></a>[Gelişmiş Kullanıcı Bildirimleri](~/ios/platform/user-notifications/enhanced-user-notifications.md)
 
 Bu makalede tüm kullanıcı bildirimleri 10 iOS için geliştirilmiştir ve bunları yeni kullanıcı bildirimi framework kullanarak uygulamak için bir giriş sağlar yöntemleri sunar.
 
-## <a name="advanced-user-notificationsiosplatformuser-notificationsadvanced-user-notificationsmd"></a>[Gelişmiş Kullanıcı bildirimleri](~/ios/platform/user-notifications/advanced-user-notifications.md)
+## <a name="advanced-user-notificationsiosplatformuser-notificationsadvanced-user-notificationsmd"></a>[İleri Düzey Kullanıcı Bildirimleri](~/ios/platform/user-notifications/advanced-user-notifications.md)
 
 Bu makalede, yeni kullanıcı bildirimleri framework daha derin göz ve bunu bir Xamarin.iOS uygulaması içinde yararlanmak nasıl alır.
 

@@ -4,14 +4,15 @@ description: "SkiaSharp koordinatları ve Xamarin.Forms koordinatları arasında
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 2643e06474ffe0fd60830db3f315bf525c2f84eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e07377584996694aa8597af79317957c51050ec
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Piksel ve CİHAZDAN bağımsız birimler
 
@@ -98,7 +99,7 @@ Yöntem (için çok az kenar boşluğu sol) 20 X koordinatını ve Y koordinatı
 
 Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
 
-[![](pixels-images/surfacesize-small.png "Üçlü sayfasının ekran görüntüsü yüzeyini boyutu")](pixels-images/surfacesize-large.png "Üçlü sayfasının ekran görüntüsü yüzeyini boyutu")
+[![](pixels-images/surfacesize-small.png "Üçlü sayfasının ekran görüntüsü yüzeyini boyutu")](pixels-images/surfacesize-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yüzeyini boyutu")
 
 Gördüğünüz gibi `CanvasSize` özelliği `SKCanvasView` ve `Size` özelliği `SKImageInfo` değeri piksel boyutlarını raporlamada tutarlı. `Height` Ve `Width` özelliklerini `SKCanvasView` Xamarin.Forms özellikleri ve platform tarafından tanımlanan CİHAZDAN bağımsız birim görünümünde boyutunu bildirin.
 
@@ -141,7 +142,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Burada üç platformlarda çalıştığı:
 
-[![](pixels-images/ellipsefill-small.png "Üçlü sayfasının ekran görüntüsü yüzeyini boyutu")](pixels-images/ellipsefill-large.png "Üçlü sayfasının ekran görüntüsü yüzeyini boyutu")
+[![](pixels-images/ellipsefill-small.png "Üçlü sayfasının ekran görüntüsü yüzeyini boyutu")](pixels-images/ellipsefill-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yüzeyini boyutu")
 
 [Diğer `DrawOval` yöntemi](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawOval/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/) sahip bir [ `SGRect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRect/) sol üst ve sağ alt köşedeki X ve Y koordinatları bakımından tanımlanmış dikdörtgen şeklinde bağımsız değişkeni. Oval içinde kullanmak mümkün olabilir öneren Bu dikdörtgeni doldurur **elips doldurun** sayfa şuna benzer:
 

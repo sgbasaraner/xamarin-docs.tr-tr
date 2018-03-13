@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f0201e114f55e0610aceb68f98fae60a801afc68
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f943d6b88d2fd7f38759fb32ecb612e102266657
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-collection-views"></a>Koleksiyon görünümleri ile çalışma
 
@@ -20,7 +20,7 @@ _Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde koleksiyonu görünümle
 
 Koleksiyon görünümlerini içerik için bir grubu rasgele düzenleri kullanarak görüntülenmesine izin verir. Yerleşik destek kullanarak, bunlar için kolay oluşturma kılavuz benzeri ya da doğrusal düzenleri, ayrıca özel düzenler desteklerken izin verin.
 
-[ ![](collection-views-images/collection01.png "Örnek koleksiyon görünümü")](collection-views-images/collection01.png)
+[![](collection-views-images/collection01.png "Örnek koleksiyon görünümü")](collection-views-images/collection01.png#lightbox)
 
 Koleksiyon görünümü, kullanıcı etkileşimi ve koleksiyon içeriği sağlamak için bir temsilci ve veri kaynağı kullanarak öğeleri koleksiyonu tutar. Koleksiyon görünümü görünümünü bağımsız bir düzen alt sisteminde dayalı olduğundan farklı bir düzen sağlama koleksiyonu görünümün verileri üzerinde-çalışma sırasında sunumu kolayca değiştirebilirsiniz.
 
@@ -103,36 +103,36 @@ Bir koleksiyon görünümü Xamarin.tvOS uygulamanızda çalışmak için en kol
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve iOS Tasarımcısı açın.
 1. Bir görüntü görünüm eklemek için varolan bir düğmeyi ve bir etiket görüntülemek ve bunları şuna benzer şekilde yapılandırabilirsiniz: 
 
-    [ ![](collection-views-images/collection02.png "Örnek düzeni")](collection-views-images/collection02.png)
+    [![](collection-views-images/collection02.png "Örnek düzeni")](collection-views-images/collection02.png#lightbox)
 1. Ata bir **adı** görüntü görüntüleme ve etiketinde **pencere öğesi sekmesini** , **özellikleri Explorer**. Örneğin: 
 
-    [ ![](collection-views-images/collection03.png "Ayar adı")](collection-views-images/collection03.png)
+    [![](collection-views-images/collection03.png "Ayar adı")](collection-views-images/collection03.png#lightbox)
 1. Ardından, bir koleksiyon görünümü denetleyicisi film şeridi sürükleyin: 
 
-    [ ![](collection-views-images/collection04.png "Bir koleksiyon görünümü denetleyicisi")](collection-views-images/collection04.png)
+    [![](collection-views-images/collection04.png "Bir koleksiyon görünümü denetleyicisi")](collection-views-images/collection04.png#lightbox)
 1. Control-sürükleyin düğmesinden koleksiyonu görünüm denetleyiciye ve seçin **anında** açılan gelen: 
 
-    [ ![](collection-views-images/collection05.png "Anında iletme açılır penceresinden seçin")](collection-views-images/collection05.png)
+    [![](collection-views-images/collection05.png "Anında iletme açılır penceresinden seçin")](collection-views-images/collection05.png#lightbox)
 1. Uygulama çalıştırıldığında bu kullanıcı düğmesine tıkladığında Göster olması koleksiyon görünümü hale getirir.
 1. Koleksiyon görünümü seçin ve aşağıdaki değerleri girin **Düzen sekmesini** , **özellikleri Explorer**: 
 
-    [ ![](collection-views-images/collection06.png "Özellikler Gezgini")](collection-views-images/collection06.png)
+    [![](collection-views-images/collection06.png "Özellikler Gezgini")](collection-views-images/collection06.png#lightbox)
 1. Bu, tek tek hücrelere ve hücreler ve koleksiyon görünümü dış ucunun arasındaki kenarlıkları boyutunu denetler.
 1. Koleksiyon görünümü denetleyicisi seçin ve kendi sınıfı kümesine `CityCollectionViewController` içinde **pencere öğesi sekmesini**: 
 
-    [ ![](collection-views-images/collection07.png "CityCollectionViewController için set sınıfı")](collection-views-images/collection07.png)
+    [![](collection-views-images/collection07.png "CityCollectionViewController için set sınıfı")](collection-views-images/collection07.png#lightbox)
 1. Koleksiyon görünümü seçin ve kendi sınıfı kümesine `CityCollectionView` içinde **pencere öğesi sekmesini**: 
 
-    [ ![](collection-views-images/collection08.png "CityCollectionView için set sınıfı")](collection-views-images/collection08.png)
+    [![](collection-views-images/collection08.png "CityCollectionView için set sınıfı")](collection-views-images/collection08.png#lightbox)
 1. Koleksiyon görünümü hücreyi seçin ve kendi sınıfı kümesine `CityCollectionViewCell` içinde **pencere öğesi sekmesini**: 
 
-    [ ![](collection-views-images/collection09.png "CityCollectionViewCell için set sınıfı")](collection-views-images/collection09.png)
+    [![](collection-views-images/collection09.png "CityCollectionViewCell için set sınıfı")](collection-views-images/collection09.png#lightbox)
 1. İçinde **pencere öğesi sekmesini** emin **düzeni** olan `Flow` ve **kaydırma yönü** olan `Vertical` koleksiyon görünümü için: 
 
-    [ ![](collection-views-images/collection10.png "Pencere öğesi sekmesi")](collection-views-images/collection10.png)
+    [![](collection-views-images/collection10.png "Pencere öğesi sekmesi")](collection-views-images/collection10.png#lightbox)
 1. Koleksiyon görünümü hücresi seçin ve ayarlayın, **kimlik** için `CityCell` içinde **pencere öğesi sekmesini**: 
 
-    [ ![](collection-views-images/collection11.png "Kimlik CityCell için ayarlama")](collection-views-images/collection11.png)
+    [![](collection-views-images/collection11.png "Kimlik CityCell için ayarlama")](collection-views-images/collection11.png#lightbox)
 1. Değişikliklerinizi kaydedin.
     
 
@@ -143,34 +143,34 @@ Bir koleksiyon görünümü Xamarin.tvOS uygulamanızda çalışmak için en kol
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve iOS Tasarımcısı açın.
 1. Bir görüntü görünüm eklemek için varolan bir düğmeyi ve bir etiket görüntülemek ve bunları şuna benzer şekilde yapılandırabilirsiniz: 
 
-    [ ![](collection-views-images/collection02vs.png "Düzeni Yapılandır")](collection-views-images/collection02vs.png)
+    [![](collection-views-images/collection02vs.png "Düzeni Yapılandır")](collection-views-images/collection02vs.png#lightbox)
 1. Ata bir **adı** görüntü görüntüleme ve etiketinde **pencere öğesi sekmesini** , **özellikleri Explorer**. Örneğin: 
 
-    [ ![](collection-views-images/collection03vs.png "Özellikler Gezgini")](collection-views-images/collection03vs.png)
+    [![](collection-views-images/collection03vs.png "Özellikler Gezgini")](collection-views-images/collection03vs.png#lightbox)
 1. Ardından, bir koleksiyon görünümü denetleyicisi film şeridi sürükleyin: 
 
-    [ ![](collection-views-images/collection04vs.png "Bir koleksiyon görünümü denetleyicisi")](collection-views-images/collection04vs.png)
+    [![](collection-views-images/collection04vs.png "Bir koleksiyon görünümü denetleyicisi")](collection-views-images/collection04vs.png#lightbox)
 1. Control-sürükleyin düğmesinden koleksiyonu görünüm denetleyiciye ve seçin **anında** açılan gelen: 
 
-    [ ![](collection-views-images/collection05vs.png "Anında iletme açılır penceresinden seçin")](collection-views-images/collection05vs.png)
+    [![](collection-views-images/collection05vs.png "Anında iletme açılır penceresinden seçin")](collection-views-images/collection05vs.png#lightbox)
 1. Uygulama çalıştırıldığında bu kullanıcı düğmesine tıkladığında Göster olması koleksiyon görünümü hale getirir.
 1. Koleksiyon görünümü seçin ve **Düzen sekmesini** , **özellikleri Explorer** girin **genişliği** olarak _361_ ve  **Yükseklik** olarak _256_ 
 1. Bu, tek tek hücrelere ve hücreler ve koleksiyon görünümü dış ucunun arasındaki kenarlıkları boyutunu denetler.
 1. Koleksiyon görünümü denetleyicisi seçin ve kendi sınıfı kümesine `CityCollectionViewController` içinde **pencere öğesi sekmesini**: 
 
-    [ ![](collection-views-images/collection07vs.png "CityCollectionViewController için set sınıfı")](collection-views-images/collection07vs.png)
+    [![](collection-views-images/collection07vs.png "CityCollectionViewController için set sınıfı")](collection-views-images/collection07vs.png#lightbox)
 1. Koleksiyon görünümü seçin ve kendi sınıfı kümesine `CityCollectionView` içinde **pencere öğesi sekmesini**: 
 
-    [ ![](collection-views-images/collection08vs.png "CityCollectionView için set sınıfı")](collection-views-images/collection08vs.png)
+    [![](collection-views-images/collection08vs.png "CityCollectionView için set sınıfı")](collection-views-images/collection08vs.png#lightbox)
 1. Koleksiyon görünümü hücreyi seçin ve kendi sınıfı kümesine `CityCollectionViewCell` içinde **pencere öğesi sekmesini**: 
 
-    [ ![](collection-views-images/collection09vs.png "CityCollectionViewCell için set sınıfı")](collection-views-images/collection09vs.png)
+    [![](collection-views-images/collection09vs.png "CityCollectionViewCell için set sınıfı")](collection-views-images/collection09vs.png#lightbox)
 1. İçinde **pencere öğesi sekmesini** emin **düzeni** olan `Flow` ve **kaydırma yönü** olan `Vertical` koleksiyon görünümü için: 
 
-    [ ![](collection-views-images/collection10vs.png "Tgizli pencere öğesi sekmesi")](collection-views-images/collection10vs.png)
+    [![](collection-views-images/collection10vs.png "Tgizli pencere öğesi sekmesi")](collection-views-images/collection10vs.png#lightbox)
 1. Koleksiyon görünümü hücresi seçin ve ayarlayın, **kimlik** için `CityCell` içinde **pencere öğesi sekmesini**: 
 
-    [ ![](collection-views-images/collection11vs.png "Kimlik CityCell için ayarlama")](collection-views-images/collection11vs.png)
+    [![](collection-views-images/collection11vs.png "Kimlik CityCell için ayarlama")](collection-views-images/collection11vs.png#lightbox)
 1. Değişikliklerinizi kaydedin.
     
 
@@ -806,17 +806,17 @@ public override void ViewWillAppear (bool animated)
 
 Yapı ve uygulama çalıştırırsanız herşeyi yerinde varsayılan şehir ile ana görünüm görüntülenir:
 
-[ ![](collection-views-images/run01.png "Ana Ekran")](collection-views-images/run01.png)
+[![](collection-views-images/run01.png "Ana Ekran")](collection-views-images/run01.png#lightbox)
 
 Kullanıcı tıklatırsanız **bir görünüm seçin** düğmesi, koleksiyon görünümü görüntülenir:
 
-[ ![](collection-views-images/run02.png "Koleksiyon görünümü")](collection-views-images/run02.png)
+[![](collection-views-images/run02.png "Koleksiyon görünümü")](collection-views-images/run02.png#lightbox)
 
 Sahip herhangi bir şehre kendi `CanSelect` özelliğini `false` görüntülenir görünüyorsa ve kullanıcı odak ayarlamak mümkün olmaz. Kullanıcı bir öğeyi zaman vurgular (kolaylaştırır odak) başlığı görüntülenir ve 3D subtlety Eğim görüntü Parallax efekti kullanabilirsiniz.
 
 Kullanıcı görüntüyü seçin tıkladığında, koleksiyon görünümü kapatılır ve ana görünüme sahip yeni bir görüntü yeniden görüntülenir:
 
-[ ![](collection-views-images/run03.png "Yeni bir görüntü ana ekran")](collection-views-images/run03.png)
+[![](collection-views-images/run03.png "Yeni bir görüntü ana ekran")](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items" />
 
@@ -837,7 +837,7 @@ Bu makalede, tasarlama ve koleksiyon görünümlerini ile Xamarin.tvOS uygulama 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: a2c3ce9e19340067d77a8bc131b5a247806ecfa1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36c793e7a9b7b30bcb0cdf2c7959fd2df36c8775
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-file-system"></a>Dosya sistemi ile çalışma
 
@@ -26,7 +26,7 @@ iOS ayrıca bazı dosya sistemine özgü özelliklere sahiptir: belirli dizinler
 
 Bu makalede özellik ve iOS kısıtlamalarını ayrıntılı olarak dosya sistemi ve Xamarin.iOS bazı basit dosya sistemi işlemleri yürütmek için nasıl kullanılacağını gösteren örnek bir uygulama içerir:
 
- [ ![](file-system-images/05-sampleapp.png "Bazı basit dosya sistemi işlemleri yürütülürken iOS örneği")](file-system-images/05-sampleapp.png)
+ [![](file-system-images/05-sampleapp.png "Bazı basit dosya sistemi işlemleri yürütülürken iOS örneği")](file-system-images/05-sampleapp.png#lightbox)
 
  <a name="General_File_Access" />
 
@@ -110,7 +110,7 @@ System.IO ad alanı hakkında daha fazla bilgi için bkz: [MSDN belgelerine](htt
 
 JSON ile çalışan bir Xamarin.iOS uygulaması verilerde çok kolaydır kullanarak [Json.NET](http://www.newtonsoft.com/json) .NET NuGet paketi için yüksek performanslı JSON çerçevesi. Uygulamanızın projeye NuGet paketini eklemeniz yeterlidir: 
 
-[ ![](file-system-images/json01.png "Uygulamaları projesi için NuGet paketi ekleme")](file-system-images/json01.png)
+[![](file-system-images/json01.png "Uygulamaları projesi için NuGet paketi ekleme")](file-system-images/json01.png#lightbox)
 
 Ardından, serileştirme/seri durumundan çıkarma için veri modeli olarak görev yapması için bir sınıf ekleyin (Bu durumda `Account.cs`):
 
@@ -217,11 +217,11 @@ Mac OS, uygulama paketine göz atın, farklı bir simge ile diğer dizinlerde ba
 
 Örnek kod için uygulama paketi görüntülemek için Visual Studio'da projeye Mac seçin için sağ tıklayın ve **içeren klasör Aç**. Ardından gidin **bin/Debug/** bulabileceğiniz bir uygulama simgesi (aşağıdaki ekran görüntüsüne benzer).
 
- [ ![](file-system-images/40-bundle.png "Uygulama simgesi bu ekran görüntüsüne benzer bulmak için bin/Debug gidin")](file-system-images/40-bundle.png)
+ [![](file-system-images/40-bundle.png "Uygulama simgesi bu ekran görüntüsüne benzer bulmak için bin/Debug gidin")](file-system-images/40-bundle.png#lightbox)
 
 Bu simgeyi sağ tıklatın ve seçin **paket içeriklerini görüntüleme** uygulama paket dizinin içeriğini gidin. Aşağıda gösterildiği gibi içeriği yalnızca normal bir dizinin içeriğini gibi görünür:
 
- [ ![](file-system-images/45-bundle.png "Uygulama paketi içeriği")](file-system-images/45-bundle.png)
+ [![](file-system-images/45-bundle.png "Uygulama paketi içeriği")](file-system-images/45-bundle.png#lightbox)
 
 Uygulama paketi simulator veya Cihazınızı test sırasında yüklenenler ve sonuçta için Apple App Store eklenmek üzere gönderildiğinde şeklindedir.
 
@@ -313,7 +313,7 @@ Bu dizinin içindekileri hiçbir zaman kullanıcının iTunes aracılığıyla s
 
 Bu ekran görüntüsü bir Bulucu penceresinde dizin yapısını gösterir:
 
- [ ![](file-system-images/08-library-directory.png "Bu ekran görüntüsü, bir Bulucu penceresinde dizin yapısını gösterir")](file-system-images/08-library-directory.png)
+ [![](file-system-images/08-library-directory.png "Bu ekran görüntüsü, bir Bulucu penceresinde dizin yapısını gösterir")](file-system-images/08-library-directory.png#lightbox)
 
  <a name="Accessing_Other_Directories_Programmatically" />
 
@@ -352,11 +352,11 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 Kullanıcıların, uygulamanızın belgeleri dizindeki dosyaların düzenleyerek erişebileceği `Info.plist` ve oluşturma bir **uygulamasının desteklediği iTunes paylaşımı** (`UIFileSharingEnabled`) girişi **kaynak** görünümü olarak Burada gösterilen:
 
- [ ![](file-system-images/09-uifilesharingenabled-plist.png "Uygulama ekleme özelliği paylaşımı iTunes destekler")](file-system-images/09-uifilesharingenabled-plist.png)
+ [![](file-system-images/09-uifilesharingenabled-plist.png "Uygulama ekleme özelliği paylaşımı iTunes destekler")](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
 Bu dosyalar iTunes aygıtın bağlı olduğunu ve kullanıcının seçtiği erişilebilir `Apps` sekmesi. Örneğin, aşağıdaki ekran seçilen uygulama iTunes paylaşılan dosyaları gösterir:
 
- [ ![](file-system-images/10-itunes-file-sharing.png "Bu ekran, seçili uygulama iTunes paylaşılan dosyaları gösterir.")](file-system-images/10-itunes-file-sharing.png)
+ [![](file-system-images/10-itunes-file-sharing.png "Bu ekran, seçili uygulama iTunes paylaşılan dosyaları gösterir.")](file-system-images/10-itunes-file-sharing.png#lightbox)
 
 Kullanıcılar yalnızca en üst düzey öğeler bu dizinde iTunes aracılığıyla erişebilir. (Bunlar bunları kendi bilgisayarlarına kopyalayabilir veya bunları silmek rağmen), herhangi bir alt dizine içeriğini göremezsiniz. Kullanıcıların iOS cihazlarını okuyabilmeniz Örneğin, GoodReader ile uygulama ile PDF ve EPUB dosyaları paylaşılabilir.
 
@@ -364,7 +364,7 @@ Dikkatli değilseniz, bunların belgeleri klasörünün içeriğini değiştirme
 
 Bu makale için örnek kod Belgeler klasöründe bir dosya ve klasör oluşturur (içinde **SampleCode.cs**) ve dosya paylaşımı sağlar **Info.plist** dosya. Bu ekran, bunlar iTunes nasıl göründüğünü gösterir:
 
- [ ![](file-system-images/15-itunes-file-sharing-example.png "Bu ekran görüntüsü, dosyaları iTunes nasıl göründüğünü gösterir")](file-system-images/15-itunes-file-sharing-example.png)
+ [![](file-system-images/15-itunes-file-sharing-example.png "Bu ekran görüntüsü, dosyaları iTunes nasıl göründüğünü gösterir")](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
 Başvurmak [görüntülerle çalışma](~/ios/app-fundamentals/images-icons/index.md) oluşturduğunuz tüm özel belge türlerinin ve uygulama için simgeler ayarlama hakkında bilgi için makalenin.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c78396ce55c776c615f3b3027a97b5a334c0b7f8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf519cb964bf852c74249c874b9a934d4a6cf5c3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="callkit"></a>CallKit
 
@@ -52,11 +52,11 @@ Aşağıdaki bölümlerde CallKit mimarisi ele alınacaktır, gelen ve giden ak�
 
 Örneğin, CarPlay üzerinde yapılan çağrıları sistem kullanıcı Arabirimi aracılığıyla CallKit bilinen şekilde iOS 10'da, CallKit tüm sistem hizmetleri Apple başlamıştır. İçinde MonkeyCall CallKit uyarlar beri aşağıda verilen örnek, sisteme aynı şekilde bu yerleşik sistem hizmetleri olarak bilinir ve tüm aynı özellikleri alır:
 
-[ ![](callkit-images/callkit01.png "CallKit hizmet yığını")](callkit-images/callkit01.png)
+[![](callkit-images/callkit01.png "CallKit hizmet yığını")](callkit-images/callkit01.png#lightbox)
 
 Yukarıdaki diyagramda MonkeyCall uygulamadan daha yakın bir göz atın. Uygulama tüm, kendi ağ ile iletişim kurmak için kendi kod ve kendi kullanıcı arabirimlerini içerir. Sistemiyle iletişim kurmak için CallKit bağlar:
 
-[ ![](callkit-images/callkit02.png "MonkeyCall uygulama mimarisi")](callkit-images/callkit02.png)
+[![](callkit-images/callkit02.png "MonkeyCall uygulama mimarisi")](callkit-images/callkit02.png#lightbox)
 
 Uygulamanın kullandığı CallKit içinde iki ana arabirimi vardır:
 
@@ -75,7 +75,7 @@ Bir uygulama kullanması gereken `CXProvider` aşağıdaki için:
 
 Sisteme iletişim kurmak uygulamanın istediği zaman kullandığı `CXCallUpdate` sınıfı ve sistem uygulamayla iletişim kurmak gerektiğinde kullanır `CXAction` sınıfı:
 
-[ ![](callkit-images/callkit03.png "Bir CXProvider üzerinden ile iletişim")](callkit-images/callkit03.png)
+[![](callkit-images/callkit03.png "Bir CXProvider üzerinden ile iletişim")](callkit-images/callkit03.png#lightbox)
 
 ### <a name="the-cxcallcontroller"></a>CXCallController
 
@@ -89,7 +89,7 @@ Bir uygulama kullanması gereken `CXCallController` aşağıdaki için:
 
 Yerel kullanıcı eylemlerini sisteme iletişim kurmak uygulamanın istediği zaman kullandığı `CXTransaction` sınıfı:
 
-[ ![](callkit-images/callkit04.png "Bir CXCallController kullanarak sistem raporlama")](callkit-images/callkit04.png)
+[![](callkit-images/callkit04.png "Bir CXCallController kullanarak sistem raporlama")](callkit-images/callkit04.png#lightbox)
 
 ## <a name="implementing-callkit"></a>CallKit uygulama
 
@@ -748,7 +748,7 @@ Aşağıdaki bölümlerde bir uygulama MonkeyCall VoIP uygulama örnek olarak ku
 
 Uzak bir kullanıcı bir VoIP konuşma yerel kullanıcıyla başladığında, aşağıdakiler gerçekleşir:
 
-[ ![](callkit-images/callkit05.png "Uzak bir kullanıcı bir VoIP konuşma başlatıldı")](callkit-images/callkit05.png)
+[![](callkit-images/callkit05.png "Uzak bir kullanıcı bir VoIP konuşma başlatıldı")](callkit-images/callkit05.png#lightbox)
 
 1. Uygulama, gelen VoIP araması olduğunu, kendi iletişimleri ağdan bir bildirim alır.
 2. Uygulama kullandığı `CXProvider` göndermek için bir `CXCallUpdate` bu çağrının bildiren sistem.
@@ -783,7 +783,7 @@ Bu kod yeni bir oluşturur `CXCallUpdate` örneği ve bir işleyici çağıran t
 
 Kullanıcı gelen VoIP aramaya yanıt isterse, aşağıdakiler gerçekleşir:
 
-[ ![](callkit-images/callkit06.png "Kullanıcı gelen VoIP çağrıyı yanıtlar")](callkit-images/callkit06.png)
+[![](callkit-images/callkit06.png "Kullanıcı gelen VoIP çağrıyı yanıtlar")](callkit-images/callkit06.png#lightbox)
 
 1. Sistem kullanıcı Arabirimi, kullanıcının VoIP aramaya yanıt vermek istediği sistem sizi bilgilendirir.
 2. Sistem gönderir bir `CXAnswerCallAction` uygulamanın için `CXProvider` , yanıt hedefinin bildiren.
@@ -824,7 +824,7 @@ Bu kod, etkin çağrı listesini verilen çağrısında ilk arar. Çağrı bulun
 
 Kullanıcı uygulamanın kullanıcı Arabirimi içinden çağrısından yüklemeyi sonlandırmak isterse, aşağıdakiler gerçekleşir:
 
-[ ![](callkit-images/callkit07.png "Kullanıcının uygulamanın kullanıcı Arabirimi içinden çağrısından sonlandırır")](callkit-images/callkit07.png)
+[![](callkit-images/callkit07.png "Kullanıcının uygulamanın kullanıcı Arabirimi içinden çağrısından sonlandırır")](callkit-images/callkit07.png#lightbox)
 
 1. Uygulamasını oluşturur `CXEndCallAction` , paket içine bir `CXTransaction` , gönderildiği sisteme çağrı sonlandırıyor bildirin.
 2. Sistem çağrısı son hedefi doğrular ve gönderir `CXEndCallAction` aracılığıyla uygulamayı dön `CXProvider`.
@@ -874,7 +874,7 @@ Yukarıdaki durum verin, sistem göndereceğiniz bir `CXTransaction` birden çok
 
 Kullanıcı listesinden Recents (telefon uygulama) bir giriş dokunur, örneğin, çağrısından uygulamasına ait olan, gönderilecek bir _çağrısı hedefi Başlat_ sistem tarafından:
 
-[ ![](callkit-images/callkit08.png "Bir başlangıç çağrısı hedefi alma")](callkit-images/callkit08.png)
+[![](callkit-images/callkit08.png "Bir başlangıç çağrısı hedefi alma")](callkit-images/callkit08.png#lightbox)
 
 1. Uygulama oluşturur bir _başlangıç eylemi çağırma_ Başlat çağrı sistemden alınan hedefi göre. 
 2. Uygulama kullanır `CXCallController` başlangıç eylemi çağırma sistemden istemek için.
@@ -1119,7 +1119,7 @@ Ayrıca, CallKit performansını geliştirir ve akıllıca VoIP ses kullanıcı 
 
 Tipik bir VoIP yaşam döngüsü sırasında CallKit çağrıda, uygulama CallKit onu sağlayacak ses akışı yapılandırmanız gerekecektir. Aşağıdaki örnek göz atın:
 
-[ ![](callkit-images/callkit09.png "Başlangıç çağrı eylem dizisi")](callkit-images/callkit09.png)
+[![](callkit-images/callkit09.png "Başlangıç çağrı eylem dizisi")](callkit-images/callkit09.png#lightbox)
 
 1. Eylemi Başlat çağırma gelen bir arama yanıtlamak için uygulama tarafından alınır.
 2. Bu eylem uygulama tarafından getirilene önce yapılandırmayı için gerektirecektir sağlar, `AVAudioSession`.
@@ -1140,13 +1140,13 @@ Bir arama dizinini uzantısı bir Xamarin.iOS uygulaması uygulamak için aşağ
 2. Çözüm adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **Yeni Proje Ekle**.
 3. Seçin **iOS** > **uzantıları** > **çağrısı dizin uzantıları** tıklatıp **sonraki** düğmesi: 
 
-    [ ![](callkit-images/calldir01.png "Yeni bir çağrı dizin uzantısı oluşturma")](callkit-images/calldir01.png)
+    [![](callkit-images/calldir01.png "Yeni bir çağrı dizin uzantısı oluşturma")](callkit-images/calldir01.png#lightbox)
 4. Girin bir **adı** tıklatın ve uzantı için **sonraki** düğmesi: 
 
-    [ ![](callkit-images/calldir02.png "Uzantı için bir ad girme")](callkit-images/calldir02.png)
+    [![](callkit-images/calldir02.png "Uzantı için bir ad girme")](callkit-images/calldir02.png#lightbox)
 5. Ayarlama **proje adı** ve/veya **çözüm adı** gerekli ve tıklatırsanız **oluşturma** düğmesi: 
 
-    [ ![](callkit-images/calldir03.png "Proje oluşturma")](callkit-images/calldir03.png) 
+    [![](callkit-images/calldir03.png "Proje oluşturma")](callkit-images/calldir03.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -1154,7 +1154,7 @@ Bir arama dizinini uzantısı bir Xamarin.iOS uygulaması uygulamak için aşağ
 2. Çözüm adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **Yeni Proje Ekle**.
 3. Seçin **iOS** > **uzantıları** > **çağrısı dizin uzantıları** tıklatıp **sonraki** düğmesi: 
 
-    [ ![](callkit-images/calldir01w.png "Yeni bir çağrı dizin uzantısı oluşturma")](callkit-images/calldir01.png)
+    [![](callkit-images/calldir01w.png "Yeni bir çağrı dizin uzantısı oluşturma")](callkit-images/calldir01.png#lightbox)
 4. Girin bir **adı** tıklatın ve uzantı için **Tamam** düğmesi
 
 -----

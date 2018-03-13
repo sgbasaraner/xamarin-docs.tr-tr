@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: 8db4a816becca54428b3524f79b6ebc5ff4ec084
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7934738a546a266036573b81e15ef9b2fa28d7b4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sharing-code-options"></a>Paylaşım kodu seçenekleri
 
@@ -34,7 +34,7 @@ Platformlar arası mobil uygulamalar arasında kod paylaşmak için iki seçenek
 
  [5 – stratejileri paylaşımı pratik kod parçası](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-5-practical-code-sharing-strategies.md)
 
- [Bölüm 6 - test etme ve uygulama mağazası onayları](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-6-testing-and-app-store-approvals.md)
+ [Bölüm 6 - Test Etme ve App Store Onayları](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-6-testing-and-app-store-approvals.md)
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 
@@ -51,7 +51,7 @@ Bu belgede özetlenen ilkeleri örnek uygulama uygulamada içine konur *Tasky*, 
 Tasky, iOS, Android ve Windows Phone için bir basit bir Yapılacaklar listesi uygulamasıdır.
 Xamarin ile platformlar arası uygulaması oluşturma temellerini gösterir ve yerel bir SQLite veritabanı kullanır.
 
- [ ![tasky listesi](images/iphone-list-sml.png)](images/iphone-list.png) [ ![tasky ayrıntısı](images/iphone-detail-sml.png)](images/iphone-detail.png)
+ [![tasky listesi](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [ ![tasky listesi](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
 Okuma [Tasky örnek olay incelemesi](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 
@@ -71,7 +71,7 @@ Son olarak, bunu kısaca sınaması açıklanır ve bu ilkeler eyleme yerleştir
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Paylaşım kodu seçenekleri](~/cross-platform/app-fundamentals/code-sharing.md)
-- [Örnek olay incelemesi: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
+- [Örnek Olay İncelemesi: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky örnek uygulaması (github)](https://developer.xamarin.com/samples/mobile/TaskyPortable/)
 - [Xamarin mobil uygulama geliştirme: Platformlar arası C# ve Xamarin.Forms Temelleri](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/))
 - [C# Greg tarafından ile mobil geliştirme (O'Reilly) Shackles](http://shop.oreilly.com/product/0636920024002.do)

@@ -3,14 +3,15 @@ title: "Bölüm 3 özeti. Daha derin bir metne"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9d283a4136a7cdfe39ea0b2da65273332fd47b00
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7dbcc093bc467e633f9333bb129adc25372832f3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Bölüm 3 özeti. Daha derin bir metne
 
@@ -129,7 +130,7 @@ Tüm örnekler kadarki tüm metin tarafından görüntülenen `Label` aynı şek
 
 [ **VariableFormattedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormText) örnek gösterilmektedir kullanarak `FormattedText` tek satırlık metin, özellik ve [ **VariableFormattedParagraph** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormPara) tekniği tüm paragrafı için aşağıda gösterildiği gibi gösterir:
 
-[![Üçlü ekran değişkenin biçimlendirilmiş paragraf](images/ch03fg06-small.png "değişkeni biçimlendirilmiş etiket metnini")](images/ch03fg06-large.png "değişkeni biçimlendirilmiş etiket metni")
+[![Üçlü ekran değişkenin biçimlendirilmiş paragraf](images/ch03fg06-small.png "değişkeni biçimlendirilmiş etiket metnini")](images/ch03fg06-large.png#lightbox "değişkeni biçimlendirilmiş etiket metni")
 
 [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) program kullanan tek bir `Label` ve `FormattedString` her platform için adlandırılmış yazı tipi boyutlarını görüntülenecek nesne.
 

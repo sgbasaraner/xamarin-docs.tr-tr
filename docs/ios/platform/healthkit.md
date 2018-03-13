@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 50684d82726a398aabe77d09ff62eac40e277f02
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4f85f208c12561b6db9800d963e2d7bf32c2a4d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -32,7 +32,7 @@ Bu makalede, veritabanını sorgulama, ölçü birimleri arasında dönüştürm
 
 Bu makalede, biz kullanıcının Kalp oranı kaydetmek için örnek bir uygulama oluşturmaya olursunuz:
 
-[![](healthkit-images/image01.png "Kullanıcıların Kalp oranı kaydetmek için örnek bir uygulama")](healthkit-images/image01.png)
+[![](healthkit-images/image01.png "Kullanıcıların Kalp oranı kaydetmek için örnek bir uygulama")](healthkit-images/image01.png#lightbox)
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -72,22 +72,22 @@ Geçerli **uygulama kimlikleri** içinde listelenen [tanımlayıcıları & profi
 Açık bir oluşturmak için **uygulama kimliği**, tıklatın  **+**  kullanmayı sağ üst düğmesini **iOS uygulama kimliği kaydetmek** sayfa:
 
 
-[![](healthkit-images/image02.png "Apple Geliştirici Portalı üzerinde bir uygulama kaydetme")](healthkit-images/image02.png)
+[![](healthkit-images/image02.png "Apple Geliştirici Portalı üzerinde bir uygulama kaydetme")](healthkit-images/image02.png#lightbox)
 
 Bir uygulama açıklaması oluşturduktan sonra görüntünün yukarıda gösterildiği gibi kullanın **açık uygulama kimliği** bölümünde, uygulamanız için bir kimlik oluşturun. İçinde **uygulama hizmetleri** bölümünde, onay **sistem durumu Seti** içinde **Hizmetleri'ni etkinleştir** bölümü.
 
 İşiniz bittiğinde, basın **devam** kaydetmek için düğmesini **uygulama kimliği** hesabınızda. Size geri gidersiniz **sertifikalar, tanımlayıcılarını ve profilleri** sayfası. Tıklatın **sağlama profilleri** geçerli sağlama profillerinizi listesine alıp tıklatın  **+**  kullanmayı sağ üst köşesinde düğmesini **iOS ekleme Sağlama profili** sayfası. Seçin **iOS uygulaması geliştirme** seçeneğini ve tıklayın **devam** almak için **uygulama Kimliğini seçin** sayfası. Burada, açık seçtiğiniz **uygulama kimliği** daha önce belirttiğiniz:
 
 
-[![](healthkit-images/image03.png "Açık uygulama kimliği seçin")](healthkit-images/image03.png)
+[![](healthkit-images/image03.png "Açık uygulama kimliği seçin")](healthkit-images/image03.png#lightbox)
 
 Tıklatın **devam** ve iş yeri belirtin kalan ekranlar aracılığıyla, **Geliştirici sertifikaları**, **aygıtlarını**ve bir **adı** bu **sağlama profili**:
 
-[![](healthkit-images/image04.png "Sağlama profili oluşturuluyor")](healthkit-images/image04.png)
+[![](healthkit-images/image04.png "Sağlama profili oluşturuluyor")](healthkit-images/image04.png#lightbox)
 
 Tıklatın **Generate** ve profilinizi oluşturulmasını bekler. Xcode'da yüklemek için çift tıklayın ve dosyayı indirin. Buna ait yükleme altında onaylayabilirsiniz **Xcode > Tercihler > hesapları > ayrıntıları görüntüle...** Henüz yüklü sağlama profilinizin görmeniz gerekir ve sistem durumu Seti ve içinde özel diğer hizmetler için simge olması gereken kendi **yetkilendirmeler** satır:
 
-[![](healthkit-images/image05.png "Xcode'da profil görüntüleme")](healthkit-images/image05.png)
+[![](healthkit-images/image05.png "Xcode'da profil görüntüleme")](healthkit-images/image05.png#lightbox)
 
 <a name="associating-appid" />
 
@@ -97,11 +97,11 @@ Oluşturulan ve uygun bir yüklü sonra **sağlama profili** açıklandığı gi
 
 Xamarin iOS 8 proje el ile oluşturma işleminde size kılavuzluk yerine (Bu, önceden oluşturulmuş bir film şeridi ve kodu içerir) Bu makalede bağlı örnek uygulamasını açın. Örnek uygulama, sistem durumu etkin Seti ile ilişkilendirmek için **sağlama profili**, **çözüm paneli**, projeye sağ tıklayın ve ortaya çıkarmak kendi **seçenekleri** iletişim. Geçiş **iOS uygulama** panel ve açık girin **uygulama kimliği** uygulamanın daha önce oluşturduğunuz **paket tanımlayıcı**:
 
-[![](healthkit-images/image06.png "Açık uygulama kimliği girin")](healthkit-images/image06.png)
+[![](healthkit-images/image06.png "Açık uygulama kimliği girin")](healthkit-images/image06.png#lightbox)
 
 Şimdi geçmek **iOS paket imzalama** paneli. Son yüklenen, **sağlama profili**, açık olan ilişkisi ile **uygulama kimliği**, şimdi olarak kullanılabilecek **sağlama profili**:
 
-[![](healthkit-images/image07.png "Sağlama profili seçin")](healthkit-images/image07.png)
+[![](healthkit-images/image07.png "Sağlama profili seçin")](healthkit-images/image07.png#lightbox)
 
 Varsa **sağlama profili** kullanılabilir değil, iki kez kontrol **paket tanımlayıcısı** içinde **iOS uygulama** paneli belirtilen karşı **iOS Geliştirici Merkezi** ve **sağlama profili** yüklenir (**Xcode > Tercihler > hesapları > ayrıntıları görüntüle...** ).
 
@@ -148,11 +148,11 @@ Sistem durumu Seti veri sınırlıdır Apple belirtilen türleri. Bu tür kesinl
 
 Sistem durumu Seti deposunda storable tüm alt sınıflarının türleridir `HKObjectType`. `HKCharacteristicType` nesneler Biyolojik seks, kan türünü ve tarihi, Doğum depolar. Ancak, daha fazla ortak olan `HKSampleType` belirli bir zamanda veya bir süre boyunca örneklenen verilerini temsil eden nesne. 
 
-[![](healthkit-images/image08.png "HKSampleType nesneleri grafik")](healthkit-images/image08.png)
+[![](healthkit-images/image08.png "HKSampleType nesneleri grafik")](healthkit-images/image08.png#lightbox)
 
 `HKSampleType` soyut ve dört somut alt sınıfları olmayan. Şu anda yalnızca bir tür olduğundan `HKCategoryType` uyku analiz verileri. Sistem durumu Seti verilerde büyük çoğunluğu türündedir `HKQuantityType` ve kendi veri deposundaki `HKQuantitySample` tanıdık Fabrika tasarım modeli kullanılarak oluşturulan nesneler:
 
-[![](healthkit-images/image09.png "Sistem durumu Seti verilerde büyük çoğunluğu türü HKQuantityType ve HKQuantitySample nesneleri verilerini depolamak")](healthkit-images/image09.png)
+[![](healthkit-images/image09.png "Sistem durumu Seti verilerde büyük çoğunluğu türü HKQuantityType ve HKQuantitySample nesneleri verilerini depolamak")](healthkit-images/image09.png#lightbox)
 
 `HKQuantityType` türleri aralığı `HKQuantityTypeIdentifier.ActiveEnergyBurned` için `HKQuantityTypeIdentifier.StepCount`. 
 
@@ -162,11 +162,11 @@ Sistem durumu Seti deposunda storable tüm alt sınıflarının türleridir `HKO
 
 Son kullanıcılar, bir uygulamanın durumu Seti veri okumaya veya yazmaya izin ver için pozitif adımlar atmanız gerekir. Bu, iOS 8 cihazlarda önceden yüklü olarak gelen sistem durumu uygulama aracılığıyla gerçekleştirilir. Sistem durumu Seti uygulama çalıştırıldığında, ilk kez kullanıcı bir sistem tarafından denetlenen ile sunulan **sistem durumu erişim** iletişim:
 
-[![](healthkit-images/image10.png "Kullanıcıya sistem tarafından denetlenen sistem erişimi içeren bir iletişim kutusu sunulur")](healthkit-images/image10.png)
+[![](healthkit-images/image10.png "Kullanıcıya sistem tarafından denetlenen sistem erişimi içeren bir iletişim kutusu sunulur")](healthkit-images/image10.png#lightbox)
 
 Kullanıcı izinlerini sistem durumu uygulamanın kullanarak daha sonra değiştirebilirsiniz **kaynakları** iletişim:
 
-[![](healthkit-images/image11.png "Kullanıcı izinleri sistem durumu uygulamalar kaynakları iletişim kutusunu kullanarak değiştirebilir")](healthkit-images/image11.png)
+[![](healthkit-images/image11.png "Kullanıcı izinleri sistem durumu uygulamalar kaynakları iletişim kutusunu kullanarak değiştirebilir")](healthkit-images/image11.png#lightbox)
 
 Sistem durumu bilgisi son derece hassas olduğundan, uygulama geliştiriciler programlarını biçimde geliştirmelisiniz, izinler reddetti ve uygulama çalışırken değişti, Beklenti ile yazmanız gerekir. İzinler istemek için en yaygın deyim olduğundan `UIApplicationDelegate.OnActivated` yöntemi ve kullanıcı arabirimi uygun olarak değiştirin.
 
@@ -413,12 +413,12 @@ Düzgün olarak sağlanan iOS 8 geliştirme aygıt sisteminize ekleyin. Mac içi
 Hükümler düzgün ayarlamış olduğunuz varsayılarak, uygulamanızın başlar. Ulaştığında, `OnActivated` yöntemi, sistem durumu Seti yetkilendirme isteyecek. Bu işletim sistemi tarafından karşılaşılan ilk kez kullanıcı aşağıdaki iletişim kutusuyla sunulur:
 
 
-[![](healthkit-images/image12.png "Bu iletişim kutusu ile kullanıcıya sunulur")](healthkit-images/image12.png)
+[![](healthkit-images/image12.png "Bu iletişim kutusu ile kullanıcıya sunulur")](healthkit-images/image12.png#lightbox)
 
 Kalp oranı verileri güncelleştirmek için uygulamanızı etkinleştirme ve uygulamanızı görünecektir. `ReactToHealthCarePermissions` Geri çağırma zaman uyumsuz olarak etkinleştirilecek. Bu neden olacak `HeartRateModel’s` `Enabled` oluşturacağı değiştirmek için özellik `EnabledChanged` neden olacak olay `HKPermissionsViewController.OnEnabledChanged()` çalıştırmak için hangi etkinleştirir olay işleyicisi `StoreData` düğmesi. Aşağıdaki diyagramda gösterilir:
 
 
-[![](healthkit-images/image13.png "Bu diyagramda olayların sırası gösterir")](healthkit-images/image13.png)
+[![](healthkit-images/image13.png "Bu diyagramda olayların sırası gösterir")](healthkit-images/image13.png#lightbox)
 
 Tuşuna **kaydı** düğmesi. Bu neden olacak `StoreData_TouchUpInside()` değeri ayrıştırılamadı deneyeceği çalıştırmak için işleyici `heartRate` metin alanı içine dönüştürme bir `HKQuantity` daha önce ele alındığı aracılığıyla `HeartRateModel.HeartRateInBeatsPerMinute()` işlev ve bu miktar geçirmek `HeartRateModel.StoreHeartRate()`. Daha önce açıklandığı gibi bu verileri depolamak çalışır ve ya da oluşturacak bir `HeartRateStored` veya `ErrorMessageChanged` olay.
 
@@ -447,4 +447,4 @@ Son olarak, bir basit uygulama, sistem durumu Seti deposuna sinyal verileri yaza
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [HKWork (örnek)](https://developer.xamarin.com/samples/monotouch/ios8/IntroToHealthKit/)
-- [İOS 8 giriş](~/ios/platform/introduction-to-ios8.md)
+- [iOS 8’e Giriş](~/ios/platform/introduction-to-ios8.md)

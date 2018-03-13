@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: c5bd753aaa3a9e807a03a9fb05b233cfa39d0dc3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6ac9ca7bae517602c33729134eb0bd48359afbc7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-text-to-speech"></a>Metin okuma uygulama
 
@@ -44,7 +44,7 @@ public interface ITextToSpeech
 Bu arabirim paylaşılan kodda karşı kodlama Xamarin.Forms uygulaması her platformda API'leri konuşma erişmesine izin verir.
 
 > [!NOTE]
-> **Not**: arabirimini uygulayan sınıflar çalışmak için parametresiz bir oluşturucusu olmalıdır `DependencyService`.
+> Arabirimini uygulayan sınıflar çalışmak için parametresiz bir oluşturucusu olmalıdır `DependencyService`.
 
 <a name="iOS_Implementation" />
 
@@ -84,15 +84,12 @@ namespace DependencyServiceSample.iOS
 
 ## <a name="android-implementation"></a>Android uygulaması
 
-Android kod iOS sürümden daha karmaşıktır: Android özgü devralacak şekilde uygulayan sınıfa gerektirir `Java.Lang.Object` ve uygulamak için `IOnInitListener` de arabirimi.
-
-Xamarin.Forms de sağlar `Forms.Context` örneği geçerli Android bağlam nesnesi. Bu, çok sayıda Android SDK yöntemleri çağırma yeteneği olan iyi bir örnek gerektirir `StartActivity()`.
+Android kod iOS sürümden daha karmaşıktır: Android özgü devralacak şekilde uygulayan sınıfa gerektirir `Java.Lang.Object` ve uygulamak için `IOnInitListener` de arabirimi. Ayrıca tarafından sunulan geçerli Android bağlamı erişim gerektiren `MainActivity.Instance` özelliği.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
 namespace DependencyServiceSample.Droid
 {
-
     public class TextToSpeechImplementation : Java.Lang.Object, ITextToSpeech, TextToSpeech.IOnInitListener
     {
         TextToSpeech speaker;
@@ -103,7 +100,7 @@ namespace DependencyServiceSample.Droid
             toSpeak = text;
             if (speaker == null)
             {
-                speaker = new TextToSpeech(Forms.Context, this);
+                speaker = new TextToSpeech(MainActivity.Instance, this);
             }
             else
             {

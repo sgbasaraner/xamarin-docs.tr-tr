@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 22a0b0f5df5a44f2409a59b26eb841b97c920d8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 771e1607bc4e6be8f0991e159b5d34f6d4ea9c02
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fonts"></a>Yazı Tipleri
 
@@ -181,7 +181,7 @@ Xamarin.Forms denetimleri tüm görüntüleme metni bir `Font` XAML'de ayarlanab
 
 Yerleşik yazı dışında bir yazı tipi kullanarak bazı platforma özgü kodlama gerektirir. Bu ekran özel yazı tipi gösterir **Lobster** gelen [Google açık kaynak yazı tipleri](https://www.google.com/fonts) iOS, Android ve Windows Phone Xamarin.Forms kullanarak çizilir.
 
- [ ![İOS ve Android özel yazı tipi](fonts-images/custom-sml.png "özel yazı tipleri örnek")](fonts-images/custom.png "özel yazı tipi örneği")
+ [![İOS ve Android özel yazı tipi](fonts-images/custom-sml.png "özel yazı tipleri örnek")](fonts-images/custom.png#lightbox "özel yazı tipi örneği")
 
 Her platform için gerekli adımlar aşağıda özetlenmiştir. Bir uygulama ile özel yazı tipi dosyalarını dahil ederken yazı tipinin lisans dağıtım için izin verdiğini doğrulamak emin olun.
 

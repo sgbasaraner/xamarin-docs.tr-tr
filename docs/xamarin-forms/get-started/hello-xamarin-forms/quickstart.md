@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 7ce674ea38bc847bc9064a5a61113900a45b991d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 434a12c26a5823b082751c95c2090b22c39cf081
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms hızlı başlangıç
 
 Bu kılavuz, bir sayısal telefon numarası kullanıcı tarafından girilen bir alfasayısal telefon numarasını çeviren ve numarası çağıran bir uygulama oluşturmak gösterilmiştir. Son uygulama aşağıda gösterilmiştir:
 
-[![](quickstart-images/intro-app-examples-sml.png "Phoneword uygulama")](quickstart-images/intro-app-examples.png "Phoneword uygulama")
+[![](quickstart-images/intro-app-examples-sml.png "Phoneword uygulama")](quickstart-images/intro-app-examples.png#lightbox "Phoneword uygulama")
 
 Phoneword uygulama gibi oluşturun:
 
@@ -113,7 +113,7 @@ Phoneword uygulama gibi oluşturun:
         }
 
   > [!NOTE]
-> **Not**: Bu noktada uygulamayı oluşturmaya çalışırken, daha sonra düzeltilecektir hatalara neden olur.
+  > Bu noktada uygulamayı oluşturmaya çalışırken, daha sonra düzeltilecektir hatalarına neden.
 
   Değişiklikleri kaydetmek **MainPage.xaml.cs** basarak **CTRL + S**ve dosyayı kapatın.
 
@@ -515,7 +515,7 @@ Phoneword uygulama gibi oluşturun:
             </StackLayout>
         </ContentPage>
 
-  Değişiklikleri kaydetmek **MainPage.xaml** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **MainPage.xaml** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**, çift **MainPage.xaml.cs** açmak için:
 
@@ -565,9 +565,9 @@ Phoneword uygulama gibi oluşturun:
         }
 
   > [!NOTE]
-> **Not**: Bu noktada uygulamayı oluşturmaya çalışırken, daha sonra düzeltilecektir hatalara neden olur.
+  > Bu noktada uygulamayı oluşturmaya çalışırken, daha sonra düzeltilecektir hatalarına neden.
 
-  Değişiklikleri kaydetmek **MainPage.xaml.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **MainPage.xaml.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**, çift **App.xaml.cs** açmak için:
 
@@ -606,7 +606,7 @@ Phoneword uygulama gibi oluşturun:
             }
         }
 
-  Değişiklikleri kaydetmek **Phoneword.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **Phoneword.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**seçin **Phoneword** proje, sağ tıklatın ve seçin **Ekle > yeni dosya...** :
 
@@ -670,7 +670,7 @@ Phoneword uygulama gibi oluşturun:
             }
         }
 
-  Değişiklikleri kaydetmek **PhoneTranslator.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **PhoneTranslator.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**seçin **Phoneword** proje, sağ tıklatın ve seçin **Ekle > yeni dosya...** :
 
@@ -690,7 +690,7 @@ Phoneword uygulama gibi oluşturun:
             }
         }
 
-  Değişiklikleri kaydetmek **IDialer.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **IDialer.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
   > [!NOTE]
 > Uygulama için ortak kodun tamamlanmıştır. Platforma özgü Telefon Çeviricisi kodu şimdi olarak gerçekleştirilen bir [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
@@ -723,7 +723,7 @@ Phoneword uygulama gibi oluşturun:
             }
         }
 
-  Değişiklikleri kaydetmek **PhoneDialer.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **PhoneDialer.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**seçin **Phoneword.Droid** proje, sağ tıklatın ve seçin **Ekle > yeni dosya...** :
 
@@ -780,7 +780,7 @@ Phoneword uygulama gibi oluşturun:
             }
         }
 
-  Değişiklikleri kaydetmek **PhoneDialer.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **PhoneDialer.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**, **Phoneword.Droid** projesi, çift **MainActivity.cs** açmak için tüm şablonu kodu kaldırıp şununla değiştirin Kod:
 
@@ -809,7 +809,7 @@ Phoneword uygulama gibi oluşturun:
             }
         }        
 
-  Değişiklikleri kaydetmek **MainActivity.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **MainActivity.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**, genişletin **özellikleri** klasörü ve çift **AndroidManifest.xml** dosyası:
 
@@ -819,10 +819,10 @@ Phoneword uygulama gibi oluşturun:
 
   ![](quickstart-images/xs/android-manifest-changed.png "CallPhone izni etkinleştir")
 
-  Değişiklikleri kaydetmek **AndroidManifest.xml** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **AndroidManifest.xml** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**, kaldırma **PhonewordPage** sınıfıyla **Phoneword** projesi. Proje oluşturuldu ve artık gerekli değildir, bu sayfayı otomatik olarak eklendi.
-1. Mac için Visual Studio'da seçin **Yapı > Yapı tüm** menü öğesi (veya basın **&#8984; + B**). Uygulamayı oluşturacaksınız ve Visual Studio Mac araç için bir başarı iletisi görünür.
+1. Mac için Visual Studio'da seçin **Yapı > Yapı tüm** menü öğesi (veya basın  **&#8984; + B**). Uygulamayı oluşturacaksınız ve Visual Studio Mac araç için bir başarı iletisi görünür.
 
   ![](quickstart-images/xs/build-successful.png "Yapı başarılı")
 

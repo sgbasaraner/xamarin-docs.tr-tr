@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/30/2018
-ms.openlocfilehash: 4728b50446033c02d33ccf8273f1dc2e50d66906
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8642a1c96ee525fbd6950616fbc6da0ad0e2337
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>İzlenecek yol - yerel bildirimler Xamarin.Android içinde kullanma
 
 _Bu kılavuzda yerel bildirimlerinin Xamarin.Android uygulamaları nasıl kullanılacağını gösterir. Oluşturma ve yerel bir bildirim yayımlama temellerini gösterir. Kullanıcı bildirim alanında bildirim tıkladığında, ikinci bir faaliyeti başlatır._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -26,16 +25,14 @@ Bu kılavuzda, kullanıcı bir etkinlikte düğmesine tıkladığında, bir bild
 
 Aşağıdaki ekran görüntüleri, bu uygulamanın bazı örnekler göstermektedir:
 
-[![Bildirim örnek ekran görüntüleri](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png)
+[![Bildirim örnek ekran görüntüleri](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
 
 
-<a name="walkthrough" />
 
 ## <a name="walkthrough"></a>İzlenecek yol
 
 Başlamak için kullanarak yeni bir Android projesi oluşturalım **Android uygulaması** şablonu. Şimdi bu projenin adı **LocalNotifications**. (Xamarin.Android projeleri oluşturma ile bilmiyorsanız bkz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).)
 
-<a name="add-v4-support" />
 
 ### <a name="add-the-androidsupportv4app-component"></a>Android.Support.V4.App Bileşen Ekle
 
@@ -53,7 +50,6 @@ Ayrıca, bu kullanıyoruz derleyici temizleyin vermiyoruz gerekir `Android.Suppo
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 ```
 
-<a name="define-id" />
 
 ### <a name="define-the-notification-id"></a>Bildirim kimliği tanımlayın
 
@@ -63,7 +59,6 @@ Biz bizim bildirim için benzersiz bir kimliği gerekir. Düzenleyelim **MainAct
 private static readonly int ButtonClickNotificationId = 1000;
 ```
 
-<a name="add-code" />
 
 ### <a name="add-code-to-generate-the-notification"></a>Bildirim oluşturmak için kodu ekleyin
 
@@ -117,7 +112,6 @@ private void ButtonOnClick (object sender, EventArgs eventArgs)
 button.Click += ButtonOnClick;
 ```
 
-<a name="second-activity" />
 
 ### <a name="create-a-second-activity"></a>İkinci bir etkinlik oluşturmak
 
@@ -174,36 +168,33 @@ Biz de kaynak düzeni oluşturmalısınız **SecondActivity**. Yeni bir ekleme *
 </LinearLayout>
 ```
 
-<a name="add-icon" />
 
 ### <a name="add-a-notification-icon"></a>Bir bildirim simgesi ekleme
 
 Son olarak, bildirim alanında bizim bildirim başlatıldığında görünecek küçük bir simge ekleyelim. Kopyalayabilirsiniz [bu simgeyi](local-notifications-walkthrough-images/ic-stat-button-click.png) projenize veya kendi özel simge oluşturun. Simge dosyası adı **ŞA\_stat\_düğmesini\_click.png** ve kopyalayın **kaynakları/drawable** klasör. Kullanmayı unutmayın **Ekle > varolan öğeyi...**  bu simge dosyası projenize eklemek için.
 
-<a name="run-app" />
 
 ### <a name="run-the-application"></a>Uygulamayı çalıştırın
 
 Şimdi oluşturun ve uygulamayı çalıştırın. Aşağıdaki ekran görüntüsüne benzer ilk etkinliği ile sunulan:
 
-[ ![İlk etkinlik ekran görüntüsü](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png)
+[![İlk etkinlik ekran görüntüsü](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
 
 Düğmesini gibi bildirim alanında görüntülenen bildirim küçük simgesi dikkat edin:
 
-[ ![Bildirim simgesi görüntülenir](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png)
+[![Bildirim simgesi görüntülenir](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
 
 Aşağıya doğru çekin ve bildirim çekmecesini kullanıma, bildirim görmeniz gerekir:
 
-[ ![Bildirim iletisi](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png)
+[![Bildirim iletisi](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
 Bildirime tıklayın, onu kaybolur ve bizim diğer etkinliklerin başlatılması gerekir &ndash; aşağıdaki ekran görüntüsüne benzer bir şey aranıyor:
 
-[ ![İkinci etkinlik ekran görüntüsü](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png)
+[![İkinci etkinlik ekran görüntüsü](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
 Tebrikler! Bu noktada, Android yerel bildirim Kılavuzu tamamladıktan ve başvurabilirsiniz bir çalışma örneği vardır. Bildirimleri daha fazla biz burada gösterilenden bu nedenle daha fazla bilgi istiyorsanız ele göz atın çok [Google belgelerine bildirimleri](http://developer.android.com/guide/topics/ui/notifiers/notifications.html) ve Android [bildirimleri](http://developer.android.com/design/patterns/notifications.html) Tasarım Kılavuzu.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

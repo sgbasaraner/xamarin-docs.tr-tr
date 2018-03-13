@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 21d5478c7e8317510a6f46b72a261582c9432301
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9918c7e54f443477006ad40931c24d814f7171ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="light-theme"></a>Açık tema
 
@@ -50,7 +50,7 @@ Bu izleyin [adım sorun giderme](~/xamarin-forms/user-interface/themes/index.md)
 
 Düğmeler ve etiketler bunları üreten biçimlendirme birlikte açık tema içinde bir örneği burada verilmiştir.
 
-[ ![](light-images/light-theme-sml.png "Düğmeler ve etiketler açık tema")](light-images/light-theme.png "düğmeler ve etiketler açık tema")
+[![](light-images/light-theme-sml.png "Düğmeler ve etiketler açık tema")](light-images/light-theme.png#lightbox "düğmeler ve etiketler açık tema")
 
 ```xaml
 <StackLayout Padding="20">

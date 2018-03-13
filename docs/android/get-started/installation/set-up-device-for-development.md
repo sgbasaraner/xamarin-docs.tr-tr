@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6327c00253036f5ede8bf1934f56e6d4bb8f0ecd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64036af82ea49ad4d758a89767ff0da02eef094f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="set-up-device-for-development"></a>Aygıtı geliştirme için ayarlama
 
@@ -28,13 +28,11 @@ _Bu makalede, bir Android cihaz kurulumu ve böylece cihaz çalıştırın ve Xa
 
 Bu adımların her biri aşağıdaki bölümlerde daha ayrıntılı olarak ele alınacaktır.
 
-<a name="EnableDebugging" />
 
 ## <a name="enable-debugging-on-the-device"></a>Cihaz üzerinde hata ayıklamayı etkinleştir
 
 Android uygulama test etmek için herhangi bir Android cihaz kullanmak da mümkündür. Ancak, aygıt hata ayıklama önce düzgün şekilde yapılandırılmalıdır oluşabilir. Adımlarını Android cihazda çalışan sürümüne bağlı olarak biraz farklılık gösterir.
 
-<a name="EnableDebuggingAndroid4" />
 
 ### <a name="android-40-to-android-41"></a>Android 4.0 Android 4.1 için
 
@@ -46,23 +44,21 @@ Android 4.1.x için Android 4.0.x için hata ayıklama, aşağıdaki adımları 
 
 Bu ekran gösterir **Geliştirici seçenekleri** Android 4.0.3 çalıştıran bir cihazda ekran:
 
-[![Geliştirici seçenekleri](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png)
+[![Geliştirici seçenekleri](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png#lightbox)
 
-<a name="EnableDebuggingAndroid42" />
 
 ### <a name="android-42-and-higher"></a>Android 4.2 ve üzeri
 
 Android 4.2 ve üzeri, başlangıç **Geliştirici seçenekleri** varsayılan olarak gizlidir. Kullanılabilir hale getirmek için şu adrese gidin **ayarlar > telefon hakkında**ve dokunun **yapı numarası** öğesi ortaya çıkarmak üzere yedi defa **Geliştirici seçenekleri** sekmesi:
 
-[![Yapı numarası öğesi](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png)
+[![Yapı numarası öğesi](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png#lightbox)
 
 Bir kez **Geliştirici seçenekleri** sekmesi altında kullanılabilir **ayarlar > Sistem**, geliştirici ayarları ortaya çıkarmak üzere açın:
 
-[![Geliştirici ayarları ekranı](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png)
+[![Geliştirici ayarları ekranı](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png#lightbox)
 
 Bu USB hata ayıklama gibi geliştirici seçenekleri etkinleştirip uyanık modu kalmak yerdir.
 
-<a name="USB_Debugging" />
 
 ## <a name="install-usb-drivers"></a>USB sürücüleri yükleyin
 
@@ -71,13 +67,12 @@ Bu adım, OS X için gerekli değildir. Bağlamanız yeterlidir cihaza bir USB k
 Bir Windows bilgisayarda bir Android cihazını USB ile bağlı algılar önce bazı ek sürücüler yüklemeniz gerekebilir.
 
 > [!NOTE]
-> **Not:** Google Nexus aygıtı ayarlama adımlarını bunlar ve bir başvuru olarak sağlanır. Belirli cihazınıza adımları farklılık gösterebilir, ancak benzer bir desen izler. Konusunda sorun yaşıyorsanız, cihazınız için Internet arayın.
+> Bunlar Google Nexus aygıtı ayarlama adımlarını ve bir başvuru olarak sağlanır. Belirli cihazınıza adımları farklılık gösterebilir, ancak benzer bir desen izler. Konusunda sorun yaşıyorsanız, cihazınız için Internet arayın.
 
 Çalıştırma **android.bat** uygulama **[Android SDK yükleme yolu] \tools** dizin. Varsayılan olarak, Xamarin.Android yükleyici, Android SDK'sı konumu bir Windows bilgisayarda aşağıdaki koyun:
 
     C:\Users\[username]\AppData\Local\Android\android-sdk
 
-<a name="Download_the_USB_Drivers" />
 
 ### <a name="download-the-usb-drivers"></a>USB sürücüleri yükleyin
 
@@ -86,7 +81,7 @@ Tüm Android cihazları kullanması gereken [ilgili üreticiye USB sürücüsün
 
 Yükleme **Google USB sürücüsü** Android SDK Manager'ı başlatıp genişleterek tarafından paket **ek özellikler** izleyin ekran görüntüsünde görüldüğü gibi klasör:
 
-[![Seçili Google USB sürücü paketi](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png)
+[![Seçili Google USB sürücü paketi](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png#lightbox)
 
 Denetleme **Google USB sürücüsü** ve'ı tıklatın **yükleme** düğmesi.
 Sürücü dosyaları şu konuma yüklenir:
@@ -98,7 +93,6 @@ Xamarin.Android yükleme için varsayılan yolu şöyledir:
     C:\Users\[username]\AppData\Local\Android\android-sdk\extras\google\usb_driver
 
 
-<a name="Installing_the_USB_Driver" />
 
 ### <a name="installing-the-usb-driver"></a>USB sürücüsü yükleme
 
@@ -122,7 +116,6 @@ Windows 7'de sürücüleri yüklemek için:
 
 8.  Tıklatın **sonraki** sürücüyü yüklemek için.
 
-<a name="Windows_8" />
 
 ### <a name="installing-unverified-drivers-in-windows-8"></a>Windows 8 doğrulanmamış sürücüleri yükleme
 
@@ -140,7 +133,6 @@ Windows'da doğrulanmamış bir sürücü yüklemek için ek adımlar gerekli
 4.  **Aygıt sürücülerini yüklemek** -yukarıda açıklandığı gibi aygıt sürücülerini yükleyin.
 
 
-<a name="ConnectDevice" />
 
 ## <a name="connect-the-device-to-the-computer"></a>Aygıt bilgisayara bağlanın
 
@@ -150,7 +142,6 @@ Aygıt bilgisayara bağlanmak için son adımdır bakın. Bunu yapmanın iki yol
 
 -   **WiFi** -Android cihazı bir USB kablosu WiFi kullanmadan bir bilgisayara bağlanmak mümkündür. Bu teknik biraz daha fazla çaba gerektiriyor, ancak hiçbir USB kablosu yok ya da cihaz için uzakta için USB kablosu olduğunda yararlı olabilir. WiFi bağlanma sonraki bölümde ele alınacaktır.
 
-<a name="Debug_over_WiFi" />
 
 ### <a name="connecting-over-wifi"></a>WiFi bağlanma
 
@@ -186,7 +177,6 @@ Bilgisayara bağlı aygıtları listelemek için ADB istemeniz mümkündür. Cih
 
     adb devices
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 

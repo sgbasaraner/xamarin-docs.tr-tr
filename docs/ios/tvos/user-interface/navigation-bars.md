@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3d5b4b0d3e6e9388906efa3bff2db0ea38fa8605
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9c6bbf27d4c8227d96e372e91e1ccf2c9e841ff8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-controllers"></a>Gezinti denetleyicileri ile çalışma
 
@@ -20,7 +20,7 @@ _Bu makalede tasarlama ve gezinti çubukları Xamarin.tvOS uygulama içinde çal
 
 Gezinti çubukları bir başlık ve isteğe bağlı gezinti çubuğu düğmelerinin görüntülenecek görünüm dön eklenebilir. Kullanıcı bir tablo görünümü, koleksiyon veya seçili öğenin ayrıntılarını gösteren bir alt Görünüm menüsüne gibi bir ana sayfa gezinen olduğunda genellikle bunlar kullanılır.
 
-[ ![](navigation-bars-images/navbar01.png "Örnek gezinti çubuğu")](navigation-bars-images/navbar01.png)
+[![](navigation-bars-images/navbar01.png "Örnek gezinti çubuğu")](navigation-bars-images/navbar01.png#lightbox)
 
 Ayrıca (Center'da görüntülenir) başlığı için bir veya daha fazla gezinti çubuğu düğmelerinin gezinti çubukları içerebilir (`UIBarButtonItem`) ve sol tarafında çubuğunun üzerinde.
 
@@ -42,16 +42,16 @@ Xamarin.tvOS uygulamasında Gezinti çubukları ile çalışmak için en kolay y
 1. İçinde **çözüm paneli**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **gezinti çubuğu** gelen **araç** ve ekranın üst kısımdaki görünümü bırakın: 
 
-    [ ![](navigation-bars-images/navbar02.png "Gezinti çubuğu")](navigation-bars-images/navbar02.png)
+    [![](navigation-bars-images/navbar02.png "Gezinti çubuğu")](navigation-bars-images/navbar02.png#lightbox)
 1. Çift **gezinti çubuğu** seçmeniz **Gezinti öğesi**. İçinde **pencere öğesi** sekmesinde **özellikleri paneli**, ayarlayabileceğiniz **başlık**: 
 
-    [ ![](navigation-bars-images/navbar03.png "Başlık ayarlama")](navigation-bars-images/navbar03.png)
+    [![](navigation-bars-images/navbar03.png "Başlık ayarlama")](navigation-bars-images/navbar03.png#lightbox)
 1. Ardından, bir veya daha fazla ekleyebilirsiniz **çubuğu düğmesini öğeleri** çubuğu ucunu için: 
 
-    [ ![](navigation-bars-images/navbar04.png "A çubuğu düğme öğesi")](navigation-bars-images/navbar04.png)
+    [![](navigation-bars-images/navbar04.png "A çubuğu düğme öğesi")](navigation-bars-images/navbar04.png#lightbox)
 1. Son olarak, kablo yukarı **çubuğu düğmesini öğeleri** eylemler için **olayları** sekmesinde **özellikleri Explorer**: 
 
-    [ ![](navigation-bars-images/navbar05.png "Bir düğme öğesi eylemi çubuğu")](navigation-bars-images/navbar05.png)
+    [![](navigation-bars-images/navbar05.png "Bir düğme öğesi eylemi çubuğu")](navigation-bars-images/navbar05.png#lightbox)
 1. Değişikliklerinizi kaydedin.
 
 
@@ -61,16 +61,16 @@ Xamarin.tvOS uygulamasında Gezinti çubukları ile çalışmak için en kolay y
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **gezinti çubuğu** gelen **araç** ve ekranın üst kısımdaki görünümü bırakın: 
 
-    [ ![](navigation-bars-images/navbar02-vs.png "Gezinti çubuğu")](navigation-bars-images/navbar02-vs.png)
+    [![](navigation-bars-images/navbar02-vs.png "Gezinti çubuğu")](navigation-bars-images/navbar02-vs.png#lightbox)
 1. Çift **gezinti çubuğu** seçmeniz **Gezinti öğesi**. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, ayarlayabileceğiniz **başlık**: 
 
-    [ ![](navigation-bars-images/navbar03-vs.png "Başlık ayarlama")](navigation-bars-images/navbar03-vs.png)
+    [![](navigation-bars-images/navbar03-vs.png "Başlık ayarlama")](navigation-bars-images/navbar03-vs.png#lightbox)
 1. Ardından, bir veya daha fazla ekleyebilirsiniz **çubuğu düğmesini öğeleri** çubuğu ucunu için: 
 
-    [ ![](navigation-bars-images/navbar04-vs.png "Bir düğme öğeleri çubuğu")](navigation-bars-images/navbar04-vs.png)
+    [![](navigation-bars-images/navbar04-vs.png "Bir düğme öğeleri çubuğu")](navigation-bars-images/navbar04-vs.png#lightbox)
 1. Son olarak, kablo yukarı **çubuğu düğmesini öğeleri** eylemler için **olayları** sekmesinde **özellikleri Explorer**: 
 
-    [ ![](navigation-bars-images/navbar05-vs.png "Bir düğme öğesi eylemleri çubuğu")](navigation-bars-images/navbar05-vs.png)
+    [![](navigation-bars-images/navbar05-vs.png "Bir düğme öğesi eylemleri çubuğu")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. Değişikliklerinizi kaydedin.
 
 
@@ -147,7 +147,7 @@ Bu makalede, tasarlama ve gezinti çubukları Xamarin.tvOS uygulama içinde çal
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

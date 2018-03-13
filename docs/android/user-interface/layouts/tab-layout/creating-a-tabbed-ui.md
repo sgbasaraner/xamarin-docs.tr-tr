@@ -8,25 +8,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 99a35705c408d16f5b4b0e71e53dd453ae377341
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2dd397e824ce7735be4421c3f258852de3f77ecb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---creating-a-tabbed-ui-with-tabhost"></a>İzlenecek yol - TabHost ile sekmeli kullanıcı Arabirimi oluşturma
 
 _Bu makalede TabHost API'yi kullanarak Xamarin.Android içinde sekmeli UI oluşturmada size yol gösterir._
 
 > [!NOTE]
-> **Not:** `TabHost` Google tarafından onaylanmaz eski bir API'dir. Geliştiriciler kullanarak sekmeli uygulamaları oluşturmak için kullanmaları [ActionBar](~/android/user-interface/controls/action-bar.md). `ActionBar` Tüm Android sürümünde kullanılabilir. Android 3.0 (API düzeyi 11) ilk sunulmuştur ve Android 2.2 (API düzeyi 8) ve Android 2.3 (API düzey 10) içinde geri alındığını [V7 uygulama Kitaplığı](http://developer.android.com/tools/support-library/features.html#v7-appcompat), Xamarin.Android kullanılabilir olduğu [Xamarin Android desteği Library - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) paket.
+> `TabHost` Google tarafından onaylanmaz eski bir API'dır. Geliştiriciler kullanarak sekmeli uygulamaları oluşturmak için kullanmaları [ActionBar](~/android/user-interface/controls/action-bar.md). `ActionBar` Tüm Android sürümünde kullanılabilir. Android 3.0 (API düzeyi 11) ilk sunulmuştur ve Android 2.2 (API düzeyi 8) ve Android 2.3 (API düzey 10) içinde geri alındığını [V7 uygulama Kitaplığı](http://developer.android.com/tools/support-library/features.html#v7-appcompat), Xamarin.Android kullanılabilir olduğu [Xamarin Android desteği Library - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) paket.
 
 Bu makalede kullanarak Xamarin.Android içinde sekmeli UI oluşturmada size yol gösterir `TabHost` API. Android tüm sürümlerinde kullanılabilir daha eski bir API'dir. Bu örnek, bir etkinlikte kapsüllenmiş her sekme mantığı ile üç sekme ile bir uygulama oluşturacaksınız.
 Aşağıdaki ekran görüntüsünde, oluşturacağız uygulama örneğidir:
 
 ![Birden fazla sekme uygulamayla örnek ekran görüntüsü](creating-a-tabbed-ui-images/image02.png)
 
-<a name="Creating_the_Application" />
 
 ## <a name="creating-the-application"></a>Uygulama oluşturma
 
@@ -61,7 +60,7 @@ Bu proje uygulamamız için başlangıç noktası olarak hizmet verir ve bazı g
 
 Aşağıdaki ekran görüntüsünde Xamarin Tasarımcısı'nda düzeni gösterilir:
 
-[![Xamarin Tasarımcısı'nda TabHost düzeninin ekran görüntüsü](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png)
+[![Xamarin Tasarımcısı'nda TabHost düzeninin ekran görüntüsü](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png#lightbox)
 
 TabHost içindeki iki alt görünüm olması gerekir: bir `TabWidget` ve `FrameLayout`. Konuma `TabWidget` ve `FrameLayout` dikey iç `TabHost`, `LinearLayout` kullanılır. İçeriğin nereye her sekmesi, boş olduğu gideceğini FrameLayout değil çünkü `TabHost` her etkinliğin çalışma zamanında otomatik olarak katıştırır. Sekmeli kullanıcı arabirimleri düzenini oluşturmak için geldiğinde incelenmelidir çeşitli kurallar şunlardır:
 
@@ -203,7 +202,6 @@ Uygulamayı çalıştırın. Uygulamanız bu kılavuzda, başında gösterilen e
 İşte bu kadar! Farklı bir uygulama bölümlerine kolay bir yol gidin kullanıcı sağlayan bir sekmeli uygulaması oluşturduk.
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -217,6 +215,6 @@ Bu bölümde sekmeli düzenleri ele alınan ve sekmeli uygulaması oluşturma i�
 - [TabHost](https://developer.xamarin.com/api/type/Android.Widget.TabHost/)
 - [TabWidget](https://developer.xamarin.com/api/type/Android.Widget.TabWidget/)
 - [TabActivity](https://developer.xamarin.com/api/type/Android.App.TabActivity/)
-- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [Eylem Çubuğu](http://developer.android.com/guide/topics/ui/actionbar.html)
 - [Android desteği kitaplığı v7 uygulama NuGet paketi](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 - [v7 uygulama kitaplığı](http://developer.android.com/tools/support-library/features.html#v7-appcompat)

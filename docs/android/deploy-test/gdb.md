@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: ee98e19ce59b8a61040941d9851b8fbf965c3b17
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55d72a49f90095a33577279d018e1696dda8fc42
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="gdb"></a>GDB
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 02/27/2018
 Xamarin.Android 4.10 sunulan kullanarak kısmi desteği `gdb` kullanarak `_Gdb` MSBuild hedef. 
 
 > [!NOTE]
-> **Not:** `gdb` destek Android NDK yüklenmesini gerektiriyor.
+> `gdb` Destek Android NDK yüklü olmasını gerektirir.
 
 Kullanmak için üç yolu vardır `gdb`:
 
@@ -59,7 +59,7 @@ $ /Library/Frameworks/Mono.framework/Commands/xbuild /t:_Gdb *.csproj
 
 
 > [!NOTE]
-> **Not:** içeriğini `gdb-symbols` dizin dağıttığınız Android hedef bağlıdır ve otomatik olarak olmaz yerine hedef değiştirmeniz gerekir. (Bu hatayı göz önünde bulundurun.) Android hedef cihazlar değiştirirseniz, bu dizin el ile silmeniz gerekir.
+> İçeriğini `gdb-symbols` dizin dağıttığınız Android hedef bağlıdır ve otomatik olarak olmaz yerine hedef değiştirmeniz gerekir. (Bu hatayı göz önünde bulundurun.) Android hedef cihazlar değiştirirseniz, bu dizin el ile silmeniz gerekir.
 
 Son olarak, oluşturulan kopyalama `gdb` komut ve Kabuğu'nda yürütün:
 

@@ -3,14 +3,15 @@ title: "Bölüm 18 özeti. MVVM"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: fa62ff952a4a8916a0c9603157d14948119d243d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cadab2432d0b6c29ead9cde1f4220bb64e1e1886
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>Bölüm 18 özeti. MVVM
 
@@ -50,7 +51,7 @@ Tarafından gösterildiği gibi bir ViewModel özelliklerinde daha etkileşimli 
 
 [ `ColorViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) İçinde [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) kitaplığı RGB ve HSL renk modelleri tümleştirir. Örneklerde gösterildiği [ **HslSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders) örnek:
 
-[![Üçlü ekran görüntüsü j](images/ch18fg08-small.png "HSL renk modeli")](images/ch18fg08-large.png "HSL renk modeli")
+[![Üçlü ekran görüntüsü j](images/ch18fg08-small.png "HSL renk modeli")](images/ch18fg08-large.png#lightbox "HSL renk modeli")
 
 ### <a name="streamlining-the-viewmodel"></a>ViewModel hızlandırma
 

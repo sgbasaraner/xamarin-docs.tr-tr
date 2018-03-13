@@ -7,18 +7,17 @@ ms.assetid: CEE90F8A-164B-4155-813A-7537A665A7E7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/14/2017
-ms.openlocfilehash: 2048056415e0969e13e305b1dbba8bdb7ffabd30
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7b1314c12bf97a2fa21911c747e3066858116a5f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="binding-an-eclipse-library-project"></a>Eclipse kitaplığı projesinde bağlama
 
 _Bu kılavuzda, Eclipse Android kitaplığı projesinde bağlamak için Xamarin.Android proje şablonları kullanımı açıklanmaktadır._
 
-<a name=overview />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -28,36 +27,34 @@ Bu kılavuz, bir Android kitaplığıdır projesi oluşturmak nasıl örnekler s
 Bir APK derlenmemiş ve, kendi olmayan, Android kitaplık projeleri normal Android projelerden farklı bir cihaza dağıtılabilir. Bunun yerine, bir Android kitaplığıdır proje bir Android uygulaması projesi tarafından başvurulan amaçlanmıştır. Bir Android uygulaması projesi yapılandırıldığında, Android Kitaplığı projesini ilk derlenir. Android uygulama projesi sonra derlenmiş bir Android kitaplığıdır projeye absorbed ve dağıtım için APK içine kaynakları ve kod içerir. Bu farklılık nedeniyle, bir Android kitaplığıdır proje için bir bağlama oluşturma bir Java için bir bağlama oluşturmaktan daha biraz farklıdır. JAR veya. AAR dosyası.
 
 
-<a name="Walkthrough" />
 
 ## <a name="walkthrough"></a>İzlenecek yol
 
 Bir Android kitaplığıdır projesi Xamarin.Android Java bağlama bir projede bu Eclipse Android kitaplığı projesi oluşturmak için ilk gerekli kullanmaktır. Aşağıdaki ekran görüntüsünde derleme sonra bir Android kitaplığıdır proje örneği gösterilmektedir: 
 
-[ ![Eclipse örnek kitaplığı projesi](binding-a-library-project-images/build-lib-in-eclipse.png)](binding-a-library-project-images/build-lib-in-eclipse.png)
+[![Eclipse örnek kitaplığı projesi](binding-a-library-project-images/build-lib-in-eclipse.png)](binding-a-library-project-images/build-lib-in-eclipse.png#lightbox)
 
 Geçici bir Android kitaplığıdır projeden kaynak kodu derlendikten dikkat edin. Adlı JAR dosyasını **android mapviewballoons.jar**, ve kaynakları kopyalandığını **res/bin/crunch** klasör. 
 
 Android kitaplığı projesi Eclipse'te derlendikten sonra onu sonra Java Xamarin.Android bağlama project kullanarak bağlanabilir. İlk bir. ZIP dosyası içeren oluşturulmalıdır **bin** ve **res** klasörleri Android kitaplık projesinin. Araya giren kaldırmak önemlidir **crunch** alt kaynakları bulunan böylece **bin/res**. Aşağıdaki ekran içeriğini bir tür gösterir. ZIP dosyası: 
 
-[ ![Android kitaplığının içeriğini .zip proje](binding-a-library-project-images/contents-of-zip-file.png)](binding-a-library-project-images/contents-of-zip-file.png)
+[![Android kitaplığının içeriğini .zip proje](binding-a-library-project-images/contents-of-zip-file.png)](binding-a-library-project-images/contents-of-zip-file.png#lightbox)
 
 Bu. ZIP dosyası, ardından aşağıdaki ekran görüntüsünde gösterildiği gibi Java Xamarin.Android bağlama projeye eklenir:
 
-[ ![Zip Java bağlama projesine eklendi](binding-a-library-project-images/zip-in-binding-project.png)](binding-a-library-project-images/zip-in-binding-project.png)
+[![Zip Java bağlama projesine eklendi](binding-a-library-project-images/zip-in-binding-project.png)](binding-a-library-project-images/zip-in-binding-project.png#lightbox)
 
 Dikkat yapı eylemi. ZIP dosyası otomatik olarak ayarlanmış **LibraryProjectZip**.
 
 Varsa. Android kitaplığı proje için gerekli olan JAR dosyalarını, bunlar eklenmesi için **Jar'lar** Java bağlama kitaplığı proje klasöründe ve **yapı eylemi** kümesine **ReferenceJar**. Bunun bir örneğini aşağıdaki ekran görüntüsünde görebilirsiniz: 
 
-[ ![ReferenceJar için ayarlanmış bir eylem oluşturun](binding-a-library-project-images/set-to-referencejar.png)](binding-a-library-project-images/set-to-referencejar.png)
+[![ReferenceJar için ayarlanmış bir eylem oluşturun](binding-a-library-project-images/set-to-referencejar.png)](binding-a-library-project-images/set-to-referencejar.png#lightbox)
 
 Bu adımları tamamlandıktan sonra önceki üzerinde bu belgede açıklanan Java Xamarin.Android bağlama proje kullanılabilir.
 
 > [!NOTE]
-> **Not**: diğer IDE Android Kitaplığı projelerinde derleme şu anda desteklenmiyor. Diğer IDE aynı dizin yapısını veya dosyalar oluşturamaz **bin** klasörü Eclipse olarak. 
+> Diğer IDE Android Kitaplığı projelerinde derleme şu anda desteklenmiyor. Diğer IDE aynı dizin yapısını veya dosyalar oluşturamaz **bin** klasörü Eclipse olarak. 
 
-<a name="Summary" /> 
 
 ## <a name="summary"></a>Özet
 

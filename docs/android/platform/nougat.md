@@ -3,16 +3,16 @@ title: "Nougat özellikleri"
 description: "Xamarin.Android uygulamaları için Android Nougat geliştirmek için kullanmaya başlamak nasıl."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
+ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 60879273b5a736d4834bd6ba1685d5685fd05e67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c666b7d5b680eab3c990950569868eacdb6f30af
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="nougat-features"></a>Nougat özellikleri
 
@@ -20,13 +20,12 @@ _Xamarin.Android uygulamaları için Android Nougat geliştirmek için kullanmay
 
 Bu makalede Android Nougat içinde sunulan özellikler ana hattı Android Nougat geliştirme için Xamarin.Android için nasıl hazırlanılacağını açıklamaktadır ve Android Nougat özelliklerinin nasıl kullanılacağını gösteren örnek uygulamalar için bağlantılar sağlar sağlar Xamarin.Android uygulamaları.
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
 [Android Nougat](https://developer.android.com/about/versions/nougat/android-7.0.html) Google izleme Android 6.0 Marshmallow için değil. Xamarin.Android için destek sağlar **Android 7.x bağlamaları** Xamarin Android 7.0 ve üzeri. Android Nougat aşağıda açıklanan Nougat özellikleri için birçok yeni API'leri ekler; Xamarin.Android 7.0 kullandığınızda bu API'leri Xamarin.Android uygulamaları için kullanılabilir.
 
-[![Android tabletleri ve telefonları Android Nougat çalıştıran kahramanı görüntülerini](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png)
+[![Android tabletleri ve telefonları Android Nougat çalıştıran kahramanı görüntülerini](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
 
 Android 7.x API'ler hakkında daha fazla bilgi için bkz: [geliştiriciler için Android 7.1](http://developer.android.com/preview/api-overview.html).
 Xamarin.Android 7.0 ile ilgili bilinen sorunlar listesi için lütfen bkz [sürüm notları](https://developer.xamarin.com/releases/android/xamarin.android_7/xamarin.android_7.0/).
@@ -44,8 +43,6 @@ Ayrıca, diğer birçok iyileştirme Android Nougat getiren yeni bir ağ güvenl
 Bu makalede, yeni özellikleri denemek ve yeni Android Nougat platformu hedeflemek için geçiş ya da özellik iş planlamak için Android Nougat uygulamalarla oluşturmaya başlamak açıklanmaktadır.
 
 
-<a name="requirements" />
-
 ## <a name="requirements"></a>Gereksinimler
 
 Aşağıdaki Xamarin tabanlı uygulamalarda yeni Android Nougat özellikleri kullanmak için gereklidir:
@@ -59,12 +56,11 @@ Aşağıdaki Xamarin tabanlı uygulamalarda yeni Android Nougat özellikleri kul
 -   **Java Geliştirme Seti** &ndash; Xamarin Android 7.0 geliştirme gerektirir [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) veya API düzeyi 24 geliştiriyorsanız sonraki ya da daha büyük (JDK 8 de destekler API düzeylerini 24'den önceki). Özel denetimler ya da formları genele gitmeyi kullanıyorsanız JDK 8'in 64 bit sürümü gereklidir.
 
 > [!IMPORTANT]
-> **Not:** Xamarin.Android JDK 9 desteği yok.
+> Xamarin.Android JDK 9 desteklemez.
 
 Uygulamaları Xamarin C6SR4 veya sonrası ile Android Nougat güvenilir bir şekilde çalışması için yeniden oluşturulması gerekir olduğunu unutmayın. Android Nougat yalnızca bağlayabilirsiniz çünkü [NDK tarafından sağlanan yerel kitaplıkları](https://developer.android.com/about/versions/nougat/android-7.0-changes.html), kitaplıklar gibi kullanarak mevcut uygulamaları **Mono.Data.Sqlite.dll** düzgün değillerse Android Nougat üzerinde çalışırken çökebilir yeniden.
 
 
-<a name="gettingstarted" />
 
 ## <a name="getting-started"></a>Başlarken
 
@@ -80,14 +76,12 @@ Android Nougat Xamarin.Android ile kullanmaya başlamak için indirin ve Android
 
 Bu adımların her biri aşağıdaki bölümlerde açıklanmıştır:
 
-<a name="updates" />
 
 ### <a name="install-xamarin-updates"></a>Xamarin güncelleştirmeleri yükle
 
 Android Nougat Xamarin desteği eklemek için Visual Studio veya Visual Studio güncelleştirmeleri kanalda Mac için kararlı kanala değiştirmek ve en son güncelleştirmeleri uygulayın. Yalnızca alfa veya Beta kanalda şu anda kullanılabilen özellikleri de gerekiyorsa (alfa ve Beta kanalları ayrıca Android 7.x için desteği) alfa veya Beta kanal geçiş yapabilirsiniz. Güncelleştirmeler (sürümler) kanal değiştirme hakkında daha fazla bilgi için bkz: [güncelleştirmeleri kanal değiştirme](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/).
 
 
-<a name="sdk" />
 
 ### <a name="install-the-android-sdk"></a>Android SDK'sını yükleyin
 
@@ -97,22 +91,21 @@ Xamarin Android 7.0 ile bir proje oluşturmak için önce Android SDK Yöneticis
 
 2.  Yükleme **Android 7.0 (API 24)** ya da daha sonra:
 
-    [![Android 7.0 paketleri Android SDK Yöneticisi'nde seçme](nougat-images/preview-packages.png)](nougat-images/preview-packages.png)
+    [![Android 7.0 paketleri Android SDK Yöneticisi'nde seçme](nougat-images/preview-packages.png)](nougat-images/preview-packages.png#lightbox)
 
 3.  En son Android SDK Araçları'nı yükleyin:
 
-    [![Android SDK Yöneticisi'nde en yeni Android SDK Araçları seçme](nougat-images/preview-tools.png)](nougat-images/preview-tools.png)
+    [![Android SDK Yöneticisi'nde en yeni Android SDK Araçları seçme](nougat-images/preview-tools.png)](nougat-images/preview-tools.png#lightbox)
 
     Android SDK Araçları Düzeltme 25.2.2 veya üzeri, Android SDK platformu araçları 24.0.3 veya üstü ve Android SDK derleme araçlarını 24.0.2 yüklemeniz gerekir ya da daha sonra.
 
 4.  Doğrulayın **Java Geliştirme Seti konumu** için JDK 1.8 yapılandırılır:
 
-    [![Araçlar Seçenekler altında JDK 8 yolu yapılandırma](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png)
+    [![Araçlar Seçenekler altında JDK 8 yolu yapılandırma](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png#lightbox)
 
     Visual Studio'da bu ayarı görüntülemek için tıklatın **Araçlar > Seçenekler > Xamarin > Android ayarları**. Mac için Visual Studio'da sırasıyla **Tercihler > projeleri > SDK konumları > Android**.
 
 
-<a name="xaproject" />
 
 ### <a name="start-a-xamarinandroid-project"></a>Start a Xamarin.Android Project
 
@@ -122,10 +115,9 @@ Bir Android projesi oluşturduğunuzda, hedef Android 7.0 veya üzeri sürüm ay
 
 
 > [!NOTE]
-> **Not:** şu anda ayarlamalısınız **Minimum Android sürümü** için **Android 7.0 (API 24 - Nougat)** Android Nougat aygıtları veya Öykünücüler uygulamanızı dağıtmak için.
+> Şu anda ayarlamalısınız **Minimum Android sürümü** için **Android 7.0 (API 24 - Nougat)** Android Nougat aygıtları veya Öykünücüler uygulamanızı dağıtmak için.
 
 
-<a name="emudev" />
 
 ### <a name="configure-an-emulator-or-device"></a>Bir öykünücü veya cihaz yapılandırma
 
@@ -137,28 +129,26 @@ Bir öykünücü kullanıyorsanız, Android AVD Yöneticisi'ni başlatın ve aş
 
 Örneğin, bu sanal aygıt Nexus 6 benzetmek için yapılandırılır:
 
-[![Nexus 6 cihaz, Android 7.0 hedef ve Intel Atom x86 CPU/ABI kullanarak AVD yapılandırma](nougat-images/android-n-avd.png)](nougat-images/android-n-avd.png)
+[![Nexus 6 cihaz, Android 7.0 hedef ve Intel Atom x86 CPU/ABI kullanarak AVD yapılandırma](nougat-images/android-n-avd.png)](nougat-images/android-n-avd.png#lightbox)
 
 Bir Nexus X 5, 6 veya 9 gibi bir fiziksel cihaz kullanıyorsanız, ya da Cihazınızı otomatik hava (OTA) Güncelleştirmeler üzerinden güncelleştirebilir veya bir sistem görüntüsünü karşıdan yüklemek ve Cihazınızı doğrudan flash. Android Nougat Cihazınızı el ile güncelleştirme hakkında daha fazla bilgi için bkz: [OTA görüntüleri Nexus cihazlar için](https://developers.google.com/android/nexus/ota).
 
 Not nexus 5 cihazlar Android Nougat tarafından desteklenmez.
 
 
-<a name="newfeatures" />
 
 ## <a name="new-features"></a>Yeni Özellikler
 
 Android Nougat çeşitli yeni özellikler ve çok pencere desteği, bildirimler geliştirmeleri ve veri koruyucu gibi özellikler sunar. Aşağıdaki bölümlerde bu özellikler vurgulayın ve bağlantıları yardımcı olmak için bunları uygulamanızda kullanmaya başlama sağlayın.
 
 
-<a name="multiwindow" />
 
 ### <a name="multi-window-mode"></a>Çok pencere modu
 
 Çok pencere modu, kullanıcıların iki uygulamalar aynı anda tam görevli desteğiyle açmak mümkün kılar. Bu uygulamalar, yan yana (yatay) veya bir yukarıda--diğer (dikey) bölünmüş ekran modunda çalıştırabilirsiniz.
 Kullanıcılar, bunları yeniden boyutlandırmak için uygulamalar arasında bir ayırıcı sürükleyebilirsiniz ve kesme ve içeriği uygulamalar arasında. İki uygulama çok pencere modunda sunulduğunda seçili etkinliği seçili etkinlik duraklatıldı ancak hala görünür durumdayken çalışmaya devam eder. Çok pencere modu Android etkinlik yaşam döngüsü değiştirmez.
 
-[![Örnek uygulamalar dikey ve yatay çok pencere modunda çalışıyor](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png)
+[![Örnek uygulamalar dikey ve yatay çok pencere modunda çalışıyor](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
 Xamarin.Android uygulamanıza etkinliklerini çok pencere modu'ı nasıl desteklediğini yapılandırabilirsiniz. Örneğin, en küçük boyut ve varsayılan genişliği ve yüksekliği, uygulamanızın kümesini çok penceresi modunda öznitelikleri yapılandırabilirsiniz. Kullanabileceğiniz yeni `Activity.IsInMultiWindowMode` etkinliklerinizi çok pencere modunda olup olmadığını belirlemek için özellik. Örneğin:
 
@@ -175,20 +165,18 @@ if (!IsInMultiWindowMode) {
 Çok pencere modu hakkında daha fazla bilgi için bkz: [çok pencere desteği](https://developer.android.com/guide/topics/ui/multi-window.html).
 
 
-<a name="enhanced_notifications" />
 
 ### <a name="enhanced-notifications"></a>Gelişmiş bildirimleri
 
 Android Nougat yeniden tasarlanan bildirim sistemi tanıtır. Kullanıcılar için hızlı bir şekilde yanıt gelen metin iletileri doğrudan bildirim kullanıcı Arabirimi için bildirimlere mümkün kılan yeni bir doğrudan yanıt özellik sunar. Android 7.0 ile birden fazla ileti alındığında iletiler birlikte tek bir grup olarak gönderilebilir bildirim başlatılıyor. Ayrıca, geliştiricilerin görünümleri, sistem düzenlemelerinin Bildirimlerde yararlanır ve bildirimleri oluştururken yeni bildirim şablonları yararlanmak bildirim özelleştirebilirsiniz.
 
-<a name="direct_reply" />
 
 #### <a name="direct-reply"></a>Doğrudan Yanıtla
 
 Bir kullanıcı gelen ileti için bir bildirim aldığında, Android Nougat, içinde bildirim iletisini yanıtlama (yerine bir yanıt göndermek üzere ileti uygulamasını açın) mümkün kılar.
 Bu satır içi yanıt özellik, kullanıcıların bir SMS veya metin iletisi bildirim arabiriminden doğrudan hızla yanıt mümkün kılar:
 
-[![Bir satır içi doğrudan yanıt alan içeren bir bildirim ekran görüntüsü](nougat-images/notifications-inline-reply-sml.png)](nougat-images/notifications-inline-reply.png)
+[![Bir satır içi doğrudan yanıt alan içeren bir bildirim ekran görüntüsü](nougat-images/notifications-inline-reply-sml.png)](nougat-images/notifications-inline-reply.png#lightbox)
 
 Uygulamanızda bu özelliği desteklemek için eklemelisiniz *satır içi yanıt eylemlerini* uygulamanıza bir [RemoteInput](https://developer.xamarin.com/api/type/Android.App.RemoteInput/) böylece kullanıcıların doğrudan bildirimden kullanıcı Arabirimi metin yanıt nesnesi.
 Örneğin, aşağıdaki derlemeleri kod bir `RemoteInput` metin girişi almak için bekleyen bir yanıt eylemini hedefini oluşturur ve bir uzak giriş etkin eylem oluşturur:
@@ -224,25 +212,22 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
 
 [İleti gönderme hizmeti](https://developer.xamarin.com/samples/monodroid/android-n/MessagingService/) örnek uygulamasını bildirimleri ile genişletmek nasıl gösteren C# kodu içeren bir `RemoteInput` nesnesi. Satır içi yanıt ekleme hakkında daha fazla bilgi için eylemleri uygulamanıza Android 7.0 veya üzeri, Android görmek [bildirimlerini yanıtlama](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct) konu.
 
-<a name="bundled_notifications" />
 
 #### <a name="bundled-notifications"></a>İle birlikte gelen bildirimleri
 
 Android Nougat bildirim iletileri (örneğin,. ileti konusuna göre) gruplamak ve her ayrı ileti yerine Grup görüntüleyin.
 Bu *bildirimleri paketlenmiş* özelliği mümkün kılar kapatmak veya bir eylem bildirimleri grubunun arşiv kullanıcı. Kullanıcı, her bir bildirim ayrıntılı olarak görüntülemek için bildirimler paket genişletmek için aşağı kaydırabilirsiniz:
 
-[![Ekran örnek ile birlikte gelen bildirimler](nougat-images/bundled-notifications-sml.png)](nougat-images/bundled-notifications.png)
+[![Ekran örnek ile birlikte gelen bildirimler](nougat-images/bundled-notifications-sml.png)](nougat-images/bundled-notifications.png#lightbox)
 
 İle birlikte gelen bildirimlerini desteklemek için uygulamanızı kullanabilirsiniz [Builder.SetGroup](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetGroup/p/System.String/) benzer bildirimleri gruplanacağını yöntemi. Android Android N ile birlikte gelen bildirim grupları hakkında daha fazla bilgi için bkz: [paketleme bildirimleri](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#bundle) konu.
 
-<a name="custom_views" />
 
 #### <a name="custom-views"></a>Özel görünümler
 
 Android Nougat sistem bildirim üstbilgileri, Eylemler ve Genişletilebilir düzenleri özel bildirim görünümleri oluşturmak mümkün hale getirir. Android Android Nougat içindeki özel bildirim görünümler hakkında daha fazla bilgi için bkz: [bildirim geliştirmeleri](https://developer.android.com/about/versions/nougat/android-7.0.html#notification_enhancements) konu.
 
 
-<a name="datasaver" />
 
 ### <a name="data-saver"></a>Veri koruyucu
 
@@ -251,7 +236,6 @@ Android Nougat ile başlayarak, kullanıcıların yeni bir etkinleştirebilirsin
 Android Android Nougat yeni veri koruyucu özelliği hakkında daha fazla bilgi için bkz: [ağ veri kullanımı en iyi duruma getirme](https://developer.android.com/training/basics/network-ops/data-saver.html) konu.
 
 
-<a name="app_shortcuts" />
 
 ### <a name="app-shortcuts"></a>Uygulama kısayolları
 
@@ -259,12 +243,11 @@ Android 7.1 sunulan bir *uygulama kısayolları* kullanıcılar için hızlı ba
 Kısayol menüsünü etkinleştirmek için kullanıcının uzun-uygulama simgesini ikinci bir veya daha fazla bilgi için basarsa &ndash; ile hızlı titreşimi menüsü görüntülenir.
 Tuşuna serbest menüsünün kalmasına neden olur:
 
-[![İleti bir uygulama için bir uygulama kısayol menüsünün örnek ekran](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png)
+[![İleti bir uygulama için bir uygulama kısayol menüsünün örnek ekran](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png#lightbox)
 
 Bu özellik kullanılabilir yalnızca API düzeyi 25 veya daha yüksek olur.
 Android Android 7.1 yeni uygulama kısayolları özelliği hakkında daha fazla bilgi için bkz: [uygulama kısayolları](https://developer.android.com/guide/topics/ui/shortcuts.html) konu.
 
-<a name="sample_code" />
 
 ### <a name="sample-code"></a>Örnek kod
 
@@ -280,7 +263,6 @@ Android Nougat özelliklerden yararlanmak nasıl göstermek birkaç Xamarin.Andr
 
 -   [Önyükleme doğrudan](https://developer.xamarin.com/samples/monodroid/android-n/DirectBoot/) cihaz her ikisi de önce ve sonra tüm kullanıcı credentials(PIN/Pattern/Password) girilir önyüklenirken, her zaman kullanılabilir olan aygıt şifrelenmiş bir depoda verileri depolamak nasıl gösterir.
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

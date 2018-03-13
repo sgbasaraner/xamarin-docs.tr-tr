@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 73b0a3292d7b1681b4086e8366e8b813194969a9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8901bb57ace4f05e8c26fdc43dfe8c476927903a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alerts"></a>Uyarılar
 
@@ -22,7 +22,7 @@ C# ve .NET Xamarin.Mac uygulamada çalışırken erişimine sahip aynı içinde 
 
 Bir uyarı (hata gibi) ciddi bir sorun oluştuğunda görüntülenen iletişim özel türüdür ya da (örneğin, bir dosyayı silmek hazırlanıyor) bir uyarı olarak. Bir uyarı iletişim kutusu olduğundan kapatılabilmesi için de kullanıcı yanıtı gerektirir.
 
-[ ![](alert-images/alert06.png "Bir örnek uyarı")](alert-images/alert06.png)
+[![](alert-images/alert06.png "Bir örnek uyarı")](alert-images/alert06.png#lightbox)
 
 Bu makalede, biz Xamarin.Mac uygulamada uyarıları ile çalışmanın temelleri ele alacağız. 
 
@@ -60,7 +60,7 @@ alert.RunModal ();
 
 Yukarıdaki kod uyarı simgesi, bir başlığı, bir uyarı iletisi ve tek bir koyulan uygulamaları simgesiyle bir uyarı görüntüler **Tamam** düğmesi:
 
-[ ![](alert-images/alert01.png "Bir uyarı Tamam düğmesi")](alert-images/alert01.png)
+[![](alert-images/alert01.png "Bir uyarı Tamam düğmesi")](alert-images/alert01.png#lightbox)
 
 Apple bir uyarı özelleştirmek için kullanılan birkaç özellikleri sağlar:
 
@@ -92,7 +92,7 @@ alert.RunModal ();
 ```
 Bu kodu çalıştırırsanız, aşağıdaki görüntülenir:
 
-[ ![](alert-images/alert02.png "Basit bir uyarı")](alert-images/alert02.png)
+[![](alert-images/alert02.png "Basit bir uyarı")](alert-images/alert02.png#lightbox)
 
 Aşağıdaki kod, bir sayfa olarak aynı uyarının görüntüler:
 
@@ -107,7 +107,7 @@ alert.BeginSheet (this);
 
 Bu kodu çalıştırırsanız, aşağıdaki görüntülenir:
 
-[ ![](alert-images/alert03.png "Bir sayfa olarak görüntülenen bir uyarı")](alert-images/alert03.png)
+[![](alert-images/alert03.png "Bir sayfa olarak görüntülenen bir uyarı")](alert-images/alert03.png#lightbox)
 
 
 <a name="Working_with_Alert_Buttons" />
@@ -136,7 +136,7 @@ Eklenen ilk düğme olacaktır _varsayılan düğme_ , etkinleştirilecek kullan
 
 Size kodu çalıştırırsanız, aşağıdaki görüntülenir:
 
-[ ![](alert-images/alert04.png "Üç düğme seçenekleri olan bir uyarı")](alert-images/alert04.png)
+[![](alert-images/alert04.png "Üç düğme seçenekleri olan bir uyarı")](alert-images/alert04.png#lightbox)
 
 Bir sayfa olarak aynı uyarının kod aşağıdaki gibidir:
 
@@ -155,7 +155,7 @@ alert.BeginSheetForResponse (this, (result) => {
 ```
 Bu kodu çalıştırırsanız, aşağıdaki görüntülenir:
 
-[ ![](alert-images/alert05.png "Bir sayfa olarak görüntülenen üç düğme Uyarısı")](alert-images/alert05.png)
+[![](alert-images/alert05.png "Bir sayfa olarak görüntülenen üç düğme Uyarısı")](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
 > Hiçbir zaman bir uyarı üçten fazla düğmeleri eklemeniz gerekir.
@@ -184,7 +184,7 @@ Varsa değerini `alert.SuppressionButton.State` olan `NSCellStateValue.On`, kull
 
 Kodu çalıştırırsanız, aşağıdaki görüntülenir:
 
-[ ![](alert-images/alert06.png "Bir uyarı gösterme düğmesi")](alert-images/alert06.png)
+[![](alert-images/alert06.png "Bir uyarı gösterme düğmesi")](alert-images/alert06.png#lightbox)
 
 Bir sayfa olarak aynı uyarının kod aşağıdaki gibidir:
 
@@ -205,7 +205,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Bu kodu çalıştırırsanız, aşağıdaki görüntülenir:
 
-[ ![](alert-images/alert07.png "Bir uyarı gösterme düğmesi bir sayfa olarak görüntülemek")](alert-images/alert07.png)
+[![](alert-images/alert07.png "Bir uyarı gösterme düğmesi bir sayfa olarak görüntülemek")](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView" />
 
@@ -235,7 +235,7 @@ Burada anahtar satırlar `var input = new NSTextField (new CGRect (0, 0, 300, 20
 
 Size kodu çalıştırırsanız, aşağıdaki görüntülenir:
 
-[ ![](alert-images/alert08.png "Size kodu çalıştırırsanız, aşağıdaki görüntülenir")](alert-images/alert08.png)
+[![](alert-images/alert08.png "Size kodu çalıştırırsanız, aşağıdaki görüntülenir")](alert-images/alert08.png#lightbox)
 
 Bir sayfa olarak aynı uyarı şöyledir:
 
@@ -260,7 +260,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Biz bu kodu çalıştırmak, aşağıdaki görüntülenir:
 
-[ ![](alert-images/alert09.png "Özel bir görünümü olan bir uyarı")](alert-images/alert09.png)
+[![](alert-images/alert09.png "Özel bir görünümü olan bir uyarı")](alert-images/alert09.png#lightbox)
 
 <a name="Summary" />
 
@@ -271,7 +271,7 @@ Bu makalede bir Xamarin.Mac uygulamasında uyarılarla çalışma ayrıntılı b
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacWindows (örnek)](https://developer.xamarin.com/samples/mac/MacWindows/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Windows ile birlikte çalışma](~/mac/user-interface/window.md)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Windows giriş](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

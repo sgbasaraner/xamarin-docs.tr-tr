@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 5e9874fba52b576494be5ac42ff13fdd0be4d9e7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d340c3da220deacdb5606547a084e55d80c817e7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debug-on-device"></a>Cihazda hata ayıklama
 
@@ -22,7 +22,6 @@ _Bu makalede, bir Xamarin.Android uygulaması fiziksel Android cihazda hata ayı
 
 Mac için Visual Studio veya Visual Studio kullanarak Android cihazında bir Xamarin.Android hata ayıklamak mümkündür. Hata ayıklama bir aygıtta oluşabilmesi için öncelikle olmalıdır [geliştirme için Kurulum](~/android/get-started/installation/set-up-device-for-development.md) ve PC veya Mac için bağlı
 
-<a name="Debug_Application" />
 
 ## <a name="debug-application"></a>Uygulamanızın hatalarını ayıklama
 
@@ -55,7 +54,6 @@ Cihaz seçildikten sonra Xamarin.Android cihaza bağlanın, uygulamayı dağıt�
 -----
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -64,5 +62,5 @@ Bu belgede, bir Xamarin.Android uygulaması hata ayıklama kesme noktası ayarla
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Aygıtı geliştirme için ayarlama](~/android/get-started/installation/set-up-device-for-development.md)
+- [Cihazı Dağıtım için Ayarlama](~/android/get-started/installation/set-up-device-for-development.md)
 - [Debuggable özniteliğini ayarlama](~/android/deploy-test/debuggable-attribute.md)

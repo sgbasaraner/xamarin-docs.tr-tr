@@ -3,16 +3,16 @@ title: "Android, uygulama olarak bağlama"
 description: "Bu kılavuz, app-bağlama, Web sitelerinde URL'lere yanıtlamak mobil uygulamalar sağlayan bir teknik Android 6.0 nasıl desteklediği ele alınacaktır. Uygulama bağlama ne olduğu, nasıl bir Android 6.0 uygulamada uygulama bağlama uygulanacağını ve bir etki alanı için mobil uygulama izinleri vermek için bir Web sitesi yapılandırma ele alınacaktır."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
+ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 726890e48407dd26f52c5aeaecf4eab51dcc5182
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="app-linking-in-android"></a>Android, uygulama olarak bağlama
 
@@ -84,7 +84,7 @@ Android uygulama varsayılan işleyici olarak için URI kaydetmeden önce tanım
 Uygulama bağlama android 6.0 Android uygulaması için URI varsayılan işleyici olarak ayarlamadan önce uygulama ve Web sitesi arasındaki ilişkiyi doğrulamanız gerekiyor. Uygulamayı ilk kez yüklendiğinde bu doğrulamayı meydana gelir. *Dijital varlıklar bağlantılar* ilgili webdomain(s) tarafından barındırılan bir JSON dosyası bir dosyadır.
 
 > [!NOTE]
-> **Not:** `android:autoVerify` hedefi Filtresi tarafından özniteliği ayarlanmalıdır &ndash; aksi Android doğrulaması gerçekleştirmez.
+> `android:autoVerify` Hedefi Filtresi tarafından özniteliği ayarlanmalıdır &ndash; aksi Android doğrulaması gerçekleştirmez.
 
 Dosya konumunda etki alanı yayımlanması tarafından yerleştirilen **https://domain/.well-known/assetlinks.json**.
 

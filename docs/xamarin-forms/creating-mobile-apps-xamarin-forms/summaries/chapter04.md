@@ -3,14 +3,15 @@ title: "Bölüm 4 özeti. Yığın kaydırma"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 59d51c48cee30a242f5e1adcb1c886169334e9b2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5ad53d7bc8c4ee54a47c4b327fb6f07bc1906ab9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Bölüm 4 özeti. Yığın kaydırma
 
@@ -94,7 +95,7 @@ Genellikle, ayarlarız [ `WidthRequest` ](https://developer.xamarin.com/api/prop
 
 Birden çok örneği kullanabilirsiniz `StackLayout` birleştirmek için bir `BoxView` ve birkaç `Label` içinde örnekler bir `Frame` belirli bir renk görüntülemek ve bu görünümlerin her biri yerleştirmek için bir `StackLayout` içinde bir `ScrollView` çekici oluşturmak için gösterilen renk listesi [ **ColorBlocks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks) örnek:
 
-[![Üçlü ekran rengi bloklarının](images/ch04fg11-small.png "listesi, renkler")](images/ch04fg11-large.png "listesi, renkler")
+[![Üçlü ekran rengi bloklarının](images/ch04fg11-small.png "listesi, renkler")](images/ch04fg11-large.png#lightbox "listesi, renkler")
 
 ## <a name="a-scrollview-in-a-stacklayout"></a>Bir StackLayout içinde ScrollView?
 

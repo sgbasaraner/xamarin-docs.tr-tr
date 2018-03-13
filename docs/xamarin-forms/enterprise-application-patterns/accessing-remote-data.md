@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a219a5ed4045bff639f29fd49ef5288139140135
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0eec51a6c95894482a57bfe3bb1f95aec2045af4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessing-remote-data"></a>Uzak verilere erişme
 
@@ -52,7 +52,7 @@ EShopOnContainers mobil uygulamanın kullandığı `HttpClient` medya türü ola
 
 Şekil 10-1 tarafından görüntüleme için katalog mikro hizmet Kataloğu veri okuma sınıfları etkileşimini gösterir `CatalogView`.
 
-[![](accessing-remote-data-images/catalogdata.png "Veri Kataloğu mikro hizmet alma")](accessing-remote-data-images/catalogdata-large.png "katalog mikro veri alma")
+[![](accessing-remote-data-images/catalogdata.png "Veri Kataloğu mikro hizmet alma")](accessing-remote-data-images/catalogdata-large.png#lightbox "katalog mikro veri alma")
 
 **Şekil 10-1**: Katalog mikro veri alma
 
@@ -157,7 +157,7 @@ Bu yöntem entityframework öğesini kullanarak SQL veritabanından katalog veri
 
 Şekil 10-2 gösterir tarafından görüntülenen Sepeti veri gönderme sınıfları etkileşim `BasketView`, sepet mikro hizmet için.
 
-[![](accessing-remote-data-images/basketdata.png "Sepeti mikro verileri gönderme")](accessing-remote-data-images/basketdata-large.png "Sepeti mikro verileri gönderme")
+[![](accessing-remote-data-images/basketdata.png "Sepeti mikro verileri gönderme")](accessing-remote-data-images/basketdata-large.png#lightbox "Sepeti mikro verileri gönderme")
 
 **Şekil 10-2**: Sepeti mikro verileri gönderme
 

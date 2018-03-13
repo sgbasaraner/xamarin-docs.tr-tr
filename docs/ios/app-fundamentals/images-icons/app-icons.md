@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 6de57e9523ff336c2e06e39903280db9c9ab95fa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df9059b0e64b4a05b554f25b5f9d7f6031406633
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icons"></a>Uygulama simgeleri
 
@@ -32,13 +32,13 @@ Bir Xamarin.iOS uygulaması görüntü varlıklarının UI denetimleri ve belge 
 
 - **Uygulama simgesi** -tüm iOS uygulamalarını uygulama simgesi tanımlamanız gerekir. Bu kullanıcı dokunun simgedir ekranından uygulamayı başlatmak için IOS home. Ayrıca, bu simge varsa oyun Merkezi tarafından kullanılır. Örnek: 
 
-    [ ![](app-icons-images/000.png "Uygulama simgesi")](app-icons-images/000-full.png)
+    [![](app-icons-images/000.png "Uygulama simgesi")](app-icons-images/000-full.png#lightbox)
 - **Sahne Işığı simgesi** - kullanıcı bir uygulamanın adı bir Spotlight arama girer zaman bu simgeyi görüntülenir. Örnek: 
 
-    [ ![](app-icons-images/000a.png "Spotlight simgesi")](app-icons-images/000a-full.png)
+    [![](app-icons-images/000a.png "Spotlight simgesi")](app-icons-images/000a-full.png#lightbox)
 - **Ayarlar simgesine** - kullanıcı girerse **ayarları** uygulama iOS cihazında, bu simgeyi sonunda görüntülenir **ayarları** uygulama için liste. Örnek: 
 
-    [ ![](app-icons-images/000b.png "Ayarlar simgesi")](app-icons-images/000b-full.png)
+    [![](app-icons-images/000b.png "Ayarlar simgesi")](app-icons-images/000b-full.png#lightbox)
 
 Aşağıdaki görüntü varlık boyutları ve çözümlemeleri tüm iOS 9 (veya daha büyük) aracılığıyla iOS 5 hedefleyen bir Xamarin.iOS uygulaması gerektirdiği simgesi türlerini desteklemek için gereklidir:
 

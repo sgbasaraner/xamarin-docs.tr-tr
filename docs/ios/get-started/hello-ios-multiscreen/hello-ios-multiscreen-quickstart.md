@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 6df2e2ad97e42c854b6377268086b80eef145e37
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d4b7439448d5c25aacf991c89a188086c95a44ac
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="helloios-multiscreen-quickstart"></a>Hello.iOS Multiscreen hızlı başlangıç
 
 Kılavuzun bu bölümü uygulamayla adı veriliyordu telefon numaralarını geçmişini görüntüler Phoneword uygulama ikinci ekranı ekleyeceksiniz. Son uygulama çağrısı geçmişini görüntüler ikinci bir ekran tarafından aşağıdaki ekran görüntüsünde gösterildiği gibi olacaktır:
 
- [ ![](hello-ios-multiscreen-quickstart-images/00.png "Son uygulama tarafından bu ekran görüntüsünde gösterildiği gibi çağrısı geçmişini görüntüler ikinci bir ekran gerekir")](hello-ios-multiscreen-quickstart-images/00.png)
+ [![](hello-ios-multiscreen-quickstart-images/00.png "Son uygulama tarafından bu ekran görüntüsünde gösterildiği gibi çağrısı geçmişini görüntüler ikinci bir ekran gerekir")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
 
 [Derinlemesine eşlik eden](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md), yapı yerleşik olan uygulama inceleme ve mimarisi, gezinti ve size yol boyunca karşılaştığınız diğer yeni iOS kavramlarını ele alınmıştır.
 

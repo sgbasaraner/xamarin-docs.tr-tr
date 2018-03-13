@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: 43d1ef53933ca7867b834dbf118ec730ccbf71ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5cadaf5f41d940a0255113178d018b59b780eabc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-cursoradapters"></a>CursorAdapters kullanma
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -27,7 +26,6 @@ Android, özellikle bir SQLite veritabanı sorgusu verileri görüntülemek içi
 
 İmleç bağdaştırıcıları uzun listeleri SQLite içinde depolanan veriler ile kaydırmak için yüksek performanslı bir yol sağlar. Bir SQL sorgusu içinde kullanıcı kodu tanımlamanız gerekir bir `Cursor` nesne ve nasıl oluşturulacağı ve her satır için görünümleri doldurmak açıklanmaktadır.
 
-<a name="Creating_an_SQLite_Database" />
 
 ## <a name="creating-an-sqlite-database"></a>Bir SQLite veritabanı oluşturma
 
@@ -63,7 +61,6 @@ class VegetableDatabase  : SQLiteOpenHelper {
 
 İmleç sorgusu *gerekir* bir tamsayı sütunu `_id` için `CursorAdapter` çalışmak için. Temel tablo adlı bir tamsayı sütunu yoksa `_id` başka bir benzersiz tamsayı olarak bir sütun diğer adı kullanılmaya `RawQuery` imleci yukarı yapar. Başvurmak [Android belgeleri](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/) daha fazla bilgi için.
 
-<a name="Creating_the_Cursor" />
 
 ### <a name="creating-the-cursor"></a>İmleci oluşturma
 
@@ -85,7 +82,6 @@ cursor.Close();
 
 Bir uygulama kullanılabilir bir SQLite veritabanı yoktur ve gösterildiği gibi bir imleç nesnesi oluşturdu sonra ya da kullanabileceği bir `SimpleCursorAdapter` veya bir alt sınıfı `CusorAdapter` satırları görüntülemek için bir `ListView`.
 
-<a name="Using_SimpleCursorAdapter" />
 
 ## <a name="using-simplecursoradapter"></a>SimpleCursorAdapter kullanma
 
@@ -119,7 +115,6 @@ listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.Simple
 
 `SimpleCursorAdapter` SQLite verileri görüntülemek için hızlı ve kolay bir yolu bir `ListView`. Ana kısıtlamadır yalnızca denetimlerini görüntülemek için sütun değerlerini bağlayabilirsiniz, onu diğer yönlerini (örneğin, denetimleri gösterme/gizleme veya özelliklerini değiştirme) satır düzenini değiştirmek izin vermez.
 
-<a name="Subclassing_CursorAdapter" />
 
 ## <a name="subclassing-cursoradapter"></a>CursorAdapter alt sınıf yapma
 
@@ -133,7 +128,6 @@ Bir çalışma verilen SQLite veritabanı oluşturmak için iki yöntem geçersi
 
 Önceki örneklerde bağdaştırıcısı alt sınıfların satır sayısını döndürür ve geçerli öğesi – almak için yöntemleri sahip `CursorAdapter` bu bilgileri imleci konusunda çünkü bu yöntemleri gerektirmez. Oluşturma ve bu iki yöntem her görünüme popülasyonunu bölme tarafından `CursorAdapter` görünümü yeniden kullanımını zorunlu kılar. Buna karşılık normal bir bağdaştırıcıya yoksay mümkün olduğu budur `convertView` parametresinin `BaseAdapter.GetView` yöntemi.
 
-<a name="Implementing_the_CursorAdapter" />
 
 ### <a name="implementing-the-cursoradapter"></a>CursorAdapter uygulama
 
@@ -159,7 +153,6 @@ public class HomeScreenCursorAdapter : CursorAdapter {
 }
 ```
 
-<a name="Assigning_the_CursorAdapter" />
 
 ### <a name="assigning-the-cursoradapter"></a>CursorAdapter atama
 

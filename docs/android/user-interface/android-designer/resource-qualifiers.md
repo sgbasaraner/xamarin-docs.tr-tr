@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: 56fee71f2ed36b682d323bae1225430ff991f140
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bff6d917fc4ce65daed329f15d6648bbfe0dd069
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Kaynak niteleyicileri ve görselleştirme seçenekleri
 
 _Bu konuda, yalnızca bazı niteleyicisi değerler karşılandığında, kullanılacak kaynakları tanımlamak açıklanmaktadır. Basit bir örnek, bir dil tam dize kaynaktır. Bir dize kaynağı, varsayılan olarak, ek diller için kullanılacak tanımlı alternatif kaynaklar ile tanımlanabilir. Tüm kaynak türleri, Düzen dahil olmak üzere nitelendirilmesi._
 
-<a name="Custom_Device_Configurations" />
 
 ## <a name="custom-device-configurations"></a>Özel aygıt yapılandırmaları
 
@@ -30,11 +29,11 @@ Menü aygıt Seçici kısımda olduğu bir **Özelleştir** seçeneği aşağıd
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Cihaz Seçici menüsü](resource-qualifiers-images/vs/01-device-selector-sml.png)](resource-qualifiers-images/vs/01-device-selector.png)
+[![Cihaz Seçici menüsü](resource-qualifiers-images/vs/01-device-selector-sml.png)](resource-qualifiers-images/vs/01-device-selector.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Cihaz Seçici menüsü](resource-qualifiers-images/xs/01-device-selector-sml.png)](resource-qualifiers-images/xs/01-device-selector.png)
+[![Cihaz Seçici menüsü](resource-qualifiers-images/xs/01-device-selector-sml.png)](resource-qualifiers-images/xs/01-device-selector.png#lightbox)
 
 -----
 
@@ -43,11 +42,11 @@ Seçme **Özelleştir** bir iletişim kutusu görüntüler, kullanılabilir ciha
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![AVD Manager](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png)
+[![AVD Manager](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![AVD Manager](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png)
+[![AVD Manager](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png#lightbox)
 
 -----
 
@@ -57,11 +56,11 @@ Tasarımcıda önceden yapılandırılmış aygıtları değiştirilemez. Ancak,
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Kopya cihaz](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png)
+[![Kopya cihaz](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Kopya cihaz](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png)
+[![Kopya cihaz](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png#lightbox)
 
 -----
 
@@ -70,11 +69,11 @@ Sonraki ekran görüntüsünde, ad olarak değiştirilmesini **Nexus 5 özel** v
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Özel aygıt](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png)
+[![Özel aygıt](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Özel aygıt](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png)
+[![Özel aygıt](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png#lightbox)
 
 -----
 
@@ -83,11 +82,11 @@ Tıklatarak **kopya aygıt** artık yeni bir cihaz tanımı oluşturur **aygıt 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Güncelleştirilmiş cihaz tanımları](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png)
+[![Güncelleştirilmiş cihaz tanımları](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Güncelleştirilmiş cihaz tanımları](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png)
+[![Güncelleştirilmiş cihaz tanımları](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png#lightbox)
 
 -----
 
@@ -96,11 +95,11 @@ Her bir kullanıcı tarafından oluşturulan cihaz tanımı yeşil bir simge ile
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Özel aygıt aygıt listesinde görüntülenir](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png)
+[![Özel aygıt aygıt listesinde görüntülenir](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Özel aygıt aygıt listesinde görüntülenir](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png)
+[![Özel aygıt aygıt listesinde görüntülenir](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png#lightbox)
 
 -----
 
@@ -109,16 +108,15 @@ Bu aygıt yapılandırması seçerek daha önce (Bu durumda, yalnızca yatay mod
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Özel Aygıt kullanımda](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png)
+[![Özel Aygıt kullanımda](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Özel Aygıt kullanımda](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png)
+[![Özel Aygıt kullanımda](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png#lightbox)
 
 -----
 
 
-<a name="resource_qualifier_options" />
 
 ## <a name="resource-qualifier-options"></a>Kaynak niteleyicisi seçenekleri
 
@@ -126,11 +124,11 @@ Bu aygıt yapılandırması seçerek daha önce (Bu durumda, yalnızca yatay mod
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Kaynak niteleyicisi seçenekleri](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png)
+[![Kaynak niteleyicisi seçenekleri](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Kaynak niteleyicisi seçenekleri](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png)
+[![Kaynak niteleyicisi seçenekleri](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png#lightbox)
 
 -----
 
@@ -144,7 +142,6 @@ Bu iletişim kutusunu aşağıdaki kaynak niteleyicileri için aşağı açılı
 Bu aşağı açılır menüler her burada seçin ve kaynak niteleyicileri (sonraki açıklandığı gibi) yapılandırmak yeni iletişim kutuları açılır.
 
 
-<a name="Language_and_Region" />
 
 ### <a name="language"></a>Dil
 
@@ -152,11 +149,11 @@ Bu aşağı açılır menüler her burada seçin ve kaynak niteleyicileri (sonra
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Dil/bölge ekleme](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png)
+[![Dil/bölge ekleme](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Dil/bölge ekleme](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png)
+[![Dil/bölge ekleme](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png#lightbox)
 
 -----
 
@@ -169,7 +166,7 @@ Tıkladığınızda **dil/bölge Ekle...** , **Dil Seç** iletişim kutusunu aç
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Dillerin listesi](resource-qualifiers-images/xs/10-languages-sml.png)](resource-qualifiers-images/xs/10-languages.png)
+[![Dillerin listesi](resource-qualifiers-images/xs/10-languages-sml.png)](resource-qualifiers-images/xs/10-languages.png#lightbox)
 
 -----
 
@@ -182,7 +179,7 @@ Bu örnekte, biz seçtiniz **fr (Fransızca)** dil ve **BE** (Belçika) Fransız
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Dil ve bölge seçilen](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png)
+[![Dil ve bölge seçilen](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png#lightbox)
 
 -----
 
@@ -190,7 +187,6 @@ Bu örnekte, biz seçtiniz **fr (Fransızca)** dil ve **BE** (Belçika) Fransız
 Yeni bir dil eklemek, ancak bu, eklenen bir dili artık sonraki açışınızda gösterilecek için yeni kaynaklar oluşturmayın projeyi açın unutmayın.
 
 
-<a name="ui_mode" />
 
 ### <a name="ui-mode"></a>UI modu
 
@@ -198,7 +194,7 @@ Tıkladığınızda **UI modu** aşağı açılır menüsünde, modlarının bir
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![UI modu menüsü](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png)
+[![UI modu menüsü](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
 Bu listede gece modları olan **değil gece** ve **gece**, Düzen yönergeleri izleyen **soldan sağa** ve **sağdan sola** (için hakkında bilgi **soldan sağa** ve **sağdan sola** seçenekleri bkz [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
 Son öğeleri **kaynak niteleyicisi seçenekleri** iletişim olan **ekranlar yuvarlak** (kullanmak için Android takmak ile) veya **değil yuvarlamak ekranları** (hepsini hakkında bilgi için ve gidiş olmayan ekranlarına bakın [düzenleri](https://developer.android.com/training/wearables/ui/layouts.html)).
@@ -206,7 +202,7 @@ Android UI modları hakkında daha fazla bilgi için bkz: [UiModeManager](https:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![UI modu menüsü](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png)
+[![UI modu menüsü](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png#lightbox)
 
 Bu listede gece modları olan **değil gece** ve **gece**, Düzen yönergeleri izleyen **soldan sağa** ve **sağdan sola**. Android UI modları hakkında daha fazla bilgi için bkz: [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
 Hakkında bilgi için **soldan sağa** ve **sağdan sola** seçenekleri bkz [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
@@ -215,12 +211,11 @@ Hakkında bilgi için **soldan sağa** ve **sağdan sola** seçenekleri bkz [Lay
 
 Son öğenin **kaynak niteleyicisi seçenekleri** iletişim **ekran Round** menüsü. Bu menü ya da seçmenize izin verir **yuvarlamak ekranlar** (kullanmak için Android takmak ile) veya **dikdörtgen ekranlar**:
 
-[ ![Yuvarlak ekranı menüsü](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png)
+[![Yuvarlak ekranı menüsü](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png#lightbox)
 
 -----
 
 
-<a name="Action_Bar" />
 
 ## <a name="action-bar-settings"></a>Eylem çubuğu ayarları
 
@@ -232,7 +227,7 @@ Son öğenin **kaynak niteleyicisi seçenekleri** iletişim **ekran Round** men�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Eylem çubuğu ayarları](resource-qualifiers-images/xs/13b-action-bar-sml.png)](resource-qualifiers-images/xs/13b-action-bar.png)
+[![Eylem çubuğu ayarları](resource-qualifiers-images/xs/13b-action-bar-sml.png)](resource-qualifiers-images/xs/13b-action-bar.png#lightbox)
 
 -----
 
@@ -246,7 +241,6 @@ Bu simge, üç Eylem çubuğu modlarından birini seçmek için bir yol sağlaya
 -   **Sekmeleri** &ndash; sekmesini Gezinti modu. Statik başlık metni yerine bu mod, bir dizi etkinlik içinde gezinme için sekme sunar.
 
 
-<a name="Themes" />
 
 ## <a name="themes"></a>Temalar
 
@@ -254,11 +248,11 @@ Bu simge, üç Eylem çubuğu modlarından birini seçmek için bir yol sağlaya
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Daha fazla Temalar listesi](resource-qualifiers-images/vs/15-theme-menu-sml.png "daha Temalar listesi")](resource-qualifiers-images/vs/15-theme-menu.png)
+[![Daha fazla Temalar listesi](resource-qualifiers-images/vs/15-theme-menu-sml.png "daha Temalar listesi")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Daha fazla Temalar listesi](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png)
+[![Daha fazla Temalar listesi](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png#lightbox)
 
 -----
 
@@ -271,12 +265,11 @@ Bir tema seçildiğinde, yeni temayı etkisini göstermek için tasarım yüzeyi
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Açık tema artık kullanılabilir](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png)
+[![Açık tema artık kullanılabilir](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png#lightbox)
 
 -----
 
 
-<a name="Android_Version" />
 
 ## <a name="android-version"></a>Android sürüm
 
@@ -293,7 +286,7 @@ Araç kutusunda kullanılabilir pencere öğeleri kümesi projenin hedef framewo
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Android sürümlerinin listesi](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png)
+[![Android sürümlerinin listesi](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png#lightbox)
 
 Hedef framework sürümü projenin ayarları altında ayarlanabilir **proje Seçenekleri > Yapı > Genel** bölümü. Hedef framework sürümü hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md).
 

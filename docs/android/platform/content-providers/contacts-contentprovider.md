@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 677d672b3f00d4c3f3505ab2adf977f16fca4de5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 730cc1f815641d79350784790e3b33b743d1aebe
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-the-contacts-contentprovider"></a>Kişiler ContentProvider kullanma
 
@@ -40,7 +40,6 @@ Bu yöntemlerin her biri aynı temel girişleri kümesi vardır:
 -  **SortOrder** &ndash; göre sıralamak için sütun.
 
 
-<a name="Creating_Inputs_for_a_Query" />
 
 ## <a name="creating-inputs-for-a-query"></a>Giriş için bir sorgu oluşturma
 
@@ -60,14 +59,12 @@ string[] projection = {
 Bu örnek için `selection`, `selectionArgs` ve `sortOrder` ayarlanarak yoksayılacak `null`.
 
 
-<a name="Creating_a_Cursor_from_a_Content_Provider_Uri" />
 
 ## <a name="creating-a-cursor-from-a-content-provider-uri"></a>Bir içerik sağlayıcı Uri'den imleç
 
 Parameter nesnelerini oluşturduktan sonra aşağıdaki üç yoldan biriyle kullanılabilir:
 
 
-<a name="Using_a_Managed_Query" />
 
 ### <a name="using-a-managed-query"></a>Yönetilen bir sorgu kullanarak
 
@@ -80,7 +77,6 @@ var cursor = activity.ManagedQuery(uri, projection, null, null, null);
 Kapatmak gerek yoktur bu imleç Android tarafından yönetilmez.
 
 
-<a name="Using_ContentResolver" />
 
 ### <a name="using-contentresolver"></a>ContentResolver kullanma
 
@@ -100,7 +96,6 @@ cursor.Close();
 Alternatif olarak, çağırabilirsiniz `StartManagingCursor()` ve `StopManagingCursor()` 'imleci yönetmek için '. Yönetilen imleçler otomatik olarak devre dışı bırakıldı ve etkinlikleri olduğunda durdurulur ve yeniden yeniden sorgulanan.
 
 
-<a name="Using_CursorLoader" />
 
 ### <a name="using-cursorloader"></a>CursorLoader kullanma
 
@@ -116,7 +111,6 @@ var cursor = (ICursor)loader.LoadInBackground();
 Android sürümlerde de kullanabilir `CursorLoader` kullanarak sınıfı [v4 destek kitaplıkları](http://developer.android.com/tools/support-library/index.html).
 
 
-<a name="Displaying_the_Cursor_Data_with_a_Custom_Adapter" />
 
 ## <a name="displaying-the-cursor-data-with-a-custom-adapter"></a>Özel bağdaştırıcı ile imleç verileri görüntüleme
 
@@ -189,13 +183,12 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 
 Görüntüyü, (varsa) görüntülenir cihazdaki resim dosyasının URI'ı kullanarak. Uygulama şuna benzer:
 
-[![Uygulamasının ekran görüntüsü kişiler ListView içinde görüntüleme; görüntüyü bir giriş solunda görüntülenir](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png)
+[![Uygulamasının ekran görüntüsü kişiler ListView içinde görüntüleme; görüntüyü bir giriş solunda görüntülenir](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png#lightbox)
 
 Benzer bir kod desen kullanarak uygulamanızı sistem verileri kullanıcının fotoğrafları, videoları ve müzik dahil olmak üzere çok çeşitli erişebilir.
 Bazı veri türleri projesinin istenmesi için özel izinleri gerektiren **AndroidManifest.xml**.
 
 
-<a name="Displaying_the_Cursor_Data_with_a_SimpleCursorAdapter" />
 
 ## <a name="displaying-the-cursor-data-with-a-simplecursoradapter"></a>Bir SimpleCursorAdapter ile imleç verileri görüntüleme
 

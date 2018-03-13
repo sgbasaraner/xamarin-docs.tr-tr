@@ -7,11 +7,11 @@ ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7e26c11f71b446baf89ca11effe30bc1e041f951
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 275cce891801cd542d202960efc3da668fa8f07b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Objective-C geliştiriciler için Xamarin
 
@@ -21,7 +21,7 @@ Kendi kullanıcı olmayan arabirimi taşımak için iOS hedefleyen geliştiricil
 
 Ayrıca, Xamarin, varolan Objective-C yararlanmanızı sağlar varlıklar bir teknoloji aracılığıyla bilmeniz bağlar. Sadece Objective-C statik kitaplık oluşturma ve onu C# için bir bağlama aracılığıyla aşağıdaki çizimde gösterildiği gibi kullanıma:
 
- [ ![](images/01-bindings.png "Objective-C C# için bir bağlama aracılığıyla kullanıma sunulan statik kitaplığa")](images/01-bindings.png)
+ [![](images/01-bindings.png "Objective-C C# için bir bağlama aracılığıyla kullanıma sunulan statik kitaplığa")](images/01-bindings.png#lightbox)
 
 Bu kullanıcı Arabirimi olmayan koda sınırlı olması gerekmez. Bağlamaları Objective-C da geliştirilmiş kullanıcı arabirimi kodu getirebilir.
 

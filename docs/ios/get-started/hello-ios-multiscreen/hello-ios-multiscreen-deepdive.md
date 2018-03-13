@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 8e36548e0d9926a28c133f8f1dc688fcbfa9f78e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a7d4af1563cb5fe5166c289c4ee5dca6ad3ffb00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-ios-multiscreen-deep-dive"></a>Merhaba, iOS Multiscreen derinlemesine bakış
 
@@ -27,7 +27,7 @@ Daha sonra Gezinti Denetleyicisi'nde daha yakından inceleyin ve bir iOS tanıd�
 
 İçinde [Hello, iOS](~/ios/get-started/hello-ios/index.md) öğretici, biz öğrenilen iOS uygulamaları tek sahip *penceresi* görünüm denetleyicileri yükleme sorumlu olan kendi *içerik görünümü hiyerarşileri* içine Pencere. İkinci Phoneword örneklerde, uygulamamız için ikinci bir ekran eklendi ve aşağıdaki diyagramda gösterildiği gibi iki ekranda arasında bazı veriler – telefon numarası listesinin – geçirilen:
 
- [ ![](hello-ios-multiscreen-deepdive-images/08.png "Bu diyagramda iki ekranda arasında veri geçirme gösterilir")](hello-ios-multiscreen-deepdive-images/08.png)
+ [![](hello-ios-multiscreen-deepdive-images/08.png "Bu diyagramda iki ekranda arasında veri geçirme gösterilir")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
 Bizim örneğimizde, ikinci ilk görünüm denetleyicisinden geçirilen ve ikinci ekranı tarafından görüntülenen ilk ekranında veri toplanmıştır. Bu ayrım ekranlar, görünüm denetleyicileri ve veri izleyen *Model, görünüm, denetleyici (MVC)* düzeni. Sonraki birkaç bölümlerde deseni, bileşenleri ve Phoneword uygulamamız kullanırız nasıl avantajları tartışın.
 
@@ -35,7 +35,7 @@ Bizim örneğimizde, ikinci ilk görünüm denetleyicisinden geçirilen ve ikinc
 
 Model-View-Controller olan bir *tasarım deseni* – kodda ortak bir sorun veya kullanım örneği yeniden kullanılabilir bir mimari çözüme. MVC uygulamaları için bir mimari olan bir *grafik kullanıcı arabirimi (GUI)*. Uygulama üç rollerini - nesneleri atar *modeli* (veri veya uygulama mantığını) *Görünüm* (kullanıcı arabirimi) ve *denetleyicisi* (arkasında kodu). Aşağıdaki diyagram, MVC örüntüsü üç parça ve kullanıcı arasındaki ilişkileri gösterir:
 
- [ ![](hello-ios-multiscreen-deepdive-images/00.png "Bu diyagram MVC örüntüsü üç parça ve kullanıcı arasındaki ilişkileri gösterir")](hello-ios-multiscreen-deepdive-images/00.png)
+ [![](hello-ios-multiscreen-deepdive-images/00.png "Bu diyagram MVC örüntüsü üç parça ve kullanıcı arasındaki ilişkileri gösterir")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
 MVC örüntüsü, bir GUI uygulamasının farklı bölümleri arasında mantıksal ayrım sağlar ve bize kod ve görünümlerde yeniden kolaylaştırır için yararlıdır. Şimdi hemen ve üç rollerinin her biri daha ayrıntılı olarak bakalım.
 
@@ -71,23 +71,23 @@ Phoneword uygulamada kullandık bir *Gezinti denetleyicisi* birden çok ekranlar
 
 Gezinti denetleyicisi iOS uygulamalarında yaygın bir durumdur ve gezinti gibi Zımba iOS uygulamaları için sağlar **ayarları** aşağıdaki ekran görüntüsüne gösterildiği gibi uygulama:
 
- [ ![](hello-ios-multiscreen-deepdive-images/01.png "Burada gösterilen ayarları uygulaması gibi iOS uygulamaları için Gezinti Gezinti denetleyici sağlar")](hello-ios-multiscreen-deepdive-images/01.png)
+ [![](hello-ios-multiscreen-deepdive-images/01.png "Burada gösterilen ayarları uygulaması gibi iOS uygulamaları için Gezinti Gezinti denetleyici sağlar")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
 Üç birincil işlev Gezinti denetleyicisi sunar:
 
 -  **İleri gezinti için kancalar sağlar** – Gezinti denetleyicisi içerik görünümü hiyerarşileri nerede hiyerarşik Gezinti benzetimini kullanır *gönderilen* üzerine bir *Gezinti yığını* . Yalnızca en üstteki çoğu kartı Aşağıdaki diyagramda gösterildiği gibi görünür, olduğu, oyun kart yığınını olarak bir gezinti yığını düşünebilirsiniz:  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/02.png "Bu diyagramda Gezinti kart yığınını olarak gösterilir")](hello-ios-multiscreen-deepdive-images/02.png)
+    [![](hello-ios-multiscreen-deepdive-images/02.png "Bu diyagramda Gezinti kart yığınını olarak gösterilir")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
 -  **İsteğe bağlı olarak bir geri düğmesini sağlar** - biz Gezinti yığına yeni bir öğe bastığınızda başlık çubuğunu otomatik olarak görüntüleyebilirsiniz bir *geri düğmesini* geriye doğru gidin kullanıcıya izin verir. Geri düğmesine basarak *POP* geçerli görünümü denetleyicisi Gezinti yığını ve yükleri önceki içerik görünümü hiyerarşiye pencereyi kapat:  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/03.png "Bu diyagramda 'yığından bir kart pencerelerinin' gösterilir")](hello-ios-multiscreen-deepdive-images/03.png)
+    [![](hello-ios-multiscreen-deepdive-images/03.png "Bu diyagramda 'yığından bir kart pencerelerinin' gösterilir")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
 -  **Başlık çubuğu sağlar** – üst kısmını **Gezinti denetleyicisi** çağrılır *başlık çubuğu* . Bunu, aşağıdaki diyagramda gösterildiği gibi View Controller başlık görüntülemede sorumlu olan:  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/04.png "Başlık çubuğu View Controller başlık görüntülemek için sorumludur")](hello-ios-multiscreen-deepdive-images/04.png)
+    [![](hello-ios-multiscreen-deepdive-images/04.png "Başlık çubuğu View Controller başlık görüntülemek için sorumludur")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
 
 
@@ -97,11 +97,11 @@ Gezinti denetleyicisi iOS uygulamalarında yaygın bir durumdur ve gezinti gibi 
 A **Gezinti denetleyicisi** , kendi görüntülenecek bir şey sahiptir içerik görünümü hiyerarşi yönetmeyen.
 Bunun yerine, bir **Gezinti denetleyicisi** ile eşleştirilmiş bir *kök View Controller*:
 
- [ ![](hello-ios-multiscreen-deepdive-images/05.png "Bir gezinme denetleyicisi kök View Controller ile eşleştirilmiş")](hello-ios-multiscreen-deepdive-images/05.png)
+ [![](hello-ios-multiscreen-deepdive-images/05.png "Bir gezinme denetleyicisi kök View Controller ile eşleştirilmiş")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
 Kök View Controller ilk görünüm denetleyicisini temsil eden **Gezinti denetleyicinin** yığını ve kök görünümü denetleyicinin içerik görünümü hiyerarşisi olan ilk içerik penceresine yüklenmesi hiyerarşisini görüntüleme. Biz Gezinti denetleyicinin yığında tüm uygulamamız getirmek isterseniz, biz Sourceless ü taşıyabilirsiniz **Gezinti denetleyicisi** ve biz olduğu gibi ilk ekran View Controller kök View Controller ayarlayın Phoneword uygulama:
 
- [ ![](hello-ios-multiscreen-deepdive-images/06.png "Sourceless ü ilk ekranlar View Controller kök View Controller ayarlar")](hello-ios-multiscreen-deepdive-images/06.png)
+ [![](hello-ios-multiscreen-deepdive-images/06.png "Sourceless ü ilk ekranlar View Controller kök View Controller ayarlar")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>Ek Gezinti Seçenekleri
 
@@ -115,7 +115,7 @@ Phoneword kılavuzda biz iki farklı yolla – iki görünüm denetleyicileri ar
 
 Biz Segue ile eklediğinizde bir **Göster** film şeridi eyleme, biz istemeniz iOS ikinci Gezinti denetleyicinin yığın görünümü denetleyicide göndermek için:
 
- [ ![](hello-ios-multiscreen-deepdive-images/09.png "Açılır listeden ayar segue türü")](hello-ios-multiscreen-deepdive-images/09.png)
+ [![](hello-ios-multiscreen-deepdive-images/09.png "Açılır listeden ayar segue türü")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
 
 Film şeridi için bir Segue ekleme ekranları arasında basit bir geçiş oluşturmak için yeterlidir. Biz görünüm denetleyicileri arasında veri geçirmek istiyorsanız, geçersiz kılmak sahibiz `PrepareForSegue` yöntemi ve verileri kendisini işler:
 

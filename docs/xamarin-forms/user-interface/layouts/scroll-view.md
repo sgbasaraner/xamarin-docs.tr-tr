@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2016
-ms.openlocfilehash: c305075d37a25bfe828f16d4e69955437a591f9a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 648125ca8bd2c7c8a015b4c29195dc75c0bbf0a0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="scrollview"></a>ScrollView
 
 [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) düzenleri içerir ve kaydırma ekran dışında sağlar. `ScrollView` klavye gösterilirken ekranda görünen dilimini otomatik olarak taşımak görünümleri izin vermek için de kullanılır.
 
-[ ![](scroll-view-images/layouts-sml.png "Xamarin.Forms düzenleri")](scroll-view-images/layouts.png "Xamarin.Forms düzenleri")
+[![](scroll-view-images/layouts-sml.png "Xamarin.Forms düzenleri")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms düzenleri")
 
 Bu makalede yer almaktadır:
 
@@ -35,7 +35,7 @@ Bu makalede yer almaktadır:
 ## <a name="usage"></a>Kullanım
 
 > [!NOTE]
-> **Not**: `ScrollView`s değil iç içe geçirilemez. Ayrıca, `ScrollView`s değil iç içe geçirilemez sağlayan kaydırma gibi başka denetimlerle birlikte `ListView` ve `WebView`.
+> `ScrollView`s iç içe değil. Ayrıca, `ScrollView`s değil iç içe geçirilemez sağlayan kaydırma gibi başka denetimlerle birlikte `ListView` ve `WebView`.
 
 `ScrollView` kullanıma sunan bir `Content` bir tek bir görünüm veya düzeni ayarlayabileceğiniz özelliği. Bu örnek tarafından izlenen bir çok büyük boxView bir düzen olarak göz önünde bulundurun bir `Entry`:
 

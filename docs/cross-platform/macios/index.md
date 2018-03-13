@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a5711b5ac8332ac518ba5b639f05de557229af6e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1491e6ec36a9ced9460e083769b2148386d1d518
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-and-mac"></a>iOS ve Mac
 
@@ -24,7 +24,7 @@ Kodunuzun için kullanıcı arabirimi öğeleri paylaşmak için en iyi yöntem 
 
 Bazı kullanıcı arabirimi iş yapmak için gereken kodu için ve paylaşmak, istediğiniz henüz, kullanmanız gereken [paylaşılan projeleri](~/cross-platform/app-fundamentals/shared-projects.md) tek bir projede paylaşma ve Mac ve başvurulduğunda iOS ile derlenmiş sağlamak için kodu yerleştirin izin.
 
-##  <a name="unified-apiunifiedindexmd"></a>[Birleşik API](unified/index.md)
+##  <a name="unified-apiunifiedindexmd"></a>[Unified API](unified/index.md)
 
 İOS ve Mac projeleri için birleşik API aynı ad alanları çerçeveyi kullanır, böylece aynı kod dosyası için sorunsuz kod paylaşımını her iki platform üzerinde kullanılabilir. Ayrıca, 32 ve 64 bit derlemeleri sağlar. Birleşik API şablonu varsayılan erken 2015 tarihinden itibaren kaldırıldı ve tüm yeni projeler için - önerilen *yalnızca* Unified API projeleri uygulama mağazasında gönderilen.
 
@@ -40,7 +40,7 @@ Yerel çerçeveler ya da sahip olduğundan Xamarin.Mac API'leri ve özgün (Birl
 
 Klasik herhangi bir uygulamadan Unified API güncelleştirmek için ayrıntılı yönergeler vardır.
 
-## <a name="binding-objective-c-librariesbindingindexmd"></a>[Objective-C kitaplıkları bağlama](binding/index.md)
+## <a name="binding-objective-c-librariesbindingindexmd"></a>[Objective-C Kitaplıklarını Bağlama](binding/index.md)
 
 Xamarin yerel kitaplıkları uygulamalarınızla bağlamalarla getirmenize olanak tanır. Bu bölümde açıklanmaktadır:
 
@@ -48,7 +48,7 @@ Xamarin yerel kitaplıkları uygulamalarınızla bağlamalarla getirmenize olana
 - el ile Objective-C kodunu Xamarin getirmenize olanak sağlayan bir bağlama proje oluşturma ve
 - nasıl kullanılacağını bizim **hedefi Sharpie** işlemini otomatikleştirmek için aracı.
 
-## <a name="native-referencesnative-referencesmd"></a>[Yerel başvuruları](native-references.md)
+## <a name="native-referencesnative-referencesmd"></a>[Yerel Başvurular](native-references.md)
 
 
 
@@ -56,17 +56,17 @@ Xamarin yerel kitaplıkları uygulamalarınızla bağlamalarla getirmenize olana
 
 32 ve 64 bit kodundan saydam C# ve F # desteklemek için yeni veri türleri sunuyoruz.   Buradan bilgi edinebilirsiniz.
 
-##  <a name="building-32-and-64-bit-apps32-and-64md"></a>[32 ve 64 bit uygulamalar oluşturma](32-and-64.md)
+##  <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[32 ve 64 bit uygulamalar oluşturma](32-and-64/index.md)
 
 32 ve 64 bit uygulamalarını desteklemek için bilmeniz gerekenler.
 
-## <a name="working-with-native-types-in-cross-platform-appsnative-types-cross-platformmd"></a>[Platformlar arası uygulamalar içindeki yerel türler ile çalışma](native-types-cross-platform.md)
+## <a name="working-with-native-types-in-cross-platform-appsnative-types-cross-platformmd"></a>[Platformlar Arası Uygulamalarda Yerel Türlerle Çalışma](native-types-cross-platform.md)
 
 Bu makalede, yeni iOS Unified API yerel türler kullanma yer almaktadır (`nint`, `nuint`, `nfloat`) burada kod paylaşılan Android veya Windows Phone işletim sistemleri gibi iOS olmayan aygıtlarla platformlar arası uygulamasında.
 Yerel türler ne zaman kullanılmalı içine bilgiler sağlar ve yeni türü platformlar arası koduyla burada kullanılmalıdır durumlarda birkaç olası çözümleri sağlar.
 
 
-## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[HttpClient yığını ve SSL/TLS uygulama Seçici](http-stack.md)
+## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[HttpClient Yığını ve SSL/TLS Uygulama Seçicisi](http-stack.md)
 
 Yeni HttpClient Yığın Seçicisi Xamarin.iOS, Xamarin.tvOS ve Xamarin.Mac uygulamanızda kullanmak için hangi HttpClient uygulama denetler. Artık iOS'ın kullanan bir uygulama için tvOS'ın veya OS x yerel aktarımları geçebilirsiniz (`NSUrlSession` veya `CFNetwork` işletim sistemi bağlı olarak).
 

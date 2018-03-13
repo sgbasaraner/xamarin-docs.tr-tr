@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cb6917f9cd0dc22cc32a2d32c203328f1d6d963b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7d58c30e745e26d1076e75470e527cbe95e85eb6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-text-and-search-fields"></a>Metin ve arama alanları ile çalışma
 
@@ -22,11 +22,11 @@ _Bu makalede tasarlama ve metin ve arama alanlarını Xamarin.tvOS uygulama içi
 
 Gerekli olduğunda Xamarin.tvOS uygulamanızı küçük metin parçaları (örneğin, kullanıcı kimliklerini ve parolaları) kullanıcıdan isteyebilir bir metin alanı kullanarak ve ekran klavyesi:
 
-[ ![](text-fields-and-search-images/intro01.png "Örnek arama alanı")](text-fields-and-search-images/intro01.png)
+[![](text-fields-and-search-images/intro01.png "Örnek arama alanı")](text-fields-and-search-images/intro01.png#lightbox)
 
 İsteğe bağlı olarak, bir arama alanı kullanarak uygulamanın içeriği anahtar sözcüğü arama yeteneklerini sağlayabilirsiniz:
 
-[ ![](text-fields-and-search-images/intro02.png "Örnek arama sonuçları")](text-fields-and-search-images/intro02.png)
+[![](text-fields-and-search-images/intro02.png "Örnek arama sonuçları")](text-fields-and-search-images/intro02.png#lightbox)
 
 Bu belge, bir Xamarin.tvOS uygulamasında metin ve arama alanları ile çalışma ayrıntılarını ele alınacaktır.
 
@@ -44,7 +44,7 @@ Ayrıca, uygulamanız (örneğin, bir müzik, filmler veya resim koleksiyonu) ku
 
 TvOS içinde bir metin alanı getirir bir sabit yükseklik, yuvarlatılmış köşe giriş kutusu olarak sunulan bir kullanıcı üzerinde tıklattığında klavyesi:
 
-[ ![](text-fields-and-search-images/text01.png "Metin alanları içinde tvOS")](text-fields-and-search-images/text01.png)
+[![](text-fields-and-search-images/text01.png "Metin alanları içinde tvOS")](text-fields-and-search-images/text01.png#lightbox)
 
 Kullanıcı ne zaman hareket [odak](~/ios/tvos/app-fundamentals/navigation-focus.md) belirli bir metin alanı için bunu büyük büyür ve derin gölge görüntüler. Metin alanları diğer kullanıcı Arabirimi öğeleri odakta olduğunda binebilir olarak bu, kullanıcı arabiriminizi tasarlarken unutmayın gerekecektir.
 
@@ -61,7 +61,7 @@ Apple metin alanları ile çalışmak için aşağıdaki önerileri vardır:
 
 Klavye, ekran kullanıcının kullanıcı arabiriminde, bir doğrusal bir metin alanı tıkladığında görüntülenir. Touch yüzeyini kullanıcının kullandığı [Siri uzaktan](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote) tek tek harfler klavyeden seçin ve istenen bilgileri girin:
 
-[ ![](text-fields-and-search-images/keyboard01.png "Siri uzak klavye")](text-fields-and-search-images/keyboard01.png)
+[![](text-fields-and-search-images/keyboard01.png "Siri uzak klavye")](text-fields-and-search-images/keyboard01.png#lightbox)
 
 Geçerli görünümde, birden fazla metin alanı ise bir **sonraki** düğmesi otomatik olarak gösterilecek sonraki metin alan kullanıcı. A **Bitti** bitiş metin girişi ve kullanıcı önceki ekrana dönün son metin alanı için düğmesi görüntülenir. 
 
@@ -80,7 +80,7 @@ Apple ile çalışmak için aşağıdaki önerileri ekran klavyeler sahiptir:
 
 Bir arama alanı metin alanı sağlayan özel bir ekran sunmak ve, ekran klavyesi klavye görüntülenen öğeleri koleksiyonu filtre olanak tanır:
 
-[ ![](text-fields-and-search-images/search01.png "Örnek arama sonuçları")](text-fields-and-search-images/search01.png)
+[![](text-fields-and-search-images/search01.png "Örnek arama sonuçları")](text-fields-and-search-images/search01.png#lightbox)
 
 Kullanıcı Ara alanına harf girerken, sonuçları otomatik olarak arama sonuçlarını yansıtır. Kullanıcı herhangi bir zamanda odak sonuçları kaydırma ve sunulan öğelerden birini seçin.
 
@@ -105,16 +105,16 @@ Aşağıdakileri yapın:
 1. İçinde **çözüm paneli**, çift `Main.storyboard` dosyayı düzenlemek için açın.
 1. Bir veya daha fazla Sürükle **metin alanları** int bir görünüm tasarım yüzeyine: 
 
-    [ ![](text-fields-and-search-images/text02.png "Bir metin alanı")](text-fields-and-search-images/text02.png)
+    [![](text-fields-and-search-images/text02.png "Bir metin alanı")](text-fields-and-search-images/text02.png#lightbox)
 1. Seçin **metin alanları** ve her bir benzersiz vermek **adı** içinde **pencere öğesi** sekmesinde **özellikleri paneli**: 
 
-    [ ![](text-fields-and-search-images/text03.png "Özellikler paneli pencere öğesi sekmesi")](text-fields-and-search-images/text03.png)
+    [![](text-fields-and-search-images/text03.png "Özellikler paneli pencere öğesi sekmesi")](text-fields-and-search-images/text03.png#lightbox)
 1. İçinde **metin alanı** bölümünde gibi öğeleri tanımlayabilirsiniz **yer tutucu** ipucu ve varsayılan **değeri**: 
 
-    [ ![](text-fields-and-search-images/text04.png "Metin alanı bölümü")](text-fields-and-search-images/text04.png)
+    [![](text-fields-and-search-images/text04.png "Metin alanı bölümü")](text-fields-and-search-images/text04.png#lightbox)
 1. Özellikler gibi tanımlamak için aşağı kaydırmanız **yazım denetimi**, **büyük/küçük harf** ve varsayılan **klavye türü**: 
 
-    [ ![](text-fields-and-search-images/text05.png "Yazım denetimi, büyük/küçük harf ve varsayılan klavye türü")](text-fields-and-search-images/text05.png) 
+    [![](text-fields-and-search-images/text05.png "Yazım denetimi, büyük/küçük harf ve varsayılan klavye türü")](text-fields-and-search-images/text05.png#lightbox) 
 1. Şeridinizin için değişiklikleri kaydedin.
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -122,16 +122,16 @@ Aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosyayı düzenlemek için açın.
 1. Bir veya daha fazla Sürükle **metin alanları** int bir görünüm tasarım yüzeyine: 
 
-    [ ![](text-fields-and-search-images/text02-vs.png "Bir metin alanı")](text-fields-and-search-images/text02-vs.png)
+    [![](text-fields-and-search-images/text02-vs.png "Bir metin alanı")](text-fields-and-search-images/text02-vs.png#lightbox)
 1. Seçin **metin alanları** ve her bir benzersiz vermek **adı** içinde **pencere öğesi** sekmesinde **özellikleri Explorer**: 
 
-    [ ![](text-fields-and-search-images/text03-vs.png "Pencere öğesi sekmesi")](text-fields-and-search-images/text03-vs.png)
+    [![](text-fields-and-search-images/text03-vs.png "Pencere öğesi sekmesi")](text-fields-and-search-images/text03-vs.png#lightbox)
 1. İçinde **metin alanı** bölümünde gibi öğeleri tanımlayabilirsiniz **yer tutucu** ipucu ve varsayılan **değeri**: 
 
-    [ ![](text-fields-and-search-images/text04-vs.png "Metin alanı bölümü")](text-fields-and-search-images/text04-vs.png)
+    [![](text-fields-and-search-images/text04-vs.png "Metin alanı bölümü")](text-fields-and-search-images/text04-vs.png#lightbox)
 1. Özellikler gibi tanımlamak için aşağı kaydırmanız **yazım denetimi**, **büyük/küçük harf** ve varsayılan **klavye türü**: 
 
-    [ ![](text-fields-and-search-images/text05-vs.png "Yazım denetimi, büyük/küçük harf ve varsayılan klavye türü")](text-fields-and-search-images/text05-vs.png) 
+    [![](text-fields-and-search-images/text05-vs.png "Yazım denetimi, büyük/küçük harf ve varsayılan klavye türü")](text-fields-and-search-images/text05-vs.png#lightbox) 
 1. Şeridinizin için değişiklikleri kaydedin.
     
 -----
@@ -157,17 +157,17 @@ Aşağıdakileri yapın:
 1. İçinde **çözüm paneli**, çift `Main.storyboard` dosyayı düzenlemek için açın.
 1. Yeni bir koleksiyon görünümü denetleyicisi kullanıcının arama sonuçlarını sunmak için film şeridi sürükleyin: 
 
-    [ ![](text-fields-and-search-images/search02.png "Bir koleksiyon görünümü denetleyicisi")](text-fields-and-search-images/search02.png)
+    [![](text-fields-and-search-images/search02.png "Bir koleksiyon görünümü denetleyicisi")](text-fields-and-search-images/search02.png#lightbox)
 1. İçinde **pencere öğesi** sekmesinde **özellikleri paneli**, kullanın `SearchResultsViewController` için **sınıfı** ve `SearchResults` için **film şeridi kimliği**: 
 
-    [ ![](text-fields-and-search-images/search03.png "Pencere öğesi sekmesi")](text-fields-and-search-images/search03.png)
+    [![](text-fields-and-search-images/search03.png "Pencere öğesi sekmesi")](text-fields-and-search-images/search03.png#lightbox)
 1. Seçin **hücre prototip** tasarım yüzeyine.
 1. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, kullanın `SearchResultCell` için **sınıfı** ve `ImageCell` için **tanımlayıcısı**: 
 
-    [ ![](text-fields-and-search-images/search04.png "Pencere öğesi sekmesi")](text-fields-and-search-images/search04.png)
+    [![](text-fields-and-search-images/search04.png "Pencere öğesi sekmesi")](text-fields-and-search-images/search04.png#lightbox)
 1. Düzen tasarımı, **hücre prototip** ve her benzersiz bir öğesiyle kullanıma **adı** içinde **pencere öğesi** sekmesinde **özellikleri Explorer**: 
 
-    [ ![](text-fields-and-search-images/search05.png "Düzen hücre prototip tasarım")](text-fields-and-search-images/search05.png)
+    [![](text-fields-and-search-images/search05.png "Düzen hücre prototip tasarım")](text-fields-and-search-images/search05.png#lightbox)
 1. Şeridinizin için değişiklikleri kaydedin.
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -175,17 +175,17 @@ Aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosyayı düzenlemek için açın.
 1. Yeni bir koleksiyon görünümü denetleyicisi kullanıcının arama sonuçlarını sunmak için film şeridi sürükleyin: 
 
-    [ ![](text-fields-and-search-images/seach02-vs.png "Bir koleksiyon görünümü denetleyicisi")](text-fields-and-search-images/seach02-vs.png)
+    [![](text-fields-and-search-images/seach02-vs.png "Bir koleksiyon görünümü denetleyicisi")](text-fields-and-search-images/seach02-vs.png#lightbox)
 1. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, kullanın `SearchResultsViewController` için **sınıfı** ve `SearchResults` için **film şeridi kimliği**: 
 
-    [ ![](text-fields-and-search-images/search03-vs.png "Pencere öğesi sekmesi")](text-fields-and-search-images/search03-vs.png)
+    [![](text-fields-and-search-images/search03-vs.png "Pencere öğesi sekmesi")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. Seçin **hücre prototip** tasarım yüzeyine.
 1. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, kullanın `SearchResultCell` için **sınıfı** ve `ImageCell` için **tanımlayıcısı**: 
 
-    [ ![](text-fields-and-search-images/search04-vs.png "Pencere öğesi sekmesi")](text-fields-and-search-images/search04-vs.png)
+    [![](text-fields-and-search-images/search04-vs.png "Pencere öğesi sekmesi")](text-fields-and-search-images/search04-vs.png#lightbox)
 1. Düzen tasarımı, **hücre prototip** ve her benzersiz bir öğesiyle kullanıma **adı** içinde **pencere öğesi** sekmesinde **özellikleri Explorer**: 
 
-    [ ![](text-fields-and-search-images/search05-vs.png "Düzen hücre prototip tasarım")](text-fields-and-search-images/search05-vs.png)
+    [![](text-fields-and-search-images/search05-vs.png "Düzen hücre prototip tasarım")](text-fields-and-search-images/search05-vs.png#lightbox)
 1. Şeridinizin için değişiklikleri kaydedin.
     
 -----
@@ -198,13 +198,13 @@ Aşağıdakileri yapın:
 
 Ardından, kullanıcı için arama veri modeli sonuçlar olarak görev yapması için bir sınıf sağlamanız gerekir. İçinde **Çözüm Gezgini**, proje adına sağ tıklayın ve seçin **Ekle** > **yeni dosya...**   >  **Genel** > **boş sınıfı** ve sağlayan bir **adı**: 
 
-[ ![](text-fields-and-search-images/search06.png "Boş sınıfı seçin ve bir ad sağlayın")](text-fields-and-search-images/search06.png)
+[![](text-fields-and-search-images/search06.png "Boş sınıfı seçin ve bir ad sağlayın")](text-fields-and-search-images/search06.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Ardından, kullanıcı için arama veri modeli sonuçlar olarak görev yapması için bir sınıf sağlamanız gerekir. İçinde **Çözüm Gezgini**, proje adına sağ tıklayın ve seçin **Ekle** > **yeni öğe...**   >  **Apple** > **çeşitli** > **sınıfı** ve sağlayan bir **adı**: 
 
-[ ![](text-fields-and-search-images/search06-vs.png "Sınıfı seçin ve bir ad sağlayın")](text-fields-and-search-images/search06-vs.png)
+[![](text-fields-and-search-images/search06-vs.png "Sınıfı seçin ve bir ad sağlayın")](text-fields-and-search-images/search06-vs.png#lightbox)
 
 -----
 
@@ -772,11 +772,11 @@ public override void ViewDidAppear (bool animated)
 
 Ne zaman uygulamayı çalıştırın ve arama sekmenin, kullanıcı tarafından seçilen öğelerin tam filtrelenmemiş listesini kullanıcıya sunulur:
 
-[ ![](text-fields-and-search-images/intro02.png "Varsayılan arama sonuçları")](text-fields-and-search-images/intro02.png)
+[![](text-fields-and-search-images/intro02.png "Varsayılan arama sonuçları")](text-fields-and-search-images/intro02.png#lightbox)
 
 Kullanıcı bir arama terimi girmeniz başladığında, sonuçlardan terimin tarafından filtre ve otomatik olarak güncelleştirilen:
 
-[ ![](text-fields-and-search-images/intro03.png "Filtrelenmiş arama sonuçları")](text-fields-and-search-images/intro03.png)
+[![](text-fields-and-search-images/intro03.png "Filtrelenmiş arama sonuçları")](text-fields-and-search-images/intro03.png#lightbox)
 
 Kullanıcı herhangi bir zamanda arama sonuçlarında bir öğeye geçiş yapar ve dokunma yüzeyi Siri uzaktan seçmek için tıklatın.
 
@@ -790,7 +790,7 @@ Bu makalede, tasarlama ve metin ve arama alanlarını Xamarin.tvOS uygulama içi
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

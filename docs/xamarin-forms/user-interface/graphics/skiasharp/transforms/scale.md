@@ -4,14 +4,15 @@ description: "Çeşitli boyutlarda nesnelere ölçeklendirmeye yönelik SkiaShar
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 3ea498b3672c0b9ef4efeff7ec5981dca5a36912
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-scale-transform"></a>Ölçek dönüştürme
 
@@ -103,7 +104,7 @@ Merak ediyor: ölçeklendirme etkenleri etkilemesi döndürülen değer `Measure
 
 Her şeyi sonra çizilmiş gördüğünüz gibi `Scale` artar orantılı olarak çağırın:
 
-[![](scale-images/basicscale-small.png "Üçlü sayfasının ekran görüntüsü temel ölçek")](scale-images/basicscale-large.png "Üçlü sayfasının ekran görüntüsü temel ölçek")
+[![](scale-images/basicscale-small.png "Üçlü sayfasının ekran görüntüsü temel ölçek")](scale-images/basicscale-large.png#lightbox "Üçlü sayfasının ekran görüntüsü temel ölçek")
 
 Metin köşeleri ve 10 piksel kenar boşluğu tuvalin üst ve sol kenarlarının yuvarlak dikdörtgen arasındaki yuvarlama, o satırdaki tireler uzunluğu kesikli çizgi genişliğini etken tüm aynı ölçeklendirme tabidir.
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Yuvarlak dikdörtgen sol üst köşesindeki konumlandırılmış `margin` tuvalin solundaki piksellerden ve `margin` pikseller yukarıdan. Son iki bağımsız değişken `Scale` yöntemi, bu değerleri artı genişlik ve yükseklik de genişlik ve yükseklik yuvarlak dikdörtgen olan metin için ayarlanır. Bu, tüm ölçeklendirme Bu dikdörtgeni merkezi göre olduğu anlamına gelir:
 
-[![](scale-images/centeredscale-small.png "Üçlü sayfasının ekran görüntüsü ortalanmış ölçek")](scale-images/centeredscale-large.png "Üçlü sayfasının ekran görüntüsü ortalanmış ölçek")
+[![](scale-images/centeredscale-small.png "Üçlü sayfasının ekran görüntüsü ortalanmış ölçek")](scale-images/centeredscale-large.png#lightbox "Üçlü sayfasının ekran görüntüsü ortalanmış ölçek")
 
 `Slider` Bu programda öğelerine sahip bir dizi & #x 2013; 10-10. Gördüğünüz gibi (Android Center'da Ekran gibi) ölçeklendirme dikey negatif değerler ölçeklendirme merkezi üzerinden geçirir yatay ekseni etrafında ters çevirmek nesneleri neden olur. Negatif değerler (Windows ekranın sağ taraftaki olduğu gibi) ölçeklendirme yatay ölçekleme merkezi üzerinden geçirir dikey ekseni etrafında ters çevirmek nesneleri neden olur.
 
@@ -246,7 +247,7 @@ using (SKPaint strokePaint = new SKPaint
 
 `pathBounds` Dikdörtgen bu kodu en üstüne yakın elde ve daha sonra genişliği ve yüksekliği tuvalin ile kullanılan `Scale` çağırın. Tek başına çağrı tarafından işlendiğinde yolu koordinatlarını ölçeklenir `DrawPath` çağrısı ancak yıldız ortalanmış tuvale sağ üst köşesinde. Aşağı ve sola gölgeye gerekir. Bu, iş `Translate` çağırın. Bu iki özelliklerini `pathBounds` yaklaşık – 100 olduğundan, yaklaşık 100 çeviri faktörlerdir. Çünkü `Translate` çağrıdır sonra `Scale` çağrısı, bunlar yıldız merkezi Kanvasın ortasına hareket edecek şekilde bu değerleri ölçeklendirme unsurlar etkili bir şekilde ölçeklenir:
 
-[![](scale-images/anisotropicscaling-small.png "Üçlü sayfasının ekran görüntüsü Eşyönsüz ölçeklendirme")](scale-images/anisotropicscaling-large.png "Üçlü sayfasının ekran görüntüsü Eşyönsüz ölçeklendirme")
+[![](scale-images/anisotropicscaling-small.png "Üçlü sayfasının ekran görüntüsü Eşyönsüz ölçeklendirme")](scale-images/anisotropicscaling-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Eşyönsüz ölçeklendirme")
 
 Bir başka yolu hakkında düşünmek `Scale` ve `Translate` çağrıdır ters sırada etkisini belirlemek için: `Translate` çağrısı tuvale sol üst köşesindeki yönlendirilmiş ancak tam olarak görünür olacak şekilde yol kaydırır. `Scale` Yöntemi sonra yapar, yıldız sol üst köşesindeki göre daha büyük.
 
@@ -289,7 +290,7 @@ using (SKPaint textPaint = new SKPaint
 
 Benzer mantığı olduğu ve döndürülen metin sınırları dikdörtgen göre sayfa boyutunu metin genişletir `MeasureText` (olduğu gerçek metin biraz daha büyük):
 
-[![](scale-images/anisotropictext-small.png "Üçlü sayfasının ekran görüntüsü Eşyönsüz Test")](scale-images/anisotropictext-large.png "Üçlü sayfasının ekran görüntüsü Eşyönsüz Test")
+[![](scale-images/anisotropictext-small.png "Üçlü sayfasının ekran görüntüsü Eşyönsüz Test")](scale-images/anisotropictext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Eşyönsüz Test")
 
 Grafik nesneleri en boy oranını korumak gerekiyorsa, isotropic ölçeklendirme kullanmak istersiniz. **Isotropic ölçeklendirme** sayfa bu için 11 işaret yıldız gösterir. Kavramsal olarak, bir grafik nesnesi isotropic ölçeklendirme sayfasının ortasında görüntüleme için adımlar şunlardır:
 
@@ -338,7 +339,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Kod yıldız on kez daha da görüntüler., ölçekleme azalan her zaman faktörü % 10 ve rengi mavi ve kırmızı aşamalı olarak değiştirerek:
 
-[![](scale-images/isotropicscaling-small.png "Üçlü sayfasının ekran görüntüsü Isotropic ölçeklendirme")](scale-images/isotropicscaling-large.png "Üçlü sayfasının ekran görüntüsü Isotropic ölçeklendirme")
+[![](scale-images/isotropicscaling-small.png "Üçlü sayfasının ekran görüntüsü Isotropic ölçeklendirme")](scale-images/isotropicscaling-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Isotropic ölçeklendirme")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 707ba5874c939fbd25f4e25a7cefd3dc5fc75131
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ea6528ce3523ab5d829342e99ccf35ca3d69aa2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Düğümlerde iOS simülatörü (Windows)
 
 _Windows Visual Studio içinde tamamen test ve hata ayıklama iOS uygulamaları_
 
-[ ![](ios-simulator-images/hero-sml.png "iOS simülatörü Windows üzerinde çalışan")](ios-simulator-images/hero.png)
+[![](ios-simulator-images/hero-sml.png "iOS simülatörü Windows üzerinde çalışan")](ios-simulator-images/hero.png#lightbox)
 
 ## <a name="download-and-install"></a>İndirme ve yükleme
 
@@ -36,7 +36,7 @@ Uzak iOS simülatörü kullanmak için:
 
 Gelen uzak iOS simülatörü devre dışı bırakabilirsiniz **Araçlar > Seçenekler > Xamarin > iOS ayarları** kutusunu kaldırarak **Windows Uzak Simulator** burada gösterilen:
 
-[ ![](ios-simulator-images/options-sml.png "Simulator kullanmak için onay kutusu")](ios-simulator-images/options.png)
+[![](ios-simulator-images/options-sml.png "Simulator kullanmak için onay kutusu")](ios-simulator-images/options.png#lightbox)
 
 İOS simülatörü bağlı Mac bilgisayarda sonra açılır. Uzak iOS simülatörü yeniden açmak için bu seçeneği işaretleyin.
 
@@ -54,14 +54,14 @@ Pencere araç çubuğu düğmeleri simulator ile etkileşim kurmak için çeşit
 - [**Ayarları** ](#settings) – klavye ve yerini yapılandırın.
  - Diğer [ **seçenekleri** ](#options) – çeşitli simulator seçenekleri döndürme, sallama gibi kullanılabilir veya benzetici diğer durumlarda çağırma. Bazı seçenekler yapılabileceği, araç çubuğunda veya penceresinde sağ tıklanarak görüntülenen üç nokta simgesinden erişilebilir.
 
-    [ ![](ios-simulator-images/maps-app-sml.png "Örnek iOS simülatörü eşlemeleri")](ios-simulator-images/maps-app.png)
+    [![](ios-simulator-images/maps-app-sml.png "Örnek iOS simülatörü eşlemeleri")](ios-simulator-images/maps-app.png#lightbox)
 
 
 ### <a name="settings"></a>Ayarlar
 
 "Dişli" simgesi açar **ayarları** penceresi:
 
-[ ![](ios-simulator-images/settings-sml.png "iOS simülatörü ayarları")](ios-simulator-images/settings.png)
+[![](ios-simulator-images/settings-sml.png "iOS simülatörü ayarları")](ios-simulator-images/settings.png#lightbox)
 
 Bu, simulator donanım klavyede etkinleştirmek ve hangi konumu (bir statik konumu ya da diğer taşıma konumu seçenekleri dahil) cihaza bildirilen seçin olanak sağlar.
 
@@ -71,7 +71,7 @@ Bu, simulator donanım klavyede etkinleştirmek ve hangi konumu (bir statik konu
 
 Sallama hareketi tetikleme ve simulator yeniden döndürme gibi simulator kullanılabilir tüm seçenekleri görüntülemek için simulator penceresinde herhangi bir yere sağ tıklatın:
 
-[ ![](ios-simulator-images/more-sml.png "iOS simülatörü ek ayarlar")](ios-simulator-images/more.png)
+[![](ios-simulator-images/more-sml.png "iOS simülatörü ek ayarlar")](ios-simulator-images/more.png#lightbox)
 
 ### <a name="touchscreen-support"></a>Dokunmatik desteği
 

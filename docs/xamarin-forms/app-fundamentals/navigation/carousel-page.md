@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: adb1042b8f44d3f414e2161e20b7eb3dc0e940a2
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c4f8d70625fd8ee0e07832f8bdb3b7e502b5b38f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="carousel-page"></a>Karusel sayfası
 
@@ -36,7 +36,7 @@ Sağdan sola taşır için ikinci sayfasında, aşağıdaki ekran görüntüleri
 
 <!--
 > [!NOTE]
-> **Note**: The [`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselView/) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
+> The [`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselView/) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
 -->
 
 ## <a name="creating-a-carouselpage"></a>Bir CarouselPage oluşturma
@@ -49,7 +49,7 @@ Sağdan sola taşır için ikinci sayfasında, aşağıdaki ekran görüntüleri
 Her iki yaklaşımın ile `CarouselPage` sonra görünen her sayfada görüntülenecek sonraki sayfaya taşıma manyetik etkileşim sırayla olur. Bu gezinme deneyimi doğal ve Windows Phone kullanıcıları tanıdık devam edebilir.
 
 > [!NOTE]
-> **Not**: A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) yalnızca ile doldurulabilir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örnekleri veya `ContentPage` türevleri.
+> A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) yalnızca ile doldurulabilir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örnekleri veya `ContentPage` türevleri.
 
 <a name="Populating_a_CarouselPage_with_a_Page_Collection" />
 
@@ -142,7 +142,7 @@ public class MainPageCS : CarouselPage
 Her [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) yalnızca görüntüler bir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) belirli bir renk ve [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) bu rengin.
 
 > [!NOTE]
-> **Not**: [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) UI sanallaştırma desteklemez. Bu nedenle, performansı etkilenebilir `CarouselPage` çok fazla sayıda alt öğeleri içerir.
+> [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) UI sanallaştırma desteklemez. Bu nedenle, performansı etkilenebilir `CarouselPage` çok fazla sayıda alt öğeleri içerir.
 
 Varsa bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) içine katıştırılmış [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) sayfasında bir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/), [ `MasterDetailPage.IsGestureEnabled` ](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty/) özelliği ayarlanmalıdır `false` arasındaki hareketi çakışmaları önlemek için `CarouselPage` ve `MasterDetailPage`.
 
@@ -239,7 +239,7 @@ public class MainPageCS : CarouselPage
 Her [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) yalnızca görüntüler bir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) belirli bir renk ve [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) bu rengin.
 
 > [!NOTE]
-> **Not**: [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) UI sanallaştırma desteklemez. Bu nedenle, performansı etkilenebilir `CarouselPage` çok fazla sayıda alt öğeleri içerir.
+> [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) UI sanallaştırma desteklemez. Bu nedenle, performansı etkilenebilir `CarouselPage` çok fazla sayıda alt öğeleri içerir.
 
 Varsa bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) içine katıştırılmış [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) sayfasında bir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/), [ `MasterDetailPage.IsGestureEnabled` ](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty/) özelliği ayarlanmalıdır `false` arasındaki hareketi çakışmaları önlemek için `CarouselPage` ve `MasterDetailPage`.
 

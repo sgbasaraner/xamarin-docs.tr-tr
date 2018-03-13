@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0c79e982e7f6543c6dc34885b0afcd7056989a96
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b76376bdbcf10bf35768cfdb79b6823388e303c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>Birden çok çözümleri CocosSharp işleme
 
@@ -22,33 +22,12 @@ CocosSharp oyununuzu sayısından bağımsız olarak fiziksel bir cihazın ekran
 
 Varsayılan çözünürlük CocosSharp, fiziksel piksel oyun koordinatları ile eşleşecek şekilde davranıştır. Aşağıdaki tabloda, çeşitli aygıtlar bir arka plan ortamı hareketli grafik genişliği ve yüksekliği 368 x 240 hale getiren gösterir. İlk satırın teknik değil gerçek bir cihaza, ancak aygıt çözünürlüğü bakılmaksızın hareketli yerine beklenen çizmeye şöyledir:
 
-<table>
-    <thead>
-        <tr>
-            <th>Cihaz</th>
-            <th>Ekran çözünürlüğü</th>
-            <th>Örnek ekran görüntüsü</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>İstediğiniz görüntüleme</td>
-            <td>368 x 240 (ile siyah çubuklar en boy oranını için)</td>
-            <td><img src="resolutions-images/image1.png" title="368 x 240 (ile siyah çubuklar en boy oranını için)" /></td>
-        </tr>
-        <tr>
-            <td>iPhone 4s</td>
-            <td>960x640</td>
-            <td><img src="resolutions-images/image2.png" title="iPhone 4s 960x640" /></td>
-        </tr>
-        <tr>
-            <td>iPhone 6 Plus</td>
-            <td>1920x1080</td>
-            <td><img src="resolutions-images/image3.png" title="iPhone 6 Plus 1920 x 1080" /></td>
-        </tr>
-    </tbody>
-</table>
 
+| **Cihazı** | **Ekran çözünürlüğü** | **Örnek ekran görüntüsü** |
+|--- | --- |--- |
+|İstediğiniz görüntüleme|368 x 240 (ile siyah çubuklar en boy oranını için)| ![368 x 240 (ile siyah çubuklar en boy oranını için)](resolutions-images/image1.png) |
+|iPhone 4s|960x640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
+|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920x1080](resolutions-images/image3.png) |
 
 Bu belge yukarıdaki tabloda gösterilen sorunu gidermek için CocosSharp kullanmayı kapsar. Diğer bir deyişle, biz – ekran çözünürlüğü bağımsız olarak ilk satırın gösterildiği gibi işleme herhangi bir cihazda nasıl ele alacağız.
 

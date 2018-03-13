@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 15f198465c544989b347fe534978956741478ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e03acbbac737bffd21ee3b592ab017d227f822ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-compression"></a>Düzenini sıkıştırma
 
@@ -60,7 +60,7 @@ Sonuçta elde edilen hiyerarşisini iç içe geçmiş görüntüleme ile incelen
 İOS ve Android platformları üzerinde Xamarin.Forms uygulamalar için kullanılabilir olan düzenini sıkıştırma görünüm sayfa işleme performansını visual ağacından belirtilen düzenleri kaldırarak iç içe geçme düzleştirmek amaçlar. Teslim performans avantajı bir sayfa, kullanılan işletim sistemi sürümü ve uygulamanın çalıştığı aygıt karmaşıklığına bağlı olarak değişir. Ancak, büyük performans artışı eski cihazlarda görülür.
 
 > [!NOTE]
-> **Not**: Bu makale düzenini sıkıştırma Android uygulama sonuçlarını odaklanır olsa da, iOS için eşit oranda geçerlidir.
+> Bu makale düzenini sıkıştırma Android uygulama sonuçlarını odaklanır olsa da, iOS için eşit oranda geçerlidir.
 
 ## <a name="layout-compression"></a>Düzenini sıkıştırma
 
@@ -119,6 +119,6 @@ Düzenini sıkıştırma belirtilen düzenleri sayfa işleme performansı giriş
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Özel bir düzen oluşturma](~/xamarin-forms/user-interface/layouts/custom.md)
-- [Hızlı Oluşturucu](~/xamarin-forms/internals/fast-renderers.md)
+- [Özel Düzen Oluşturma](~/xamarin-forms/user-interface/layouts/custom.md)
+- [Hızlı Oluşturucular](~/xamarin-forms/internals/fast-renderers.md)
 - [LayoutCompression (örnek)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutcompression/)

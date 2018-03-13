@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: d5f9f86447886e2cea46a6317d05506cdbed90bb
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 30ee40272b5f7a6f5863dccf4dcae7431f6f536f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-view"></a>Bir görünümü uygulama
 
@@ -115,7 +115,7 @@ public class MainPageCS : ContentPage
 1. Ekleme bir `ExportRenderer` özniteliği, Xamarin.Forms özel denetimi oluşturmak için kullanılacak belirtmek için özel Oluşturucu sınıfı. Bu öznitelik, özel Oluşturucu Xamarin.Forms ile kaydetmek için kullanılır.
 
 > [!NOTE]
-> **Not**: çoğu Xamarin.Forms öğeleri için her platform projesinde özel Oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse, varsayılan oluşturucu denetimin taban sınıfı için kullanılır. Ancak, özel Oluşturucu her platform projesinde işlenirken gereken bir [Görünüm](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) öğesi.
+> Çoğu Xamarin.Forms öğeleri için her platform projesinde özel Oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse, varsayılan oluşturucu denetimin taban sınıfı için kullanılır. Ancak, özel Oluşturucu her platform projesinde işlenirken gereken bir [Görünüm](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) öğesi.
 
 Aşağıdaki diyagram, her proje örnek uygulamasında, aralarındaki ilişkilerin birlikte sorumlulukları gösterir:
 
@@ -318,7 +318,7 @@ namespace CustomRenderer.WinPhone81
 Koşuluyla `Control` özelliği `null`, yeni bir `CaptureElement` örneği ve `InitializeAsync` yöntemi çağrıldığında, kullanan `MediaCapture` kameradan Önizleme akışı sağlamak için API. `SetNativeControl` Yöntemi bir başvuru atamak için çağrıldıktan sonra `CaptureElement` için örnek `Control` özelliği. `CaptureElement` Kontrol çıkarır bir `Tapped` tarafından işlenen olay `OnCameraPreviewTapped` durdurmanız ve onu dokunduğunuz video önizlemesi başlattığınızda yöntemi. `Tapped` Olay abone için özel Oluşturucu yeni bir Xamarin.Forms öğesi bağlı ve yalnızca zaman Oluşturucu öğesi değişiklikleri bağlı gelen iptal.
 
 > [!NOTE]
-> **Not**: durdurun ve Windows Phone veya UWP uygulamasında kameraya erişebilmesi nesnelerin silmek önemlidir. Bunun Sağlanamaması cihazın kamera erişmeye çalışan diğer uygulamalarla etkileyebilir. Daha fazla bilgi için bkz: ve [hızlı başlangıç: MediaCapture API'sini kullanarak video yakalama](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) Windows çalışma zamanı uygulamaları için ve [kamera önizlemesini görüntülemek](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) UWP uygulamalar için.
+> Durdur ve bir Windows Phone ya da UWP uygulaması kamera erişim sağlayan nesnelerin silmek önemlidir. Bunun Sağlanamaması cihazın kamera erişmeye çalışan diğer uygulamalarla etkileyebilir. Daha fazla bilgi için bkz: ve [hızlı başlangıç: MediaCapture API'sini kullanarak video yakalama](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) Windows çalışma zamanı uygulamaları için ve [kamera önizlemesini görüntülemek](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) UWP uygulamalar için.
 
 ## <a name="summary"></a>Özet
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 524d551a96dd1352d86671238a63c103cef9b0c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 83841e62d863bf4be4edef5c0b6b7d486f192f4d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="background-tasks"></a>Arka plan görevleri
 
@@ -30,7 +30,7 @@ Tüm geliştirici watchOS uygulamanın verileri ve kullanıcı arabirimi geçerl
 
 Aşağıdaki örnek alın:
 
-[ ![](background-tasks-images/update00.png "Bir kullanıcı kendi iPhone ve bunların Apple Watch gün boyunca arasında nasıl geçiş")](background-tasks-images/update00.png)
+[![](background-tasks-images/update00.png "Bir kullanıcı kendi iPhone ve bunların Apple Watch gün boyunca arasında nasıl geçiş")](background-tasks-images/update00.png#lightbox)
 
 1. Bir kahve için satır beklenirken sabah, kullanıcının kendi iPhone güncel haberleri birkaç dakika gözatar.
 2. Kafeterya ayrılmadan önce bunlar hızlı bir şekilde kendi izleme yüz üzerinde olası ile hava durumu denetleyin.
@@ -43,7 +43,7 @@ Aşağıdaki örnek alın:
 
 Yeni kullanarak API'leri Apple eklemiştir watchOS 3'de, uygulama için zamanlayabilirsiniz bir _arka plan yenileme_ ve kullanıcı istediği önce istenen bilgileri hazır bulundurun. Yukarıda açıklanan hava durumu olası örneği alın:
 
-[ ![](background-tasks-images/update01.png "Hava durumu olası örneği")](background-tasks-images/update01.png)
+[![](background-tasks-images/update01.png "Hava durumu olası örneği")](background-tasks-images/update01.png#lightbox)
 
 1. Sistem tarafından belirli bir zamanda uyandırılabilir için uygulama zamanlama. 
 2. Uygulama güncelleştirme oluşturmak için gerekli bilgileri getirir.
@@ -52,7 +52,7 @@ Yeni kullanarak API'leri Apple eklemiştir watchOS 3'de, uygulama için zamanlay
 
 Yukarıda görülen watchOS sistem çok sınırlı havuzu kullanılabilir olan bir veya daha fazla görevleri kullanarak uygulamayı uyku modundan:
 
-[ ![](background-tasks-images/update02.png "Bir veya daha fazla görev kullanarak uygulamayı watchOS sistem uyandırır")](background-tasks-images/update02.png)
+[![](background-tasks-images/update02.png "Bir veya daha fazla görev kullanarak uygulamayı watchOS sistem uyandırır")](background-tasks-images/update02.png#lightbox)
 
 Apple öneririz (uygulamaya sınırlı kaynak olduğundan), bu görevin en yapmadan uygulama kendisini güncelleştirme işlemi tamamlanana kadar sürüklediğinizde tutarak.
 
@@ -86,7 +86,7 @@ namespace MonkeyWatch.MonkeySeeExtension
 
 Uygulamayı belirtilen görevi tamamlandığında, sisteme bu tamamlandı işaretleyerek döndürmeden:
 
-[ ![](background-tasks-images/update03.png "Görev tamamlandı işaretleyerek sisteme döndürür.")](background-tasks-images/update03.png)
+[![](background-tasks-images/update03.png "Görev tamamlandı işaretleyerek sisteme döndürür.")](background-tasks-images/update03.png#lightbox)
 
 <a name="New-Background-Tasks" />
 
@@ -107,7 +107,7 @@ Bu görevleri, aşağıdaki bölümlerde ayrıntılı olarak ele alınacaktır.
 
 `WKApplicationRefreshBackgroundTask` İleriki bir tarihte woken uygulamanız için zamanlanan genel bir görevdir:
 
-[ ![](background-tasks-images/update04.png "İleriki bir tarihte woken WKApplicationRefreshBackgroundTask")](background-tasks-images/update04.png)
+[![](background-tasks-images/update04.png "İleriki bir tarihte woken WKApplicationRefreshBackgroundTask")](background-tasks-images/update04.png#lightbox)
 
 Görev çalışma zamanı içinde uygulama yerel işleme güncelleştirme gibi her türlü olası zaman çizelgesi yapabilir veya bazı gerekli verilerle fetch bir `NSUrlSession`.
 
@@ -118,7 +118,7 @@ Görev çalışma zamanı içinde uygulama yerel işleme güncelleştirme gibi h
 
 Sistem göndereceğiniz bir `WKURLSessionRefreshBackgroundTask` verileri bittiği indiriliyor ve uygulama tarafından işlenmesi hazır:
 
-[ ![](background-tasks-images/update05.png "Veri yükleme bittiğinde WKURLSessionRefreshBackgroundTask")](background-tasks-images/update05.png)
+[![](background-tasks-images/update05.png "Veri yükleme bittiğinde WKURLSessionRefreshBackgroundTask")](background-tasks-images/update05.png#lightbox)
 
 Bir uygulama veri arka planda yüklenirken çalışır durumda kalır değil. Bunun yerine, uygulama istek verileri için zamanlar sonra askıya alınmış ve sistem karşıdan yüklenmesi tamamlandığında uygulamayı yalnızca reawakening verileri işler.
 
@@ -128,17 +128,17 @@ Bir uygulama veri arka planda yüklenirken çalışır durumda kalır değil. Bu
 
 WatchOS 3'de, Apple, kullanıcıların sık kullanılan uygulamalarını sabitleyin ve hızlı bir şekilde erişmesine yuva ekledi. Kullanıcının Apple Watch yan düğmesine bastığında sabitlenmiş uygulama anlık görüntü Galerisi görüntülenir. Kullanıcı istediğiniz uygulamayı bulun ve ardından anlık görüntü çalışan uygulamanın arabirimi ile değiştirerek başlatmak için uygulama dokunun için sola veya sağa doğru çekin.
 
-[ ![](background-tasks-images/update06.png "Anlık görüntü çalışan uygulamaları arabirimiyle değiştirme")](background-tasks-images/update06.png)
+[![](background-tasks-images/update06.png "Anlık görüntü çalışan uygulamaları arabirimiyle değiştirme")](background-tasks-images/update06.png#lightbox)
 
 Sistem anlık görüntüleri, uygulamanın kullanıcı arabirimini düzenli aralıklarla alır (göndererek bir `WKSnapshotRefreshBackgroundTask`) ve bu anlık görüntülerin yuva doldurmak için kullanır. watchOS uygulama içeriği ve kullanıcı Arabirimi bu anlık görüntü oluşturulduğunda önce güncelleştirme olanağı sağlar.
 
 Uygulama için Önizleme ve başlatma görüntüleri olarak çalıştıklarının beri anlık görüntüleri watchOS 3 çok önemlidir. Bir yuva uygulamasında kullanıcı kapatır değilse, tam ekrana genişletin, ön girin ve çalıştırma, anlık görüntünün güncel zorunludur şekilde başlatın:
 
-[ ![](background-tasks-images/update07.png "Bir yuva uygulamasında kullanıcı kapatır, tam ekrana genişletecek")](background-tasks-images/update07.png)
+[![](background-tasks-images/update07.png "Bir yuva uygulamasında kullanıcı kapatır, tam ekrana genişletecek")](background-tasks-images/update07.png#lightbox)
 
 Sistem yeniden verecek bir `WKSnapshotRefreshBackgroundTask` uygulama (verileri ve kullanıcı arabirimini güncelleştirerek) önce hazırlanabilmeniz adına, anlık görüntü alınır:
 
-[ ![](background-tasks-images/update08.png "Uygulama verileri ve kullanıcı Arabirimi anlık görüntü alınırken önce güncelleştirerek hazırlama")](background-tasks-images/update08.png)
+[![](background-tasks-images/update08.png "Uygulama verileri ve kullanıcı Arabirimi anlık görüntü alınırken önce güncelleştirerek hazırlama")](background-tasks-images/update08.png#lightbox)
 
 Uygulamanın ne zaman işaretler `WKSnapshotRefreshBackgroundTask` tamamlandı, sistemi otomatik olarak uygulamanın UI Snapshot götürecektir.
 
@@ -150,7 +150,7 @@ Uygulamanın ne zaman işaretler `WKSnapshotRefreshBackgroundTask` tamamlandı, 
 
 Kullanıcı uygulamasından bir bildirim alır ve bunu uygulama ön plana çıkarmak için dokunur ek olarak, anlık görüntü de başlatma ekranı davranan beri güncel olması gerekir:
 
-[ ![](background-tasks-images/update09.png "Kullanıcı uygulamasından bir bildirim alır ve bunu uygulama ön plana çıkarmak için dokunur")](background-tasks-images/update09.png)
+[![](background-tasks-images/update09.png "Kullanıcı uygulamasından bir bildirim alır ve bunu uygulama ön plana çıkarmak için dokunur")](background-tasks-images/update09.png#lightbox)
 
 Kullanıcı bir watchOS uygulaması ile etkileşime bu yana bir saatten daha uzun olması durumunda varsayılan durumuna döndürmek kuramaz. Varsayılan durumu farklı uygulamalara farklı anlamlara ve bir uygulama tasarımını bağlı olarak, bu varsayılan durumu hiç sahip olmayabilir.
 
@@ -162,13 +162,13 @@ Kullanıcı bir watchOS uygulaması ile etkileşime bu yana bir saatten daha uzu
 
 WatchOS 3'de, Apple izleme bağlantı arka planda yenileme API yeni üzerinden ile tümleşik olan `WKWatchConnectivityRefreshBackgroundTask`. WatchOS uygulama arka planda çalıştığı sırada bu yeni özelliği kullanarak, iPhone uygulama yeni veri izleme uygulama karşılığı için iletebilirsiniz:
 
-[ ![](background-tasks-images/update10.png "WatchOS uygulama arka planda çalıştığı sırada bir iPhone uygulama izleme uygulama karşılığı için yeni veri sunabilir")](background-tasks-images/update10.png)
+[![](background-tasks-images/update10.png "WatchOS uygulama arka planda çalıştığı sırada bir iPhone uygulama izleme uygulama karşılığı için yeni veri sunabilir")](background-tasks-images/update10.png#lightbox)
 
 Olası itme başlatan, uygulama bir dosya göndermek veya iPhone uygulamasını kullanıcı bilgilerini güncelleştirme bağlamında Apple Watch uygulama arka planda çağırır.
 
 Ne zaman izleme uygulama woken aracılığıyla bir `WKWatchConnectivityRefreshBackgroundTask` , iPhone uygulamadan verileri almak için standart API yöntemlerini kullanmanız gerekecektir.
 
-[ ![](background-tasks-images/update11.png "WKWatchConnectivityRefreshBackgroundTask veri akışı")](background-tasks-images/update11.png)
+[![](background-tasks-images/update11.png "WKWatchConnectivityRefreshBackgroundTask veri akışı")](background-tasks-images/update11.png#lightbox)
 
 1. Oturum etkinleştirdi emin olun.
 2. Yeni izleme `HasContentPending` özellik değeri olduğu sürece `true`, uygulama hala işlemek için veri içeriyor. Tüm verileri işleme tamamlanana kadar olarak daha önce uygulama görev tutun.
@@ -180,7 +180,7 @@ Ne zaman izleme uygulama woken aracılığıyla bir `WKWatchConnectivityRefreshB
 
 Tüm yeni arka plan görevleri API parçasını birlikte yerleştirme, etkileşimleri tipik bir dizi aşağıdaki gibi görünür:
 
-[ ![](background-tasks-images/update12.png "Arka plan API yaşam döngüsü")](background-tasks-images/update12.png)
+[![](background-tasks-images/update12.png "Arka plan API yaşam döngüsü")](background-tasks-images/update12.png#lightbox)
 
 1. İlk olarak, watchOS uygulama bir arka plan olması uykuya geçme için bazı noktası olarak gelecekte görev zamanlar.
 2. Uygulama sistem tarafından woken ve bir görev gönderilir.
@@ -196,7 +196,7 @@ WatchOS uygulama sorumlu bir şekilde bu ekosistem içinde kendi boşaltma siste
 
 Aşağıdaki senaryoyu göz atın:
 
-[ ![](background-tasks-images/update13.png "Kendi boşaltma sistemin paylaşılan kaynaklar watchOS uygulama sınırlar")](background-tasks-images/update13.png)
+[![](background-tasks-images/update13.png "Kendi boşaltma sistemin paylaşılan kaynaklar watchOS uygulama sınırlar")](background-tasks-images/update13.png#lightbox)
 
 1. Kullanıcı watchOS uygulama 1: 00'da başlatılır.
 2. Uygulama uyandırır ve bir saat 2: 00'dan en yeni içerik indirmek için bir görev zamanlar.
@@ -213,7 +213,7 @@ Her uygulama farklı olsa da, Apple desenlerini kullanımı, bu gösterildiği g
 
 Aşağıdaki tipik kullanım senaryosu göz atın:
 
-[ ![](background-tasks-images/update14.png "Tipik kullanım senaryosu")](background-tasks-images/update14.png)
+[![](background-tasks-images/update14.png "Tipik kullanım senaryosu")](background-tasks-images/update14.png#lightbox)
 
 Kullanıcının sık kullanılan futbol takım 9:00 PM 19:00: 00'dan büyük bir eşleşme uygulama puanı düzenli olarak kontrol edilmesi kullanıcıya beklemeniz gerekir ve bir 30 dakikalık güncelleştirme aralığı karar yürütüyor.
 
@@ -262,7 +262,7 @@ Sistem döndürülecek bir `NSError` istenen görev zamanlama işleyemezse.
 
 Ardından, daha yakından puanı güncelleştirmek için gereken adımları gösteren 5 dakikalık göz atın:
 
-[ ![](background-tasks-images/update15.png "Puan güncelleştirmek için gereken adımları gösteren 5 dakikalık penceresi")](background-tasks-images/update15.png)
+[![](background-tasks-images/update15.png "Puan güncelleştirmek için gereken adımları gösteren 5 dakikalık penceresi")](background-tasks-images/update15.png#lightbox)
 
 1. 19:30:02: 00, uygulama sistem tarafından uyandırdı ve güncelleştirme arka plan görevi verilir. İlk önceliği, sunucudan son puanları almaktır. Bkz: [bir NSUrlSession zamanlama](#Scheduling-a-NSUrlSession) aşağıda.
 2. 7:30:05 uygulama özgün görev tamamlandığında, sistem uyku için uygulamaya koyar ve istenen veri arka planda karşıdan yüklemeye devam eder.
@@ -529,7 +529,7 @@ Ayrıca, bu da anlık görüntü görev uygulama (ilk parametresinde) varsayıla
 
 Yukarıdaki örnekte kendi puanları verimli çalışma ve yeni watchOS kullanarak güncelleştirmek için MonkeySoccer uygulama sürdü beş dakikalık penceresinin 3 arka plan görevleri görüldüğü gibi uygulamayı yalnızca 15 saniye toplam için etkin olan: 
 
-[ ![](background-tasks-images/update16.png "Uygulamanın yalnızca 15 saniye cinsinden toplam etkin")](background-tasks-images/update16.png)
+[![](background-tasks-images/update16.png "Uygulamanın yalnızca 15 saniye cinsinden toplam etkin")](background-tasks-images/update16.png#lightbox)
 
 Bu uygulamaya hem kullanılabilir Apple Watch kaynakları hem de pil ömrünün sahip etkisini azaltır ve ayrıca daha iyi izleme üzerinde çalışan diğer uygulamalarla çalışma yazmasına izin verir.
 
@@ -617,7 +617,7 @@ Kullandığı `RemainingComplicationUserInfoTransfers` özelliği `WCSession` ka
 
 WatchOS 3'de, Apple, kullanıcıların sık kullanılan uygulamalarını sabitleyin ve hızlı bir şekilde erişmesine yuva ekledi. Kullanıcının Apple Watch yan düğmesine bastığında sabitlenmiş uygulama anlık görüntü Galerisi görüntülenir. Kullanıcı istediğiniz uygulamayı bulun ve ardından anlık görüntü çalışan uygulamanın arabirimi ile değiştirerek başlatmak için uygulama dokunun için sola veya sağa doğru çekin.
 
-[ ![](background-tasks-images/dock01.png "Yerleştirme")](background-tasks-images/dock01.png)
+[![](background-tasks-images/dock01.png "Yerleştirme")](background-tasks-images/dock01.png#lightbox)
 
 Sistem, düzenli aralıklarla uygulamanın UI anlık görüntüleri alır ve bu anlık görüntülerin belgeleri doldurmak için kullanır. watchOS uygulama içeriği ve kullanıcı Arabirimi bu anlık görüntü oluşturulduğunda önce güncelleştirme olanağı sağlar.
 
@@ -676,7 +676,7 @@ Anlık görüntü güncelleştirme ile çalışırken aşağıdaki önerilerden 
 
 Apple veri akışı ile çalışmak için şunları öneririz:
 
-[ ![](background-tasks-images/update17.png "Uygulama verileri Akış Diyagramı")](background-tasks-images/update17.png)
+[![](background-tasks-images/update17.png "Uygulama verileri Akış Diyagramı")](background-tasks-images/update17.png#lightbox)
 
 Bir dış olay (örneğin, izleme Connectivity) uygulama uyandırır. Bu, veri (uygulamaların geçerli durumunu temsil eden) modeli güncelleştirmek için uygulama zorlar. Sonuç olarak veri modeli değişiklik uygulama kendi zorluklar güncellemeniz gerekir istek yeni bir anlık görüntü, büyük olasılıkla bir arka plan başlangıç `NSURLSession` daha fazla veri çekmek ve daha fazla arka plan zamanlamak için yeniler.
 

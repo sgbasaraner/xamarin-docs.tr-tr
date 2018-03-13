@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 482358b0ccbedf926cd9182065a1eb8f4c12683c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e57f19d1eb66e22badb418d4584f5654904c7ade
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="style-inheritance"></a>Stil devralma
 
@@ -62,10 +62,10 @@ Aşağıdaki kodda *açık* stil devralma XAML sayfası içinde:
 
 `baseStyle` Hedefleri [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) örnekleri ve ayarlar [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) ve [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) özellikleri. `baseStyle` Doğrudan herhangi denetimlere ayarlı değil. Bunun yerine, `labelStyle` ve `buttonStyle` ondan, ek bağlanabilirse özellik değerlerinin devralır. `labelStyle` Ve `buttonStyle` sonra uygulanan [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) örnekleri ve [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) ayarlayarak örneği, kendi [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) özellikleri. Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
 
-[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png)
+[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> **Not**: örtülü bir stil açık bir stili elde edilebilir, ancak bir açık stili örtülü bir stil türetilemez.
+> Örtülü bir stil açık bir stili elde edilebilir, ancak bir açık stili örtülü bir stil türetilemez.
 
 ### <a name="respecting-the-inheritance-chain"></a>Devralma zincirini uyarak
 
@@ -106,7 +106,7 @@ Bu devralma zincirini aşağıdaki kod örneğinde gösterilmiştir:
 
 Bu örnekte, `labelStyle` ve `buttonStyle` denetim düzeyi, kaynaklardır sırada `baseStyle` sayfa düzeyi kaynaktır. Ancak, `labelStyle` ve `buttonStyle` devralınmalıdır `baseStyle`, mümkün değil `baseStyle` devralınacak `labelStyle` veya `buttonStyle`, ilgili konumlarına hiyerarşisini görüntüleme için son.
 
-## <a name="style-inheritance-in-c35"></a>Stil devralma C &#35;
+## <a name="style-inheritance-in-c35"></a>C stili devralma&#35;
 
 Eşdeğer C# sayfaya, burada [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) örnekleri doğrudan atanır [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) gerekli denetimlerin özelliklerini, aşağıdaki kod örneğinde gösterilir:
 
@@ -160,7 +160,7 @@ Stilleri çoğaltma azaltın ve yeniden etkinleştirmek için diğer stilleri de
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Temel stilleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Stilleri (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

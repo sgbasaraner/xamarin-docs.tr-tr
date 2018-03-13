@@ -3,14 +3,15 @@ title: "Bölüm 11 özeti. Bağlanabilir altyapısı"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 3e3cfb55f7b96751979d14b489e892bc07817780
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6e0f1abf04695dfb5348b631a9fbdbd2c81bc431
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>Bölüm 11 özeti. Bağlanabilir altyapısı
 
@@ -22,7 +23,7 @@ Xamarin.Forms adlı bir gelişmiş özellik tanımını tanımlayan bir *bağlan
 
 [ **ClassHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/ClassHierarchy) örnek Xamarin.Forms sınıf hiyerarşisi görüntülemek ve oynadığı önemli rol tanıtmak için yansıma kullanan `BindableObject` bu hiyerarşide. `BindableObject` türetilen `Object` ve üst sınıftır [ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/) içinden [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) türetilir. Üst sınıf budur [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) ve [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/), üst sınıf olduğu [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/):
 
-[![Üçlü ekran paylaşımı sınıf hiyerarşisinin](images/ch11fg01-small.png "sınıf hiyerarşisi paylaşımı")](images/ch11fg01-large.png "sınıf hiyerarşisi paylaşımı")
+[![Üçlü ekran paylaşımı sınıf hiyerarşisinin](images/ch11fg01-small.png "sınıf hiyerarşisi paylaşımı")](images/ch11fg01-large.png#lightbox "sınıf hiyerarşisi paylaşımı")
 
 ## <a name="a-peek-into-bindableobject-and-bindableproperty"></a>Peek BindableObject ve BindableProperty
 

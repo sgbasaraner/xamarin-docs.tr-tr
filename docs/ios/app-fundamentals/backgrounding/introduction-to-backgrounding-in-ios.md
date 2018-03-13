@@ -6,11 +6,11 @@ ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e46520122b54fabfe27f73370e2ab736a349f7f4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c4eed99533ba1aca1bd5ba23078866909330b542
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>İOS içinde Backgrounding giriş
 
@@ -27,7 +27,7 @@ Arka plan iOS işlemleri için kod ıntune'un biz önce size bir iOS uygulaması
 
 İOS uygulama yaşam döngüsü, uygulama durumları ve bunlar arasında taşıma yöntemleri koleksiyonudur. Uygulamanın kullanıcı davranışını ve uygulamanın backgrounding gereksinimlerine göre durumları arasında geçiş yapar. Taşıma tarafından Aşağıdaki diyagramda gösterilmiştir:
 
- [ ![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Uygulama durumları ve uygulama temsilci yöntemlerini diyagramı")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png)
+ [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Uygulama durumları ve uygulama temsilci yöntemlerini diyagramı")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
 
 -  **Çalışmıyor** -uygulama henüz cihazda başlatıldı değil.
 -  **Çalışan/etkin** -uygulama ekranda ve bir kod ön planda yürütüyor.
@@ -52,7 +52,7 @@ Bir uygulama durumu değiştiğinde, iOS uygulamanın olay yöntemleri aracılı
 
 Aşağıdaki diyagram nasıl uygulama durumları gösterir ve yaşam döngüsü yöntemlerini bir araya getireceğinizi:
 
- [ ![](introduction-to-backgrounding-in-ios-images/image2.png "Bu diyagramda nasıl uygulama durumları gösterilir ve yaşam döngüsü yöntemlerini bir araya getireceğinizi")](introduction-to-backgrounding-in-ios-images/image2.png)
+ [![](introduction-to-backgrounding-in-ios-images/image2.png "Bu diyagramda nasıl uygulama durumları gösterilir ve yaşam döngüsü yöntemlerini bir araya getireceğinizi")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
 
 ## <a name="user-controls-for-backgrounding-in-ios"></a>Kullanıcı denetimleri için iOS Backgrounding
 
@@ -62,7 +62,7 @@ iOS 7 uygulamanın backgrounded durumu hakkında daha fazla denetime kullanıcı
 
 Uygulama değiştirici iOS 7 sunulan, önemli denetim bir özelliktir. Çift dokunarak başlatılan **giriş** düğmesine tıklayın ve işlemlerini Canlı olan uygulamalar gösterir:
 
- [ ![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Uygulama değiştirici kullanarak uygulamalar arasında taşıma")](introduction-to-backgrounding-in-ios-images/app-switcher-.png)
+ [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Uygulama değiştirici kullanarak uygulamalar arasında taşıma")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
 
 Uygulama değiştirici kullanarak, kullanıcıların tüm backgrounded ve askıya alınmış uygulamaları anlık görüntüleri gezinebilirsiniz. Bir uygulama dokunarak ön alana başlatır. Yukarı geçirmeyi uygulamayı, işlem sonlandırılıyor arka plandan kaldırır. Biz uygulama değiştirici yakından sürer [iOS uygulama yaşam döngüsü Demo](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md) sonraki bölümde.
 
@@ -77,7 +77,7 @@ iOS 7, kullanıcıların uygulamaları için backgrounding dışında opt izin v
 
 Kullanıcılar giderek bu ayarı değiştirebilir <span class="uiitem">ayarlar > Genel > uygulama arka plan yenileme</span> ve seçilen bir uygulamaya backgrounding ayrıcalıklarını düzenleme. Uygulama arka plan yenileme off olarak ayarlanırsa, uygulama arka plan girildikten sonra hemen askıya ve tüm arka plan işleme engel engelledi:
 
- [ ![](introduction-to-backgrounding-in-ios-images/settings-.png "Arka plan uygulama yenileme ayarları")](introduction-to-backgrounding-in-ios-images/settings-.png)
+ [![](introduction-to-backgrounding-in-ios-images/settings-.png "Arka plan uygulama yenileme ayarları")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
 
 Geliştiriciler, ile arka planda yenileme uygulama durumunu denetleyebilirsiniz `BackgroundRefreshStatus` API. Bir örnek için bkz [denetleme arka plan yenileme ayarı tarif](https://developer.xamarin.com/recipes/ios/multitasking/check_background_refresh_setting/).
 

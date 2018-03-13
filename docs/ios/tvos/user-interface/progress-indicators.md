@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b5d3a03324e73b06bd3defe7e6610163c3d1b26d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c021550e17cf8206d59102856a11c72000ad06aa
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-progress-indicators"></a>İlerleme göstergesi ile çalışma
 
@@ -21,7 +21,7 @@ _Bu makalede tasarlama ve İlerleme göstergesi ile Xamarin.tvOS uygulama içind
 
 Yeni içerik yüklemek veya uzun işleme işlemi gerçekleştirmek için Xamarin.tvOS uygulamanızı gerektiği zaman zamanlar olabilir. Bu saatlerde bir etkinliği göstergesini veya ilerleme çubuğunu uygulama hala çalıştığını bildiren kullanıcı sağlar ve bazı göstergesi çalıştırılan görevle konusunda vermek için sunmalıdır.
 
-[ ![](progress-indicators-images/intro01.png "Örnek İlerleme göstergesi")](progress-indicators-images/intro01.png)
+[![](progress-indicators-images/intro01.png "Örnek İlerleme göstergesi")](progress-indicators-images/intro01.png#lightbox)
 
 <a name="About-Activity-Indicators" />
 
@@ -57,19 +57,19 @@ Xamarin.tvOS uygulamada İlerleme göstergesi ile çalışmak için en kolay yol
 1. İçinde **çözüm paneli**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **etkinliği göstergesini** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](progress-indicators-images/activity01.png "Bir etkinlik göstergesi")](progress-indicators-images/activity01.png)
+    [![](progress-indicators-images/activity01.png "Bir etkinlik göstergesi")](progress-indicators-images/activity01.png#lightbox)
 1. İçinde **pencere öğesi sekmesini** , **özellikleri paneli**, etkinliği göstergesini birkaç özelliklerini aşağıdaki gibi ayarlayabilirsiniz kendi **stili** ve **davranışı**: 
 
-    [ ![](progress-indicators-images/activity02.png "Pencere öğesi sekmesi ")](progress-indicators-images/activity02.png)
+    [![](progress-indicators-images/activity02.png "Pencere öğesi sekmesi ")](progress-indicators-images/activity02.png#lightbox)
 1. Sürükleme bir **ilerleme durumunu görüntüle** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](progress-indicators-images/activity03.png "İlerleme durumunu görüntüle")](progress-indicators-images/activity03.png)
+    [![](progress-indicators-images/activity03.png "İlerleme durumunu görüntüle")](progress-indicators-images/activity03.png#lightbox)
 1. İçinde **pencere öğesi sekmesini** , **özelliği Explorer**, gibi çeşitli özellikleri ilerleme görünümünün ayarlayın, **stili** ve **ilerleme**(tamamlanma yüzdesi): 
 
-    [ ![](progress-indicators-images/activity04.png "Pencere öğesi sekmesi")](progress-indicators-images/activity04.png)
+    [![](progress-indicators-images/activity04.png "Pencere öğesi sekmesi")](progress-indicators-images/activity04.png#lightbox)
 1. Son olarak, Ata **adları** denetimlere için C# kodunda yanıt vermesi. Örneğin: 
 
-    [ ![](progress-indicators-images/activity05.png "Bir ad atayın")](progress-indicators-images/activity05.png)
+    [![](progress-indicators-images/activity05.png "Bir ad atayın")](progress-indicators-images/activity05.png#lightbox)
 1. Değişikliklerinizi kaydedin.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -77,19 +77,19 @@ Xamarin.tvOS uygulamada İlerleme göstergesi ile çalışmak için en kolay yol
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **etkinliği göstergesini** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](progress-indicators-images/activity01-vs.png "Bir etkinlik göstergesi")](progress-indicators-images/activity01-vs.png)
+    [![](progress-indicators-images/activity01-vs.png "Bir etkinlik göstergesi")](progress-indicators-images/activity01-vs.png#lightbox)
 1. İçinde **pencere öğesi sekmesini** , **özellikleri Explorer**, etkinliği göstergesini birkaç özelliklerini aşağıdaki gibi ayarlayabilirsiniz kendi **stili** ve **davranışı**: 
 
-    [ ![](progress-indicators-images/activity02-vs.png "Pencere öğesi sekmesi")](progress-indicators-images/activity02-vs.png)
+    [![](progress-indicators-images/activity02-vs.png "Pencere öğesi sekmesi")](progress-indicators-images/activity02-vs.png#lightbox)
 1. Sürükleme bir **ilerleme durumunu görüntüle** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](progress-indicators-images/activity03-vs.png "İlerleme durumunu görüntüle")](progress-indicators-images/activity03-vs.png)
+    [![](progress-indicators-images/activity03-vs.png "İlerleme durumunu görüntüle")](progress-indicators-images/activity03-vs.png#lightbox)
 1. İçinde **pencere öğesi sekmesini** , **özelliği Explorer**, gibi çeşitli özellikleri ilerleme görünümünün ayarlayın, **stili** ve **ilerleme**(tamamlanma yüzdesi): 
 
-    [ ![](progress-indicators-images/activity04-vs.png "Pencere öğesi sekmesi")](progress-indicators-images/activity04-vs.png)
+    [![](progress-indicators-images/activity04-vs.png "Pencere öğesi sekmesi")](progress-indicators-images/activity04-vs.png#lightbox)
 1. Son olarak, Ata **adları** denetimlere için C# kodunda yanıt vermesi. Örneğin: 
 
-    [ ![](progress-indicators-images/activity05-vs.png "Bir ad atayın")](progress-indicators-images/activity05-vs.png)
+    [![](progress-indicators-images/activity05-vs.png "Bir ad atayın")](progress-indicators-images/activity05-vs.png#lightbox)
 1. Değişikliklerinizi kaydedin.
 
 -----
@@ -134,7 +134,7 @@ Bu makalede, tasarlama ve İlerleme göstergesi ile Xamarin.tvOS uygulama içind
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 0600a4ca1f26fd034679619c1427821e9c7a12b8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b96b306c882eb30aaf8c81604afb9b6a547d715b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implicit-styles"></a>Örtük stilleri
 
@@ -51,7 +51,7 @@ Aşağıdaki örnekte gösterildiği kod bir *örtük* stili XAML'de bir sayfan�
 
 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Tek bir tanımlar *örtük* sayfanın uygulanan stil [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) örnekleri. `Style` Diğer görünüm seçenekleri de ayarlanırken sarı bir arka plan üzerinde mavi metne görüntülemek için kullanılır. `Style` Sayfanın eklenen [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) belirtmeden bir `x:Key` özniteliği. Bu nedenle, `Style` tümüne uygulanır `Entry` bunların eşleşmesi gibi örtük olarak örnekleri [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) özelliği `Style` tam olarak. Ancak, `Style` uygulanmaz `CustomEntry` bir altsınıflanmış olan örneği `Entry`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
 
-[![](implicit-images/implicit-styles.png "Örtülü stiller örnek")](implicit-images/implicit-styles-large.png "örtülü stiller örneği")
+[![](implicit-images/implicit-styles.png "Örtülü stiller örnek")](implicit-images/implicit-styles-large.png#lightbox "örtülü stiller örneği")
 
 Ayrıca, dördüncü [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) geçersiz kılmaları [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) ve [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) farklı örtükstilözelliklerini`Color`değerleri.
 
@@ -82,7 +82,7 @@ Bu örnekte, *örtük* [ `Style` ](https://developer.xamarin.com/api/type/Xamari
 
 Uygulamanın içinde stilleri oluşturma hakkında bilgi için [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), bkz: [genel stiller](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-implicit-style-in-c35"></a>C &#35;örtülü bir stil oluşturma;
+## <a name="creating-an-implicit-style-in-c35"></a>C'de örtülü bir stil oluşturma&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) örnekleri bir sayfanın eklenebilir [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) yeni oluşturarak koleksiyonu C# [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)ve ardından ekleyerek `Style` için örnekler `ResourceDictionary`gösterildiği gibi Aşağıdaki kod örneği:
 
@@ -125,7 +125,7 @@ Bir *örtük* stili aynı tüm görsel öğeleri tarafından kullanılan bir old
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Temel stilleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Stilleri (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

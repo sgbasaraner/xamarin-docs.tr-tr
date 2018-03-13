@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d118eb5e9f875c5480105d1596ef1318112fb53e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3431791d51858df2013634e1594ee960a10728da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="apk-expansion-files"></a>APK genişletme dosyaları
 
@@ -26,14 +26,13 @@ Bu sınırlamanın üstesinden gelmek için Google Play barındırmak ve iki da�
 
 Genişleme dosya kabul edilir *donuk ikili BLOB'lar (obb)* ve 2 GB boyutunda olabilir. Android yüklendikten sonra bu dosyaları herhangi bir özel işlem gerçekleştirmez &ndash; dosyalar uygulama için uygun olan herhangi bir biçimdeki olabilir. Kavramsal olarak, genişletme dosyaları için önerilen yaklaşım şu şekildedir:
 
--   **Ana genişletme** &ndash; bu dosya kaynaklar ve APK boyut sınırı uymayan varlıklar için birincil genişletme dosyasıdır.   Ana genişletme dosya, bir uygulama gerekiyor ve nadiren güncelleştirilmelidir birincil varlıkların içermelidir.
--   **Düzeltme eki genişletme** &ndash; bu ana genişletme dosya küçük güncelleştirmelerini yöneliktir.   Bu dosya güncelleştirilebilir. Tüm gerekli düzeltme ekleri veya güncelleştirmeler bu dosyadan gerçekleştirmek için uygulamanın sorumluluğundadır.
+-   **Ana genişletme** &ndash; bu dosya kaynaklar ve APK boyut sınırı uymayan varlıklar için birincil genişletme dosyasıdır. Ana genişletme dosya, bir uygulama gerekiyor ve nadiren güncelleştirilmelidir birincil varlıkların içermelidir.
+-   **Düzeltme eki genişletme** &ndash; bu ana genişletme dosya küçük güncelleştirmelerini yöneliktir. Bu dosya güncelleştirilebilir. Tüm gerekli düzeltme ekleri veya güncelleştirmeler bu dosyadan gerçekleştirmek için uygulamanın sorumluluğundadır.
 
 
 APK karşıya gibi genişleme dosya aynı anda karşıya gerekir.
 Google play varolan APK veya güncelleştirilmesi varolan APKs karşıya yüklenecek bir genişletme dosya izin vermiyor. Bir genişleme dosya güncelleştirmek için gereken sonra yeni APK ile yüklenmelidir `versionCode` güncelleştirildi.
 
-<a name="Expansion_File_Storage" />
 
 ## <a name="expansion-file-storage"></a>Genişleme dosya depolama
 
@@ -51,7 +50,6 @@ Bir genişletme dosyasının paketini açma gerekliyse paketi çözülen dosyala
 
 Bir genişletme dosyasından dosyalar ayıklanıyor varlıklarına ya da kaynaklarına doğrudan genişletme dosyasını okumaya alternatiftir. Genişleme dosya uygun bir kullanılabilir bir zip dosyası'den fazla bir şey olduğunu `ContentProvider`. [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) bir derlemeyi içeren [System.IO.Compression.Zip](https://github.com/mattleibow/Android.Play.ExpansionLibrary/tree/master/System.IO.Compression.Zip), içeren bir `ContentProvider` bazı medya dosyaları doğrudan dosya erişimi için izin. Bir zip dosyasına medya dosyalarını paketlenmiş, medya kayıttan yürütme çağrıları doğrudan zip dosyaları zip dosyasının paketini açma gerek kalmadan kullanabilir. Ortam dosyaları zip dosyasını eklendiğinde sıkıştırılmasının gerekli değildir. 
 
-<a name="FileName_Format" />
 
 ### <a name="filename-format"></a>Dosya biçimi
 
@@ -68,19 +66,18 @@ Bu düzen üç bileşeni vardır:
 
 Örneğin 21 APK sürümüdür ve bir paket adı, `mono.samples.helloworld`, ana genişletme dosya adlı **main.21.mono.samples.helloworld**.
 
-<a name="Download_Process" />
 
 ## <a name="download-process"></a>Karşıdan yükleme işlemi
 
 Bir uygulama Google Play'den yüklendiğinde genişletme dosyaları indirilip APK birlikte kaydedilen. Belirli durumlarda bu değil oluşabilir veya genişleme dosya silinmiş. Bu durum işlemek için gerekirse genişletme dosyaların mevcut olduğunu ve bunları karşıdan olup olmadığını görmek bir uygulama gerekir. Aşağıdaki akış çizelgesi, bu işlemin önerilen iş akışı görüntüler:
 
-[ ![APK genişletme akış çizelgesi](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png)
+[![APK genişletme akış çizelgesi](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
 Bir uygulama başlatıldığında uygun genişletme dosyaları geçerli aygıtta olup olmadığını görmek için kontrol etmeniz gerekir. Yeterli değillerse sonra uygulama Google Play'den ait bir istek olmalısınız [uygulama lisans](http://developer.android.com/google/play/licensing/index.html). Bu onay kullanılarak yapılan *lisans doğrulama kitaplığı (LVL)*ve ücretsiz ve lisanslı uygulamalar için yapılması gerekir. LVL öncelikle lisans kısıtlamaları zorlamak için ücretli uygulamalar tarafından kullanılır. Ancak, böylece de genişletme kitaplıklarıyla kullanılabilir Google LVL genişletmiştir. Ücretsiz uygulamalar LVL denetimi gerçekleştirmek sahip, ancak lisans kısıtlamaları göz ardı edebilirsiniz. LVL isteği uygulama gerektiriyor genişletme dosyalar hakkında aşağıdaki bilgileri sağlamaktan sorumludur: 
 
--   **Dosya boyutu** &ndash; genişletme dosyaların dosya boyutları doğru genişletme dosyalarının zaten indirilip indirilmediğini olup olmadığını belirler onay bir parçası olarak kullanılır.  
--   **Dosya adları** &ndash; genişletme paketleri hangi kaydedilmelidir için dosya adı (geçerli cihazda) budur.  
--   **İndirme URL'sini** &ndash; genişletme paketleri yüklemek için kullanılacak URL.   Bu her yükleme için benzersiz ve sağlanan kısa bir süre sonra dolacak.
+-   **Dosya boyutu** &ndash; genişletme dosyaların dosya boyutları doğru genişletme dosyalarının zaten indirilip indirilmediğini olup olmadığını belirler onay bir parçası olarak kullanılır.
+-   **Dosya adları** &ndash; genişletme paketleri hangi kaydedilmelidir için dosya adı (geçerli cihazda) budur.
+-   **İndirme URL'sini** &ndash; genişletme paketleri yüklemek için kullanılacak URL. Bu her yükleme için benzersiz ve sağlanan kısa bir süre sonra dolacak.
 
 
 LVL onay gerçekleştirildikten sonra uygulamayı indirme bir parçası olarak aşağıdaki noktaları göz önünde bulundurarak genişletme dosyaları karşıdan:
@@ -92,7 +89,6 @@ LVL onay gerçekleştirildikten sonra uygulamayı indirme bir parçası olarak a
 -  Karşıdan yükleme sırasında oluşan hataları düzgün biçimde işlenmiş ve kurtarılabilir.
 
 
-<a name="Architectural_Overview" />
 
 ## <a name="architectural-overview"></a>Mimari genel bakış
 
@@ -102,9 +98,9 @@ Genişleme dosya yüklenmedi veya geçerli dosyaları geçersiz gerekiyorsa, yen
 
 Bir uygulamaya genişletme dosyalarını tümleştirme için gereken çaba kolaylaştırmak için Google birkaç kitaplıkları Java'da oluşturulur. Söz konusu kitaplıkları şunlardır:
 
--   **Yükleyici Kitaplığı** &ndash; bu uygulamada genişletme dosyalarını tümleştirme için gereken çaba azaltan bir kitaplıktır.   Kitaplığı bir arka plan hizmeti genişletme dosyalarında yükleme, kullanıcı bildirimlerinin görüntülenip, ağ bağlantısı sorunları ele, sürdürme indirmeler, vb.
--   **Lisans doğrulama kitaplığı (LVL)** &ndash; yapma ve Hizmetleri uygulama lisansı çağrıları işlemek için bir kitaplık.   Ayrıca, uygulama cihaz üzerinde kullanım için yetkili olup olmadığını görmek için lisans denetimleri gerçekleştirmek için de kullanılabilir.
--   **APK genişletme Zip kitaplığı (isteğe bağlı)** &ndash; genişletme dosyaları zip dosyasında, bu kitaplığa içerik sağlayıcısı olarak hareket ve zip genişletin gerek kalmadan doğrudan zip dosyasından kaynakları ve varlıkları okumak bir uygulama izin verme dosya.  
+-   **Yükleyici Kitaplığı** &ndash; bu uygulamada genişletme dosyalarını tümleştirme için gereken çaba azaltan bir kitaplıktır. Kitaplığı bir arka plan hizmeti genişletme dosyalarında yükleme, kullanıcı bildirimlerinin görüntülenip, ağ bağlantısı sorunları ele, sürdürme indirmeler, vb.
+-   **Lisans doğrulama kitaplığı (LVL)** &ndash; yapma ve Hizmetleri uygulama lisansı çağrıları işlemek için bir kitaplık. Ayrıca, uygulama cihaz üzerinde kullanım için yetkili olup olmadığını görmek için lisans denetimleri gerçekleştirmek için de kullanılabilir.
+-   **APK genişletme Zip kitaplığı (isteğe bağlı)** &ndash; genişletme dosyaları zip dosyasında, bu kitaplığa içerik sağlayıcısı olarak hareket ve zip genişletin gerek kalmadan doğrudan zip dosyasından kaynakları ve varlıkları okumak bir uygulama izin verme dosya.
 
 
 Bu kitaplıklar, C# için bağlantı noktası kurulmuş ve Apache 2.0 lisansı altında kullanılabilir. Bu kitaplıklar, hızlı bir şekilde genişleme dosya varolan bir uygulamaya tümleştirmek için varolan bir Xamarin.Android uygulaması eklenebilir. Kod şu adresten edinilebilir [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) github'da.

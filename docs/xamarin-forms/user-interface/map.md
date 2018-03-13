@@ -3,16 +3,16 @@ title: "eşleme"
 description: "Xamarin.Forms her platformda yerel eşlemesi API'lerini kullanır."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
+ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 98e6cade952e656046c6c0981a0b73ff0894c9d6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2f0ad800ed1ab3a336f10dd4431e234ac4ff9675
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="map"></a>eşleme
 
@@ -28,7 +28,7 @@ Bir kez yapılandırılmış `Map` kontrol ortak kodun başka herhangi bir Xamar
 
 Harita denetiminin içinde kullanılan [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) aşağıda gösterilen örnek.
 
- [ ![MAPS MobileCRM örnekteki](map-images/maps-zoom-sml.png "Harita Denetim örnek")](map-images/maps-zoom.png "Harita Denetim örneği")
+ [![MAPS MobileCRM örnekteki](map-images/maps-zoom-sml.png "Harita Denetim örnek")](map-images/maps-zoom.png#lightbox "Harita Denetim örneği")
 
 Harita daha gelişmiş işlevlere oluşturarak bir [özel Oluşturucu eşleme](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
@@ -103,7 +103,7 @@ Bu yönergeleri uyguladıktan sonra API anahtarını yapıştırın **Properties
 Geçerli bir API anahtarı eşlemeleri denetim Android üzerinde gri bir kutu olarak görüntüler.
 
 > [!NOTE]
-> **Not**: karşıya yüklenen herhangi bir uygulama sürümünü imzalamak için kullanılan anahtar deposu dosyasının kullanarak başka bir anahtar oluşturmak unutmayın Google Play mağazası. Anahtarı geliştirme için oluşturmak ve hata ayıklama çalışmaz ve Google Play'den yüklenen uygulamasını harita görünümü bozuk. Ayrıca uygulamanın anahtar Eğer yeniden oluşturulması unutmayın **paket adı** değişiklikler.
+> Karşıya yüklenen herhangi bir uygulama sürümünü imzalamak için kullanılan anahtar deposu dosyasının kullanarak başka bir anahtar oluşturmak unutmayın Google Play mağazası. Anahtarı geliştirme için oluşturmak ve hata ayıklama çalışmaz ve Google Play'den yüklenen uygulamasını harita görünümü bozuk. Ayrıca uygulamanın anahtar Eğer yeniden oluşturulması unutmayın **paket adı** değişiklikler.
 
 Ayrıca uygun izinleri Android projeye sağ tıklayıp seçerek etkinleştirmeniz gerekir **Seçenekleri > Yapı > Android uygulaması** ve aşağıdaki ticking:
 
@@ -185,7 +185,7 @@ slider.ValueChanged += (sender, e) => {
 };
 ```
 
- [ ![Yakınlaştırma Eşlemleriyle](map-images/maps-zoom-sml.png "harita yakınlaştırma denetimi")](map-images/maps-zoom.png "harita yakınlaştırma denetimi")
+ [![Yakınlaştırma Eşlemleriyle](map-images/maps-zoom-sml.png "harita yakınlaştırma denetimi")](map-images/maps-zoom.png#lightbox "harita yakınlaştırma denetimi")
 
 ### <a name="map-pins"></a>PIN eşleme
 
@@ -253,4 +253,4 @@ Bir kez yapılandırılan eşlemeleri API, yalnızca birkaç kodunun PIN işaret
 
 - [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)
 - [Harita özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
-- [Xamarin.Forms örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms Örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)

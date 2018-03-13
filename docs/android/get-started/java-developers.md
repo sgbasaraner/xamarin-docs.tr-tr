@@ -7,17 +7,17 @@ ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: fb74e0efd62c6347534e6f301953325bd4d378d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 240fc917a154085a459c6612f68c8b71e3ef01bb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-for-java-developers"></a>Java geliştiricileri için Xamarin
 
 _Java geliştiriciyseniz yararlanarak için iyi yolunuzu üzerinde olan becerileri ve var olan kodu kodu yararlanın sırasında Xamarin platformunda yararları C# yeniden kullanabilirsiniz. C# sözdizimi Java sözdizimine çok benzer ve her iki dilde birden çok benzer özellikler sağlamak bulacaksınız. Ayrıca, C, geliştirme hayatınızı daha kolay hale getirecektir # benzersiz özelliklerini öğreneceksiniz._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -91,7 +91,6 @@ Son olarak, Xamarin sayesinde [varolan Java varlıkları yararlanan](#interop) o
 Aşağıdaki bölümlerde temel "Başlarken" farklarını C# ve Java verilmiştir; daha sonraki bir bölüme bu diller nesne yönelimli farklılıkları açıklar.
 
 
-<a name="assemblies" />
 
 ### <a name="libraries-vs-assemblies"></a>Kitaplıkları vs. Derlemeler
 
@@ -99,7 +98,6 @@ Java genellikle ilgili sınıflarda paketleri **.jar** dosyaları. C# ve .NET, a
 
 Derlemeler hakkında daha fazla bilgi için bkz. MSDN [derlemeler ve genel derleme önbelleği](https://msdn.microsoft.com/en-us/library/ms173099.aspx) konu.
 
-<a name="namespaces" />
 
 ### <a name="packages-vs-namespaces"></a>Paketleri vs. Ad Alanları
 
@@ -111,7 +109,6 @@ namespace WeatherApp
     ...
 ```
 
-<a name="imports" />
 
 ### <a name="importing-types"></a>Türlerini alma
 
@@ -146,7 +143,6 @@ using System.Threading.Tasks;
 Bu deyimler işlevinden alma `System`, `Android.App`, `Android.Content`, vb. ad alanları.
 
 
-<a name="generics" />
 
 ### <a name="generics"></a>Genel Türler
 
@@ -197,7 +193,6 @@ Ancak, aynı zamanda bazı önemli farklılıklar vardır:
 -   C# sonlandırıcılar express için C++ stili yıkıcı sözdizimini kullanır. Java'dan ait farklı söz dizimi `finalize` yöntemi, ancak semantiğini neredeyse aynı değildir. (C# ' ta Yıkıcılar otomatik olarak temel sınıf yıkıcı çağırdığını unutmayın &ndash; Java aksine için açık bir çağrı burada `super.finalize` kullanılır.)
 
 
-<a name="inheritance" />
 
 ### <a name="class-inheritance"></a>Sınıf Devralma
 
@@ -251,7 +246,6 @@ Bu örnekte, genişlik ve yükseklik değerleri gelen salt okunurdur `rulerView`
 C# özellikleri hakkında daha fazla bilgi için bkz. MSDN [özellikleri](https://msdn.microsoft.com/en-us/library/x9fsa0sw.aspx) konu.
 
 
-<a name="basemethods" />
 
 ### <a name="calling-base-class-methods"></a>Arama taban sınıf yöntemlerini
 
@@ -287,7 +281,6 @@ public class MainActivity : Activity
 Bu durumda, `OnCreate` türetilmiş sınıf tarafından tanımlanan yöntemi (`MainActivity`) çağrıları `OnCreate` temel sınıfın yöntemi (`Activity`).
 
 
-<a name="accessmodifiers" />
 
 ### <a name="access-modifiers"></a>Erişim Değiştiricileri
 
@@ -300,7 +293,6 @@ Java ve C# hem `public`, `private`, ve `protected` erişim değiştiricileri. An
 C# erişim değiştiricileri hakkında daha fazla bilgi için bkz. MSDN [erişim değiştiricileri](https://msdn.microsoft.com/en-us/library/ms173121.aspx) konu.
 
 
-<a name="virtualoverride" />
 
 ### <a name="virtual-and-override-methods"></a>Sanal ve geçersiz kılma yöntemleri
 
@@ -792,7 +784,6 @@ C# dönüştürmek istiyor musunuz mevcut Java işlevselliğini varsa, varolan J
 Bu teknikler hakkında daha fazla bilgi için bkz: [Java tümleştirmesine genel bakış](~/android/platform/java-integration/index.md).
 
 
-<a name="further" />
 
 ## <a name="for-further-reading"></a>Daha Fazla Bilgi İçin
 
@@ -803,7 +794,6 @@ Java bilgi Java dil bilerek olarak Java sınıf kitaplıkları aşina hakkında 
 C# ' ta, ilk Xamarin.Android projenizi üstesinden gelmek hazır olduğunuzda bizim [Hello, Android](~/android/get-started/hello-android/index.md) serisi, ilk Xamarin.Android uygulamanızı oluşturmak ve Android temelleri Anlayışınızı daha gelişmiş yardımcı olabilir Xamarin ile uygulama geliştirme.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

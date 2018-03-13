@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: edc1dd9f9544d1ab03781e7f3181a78b72f53909
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1fea2e2f7210e282fa1e27ad3a1203da2216791e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-live-player"></a>Xamarin Live Player
 
 Bu değişiklikleri Canlı aygıtınızda yansıtılmasını ve Xamarin Canlı Player, uygulamanızın Canlı düzenlemeler yapmanıza olanak sağlar. İçinde Xamarin Canlı Player uygulama kodunuzun çalıştığı – Öykünücüler ayarlamak için veya kabloları kodunu dağıtmak için gerekli!
 
-[ ![Xamarin Canlı Player: Kod, tarama, Test](images/xamarin-live.png)](images/xamarin-live-sml.png)
+[![Xamarin Canlı Player: Kod, tarama, Test](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
 1. Etkinleştirme *Xamarin Canlı Player* içinde **Tercihler**, ardından arasından seçim yapmasını **aygıtları** listesi.
 2. Hata ayıklama veya çalıştırın ve sonra Cihazınızı QRCodeto çifti tarayın.
@@ -28,7 +28,7 @@ Bu değişiklikleri Canlı aygıtınızda yansıtılmasını ve Xamarin Canlı P
 
 Mac için Xamarin Canlı Player Visual Studio 2017 veya Visual Studio kullanmak için IDE yapılandırın Xamarin Canlı Player, Android, iOS ve Xamarin.Forms projeleri destekler.
 
-## <a name="xamarin-live-player-appplayermd"></a>[Xamarin Canlı oynatıcı uygulaması](player.md)
+## <a name="xamarin-live-player-appplayermd"></a>[Xamarin Live Player App](player.md)
 
 Xamarin kullanarak canlı oynatıcı uygulaması.
 

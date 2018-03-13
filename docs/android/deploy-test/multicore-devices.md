@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 2a7b2a856d51447d6b7ab2032ebf7445d3f06ecb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac525805fce99f44ea1efb132fb99f6d3a01f2f3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Çok çekirdekli aygıtları & Xamarin.Android
 
 _Android üzerinde birkaç farklı bilgisayar mimarileri çalıştırabilirsiniz. Bu belge, bir Xamarin.Android uygulaması için işe farklı CPU mimari açıklanmaktadır. Bu belge nasıl Android uygulamaları da anlatılmıştır farklı CPU mimariyi desteklemek için hazırlanmıştır. Uygulama ikili arabirimi (ABI) sunulan ve bir Xamarin.Android uygulaması'nda kullanmak için hangi ABIs ilgili yönergeler sağlanacaktır._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -47,16 +46,14 @@ Uygulama ikili arabirimi aşağıda ayrıntılı olarak ele alınan, ancak unutu
 Android 4.0.0, 4.0.1, 4.0.2 ve 4.0.3 bir hata nedeniyle, yerel kitaplıkları gelen çekilir `armeabi` dizin olsa bile bir `armeabi-v7a` mevcut dizin ve cihaz bir `armeabi-v7a` aygıt.
 
 > [!NOTE]
-> **Not**: Xamarin.Android emin olun `.so` doğru sırada APK eklenir. Bu hata, bir sorun Xamarin.Android kullanıcıları için olmamalıdır.
+> Xamarin.Android emin olun `.so` doğru sırada APK eklenir. Bu hata, bir sorun Xamarin.Android kullanıcıları için olmamalıdır.
 
-<a name="ABI_Descriptions" />
 
 ### <a name="abi-descriptions"></a>ABI açıklamaları
 
 Android tarafından desteklenen her ABI benzersiz bir ad tarafından tanımlanır.
 
 
-<a name="armeabi" />
 
 #### <a name="armeabi"></a>pushservice
 
@@ -65,7 +62,6 @@ Bu bir EABI ARMv5TE yönerge kümesi en az destek ARM tabanlı CPU için adıdı
 **Not**: Xamarin.Android'ın `armeabi` kodu iş parçacığı içinde korumalı değil ve birden çok CPU üzerinde kullanılmamalıdır `armeabi-v7a`aygıtları (aşağıda açıklanmıştır). Kullanarak `aremabi` tek çekirdekli kodu `armeabi-v7a` aygıt güvenli değil.
 
 
-<a name="armeabi-v7a" />
 
 #### <a name="armeabi-v7a"></a>pushservice-v7a
 
@@ -74,7 +70,6 @@ Genişletir başka bir ARM tabanlı CPU yönerge kümesi budur `armeabi` EABI yu
 **Not:** `armeabi-v7a` makine kodu ARMv5 cihazlarda çalışmaz.
 
 
-<a name="arm64-v8a" />
 
 #### <a name="arm64-v8a"></a>arm64-v8a
 
@@ -82,7 +77,6 @@ ARMv8 CPU mimarisine dayalı bir 64-bit yönerge kümesi budur. Bu mimari kullan
 Xamarin.Android 5.1 Bu mimarisine ait Deneysel destek sağlar (daha fazla bilgi için bkz: [Deneysel özellikleri](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features)).
 
 
-<a name="x86" />
 
 #### <a name="x86"></a>x86
 
@@ -93,10 +87,9 @@ Bu bir ABI yaygın olarak adlandırılmış kümesi yönerge destek CPU için ad
 -  SSE4 herhangi bir türevi.
 
 
-**Not:** Google TV x86 üzerinde çalışır ancak desteklenmiyor Android tarafından 's NDK veya Xamarin.Android. <a name="mips" />
+**Not:** Google TV x86 üzerinde çalışır ancak desteklenmiyor Android tarafından 's NDK veya
 
 
-<a name="x86_64" />
 
 #### <a name="x8664"></a>x86_64
 
@@ -110,13 +103,12 @@ Bu bir ABI en az destek MIPS tabanlı CPU için adıdır `MIPS32r1` yönerge kü
 **Not:** MIPS aygıtları Xamarin.Android tarafından şu anda desteklenmez, ancak gelecekteki bir sürümde görüntülenir.
 
 
-<a name="APK_File_Format" />
 
 #### <a name="apk-file-format"></a>APK dosya biçimi
 
 Android uygulama paketi tüm kod, varlıklar, kaynakları ve sertifikalar bir Android uygulaması için gerekli tutan dosya biçimidir. Bu bir `.zip` kullanır ancak dosya `.apk` dosya adı uzantısı. Genişletildiğinde, içeriğini bir `.apk` tarafından oluşturulan Xamarin.Android aşağıdaki ekran görüntüsünde görülen:
 
-[ ![.apk içeriğini](multicore-devices-images/00.png)](multicore-devices-images/00.png)
+[![.apk içeriğini](multicore-devices-images/00.png)](multicore-devices-images/00.png#lightbox)
 
 Hızlı içeriğini açıklamasını `.apk` dosyası:
 
@@ -133,10 +125,9 @@ Hızlı içeriğini açıklamasını `.apk` dosyası:
 -   **res** &ndash; içine derlendi değil kaynakları bu dizin tutan `resources.arsc` .
 
 > [!NOTE]
-> **Not**: dosya `libmonodroid.so` olan tüm Xamarin.Android uygulamalar tarafından gerektirilen yerel kitaplığı.
+> Dosya `libmonodroid.so` olan tüm Xamarin.Android uygulamalar tarafından gerektirilen yerel kitaplığı.
 
 
-<a name="Android_Device_ABI_Support" />
 
 #### <a name="android-device-abi-support"></a>Android cihaz ABI desteği
 
@@ -149,7 +140,6 @@ Android aygıtların yerel kod çalıştırırken en fazla iki ABIs destekler:
 
 Örneğin, tipik bir ARMv5TE aygıtın birincil abı, yalnızca olacaktır `armeabi`ARMv7 aygıt, birincil ABI belirtirsiniz yaparken `armeabi-v7a` ve ikincil abı, `armeabi`. Aygıt, birincil ABI yalnızca belirtirsiniz tipik bir x86 `x86`.
 
-<a name="Android_Native_Library_Installation" />
 
 ### <a name="android-native-library-installation"></a>Android yerel kitaplığı yükleme
 
@@ -249,7 +239,6 @@ $APP/lib/libone.so # from armeabi
 $APP/lib/libtwo.so # from armeabi-v7a
 ```
 
-<a name="Xamarin.Android_and_ABIs" />
 
 ### <a name="xamarinandroid-and-abis"></a>Xamarin.Android ve ABIs
 
@@ -270,7 +259,6 @@ Xamarin.Android için aşağıdaki mimariler Deneysel destek sağlar:
 Xamarin.Android şu an için destek sağlamaz `mips`.
 
 
-<a name="Declaring_Supported_ABIs" />
 
 ### <a name="declaring-supported-abis"></a>ABI'ın desteklenen bildirme
 
@@ -281,7 +269,7 @@ Varsayılan olarak, Xamarin.Android için varsayılan `armeabi-v7a` için **sür
 
 Mac için Visual Studio'da üzerinde desteklenen mimariler seçilebileceğini **Android derleme** sayfasında **proje seçenekleri**altında **Gelişmiş** sekmesinde, aşağıda gösterildiği gibi Ekran:
 
-[![Android derleme ABIs desteklenen](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png)
+[![Android derleme ABIs desteklenen](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png#lightbox)
 
 Ne zaman gibi ek ABI destek bildirmeniz gerekebilir, bazı durumlar vardır:
 

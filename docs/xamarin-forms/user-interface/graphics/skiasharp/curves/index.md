@@ -4,14 +4,15 @@ description: "Eğriler çizme ve yol özellikleri kullanmak için SkiaSharp kull
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 0e3a9d0e4bedb2e4321c3c846eddeee8b36cb3e4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9daea43ea09f7acaa2f3cd1300785391f69c4746
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp eğriler ve yolları
 
@@ -21,31 +22,31 @@ _Eğriler çizme ve yol özellikleri kullanmak için SkiaSharp kullanmayı öğr
 
 Bu bölümdeki tüm örnek programlar başlığı altında görünür **eğriler ve daha yolları** giriş sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program ve [ **Eğriler** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves) klasörü çözümün.
 
-## <a name="three-ways-to-draw-an-arcarcsmd"></a>[Yay çizmek için üç yol](arcs.md)
+## <a name="three-ways-to-draw-an-arcarcsmd"></a>[Yay Çizmenin Üç Yolu](arcs.md)
 
 Üç farklı yolla yaylar tanımlamak için SkiaSharp kullanmayı öğrenin.
 
-## <a name="three-types-of-bzier-curvesbeziersmd"></a>[Üç tür Bézier eğrileri](beziers.md)
+## <a name="three-types-of-bzier-curvesbeziersmd"></a>[Üç Tür Bézier Eğrisi](beziers.md)
 
 Küp, ikinci derece ve conic Bézier eğrileri işlemek için SkiaSharp kullanmayı keşfedin
 
-## <a name="svg-path-datapath-datamd"></a>[SVG yol verileri](path-data.md)
+## <a name="svg-path-datapath-datamd"></a>[SVG Yol Verileri](path-data.md)
 
 Ölçeklenebilir vektör grafikleri biçiminde metin dizelerini kullanarak yolları tanımlayın
 
-## <a name="clipping-with-paths-and-regionsclippingmd"></a>[Kırpma yolları ve bölgeler](clipping.md)
+## <a name="clipping-with-paths-and-regionsclippingmd"></a>[Yollar ve Bölgeler ile Kırpma](clipping.md)
 
 Küçük grafik yollara belirli alanları ve bölgeler oluşturmak için kullanın.
 
-## <a name="path-effectseffectsmd"></a>[Yol etkileri](effects.md)
+## <a name="path-effectseffectsmd"></a>[Yol Etkileri](effects.md)
 
 Yollara vuruş yapması ve doldurmak için kullanılacak izin verecek çeşitli yol etkilerini bulur.
 
-## <a name="paths-and-texttext-pathsmd"></a>[Yollar ve metin](text-paths.md)
+## <a name="paths-and-texttext-pathsmd"></a>[Yollar ve Metin](text-paths.md)
 
 Yollar ve metin kesişimi keşfedin
 
-## <a name="path-information-and-enumerationinformationmd"></a>[Yol bilgisi ve numaralandırması](information.md)
+## <a name="path-information-and-enumerationinformationmd"></a>[Yol Bilgileri ve Numaralandırması](information.md)
 
 Yollar hakkında bilgi almak ve içeriği listeleme
 

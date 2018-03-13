@@ -3,16 +3,16 @@ title: Sorun giderme
 description: "Bu makalede, Xamarin.iOS uygulamaları iOS 9 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
+ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6ea274ca198a4ca76a87198b02b6229e0e1c88b2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ca3697b355a45e06f941a6dfd610cd19f922ca75
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="troubleshooting"></a>Sorun giderme
 
@@ -32,7 +32,7 @@ Xcode 7 (veya üst sürümü) yüklü değilse, otomatik olarak tüm iOS 8 benze
 
 Xcode'da, seçin **Xcode** sonra menü **tercihleri...**   >  **İndirmeleri**:
 
-[ ![](troubleshooting-images/ios8.png "iOS 8 benzeticileri indirir")](troubleshooting-images/ios8.png)
+[![](troubleshooting-images/ios8.png "iOS 8 benzeticileri indirir")](troubleshooting-images/ios8.png#lightbox)
 
 Tıklatın **onay ve Şimdi Yükle** düğmesini iOS 8 benzeticileri yeniden yükleyin.
 
@@ -139,26 +139,26 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 
 Xamarin.iOS uygulamanızı iOS 9 sürümü gerçek iOS donanımda çalıştırılmaya çalışılırken Geliştirici hesabınızda cihazda güvenilmeyen olduğunu belirten bir ileti alabilirsiniz. Örneğin:
 
-[ ![](troubleshooting-images/untrusted01.png "Güvenilmeyen Enterprise Developer Uyarısı")](troubleshooting-images/untrusted01.png)
+[![](troubleshooting-images/untrusted01.png "Güvenilmeyen Enterprise Developer Uyarısı")](troubleshooting-images/untrusted01.png#lightbox)
 
 Bu sorunu çözmek için aşağıdakileri yapın:
 
 1. Xcode (en son beta sürümü) geliştirme Mac üzerinde Başlat
 2. Seçin **aygıtları** gelen **penceresi** menü aygıtları penceresini açmak için: 
 
-    [ ![](troubleshooting-images/untrusted02.png "Aygıtları penceresi")](troubleshooting-images/untrusted02.png)
+    [![](troubleshooting-images/untrusted02.png "Aygıtları penceresi")](troubleshooting-images/untrusted02.png#lightbox)
 3. Altında **AYGITLARI** yan paneli, aygıt, sağ tıklatın ve seçin seçin **sağlama profilleri göster...** : 
 
-    [ ![](troubleshooting-images/untrusted03.png "SShow sağlama profilleri")](troubleshooting-images/untrusted03.png)
+    [![](troubleshooting-images/untrusted03.png "SShow sağlama profilleri")](troubleshooting-images/untrusted03.png#lightbox)
 4. Her sağlama profilinde şu anda tıklatın ve aygıt seçin  **-**  düğmesi silmek için: 
 
-    [ ![](troubleshooting-images/untrusted04.png "Bir sağlama profili silme")](troubleshooting-images/untrusted04.png)
+    [![](troubleshooting-images/untrusted04.png "Bir sağlama profili silme")](troubleshooting-images/untrusted04.png#lightbox)
 5. Gelen **Xcode** menüsünde, select **tercihleri...**  ve **hesapları**: 
 
-    [ ![](troubleshooting-images/untrusted05.png "Xcode hesap tercihleri")](troubleshooting-images/untrusted05.png)
+    [![](troubleshooting-images/untrusted05.png "Xcode hesap tercihleri")](troubleshooting-images/untrusted05.png#lightbox)
 6. Tıklatın **ayrıntıları görüntüle...**  düğmesine ve ardından **tüm indirin** düğmesi: 
 
-    [ ![](troubleshooting-images/untrusted06.png "Tüm profillerin indirin")](troubleshooting-images/untrusted06.png)
+    [![](troubleshooting-images/untrusted06.png "Tüm profillerin indirin")](troubleshooting-images/untrusted06.png#lightbox)
 7. Listenin güncelleştirme tamamlandığında tıklatın **Bitti** düğmesine tıklayın ve tercihleri penceresini kapatın.
 8. İOS cihazının test etmek için çalıştığınız Xamarin.iOS uygulamasının var olan sürümü kaldırın.
 9. Mac için Visual Studio'ya geri dönün, temiz bir yapı yapın ve uygulamayı cihazda yeniden çalıştırmayı deneyin.

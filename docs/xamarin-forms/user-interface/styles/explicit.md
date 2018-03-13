@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 43a1a5ee6a8bd9d53f6fd44be935ae7573db6812
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1fbc12288527c053a24041aa6c49cc1a4abdde55
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="explicit-styles"></a>Açık stilleri
 
@@ -64,7 +64,7 @@ Aşağıdaki örnekte gösterildiği kod *açık* stilleri XAML'de bir sayfanın
 
 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Üç tanımlar *açık* sayfanın uygulanmış olan stiller [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) örnekleri. Her `Style` metin yazı tipi boyutu ve yatay ve dikey düzeni seçenekleri de ayarlanırken farklı bir renk görüntülemek için kullanılır. Her `Style` farklı bir öğeye uygulanan `Label` ayarlayarak kendi [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) kullanarak özelliklerini `StaticResource` biçimlendirme uzantısı. Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
 
-[![](explicit-images/explicit-styles.png "Açık stilleri örnek")](explicit-images/explicit-styles-large.png "açık stilleri örneği")
+[![](explicit-images/explicit-styles.png "Açık stilleri örnek")](explicit-images/explicit-styles-large.png#lightbox "açık stilleri örneği")
 
 Buna ek olarak, en son [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) sahip bir [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) uygulanan, ancak ayrıca geçersiz kılar [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) farklı özelliğine`Color`değeri.
 
@@ -95,7 +95,7 @@ Bu örnekte, *açık* [ `Style` ](https://developer.xamarin.com/api/type/Xamarin
 
 Uygulamanın içinde stilleri oluşturma hakkında bilgi için [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), bkz: [genel stiller](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-explicit-style-in-c35"></a>C &#35;açık bir stil oluşturma;
+## <a name="creating-an-explicit-style-in-c35"></a>C'de açık bir stil oluşturma&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) örnekleri bir sayfanın eklenebilir [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) yeni oluşturarak koleksiyonu C# [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)ve ardından ekleyerek `Style` için örnekler `ResourceDictionary`gösterildiği gibi Aşağıdaki kod örneği:
 
@@ -187,7 +187,7 @@ A [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) yapı
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Temel stilleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Stilleri (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

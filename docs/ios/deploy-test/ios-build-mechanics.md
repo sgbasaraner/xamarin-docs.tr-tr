@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b752ebdd1a98d5258cc27b2221d33e07fa04aa46
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 44813ea6c1e795889444d949ca2706c0f50483c6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-build-mechanics"></a>iOS derleme mekanizması
 
@@ -33,7 +33,7 @@ Mac için Visual Studio tanılama MSBuild çıktısı etkinleştirmek için:
 
 1. Tıklatın **Mac için Visual Studio > tercihleri...**
 2. Soldaki ağaç görünümünde seçin **projeleri > derleme**
-3. Sağ taraftaki panelinde aşağı açılan günlük ayrıntı düzeyini ayarlamak **tanılama**: [ ![ ] (ios-build-mechanics-images/image2.png "günlük ayrıntı düzeyini ayarlama")](ios-build-mechanics-images/image2.png)
+3. Sağ taraftaki panelinde aşağı açılan günlük ayrıntı düzeyini ayarlamak **tanılama**: [ ![ ] (ios-build-mechanics-images/image2.png "günlük ayrıntı düzeyini ayarlama")](ios-build-mechanics-images/image2.png#lightbox)
 4. **Tamam**’a tıklayın.
 5. Mac için Visual Studio'yu yeniden başlatın
 6. Temizleyin ve paketinizi yeniden derleyin
@@ -46,7 +46,7 @@ Visual Studio tanılama MSBuild çıktısı etkinleştirmek için:
 
 1. Tıklatın **Araçlar > Seçenekler...**
 2. Soldaki ağaç görünümünde seçin **projeler ve çözümler > derleme ve çalıştırma**
-3. Sağ taraftaki panelinde ayarlayın *MSBuild derleme çıktısı ayrıntı açılır* için **tanılama**: [ ![ ] (ios-build-mechanics-images/image2-vs.png "MSBuild ayarı yapı çıktı Ayrıntı")](ios-build-mechanics-images/image2-vs.png)
+3. Sağ taraftaki panelinde ayarlayın *MSBuild derleme çıktısı ayrıntı açılır* için **tanılama**: [ ![ ] (ios-build-mechanics-images/image2-vs.png "MSBuild ayarı yapı çıktı Ayrıntı")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. **Tamam**’a tıklayın.
 5. Temizleyin ve paketinizi yeniden derleyin.
 6. Tanılama çıktıları Çıktı panelinde görünür olur.
@@ -101,7 +101,7 @@ Yukarıdaki bilgileri göz önünde bulundurularak listesi oluşturma ve uygulam
 
 Aşağıdaki ekran görüntüsünde, iOS seçeneklerinizi simulator ilgili bu seçenekleri ayarlamak verilmektedir:
 
-[ ![](ios-build-mechanics-images/image3.png "Ayar seçenekleri")](ios-build-mechanics-images/image3.png)
+[![](ios-build-mechanics-images/image3.png "Ayar seçenekleri")](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>Cihaz püf noktaları
 
@@ -155,7 +155,7 @@ Ek ipuçları
 
 Aşağıdaki ekran görüntüsünde, iOS seçeneklerinizi simulator ilgili bu seçenekleri ayarlamak verilmektedir:
 
-[ ![](ios-build-mechanics-images/image4.png "Ayar seçenekleri")](ios-build-mechanics-images/image4.png)
+[![](ios-build-mechanics-images/image4.png "Ayar seçenekleri")](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>Bağlayıcı kullanma
 
@@ -317,4 +317,4 @@ L3 Cache: 4 MB
 
 - [Blog gönderisi](https://blog.xamarin.com/xamarin-ios-build-improvements/)
 - [İos'ta bağlama](~/ios/deploy-test/linker.md)
-- [Özel Bağlayıcı yapılandırması](~/cross-platform/deploy-test/linker.md)
+- [Özel Bağlayıcı Yapılandırması](~/cross-platform/deploy-test/linker.md)

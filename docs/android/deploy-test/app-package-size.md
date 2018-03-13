@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0fff4de7420bceda8c15ae33b03886eb6b332aeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 430b07918b13878e3561b55ff841a64855183fa7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-package-size"></a>Uygulama paketi boyutu
 
@@ -28,13 +28,13 @@ Xamarin.Android mekanizmaları çeşitli bir etkin hata ayıklama ve yayın dağ
 
 Tam olarak içerilen uygulama dağıtmayı paket uygulama, ilişkili kitaplıkları, içerik, Mono çalışma zamanı ve gerekli temel sınıf kitaplığı (BCL) derlemeler içermelidir. Biz varsayılan "Hello World" şablonu izlerseniz, örneğin, bir tam paketi yapı içeriğini şöyle olabilir:
 
-[ ![Bağlayıcı önce paket boyutu](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png)
+[![Bağlayıcı önce paket boyutu](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png#lightbox)
 
 İsteriz daha büyük bir indirme boyutu 15,8 MB'dir. Sorun BCL kitaplıkları aynıdır mscorlib, sistem ve Mono.Android, uygulamanızı çalıştırmak için gerekli olan bileşenler çok sağlayan içerirler. Ancak, bu bileşenlerin dışlanacak tercih edilebilir böylece, uygulamanızda kullanmıyor olabilirsiniz işlevselliği de sağlar.
 
 Biz dağıtım için uygulama oluştururken, biz bağlama olarak bilinen bir işlemi yürütmeyi uygulama inceler ve doğrudan kullanılmayan herhangi bir kod kaldırır. Bu işlem işlevine benzer, [çöp toplama](~/android/internals/garbage-collection.md) yığında ayrılmış bellek sağlar. Ancak nesneler üzerinde çalışan yerine bağlama kodunuzu üzerinde çalışır. Örneğin, olduğundan tüm ad alanı içinde System.dll göndermek ve e-posta almak için ancak uygulamanızın değil yaparsanız kod yalnızca yer harcama bu işlevselliğini kullanın. Hello World uygulamasının bağlayıcı çalıştırdıktan sonra bizim paket şimdi şöyle görünür:
 
-[ ![Bağlayıcı sonra paket boyutu](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png)
+[![Bağlayıcı sonra paket boyutu](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png#lightbox)
 
 Görebiliriz gibi bu değil kullanılan BCL önemli miktarda kaldırır. En son BCL boyutuna hangi uygulamanın gerçekten kullandığı bağlı olduğunu unutmayın. Biz ApiDemo olarak adlandırılan daha önemli bir örnek uygulamayı göz atın, örneğin, görebiliriz ApiDemo BCL Hello daha fazlasını kullandığından BCL bileşen boyutu artar, dünya yapar:
 
@@ -51,7 +51,7 @@ Android kopyalayıp paketi boyutunun olabildiğince küçük olmasını istiyoru
 
 Cihazda, biz hata ayıklama ilk kez biz adlı iki büyük paketler kopyalama *çalışma zamanı paylaşılan* ve *paylaşılan Platform*. Paylaşılan Platform Android API düzeyi belirli derlemeleri içerirken Mono çalışma zamanı ve BCL, paylaşılan çalışma zamanı içerir:
 
-[ ![Paylaşılan çalışma zamanı paket boyutu](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png)
+[![Paylaşılan çalışma zamanı paket boyutu](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png#lightbox)
 
 Bu temel bileşenleri kopyalama yalnızca yapılır kez oldukça biraz zaman alır gibi ancak bunları kullanan hata ayıklama modunda çalışan sonraki uygulamaların verir. Son olarak, küçük ve hızlı gerçek uygulama kopyalayın:
 

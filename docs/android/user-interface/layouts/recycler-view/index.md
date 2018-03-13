@@ -3,16 +3,16 @@ title: RecyclerView
 description: "RecyclerView koleksiyonları görüntülemek için bir görünüm gruptur; ListView ve GridView gibi eski görünümü grupları için daha esnek yenileme olacak şekilde tasarlanmıştır.  Bu kılavuzda ve Xamarin.Android uygulamalarda RecyclerView özelleştirme nasıl kullanılacağı açıklanmaktadır."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
+ms.assetid: 91EF0BD2-3306-47E1-9B39-627A1787762F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/03/2018
-ms.openlocfilehash: ec8b3a4655c8e8d9e492c9f7a1807dd64ecc6ae7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 028520742a84e717e28147f2fa1fafacfef34028
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -23,7 +23,7 @@ _RecyclerView koleksiyonları görüntülemek için bir görünüm gruptur; List
 Birçok uygulama koleksiyonları (örneğin, iletiler, kişiler, görüntüleri veya şarkıya); aynı türde görüntülemeniz gerekir Genellikle, bu koleksiyona koleksiyon sorunsuz koleksiyondaki tüm öğeler arasında gezinebilirsiniz küçük bir pencerede sunulur şekilde ekranda sığmayacak kadar büyük.
 `RecyclerView` bir liste veya toplulukta kaydırın kullanıcının bir kılavuz öğeleri koleksiyonu görüntüler Android bir pencere öğesi değil. Bir uygulamasının ekran görüntüsü kullanan bir örnek verilmiştir `RecyclerView` dikey bir kaydırma listesinde e-posta gelen kutusuna içeriğini görüntülemek için:
 
-[ ![Liste gelen iletiler için RecyclerView kullanarak örnek uygulama](images/01-recyclerview-example-sml.png)](images/01-recyclerview-example.png)
+[![Liste gelen iletiler için RecyclerView kullanarak örnek uygulama](images/01-recyclerview-example-sml.png)](images/01-recyclerview-example.png#lightbox)
 
 `RecyclerView` iki ilgi çekici özellikleri sunar:
 

@@ -8,13 +8,15 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 06/12/2017
-ms.openlocfilehash: d4fce635b26b0c367e836e4ec41d4f51a10b9c35
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eff096b1dca15b9b11038a599987f632bca2352f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="httpclient-stack-selector"></a>HttpClient Stack Selector
+# <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient yığını ve iOS/macOS için SSL/TLS uygulama Seçici
+
+## <a name="httpclient-stack-selector"></a>HttpClient Stack Selector
 
 Xamarin.iOS, Xamarin.tvOS ve Xamarin.Mac için kullanılabilir: Bu denetleyen `HttpClient` uygulaması kullanın. Varsayılan olarak açık bir HttpClient olmaya devam `HttpWebRequest`, artık iOS, tvOS veya macOS yerel taşımaları kullanan bir uygulama için isteğe bağlı olarak geçebilirsiniz (`NSUrlSession` veya `CFNetwork` işletim sistemi bağlı olarak). Baş küçük ikili dosyaları ve daha hızlı indirmeler, dezavantajı olay döngüsünü yürütülecek zaman uyumsuz işlemleri için çalışıyor olmasını gerektirir.
 
@@ -22,7 +24,7 @@ Projeleri başvurmalıdır **System.Net.Http** derleme.
 
 <a name="Selecting-a-HttpClient-Stack" />
 
-## <a name="selecting-a-httpclient-stack"></a>HttpClient yığın seçme
+### <a name="selecting-a-httpclient-stack"></a>HttpClient yığın seçme
 
 Uygulamanız tarafından kullanılan HttpClient ayarlamak için:
 
@@ -30,19 +32,19 @@ Uygulamanız tarafından kullanılan HttpClient ayarlamak için:
 2. Geçiş **yapı** projeniz için ayarları (örneğin, **iOS yapı** bir Xamarin.iOS uygulaması için).
 3. Gelen **HttpClient uygulama** açılır, select HttpClient aşağıdakilerden birini yazın: **yönetilen**, **CFNetwork** veya **NSUrlSession**.
 
-[ ![Yönetilen, CFNetwork veya NSUrlSession HttpClient uygulama seçin](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png)
+[![Yönetilen, CFNetwork veya NSUrlSession HttpClient uygulama seçin](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
 <a name="Managed" />
 
-## <a name="managed-default"></a>Yönetilen (varsayılan)
+### <a name="managed-default"></a>Yönetilen (varsayılan)
 
 Yönetilen işleyici Xamarin önceki sürümü ile birlikte gelen tam olarak yönetilen HttpClient işleyicidir.
 
-### <a name="pros"></a>Uzmanları:
+#### <a name="pros"></a>Uzmanları:
 
  - Microsoft .NET ve Xamarin bir eski sürümü ile uyumlu en özelliğini içeriyor.
 
-### <a name="cons"></a>Cons:
+#### <a name="cons"></a>Cons:
 
  - Apple işletim sistemleri ile tamamen tümleşik değildir ve TLS 1.0 sınırlıdır.
  - Onu yerel API'leri genellikle çok daha yavaş şifreleme gibi şeyleri adresindeki.
@@ -50,16 +52,16 @@ Yönetilen işleyici Xamarin önceki sürümü ile birlikte gelen tam olarak yö
 
 <a name="CFNetwork" />
 
-## <a name="cfnetwork"></a>CFNetwork
+### <a name="cfnetwork"></a>CFNetwork
 
 CFNetwork tabanlı işleyici üzerinde yerel tabanlı `CFNetwork` framework bulunan iOS 6 ve daha yeni.
 
-### <a name="pros"></a>Uzmanları:
+#### <a name="pros"></a>Uzmanları:
 
  - Daha iyi performans ve daha küçük yürütülebilir boyutu için yerel API'lerini kullanır.
  - TLS 1.2 gibi daha yeni standartları destekler.
 
-### <a name="cons"></a>Cons:
+#### <a name="cons"></a>Cons:
 
  - İOS 6 veya üstünü gerektirir.
  - WatchOS kullanılamaz.
@@ -67,22 +69,21 @@ CFNetwork tabanlı işleyici üzerinde yerel tabanlı `CFNetwork` framework bulu
 
 <a name="NSUrlSession" />
 
-## <a name="nsurlsession"></a>NSUrlSession
+### <a name="nsurlsession"></a>NSUrlSession
 
 NSURLSession tabanlı işleyici üzerinde yerel tabanlı `NSURLSession` framework bulunan iOS 7 ve daha yeni.
 
-### <a name="pros"></a>Uzmanları:
+#### <a name="pros"></a>Uzmanları:
 
  - Daha iyi performans ve daha küçük yürütülebilir boyutu için yerel API'lerini kullanır.
  - TLS 1.2 gibi en son standartları destekler.
 
-### <a name="cons"></a>Cons:
+#### <a name="cons"></a>Cons:
 
  - İOS 7 veya üzeri gerekir.
  - Bazı HttpClient özellikleri/seçenekler kullanılamaz.
 
-
-## <a name="programmatically-setting-the-httpmessagehandler"></a>Program aracılığıyla HttpMessageHandler ayarlama
+### <a name="programmatically-setting-the-httpmessagehandler"></a>Program aracılığıyla HttpMessageHandler ayarlama
 
 Yukarıda gösterilen proje çapındaki yapılandırmanın yanı sıra, aynı zamanda oluşturabileceğiniz bir `HttpClient` ve istenen Ekle `HttpMessageHandler` Bu kod parçacıkları gösterildiği gibi Oluşturucusu aracılığıyla:
 
@@ -104,7 +105,7 @@ Bu farklı bir kullanmayı mümkün kılar `HttpMessageHandler` içinde bildiril
 <a name="Selecting-a-SSL-TLS-implementation" />
 <a name="Apple-TLS" />
 
-# <a name="ssltls-implementation-build"></a>SSL/TLS uygulaması derleme
+## <a name="ssltls-implementation-build"></a>SSL/TLS uygulaması derleme
 
 SSL (Güvenli Yuva Katmanı) ve onun ardıl TLS (Aktarım Katmanı Güvenliği), HTTP ve diğer ağ bağlantıları üzerinden için destek sağlayan `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS veya Xamarin.Mac'ın `System.Net.Security.SslStream` uygulama Mono tarafından sağlanan yönetilen uygulama kullanmak yerine Apple'nın yerel SSL/TLS uygulama çağıracaktır. Apple'nın yerel uygulama, TLS 1.2 destekler.
 
@@ -114,7 +115,7 @@ SSL (Güvenli Yuva Katmanı) ve onun ardıl TLS (Aktarım Katmanı Güvenliği),
 
 <a name="App-Transport-Security" />
 
-# <a name="app-transport-security"></a>Uygulama taşıma güvenliği
+## <a name="app-transport-security"></a>Uygulama taşıma güvenliği
 
 Apple'nın _uygulama taşıma güvenliği_ (ATS) Internet kaynakların (örneğin, uygulamanızın arka uç sunucusu) ve uygulamanız arasındaki güvenli bağlantılar zorlar. ATS tüm Internet iletişimlerini güvenli bağlantı en iyi uygulamalar için uygun böylece uygulamanız veya bunu kullanan bir kitaplığı ile doğrudan hassas bilgilerin yanlışlıkla açığa önleme sağlar.
 
@@ -141,10 +142,8 @@ Aşağıdaki kod parçacığını bir örnek olduğundan `MtouchTlsProvider` aya
 ```xml
 <MtouchTlsProvider>Default</MtouchTlsProvider>
 ```
-s
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Aktarım Katmanı Güvenliği (TLS)](~/cross-platform/app-fundamentals/transport-layer-security.md)
-- [Uygulama taşıma güvenliği](~/ios/app-fundamentals/ats.md)
+- [Uygulama Aktarım Güvenliği](~/ios/app-fundamentals/ats.md)

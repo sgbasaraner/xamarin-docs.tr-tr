@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 80fe298f3dd24aac7f84213aee96499dd369d16d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0cb4e00abffead854c2590bde6df45c200ff0bb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="core-animation"></a>Çekirdek animasyon
 
@@ -23,12 +23,16 @@ Tüm tabloları kaydırma ve farklı görünümleri arasında geçirmeyi gibi iO
 
 Çekirdek animasyon ve çekirdek grafikleri çerçeveleri güzel, oluşturmak için birlikte çalışabilir animasyonlu 2B grafik. Aslında çekirdek animasyon inanılmaz, sinematik deneyimlerini oluşturmada 2B grafik 3B uzaydaki bile da dönüştürebilirsiniz. Bu makalenin kapsamı dışındadır 3B olmasına rağmen ancak gerçek 3B grafik oluşturmak için bir şey OpenGL ES gibi ya da oyunlar Aç MonoGame gibi bir API için kullanmanız gerekir.
 
+<a name="Using_Core_Animation" />
+
 ## <a name="core-animation"></a>Çekirdek animasyon
 
 iOS çekirdek animasyon çerçeve görünümleri arasında geçiş, menüler kayan ve birkaçıdır etkileri kaydırma gibi animasyon efektlerini oluşturmak için kullanılır. Animasyon ile çalışmak için iki yolu vardır:
 
--  [Uıkit aracılığıyla](#Using_UIKit_Animation), görünüm tabanlı animasyonları ve bunun yanı sıra denetleyicileri arasında animasyonlu geçişler içerir.
--   [Çekirdek animasyon aracılığıyla](#Using_Core_Animation), doğrudan geçirmiş denetimi için izin verme katmanları.
+- [Uıkit aracılığıyla](#Using_UIKit_Animation), görünüm tabanlı animasyonları ve bunun yanı sıra denetleyicileri arasında animasyonlu geçişler içerir.
+- [Çekirdek animasyon aracılığıyla](#Using_Core_Animation), doğrudan geçirmiş denetimi için izin verme katmanları.
+
+<a name="Using_UIKit_Animation" />
 
 ## <a name="using-uikit-animation"></a>Uıkit animasyon kullanma
 
@@ -237,6 +241,6 @@ Bu makalede aracılığıyla sağlanan animasyon özellikleri inceledik *çekird
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Çekirdek animasyon örneği](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
-- [Çekirdek grafikleri](~/ios/platform/graphics-animation-ios/core-graphics.md)
+- [Temel Grafikler](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [Grafikler ve animasyon gözden geçirme](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
-- [Çekirdek animasyon](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Temel Animasyon](https://developer.xamarin.com/recipes/ios/animation/coreanimation)

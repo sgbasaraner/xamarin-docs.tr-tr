@@ -7,18 +7,17 @@ ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/14/2017
-ms.openlocfilehash: 2e54bfc4bea3955dc80a747c4ecce485b78ada1d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 136484644779ac40e661f50ff19cf15884c864c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="jelly-bean-features"></a>Jelly Çekirdeklere özellikleri
 
 _Bu belgede Android 4.1 sunulan geliştiriciler için yeni özellikler üst düzey bir genel bakış sağlar. Bu özellikler şunlardır: Gelişmiş bildirimleri, büyük dosyalar, multimedya, eşler arası ağ bulma, animasyonları, yeni izinler güncelleştirmeleri paylaşmak için Android ışını güncelleştirmeler._
 
-<a name="Overview" />
 
 
 ## <a name="overview"></a>Genel Bakış
@@ -31,21 +30,18 @@ Destek ağ hizmeti bulma kullanmak için Bonjour, UPnP veya çok noktaya yayın 
 
 Son olarak yeni izinlerinden Android 4.1 eklenmiştir.
 
- <a name="Requirements" />
 
 
 ## <a name="requirements"></a>Gereksinimler
 
 Xamarin.Android uygulamaları geliştirmek için Jelly Çekirdeklere Xamarin.Android kullanılması 4.2.6 ya da daha yüksek ve Android 4.1 (API düzeyi 16) yüklenmesi Android SDK Yöneticisi üzerinden aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[![Android 4.1 Android SDK Yöneticisi'nde seçme](jelly-bean-images/image1.png)](jelly-bean-images/image1.png)
+[![Android 4.1 Android SDK Yöneticisi'nde seçme](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
 
- <a name="What's_New" />
 
 
 ## <a name="whats-new"></a>Yenilikler
 
- <a name="Animations" />
 
 
 ### <a name="animations"></a>Animasyon
@@ -79,7 +75,6 @@ animator.Start();
 
 Olarak `TimeAnimator` örneğinin çalıştığından, çağıracaktır `ITimeAnimator.ITimeListener`, hangi sonra oturum nasıl çalıştığını ve ne kadar süreyle, son yedeklemeden bu yana yöntemi edilmiş olarak çağrılmış Animator'da uzun olmuştur.
 
- <a name="Application_Stack_Navigation" />
 
 
 ### <a name="application-stack-navigation"></a>Uygulama yığın gezinme
@@ -98,7 +93,6 @@ Daha karmaşık senaryolar için Gezinti yukarı davranışını işlemek ve ger
 -   `OnCreateNavigateUpTaskStack` – Yapay yığını nasıl oluşturulduğunu üzerinde tam denetime sahip olmasını gerekli olduğunda bu yöntem geçersiz kılındı.
 
 
- <a name="Camera" />
 
 
 ### <a name="camera"></a>Kamera
@@ -149,19 +143,16 @@ button.Click += (sender, args) => mediaActionPlayer.Play(MediaActionSoundType.Sh
 mediaActionPlayer.Release();
 ```
 
- <a name="Connectivity" />
 
 
 ### <a name="connectivity"></a>Bağlantı
 
- <a name="Android_Beam" />
 
 
 #### <a name="android-beam"></a>Android ışını
 
 Android ışını birbirleri ile iletişim kurmak iki Android cihazları sağlayan bir temel NFC teknolojisidir. Android 4.1 büyük dosya aktarımı için daha iyi destek sağlar. Yeni yöntemi kullanırken `NfcAdapter.SetBeamPushUris()` Android değiştirmek alternatif taşıma mekanizmaları (örneğin, Bluetooth) arasında bir hızlı aktarım hızı elde etmek için.
 
- <a name="Network_Services_Discovery" />
 
 
 #### <a name="network-services-discovery"></a>Ağ Hizmetleri bulma
@@ -173,14 +164,12 @@ Diğer hizmetler tarafından kullanılan bir hizmet oluşturmak için `NsdServic
 
 Ağ ve uyarlamasını Hizmetleri bulmak için `Nsd.DiscoveryListener` geçirilen `NsdManager.discoverServices()`.
 
- <a name="Network_Usage" />
 
 
 #### <a name="network-usage"></a>Ağ kullanımı
 
 Yeni bir yöntemi `ConnectivityManager.IsActiveNetworkMetered` ölçülen bir ağa bağlı olup olmadığını denetlemek bir aygıt sağlar. Bu yöntem, doğru bir şekilde veri işlemleri için pahalı ücretleri olabilir kullanıcılar bilgilendirerek veri kullanımı yönetmenize yardımcı olmak için kullanılabilir.
 
- <a name="WiFi_Direct_Service_Discovery" />
 
 
 #### <a name="wifi-direct-service-discovery"></a>WiFi doğrudan hizmet bulma
@@ -195,14 +184,12 @@ Jelly Çekirdeklere içinde `WifiP2pManager` kullanarak aygıtları bulabilir *B
 -   `SetUpnpServiceResponseListener()` – Bu yöntem, Upnp bulma isteklerine yanıt alma çağrılacak geri aramaları kaydetme için kullanılır.
 
 
- <a name="Content_Providers" />
 
 
 ### <a name="content-providers"></a>İçerik sağlayıcılar
 
 `ContentResolver` Sınıfının yeni bir yöntemi aldı `AcquireUnstableContentProvider`. Bu yöntem, bir "kararsız" içerik sağlayıcı almak bir uygulama sağlar. Normalde, bir uygulama bir içerik sağlayıcı edinir ve içerik sağlayıcı çöküyor, bu nedenle uygulama kullanacak. Bu yöntem çağrısı ile bir uygulama kilitleniyor içerik sağlayıcısına çökmesi durumunda değil. Bunun yerine, `Android.OS.DeadObjectionException` içerik sağlayıcısına yerine geçti uygulamanın bildirmek için çağrılarından içerik sağlayıcısı oluşturulur. Diğer uygulamalardan içerik sağlayıcılarla kullanılırken "kararsız" içerik sağlayıcı yararlıdır – başka bir uygulama buggy kodundan başka bir uygulama etkileyecek daha az olasıdır.
 
- <a name="Copy_and_Paste_With_Intents" />
 
 
 ### <a name="copy-and-paste-with-intents"></a>Kopyala ve Yapıştır amaçları ile
@@ -214,14 +201,11 @@ Jelly Çekirdeklere içinde `WifiP2pManager` kullanarak aygıtları bulabilir *B
 -   **URI** – Bu, bir HTTP yer işareti veya içerik sağlayıcısına URI gibi herhangi bir URL olabilir.
 
 
- <a name="Isolated_Services" />
 
 
 ### <a name="isolated-services"></a>Yalıtılmış Hizmetleri
 
 Yalıtılmış bir hizmeti, kendi özel işlem altında çalışan ve kendi hiçbir izinlerine sahip bir hizmettir. Hizmet ile yalnızca iletişim olduğunda hizmeti başlatılıyor ve kendisine hizmeti API'si bağlama. Bir hizmet olarak yalıtılmış özelliği ayarlanarak bildirmeniz mümkündür `IsolatedProcess="true"` içinde `ServiceAttribute` , hizmet sınıfı daireler donatır.
-
- <a name="Media" />
 
 
 ### <a name="media"></a>Medya
@@ -245,7 +229,6 @@ Aşağıdaki yeni sınıflar, burada medya yürütülür seçmek için standart 
 -   `MediaRouterActionProvider` ve `MediaRouteButton` – bu sınıfların tutarlı bir kullanıcı Arabirimi seçerek ve media çalma sağlamak.
 
 
- <a name="Notifications" />
 
 
 ### <a name="notifications"></a>Bildirimler
@@ -255,26 +238,25 @@ Android 4.1 uygulamaların daha fazla esneklik ve bildirimleri görüntüleme il
 -   `Notification.BigPictureStyle` – Bu görüntüyü bunları olacaktır bildirimleri oluşturacak bir yardımcı sınıfıdır. Aşağıdaki resimde, büyük bir görüntü içeren bir bildirim örneği gösterilmiştir:
 
 
- [ ![BigPictureStyle bildirim örnek ekran görüntüsü](jelly-bean-images/image2.png)](jelly-bean-images/image2.png)
+ [![BigPictureStyle bildirim örnek ekran görüntüsü](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
 -   `Notification.BigTextStyle` – Bu, birden çok e-posta gibi metin satırı olacak bildirimleri oluşturacak bir yardımcı sınıfıdır. Bu yeni bir bildirim stili örneği aşağıdaki ekran görüntüsünde görebilirsiniz:
 
 
- [ ![BigTextStyle bildirim örnek ekran görüntüsü](jelly-bean-images/image3.png)](jelly-bean-images/image3.png)
+ [![BigTextStyle bildirim örnek ekran görüntüsü](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
 -   `Notification.InboxStyle` – Bu bu ekran görüntüsünde gösterildiği gibi bir e-posta iletisinden parçacıkları dizelerinin listesini içeren bildirimi oluşturacak bir yardımcı sınıfı.
 
 
- [ ![Notification.InboxStyle bildirim örnek ekran görüntüsü](jelly-bean-images/image4.png)](jelly-bean-images/image4.png)
+ [![Notification.InboxStyle bildirim örnek ekran görüntüsü](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
 
 Bildirim normal ya da daha büyük stili kullanırken en fazla iki eylem düğmeleri bir bildirim iletisi alt kısmındaki eklemek mümkündür.
 Buna örnek olarak, eylem düğmeleri bildirim alt kısmında görünür olduğu aşağıdaki ekran görüntüsünde görülebilir:
 
- [ ![Eylem düğmesi bir bildirim iletisi gösterilen örnek ekran görüntüsü](jelly-bean-images/image5.png)](jelly-bean-images/image5.png)
+ [![Eylem düğmesi bir bildirim iletisi gösterilen örnek ekran görüntüsü](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
 
 `Notification` Sınıfı, bir bildirim için beş öncelik düzeyleri birini belirtmek üzere bir geliştirici izin yeni sabitleri aldı. Bu bir bildirimi kullanılarak ayarlanabilir `Priority` özelliği.
 
- <a name="Permissions" />
 
 
 ### <a name="permissions"></a>İzinler
@@ -290,7 +272,6 @@ Aşağıdaki yeni izinler eklenmiştir:
 
 Dikkat edilecek önemli bir değişiklik `READ_EXTERNAL_STORAGE` – şu anda bu izni Android tarafından otomatik olarak verilir. Android gelecek sürümlerinde önce bu izni istemek için bir uygulama izni gerektirir.
 
- <a name="Summary" />
 
 
 ## <a name="summary"></a>Özet

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ba5249a275d3aa695ccc6527805c56907bbda0ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a5dbd65cc32ed63c0fa6f8abe3a13ffee4e9df63
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="enhanced-user-notifications"></a>Gelişmiş Kullanıcı bildirimleri
 
@@ -168,11 +168,11 @@ Gerekli yetkilendirme sağlamak için aşağıdakileri yapın:
 1. Çift `Entitlements.plist` dosyasını **çözüm paneli** düzenlemek için açın.
 2. Geçiş **kaynak** görünümü: 
 
-    [ ![](enhanced-user-notifications-images/setup01.png "Kaynak Görünümü")](enhanced-user-notifications-images/setup01.png)
+    [![](enhanced-user-notifications-images/setup01.png "Kaynak Görünümü")](enhanced-user-notifications-images/setup01.png#lightbox)
 3. Tıklatın  **+**  düğmesi yeni bir anahtar ekleyin.
 4. Girin `aps-environment` için **özelliği**, bırakın **türü** olarak `String` ve ya da girin `development` veya `production` için **değeri**: 
 
-    [ ![](enhanced-user-notifications-images/setup02.png "AP ortam özelliği")](enhanced-user-notifications-images/setup02.png)
+    [![](enhanced-user-notifications-images/setup02.png "AP ortam özelliği")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. Değişiklikleri dosyaya kaydedin.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -181,7 +181,7 @@ Gerekli yetkilendirme sağlamak için aşağıdakileri yapın:
 3. Tıklatın  **+**  düğmesi yeni bir anahtar ekleyin.
 4. Girin `aps-environment` için **özelliği**, bırakın **türü** olarak `String` ve ya da girin `development` veya `production` için **değeri**: 
 
-    [ ![](enhanced-user-notifications-images/setup02w.png "AP ortam özelliği")](enhanced-user-notifications-images/setup02.png)
+    [![](enhanced-user-notifications-images/setup02w.png "AP ortam özelliği")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. Değişiklikleri dosyaya kaydedin.
 
 -----
@@ -190,7 +190,7 @@ Gerekli yetkilendirme sağlamak için aşağıdakileri yapın:
 
 Uygulama gönderme ve uzak bildirimleri alma, bunu hala yapmanız gerekir _belirteci kayıt_ varolan kullanarak `UIApplication` API. Bu kayıt dinamik ağ bağlantısı erişimi uygulamaya gönderilir gerekli belirteci oluşturur APNs aygıta gerektirir. Bu belirteç uzak bildirimleri kaydı için geliştiricinin sunucu tarafı uygulamasına iletmek uygulamanın gerekir:
 
-[ ![](enhanced-user-notifications-images/token01.png "Belirteç kayıt genel bakış")](enhanced-user-notifications-images/token01.png)
+[![](enhanced-user-notifications-images/token01.png "Belirteç kayıt genel bakış")](enhanced-user-notifications-images/token01.png#lightbox)
 
 Gerekli kaydı'nı başlatmak için aşağıdaki kodu kullanın:
 
@@ -200,7 +200,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 Bildirim yükü o get'ın parçası sunucudan APNs için uzak bir bildirim göndererek gönderilen gibi dahil edilmek üzere Geliştirici sunucu tarafı uygulamaya gönderilir belirteci gerekir:
 
-[ ![](enhanced-user-notifications-images/token02.png "Bildirim yükü bir parçası olarak dahil edilen belirteci")](enhanced-user-notifications-images/token02.png)
+[![](enhanced-user-notifications-images/token02.png "Bildirim yükü bir parçası olarak dahil edilen belirteci")](enhanced-user-notifications-images/token02.png#lightbox)
 
 Bildirim ve açmak veya bildirime yanıt vermek için kullanılan uygulama birbirine bağlar, anahtar belirteç görür.
 
@@ -519,7 +519,7 @@ Geçirilen içinde `UNNotificationResponse` sınıfına sahip bir `ActionIdentif
 
 Uzak bildirimler ile çalışırken _hizmeti uzantıları_ bildirim yükü içinde uçtan uca şifrelemeyi etkinleştirmek için bir yol sağlar. Hizmet, program.cs'ye veya kullanıcıya görüntülenmeden önce bir bildirim görünür içeriğini değiştirme ana amacı ile arka planda kullanıcı arabirimi uzantısı (IOS 10 kullanılabilir) uzantıları. 
 
-[ ![](enhanced-user-notifications-images/extension01.png "Hizmeti uzantısının genel bakış")](enhanced-user-notifications-images/extension01.png)
+[![](enhanced-user-notifications-images/extension01.png "Hizmeti uzantısının genel bakış")](enhanced-user-notifications-images/extension01.png#lightbox)
 
 Hizmeti uzantılarını hızlı bir şekilde çalıştırmak için yöneliktir ve yalnızca sistem tarafından yürütmek için kısa bir süre verilir. Ayrılan sürede, görevini tamamlamak üzere hizmet uzantısı başarısız durumunda durumunda, bir geri dönüş yöntemi çağrılır. Geri dönüş başarısız olursa, özgün bildirim içerik kullanıcıya görüntülenir.
 
@@ -538,13 +538,13 @@ Bir hizmet uzantısı bir Xamarin.iOS uygulaması uygulamak için aşağıdakile
 2. Çözüm adına sağ tıklayın **çözüm paneli** seçip **Ekle** > **Yeni Proje Ekle**.
 3. Seçin **iOS** > **uzantıları** > **bildirim hizmeti uzantıları** tıklatıp **sonraki** düğmesi: 
 
-    [ ![](enhanced-user-notifications-images/extension02.png "Bildirim hizmeti uzantıları seçin")](enhanced-user-notifications-images/extension02.png)
+    [![](enhanced-user-notifications-images/extension02.png "Bildirim hizmeti uzantıları seçin")](enhanced-user-notifications-images/extension02.png#lightbox)
 4. Girin bir **adı** tıklatın ve uzantı için **sonraki** düğmesi: 
 
-    [ ![](enhanced-user-notifications-images/extension03.png "Uzantı için bir ad girin")](enhanced-user-notifications-images/extension03.png)
+    [![](enhanced-user-notifications-images/extension03.png "Uzantı için bir ad girin")](enhanced-user-notifications-images/extension03.png#lightbox)
 5. Ayarlama **proje adı** ve/veya **çözüm adı** gerekli ve tıklatırsanız **oluşturma** düğmesi: 
 
-    [ ![](enhanced-user-notifications-images/extension04.png "Proje adı ve/veya çözüm adı")](enhanced-user-notifications-images/extension04.png) 
+    [![](enhanced-user-notifications-images/extension04.png "Proje adı ve/veya çözüm adı")](enhanced-user-notifications-images/extension04.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -552,7 +552,7 @@ Bir hizmet uzantısı bir Xamarin.iOS uygulaması uygulamak için aşağıdakile
 2. Çözüm adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **Yeni Proje Ekle**.
 3. Seçin **iOS** > **uzantıları** > **bildirim hizmeti uzantıları**: 
 
-    [ ![](enhanced-user-notifications-images/extension01w.png "Bildirim hizmeti uzantıları seçin")](enhanced-user-notifications-images/extension01w.png)
+    [![](enhanced-user-notifications-images/extension01w.png "Bildirim hizmeti uzantıları seçin")](enhanced-user-notifications-images/extension01w.png#lightbox)
 4. Girin bir **adı** tıklatın ve uzantı için **Tamam** düğmesi.
 
 -----

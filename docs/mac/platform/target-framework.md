@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: ac4644f65486d70fcbb7da1a03574fb238348313
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f657fc3dd87d5c39d442a863e4acc00ac320b00d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="target-framework"></a>Hedef çerçevesi
 
@@ -44,7 +44,7 @@ Bir Xamarin.Mac proje için hedef Framework türünü değiştirmek için aşağ
 2. İçinde **Çözüm Gezgini**, proje dosyasına çift tıklayarak açın **proje seçenekleri** iletişim kutusu.
 3. Gelen **genel** sekmesinde, türünü seçin **hedef Framework** uygulamanızın gereksinimlerine uygun:
 
-  [![Bir hedef Framework'ü seçmek için Proje Seçenekleri penceresini kullanarak](target-framework-images/select-target-full.png "bir hedef Framework'ü seçmek için Proje Seçenekleri penceresini kullanma")](target-framework-images/select-target-full-large.png)
+  [![Bir hedef Framework'ü seçmek için Proje Seçenekleri penceresini kullanarak](target-framework-images/select-target-full.png "bir hedef Framework'ü seçmek için Proje Seçenekleri penceresini kullanma")](target-framework-images/select-target-full-large.png#lightbox)
 
 4. Tıklatın **Tamam** yaptığınız değişiklikleri kaydetmek için düğmesi.
 
@@ -58,7 +58,7 @@ Bu makalede hedef çerçeveyi (temel sınıf kitaplıkları) Xamarin.Mac uygulam
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [iOS ve Mac kod paylaşımını](~/cross-platform/macios/index.md)
-- [Birleşik API](~/cross-platform/macios/unified/index.md)
-- [Taşınabilir sınıf kitaplıkları](~/cross-platform/app-fundamentals/pcl.md)
-- [Derlemeler](~/cross-platform/internals/available-assemblies.md)
+- [Unified API](~/cross-platform/macios/unified/index.md)
+- [Taşınabilir Sınıf Kitaplıkları](~/cross-platform/app-fundamentals/pcl.md)
+- [Bütünleştirilmiş kodlar](~/cross-platform/internals/available-assemblies.md)
 - [Mevcut Mac uygulamaları güncelleştirme](~/cross-platform/macios/unified/updating-mac-apps.md)

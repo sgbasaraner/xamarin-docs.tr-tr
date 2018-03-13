@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8bf47f1edfd4256e25c7af8ce2970ad1918b8027
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 237a986d6db2fb6984e99c6265fbbc212b35a351
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="subscriptions-and-reporting"></a>Abonelikler ve Raporlama
 
@@ -53,17 +53,17 @@ Uygulama içi satın alma paylaşılan gizlilik, sunucunuzda otomatik yenilenebi
 
 Connect giriş sayfası seçin iTunes **My uygulamaları**:   
    
- [ ![](subscriptions-and-reporting-images/image2.png "Uygulamalarım seçin")](subscriptions-and-reporting-images/image2.png)  
+ [![](subscriptions-and-reporting-images/image2.png "Uygulamalarım seçin")](subscriptions-and-reporting-images/image2.png#lightbox)  
  
 Bir uygulama seçin ve tıklayın **uygulama içi satın almalara** sekmesi:
 
-[ ![](subscriptions-and-reporting-images/image6.png "Uygulama içi satın almalara sekmesini tıklatın")](subscriptions-and-reporting-images/image6.png)
+[![](subscriptions-and-reporting-images/image6.png "Uygulama içi satın almalara sekmesini tıklatın")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 Sayfanın alt kısmından seçin **görünüm veya bir paylaşılan gizlilik oluşturmak**:
    
- [ ![](subscriptions-and-reporting-images/image40.png "Görünüm seçin veya bir paylaşılan gizlilik oluştur")](subscriptions-and-reporting-images/image40.png)
+ [![](subscriptions-and-reporting-images/image40.png "Görünüm seçin veya bir paylaşılan gizlilik oluştur")](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [ ![](subscriptions-and-reporting-images/image41.png "Paylaşılan gizlilik oluştur")](subscriptions-and-reporting-images/image41.png)   
+ [![](subscriptions-and-reporting-images/image41.png "Paylaşılan gizlilik oluştur")](subscriptions-and-reporting-images/image41.png#lightbox)   
    
    
    
@@ -115,9 +115,9 @@ iTunes Bağlan ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) sağ
 
 Satış ve Eğilimleri raporu örneği aşağıda verilmiştir:   
 
- [ ![](subscriptions-and-reporting-images/image42.png "Bir örnek satış ve Eğilimleri raporu")](subscriptions-and-reporting-images/image42.png)   
+ [![](subscriptions-and-reporting-images/image42.png "Bir örnek satış ve Eğilimleri raporu")](subscriptions-and-reporting-images/image42.png#lightbox)   
    
  Ayrıca bir [ **ITC bağlanmak mobil**iOS uygulaması (iTunes bağlantı)](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8).
 iPhone ekran görüntüleri kullanılabilir istatistikleri bazıları aşağıda gösterilmektedir:   
    
- [ ![](subscriptions-and-reporting-images/image43.png "kullanılabilir istatistikleri bazıları iPhone ekran görüntüleri")](subscriptions-and-reporting-images/image43.png)
+ [![](subscriptions-and-reporting-images/image43.png "kullanılabilir istatistikleri bazıları iPhone ekran görüntüleri")](subscriptions-and-reporting-images/image43.png#lightbox)

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 91afe9b627d9d430fba38b34f915d7e79652a2d3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c0846e959b4a4cfec9417de59125a8665b648a76
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-map-pin"></a>Bir harita PIN özelleştirme
 
@@ -137,7 +137,7 @@ Bu başlatma özel bir PIN ekler ve haritanın görünümüyle konumlandırır [
 1. Ekleme bir `ExportRenderer` özniteliği, Xamarin.Forms özel eşlemesi oluşturmak için kullanılacak belirtmek için özel Oluşturucu sınıfı. Bu öznitelik, özel Oluşturucu Xamarin.Forms ile kaydetmek için kullanılır.
 
 > [!NOTE]
-> **Not**: her platform projesinde özel Oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse, varsayılan oluşturucu denetimin taban sınıfı için kullanılır.
+> Her platform projesinde özel Oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse, varsayılan oluşturucu denetimin taban sınıfı için kullanılır.
 
 Aşağıdaki diyagram, her proje örnek uygulamasında, aralarındaki ilişkilerin birlikte sorumlulukları gösterir:
 
@@ -660,5 +660,5 @@ Bu makale için özel Oluşturucu Oluşturma gösterilen `Map` denetim, gelişti
 
 - [MAPS denetimi](~/xamarin-forms/user-interface/map.md)
 - [iOS eşlemeleri](~/ios/user-interface/controls/ios-maps/index.md)
-- [Haritalar API'si](~/android/platform/maps-and-location/maps/maps-api.md)
+- [Haritalar API’si](~/android/platform/maps-and-location/maps/maps-api.md)
 - [Özelleştirilmiş PIN (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)

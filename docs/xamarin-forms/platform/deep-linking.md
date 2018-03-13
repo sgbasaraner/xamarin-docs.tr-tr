@@ -5,20 +5,24 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: b2decf1331764ed6b1696126d8b23318e329e0c7
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 38d3b6da0dd33e038f2d50209280f2983faf6013
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-indexing-and-deep-linking"></a>Uygulama dizin oluşturma ve derin bağlama
 
 _Uygulama dizin arama sonuçlarında görünmesini ilgili kalmak için birkaç kullandıktan sonra Aksi takdirde unutulursa uygulamaları sağlar. Derin bağlama uygulamaların uygulama verilerini içeren, genellikle derin bir bağlantıdan başvurulan sayfasına giderek arama sonucu yanıt izin verir. Bu makalede, uygulama dizin kullanmayı ve Xamarin.Forms uygulaması içeriği iOS ve Android cihazlarda aranabilir yapmak için derin bağlama gösterilmektedir._
 
-## <a name="overview"></a>Genel Bakış
+> [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
+
+**Xamarin.Forms ve Azure ile derin göre bağlama [Xamarin Üniversitesi](https://university.xamarin.com/)**
+
 
 Xamarin.Forms uygulaması dizin oluşturma ve derin bağlama kullanıcılar uygulamaları aracılığıyla gidin gibi uygulama dizin oluşturma için meta veri yayımlama için bir API sağlar. Dizin oluşturulmuş içerik ardından için Spotlight arama, Google araması veya bir web araması aranabilir. Dokunma derin bir bağlantı içeren bir arama sonucu üzerinde bir uygulama tarafından yönetilebilir ve genellikle derin bağlantıdan başvurulan sayfasına gitmek için kullanılan bir olayı ateşlenir.
 
@@ -31,7 +35,7 @@ Her `TodoItem` kullanıcı tarafından oluşturulan örnek dizini. Platforma öz
 Bir SQLite veritabanı kullanma hakkında daha fazla bilgi için bkz: [yerel bir veritabanı ile çalışan](~/xamarin-forms/app-fundamentals/databases.md).
 
 > [!NOTE]
-> **Not**: dizin oluşturma ve derin işlevselliği bağlama Xamarin.Forms uygulaması yalnızca iOS ve Android platformları üzerinde kullanılabilir ve iOS 9 ve API 23 sırasıyla gerektirir.
+> Xamarin.Forms uygulaması dizin oluşturma ve derin işlev bağlama yalnızca iOS ve Android platformları üzerinde kullanılabilir ve iOS 9 ve API 23 sırasıyla gerektirir.
 
 ## <a name="setup"></a>Kurulum
 
@@ -106,7 +110,7 @@ Application.Current.AppLinks.RegisterLink (appLink);
 Bu ekler [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) uygulamanın örneğine [ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/) koleksiyonu.
 
 > [!NOTE]
-> **Not**: `RegisterLink` yöntemi de bir sayfa için dizinlenir içeriği güncelleştirmek için kullanılabilir.
+> `RegisterLink` Yöntemi de bir sayfa için dizinlenir içeriği güncelleştirmek için kullanılabilir.
 
 Bir kez bir [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) örneği kaydettirildi dizin oluşturma işlemi için arama sonuçlarında yer alabilir. Aşağıdaki ekran görüntüsünde, iOS platformunda arama sonuçlarında görünmesini dizin oluşturulmuş içerik gösterir:
 
@@ -123,7 +127,7 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 Bu kaldırır [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) uygulamanın örneğinden [ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/) koleksiyonu.
 
 > [!NOTE]
-> **Not**: üzerinde Android dizin oluşturulmuş içerik Arama sonuçlarından kaldırmak mümkün değildir.
+> Android dizin oluşturulmuş içerik Arama sonuçlarından kaldırmak mümkün değildir.
 
 <a name="responding" />
 
@@ -211,7 +215,7 @@ Ayrıca, aşağıdaki anahtarları için değerler belirtilebilir:
 - `shouldAddToPublicIndex` – bir `string` herhangi birinin `true` veya `false` sonra uygulama iOS cihazında yüklemediniz kullanıcılara sunulabilir Apple'nın genel bulut dizini oluşturulmuş içerik eklemek gerekip gerekmediğini denetler. Yalnızca içeriği ortak dizin oluşturma işlemi için sahip ayarlanmadığından, ancak bunu Apple'nın genel bulut dizini otomatik olarak eklenen gelmez. Daha fazla bilgi için bkz: [ortak arama dizini oluşturma](~/ios/platform/search/nsuseractivity.md). Bu anahtar için ayarlanmalıdır Not `false` kişisel veri eklerken [ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/) koleksiyonu.
 
 > [!NOTE]
-> **Not**: `KeyValues` koleksiyonu Android platformunda kullanılan değil.
+> `KeyValues` Koleksiyonu Android platformunda kullanılan değil.
 
 İletim hakkında daha fazla bilgi için bkz: [iletimi giriş](~/ios/platform/handoff.md).
 

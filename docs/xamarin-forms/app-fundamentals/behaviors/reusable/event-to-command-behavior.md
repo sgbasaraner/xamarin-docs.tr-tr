@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 2727d83e55e305af1372ece35bdf22abfc653fe7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d82a1391feca9187cf2aca4394509447aeac6a18
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Reusable EventToCommandBehavior
 
@@ -182,7 +182,7 @@ selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
 
 Çalışma zamanında denetimi ile etkileşim davranışı yanıtlar. İçinde bir öğe seçildiğinde [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/), [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) olay yangın, hangi yürütecek `OutputAgeCommand` ViewModel içinde. Sırayla bu ViewModel güncelleştirmeleri `SelectedItemText` özelliği, [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) için aşağıdaki ekran görüntülerinde gösterildiği gibi bağlar:
 
-[ ![](event-to-command-behavior-images/screenshots-sml.png "Örnek uygulama EventToCommandBehavior ile")](event-to-command-behavior-images/screenshots.png "örnek EventToCommandBehavior ile uygulama")
+[![](event-to-command-behavior-images/screenshots-sml.png "Örnek uygulama EventToCommandBehavior ile")](event-to-command-behavior-images/screenshots.png#lightbox "örnek EventToCommandBehavior ile uygulama")
 
 Bir olay başlatıldığında, bir komut çalıştırmak için bu davranış kullanmanın avantajı olan komutları komutları ile etkileşim kurmak için tasarlanmış doğru denetimleri ile ilişkili olabilir. Ayrıca, bu kazan kalıbı olay işleme kodu arka plan kodu dosyalarından kaldırır.
 

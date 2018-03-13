@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/02/2018
-ms.openlocfilehash: c02ad78cc15f2d71f19d605f7a4d6889bbe3ca01
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec8d000f235a8e0da5198e425f9f1e630b2c662a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-touch-in-android"></a>İzlenecek yol - Android dokunma kullanma
 
 Bize kavramları çalışan bir uygulama önceki bölümde kullanmak bkz. Dört etkinlikleri ile bir uygulama oluşturacağız. İlk etkinlik menü veya çeşitli API'ler göstermek için diğer etkinlikleri başlatacak bir denetim panosu olacaktır. Aşağıdaki ekran görüntüsü ana etkinlik gösterir:
 
-[![Örnek ekran Touch bana düğmesi](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png)
+[![Örnek ekran Touch bana düğmesi](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
 Touch örnek, ilk etkinliğin görünümleri dokunmak için olay işleyicileri kullanmayı gösterir. Hareketi tanıyıcı etkinlik gösteren alt nasıl `Android.View.Views` ve olayları işleme yanı sıra tutarak hareketleri nasıl ele alınacağını gösterir. Üçüncü ve son etkinlik **özel hareketi**, Göster nasıl özel hareketler kullanır. İzleyin ve almak işleri kolaylaştırmak için Biz bu kılavuzda etkinliklerden birini odaklanan her bölüm içeren bölümlere ayırmak.
 
@@ -25,7 +25,7 @@ Touch örnek, ilk etkinliğin görünümleri dokunmak için olay işleyicileri k
 
 -   Projeyi açın **TouchWalkthrough\_Başlat**. **MainActivity** gitmek için tüm kümesi &ndash; bize dokunma davranışa etkinliğin uygulamak için en fazla olduğu. Uygulamayı çalıştırın ve'ı tıklatırsanız **Touch örnek**, aşağıdaki etkinlik başlamanız gerekir:
 
-    [![Ekran görüntüsü etkinlik Touch görüntülenen başlar](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+    [![Ekran görüntüsü etkinlik Touch görüntülenen başlar](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 -   Biz, etkinlik başlar onayladıktan, dosyayı açma **TouchActivity.cs** ve için bir işleyici ekleyin `Touch` olayı `ImageView`:
 
@@ -63,11 +63,11 @@ Yukarıdaki kod biz kabul dikkat edin `Move` ve `Down` eylem olarak aynı. Rağm
 
 Her zaman kullanıcı rötuşları `ImageView`, `Touch` olay harekete geçirilen ve bizim işleyici iletisini görüntüler **Touch başlar** aşağıdaki ekran görüntüsünde gösterildiği gibi ekranında:
 
-[![Ekran görüntüsü etkinlik Touch başlar](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+[![Ekran görüntüsü etkinlik Touch başlar](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 Kullanıcı temas sürece `ImageView`, **Touch başlar** görüntülenmesi `TextView`. Ne zaman kullanıcı artık temas `ImageView`, ileti **Touch sona erer** görüntülenmesi `TextView`, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[![Ekran görüntüsü etkinlik Touch sona erer](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png)
+[![Ekran görüntüsü etkinlik Touch sona erer](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
 ## <a name="gesture-recognizer-activity"></a>Hareketi tanıyıcı etkinliği
@@ -234,11 +234,11 @@ Kullanıcı temas sürece `ImageView`, **Touch başlar** görüntülenmesi `Text
 -   Şimdi uygulamayı çalıştırın ve hareketi tanıyıcı etkinliği başlatın.
     Başladığında Ekran aşağıdaki ekran görüntüsüne benzer görünmelidir:
 
-    [![Hareketi tanıyıcı ekran Android simgesiyle başlangıç](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png)
+    [![Hareketi tanıyıcı ekran Android simgesiyle başlangıç](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
 -   Şimdi simgesi dokunma ve ekran sürükleyin. Tutarak yakınlaştırma hareketi deneyin. Belirli bir noktada ekranınızda aşağıdaki ekran şöyle görünebilir:
 
-    [![Ekran hareketlerini taşıma simgesi](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png)
+    [![Ekran hareketlerini taşıma simgesi](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
 Bu noktada, kendinize bir pat arkasında vermeniz gerekir: bir Android uygulamasını tutarak yakınlaştırma yalnızca uygulanmadı! Bir hızlı sonu alabilir ve bu kılavuzda üçüncü ve son etkinlik taşıma sağlar &ndash; özel hareketler kullanma.
 
@@ -341,17 +341,17 @@ Bu kılavuzda amaçları doğrultusunda, hareketleri kitaplığı zaten hareketi
 
 -   Uygulamayı çalıştırın ve özel hareketi tanıyıcı faaliyeti başlatın. Aşağıdaki ekran görüntüsüne benzer görünmelidir:
 
-    [![Ekran bana görüntü denetleyin](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png)
+    [![Ekran bana görüntü denetleyin](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
     Şimdi bir onay işareti ekranda çizme ve görüntülenmesini bit eşlemi, sonraki ekran görüntülerinde gösterildiği gibi görünmelidir:
 
-    [![Çizilen onay işareti](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png)
-    [![Recognized onay işareti](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png)
+    [![Çizilen onay işareti](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+    [![Recognized onay işareti](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
     Son olarak, bir karalama ekranda çizin. Bu ekran görüntülerinde gösterildiği gibi onay kutusunu özgün görüntüye değiştirmeniz gerekir:
 
-    [![Karalama ekranda](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png)
-    [![özgün görüntüsüne görüntülenir](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png)
+    [![Karalama ekranda](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png#lightbox)
+    [![özgün görüntüsüne görüntülenir](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png#lightbox)
 
 Artık bir anlayış dokunma ve hareket uygulamada Xamarin.Android kullanarak Android tümleştirme vardır.
 

@@ -4,14 +4,15 @@ description: "Veri bağlamaları bir değişiklik diğer birinde bir değişikli
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 46e0c1f9b2aff52c1d31774a15e818c78a70056a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dbbbe051aab065a5b71905459f577fcacefd8bc5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-4-data-binding-basics"></a>Bölüm 4. Veri bağlama temelleri
 
@@ -99,7 +100,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 Çalışan program şöyledir:
 
-[ ![](data-binding-basics-images/sliderbinding.png "Görünümü görünümü bağlamaları")](data-binding-basics-images/sliderbinding-large.png "görünümü görünümü bağlamaları ")
+[![](data-binding-basics-images/sliderbinding.png "Görünümü görünümü bağlamaları")](data-binding-basics-images/sliderbinding-large.png#lightbox "görünümü görünümü bağlamaları ")
 
 ## <a name="the-binding-mode"></a>Bağlama modu 
 
@@ -197,7 +198,7 @@ Bu nedenle, tüm bağlamaları görünen geriye doğru ayarlanır yolları: `Bin
 
 Ancak, bağlama için `Scale` özelliği `TwoWay`. Bunun nedeni, `Scale` özelliğinin varsayılan değeri 1 ile kullanarak bir `TwoWay` nedenler bağlama `Slider` ilk 0 yerine 1 için ayarlanacak değer. Bu bağlama olsaydı `OneWayToSource`, `Scale` özelliği başlangıçta ayarlanabilir 0'dan `Slider` varsayılan değer. `Label` Görünür olmaz ve kullanıcıya bazı karışıklığa neden.
 
- [ ![](data-binding-basics-images/slidertransforms.png "Geriye dönük bağlamaları")](data-binding-basics-images/slidertransforms-large.png "geriye doğru bağlamaları")
+ [![](data-binding-basics-images/slidertransforms.png "Geriye dönük bağlamaları")](data-binding-basics-images/slidertransforms-large.png#lightbox "geriye doğru bağlamaları")
 
 ## <a name="bindings-and-collections"></a>Bağlamalar ve koleksiyonları
 
@@ -227,7 +228,7 @@ Statik ayarı `NamedColor.All` özelliğine `ItemsSource` , bir `ListView` kolay
 
 Sonuç görünen öğeleri gerçekten türünde olmasını kurar `XamlSamples.NamedColor`:
 
-[ ![](data-binding-basics-images/listview1.png "Bir koleksiyona bağlama")](data-binding-basics-images/listview1-large.png "koleksiyona bağlama")
+[![](data-binding-basics-images/listview1.png "Bir koleksiyona bağlama")](data-binding-basics-images/listview1-large.png#lightbox "koleksiyona bağlama")
 
 Kadar bilgi değil ancak `ListView` kaydırılabilir ve seçilebilir.
 
@@ -249,7 +250,7 @@ Kadar bilgi değil ancak `ListView` kaydırılabilir ve seçilebilir.
 
 `Label` Ayarlanır `View` özelliği `ViewCell`. ( `ViewCell.View` Etiketleri gerekli değildir çünkü `View` içerik özelliği bir özelliktir `ViewCell`.) Bu biçimlendirme görüntüler `FriendlyName` her özellik `NamedColor` nesnesi:
 
-[ ![](data-binding-basics-images/listview2.png "Bir DataTemplate koleksiyonuyla bağlama")](data-binding-basics-images/listview2-large.png "DataTemplate koleksiyonuyla bağlama")
+[![](data-binding-basics-images/listview2.png "Bir DataTemplate koleksiyonuyla bağlama")](data-binding-basics-images/listview2-large.png#lightbox "DataTemplate koleksiyonuyla bağlama")
 
 Daha iyi. Artık gerekli olan tek şey daha fazla bilgi ve gerçek rengi öğesi şablonu ladin için. Bu şablon desteklemek için bazı değerler ve nesneler sayfanın kaynak sözlükte tanımlanmıştır:
 
@@ -385,7 +386,7 @@ Birden fazla bağlama arasında paylaşılabilmesi dönüştürücü kaynak söz
 
 Sonuç şöyledir:
 
-[ ![](data-binding-basics-images/listview3.png "Bir DataTemplate ve dönüştürücüleri koleksiyonuyla bağlama")](data-binding-basics-images/listview3-large.png "DataTemplate ve dönüştürücüleri koleksiyonuyla bağlama")
+[![](data-binding-basics-images/listview3.png "Bir DataTemplate ve dönüştürücüleri koleksiyonuyla bağlama")](data-binding-basics-images/listview3-large.png#lightbox "DataTemplate ve dönüştürücüleri koleksiyonuyla bağlama")
 
 `ListView` Dinamik olarak temel oluşabilir ve bu değişiklikleri işleme oldukça karmaşık olan veri, ancak yalnızca belirli adımları gerçekleştirin. Öğeleri koleksiyonu için atanmışsa `ItemsSource` özelliği `ListView` değişiklikleri çalışma zamanı sırasında — öğeleri eklenebilir, ise veya koleksiyondan kaldırıldı — kullanmak bir `ObservableCollection` bu öğeler için sınıf. `ObservableCollection` uygulayan `INotifyCollectionChanged` arabirimi ve `ListView` için bir işleyici yükleyecek `CollectionChanged` olay.
 
@@ -400,7 +401,7 @@ Veri bağlama özellikleri sayfasında iki nesne arasındaki veya görsel nesnel
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
-- [1. bölüm. XAML (örnek) ile çalışmaya başlama](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [2. bölüm. Temel XAML sözdizimi (örnek)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [Bölüm 1. XAML (örnek) ile çalışmaya başlama](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [Bölüm 2. Temel XAML sözdizimi (örnek)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Bölüm 3. XAML biçimlendirme uzantıları (örnek)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Bölüm 5. Veri bağlama MVVM (örnek)](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

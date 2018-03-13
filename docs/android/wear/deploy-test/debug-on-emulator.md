@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1ad3c193261bf22b7ee344aa1ccabb226533b907
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc6146670c4b5f7d29491335b4719e032487dcce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Bir öykünücü üzerinde Android yıpranması hata ayıklama
 
@@ -28,14 +28,14 @@ Bir öykünücü üzerinde yıpranması uygulamanızı çalıştırmak için And
 
 Yıpranması sanal cihazı oluşturduğunuzda, bir Android takmak cihaz profilini seçin (gibi **Android yıpranması kare**). Geliştirilmiş performans için yıpranması kullanmak **x86** CPU/ABI Bu örnekte görüldüğü gibi:
 
-[![Örnek yıpranması sanal aygıt yapılandırma](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png)
+[![Örnek yıpranması sanal aygıt yapılandırma](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
 
 
 ## <a name="launch-the-wear-virtual-device"></a>Yıpranması sanal cihazı başlatma 
 
 Android takmak sanal aygıt oluşturduktan sonra hata ayıklama başlamadan önce IDE aygıtı aşağı açılır menüde seçebilirsiniz. Sanal cihazınız aygıt aşağı açılır kullanılabilir durumda değilse, projenizin bir Android olduğundan emin olun *takmak* uygulama projesi (Android uygulaması projesi değil) ve API düzeyini hedefine aynı API'sine ayarlanır düzey sanal cihazı olarak. Örneğin:
 
-[ ![Visual Studio aygıt menüde takmak AVD seçme](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png)
+[![Visual Studio aygıt menüde takmak AVD seçme](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 
 Android öykünücüsünde başladıktan sonra Xamarin.Android öykünücüsünü yıpranması uygulamayı dağıtın. Öykünücü ile yapılandırılmış sanal cihaz görüntüsü uygulamayı çalıştırır.
 

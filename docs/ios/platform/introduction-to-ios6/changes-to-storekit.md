@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: cbaa389e4a115be2face2b72db6108c836676dc7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec83bc0f62ee195884cef2f59ba701fcbf15c1da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="changes-to-storekit"></a>StoreKit yapılan değişiklikler
 
@@ -36,7 +36,7 @@ Bu belgede ele alınan deposu Seti özellikleri, iOS 6 ve Xamarin.iOS 6.0 birlik
 İOS yeni uygulama içi satın alma özelliği, ürün bilgilerini görüntülemek ve satın alma veya ürün, uygulamanızın içinde indirmek kullanıcıların sağlar.
 Daha önce uygulamaları iTunes, App Store veya özgün uygulamayı bırakarak kullanıcının oluşturacağı iBookstore tetiklemek gerekir. Bunlar bittiğinde bu yeni özellik, uygulamanızın kullanıcı otomatik olarak döndürür.
 
- [ ![](changes-to-storekit-images/image1.png "Bir uygulama satın alma sonra otomatik olarak döndürme")](changes-to-storekit-images/image1.png)
+ [![](changes-to-storekit-images/image1.png "Bir uygulama satın alma sonra otomatik olarak döndürme")](changes-to-storekit-images/image1.png#lightbox)
 
 Bir dizi nerede olabilir yararlı senaryolar vardır (ancak bunlarla sınırlı değil):
 
@@ -92,7 +92,7 @@ void Buy (int productId)
 
 Uygulama şu şekilde görünür – indirme veya satın alma tamamen içinde oluşur çalıştırırken `SKStoreProductViewController`:
 
- [ ![](changes-to-storekit-images/image2.png "Uygulama çalışırken şöyle")](changes-to-storekit-images/image2.png)
+ [![](changes-to-storekit-images/image2.png "Uygulama çalışırken şöyle")](changes-to-storekit-images/image2.png#lightbox)
 
 ### <a name="supporting-older-operating-systems"></a>Eski işletim sistemlerini destekleme
 
@@ -130,7 +130,7 @@ Gerekli Apple kimliği `SKStoreProductViewController` olan bir *numarası* (pake
 
 Yayımlama uygulamalar için kolayca **Apple kimliği** iTunes Bağlan içinde:
 
- [ ![](changes-to-storekit-images/image3.png "Apple kimliği iTunes Bağlan bulma")](changes-to-storekit-images/image3.png)
+ [![](changes-to-storekit-images/image3.png "Apple kimliği iTunes Bağlan bulma")](changes-to-storekit-images/image3.png#lightbox)
 
  <a name="Search_API" />
 
@@ -194,11 +194,11 @@ Not: Gerçek bir aygıtla test etmeniz gerekir böylece test iOS simülatörü d
 
 İOS 6 Apple sunucusu teslim ürünleri çeşitlemesi sunar: içerik dosyalarınızı sunucularındaki barındıracak. Çünkü, ayrı bir sunucu çalışması için gerekli değildir ve depolama Seti önceden kendiniz yazmak zorunda arka plan indirme işlevsellik sağlar sunucu teslim ürünleri oluşturmak daha kolay yapar. Apple'nın barındırma avantajlarından yararlanmak için içerik için yeni uygulama içi satın alma ürünler barındırma etkinleştirmek ve onu yararlanmak için depolama Seti kodunuzu değiştirin. Ürün içerik dosyalarını sonra Xcode kullanılarak oluşturulmuş ve Apple'nın sunucularına gözden geçirme ve sürüm karşıya.
 
- [ ![](changes-to-storekit-images/image4.png "Derleme ve teslim işlemi")](changes-to-storekit-images/image4.png)
+ [![](changes-to-storekit-images/image4.png "Derleme ve teslim işlemi")](changes-to-storekit-images/image4.png#lightbox)
 
 Uygulama içi satın alma sağlamak için uygulama mağazası kullanma *ile içerik barındırılan* aşağıdaki Kurulum ve yapılandırma gerektirir:
 
--   **iTunes Bağlan** –, *gerekir* bunlar sizin adınıza toplanan fon havalesi şekilde bankacılık ve vergi bilgilerinizi Apple'a sağlıyordu. Ardından, ürünler, satış ve satın alma test etmek için korumalı alan kullanıcı hesaplarını ayarlama yapılandırabilirsiniz.  *Ayrıca barındırılan içerik yapılandırmalısınız**Apple ile barındırmak istediğiniz bu Tüketilemezi ürünler için* *.*  
+-   **iTunes Bağlan** –, *gerekir* bunlar sizin adınıza toplanan fon havalesi şekilde bankacılık ve vergi bilgilerinizi Apple'a sağlıyordu. Ardından, ürünler, satış ve satın alma test etmek için korumalı alan kullanıcı hesaplarını ayarlama yapılandırabilirsiniz.  *Ayrıca barındırılan içerik yapılandırmalısınız**Apple ile barındırmak istediğiniz bu Tüketilemezi ürünler için* *.* 
 -   **iOS sağlama portalı** – bir paket tanımlayıcısı oluşturma ve uygulama içi satın alma destekleyen herhangi bir uygulama için olduğu gibi uygulamanız için App Store erişimi etkinleştirme. 
 -   **Kit depolamak** – ürünleri görüntüleme, ürün satın alma ve işlemleri geri yükleme için uygulamanız için kod ekleme.  *İOS 6 deposu Seti ayrıca ilerleme güncelleştirmeleri ile arka planda ürün içeriğinizi indirme yönetir.* 
 -   **Özel kod** – müşteriler tarafından gerçekleştirilen satın alma işlemleri izlemek ve ürünleri veya hizmetleri satın aldığınız sağlamak için. Yeni iOS 6 deposu Seti sınıflar gibi kullanan `SKDownload` Apple tarafından barındırılan içerik almak için. 
@@ -213,7 +213,7 @@ Aşağıdaki bölümlerde, oluşturma ve satın alma yönetmeye paketini karşı
 
 Uygulama, öncesinde, sırasında ve sonrasında bir satın alma şöyle görünür:
 
- [ ![](changes-to-storekit-images/image5.png "Öncesinde, sırasında ve sonrasında bir satın alma uygulama şöyle görünür")](changes-to-storekit-images/image5.png)
+ [![](changes-to-storekit-images/image5.png "Öncesinde, sırasında ve sonrasında bir satın alma uygulama şöyle görünür")](changes-to-storekit-images/image5.png#lightbox)
 
 Resim ve metin dosyası indirilir ve uygulamanın belgeler dizinine kopyalanır. Bkz: [dosya sistemi belgeleriyle çalışma](~/ios/app-fundamentals/file-system.md) uygulama depolaması için kullanılabilecek farklı dizinleri hakkında daha fazla bilgi için.
 
@@ -221,19 +221,19 @@ Resim ve metin dosyası indirilir ve uygulamanın belgeler dizinine kopyalanır.
 
 Apple kullanacağı yeni ürünler oluşturma içeriğinin zaman barındırma seçtiğinizden emin **olmayan tüketilebilir** ürün türü. Diğer ürün türleri, içerik barındırma desteklemez. Ayrıca, sizin için içerik barındıran etkinleştirmemelisiniz *varolan* satmak; yalnızca yeni ürünler için içerik barındırma kapatma ürünler.
 
- [ ![](changes-to-storekit-images/image6.png "Olmayan tüketilebilir ürün türü seçin")](changes-to-storekit-images/image6.png)
+ [![](changes-to-storekit-images/image6.png "Olmayan tüketilebilir ürün türü seçin")](changes-to-storekit-images/image6.png#lightbox)
 
 Girin bir **ürün kimliği**. Bu ürün için içerik oluşturduğunuzda, bu daha sonra gerekli olacaktır.
 
- [ ![](changes-to-storekit-images/image7.png "Ürün kimliği girin")](changes-to-storekit-images/image7.png)
+ [![](changes-to-storekit-images/image7.png "Ürün kimliği girin")](changes-to-storekit-images/image7.png#lightbox)
 
 İçerik barındıran durumunu Ayrıntılar bölümünde ayarlanır. (Bazı test içerik karşıya olsa bile) iptal etmek isterseniz, uygulama içi satın çalıştırılmadan önce yalnızca "Apple ile ana içerik" onay kutusunun işaretini kaldırın. Uygulama içi satın alma Canlı geçti sonra ancak içerik barındırma kaldırılamaz.
 
- [ ![](changes-to-storekit-images/image8.png "Apple ile içeriği barındırma")](changes-to-storekit-images/image8.png)
+ [![](changes-to-storekit-images/image8.png "Apple ile içeriği barındırma")](changes-to-storekit-images/image8.png#lightbox)
 
 İçeriği barındırma açtıktan sonra ürün girer **karşıya yükleme için bekleyen** durumu ve bu iletiyi göster:
 
- [ ![](changes-to-storekit-images/image9.png "Ürünü için yükleme durumunu bekleme girin ve bu iletiyi gösterme")](changes-to-storekit-images/image9.png)
+ [![](changes-to-storekit-images/image9.png "Ürünü için yükleme durumunu bekleme girin ve bu iletiyi gösterme")](changes-to-storekit-images/image9.png#lightbox)
 
 İçerik şimdi Xcode ile oluşturulması gerekir ve Arşiv aracı kullanılarak yüklenir. İçerik paketleri oluşturma için yönergeler bir sonraki bölümde verilen **oluşturma. PKG dosyaları**.
 
@@ -262,17 +262,17 @@ Uygulama içi satın alma ürünleri için içerik paketleri şu anda oluşturma
 
 Başlangıç seçerek **Dosya > Yeni proje** menüsünde seçerek **uygulama içi satın alma içerik**:
 
- [ ![](changes-to-storekit-images/image10.png "Uygulama içi satın alma İçerik Seç")](changes-to-storekit-images/image10.png)
+ [![](changes-to-storekit-images/image10.png "Uygulama içi satın alma İçerik Seç")](changes-to-storekit-images/image10.png#lightbox)
 
 Girin **ürün adı** ve **şirket tanımlayıcısını** şekilde **paket tanımlayıcı** eşleşen **ürün kimliği** iTunes girdiğiniz Bu ürün için bağlayın.
 
- [ ![](changes-to-storekit-images/image11.png "Ad ve tanımlayıcı girin")](changes-to-storekit-images/image11.png)
+ [![](changes-to-storekit-images/image11.png "Ad ve tanımlayıcı girin")](changes-to-storekit-images/image11.png#lightbox)
 
 Boş olacaktır artık **uygulama içi satın alma içerik** projesi. Sağ tıklayarak ve **dosyaları Ekle...** veya bunların içine sürükleyin **Proje Gezgini**. Emin **ContentVersion** (1.0 Başlat, ancak bunu artırmak daha sonra içeriği güncelleştirmek seçerseniz unutmayın) doğrudur.
 
 Bu ekran Xcode projesi ve ana penceresinde görünür plist girişler dahil içerik dosyalarla gösterir:
 
- [ ![](changes-to-storekit-images/image12.png "Bu ekran görüntüsü, proje ve ana penceresinde görünür plist girişler dahil içerik dosyalarla Xcode gösterir.")](changes-to-storekit-images/image12.png)
+ [![](changes-to-storekit-images/image12.png "Bu ekran görüntüsü, proje ve ana penceresinde görünür plist girişler dahil içerik dosyalarla Xcode gösterir.")](changes-to-storekit-images/image12.png#lightbox)
 
 Tüm içerik dosyalarının ekledikten sonra bu projeyi kaydedin ve daha sonra yeniden düzenleme veya karşıya yükleme işlemi başlar.
 
@@ -284,15 +284,15 @@ Tüm içerik dosyalarının ekledikten sonra bu projeyi kaydedin ve daha sonra y
 
 İçerik Paketi, ardından aşağıda gösterildiği gibi arşivde görünür. Arşiv türü ve simgesini göster bu bildirim bir **uygulama içi satın alma içerik arşiv**. Tıklatın **doğrula...** karşıya yükleme gerçekten preforming olmadan bizim içerik paketi hataları denetlemek için.
 
- [ ![](changes-to-storekit-images/image14.png "Paketi doğrulama")](changes-to-storekit-images/image14.png)
+ [![](changes-to-storekit-images/image14.png "Paketi doğrulama")](changes-to-storekit-images/image14.png#lightbox)
 
 Oturum açma, iTunes Connect kimlik bilgileri ile:
 
- [ ![](changes-to-storekit-images/image15.png "İTunes Connect kimlik bilgileri ile oturum açma")](changes-to-storekit-images/image15.png)
+ [![](changes-to-storekit-images/image15.png "İTunes Connect kimlik bilgileri ile oturum açma")](changes-to-storekit-images/image15.png#lightbox)
 
 Bu içerik ile ilişkilendirmek için doğru uygulama ve uygulama içi satın alma seçin:
 
- [ ![](changes-to-storekit-images/image16.png "Bu içerik ile ilişkilendirmek için doğru uygulama ve uygulama içi satın alma seçin")](changes-to-storekit-images/image16.png)
+ [![](changes-to-storekit-images/image16.png "Bu içerik ile ilişkilendirmek için doğru uygulama ve uygulama içi satın alma seçin")](changes-to-storekit-images/image16.png#lightbox)
 
 Şuna benzer bir ileti görürsünüz:
 
@@ -300,7 +300,7 @@ Bu içerik ile ilişkilendirmek için doğru uygulama ve uygulama içi satın al
 
 Şimdi benzer bir işlem yapması, ancak tıklatarak **Dağıt...** gerçekte içerik karşıya yükler.
 
- [ ![](changes-to-storekit-images/image18.png "Uygulamayı dağıtma")](changes-to-storekit-images/image18.png)
+ [![](changes-to-storekit-images/image18.png "Uygulamayı dağıtma")](changes-to-storekit-images/image18.png#lightbox)
 
 İçerik yüklemek için ilk seçeneği seçin:
 
@@ -308,23 +308,23 @@ Bu içerik ile ilişkilendirmek için doğru uygulama ve uygulama içi satın al
 
 Yeniden oturum açın:
 
- [ ![](changes-to-storekit-images/image15.png "Oturum açma")](changes-to-storekit-images/image15.png)
+ [![](changes-to-storekit-images/image15.png "Oturum açma")](changes-to-storekit-images/image15.png#lightbox)
 
 Doğru uygulama ve uygulama içi satın alma kaydı içeriği yüklemek için seçin:
 
- [ ![](changes-to-storekit-images/image20.png "Uygulama ve uygulama içi satın alma kayıt seçin")](changes-to-storekit-images/image20.png)
+ [![](changes-to-storekit-images/image20.png "Uygulama ve uygulama içi satın alma kayıt seçin")](changes-to-storekit-images/image20.png#lightbox)
 
 Dosyalarınız karşıya bekleyin:
 
- [ ![](changes-to-storekit-images/image21.png "İçerik Yükle iletişim kutusu")](changes-to-storekit-images/image21.png)
+ [![](changes-to-storekit-images/image21.png "İçerik Yükle iletişim kutusu")](changes-to-storekit-images/image21.png#lightbox)
 
 Karşıya yükleme tamamlandığında, içeriği uygulama mağazasında gönderildi bildirmek için bir ileti görüntülenir.
 
- [ ![](changes-to-storekit-images/image22.png "Bir örnek başarılı karşıya yükleme iletisi")](changes-to-storekit-images/image22.png)
+ [![](changes-to-storekit-images/image22.png "Bir örnek başarılı karşıya yükleme iletisi")](changes-to-storekit-images/image22.png#lightbox)
 
 Yaptıktan sonra döndüğünüzde ürün sayfasına iTunes Paket ayrıntılarını göster ve olması Connect üzerinde **gönderme hazır** durumu. Ürünün bu durumda olduğunda, korumalı alan ortamında test etme başlayabilirsiniz. 'Korumalı alanında test etmek için ürün göndermek ' gerekmez.
 
- [ ![](changes-to-storekit-images/image23.png "iTunes Paket ayrıntılarını göster ve gönderme durumu içinde hazır olması Bağlan")](changes-to-storekit-images/image23.png)
+ [![](changes-to-storekit-images/image23.png "iTunes Paket ayrıntılarını göster ve gönderme durumu içinde hazır olması Bağlan")](changes-to-storekit-images/image23.png#lightbox)
 
 Bunu (ör. biraz zaman alabilir birkaç dakika) arasında Arşiv ve güncelleştirilen Bağlan durum iTunes karşıya yükleme. Ürün gözden geçirme için ayrı ayrı gönderme veya bir uygulamaya birlikte gönderin. Yalnızca Apple içeriği resmi olarak onayladıktan sonra uygulamanızda satın App Store üretimde kullanılabilir olacaktır.
 
@@ -332,7 +332,7 @@ Bunu (ör. biraz zaman alabilir birkaç dakika) arasında Arşiv ve güncelleşt
 
 Xcode ve Arşiv Aracı'nı kullanarak oluşturma ve barındırılan bir içerik paketi yükleme paketinin içeriğini hiçbir zaman göreceğiniz anlamına gelir. Dosyalar ve dizinler için örnek uygulama oluşturulan paketler şuna benzeyebilir, ile `plist` kök ve ürün dosyalarında dosyasında bir `Contents` alt:
 
- [ ![](changes-to-storekit-images/image24.png "Kök ve içeriği alt ürün dosyalarında plist dosyası")](changes-to-storekit-images/image24.png)
+ [![](changes-to-storekit-images/image24.png "Kök ve içeriği alt ürün dosyalarında plist dosyası")](changes-to-storekit-images/image24.png#lightbox)
 
 Paket dizin yapısını unutmayın (özellikle dosyalarının konumu `Contents` alt) aygıttaki paket dosyalarını ayıklamak için bu bilgileri anlamak gerekir çünkü.
 
@@ -352,7 +352,7 @@ Bu bölümü okumadan önce mevcut gözden [uygulama içi satın alma belgeleri]
 
 Bir ürün barındırılan içerikle oluşur olayların sırası satın ve indirme bu şemada gösterilmiştir:
 
- [ ![](changes-to-storekit-images/image25.png "Bir ürün barındırılan içerikle oluşur olayların sırası satın alınır ve indirme")](changes-to-storekit-images/image25.png)
+ [![](changes-to-storekit-images/image25.png "Bir ürün barındırılan içerikle oluşur olayların sırası satın alınır ve indirme")](changes-to-storekit-images/image25.png#lightbox)
 
 1.  Yeni ürünler iTunes Connect barındırılan etkin içerik ile oluşturulabilir. Gerçek içeriği (olarak yalnızca olarak sürükleme dosyaları bir klasöre) Xcode'da ayrı olarak oluşturulur ve ardından arşivlenen ve (hiçbir kodlama gereklidir) iTunes karşıya. Her ürünün daha sonra satın almak için uygun hale onaya sonra gönderilir. Örnek kodda bu ürün kimlikleri sabit kodlanmış olan ancak içeriği Apple ile barındırma böylece yeni ürünler ve iTunes Bağlan içeriği gönderdiğinizde güncelleştirilmesi uzak bir sunucuda kullanılabilir ürün listesi depolarsanız daha esnektir. 
 1.  Kullanıcı bir ürün satın aldığında, bir işlem işleme için ödeme sırasındaki yerleştirilir. 
@@ -392,7 +392,7 @@ Yeni ayrıntılarını `SKDownload` sınıfı:
 
 Bu diyagramda (barındırılan içerik Harcamaları belirli kod yeşil renkte gösterilir) örnek kodda sınıfları arasındaki etkileşimler gösterilmektedir:
 
- [ ![](changes-to-storekit-images/image26.png "Barındırılan içerik satın alma işlemleri Bu diyagramda yeşil olarak gösterilir")](changes-to-storekit-images/image26.png)
+ [![](changes-to-storekit-images/image26.png "Barındırılan içerik satın alma işlemleri Bu diyagramda yeşil olarak gösterilir")](changes-to-storekit-images/image26.png#lightbox)
 
 Burada bu sınıfların kullanılan örnek kod, bu bölümde geri kalanı gösterilir:
 
@@ -539,7 +539,7 @@ Bu makalede iOS6 deposu Seti'nin iki yeni özellikler anlatılmıştır: iTunes 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [StoreKit (örnek)](https://developer.xamarin.com/samples/StoreKit/)
-- [Uygulama içi satın alma](~/ios/platform/in-app-purchasing/index.md)
+- [Uygulama İçi Satın Alma](~/ios/platform/in-app-purchasing/index.md)
 - [StoreKit Framework başvurusu](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController sınıf başvurusu](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
 - [iTunes arama API Başvurusu](http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)

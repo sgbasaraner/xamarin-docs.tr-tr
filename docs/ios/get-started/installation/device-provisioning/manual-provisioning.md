@@ -3,16 +3,16 @@ title: "El ile sağlama"
 description: "Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlamaya yöneliktir. Bu kılavuz, geliştirme sertifikalar istemek ve profilleri, uygulama hizmetleri ile çalışma ve cihaza bir uygulama dağıtmak inceleyeceksiniz."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
+ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/15/2017
-ms.openlocfilehash: 46d2f9f9f1a22ef13e994c91255f0fb29c52ca5d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ad3bd55ae0abc44b0c9757bd79c2711eddf171d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="manual-provisioning"></a>El ile sağlama
 
@@ -38,37 +38,37 @@ Geliştirme ekiplerinin, sertifikalar ve profilleri erişerek yönetilebilir [ta
 
 1. Oturum açma [Geliştirici Portalı'nın sertifikaları, tanımlayıcılar ve profilleri bölümüne](https://developer.apple.com/account/overview.action) seçip **sertifikaları** konusundaki **iOS uygulamaları** sütun. Ardından, isabet  **+**  yeni bir sertifika oluşturmak için:
 
-    [ ![](manual-provisioning-images/cert-plus.png "Tıklatın + yeni bir sertifika oluşturmak için")](manual-provisioning-images/cert-plus.png)
+    [![](manual-provisioning-images/cert-plus.png "Tıklatın + yeni bir sertifika oluşturmak için")](manual-provisioning-images/cert-plus.png#lightbox)
 
 2. Seçin **iOS uygulaması geliştirme** seçenek için sertifika türü ve'ı tıklatın **devam**. Bu ekran, hesap ayrıcalığı bağlı olarak farklı görünebilir:
 
-    [ ![](manual-provisioning-images/cert-first.png "İOS sertifika türü için uygulama geliştirme seçeneği seçin")](manual-provisioning-images/cert-first.png)
+    [![](manual-provisioning-images/cert-first.png "İOS sertifika türü için uygulama geliştirme seçeneği seçin")](manual-provisioning-images/cert-first.png#lightbox)
 
 3. Bir sertifika imzalama olan bir sertifikayı el ile oluşturmak için karşıya isteği, istek. Bunu yapmak için Başlat **Anahtarlık erişimi** bir Mac bilgisayar üzerinde Ana menüye gidin ve **sertifika Yardımcısı** ve **bir sertifika yetkilisinden sertifika iste...** aşağıda gösterildiği gibi:
 
-      [ ![](manual-provisioning-images/key-first.png "Bir sertifika imzalama isteği")](manual-provisioning-images/key-first.png)
+      [![](manual-provisioning-images/key-first.png "Bir sertifika imzalama isteği")](manual-provisioning-images/key-first.png#lightbox)
 
 4. Bilgilerinizi doldurun ve seçeneğini **diske Kaydet**:
 
-    [ ![](manual-provisioning-images/key-second.png "Bilgilerinizi doldurun")](manual-provisioning-images/key-second.png)
+    [![](manual-provisioning-images/key-second.png "Bilgilerinizi doldurun")](manual-provisioning-images/key-second.png#lightbox)
 
 5. CSR bunu kolayca bulunabileceği bir konuma kaydedin:
 
-    [ ![](manual-provisioning-images/cert-third.png "CSR Kaydet")](manual-provisioning-images/cert-third.png)
+    [![](manual-provisioning-images/cert-third.png "CSR Kaydet")](manual-provisioning-images/cert-third.png#lightbox)
 
 6. Sağlama portalına geri dönün, sertifika portala yükleyin ve gönder:
 
-    [ ![](manual-provisioning-images/cert-second.png "Sertifika portala yükleyin")](manual-provisioning-images/cert-second.png)
+    [![](manual-provisioning-images/cert-second.png "Sertifika portala yükleyin")](manual-provisioning-images/cert-second.png#lightbox)
 
     Yönetici ayrıcalıklarına sahip değil, Sertifika Yöneticisi veya ekibi aracısı tarafından onaylanması gerekir.
 
 7. Sertifika onaylandıktan sonra sağlama Portalı'ndan yükleyin:
 
-    [ ![](manual-provisioning-images/status-dev.png "Sertifikayı sağlama Portalı'ndan indirin")](manual-provisioning-images/status-dev.png)
+    [![](manual-provisioning-images/status-dev.png "Sertifikayı sağlama Portalı'ndan indirin")](manual-provisioning-images/status-dev.png#lightbox)
 
 8. Anahtarlık erişimi başlatın ve açmak için indirilen sertifikayı çift **My sertifikaları** paneli, yeni sertifikaları ve ilişkili özel anahtarı gösterirken:
 
-    [ ![](manual-provisioning-images/keychain.png "Anahtarlık erişimi sertifikada")](manual-provisioning-images/keychain.png)
+    [![](manual-provisioning-images/keychain.png "Anahtarlık erişimi sertifikada")](manual-provisioning-images/keychain.png#lightbox)
 
 <a name="keypairs" />
 
@@ -103,34 +103,34 @@ Geliştirme için bir sağlama profili oluştururken, biz hangi cihazların uygu
 2. Sağlanan, USB kablosu ile Mac sağlanacak aygıtı bağlayın.
 2. Gelen **Windows** menüsünü seçin **aygıtları**:
 
-  [ ![](manual-provisioning-images/add01.png "Cihazları Windows menüsünden seçin")](manual-provisioning-images/add01.png)
+  [![](manual-provisioning-images/add01.png "Cihazları Windows menüsünden seçin")](manual-provisioning-images/add01.png#lightbox)
 
 3. İstenen iOS CİHAZDAN Seç **AYGITLARI** aygıtları penceresinin sol tarafındaki listesi.
 4. Vurgula **tanımlayıcısı** dize ve Pano'ya kopyalayın:
 
-  [ ![](manual-provisioning-images/add02.png "Kimlik dizesi vurgulayın")](manual-provisioning-images/add02.png)
+  [![](manual-provisioning-images/add02.png "Kimlik dizesi vurgulayın")](manual-provisioning-images/add02.png#lightbox)
 
 5. Safari ile gidin [Apple Geliştirici Merkezi](https://developer.apple.com/membercenter/index.action) ve oturum açın.
 6. Tıklatın **tanımlayıcıları & profilleri, sertifikaları** bağlantı:
 
-  [ ![](manual-provisioning-images/add03.png "Sertifikalar'ı tıklatın, tanımlayıcılar profilleri bağlayın")](manual-provisioning-images/add03.png)
+  [![](manual-provisioning-images/add03.png "Sertifikalar'ı tıklatın, tanımlayıcılar profilleri bağlayın")](manual-provisioning-images/add03.png#lightbox)
 
 7. Tıklayın **aygıtları** bağlantı:
 
-  [ ![](manual-provisioning-images/add04.png "Aygıtları bağlantıya tıklayın")](manual-provisioning-images/add04.png)
+  [![](manual-provisioning-images/add04.png "Aygıtları bağlantıya tıklayın")](manual-provisioning-images/add04.png#lightbox)
 
 8. Tıklatın  **+**  düğmesi:
 
-  [ ![](manual-provisioning-images/add05.png "Tıklatın + düğmesi")](manual-provisioning-images/add05.png)
+  [![](manual-provisioning-images/add05.png "Tıklatın + düğmesi")](manual-provisioning-images/add05.png#lightbox)
 
 9. Yeni cihaz için bir ad ve cihaz yapıştırma **tanımlayıcısı** biz içine kopyaladığınız yukarıda **UUID** alan:
 
-  [ ![](manual-provisioning-images/add06.png "Yeni cihaz ve cihaz tanımlayıcısı için bir ad sağlayın")](manual-provisioning-images/add06.png)
+  [![](manual-provisioning-images/add06.png "Yeni cihaz ve cihaz tanımlayıcısı için bir ad sağlayın")](manual-provisioning-images/add06.png#lightbox)
 
 10. Tıklatın **devam** düğmesi.
 11. Son olarak, bilgileri gözden geçirin ve tıklatın **kaydetmek** düğmesi:
 
-  [ ![](manual-provisioning-images/add07.png "Bilgileri gözden geçirin")](manual-provisioning-images/add07.png)
+  [![](manual-provisioning-images/add07.png "Bilgileri gözden geçirin")](manual-provisioning-images/add07.png#lightbox)
 
 Bir Xamarin.iOS uygulaması hata ayıklama veya test için kullanılan iOS cihazlar için yukarıdaki adımları yineleyin.
 
@@ -150,10 +150,10 @@ Bir sağlama profili oluşturmadan önce bir *uygulama kimliği* yapılması ger
 1. İçinde [Geliştirici Portalı](https://developer.apple.com/account/overview.action) göz *sertifika, tanımlayıcılarını ve profiller* Apple Developer Center'da bölümünde. Seçin **uygulama kimlikleri** altında **tanımlayıcıları**.
 2. Tıklatın  **+**  düğmesine tıklayın ve sağlayan bir **adı**:
 
-    [ ![](manual-provisioning-images/appid05a.png "Bir ad sağlayın")](manual-provisioning-images/appid05a.png)
+    [![](manual-provisioning-images/appid05a.png "Bir ad sağlayın")](manual-provisioning-images/appid05a.png#lightbox)
 3. Uygulama önek önceden yüklenmiş. Seçin **joker uygulama kimliği** uygulama sonek için. Bir paket kimliği şu biçimde girin `com.[DomainName].*`:
 
-  [ ![](manual-provisioning-images/appid05b.png "Bir paket kimliği girin")](manual-provisioning-images/appid05b.png)
+  [![](manual-provisioning-images/appid05b.png "Bir paket kimliği girin")](manual-provisioning-images/appid05b.png#lightbox)
 
 3. Tıklatın **devam** düğmesi ve yeni bir uygulama kimliği oluşturmak için açık ekran yönergeleri izleyerek
 
@@ -167,25 +167,25 @@ El ile geliştirme için bir sağlama profili oluşturmak için şunu yapın:
 2. Tıklatın  **+**  düğmesi, yeni bir profil oluşturmak için sağ üst köşedeki.
 3. Gelen **geliştirme** bölümünde, radyo düğmesini işaretleyin **iOS uygulaması geliştirme**ve basın **devam**:
 
-    [ ![](manual-provisioning-images/provisioning-profile01.png "Oluşturmak için profili türünü seçin")](manual-provisioning-images/provisioning-profile01.png)
+    [![](manual-provisioning-images/provisioning-profile01.png "Oluşturmak için profili türünü seçin")](manual-provisioning-images/provisioning-profile01.png#lightbox)
 4. Açılan menüden seçin uygulamayı kullanmak için kimlik:
 
-    [ ![](manual-provisioning-images/provisioning-profile02.png "Uygulamayı seçin, kullanılacak kimliği")](manual-provisioning-images/provisioning-profile02.png)
+    [![](manual-provisioning-images/provisioning-profile02.png "Uygulamayı seçin, kullanılacak kimliği")](manual-provisioning-images/provisioning-profile02.png#lightbox)
 5. Sağlama profili ve tuşuna dahil sertifikaları seçin **devam**:
 
-    [ ![](manual-provisioning-images/provisioning-profile03.png "Sağlama profilinde dahil etmek için sertifikaları seçin")](manual-provisioning-images/provisioning-profile03.png)
+    [![](manual-provisioning-images/provisioning-profile03.png "Sağlama profilinde dahil etmek için sertifikaları seçin")](manual-provisioning-images/provisioning-profile03.png#lightbox)
 6. Uygulama yüklenmiş tüm aygıtları seçin.
 
-    [ ![](manual-provisioning-images/provisioning-profile04.png "Uygulama yüklenmiş tüm cihazları seçin")](manual-provisioning-images/provisioning-profile04.png)
+    [![](manual-provisioning-images/provisioning-profile04.png "Uygulama yüklenmiş tüm cihazları seçin")](manual-provisioning-images/provisioning-profile04.png#lightbox)
 7. Sağlama profili bir tanımlanabilen bir ad ve tuşuna sağlayın **devam** profili oluşturmak için:
 
-    [ ![](manual-provisioning-images/provisioning-profile05.png "Sağlama profili bir tanımlanabilen bir ad sağlayın")](manual-provisioning-images/provisioning-profile05.png)
+    [![](manual-provisioning-images/provisioning-profile05.png "Sağlama profili bir tanımlanabilen bir ad sağlayın")](manual-provisioning-images/provisioning-profile05.png#lightbox)
 8. Tuşuna **karşıdan** Mac üzerine sağlama profili indirmek için:
 
-    [ ![](manual-provisioning-images/provisioning-profile06.png "Sağlama profili indirin")](manual-provisioning-images/provisioning-profile06.png)
+    [![](manual-provisioning-images/provisioning-profile06.png "Sağlama profili indirin")](manual-provisioning-images/provisioning-profile06.png#lightbox)
 9. Xcode'da sağlama profili yüklemek için dosyaya çift tıklayın. Xcode açma dışında profil yüklü tüm visual clues gösterilmeyebilir unutmayın. Bu göz atarak doğrulanabilir **Xcode > Tercihler > hesapları**. Apple Kimliğinizi tıklatıp **ayrıntıları görüntüle...** . Aşağıda gösterildiği gibi yeni sağlama profili listelenmelidir:
 
-      [ ![](manual-provisioning-images/provisioning-profile07.png "Xcode'da profil görüntüleme")](manual-provisioning-images/provisioning-profile07.png)
+      [![](manual-provisioning-images/provisioning-profile07.png "Xcode'da profil görüntüleme")](manual-provisioning-images/provisioning-profile07.png#lightbox)
 
 Sağlama profili başarıyla oluşturulduktan sonra tüm geliştirme sertifikaları Mac ve Visual Studio için Visual Studio için kullanılabilir olacak şekilde, Xcode yenilemek gerekli olabilir.
 
@@ -199,7 +199,7 @@ Sertifikalar ve Apple Geliştirici Portalı'nda oluşturulan sağlama profilleri
 2.   Xcode başlatın.
 3.   Seçin **Xcode menü > tercihleri...**
 4.   Tıklatın **hesapları** sekmesi.
-5.   Bir takım seçin ve'ı tıklatın **karşıdan el ile profiller** düğmesi: [ ![ ] (manual-provisioning-images/selectteam1.png "el ile yükleme profilleri")](manual-provisioning-images/selectteam1.png)
+5.   Bir takım seçin ve'ı tıklatın **karşıdan el ile profiller** düğmesi: [ ![ ] (manual-provisioning-images/selectteam1.png "el ile yükleme profilleri")](manual-provisioning-images/selectteam1.png#lightbox)
 
 6.   Xcode çıkın.
 7.  Mac veya Visual Studio için Visual Studio'yu başlatın.
@@ -276,7 +276,7 @@ Bu kılavuz için Xamarin.iOS geliştirme ortamı kurulum için gerekli adımlar
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Ücretsiz sağlama](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
-- [Uygulama dağıtımı](~/ios/deploy-test/app-distribution/index.md)
+- [Ücretsiz Sağlama](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+- [Uygulama Dağıtımı](~/ios/deploy-test/app-distribution/index.md)
 - [Sorun giderme](~/ios/deploy-test/troubleshooting.md)
 - [Apple - uygulama dağıtım kılavuzu](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

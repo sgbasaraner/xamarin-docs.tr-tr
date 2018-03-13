@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 83ba2df0c50d37476ae5c06b4234cdc0ad063332
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 174d1cf974c39420b932d494d5b28c62d7fd1eb1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting"></a>Sorun giderme
 
@@ -22,7 +22,7 @@ Kod imzalama & iOS hazırlama oldukça garip olabilir ve bu nedenle kod imzalama
 
 * Büyük ekiplere burada gösterilen Xcode'da "sorunu düzeltin" düğmesini kullanarak ayarladıysa:
 
-    [![](troubleshooting-images/fixissue.png "Sorunları gidermek iletişim kutusu")](troubleshooting-images/fixissue.png)
+    [![](troubleshooting-images/fixissue.png "Sorunları gidermek iletişim kutusu")](troubleshooting-images/fixissue.png#lightbox)
 
     Bu, yeni sağlama profilleri ve sertifikaları oluşturur. En iyi bir ekip üyesine, Profiller disorganization neden tıklar her zaman bu bir sağlama profili oluşturur. En bu sertifikaları uygulamalarını çalışmayı durdurmasına neden şirketteki başka herkes için İptal.
 

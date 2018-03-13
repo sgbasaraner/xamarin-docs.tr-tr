@@ -3,23 +3,23 @@ title: "tvOS dahili bileşenleri"
 description: "Biz iOS Ürünümüz ürettiğini Gelişmiş belgeleri tvOS Ürünümüz neredeyse aynı şekilde Xamarin.tvOS Xamarin.iOS Ürünümüz olarak aynı DNA paylaşır."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: B245062F-1DD9-4BE5-8E11-728BA3C8AD4C
+ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 6adba454ac153186c05715f4baa3261212e7b18b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fee2843840f7f6dac461cd4e3426fb8b296b30bf
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="tvos-internals"></a>tvOS dahili bileşenleri
 
 _Biz iOS Ürünümüz ürettiğini Gelişmiş belgeleri tvOS Ürünümüz neredeyse aynı şekilde Xamarin.tvOS Xamarin.iOS Ürünümüz olarak aynı DNA paylaşır._
 
 
-##  <a name="assembliesiostvosinternalsassembliesmd"></a>[Derlemeler](~/ios/tvos/internals/assemblies.md)
+##  <a name="assembliesiostvosinternalsassembliesmd"></a>[Bütünleştirilmiş kodlar](~/ios/tvos/internals/assemblies.md)
 
 Xamarin.tvOS uygulamalarınız için Xamarin tarafından desteklenen derleme listesi.
 
@@ -31,11 +31,11 @@ Bu makalede, hedef Xamarin.tvOS ve Xamarin.tvOS uygulamanız için belirli bir h
 
 (TvOS 9 iOS 9 kümesini olduğundan) aşağıdaki makalelerde iOS özel ancak tvOS ilgilidir.
 
-###  <a name="unified-apicross-platformmaciosunifiedindexmd"></a>[Birleşik API](~/cross-platform/macios/unified/index.md)
+###  <a name="unified-apicross-platformmaciosunifiedindexmd"></a>[Unified API](~/cross-platform/macios/unified/index.md)
 
 Yeni birleşik API'leri 64-bit ve 64-bit derleme desteği Tanıtımı yanı sıra Apple TV ile iOS arasında paylaşımı daha basit kod olarak kullanılabilecek kod temeli için izin API'leri tanıtır.  
 
-###  <a name="api-designiosinternalsapi-designindexmd"></a>[API Design](~/ios/internals/api-design/index.md)
+###  <a name="api-designiosinternalsapi-designindexmd"></a>[API Tasarımı](~/ios/internals/api-design/index.md)
 
 Tasarım ilkeleri API bağlama arkasında açıklanmaktadır.
 
@@ -43,7 +43,7 @@ Tasarım ilkeleri API bağlama arkasında açıklanmaktadır.
 
 Bu bölümde Tuzaklar ve birçok Xamarin.tvOS için geçerli olan bakımından Xamarin.iOS, ile dikkat edilmesi gereken sınırlamalar gösterilmektedir.
 
-###  <a name="linkeriosdeploy-testlinkermd"></a>[Linker](~/ios/deploy-test/linker.md)
+###  <a name="linkeriosdeploy-testlinkermd"></a>[Bağlayıcı](~/ios/deploy-test/linker.md)
 
 Bağlayıcı, ayarları ve kullanım değiştirmek için nasıl erişileceği en küçük olası uygulama paketi sağlamak için nasıl çalıştığını açıklar.
 
@@ -71,7 +71,7 @@ Bilgi ve yönergeler System.Data yerleşik SQLite veritabanı sistem erişmek i�
 
 Xamarin.iOS uygulamaları iş parçacığı kullanma notları.
 
-###  <a name="xib-code-generationiosinternalsxib-code-generationmd"></a>[XIB kod oluşturma](~/ios/internals/xib-code-generation.md)
+###  <a name="xib-code-generationiosinternalsxib-code-generationmd"></a>[XIB Kodu Oluşturma](~/ios/internals/xib-code-generation.md)
 
 Nasıl Mac için Visual Studio tasarım UI arabirimini Oluşturucusu'nu kullanmak için izin vermek için Xcode'nın arabirimi Oluşturucu ile tümleştirir.
 
@@ -79,7 +79,7 @@ Nasıl Mac için Visual Studio tasarım UI arabirimini Oluşturucusu'nu kullanma
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

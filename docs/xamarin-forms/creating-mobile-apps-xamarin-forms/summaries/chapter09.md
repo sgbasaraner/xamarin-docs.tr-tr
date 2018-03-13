@@ -3,14 +3,15 @@ title: "Bölüm 9 özeti. Platforma özgü API çağrıları"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 637096d3ebb7fb90321f7f459e0ca9e51572d935
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 84650c930445172d27520129123d493253851642
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>Bölüm 9 özeti. Platforma özgü API çağrıları
 
@@ -20,7 +21,7 @@ Bazen, platforma göre değişir bazı kodlar çalıştırmak gereklidir. Bu bö
 
 Xamarin.Forms paylaşılan varlık proje C# önişlemci yönergeleri kullanarak her platform için farklı bir kod yürütebilir `#if`, `#elif`, ve `endif`. Bu, gösterilmiştir [ **PlatInfoSap1**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap1):
 
-[![Üçlü ekran değişkenin biçimlendirilmiş paragraf](images/ch09fg01-small.png "cihaz modeli ve işletim sistemi")](images/ch09fg01-large.png "cihaz modeli ve işletim sistemi")
+[![Üçlü ekran değişkenin biçimlendirilmiş paragraf](images/ch09fg01-small.png "cihaz modeli ve işletim sistemi")](images/ch09fg01-large.png#lightbox "cihaz modeli ve işletim sistemi")
 
 Ancak, sonuç kodu çirkin ve okunması zor olabilir.
 

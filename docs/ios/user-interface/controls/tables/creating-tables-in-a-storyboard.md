@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c59ddde44b0e47122865c55a7964707f106d2691
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>İOS Tasarımcısı sekmelerle çalışma
 
@@ -40,7 +40,7 @@ A `UITableView` prototip ile içerik genellikle veri listesini görüntülemek i
 
 StoryboardTable örnek UITableView her iki türdeki bir film şeridi kullanan basit bir ana-ayrıntı uygulama içerir. Bu bölüm geri kalanı tamamlandığında şuna benzeyecektir küçük Yapılacaklar listesi örnek derlemeyi açıklar:
 
- [ ![Örnek ekranlar](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png)
+ [![Örnek ekranlar](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png#lightbox)
 
 Kullanıcı arabirimi ile film şeridi oluşturulacak ve her iki ekranlar bir UITableView kullanır. Ana Ekran kullanıp *prototip içerik* düzeni satır ve ayrıntı ekran kullanıp *statik içerik* özel hücre düzenleri kullanarak veri girişi formu oluşturmak için.
 
@@ -48,7 +48,7 @@ Kullanıcı arabirimi ile film şeridi oluşturulacak ve her iki ekranlar bir UI
 
 Visual Studio kullanarak yeni bir çözüm oluşturun **(Oluştur) yeni proje... > tek görünüm App(C#)**ve bunu _StoryboardTables_.
 
- [ ![Yeni Proje iletişim kutusu oluşturma](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png)
+ [![Yeni Proje iletişim kutusu oluşturma](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
 Çözüm bazı C# dosyalarıyla açar ve bir `Main.storyboard` dosyası zaten oluşturulmuş. Çift `Main.storyboard` dosyayı iOS Tasarımcısı açın.
 
@@ -75,24 +75,24 @@ Film şeridi ilk değişiklik varolan ayrıntı görünümü siliniyor ve UITabl
 2.  Sürükleme bir **Gezinti denetleyicisi** ve **Tablo görünümü denetleyicisi** film şeridi araç görünümünden üzerine. 
 3.  Bir segue kök görünümü denetleyicisinden ikinci tablo görünümü yalnızca eklenen denetleyiciye oluşturun. Denetim segue Oluştur + sürükleme için *ayrıntı hücreden* yeni eklenen UITableViewController için. Seçeneği **Göster*** altında **ü seçimi**. 
 4.  Yeni oluşturduğunuz ü ve bu kodda ü başvurusu tanımlayıcısını belirtin seçin. Üzerinde segue tıklatıp girin `TaskSegue` için **tanımlayıcısı** içinde **özellikleri paneli**, şöyle:    
-  [ ![Özellik panelinde ü adlandırma](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png) 
+  [![Özellik panelinde ü adlandırma](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. Ardından, bunları seçerek ve özellikleri panelini kullanarak iki tablo görünümü yapılandırın. Görünüm ve View Controller seçtiğinizden emin olun – seçimle yardımcı olmak için Belge Anahattı kullanabilirsiniz.
 
 6.  Kök görünüm Denetleyicisi'ne değiştirme **içerik: dinamik prototipleri** (tasarım yüzeyine görünümde etiketli **prototip içerik** ):
 
-    [ ![İçerik özelliği için dinamik prototipleri ayarlama](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png)
+    [![İçerik özelliği için dinamik prototipleri ayarlama](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
 7.  Yeni değişiklik **UITableViewController** olmasını **içerik: statik hücreleri**. 
 
 
 8. Yeni UITableViewController kümesi tanımlayıcısı ve sınıf adı olması gerekir. View Controller ve türünü seçin _TaskDetailViewController_ için **sınıfı** içinde **özellikleri paneli** – bu yeni bir oluşturacak `TaskDetailViewController.cs` çözüm dosyasında Panel. Girin **StoryboardID** olarak _ayrıntı_aşağıdaki örnekte gösterildiği gibi. Bu daha sonra bu görünümde C# kodu yüklemek için kullanılır:  
 
-    [ ![Film şeridi kimliği ayarlama](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png)
+    [![Film şeridi kimliği ayarlama](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
 9. Film şeridi tasarım yüzeyi şimdi aşağıdaki gibi görünmelidir (kök görünümü denetleyicinin Gezinti öğesi başlığı "İşi panosuna" değiştirildi):
 
-    [ ![Tasarım yüzeyi](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png)  
+    [![Tasarım yüzeyi](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
 
 
 
@@ -106,11 +106,11 @@ Film şeridi ilk değişiklik varolan ayrıntı görünümü siliniyor ve UITabl
 
 İlk olarak, ana görünüm denetleyicisini prototip hücreyi seçin ve ayarlama **tanımlayıcısı** olarak _taskcell_aşağıda gösterildiği gibi. Bu kodu daha sonra bu UITableViewCell örneğini almak için kullanılacak:
 
- [ ![Hücre tanıtıcısını ayarlama](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png)
+ [![Hücre tanıtıcısını ayarlama](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 
 Ardından, aşağıda gösterildiği gibi yeni görevler ekleyecek bir düğme oluşturmanız gerekir:
 
-[ ![Düğme öğesi Gezinti çubuğundaki çubuğu](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png)
+[![Düğme öğesi Gezinti çubuğundaki çubuğu](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
 Aşağıdakileri yapın: 
 
@@ -123,7 +123,7 @@ Aşağıdakileri yapın:
 
 Ayrıntı görünümü çok daha fazla iş gerektirir. Tablo görünümü hücreleri görünümü sürüklediğiniz ve etiketleri, metin görünümleri ve düğmeleriyle doldurulmuş gerekir. Aşağıdaki ekran görüntüsünde iki bölümlü tamamlanmış UI gösterir. Bir bölümü sahip üç hücreler, üç etiket, ikinci bölümü iki düğmelerle bir hücre sahipken iki metin alanları ve tek, geçin:
 
- [ ![Ayrıntı görünüm düzeni](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png)
+ [![Ayrıntı görünüm düzeni](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
 
 Tam yerleşimi oluşturmak için adımlar şunlardır:
 
@@ -137,7 +137,7 @@ Tablo görünümü seçin ve açın **özelliği paneli**. Aşağıdaki özellik
 Üst kısmında seçin ve altında **Özellikler > Tablo görünüm bölümü** değiştirme **satırları** için _3_aşağıda gösterildiği gibi:
 
 
- [ ![üç satır için üst kısmında ayarlama](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png)
+ [![üç satır için üst kısmında ayarlama](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 Açık her hücre için **özellikleri paneli** ve ayarlayın:
 
@@ -152,7 +152,7 @@ Açık her hücre için **özellikleri paneli** ve ayarlayın:
 -  **Arka plan Ayarla**: _temizleyin renk_ .
 -  İki düğme hücresine sürükleyin ve bunların başlıklarını uygun şekilde ayarlayın (yani _kaydetmek_ ve _silmek_) aşağıda gösterildiği gibi:
 
-   [ ![iki düğme alt kısmında ayarlama](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png)
+   [![iki düğme alt kısmında ayarlama](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
 Bu noktada aynı zamanda hücre ve Uyarlamalı düzeni emin olmak için denetim kısıtlamaları ayarlamak isteyebilirsiniz.
 
@@ -342,7 +342,7 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 Film şeridi örnek – şöyle tamamlanan uygulama görünür tamamlanan:
 
-[ ![Tamamlanan uygulama](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png)
+[![Tamamlanan uygulama](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
 
 Örnek gösterilmektedir:
 
@@ -356,4 +356,4 @@ Film şeridi örnek – şöyle tamamlanan uygulama görünür tamamlanan:
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [StoryboardTable (örnek)](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
-- [Film şeritleri giriş](~/ios/user-interface/storyboards/index.md)
+- [Görsel Taslaklara Giriş](~/ios/user-interface/storyboards/index.md)

@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 54b6809b7e27dc87be6d510e4a4b6071e4ae22e7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f976d798ae1b1279fc8f82d3cf1d738bb2c93911
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="popup-menu"></a>Açılır menüsü
 
 `PopupMenu` Sınıfı, belirli bir görünüme bağlı açılır menüler görüntüleme desteği ekler. Aşağıdaki çizimde bir düğmesinden yalnızca seçili vurgulu ikinci öğe ile sunulan bir açılır menü gösterir:
 
- [ ![Üç adet PopopMenu örneği üç öğeleri](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png)
+ [![Üç adet PopopMenu örneği üç öğeleri](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png#lightbox)
 
 Android 4 eklenen yeni özellikler için birkaç `PopupMenu` kolaylaştırmak biraz, yani çalışmak:
 
@@ -26,9 +26,8 @@ Android 4 eklenen yeni özellikler için birkaç `PopupMenu` kolaylaştırmak bi
 
 Bu geliştirmeler bir göz atalım. Bu örnekte, bir düğmeyi içeren tek bir etkinlik vardır. Kullanıcı düğmesine tıkladığında, aşağıda gösterildiği gibi açılır menüsü görüntülenir:
 
- [ ![Bir öykünücü düğmesi ve 3-item açılır menü ile çalışan uygulama örneği](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png)
+ [![Bir öykünücü düğmesi ve 3-item açılır menü ile çalışan uygulama örneği](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png#lightbox)
 
-<a name="Creating_a_Popup_Menu" />
 
 ## <a name="creating-a-popup-menu"></a>Açılan menü oluşturma
 
@@ -62,7 +61,6 @@ showPopupMenu.Click += (s, arg) => {
 
 Yukarıdaki kod menü inflating sonra yalnızca diyoruz `menu.Show` ekranda görüntülemek için.
 
-<a name="Handling_Menu_Events" />
 
 ## <a name="handling-menu-events"></a>Menü olaylarını işleme
 

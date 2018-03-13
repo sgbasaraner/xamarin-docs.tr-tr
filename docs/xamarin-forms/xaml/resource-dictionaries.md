@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/17/2017
-ms.openlocfilehash: 0c2765551c16be605bc78d9ef32a91fd2c4ead8c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9602e4d99e8f5c004fe75ab724bb3746aca46003
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resource-dictionaries"></a>Kaynak sözlükleri
 
@@ -83,10 +83,10 @@ Her kaynak kullanılarak belirtilen bir anahtara sahip `x:Key` açıklayıcı bi
 
 İlk [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) örneği alır ve tüketir `LabelPageHeadingStyle` uygulama düzeyinde tanımlanan kaynak [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), ikinci ile `Label` örneği Alma ve tüketen `LabelNormalStyle` kaynağı denetim düzeyi tanımlı `ResourceDictionary`. Benzer şekilde, [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) örneği alır ve tüketir `NormalTextColor` uygulama düzeyinde tanımlanan kaynak `ResourceDictionary`ve `MediumBoldText` kaynağı denetim düzeyi tanımlı `ResourceDictionary`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
 
-[![](resource-dictionaries-images/screenshots-sml.png "ResourceDictionary kaynakları tüketen")](resource-dictionaries-images/screenshots.png "ResourceDictionary kaynakları kullanma")
+[![](resource-dictionaries-images/screenshots-sml.png "ResourceDictionary kaynakları tüketen")](resource-dictionaries-images/screenshots.png#lightbox "ResourceDictionary kaynakları kullanma")
 
 > [!NOTE]
-> **Not**: tek bir sayfaya belirli kaynaklar bir uygulama düzeyi kaynak sözlüğünde dahil döndürmemelidir, bu nedenle kaynaklar sonra yerine uygulama başlangıcında bir sayfa tarafından istendiğinde ayrıştırılır. Daha fazla bilgi için bkz: [uygulama kaynak sözlük boyutunu küçültmek](~/xamarin-forms/deploy-test/performance.md).
+> Tek bir sayfaya belirli kaynaklar kaynakları sonra yerine uygulama başlangıcında bir sayfa tarafından istendiğinde ayrıştırılır bir uygulama düzeyi kaynak sözlük, bu nedenle dahil döndürmemelidir. Daha fazla bilgi için bkz: [uygulama kaynak sözlük boyutunu küçültmek](~/xamarin-forms/deploy-test/performance.md).
 
 ## <a name="overriding-resources"></a>Kaynakları geçersiz kılma
 
@@ -118,7 +118,7 @@ Zaman [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Fo
 
 Özgün `PageBackgroundColor` ve `NormalTextColor` örnekleri, uygulama düzeyinde tanımlanan tarafından geçersiz kılınır `PageBackgroundColor` ve `NormalTextColor` sayfa düzeyinde tanımlanan örnekleri. Bu nedenle, sayfa arka plan rengi mavi olur ve aşağıdaki ekran görüntülerinde gösterildiği gibi metin sayfasında sarı olur:
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "ResourceDictionary kaynakları geçersiz kılma")](resource-dictionaries-images/overridding-screenshots.png "ResourceDictionary kaynakları geçersiz kılma")
+[![](resource-dictionaries-images/overridding-screenshots-sml.png "ResourceDictionary kaynakları geçersiz kılma")](resource-dictionaries-images/overridding-screenshots.png#lightbox "ResourceDictionary kaynakları geçersiz kılma")
 
 Ancak, dikkat edin arka plan çubuğunu [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) hala sarı çünkü [ `BarBackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.BarBackgroundColor/) özelliği değerine ayarlanmış `PageBackgroundColor` kaynağı uygulamada tanımlı düzey [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/).
 
@@ -175,7 +175,7 @@ Birleştirilmiş zaman [ `ResourceDictionary` ](https://developer.xamarin.com/ap
 1. Aracılığıyla birleştirilen kaynak sözlüklerindeki içerdiği kaynaklar `MergedDictionaries` koleksiyon, bunlar içinde listelenen sırayla `MergedDictionaries` özelliği.
 
 > [!NOTE]
-> **Not**: kaynak sözlüklerindeki arama olabilir bir pkı'ya yoğun görevi birden çok, bir uygulama içeriyorsa, büyük kaynak sözlük. Bu nedenle, her bir uygulama sayfasını yalnızca sayfaya gereksiz arama önlemek için uygun kaynak sözlüklerindeki kullandığından emin olun.
+> Kaynak sözlüklerindeki arama olabilir bir pkı'ya yoğun görevi birden çok, bir uygulama içeriyorsa, büyük kaynak sözlük. Bu nedenle, her bir uygulama sayfasını yalnızca sayfaya gereksiz arama önlemek için uygun kaynak sözlüklerindeki kullandığından emin olun.
 
 ## <a name="summary"></a>Özet
 
@@ -185,5 +185,5 @@ Bu makalede açıklanan oluşturma ve kullanma hakkında bir [ `ResourceDictiona
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Kaynak sözlüklerindeki (örnek)](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
-- [Stilleri](~/xamarin-forms/user-interface/styles/index.md)
+- [Stiller](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ce20322b576b12ff9dfe56ef0bc9d2e1ca27792
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 530e53230e9f0dea165b083fa6795558025a293f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac uzantısı desteği
 
@@ -42,7 +42,7 @@ Aşağıdaki ipuçları Xamarin.Mac uzantıları ile çalışırken yararlı ola
 - Yakalanmayan Özel durumlar az miktarda yararlı bilgiler sağlayan uzantısı işlemi kilitleniyor **sistem günlüğüne**. Sorunlu kodda kaydırma bir `try/catch` (özel), engelleme `NSLog`kullanıcının önce yeniden atma yararlı olabilir.
 - **Sistem günlüğüne** ulaşılabiliyor **konsol** altında uygulama **uygulamaları** > **yardımcı programları**:
 
-    [ ![](extensions-images/extension02.png "Sistem günlüğü")](extensions-images/extension02.png)
+    [![](extensions-images/extension02.png "Sistem günlüğü")](extensions-images/extension02.png#lightbox)
 - Yukarıda belirtildiği gibi uzantı ana bilgisayar uygulaması çalıştıran sistemiyle kaydeder. Uygulama Paketle silme, kaydı. 
 - Bir uygulamanın uzantıları "parazit" sürümlerini kaydedilmişse (bunlar silinebilir şekilde) bunları bulmak için aşağıdaki komutu kullanın: `plugin kit -mv`
 
@@ -63,6 +63,6 @@ Bu makalede Xamarin.Max sürüm 2.10 (ve büyük) uygulama uzantıları ile çal
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [ExtensionSamples](https://developer.xamarin.com/samples/mac/ExtensionSamples/)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 51cc7a4700e8cb3ece556b0ada841d70d5f2bb8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 486df3bbee3f8af511140e2d287f9f95571c7b3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-sdk-emulator-troubleshooting"></a>Android SDK öykünücüsü sorunlarını giderme
 
@@ -83,7 +83,7 @@ Bu hatayı gidermek için bkz: [Intel donanım hızlandırılmış yürütme Yö
 
 Bunun yerine performans uyarıları görmek istemiyorsanız, bunları devre dışı bırakabilirsiniz. Visual Studio'da'ı tıklatın **Araçlar > Seçenekler > Xamarin > Android ayarları** ve devre dışı **AVD hızlandırma değilse uyar (HAXM) desteklenen** seçeneği:
 
-[![AVD hızlandırma uyarılarını devre dışı bırakma](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png)
+[![AVD hızlandırma uyarılarını devre dışı bırakma](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -110,13 +110,11 @@ HAXM işlem çalışmıyorsa, bu iletişim kutusu görüntülenir. Bu sorunu gid
 
 -----
 
-<a name="solutions" />
 
 ## <a name="solutions-to-common-problems"></a>Sık karşılaşılan sorunların çözümleri
 
 Birçok ortak Android SDK öykünücüsü sorunları, bilgisayarınızdaki yapılandırma değişikliklerini yaparak veya ek yazılım yükleyerek çözülebilir. Aşağıdaki bölümlerde, bu sorunları tanımlamak ve çözümleri sunar.
 
-<a name="deployment" />
 
 ### <a name="deployment-issues"></a>Dağıtım sorunları
 
@@ -142,7 +140,6 @@ APK öykünücüsü üzerinde yükleme hatası veya Android hata ayıklama köpr
 5. Öykünücü bu listede görünmüyorsa, başlangıç **Android SDK Manager**, tüm güncelleştirmeleri uygulamanızı ve ardından öykünücü yeniden başlatmayı deneyin.
 
 
-<a name="haxm-issues" />
 
 ### <a name="haxm-issues"></a>HAXM sorunları
 
@@ -162,7 +159,6 @@ Hyper-V, Windows cihaz koruyucusu ve bazı virüsten koruma yazılımı gibi san
 
 - **Virüsten koruma yazılımı** &ndash; donanım destekli sanallaştırma (örneğin, Avast) kullanan virüsten koruma yazılımı çalıştırıyorsanız, devre dışı bırakın veya bu yazılım, yeniden başlatma ve yeniden deneme Android SDK öykünücüsü kaldırın.
 
-<a name="bios" />
 
 #### <a name="incorrect-bios-settings"></a>Yanlış BIOS ayarları
 

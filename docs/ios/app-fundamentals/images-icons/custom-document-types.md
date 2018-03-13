@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/23/2017
-ms.openlocfilehash: 582fcbacbf1959e05773babb1219817ba319a937
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e14cfb8d3c09d17bdee4b60786f434ff94ef31dc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-document-icons"></a>Özel belge simgeler
 
@@ -20,7 +20,7 @@ _Bu makale, bir özel belge türü simgesi olarak kullanılacak bir görüntü v
 
 Belirli bir belge türü yüklenirken bir Xamarin.iOS uygulaması destekliyorsa, geliştirici zaman aşağı bir ek olarak bir kullanıcı tutan gibi bu belge türü karşılaştığında, sistem kullanacağı simgeler sağlayabilir *posta uygulaması* olarak Burada gösterilen:
 
- [ ![](custom-document-types-images/17.png "Belge türü simgelerini örneği")](custom-document-types-images/17.png)
+ [![](custom-document-types-images/17.png "Belge türü simgelerini örneği")](custom-document-types-images/17.png#lightbox)
 
 Bir dosya biçimi uygulama dictionary girişlerinin dahil ederek açılmasını özellikli için geliştirici belge türü bilgileri ekleyebilirsiniz `CFBundleTypeName` dize ve `LSItemContentTypes` uygulamanın dizisinde `Info.plist`. Belge türü için simgeleri Git `CFBundleTypeIconFiles` dizi. Bir belge simgesine sağlanan değil, iOS uygulama simgesini birinden türetilir.
 Simgeler, çeşitli aygıt çözünürlükleri için optimize çeşitli boyutlarda için sağlanabilir. 
@@ -29,7 +29,7 @@ Simgeler, çeşitli aygıt çözünürlükleri için optimize çeşitli boyutlar
 
 Mac için Visual Studio'da bu değerleri atamak için kullandığınız **belge türleri** altında bölümünde **Gelişmiş** sekmesi `Info.plist` Düzenleyicisi belge türü ekleyin ve görüntü simgeler atayın. Örneğin, PDF desteği için kayıt gösteren ekran görüntüsü aşağıdadır:
 
- [ ![](custom-document-types-images/18.png "Belge türü Bölümü 'Info.plist' Düzenleyicisi'ni Gelişmiş sekmesinde altında")](custom-document-types-images/18.png)
+ [![](custom-document-types-images/18.png "Belge türü Bölümü 'Info.plist' Düzenleyicisi'ni Gelişmiş sekmesinde altında")](custom-document-types-images/18.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

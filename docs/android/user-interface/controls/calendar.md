@@ -7,27 +7,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8075473464472c5a830f62ebfc91c00ad54d1b98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b744f4c8582aa9295645b2bdc22e6fddf2bedc3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="calendar"></a>Takvim
 
-<a name="Calendar_API" />
 
 ## <a name="calendar-api"></a>Takvim API
 
 Yeni bir takvim Android 4'te tanıtılan API kümesi okumak veya takvim sağlayıcının veri yazmak için tasarlanmış uygulamaları destekler. Bu API'leri bol miktarda olayları, katılımcılar ve anımsatıcıları okuma ve yazma yeteneği dahil olmak üzere Takvim verilerle etkileşimi seçeneklerini destekler. Uygulamanızda Takvim sağlayıcısı kullanarak API aracılığıyla eklemek veri Android 4 ile gelen yerleşik Takvim uygulamasını görünür.
 
-<a name="Adding_Permissions" />
 
 ## <a name="adding-permissions"></a>İzinleri ekleme
 
 Uygulamanızda yeni takvim API'leri ile çalışırken, yapmanız gereken ilk şey uygun izinleri Android bildirim eklemektir. Eklemek için gereken izinler `android.permisson.READ_CALENDAR` ve `android.permission.WRITE_CALENDAR`, olup, okuma ve/veya takvim veri yazma bağlı olarak.
 
-<a name="Using_the_Calendar_Contract" />
 
 ## <a name="using-the-calendar-contract"></a>Takvim sözleşme kullanma
 
@@ -35,7 +32,6 @@ Uygulamanızda yeni takvim API'leri ile çalışırken, yapmanız gereken ilk ş
 
 Takvim API'sini kullanan bir örneğe bakalım. Bu örnekte, biz takvime yeni bir olay eklemek nasıl yanı sıra, takvimler ve bunların olaylarını Numaralandırılacak nasıl inceleyeceğiz.
 
-<a name="Listing_Calendars" />
 
 ## <a name="listing-calendars"></a>Takvimler listeleme
 
@@ -122,10 +118,9 @@ Yukarıdaki kod içinde belirtilen sütun bağdaştırıcısı alır `sourceColu
 
 Görüntülenen takvim bilgisi ile nihai sonucu gösteren bir ekran görüntüsü işte `ListView`:
 
-[![CalendarDemo iki takvim girişlerini görüntüleme öykünücüde çalıştırma](calendar-images/11-calendar.png)](calendar-images/11-calendar.png)
+[![CalendarDemo iki takvim girişlerini görüntüleme öykünücüde çalıştırma](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
 
 
-<a name="Listing_Calendar_Events" />
 
 ## <a name="listing-calendar-events"></a>Liste takvim olayları
 
@@ -221,10 +216,9 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 
 Aşağıda gösterildiği gibi olayların bir listesini görüntüler:
 
-[![Üç takvim olayları görüntüleme örnek uygulamasının ekran görüntüsü](calendar-images/12-events.png)](calendar-images/12-events.png)
+[![Üç takvim olayları görüntüleme örnek uygulamasının ekran görüntüsü](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
 
 
-<a name="Adding_a_Calendar_Event" />
 
 ## <a name="adding-a-calendar-event"></a>Takvim olay ekleme
 
@@ -280,11 +274,11 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 Bir düğme UI olay listesine eklemek ve yukarıdaki kodu çalıştırmak 's olay işleyicisi düğmesini, olay takvime eklenir ve aşağıda gösterildiği gibi bizim listesinde güncelleştirildi:
 
-[![Örnek Olay Ekle düğmesine tıklayın ve ardından Takvim olaylarla örnek uygulamasının ekran görüntüsü](calendar-images/13.png)](calendar-images/13.png)
+[![Örnek Olay Ekle düğmesine tıklayın ve ardından Takvim olaylarla örnek uygulamasının ekran görüntüsü](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
 Şu Takvim uygulamasını açın, sonra olay orada da yazılır göreceğiz:
 
-[![Seçili takvim olayı görüntüleme Takvim uygulamasının ekran görüntüsü](calendar-images/14.png)](calendar-images/14.png)
+[![Seçili takvim olayı görüntüleme Takvim uygulamasının ekran görüntüsü](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
 Gördüğünüz gibi Android uygulamaların sorunsuz bir şekilde Takvim özellikleri tümleştirmek izin almak ve takvim verilerini kalıcı hale getirmek güçlü ve kolay erişim sağlar.
 

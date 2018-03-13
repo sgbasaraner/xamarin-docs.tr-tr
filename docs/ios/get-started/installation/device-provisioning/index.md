@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/15/2017
-ms.openlocfilehash: 1a5120f088fca6997eef3a1bc27126b442380cac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b54adc28e318b263052bb6073390556a198cffe7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-provisioning"></a>Cihaz sağlama
 
@@ -22,7 +22,7 @@ Bir Xamarin.iOS uygulaması geliştirme sırasında fiziksel bir aygıtı uygula
 
 Aşağıdaki görüntü vurgulanan bölümlerde iOS sağlama için ayarlanmış almak için gerekli adımları gösterir:
 
-[![](images/provisioningdiagram.png "Bu görüntü vurgulanan bölümlerde iOS sağlama için ayarlanmış almak için gerekli adımları gösterir")](images/provisioningdiagram.png)
+[![](images/provisioningdiagram.png "Bu görüntü vurgulanan bölümlerde iOS sağlama için ayarlanmış almak için gerekli adımları gösterir")](images/provisioningdiagram.png#lightbox)
 
 Bundan sonra sonraki adım uygulamayı dağıtmaktır. Dağıtım hakkında daha fazla bilgi için ziyaret [uygulama dağıtım](~/ios/deploy-test/app-distribution/index.md) kılavuzları.
 
@@ -81,7 +81,7 @@ Apple özel uygulama hizmetleri, bir Xamarin.iOS uygulaması için etkin hale ge
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Ücretsiz sağlama](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
-- [Uygulama dağıtımı](~/ios/deploy-test/app-distribution/index.md)
+- [Ücretsiz Sağlama](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+- [Uygulama Dağıtımı](~/ios/deploy-test/app-distribution/index.md)
 - [Sorun giderme](~/ios/deploy-test/troubleshooting.md)
 - [Apple - uygulama dağıtım kılavuzu](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

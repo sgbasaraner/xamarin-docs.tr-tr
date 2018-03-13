@@ -3,14 +3,15 @@ title: "Xamarin.Forms ile mobil uygulamaları oluşturmak için bölüm özetler
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 14A1A56C-CE91-4F86-BCF2-A4CB055A861E
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b88d227b272c34dd1c4d22fc707edce4df6dd91f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e2cf6033958848f0c1b16e78fbc3a3d18a6b4fd
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="chapter-summaries-for-creating-mobile-apps-with-xamarinforms"></a>Xamarin.Forms ile mobil uygulamaları oluşturmak için bölüm özetleri
 
@@ -26,61 +27,61 @@ Bu belge ilk sürümüne yapısını parallels [ *Xamarin.Forms ile Mobile Apps 
 
 ## <a name="contents"></a>İçindekiler
 
-[Bölüm 1. Xamarin.Forms nasıl sığmayan?](chapter01.md)
+[Bölüm 1. Xamarin.Forms nasıl uygunluk sağlar?](chapter01.md)
 
-[Bölüm 2. Bir uygulama anatomisi](chapter02.md)
+[Bölüm 2. Bir uygulamanın anatomisi](chapter02.md)
 
-[Bölüm 3. Daha derin bir metne](chapter03.md)
+[Bölüm 3. Metnin ayrıntılı incelemesi](chapter03.md)
 
-[Bölüm 4. Yığın kaydırma](chapter04.md)
+[Bölüm 4. Yığını kaydırma](chapter04.md)
 
-[Bölüm 5. Boyutları postalarla](chapter05.md)
+[Bölüm 5. Boyutlarla ilgilenme](chapter05.md)
 
-[Bölüm 6. Düğme tıklama](chapter06.md)
+[Bölüm 6. Düğme tıklamaları](chapter06.md)
 
-[Bölüm 7. XAML kodu karşılaştırması](chapter07.md)
+[Bölüm 7. XAML ve kod karşılaştırması](chapter07.md)
 
-[Bölüm 8. Kod ve XAML uyum içinde](chapter08.md)
+[Bölüm 8. Uyum içindeki kod ve XAML](chapter08.md)
 
 [9. bölüm. Platforma özgü API çağrıları](chapter09.md)
 
-[Bölüm 10. XAML işaretleme uzantıları](chapter10.md)
+[Bölüm 10. XAML biçimlendirme uzantıları](chapter10.md)
 
-[Bölüm 11. Bağlanabilir altyapısı](chapter11.md)
+[Bölüm 11. Bağlanabilir altyapı](chapter11.md)
 
-[Bölüm 12. Stilleri](chapter12.md)
+[Bölüm 12. Stiller](chapter12.md)
 
 [Bölüm 13. Bit eşlemler](chapter13.md)
 
-[Bölüm 14. Mutlak düzeni](chapter14.md)
+[Bölüm 14. Mutlak düzen](chapter14.md)
 
 [Bölüm 15. Etkileşimli arabirimi](chapter15.md)
 
 [Bölüm 16. Veri bağlama](chapter16.md)
 
-[Bölüm 17. Kılavuz katılımınıza](chapter17.md)
+[Bölüm 17. Kılavuzda uzmanlaşma](chapter17.md)
 
 [Bölüm 18. MVVM](chapter18.md)
 
 [Bölüm 19. Koleksiyon görünümleri](chapter19.md)
 
-[Bölüm 20. Zaman uyumsuz ve dosya g/ç](chapter20.md)
+[Bölüm 20. Zaman uyumsuz ve dosya G/Ç](chapter20.md)
 
 [Bölüm 21. Dönüşümler](chapter21.md)
 
 [Bölüm 22. Animasyon](chapter22.md)
 
-[Bölüm 23. Tetikleyiciler ve davranışları](chapter23.md)
+[Bölüm 23. Tetikleyiciler ve davranışlar](chapter23.md)
 
 [Bölüm 24. Sayfa gezintisi](chapter24.md)
 
-[Bölüm 25. Sayfa çeşit](chapter25.md)
+[Bölüm 25. Sayfa çeşitleri](chapter25.md)
 
 [Bölüm 26. Özel düzenler](chapter26.md)
 
-[Bölüm 27. Özel oluşturucu](chapter27.md)
+[Bölüm 27. Özel oluşturucular](chapter27.md)
 
-[Bölüm 28. Konum ve eşlemeleri](chapter28.md)
+[Bölüm 28. Konum ve haritalar](chapter28.md)
 
 
 

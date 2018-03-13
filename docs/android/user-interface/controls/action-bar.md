@@ -7,28 +7,26 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: cdbdf7195daf9add01052df8fc0f0cf4c7a0cb0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64a5ac7e0c448205da66f9790a506ca34a944140
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="actionbar"></a>ActionBar
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
 Kullanırken `TabActivity`, sekme simgeler oluşturmak için kodu karşı Android 4.0 framework çalıştırdığınızda herhangi bir etkisi olmaz. 2.3 önce Android sürümlerinde olduğu gibi işlevsel olarak çalıştığını rağmen `TabActivity` sınıfının kendisi kullanım dışı bırakılmış 4. 0 '. Sekmeli arabirim oluşturmak için yeni bir yol biz sonraki ele alacağız Eylem çubuğu kullanan sunulmuştur.
 
-<a name="Action_Bar_Tabs" />
 
 ## <a name="action-bar-tabs"></a>Eylem çubuğunda sekmeleri
 
 Eylem çubuğunda sekmeli arabirimleri Android 4.0 ekleme desteği içerir.
 Aşağıdaki ekran görüntüsünde, böyle bir arabirim örneği gösterilmektedir.
 
-[![Uygulamasının ekran görüntüsü bir öykünücü çalıştıran; iki sekme gösterilir](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png)
+[![Uygulamasının ekran görüntüsü bir öykünücü çalıştıran; iki sekme gösterilir](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
 
 Eylem çubuğunda sekmeleri oluşturmak için öncelikle ayarlamak ihtiyacımız kendi `NavigationMode` sekmeleri desteklemek için özelliği. Android 4'te bir `ActionBar` özelliği ayarlamak için kullanabileceğiniz etkinlik sınıf üzerinde kullanılabilir `NavigationMode` şöyle:
 
@@ -84,26 +82,23 @@ this.ActionBar.AddTab (tab);
 
 Tam bir örnek için bkz: *HelloTabsICS* bu belge için örnek kod projesinde.
 
-<a name="ShareActionProvider" />
 
 ## <a name="shareactionprovider"></a>ShareActionProvider
 
 `ShareActionProvider` Sınıfı bir eylem çubuğundan gerçekleşmesi için bir paylaşım eylemi sağlar. Bu paylaşım hedefi işleyebilir ve kolay erişim için daha önce kullanılan uygulamaların geçmişini bunları daha sonra eylem çubuğundan tutar uygulamaların bir listesini içeren bir eylem görünüm oluşturmayı mvc'deki. Bu uygulamaların Android tutarlı bir kullanıcı deneyimi aracılığıyla veri paylaşmasını sağlar.
 
-<a name="Image_Sharing_Example" />
 
 ### <a name="image-sharing-example"></a>Resim paylaşımı örneği
 
 Örneğin, bir görüntü paylaşmak için bir eylem çubuğunun menü öğesi ile bir ekran görüntüsü aşağıda verilmiştir (alınan [ShareActionProvider](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/) örnek). Menü öğesi eylem çubuğunda kullanıcı dokunur, ShareActionProvider ile ilişkili bir hedefi işlemek için uygulama yükler `ShareActionProvider`. Eylem çubuğunda sunulan şekilde bu örnekte, ileti uygulama daha önce kullanıldı.
 
-[![Uygulama simgesi eylem çubuğunda Mesajlaşma ekran görüntüsü](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png)
+[![Uygulama simgesi eylem çubuğunda Mesajlaşma ekran görüntüsü](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 
 Kullanıcı eylem çubuğundaki öğeyi tıklattığında, paylaşılan görüntüsünü içeren Mesajlaşma uygulaması, aşağıda gösterildiği gibi başlatılır:
 
-[![Monkey görüntü görüntüleme Mesajlaşma uygulamasının ekran görüntüsü](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png)
+[![Monkey görüntü görüntüleme Mesajlaşma uygulamasının ekran görüntüsü](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
 
-<a name="Specifying_the_action_Provider_Class" />
 
 ### <a name="specifying-the-action-provider-class"></a>Sağlayıcı sınıfı eylem belirtme
 
@@ -119,7 +114,6 @@ Kullanılacak `ShareActionProvider`ayarlayın `android:actionProviderClass` men�
 </menu>
 ```
 
-<a name="Inflating_the_Menu" />
 
 ### <a name="inflating-the-menu"></a>Menü inflating
 
@@ -137,7 +131,6 @@ public override bool OnCreateOptionsMenu (IMenu menu)
 }
 ```
 
-<a name="Creating_the_Intent" />
 
 ### <a name="creating-the-intent"></a>Amacı oluşturma
 

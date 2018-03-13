@@ -8,18 +8,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 4b3299ad138b5cd74ce77cac1da49d21a833fe1a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 93a2effd42432d13767dad05a47548aebc9a0b93
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="time-picker"></a>Saat Seçici
 
 Kullanıcının bir zamanı seçmek bir yol sağlamak üzere kullanabileceğiniz [TimePicker](https://developer.xamarin.com/api/type/Android.Widget.TimePicker/). Android uygulamaları genellikle kullanma `TimePicker` ile [TimePickerDialog](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog/) bir saat değeri seçme &ndash; bu aygıtlar ve uygulamalar arasında tutarlı bir arayüz sağlamaya yardımcı olur. `TimePicker` Kullanıcıların günün saatini 24 saat veya 12 saatlik AM/PM modunda seçmesine izin verir.
 `TimePickerDialog` yalıtan bir yardımcı sınıf olan `TimePicker` bir iletişim kutusu.
 
-[![Eylem Saat Seçici iletişim kutusunun örnek ekran görüntüsü](time-picker-images/01-example-screen-sml.png)](time-picker-images/01-example-screen.png)
+[![Eylem Saat Seçici iletişim kutusunun örnek ekran görüntüsü](time-picker-images/01-example-screen-sml.png)](time-picker-images/01-example-screen.png#lightbox)
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -36,11 +36,11 @@ Bu kılavuz için örnek uygulama Android 4.1 (API düzeyi hedefler
 
 Bu örnek genişletir `DialogFragment`; alt uyarlamasını `DialogFragment` (adlı `TimePickerFragment` aşağıda) barındırır ve görüntüler bir `TimePickerDialog`. Örnek uygulamayı ilk kez başlatıldığında, görüntülediği bir **ÇEKME zaman** yukarıdaki düğmesi bir `TextView` seçili zaman görüntülemek için kullanılacak:
 
-[![İlk örnek uygulama ekran](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png)
+[![İlk örnek uygulama ekran](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
 Tıkladığınızda **ÇEKME zaman** button, örnek uygulamayı başlatır `TimePickerDialog` bu ekran görüntüsünde görüldüğü gibi:
 
-[![Uygulama tarafından görüntülenen varsayılan saat Seçici iletişim kutusunun ekran görüntüsü](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png)
+[![Uygulama tarafından görüntülenen varsayılan saat Seçici iletişim kutusunun ekran görüntüsü](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
 
 İçinde `TimePickerDialog`, bir süre seçerek ve tıklatarak **Tamam** düğmesini nedenler `TimePickerDialog` yöntemini çağırmak için [IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/).
 Bu arabirim barındırarak uygulanır `DialogFragment` (`TimePickerFragment`, aşağıda açıklanmıştır). Tıklatarak **iptal** düğmesi parça ve iletişim oluşturmayabilir neden olur.
@@ -56,7 +56,6 @@ Bu arabirim barındırarak uygulanır `DialogFragment` (`TimePickerFragment`, a�
 Bu örnek etkinlik kaynağı gerektiren üçüncü teknik kullanacağı bir `Action<DateTime>` işleyicisine `DialogFragment`.
 
 
-<a name="start" />
 
 ## <a name="start-an-app-project"></a>Bir uygulama projesi Başlat
 
@@ -123,13 +122,12 @@ namespace TimePickerDemo
 
 Derleme ve bu örneği çalıştırmak, aşağıdaki ekran görüntüsüne benzer bir başlangıç ekranı görmeniz gerekir:
 
-[![İlk uygulama ekran](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png)
+[![İlk uygulama ekran](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
 Tıklatarak **ÇEKME zaman** düğmesi hiçbir şey yapmaz çünkü `DialogFragment` henüz görüntülenecek uygulanmadı `TimePicker`.
 Bu oluşturmak için sonraki adımdır `DialogFragment`.
 
 
-<a name="extend_dialogfragment" />
 
 ## <a name="extending-dialogfragment"></a>DialogFragment genişletme
 
@@ -169,7 +167,6 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
 
 Bu `TimePickerFragment` sınıfı daha küçük parçalara ayrıntılarıyla ve sonraki bölümde açıklanmıştır.
 
-<a name="details" />
 
 ### <a name="dialogfragment-implementation"></a>DialogFragment uygulama
 
@@ -230,7 +227,6 @@ Bu `TimePickerFragment` sınıfı daha küçük parçalara ayrıntılarıyla ve 
     ```
 
 
-<a name="time_picker_fragment" />
 
 ## <a name="displaying-the-timepickerfragment"></a>TimePickerFragment görüntüleme
 
@@ -262,17 +258,16 @@ timeSelectButton.Click += TimeSelectOnClick;
 Zaman **ÇEKME zaman** düğmesine tıklandığında, `TimeSelectOnClick` görüntülemek için çağrılan `TimePicker` kullanıcıya iletişim parça.
 
 
-<a name="try-it" />
 
 ## <a name="try-it"></a>Deneyin!
 
 Derleme ve uygulamayı çalıştırın. Tıkladığınızda **ÇEKME zaman** düğmesini `TimePickerDialog` etkinliğinde (Bu durumda, 12 saatlik AM/PM modu) için varsayılan saat biçiminde görüntülenir:
 
-[![AM/PM modunda zaman iletişim kutusu görüntülenir](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png)
+[![AM/PM modunda zaman iletişim kutusu görüntülenir](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
    
 Tıkladığınızda **Tamam** içinde `TimePicker` iletişim kutusunda, işleyici güncelleştirmeleri etkinliğin `TextView` seçilen zaman ve ardından çıkar:
 
-[![A/M zaman içinde etkinliğini kutusu TextView görüntülenir](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png)
+[![A/M zaman içinde etkinliğini kutusu TextView görüntülenir](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png#lightbox)
 
 Sonra aşağıdaki kod satırını ekleyin `OnCreateDialog` hemen sonra `is24HourFormat` bildirilir ve başlatıldı:
 
@@ -282,12 +277,11 @@ is24HourFormat = true;
 
 Bu değişiklik geçirilen bayrak zorlar `TimePickerDialog` olmasını Oluşturucusu `true` , 24 saatlik modu barındırma etkinlik saat biçimi yerine kullanılmaktadır. Derleme ve uygulamayı yeniden çalıştırın, tıklatın **ÇEKME zaman** düğmesi, `TimePicker` iletişim kutusu artık 24 saat biçiminde gösterilir:
 
-[![24 saat biçiminde TimePicker iletişim](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png)
+[![24 saat biçiminde TimePicker iletişim](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png#lightbox)
 
 İşleyici çağırması için [DateTime.ToShortTimeString](https://msdn.microsoft.com/en-us/library/system.datetime.toshortdatestring%28v=vs.110%29.aspx) etkinliğin süresi yazdırmak için `TextView`, varsayılan 12 saatlik AM/PM biçiminde hala yazdırıldığında.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

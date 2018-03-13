@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: c8f66ac8532d6926fe8280b5687135dc3df53289
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 978d9e569825e20b40e963f590049eaab1d4e752
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="portable-visual-basicnet"></a>Taşınabilir Visual Basic.NET
 
@@ -24,7 +24,8 @@ Taşınabilir sınıf kitaplığı desteği Xamarin.Android 4.10.1, Xamarin.iOS 
 
 Oluşturma ve Visual Basic taşınabilir sınıf kitaplıkları derlemek için Visual Studio Windows (Visual Studio 2012 veya daha yeni) kullanmanız gerekir.
 
-> ℹ️ **Not:** Visual Basic kitaplıkları yalnızca oluşturulabilir ve Visual Studio kullanarak derlenir. Xamarin.iOS ve Xamarin.Android Visual Basic Dil desteklemez.
+> [!NOTE]
+> Visual Basic kitaplıkları yalnızca oluşturulabilir ve Visual Studio kullanarak derlenir. Xamarin.iOS ve Xamarin.Android Visual Basic Dil desteklemez.
 >
 > Yalnızca Visual Studio'da çalışıyorsanız Xamarin.iOS ve Xamarin.Android projelerinden Visual Basic projesinde başvuruda bulunabilir.
 >
@@ -44,15 +45,15 @@ Bir PCL oluşturmak ve kendi profilini seçmek için adımlar şunlardır:
 
 1.  İçinde **yeni proje** ekran, select **Visual Basic > sınıf kitaplığı (taşınabilir)** seçeneği:
 
-  [ ![](images/image1-sml.png "Yeni bir Visual Basic taşınabilir kitaplığı oluşturun")](images/image1.png)
+    [![](images/image1-sml.png "Yeni bir Visual Basic taşınabilir kitaplığı oluşturun")](images/image1.png#lightbox)
 
 1.  Visual Studio ile aşağıdakileri hemen ister **taşınabilir sınıf kitaplığı eklemek** iletişim böylece profili yapılandırılır. Tuşuna basın ve desteklemek için gereken platformlar değer **Tamam**.
 
-  [ ![](images/image2-sml.png "Platformlar seçerek PCL profili seçin")](images/image2.png)
+    [![](images/image2-sml.png "Platformlar seçerek PCL profili seçin")](images/image2.png#lightbox)
 
 1.  Visual Basic PCL proje gösterildiği gibi görünür **Çözüm Gezgini** şöyle:
 
-  [ ![](images/image3-sml.png "Boş Visual Studio PCL projesi")](images/image3.png)
+    [![](images/image3-sml.png "Boş Visual Studio PCL projesi")](images/image3.png#lightbox)
 
 
 PCL artık Visual Basic kodu eklenmesi hazırdır. PCL projeler diğer projeler (uygulama projeleri, kitaplık projeleri ve hatta diğer PCL projeleri) tarafından başvurulabilir.
@@ -61,7 +62,7 @@ PCL artık Visual Basic kodu eklenmesi hazırdır. PCL projeler diğer projeler 
 
 PCL (PCL uyumlu hangi platformları denetimleri) profili görüntülenebilir ve projeye sağ tıklayıp seçerek değiştirilen **Özellikler > kitaplığı > Değiştir...** . Ortaya çıkan iletişim bu ekran görüntüsünde gösterilir:
 
- [ ![](images/image4-sml.png "Proje Özellikleri'nde PCL profilini düzenle")](images/image4.png)
+ [![](images/image4-sml.png "Proje Özellikleri'nde PCL profilini düzenle")](images/image4.png#lightbox)
 
 Kod PCL eklendikten sonra profili değiştirdiyseniz, kod yeni seçilen profil parçası olmayan özellikleri başvuruyorsa kitaplığı artık derlenir mümkündür.
 

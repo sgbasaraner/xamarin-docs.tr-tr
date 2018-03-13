@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: 66b956eddc48699c6fd61e9cb52a7fbc3fa70a51
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9fac4a233cecd9332602047bc83830d145b5fb08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-custom-contentprovider"></a>Özel ContentProvider oluşturma
 
@@ -28,7 +28,6 @@ _Önceki bölümde yerleşik bir ContentProvider uygulaması verileri kullanma g
 
 Android için mono olarak içerik sağlayıcı sınıfı olmalıdır bir `[ContentProvider]` özniteliğini URI (veya URI'ler) belirtmek için eklenmesi için **AndroidManifest.xml**.
 
-<a name="Mime_Type" />
 
 ### <a name="mime-type"></a>MIME türü
 
@@ -40,7 +39,6 @@ MIME türleri için normal biçim iki bölümden oluşur. Android `ContentProvid
 
 MIME türü ikinci bölümü uygulamanıza özeldir ve bir geriye doğru DNS standart kullanması gereken bir `vnd.` öneki. Örnek kod kullanır `vnd.com.xamarin.sample.Vegetables`.
 
-<a name="Data_Model_Metadata" />
 
 ### <a name="data-model-metadata"></a>Veri modeli meta verileri
 
@@ -50,7 +48,6 @@ Yalnızca geçerli URI sorgu oluşturulur emin olmak için geçerli dize sabit d
 
 Önceki örnekte `android.provider.ContactsContract` sınıfı sunulan kişiler veri için meta veriler. Bizim özel `ContentProvider` biz yalnızca sabitleri sınıfı üzerinde açığa çıkarır.
 
-<a name="Implementation" />
 
 ## <a name="implementation"></a>Uygulama
 
@@ -64,7 +61,6 @@ Yalnızca geçerli URI sorgu oluşturulur emin olmak için geçerli dize sabit d
 
 Daha önce açıklandığı gibi `ContentProviders` burada tanımlanan dışındaki uygulamalardan tüketilebilir. Bu örnekte aynı uygulamada veriler tüketiliyor ancak URI ve (genellikle sabit değerler sunulur) şema hakkında bilgi bildikleri sürece diğer uygulamalar da erişebildiğinizi göz önünde bulundurun.
 
-<a name="Create_a_database" />
 
 ## <a name="create-a-database"></a>Bir veritabanı oluşturun
 
@@ -98,13 +94,11 @@ class VegetableDatabase  : SQLiteOpenHelper {
 
 Veritabanı uygulaması ile açığa çıkarılması herhangi diğer noktalar gerekmez bir `ContentProvider`, ancak bağlamak istiyorsanız, `ContentProvider's` verileri bir `ListView` adlı bir benzersiz tamsayı sütunu kontrol `_id` parçası olmalıdır Sonuç kümesi. Bkz: [ListViews ve bağdaştırıcıları](~/android/user-interface/layouts/list-view/index.md) kullanma hakkında daha fazla ayrıntı için belge `ListView` denetim.
 
-<a name="Create_the_ContentProvider" />
 
 ## <a name="create-the-contentprovider"></a>ContentProvider oluşturma
 
 Bu bölümde rest yönergeler üzerinde nasıl verir **SimpleContentProvider/VegetableProvider.cs** örnek sınıf yapılmış.
 
-<a name="Initialize_the_Database" />
 
 ### <a name="initialize-the-database"></a>Veritabanını başlatılamadı
 
@@ -124,7 +118,6 @@ public class VegetableProvider : ContentProvider
 
 Kod kalan verilerin bulunan ve sorgulanan izin verir gerçek içerik sağlayıcı uygulaması oluşturacak.
 
-<a name="Add_Metadata_for_Consumers" />
 
 
 ## <a name="add-metadata-for-consumers"></a>Tüketiciler için meta verileri ekleme
@@ -165,7 +158,6 @@ public class VegetableProvider : ContentProvider
 }
 ```
 
-<a name="Implement_the_URI_Parsing_Helper" />
 
 ## <a name="implement-the-uri-parsing-helper"></a>Yardımcı ayrıştırma URI uygulama
 
@@ -195,7 +187,6 @@ static UriMatcher BuildUriMatcher()
 
 Bu kod tüm özel `ContentProvider` sınıfı. Başvurmak [Google UriMatcher belgelerine](https://developer.xamarin.com/api/type/Android.Content.UriMatcher/) daha fazla bilgi için.
 
-<a name="Implement_the_QueryMethod" />
 
 ## <a name="implement-the-querymethod"></a>Uygulama QueryMethod
 
@@ -241,7 +232,6 @@ public override String GetType(Android.Net.Uri uri)
 }
 ```
 
-<a name="Implement_the_Other_Overrides" />
 
 ## <a name="implement-the-other-overrides"></a>Diğer geçersiz kılmalarını
 
@@ -264,13 +254,11 @@ public override int Update(Android.Net.Uri uri, ContentValues values, string sel
 
 Temel tamamlanan `ContentProvider` uygulaması. Uygulama yüklendikten sonra onu sunan verilerin kullanılabilir olacağını hem uygulama aynı zamanda, başvuru için URI bilir herhangi bir uygulama için.
 
-<a name="Access_the_ContentProvider" />
 
 ## <a name="access-the-contentprovider"></a>Erişim ContentProvider
 
 Bir kez `VegetableProvider` bırakıldı uygulanan erişmekte bu belge başlangıcı kişiler sağlayıcısındaki aynı şekilde yapılır: bir imleç Belirtilen URI kullanılarak elde edilir ve verilere erişmek için bir bağdaştırıcı kullanacak.
 
-<a name="Bind_a_ListView_to_a_ContentProvider" />
 
 ## <a name="bind-a-listview-to-a-contentprovider"></a>ListView bir ContentProvider bağlama
 
@@ -296,10 +284,9 @@ listView.Adapter = adapter;
 
 Sonuçta elde edilen uygulama şöyle görünür:
 
-[![Listeleme et, Fruits, çiçek tıkaçları, Legumes, Bulbs, Tubers uygulamasının ekran görüntüsü](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png)
+[![Listeleme et, Fruits, çiçek tıkaçları, Legumes, Bulbs, Tubers uygulamasının ekran görüntüsü](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png#lightbox)
 
 
-<a name="Retrieve_a_Single_Item_from_a_ContentProvider" />
 
 ## <a name="retrieve-a-single-item-from-a-contentprovider"></a>Tek bir öğe ContentProvider alma
 

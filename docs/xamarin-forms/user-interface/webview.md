@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 67caa11b23f5651a6b851c1e9baf16c2adca422a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a077a3dcc47de8416abb0c51b23dc07fc1f1f12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="webview"></a>Web görünümü
 
@@ -38,7 +38,8 @@ Web görünümü şu içerik türlerini desteği ile birlikte gelir:
 - HTML dizelerini &ndash; WebView bellek HTML dizelerden gösterebilir.
 - Yerel dosya &ndash; WebView türlerinden herhangi birini içerik yukarıdaki uygulamada katıştırılmış sunabileceği.
 
-**Not**: `WebView` bu platformda Internet Explorer tarafından desteklenir, Windows ve Windows Phone Silverlight, Flash veya herhangi bir ActiveX denetimini desteklemiyor.
+> [!NOTE]
+> `WebView` Internet Explorer'ın bu platformda desteklenir olsa bile Windows ve Windows Phone Silverlight, Flash veya herhangi bir ActiveX denetimini desteklemiyor.
 
 ### <a name="websites"></a>Web siteleri
 
@@ -50,14 +51,15 @@ var browser = new WebView {
 };
 ```
 
-**Not**: URL'leri gerekir tam olarak biçimlendirilmiş belirtilen protokolü ile (örneğin, "http://" veya "https:// kendisine $a" olması gerekir).
+> [!NOTE]
+> URL'leri gerekir tam olarak biçimlendirilmiş belirtilen protokolü ile (örneğin, "http://" veya "https:// kendisine $a" olması gerekir).
 
 #### <a name="ios-and-ats"></a>iOS ve ATS
 
 Sürüm 9 itibaren iOS yalnızca varsayılan olarak en iyi yöntem güvenlik uygulayan sunucularla iletişim kurmak için uygulamanıza izin verir. Değerleri ayarlama, `Info.plist` güvensiz sunucularıyla iletişim sağlamak için.
 
 > [!NOTE]
-> **Not:** uygulamanız güvenli olmayan bir Web sitesi bağlantı gerektiriyorsa, her zaman etki alanı kullanarak özel durum olarak girmelisiniz `NSExceptionDomains` tamamen kullanarak devre dışı ATS kapatma yerine `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` yalnızca aşırı acil durumlarda kullanılmalıdır.
+> Uygulamanız bir bağlantı güvenli olmayan bir Web sitesine gerektiriyorsa, her zaman etki alanı kullanarak özel durum olarak girmelisiniz `NSExceptionDomains` tamamen kullanarak devre dışı ATS kapatma yerine `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` yalnızca aşırı acil durumlarda kullanılmalıdır.
 
 Aşağıdaki ATS gereksinimlerini atlamak için bir özel etki alanında (Bu örnek xamarin.com) etkinleştirmek gösterilmiştir:
 
@@ -221,10 +223,10 @@ namespace WorkingWithWebview.Android {
 }
 ```
 
-Android, dosyalar **varlıklar** klasörü de üzerinden erişilebilir `Forms.Context.Assets` aşağıdaki kod örneğinde gösterildiği şekilde özelliği:
+Android, dosyalar **varlıklar** klasörü de üzerinden erişilebilir tarafından sunulan geçerli Android bağlamı `MainActivity.Instance` özelliği:
 
 ```csharp
-var assetManager = Xamarin.Forms.Forms.Context.Assets;
+var assetManager = MainActivity.Instance.Assets;
 using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
   var html = streamReader.ReadToEnd ();
 }

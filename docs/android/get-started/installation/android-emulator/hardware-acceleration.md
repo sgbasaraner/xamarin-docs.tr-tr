@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/22/2017
-ms.openlocfilehash: 53dc85cab94bdf692e088d7c6eea6916d283ba84
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7560900ace62a737ac765bcfe93f759f8985aca2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android öykünücüsünde donanım hızlandırma
 
 Android SDK öykünücüsü donanım hızlandırmasını, Intel's şekilde basımı karşılamayacak kadar yavaş olduğu için HAXM (donanım hızlandırılmış yürütme Yöneticisi) Android SDK öykünücüsü performansını önemli ölçüde artırmak için önerilen yöntem olduğu.
 
-<a name="haxm-overview" />
 
 ## <a name="haxm-overview"></a>HAXM genel bakış
 
@@ -27,9 +26,8 @@ HAXM bir konak makinesi üzerinde Android uygulaması öykünme hızlandırmak i
 Android SDK öykünücüsü otomatik olarak kullanılabilir olduğunda HAXM kullanır. Seçtiğinizde, bir **x86**-sanal aygıt dayalı (açıklandığı gibi [yapılandırma ve kullanım](~/android/deploy-test/debugging/android-sdk-emulator/index.md)), sanal cihazın donanım hızlandırmasını HAXM kullanır. Android SDK öykünücüsü ilk kez kullanmadan önce HAXM yüklenir ve Android SDK öykünücüsü kullanılabilir olduğunu doğrulamak için iyi bir fikirdir.
 
 > [!NOTE]
-> **Not:** HAXM bir sanal makinede çalıştıramazsınız.
+> Bir sanal makinede HAXM çalıştırılamıyor.
 
-<a name="verify-haxm" />
 
 ## <a name="verifying-haxm-installation"></a>HAXM yüklemesini doğrulama
 
@@ -39,7 +37,7 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
 1. Tıklayarak Android öykünücüsü yöneticisini başlatmak **Araçlar > Android > Android Emulator Manager**:
 
-    [![Android Emulator Manager menü öğesi konumu](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png)
+    [![Android Emulator Manager menü öğesi konumu](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png#lightbox)
 
 2. Görürseniz bir **Performans Uyarısı** iletişim HAXM henüz yüklenmemiş veya bilgisayarınızda düzgün yapılandırılmamış sonra aşağıdakine benzer:
 
@@ -65,7 +63,7 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
 1. Tıklayarak Android öykünücüsü yöneticisini başlatmak **Araçlar > Google öykünücü yöneticisini**:
 
-    [![Android Emulator Manager menü öğesi konumu](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png)
+    [![Android Emulator Manager menü öğesi konumu](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png#lightbox)
 
 2. Görürseniz bir **Performans Uyarısı** iletişim HAXM henüz yüklenmemiş veya bilgisayarınızda düzgün yapılandırılmamış sonra aşağıdakine benzer:
 
@@ -75,7 +73,7 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
 3. Seçin **x86** görüntü (örneğin, **Android\_hızlandırılmış\_x86**), tıklatın **Başlat**, ardından **başlatma**:
 
-    [![Bir varsayılan sanal aygıt görüntüsüyle Android SDK öykünücüsü başlatılıyor](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png)
+    [![Bir varsayılan sanal aygıt görüntüsüyle Android SDK öykünücüsü başlatılıyor](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
 
 3. İzlemesi **başlangıç Android öykünücüsü** öykünücü başlatılırken iletişim penceresi. HAXM yüklediyseniz iletisini görür **HAX çalıştığından ve öykünücüsü hızlı Sanal Küp Str modunda çalıştırır** bu ekran görüntüsünde gösterildiği gibi:
 
@@ -147,7 +145,7 @@ Windows 10'olmadığını görmek için aşağıdaki adımları kullanın. **Dev
 
 2. İçinde **Sistem Özeti**, olmadığını görmek için Görünüm **cihaz koruyucusu sanallaştırma tabanlı güvenlik** bulunduğundan ve yer **çalıştıran** durumu:
 
-   [![Cihaz koruyucusu mevcut ve çalışıyor](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png)
+   [![Cihaz koruyucusu mevcut ve çalışıyor](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png#lightbox)
 
 Cihaz koruyucusu etkinse, devre dışı bırakmak için aşağıdaki adımları kullanın:
 
@@ -157,7 +155,7 @@ Cihaz koruyucusu etkinse, devre dışı bırakmak için aşağıdaki adımları 
 
 3. İçinde **yerel Grup İlkesi Düzenleyicisi**, gitmek **bilgisayar yapılandırması > Yönetim Şablonları > Sistem > Device Guard**:
 
-   [![Cihaz koruyucusu yerel Grup İlkesi Düzenleyicisi'nde](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png)
+   [![Cihaz koruyucusu yerel Grup İlkesi Düzenleyicisi'nde](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png#lightbox)
 
 4. Değişiklik **kapatma üzerinde sanallaştırma tabanlı güvenlik** için **devre dışı** (yukarıda gösterildiği gibi) ve çıkış **yerel Grup İlkesi Düzenleyicisi'ni**.
 
@@ -190,6 +188,6 @@ Hyper-V hala devre dışı değil ise, etki alanına katılmış bilgisayarını
 
 2. HAXM yükleyiciyi çalıştırın. Yükleyici iletişim kutularını varsayılan değerleri kabul edin:
 
-   [![Intel donanım hızlandırılmış yürütme Yöneticisi Kurulum penceresi](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png)
+   [![Intel donanım hızlandırılmış yürütme Yöneticisi Kurulum penceresi](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png#lightbox)
 
 -----

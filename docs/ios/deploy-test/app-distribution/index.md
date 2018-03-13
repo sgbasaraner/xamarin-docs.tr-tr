@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: eec352264d918730e68a925f2a1e3796d9125c88
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4be12c5530f59dc027672d8db72b966711a531d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-distribution-overview"></a>Uygulama dağıtım genel bakış
 
@@ -21,7 +21,7 @@ _Bu belge Xamarin.iOS uygulamaları için kullanılabilir dağıtım teknikleri 
 Bir Xamarin.iOS uygulaması geliştirmiştir sonra yazılım geliştirme yaşam döngüsü sonraki adımda, kullanıcılara uygulama dağıtmak için aşağıdaki çizimde vurgulanan bölümünde gösterilen aynıdır:
 
 
-[![](images/publishingdiagram.png "İOS uygulaması geliştirmiştir sonra sonraki adım, kullanıcılara uygulama dağıtmak için bu diyagrama vurgulanan bölümünde gösterildiği gibi olur")](images/publishingdiagram.png)
+[![](images/publishingdiagram.png "İOS uygulaması geliştirmiştir sonra sonraki adım, kullanıcılara uygulama dağıtmak için bu diyagrama vurgulanan bölümünde gösterildiği gibi olur")](images/publishingdiagram.png#lightbox)
 
 
 Apple Xamarin.iOS tarafından desteklenmeyen bir iOS uygulamasını dağıtmak için aşağıdaki yöntemleri sağlar:
@@ -31,6 +31,8 @@ Apple Xamarin.iOS tarafından desteklenmeyen bir iOS uygulamasını dağıtmak i
 2. [**Ad Hoc**](#Ad_Hoc_Distribution)
 
 Bu senaryolar uygulamaları olmasını gerektirir uygun kullanılarak sağlanan *sağlama profili*. Sağlama profilleri kod imzalama uygulama ve hedeflenen dağıtım mekanizması kimliğini yanı sıra bilgiler içeren dosyalardır. Uygulama mağazası dağıtım için bunlar Ayrıca uygulama dağıtılabilir hangi aygıtlar hakkında bilgiler içerir.
+
+<a name="App_Store_Distribution"/>
 
 ## <a name="app-store-distribution"></a>Uygulama mağazası dağıtım
 
@@ -42,12 +44,15 @@ Yalnızca dikkate almak önemlidir ait geliştiriciler **Apple Developer Program
 
 Daha fazla bilgi için lütfen ziyaret [App Store dağıtım](~/ios/deploy-test/app-distribution/app-store-distribution/index.md) Kılavuzu.
 
+<a name="In-House_Distribution"/>
+
 ## <a name="in-house-distribution"></a>Şirket içi dağıtım
 
 Adlandırılan *kurumsal dağıtım*, şirket içi dağıtım verir üyeleri **Apple Geliştirici Kurumsal programı** dahili olarak diğer üyeleriyle aynı kuruluş uygulamaları dağıtmak için. Şirket içi dağıtım değil App Store gözden geçirme gerektiren ve sınır uygulamanın yüklenebileceği cihaz sayısına sahip avantajları vardır. Ancak, dikkat edilecek önemli **Apple Geliştirici Kurumsal programı** musunuz **değil** iTunes Bağlan erişimi vardır ve bu nedenle edinmediyseniz uygulama dağıtmaktan sorumludur.
 
 Kurulum ve şirket içinde bir uygulama dağıtmak nasıl alma ile ilgili daha fazla bilgi için lütfen başvurmak [şirket içi Dağıtım Kılavuzu'na](~/ios/deploy-test/app-distribution/in-house-distribution.md).
 
+<a name="Ad_Hoc_Distribution"/>
 
 ## <a name="ad-hoc-distribution"></a>Geçici dağıtım
 
@@ -61,11 +66,11 @@ Bu makalede, Xamarin.iOS uygulamaları için kullanılabilir dağıtım mekanizm
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Uygulama mağazası dağıtım](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [App Store Dağıtımı](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
 - [Uygulama iTunes Connect yapılandırma](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [Uygulama mağazası yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [App Store’da Yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Şirket içi dağıtım](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [Geçici dağıtım](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
-- [İTunesMetadata.plist dosyası](~/ios/deploy-test/app-distribution/itunesmetadata.md)
-- [IPA desteği](~/ios/deploy-test/app-distribution/ipa-support.md)
+- [Geçici Dağıtım](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [iTunesMetadata.plist Dosyası](~/ios/deploy-test/app-distribution/itunesmetadata.md)
+- [IPA Desteği](~/ios/deploy-test/app-distribution/ipa-support.md)
 - [Sorun giderme](~/ios/deploy-test/troubleshooting.md)

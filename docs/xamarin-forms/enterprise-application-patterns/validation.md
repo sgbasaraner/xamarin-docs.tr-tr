@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 5a5072d7f07fa7e426a14d3ac841e775d872acff
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cb87593b63e28c01beacdea479cc9d6ec4aceb9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="validation"></a>Doğrulama
 
@@ -19,7 +19,7 @@ Kullanıcı girişi kabul eden herhangi bir uygulama girişi geçerli olduğunda
 
 Bağlamında, Model ViewModel modeli (MVVM) deseni, bir görünüm modeli veya model genellikle veri doğrulaması yapmak ve böylece kullanıcı düzeltmenize görüntülemek için herhangi bir doğrulama hatası sinyal gerekecektir. EShopOnContainers mobil uygulama görünüm modeli özelliklerinin eşzamanlı istemci tarafı doğrulama gerçekleştirir ve tüm doğrulama hatalarını kullanıcı geçersiz veri içeren denetimi vurgulama ve kullanıcıyı bilgilendirmek hata iletilerini göstererek bildirir neden verileri geçersiz. Şekil 6-1 sınıfları eShopOnContainers mobil uygulamaya doğrulama gerçekleştirme katılan gösterir.
 
-[![](validation-images/validation.png "EShopOnContainers mobil uygulama doğrulama sınıflarda")](validation-images/validation-large.png "eShopOnContainers mobil uygulamadaki doğrulama sınıfları")
+[![](validation-images/validation.png "EShopOnContainers mobil uygulama doğrulama sınıflarda")](validation-images/validation-large.png#lightbox "eShopOnContainers mobil uygulamadaki doğrulama sınıfları")
 
 **Şekil 6-1**: eShopOnContainers mobil uygulamadaki doğrulama sınıfları
 

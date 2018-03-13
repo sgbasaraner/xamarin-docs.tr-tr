@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d37c2c9dbb12668680b5813e9e083d2ebb184c66
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-transport-controls"></a>Özel görüntü Aktarım denetimleri
 
@@ -646,11 +646,11 @@ namespace VideoPlayerDemos
 
 Çünkü `AutoPlay` ayarlanır `false` içinde **CustomTransport.xaml** dosyası basın gerekir **Yürüt** düğmesini video başlamak için etkin hale gelir. Yukarıda açıklanan Unicode karakterler metin eşdeğerlerine tarafından yayımlanır böylece düğmeleri tanımlanır. Video yürütürken düğmelerin her platformda tutarlı bir görünüm vardır:
 
-[![Özel taşıma çalma](custom-transport-images/customtransportplaying-small.png "özel taşıma çalma")](custom-transport-images/customtransportplaying-large.png "özel taşıma çalma")
+[![Özel taşıma çalma](custom-transport-images/customtransportplaying-small.png "özel taşıma çalma")](custom-transport-images/customtransportplaying-large.png#lightbox "özel taşıma çalma")
 
 Ancak Android ve UWP, **Yürüt** video duraklatıldığında düğmesi çok farklı arar:
 
-[![Özel taşıma duraklatıldı](custom-transport-images/customtransportpaused-small.png "özel taşıma duraklatıldı")](custom-transport-images/customtransportpaused-large.png "özel taşıma duraklatıldı")
+[![Özel taşıma duraklatıldı](custom-transport-images/customtransportpaused-small.png "özel taşıma duraklatıldı")](custom-transport-images/customtransportpaused-large.png#lightbox "özel taşıma duraklatıldı")
 
 Bir üretim uygulamasında, büyük olasılıkla visual bütünlüğünü sağlamak için kendi bit eşlem görüntüleri düğmelerinin kullanmak istersiniz.
 

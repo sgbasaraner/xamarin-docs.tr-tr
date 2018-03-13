@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: eed12c84b9952ef5c3dd27847071f05392bc16c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dfbc976da109a3813b8d7abd85adafbc9bb94fa0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="deploying-to-the-app-store"></a>Uygulama deposuna dağıtma
 
@@ -63,12 +63,14 @@ Sağlama profilinde doğrulayabilirsiniz **proje seçenekleri** seçerek **Yapı
 
 ![](appstore-images/options-selectprofile-sml.png "Paket imzalama iOS iletişim")
 
+<a name="iTunes_Connect"/>
+
 ## <a name="itunes-connect"></a>iTunes Connect
 
 İzleyin [uygulama dağıtım genel bakış](~/ios/deploy-test/app-distribution/index.md), özellikle:
 
 - [Uygulama iTunes Connect yapılandırma](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [Uygulama mağazası yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [App Store’da Yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 
 Uygulama iTunes Bağlan yapılandırırken, ekran görüntüleri ve izleme simgesi eklemek unutmayın:
 
@@ -123,7 +125,7 @@ Xcode otomatik olarak Mac için Visual Studio'da oluşturulan arşivler gösteri
 
 5. İTunes yeniden karşıya yüklenen ikili görmek için Bağlan'ı ziyaret edin. Uygulamanızın yapılandırma sayfasına gidin ve seçin **yayın öncesi** görmek için üstteki menüden **derlemeler** listesi:
 
-  [ ![](appstore-images/itc-prerelease-sml.png "Uygulamaları yapılandırma sayfasında iTunes Bağlan")](appstore-images/itc-prerelease.png)
+  [![](appstore-images/itc-prerelease-sml.png "Uygulamaları yapılandırma sayfasında iTunes Bağlan")](appstore-images/itc-prerelease.png#lightbox)
 
 Üzerinde uygulama onay sonra gönderebilirsiniz **sürümleri** sayfası. Başvurmak [iOS uygulama dağıtım genel bakış](~/ios/deploy-test/app-distribution/index.md) daha fazla bilgi için.
 

@@ -7,22 +7,21 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: a8de515563d9b9e38f049fd92c94b95e75239eb2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 44ebc8098250da26762538cddf5a89ffac709d8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="a-basic-recyclerview-example"></a>Temel bir RecyclerView örneği
 
 
 Anlamak için nasıl `RecyclerView` bir genel uygulama çalışır, bu konuda ele [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) örnek uygulaması, kullanan basit bir kod örneğidir `RecyclerView` fotoğraf büyük koleksiyonu görüntülemek için: 
 
-[ ![Fotoğraf görüntülenecek CardViews kullanan RecyclerView uygulamasının iki ekran görüntüleri](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png)
+[![Fotoğraf görüntülenecek CardViews kullanan RecyclerView uygulamasının iki ekran görüntüleri](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
 
 **RecyclerViewer** kullanan [kart görünümü](~/android/user-interface/controls/card-view.md) her fotoğraf öğesini uygulamak için `RecyclerView` düzeni. Nedeniyle `RecyclerView`'s performans avantajı, bu örnek uygulama hızla kaydırın ve belirgin gecikmeler olmadan büyük bir fotoğraf toplulukta mümkün.
 
-<a name="datasource" />
 
 ### <a name="an-example-data-source"></a>Bir örnek veri kaynağı
 
@@ -48,7 +47,6 @@ mPhotoAlbum.RandomSwap ();
 
 Çünkü uygulama ayrıntılarını `PhotoAlbum` anlamak için ilgili olmayan `RecyclerView`, `PhotoAlbum` kaynak kodu değil sunulur burada. Kaynak koduna `PhotoAlbum` şu adresten edinilebilir [PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs) içinde [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) örnek uygulama.
 
-<a name="preliminaries" />
 
 ### <a name="layout-and-initialization"></a>Düzen ve başlatma
 
@@ -128,7 +126,7 @@ Yerine predefind `LinearLayoutManager`, iki görüntüleyen bir özel düzen Yö
 
 Görünüm tutucu sınıfı adlı `PhotoViewHolder`. Her `PhotoViewHolder` örneğini tutan başvurular `ImageView` ve `TextView` içinde düzenlendiği ilgili satır öğenin bir `CardView` burada tasarımını olarak:
 
-[ ![Bir ImageView ve kutusu TextView içeren kart görünümü diyagramı](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png)
+[![Bir ImageView ve kutusu TextView içeren kart görünümü diyagramı](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
 
 `PhotoViewHolder` türetilen `RecyclerView.ViewHolder` ve başvurularını depolamak için Özellikler içeren `ImageView` ve `TextView` yukarıdaki düzende gösterilir.
 `PhotoViewHolder` iki özellikleri ve bir oluşturucu oluşur:
@@ -181,7 +179,6 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 İçindeki öğeleri konumlandırma sırasında düzen Yöneticisi bu yöntemleri çağırır `RecyclerView`. Aşağıdaki bölümlerde bu yöntemleri uyarlamasını incelenir.
 
-<a name="oncreateviewholder" />
 
 #### <a name="oncreateviewholder"></a>OnCreateViewHolder
 
@@ -245,7 +242,6 @@ public override RecyclerView.ViewHolder
 
 Elde edilen görünüm sahibi örnek `vh`, geri çağıran (Düzen Yöneticisi) döndürülür.
 
-<a name="onbindviewholder" />
 
 #### <a name="onbindviewholder"></a>OnBindViewHolder
 
@@ -270,7 +266,6 @@ Görüntü kaynağı bağdaştırıcısı görünüm sahibinin tarafından başv
 
 Dikkat `OnBindViewHolder` doğrudan veri yapısı ile ilgilenir kodudur. Bu durumda, `OnBindViewHolder` nasıl eşleneceğini anlar `RecyclerView` öğesi kendi ilişkili veri öğesi bir konuma veri kaynağındaki. Eşleme bu durumda, çünkü konumu bir dizi dizini fotoğraf albümü kullanılabilir açıktır; Ancak, daha karmaşık veri kaynakları gibi bir eşleme oluşturmak için ek kod gerektirebilir.
 
-<a name="itemcount" />
 
 #### <a name="itemcount"></a>ItemCount
 
@@ -285,7 +280,6 @@ public override int ItemCount
 
 Hakkında daha fazla bilgi için `RecyclerView.Adapter`, bkz: [RecyclerView.Adapter sınıf başvurusu](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html).
 
-<a name="together" />
 
 ### <a name="putting-it-all-together"></a>Hepsini birleştirme
 
@@ -372,11 +366,10 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 Bu kod derlenmiş ve çalıştırmak, aşağıdaki ekran görüntülerinde gösterildiği gibi uygulama görüntüleme temel fotoğraf oluşturur:
 
-[ ![Fotoğraf dikey fotoğraf kartları kaydırma ile uygulama görüntüleme iki ekran görüntüleri](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png)
+[![Fotoğraf dikey fotoğraf kartları kaydırma ile uygulama görüntüleme iki ekran görüntüleri](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
 Temel bu uygulama yalnızca Fotoğraf albümü gözatma destekler. Öğe dokunma olayları için yanıt vermez veya temel alınan verilerde yapılan değişiklikler işlemiyor. Bu işlev eklenir [RecyclerView örnek genişletme](~/android/user-interface/layouts/recycler-view/extending-the-example.md).
 
-<a name="layoutmanagerchange" />
 
 ### <a name="changing-the-layoutmanager"></a>LayoutManager değiştirme
 
@@ -388,7 +381,7 @@ mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, fa
 
 Bu kod değişikliği dikey değiştirir `LinearLayoutManager` ile bir `GridLayoutManager` yatay yönde kaydırma iki satır oluşan bir kılavuz sunar. Derleme ve uygulamayı yeniden çalıştırın, fotoğraflar kılavuzda görüntülenir ve kaydırma yatay yerine dikey olduğunu görürsünüz:
 
-[ ![Yatay kaydırma fotoğraf kılavuzda uygulamayla örnek ekran görüntüsü](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png)
+[![Yatay kaydırma fotoğraf kılavuzda uygulamayla örnek ekran görüntüsü](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
 Yalnızca bir kod satırı değiştirerek olan farklı bir düzen farklı davranışlar ile kullanmak için fotoğraf görüntüleme uygulamayı değiştirmek mümkündür.
 Düzen stilini değiştirmek için değiştirilmesi süredir bağdaştırıcısı kod ne XML düzeni olduğunu dikkat edin. 

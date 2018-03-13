@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3a7d89d9b0f383d365b18364e5d902ee0642f395
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c28ddc09b07066de67f5c974cf5c2128726c6932
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Azure Active Directory B2C Azure mobil uygulamaları ile tümleştirme
 
@@ -21,7 +21,7 @@ _Azure Active Directory B2C bir tüketiciye yönelik web ve mobil uygulamaları 
 ![](~/media/shared/preview.png "Bu API şu anda yayın öncesi")
 
 > [!NOTE]
-> **Not**: [Microsoft kimlik doğrulama Kitaplığı](https://www.nuget.org/packages/Microsoft.Identity.Client) hala önizlemede değil, ancak bir üretim ortamında kullanım için uygundur. Ancak, var. API, dahili önbellek biçimini ve uygulamanızı etkileyebilir kitaplığın başka mekanizmalar önemli değişiklikler.
+> [Microsoft kimlik doğrulama Kitaplığı](https://www.nuget.org/packages/Microsoft.Identity.Client) hala önizlemede değil, ancak bir üretim ortamında kullanım için uygundur. Ancak, var. API, dahili önbellek biçimini ve uygulamanızı etkileyebilir kitaplığın başka mekanizmalar önemli değişiklikler.
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -72,7 +72,7 @@ Yönetilen istemci kimlik doğrulaması için bir iş akışı, Azure Active Dir
 
 Aşağıdaki ekran görüntüsünde, bu yapılandırma gösterilmektedir:
 
-[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Azure Active Directory B2C Yapılandırması")](azure-ad-b2c-mobile-app-images/client-flow-config.png "Azure Active Directory B2C yapılandırması")
+[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Azure Active Directory B2C Yapılandırması")](azure-ad-b2c-mobile-app-images/client-flow-config.png#lightbox "Azure Active Directory B2C yapılandırması")
 
 Azure Active Directory Kiracı, ayrıca aynı özel URL şemasının için yanıt URL'si oluşturmak yapılandırılmalıdır B2C kullanılan ilkeyi ve ardından `://auth/`. Aşağıdaki ekran görüntüsünde, bu yapılandırma gösterilmektedir:
 
@@ -158,7 +158,7 @@ Yönetilen sunucu kimlik doğrulaması için bir iş akışı, Azure Active Dire
 
 Aşağıdaki ekran görüntüsünde, bu yapılandırma gösterilmektedir:
 
-[![](azure-ad-b2c-mobile-app-images/server-flow-config-sml.png "Azure Active Directory B2C Yapılandırması")](azure-ad-b2c-mobile-app-images/server-flow-config.png "Azure Active Directory B2C yapılandırması")
+[![](azure-ad-b2c-mobile-app-images/server-flow-config-sml.png "Azure Active Directory B2C Yapılandırması")](azure-ad-b2c-mobile-app-images/server-flow-config.png#lightbox "Azure Active Directory B2C yapılandırması")
 
 Azure Active Directory Kiracı, ayrıca Azure mobil uygulaması adresine yanıt URL'si oluşturmak yapılandırılmalıdır B2C kullanılan ilkeyi ve ardından `/.auth/login/aad/callback`. Aşağıdaki ekran görüntüsünde, bu yapılandırma gösterilmektedir:
 

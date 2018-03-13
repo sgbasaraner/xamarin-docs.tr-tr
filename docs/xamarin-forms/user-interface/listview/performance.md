@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 2acaef5fd42b867e88fb9b81d401ea752480124a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 81d4aec3153a4cb7bbb0f3577c5a67acd430f279
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-performance"></a>ListView performansı
 
@@ -45,7 +45,7 @@ public enum ListViewCachingStrategy
 ```
 
 > [!NOTE]
-> **Not**: Evrensel Windows Platformu (UWP) yoksayar [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) her zaman önbelleğe alma performansını artırmak için kullandığı için stratejisi, önbelleğe alma. Bu nedenle, varsayılan olarak davranır gibi [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) stratejisi önbelleğe alma uygulanır.
+> Evrensel Windows Platformu (UWP) yoksayar [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) her zaman önbelleğe alma performansını artırmak için kullandığı için stratejisi, önbelleğe alma. Bu nedenle, varsayılan olarak davranır gibi [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) stratejisi önbelleğe alma uygulanır.
 
 ### <a name="retainelement"></a>RetainElement
 
@@ -101,14 +101,14 @@ Daha fazla bilgi için bkz: [bağlama bağlam değişiklikleri](~/xamarin-forms/
 Zaman bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kullanan bir [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) seçmek için bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) önbelleğe alma stratejisi önbelleğe almaz `DataTemplate`s. Bunun yerine, bir `DataTemplate` veri listesindeki her bir öğe için seçilir.
 
 > [!NOTE]
-> **Not**: [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) stratejisi önbelleğe alma, bir önkoşul olan Xamarin.Forms 2.4 içinde sunulan olduğunda bir [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) seçmek için sorulan bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) , her `DataTemplate` aynı döndürmelidir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) türü. Örneğin, bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ile bir `DataTemplateSelector` , dönebilirsiniz ya da `MyDataTemplateA` (burada `MyDataTemplateA` döndürür bir `ViewCell` türü `MyViewCellA`), veya `MyDataTemplateB` (burada `MyDataTemplateB`döndüren bir `ViewCell` türü `MyViewCellB`), `MyDataTemplateA` döndürmelidir döndürülen `MyViewCellA` veya bir özel durum.
+> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) Stratejisi önbelleğe alma, bir önkoşul olan Xamarin.Forms 2.4 içinde sunulan olduğunda bir [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) seçmek için sorulan bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), her `DataTemplate` aynı döndürmelidir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) türü. Örneğin, bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ile bir `DataTemplateSelector` , dönebilirsiniz ya da `MyDataTemplateA` (burada `MyDataTemplateA` döndürür bir `ViewCell` türü `MyViewCellA`), veya `MyDataTemplateB` (burada `MyDataTemplateB`döndüren bir `ViewCell` türü `MyViewCellB`), `MyDataTemplateA` döndürmelidir döndürülen `MyViewCellA` veya bir özel durum.
 
 ### <a name="recycleelementanddatatemplate"></a>RecycleElementAndDataTemplate
 
 [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) Stratejisi önbelleğe alma derlemeler [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) olduğunda daha fazla sağlayarak stratejisi önbelleğe alma bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) bir kullanır[ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) seçmek için bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), `DataTemplate`s önbelleğe listedeki bir öğe türüne göre. Bu nedenle, `DataTemplate`s seçilmiş bir kez başına öğesi örneği başına bir kez yerine öğesi türü.
 
 > [!NOTE]
-> **Not**: [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) sahip bir önkoşul stratejisi önbelleğe alma, `DataTemplate`tarafından döndürülen s [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) kullanmalısınız [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) alan oluşturucu bir `Type`.
+> [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) Sahip bir önkoşul stratejisi önbelleğe alma, `DataTemplate`tarafından döndürülen s [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) kullanmalısınız [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) alan oluşturucu bir `Type`.
 
 ### <a name="setting-the-caching-strategy"></a>Önbelleğe alma stratejisi ayarlama
 

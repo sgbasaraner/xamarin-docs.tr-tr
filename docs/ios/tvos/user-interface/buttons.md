@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 05a162dab3b427ec345f22818b6c6d9df82c498b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4b2a470d7fe2a1f9d4b8df40836c934547adf614
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-buttons"></a>Düğmeleri ile çalışma
 
@@ -21,7 +21,7 @@ _Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde düğmeleri ile çalış
 
 Bir örneğini kullanması `UIButton` tvOS penceresinde odaklanabilir, seçilebilir düğme oluşturmak için sınıfı. Kullanıcı bir düğmesini seçtiğinde, hedef nesnesi için bir eylem iletisi gönderir, Xamarin.tvOS uygulama yanıt kullanıcı girdisini izin verin.
 
-[ ![](buttons-images/buttons01.png "Örnek düğmeleri")](buttons-images/buttons01.png)
+[![](buttons-images/buttons01.png "Örnek düğmeleri")](buttons-images/buttons01.png#lightbox)
 
 Odak ile çalışma ve Siri uzaktan ile gezinme hakkında daha fazla bilgi için lütfen bkz bizim [gezinti ve odak çalışma](~/ios/tvos/app-fundamentals/navigation-focus.md) ve [Siri uzak ve Bluetooth denetleyicileri](~/ios/tvos/platform/remote-bluetooth.md) belgeleri.
 
@@ -31,7 +31,7 @@ Odak ile çalışma ve Siri uzaktan ile gezinme hakkında daha fazla bilgi için
 
 TvOS, düğmeleri uygulamaya özgü eylemler için kullanılır ve bir başlık, bir simge veya her ikisini de içerebilir. Uygulamanın kullanıcı arabirimini kullanarak kullanıcı gider gibi [Siri uzaktan](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote), odak, metin ve arka plan renklerini değiştirme kolaylaştırarak verilen düğmesi geçer. Gölge de kullanıcı arabirimi rest artmaya görünür kolaylaştırarak bir 3B efekti ekleme düğmesi uygulanır.
 
-[ ![](buttons-images/buttons01.png "Örnek düğmeleri")](buttons-images/buttons01.png)
+[![](buttons-images/buttons01.png "Örnek düğmeleri")](buttons-images/buttons01.png#lightbox)
 
 Apple düğmeleri ile çalışmak için aşağıdaki önerileri vardır:
 
@@ -70,19 +70,19 @@ Xamarin.tvOS uygulama düğmelerini çalışmak için en kolay yolu bunları iOS
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **düğmesini** gelen **Kitaplığı** ve görünümünde bırak: 
 
-    [ ![](buttons-images/storyboard01.png "Bir düğme")](buttons-images/storyboard01.png)
+    [![](buttons-images/storyboard01.png "Bir düğme")](buttons-images/storyboard01.png#lightbox)
 1. İçinde **özellikleri Explorer**, gibi çeşitli özellikleri düğmesinin ayarlayın, **başlık** ve **metin rengi**: 
 
-    [ ![](buttons-images/storyboard02.png "Düğme Özellikleri")](buttons-images/storyboard02.png)
+    [![](buttons-images/storyboard02.png "Düğme Özellikleri")](buttons-images/storyboard02.png#lightbox)
 1. Ardından, geçiş **olaylar sekmesi** ve kablo yukarı bir **olay** gelen **düğmesini** ve çağrısından `ButtonPressed`: 
 
-    [ ![](buttons-images/storyboard03.png "Olaylar sekmesi")](buttons-images/storyboard03.png)
+    [![](buttons-images/storyboard03.png "Olaylar sekmesi")](buttons-images/storyboard03.png#lightbox)
 1. Sizin için otomatik olarak bırakılacak `ViewController.cs` burada yerleştirebileceğiniz yeni eylemi kullanarak kod görünümü **yukarı** ve **aşağı** ok tuşları: 
 
-    [ ![](buttons-images/storyboard04.png "Yeni bir eylem kodda yerleştirme")](buttons-images/storyboard04.png)
+    [![](buttons-images/storyboard04.png "Yeni bir eylem kodda yerleştirme")](buttons-images/storyboard04.png#lightbox)
 1. Tuşuna **Enter** konumu seçmek için: 
 
-    [ ![](buttons-images/storyboard05.png "Kod Düzenleyicisi")](buttons-images/storyboard05.png)
+    [![](buttons-images/storyboard05.png "Kod Düzenleyicisi")](buttons-images/storyboard05.png#lightbox)
 1. Tüm dosyalara değişiklikleri kaydedin.
 
 
@@ -91,13 +91,13 @@ Xamarin.tvOS uygulama düğmelerini çalışmak için en kolay yolu bunları iOS
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **düğmesini** gelen **Kitaplığı** ve görünümünde bırak: 
 
-    [ ![](buttons-images/storyboard01vs.png "Bir düğme")](buttons-images/storyboard01vs.png)
+    [![](buttons-images/storyboard01vs.png "Bir düğme")](buttons-images/storyboard01vs.png#lightbox)
 1. İçinde **özellikleri Explorer**, gibi çeşitli özellikleri düğmesinin ayarlayın, **başlık** ve **metin rengi**: 
 
-    [ ![](buttons-images/storyboard02vs.png "Özellikler Gezgini")](buttons-images/storyboard02vs.png)
+    [![](buttons-images/storyboard02vs.png "Özellikler Gezgini")](buttons-images/storyboard02vs.png#lightbox)
 1. Ardından, geçiş **olaylar sekmesi** ve kablo yukarı bir **olay** gelen **düğmesini** ve çağrısından `ButtonPressed`: 
 
-    [ ![](buttons-images/storyboard03vs.png "Olaylar sekmesi")](buttons-images/storyboard03vs.png)
+    [![](buttons-images/storyboard03vs.png "Olaylar sekmesi")](buttons-images/storyboard03vs.png#lightbox)
 1. Tüm dosyalara değişiklikleri kaydedin.
 
 
@@ -270,7 +270,7 @@ Bu makalede, tasarlama ve Xamarin.tvOS uygulama içinde düğmeleri ile çalış
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

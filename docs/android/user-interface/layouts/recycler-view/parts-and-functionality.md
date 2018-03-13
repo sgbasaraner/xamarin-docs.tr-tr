@@ -6,12 +6,12 @@ ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b1ddcca25fd83a806e8383a5717462b518b46d0b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 89679f7d825422ab34dd77b31a7a3fde60f36e99
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView bölümleri ve İşlevler
 
@@ -57,7 +57,7 @@ Değil genişlettiğinizde `ItemDecoration` ve `ItemAnimator`, `RecyclerView` va
 
 `RecyclerView` veri kaynağındaki her öğe için bir öğe görünümü bırakmaz. Bunun yerine, yalnızca ekranda sığacak madde görünüm sayısını ayırır ve bu öğe düzenleri kullanıcı kayarken olarak yeniden kullanır. Görünüm ilk görüş dışına kaydırdığında aşağıdaki şekilde gösterilen geri dönüştürme süreci başlatılır:
 
-[ ![Görünüm geri dönüştürme altı adım gösteren diyagram](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png)
+[![Görünüm geri dönüştürme altı adım gösteren diyagram](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
 
 1.  Bir görünüm kayar dışında görüş ve artık görüntülenir, bu duruma bir *hurda Görünüm*.
 
@@ -75,7 +75,6 @@ Değil genişlettiğinizde `ItemDecoration` ve `ItemAnimator`, `RecyclerView` va
 Öğe görünümü yeniden yanı sıra `RecyclerView` de başka bir verimlilik iyileştirme kullanır: sahiplerini görüntüleyin. A *görünüm sahibi* önbellekleri başvurularla basit bir sınıf. Bağdaştırıcı bir madde düzeni dosyası Şişir her zaman karşılık gelen bir görünüm sahibi da oluşturur. Görünüm sahibi kullanan `FindViewById` içinde inflated öğesi düzenini dosya görünümleri başvurularını almak için. Bu başvuruların yeni verileri göstermek için Düzen dönüştürülmeden her zaman yeni verileri görünümlere yüklemek için kullanılır.
  
 
-<a name="layoutmanager" />
 
 ### <a name="the-layout-manager"></a>Düzen Yöneticisi
 
@@ -96,7 +95,6 @@ Düzen Yöneticisi belirtmek için seçilen Düzen Yöneticisi örneği ve ona g
 
 Düzen Yöneticisi hakkında daha fazla bilgi için bkz: [RecyclerView.LayoutManager sınıf başvurusu](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html).
 
-<a name="viewholder" />
 
 ### <a name="the-view-holder"></a>Görünüm sahibi
 
@@ -109,7 +107,6 @@ Görünüm sahibi görünüm başvurularını önbelleğe almak için tanımlaya
 Ayrıntılı bir örnek olarak bir `ViewHolder` uygulama sunulur [A temel RecyclerView örnek](~/android/user-interface/layouts/recycler-view/recyclerview-example.md).
 Hakkında daha fazla bilgi için `RecyclerView.ViewHolder`, bkz: [RecyclerView.ViewHolder sınıf başvurusu](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
 
-<a name="adapter" />
 
 ### <a name="the-adapter"></a>Bağdaştırıcı
 
@@ -118,7 +115,7 @@ Veri kaynağı uygulamaya özgü olduğundan, verilerinize erişmek nasıl anlar
 
 Aşağıdaki çizim nasıl bağdaştırıcı bir veri kaynağı görünümü sahiplerini aracılığıyla içeriği tek bir görünüm içindeki her satır öğesinin eşlendiği gösterilmektedir `RecyclerView`:
 
-[ ![ViewHolders için veri kaynağına bağlanma bağdaştırıcısı gösteren diyagram](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png)
+[![ViewHolders için veri kaynağına bağlanma bağdaştırıcısı gösteren diyagram](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
 
 Her bağdaştırıcı yükler `RecyclerView` belirli bir satır öğesi için veri satırı. Satır konumu için *P*, örneğin, bağdaştırıcı konumunda ilişkili verileri bulur *P* kopyalar ve veri kaynağı içinde satır bu veri öğesi konumunda *P* içinde `RecyclerView` koleksiyonu.
 Yukarıdaki çizimde, örneğin, bağdaştırıcı görünüm sahibi başvurularını aramak için kullanan `ImageView` ve `TextView` tekrar tekrar çağırmak yok şekilde bu konumda `FindViewById` bu görünümler kullanıcı için toplulukta birlikte kayar ve görünümleri yeniden kullanır.
@@ -134,7 +131,6 @@ Bir bağdaştırıcı uyguladığınızda, aşağıdaki geçersiz kılmanız ger
 İçindeki öğeleri konumlandırma sırasında düzen Yöneticisi bu yöntemleri çağırır `RecyclerView`. 
 
 
-<a name="datachanges" />
 
 ### <a name="notifying-recyclerview-of-data-changes"></a>Veri değişikliklerinin RecyclerView bildirme
 

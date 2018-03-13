@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2b16fd970e724228215fd0dd1c9022227ab84435
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c40e9291e81770435535de7b0c83d6c865cbed58
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-stacked-view"></a>Yığılmış görünümü ile çalışma
 
@@ -23,7 +23,7 @@ Yığın Görünümü denetimi (`UIStackView`), dinamik içerik değişiklikleri
 
 Bir yığın görünüme bağlı tüm subviews düzenini eksen, dağıtım, hizalama ve aralığı gibi tanımlanmış Geliştirici özelliklerindeki göre tarafından yönetilir:
 
-[ ![](stacked-views-images/stacked01.png "Alt görünüm düzeni diyagramı")](stacked-views-images/stacked01.png)
+[![](stacked-views-images/stacked01.png "Alt görünüm düzeni diyagramı")](stacked-views-images/stacked01.png#lightbox)
 
 Kullanırken bir `UIStackView` Xamarin.tvOS uygulamada, geliştirici ya da iOS Tasarımcısı veya ekleme ve C# kodunda subviews kaldırarak film şeridi içinde subviews tanımlayabilirsiniz.
 
@@ -103,21 +103,21 @@ Xamarin.tvOS uygulamada yığın görünümlerle çalışma yapmanın en kolay y
 1. İçinde **çözüm paneli**, bağlantısındaki `Main.storyboard` dosya ve düzenlemek için açın.
 1. Yığın görünümüne eklemek için uygulayacağınız, ayrı ayrı öğeler düzenini tasarım: 
 
-    [ ![](stacked-views-images/layout01.png "Öğe düzeni örneği")](stacked-views-images/layout01.png)
+    [![](stacked-views-images/layout01.png "Öğe düzeni örneği")](stacked-views-images/layout01.png#lightbox)
 1. Gerekli kısıtlamalar doğru ölçeklendirme emin olmak için öğelerine ekleyin. Öğe için yığın görünümü eklendikten sonra bu önemli bir adımdır.
 1. Gerekli sayıda kopyasını (Bu durumda dört) olun: 
 
-    [ ![](stacked-views-images/layout02.png "Kopya gerekli sayısı")](stacked-views-images/layout02.png)
+    [![](stacked-views-images/layout02.png "Kopya gerekli sayısı")](stacked-views-images/layout02.png#lightbox)
 1. Sürükleme bir **yığın görünümü** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](stacked-views-images/layout03.png "Bir yığın görünümü")](stacked-views-images/layout03.png)
+    [![](stacked-views-images/layout03.png "Bir yığın görünümü")](stacked-views-images/layout03.png#lightbox)
 1. Yığın görünümü seçin **pencere öğesi sekmesini** , **özellikleri paneli** seçin **doldurun** için **hizalama**, **doldurun Eşit oranda** için **dağıtım** ve girin `25` için **aralığı**: 
 
-    [ ![](stacked-views-images/layout04.png "Pencere öğesi sekmesi")](stacked-views-images/layout04.png)
+    [![](stacked-views-images/layout04.png "Pencere öğesi sekmesi")](stacked-views-images/layout04.png#lightbox)
 1. Burada istediğiniz ve gerekli konumda kalmasını sağlamak için kısıtlamalar eklemek ekranında yığın görünümü getirin.
 1. Bireysel öğeleri seçin ve yığın görünüme sürükleyin: 
 
-    [ ![](stacked-views-images/layout05.png "Yığın görünümünde ayrı ayrı öğeler")](stacked-views-images/layout05.png)
+    [![](stacked-views-images/layout05.png "Yığın görünümünde ayrı ayrı öğeler")](stacked-views-images/layout05.png#lightbox)
 1. Düzen ayarlanacak ve öğeleri yukarıda belirlenen özniteliklerini temel alarak yığını görünümünde düzenlenir.
 1. Ata **adları** içinde **pencere öğesi sekmesini** , **özellikleri Explorer** UI denetimlerinizi C# kodunda çalışmak için.
 1. Değişikliklerinizi kaydedin.
@@ -127,21 +127,21 @@ Xamarin.tvOS uygulamada yığın görünümlerle çalışma yapmanın en kolay y
 1. İçinde **Çözüm Gezgini**, bağlantısındaki `Main.storyboard` dosya ve düzenlemek için açın.
 1. Yığın görünümüne eklemek için uygulayacağınız, ayrı ayrı öğeler düzenini tasarım: 
 
-    [ ![](stacked-views-images/layout01.png "Örnek öğesi düzeni")](stacked-views-images/layout01.png)
+    [![](stacked-views-images/layout01.png "Örnek öğesi düzeni")](stacked-views-images/layout01.png#lightbox)
 1. Gerekli kısıtlamalar doğru ölçeklendirme emin olmak için öğelerine ekleyin. Öğe için yığın görünümü eklendikten sonra bu önemli bir adımdır.
 1. Gerekli sayıda kopyasını (Bu durumda dört) olun: 
 
-    [ ![](stacked-views-images/layout02.png "Kopya gerekli sayısı")](stacked-views-images/layout02.png)
+    [![](stacked-views-images/layout02.png "Kopya gerekli sayısı")](stacked-views-images/layout02.png#lightbox)
 1. Sürükleme bir **yığın görünümü** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](stacked-views-images/layout03-vs.png "Bir yığın görünümü")](stacked-views-images/layout03-vs.png)
+    [![](stacked-views-images/layout03-vs.png "Bir yığın görünümü")](stacked-views-images/layout03-vs.png#lightbox)
 1. Yığın görünümü seçin **pencere öğesi sekmesini** , **özellikleri Explorer** seçin **doldurun** için **hizalama**, **doldurun Eşit oranda** için **dağıtım** ve girin `25` için **aralığı**: 
 
-    [ ![](stacked-views-images/layout04-vs.png "Pencere öğesi sekmesi")](stacked-views-images/layout04-vs.png)
+    [![](stacked-views-images/layout04-vs.png "Pencere öğesi sekmesi")](stacked-views-images/layout04-vs.png#lightbox)
 1. Burada istediğiniz ve gerekli konumda kalmasını sağlamak için kısıtlamalar eklemek ekranında yığın görünümü getirin.
 1. Bireysel öğeleri seçin ve yığın görünüme sürükleyin: 
 
-    [ ![](stacked-views-images/layout05-vs.png "Yığın görünümünde ayrı ayrı öğeler")](stacked-views-images/layout05-vs.png)
+    [![](stacked-views-images/layout05-vs.png "Yığın görünümünde ayrı ayrı öğeler")](stacked-views-images/layout05-vs.png#lightbox)
 1. Düzen ayarlanacak ve öğeleri yukarıda belirlenen özniteliklerini temel alarak yığını görünümünde düzenlenir.
 1. Ata **adları** içinde **pencere öğesi sekmesini** , **özellikleri Explorer** UI denetimlerinizi C# kodunda çalışmak için.
 1. Değişikliklerinizi kaydedin.
@@ -190,11 +190,11 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 Uygulamayı çalıştırdığınızda, dört öğeleri bizim yığını görünümünde eşit olarak dağıtılır:
 
-[ ![](stacked-views-images/layout06.png "Uygulamayı çalıştırdığınızda, dört öğeleri eşit bizim yığını görünümünde dağıtılır")](stacked-views-images/layout06.png)
+[![](stacked-views-images/layout06.png "Uygulamayı çalıştırdığınızda, dört öğeleri eşit bizim yığını görünümünde dağıtılır")](stacked-views-images/layout06.png#lightbox)
 
 Oynatıcıları sayısı azalır, kullanılmayan görünümleri gizlidir ve yığın görünümü uyacak şekilde düzenini ayarlama:
 
-[ ![](stacked-views-images/layout07.png "Oynatıcıları sayısı azalır, kullanılmayan görünümleri gizlidir ve yığın görünümü uyacak şekilde düzenini ayarlama")](stacked-views-images/layout07.png)
+[![](stacked-views-images/layout07.png "Oynatıcıları sayısı azalır, kullanılmayan görünümleri gizlidir ve yığın görünümü uyacak şekilde düzenini ayarlama")](stacked-views-images/layout07.png#lightbox)
 
 <a name="Populate-a-Stack-View-from-Code" />
 
@@ -317,7 +317,7 @@ Bu makalede, tasarlama ve Xamarin.tvOS uygulama içinde Yığılmış görünüm
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

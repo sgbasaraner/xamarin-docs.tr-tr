@@ -7,28 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 2f29851f9de410183c6f35d19486e7da8017566a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d3a39070e17729e99614e26e0a8892c6314512af
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-mobile-development"></a>Mobil Geliştirme giriş
 
-
 Mobil uygulamaları oluşturmak IDE'yi açma, bir şey birlikte atma, sınama ve bir uygulama mağazasının – tüm bir öğleden sonra yapılan gönderme hızlı bir bit yapılması kadar kolay olabilir. Veya ayrıntılı eylemli tasarım, kullanılabilirlik, cihazları, bir tam beta yaşam döngüsü ve ardından dağıtım binlerce üzerinde birkaç farklı yolla sınama QA sınamaları içerir son derece katılan bir işlem olabilir.
-
-Bu kılavuz bir Xamarin mobil uygulaması oluşturmanın kapsamlı bir giriş İnceleme olduğu da dahil olmak üzere:
-
-1.   [ **Xamarin giriş** ](#Introduction_to_Xamarin) – Xamarin platformun özelliklerin listesi.
-1.   [ **Nasıl yapılır Xamarin iş?**](#How_Does_Xamarin_Work) – Xamarin iOS ve Android için C# ' ı getirmek için nasıl çalıştığını kısa bir genel bakış.
-1.   [ **Başlayın!**](#Sample_App) – Daha yakından inceleyin ve iOS, Android veya Xamarin.Forms kullanarak tüm platformlar için bir Xamarin uygulaması oluşturma.
-
 
 Bu belge, Xamarin platform tanıtmak için tasarlanmıştır. Daha fazla bilgi edinmek için *işlem* tasarımından mobil uygulamaları test etme için derleme başvurmak [mobil yazılım geliştirme yaşam döngüsü giriş](~/cross-platform/get-started/introduction-to-mobile-sdlc.md) belge.
 
 Lütfen bizim [sistem gereksinimleri](~/cross-platform/get-started/requirements.md#mac) Xamarin yükleyemeyebilir onaylamak için.
-
 
 ## <a name="introduction-to-xamarin"></a>Xamarin giriş
 
@@ -111,5 +102,5 @@ Bu belgede yalnızca Xamarin platform anlatılmıştır. Yukarı ve çalışan i
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Merhaba, iOS](~/ios/get-started/hello-ios/index.md)
+- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Hello, Android](~/android/get-started/hello-android/index.md)

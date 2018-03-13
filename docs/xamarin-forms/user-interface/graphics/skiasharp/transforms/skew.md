@@ -4,14 +4,15 @@ description: "Eğme dönüştürmesi Eğimli grafik nesneleri SkiaSharp içinde 
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: b8bb4db49d3800d694724d6be8fe949b55060c21
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a18b60d486a911e4a76298fd20a70f16ac392881
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-skew-transform"></a>Eğme dönüştürmesi
 
@@ -69,7 +70,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Değerleri `xSkew` bağımsız değişkeni kaydırma metni sağa pozitif değerler veya negatif değerler için sol alt. Değerleri `ySkew` aşağı metnin sağına pozitif değerler veya negatif değerler için kaydır:
 
-[![](skew-images/skewexperiment-small.png "Üçlü sayfasının ekran görüntüsü eğme deneme")](skew-images/skewexperiment-large.png "Üçlü sayfasının ekran görüntüsü eğme deneme")
+[![](skew-images/skewexperiment-small.png "Üçlü sayfasının ekran görüntüsü eğme deneme")](skew-images/skewexperiment-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme deneme")
 
 Varsa `xSkew` , negatif olduğundan `ySkew`, sonuç döndürme olmakla birlikte, aynı zamanda biraz görüntü gösteren Windows ölçeklendirilmiş.
 
@@ -152,7 +153,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 Bir açının olumlu veya olumsuz 90 derece yaklaştığında tanjantını sonsuz yaklaşıyor, ancak yaklaşık 80 derece veya bunu kadar açıları kullanılabilir:
 
-[![](skew-images/skewangleexperiment-small.png "Üçlü sayfasının ekran görüntüsü eğme açı deneme")](skew-images/skewangleexperiment-large.png "Üçlü sayfasının ekran görüntüsü eğme açı deneme")
+[![](skew-images/skewangleexperiment-small.png "Üçlü sayfasının ekran görüntüsü eğme açı deneme")](skew-images/skewangleexperiment-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme açı deneme")
 
 Küçük negatif yatay eğme olarak eğik veya italik metin taklit **eğik metin** sayfası gösterilmektedir. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Sınıfı gösterir nasıl yapılır:
 
@@ -188,7 +189,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 `TextAlign` Özelliği `SKPaint` ayarlanır `Center`. Dönüşüm olmadan `DrawText` çağrısı ile koordinatları (0, 0) ve yatay ortada temelinin metinle sol üst köşede getirin. `SkewDegrees` Metnin yatay olarak 20 derece taban göre Eğer. `Translate` Çağrısı ve yatay ortada metnin temelinin Kanvasın ortasına taşır:
 
-[![](skew-images/obliquetext-small.png "Üçlü sayfasının ekran görüntüsü eğik metin")](skew-images/obliquetext-large.png "Üçlü sayfasının ekran görüntüsü eğik metin")
+[![](skew-images/obliquetext-small.png "Üçlü sayfasının ekran görüntüsü eğik metin")](skew-images/obliquetext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğik metin")
 
 **Eğme gölge metin** sayfa 45 derecelik eğme ve dikey ölçek bileşimi çıktığınızda metin eğimli bir metin gölgesinin yapmak için nasıl kullanılacağını gösterir. İlgili bölümü işte `PaintSurface` işleyici:
 
@@ -221,11 +222,11 @@ using (SKPaint textPaint = new SKPaint())
 
 Gölge görüntülenen ilk ve metin şöyledir:
 
-[![](skew-images/skewshadowtext1-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin")](skew-images/skewshadowtext1-large.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin")
+[![](skew-images/skewshadowtext1-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin")](skew-images/skewshadowtext1-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme gölge metin")
 
 Dikey koordinat geçirilen `DrawText` yöntemi metnin taban çizgisine göre konumunu belirtir. Eğriltme center için kullanılan aynı dikey koordinat olmasıdır. Metin dizesini harfin alt içeriyorsa bu yöntem çalışmaz. Örneğin, "" Gölge"ve burada geliştirilmesindeki" word DEVICEHIGH sonucu kullanıcının:
 
-[![](skew-images/skewshadowtext2-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin alternatif bir sözcükle harfin alt ile")](skew-images/skewshadowtext2-large.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin alternatif bir sözcükle harfin alt ile")
+[![](skew-images/skewshadowtext2-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin alternatif bir sözcükle harfin alt ile")](skew-images/skewshadowtext2-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme gölge metin alternatif bir sözcükle harfin alt ile")
 
 Temel metin ve gölge hala hizalanır ancak etkisi yalnızca yanlış görünüyor. Sorunu gidermek için Metin sınırları almanız gerekir:
 
@@ -245,7 +246,7 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 Şimdi gölge bu harfin alt alt kısmından genişletir:
 
-[![](skew-images/skewshadowtext3-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin harfin alt ayarlamalar ile")](skew-images/skewshadowtext3-large.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin harfin alt ayarlamalar ile")
+[![](skew-images/skewshadowtext3-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin harfin alt ayarlamalar ile")](skew-images/skewshadowtext3-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme gölge metin harfin alt ayarlamalar ile")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

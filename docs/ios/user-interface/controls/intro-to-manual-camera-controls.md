@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e5ff4e3732476415ff32e98b8281f3cb6e03e332
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7111c1716ef3a8869f8b2401a7653d9e9941977b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manual-camera-controls"></a>El ile kamera denetimleri
 
@@ -26,7 +26,7 @@ Bu denetimler de burada sonuçlar daha az doğruluk veya güzelliği görüntün
 
 Video veya hala bir iOS cihazında kamera kullanarak görüntüleri alma olsun, bu görüntüleri yakalamak için kullanılan büyük ölçüde aynı işlemidir. Bu varsayılan otomatik kamera denetimleri veya yeni el ile kamera denetimleri yararlanmak olanları kullanan uygulamaları geçerlidir:
 
- [ ![](intro-to-manual-camera-controls-images/image1.png "AVFoundation yakalama nesneleri genel bakış")](intro-to-manual-camera-controls-images/image1.png)
+ [![](intro-to-manual-camera-controls-images/image1.png "AVFoundation yakalama nesneleri genel bakış")](intro-to-manual-camera-controls-images/image1.png#lightbox)
 
 Giriş öğesinden alınır bir `AVCaptureDeviceInput` içine bir `AVCaptureSession` tarafından yolu, bir `AVCaptureConnection`. Sonuç sabit bir resim veya video akışı olarak ya da çıktı olur. Tüm süreci tarafından denetlenen bir `AVCaptureDevice`.
 
@@ -280,11 +280,11 @@ Odağı denetimlerin doğrudan olabilmesi son kullanıcı izin vererek, bir uygu
 
 Örneğin, profesyonel fotoğrafı çeken bir görüntüsünü elde etmek için odak yumuşatma bir [Bokeh etkisi](http://en.wikipedia.org/wiki/Bokeh):
 
-[ ![](intro-to-manual-camera-controls-images/image2.png "A Bokeh Effect")](intro-to-manual-camera-controls-images/image2.png)
+[![](intro-to-manual-camera-controls-images/image2.png "A Bokeh Effect")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
 Ya da oluşturma bir [odak çekme etkisi](http://www.mediacollege.com/video/camera/focus/pull.html), gibi:
 
-[ ![](intro-to-manual-camera-controls-images/image3.png "Odağı çekme etkisi")](intro-to-manual-camera-controls-images/image3.png)
+[![](intro-to-manual-camera-controls-images/image3.png "Odağı çekme etkisi")](intro-to-manual-camera-controls-images/image3.png#lightbox)
 
 Bilimcilerine veya bir yazıcı tıbbi uygulamalar için uygulama Mercek denemeleri için programlı olarak hareket etmek isteyebilirsiniz. Son kullanıcı veya odak denetime zamanında resmin faydalanmak üzere uygulamayı gerçekleştirilecek hangisini yeni API sağlar.
 
@@ -292,7 +292,7 @@ Bilimcilerine veya bir yazıcı tıbbi uygulamalar için uygulama Mercek denemel
 
 IOS 8 uygulamada odağını denetleme ayrıntılarını ele almadan önce. Bir iOS aygıtı odağı nasıl çalıştığı bir hızlı bakalım:
 
-[ ![](intro-to-manual-camera-controls-images/image4.png "Bir iOS aygıtı odağı nasıl çalışır?")](intro-to-manual-camera-controls-images/image4.png)
+[![](intro-to-manual-camera-controls-images/image4.png "Bir iOS aygıtı odağı nasıl çalışır?")](intro-to-manual-camera-controls-images/image4.png#lightbox)
 
 Açık kamera Mercek iOS cihazında girer ve bir görüntü algılayıcı üzerinde odaklanmıştır. Odak noktası (resmin en keskin nerede görüneceğini alanı), algılayıcı ilişkisinde olduğu algılayıcı Mercek uzaklığı denetler. Uzağına Mercek algılayıcı olduğunda, uzaklığı nesneleri en keskin gibi görünüyor ve nesneleri yakın daha yakın en keskin görünüyor.
 
@@ -358,7 +358,7 @@ Mercek konumda bir değişiklik yapılmadan önce yukarıdaki kodda görüldüğ
 
 Genel AV yakalama Kurulum kodu, yerinde bir `UIViewController` için uygulamanın film şeridi eklendi ve aşağıdaki gibi yapılandırılmış:
 
-[ ![](intro-to-manual-camera-controls-images/image5.png "Bir UIViewController uygulamaları film şeridi eklendi ve aşağıda gösterildiği gibi yapılandırılmış")](intro-to-manual-camera-controls-images/image5.png)
+[![](intro-to-manual-camera-controls-images/image5.png "Bir UIViewController uygulamaları film şeridi eklendi ve aşağıda gösterildiği gibi yapılandırılmış")](intro-to-manual-camera-controls-images/image5.png#lightbox)
 
 Görünüm aşağıdaki ana öğeleri içerir:
 
@@ -491,10 +491,10 @@ Görünüm Denetleyicisi'ni el ile odağı denetimi için kablo yukarı için a�
   
 1. Odağı kamera ayarlar gibi otomatik modda kamera ile kaydırıcı otomatik olarak Taşı:
 
-    [![](intro-to-manual-camera-controls-images/image6.png "Bu örnek uygulama odakta kamera ayarlar gibi Kaydırıcı otomatik olarak geçer")](intro-to-manual-camera-controls-images/image6.png)
+    [![](intro-to-manual-camera-controls-images/image6.png "Bu örnek uygulama odakta kamera ayarlar gibi Kaydırıcı otomatik olarak geçer")](intro-to-manual-camera-controls-images/image6.png#lightbox)
 1. Kilitli segment dokunun ve mercek konumu el ile ayarlamak için konum kaydırıcıyı sürükleyin:
 
-    [![](intro-to-manual-camera-controls-images/image7.png "El ile Mercek konumu ayarlama")](intro-to-manual-camera-controls-images/image7.png)
+    [![](intro-to-manual-camera-controls-images/image7.png "El ile Mercek konumu ayarlama")](intro-to-manual-camera-controls-images/image7.png#lightbox)
 1. Uygulamayı durdurun.
 
 
@@ -506,7 +506,7 @@ Etkilenme kaynak parlaklığını göre görüntünün parlaklığını başvuru
 
 El ile Etkilenme denetimlerini kullanarak, kullanıcı bir görüntüden unrealistically açık koyu ve moody alabilir:
 
-[ ![](intro-to-manual-camera-controls-images/image8.png "Örnek unrealistically açık çıkarılmaktan koyu ve moody gösteren görüntü")](intro-to-manual-camera-controls-images/image8.png)
+[![](intro-to-manual-camera-controls-images/image8.png "Örnek unrealistically açık çıkarılmaktan koyu ve moody gösteren görüntü")](intro-to-manual-camera-controls-images/image8.png#lightbox)
 
 Yeniden, bu programsal denetim Bilimsel uygulamalar için veya uygulama kullanıcı arabirimi tarafından sağlanan el ile denetimleri aracılığıyla kullanılarak otomatik olarak yapılabilir. Her iki durumda da, yeni iOS 8 Etkilenme API'leri kameranın Etkilenme ayarlar üzerinde hassas bir denetim sağlar.
 
@@ -514,7 +514,7 @@ Yeniden, bu programsal denetim Bilimsel uygulamalar için veya uygulama kullanı
 
 IOS 8 uygulamada Etkilenme denetleme ayrıntılarını ele almadan önce. Etkilenme nasıl çalıştığı bir hızlı bakalım:
 
-[ ![](intro-to-manual-camera-controls-images/image9.png "Etkilenme nasıl çalışır?")](intro-to-manual-camera-controls-images/image9.png)
+[![](intro-to-manual-camera-controls-images/image9.png "Etkilenme nasıl çalışır?")](intro-to-manual-camera-controls-images/image9.png#lightbox)
 
 Etkilenme denetlemek için bir araya gelmesi üç temel öğeleri şunlardır:
 
@@ -527,7 +527,7 @@ Etkilenme denetlemek için bir araya gelmesi üç temel öğeleri şunlardır:
 
 El ile Etkilenme nasıl çalışır önce öğrenme yarar fikir nasıl sürekli otomatik Etkilenme anlamak için bir iOS aygıtı çalışır.
 
-[ ![](intro-to-manual-camera-controls-images/image10.png "Bir iOS aygıtı sürekli otomatik Etkilenme nasıl çalışır?")](intro-to-manual-camera-controls-images/image10.png)
+[![](intro-to-manual-camera-controls-images/image10.png "Bir iOS aygıtı sürekli otomatik Etkilenme nasıl çalışır?")](intro-to-manual-camera-controls-images/image10.png#lightbox)
 
 İlk otomatik Etkilenme bloğu ideal Etkilenme hesaplama işin ve sürekli olarak Ölçüm istatistikleri gönderilir. Bu bilgileri, ISO ve perde hızı iyi aydınlatma Sahne almak için en iyi bileşimi hesaplamak için kullanır. Bu döngü AE döngüsü olarak adlandırılır.
 
@@ -535,7 +535,7 @@ El ile Etkilenme nasıl çalışır önce öğrenme yarar fikir nasıl sürekli 
 
 Ardından, iOS cihazları nasıl kilitli Etkilenme çalışır inceleyelim.
 
-[ ![](intro-to-manual-camera-controls-images/image11.png "Nasıl kilitli Etkilenme çalışır iOS cihazları")](intro-to-manual-camera-controls-images/image11.png)
+[![](intro-to-manual-camera-controls-images/image11.png "Nasıl kilitli Etkilenme çalışır iOS cihazları")](intro-to-manual-camera-controls-images/image11.png#lightbox)
 
 Yeniden, en iyi iOS ve Duration değerleri hesaplamak için çalışıyor otomatik Etkilenme blok sahip. Ancak, bu modda Ölçüm istatistikleri altyapısı AE blok kesilir.
 
@@ -589,7 +589,7 @@ Etkilenme bir değişiklik yapılmadan önce yukarıdaki kodda görüldüğü gi
 
 Genel AV yakalama Kurulum kodu, yerinde bir `UIViewController` için uygulamanın film şeridi eklendi ve aşağıdaki gibi yapılandırılmış:
 
-[ ![](intro-to-manual-camera-controls-images/image12.png "Bir UIViewController uygulamaları film şeridi eklendi ve aşağıda gösterildiği gibi yapılandırılmış")](intro-to-manual-camera-controls-images/image12.png)
+[![](intro-to-manual-camera-controls-images/image12.png "Bir UIViewController uygulamaları film şeridi eklendi ve aşağıda gösterildiği gibi yapılandırılmış")](intro-to-manual-camera-controls-images/image12.png#lightbox)
 
 Görünüm aşağıdaki ana öğeleri içerir:
 
@@ -791,13 +791,13 @@ Görünüm Denetleyicisi'ni el ile Exposure Control kablo yukarı için aşağı
   
 1. Kamera Etkilenme ayarlar gibi otomatik modda kamera ile kaydırıcılar otomatik olarak Taşı:
 
-    [![](intro-to-manual-camera-controls-images/image13.png "Kamera Etkilenme ayarlar gibi kaydırıcılar otomatik olarak geçer")](intro-to-manual-camera-controls-images/image13.png)
+    [![](intro-to-manual-camera-controls-images/image13.png "Kamera Etkilenme ayarlar gibi kaydırıcılar otomatik olarak geçer")](intro-to-manual-camera-controls-images/image13.png#lightbox)
 1. Kilitli segment dokunun ve otomatik Etkilenme sapması el ile ayarlamak için sapması kaydırıcıyı sürükleyin:
 
-    [![](intro-to-manual-camera-controls-images/image14.png "Otomatik Etkilenme sapması el ile ayarlama")](intro-to-manual-camera-controls-images/image14.png)
+    [![](intro-to-manual-camera-controls-images/image14.png "Otomatik Etkilenme sapması el ile ayarlama")](intro-to-manual-camera-controls-images/image14.png#lightbox)
 1. Özel segment dokunun ve el ile Etkilenme denetlemek için süre ve ISO kaydırıcılar sürükleyin:
 
-    [![](intro-to-manual-camera-controls-images/image15.png "El ile denetim maruz kalma süresi ve ISO kaydırıcılar sürükleyin")](intro-to-manual-camera-controls-images/image15.png)
+    [![](intro-to-manual-camera-controls-images/image15.png "El ile denetim maruz kalma süresi ve ISO kaydırıcılar sürükleyin")](intro-to-manual-camera-controls-images/image15.png#lightbox)
 1. Uygulamayı durdurun.
 
 
@@ -807,7 +807,7 @@ Yukarıdaki kod kamera otomatik modunda olduğunda Etkilenme ayarlarını izleme
 
 Beyaz Denge denetimleri, bunların daha gerçekçi görünmesini sağlamak için bir resim colosr bakiyesini ayarlamak kullanıcıların sağlar. Farklı renk etme farklı açık kaynakları sahip ve görüntüyü yakalamak için kullanılan kamera ayarları için bu farklılıklar dengelemek için ayarlanmalıdır. Yeniden beyaz dengesi kullanıcı denetime izin vererek bunlar Artistik efektler elde etmek için otomatik yordamları kuramadığı profesyonel ayarlamalar yapabilirsiniz.
 
-[ ![](intro-to-manual-camera-controls-images/image16.png "El ile Beyaz Denge ayarları gösteren bir örnek görüntü")](intro-to-manual-camera-controls-images/image16.png)
+[![](intro-to-manual-camera-controls-images/image16.png "El ile Beyaz Denge ayarları gösteren bir örnek görüntü")](intro-to-manual-camera-controls-images/image16.png#lightbox)
 
 Örneği için daha sıcak, sarı turuncu TINT Tungsten göz alıcısın ışık sahip olurken gün ışığından yararlanma blueish cast ' var. (Confusingly, "soğuk" renkleri "sıcak" renkleri daha yüksek renk etme vardır. Renk etme Algısal bir tane fiziksel bir ölçü var.)
 
@@ -821,7 +821,7 @@ IOS 8 uygulamada beyaz dengesi denetleme ayrıntılarını ele almadan önce. Bi
 
 Renk algısına incelemesi içinde [CIE 1931 RGB renk alanı ve CIE 1931 XYZ renk alanını](http://en.wikipedia.org/wiki/CIE_1931_color_space) olan ilk renk alanları matematiksel olarak tanımlanmış. Uluslararası Komisyonu on aydınlatma (CIE) tarafından 1931 içinde oluşturuldukları.
 
-[ ![](intro-to-manual-camera-controls-images/image17.png "Renk alanı CIE 1931 RGB renk alanını ve CIE 1931 XYZ")](intro-to-manual-camera-controls-images/image17.png)
+[![](intro-to-manual-camera-controls-images/image17.png "Renk alanı CIE 1931 RGB renk alanını ve CIE 1931 XYZ")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
 Yukarıdaki grafik bize tüm renkleri görülebilen İnsan göz için ayrıntılı açık yeşil açık bir kırmızı mavi gösterir. Herhangi bir noktasını diyagramdaki bir X ve Y değeri ile yukarıdaki grafikte gösterildiği gibi çizilen.
 
@@ -900,7 +900,7 @@ Beyaz Denge bir değişiklik yapılmadan önce yakalama cihaz yapılandırması 
 
 Genel AV yakalama Kurulum kodu, yerinde bir `UIViewController` için uygulamanın film şeridi eklendi ve aşağıdaki gibi yapılandırılmış:
 
-[ ![](intro-to-manual-camera-controls-images/image18.png "Bir UIViewController uygulamaları film şeridi eklendi ve aşağıda gösterildiği gibi yapılandırılmış")](intro-to-manual-camera-controls-images/image18.png)
+[![](intro-to-manual-camera-controls-images/image18.png "Bir UIViewController uygulamaları film şeridi eklendi ve aşağıda gösterildiği gibi yapılandırılmış")](intro-to-manual-camera-controls-images/image18.png#lightbox)
 
 Görünüm aşağıdaki ana öğeleri içerir:
 
@@ -1111,13 +1111,13 @@ Görünüm Denetleyicisi'ni el ile beyaz dengesi denetimini kablo yukarı için 
 1. Değişiklikleri kaydetmek kod ve uygulamayı çalıştırın.
 1. Beyaz dengesi kamera ayarlar gibi otomatik modda kamera ile kaydırıcılar otomatik olarak Taşı:
 
-    [![](intro-to-manual-camera-controls-images/image19.png "Beyaz dengesi kamera ayarlar gibi kaydırıcılar otomatik olarak geçer")](intro-to-manual-camera-controls-images/image19.png)
+    [![](intro-to-manual-camera-controls-images/image19.png "Beyaz dengesi kamera ayarlar gibi kaydırıcılar otomatik olarak geçer")](intro-to-manual-camera-controls-images/image19.png#lightbox)
 1. Kilitli segment dokunun ve beyaz dengesi el ile ayarlamak için Temp ve ton kaydırıcıları sürükleyin:
 
-    [![](intro-to-manual-camera-controls-images/image20.png "Beyaz dengesi el ile ayarlamak için Temp ve ton kaydırıcıları sürükleyin")](intro-to-manual-camera-controls-images/image20.png)
+    [![](intro-to-manual-camera-controls-images/image20.png "Beyaz dengesi el ile ayarlamak için Temp ve ton kaydırıcıları sürükleyin")](intro-to-manual-camera-controls-images/image20.png#lightbox)
 1. Halen seçili kilitli segment ile fiziksel bir gri kartı önde kamera yerleştirin ve gri dünyaya beyaz dengesi ayarlamak için gri kartı düğmesine dokunun:
 
-    [![](intro-to-manual-camera-controls-images/image21.png "Gri dünyaya beyaz dengesi ayarlamak için gri kartı düğmesine dokunun")](intro-to-manual-camera-controls-images/image21.png)
+    [![](intro-to-manual-camera-controls-images/image21.png "Gri dünyaya beyaz dengesi ayarlamak için gri kartı düğmesine dokunun")](intro-to-manual-camera-controls-images/image21.png#lightbox)
 1. Uygulamayı durdurun.
 
 Yukarıdaki kod kamera otomatik modunda olduğunda beyaz dengesi ayarları izlemek veya kaydırıcıları kilitli modunda olduğunda beyaz dengesi denetlemek için kullandığı nasıl göstermiştir.
@@ -1128,7 +1128,7 @@ Köşeli parantez içindeki yakalama el ile kamera yukarıda sunulan denetimleri
 
 Kısacası, köşeli parantez içindeki yakalama veri bloğu resim resim ayarlarını çeşitli gerçekleştirilecek hala görüntülerinin olur.
 
-[ ![](intro-to-manual-camera-controls-images/image22.png "Köşeli parantez içindeki yakalama nasıl çalışır")](intro-to-manual-camera-controls-images/image22.png)
+[![](intro-to-manual-camera-controls-images/image22.png "Köşeli parantez içindeki yakalama nasıl çalışır")](intro-to-manual-camera-controls-images/image22.png#lightbox)
 
 Köşeli parantez içindeki yakalama iOS 8 kullanarak, bir uygulama el ile kamera denetimleri bir dizi önceden, tek bir komut vermek ve bir dizi görüntü her el ile hazır için dönüş geçerli Sahne varsa olabilir.
 
@@ -1187,7 +1187,7 @@ Aklınızda bu bilgi ile bir iOS 8 kullanma köşeli parantez içindeki yakalama
 
 Genel AV yakalama Kurulum kodu, yerinde bir `UIViewController` için uygulamanın film şeridi eklendi ve aşağıdaki gibi yapılandırılmış:
 
-[ ![](intro-to-manual-camera-controls-images/image23.png "Bir UIViewController uygulamaları film şeridi eklendi ve aşağıda gösterildiği gibi yapılandırılmış")](intro-to-manual-camera-controls-images/image23.png)
+[![](intro-to-manual-camera-controls-images/image23.png "Bir UIViewController uygulamaları film şeridi eklendi ve aşağıda gösterildiği gibi yapılandırılmış")](intro-to-manual-camera-controls-images/image23.png#lightbox)
 
 Görünüm aşağıdaki ana öğeleri içerir:
 
@@ -1345,10 +1345,10 @@ Kablo görünüm denetleyicisini köşeli parantez içindeki yakalama için yuka
 1. Değişiklikleri kaydetmek kod ve uygulamayı çalıştırın.
 1. Bir görünüm çerçeve ve yakalama köşeli ayraç düğmesine dokunun:
 
-    [![](intro-to-manual-camera-controls-images/image24.png "Bir görünüm çerçeve ve yakalama köşeli ayraç düğmesine dokunun")](intro-to-manual-camera-controls-images/image24.png)
+    [![](intro-to-manual-camera-controls-images/image24.png "Bir görünüm çerçeve ve yakalama köşeli ayraç düğmesine dokunun")](intro-to-manual-camera-controls-images/image24.png#lightbox)
 1. Köşeli parantez içindeki yakalama tarafından gerçekleştirilen üç görüntüleri görmek için sağdan sola geçirme:
 
-    [![](intro-to-manual-camera-controls-images/image25.png "Köşeli parantez içindeki yakalama tarafından gerçekleştirilen üç görüntüleri görmek için sağdan sola geçirme")](intro-to-manual-camera-controls-images/image25.png)
+    [![](intro-to-manual-camera-controls-images/image25.png "Köşeli parantez içindeki yakalama tarafından gerçekleştirilen üç görüntüleri görmek için sağdan sola geçirme")](intro-to-manual-camera-controls-images/image25.png#lightbox)
 1. Uygulamayı durdurun.
 
 
@@ -1361,4 +1361,4 @@ Bu makalede biz iOS 8 tarafından sağlanan yeni el ile kamera denetimleri için
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [ManualCameraControls (örnek)](https://developer.xamarin.com/samples/monotouch/ManualCameraControls)
-- [İOS 8 giriş](~/ios/platform/introduction-to-ios8.md)
+- [iOS 8’e Giriş](~/ios/platform/introduction-to-ios8.md)

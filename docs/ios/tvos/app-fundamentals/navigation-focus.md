@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 82151599b92094b816f4763c533ed7746db37920
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 489f3bd43ff4515000127ac29de197435493d5a9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>Gezinti ve odak ile çalışma
 
@@ -21,7 +21,7 @@ _Bu makalede kavramını odak ve sunmak ve gezinti Xamarin.tvOS uygulama içinde
 
 Bu makalede kavramı kapsayan [odak](#Focus-and-Selection) ve işlemek için nasıl kullanıldığı [Gezinti](#Navigation) Xamarin.tvOS uygulamanın kullanıcı arabiriminde. Biz, yerleşik tvOS Gezinti denetimlerinin odak, vurgulama ve seçimi Xamarin.tvOS uygulamanızın kullanıcı arabirimi Gezinti sağlamak için kullanma inceleyeceğiz.
 
-[ ![](navigation-focus-images/intro01.png "tvOS uygulamalar kullanıcı arabirimi gezinme")](navigation-focus-images/intro01.png)
+[![](navigation-focus-images/intro01.png "tvOS uygulamalar kullanıcı arabirimi gezinme")](navigation-focus-images/intro01.png#lightbox)
 
 Ardından, biz ile odak'ın nasıl kullanılabileceğini bir göz atalım [Parallax](#Focus-and-Parallax) ve *katmanlı görüntüleri* görsel ipuçları için son kullanıcı için geçerli gezinti durumu sağlamak için.
 
@@ -35,7 +35,7 @@ Xamarin.tvOS uygulamanızdaki kullanıcıların değil etkileşim arabirimiyle b
 
 Başarılı tvOS uygulama gezinti sorunsuz uygulamasının amacını ve gezinti dikkat çağırmadan gösterir verilerin yapısını destekler şekilde uygular. Böylece, kullanıcı arabirimi kapladığı veya içerik ve uygulamalar kullanıcı deneyimi çıktığınızda odak çizim olmadan doğal ve tanıdık hissi, gezinti tasarlayın.
 
-[ ![](navigation-focus-images/nav01.png "TvOS ayarlarını uygulama")](navigation-focus-images/nav01.png)
+[![](navigation-focus-images/nav01.png "TvOS ayarlarını uygulama")](navigation-focus-images/nav01.png#lightbox)
 
 Kullanıcı bir Apple TV genellikle kullanarak ekranda, Yığılmış bir dizi ile her içerik belirli bir dizi sunan gider yapılırken. Buna karşılık, her yeni ekran bir veya daha fazla alt ekranlar gibi standart kullanıcı Arabirimi denetimlerini kullanarak içerik neden olabilir [düğmeleri](~/ios/tvos/user-interface/buttons.md), [sekmesini çubukları](~/ios/tvos/user-interface/tab-bars.md), tablolar, [koleksiyon görünümlerini](~/ios/tvos/user-interface/collection-views.md) veya [ Görünümleri bölme](~/ios/tvos/user-interface/split-views.md).
 
@@ -58,7 +58,7 @@ Apple tvOS uygulamanız için Gezinti tasarlarken, aşağıdakileri göz önünd
 
 Apple TV bir görüntü, düğme veya diğer kullanıcı Arabirimi öğesi olarak değerlendirilir _odakta_ geçerli Gezinti hedef olduğunda.
 
-[ ![](navigation-focus-images/focus01.png "Odak ve seçim örneği")](navigation-focus-images/focus01.png)
+[![](navigation-focus-images/focus01.png "Odak ve seçim örneği")](navigation-focus-images/focus01.png#lightbox)
 
 Aksine, burada kullanıcı doğrudan etkileşim aygıtın dokunmatik öğelerde ile iOS cihazlarının kullanıcıları tvOS öğelerinden Siri uzaktan kullanarak yer arasında etkileşime. Apple TV sunmak ve bu kullanıcı etkileşimi işlemek için kullandığı bir _odak_ model tabanlı.
 
@@ -138,7 +138,7 @@ Ancak, zamanlar olabilir, UI tasarımınızı necessities nedeniyle kullanıcı 
 
 Bir örnek için aşağıdaki UI düzeni alın:
 
- [ ![](navigation-focus-images/guide01.png "Odağı kılavuzları örnek ile çalışma")](navigation-focus-images/guide01.png)
+ [![](navigation-focus-images/guide01.png "Odağı kılavuzları örnek ile çalışma")](navigation-focus-images/guide01.png#lightbox)
  
 Çünkü **daha fazla bilgi** düğmesi ile yatay ve dikey kılavuz kalan değil **satın** düğmesi, olur kullanıcıya erişilemez. Ancak, bu kolayca kullanılarak düzeltilebilir bir _odak Kılavuzu_ taşıma ipuçları için odak altyapısı sağlamak için. 
 
@@ -170,7 +170,7 @@ public override void ViewDidLoad ()
 
 Ardından, odak kılavuz üst, sol, genişlik ve yükseklik bağlayıcılarını göreli olarak ayarlanır **daha fazla bilgi** ve **satın** aralarında konumlandırmak için düğmeler. Bkz.
 
-[ ![](navigation-focus-images/guide02.png "Örnek odak Kılavuzu")](navigation-focus-images/guide02.png)
+[![](navigation-focus-images/guide02.png "Örnek odak Kılavuzu")](navigation-focus-images/guide02.png#lightbox)
 
 Ayarlayarak oluşturuldukları sırada yeni kısıtlamaları etkinleştirilmekte dikkate almak önemlidir kendi `Active` özelliğine `true`:
 
@@ -283,7 +283,7 @@ Bu makalede kavramını odak ve Xamarin.tvOS uygulamanın kullanıcı arabirimin
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

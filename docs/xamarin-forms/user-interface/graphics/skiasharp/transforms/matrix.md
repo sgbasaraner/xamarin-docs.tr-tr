@@ -4,14 +4,15 @@ description: "Çok yönlü dönüştürme matrisi ile SkiaSharp dönüşümler i
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 85402768990869a2121cdea5ab7d232d80d64ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9d5e65abe675ded48e9239f2cd10ceed4a7c3a52
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="matrix-transforms"></a>Matris dönüşümleri
 
@@ -401,7 +402,7 @@ public class PathTransformPage : ContentPage
 
 Tuvale sol üst köşesinde görüntülenir:
 
-[![](matrix-images/pathtransform-small.png "Üçlü sayfasının ekran görüntüsü yolu dönüştürme")](matrix-images/pathtransform-large.png "Üçlü sayfasının ekran görüntüsü yolu dönüştürme")
+[![](matrix-images/pathtransform-small.png "Üçlü sayfasının ekran görüntüsü yolu dönüştürme")](matrix-images/pathtransform-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yolu dönüştürme")
 
 Bu program Oluşturucusu matris aşağıdaki çağrıyı yolu için geçerlidir:
 
@@ -588,7 +589,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 Sayfa da ilk yüklendiğinde iki diğer ekranlar, bazı işleme sonra gösterirken aşağıdaki iOS ekrana bit eşlem gösterir:
 
-[![](matrix-images/showaffinematrix-small.png "Üçlü sayfasının ekran görüntüsü afin Matrisi Göster")](matrix-images/showaffinematrix-large.png "Üçlü sayfasının ekran görüntüsü afin Matrisi Göster")
+[![](matrix-images/showaffinematrix-small.png "Üçlü sayfasının ekran görüntüsü afin Matrisi Göster")](matrix-images/showaffinematrix-large.png#lightbox "Üçlü sayfasının ekran görüntüsü afin Matrisi Göster")
 
 Dokunma noktaları bit eşlem köşelerinde sürükleyin gibi görünüyor. ancak, yalnızca bir görünümü olmasıdır. Böylece köşeleri dokunma noktalarıyla çakıştığı dokunma noktalarından hesaplanan matris bit eşlem dönüştürür.
 

@@ -6,23 +6,20 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 68ddb9baa008ec8222b4399a5ab25330fda2afd1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.date: 03/09/2018
+ms.openlocfilehash: 51caebb86cb72b11ced70522fc253e608f5ccab0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="build-process"></a>Derleme işlemi
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
 Xamarin.Android derleme işlemi her şeyi birlikte yapıştırma için sorumludur: [oluşturma `Resource.designer.cs` ](~/android/internals/api-design.md), destek `AndroidAsset`, `AndroidResource`ve diğer [Eylemler yapı](#Build_Actions), oluşturma [Android aranabilir sarmalayıcılar](~/android/platform/java-integration/android-callable-wrappers.md), oluşturmasını bir `.apk` Android cihazlarda yürütme için.
 
-<a name="App_Packaging" />
-<a name="Application_Packages" />
 
 ## <a name="application-packages"></a>Uygulama paketleri
 
@@ -34,7 +31,6 @@ Geniş bağlamında, Android uygulama paketleri iki tür vardır (`.apk` dosyala
 
 Değil tesadüfen bu MSBuild eşleşen `Configuration` paket oluşturur.
 
-<a name="Shared_Runtime" />
 
 ### <a name="shared-runtime"></a>Paylaşılan çalışma zamanı
 
@@ -53,7 +49,6 @@ Hızlı Dağıtım engelleme cihazlarda vermesine bilinir `adb` dizinine eşitle
 Hızlı Dağıtım varsayılan olarak etkindir ve devre dışı hata ayıklama derlemeleri ayarlayarak `$(EmbedAssembliesIntoApk)` özelliğine `True`.
 
 
-<a name="MSBuild_Projects" />
 
 ## <a name="msbuild-projects"></a>MSBuild projelerine
 
@@ -81,7 +76,6 @@ Aşağıdaki yapı hedefleri Xamarin.Android projeleri için tanımlanmıştır:
 
 -   **UpdateAndroidResources** &ndash; güncelleştirmeleri `Resource.designer.cs` dosya. Yeni kaynaklar projeye eklendiğinde bu hedef genellikle IDE tarafından çağrılır.
 
-<a name="Build_Properties" />
 
 ## <a name="build-properties"></a>Yapı Özellikleri
 
@@ -116,7 +110,6 @@ Yükleme özellikleri davranışını denetleyen `Install` ve `Uninstall` hedefl
     MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
     ```
 
-<a name="App_Packaging" />
 
 ### <a name="packaging-properties"></a>Paketleme özellikleri
 
@@ -146,7 +139,7 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     Bu özellik `False` varsayılan olarak.
 
--   **AndroidFastDeploymentType** &ndash; A `:` (iki nokta üst üste)-ayrılmış ne türlerini denetlemek için değerlerin listesi için dağıtılabilir [hızlı dağıtım dizinine](#Fast_Deployment) hedef aygıttaki zaman [ `$(EmbedAssembliesIntoApk)` ](#EmbedAssembliesIntoApk) MSBuild özelliği `False`. Bir kaynak dağıtılan hızlı bu ise, *değil* oluşturulan katıştırılmış `.apk`, hangi dağıtım işlemlerini hızlandırmak. (Hızlı, ardından daha az sıklıkta dağıtılan daha `.apk` yeniden oluşturulması için gereksinimleri ve yükleme işlemi daha hızlı.) Geçerli değerler şunlardır:
+-   **AndroidFastDeploymentType** &ndash; A `:` (iki nokta üst üste)-ayrılmış ne türlerini denetlemek için değerlerin listesi için dağıtılabilir [hızlı dağıtım dizinine](#Fast_Deployment) hedef aygıttaki zaman `$(EmbedAssembliesIntoApk)` MSBuild özelliği `False`. Bir kaynak dağıtılan hızlı bu ise, *değil* oluşturulan katıştırılmış `.apk`, hangi dağıtım işlemlerini hızlandırmak. (Hızlı, ardından daha az sıklıkta dağıtılan daha `.apk` yeniden oluşturulması için gereksinimleri ve yükleme işlemi daha hızlı.) Geçerli değerler şunlardır:
 
     - `Assemblies`: Uygulama derlemeleri dağıtın.
 
@@ -158,7 +151,7 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
 -   **AndroidApplicationJavaClass** &ndash; yerine kullanılacak tam Java sınıfı adı `android.app.Application` ne zaman bir sınıf devraldığı [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/).
 
-    Bu özellik genellikle belirlediği *diğer* özellikleri gibi [ `$(AndroidEnableMultiDex)` ](#AndroidEnableMultiDex) MSBuild özelliği.
+    Bu özellik genellikle belirlediği *diğer* özellikleri gibi `$(AndroidEnableMultiDex)` MSBuild özelliği.
 
     Xamarin.Android 6.1 eklendi.
 
@@ -285,7 +278,7 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
 -   **MonoSymbolArchive** &ndash; denetleyen bir boolean özelliği olup olmadığını `.mSYM` yapıları ile daha sonra kullanmak için oluşturulan `mono-symbolicate`ayıklamak için &ldquo;gerçek&rdquo; filename ve satır numarası bilgileri Yayın Yığın izlemeleri.
 
-    Bu doğru ise için varsayılan olarak &ldquo;sürüm&rdquo; hata ayıklama simgeleri etkin olan uygulamalar: [ `$(EmbedAssembliesIntoApk)` ](#EmbedAssembliesIntoApk) doğru ise, `$(DebugSymbols)` True ise ve `$(Optimize)` true'dur.
+    Bu doğru ise için varsayılan olarak &ldquo;sürüm&rdquo; hata ayıklama simgeleri etkin olan uygulamalar: `$(EmbedAssembliesIntoApk)` doğru ise, `$(DebugSymbols)` True ise ve `$(Optimize)` true'dur.
 
     Xamarin.Android 7.1 eklendi.
 
@@ -301,24 +294,22 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     Anahtar öğeleri önceden tanımlanmış
 
-    -   **ABI** &ndash; uygulama targetted ABI ekler  
+    -   **ABI** &ndash; uygulama targetted ABI ekler
         -   1 &ndash; `armeabi`
         -   2 &ndash; `armeabi-v7a`
         -   3 &ndash; `x86`
         -   4 &ndash; `arm64-v8a`
         -   5 &ndash; `x86_64`
 
-    -   **minSDK** &ndash; eklemeleri desteklenen en düşük Sdk değerinden `AndroidManifest.xml` veya `11` hiçbiri tanımlanmışsa.  
+    -   **minSDK** &ndash; eklemeleri desteklenen en düşük Sdk değerinden `AndroidManifest.xml` veya `11` hiçbiri tanımlanmışsa.
 
     -   **versionCode** &ndash; gelen sürüm kodu direrctly kullanan `Properties\AndroidManifest.xml`.
 
-    Kullanarak özel öğeleri tanımlayabilirsiniz [AndroidVersionCodeProperties](#AndroidVersionCodeProperties) özelliği.
+    Kullanarak özel öğeleri tanımlayabilirsiniz `AndroidVersionCodeProperties` özelliği (sonraki tanımlanmış).
 
     Xamarin.Android 7.2 eklendi.
 
--   **AndroidVersionCodeProperties** &ndash; Geliştiricinin [AndroidVersionCodePattern ](#AndroidVersionCodePattern) ile kullanmak için özel öğeleri tanımlamasına izin veren bir dizgi özelliği.
-    Biçiminde olan bir `key=value` çifti. Tüm öğeleri `value` tamsayı değeri olmalıdır. Örneğin: `screen=23;target=$(_SupportedApiLevel)`.
-    Mevcut veya özel MSBuild kullanma yapabilir gördüğünüz dize özellikleri.
+-   **AndroidVersionCodeProperties** &ndash; A string property which allows the developer to define custom items to use with the `AndroidVersionCodePattern`. Biçiminde olan bir `key=value` çifti. Tüm öğeleri `value` tamsayı değeri olmalıdır. Örneğin: `screen=23;target=$(_SupportedApiLevel)`. Mevcut veya özel MSBuild kullanma yapabilir gördüğünüz dize özellikleri.
 
     Xamarin.Android 7.2 eklendi.
 
@@ -365,8 +356,6 @@ Aşağıdaki MSBuild özellikleri ile kullanılan [projeleri bağlama](~/android
     Varsayılan değer, bir sonraki sürümde değiştirir.
 
 
-<a name="Resgen" />
-<a name="Resource_Properties" />
 
 ### <a name="resource-properties"></a>Kaynak özellikleri
 
@@ -385,7 +374,6 @@ Kaynak özelliklerini kontrol nesil `Resource.designer.cs` Android kaynaklara er
     **Deneysel**. Xamarin.Android 7.0 eklendi.
 
 
-<a name="Signing" />
 <a name="Signing_Properties" />
 
 ### <a name="signing-properties"></a>Özellikler imzalama
@@ -446,21 +434,16 @@ Yukarıda oluşturulan anahtar deposu kullanmak için özellik grubu kullanın:
 Bir yapı eylemi dosyalarıyla `AndroidEnvironment` gerçekleştirmek için kullanılır [ortam değişkenleri ve Sistem özellikleri işlem başlatma sırasında başlatmak](~/android/deploy-test/environment.md).
 `AndroidEnvironment` Yapı eylemi birden çok dosyaya uygulanan ve (aynı ortam değişkeni veya sistem özelliği birden çok dosyada belirtmeyin şekilde) belirli bir sırada olarak değerlendirilir.
 
-<a name="Java_Interop_Support" />
-<a name="AndroidJavaSource" />
 
 ### <a name="androidjavasource"></a>AndroidJavaSource
 
 Bir yapı eylemi dosyalarıyla `AndroidJavaSource` son Android paketinde bulunan Java kaynak kodu.
 
-<a name="AndroidJavaLibrary" />
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
 Bir yapı eylemi dosyalarıyla `AndroidJavaLibrary` Java arşivleri olan ( `.jar` dosyaları), dahil edilir son Android paketinde.
 
-<a name="Resources" />
-<a name="AndroidResource" />
 
 ### <a name="androidresource"></a>AndroidResource
 
@@ -499,8 +482,6 @@ Daha gelişmiş kullanıcılar belki farklı yapılandırmaları, ancak aynı et
 </ItemGroup>
 ```
 
-<a name="Native_Library_Support" />
-<a name="AndroidNativeLibrary" />
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -546,7 +527,6 @@ Xamarin.Android thw kullanılmaya çalışılıyor 5.1, başlangıç `@(Content)
 Bu dosyalar yoksayılır `$(EnableProguard)` MSBuild özelliği `True`.
 
 
-<a name="Target_Definitions" />
 
 ## <a name="target-definitions"></a>Hedef tanımları
 

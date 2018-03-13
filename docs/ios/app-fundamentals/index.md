@@ -1,29 +1,29 @@
 ---
-title: Uygulama temelleri
+title: Uygulama Temelleri
 description: "Uygulama kavramları"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
+ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: 9cace37a9e762a49a90963591931793d30d05453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f6c0bb75327f0c14d314a0e7ad9d114fd17c2a57
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
-# <a name="application-fundamentals"></a>Uygulama temelleri
+# <a name="application-fundamentals"></a>Uygulama Temelleri
 
 Bu bölümde bazı daha yaygın şeyler görevler veya geliştiricilerin Xamarin.iOS (önceki adıyla MonoTouch) uygulamaları geliştirirken farkında olması gereken kavramlar bir kılavuz sağlar.
 
-## <a name="app-transport-securityiosapp-fundamentalsatsmd"></a>[Uygulama taşıma güvenliği](~/ios/app-fundamentals/ats.md)
+## <a name="app-transport-securityiosapp-fundamentalsatsmd"></a>[Uygulama Aktarım Güvenliği](~/ios/app-fundamentals/ats.md)
 
 Bu makalede, bir iOS 9 uygulama ve Xamarin.iOS projeleriniz için anlamı bu uygulama taşıma güvenliği zorlar güvenlik değişiklikleri getirir, ATS yapılandırma seçeneklerini kapsar ve gerekirse nasıl ATS çevirin kapsar. ATS varsayılan olarak etkinleştirilmiş olduğundan, güvenli olmayan herhangi bir internet bağlantısı (siz açıkça, izin verilen sürece) bir özel durum iOS 9 uygulamalarda ortaya koyar.
 
 
-## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[Backgrounding](~/ios/app-fundamentals/backgrounding/index.md)
+## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[Arka Planda İşleme](~/ios/app-fundamentals/backgrounding/index.md)
 
 Arka plan işleme veya backgrounding başka bir uygulama ön planda çalıştığı sırada görevleri arka planda uygulamaları izin vererek işlemidir. Bu kılavuz, arka plan iOS işlemleri giriş olarak görev yapar.
 
@@ -56,7 +56,7 @@ Bu makalede tamamen Mac için Visual Studio ve Visual Studio kullanarak kod içi
 
 `NSUserDefaults` Sınıfı iOS uygulamaları ve uzantıları programlı olarak sistem genelinde varsayılan sistemi ile etkileşimde bulunmak için bir yol sağlar. Varsayılan olarak sistem kullanarak, kullanıcı bir uygulamanın davranışı veya (uygulama tasarımını göre) tercihlerini karşılamak için stil oluşturma yapılandırabilirsiniz. Örneğin, ölçüm vs verilerde İngiliz ölçümleri sunan veya belirli bir kullanıcı Arabirimi tema seçin.
 
-## <a name="touchiosapp-fundamentalstouchindexmd"></a>[Touch](~/ios/app-fundamentals/touch/index.md)
+## <a name="touchiosapp-fundamentalstouchindexmd"></a>[Dokunma](~/ios/app-fundamentals/touch/index.md)
 
 Dokunmatik ekranlar bugünün aygıtların çoğu üzerinde kullanıcıların hızlı ve verimli şekilde doğal ve sezgisel şekilde cihazlarla etkileşime girmesine izin. Bu etkileşimi yalnızca basit dokunma algılama sınırlı değildir – hareketleri de kullanmak da mümkündür. Örneğin, tutarak yakınlaştırma hareketi kullanıcı yakınlaştırmak veya uzaklaştırmak iki parmakları ekran parçası çimdik tarafından bu – çok yaygın bir örneği bulunmaktadır. Bu kılavuz, dokunma ve iOS hareketleri inceler.
 

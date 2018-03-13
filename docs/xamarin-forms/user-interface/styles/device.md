@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: dbe88f39999ee163ff2e7cdf4b9301aa0f0681bc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ad057f55ed69174bef55c0364e5e7ea30bae2789
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-styles"></a>Cihaz stilleri
 
@@ -115,7 +115,7 @@ public class DeviceStylesPageCS : ContentPage
 
 Aşağıdaki ekran görüntüleri küçük erişilebilir yazı tipi boyutu olan her bir platformda aygıt stilleri gösterir:
 
-[![](device-images/minimum-size.png "Her platformda erişilebilir küçük aygıt stilleri")](device-images/minimum-size-large.png "her platformda erişilebilir küçük aygıt stilleri")
+[![](device-images/minimum-size.png "Her platformda erişilebilir küçük aygıt stilleri")](device-images/minimum-size-large.png#lightbox "her platformda erişilebilir küçük aygıt stilleri")
 
 Aşağıdaki ekran görüntüleri büyük erişilebilir yazı tipi boyutu olan her bir platformda aygıt stilleri gösterir:
 
@@ -129,7 +129,7 @@ Xamarin.Forms içeren altı *dinamik* olarak bilinen stilleri *aygıt* stiller, 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Metin stilleri](~/xamarin-forms/user-interface/text/styles.md)
-- [XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Dinamik stilleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 - [Stilleri (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [Device.Styles](https://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/)

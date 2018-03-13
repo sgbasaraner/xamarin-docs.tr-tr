@@ -3,16 +3,16 @@ title: "iOS veri erişimi"
 description: "Çoğu uygulama verileri cihaz üzerinde yerel olarak kaydetmek için bazı gereksinim vardır. Veri miktarını trivially küçük olmadığı sürece, bu genellikle bir veritabanı ve veri katmanı veritabanı erişimi yönetmek üzere uygulamada gerektirir. iOS \"yerleşik\" SQLite veritabanı altyapısı vardır ve depolamak ve veri almak için erişim Xamarin'ın platform tarafından basitleştirilmiştir. Bu belge, bir SQLite veritabanına erişmek gösterilmiştir."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
+ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 9ca929f584ec2b0d98300e7645707131df89969f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6dba862055cc266b2af1eaf87418fe7ebf5830c5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="ios-data-access"></a>iOS veri erişimi
 
@@ -38,9 +38,9 @@ Xamarin.Forms uygulamalar için okuma [veritabanlarıyla çalışma](~/xamarin-f
 
 -  [Giriş](introduction.md)
 -  [Yapılandırma](configuration.md)
--  [SQLite.NET ORM kullanma](using-sqlite-orm.md)
--  [ADO.NET kullanarak](using-adonet.md)
--  [Bir uygulamada veri kullanma](using-data-in-an-app.md)
+-  [SQLite.NET ORM Kullanma](using-sqlite-orm.md)
+-  [ADO.NET Kullanma](using-adonet.md)
+-  [Bir Uygulamadaki Verileri Kullanma](using-data-in-an-app.md)
 
 
 ## <a name="summary"></a>Özet

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: b606773b44d32b724fe7f4dfa2ef18fe34b85cae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 170131a2449b37acfa411eeca54f7aa921b0d9e4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-text-input"></a>Metin girişi ile çalışma
 
@@ -62,7 +62,7 @@ Düz modu ayarlandığında, kullanıcının birini seçebilirsiniz:
 - Karalama, veya
 - Uygulama sağlayan önceden tanımlanmış listeden.
 
-[ ![](text-input-images/plain-scribble-sml.png "Yazdırma, karalama, veya uygulama sağlayan önceden tanımlanmış bir listeden")](text-input-images/plain-scribble.png)
+[![](text-input-images/plain-scribble-sml.png "Yazdırma, karalama, veya uygulama sağlayan önceden tanımlanmış bir listeden")](text-input-images/plain-scribble.png#lightbox)
 
 Sonuç olarak her zaman döndürülür bir `NSObject` , dönüştürülür için bir `string`.
 
@@ -106,4 +106,4 @@ Bunlar basın sonra **Bitti** düğmesi metni döndürülecek.
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Apple'nın metin ve etiketleri belge](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/TextandLabels.html)
-- [WatchOS 3 giriş](~/ios/watchos/platform/introduction-to-watchos3/index.md)
+- [watchOS 3’e Giriş](~/ios/watchos/platform/introduction-to-watchos3/index.md)

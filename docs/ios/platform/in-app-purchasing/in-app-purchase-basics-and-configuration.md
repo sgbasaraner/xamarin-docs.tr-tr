@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e0f5b24ff6790aa3bf63eb9112790e0a62ce0a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 302bb1225067ad401f97ee6bad88b4cd16c6dc95
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="in-app-purchase-basics-and-configuration"></a>Uygulama içi satın alma temelleri ve yapılandırma
 
 Uygulama içi satın almalara uygulama cihazda StoreKit API faydalanmak için uygulama gerektirir. StoreKit ürün bilgilerini almak ve işlemleri gerçekleştirmek için Apple'nın iTunes sunucularıyla tüm iletişimi yönetir. Sağlama profili, uygulama içi satın alma için yapılandırılmalıdır ve ürün bilgileri iTunes Bağlan girilmesi gerekir.
 
- [ ![](in-app-purchase-basics-and-configuration-images/image1.png "Bu grafikte gösterildiği gibi Apple'nın tüm iletişim StoreKit yönetir")](in-app-purchase-basics-and-configuration-images/image1.png)
+ [![](in-app-purchase-basics-and-configuration-images/image1.png "Bu grafikte gösterildiği gibi Apple'nın tüm iletişim StoreKit yönetir")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
 Uygulama içi satın alma sağlamak için uygulama mağazası kullanarak aşağıdaki Kurulum ve yapılandırma gerektirir:
 
@@ -58,11 +58,11 @@ Bu üç adımı herhangi bir kod yazmadan önce tamamlanması:
 
 Oluşturma ve ücretsiz uygulama dağıtmaya gerektiren çok az yapılandırmada [iTunes Bağlan](https://itunesconnect.apple.com), ücretli satmak uygulamaları veya uygulama içi satın almalara gerektirir ancak, Apple bankacılık ve vergi bilgileri sağlar. Tıklayın **anlaşmaları, vergi ve bankacılık** burada gösterilen ana menüden:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image2.png "Anlaşmaları, vergi ve ana menüden bankacılık tıklayın")](in-app-purchase-basics-and-configuration-images/image2.png)
+ [![](in-app-purchase-basics-and-configuration-images/image2.png "Anlaşmaları, vergi ve ana menüden bankacılık tıklayın")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
 Geliştirici hesabınız olmalıdır bir **iOS Ücretli uygulamaları** gerçekte, bu ekran görüntüsünde gösterildiği gibi Sözleşme:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image3.png "Ücretli uygulamaları yürürlükte sözleşme iOS Geliştirici hesabınızın olması gerekir")](in-app-purchase-basics-and-configuration-images/image3.png)
+ [![](in-app-purchase-basics-and-configuration-images/image3.png "Ücretli uygulamaları yürürlükte sözleşme iOS Geliştirici hesabınızın olması gerekir")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
 Sahip olduğunuz kadar tüm StoreKit işlevselliğini test etmek mümkün olmayacak bir **iOS Ücretli uygulamaları** sözleşme – kodunuzu StoreKit çağrılarında Apple işleyene kadar başarısız, **sözleşmeler, vergi ve bankacılık** bilgi.
 
@@ -75,7 +75,7 @@ Formun yeni oluşturmak için **uygulama kimlikleri**
 
  şuna benzer:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image4.png "Yeni uygulama kimlikleri oluşturma formu")](in-app-purchase-basics-and-configuration-images/image4.png)
+ [![](in-app-purchase-basics-and-configuration-images/image4.png "Yeni uygulama kimlikleri oluşturma formu")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
 Uygun bir şey girin *açıklama*, bu uygulama Kimliğini listesini kolayca tanıyacak şekilde. İçin *uygulama kimliği öneki*, takım kimliği seçin
 
@@ -90,7 +90,7 @@ Uygun bir şey girin *açıklama*, bu uygulama Kimliğini listesini kolayca tan�
 
 Unutmayın **uygulama içi satın alma** Hizmetler listesinde otomatik olarak etkinleştirilir:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image5.png "Uygulama içi satın alma Hizmetler listesinde otomatik olarak etkinleştirilir")](in-app-purchase-basics-and-configuration-images/image5.png)
+ [![](in-app-purchase-basics-and-configuration-images/image5.png "Uygulama içi satın alma Hizmetler listesinde otomatik olarak etkinleştirilir")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>Sağlama profilleri
 
@@ -100,16 +100,16 @@ Normalde seçme gibi uygulama içi satın alma için ayarladığınız uygulama 
 
 Tıklatın **My uygulamaları** iTunes oluşturmak veya bir iOS uygulaması girişi düzenlemek için Bağlan içinde. Uygulama genel bakış sayfası aşağıda gösterilmiştir:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image6.png "Uygulama genel bakış sayfası")](in-app-purchase-basics-and-configuration-images/image6.png)
+ [![](in-app-purchase-basics-and-configuration-images/image6.png "Uygulama genel bakış sayfası")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
 Tıklatın **uygulama içi satın almalara** oluşturmak veya ürünlerinizin satış düzenlemek için. Bu ekran örnek uygulama zaten eklenmiş çeşitli ürünlerle gösterir:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image7.png "Zaten eklenmiş çeşitli ürünlerle örnek uygulaması")](in-app-purchase-basics-and-configuration-images/image7.png)
+ [![](in-app-purchase-basics-and-configuration-images/image7.png "Zaten eklenmiş çeşitli ürünlerle örnek uygulaması")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
 Yeni ürün ekleme işlemi iki adımı vardır:
 
-1.   Ürün türünü seçin: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "ürün türünü seçin")](in-app-purchase-basics-and-configuration-images/image8.png) 
-2.   Ürün Kimliği de dahil olmak üzere, fiyatlandırma katmanı ve yerelleştirilmiş açıklamaları ürünün öznitelikleri girin: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "ürünleri öznitelikleri girme")](in-app-purchase-basics-and-configuration-images/image9.png)
+1.   Ürün türünü seçin: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "ürün türünü seçin")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   Ürün Kimliği de dahil olmak üzere, fiyatlandırma katmanı ve yerelleştirilmiş açıklamaları ürünün öznitelikleri girin: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "ürünleri öznitelikleri girme")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 Her uygulama içi satın alma ürün için gerekli alanlar, aşağıda açıklanmıştır:
 
@@ -158,13 +158,13 @@ Uygulama mağazası ürünleriniz için rasgele bir fiyat seçmenize izin vermez
 
 Apple istediğiniz para birimi/fiyat için doğru katmanı seçmenize yardımcı olmak için bir fiyat matris sağlar. Fiyat matrisi (Ağustos 2012) bir alıntı burada gösterilir:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image10.png "Bir alıntı fiyat matrisi Ağustos 2012")](in-app-purchase-basics-and-configuration-images/image10.png)
+ [![](in-app-purchase-basics-and-configuration-images/image10.png "Bir alıntı fiyat matrisi Ağustos 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
 (Haziran 2013) yazma sırasında ABD Doları gelen 87 katmanları vardır ABD Doları 999.99 0.99. Fiyatlandırma matris fiyat, müşterileriniz faydalı olur ve ayrıca Apple'dan – alacak bu daha az kendi % 30 ücret miktardır ve ayrıca tüm yerel vergiler (ABD ve Kanada satıcıları için 99 c p 70 c aldığınız örnekte bildirim toplamak için gereklidirler gösterir. Avustralya satıcılar yalnızca 63 c nedeniyle alırken eğiştir ' mal &amp; Hizmetleri vergi ' satış fiyatını levied).
 
 Fiyatlandırma ürününüzün herhangi bir zamanda gelecekteki bir tarihte etkili zamanlanmış fiyat değişiklikleri de dahil olmak üzere, güncelleştirilebilir. Bu ekran görüntüsü, gelecekteki tarihli fiyat değişikliği nasıl eklenir gösterir – fiyat geçici olarak katman 1 Katman 3 Eylül ayında yalnızca değiştiriliyor:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image11.png "Burada fiyat geçici olarak katman 1 Katman 3 Eylül ayında yalnızca değiştiriliyor gelecekteki tarihli fiyat değişikliği")](in-app-purchase-basics-and-configuration-images/image11.png)
+ [![](in-app-purchase-basics-and-configuration-images/image11.png "Burada fiyat geçici olarak katman 1 Katman 3 Eylül ayında yalnızca değiştiriliyor gelecekteki tarihli fiyat değişikliği")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
 ### <a name="free-products-not-supported"></a>Ücretsiz ürünler desteklenmiyor
 
@@ -174,7 +174,7 @@ Apple Newsstand uygulamalar için özel bir ücretsiz abonelik seçeneğine sağ
 
 İTunes Bağlan desteklenen dillerin herhangi bir sayı için farklı bir ad ve Açıklama metin girebilirsiniz. Her bir dilin eklenen/popup düzenlenebilir içinde olabilir:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image12.png "Her bir dilin eklenen/popup düzenlenebilir içinde olabilir")](in-app-purchase-basics-and-configuration-images/image12.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image12.png "Her bir dilin eklenen/popup düzenlenebilir içinde olabilir")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
    
    
    
@@ -186,7 +186,7 @@ Uygulamaları – aynı her ürünün Apple'nın üzerinde satış gitmek için 
 
 Uygulama ile satın alma (yeni bir uygulama olan veya mevcut bir işlevsellik eklenmiş olup olmadığını) etkin bir uygulama gönderilen ilk kez ile göndermek için bazı ürünler seçmeniz gerekir. İTunes Bağlan portalı, bunu yapmak için bu ekran görüntüsünde gösterildiği gibi ister:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image13.png "İTunes Bağlan portal bazı ürünler de göndermek isteyip istemediğinizi sorar")](in-app-purchase-basics-and-configuration-images/image13.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image13.png "İTunes Bağlan portal bazı ürünler de göndermek isteyip istemediğinizi sorar")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
    
    
    

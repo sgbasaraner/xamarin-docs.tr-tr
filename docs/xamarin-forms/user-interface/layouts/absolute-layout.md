@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 227a636db370b2dd3d132c49ad7c39ef42c5f30c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 90f1394103b5a3996029355a8ef260817b14a697
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="absolutelayout"></a>AbsoluteLayout
 
 [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) yerleştirir ve alt öğelerini kendi boyutunu ve konumunu veya mutlak değerler orantılı boyutları. Alt görünümleri konumlandırılmış ve boyutlu orantılı değerleri veya statik değerleri kullanarak ve orantılı olabilir ve statik değerler karışabilir.
 
-[ ![](absolute-layout-images/layouts-sml.png "Xamarin.Forms düzenleri")](absolute-layout-images/layouts.png "Xamarin.Forms düzenleri")
+[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms düzenleri")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms düzenleri")
 
 Bu makalede ele alınacaktır:
 

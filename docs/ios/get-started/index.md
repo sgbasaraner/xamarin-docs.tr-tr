@@ -3,16 +3,17 @@ title: "İOS ile çalışmaya başlama"
 description: "Merhaba dünyasına Hello uygulama Mağazası"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
+ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/23/2016
-ms.openlocfilehash: 1c59a67a87087a821339e98bcdcc004a342e311a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 01e4d2e42f61145f220545c832bcbaf1d8a994f1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="getting-started-with-ios"></a>İOS ile çalışmaya başlama
 
@@ -30,18 +31,24 @@ Xcode en son sürümünü şu adresten yüklenebilir: [iOS Geliştirici Merkezi]
 
 ## <a name="getting-started-series"></a>Kullanmaya başlama serisini
 
-###  <a name="setup-and-installationiosget-startedinstallationindexmd"></a>[Kurulum ve yükleme](~/ios/get-started/installation/index.md)
+###  <a name="setup-and-installationiosget-startedinstallationindexmd"></a>[Kurulum ve Yükleme](~/ios/get-started/installation/index.md)
 
 Xamarin.iOS ayarlamak ve Mac veya Visual Studio için Visual Studio'da çalışan alın. Bu bölüm, indirme, Xamarin Microsoft hesabınız, genel sorun giderme öğeleri, cihaz sağlama ve daha fazla oturum imzalama Yükleyicisi'ni kullanarak yüklemeyi kapsar.
 
-###  <a name="hello-iosiosget-startedhello-iosindexmd"></a>[Merhaba, iOS](~/ios/get-started/hello-ios/index.md)
+###  <a name="hello-iosiosget-startedhello-iosindexmd"></a>[Hello, iOS](~/ios/get-started/hello-ios/index.md)
 
 Bu iki parçalı kılavuz Mac veya Visual Studio için Visual Studio kullanarak ilk Xamarin.iOS uygulamanızı öğretir ve Xamarin ile iOS uygulaması geliştirme ile ilgili temel bilgileri sunar. Bu kılavuz, ayrıca araçları, kavramlar ve oluşturmak ve bir Xamarin.iOS uygulaması dağıtmak için gerekli adımları tanıtılacaktır.
 
-###  <a name="hello-ios-multiscreeniosget-startedhello-ios-multiscreenindexmd"></a>[Merhaba, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md)
+###  <a name="hello-ios-multiscreeniosget-startedhello-ios-multiscreenindexmd"></a>[Çok Ekranlı Hello, iOS ](~/ios/get-started/hello-ios-multiscreen/index.md)
 
 Hello oluşturulan uygulama genişleterek bu iki parçalı kılavuzda araştırır, ikinci bir ekran işlemek için iOS Kılavuzu. İOS Gezinti uygulama ve iOS uygulama yapısı ve işlevleri daha derin bir anlayış geliştirme Model View Controller tasarım deseni gibi kavramları tanıtır.
 
 ##  <a name="xamarin-for-objective-c-developersobjective-c-developersindexmd"></a>[Objective-C geliştiriciler için Xamarin](objective-c-developers/index.md)
 
 Xamarin platform geçiş Objective-C geliştiriciler için bilgiler sağlar.
+
+## <a name="xamarin-university-video"></a>Xamarin University Video
+
+> [!VIDEO https://youtube.com/embed/1ilsDnYC-B8]
+
+**Bilgisayarınızı ilk iOS uygulaması Xamarin ile Visual Studio için göre derleme [Xamarin Üniversitesi](https://university.xamarin.com)**

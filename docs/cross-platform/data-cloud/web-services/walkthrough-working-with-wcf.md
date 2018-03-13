@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 6aee83cd07a52d667c24c3e70fced2e291ed99c8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b076c7a71d81a474ca80ac32771d5512c21c167c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>İzlenecek yol - WCF ile çalışma
 
@@ -158,7 +158,7 @@ Yerel olarak bir WCF barındırma bağlantıları yalnızca yerel makineden geld
 
 1. Dış isteklerini dinlemek için IIS Express yapılandırarak başlayalım. Bu en IIS Express için yapılandırma dosyasını düzenleyerek yapabiliriz `[solutiondirectory]\.vs\config\applicationhost.config`aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-    [![](walkthrough-working-with-wcf-images/image05.png "Bu yapılandırma dosyası için IIS Express solutiondirectory.vsconfigapplicationhost.config düzenleyerek bu ekran görüntüsünde gösterildiği gibi yapabiliriz")](walkthrough-working-with-wcf-images/image05.png)
+    [![](walkthrough-working-with-wcf-images/image05.png "Bu yapılandırma dosyası için IIS Express solutiondirectory.vsconfigapplicationhost.config düzenleyerek bu ekran görüntüsünde gösterildiği gibi yapabiliriz")](walkthrough-working-with-wcf-images/image05.png#lightbox)
 
 
     Bulun `site` adı bir öğesiyle `HelloWorldWcfHost`. Aşağıdaki XML parçacığını gibi görünmelidir:
@@ -270,7 +270,7 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.Android uygulaması tarafından ku
 
     Aşağıdaki ekran Tasarımcısı'nda kullanıcı arabirimini gösterir:
 
-    [![](walkthrough-working-with-wcf-images/image09.png "Bu UI nasıl Tasarımcısı'nda göründüğünü, ekran budur")](walkthrough-working-with-wcf-images/image09.png)
+    [![](walkthrough-working-with-wcf-images/image09.png "Bu UI nasıl Tasarımcısı'nda göründüğünü, ekran budur")](walkthrough-working-with-wcf-images/image09.png#lightbox)
 
 1. İçinde **Çözüm Gezgini**, açık `Resources/values/Strings.xml` ve aşağıdaki XML ekleyin:
 
@@ -382,7 +382,7 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.Android uygulaması tarafından ku
 
 1. Uygulamayı çalıştırın, WCF hizmeti çalışıyor ve iki düğmeleri tıklatın emin olun. Uygulamayı WCF zaman uyumsuz olarak koşuluyla çağıracak `Endpoint` alanını doğru şekilde ayarlayın:
 
-  [![](walkthrough-working-with-wcf-images/image08.png "30 saniye içinde her WCF yöntemi bir yanıt alınmalıdır ve uygulamamızı bu ekran görüntüsüne benzer görünmelidir")](walkthrough-working-with-wcf-images/image08.png)
+  [![](walkthrough-working-with-wcf-images/image08.png "30 saniye içinde her WCF yöntemi bir yanıt alınmalıdır ve uygulamamızı bu ekran görüntüsüne benzer görünmelidir")](walkthrough-working-with-wcf-images/image08.png#lightbox)
 
 <a name="Creating_a_Xamarin_iOS_Application" />
 
@@ -428,7 +428,7 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.iOS uygulaması tarafından kullan
 
     Kullanıcı Arabirimi denetimlerini eklendikten sonra aşağıdaki ekran görüntüsü benzemelidir:
 
-    [![](walkthrough-working-with-wcf-images/image12.png "Denetimleri eklendikten sonra kullanıcı arabirimini bu ekran benzemelidir")](walkthrough-working-with-wcf-images/image12.png)
+    [![](walkthrough-working-with-wcf-images/image12.png "Denetimleri eklendikten sonra kullanıcı arabirimini bu ekran benzemelidir")](walkthrough-working-with-wcf-images/image12.png#lightbox)
 
 1. İçinde **Çözüm Gezgini**, açık `ViewController.cs` ve aşağıdaki kodu ekleyin:
 
@@ -515,7 +515,7 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.iOS uygulaması tarafından kullan
 
 1. Uygulamayı çalıştırın, WCF hizmeti çalışıyor ve iki düğmeleri tıklatın emin olun. Uygulamayı WCF zaman uyumsuz olarak koşuluyla çağıracak `Endpoint` alanını doğru şekilde ayarlayın:
 
-    [![](walkthrough-working-with-wcf-images/image10.png "30 saniye içinde her WCF yöntemi bir yanıt alınmalıdır ve uygulamamızı bu ekran görüntüsüne görünmelidir")](walkthrough-working-with-wcf-images/image10.png)
+    [![](walkthrough-working-with-wcf-images/image10.png "30 saniye içinde her WCF yöntemi bir yanıt alınmalıdır ve uygulamamızı bu ekran görüntüsüne görünmelidir")](walkthrough-working-with-wcf-images/image10.png#lightbox)
 
 <a name="Summary" />
 

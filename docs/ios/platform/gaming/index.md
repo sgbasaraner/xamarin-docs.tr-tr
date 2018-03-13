@@ -3,16 +3,16 @@ title: iOS oyun API'leri
 description: "Bu makalede, Xamarin.iOS oyunun grafik ve ses özellikleri geliştirmek için kullanılan iOS tarafından 9 sağlanan yeni oyun geliştirmelerini ele alınmaktadır."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6c735c68ee61032d8dfe3a74e6858bc058c6fa47
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d0a66d4cfdb3050c7ad791d24e24d6917a031ee1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="ios-gaming-apis"></a>iOS oyun API'leri
 
@@ -21,7 +21,7 @@ _Bu makalede, Xamarin.iOS oyunun grafik ve ses özellikleri geliştirmek için k
 Apple, oyun grafikleri ve ses bir Xamarin.iOS uygulaması uygulamak kolaylaştıran çeşitli teknolojik iyileştirmeler iOS 9'de API oyun yaptı.
 Bunlar, her iki üst düzey çerçeveler ve geliştirilmiş hızı ve grafik yeteneklerini iOS cihazın GPU gücünü gücünden aracılığıyla geliştirme kolaylığı içerir.
 
-[ ![](images/flocking01.png "Flocking çalışan bir uygulama örneği")](images/flocking01.png)
+[![](images/flocking01.png "Flocking çalışan bir uygulama örneği")](images/flocking01.png#lightbox)
 
 Bu seçenek, GameplayKit, ReplayKit, Model g/ç, MetalKit ve Metal performans gölgelendiriciler birlikte Metal, SceneKit ve SpriteKit yeni, Gelişmiş özellikleri içerir.
 
@@ -56,7 +56,7 @@ Pathfinding oyun tahtası kendi karşılaşmamak bulur oyun AI öğesi için yet
 
 Aşağıdaki harita göz önünde bulundurun:
 
-[ ![](images/gkpathfindpath.png "Bir örnek pathfinding eşlemesi")](images/gkpathfindpath.png)
+[![](images/gkpathfindpath.png "Bir örnek pathfinding eşlemesi")](images/gkpathfindpath.png#lightbox)
 
 Pathfinding kullanarak bu C# kod Haritası aşamalardaki bulabilirsiniz:
 
@@ -367,7 +367,7 @@ public override void ViewWillLayoutSubviews ()
 
 Çalıştırdığınızda, biraz animasyonlu _"Boids"_ bizim parmak Tap flock:
 
-[ ![](images/flocking01.png "Biraz animasyonlu Boids parmak Tap'ları flock")](images/flocking01.png)
+[![](images/flocking01.png "Biraz animasyonlu Boids parmak Tap'ları flock")](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>Diğer Apple örnekleri
 

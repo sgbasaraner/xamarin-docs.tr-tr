@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 09/25/2017
-ms.openlocfilehash: e71d497201cc2d8f2b3e2b8b252e5f963806a75b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 14372c3ca42d1ba4a8ade1248f3c5f3210cc7e46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-bindings"></a>Bağlamaları özelleştirme
 
 _Bağlama işlemi denetimleri meta verileri düzenleyerek, bir Xamarin.Android bağlama özelleştirebilirsiniz. El ile yapılan bu değişiklikleri genellikle derleme hataları gidermek ve C# ile daha tutarlı bir elde edilen API şekillendirme için gerekli olan / .NET. Bu kılavuzlar bu meta veri yapısı, meta verileri değiştirme ve JavaDoc yöntemi parametrelerinin adları kurtarmak için nasıl kullanılacağı açıklanmaktadır._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
  
@@ -34,7 +33,6 @@ Xamarin.Android bağlama işlemi çoğunu otomatikleştirir; Ancak, bazı duruml
 
 Bağlama işlemi denetimleri meta verileri değiştirerek bazılarını veya tümünü bu değişiklikleri yapabilirsiniz.
 
-<a name="guides" />
 
 ## <a name="guides"></a>Kılavuzlar
 

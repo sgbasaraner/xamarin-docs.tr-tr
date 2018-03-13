@@ -4,18 +4,17 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: d20b2aa7df17f2000e2de9cb67f091c52989719b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 39ee7f826d4c775ead679a09ce56a7c0f92b60ed
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="permissions-in-xamarinandroid"></a>Xamarin.Android izinleri
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -42,7 +41,7 @@ Bir veya daha fazla izin istemeden önce bunu neden uygulama izni istemeden önc
 
 Denetleme ve izinleri isteyen tüm iş akışı olarak bilinen bir _çalıştırma izinleri_ denetleyin ve aşağıdaki çizimde özetlenebilir: 
 
-[ ![Çalıştırma izni onay akış çizelgesi](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png)
+[![Çalıştırma izni onay akış çizelgesi](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
 Android destek kitaplığı backports bazı izinler Android eski sürümleri için yeni API'ler. Bir API düzey denetimi her seferinde gerçekleştirmek gerekli değildir bu backported API sürümünde Android cihaz otomatik olarak kontrol eder.  
 
@@ -50,7 +49,7 @@ Bu belgede bir Xamarin.Android uygulamasına izinleri eklemek nasıl ele alınac
 
 
 > [!NOTE]
-> **Not:** uygulamayı Google Play tarafından nasıl filtre donanım izinlerini etkileyebilir mümkündür. Uygulama için kamera iznini gerektiriyorsa, örneğin, ardından Google Play uygulaması yüklü bir kamera yok bir cihazda Google Play Store'da göstermez.
+> Bu uygulamayı Google Play tarafından nasıl filtre donanım izinlerini etkileyebilir mümkündür. Uygulama için kamera iznini gerektiriyorsa, örneğin, ardından Google Play uygulaması yüklü bir kamera yok bir cihazda Google Play Store'da göstermez.
 
 
 <a name="requirements" />
@@ -59,7 +58,6 @@ Bu belgede bir Xamarin.Android uygulamasına izinleri eklemek nasıl ele alınac
 
 Xamarin.Android projeleri içerdiğini kesinlikle önerilir [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) NuGet paketi. Sürekli belirli API eski sürümleri, Android, bir ortak sağlamak için gerek kalmadan arabirim bu paket backport izin uygulamayı çalıştıran Android sürümünü denetleyin.
 
-<a name="requesting_permissions" />
 
 ## <a name="requesting-system-permissions"></a>Sistem izinleri isteyen
 
@@ -68,9 +66,8 @@ Android izinlerle çalışma ilk adımı, Android izinler bildirim dosyası bild
 Android 6.0 hedef veya kullanıcı, belirli bir noktada geçmişte izni sonraki açışınızda geçerli olacaktır izni olduğundan daha yüksek olmadığını varsayar olamaz uygulamalar. Android 6.0 hedefleyen bir uygulama her zaman bir çalışma zamanı izni denetimi gerçekleştirmeniz gerekir. Android 5.1 veya alt hedef uygulamaları çalıştırma izni denetimi gerçekleştirmek gerekmez.
 
 > [!NOTE]
-> **Not:** uygulamaları ihtiyaç izinleri yalnızca istek.
+> Uygulamalar, yalnızca ihtiyaç izinleri istemeniz gerekir.
 
-<a name="declaring_permissions_in_the_manifest" />
 
 ### <a name="declaring-permissions-in-the-manifest"></a>Bildiriminde izinleri bildirme
 
@@ -87,15 +84,15 @@ Visual Studio'ya yerleşik araç desteği kullanarak izinlerini bildirme mümkü
 
 1. Çift **özellikleri** içinde **Çözüm Gezgini** seçip **Android derleme bildirimi** Özellikleri penceresinde sekme:
 
-    [![Android derleme bildirimi sekmesinde gerekli izinler](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png)
+    [![Android derleme bildirimi sekmesinde gerekli izinler](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
 2. Uygulama bir AndroidManifest.xml yoksa tıklatın **Hayır AndroidManifest.xml bulundu. Bir eklemek için tıklatın** aşağıda gösterildiği gibi:
 
-    [![No AndroidManifest.xml message](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png)
+    [![No AndroidManifest.xml message](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
 3. Uygulamanız gereken tüm izinleri seçin **gerekli izinleri** listelemek ve kaydedin:
 
-    [![Seçili örnek kamera izinleri](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png)
+    [![Seçili örnek kamera izinleri](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -103,15 +100,15 @@ Mac için Visual Studio'ya yerleşik araç desteği kullanarak izinlerini bildir
 
 1. Projede çift tıklatın **çözüm paneli** seçip **Seçenekleri > Yapı > Android uygulaması**:
 
-    [![Gösterilen gerekli izinleri bölüm](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png)
+    [![Gösterilen gerekli izinleri bölüm](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
 2. Tıklatın **Android derleme bildirimi ekleme** proje zaten yoksa düğmesini bir **AndroidManifest.xml**:
 
-    [![Projenin Android derleme bildirimi eksik.](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png)
+    [![Projenin Android derleme bildirimi eksik.](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
 3. Uygulamanız gereken tüm izinleri seçin **gerekli izinleri** listesinde ve tıklatın **Tamam**:
 
-    [![Seçili örnek kamera izinleri](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png)
+    [![Seçili örnek kamera izinleri](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
@@ -119,7 +116,6 @@ Xamarin.Android otomatik olarak bazı izinler derleme zamanında hata ayıklama 
 
 Android 5.1 (API düzeyi 22) veya alt hedef uygulamaları için hiçbir şey yoktur daha fazla yapılmalıdır. Android 6.0 (API 23 düzey 23) veya üzeri çalışacak uygulamaları çalıştırma izni denetler gerçekleştirme sonraki bölümüne açın devam etmelisiniz. 
 
-<a name="run_time_permission_checks" />
 
 ### <a name="runtime-permission-checks-in-android-60"></a>Çalışma zamanı izni Android 6. 0'denetler
 
@@ -213,7 +209,6 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

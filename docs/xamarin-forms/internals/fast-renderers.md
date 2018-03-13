@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 92a11ebe983840270d3679fd11f5faa0b8222cfe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 956fa919ef9aa994fea92a9a64ca1325819f3ffc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fast-renderers"></a>Hızlı Oluşturucu
 
@@ -40,11 +40,11 @@ Forms.SetFlags("FastRenderers_Experimental");
 ```
 
 > [!NOTE]
-> **Not**: hızlı Oluşturucu yalnızca uygulama uyumluluğu Android arka ucuna geçerli nedenle bu ayarı öncesi uygulama uyumluluğu etkinliklerini sayılacak.
+> Bu ayar öncesi uygulama uyumluluğu etkinliklerini göz ardı edilir şekilde hızlı Oluşturucu yalnızca uygulama uyumluluğu Android arka için geçerlidir.
 
 Performans iyileştirmeleri düzeni karmaşıklığına bağlı olarak, her bir uygulama için değişir. Örneğin, x2 performans geliştirmeleri ile kaydırma sırasında olası bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) burada her satır hücrelerde yapılan hızlı Oluşturucu kullanan denetimlerin, veri satırı binlerce içeren hangi sonuçlanıyor görünür şekilde daha yumuşak kaydırma.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Özel oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Özel Oluşturucular](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

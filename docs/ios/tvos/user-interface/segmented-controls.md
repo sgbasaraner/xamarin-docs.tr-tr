@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fd31413b777e1179e7f4faf6f91f91bc6c41e82b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6561ff70997af05ed4df6b7bfe0ba6345fb44d9d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-segmented-controls"></a>Bölümlenmiş denetimleri ile çalışma
 
@@ -21,7 +21,7 @@ _Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde bölümlenmiş denetimle
 
 Bölümlenmiş bir denetim her biri bir simge veya metin içerebilir ve kullanıcı için ilgili bir seçenek kümesi sağlamak için kullanılan doğrusal öğeleri kümesi sağlar.
 
-[ ![](segmented-controls-images/segment01.png "Örnek segment denetimleri")](segmented-controls-images/segment01.png)
+[![](segmented-controls-images/segment01.png "Örnek segment denetimleri")](segmented-controls-images/segment01.png#lightbox)
 
 Apple bölümlenmiş denetimleri ile çalışmak için aşağıdaki önerileri vardır:
 
@@ -57,36 +57,36 @@ Yeniden, metin ve belirli bir kesim simgeleri karıştıramazsınız ve simgeler
 
 Xamarin.tvOS uygulamada Segment denetimleri ile çalışmak için en kolay yolu, onları iOS Tasarımcısı kullanarak uygulamanın UI eklemektir.
 
-[[ide name="xs"]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 1. İçinde **çözüm paneli**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **Segment denetim** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](segmented-controls-images/segment02.png "Bir Segment denetimi")](segmented-controls-images/segment02.png)
+    [![](segmented-controls-images/segment02.png "Bir Segment denetimi")](segmented-controls-images/segment02.png#lightbox)
 1. İçinde **pencere öğesi sekmesini** , **özelliği paneli**, Segment denetiminin çeşitli özellikler gibi ayarlayabilirsiniz kendi **stili** ve **durumu**: 
 
-    [ ![](segmented-controls-images/segment03.png "Pencere öğesi sekmesi")](segmented-controls-images/segment03.png)
+    [![](segmented-controls-images/segment03.png "Pencere öğesi sekmesi")](segmented-controls-images/segment03.png#lightbox)
 1. Kullanım **kesimleri** denetleyicideki bölümlerinin sayısını denetlemek için alan.
 1. Belirli bir kesim gelen seçin **Segment açılır** gibi tek tek özelliklerini ayarlamak için **başlık** veya **görüntü** ve belirli bir kesim ise denetlemek için  **Etkin** veya **seçili** denetimi olduğunda görüntülenir.
 1. Son olarak, Ata **adları** denetimlere için C# kodunda yanıt vermesi. Örneğin: 
 
-    [ ![](segmented-controls-images/segment04.png "Bir ad atayın")](segmented-controls-images/segment04.png)
+    [![](segmented-controls-images/segment04.png "Bir ad atayın")](segmented-controls-images/segment04.png#lightbox)
 1. Değişikliklerinizi kaydedin.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
     
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **Segment denetim** gelen **araç** ve görünümünde bırak: 
 
-    [ ![](segmented-controls-images/segment02-vs.png "Bir Segment denetimi")](segmented-controls-images/segment02-vs.png)
+    [![](segmented-controls-images/segment02-vs.png "Bir Segment denetimi")](segmented-controls-images/segment02-vs.png#lightbox)
 1. İçinde **pencere öğesi sekmesini** , **özelliği Explorer**, Segment denetiminin çeşitli özellikler gibi ayarlayabilirsiniz kendi **stili** ve **durumu**: 
 
-    [ ![](segmented-controls-images/segment03-vs.png "Pencere öğesi sekmesi")](segmented-controls-images/segment03-vs.png)
+    [![](segmented-controls-images/segment03-vs.png "Pencere öğesi sekmesi")](segmented-controls-images/segment03-vs.png#lightbox)
 1. Kullanım **kesimleri** denetleyicideki bölümlerinin sayısını denetlemek için alan.
 1. Belirli bir kesim gelen seçin **Segment açılır** gibi tek tek özelliklerini ayarlamak için **başlık** veya **görüntü** ve belirli bir kesim ise denetlemek için  **Etkin** veya **seçili** denetimi olduğunda görüntülenir.
 1. Son olarak, Ata **adları** denetimlere için C# kodunda yanıt vermesi. Örneğin: 
 
-    [ ![](segmented-controls-images/segment04-vs.png "Bir ad atayın")](segmented-controls-images/segment04-vs.png)
+    [![](segmented-controls-images/segment04-vs.png "Bir ad atayın")](segmented-controls-images/segment04-vs.png#lightbox)
 1. Değişikliklerinizi kaydedin.
     
 -----
@@ -240,7 +240,7 @@ Bu makalede, tasarlama ve Xamarin.tvOS uygulama içinde bölümlenmiş denetimiy
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

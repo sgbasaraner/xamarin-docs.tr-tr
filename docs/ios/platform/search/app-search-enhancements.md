@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 95f7ad5069abfe4dff82659c0fbc79eef2125e15
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af124c2ae0390c5321e9dd34158c7b53b33b2c48
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-search-enhancements"></a>Uygulama arama geliştirmeleri
 
@@ -54,17 +54,15 @@ Genellikle, uygulamaları destekleyen `CSSearchQuery` kendi ayrı arama dizini k
 
 Bu özelliği uygulamak için uygulamanın Düzenle `Info.plist` dosya, ekleme `CoreSpotlightContinuation` anahtar türü **Boolean** ve değerini ayarlama `YES`:
 
-[[ide name="xs]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](app-search-enhancements-images/search01.png "Info.plist dosyasında CoreSpotlightContinuation düzenleme")](app-search-enhancements-images/search01.png)
+[![](app-search-enhancements-images/search01.png "Info.plist dosyasında CoreSpotlightContinuation düzenleme")](app-search-enhancements-images/search01.png#lightbox)
 
-[[/ide]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[[ide name="vs]]
+[![](app-search-enhancements-images/searchw01.png "Info.plist dosyasında CoreSpotlightContinuation düzenleme")](app-search-enhancements-images/search01.png#lightbox)
 
-[ ![](app-search-enhancements-images/searchw01.png "Info.plist dosyasında CoreSpotlightContinuation düzenleme")](app-search-enhancements-images/search01.png)
-
-[[/ide]]
+-----
 
 Arama sonucu etmeden kullanıcıya yanıt vermek için (`NSUserActivity`), düzenleme `AppDelegate.cs` dosya ve geçersiz kılma `ContinueUserActivity` yöntemi. Örneğin:
 

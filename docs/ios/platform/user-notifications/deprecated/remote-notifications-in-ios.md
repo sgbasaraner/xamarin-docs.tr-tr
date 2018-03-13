@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c4a88f875b4082f85b1c5565de2a24548e7b8874
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="push-notifications-in-ios"></a>İOS anında iletme bildirimleri
 
@@ -45,37 +45,37 @@ Her biri önceki bölümde belirtildiği ortamları, kendi sertifika gerektirir.
 
 1.  Oluşturmak için bir sertifika için iOS sağlama portalı Apple'nın Web sitesinde (bildirim soldaki uygulama kimlikleri menü öğesi) aşağıdaki ekran görüntüsünde gösterildiği gibi gidin:
 
-    [ ![](remote-notifications-in-ios-images/image5new.png "İOS sağlama portalı elmalar Web sitesinde")](remote-notifications-in-ios-images/image5new.png)
+    [![](remote-notifications-in-ios-images/image5new.png "İOS sağlama portalı elmalar Web sitesinde")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
 2.  Ardından, uygulama ID bölümüne gidin ve yeni bir uygulama kimliği aşağıdaki ekran görüntüsünde gösterildiği gibi oluşturun:
 
-    [ ![](remote-notifications-in-ios-images/image6new.png "Uygulama kimlikleri bölümüne gidin ve yeni bir uygulama kimliği oluşturma")](remote-notifications-in-ios-images/image6new.png)
+    [![](remote-notifications-in-ios-images/image6new.png "Uygulama kimlikleri bölümüne gidin ve yeni bir uygulama kimliği oluşturma")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
 3.  Tıkladığınızda  **+**  düğmesi görebilirsiniz için uygulama kimliği, açıklama ve bir paket tanımlayıcısı girmek sonraki ekran görüntüsünde gösterildiği gibi:
 
-    [ ![](remote-notifications-in-ios-images/image7new.png "Uygulama kimliği için paket tanımlayıcısı ve açıklama girin")](remote-notifications-in-ios-images/image7new.png)
+    [![](remote-notifications-in-ios-images/image7new.png "Uygulama kimliği için paket tanımlayıcısı ve açıklama girin")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
 4. Seçtiğinizden emin olun **açık uygulama kimliği** ve paket tanımlayıcısı ile bitmiyor bir `*` . Bu birden çok uygulama için iyi bir tanımlayıcı oluşturur ve anında iletme bildirimi sertifikalar için tek bir uygulama olmalıdır.
 
 1. Uygulama Hizmetleri altında seçin **anında iletme bildirimleri**:
 
-    [ ![](remote-notifications-in-ios-images/image8new.png "Anında iletme bildirimlerini seçin")](remote-notifications-in-ios-images/image8new.png)
+    [![](remote-notifications-in-ios-images/image8new.png "Anında iletme bildirimlerini seçin")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
 2. Tuşuna basın **gönderme** yeni uygulama kimliği kaydı onaylamak için:
 
-    [ ![](remote-notifications-in-ios-images/image9new.png "Yeni uygulama kimliği kaydı Onayla")](remote-notifications-in-ios-images/image9new.png)
+    [![](remote-notifications-in-ios-images/image9new.png "Yeni uygulama kimliği kaydı Onayla")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
 3.  Ardından, uygulama kimliği için sertifika oluşturmalısınız. Sol taraftaki gezinti bölmesinde Gözat **sertifikaları > tüm** seçip `+` düğmesi, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-    [ ![](remote-notifications-in-ios-images/image10new.png "Uygulama kimliği için sertifika oluştur")](remote-notifications-in-ios-images/image8.png)
+    [![](remote-notifications-in-ios-images/image10new.png "Uygulama kimliği için sertifika oluştur")](remote-notifications-in-ios-images/image8.png#lightbox)
 
 4.  Bir geliştirme veya üretim sertifikası kullanmak mı istediğinizi seçin:
 
-    [ ![](remote-notifications-in-ios-images/image11new.png "Bir geliştirme veya üretim sertifikası seçin")](remote-notifications-in-ios-images/image11new.png)
+    [![](remote-notifications-in-ios-images/image11new.png "Bir geliştirme veya üretim sertifikası seçin")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
 5. Ve ardından yeni oluşturduğumuz yeni uygulama Kimliğini seçin:
 
-    [ ![](remote-notifications-in-ios-images/image12new.png "Yeni oluşturduğunuz yeni uygulama Kimliğini seçin")](remote-notifications-in-ios-images/image12new.png)
+    [![](remote-notifications-in-ios-images/image12new.png "Yeni oluşturduğunuz yeni uygulama Kimliğini seçin")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
 6.  Bu oluşturma işlemi boyunca sürer yönergeleri görüntüler bir *sertifika imzalama isteği* kullanarak **Anahtarlık erişimi** Mac uygulaması
 
@@ -85,11 +85,11 @@ Her biri önceki bölümde belirtildiği ortamları, kendi sertifika gerektirir.
 
 9.  Sağlama profili oluşturduktan sonra açık **Xcode Düzenleyicisi** ve yenileyin. Sağlama profili oluşturduysanız iOS sağlama portalı profilini indirir ve el ile içeri aktarmak gerekli olabilir görünmez. Aşağıdaki ekran görüntüsünde, sağlama profili eklendi Düzenleyici örneği gösterilmektedir:
 
-    [ ![](remote-notifications-in-ios-images/image13new.png "Bu ekran görüntüsü, sağlama profili eklendi Düzenleyici örneği gösterir")](remote-notifications-in-ios-images/image13new.png)
+    [![](remote-notifications-in-ios-images/image13new.png "Bu ekran görüntüsü, sağlama profili eklendi Düzenleyici örneği gösterir")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
 10.  Bu noktada biz Xamarin.iOS projesi bu yeni sağlama profili oluşturulan kullanacak şekilde yapılandırmanız gerekir. Bu yapılır **proje seçenekleri** iletişim altında **iOS paket imzalama** sekmesinde, aşağıdaki ekran görüntüsü gösteren olarak:
 
-    [ ![](remote-notifications-in-ios-images/image11.png "Bu yeni sağlama profili oluşturulduğunda kullanılacak Xamarin.iOS projesi yapılandırma")](remote-notifications-in-ios-images/image11.png)
+    [![](remote-notifications-in-ios-images/image11.png "Bu yeni sağlama profili oluşturulduğunda kullanılacak Xamarin.iOS projesi yapılandırma")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 
 

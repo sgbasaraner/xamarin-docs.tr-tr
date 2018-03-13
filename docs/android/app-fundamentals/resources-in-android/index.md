@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: 2a6013d9bab26f90a6d8afa101298b494f2f90ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6546870d85f7b77e60dff0cb9e6075f982c9cb8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-resources"></a>Android kaynakları
 
 _Bu makalede Xamarin.Android Android kaynaklarında kavramını tanıtır ve bunları nasıl kullanacağınızı belge. Kaynaklarının Android uygulamanızda uygulama yerelleştirme ve değişen ekran boyutlarına ve densities dahil olmak üzere birden çok aygıt desteklemek için nasıl kullanılacağını kapsar._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -71,7 +70,7 @@ Bu makalede, kaynakları kullanarak kapsamlı bir göz atalım ve aşağıdaki k
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Android varlıkları kullanma](~/android/app-fundamentals/resources-in-android/android-assets.md)
-- [Uygulama temelleri](http://developer.android.com/guide/topics/fundamentals.html)
+- [Android Varlıklarını Kullanma](~/android/app-fundamentals/resources-in-android/android-assets.md)
+- [Uygulama Temelleri](http://developer.android.com/guide/topics/fundamentals.html)
 - [Uygulama Kaynakları](http://developer.android.com/guide/topics/resources/index.html)
 - [Birden çok ekran destekleme](http://developer.android.com/guide/practices/screens_support.html)

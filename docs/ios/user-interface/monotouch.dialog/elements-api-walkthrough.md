@@ -7,11 +7,11 @@ ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 19e20015d1872cbaea21dd8b8e5431981e463c33
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 19e1ab4000e473aa773bf75015ff520a1f9a96d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---creating-an-application-using-the-elements-api"></a>İzlenecek yol - öğeleri API kullanarak bir uygulama oluşturma
 
@@ -19,7 +19,7 @@ _Bu makalede giriş MonoTouch iletişim makale için sunulan bilgiler temel olu�
 
 Bu kılavuzda, yüksekliğindeki kullanacağız. Görev listesini görüntüleyen uygulamanın ana-ayrıntı stil oluşturmak için D öğeleri API. Kullanıcı seçtiğinde <span class="ui"> + </span> düğmesi gezinti çubuğunda görev tablosuna yeni bir satır eklenir. Satır seçme görev açıklaması ve son tarih, güncelleştirme kurmamızı aşağıda gösterildiği gibi sağlayan ayrıntı ekranına gidin:
 
- [ ![](elements-api-walkthrough-images/01-task-list-app.png "Satır seçerek görev açıklaması ve son tarih güncelleştirme kurmamızı sağlayan ayrıntı ekran gideceği")](elements-api-walkthrough-images/01-task-list-app.png)
+ [![](elements-api-walkthrough-images/01-task-list-app.png "Satır seçerek görev açıklaması ve son tarih güncelleştirme kurmamızı sağlayan ayrıntı ekran gideceği")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
  <a name="Elements_API_Walkthrough" />
 
@@ -72,7 +72,7 @@ public override bool FinishedLaunching (UIApplication app,
 
 Yukarıdaki kod örneğini oluşturur bir `RootElement` ve içine geçirir `DialogViewController`. `DialogViewController` Her zaman bir `RootElement` kendi hiyerarşisinin üstünde. Bu örnekte, `RootElement` "Yapılacaklar başlık Gezinti denetleyicinin gezinti çubuğu olarak hizmet veren listesi," dizesi ile oluşturulur. Bu noktada, uygulama çalışan aşağıda gösterildiği ekran sunmak:
 
- [ ![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Uygulamayı çalıştıran burada gösterilen ekran sunacaktır")](elements-api-walkthrough-images/02-to-do-list-screen-.png)
+ [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Uygulamayı çalıştıran burada gösterilen ekran sunacaktır")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
 
 MonoTouch.Dialog'ın hiyerarşik yapısını kullanmak nasıl görelim `Sections` ve `Elements` daha fazla ekranlar eklemek için.
 
@@ -148,11 +148,11 @@ Kullandık bir `RootElement` MonoTouch.Dialog otomatik olarak her görevin Ayrı
 
 Görev Ayrıntıları ekran kendisini iki bölümden oluşur; Bu bölümlerde, tek bir öğe içeriyor. İlk öğe oluşturulur bir `EntryElement` görevin için düzenlenebilir bir satır sağlamak için `Description` özelliği. Öğe seçildiğinde, metin düzenleme için klavye aşağıda gösterildiği gibi sunulur:
 
- [ ![](elements-api-walkthrough-images/03-create-task.png "Öğe seçildiğinde, metin düzenleme için klavye gösterildiği gibi sunulur")](elements-api-walkthrough-images/03-create-task.png)
+ [![](elements-api-walkthrough-images/03-create-task.png "Öğe seçildiğinde, metin düzenleme için klavye gösterildiği gibi sunulur")](elements-api-walkthrough-images/03-create-task.png#lightbox)
 
 İkinci bölüm içeren bir `DateElement` bize görevin yönetmek sağlayan `DueDate` özelliği. Tarih otomatik olarak seçme tarih seçici gösterildiği gibi yüklenir:
 
- [ ![](elements-api-walkthrough-images/04-date-picker.png "Bir tarih seçici olarak yükleyen tarihi otomatik olarak seçme")](elements-api-walkthrough-images/04-date-picker.png)
+ [![](elements-api-walkthrough-images/04-date-picker.png "Bir tarih seçici olarak yükleyen tarihi otomatik olarak seçme")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 
 Hem de `EntryElement` ve `DateElement` durumları (veya MonoTouch.Dialog herhangi bir veri girişi öğesi için) değerlerini değişiklikleri otomatik olarak korunur. Biz bu tarihi düzenleyerek ve ardından İleri ve geri kök ekran ve burada ayrıntı ekranlar değerleri korunur, çeşitli görev ayrıntıları arasında gezinme personeline gösterebilir.
 

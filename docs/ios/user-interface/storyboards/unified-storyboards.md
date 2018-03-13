@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 077be02aacb9d4200db2d2eadf6f7388842b8e29
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 30a952bf0df4db34c749de3d6198877b7a9766b9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="unified-storyboards"></a>Birleşik film şeritleri
 
@@ -36,7 +36,7 @@ Aygıtları dikey ve yatay eksen boyutu sınıfları tarafından tanımlanır ve
 
 İki kavramları birlikte kullandıysanız, aşağıdaki diyagramda görüldüğü gibi iki farklı yönleri içinde kullanılabilir farklı olası boyutları tanımlar 2 x 2 kılavuz oluşur:
 
- [ ![](unified-storyboards-images/sizeclassgrid.png "Kullanılabilir farklı olası boyutları normal ve Compact yönler tanımlayan 2 x 2 kılavuz")](unified-storyboards-images/sizeclassgrid.png)
+ [![](unified-storyboards-images/sizeclassgrid.png "Kullanılabilir farklı olası boyutları normal ve Compact yönler tanımlayan 2 x 2 kılavuz")](unified-storyboards-images/sizeclassgrid.png#lightbox)
 
 Geliştirici farklı düzenleri (Yukarıdaki grafik görüldüğü gibi) neden olan dört olasılık birini kullanan bir görünüm denetleyicisi oluşturabilirsiniz.
 
@@ -44,14 +44,14 @@ Geliştirici farklı düzenleri (Yukarıdaki grafik görüldüğü gibi) neden o
 
 Boyutu nedeniyle iPad sahip bir **normal** sınıfını hem yönler boyutu.
 
- [ ![](unified-storyboards-images/image1.png "iPad boyutu sınıfları")](unified-storyboards-images/image1.png)
+ [![](unified-storyboards-images/image1.png "iPad boyutu sınıfları")](unified-storyboards-images/image1.png#lightbox)
 
 
 ### <a name="iphone-size-classes"></a>iPhone boyutu sınıfları
 
 İPhone cihaz yönünü göre farklı boyutu sınıfları içerir:
 
- [![](unified-storyboards-images/iphonesizeclasses.png "iPhone boyutu sınıfları")](unified-storyboards-images/iphonesizeclasses.png)
+ [![](unified-storyboards-images/iphonesizeclasses.png "iPhone boyutu sınıfları")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
 -  Cihaz dikey modda olduğunda, ekran sahip bir **compact** yatay olarak sınıfı ve **normal** dikey
 -  Cihaz yatay modda olduğunda, ekran sınıfları dikey modundan ters çevrilir.
@@ -60,7 +60,7 @@ Boyutu nedeniyle iPad sahip bir **normal** sınıfını hem yönler boyutu.
 
 Boyutlar dikey yönde olduğunda, yatay farklı ancak önceki iPhone ile aynıdır:
 
-[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 Plus boyutu sınıfları")](unified-storyboards-images/iphone6sizeclasses.png)
+[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 Plus boyutu sınıfları")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
 
 Çünkü iPhone 6 Plus büyüklükte bir ekran sahipse, normal bir genişlik boyutu sınıfın yatay modunda sahip mümkün olur.
 
@@ -104,7 +104,7 @@ Geliştirici ayırdedici nitelik ortamı tarafından döndürülen ayırdedici n
 
 Aşağıdaki diyagramda görüldüğü gibi tüm ayırdedici nitelik ortamların bir hiyerarşi olun:
 
- [ ![](unified-storyboards-images/viewhierarchy.png "Ayırdedici nitelik ortamları hiyerarşi diyagramı")](unified-storyboards-images/viewhierarchy.png)
+ [![](unified-storyboards-images/viewhierarchy.png "Ayırdedici nitelik ortamları hiyerarşi diyagramı")](unified-storyboards-images/viewhierarchy.png#lightbox)
 
 Ayırdedici nitelik koleksiyonu her yukarıdaki ayırdedici nitelik ortamlara sahip olduğundan, varsayılan olarak, alt ortamına üst öğeden akar.
 
@@ -233,17 +233,17 @@ En iOS 8 değişti View Controller sınıfları biri `UISplitViewController` sı
 
 Yatay yönde iPad cihazında bir bölme görünüm denetleyicisini gösteren aşağıdaki grafikte olduğu gibi bir alt kapsayıcıdaki aşağıya doğru üst kapsayıcısından ayırdedici nitelik ortamları basamaklı:
 
- [ ![](unified-storyboards-images/cascadingclasses01.png "Bir iPad yatay yönde bölme görünüm denetleyicisinde")](unified-storyboards-images/cascadingclasses01.png)
+ [![](unified-storyboards-images/cascadingclasses01.png "Bir iPad yatay yönde bölme görünüm denetleyicisinde")](unified-storyboards-images/cascadingclasses01.png#lightbox)
 
 İPad içinde hem bir yatay ve dikey yönler normal bir boyut sınıfı olduğundan, bölme görünüm hem ana hem de ayrıntı görünümleri görüntüler.
 
 Boyutu sınıfı hem yönler compact olduğu bir İphone'da bölme görünüm denetleyicisini yalnızca aşağıda görüldüğü gibi ayrıntı görünümü görüntüler:
 
- [ ![](unified-storyboards-images/cascadingclasses02.png "Bölme görünüm denetleyicisini yalnızca ayrıntı görünümü görüntüler")](unified-storyboards-images/cascadingclasses02.png)
+ [![](unified-storyboards-images/cascadingclasses02.png "Bölme görünüm denetleyicisini yalnızca ayrıntı görünümü görüntüler")](unified-storyboards-images/cascadingclasses02.png#lightbox)
 
 Burada yatay yönde iPhone hem ana hem de ayrıntı görüntülemek için geliştirici istediği bir uygulamada, geliştirici bölme görünüm denetleyici için bir üst öğe kapsayıcısı Ekle ve ayırdedici nitelik koleksiyonu geçersiz kılma gerekir. Aşağıdaki grafikte görüldüğü gibi:
 
- [ ![](unified-storyboards-images/cascadingclasses03.png "Geliştirici bölme görünüm denetleyici için bir üst öğe kapsayıcısı Ekle ve ayırdedici nitelik koleksiyonu geçersiz kıl")](unified-storyboards-images/cascadingclasses03.png)
+ [![](unified-storyboards-images/cascadingclasses03.png "Geliştirici bölme görünüm denetleyici için bir üst öğe kapsayıcısı Ekle ve ayırdedici nitelik koleksiyonu geçersiz kıl")](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
 A `UIView` bölme görünüm denetleyicisini üst öğe olarak ayarlanır ve `SetOverrideTraitCollection` yöntemi bölme görünüm denetleyicisini hedefleme ve yeni bir ayırdedici nitelik koleksiyonunda geçirme görünümünde çağrılır. Yeni ayırdedici nitelik koleksiyonu geçersiz kılmaları `HorizontalSizeClass`, ayarı `Regular`, böylece bölme görünüm denetleyicisini yatay yönde iPhone hem ana hem de ayrıntı görünümleri görüntüler.
 
@@ -253,7 +253,7 @@ Unutmayın `VerticalSizeClass` ayarlandı `unspecified`, hangi üst ayırdedici 
 
 Bu bölümde, ayırdedici nitelik ortamı değiştiğinde ayırdedici nitelik koleksiyonları nasıl geçiş sırasında ayrıntılı bir görünüm olur. Örneğin, ne zaman cihaz düşey yerine yatay olarak döndürülür.
 
- [ ![](unified-storyboards-images/traittransitions01.png "Yatay ayırdedici nitelik değişiklikleri genel bakış dikey")](unified-storyboards-images/traittransitions01.png)
+ [![](unified-storyboards-images/traittransitions01.png "Yatay ayırdedici nitelik değişiklikleri genel bakış dikey")](unified-storyboards-images/traittransitions01.png#lightbox)
 
 İlk olarak, iOS 8 gerçekleşmesi için geçiş için hazırlamak için bazı Kurulum'un yok. Ardından, sistem durum geçişi canlandırır. Son olarak, iOS 8 temizler geçişi sırasında gereken herhangi bir geçici durum yukarı.
 
@@ -352,7 +352,7 @@ Geliştiriciler uygulayabilirsiniz `ShowViewController` ve `ShowDetailViewContro
 
 Bu bölümde Biz bu yöntemleri iOS 8 gerçekte nasıl uygulandığı bir göz atalım. İlk yeni bakalım `GetTargetForAction` yöntemi:
 
- [ ![](unified-storyboards-images/gettargetforaction.png "Yeni GetTargetForAction yöntemi")](unified-storyboards-images/gettargetforaction.png)
+ [![](unified-storyboards-images/gettargetforaction.png "Yeni GetTargetForAction yöntemi")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
 Bu yöntem, doğru kapsayıcı görünüm denetleyicisini bulunana kadar hiyerarşi zincirini anlatılmaktadır. Örneğin:
 
@@ -374,7 +374,7 @@ Geliştirici ne zaman sunan bir görünüm denetleyicisini kullanarak `PresentVi
 
 Bir özel sunu stiliyle geliştiriciler özel bir sunu denetleyicisi kullanmak için seçeneğiniz vardır. Bu özel denetleyicisi görünümünü ve onu için allied görünüm davranışını değiştirmek için kullanılabilir.
 
-<a name="size-classes">
+<a name="size-classes"/>
 
 ## <a name="working-with-size-classes"></a>Boyutu sınıflar ile çalışma
 
@@ -388,7 +388,7 @@ Uygulamanın kullanıcı Arabiriminde tamamen kodundan IOS Tasarımcısı'nı ku
 
 Kullanıcı cihazı yatay olarak dikey döndürdüğünde Uyarlamalı fotoğraflar uygulaması bir iPhone üzerinde çalışırken, bölme görünüm denetleyicisini hem ana hem de Ayrıntılar görünümü görüntülenir:
 
- [ ![](unified-storyboards-images/rotation.png "Bölme görünüm denetleyicisini her iki ana görüntülenir ve burada görüldüğü gibi ayrıntıları görüntüleyin")](unified-storyboards-images/rotation.png)
+ [![](unified-storyboards-images/rotation.png "Bölme görünüm denetleyicisini her iki ana görüntülenir ve burada görüldüğü gibi ayrıntıları görüntüleyin")](unified-storyboards-images/rotation.png#lightbox)
 
 Bu geçersiz kılma tarafından gerçekleştirilir `UpdateConstraintsForTraitCollection` görünüm denetleyicisini ve kısıtlamalar ayarlama yöntemine temel değerine göre `VerticalSizeClass`. Örneğin:
 
@@ -662,11 +662,11 @@ Varsayılan olarak, tüm yeni Xamarin.iOS projesi olacak bize boyut sınıfları
 
 Bunu yapmak için iOS Tasarımcısı ve onay dönüştürülecek film şeridi açın **kullanım boyutu sınıfları** onay kutusunu:
 
- [ ![](unified-storyboards-images/sizeclass01.png "Kullanım boyutu sınıfları onay kutusu")](unified-storyboards-images/sizeclass01.png)
+ [![](unified-storyboards-images/sizeclass01.png "Kullanım boyutu sınıfları onay kutusu")](unified-storyboards-images/sizeclass01.png#lightbox)
 
 Tasarımcı iOS Geliştirici boyutu sınıflarını kullanmak için film şeridi biçimine dönüştürmek istediği onaylar:
 
- [ ![](unified-storyboards-images/sizeclass02.png "Boyutu sınıfları uyarı kullanın")](unified-storyboards-images/sizeclass02.png)
+ [![](unified-storyboards-images/sizeclass02.png "Boyutu sınıfları uyarı kullanın")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
 > **Not**: Otomatik Yerleşim gerekir ayrıca kontrol edileceği düzgün çalışması için boyutu sınıfları.
@@ -675,41 +675,41 @@ Tasarımcı iOS Geliştirici boyutu sınıflarını kullanmak için film şeridi
 
 Film şeridi boyutu sınıflarını kullanmak için dönüştürüldükten sonra onu tasarım yüzeyine görünürler ve **görünüm olarak** cihaz genel olacaktır:
 
- [ ![](unified-storyboards-images/sizeclass03.png "Genel cihaz türü olarak görüntüleme")](unified-storyboards-images/sizeclass03.png)
+ [![](unified-storyboards-images/sizeclass03.png "Genel cihaz türü olarak görüntüleme")](unified-storyboards-images/sizeclass03.png#lightbox)
 
 Genel cihaz Türü seçildiğinde, tüm görünüm denetleyicileri 600 x 600 kareye boyutlandırılır. Bu kare herhangi genişlik ve yükseklik herhangi boyutunu temsil eder. İOS Tasarımcısı bu modda olduğunda, tüm düzenlemeleri boyutu sınıfları tümüne uygulanır.
 
 Geliştirici tasarım yüzeyi iPhone olarak görüntüleme seçeneği de vardır:
 
- [ ![](unified-storyboards-images/sizeclass04.png "Tasarım yüzeyine iPhone görüntüleme")](unified-storyboards-images/sizeclass04.png)
+ [![](unified-storyboards-images/sizeclass04.png "Tasarım yüzeyine iPhone görüntüleme")](unified-storyboards-images/sizeclass04.png#lightbox)
 
 Ya da iPad görüntüleme:
 
- [ ![](unified-storyboards-images/sizeclass05.png "Tasarım yüzeyine iPad görüntüleme")](unified-storyboards-images/sizeclass05.png)
+ [![](unified-storyboards-images/sizeclass05.png "Tasarım yüzeyine iPad görüntüleme")](unified-storyboards-images/sizeclass05.png#lightbox)
 
 ### <a name="select-a-size-class"></a>Bir boyut sınıfı seçin
 
 (Yakın görünüm olarak açılır) tasarım yüzeyi üst sol alt köşesindeki boyutu sınıf seçici düğmesi altındadır. Hangi boyutu sınıfları şu anda düzenlenmekte olan seçmek Geliştirici sağlar:
 
- [ ![](unified-storyboards-images/sizeclass06.png "Bir boyut sınıfı seçin")](unified-storyboards-images/sizeclass06.png)
+ [![](unified-storyboards-images/sizeclass06.png "Bir boyut sınıfı seçin")](unified-storyboards-images/sizeclass06.png#lightbox)
 
 Seçici boyutu sınıfı seçimi 3 x 3 kılavuz olarak gösterir. Her bir ızgara kareler bir genişlik ve yüksekliğini sınıf bileşimini temsil eder. Merkezi kare (Birleşik film şeridi için varsayılan görünüm) herhangi Width/Any Yükseklik boyutu sınıfı seçer. Bu kare seçildiğinde, geliştirici diğer yapılandırmaları tarafından devralınır varsayılan düzeni düzenliyor.
 
 Kılavuz üst sol alt köşesindeki kare Compact genişliği/Compact Yükseklik boyutu sınıfı temsil eder:
 
- [ ![](unified-storyboards-images/sizeclass07.png "Compact genişliği/Compact Yükseklik boyutu sınıfı")](unified-storyboards-images/sizeclass07.png)
+ [![](unified-storyboards-images/sizeclass07.png "Compact genişliği/Compact Yükseklik boyutu sınıfı")](unified-storyboards-images/sizeclass07.png#lightbox)
 
 Bu mod, yatay yönde iPhone karşılık gelir. Kılavuz alt sağ alt köşesindeki kareyi normal genişliği/normal Yükseklik boyutu iPad temsil eden sınıf, temsil eder:
 
- [ ![](unified-storyboards-images/sizeclass08.png "Normal genişliği/normal Yükseklik boyutu sınıfı")](unified-storyboards-images/sizeclass08.png)
+ [![](unified-storyboards-images/sizeclass08.png "Normal genişliği/normal Yükseklik boyutu sınıfı")](unified-storyboards-images/sizeclass08.png#lightbox)
 
 İPhone dikey yönde düzenini düzenlemek için sol alt köşesinde kare seçin. Bu, Compact genişliği/normal Yükseklik boyutu sınıfı temsil eder:
 
- [ ![](unified-storyboards-images/sizeclass09.png "Compact genişliği/normal Yükseklik boyutu sınıfı")](unified-storyboards-images/sizeclass09.png)
+ [![](unified-storyboards-images/sizeclass09.png "Compact genişliği/normal Yükseklik boyutu sınıfı")](unified-storyboards-images/sizeclass09.png#lightbox)
 
 Kareyi seçmek üzere tıklatın ve tasarım yüzeyine yeni seçimle eşleşecek şekilde görünüm denetleyicileri boyutu değişir:
 
- [ ![](unified-storyboards-images/sizeclass10.png "Tasarım yüzeyine gösterildiği gibi yeni seçimle eşleşecek şekilde görünüm denetleyicileri boyutunu değiştirir")](unified-storyboards-images/sizeclass10.png)
+ [![](unified-storyboards-images/sizeclass10.png "Tasarım yüzeyine gösterildiği gibi yeni seçimle eşleşecek şekilde görünüm denetleyicileri boyutunu değiştirir")](unified-storyboards-images/sizeclass10.png#lightbox)
 
 Boyutu sınıfları ve iPhone ve iPad cihazları için Düzen nasıl etkilediklerini üzerinde daha fazla bilgi için bu makalenin boyutu sınıfı bölümüne bakın.
 
@@ -724,49 +724,49 @@ Bir iOS örneği birleşik film şeridi denetleyicisiyle bölme görünüm asıl
 
 Bu etkiyi elde etmek için iOS Tasarımcısı control-düğmeyi tıklatın ve bir satır görüntülenecek görünüm denetleyiciye sürükleyin. Fare düğmesini serbest bırakıldığında seçin `Show Detail` ü türü açılır menüsünden:
 
- [ ![](unified-storyboards-images/segue01.png "Ayrıntı Göster ü türü açılır menüden seçin")](unified-storyboards-images/segue01.png)
+ [![](unified-storyboards-images/segue01.png "Ayrıntı Göster ü türü açılır menüden seçin")](unified-storyboards-images/segue01.png#lightbox)
 
 Yeni segue düğmesi ve görünüm denetleyicisini arasında oluşturulur. Şimdi uygulamayı iPhone benzeticisi çalıştırın ve ana menü görüntülenir:
 
- [ ![](unified-storyboards-images/segue02.png "Ana menü")](unified-storyboards-images/segue02.png)
+ [![](unified-storyboards-images/segue02.png "Ana menü")](unified-storyboards-images/segue02.png#lightbox)
 
 Tıklayın **seçin oyun** düğmesi ve öğenin View Controller gönderilen Gezinti yığına:
 
- [ ![](unified-storyboards-images/segue03.png "Görünüm denetleyicisini öğeleri gezinti yığına gösterildiği gibi gönderilir")](unified-storyboards-images/segue03.png)
+ [![](unified-storyboards-images/segue03.png "Görünüm denetleyicisini öğeleri gezinti yığına gösterildiği gibi gönderilir")](unified-storyboards-images/segue03.png#lightbox)
 
 İPhone benzeticisi durdurun ve iPad Simulator uygulamayı çalıştırın. Yatay yönlendirme ile ana geçiş menüsü yeniden görüntülenir:
 
- [ ![](unified-storyboards-images/segue04.png "Görüntülenen ana menü")](unified-storyboards-images/segue04.png)
+ [![](unified-storyboards-images/segue04.png "Görüntülenen ana menü")](unified-storyboards-images/segue04.png#lightbox)
 
 Yeniden tıklayın **seçin oyun** düğmesi ve öğenin View Controller bölme görünüm denetleyicisini Ayrıntılar bölümünde gösterilir:
 
- [ ![](unified-storyboards-images/segue05.png "Görünüm bölme görünüm denetleyicisini Ayrıntılar bölümünde gösterilen denetleyicisi öğeleri")](unified-storyboards-images/segue05.png)
+ [![](unified-storyboards-images/segue05.png "Görünüm bölme görünüm denetleyicisini Ayrıntılar bölümünde gösterilen denetleyicisi öğeleri")](unified-storyboards-images/segue05.png#lightbox)
 
 ### <a name="excluding-an-element-from-a-size-class"></a>Bir boyutu sınıftan bir öğe dışlama
 
 (Örneğin, bir görünüm, denetim veya kısıtlama) belirli bir öğenin içinde belirli bir boyut sınıfı gerekli olmadığında zamanlar vardır. Bir öğenin bir boyutu sınıftan dışlamak için dışarıda bırakılacak istediğiniz öğeyi seçin **tasarım yüzeyi**. Listenin sonuna kaydırın **özelliği Explorer** tıklatıp **dişli** açılır menüsünde. Birleşimi seçin **genişliği** ve **yükseklik** öğesinden dışlamak için:
 
-[ ![](unified-storyboards-images/exclude-a.png "Genişliği ve yüksekliği birleşimi seçin")](unified-storyboards-images/exclude-a.png)
+[![](unified-storyboards-images/exclude-a.png "Genişliği ve yüksekliği birleşimi seçin")](unified-storyboards-images/exclude-a.png#lightbox)
 
 Yeni bir *dışlama durumda* alt öğe eklenecek **özelliği Explorer**. Ardından, işaretini **yüklü** verilen boyutu sınıf onay kutusunu:
 
-[ ![](unified-storyboards-images/exclude-b.png "Yüklü onay kutusunun işaretini kaldırın")](unified-storyboards-images/exclude-b.png)
+[![](unified-storyboards-images/exclude-b.png "Yüklü onay kutusunun işaretini kaldırın")](unified-storyboards-images/exclude-b.png#lightbox)
 
 Öğeyi hariç tutuldu yükseklik ve genişlik tasarım yüzeyine geçin, verilen boyutu sınıf ancak olmayan tüm kullanıcı Arabirimi tasarımı kaldırıldı:
 
- [ ![](unified-storyboards-images/exclude02.png "Öğeyi hariç tutuldu yükseklik ve genişlik tasarım yüzeyine geçin")](unified-storyboards-images/exclude02.png)
+ [![](unified-storyboards-images/exclude02.png "Öğeyi hariç tutuldu yükseklik ve genişlik tasarım yüzeyine geçin")](unified-storyboards-images/exclude02.png#lightbox)
 
 Any Width/Any Yükseklik boyutu sınıfı ve öğe geçiş hala yerinde şöyledir:
 
- [ ![](unified-storyboards-images/exclude03.png "Geçişi geri herhangi Width/Any Yükseklik boyutu sınıfı")](unified-storyboards-images/exclude03.png)
+ [![](unified-storyboards-images/exclude03.png "Geçişi geri herhangi Width/Any Yükseklik boyutu sınıfı")](unified-storyboards-images/exclude03.png#lightbox)
 
 Uygulamayı iPad Simulator çalıştırdığınızda öğesi görünür:
 
- [ ![](unified-storyboards-images/exclude04.png "Ne zaman gösterilen öğesinin Simulator iPad çalışan uygulamaya")](unified-storyboards-images/exclude04.png)
+ [![](unified-storyboards-images/exclude04.png "Ne zaman gösterilen öğesinin Simulator iPad çalışan uygulamaya")](unified-storyboards-images/exclude04.png#lightbox)
 
 Ve uygulamayı iPhone benzeticisi üzerinde çalıştırdığınızda öğesi eksik:
 
- [ ![](unified-storyboards-images/exclude05.png "Öğesinin ne zaman eksik iPhone benzeticisi çalışan uygulamaya")](unified-storyboards-images/exclude05.png)
+ [![](unified-storyboards-images/exclude05.png "Öğesinin ne zaman eksik iPhone benzeticisi çalışan uygulamaya")](unified-storyboards-images/exclude05.png#lightbox)
 
 Bir dışlama durumu bir öğeyi kaldırmak için öğeyi seçmeniz yeterlidir **tasarım yüzeyi**, listenin sonuna kaydırın **özelliği Explorer** tıklatıp  **-** kaldırmak için durum yanındaki düğmesini.
 
@@ -797,48 +797,48 @@ Aşağıdakileri yapın:
 1. Açık **Mac için Visual Studio** ve yük **çözüm** dinamik Başlat ekranına eklemek için.
 2. İçinde **Çözüm Gezgini**, sağ `MainStoryboard.storyboard` dosya ve seçin **birlikte Aç** > **Xcode arabirimi Oluşturucu**:
 
-    [![](unified-storyboards-images/dls01.png "Xcode arabirimi Oluşturucu ile Aç")](unified-storyboards-images/dls01.png)
+    [![](unified-storyboards-images/dls01.png "Xcode arabirimi Oluşturucu ile Aç")](unified-storyboards-images/dls01.png#lightbox)
 3. Xcode'da, seçin **dosya** > **yeni** > **dosya...** :
 
-    [![](unified-storyboards-images/dls02.png "Dosya seçin / yeni")](unified-storyboards-images/dls02.png)
+    [![](unified-storyboards-images/dls02.png "Dosya seçin / yeni")](unified-storyboards-images/dls02.png#lightbox)
 4. Seçin **iOS** > **kullanıcı arabirimi** > **başlatma ekranı** tıklatıp **sonraki** düğmesi:
 
-    [![](unified-storyboards-images/dls03.png "İOS seçin / kullanıcı arabirimi / başlatma ekranı")](unified-storyboards-images/dls03.png)
+    [![](unified-storyboards-images/dls03.png "İOS seçin / kullanıcı arabirimi / başlatma ekranı")](unified-storyboards-images/dls03.png#lightbox)
 5. Dosya adı `LaunchScreen.xib` tıklatıp **oluşturma** düğmesi:
 
-    [![](unified-storyboards-images/dls04.png "LaunchScreen.xib dosya adı")](unified-storyboards-images/dls04.png)
+    [![](unified-storyboards-images/dls04.png "LaunchScreen.xib dosya adı")](unified-storyboards-images/dls04.png#lightbox)
 6. Grafik öğelerine ekleyerek ve belirli cihazlar, yönler ve ekran boyutlarına konumlandırmak için Düzen kısıtlamaları kullanarak başlatma ekranı tasarımını düzenleyin:
 
-    [![](unified-storyboards-images/dls05.png "Başlatma ekranının tasarım düzenleme")](unified-storyboards-images/dls05.png)
+    [![](unified-storyboards-images/dls05.png "Başlatma ekranının tasarım düzenleme")](unified-storyboards-images/dls05.png#lightbox)
 7. Değişiklikleri kaydetmek `LaunchScreen.xib`.
 8. Seçin **uygulamalar hedef** ve **genel** sekmesi:
 
-    [![](unified-storyboards-images/dls06.png "Uygulamaların hedef ve Genel sekmesini seçin")](unified-storyboards-images/dls06.png)
+    [![](unified-storyboards-images/dls06.png "Uygulamaların hedef ve Genel sekmesini seçin")](unified-storyboards-images/dls06.png#lightbox)
 9. Tıklatın **seçin Info.plist** düğmesini seçin `Info.plist` tıklatın ve Xamarin uygulaması için **Seç** düğmesi:
 
-    [![](unified-storyboards-images/dls07.png "Xamarin uygulaması Info.plist seçin")](unified-storyboards-images/dls07.png)
+    [![](unified-storyboards-images/dls07.png "Xamarin uygulaması Info.plist seçin")](unified-storyboards-images/dls07.png#lightbox)
 10. İçinde **uygulama simgeleri ve başlatma görüntüleri** bölümü, açık **başlatma ekranı dosya** açılır ve `LaunchScreen.xib` yukarıda oluşturduğunuz:
 
-    [![](unified-storyboards-images/dls08.png "LaunchScreen.xib seçin")](unified-storyboards-images/dls08.png)
+    [![](unified-storyboards-images/dls08.png "LaunchScreen.xib seçin")](unified-storyboards-images/dls08.png#lightbox)
 11. Değişiklikleri dosyaya kaydedin ve Mac için Visual Studio'ya geri dönün
 12. Visual Studio Mac Xcode değişikliklerle eşitlemeyi tamamlanması için bekleyin.
 13. İçinde **Çözüm Gezgini**, sağ tıklayın **kaynak** klasörü ve select **Ekle** > **dosyaları Ekle...** :
 
-    [![](unified-storyboards-images/dls09.png "Seç, Ekle / dosyaları Ekle...")](unified-storyboards-images/dls09.png)
+    [![](unified-storyboards-images/dls09.png "Seç, Ekle / dosyaları Ekle...")](unified-storyboards-images/dls09.png#lightbox)
 14. Seçin `LaunchScreen.xib` yukarıda oluşturulan dosya ve tıklatın **açık** düğmesi:
 
-    [![](unified-storyboards-images/dls10.png "LaunchScreen.xib dosyasını seçin")](unified-storyboards-images/dls10.png)
+    [![](unified-storyboards-images/dls10.png "LaunchScreen.xib dosyasını seçin")](unified-storyboards-images/dls10.png#lightbox)
 15. Uygulamayı oluşturun.
 
 ### <a name="testing-the-dynamic-launch-screen"></a>Dinamik başlatma ekranı test etme
 
 Mac için Visual Studio, iPhone 4 Retina simulator seçin ve uygulamayı çalıştırın. Dinamik başlatma ekranı doğru biçimde ve yönlendirmesini görüntülenir:
 
-[![](unified-storyboards-images/dls11.png "Dinamik Başlat dikey yönde görüntülenen ekran")](unified-storyboards-images/dls11.png)
+[![](unified-storyboards-images/dls11.png "Dinamik Başlat dikey yönde görüntülenen ekran")](unified-storyboards-images/dls11.png#lightbox)
 
 Mac için Visual Studio uygulamayı durdurun ve iPad iOS 8 cihazı seçin. Uygulamayı çalıştırın ve başlatma ekranı düzgün bu cihaz ve yönlendirme için Biçimlendirilecek:
 
-[![](unified-storyboards-images/dls12.png "Dinamik başlatma yatay yönde görüntülenen ekran")](unified-storyboards-images/dls12.png)
+[![](unified-storyboards-images/dls12.png "Dinamik başlatma yatay yönde görüntülenen ekran")](unified-storyboards-images/dls12.png#lightbox)
 
 Mac için Visual Studio'ya geri dönün ve uygulamanın çalışmasını durdurun.
 
@@ -859,7 +859,7 @@ Son olarak, Xamarin iOS iOS cihazlarda çalışır Tasarımcısı ile birleştir
 - [Uyarlamalı fotoğraf (örnek)](https://developer.xamarin.com/samples/monotouch/ios8/AdaptivePhotos/)
 - [StoryboardIntro örnek](https://developer.xamarin.com/samples/monotouch/StoryboardIntro/)
 - [Dinamik başlatma ekranlar (örnek)](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)
-- [İOS 8 giriş](~/ios/platform/introduction-to-ios8.md)
+- [iOS 8’e Giriş](~/ios/platform/introduction-to-ios8.md)
 - [İOS8 - dinamik düzenleri gelişmesi 2014 (video)](http://youtu.be/f3mMGlS-lM4)
 - [UIPresentationController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPresentationController_class/)
 - [UIImageAsset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)

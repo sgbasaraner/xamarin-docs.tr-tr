@@ -6,17 +6,13 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 165313fb0150c2d9832566d5bc32842722b0a039
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>Hangi destek seçenekleri için Xamarin var mı?
-
-## <a name="overview"></a>Genel Bakış
-- [Destek seçenekleri özeti](#Summary_of_Support_Options)
-- [Ayrıntılı öneriler](#Detailed_Recommendations)
 
 ## <a name="summary-of-support-options"></a>Destek seçenekleri özeti
 
@@ -46,6 +42,8 @@ ms.lasthandoff: 02/27/2018
 </table>
 
 Xamarin destek ekibi bu seçeneklerin her biri izlemenize yardımcı olur.  Tüm kullanıcıların kendi Düşünceli sorular ve yararlanabilir ve bilgili Xamarin Geliştirici topluluğu artırılmasına yardımcı olmak için raporlar katkıda öneririz.  Şüpheli kusurları için mümkün olduğunda sorunları resmi olarak Xamarin mühendislik ekibi tarafından izlenir emin olmak hata raporları göndermek emin olun.
+
+<a name="Visual_Studio_email_support_incidents_for_Xamarin_topics"/>
 
 ### <a name="visual-studio-email-support-incidents-for-xamarin-topics"></a>Visual Studio e-posta desteği olaylar için Xamarin konuları
 
@@ -95,7 +93,7 @@ Lütfen [Xamarin'ın Bugzilla üzerinde dosyalama](https://bugzilla.xamarin.com/
 
 Bilinen sorunlar ve olası geçici çözümler hakkında topluluk tartışma için karşılık gelen Önizleme Forumunda soru gönderebilirsiniz:
 
--   [Xamarin Canlı Player](https://forums.xamarin.com/categories/live-player)
+-   [Xamarin Live Player](https://forums.xamarin.com/categories/live-player)
 -   Android, iOS ve macOS SDK'ları yeni sürümleri için SDK bağlamaları önizlemeleri için karşılık gelen Önizleme sürümü Duyuruda Bul [Xamarin.Android](http://forums.xamarin.com/categories/android), [Xamarin.iOS](http://forums.xamarin.com/categories/ios), veya [Xamarin.Mac ](http://forums.xamarin.com/categories/mac) Forumu.
 -   Diğer Önizleme özellikleri için karşılık gelen bir yayın Duyuruda göz [yayın öncesi & Beta](http://forums.xamarin.com/categories/xamarin-prerelease) Forumu.  Veya eşleşen hiç duyuru varsa, sorunuzu kendi iş parçacığında Bu forumda yükseltmek çekinmeyin.
 

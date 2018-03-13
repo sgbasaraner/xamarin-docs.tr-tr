@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 84db17ede0019e1134b65edaca85ef2401fb3bc0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Uygulama mağazası yayımlama
 
@@ -133,7 +133,7 @@ Aşağıdakileri yapın:
 4. Bağlama küçültür genel uygulamanızın dağıtılabilir kullanılmayan yöntemler, özellikler, sınıflar çıkarma tarafından vs. ve çoğu durumda varsayılan değer bırakılmalıdır **bağlantı SDK derlemeleri yalnızca**. Ne zaman gibi bazı durumlarda, bazı özel kullanarak 3. taraf kitaplıklar, bu değer ayarlanırsa zorlanabilir **bağlantı** kaldırılmakta olan gerekli öğeleri tutmak için. Daha fazla bilgi için bkz [iOS derleme mekanizması](~/ios/deploy-test/ios-build-mechanics.md) Kılavuzu.
 5. **İOS için en iyi duruma getirme PNG görüntü dosyalarını** bu başka düşüş uygulamanızın teslim edilebilir boyutu yardımcı olacak şekilde, onay kutusu işaretlenmelidir.
 6. Hata ayıklama gereken _değil_ yapı düşükse yapacak şekilde etkinleştirilmiş olmalıdır.
-8. İOS 11 destekleyen aygıt mimarileri birini seçmeniz gerekir **ARM64**. 64 bit iOS cihazları için oluşturma hakkında daha fazla bilgi için lütfen bkz **etkinleştirme 64 Bit oluşturur, Xamarin.iOS uygulamaları** bölümünü [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64.md) belgeleri.
+8. İOS 11 destekleyen aygıt mimarileri birini seçmeniz gerekir **ARM64**. 64 bit iOS cihazları için oluşturma hakkında daha fazla bilgi için lütfen bkz **etkinleştirme 64 Bit oluşturur, Xamarin.iOS uygulamaları** bölümünü [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64/index.md) belgeleri.
 9. İsteğe bağlı olarak kullanmak isteyebilirsiniz **LLVM** derleyici derlemek için daha uzun sürer ancak, daha küçük ve daha hızlı kod oluşturur.
 10. Uygulamanızın gereksinimlerine göre size ayrıca türünü ayarlamak isteyebilirsiniz **çöp toplama** kullanılmakta ve kurulum için **uluslararası hale getirme**.
 11. Yaptığınız değişiklikleri derleme yapılandırmasını kaydedin.
@@ -157,7 +157,7 @@ Aşağıdakileri yapın:
 
     ![](publishing-to-the-app-store-images/configurevs02.png "Gelişmiş sekmesi")
 
-8. Xamarin.iOS uygulamanızı iOS 8 ve 64 bit iOS cihazlara hedefliyorsa, desteklediği cihaz mimarileri birini seçmeniz gerekir **ARM64**. 64 bit iOS cihazları için oluşturma hakkında daha fazla bilgi için lütfen bkz **etkinleştirme 64 Bit oluşturur, Xamarin.iOS uygulamaları** bölümünü [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64.md) belgeleri.
+8. Xamarin.iOS uygulamanızı iOS 8 ve 64 bit iOS cihazlara hedefliyorsa, desteklediği cihaz mimarileri birini seçmeniz gerekir **ARM64**. 64 bit iOS cihazları için oluşturma hakkında daha fazla bilgi için lütfen bkz **etkinleştirme 64 Bit oluşturur, Xamarin.iOS uygulamaları** bölümünü [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64/index.md) belgeleri.
 9. İsteğe bağlı olarak kullanmak isteyebilirsiniz **LLVM** derleyici derlemek için daha uzun sürer ancak, daha küçük ve daha hızlı kod oluşturur.
 10. Uygulamanızın gereksinimlerine göre size ayrıca türünü ayarlamak isteyebilirsiniz **çöp toplama** kullanılmakta ve kurulum için **uluslararası hale getirme**.
 11. Yaptığınız değişiklikleri derleme yapılandırmasını kaydedin.
@@ -351,16 +351,16 @@ Apple uygulamanıza gözden geçirme için gönderme uygulama yükleyicisi uygul
 
 1. Seçin *uygulamanızı teslim* tıklatıp *Seç* düğmesi:
 
-    [ ![](publishing-to-the-app-store-images/publishvs01.png "Uygulamanızı seçin teslim")](publishing-to-the-app-store-images/publishvs01.png)
+    [![](publishing-to-the-app-store-images/publishvs01.png "Uygulamanızı seçin teslim")](publishing-to-the-app-store-images/publishvs01.png#lightbox)
 
 2. Zip ya da yukarıda oluşturduğunuz IPA dosyasını seçin ve'ı tıklatın **Tamam** düğmesi.
 
 3. Uygulama Yükleyicisi dosya doğrular:
 
-    [ ![](publishing-to-the-app-store-images/publishvs02.png "Doğrulama ekranı")](publishing-to-the-app-store-images/publishvs02.png)
+    [![](publishing-to-the-app-store-images/publishvs02.png "Doğrulama ekranı")](publishing-to-the-app-store-images/publishvs02.png#lightbox)
 4. Tıklatın *sonraki* düğmesi ve uygulamayı doğrulanmış karşı App Store:
 
-    [ ![](publishing-to-the-app-store-images/publishvs03.png "Uygulama mağazası karşı doğrulama")](publishing-to-the-app-store-images/publishvs03.png)
+    [![](publishing-to-the-app-store-images/publishvs03.png "Uygulama mağazası karşı doğrulama")](publishing-to-the-app-store-images/publishvs03.png#lightbox)
 5. Tıklatın **Gönder** Apple uygulamaya gözden geçirme için Gönder düğmesi.
 6. Uygulama Yükleyicisi zaman dosyası başarıyla karşıya yüklendi size bildirir.
 
@@ -368,7 +368,7 @@ Apple uygulamanıza gözden geçirme için gönderme uygulama yükleyicisi uygul
 
 Oturum iTunes geri Bağlan ve uygulamanızı kullanılabilir uygulamaları listesinden seçin, iTunes Bağlan durum şimdi bu olduğunu göstermelidir **gözden geçirilmek üzere bekleyen** (geçici olarak okuyabilirsiniz **alınanKarşıyaYükle** işlenirken):
 
-[ ![](publishing-to-the-app-store-images/image21.png "İTunes durum Connect artık gözden geçirilmek üzere beklediğini gösterilmesi gerekir")](publishing-to-the-app-store-images/image21.png)
+[![](publishing-to-the-app-store-images/image21.png "İTunes durum Connect artık gözden geçirilmek üzere beklediğini gösterilmesi gerekir")](publishing-to-the-app-store-images/image21.png#lightbox)
 
 ## <a name="summary"></a>Özet
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 89d3b56a15110d0c106c43ce227f11f86bbdf404
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0fd037e62bcdb1b2be4c93dc0d32ca76f4e1ba8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="invoking-events-from-effects"></a>Olayları etkileri çağırma
 
@@ -448,7 +448,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 Birden çok taşıyabilirsiniz `BoxView` aynı anda farklı parmakları kullanarak öğeleri.
 
-[![](touch-tracking-images/boxviewdragging-small.png "Üçlü sayfasının ekran görüntüsü BoxView sürükleyerek")](touch-tracking-images/boxviewdragging-large.png "Üçlü sayfasının ekran görüntüsü BoxView sürükleme")
+[![](touch-tracking-images/boxviewdragging-small.png "Üçlü sayfasının ekran görüntüsü BoxView sürükleyerek")](touch-tracking-images/boxviewdragging-large.png#lightbox "Üçlü sayfasının ekran görüntüsü BoxView sürükleme")
 
 ### <a name="subclassing-the-view"></a>Görünüm alt sınıf yapma
 
@@ -511,7 +511,7 @@ Sonraki iki gösterim grafik gerektirir ve bu amaçla SkiaSharp kullanırlar. Ha
 
 **Elips çizme** sayfası, parmak ekranında geçirilerek elips çizme sağlar. Parmak taşıma nasıl bağlı olarak, sol üst sağ alt için veya herhangi bir köşesinin karşı köşe için üç nokta çizebilirsiniz. Elips bir rastgele bir renk ve opaklık çizilir.
 
-[![](touch-tracking-images/ellipsedrawing-small.png "Üçlü sayfasının ekran görüntüsü elips çizme")](touch-tracking-images/ellipsedrawing-large.png "Üçlü sayfasının ekran görüntüsü elips çizme")
+[![](touch-tracking-images/ellipsedrawing-small.png "Üçlü sayfasının ekran görüntüsü elips çizme")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Üçlü sayfasının ekran görüntüsü elips çizme")
 
 Üç nokta birini sonra touch, başka bir konuma sürükleyin. Bu, "isabet-belirli bir noktada grafik nesnesi için arama kapsar test," olarak bilinen bir yöntem gerektirir. Bunlar, kendi gerçekleştiremezler SkiaSharp üç nokta Xamarin.Forms öğeleri olmayan `TouchEffect` işleme. `TouchEffect` Tüm uygulamalısınız `SKCanvasView` nesnesi.
 
@@ -683,7 +683,7 @@ case TouchActionType.Pressed:
 
 Diğer SkiaSharp örnek **parmak boyama** sayfası. Vuruş rengini ve vuruşun genişliğini iki seçebilirsiniz `Picker` görünümleri ve bir veya daha fazla parmakları ile çizin:
 
-[![](touch-tracking-images/fingerpaint-small.png "Üçlü sayfasının ekran görüntüsü parmak boyama")](touch-tracking-images/fingerpaint-large.png "Üçlü sayfasının ekran görüntüsü parmak boyama")
+[![](touch-tracking-images/fingerpaint-small.png "Üçlü sayfasının ekran görüntüsü parmak boyama")](touch-tracking-images/fingerpaint-large.png#lightbox "Üçlü sayfasının ekran görüntüsü parmak boyama")
 
 Bu örnek ayrıca ekranında boyandığında her bir satır göstermek için ayrı bir sınıf gerektirir:
 
@@ -791,7 +791,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 Çeşitli `WhiteKey` ve `BlackKey` öğeleri sayfanın içinde düzenlenir [XAML dosyası](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/SilentKeyboardPage.xaml), telefon yatay modunda tutulurken en iyi aradığı:
 
-[![](touch-tracking-images/silentkeyboard-small.png "Üçlü sayfasının ekran görüntüsü sessiz klavye")](touch-tracking-images/silentkeyboard-large.png "Üçlü sayfasının ekran görüntüsü sessiz klavye")
+[![](touch-tracking-images/silentkeyboard-small.png "Üçlü sayfasının ekran görüntüsü sessiz klavye")](touch-tracking-images/silentkeyboard-large.png#lightbox "Üçlü sayfasının ekran görüntüsü sessiz klavye")
 
 Anahtarlarını, parmak sweep varsa, renk hafif değişikliklerden dokunma olaylarına bir anahtardan diğerine aktarılmasını görürsünüz.
 

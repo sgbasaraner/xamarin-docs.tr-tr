@@ -7,19 +7,17 @@ ms.assetid: 22EE5FBD-3240-4308-AF76-EF45D72936DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/22/2018
-ms.openlocfilehash: cf2211a572d45b7c29018d00f36cb8408484483f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 30b1cb280c2817f55d73e10ff8b4d7942011bf2c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar"></a>Araç Çubuğu
 
 _Araç, varsayılan Eylem çubuğu daha fazla esneklik sağlayan bir eylem çubuğu bileşenidir: uygulamada herhangi bir yere yerleştirilebilir, boyutuna değiştirilebilir ve uygulamanın temayı farklı bir renk şeması kullanabilirsiniz. Ayrıca, her uygulama ekran birden çok araç çubukları olabilir._
 
-
-<a name="overview" />
  
 ## <a name="overview"></a>Genel Bakış
 
@@ -27,7 +25,7 @@ Herhangi bir Android etkinliği temel tasarım öğesi bir *Eylem çubuğu*. Eyl
 
 `Toolbar` (Android 5.0 Lolipop içinde sunulan) pencere öğesi zorlayıcı bir eylem çubuğu arabirimi Genelleştirme &ndash; Eylem çubuğu değiştirmek için tasarlanmıştır. `Toolbar` Bir uygulama düzende herhangi bir kullanılabilir ve bir eylem çubuğu çok daha özelleştirilebilir. Aşağıdaki ekran görüntüsünde özelleştirilmiş gösterilmektedir `Toolbar` bu Kılavuzu'nda oluşturulan örnek: 
 
-[![Örnek ekran görüntüsü bir araç çubuğu düzenleyin, kaydedin ve menü öğeleri taşması](images/01-toolbar-sml.png)](images/01-toolbar.png)
+[![Örnek ekran görüntüsü bir araç çubuğu düzenleyin, kaydedin ve menü öğeleri taşması](images/01-toolbar-sml.png)](images/01-toolbar.png#lightbox)
 
 Arasında önemli bazı farklar vardır `Toolbar` ve Eylem çubuğu: 
 
@@ -72,7 +70,6 @@ Bu kılavuz, en yaygın kullanılan kapsar. `Toolbar` senaryolar:
 -   Kullanarak **Android destek kitaplığı v7 uygulama** kitaplığı (olarak adlandırılan *uygulama* bu kılavuzun geri kalanında) dağıtmak için `Toolbar` Android önceki sürümlerinde. 
 
  
-<a name="requirements" />
  
 ## <a name="requirements"></a>Gereksinimler
 

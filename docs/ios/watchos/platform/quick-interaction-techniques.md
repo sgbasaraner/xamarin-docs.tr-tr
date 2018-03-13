@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 75a8e807a68a3fccfa76fc7ba1f260818b25174d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf93744914a0caf4f6599fc333ae200468d66e48
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="quick-interaction-techniques-for-watchos-3"></a>WatchOS 3 için hızlı etkileşim teknikleri
 
@@ -77,7 +77,7 @@ Kod içinde kullanıcı tarafından tetiklenen hareketi işlemek için tanıyıc
 
 Ayrık hareketleri için hareketi tanınır ve durumunu bir eylem adlandırılır (`WKGestureRecognizerState`) olarak atanır:
 
-[ ![](quick-interaction-techniques-images/quick01.png "Ayrık hareketi durumları")](quick-interaction-techniques-images/quick01.png)
+[![](quick-interaction-techniques-images/quick01.png "Ayrık hareketi durumları")](quick-interaction-techniques-images/quick01.png#lightbox)
 
 Tüm ayrık hareketleri başlatmak `Possible` durumu ve geçiş ya da içine `Failed` veya `Recognized` durumu. Ayrık hareketleri kullanırken, geliştirici genellikle doğrudan durumuyla ilgili değil. Bunun yerine, hareketi yalnızca tanınan olduğunda çağrılan eylemini kullanır.
 
@@ -85,7 +85,7 @@ Tüm ayrık hareketleri başlatmak `Possible` durumu ve geçiş ya da içine `Fa
 
 Sürekli hareketleri ayrık hareketi tanınan gibi eylemi birden çok kez burada çağrılır hareketleri, biraz farklılık gösterir:
 
-[ ![](quick-interaction-techniques-images/quick02.png "Sürekli hareketi durumları")](quick-interaction-techniques-images/quick02.png)
+[![](quick-interaction-techniques-images/quick02.png "Sürekli hareketi durumları")](quick-interaction-techniques-images/quick02.png#lightbox)
 
 Yeniden sürekli hareketleri başlatır `Possible` durumu, ancak bunlar ilerleme birden çok güncelleştirme. Burada Geliştirici tanıyıcı'nın durum göz önünde bulundurun ve uygulamanın UI sırasında güncelleştirme gerekecek `Changed` hareketi son kadar aşama `Recognized` veya `Canceled`.
 
@@ -168,7 +168,7 @@ Apple Geliştirici nasıl güncelleştirilmesini UI öğesindeki değişiklikler
 
 Oturum açma (`+/-`) dönme Delta değeri kullanıcı dijital Dama yapma kapatma olduğunu yönü gösterir:
 
-[ ![](quick-interaction-techniques-images/quick03.png "Kullanıcı dijital Dama yapma kapatma olduğunu yönü dönme Delta oturum gösterir")](quick-interaction-techniques-images/quick03.png)
+[![](quick-interaction-techniques-images/quick03.png "Kullanıcı dijital Dama yapma kapatma olduğunu yönü dönme Delta oturum gösterir")](quick-interaction-techniques-images/quick03.png#lightbox)
 
 
 Kullanıcı yukarı kaydırma olursa WatchKit pozitif farkları ve aşağı kaydırma, ardından negatif farkları, hangi yönlendirme kullanıcı izleme kartı olan olsun döndürülür, döndürür.
@@ -189,15 +189,15 @@ Bu, kendi özel arabirim öğesi dijital Dama yapma odağı gerektiğinde belirl
 
 Bir kullanıcı bir watchOS uygulaması Tablo görünümünde gider standart istenen veri parçası için kaydırın, ayrıntılı görüntülemek için ayrıntıları görüntülemeyi bitirdikten sonra geri düğmesine dokunun, belirli bir satırda'a dokunun ve diğer bilgiler için işlemi yineleyin yoludur, y ilgilendiğiniz öğesinden tablo içinde:
 
-[ ![](quick-interaction-techniques-images/quick04.png "Bir tablo ayrıntı görünümü arasında taşıma")](quick-interaction-techniques-images/quick04.png)
+[![](quick-interaction-techniques-images/quick04.png "Bir tablo ayrıntı görünümü arasında taşıma")](quick-interaction-techniques-images/quick04.png#lightbox)
 
 Yeni watchOS 3 için geliştirici dikey disk belleği, Tablo görünümünde denetimlere etkinleştirebilirsiniz. Bu özellik etkinleştirildiğinde, kullanıcı bir tablo görünümü satırı bulun ve önce kendi ayrıntı olarak görüntülemek için satırı dokunun gezinebilirsiniz. Ancak, bunlar artık yukarı tablodaki veya select önceki satıra kadar sonraki satırı seçin (veya dijital Dama yapma kullanın), tüm tablo görünümü döndürün gerek kalmadan önce a doğru çekin:
 
-[ ![](quick-interaction-techniques-images/quick05.png "Bir tablo ayrıntı görünümü arasında taşıma ve geçirmeyi yukarı ve aşağı diğer satırlar arasında taşımak için")](quick-interaction-techniques-images/quick05.png)
+[![](quick-interaction-techniques-images/quick05.png "Bir tablo ayrıntı görünümü arasında taşıma ve geçirmeyi yukarı ve aşağı diğer satırlar arasında taşımak için")](quick-interaction-techniques-images/quick05.png#lightbox)
 
 Bu modu etkinleştirmek için watchOS uygulamanın film şeridi Xcode'da düzenlemek için açın, Tablo görünümünde seçin ve denetleme **dikey ayrıntı disk belleği** onay kutusu:
 
-[ ![](quick-interaction-techniques-images/quick06.png "Dikey ayrıntı disk belleği onay kutusunu işaretleyin")](quick-interaction-techniques-images/quick06.png)
+[![](quick-interaction-techniques-images/quick06.png "Dikey ayrıntı disk belleği onay kutusunu işaretleyin")](quick-interaction-techniques-images/quick06.png#lightbox)
 
 Ayrıntılı Görünüm ve film şeridi için değişiklikleri kaydetmek ve eşitlemek Mac için Visual Studio dönmek için tablo Segues kullandığından emin olun.
 
@@ -313,7 +313,7 @@ Apple önermek tümünü watchOS zengin, kolay ve hızlı watchOS uygulama arabi
 
 Bu özellikle olur burada izleme uygulama ağ bağlantısı herhangi bir türde yapılması ya da kendi yardımcı iPhone uygulamayla bilgi paylaşımı bir sorundur. İşlem sırasında hızlı etkileşimi arzu değil işlemi gerçekleşirken, bu genellikle bir bekleme göstergesi için yol açabilir. Aşağıdaki örnek alın:
 
-[ ![](quick-interaction-techniques-images/quick07.png "Bir ağ bağlantısı yapılması ve kendi yardımcı iPhone uygulamayla bilgi paylaşımı izleme uygulama diyagramı")](quick-interaction-techniques-images/quick07.png)
+[![](quick-interaction-techniques-images/quick07.png "Bir ağ bağlantısı yapılması ve kendi yardımcı iPhone uygulamayla bilgi paylaşımı izleme uygulama diyagramı")](quick-interaction-techniques-images/quick07.png#lightbox)
 
 1. Kullanıcı saatin satın almak için bir öğe seçer.
 2. Bunlar satınalma düğmesine dokunun.
@@ -325,7 +325,7 @@ Bu özellikle olur burada izleme uygulama ağ bağlantısı herhangi bir türde 
 
 Apple'nın önerilen modelini kullanarak yeniden aynı hızlı etkileşim göz atın:
 
-[ ![](quick-interaction-techniques-images/quick08.png "Elmalar önerilen model diyagramı")](quick-interaction-techniques-images/quick08.png)
+[![](quick-interaction-techniques-images/quick08.png "Elmalar önerilen model diyagramı")](quick-interaction-techniques-images/quick08.png#lightbox)
 
 1. Kullanıcı saatin satın almak için bir öğe seçer.
 2. Bunlar satınalma düğmesine dokunun.
@@ -355,4 +355,4 @@ Bu makalede ele alınan hızlı etkileşim teknikleri Apple watchOS 3 ve bunlar�
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [watchOS örnekleri](https://developer.xamarin.com/samples/watchos/all/)
+- [watchOS Örnekleri](https://developer.xamarin.com/samples/watchos/all/)

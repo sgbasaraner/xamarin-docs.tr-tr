@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 14abb7a4b85b493bb0ab96a982d989fad783fabd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afaa02168dcac54115e8fca53683725926e4baed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>ActionBar sekmeli düzenleri
 
 _Bu kılavuz tanıtır ve ActionBar API'leri sekmeli kullanıcı arabirimi bir Xamarin.Android uygulaması oluşturmak için nasıl kullanılacağını açıklar._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -27,7 +26,6 @@ Eylem çubuk sekmeler, uygulama kimliği, menüleri ve arama gibi anahtar özell
 Unutmayın `Toolbar` , yerine kullanması gereken bir daha yeni ve daha genelleştirilmiş Eylem çubuğu bileşeni `ActionBar` (`Toolbar` değiştirmek için tasarlanmış `ActionBar`). Daha fazla bilgi için bkz: [araç](~/android/user-interface/controls/tool-bar/index.md). 
 
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -36,7 +34,6 @@ API düzeyi 11 (Android 3.0) hedefler ya da daha yüksek ActionBar API'leri yere
 Bazı ActionBar API'leri 7 (Android 2.1) API düzeyine geri bağlantı noktalı ve aracılığıyla kullanılabilir [V7 uygulama Kitaplığı](http://developer.android.com/tools/support-library/features.html#v7-appcompat), hangi yoluyla Xamarin.Android uygulamaları için kullanılabilir hale [Xamarin Android destek kitaplığı - V7 ](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) paket.
 
 
-<a name="Introducing_tabs_in_the_ActionBar" />
 
 ## <a name="introducing-tabs-in-the-actionbar"></a>ActionBar sekmeleri Tanıtımı
 
@@ -63,7 +60,6 @@ Xamarin.Android sarmalar `ActionBar.ITabListener` olaylarla `ActionBar.Tab` sın
 -  TabUnselected
 
 
-<a name="Adding_Tabs_to_the_ActionBar" />
 
 ### <a name="adding-tabs-to-the-actionbar"></a>ActionBar sekmeler ekleme
 
@@ -111,7 +107,6 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-<a name="Event_Handlers_vs_ActionBar.ITabListener" />
 
 #### <a name="event-handlers-vs-actionbaritablistener"></a>Olay işleyicileri vs ActionBar.ITabListener
 
@@ -120,7 +115,6 @@ Uygulamalar, olay işleyicileri kullanmalıdır ve `ActionBar.ITabListener` fark
 Birçok sekmelerle ilgilenirken veya ActionBar sekmeler arasında ortak işlevselliği paylaşımı, bellek ve uygulayan özel bir sınıf oluşturmak için performans açısından daha verimli `ActionBar.ITabListener`ve sınıfın tek bir örnek paylaşımı. Bu, bir Xamarin.Android uygulaması kullanarak GREF'ın sayısını azaltır. 
 
 
-<a name="Backwards_Compatibility_for_Older_Devices" />
 
 ### <a name="backwards-compatibility-for-older-devices"></a>Geriye dönük uyumluluk için eski aygıtları
 
@@ -177,7 +171,6 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 }
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -187,9 +180,9 @@ Bu kılavuzda ActionBar kullanarak bir Xamarin.Android sekmeli kullanıcı arabi
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [ActionBarTabs (örnek)](https://developer.xamarin.com/samples/monodroid/UserInterface/ActionBarTabs/)
-- [Araç çubuğu](~/android/user-interface/controls/tool-bar/index.md)
-- [Parçaları](~/android/platform/fragments/index.md)
-- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [Araç Çubuğu](~/android/user-interface/controls/tool-bar/index.md)
+- [Parçalar](~/android/platform/fragments/index.md)
+- [Eylem Çubuğu](http://developer.android.com/guide/topics/ui/actionbar.html)
 - [ActionBarActivity](http://developer.android.com/reference/android/support/v7/app/ActionBarActivity.html)
 - [Eylem çubuğu düzeni](http://developer.android.com/design/patterns/actionbar.html)
 - [Android v7 AppCompat](http://developer.android.com/tools/support-library/features.html#v7-appcompat)

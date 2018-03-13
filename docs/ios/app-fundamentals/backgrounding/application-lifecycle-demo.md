@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 56310bb538d9abf850c40ebfb0b0bf551fbb104c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d68b1e38ecb5b1833b818dd2a9fb7a5c84f9206
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-lifecycle-demo"></a>Uygulama yaşam döngüsü Tanıtımı
 
 Bu bölümde, şu dört uygulama durumları ve rolünü gösteren bir uygulama incelemek için kalacaklarını `AppDelegate` durumları değiştiği uygulama bildiren içinde yöntemleri. Uygulama durumu değiştiğinde uygulama güncelleştirmeleri konsola yazdırılır:
 
- [ ![](application-lifecycle-demo-images/image3.png "Örnek uygulaması")](application-lifecycle-demo-images/image3.png)
+ [![](application-lifecycle-demo-images/image3.png "Örnek uygulaması")](application-lifecycle-demo-images/image3.png#lightbox)
 
- [ ![](application-lifecycle-demo-images/image4.png "Uygulama durumu değiştiğinde uygulama güncelleştirmeleri konsola yazdırma")](application-lifecycle-demo-images/image4.png)
+ [![](application-lifecycle-demo-images/image4.png "Uygulama durumu değiştiğinde uygulama güncelleştirmeleri konsola yazdırma")](application-lifecycle-demo-images/image4.png#lightbox)
 
 ## <a name="walkthrough"></a>İzlenecek yol
 

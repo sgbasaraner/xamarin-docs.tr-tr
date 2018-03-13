@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 11/16/2017
-ms.openlocfilehash: 32a058ace69fe5647d3285ac46bc981ddef39a51
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0113cc15bf1de5e0e668b05c2b0288a6ead141b5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="where-can-i-set-my-android-sdk-locations"></a>My Android SDK konumları burada ayarlayabilir miyim?
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 02/27/2018
 
 Visual Studio'da gidin **Araçlar > Seçenekler > Xamarin > Android ayarları** görüntülemek ve Android SDK'sı konumu ayarlamak için:
 
-[![Tercihlerinde örnek konumları sekmesi](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png)
+[![Tercihlerinde örnek konumları sekmesi](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
 
 Her bir yol için varsayılan konum aşağıdaki gibidir:
 
@@ -44,7 +44,7 @@ Android SDK'sı konumu ayarlamak için Android SDK dizine tam yolunu girin **And
 
 Mac için Visual Studio'da gidin **Tercihler > projeleri > SDK konumları > Android**. İçinde **Android** sayfasında, **konumları** sekmesini görüntülemek ve SDK konumu ayarlamak için:
 
-[![Tercihlerinde örnek konumları sekmesi](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png)
+[![Tercihlerinde örnek konumları sekmesi](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
 
 Her bir yol için varsayılan konum aşağıdaki gibidir:
 
@@ -62,6 +62,6 @@ Her bir yol için varsayılan konum aşağıdaki gibidir:
 
 NDK sürüm numarasını değişebileceğini unutmayın. Örneğin, yerine, **android ndk r14b**, önceki bir sürümünü gibi olabilir **android ndk r10e**.
 
-Android SDK'sı konumu ayarlamak için Android SDK dizine tam yolunu girin **Android SDK konumu** kutusu. Android SDK klasörüne Bulucu, basın seçebilirsiniz **CTRL + &#8984; + ı** klasör bilgileri görüntülemek için tıklatın ve yol sağına sürükleyin **burada:**, kopyalamak ve ardından ona yapıştırın **Android SDK'sı Konum** kutusunda **konumları** sekmesi. Örneğin, Android SDK konumunuz adresindeki ise **~/Library/Developer/Android/Sdk**, eski yolunda temizleyin **Android SDK konumu** kutusuna bu yolda yapıştırın ve tıklatın **Tamam**.
+Android SDK'sı konumu ayarlamak için Android SDK dizine tam yolunu girin **Android SDK konumu** kutusu. Android SDK klasörüne Bulucu, basın seçebilirsiniz **CTRL +&#8984;+ ı** klasör bilgileri görüntülemek için tıklatın ve yol sağına sürükleyin **burada:**, kopyalamak ve ardından ona yapıştırın **Android SDK'sı Konum** kutusunda **konumları** sekmesi. Örneğin, Android SDK konumunuz adresindeki ise **~/Library/Developer/Android/Sdk**, eski yolunda temizleyin **Android SDK konumu** kutusuna bu yolda yapıştırın ve tıklatın **Tamam**.
 
 -----

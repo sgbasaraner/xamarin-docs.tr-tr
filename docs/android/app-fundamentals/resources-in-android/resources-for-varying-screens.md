@@ -6,18 +6,17 @@ ms.assetid: 3D17DE45-115C-7192-5685-44F8EEE07DCC
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 10/12/2017
-ms.openlocfilehash: aeb7115e3c7521f6679e8802eb759d7e56ba1cfe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: fcd77d97d492baee441cfd428e58ea83525f927e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-resources-for-varying-screens"></a>Kaynaklar için değişen ekranlar oluşturma
 
 Android kendisini her çok çeşitli çözümler, ekran boyutlarına ve ekran densities sahip birçok farklı cihazlarda çalışır. Android ölçekleme ve bu aygıtlar üzerinde çalışmak, uygulamanızın yapmak için yeniden boyutlandırma gerçekleştirir, ancak bu bir alt en iyi kullanıcı deneyimi neden olabilir. Örneğin, görüntüleri bulanık görünebilir, görüntüleri hangi nedenler konumunu kullanıcı Arabirimi öğeleri yerleşiminde üst üste veya çok büyüklüğü şu ana kadar çok fazla (veya yeterli) ekran alan kaplar.
 
-<a name="Concepts" />
 
 ## <a name="concepts"></a>Kavramlar
 
@@ -39,7 +38,6 @@ Bu kavramları ilk üç arası ilişkili olduğunu fark &ndash; yoğunluğu art�
 
 Bu karmaşıklık ile ilgilenir yardımcı olması için Android framework kullanmayı tercih eder *yoğunluğu bağımsız piksel (dp)* ekranı düzeni için. Bağımsız piksel yoğunluğu kullanarak, kullanıcı Arabirimi öğeleri ekranında farklı densities ile aynı fiziksel boyutuna sahip kullanıcıya görünür.
 
-<a name="Supporting_Various_Screen_Sizes_and_Densities" />
 
 ## <a name="supporting-various-screen-sizes-and-densities"></a>Çeşitli ekran boyutlarına ve Densities destekleme
 
@@ -49,7 +47,6 @@ Kullanmak yerine düzenleri gerçek piksel yoğunluğu bağımsız piksel yoğun
 Android drawables çalışma zamanında uygun boyuta ölçeklendirir.
 Ancak, bu ölçeklendirme bulanık bit eşlemler neden mümkündür. Bunu önlemek için farklı densities için alternatif kaynakları sağlamak gerekli olabilir. Birden çok çözümleri ve daha kolay kanıtlamak ekran densities cihazlarını tasarlarken başlamak yoğunluğu ve daha yüksek çözünürlükte görüntüleri ve ölçeklendirmeyi azaltın. Bu, tüm bulanıklaştırma veya yeniden boyutlandırmasını sonuçlanabilir bozulma engeller.
 
-<a name="Declare_the_Screen_Size_the_Application_Supports" />
 
 ### <a name="declare-the-screen-size-the-application-supports"></a>Uygulamanızın desteklediği ekran boyutu bildirme
 
@@ -59,29 +56,21 @@ Xamarin.Android bunun için ilk olarak eklemek gerekli bir **AndroidManifest.xml
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-vs-sml.png)](resources-for-varying-screens-images/01-android-manifest-vs.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-xs-sml.png)](resources-for-varying-screens-images/01-android-manifest-xs.png)
-
------
-
+[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-vs-sml.png)](resources-for-varying-screens-images/01-android-manifest-vs.png#lightbox)
 
 **AndroidManifest.xml** eklenen **özellikleri** dizin. Dosya sonra içerecek şekilde düzenlenebilir [destekler ekranlar](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Destekler ekranlar ekleme](resources-for-varying-screens-images/02-adding-supports-screens-vs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-vs.png)
+[![Destekler ekranlar ekleme](resources-for-varying-screens-images/02-adding-supports-screens-vs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Destekler ekranlar ekleme](resources-for-varying-screens-images/02-adding-supports-screens-xs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-xs.png)
+[![Android Manifest](resources-for-varying-screens-images/01-android-manifest-xs-sml.png)](resources-for-varying-screens-images/01-android-manifest-xs.png#lightbox)
+
+**AndroidManifest.xml** eklenen **özellikleri** dizin. Dosya sonra içerecek şekilde düzenlenebilir [destekler ekranlar](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+
+[![Destekler ekranlar ekleme](resources-for-varying-screens-images/02-adding-supports-screens-xs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-xs.png#lightbox)
 
 -----
-
-
-<a name="Provide_Alternate_Layouts_for_Different_Screen_Sizes" />
 
 ### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>Farklı ekran boyutları için alternatif düzenleri sağlayın
 
@@ -148,7 +137,6 @@ Eski ve yeni API düzeylerini yayılan uygulamalar için aşağıdaki ekran gör
 -----
 
 
-<a name="Provide_Different_Bitmaps_for_Different_Screen_Densities" />
 
 ### <a name="provide-different-bitmaps-for-different-screen-densities"></a>Farklı ekran Densities için farklı bit eşlemler sağlayın
 
@@ -162,17 +150,15 @@ Bu, yoğunluğu belirli kaynaklarla tasarlanmış bir düzen Karşılaştırıla
 
 ![Yoğunluğu özgü kaynaklarla ekran görüntüleri](resources-for-varying-screens-images/07-density-specific-resources.png)
 
-<a name="Create_Varying_Density_Resources_with_Android_Asset_Studio" />
 
 ### <a name="create-varying-density-resources-with-android-asset-studio"></a>Android varlık Studio ile değişen yoğunluğu kaynakları oluşturun
 
 Bu bit eşlemler, çeşitli densities oluşturulması biraz can sıkıcı olabilir. Bu nedenle, Google adlı bu bit eşlemler oluşturma ile ilgili birçoğunu bazıları azaltabilir bir çevrimiçi yardımcı oluşturdu [ **Android varlık Studio**](https://romannurik.github.io/AndroidAssetStudio/).
 
-[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png)
+[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 Bu Web sitesine bir görüntü sağlayarak dört ortak ekran densities hedef bit eşlemler oluşturulmasına yardımcı olur. Android varlık Studio sonra bit eşlemler ile bazı özelleştirmeler oluşturmak ve bunları bir zip dosyası olarak yüklenmesine izin.
 
-<a name="Tips_for_Multiple_Screens" />
 
 ## <a name="tips-for-multiple-screens"></a>Birden çok ekranlar için ipuçları
 
@@ -189,7 +175,6 @@ Android bewildering çok sayıda cihaz üzerinde çalışır ve ekran boyutları
 
 - **Yükseklik ve genişlik için LayoutParams kullanmak** - kullanıcı Arabirimi öğeleri bir XML düzeni dosyasında tanımlarken kullanarak Android uygulama **wrap_content** ve **fill_parent** değerleri daha başarılı olacaktır uygun bir görünüm piksel veya yoğunluğu bağımsız birim kullanmaktan farklı aygıtlar arasında emin olun. Bu boyut değerler ölçek bit eşlem kaynaklarına uygun şekilde Android neden olur. Bu aynı nedenden dolayı yoğunluğu bağımsız birimler için en iyi ayrılmış kenar boşluklarını belirtme ve kullanıcı Arabirimi öğeleri doldurma.
 
-<a name="Testing_Multiple_Screens" />
 
 ## <a name="testing-multiple-screens"></a>Birden çok ekran test etme
 

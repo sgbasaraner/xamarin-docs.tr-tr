@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 6df47bd54611feedd0d355a976a055d62f37afeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 kullanıcı arabirimine genel bakış
 
@@ -146,7 +146,7 @@ Uygulamanız iOS 7 için hazırlanırken görsel olarak kullanarak subviews yeni
 
  `TopLayoutGuide` ve `BottomLayoutGuide` burada görünümleri başlayamaz veya bitemez, için bir başvuru olarak içerik tarafından yarı saydam çakışan değil böylece hizmet `UIKit` aşağıdaki örnekteki gibi çubuğu:
 
- [ ![](ios7-ui-images/clipped.png "Örnek içeriği bir yarı saydam Uıkit çubukla çakışan değil")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "Örnek içeriği bir yarı saydam Uıkit çubukla çakışan değil")](ios7-ui-images/clipped.png#lightbox)
 
 Bu API'leri üst veya ekranın alt kısmındaki bir görünümün öteleme hesaplamak için kullanılan ve içerik yerleştirme uygun şekilde ayarlayın:
 
@@ -166,7 +166,7 @@ public override void ViewDidLayoutSubviews ()
 
 Ayarlamak için yukarıdaki hesaplanan değeri kullanırız bizim `ImageView`'s görüntünün tamamını görünür olacak şekilde ekranın en üstünden öteleme:
 
- [ ![](ios7-ui-images/good2.png "Örnek ImageViews öteleme ekranın en üstünden")](ios7-ui-images/good2.png)
+ [![](ios7-ui-images/good2.png "Örnek ImageViews öteleme ekranın en üstünden")](ios7-ui-images/good2.png#lightbox)
 
 Başvurmak [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) çalışma örneği.
 
@@ -179,15 +179,15 @@ Görünüm böylece okunmaya çalışılırken bir hiyerarşiye eklendikten sonr
 
 Bu API görünümün hangi kenarları tam ekrana bağımsız olarak, translucency genişletilmesi belirtir. İOS 7 ' ın gezinti çubukları ve araç çubuklarını görünür katmanlı denetleyicinin görünümü - aksine önceki iOS sürümlerinde, burada bunlar aynı yer kaplar alamadık. İOS 7 fotoğraflar uygulaması varsayılan gösterilmektedir `UIViewController.EdgesForExtendedLayout` değeri `UIRectEdge.All`. Bu ayar, çakışan ve tam ekran efekti oluşturma içerikle görünümünde tüm dört kenarları doldurur:
 
- [ ![](ios7-ui-images/photos.png "Örnek EdgesForExtendedLayout")](ios7-ui-images/photos.png)
+ [![](ios7-ui-images/photos.png "Örnek EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
 
 Görüntü dokunarak çubukları kaldırır ve görüntü tam ekran gösterilir:
 
- [ ![](ios7-ui-images/photos2.png "EdgesForExtendedLayout kaldırılan çubukları")](ios7-ui-images/photos2.png)
+ [![](ios7-ui-images/photos2.png "EdgesForExtendedLayout kaldırılan çubukları")](ios7-ui-images/photos2.png#lightbox)
 
 Tam ekran içerik varsayılan olduğundan, iOS 6 için yapılandırılan uygulamalar, aşağıdaki ekran görüntüsünde olduğu gibi kırpılmış görünüme parçası vardır:
 
- [ ![](ios7-ui-images/clipped.png "İOS 6, olduğu gibi bu ekran kırpılmış görünümün parçası için yapılandırılan uygulamalar")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "İOS 6, olduğu gibi bu ekran kırpılmış görünümün parçası için yapılandırılan uygulamalar")](ios7-ui-images/clipped.png#lightbox)
 
 Değiştirme `UIViewController.EdgesForExtendedLayout` özelliği bu davranış için ayarlar. Biz bizim görünümü Gezinti veya araç çubukları (adresindeki her yönlendirme) tarafından kapladığı alanı içerik görüntüleme önlemek için görünümü herhangi kenarları doldurmak değil olduğunu belirtebilirsiniz:
 
@@ -199,7 +199,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 Görüntünün tamamını görünür olacak şekilde bizim uygulamada görünümü yeniden yeniden konumlandırılır, göreceğiz:
 
- [ ![](ios7-ui-images/good.png "Örneğin, tüm görüntü görünür")](ios7-ui-images/good.png)
+ [![](ios7-ui-images/good.png "Örneğin, tüm görüntü görünür")](ios7-ui-images/good.png#lightbox)
 
 Etkilerini unutmayın `TopLayoutGuide/BottomLayoutGuide` ve `EdgesForExtendedLayout` API'leri benzer, bunlar farklı hedefler doldurmaya yöneliktir. Değiştirme `EdgesForExtendedLayout` varsayılan ayar, iOS 6 için tasarlanmış uygulamalarında kırpılmış görünümleri düzeltebilir, ancak iyi iOS 7 tasarım tam ekran estetik dikkate ve bir tam görüntüleme deneyimi, güvenmek ekran sağlamak `TopLayoutGuide` ve `BottomLayoutGuide`düzgün rahat bir yerde kullanıcı için içine yönetilebilmesini amacı içerik yerleştirmek için.
 

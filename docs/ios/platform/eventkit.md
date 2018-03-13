@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: db3662db50d8f3538f16f2af1f9e7880957dc25c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a08bc67a9af653a9a646ad62071df0400ce58c12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="eventkit"></a>EventKit
 
@@ -30,7 +30,7 @@ Bu kılavuzda ele oluşturacağız:
 
 Bu kılavuzdaki tüm görevler Yardımcısı örnek uygulama kullanılabilir:
 
- [ ![](eventkit-images/01.png "Yardımcı örnek uygulama ekranlar")](eventkit-images/01.png)
+ [![](eventkit-images/01.png "Yardımcı örnek uygulama ekranlar")](eventkit-images/01.png#lightbox)
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -148,7 +148,7 @@ App.Current.EventStore.GetCalendars ( EKEntityType.Event );
 
 *EKEventEditViewController* oluşturmak veya takvim uygulamasını kullanırken kullanıcıya sunulan kullanıcı Arabirimi ile bir olayı düzenlemek istiyorsanız, çok sayıda ağır lifting sizin için yapar:
 
- [ ![](eventkit-images/02.png "Takvim uygulamasını kullanırken kullanıcıya sunulan kullanıcı Arabirimi")](eventkit-images/02.png)
+ [![](eventkit-images/02.png "Takvim uygulamasını kullanırken kullanıcıya sunulan kullanıcı Arabirimi")](eventkit-images/02.png#lightbox)
 
 Kullanmak için bir yöntem içinde bildirilirse çöpünün toplanma açılmıyor böylece sınıf düzeyinde bir değişkeni bildirme isteyeceksiniz:
 
@@ -383,5 +383,5 @@ Bu belge bakış EventKit framework'ün önemli parçaları ve en yaygın görev
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Takvimler (örnek)](https://developer.xamarin.com/samples/monotouch/Calendars/)
-- [İOS 6 giriş](~/ios/platform/introduction-to-ios6/index.md)
+- [iOS 6’ya Giriş](~/ios/platform/introduction-to-ios6/index.md)
 - [Takvimler ve anımsatıcıları giriş](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)

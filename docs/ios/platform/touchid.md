@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 7ee2af392a00e045b1992d189a15d7a0ee04b02f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: a2378cb439ceed94751e61fd44b54aae3a65bebd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -29,7 +29,7 @@ Anahtarlık tek tek bir Apple kimliği için parolalar, anahtarlar, sertifikalar
 Anahtarlık burada her satır bilinen olarak özel bir veritabanı olduğundan bir _Anahtarlık öğesi_. Her öğe Anahtarlık özniteliklerle tanımlanan ve şifrelenmiş değerlerden oluşur. Anahtarlık verimli şekilde kullanılmasına izin vermek için onu küçük öğeleri için optimize edilmiştir veya _gizli_.
 Her Anahtarlık öğesi, kullanıcı geçiş kodunu ve benzersiz cihaz gizlilik tarafından korunur. Anahtarlık öğeleri bile kullanıcılar cihazlarını kullanmadığınızda korunmalıdır. Cihaz kilitli olduğunda kullanılabilir hale gelmesi öğeleri yalnızca vererek bu iOS uygulanır: cihaz kilitli olduğunda kullanılamaz duruma. Şifrelenmiş bir yedeklemeye da depolanabilir. Anahtar özelliklerini Anahtarlık erişim denetimi zorlamak için biridir; uygulamanın kendi kısmı Anahtarlık erişimi ve diğer tüm uygulamaların engellenir. Aşağıdaki diyagram, bir uygulaması Anahtarlık ile nasıl etkileşim kurduğunu gösterir:
 
-[![](touchid-images/image1.png "Bu diyagramda uygulama Anahtarlık ile nasıl etkileşim kurduğu gösterilmektedir")](touchid-images/image1.png)
+[![](touchid-images/image1.png "Bu diyagramda uygulama Anahtarlık ile nasıl etkileşim kurduğu gösterilmektedir")](touchid-images/image1.png#lightbox)
 
 ### <a name="secure-enclave"></a>Güvenli Enclave
 
@@ -49,7 +49,7 @@ Anahtarlık Anahtarlık öğesi kendisi tarafından şifresi çözülemiyor; Bun
 
 Erişim denetim listesi, gerçekleşmesi için belirli bir işlemine izin vermek için ne gerekir ilgili bilgiler açıklanmaktadır iOS 8 içinde yeni bir Anahtarlık öğesi özniteliktir. Bu uyarı iletişim kutusu görüntüleme veya bir geçiş kodu isteme biçiminde olabilir. ACL erişilebilirlik ve kimlik doğrulaması için bir Anahtarlık öğesi ayarlamanıza olanak sağlar. Aşağıdaki diyagram, bu yeni öznitelik Anahtarlık öğenin geri kalanını oturum nasıl bağlar, gösterir:
 
-[![](touchid-images/image2.png "Bu yeni öznitelik Anahtarlık öğenin geri kalanını oturum nasıl bağlar, bu diyagramda gösterilmektedir")](touchid-images/image2.png)
+[![](touchid-images/image2.png "Bu yeni öznitelik Anahtarlık öğenin geri kalanını oturum nasıl bağlar, bu diyagramda gösterilmektedir")](touchid-images/image2.png#lightbox)
 
 İOS 8 itibariyle var. Şimdi yeni bir kullanıcı varlığı İlkesi `SecAccessControl`, güvenli enclave bir iPhone 5s'dir ve üstü tarafından zorlanır. Aşağıda, yalnızca cihaz yapılandırma İlkesi değerlendirme nasıl etkileyebilir tablosundaki görebilirsiniz:
 
@@ -94,7 +94,7 @@ Biz önceki bölümde belirlenen uygulamalar kullanıcı cihazda ayarlanmış g�
 Her iki özelliği yerel kimlik doğrulaması sunarken, uygulama veya kullanıcı uzak bir sunucuya kimlik doğrulaması bir mekanizma sağlamaz.
 Yerel kimlik doğrulaması kimlik doğrulaması için yeni bir standart kullanıcı arabirimi sağlar. Touch ID söz konusu olduğunda bir uyarı görünümü aşağıda gösterildiği gibi iki düğmelerle budur. Bir düğme iptal et ve bir geri dönüş kimlik doğrulaması – geçiş kodunu çeşit kullanın. Ayarlanmalıdır özel bir ileti yoktur. Bu neden Touch ID kimlik doğrulama gerekli olduğunu kullanıcıya açıklamak için kullanmak iyi bir uygulamadır.
 
-[![](touchid-images/image12.png "Touch ID kimlik doğrulama uyarısı")](touchid-images/image12.png)
+[![](touchid-images/image12.png "Touch ID kimlik doğrulama uyarısı")](touchid-images/image12.png#lightbox)
 
 ### <a name="with-keychain-services"></a>Anahtarlık hizmetleriyle
 
@@ -116,7 +116,7 @@ Yerel kimlik doğrulaması, geçiş kodu veya Touch ID gibi bilgilerini toplamak
 
 Bir uygulamanın bunu yapmak için yerel güvenli Enclave iç işlemi başlatan kimlik doğrulaması, iç ilke değerlendirmesi çağırır. Bu doğrudan sorgulama/güvenli Enclave erişmeden uygulamanıza kimlik doğrulaması sağlamak için yararlanabilirsiniz.
 
-[![](touchid-images/image13a.png "Anahtarlık Hizmetleri olmadan yerel kimlik doğrulaması kullanma")](touchid-images/image13a.png)
+[![](touchid-images/image13a.png "Anahtarlık Hizmetleri olmadan yerel kimlik doğrulaması kullanma")](touchid-images/image13a.png#lightbox)
 
 Uygulamanızda yerel kimlik doğrulaması kullanarak kullanıcı doğrulama, örneğin uygulamalar bankacılık gibi ya da ebeveyn denetimleri yardımcı olmak için cihaz sahibinin gözler için yalnızca bir özellik için tek tek kilidini açmak uygulama basit bir yol sağlar uygulama. Sizin de zaten var. kimlik doğrulaması genişletmek için bir yol kullanabilirsiniz – kullanıcılar kendi bilgilerini güvenli olacak şekilde benzer, ama bunlar ayrıca seçeneğiniz ister.
 
@@ -150,16 +150,16 @@ Bu nedenle uygulamamız için bazı Touch ID kimlik doğrulama ekleme konumundak
 2.  Çift tıklatın `MainStoryboard.Storyboard` iOS Tasarımcısı örneği açın. Bu örnek ile kimlik doğrulaması denetleyecek uygulamamız için yeni bir ekran eklemek istiyoruz. Bu önce geçerli gidecek `MasterViewController`.
 3.  Yeni bir sürükleyin **View Controller** gelen **araç** için **tasarım yüzeyi**. Bu olarak ayarlamak **kök View Controller** tarafından **Ctrl + Sürükle** gelen **Gezinti denetleyicisi**:
 
-    [![](touchid-images/image4.png "Kök görünüm denetleyicisini ayarlama")](touchid-images/image4.png)
+    [![](touchid-images/image4.png "Kök görünüm denetleyicisini ayarlama")](touchid-images/image4.png#lightbox)
 4.  Yeni Görünüm denetleyicisini `AuthenticationViewController`.
 5.  Ardından, bir düğme sürükleyin ve bunu Yerleştir `AuthenticationViewController`. Bu çağrı `AuthenticateButton`ve metin verin `Add a Chore`.
 6.  Bir olay oluşturma `AuthenticateButton` adlı `AuthenticateMe`.
 7.  El ile oluşturmak gelen ü `AuthenticationViewController` altındaki siyah bir çubuk tıklayarak ve **Ctrl + Sürükle** çubuğundan `MasterViewController` ve seçme **itme** (veya **Göster** boyutu sınıfları kullanıyorsanız):
 
-    [![](touchid-images/image5.png "MasterViewController ve anında iletme seçme çubuğundan sürükleyin ya Göster")](touchid-images/image6.png)
+    [![](touchid-images/image5.png "MasterViewController ve anında iletme seçme çubuğundan sürükleyin ya Göster")](touchid-images/image6.png#lightbox)
 8.  Tıklayın yeni oluşturulan ü ve tanımlayıcı verin `AuthenticationSegue`aşağıda gösterildiği gibi:
 
-    [![](touchid-images/image7.png "Kümesi için AuthenticationSegue segue tanımlayıcısı")](touchid-images/image7.png)
+    [![](touchid-images/image7.png "Kümesi için AuthenticationSegue segue tanımlayıcısı")](touchid-images/image7.png#lightbox)
 9.  Aşağıdaki kodu ekleyin `AuthenticationViewController`:
 
     ```
@@ -191,19 +191,19 @@ Bu nedenle uygulamamız için bazı Touch ID kimlik doğrulama ekleme konumundak
 
 Bu yerel kimlik doğrulaması kullanarak Touch ID kimlik doğrulama uygulamak için gereken tüm koddur. Aşağıdaki görüntü vurgulanan satırları yerel kimlik doğrulaması kullanımını göster:
 
-[![](touchid-images/image8.png "Yerel kimlik doğrulaması kullanımını vurgulanan satırları göster")](touchid-images/image8.png)
+[![](touchid-images/image8.png "Yerel kimlik doğrulaması kullanımını vurgulanan satırları göster")](touchid-images/image8.png#lightbox)
 
 İlk olarak, aygıt Touch kullanarak giriş ID kabul edebilen olup olmadığını kurmak ihtiyacımız `CanEvaluatePolicy` ve ilkede geçirme `DeviceOwnerAuthenticationWithBiometrics`. Bu durum geçerlidir sonra kullanarak biz Touch ID UI görüntüleyebilirsiniz `EvaluatePolicy`. Üç parça bilgi uygulamasına geçirmek için sahip olduğumuz vardır `EvaluatePolicy` – ilke, kimlik doğrulama neden gerekli olduğunu belirten bir dize ve bir yanıt işleyici. Yanıt işleyici uygulama başarılı veya başarısız kimlik doğrulaması durumunda ne yapmanız gerektiğini bildirir. Yanıt işleyici yakın olarak inceleyelim:
 
-[![](touchid-images/image9.png "Yanıt işleyicisi")](touchid-images/image9.png)
+[![](touchid-images/image9.png "Yanıt işleyicisi")](touchid-images/image9.png#lightbox)
 
 Yanıt işleyici türü belirtildiğinde `LAContextReplyHandler`, parametreleri başarılı – aldığı bir `bool` değeri ve bir `NSError` adlı `error`. Başarılı olursa, burada gerçekten ne olursa olsun, kimlik doğrulaması – istiyoruz olmasından gerçekleştiririz, bu durumda yeni bir işi bize ekleyeceksiniz ekran görüntüleme budur. Yerel kimlik doğrulaması uyarılar biri bu olmalıdır, ön planda çalıştırmak, bu nedenle kullandığınızdan emin olun unutmayın `InvokeOnMainThread`:
 
-[![](touchid-images/image10.png "Yerel kimlik doğrulaması için InvokeOnMainThread kullanın")](touchid-images/image10.png)
+[![](touchid-images/image10.png "Yerel kimlik doğrulaması için InvokeOnMainThread kullanın")](touchid-images/image10.png#lightbox)
 
 Kimlik doğrulaması başarılı oldu, son olarak, geçiş istiyoruz `MasterViewController`. `PerformSegue` Yöntemi, bunu yapmak için kullanılabilir:
 
-[![](touchid-images/image11.png "Geçiş için MasterViewController PerformSegue yöntemini çağırın")](touchid-images/image11.png)
+[![](touchid-images/image11.png "Geçiş için MasterViewController PerformSegue yöntemini çağırın")](touchid-images/image11.png#lightbox)
 
 ## <a name="summary"></a>Özet
 Bu kılavuzda Anahtarlık ve iOS nasıl işlediğine inceledik. Biz de ACL, Anahtarlık incelediniz ve iOS bu değişiklikleri. Ardından, iOS 8 yenidir ve bizim uygulamada Touch ID kimlik doğrulama uygulanmasına Aranan yerel kimlik doğrulaması framework göz sürdü.

@@ -7,18 +7,17 @@ ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 91e27fcaef0ef1b262eceecd4d3c71bac34e328d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="java-bindings-metadata"></a>Java Bindings Metadata
 
 _C# kod Xamarin.Android: Java kitaplıkları Java yerel arabirimi (JNI içinde) belirtilen alt düzey ayrıntıların soyutlar sistemdir bağlamaları aracılığıyla çağırır. Xamarin.Android bu bağlamaların oluşturan bir araç sağlar. Bu araç, ad alanlarını değiştirme ve üyeleri yeniden adlandırma gibi yordamları gerçekleştirmeye olanak tanıyan meta verileri kullanarak bir bağlama nasıl oluşturulduğunu Geliştirici denetimi sağlar. Bu belge meta verileri nasıl çalıştığı açıklanmaktadır, bu meta veri öznitelikleri özetler destekler ve bu meta verileri değiştirerek bağlama sorunları gidermek açıklanmaktadır._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -74,7 +73,6 @@ Bu XML eşleme dosyaları bulunabilir **dönüştüren** projenin klasörü:
 
 Tartışmak taşıma sağlar **Metadata.xml** daha ayrıntılı.
 
-<a name="Metadata.xml_Transform_File" />
 
 ## <a name="metadataxml-transform-file"></a>Metadata.XML dönüşüm dosyası
 
@@ -114,7 +112,6 @@ Aşağıda bazı yaygın olarak kullanılan XPath öğelerinin Java API için li
 -   `parameter` &ndash; Bir yöntem için parametre tanımlayın. Örneğin `/parameter[@name='p0']`
 
 
-<a name="ADDING_TYPES" />
 
 ### <a name="adding-types"></a>Türleri ekleme
 
@@ -129,7 +126,6 @@ Aşağıda bazı yaygın olarak kullanılan XPath öğelerinin Java API için li
 </add-node>
 ```
 
-<a name="REMOVING_TYPES" />
 
 ### <a name="removing-types"></a>Türlerini kaldırma
 
@@ -138,8 +134,6 @@ Java türü yoksay ve bağlama değil Xamarin.Android bağlamaları Oluşturucu 
 ```xml
 <remove-node path="/api/package[@name='{package_name}']/class[@name='{name}']" />
 ```
-
-<a name="Renaming_Members" />
 
 ### <a name="renaming-members"></a>Üyeleri yeniden adlandırma
 
@@ -169,6 +163,8 @@ Düzgün Sarmalanan bir türü (veya yöntem) yönetilen adını değiştirmek i
     name="managedName">NewName</attr>
 ```
 
+<a name="Renaming_EventArg_Wrapper_Classes" />
+
 #### <a name="renaming-eventarg-wrapper-classes"></a>Yeniden adlandırma `EventArg` sarmalayıcı sınıfları
 
 Ne zaman Xamarin.Android bağlama Oluşturucu tanımlar bir `onXXX` ayarlayıcı yöntemi için bir _dinleyici türü_, C# olay ve `EventArgs` alt oluşturulacak bir .NET desteklemek için Java tabanlı bir dinleyici için API flavoured Desen. Örnek olarak, aşağıdaki Java sınıfı ve yöntemi göz önünde bulundurun:
@@ -193,7 +189,6 @@ Bu geçerli bir C# sınıf adı değil. Bu sorunu düzeltmek için bağlama Yaza
 ```
 
  
-<a name="Supported_Attributes" />
 
 ## <a name="supported-attributes"></a>Desteklenen öznitelikleri
 
@@ -341,7 +336,6 @@ Tüm yerinde bu değişiklikler, izleme kodu Xamarin.Android ayarlamak için kul
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -352,5 +346,5 @@ Bu makalede ele alınan meta veri Xamarin.Android bir API tanımından dönüşt
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [JNI ile çalışma](~/android/platform/java-integration/working-with-jni.md)
-- [Java kitaplığı bağlama](~/android/platform/binding-java-library/index.md)
+- [Java Kitaplığını Bağlama](~/android/platform/binding-java-library/index.md)
 - [GAPI Metadata](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)

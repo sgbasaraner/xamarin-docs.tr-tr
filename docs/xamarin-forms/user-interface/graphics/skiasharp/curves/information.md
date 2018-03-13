@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 992e6583d64f078c0cd693765a1512c3e41a620a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c7edf0c8e563dad25693d184d3a44a3e66466126
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-information-and-enumeration"></a>Yol bilgisi ve numaralandırması
 
@@ -110,7 +110,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Length` Özelliğinin yeni oluşturulan `SKPathMeasure` nesnesi yolunun uzunluğu alır. Bu bölünür `baseTextWidth` (10 metin boyutuna göre metin genişliğini olmayan) değeri ve 10 temel metin boyutu tarafından ile çarpılır. Bu yol boyunca metin görüntüleme için yeni bir metin boyutu oluşur:
 
-[![](information-images/pathlength-small.png "Üçlü sayfasının ekran görüntüsü yol uzunluğu")](information-images/pathlength-large.png "Üçlü sayfasının ekran görüntüsü yol uzunluğu")
+[![](information-images/pathlength-small.png "Üçlü sayfasının ekran görüntüsü yol uzunluğu")](information-images/pathlength-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yol uzunluğu")
 
 Daha uzun veya kısaysa Bézier eğrisi alır gibi değiştirmek metin boyutu görebilirsiniz.
 
@@ -136,7 +136,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 **Mi yarı-Pipe** sayfa canlandırır ve geriye bir küp Bézier eğrisi ride görünüyor mi üzerinde çubuk şekli:
 
-[![](information-images/unicyclehalfpipe-small.png "Üçlü sayfasının ekran görüntüsü mi yarı-Pipe")](information-images/unicyclehalfpipe-large.png "Üçlü sayfasının ekran görüntüsü mi yarı-kanal")
+[![](information-images/unicyclehalfpipe-small.png "Üçlü sayfasının ekran görüntüsü mi yarı-Pipe")](information-images/unicyclehalfpipe-large.png#lightbox "Üçlü sayfasının ekran görüntüsü mi yarı-kanal")
 
 `SKPaint` Yarı-pipe ve mi vuruş yapması için kullanılan nesne alanı olarak tanımlanır [ `UnicycleHalfPipePage` ]() sınıfı. Ayrıca tanımlandığı `SKPath` nesne mi için:
 
@@ -425,7 +425,7 @@ Yöntem adlı değişken her dağılımını ilk noktasını korur bildirim `fir
 
 **GlobularText** örnek gibi görünen bir 3B efekti bir küreyi etrafına metin kaydırma için bu genişletme yöntemi kullanır:
 
-[![](information-images/globulartext-small.png "Üçlü sayfasının ekran görüntüsü Globular metin")](information-images/globulartext-large.png "Üçlü sayfasının ekran görüntüsü Globular metin")
+[![](information-images/globulartext-small.png "Üçlü sayfasının ekran görüntüsü Globular metin")](information-images/globulartext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Globular metin")
 
 [ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Sınıfı oluşturucusu bu dönüşüm gerçekleştirir. Oluşturduğu bir `SKPaint` nesnesi için metin ve ardından edinir bir `SKPath` nesnesinin `GetTextPath` yöntemi. Bu geçirilen yoludur `CloneWithTransform` genişletme yöntemi bir dönüşüm işlevi ile birlikte: 
 

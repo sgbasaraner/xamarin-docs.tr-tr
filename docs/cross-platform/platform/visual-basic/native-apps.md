@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: dc107ee865ea93cdc12148a5498cf3d512f1dae9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95817c2ec22c4c27f0f4a933db54105614e54030
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>Visual Basic.NET dilinde Xamarin iOS ve Android
 
 [TaskyPortable](/samples/mobile/VisualBasic/TaskyPortableVB/) örnek uygulama Xamarin ile Visual Basic kodu taşınabilir Sınıf Kitaplığı'na derlenmiş nasıl kullanılabileceğini gösterir. Bazı ekran görüntüleri iOS, Android ve Windows Phone çalıştıran ortaya çıkan uygulamalar şunlardır:
 
- [ ![](native-apps-images/image5.png "iOS, Android ve Windows telefonlar Visual Basic ile oluşturulan bir uygulamayı çalıştırma")](native-apps-images/image5.png)
+ [![](native-apps-images/image5.png "iOS, Android ve Windows telefonlar Visual Basic ile oluşturulan bir uygulamayı çalıştırma")](native-apps-images/image5.png#lightbox)
 
 İOS, Android ve Windows Phone projeleri örnekte tüm C# dilinde yazılmıştır. Her uygulama için kullanıcı arabirimi yerel teknolojilerle oluşturulmuştur (film şeritleri, Xml ve Xaml sırasıyla), ancak `TodoItem` Yönetimi Visual Basic taşınabilir sınıf kitaplığı tarafından sağlanan kullanarak bir `IXmlStorage` tarafından sağlanan uygulama Yerel projesi.
 
@@ -26,7 +26,8 @@ ms.lasthandoff: 02/27/2018
 
 Bu kılavuz, Visual Basic nasıl uygulanmıştır anlatılmaktadır [TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB) iOS ve Android için Xamarin örnek.
 
-> ⚠️ Yönergeleri gözden [Visual Basic.NET PCLs](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/) bu kılavuzla devam etmeden önce.
+> [!NOTE]
+> Yönergeleri gözden [Visual Basic.NET PCLs](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/) bu kılavuzla devam etmeden önce.
 
 ## <a name="visualbasicportablelibrary"></a>VisualBasicPortableLibrary
 
@@ -158,9 +159,9 @@ Public Class TodoItemRepositoryXML
 End Class
 ```
 
-> ℹ️ **Not:** Bu kod örneği çok temel veri depolama mekanizmasını yer almaktadır.
-> Platforma özgü işlevselliği (yükleme ve kaydetme bir Xml dosyası bu durumda,) erişmek için bir arabirim karşı nasıl taşınabilir sınıf kitaplığı kod göstermek için sağlanmıştır.
-> Bu, bir üretim kaliteli veritabanı alternatif olması amaçlanmamıştır.
+> [!NOTE]
+> Bu kod örneği çok temel veri depolama mekanizmasını yer almaktadır.
+> Platforma özgü işlevselliği (yükleme ve kaydetme bir Xml dosyası bu durumda,) erişmek için bir arabirim karşı nasıl taşınabilir sınıf kitaplığı kod göstermek için sağlanmıştır. Bu, bir üretim kaliteli veritabanı alternatif olması amaçlanmamıştır.
 
 ## <a name="ios-android-and-windows-phone-application-projects"></a>iOS, Android ve Windows Phone Uygulama projeleri
 
@@ -263,7 +264,7 @@ TodoMgr = new TodoItemManager(filename, xmlStorage);
 
 Windows Phone Uygulama kalan Xaml ve C# kullanıcı arabirimi oluşturma ve kullanma oluşan `TodoMgr` yüklemek ve kaydetmek için sınıf `TodoItem` nesneleri.
 
-# <a name="visual-basic-pcl-in-visual-studio-for-mac"></a>Visual Basic PCL Mac için Visual Studio'da
+## <a name="visual-basic-pcl-in-visual-studio-for-mac"></a>Visual Basic PCL Mac için Visual Studio'da
 
 Mac için Visual Studio, Visual Basic Dil desteklemez – oluşturamaz veya Mac için Visual Studio ile Visual Basic projeleri derleme
 
@@ -271,58 +272,58 @@ Visual Studio için taşınabilir sınıf kitaplıkları için Mac'in destek Vis
 
 Bu bölümde, Visual Studio PCL derlemede derlemek ve ardından onu bir sürüm denetim sisteminde depolanan diğer projeler tarafından başvurulan emin olun ve açıklanmaktadır.
 
-## <a name="keeping-the-pcl-output-from-visual-studio"></a>Visual Studio'dan PCL çıkış tutma
+### <a name="keeping-the-pcl-output-from-visual-studio"></a>Visual Studio'dan PCL çıkış tutma
 
 Varsayılan olarak, çoğu sürüm denetim sistemleri (TFS ve Git gibi) yoksaymak için yapılandırılacak **/bin/** derlenmiş PCL derleme anlamı dizin depolanmayacak. Başka bir deyişle, el ile bir başvuru eklemek Mac için Visual Studio çalıştıran tüm bilgisayarlara kopyalamanız gerekir.
 
 Sürüm denetim sisteminiz PCL derleme çıktı depolayabilir emin olmak için proje kök kopyalar oluşturma sonrası komut dosyası oluşturabilirsiniz. Bu oluşturma sonrası adımı derleme kolayca kaynak denetimine eklenebilir ve diğer projelerle paylaşılan sağlamaya yardımcı olur.
 
-### <a name="visual-studio-2017"></a>Visual Studio 2017
+#### <a name="visual-studio-2017"></a>Visual Studio 2017
 
 1. Projeye sağ tıklayın ve seçin **Özellikler > Yapı olayları** bölümü.
 
 2. Ekleme bir _oluşturma sonrası_ DLL çıkış bu projeden proje kök dizine kopyalar. komut dosyası (olduğu dışında **/bin/**). Sürüm denetimi yapılandırmanıza bağlı olarak, DLL artık kaynak denetimine eklenmesi mümkün olması gerekir.
 
-  [ ![](native-apps-images/image6-vs-sml.png "VB DLL kopyalamak için son yapı betik derleme olayları")](native-apps-images/image6-vs.png)
+  [![](native-apps-images/image6-vs-sml.png "VB DLL kopyalamak için son yapı betik derleme olayları")](native-apps-images/image6-vs.png#lightbox)
 
-### <a name="visual-studio-2015"></a>Visual Studio 2015
+#### <a name="visual-studio-2015"></a>Visual Studio 2015
 
 1.  Projeye sağ tıklayın ve seçin **Özellikler > derleme** , ardından tüm yapılandırmaları sol üst Tarak kutusunda seçildiğinden emin olun. Tıklatın **derleme olaylarını...**  sağ alt düğmesini.
 
-  [ ![](native-apps-images/image6.png "Proje Özellikleri derleme bölümü")](native-apps-images/image6.png)
+    [![](native-apps-images/image6.png "Proje Özellikleri derleme bölümü")](native-apps-images/image6.png#lightbox)
 
 1.  DLL çıkış bu projeden proje kök dizine kopyalar oluşturma sonrası komut dosyası ekleme (olduğu dışında **/bin/** ). Sürüm denetimi yapılandırmanıza bağlı olarak, DLL artık kaynak denetimine eklenmesi mümkün olması gerekir.
 
-  [ ![](native-apps-images/image7.png "Olayları penceresi oluşturma")](native-apps-images/image7.png)
+    [![](native-apps-images/image7.png "Olayları penceresi oluşturma")](native-apps-images/image7.png#lightbox)
 
-### <a name="all-versions"></a>Tüm sürümler
+#### <a name="all-versions"></a>Tüm sürümler
 
 Sonraki projeyi oluşturun, taşınabilir sınıf kitaplığı derleme proje kök ve eriştiğinizde, onay-içinde/commit/itme değişikliklerinizi DLL kopyalanacak (bunu Visual Studio ile bir Mac üzerine Mac için indirilebilir böylece) depolanır.
 
-  [ ![](native-apps-images/image8-sml.png "Visual Basic derleme çıktı dosyası konumu")](native-apps-images/image8.png)
+  [![](native-apps-images/image8-sml.png "Visual Basic derleme çıktı dosyası konumu")](native-apps-images/image8.png#lightbox)
 
 
 Visual Basic Dil Xamarin iOS veya Android projeleri desteklenmiyor olsa bile bu derleme Mac için Xamarin Visual Studio projelerinde sonra eklenebilir.
 
-## <a name="referencing-the-pcl-in-visual-studio-for-mac"></a>Mac için Visual Studio PCL başvurma
+### <a name="referencing-the-pcl-in-visual-studio-for-mac"></a>Mac için Visual Studio PCL başvurma
 
 Xamarin Visual Basic desteklemediğinden, PCL proje (veya Windows Phone Uygulama) bu ekran görüntüsünde gösterildiği gibi yüklenemedi:
 
- [ ![](native-apps-images/image9.png "Visual Studio Mac çözüm için")](native-apps-images/image9.png)
+ [![](native-apps-images/image9.png "Visual Studio Mac çözüm için")](native-apps-images/image9.png#lightbox)
 
 Visual Basic PCL derleme DLL hala Xamarin.iOS ve Xamarin.Android projelerinde içerebilir:
 
 1.  Sağ tıklayın **başvuruları** düğümü ve select **başvuruları Düzenle...**
 
-  [ ![](native-apps-images/image10.png "Proje düzenleme başvuruları menüsü")](native-apps-images/image10.png)
+    [![](native-apps-images/image10.png "Proje düzenleme başvuruları menüsü")](native-apps-images/image10.png#lightbox)
 
 1.  Seçin **.Net derleme** sekmesinde ve Visual Basic proje dizininde DLL çıkış gidin. Mac için Visual Studio Proje açılamıyor olsa bile, tüm dosyaları kaynak denetiminden var olmalıdır. Tıklatın **Ekle** sonra **Tamam** iOS ve Android uygulamaları bu derleme eklemek için.
 
-  [ ![](native-apps-images/image11-sml.png "Ekle Tamam iOS ve Android uygulamaları bu derleme eklemek için tıklatın")](native-apps-images/image11.png)
+    [![](native-apps-images/image11-sml.png "Ekle Tamam iOS ve Android uygulamaları bu derleme eklemek için tıklatın")](native-apps-images/image11.png#lightbox)
 
 1.  Artık iOS ve Android uygulamaları Visual Basic taşınabilir sınıf kitaplığı tarafından sağlanan uygulama mantığını ekleyebilirsiniz. Bu ekran, Visual Basic PCL başvuran ve bu kitaplıktan işlevi kullanır koduna sahip bir iOS uygulaması gösterir.
 
-  [ ![](native-apps-images/image12-sml.png "Düzen başvurular ekleyin .NET derleme penceresi")](native-apps-images/image12.png)
+    [![](native-apps-images/image12-sml.png "Düzen başvurular ekleyin .NET derleme penceresi")](native-apps-images/image12.png#lightbox)
 
 
 En son Visual Studio Visual Basic projesinde unutmayın projeyi oluşturmak için sonuçta elde edilen derleme DLL kaynak denetiminde depolamak ve böylece derlemeler Mac için Visual Studio bu yeni DLL Mac üzerine kaynak denetiminden çekme değişiklikler yapılırsa içerir işlevselliği.

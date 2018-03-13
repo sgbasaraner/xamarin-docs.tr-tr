@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9e64f1962e35372a6058f4b515efa5a61c1c9e45
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9cf9cb2e4773b90ecdd9321c6627003be3fa1b8b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Korumalı alan Xamarin.Mac uygulama
 
@@ -22,7 +22,7 @@ _Bu makalede, korumalı alan Xamarin.Mac uygulaması App Store'dan yayın için 
 
 Objective-C ya da Swift'te ile çalışırken, yaptığınız gibi bir Xamarin.Mac uygulamasında C# ve .NET ile çalışırken, sanal bir uygulama aynı yeteneğine sahip.
 
-[![Çalışan uygulama örneği](sandboxing-images/intro01.png "çalışan uygulama örneği")](sandboxing-images/intro01-large.png)
+[![Çalışan uygulama örneği](sandboxing-images/intro01.png "çalışan uygulama örneği")](sandboxing-images/intro01-large.png#lightbox)
 
 Bu makalede, korumalı alan Xamarin.Mac uygulama ve tüm korumalı alan gidin öğeleri ile çalışmanın temelleri şu konulara değineceğiz: kapsayıcı dizinleri, yetkilendirmeler, kullanıcı tarafından belirlenen izinler, ayrıcalık ayırma ve çekirdek zorlama. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -70,19 +70,19 @@ Uygulamayı gerçekten korumalı ve öğrenin ve ortak uygulama Korumalı alan h
 1. Mac ve tıklatın için Visual Studio'yu başlatın **yeni çözüm...** Bağlantı.
 2. Gelen **yeni proje** iletişim kutusunda **Mac** > **uygulama** > **Cocoa uygulama**: 
 
-    [![Yeni bir Cocoa uygulaması oluşturma](sandboxing-images/sample01.png "yeni Cocoa uygulaması oluşturma")](sandboxing-images/sample01-large.png)
+    [![Yeni bir Cocoa uygulaması oluşturma](sandboxing-images/sample01.png "yeni Cocoa uygulaması oluşturma")](sandboxing-images/sample01-large.png#lightbox)
 3. Tıklatın **sonraki** düğmesini tıklatın, girin `MacSandbox` tıklayın ve proje adı için **oluşturma** düğmesi: 
 
-    [![Uygulama adı girerek](sandboxing-images/sample02.png "uygulama adı girme")](sandboxing-images/sample02-large.png)
+    [![Uygulama adı girerek](sandboxing-images/sample02.png "uygulama adı girme")](sandboxing-images/sample02-large.png#lightbox)
 4. İçinde **çözüm paneli**, çift **Main.storyboard** dosyayı Xcode'da düzenlemek için açın: 
 
-    [![Ana film şeridi düzenleme](sandboxing-images/sample03.png "ana film şeridi düzenleme")](sandboxing-images/sample03-large.png)
+    [![Ana film şeridi düzenleme](sandboxing-images/sample03.png "ana film şeridi düzenleme")](sandboxing-images/sample03-large.png#lightbox)
 5. Sürükleme bir **Web görünümü** içerik alanını doldurun ve büyür ve penceresiyle küçültmek için ayarlamak için pencerenin boyutu: 
 
-    [![Bir web görünümü ekleme](sandboxing-images/sample04.png "bir web görünümü ekleme")](sandboxing-images/sample04-large.png)
+    [![Bir web görünümü ekleme](sandboxing-images/sample04.png "bir web görünümü ekleme")](sandboxing-images/sample04-large.png#lightbox)
 6. Adlı web görünümü için bir çıkış oluşturmak `webView`: 
 
-    [![Yeni bir çıkış oluşturma](sandboxing-images/sample05.png "yeni bir çıkış oluşturma")](sandboxing-images/sample05-large.png)
+    [![Yeni bir çıkış oluşturma](sandboxing-images/sample05.png "yeni bir çıkış oluşturma")](sandboxing-images/sample05-large.png#lightbox)
 7. Mac ve çift Visual Studio'ya dönmek **ViewController.cs** dosyasını **çözüm paneli** düzenlemek için açın.
 8. Aşağıdaki ekleme deyimini kullanarak: `using WebKit;`
 9. Olun `ViewDidLoad` yöntemi görünüm aşağıdaki gibi: 
@@ -99,7 +99,7 @@ public override void AwakeFromNib ()
 
 Uygulamayı çalıştırın ve Apple Web penceresinde aşağıdaki gibi görüntülendiğinden emin olun:
 
-[![Bir örnek uygulamayı çalıştırma gösteren](sandboxing-images/sample06.png "bir örnek uygulamayı çalıştırma gösterme")](sandboxing-images/sample06-large.png)
+[![Bir örnek uygulamayı çalıştırma gösteren](sandboxing-images/sample06.png "bir örnek uygulamayı çalıştırma gösterme")](sandboxing-images/sample06-large.png#lightbox)
 
 <a name="Signing_and_Provisioning_the_App" />
 
@@ -111,34 +111,34 @@ Aşağıdakileri sağlar:
 
 1. Apple Geliştirici Portalı günlüğüne: 
 
-    [![Apple Geliştirici Portalı'na oturum](sandboxing-images/sign01.png "Apple Geliştirici Portalı'na günlüğe kaydetme")](sandboxing-images/sign01-large.png)
+    [![Apple Geliştirici Portalı'na oturum](sandboxing-images/sign01.png "Apple Geliştirici Portalı'na günlüğe kaydetme")](sandboxing-images/sign01-large.png#lightbox)
 2. Seçin **tanımlayıcıları & profilleri, sertifikaları**: 
 
-    [![Sertifikalar, tanımlayıcılar & profilleri seçme](sandboxing-images/sign02.png "tanımlayıcıları & profilleri, sertifikaları seçme")](sandboxing-images/sign02-large.png)
+    [![Sertifikalar, tanımlayıcılar & profilleri seçme](sandboxing-images/sign02.png "tanımlayıcıları & profilleri, sertifikaları seçme")](sandboxing-images/sign02-large.png#lightbox)
 3. Altında **Mac uygulamaları**seçin **tanımlayıcıları**: 
 
-    [![Tanımlayıcıları seçme](sandboxing-images/sign03.png "tanımlayıcıları seçme")](sandboxing-images/sign03-large.png)
+    [![Tanımlayıcıları seçme](sandboxing-images/sign03.png "tanımlayıcıları seçme")](sandboxing-images/sign03-large.png#lightbox)
 4. Uygulama için yeni bir kimlik oluşturun: 
 
-    [![Yeni bir uygulama kimliği oluşturma](sandboxing-images/sign04.png "yeni bir uygulama kimliği oluşturma")](sandboxing-images/sign04-large.png)
+    [![Yeni bir uygulama kimliği oluşturma](sandboxing-images/sign04.png "yeni bir uygulama kimliği oluşturma")](sandboxing-images/sign04-large.png#lightbox)
 5. Altında **sağlama profilleri**seçin **geliştirme**: 
 
-    [![Geliştirme seçme](sandboxing-images/sign05.png "geliştirme seçme")](sandboxing-images/sign05-large.png)
+    [![Geliştirme seçme](sandboxing-images/sign05.png "geliştirme seçme")](sandboxing-images/sign05-large.png#lightbox)
 6. Yeni bir profil oluşturmak ve **Mac uygulaması geliştirme**: 
 
-    [![Yeni bir profil oluşturma](sandboxing-images/sign06.png "yeni bir profil oluşturma")](sandboxing-images/sign06-large.png)
+    [![Yeni bir profil oluşturma](sandboxing-images/sign06.png "yeni bir profil oluşturma")](sandboxing-images/sign06-large.png#lightbox)
 7. Yukarıda oluşturduğumuz uygulama Kimliğini seçin: 
 
-    [![Uygulama Kimliği seçme](sandboxing-images/sign07.png "uygulama kimliği seçme")](sandboxing-images/sign07-large.png)
+    [![Uygulama Kimliği seçme](sandboxing-images/sign07.png "uygulama kimliği seçme")](sandboxing-images/sign07-large.png#lightbox)
 8. Bu profil için geliştiricilere seçin: 
 
-    [![Ekleme geliştiriciler](sandboxing-images/sign08.png "ekleme geliştiriciler")](sandboxing-images/sign08-large.png)
+    [![Ekleme geliştiriciler](sandboxing-images/sign08.png "ekleme geliştiriciler")](sandboxing-images/sign08-large.png#lightbox)
 9. Bu profil için bilgisayarları seçin: 
 
-    [![İzin verilen bilgisayarlar seçiliyor](sandboxing-images/sign09.png "izin verilen bilgisayarlar seçiliyor")](sandboxing-images/sign09-large.png)
+    [![İzin verilen bilgisayarlar seçiliyor](sandboxing-images/sign09.png "izin verilen bilgisayarlar seçiliyor")](sandboxing-images/sign09-large.png#lightbox)
 10. Profil bir ad verin: 
 
-    [![Profil bir ad verip](sandboxing-images/sign10.png "profili bir ad verip")](sandboxing-images/sign10-large.png)
+    [![Profil bir ad verip](sandboxing-images/sign10.png "profili bir ad verip")](sandboxing-images/sign10-large.png#lightbox)
 11. Tıklatın **Bitti** düğmesi.
 
 > [!IMPORTANT]
@@ -160,10 +160,10 @@ Ardından, yeni uygulama kimliği ve sağlama profili Xamarin.Mac Projemizin se�
 1. İçinde **çözüm paneli**, çift **Info.plist** dosyayı düzenlemek için açın.
 2. Emin **paket tanımlayıcı** yukarıda oluşturduğumuz bizim uygulama kimliği eşleşen (örnek: `com.appracatappra.MacSandbox`): 
 
-    [![Paket tanımlayıcısı düzenleme](sandboxing-images/sign13.png "paket tanımlayıcısı düzenleme")](sandboxing-images/sign13-large.png)
+    [![Paket tanımlayıcısı düzenleme](sandboxing-images/sign13.png "paket tanımlayıcısı düzenleme")](sandboxing-images/sign13-large.png#lightbox)
 3. Ardından, çift **Entitlements.plist** dosya ve olun bizim **iCloud anahtar değeri deposu** ve **iCloud kapsayıcıları** tüm yukarıda oluşturduğumuz bizim uygulama kimliği ile aynı (örnek: `com.appracatappra.MacSandbox`): 
 
-    [![Entitlements.plist dosyasını düzenleyerek](sandboxing-images/sign17.png "Entitlements.plist dosya düzenleme")](sandboxing-images/sign17-large.png)
+    [![Entitlements.plist dosyasını düzenleyerek](sandboxing-images/sign17.png "Entitlements.plist dosya düzenleme")](sandboxing-images/sign17-large.png#lightbox)
 3. Değişikliklerinizi kaydedin.
 4. İçinde **çözüm paneli**, onun seçeneklerini düzenlemek için proje dosyasına çift tıklayarak açın:  
 
@@ -180,7 +180,7 @@ Ardından, yeni uygulama kimliği ve sağlama profili Xamarin.Mac Projemizin se�
 
 Bu noktada uygulamayı çalıştırın ve her şeyi imzalı ve doğru bir şekilde sağlanmış olduğundan emin olun çalışmanız gerekir. Uygulama hala eskisi çalıştırıyorsa, her şeyi iyi olur. Bir arıza olması durumunda, aşağıdakine benzer bir iletişim kutusu alabilirsiniz:
 
-[![Sorunu iletişim sağlama örnek](sandboxing-images/sign16.png "sağlama sorunu iletişim kutusu örneği")](sandboxing-images/sign16-large.png)
+[![Sorunu iletişim sağlama örnek](sandboxing-images/sign16.png "sağlama sorunu iletişim kutusu örneği")](sandboxing-images/sign16-large.png#lightbox)
 
 Sağlama ve sorunları imzalama en yaygın nedenler şunlardır:
 
@@ -197,12 +197,12 @@ Uygulama korumalı alan projeleri seçeneklerinizi bir onay kutusunu seçerek et
 1. İçinde **çözüm paneli**, çift **Entitlements.plist** dosyayı düzenlemek için açın.
 2. Her ikisini de denetlemek **etkinleştirmek yetkilendirmeler** ve **etkinleştirmek uygulama Korumalı alan**: 
 
-    [![Yetkilendirmeler düzenleme ve korumalı alan etkinleştirme](sandboxing-images/sign17.png "yetkilendirmeler düzenleme ve etkinleştirme korumalı alan")](sandboxing-images/sign17-large.png)
+    [![Yetkilendirmeler düzenleme ve korumalı alan etkinleştirme](sandboxing-images/sign17.png "yetkilendirmeler düzenleme ve etkinleştirme korumalı alan")](sandboxing-images/sign17-large.png#lightbox)
 3. Değişikliklerinizi kaydedin.
 
 Bu noktada, uygulama Korumalı alan etkin ancak Web görünümü için gerekli ağ erişimi sağlamadınız. Uygulamayı şimdi çalıştırırsanız, boş bir pencere almanız gerekir:
 
-[![Engellenme web erişimi gösteren](sandboxing-images/sample08.png "engellenme web erişimi gösterme")](sandboxing-images/sample08-large.png)
+[![Engellenme web erişimi gösteren](sandboxing-images/sample08.png "engellenme web erişimi gösterme")](sandboxing-images/sample08-large.png#lightbox)
 
 ### <a name="verifying-that-the-app-is-sandboxed"></a>Uygulamanın korumalı olup olmadığını doğrulama
 
@@ -210,25 +210,25 @@ Davranış engelleme kaynak yanı sıra, bir Xamarin.Mac uygulaması başarıyla
 
 1. Finder, içeriğini denetlemek `~/Library/Containers/` klasör - uygulama korumalı, ise olacaktır, uygulamanızın paket tanımlayıcısı gibi adlı bir klasör (örnek: `com.appracatappra.MacSandbox`): 
 
-    [![Uygulamanın paketini açma](sandboxing-images/sample09.png "uygulamanın paketini açma")](sandboxing-images/sample09-large.png)
+    [![Uygulamanın paketini açma](sandboxing-images/sample09.png "uygulamanın paketini açma")](sandboxing-images/sample09-large.png#lightbox)
 2. Sistem uygulama etkinlik İzleyicisi'nde korumalı olarak görür:
     - Etkinlik İzleyicisi'ni başlatın (altında `/Applications/Utilities`). 
     - Seçin **Görünüm** > **sütunları** ve emin **korumalı alan** menü öğesi denetlenir.
     - Korumalı alan sütun okuduğu olun `Yes` uygulamanız için: 
 
-    [![Etkinlik İzleyicisi'nde uygulama denetimi](sandboxing-images/sample10.png "etkinlik İzleyicisi'nde uygulama denetimi")](sandboxing-images/sample10-large.png)
+    [![Etkinlik İzleyicisi'nde uygulama denetimi](sandboxing-images/sample10.png "etkinlik İzleyicisi'nde uygulama denetimi")](sandboxing-images/sample10-large.png#lightbox)
 3. Uygulama ikili korumalı olup olmadığını denetleyin:
     - Terminal uygulaması başlatın.
     - Uygulamaları gidin `bin` dizin.
     - Bu komutu yürütün: `codesign -dvvv --entitlements :- executable_path` (burada `executable_path` uygulamanızı yolu): 
 
-    [![Komut satırında uygulama denetimi](sandboxing-images/sample11.png "komut satırında uygulama denetimi")](sandboxing-images/sample11-large.png)
+    [![Komut satırında uygulama denetimi](sandboxing-images/sample11.png "komut satırında uygulama denetimi")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>Korumalı bir uygulama hata ayıklama
 
 Hata ayıklayıcı Xamarin.Mac uygulamalar korumalı alan, etkinleştirdiğinizde, varsayılan olarak, uygulamaya bağlanamıyor anlamına gelir, TCP üzerinden bağlanır etkin uygun izinler olmadan uygulamayı çalıştırmayı denerseniz, bir hata alıyorsunuz şekilde *"bağlanılamıyor hata ayıklayıcı"*. 
 
-[![Gerekli seçeneklerini ayarlama](sandboxing-images/debug01.png "gerekli seçeneklerini ayarlama")](sandboxing-images/debug01-large.png)
+[![Gerekli seçeneklerini ayarlama](sandboxing-images/debug01.png "gerekli seçeneklerini ayarlama")](sandboxing-images/debug01-large.png#lightbox)
 
 **İzin giden ağ bağlantıları (istemci)** izin için hata ayıklayıcı gerekli bir durumda, bu bir etkinleştirilmesi normal olarak hata ayıklama izin verir. Bu olmadan hata ayıklaması yapılamıyor olduğundan, biz güncelleştirdiniz `CompileEntitlements` için hedef `msbuild` hata ayıklama için korumalı herhangi bir uygulama yalnızca derlemeler için bu izni yetkilendirmeler otomatik olarak eklemek için. Yayın derlemeleri değiştirilmemiş yetkilendirmeler dosyasında belirtilen yetkilendirmeler kullanmanız gerekir.
 
@@ -248,7 +248,7 @@ Aşağıdakileri yapın:
 2. Açık **konsol** uygulama (gelen `/Applications/Utilties/`).
 3. Seçin **tüm iletileri** na gelin ve girin `sandbox` ara: 
 
-    [![Konsolunda bir korumalı alan sorunu örneği](sandboxing-images/resolve01.png "bir korumalı alan sorunu konsolunda örneği")](sandboxing-images/resolve01-large.png)
+    [![Konsolunda bir korumalı alan sorunu örneği](sandboxing-images/resolve01.png "bir korumalı alan sorunu konsolunda örneği")](sandboxing-images/resolve01-large.png#lightbox)
 
 Yukarıdaki bizim örnek uygulama için Kernal engelliyor görebilirsiniz `network-outbound` uygulama biz hak istediniz değil bu yana Sandbox nedeniyle trafiği.
 
@@ -261,7 +261,7 @@ Aşağıdakileri yapın:
 1. İçinde **çözüm paneli**, çift **Entitlements.plist** dosyayı düzenlemek için açın.
 2. Altında **yetkilendirmeler** bölümünde, onay **izin giden ağ bağlantıları (istemci)** onay kutusu: 
 
-    [![Yetkilendirmeler düzenleme](sandboxing-images/sign17.png "yetkilendirmeleri düzenleme")](sandboxing-images/sign17-large.png)
+    [![Yetkilendirmeler düzenleme](sandboxing-images/sign17.png "yetkilendirmeleri düzenleme")](sandboxing-images/sign17-large.png#lightbox)
 3. Uygulamaya değişiklikleri kaydedin.
 
 Biz bizim örnek uygulama için yukarıdaki işlemi, ardından oluşturmak ve çalıştırmak, web içeriği artık beklendiği gibi görüntülenir.
@@ -284,7 +284,7 @@ Uygulama korumalı alan etkinleştirerek, tüm ayrıcalıkları, hangi, en az bi
 
 Düzenleyerek, uygulamanızın uygulama Korumalı alan kaynakları değiştirmek kendi **Entitlements.plist** dosyası ve denetleme veya düzenleyiciler açılır liste kutularından gereken haklar seçme:
 
-[![Yetkilendirmeler düzenleme](sandboxing-images/sign17.png "yetkilendirmeleri düzenleme")](sandboxing-images/sign17-large.png)
+[![Yetkilendirmeler düzenleme](sandboxing-images/sign17.png "yetkilendirmeleri düzenleme")](sandboxing-images/sign17-large.png#lightbox)
 
 ### <a name="container-directories-and-file-system-access"></a>Kapsayıcı dizin ve dosya sistemi erişimi
 
@@ -567,6 +567,6 @@ Bu makalede korumalı alan ayrıntılı bir bakış Xamarin.Mac uygulama sürdü
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Uygulama mağazası yayımlama](~/mac/deploy-test/publishing-to-the-app-store/index.md)
+- [App Store’da Yayımlama](~/mac/deploy-test/publishing-to-the-app-store/index.md)
 - [Uygulama Sandbox hakkında](https://developer.apple.com/library/content/documentation/Security/Conceptual/AppSandboxDesignGuide/AboutAppSandbox/AboutAppSandbox.html)
 - [Genel Uygulama korumalı alan sorunları](https://developer.apple.com/library/content/qa/qa1773/_index.html)

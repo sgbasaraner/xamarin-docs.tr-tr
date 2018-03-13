@@ -2,16 +2,16 @@
 title: "iOS – fastlane sigh"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d80a0ab5583231f95241fb8d4f6e339e44a84ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2c6ac298ca2040bb2d3619be080fb1387fbfd3a0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fastlane-for-ios--sigh"></a>iOS – fastlane sigh
 
@@ -61,7 +61,7 @@ Bir uygulama kimliği aşağıdaki komutla oluşturulabilir:
 
 Burada `com.company.appname` aşağıda gösterildiği gibi Xamarin.iOS uygulamanızı Info.plist dosyasında bulunan, uygulamanızın paket kimliği:
 
-[ ![](sigh-images/fastlane-image5.png "Xamarin.iOS uygulamasının Info.plist dosyası")](sigh-images/fastlane-image5.png)
+[![](sigh-images/fastlane-image5.png "Xamarin.iOS uygulamasının Info.plist dosyası")](sigh-images/fastlane-image5.png#lightbox)
 
 Benzersiz uygulama kimliği, bir geriye doğru DNS stili dize olması gerekir. Oluşturulduktan sonra bu kılavuzda sigh kullanırken kullanmak ihtiyaç duyacağınız, Not tutun.
 
@@ -108,7 +108,7 @@ Fastlane tarafından istendiğinde Apple kimliği kullanıcı adınızı girin. 
 
 Apple Kimliğinizi birden çok ekibin bağlıysa, burada görüntülenir. Kullanmak istediğiniz takım karşılık gelen sayıyı seçin:
 
-[ ![](sigh-images/fastlane-image2.png "Kullanmak istediğiniz ekibi seçin")](sigh-images/fastlane-image2.png)
+[![](sigh-images/fastlane-image2.png "Kullanmak istediğiniz ekibi seçin")](sigh-images/fastlane-image2.png#lightbox)
 
 Takım Kimliği de aşağıdaki şekilde CLI geçirilebilir:
 
@@ -124,7 +124,7 @@ fastlane oluşturmak, indirin ve sağlama profili sizin için yükleyin.
 
 Geliştirici Merkezi göz atarsanız, yeni oluşturulan sağlama profili, aşağıda gösterildiği gibi görüntüleyebilirsiniz:
 
-[ ![](sigh-images/fastlane-image10.png "Yeni oluşturulan sağlama profili görüntüleyin")](sigh-images/fastlane-image10.png)
+[![](sigh-images/fastlane-image10.png "Yeni oluşturulan sağlama profili görüntüleyin")](sigh-images/fastlane-image10.png#lightbox)
 
 sigh sağlama profilleri varsayılan olarak geçerli klasörde depolar. Çıktı dizini değiştirmek için Düzenle ' `output_path`, veya aşağıdakileri yapın:
 
@@ -140,19 +140,19 @@ Ek destek sigh kullanırken vermek için aşağıdaki seçenekler kullanılabili
 
 - Karşıdan yüklemek için tüm sağlama profilleri kullanın:
 
-    ````bash
+    ```bash
     fastlane sigh download_all
     ```
 
-- To use a specific signing identity for your provisioning profile use:
+- Sağlama profili kullanımınız için belirli bir imzalama kimlik kullanmak için:
 
     ```bash
     fastlane sigh -c "Amy cert"
     ```
     
-    Where `Amy cert` is the Code Signing Identity name.
+    Burada `Amy cert` kod imzalama kimliği adıdır.
 
 
-## Related Links
+## <a name="related-links"></a>İlgili bağlantılar
 
 - [fastlane - sigh](https://github.com/fastlane/fastlane/tree/master/sigh#readme)

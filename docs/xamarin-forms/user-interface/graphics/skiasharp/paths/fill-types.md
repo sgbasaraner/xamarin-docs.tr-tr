@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6e8a37816e28120392f550376807e91fb3b5d458
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cee93f082386e78a643b8c07dd48d0196e8ecd6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-path-fill-types"></a>Yolun dolgu türleri
 
@@ -164,7 +164,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Normalde, yolun Dolgu türü dolgular ve vuruşları değil, ancak iki etkiler, `Inverse` modları dolgular ve vuruşları etkiler. İki dolgular için `Inverse` yıldız dışında alan doldurulur böylece türleri alanları oppositely doldurun. Vuruşları, iki için `Inverse` türleri vuruşun dışında her şeyi rengi. Bu ters dolgu türlerini kullanarak, iOS ekran görüntüsü gösterilmektedir gibi bazı tek efektler üretmek:
 
-[![](fill-types-images/fivepointedstar-small.png "Üçlü sayfasının ekran görüntüsü Five-Pointed yıldız")](fill-types-images/fivepointedstar-large.png "Üçlü sayfasının ekran görüntüsü Five-Pointed yıldız")
+[![](fill-types-images/fivepointedstar-small.png "Üçlü sayfasının ekran görüntüsü Five-Pointed yıldız")](fill-types-images/fivepointedstar-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Five-Pointed yıldız")
 
 Android ve Windows mobil ekran görüntüleri tipik çift-tek ve sarma etkileri gösterir ancak vuruş ve dolgu sırasını sonuçları de etkiler.
 
@@ -217,7 +217,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Kod en az ile oluşturulan bir ilginç görüntüsü verilmiştir:
 
-[![](fill-types-images/overlappingcircles-small.png "Üçlü sayfasının ekran görüntüsü çakışan daireler")](fill-types-images/overlappingcircles-large.png "Üçlü sayfasının ekran görüntüsü çakışan daireler")
+[![](fill-types-images/overlappingcircles-small.png "Üçlü sayfasının ekran görüntüsü çakışan daireler")](fill-types-images/overlappingcircles-large.png#lightbox "Üçlü sayfasının ekran görüntüsü çakışan daireler")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

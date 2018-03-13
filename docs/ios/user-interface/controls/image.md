@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 71f3774c12add26e818b0859cf90c17ab6358538
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 716189fbf1518e9100a78cc5ae64e9e63a24c949
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="displaying-images"></a>Görüntüleri görüntüleme
 
@@ -25,7 +25,7 @@ Mac için Visual Studio görüntü dosyaları de içerebilir kaynakları adlı �
 
 Bu ekran gösterir **yapı eylemi** bir dosya açıldığında görüntülenen seçenekleri sağ:
 
- [ ![](image-images/image30a.png "Eylem menüsü oluşturma")](image-images/image30a.png)
+ [![](image-images/image30a.png "Eylem menüsü oluşturma")](image-images/image30a.png#lightbox)
 
 Mac için Visual Studio genellikle seçin doğru **yapı eylemi** otomatik olarak, ancak özellikle dosyalarını projenizde taşırsanız, bu ayarlar dikkat etmeniz gerekir.
 
@@ -33,15 +33,15 @@ Mac için Visual Studio genellikle seçin doğru **yapı eylemi** otomatik olara
 
 Bir görüntü dosyası projenize eklemek için önce projeyi sağ tıklayın ve seçin **dosyaları Ekle...**
 
- [ ![](image-images/image31a.png "Dosyaları Ekle... menüsü")](image-images/image31a.png)
+ [![](image-images/image31a.png "Dosyaları Ekle... menüsü")](image-images/image31a.png#lightbox)
 
 Görüntü (veya görüntü) seçin standart dosya iletişim kutusunda eklemek istediğiniz. Varsayılan yapı eylemi görüntüler için **BundleResource** – belirli bir nedeniniz yoksa bu değeri geçersiz kılmaz.
 
- [ ![](image-images/image32a.png "Dosyaları iletişim ekleyin")](image-images/image32a.png)
+ [![](image-images/image32a.png "Dosyaları iletişim ekleyin")](image-images/image32a.png#lightbox)
 
 Görüntü projenize ve yüklenen ve kodda görüntülenecek kullanılabilir eklenir. Bu ekran görüntüsü, bir iOS uygulaması projesine eklenen bir resim gösterir:
 
- [ ![](image-images/image33a.png "Proje görüntüde")](image-images/image33a.png)
+ [![](image-images/image33a.png "Proje görüntüde")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>Kaynak dizini nedir?
 
@@ -61,11 +61,11 @@ Bu nedenle kaynaklar dizin adlı ve tüm dosyalar kümesine yapı eylemi sahip o
 
 Tasarımcı kullanarak bir görüntü görüntülemek için bir resim görünümü bir kapsayıcı olarak kullanılmalıdır ve tek bir görüntü veya animasyonun görüntülerinin görüntüleyebilirsiniz. **Resim görünümü** araç simgesinden aşağıda gösterilmektedir:
 
- [ ![](image-images/image35a.png "Araç çubuğundaki ImageView")](image-images/image35.png)
+ [![](image-images/image35a.png "Araç çubuğundaki ImageView")](image-images/image35.png#lightbox)
 
 Sürükleme **görüntü Görünüm** gelen **Toobox** görünüm denetleyicisine. Altında ** görüntü Görünüm > Görüntü ** aşağı açılan listeden projenizdeki tüm kullanılabilir görüntü dosyaların bir listesini sağlar. Bu görüntü görünümünüze eklemek için seçin.
 
- [ ![](image-images/image36a.png "Araç çubuğundaki ImageView")](image-images/image36.png)
+ [![](image-images/image36a.png "Araç çubuğundaki ImageView")](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>Görüntü programlı olarak görüntüleme
 

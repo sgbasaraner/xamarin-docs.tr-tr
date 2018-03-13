@@ -3,14 +3,15 @@ title: "Bölüm 2 özeti. Bir uygulama anatomisi"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 893030170175403c7f7d6885e924e425b4f73c05
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1569911eb47f28ea6aee2313d01e07c801746df
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Bölüm 2 özeti. Bir uygulama anatomisi
 
@@ -186,7 +187,7 @@ Genellikle bu özellikleri doğrudan kullanılmaz. Bunun yerine, bu iki özellik
 
 Sonucu ile işte `HorizontalOptions` ve `VerticalOptions` özelliklerini `Label` her ikisi de kümesine `LayoutOptions.Center`:
 
-[![Tebrikler programının Üçlü ekran](images/ch02fg05-small.png "yatay ve dikey olarak ortalanmış etiket")](images/ch02fg05-large.png "yatay ve dikey olarak ortalanmış etiket")
+[![Tebrikler programının Üçlü ekran](images/ch02fg05-small.png "yatay ve dikey olarak ortalanmış etiket")](images/ch02fg05-large.png#lightbox "yatay ve dikey olarak ortalanmış etiket")
 
 ## <a name="solution-5-center-the-text-within-the-label"></a>Çözüm 5. Metin etiketi içinde merkezi
 

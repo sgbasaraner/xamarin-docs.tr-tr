@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: 371ffae8e14a630cb548f4a9ee2bf0bd06f7284c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: acecc53e8429ac3ca963053fe7a1786937d37ae3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="responding-to-authentication-callbacks"></a>Kimlik doğrulama geri çağırmaları yanıt
 
@@ -27,7 +27,7 @@ Varsa bir `CryptoObject` çağrılırken kullanılan `Authenticate`, çağırmak
 
 
 > [!NOTE]
-> **Not:** geri çağırma sınıfı göreli olarak hafif tutmak ve uygulama belirli mantığını boşaltmak için önerilir. Geri aramalar bir "trafik Kopyala" Android uygulaması ve sonuçları arasında parmak izi tarayıcıdan olarak davranır.
+> Geri çağırma sınıfı göreli olarak hafif tutmak ve uygulama belirli mantığını boşaltmak için önerilir. Geri aramalar bir "trafik Kopyala" Android uygulaması ve sonuçları arasında parmak izi tarayıcıdan olarak davranır.
 
 ## <a name="a-sample-authentication-callback-handler"></a>Örnek kimlik doğrulama geri çağırma işleyicisi
 

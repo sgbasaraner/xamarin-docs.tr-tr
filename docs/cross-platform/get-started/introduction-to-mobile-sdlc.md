@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 360f2585f05446e2d7f8ad5f85b13b16ed84a606
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a344ce211a025176c2b40540ce8337802dd347b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Mobil yazılım geliştirme yaşam döngüsü giriş
 
@@ -25,10 +25,7 @@ Bu belgede dahil olmak üzere, mobil uygulamaları oluşturma kapsamlı bir giri
 1.   **İşlem** – yazılım geliştirme sürecinin yazılım geliştirme yaşam döngüsü (SDLC) adı verilir. Mobil uygulama geliştirme göre SDLC tüm aşamaları sizi inceleyeceğiz dahil olmak üzere: esin, tasarım, geliştirme, sabitlemeyi, dağıtım ve Bakım.
 1.   **Dikkat edilecek noktalar** – özellikle geleneksel web veya Masaüstü uygulamaları aksine mobil uygulamalar oluştururken dikkat edilecek noktalar sayısı olan. Bu noktalar inceleyeceğiz ve mobil geliştirme nasıl etkilediklerini.
 
-
 Bu belge, aynı şekilde yeni ve deneyimli uygulama geliştiricileri için mobil uygulama geliştirme hakkında temel soruları yanıtlamak için tasarlanmıştır. Tüm yazılım geliştirme yaşam döngüsü (SDLC) sırasında içine çalıştıracaksınız kavramları çoğunu tanıtımı için oldukça kapsamlı bir yaklaşım sürer. Ancak, bu belgede olmayabilir herkes için yalnızca uygulamalar oluşturmaya başlamak için sabırsızlanıyorsanız varsa, şimdi ya da atlama öneririz [mobil geliştirme giriş](~/cross-platform/get-started/introduction-to-mobile-development.md), [Hello, Android](~/android/get-started/hello-android/index.md) veya [Hello, iPhone](~/ios/get-started/hello-ios/index.md) öğreticiler ve ardından bu belgede daha sonra gelmeye.
-
-
 
 ## <a name="mobile-development-sdlc"></a>Mobil Geliştirme SDLC
 
@@ -40,17 +37,13 @@ Mobil geliştirme yaşam döngüsü büyük ölçüde Hayır SDLC web veya Masa�
 1.   **Sabitlemeyi** – geliştirme bunların, QA uygulamayı test etme için genellikle başlar ve düzeltilen kadar yeterli olduğunda. Bir uygulama bir sınırlı beta aşamasında gireceğini bazen daha geniş bir kullanıcı kitleye kullanın ve geri bildirim sağlamak ve değişiklikler hakkında bilgilendirmek için bir fırsat verilir.
 1.  **Dağıtım**
 
-
 Genellikle bu bilgilerin çoğunu çakışan, örneğin, kullanıcı arabirimini sonlandırılır ve kullanıcı Arabirimi tasarımı bile bildirebilir geçmeden olması geliştirme için yaygın bir sorundur. Ayrıca, bir uygulama yeni bir sürüme eklenmekte olan yeni özellikleri aynı sabitlemeyi aşamada içine giriyor olabilir.
 
 Ayrıca, bu aşamalar SDLC yöntemlerini Çevik, Spiral, Waterfall vb. gibi herhangi bir sayıda kullanılabilir.
 
 Bunların her biri olacak aşamaları açıklanmaktadır tarafından aşağıdaki bölümlerde daha ayrıntılı.
 
-
-
-
-## <a name="inception"></a>Başlangıcı
+### <a name="inception"></a>Başlangıcı
 
 Kişiler olan mobil cihazları etkileşimi düzeyini ve yaygınlığıyla, neredeyse herkesin bir mobil uygulama için bir fikir sahip olduğu anlamına gelir. Mobil aygıtlar bilgi işlem, web ve hatta şirket altyapı ile etkileşim kurmak için yepyeni bir yol açın.
 
@@ -59,17 +52,14 @@ Başarılı bir uygulama oluşturmak için temel bazı sorular sormak önemlidir
 
 -   **Rekabet avantajı** – ölçeklendiriyor benzer uygulamalar zaten vardır? Nasıl varsa, bu uygulama diğer bilgisayarlardan ayırt etmez?
 
-
 Bir kuruluşta dağıtılan uygulamalar için:
 
 -   **Altyapı tümleştirme** – hangi mevcut altyapıya tümleştirileceğini veya genişletmek?
-
 
 Ayrıca, uygulamaları mobil form faktörü bağlamında değerlendirilmelidir:
 
 -   **Değer** – hangi değeri kullanıcılar bu uygulamayı getirir? Bunu nasıl kullanacakları?
 -   **Form/Mobility** – nasıl bu uygulamayı çalışır bir mobil form faktörünü? Nasıl ı ekleyebilirsiniz konumu tanıma, kamera, vb. gibi mobil teknolojileri kullanarak değeri.?
-
 
 Bir uygulama işlevselliğini tasarlama konusunda yardımcı olmak için onu aktörler tanımlamak yararlı olabilir ve [kullanım örnekleri](http://en.wikipedia.org/wiki/Use_case). Aktör rolleri uygulama içindeki ve genellikle kullanıcılar. Kullanım genellikle bir eylem veya hedefleri örnekleridir.
 
@@ -77,31 +67,21 @@ Bir uygulama işlevselliğini tasarlama konusunda yardımcı olmak için onu akt
 
 Uygun sayıda kullanım örnekleri ve aktörler yakalandıktan sonra bir uygulama tasarlamaya başlamak çok daha kolaydır. Geliştirme sonra uygulamasının nasıl oluşturulacağını, yerine ne uygulama olduğu veya yapmalısınız odaklanabilirsiniz.
 
-
-
-
-## <a name="designing-mobile-applications"></a>Mobil uygulamalar tasarlama
+### <a name="designing-mobile-applications"></a>Mobil uygulamalar tasarlama
 
 Uygulamanın işlevselliğini ve özelliklerini belirlenmesinden sonra sonraki adım, kullanıcı deneyimi veya UX çözmeye çalışırken başlangıç olacaktır.
 
-
-
-
-### <a name="ux-design"></a>UX tasarım
+#### <a name="ux-design"></a>UX tasarım
 
 UX wireframes veya gibi araçları kullanılarak alıştırmalar aracılığıyla genellikle Bitti [Balsamiq](http://www.balsamiq.com/), [Mockingbird](https://gomockingbird.com/), [Visio](http://office.microsoft.com/en-us/visio/), veya yalnızca düz olanı ise Kalem ve kağıt. UX alıştırmalar gerçek UI tasarımı hakkında endişelenmeye gerek kalmadan tasarlanmalıdır UX izin ver:
 
-
- [ ![](introduction-to-mobile-sdlc-images/balsamiq.png "UX genellikle wireframes veya Balsamiq gibi araçları kullanarak alıştırmalar aracılığıyla gerçekleştirilir")](introduction-to-mobile-sdlc-images/balsamiq.png)
-
-
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX genellikle wireframes veya Balsamiq gibi araçları kullanarak alıştırmalar aracılığıyla gerçekleştirilir")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 UX alıştırmalar oluştururken, uygulama hedeflediğini çeşitli platformlar için arabirimi yönergeleri dikkate almak önemlidir. Uygulama "evde her platformda geliyor olmalıdır". Her platform için offical tasarım yönergeleri şunlardır:
 
 1.   **Apple** -  [İnsan Arabirimi yönergelerine](http://developer.apple.com/library/ios/#DOCUMENTATION/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 1.   **Android** – [tasarım yönergeleri](http://developer.android.com/design/index.html)
 1.   **Windows Phone** – [Windows Phone için tasarım kitaplığı](http://msdn.microsoft.com/en-US/library/windowsphone/design/fa00461b-abe1-41d1-be87-0b0fe3d3389d(v=vs.105).aspx)
-
 
 Örneğin, her uygulamanın uygulama bölümleri arasında geçiş yapmak için bir benzetimini vardır. iOS sekme çubuğunu ekranın alt kısmında kullanır, Android ekranın üstünde bir sekme çubuğunu kullanır ve Windows Phone Panorama görünümü kullanır:
 
@@ -113,20 +93,17 @@ Ayrıca, donanım UX kararları belirler. Örneğin, iOS cihazları hiçbir fizi
 
 Ayrıca, form faktörünün UX kararları etkiler. Tablet çok daha fazla Gayrimenkul vardır ve bu nedenle daha fazla bilgi görüntüleyebilirsiniz. Bir telefon birden çok ekranlarda ihtiyaç duyduğu, tek bir tablet için genellikle sıkıştırılır:
 
- [ ![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Genellikle bir telefon birden çok ekranlarda ihtiyaç duyduğu tek bir tablet için sıkıştırılır")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png)
+ [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Genellikle bir telefon birden çok ekranlarda ihtiyaç duyduğu tek bir tablet için sıkıştırılır")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
 
 Ve form faktörleri dışarıdan çözümlenebilen nedeniyle genellikle de hedeflemek isteyebilirsiniz orta ölçekli form faktörleri (herhangi bir yerde arasında bir telefon ve tablet).
 
-
-
-
-### <a name="user-interface-ui-design"></a>Kullanıcı Arabirimi (UI) tasarımı
+#### <a name="user-interface-ui-design"></a>Kullanıcı Arabirimi (UI) tasarımı
 
 UX belirlendikten sonra sonraki adıma UI tasarım oluşturmaktır. UX genellikle yalnızca siyah beyaz alıştırmalar olmakla birlikte, kullanıcı Arabirimi tasarımı burada renkler, grafik, vb., sunulan ve kesin olarak aşamasıdır. Genellikle, profesyonel bir tasarım en popüler uygulamalara sahip ve iyi UI tasarım zamanı harcama önemlidir.
 
 UX ile her platform olduğunu anlamak önemli olduğu gibi olan kendi tasarım dil, iyi tasarlanmış bir uygulama hala şekilde her platformda farklı görünür:
 
- [ ![](introduction-to-mobile-sdlc-images/multiplatform-1.png "İyi tasarlanmış bir uygulama hala her platformda farklı görünebilir")](introduction-to-mobile-sdlc-images/multiplatform-1.png)
+ [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "İyi tasarlanmış bir uygulama hala her platformda farklı görünebilir")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 İyi UI tasarım esin, bazı aşağıdaki siteleri denetleyin:
 
@@ -135,22 +112,15 @@ UX ile her platform olduğunu anlamak önemli olduğu gibi olan kendi tasarım d
 1.   [lovelyui.com](http://lovelyui.com) – (iOS, Android ve Windows Phone)
 1.   [mobiledesignpatterngallery.com](http://mobiledesignpatterngallery.com) – (iOS, Android ve Windows Phone)
 
-
 Ayrıca, bu sitelerdeki grafik tasarımcıları Portföylerini gibi görüntülemek mümkündür [Behance.com](http://behance.com) ve [Dribbble.com](http://dribbble.com). Dünya çapında gelen tasarımcıları, çoğu zaman iyi grafik tasarım mutlaka çok maliyet yok şekilde döviz kuru olumlu, olduğu yerde bulunabilir.
 
-
-
-
-## <a name="development"></a>Geliştirme
+### <a name="development"></a>Geliştirme
 
 Geliştirme aşaması genellikle çok erken başlatır. Bir fikir kavramsal/esin aşamasında bazı maturation olduğunda, aslında, genellikle bir çalışma prototip işlevselliği, varsayımlara ve iş kapsamını bir anlayış vermek için yardımcı doğrulayan geliştirilir.
 
 Öğreticiler kalan biz büyük ölçüde geliştirme aşamaya odak.
 
-
-
-
-## <a name="stabilization"></a>Sabitlemeyi
+### <a name="stabilization"></a>Sabitlemeyi
 
 Sabitlemeyi uygulamanızdaki hataların çıkışı çalışma işlemidir. Değil yalnızca bir işlev açısından örn: "Bu düğmeye tıkladığınızda, ayrıca kullanılabilirliğini ve performansını kilitleniyor". Yüksek maliyetli hale gelmeden indirmelere düzeltmeleri gerçekleştirilmesi sabitlemeyi geliştirme süreci içinde çok erken başlatmak en iyisidir. Uygulamalar genellikle gitmesi *prototip*, *alfa*, *Beta*, ve *Sürüm Adayı* aşamaları. Farklı kişilerin bunlar farklı tanımlar, ancak bunlar genellikle aşağıdaki düzeni izleyin:
 
@@ -158,7 +128,6 @@ Sabitlemeyi uygulamanızdaki hataların çıkışı çalışma işlemidir. Deği
 1.   **Alpha** – çekirdek işlevselliğini genellikle kod tamamlama (yerleşik ancak tam olarak test). Önemli hatalar hala mevcut, harici işlevselliği hala bulunmuyor olabilir.
 1.   **Beta** – çoğu işlevselliği tamamlanmıştır ve en az hafif test ve hata düzeltme oluşturdu. Önemli bilinen sorunları hala mevcut olabilir.
 1.   **Sürüm Adayı** – tüm tam ve test edilmiş bir işlevdir. Yeni hatalar, uygulama, joker sürüme bir adaydır.
-
 
 Bir uygulamayı test etmek başlamak için hiçbir zaman çok erken değil. Örneğin, bir ana sorunu prototip aşamasında bulunursa, uygulamanın UX hala uyum için değiştirilebilir. Bir performans sorunu alfa aşamasında bulunursa, çok fazla kod üstünde yanlış varsayımlar yerleşik önce mimarisi değiştirmek için erken.
 
@@ -173,9 +142,11 @@ En popüler olanlar bazıları şunlardır:
 3.   **Tekne (vessel.io)** – bir iOS ve olanak sağlayan Android izleme kullanım, izleme müşteriler ve bile A yapmak / gelen içinde uygulamanızı test etme B hizmet.
 4.  **hockeyapp.com** -iOS, Android ve Windows Phone için test etme hizmeti sağlar.
 
-## <a name="distribution"></a>Dağıtım
+### <a name="distribution"></a>Dağıtım
 
 Uygulama sabitlendi sonra joker kullanıma alma zamanı geldi. Platforma bağlı olarak farklı dağıtım seçenekleri mevcuttur.
+
+#### <a name="ios"></a>iOS
 
 Xamarin.iOS ve Objective-C uygulamaları tam olarak aynı şekilde dağıtılır:
 
@@ -183,11 +154,7 @@ Xamarin.iOS ve Objective-C uygulamaları tam olarak aynı şekilde dağıtılır
 1.   **Şirket içi dağıtım** – genel olarak App Store kullanılabilir olmayan şirket uygulamalarının iç dağıtım için şirket içi dağıtım yöneliktir.
 1.   **Geçici dağıtım** – geçici dağıtım birincil olarak geliştirme ve test için tasarlanmıştır ve düzgün şekilde sağlanan aygıtlar için sınırlı sayıda dağıtmanıza olanak tanır. Mac için Xcode ya da Visual Studio aracılığıyla bir cihaza dağıttığınızda, geçici dağıtımı olarak bilinir.
 
-
-
-
-
-### <a name="android"></a>Android
+#### <a name="android"></a>Android
 
 Tüm Android uygulamaları dağıtılmış önce imzalanması gerekir. Geliştiriciler, özel bir anahtar tarafından korunan kendi sertifikasını kullanarak kendi uygulamalarında oturum açın. Bu sertifika zinciri Geliştirici oluşturulan ve yayımlanan uygulamalar için uygulama geliştiricisi bağlar Orijinallik sağlayabilir.
 Bu, Android için geliştirme sertifikası tanınan bir sertifika yetkilisi tarafından imzalanması olsa da, çoğu geliştirici değil Bu hizmetleri kullanan aktarmayı ve sertifikalarını kendinden imzalı olduğunu not gerekir. Sertifikalar için ana amacı farklı geliştiriciler ve uygulamalar arasında ayırt sağlamaktır.
@@ -203,46 +170,28 @@ Bu, geliştiricilerin uygulamaları için büyük olasılıkla daha büyük hen�
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-
-
-
-
-## <a name="windows"></a>Windows 
+#### <a name="windows"></a>Windows 
 
 Windows uygulamaları Microsoft Store aracılığıyla kullanıcılara dağıtılır. Geliştiriciler uygulamalarını deposunda sonra göründükleri onaya gönderir.
 
-
-
-
-# <a name="mobile-development-considerations"></a>Mobil geliştirme hakkında önemli noktalar
+## <a name="mobile-development-considerations"></a>Mobil geliştirme hakkında önemli noktalar
 
 Mobil uygulamaları geliştirme temelde farklı olmasa da, geleneksel web/masaüstü geliştirme işlemi veya mimarisi bakımından, dikkat edilmesi gereken bazı noktalar vardır.
 
+### <a name="common-considerations"></a>Ortak dikkat edilecek noktalar
 
-
-
-## <a name="common-considerations"></a>Ortak dikkat edilecek noktalar
-
-
-
-
-### <a name="multitasking"></a>Çoklu
+#### <a name="multitasking"></a>Çoklu
 
 Bir mobil cihazda (seferde çalıştıran birden çok uygulamalara sahip) çoklu için iki önemli zorluklar mevcuttur. İlk olarak, sınırlı ekran Gayrimenkul verilen, aynı anda birden çok uygulamaları görüntülemek zor olabilir. Bu nedenle, mobil cihazlarda yalnızca bir uygulama ön planda aynı anda olabilir. İkinci olarak, çoklu uygulamaları açık ve gerçekleştirme görevleri hızla pil gücü kullanabilirsiniz sahip.
 
 Çoklu, her platform, bir süre sonra ele alacağız farklı şekilde işler.
 
-
-
-### <a name="form-factor"></a>Form faktörü
+#### <a name="form-factor"></a>Form faktörü
 
 Mobil cihazlar genellikle iki kategoriye, telefonlar ve tabletler, birkaç çapraz aygıtlarla arasında ayrılır. Bu form faktörleri için geliştirme genellikle çok benzer, ancak bunlar için uygulamalar tasarlama çok farklı olabilir.
 Telefonları sahip çok sınırlı ekran alanı ve tabletler, büyük sırada olan bile çoğu dizüstü bilgisayarlar daha az ekranı alan hala mobil aygıtlar. Bu nedenle, mobil platform UI denetimleri özellikle küçük form faktörleri üzerinde etkili olacak şekilde tasarlanmıştır.
 
-
-
-
-### <a name="device-and-os-fragmentation"></a>Aygıt ve işletim sistemi parçalanması
+#### <a name="device-and-os-fragmentation"></a>Aygıt ve işletim sistemi parçalanması
 
 Tüm yazılım geliştirme yaşam döngüsü boyunca farklı cihaz dikkate almanız önemlidir:
 
@@ -251,11 +200,7 @@ Tüm yazılım geliştirme yaşam döngüsü boyunca farklı cihaz dikkate alman
 1.   **Geliştirme** – bir kod, bu özellik varlığını özelliğini kullanarak her zaman ilk test edilmelidir. Örneğin, kamera gibi bir cihaz özelliği kullanmadan önce her zaman bu özelliği varlığını OS ilk sorgu. Sonra özellik/aygıt başlatılırken bu cihaz hakkında OS gelen şu anda desteklenen istek emin olun ve sonra bu yapılandırma ayarlarını kullanın.
 1.   **Sınama** – genellikle üzerinde gerçek cihazlar ve uygulama erken test etmek son derece önemlidir. Aynı donanım özellikleri bile aygıtlarla yaygın'ndaki davranışları farklılık gösterebilir.
 
-
-
-
-
-### <a name="limited-resources"></a>Sınırlı kaynak
+#### <a name="limited-resources"></a>Sınırlı kaynak
 
 Mobil cihazların her zaman daha güçlü almak ancak Masaüstü veya dizüstü bilgisayar kıyasla kapasitesi sınırlı olduğundan hala mobil aygıtları etmektedir. Örneğin, Masaüstü geliştiriciler genellikle bellek kapasitesi hakkında endişelenmeyin. Mobil cihazlarda, hızlı bir şekilde tüm kullanılabilir belleği yüksek kaliteli resimleri sayıda yükleyerek tüketebileceği ancak fiziksel ve sanal bellek copious miktarlarında sahip olmak için kullanılırlar.
 
@@ -263,22 +208,13 @@ Ayrıca, işlemci kullanımı yoğun uygulamalar oyunlar veya metin tanıma gibi
 
 Bu gibi nedeniyle, akıllı kod ve erken ve genellikle yanıt verdiğini doğrulamak için gerçek cihazlara dağıtmak için önemlidir.
 
+### <a name="ios-considerations"></a>iOS dikkat edilecek noktalar
 
-
-
-## <a name="ios-considerations"></a>iOS dikkat edilecek noktalar
-
-
-
-
-### <a name="multitasking"></a>Çoklu
+#### <a name="multitasking"></a>Çoklu
 
 Çoklu çok sıkı bir şekilde iOS içinde denetlenir ve kuralların sayısını vardır ve başka bir uygulama için ön plan, aksi takdirde uygulamanız geldiğinde, uygulamanız için uymalıdır davranışları iOS tarafından sonlandırılacak.
 
-
-
-
-### <a name="device-specific-resources"></a>Aygıta özgü kaynakları
+#### <a name="device-specific-resources"></a>Aygıta özgü kaynakları
 
 Belirli form faktörü içinde donanım önemli ölçüde farklı modelleri arasında farklılık gösterebilir. Örneğin, arka dönük kamera bazı aygıtlarınızda, de bazı ön dönük kamera ve bazı yok.
 
@@ -286,76 +222,49 @@ Bazı eski cihazlar (iPhone 3G ve daha eski) çoklu bile izin verme.
 
 Aygıt modelleri arasındaki bu farklılıkları nedeniyle bir özellik için bunu kullanmayı denemeden önce olup olmadığını denetlemek önemlidir.
 
-
-
-
-### <a name="os-specific-constraints"></a>İşletim sistemi özel kısıtlamaları
+#### <a name="os-specific-constraints"></a>İşletim sistemi özel kısıtlamaları
 
 Uygulamaları esnek ve güvenli olduğundan emin olmak için iOS uygulamaları tarafından uymanız gereken kuralların sayısını zorlar. Çoklu ilgili kurallarının yanı sıra, bir dizi olay yöntemi dışında uygulamanızı belirli bir miktar süre içinde aksi iOS tarafından sonlandırıldı döndürmelidir vardır.
 
 Ayrıca belirtmeye değerinde uygulamaları uygulamanızı erişebilecek kişileri kısıtlayın güvenlik kısıtlamaları zorlayan bir ortamda bir korumalı bilinen içinde çalıştırın. Örneği için bir uygulama okuma ve kendi dizinine yazma, ancak bunu başka bir uygulama dizinine yazma girişiminde bulunursa sonlandırılacak.
 
+### <a name="android-considerations"></a>Android dikkat edilecek noktalar
 
-
-
-## <a name="android-considerations"></a>Android dikkat edilecek noktalar
-
-
-
-
-### <a name="multitasking"></a>Çoklu
+#### <a name="multitasking"></a>Çoklu
 
 Android görevli iki bileşene sahiptir; Birincisi, aktivite yaşam döngüsü olmasıdır. Bir Android uygulamasını her ekranında etkinlik tarafından temsil edilen ve belirli bir uygulamanın arka planda yerleştirilir veya ön plana gelir kullanırken oluşan olaylar kümesi yok. Uygulamalar, esnek, iyi çalışan uygulamaları oluşturmak için bu yaşam döngüsünün uyması gerekir. Daha fazla bilgi için bkz: [etkinlik yaşam döngüsü](~/android/app-fundamentals/activity-lifecycle/index.md) Kılavuzu.
 
 Android görevli ikinci Bileşen Hizmetleri kullanımıdır.
 Hizmetleri mevcut uzun süre çalışan işlemleri uygulamadan bağımsız ve uygulama arka planda olsa da işlemleri yürütmek için kullanılır. Daha fazla bilgi için bkz: [Oluşturma Hizmetleri](~/android/app-fundamentals/services/index.md) Kılavuzu.
 
-
-
-
-### <a name="many-devices-amp-many-form-factors"></a>Birçok cihaz &amp; birçok Form faktörleri
+#### <a name="many-devices-amp-many-form-factors"></a>Birçok cihaz &amp; birçok Form faktörleri
 
 Cihazlar ya da yalnızca minimum platform gereksinimlerini karşılaması onaylı cihazlar üzerinde çalışır, hatta Windows Phone, küçük bir kümesini olan iOS, Google hangi cihazlarda Android işletim sistemi çalıştırabilirsiniz herhangi bir sınır koymak değil. Çok sayıda farklı aygıtlarla çok farklı donanım, ekran çözünürlükleri ve oranları, cihaz özelliklerini ve yeteneklerini tarafından doldurulan bir ürün ortamında bu açık kip sonuçlanır.
 
 Aşırı parçalanma Android aygıtların nedeniyle çoğu kişi tasarlayın ve için test etmek için en popüler 5 veya 6 aygıtları seçin ve bu öncelik.
 
-
-
-
-### <a name="security-considerations"></a>Güvenlik Değerlendirmeleri
+#### <a name="security-considerations"></a>Güvenlik Değerlendirmeleri
 
 Tüm Android işletim sistemi uygulamalarda ayrı, yalıtılmış bir kimlik altında sınırlı izinlerle çalıştırın. Varsayılan olarak, uygulamaların çok az yapabilirsiniz. Örneğin, özel izinler olmadan bir uygulama olamaz kısa mesaj göndermek, telefon durumunu belirleme veya bile Internet erişim! Bu özelliklere erişmek için uygulamalar gibi ve yüklenen yaptıkları hangi izinlerin kendi uygulama bildirim dosyasında belirtmeniz gerekir; işletim sistemi bu izinleri okur, uygulama bu izinleri isteyen ve ardından devam etmek ya da yüklemeyi iptal olanak tanır. kullanıcıyı uyarır.
 Uygulamalar iOS için örneği için olduğu gibi seçkin değil bu yana açık uygulama mağazası modeli nedeniyle Android dağıtım modelinde, önemli bir adım budur. Uygulama izinleri bir listesi için bkz: [bildirim izinleri](http://developer.android.com/reference/android/Manifest.permission.html) başvurusu makalesinde Android belgelerinde.
 
+### <a name="windows-considerations"></a>Windows konuları
 
-
-## <a name="windows-considerations"></a>Windows konuları
-
-
-
-
-### <a name="multitasking"></a>Çoklu
+#### <a name="multitasking"></a>Çoklu
 
 Windows Phone görevli ayrıca da iki bölümden oluşur: sayfaları ve uygulamaları ve arka plan işlemleri için destek ömrü. Bir uygulamadaki her ekran etkin veya devre dışı (ile devre dışı durum işleme ya da "kaldırıldı" için özel kurallar) yapılan ile ilişkili olaylar sahip bir sayfa sınıfının bir örneği olur. 
 
 İkinci bölümü, bile uygulama ön planda çalışmadığında görevler işlemek için arka plan aracısı sağlamaktır. 
 
-
-
-### <a name="device-capabilities"></a>CİHAZ özellikleri
+#### <a name="device-capabilities"></a>CİHAZ özellikleri
 
 Windows Phone donanım Microsoft tarafından sağlanan katı yönergeleri nedeniyle oldukça homojen olsa da yine isteğe bağlıdır ve bu nedenle özel kodlama sırasında dikkate gerektiren bileşenleri vardır. İsteğe bağlı donanım özellikleri, kamera ve pusula jiroskop yer alır. Ayrıca düşük ayrıcalık gerektiren bellek (256 MB), özel bir sınıf olduğunu veya geliştiriciler düşük bellek desteği çevirin.
 
-
-
-
-### <a name="database"></a>Veritabanı
+#### <a name="database"></a>Veritabanı
 
 İOS ve Android de platformlar arası çalışır karmaşık veri depolama olanağı sağlar SQLite veritabanı altyapısı içerir. Windows Phone 7 Windows Phone 7.1 ve 8 dahil ederken bir veritabanı yazmadınız bir [yerel veritabanı altyapısı](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202860(v=vs.105).aspx) , yalnızca sorgulanan ile [LINQ-SQL](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202872(v=vs.105).aspx) ve Transact-SQL sorguları desteklemez. Var olan bir [, açık kaynak bağlantı noktası SQLite](http://code.google.com/p/csharp-sqlite/) kullanılabilir, bilinen Transact-SQL desteği ve platformlar arası uyumluluk sağlamak üzere Windows Phone uygulamaları için eklenebilir.
 
-
-
-### <a name="security-considerations"></a>Güvenlik Değerlendirmeleri
+#### <a name="security-considerations"></a>Güvenlik Değerlendirmeleri
 
 Windows Phone uygulamaları birbirinden ayırır ve yapabileceği işlemleri sınırlar bir Kısıtlı izin kümesiyle çalıştırılır.
 Ağ erişimi belirli API'leri yapılmalıdır ve arası uygulama iletişim yalnızca denetimli mekanizmalar gerçekleştirilebilir. Dosya sistemi erişimi de sınırlıdır; Yalıtılmış Depolama API anahtar-değer çifti depolama ve dosya ve klasörleri denetimli bir şekilde oluşturmanıza olanak sağlar (bkz [yalıtılmış depolama genel bakış](http://msdn.microsoft.com/en-us/library/ff402541(v=vs.92).aspx) daha fazla bilgi için).
@@ -363,15 +272,13 @@ Ağ erişimi belirli API'leri yapılmalıdır ve arası uygulama iletişim yaln�
 Bir uygulamanın erişim donanım ve işletim sistemi özellikleri için bildirim dosyası (Android için benzer) listelenen özellikleri tarafından denetlenir.
 Bildirim uygulama tarafından kullanıcıların görebileceği ve bu izinleri kabul etmesi gereken özellikleri bildirmeniz gerekir ve böylece işletim sistemi API'leri erişmesini sağlar. Uygulamalar, kişiler veya randevular veri, kamera, konum, Ortam Kitaplığı ve daha fazlasını gibi özelliklere erişim istemeniz gerekir. Microsoft'un bkz [uygulama bildirim dosyası](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff769509(v=vs.92).aspx) başvurun.
 
-
-
 ## <a name="summary"></a>Özet
 
 Bu kılavuz, Mobil Geliştirme için ilgili olarak SDLC giriş verdi. Mobil uygulamaları oluşturmak için genel konular sunulan ve platforma özgü konuları tasarım, test ve dağıtım dahil olmak üzere çeşitli inceledi.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Mobil Geliştirme giriş](~/cross-platform/get-started/introduction-to-mobile-development.md)
-- [Merhaba, iOS](~/ios/get-started/hello-ios/index.md)
+- [Mobil Geliştirmeye Giriş](~/cross-platform/get-started/introduction-to-mobile-development.md)
+- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Hello, Android](http://developer.xamarin.com/get-started-droid/)
-- [Uygulama temelleri](~/cross-platform/app-fundamentals/index.md)
+- [Uygulama Temelleri](~/cross-platform/app-fundamentals/index.md)

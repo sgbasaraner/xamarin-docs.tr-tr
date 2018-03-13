@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/12/2017
-ms.openlocfilehash: 8f9294c10f8d3287a2985ede9aadf84ce663c38a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0bc64d0b03aa4f80b19ea098904dc1e2155313f6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="mac-app-configuration"></a>Mac uygulama yapılandırması
 
@@ -32,7 +32,7 @@ Xamarin.Mac uygulamanın uygulama ayarlarını değiştirmek için çift **Info.
 
 Bu uygulama için kullanılabilir seçenekler görüntülenir:
 
- [![Info.plist dosyasını düzenleyerek](app-configuration-images/config01.png "Info.plist dosyasını düzenleme")](app-configuration-images/config01-large.png)
+ [![Info.plist dosyasını düzenleyerek](app-configuration-images/config01.png "Info.plist dosyasını düzenleme")](app-configuration-images/config01-large.png#lightbox)
 
 Xamarin.Mac ile oluşturulan çalışan Mac uygulamaları aşağıdaki sistem gereksinimleri vardır:
 
@@ -43,7 +43,7 @@ Xamarin.Mac ile oluşturulan çalışan Mac uygulamaları aşağıdaki sistem ge
 
 **Mac imzalama** bölümünü **proje seçenekleri** iletişim kutusu self yayın için test için veya sürümü Apple App Store aracılığıyla Xamarin.Mac uygulamayı imzalamak Geliştirici sağlar:
 
-[![Mac imzalama Düzenleyicisi'ni](app-configuration-images/config02.png "Mac imzalama penceresi")](app-configuration-images/config02-large.png)
+[![Mac imzalama Düzenleyicisi'ni](app-configuration-images/config02.png "Mac imzalama penceresi")](app-configuration-images/config02-large.png#lightbox)
 
 Burada arasından seçim kimlik sağlama profili ve derlendiğinde uygulamayı imzalamak için kullanılan herhangi bir özel yetkilendirmeler. Geliştirici başka bir Mac üzerindeki uygulamayı yüklemek için kullanılan yükleyici isteğe bağlı olarak oturum açın
 
@@ -52,7 +52,7 @@ Burada arasından seçim kimlik sağlama profili ve derlendiğinde uygulamayı i
 
 **Mac yapı** bölümünü **proje seçenekleri** iletişim kutusu macOS hangi sürümünün app destekleyecek denetlemek ve isteğe bağlı olarak oluşturmak için bir Xamarin.Mac uygulama mimarisi seçmek Geliştirici sağlar Uygulama başarıyla derlendiğinde bir yükleme paketi:
 
- [![Yapı ayarları düzenleme](app-configuration-images/config03.png "derleme ayarlarını düzenleme")](app-configuration-images/config03-large.png)
+ [![Yapı ayarları düzenleme](app-configuration-images/config03.png "derleme ayarlarını düzenleme")](app-configuration-images/config03-large.png#lightbox)
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

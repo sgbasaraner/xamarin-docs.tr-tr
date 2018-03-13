@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 0bc039385a6b2077c3b5fa5114b35b586a14a150
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-command-interface"></a>Komut arabirimi
 
@@ -279,7 +279,7 @@ Oluşturucusunun inceleniyor önce `PersonCollectionViewModel` sınıfı, XAML d
 
 Geçerli yaş girilmeden önce iOS ekranın sol düzeni gösterilir. Android ve UWP ekranları Göster **gönderme** bir geçerlilik süresi belirledikten sonra etkin düğmesi:
 
-[![Kişi girişi](commanding-images/personentry-small.png "kişi girişi")](commanding-images/personentry-large.png "kişi girişi")
+[![Kişi girişi](commanding-images/personentry-small.png "kişi girişi")](commanding-images/personentry-large.png#lightbox "kişi girişi")
 
 Program girdilerinin düzenlemek için tüm olanaklara sahip değil ve giriş sayfadan kaydetmez.
 
@@ -531,7 +531,7 @@ Bir bağlama 10 tabanlı rakamlar ve Ondalık ayırıcının 11 düğmeleri payl
 
 Eylem program şöyledir:
 
-[![Ondalık klavye](commanding-images/decimalkeyboard-small.png "ondalık klavye")](commanding-images/decimalkeyboard-large.png "ondalık klavye")
+[![Ondalık klavye](commanding-images/decimalkeyboard-small.png "ondalık klavye")](commanding-images/decimalkeyboard-large.png#lightbox "ondalık klavye")
 
 Girilen sayı ondalık içerdiğinden tüm üç ekran görüntüleri ondalık noktasının düğmesi devre dışıdır dikkat edin. 
 

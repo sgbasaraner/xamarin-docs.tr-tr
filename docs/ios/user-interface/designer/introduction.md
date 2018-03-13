@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/31/2018
-ms.openlocfilehash: 3046d779239076098a8b2fb74fc87e2f211074e9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a2445e49005175f62e4d7cd8aadccb5f596177bf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-designer-basics"></a>iOS Tasarımcısı temelleri
 
@@ -38,15 +38,15 @@ Bir görünüm denetleyicisini iki bölümden oluşur: iOS Tasarımcısı görse
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Bir görünüm denetleyicisi Tasarımcısı iOS](introduction-images/1-storyboardwithviewcontroller-vsmac.png "Tasarımcısı iOS bir görünüm denetleyicisi")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png)
+[![Bir görünüm denetleyicisi Tasarımcısı iOS](introduction-images/1-storyboardwithviewcontroller-vsmac.png "Tasarımcısı iOS bir görünüm denetleyicisi")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
 
-[![Bir görünüm denetleyicisini kodunu](introduction-images/2-viewcontrollercode-vsmac.png "bir görünüm denetleyicisi için kod")](introduction-images/2-viewcontrollercode-vsmac-large.png)
+[![Bir görünüm denetleyicisini kodunu](introduction-images/2-viewcontrollercode-vsmac.png "bir görünüm denetleyicisi için kod")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Bir görünüm denetleyicisi Tasarımcısı iOS](introduction-images/1-storyboardwithviewcontroller-vs.png "Tasarımcısı iOS bir görünüm denetleyicisi")](introduction-images/1-storyboardwithviewcontroller-vs-large.png)
+[![Bir görünüm denetleyicisi Tasarımcısı iOS](introduction-images/1-storyboardwithviewcontroller-vs.png "Tasarımcısı iOS bir görünüm denetleyicisi")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
 
-[![Bir görünüm denetleyicisini kodunu](introduction-images/2-viewcontrollercode-vs.png "bir görünüm denetleyicisi için kod")](introduction-images/2-viewcontrollercode-vs-large.png)
+[![Bir görünüm denetleyicisini kodunu](introduction-images/2-viewcontrollercode-vs.png "bir görünüm denetleyicisi için kod")](introduction-images/2-viewcontrollercode-vs-large.png#lightbox)
 
 -----
 
@@ -54,11 +54,11 @@ Varsayılan durumundayken bir görünüm denetleyicisini tüm işlevleri sağlam
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Bir düğmeyi içeren bir görünüm denetleyicisini](introduction-images/3-viewcontrollerwithbutton-vsmac.png "bir düğmeyi içeren bir görünüm denetleyicisi")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png)
+[![Bir düğmeyi içeren bir görünüm denetleyicisini](introduction-images/3-viewcontrollerwithbutton-vsmac.png "bir düğmeyi içeren bir görünüm denetleyicisi")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Bir düğmeyi içeren bir görünüm denetleyicisini](introduction-images/3-viewcontrollerwithbutton-vs.png "bir düğmeyi içeren bir görünüm denetleyicisi")](introduction-images/3-viewcontrollerwithbutton-vs-large.png)
+[![Bir düğmeyi içeren bir görünüm denetleyicisini](introduction-images/3-viewcontrollerwithbutton-vs.png "bir düğmeyi içeren bir görünüm denetleyicisi")](introduction-images/3-viewcontrollerwithbutton-vs-large.png#lightbox)
 
 -----
 
@@ -68,13 +68,13 @@ Statik metin içeren etiketler gibi bazı denetimler, görünüm denetleyiciye e
 
 Erişim ve kod düğmesini işlemek için benzersiz bir tanımlayıcı içermelidir. Açma düğmesini seçerek benzersiz bir tanımlayıcı belirtin **özellikleri paneli**ve ayarı kendi **adı** "SubmitButton" gibi bir değer alanı:
 
-[![Düğmenin adı özellikleri defterinde ayarlama](introduction-images/4-settingbuttonname-vsmac.png "özellikleri defterinde düğmenin adı ayarlama")](introduction-images/4-settingbuttonname-vsmac-large.png)
+[![Düğmenin adı özellikleri defterinde ayarlama](introduction-images/4-settingbuttonname-vsmac.png "özellikleri defterinde düğmenin adı ayarlama")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Erişim ve kod düğmesini işlemek için benzersiz bir tanımlayıcı içermelidir. Açma düğmesini seçerek benzersiz bir tanımlayıcı belirtin **Özellikler penceresini**ve ayarı kendi **adı** "SubmitButton" gibi bir değer alanı:
 
-[![Düğmenin adı Özellikler penceresinde ayarlama](introduction-images/4-settingbuttonname-vs.png "Özellikler penceresinde düğmenin adı ayarlama")](introduction-images/4-settingbuttonname-vs-large.png)
+[![Düğmenin adı Özellikler penceresinde ayarlama](introduction-images/4-settingbuttonname-vs.png "Özellikler penceresinde düğmenin adı ayarlama")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
 
 -----
 
@@ -84,13 +84,13 @@ Düğme bir ada sahip, kodda erişilebilir. Ancak bu nasıl çalışır?
 
 İçinde **çözüm paneli**, gezinme için **ViewController.cs** ve ortaya açığa gösterge üzerinde tıklatarak Görünüm denetleyicinin `ViewController` sınıf tanımı yayılma iki dosyaları, her biri içeren bir [parçalı sınıf](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) tanımı:
 
-[![İki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "iki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png)
+[![İki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "iki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 İçinde **Çözüm Gezgini**, gezinme için **ViewController.cs** ve ortaya açığa gösterge üzerinde tıklatarak Görünüm denetleyicinin `ViewController` sınıf tanımını yayılan her iki dosya içeren bir [parçalı sınıf](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) tanımı:
 
-[![İki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "iki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png)
+[![İki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "iki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
 -----
 
@@ -125,11 +125,11 @@ IntelliSense şimdi tanıdığı aşağıdaki ekran görüntüsü gösterilmekte
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![IntelliSense SubmitButton başvuru algılamayı](introduction-images/6-submitbuttonintellisense-vsmac.png "SubmitButton başvuru algılamayı IntelliSense")](introduction-images/6-submitbuttonintellisense-vsmac-large.png)
+[![IntelliSense SubmitButton başvuru algılamayı](introduction-images/6-submitbuttonintellisense-vsmac.png "SubmitButton başvuru algılamayı IntelliSense")](introduction-images/6-submitbuttonintellisense-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![IntelliSense SubmitButton başvuru algılamayı](introduction-images/6-submitbuttonintellisense-vs.png "SubmitButton başvuru algılamayı IntelliSense")](introduction-images/6-submitbuttonintellisense-vs-large.png)
+[![IntelliSense SubmitButton başvuru algılamayı](introduction-images/6-submitbuttonintellisense-vs.png "SubmitButton başvuru algılamayı IntelliSense")](introduction-images/6-submitbuttonintellisense-vs-large.png#lightbox)
 
 -----
 
@@ -147,13 +147,13 @@ Bu bölüm iOS Tasarımcısı bölümlerini tanıtır ve gezinti özellikleri sa
 
 Mac için Visual Studio ile oluşturulan Xamarin.iOS projeleri film şeridi içerir. Film şeridi içeriğini görüntülemek için .storyboard dosyasına çift tıklayarak **çözüm paneli**:
 
-[![Film şeridi açmak iOS Tasarımcısı](introduction-images/7-storyboardopen-vsmac.png "film şeridi açmak iOS Tasarımcısı")](introduction-images/7-storyboardopen-vsmac-large.png)
+[![Film şeridi açmak iOS Tasarımcısı](introduction-images/7-storyboardopen-vsmac.png "film şeridi açmak iOS Tasarımcısı")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Visual Studio 2015 veya 2017 ile oluşturulan çoğu Xamarin.iOS projeleri film şeridi içerir. Film şeridi içeriğini görüntülemek için .storyboard dosyasına çift tıklayarak **Çözüm Gezgini**:
 
-[![Film şeridi açmak iOS Tasarımcısı](introduction-images/7-storyboardopen-vs.png "film şeridi açmak iOS Tasarımcısı")](introduction-images/7-storyboardopen-vs-large.png)
+[![Film şeridi açmak iOS Tasarımcısı](introduction-images/7-storyboardopen-vs.png "film şeridi açmak iOS Tasarımcısı")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
 -----
 
@@ -165,7 +165,7 @@ Visual Studio 2015 veya 2017 ile oluşturulan çoğu Xamarin.iOS projeleri film 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![İOS Tasarımcısı bölümlerini](introduction-images/8-sixpartsofiosdesigner-vsmac.png "Tasarımcısı iOS bölümleri")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png)
+[![İOS Tasarımcısı bölümlerini](introduction-images/8-sixpartsofiosdesigner-vsmac.png "Tasarımcısı iOS bölümleri")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
 
 1. **Tasarım yüzeyini** – iOS tasarımcının birincil çalışma. Belge alanında gösterilen, kullanıcı arabirimleri, görsel yapımı sağlar.
 2. **Kısıtlamaları araç** – sağlayan bir kullanıcı arabirimi öğeleri konumlandırmak için modu ve kısıtlama düzenleme modu, iki farklı şekilde düzenleyerek çerçevesini arasında geçiş yapmak için.
@@ -176,7 +176,7 @@ Visual Studio 2015 veya 2017 ile oluşturulan çoğu Xamarin.iOS projeleri film 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![İOS Tasarımcısı bölümlerini](introduction-images/8-sixpartsofiosdesigner-vs.png "Tasarımcısı iOS bölümleri")](introduction-images/8-sixpartsofiosdesigner-vs-large.png)
+[![İOS Tasarımcısı bölümlerini](introduction-images/8-sixpartsofiosdesigner-vs.png "Tasarımcısı iOS bölümleri")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
 
 1. **Tasarım yüzeyini** – iOS tasarımcının birincil çalışma. Belge alanında gösterilen, kullanıcı arabirimleri, görsel yapımı sağlar.
 2. **Kısıtlamaları araç** – sağlayan bir kullanıcı arabirimi öğeleri konumlandırmak için modu ve kısıtlama düzenleme modu, iki farklı şekilde düzenleyerek çerçevesini arasında geçiş yapmak için.
@@ -211,7 +211,7 @@ Yukarıdaki örnekte mavi noktalı çizgi ile düğmesi yerleşimi yardımcı ol
 
 Bir bağlam menüsü tasarım yüzeyine hem de kullanılabilir **belge anahattı**. Bu menü komutlarını sağlar Seçili denetim ve iç içe geçmiş bir hiyerarşideki görünümlerle çalışırken yararlı, kendi üst:
 
-[![Tasarım yüzeyine bağlam menüsünde](introduction-images/10-contextmenudesignsurface-vsmac.png "tasarım yüzeyine bağlam menüsü")](introduction-images/10-contextmenudesignsurface-vsmac-large.png)
+[![Tasarım yüzeyine bağlam menüsünde](introduction-images/10-contextmenudesignsurface-vsmac.png "tasarım yüzeyine bağlam menüsü")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -221,11 +221,11 @@ Bir bağlam menüsü tasarım yüzeyine hem de kullanılabilir **belge anahattı
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
  
-[![Contraints araç](introduction-images/11-constraintstoolbar-vsmac.png "kısıtlamaları araç çubuğu")](introduction-images/11-constraintstoolbar-vsmac-large.png)
+[![Contraints araç](introduction-images/11-constraintstoolbar-vsmac.png "kısıtlamaları araç çubuğu")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Contraints araç](introduction-images/11-constraintstoolbar-vs.png "kısıtlamaları araç çubuğu")](introduction-images/11-constraintstoolbar-vs-large.png)
+[![Contraints araç](introduction-images/11-constraintstoolbar-vs.png "kısıtlamaları araç çubuğu")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
 
 -----
 
@@ -272,11 +272,11 @@ Alt kısımdaki araç aygıt, Yönlendirme ve iOS Tasarımcısı film şeridi ve
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt kısımdaki araç](introduction-images/13-bottomtoolbar-vsmac.png "bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt araç çubuğu")](introduction-images/13-bottomtoolbar-vsmac-large.png)
+[![Bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt kısımdaki araç](introduction-images/13-bottomtoolbar-vsmac.png "bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt araç çubuğu")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt kısımdaki araç](introduction-images/13-bottomtoolbar-vs.png "bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt araç çubuğu")](introduction-images/13-bottomtoolbar-vs-large.png)
+[![Bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt kısımdaki araç](introduction-images/13-bottomtoolbar-vs.png "bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt araç çubuğu")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
 
 -----
 
@@ -286,11 +286,11 @@ Genişletildiğinde, alt kısımdaki araç tüm cihazlar, yönler ve/veya uyarla
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Alt kısımdaki araç genişletilmiş aygıtları ve yönleri gösterecek şekilde](introduction-images/14-bottomtoolbarexpanded-vsmac.png "aygıtları ve yönleri gösterecek şekilde Genişletilmiş Alt araç çubuğu")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png)
+[![Alt kısımdaki araç genişletilmiş aygıtları ve yönleri gösterecek şekilde](introduction-images/14-bottomtoolbarexpanded-vsmac.png "aygıtları ve yönleri gösterecek şekilde Genişletilmiş Alt araç çubuğu")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Alt kısımdaki araç genişletilmiş aygıtları ve yönleri gösterecek şekilde](introduction-images/14-bottomtoolbarexpanded-vs.png "aygıtları ve yönleri gösterecek şekilde Genişletilmiş Alt araç çubuğu")](introduction-images/14-bottomtoolbarexpanded-vs-large.png)
+[![Alt kısımdaki araç genişletilmiş aygıtları ve yönleri gösterecek şekilde](introduction-images/14-bottomtoolbarexpanded-vs.png "aygıtları ve yönleri gösterecek şekilde Genişletilmiş Alt araç çubuğu")](introduction-images/14-bottomtoolbarexpanded-vs-large.png#lightbox)
 
 -----
 
@@ -303,11 +303,11 @@ Zaman [boyut sınıfları](~/ios/user-interface/storyboards/unified-storyboards.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt kısımdaki araç](introduction-images/15-edittraitsbutton-vsmac.png "bir arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt araç çubuğu")](introduction-images/15-edittraitsbutton-vsmac-large.png)
+[![Arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt kısımdaki araç](introduction-images/15-edittraitsbutton-vsmac.png "bir arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt araç çubuğu")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt kısımdaki araç](introduction-images/15-edittraitsbutton-vs.png "bir arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt araç çubuğu")](introduction-images/15-edittraitsbutton-vs-large.png)
+[![Arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt kısımdaki araç](introduction-images/15-edittraitsbutton-vs.png "bir arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt araç çubuğu")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
 
 -----
 
@@ -340,7 +340,7 @@ Bu denetimler, tasarım yüzeyine yakınlaştırmanın. Çalışma zamanında uy
 
 Kullanım **özellikleri paneli** kimlik, görsel stiller, erişilebilirlik ve davranışını düzenlemek için. Aşağıdaki ekran görüntüsü gösterilmektedir **özellikleri paneli** düğmesi için seçenekleri:
 
-[![Düğme Özellikleri paneli](introduction-images/17-buttonpropertiespad-vsmac.png "özellikleri paneli düğmesi")](introduction-images/17-buttonpropertiespad-vsmac-large.png)
+[![Düğme Özellikleri paneli](introduction-images/17-buttonpropertiespad-vsmac.png "özellikleri paneli düğmesi")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
 #### <a name="properties-pad-sections"></a>Özellikler paneli bölümleri
 
 **Özellikleri paneli** üç bölümleri içerir:
@@ -351,7 +351,7 @@ Kullanım **özellikleri paneli** kimlik, görsel stiller, erişilebilirlik ve d
 
 Kullanım **Özellikler penceresini** kimlik, görsel stiller, erişilebilirlik ve davranışını düzenlemek için. Aşağıdaki ekran görüntüsü gösterilmektedir **Özellikler penceresini** düğmesi için seçenekleri:
 
-[![Düğme için Özellikler penceresini](introduction-images/17-buttonpropertieswindow-vs.png "düğmesi için Özellikler penceresi")](introduction-images/17-buttonpropertieswindow-vs-large.png)
+[![Düğme için Özellikler penceresini](introduction-images/17-buttonpropertieswindow-vs.png "düğmesi için Özellikler penceresi")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
 
 #### <a name="properties-window-sections"></a>Özellikler penceresi bölümleri
 
@@ -369,9 +369,9 @@ Kullanım **Özellikler penceresini** kimlik, görsel stiller, erişilebilirlik 
 
 Tasarım yüzeyine görsel düzenleme yanı sıra iOS Tasarımcısı destekler özelliklerinde düzenleme **özellikleri paneli**. Kullanılabilir özellikler aşağıdaki ekran görüntüleri gösterildiği gibi seçili denetime bağlı olarak değişir:
 
-[![Düğme Özellikleri](introduction-images/18a-buttonpropertiespad-vsmac.png "düğme özellikleri")](introduction-images/18a-buttonpropertiespad-vsmac-large.png)
+[![Düğme Özellikleri](introduction-images/18a-buttonpropertiespad-vsmac.png "düğme özellikleri")](introduction-images/18a-buttonpropertiespad-vsmac-large.png#lightbox)
 
-[![Denetleyici özellikleri görüntüle](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "Denetleyicisi Özellikleri Görüntüle")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png)
+[![Denetleyici özellikleri görüntüle](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "Denetleyicisi Özellikleri Görüntüle")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -379,9 +379,9 @@ Tasarım yüzeyine görsel düzenleme yanı sıra iOS Tasarımcısı destekler �
 
 Tasarım yüzeyine görsel düzenleme yanı sıra iOS Tasarımcısı destekler özelliklerinde düzenleme **Özellikler penceresini**. Kullanılabilir özellikler aşağıdaki ekran görüntüleri gösterildiği gibi seçili denetime bağlı olarak değişir:
 
-[![Düğme Özellikleri](introduction-images/18a-buttonpropertieswindow-vs.png "düğme özellikleri")](introduction-images/18a-buttonpropertieswindow-vs-large.png)
+[![Düğme Özellikleri](introduction-images/18a-buttonpropertieswindow-vs.png "düğme özellikleri")](introduction-images/18a-buttonpropertieswindow-vs-large.png#lightbox)
 
-[![Denetleyici özellikleri görüntüle](introduction-images/18b-viewcontrollerpropertieswindow-vs.png "Denetleyicisi Özellikleri Görüntüle")](introduction-images/18b-viewcontrollerpropertieswindow-vs-large.png)
+[![Denetleyici özellikleri görüntüle](introduction-images/18b-viewcontrollerpropertieswindow-vs.png "Denetleyicisi Özellikleri Görüntüle")](introduction-images/18b-viewcontrollerpropertieswindow-vs-large.png#lightbox)
 
 -----
 
@@ -406,13 +406,13 @@ Birçok özelliklerinde **Özellikler penceresini** herhangi bir değer veya var
 
 Çeşitli olayları için özel olay işleyicileri belirtmek için kullanın **olayları** sekmesinde **özellikleri paneli**. Örneğin, aşağıdaki ekran görüntüsünde bir `HandleClick` yöntemi işler düğmenin **Touch içinde** olay:
 
-[![Özellikler paneliyle düğmesi için ayarlanan bir olay işleyicisi](introduction-images/19-buttonpropertiespadevents-vsmac.png "düğmesi için ayarlanan bir olay işleyicisi ile özellikleri paneli")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png)
+[![Özellikler paneliyle düğmesi için ayarlanan bir olay işleyicisi](introduction-images/19-buttonpropertiespadevents-vsmac.png "düğmesi için ayarlanan bir olay işleyicisi ile özellikleri paneli")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Çeşitli olayları için özel olay işleyicileri belirtmek için kullanın **olayları** sekmesinde **Özellikler penceresini**. Örneğin, aşağıdaki ekran görüntüsünde bir `HandleClick` yöntemi işler düğmenin **Touch içinde** olay:
 
-[![Özellikler penceresi düğmesi için ayarlanan bir olay işleyicisi ile](introduction-images/19-buttonpropertieswindowevents-vs.png "düğmesi için ayarlanan bir olay işleyicisi ile Özellikler penceresi")](introduction-images/19-buttonpropertieswindowevents-vs-large.png)
+[![Özellikler penceresi düğmesi için ayarlanan bir olay işleyicisi ile](introduction-images/19-buttonpropertieswindowevents-vs.png "düğmesi için ayarlanan bir olay işleyicisi ile Özellikler penceresi")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
 -----
 
@@ -420,13 +420,13 @@ Olay işleyici belirtilen sonra aynı ada sahip bir yöntem karşılık gelen g�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Tanınmayan Seçici istisna](introduction-images/20-unrecognizedselector-vsmac.png "tanınmayan seçici özel durumu")](introduction-images/20-unrecognizedselector-vsmac-large.png)
+[![Tanınmayan Seçici istisna](introduction-images/20-unrecognizedselector-vsmac.png "tanınmayan seçici özel durumu")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
 
 Olay işleyici sonra içinde belirtilen unutmayın **özellikleri paneli**, iOS Tasarımcısı hemen karşılık gelen kod dosyasını açın ve yöntem bildirimi eklemesini sağlar. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tanınmayan Seçici istisna](introduction-images/20-unrecognizedselector-vs.png "tanınmayan seçici özel durumu")](introduction-images/20-unrecognizedselector-vs-large.png)
+[![Tanınmayan Seçici istisna](introduction-images/20-unrecognizedselector-vs.png "tanınmayan seçici özel durumu")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
 
 -----
 
@@ -438,11 +438,11 @@ Olay işleyici sonra içinde belirtilen unutmayın **özellikleri paneli**, iOS 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Belge Anahattı](introduction-images/21-buttonoutlineview-vsmac.png "Belge Anahattı")](introduction-images/21-buttonoutlineview-vsmac-large.png)
+[![Belge Anahattı](introduction-images/21-buttonoutlineview-vsmac.png "Belge Anahattı")](introduction-images/21-buttonoutlineview-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Belge Anahattı](introduction-images/21-buttonoutlineview-vs.png "Belge Anahattı")](introduction-images/21-buttonoutlineview-vs-large.png)
+[![Belge Anahattı](introduction-images/21-buttonoutlineview-vs.png "Belge Anahattı")](introduction-images/21-buttonoutlineview-vs-large.png#lightbox)
 
 -----
 
@@ -454,7 +454,7 @@ Anahat görünümünde seçili Denetim tasarım yüzeyine Seçili denetimi ile e
 
 İOS Tasarımcısı ve Xcode arabirimi Oluşturucu birbirinin yerine kullanmak da mümkündür. Film şeridi veya .xib dosyası Xcode arabirimi Oluşturucusu'nda açmak için dosyayı sağ tıklatın ve **birlikte Aç > Xcode arabirimi Oluşturucu**aşağıdaki ekran görüntüsüne gösterildiği gibi:
 
-[![Film şeridi Xcode arabirimi Oluşturucusu'nda açmayı](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "Xcode arabirimi Oluşturucusu'nda bir film şeridi açma")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png)
+[![Film şeridi Xcode arabirimi Oluşturucusu'nda açmayı](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "Xcode arabirimi Oluşturucusu'nda bir film şeridi açma")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
 Xcode arabirimi Oluşturucusu'nda Düzenlemeleri yaptıktan sonra dosyayı kaydedin ve Mac için Visual Studio'ya geri dönün Değişiklikleri Xamarin.iOS projesi eşitler.
 
@@ -484,10 +484,10 @@ Bu kılavuz özelliklerini açıklayan ve anahat güzel kullanıcı arabirimleri
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Film şeritleri giriş](~/ios/user-interface/storyboards/index.md)
+- [Görsel Taslaklara Giriş](~/ios/user-interface/storyboards/index.md)
 - [iOS Designable denetimleri gözden geçirme](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
-- [Merhaba, iOS](~/ios/get-started/hello-ios/index.md)
-- [Merhaba, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md)
+- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
+- [Çok Ekranlı Hello, iOS ](~/ios/get-started/hello-ios-multiscreen/index.md)
 - [Android Tasarımcı genel bakış](~/android/user-interface/android-designer/index.md)
 - [Parçalı Sınıflar ve Yöntemler](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
 - [İOS - 2014 (video) gelişmesi için Xamarin tasarımcısı içine Dalma](https://www.youtube.com/watch?v=W4H9uLjoEjM)

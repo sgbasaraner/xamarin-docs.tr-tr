@@ -3,16 +3,16 @@ title: Windows
 description: "Bu makalede windows ve paneller Xamarin.Mac uygulamada çalışmaya kapsar. Oluşturma windows ve Xcode ve arabirim film şeritleri ve .xib dosyaları yükleme ve bunlarla program aracılığıyla çalışma Oluşturucusu paneller açıklar."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
+ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: bcf95bf481d58f21e4adce6039c3eb02ce24b938
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f483fcfa9dfca1eb476ceab2b67e7a03bf4b6354
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="windows"></a>Windows
 
@@ -29,7 +29,7 @@ Windows (örneğin, uygulama devam etmeden önce kapatıldığında gerekir bir 
 
 Paneller olan özel türde bir pencere (bir alt sınıfı taban `NSWindow` sınıfı), genellikle hizmet eden bir yardımcı işlevi metin biçimi denetçiler ve sistem renk seçici gibi yardımcı programı windows gibi bir uygulamada.
 
-[ ![](window-images/intro01.png "Xcode penceresinde düzenleme")](window-images/intro01.png)
+[![](window-images/intro01.png "Xcode penceresinde düzenleme")](window-images/intro01.png#lightbox)
 
 Bu makalede, sizi bir Xamarin.Mac uygulaması'nda Windows ve paneller ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -96,7 +96,7 @@ Daha fazla bilgi için bkz: [tam ekran Windows](https://developer.apple.com/libr
 
 Bir Panel denetimleri ve etkin belgeyi veya (örneğin, Sistem Renk Seçici) seçimini etkileyen seçenekleri içeren bir yardımcı bir penceredir:
 
-[ ![](window-images/panel01.png "Bir renk paneli")](window-images/panel01.png)
+[![](window-images/panel01.png "Bir renk paneli")](window-images/panel01.png#lightbox)
 
 Paneller olabilir ya da _uygulamaya özgü_ veya _yükleyebilecek_. Uygulamaya özgü paneller uygulamanın belge pencereleri üst float ve uygulama arka planda olduğunda kaybolur. Sistem çapında paneller (gibi **yazı tipleri** Masası), uygulama olursa olsun tüm açık windows üstünde float. 
 
@@ -112,7 +112,7 @@ Apple aşağıdaki yönergeleri önerir:
 
 Çoğu modern macOS uygulamaları sunmanıza yardımcı denetimleri ve etkin belge veya seçimi olarak etkileyen seçenekleri _denetçiler_ ana penceresi parçası olan (gibi **sayfaları** aşağıda gösterilen uygulama), Panel Windows kullanmak yerine:
 
-[ ![](window-images/panel02.png "Örnek Inspector")](window-images/panel02.png)
+[![](window-images/panel02.png "Örnek Inspector")](window-images/panel02.png#lightbox)
 
 Daha fazla bilgi için bkz: [paneller](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1) Apple'nın bölümünü [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) ve bizim [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) bir tamuygulamasınıiçinörnekuygulama**Denetçisi arabirimi** Xamarin.Mac uygulama.
 
@@ -122,11 +122,11 @@ Daha fazla bilgi için bkz: [paneller](https://developer.apple.com/library/mac/d
 
 Yeni bir Xamarin.Mac Cocoa uygulaması oluşturduğunuzda, varsayılan olarak standart boş, bir pencere alın. Bu windows tanımlanmış bir `.storyboard` otomatik olarak projeye dahil dosyası. Windows tasarımınızı düzenlemek için **Çözüm Gezgini**, çift tıklayarak `Main.storyboard` dosyası:
 
-[ ![](window-images/edit01.png "Ana film şeridi seçme")](window-images/edit01.png)
+[![](window-images/edit01.png "Ana film şeridi seçme")](window-images/edit01.png#lightbox)
 
 Bu pencere tasarım Xcode'nın arabirimi Oluşturucusu'nda açın:
 
-[ ![](window-images/edit02.png "Xcode kullanıcı Arabiriminde düzenleme")](window-images/edit02.png)
+[![](window-images/edit02.png "Xcode kullanıcı Arabiriminde düzenleme")](window-images/edit02.png#lightbox)
 
 İçinde **özniteliği denetçisi**, tanımlayın ve pencerenizi denetlemek için kullanabileceğiniz birkaç özellik vardır:
 
@@ -160,7 +160,7 @@ Apple'nın bkz [Windows Giriş](https://developer.apple.com/library/mac/document
 
 Pencerenizi ilk konumunu ayarlayın ve onun boyutunu denetlemek için geçmek **boyutu denetçisi**:
 
-[ ![](window-images/edit07.png "Varsayılan boyut ve konum")](window-images/edit07.png)
+[![](window-images/edit07.png "Varsayılan boyut ve konum")](window-images/edit07.png#lightbox)
 
 Buradan penceresinin başlangıç boyutunu ayarlayın, minimum ve maksimum boyutu verin, ilk konum ekranda ayarlayabilir ve pencerenin kenarlıklarını denetim.
 
@@ -176,15 +176,15 @@ Aşağıdakileri yapın:
 2. Seçin `NSWindowController` tasarım yüzeyine içinde.
 3. Geçiş **kimlik denetçisi** görüntüleyin ve girin `WindowController` olarak **sınıf adı**: 
 
-    [ ![](window-images/windowcontroller01.png "Sınıf adı ayarlama")](window-images/windowcontroller01.png)
+    [![](window-images/windowcontroller01.png "Sınıf adı ayarlama")](window-images/windowcontroller01.png#lightbox)
 4. Değişikliklerinizi kaydetmek ve Visual Studio eşitlemek için Mac için geri dönün.
 5. A `WindowController.cs` dosya projenizde eklenecek **Çözüm Gezgini** Mac için Visual Studio'da: 
 
-    [ ![](window-images/windowcontroller02.png "Windows denetleyicisi seçme")](window-images/windowcontroller02.png)
+    [![](window-images/windowcontroller02.png "Windows denetleyicisi seçme")](window-images/windowcontroller02.png#lightbox)
 6. Xcode'nın arabirimi Oluşturucu film şeridi yeniden açın.
 7. `WindowController.h` Dosya kullanılabilir olacaktır: 
 
-    [ ![](window-images/windowcontroller03.png "WindowController.h dosya düzenleme")](window-images/windowcontroller03.png)
+    [![](window-images/windowcontroller03.png "WindowController.h dosya düzenleme")](window-images/windowcontroller03.png#lightbox)
 
 <a name="Adding_UI_Elements" />
 
@@ -194,21 +194,21 @@ Pencere içeriğine tanımlamak için denetimlerden sürükleyin **kitaplığı 
 
 Örnek olarak, şimdi sürükleme araç çubuğundan **kitaplığı denetçisi** penceresinde üzerine **arabirimi Düzenleyicisi**:
 
-[ ![](window-images/edit03.png "Kitaplıktan bir araç seçme")](window-images/edit03.png)
+[![](window-images/edit03.png "Kitaplıktan bir araç seçme")](window-images/edit03.png#lightbox)
 
 Ardından, sürükleyin bir **metin görünümü** ve araç çubuğunun altında alanı dolduracak şekilde boyutu:
 
-[ ![](window-images/edit04.png "Metin görünümü ekleme")](window-images/edit04.png)
+[![](window-images/edit04.png "Metin görünümü ekleme")](window-images/edit04.png#lightbox)
 
 İstediğimiz beri **metin görünümü** küçültmek ve pencere boyutunu değiştikçe büyüme için şimdi geçmek **kısıtlaması Düzenleyicisi** ve aşağıdaki kısıtlamalar ekleyin:
 
-[ ![](window-images/edit05.png "Kısıtlamaları düzenleme")](window-images/edit05.png)
+[![](window-images/edit05.png "Kısıtlamaları düzenleme")](window-images/edit05.png#lightbox)
 
 Tıklayarak için **kırmızı t-kirişleri** Düzenleyicisinin üst ve tıklatmak **eklemek 4 kısıtlamaları**, verilen X, Y koordinatları takılıyor ve büyütür veya yatay ve dikey olarak küçültür metin görünüme söylemiş olursunuz olarak pencere yeniden boyutlandırılır.
 
 Son olarak, şimdi kullanıma **metin görünümü** kullanan kod için bir **çıkışı** (seçimini yaparak `ViewController.h` dosyası):
 
-[ ![](window-images/edit06.png "Prizine yapılandırma")](window-images/edit06.png)
+[![](window-images/edit06.png "Prizine yapılandırma")](window-images/edit06.png#lightbox)
 
 Yaptığınız değişiklikleri kaydedin ve Xcode ile eşitlemek Mac için Visual Studio için dönün.
 
@@ -237,17 +237,17 @@ Oluşturulan temel bir pencere sahibiz, normal işlemler sırasında windows ile
 
 Varsayılan olarak, yeni bir Xamarin.Mac uygulama otomatik olarak tanımlanan penceresi görüntüleyecektir `MainWindow.xib` dosya başlatıldığında:
 
-[ ![](window-images/display01.png "Çalışan bir örnek penceresi")](window-images/display01.png)
+[![](window-images/display01.png "Çalışan bir örnek penceresi")](window-images/display01.png#lightbox)
 
 Biz yukarıdaki penceresinin tasarım değiştirilmiş olduğundan, onu artık varsayılan araç içeriyor ve **metin görünümü** denetim. Aşağıdaki bölüm `Info.plist` dosyasıdır sorumlu bu pencereyi görüntülemek için:
 
-[ ![](window-images/display00.png "Info.plist düzenleme")](window-images/display00.png)
+[![](window-images/display00.png "Info.plist düzenleme")](window-images/display00.png#lightbox)
 
 **Ana arabirimi** açılır ana uygulama kullanıcı Arabirimi kullanılacak film şeridi seçmek için kullanılır (Bu durumda `Main.storyboard`).
 
 View Controller (yanı sıra, birincil görünüm) görüntülenen ana Windows denetlemek için proje otomatik olarak eklenir. İçinde tanımlanan `ViewController.cs` dosya ve bağlı **dosyanın sahibi** altında arabirimi oluşturucusunda **kimlik denetçisi**:
 
-[ ![](window-images/display02.png "Dosyanın sahibi ayarlama")](window-images/display02.png)
+[![](window-images/display02.png "Dosyanın sahibi ayarlama")](window-images/display02.png#lightbox)
 
 Bizim penceresi için bir başlığı olmasını isteriz `untitled` ilk açıldığında sağlandığından geçersiz kılma `ViewWillAppear` yönteminde `ViewController.cs` aşağıdaki gibi aramak için:
 
@@ -313,11 +313,11 @@ Kapatmak istiyor musunuz `MyWindow` `NSWindow` örneği.
 
 MacOS içinde kullanıcıya bildirmek için bir yöntem Apple sağlamıştır, pencerenin içeriğini (`NSWindow`) kullanıcı tarafından değiştirilmiş ve kaydedilmesi gerekiyor. Pencerenin değiştirilen içerik varsa, küçük siyah bir nokta, içinde görüntülenir **Kapat** pencere öğesi:
 
-[ ![](window-images/close01.png "Değiştirilen işaret içeren bir pencere")](window-images/close01.png)
+[![](window-images/close01.png "Değiştirilen işaret içeren bir pencere")](window-images/close01.png#lightbox)
 
 Kullanıcı pencereyi kapatmak veya çıkmak çalışırsa pencerenin içerikteki Mac varken kaydedilmemiş uygulama değişiklikler, sunması gerektiğini bir [iletişim kutusu](~/mac/user-interface/dialog.md) veya [kalıcı sayfası](~/mac/user-interface/dialog.md) ve değişiklikleri kaydedebilirler kullanıcıya izin ver ilk:
 
-[ ![](window-images/close02.png "Pencere kapatıldığında gösterildikten sayfası kaydetme")](window-images/close02.png)
+[![](window-images/close02.png "Pencere kapatıldığında gösterildikten sayfası kaydetme")](window-images/close02.png#lightbox)
 
 ### <a name="marking-a-window-as-modified"></a>Bir pencere değiştirilmiş olarak işaretleme
 
@@ -485,11 +485,11 @@ void NewDocument (NSObject sender) {
 
 Bu kodu bizim penceresi denetleyicisi yeni bir sürümünü oluşturur, yeni pencere yükler, ana ve anahtar penceresi kolaylaştırır ve başlık ayarlar. Biz uygulamamızı çalıştırmak ve seçerseniz şimdi **yeni** gelen **dosya** yeni bir düzenleyici penceresi açılır ve görüntülenen menü:
 
-[ ![](window-images/display04.png "Yeni bir adsız pencere eklendi")](window-images/display04.png)
+[![](window-images/display04.png "Yeni bir adsız pencere eklendi")](window-images/display04.png#lightbox)
 
 Biz açarsanız **Windows** menüsünde uygulama otomatik olarak izleme ve işleme bizim açık windows görebilirsiniz:
 
-[ ![](window-images/display05.png "Windows menüsü")](window-images/display05.png)
+[![](window-images/display05.png "Windows menüsü")](window-images/display05.png#lightbox)
 
 Xamarin.Mac uygulamasında Menülerle çalışma hakkında daha fazla bilgi için lütfen bkz bizim [Menülerle çalışma](~/mac/user-interface/menu.md) belgeleri.
 
@@ -559,7 +559,7 @@ Burada bir pencere boyutunu Xamarin.Mac uygulamanızı içinde değişiklikleri 
 
 Boyut değişiklikleri izlemek için önce Xcode'nın arabirimi Oluşturucu penceresi denetleyicisi için özel bir sınıf atadığınızdan emin olun. Örneğin, `MasterWindowController` aşağıdaki:
 
-[ ![](window-images/resize01.png "Kimlik denetçisi")](window-images/resize01.png)
+[![](window-images/resize01.png "Kimlik denetçisi")](window-images/resize01.png#lightbox)
 
 Ardından, özel pencere denetleyici sınıfı ve İzleyici Düzenle `DidResize` Canlı boyutu değişikliklerin bildirilmesi için denetleyicinin penceresinde olay. Örneğin:
 
@@ -643,11 +643,11 @@ public override void AwakeFromNib ()
 
 Biz de izleme `WillClose` penceresi ve durumunu denetleme olayda `DocumentEdited` özelliği. Eğer öyleyse `true` kullanıcı dosyasındaki değişiklikleri kaydedin vermek gerekir. Bizim uygulamayı çalıştırın ve bazı metin girin, nokta görüntülenir:
 
-[ ![](window-images/file01.png "Değiştirilen penceresi")](window-images/file01.png)
+[![](window-images/file01.png "Değiştirilen penceresi")](window-images/file01.png#lightbox)
 
 Biz pencereyi kapatmak çalışırsanız, size bir uyarı alırsınız:
 
-[ ![](window-images/file02.png "Kaydetme görüntüleme iletişim")](window-images/file02.png)
+[![](window-images/file02.png "Kaydetme görüntüleme iletişim")](window-images/file02.png#lightbox)
 
 Biz bir belge bir dosyadan yüklüyorsanız biz penceresinin başlık dosyanın ayarlayabilirsiniz kullanarak ad `window.SetTitleWithRepresentedFilename (Path.GetFileName(path));` yöntemi (o `path` açılmakta dosyasını temsil eden bir dizedir). Ayrıca, biz kullanarak dosya URL'sini ayarlayabilirsiniz `window.RepresentedUrl = url;` yöntemi.
 
@@ -690,11 +690,11 @@ void OpenDialog (NSObject sender)
 
 Şimdi biz uygulamamıza çalıştırırsanız seçin **Aç...**  gelen **dosya** bir metin dosyası menüsünde select **açmak** iletişim kutusu ve açın:
 
-[ ![](window-images/file03.png "Açık bir iletişim kutusu")](window-images/file03.png)
+[![](window-images/file03.png "Açık bir iletişim kutusu")](window-images/file03.png#lightbox)
 
 Dosya görüntülenir ve başlık dosya simge ile ayarlanır:
 
-[ ![](window-images/file04.png "Bir dosyanın içeriğini yüklendi")](window-images/file04.png)
+[![](window-images/file04.png "Bir dosyanın içeriğini yüklendi")](window-images/file04.png#lightbox)
 
 <a name="Adding_a_New_Window_to_a_Project" />
 
@@ -707,22 +707,22 @@ Yeni bir pencere eklemek için aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosyayı Xcode'nın arabirimi Oluşturucusu'nda düzenlemek için açın.
 2. Yeni bir sürükleyin **penceresi denetleyicisi** gelen **Kitaplığı** ve bırakın **tasarım yüzeyi**:
 
-    [ ![](window-images/new01.png "Yeni bir pencere denetleyicisi kitaplıkta seçme")](window-images/new01.png)
+    [![](window-images/new01.png "Yeni bir pencere denetleyicisi kitaplıkta seçme")](window-images/new01.png#lightbox)
 3. İçinde **kimlik denetçisi**, girin `PreferencesWindow` için **film şeridi kimliği**: 
 
-    [ ![](window-images/new02.png "Film şeridi kimliği ayarlama")](window-images/new02.png)
+    [![](window-images/new02.png "Film şeridi kimliği ayarlama")](window-images/new02.png#lightbox)
 5. Arabiriminizin tasarım: 
 
-    [ ![](window-images/new03.png "Kullanıcı arabirimini tasarlama")](window-images/new03.png)
+    [![](window-images/new03.png "Kullanıcı arabirimini tasarlama")](window-images/new03.png#lightbox)
 6. Uygulama menüsünü açın (`MacWindows`), select **tercihleri...** , Denetim tıklatın ve yeni pencere sürükleyin: 
 
-    [ ![](window-images/new05.png "Bir segue oluşturma")](window-images/new05.png)
+    [![](window-images/new05.png "Bir segue oluşturma")](window-images/new05.png#lightbox)
 7. Seçin **Göster** açılan menüsünden.
 6. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 Şu kodu çalıştırın ve seçerseniz **tercihleri...**  gelen **uygulama menüsü**, penceresi görüntülenir:
 
-[ ![](window-images/new04.png "Bir örnek Tercihler menüsü")](window-images/new04.png)
+[![](window-images/new04.png "Bir örnek Tercihler menüsü")](window-images/new04.png#lightbox)
 
 <a name="Working_with_Panels" />
 
@@ -742,7 +742,7 @@ Yalnızca diğer türleri oluşturmak ve Xamarin.Mac uygulamanızda çalışmak 
 
 İçinde **özniteliği denetçisi**, bölmeleri belirli aşağıdaki seçeneklere sahip olursunuz:
 
-[ ![](window-images/panel03.png "Öznitelik denetçisi")](window-images/panel03.png)
+[![](window-images/panel03.png "Öznitelik denetçisi")](window-images/panel03.png#lightbox)
 
 - **Stil** -panelinden stilini ayarlamak izin: normal paneli (standart bir pencerede görülüyor), yardımcı programı paneli (daha küçük bir başlık çubuğu varsa), HUD paneli (saydam olduğu ve başlık çubuğu arka planda bir parçasıdır).
 - **Olmayan etkinleştirme** -içinde belirler paneli anahtar pencere olur.
@@ -754,20 +754,20 @@ Yeni bir Panel eklemek için aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçin **Ekle** > **yeni dosya...** .
 2. Yeni dosya iletişim kutusunda seçin **Xamarin.Mac** > **Cocoa penceresi denetleyicisiyle**:
 
-    [ ![](window-images/panels00.png "Yeni bir pencere denetleyicisi ekleme")](window-images/panels00.png)
+    [![](window-images/panels00.png "Yeni bir pencere denetleyicisi ekleme")](window-images/panels00.png#lightbox)
 3. Girin `DocumentPanel` için **adı** tıklatıp **yeni** düğmesi.
 4. Çift `DocumentPanel.xib` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın: 
 
-    [ ![](window-images/new02.png "Pannel düzenleme")](window-images/new02.png)
+    [![](window-images/new02.png "Pannel düzenleme")](window-images/new02.png#lightbox)
 5. Varolan pencere silin ve bir panelinden sürükleyin **kitaplığı denetçisi** içinde **arabirimi Düzenleyicisi**: 
 
-    [ ![](window-images/panels01.png "Varolan pencere silme")](window-images/panels01.png)
+    [![](window-images/panels01.png "Varolan pencere silme")](window-images/panels01.png#lightbox)
 6. Bölmenin en fazla kanca **dosyanın sahibi*-**penceresi*- **çıkışı**: 
 
-    [ ![](window-images/panels02.png "Kablo paneli sürükleme")](window-images/panels02.png)
+    [![](window-images/panels02.png "Kablo paneli sürükleme")](window-images/panels02.png#lightbox)
 7. Geçiş **kimlik denetçisi** ve bölmenin sınıfı kümesine `DocumentPanel`: 
 
-    [ ![](window-images/panels03.png "Ayar bölmenin sınıfı")](window-images/panels03.png)
+    [![](window-images/panels03.png "Ayar bölmenin sınıfı")](window-images/panels03.png#lightbox)
 6. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 7. Düzen `DocumentPanel.cs` dosya ve sınıf tanımını şu şekilde değiştirin: 
 
@@ -788,7 +788,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Biz uygulamamızı çalıştırmak, bölmenin görüntülenir:
 
-[ ![](window-images/panels04.png "Çalışan bir uygulamanın panelinde")](window-images/panels04.png)
+[![](window-images/panels04.png "Çalışan bir uygulamanın panelinde")](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
 > Panel Windows Apple'nın kullanım ve ile değiştirilmelidir **denetçisi arabirimleri**. Oluşturma tam bir örnek için bir **denetçisi** Xamarin.Mac uygulamada, lütfen bkz. bizim [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) örnek uygulama.
@@ -803,7 +803,7 @@ Bu makalede, Windows ve paneller Xamarin.Mac uygulamada çalışma ayrıntılı 
 
 - [MacWindows (örnek)](https://developer.xamarin.com/samples/mac/MacWindows/)
 - [MacInspector (örnek)](https://developer.xamarin.com/samples/mac/MacInspector/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Menülerle çalışma](~/mac/user-interface/menu.md)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Windows giriş](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

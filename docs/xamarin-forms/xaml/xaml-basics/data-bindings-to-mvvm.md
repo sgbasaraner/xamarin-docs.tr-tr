@@ -3,16 +3,16 @@ title: "Bölüm 5. Veri bağlamaları MVVM için"
 description: "Model-View-ViewModel (MVVM) tasarım örüntüsü XAML ile göz önünde bulunmuştur. Üç yazılım katmanlar arasında ayrım düzeni zorlar — Görünüm; adlı XAML kullanıcı arabirimi Model adı verilen temel alınan verileri; ve görünüm modeli arasında bir aracı ViewModel çağrılır. Genellikle görünümü ve ViewModel XAML dosyasında tanımlanan veri bağlamaları üzerinden bağlanır. Görünüm için Bindingparameters'te ViewModel, genellikle bir örneğidir."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: b16aa2456cdae7a08f8f9ee8adbc32c124e78e18
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 207bf7649d588f973b400cb452d9d8b246955cdb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Bölüm 5. Veri bağlamaları MVVM için
 
@@ -59,7 +59,7 @@ Program kullanabilir `x:Static` geçerli tarih ve saat statik elde etmek için `
 
 Elbette, tarih ve saat zaman sayfa ilk derlendikten sonra kümesi ve hiçbir zaman değişiklik olduğunu büyük sorun şudur:
 
-[ ![](data-bindings-to-mvvm-images/oneshotdatetime.png "Tarih ve saat görüntüleme görünümü")](data-bindings-to-mvvm-images/oneshotdatetime-large.png "tarih ve saat görüntüleme görünümü")
+[![](data-bindings-to-mvvm-images/oneshotdatetime.png "Tarih ve saat görüntüleme görünümü")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "tarih ve saat görüntüleme görünümü")
 
 XAML dosyası her zaman geçerli saati gösteren bir saat görüntüleyebilir ancak yardımcı olması için bazı kod gerekiyor. MVVM, modeli ve ViewModel açısından düşünmeye olduğunda tamamen kod içinde yazılmış sınıfları. Görünüm genellikle veri bağlamaları ViewModel tanımlanan özellikler başvuruda bulunan bir XAML dosyasıdır.
 
@@ -142,7 +142,7 @@ Bildirim nasıl `ClockViewModel` ayarlanır `BindingContext` , `Label` özellik 
 
 `Binding` Biçimlendirme uzantısı `Text` özelliği `Label` biçimleri `DateTime` özelliği. Görüntü şöyledir:
 
-[ ![](data-bindings-to-mvvm-images/clock.png "Tarih ve saat ViewModel aracılığıyla görüntüleme görünümü")](data-bindings-to-mvvm-images/clock-large.png "tarih ve saat ViewModel aracılığıyla görüntüleme görünümü")
+[![](data-bindings-to-mvvm-images/clock.png "Tarih ve saat ViewModel aracılığıyla görüntüleme görünümü")](data-bindings-to-mvvm-images/clock-large.png#lightbox "tarih ve saat ViewModel aracılığıyla görüntüleme görünümü")
 
 Tek tek özelliklerine erişmek mümkündür `DateTime` özellikleri nokta ile ayırarak tarafından ViewModel özelliği:
 
@@ -292,7 +292,7 @@ Aşağıdaki XAML dosyasını içeren bir `BoxView` , `Color` özelliği bağlı
 
 Her bağlama `Label` varsayılan `OneWay`. Değerini görüntülemek yalnızca gerekir. Ancak her bağlama `Slider` olan `TwoWay`. Böylece `Slider` ViewModel başlatılacak. Dikkat `Color` özelliği ayarlanmış `Blue` ViewModel örneği olduğunda. Ancak bir değişiklik `Slider` yeni bir renk hesaplar ViewModel içinde özelliği için yeni bir değer ayarlamak de gerekir.
 
-[ ![](data-bindings-to-mvvm-images/hslcolorscroll.png "İki yönlü veri bağlamalar kullanılarak MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png "iki yönlü veri bağlamalar kullanılarak MVVM")
+[![](data-bindings-to-mvvm-images/hslcolorscroll.png "İki yönlü veri bağlamalar kullanılarak MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "iki yönlü veri bağlamalar kullanılarak MVVM")
 
 ## <a name="commanding-with-viewmodels"></a>ViewModels ile komut verme
 
@@ -553,7 +553,7 @@ Aşağıdaki tuş bunu olması gerektiği gibi görsel olarak gelişmiş bir dos
 
 `Command` Özelliği ilk `Button` bu görünen biçimlendirme bağlı `DeleteCharCommand`; rest bağlı `AddCharCommand` ile bir `CommandParameter` yani aynı görünür karakter `Button` yüz. Eylem program şöyledir:
 
-[ ![](data-bindings-to-mvvm-images/keypad.png "MVVM ve komutlarını kullanarak hesaplayıcı")](data-bindings-to-mvvm-images/keypad-large.png "MVVM ve komutlarını kullanarak hesaplayıcısı")
+[![](data-bindings-to-mvvm-images/keypad.png "MVVM ve komutlarını kullanarak hesaplayıcı")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "MVVM ve komutlarını kullanarak hesaplayıcısı")
 
 ### <a name="invoking-asynchronous-methods"></a>Zaman uyumsuz yöntemleri çağırma
 
@@ -678,7 +678,7 @@ XAML dosyası için `MainPage` tanımlayan bir `ListBox` , `ItemsSource` özelli
 
 Sayfaları kaydırılabilir bir listede gösterilir:
 
-[ ![](data-bindings-to-mvvm-images/mainpage.png "Sayfaları kaydırılabilir listesi")](data-bindings-to-mvvm-images/mainpage-large.png "sayfaları kaydırılabilir listesi")
+[![](data-bindings-to-mvvm-images/mainpage.png "Sayfaları kaydırılabilir listesi")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "sayfaları kaydırılabilir listesi")
 
 Kullanıcı bir öğeyi seçtiğinde arka plan kod dosyasına işleyici tetiklenir. İşleyici kümeleri `SelectedItem` özelliği `ListBox` geri `null` ve ardından seçili sayfa oluşturur ve ona götürür:
 
@@ -696,6 +696,12 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 }
 ```
 
+## <a name="video"></a>Video
+
+> [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
+
+**Xamarin 2016 gelişmesi: Xamarin.Forms ve Prizma ile basit yapılan MVVM**
+
 ## <a name="summary"></a>Özet
 
 XAML Xamarin.Forms uygulamalar, özellikle veri bağlaması olduğunda kullanıcı arabirimlerini tanımlamaya yönelik güçlü bir araçtır ve MVVM kullanılır. Bir kullanıcı arabirimi kodu tüm arka plan desteğiyle temiz, zarif ve potansiyel olarak oluşturulabildiğinden gösterimini sonucudur.
@@ -704,7 +710,7 @@ XAML Xamarin.Forms uygulamalar, özellikle veri bağlaması olduğunda kullanıc
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
-- [1. bölüm. XAML ile çalışmaya başlama](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [2. bölüm. Temel XAML sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-- [Bölüm 3. XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Bölüm 4. Veri bağlama temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [Bölüm 1. XAML Kullanmaya Başlarken](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [Bölüm 2. Temel XAML Sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [Bölüm 3. XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [Bölüm 4. Temel Veri Bağlama Bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

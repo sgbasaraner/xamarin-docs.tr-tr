@@ -4,14 +4,15 @@ description: "Ölçeklenebilir vektör grafikleri biçiminde metin dizelerini ku
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: feb4c5f4c7e7ad3fc5f762786001be9aa57ae718
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cc21f789d96f9375655766916f80c6f3f524c29d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="svg-path-data"></a>SVG yol verileri
 
@@ -216,7 +217,7 @@ public class PathDataHelloPage : ContentPage
 
 Yolun yatay modunda görüntülendiğinde daha makul arar tuvale doldurur:
 
-[![](path-data-images/pathdatahello-small.png "Üçlü sayfasının ekran görüntüsü yolu veri Hello")](path-data-images/pathdatahello-large.png "sayfasının yolu veri Hello Üçlü ekran görüntüsü")
+[![](path-data-images/pathdatahello-small.png "Üçlü sayfasının ekran görüntüsü yolu veri Hello")](path-data-images/pathdatahello-large.png#lightbox "sayfasının yolu veri Hello Üçlü ekran görüntüsü")
 
 **Yolu veri kat** sayfa benzerdir. Yol ve boyama nesneleri her ikisi de alanlar olarak tanımlanan [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) sınıfı:
 
@@ -287,7 +288,7 @@ public class PathDataCatPage : ContentPage
 
 Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
 
-[![](path-data-images/pathdatacat-small.png "Üçlü sayfasının ekran görüntüsü yolu veri kat")](path-data-images/pathdatacat-large.png "Üçlü sayfasının ekran görüntüsü yolu veri kat")
+[![](path-data-images/pathdatacat-small.png "Üçlü sayfasının ekran görüntüsü yolu veri kat")](path-data-images/pathdatacat-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yolu veri kat")
 
 Normalde, bir `SKPath` nesnesi, bir alan olarak tanımlanır, yolun dağılımlarını oluşturucu veya başka bir yöntem içinde tanımlanması gerekir. Ancak, SVG yol verileri kullanırken yolu tamamen alan tanımında belirtilebilir gördünüz.
 
@@ -424,7 +425,7 @@ public class PrettyAnalogClockPage : ContentPage
 
 Ancak özel bir şey ikinci el ile gerçekleştirilir. Saatin güncelleştirildiğinden her 16 milisaniye `Millisecond` özelliği `DateTime` değer büyük olasılıkla bir tarama ayrık atlar içinde taşınan bir yerine ikinci elle animasyon için kullanılabilir ikinci ikinci gelen. Ancak bu kodu kesintisiz olması için taşıma izin vermiyor. Bunun yerine, Xamarin.Forms kullanan [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) ve [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) animasyon işlevleri farklı türde bir taşıma için kolaylaştırma. Bu hareket hızı işlevlerinin bir jerkier şekilde & #x 2014 taşımak saniyeyi neden; geri biraz önce onu taşır ve ardından biraz efekt hedefine ne yazık ki bu aşırı çekim statik bu ekran görüntülerinde çoğaltılamayan çekme:
 
-[![](path-data-images/prettyanalogclock-small.png "Üçlü sayfasının ekran görüntüsü oldukça Analog Saat")](path-data-images/prettyanalogclock-large.png "Üçlü sayfasının ekran görüntüsü oldukça Analog Saat")
+[![](path-data-images/prettyanalogclock-small.png "Üçlü sayfasının ekran görüntüsü oldukça Analog Saat")](path-data-images/prettyanalogclock-large.png#lightbox "Üçlü sayfasının ekran görüntüsü oldukça Analog Saat")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

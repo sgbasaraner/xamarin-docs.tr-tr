@@ -8,17 +8,17 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 4af76a37e5fd42ff1d6344f60642425c73e9d733
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f5383465f7bc5c4529eebefca02718c83a653e9f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-opentk"></a>OpenTK giriş
 
 OpenTK (açık araç takımı), OpenGL ve OpenCL OpenAL ile çalışmayı kolaylaştırır bir Gelişmiş, alt düzey C# kitaplıktır. OpenTK kullanılabilir oyunlar, bilimsel uygulamaları veya diğer 3B grafik gerektiren projeleri, ses veya hesaplama işlevselliği için. Bu makalede OpenTK Xamarin.Mac kullanmayla kısa bir giriş sağlar.
 
-[ ![](opentk-images/intro01.png "Bir örnek uygulamayı çalıştırma")](opentk-images/intro01.png)
+[![](opentk-images/intro01.png "Bir örnek uygulamayı çalıştırma")](opentk-images/intro01.png#lightbox)
 
 Bu makalede, biz OpenTK temelleri Xamarin.Mac uygulamasında ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -54,11 +54,11 @@ OpenTK bir Xamarin.Mac uygulamasını kullanarak bir hızlı giriş, size bir oy
 
 Mac için Visual Studio'yu açın ve yeni bir Xamarin.Mac çözümü oluşturun. Seçin **Mac** > **uygulama** > **genel** > **Cocoa uygulama**:
 
-[ ![](opentk-images/sample01.png "Yeni bir Cocoa uygulama ekleme")](opentk-images/sample01.png)
+[![](opentk-images/sample01.png "Yeni bir Cocoa uygulama ekleme")](opentk-images/sample01.png#lightbox)
 
 Girin `MacOpenTK` için **proje adı**:
 
-[ ![](opentk-images/sample02.png "Proje adı ayarlama")](opentk-images/sample02.png)
+[![](opentk-images/sample02.png "Proje adı ayarlama")](opentk-images/sample02.png#lightbox)
 
 Tıklatın **oluşturma** yeni projeyi derlemek için düğmesi.
 
@@ -70,7 +70,7 @@ Xamarin.Mac uygulamada açık j kullanmadan önce OpenTK derlemesine başvuru ek
 
 Tarafından işaretleyin `OpenTK` tıklatıp **Tamam** düğmesi:
 
-[ ![](opentk-images/sample03.png "Proje başvurularını düzenleme")](opentk-images/sample03.png)
+[![](opentk-images/sample03.png "Proje başvurularını düzenleme")](opentk-images/sample03.png#lightbox)
 
 <a name="Using_OpenTK" />
 
@@ -296,7 +296,7 @@ Game.Run(60.0);
 
 Şimdi bizim uygulamayı çalıştırın ve çıktıyı görürsünüz:
 
-[ ![](opentk-images/intro01.png "Uygulamaları çıktı örneği")](opentk-images/intro01.png)
+[![](opentk-images/intro01.png "Uygulamaları çıktı örneği")](opentk-images/intro01.png#lightbox)
 
 Biz bizim pencereyi yeniden boyutlandırmak, oyun görünümü de bulunur ve üçgen yeniden boyutlandırılabilir ve de gerçek zamanlı güncelleştirildi.
 
@@ -326,7 +326,7 @@ Bu makalede Xamarin.Mac uygulamada OpenTK ile çalışan bir Hızlı Bakış sü
 
 - [MacOpenTK (örnek)](https://developer.xamarin.com/samples/mac/MacOpenTK/)
 - [MonoMacGameView (örnek)](https://developer.xamarin.com/samples/mac/MonoMacGameWindow/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Windows ile birlikte çalışma](~/mac/user-interface/window.md)
 - [Açık Araç Seti](http://www.opentk.com)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

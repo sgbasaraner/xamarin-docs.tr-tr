@@ -3,14 +3,15 @@ title: "Bölüm 17 özeti. Kılavuz katılımınıza"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c0a184b80b57980c7ae00572517ad52a18b5755c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 09f63dd418ea1fb523c028edb02c28c22bfdccd1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Bölüm 17 özeti. Kılavuz katılımınıza
 
@@ -90,7 +91,7 @@ XAML'de bu değerleri ayarlamak için aşağıdaki öznitelikler kullanın:
 
 [ **KeypadGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/KeypadGrid) kullanan örnek bir `Grid` bir tuş görüntülemek için:
 
-[![Tuş kılavuzunun Üçlü ekran](images/ch17fg12-small.png "tuş kılavuz")](images/ch17fg12-large.png "tuş kılavuz")
+[![Tuş kılavuzunun Üçlü ekran](images/ch17fg12-small.png "tuş kılavuz")](images/ch17fg12-large.png#lightbox "tuş kılavuz")
 
 ### <a name="responding-to-orientation-changes"></a>Yönlendirme değişikliklere yanıt verme
 

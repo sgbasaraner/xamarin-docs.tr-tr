@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 42ef3e6c82763831b5114f3de7603bba8f59eac6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c582e0306bdc69570e3f8e8d35c7fa15b30523da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-animations"></a>Özel Animasyon
 
@@ -54,7 +54,7 @@ Unutmayın [ `Commit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.A
 Genel etki artırır animasyonun oluşturmaktır [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) özelliği bir [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) 1'den 2 ' den 2 kullanarak saniye (2000 milisaniye) [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) işlevi kolaylaştırma. Animasyon tamamlandıktan, her zaman kendi `Scale` özelliği 1 olarak sıfırlar ve animasyonu yineler.
 
 > [!NOTE]
-> **Not**: diğer bağımsız olarak çalıştırılan eşzamanlı bir animasyon oluşturarak olacak oluşturulan bir `Animation` nesne her animasyonun ve ardından çağırma `Commit` her animasyon yöntemi.
+> Diğer bağımsız olarak çalıştırılan eşzamanlı bir animasyon oluşturarak olacak oluşturulan bir `Animation` nesne her animasyonun ve ardından çağırma `Commit` her animasyon yöntemi.
 
 <a name="child" />
 

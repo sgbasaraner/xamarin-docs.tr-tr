@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 83e01bba82713b55a0a69858c2a83aa243f71588
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 70703797792a2f667a2eb20cbc45d1736e5e6b9d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="web-views"></a>Web görünümleri
 
@@ -40,7 +40,7 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 
 Bu, aşağıdaki web görünümü oluşturur:
 
-[ ![](uiwebview-images/webview.png "ScalesPagesToFit etkisi")](uiwebview-images/webview.png)
+[![](uiwebview-images/webview.png "ScalesPagesToFit etkisi")](uiwebview-images/webview.png#lightbox)
 
 Kullanma hakkında daha fazla bilgi için `UIWebView`, aşağıdaki tarif bakın:
 
@@ -68,7 +68,7 @@ Aşağıdaki kodu başlatmak için kullanılan bir `WKWebView` Xamarin.iOS uygul
 
 Bu, aşağıdaki web görünümü oluşturur:
 
-[ ![](uiwebview-images/wkwebview.png "ScalesPagesToFit olmayan bir örnek web görünümü")](uiwebview-images/wkwebview.png)
+[![](uiwebview-images/wkwebview.png "ScalesPagesToFit olmayan bir örnek web görünümü")](uiwebview-images/wkwebview.png#lightbox)
 
 Bu dikkate almak önemlidir `WKWebView` WebKit ad alanında olduğundan bu using yönergesi sınıfının üstüne eklemeniz gerekir.
 
@@ -98,7 +98,7 @@ PresentViewController(sfViewController, true, null);
 
 Bu, aşağıdaki web görünümü oluşturur:
 
-[ ![](uiwebview-images/sfsafariviewcontroller.png "Bir örnek web görünümü SFSafariViewController ile")](uiwebview-images/sfsafariviewcontroller.png)
+[![](uiwebview-images/sfsafariviewcontroller.png "Bir örnek web görünümü SFSafariViewController ile")](uiwebview-images/sfsafariviewcontroller.png#lightbox)
 
 ## <a name="safari"></a>Safari
 
@@ -113,7 +113,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 Bu, aşağıdaki web görünümü oluşturur:
 
-[ ![](uiwebview-images/safari.png "Safari ile sunulan bir web sayfası")](uiwebview-images/safari.png)
+[![](uiwebview-images/safari.png "Safari ile sunulan bir web sayfası")](uiwebview-images/safari.png#lightbox)
 
 Kullanıcılar uygulamanıza Safari çıktığınızda gezinme genellikle her zaman kaçınılmalıdır. Kullanıcıların çoğunun, uygulamanızın dışında Gezinti beklememeniz uygulamanızı çıktığınızda giderseniz, kullanıcıların hiçbir zaman, aslında katılım sonlandırılması döndürebilir şekilde.
 

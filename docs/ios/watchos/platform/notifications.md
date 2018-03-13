@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f1d968dcee0cb9b6cd0cee8fa60be4f4dbb2833
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 600d651eae1f470f17511afaf9bc86c80ffc1a75
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="notifications"></a>Bildirimler
 
@@ -99,17 +99,17 @@ Watch'unuzda bildirimi görünür emin olmak için (bir kez güç düğmesine ba
 Mac için Visual Studio, ek seçenekler görüntülenir, bir izleme uzantısı olarak ayarlandığında **başlangıç projesi**.
 İzleme uzantısı projeye sağ tıklayın ve seçin **çalıştırmak ile > özel parametreler...** :
     
-[![](notifications-images/runwith-customparams-sml.png "Özel özellikler ile çalıştırma")](notifications-images/runwith-customparams.png)
+[![](notifications-images/runwith-customparams-sml.png "Özel özellikler ile çalıştırma")](notifications-images/runwith-customparams.png#lightbox)
     
 Bu açılır **yürütme bağımsız değişkenleri** içeren pencere bir **WatchKit** sekmesi. Seçin **bildirim** ve bir JSON yükü sağlamak tuşuna basarak **yürütme** benzeticisinde izleme uygulamasını başlatmak için:
     
-[![](notifications-images/runwith-execargs-sml.png "Bildirim yükü varsayılan seçin")](notifications-images/runwith-execargs.png)
+[![](notifications-images/runwith-execargs-sml.png "Bildirim yükü varsayılan seçin")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Sınama bildirim yükü Visual Studio sağ düzenlemek için izleme uzantısı ayarlamak için **proje özellikleri**. Git **hata ayıklama** bölüm ve bir bildirim JSON dosyası (bunu otomatik olarak listeler projeye dahil tüm JSON dosyaları) listeden seçin.
     
-[![](notifications-images/runwith-execargs-sml-vs.png "Bildirim JSON dosyasını seçin")](notifications-images/runwith-execargs-vs.png)
+[![](notifications-images/runwith-execargs-sml-vs.png "Bildirim JSON dosyasını seçin")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 İzleme uzantısı olduğunda **başlangıç projesi**, aşağıda gösterildiği gibi Visual Studio ek seçenekler görüntülenir. Aşağıdakilerden birini seçin **bildirim** izleme uygulamayı başlatmak için seçenekleri **bildirim** modu (Özellikleri penceresinde seçili JSON dosyası kullanarak):
     

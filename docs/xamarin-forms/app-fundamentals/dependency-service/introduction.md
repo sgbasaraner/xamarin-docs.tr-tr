@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: e599c56f732f918d2a9c82255bc01182651d506c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 74b22f31fabf70885eca732ef021232124df71bb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService giriş
 
@@ -129,13 +129,13 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
 
 [UsingDependencyService çözüm örnek](https://developer.xamarin.com/samples/UsingDependencyService/) iOS ve Android için aşağıda gösterilen, yukarıda özetlenen kodda değişiklik vurgulanır.
 
- [ ![iOS ve Android çözümü](introduction-images/solution-sml.png "DependencyService örnek çözümü yapısı")](introduction-images/solution.png "DependencyService örnek çözümü yapısı")
+ [![iOS ve Android çözümü](introduction-images/solution-sml.png "DependencyService örnek çözümü yapısı")](introduction-images/solution.png#lightbox "DependencyService örnek çözümü yapısı")
 
 > [!NOTE]
-> **Not:** , **gerekir** bir platform projelerdeki belirtin. Arabirim uygulaması kayıtlı değilse, sonra `DependencyService` çözümleyemez olacaktır `Get<T>()` çalışma zamanında yöntemi.
+> **Gerekir** bir platform projelerdeki belirtin. Arabirim uygulaması kayıtlı değilse, sonra `DependencyService` çözümleyemez olacaktır `Get<T>()` çalışma zamanında yöntemi.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [DependencyServiceSample](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
-- [Xamarin.Forms örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms Örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)

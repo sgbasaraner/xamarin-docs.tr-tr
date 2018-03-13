@@ -8,19 +8,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: b7b5093f9a564c0711ddc8a711f9b609d44e7dad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a750167cb9e6bde3a4a9abe11c5386497f9a12ae
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms performans
 
 _Xamarin.Forms uygulamaların performansını artırmak için birçok tekniği vardır. Topluca bu teknikler bir CPU ve bir uygulama tarafından kullanılan bellek miktarına tarafından gerçekleştirilen çalışma miktarını önemli ölçüde azaltabilir. Bu makalede ve bu teknikler anlatılmaktadır._
 
-[ ![](performance-images/evolve-jason-perf-sml.png "Xamarin.Forms ile uygulama performansı en iyi duruma getirme")](https://evolve.xamarin.com/session/56e205b0bad314273ca4d817)
+> [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]
 
-[2016 gelişmesi: Xamarin.Forms ile uygulama performansı en iyi duruma getirme](https://evolve.xamarin.com/session/56e205b0bad314273ca4d817)
+**2016 gelişmesi: Xamarin.Forms ile uygulama performansı en iyi duruma getirme**
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -327,8 +327,8 @@ Bu makalede açıklanan ve teknikleri Xamarin.Forms uygulamaların performansın
 
 - [Platformlar arası performansı](~/cross-platform/deploy-test/memory-perf-best-practices.md)
 - [ListView performansı](~/xamarin-forms/user-interface/listview/performance.md)
-- [Hızlı Oluşturucu](~/xamarin-forms/internals/fast-renderers.md)
-- [Düzenini sıkıştırma](~/xamarin-forms/user-interface/layouts/layout-compression.md)
+- [Hızlı Oluşturucular](~/xamarin-forms/internals/fast-renderers.md)
+- [Düzen Sıkıştırma](~/xamarin-forms/user-interface/layouts/layout-compression.md)
 - [Xamarin.Forms resim Boyutlandır örneği](https://developer.xamarin.com/samples/xamarin-forms/XamFormsImageResize/)
 - [XamlCompilation](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilation/)
 - [XamlCompilationOptions](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationOptions/)

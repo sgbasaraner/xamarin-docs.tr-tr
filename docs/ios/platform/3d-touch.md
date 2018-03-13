@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 66cc67b38d70992fe815732407317fab3dc52528
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-3d-touch"></a>3B dokunmatik giriş
 
 _Bu makale yeni kullanarak kapsamaktadır iPhone 6s ve iPhone 6s Plus 3B Touch uygulamanızda hareketleri._
 
-[ ![](3d-touch-images/info01.png "3B dokunma örnekleri etkin uygulamalar")](3d-touch-images/info01.png)
+[![](3d-touch-images/info01.png "3B dokunma örnekleri etkin uygulamalar")](3d-touch-images/info01.png#lightbox)
 
 Bu makalede sağlar ve Xamarin.iOS uygulamalarınızı üzerinde yeni iPhone 6s ve iPhone 6s çalıştıran baskısı hassas hareketleri eklemek için yeni 3B Touch API'lerini kullanarak giriş cihazları artı.
 
@@ -29,7 +29,7 @@ Bu makalede sağlar ve Xamarin.iOS uygulamalarınızı üzerinde yeni iPhone 6s 
 - [Baskı duyarlılık](#Pressure-Sensitivity) - uygulamalar şimdi ölçmek nasıl sabit veya ışık kullanıcı bu bilgileri ekran ve Al avantajlarından temas.
   Örneğin, bir boyama uygulama kalın veya kullanıcının ekran nasıl sabit temas thinner göre çizgi yapabilir.
 - [Gözat ve Pop](#Peek-and-Pop) -uygulamanız, geçerli bağlam dışında gitmek zorunda kalmadan kendi verilerle etkileşimli kullanıcı artık olanak tanır. Ekran ekranı sabit basarak bunlar (bir ileti Önizleme gibi) ilginizi öğesindeki iletiye göz atabilirsiniz. Daha zor basarak bunlar öğesine pop.
-- [Hızlı Eylemler](#Quick-Action) -düşünüyorsanız, hızlı gibi eylemleri, kullanıcı bir masaüstü uygulamasının bir öğeyi tıklattığında açılan bağlamsal menüleri.
+- [Hızlı Eylemler](#Quick-Actions) -düşünüyorsanız, hızlı gibi eylemleri, kullanıcı bir masaüstü uygulamasının bir öğeyi tıklattığında açılan bağlamsal menüleri.
   Hızlı eylemleri kullanarak, kısayollar işlevleri için uygulamanızda doğrudan giriş ekranında uygulama simgesinden ekleyebilirsiniz.
 - [3B dokunma Benzeticisinde sınama](#Testing-3D-Touch-in-the-Simulator) -doğru Mac donanım ile iOS Simulator'da 3B dokunma etkinleştirilmiş uygulamaları test edebilirsiniz.
 
@@ -39,7 +39,7 @@ Bu makalede sağlar ve Xamarin.iOS uygulamalarınızı üzerinde yeni iPhone 6s 
 
 Yeni özelliklerini kullanarak, yukarıda belirtildiği gibi [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/) sınıf kullanıcı iOS cihazın ekranına uygulama baskısı miktarını ölçmek ve kullanıcı arabiriminde bu bilgileri kullanın. Örneğin, bir fırça vuruş daha saydam veya donuk baskısı miktarına göre yapılıyor.
 
-[ ![](3d-touch-images/pressure01.png "Olarak daha saydam veya donuk çizilir fırça vuruş baskısı miktarına göre")](3d-touch-images/pressure01.png)
+[![](3d-touch-images/pressure01.png "Olarak daha saydam veya donuk çizilir fırça vuruş baskısı miktarına göre")](3d-touch-images/pressure01.png#lightbox)
 
 3B dokunma sonucu olarak, uygulamanızı iOS 9 (veya daha büyük) çalışıyor ve iOS cihazı destekleyen 3B dokunarak özellikli baskısı değişiklikleri neden olur `TouchesMoved` çıkarılmasına olay.
 
@@ -80,7 +80,7 @@ Daha fazla bilgi için lütfen Apple'nın bkz [TouchCanvas: UITouch etkili ve ve
 
 Uygulamanızı bir tablo iletilerin görüntüleme, örneğin, kullanıcı içeriği bir katmana görünümünde önizleme için bir öğe üzerinde sabit basabilirsiniz (hangi Apple olarak başvurduğu bir *Peek*).
 
-[ ![](3d-touch-images/peekandpop01.png "İçerik adresindeki gözatma örneği")](3d-touch-images/peekandpop01.png)
+[![](3d-touch-images/peekandpop01.png "İçerik adresindeki gözatma örneği")](3d-touch-images/peekandpop01.png#lightbox)
 
 Kullanıcı daha zor basarsa normal ileti görünümü girer (hangi olarak adlandırılır *Pop*-ping görünümüne).
 
@@ -208,9 +208,8 @@ Daha fazla bilgi için lütfen bkz bizim [iOS 9 ApplicationShortcuts örnek](htt
 
 Yukarıda belirtildiği gibi bir kullanıcı bir masaüstü uygulamasının bir öğeyi tıklattığında açılan bağlamsal menüler gibi hızlı eylemlerini düşünebilirsiniz. Hızlı Eylemler en yaygın işlevler veya uygulamanız özelliklerini kısayollar sağlamak için kullanmalısınız.
 
-[ ![](3d-touch-images/quickactions01.png "Hızlı Eylemler menüsü örneği")](3d-touch-images/quickactions01.png)
+[![](3d-touch-images/quickactions01.png "Hızlı Eylemler menüsü örneği")](3d-touch-images/quickactions01.png#lightbox)
 
-<a name="Defining-Static-Quick-Actions" />
 
 ### <a name="defining-static-quick-actions"></a>Statik hızlı eylemleri tanımlama
 
@@ -287,7 +286,6 @@ Burada biz iki statik hızlı eylem öğeleri aşağıdaki anahtarları tanımla
 
 
 
-<a name="Identifying-Quick-Action-Items" />
 
 ### <a name="identifying-quick-action-items"></a>Hızlı eylem öğelerini tanımlama
 
@@ -389,7 +387,6 @@ Ardından, biz geçersiz kılma `OnActivated` yöntemi ve Hızlı Başlat öğes
 
 Son olarak, uygulamanızı zaten çalışıyorsa, `PerformActionForShortcutItem` yöntemi geçersiz kılmak ve çağırmak ihtiyacımız şekilde hızlı eylem öğesini işlemek için çağrılabilir bizim `HandleShortcutItem` yöntemi de burada.
 
-<a name="Creating-Dynamic-Quick-Action-Items" />
 
 ### <a name="creating-dynamic-quick-action-items"></a>Dinamik hızlı eylem öğeleri oluşturma
 
@@ -442,7 +439,7 @@ Daha fazla bilgi için lütfen bizim [iOS 9 ViewControllerPreview örnek](https:
 
 Bu işlevselliği etkinleştirmek için herhangi bir uygulama 3B Touch destekleyen benzetimli iPhone donanım çalıştırın (iPhone 6s ve büyük). Ardından, **donanım** iOS simülatörü ve etkinleştir menüde **3B dokunma için kullanım izleme paneli zorla** menü öğesi:
 
-[ ![](3d-touch-images/simulator01.png "İOS Simulator'da donanım menüsünü seçin ve kullanım izleme paneli zorla 3B dokunma menü öğesi için etkinleştirme")](3d-touch-images/simulator01.png)
+[![](3d-touch-images/simulator01.png "İOS Simulator'da donanım menüsünü seçin ve kullanım izleme paneli zorla 3B dokunma menü öğesi için etkinleştirme")](3d-touch-images/simulator01.png#lightbox)
 
 Bu özellik active, gerçek iPhone donanımda gibi 3B dokunma etkinleştirmek için Mac'ın izleme paneli üzerinde daha zor basabilirsiniz.
 

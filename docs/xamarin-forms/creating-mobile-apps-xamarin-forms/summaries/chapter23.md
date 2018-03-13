@@ -3,14 +3,15 @@ title: "Bölüm 23 özeti. Tetikleyiciler ve davranışları"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 72158cac683e46a37d2cbd537cdfd72bea78a336
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9a53cddcf216efd2bb86c838e280d599ff26c191
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Bölüm 23 özeti. Tetikleyiciler ve davranışları
 
@@ -99,7 +100,7 @@ Kullanarak eylemleri de çağırabileceği bir `Trigger` (olarak distinguished g
 
 [ **GenderColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/GenderColors) örneği gerektirir [ **SchoolOfFineArt** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt) kitaplığı ve kümelerini mavi Öğrenciler adlarını renkleri veya Pembe temel alarak `Sex` özelliği:
 
-[![Üçlü ekran görüntüsü cinsiyetiniz renkleri](images/ch23fg04-small.png "cinsiyetiniz renkleri")](images/ch23fg04-large.png "cinsiyetiniz renkleri")
+[![Üçlü ekran görüntüsü cinsiyetiniz renkleri](images/ch23fg04-small.png "cinsiyetiniz renkleri")](images/ch23fg04-large.png#lightbox "cinsiyetiniz renkleri")
 
 [ **ButtonEnabler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonEnabler) örnek kümeleri `IsEnabled` özelliği bir `Entry` için `False` varsa `Length` özelliği `Text` özelliği`Entry`0'a eşit. Dikkat `Text` özelliği, boş bir dize olarak başlatılır; varsayılan değer `null`ve `DataTrigger` düzgün çalışmaz.
 
@@ -170,7 +171,7 @@ Bir dezavantajı, `EventTrigger` kendisine eklenemez olan bir `TapGestureRecogni
 
 [ **RadioLabels** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioLabels) program kendi radyo düğmesi için metin dizelerini kullanır. [ **RadioStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioStyle) kullanan örnek bir `Style` görünüm checked ve unchecked düğmeler arasındaki fark için. [ **RadioImages** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioImages) örnek kendi radyo düğmeleri için paketlenmiş görüntüleri kullanır:
 
-[![Radyo görüntülerinin Üçlü ekran](images/ch23fg17-small.png "radyo düğmesi görüntüleri")](images/ch23fg17-large.png "radyo düğmesi görüntüleri")
+[![Radyo görüntülerinin Üçlü ekran](images/ch23fg17-small.png "radyo düğmesi görüntüleri")](images/ch23fg17-large.png#lightbox "radyo düğmesi görüntüleri")
 
 [ **TraditionalRadios** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalRadios) örnek bir daire içinde bir nokta olan geleneksel görünmesini radyo düğmeleri çizer.
 
@@ -187,4 +188,4 @@ Program dikey ve yatay kullanma arasında yönlendirme değişiklikleri de yanı
 - [Bölüm 23 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch23-Apr2016.pdf)
 - [Bölüm 23 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
 - [Tetikleyiciler ile çalışma](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms davranışları](~/xamarin-forms/app-fundamentals/behaviors/creating.md)
+- [Xamarin.Forms Davranışları](~/xamarin-forms/app-fundamentals/behaviors/creating.md)

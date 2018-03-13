@@ -3,16 +3,16 @@ title: Siri uzak ve Bluetooth denetleyicileri
 description: "Bu makalede, yeni Siri uzak ve Bluetooth oyun denetleyicileri Xamarin.tvOS uygulamalarınızda destekleme kapsar."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5d74479e995c5c6ba6f6fd9fd23fbca78718ee31
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cef717a727b3b018b9eec3e8a402ae4f927f7cb8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Siri uzak ve Bluetooth denetleyicileri
 
@@ -23,7 +23,7 @@ Xamarin.tvOS uygulamanızdaki kullanıcıların değil etkileşim arabirimiyle b
 
 Uygulamanızı bir oyun ise, isteğe bağlı olarak, yapılan için 3. taraf için destek iOS (MFI) oluşturabileceğiniz [Bluetooth oyun denetleyicileri](#Bluetooth-Game-Controllers) uygulamanızda de.
 
-[ ![](remote-bluetooth-images/intro01.png "Bluetooth uzaktan ve oyun denetleyicisi")](remote-bluetooth-images/intro01.png)
+[![](remote-bluetooth-images/intro01.png "Bluetooth uzaktan ve oyun denetleyicisi")](remote-bluetooth-images/intro01.png#lightbox)
 
 Bu makalede [Siri uzaktan](#The-Siri-Remote), [Touch yüzeyini hareketleri](#Touch-Surface-Gestures) ve [Siri uzak düğmeler](#Siri-Remote-Buttons) ve bunları çalışmak gösterilmektedir [hareketleri ve Film şeritleri](#Gestures-and-Storyboards), [hareketleri ve kod](#Gestures-and-Code) ve [alt düzey olay işleme](#Low-Level-Event-Handling). Son olarak, anlatılmaktadır [oyun denetleyicileri ile çalışma](#Working-with-Game-Controllers) Xamarin.tvOS uygulama.
 
@@ -35,7 +35,7 @@ Kullanıcıların, Apple TV ve Xamarin.tvOS uygulamanız ile etkileşimde ana da
 
 TvOS uygulama geliştiricisi olarak, sınama Siri uzaktan'ın dokunmatik yüzey, accelerometer, jiroskop ve düğmeleri yararlanır hızlı, kullanımı kolay ve görsel olarak ilgi çekici kullanıcı arabirimi oluşturma ' dir.
 
-[ ![](remote-bluetooth-images/remote01.png "Siri uzaktan")](remote-bluetooth-images/remote01.png)
+[![](remote-bluetooth-images/remote01.png "Siri uzaktan")](remote-bluetooth-images/remote01.png#lightbox)
 
 Siri uzaktan tvOS uygulamanızı içinde beklenen kullanımları ve aşağıdaki özellikleri içerir:
 
@@ -128,14 +128,14 @@ Hareketleri tanıyıcı eklemek için aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve arabirimi tasarımcısı düzenlemek için açın.
 2. Sürükleme bir **dokunun hareketi tanıyıcı** gelen **Kitaplığı** ve görünümünde bırak: 
 
-    [ ![](remote-bluetooth-images/storyboard01.png "Dokunun hareketi tanıyıcı")](remote-bluetooth-images/storyboard01.png)
+    [![](remote-bluetooth-images/storyboard01.png "Dokunun hareketi tanıyıcı")](remote-bluetooth-images/storyboard01.png#lightbox)
 3. Denetleme **seçin** içinde **düğmesini** bölümünü **özniteliği denetçisi**: 
 
-    [ ![](remote-bluetooth-images/storyboard02.png "Select denetleyin")](remote-bluetooth-images/storyboard02.png)
+    [![](remote-bluetooth-images/storyboard02.png "Select denetleyin")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Seçin** hareketi kullanıcı tıklatmak yanıt verecektir anlamına gelir **Touch yüzeyini** Siri uzak. Ayrıca yanıt seçeneğiniz **menü**, **Yürüt/Duraklat**, **yukarı**, **aşağı**, **sol** ve **Sağ** düğmeler.
 5. Ardından, yedeklemek wire bir **eylem** gelen **dokunun hareketi tanıyıcı** ve çağrısından `TouchSurfaceClicked`: 
 
-    [ ![](remote-bluetooth-images/storyboard03.png "Dokunun hareketi tanıyıcı eylemden")](remote-bluetooth-images/storyboard03.png)
+    [![](remote-bluetooth-images/storyboard03.png "Dokunun hareketi tanıyıcı eylemden")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. Yaptığınız değişiklikleri kaydedin ve Mac için Visual Studio'ya geri dönün
 
 Görünüm denetleyicinizi Düzenle (örneğin `FirstViewController.cs`) dosya ve tetiklenen hareketi işlemek için aşağıdaki kodu ekleyin:
@@ -314,7 +314,7 @@ namespace tvRemote
 
 Apple TV, 3. taraf, yapılan için iOS ile birlikte gelen standart Siri uzaktan yanı sıra (MFI) Bluetooth oyun denetleyicileri Apple TV ile eşleştirilmiş ve değiştirebilirsiniz Xamarin.tvOS uygulamanızı denetlemek için kullanılır.
 
-[ ![](remote-bluetooth-images/game01.png "Bluetooth oyun denetleyicileri")](remote-bluetooth-images/game01.png)
+[![](remote-bluetooth-images/game01.png "Bluetooth oyun denetleyicileri")](remote-bluetooth-images/game01.png#lightbox)
 
 Oyun denetleyicileri oyunlar geliştirmek ve oyun içinde tümüyle yoğunlaşabilmek duygusu sağlamak için kullanılabilir. Böylece kullanım uzaktan ve denetleyici arasında geçiş yapmak zorunda değil standart Apple TV arabirimi denetlemek için de kullanılabilir.
 
@@ -425,7 +425,7 @@ Apple oyun denetleyicileri Xamarin.tvOS uygulamanız destekliyorsa, karşılanma
 
 Xamarin.tvOS uygulamanızda oyun denetleyicileri desteğini etkinleştirmek için çift `Info.plist` dosyasını **Çözüm Gezgini** düzenlemek üzere açmak için:
 
-[ ![](remote-bluetooth-images/game02.png "Info.plist Düzenleyicisi")](remote-bluetooth-images/game02.png)
+[![](remote-bluetooth-images/game02.png "Info.plist Düzenleyicisi")](remote-bluetooth-images/game02.png#lightbox)
 
 Altında **oyun denetleyicileri** bölümünde, tarafından işaretleyin **etkinleştirmek oyun denetleyicileri**, tüm uygulama tarafından desteklenen oyun denetleyicileri türleri denetleyin.
 
@@ -465,7 +465,7 @@ Bu makalede Apple TV, Touch yüzeyini hareketleri ve Siri uzak düğmeler ile bi
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

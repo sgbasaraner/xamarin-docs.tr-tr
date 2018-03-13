@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9c9032b3206fa35d264bd69c94b7882e877b334f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS sorun giderme
 
@@ -61,7 +61,7 @@ Bu sayfa, ek bilgi ve halen geliştirilme özellikleri için geçici çözümler
 - İki ekleyemezsiniz `WKNotificationControllers` film şeridi için.
     Geçici çözüm: `notificationCategory` film şeridi XML öğesinde her zaman eklenir ile aynı `id`. İki (veya daha fazla) bildirim denetleyicileri ekleyebilir, film şeridi dosyasını bir metin düzenleyicisinde açın ve el ile değiştirmeniz bu sorunu çözmek için `id` öğesi benzersiz olmalıdır.
 
-    [ ![](troubleshooting-images/duplicate-id-sml.png "Film şeridi dosya bir metin düzenleyicisinde açıp benzersiz olmasını id öğesi el ile değiştirmeniz")](troubleshooting-images/duplicate-id.png)
+    [![](troubleshooting-images/duplicate-id-sml.png "Film şeridi dosya bir metin düzenleyicisinde açıp benzersiz olmasını id öğesi el ile değiştirmeniz")](troubleshooting-images/duplicate-id.png#lightbox)
 
 - "Uygulama değil oluşturulduğunu" bir hata görebilirsiniz uygulamayı başlatmak çalışırken. Bundan sonra oluşan bir **temiz** izleme uzantısı projeye başlangıç projesi ayarlandığında.
     Düzeltme seçmektir **Yapı > yeniden tüm** ve uygulamayı yeniden başlatın.

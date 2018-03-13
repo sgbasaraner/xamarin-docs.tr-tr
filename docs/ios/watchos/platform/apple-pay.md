@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e10a34bc5de16c19f48fa1b869daca9670f37804
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 53c2c3e3866cb782eea0cc9514c0c35379e48b5c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="apple-pay-on-watchos"></a>Apple Pay watchOS üzerinde
 
@@ -31,7 +31,7 @@ Apple Pay dışında desteklemek için PassKit framework genişletilmiştir iOS 
 
 ### <a name="supporting-apple-pay-outside-of-uikit"></a>Apple Pay Uıkit dışında destekleme
 
-Kullanarak [PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller) ve [PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate), bir uygulama tarafından sağlanan işlevsellik destekleyebilir [ PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller) Uıkit kullanmadan. Bu yeni API Apple Pay Apple Watch (ve de belirli hedefleri) desteklemek için gerekli olsa da, diğer durumlarda (örneğin, var olan uygulamalar) isteğe bağlıdır. Ancak, yeni API için tek bir kod tabanıyla Geliştirici uygulamaları tümünün boyunca geniş Apple Pay destek sağlamak için mümkün olan en kısa sürede taşıma Apple önerir. Hedefleri hakkında daha fazla bilgi ve Siri tümleştirmesi, lütfen bakın bizim [SiriKit giriş](/~/ios/platform/sirikit/index.md) belgeleri.
+Kullanarak [PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller) ve [PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate), bir uygulama tarafından sağlanan işlevsellik destekleyebilir [ PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller) Uıkit kullanmadan. Bu yeni API Apple Pay Apple Watch (ve de belirli hedefleri) desteklemek için gerekli olsa da, diğer durumlarda (örneğin, var olan uygulamalar) isteğe bağlıdır. Ancak, yeni API için tek bir kod tabanıyla Geliştirici uygulamaları tümünün boyunca geniş Apple Pay destek sağlamak için mümkün olan en kısa sürede taşıma Apple önerir. Hedefleri hakkında daha fazla bilgi ve Siri tümleştirmesi, lütfen bakın bizim [SiriKit giriş](~/ios/platform/sirikit/index.md) belgeleri.
 
 ### <a name="presenting-issuer-cards-from-within-apps"></a>Uygulamaların içindeki veren karttan sunma
 

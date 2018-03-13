@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: fbf18bad2dbe227575f4d820a121eab6e91655a0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5263d32ace14eb803bfd65b6a9b2ea5992ee1413
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="connection-troubleshooting"></a>Bağlantı sorunlarını giderme
 
@@ -45,15 +45,15 @@ Xamarin derleme Konaktan Xamarin.iOS eski sürümleri artık gerekli değildir. 
 
 2. Olduğundan emin olun **uzaktan oturum açma** Mac üzerinde etkin Ayarlamak için erişim **yalnızca bu kullanıcılar**ve Mac kullanıcı liste veya grup dahil olduğundan emin olun:
 
-    [ ![](troubleshooting-images/troubleshooting-image1.png "Yalnızca bu kullanıcılar için erişimi ayarlama")](troubleshooting-images/troubleshooting-image1.png)
+    [![](troubleshooting-images/troubleshooting-image1.png "Yalnızca bu kullanıcılar için erişimi ayarlama")](troubleshooting-images/troubleshooting-image1.png#lightbox)
 
 3. Güvenlik duvarınızın 22 - SSH için varsayılan bağlantı noktası üzerinden gelen bağlantılara izin verdiğini kontrol edin:
 
-    [ ![](troubleshooting-images/troubleshooting-image2.png "Güvenlik Duvarı bağlantı noktası 22 üzerinden gelen bağlantılara izin verdiğini denetleyin")](troubleshooting-images/troubleshooting-image2.png)
+    [![](troubleshooting-images/troubleshooting-image2.png "Güvenlik Duvarı bağlantı noktası 22 üzerinden gelen bağlantılara izin verdiğini denetleyin")](troubleshooting-images/troubleshooting-image2.png#lightbox)
 
     Devre dışı bıraktıysanız **otomatik olarak imzalanan yazılımın gelen bağlantıları almak izin ver**, OS X izin vermek isteyen eşleştirme işlemi sırasında bir iletişim kutusu düzenleyecek `mono-sgen` veya `mono-sgen32` gelen bağlantıları almak için. Tıklattığınızdan emin olun **izin** bu iletişim kutusunda:
 
-    [ ![](troubleshooting-images/troubleshooting-image4a.png "Bu iletişim kutusunda ver")](troubleshooting-images/troubleshooting-image4a.png)
+    [![](troubleshooting-images/troubleshooting-image4a.png "Bu iletişim kutusunda ver")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
 
 4. Bu Mac kullanıcı hesabında oturum açmış ve etkin bir GUI oturuma sahip olduğunu onaylayın.
 
@@ -63,12 +63,12 @@ Xamarin derleme Konaktan Xamarin.iOS eski sürümleri artık gerekli değildir. 
 
     Örneğin, aşağıdaki ekran görüntüsünde hesap adı olacaktır **amyb** ve **silinecektir yanıklara**:
 
-    [ ![](troubleshooting-images/troubleshooting-image5a.png "Terminal uygulamadan hesabı adı alınıyor")](troubleshooting-images/troubleshooting-image5a.png)
+    [![](troubleshooting-images/troubleshooting-image5a.png "Terminal uygulamadan hesabı adı alınıyor")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
 
 
 6. Mac için kullandığınız IP adresinin doğru olduğunu denetleyin. IP adresi altında bulabilirsiniz **sistem tercihleri > paylaşım > Uzak oturum açma** Mac üzerinde
 
-    [ ![](troubleshooting-images/troubleshooting-image17.png "Sistem tercihleri uygulama IP adresi")](troubleshooting-images/troubleshooting-image17.png)
+    [![](troubleshooting-images/troubleshooting-image17.png "Sistem tercihleri uygulama IP adresi")](troubleshooting-images/troubleshooting-image17.png#lightbox)
 
 7. Mac adresini doğruladıktan sonra deneyin bir `ping` bu adrese `cmd.exe` Windows'da:
 
@@ -80,7 +80,7 @@ Xamarin derleme Konaktan Xamarin.iOS eski sürümleri artık gerekli değildir. 
 
         ssh amyb@10.1.8.95
 
-<a name="stepnine">
+<a name="stepnine" />
 
 9. Varsa **8. adım başarılı**, gibi basit bir komut çalıştırmayı deneyebilirsiniz `ls` bağlantı üzerinden:
 
@@ -129,7 +129,7 @@ Bilinen neden:
 
 - **Hata [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**  – Bu sorun üzerinde Xamarin 4.1 durum **oturum açma kabuğu** içinde **Gelişmiş Seçenekler** Mac kullanıcı için bağlam menüsü  **Sistem tercihleri &gt; kullanıcılar &amp; grupları** dışında bir değere ayarlanır **/bin/bash**. (Xamarin 4.2 ile başlayarak, bu senaryo bunun yerine "bağlanamadı" hata iletisine yol açar.) **Geçici çözüm**: değişiklik **oturum açma kabuğu** özgün varsayılan dön **/bin/bash**.
 
-<a name="tryagain">
+<a name="tryagain" />
 
 ### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>"MacBuildHost.local için bağlanamadı. Lütfen yeniden deneyin."
 
@@ -153,7 +153,7 @@ Bildirilen nedenler:
 
     1. Konumunu onaylayın **sshd\_config** çalıştırarak dosya `ls /etc/ssh/sshd_config` ve `ls /etc/sshd_config` Terminal bir komut isteminde. Tüm geri kalan adımları için mu konumu kullandığınızdan emin olun _değil_ "böyle dosya veya dizin yok" döndürür.
 
-        [ ![](troubleshooting-images/troubleshooting-image18.png "'Ls /etc/ssh/sshd_config' ve 'ls /etc/sshd_config' terminale çalıştırma")](troubleshooting-images/troubleshooting-image18.png)
+        [![](troubleshooting-images/troubleshooting-image18.png "'Ls /etc/ssh/sshd_config' ve 'ls /etc/sshd_config' terminale çalıştırma")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     3. Çalıştırma `cp /etc/ssh/sshd_config "$HOME/Desktop/"` Terminal dosyayı masaüstünüze kopyalayın.
 
@@ -171,7 +171,7 @@ Bildirilen nedenler:
 
     9. Devre dışı bırakın ve yeniden etkinleştirmeniz **uzaktan oturum açma** altında **sistem tercihleri &gt; paylaşım &gt; uzaktan oturum açma** SSH sunucuyu yeniden başlatmanız.
 
-<a name="clearing">
+<a name="clearing" />
 
 ### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Aracısı, IDB, yapı ve Mac Tasarımcı aracısında temizleme
 
@@ -183,7 +183,7 @@ Günlük dosyalarınızı bir sorun "yükleme sırasında", Göster "Karşıya" 
 
 2. Denetim tıklatın **XMA** klasörü ve select **taşımak için çöp**:
 
-    [ ![](troubleshooting-images/troubleshooting-image8.png "Çöp kutusu için XMA klasörünü taşıma")](troubleshooting-images/troubleshooting-image8.png)
+    [![](troubleshooting-images/troubleshooting-image8.png "Çöp kutusu için XMA klasörünü taşıma")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. Temizlemek için yardımcı olabilecek bir önbellek Windows de yoktur. Windows üzerinde yönetici olarak bir komut istemi açın:
 
@@ -221,7 +221,7 @@ Visual Studio derleme konağa bağlanırken bir hata değerse, ek iletiler için
 2. Tıklatın **Göster çıktı** açılır menü.
 3. Seçin **Xamarin**.
 
-[ ![](troubleshooting-images/troubleshooting-image11.png "Xamarin Çıkış sekmesinde seçin")](troubleshooting-images/troubleshooting-image11.png)
+[![](troubleshooting-images/troubleshooting-image11.png "Xamarin Çıkış sekmesinde seçin")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
 ### <a name="log-files"></a>Günlük dosyaları
 
@@ -236,18 +236,18 @@ Visual Studio derleme konağa bağlanırken bir hata değerse, ek iletiler için
 
 3. Visual Studio bağlantı hatası isabetler sonra günlüklerinden toplamak **Yardım > Xamarin > Zip günlükleri**:
 
-    [ ![](troubleshooting-images/troubleshooting-image12.png "Yardım'dan günlükleri toplamak > Xamarin > Zip günlükleri")](troubleshooting-images/troubleshooting-image12.png)
+    [![](troubleshooting-images/troubleshooting-image12.png "Yardım'dan günlükleri toplamak > Xamarin > Zip günlükleri")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. .Zip dosyasını açtığınızda, aşağıdaki örneğe benzer dosyaların bir listesini görürsünüz. Bağlantı hataları için en önemli dosyalardır  **\*Ide.log** ve  **\*Ide.svclog** dosyaları. Bu dosyalar iki biraz farklı biçimlerde aynı iletilerini içerir. **.Svclog** XML ve iletileri aracılığıyla göz atmak istiyorsanız kullanışlıdır. **.Log** düz metin ve komut satırı araçlarını kullanarak iletileri filtrelemek istiyorsanız kullanışlıdır.
 
 
     Tüm iletileri aracılığıyla göz atmak için seçin ve açın **.svclog** dosyası:
 
-    [ ![](troubleshooting-images/troubleshooting-image13.png "Svclog dosyasını seçin")](troubleshooting-images/troubleshooting-image13.png)
+    [![](troubleshooting-images/troubleshooting-image13.png "Svclog dosyasını seçin")](troubleshooting-images/troubleshooting-image13.png#lightbox)
 
 5. **.Svclog** dosya açılır **Microsoft hizmet izleme görüntüleyicisini**. İletilerin ilgili gruplar görmek için iş parçacığı tarafından iletileri göz atabilirsiniz. İş parçacığı tarafından göz atmak için önce seçin **grafik** sekmesini ve ardından **Düzen modunu** açılır menü ve select **iş parçacığı**:
 
-    [ ![](troubleshooting-images/troubleshooting-image14.png "Düzen Modu açılır menüsünü tıklatın ve iş parçacığı seçin")](troubleshooting-images/troubleshooting-image14.png)
+    [![](troubleshooting-images/troubleshooting-image14.png "Düzen Modu açılır menüsünü tıklatın ve iş parçacığı seçin")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
 <a name="verboselogs" />
 
@@ -307,7 +307,7 @@ ilgili hata: [#36195](https://bugzilla.xamarin.com/show_bug.cgi?id=36195)
 
 Mac üzerinde Xcode başlatın ve geliştirici hesabınızla oturum açtıysa, Apple ve geliştirme profili yüklenir, iOS emin olun:
 
-[ ![](troubleshooting-images/troubleshooting-image7.png "Apple Geliştirici hesabınızla oturum açmış olduğu doğrulanıyor ve geliştirme profili iOS indirilir")](troubleshooting-images/troubleshooting-image7.png)
+[![](troubleshooting-images/troubleshooting-image7.png "Apple Geliştirici hesabınızla oturum açmış olduğu doğrulanıyor ve geliştirme profili iOS indirilir")](troubleshooting-images/troubleshooting-image7.png#lightbox)
 
 ### <a name="a-socket-operation-was-attempted-to-an-unreachable-network"></a>"Yuva işlemi erişilemeyen bir ağ için denendi"
 
@@ -323,7 +323,7 @@ Visual Studio MEF Bileşeni önbellek yenileme başarısız olduğunda bu sorun 
 
 Bu önbellek Bozulması ile sorunlarını düzeltmek için Visual Studio MEF Bileşeni önbelleği temizler.
 
-<a name="errors">
+<a name="errors" />
 
 ### <a name="errors-due-to-existing-build-host-processes-on-the-mac"></a>Mac üzerinde var olan yapı ana bilgisayarı işlemlerinin nedeniyle hataları
 
@@ -333,7 +333,7 @@ Bu önbellek Bozulması ile sorunlarını düzeltmek için Visual Studio MEF Bil
 ps -A | grep mono
 ```
 
-[ ![](troubleshooting-images/troubleshooting-image10.png "Mac terminale komutları çalıştırma")](troubleshooting-images/troubleshooting-image10.png)
+[![](troubleshooting-images/troubleshooting-image10.png "Mac terminale komutları çalıştırma")](troubleshooting-images/troubleshooting-image10.png#lightbox)
 
 Sonlandırmak için var olan işlemleri aşağıdaki komutu kullanın:
 
@@ -353,10 +353,10 @@ Bir yapı sorun giderme ve davranış Mac üzerinde depolanan geçici derleme do
 
 2. Denetim tıklatın **mtbs** klasörü ve select **taşımak için çöp**:
 
-    [ ![](troubleshooting-images/troubleshooting-image9.png "Çöp kutusu için mtbs klasörünü taşıma")](troubleshooting-images/troubleshooting-image9.png)
+    [![](troubleshooting-images/troubleshooting-image9.png "Çöp kutusu için mtbs klasörünü taşıma")](troubleshooting-images/troubleshooting-image9.png#lightbox)
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Mac bilgisayara bağlayarak](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+- [Mac’e Bağlanma](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
 - [Visual Studio ortamınızı XMA (video) ile bir Mac bağlanma](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)

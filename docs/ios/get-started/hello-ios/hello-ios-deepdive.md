@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bc89450a5c9a00ab9f088ca9fff345ebbf7b6c4c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Merhaba, iOS derinlemesine bakış
 
@@ -102,7 +102,7 @@ Bir iOS uygulaması bir kullanıcı arabirimi yüklemeden önce iki şey yerinde
 
 Bu bölüm, aşağıdaki çizimde gösterilen ilişkileri studies:
 
-[ ![](hello-ios-deepdive-images/image32.png "Mimari ve uygulama temelleri ilişkileri Bu diyagrama gösterilmiştir")](hello-ios-deepdive-images/image32.png)
+[![](hello-ios-deepdive-images/image32.png "Mimari ve uygulama temelleri ilişkileri Bu diyagrama gösterilmiştir")](hello-ios-deepdive-images/image32.png#lightbox)
 
 Şimdi en başından ve uygulama başlangıcında olanlar öğrenin.
 
@@ -157,7 +157,7 @@ namespace Phoneword_iOS
 
 Uygulama tanımlanmış onun penceresi sonra kullanıcı arabirimini yükleme başlayabilirsiniz. Sonraki bölümde, kullanıcı Arabirimi oluşturma araştırır.
 
-## <a name="user-interface"></a>Kullanıcı arabirimi
+## <a name="user-interface"></a>Kullanıcı Arabirimi
 
 Kullanıcı bir iOS uygulaması gibi bir mağaza arabirimdir - uygulama genellikle bir pencere alır, ancak bu pencereyi ile birçok nesnede gerekir ve nesneleri ve düzenlemeleri ne uygulamayı görüntülemek istediği bağlı olarak değiştirilebilir dolabilir. Bu senaryoda - kullanıcının gördüğü şeyler - nesneleri görünümleri denir. Bir uygulamadaki tek bir ekran oluşturmak için görünümlerini birbirleriyle üstünde yığılma bir *içerik görünümü hiyerarşi*, ve hiyerarşisini tek bir görünüm denetleyici tarafından yönetilir. Birden çok ekran uygulamaları birden çok içerik görünümü hiyerarşi, her biri kendi görünüm denetleyicisi sahip ve kullanıcı açıktır, farklı içerik Görünümü ekranında dayalı bir hiyerarşide oluşturmak için penceresinde görünümleri uygulama yerleştirir.
 
@@ -197,7 +197,7 @@ _Görünüm_ Sahne beyaz parçası içinde tıklayarak seçilebilir. Görünüm�
 
 Sahne solunda, aşağıdaki ekran görüntüsüne gösterildiği gibi bir bayrak simgesiyle gri bir ok şöyledir:
 
- [ ![](hello-ios-deepdive-images/image37.png "Bayrak simgesiyle gri oku")](hello-ios-deepdive-images/image37.png)
+ [![](hello-ios-deepdive-images/image37.png "Bayrak simgesiyle gri oku")](hello-ios-deepdive-images/image37.png#lightbox)
 
 Gri oku adlı bir film şeridi geçiş temsil eden bir *Segue* ("seg yönlü" denilir). Bu Segue hiçbir kaynak olduğundan, adlı bir *Sourceless ü*. Sourceless ü, görünümleri yüklenen uygulama başlangıcında bizim uygulamanın penceresine ilk Sahne işaret ediyor. Sahne ve görünümleri içindeki kullanıcı uygulamayı yüklediğinde görür ilk şey olacaktır.
 
@@ -243,7 +243,7 @@ Bu görünüm tarafından temsil edilen içerik görünümü hiyerarşide aşağ
 
 A _içerik görünümü hiyerarşi_ görünümleri ve tek bir görünüm denetleyicisi tarafından yönetilen Subviews yığınını Aşağıdaki diyagramda gösterildiği gibi değil:
 
- [ ![](hello-ios-deepdive-images/image41.png "İçerik görünümü hiyerarşisi")](hello-ios-deepdive-images/image41.png)
+ [![](hello-ios-deepdive-images/image41.png "İçerik görünümü hiyerarşisi")](hello-ios-deepdive-images/image41.png#lightbox)
 
 İçerik görünümü hiyerarşisini vermiyoruz bizim `ViewController` görünüm bölümünde sarıya geçici olarak görünüm kök arka plan rengi değiştirerek görmek daha kolay, **özellikleri paneli**aşağıdaki ekran görüntüsüne gösterildiği gibi:
 
@@ -259,7 +259,7 @@ A _içerik görünümü hiyerarşi_ görünümleri ve tek bir görünüm denetle
 
 Aşağıdaki diyagram aygıt ekranına kullanıcı arabirimi Getir penceresi, görünümler, Subviews ve görünüm denetleyicisi arasındaki ilişkileri gösterir:
 
- [ ![](hello-ios-deepdive-images/image43.png "Pencere, görünümler, Subviews ve görünüm denetleyicisi arasındaki ilişkileri")](hello-ios-deepdive-images/image43.png)
+ [![](hello-ios-deepdive-images/image43.png "Pencere, görünümler, Subviews ve görünüm denetleyicisi arasındaki ilişkileri")](hello-ios-deepdive-images/image43.png#lightbox)
 
 Sonraki bölümde nasıl kodda görünümlerle çalışma ve görünüm denetleyicileri ve görünüm yaşam döngüsü kullanarak kullanıcı etkileşimi için programlamayı öğrenin açıklanmaktadır.
 
@@ -331,7 +331,7 @@ Görünüm denetleyicisini en önemli rolü düğmesine basarsa, gezinti ve daha
 Yoktur, görünümleri ve görünüm denetleyicilerinin daha derin bir anlayış sahip nasıl işlediğine inceleyelim.
 İçinde `Phoneword_iOS` proje, bir düğme çağrılan eklenen `TranslateButton` içerik hiyerarşisini görüntüleme için:
 
- [ ![](hello-ios-deepdive-images/image1.png "Düğme için içerik hiyerarşisini görüntüleme çağrılan TranslateButton eklendi")](hello-ios-deepdive-images/image1.png)
+ [![](hello-ios-deepdive-images/image1.png "Düğme için içerik hiyerarşisini görüntüleme çağrılan TranslateButton eklendi")](hello-ios-deepdive-images/image1.png#lightbox)
 
 Zaman bir **adı** atandığı **düğmesini** denetim **özellikleri paneli**, iOS Tasarımcısı'nı otomatik olarak bir denetime eşlenen  **ViewController.designer.cs**, yapmayı `TranslateButton` içinde kullanılabilir `ViewController` sınıfı. Denetimleri ilk duruma bulunan `ViewDidLoad` görünüm bu yaşam döngüsü yöntemi kullanıcının yanıt kullanılacak şekilde ömrü aşaması:
 
@@ -432,7 +432,7 @@ Cihaz sağlandıktan sonra için iOS cihazını yapı araç hedef değiştirme v
 
 Uygulama iOS cihazını dağıtır:
 
-[ ![](hello-ios-deepdive-images/image1.png "Uygulama iOS cihazını dağıtma ve çalıştırma")](hello-ios-deepdive-images/image1.png)
+[![](hello-ios-deepdive-images/image1.png "Uygulama iOS cihazını dağıtma ve çalıştırma")](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>Özel simge oluşturmak ve görüntüleri'ı Başlat
 

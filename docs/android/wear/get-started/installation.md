@@ -7,18 +7,16 @@ ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/24/2018
-ms.openlocfilehash: 5f583fa78674b1b07d362e5171877e4ec3c861a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 012f563dcdaa70e33d641a4d8fb52df1622c260a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="setup-and-installation"></a>Kurulum ve yükleme
 
 _Bu makalede, bilgisayar ve cihazlar Android takmak geliştirme için hazırlamak için gereken yapılandırma ayrıntılarını ve yükleme adımları anlatılmaktadır. Bu makalenin sonundaki, Mac ve/veya Microsoft Visual Studio için Visual Studio'ya Xamarin.Android yıpranması yüklemesi tümleşik çalışma gerekir ve ilk Xamarin.Android yıpranması uygulamanızı oluşturmaya başlamak için hazır olması._
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -35,9 +33,7 @@ Aşağıdaki Android takmak Xamarin tabanlı uygulamalar oluşturmak için gerek
 Kullanmaya devam edebilirsiniz [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) API düzeyi 23 için özellikle geliştirme veya önceki bir sürümünü kullanıyorsanız.
 
 > [!IMPORTANT]
-> **Not:** Xamarin.Android JDK 9 desteği yok.
-
-<a name="installation" />
+> Xamarin.Android JDK 9 desteklemez.
 
 ## <a name="installation"></a>Yükleme
 
@@ -49,7 +45,6 @@ Xamarin.Android yükledikten sonra böylece oluşturmak ve Android takmak uygula
 
 Bu adımlar aşağıdaki bölümlerde açıklanmaktadır.
 
-<a name="sdktools" />
 
 ### <a name="install-android-sdk-and-tools"></a>Android SDK ve araçlarını yükleme 
 

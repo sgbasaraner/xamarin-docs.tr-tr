@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 0c4b0571d9254edba15177d5f98fd6718f1c6bcb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6e233d83eb9c5cb360add36da100963b95e54514
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="architecture-changes"></a>Mimari değişiklikleri
 
@@ -34,7 +34,7 @@ Mac için Visual Studio uygulamanızda güncelleştirmek için aşağıdaki adı
 
 5. Yapılandırmasını değiştirmek **yayın | iPhone** ve **desteklenen mimariler** aşağı açılan **ARM64**.
 
-32 bit ve 64-bit mimarileri hakkında daha fazla bilgi için bkz: [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64.md#ios) Kılavuzu.
+32 bit ve 64-bit mimarileri hakkında daha fazla bilgi için bkz: [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64/index.md#ios) Kılavuzu.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

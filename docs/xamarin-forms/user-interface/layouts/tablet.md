@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 053696ebf37e73e3b121e2aa52b80b7ea1b8ed64
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f870cda73625197fb15bf19be1cdabbd675124d6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Tablet ve Masaüstü uygulamaları için düzeni
 
@@ -41,7 +41,7 @@ Bir eğlenceli başlangıç deneyimi sağlar ve tüm aygıtlarda tam ekran çöz
 Tam ekran cihazda yukarı tüm uygulamaları iOS 9 önce sürdü, ancak bazı İpad'ler şimdi gerçekleştirebilirsiniz [ekran görevli bölme](~/ios/platform/multitasking.md).
 Başka bir deyişle, uygulamanızı yalnızca ince sütun ekran veya tüm ekranı genişliğini % 50'si ekran yan tarafında yukarı ele geçirebilir.
 
-[ ![](tablet-images/ipad-sml.png "iPad bölünmüş ekran örnek")](tablet-images/ipad.png "iPad bölünmüş ekran örnek")
+[![](tablet-images/ipad-sml.png "iPad bölünmüş ekran örnek")](tablet-images/ipad.png#lightbox "iPad bölünmüş ekran örnek")
 
 Bölünmüş ekran işlevselliği geniş veya kadar 1366 piksel genişliğinde iyi olduğunca 320 piksel ile çalışmak için uygulamanızı tasarlamanız gerekir anlamına gelir.
 
@@ -63,7 +63,7 @@ Tablet ve Windows çalıştıran masaüstü bilgisayarları desteklemek için ik
 
 Windows tabletler ve masaüstü bilgisayarlar üzerinde çalışan uygulamalar için rastgele boyutları ayrıca çalışan tam ekran için boyutlandırılabilir.
 
-[ ![](tablet-images/splitscreen-sml.png "Bölünmüş Pencereler ekran örnek")](tablet-images/splitscreen.png "ekran örnek Bölünmüş Pencereler")
+[![](tablet-images/splitscreen-sml.png "Bölünmüş Pencereler ekran örnek")](tablet-images/splitscreen.png#lightbox "ekran örnek Bölünmüş Pencereler")
 
 
 <a name="optimize" />

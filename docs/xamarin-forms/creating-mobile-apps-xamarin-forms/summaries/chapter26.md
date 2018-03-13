@@ -3,14 +3,15 @@ title: "Bölüm 26 özeti. Özel düzenler"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: dbddaaf2f4a5ad9d7161013f2ae11466b953e20c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9447f9fb47a3de0f278a89d45d657158be9b70b9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>Bölüm 26 özeti. Özel düzenler
 
@@ -98,9 +99,9 @@ Bu yöntem artık kullanım dışı ve değiştirilecek:
 Öğesinden türetilen her sınıf `Layout` veya `Layout<T>` geçersiz kılmanız gerekir `OnSizeRequest` veya `OnMeasure`. Burada bir düzen sınıf genellikle çağırarak alır, alt öğelerini boyutuna göre kendi boyutunu belirler budur `GetSizeRequest` veya `Measure` alt üzerinde. Önce ve sonra arama `OnSizeRequest` veya `OnMeasure`, `GetSizeRequest` veya `Measure` aşağıdaki özelliklerine bağlı düzeltmeleri yapar:
 
 - [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)tür `double`, etkiler `Request` özelliği `SizeRequest`
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/)tür `double`, etkiler `Request` özelliği `SizeRequest`
-- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/)tür `double`, etkiler `Minimum` özelliği `SizeRequest`
-- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/)tür `double`, etkiler `Minimum` özelliği `SizeRequest`
+- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) tür `double`, etkiler `Request` özelliği `SizeRequest`
+- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/) tür `double`, etkiler `Minimum` özelliği `SizeRequest`
+- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/) tür `double`, etkiler `Minimum` özelliği `SizeRequest`
 
 ### <a name="infinite-constraints"></a>Sonsuz kısıtlamaları
 
@@ -159,7 +160,7 @@ Genellikle bir öğenin özellik değişikliği o öğeye düzeninde nasıl gör
 
 [ **PhotoGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) örnek gösterilmektedir `UniformGridLayout`:
 
-[![Fotoğraf kılavuzunun Üçlü ekran](images/ch26fg08-small.png "Tekdüzen Kılavuz düzeni")](images/ch26fg08-large.png "Tekdüzen Kılavuz düzeni")
+[![Fotoğraf kılavuzunun Üçlü ekran](images/ch26fg08-small.png "Tekdüzen Kılavuz düzeni")](images/ch26fg08-large.png#lightbox "Tekdüzen Kılavuz düzeni")
 
 ### <a name="overlapping-children"></a>Çakışan alt öğeleri
 
@@ -174,7 +175,7 @@ A `Layout<T>` türevi alt çakışıyor. Ancak, alt kendi sırada işlenir `Chil
 
 [ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) Sınıfını [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığı işleme sırayı gösterir ve bu nedenle biri izin vermek için iliştirilmiş bir özellik tanımlar, Başkalarının üstünde görüntülenecek alt öğeleri. [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) örnek bu gösterilmektedir:
 
-[![Üçlü ekran Öğrenci kartı dosya kılavuzunun](images/ch26fg10-small.png "çakışan düzeni alt")](images/ch26fg10-large.png "çakışan düzeni alt")
+[![Üçlü ekran Öğrenci kartı dosya kılavuzunun](images/ch26fg10-small.png "çakışan düzeni alt")](images/ch26fg10-large.png#lightbox "çakışan düzeni alt")
 
 ### <a name="more-attached-bindable-properties"></a>Daha fazla iliştirilmiş bağlanabilir Özellikler
 

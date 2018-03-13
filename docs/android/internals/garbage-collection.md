@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d2298cf3edcadcc8a4d781e3e121852886fbf1d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="garbage-collection"></a>Çöp Toplama
 
@@ -21,7 +21,7 @@ Xamarin.Android Mono'nın kullandığı [basit kişinin atık toplayıcı](http:
 -   Ana koleksiyonları (Gen1 toplar ve büyük nesne yığın alanı). 
 
 > [!NOTE]
-> **Not:** açık koleksiyonuyla olmadığında [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) koleksiyonlarıdır *isteğe bağlı*, yığın ayırmaları göre. *Bu başvuru sistemi sayım değil*; nesneleri *bekleyen başvuru vardır hemen toplanmaz*, veya ne zaman bir kapsam çıkış yaptı. Yeni Ayırma için bellek yetersiz küçük yığın çalıştırıldığında GC çalıştırın. Hiçbir ayırmaları varsa, çalışmaz.
+> Bir açık koleksiyonuyla olmadığında [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) koleksiyonlarıdır *isteğe bağlı*, yığın ayırmaları göre. *Bu başvuru sistemi sayım değil*; nesneleri *bekleyen başvuru vardır hemen toplanmaz*, veya ne zaman bir kapsam çıkış yaptı. Yeni Ayırma için bellek yetersiz küçük yığın çalıştırıldığında GC çalıştırın. Hiçbir ayırmaları varsa, çalışmaz.
 
 
 Alt koleksiyonlar ucuz ve sık ve son ayrılmış ve kullanılmayan nesneler toplamak için kullanılır. Alt koleksiyonlar ayrılmış nesneleri sonra her birkaç MB gerçekleştirilir. Alt koleksiyonlar el ile yapılmalıdır çağırarak [GC. TOPLA (0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
@@ -29,7 +29,6 @@ Alt koleksiyonlar ucuz ve sık ve son ayrılmış ve kullanılmayan nesneler top
 Ana koleksiyonları pahalı ve daha az sıklıkta ve tüm ölü nesneleri geri kazanmak için kullanılır. Bellek için geçerli yığın boyutu (öbek yeniden boyutlandırma önce) bitti sonra ana koleksiyonları gerçekleştirilir. Ana koleksiyonlar el ile yapılmalıdır çağırarak [GC. TOPLA ()](https://developer.xamarin.com/api/member/System.GC.Collect/) veya çağırarak [GC. (İnt) toplamak](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32) bağımsız değişkeniyle [GC. MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/). 
 
 
-<a name="Cross-VM_Object_Collections" />
 
 ## <a name="cross-vm-object-collections"></a>Çapraz VM nesne koleksiyonları
 
@@ -67,7 +66,6 @@ Burada fun olur Mono koleksiyonlarıdır. Yönetilen nesneler normal olarak topl
 
 Tüm budur tarafından başvuruluyor sürece eş nesnesinin örneği Canlı nihai sonucu yönetilen kod (örn. depolanan bir `static` değişkeni) veya Java kodu tarafından başvurulan. Ayrıca, yerel eş ömrü ne aksi yaptıkları ötesinde uzatılır Canlı yerel eş ve yönetilen eş collectible kadar yerel eş collectible olmayacak şekilde.
 
-<a name="Object_Cycles" />
 
 ## <a name="object-cycles"></a>Nesne döngüsü
 
@@ -77,7 +75,6 @@ Her iki VM gösterimi olan tüm nesneler yalnızca tek bir VM içinde mevcut ola
 
 Nesne ömrü kısaltmak için [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) çağrılmalıdır. Bu el ile "böylece daha hızlı toplanacak nesneleri sağlar genel başvuru boşaltma tarafından iki VM'ler arasında nesne bağlantısında sever". 
 
-<a name="Automatic_Collections" />
 
 ## <a name="automatic-collections"></a>Otomatik koleksiyonları
 
@@ -135,7 +132,6 @@ Varsayılan ayar **Tarjan**. Bir gerileme bulursanız, onu bu seçeneği ayarlam
 Bellek kullanım ve toplama zamanı azaltmak için GC yardımcı olmak için birden çok yolu vardır.
 
 
-<a name="Disposing_of_Peer_instances" />
 
 ### <a name="disposing-of-peer-instances"></a>Eş örneklerini atma
 
@@ -148,7 +144,7 @@ GC yardımcı olmak sık gereklidir. Ne yazık ki, *GC. AddMemoryPressure()* ve 
 
 
 > [!NOTE]
-> **Not:** olmalıdır *son derece* atma zaman dikkatli `Java.Lang.Object` alt sınıf örnekleri.
+> Olmalıdır *son derece* atma zaman dikkatli `Java.Lang.Object` alt sınıf örnekleri.
 
 Bellek Bozulması olasılığını en aza indirmek için aşağıdaki kılavuzları çağrılırken gözlemlemek `Dispose()`.
 
@@ -243,7 +239,6 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-<a name="Reduce_Referenced_Instances" />
 
 ### <a name="reduce-referenced-instances"></a>Başvurulan örnekleri azaltın
 
@@ -316,7 +311,6 @@ class BetterActivity : Activity {
 }
 ```
 
-<a name="Minor_Collections" />
 
 ## <a name="minor-collections"></a>Alt koleksiyonlar
 
@@ -329,7 +323,6 @@ Alt koleksiyonlar el ile yapılmalıdır çağırarak [GC. Collect(0)](https://d
 -  Yenileme/uygulama verilerini eşitleme için ağ isteklerini grubudur.
 
 
-<a name="Major_Collections" />
 
 ## <a name="major-collections"></a>Ana koleksiyonları
 
@@ -344,14 +337,12 @@ Ana koleksiyonlar yalnızca el ile varsa, her zamankinden çağrılması:
 -   Geçersiz kılınan bir içinde [Android.App.Activity.OnLowMemory()](https://developer.xamarin.com/api/member/Android.App.Activity.OnLowMemory/) yöntemi. 
 
 
-<a name="Diagnostics" />
 
 ## <a name="diagnostics"></a>Tanılamalar
 
 Genel başvuru oluşturduğunuzda ve yok izlemek için ayarlayabileceğiniz [debug.mono.log](~/android/troubleshooting/index.md) sistem özelliğini içerecek şekilde [ *gref* ](~/android/troubleshooting/index.md) ve/veya [ *gc*](~/android/troubleshooting/index.md). 
 
 
-<a name="Configuration" />
 
 ## <a name="configuration"></a>Yapılandırma
 

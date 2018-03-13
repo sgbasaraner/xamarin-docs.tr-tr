@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 590e39deb7972df9e45064bb1a96e533a1fc9856
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5604477ff182711a63ba2b0e6bbcbbcc082a76ed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-amazon-simpledb-service"></a>Bir Amazon SimpleDB hizmetini kullanma
 
@@ -141,7 +141,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 `SelectAsync` Yöntemi kabul eden bir `SelectRequest` örneği belirten bir parametre olarak bir `Select` sorgu, ifadesinde `SelectExpression` özelliği. Sorgu ifadesi biçimi standart SQL biçimine benzer `SELECT` deyimi. Sorgu ifadesi hakkında daha fazla bilgi için bkz: [kullanarak seçin Amazon SimpleDB sorguları oluşturmak için](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingSelect.html) Amazon'ın Web sitesinde.
 
 > [!NOTE]
-> **Not**: Teklif sorgu ifadesi oluşturulurken kurallarına dikkat edin. Daha fazla bilgi için bkz: [tırnak içine almak kuralları seçin](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) Amazon'ın Web sitesinde.
+> Teklif sorgu ifadesi oluşturulurken kurallarına dikkat edin. Daha fazla bilgi için bkz: [tırnak içine almak kuralları seçin](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) Amazon'ın Web sitesinde.
 
 `SelectAsync` Yöntemi içeren bir koleksiyon sorgu ifadesi eşleşen ilişkili öznitelikleri ve öğelerinin bir yanıt döndürür. Bu koleksiyon için daha sonra dönüştürülür bir `List` , `TodoItem` örneklerini görüntülemek için.
 

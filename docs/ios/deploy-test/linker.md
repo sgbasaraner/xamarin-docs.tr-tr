@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/24/2017
-ms.openlocfilehash: c4ad69890b7f50478e44d59cd37e7b6ac96a87ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ee5da1b2c5d4c8fbf405c7f28ed280a3286a025
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="linking-on-ios"></a>İos'ta bağlama
 
@@ -29,7 +29,7 @@ Bağlayıcı statik bir aracı gibi onu ekleme türler ve yansıma yoluyla adlı
 
 Bağlama işlemini bağlayıcı davranışı açılır listede aracılığıyla özelleştirilebilir **proje seçenekleri**. İOS projede bu çift erişip Gözat **iOS Yapı > bağlayıcı seçenekleri**aşağıda gösterildiği gibi:
 
-[ ![](linker-images/image1.png "Bağlayıcı seçenekleri")](linker-images/image1.png)
+[![](linker-images/image1.png "Bağlayıcı seçenekleri")](linker-images/image1.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -170,6 +170,6 @@ class LinkerSafeAttribute : System.Attribute {
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Özel Bağlayıcı yapılandırması](~/cross-platform/deploy-test/linker.md)
+- [Özel Bağlayıcı Yapılandırması](~/cross-platform/deploy-test/linker.md)
 - [Mac bağlama](~/mac/deploy-test/linker.md)
 - [Android bağlama](~/android/deploy-test/linker.md)

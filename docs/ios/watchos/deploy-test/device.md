@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fab2092837f9b9ca8ada53274c9644f131fb5659
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="testing-on-watch-devices"></a>Gözcü cihazlarda test etme
 
@@ -32,7 +32,7 @@ Gerçek iPhone veya iPad iOS uygulamalarını test etme geliştirme Merkezi'nde 
 
 Gözcü farklı - şimdi uygulamaları dağıtmadan önce Apple Watch Cihazınızı eklemeniz gerekir. İzleme'nin UDID kullanarak bulun **Xcode** (**Windows > aygıtları** listesi). Eşleştirilmiş telefon bağlı olduğunda izleme ait bilgileri de görüntülenir:
 
-[ ![](device-images/xcode-devices-sml.png "Eşleştirilmiş Gözcü bilgileri")](device-images/xcode-devices.png)
+[![](device-images/xcode-devices-sml.png "Eşleştirilmiş Gözcü bilgileri")](device-images/xcode-devices.png#lightbox)
 
 İzleme'nin bildiğinizde UDID, Geliştirme Merkezi aygıt listesinde ekleyin:
 
@@ -99,12 +99,12 @@ Bir Apple Watch aygıta dağıtmak için hata ayıklama modunda oluştururken bu
 
 İçin *geçici olarak* çözüm bu sorunu çözmek için devre dışı **artımlı derlemeler** izleme uzantısı'nda **proje Seçenekleri > Yapı > watchOS yapı** penceresi:
 
-[ ![](device-images/disable-incremental-sml.png "Artımlı derlemeler onay kutusu")](device-images/disable-incremental.png)
+[![](device-images/disable-incremental-sml.png "Artımlı derlemeler onay kutusu")](device-images/disable-incremental.png#lightbox)
 
 Bu, daha sonra artımlı derlemeler daha hızlı derleme süreleri yararlanmak için yeniden etkin hale getirilebilir bir sonraki sürümde düzeltilecektir.
 
 
-#<a name="3-watch-app-fails-to-start-while-debugging-on-device"></a>Cihazda hata ayıklama sırasında başlatmak için &#3; izleme uygulaması başarısız
+### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>İzleme uygulama cihaz üzerinde hata ayıklama sırasında başlatılamıyor
 
 Fiziksel bir cihaza, yalnızca simgesi & yükleme değiştiricisi izleme uygulamanın hata ayıklama girişiminde görüntülenirken (ve sonunda zaman aşımı). Bu, sonraki sürümlerde ele alınacaktır; geçici bir çözüm (hangi hata ayıklama izin vermez) yayın derlemesi çalıştırmaktır.
 

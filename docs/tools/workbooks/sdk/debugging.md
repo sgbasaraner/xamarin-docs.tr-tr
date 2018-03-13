@@ -6,11 +6,11 @@ ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 4a83afca753d1131e3486004443f9c4a895f6fbc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a0873c6b902e29174da5e27a09e8f580d6d69eb7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debugging-integrations"></a>Hata ayıklama tümleştirmeler
 
@@ -43,11 +43,11 @@ defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
 
 ve Xamarin çalışma kitaplarını yeniden başlatın. Bunu yaptıktan sonra görmeniz gerekir **incelemek öğesi** sağ tıklatma bağlam menüsünde hem de yeni bir görünür **Geliştirici** bölmesinde çalışma kitaplarını tercihlerinde kullanılabilir olacak. Bu seçenek, başlangıçta açılan geliştirici araçları isteyip istemediğinizi seçmenizi sağlar:
 
-[![Geliştirici bölmesi](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png)
+[![Geliştirici bölmesi](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
 
 Bu tercih yalnızca yeniden başlatma da — çalışma kitapları için bu yeni çalışma kitapları üzerinde etkili olması yeniden başlatmanız gerekir. Geliştirici Araçları bağlam menüsü veya tercihleri aracılığıyla etkinleştirme hakkında bilgi sahibi Safari UI gösterir:
 
-[![Safari geliştirme araçları](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png)
+[![Safari geliştirme araçları](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
 Safari geliştirici araçlarını kullanma hakkında daha fazla bilgi için bkz: [WebKit denetçisi belgelerine][webkit-docs].
 
@@ -61,6 +61,6 @@ C:\Windows\System32\F12\F12Chooser.exe
 
 Çalışma kitapları istemci yüzeyini listesinde'nın temelini oluşturan katıştırılmış örneği çalıştırma F12 Seçici ve görmeniz gerekir. Ve hata ayıklama araçları Internet Explorer'dan görünür, bilinen F12 istemciye bağlı seçin:
 
-[![F12 araçları](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png)
+[![F12 araçları](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png#lightbox)
 
 [webkit-docs]: https://trac.webkit.org/wiki/WebInspector

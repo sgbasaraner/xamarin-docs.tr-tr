@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: b8d8aed397f72df53fdca7e455b8ef723e48e0a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5334465905817336df91f5816596dc5723071811
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction"></a>Giriş
 
@@ -88,7 +88,7 @@ Arka uç hizmetlerinin uygulaması hakkında daha fazla bilgi için bkz: [.NET m
 
 Bu kılavuz Xamarin.Forms kullanarak platformlar arası Kurumsal uygulamaları oluşturma üzerine odaklanır ve eShopOnContainers mobil uygulama örnek olarak kullanır. Şekil 1-2 daha önce açıklanan işlevleri sağlayan eShopOnContainers mobil uygulama sayfaları gösterir.
 
-[![](introduction-images/screenshots.png "EShopOnContainers mobil uygulama")](introduction-images/screenshots-large.png "eShopOnContainers mobil uygulama")
+[![](introduction-images/screenshots.png "EShopOnContainers mobil uygulama")](introduction-images/screenshots-large.png#lightbox "eShopOnContainers mobil uygulama")
 
 **Şekil 1-2**: eShopOnContainers mobil uygulama
 

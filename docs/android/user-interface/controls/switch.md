@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 8bfa599ce0a85897ecaf655c1d4da00fe898bc68
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0cf1c4d749eb85a7e0f4c035e10e2e7a40e0c711
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="switch"></a>Anahtar
 
 `Switch` Pencere öğesi (aşağıda gösterilen) iki durumlu arasında böyle bir birimi geçiş veya kapalı kullanıcıya izin verir. `Switch` Varsayılan değerdir kapalı. Pencere öğesi varsayılan olarak, her iki kendi açık ve kapalı durumda aşağıda gösterilmiştir:
 
-[ ![Bir anahtar pencere öğesinde KAPATIP durumları ekran görüntüleri](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png)
+[![Bir anahtar pencere öğesinde KAPATIP durumları ekran görüntüleri](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
-<a name="Creating_a_Switch" />
 
 ## <a name="creating-a-switch"></a>Bir anahtar oluşturma
 
@@ -32,9 +31,8 @@ Bir anahtar oluşturmak için yalnızca bildirme bir `Switch` XML öğesinde şe
 
 Aşağıda gösterildiği gibi temel bir anahtar oluşturur:
 
-[ ![Bir anahtarı OFF durumda görüntüleme demo uygulamasının ekran görüntüsü](switch-images/07-switch.png)](switch-images/07-switch.png)
+[![Bir anahtarı OFF durumda görüntüleme demo uygulamasının ekran görüntüsü](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
-<a name="Changing_Default_Values" />
 
 ## <a name="changing-default-values"></a>Varsayılan değerlerini değiştirme
 
@@ -48,7 +46,6 @@ AÇIK ve kapalı durumları için denetimi görüntülenen metni ve varsayılan 
         android:textOff="NO" />
 ```
 
- <a name="Providing_a_Title" />
 
 
 ## <a name="providing-a-title"></a>Başlık sağlama
@@ -66,7 +63,7 @@ AÇIK ve kapalı durumları için denetimi görüntülenen metni ve varsayılan 
 
 Bu biçimlendirme, aşağıdaki ekran görüntüsünde çalışma zamanında üretir:
 
-[![Yatay anahtar pencere öğesi önceki metinle demo uygulamasının ekran görüntüsü](switch-images/08-switch.png)](switch-images/08-switch.png)
+[![Yatay anahtar pencere öğesi önceki metinle demo uygulamasının ekran görüntüsü](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
 Zaman bir `Switch`ait değer değişiklikleri yükseltir bir `CheckedChange` olay.
 Örneğin, aşağıdaki kodda Biz bu olayı yakalamak ve mevcut bir `Toast` pencere öğesi bir iletiyle dayalı olarak `isChecked` değerini `Switch`, hangi geçirilen olay işleyicisine bir parçası olarak `CompoundButton.CheckedChangeEventArg` bağımsız değişkeni.

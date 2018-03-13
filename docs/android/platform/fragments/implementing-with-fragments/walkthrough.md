@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 7441fbe1fc686dc4fa5cb67cbfc5ae6353f32c93
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c058f173f64efe4a5c777872e9ea67120115f0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough"></a>İzlenecek yol
 
@@ -21,7 +21,7 @@ Aşağıdaki adımlarda parçaları ile temel bir uygulama oluşturulur. İlk ad
 
 Adlı yeni bir Xamarin.Android projesi oluşturma **FragmentSample**. **Minimum Android** sürüm ayarlanmalıdır Android 3.1 veya sonraki sürümlerde, aşağıdaki resimde gösterildiği gibi:
 
-[![Minimum Android sürümü ayarlama](walkthrough-images/00.png)](walkthrough-images/00.png)
+[![Minimum Android sürümü ayarlama](walkthrough-images/00.png)](walkthrough-images/00.png#lightbox)
 
 
 ## <a name="2-create-the-mainactivity"></a>2. MainActivity oluşturma
@@ -47,7 +47,7 @@ public class MainActivity : Activity
 
 İki farklı ekran boyutlarına iki farklı düzeni dosyaları gerektirir. Yeni bir klasör, bu nedenle oluşturalım **kaynakları/düzen-büyük**ve adlı yeni bir düzen oluşturmak **activity_main.axml**. Biz de varsayılan düzen dosyası olarak yeniden adlandırın **Resources/Layout/activity_main.axml**. Bu değişikliklerden sonra aşağıdaki ekran düzeni klasörleri benzemelidir:
 
-[![IDE içinde düzeni klasörlerinin ekran görüntüsü](walkthrough-images/01.png)](walkthrough-images/01.png)
+[![IDE içinde düzeni klasörlerinin ekran görüntüsü](walkthrough-images/01.png)](walkthrough-images/01.png#lightbox)
 
 
 Tüm aygıtlara yüklemek ve düzeni dosyasında kullanmak **kaynakları/düzeni**.
@@ -92,7 +92,7 @@ Android 3.2 ekranı düzeni belirtmek için yeni bir yolunu sunar. Bu yeni nitel
 
 `TitlesFragment` çeşitli yürütür başlıklarını görüntülemek, bu nedenle proje için yeni bir parçası olarak adlandırılan ekleyelim `TitlesFragment`:
 
-[![Yeni bir parça TitlesFragment projesine ekleme](walkthrough-images/02.png)](walkthrough-images/02.png)
+[![Yeni bir parça TitlesFragment projesine ekleme](walkthrough-images/02.png)](walkthrough-images/02.png#lightbox)
 
 Sonra `TitlesFragment` eklendi, biz değiştirmelisiniz sınıfı öğesinden devralınan böylece `Android.App.ListFragment`. `ListFragment` Liste işlevselliği içeren bir özelleştirilmiş parça türüdür.
 `TitlesFragment` Ayrıca geçersiz kılar `OnActivityCreated` (başka bir parça yaşam döngüsü yöntemi) ve sağlayan bir `Adapter` , `ListFragment` listeyi doldurmak için kullanır:
@@ -162,7 +162,6 @@ private void ShowDetails(int playId)
 
 Kod biçimlendirme ve seçili play tekliften görüntülemek nasıl aygıttan belirler. Tabletler, söz konusu olduğunda `_isDualPane` bayrağı ayarlanacak `true`, ve teklif yanına görüntülenecek şekilde `TitlesFragment`. Seçilen play `id` zaten görüntülenmez sonra yeni `DetailsFragment` oluşturulur ve ardından yüklenen `FrameLayout` etkinlik. Büyük bir görüntü yok diğer cihazlar için &ndash; telefonlar, örneğin &ndash; `isDualPane` ayarlanacak `false` için yeni bir `DetailsActivity` başlatılır.
 
-<a name="5. Create_the_DetailsActivity" />
 
 ## <a name="5-create-the-detailsactivity"></a>5. DetailsActivity oluşturma
 
@@ -187,7 +186,6 @@ public class DetailsActivity : Activity
 
 Herhangi bir düzen dosyası için yüklenen bildirimi `DetailsActivity`. Bunun yerine, `DetailsFragment` etkinlik kök görünüme yüklenir. Bu kök görünüm özel Kimliğine sahip `Android.Resource.Id.Content`. Yeni bir `DetailFragment` oluşturulur ve bu kök görünümüne içine eklenen bir `FragmentTransaction` etkinliğin tarafından oluşturulan `FragmentManager`.
 
-<a name="6. Create_the_DetailsFragment" />
 
 ## <a name="6-create-the-detailsfragment"></a>6. DetailsFragment oluşturma
 

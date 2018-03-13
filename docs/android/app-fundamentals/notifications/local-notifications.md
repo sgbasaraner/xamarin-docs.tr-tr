@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7566ebac0f487ef321c512c988c79f34e50777ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f13515326bd75f2b2c15e2b6059e6f829814ea5c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="local-notifications"></a>Yerel bildirimler
 
@@ -28,7 +28,7 @@ Android, kullanıcı için bildirim simgelerini ve bildirim bilgilerini görünt
 
 Bildirim hakkındaki ayrıntıları almak için kullanıcı (hangi bildirim içerik ortaya çıkarmak üzere her bildirim simgesine genişletir) bildirim çekmecesini açabilir ve bildirimleri ile ilişkili herhangi bir eylem gerçekleştirin. Aşağıdaki ekran görüntüsü gösterildiği bir *bildirim çekmecesini* , yukarıda görüntülenen bildirim alanına karşılık gelir:
 
-[![Örnek bildirim çekmecesini üç bildirimleri görüntüleme](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png)
+[![Örnek bildirim çekmecesini üç bildirimleri görüntüleme](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png#lightbox)
 
 Android bildirimlerini düzenleri iki tür kullanın:
 
@@ -38,7 +38,6 @@ Android bildirimlerini düzenleri iki tür kullanın:
 
 Bu düzen türleri (ve bunların nasıl oluşturulacağı) aşağıdaki bölümlerde açıklanmıştır.
 
-<a name="base-layout" />
 
 ### <a name="base-layout"></a>Temel düzeni
 
@@ -54,7 +53,7 @@ Tüm Android bildirimleri, en azından aşağıdaki öğeleri içeren temel düz
 
 Bu öğeler, aşağıdaki çizimde gösterildiği gibi görüntülenir:
 
-[![Bildirim öğelerinin konumu](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png)
+[![Bildirim öğelerinin konumu](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png#lightbox)
 
 Temel düzenleri yükseklik 64 yoğunluğu bağımsız piksel (dp) sınırlıdır. Android, varsayılan olarak bu temel bildirim stili oluşturur.
 
@@ -64,13 +63,13 @@ Temel düzenleri yükseklik 64 yoğunluğu bağımsız piksel (dp) sınırlıdı
 
 Android 5.0 ile başlayarak, bildirimler kilit ekranı üzerinde görünebilir:
 
-[![Örnek kilit ekranı bildirim](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png)
+[![Örnek kilit ekranı bildirim](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
 
 Kullanıcı çift-cihazın kilidini açmak ve bu bildirim kaynaklanan uygulama atlamak için kilit ekranı bildirim dokunabilirsiniz veya sağdan bildirim yok sayın. Uygulamaları kilit ekranı üzerinde gösterilen denetlemek için bir bildirim görünürlük düzeyini ayarlayabilir ve kullanıcıların kilit ekranı bildirimler gösterilecek hassas içerikleri izin verilip verilmeyeceğini seçebilirsiniz.
 
 Android 5.0 sunulan adlı yüksek öncelikli bildirim sunu biçimine *ekran göstergesi*. Ekran göstergesi bildirimleri aşağı birkaç saniye ekranın üst kısmından kaydırın ve geri bildirim alanında kadar geri Çekilme:
 
-[![Örnek heads-up bildirim](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png)
+[![Örnek heads-up bildirim](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png#lightbox)
 
 Ekran göstergesi bildirimleri sistem şu anda çalışan etkinlik durumunu kesintiye uğratmadan kullanıcı önünde önemli bilgileri koymak için kullanıcı Arabirimi olun.
 
@@ -84,7 +83,6 @@ Böylece bildirimleri sıralanır ve akıllıca görüntülenen android bildirim
 
 **Not:** **görünürlük** ve **kategori** Android 5.0 ve kullanılabilir olmayan Android önceki sürümlerinde de tanıtılan. Android 8.0 ile başlayan [bildirim kanalları](#notif-chan) bildirimleri kullanıcıya nasıl sunulacağının denetlemek için kullanılır.
 
-<a name="expanded-layouts" />
 
 ### <a name="expanded-layouts"></a>Genişletilmiş düzenleri
 
@@ -106,7 +104,6 @@ Android tek olay bildirimleri için üç genişletilmiş düzeni stillerini dest
 
 [Temel bildirim ötesinde](#beyond-the-basic-notification) (Bu makalenin ilerisinde yer) nasıl oluşturulacağını açıklar *büyük metin*, *gelen*, ve *görüntü* bildirimleri.
 
-<a name="notification-creation" />
 
 ## <a name="notification-creation"></a>Bildirim oluşturma
 
@@ -127,7 +124,6 @@ Android bildirim oluşturmak için kullandığınız [Notification.Builder](http
 
 Bu seçenekler Oluşturucusu'nda ayarladıktan sonra ayarları içeren bir bildirim nesnesi oluşturur. Bu bildirim nesnesi geçirdiğiniz bildirim yayımlamak için *bildirim Yöneticisi*. Android sağlar [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/) bildirimleri yayımlama ve kullanıcıya görüntüleme sorumlu sınıfı. Bu sınıf için bir başvuru, bir etkinlik veya bir hizmet gibi tüm bağlamından alınamıyor.
 
-<a name="how-to-generate" />
 
 ### <a name="how-to-generate-a-notification"></a>Bir bildirim oluşturmak nasıl
 
@@ -185,7 +181,6 @@ Zaman damgası otomatik olarak ayarlanmış, ancak çağırarak bu ayarı geçer
 ```csharp
 builder.SetWhen (Java.Lang.JavaSystem.CurrentTimeMillis());
 ```
-<a name="sound-and-vibr" />
 
 ### <a name="enabling-sound-and-vibration"></a>Ses ve titreşim etkinleştirme
 
@@ -265,7 +260,6 @@ Yeni bildirim nesnesi önceki bildirim tanımlayıcısını kullanarak yayımlan
 
 Android bildirimlerini güncelleştirme hakkında daha fazla bilgi için bkz: [bir bildirim değiştirme](http://developer.android.com/training/notify-user/managing.html#Updating).
 
-<a name="starting-an-activity" />
 
 ### <a name="starting-an-activity-from-a-notification"></a>Bir etkinlik bildirimden başlatılıyor
 
@@ -380,11 +374,11 @@ Kullanabileceğiniz Android 8.0 (Oreo) ile başlayarak, *bildirim kanalları* g�
 
 **YouTube** ile Android Oreo yüklü app iki bildirim kategorileri listeler: **karşıdan bildirimleri** ve **genel bildirimleri**:
 
-[![Android Oreo YouTube için bildirim ekranları](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png)
+[![Android Oreo YouTube için bildirim ekranları](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
 Bu kategorilerin her biri için bir bildirim kanalı karşılık gelir. YouTube uygulama uygulayan bir **karşıdan bildirimleri** kanal ve **genel bildirimleri** kanal. Kullanıcı dokunabilirsiniz **karşıdan bildirimleri**, uygulamanın bildirim kanalı indirmek için ayarları ekranı görüntüler:
 
-[![Bildirimleri ekran YouTube uygulamasının için karşıdan yükle](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png)
+[![Bildirimleri ekran YouTube uygulamasının için karşıdan yükle](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
 
 Bu ekranda, kullanıcı davranışını değiştirebilir **karşıdan** bildirimleri kanal aşağıdakileri yaparak:
 
@@ -400,14 +394,13 @@ Bu ekranda, kullanıcı davranışını değiştirebilir **karşıdan** bildirim
 
 **Genel bildirimleri** kanal benzer ayarlara sahip:
 
-[![YouTube uygulamasının için genel bildirimleri ekranı](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png)
+[![YouTube uygulamasının için genel bildirimleri ekranı](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
 
 Mutlak denetiminiz nasıl, bildirim kanalları kullanıcıyla etkileşim olmadığını bildirimi &ndash; yukarıdaki ekran görüntülerinde görüldüğü gibi kullanıcı cihazda hiçbir bildirim kanalı ayarlarını değiştirebilir. Ancak, (aşağıda açıklanacaktır gibi), varsayılan değerleri yapılandırabilirsiniz. Bu örneklerin gösterdiği gibi yeni bildirim kanalları özelliği kullanıcılar bildirimleri farklı türde üzerinde hassas denetime olanak kolaylaştırır.
 
 Uygulamanıza bildirim kanalları için destek eklemeniz gerekir? Android 8.0, uygulamanızı hedefleme varsa *gerekir* bildirim kanalları uygulayın.
 Bir bildirim kanalı kullanmadan kullanıcıya bir yerel Bildirim göndermeye çalıştığında Oreo için hedeflenen bir uygulama bildirimi Oreo cihazlarda görüntülenecek başarısız olur. Android 8.0 hedefliyorsanız yok Android 7.1 veya önceki sürümlerde çalışan sergilemesine gibi uygulamanızın hala Android 8.0, ancak aynı bildirim davranışı ile çalışır.
 
-<a name="notif-chan-create" />
 
 ### <a name="creating-a-notification-channel"></a>Bir bildirim kanalı oluşturma
 
@@ -448,7 +441,6 @@ Bir bildirim kanalı oluşturmak için aşağıdakileri yapın:
     notificationManager.CreateNotificationChannel (chan);
     ```
 
-<a name="notif-chan-post" />
 
 ### <a name="posting-to-a-notifications-channel"></a>Bir bildirim kanalı gönderme
 
@@ -507,7 +499,6 @@ builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable
 Bu örnek kod, görüntü dosyası açar **Resources/drawable/monkey_icon.png**bir bit eşlem dönüştürür ve sonuçta elde edilen bitmap geçirir `Notification.Builder`. Genellikle, kaynak görüntü çözünürlüğü küçük simge büyük &ndash; ancak çok büyük. Çok büyük bir görüntü bildirim nakil geciktirebilir gereksiz yeniden boyutlandırma işlemlerini neden olabilir.
 Android bildirim simgesine boyutları hakkında daha fazla bilgi için bkz: [bildirim simgelerini](http://developer.android.com/design/style/iconography.html#notification).
 
-<a name="big-text-style" />
 
 ### <a name="big-text-style"></a>Büyük metin stili
 
@@ -544,7 +535,6 @@ builder.SetStyle (textStyle);
 
 Bu örnekte, ileti metni ve Özet metni depolanmış `BigTextStyle` nesne (`textStyle`) için geçirilen önce `Notification.Builder.`
 
-<a name="image-style" />
 
 ### <a name="image-style"></a>Görüntü stili
 
@@ -609,7 +599,6 @@ Görüntü dosyasının boyutunu önceden bilmiyorsanız, onu çağrısı sarmal
 
 Yükleme ve büyük bit eşlem görüntüleri kod çözme hakkında daha fazla bilgi için bkz: [yük büyük bit eşlemler verimli bir şekilde](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently).
 
-<a name="inbox-style" />
 
 ### <a name="inbox-style"></a>Gelen kutusu stili
 
@@ -645,13 +634,11 @@ Bildirim Gövde metnin yeni satır eklemek için arama [Addline](https://develop
 
 Aynı zamanda *gelen* tek tek satırlık metin bir genişletilmiş biçimde görüntülemek için gereken her türlü bildirim için stili. Örneğin, *gelen* bildirim stili, bir Özet bildirim içine birden fazla bekleyen bildirim birleştirmek için kullanılabilir &ndash; tek bir güncelleştirme *gelen* stil yeni ile bildirimi bildirim içeriğin satırlarına (bkz [bir bildirim güncelleştirme](#updating-a-notification) yukarıda), bunun yerine daha yeni, çoğunlukla benzer bildirimler sürekli akışı oluştur. Bu yaklaşımı hakkında daha fazla bilgi için bkz: [bildirimlerinizi özetlemek](http://developer.android.com/design/patterns/notifications.html#summarize_your_notifications).
 
-<a name="configuring-metadata" />
 
 ## <a name="configuring-metadata"></a>Meta verileri yapılandırma
 
 `Notification.Builder` Öncelik, görünürlük ve kategori gibi bildirim hakkındaki meta verileri ayarlamak için çağırabilirsiniz yöntemleri içerir. Android kullanan bu bilgileri &mdash; kullanıcı tercihi ayarlarıyla birlikte &mdash; nasıl ve ne zaman belirlemek için bildirimler görüntülemek için.
 
-<a name="priority-settings" />
 
 ### <a name="priority-settings"></a>Öncelik ayarları
 
@@ -694,7 +681,6 @@ Sonraki örnekte, "gün için zorlayıcı" düşük öncelikli bildirim altında
 
 Düşük öncelikli bildirim "Düşünce günü için" bildirim olduğu için Android, Heads-up biçiminde görüntülenmez.
 
-<a name="visibility-settings" />
 
 ### <a name="visibility-settings"></a>Görünürlüğü ayarları
 
@@ -719,7 +705,6 @@ Zaman bir `Private` bildirim nakledilir, yalnızca adı ve uygulamanın simgesi 
 
 Bu örnekte, **NotificationsLab** kaynak uygulama adıdır. Bildirim Redaksiyonu yapılmış bu sürümü yalnızca kilit ekranı güvenli olduğunda görüntülenir (yani, PIN, desen ya da parola güvenli) &ndash; kilit ekranı güvenli değilse, bildirim tam içeriğini kilit ekranı üzerinde kullanılabilir.
 
-<a name="category-settings" />
 
 ### <a name="category-settings"></a>Kategori ayarları
 
@@ -791,7 +776,6 @@ Bu örnekte gösterildiği gibi önemli bildirim seçenekleri için yöntem ça�
 
 [LocalNotifications](https://developer.xamarin.com/samples/monodroid/LocalNotifications) örnek nasıl kullanılacağını gösteren `NotificationCompat.Builder` bir bildirim ikinci etkinliğinden başlatmak için. Bu örnek kod açıklaması [Xamarin.Android yerel bildirimlerini kullanarak](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) gözden geçirme.
 
-<a name="notification-styles" />
 
 ### <a name="notification-styles"></a>Bildirim stilleri
 
@@ -806,7 +790,6 @@ builder.SetStyle (textStyle);
 
 Benzer şekilde, uygulamanızı kullanabilirsiniz `NotificationCompat.InboxStyle` ve `NotificationCompat.BigPictureStyle` için *gelen* ve *görüntü* stiller, sırasıyla.
 
-<a name="priority-and-category" />
 
 ### <a name="notification-priority-and-category"></a>Bildirim önceliğini ve kategorisini
 
@@ -823,7 +806,6 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 Bu örnekte, uygulama kullanıcının **hedef Framework** Android 5.0 ayarlanır ve **Minimum Android sürümü** ayarlanır **Android 4.1 (API düzeyi 16)**. Olduğundan `SetCategory` olan kullanılabilir API düzeyinde 21 ve daha sonra bu kod örneği çağırır `SetCategory` yalnızca kullanılabilir olduğu zaman &ndash; değil çağıracak `SetCategory` API düzeyi olduğunda küçüktür
 21.
 
-<a name="lockscreen-visibility" />
 
 ### <a name="lockscreen-visibility"></a>Kilit ekranı görünürlüğü
 
@@ -835,7 +817,6 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -849,7 +830,7 @@ Android için tasarlama bildirimleri hakkında yönergeler için bkz: [bildiriml
 - [NotificationsLab (örnek)](https://developer.xamarin.com/samples/monodroid/android5.0/NotificationsLab/)
 - [LocalNotifications (örnek)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
 - [Android kılavuzda yerel bildirimler](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
-- [Bildirimleri](http://developer.android.com/design/patterns/notifications.html)
+- [Bildirimler](http://developer.android.com/design/patterns/notifications.html)
 - [Kullanıcıya bildirme](http://developer.android.com/training/notify-user/index.html)
 - [bildirim](https://developer.xamarin.com/api/type/Android.App.Notification/)
 - [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)

@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 396ed31cba336976342a8dfb26f31eeda20cf494
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe76c93afc149553e44b5e8fa29a21767becf5c5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="navigation-bar"></a>Gezinti çubuğu
 
 Android 4 adlı yeni bir sistem kullanıcı arabirimi özellik tanıtılan bir *gezinti çubuğu*, Gezinti denetimleri için donanım düğmeleri içerme cihazlarda sağlayan **giriş**, **geri** , ve **menü**.
 Aşağıdaki ekran görüntüsü Nexus asal aygıttan gezinti çubuğu gösterir:
 
- [ ![Bir Android gezinti çubuğu örneği](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png)
+ [![Bir Android gezinti çubuğu örneği](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
 Birkaç yeni bayrakları kullanılabilir gezinti çubuğu ve denetimlerinin görünürlüğünü yanı sıra, sistem Android 3'te tanıtılan çubuğunun görünürlüğünü denetleme. Flags içinde tanımlanan `Android.View.View` sınıfı ve aşağıda listelenmiştir:
 
@@ -31,7 +31,7 @@ Bu bayrakların görünüm hiyerarşideki herhangi bir görünüm ayarlayarak uy
 
 Aşağıdaki örnek, burada herhangi bir düğmeyi tıklatarak değişiklikleri basit bir uygulama gösterir `SystemUiVisibility`:
 
- [ ![Görünür, düşük profili ve gizli SystemUiVisibility gösteren ekran görüntüsü](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png)
+ [![Görünür, düşük profili ve gizli SystemUiVisibility gösteren ekran görüntüsü](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
 
 Değiştirmek için kodu `SystemUiVisibility` özelliği ayarlar bir `TextView` her düğmenin olay işleyicisi aşağıda gösterildiği gibi tıklayın:
 

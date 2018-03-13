@@ -8,23 +8,21 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/03/2016
-ms.openlocfilehash: 29e9ad7aa2ca9553f488dfa697caf1fd71966eee
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 83da1e44d7671d7ac5f6a493856331af9d0ba77a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="maps-and-location"></a>Harita ve konum
 
-<a name="location" />
 
 ##  <a name="location-servicesandroidplatformmaps-and-locationlocationmd"></a>[Konum Hizmetleri](~/android/platform/maps-and-location/location.md)
 
 Bu kılavuz konumu-tanıma Android uygulamalarında tanıtır ve Sigortalı konumu sağlayıcısı kullanılabilir yanı sıra, Android konum hizmeti API'si ile Google konum Hizmetleri API kullanarak kullanıcının konumunu alma gösterilmektedir.
 
- <a name="maps" />
 
-##  <a name="mapsandroidplatformmaps-and-locationmapsindexmd"></a>[Eşlemeleri](~/android/platform/maps-and-location/maps/index.md)
+##  <a name="mapsandroidplatformmaps-and-locationmapsindexmd"></a>[Haritalar](~/android/platform/maps-and-location/maps/index.md)
 
 Bu makalede eşlemeleri ve konumu ile Xamarin.Android nasıl kullanılacağı açıklanmaktadır. Google eşlemeleri Android API V2 kullanarak doğrudan yerleşik eşlemeleri uygulamanın yararlanarak her şeyi içerir. Ayrıca, hücre kule konumu, Wi-Fi veya GPS aracılığıyla konumu düzeltmeleri almak bir uygulama sağlayan tek bir API konum Hizmetleri ile çalışmaya nasıl kullanılacağını açıklar.
 

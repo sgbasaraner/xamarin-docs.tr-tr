@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/16/2017
-ms.openlocfilehash: a95b49fa3f090339773233dada46a14e69c8bb43
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 798bb2b15534a620acbe76080e171af1a548ac25
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-platform-specifics"></a>iOS Platform-Specifics
 
@@ -180,10 +180,10 @@ On<iOS>().SetUseSafeArea(true);
 
 Sayfa içeriği tüm İphone'lar için güvenlidir ekranın herhangi bir alan yerleştirilebilir oluşur:
 
-[![](ios-images/safe-area-layout.png "Güvenli alan Düzen kılavuzu")](ios-images/safe-area-layout-large.png "güvenli alan Düzen kılavuzu")
+[![](ios-images/safe-area-layout.png "Güvenli alan Düzen kılavuzu")](ios-images/safe-area-layout-large.png#lightbox "güvenli alan Düzen kılavuzu")
 
 > [!NOTE]
-> **Not**: Apple tarafından tanımlanan güvenli alanı içinde Xamarin.Forms ayarlamak için kullanılan [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) özelliği ve ayarlanan bu özelliğinin önceki değerlerini geçersiz kılar.
+> Apple tarafından tanımlanan güvenli alanı içinde Xamarin.Forms ayarlamak için kullanılan [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) özelliği ve ayarlanan bu özelliğinin önceki değerlerini geçersiz kılar.
 
 Güvenli alan alarak özelleştirilebilir kendi [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) değerini `Page.SafeAreaInsets` yönteminden [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) ad alanı. Olarak daha sonra değiştirilebilir gerekli ve yeniden atanan `Padding` sayfa Oluşturucusu özelliğinde veya [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/) geçersiz kıl:
 
@@ -385,7 +385,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 Sonucu belirtilen olan `UpdateMode` uygulanan [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/), öğe seçimi oluştuğunda denetler:
 
-[![](ios-images/picker-updatemode.png "Seçici UpdateMode platforma özgü")](ios-images/picker-updatemode-large.png "Picker UpdateMode Plaform-Specific")
+[![](ios-images/picker-updatemode.png "Seçici UpdateMode platforma özgü")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
 
 <a name="set_status_bar_visibility" />
 
@@ -468,7 +468,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 Sonuç bir [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) içerik rötuşları, bu nedenle alma geciktirme devre dışı bırakabilirsiniz, bu senaryoda [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) hareketi alır yerine [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) sayfasında [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
 
-[![](ios-images/scrollview-delay-content-touches.png "Platforma özgü ScrollView gecikme içerik dokunur")](ios-images/scrollview-delay-content-touches-large.png "ScrollView Delay Content Touches Plaform-Specific")
+[![](ios-images/scrollview-delay-content-touches.png "Platforma özgü ScrollView gecikme içerik dokunur")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
 
 ## <a name="summary"></a>Özet
 
@@ -477,6 +477,6 @@ Bu makalede, iOS platformu-Xamarin.Forms yerleşik özellikleri kullanma göster
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Platform özellikleri oluşturma](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [Platform Özellikleri Oluşturma](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (örnek)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [iOSSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)

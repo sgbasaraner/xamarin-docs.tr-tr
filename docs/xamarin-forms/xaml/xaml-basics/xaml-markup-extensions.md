@@ -4,14 +4,15 @@ description: "XAML işaretleme uzantılarına XAML'de nesneleri veya diğer kayn
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 7aea7b1536efc952378c6a1df63640af191f1ebe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Bölüm 3. XAML işaretleme uzantıları
 
@@ -298,7 +299,7 @@ Altı paylaşılan değerleri erişme üç düğme ile son tam XAML dosyası ş�
 
 Ekran görüntüleri tutarlı stil ve platforma bağımlı stil doğrulayın:
 
-[ ![](xaml-markup-extensions-images/sharedresources.png "Stilde denetimler")](xaml-markup-extensions-images/sharedresources-large.png "stilde denetimler")
+[![](xaml-markup-extensions-images/sharedresources.png "Stilde denetimler")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "stilde denetimler")
 
 Tanımlamak için yaygın olsa da `Resources` koleksiyonu sayfanın üstündeki göz önünde bulundurun, `Resources` özelliği tarafından tanımlanır `VisualElement`, ve bulundurabilirsiniz `Resources` diğer öğeleri sayfada koleksiyonlarında. Örneğin, bir tane için eklemeyi deneyin `StackLayout` Bu örnekte:
 
@@ -436,7 +437,7 @@ Bu iki ad alanı bildirimleri içinde yer alan **StaticConstantsPage** örnek. D
 
 Sonuç boyutunu `BoxView` platforma bağımlı ekrandır göre:
 
- [ ![](xaml-markup-extensions-images/staticconstants.png "X: Static işaretleme uzantısı kullanarak denetimleri")](xaml-markup-extensions-images/staticconstants-large.png "x: Static işaretleme uzantısı kullanarak denetimleri")
+ [![](xaml-markup-extensions-images/staticconstants.png "X: Static işaretleme uzantısı kullanarak denetimleri")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "x: Static işaretleme uzantısı kullanarak denetimleri")
 
 ## <a name="other-standard-markup-extensions"></a>Diğer standart biçimlendirme uzantıları
 
@@ -552,7 +553,7 @@ Belki de bu örnekten aldığınız en önemli Ders biçimlendirme uzantısı s�
 
 Çalışan program şöyledir:
 
-[ ![](xaml-markup-extensions-images/relativelayout.png "Kısıtlamaları kullanarak göreli Düzen")](xaml-markup-extensions-images/relativelayout-large.png "göreli kısıtlamaları kullanarak Düzen")
+[![](xaml-markup-extensions-images/relativelayout.png "Kısıtlamaları kullanarak göreli Düzen")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "göreli kısıtlamaları kullanarak Düzen")
 
 ## <a name="summary"></a>Özet
 
@@ -563,7 +564,7 @@ Burada gösterilen XAML biçimlendirme uzantıları için XAML dosyaları öneml
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
-- [1. bölüm. XAML ile çalışmaya başlama](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [2. bölüm. Temel XAML sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-- [Bölüm 4. Veri bağlama temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [Bölüm 1. XAML Kullanmaya Başlarken](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [Bölüm 2. Temel XAML Sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [Bölüm 4. Temel Veri Bağlama Bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
 - [Bölüm 5. Verileri için MVVM bağlama](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

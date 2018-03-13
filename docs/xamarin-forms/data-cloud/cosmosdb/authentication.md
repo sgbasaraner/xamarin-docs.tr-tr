@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a16f72e6aaee93aa313aff0aba23887b51acf701
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Kullanıcıların bir Azure Cosmos DB belge veritabanı ile kimlik doğrulaması
 
@@ -81,7 +81,7 @@ Azure App Service'te kaynak belirteci Aracısı barındırma işlemi aşağıdak
 
     Aşağıdaki ekran görüntüsünde, bu yapılandırma gösterilmektedir:
 
-    [![](authentication-images/azure-web-app-settings.png "App Service Web uygulaması ayarları")](authentication-images/azure-web-app-settings-large.png "App Service Web uygulaması ayarları")
+    [![](authentication-images/azure-web-app-settings.png "App Service Web uygulaması ayarları")](authentication-images/azure-web-app-settings-large.png#lightbox "App Service Web uygulaması ayarları")
 
 1. Kaynak belirteci Aracısı çözüm Azure App Service web uygulamasını yayımlayın.
 
@@ -117,7 +117,7 @@ Uygulama hizmeti kolay kimlik doğrulamasını yapılandırma işlemi aşağıda
 
   Aşağıdaki ekran görüntüsünde, bu yapılandırma gösterilmektedir:
 
-  [![](authentication-images/app-service-authentication-settings.png "App Service Web uygulaması kimlik doğrulama ayarları")](authentication-images/app-service-authentication-settings-large.png "App Service Web uygulaması kimlik doğrulama ayarları")
+  [![](authentication-images/app-service-authentication-settings.png "App Service Web uygulaması kimlik doğrulama ayarları")](authentication-images/app-service-authentication-settings-large.png#lightbox "App Service Web uygulaması kimlik doğrulama ayarları")
 
 App Service web uygulaması, ayrıca kimlik doğrulaması akışı etkinleştirmek için Facebook uygulaması ile iletişim kurmak için yapılandırılmalıdır. Bu Facebook kimlik sağlayıcısı seçip girerek gerçekleştirilebilir **uygulama kimliği** ve **uygulama gizli anahtarı** Facebook Geliştirici Merkezi Facebook uygulama ayarlarından değerleri. Daha fazla bilgi için bkz: [uygulamanıza eklemek Facebook bilgi](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
 
@@ -270,7 +270,7 @@ Bir kullanıcı yalnızca kendi bir Xamarin.Forms uygulaması belge veritabanı 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [TodoDocumentDBAuth (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
-- [Bir Azure Cosmos DB belge veritabanı kullanma](~/xamarin-forms/data-cloud/cosmosdb/consuming.md)
+- [Bir Azure Cosmos DB Belge Veritabanını Kullanma](~/xamarin-forms/data-cloud/cosmosdb/consuming.md)
 - [Azure Cosmos DB verilere erişimin güvenliğini sağlama](/azure/cosmos-db/secure-access-to-data/)
 - [Erişim denetimi DocumentDB API'sindeki](/rest/api/documentdb/access-control-on-documentdb-resources/).
 - [Bölüm ve ölçek Azure Cosmos veritabanı](/azure/cosmos-db/partition-data/)

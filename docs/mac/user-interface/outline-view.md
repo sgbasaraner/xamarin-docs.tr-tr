@@ -3,16 +3,16 @@ title: "Anahat görünümleri"
 description: "Bu makalede Xamarin.Mac uygulamasında anahat görünümlerle çalışma kapsar. Oluşturma ve Xcode ve arabirim Oluşturucu anahat görünümleri Bakımı ve bunlarla program aracılığıyla çalışma açıklar."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 043248EE-11DA-4E96-83A3-08824A4F2E01
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a125c2991c9b8c2453fad396c1d0baebe10be015
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: dbbd10af046c0a8421e06e675364f92405b2317f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="outline-views"></a>Anahat görünümleri
 
@@ -22,7 +22,7 @@ C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı erişiminiz anahat g
 
 Anahat görünümü verir tablo türü Genişlet veya hiyerarşik veri satırı Daralt ' dir. Bir tablo görünümü gibi bir anahat görünümü ayrı öğeler ve bu öğeleri özniteliklerini temsil eden sütun temsil eden satırlar ile ilgili öğeler, bir dizi verilerini görüntüler. Bir tablo görünümü aksine bir anahat görünümünde öğeler, düz bir liste değil, dosyaları ve klasörleri sabit sürücü gibi bir hiyerarşide düzenlenir.
 
-[ ![](outline-view-images/populate03.png "Bir örnek uygulamayı çalıştırma")](outline-view-images/populate03.png)
+[![](outline-view-images/populate03.png "Bir örnek uygulamayı çalıştırma")](outline-view-images/populate03.png#lightbox)
 
 Bu makalede, sizi bir Xamarin.Mac uygulamasında anahat görünümleri ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -50,23 +50,23 @@ Anahat görünümü olan bir tablo görünümü, davranış ve işlevsellik ço�
 
 Yeni bir Xamarin.Mac Cocoa uygulaması oluşturduğunuzda, varsayılan olarak standart boş, bir pencere alın. Bu windows tanımlanmış bir `.storyboard` otomatik olarak projeye dahil dosyası. Windows tasarımınızı düzenlemek için **Çözüm Gezgini**, çift tıklayarak `Main.storyboard` dosyası:
 
-[ ![](outline-view-images/edit01.png "Ana film şeridi seçme")](outline-view-images/edit01.png)
+[![](outline-view-images/edit01.png "Ana film şeridi seçme")](outline-view-images/edit01.png#lightbox)
 
 Bu pencere tasarım Xcode'nın arabirimi Oluşturucusu'nda açın:
 
-[ ![](outline-view-images/edit02.png "Xcode kullanıcı Arabiriminde düzenleme")](outline-view-images/edit02.png)
+[![](outline-view-images/edit02.png "Xcode kullanıcı Arabiriminde düzenleme")](outline-view-images/edit02.png#lightbox)
 
 Tür `outline` içine **kitaplığı Denetçisi'nin** anahat görünümü denetimleri bulmayı kolaylaştırmak için arama kutusunu:
 
-[ ![](outline-view-images/edit03.png "Kitaplıktan bir anahat görünümü seçme")](outline-view-images/edit03.png)
+[![](outline-view-images/edit03.png "Kitaplıktan bir anahat görünümü seçme")](outline-view-images/edit03.png#lightbox)
 
 Anahat görünümü Görünüm denetleyiciye sürükleyin **arabirimi Düzenleyicisi**, görünüm denetleyicisini içerik alanını doldurun ve burada küçültür ve penceresinde ile büyür ayarlanan **kısıtlaması Düzenleyicisi**:
 
-[ ![](outline-view-images/edit04.png "Kısıtlamalar düzenleme")](outline-view-images/edit04.png)
+[![](outline-view-images/edit04.png "Kısıtlamalar düzenleme")](outline-view-images/edit04.png#lightbox)
 
 Anahat görünümünde seçme **arabirimi hiyerarşi** ve aşağıdaki özellikler mevcuttur **özniteliği denetçisi**:
 
-[ ![](outline-view-images/edit05.png "Öznitelik denetçisi")](outline-view-images/edit05.png)
+[![](outline-view-images/edit05.png "Öznitelik denetçisi")](outline-view-images/edit05.png#lightbox)
 
 - **Anahat sütun** -sütununu hiyerarşik veri görüntülenir.
 - **Otomatik kaydetme anahat sütununun** - `true`, anahat sütununun otomatik olarak kaydedilir ve uygulama çalışmaları arasında geri.
@@ -101,7 +101,7 @@ Anahat görünümünde seçme **arabirimi hiyerarşi** ve aşağıdaki özellikl
 
 Bir tablo sütununda seçin **arabirimi hiyerarşi** ve aşağıdaki özellikler mevcuttur **özniteliği denetçisi**:
 
-[ ![](outline-view-images/edit06.png "Öznitelik denetçisi")](outline-view-images/edit06.png)
+[![](outline-view-images/edit06.png "Öznitelik denetçisi")](outline-view-images/edit06.png#lightbox)
 
 - **Başlık** -sütun başlığını ayarlar.
 - **Hizalama** -hücrelerde metin hizalamasını ayarlama.
@@ -119,19 +119,19 @@ Buna ait (sütunun sağ tarafta dikey ortalanmış) tanıtıcısı sola veya sa�
 
 Tablo Hücre görünümünü seçin (`NSTableViewCell`) içinde **arabirimi hiyerarşi** ve aşağıdaki özellikler mevcuttur **özniteliği denetçisi**:
 
-[ ![](outline-view-images/edit07.png "Öznitelik denetçisi")](outline-view-images/edit07.png)
+[![](outline-view-images/edit07.png "Öznitelik denetçisi")](outline-view-images/edit07.png#lightbox)
 
 Bu standart bir görünüm özelliklerini tümü. Burada bu sütun için satırları yeniden boyutlandırma seçeneğiniz de vardır.
 
 Bir tablo görünümü hücre seçin (varsayılan olarak, bir `NSTextField`) içinde **arabirimi hiyerarşi** ve aşağıdaki özellikler mevcuttur **özniteliği denetçisi**:
 
-[ ![](outline-view-images/edit08.png "Öznitelik denetçisi")](outline-view-images/edit08.png)
+[![](outline-view-images/edit08.png "Öznitelik denetçisi")](outline-view-images/edit08.png#lightbox)
 
 Burada ayarlamak için standart bir metin alanı tüm özelliklerine sahip olacaksınız. Varsayılan olarak, standart bir metin alanı, bir sütundaki bir hücrenin verilerini görüntülemek için kullanılır.
 
 Tablo Hücre görünümünü seçin (`NSTableFieldCell`) içinde **arabirimi hiyerarşi** ve aşağıdaki özellikler mevcuttur **özniteliği denetçisi**:
 
-[ ![](outline-view-images/edit09.png "Öznitelik denetçisi")](outline-view-images/edit09.png)
+[![](outline-view-images/edit09.png "Öznitelik denetçisi")](outline-view-images/edit09.png#lightbox)
 
 Burada en önemli ayarlar şunlardır:
 
@@ -145,7 +145,7 @@ Burada en önemli ayarlar şunlardır:
 
 Tablo hücre görünümü seçin (`NSTableFieldCell`) bir tablo sütununda sonundaki **arabirimi hiyerarşi**:
 
-[ ![](outline-view-images/edit11.png "Tablo Hücre görünümünü seçme")](outline-view-images/edit10.png)
+[![](outline-view-images/edit11.png "Tablo Hücre görünümünü seçme")](outline-view-images/edit10.png#lightbox)
 
 Bu sayede temel olarak kullanılan tablo hücre görünümünü düzenlemek _düzeni_ belirtilen sütun için oluşturulan tüm hücreler için.
 
@@ -159,14 +159,14 @@ Biz kullanıma sunmak istediğiniz herhangi bir anahat görünümü öğesi işl
 
 1. Geçiş **Yardımcısı Düzenleyicisi** ve emin `ViewController.h` dosya seçili: 
 
-    [ ![](outline-view-images/edit11.png "Doğru .h dosyası seçme")](outline-view-images/edit11.png)
+    [![](outline-view-images/edit11.png "Doğru .h dosyası seçme")](outline-view-images/edit11.png#lightbox)
 2. Anahat görünümünden seçin **arabirimi hiyerarşi**denetim tıklatın ve sürükleyin `ViewController.h` dosya.
 3. Oluşturma bir **çıkışı** anahat görünümü adlı için `ProductOutline`: 
 
-    [ ![](outline-view-images/edit13.png "Prizine yapılandırma")](outline-view-images/edit13.png)
+    [![](outline-view-images/edit13.png "Prizine yapılandırma")](outline-view-images/edit13.png#lightbox)
 4. Oluşturma **çıkışlar** de tablo sütunlarını adlı `ProductColumn` ve `DetailsColumn`: 
 
-    [ ![](outline-view-images/edit14.png "Prizine yapılandırma")](outline-view-images/edit14.png)
+    [![](outline-view-images/edit14.png "Prizine yapılandırma")](outline-view-images/edit14.png#lightbox)
 5. Değişiklikleri kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 Ardından, uygulamayı çalıştırdığınızda şu kodu görüntüleme anahattı için bazı veriler yazacaksınız.
@@ -179,7 +179,7 @@ Bizim anahat görünümüyle tasarlanmış arabirim Oluşturucusu'nda ve aracıl
 
 İlk olarak, yeni bir oluşturalım `Product` tek tek satırların ve alt ürünleri grupları için bilgiyi tutmak için sınıf. İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçin **Ekle** > **yeni dosya...** Seçin **genel** > **boş sınıfı**, girin `Product` için **adı** tıklatıp **yeni** düğmesi:
 
-[ ![](outline-view-images/populate01.png "Boş bir sınıf oluşturma")](outline-view-images/populate01.png)
+[![](outline-view-images/populate01.png "Boş bir sınıf oluşturma")](outline-view-images/populate01.png#lightbox)
 
 Olun `Product.cs` aşağıdaki gibi dosya bakın:
 
@@ -390,11 +390,11 @@ public override void AwakeFromNib ()
 
 Biz uygulama çalıştırıyorsanız, aşağıdaki görüntülenir:
 
-[ ![](outline-view-images/populate02.png "Daraltılmış görünümü")](outline-view-images/populate02.png)
+[![](outline-view-images/populate02.png "Daraltılmış görünümü")](outline-view-images/populate02.png#lightbox)
 
 Biz anahat görünümünde bir düğüm genişletirseniz, aşağıdaki gibi görünür:
 
-[ ![](outline-view-images/populate03.png "Genişletilmiş Görünüm")](outline-view-images/populate03.png)
+[![](outline-view-images/populate03.png "Genişletilmiş Görünüm")](outline-view-images/populate03.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
@@ -402,7 +402,7 @@ Biz anahat görünümünde bir düğüm genişletirseniz, aşağıdaki gibi gör
 
 Şimdi anahattı verileri bir sütun başlığına tıklayarak sıralayın izin verin. İlk olarak, çift `Main.storyboard` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Seçin `Product` sütun girin `Title` için **sıralama anahtarı**, `compare:` için **Seçici** seçip `Ascending` için **sipariş**:
 
-[ ![](outline-view-images/sort01.png "Sıralama anahtarı ayarlama")](outline-view-images/sort01.png)
+[![](outline-view-images/sort01.png "Sıralama anahtarı ayarlama")](outline-view-images/sort01.png#lightbox)
 
 Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -435,7 +435,7 @@ public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDe
 
 Uygulamayı çalıştırın ve sütun başlıklarının'ı tıklatın, satır sütuna göre sıralanır:
 
-[ ![](outline-view-images/sort02.png "Sıralanmış bir çıkış")](outline-view-images/sort02.png)
+[![](outline-view-images/sort02.png "Sıralanmış bir çıkış")](outline-view-images/sort02.png#lightbox)
 
 <a name="Row_Selection" />
 
@@ -443,7 +443,7 @@ Uygulamayı çalıştırın ve sütun başlıklarının'ı tıklatın, satır s�
 
 Tek bir satır seçin, çift kullanıcıya izin vermek isteyip istemediğinizi `Main.storyboard` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Anahat görünümünde seçme **arabirimi hiyerarşi** ve onay kutusunu temizleyin **birden çok** onay kutusu **özniteliği denetçisi**:
 
-[ ![](outline-view-images/select01.png "Öznitelik denetçisi")](outline-view-images/select01.png)
+[![](outline-view-images/select01.png "Öznitelik denetçisi")](outline-view-images/select01.png#lightbox)
 
 Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -466,7 +466,7 @@ Bu, tek bir satır anahat görünümünde seçme kullanıcıya izin verir. Dön�
 
 Birden çok satır seçmek, çift kullanıcıya izin vermek isteyip istemediğinizi `Main.storyboard` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Anahat görünümünde seçme **arabirimi hiyerarşi** ve denetleyin **birden çok** onay kutusu **özniteliği denetçisi**:
 
-[ ![](outline-view-images/select02.png "Öznitelik denetçisi")](outline-view-images/select02.png)
+[![](outline-view-images/select02.png "Öznitelik denetçisi")](outline-view-images/select02.png#lightbox)
 
 Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -489,7 +489,7 @@ Bu, tek bir satır anahat görünümünde seçme kullanıcıya izin verir. Dön�
 
 İlk satırı seçin ve bir karakter ile anahat seçili görünümü yazın kullanıcıya izin vermek istiyorsanız, bu karakter olan, çift `Main.storyboard` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Anahat görünümünde seçme **arabirimi hiyerarşi** ve denetleyin **türünü seçin** onay kutusu **özniteliği denetçisi**:
 
-[ ![](outline-view-images/type01.png "Satır türü düzenleme")](outline-view-images/type01.png)
+[![](outline-view-images/type01.png "Satır türü düzenleme")](outline-view-images/type01.png#lightbox)
 
 Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -517,7 +517,7 @@ public override NSObject GetNextTypeSelectMatch (NSOutlineView outlineView, NSOb
 
 Sürükleme kullanıcıya izin vermek istiyorsanız anahat görünümünde sütunları yeniden sıralama, çift `Main.storyboard` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Anahat görünümünde seçme **arabirimi hiyerarşi** ve denetleme **Reordering** onay kutusu **özniteliği denetçisi**:
 
-[ ![](outline-view-images/reorder01.png "Öznitelik denetçisi")](outline-view-images/reorder01.png)
+[![](outline-view-images/reorder01.png "Öznitelik denetçisi")](outline-view-images/reorder01.png#lightbox)
 
 Biz için bir değer verirseniz **otomatik kaydetme** özelliği ve onay **sütun bilgileri** alan tablonun düzene vermiyoruz değişiklikleri bize otomatik olarak kaydedilir ve uygulama başlatıldığında geri çalıştırılır.
 
@@ -536,7 +536,7 @@ public override bool ShouldReorder (NSOutlineView outlineView, nint columnIndex,
 
 Biz uygulama çalıştırırsanız, biz bizim sütunları yeniden sıralamak için sütun başlıkları geçici sürükleyebilirsiniz:
 
-[ ![](outline-view-images/reorder02.png "Sipariş sütunları örneği")](outline-view-images/reorder02.png)
+[![](outline-view-images/reorder02.png "Sipariş sütunları örneği")](outline-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells" />
 
@@ -598,7 +598,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 
 Şimdi biz uygulama çalıştırırsanız, kullanıcı Tablo görünümünde hücreleri düzenleyebilirsiniz:
 
-[ ![](outline-view-images/editing01.png "Hücre düzenleme örneği")](outline-view-images/editing01.png)
+[![](outline-view-images/editing01.png "Hücre düzenleme örneği")](outline-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Outline_Views" />
 
@@ -690,10 +690,10 @@ Bu makalede bir Xamarin.Mac uygulamasında anahat görünümlerle çalışma ayr
 
 - [MacOutlines (örnek)](https://developer.xamarin.com/samples/mac/MacOutlines/)
 - [MacImages (örnek)](https://developer.xamarin.com/samples/mac/MacImages/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
-- [Tablo görünümleri](~/mac/user-interface/table-view.md)
-- [Kaynak listeleri](~/mac/user-interface/source-list.md)
-- [Veri bağlama ve anahtar-değer kodlama](~/mac/app-fundamentals/databinding.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Tablo Görünümleri](~/mac/user-interface/table-view.md)
+- [Kaynak Listeleri](~/mac/user-interface/source-list.md)
+- [Veri Bağlama ve Anahtar-Değer Kodlaması](~/mac/app-fundamentals/databinding.md)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Anahat görünümlerinde giriş](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)

@@ -2,16 +2,16 @@
 title: "Bir video oynatıcı uygulama"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
+ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e818bc3fa9793f093c10ac2617c5a822d08213d4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a889be5ee31f667117d2c36859e667980f0e6610
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="implementing-a-video-player"></a>Bir video oynatıcı uygulama
 
@@ -27,7 +27,7 @@ Bazen, bir Xamarin.Forms uygulaması video dosyalarında yürütmek için tercih
 
 Video oynatıcı gerektiren *Aktarım denetimleri*, yürütme ve video duraklatmak için düğmeler olduğu ve çubuğunu konumlandırma video ilerlemeyi gösterir ve hızlı bir şekilde farklı bir konuma Atla olanak tanır. `VideoPlayer` platform (aşağıda gösterildiği gibi) veya sizin tarafından sağlanan konumlandırma çubuğu özel Aktarım denetimleri ve konumlandırma çubuğu sağlayabilir ve Aktarım denetimleri kullanabilirsiniz. İOS, Android ve evrensel Windows platformu altında çalışan program şöyledir:
 
-[![Web çalmasına](web-videos-images/playwebvideo-small.png "Web Video Oynat")](web-videos-images/playwebvideo-large.png "Web Video Oynat")
+[![Web çalmasına](web-videos-images/playwebvideo-small.png "Web Video Oynat")](web-videos-images/playwebvideo-large.png#lightbox "Web Video Oynat")
 
 Elbette, telefon yandan daha büyük bir görünüm için etkinleştirebilirsiniz.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: aaa4c93eda9edb0eb5d568b3470c02352bdb7467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: df6a0afe18b6929f8e03ce4d9bf35198034508bf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-value-converters"></a>Bağlama değer dönüştürücüler
 
@@ -95,7 +95,7 @@ Değer dönüştürücüsü, uygulamanızın birden çok sayfada kullandıysanı
 
 **Etkinleştirmek düğmeleri** sayfasını gösteren ortak bir gereksinim bir `Button` içine kullanıcı türleri metni temel alan bir işlem gerçekleştirir bir `Entry` görünümü. Hiçbir şey içine yazıldığını varsa `Entry`, `Button` devre dışı bırakılması gerekir. Her `Button` Veri bağlamada içeren kendi `IsEnabled` özelliği. Veri bağlama kaynağı `Length` özelliği `Text` ilgili özellik `Entry`. Bu, `Length` özelliği 0 ise, değer dönüştürücüsü döndürür `true` ve `Button` etkin:
 
-[![Düğmeleri etkinleştirme](converters-images/enablebuttons-small.png "etkinleştirmek düğmeleri")](converters-images/enablebuttons-large.png "etkinleştirmek düğmeleri")
+[![Düğmeleri etkinleştirme](converters-images/enablebuttons-small.png "etkinleştirmek düğmeleri")](converters-images/enablebuttons-large.png#lightbox "etkinleştirmek düğmeleri")
 
 Dikkat `Text` her bir özellik `Entry` boş bir dize olarak başlatılır. `Text` Özelliği `null` varsayılan ve veri bağlama bu durumda çalışmaz.
 
@@ -236,7 +236,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 
 Üç son içinde `Switch` ve `Label` çiftlerine genel bağımsız değişken olarak ayarlanmış `Style`ve tüm `Style` nesneleri değerleri için sağlanan `TrueObject` ve `FalseObject`. Bunlar için örtük stili geçersiz kılma `Label` kaynak sözlükte ayarlanırsa, bu nedenle bu stili özelliklerinde açıkça atanır `Label`. Geçiş `Switch` karşılık gelen neden `Label` değişikliği yansıtacak şekilde:
 
-[![Geçiş göstergeleri](converters-images/switchindicators-small.png "geçiş göstergeleri")](converters-images/switchindicators-large.png "geçiş göstergeleri")
+[![Geçiş göstergeleri](converters-images/switchindicators-small.png "geçiş göstergeleri")](converters-images/switchindicators-large.png#lightbox "geçiş göstergeleri")
 
 Kullanmak da mümkündür [ `Triggers` ](~/xamarin-forms/app-fundamentals/triggers.md) diğer görünümleri tabanlı kullanıcı arabiriminde benzer değişiklikleri uygulamak için.
 
@@ -460,7 +460,7 @@ Değerlerini `Red` ve `Green` özellikleri ile görüntülenen bir `Binding` bi�
 
 Sonuç şöyledir:
 
-[![RGB Renk Seçici](converters-images/rgbcolorselector-small.png "RGB Renk Seçici")](converters-images/rgbcolorselector-large.png "RGB Renk Seçici")
+[![RGB Renk Seçici](converters-images/rgbcolorselector-small.png "RGB Renk Seçici")](converters-images/rgbcolorselector-large.png#lightbox "RGB Renk Seçici")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

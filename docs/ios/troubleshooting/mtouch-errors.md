@@ -6,15 +6,14 @@ ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 06/26/2017
-ms.openlocfilehash: 5a11ca19de7ce06088478f1a39dae5a246d701a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/06/2018
+ms.openlocfilehash: 32a73232667e54eef7536f0bb0d1baa190269d8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS errors
-
 
 ## <a name="mt0xxx-mtouch-error-messages"></a>MT0xxx: mtouch hata iletileri
 
@@ -102,7 +101,6 @@ Bu aşağıdaki durumlarda oluşabilir:
 *  ARMv6 etkin ve Xcode 4.5 veya üstü yüklü değil.
 *  ARMv7s etkindir ve Xcode 4,4 veya önceki bir sürümü yüklü.
 
-
 Xcode'nın yüklü sürümü seçili mimarilerin desteklediğini doğrulayın.
 
 ### <a name="a-namemt0015mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a><a name="MT0015"/>MT0015: Geçersiz ABI: *. Desteklenen ABIs şunlardır: i386, x86_64, armv7, armv7 llvm, armv7 + llvm + thumb2, armv7s, armv7s + llvm, armv7s + llvm + thumb2, arm64 ve arm64 + llvm.
@@ -132,16 +130,9 @@ Aynı anda kullanılamaz mtouch için birkaç seçenek vardır:
 -  --launchdebug
 -  --launchsim
 
-
-
-
 ### <a name="a-namemt0020mt0020-the-valid-options-for--are-"></a><a name="MT0020"/>MT0020 İçin geçerli seçenek '\*'olan'\*'.
 
-
-
 ### <a name="a-namemt0021mt0021-cannot-compile-using-gccg---use-gcc-when-using-the-static-registrar-this-is-the-default-when-compiling-for-device-either-remove-the---use-gcc-flag-or-use-the-dynamic-registrar---registrardynamic"></a><a name="MT0021"/>MT0021 olamaz derleme gcc kullanarak / g ++ (--kullanım gcc) (Bu, varsayılan cihaz için derlerken) statik kayıt kullanırken. Kaldırabilir ya da kullanım gcc bayrak veya dinamik kayıt kullanın (--Kaydedici: dinamik).
-
-
 
 ### <a name="a-namemt0022mt0022-the-options---unsupported--enable-generics-in-registrar-and---registrar-are-not-compatible"></a><a name="MT0022"/>MT0022 Seçenekleri '--desteklenmeyen--enable-genel türler-içinde-kayıt şirketi' ve '--Kaydedici ' uyumlu değil.
 
@@ -155,23 +146,13 @@ Yürütülebilir derlemenin adı ve uygulamanın adı herhangi bir dll için uyg
 
 ### <a name="a-namemt0024mt0024-could-not-find-required-file-"></a><a name="MT0024"/>MT0024 bulamadı gerekli dosya ' *'.
 
-
-
 ### <a name="a-namemt0025mt0025-no-sdk-version-was-provided-please-add---sdkxy-to-specify-which-ios-sdk-should-be-used-to-build-your-application"></a><a name="MT0025"/>MT0025 Hayır SDK sürümü sağlandı. Lütfen eklemek `--sdk=X.Y` hangi iOS belirtmek için SDK uygulamanızı oluşturmak için kullanılmalıdır.
-
-
 
 ### <a name="a-namemt0026mt0026-could-not-parse-the-command-line-argument--"></a><a name="MT0026"/>MT0026 verebilir değil ayrıştırma komut satırı bağımsız değişkeni ' *': *
 
-
-
 ### <a name="a-namemt0027mt0027-the-options--and--are-not-compatible"></a><a name="MT0027"/>MT0027 Seçenekleri\*'ve'\*' uyumlu değil.
 
-
-
 ### <a name="a-namemt0028mt0028-cannot-enable-pie--pie-when-targeting-ios-41-or-earlier-please-disable-pie--piefalse-or-set-the-deployment-target-to-at-least-ios-42"></a><a name="MT0028"/>MT0028 etkinleştiremiyor PASTA (-pasta) iOS 4.1 veya önceki hedeflerken. Lütfen PASTA devre dışı bırakın (-pasta: false) veya dağıtım hedefi en az kümesine iOS 4.2
-
-
 
 ### <a name="a-namemt0029mt0029-repl---enable-repl-is-only-supported-in-the-simulator---sim"></a><a name="MT0029"/>MT0029: REPL (--etkinleştir repl) yalnızca benzeticisinde desteklenir (--SIM).
 
@@ -486,7 +467,6 @@ Kapsayıcı uygulama I18N derlemeler içeriyorsa yerel kod Paylaşımı şu anda
 
 Yerel kod paylaşımını gerektirir yönetilen bağlayıcı için özel xml tanımlarını kullandığınızda projeleri için desteklenmiyor.
 
-
 ### <a name="a-namemt0113mt0113-native-code-sharing-has-been-disabled-for-the-extension--because-"></a><a name="MT0113"/>MT0113: Yerel kod paylaşımını uzantısı devre dışı bırakıldı. ' *' olduğundan *.
 
 * bitcode'u seçenekleri arasında kapsayıcı uygulama farklı olduğundan (\*) ve uzantısı (\*).
@@ -561,6 +541,49 @@ Varsa `--dynamic-symbol-mode=linker` için mtouch, çözüm devre dışı bırak
 
 <!-- 0116 - 0124: free to use -->
 
+### <a name="a-namemt0116mt0116-invalid-architecture-arch-32-bit-architectures-are-not-supported-when-deployment-target-is-11-or-later-make-sure-the-project-does-not-build-for-a-32-bit-architecture"></a><a name="MT0116"/>MT0116: Geçersiz mimarisi: {arch}. Dağıtım hedefi 11 veya üzeri olduğunda 32-bit mimariyi desteklenmez. Proje için 32-bitlik bir mimari oluşmuyor emin olun.
+
+Dağıtım hedefi iOS 11 veya üzeri olduğunda için 32 bitlik bir uygulama oluşturmak için desteklenmeyen şekilde iOS 11 32-bit uygulamalar için destek içermiyor.
+
+Hedef mimari projenin iOS derleme seçenekleri için arm64 değiştirin veya projenin Info.plist dağıtım hedef bir önceki iOS sürüm olarak değiştirin.
+
+### <a name="a-namemt0117mt0117-cant-launch-a-32-bit-app-on-a-simulator-that-only-supports-64-bit"></a><a name="MT0117"/>MT0117: 32 bit uygulama yalnızca 64-bit destekleyen bir simulator üzerinde başlatılamıyor.
+
+### <a name="a-namemt0118mt0118-aot-files-could-not-be-found-at-the-expected-directory-msymdir"></a><a name="MT0118"/>MT0118: Uygulama Nesne Ağacı dosyaları beklenen '{msymdir}' dizininde bulunamadı.
+
+<!-- 0119 - 0123: free to use -->
+
+### <a name="a-namemt0123mt0123-the-executable-assembly--does-not-reference-"></a><a name="MT0123"/>MT0123: Yürütülebilir derleme * değil başvuru *.
+
+Platform derlemesine başvuru bulunamadı (Xamarin.iOS.dll / Xamarin.TVOS.dll / Xamarin.WatchOS.dll) yürütülebilir derlemesindeki.
+
+Bu genellikle gerçekleşir burada platform derlemesinden; herhangi bir şeyi kullanan yürütülebilir projesinde kodu yok örneği için boş bir ana yöntemi (ve başka bir kod) bu hatayı gösterir:
+
+```csharp
+class Program {
+    void Main (string[] args)
+    {
+    }
+}
+```
+
+Platform derlemesinden bir API kullanarak hatayı çözmek için:
+
+```csharp
+class Program {
+    void Main (string[] args)
+    {
+        System.Console.WriteLine (typeof (UIKit.UIWindow));
+    }
+}
+```
+
+### <a name="a-namemt0124mt0124-could-not-set-the-current-language-to-lang-according-to-langlang-exception"></a><a name="MT0124"/>MT0124: '{lang}' geçerli dil ayarlanamadı (göre LANG = {LANG}): {özel}
+
+Geçerli dil dili hata iletisi olarak ayarlanamıyor belirten bir uyarı budur.
+
+Geçerli dil için sistem dilini varsayılan olarak ayarlanır.
+
 ### <a name="a-namemt0125mt0125-the---assembly-build-target-command-line-argument-is-ignored-in-the-simulator"></a><a name="MT0125"/>MT0125: Derleme-derleme-hedef komut satırı bağımsız değişkeni benzeticisinde yoksayılır.
 
 Hiçbir eylem gerekli değildir, bu ileti yalnızca bilgilendirme amaçlıdır.
@@ -577,6 +600,12 @@ Hiçbir eylem gerekli değildir, bu ileti yalnızca bilgilendirme amaçlıdır.
 
 Daha fazla bilgi için hata #[52727](https://bugzilla.xamarin.com/show_bug.cgi?id=52727).
 
+### <a name="a-namemt0128mt0128-could-not-touch-the-file--"></a><a name="MT0128"/>MT0128: dosya touch değil ' *': *
+
+(Kısmi derlemeleri doğru şekilde yapılır emin olmak için gerçekleştirilir) bir dosyayı temas bir hata oluştu.
+
+Bu uyarı büyük olasılıkla göz ardı; herhangi bir sorun olması durumunda bir hata (https://bugzilla.xamarin.com] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) dosya ve araştırılması.
+
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx: Proje hata iletileri ilgili.
 
 ### <a name="mt10xx-installer--mtouch"></a>MT10xx: Yükleyici / mtouch
@@ -588,35 +617,19 @@ Daha fazla bilgi için hata #[52727](https://bugzilla.xamarin.com/show_bug.cgi?i
 
 ### <a name="a-namemt1001mt1001-could-not-find-an-application-at-the-specified-directory"></a><a name="MT1001"/>MT1001 özelliği belirtilen dizine uygulama bulamadı
 
-
-
 ### <a name="a-namemt1002mt1002-could-not-create-symlinks-files-were-copied"></a><a name="MT1002"/>MT1002 oluşturamadı simgesel bağlantı, dosyalar kopyalandı
-
-
 
 ### <a name="a-namemt1003mt1003-could-not-kill-the-application--you-may-have-to-kill-the-application-manually"></a><a name="MT1003"/>MT1003 verebilir olmayan uygulama Sonlandır ' *'. Uygulamayı el ile KILL gerekebilir.
 
-
-
 ### <a name="a-namemt1004mt1004-could-not-get-the-list-of-installed-applications"></a><a name="MT1004"/>MT1004 alınamadı yüklü uygulamaların listesi.
-
-
 
 ### <a name="a-namemt1005mt1005-could-not-kill-the-application--on-the-device----you-may-have-to-kill-the-application-manually"></a><a name="MT1005"/>MT1005 verebilir olmayan uygulama Sonlandır '\*'aygıtta'\*': *-uygulamayı el ile KILL gerekebilir.
 
-
-
 ### <a name="a-namemt1006mt1006-could-not-install-the-application--on-the-device--"></a><a name="MT1006"/>MT1006 yükleyemedi uygulama '\*'aygıtta'\*': *.
-
-
 
 ### <a name="a-namemt1007mt1007-failed-to-launch-the-application--on-the-device---you-can-still-launch-the-application-manually-by-tapping-on-it"></a><a name="MT1007"/>MT1007 uygulama başlatılamadı. '\*'aygıtta'\*': *. Hala uygulamayı el ile üzerindeki e dokunabilirsiniz başlatabilirsiniz.
 
-
-
 ### <a name="a-namemt1008mt1008-failed-to-launch-the-simulator"></a><a name="MT1008"/>MT1008: simulator başlatılamadı.
-
-
 
 Mtouch simulator başlatılamadı, bu hata bildirilir.   Bu durum bazen zaten çalıştıran eski veya ölü simulator işlemi olduğundan oluşabilir.
 
@@ -632,7 +645,7 @@ Bu, belirli sürümlerinde Xamarin.iOS, bilinen bir sorundur.
 
 Bu, olanak meydana gelirse, aşağıdaki geçici çözüm deneyin:
 
-```csharp
+```bash
 sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/*/*.mdb
 ```
 
@@ -640,23 +653,15 @@ Ancak, bu sorunu en son sürümünü Xamarin.iOS çözümlendi olduğundan, lüt
 
 ### <a name="a-namemt1010mt1010-could-not-load-the-assembly--"></a><a name="MT1010"/>MT1010 yükleyemedi derlemesi ' *': *
 
-
-
 ### <a name="a-namemt1011mt1011-could-not-add-missing-resource-file-"></a><a name="MT1011"/>MT1011 ekleyemedi eksik kaynak dosyası: ' *'
 
-
-
 ### <a name="a-namemt1012mt1012-failed-to-list-the-apps-on-the-device--"></a><a name="MT1012"/>Cihazdaki uygulamalar MT1012 listelenemedi ' *': *
-
-
 
 ### <a name="a-namemt1013mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a><a name="MT1013"/>MT1013 hata izleme bağımlılık: karşılaştırmak için hiçbir dosya. Lütfen bir test çalışması ile http://bugzilla.xamarin.com sırasında bir hata raporu dosya.
 
 Xamarin.iOS bir hata gösterir. Lütfen en dosyalama [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) test caes ile.
 
 ### <a name="a-namemt1014mt1014-failed-to-re-use-cached-version-of--"></a><a name="MT1014"/>Önbelleğe alınan sürümünü yeniden kullanmayı MT1014 başarısız ' *': *.
-
-
 
 ### <a name="a-namemt1015mt1015--failed-to-create-the-executable--"></a><a name="MT1015"/>MT1015 yürütülebilir dosya oluşturma başarısız oldu. ' *': *
 
@@ -681,7 +686,6 @@ Bu durum oluşabilir:
   Olası çözümler:
   - Xcode'da bir şablondan yeni bir uygulama oluşturmak, aynı sağlama profili seçin ve aynı cihaza dağıtabilirsiniz. Bazen Xcode (Xcode yapmanız gerekenler ister diğer durumlarda) yeni cihazları otomatik olarak sağlama profilleri yenileyebilirsiniz.
   -İOS Geliştirici Merkezi'ne gidin ve yeni aygıtla sağlama profili güncelleştirme ardından makinenize güncelleştirilmiş sağlama profili indirin.
-
 
 Hata hakkında daha fazla bilgi iOS aygıtı günlük basılır çoğu durumda, sorunu tanılamaya yardımcı olabilir.
 
@@ -784,27 +788,15 @@ Bu hata yalnızca ile birlikte bildirilen [MT1036](#MT1036). Lütfen bakın [MT1
 
 ### <a name="a-namemt1101mt1101-could-not-start-app"></a><a name="MT1101"/>MT1101 başlatılamadı uygulama
 
-
-
 ### <a name="a-namemt1102mt1102-could-not-attach-to-the-app-to-kill-it-"></a><a name="MT1102"/>MT1102 verebilir değil (Bu sonlandırmak için) uygulamaya ekleme: *
-
-
 
 ### <a name="a-namemt1103mt1103-could-not-detach"></a><a name="MT1103"/>MT1103 verebilir değil ayırma
 
-
-
 ### <a name="a-namemt1104mt1104-failed-to-send-packet-"></a><a name="MT1104"/>MT1104 paket gönderme başarısız oldu: *
-
-
 
 ### <a name="a-namemt1105mt1105-unexpected-response-type"></a><a name="MT1105"/>MT1105 beklenmeyen yanıt türü
 
-
-
 ### <a name="a-namemt1106mt1106-could-not-get-list-of-applications-on-the-device-request-timed-out"></a><a name="MT1106"/>MT1106 alınamadı uygulamaların listesini cihazda: İstek zaman aşımına uğradı.
-
-
 
 ### <a name="a-namemt1107mt1107-application-failed-to-launch-"></a><a name="MT1107"/>MT1107: Uygulama başlatılamadı: *
 
@@ -818,7 +810,6 @@ Mtouch birkaç işlemlerinden gerektiren <tt>DeveloperDiskImage.dmg</tt> bulunma
 
 Bağlı aygıt eşleşen bir DeveloperDiskImage.dmg olmadığından ya da bu hata oluşabilir.
 
-
 ### <a name="a-namemt1109mt1109-application-failed-to-launch-because-the-device-is-locked-please-unlock-the-device-and-try-again"></a><a name="MT1109"/>MT1109: Uygulama aygıt kilitlendiğinden başlatılamadı. Lütfen aygıtın kilidini açmak ve yeniden deneyin.
 
 Lütfen aygıtınız kilitliyse denetleyin.
@@ -826,6 +817,8 @@ Lütfen aygıtınız kilitliyse denetleyin.
 ### <a name="a-namemt1110mt1110-application-failed-to-launch-because-of-ios-security-restrictions-please-ensure-the-developer-is-trusted"></a><a name="MT1110"/>MT1110: Uygulama iOS güvenlik kısıtlamaları nedeniyle başlatılamadı. Lütfen Geliştirici güvenilir olduğundan emin olun.
 
 Bir kurumsal uygulamayı dağıtıyorsunuz ya da boş bir sağlama profili kullanarak sahip olabileceğiniz Geliştirici güven (Bu anlatılmıştır <a href="http://stackoverflow.com/a/30726375/183422">burada</a>).
+
+### <a name="a-namemt1111mt1111-application-launched-successfully-but-its-not-possible-to-wait-for-the-app-to-exit-as-requested-because-its-not-possible-to-detect-app-termination-when-launching-using-gdbserver"></a><a name="MT1111"/>MT1111: Uygulama başarıyla başlattı, ancak uygulama sonlandırma gdbserver kullanarak başlatılırken algılamak mümkün olmadığı için istenen şekilde çıkmak uygulama için beklenecek mümkün değildir.
 
 ### <a name="mt12xx-simulator"></a>MT12xx: Simulator
 
@@ -874,10 +867,7 @@ Benzeticileri iOS Xcode'nın aygıtlar kullanıcı arabirimini kullanarak benzet
   MT13xx [LinkWith]
   -->
 
-
 ### <a name="a-namemt1301mt1301-native-library---was-ignored-since-it-does-not-match-the-current-build-architectures-"></a><a name="MT1301"/>MT1301 yerel Kitaplığı `*` (\*) geçerli yapı architecture(s) eşleşmediğinden yok sayıldı (\*)
-
-
 
 ### <a name="a-namemt1302mt1302-could-not-extract-the-native-library--from--please-ensure-the-native-library-was-properly-embedded-in-the-managed-assembly-if-the-assembly-was-built-using-a-binding-project-the-native-library-must-be-included-in-the-project-and-its-build-action-must-be-objcbindingnativelibrary"></a><a name="MT1302"/>MT1302 ayıklayamadı yerel Kitaplığı ' *' öğesinden '+'. Lütfen (Derleme bağlaması proje kullanılarak oluşturuldu, yerel kitaplığı projeye dahil gerekir, ve yapı eylemi 'ObjcBindingNativeLibrary' olması gerekiyorsa) yerel kitaplığı düzgün yönetilen derlemede katıştırılan emin olun.
 
@@ -1058,7 +1048,7 @@ Bir dosya biçimi kullanılarak doğrulanabilir `file` bir terminal komutunu:
 
 Bu hata yönetilen bağlayıcı örneğin bir özel durum, beklenmeyen bir hatayla karşılaştığı anlamına gelir ve oluşturulamadı tamamlamak veya işlenmekte olan derlemeyi kaydedin. Tam hata hakkında daha fazla bilgi örn: derleme günlüğü parçası olacak
 
-``` 
+```
 error MT2001: Could not link assemblies.
     Method: `System.Void Todo.TodoListPageCS/<<-ctor>b__1_0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)`
     Assembly: `QuickTodo, Version=1.0.6297.28241, Culture=neutral, PublicKeyToken=null`
@@ -1068,22 +1058,13 @@ Parameter name: instruction
 
 Bu tür sorunlar için bir hata raporu dosya önemlidir. Çoğu durumda, uygun düzeltme yayımlanana kadar geçici bir çözüm sağlanabilir. Yukarıdaki bilgilerin sorunu çözmek için (bir test çalışması ve/veya derleme binairy birlikte) önemlidir.
 
-
 ### <a name="a-namemt2002mt2002-can-not-resolve-reference-"></a><a name="MT2002"/>MT2002 değil çözümleyebildiğinden başvuru: *
-
-
 
 ### <a name="a-namemt2003mt2003-option--will-be-ignored-since-linking-is-disabled"></a><a name="MT2003"/>MT2003 seçeneği ' *' bağlama devre dışı olduğundan göz ardı edilir
 
-
-
 ### <a name="a-namemt2004mt2004-extra-linker-definitions-file--could-not-be-located"></a><a name="MT2004"/>MT2004 ek bağlayıcı tanımları dosya ' *' bulunamadı.
 
-
-
 ### <a name="a-namemt2005mt2005-definitions-from--could-not-be-parsed"></a><a name="MT2005"/>MT2005 tanımları ' *' ayrıştırılamadı.
-
-
 
 ### <a name="a-namemt2006mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a><a name="MT2006"/>MT2006: gelen mscorlib.dll yüklenemiyor: *. Please reinstall Xamarin.iOS.
 
@@ -1168,9 +1149,17 @@ Beklenmeyen bir şey uygulamadan meta verileri azaltmak oluştu. Soruna neden b�
 
 Beklenmeyen bir şey işaretlemek oluştu `NSObject` alt sınıfların uygulamadan. Soruna neden bütünleştirilmiş hata iletisinde adlandırılmıştır. Derleme bu sorunu gidermek için de sağlanması gerekir bir [hata raporu](http://bugzilla.xamarin.com) etkin ayrıntı düzeyine sahip bir tam derleme günlüğü birlikte (yani `-v -v -v -v` içinde **ek mtouch bağımsız değişkenleri**).
 
+### <a name="a-namemt2090mt2090-inliner-failed-processing-"></a><a name="MT2090"/>MT2090: Inliner işlenemedi `...`.
+
+Beklenmeyen bir şey için satır içi kod uygulamadan oluştu. Soruna neden bütünleştirilmiş hata iletisinde adlandırılmıştır. Derleme bu sorunu gidermek için de sağlanması gerekir bir [hata raporu](https://bugzilla.xamarin.com) etkin ayrıntı düzeyine sahip bir tam derleme günlüğü birlikte (yani `-v -v -v -v` içinde **ek mtouch bağımsız değişkenleri**).
+
 <!-- MT21xx: more linker errors -->
 
 <!--- 2100 used by mmp -->
+
+### <a name="a-namemt2100mt2100-smart-enum-conversion-preserver-failed-processing-"></a><a name="MT2100"/>MT2100: Akıllı Enum dönüştürme Preserver işlenemedi `...`.
+
+Beklenmeyen bir şey uygulamasından akıllı numaralandırmaları dönüştürme yöntemlerini işaretlemek oluştu. Soruna neden bütünleştirilmiş hata iletisinde adlandırılmıştır. Derleme bu sorunu gidermek için de sağlanması gerekir bir [hata raporu](https://bugzilla.xamarin.com) etkin ayrıntı düzeyine sahip bir tam derleme günlüğü birlikte (yani `-v -v -v -v` içinde **ek mtouch bağımsız değişkenleri**).
 
 ### <a name="a-namemt2101mt2101-cant-resolve-the-reference--referenced-from-the-method--in-"></a><a name="MT2101"/>MT2101: başvurusu çözümlenemiyor '\*', başvurulan yönteminden'\*', ' *'.
 
@@ -1183,6 +1172,18 @@ Soruna neden bütünleştirilmiş hata iletisinde adlandırılmıştır. Derleme
 Beklenmeyen bir hata iletisinde belirtilen yöntemini işaretlemek oluştu.
 
 Soruna neden bütünleştirilmiş hata iletisinde adlandırılmıştır. Derleme bu sorunu gidermek için de sağlanması gerekir bir [hata raporu](https://bugzilla.xamarin.com) etkin ayrıntı düzeyine sahip bir tam derleme günlüğü birlikte (yani `-v -v -v -v` içinde **ek mtouch bağımsız değişkenleri**).
+
+### <a name="a-namemt2103mt2103-error-processing-assembly--"></a><a name="MT2103"/>MT2103: Hata işleme derleme '\*': *
+
+Bir derlemeyi işlenirken beklenmeyen bir hata oluştu.
+
+Soruna neden bütünleştirilmiş hata iletisinde adlandırılmıştır. Derleme bu sorunu gidermek için de sağlanması gerekir bir [hata raporu](https://bugzilla.xamarin.com) etkin ayrıntı düzeyine sahip bir tam derleme günlüğü birlikte (yani `-v -v -v -v` içinde **ek mtouch bağımsız değişkenleri**).
+
+### <a name="a-namemt2104mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a><a name="MT2104"/>MM2104: '{0}' derlemesi karma mod olduğu gibi bağlantı oluşturulamıyor.
+
+Karışık mod derlemeleri bağlayıcı tarafından işlenemez.
+
+Karışık mod derlemelerini https://msdn.microsoft.com/en-us/library/x0w2664k.aspx daha fazla bilgi için bkz.
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: Uygulama Nesne AĞACI hata iletileri
 
@@ -1201,15 +1202,11 @@ Bazen artımlı derlemelerde projenin iOS derleme seçeneği devre dışı bıra
 
 Bu hata iletisini Uygulama Nesne AĞACI derleyiciden gelir.
 
-
-
 ### <a name="a-namemt3003mt3003-conflicting---debug-and---llvm-options-soft-debugging-is-disabled"></a><a name="MT3003"/>MT3003 Çakışan--hata ayıklama ve--llvm seçenekleri. Geçici hata ayıklama devre dışı bırakılır.
 
 LLVM etkinleştirildiğinde, hata ayıklama desteklenmiyor. Uygulama hata ayıklama gerekiyorsa, ilk LLVM devre dışı bırakın.
 
 ### <a name="a-namemt3004mt3004-could-not-aot-the-assembly--because-it-doesnt-exist"></a><a name="MT3004"/>MT3004 verebilir AOT derlemesi ' *' var olmadığı için.
-
-
 
 ### <a name="a-namemt3005mt3005-the-dependency--of-the-assembly--was-not-found-please-review-the-projects-references"></a><a name="MT3005"/>MT3005 Bağımlılık '\*'derlemenin'\*' bulunamadı. Lütfen projenin başvurular gözden geçirin.
 
@@ -1305,39 +1302,21 @@ Bu her zaman Xamarin.iOS bir hata olduğunu; Lütfen sırasında bir hata raporu
 
 ### <a name="a-namemt4110mt4110-the-registrar-cannot-marshal-the-out-parameter-of-type--in-signature-for-method-"></a><a name="MT4110"/>MT4110 Kayıt türünün out parametresi sıralanamıyor `*` yöntemi için imzada `*`.
 
-
-
 ### <a name="a-namemt4111mt4111-the-registrar-cannot-build-a-signature-for-type--in-method-"></a><a name="MT4111"/>MT4111 Kayıt türü için bir imza oluşturamaz `*` yönteminde `*`.
-
-
 
 ### <a name="a-namemt4112mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvancedtopicsregistrarhttpsdeveloperxamarincomguidesiosadvancedtopicsregistrar-for-more-information"></a><a name="MT4112"/>MT4112 Kayıt bulundu geçersiz bir tür `*`. Genel türler Objective-C ile kaydetme desteklenmiyor ve rastgele davranışı ve/veya bir kilitlenme neden olabilir (için geriye dönük Xamarin.iOS eski sürümleriyle uyumluluk geçirerek bu hatayı yok saymayı mümkündür `--unsupported--enable-generics-in-registrar` ek mtouch olarak Projenin iOS derleme seçenekleri sayfasındaki bağımsız değişken. Bkz: [developer.xamarin.com/guides/ios/advanced_topics/registrar](https://developer.xamarin.com/guides/ios/advanced_topics/registrar) daha fazla bilgi için).
 
-
-
 ### <a name="a-namemt4113mt4113-the-registrar-found-a-generic-method--exporting-generic-methods-is-not-supported-and-will-lead-to-random-behavior-andor-crashes"></a><a name="MT4113"/>MT4113 Kayıt şirketi genel yöntem bulunamadı: '\*.\*'. Genel yöntemler verme desteklenmiyor ve rastgele davranışı ve/veya bir kilitlenme götürür.
-
-
 
 ### <a name="a-namemt4114mt4114-unexpected-error-in-the-registrar-for-the-method----please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT4114"/>Yöntem için Kaydedici MT4114 beklenmeyen hata oluştu '\*.\*'-Lütfen http://bugzilla.xamarin.com sırasında bir hata raporu dosya
 
-
-
 ### <a name="a-namemt4116mt4116-could-not-register-the-assembly--"></a><a name="MT4116"/>MT4116 kaydedemedi derlemesi ' *': *
-
-
 
 ### <a name="a-namemt4117mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a><a name="MT4117"/>MT4117 Kayıt şirketi bulunan bir imza uyuşmazlığı yönteminde '*.*'-yöntem alır seçiciyi gösterir * Yönetilen yöntemi sahipken parametreleri * parametreleri.
 
-
-
 ### <a name="a-namemt4118mt4118-cannot-register-two-managed-types--and--with-the-same-native-name-"></a><a name="MT4118"/>MT4118 kaydedilemiyor iki yönetilen türler ('\*'ve'\*') yerel aynı adla ('* ').
 
-
-
 ### <a name="a-namemt4119mt4119-could-not-register-the-selector--of-the-member--because-the-selector-is-already-registered-on-a-different-member"></a><a name="MT4119"/>MT4119 kaydedemedi Seçici '\*'üyesinin'\*. *' seçiciyi üzerinde farklı bir üye zaten kaydedildiği için.
-
-
 
 ### <a name="a-namemt4120mt4120-the-registrar-found-an-unknown-field-type--in-field--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT4120"/>MT4120 Kayıt şirketi bulunan bir bilinmeyen alan türü '\*'alanındaki'\*. *'. Lütfen http://bugzilla.xamarin.com sırasında bir hata raporu dosya
 
@@ -1345,15 +1324,9 @@ Bu hata, bir Xamarin.iOS hata gösterir. Lütfen sırasında bir hata raporu dos
 
 ### <a name="a-namemt4121mt4121-cannot-use-gccg-to-compile-the-generated-code-from-the-static-registrar-when-using-the-accounts-framework-the-header-files-provided-by-apple-used-during-the-compilation-require-clang-either-use-clang---compilerclang-or-the-dynamic-registrar---registrardynamic"></a><a name="MT4121"/>MT4121 kullanamaz GCC / G ++ (derleme sırasında kullanılan Apple tarafından sağlanan üstbilgi dosyaları gerektir Clang) hesapları framework kullanılırken statik kayıt oluşturulan kodu derlemek için. Clang kullanın ya da (--derleyici: clang) veya dinamik kayıt (--Kaydedici: dinamik).
 
-
-
 ### <a name="a-namemt4122mt4122-cannot-use-the-clang-compiler-provided-in-the--sdk-to-compile-the-generated-code-from-the-static-registrar-when-non-ascii-type-names--are-present-in-the-application-either-use-gccg---compilergccg-the-dynamic-registrar---registrardynamic-or-a-newer-sdk"></a><a name="MT4122"/>MT4122 kullanamaz sağlanan Clang derleyici *.* Statik kayıt şirketi ASCII olmayan olduğunda oluşturulan kodu derlemek için SDK adlarını yazın ('* ') uygulama yok. GCC kullanın ya da / G ++ (--derleyici: gcc | g ++), dinamik kayıt (--Kaydedici: dinamik) veya daha yeni bir SDK.
 
-
-
 ### <a name="a-namemt4123mt4123-the-type-of-the-variadic-parameter-in-the-variadic-function--must-be-systemintptr"></a><a name="MT4123"/>MT4123 Variadic işlevinde variadic parametresinin türü ' *' System.IntPtr olması gerekir.
-
-
 
 ### <a name="a-namemt4124mt4124-invalid--found-on--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT4124"/>MT4124 geçersiz * bulunan ' *'. Lütfen http://bugzilla.xamarin.com sırasında bir hata raporu dosya
 
@@ -1361,15 +1334,9 @@ Bu hata, bir Xamarin.iOS hata gösterir. Lütfen sırasında bir hata raporu dos
 
 ### <a name="a-namemt4125mt4125-the-registrar-found-an-invalid-type--in-signature-for-method--the-interface-must-have-a-protocol-attribute-specifying-its-wrapper-type"></a><a name="MT4125"/>MT4125 Kayıt bulundu geçersiz bir tür '\*'ın için imzası'\*': arabirim sarmalayıcı türünü belirten bir iletişim kuralı özniteliğe sahip olması gerekir.
 
-
-
 ### <a name="a-namemt4126mt4126-cannot-register-two-managed-protocols--and--with-the-same-native-name-"></a><a name="MT4126"/>MT4126 kaydedilemiyor iki yönetilen iletişim kuralı ('\*'ve'\*') yerel aynı adla ('* ').
 
-
-
 ### <a name="a-namemt4127mt4127-cannot-register-more-than-one-interface-method-for-the-method--which-is-implementing-"></a><a name="MT4127"/>MT4127 kaydedilemiyor yöntemi için birden fazla arabirim yöntemi '\*' (uygulama '\*').
-
-
 
 ### <a name="a-namemt4128mt4128--the-registrar-found-an-invalid-generic-parameter-type--in-the-method--the-generic-parameter-must-have-an-nsobject-constraint"></a><a name="MT4128"/>MT4128 Kayıt şirketi bulunan bir genel geçersiz parametre türü '\*'yönteminde'\*'. Genel parametresini 'NSObject' kısıtlaması olmalıdır.
 
@@ -1506,6 +1473,30 @@ Objective-C adı söz konusu türü için geçerli bir Objective-C tanımlayıc�
 
 Lütfen geçerli bir Objective-C tanımlayıcı kullanın.
 
+### <a name="a-namemt4169mt4169-failed-to-generate-a-pinvoke-wrapper-for-method-message"></a><a name="MT4169"/>MT4169: {} yöntemi için P/Invoke sarmalayıcı oluşturulamadı: {message}
+
+Xamarin.iOS P/Invoke sarmalayıcı işlevi belirtildiği için oluşturulamadı.
+Temel nedeni için bildirilen hata iletisini gözden geçirin.
+
+### <a name="a-namemt4170mt4170-the-registrar-cant-convert-from-managed-type-to-native-type-for-the-return-value-in-the-method-method"></a><a name="MT4170"/>MT4170: Kayıt şirketi '{yönetilen türünden}' '{yerel türüne}' {yöntemi} yönteminin dönüş değeri için dönüştürülemiyor.
+
+Hata açıklaması bkz <a href="#MT4172">MT4172</a>.
+
+### <a name="a-namemt4171mt4171-the-bindas-attribute-on-the-member-member-is-invalid-the-bindas-type-type-is-different-from-the-property-type-type"></a><a name="MT4171"/>MT4171: {üyesi} üyede BindAs özniteliği geçersiz: BindAs türü {} {type} özelliği türünden farklıdır.
+
+Lütfen BindAs öznitelik türünün bağlı olduğu bir üyenin türüyle eşleştiğinden emin olun.
+
+### <a name="a-namemt4172mt4172-the-registrar-cant-convert-from-native-type-to-managed-type-for-the-parameter-parameter-name-in-the-method-method"></a><a name="MT4172"/>MT4172: Kayıt şirketi '{yerel türünden}' '{yönetilen türü için}' {yöntemi} yöntemi parametresinin '{parametre name}' türüne dönüştürülemez.
+
+Kayıt şirketi sözü edilen türleri arasında dönüştürme desteklemez.
+
+Söz konusu API Xamarin.iOS tarafından sağlanıyorsa bu Xamarin.iOS bir hata olduğunu; Lütfen en dosyalama [http://bugzilla.xamarin.com][1].
+
+Bu yerel bir kitaplık için bir bağlama projesini geliştirirken çalıştırırsanız, biz yeni birleşimlerini türleri için destek eklemek için açık. Bu durumda, Lütfen bir geliştirme istek dosyası ([http://bugzilla.xamarin.com][2]) ile bir test çalışması ve biz değerlendirmek.
+
+[1]: https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS
+[2]: https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS&component=General&bug_severity=enhancement
+
 ## <a name="mt5xxx-gcc-and-toolchain-error-messages"></a>MT5xxx: GCC ve araç zinciri hata iletileri
 
 ### <a name="mt51xx-compilation"></a>MT51xx: derleme
@@ -1517,15 +1508,9 @@ Lütfen geçerli bir Objective-C tanımlayıcı kullanın.
 
 ### <a name="a-namemt5101mt5101-missing--compiler-please-install-xcode-command-line-tools-component"></a><a name="MT5101"/>MT5101 eksik ' *' derleyici. Lütfen 'Komut satırı araçları' bileşeni yükleyin
 
-
-
 ### <a name="a-namemt5102mt5102-failed-to-assemble-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT5102"/>Dosya bir araya getirmek için MT5102 başarısız ' *'. Lütfen http://bugzilla.xamarin.com sırasında bir hata raporu dosya
 
-
-
 ### <a name="a-namemt5103mt5103-failed-to-compile-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT5103"/>MT5103 dosyası derlenemedi. ' *'. Lütfen http://bugzilla.xamarin.com sırasında bir hata raporu dosya
-
-
 
 ### <a name="a-namemt5104mt5104-could-not-find-neither-the--nor-the--compiler-please-install-xcode-command-line-tools-component"></a><a name="MT5104"/>MT5104 bulamadı Hiçbiri '\*'veya '\*' derleyici. Lütfen 'Komut satırı araçları' bileşeni yükleyin
 
@@ -1572,8 +1557,6 @@ Yerel bağlayıcı yerde başvurulan bir simge bulamadığında bu gerçekleşir
 
   - Üçüncü taraf bağlama değiştirilemez ya da üçüncü taraf kitaplığı ile el ile bağlıyorsanız, ileterek eşdeğer bayrağı ayarlayabilirsiniz <code>-cxx</code> (Bu işlem projenin iOS derleme seçenekleri sayfasında ek mtouch değişkenlerinde değiştirerek mtouch için . Bu her proje yapılandırması için yapılması gereken unutmayın).
 
-
-
 ### <a name="a-namemt5211mt5211-native-linking-failed-undefined-objective-c-class--the-symbol--could-not-be-found-in-any-of-the-libraries-or-frameworks-linked-with-your-application"></a><a name="MT5211"/>MT5211: Yerel bağlama başarısız oldu, tanımlanmamış Objective-C sınıfı: \*. Simgenin '\*' uygulamanız ile bağlantılı çerçeveler ve kitaplıklar hiçbirinde bulunamadı.
 
 Yerel bağlayıcı yerde başvurulan bir Objective-C sınıfı bulamadığında bu gerçekleşir. Bu durum birkaç nedeni vardır: aynı [MT5210](#MT5210) ve ayrıca:
@@ -1587,12 +1570,9 @@ Yerel bağlayıcı yerde başvurulan bir Objective-C sınıfı bulamadığında 
               {
               }
 
-
-
 ### <a name="a-namemt5212mt5212-native-linking-failed-duplicate-symbol-"></a><a name="MT5212"/>MT5212: Yerel bağlama başarısız oldu, yinelenen simgesi: *.
 
 Bu yerel bağlayıcı yinelenen simgeleri tüm yerel kitaplıkları arasında karşılaştığında gerçekleşir. Bu hatayı olabilir bir veya daha fazla [MT5213](#MT5213) simgenin her oluşumu konumuyla hataları. Bu hata için olası nedenler:
-
 
 * Aynı yerel kitaplığı iki kez dahil edilir.
 * Aynı simgeleri tanımlamak için iki farklı yerel kitaplıkları gerçekleşir.
@@ -1616,7 +1596,6 @@ Bu yerel bağlayıcı yinelenen simgeleri tüm yerel kitaplıkları arasında ka
   - İstek yerel kitaplığı sağlayıcısı Düzelt ve güncelleştirilmiş sürümü sağlayın.
   - Kendiniz (sorun aslında yinelenen nesne dosyaları ise, bu yalnızca çalışır) fazladan nesne dosyaları kaldırarak Düzelt
 
-
             # Find out if the library is a fat library, and which
             # architectures it contains.
             lipo -info libNative.a
@@ -1638,7 +1617,6 @@ Bu yerel bağlayıcı yinelenen simgeleri tüm yerel kitaplıkları arasında ka
             # Reassemble the fat library
             lipo *.a -create -output libNative.a
 
-
   - Kullanılmayan kodu kaldırmak için bağlayıcı isteyin. Aşağıdaki koşulların tümü yerine getirilirse Xamarin.iOS bu otomatik olarak yapar:
     - Tüm üçüncü taraf bağlamaları `[LinkWith]` öznitelikleri SmartLink etkin:
 
@@ -1646,7 +1624,6 @@ Bu yerel bağlayıcı yinelenen simgeleri tüm yerel kitaplıkları arasında ka
 
     - Hayır `-gcc_flags` mtouch (alanındaki Ek mtouch bağımsız değişkenleri projenin iOS derleme seçenekleri) geçirilir.
     - Doğrudan kullanılmayan kod ekleyerek kaldırmak için bağlayıcı istemeniz mümkündür `-gcc_flags -dead_strip` projenin iOS ek mtouch değişkenlerinde için derleme seçenekleri.
-
 
 ### <a name="a-namemt5213mt5213-duplicate-symbol-in--location-related-to-previous-error"></a><a name="MT5213"/>MT5213: Yinelenen sembol: * (konum ilgili önceki hata)
 
@@ -1723,11 +1700,7 @@ Bu iki ana nedeni vardır:
 
 ### <a name="a-namemt5301mt5301-missing-strip-tool-please-install-xcode-command-line-tools-component"></a><a name="MT5301"/>MT5301: 'Şerit' aracı eksik. Lütfen 'Komut satırı araçları' bileşeni yükleyin
 
-
-
 ### <a name="a-namemt5302mt5302-missing-dsymutil-tool-please-install-xcode-command-line-tools-component"></a><a name="MT5302"/>MT5302: Eksik 'dsymutil' aracı. Lütfen 'Komut satırı araçları' bileşeni yükleyin
-
-
 
 ### <a name="a-namemt5303mt5303-failed-to-generate-the-debug-symbols-dsym-directory-please-review-the-build-log"></a><a name="MT5303"/>MT5303: hata ayıklama simgeleri (dSYM dizin) oluşturulamadı. Lütfen yapı günlüğünü gözden geçirin.
 
@@ -1738,8 +1711,6 @@ Dsymutil hata ayıklama simgeleri oluşturmak için son .app dizin çalıştır�
 Uygulamayı hata ayıklama bilgileri kaldırmak için 'Şerit' Aracı çalıştırırken bir hata oluştu.
 
 ### <a name="a-namemt5305mt5305-missing-lipo-tool-please-install-xcode-command-line-tools-component"></a><a name="MT5305"/>MT5305: Eksik 'lipo' aracı. Lütfen 'Komut satırı araçları' bileşeni yükleyin
-
-
 
 ### <a name="a-namemt5306mt5306-failed-to-create-the-a-fat-library-please-review-the-build-log"></a><a name="MT5306"/>MT5306: oluşturulamadı fat kitaplığı. Lütfen yapı günlüğünü gözden geçirin.
 
@@ -2064,7 +2035,6 @@ Burada * olabilir:
 
 *MSBuild görevi: PropertyListEditorTaskBase*
 
-
 ## <a name="mt8xxx-runtime-error-messages"></a>MT8xxx: Çalışma zamanı hata iletileri
 
 <!--
@@ -2157,5 +2127,9 @@ Xamarin.iOS bir hata gösterir. Lütfen en dosyalama [http://bugzilla.xamarin.co
 Xamarin.iOS bir hata gösterir. Lütfen en dosyalama [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
 ### <a name="a-namemt8023mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a><a name="MT8023"/>MT8023: Açık genel yöntem için kapalı bir genel yöntem oluşturmak için bir örnek nesne gereklidir: * (simge başvuru: *). Lütfen http://bugzilla.xamarin.com sırasında bir hata raporu dosya.
+
+Xamarin.iOS bir hata gösterir. Lütfen en dosyalama [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
+
+### <a name="a-namemt8024mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a><a name="MT8024"/>MT8024: '{smart_type}' Akıllı enum için geçerli uzantı türü bulunamadı. Lütfen https://bugzilla.xamarin.com dosyalama.
 
 Xamarin.iOS bir hata gösterir. Lütfen en dosyalama [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).

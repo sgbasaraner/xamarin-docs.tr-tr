@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a113a386f1312253fda8913cea3cb608a65e1061
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f7c743bab2a6acb3dcd57ebca207957f983e0c0f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="unit-testing"></a>Birim testi
 
@@ -119,15 +119,15 @@ namespace Fixtures {
 
 Sınama Çalıştırıcısı, hangi testlerin kaydedilir ve hangi testlerin yürütülebilecek ayrı ayrı seçmeniz görmenize olanak sağlar.
 
-[ ![](touch.unit-images/02.png "Kayıtlı testlerin listesi")](touch.unit-images/02.png) 
+[![](touch.unit-images/02.png "Kayıtlı testlerin listesi")](touch.unit-images/02.png#lightbox) 
 
-[ ![](touch.unit-images/03.png "Tek bir metin")](touch.unit-images/03.png) 
+[![](touch.unit-images/03.png "Tek bir metin")](touch.unit-images/03.png#lightbox) 
 
-[ ![](touch.unit-images/04.png "Çalıştırma sonuçları")](touch.unit-images/04.png)
+[![](touch.unit-images/04.png "Çalıştırma sonuçları")](touch.unit-images/04.png#lightbox)
 
 İç içe geçmiş görünümleri metin donanımı seçerek ayrı ayrı test armatürleri çalıştırabilirsiniz veya tüm testleri "Çalıştırmak olan her şeyi" komutunu çalıştırabilirsiniz. Bir geçirme test, bir hata ve yok sayılacak test dahil olmak üzere beklenen varsayılan test çalıştırırsanız. Bu raporun nasıl göründüğünü ve doğrudan başarısız testleri detaya ve hata hakkında daha fazla bilgi bulabilirsiniz:
 
-[ ![](touch.unit-images/05.png "Bir örnek raporu") ](touch.unit-images/05.png) [ ![ ] (touch.unit-images/06.png "bir örnek raporu") ](touch.unit-images/06.png) [ ![ ] (touch.unit-images/07.png "bir örnek raporu")](touch.unit-images/07.png)
+[![](touch.unit-images/05.png "Bir örnek raporu") ](touch.unit-images/05.png#lightbox) [ ![ ] (touch.unit-images/05.png "bir örnek raporu") ](touch.unit-images/05.png#lightbox) [ ![ ] (touch.unit-images/05.png "bir örnek raporu")](touch.unit-images/05.png#lightbox)
 
 Uygulama çıkış penceresine Ayrıca, hangi testlerin yürütülen görmek için IDE ve bunların geçerli durumu da bakabilirsiniz.
 

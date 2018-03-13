@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 951de7c134e6882d621b015456d5d40a7cf2b8d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6512387738217259067e7b9ae8076f73b4fbeb07
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>NuGet için Yeni platforma özgü kitaplık projeleri oluşturma
 
@@ -27,11 +27,11 @@ Birden çok derleme oluşturulur ve tek bir NuGet paket oluşturulmuş. NuGet st
 
 2. Seçin **Multiplatform Kitaplığı** gelen **Multiplatform > Kitaplığı** bölümü:
 
-  [ ![](platform-specific-images/mulitplatform-library-sml.png "Tek bir kod tabanının için birden çok platform kitaplığı yapılandırma")](platform-specific-images/multiplatform-library.png)
+  [![](platform-specific-images/mulitplatform-library-sml.png "Tek bir kod tabanının için birden çok platform kitaplığı yapılandırma")](platform-specific-images/multiplatform-library.png#lightbox)
 
 3. Girin bir **adı** ve **açıklama**ve seçin **Platform özel**:
 
-  [ ![](platform-specific-images/specific-configure-sml.png "İOS ve Android için platforma özgü kitaplığı yapılandırma")](platform-specific-images/specific-configure.png)
+  [![](platform-specific-images/specific-configure-sml.png "İOS ve Android için platforma özgü kitaplığı yapılandırma")](platform-specific-images/specific-configure.png#lightbox)
 
 4. Sihirbazı tamamlayın. Şu projeler çözüme eklendi:
 
@@ -42,7 +42,7 @@ Birden çok derleme oluşturulur ve tek bir NuGet paket oluşturulmuş. NuGet st
 
 5. NuGet projeye sağ tıklayın ve seçin **seçenekleri**, ardından açık **NuGet paketini > meta veri** bölümünde ve girin [gerekli meta veriler](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) (iyi tüm isteğe bağlı olarak Meta veriler):
 
-  [ ![](platform-specific-images/specific-metadata-sml.png "Gerekli meta veriler girin")](platform-specific-images/specific-metadata.png)
+  [![](platform-specific-images/specific-metadata-sml.png "Gerekli meta veriler girin")](platform-specific-images/specific-metadata.png#lightbox)
 
 6. Ayrıca, **proje seçenekleri** penceresi açık **başvuru derlemeleri** bölümünde ve paylaşılan kitaplık "yemi ve anahtar" destekleneceğini hangi PCL profillerini seçin:
 

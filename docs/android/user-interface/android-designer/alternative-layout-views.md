@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: f6884260315f8846720370c558f7435d2c5a9d91
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c2df60a79ea3b5a0ff226cfaade0440db13fd5ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternative-layout-views"></a>Alternatif Düzen görünümleri
 
 _Bu konuda nasıl düzenleri kaynak niteleyicileri kullanarak sürümlü olabilir açıklanmaktadır. Örneğin, cihaz yatay modda olduğunda, yalnızca kullanılan bir düzen sürümünü ve olabilir yalnızca dikey modu için bir düzen sürümü._
 
-<a name="creating_alternative_layouts" />
 
 ## <a name="creating-alternative-layouts"></a>Alternatif düzenleri oluşturma
 
@@ -26,11 +25,11 @@ Tıkladığınızda **alternatif düzeni görünümü** simgesi (sol tarafındak
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Alternatif düzeni Görünüm bölmesi](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "alternatif düzeni Görünüm bölmesi")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png)
+[![Alternatif düzeni Görünüm bölmesi](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "alternatif düzeni Görünüm bölmesi")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Alternatif düzeni Görünüm bölmesi](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png)
+[![Alternatif düzeni Görünüm bölmesi](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png#lightbox)
 
 -----
 
@@ -38,11 +37,11 @@ Tıkladığınızda yeşil artı yanına **yeni sürümü**, **oluşturma düzen
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Düzen Değişimi Oluştur](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "düzeni Değişimi Oluştur")](alternative-layout-views-images/vs/02-create-layout-variation.png)
+[![Düzen Değişimi Oluştur](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "düzeni Değişimi Oluştur")](alternative-layout-views-images/vs/02-create-layout-variation.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Düzen Değişimi Oluştur](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png)
+[![Düzen Değişimi Oluştur](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png#lightbox)
 
 -----
 
@@ -51,11 +50,11 @@ Aşağıdaki örnekte, kaynak niteleyicisi **ekran yönünü** ayarlanır **yata
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Büyük kara değişim](alternative-layout-views-images/vs/03-large-land-sml.png "büyük kara değişim")](alternative-layout-views-images/vs/03-large-land.png)
+[![Büyük kara değişim](alternative-layout-views-images/vs/03-large-land-sml.png "büyük kara değişim")](alternative-layout-views-images/vs/03-large-land.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Büyük kara değişim](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png)
+[![Büyük kara değişim](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png#lightbox)
 
 -----
 
@@ -64,16 +63,15 @@ Soldaki önizleme bölmesinde kaynak niteleyicisi seçimleri etkilerini görünt
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Yüklenen düzeni göstergesi](alternative-layout-views-images/vs/04-new-layout-sml.png "yüklenen düzeni göstergesi")](alternative-layout-views-images/vs/04-new-layout.png)
+[![Yüklenen düzeni göstergesi](alternative-layout-views-images/vs/04-new-layout-sml.png "yüklenen düzeni göstergesi")](alternative-layout-views-images/vs/04-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Yüklenen düzeni göstergesi](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png)
+[![Yüklenen düzeni göstergesi](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png#lightbox)
 
 -----
 
 
-<a name="editing_alternative_layouts" />
 
 ## <a name="editing-alternative-layouts"></a>Alternatif düzenleri düzenleme
 
@@ -83,11 +81,11 @@ Birden çok Düzen sürümlerinin bakım basitleştirmek için tasarımcı sağl
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Çok Düzenle simgesine](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "çok Düzenle simgesi")](alternative-layout-views-images/vs/05-multi-layout-icon.png)
+[![Çok Düzenle simgesine](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "çok Düzenle simgesi")](alternative-layout-views-images/vs/05-multi-layout-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Çok Düzenle simgesi](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png)
+[![Çok Düzenle simgesi](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png#lightbox)
 
 -----
 
@@ -96,11 +94,11 @@ Tıkladığınızda **çok Düzenle** simge, satırları düzenleri (aşağıda 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tüm düzenleri bağlantısını](alternative-layout-views-images/vs/06-multi-linked-sml.png "tüm düzenleri bağlantısını Kaldır")](alternative-layout-views-images/vs/06-multi-linked.png)
+[![Tüm düzenleri bağlantısını](alternative-layout-views-images/vs/06-multi-linked-sml.png "tüm düzenleri bağlantısını Kaldır")](alternative-layout-views-images/vs/06-multi-linked.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Tüm düzenleri bağlantısını Kaldır](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png)
+[![Tüm düzenleri bağlantısını Kaldır](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png#lightbox)
 
 -----
 
@@ -109,11 +107,11 @@ Tıkladığınızda **çok Düzenle** simge, satırları düzenleri (aşağıda 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Bağlantıyı kaldır Orta düzeni](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "Bağlantıyı Kes'i Orta düzeni")](alternative-layout-views-images/vs/07-unlink-middle-layout.png)
+[![Bağlantıyı kaldır Orta düzeni](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "Bağlantıyı Kes'i Orta düzeni")](alternative-layout-views-images/vs/07-unlink-middle-layout.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Orta düzeni bağlantısını Kaldır](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png)
+[![Orta düzeni bağlantısını Kaldır](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png#lightbox)
  
 -----
  
@@ -121,7 +119,6 @@ Tıkladığınızda **çok Düzenle** simge, satırları düzenleri (aşağıda 
 Bu örnekte, bir değişiklik yapıldığında olarak **varsayılan** veya **uzun** diğer düzen ancak değil düzeni yayılır **kara büyük** düzeni. 
 
 
-<a name="multi_edit_example" />
 
 ### <a name="multi-edit-example"></a>Çok düzenleme örneği 
 
@@ -129,11 +126,11 @@ Genel olarak, bir düzene bir değişiklik yaptığınızda bu aynı değişikli
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Kutusu TextView ekleme](alternative-layout-views-images/vs/08-add-textview-sml.png "kutusu TextView Ekle")](alternative-layout-views-images/vs/08-add-textview.png)
+[![Kutusu TextView ekleme](alternative-layout-views-images/vs/08-add-textview-sml.png "kutusu TextView Ekle")](alternative-layout-views-images/vs/08-add-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Kutusu TextView Ekle](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png)
+[![Kutusu TextView Ekle](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png#lightbox)
  
 -----
  
@@ -142,11 +139,11 @@ Genel olarak, bir düzene bir değişiklik yaptığınızda bu aynı değişikli
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Yatay kutusu TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "yatay kutusu TextView")](alternative-layout-views-images/vs/09-landscape-textview.png)
+[![Yatay kutusu TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "yatay kutusu TextView")](alternative-layout-views-images/vs/09-landscape-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Yatay kutusu TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png)
+[![Yatay kutusu TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png#lightbox)
  
 -----
  
@@ -154,7 +151,6 @@ Genel olarak, bir düzene bir değişiklik yaptığınızda bu aynı değişikli
 Ancak yalnızca bir düzene yerel bir değişiklik yapmak isterseniz (diğer bir deyişle, herhangi bir başka düzenleri için dağıtılmasını değişiklik istemediğiniz)? Bunu yapmak için sonraki açıklandığı gibi değiştirmeden önce değiştirmek istediğiniz düzeni bağlantısını gerekir. 
 
 
-<a name="making_local_changes" />
 
 ### <a name="making-local-changes"></a>Yerel değişiklikler yapma 
 
@@ -162,11 +158,11 @@ Eklenen sağlamak için her iki düzende istiyoruz varsayalım `TextView`, ancak
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Yerel değişiklik](alternative-layout-views-images/vs/10-local-change-sml.png "yerel Değiştir")](alternative-layout-views-images/vs/10-local-change.png)
+[![Yerel değişiklik](alternative-layout-views-images/vs/10-local-change-sml.png "yerel Değiştir")](alternative-layout-views-images/vs/10-local-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Yerel Değiştir](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png)
+[![Yerel Değiştir](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png#lightbox)
  
 -----
  
@@ -174,7 +170,6 @@ Eklenen sağlamak için her iki düzende istiyoruz varsayalım `TextView`, ancak
 Tıkladığınızda **varsayılan** , görüntülemek için Düzen `TextView` metin dizesi ayarlanmış hala `Portrait`. 
 
 
-<a name="handling_conflicts" />
 
 ## <a name="handling-conflicts"></a>Çakışmalarını işleme 
 
@@ -182,22 +177,21 @@ Tıkladığınızda **varsayılan** , görüntülemek için Düzen `TextView` me
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Çakışan değişiklik](alternative-layout-views-images/vs/11-conflicting-change-sml.png "çakışan değişiklik")](alternative-layout-views-images/vs/11-conflicting-change.png)
+[![Çakışan değişiklik](alternative-layout-views-images/vs/11-conflicting-change-sml.png "çakışan değişiklik")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Çakışan değişiklik](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png)
+[![Çakışan değişiklik](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
  
 -----
  
 
 A *çakışma kutusunu* çakışma açıklamak için sağdaki pencere öğesinin görüntülenir: 
 
-[ ![Çakışma Uyarısı](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png)
+[![Çakışma Uyarısı](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
 
 Çakışma kutusu değiştirilmiş özellikler listesini gösterir ve bunların değerleri listeler. Tıklatarak **yoksay çakışma** özellik değişikliği yalnızca bu pencere öğesi için geçerlidir. Tıklatarak **Uygula** Bu pencere öğesi de karşılık gelen pencere öğesinde bağlantılı konusunda özellik değişikliği uygulandığı **varsayılan** düzeni. Tüm özellik değişikliklerini uyguladıysanız, çakışma otomatik olarak atılır. 
 
-<a name="view_group_conflicts" />
 
 ### <a name="view-group-conflicts"></a>Görünüm Grup çakışmaları 
 
@@ -205,11 +199,11 @@ A *çakışma kutusunu* çakışma açıklamak için sağdaki pencere öğesinin
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Grup çakışma görüntülemek](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "Grup çakışma görüntüleyin")](alternative-layout-views-images/vs/12-view-group-conflict.png)
+[![Grup çakışma görüntülemek](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "Grup çakışma görüntüleyin")](alternative-layout-views-images/vs/12-view-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Görünüm Grup çakışması](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png)
+[![Görünüm Grup çakışması](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png#lightbox)
  
 -----
  
@@ -220,11 +214,11 @@ Varsa bir `CheckBox` eklenen **varsayılan** düzeni, başka bir çakışma olu�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Onay kutusu çakışma](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "onay kutusunu çakışması")](alternative-layout-views-images/vs/13-checkbox-conflict.png)
+[![Onay kutusu çakışma](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "onay kutusunu çakışması")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Onay kutusu çakışması](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png)
+[![Onay kutusu çakışması](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
  
 -----
  
@@ -233,18 +227,18 @@ Tıklatarak **kara büyük** düzeni çakışması ortaya çıkarır. Aşağıda
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Alt Düzen Çakışma](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt düzeni çakışması")](alternative-layout-views-images/vs/14-alt-layout-conflict.png)
+[![Alt Düzen Çakışma](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "Alt düzeni çakışması")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Alt düzeni çakışması](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png)
+[![Alt düzeni çakışması](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
  
 -----
  
 
 Ayrıca, çakışma kutusu aşağıdaki iletiyi görüntüler:
 
-[ ![Çakışma iletisi](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png)
+[![Çakışma iletisi](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
 
 Ekleme `CheckBox` bir çakışma neden olur **kara büyük** düzeni cinsinden değişiklikleri olan `LinearLayout` , içerir. Ancak, bu durumda çakışma kutusunu yalnızca içine eklenen pencere öğesi görüntüler **varsayılan** Düzen ( `CheckBox`).
 
@@ -252,11 +246,11 @@ Tıklatırsanız **yoksay çakışma**, pencere öğesi olduğu eksik sürüklen
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Grup çakışma](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "Grup çakışma")](alternative-layout-views-images/vs/15-resolved-group-conflict.png)
+[![Grup çakışma](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "Grup çakışma")](alternative-layout-views-images/vs/15-resolved-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Grup çakışma](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png)
+[![Grup çakışma](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png#lightbox)
  
 -----
  
@@ -264,7 +258,6 @@ Tıklatırsanız **yoksay çakışma**, pencere öğesi olduğu eksik sürüklen
 İle önceki örnekte görüldüğü gibi `Button`, `CheckBox` kırmızı değişiklik işareti olduğundan yok yalnızca `LinearLayout` içinde uygulanan değişiklikler sahip **kara büyük** düzeni.
 
 
-<a name="Conflict_Persistence" />
 
 ### <a name="conflict-persistence"></a>Çakışma kalıcılığı
 

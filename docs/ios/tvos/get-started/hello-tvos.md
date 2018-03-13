@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: fe58aa8ffb74a9b6e937be5a7f1dde0432794405
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5eccb36b3c6a437ddc1ec055e779d8f78460643e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Merhaba, tvOS Hızlı Başlangıç Kılavuzu
 
@@ -34,7 +34,7 @@ Xamarin.tvOS uygulamalar C# ve .NET içinde yazılmış olduğundan, ayrıca, or
 
 Bu makale için bir Apple TV, temel bir oluşturma işleminde size adım adım ilerlemenizi sağlayarak Xamarin.tvOS ve Visual Studio kullanarak uygulama oluşturmak için gereken temel kavramları tanıtılacaktır **Hello, tvOS** sayısını sayar uygulamanın bir düğme var tıklanan:
 
-[ ![](hello-tvos-images/run05.png "Örnek uygulamayı çalıştırma")](hello-tvos-images/run05.png)
+[![](hello-tvos-images/run05.png "Örnek uygulamayı çalıştırma")](hello-tvos-images/run05.png#lightbox)
 
 Aşağıdaki kavramlar şu konulara değineceğiz:
 
@@ -51,21 +51,21 @@ Başlamak için şimdi aşağıdakileri yapın:
 
 1. Mac için Visual Studio'yu başlatın:
 
-    [ ![](hello-tvos-images/setup01.png "Mac için Visual Studio")](hello-tvos-images/setup01.png)
+    [![](hello-tvos-images/setup01.png "Mac için Visual Studio")](hello-tvos-images/setup01.png#lightbox)
 2. Tıklayın **yeni çözüm...**  bağlantıyı açmak için ekranın üst sol alt köşesindeki **yeni proje** iletişim kutusu.
 3. Seçin **tvOS** > **uygulama** > **Single View uygulaması** tıklatıp **sonraki** düğmesi:
 
-    [ ![](hello-tvos-images/setup02.png "Tek görünüm uygulaması seçin")](hello-tvos-images/setup02.png)
+    [![](hello-tvos-images/setup02.png "Tek görünüm uygulaması seçin")](hello-tvos-images/setup02.png#lightbox)
 4. Girin `Hello, tvOS` için **App Name**, girin, **kuruluş tanımlayıcı** tıklatıp **sonraki** düğmesi:
 
-    [ ![](hello-tvos-images/setup04.png "Merhaba, tvOS girin")](hello-tvos-images/setup04.png)
+    [![](hello-tvos-images/setup04.png "Merhaba, tvOS girin")](hello-tvos-images/setup04.png#lightbox)
 5. Girin `Hello_tvOS` için **proje adı** tıklatıp **oluşturma** düğmesi:
 
-    [ ![](hello-tvos-images/setup03.png "Enter HellotvOS")](hello-tvos-images/setup03.png)
+    [![](hello-tvos-images/setup03.png "Enter HellotvOS")](hello-tvos-images/setup03.png#lightbox)
 
 Mac için Visual Studio yeni Xamarin.tvOS uygulaması oluşturun ve uygulamanızın çözüme eklenir varsayılan dosyalar görüntüleyin:
 
- [ ![](hello-tvos-images/project01.png "Varsayılan dosyalar görünümü")](hello-tvos-images/project01.png)
+ [![](hello-tvos-images/project01.png "Varsayılan dosyalar görünümü")](hello-tvos-images/project01.png#lightbox)
 
 Mac kullanımlar için Visual Studio **çözümleri** ve **projeleri**, Visual Studio mu tam aynı şekilde. Bir veya daha fazla projeleri tutabilen bir kapsayıcı çözümdür; projeleri uygulamaları, destekleme kitaplıkları, sınama uygulamalarını, vb. içerebilir. Bu durumda, Mac için Visual Studio çözüm ve bir uygulama projesi sizin için oluşturdu.
 
@@ -253,11 +253,11 @@ Xamarin.tvOS uygulamamıza oluşturduk ve bileşenlerinin temel bilgilere sahip 
 
 UI oluşturmaya başlamak için şimdi çift `Main.storyboard` dosyasını **Çözüm Gezgini** iOS Tasarımcısı düzenlemek üzere açmak için:
 
-[ ![](hello-tvos-images/designer01.png "Çözüm Gezgini'nde Main.storyboard dosyası")](hello-tvos-images/designer01.png)
+[![](hello-tvos-images/designer01.png "Çözüm Gezgini'nde Main.storyboard dosyası")](hello-tvos-images/designer01.png#lightbox)
 
 Bu Tasarımcısı'nı başlatın ve aşağıdaki gibi gerekir:
 
-[ ![](hello-tvos-images/designer02.png "Tasarımcı")](hello-tvos-images/designer02.png)
+[![](hello-tvos-images/designer02.png "Tasarımcı")](hello-tvos-images/designer02.png#lightbox)
 
 İOS Tasarımcısı hakkında daha fazla bilgi ve nasıl çalıştığı için başvurmak [iOS için Xamarin Tasarımcısı giriş](~/ios/user-interface/designer/introduction.md) Kılavuzu.
 
@@ -267,57 +267,57 @@ Aşağıdakileri yapın:
 
 1. Bulun **araç**, tasarım yüzeyine sağında olmalıdır:
 
-    [![](hello-tvos-images/designer03.png "Araç kutusu")](hello-tvos-images/designer03.png)
+    [![](hello-tvos-images/designer03.png "Araç kutusu")](hello-tvos-images/designer03.png#lightbox)
 
     Burada bulamazsanız, Gözat **Görünüm > klavye takımı > Araç** görüntülemek için.
 2. Sürükleme bir **etiket** gelen **araç** tasarım yüzeyi için:
 
-    [ ![](hello-tvos-images/designer04.png "Bir etiket Araç Kutusu'ndan sürükleyin")](hello-tvos-images/designer04.png)
+    [![](hello-tvos-images/designer04.png "Bir etiket Araç Kutusu'ndan sürükleyin")](hello-tvos-images/designer04.png#lightbox)
 3. Tıklayın **başlık** özelliğinde **özelliği paneli** düğmenin başlık değiştirip `Hello, tvOS` ve ayarlayın **yazı tipi boyutu** 128 için:
 
-    [ ![](hello-tvos-images/designer05.png "Merhaba, tvOS başlığı ve 128'yazı tipi boyutunu ayarlayın")](hello-tvos-images/designer05.png)
+    [![](hello-tvos-images/designer05.png "Merhaba, tvOS başlığı ve 128'yazı tipi boyutunu ayarlayın")](hello-tvos-images/designer05.png#lightbox)
 4. Böylece tüm sözcükleri görünür ve pencerenin üst kısmındaki ortalanmış yerleştirin etiketi yeniden boyutlandırmak:
 
-    [ ![](hello-tvos-images/designer06.png "Yeniden boyutlandırma ve etiket Merkezi")](hello-tvos-images/designer06.png)
+    [![](hello-tvos-images/designer06.png "Yeniden boyutlandırma ve etiket Merkezi")](hello-tvos-images/designer06.png#lightbox)
 5. Tasarlandığı gibi görünmesi etiketi şimdi kaydının konumunu kısıtlı gerekir. Ekran boyutundan bağımsız olarak. Bunu yapmak için etiketi kadar tıklayın *T şeklinde tanıtıcı* görünür:
 
-    [ ![](hello-tvos-images/designer07.png "T şeklinde tanıtıcısı")](hello-tvos-images/designer07.png)
+    [![](hello-tvos-images/designer07.png "T şeklinde tanıtıcısı")](hello-tvos-images/designer07.png#lightbox)
 6. Etiket yatay sınırlamak için merkezi kare seçin ve dikey olarak kesikli çizgiye sürükleyin:
 
-    [ ![](hello-tvos-images/designer08.png "Merkezi kare seçin")](hello-tvos-images/designer08zoom.png)
+    [![](hello-tvos-images/designer08.png "Merkezi kare seçin")](hello-tvos-images/designer08zoom.png#lightbox)
 
      Etiket turuncu etkinleştirmeniz gerekir.
 7. Etiketin üst T tutamaç seçin ve pencerenin üst kenarına sürükleyin:
 
-    [ ![](hello-tvos-images/designer09.png "Pencerenin üst kenarına tutamacını sürükleyin")](hello-tvos-images/designer09.png)
+    [![](hello-tvos-images/designer09.png "Pencerenin üst kenarına tutamacını sürükleyin")](hello-tvos-images/designer09.png#lightbox)
 8. Bundan sonra Genişlik ve yükseklik öğesini *kemik tanıtıcı* aşağıda gösterildiği gibi:
 
-    [ ![](hello-tvos-images/designer10.png "Genişlik ve yükseklik kemik tanıtıcıları")](hello-tvos-images/designer10.png)
+    [![](hello-tvos-images/designer10.png "Genişlik ve yükseklik kemik tanıtıcıları")](hello-tvos-images/designer10.png#lightbox)
 
      Zaman her *kemik tanıtıcı* olan tıklandığında, genişlik ve yükseklik sırasıyla sabit boyutlarını ayarlamak için seçin.
 9. Tamamlandığında, kısıtlamalar özellikleri paneli düzeni sekmesinde benzer görünmelidir:
 
-    [ ![](hello-tvos-images/designer11.png "Örnek kısıtlamaları")](hello-tvos-images/designer11.png)
+    [![](hello-tvos-images/designer11.png "Örnek kısıtlamaları")](hello-tvos-images/designer11.png#lightbox)
 8. Sürükleme bir **düğmesini** gelen **araç** ve etiketin altında yerleştirin.
 9. Tıklayın **başlık** özelliğinde **özelliği paneli** düğmenin başlık değiştirip `Click Me`:
 
-    [ ![](hello-tvos-images/designer12.png "Bana tıklatın düğmeleri başlığını değiştirme")](hello-tvos-images/designer12.png)
+    [![](hello-tvos-images/designer12.png "Bana tıklatın düğmeleri başlığını değiştirme")](hello-tvos-images/designer12.png#lightbox)
 10. 5-8 tvOS penceresinde düğmesini sınırlamak için yukarıdaki adımları yineleyin. Ancak, pencerenin üst kısmındaki (olduğu gibi #7. adım) için T-tanıtıcı sürükleme yerine etiketinin altına sürükleyin:
 
-    [ ![](hello-tvos-images/designer14.png "Düğme sınırlamak")](hello-tvos-images/designer14.png)
+    [![](hello-tvos-images/designer14.png "Düğme sınırlamak")](hello-tvos-images/designer14.png#lightbox)
 11. Başka bir etiket düğmesinin altındaki sürükleyin, aynı genişliğe kümesi ve ilk etiket olması için boyut kendi **hizalama** için **Center**:
 
-    [ ![](hello-tvos-images/designer15.png "Başka bir etiket düğmesinin altındaki sürükleyin, ilk etiketi aynı genişliğe ve merkezine kendi hizalamasını ayarlama boyutu")](hello-tvos-images/designer15.png)
+    [![](hello-tvos-images/designer15.png "Başka bir etiket düğmesinin altındaki sürükleyin, ilk etiketi aynı genişliğe ve merkezine kendi hizalamasını ayarlama boyutu")](hello-tvos-images/designer15.png#lightbox)
 12. İlk etiket ve düğmesi gibi merkezi ve konum ve boyut sabitlemek için bu etiket ayarlayın:
 
-    [ ![](hello-tvos-images/designer16.png "PIN etiket konum ve boyut içinde")](hello-tvos-images/designer16.png)
+    [![](hello-tvos-images/designer16.png "PIN etiket konum ve boyut içinde")](hello-tvos-images/designer16.png#lightbox)
 13. Kullanıcı arabirimine yaptığınız değişiklikleri kaydedin.
 
 Yeniden boyutlandırma ve taşıma geçici denetimleri gibi tasarımcı, temel alan yararlı ek ipuçları sunar için fark etmiş [Apple TV İnsan Arabirimi yönergelerine](https://developer.apple.com/tvos/human-interface-guidelines/). Bu yönergeler, Apple TV kullanıcılar için tanıdık bir görünüm ve kullanımında içeren yüksek kaliteli uygulamalar oluşturmanıza yardımcı olur.
 
 Bakarsanız **belge anahattı** bölümünde, Düzen ve hiyerarşi bizim kullanıcı arabirimi öğelerinin nasıl gösterileceğini dikkat edin:
 
-[ ![](hello-tvos-images/designer17.png "Belge Anahattı bölümü")](hello-tvos-images/designer17.png)
+[![](hello-tvos-images/designer17.png "Belge Anahattı bölümü")](hello-tvos-images/designer17.png#lightbox)
 
 Buradan, düzenlemek veya gerekirse kullanıcı Arabirimi öğeleri yeniden sıralamak için sürükleyin öğe seçebilirsiniz. Örneğin, bir kullanıcı Arabirimi öğesi başka bir öğe tarafından kapsanan, pencerenin en üst öğede yapmak için listenin altına sürükleyebilirsiniz.
 
@@ -339,16 +339,16 @@ Bu örnek uygulamasında düğmesine tıklandığında istiyoruz _bir şey_ yap�
 1. Xamarin iOS Tasarımcı'da, görünüm denetleyicisinde düğmesini seçin.
 2. Özellikler defterinde seçin **olayları** sekmesi:
 
-    [![](hello-tvos-images/event1.png "Olaylar sekmesi")](hello-tvos-images/event1.png)
+    [![](hello-tvos-images/event1.png "Olaylar sekmesi")](hello-tvos-images/event1.png#lightbox)
 3. TouchUpInside olayı bulun ve adlı bir olay işleyicisi verin `Clicked`:
 
-    [![](hello-tvos-images/event2.png "TouchUpInside olayı")](hello-tvos-images/event2.png)
+    [![](hello-tvos-images/event2.png "TouchUpInside olayı")](hello-tvos-images/event2.png#lightbox)
 4. Bastığınızda **Enter**, **ViewController**.cs dosyası açılır, kodda, olay işleyicisi için konumları önerme. Ok tuşlarını klavyenizde konumu belirtmek için kullanın:
 
-    [![](hello-tvos-images/event3.png "Konumu ayarlama")](hello-tvos-images/event3.png)
+    [![](hello-tvos-images/event3.png "Konumu ayarlama")](hello-tvos-images/event3.png#lightbox)
 5. Aşağıda gösterildiği gibi bu kısmi yöntemi oluşturacak:
 
-    [![](hello-tvos-images/event4.png "Kısmi yöntemi")](hello-tvos-images/event4.png)
+    [![](hello-tvos-images/event4.png "Kısmi yöntemi")](hello-tvos-images/event4.png#lightbox)
 
 Biz şimdi işlevi düğme izin vermek için biraz kod eklemeye başlamak hazırsınız.
 
@@ -359,10 +359,10 @@ Düğme tıklatıldığında etiketi güncelleştirmelidir tıklama sayısına g
 1. Film şeridi açın ve görünüm denetleyicisini altındaki etiketi seçin.
 2. Özellikler defterinde seçin **pencere öğesi** sekmesi:
 
-    [![](hello-tvos-images/name1.png "Pencere öğesi sekmesini seçin")](hello-tvos-images/name1.png)
+    [![](hello-tvos-images/name1.png "Pencere öğesi sekmesini seçin")](hello-tvos-images/name1.png#lightbox)
 3. Altında **kimliği > adı**, ekleme `ClickedLabel`:
 
-    [![](hello-tvos-images/name2.png "ClickedLabel ayarlama")](hello-tvos-images/name2.png)
+    [![](hello-tvos-images/name2.png "ClickedLabel ayarlama")](hello-tvos-images/name2.png#lightbox)
 
 Biz şimdi etiketi güncelleştirme başlamaya hazırsınız!
 
@@ -370,7 +370,7 @@ Biz şimdi etiketi güncelleştirme başlamaya hazırsınız!
 
 Seçerseniz `ViewController.designer.cs` içinde **Çözüm Gezgini** görmeye devam nasıl `ClickedLabel` etiket ve `Clicked` olay işleyicisi eşlenmiş bir **çıkışı** ve  **Eylem** C#:
 
-[ ![](hello-tvos-images/accesscontrol.png "Çıkışlar ve eylemleri")](hello-tvos-images/accesscontrol.png)
+[![](hello-tvos-images/accesscontrol.png "Çıkışlar ve eylemleri")](hello-tvos-images/accesscontrol.png#lightbox)
 
 Ayrıca, fark edebilirsiniz `ViewController.designer.cs` bir parçalı sınıf, böylelikle Mac için Visual Studio değiştirmek yok `ViewController.cs` hangi sınıfa yapmış olduğunuz değişiklikleri üzerine.
 
@@ -386,7 +386,7 @@ Oluşturulan bizim kullanıcı arabirimi ve kodu aracılığıyla kullanıma sun
 
 Her zaman ilk düğmesine tıklandığında, uygulamamız, kaç kez düğmesine tıklanana göstermek için etiketimizi güncelleştirmek için yapacağız. Bunu başarmak için açmak ihtiyacımız `ViewController.cs` dosyasını çift tıklatarak düzenleme için **çözüm paneli**:
 
-[ ![](hello-tvos-images/code01.png "Çözüm paneli")](hello-tvos-images/code01.png)
+[![](hello-tvos-images/code01.png "Çözüm paneli")](hello-tvos-images/code01.png#lightbox)
 
 İlk olarak, bir sınıf düzeyi değişken oluşturmak ihtiyacımız bizim `ViewController` gelmiş tıklama sayısını izlemek için sınıf. Sınıf tanımını düzenlemek ve aşağıdaki gibi yapar:
 
@@ -440,7 +440,7 @@ Biz bir uygulama oluşturmak zaman, biz ne tür bir yapı istiyoruz seçebilirsi
 
 Yapıdan türünü seçebilirsiniz **yapılandırma Seçici** Mac ekran için Visual Studio üst sol alt köşesindeki:
 
-[ ![](hello-tvos-images/run01.png "Yapı türünü seçin")](hello-tvos-images/run01.png)
+[![](hello-tvos-images/run01.png "Yapı türünü seçin")](hello-tvos-images/run01.png#lightbox)
 
 ### <a name="building-the-application"></a>Uygulama Oluşturma
 
@@ -458,15 +458,15 @@ Uygulamayı çalıştırmak için şu üç seçeneğiniz vardır:
 
 (Bu zaten oluşturulduğunu kurmadı varsa) uygulaması oluşturacaksınız, hata ayıklama modunda Simulator tvOS başlangıç başlatılır ve uygulamayı başlatın ve buna ait ana arabirimi penceresini görüntüleyin:
 
-[ ![Örnek uygulama giriş ekranı](hello-tvos-images/run03.png)](hello-tvos-images/run03.png)
+[![Örnek uygulama giriş ekranı](hello-tvos-images/run03.png)](hello-tvos-images/run03.png#lightbox)
 
 Gelen **donanım** menüsünü seçin **Apple TV uzak Göster** simulator denetimi.
 
-[ ![](hello-tvos-images/run04.png "Göster Apple TV uzaktan seçin")](hello-tvos-images/run04.png)
+[![](hello-tvos-images/run04.png "Göster Apple TV uzaktan seçin")](hello-tvos-images/run04.png#lightbox)
 
 Birkaç kez etiketi düğmesini Simulator'ın uzaktan kullanarak count ile güncelleştirilmesi gerekir:
 
-[ ![](hello-tvos-images/run05.png "Güncelleştirilmiş sayısı etiketle")](hello-tvos-images/run05.png)
+[![](hello-tvos-images/run05.png "Güncelleştirilmiş sayısı etiketle")](hello-tvos-images/run05.png#lightbox)
 
 Tebrikler! Biz başından başlayarak burada çok kapsamdaki, ancak bu öğretici baştan izlediyseniz, düz bir bunları oluşturmak için kullanılan araçlar yanı sıra Xamarin.tvOS uygulama bileşenlerinin anlayış şimdi olmalıdır.
 
@@ -493,7 +493,7 @@ Bu makalede tvOS uygulama basit bir Hello oluşturarak Mac için tvOS uygulamala
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

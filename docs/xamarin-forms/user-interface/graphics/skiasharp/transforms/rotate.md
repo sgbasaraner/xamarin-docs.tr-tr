@@ -4,14 +4,15 @@ description: "Etkiler ve animasyonları SkiaSharp döndürme dönüşümü ile o
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: c87f9a561ac2f7a8c3da1c1e4ab839431073fcb9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 146093e15651316e84947e2bd81eeee3bf55cedb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-rotate-transform"></a>Döndürme dönüşümü
 
@@ -57,7 +58,7 @@ using (SKPaint textPaint = new SKPaint
 
 Döndürme tuval çoğu açıları bu programda ayarlamak için sol üst köşesindeki kalmaz çünkü metin ekranı döndürülür:
 
-[![](rotate-images/basicrotate-small.png "Üçlü sayfasının ekran görüntüsü temel döndürme")](rotate-images/basicrotate-large.png "Üçlü sayfasının ekran görüntüsü temel Döndür")
+[![](rotate-images/basicrotate-small.png "Üçlü sayfasının ekran görüntüsü temel döndürme")](rotate-images/basicrotate-large.png#lightbox "Üçlü sayfasının ekran görüntüsü temel Döndür")
 
 Sıklıkla bir şey bu sürümlerini kullanan bir belirtilen pivot noktası ortalanmış döndürmek istersiniz [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/) ve [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/) yöntemleri:
 
@@ -85,7 +86,7 @@ using (SKPaint textPaint = new SKPaint
 
 Şimdi metni metnin temel yatay merkezi metni konumlandırmak için kullanılan nokta etrafında döndürür:
 
-[![](rotate-images/centeredrotate-small.png "Üçlü sayfasının ekran görüntüsü ortalanmış döndürme")](rotate-images/centeredrotate-large.png "Üçlü sayfasının ekran görüntüsü ortalanmış Döndür")
+[![](rotate-images/centeredrotate-small.png "Üçlü sayfasının ekran görüntüsü ortalanmış döndürme")](rotate-images/centeredrotate-large.png#lightbox "Üçlü sayfasının ekran görüntüsü ortalanmış Döndür")
 
 Yalnızca sürümüyle ortalanmış olarak `Scale` yöntemi, ortalanmış sürümü `RotateDegrees` çağrıdır bir kısayol:
 
@@ -139,7 +140,7 @@ Kavramsal olarak, iki dönüşümler kodda görüntülenme tersi sırada uygulan
 
 Genellikle çevirme ve döndürme birleştirmek için birkaç yolu vardır. **Döndürülen metin** sayfası aşağıdaki görüntü oluşturur:
 
-[![](rotate-images/rotatedtext-small.png "Üçlü sayfasının ekran görüntüsü döndürülen metin")](rotate-images/rotatedtext-large.png "Üçlü sayfasının ekran görüntüsü döndürülen metin")
+[![](rotate-images/rotatedtext-small.png "Üçlü sayfasının ekran görüntüsü döndürülen metin")](rotate-images/rotatedtext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü döndürülen metin")
 
 Burada `PaintSurface` işleyicisine [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) sınıfı:
 
@@ -363,7 +364,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Ellerini yerine kaba olmasına rağmen kesinlikle işlevsel bir saattir:
 
-[![](rotate-images/uglyanalogclock-small.png "Üçlü çirkin Analog Saat metin sayfasının ekran görüntüsü")](rotate-images/uglyanalogclock-large.png "Triple screenshot of the Ugly Analog page")
+[![](rotate-images/uglyanalogclock-small.png "Üçlü çirkin Analog Saat metin sayfasının ekran görüntüsü")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

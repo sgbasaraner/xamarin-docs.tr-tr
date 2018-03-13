@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: d7965c5d4d65dd6bf7aa4128f467acd3e2d39e60
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c383808d443685c1561113e418aed62467f1d5bd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-class"></a>Uygulama sınıfı
 
@@ -98,7 +98,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 Her zaman anahtar varlığını beklenmeyen hataları önlemek için erişmeden önce denetleyin.
 
 > [!NOTE]
-> **Not:** `Properties` sözlük yalnızca ilkel türler depolama için seri hale. Diğer türleri depolama girişimi (gibi `List<string>`) sessizce başarısız olabilir.
+> `Properties` Sözlük yalnızca ilkel türler depolama için seri hale. Diğer türleri depolama girişimi (gibi `List<string>`) sessizce başarısız olabilir.
 
 <!-- bugzilla 28657 -->
 
@@ -196,7 +196,7 @@ public class MainActivity :
 ```
 
 > [!NOTE]
-> **Not:** olduğundan daha yeni bir [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) temel Android malzeme tasarım daha iyi desteklemek için kullanılan sınıfı.
+> Var olan daha yeni bir [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) temel Android malzeme tasarım daha iyi desteklemek için kullanılan sınıfı.
 > Bu varsayılan Android şablonu gelecekte olur, ancak izleyebilirsiniz [bu yönergeleri](~/xamarin-forms/platform/android/appcompat.md) mevcut Android uygulamalarınızı güncelleştirmek için.
 
 

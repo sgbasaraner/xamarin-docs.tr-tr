@@ -3,16 +3,16 @@ title: "Merhaba, Android: Hızlı Başlangıç"
 description: "Bu iki parçalı Kılavuzu'nda (Visual Studio veya Visual Studio için Mac kullanarak), ilk Xamarin.Android uygulaması oluşturma ve Xamarin ile Android uygulaması geliştirme ile ilgili temel bilgileri bir anlayış geliştirmek. Yol boyunca araçları, kavramlar ve oluşturmak ve bir Xamarin.Android uygulaması dağıtmak için gerekli adımları görülecektir."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
+ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 2ec01091314df64070cafb570f01e54634759c77
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 58197ae9f7c05ab9a838555ba5ab496550a16bce
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-quickstart"></a>Merhaba, Android: Hızlı Başlangıç
 
@@ -22,7 +22,7 @@ _Bu iki parçalı Kılavuzu'nda (Visual Studio veya Visual Studio için Mac kull
 
 Bu kılavuzda, bir sayısal telefon numarası (kullanıcı tarafından girilen) bir alfasayısal telefon numarasını çeviren bir uygulama oluşturmak ve kullanıcıya sayısal telefon numarasını görüntüler. Son uygulama şöyle görünür:
 
-[![Bu tamamlandığında uygulamasının ekran görüntüsü](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png)
+[![Bu tamamlandığında uygulamasının ekran görüntüsü](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
 
 ## <a name="requirements"></a>Gereksinimler
@@ -67,42 +67,42 @@ Visual Studio'yu başlatın.  Tıklatın **Dosya > Yeni > Proje** yeni bir proje
 İçinde **yeni proje** iletişim kutusunda, tıklatın **boş uygulama (Android)** şablonu.
 Yeni proje adı `Phoneword`. Tıklatın **Tamam** yeni proje oluşturmak için:
 
-[![Yeni Proje Phoneword olduğu](hello-android-quickstart-images/vs/02-new-project-name-sml.png)](hello-android-quickstart-images/vs/02-new-project-name.png)
+[![Yeni Proje Phoneword olduğu](hello-android-quickstart-images/vs/02-new-project-name-sml.png)](hello-android-quickstart-images/vs/02-new-project-name.png#lightbox)
 
 ### <a name="creating-the-layout"></a>Düzen oluşturma
 
 Yeni Proje oluşturulduktan sonra genişletin **kaynakları** klasörünü ve ardından **düzeni** klasöründe **Çözüm Gezgini**.
 Çift **Main.axml** Android tasarımcısında açın. Bu uygulamanın ekranı düzeni dosyasıdır:
 
-[![Main.AXML açın](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png)
+[![Main.AXML açın](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png#lightbox)
 
 Gelen **araç** (sol alanı) girin `text` sürükleyin ve arama alanı içine bir **metin (büyük)** pencere öğesi (alan Merkezi'ndeki) tasarım yüzeyine:
 
-[![Büyük metin pencere öğesi ekleme](hello-android-quickstart-images/vs/04-large-text-sml.png)](hello-android-quickstart-images/vs/04-large-text.png)
+[![Büyük metin pencere öğesi ekleme](hello-android-quickstart-images/vs/04-large-text-sml.png)](hello-android-quickstart-images/vs/04-large-text.png#lightbox)
 
 İle **metin (büyük)** denetimi tasarım yüzeyine, kullanım seçili **özellikleri** değiştirmek için bölmesinde `text` özelliği **metin (büyük)** içinpencereöğesi`Enter a Phoneword:` aşağıda gösterildiği gibi:
 
-[![Büyük metin özelliklerini ayarlama](hello-android-quickstart-images/vs/05-enter-a-phoneword-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword.png)
+[![Büyük metin özelliklerini ayarlama](hello-android-quickstart-images/vs/05-enter-a-phoneword-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword.png#lightbox)
 
 Sürükleme bir **düz metin** pencere öğesini **araç** tasarım yüzey ve altına yerleştirin **metin (büyük)** pencere öğesi:
 
-[![Düz metin pencere öğesi ekleme](hello-android-quickstart-images/vs/06-plain-text-sml.png)](hello-android-quickstart-images/vs/06-plain-text.png)
+[![Düz metin pencere öğesi ekleme](hello-android-quickstart-images/vs/06-plain-text-sml.png)](hello-android-quickstart-images/vs/06-plain-text.png#lightbox)
 
 İle **düz metin** tasarım yüzeyine, kullanım seçili pencere öğesi **özellikleri** değiştirmek için bölmesinde `id` özelliği **düz metin** Pencere`@+id/PhoneNumberText`değiştirip `text` özelliğine `1-855-XAMARIN`:
 
-[![Düz metin özelliklerini ayarlama](hello-android-quickstart-images/vs/07-add-properties-sml.png)](hello-android-quickstart-images/vs/07-add-properties.png)
+[![Düz metin özelliklerini ayarlama](hello-android-quickstart-images/vs/07-add-properties-sml.png)](hello-android-quickstart-images/vs/07-add-properties.png#lightbox)
 
 Sürükleme bir **düğmesini** gelen **araç** tasarım yüzey ve altına yerleştirin **düz metin** pencere öğesi:
 
-[![Sürükleme Çevir tasarım düğmesi](hello-android-quickstart-images/vs/08-drag-button-sml.png)](hello-android-quickstart-images/vs/08-drag-button.png)
+[![Sürükleme Çevir tasarım düğmesi](hello-android-quickstart-images/vs/08-drag-button-sml.png)](hello-android-quickstart-images/vs/08-drag-button.png#lightbox)
 
 İle **düğmesini** tasarım yüzeyine seçili, kullanın **özellikleri** değiştirmek için bölmesinde `id` özelliği **düğmesini** için `@+id/TranslateButton` ve değiştirin `text` özelliğine `Translate`:
 
-[![Set çevir düğmesi özellikleri](hello-android-quickstart-images/vs/09-translate-button-sml.png)](hello-android-quickstart-images/vs/09-translate-button.png)
+[![Set çevir düğmesi özellikleri](hello-android-quickstart-images/vs/09-translate-button-sml.png)](hello-android-quickstart-images/vs/09-translate-button.png#lightbox)
 
 Sürükleme bir **kutusu TextView** gelen **araç** tasarım yüzey ve altında yerleştirin **düğmesini** pencere öğesi. Ayarlama `id` özelliği **kutusu TextView** için `@+id/TranslatedPhoneWord` değiştirip `text` boş bir dize için:
 
-[![Metin görünümü özellikleri ayarlayın.](hello-android-quickstart-images/vs/10-textview-properties-sml.png)](hello-android-quickstart-images/vs/10-textview-properties.png)    
+[![Metin görünümü özellikleri ayarlayın.](hello-android-quickstart-images/vs/10-textview-properties-sml.png)](hello-android-quickstart-images/vs/10-textview-properties.png#lightbox)    
 
 Tuşlarına basarak çalışmanızı kaydedin **CTRL + S**.
 
@@ -110,11 +110,11 @@ Tuşlarına basarak çalışmanızı kaydedin **CTRL + S**.
 
 Sonraki adım, telefon numaralarını alfasayısal sayısal çevirmek için bazı kod eklemektir. Projeye sağ tıklayarak yeni bir dosya eklemek **Phoneword** proje **Çözüm Gezgini** bölmesinde ve seçme **Ekle > Yeni öğe...**  aşağıda gösterildiği gibi:
 
-[![Yeni Öğe Ekle](hello-android-quickstart-images/vs/12-add-new-item-sml.png)](hello-android-quickstart-images/vs/12-add-new-item.png)
+[![Yeni Öğe Ekle](hello-android-quickstart-images/vs/12-add-new-item-sml.png)](hello-android-quickstart-images/vs/12-add-new-item.png#lightbox)
 
 İçinde **Yeni Öğe Ekle** iletişim kutusunda **Visual C# > kod** ve yeni kod dosyası adı **PhoneTranslator.cs**:
 
-[![Add PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png)
+[![Add PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png#lightbox)
 
 Bu, yeni bir boş C# sınıfı oluşturur. Aşağıdaki kod bu dosyaya ekleyin:
 
@@ -260,17 +260,17 @@ namespace Phoneword
 
 Şimdi uygulamayı ayarlamak için zaman yapılır. Varsayılan olarak, Visual Studio Proje için varsayılan bir simge sağlar. Şimdi bu dosyaları çözümden silmek ve bunları farklı bir simge ile değiştirin. Genişletme **kaynakları** klasöründe **çözüm paneli**. İle önek beş klasörleri olduğuna dikkat edin **mipmap -**, ve bu klasörlerinin her biri tek bir içeren **Icon.png** dosyası:
 
-[![Mipmap klasörlerinde ve Icon.png dosyaları](hello-android-quickstart-images/vs/21-mipmap-folders-sml.png)](hello-android-quickstart-images/vs/21-mipmap-folders.png)
+[![Mipmap klasörlerinde ve Icon.png dosyaları](hello-android-quickstart-images/vs/21-mipmap-folders-sml.png)](hello-android-quickstart-images/vs/21-mipmap-folders.png#lightbox)
 
 Bu simge dosyaların projeden silmek gereklidir. Sağ her birini tıklatın **Icon.png** dosyaları ' nı seçip **silmek** ve bağlam menüsünden:
    
-[![Varsayılan Icon.png Sil](hello-android-quickstart-images/vs/21-delete-icon-sml.png)](hello-android-quickstart-images/vs/21-delete-icon.png)
+[![Varsayılan Icon.png Sil](hello-android-quickstart-images/vs/21-delete-icon-sml.png)](hello-android-quickstart-images/vs/21-delete-icon.png#lightbox)
    
 Tıklayın **silmek** iletişim kutusunda düğme.
 
 Ardından, indirip sıkıştırmasını [Xamarin uygulaması simgeler ayarlama](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true). Bu zip dosyasını uygulama için simgeleri içerir. Her bir simgenin görsel olarak aynıdır, ancak farklı çözünürlüklerde doğru farklı ekran densities ile farklı cihazlarda işleyen.  Dosyaları kümesini Xamarin.Android projeye kopyalanmalıdır. Visual Studio içinde **Çözüm Gezgini**, sağ **mipmap hdpi** klasörü ve seçin **Ekle > Varolan öğeleri**:
 
-[![Dosyaları Ekle](hello-android-quickstart-images/vs/22-add-files-sml.png)](hello-android-quickstart-images/vs/22-add-files.png)
+[![Dosyaları Ekle](hello-android-quickstart-images/vs/22-add-files-sml.png)](hello-android-quickstart-images/vs/22-add-files.png#lightbox)
 
 Seçimi iletişim kutusundan sıkıştırması açılmış Xamarin AdApp simgeleri dizinine gidin ve açmak **mipmap hdpi** klasör. Seçin **Icon.png** tıklatıp **Ekle**.
 
@@ -278,13 +278,13 @@ Her biri için bu adımları yineleyin **mipmap -** içeriğini kadar klasörler
 
 Tüm simgeleri Xamarin.Android projesi kopyaladıktan sonra açmak **proje seçenekleri** nde projeye sağ tıklatarak iletişim **çözüm paneli**. Seçin **Yapı > Android uygulaması** seçip  **@mipmap/icon**  gelen **uygulama simgesi** birleşik giriş kutusu:
 
-[![Proje simgesini ayarlama](hello-android-quickstart-images/vs/25-set-project-icon-sml.png)](hello-android-quickstart-images/vs/25-set-project-icon.png)
+[![Proje simgesini ayarlama](hello-android-quickstart-images/vs/25-set-project-icon-sml.png)](hello-android-quickstart-images/vs/25-set-project-icon.png#lightbox)
 
 ### <a name="running-the-app"></a>Uygulamayı çalıştırma
 
 Son olarak, uygulama, bir Android cihaz veya öykünücü çalışır ve bir Phoneword çevirme test edin:
 
-[![Bu tamamlandığında uygulamasının ekran görüntüsü](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png)
+[![Bu tamamlandığında uygulamasının ekran görüntüsü](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -294,11 +294,11 @@ Tıklatın **yeni çözüm...**  yeni bir proje oluşturmak için.
 
 İçinde **yeni projeniz için bir şablon seçin** iletişim kutusunda, tıklatın **Android > Uygulama** seçip **Android uygulaması** şablonu. **İleri**'ye tıklayın.
 
-[![Android uygulaması şablonu seçin](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png)
+[![Android uygulaması şablonu seçin](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png#lightbox)
 
 İçinde **Android uygulamanızı yapılandırma** iletişim kutusunda, yeni uygulama adı `Phoneword` tıklatıp **sonraki**.
 
-[![Android uygulamasını yapılandırma](hello-android-quickstart-images/xs/04-configure-android-app-sml.png)](hello-android-quickstart-images/xs/04-configure-android-app.png)
+[![Android uygulamasını yapılandırma](hello-android-quickstart-images/xs/04-configure-android-app-sml.png)](hello-android-quickstart-images/xs/04-configure-android-app.png#lightbox)
 
 İçinde **yeni Android uygulamanızı yapılandırma** iletişim, çözüm ve proje adları kümesine bırakın `Phoneword` tıklatıp **oluşturma** projesi oluşturmak için.
 
@@ -307,45 +307,45 @@ Tıklatın **yeni çözüm...**  yeni bir proje oluşturmak için.
 Yeni Proje oluşturulduktan sonra genişletin **kaynakları** klasörünü ve ardından **düzeni** klasöründe **çözüm** paneli.
 Çift **Main.axml** Android tasarımcısında açın. Bu Android Tasarımcısı'nda görüntülendiğinde ekranı düzeni dosyasıdır:
 
-[![Main.AXML açın](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png)
+[![Main.AXML açın](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png#lightbox)
 
 Seçin **Merhaba Dünya, kendinize tıklayın!** **Düğme** basın ve tasarım yüzeyi **silmek** kaldırmak için anahtar. 
 
 Gelen **araç** (sağ alanı) girin `text` sürükleyin ve arama alanı içine bir **metin (büyük)** pencere öğesi (alan Merkezi'ndeki) tasarım yüzeyine:
 
-[![Büyük metin pencere öğesi ekleme](hello-android-quickstart-images/xs/06-large-text-sml.png)](hello-android-quickstart-images/xs/06-large-text.png)
+[![Büyük metin pencere öğesi ekleme](hello-android-quickstart-images/xs/06-large-text-sml.png)](hello-android-quickstart-images/xs/06-large-text.png#lightbox)
 
 İle **metin (büyük)** kullanabileceğiniz tasarım yüzeyine seçili pencere, **özellikleri** değiştirmek için paneli `Text` özelliği **metin (büyük)** için pencere öğesi `Enter a Phoneword:` aşağıda gösterildiği gibi:
 
-[![Büyük metin pencere öğesi özelliklerini ayarlama](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png)
+[![Büyük metin pencere öğesi özelliklerini ayarlama](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png#lightbox)
 
 Ardından, sürükleyin bir **düz metin** pencere öğesini **araç** tasarım yüzey ve altına yerleştirin **metin (büyük)** pencere öğesi. Pencere öğeleri ada göre bulmak için arama alanı kullanabilirsiniz dikkat edin:
 
-[![Düz metin pencere öğesi ekleme](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png)
+[![Düz metin pencere öğesi ekleme](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png#lightbox)
 
 İle **düz metin** kullanabileceğiniz tasarım yüzeyine seçili pencere, **özellikleri** değiştirmek için paneli `Id` özelliği **düz metin** içinpencereöğesi`@+id/PhoneNumberText` değiştirip `Text` özelliğine `1-855-XAMARIN`:
 
-[![Düz metin pencere öğesi özelliklerini ayarlama](hello-android-quickstart-images/xs/09-add-properties-sml.png)](hello-android-quickstart-images/xs/09-add-properties.png)
+[![Düz metin pencere öğesi özelliklerini ayarlama](hello-android-quickstart-images/xs/09-add-properties-sml.png)](hello-android-quickstart-images/xs/09-add-properties.png#lightbox)
 
 Sürükleme bir **düğmesini** gelen **araç** tasarım yüzey ve altına yerleştirin **düz metin** pencere öğesi:
 
-[![Düğme ekleme](hello-android-quickstart-images/xs/10-drag-button-sml.png)](hello-android-quickstart-images/xs/10-drag-button.png)
+[![Düğme ekleme](hello-android-quickstart-images/xs/10-drag-button-sml.png)](hello-android-quickstart-images/xs/10-drag-button.png#lightbox)
 
 İle **düğmesini** kullanabileceğiniz tasarım yüzeyine seçili, **özellikleri** değiştirmek için paneli `Id` özelliği **düğmesini** için `@+id/TranslateButton` ve değiştirme `Text` özelliğine `Translate`:
 
-[![Çeviri düğmesi olarak yapılandırın](hello-android-quickstart-images/xs/11-translate-button-sml.png)](hello-android-quickstart-images/xs/11-translate-button.png)
+[![Çeviri düğmesi olarak yapılandırın](hello-android-quickstart-images/xs/11-translate-button-sml.png)](hello-android-quickstart-images/xs/11-translate-button.png#lightbox)
 
 Sürükleme bir **kutusu TextView** gelen **araç** tasarım yüzey ve altında yerleştirin **düğmesini** pencere öğesi. İle **kutusu TextView** seçili ayarlamak `id` özelliği **kutusu TextView** için `@+id/TranslatedPhoneWord` değiştirip `text` boş bir dize için:
 
-[![Metin görünümü özellikleri ayarlayın.](hello-android-quickstart-images/xs/12-textview-properties-sml.png)](hello-android-quickstart-images/xs/12-textview-properties.png)    
+[![Metin görünümü özellikleri ayarlayın.](hello-android-quickstart-images/xs/12-textview-properties-sml.png)](hello-android-quickstart-images/xs/12-textview-properties.png#lightbox)    
 
-Tuşlarına basarak çalışmanızı kaydedin **&#8984; + S**.
+Tuşlarına basarak çalışmanızı kaydedin  **&#8984; + S**.
 
 ### <a name="writing-translation-code"></a>Çeviri kod yazma
 
 Şimdi, telefon numaralarını alfasayısal sayısal çevirmek için bazı kod ekleyin. Sonraki dişli simgesine tıklayarak yeni bir dosya projeye ekleyin **Phoneword** proje **çözüm** paneli ve seçme **Ekle > yeni dosya...** :
 
-[![Yeni bir dosya projeye ekleyin](hello-android-quickstart-images/xs/14-add-new-file-sml.png)](hello-android-quickstart-images/xs/14-add-new-file.png)
+[![Yeni bir dosya projeye ekleyin](hello-android-quickstart-images/xs/14-add-new-file-sml.png)](hello-android-quickstart-images/xs/14-add-new-file.png#lightbox)
 
 İçinde **yeni dosya** iletişim kutusunda **genel > boş sınıfı**, yeni dosya adı **PhoneTranslator**, tıklatıp **yeni**. Bu yeni sınıf C# boş bize oluşturur.
 
@@ -410,7 +410,7 @@ namespace Core
 }
 ```
 
-Değişiklikleri kaydetmek **PhoneTranslator.cs** seçerek dosya **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**), dosyayı kaydedip kapatın. Derleme zamanı hataları çözümü yeniden oluşturma emin olun.
+Değişiklikleri kaydetmek **PhoneTranslator.cs** seçerek dosya **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**), dosyayı kaydedip kapatın. Derleme zamanı hataları çözümü yeniden oluşturma emin olun.
 
 ### <a name="wiring-up-the-interface"></a>Kablolama arabirimi ayarlama
 
@@ -476,7 +476,7 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-Çalışmanızı kaydedin ve uygulamayı seçerek yapı **Yapı > Yapı tüm** (veya tuşlarına basarak **&#8984; + B**). Uygulama derler, Mac için Visual Studio üstündeki bir başarı iletisi alırsınız:
+Çalışmanızı kaydedin ve uygulamayı seçerek yapı **Yapı > Yapı tüm** (veya tuşlarına basarak  **&#8984; + B**). Uygulama derler, Mac için Visual Studio üstündeki bir başarı iletisi alırsınız:
 
 Hatalar varsa, önceki adımlarda size gidin ve uygulama başarıyla derlemeler kadar hataları düzeltin. Gibi bir derleme hatası alırsanız _kaynak geçerli bağlamda mevcut değil_, doğrulayın ad alanı adı **MainActivity.cs** proje adıyla eşleşen (`Phoneword`) ve ardından tamamen çözümü yeniden derleyin. Hala derleme hataları alırsanız, en son Xamarin.Android yüklediyseniz ve Mac için Visual Studio güncelleştirmeleri doğrulayın.
 
@@ -498,35 +498,35 @@ namespace Phoneword
 
 Şimdi uygulamayı ayarlamak için zaman yapılır. Varsayılan olarak, Mac için Visual Studio Proje için varsayılan bir simge sağlar. Şimdi bu dosyaları çözümden silmek ve bunları farklı bir simge ile değiştirin. Genişletme **kaynakları** klasöründe **çözüm paneli**. İle önek beş klasörleri olduğuna dikkat edin **mipmap -**, ve bu klasörlerinin her biri tek bir içeren **Icon.png** dosyası:
 
-[![Mipmap klasörlerinde ve Icon.png dosyaları](hello-android-quickstart-images/xs/23-mipmap-folders-sml.png)](hello-android-quickstart-images/xs/23-mipmap-folders.png)
+[![Mipmap klasörlerinde ve Icon.png dosyaları](hello-android-quickstart-images/xs/23-mipmap-folders-sml.png)](hello-android-quickstart-images/xs/23-mipmap-folders.png#lightbox)
 
 Bu simge dosyaların projeden silmek gereklidir. Sağ her birini tıklatın **Icon.png** dosyaları ' nı seçip **kaldırmak** ve bağlam menüsünden:
 
-[![Varsayılan Icon.png Sil](hello-android-quickstart-images/xs/23-delete-icon-sml.png)](hello-android-quickstart-images/xs/23-delete-icon.png)
+[![Varsayılan Icon.png Sil](hello-android-quickstart-images/xs/23-delete-icon-sml.png)](hello-android-quickstart-images/xs/23-delete-icon.png#lightbox)
 
 Tıklayın **silmek** iletişim kutusunda düğme.
 
 Ardından, indirip sıkıştırmasını [Xamarin uygulaması simgeler ayarlama](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true). Bu zip dosyasını uygulama için simgeleri içerir. Her bir simgenin görsel olarak aynıdır, ancak farklı çözünürlüklerde doğru farklı ekran densities ile farklı cihazlarda işleyen.  Dosyaları kümesini Xamarin.Android projeye kopyalanmalıdır. Mac için Visual Studio içinde **çözüm paneli**, sağ tıklatın **mipmap hdpi** klasörü ve seçin **Ekle > dosyaları Ekle**:
 
-[![Dosyaları Ekle](hello-android-quickstart-images/xs/24-add-files-sml.png)](hello-android-quickstart-images/xs/24-add-files.png)
+[![Dosyaları Ekle](hello-android-quickstart-images/xs/24-add-files-sml.png)](hello-android-quickstart-images/xs/24-add-files.png#lightbox)
 
 Seçimi iletişim kutusundan sıkıştırması açılmış Xamarin AdApp simgeleri dizinine gidin ve açmak **mipmap hdpi** klasör. Seçin **Icon.png** tıklatıp **açık**.
 
 İçinde **klasöre dosya eklemek** iletişim kutusunda **dosyasını dizinine kopyalayın** tıklatıp **Tamam**:
 
-[![Dizin iletişim kutusuna dosya kopyalama](hello-android-quickstart-images/xs/26-copy-to-directory-sml.png)](hello-android-quickstart-images/xs/26-copy-to-directory.png)
+[![Dizin iletişim kutusuna dosya kopyalama](hello-android-quickstart-images/xs/26-copy-to-directory-sml.png)](hello-android-quickstart-images/xs/26-copy-to-directory.png#lightbox)
 
 Her biri için bu adımları yineleyin **mipmap -** içeriğini kadar klasörleri **mipmap -** Xamarin uygulama simgeleri klasörler, bunların karşılık gelen kopyalanır **mipmap -** klasörlerde **Phoneword** projesi.
 
 Tüm simgeleri Xamarin.Android projesi kopyaladıktan sonra açmak **proje seçenekleri** nde projeye sağ tıklatarak iletişim **çözüm paneli**. Seçin **Yapı > Android uygulaması** seçip  **@mipmap/icon**  gelen **uygulama simgesi** birleşik giriş kutusu:
 
-[![Proje simgesini ayarlama](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png)
+[![Proje simgesini ayarlama](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
 
 ### <a name="running-the-app"></a>Uygulamayı çalıştırma
 
 Son olarak, uygulama, bir Android cihaz veya öykünücü çalışır ve bir Phoneword çevirme test edin:
 
-[![Bu tamamlandığında uygulamasının ekran görüntüsü](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png)
+[![Bu tamamlandığında uygulamasının ekran görüntüsü](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
 -----
 

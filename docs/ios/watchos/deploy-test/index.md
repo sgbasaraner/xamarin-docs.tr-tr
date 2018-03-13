@@ -1,5 +1,5 @@
 ---
-title: "Dağıtım ve test etme"
+title: "Dağıtım ve Test Etme"
 description: "Aygıtlarda test etme ve uygulama mağazasında karşıya yükleme"
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fdd4311072efd5571724fbe00d12a96921054fa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4c5b9fcbfaabbfc78da1064396dc3fec2d3fde8d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="deployment-and-testing"></a>Dağıtım ve test etme
+# <a name="deployment-and-testing"></a>Dağıtım ve Test Etme
 
 ## <a name="deployment-checklist"></a>Dağıtım denetim listesi
 
@@ -23,7 +23,7 @@ Bir test izleme dağıtımı veya uygulama mağazasında karşıya olup olmadı�
 - İçinde **iOS Geliştirme Merkezi**:
   - [Uygulama kimlikleri](#App_IDs) oluşturulmadı.
   - [Uygulama grupları](#App_Groups) (gerekliyse) yapılandırılmış.
-  - [*Dağıtım* sağlama profillerini](#Provisioning_Profiles) oluşturuldu.
+  - Oluşturulan dağıtım sağlama profillerini
 
 - Çözümünüz içinde:
 
@@ -36,6 +36,7 @@ Bir test izleme dağıtımı veya uygulama mağazasında karşıya olup olmadı�
   - [Test etmek için bir Apple Watch dağıtmak](~/ios/watchos/deploy-test/device.md), veya
   - [Uygulama deposuna karşıya yükleme](~/ios/watchos/deploy-test/appstore.md).
 
+<a name="App_IDs"/>
 
 ## <a name="app-ids"></a>Uygulama kimlikleri
 
@@ -65,7 +66,7 @@ Bazı özellikler (örneğin, anında iletme bildirimleri) uygulama kimliği jok
 
 Dağıtım için yalnızca bir dağıtım sağlama profiliniz joker uygulama kimliği oluşturmanız gerekir
 
-<a name="app-groups" />
+<a name="App_Groups" />
 
 ## <a name="app-groups"></a>Uygulama grupları
 
@@ -102,8 +103,6 @@ Düzenlemek için çift **Entitlements.plist** bu proje dosyasında:
 biçimindeki telefon numarasıdır.![Entitlements.plist Düzenleyicisi](images/entitlements-plist-sml.png)
 
 Yapmak **değil** izleme uygulama projesinde yetkilendirmeleri etkinleştirin. İzleme üzerinde etkinleştirilmiş olması gerekli değildir.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

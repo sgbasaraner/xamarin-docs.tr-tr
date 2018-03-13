@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 8e5bb4747811729adf5363b0a893b0f85108b220
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 39c699b10280218223b6f6022d419f77aba875dc
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="multitasking-for-ipad"></a>İPad için çoklu
 
@@ -35,6 +36,11 @@ Ne zaman göz önünde bulundurmanız gerekenler sayıda [çoklu uygulamanızda 
 Bir uygulama geliştiricisi olarak şunları da yapabilirsiniz [çevirin görevli,](#Opting-Out-of-Multitasking)dahil [PIP Video kayıttan yürütme devre dışı bırakma](#Disabling-PIP-Video-Playback).
 
 Bu makalede Xamarin.iOS uygulamanızı doğru çoklu bir ortamda çalışır veya iyi değilse, çoklu dışında kabul etme uygulamanız için uygun emin olmak için gerekli olan adımları kapsar.
+
+> [!VIDEO https://youtube.com/embed/GctYAozoLr8]
+
+**İPad, çoklu tarafından [Xamarin Üniversitesi](https://university.xamarin.com)**
+
 
 <a name="Multitasking-QuickStart" />
 
@@ -59,7 +65,7 @@ iOS 9 iPad girişiyle üzerinde yeni görevli yeteneklerini sunar _slayt üzerin
 
 İkinci bir uygulama seçin ve hızlı etkileşim sağlamak için küçük bir kayan panelinde görüntülemek kullanıcının slayt üzerinden özelliği sağlar. Slayt üzerinden paneli geçicidir ve kullanıcı geri ana uygulamayla yeniden çalışmaya gittiğinde kapatılacak.
 
-[ ![](multitasking-images/about01.png "Slayt üzerinden paneli")](multitasking-images/about01.png)
+[![](multitasking-images/about01.png "Slayt üzerinden paneli")](multitasking-images/about01.png#lightbox)
 
 Anımsaması ana kullanıcı yan yana ve geliştirici bu işlem üzerinde denetimi yoktur iki hangi uygulamaların çalışacağı karar şeydir. Sonuç olarak, slayt üzerinden panelinde Xamarin.iOS uygulamanızı düzgün çalıştığını emin olmak için gerçekleştirmeniz gereken birkaç şey vardır:
 
@@ -74,7 +80,7 @@ Slayt üzerinde yalnızca bir iPad Pro, iPad hava, iPad hava 2, iPad Mini 2, iPa
 
 Kullanıcı desteklenen iPad donanım (iPad hava 2, iPad Mini 4 ve iPad Pro yalnızca), ikinci bir uygulama seçin ve çalıştırın yan yana bölünmüş ekran modu şu anda çalışan uygulamaya sahip. Kullanıcının her uygulama sürükleyerek kapladığı ana ekran yüzdesini denetleyebilir bir ekran ayırıcı.
 
-[ ![](multitasking-images/about02.png "Bölünmüş Görünümü")](multitasking-images/about02.png)
+[![](multitasking-images/about02.png "Bölünmüş Görünümü")](multitasking-images/about02.png#lightbox)
 
 Slayt üzerinden gibi iki hangi uygulamaların yan yana çalışıyor olacak kullanıcı karar ve yeniden geliştirici bu işlem üzerinde denetimi yoktur. Sonuç olarak, bölme görünüm benzer gereksinimleri bir Xamarin.iOS uygulaması yerleştirir:
 
@@ -89,7 +95,7 @@ Uygulamanız için bölme görünüm hazırlama hakkında daha fazla bilgi için
 
 Yeni resim resim özelliği (olarak da bilinen _PIP_) kullanıcı ekranın üstünde çalışan diğer uygulamalar üzerinde herhangi bir yere küçük, kayan bir pencere olarak bir video izlemek kullanıcının sağlar.
 
-[ ![](multitasking-images/about03.png "Bir örnek resim kayan pencere resmi")](multitasking-images/about03.png)
+[![](multitasking-images/about03.png "Bir örnek resim kayan pencere resmi")](multitasking-images/about03.png#lightbox)
 
 Olarak resim modunda resimdeki bir video izlemeyi üzerinde tam denetim kullanıcının slayt üzerinden ile bölünmüş görünüm vardır. Uygulamanızın main işlevi videoyu izlemek için ise doğru PIP modunda davranmasına bazı değiştirilmesi gerekir. Aksi takdirde, değişiklik PIP desteklemek için gerekli değildir.
 
@@ -111,44 +117,27 @@ Bu uygulamalar için çoklu desteklemek ve iyi içinde davranması için çok az
 
 ### <a name="screen-size-and-orientation-considerations"></a>Ekran boyutu ve yön konuları
 
-İOS 9 önce uygulama agains belirli cihaz ekran boyutlarına ve yönler tasarım. Bir uygulamayı şimdi bir slayt çıkışı panelinde veya bölme görünüm modunda çalıştırılabilir çünkü kendisi ya da cihazın fiziksel yönü veya ekran boyutuna bakılmaksızın iPad compact veya normal yatay boyutu sınıfı çalışan bulabilirsiniz.
+İOS 9 önce uygulamanızın belirli cihaz ekran boyutlarına ve yönler karşı tasarım. Bir uygulamayı şimdi bir slayt çıkışı panelinde veya bölme görünüm modunda çalıştırılabilir çünkü kendisi ya da cihazın fiziksel yönü veya ekran boyutuna bakılmaksızın iPad compact veya normal yatay boyutu sınıfı çalışan bulabilirsiniz.
 
-[ ![](multitasking-images/sizeclasses01.png "Ekran boyutu ve yön konuları")](multitasking-images/sizeclasses01.png)
+[![](multitasking-images/sizeclasses01.png "Ekran boyutu ve yön konuları")](multitasking-images/sizeclasses01.png#lightbox)
 
 Bir iPad cihazında bir tam ekran uygulaması normal yatay ve dikey boyutu sınıfları içerir. Tüm iPhone ancak iPhone 6 Plus ve iPhone 6s Plus herhangi bir yönde her iki yönde Compact boyutu sınıfları sahiptir. İPhone 6 Plus ve iPhone 6s Plus yatay modunda bir normal yatay boyutu ve bir sıkıştırılmış dikey boyutu sınıfı (çok Mini iPad gibi) sahip.
 
 Slayt üzerinden ve bölünmüş görünümlü destekleyen iPad cihazları üzerinde aşağıdaki birleşimlerine düşebilir:
 
-<table width=100% border="1px">
-    <tr>
-        <td><b>Yönlendirme</b></td>
-        <td><b>Birincil uygulama</b></td>
-        <td><b>İkincil uygulama</b></td>
-    </tr>
-    <tr>
-        <td><b>Dikey</b></td>
-        <td>ekranın %75<br/>Compact yatay<br/>Normal dikey</td>
-        <td>Ekran % 25'ini<br/>Compact yatay<br/>Normal dikey</td>
-    </tr>
-    <tr>
-        <td><b>Yatay</b></td>
-        <td>ekranın %75<br/>Normal yatay<br/>Normal dikey</td>
-        <td>Ekran % 25'ini<br/>Compact yatay<br/>Normal dikey</td>
-    </tr>
-    <tr>
-        <td><b>Yatay</b></td>
-        <td>Ekran % 50'si<br/>Compact yatay<br/>Normal dikey</td>
-        <td>Ekran % 50'si<br/>Compact yatay<br/>Normal dikey</td>
-    </tr>
-</table>
+| **Yönlendirme** | **Birincil uygulama** | **İkincil uygulama** |
+|--- |--- |--- |
+| **Dikey** |ekranın %75<br />Compact yatay<br />Normal dikey|Ekran % 25'ini<br />Compact yatay<br />Normal dikey|
+| **Yatay** |ekranın %75<br />Normal yatay<br />Normal dikey|Ekran % 25'ini<br />Compact yatay<br />Normal dikey|
+| **Yatay** |Ekran % 50'si<br />Compact yatay<br />Normal dikey|Ekran % 50'si<br />Compact yatay<br />Normal dikey|
 
 Örnekte [MuliTask](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) yatay modunda iPad cihazında tam ekran çalıştırılırsa, uygulama, onu düzenleyecek liste ve aynı anda ayrıntı görünümü:
 
-[ ![](multitasking-images/sizeclasses03.png "Liste ve aynı anda sunulan ayrıntılı Görünüm")](multitasking-images/sizeclasses03.png)
+[![](multitasking-images/sizeclasses03.png "Liste ve aynı anda sunulan ayrıntılı Görünüm")](multitasking-images/sizeclasses03.png#lightbox)
 
 Aynı uygulama slayt üzerinden panelinde çalıştırırsanız Compact yatay boyutu sınıf olarak düzenlendiği ve yalnızca listesini görüntüler:
 
-[ ![](multitasking-images/sizeclasses04.png "Yalnızca aygıt yatay olduğunda sunulan listesi")](multitasking-images/sizeclasses04.png)
+[![](multitasking-images/sizeclasses04.png "Yalnızca aygıt yatay olduğunda sunulan listesi")](multitasking-images/sizeclasses04.png#lightbox)
 
 Uygulamanız bu durumlarda düzgün şekilde davranan emin olmak için ayırdedici nitelik koleksiyonları boyutu sınıfları birlikte benimsemeyi ve gerekir uygun `IUIContentContainer` ve `IUITraitEnvironment` arabirimleri. Apple'nın bkz [UITraitCollection sınıf başvurusu](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202) ve bizim [film şeritleri birleşik giriş](~/ios/user-interface/storyboards/unified-storyboards.md) daha fazla bilgi için Kılavuzu.
 
@@ -166,11 +155,11 @@ Son olarak, uygulamanızı bir film şeridi dosya kendi başlatma kümesi kullan
 
 **Komut sekmesi** hızla klavyeden MAC'te benzer uygulamalar arasında geçiş yapmasına izin veren bir uygulama değiştirici getirir:
 
-[ ![](multitasking-images/keyboard01.png "Uygulama değiştirici")](multitasking-images/keyboard01.png)
+[![](multitasking-images/keyboard01.png "Uygulama değiştirici")](multitasking-images/keyboard01.png#lightbox)
 
 İOS 9 uygulama klavye kısayolları içeriyorsa, kullanıcı üzerinde tutabilir **komutu**, **seçeneği** veya **denetim** açılan penceresinde görüntülemek için anahtarları:
 
-[ ![](multitasking-images/keyboard02.png "Klavye kısayolları açılan")](multitasking-images/keyboard02.png)
+[![](multitasking-images/keyboard02.png "Klavye kısayolları açılan")](multitasking-images/keyboard02.png#lightbox)
 
 #### <a name="defining-custom-keyboard-shortcuts"></a>Özel klavye kısayollarını tanımlama
 
@@ -206,7 +195,7 @@ Ardından, biz geçersiz kılma `KeyCommands` özelliği ve yeni bir `UIKeyComma
 
 Biz bu uygulama bir iPad cihazında bir donanım klavye takılı ve kullanıcı türleri ile çalıştırırsanız **komut-N**, yeni bir giriş listesine eklenir. Kullanıcı üzerinde tutuyorsa **komutu** anahtar, kısayollarının listesi görüntülenir:
 
-[ ![](multitasking-images/keyboard03.png "Klavye kısayolları açılan")](multitasking-images/keyboard03.png)
+[![](multitasking-images/keyboard03.png "Klavye kısayolları açılan")](multitasking-images/keyboard03.png#lightbox)
 
 Lütfen örnek bakın [MultiTask uygulama](http://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) örnek uygulama.
 
@@ -240,7 +229,7 @@ Vardır tüm iOS 9 uygulamaları çoklu destekler Apple öneren olsa da, bir uyg
 
 Projenin Xamarin.iOS uygulamanızı panelinde ya da bir slayt çıkışı veya bölme görünüm modunda çalıştırın çevirin düzenleme **Info.plist** dosya ve denetleme **gerektirir tam ekran**:
 
-[ ![](multitasking-images/fullscreen01.png "Çoklu kullanmama-genişletme")](multitasking-images/fullscreen01.png)
+[![](multitasking-images/fullscreen01.png "Çoklu kullanmama-genişletme")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
 > **Not:** slayt çıkışı veya bölme görünüm çalışacak uygulamanızı görevli Opting genişletme engeller, ancak **değil** başka bir uygulama slayt çıkışı veya resim video resimde ile birlikte görüntülemede çalıştırılmasını engellemek için uygulama.

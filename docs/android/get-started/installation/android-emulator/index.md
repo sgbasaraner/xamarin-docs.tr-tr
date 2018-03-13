@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/25/2018
-ms.openlocfilehash: 854ca06abc8be2f55f3e95a8ac3bd87c78af19cf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55f5cf22718713fdcf11c49e0993f47c2f5a6f1d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-emulator-setup"></a>Android öykünücüsünde Kurulumu
 
@@ -25,12 +25,12 @@ Google Android SDK öykünücüsü farklı cihaz benzetimini yapmak için yapıl
 
 
 > [!NOTE]
-> **Not:** itibariyle Android SDK Araçları Sürüm **26.0.1** ve daha sonra Google lehinde kaldıran yeni (komut satırı arabirimi) CLI araçlarını varolan AVD/SDK yöneticileri için destek kaldırdı. Bu kullanımdan değişikliği nedeniyle Xamarin SDK/cihaz yöneticileri artık Google SDK/öykünücü yöneticileri yerine Android araçları 26.0.1 için kullanılır ve daha sonra. (Xamarin SDK Yöneticisi hakkında daha fazla bilgi için bkz: [Android SDK Kurulum](~/android/get-started/installation/android-sdk.md)).
+> Android SDK Araçları sürüm itibariyle **26.0.1** ve daha sonra Google lehinde kaldıran yeni (komut satırı arabirimi) CLI araçlarını varolan AVD/SDK yöneticileri için destek kaldırdı. Bu kullanımdan değişikliği nedeniyle Xamarin SDK/cihaz yöneticileri artık Google SDK/öykünücü yöneticileri yerine Android araçları 26.0.1 için kullanılır ve daha sonra. (Xamarin SDK Yöneticisi hakkında daha fazla bilgi için bkz: [Android SDK Kurulum](~/android/get-started/installation/android-sdk.md)).
 
 
 ## <a name="sections"></a>Bölümler
 
-### <a name="hardware-accelerationandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[Donanım hızlandırma](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
+### <a name="hardware-accelerationandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[Donanım Hızlandırma](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
 
 En yüksek Android SDK öykünücüsü performansı için bilgisayarınız hazırlamak nasıl. Android SDK öykünücüsü donanım hızlandırmasını şekilde basımı karşılamayacak kadar yavaş olabileceğinden, Android SDK öykünücüsü kullanmadan önce bilgisayarınızda donanım hızlandırmasını etkinleştirmenizi öneririz.
 
@@ -38,7 +38,7 @@ En yüksek Android SDK öykünücüsü performansı için bilgisayarınız hazı
 
 Xamarin Android Aygıt Yöneticisi'ni oluşturmak ve Android SDK öykünücüsü sanal cihazlar özelleştirmek için nasıl kullanılacağını. **Xamarin Android Aygıt Yöneticisi'ni**, şu anda Önizleme'de, eski Google öykünücü yöneticisini değiştirmek için tasarlanmıştır. Android Oreo 8.0 veya üstünü hedefliyorsanız, Google öykünücü yöneticisini yerine Xamarin Android Aygıt Yöneticisi'ni kullanmanız gerekir.
 
-### <a name="google-emulator-managerandroidget-startedinstallationandroid-emulatorgoogle-emulator-managermd"></a>[Google öykünücüsü yöneticisi](~/android/get-started/installation/android-emulator/google-emulator-manager.md)
+### <a name="google-emulator-managerandroidget-startedinstallationandroid-emulatorgoogle-emulator-managermd"></a>[Google Öykünücü Yöneticisi](~/android/get-started/installation/android-emulator/google-emulator-manager.md)
 
 Eski Google öykünücü yöneticisini oluşturmak ve Android SDK öykünücüsü sanal cihazlar özelleştirmek için nasıl kullanılacağını. Google Android öykünücüsü Android SDK Araçları sürüm 25.2.5 kalan tarafından özgün Google Öykünücüsü Yöneticisi'ni ile çalıştırmak veya alt devam edebilirsiniz.
 

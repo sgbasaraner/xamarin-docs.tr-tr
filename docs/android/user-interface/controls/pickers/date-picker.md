@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 3de935fd407524d7ba62a93205e333c7dd7adde0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b62af404ce0d3f5dacc479682a3002af49e968d1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="date-picker"></a>Tarih Seçici
 
@@ -24,7 +24,7 @@ Modern Android uygulamaları görüntülemesi gereken `DatePickerDialog` içinde
 
 Bu kılavuz nasıl kullanılacağı gösterilmektedir `DatePickerDialog`, içinde Sarmalanan bir `DialogFragment`. Örnek uygulamayı görüntüler `DatePickerDialog` kullanıcı bir etkinlikte düğmesini tıklattığında kalıcı bir iletişim kutusu olarak. Tarih kullanıcı tarafından ayarlanmış olduğunda bir `TextView` seçilmedi tarihi ile güncelleştirir.
 
-[![Tarih Seçici iletişim kutusu tarafından izlenen çekme tarih ekran düğmesi](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png)
+[![Tarih Seçici iletişim kutusu tarafından izlenen çekme tarih ekran düğmesi](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png#lightbox)
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -49,7 +49,6 @@ Birkaç yolu vardır `DialogFragment` seçilen tarihten barındırma etkinlik d�
 3. **Kullanım bir `Action`**  &ndash; `DialogFragment` çağırabileceği bir `Action<DateTime>` etkinliğin tarihini görüntülemek için. Etkinlik sağlayacak `Action<DateTime` başlatılırken `DialogFragment`. Bu örnek üçüncü teknik kullanıyor ve etkinlik sağlamanızı gerektiren bir `Action<DateTime>` için `DialogFragment`.
 
 
-<a name="extending_dialogfragment" />
 
 ### <a name="extending-dialogfragment"></a>DialogFragment genişletme
 
@@ -99,10 +98,9 @@ Görüntülenecek parçası olduğunda, Android yöntemi çağırın `OnCreateDi
 
 
 > [!NOTE]
-> **Not:** unutmayın, ay değeri olduğunda `IOnDateSetListener.OnDateSet` çağrılır 0-11 ve değil 1-12 aralığındadır. Ayın 1 için (bağlı olarak ay seçildiği) 31 Aralık içinde olacaktır.
+> Unutmayın, ay değeri olduğunda `IOnDateSetListener.OnDateSet` çağrılır 0-11 ve değil 1-12 aralığındadır. Ayın 1 için (bağlı olarak ay seçildiği) 31 Aralık içinde olacaktır.
 
 
-<a name="date_picker_fragment" />
 
 ### <a name="showing-the-datepickerfragment"></a>DatePickerFragment gösterme
 
@@ -136,7 +134,6 @@ public class MainActivity : Activity
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

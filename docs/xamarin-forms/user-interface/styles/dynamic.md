@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 2088ae055fb18b3b00712f063d2178f759021088
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9710e322460058902d89ec1a57c374b93beb82fb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dynamic-styles"></a>Dinamik stilleri
 
@@ -81,8 +81,8 @@ public partial class DynamicStylesPage : ContentPage
 
 Zaman `OnButtonClicked` olay işleyicisi yürütüldüğünde, `searchBarStyle` arasında geçiş yapar `blueSearchBarStyle` ve `greenSearchBarStyle`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
 
-[![](dynamic-images/dynamic-style-blue.png "Mavi dinamik stili örnek")](dynamic-images/dynamic-style-blue-large.png "mavi dinamik stili örnek")
-[![](dynamic-images/dynamic-style-green.png "yeşil dinamik stili örnek") ] (dynamic-images/dynamic-style-green-large.png "Yeşil dinamik stili örneği")
+[![](dynamic-images/dynamic-style-blue.png "Mavi dinamik stili örnek")](dynamic-images/dynamic-style-blue-large.png#lightbox "mavi dinamik stili örnek")
+[![](dynamic-images/dynamic-style-green.png "yeşil dinamik stili örnek") ] (dynamic-images/dynamic-style-green-large.png#lightbox "Yeşil dinamik stili örneği")
 
 Aşağıdaki kod örneği, C# eşdeğer sayfaya gösterir:
 
@@ -162,8 +162,8 @@ Aşağıdaki kod örneğinde gösterilmektedir *dinamik* stil devralma XAML sayf
 
 Arka plan kod dosyasına Oluşturucusu oluşturur bir [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) anahtarla girişi `searchBarStyle`, dinamik stilleri gösterilen önceki örnekte olduğu gibi başına. Zaman `OnButtonClicked` olay işleyicisi yürütüldüğünde, `searchBarStyle` arasında geçiş yapar `blueSearchBarStyle` ve `greenSearchBarStyle`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "Mavi dinamik stili devralma örnek")](dynamic-images/dynamic-style-inheritance-blue-large.png "mavi dinamik stili devralma örnek")
-[![](dynamic-images/dynamic-style-inheritance-green.png "yeşil dinamik stili Devralma örnek")](dynamic-images/dynamic-style-inheritance-green-large.png "yeşil dinamik stili devralma örneği")
+[![](dynamic-images/dynamic-style-inheritance-blue.png "Mavi dinamik stili devralma örnek")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "mavi dinamik stili devralma örnek")
+[![](dynamic-images/dynamic-style-inheritance-green.png "yeşil dinamik stili Devralma örnek")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "yeşil dinamik stili devralma örneği")
 
 Aşağıdaki kod örneği, C# eşdeğer sayfaya gösterir:
 
@@ -215,7 +215,7 @@ Stilleri değil özelliği değişikliklere yanıt verir ve bir uygulama süresi
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Dinamik stilleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 - [Stilleri (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
 - [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)

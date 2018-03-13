@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 1a49c3a3181b477b777de74b0eb53f5e0da6f041
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ea51dc2c7dadc5cc430df990c9ce79eac6e941da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="homekit"></a>HomeKit
 
 _HomeKit ev Otomasyon cihazları denetlemek için Apple'nın çerçevedir. Bu makalede HomeKit tanıtır ve HomeKit donatıyı Simulator ve basit bir Xamarin.iOS uygulaması yazma bu Donatılar ile etkileşim kurmak için yapılandırma test Donatılar kapsar._
 
-[ ![](homekit-images/accessory01.png "Uygulama örneği HomeKit etkin")](homekit-images/accessory01.png)
+[![](homekit-images/accessory01.png "Uygulama örneği HomeKit etkin")](homekit-images/accessory01.png#lightbox)
 
 Apple HomeKit iOS 8 sorunsuz bir şekilde çeşitli satıcılar birden çok giriş Otomasyon aygıtlardan tutarlı, tek bir birimde tümleştirmek için bir yöntem olarak kullanıma sunuldu. Bulmak için ortak bir protokolle yükselterek, yapılandırma ve ev Otomasyon cihazları denetleme HomeKit cihazların satıcılardan çalışmalarını koordine gerek kalmadan tüm tek tek satıcılara birlikte çalışacak biçimde ilgili olmayan sağlar.
 
@@ -57,21 +57,21 @@ Aşağıdakileri yapın:
 3. Zaten yapmadıysanız, tıklayın **tanımlayıcıları** ve uygulamanız için bir kimlik oluşturun (örneğin `com.company.appname`), mevcut kimliğinizi başka Düzenle
 4. Emin **HomeKit** hizmet verilen kimlik için kontrol edildiyse: 
 
-    [ ![](homekit-images/provision01.png "Verilen kimlik için HomeKit hizmetini etkinleştirme")](homekit-images/provision01.png)
+    [![](homekit-images/provision01.png "Verilen kimlik için HomeKit hizmetini etkinleştirme")](homekit-images/provision01.png#lightbox)
 5. Değişikliklerinizi kaydedin.
 4. Tıklayın **sağlama profilleri** > **geliştirme** ve sağlama profili, uygulamanız için yeni bir yazılım geliştirme oluşturun: 
 
-    [ ![](homekit-images/provision02.png "Sağlama profili uygulama için yeni bir yazılım geliştirme oluşturma")](homekit-images/provision02.png)
+    [![](homekit-images/provision02.png "Sağlama profili uygulama için yeni bir yazılım geliştirme oluşturma")](homekit-images/provision02.png#lightbox)
 5. Karşıdan yükle ve yeni sağlama profili yüklemek veya Xcode profili karşıdan yükleyip kullanabilirsiniz.
 6. Xamarin.iOS projesi seçeneklerinizi düzenleyin ve yeni oluşturduğunuz sağlama profili kullandığınızdan emin olun: 
 
-    [ ![](homekit-images/provision03.png "Yeni oluşturduğunuz sağlama profili seçin")](homekit-images/provision03.png)
+    [![](homekit-images/provision03.png "Yeni oluşturduğunuz sağlama profili seçin")](homekit-images/provision03.png#lightbox)
 7. Ardından, düzenleme, **Info.plist** dosya ve sağlama profili oluşturmak için kullanılan uygulama kimliği kullandığından emin olun: 
 
-    [ ![](homekit-images/provision04.png "Uygulama Kimliği ayarlayın ")](homekit-images/provision04.png)
+    [![](homekit-images/provision04.png "Uygulama Kimliği ayarlayın ")](homekit-images/provision04.png#lightbox)
 8. Son olarak, düzenleme, **Entitlements.plist** dosya ve emin **HomeKit** yetkilendirme seçili: 
 
-    [ ![](homekit-images/provision05.png "HomeKit yetkilendirme etkinleştir")](homekit-images/provision05.png)
+    [![](homekit-images/provision05.png "HomeKit yetkilendirme etkinleştir")](homekit-images/provision05.png#lightbox)
 9. Tüm dosyalara değişiklikleri kaydedin.
 
 Yerinde bu ayarlarla uygulama HomeKit Framework API'lerine erişmek hazır. Hazırlama hakkında ayrıntılı bilgi için lütfen bkz bizim [cihaz sağlamayı](~/ios/get-started/installation/device-provisioning/index.md) ve [uygulamanızı sağlama](~/ios/get-started/installation/device-provisioning/index.md) kılavuzları.
@@ -92,7 +92,7 @@ Aşağıdakileri yapın:
 1. Bir web tarayıcısında ziyaret [Apple geliştiriciler için indirir](https://developer.apple.com/download/more/?name=for%20Xcode)
 2. Karşıdan **Xcode xxx için ek araçlar** (xxx olduğu yüklediğiniz Xcode sürüm): 
 
-    [ ![](homekit-images/simulator01.png "Ek araçlar için Xcode indirin")](homekit-images/simulator01.png)
+    [![](homekit-images/simulator01.png "Ek araçlar için Xcode indirin")](homekit-images/simulator01.png#lightbox)
 3. Disk görüntüsü açın ve araçları yüklemek, **uygulamaları** dizin.
 
 HomeKit donatıyı yüklü simülatörü'ile sanal Donatılar test etmek için oluşturulabilir.
@@ -103,22 +103,22 @@ HomeKit donatıyı Simulator başlamak ve birkaç sanal Donatılar oluşturmak i
 
 1. Uygulamaları klasöründen HomeKit donatıyı Simulator başlatın: 
 
-    [ ![](homekit-images/simulator02.png "HomeKit donatıyı Simulator")](homekit-images/simulator02.png)
+    [![](homekit-images/simulator02.png "HomeKit donatıyı Simulator")](homekit-images/simulator02.png#lightbox)
 2. Tıklatın  **+**  düğmesine tıklayın ve ardından **yeni donatıyı...** : 
 
-    [ ![](homekit-images/simulator03.png "Yeni bir donatıyı ekleme")](homekit-images/simulator03.png)
+    [![](homekit-images/simulator03.png "Yeni bir donatıyı ekleme")](homekit-images/simulator03.png#lightbox)
 3. Yeni donatıyı hakkındaki bilgileri doldurun ve tıklayın **son** düğmesi: 
 
-    [ ![](homekit-images/simulator04.png "Yeni donatıyı hakkındaki bilgileri doldurun")](homekit-images/simulator04.png)
+    [![](homekit-images/simulator04.png "Yeni donatıyı hakkındaki bilgileri doldurun")](homekit-images/simulator04.png#lightbox)
 4. Tıklatın **hizmeti Ekle...** düğmesini ve bir hizmet türünün aşağı açılır listeden seçin: 
 
-    [ ![](homekit-images/simulator05.png "Aşağı açılır listeden bir hizmet türü seçin")](homekit-images/simulator05.png)
+    [![](homekit-images/simulator05.png "Aşağı açılır listeden bir hizmet türü seçin")](homekit-images/simulator05.png#lightbox)
 5. Sağlayan bir **adı** tıklatın ve hizmet için **son** düğmesi: 
 
-    [ ![](homekit-images/simulator06.png "Hizmet için bir ad girin")](homekit-images/simulator06.png)
+    [![](homekit-images/simulator06.png "Hizmet için bir ad girin")](homekit-images/simulator06.png#lightbox)
 6. Tıklayarak, bir hizmet için isteğe bağlı özellikleri sağlayabilir **ekleme özelliği** düğmesi ve gereken ayarları yapılandırma: 
 
-    [ ![](homekit-images/simulator07.png "Gerekli ayarları yapılandırma")](homekit-images/simulator07.png)
+    [![](homekit-images/simulator07.png "Gerekli ayarları yapılandırma")](homekit-images/simulator07.png#lightbox)
 7. HomeKit destekleyen sanal giriş Otomasyon aygıt türlerinin birini oluşturmak için yukarıdaki adımları yineleyin.
 
 Şimdi oluşturulur ve yapılandırılmış bazı örnek sanal HomeKit Donatılar ile kullanabilir ve bu aygıtlar arasında Xamarin.iOS uygulamanızı denetim.
@@ -127,7 +127,7 @@ HomeKit donatıyı Simulator başlamak ve birkaç sanal Donatılar oluşturmak i
 
 Yeni iOS 10 için (ve büyük), geliştirici eklemeniz gerekir `NSHomeKitUsageDescription` uygulamanın anahtar `Info.plist` dosya ve uygulama neden isteyen kullanıcının HomeKit veritabanına erişmek için bildirme bir dize sağlayın. Bu dize, kullanıcılarınız uygulamayı çalıştırmadan kullanıcı ilk zamanı sunulur:
 
-[ ![](homekit-images/info01.png "HomeKit izni iletişim")](homekit-images/info01.png)
+[![](homekit-images/info01.png "HomeKit izni iletişim")](homekit-images/info01.png#lightbox)
 
 Bu anahtar ayarlamak için aşağıdakileri yapın:
 
@@ -136,10 +136,10 @@ Bu anahtar ayarlamak için aşağıdakileri yapın:
 3. Yeni bir ekleme **girişi** listesi.
 4. Açılır listeden seçin **gizlilik - HomeKit kullanım açıklama**: 
 
-    [ ![](homekit-images/info02.png "Gizlilik - HomeKit kullanım açıklamasını seçin")](homekit-images/info02.png)
+    [![](homekit-images/info02.png "Gizlilik - HomeKit kullanım açıklamasını seçin")](homekit-images/info02.png#lightbox)
 5. Neden kullanıcının HomeKit veritabanına erişmek uygulamanın istediği için bir açıklama girin: 
 
-    [ ![](homekit-images/info03.png "Bir açıklama girin")](homekit-images/info03.png)
+    [![](homekit-images/info03.png "Bir açıklama girin")](homekit-images/info03.png#lightbox)
 6. Değişiklikleri dosyaya kaydedin.
 
 > [!IMPORTANT]
@@ -189,7 +189,7 @@ public override void FinishedLaunching (UIApplication application)
 
 Uygulamayı ilk kez çalıştırdığınızda, kullanıcının kendi HomeKit bilgilerini erişmesine izin vermek isteyip istemediğinizi istenir:
 
-[ ![](homekit-images/home01.png "Kullanıcı kendi HomeKit bilgilerini erişmesine izin vermek isteyip istemediğinizi istenir.")](homekit-images/home01.png)
+[![](homekit-images/home01.png "Kullanıcı kendi HomeKit bilgilerini erişmesine izin vermek isteyip istemediğinizi istenir.")](homekit-images/home01.png#lightbox)
 
 Kullanıcı yanıtını verirse **Tamam**, uygulamanın kendi HomeKit Donatılar ile çalışabilmek için sonra aksi içinde değil ve HomeKit yapılan her çağrı, bir hata ile başarısız olur.
 
@@ -283,7 +283,7 @@ Birincil Giriş tanımlanmış veya giriş Yöneticisi'nden yüklenmiş sonra Xa
 
 Yeni donatıyı bulundu sonra kullanıcıya sunulan ve bu nedenle bunlar bunu seçebilir ve bir giriş ekleyin. Örnek:
 
-[ ![](homekit-images/accessory01.png "Yeni bir donatıyı bulma")](homekit-images/accessory01.png)
+[![](homekit-images/accessory01.png "Yeni bir donatıyı bulma")](homekit-images/accessory01.png#lightbox)
 
 Çağrı `AddAccessory` seçili donatıyı giriş 's koleksiyona eklemek için yöntem. Örneğin:
 
@@ -300,11 +300,11 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 Varsa `err` özelliği `null`, bir hata oluştu ve kullanıcıya sunulan. Aksi takdirde kullanıcı eklemek cihaz için Kurulum kodu girmeniz istenir:
 
-[ ![](homekit-images/accessory02.png "Eklenecek cihaz için Kurulum kodu girin")](homekit-images/accessory02.png)
+[![](homekit-images/accessory02.png "Eklenecek cihaz için Kurulum kodu girin")](homekit-images/accessory02.png#lightbox)
 
 Bu sayı HomeKit donatıyı Benzeticisinde altında bulunabilir **Kurulum kodu** alan:
 
-[ ![](homekit-images/accessory03.png "Kurulum kodu alanında HomeKit donatıyı Simulator")](homekit-images/accessory03.png)
+[![](homekit-images/accessory03.png "Kurulum kodu alanında HomeKit donatıyı Simulator")](homekit-images/accessory03.png#lightbox)
 
 Gerçek HomeKit Donatılar Kurulum kodu ya da cihazın kendisi, ürün kutusunun veya donatıyı ait kullanıcı kılavuzuna üzerindeki bir etikette bulunan basılır.
 
@@ -320,7 +320,7 @@ Bu örnek amacıyla, biz şeyler basit ve odaları veya bölgelere düzenlemek y
 
 `HMHome` Nesne kullanıcıya sunulan atanan donatıyı listesini içeren kendi `Accessories` özelliği. Örneğin:
 
-[ ![](homekit-images/accessory04.png "Bir örnek donatıyı")](homekit-images/accessory04.png)
+[![](homekit-images/accessory04.png "Bir örnek donatıyı")](homekit-images/accessory04.png#lightbox)
 
 Burada formunda, kullanıcının belirli bir donatıyı seçin ve sağladığı hizmetler ile çalışmak.
 
@@ -368,7 +368,7 @@ Aşağıdaki hizmet türleri aracılığıyla kullanılabilir `HMServiceType` en
 
 Yükleme sonrasında sonra bir `HMAccessory` tek tek sorgu `HNService` nesneleri sağlar ve bu bilgileri kullanıcıya görüntüler:
 
-[ ![](homekit-images/accessory05.png "Hizmet bilgileri görüntüleme")](homekit-images/accessory05.png)
+[![](homekit-images/accessory05.png "Hizmet bilgileri görüntüleme")](homekit-images/accessory05.png#lightbox)
 
 Her zaman denetlemelisiniz `Reachable` özelliği bir `HMAccessory` ile çalışmak denemeden önce. Bir donatıyı kullanıcı aygıt aralık içinde değil, erişilemiyor veya onu takılı olup olmadığını olabilir.
 
@@ -658,7 +658,7 @@ Varsa `err` özelliği `null`, bir hata oluştu ve kullanıcıya sunulmaz.
 
 İle **HomeKitIntro** gerçek iOS cihaz donanım, bir özelliğe ait değer değişiklikleri üzerinde çalışan uygulama görülme neredeyse anında HomeKit donatıyı Benzeticisinde. Örneğin, bir iOS uygulaması ışığı durumunu değiştirme:
 
-[ ![](homekit-images/test01.png "Bir iOS uygulaması ışığında durumunu değiştirme")](homekit-images/test01.png)
+[![](homekit-images/test01.png "Bir iOS uygulaması ışığında durumunu değiştirme")](homekit-images/test01.png#lightbox)
 
 Durumu HomeKit donatıyı Simulator ışığında değiştirmelisiniz. Değer değişmezse yeni özellik değerleri yazılırken hata iletisi durumunu denetleyin ve donatıyı hala erişilebilir olduğundan emin olun.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5e4b0e7bbad94976b23e58d4248cb2ea1a6f2b0f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Kodda iOS kullanıcı arabirimleri oluşturma
 
@@ -24,7 +24,7 @@ Kullanıcı bir iOS uygulaması gibi bir mağaza arabirimdir – uygulama genell
 
 Aşağıdaki diyagram aygıt ekranına kullanıcı arabirimi Getir penceresi, görünümler, Subviews ve görünüm denetleyicisi arasındaki ilişkileri gösterir: 
 
-[ ![](ios-code-only-images/image9.png "Bu diyagram penceresi, görünümler, Subviews ve görünüm denetleyicisi arasındaki ilişkileri gösterir")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "Bu diyagram penceresi, görünümler, Subviews ve görünüm denetleyicisi arasındaki ilişkileri gösterir")](ios-code-only-images/image9.png#lightbox)
 
 Bu görünüm hiyerarşileri kullanılarak oluşturulabilir [iOS için Xamarin Tasarımcısı](~/ios/user-interface/designer/index.md) Visual Studio'da, ancak bunu tamamen kod içinde çalışma konusunda temel bilgiye sahip iyi. Bu makalede bazı hale getirmek için temel noktaları ve yalnızca kod kullanıcı arabirimi geliştirme ile çalışmaya anlatılmaktadır.
 
@@ -32,7 +32,7 @@ Bu görünüm hiyerarşileri kullanılarak oluşturulabilir [iOS için Xamarin T
 
 Aşağıdaki diyagram aygıt ekranına kullanıcı arabirimi Getir penceresi, görünümler, Subviews ve görünüm denetleyicisi arasındaki ilişkileri gösterir: 
 
-[ ![](ios-code-only-images/image9.png "Bu diyagram penceresi, görünümler, Subviews ve görünüm denetleyicisi arasındaki ilişkileri gösterir")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "Bu diyagram penceresi, görünümler, Subviews ve görünüm denetleyicisi arasındaki ilişkileri gösterir")](ios-code-only-images/image9.png#lightbox)
 
 
 Bu görünüm hiyerarşileri kullanılarak oluşturulabilir [iOS için Xamarin Tasarımcısı](~/ios/user-interface/designer/index.md) Mac için Visual Studio'da, ancak bunu tamamen kod içinde çalışma konusunda temel bilgiye sahip iyi. Bu makalede bazı hale getirmek için temel noktaları ve yalnızca kod kullanıcı arabirimi geliştirme ile çalışmaya anlatılmaktadır.
@@ -49,13 +49,13 @@ Bu görünüm hiyerarşileri kullanılarak oluşturulabilir [iOS için Xamarin T
 İPhone kullanarak Visual Studio'da ilk olarak, bir iOS projesi oluşturun **boş proje** şablonu, aşağıda gösterilen denetleyicileri ve görünümleri eklemek için genişletilen.
 
 
-[ ![](ios-code-only-images/blankapp-vs.png "Yeni Proje iletişim kutusu")](ios-code-only-images/blankapp-vs.png)
+[![](ios-code-only-images/blankapp-vs.png "Yeni Proje iletişim kutusu")](ios-code-only-images/blankapp-vs.png#lightbox)
 
 
 Boş proje şablonu 4 dosyaları projeye ekler:
 
 
-[ ![](ios-code-only-images/empty-project.png "Proje dosyaları")](ios-code-only-images/empty-project.png)
+[![](ios-code-only-images/empty-project.png "Proje dosyaları")](ios-code-only-images/empty-project.png#lightbox)
 
 
 1. **AppDelegate.cs** -içeren bir `UIApplicationDelegate` alt `AppDelegate` , iOS uygulama olayları işlemek için kullanılır. Uygulama penceresi oluşturulur `AppDelegate`'s `FinishedLaunching` yöntemi.
@@ -76,16 +76,16 @@ Aşağıdaki adımları uygulamadan film şeridi kaldırma aracılığıyla Kıl
 
 1. Yeni bir iOS projesi oluşturmak için tek görünüm uygulaması şablonu kullanın:
     
-    [ ![](ios-code-only-images/single-view-app.png "Tek görünüm uygulaması şablonu kullanın")](ios-code-only-images/single-view-app.png)
+    [![](ios-code-only-images/single-view-app.png "Tek görünüm uygulaması şablonu kullanın")](ios-code-only-images/single-view-app.png#lightbox)
 
 1. Silme `Main.Storyboard` ve `ViewController.cs` dosyaları. Yapmak **değil** silmek `LaunchScreen.Storyboard`. Arka plan kod film şeridi oluşturulan görünümü denetleyici için olduğu gibi görünüm denetleyicisini silinmesi gerekir:
 1. Seçtiğinizden emin olun **silmek** açılan iletişim kutusunda:
     
-    [ ![](ios-code-only-images/delete.png "Açılan iletişim kutusundan Sil'i seçin")](ios-code-only-images/delete.png)
+    [![](ios-code-only-images/delete.png "Açılan iletişim kutusundan Sil'i seçin")](ios-code-only-images/delete.png#lightbox)
 
 1. İçindeki bilgileri Info.plist dosyasında silme **dağıtım bilgileri > ana arabirimi** seçeneği:
     
-    [ ![](ios-code-only-images/main-interface.png "Ana arabirimi seçeneği içindeki bilgileri Sil")](ios-code-only-images/main-interface.png)
+    [![](ios-code-only-images/main-interface.png "Ana arabirimi seçeneği içindeki bilgileri Sil")](ios-code-only-images/main-interface.png#lightbox)
 
 1. Son olarak, aşağıdaki kodu ekleyin, `FinishedLaunching` AppDelegate sınıfında yöntemi:
         
@@ -176,7 +176,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Erişilebilir bir ilişkili görünümü her denetleyicisine sahip `View` özelliği. Yukarıdaki kod görünümün değiştirir `BackgroundColor` özelliğine `UIColor.LightGray` , aşağıda gösterildiği gibi görünür, böylece:
 
- [ ![](ios-code-only-images/image1.png "Görünümün arka plan görünür açık gri olduğunu")](ios-code-only-images/image1.png)
+ [![](ios-code-only-images/image1.png "Görünümün arka plan görünür açık gri olduğunu")](ios-code-only-images/image1.png#lightbox)
 
 Biz herhangi ayarlayabilirsiniz `UIViewController` alt sınıfı olarak `RootViewController` bu şekilde Uıkit hem de biz yazma kendisini denetleyicilerinden de dahil. Örneğin, aşağıdaki kod ekler bir `UINavigationController` olarak `RootViewController`:
 
@@ -214,7 +214,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Bu gezinti denetleyiciyle aşağıda gösterildiği gibi iç içe geçmiş denetleyicisi oluşturur:
 
- [ ![](ios-code-only-images/image2.png "Gezinti denetleyiciyle iç içe geçmiş denetleyicisi")](ios-code-only-images/image2.png)
+ [![](ios-code-only-images/image2.png "Gezinti denetleyiciyle iç içe geçmiş denetleyicisi")](ios-code-only-images/image2.png#lightbox)
 
 ## <a name="creating-a-view-controller"></a>Bir görünüm denetleyicisini oluşturma
 
@@ -224,11 +224,11 @@ Adlı yeni bir sınıf ekleyin `CustomViewController` aşağıda gösterildiği 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](ios-code-only-images/customviewcontroller.png "CustomViewController adlı yeni bir sınıf ekleyin")](ios-code-only-images/customviewcontroller.png)
+[![](ios-code-only-images/customviewcontroller.png "CustomViewController adlı yeni bir sınıf ekleyin")](ios-code-only-images/customviewcontroller.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](ios-code-only-images/new-file.png "CustomViewController adlı yeni bir sınıf ekleyin")](ios-code-only-images/new-file.png)
+[![](ios-code-only-images/new-file.png "CustomViewController adlı yeni bir sınıf ekleyin")](ios-code-only-images/new-file.png#lightbox)
 
 -----
 
@@ -245,6 +245,8 @@ namespace CodeOnlyDemo
     }
 }
 ```
+
+<a name="Initializing_the_View"/>
 
 ## <a name="initializing-the-view"></a>Görünüm başlatılıyor
 
@@ -302,11 +304,11 @@ Window.RootViewController = navController;
 
 Şimdi uygulamayı yüklediğinde, `CustomViewController` Gezinti denetleyicisi yüklenir:
 
- [ ![](ios-code-only-images/customvc.png "CustomViewController içinde bir gezinti denetleyicisi yüklendi")](ios-code-only-images/customvc.png)
+ [![](ios-code-only-images/customvc.png "CustomViewController içinde bir gezinti denetleyicisi yüklendi")](ios-code-only-images/customvc.png#lightbox)
  
 Düğmesini tıklatarak olacak _itme_ Gezinti yığına yeni bir görünüm denetleyicisi:
 
-[ ![](ios-code-only-images/customvca.png "Yeni bir görünüm denetleyicisi Gezinti yığına gönderilir")](ios-code-only-images/customvca.png)
+[![](ios-code-only-images/customvca.png "Yeni bir görünüm denetleyicisi Gezinti yığına gönderilir")](ios-code-only-images/customvca.png#lightbox)
 
 ## <a name="building-the-view-hierarchy"></a>Görünüm hiyerarşisine oluşturma
 
@@ -352,7 +354,7 @@ Biz oluşturduğunuzda `UITextField`, ayarlarız `Frame` konumunu ve boyutunu ta
 
 Uygulama ile `UITextField` dahil aşağıda gösterilmiştir:
 
- [ ![](ios-code-only-images/image4.png "Uygulama dahil UITextField ile")](ios-code-only-images/image4.png)
+ [![](ios-code-only-images/image4.png "Uygulama dahil UITextField ile")](ios-code-only-images/image4.png#lightbox)
 
 Ekleyebiliriz bir `UITextField` benzer bir şekilde parolasını yalnızca bu kez ayarlarız `SecureTextEntry` özelliği true, aşağıda gösterildiği gibi:
 
@@ -380,7 +382,7 @@ public class CustomViewController : UIViewController
 
 Ayarı `SecureTextEntry = true` girilen metin gizler `UITextField` aşağıda gösterildiği gibi kullanıcı tarafından:
 
- [ ![](ios-code-only-images/image4a.png "SecureTextEntry ayarı true kullanıcı tarafından girilen metin gizler")](ios-code-only-images/image4a.png)
+ [![](ios-code-only-images/image4a.png "SecureTextEntry ayarı true kullanıcı tarafından girilen metin gizler")](ios-code-only-images/image4a.png#lightbox)
 
 ### <a name="adding-the-button"></a>Düğme ekleme
 
@@ -403,7 +405,7 @@ View.AddSubview(submitButton);
 
 Bu yerinde oturum açma ekranı artık aşağıda gösterildiği gibi görünür:
 
- [ ![](ios-code-only-images/image5.png "Oturum açma ekranı")](ios-code-only-images/image5.png)
+ [![](ios-code-only-images/image5.png "Oturum açma ekranı")](ios-code-only-images/image5.png#lightbox)
 
 İOS, önceki sürümlerde varsayılan düğme arka planını saydam benzemez. Düğmenin değiştirilmesine `BackgroundColor` özellik bu değişiklikleri:
 
@@ -419,7 +421,7 @@ submitButton.Layer.CornerRadius = 5f;
 
 Bu değişikliklerle görünümü şuna benzeyecektir:
 
-[ ![](ios-code-only-images/image6.png "Görünümün bir örnek Çalıştır")](ios-code-only-images/image6.png)
+[![](ios-code-only-images/image6.png "Görünümün bir örnek Çalıştır")](ios-code-only-images/image6.png#lightbox)
  
 ## <a name="adding-multiple-views-to-the-view-hierarchy"></a>Görünüm hiyerarşisi birden çok görünüm ekleme
 
@@ -452,7 +454,7 @@ submitButton.TouchUpInside += (sender, e) => {
 
 Gezinti aşağıda gösterilmiştir:
 
-[ ![](ios-code-only-images/navigation.png "Gezinti Bu grafikte gösterildiği")](ios-code-only-images/navigation.png)
+[![](ios-code-only-images/navigation.png "Gezinti Bu grafikte gösterildiği")](ios-code-only-images/navigation.png#lightbox)
 
 Bir gezinti denetleyicisi kullandığınızda, varsayılan olarak, iOS uygulamanın gezinti çubuğu ve yığınından geri taşımanıza olanak sağlamak için bir geri düğmesini sağlar dikkat edin.
 
@@ -477,7 +479,7 @@ Bu, ancak çalışmaz için yinelendiğinde görünümü ise bir `UIView` tüm g
 
 Kullanıcı yatay aygıta döndürür, aşağıdaki ekran görüntüsünde gösterildiği gibi denetimleri gerektiği gibi yeniden boyutlandırma değil:
 
- [ ![](ios-code-only-images/image7.png "Kullanıcı yatay aygıta döndürür, denetimleri uygun şekilde yeniden boyutlandırma")](ios-code-only-images/image7.png)
+ [![](ios-code-only-images/image7.png "Kullanıcı yatay aygıta döndürür, denetimleri uygun şekilde yeniden boyutlandırma")](ios-code-only-images/image7.png#lightbox)
 
 Bu sorunu gidermek için bir yoldur ayarlayarak `AutoresizingMask` her görünüm özelliği. Her ayarlarız böylece bu durumda yatay uzatmak için denetimleri istiyoruz `AutoresizingMask`. Aşağıdaki örnek içindir `usernameField`, ancak aynı görünüm hiyerarşideki her aracı uygulanması gerekir.
 
@@ -487,7 +489,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 Biz cihaz veya simulator döndürdüğünüzde, şimdi her şeyi ek alan doldurmak için aşağıda gösterildiği gibi uzatılır:
 
- [ ![](ios-code-only-images/image8.png "Tüm denetimler ek alanı dolduracak şekilde uzatılır")](ios-code-only-images/image8.png)
+ [![](ios-code-only-images/image8.png "Tüm denetimler ek alanı dolduracak şekilde uzatılır")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>Özel görünümler oluşturma
 
@@ -592,7 +594,7 @@ submitButton.TouchUpInside += delegate
 
 Şimdi uygulamayı çalıştırın ve Gönder düğmesine dokunun bir daire ile yeni görünüm görüntülenir:
 
- [ ![](ios-code-only-images/circles.png "Yeni bir daire görüntülenir")](ios-code-only-images/circles.png)
+ [![](ios-code-only-images/circles.png "Yeni bir daire görüntülenir")](ios-code-only-images/circles.png#lightbox)
 
 ## <a name="creating-a-launch-screen"></a>Başlatma ekranı oluşturma
 

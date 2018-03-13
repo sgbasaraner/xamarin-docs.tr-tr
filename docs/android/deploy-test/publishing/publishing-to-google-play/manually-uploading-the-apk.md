@@ -7,100 +7,93 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: c09dcefb97a5edafcd03394e5ae3146b69a40745
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 37e38ddd84b50709bec147c54cdfa9f79404a39f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manually-uploading-the-apk"></a>APK el ile karşıya yükleme
 
-<a name="Uploading_the_APK" />
 
 Bir APK gönderildi ilk kez Google Play (veya Xamarin.Android eski bir sürümü kullanılırsa) APK el ile yüklenmelidir [Google Play Geliştirici konsol](https://play.google.com/apps/publish). Bu kılavuz, bu işlem için gereken adımları açıklar. 
 
-<a name="devconsole" />
 
 ## <a name="google-play-developer-console"></a>Google Play Geliştirici konsol
 
 APK derlendikten sonra hazırlanan, tanıtım varlıklar uygulamayı Google Play yüklenmelidir. Bu oturum açmayı gerçekleştirilir [Google Play Geliştirici konsol](https://play.google.com/apps/publish), sonraki resimdeki. Tıklatın **Google play'de Android uygulama yayımlama** düğmesine bir uygulamayı dağıtma işlemi başlatılamadı.
 
-[ ![Google Play Geliştirici konsol](manually-uploading-the-apk-images/00-google-play-developer-console-sml.png)](manually-uploading-the-apk-images/00-google-play-developer-console.png)
+[![Google Play Geliştirici konsol](manually-uploading-the-apk-images/00-google-play-developer-console-sml.png)](manually-uploading-the-apk-images/00-google-play-developer-console.png#lightbox)
 
 Google Play ile kayıtlı mevcut bir uygulamayı zaten varsa, tıklatın **yeni bir uygulama eklemek** düğmesi:
 
-[ ![Yeni uygulama düğme ekleme](manually-uploading-the-apk-images/01-existing-app-sml.png)](manually-uploading-the-apk-images/01-existing-app.png)
+[![Yeni uygulama düğme ekleme](manually-uploading-the-apk-images/01-existing-app-sml.png)](manually-uploading-the-apk-images/01-existing-app.png#lightbox)
 
 Zaman **yeni uygulama Ekle** iletişim kutusu gösterilir, tıklatın ve uygulama adı girin **karşıya APK**:
 
-[ ![APK düğmesi karşıya yükle](manually-uploading-the-apk-images/02-add-new-application-sml.png)](manually-uploading-the-apk-images/02-add-new-application.png)
+[![APK düğmesi karşıya yükle](manually-uploading-the-apk-images/02-add-new-application-sml.png)](manually-uploading-the-apk-images/02-add-new-application.png#lightbox)
 
 Sonraki ekranda alfa sınama, beta sınama ve üretim için yayımlanan yazmasına izin verir. Aşağıdaki örnekte, **ALFA testi** sekmesi seçilmiştir. Çünkü **Uygulamam** lisans hizmetlerini kullanmaz **Get lisans anahtarı** düğmesi Bu örnek için tıklattığınız gerekmez. Burada, **ilk APK Alpha için karşıya yükleme** düğmesine tıklandığında alfa kanal yayımlamak için:
 
-[ ![Alpha düğmesine ilk APK karşıya yükle](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png)
+[![Alpha düğmesine ilk APK karşıya yükle](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png#lightbox)
 
 **Karşıya yeni APK için ALFA** iletişim kutusu gösterilir. APK ya da tıklayarak yüklenebilir **gözatma dosyası** düğmesini veya sürükleme ve bırakma APK: 
 
-[ ![Yeni APK alfa iletişim için karşıya yükleme](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png)
+[![Yeni APK alfa iletişim için karşıya yükleme](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png#lightbox)
 
 Dağıtılacak olan sürüm için hazır APK karşıya emin olun.
 Sonraki iletişim APK karşıya yükleme ilerlemesini gösterir:
 
-[ ![İlerleme göstergesi karşıya yükle](manually-uploading-the-apk-images/05-upload-progress-sml.png)](manually-uploading-the-apk-images/05-upload-progress.png)
+[![İlerleme göstergesi karşıya yükle](manually-uploading-the-apk-images/05-upload-progress-sml.png)](manually-uploading-the-apk-images/05-upload-progress.png#lightbox)
 
 APK karşıya yüklendikten sonra bir test yöntemi seçmek mümkündür:
 
-[ ![Test yöntemi iletişim seçin](manually-uploading-the-apk-images/06-select-testing-method-sml.png)](manually-uploading-the-apk-images/06-select-testing-method.png)
+[![Test yöntemi iletişim seçin](manually-uploading-the-apk-images/06-select-testing-method-sml.png)](manually-uploading-the-apk-images/06-select-testing-method.png#lightbox)
 
 Google uygulamayı test etme hakkında daha fazla bilgi için bkz: [alfa/beta testleri oluşturma](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en) Kılavuzu.
 
 APK yüklendikten sonra taslak olarak kaydedilir. Daha fazla ayrıntı için Google Play sonraki bölümde açıklandığı gibi sağlanana kadar yayımlanamaz.
 
-<a name="Listing_Details" />
 
 ## <a name="store-listing"></a>Mağaza listesi
 
 Tıklatın **deposu listeleme** içinde **Google Play Geliştirici konsol** Google Play uygulaması potentials kullanıcılara görüntüler bilgi girmek için: 
 
-[ ![Mağaza listesi iletişim](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png)
+[![Mağaza listesi iletişim](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
 
-<a name="Upload_Assets" />
 
 ### <a name="graphics-assets"></a>Grafik varlıklar
 
 Ekranı aşağı kaydırarak **grafik varlıklar** bölümünü **deposu listeleme** sayfa:
 
-[ ![Grafik varlıklar bölümü](manually-uploading-the-apk-images/08-graphic-assets-sml.png)](manually-uploading-the-apk-images/08-graphic-assets.png)
+[![Grafik varlıklar bölümü](manually-uploading-the-apk-images/08-graphic-assets-sml.png)](manually-uploading-the-apk-images/08-graphic-assets.png#lightbox)
 
 Bu bölümdeki tüm önceden hazırlanmış ve tanıtım varlıkları yüklenir. Hangi tanıtım varlıkları sağlanmalıdır ve hangi biçimi için bunlar içinde sağlanmalıdır yönergeler sağlanır.
 
-<a name="categorization" />
 
 ### <a name="categorization"></a>Kategorilere ayırma
 
 Sonra **grafik varlıklar** bölüm bir **kategori** bölümünde, kategori ve uygulama türünü seçin:
 
-[ ![Kategori bölümü](manually-uploading-the-apk-images/09-categorization-sml.png)](manually-uploading-the-apk-images/09-categorization.png)
+[![Kategori bölümü](manually-uploading-the-apk-images/09-categorization-sml.png)](manually-uploading-the-apk-images/09-categorization.png#lightbox)
 
 İçerik derecelendirme sonra sonraki bölümde ele alınmıştır.
 
-<a name="contact_details" />
 
 ### <a name="contact-details"></a>İlgili kişi ayrıntıları
 
 Bu sayfanın son bölümü bir **kişi ayrıntıları** bölümü. Bu bölümde, Uygulama geliştirici ilgili kişi bilgileri toplamak için kullanılır:
 
-[ ![İlgili kişi ayrıntıları bölümü](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png)
+[![İlgili kişi ayrıntıları bölümü](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png#lightbox)
 
 Uygulama gizlilik ilkesi için bir URL sağlamak mümkün **gizlilik ilkesi** bölüm, yukarıda belirtildiği şekilde.
 
-<a name="content_rating" />
 
 ## <a name="content-rating"></a>İçerik derecelendirme
 
 Tıklatın **içerik derecelendirme** içinde **Google Play Geliştirici konsol**. Bu sayfada, uygulamanız için içerik derecelendirme belirtin. Google Play tüm uygulamaların içerik derecelendirme belirtmenizi gerektirir. Tıklatın **devam** düğmesi içerik derecelendirme anketi tamamlamak için:
 
-[ ![İçerik derecelendirme bölümü](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png)
+[![İçerik derecelendirme bölümü](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png#lightbox)
 
 Google play'de tüm uygulamaları Google Play derecelendirme sistemi göre derecelendirilmiş olması gerekir. İçerik derecelendirme ek olarak, tüm uygulamaları Google için uymalıdır [Geliştirici içerik İlkesi](http://www.android.com/us/developer-content-policy.html).
 
@@ -118,7 +111,6 @@ Aşağıdaki dört düzeyi Google Play derecelendirme sisteminde listeler ve öz
 
 Orta olgunluk listedeki öğeler öznel, bu nedenle bir orta olgunluk derecelendirme söylemesi görünebilir bir kılavuz yüksek olgunluk derecelendirme garanti etmeye yoğun olabileceğini mümkündür. 
 
-<a name="pricing_and_distribution" />
 
 ## <a name="pricing-amp-distribution"></a>Fiyatlandırma &amp; dağıtım
 
@@ -128,40 +120,36 @@ Google Play (ancak, bu ücretsiz bir uygulama ile uygulama faturalama içerikle 
 
 Ticari bir hesap Ücretli bir uygulamayı yayımlamadan önce için gereklidir. Bunu yapmak için tıklatın **ticari bir hesabı ayarlamanız** ve yönergeleri izleyin.
 
-[ ![Fiyatlandırma ve dağıtım iletişim](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png)
+[![Fiyatlandırma ve dağıtım iletişim](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png#lightbox)
 
-<a name="manage_countries" />
 
 ### <a name="manage-countries"></a>Ülkelerde yönetme
 
 Sonraki bölümde **yönetmek ülkelerde**, hangi ülkelerde distibuted için bir uygulama olabilir üzerinde denetim sağlar:
 
-[ ![Yönetme ülkelerde iletişim kutusu](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png)
+[![Yönetme ülkelerde iletişim kutusu](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
 
-<a name="other_information" />
 
 ### <a name="other-information"></a>Diğer bilgiler
 
 Daha fazla uygulama ads içerip içermediğini belirtmek için ilerleyin. Ayrıca, **CİHAZ KATEGORİLERİ** bölüm Android takmak, Android TV veya Android otomatik için isteğe bağlı olarak uygulama dağıtmak için seçenekleri sağlar:
 
-[ ![Reklam bölüm içerir.](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png)
+[![Reklam bölüm içerir.](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png#lightbox)
 
 Bu bölümde sonra içine kullanmama gibi seçilebileceğini ek seçenekler **aileleri için tasarlanmış** ve eğitim için Google Play üzerinden uygulama dağıtma.
 
-<a name="consent" />
 
 ### <a name="consent"></a>Onay
 
 Ekranın alt kısmındaki **fiyatlandırma &amp; dağıtım** sayfası **onayı** bölümü.
 Bu zorunlu bir bölümdür ve uygulama karşıladığını bildirmek için kullanılan [Android içerik yönergeleri](http://www.android.com/market/terms/developer-content-policy.html#hl=us) ve ABD ihracat yasalarına tabi uygulamasıdır alındı:
 
-[ ![Bölüm onayı](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png)
+[![Bölüm onayı](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 
 Bu kılavuzda ele daha bir Xamarin.Android uygulaması yayımlama için daha fazla yoktur.
 Google Play uygulamanızı yayımlama hakkında daha fazla bilgi için bkz: [Google Play Geliştirici konsol Yardım Merkezi'ne Hoş Geldiniz](https://support.google.com/googleplay/android-developer#topic=3450769).
 
 
-<a name="Google_Play_Filters" />
 
 ## <a name="google-play-filters"></a>Google Play filtreleri
 

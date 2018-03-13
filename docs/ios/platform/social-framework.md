@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: da096c8575896bc9f522a92b3fb94b81f9e772df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9892577d7e0ed3d3f622f881cc51db09eb44a8fd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="social-framework"></a>Sosyal Framework
 
@@ -30,7 +30,7 @@ Sosyal Framework kullanarak uygulamaların tek API'sinden sosyal ağlarla kimlik
 
 Sosyal Framework kullanarak Twitter bağlanmak için bir hesap aygıt ayarlarını aşağıda gösterildiği gibi yapılandırılması gerekir:
 
- [ ![](social-framework-images/twitter01.png "Twitter hesap ayarları")](social-framework-images/twitter01.png)
+ [![](social-framework-images/twitter01.png "Twitter hesap ayarları")](social-framework-images/twitter01.png#lightbox)
 
 Bir hesap girdikten ve Twitter ile doğruladıktan sonra sosyal Framework sınıfları Twitter erişmek için kullandığı bir cihazda herhangi bir uygulama bu hesabı kullanın.
 
@@ -38,7 +38,7 @@ Bir hesap girdikten ve Twitter ile doğruladıktan sonra sosyal Framework sını
 
 Adlı bir denetleyici sosyal Framework içerir `SLComposeViewController` düzenleme ve tweet göndermek için sistem tarafından sağlanan bir görünüm sunar. Aşağıdaki ekran görüntüsünde, bu görünüm örneği gösterilmektedir:
 
- [ ![](social-framework-images/twitter02.png "Bu ekran SLComposeViewController örneği gösterilmektedir.")](social-framework-images/twitter02.png)
+ [![](social-framework-images/twitter02.png "Bu ekran SLComposeViewController örneği gösterilmektedir.")](social-framework-images/twitter02.png#lightbox)
 
 Kullanılacak bir `SLComposeViewController` çağırarak denetleyici örneği Twitter ile oluşturulmalıdır `FromService` yöntemiyle `SLServiceType.Twitter` aşağıda gösterildiği gibi:
 
@@ -284,7 +284,7 @@ request.PerformRequest ((data, response, error) => {
 
 Verilerin başarıyla yüklendiğini ham JSON verilerini (örnekte olduğu gibi aşağıdaki çıktıda) görüntülenir:
 
-[ ![](social-framework-images/twitter03.png "Ham JSON veri görünümü örneği")](social-framework-images/twitter03.png)
+[![](social-framework-images/twitter03.png "Ham JSON veri görünümü örneği")](social-framework-images/twitter03.png#lightbox)
 
 Gerçek bir uygulamada, JSON sonuçları sonra kullanıcıya sunulan sonuçları ve normal olarak ayrıştırılması. Bkz: [giriş Web Hizmetleri](~/cross-platform/data-cloud/web-services/index.md) JSON ayrıştırma hakkında bilgi için.
 
@@ -294,7 +294,7 @@ Gerçek bir uygulamada, JSON sonuçları sonra kullanıcıya sunulan sonuçları
 
 Facebook sosyal Framework ile bağlanma neredeyse yukarıda gösterilen Twitter için kullanılan işlem aynıdır. Bir Facebook kullanıcı hesabı, aşağıda gösterildiği gibi aygıt ayarlarını yapılandırılmalıdır:
 
-[ ![](social-framework-images/facebook01.png "Facebook hesap ayarları")](social-framework-images/facebook01.png)
+[![](social-framework-images/facebook01.png "Facebook hesap ayarları")](social-framework-images/facebook01.png#lightbox)
 
 Bir kere yapılandırıldığında, sosyal çerçevesi kullanır, bu aygıttaki herhangi bir uygulama için Facebook bağlanmak için bu hesabı kullanır.
 
@@ -368,7 +368,7 @@ namespace SocialFrameworkDemo
 
 Facebook ile kullanıldığında `SLComposeViewController` gösteren Twitter örnek için neredeyse aynı benzeyen bir görünüm görüntüler **Facebook** başlığı bu durumda:
 
-[ ![](social-framework-images/facebook02.png "SLComposeViewController görüntüleme")](social-framework-images/facebook02.png)
+[![](social-framework-images/facebook02.png "SLComposeViewController görüntüleme")](social-framework-images/facebook02.png#lightbox)
 
 ### <a name="calling-facebook-graph-api"></a>Facebook grafik API'si çağırma
 
@@ -478,4 +478,4 @@ Bu makalede, sosyal Framework Twitter ve Facebook ile etkileşim kurmak için na
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SocialFrameworkDemo (örnek)](https://developer.xamarin.com/samples/SocialFrameworkDemo/)
-- [Web hizmetlerine giriş](~/cross-platform/data-cloud/web-services/index.md)
+- [Web Hizmetlerine Giriş](~/cross-platform/data-cloud/web-services/index.md)

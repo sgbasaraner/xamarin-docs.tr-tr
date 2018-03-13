@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/24/2017
-ms.openlocfilehash: d8fa54f23dfea063fa25f6e26e2df2c2ed82101e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9aa66a531b723f176b940ba35ee4e86eae711f7d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="collection-views"></a>Koleksiyon görünümleri
 
@@ -22,7 +22,7 @@ AppKit koleksiyon görünümü Xamarin.Mac uygulama, geliştiriciler C# ve .NET 
 
 A `NSCollectionView` kullanılarak organize subviews oluşan bir kılavuz görüntüler bir `NSCollectionViewLayout`. Her alt görünüm kılavuzunda tarafından temsil edilen bir `NSCollectionViewItem` görünümün içerikten yüklenmesini yöneten bir `.xib` dosyası.
 
-[ ![Bir örnek uygulamayı çalıştırma](collection-view-images/intro01.png)](collection-view-images/intro01.png)
+[![Bir örnek uygulamayı çalıştırma](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
 Bu makalede, bir Xamarin.Mac uygulamasında koleksiyon görünümleri ile çalışmanın temelleri kapsar. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve bu makale kullanılan teknikleri ele alınmaktadır.
 
@@ -818,7 +818,7 @@ Bu makalede bir Xamarin.Mac uygulamasında koleksiyonu görünümlerle çalışm
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacCollectionNew (örnek)](https://developer.xamarin.com/samples/mac/MacCollectionNew/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
-- [Veri bağlama ve anahtar-değer kodlama](~/mac/app-fundamentals/databinding.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Veri Bağlama ve Anahtar-Değer Kodlaması](~/mac/app-fundamentals/databinding.md)
 - [NSCollectionView](https://developer.apple.com/reference/appkit/nscollectionview)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

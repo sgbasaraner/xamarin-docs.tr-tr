@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 00980c0038ac3ae51d0444e6f71dde9dfef25831
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 33e27043c3738c5213b17786e5a88fb30a7fc017
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="speech-recognition"></a>Konuşma tanıma
 
@@ -33,7 +33,7 @@ Apple göre konuşma tanıma API'si aşağıdaki özellikler ve avantajları var
 
 Konuşma tanıma bir iOS uygulaması Canlı veya önceden kaydedilmiş ses (herhangi bir API'yi destekleyip konuşulan dile) alınırken ve onu bir düz metin transcription konuşulan sözcüklerin döndüren bir konuşma tanıyıcısı tarafından uygulanır.
 
-[ ![](speech-images/speech01.png "Konuşma tanıma nasıl çalışır?")](speech-images/speech01.png)
+[![](speech-images/speech01.png "Konuşma tanıma nasıl çalışır?")](speech-images/speech01.png#lightbox)
 
 ### <a name="keyboard-dictation"></a>Klavye yazdırma
 
@@ -104,13 +104,13 @@ Gerekli sağlamak için `NSSpeechRecognitionUsageDescription` anahtarını `Info
 1. Çift `Info.plist` dosyayı düzenlemek için açın.
 2. Geçiş **kaynak** görünümü: 
 
-    [ ![](speech-images/speech02.png "Kaynak Görünümü")](speech-images/speech02.png)
+    [![](speech-images/speech02.png "Kaynak Görünümü")](speech-images/speech02.png#lightbox)
 3. Tıklayın **yeni giriş Ekle**, girin `NSSpeechRecognitionUsageDescription` için **özelliği**, `String` için **türü** ve **kullanım açıklama** olarak **değeri**. Örneğin: 
 
-    [ ![](speech-images/speech03.png "NSSpeechRecognitionUsageDescription ekleme")](speech-images/speech03.png)
+    [![](speech-images/speech03.png "NSSpeechRecognitionUsageDescription ekleme")](speech-images/speech03.png#lightbox)
 4. Uygulama Canlı ses transcription işleme, bu da mikrofon kullanım açıklamasını gerektirir. Tıklayın **yeni giriş Ekle**, girin `NSMicrophoneUsageDescription` için **özelliği**, `String` için **türü** ve **kullanım açıklama** olarak **değeri**. Örneğin: 
 
-    [ ![](speech-images/speech04.png "NSMicrophoneUsageDescription ekleme")](speech-images/speech04.png)
+    [![](speech-images/speech04.png "NSMicrophoneUsageDescription ekleme")](speech-images/speech04.png#lightbox)
 4. Değişiklikleri dosyaya kaydedin.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -118,10 +118,10 @@ Gerekli sağlamak için `NSSpeechRecognitionUsageDescription` anahtarını `Info
 1. Çift `Info.plist` dosyayı düzenlemek için açın.
 3. Tıklayın **yeni giriş Ekle**, girin `NSSpeechRecognitionUsageDescription` için **özelliği**, `String` için **türü** ve **kullanım açıklama** olarak **değeri**. Örneğin: 
 
-    [ ![](speech-images/speech03w.png "NSSpeechRecognitionUsageDescription ekleme")](speech-images/speech03w.png)
+    [![](speech-images/speech03w.png "NSSpeechRecognitionUsageDescription ekleme")](speech-images/speech03w.png#lightbox)
 4. Uygulama Canlı ses transcription işleme, bu da mikrofon kullanım açıklamasını gerektirir. Tıklayın **yeni giriş Ekle**, girin `NSMicrophoneUsageDescription` için **özelliği**, `String` için **türü** ve **kullanım açıklama** olarak **değeri**. Örneğin: 
 
-    [ ![](speech-images/speech04w.png "NSMicrophoneUsageDescription ekleme")](speech-images/speech04w.png)
+    [![](speech-images/speech04w.png "NSMicrophoneUsageDescription ekleme")](speech-images/speech04w.png#lightbox)
 4. Değişiklikleri dosyaya kaydedin.
 
 -----

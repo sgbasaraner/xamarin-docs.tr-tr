@@ -6,11 +6,11 @@ ms.assetid: 5E72869D-3541-408B-AB64-D34C777AFB79
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 2801fd74e9f5f8f2927b06dc7b68cdf004faa104
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a1e28bc9a8a17b4b06ec45746a6ce60ddd129ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cocossharp"></a>CocosSharp
 
@@ -22,9 +22,9 @@ CocosSharp, C# ve F # kullanarak 2B oyunlar için kullanımı kolay bir kitaplı
 
 Bu uygulamalı video basit bir platformlar arası CocosSharp oluşturma oyun gösterir.
 
-<iframe src="//channel9.msdn.com/Shows/Visual-Studio-Toolbox/Developing-Cross-platform-2D-Games-in-C-and-CocosSharp/player" width="800" height="450" allowFullScreen frameBorder="0"></iframe>
+> [!Video https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Developing-Cross-platform-2D-Games-in-C-and-CocosSharp/player]
 
-###  <a name="introduction-to-game-development-with-cocossharpgraphics-gamescocossharpfirst-gameindexmd"></a>[CocosSharp oyun geliştirmeye giriş](~/graphics-games/cocossharp/first-game/index.md)
+###  <a name="introduction-to-game-development-with-cocossharpgraphics-gamescocossharpfirst-gameindexmd"></a>[CocosSharp ile Oyun Geliştirmeye Giriş](~/graphics-games/cocossharp/first-game/index.md)
 
 ![](images/first-game.png "CocosSharp kullanarak basit bir 2B oyun")
 
@@ -32,7 +32,7 @@ Bu çok parçalı izlenecek CocosSharp kullanarak basit bir 2B oyun oluşturulac
 
 
 
-##  <a name="fruity-falls-game-detailsgraphics-gamescocossharpfruity-fallsmd"></a>[Fruity döner oyun ayrıntıları](~/graphics-games/cocossharp/fruity-falls.md)
+##  <a name="fruity-falls-game-detailsgraphics-gamescocossharpfruity-fallsmd"></a>[Fruity Falls Oyununun Ayrıntıları](~/graphics-games/cocossharp/fruity-falls.md)
 
 ![](images/fruity-falls.png "Bu kılavuz Fruity döner oyun incelemeleri")
 
@@ -56,7 +56,7 @@ CCDrawNode satırları, daire ve üçgen gibi temel çizim nesneler için yönte
 
 
 
-## <a name="animating-with-ccactiongraphics-gamescocossharpccactionmd"></a>[İle CCAction animasyon ekleme](~/graphics-games/cocossharp/ccaction.md)
+## <a name="animating-with-ccactiongraphics-gamescocossharpccactionmd"></a>[CCAction ile Animasyon](~/graphics-games/cocossharp/ccaction.md)
 
 ![](images/ccaction.png "CCAction CocosSharp nesnelere animasyon ekleme için kullanılan bir temel sınıfı.")
 
@@ -64,13 +64,13 @@ CCDrawNode satırları, daire ve üçgen gibi temel çizim nesneler için yönte
 
 
 
-## <a name="using-tiled-with-cocossharpgraphics-gamescocossharptiledmd"></a>[Döşenir CocosSharp ile kullanma](~/graphics-games/cocossharp/tiled.md)
+## <a name="using-tiled-with-cocossharpgraphics-gamescocossharptiledmd"></a>[CocosSharp ile Tiled Uygulamasını Kullanma](~/graphics-games/cocossharp/tiled.md)
 
 ![](images/tiled.png "Döşenir güçlü ve esnektir ve resme ve İzometrik bölmesi oluşturmak için olgun uygulama eşlemeleri için oyunlar") döşenir güçlü ve esnektir ve resme ve İzometrik bölmesi oluşturmak için olgun uygulama eşlemeleri oyunlar için. CocosSharp döşeli'nın yerel dosya biçimi için yerleşik tümleştirme sağlar.
 
 
 
-##  <a name="entities-in-cocossharpgraphics-gamescocossharpentitiesmd"></a>[CocosSharp varlıklar](~/graphics-games/cocossharp/entities.md)
+##  <a name="entities-in-cocossharpgraphics-gamescocossharpentitiesmd"></a>[CocosSharp’taki Varlıklar](~/graphics-games/cocossharp/entities.md)
 
 ![](images/entities.png "Varlık düzeni oyun kodu organize güçlü yoludur")
 
@@ -78,7 +78,7 @@ Varlık düzeni oyun kod düzenlemek için güçlü bir yoludur. Okunabilirliği
 
 
 
-##  <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[Birden çok çözümleri CocosSharp işleme](~/graphics-games/cocossharp/resolutions.md)
+##  <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[CocosSharp’ta Birden Fazla Çözünürlüğü İşleme](~/graphics-games/cocossharp/resolutions.md)
 
 ![](images/resolutions.png "Bu kılavuz çeşitli çözümler cihazlarda düzgün görüntülemek oyun geliştirmek için CocosSharp çalışmak nasıl gösterir")
 
@@ -86,7 +86,7 @@ Bu kılavuz çeşitli çözümler cihazlarda düzgün görüntülemek oyun geli�
 
 
 
-##  <a name="cocossharp-content-pipelinegraphics-gamescocossharpcontent-pipelineindexmd"></a>[CocosSharp Content Pipeline](~/graphics-games/cocossharp/content-pipeline/index.md)
+##  <a name="cocossharp-content-pipelinegraphics-gamescocossharpcontent-pipelineindexmd"></a>[CocosSharp İçerik Ardışık Düzeni](~/graphics-games/cocossharp/content-pipeline/index.md)
 
 ![](images/content-pipeline.png "İçerik ardışık düzen genellikle içeriğini ve biçimini en iyi duruma getirmek için Oyun Geliştirme kullanılır")
 
@@ -94,7 +94,7 @@ Bu kılavuz çeşitli çözümler cihazlarda düzgün görüntülemek oyun geli�
 
 
 
-## <a name="improving-framerate-with-ccspritesheetgraphics-gamescocossharpccspritesheetmd"></a>[Kare hızı CCSpriteSheet ile geliştirme](~/graphics-games/cocossharp/ccspritesheet.md)
+## <a name="improving-framerate-with-ccspritesheetgraphics-gamescocossharpccspritesheetmd"></a>[CCSpriteSheet ile Kare Hızını Artırma](~/graphics-games/cocossharp/ccspritesheet.md)
 
 ![](images/ccspritesheet.png "CCSpriteSheet birleştirme ve bir doku çok sayıda görüntü dosyaları kullanmak için işlevsellik sağlar")
 
@@ -110,7 +110,7 @@ CocosSharp'ın CCTextureCache sınıfı, önbellek, düzenlemek ve içeriği kal
 
 
 
-## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[2B matematik CocosSharp ile](~/graphics-games/cocossharp/math.md)
+## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[CocosSharp ile 2B Matematik](~/graphics-games/cocossharp/math.md)
 
 ![](images/math.png "Bu kılavuz, oyun geliştirmeye yönelik 2B matematik kapsar.")
 

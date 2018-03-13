@@ -8,23 +8,23 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b07a88f25da1ea504785ddc4a0db8db1ed0e2650
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a04dc047674b67b8f21571ed9e7890ddf773f64
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Birleşik API için bağlama geçirme
 
 _Bu makale varolan Xamarin bağlama Xamarin.IOS ve Xamarin.Mac uygulamalar için birleşik API'ları desteklemek için projesini güncelleştirmek için gerekli adımlar kapsanmaktadır._
 
-#<a name="overview"></a>Genel Bakış
+## <a name="overview"></a>Genel Bakış
 
 1 Şubat 2015 başlangıç Apple gerektiren tüm yeni gönderileri iTunes ve Mac App Store için 64 bit uygulamalar olmalıdır. Sonuç olarak, yeni Xamarin.iOS veya Xamarin.Mac uygulama yeni birleşik API 64 bit desteklemek için kullanılmasını varolan Klasik MonoTouch ve MonoMac API'leri yerine gerekecektir.
 
 Ayrıca, herhangi bir bağlama Xamarin projeye yeni birleşik bir 64 bit Xamarin.iOS veya Xamarin.Mac projesinde dahil edilecek API'leri desteklemelidir. Bu makalede Unified API kullanmak için mevcut bir bağlama projesini güncelleştirmek için gerekli olan adımları kapsar.
 
-#<a name="requirements"></a>Gereksinimler
+## <a name="requirements"></a>Gereksinimler
 
 Aşağıda sunulan bu makaledeki adımları tamamlamak için gereklidir:
 
@@ -33,7 +33,7 @@ Aşağıda sunulan bu makaledeki adımları tamamlamak için gereklidir:
 
 Bağlama projeleri, Visual Studio bir Windows makinesinde desteklenmez.
 
-#<a name="modify-the-using-statements"></a>Using deyimleri değiştirme
+## <a name="modify-the-using-statements"></a>Using deyimleri değiştirme
 
 Birleşik API'ları zamankinden kod Mac ve iOS yanı sıra aynı 32 ve 64 bit uygulamalarını desteklemek ikili sağlayarak arasında paylaşmak için kolaylaştırır. Bırakma tarafından _MonoMac_ ve _MonoTouch_ önekleri ad alanlarını, daha basit paylaşımı Xamarin.Mac ve Xamarin.iOS uygulaması projeler arasında sağlanır.
 
@@ -61,9 +61,9 @@ using ObjCRuntime;
 
 Yeniden herhangi için bunun ihtiyacımız `.cs` bağlama Projemizin dosyasında. Bu değişikliği yerinde bağlama Projemizin yeni yerel veri türlerini kullanmak için güncelleştirme sonraki adımdır.
 
-Birleştirilmiş API'si hakkında daha fazla bilgi için lütfen bkz [Unified API](~/cross-platform/macios/unified/index.md) belgeleri. 32 ve 64 bit uygulamalar ve çerçeveler hakkında bilgi destekleme hakkında daha fazla arka plan için bkz: [32 ve 64 bit Platform konuları](~/cross-platform/macios/32-and-64.md) belgeleri.
+Birleştirilmiş API'si hakkında daha fazla bilgi için lütfen bkz [Unified API](~/cross-platform/macios/unified/index.md) belgeleri. 32 ve 64 bit uygulamalar ve çerçeveler hakkında bilgi destekleme hakkında daha fazla arka plan için bkz: [32 ve 64 bit Platform konuları](~/cross-platform/macios/32-and-64/index.md) belgeleri.
 
-#<a name="update-to-native-data-types"></a>Yerel veri türleri için güncelleştirme
+## <a name="update-to-native-data-types"></a>Yerel veri türleri için güncelleştirme
 
 Objective-C eşlemeleri `NSInteger` veri türü için `int32_t` 32 bit sistemler ve çok `int64_t` 64 bit sistemler üzerinde. Bu davranış eşleştirmek için önceki kullanımlarını yeni birleşik API değiştirir `int` (.NET içinde tanımlanan her zaman olduğu `System.Int32`) için yeni bir veri türü: `System.nint`.
 
@@ -94,7 +94,7 @@ Biz kitaplığına ne biz başlangıçta bağlı daha yeni sürüm 3 taraf eşle
 
 Bu veri türü değişiklikleri hakkında daha fazla bilgi için bkz: [yerel türler](~/cross-platform/macios/nativetypes.md) belge.
 
-#<a name="update-the-coregraphics-types"></a>Güncelleştirme CoreGraphics türleri
+## <a name="update-the-coregraphics-types"></a>Güncelleştirme CoreGraphics türleri
 
 İle kullanılan noktası, boyutu ve dikdörtgen veri türleri `CoreGraphics` 32 veya 64 bit bunlar üzerinde çalıştığını aygıt bağlı olarak kullanın. Xamarin iOS ve Mac API'leri ilk olarak bağlı veri türlerinde eşleşecek şekilde oldu mevcut veri yapılarını kullandık `System.Drawing` (`RectangleF` gibi).
 
@@ -130,12 +130,12 @@ IntPtr Constructor (CGRect frame);
 
 Tüm kod değişiklikleri şimdi yerinde, biz bağlama Projemizin değiştirmek veya karşı Unified API bağlamak için dosya yapmak gerekir.
 
-#<a name="modify-the-binding-project"></a>Bağlama proje değiştirme
+## <a name="modify-the-binding-project"></a>Bağlama proje değiştirme
 
 Ya da değiştirmek ihtiyacımız Unified API'ları kullanmak için bizim bağlama projesini güncelleştirmek için son adımı olarak `MakeFile` proje veya Xamarin proje türü (biz gelen Visual Studio içinde Mac için bağlıyorsanız) oluşturun ve istemeniz kullandığımız _btouch_  olanları Klasik yerine birleşik API bağlama yapılacak.
 
 
-##<a name="updating-a-makefile"></a>Derleme görevleri dosyası güncelleştiriliyor
+### <a name="updating-a-makefile"></a>Derleme görevleri dosyası güncelleştiriliyor
 
 Derleme görevleri dosyası bir Xamarin bizim bağlama Projeyi derlemek için kullanıyoruz durumunda. DLL, biz gerekecektir dahil `--new-style` komut satırı seçeneği ve çağrı `btouch-native` yerine `btouch`.
 
@@ -189,7 +189,7 @@ XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMB
 
 Biz şimdi yürütebilir bizim `MakeFile` API'mize yeni 64 bit sürümünü oluşturmak için normal olarak.
 
-##<a name="updating-a-binding-project-type"></a>Bir bağlama proje türü güncelleştiriliyor
+### <a name="updating-a-binding-project-type"></a>Bir bağlama proje türü güncelleştiriliyor
 
 Biz API'mize oluşturmak için Visual Studio Mac bağlama proje şablonu için kullanıyorsanız, biz bağlama proje şablonu yeni birleşik API sürümü güncellemek gerekir. Bunu yapmanın en kolay yolu yeni bir birleşik API bağlama projesi ve kopyalama tüm var olan kodu ve ayarları başlatmaktır.
 
@@ -199,7 +199,7 @@ Aşağıdakileri yapın:
 2. Seçin **dosya** > **yeni** > **çözüm...**
 3. Yeni çözüm iletişim kutusunda seçin **iOS** > **Unified API** > **iOS projesi bağlama**: 
 
-    [ ![](update-binding-images/image01new.png "Yeni çözüm iletişim kutusunda, iOS seçin / birleşik API / bağlama iOS projesi")](update-binding-images/image01new.png)
+    [![](update-binding-images/image01new.png "Yeni çözüm iletişim kutusunda, iOS seçin / birleşik API / bağlama iOS projesi")](update-binding-images/image01new.png#lightbox)
 4. 'Yeni projeniz Yapılandır' iletişim kutusundaki girin bir **adı** tıklatın ve yeni bağlama proje için **Tamam** düğmesi.
 5. İçin bağlamalar oluşturma olacak Objective-C Kitaplığı 64 bit sürümünü içerir.
 6. Varolan 32 bit Klasik API bağlama projenizden kaynak kodunu kopyalayın (gibi `ApiDefinition.cs` ve `StructsAndEnums.cs` dosyaları).
@@ -207,7 +207,7 @@ Aşağıdakileri yapın:
 
 Tüm yerinde bu değişiklikler, yeni API 64 bit sürümü 32 bit sürümü gibi oluşturabilirsiniz.
 
-#<a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu makalede Biz yeni birleşik API'ları ve 64 bit aygıtlarda desteklemek için varolan bir Xamarin projesine bağlama yapılması gereken değişiklikleri gösterilen ve bir API yeni 64 bit uyumlu sürümünü oluşturmak için gereken adımlar.
 
@@ -216,8 +216,8 @@ Bu makalede Biz yeni birleşik API'ları ve 64 bit aygıtlarda desteklemek için
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Mac ve iOS](~/cross-platform/macios/index.md)
-- [Birleşik API](~/cross-platform/macios/nativetypes.md)
-- [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64.md)
+- [Unified API](~/cross-platform/macios/nativetypes.md)
+- [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64/index.md)
 - [Var olan iOS uygulamaları yükseltme](~/cross-platform/macios/unified/updating-ios-apps.md)
-- [Birleşik API](~/cross-platform/macios/unified/index.md)
+- [Unified API](~/cross-platform/macios/unified/index.md)
 - [BindingSample](https://developer.xamarin.com/samples/monotouch/BindingSample/)

@@ -3,14 +3,15 @@ title: "Bölüm 10 özeti. XAML işaretleme uzantıları"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 8ded1dba0e1d4d1a9062d0f75935b3d748a83370
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e9f630fbfc9f7a1d6346b6dd8308504a6806e1a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Bölüm 10 özeti. XAML işaretleme uzantıları
 
@@ -57,7 +58,7 @@ Bir ek XML ad alanı bildirimi ile ortak statik özellikler, alanlar veya .NET f
 
 Çoğu durumda, kullanacağınız [ `StaticResource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticResourceExtension/) bir öğe tarafından gösterildiği gibi kaynak sözlüğünden başvurmak için işaretleme uzantısı [ **ResourceSharing** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceSharing) örnek . Kullanabileceğiniz bir `StaticResourceExtension` öğesi veya `StaticResource` süslü ayraçlar içinde:
 
-[![Kaynak Paylaşımı Üçlü ekran](images/ch10fg03-small.png "kaynak paylaşımı")](images/ch10fg03-large.png "kaynak paylaşma")
+[![Kaynak Paylaşımı Üçlü ekran](images/ch10fg03-small.png "kaynak paylaşımı")](images/ch10fg03-large.png#lightbox "kaynak paylaşma")
 
 Aynı şey `x:Static` biçimlendirme uzantısı ve `StaticResource` biçimlendirme uzantısı.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 69ab69efd60c486255164987795db1937b36b97d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9c40d99d80766c5d32a76e424e902bd1b7d141ba
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="colors"></a>Renkleri
 
@@ -47,7 +47,7 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 Bu renkler her platformda gösterilir. Son renk - fark `Accent` -blue-ish renk iOS ve Android; için bu değeri Xamarin.Forms tarafından tanımlanır. Windows Phone üzerinde `Accent` kırmızı gösterildiği *, bu cihaz için kullanıcı tarafından seçilen Aksan rengi olduğundan*; kullanıcının tercihlerini bağlı olarak bu değer değişiklikleri.
 
- [ ![Renk demo](colors-images/colors-sml.png "renk Demo")](colors-images/colors.png "renk Tanıtımı")
+ [![Renk demo](colors-images/colors-sml.png "renk Demo")](colors-images/colors.png#lightbox "renk Tanıtımı")
 
 ## <a name="colordefault"></a>Color.Default
 

@@ -7,12 +7,12 @@ ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 36cabddc2439d64ad2d1135bbd0d453a7f411750
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d8b44fb7f0e60db407271fd84899489bf8e65694
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>İzlenecek yol - etkinlik durumu kaydetme
 
@@ -22,7 +22,7 @@ _Biz, etkinlik Yaşam Döngüsü Kılavuzu'nda durumu kaydedilmeden arkasında t
 
 Açalım **ActivityLifecycle_Start** proje (içinde [ActivityLifecycle](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle) örnek), onu oluşturun ve çalıştırın. Bu etkinlik yaşam döngüsü ve çeşitli yaşam döngüsü yöntemleri nasıl adlı göstermek için iki etkinlik içeren çok basit bir projedir. Uygulama, ekranın başlattığınızda `MainActivity` görüntülenir: 
 
-[ ![Etkinlik bir ekran](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png)
+[![Etkinlik bir ekran](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
 ### <a name="viewing-state-transitions"></a>Görüntüleme durumu geçişleri
 
@@ -48,7 +48,7 @@ Biz tıklattığınızda **Başlat etkinliği B** düğmesi, biz bkz *etkinlik A
 
 Sonuç olarak, *etkinlik B* başlatıldığından ve yerine görüntülenen *etkinlik A*: 
 
-[ ![Etkinlik B ekranı](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png)
+[![Etkinlik B ekranı](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
 
 Biz tıklattığınızda **geri** düğmesini *etkinlik B* yok ve *etkinlik A* devam ettirildiğinde: 
 
@@ -62,7 +62,7 @@ Biz tıklattığınızda **geri** düğmesini *etkinlik B* yok ve *etkinlik A* d
 ```
 ### <a name="adding-a-click-counter"></a>Tıklatın sayaç ekleme
 
-Ardından, uygulama sayar ve tıklatıldığında sayısını görüntüleyen bir düğme sahibiz şekilde değiştirmek için yapacağız. İlk olarak, ekleyelim bir `_counter` örnek değişkeni `MainActivity`: 
+Ardından, uygulama sayar ve tıklatıldığında sayısını görüntüleyen bir düğme sahibiz şekilde değiştirmek için yapacağız. İlk olarak, ekleyelim bir `_counter` örnek değişkeni `MainActivity`:
 
 ```csharp
 int _counter = 0;
@@ -105,11 +105,11 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 
 Ne zaman biz oluşturmak ve uygulamayı yeniden çalıştırın, yeni bir düğme görüntülenir artırır ve değerini görüntüler `_counter` üzerinde her tıklatın:
 
-[![Dokunma sayım Ekle](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png)
+[![Dokunma sayım Ekle](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
 
 Ancak biz yatay modu için cihazı döndürdüğünüzde, bu sayı kaybolur:
 
-[ ![Yatay olarak döndürme sayısını sıfır olarak ayarlar](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png)
+[![Yatay olarak döndürme sayısını sıfır olarak ayarlar](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
 
 Uygulama çıkış inceleyerek, biz, bkz: *etkinlik A* duraklatıldı, durduruldu, yok, yeniden, yeniden ve sonra dikey döndürme yatay modu için sırasında sürdürüldü: 
 
@@ -152,7 +152,7 @@ if (bundle != null)
 
 Derleme ve uygulamayı yeniden çalıştırın, sonra birkaç kez ikinci düğmesini tıklatın. Biz yatay modu için cihazı döndürdüğünüzde sayısı korunur!
 
-[ ![Ekran döndürme dört korunur sayısını gösterir](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png)
+[![Ekran döndürme dört korunur sayısını gösterir](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
 
 
 Ne olduğunu görmek için çıkış penceresini bir göz atalım:
@@ -181,5 +181,5 @@ Bu walkthough, biz durumu verilerini korumak için etkinlik yaşam döngüsünü
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [ActivityLifecycle (örnek)](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle)
-- [Etkinlik yaşam döngüsü](~/android/app-fundamentals/activity-lifecycle/index.md)
+- [Etkinlik Yaşam Döngüsü](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Android Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d0234cad243e523716d95f467e3fe44c50a182d5
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c60927593f062c8ac9694d889ffbf581c09bab82
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="connecting-to-the-mac"></a>Mac bilgisayara bağlayarak
 
@@ -36,7 +36,7 @@ Mac Bağlantı Aracısı tarafından denetlenen farklı bölümleri – Örneği
 
 Aşağıdaki diyagram Xamarin.iOS geliştirme iş akışı basit bir genel bakış gösterilir:
 
-[![iOS geliştirme iş akışı](images/xma2.png)](images/xma2.png)
+[![iOS geliştirme iş akışı](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
 >  Visual Studio gerçekte projeler derlemek için ayrı bir MSBuild işlemi başlatır. Bu işlem, Visual Studio oluşturduğunda gerçekte iki SSH bağlantısını Windows Mac olduğu anlamına gelir, Mac için yeni bir bağlantı oluşturur. Derleme kaynağı [komut satırı](#commandline) yalnızca bir MSBuild işlemi oluşturur. Bu diyagramda kolaylık sağlamak için tüm bağlantıları yalnızca bir ok temsil edilir.
@@ -70,11 +70,11 @@ Mac ana bilgisayar ayarlamak için Visual Studio için Xamarin uzantısı Mac ar
 
 1. Açık *Spotlight* (**⌘ alanı**) arayın ve *uzaktan oturum açma* ve ardından *paylaşım* sonucu. Bu açılır *sistem tercihleri* adresindeki *paylaşım* paneli:
 
-   [![Uzaktan oturum açma için Spotlight arama](images/spotlight.png)](images/spotlight.png)
+   [![Uzaktan oturum açma için Spotlight arama](images/spotlight.png)](images/spotlight.png#lightbox)
 
 2. Değer çizgilerinin *uzaktan oturum açma* seçeneğini *hizmet* Mac bilgisayara bağlanmak Visual Studio için Xamarin izin vermek için soldaki listesi:
 
-   [![Değer çizgilerinin hizmeti listesinde uzak oturum seçeneği](images/sharing.png)](images/sharing.png)
+   [![Değer çizgilerinin hizmeti listesinde uzak oturum seçeneği](images/sharing.png)](images/sharing.png#lightbox)
 
 3. Olduğundan emin olun *uzaktan oturum açma* erişim için izin verilecek şekilde ayarlandığını *tüm* kullanıcılar veya Mac kullanıcı adınız veya grup sağdaki listede izin verilen kullanıcılar listesinde eklenmiştir.
 
@@ -94,21 +94,21 @@ Mac yapı ana bilgisayara bağlanmak için iki yol vardır:
 
 İOS araç çubuğunda:
 
-[![İOS araç çubuğu](images/image1.png)](images/image1.png)
+[![İOS araç çubuğu](images/image1.png)](images/image1.png#lightbox)
 
 Veya **Araçlar > Seçenekler** Visual Studio'da seçme **Xamarin > iOS ayarları** tıklatıp **Xamarin Mac arası bulma** düğmesi:
 
-[![Finding Xamarin Mac Agent](images/image2.png)](images/image2.png)
+[![Finding Xamarin Mac Agent](images/image2.png)](images/image2.png#lightbox)
 
 Her iki durumda da gezinme neden **Mac Aracısı** iletişim kutusunda, aşağıda gösterilmiştir:
 
-[![Mac aracı iletişim kutusu](images/image3.png)](images/image3.png)
+[![Mac aracı iletişim kutusu](images/image3.png)](images/image3.png#lightbox)
 
 Bu ya da daha önce bağlanmış ve bilinen makine ya da kullanılabilir makineleri olarak depolanan tüm makinelerin bir listesini görüntüler *uzaktan oturum açma*.
 
 Mac, ona bağlanmak için çift tıklayarak seçin. Bir Mac bilgisayara bağlanan ilk kez uzaktan bağlantıya izin vermek için Mac kullanıcı kimlik bilgilerinizi girmeniz istenir:
 
-[![Mac kullanıcı kimlik bilgilerini girin](images/image4.png)](images/image4.png)
+[![Mac kullanıcı kimlik bilgilerini girin](images/image4.png)](images/image4.png#lightbox)
 
 Aracı Mac için yeni bir SSH bağlantısını oluşturmak için bu kimlik bilgilerini kullanır Başarılı olursa, bir SSH anahtarı oluşturulur ve olacaktır [kayıtlı](#commandline) içinde `authorized_keys` bu Mac dosyada Sonraki bağlantılarda aracı, en son bağlanılan bilinen yapı ana bilgisayara bağlanmak için kullanıcı adı ve anahtar dosyasını kullanmasını sağlar.
 
@@ -119,13 +119,13 @@ Aracı Mac için yeni bir SSH bağlantısını oluşturmak için bu kimlik bilgi
 
 Bağlantı başarıyla yapıldığında ile ana bilgisayar seçimi iletişim kutusunda görüntülenir bir **bağlı** simgesinin yanında, aşağıda gösterildiği gibi:
 
-[![Ana bilgisayar seçimi iletişim kutusunu yanında bağlı simgesi](images/image6.png)](images/image6.png)
+[![Ana bilgisayar seçimi iletişim kutusunu yanında bağlı simgesi](images/image6.png)](images/image6.png#lightbox)
 
 Yalnızca olabilir bir bağlı Mac herhangi bir zamanda.
 
 Listesinde, her bir makine bağlı ya da aksi takdirde bir bağlam menüsü olanak sağ tıklatın, görünecektir **Bağlan**, **Bağlantıyı Kes**, veya **Mac unuttunuz** olarak gerekli:
 
-[![Bağlanma, bağlantıyı kesme veya Unut bu Mac bağlam menüleri](images/image7.png)](images/image7.png)
+[![Bağlanma, bağlantıyı kesme veya Unut bu Mac bağlam menüleri](images/image7.png)](images/image7.png#lightbox)
 
 İsterseniz **bu Mac unuttunuz**, yeniden bağlanmak için kimlik bilgilerinizi yeniden girmeniz gerekir.
 
@@ -137,23 +137,23 @@ Bazı durumlarda ana bilgisayar seçimi iletişim kutusunda listelenen mDNS adı
 
 1. Mac'ın IP adresi ya da göz atarak bulun **sistem tercihleri > paylaşım > Uzak oturum açma** Mac:
 
-   [![Sistem tercihleri Mac'ın IP adresi](images/image8.png)](images/image8.png)
+   [![Sistem tercihleri Mac'ın IP adresi](images/image8.png)](images/image8.png#lightbox)
 
    Veya komut satırı kullanmayı tercih ederseniz, girerek IP adresinizi bulabilirsiniz `ipconfig getifaddr en0` Terminal içine (bağlantı türüne bağlı olarak değişkeni olabileceğini unutmayın `en1`, `en2` vs.):
 
-   [![Terminal uygulamasında IP adresi](images/image9.png)](images/image9.png)
+   [![Terminal uygulamasında IP adresi](images/image9.png)](images/image9.png#lightbox)
 
 2. Visual Studio ve ana bilgisayar seçimi iletişim kutusunda dönüş **Mac Ekle...** :
 
-   [![Ana bilgisayar seçimi iletişim kutusu](images/image10.png)](images/image10.png)
+   [![Ana bilgisayar seçimi iletişim kutusu](images/image10.png)](images/image10.png#lightbox)
 
 3. Mac Ekle iletişim kutusuna, Mac IP adresini girin ve tıklayın **Ekle**:
 
-   [![Mac adresini Mac Ekle iletişim kutusuna girin](images/image11.png)](images/image11.png)
+   [![Mac adresini Mac Ekle iletişim kutusuna girin](images/image11.png)](images/image11.png#lightbox)
 
 4. Son olarak, kullanıcı adı (değil tam ad), Mac yönetici hesabı ve karşılık gelen bir parola girin:
 
-   [![Kullanıcı adı ve parola girin](images/image12.png)](images/image12.png)
+   [![Kullanıcı adı ve parola girin](images/image12.png)](images/image12.png#lightbox)
 
 Tıkladığınızda **oturum açma**, Visual Studio SSH kullanarak Mac makinesine günlüğe kaydeder ve bu Mac bilinen bir makine ekleyeceksiniz.
 
@@ -186,5 +186,5 @@ Bu Visual Studio ve Visual Studio kullanarak Xamarin.iOS uygulamaları geliştir
 ### <a name="related-links"></a>İlgili bağlantılar
 
 - [Yükleme](~/ios/get-started/installation/windows/index.md)
-- [Bağlantı sorunlarını giderme](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
+- [Bağlantı Sorunlarını Giderme](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
 - [Visual Studio ortamınızı XMA (video) ile bir Mac bağlanma](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)

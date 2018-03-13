@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 67bd1caf26c441e2a89def41ce3189b0dd67d7b1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc41c70495e40235d7acffa56c1255bfd074ca0a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="advanced-manual-real-world-example"></a>(El ile) gerçek örnek Gelişmiş
 
@@ -130,7 +130,7 @@ Size `-scope` bağımsız değişkeni genellikle düzgün bir şekilde uygulanan
 
 Ayrıca, biz belirtilen `-c -Ibuild/headers`. İlk olarak, `-c` bağımsız değişkeni söyler hedefi komut satırı bağımsız değişkenleri yorumlama durdurmak ve sonraki tüm bağımsız değişkenler geçirmek için Sharpie _clang derleyici için doğrudan_. Bu nedenle, `-Ibuild/Headers` clang aramak için bir clang derleyici bağımsız değişkeni içeren altında `build/Headers`, burada POP üstbilgileri Canlı olduğu. Bu bağımsız değişken dosyaları bulmak nereye clang bilmez, `POP.h` olan `#import`lık. _Ne yaptığını clang geçirilecek anlamak için "hedefi Sharpie kullanılırken neredeyse tüm sorunlar" boil_.
 
-###<a name="completing-the-binding"></a>Bağlama Tamamlanıyor
+### <a name="completing-the-binding"></a>Bağlama Tamamlanıyor
 
 Amaç Sharpie şimdi oluşturursa `Binding/ApiDefinitions.cs` ve `Binding/StructsAndEnums.cs` dosyaları.
 

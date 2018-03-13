@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 84450527a1301cf95c93a5dc2796a2cf76f4ae2b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3a66ec9f935159e4854a12584a6c9f70ab805abb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-an-effect"></a>Efekt oluşturma
 
@@ -29,7 +29,7 @@ Her platforma özgü project üzerinde bir etkisi oluşturma işlemi aşağıdak
 Etkisi, ardından uygun denetimi ekleyerek tüketilebilir.
 
 > [!NOTE]
-> **Not**: efekt her platform projesinde sağlamak isteğe bağlıdır. Kayıtlı değilse, bir efekt kullanılmaya çalışılıyor hiçbir şey yapmaz boş olmayan bir değer döndürür.
+> Her platform projesinde efekt sağlamak isteğe bağlıdır. Kayıtlı değilse, bir efekt kullanılmaya çalışılıyor hiçbir şey yapmaz boş olmayan bir değer döndürür.
 
 Örnek uygulamayı gösteren bir `FocusEffect` odak elde edince denetim arka plan rengini değişiklikler. Aşağıdaki diyagram, her proje örnek uygulamasında, aralarındaki ilişkilerin birlikte sorumlulukları gösterir:
 
@@ -195,7 +195,7 @@ Xamarin.Forms taşınabilir sınıf kitaplığı (PCL) veya paylaşılan kitapl�
 1. Denetimin ekleyerek etkisi denetimine ekleme [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) koleksiyonu.
 
 > [!NOTE]
-> **Not**: etkisi örneği yalnızca tek bir denetim bağlanabilir. Bu nedenle, iki kez iki denetimleri kullanmak için bir etki çözülmelidir.
+> Etkili örneği yalnızca tek bir denetim bağlanabilir. Bu nedenle, iki kez iki denetimleri kullanmak için bir etki çözülmelidir.
 
 ## <a name="consuming-the-effect-in-xaml"></a>XAML'de etkisi kullanma
 
@@ -256,7 +256,7 @@ Arka plan rengini değiştirir efekt oluşturma bu makalede gösterilen [ `Entry
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Özel oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Özel Oluşturucular](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
 - [Etkisi](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
 - [PlatformEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E/)
 - [Arka plan rengi efekti (örnek)](https://developer.xamarin.com/samples/xamarin-forms/effects/backgroundcoloreffect/)

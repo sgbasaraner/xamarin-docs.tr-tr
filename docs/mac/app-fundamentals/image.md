@@ -3,16 +3,16 @@ title: "Görüntüler"
 description: "Bu makalede, görüntüler ve Xamarin.Mac uygulama simgeleri ile çalışma yer almaktadır. Oluşturma ve uygulamanızın simgesi oluşturmak için gereken ve C# kodu ve Xcode'nın arabirimi Oluşturucu'da görüntü kullanarak görüntüleri koruma açıklar."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f12b2af0c9325796db63fcd65af135f54277ece0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="images"></a>Görüntüler
 
@@ -34,7 +34,7 @@ Varlıklar (eski adıyla Mac OS X) macOS uygulaması içinde kullanılan, görü
 
 Ayrıca, macOS uygulamanızın genelinde kullanılan önceden tanımlanmış görüntüler kümesi sağlar.
 
-[![Bir örneği çalıştırmak uygulamasının](image-images/intro01.png "örnek uygulamasının çalıştırın")](image-images/intro01-large.png)
+[![Bir örneği çalıştırmak uygulamasının](image-images/intro01.png "örnek uygulamasının çalıştırın")](image-images/intro01-large.png#lightbox)
 
 Bu makalede, sizi bir Xamarin.Mac uygulamasında görüntüler ve simgeler ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -59,18 +59,18 @@ Yukarıda belirtildiği gibi bir **varlık kataloglar görüntü kümeleri** tü
     ![Assets.xcassets seçme](image-images/imageset01.png "Assets.xcassets seçme")
 2. Sağ **varlıklar listesi** seçip **yeni görüntü kümesi**: 
 
-    [![Yeni bir görüntü kümesi ekleme](image-images/imageset02.png "yeni bir görüntü kümesi ekleme")](image-images/imageset02-large.png)
+    [![Yeni bir görüntü kümesi ekleme](image-images/imageset02.png "yeni bir görüntü kümesi ekleme")](image-images/imageset02-large.png#lightbox)
 3. Yeni bir görüntü kümesi seçin ve düzenleyici görüntülenir: 
 
-    [![Yeni bir görüntü kümesi seçme](image-images/imageset03.png "yeni bir görüntü kümesi seçme")](image-images/imageset03-large.png)
+    [![Yeni bir görüntü kümesi seçme](image-images/imageset03.png "yeni bir görüntü kümesi seçme")](image-images/imageset03-large.png#lightbox)
 4. Buradan biz görüntülerinde her biri farklı cihaz ve gerekli çözümleri sürükleyebilirsiniz. 
 5. Yeni görüntü kümenin çift **adı** içinde **varlıklar listesi** düzenlemek için: 
 
-    [![Görüntüyü düzenleme kümesi adı](image-images/imageset04.png "kümesi adı görüntüyü düzenleme")](image-images/imageset04-large.png)
+    [![Görüntüyü düzenleme kümesi adı](image-images/imageset04.png "kümesi adı görüntüyü düzenleme")](image-images/imageset04-large.png#lightbox)
     
 Özel bir **vektör** sınıfı için eklenene gibi **görüntü kümeleri** bize eklemeyi sağlayan bir _PDF_ yerine tek tek bit eşlem dosyaları dahil olmak üzere casset vektör görüntüde biçimlendirilmiş farklı çözümler. Bu yöntemi kullanarak, bir tek vektör dosya için sağladığınız  **@1x**  (vektör PDF dosyası olarak biçimlendirilmiş) çözümleme ve  **@2x**  ve  **@3x**  dosya sürümleri derleme zamanında oluşturulan ve uygulamanın pakete eklenen.
 
-[![Düzenleyici arabirimi resmi ayarlama](image-images/imageset05.png "Düzenleyici arabirimi resmi ayarlama")](image-images/imageset05-large.png)
+[![Düzenleyici arabirimi resmi ayarlama](image-images/imageset05.png "Düzenleyici arabirimi resmi ayarlama")](image-images/imageset05-large.png#lightbox)
 
 Örneğin, dahil ederseniz bir `MonkeyIcon.pdf` dosyası olarak bir varlık katalog vektör 150px x 150px, varlıklar dahil edilebilir son uygulama paketine derlenmesinden olduğunda aşağıdaki bit eşlem'i, çözünürlük:
 
@@ -115,7 +115,7 @@ Uygulamanızdaki Xamarin.Mac (C# kodunda ya da arabirimi Oluşturucu gelen) bir 
     ![Bir dosya ekleme](image-images/add01.png "bir dosya ekleme")
 2. Gelen **dosyaları Ekle** görüntüleri dosyaları projeye eklemek için Seç iletişim kutusu, select `BundleResource` için **geçersiz kılma yapı eylemi** tıklatıp **açık** düğmesi:
 
-    [![Eklemek için dosyaları seçerek](image-images/add02.png "eklemek için dosya seçme")](image-images/add02-large.png)
+    [![Eklemek için dosyaları seçerek](image-images/add02.png "eklemek için dosya seçme")](image-images/add02-large.png#lightbox)
 3. Dosyalar zaten içinde değilse **kaynakları** klasörü, istenir istiyorsanız **kopya**, **taşıma** veya **bağlantı** dosyaları. Hangi her Setleri çekme genellikle, olacak gereksinimlerinizi **kopyalama**:
 
     ![Ekle eylemini seçerek](image-images/add04.png "ekleme eylemi seçme")
@@ -164,13 +164,13 @@ Bir görüntüyü arabirimi Oluşturucusu'nda kullanmak için aşağıdakileri y
      ![Bir görüntü kaynağı çözüm panelinde](image-images/ib00.png "çözüm panelinde bir görüntü kaynağı")
 2. Çift **Main.storyboard** dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın: 
 
-     [![Ana film şeridi düzenleme](image-images/ib01.png "ana film şeridi düzenleme")](image-images/ib01-large.png)
+     [![Ana film şeridi düzenleme](image-images/ib01.png "ana film şeridi düzenleme")](image-images/ib01-large.png#lightbox)
 3. Tasarım yüzeyine görüntüleri alan UI öğesi sürükleme (örneğin, bir **görüntü araç çubuğu öğesi**): 
 
      ![Araç çubuğu öğesi düzenleme](image-images/ib02.png "araç çubuğu öğesi düzenleme")
 4. Eklediğiniz görüntüyü seçin **kaynakları** klasöründe **görüntü adı** açılır: 
 
-     [![Araç çubuğu öğesi için bir görüntüyü seçerek](image-images/ib03.png "araç çubuğu öğesi için görüntü seçme")](image-images/ib03-large.png)
+     [![Araç çubuğu öğesi için bir görüntüyü seçerek](image-images/ib03.png "araç çubuğu öğesi için görüntü seçme")](image-images/ib03-large.png#lightbox)
 5. Seçilen görüntü tasarım yüzeyine görüntülenir: 
 
      ![Araç çubuğu Düzenleyicisi'nde görüntülenen görüntünün](image-images/ib04.png "araç çubuğu Düzenleyicisi'nde görüntülenen resmi")
@@ -205,7 +205,7 @@ MacOS uygulamanızı tasarımını bağlı olarak, simge veya görüntü renk d�
 
 Bu etkiyi elde etmek için geçiş _işleme modunu_ görüntü varlığınız, **şablon görüntüsü**:
 
-[![Şablon görüntüsü ayarı](image-images/templateimage01.png "şablon görüntüsü ayarlama")](image-images/templateimage01-large.png)
+[![Şablon görüntüsü ayarı](image-images/templateimage01.png "şablon görüntüsü ayarlama")](image-images/templateimage01-large.png#lightbox)
 
 Xcode's arabirimi Oluşturucusu'ndan Görüntü varlığı UI denetimi ata:
 
@@ -337,7 +337,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 Örnek çıktı:
 
-[![Bir uygulamada bir görüntü görüntüleme örneği](image-images/tables01.png "bir uygulamada bir görüntü görüntüleme örneği")](image-images/tables01-large.png)
+[![Bir uygulamada bir görüntü görüntüleme örneği](image-images/tables01.png "bir uygulamada bir görüntü görüntüleme örneği")](image-images/tables01-large.png#lightbox)
 
 Tablo görünümler ile çalışma hakkında daha fazla bilgi için lütfen bkz bizim [tablosu görünümleri](~/mac/user-interface/table-view.md) belgeleri.
 
@@ -440,7 +440,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 Örnek çıktı:
 
-[![Örnek bir anahat görünümünde görüntülenen görüntünün](image-images/outline01.png "anahat görünümünde görüntülenen görüntünün örneği")](image-images/outline01-large.png)
+[![Örnek bir anahat görünümünde görüntülenen görüntünün](image-images/outline01.png "anahat görünümünde görüntülenen görüntünün örneği")](image-images/outline01-large.png#lightbox)
 
 Anahat görünümler ile çalışma hakkında daha fazla bilgi için lütfen bkz bizim [anahat görünümleri](~/mac/user-interface/outline-view.md) belgeleri.
 
@@ -454,7 +454,7 @@ Bu makalede, görüntüler ve simgeler Xamarin.Mac uygulamada çalışma ayrınt
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacImages (örnek)](https://developer.xamarin.com/samples/mac/MacImages/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Tablo görünümleri](~/mac/user-interface/table-view.md)
 - [Anahat görünümleri](~/mac/user-interface/outline-view.md)
 - [macOS X İnsan Arabirimi yönergelerine](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

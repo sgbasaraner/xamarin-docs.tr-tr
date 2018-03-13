@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: a963922dfdc07164b7c20f84be4f0b87440bff13
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a7947c40d80c0ff8cb35dab54a11907280335d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-parts-and-functionality"></a>ListView bölümleri ve İşlevler
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -31,41 +30,36 @@ A `ListView` aşağıdaki bölümlerden oluşur:
 
 Bu ekran görüntüleri temel kullanmak `ListView` hızlı kaydırma ve bölüm dizini nasıl işlendiğini göstermek için denetimi:
 
-[![Düz eski satırları kullanarak uygulamaları ekran görüntüleri hızlı kaydırma ve bölüm dizini](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png)
+[![Düz eski satırları kullanarak uygulamaları ekran görüntüleri hızlı kaydırma ve bölüm dizini](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png#lightbox)
 
 Oluşturan öğeler bir `ListView` aşağıdaki daha ayrıntılı olarak açıklanmıştır:
 
-<a name="Rows" />
 
 ## <a name="rows"></a>Satırları
 
 Her bir satır kendi sahip `View`. Görünüm tanımlanan yerleşik görünümleri birini olabilir `Android.Resources`, ya da özel bir görünüm. Her satır aynı görünümü Düzen kullanabilirsiniz veya tüm farklı olabilir. Bu belgede yerleşik düzenleri ve diğerleri özel düzenler tanımlamak nasıl açıklayan kullanmanın örnekler verilmiştir.
 
-<a name="Adapter" />
 
 ## <a name="adapter"></a>Bağdaştırıcı
 
 `ListView` Denetim gerektiren bir `Adapter` biçimlendirilmiş sağlamak için `View` her satır için. Android yerleşik bağdaştırıcılar ve kullanılabilir görünümleri olan veya özel sınıflar oluşturulabilir.
 
-<a name="Fast_Scrolling" />
 
 ## <a name="fast-scrolling"></a>Hızlı kaydırma
 
 Zaman bir `ListView` satır sayısını içeren verilerin hızlı kaydırma listenin herhangi bir kısmını gidin kullanıcının yardımcı olmak için etkinleştirilebilir. Hızlı kaydırma 'kaydırma çubuğu' isteğe bağlı olarak etkin (ve API düzeyinde 11 özelleştirilmiş ve daha yüksek) olabilir.
 
-<a name="Section_Index" />
 
 ## <a name="section-index"></a>Bölüm dizini
 
 Uzun listeleriyle kaydırma sırasında isteğe bağlı bir bölüm dizin geri bildirim kullanıcıyla listesinin hangi bölümü şu anda görüntüledikleri üzerinde sağlar. Hızlı kaydırma ile birlikte genellikle uzun listelerde yalnızca uygundur.
 
-<a name="Classes_Overview" />
 
 ## <a name="classes-overview"></a>Sınıfları genel bakış
 
 Görüntülemek için kullanılan birincil sınıfların `ListViews` burada gösterilir:
 
-[![ListView ve ilişkili sınıflar arasındaki ilişkileri gösteren UML diyagram](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png)
+[![ListView ve ilişkili sınıflar arasındaki ilişkileri gösteren UML diyagram](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png#lightbox)
 
 Her sınıf amacı, aşağıda belirtilmiştir:
 

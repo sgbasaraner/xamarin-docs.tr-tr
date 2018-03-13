@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d4d6e93bf3a755d9b48c9e096de87b4c89f2831f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a17ad79d3f3b537332494fc368c878f2733d5db2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar-compatibility"></a>Araç çubuğu uyumluluk
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -36,7 +35,6 @@ Araç çubuğu uygulama sürümünü kullanmak üzere bir uygulamayı değiştir
 Bu adımların her biri aşağıdaki bölümlerde ayrıntılı olarak açıklanmıştır.
 
 
-<a name="android_version" />
 
 ## <a name="set-the-minimum-and-target-android-version"></a>En az ve hedef Android sürümü ayarlayın
 
@@ -44,23 +42,20 @@ Uygulamanın hedef Framework API düzeyi 21 veya daha büyük ayarlanmalı veya 
 
 Hedef Framework'ü API düzeyi 21 düzeyini veya daha büyük ve en düşük Android desteklemek için uygulama olan sürüm için Android API düzey proje ayarları ayarlayın. Android API düzeylerini ayarlama hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md). İçinde `ToolbarFun` örnek, Minimum Android sürümü KitKat (API düzeyi 4.4) ayarlanır. 
 
-<a name="install_nuget" />
 
 ## <a name="install-the-appcompat-nuget-package"></a>Uygulama NuGet paketini yükleyin
 
 Ardından, eklemek [Android destek kitaplığı v7 uygulama](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) projeye paket. Visual Studio'da sağ **başvuruları** seçip **NuGet paketlerini Yönet...** . Tıklatın **Gözat** arayın ve **Android destek kitaplığı v7 uygulama**. Seçin **Xamarin.Android.Support.v7.AppCompat** tıklatıp **yükleme**: 
 
-[![Manage NuGet paketlerine seçili V7 ekran uygulama paketi](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png)
+[![Manage NuGet paketlerine seçili V7 ekran uygulama paketi](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
 Bu NuGet yüklendiğinde, diğer bazı NuGet paketleri de yüklü zaten yüklü değilse (gibi **Xamarin.Android.Support.Animated.Vector.Drawable**, **Xamarin.Android.Support.v4**, ve **Xamarin.Android.Support.Vector.Drawable**). NuGet paketlerini yükleme hakkında daha fazla bilgi için bkz: [izlenecek yol: de dahil olmak üzere bir NuGet projenizdeki](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough). 
 
-<a name="appcompat_theme" />
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>Bir uygulama tema ve araç kullanın
 
 Uygulama kitaplığı birkaç ile gelir `Theme.AppCompat` Android uygulama kitaplığı tarafından desteklenen herhangi bir sürümü kullanılabilir Temalar. `ToolbarFun` Örnek uygulama tema türetilir `Theme.Material.Light.DarkActionBar`, hangi Lolipop daha önceki Android sürümlerinde kullanılabilir değil. Bu nedenle, `ToolbarFun` Bu tema için uygulama karşılık gelen kullanmak için uyarlanmış olmalıdır `Theme.AppCompat.Light.DarkActionBar`. Ayrıca, çünkü `Toolbar` olan Android sürümlerinde kullanılabilir Lolipop,'den önceki biz uygulama sürümünü kullanmanız gerekir `Toolbar`. Bu nedenle, düzenleri kullanmalısınız `android.support.v7.widget.Toolbar` yerine `Toolbar`. 
 
-<a name="update_layouts" />
 
 ### <a name="update-layouts"></a>Güncelleştirme düzenleri
 
@@ -91,7 +86,6 @@ Düzen **Resources/layout/toolbar.xml** ve içeriğini aşağıdaki XML ile değ
 
 Unutmayın `?attr` değerlerini artık önekiyle `android:` (sözcüğünün `?` gösterimi başvuruda bulunan bir kaynak geçerli tema olarak). Varsa `?android:attr` hala kullanılan Burada, Android öznitelik değeri şu anda çalışan platform engellemeniz uygulama kitaplığı başvuru. Bu örnek kullandığından `actionBarSize` uygulama kitaplığı tarafından tanımlanan `android:` öneki bırakıldı. Benzer şekilde, `@android:style` değiştirilir `@style` böylece `android:theme` özniteliği için bir tema uygulama Kitaplığı'nda ayarlanmış &ndash; `ThemeOverlay.AppCompat.Dark.ActionBar` tema burada kullanılan yerine `ThemeOverlay.Material.Dark.ActionBar`. 
 
-<a name="update_style" />
 
 ### <a name="update-the-style"></a>Güncelleştirme stili
 
@@ -113,7 +107,6 @@ Düzen **Resources/values/styles.xml** ve içeriğini aşağıdaki XML ile deği
 Öğe adları ve bu örnekte üst tema artık ile önek `android:` çünkü uygulama kitaplığı kullanıyoruz. Üst tema için uygulama sürümü Ayrıca, değiştirilmiş `Light.DarkActionBar`. 
 
 
-<a name="update_menus" />
 
 ### <a name="update-menus"></a>Güncelleştirme menüleri
 
@@ -180,7 +173,6 @@ Benzer şekilde, düzenleme **Resources/menu/edit_menus.xml** ve içeriğini aş
 
 Nasıl bu ad alanı anahtar sağlamak için destek `showAsAction` API düzeyi 11'den önceki Android sürümleri öznitelikte? Özel öznitelik `showAsAction` ve uygulama NuGet yüklendiğinde tüm olası değerlerinin uygulamada dahil edilir. 
 
-<a name="subclass" />
 
 ## <a name="subclass-appcompatactivity"></a>Bir alt AppCompatActivity
 
@@ -208,7 +200,7 @@ Son olarak, Minimum Android düzeyi (örneğin, API 19) destekleneceği öncesi 
 
 Uygulamayı oluşturun ve ön Lolipop aygıt ya da Android öykünücüsünde çalıştırın. Aşağıdaki ekran görüntüsünde uygulama sürümünü gösterir **ToolbarFun** KitKat (API 19) çalıştıran bir Nexus 4: 
 
-[![Tam ekran KitKat aygıtta çalışan uygulamanın her iki araç çubuğu gösterilir](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png)
+[![Tam ekran KitKat aygıtta çalışan uygulamanın her iki araç çubuğu gösterilir](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png#lightbox)
 
 Uygulama Kitaplığı kullanıldığında, temalar geçirilmesi Android sürümlerine göre gerekmez &ndash; uygulama kitaplığı, desteklenen tüm Android sürümleri arasında tutarlı bir kullanıcı deneyimi sağlamak mümkün kılar. 
 

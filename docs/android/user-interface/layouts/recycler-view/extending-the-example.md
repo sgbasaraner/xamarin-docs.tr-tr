@@ -7,18 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: de4683ca660224aa3cf17398ac649086b7e4ad88
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6c0f2b92b34ce4d446e51b0aafa56f6283701dd1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="extending-the-recyclerview-example"></a>RecyclerView örnek genişletme
 
 
 Temel uygulama açıklanan [A temel RecyclerView örnek](~/android/user-interface/layouts/recycler-view/recyclerview-example.md) gerçekten çok yapmaz &ndash; sadece kaydırır ve sabit gözatma kolaylaştırmak için fotoğraf öğeleri listesini görüntüler. Gerçek dünya uygulamalarda kullanıcılar görünen öğeleri dokunarak uygulamayla etkileşim kurabilmesi bekler. Ayrıca, veri kaynağındaki değiştirebilirsiniz (veya uygulama tarafından değiştirilmesi) ve görüntü içeriğini bu değişikliklerle tutarlı kalması gerekir. Aşağıdaki bölümlerde, öğeyi tıklatın olayları işlemek ve güncelleştirmek nasıl öğreneceksiniz `RecyclerView` zaman temel alınan veri kaynağı değişiklikleri.
 
-<a name="itemclick" />
 
 ### <a name="handling-item-click-events"></a>Öğe tıklama olaylarını işleme
 
@@ -91,7 +90,7 @@ PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 
 Şimdi, yapı ve örnek fotoğraf görüntüleme uygulama çalıştırıldığında görüntü fotoğrafı dokunarak hangi fotoğraf işlemdeki raporların görünmesi bir bildirim neden olur:
 
-[ ![Fotoğraf Kartı görünür örnek bildirim dokunduğunuz](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png)
+[![Fotoğraf Kartı görünür örnek bildirim dokunduğunuz](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
 
 Bu örnek ile olay işleyicileri uygulamak için yalnızca bir yaklaşım gösterir `RecyclerView`. Burada kullanılabilecek başka bir görünüm tutucu olayları yerleştirin ve bu olaylara abone bağdaştırıcıya sahip bir yaklaşımdır. Örnek fotoğraf uygulaması bir fotoğraf yetenek düzenleme verdiyse, ayrı olayları için gerekli olacak `ImageView` ve `TextView` her `CardView`: dokunur `TextView` başlatılan bir `EditView` Düzenle kullanıcı sağlayan iletişim Başlık ve üzerinde rötuşları `ImageView` kırpma veya fotoğrafı döndürmek kullanıcı olanak sağlayan bir Fotoğraf Rötuş aracını başlatmak. Uygulamanızın gereksinimlerine bağlı olarak, işleme ve dokunma olayları yanıtlama için en iyi yaklaşımı tasarlamanız gerekir.
 
@@ -159,7 +158,7 @@ randomPickBtn.Click += delegate
 
 Şimdi, ne zaman **rastgele çekme** düğmesi dokunduğunuz, `RecyclerView` fotoğraf daha aşağı koleksiyonda koleksiyondaki ilk fotoğrafı ile takas olduğunu göstermek için ekranı güncelleştirir:
 
-[ ![Takas, ikinci ekran takas sonra önce ilk ekran görüntüsü](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png)
+[![Takas, ikinci ekran takas sonra önce ilk ekran görüntüsü](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
 Elbette, `NotifyDataSetChanged` iki aramalarına yerine çağrılmış `NotifyItemChanged`, ancak bunu yapmak böylece zorlamak `RecyclerView` koleksiyondaki yalnızca iki öğe değiştirilmiş olsa bile tüm koleksiyon yenilenecek. Çağırma `NotifyItemChanged` arama daha önemli ölçüde daha etkilidir `NotifyDataSetChanged`.
 

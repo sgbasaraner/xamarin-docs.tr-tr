@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 8afce6021c2816f354e26ccecd7d0c40ceb2a9bd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: babbe0344130dc0ce38023eabe7479d2b464276b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="editing-nuget-metadata"></a>NuGet meta verileri düzenleme
 
@@ -26,7 +26,7 @@ Kitaplığı proje türleri (örneğin, PCL veya .NET standart veya yeni NuGet p
 
 **Genel** sekmesinde bir NuGet paketi oluşturmak için girilmelidir dört alanlar içeriyor:
 
-[ ![](metadata-images/metadata-general-sml.png "NuGet paket gerekli meta veriler penceresi")](metadata-images/metadata-general.png)
+[![](metadata-images/metadata-general-sml.png "NuGet paket gerekli meta veriler penceresi")](metadata-images/metadata-general.png#lightbox)
 
 - **Kimliği** – Nuget.org (veya paket yerde dağıtılacak içinde) benzersiz olmalıdır paket tanımlayıcısı. İzleyin [Kılavuzu](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) ve yalnızca bir URL geçerli karakterler kullanın (boşluk yok ve çoğu özel karakteri kaçının).
 - **Sürüm** – ile tutarlı bir sürüm numarası seçebilir [NuGet sürümü oluşturma kuralları](https://docs.microsoft.com/en-us/nuget/create-packages/dependency-versions).
@@ -45,7 +45,7 @@ Daha fazla bilgi için bkz: [gereken öğeleri başvurusu](https://docs.microsof
 
 **Ayrıntıları** sekmesi NuGet paket bildirim dosyasında eklenecek isteğe bağlı alanları içerir.
 
-[ ![](metadata-images/metadata-detail-sml.png "NuGet paketi isteğe bağlı meta veriler penceresi")](metadata-images/metadata-detail.png)
+[![](metadata-images/metadata-detail-sml.png "NuGet paketi isteğe bağlı meta veriler penceresi")](metadata-images/metadata-detail.png#lightbox)
 
 Başvurmak [isteğe bağlı öğeleri başvurusu](https://docs.microsoft.com/en-us/nuget/schema/nuspec#optional-metadata-elements) gerekli ve isteğe bağlı alanları hakkında daha fazla bilgi.
 

@@ -4,14 +4,15 @@ description: "SkiaSharp grafiklerinizi animasyon nasıl Bul"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: c91cb064ea3973294c3a9dd8e07f3c4b0627fe34
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e18ef7c77c1d5c93d53882233c65a56e5567fcd7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="basic-animation"></a>Temel animasyon
 
@@ -141,7 +142,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Yöntemi, görüntü alanını boyutuna göre en çok bir RADIUS ve en fazla RADIUS üzerinde dayalı en az bir RADIUS hesaplar. `scale` Değeri animasyonlu 0 ile 1 arasında daha sonra tekrar 0, işlem için kullanan yöntemi bir `xRadius` ve `yRadius` , aralıkları arasında `minRadius` ve `maxRadius`. Bu değerler, çizme ve elips doldurmak için kullanılır:
 
-[![](animation-images/pulsatingellipse-small.png "Üçlü sayfasının ekran görüntüsü Titreşen elips")](animation-images/pulsatingellipse-large.png "Üçlü sayfasının ekran görüntüsü Titreşen elips")
+[![](animation-images/pulsatingellipse-small.png "Üçlü sayfasının ekran görüntüsü Titreşen elips")](animation-images/pulsatingellipse-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Titreşen elips")
 
 Dikkat `SKPaint` nesnesi oluşturulur bir `using` bloğu. Gibi birçok SkiaSharp sınıfları `SKPaint` türetilen `SKObject`, den türetilen `SKNativeObject`, hangi uygulayan [ `IDisposable` ](https://developer.xamarin.com/api/type/System.IDisposable/) arabirimi. `SKPaint` geçersiz kılmaları `Dispose` yönetilmeyen kaynakları serbest bırakmak yöntemi.
 
@@ -244,7 +245,7 @@ public class ExpandingCirclesPage : ContentPage
 
 Görüntünün aynı arar sonucudur `t` ne zaman olarak 0'a eşit `t` 1'e eşittir ve sürekli genişleyen devam etmek için daireler gibi görünebilir:
 
-[![](animation-images/expandingcircles-small.png "Üçlü sayfasının ekran görüntüsü genişletme daireler")](animation-images/expandingcircles-large.png "Üçlü sayfasının ekran görüntüsü daireler genişletme")
+[![](animation-images/expandingcircles-small.png "Üçlü sayfasının ekran görüntüsü genişletme daireler")](animation-images/expandingcircles-large.png#lightbox "Üçlü sayfasının ekran görüntüsü daireler genişletme")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 234bd79754ae7f328d3207757156089441fc588c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0d418786a7364946e4e20100157fa0907b66deeb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="web-view"></a>Web görünümü
 
@@ -96,7 +96,7 @@ Bu üye başlatır [ `WebView` ](https://developer.xamarin.com/api/type/Android.
 
 Derleme ve uygulamayı çalıştırın. Aşağıdaki ekran görüntüsünde görülen bir basit web sayfası Görüntüleyicisi uygulama görmeniz gerekir:
 
-[![Bir Web görünümü görüntüleme uygulama örneği](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png)
+[![Bir Web görünümü görüntüleme uygulama örneği](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
 
 İşlenecek **geri** düğmesini tuşuna, aşağıdakileri ekleyin deyimi kullanarak:
 
@@ -122,7 +122,7 @@ Bu [ `OnKeyDown(int, KeyEvent)` ](https://developer.xamarin.com/api/member/Andro
 
 Uygulamayı yeniden çalıştırın. Şimdi bağlantıları izleyin ve sayfa geçmişinde gezinme yapabiliyor olmanız gerekir:
 
-[![Eylemi geri düğmesini örnek ekran görüntüleri](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png)
+[![Eylemi geri düğmesini örnek ekran görüntüleri](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
 
 
 *Bu sayfayı bölümlerini olan oluşturulan ve Android açık kaynak projesi tarafından paylaşılan ve açıklanan terimleri göre kullanılan iş göre değişiklikler*

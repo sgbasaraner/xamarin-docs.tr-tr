@@ -3,14 +3,15 @@ title: "Bölüm 27 özeti. Özel oluşturucu"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0c1dc9ba5cf382551a1142110c68d16421db07e4
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6d7c2b17e9596b7d2dd26aaf77cf13f7f8086cd5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>Bölüm 27 özeti. Özel oluşturucu
 
@@ -66,7 +67,7 @@ Bir işleyici yazılırken öğesinden bir sınıf türetme `View`ve birden çok
 
 Tüm `ViewRenderer` türevleri içeren bir `ExportRenderer` özniteliği ilişkilendirir derleme düzeyinde `HelloView` belirli sınıfıyla `HelloViewRenderer` sınıfı. Bu nasıl Xamarin.Forms oluşturucu bağımsız platform projelerinde bulur.
 
-[![Üçlü ekran Hello görünümünün](images/ch27fg02-small.png "özel Oluşturucu")](images/ch27fg02-large.png "özel Oluşturucu")
+[![Üçlü ekran Hello görünümünün](images/ch27fg02-small.png "özel Oluşturucu")](images/ch27fg02-large.png#lightbox "özel Oluşturucu")
 
 ## <a name="renderers-and-properties"></a>Oluşturucu ve özellikleri
 
@@ -89,7 +90,7 @@ Bu özelliklerin türleri için genel parametreler tarafından belirlenir `ViewR
 
 [ **EllipseDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo) sınıfı görüntüler birkaç bu `EllipseView` nesneler:
 
-[![Üçlü ekran görüntüsü elips Demo](images/ch27fg03-small.png "EllipseView özel Oluşturucu")](images/ch27fg03-large.png "EllipseView özel Oluşturucu")
+[![Üçlü ekran görüntüsü elips Demo](images/ch27fg03-small.png "EllipseView özel Oluşturucu")](images/ch27fg03-large.png#lightbox "EllipseView özel Oluşturucu")
 
 [ **BouncingBall** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/BouncingBall) geri dönmeler bir `EllipseView` ekran yanlarından kapalı.
 
@@ -113,4 +114,4 @@ Oluşturucu yerel denetim değişiklikleri algılar ve ardından çağırın `Se
 
 - [Bölüm 27 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)
 - [Bölüm 27 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
-- [Özel oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Özel Oluşturucular](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

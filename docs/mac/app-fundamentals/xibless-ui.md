@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 544aad278b9bc66120e188eec54fa68be71dc625
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 52d300ac583ec2313d3169c7b2adb73c15ebe4fb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="storyboardxib-less-user-interface-design"></a>.Storyboard/.xib-less kullanıcı arabirimi tasarımı
 
@@ -25,7 +25,7 @@ C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı kullanıcı arabirim
 
 Ayrıca, doğrudan C# kodunda bazılarını veya tümünü Xamarin.Mac uygulamanızın kullanıcı Arabirimi oluşturma seçeneğiniz de vardır. Bu makalede, C# kodunda kullanıcı arabirimleri ve kullanıcı Arabirimi öğeleri oluşturma temelleri şu konulara değineceğiz.
 
-[![Visual Studio Mac Kod Düzenleyicisi için](xibless-ui-images/intro01.png "Visual Studio için Mac Kod Düzenleyicisi")](xibless-ui-images/intro01-large.png)
+[![Visual Studio Mac Kod Düzenleyicisi için](xibless-ui-images/intro01.png "Visual Studio için Mac Kod Düzenleyicisi")](xibless-ui-images/intro01-large.png#lightbox)
 
 <a name="Switching_a_Window_to_use_Code" />
 
@@ -371,6 +371,6 @@ Bu makalede, Xcode'nın arabirimi oluşturucusuyla .storyboard veya .xib dosyala
 
 - [MacXibless (örnek)](https://developer.xamarin.com/samples/mac/MacXibless/)
 - [Windows](~/mac/user-interface/window.md)
-- [Menüleri](~/mac/user-interface/menu.md)
+- [Menüler](~/mac/user-interface/menu.md)
 - [macOS İnsan Arabirimi yönergelerine](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
 - [Windows giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/WinPanel/Introduction.html)

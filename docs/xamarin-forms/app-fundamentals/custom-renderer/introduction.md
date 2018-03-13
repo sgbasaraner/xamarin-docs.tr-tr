@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: a9908429994f4575a9e41936d500bfd8906a843b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 837d75bd4ecde92d4c375c680a5f5e7ff231f825
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Özel oluşturucu giriş
 
@@ -52,7 +52,7 @@ public class MyEntry : Entry
 `local` Ad alanı öneki herhangi bir şey olabilir. Ancak, `namespace` ve `assembly` değerlerin özel denetim ayrıntılarını eşleşmesi gerekir. Ad alanı bildirildiğinde öneki özel denetim başvurmak için kullanılır.
 
 > [!NOTE]
-> **Not**: tanımlama `xmlns` paylaşılan projeleri PCLs içinde çok daha kolaydır. Belirlemek kolay olacak şekilde bir PCL bütünleştirilmiş koda derlenmemiş `assembly=CustomRenderer` değeri olmalıdır. Paylaşılan projeleri kullanırken (XAML dahil) tüm paylaşılan varlıklar her olması durumunda iOS, Android ve Windows Phone anlamına gelir başvuran projeler derlenen projeleri sahip kendi *derleme adları* mümkün değildir çok yazmak için `xmlns` bildirimi değeri her uygulama için farklı olması gerektiğinden. Paylaşılan projeleri için XAML içinde özel denetimler her uygulama projesi aynı derleme adı ile yapılandırılmasını gerektirir.
+> Tanımlama `xmlns` paylaşılan projeleri PCLs içinde çok daha kolaydır. Belirlemek kolay olacak şekilde bir PCL bütünleştirilmiş koda derlenmemiş `assembly=CustomRenderer` değeri olmalıdır. Paylaşılan projeleri kullanırken (XAML dahil) tüm paylaşılan varlıklar her olması durumunda iOS, Android ve Windows Phone anlamına gelir başvuran projeler derlenen projeleri sahip kendi *derleme adları* mümkün değildir çok yazmak için `xmlns` bildirimi değeri her uygulama için farklı olması gerektiğinden. Paylaşılan projeleri için XAML içinde özel denetimler her uygulama projesi aynı derleme adı ile yapılandırılmasını gerektirir.
 
 `MyEntry` Özel denetim sonra işlenen her platformda gri bir arka planda aşağıdaki ekran görüntülerinde gösterildiği gibi:
 
@@ -69,7 +69,7 @@ Her platformda denetim arka plan rengini değiştirme zamanıyla ilgili denetimi
 1. Ekleme bir `ExportRenderer` özniteliği, Xamarin.Forms denetimi oluşturmak için kullanılacak belirtmek için özel Oluşturucu sınıfı. Bu öznitelik, özel Oluşturucu Xamarin.Forms ile kaydetmek için kullanılır.
 
 > [!NOTE]
-> **Not**: çoğu Xamarin.Forms öğeleri için her platform projesinde özel Oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse, varsayılan oluşturucu denetimin taban sınıfı için kullanılır. Ancak, özel Oluşturucu her platform projesinde işlenirken gereken bir [Görünüm](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) veya [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) öğesi.
+> Çoğu Xamarin.Forms öğeleri için her platform projesinde özel Oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse, varsayılan oluşturucu denetimin taban sınıfı için kullanılır. Ancak, özel Oluşturucu her platform projesinde işlenirken gereken bir [Görünüm](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) veya [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) öğesi.
 
 Bu bölümdeki konular gösterileri ve farklı Xamarin.Forms öğeler için bu işlemi açıklamalar sağlar.
 
@@ -96,4 +96,4 @@ Bu makalede, özel Oluşturucu giriş sağladı ve özel Oluşturucu oluşturma 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Etkileri](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [Etkiler](~/xamarin-forms/app-fundamentals/effects/index.md)

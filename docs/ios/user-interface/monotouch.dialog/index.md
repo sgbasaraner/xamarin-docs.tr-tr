@@ -7,11 +7,11 @@ ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b279f3e643e008e88b8ad086c400d992427c6df4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b9bf4c5ee803aa60a2730703e64fcf73d07efdb5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-monotouchdialog"></a>MonoTouch.Dialog giriş
 
@@ -20,7 +20,7 @@ _(Yüksekliğindeki MonoTouch.Dialog D) araç seti, hızlı uygulama geliştirme
 
 Yüksekliğindeki başvurulan MonoTouch.Dialog D kısaca, geliştiricilerin uygulama ekranlar ve oluşturma görünümü denetleyicileri, tablolar vb. birçoğunu yerine bilgileri kullanarak gezinti oluşturmasına olanak veren bir hızlı UI geliştirme araç seti olur. Bu nedenle, kullanıcı Arabirimi geliştirme ve kod azaltma önemli bir alma sağlar. Örneğin, aşağıdaki ekran görüntüsünde göz önünde bulundurun:
 
- [ ![](images/image1.png "Örneğin, bu ekran göz önünde bulundurun")](images/image1.png)
+ [![](images/image1.png "Örneğin, bu ekran göz önünde bulundurun")](images/image1.png#lightbox)
 
 Aşağıdaki kod, tüm bu ekranı belirlemek için kullanılmıştır:
 
@@ -57,7 +57,7 @@ public class Expense
 YÜKSEKLİĞİNDEKİ D, tüm bu kodu tablo oluşturma için genel bir API uygulamasına kapsülleyerek basitleştirir. Ardından, bile kolaylaştırır sözdizimi bağlama bildirim temelli bir nesne için sağlar, API üstünde bir Özet sağlar. Bu nedenle, iki API yüksekliğindeki içinde kullanılabilir yok D:
 
 -   **Alt düzey öğeleri API** – *öğeleri API* bir hiyerarşik ağaç ekranlar ve bileşenleri temsil eden öğe oluşturma ile ilgili temel alır. Öğeleri API geliştiricilere en esneklik ve Uı'lar oluşturmada denetim sağlar. Buna ek olarak, öğeleri API bildirim temelli tanımı için hem son derece hızlı bildirimi yanı sıra bir sunucudan dinamik kullanıcı Arabirimi oluşturma sağlar JSON aracılığıyla Gelişmiş desteği. 
--   **Üst düzey yansıma API** – olarak da bilinen *bağlama**API* , hangi sınıfların UI ipuçları ve sonra da yüksekliğindeki açıklama içinde D otomatik olarak nesnelere bağlı ekranlar oluşturur ve ne arasında bir bağ görüntülenen (ve isteğe bağlı olarak düzenlenmiş) ekranda ve arka plandaki nesne yedekleme sağlar.   Yukarıdaki örnekte yansıma API kullanımı gösterilmiştir. Bu API, API öğeleri mu hassas bir denetim sağlamaz, ancak sınıf özniteliklerini temel alarak öğesi hiyerarşi çıkışı otomatik olarak oluşturarak daha karmaşıklığını azaltır. 
+-   **Üst düzey yansıma API** – olarak da bilinen *bağlama**API* , hangi sınıfların UI ipuçları ve sonra da yüksekliğindeki açıklama içinde D otomatik olarak nesnelere bağlı ekranlar oluşturur ve ne arasında bir bağ görüntülenen (ve isteğe bağlı olarak düzenlenmiş) ekranda ve arka plandaki nesne yedekleme sağlar. Yukarıdaki örnekte yansıma API kullanımı gösterilmiştir. Bu API, API öğeleri mu hassas bir denetim sağlamaz, ancak sınıf özniteliklerini temel alarak öğesi hiyerarşi çıkışı otomatik olarak oluşturarak daha karmaşıklığını azaltır. 
 
 
 YÜKSEKLİĞİNDEKİ Ekran oluşturma için kullanıcı Arabirimi öğeleri yerleşik D büyük bir dizi birlikte paketlenmiş gelir ancak özelleştirilmiş öğeleri ve Gelişmiş ekranı düzeni gereksinimini de algılar. Bu nedenle, genişletilebilirlik birinci sınıf bir API uygulamasına fırın kapsamlı özellikler içerir. Geliştiriciler mevcut öğelerini genişletmek veya yenilerini oluşturun ve sorunsuz şekilde tümleşir.
@@ -94,13 +94,13 @@ A *RootElement* DVC gidin öğeleri için üst düzey bir kapsayıcısıdır. Ar
 
 Bir bölümü, bir tablodaki hücre grubudur. Normal tablo bölümüyle, isteğe bağlı olarak sağlayabilirsiniz üstbilgi ve altbilgi seçebilir ya da metin ya da aşağıdaki ekran görüntüsünde olduğu gibi özel görünümleri olması:
 
- [ ![](images/image2.png "İsteğe bağlı olarak sağlayabilirsiniz normal tablo bölümle üstbilgi ve altbilgi seçebilir ya da metin ya da bu ekran olduğu gibi özel görünümleri olması")](images/image2.png)
+ [![](images/image2.png "İsteğe bağlı olarak sağlayabilirsiniz normal tablo bölümle üstbilgi ve altbilgi seçebilir ya da metin ya da bu ekran olduğu gibi özel görünümleri olması")](images/image2.png#lightbox)
 
 ### <a name="element"></a>Öğe
 
 Bir öğeyi tabloda gerçek bir hücreyi temsil eder. YÜKSEKLİĞİNDEKİ D çok çeşitli farklı veri türleri veya farklı girişleri temsil eden öğeleri paketlenmiş gelir. Örneğin, aşağıdaki ekran görüntüleri kullanılabilir öğelerin bazılarını gösterir:
 
- [ ![](images/image3.png "Örneğin, bu ekran görüntüleri kullanılabilir öğelerin bazılarını gösterir")](images/image3.png)
+ [![](images/image3.png "Örneğin, bu ekran görüntüleri kullanılabilir öğelerin bazılarını gösterir")](images/image3.png#lightbox)
 
 ## <a name="more-on-sections-and-rootelements"></a>Üzerinde daha fazla bölüm ve RootElements
 
@@ -112,7 +112,7 @@ En az bir RootElement MonoTouch.Dialog işlemini başlatmak için gereklidir.
 
 Bir RootElement bir bölüm/öğesi değerle başlatılırsa, bu değer bir alt ekranın sağ tarafta işlenen yapılandırma özetini sağlayacak öğesi bulmak için kullanılır. Örneğin, aşağıdaki ekran görüntüsünde ayrıntı ekranın sağ taraftaki "Tatlı" Seçili çöl değerini birlikte başlığı içeren bir hücrenin ile sol tarafta bir tablo gösterir.
 
- [ ![](images/image4.png "Bu ekran ayrıntı ekranın sağ taraftaki tatlı, seçili çöl değerini birlikte başlığı içeren bir hücrenin sol tarafta bir tablo gösteren") ](images/image4.png) [ ![ ] (images/image5.png "bu Aşağıdaki ekran görüntüsünde bir tablo ayrıntı ekranın sağ taraftaki tatlı, seçili çöl değerini birlikte başlığı içeren bir hücrenin ile sol tarafta gösterir")](images/image5.png)
+ [![](images/image4.png "Bu ekran ayrıntı ekranın sağ taraftaki tatlı, seçili çöl değerini birlikte başlığı içeren bir hücrenin sol tarafta bir tablo gösteren") ](images/image4.png#lightbox) [ ![ ] (images/image5.png "bu Aşağıdaki ekran görüntüsünde bir tablo ayrıntı ekranın sağ taraftaki tatlı, seçili çöl değerini birlikte başlığı içeren bir hücrenin ile sol tarafta gösterir")](images/image5.png#lightbox)
 
 Kök öğe ayrıca bölümler içinde yeni bir iç içe geçmiş yapılandırma sayfa yüklenirken tetiklemek için yukarıda gösterildiği gibi kullanılabilir. Bu modda kullanıldığında sağlanan resim yazısı bir bölüm içinde oluşturulması sırasında kullanılır ve başlık olarak için alt sayfa de kullanılır. Örneğin:
 
@@ -195,7 +195,7 @@ var taskElement = new RootElement (task.Name){
 
 Bu kod, aşağıda gösterildiği gibi bir kullanıcı Arabirimi oluşturur. Bu örnek eksiksiz bir anlatım için bkz: [öğeleri API izlenecek](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) Öğreticisi.
 
- [ ![](images/image6.png "Element.Value özelliğiyle birlikte, geri çağırma diğer öğeler ayarlanan değer alabilirsiniz")](images/image6.png)
+ [![](images/image6.png "Element.Value özelliğiyle birlikte, geri çağırma diğer öğeler ayarlanan değer alabilirsiniz")](images/image6.png#lightbox)
 
 Kullanıcı alt tablo hücresi bastığında kodu anonim işlevinde, değerinden yazma yürütür `element` için örnek **uygulama çıktısı** Mac için Visual Studio'da paneli
 
@@ -216,7 +216,7 @@ MonoTouch.Dialog parçası olan tüm öğeleri için davranış budur ancak kull
 
 A `StringElement` tablo hücresi ve hücrenin sağ tarafında dize değeri sol tarafındaki resim yazısı gösterir.
 
- [ ![](images/image7.png "Tablo hücresi ve hücrenin sağ tarafında dize değeri sol tarafındaki resim yazısı bir StringElement gösterir")](images/image7.png)
+ [![](images/image7.png "Tablo hücresi ve hücrenin sağ tarafında dize değeri sol tarafındaki resim yazısı bir StringElement gösterir")](images/image7.png#lightbox)
 
 Kullanılacak bir `StringElement` düğmesi olarak bir temsilci sağlar.
 
@@ -227,25 +227,25 @@ new StringElement (
 , null, "ok", null).Show(); })
 ```
 
- [ ![](images/image8.png "Bir StringElement düğme olarak kullanmak üzere bir temsilci sağlar.")](images/image8.png)
+ [![](images/image8.png "Bir StringElement düğme olarak kullanmak üzere bir temsilci sağlar.")](images/image8.png#lightbox)
 
 ### <a name="styled-string-element"></a>Stilde dize öğesi
 
 A `StyledStringElement` ya da yerleşik tablo hücre stilleri kullanarak sunulacak dizeleri izin verir veya özel biçimlendirmeye sahip.
 
- [ ![](images/image9.png "Bir StyledStringElement ya da yerleşik tablo hücre stilleri kullanarak sunulacak dizeleri izin verir veya özel biçimlendirme")](images/image9.png)
+ [![](images/image9.png "Bir StyledStringElement ya da yerleşik tablo hücre stilleri kullanarak sunulacak dizeleri izin verir veya özel biçimlendirme")](images/image9.png#lightbox)
 
 `StyledStringElement` Sınıfı türer `StringElement`, ancak sağlar geliştiriciler yazı tipi, metin rengi, arka plan hücre rengini, satır sonu modu, görüntülenecek satır sayısı gibi özellikleri sayıda özelleştirebilir ve olup bir donatıyı görüntülenmesi.
 
 ### <a name="multiline-element"></a>Çok satırlı öğesi
 
- [ ![](images/image10.png "Çok satırlı öğesi")](images/image10.png)
+ [![](images/image10.png "Çok satırlı öğesi")](images/image10.png#lightbox)
 
 ### <a name="entry-element"></a>Girişi öğesi
 
 `EntryElement`, Adından da anlaşılacağı, kullanıcı girişi almak için kullanılır. Normal dizeleri veya parolaları, burada karakter gizli destekler.
 
- [ ![](images/image11.png "EntryElement kullanıcı girişi almak için kullanılır")](images/image11.png)
+ [![](images/image11.png "EntryElement kullanıcı girişi almak için kullanılır")](images/image11.png#lightbox)
 
 Üç değerlerle başlatılır:
 
@@ -268,11 +268,11 @@ Ayrıca `KeyboardType` özelliği, klavye türü veri girişi için istenen stil
 
 ### <a name="boolean-element"></a>Boole öğesi
 
- [ ![](images/image12.png "Boole öğesi")](images/image12.png)
+ [![](images/image12.png "Boole öğesi")](images/image12.png#lightbox)
 
 ### <a name="checkbox-element"></a>Onay kutusu öğesi
 
- [ ![](images/image13.png "Checkbox Element")](images/image13.png)
+ [![](images/image13.png "Checkbox Element")](images/image13.png#lightbox)
 
 ### <a name="radio-element"></a>Radyo öğesi
 
@@ -282,7 +282,7 @@ A `RadioElement` gerektiren bir `RadioGroup` içinde belirtilen `RootElement`.
 mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0))
 ```
 
- [ ![](images/image14.png "Bir RadioElement bir RadioGroup RootElement belirtilmesini gerektirir")](images/image14.png)
+ [![](images/image14.png "Bir RadioElement bir RadioGroup RootElement belirtilmesini gerektirir")](images/image14.png#lightbox)
 
  `RootElements` radyo öğeleri koordine etmek için de kullanılır. `RadioElement` Üyeleri (örneğin sistem zil halkası ton Seçici ve ayrı özel halkası tonlarını benzer bir şey uygulamak) birden çok bölüm yayılabilir. Özet görünümü şu anda seçili radyo öğesi gösterir. Bunu kullanmak için Oluştur `RootElement` şöyle Grup Oluşturucusu ile:
 
@@ -294,15 +294,15 @@ Grup adı `RadioGroup` seçili değer içeren bir sayfa (varsa) ve bu durumda s�
 
 ### <a name="badge-element"></a>Gösterge öğesi
 
- [ ![](images/image15.png "Gösterge öğesi")](images/image15.png)
+ [![](images/image15.png "Gösterge öğesi")](images/image15.png#lightbox)
 
 ### <a name="float-element"></a>Öğesi float
 
- [ ![](images/image16.png "Öğesi float")](images/image16.png)
+ [![](images/image16.png "Öğesi float")](images/image16.png#lightbox)
 
 ### <a name="activity-element"></a>Etkinlik öğesi
 
- [ ![](images/image17.png "Etkinlik öğesi")](images/image17.png)
+ [![](images/image17.png "Etkinlik öğesi")](images/image17.png#lightbox)
 
 ### <a name="date-element"></a>Tarih öğesi
 
@@ -310,35 +310,35 @@ Grup adı `RadioGroup` seçili değer içeren bir sayfa (varsa) ve bu durumda s�
 
 DateElement karşılık gelen hücre seçildiğinde, tarih seçici aşağıda gösterildiği gibi sunulur:
 
- [ ![](images/image19.png "DateElement karşılık gelen hücre seçildiğinde, tarih seçici gösterildiği gibi sunulur")](images/image19.png)
+ [![](images/image19.png "DateElement karşılık gelen hücre seçildiğinde, tarih seçici gösterildiği gibi sunulur")](images/image19.png#lightbox)
 
 ### <a name="time-element"></a>Time öğesi
 
- [ ![](images/image20.png "Time öğesi")](images/image20.png)
+ [![](images/image20.png "Time öğesi")](images/image20.png#lightbox)
 
 TimeElement karşılık gelen hücre seçildiğinde, aşağıda gösterildiği gibi bir saat Seçici sunulur:
 
- [ ![](images/image21.png "TimeElement karşılık gelen hücre seçildiğinde, gösterildiği gibi bir saat Seçici sunulur")](images/image21.png)
+ [![](images/image21.png "TimeElement karşılık gelen hücre seçildiğinde, gösterildiği gibi bir saat Seçici sunulur")](images/image21.png#lightbox)
 
 ### <a name="datetime-element"></a>DateTime öğesi
 
- [ ![](images/image22.png "DateTime öğesi")](images/image22.png)
+ [![](images/image22.png "DateTime öğesi")](images/image22.png#lightbox)
 
 DateTimeElement karşılık gelen hücre seçildiğinde, aşağıda gösterildiği gibi bir datetime Seçici sunulur:
 
- [ ![](images/image23.png "DateTimeElement karşılık gelen hücre seçildiğinde, gösterildiği gibi bir datetime Seçici sunulur")](images/image23.png)
+ [![](images/image23.png "DateTimeElement karşılık gelen hücre seçildiğinde, gösterildiği gibi bir datetime Seçici sunulur")](images/image23.png#lightbox)
 
 ### <a name="html-element"></a>HTML öğesi
 
- [ ![](images/image24.png "HTML öğesi")](images/image24.png)
+ [![](images/image24.png "HTML öğesi")](images/image24.png#lightbox)
 
 `HTMLElement` Değerini görüntüler kendi `Caption` tablo hücresinde özelliği. Seçili Microsoft `Url` öğesine atanan içinde yüklü olduğu bir `UIWebView` denetim aşağıda gösterildiği gibi:
 
- [ ![](images/image25.png "Microsoft seçili, öğeye atanan Url aşağıda gösterildiği gibi bir UIWebView denetiminde yüklendi")](images/image25.png)
+ [![](images/image25.png "Microsoft seçili, öğeye atanan Url aşağıda gösterildiği gibi bir UIWebView denetiminde yüklendi")](images/image25.png#lightbox)
 
 ### <a name="message-element"></a>İleti öğesi
 
- [ ![](images/image26.png "İleti öğesi")](images/image26.png)
+ [![](images/image26.png "İleti öğesi")](images/image26.png#lightbox)
 
 ### <a name="load-more-element"></a>Daha fazla öğe yükleme
 
@@ -587,9 +587,9 @@ Bu makalede ele alınan çok sayıda MonoTouch.Dialog hakkında bilgi. Nasıl te
 
 - [Ekran kaydı - Miguel de Icaza iOS oturum açma ekranı MonoTouch.Dialog ile oluşturur](http://youtu.be/3butqB1EG0c)
 - [Ekran kaydı - iOS kullanıcı arabirimleri MonoTouch.Dialog ile kolayca oluşturun](http://youtu.be/j7OC5r8ZkYg)
-- [İzlenecek yol: öğeleri API kullanarak bir uygulama oluşturma](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
-- [İzlenecek yol: yansıma API kullanarak bir uygulama oluşturma](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
-- [İzlenecek yol: bir JSON öğesini kullanarak bir kullanıcı arabirimi oluşturmak için](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
+- [İzlenecek Yol: Öğeler API’sini kullanarak uygulama oluşturma](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
+- [İzlenecek Yol: Yansıma API’sini kullanarak uygulama oluşturma](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
+- [İzlenecek Yol: Kullanıcı Arabirimi oluşturmak için bir JSON Öğesini Kullanma](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
 - [MonoTouch.Dialog JSON biçimlendirme](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
 - [Github'da MonoTouch iletişim](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [UITableViewController sınıf başvurusu](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)

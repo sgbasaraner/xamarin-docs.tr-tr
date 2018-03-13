@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7366a4ce5cbb6a3026a7445a03f03b45d89d9210
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e5875249d7a84412b1c30580c3a8038cb53892f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="purchasing-consumable-products"></a>Kaynaklarda ürünleri satın alma
 
@@ -21,7 +21,7 @@ Kaynaklarda ürün basit 'geri' bir gereksinim olduğundan uygulamak değil. Bun
 
 Bu belge ile birlikte gelen örnek kod, yerleşik ürünleri göstermektedir – ürün kimlikleri bunlar sıkı şekilde 'özelliği, sonra ödeme kilidini açarak' koduna bağlı kodlanmış uygulamaya olduğu. Satın alma işlemi şu şekilde canlandırılabilir:   
    
-[ ![Satın alma işlemi Görselleştirme](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png)     
+[![Satın alma işlemi Görselleştirme](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  Temel iş akışı şöyledir:   
    
@@ -49,7 +49,7 @@ Bu belge ile birlikte gelen örnek kod, yerleşik ürünleri göstermektedir –
    
    
    
- [ ![Her satın alma daha fazla monkey krediler kullanıcılar dengelemek için ekler.](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png)   
+ [![Her satın alma daha fazla monkey krediler kullanıcılar dengelemek için ekler.](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
    
    
    
@@ -57,7 +57,7 @@ Bu belge ile birlikte gelen örnek kod, yerleşik ürünleri göstermektedir –
    
    
    
- [ ![StoreKit ve uygulama mağazası özel sınıflar arasındaki etkileşimler](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png)
+ [![StoreKit ve uygulama mağazası özel sınıflar arasındaki etkileşimler](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
 &nbsp;
 
@@ -214,7 +214,7 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 
 Kullanıcı birden çok miktarda satın aldığında StoreKit onay uyarı miktarı, birim fiyat ve bunlar ücret, toplam fiyat aşağıdaki ekran görüntüsünde gösterildiği gibi yansıtır:
 
-[ ![Satın alma onayı](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png)
+[![Satın alma onayı](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png#lightbox)
 
 ## <a name="handling-network-outages"></a>İşleme ağ kesintileri
 
@@ -328,7 +328,7 @@ Bu yöntem sınamak için kullanın **kısıtlamaları** özelliğini devre dı�
    
    
    
- [ ![Uygulama içi satın almalara devre dışı bırakmak için iOS kısıtlamaları özelliğini kullanın](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png)   
+ [![Uygulama içi satın almalara devre dışı bırakmak için iOS kısıtlamaları özelliğini kullanın](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
    
    
    
@@ -352,7 +352,7 @@ Uygulama gibi durumlarda arar **uygulama içi satın almalara** özelliktir kıs
    
    
    
- [ ![Düğmeleri devre dışı satın alma In uygulama özelliği satın alma işlemleri sınırlı olduğunda uygulama şöyle görünür](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png)   
+ [![Düğmeleri devre dışı satın alma In uygulama özelliği satın alma işlemleri sınırlı olduğunda uygulama şöyle görünür](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
    
    
    
@@ -361,7 +361,7 @@ Uygulama gibi durumlarda arar **uygulama içi satın almalara** özelliktir kıs
    
    
    
- [ ![Uygulama içi satın almalara izin verilmiyor](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png)   
+ [![Uygulama içi satın almalara izin verilmiyor](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
    
    
    

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e6df7f9308285b87ff0f42b73c8404b375cbb0de
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e887026b4f87d2e1bf8c7647a7845765ce8b886c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="standard-controls"></a>Standart denetimler
 
@@ -22,7 +22,7 @@ C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı erişiminiz AppKit d
 
 AppKit denetimleri Xamarin.Mac uygulamanızın kullanıcı arabirimi oluşturmak için kullanılan kullanıcı Arabirimi öğeleri bulunur. Bunlar düğmeleri, etiketler, metin alanlarına, onay kutularını ve bölümlenmiş denetimleri gibi oluşur ve bir kullanıcının onları yönettiğinde anlık eylemler veya görünür sonuçlara neden olabilir.
 
-[ ![](standard-controls-images/intro01.png "Örnek Uygulama Ana Ekran")](standard-controls-images/intro01.png)
+[![](standard-controls-images/intro01.png "Örnek Uygulama Ana Ekran")](standard-controls-images/intro01.png#lightbox)
 
 Bu makalede, sizi bir Xamarin.Mac uygulamasında AppKit denetimleri ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -51,7 +51,7 @@ Daha fazla bilgi için pleas bakın [hakkında denetimleri ve görünümler](htt
 
 Pencerenin çerçeve alanında dahil edilecek öğeleri olanak veren bir görüntüle stil içeren AppKit denetimleri kümesini vardır. Örneğin, posta uygulamanın araç bakın:
 
-[ ![](standard-controls-images/mailapp.png "Mac pencere çerçevesi")](standard-controls-images/mailapp.png)
+[![](standard-controls-images/mailapp.png "Mac pencere çerçevesi")](standard-controls-images/mailapp.png#lightbox)
 
 - **Yuvarlamak doku düğmesi** - A `NSButton` stili ile `NSTexturedRoundedBezelStyle`.
 - **Yuvarlanmış bölümlenmiş denetim doku** - A `NSSegmentedControl` stili ile `NSSegmentStyleTexturedRounded`.
@@ -73,15 +73,15 @@ Daha fazla bilgi için pleas bakın [hakkında denetimleri ve görünümler](htt
 
 Yeni bir Xamarin.Mac Cocoa uygulaması oluşturduğunuzda, varsayılan olarak standart boş, bir pencere alın. Bu windows tanımlanmış bir `.storyboard` otomatik olarak projeye dahil dosyası. Windows tasarımınızı düzenlemek için **Çözüm Gezgini**, çift tıklayarak `Main.storyboard` dosyası:
 
-[ ![](standard-controls-images/edit01.png "Çözüm Gezgini'nde ana film şeridi seçme")](standard-controls-images/edit01.png)
+[![](standard-controls-images/edit01.png "Çözüm Gezgini'nde ana film şeridi seçme")](standard-controls-images/edit01.png#lightbox)
 
 Bu pencere tasarım Xcode'nın arabirimi Oluşturucusu'nda açın:
 
-[ ![](standard-controls-images/edit02.png "Xcode'da film şeridi düzenleme")](standard-controls-images/edit02.png)
+[![](standard-controls-images/edit02.png "Xcode'da film şeridi düzenleme")](standard-controls-images/edit02.png#lightbox)
 
 Kullanıcı arabirimi oluşturmak için kullanıcı Arabirimi öğeleri (AppKit denetimleri) sürüklediğiniz **kitaplığı denetçisi** için **arabirimi Düzenleyicisi** arabirimi Oluşturucu. Aşağıdaki örnekte bir **Dikey bölme Görünüm** denetim gelen Uyuşturucu süredir **kitaplığı denetçisi** ve penceresinde getirilen **arabirimi Düzenleyicisi**:
 
-[ ![](standard-controls-images/edit03.png "Kitaplıktan bir bölünmüş görünümlü seçme")](standard-controls-images/edit03.png)
+[![](standard-controls-images/edit03.png "Kitaplıktan bir bölünmüş görünümlü seçme")](standard-controls-images/edit03.png#lightbox)
 
 Arabirim Oluşturucusu'nda bir kullanıcı arabirimi oluşturma hakkında daha fazla bilgi için lütfen bkz bizim [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) belgeleri.
 
@@ -91,21 +91,21 @@ Arabirim Oluşturucusu'nda bir kullanıcı arabirimi oluşturma hakkında daha f
 
 Kullanıcı arabiriminde bir denetim eklenmiştir sonra kullanarak **kısıtlaması Düzenleyicisi** değerlerini el ile girerek konumunu ve boyutunu ayarlama ve nasıl denetimi otomatik olarak yerleştirilir ve ne zaman boyutta denetlemek için ana penceresi veya Görünüm boyutlandırılır:
 
-[ ![](standard-controls-images/edit04.png "Kısıtlamalar ayarlama")](standard-controls-images/edit04.png)
+[![](standard-controls-images/edit04.png "Kısıtlamalar ayarlama")](standard-controls-images/edit04.png#lightbox)
 
 Kullanım **kırmızı t-kirişleri** dışına geçici **Autoresizing** kutusunu için _çubuğu_ (x, y) belirli bir konuma bir denetim. Örneğin: 
 
-[ ![](standard-controls-images/edit05.png "Bir kısıtlama düzenleme")](standard-controls-images/edit05.png)
+[![](standard-controls-images/edit05.png "Bir kısıtlama düzenleme")](standard-controls-images/edit05.png#lightbox)
 
 Belirleyen Seçili denetimi (içinde **hiyerarşisi görünümü** & **arabirimi Düzenleyicisi**) yeniden boyutlandırılmış veya taşındığında gibi penceresinin veya Görünüm üst ve sağ konuma takılmış. 
 
 Diğer öğeleri yükseklik ve genişlik gibi Düzenleyicisi denetim özellikleri:
 
-[ ![](standard-controls-images/edit06.png "Yükseklik ayarlama")](standard-controls-images/edit06.png)
+[![](standard-controls-images/edit06.png "Yükseklik ayarlama")](standard-controls-images/edit06.png#lightbox)
 
 Öğelerin hizalamasını kullanarak kısıtlamalarıyla denetleyebilirsiniz **hizalama Düzenleyicisi**:
 
-[ ![](standard-controls-images/edit07.png "Hizalama Düzenleyicisi")](standard-controls-images/edit07.png)
+[![](standard-controls-images/edit07.png "Hizalama Düzenleyicisi")](standard-controls-images/edit07.png#lightbox)
 
 > [!IMPORTANT]
 > İOS aksine nerede (0,0) üst olduğu macOS (0,0) içinde ekranın sol alt köşesindeki sol alt köşesindeki olduğu. MacOS yukarı ve sağa değerini artırmayı sayı değerleri içeren bir matematik koordinat sistemi kullandığından budur. Bu kullanıcı arabiriminde AppKit denetimleri yerleştirirken göz önünde bulundurmanız gerekir.
@@ -197,7 +197,7 @@ Burada `[Register("SourceListView")]` yönerge çıkarır `SourceListView` Objec
 
 Yerinde yukarıdaki kodu ile genişletme, temel türün bir AppKit denetimi tasarım yüzeyine sürükleyebilirsiniz (aşağıdaki örnekte bir **kaynağı listesi**), geçiş **kimlik denetçisi** ve ayarlayın **özel sınıf** Objective-C için kullanıma sunulan adına (örneğin `SourceListView`):
 
-[ ![](standard-controls-images/edit10.png "Özel bir sınıf Xcode'da ayarlama")](standard-controls-images/edit10.png)
+[![](standard-controls-images/edit10.png "Özel bir sınıf Xcode'da ayarlama")](standard-controls-images/edit10.png#lightbox)
 
 <a name="Exposing_Outlets_and_Actions" />
 
@@ -205,15 +205,15 @@ Yerinde yukarıdaki kodu ile genişletme, temel türün bir AppKit denetimi tasa
 
 C# kodunda AppKit denetim erişilmeden önce olarak açığa çıkarılması gereken bir **çıkışı** veya ve **eylem**. Bunu yapmak için seçin belirli bir denetim ya da **arabirimi hiyerarşi** veya **arabirimi Düzenleyicisi** ve geçiş **Yardımcısı görünümü** ( sahipolduğundaneminolun`.h`düzenleme için seçili pencerenizin):
 
-[ ![](standard-controls-images/edit11.png "Düzenlemek için doğru dosya seçme")](standard-controls-images/edit11.png)
+[![](standard-controls-images/edit11.png "Düzenlemek için doğru dosya seçme")](standard-controls-images/edit11.png#lightbox)
 
 Control-sürükleyin verin üzerine AppKit denetiminden `.h` oluşturmaya başlamak için dosyayı bir **çıkışı** veya **eylem**:
 
-[ ![](standard-controls-images/edit12.png "Bir çıkış veya eylem oluşturmak için sürükleme")](standard-controls-images/edit12.png)
+[![](standard-controls-images/edit12.png "Bir çıkış veya eylem oluşturmak için sürükleme")](standard-controls-images/edit12.png#lightbox)
 
 Etkilenme oluşturmak ve vermek için seçin **çıkışı** veya **eylem** bir **adı**: 
 
-[ ![](standard-controls-images/edit13.png "Eylem ve çıkış yapılandırma")](standard-controls-images/edit13.png)
+[![](standard-controls-images/edit13.png "Eylem ve çıkış yapılandırma")](standard-controls-images/edit13.png#lightbox)
 
 
 İle çalışma hakkında daha fazla bilgi için **çıkışlar** ve **Eylemler**, lütfen bkz [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) bölümünü bizim [Xcode ve arabirim giriş Oluşturucu](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) belgeleri.
@@ -226,7 +226,7 @@ Xcode Mac için Visual Studio'ya geri döndüğünüzde, Xcode'da yaptığınız
 
 Seçerseniz `SplitViewController.designer.cs` içinde **Çözüm Gezgini** görmeye devam nasıl, **çıkışı** ve **eylem** yukarı bizim C# kodunda Kablolu:
 
-[ ![](standard-controls-images/sync01.png "Xcode ile değişiklikler eşitleniyor")](standard-controls-images/sync01.png)
+[![](standard-controls-images/sync01.png "Xcode ile değişiklikler eşitleniyor")](standard-controls-images/sync01.png#lightbox)
 
 Bildirim nasıl tanımında `SplitViewController.designer.cs` dosyası:
 
@@ -270,7 +270,7 @@ Normalde hiçbir zaman açmanız gerekecek `SplitViewController.designer.cs` yal
 
 Kullanıcı arabirimi tasarımınızda kullanılabilir düğmesi çeşitli türlerde AppKit sağlar. Daha fazla bilgi için lütfen bkz [düğmeleri](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1) Apple'nın bölümünü [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/buttons01.png "Farklı bir düğmeyi türleri örneği")](standard-controls-images/buttons01.png)
+[![](standard-controls-images/buttons01.png "Farklı bir düğmeyi türleri örneği")](standard-controls-images/buttons01.png#lightbox)
 
 Bir düğme üzerinden kullanıma varsa bir **çıkışı**, aşağıdaki kodu basılan kendisine yanıt verir:
 
@@ -311,7 +311,7 @@ Bir kullanıcı arabirimi tasarımı eklediğiniz herhangi bir düğmesini için
 
 Varsayılan olarak bir düğme ayarlamak için Xcode'nın arabirimi Oluşturucusu'nda seçin. İleri ' **özniteliği denetçisi**seçin **anahtar eşdeğer** alan ve tuşuna **Return/Enter** anahtarı:
 
-[ ![](standard-controls-images/buttons03.png "Anahtar eşdeğer düzenleme")](standard-controls-images/buttons03.png)
+[![](standard-controls-images/buttons03.png "Anahtar eşdeğer düzenleme")](standard-controls-images/buttons03.png#lightbox)
 
 Eşit oranda, fare yerine klavyeyi kullanarak düğmesi etkinleştirmek için kullanılan anahtar sırası atayabilirsiniz. Örneğin, göre komutu-C yukarıdaki resimde tuşlarına.
 
@@ -323,7 +323,7 @@ Ne zaman uygulamayı çalıştırın ve pencerenin düğmesiyle anahtarıdır ve
 
 AppKit onay kutularını ve kullanıcı arabirimi tasarımınızda kullanılabilmesi için bir radyo düğmesi gruplarına çeşitli türleri sağlar. Daha fazla bilgi için lütfen bkz [düğmeleri](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1) Apple'nın bölümünü [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/buttons02.png "Kullanılabilir onay kutusu türleri örneği")](standard-controls-images/buttons02.png)
+[![](standard-controls-images/buttons02.png "Kullanılabilir onay kutusu türleri örneği")](standard-controls-images/buttons02.png#lightbox)
 
 
 Onay kutuları ve radyo düğmeleri (aracılığıyla kullanıma sunulan **çıkışlar**) bir duruma sahip (gibi **üzerinde** ve **devre dışı**), durum kullanıma veya kümesiyle `State` karşı özelliği `NSCellStateValue` enum. Örneğin:
@@ -375,7 +375,7 @@ Kullanabileceğiniz `Tag` hangi radyo düğmesinin seçili görmek için özelli
 
 AppKit çeşitli kullanıcı arabirimi tasarımınızda kullanılabilir menü denetimleri sağlar. Daha fazla bilgi için lütfen bkz [menü denetimleri](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlswithMenus.html#//apple_ref/doc/uid/20000957-CH100-SW1) Apple'nın bölümünü [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/menu01.png "Örnek menü denetimleri")](standard-controls-images/menu01.png)
+[![](standard-controls-images/menu01.png "Örnek menü denetimleri")](standard-controls-images/menu01.png#lightbox)
 
 <a name="Providing-Menu-Control-Data" />
 
@@ -429,7 +429,7 @@ Menü denetimin görünümünü ayarlamak aşağıdaki yöntemleri kullanılabil
 
 Aşağı açılan türleri için `NSPopupButtons`, ilk menü öğesi denetim için bir başlık sağlar. Örneğin: 
 
-[ ![](standard-controls-images/menu02.png "Bir örnek menü denetimi")](standard-controls-images/menu02.png)
+[![](standard-controls-images/menu02.png "Bir örnek menü denetimi")](standard-controls-images/menu02.png#lightbox)
 
 Başlık değiştirmek için bu öğeyi olarak kullanıma bir **çıkışı** ve kod aşağıdaki gibi kullanın:
 
@@ -481,7 +481,7 @@ Menüler ve menü denetimleri ile çalışma hakkında daha fazla bilgi için l�
 
 AppKit çeşitli kullanıcı arabirimi tasarımınızda kullanılabilir seçim denetimleri sağlar. Daha fazla bilgi için lütfen bkz [seçim denetimleri](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsSelection.html#//apple_ref/doc/uid/20000957-CH49-SW1) Apple'nın bölümünü [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/select01.png "Örnek seçim denetimleri")](standard-controls-images/select01.png)
+[![](standard-controls-images/select01.png "Örnek seçim denetimleri")](standard-controls-images/select01.png#lightbox)
 
 Seçim denetimi olarak göstererek kullanıcı etkileşimi olduğunda izlemek için iki yolla bir **eylem**. Örneğin:
 
@@ -526,7 +526,7 @@ ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 AppKit çeşitli kullanıcı arabirimi tasarımınızda kullanılabilir göstergesi denetimleri sağlar. Daha fazla bilgi için lütfen bkz [göstergesi denetimleri](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsIndicators.html#//apple_ref/doc/uid/20000957-CH50-SW1) Apple'nın bölümünü [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/level01.png "Örnek göstergesi denetimleri")](standard-controls-images/level01.png)
+[![](standard-controls-images/level01.png "Örnek göstergesi denetimleri")](standard-controls-images/level01.png#lightbox)
 
 Bir gösterge denetimi olarak gösterme ya da kullanıcı etkileşimi olduğunda izlemek için iki yolla bir **eylem** veya bir **çıkışı** ve ekleyerek bir **temsilci** için`Activated`olay. Örneğin:
 
@@ -557,7 +557,7 @@ AsyncProgress.StartAnimation (this);
 
 AppKit çeşitli kullanıcı arabirimi tasarımınızda kullanılabilir metin denetimleri sağlar. Daha fazla bilgi için lütfen bkz [metin denetimleri](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsText.html#//apple_ref/doc/uid/20000957-CH51-SW1) Apple'nın bölümünü [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/text01.png "Örnek metin denetimleri")](standard-controls-images/text01.png)
+[![](standard-controls-images/text01.png "Örnek metin denetimleri")](standard-controls-images/text01.png#lightbox)
 
 Metin alanları için (`NSTextField`), aşağıdaki olaylar, kullanıcı etkileşimi izlemek için kullanılabilir:
 
@@ -589,7 +589,7 @@ SourceWriter kodu tam olarak geçersiz kılınan ve kullanılabilir olduğunda, 
 
 AppKit birkaç kullanıcı arabirimi tasarımınızda kullanılabilir içerik görünüm türlerini sağlar. Daha fazla bilgi için lütfen bkz [içerik görünümleri](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) Apple'nın bölümünü [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/).
 
-[ ![](standard-controls-images/content01.png "Bir örnek içerik görünümü")](standard-controls-images/content01.png)
+[![](standard-controls-images/content01.png "Bir örnek içerik görünümü")](standard-controls-images/content01.png#lightbox)
 
 <a name="Popovers" />
 
@@ -602,16 +602,16 @@ Bir popover oluşturmak için aşağıdakileri yapın:
 1. Açık `.storyboard` dosyasını çift tıklatarak bir popover eklemek istediğiniz penceresinin **Çözüm Gezgini**
 2. Sürükleme bir **görüntülemek denetleyicisi** gelen **kitaplığı denetçisi** üzerine **Arayüzü Düzenleyicisi**: 
 
-    [ ![](standard-controls-images/content02.png "Kitaplıktan bir görünüm denetleyicisini seçme")](standard-controls-images/content02.png)
+    [![](standard-controls-images/content02.png "Kitaplıktan bir görünüm denetleyicisini seçme")](standard-controls-images/content02.png#lightbox)
 4. Boyut ve yerleşimini tanımlamak **Özel Görünüm**: 
 
-    [ ![](standard-controls-images/content04.png "Düzen düzenleme")](standard-controls-images/content04.png)
+    [![](standard-controls-images/content04.png "Düzen düzenleme")](standard-controls-images/content04.png#lightbox)
 5. Denetim tıklayın ve açılan kaynağından sürükleyin **View Controller**: 
 
-    [ ![](standard-controls-images/content05.png "Bir segue oluşturmak için sürükleme")](standard-controls-images/content05.png)
+    [![](standard-controls-images/content05.png "Bir segue oluşturmak için sürükleme")](standard-controls-images/content05.png#lightbox)
 6. Seçin **Popover** açılan menüsünden: 
 
-    [ ![](standard-controls-images/content06.png "Ayar segue türü")](standard-controls-images/content06.png)
+    [![](standard-controls-images/content06.png "Ayar segue türü")](standard-controls-images/content06.png#lightbox)
 7. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 <a name="Tab_Views" />
@@ -622,11 +622,11 @@ Sekme görünümleri oluşur (görünen bölümlenmiş denetime benzer) olarak a
 
 Xcode'nın arabirimi Oluşturucu sekmesi görünümü ile çalışırken kullanın **özniteliği denetçisi** sekmeleri sayısını ayarlamak için:
 
-[ ![](standard-controls-images/content08.png "Sekme sayısı düzenleme")](standard-controls-images/content08.png)
+[![](standard-controls-images/content08.png "Sekme sayısı düzenleme")](standard-controls-images/content08.png#lightbox)
 
 Her bir sekmede seçin **arabirimi hiyerarşi** ayarlamak için kendi **başlık** ve kullanıcı Arabirimi öğeleri ekleyin, **bölmesinde**:
 
-[ ![](standard-controls-images/content09.png "Xcode sekmeleri düzenleme")](standard-controls-images/content09.png)
+[![](standard-controls-images/content09.png "Xcode sekmeleri düzenleme")](standard-controls-images/content09.png#lightbox)
 
 <a name="Data_Binding_AppKit_Controls" />
 
@@ -648,8 +648,8 @@ Bu makalede düğmeleri, etiketler, metin alanlarına, onay kutularını ve böl
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacControls (örnek)](https://developer.xamarin.com/samples/mac/MacControls/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Windows](~/mac/user-interface/window.md)
-- [Veri bağlama ve anahtar-değer kodlama](~/mac/app-fundamentals/databinding.md)
+- [Veri Bağlama ve Anahtar-Değer Kodlaması](~/mac/app-fundamentals/databinding.md)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Denetimleri ve görünümleri hakkında](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsAll.html#//apple_ref/doc/uid/20000957-CH46-SW1)

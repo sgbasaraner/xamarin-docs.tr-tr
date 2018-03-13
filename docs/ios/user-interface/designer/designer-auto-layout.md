@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 040a5979339ed12f212f932f3b7e51cf48a9d382
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d9e38f055414ff0eca70df4a4e38aa959b7d7237
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>İOS için Xamarin Tasarımcısı ile otomatik Düzenle
 
@@ -54,7 +54,7 @@ Varsayılan olarak, hiçbir kısıtlamaları oluşturulan ya da yüzey üzerinde
 
 ## <a name="constraints-toolbar"></a>Kısıtlamaları araç çubuğu
 
- [ ![](designer-auto-layout-images/toolbarnew.png "Bağlam menü komutları")](designer-auto-layout-images/toolbarnew.png)
+ [![](designer-auto-layout-images/toolbarnew.png "Bağlam menü komutları")](designer-auto-layout-images/toolbarnew.png#lightbox)
 
 Kısıtlamaları araç güncelleştirildi ve artık iki ana bölümden oluşur:
 
@@ -83,7 +83,7 @@ Bu kısıtlamalar çubuğunda kısıtlamaları Modu düğmesini seçerek yükse�
 
 Bir kısıtlama oluşturmak için bir tanıtıcı seçin ve herhangi bir yerde tasarım yüzeyine sürükleyin. Sürükle başlattığınızda yeşil satırları/kutularını bir dizi ne söyleyen yüzeyinde görünür, kısıtlayabilirsiniz. Örneğin, aşağıdaki ekran görüntüsünde, biz Orta Düğme üst tarafındaki sınırlama:
 
- [ ![](designer-auto-layout-images/image07.png "Orta Düğme üst tarafındaki sınırlama")](designer-auto-layout-images/image07.png)
+ [![](designer-auto-layout-images/image07.png "Orta Düğme üst tarafındaki sınırlama")](designer-auto-layout-images/image07.png#lightbox)
 
 Üç kesikli çizgiler diğer iki düğmeleri arasında unutmayın. Çizgiler belirtmek *bırakma alanları*, veya biz sınırlamak diğer öğeleri özniteliklerini. Yukarıdaki ekran görüntüsünde, diğer iki düğmeleri 3 Dikey bırakma alanlarını sunma ( *alt*, *centerY*, *üst*) bizim düğmesi sınırlamak için. Üst görünümünün yeşil kesikli çizgi kısıtlaması üst görünümün görünüm denetleyicisi sunar ve Düz yeşil kutunun üst düzen kılavuzu aşağıda bir kısıtlama görünümü denetleyicisi sunar anlamına gelir anlamına gelir.
 
@@ -98,13 +98,13 @@ Sonraki üç bölümde farklı türlerde sınırlamaları ile çalışma tanıt�
 
 Boyutu sınırlaması ile- *yükseklik* ve *genişliği* -iki seçeneğiniz vardır. İlk seçenek, yukarıdaki örnekte gösterildiği gibi bir komşu öğesi boyutu sınırlamak için tutamacını sürükleyin oluşturmaktır. Diğer self kısıtlama oluşturmak için tanıtıcı çift seçenektir. Bu bize bir sabit boyut değeri belirtmek aşağıdaki ekran görüntüsüne gösterildiği gibi sağlar:
 
- [ ![](designer-auto-layout-images/sizec.png "Aşağıda gösterildiği gibi bir komşu öğesi boyutu sınırlamak için tutamacını sürükleyin")](designer-auto-layout-images/sizec.png)
+ [![](designer-auto-layout-images/sizec.png "Aşağıda gösterildiği gibi bir komşu öğesi boyutu sınırlamak için tutamacını sürükleyin")](designer-auto-layout-images/sizec.png#lightbox)
 
 ### <a name="center-constraints"></a>Merkezi kısıtlamaları
 
 Kare tutamacı oluşturacak bir *centerX* veya *centerY* bağlam bağlı olarak kısıtlaması. Kare tutamacı sürükleyerek aşağıdaki ekran görüntüsüne gösterildiği gibi her iki dikey ve yatay bırakma alanları sunmak için diğer öğelerini açık:
 
- [ ![](designer-auto-layout-images/centerc.png "Merkezi kısıtlamaları")](designer-auto-layout-images/centerc.png)
+ [![](designer-auto-layout-images/centerc.png "Merkezi kısıtlamaları")](designer-auto-layout-images/centerc.png#lightbox)
 
 Bir dikey bırakma alanı seçerseniz bir *centerY* kısıtlaması oluşturulur. Yatay bırakma alanı seçerseniz, kısıtlama dayalı olacak *centerX*.
 
@@ -112,17 +112,17 @@ Bir dikey bırakma alanı seçerseniz bir *centerY* kısıtlaması oluşturulur.
 
 Hizalama ve iki öğeler arasında boyutu eşitlik kısıtlamalar oluşturmak için öğeleri - sırayla - yatay hizalama, dikey hizalama ve boyutu equalities belirtmek üzere bir üst araç çubuğundan aşağıdaki ekran görüntüsüne gösterildiği gibi seçebilirsiniz:
 
- [ ![](designer-auto-layout-images/image06.png "Combinational kısıtlamaları")](designer-auto-layout-images/image06.png)
+ [![](designer-auto-layout-images/image06.png "Combinational kısıtlamaları")](designer-auto-layout-images/image06.png#lightbox)
 
 ### <a name="visualizing-and-editing-constraints"></a>Kısıtlamaları düzenleme ve görselleştirme
 
 Bir kısıtlama eklediğinizde, bir öğe seçtiğinizde, tasarım yüzeyine mavi bir çizgi görüntülenir:
 
- [ ![](designer-auto-layout-images/image09.png "Görselleştirme kısıtlamaları")](designer-auto-layout-images/image09.png)
+ [![](designer-auto-layout-images/image09.png "Görselleştirme kısıtlamaları")](designer-auto-layout-images/image09.png#lightbox)
 
 Mavi bir satıra tıklayarak ve kısıtlama değerlerinin özelliği panelinde doğrudan düzenleyerek bir kısıtlama seçebilirsiniz. Alternatif olarak, mavi bir satıra çift tasarım yüzeyine değerlerine doğrudan düzenlemenize olanak sağlayan bir popover getirir:
 
- [ ![](designer-auto-layout-images/image08.png "Kısıtlamaları düzenleme")](designer-auto-layout-images/image08.png)
+ [![](designer-auto-layout-images/image08.png "Kısıtlamaları düzenleme")](designer-auto-layout-images/image08.png#lightbox)
 
 ## <a name="constraint-issues"></a>Kısıtlama sorunları
 
@@ -139,27 +139,27 @@ Bu bölüm, yukarıda listelenen üç sorunları elaborates ve bunları nasıl e
 
 Çakışan kısıtlamaları kırmızı olarak işaretlenir ve bir uyarı simgesi vardır. Çakışma hakkında bilgi içeren bir popover yukarı uyarı simgeleri üzerine gelerek veya onları getirir:
 
- [ ![](designer-auto-layout-images/image11.png "Çakışan kısıtlamaları uyarı")](designer-auto-layout-images/image11.png)
+ [![](designer-auto-layout-images/image11.png "Çakışan kısıtlamaları uyarı")](designer-auto-layout-images/image11.png#lightbox)
 
 ### <a name="underconstrained-items"></a>Underconstrained öğeleri
 
 Underconstrained öğeleri turuncu içinde görünür ve görünüm denetleyicisini nesne çubuğunda turuncu işaretçi simge görünümünü tetiklemek:
 
- [ ![](designer-auto-layout-images/image02.png "İçinde turuncu underconstrained öğeler görünür")](designer-auto-layout-images/image02.png)
+ [![](designer-auto-layout-images/image02.png "İçinde turuncu underconstrained öğeler görünür")](designer-auto-layout-images/image02.png#lightbox)
 
 Bu işaretçi simgesine tıklayın, Sahne underconstrained öğeleri hakkında bilgi almak ve sorunlar ya da tam olarak bunları kısıtlamadır veya kendi kısıtlamaları kaldırarak aşağıdaki ekran görüntüsüne gösterildiği gibi çözmek:
 
- [ ![](designer-auto-layout-images/image10.png "Underconstrained öğeleri çözme")](designer-auto-layout-images/image10.png)
+ [![](designer-auto-layout-images/image10.png "Underconstrained öğeleri çözme")](designer-auto-layout-images/image10.png#lightbox)
 
 ### <a name="frame-misplacement"></a>Çerçeve Misplacement
 
 Çerçeve misplacement underconstrained öğeleri olarak aynı renk kodunu kullanır. Öğe her zaman yerel çerçevesini kullanarak yüzeyinde işlenir ancak çerçeve misplacement söz konusu olduğunda, uygulama çalıştığında, burada öğesi aşağıdaki ekran görüntüsüne gösterildiği gibi son bulur kırmızı bir dikdörtgen işaretler:
 
- [ ![](designer-auto-layout-images/image05.png "Örnek çerçeve Misplacement görünümü")](designer-auto-layout-images/image05.png)
+ [![](designer-auto-layout-images/image05.png "Örnek çerçeve Misplacement görünümü")](designer-auto-layout-images/image05.png#lightbox)
 
 Çerçeve misplacement hataları gidermek için seçin **güncelleştirme çerçeveler kısıtlamaları temel** (sağdaki düğme) kısıtlamaları araç çubuğu düğmesinden:
 
- [ ![](designer-auto-layout-images/image03.png "Kısıtlamaları araç çubuğu düğmesini tabanlı çerçeve güncelleştir")](designer-auto-layout-images/image03.png)
+ [![](designer-auto-layout-images/image03.png "Kısıtlamaları araç çubuğu düğmesini tabanlı çerçeve güncelleştir")](designer-auto-layout-images/image03.png#lightbox)
 
 Bu ayarlar otomatik olarak denetimleri tarafından tanımlanan konumları eşleşecek şekilde öğesi çerçevesi.
 
@@ -174,10 +174,10 @@ Kodda bir kısıtlama erişmek için öncelikle aşağıdakileri yaparak iOS Tas
 1. Kısıtlama (yukarıda listelenen yöntemlerden birini kullanarak) normal olarak oluşturun.
 2. İçinde **Belge Anahattı Gezgini**, istenen kısıtlaması bulun ve seçin:
 
-    [ ![](designer-auto-layout-images/modify01.png "Belge Anahattı Gezgini")](designer-auto-layout-images/modify01.png)
+    [![](designer-auto-layout-images/modify01.png "Belge Anahattı Gezgini")](designer-auto-layout-images/modify01.png#lightbox)
 3. Ardından, Ata bir **adı** kısıtlama **pencere öğesi** sekmesinde **özellikleri Explorer**:
 
-    [ ![](designer-auto-layout-images/modify02.png "Pencere öğesi sekmesi")](designer-auto-layout-images/modify02.png)
+    [![](designer-auto-layout-images/modify02.png "Pencere öğesi sekmesi")](designer-auto-layout-images/modify02.png#lightbox)
 4. Değişikliklerinizi kaydedin.
 
 Yerinde yukarıdaki değişikliklerle kod kısıtlamasında erişmek ve özelliklerini değiştirin. Örneğin, sıfır olarak ekli görünümün yüksekliğini ayarlamak için aşağıdakileri kullanın:
@@ -188,7 +188,7 @@ ViewInfoHeight.Constant = 0;
 
 Kısıtlama için şu ayarı iOS Tasarımcısı verilen:
 
-[ ![](designer-auto-layout-images/modify03.png "Özellik Explorer kısıtlamasında düzenleme")](designer-auto-layout-images/modify03.png)
+[![](designer-auto-layout-images/modify03.png "Özellik Explorer kısıtlamasında düzenleme")](designer-auto-layout-images/modify03.png#lightbox)
 
 ### <a name="the-deferred-layout-pass"></a>Ertelenmiş Düzen geçişi
 
@@ -223,7 +223,7 @@ Bu kılavuzda sunulan iOS otomatik (veya "Uyarlamalı") düzeni ve kısıtlamala
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Film şeritleri giriş](~/ios/user-interface/storyboards/index.md)
+- [Görsel Taslaklara Giriş](~/ios/user-interface/storyboards/index.md)
 - [iOS Designable denetimleri gözden geçirme](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [Android Tasarımcı genel bakış](~/android/user-interface/android-designer/index.md)
 - [Programsal sınırlamalar](~/ios/user-interface/programmatic-layout-constraints.md)

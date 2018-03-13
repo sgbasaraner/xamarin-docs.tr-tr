@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 21e35b056293e422b577b0ee8b51e8c43dbbf07d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ccee60b5d953987e858ef592d005cec9803b8b96
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-storyboards"></a>Film şeritleri giriş
 
@@ -20,7 +20,7 @@ _Bu makalede, bir Xamarin.Mac uygulamasında film şeritleri ile çalışmaya ta
 
 Film şeritleri yalnızca penceresi tanımları ve denetimleri içerir, ancak ayrıca farklı windows arasındaki bağlantıları içerir Xamarin.Mac uygulamanız için kullanıcı arabirimi geliştirmek izin ver (aracılığıyla segues) ve durumlarını görüntüleyin.
 
-[ ![](images/intro01.png "Örnek xcode'da kullanıcı Arabirimi")](images/intro01.png)
+[![](images/intro01.png "Örnek xcode'da kullanıcı Arabirimi")](images/intro01.png#lightbox)
 
 Bu makalede bir Xamarin.Mac uygulamanın kullanıcı arabirimi tanımlamak için film şeritleri kullanarak giriş bilgileri sağlar.
 
@@ -36,11 +36,11 @@ Film şeritleri kullanarak tüm Xamarin.Mac uygulamanın UI tüm kullanıcı ara
 
 Yukarıda belirtildiği gibi bir film şeridi tüm işlevsel bir bakış ayrıntılarıyla belirli bir uygulamanın kullanıcı Arabirimi tanımlar, _görünüm denetleyicileri_. Xcode'nın arabirimi Oluşturucu'da, bu denetleyicilerinden her birinin kendi yaşadığı _Sahne_.
 
-[ ![](images/intro02.png "Bir örnek view controller")](images/intro02.png)
+[![](images/intro02.png "Bir örnek view controller")](images/intro02.png#lightbox)
 
 Her Sahne arabiriminde, böylece ilişkilerini gösteren her Sahne bağlanmak (Segues denir) satırları kümesiyle olarak verilen bir görünümü ve görünüm denetleyicisi çifti temsil eder. Bazı Segues nasıl bir görünüm denetleyicisi tanımlayan bir veya daha fazla alt görünüm veya Görünüm denetleyicileri içeriyor. Diğer Segues View Controller (örneğin, bir popover ya da iletişim kutusunu görüntüleme) arasındaki geçişler tanımlayın. 
 
-[ ![](images/intro03.png "Bir örnek segue")](images/intro03.png)
+[![](images/intro03.png "Bir örnek segue")](images/intro03.png#lightbox)
 
 Not etmek için en önemli her Segue bazı form uygulamanın UI verilen öğe arasındaki veri akışını temsil ettiğini şeydir.
 
@@ -50,7 +50,7 @@ Not etmek için en önemli her Segue bazı form uygulamanın UI verilen öğe ar
 
 Görünüm denetleyicileri bilgilerinin bir Mac uygulama içinde belirli bir görünümünü ve bu bilgileri sağlayan veri modeli arasındaki ilişkileri tanımlayın. Film şeridi her üst düzey Sahne Xamarin.Mac uygulamanın kodda bir görünüm denetleyicisini temsil eder.
 
-[ ![](images/intro04.png "Görünüm denetleyicisini örnek fişleri")](images/intro04.png)
+[![](images/intro04.png "Görünüm denetleyicisini örnek fişleri")](images/intro04.png#lightbox)
 
 Bu şekilde, her bir bağımsız, yeniden kullanılabilir hem bilgilerindeki görsel gösterimi (Görünüm) hem de sunar ve bu bilgileri denetlemek için mantığı eşleştirme görünümü denetleyicisidir.
 
@@ -116,7 +116,7 @@ Bu makalede Xamarin.Mac App'te film şeritleri ile çalışan bir Hızlı Bakı�
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Merhaba, Mac (örnek)](https://developer.xamarin.com/samples/mac/Hello_Mac/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Windows ile birlikte çalışma](~/mac/user-interface/window.md)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Windows giriş](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

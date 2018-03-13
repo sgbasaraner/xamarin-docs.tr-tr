@@ -3,16 +3,16 @@ title: "Tablo görünümleri"
 description: "Bu makalede Xamarin.Mac uygulamasında tablo görünümlerle çalışma kapsar. Xcode arabirimi oluşturucu ve bunlarla kodda etkileşim tablo görünüm oluşturmayı açıklar."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 3B55B858-4769-4331-966A-7F53B3B7C720
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: dfac551bbb7e6fd9214fe488170455c5916318ae
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 4764a4babc9f6b06c7a9299feab1320971b0bf75
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="table-views"></a>Tablo görünümleri
 
@@ -22,7 +22,7 @@ C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı erişiminiz tablo g�
 
 Bir tablo görünümü verileri birden çok satır bilgilerinin bir veya daha fazla sütun içeren bir tablo biçiminde görüntüler. Tablo oluşturulan görünüm türüne bağlı olarak, kullanıcı sütuna göre sıralamak, sütunları yeniden düzenlemek, sütun ekleme, sütunları kaldırmak veya tablo içinde bulunan verileri düzenleyin.
 
-[ ![](table-view-images/intro01.png "Bir örnek tablo")](table-view-images/intro01.png)
+[![](table-view-images/intro01.png "Bir örnek tablo")](table-view-images/intro01.png#lightbox)
 
 Bu makalede, sizi bir Xamarin.Mac uygulamasında tablosu görünümleri ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -51,23 +51,23 @@ Daha fazla bilgi için lütfen bkz [içerik görünümleri](https://developer.ap
 
 Yeni bir Xamarin.Mac Cocoa uygulaması oluşturduğunuzda, varsayılan olarak standart boş, bir pencere alın. Bu windows tanımlanmış bir `.storyboard` otomatik olarak projeye dahil dosyası. Windows tasarımınızı düzenlemek için **Çözüm Gezgini**, çift tıklayarak `Main.storyboard` dosyası:
 
-[ ![](table-view-images/edit01.png "Ana film şeridi seçme")](table-view-images/edit01.png)
+[![](table-view-images/edit01.png "Ana film şeridi seçme")](table-view-images/edit01.png#lightbox)
 
 Bu pencere tasarım Xcode'nın arabirimi Oluşturucusu'nda açın:
 
-[ ![](table-view-images/edit02.png "Xcode kullanıcı Arabiriminde düzenleme")](table-view-images/edit02.png)
+[![](table-view-images/edit02.png "Xcode kullanıcı Arabiriminde düzenleme")](table-view-images/edit02.png#lightbox)
 
 Tür `table` içine **kitaplığı Denetçisi'nin** Tablo görünümü denetimleri bulmayı kolaylaştırmak için arama kutusunu:
 
-[ ![](table-view-images/edit03.png "Kitaplıktan bir tablo görünümü seçme")](table-view-images/edit03.png)
+[![](table-view-images/edit03.png "Kitaplıktan bir tablo görünümü seçme")](table-view-images/edit03.png#lightbox)
 
 Bir tablo görünümü Görünüm denetleyiciye sürükleyin **arabirimi Düzenleyicisi**, görünüm denetleyicisini içerik alanını doldurun ve burada küçültür ve penceresinde ile büyür ayarlanan **kısıtlaması Düzenleyicisi**:
 
-[ ![](table-view-images/edit04.png "Kısıtlamaları düzenleme")](table-view-images/edit04.png)
+[![](table-view-images/edit04.png "Kısıtlamaları düzenleme")](table-view-images/edit04.png#lightbox)
 
 Tablo görünümünde seçin **arabirimi hiyerarşi** ve aşağıdaki özellikler mevcuttur **özniteliği denetçisi**:
 
-[ ![](table-view-images/edit05.png "Öznitelik denetçisi")](table-view-images/edit05.png)
+[![](table-view-images/edit05.png "Öznitelik denetçisi")](table-view-images/edit05.png#lightbox)
 
 - **İçerik modu** -ya da görünümleri kullanmanıza olanak tanır (`NSView`) veya hücreleri (`NSCell`) satır ve sütunları verileri görüntülemek için. MacOS 10.7 ile başlayarak, görünümleri kullanmanız gerekir.
 - **Gezinen grup satırları** - `true`, kayan gibi Tablo görünümünde gruplandırılmış hücreleri çizin.
@@ -97,7 +97,7 @@ Tablo görünümünde seçin **arabirimi hiyerarşi** ve aşağıdaki özellikle
 
 Bir tablo sütununda seçin **arabirimi hiyerarşi** ve aşağıdaki özellikler mevcuttur **özniteliği denetçisi**:
 
-[ ![](table-view-images/edit06.png "Öznitelik denetçisi")](table-view-images/edit06.png)
+[![](table-view-images/edit06.png "Öznitelik denetçisi")](table-view-images/edit06.png#lightbox)
 
 - **Başlık** -sütun başlığını ayarlar.
 - **Hizalama** -hücrelerde metin hizalamasını ayarlama.
@@ -115,19 +115,19 @@ Buna ait (sütunun sağ tarafta dikey ortalanmış) tanıtıcısı sola veya sa�
 
 Tablo Hücre görünümünü seçin (`NSTableViewCell`) içinde **arabirimi hiyerarşi** ve aşağıdaki özellikler mevcuttur **özniteliği denetçisi**:
 
-[ ![](table-view-images/edit07.png "Öznitelik denetçisi")](table-view-images/edit07.png)
+[![](table-view-images/edit07.png "Öznitelik denetçisi")](table-view-images/edit07.png#lightbox)
 
 Bu standart bir görünüm özelliklerini tümü. Burada bu sütun için satırları yeniden boyutlandırma seçeneğiniz de vardır.
 
 Bir tablo görünümü hücre seçin (varsayılan olarak, bir `NSTextField`) içinde **arabirimi hiyerarşi** ve aşağıdaki özellikler mevcuttur **özniteliği denetçisi**:
 
-[ ![](table-view-images/edit08.png "Öznitelik denetçisi")](table-view-images/edit08.png)
+[![](table-view-images/edit08.png "Öznitelik denetçisi")](table-view-images/edit08.png#lightbox)
 
 Burada ayarlamak için standart bir metin alanı tüm özelliklerine sahip olacaksınız. Varsayılan olarak, standart bir metin alanı, bir sütundaki bir hücrenin verilerini görüntülemek için kullanılır.
 
 Tablo Hücre görünümünü seçin (`NSTableFieldCell`) içinde **arabirimi hiyerarşi** ve aşağıdaki özellikler mevcuttur **özniteliği denetçisi**:
 
-[ ![](table-view-images/edit09.png "Öznitelik denetçisi")](table-view-images/edit09.png)
+[![](table-view-images/edit09.png "Öznitelik denetçisi")](table-view-images/edit09.png#lightbox)
 
 Burada en önemli ayarlar şunlardır:
 
@@ -141,7 +141,7 @@ Burada en önemli ayarlar şunlardır:
 
 Tablo hücre görünümü seçin (`NSTableFieldCell`) bir tablo sütununda sonundaki **arabirimi hiyerarşi**:
 
-[ ![](table-view-images/edit10.png "Tablo Hücre görünümünü seçme")](table-view-images/edit10.png)
+[![](table-view-images/edit10.png "Tablo Hücre görünümünü seçme")](table-view-images/edit10.png#lightbox)
 
 Bu sayede temel olarak kullanılan tablo hücre görünümünü düzenlemek _düzeni_ belirtilen sütun için oluşturulan tüm hücreler için.
 
@@ -155,14 +155,14 @@ Biz kullanıma sunmak istediğiniz herhangi bir tablo görünümü öğesi işle
 
 1. Geçiş **Yardımcısı Düzenleyicisi** ve emin `ViewController.h` dosya seçili: 
 
-    [ ![](table-view-images/edit11.png "Yardımcısı Düzenleyicisi")](table-view-images/edit11.png)
+    [![](table-view-images/edit11.png "Yardımcısı Düzenleyicisi")](table-view-images/edit11.png#lightbox)
 2. Tablo görünümünden seçin **arabirimi hiyerarşi**denetim tıklatın ve sürükleyin `ViewController.h` dosya.
 3. Oluşturma bir **çıkışı** Tablo görünümünde adlı için `ProductTable`: 
 
-    [ ![](table-view-images/edit13.png "Prizine yapılandırma")](table-view-images/edit13.png)
+    [![](table-view-images/edit13.png "Prizine yapılandırma")](table-view-images/edit13.png#lightbox)
 4. Oluşturma **çıkışlar** de tablo sütunlarını adlı `ProductColumn` ve `DetailsColumn`: 
 
-    [ ![](table-view-images/edit14.png "Prizine yapılandırma")](table-view-images/edit14.png)
+    [![](table-view-images/edit14.png "Prizine yapılandırma")](table-view-images/edit14.png#lightbox)
 5. Değişiklikleri kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 Ardından, uygulamayı çalıştırdığınızda şu kodu görüntüleme tablo bazı verileri yazacaksınız.
@@ -175,7 +175,7 @@ Bizim Tablo görünümü ile tasarlanmış arabirim Oluşturucusu'nda ve aracıl
 
 İlk olarak, yeni bir oluşturalım `Product` tek tek satırların bilgiyi tutmak için sınıf. İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçin **Ekle** > **yeni dosya...** Seçin **genel** > **boş sınıfı**, girin `Product` için **adı** tıklatıp **yeni** düğmesi:
 
-[ ![](table-view-images/populate01.png "Boş bir sınıf oluşturma")](table-view-images/populate01.png)
+[![](table-view-images/populate01.png "Boş bir sınıf oluşturma")](table-view-images/populate01.png#lightbox)
 
 Olun `Product.cs` aşağıdaki gibi dosya bakın:
 
@@ -333,7 +333,7 @@ public override void AwakeFromNib ()
 
 Biz uygulama çalıştırıyorsanız, aşağıdaki görüntülenir:
 
-[ ![](table-view-images/populate02.png "Çalıştıran bir örnek uygulama")](table-view-images/populate02.png)
+[![](table-view-images/populate02.png "Çalıştıran bir örnek uygulama")](table-view-images/populate02.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
@@ -341,11 +341,11 @@ Biz uygulama çalıştırıyorsanız, aşağıdaki görüntülenir:
 
 Şimdi tablodaki verileri bir sütun başlığına tıklayarak sıralayın izin verin. İlk olarak, çift `Main.storyboard` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Seçin `Product` sütun girin `Title` için **sıralama anahtarı**, `compare:` için **Seçici** seçip `Ascending` için **sipariş**:
 
-[ ![](table-view-images/sort01.png "Sıralama anahtarı ayarlama")](table-view-images/sort01.png)
+[![](table-view-images/sort01.png "Sıralama anahtarı ayarlama")](table-view-images/sort01.png#lightbox)
 
 Seçin `Details` sütun girin `Description` için **sıralama anahtarı**, `compare:` için **Seçici** seçip `Ascending` için **sipariş**:
 
-[ ![](table-view-images/sort02.png "Sıralama anahtarı ayarlama")](table-view-images/sort02.png)
+[![](table-view-images/sort02.png "Sıralama anahtarı ayarlama")](table-view-images/sort02.png#lightbox)
 
 Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -395,7 +395,7 @@ public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescri
 
 Uygulamayı çalıştırın ve sütun başlıklarının'ı tıklatın, satır sütuna göre sıralanır:
 
-[ ![](table-view-images/sort03.png "Bir örnek uygulamayı çalıştırma")](table-view-images/sort03.png)
+[![](table-view-images/sort03.png "Bir örnek uygulamayı çalıştırma")](table-view-images/sort03.png#lightbox)
 
 <a name="Row_Selection" />
 
@@ -403,7 +403,7 @@ Uygulamayı çalıştırın ve sütun başlıklarının'ı tıklatın, satır s�
 
 Tek bir satır seçin, çift kullanıcıya izin vermek isteyip istemediğinizi `Main.storyboard` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Tablo görünümünde seçin **arabirimi hiyerarşi** ve işaretini **birden çok** onay kutusu **özniteliği denetçisi**:
 
-[ ![](table-view-images/select01.png "Öznitelik denetçisi")](table-view-images/select01.png)
+[![](table-view-images/select01.png "Öznitelik denetçisi")](table-view-images/select01.png#lightbox)
 
 Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -432,7 +432,7 @@ Tablo görünümünde (`NSTableView`) satır seçimi ile çalışmak için aşa�
 
 Birden çok satır seçmek, çift kullanıcıya izin vermek isteyip istemediğinizi `Main.storyboard` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Tablo görünümünde seçin **arabirimi hiyerarşi** ve denetleme **birden çok** onay kutusu **özniteliği denetçisi**:
 
-[ ![](table-view-images/select02.png "Öznitelik denetçisi")](table-view-images/select02.png)
+[![](table-view-images/select02.png "Öznitelik denetçisi")](table-view-images/select02.png#lightbox)
 
 Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -466,7 +466,7 @@ Tablo görünümünde (`NSTableView`) satır seçimi ile çalışmak için aşa�
 
 İlk satırı seçin ve bir karakter ile tablo seçili görünüm türünü kullanıcıya izin vermek istiyorsanız, bu karakter olan, çift `Main.storyboard` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Tablo görünümünde seçin **arabirimi hiyerarşi** ve denetleme **türünü seçin** onay kutusu **özniteliği denetçisi**:
 
-[ ![](table-view-images/type01.png "Seçim türünü ayarlama")](table-view-images/type01.png)
+[![](table-view-images/type01.png "Seçim türünü ayarlama")](table-view-images/type01.png#lightbox)
 
 Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
@@ -492,7 +492,7 @@ public override nint GetNextTypeSelectMatch (NSTableView tableView, nint startRo
 
 Uygulamayı çalıştırın ve bir karakter yazın, bir satır seçilir:
 
-[ ![](table-view-images/type02.png "Çalıştıran bir örnek uygulama")](table-view-images/type02.png)
+[![](table-view-images/type02.png "Çalıştıran bir örnek uygulama")](table-view-images/type02.png#lightbox)
 
 <a name="Reordering_Columns" />
 
@@ -500,7 +500,7 @@ Uygulamayı çalıştırın ve bir karakter yazın, bir satır seçilir:
 
 Sürükleme yapmalarına izin vermek istiyorsanız, Tablo görünümünde sütunları yeniden sıralama, çift `Main.storyboard` dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Tablo görünümünde seçin **arabirimi hiyerarşi** ve denetleme **Reordering** onay kutusu **özniteliği denetçisi**:
 
-[ ![](table-view-images/reorder01.png "Öznitelik denetçisi")](table-view-images/reorder01.png)
+[![](table-view-images/reorder01.png "Öznitelik denetçisi")](table-view-images/reorder01.png#lightbox)
 
 Biz için bir değer verirseniz **otomatik kaydetme** özelliği ve onay **sütun bilgileri** alan tablonun düzene vermiyoruz değişiklikleri bize otomatik olarak kaydedilir ve uygulama başlatıldığında geri çalıştırılır.
 
@@ -519,7 +519,7 @@ public override bool ShouldReorder (NSTableView tableView, nint columnIndex, nin
 
 Biz uygulama çalıştırırsanız, biz bizim sütunları yeniden sıralamak için sütun başlıkları geçici sürükleyebilirsiniz:
 
-[ ![](table-view-images/reorder02.png "Yeniden düzenlenen sütunları örneği")](table-view-images/reorder02.png)
+[![](table-view-images/reorder02.png "Yeniden düzenlenen sütunları örneği")](table-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells" />
 
@@ -575,7 +575,7 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 
 Şimdi biz uygulama çalıştırırsanız, kullanıcı Tablo görünümünde hücreleri düzenleyebilirsiniz:
 
-[ ![](table-view-images/editing01.png "Bir hücre düzenleme örneği")](table-view-images/editing01.png)
+[![](table-view-images/editing01.png "Bir hücre düzenleme örneği")](table-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Table_Views" />
 
@@ -650,7 +650,7 @@ Uygulamanızın gereksinimlerine bağlı olarak, olabilir durumlar burada tablod
 
 İlk olarak, düzenleme `Main.storyboard` Xcode'nın arabirimi Oluşturucu'da, Tablo görünümünde seçin ve sütun sayısını artırmak üç (3). Ardından, değiştirme **başlık** yeni sütunun `Action`:
 
-[ ![](table-view-images/delete01.png "Sütun adı düzenleme")](table-view-images/delete01.png)
+[![](table-view-images/delete01.png "Sütun adı düzenleme")](table-view-images/delete01.png#lightbox)
 
 Film şeridi için değişiklikleri kaydetmek ve değişiklikleri eşitlemek Mac için Visual Studio geri dönün.
 
@@ -897,15 +897,15 @@ case "Action":
 
 Yerinde bu değişikliklerle uygulama çalıştırıldığında her satır olacaktır bir **silmek** düğmesi:
 
-[ ![](table-view-images/delete02.png "Silme düğmeleri olan tablo görünümü")](table-view-images/delete02.png)
+[![](table-view-images/delete02.png "Silme düğmeleri olan tablo görünümü")](table-view-images/delete02.png#lightbox)
 
 Kullanıcı tıkladığında bir **silmek** düğmesi, kendilerine verilen satır silme soran bir uyarı görüntülenir:
 
-[ ![](table-view-images/delete03.png "Bir silme satır Uyarısı")](table-view-images/delete03.png)
+[![](table-view-images/delete03.png "Bir silme satır Uyarısı")](table-view-images/delete03.png#lightbox)
 
 Kullanıcı silme seçerse, satır kaldırılır ve tablo çizilir:
 
-[ ![](table-view-images/delete04.png "Tablonun satır silindikten sonra")](table-view-images/delete04.png)
+[![](table-view-images/delete04.png "Tablonun satır silindikten sonra")](table-view-images/delete04.png#lightbox)
 
 <a name="Data_Binding_Table_Views" />
 
@@ -927,10 +927,10 @@ Bu makalede bir Xamarin.Mac uygulamasında tablo görünümleriyle çalışma ay
 
 - [MacTables (örnek)](https://developer.xamarin.com/samples/mac/MacTables/)
 - [MacImages (örnek)](https://developer.xamarin.com/samples/mac/MacImages/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
-- [Anahat görünümleri](~/mac/user-interface/outline-view.md)
-- [Kaynak listeleri](~/mac/user-interface/source-list.md)
-- [Veri bağlama ve anahtar-değer kodlama](~/mac/app-fundamentals/databinding.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Anahat Görünümleri](~/mac/user-interface/outline-view.md)
+- [Kaynak Listeleri](~/mac/user-interface/source-list.md)
+- [Veri Bağlama ve Anahtar-Değer Kodlaması](~/mac/app-fundamentals/databinding.md)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [NSTableView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTableView_Class/index.html#//apple_ref/doc/uid/TP40004125)
 - [NSTableViewDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSTableViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40008622)

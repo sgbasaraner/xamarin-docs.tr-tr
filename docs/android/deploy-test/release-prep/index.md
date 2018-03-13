@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f36a29b00e0393ac0a2d65e7ebe7d290bbdb89a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Bir uygulama sürüm için hazırlama
 
-<a name="Compile_the_Application_for_Release" />
 
 Bir uygulama kodlanmış ve test sonra paketi dağıtım için hazırlamak üzere gereklidir. Bu paket hazırlama için ilk görev çoğunlukla bazı uygulama özniteliklerini ayarlama kapsar yayın uygulaması oluşturmaktır.
 
@@ -53,13 +52,13 @@ Her Xamarin.Android uygulaması uygulama simgesi belirtme önerilir. Bazı uygul
 
 Visual Studio 2015 ve daha sonra uygulama simgesi üzerinden belirtin **Android derleme bildirimi** proje bölümünü **özellikleri**, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[ ![Uygulama simgesi ayarlayın](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png)
+[![Uygulama simgesi ayarlayın](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Mac için Visual Studio'da da uygulama simgesi üzerinden belirtmek mümkündür **Android uygulaması** bölümünü **proje seçenekleri**, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[ ![Uygulama simgesi ayarlayın](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png)
+[![Uygulama simgesi ayarlayın](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
 
@@ -77,13 +76,13 @@ Sürüm oluşturma, Android uygulaması Bakım ve dağıtım için önemlidir. S
 
 Visual Studio'da bu değerleri ayarlanabilir ' **Android derleme bildirimi** proje bölümünü **özellikleri**, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[ ![Sürüm numarasını ayarlama](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png)
+[![Sürüm numarasını ayarlama](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Bu değerleri aracılığıyla ayarlanabilir **Yapı > Android uygulaması** bölümünü **proje seçenekleri** aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[ ![Sürüm numarasını ayarlama](images/xs/02-versioning-sml.png)](images/xs/02-versioning.png)
+[![Sürüm numarasını ayarlama](images/xs/02-versioning-sml.png)](images/xs/02-versioning.png#lightbox)
 
 -----
 
@@ -93,7 +92,6 @@ Bu değerleri aracılığıyla ayarlanabilir **Yapı > Android uygulaması** bö
 
 Xamarin.Android APKs yapılabilir gereksiz kaldırır Xamarin.Android bağlayıcı bir birleşimi küçük *yönetilen* kodunu ve *ProGuard* Android kaldıran SDK, aracı kullanılmayan *Java bayt*. Derleme işlemi Xamarin.Android bağlayıcı ilk yönetilen kod (C#) düzeyinde uygulamayı iyileştirmek için kullanır ve ardından daha sonra ProGuard (etkinse) Java bayt düzeyinde APK iyileştirmek için kullanır.
 
-<a name="Configure_the_Linker" />
 
 ### <a name="configure-the-linker"></a>Bağlayıcı yapılandırma
 
@@ -107,7 +105,7 @@ Sürüm modu paylaşılan çalışma zamanı devre dışı bırakır ve böylece
 
 Aracılığıyla bağlayıcı seçeneklerini ayarlama **Android seçenekleri** proje bölümünü **özellikleri**:
 
-[ ![Bağlayıcı seçenekleri](images/vs/03-linking-sml.png)](images/vs/03-linking.png)
+[![Bağlayıcı seçenekleri](images/vs/03-linking-sml.png)](images/vs/03-linking.png#lightbox)
 
 **Bağlama** açılır menü bağlayıcı denetlemek için aşağıdaki seçenekleri sağlar:
 
@@ -122,7 +120,7 @@ Aracılığıyla bağlayıcı seçeneklerini ayarlama **Android seçenekleri** p
 
 Aracılığıyla bağlayıcı seçeneklerini ayarlama **bağlayıcı** sekmesinde **Android derleme** bölümünü **proje seçenekleri**, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[ ![Bağlayıcı seçenekleri](images/xs/03-linking-sml.png)](images/xs/03-linking.png)
+[![Bağlayıcı seçenekleri](images/xs/03-linking-sml.png)](images/xs/03-linking.png#lightbox)
 
 Denetleme bağlayıcı seçenekleri aşağıdaki gibidir:
 
@@ -136,7 +134,6 @@ Denetleme bağlayıcı seçenekleri aşağıdaki gibidir:
 
 Bir uygulama yayın modunda bir fiziksel cihazda yeniden test edilmiş önemlidir bağlama istenmeyen bazı yan etkileri üretebilir.
 
-<a name="proguard" />
 
 ### <a name="proguard"></a>ProGuard
 
@@ -148,11 +145,11 @@ Zaman **etkinleştirmek ProGuard** denetlenir Xamarin.Android elde edilen APK ü
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Proguard yapı eylemi](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png)
+[![Proguard yapı eylemi](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Proguard yapı eylemi](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png)
+[![Proguard yapı eylemi](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png#lightbox)
 
 -----
 
@@ -228,7 +225,6 @@ Unutmayın **yerel kod içine paket** seçenektir *değil* yerel koda derlenmiş
 
 **Uygulama Nesne AĞACI derleme** seçenek, bir Enterprise Lisansı gerektirir ya da daha yüksek. **Uygulama Nesne AĞACI derleme** yalnızca zaman proje sürüm modu için yapılandırılır ve varsayılan olarak devre dışıdır kullanılabilir. Uygulama Nesne AĞACI derleme hakkında daha fazla bilgi için bkz: [Uygulama Nesne AĞACI](http://www.mono-project.com/docs/advanced/aot/).
 
-<a name="llvm" />
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM en iyi duruma getirme derleyici
 
@@ -246,31 +242,28 @@ _LLVM en iyi duruma getirme derleyici_ daha küçük ve daha hızlı derlenmiş 
 
 Paketleme özellikler ayarlanabilir **Android seçenekleri** proje bölümünü **özellikleri**, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[ ![Paketleme özellikleri](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png)
+[![Paketleme özellikleri](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Paketleme özellikler ayarlanabilir **proje seçenekleri**, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[ ![Paketleme özellikleri](images/xs/04-packaging-sml.png)](images/xs/04-packaging.png)
+[![Paketleme özellikleri](images/xs/04-packaging-sml.png)](images/xs/04-packaging.png#lightbox)
 
 -----
 
 Bu özelliklerin çoğu gibi **kullanım çalışma zamanı paylaşılan**, ve **kullanım hızlı dağıtım** hata ayıklama modu için tasarlanmıştır. Ancak, uygulama sürüm modu için yapılandırıldığında, vardır nasıl uygulama belirlemek diğer ayarları [boyutunu ve yürütme hızı için en iyi duruma getirilmiş](#shrink_apk), [oynama yapmasını nasıl korumalı](#protect_app)ve nasıl farklı mimari ve boyut kısıtlamaları desteklemek için paketlenebilir.
 
-<a name="Specify_Supported_Architectures" />
 
 ### <a name="specify-supported-architectures"></a>Desteklenen mimariler belirtin
 
 Bir Xamarin.Android uygulaması sürüm için hazırlık yaparken, desteklenen CPU mimarileri belirtmek gereklidir. Tek bir APK makine birden çok desteklemek için içerebilecek farklı mimari. Bkz: [CPU mimarileri](~/android/app-fundamentals/cpu-architectures.md) birden fazla CPU mimari destekleme hakkında ayrıntılar için.
 
-<a name="multiabi" />
 
 ### <a name="generate-one-package-apk-per-selected-abi"></a>Bir paket oluştur (. APK) seçili ABI başına
 
 Bu seçenek etkinleştirildiğinde, bir APK her desteklenen ABI's için oluşturulacak (seçili **Gelişmiş** sekmesinde, açıklandığı gibi [CPU mimarileri](~/android/app-fundamentals/cpu-architectures.md)) tüm desteklenen tek, büyük bir APK yerine ABI ait. Bu seçenek, yalnızca proje sürüm modu için yapılandırıldığında ve varsayılan olarak devre dışıdır.
 
-<a name="multidex" />
 
 ### <a name="multi-dex"></a>Multi-Dex
 
@@ -305,30 +298,30 @@ Yukarıdaki adımların tümünü tamamlandıktan sonra uygulamayı derleyin (se
 
 Yayımlama işlemine başlamak için'nde projeye sağ **Çözüm Gezgini** seçip **arşiv...**  bağlam menüsü öğesini:
 
-[ ![Arşiv uygulama](images/vs/07-archive-for-publishing-sml.png)](images/vs/07-archive-for-publishing.png)
+[![Arşiv uygulama](images/vs/07-archive-for-publishing-sml.png)](images/vs/07-archive-for-publishing.png#lightbox)
 
 **Arşiv...**  başlatır **arşiv Yöneticisi** ve bu ekran görüntüsünde gösterildiği gibi uygulama paketi arşivleme işlemi başlar:
 
-[ ![Archive Manager](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png)
+[![Archive Manager](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png#lightbox)
 
 Bir arşiv oluşturmak için başka bir çözüme sağ yoldur **Çözüm Gezgini** seçip **arşiv tüm...** , çözüm oluşturan ve bir arşiv oluşturabilirsiniz tüm Xamarin projeleri arşivler:
 
-[ ![Tüm arşiv](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png)
+[![Tüm arşiv](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png#lightbox)
 
 
 Her ikisi de **arşiv** ve **arşiv tüm** otomatik olarak başlatma **arşiv Yöneticisi**. Başlatmak için **arşiv Yöneticisi** doğrudan tıklatın **Araçlar > Arşiv Yöneticisi...**  menü öğesi:
 
-[ ![Arşiv Yöneticisi'ni başlatın](images/vs/10-launch-archive-manager-sml.png)](images/vs/10-launch-archive-manager.png)
+[![Arşiv Yöneticisi'ni başlatın](images/vs/10-launch-archive-manager-sml.png)](images/vs/10-launch-archive-manager.png#lightbox)
 
 Çözümün arşivler sağ tıklayarak herhangi bir zamanda **çözüm** düğümü ve seçerek **görünüm arşivler**:
 
-[ ![Görünüm arşivler](images/vs/11-view-archives-sml.png)](images/vs/11-view-archives.png)
+[![Görünüm arşivler](images/vs/11-view-archives-sml.png)](images/vs/11-view-archives.png#lightbox)
 
 ### <a name="the-archive-manager"></a>Arşiv Yöneticisi
 
 **Arşiv Yöneticisi** oluşur bir **çözüm listesi** bölmesinde, bir **arşivler listesi**ve bir **ayrıntılar bölmesini**:
 
-[ ![Arşiv Yöneticisi bölmeleri](images/vs/12-archive-manager-detail-sml.png)](images/vs/12-archive-manager-detail.png)
+[![Arşiv Yöneticisi bölmeleri](images/vs/12-archive-manager-detail-sml.png)](images/vs/12-archive-manager-detail.png#lightbox)
 
 **Çözüm listesi** en az bir arşivlenmiş projesine sahip tüm çözümleri görüntüler. **Çözüm listesi** aşağıdaki bölümleri içerir:
 
@@ -348,11 +341,11 @@ Her ikisi de **arşiv** ve **arşiv tüm** otomatik olarak başlatma **arşiv Y�
 
 Uygulamanın Arşivlenmiş bir sürümü yayımlamaya hazır olduğunda arşive seçme **arşiv Yöneticisi** tıklatıp **Dağıt...**  düğmesi:
 
-[ ![Dağıt düğmesi](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png)
+[![Dağıt düğmesi](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png#lightbox)
 
 **Dağıtım kanal** iletişim uygulaması, bir dağıtım iş akışı İlerleme göstergesi ve dağıtım kanallarına seçimine hakkında bilgileri gösterir. İlk çalıştırılmasında iki seçenek sunulur:
 
-[ ![Dağıtım kanalı seçin](images/vs/14-distribution-channel-sml.png)](images/vs/14-distribution-channel.png)
+[![Dağıtım kanalı seçin](images/vs/14-distribution-channel-sml.png)](images/vs/14-distribution-channel.png#lightbox)
 
 Aşağıdaki dağıtım kanallarına birini mümkündür:
 
@@ -364,15 +357,15 @@ Aşağıdaki dağıtım kanallarına birini mümkündür:
 
 Yayımlama işlemi başlatmak için seçin **Yapı > Arşiv yayımlama**:
 
-[ ![Arşiv yayımlama](images/xs/07-archive-for-publishing-sml.png)](images/xs/07-archive-for-publishing.png)
+[![Arşiv yayımlama](images/xs/07-archive-for-publishing-sml.png)](images/xs/07-archive-for-publishing.png#lightbox)
 
 **Arşiv yayımlama** projesi oluşturur ve bir arşiv dosyasına sunmaktadır. **Arşiv tüm** menü seçeneğini arşivler Çözümdeki tüm archivable projeler. Her iki seçenek otomatik olarak açılmasını **arşiv Yöneticisi** yapı ve paketleme işlemleri tamamlandığında:
 
-[ ![Arşiv görünümü](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png)
+[![Arşiv görünümü](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png#lightbox)
 
 Bu örnekte, **arşiv Yöneticisi** bir uygulama, arşivlenen yalnızca listeler **Uygulamam**. Açıklama alanı arşive kaydedilmesi kısa bir açıklama sağlar dikkat edin. Bir Xamarin.Android uygulaması arşivlenen bir sürümünü yayımlamak için uygulamada seçin **arşiv Yöneticisi** tıklatıp **oturum ve Dağıt...**  yukarıda gösterildiği gibi. Elde edilen **oturum ve Dağıt** iletişim iki seçenek sunar:
 
-[ ![Oturum ve dağıtın](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png)
+[![Oturum ve dağıtın](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png#lightbox)
 
 
 Buradan, dağıtım kanalı seçin mümkündür:
@@ -389,7 +382,7 @@ Buradan, dağıtım kanalı seçin mümkündür:
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Çok çekirdekli aygıtlar ve Xamarin.Android](~/android/deploy-test/multicore-devices.md)
-- [CPU mimarisi](~/android/app-fundamentals/cpu-architectures.md)
+- [CPU Mimarileri](~/android/app-fundamentals/cpu-architectures.md)
 - [AOT](http://www.mono-project.com/docs/advanced/aot/)
 - [Kaynaklar ve kod daraltma](http://developer.android.com/tools/help/proguard.html)
 - [Üzerinde 64 K yöntemleriyle uygulamaları yapılandırma](http://developer.android.com/tools/building/multidex.html)

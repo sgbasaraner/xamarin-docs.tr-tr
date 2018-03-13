@@ -5,18 +5,23 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: f6e80b21c76089c0f3f7ac655584b7e18400307e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-extensions"></a>iOS uzantıları
 
 _İOS 8 sunulan, iOS standart bağlamlarda gibi bildirim merkezi kullanıcı özel klavye istediğinde veya fotoğraf olduklarında sunulmuştur pencere öğeleri uzantıları düzenleme. Tüm uzantıları bir kapsayıcı uygulama ile birlikte yüklenir ve bir ana bilgisayar uygulamasında belirli bir uzantı noktasından etkinleştirilir._
+
+> [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
+
+**Uzantıları, iOS göre oluşturma [Xamarin Üniversitesi](https://university.xamarin.com/)**
 
 Uzantılar, iOS 8 ' tanıtılan özelleştirilmiş `UIViewControllers` , sunulur standart bağlamları içinde iOS tarafından gibi olarak içinde **bildirim Merkezi**gerçekleştirmek için kullanıcı tarafından istenen özel klavye türleri özelleştirilmiş gibi Giriş veya diğer bağlamlarda uzantısı özel efekt filtreleri burada sağlayabilir bir fotoğraf düzenleme gibi.
 
@@ -183,7 +188,7 @@ Belirli türlerdeki uzantıları ek gereksinimleri olabilir. Örneğin, bir **Bu
 
 Aşağıdaki örnekte, bir örnek oluşturur **Bugün** gün ve yıl içinde kalan gün sayısını hesaplar pencere öğesi:
 
-[ ![](extensions-images/carpediemscreenshot-sm.png "Gün ve yıl içinde kalan gün sayısını hesaplar bir örnek bugün pencere öğesi")](extensions-images/carpediemscreenshot.png)
+[![](extensions-images/carpediemscreenshot-sm.png "Gün ve yıl içinde kalan gün sayısını hesaplar bir örnek bugün pencere öğesi")](extensions-images/carpediemscreenshot.png#lightbox)
 
 <a name="Creating-the-Solution" />
 
@@ -193,26 +198,26 @@ Gerekli çözüm oluşturmak için aşağıdakileri yapın:
 
 1. İlk olarak, yeni bir iOS oluşturma **Single View uygulaması** proje ve tıklatın **sonraki** düğmesi: 
 
-    [ ![](extensions-images/today01.png "İlk olarak, yeni iOS, tek görünüm uygulaması projesi oluşturun ve İleri düğmesine tıklayın")](extensions-images/today01.png)
+    [![](extensions-images/today01.png "İlk olarak, yeni iOS, tek görünüm uygulaması projesi oluşturun ve İleri düğmesine tıklayın")](extensions-images/today01.png#lightbox)
 2. Proje çağrısı `TodayContainer` tıklatıp **sonraki** düğmesi: 
 
-    [ ![](extensions-images/today02.png "Proje TodayContainer çağırın ve İleri düğmesine tıklayın")](extensions-images/today02.png)
+    [![](extensions-images/today02.png "Proje TodayContainer çağırın ve İleri düğmesine tıklayın")](extensions-images/today02.png#lightbox)
 3. Doğrulayın **proje adı** ve **SolutionName** tıklatıp **Oluştur** düğmesi çözümü oluşturun: 
 
-    [ ![](extensions-images/today03.png "Proje adı ve SolutionName doğrulayın ve çözüm oluşturmak için Oluştur düğmesine tıklayın")](extensions-images/today03.png)
+    [![](extensions-images/today03.png "Proje adı ve SolutionName doğrulayın ve çözüm oluşturmak için Oluştur düğmesine tıklayın")](extensions-images/today03.png#lightbox)
 4. İleri ' **Çözüm Gezgini**, çözüm üzerinde sağ tıklayın ve yeni bir ekleme **iOS uzantısı** gelen proje **bugün uzantısı** şablonu: 
 
-    [ ![](extensions-images/today04.png "Ardından, Çözüm Gezgini'nde, çözüm üzerinde sağ tıklatın ve bugün uzantısı şablondan yeni bir iOS uzantı projesi ekleme")](extensions-images/today04.png)
+    [![](extensions-images/today04.png "Ardından, Çözüm Gezgini'nde, çözüm üzerinde sağ tıklatın ve bugün uzantısı şablondan yeni bir iOS uzantı projesi ekleme")](extensions-images/today04.png#lightbox)
 5. Proje çağrısı `DaysRemaining` tıklatıp **sonraki** düğmesi: 
 
-    [ ![](extensions-images/today05.png "Proje DaysRemaining çağırın ve İleri düğmesine tıklayın")](extensions-images/today05.png)
+    [![](extensions-images/today05.png "Proje DaysRemaining çağırın ve İleri düğmesine tıklayın")](extensions-images/today05.png#lightbox)
 6. Projeyi gözden geçirin ve tıklatın **oluşturma** düğmesi oluşturmak için: 
 
-    [ ![](extensions-images/today06.png "Projeyi gözden geçirmek ve oluşturmak için Oluştur düğmesine tıklayın")](extensions-images/today06.png)
+    [![](extensions-images/today06.png "Projeyi gözden geçirmek ve oluşturmak için Oluştur düğmesine tıklayın")](extensions-images/today06.png#lightbox)
 
 Sonuçta elde edilen çözüm şimdi aşağıda gösterildiği gibi iki proje sahip olmalıdır:
 
-[ ![](extensions-images/today07.png "Aşağıda gösterildiği gibi sonuçta elde edilen çözüm şimdi iki proje olmalıdır")](extensions-images/today07.png)
+[![](extensions-images/today07.png "Aşağıda gösterildiği gibi sonuçta elde edilen çözüm şimdi iki proje olmalıdır")](extensions-images/today07.png#lightbox)
 
 <a name="Creating-the-Extension-User-Interface" />
 
@@ -228,10 +233,10 @@ Film şeridi ile kullanıcı arabirimini oluşturmak için aşağıdakileri yap�
 
 1. İçinde **Çözüm Gezgini**, uzantı projenin çift `Main.storyboard` dosyayı düzenlemek için açın: 
 
-    [ ![](extensions-images/today08.png "Düzenlemek üzere açmak için uzantı projeleri Main.storyboard dosyasını çift tıklatın")](extensions-images/today08.png)
+    [![](extensions-images/today08.png "Düzenlemek üzere açmak için uzantı projeleri Main.storyboard dosyasını çift tıklatın")](extensions-images/today08.png#lightbox)
 2. UI için şablon tarafından otomatik olarak eklenen etiketi seçin ve bu verin **adı** `TodayMessage` içinde **pencere öğesi** sekmesinde **özellikleri Explorer**: 
 
-    [ ![](extensions-images/today09.png "UI için şablon tarafından otomatik olarak eklenen etiketi seçin ve Özellikler Explorer pencere öğesi sekmesinde adı TodayMessage verin")](extensions-images/today09.png)
+    [![](extensions-images/today09.png "UI için şablon tarafından otomatik olarak eklenen etiketi seçin ve Özellikler Explorer pencere öğesi sekmesinde adı TodayMessage verin")](extensions-images/today09.png#lightbox)
 3. Film şeridi için değişiklikleri kaydedin.
 
 <a name="Using-Code" />
@@ -242,16 +247,16 @@ Kullanıcı Arabiriminde kodu oluşturmak için aşağıdakileri yapın:
 
 1. İçinde **Çözüm Gezgini**seçin **DaysRemaining** proje, yeni bir sınıf ekleyin ve onu çağrısı `CodeBasedViewController`: 
 
-    [ ![](extensions-images/code01.png "Aelect DaysRemaining proje yeni bir sınıf ekleyin ve CodeBasedViewController çağırın")](extensions-images/code01.png)
+    [![](extensions-images/code01.png "Aelect DaysRemaining proje yeni bir sınıf ekleyin ve CodeBasedViewController çağırın")](extensions-images/code01.png#lightbox)
 2. Yeniden, **Çözüm Gezgini**, uzantının çift `Info.plist` dosyayı düzenlemek için açın: 
 
-    [ ![](extensions-images/code02.png "Uzantıları Info.plist dosyasını düzenlemek üzere açmak için çift tıklayın")](extensions-images/code02.png)
+    [![](extensions-images/code02.png "Uzantıları Info.plist dosyasını düzenlemek üzere açmak için çift tıklayın")](extensions-images/code02.png#lightbox)
 3. Seçin **kaynağı görünümü** (ekran Alttan) ve açık `NSExtension` düğümü: 
 
-    [ ![](extensions-images/code03.png "Ekranın alt kısmından kaynağı görünümünü seçin ve NSExtension düğümünü açın")](extensions-images/code03.png)
+    [![](extensions-images/code03.png "Ekranın alt kısmından kaynağı görünümünü seçin ve NSExtension düğümünü açın")](extensions-images/code03.png#lightbox)
 4. Kaldırma `NSExtensionMainStoryboard` anahtarı ve ekleme bir `NSPrincipalClass` değerle `CodeBasedViewController`: 
 
-    [ ![](extensions-images/code04.png "NSExtensionMainStoryboard anahtarı kaldırın ve NSPrincipalClass CodeBasedViewController değeriyle ekleyin")](extensions-images/code04.png)
+    [![](extensions-images/code04.png "NSExtensionMainStoryboard anahtarı kaldırın ve NSPrincipalClass CodeBasedViewController değeriyle ekleyin")](extensions-images/code04.png#lightbox)
 5. Değişikliklerinizi kaydedin.
 
 Ardından, düzenleme `CodeBasedViewController.cs` dosya ve şu şekilde görünür yapın:
@@ -327,7 +332,7 @@ Bu işlem bir uygulama yazma normal işlem nasıl benzer olduğunu unutmayın. B
 
 Bu kılavuz kapsayıcı uygulama yalnızca sevk ve uzantıyı yüklemek için bir yöntem olarak kullanılır ve kendi hiçbir işlevsellik sağlar. TodayContainer's Düzenle `Main.storyboard` dosya ve uzantının işlevi ve nasıl yükleneceği tanımlama biraz metin ekleyin:
 
-[ ![](extensions-images/today10.png "TodayContainers Main.storyboard dosyasını düzenleyin ve uzantıları işlevi ve nasıl yükleneceği tanımlama bazı metin ekleme")](extensions-images/today10.png)
+[![](extensions-images/today10.png "TodayContainers Main.storyboard dosyasını düzenleyin ve uzantıları işlevi ve nasıl yükleneceği tanımlama bazı metin ekleme")](extensions-images/today10.png#lightbox)
 
 Film şeridi için değişiklikleri kaydedin.
 
@@ -337,19 +342,19 @@ Film şeridi için değişiklikleri kaydedin.
 
 İOS Simulator'da uzantınızı test etmek için çalıştırın **TodayContainer** uygulama. Kapsayıcının ana görünüm görüntülenir:
 
-[ ![](extensions-images/run01.png "Ana görünüm görüntülenir kapsayıcıları")](extensions-images/run01.png)
+[![](extensions-images/run01.png "Ana görünüm görüntülenir kapsayıcıları")](extensions-images/run01.png#lightbox)
 
 Ardından, isabet **giriş** açmak için ekranın üstünde aşağı sağdan Simulator düğmesini **bildirim Merkezi**seçin **Bugün** sekmesine ve tıklayın**Düzenle** düğmesi:
 
-[ ![](extensions-images/run02.png "Ekranın üst kısmındaki bildirim merkezi açın, bugün sekmesini seçin ve Düzenle düğmesini tıklatın aşağı sağdan Simulator giriş düğmesini tıklatın")](extensions-images/run02.png)
+[![](extensions-images/run02.png "Ekranın üst kısmındaki bildirim merkezi açın, bugün sekmesini seçin ve Düzenle düğmesini tıklatın aşağı sağdan Simulator giriş düğmesini tıklatın")](extensions-images/run02.png#lightbox)
 
 Ekleme **DaysRemaining** uzantısı **Bugün** görüntülemek ve **Bitti** düğmesi:
 
-[ ![](extensions-images/run03.png "Bugün görünümüne DaysRemaining uzantısı ekleyin ve Bitti düğmesini tıklatın")](extensions-images/run03.png)
+[![](extensions-images/run03.png "Bugün görünümüne DaysRemaining uzantısı ekleyin ve Bitti düğmesini tıklatın")](extensions-images/run03.png#lightbox)
 
 Yeni pencere öğesi eklenecek **Bugün** Görünüm ve sonuçları görüntülenir:
 
-[ ![](extensions-images/run04.png "Yeni pencere öğesi Bugün görünümüne eklenir ve sonuçları görüntülenir")](extensions-images/run04.png)
+[![](extensions-images/run04.png "Yeni pencere öğesi Bugün görünümüne eklenir ve sonuçları görüntülenir")](extensions-images/run04.png#lightbox)
 
 <a name="Communicating-with-the-Host-App" />
 

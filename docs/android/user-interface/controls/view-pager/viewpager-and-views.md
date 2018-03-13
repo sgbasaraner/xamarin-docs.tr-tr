@@ -7,18 +7,17 @@ ms.assetid: 42E5379F-B0F4-4B87-A314-BF3DE405B0C8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: d81f897fb7af39334cec4ea9f806533f09754079
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 9c30cf9d76498e95aba6f9a003bc40c7d14e21de
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="viewpager-with-views"></a>Görünümlerle ViewPager
 
 _ViewPager jestsel Gezinti uygulamanıza olanak sağlayan bir düzen yöneticisidir. Sol ve sağ adıma veri sayfaları aracılığıyla jestsel Gezinti manyetik kullanıcıya sağlar. Bu kılavuz swipeable UI ViewPager ve PagerTabStrip, veri sayfaları olarak görünümleri ile uygulamak nasıl açıklar (bir sonraki kılavuz parçaları sayfalarının için nasıl kullanılacağını kapsar)._
 
-<a name="overview" />
  
 ## <a name="overview"></a>Genel Bakış
 
@@ -27,18 +26,16 @@ Bu kılavuzu kullanmak için adım adım adım bir gösterim sağlar bir kılavu
 Ancak `ViewPager`-tabanlı uygulamaları ile genellikle uygulanır `Fragment`s, bazı görece basit kullanım durumları vardır burada fazladan karmaşıklığını `Fragment`s gerekli değildir. Örneğin, bu örneklerde gösterilen temel görüntü Galerisi uygulama kullanımını gerektirmez `Fragment`s. Çünkü içerik statiktir ve kullanıcı yalnızca swipes farklı resimler arasında ileri ve geri uygulama standart Android görünümleri ve düzenleri kullanarak basit tutulabilir. 
 
 
-<a name="start" />
 
 ## <a name="start-an-app-project"></a>Bir uygulama projesi Başlat
 
 Adlı yeni bir Android projesi oluşturma **TreePager** (bkz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) yeni Android projeler oluşturma hakkında daha fazla bilgi için). Ardından, NuGet Paket Yöneticisi'ni başlatın. (NuGet paketlerini yükleme hakkında daha fazla bilgi için bkz: [izlenecek yol: de dahil olmak üzere bir NuGet projenizdeki](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Bulma ve yükleme **Android destek kitaplığı v4**: 
 
-[![NuGet Paket Yöneticisi'nde seçili ekran desteği v4 Nuget](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png)
+[![NuGet Paket Yöneticisi'nde seçili ekran desteği v4 Nuget](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
 Bu aynı zamanda herhangi bir ek paketler reaquired tarafından yükleyecek **Android destek kitaplığı v4**.
 
 
-<a name="datasource" />
 
 ## <a name="add-an-example-data-source"></a>Bir örnek veri kaynağı ekleme
 
@@ -58,7 +55,6 @@ int imageId = treeCatalog[2].imageId;
 Çünkü uygulama ayrıntılarını `TreeCatalog` anlamak için ilgili olmayan `ViewPager`, `TreeCatalog` kodu buraya listelenmiyor. Kaynak koduna `TreeCatalog` şu adresten edinilebilir [TreeCatalog.cs](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/TreePager/TreePager/TreeCatalog.cs). Bu kaynak dosyasını karşıdan yükleyin (veya kodu kopyalayıp yeni dosyaya yapıştırın **TreeCatalog.cs** dosyası) ve projenize ekleyin. Ayrıca, indirip sıkıştırmasını [görüntü dosyaları](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/TreePager/Resources/tree-images.zip?raw=true) içine, **kaynakları/drawable** klasörü ve projeye ekleyin. 
 
 
-<a name="layout" />
 
 ## <a name="create-a-viewpager-layout"></a>ViewPager düzenini oluşturma
 
@@ -82,8 +78,6 @@ available only from
 [Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);
 it is not available in the Android SDK. 
 
-
-<a name="setup" />
 
 ## Set up ViewPager
 
@@ -115,12 +109,10 @@ Bu kod şunları yapar:
 
 Derleme ve bu kodu çalıştırmak, aşağıdaki ekran görüntüsüne benzer bir ekran görmeniz gerekir: 
 
-[![Boş bir ViewPager görüntüleme uygulamasının ekran görüntüsü](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png)
+[![Boş bir ViewPager görüntüleme uygulamasının ekran görüntüsü](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png#lightbox)
 
 Bu noktada, `ViewPager` içeriğinde erişmek için bir bağdaştırıcı bulunmaması boş olduğundan **TreeCatalog**. Sonraki bölümde bir **PagerAdapter** bağlanmak için oluşturulan `ViewPager` için **TreeCatalog**. 
 
-
-<a name="adapter" />
 
 ## <a name="create-the-adapter"></a>Bağdaştırıcısı oluştur
 
@@ -178,7 +170,6 @@ namespace TreePager
 Bu kod gerekli yerleştirir `PagerAdapter` uygulaması. Aşağıdaki bölümlerde bu yöntemlerin her biri çalışma kodu ile değiştirilir. 
 
 
-<a name="ctor" />
 
 ### <a name="implement-the-constructor"></a>Uygulama Oluşturucu
 
@@ -198,7 +189,6 @@ public TreePagerAdapter (Context context, TreeCatalog treeCatalog)
 Bu oluşturucu amacı bağlam depolamaktır ve `TreeCatalog` örneğine `TreePagerAdapter` kullanır. 
 
 
-<a name="count" />
 
 ### <a name="implement-count"></a>Uygulama sayısı
 
@@ -214,7 +204,6 @@ public override int Count
 `NumTrees` Özelliği `TreeCatalog` veri kümesinde ağaçları (sayfa sayısı) sayısını döndürür.
 
 
-<a name="instantiateitem" />
 
 ### <a name="implement-instantiateitem"></a>Uygulama InstantiateItem
 
@@ -247,7 +236,6 @@ Bu kod şunları yapar:
 Zaman `ViewPager` yansımayı görüntüler `position`, bu görüntüler `ImageView`. Başlangıçta, `InstantiateItem` iki kez görünümleri ilk iki sayfalarıyla doldurmak için çağrılır. Kullanıcı kayarken yeniden görünümler yalnızca arkasında ve şu anda görüntülenen öğenin önünde korumak için çağrılır. 
 
 
-<a name="destroyitem" />
 
 ### <a name="implement-destroyitem"></a>Uygulama DestroyItem
 
@@ -272,7 +260,6 @@ Bu kod şunları yapar:
 3.  Görünümden kaldırır `ViewPager`. 
 
 
-<a name="isviewfromobject" />
 
 ### <a name="implement-isviewfromobject"></a>Implement IsViewFromObject
 
@@ -287,7 +274,6 @@ public override bool IsViewFromObject(View view, Java.Lang.Object obj)
 }
 ```
 
-<a name="addadapter" />
 
 ## <a name="add-the-adapter-to-the-viewpager"></a>Bağdaştırıcı için ViewPager Ekle
 
@@ -301,10 +287,9 @@ Bu kod başlatır `TreePagerAdapter`, içinde geçen `MainActivity` bağlamı ol
 
 Çekirdek uygulamasını tamamlanmıştır &ndash; oluşturmak ve uygulamayı çalıştırın. Sol sonraki ekran görüntüsünde gösterildiği gibi ekranda görüntülenen görüntünün ilk ağaç kataloğun görmeniz gerekir. Daha fazla ağaç görünümleri görmek için sola ağaç katalog geri taşımak için sonra manyetik sağ geçirme: 
 
-[![Ekran görüntüleri, TreePager uygulama ağaç resimler arasında geçirme](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png)
+[![Ekran görüntüleri, TreePager uygulama ağaç resimler arasında geçirme](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
 
 
-<a name="pagetabstrip" />
 
 ## <a name="add-a-pager-indicator"></a>Çağrı cihazı göstergesi Ekle
 
@@ -333,10 +318,9 @@ Açık **Resources/layout/Main.axml** ve ekleme bir `PagerTabStrip` Düzen:
 
 `ViewPager` ve `PagerTabStrip` birlikte çalışmak üzere tasarlanmıştır. Ne zaman bildirdiğiniz bir `PagerTabStrip` içinde bir `ViewPager` düzeni `ViewPager` otomatik olarak bulur `PagerTabStrip` ve bağdaştırıcısına bağlanacak. Derleme ve uygulamayı çalıştırma, boş görmelisiniz `PagerTabStrip` her ekranın en üstünde gösterilir: 
 
-[![Boş bir PagerTabStrip Closeup ekran görüntüsü](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png)
+[![Boş bir PagerTabStrip Closeup ekran görüntüsü](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png#lightbox)
 
 
-<a name="title" />
 
 ### <a name="display-a-title"></a>Bir başlığı görüntüleme
 
@@ -351,23 +335,21 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 Bu kodu belirtilen sayfasından (konum) ağaç kataloğunda ağaç resim yazısı dizesini alır, bir Java dönüştürür `String`ve geri döndüğünde `ViewPager`. Bu yeni yöntemiyle uygulamayı çalıştırdığınızda, her bir sayfa ağaç yazısının görüntüler `PagerTabStrip`. Bir alt çizginin olmadan ekranın üst ağaç adını görmeniz gerekir: 
 
-[![Metin doldurulmuş PagerTabStrip sekmelerle sayfaların ekran görüntüleri](viewpager-and-views-images/05-final-pagetabstrip-sml.png)](viewpager-and-views-images/05-final-pagetabstrip.png)
+[![Metin doldurulmuş PagerTabStrip sekmelerle sayfaların ekran görüntüleri](viewpager-and-views-images/05-final-pagetabstrip-sml.png)](viewpager-and-views-images/05-final-pagetabstrip.png#lightbox)
 
 İleri ve geri katalogda her başlıklı ağaç resmi görmek için doğru çekin. 
 
 
-<a name="pagertitlestrip" />
 
 ### <a name="pagertitlestrip-variation"></a>PagerTitleStrip Variation
 
 `PagerTitleStrip` çok benzer `PagerTabStrip` dışında `PagerTabStrip` şu anda seçili sekmenin altı çizili ekler. Değiştirebileceğiniz `PagerTabStrip` ile `PagerTitleStrip` yukarıdaki düzen ve çalışma yeniden ile nasıl göründüğünü görmek için uygulamaya `PagerTitleStrip`: 
 
-[![PagerTitleStrip alt çizgilerle metinden kaldırıldı](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png)
+[![PagerTitleStrip alt çizgilerle metinden kaldırıldı](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
 
 İçin dönüştürürken, alt çizgi kaldırıldığını unutmayın `PagerTitleStrip`. 
 
 
-<a name="summary" />
  
 ## <a name="summary"></a>Özet
 

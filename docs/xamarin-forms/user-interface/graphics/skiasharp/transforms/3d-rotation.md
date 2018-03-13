@@ -4,14 +4,15 @@ description: "Afin olmayan dönüşümler 2B nesnelere 3D alanda döndürmek iç
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: a959278b5de72792b23e46372b1333362bed91c8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="3d-rotations"></a>3B Döndürme
 
@@ -27,7 +28,7 @@ Bu geliştirmek sabit `SKMatrix` yalnızca iki boyut içinde çalışma Dönüş
 
 Üç boyutlu bir koordinat sistemi kavramsal z adlı üçüncü bir eksen ekler, dik ekranına Z ekseni altındadır. 3B uzaydaki koordinat noktaları üç numaralarıyla belirtilir: (x, y, z). 3B koordinat sistemi X değerleri artırma bu makalede kullanılan sağa doğru olan ve artan Y değerini aşağı, yalnızca iki boyut olduğu gibi gidin. Artan pozitif Z değerleri dışında ekrana gelir. Kaynak 2B grafik olduğu gibi yalnızca sol üst köşesindeki ' dir. Ekranın XY düzlemi dik bu düzlemi için adresindeki Z ekseni ile olarak düşünebilirsiniz.
 
-Bu bir sol koordinat sistemi çağrılır. Noktası varsa, sol taraftaki pozitif X yönünde erişebildiğinizden (sağa) düzenler ve (aşağı), ardından Flash noktalarınızı, Z koordinatları &#x2014; artan yönde artan Y yönünde, Orta parmak düzenler; out ekranından genişletme.
+Bu bir sol koordinat sistemi çağrılır. Pozitif koordinatları (sağında) X yönünde, sol taraftaki erişebildiğinizden noktası ve (aşağı), artan Y yönünde, Orta parmak koordinatları, Flash, Z koordinatları artan yönde işaret — gelen çıkışı genişletme Ekran.
 
 3B grafik dönüşümler 4 x 4 matris üzerinde temel alır. 4 x 4 kimlik matris şöyledir:
 
@@ -109,7 +110,7 @@ Z ekseni etrafında döndürme 2B grafik olduğu gibi aynıdır:
 |    0       0     0  1  |
 </pre>
 
-Döndürme yönünü koordinat sistemini el kullanımı tarafından kapsanır. Sol sistem budur bunu belirli eksen &#x2014; değerlerini artırma doğrultusunda, sol kaydırma noktası X ekseni etrafında döndürme sağa aşağı için dönüş Y ekseni etrafında ve sizin doğru Z ekseni &#x2014; etrafında döndürme Ardından, diğer parmakları eğrisini pozitif açıları dönüş yönünü belirtir.
+Döndürme yönünü koordinat sistemini el kullanımı tarafından kapsanır. Sol sistem budur bunu belirli bir eksen için değerleri artırma doğrultusunda, sol kaydırma noktası — sağındaki X ekseni etrafında döndürme için aşağı dönüş Y ekseni etrafında ve sizin doğru Z ekseni etrafında döndürme için — eğrisini sonra yo diğer parmakları pozitif açıları dönüş yönünü belirtir.
 
 `SKMatrix44` statik genelleştirilmiş [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) ve [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) döndürme oluştuğu eksen belirtmenize olanak veren yöntemleri:
 
@@ -408,7 +409,7 @@ public partial class Rotation3DPage : ContentPage
 
 Dördüncü kaydırıcıyı denerken, farklı derinliği ayarları Nesne Görüntüleyicisi çıktığınızda daha fazla taşımayın, ancak bunun yerine perspektif etkisi kapsamını alter görürsünüz:
 
-[![](3d-rotation-images/rotation3d-small.png "Üçlü sayfasının ekran görüntüsü döndürme 3B")](3d-rotation-images/rotation3d-large.png "Üçlü sayfasının ekran görüntüsü döndürme 3B")
+[![](3d-rotation-images/rotation3d-small.png "Üçlü sayfasının ekran görüntüsü döndürme 3B")](3d-rotation-images/rotation3d-large.png#lightbox "Üçlü sayfasının ekran görüntüsü döndürme 3B")
 
 **Animasyonlu döndürme 3B** de kullanır `SKMatrix44` bir metin dizesi 3B uzaydaki animasyon uygulamak için. `textPaint` Nesne metnin sınırları belirlemek için kullanılan bir alan oluşturucuda gibi ayarlayın:
 
@@ -442,7 +443,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing` Geçersiz kılma tanımlayan üç Xamarin.Forms `Animation` hale getirmeyi nesnelere `xRotationDegrees`, `yRotationDegrees`, ve `zRotationDegrees` farklı hızlarda alanları. Animasyonlarına dönemlerini asal sayılar &#x2014; olarak ayarlanır; 5 saniye, 7 saniye ve 11 saniye &#x2014; Genel birleşimi yalnızca her 385 saniye ya da 10 dakikadan fazla yinelenecek şekilde:
+`OnAppearing` Geçersiz kılma tanımlayan üç Xamarin.Forms `Animation` hale getirmeyi nesnelere `xRotationDegrees`, `yRotationDegrees`, ve `zRotationDegrees` farklı hızlarda alanları. Animasyonlarına dönemlerini numaraları hazırlamak için ayarlanır — 7 saniye ve 11 saniye 5 saniye — her 385 saniye ya da 10 dakikadan daha genel birleşimi yalnızca yinelenecek şekilde:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -532,7 +533,7 @@ public class AnimatedRotation3DPage : ContentPage
 
 Bu 3B Döndürme Dönüş merkezini ekranın merkezine taşımanızı ve ekran aynı genişliğe olmasını metin dizesi boyutunu ölçeklendirmek için birçok 2B dönüşümler ile çevrelenmiş:
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Üçlü sayfasının ekran görüntüsü animasyonlu döndürme 3B")](3d-rotation-images/animatedrotation3d-large.png "Üçlü sayfasının ekran görüntüsü animasyonlu döndürme 3B")
+[![](3d-rotation-images/animatedrotation3d-small.png "Üçlü sayfasının ekran görüntüsü animasyonlu döndürme 3B")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Üçlü sayfasının ekran görüntüsü animasyonlu döndürme 3B")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

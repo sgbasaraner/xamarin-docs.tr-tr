@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5df7c2bbc7be1089795c94b6f639bd4556b49366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="events-protocols-and-delegates"></a>Olaylar, protokolleri ve temsilciler
 
@@ -32,7 +32,7 @@ Bu konular hakkında öğreneceksiniz bu makalede, sağlam bir temel Xamarin.iOS
 
 Protokoller ve temsilciler göstermek için biz aşağıda gösterildiği gibi ek açıklamanın Haritası ekler bir basit harita uygulaması derlemeyi:
 
- [ ![](delegates-protocols-and-events-images/01-map.png "Ek açıklamanın Haritası ekler basit harita uygulaması örneği") ](delegates-protocols-and-events-images/01-map.png) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "bir eşlemesine eklenen bir örnek ek açıklaması")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/01-map.png "Ek açıklamanın Haritası ekler basit harita uygulaması örneği") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "bir eşlemesine eklenen bir örnek ek açıklaması")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Bu uygulama tackling önce .NET olayları Uıkit altında bakarak başlayalım.
 
@@ -59,15 +59,15 @@ aButton.TouchUpInside += delegate {
 
 Önceki kod yukarı UIViewContoller ViewDidLoad yönteminde kablolu ise. İOS Tasarımcısı veya koduyla ekleyebilirsiniz bir düğme aButton değişkenine başvuruyor. Bu makalede eşlik örnekten gerçekleştirilecek iOS Tasarımcısı, eklenen aşağıdaki şekilde bu düğme gösterilmektedir:
 
- [ ![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "İOS Tasarımcısı eklenen bir düğme")](delegates-protocols-and-events-images/02-interface-builder-outlet.png)
+ [![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "İOS Tasarımcısı eklenen bir düğme")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
 Xamarin.iOS, kodunuzu bir denetimle oluşan etkileşim bağlanma hedef eylem stili de destekler. Merhaba düğmesi için bir hedef eylem oluşturmak için çift iOS Tasarımcısı tıklatın. UIViewController'ın arka plan kod dosyasına görüntülenir ve geliştirici INSERT bağlantı yöntemi için bir konum seçin istenir:
 
- [ ![](delegates-protocols-and-events-images/03-interface-builder-action.png "UIViewControllers arka plan kod dosyası")](delegates-protocols-and-events-images/03-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/03-interface-builder-action.png "UIViewControllers arka plan kod dosyası")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
 
 Konumu seçtikten sonra yeni bir yöntem oluşturulur ve kablolu denetime yukarı. Düğme tıklatıldığında aşağıdaki örnekte, bir ileti konsola yazılır:
 
- [ ![](delegates-protocols-and-events-images/05-interface-builder-action.png "Düğme tıklatıldığında bir ileti konsola yazılır")](delegates-protocols-and-events-images/05-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/05-interface-builder-action.png "Düğme tıklatıldığında bir ileti konsola yazılır")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
 Hedef eylem bölümü iOS hedef eylem desen hakkında daha fazla ayrıntı için bkz: " [iOS için uygulama yetkinlikleri çekirdek](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)" Apple iOS Geliştirici Kitaplığı'nda.
 
@@ -170,7 +170,7 @@ Xamarin.iOS Objective-C protokolünden kullanarak örnek bir göz atalım. Bu ö
 
 Bu şekilde `MKAnnotation` Protokolü açıklamanın eşlik ilgili veri sağlamak için kullanılır. Ek açıklama kendisi için gerçek görünümü uyarlar nesnesindeki veri oluşturulur `MKAnnotation` protokolü. Örneğin, kullanıcı (aşağıdaki ekran görüntüsünde gösterildiği gibi) ek açıklamayı dokunur açtığınızda görüntülenen belirtme çizgisi için metin alanından gelir `Title` protokolü uygulayan sınıf özelliği:
 
- [ ![](delegates-protocols-and-events-images/04-annotation-with-callout.png "Ek açıklamayı kullanıcı dokunur zaman belirtme çizgisi için metin örneği")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "Ek açıklamayı kullanıcı dokunur zaman belirtme çizgisi için metin örneği")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Derin Dalış protokolleri, sonraki bölümde açıklandığı gibi Xamarin.iOS protokolleri soyut sınıflar bağlar. İçin `MKAnnotation` ilişkili C# sınıfı protokolü, adlandırılan `MKAnnotation` adını protokolü ve onu taklit etmek üzere sınıfıdır `NSObject`, CocoaTouch için kök taban sınıfı. Protokol alıcı hem de ayarlayıcı koordinatı uygulanacak gerektirir; Ancak, başlık ve alt başlık isteğe bağlıdır. Bu nedenle, içinde `MKAnnotation` sınıfı, `Coordinate` özelliği *soyut*, uygulanması için gerektiren ve `Title` ve `Subtitle` özellikleri işaretlenir *sanal* , bunları isteğe bağlı, aşağıda gösterildiği gibi yapma:
 
@@ -428,7 +428,7 @@ Sonraki nasıl C# arabirimlerinden farklı ve Xamarin.iOS bunları nasıl kullan
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Protokolleri, temsilciler ve olaylar (örnek)](https://developer.xamarin.com/samples/Protocols_Delegates_Events/)
-- [Merhaba, iOS](~/ios/get-started/hello-ios/index.md)
+- [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Bağlama Objective-C türleri](~/ios/platform/binding-objective-c/index.md)
 - [Objective-C programlama dili](http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
 - [4 xcode'da kullanıcı arabirimleri tasarlama](http://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)

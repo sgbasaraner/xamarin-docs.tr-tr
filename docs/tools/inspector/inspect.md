@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: bd6d47f98435cc68ecf4156423526c31dbac09da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c923208b7ca4d41914504b4b0aa0687db1d49f01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="inspecting-live-applications"></a>Canlı uygulamaları inceleniyor
 
@@ -27,11 +27,11 @@ Dinamik uygulama İnceleme Kurumsal müşteriler için kullanılabilir.
 
 
 
-[ ![](inspect-images/mac-heres-the-button.png "IDE araç çubuğunda denetle düğmesine tıklayın")](inspect-images/mac-heres-the-button.png)
+[![](inspect-images/mac-heres-the-button.png "IDE araç çubuğunda denetle düğmesine tıklayın")](inspect-images/mac-heres-the-button.png#lightbox)
 
 Yeni bir REPL istemiyle yeni bir Xamarin denetçisi istemci penceresi açılır.
 
-[ ![](inspect-images/inspector-0.7.0-map-inspect-small.png "Yeni bir Xamarin denetçisi istemci penceresi açılacaktır, yeni bir REPL istemiyle")](inspect-images/inspector-0.7.0-map-inspect.png)
+[![](inspect-images/inspector-0.7.0-map-inspect-small.png "Yeni bir Xamarin denetçisi istemci penceresi açılacaktır, yeni bir REPL istemiyle")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
 Bu pencere göründükten sonra yürütme ve C# deyimleri ve ifadeler değerlendirmek için kullanabileceğiniz etkileşimli bir C# istemi sahip. Bu benzersiz kılan kod hedef işlem bağlamında değerlendirilir olur. Bu durumda, biz görüntülenen iOS uygulamaya karşı çalışan kodu gösteriliyor.
 

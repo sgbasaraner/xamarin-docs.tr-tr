@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: acdcdc2b76a995ca324532c6a034b2fdf8e21db5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4747fb73358a60d10832a1e650acd90a5a4274d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS güvenlik ve gizlilik özellikleri
 
@@ -76,7 +76,7 @@ Aşağıdaki gizlilik anahtarların ilgili:
 
 İOS 10 (ve büyük) HomeKit erişme aşağıdaki örnek almak, geliştirici eklemeniz gerekecektir `NSHomeKitUsageDescription` uygulamanın anahtar `Info.plist` dosya ve uygulama neden isteyen kullanıcının HomeKit veritabanına erişmek için bildirme bir dize sağlayın. Bu dize, kullanıcılarınız uygulamayı çalıştırmadan kullanıcı ilk zamanı sunulur:
 
-[ ![](security-privacy-images/info01.png "Bir örnek NSHomeKitUsageDescription uyarı")](security-privacy-images/info01.png)
+[![](security-privacy-images/info01.png "Bir örnek NSHomeKitUsageDescription uyarı")](security-privacy-images/info01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -87,7 +87,7 @@ Visual Studio geçerli Xamarin.iOS güvenlik geliştirmesi düzenleme desteklemi
 3. Gerekli açıklama sağlamak için aşağıdaki düğüm ekleyin: `<string>Allows the app to control HomeKit enabled devices.</string>`
 4. `Info.plist` Dosya, aşağıdaki gibi görünmelidir: 
 
-    [ ![](security-privacy-images/info02vs.png "Info.plist dosyasını aşağıdaki gibi görünmelidir.")](security-privacy-images/info02vs.png)
+    [![](security-privacy-images/info02vs.png "Info.plist dosyasını aşağıdaki gibi görünmelidir.")](security-privacy-images/info02vs.png#lightbox)
 4. Değişiklikleri dosyaya kaydedin.
 5. Visual Studio'ya geri dönün ve uygulamayı yeniden derleyebilirsiniz kullanıcının.
 
@@ -100,10 +100,10 @@ Herhangi bir gizlilik anahtarı ayarlamak için aşağıdakileri yapın:
 3. Yeni bir ekleme **girişi** listesi.
 4. Gizlilik anahtarı açılır listeden seçin (gibi **gizlilik - HomeKit kullanım açıklama**): 
 
-    [ ![](security-privacy-images/info02.png "Gizlilik anahtarı seçin")](security-privacy-images/info02.png)
+    [![](security-privacy-images/info02.png "Gizlilik anahtarı seçin")](security-privacy-images/info02.png#lightbox)
 5. Uygulama neden belirli özellik ya da kullanıcı bilgileri erişmek istiyor için bir açıklama girin: 
 
-    [ ![](security-privacy-images/info03.png "Bir açıklama girin")](security-privacy-images/info03.png)
+    [![](security-privacy-images/info03.png "Bir açıklama girin")](security-privacy-images/info03.png#lightbox)
 6. Değişiklikleri dosyaya kaydedin.
 
 -----

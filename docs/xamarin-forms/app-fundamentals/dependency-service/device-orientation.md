@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: ee91f0ebdc07f03831ae95a4b8ae6f85c3eb549e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d23f29fbfb51473ff5f89f27c0bfd621cfffbce0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="checking-device-orientation"></a>Cihaz yönlendirmesini denetleniyor
 
@@ -29,7 +29,7 @@ Uygulamayı kullanarak `DependencyService` aşağıdaki yapı ayarlanmıştır:
 ![](device-orientation-images/orientation-diagram.png "DependencyService uygulama yapısı")
 
 > [!NOTE]
-> **Not:** gösterildiği gibi cihaz paylaşılan kodda dikey veya yatay yönde olup olmadığını algılamak mümkündür içinde [aygıt Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation) . Bu makalede açıklanan yöntemi yerel özellikleri cihazın ters olup olmadığı dahil olmak üzere yönlendirme hakkında daha fazla bilgi almak için kullanır.
+> Cihaz dikey veya yatay yönde paylaşılan kodda gösterildiği gibi gerekmediğini mümkündür içinde [aygıt Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). Bu makalede açıklanan yöntemi yerel özellikleri cihazın ters olup olmadığı dahil olmak üzere yönlendirme hakkında daha fazla bilgi almak için kullanır.
 
 <a name="Creating_the_Interface" />
 
@@ -57,7 +57,7 @@ namespace DependencyServiceSample.Abstractions
 Bu arabirim paylaşılan kodda karşı kodlama Xamarin.Forms uygulaması her platformda cihaz yönlendirmesini API'leri erişmesine izin verir.
 
 > [!NOTE]
-> **Not**: arabirimini uygulayan sınıflar çalışmak için parametresiz bir oluşturucusu olmalıdır `DependencyService`.
+> Arabirimini uygulayan sınıflar çalışmak için parametresiz bir oluşturucusu olmalıdır `DependencyService`.
 
 <a name="iOS_Implementation" />
 
@@ -224,4 +224,4 @@ Bu uygulamayı iOS, Android veya Windows platformları çalıştıran ve düğme
 
 - [DependencyService (örnek) kullanma](https://developer.xamarin.com/samples/UsingDependencyService)
 - [DependencyService (örnek)](https://developer.xamarin.com/samples/DependencyService/DependencyServiceSample/)
-- [Xamarin.Forms örnekleri](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms Örnekleri](https://github.com/xamarin/xamarin-forms-samples)

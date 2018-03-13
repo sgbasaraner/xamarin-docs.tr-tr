@@ -3,14 +3,15 @@ title: "Bölüm 15 özeti. Etkileşimli arabirimi"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: e6c61f9a6ba66db2b9a5c7b217c7da952607e709
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 37bbbf2b89048db175ddc1b3b1a24cea92b898a7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Bölüm 15 özeti. Etkileşimli arabirimi
 
@@ -105,7 +106,7 @@ Başlatma `Slider` özellikleri neden olabilecek `Value` değiştirmek için öz
 
 [ **RgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/RgbSliders) programı içeren üç `Slider` RGB değerleri belirterek bir renk etkileşimli olarak seçmenize olanak öğeleri:
 
-[![Üçlü ekran görüntüsü R G B kaydırıcılar](images/ch15fg03-small.png "RGB kaydırıcılar")](images/ch15fg03-large.png "RGB kaydırıcılar")
+[![Üçlü ekran görüntüsü R G B kaydırıcılar](images/ch15fg03-small.png "RGB kaydırıcılar")](images/ch15fg03-large.png#lightbox "RGB kaydırıcılar")
 
 [ **TextFade** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/TextFade) örnek kullanan iki `Slider` iki taşımak için öğeleri `Label` öğeler arasında bir `AbsoluteLayout` ve diğer birine silinerek.
 
@@ -266,5 +267,5 @@ Ayarlayabileceğiniz `DateTime` özellikleri özelliği öğeleri olarak ifade e
 
 - [Bölüm 15 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)
 - [Bölüm 15 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
-- [Giriş](~/xamarin-forms/user-interface/text/entry.md)
-- [Düzenleyicisi](~/xamarin-forms/user-interface/text/editor.md)
+- [Girdi](~/xamarin-forms/user-interface/text/entry.md)
+- [Düzenleyici](~/xamarin-forms/user-interface/text/editor.md)

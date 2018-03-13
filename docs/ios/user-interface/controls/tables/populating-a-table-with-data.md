@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: fb0e4341d8d8ad0719f35c691add9bad1d3f85a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe62b917946dda4cf669f5b15c91a5e3b596a0fc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-table-with-data"></a>Bir tablo verilerle doldurma
 
@@ -88,7 +88,7 @@ public override void ViewDidLoad ()
 
 Ortaya çıkan tabloda şöyle görünür:
 
- [ ![](populating-a-table-with-data-images/image3.png "Çalışan örnek tablo")](populating-a-table-with-data-images/image3.png)
+ [![](populating-a-table-with-data-images/image3.png "Çalışan örnek tablo")](populating-a-table-with-data-images/image3.png#lightbox)
 
 Çoğu tabloları seçin ve (örneğin, bir tıklatın ya da bir kişi arama veya başka bir ekranını gösteren) başka bir eylemi gerçekleştirmek için bir satır touch izin verin. Bunu başarmak için yapmamız gereken birkaç nokta vardır. İlk olarak, kullanıcı tıkladığınızda bir satırda aşağıdakileri ekleyerek bir ileti görüntülemek için bir AlertController oluşturalım `RowSelected` yöntemi:
 
@@ -140,7 +140,7 @@ Kullanıcı bir satır şimdi touch ve bir uyarı görünür:
 
 
 
- [ ![](populating-a-table-with-data-images/image4.png "Satır Seçili uyarıyı")](populating-a-table-with-data-images/image4.png)
+ [![](populating-a-table-with-data-images/image4.png "Satır Seçili uyarıyı")](populating-a-table-with-data-images/image4.png#lightbox)
 
 
 ## <a name="cell-reuse"></a>Hücre yeniden kullanma
@@ -220,7 +220,7 @@ Yukarıda açıklandığı konuları örnekleri görebilirsiniz **BasicTable** �
 
 Bir dizin dizin oluşturabilirsiniz ancak genellikle alfabetik sıraya göre uzun listeleriyle kaydırma yapmasına yardımcı istediğiniz herhangi bir ölçüte göre. **BasicTableIndex** örnek kadar uzun bir liste öğeleri dizini göstermek için bir dosyadan yükler. Dizindeki her öğe bir 'bölümüne' tablosunun karşılık gelir.
 
- [ ![](populating-a-table-with-data-images/image5.png "Dizin görüntüleme")](populating-a-table-with-data-images/image5.png)
+ [![](populating-a-table-with-data-images/image5.png "Dizin görüntüleme")](populating-a-table-with-data-images/image5.png#lightbox)
 
 'Tablo ardındaki verileri gereken Gruplanacak, BasicTableIndex örnek oluşturur bölümler' desteklemek için bir `Dictionary<>` sözlük anahtar olarak her öğenin ilk harfini kullanarak dizeleri dizisinden:
 
@@ -270,7 +270,7 @@ Dizinleri genellikle yalnızca düz tablo stiliyle kullanılır.
 Üstbilgiler ve altbilgiler tablodaki satırları görsel olarak gruplandırmak için kullanılabilir. Gerekli veri yapısı bir dizin ekleme ile çok benzer – bir `Dictionary<>` gerçekten iyi çalışır. Hücreleri grubuna alfabe kullanmak yerine, bu örnek et botanical türüne göre gruplandırır.
 Çıktı şu şekildedir:
 
- [ ![](populating-a-table-with-data-images/image6.png "Örnek üstbilgiler ve altbilgiler")](populating-a-table-with-data-images/image6.png)
+ [![](populating-a-table-with-data-images/image6.png "Örnek üstbilgiler ve altbilgiler")](populating-a-table-with-data-images/image6.png#lightbox)
 
 Üstbilgiler ve altbilgiler görüntülenecek `UITableViewSource` alt bu ek yöntemleri gerektirir:
 

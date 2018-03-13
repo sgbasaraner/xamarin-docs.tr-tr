@@ -6,11 +6,12 @@ ms.assetid: 3528E195-AA74-90AF-B5F3-3B65FB4F0BB8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: 01a45f02d340effe69d1cb0cff7f0d8e5ca7bef6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: bfbd95d33e442d31e94bd8c6ed888741f88d1188
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="linking-on-android"></a>Android bağlama
 
@@ -52,7 +53,6 @@ Bağlama ile sürüm: </td>
 
 % 30 bir paket sonuçlarında 1.2.0 özgün (bağlantısız) paketinde boyutunu ve 4.0.1 bağlantısız paketinde %18 bağlanıyor.
 
- <a name="Control" />
 
 
 ## <a name="control"></a>Denetim
@@ -77,7 +77,6 @@ public class MyActivity {
 }
 ```
 
-<a name="Linker_Behavior" />
 
 ### <a name="linker-behavior"></a>Bağlayıcı davranışı
 
@@ -115,7 +114,6 @@ E/mono    (17755):   at Android.App.Activity.n_OnCreate_Landroid_os_Bundle_ (Int
 E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-ca83a5d7a124 (intptr,intptr,intptr)
 ```
 
-<a name="PreserveAttribute" />
 
 ### <a name="preserving-code"></a>Kod koruma
 
@@ -177,7 +175,6 @@ namespace Android.Runtime
 ```
 
 
-<a name="falseflag" />
 
 ### <a name="falseflag"></a>falseflag
 
@@ -202,7 +199,6 @@ class MyActivity {
 ```
 
 
-<a name="linkskip" />
 
 ### <a name="linkskip"></a>linkskip
 
@@ -214,7 +210,6 @@ Kullanıcı tarafından sağlanan derlemeler kümesini, ile atlanacak diğer kul
 </PropertyGroup>
 ```
 
-<a name="LinkDescription" />
 
 ### <a name="linkdescription"></a>LinkDescription
 
@@ -223,7 +218,6 @@ Kullanıcı tarafından sağlanan derlemeler kümesini, ile atlanacak diğer kul
 dosya. Özel bağlayıcı yapılandırma gereken dosyaları korumak için `internal` veya `private` korunması gereken üyeleri.
 
 
-<a name="Custom_Attributes" />
 
 ### <a name="custom-attributes"></a>Özel Öznitelikler
 
@@ -254,5 +248,5 @@ Bir derlemeyi bağlandığında, sürümdeki tüm üyelerinden türleri kaldır�
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Özel Bağlayıcı yapılandırması](~/cross-platform/deploy-test/linker.md)
+- [Özel Bağlayıcı Yapılandırması](~/cross-platform/deploy-test/linker.md)
 - [İos'ta bağlama](~/ios/deploy-test/linker.md)

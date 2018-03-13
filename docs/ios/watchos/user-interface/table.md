@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4887b9a42c5a855353b5a4e422559aafcdc68173
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="table-control"></a>Tablo denetim
 
@@ -24,7 +24,7 @@ WatchOS `WKInterfaceTable` denetimi iOS karşılığı çok daha kolaydır, anca
 
 Sürükleme **tablo** bir Sahne denetime. Varsayılan olarak bu (tek belirtilmeyen satır düzeni gösteren gibi) görünür:
 
-[ ![](table-images/add-table-sml.png "Bir tablo ekleme")](table-images/add-table.png)
+[![](table-images/add-table-sml.png "Bir tablo ekleme")](table-images/add-table.png#lightbox)
 
 Tablo bir ad verin **özellikleri** paneli'nın **adı** kutusunda, böylece bu kodda başvurulabilen.
 
@@ -34,7 +34,7 @@ Tablonun otomatik olarak içeren bir satır denetleyicisi tarafından temsil edi
 
 Ayarlamak için **sınıfı** satır denetleyici için satır seçtikten **belge anahattı** ve bir sınıf adı yazın **özellikleri** paneli:
 
-[ ![](table-images/add-row-controller-sml.png "Bir sınıf adı özellikleri defterinde girme")](table-images/add-row-controller.png)
+[![](table-images/add-row-controller-sml.png "Bir sınıf adı özellikleri defterinde girme")](table-images/add-row-controller.png#lightbox)
 
 Sıranın denetleyicisi için sınıf ayarladıktan sonra IDE karşılık gelen bir C# dosyasına projesi oluşturun. Denetimleri (örneğin, etiketleri) satırın sürükleyin ve bunlar kodda başvurulabilen şekilde adlar verin.
 

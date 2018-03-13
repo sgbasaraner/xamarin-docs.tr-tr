@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e95cf18c281732c85c2029e4ff35e8dd8be0f5e2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a56cc080ac04c45ef3f0fcc6c7c89096a08beddf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>NuGet için yeni bir çok platformlu kitaplığı oluşturma
 
@@ -30,21 +30,21 @@ Platforma özgü işlevselliği, daha sonra gerekirse [platforma özgü projeler
 
 2. Seçin **Multiplatform Kitaplığı** gelen **Multiplatform > Kitaplığı** bölümü:
 
-  [ ![](single-codebase-images/mulitplatform-library-sml.png "Tek bir kod tabanının için birden çok platform kitaplığı yapılandırma")](single-codebase-images/mulitplatform-library.png)
+  [![](single-codebase-images/mulitplatform-library-sml.png "Tek bir kod tabanının için birden çok platform kitaplığı yapılandırma")](single-codebase-images/mulitplatform-library.png#lightbox)
 
 3. Girin bir **adı** ve **açıklama**ve seçin **tüm platformlar için tek**:
 
-  [ ![](single-codebase-images/single-configure-sml.png "Tek bir kod tabanının için birden çok platform kitaplığı yapılandırma")](single-codebase-images/single-configure.png)
+  [![](single-codebase-images/single-configure-sml.png "Tek bir kod tabanının için birden çok platform kitaplığı yapılandırma")](single-codebase-images/single-configure.png#lightbox)
 
 4. Sihirbazı tamamlayın. Bir tek kitaplığı projesi çözümde oluşturulur.
 
 5. Yeni Kitaplık projeye sağ tıklayın ve ardından **seçenekleri**. **Yapı > Genel** bölümü sağlar **hedef Framework** ayarlanacak – bir .NET taşınabilir PCL profili ya da .NET standart sürümünü seçin:
 
-  [ ![](single-codebase-images/single-choose-type-sml.png "PCL veya .NET standart kitaplık türünü seçin")](single-codebase-images/single-choose-type.png)
+  [![](single-codebase-images/single-choose-type-sml.png "PCL veya .NET standart kitaplık türünü seçin")](single-codebase-images/single-choose-type.png#lightbox)
 
 6. Ayrıca, **proje seçenekleri** penceresi açık **NuGet paketi > meta veri** bölümünde ve girin [gerekli meta veriler](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) (yanı sıra tüm isteğe bağlı meta veriler):
 
-  [ ![](single-codebase-images/single-metadata-sml.png "Gerekli meta veriler girin")](single-codebase-images/single-metadata.png)
+  [![](single-codebase-images/single-metadata-sml.png "Gerekli meta veriler girin")](single-codebase-images/single-metadata.png#lightbox)
 
 7. Kitaplık projeye sağ tıklayın ve seçin **NuGet paketi oluştur** (veya derleme ya da çözümü dağıtmak) ve **.nupkg** NuGet paket dosyasının kaydedileceği **/bin/** klasör (hata ayıklama veya yayın yapılandırmasına bağlı olarak):
 
@@ -61,17 +61,17 @@ Bu ekran yalnızca tek bir PCL derleme dahil bir PCL tabanlı NuGet – içeriğ
 
 <a name="add-platforms" />
 
-# <a name="adding-platform-specific-code"></a>Platforma özgü kod ekleme
+## <a name="adding-platform-specific-code"></a>Platforma özgü kod ekleme
 
 PCL tabanlı projeleri ve .NET standart tabanlı projeler platforma özgü başvurular (örneğin, iOS veya Android işlevselliği) içeremez.
 
 Varolan bir PCL veya .NET standart projesi platforma özgü kodu içerecek şekilde genişletilmiş gerekiyorsa, bu projeye sağ tıklayıp seçerek yapılabilir **Ekle > Platform uygulaması Ekle...** :
 
-[ ![](single-codebase-images/add-later-sml.png "Platform uygulaması menü ekleme")](single-codebase-images/add-later.png)
+[![](single-codebase-images/add-later-sml.png "Platform uygulaması menü ekleme")](single-codebase-images/add-later.png#lightbox)
 
 Bir veya daha fazla platform projeleri çözüme eklenebilir ve mevcut PCL ya da .NET standart kitaplığını isteğe bağlı olarak paylaşılan bir projeye dönüştürülebilir:
 
-[ ![](single-codebase-images/add-later-platforms-sml.png "İOS, Android ve paylaşılan proje gibi platformu seçenekleri ekleme")](single-codebase-images/add-later-platforms-sml.png)
+[![](single-codebase-images/add-later-platforms-sml.png "İOS, Android ve paylaşılan proje gibi platformu seçenekleri ekleme")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
 Paylaşılan bir projeye dönüştürdükten sonra ziyaret **proje Seçenekleri > NuGet paketini > başvuru derlemeleri**
 [bölüm](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md) ve gereken tüm profiller seçilir emin olun (böylece NuGet içinde daha önce kullanılmış projeleri ile uyumlu olacak şekilde devam eder).

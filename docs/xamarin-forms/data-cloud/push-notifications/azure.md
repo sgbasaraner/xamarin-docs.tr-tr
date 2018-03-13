@@ -5,32 +5,35 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1EF400F-73F4-43E9-A0C3-1569A0F34A3B
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: cccbe64f69b926ced77403bcf85540ef1060dbac
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f0f767179a9280d7a6c6d7ce8125696d5e664cba
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Azure Mobile Apps anında iletme bildirimleri gönderme
 
 _Azure bildirim hub'ları, mobil anında iletme bildirimleri herhangi arka ucundan mobil herhangi bir platform için farklı platform bildirim sistemleri ile iletişim kurmak zorunda kalmadan bir arka uç karmaşıklığını ortadan sırasında göndermek için ölçeklenebilir bir gönderim altyapısı sağlar. Bu makalede, Azure Notification Hubs bir Xamarin.Forms uygulaması için bir Azure Mobile Apps örnekten anında iletme bildirimleri göndermek için nasıl kullanılacağı açıklanmaktadır._
 
-## <a name="overview"></a>Genel Bakış
+> [!VIDEO https://youtube.com/embed/le2lDY22xwM]
+
+**Azure bildirim hub'ı ve Xamarin.Forms, göre anında [Xamarin Üniversitesi](https://university.xamarin.com/)**
 
 Anında iletme bildirimi, bir uygulamaya bir mobil cihazda uygulama katılımı ve kullanımı artırmak için bir arka uç sistemden bir ileti gibi bilgiler sunmak için kullanılır. Bile kullanıcının etkin bir şekilde hedeflenen uygulama kullanmadığında bildirim sırasında her zaman, gönderilebilir.
 
 Arka uç sistemleri anında iletme bildirimleri mobil cihazlara Platform bildirim sistemlerinin (PNS) aracılığıyla aşağıdaki çizimde gösterildiği gibi gönderin:
 
-[![](azure-images/pns.png "Platform bildirim sistemleri")](azure-images/pns-large.png "Platform bildirim sistemleri")
+[![](azure-images/pns.png "Platform bildirim sistemleri")](azure-images/pns-large.png#lightbox "Platform bildirim sistemleri")
 
 Anında iletme bildirimi göndermek için arka uç sistem için bir istemci uygulaması örneğini bildirim göndermek için platforma özgü PNS'ye bağlanır. Platformlar arası anında iletme bildirimleri gereklidir, arka uç her platforma özgü PNS API ve protokolü kullanmanız gerekir çünkü bu önemli ölçüde arka uç karmaşıklığını artırır.
 
 Azure bildirim hub'ları bu karmaşıklık farklı platform bildirim sistemleri ayrıntılarını özetleyen tarafından aşağıdaki çizimde gösterildiği gibi tek bir API çağrısı ile gönderilmek üzere bir platformlar arası bildirim izin vererek kaldırın:
 
-[![](azure-images/notification-hub.png)](azure-images/notification-hub-large.png)
+[![](azure-images/notification-hub.png)](azure-images/notification-hub-large.png#lightbox)
 
 Anında iletme bildirimi göndermek için arka uç sistemi yalnızca Kişiler Azure bildirim hangi sırayla farklı platform bildirim sistemleri ile iletişim kurar, bu nedenle arka uç karmaşıklığını azaltmak hub'ı, bu gönderir anında iletme bildirimleri kodu.
 
@@ -44,7 +47,7 @@ Azure Mobile Apps bildirim hub'ları kullanarak anında iletme bildirimleri içi
 
 Örnek uygulama verileri bir Azure Mobile Apps örneğinde depolanan bir Yapılacaklar listesi uygulaması gösterir. Azure Mobile Apps örneğine eklenen yeni bir öğe her zaman bir anında iletme bildirimi Xamarin.Forms uygulamaya gönderilir. Aşağıdaki ekran görüntüleri alınan anında iletme bildirimi görüntüleme her platform göster:
 
-[![](azure-images/screenshots.png "Örnek bir anında iletme bildirimi alma uygulama")](azure-images/screenshots-large.png "örnek uygulama anında bildirim alma")
+[![](azure-images/screenshots.png "Örnek bir anında iletme bildirimi alma uygulama")](azure-images/screenshots-large.png#lightbox "örnek uygulama anında bildirim alma")
 
 Azure Notification Hubs hakkında daha fazla bilgi için bkz: [Azure Notification Hubs](https://azure.microsoft.com/documentation/articles/notification-hubs-push-notification-overview/) ve [Xamarin.Forms uygulamanıza anında iletme bildirimleri ekleme](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push/).
 
@@ -118,7 +121,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 Bir iOS uygulaması APNS ile kaydettiğinde anında iletme bildirimleri almak istediğiniz türlerini belirtmeniz gerekir. `RegisterUserNotificationSettings` Yöntemi kaydeder uygulama alabilir, bildirim türleri ile `RegisterForRemoteNotifications` yöntemi APNS anında iletme bildirimleri almak için kaydediliyor.
 
 > [!NOTE]
-> **Not**: Çağrı başarısız `RegisterUserNotificationSettings` yöntemi sessizce uygulama tarafından alınan anında iletme bildirimleri neden olur.
+> Çağrı başarısız `RegisterUserNotificationSettings` yöntemi sessizce uygulama tarafından alınan anında iletme bildirimleri neden olur.
 
 <a name="ios_registration_response" />
 
@@ -146,7 +149,7 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 Bu yöntem, JSON olarak basit bildirim iletisi şablonu oluşturur ve bildirim hub'ından şablon bildirimleri almak için cihaz kaydeder.
 
 > [!NOTE]
-> **Not**: `FailedToRegisterForRemoteNotifications` geçersiz kılma uygulanan ağ bağlantısının olmaması gibi durumlarla işlemek için. Kullanıcıların uygulama çalışırken başlayabilir bu önemlidir, çünkü çevrimdışı.
+> `FailedToRegisterForRemoteNotifications` Geçersiz kılma uygulanan ağ bağlantısının olmaması gibi durumlarla işlemek için. Kullanıcıların uygulama çalışırken başlayabilir bu önemlidir, çünkü çevrimdışı.
 
 <a name="ios_process_incoming" />
 
@@ -177,7 +180,7 @@ public override void DidReceiveRemoteNotification(
 `userInfo` Sözlüğünü içeren `aps` anahtar değeri, `alert` kalan bildirim veri sözlüğü. Bu sözlük alınır, ile `string` iletişim kutusunda görüntülenen bildirim iletisini.
 
 > [!NOTE]
-> **Not**: bir anında iletme bildirimi geldiğinde uygulama çalışmıyorsa, uygulama başlatılacak ancak `DidReceiveRemoteNotification` yöntemi bildirim işlem olmaz. Bunun yerine, bildirim yükü almak ve uygun şekilde gelen yanıt `WillFinishLaunching` veya `FinishedLaunching` geçersiz kılar.
+> Anında iletme bildirimi geldiğinde uygulama çalışmıyorsa, uygulama başlatılacak ancak `DidReceiveRemoteNotification` yöntemi bildirim işlem olmaz. Bunun yerine, bildirim yükü almak ve uygun şekilde gelen yanıt `WillFinishLaunching` veya `FinishedLaunching` geçersiz kılar.
 
 APNS hakkında daha fazla bilgi için bkz: [iOS anında iletme bildirimleri](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md).
 
@@ -330,7 +333,7 @@ public class FirebaseNotificationService : FirebaseMessagingService
         intent.AddFlags(ActivityFlags.ClearTop);
         var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
-        var notificationBuilder = new Notification.Builder(this)
+        var notificationBuilder = new NotificationCompat.Builder(this)
             .SetSmallIcon(Resource.Drawable.ic_stat_ic_notification)
             .SetContentTitle("New Todo Item")
             .SetContentText(messageBody)
@@ -418,6 +421,6 @@ Bu makalede Azure Notification Hubs bir Xamarin.Forms uygulaması için bir Azur
 - [Azure bildirim hub'ları](https://azure.microsoft.com/documentation/articles/notification-hubs-push-notification-overview/)
 - [Xamarin.Forms uygulamanıza anında iletme bildirimleri ekleme](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/)
 - [İOS anında iletme bildirimleri](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md)
-- [Firebase bulut Mesajlaşma](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)
+- [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)
 - [TodoAzurePush (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzurePush/)
 - [Azure mobil istemci SDK'sı](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

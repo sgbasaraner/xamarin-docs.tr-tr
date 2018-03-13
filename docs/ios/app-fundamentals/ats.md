@@ -3,16 +3,16 @@ title: "Uygulama taşıma güvenliği"
 description: "Uygulama taşıma güvenliği (ATS) Internet kaynakların (örneğin, uygulamanızın arka uç sunucusu) ve uygulamanız arasındaki güvenli bağlantılar zorlar."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 60858e05e222725f05eb67bd7aaa4e56d2ff3880
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a4491f550369bbb8515635ecbb7c1c2b74de48cf
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="app-transport-security"></a>Uygulama taşıma güvenliği
 
@@ -69,7 +69,7 @@ Apple iOS internet iletişimi sınıfları ile çalışma hakkında daha fazla b
 
 Xamarin.iOS uygulamanızı veya kitaplığı veya onu kullanarak hizmet bağlantı Internet'e yaparsa ATS iOS 9 ve OS X El Capitan, varsayılan olarak etkin olduğundan, bazı işlemler yapması gerekir veya bağlantılarınızı oluşturulan bir özel durum neden olur.
 
-Var olan bir uygulama için Apple desteklediğiniz öneren `HTTPS` mümkün olan en kısa sürede protokol. Desteği olmayan web hizmeti bir 3. taraf bağlandığınız olmadığından ya da yapılamıyor, `HTTPS` veya destekleniyorsa `HTTPS` pratik olacaktır, size ATS çevirin. Bkz: [Opting-ATS dışı](#Opting-Out-of-ATS) daha fazla ayrıntı için bölüm aşağıda.
+Var olan bir uygulama için Apple desteklediğiniz öneren `HTTPS` mümkün olan en kısa sürede protokol. Desteği olmayan web hizmeti bir 3. taraf bağlandığınız olmadığından ya da yapılamıyor, `HTTPS` veya destekleniyorsa `HTTPS` pratik olacaktır, size ATS çevirin. Bkz: [Opting-ATS dışı](#optout) daha fazla ayrıntı için bölüm aşağıda.
 
 Yeni bir Xamarin.iOS uygulaması için kullanmanız gereken `HTTPS` özel olarak Internet kaynakların ile iletişim kurarken. Yeniden, (3 taraf web hizmetini kullanarak gibi) durumlar olabilir burada bu mümkün değildir ve ATS çevirin sağlamanız gerekir.
 
@@ -144,7 +144,7 @@ Doğrudan veya bir web görünümü iOS 9'internet ' e bağlanmaya çalışılı
 
 Varsayılan olarak tüm bağlantılar kullanarak iOS 9 ve OS X 10.11 sürümünü (El Capitan) için oluşturulan uygulamaların ATS etkin olduğundan `NSURLConnection`, `CFURL` veya `NSURLSession` ATS güvenlik gereksinimlerini tabi olacaktır. Bağlantılarınızı bu gereksinimi karşılamıyorsa, bir özel durum ile başarısız olur.
 
-Apple de sağlar [TLSTool örnek uygulaması](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2) , derlenmesi (veya isteğe bağlı olarak kod çevrimi Xamarin ve C#) ve ATS/TLS sorunları tanılamak için kullanılır. Lütfen bakın [Opting-ATS dışı](#Opting-Out_of_ATS) bölümünde aşağıda bu sorunu çözmek hakkında bilgi için.
+Apple de sağlar [TLSTool örnek uygulaması](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2) , derlenmesi (veya isteğe bağlı olarak kod çevrimi Xamarin ve C#) ve ATS/TLS sorunları tanılamak için kullanılır. Lütfen bakın [Opting-ATS dışı](#optout) bölümünde aşağıda bu sorunu çözmek hakkında bilgi için.
 
 
 <a name="config" />
@@ -215,7 +215,7 @@ Xamarin.iOS uygulamanızı güvensiz bir etki alanı için bir istek yapmanız g
 
 Mac için Visual Studio içinde çift `Info.plist` dosyasını **Çözüm Gezgini**, geçiş **kaynak** görüntülemek ve yukarıdaki anahtarları ekleyin:
 
-[ ![](ats-images/ats01.png "Info.plist dosyasının kaynağı görünümü")](ats-images/ats01.png)
+[![](ats-images/ats01.png "Info.plist dosyasının kaynağı görünümü")](ats-images/ats01.png#lightbox)
 
 
 Uygulamanızı yüklemek ve güvenli olmayan sitelerinden web içeriğini görüntülemek gerekirse, aşağıdaki, uygulamanızın ekleyin **Info.plist** dosya web sayfalarının Apple Aktarım güvenlik (ATS) koruması için rest etkinken doğru bir şekilde yüklemeye izin ver Uygulama:
@@ -240,7 +240,7 @@ Uygulamanızı yüklemek ve güvenli olmayan sitelerinden web içeriğini görü
 
 Mac için Visual Studio içinde çift `Info.plist` dosyasını **Çözüm Gezgini**, geçiş **kaynak** görüntülemek ve yukarıdaki anahtarları ekleyin:
 
-[ ![](ats-images/ats02.png "Info.plist dosyasının kaynağı görünümü")](ats-images/ats02.png)
+[![](ats-images/ats02.png "Info.plist dosyasının kaynağı görünümü")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
 > **Not:** uygulamanızı güvenli olmayan bir Web sitesine bir bağlantı gerektiriyorsa, aşağıdakileri yapmalısınız **her zaman** kullanarak özel durum olarak etki alanını girin `NSExceptionDomains` tamamen kullanarak devre dışı ATS kapatma yerine `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` yalnızca aşırı acil durumlarda kullanılmalıdır.

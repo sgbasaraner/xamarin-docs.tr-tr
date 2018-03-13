@@ -3,16 +3,16 @@ title: "2. bölüm. Temel XAML sözdizimi"
 description: "XAML çoğunlukla başlatmasını ve nesneleri başlatma için tasarlanmıştır. Ancak genellikle, XML dize olarak kolayca gösterilemez karmaşık nesnelere özellikler ayarlanmalı ve bir sınıf tarafından tanımlanan özellikleri üzerinde alt sınıf bazen ayarlamanız gerekir. Bu iki ihtiyaçları ekli özellikler ve özellik öğelerinin temel XAML sözdizimi özellikleri gerektirir."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: f99d4b177f5957b2e5f8c22171fe92799af8505a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77ed7c49a901a877d822c2274263bcb8dbe19ac6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-2-essential-xaml-syntax"></a>2. bölüm. Temel XAML sözdizimi
 
@@ -253,7 +253,7 @@ Tam GridDemoPage.xaml dosya şöyledir:
 
 İşte bu şekilde tüm üç platformlarda görünür:
 
-[ ![](essential-xaml-syntax-images/griddemo.png "Kılavuz düzeni")](essential-xaml-syntax-images/griddemo-large.png "Kılavuz düzeni")
+[![](essential-xaml-syntax-images/griddemo.png "Kılavuz düzeni")](essential-xaml-syntax-images/griddemo-large.png#lightbox "Kılavuz düzeni")
 
 Sözdizimi yalnızca yüksek bu `Grid.Row`, `Grid.Column`, `Grid.RowSpan`, ve `Grid.ColumnSpan` öznitelikleri görünüyor statik alanları ya da özelliklerini `Grid`, ancak yeterli İlginçtir ki `Grid` adlı herhangi bir şey tanımlamıyor `Row`, `Column`, `RowSpan`, veya `ColumnSpan`.
 
@@ -310,7 +310,7 @@ Ekli özellikler her zaman XAML dosyalarında öznitelikleri içeren bir sınıf
 
 Ve aşağıda verilmiştir:
 
-[ ![](essential-xaml-syntax-images/absolutedemo-large.png "Mutlak düzeni")](essential-xaml-syntax-images/absolutedemo-large.png "mutlak düzeni")
+[![](essential-xaml-syntax-images/absolutedemo-large.png "Mutlak düzeni")](essential-xaml-syntax-images/absolutedemo-large.png#lightbox "mutlak düzeni")
 
 Şunun gibi XAML kullanmanın wisdom soru. Elbette yineleme ve düzenli `LayoutBounds` dikdörtgen öneren kodu daha iyi gerçekleşmiş.
 
@@ -530,7 +530,7 @@ Bu, platforma bağımlı ayarlamak için standart yoludur `Padding` XAML'de öze
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
-- [1. bölüm. XAML ile çalışmaya başlama](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [Bölüm 3. XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Bölüm 4. Veri bağlama temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [Bölüm 1. XAML Kullanmaya Başlarken](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [Bölüm 3. XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [Bölüm 4. Temel Veri Bağlama Bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
 - [Bölüm 5. Verileri için MVVM bağlama](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

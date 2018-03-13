@@ -4,14 +4,15 @@ description: "Bkz. metin SkiaSharp grafik ile tümleştirmek için işlenen meti
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a8cfac8911b1a8a13a4b6f149d02cd2f2c78453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="integrating-text-and-graphics"></a>Metin ve grafik tümleştirme
 
@@ -113,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 , Yöntem kalanı düz İleri olmasıdır. Başka bir oluşturur `SKPaint` Kenarlıklar ve aramalar için nesne `DrawRoundRect` iki kez. İkinci çağrı başka bir 10 piksel şişirileceğini dikdörtgen kullanır. İlk çağrıda 20 piksel köşe yarıçapını belirler; İkinci bir köşe yarıçapı 30 piksel sahiptir, bu nedenle bunlar paralel görünüyor:
 
- [![](text-images/framedtext-small.png "Üçlü sayfasının ekran görüntüsü Çerçeveli metin")](text-images/framedtext-large.png "Üçlü sayfasının ekran görüntüsü Çerçeveli metin")
+ [![](text-images/framedtext-small.png "Üçlü sayfasının ekran görüntüsü Çerçeveli metin")](text-images/framedtext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Çerçeveli metin")
 
 Metin ve çerçeve boyutunda artış görmek için telefon veya yanları simulator kapatabilirsiniz.
 
@@ -121,7 +122,7 @@ Yalnızca bazı metinleri ekranında merkezi gerekiyorsa, yaklaşık olarak ayar
 
 Metnin kendisi çok bir grafik seçeneği ele alınabilir. Normal doldurulmuş görüntü yerine metin karakterleri özetini görüntülemek için bir basit seçenek verilmiştir:
 
-[![](text-images/outlinedtext-small.png "Üçlü özetlenen metin sayfasının ekran görüntüsü")](text-images/outlinedtext-large.png "üç ana hatlarıyla metin sayfasının ekran görüntüsü")
+[![](text-images/outlinedtext-small.png "Üçlü özetlenen metin sayfasının ekran görüntüsü")](text-images/outlinedtext-large.png#lightbox "üç ana hatlarıyla metin sayfasının ekran görüntüsü")
 
 Bu sadece normal değiştirilerek yapılır `Style` özelliği `SKPaint` kendi varsayılan nesnesinden `SKPaintStyle.Fill` için `SKPaintStyle.Stroke` ve vuruşun genişliğini belirterek. `PaintSurface` İşleyicisine **özetlenen metin** sayfası gösterir nasıl yapılır:
 

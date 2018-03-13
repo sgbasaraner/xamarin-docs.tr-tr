@@ -7,18 +7,17 @@ ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 84ef87f5ed84fcd0a9aa2504c52a0fec17404e1f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="troubleshooting-bindings"></a>Sorun giderme bağlamaları
 
 _Bu makalede, olası nedenleri ve bunları çözmek için önerilen yol birlikte bağlamaları oluştururken oluşabilir serveral sık karşılaşılan hataların özetlenmektedir._
 
-<a name="OVERVIEW" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -38,7 +37,6 @@ Tanılama çıktıları etkinleştirdikten, Xamarin.Android bağlama projeyi olu
 
 Bu ayrıca Android kitaplığı uygulayamaz ve türleri ve Xamarin.Android bağlamak için çalışıyor yöntemleri incelemek yararlı. Bu, daha sonra bu kılavuzda daha ayrıntılı ele alınmıştır.
 
-<a name="DECOMPILING_AN_ANDROID_LIBRARY" />
 
 ## <a name="decompiling-an-android-library"></a>Bir Android kitaplığıdır decompiling
 
@@ -59,9 +57,8 @@ Android kitaplığı decompiled sonra kaynak kodu inceleyin. Genel olarak bakıl
 - **`import` başvurulmayan kitaplıkları deyimleri** &ndash; başvurulmayan kitaplığı tanımlamak ve bu bağımlılıkların Xamarin.Android bağlama projeyle ekleyip bir **yapı eylemi** , **ReferenceJar**  veya **EmbedddedReferenceJar**.
 
 > [!NOTE]
-> **Not:** bir Java kitaplığı Decompiling olabilir yasaklanmış veya yasal sınırlamalara tabidir dayalı yerel yasalarınız veya altında Java kitaplığı yayımlandığı Lisans. Gerekirse, yasal professional Hizmetleri Java kitaplığı uygulayamaz ve kaynak kodunu incelemek üzere çalışmadan önce kaydettirin.
+> Java kitaplığı decompiling olabilir yasaklanmış veya yasal sınırlamalara tabidir yerel yasalarınız veya altında Java kitaplığı yayımlanan lisans göre. Gerekirse, yasal professional Hizmetleri Java kitaplığı uygulayamaz ve kaynak kodunu incelemek üzere çalışmadan önce kaydettirin.
 
-<a name="INSPECTING_API_XML" />
 
 ## <a name="inspect-apixml"></a>API inceleyin. XML
 
@@ -71,19 +68,16 @@ Bağlama proje oluşturmanın bir parçası olarak bir XML dosya adı Xamarin.An
 
 Bu dosya, Xamarin.Android bağlama çalışıyor tüm Java API listesini sağlar. Bu dosyanın içeriğini eksik türleri ve yöntemleri tanımlamak, bağlama yinelenen yardımcı olabilir. Bu dosyanın denetleme yorucu ve zaman alıcı olsa da, tüm bağlama sorunlara neden üzerinde ipuçları için sağlayabilirsiniz. Örneğin, **api.xml** bir özellik uygun olmayan bir tür döndüren veya iki olan yönetilen aynı adı paylaşan türleri ortaya çıkarabilir.
 
-<a name="KNOWN_ISSUES" />
 
 ## <a name="known-issues"></a>Bilinen Sorunlar
 
 Bu bölümde bazı yaygın hata iletileri veya Belirtiler listelenecektir, my bir Android kitaplığıdır bağlamak çalışırken oluşur.
 
-<a name="PROBLEM_JAVA_VERSION_MISMATCH" />
 
 ### <a name="problem-java-version-mismatch"></a>Sorun: Java sürüm uyuşmazlığı
 
 Bazen türleri oluşturulmayacak veya beklenmeyen çökme (Crash) ya da Java ne kitaplığı ile derlenen için karşılaştırıldığında daha yeni veya eski bir sürümü kullandığınız nedeniyle oluşabilir. Android kitaplığı Xamarin.Android projenizi kullanarak JDK aynı sürümüyle yeniden derleyin.
 
-<a name="PROBLEM_AT_LEAST_ONE_JAVA_LIBRARY_IS_REQUIRED" />
 
 ### <a name="problem-at-least-one-java-library-is-required"></a>Sorun: en az bir Java kitaplığı gereklidir
 
@@ -93,7 +87,6 @@ Hata "en az bir Java kitaplığı gereklidir" rağmen aldığınız bir. JAR ekl
 
 Emin olun derleme eylemi ayarlanmış `EmbeddedJar`. Birden çok derleme eylemleri olduğundan. JAR dosyalarını (gibi `InputJar`, `EmbeddedJar`, `ReferenceJar` ve `EmbeddedReferenceJar`), bağlama Oluşturucu otomatik olarak varsayılan olarak kullanmak üzere hangisinin tahmin edilemez. Yapı eylemleri hakkında daha fazla bilgi için bkz: [yapı eylemleri](~/android/platform/binding-java-library/index.md).
 
-<a name="PROBLEM_BINDING_TOOLS_CANNOT_LOAD_THE_JAR_LIBRARY" />
 
 ### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>Sorun: araçlar bağlama yüklenemiyor. JAR kitaplığı
 
@@ -104,7 +97,6 @@ Bağlama kitaplığı Oluşturucusu yüklenemiyordur. JAR kitaplığı.
 Bazı. Kod gizleme (aracılığıyla araçları Proguard gibi) kullanan JAR kitaplıkları Java araçları tarafından yüklenemez. Java yansıma kullanımını ve kitaplık mühendislik ASM bayt kodu aracımız yapar olduğundan, bu bağımlı araçları Android çalışma zamanı araçları iletebilir sırada karıştırılmış kitaplıkları reddedebilir. Elle-bağlama Oluşturucu kullanmak yerine bu kitaplıklar bağlamak için bu çözüm olabilir.
 
 
-<a name="PROBLEM_MISSING_C_TYPES_IN_GENERATED_OUTPUT_" />
 
 ### <a name="problem-missing-c-types-in-generated-output"></a>Sorun: C# oluşturulan çıktı türlerinde eksik.
 
@@ -253,8 +245,6 @@ El ile yüklemek için bu düzeltmenin mi **.so** çağrısıyla Kitaplığı `J
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
-
-<a name=summary />
 
 ## <a name="summary"></a>Özet
 

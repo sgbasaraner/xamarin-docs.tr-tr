@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 9dc50aeec88131a1ce49c7e3357382c019774450
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7f42d6e36638bf5c7e98b9363295e37997ee067
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installing-nunit-264-using-nuget"></a>NUnit 2.6.4 yükleme NuGet kullanma
 
@@ -43,16 +43,16 @@ Aşağıdaki adımlar nasıl NUnit 2.6.4 yükleneceğini açıklar.
 
 1. **Paket Yöneticisi'ni açmak** -sağ tıklayın **paketleri** seçip **paketleri Ekle** açılan menüsünden:
 
-    [![](installing-nunit-using-nuget-images/add-packages-xs.png "Paketleri sağ tıklayın ve açılan menüden paketleri Ekle seçin")](installing-nunit-using-nuget-images/add-packages-xs.png)
+    [![](installing-nunit-using-nuget-images/add-packages-xs.png "Paketleri sağ tıklayın ve açılan menüden paketleri Ekle seçin")](installing-nunit-using-nuget-images/add-packages-xs.png#lightbox)
     
 1. **Arama `NUnit version:2.6.4`**  -Mac için Visual Studio NUnit 3.0 (gerekirse) kaldırın ve ardından indirir ve NUnit 2.6.4 yükleyin. İçinde **paketleri Ekle** iletişim kutusunda, metin girin `nunit version:2.6.4` içinde **arama** üst sağ köşede yer alan. Seçin **NUnit** tıklayın ve arama sonuçlarını **Paketi Ekle** düğmesi:
 
-    [![](installing-nunit-using-nuget-images/nunit-search-xs.png "Arama sonuçlarından NUnit seçin ve paketi Ekle düğmesini tıklatın")](installing-nunit-using-nuget-images/nunit-search-xs.png)
+    [![](installing-nunit-using-nuget-images/nunit-search-xs.png "Arama sonuçlarından NUnit seçin ve paketi Ekle düğmesini tıklatın")](installing-nunit-using-nuget-images/nunit-search-xs.png#lightbox)
 
 
 Çözüm panelinde NUnit paketin sürüm numarası incelenerek NUnit 2.6.4 yüklü olduğunu doğrulamak mümkündür:
 
-[![](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png "Çözüm panelinde NUnit paketin sürüm numarası inceleyin.")](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png)
+[![](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png "Çözüm panelinde NUnit paketin sürüm numarası inceleyin.")](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png#lightbox)
 
 ## <a name="summary"></a>Özet
 
@@ -68,7 +68,7 @@ Bu bölümde kullanarak odaklanacaktır _NuGet Paket Yöneticisi Konsolu_ NUnit 
 
 1. **NuGet Paket Yöneticisi Konsolu'ndan** - seçin **Araçlar > NuGet Paket Yöneticisi > Paket Yöneticisi Konsolu**:
 
-    [![](installing-nunit-using-nuget-images/package-manager-console.png "NuGet Paket Yöneticisi konsolu - seçim araçları NuGet Paket Yöneticisi Paket Yöneticisi konsolunu Başlat")](installing-nunit-using-nuget-images/package-manager-console.png)
+    [![](installing-nunit-using-nuget-images/package-manager-console.png "NuGet Paket Yöneticisi konsolu - seçim araçları NuGet Paket Yöneticisi Paket Yöneticisi konsolunu Başlat")](installing-nunit-using-nuget-images/package-manager-console.png#lightbox)
     
 1. **Sürüm NUnit doğrulayın** -isteğe bağlı olarak komutunu çalıştırarak yüklü NUnit sürümünü doğrulayabilirsiniz `Get-Package -Project <UITEST PROJECT>`:
 

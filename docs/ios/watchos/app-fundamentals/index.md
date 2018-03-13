@@ -6,20 +6,19 @@ ms.assetid: 156D6D1C-83CA-4088-BA08-40B22312269C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a470314097342e9c2e068a6015664074540d0ddd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 06c2fbe7537df004641a2c1bd6e7d4e420fef1c7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-application-fundamentals"></a>watchOS uygulama temelleri
-
 
 ##  <a name="parent-applicationioswatchosapp-fundamentalsparent-appmd"></a>[Üst uygulama](~/ios/watchos/app-fundamentals/parent-app.md)
 
 İzleme uygulamaları iOS üzerinde çalışan kendi üst uygulama ile iletişim kurabilir.
 
-##  <a name="app-groupsioswatchosapp-fundamentalsapp-groupsmd"></a>[Uygulama grupları](~/ios/watchos/app-fundamentals/app-groups.md)
+##  <a name="app-groupsioswatchosapp-fundamentalsapp-groupsmd"></a>[Uygulama Grupları](~/ios/watchos/app-fundamentals/app-groups.md)
 
 Ayarları ve iOS izleme uygulamalar arasında veri paylaşımı.
 
@@ -35,11 +34,11 @@ Apple Watch kullanıcı arabirimleri oluşturmaya yönelik tasarım ipuçları'n
 
 Birden fazla dili desteklemeye Apple Watch uygulama içeriğinizi çevirme için bir kılavuzdur.
 
-##  <a name="navigationioswatchosapp-fundamentalsnavigationmd"></a>[Gezinme](~/ios/watchos/app-fundamentals/navigation.md)
+##  <a name="navigationioswatchosapp-fundamentalsnavigationmd"></a>[Gezinti](~/ios/watchos/app-fundamentals/navigation.md)
 
 İzleme uygulamaları için kullanılabilir iki gezinti seçenekleri hakkında bilgi edinin: hiyerarşik ya da sayfa tabanlı gezinti.
 
-##  <a name="screen-sizesioswatchosapp-fundamentalsscreen-sizesmd"></a>[Ekran boyutlarına](~/ios/watchos/app-fundamentals/screen-sizes.md)
+##  <a name="screen-sizesioswatchosapp-fundamentalsscreen-sizesmd"></a>[Ekran Boyutları](~/ios/watchos/app-fundamentals/screen-sizes.md)
 
 Önizleme ve Kullanıcı Arabiriminizin hem kullanılabilir izleme boyutları için en iyi duruma getirme.
 

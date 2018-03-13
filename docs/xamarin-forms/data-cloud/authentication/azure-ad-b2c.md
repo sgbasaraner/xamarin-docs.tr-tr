@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3b862f03a81364594f33d82ebf02d75440d7bc4c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5d64c7c1dbc502acd3876c2442f9bae1c46eeb74
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Kullanıcıların Azure Active Directory B2C ile kimlik doğrulaması
 
@@ -21,7 +21,7 @@ _Azure Active Directory B2C bir tüketiciye yönelik web ve mobil uygulamaları 
 ![](~/media/shared/preview.png "Bu API şu anda yayın öncesi")
 
 > [!NOTE]
-> **Not**: [Microsoft kimlik doğrulama Kitaplığı](https://www.nuget.org/packages/Microsoft.Identity.Client) hala önizlemede değil, ancak bir üretim ortamında kullanım için uygundur. Ancak, var. API, dahili önbellek biçimini ve uygulamanızı etkileyebilir kitaplığın başka mekanizmalar önemli değişiklikler.
+> [Microsoft kimlik doğrulama Kitaplığı](https://www.nuget.org/packages/Microsoft.Identity.Client) hala önizlemede değil, ancak bir üretim ortamında kullanım için uygundur. Ancak, var. API, dahili önbellek biçimini ve uygulamanızı etkileyebilir kitaplığın başka mekanizmalar önemli değişiklikler.
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -38,12 +38,12 @@ Azure Active Directory B2C Identity management hizmeti bir mobil uygulamayla tü
 1. Kullanım [Microsoft kimlik doğrulama Kitaplığı](https://www.nuget.org/packages/Microsoft.Identity.Client) (MSAL) ile Azure Active Directory B2C kiracınızın bir kimlik doğrulama iş akışını başlatmak için mobil uygulamanızda.
 
 > [!NOTE]
-> **Not**: Azure Active Directory B2C Kimlik Yönetimi mobil uygulamalarla tümleştirmek yanı sıra MSAL de Azure Active Directory kimlik yönetimi mobil uygulamalara tümleştirmek için kullanılabilir. Bu Azure Active Directory ile bir mobil uygulama kaydederek gerçekleştirilebilir [uygulama kayıt portalı](https://apps.dev.microsoft.com/). Kayıt işlemine atar bir **uygulama kimliği** MSAL kullanırken belirtilmelidir uygulamanızı benzersiz olarak tanımlar. Daha fazla bilgi için bkz: [v2.0 uç noktası ile bir uygulama nasıl](/azure/active-directory/develop/active-directory-v2-app-registration/), ve [kimlik doğrulaması bilgisayarınızı Mobile Apps kullanarak Microsoft kimlik doğrulama Kitaplığı](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/) Xamarin blogunda.
+> Azure Active Directory B2C Kimlik Yönetimi mobil uygulamalarla tümleştirmek yanı sıra MSAL de Azure Active Directory kimlik yönetimi mobil uygulamalara tümleştirmek için kullanılabilir. Bu Azure Active Directory ile bir mobil uygulama kaydederek gerçekleştirilebilir [uygulama kayıt portalı](https://apps.dev.microsoft.com/). Kayıt işlemine atar bir **uygulama kimliği** MSAL kullanırken belirtilmelidir uygulamanızı benzersiz olarak tanımlar. Daha fazla bilgi için bkz: [v2.0 uç noktası ile bir uygulama nasıl](/azure/active-directory/develop/active-directory-v2-app-registration/), ve [kimlik doğrulaması bilgisayarınızı Mobile Apps kullanarak Microsoft kimlik doğrulama Kitaplığı](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/) Xamarin blogunda.
 
 MSAL cihazın web tarayıcısının kimlik doğrulaması yapmak için kullanır. Bu, oturum cihaz başına dönüştürme oranları oturum açma ve yetkilendirme geliştirme uygulamada akar sonra açmak kullanıcılara yalnızca gerektiği bir uygulamanın kullanılabilirliğini artırır. Aygıt tarayıcı de Gelişmiş güvenlik sağlar. Kullanıcı kimlik doğrulama işlemi tamamlandıktan sonra web tarayıcısı sekmesinden denetim uygulamaya döndürür. Bu kimlik doğrulama işlemi, algılama ve gönderildikten sonra Özel URL işleme öğesinden döndürülen yeniden yönlendirme URL'si için özel bir URL şeması kaydederek sağlanır. Özel bir URL şeması seçme hakkında daha fazla bilgi için bkz: [yerel uygulama yeniden yönlendirme URI'si seçerek](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-native-app-redirect-uri/).
 
 > [!NOTE]
-> **Not**: özel bir URL şeması işletim sistemi ile kaydetme ve işleme düzeni için her platform için belirli mekanizmadır.
+> İşletim sistemi ile özel bir URL şeması kaydetme ve işleme düzeni için mekanizma, her platform için özeldir.
 
 Bir Azure Active Directory B2C Kiracı gönderilen her isteği belirtir bir *İlkesi*. İlkeleri tüketici kimlik deneyimi kaydolma ve oturum açma gibi açıklar. Örneğin, bir kayıt ilkesi kullanarak aşağıdaki ayarları yapılandırılması için Azure Active Directory B2C Kiracı davranışını sağlar:
 
@@ -127,7 +127,7 @@ namespace TodoAzure.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             LoadApplication(new App());
-            App.UiParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
+            App.UiParent = new UIParent(this);
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

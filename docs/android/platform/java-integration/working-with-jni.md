@@ -7,18 +7,17 @@ ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: d1c441de089a84c93c251588115abecb19816868
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: e9a6f44637b77bf53c3cab00ac5051e6a2f27386
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="working-with-jni"></a>JNI ile çalışma
 
 _Xamarin.Android içinde C# Java yerine Android uygulamaları yazma izin verir. Birkaç derlemeler ile Xamarin.Android Mono.Android.dll ve Mono.Android.GoogleMaps.dll dahil olmak üzere, Java kitaplıkları için bağlamaları sağlayan sağlanır. Ancak, bağlamaları için olası her Java kitaplığı sağlanmayan ve her Java tür ve üye sağlanan bağlamaları bağlayabilirsiniz değil. İlişkisiz Java türleri ve üyeleri kullanmak için Java yerel arabirimi (JNI) kullanılabilir. Bu makalede JNI Java türleri ve üyeleri Xamarin.Android uygulamalardan etkileşim için nasıl kullanılacağı gösterilmektedir._
 
-<a name="_Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -37,14 +36,12 @@ Bu belgede açıklanmaktadır:
 -  Nasıl arabirimleri kullanıma sunar.
 
 
-<a name="_Requirements" />
 
 ## <a name="requirements"></a>Gereksinimler
 
 Aracılığıyla gösterilen JNI [Android.Runtime.JNIEnv ad alanı](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/), her Xamarin.Android sürümünde kullanılabilir.
 Java türleri ve arabirimleri bağlamak için Xamarin.Android 4.0 veya sonraki sürümü kullanmanız gerekir.
 
-<a name="_Managed_Callable_Wrappers" />
 
 ## <a name="managed-callable-wrappers"></a>Yönetilen aranabilir sarmalayıcılar
 
@@ -58,7 +55,6 @@ Yönetilen aranabilir sarmalayıcılar iki amaca hizmet eder:
 İlk amaç yalnızca kolaylık sağlamak ve karmaşıklık kapsülleme, böylelikle sınıflarını kullanmak için basit, yönetilen bir dizi tüketiciye sahip. Bu çeşitli kullanılmasını gerektiren [JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/) bu makalenin sonraki bölümlerinde açıklandığı gibi üyeleri. Aranabilir sarmalayıcılar yönetilen unutmayın kesinlikle gerekli olmayan &ndash; "satır içi JNI kullanma" edilebilir ve ilişkisiz Java üyelerinin tek seferlik kullanım için kullanışlıdır. Alt classing ve arabirim uygulaması yönetilen aranabilir sarmalayıcılar kullanılmasını gerektirir.
 
 
-<a name="_Android_Callable_Wrappers" />
 
 ## <a name="android-callable-wrappers"></a>Android aranabilir sarmalayıcılar
 
@@ -70,7 +66,6 @@ Android kod sanal bir execute veya geçersiz veya yönetilen kodda uygulanan yö
 Android aranabilir sarmalayıcılar tarafından üretilen **monodroid.exe** sırasında program [derleme işlemi](~/android/deploy-test/building-apps/build-process.md)ve (doğrudan veya dolaylı olarak) devralan tüm türleri için oluşturulan [ Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/).
 
 
-<a name="_Implementing_Interfaces" />
 
 ### <a name="implementing-interfaces"></a>Arabirimler uygulama
 
@@ -90,7 +85,6 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 }
 ```
 
-<a name="_Implementation_Details" />
 
 ### <a name="implementation-details"></a>Uygulama Ayrıntıları
 
@@ -155,7 +149,6 @@ public class HelloAndroid extends android.app.Activity {
 Taban sınıfı korunur ve yönetilen kod içinde geçersiz kılınır her bir yöntemin yerel yöntem bildirimleri sağlanan dikkat edin.
 
 
-<a name="_ExportAttribute_and_ExportFieldAttribute" />
 
 ### <a name="exportattribute-and-exportfieldattribute"></a>ExportAttribute ve ExportFieldAttribute
 
@@ -176,7 +169,6 @@ Kod oluşturma rastgele adlar rasgele Java yöntemleriyle oluşturmak için bir 
 
 [ExportAttribute](https://developer.xamarin.com/samples/monodroid/ExportAttribute/) örnek proje bu öznitelikleri nasıl kullanıldığını gösterir.
 
-<a name="_Troubleshooting_ExportAttribute_and_ExportFieldAttribute" />
 
 #### <a name="troubleshooting-exportattribute-and-exportfieldattribute"></a>ExportAttribute ve ExportFieldAttribute sorun giderme
 
@@ -185,7 +177,6 @@ Kod oluşturma rastgele adlar rasgele Java yöntemleriyle oluşturmak için bir 
 -   Yayın derlemesi içinde `MissingMethodException` için dışa aktarma yöntemleri oluşur &ndash; içinde yayın derlemesi `MissingMethodException` verme yöntemleri için oluşur. (Bu sorunu en son sürümünü Xamarin.Android sabittir.)
 
 
-<a name="_ExportParameterAttribute" />
 
 ### <a name="exportparameterattribute"></a>ExportParameterAttribute
 
@@ -200,7 +191,6 @@ Ancak, bu durumda tam olarak determinant değil. Özellikle, bu yönetilen türl
 
 Bunlar gibi türleri için verilen yöntemleri, gerektiğinde `ExportParameterAttribute` açıkça karşılık gelen bir parametre verin veya dönüş değeri bir tür için kullanılması gerekir.
 
- <a name="_Annotation_Attribute" />
 
 
 ### <a name="annotation-attribute"></a>Ek Açıklama özniteliği
@@ -226,7 +216,6 @@ Ayrıca aşağıdaki sınırlamalar uygulanır:
 -   Bir özelliğin üzerine öznitelikleri çalışmaz. Öznitelikleri özellik alıcısı veya ayarlayıcı için bunun yerine kullanın.
 
 
-<a name="_Class_Binding" />
 
 ## <a name="class-binding"></a>Sınıf bağlama
 
@@ -245,7 +234,6 @@ Bir bağlama genellikle aşağıdaki öğeleri içerir:
 -  Alt classing gerekliyse, türü olması gerekiyorsa bir [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/) özel öznitelik türü bildirimiyle üzerinde [RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/) kümesine `true`.
 
 
-<a name="_Declaring_Type_Handle" />
 
 ### <a name="declaring-type-handle"></a>Tür tanıtıcı bildirme
 
@@ -257,7 +245,6 @@ static IntPtr class_ref = JNIEnv.FindClass(CLASS);
 
 Bkz: [JNI tür başvuruları](#_JNI_Type_References) hakkında ayrıntılar için bölüm `CLASS` belirteci.
 
-<a name="_Binding_Fields" />
 
 ### <a name="binding-fields"></a>Alanların bağlama
 
@@ -297,7 +284,6 @@ Not: Biz kullanmakta olduğunuz [InputStreamInvoker.FromJniHandle](https://devel
 
 Çoğu [Android.Runtime](https://developer.xamarin.com/api/namespace/Android.Runtime/) türlerine sahip `FromJniHandle` bir JNI dönüştürecek yöntemleri başvuru istenen türüne dönüştürülemedi.
 
- <a name="_Method_Binding" />
 
 
 ### <a name="method-binding"></a>Yöntem bağlama
@@ -318,8 +304,7 @@ Yalnızca alanlarla gibi yöntem Kimliği almak ve yöntemini çağırmak için 
 
 Yöntem bağlama potansiyel olarak daha fazlasını yöntemi çağrıdır. Yöntem bağlama ayrıca (soyut ve son olmayan yöntemleri için) geçersiz kılınacak yöntemine izin verilmesi veya içerir (arabirim yöntemleri için) uygulanır. [Destekleyen devralma arabirimleri](#_Supporting_Inheritance,_Interfaces_1) bölüm, sanal ve arabirim yöntemleri destekleme karmaşıklıkları kapsar.
 
- <a name="_Static_Methods" />
-
+<a name="_Static_Methods_1" />
 
 #### <a name="static-methods"></a>Statik yöntemler
 
@@ -344,7 +329,6 @@ public static Java.Lang.Runtime GetRuntime ()
 Biz yönteminin tutamaç statik bir alana depolamak Not `id_getRuntime`. Bu performans iyileştirme, böylelikle yönteminin tutamaç her çağrısının Aranan gerekmez. Bu şekilde yöntemi tanıtıcı önbelleğe almak gerekli değildir. Yönteminin tutamaç alındıktan sonra [JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/) yöntemini çağırmak için kullanılır. `JNIEnv.CallStaticObjectMethod` döndüren bir `IntPtr` döndürülen Java örneği tanıtıcısı içerir.
 [Java.Lang.Object.GetObject&lt;T&gt;(IntPtr, JniHandleOwnership)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) Java tanıtıcı türü kesin belirlenmiş bir nesne örneğine dönüştürmek için kullanılır.
 
- <a name="_Non-virtual_Instance_Method_Binding" />
 
 
 #### <a name="non-virtual-instance-method-binding"></a>Sanal olmayan örnek yöntemi bağlama
@@ -368,7 +352,6 @@ Biz yönteminin tutamaç statik bir alana depolamak Not `id_getClass`.
 Bu performans iyileştirme, böylelikle yönteminin tutamaç her çağrısının Aranan gerekmez. Bu şekilde yöntemi tanıtıcı önbelleğe almak gerekli değildir. Yönteminin tutamaç alındıktan sonra [JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/) yöntemini çağırmak için kullanılır. `JNIEnv.CallStaticObjectMethod` döndüren bir `IntPtr` döndürülen Java örneği tanıtıcısı içerir.
 [Java.Lang.Object.GetObject&lt;T&gt;(IntPtr, JniHandleOwnership)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) Java tanıtıcı türü kesin belirlenmiş bir nesne örneğine dönüştürmek için kullanılır.
 
-<a name="_Binding_Constructors" />
 
 ### <a name="binding-constructors"></a>Bağlama oluşturucular
 
@@ -444,8 +427,7 @@ public Integer (int value)
 
 [JNIEnv.CreateInstance](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CreateInstance/) yöntemleridir Yardımcıları gerçekleştirmek için bir `JNIEnv.FindClass`, `JNIEnv.GetMethodID`, `JNIEnv.NewObject`, ve `JNIEnv.DeleteGlobalReference` döndürülen değeri `JNIEnv.FindClass`. Ayrıntılar için sonraki bölüme bakın.
 
- <a name="_Supporting_Inheritance,_Interfaces" />
-
+<a name="_Supporting_Inheritance,_Interfaces_1" />
 
 ### <a name="supporting-inheritance-interfaces"></a>Devralma destekleyen, arabirimleri
 
@@ -488,7 +470,6 @@ partial class ManagedAdder : Adder {
 
 Burada, `Adder` C# türü *diğer adlar* `Adder` Java türü. `[Register]` JNI adını belirtmek için kullanılan öznitelik `mono.android.test.Adder` Java türü ve `DoNotGenerateAcw` özelliği ACW nesil engelle için kullanılır. Bu bir ACW için nesil sonuçlanır `ManagedAdder` türü, hangi düzgün alt sınıfların `mono.android.test.Adder` türü. Varsa `RegisterAttribute.DoNotGenerateAcw` özelliği çalıştırmadıysanız kullanıldığını sonra Xamarin.Android derleme işlem yeni oluşturulan `mono.android.test.Adder` Java türü. Bu derleme hataları olarak oluşturacağı `mono.android.test.Adder` türü, iki kez iki ayrı dosyalarda mevcut olacaktır.
 
- <a name="_Binding_Virtual_Methods" />
 
 
 ### <a name="binding-virtual-methods"></a>Sanal yöntemler bağlama
@@ -501,7 +482,6 @@ Bağlama `virtual` yöntemleri alt sınıflar tarafından geçersiz kılma izin 
 
 1.  **Yöntem kayıt**
 
-<a name="_Method_Binding" />
 
 #### <a name="method-binding"></a>Yöntem bağlama
 
@@ -562,7 +542,6 @@ Yöntem kimliği alındıktan sonra `GetType` karşılaştırılır `ThresholdTy
 
 Zaman `GetType` eşleşmeyen `ThresholdType`, `Adder` sınıflandırma (örneğin tarafından `ManagedAdder`) ve `Adder.Add` uygulaması yalnızca çağrılacak bir alt başlatılırsa `base.Add`. Where olan sanal olmayan gönderme böyledir `ThresholdClass` devreye girer. `ThresholdClass` Çağrılacak yöntemin kullanımı hangi Java sınıfı sağlayacak belirtir.
 
- <a name="_Method_Registration" />
 
 
 #### <a name="method-registration"></a>Yöntem kayıt
@@ -657,7 +636,6 @@ Son olarak, `n_Add` yöntemi için temsilci seçme çağrı sonra yöntemi karş
 
 Not: Her zaman kullanın `JniHandleOwnership.DoNotTransfer` bir MCW bir Java örneği edinirken. Yerel bir referans davranma (ve dolayısıyla çağırma `JNIEnv.DeleteLocalRef`) kesintiye uğrar yönetilen -&gt; Java -&gt; Yönetilen yığın geçişleri.
 
- <a name="_Complete_Adder_Binding" />
 
 
 ### <a name="complete-adder-binding"></a>Ekleyici bağlama tamamlayın
@@ -719,7 +697,6 @@ public class Adder : Java.Lang.Object {
 }
 ```
 
- <a name="_Restrictions" />
 
 
 ### <a name="restrictions"></a>Kısıtlamalar
@@ -738,7 +715,6 @@ GC etkileşim türü için sonra *bulunmamalıdır* olabilir tüm alanlar bir `J
 Türü başvurabilirsiniz bir örnek alanındaki içerip içermediğini bir `Java.Lang.Object` alan türü olması gerekir, örnek `System.WeakReference` veya `GCHandle`.
 
 
- <a name="_Binding_Abstract_Methods" />
 
 ## <a name="binding-abstract-methods"></a>Soyut yöntemler bağlama
 
@@ -778,7 +754,6 @@ partial class AdderInvoker : Adder {
 
 `Invoker` Türü olduğunda yalnızca gerekli Java oluşturulan örnek JNI başvuruları alma.
 
- <a name="_Binding_Interfaces" />
 
 ## <a name="binding-interfaces"></a>Arabirimleri bağlama
 
@@ -793,7 +768,6 @@ public interface Progress {
 Arabirim bağlamaları iki bölümü vardır: C# arabirim tanımı ve arabirimi için bir çağırıcı tanımı.
 
 
-<a name="_Interface_Definition" />
 
 ### <a name="interface-definition"></a>Arabirim tanımı
 
@@ -828,7 +802,6 @@ public interface IAdderProgress : IJavaObject {
 Yukarıdaki biz Java eşleme bildirimde `int[]` parametresi için bir [JavaArray&lt;int&gt;](https://developer.xamarin.com/api/type/Android.Runtime.JavaArray%601/).
 Bu gerekli değildir: biz bir C# için bağlı `int[]`, veya bir `IList<int>`, veya başka bir şey tamamen. Hangi tür seçilir, `Invoker` bir Java Çevir gerekir `int[]` çağırma türü.
 
-<a name="_Invoker_Definition" />
 
 ### <a name="invoker-definition"></a>Çağırıcı tanımı
 
@@ -857,7 +830,6 @@ Bu iki çözümü vardır: her yöntemi gelir hangi arabirimi izlemek ve sahip b
 
 Çağırıcı tanımı altı bölümü vardır: Oluşturucusu `Dispose` yöntemi, `ThresholdType` ve `ThresholdClass` üyeleri, `GetObject` yöntemini, arabirim yöntemi uygulaması ve bağlayıcı yöntemi uygulama.
 
- <a name="_Constructor" />
 
 
 #### <a name="constructor"></a>Oluşturucu
@@ -879,7 +851,6 @@ partial class IAdderProgressInvoker {
 
 Not: `Handle` Oluşturucusu gövdesinde özelliği kullanılır ve `handle` parametresi olarak Android v4.0 `handle` temel oluşturucuyu yürütme tamamlandıktan sonra parametresi geçersiz olabilir.
 
-<a name="_Dispose_Method" />
 
 #### <a name="dispose-method"></a>Dispose Yöntemi
 
@@ -897,7 +868,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-<a name="_ThresholdType_and_ThresholdClass" />
 
 #### <a name="thresholdtype-and-thresholdclass"></a>ThresholdType ve ThresholdClass
 
@@ -918,7 +888,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-<a name="_GetObject_Method" />
 
 #### <a name="getobject-method"></a>GetObject Metodu
 
@@ -933,7 +902,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-<a name="_Interface_Methods" />
 
 #### <a name="interface-methods"></a>Arabirim yöntemleri
 
@@ -951,7 +919,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
- <a name="_Connector_Methods" />
 
 
 #### <a name="connector-methods"></a>Bağlayıcı yöntemleri
@@ -986,7 +953,6 @@ int[] _values = (int[]) JNIEnv.GetArray(values, JniHandleOwnership.DoNotTransfer
 
 Ancak, unutmayın, `JNIEnv.GetArray` dizinin tamamı büyük diziler için bu çok sayıda eklenen GC baskısı sonuçlanabilir şekilde VM'ler arasında kopyalar.
 
-<a name="_Complete_Invoker_Definition" />
 
 ### <a name="complete-invoker-definition"></a>Tam çağırıcı tanımı
 
@@ -1060,7 +1026,6 @@ new JValue (currentSum));
 }
 ```
 
- <a name="_JNI_Object_References" />
 
 
 ## <a name="jni-object-references"></a>JNI Object References
@@ -1077,13 +1042,11 @@ Donanım aygıtları yaklaşık 52,000 genel başvuruları sınırının bulunur
 
 Zayıf genel başvurular yalnızca Android v2.2 (Froyo) ve sonraki sürümlerinde kullanılabilir. Zayıf genel başvurular ile silinebilir [JNIEnv.DeleteWeakGlobalRef](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.DeleteWeakGlobalRef/(System.IntPtr)).
 
-<a name="_Dealing_With_JNI_Local_References" />
 
 ### <a name="dealing-with-jni-local-references"></a>JNI yerel başvuruları postalarla
 
 [JNIEnv.GetObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetObjectField/), [JNIEnv.GetStaticObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticObjectField/), [JNIEnv.CallObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallObjectMethod/), [JNIEnv.CallNonvirtualObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallNonvirtualObjectMethod/)ve [JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/) yöntemleri döndürür bir `IntPtr` bir Java nesnesine JNI yerel bir referans içerir veya `IntPtr.Zero` Java döndürülürse `null`. (512 girişleri) başvuruları emin olmak için tercih edilir sonra bekleyen yerel başvuruları sınırlı sayıda nedeniyle zamanında silinir. İle yerel başvuruları ele alınabilir üç yolu vardır: açıkça oluşturma, silme bir `Java.Lang.Object` bunları ve kullanarak tutmak için örnek `Java.Lang.Object.GetObject<T>()` etrafında bir yönetilen aranabilir sarmalayıcısı oluşturmak için.
 
- <a name="_Explicitly_Deleting_Local_References" />
 
 
 ### <a name="explicitly-deleting-local-references"></a>Açıkça yerel başvuruları silme
@@ -1100,7 +1063,6 @@ finally {
 }
 ```
 
- <a name="_Wrapping_with_Java.Lang.Object" />
 
 
 ### <a name="wrapping-with-javalangobject"></a>İle Java.Lang.Object sarmalama
@@ -1131,7 +1093,6 @@ using (var value = new Java.Lang.Object (lref, JniHandleOwnership.TransferLocalR
 }
 ```
 
- <a name="_Using_Java.Lang.Object.GetObject&lt;T&gt;()" />
 
 
 ### <a name="using-javalangobjectgetobjectlttgt"></a>Java.Lang.Object.GetObject kullanarak&lt;T&gt;)
@@ -1170,13 +1131,12 @@ Not: farklı olarak her diğer `JNIEnv` nesne örneklerini döndüren yöntemi `
 
 ## <a name="instance-fields"></a>Örnek alanı
 
-Alanları aracılığıyla yönetilen *kimlikleri alan*. Alan kodlarının yoluyla elde [JNIEnv.GetFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetFieldID/), sınıf gerektiren alan alanın adı, tanımlanmış ve [JNI tür imzası](#_JNI_Type_Signatures) alanının.
+Alanları aracılığıyla yönetilen *kimlikleri alan*. Alan kodlarının yoluyla elde [JNIEnv.GetFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetFieldID/), sınıf gerektiren alan alanın adı, tanımlanmış ve [JNI tür imzası](#JNI_Type_Signatures) alanının.
 
 Alan kimlikleri boşaltılması gerek yoktur ve karşılık gelen bir Java türü yüklü olduğu sürece geçerlidir. (Android şu anda sınıfı kaldırılmasını desteklemez.)
 
 İki örneği alanları düzenleme için yöntemler kümesi vardır: Okuma örneği alanları ve bir örnek alanlarını yazmak için bir tane. Tüm yöntemler kümesi okumak veya alan değeri yazmak bir alan kodu gerektirir.
 
-<a name="_Reading_Instance_Field_Values" />
 
 ### <a name="reading-instance-field-values"></a>Okuma örneği alan değerleri
 
@@ -1207,7 +1167,6 @@ Burada `*` alan türü:
 
 
 
- <a name="_Writing_Instance_Field_Values" />
 
 
 ### <a name="writing-instance-field-values"></a>Örnek alanı değerleri yazılıyor
@@ -1243,13 +1202,12 @@ Burada *türü* alan türü:
 
 ## <a name="static-fields"></a>Statik alanları
 
-Statik alanları aracılığıyla yönetilen *kimlikleri alan*. Alan kodlarının yoluyla elde [JNIEnv.GetStaticFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticFieldID/), sınıf gerektiren alan alanın adı, tanımlanmış ve [JNI tür imzası](#JNI%20Type%20Signatures) alanının.
+Statik alanları aracılığıyla yönetilen *kimlikleri alan*. Alan kodlarının yoluyla elde [JNIEnv.GetStaticFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticFieldID/), sınıf gerektiren alan alanın adı, tanımlanmış ve [JNI tür imzası](#JNI_Type_Signatures) alanının.
 
 Alan kimlikleri boşaltılması gerek yoktur ve karşılık gelen bir Java türü yüklü olduğu sürece geçerlidir. (Android şu anda sınıfı kaldırılmasını desteklemez.)
 
 Yöntem statik alanları düzenleme için iki kümesi vardır: Okuma örneği alanları ve bir örnek alanlarını yazmak için bir tane. Tüm yöntemler kümesi okumak veya alan değeri yazmak bir alan kodu gerektirir.
 
-<a name="_Reading_Static_Field_Values" />
 
 ### <a name="reading-static-field-values"></a>Statik alan değerlerini okuma
 
@@ -1278,7 +1236,6 @@ Burada `*` alan türü:
 -   [JNIEnv.GetStaticDoubleField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticDoubleField/) &ndash; değerini okumak `double` statik alanları.
 
 
-<a name="_Writing_Static_Field_Values" />
 
 ### <a name="writing-static-field-values"></a>Statik alan değerleri yazılıyor
 
@@ -1313,7 +1270,7 @@ Burada *türü* alan türü:
 
 ## <a name="instance-methods"></a>Örnek yöntemleri
 
-Örnek yöntemleri aracılığıyla çağrılır *yöntemi kimlikleri*. Yöntem kimlikleri elde edilir aracılığıyla [JNIEnv.GetMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetMethodID/), türü gerektiren yöntemi yönteminin adı, tanımlanan ve [JNI tür imzası](#_JNI_Type_Signatures) yönteminin.
+Örnek yöntemleri aracılığıyla çağrılır *yöntemi kimlikleri*. Yöntem kimlikleri elde edilir aracılığıyla [JNIEnv.GetMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetMethodID/), türü gerektiren yöntemi yönteminin adı, tanımlanan ve [JNI tür imzası](#JNI_Type_Signatures) yönteminin.
 
 Yöntem kimlikleri boşaltılması gerek yoktur ve karşılık gelen bir Java türü yüklü olduğu sürece geçerlidir. (Android şu anda sınıfı kaldırılmasını desteklemez.)
 
@@ -1323,7 +1280,6 @@ Arabirim yöntemleri, içinde bildiri türü yalnızca aranabilir; Genişletilmi
 
 Herhangi bir yöntemini sınıfında tanımlanan veya herhangi bir temel sınıf veya uygulanan arabirimi aranabilir.
 
-<a name="_Virtual_Method_Invocation" />
 
 ### <a name="virtual-method-invocation"></a>Sanal yöntemi çağırma
 
@@ -1352,7 +1308,6 @@ Burada `*` yöntemin dönüş türü.
 -   [JNIEnv.CallDoubleMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallDoubleMethod/) &ndash; döndüren bir yöntem çağırma bir `double` değeri.
 
 
-<a name="_Non-virtual_Method_Invocation" />
 
 ### <a name="non-virtual-method-invocation"></a>Sanal olmayan yöntemi çağırma
 
@@ -1381,15 +1336,14 @@ Burada `*` yöntemin dönüş türü. Sanal olmayan yöntemi çağırma genellik
 -   [JNIEnv.CallNonvirtualDoubleMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallNonvirtualDoubleMethod/) &ndash; olmayan neredeyse döndüren bir yöntem çağırma bir `double` değeri.
 
 
- <a name="_Static_Methods" />
+<a name="_Static_Methods" />
 
 ## <a name="static-methods"></a>Statik yöntemler
 
-Statik yöntemler aracılığıyla çağrılır *yöntemi kimlikleri*. Yöntem kimlikleri elde edilir aracılığıyla [JNIEnv.GetStaticMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticMethodID/), türü gerektiren yöntemi yönteminin adı, tanımlanan ve [JNI tür imzası](#JNI%20Type%20Signatures) yönteminin.
+Statik yöntemler aracılığıyla çağrılır *yöntemi kimlikleri*. Yöntem kimlikleri elde edilir aracılığıyla [JNIEnv.GetStaticMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticMethodID/), türü gerektiren yöntemi yönteminin adı, tanımlanan ve [JNI tür imzası](#JNI_Type_Signatures) yönteminin.
 
 Yöntem kimlikleri boşaltılması gerek yoktur ve karşılık gelen bir Java türü yüklü olduğu sürece geçerlidir. (Android şu anda sınıfı kaldırılmasını desteklemez.)
 
- <a name="_Static_Method_Invocation" />
 
 
 ### <a name="static-method-invocation"></a>Statik yöntem çağırma
@@ -1419,8 +1373,7 @@ Burada `*` yöntemin dönüş türü.
 -   [JNIEnv.CallStaticDoubleMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticDoubleMethod/) &ndash; döndüren statik yöntem çağrılacak bir `double` değeri.
 
 
- <a name="_JNI_Type_Signatures" />
-
+<a name="JNI_Type_Signatures" />
 
 ## <a name="jni-type-signatures"></a>JNI türü imzaları
 
@@ -1453,9 +1406,6 @@ JNI tür başvuruları dört tür vardır:
 -  **Dizi**
 
 
- <a name="_Built-in_Type_References" />
-
-
 ### <a name="built-in-type-references"></a>Yerleşik tür başvuruları
 
 Yerleşik tür başvuruları yerleşik değer türleri başvurmak için kullanılan tek bir karakter var. Eşleme aşağıdaki gibidir:
@@ -1471,8 +1421,7 @@ Yerleşik tür başvuruları yerleşik değer türleri başvurmak için kullanı
 -  `"V"` için `void` yönteminin dönüş türü.
 
 
- <a name="_Simplified_Type_References" />
-
+<a name="_Simplified_Type_References_1" />
 
 ### <a name="simplified-type-references"></a>Basitleştirilmiş tür başvuruları
 
@@ -1486,7 +1435,6 @@ Basitleştirilmiş türü başvurusu çıkarmaya iki yolu vardır:
 
 İki ya da bulunan Java tür sonuçlanır [java.lang.Thread.State](http://developer.android.com/reference/java/lang/Thread.State.html) Basitleştirilmiş türü referansı eşleniyor `java/lang/Thread$State`.
 
-<a name="_Type_References" />
 
 ### <a name="type-references"></a>Tür başvuruları
 
@@ -1528,7 +1476,6 @@ static {};
 `Thread.State` İmzası kullandığımız bir Java enum türü olduğundan `valueOf` tür referansı Ljava/lang/iş parçacığı$; olup olmadığını belirlemek amacıyla yöntemi.
 
 
-<a name="_Array_Type_References" />
 
 ### <a name="array-type-references"></a>Dizi tür başvuruları
 
@@ -1537,7 +1484,6 @@ Diziler belirtirken Basitleştirilmiş tür başvuruları kullanılamaz.
 
 Örneğin, `int[]` olan `"[I"`, `int[][]` olan `"[[I"`, ve `java.lang.Object[]` olan `"[Ljava/lang/Object;"`.
 
-<a name="_Java_Generics_and_Type_Erasure" />
 
 
 ## <a name="java-generics-and-type-erasure"></a>Java genel türler ve türü silinme
@@ -1547,7 +1493,6 @@ Bazı "kırışıklıkların" vardır, ancak bu kırışıklıkların nasıl Jav
 
 JNI kullanılırken genel bir tür veya üye ve genel olmayan tür veya üye arasında fark yoktur. Örneğin, genel tür [java.lang.Class&lt;T&gt; ](http://developer.android.com/reference/java/lang/Class.html) de "ham" genel tür olan `java.lang.Class`, her ikisi de aynı Basitleştirilmiş türü başvuru yapıyor `"java/lang/Class"`.
 
-<a name="Java_Native_Interface_Support" />
 
 ## <a name="java-native-interface-support"></a>Java yerel arabirimi desteği
 
@@ -1610,7 +1555,6 @@ Activity mapActivity = Java.Lang.Object.GetObject<Activity>(lrefActivity, JniHan
 
 Ayrıca, tüm JNI işlevleri kaldırarak değiştirilmiş `JNIEnv*` parametresi her JNI işlevinde yok.
 
-<a name="_Summary" />
 
 ## <a name="summary"></a>Özet
 

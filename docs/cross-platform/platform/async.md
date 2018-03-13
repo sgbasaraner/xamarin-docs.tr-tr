@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 3de0e09b15b704db5e67fbbee6ba9bac86f58557
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4762612075a866581339b198552b8e26c9a1f6fa
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="async-support-overview"></a>Zaman uyumsuz desteğine genel bakış
 
@@ -28,7 +28,7 @@ C# 5 (pek çok örnekleri ve farklı kullanım senaryoları dahil) zaman uyumsuz
 
 Örnek uygulama basit zaman uyumsuz web (ana iş parçacığı engellenmeden) istekte sonra indirilen html ve karakter sayısı ile kullanıcı arabirimini güncelleştirir.
 
- [ ![](async-images/AsyncAwait_427x368.png "Örnek uygulama basit zaman uyumsuz web ana iş parçacığı engellenmeden istekte sonra indirilen html ve karakter sayısı ile kullanıcı arabirimini güncelleştirir")](async-images/AsyncAwait.png)
+ [![](async-images/AsyncAwait_427x368.png "Örnek uygulama basit zaman uyumsuz web ana iş parçacığı engellenmeden istekte sonra indirilen html ve karakter sayısı ile kullanıcı arabirimini güncelleştirir")](async-images/AsyncAwait.png#lightbox)
 
 Xamarin'in zaman uyumsuz destek Mono 3.0 temeli üzerinde oluşturulmuştur ve .NET 4.5 mobil dostu sürümünde Silverlight mobil dostu bir sürümü olmaktan API profili yükseltir.
 

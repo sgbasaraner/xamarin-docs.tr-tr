@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: bf382f380876e85db46226fb3586382f20d630f2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b22cebf8ca5804884c559da687fe90236c7af44d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="paths-and-text"></a>Yollar ve metin
 
@@ -44,7 +44,7 @@ public SKPath GetTextPath (String text, Single x, Single y)
 
 Bu görevlerden birini kırpma. **Kırpma metin** sayfa kırpması yol "CODE" word karakter ana hatlarını temelli oluşturur Bu yolu bir görüntüsünü içeren bir bit eşlem küçük sayfa boyutunu genişletilir **kırpma metin** kaynak kodu:
 
-[![](text-paths-images/clippingtext-small.png "Üçlü sayfasının ekran görüntüsü kırpma metin")](text-paths-images/clippingtext-large.png "Üçlü sayfasının ekran görüntüsü kırpma metin")
+[![](text-paths-images/clippingtext-small.png "Üçlü sayfasının ekran görüntüsü kırpma metin")](text-paths-images/clippingtext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü kırpma metin")
 
 [ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Sınıfı oluşturucusu katıştırılmış bir kaynak olarak depolanan bit eşlemi yükleyen **medya** klasörü çözümün:
 
@@ -125,7 +125,7 @@ Kırpma yolunu ayarladıktan sonra bit eşlem görüntülenebilir ve karakter an
 
 **Metin yolu etkisini** sayfa 1 D yolu efekti oluşturmak için bir yol için tek bir karakterini dönüştürür. Bu yol etkiyi boyama nesnesiyle daha sonra aynı karakterin büyük bir sürümü anahat vuruş yapmak için kullanılır:
 
-[![](text-paths-images/textpatheffect-small.png "Üçlü sayfasının ekran görüntüsü metin yolu etkisini")](text-paths-images/textpatheffect-large.png "Üçlü sayfasının ekran görüntüsü metin yolu efekti")
+[![](text-paths-images/textpatheffect-small.png "Üçlü sayfasının ekran görüntüsü metin yolu etkisini")](text-paths-images/textpatheffect-large.png#lightbox "Üçlü sayfasının ekran görüntüsü metin yolu efekti")
 
 İş kadar [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) sınıfı alanlarını ve Oluşturucusu oluşur. İki `SKPaint` nesneleri iki farklı amaçlar için kullanılan alanları olarak tanımlanmamış: ilk (adlı `textPathPaint`) simgesi ile dönüştürmek için kullanılan bir `TextSize` 1 D yolu etkisi yoluna 50. İkinci (`textPaint`) simgesi yolu etkileyen ile büyük sürümünü görüntülemek için kullanılır. Bu nedenle, `Style` nesnesi bu ikinci boyama kümesine `Stroke`, ancak `StrokeWidth` özelliği 1 D yolu etkisi kullanırken bu özellik gerekli değildir çünkü ayarlı değil:
 
@@ -270,7 +270,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `PaintSurface` İşleyicisi sonra adlı yeni bir yol oluşturur `outlinePath`. Bu çağrı hedef yolunda olur `GetFillPath`. `StrokeWidth` 25 nedenler özelliğinin `outlinePath` metin karakterlerinin vuruş yapması 25 piksel genişliğinde yol anahat açıklamak için. Bu yol ardından 5 vuruşun genişliğini kırmızı görüntülenir:
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Üçlü sayfasının ekran görüntüsü karakter ana hattını anahatları")](text-paths-images/characteroutlineoutlines-large.png "Üçlü sayfasının ekran görüntüsü karakter ana hattını anahatları")
+[![](text-paths-images/characteroutlineoutlines-small.png "Üçlü sayfasının ekran görüntüsü karakter ana hattını anahatları")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Üçlü sayfasının ekran görüntüsü karakter ana hattını anahatları")
 
 Yakından arayın ve burada yol anahattı keskin köşe yapar çakışmalar görürsünüz. Bu işlemin normal yapılarını bunlar.
 
@@ -323,7 +323,7 @@ public class CircularTextPage : ContentPage
 
 `TextSize` Özelliği `textPaint` böylece metin genişliği çevresini eşleşir sonra ayarlanır:
 
-[![](text-paths-images/circulartext-small.png "Üçlü sayfasının ekran görüntüsü döngüsel metin")](text-paths-images/circulartext-large.png "Üçlü sayfasının ekran görüntüsü döngüsel metin")
+[![](text-paths-images/circulartext-small.png "Üçlü sayfasının ekran görüntüsü döngüsel metin")](text-paths-images/circulartext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü döngüsel metin")
 
 Metnin kendisi de biraz döngüsel olarak seçildi: "daire" tümcenin konu hem edat tümcecik nesnesinin sözcüğüdür. 
 

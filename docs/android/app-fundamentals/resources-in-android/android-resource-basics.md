@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: c8f6832f618c37b3593f28c8efaeb87e4df5df03
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fba8412c53597260744bdce443a7e993a6990672
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-resource-basics"></a>Android kaynak temelleri
 
@@ -39,7 +39,6 @@ Varsayılan kaynakları beş dosyaların kaynaklar klasörüne oluşturuldu:
 
 -  **Resource.Designer.cs** &ndash; bu dosyayı otomatik olarak oluşturulur ve Xamarin.Android ve ayrı tutma benzersiz tarafından tutulan kimliğin her kaynağa atanmış. Bu çok benzer ve aynı amaca Java'da yazılmış bir Android uygulaması olurdu R.java dosya adıdır. Xamarin.Android araçları tarafından otomatik olarak oluşturulur ve zaman zaman yeniden oluşturulacak.
 
-<a name="Creating_and_Accessing_Resources" />
 
 ## <a name="creating-and-accessing-resources"></a>Oluşturma ve kaynaklara erişme
 
@@ -62,7 +61,6 @@ Ayrıca, Android yalnızca küçük harf dosya adları için kaynak öğeleri de
 
 Kaynakları projeye eklendikten sonra bir uygulamada kullanmak için iki yolu vardır &ndash; program aracılığıyla (içindeki kodu) veya XML dosyalarından.
 
-<a name="Referencing_Resources_Programmatically" />
 
 ## <a name="referencing-resources-programmatically"></a>Program aracılığıyla başvuru kaynakları
 
@@ -108,7 +106,6 @@ Program aracılığıyla (kodda kaynakları) başvururken aşağıdaki söz dizi
 
 -  **Kaynak adı** &ndash; (uzantısı olmadan) kaynak dosya adı veya bir XML öğesi olan kaynaklar için android: name özniteliği değeri budur.
 
-<a name="Referencing_Resources_from_XML" />
 
 ## <a name="referencing-resources-from-xml"></a>XML'den başvuru kaynakları
 

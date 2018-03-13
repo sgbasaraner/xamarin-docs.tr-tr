@@ -8,15 +8,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1dad5e859efdf69e7003b45724f718b16faffd62
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac83b74f39497333de7aa80079784adf61bf2e65
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-wear"></a>Android Wear
-
-## <a name="android-wear"></a>Android Wear
 
 Android yıpranması akıllı saatlerde gibi wearable cihazlar için tasarlanmış Android sürümüdür. Bu bölüm, yükleme ve yıpranması geliştirme, ilk yıpranması Cihazınızı ve kendi oluşturmak için uygulamaları takması başvurabilir örnekleri listesini oluşturmak için adım adım için gerekli Araçları'nı yapılandırma hakkında yönergeler içerir.
 
@@ -24,24 +22,23 @@ Android yıpranması akıllı saatlerde gibi wearable cihazlar için tasarlanmı
 
 Android takmak tanıtır, yükleyin ve bilgisayarınızı yıpranması geliştirme için yapılandırma açıklar ve bir öykünücü veya yıpranması cihaz üzerinde ilk Android takmak uygulamanızı çalıştırın ve oluşturmanıza yardımcı için adımları sağlar.
 
-##  <a name="user-interfaceandroidwearuser-interfaceindexmd"></a>[Kullanıcı arabirimi](~/android/wear/user-interface/index.md)
+##  <a name="user-interfaceandroidwearuser-interfaceindexmd"></a>[Kullanıcı Arabirimi](~/android/wear/user-interface/index.md)
 
 Android yıpranması özgü denetler ve bu denetimlerinin nasıl kullanıldığını gösteren örnekler için bağlantılar sağlar açıklanmaktadır.
 
-##  <a name="platform-featuresandroidwearplatformindexmd"></a>[Platform özellikleri](~/android/wear/platform/index.md)
+##  <a name="platform-featuresandroidwearplatformindexmd"></a>[Platform Özellikleri](~/android/wear/platform/index.md)
 
 Bu bölümdeki belgeler Android takmak için belirli özellikleri kapsar. Burada bir WatchFace oluşturmayı açıklar bir konuda bulabilirsiniz.
 
-##  <a name="screen-sizesandroidwearscreen-sizesmd"></a>[Ekran boyutlarına](~/android/wear/screen-sizes.md)
+##  <a name="screen-sizesandroidwearscreen-sizesmd"></a>[Ekran Boyutları](~/android/wear/screen-sizes.md)
 
 Önizleme ve Kullanıcı Arabiriminizin kullanılabilir ekran boyutları için en iyi duruma getirme.
 
-##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[Dağıtım ve test etme](~/android/wear/deploy-test/index.md)
+##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[Dağıtım ve Test](~/android/wear/deploy-test/index.md)
 
 Bir Android takmak cihazına veya yıpranması için yapılandırılmış Android öykünücüsü Android takmak uygulamanızı dağıtmak açıklanmaktadır. Hata ayıklama ipuçları ve geliştirme bilgisayarınıza ve bir Android cihazı arasında bir Bluetooth bağlantı kurma için bilgileri içerir.
 
 
-<a name="Samples" />
 
 ## <a name="samples"></a>Örnekler
 
@@ -137,21 +134,21 @@ Video Bu destek yıpranması ile Xamarin.Android ele bağlantılar denetleyin.
 <table align="center" border="0" cellpadding="1" cellspacing="1">
     <tr>
         <td>
-        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0"/ /></td>
+        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0" /></td>
         <td><a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/">Android m ve çok daha fazlası</a>
         <br />
 Android M Geliştirici önizlemesi, malzeme tasarım, bildirimler ve yeni bir animasyon birkaçıdır dahil olmak üzere, yararlanmak geliştiricilere yönelik yeni API sayısız kullanıma sunuldu.</td>
     </tr>
     <tr>
         <td>
-        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" / /></td>
+        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" /></td>
         <td><a href="https://www.youtube.com/watch?v=80H8tXByZQc">C# Zevkten ve my gözler: Google cam ve Android takmak</a>
         <br />
 Wearable bilgi işlem benzeri gelecek (veya bir denetçisi aracı bölüm) görünebilir, ancak çoğu kişi zaten gelecek bugün benimsemenin! C# geliştiricileri bu bilmeniz ve araçlar ve beceriler wearable aygıtlardan (geliştikçe 2014) gücünü harekete geçirmek zaten sahip.</td>
     </tr>
     <tr>
         <td>
-        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" / /></td>
+        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" /></td>
         <td><a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU">Xamarin.Android yenilikler</a>
         <br />
         <i>Android M, Android yıpranması, Android TV, Android otomatik, malzeme tasarım ve resim; Bunun için Xamarin geliştirici olarak anlamı nedir? </i> gelen 2014 geliştirin.</td>

@@ -4,14 +4,15 @@ description: "Perspektif ve Konik etkileri dönüştürme matrisi üçüncü sü
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 3fda8524b824042aa4aba07853da2801baf47027
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2e2e83404bc93bd07885008b868c51eba2ff7140
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="non-affine-transforms"></a>Afin olmayan dönüşümler
 
@@ -226,7 +227,7 @@ public partial class TestPerspectivePage : ContentPage
 
 Bazı örnek görüntüleri şunlardır:
 
-[![](non-affine-images/testperspective-small.png "Üçlü sayfasının ekran görüntüsü Test perspektifini")](non-affine-images/testperspective-large.png "Üçlü sayfasının ekran görüntüsü Test perspektifi")
+[![](non-affine-images/testperspective-small.png "Üçlü sayfasının ekran görüntüsü Test perspektifini")](non-affine-images/testperspective-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Test perspektifi")
 
 Kaydırıcılar ile denerken değerleri 0.0066 ötesinde veya –0.0066 altında görüntünün aniden fractured ve tutarsız hale gelmesine neden bulabilirsiniz. Dönüştürülmekte olan bit eşlem 300 piksel kare olur. Bit eşlem koordinatları –150 150 için aralığı için kendi merkezi göre dönüştürülür. Sözcüğünün z değeri ' olan:
 
@@ -390,13 +391,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Bazı örnekler şunlardır:
 
-[![](non-affine-images/tapertransform-small.png "Üçlü sayfasının ekran görüntüsü Konik dönüştürme")](non-affine-images/tapertransform-large.png "Üçlü sayfasının ekran görüntüsü Konik dönüştürme")
+[![](non-affine-images/tapertransform-small.png "Üçlü sayfasının ekran görüntüsü Konik dönüştürme")](non-affine-images/tapertransform-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Konik dönüştürme")
 
 Başka bir genelleştirilmiş afin olmayan dönüşümler sonraki makalede gösterilen, 3B bir döndürme türünde [3B Döndürme](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md).
 
 Afin olmayan dönüşüm dikdörtgen dışbükey herhangi quadrilateral dönüştürebilirsiniz. Bu tarafından gösterilen **olmayan afin Matrisi Göster** sayfası. Çok benzer **afin Matrisi Göster** gelen sayfa [matris dönüşümleri](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md) dördüncü sahiptir ancak bu makale `TouchPoint` bit eşlem dördüncü köşesindeki işlemek için nesnesi:
 
-[![](non-affine-images/shownonaffinematrix-small.png "Üçlü sayfasının ekran görüntüsü olmayan afin Matrisi Göster")](non-affine-images/shownonaffinematrix-large.png "Üçlü sayfasının ekran görüntüsü olmayan afin Matrisi Göster")
+[![](non-affine-images/shownonaffinematrix-small.png "Üçlü sayfasının ekran görüntüsü olmayan afin Matrisi Göster")](non-affine-images/shownonaffinematrix-large.png#lightbox "Üçlü sayfasının ekran görüntüsü olmayan afin Matrisi Göster")
 
 Bit eşlem köşelerinde birinin iç açı 180 derece büyüktür yaptığınızda, veya birbiriyle arası iki kenara doğrulamaya çalışma sürece, program başarıyla bu yöntemi kullanarak dönüştürme hesaplar [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) sınıfı:
 

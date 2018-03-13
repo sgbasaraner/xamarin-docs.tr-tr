@@ -1,17 +1,17 @@
 ---
 title: "UrhoSharp Android desteği"
-description: "Android özel kurulum ve özellikleri"
+description: "Android özel kurulum ve UrhoSharp özellikleri."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8409BD81-B1A6-4F5D-AE11-6BBD3F7C6327
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 5100fd4ac573021e088a88446f5f6559d49c4972
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f99b8d2d9f779bc0cf14d76c110d9769ec49ad53
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-android-support"></a>UrhoSharp Android desteği
 
@@ -21,11 +21,11 @@ Taşınabilir sınıf kitaplığı Urho olan ve çeşitli platform oyun mantığ
 
 Sayfalarında varsayımında `MyGame` sınıfıdır `Application` sınıfı.
 
-# <a name="architectures"></a>Mimariler
+## <a name="architectures"></a>Mimariler
 
 **Desteklenen mimariler**: x86, pushservice, pushservice-v7a
 
-# <a name="create-a-project"></a>Proje oluşturma
+## <a name="create-a-project"></a>Proje oluşturma
 
 Bir Android projesi oluşturun ve UrhoSharp NuGet paketini ekleyin.
 
@@ -33,7 +33,7 @@ Veri varlıklarınız için içeren eklemek **varlıklar** dizin ve emin olun do
 
 ![Proje Kurulum](android-images/image-3.png "varlıklar dizinine varlıkları içeren veri ekleme")
 
-# <a name="configure-and-launching-urho"></a>Yapılandırma ve Urho başlatma
+## <a name="configure-and-launching-urho"></a>Yapılandırma ve Urho başlatma
 
 Using deyimleri için ekleme `Urho` ve `Urho.Android` ad alanları ve ardından uygulamanızı başlatma yanı sıra Urho başlatma için bu kodu ekleyin.
 
@@ -45,7 +45,7 @@ UrhoSurface.RunInActivity<MyGame>();
 
 Bu işlem, içerik olarak oyuna tam ekran etkinlik açar.
 
-# <a name="custom-embedding-of-urho"></a>Özel Urho katıştırma
+## <a name="custom-embedding-of-urho"></a>Özel Urho katıştırma
 
 Alternatif olarak zorunda Urho tüm uygulama ekran üzerinde sürebilir ve uygulamanızın bir bileşeni olarak kullanmak için oluşturabileceğiniz bir `SurfaceView` aracılığıyla:
 

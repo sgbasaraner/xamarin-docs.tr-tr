@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 55864073aecb48176d650da6edefad24c3248767
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0c4014ecda0501e9309a17901c439444e4b48e86
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-views-in-c"></a>C# yerel görünümleri
 
@@ -24,7 +24,7 @@ Veren herhangi bir Xamarin.Forms denetimi `Content` çok ayarlamak için veya bi
 
 Aşağıdaki ekran görüntüleri platforma özgü görünümler Xamarin.Forms için eklenene göstermek [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
 
-[![](code-images/screenshots-sml.png "Platforma özgü görünümler içeren StackLayout")](code-images/screenshots.png "platforma özgü görünümler içeren StackLayout")
+[![](code-images/screenshots-sml.png "Platforma özgü görünümler içeren StackLayout")](code-images/screenshots.png#lightbox "platforma özgü görünümler içeren StackLayout")
 
 Xamarin.Forms düzene platforma özgü görünümler ekleme yeteneği her platformda iki genişletme yöntemleri tarafından etkinleştirilir:
 
@@ -64,7 +64,7 @@ contentView.Content = uiLabel.ToView();
 Aşağıdaki kod örneğinde nasıl ekleneceğini gösterir bir `TextView` için bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ve [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
 
 ```csharp
-var textView = new TextView (Forms.Context) { Text = originalText, TextSize = 14 };
+var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
 stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
@@ -188,7 +188,7 @@ public class CustomControl : TextView
 Bu görünüm örneği eklenen bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
-var customControl = new CustomControl (Forms.Context) {
+var customControl = new CustomControl (MainActivity.Instance) {
   Text = "This control has incorrect sizing - it doesn't occupy the available width of the device.",
   TextSize = 14
 };
@@ -323,4 +323,4 @@ Bu makalede, C# kullanılarak oluşturulan bir Xamarin.Forms düzene yerel gör�
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [NativeEmbedding (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeEmbedding/)
-- [Yerel formlar](~/xamarin-forms/platform/native-forms.md)
+- [Yerel Formlar](~/xamarin-forms/platform/native-forms.md)

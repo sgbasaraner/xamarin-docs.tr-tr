@@ -3,16 +3,16 @@ title: "TvOS 9 giriş"
 description: "Bu makalede Xamarin.tvOS geliştiriciler için tüm yeni ve değiştirilen API'ler ve tvOS 9 kullanılabilir özellikler sunar."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c1fafe85fb7f5c30dca0dff6fe3dff5172e0b9aa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55e83658e09bc7e5c12bb3ef3f508497651ec46c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-tvos-9"></a>TvOS 9 giriş
 
@@ -91,7 +91,7 @@ Siri uzaktan aşağıdaki ülkede şu anda kullanılabilir değil:
 
 Tüm diğer ülkeler Apple TV varsayılan arama ekranında aramak için metin girişi ile getirir arama düğmesiyle Siri düğmesi değiştiren uzak alırsınız:
 
-[ ![](tvos9-images/remote02.png "Siri uzaktan")](tvos9-images/remote02.png)
+[![](tvos9-images/remote02.png "Siri uzaktan")](tvos9-images/remote02.png#lightbox)
 
 Daha fazla bilgi için lütfen bkz bizim [Siri uzak ve Bluetooth denetleyicileri](~/ios/tvos/platform/remote-bluetooth.md) belgeleri.
 
@@ -155,7 +155,7 @@ Daha fazla bilgi için lütfen bkz bizim [gezinti ve odak çalışma](~/ios/tvos
 
 Apple TV giriş ekranı yüklenir ve kullanıcı tercihleri erişmek için bir yol sağlayan tüm uygulamalar gösterilir:
 
-[ ![](tvos9-images/home01.png "Giriş ekranı")](tvos9-images/home01.png)
+[![](tvos9-images/home01.png "Giriş ekranı")](tvos9-images/home01.png#lightbox)
 
 Kullanıcı bir kılavuz Siri bir uygulama seçin ve başlatmak için odak kullanarak uzaktan üzerinde dokunma hareketleri kullanarak uygulama simgeleri gider. Uygulama simgesi ilk olası kullanıcınız harika izlenim için fırsat ve uygulamanızın amacı bir bakışta iletişim kurmanız gerekir.
 
@@ -169,7 +169,7 @@ Daha fazla bilgi için lütfen bkz bizim [simgeleri ve görüntüleri çalışma
 
 Kullanıcının Apple TV giriş ekranında üst satırda Xamarin.tvOS uygulamanızı yerleştirdiğini, uygulamanızı kullanıcı tarafından seçildiğinde büyük bir üst raf görüntü görüntülenir. Bu görüntü, uygulamanızı özelliklerini vurgulamak veya içeriği doğrudan bağlantılar sağlar.
 
-[ ![](tvos9-images/topshelf01.png "Üst raf")](tvos9-images/topshelf01.png)
+[![](tvos9-images/topshelf01.png "Üst raf")](tvos9-images/topshelf01.png#lightbox)
 
 Üst raf görüntü ya da tek bir statik sağlanabilir `.png` veya `.lsr` dosyası veya dinamik olarak oluşturulabilir çalışma zamanında odaklanabilir öğeleri tek bir satır.
 
@@ -184,7 +184,7 @@ Daha fazla bilgi için lütfen bkz bizim [simgeleri ve görüntüleri çalışma
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

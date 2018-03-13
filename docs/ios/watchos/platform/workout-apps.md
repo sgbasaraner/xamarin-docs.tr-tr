@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: f375f58215fbef13298e31b03b969c9388d2bfa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77bad4c31ad0cb11476c656aa495707d2a94aa8f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="workout-apps"></a>Etkinlik uygulamalar
 
@@ -29,7 +29,7 @@ Sistem durumu ve uygunluk hedeflerine doğru günün birkaç saat devoting uygun
 
 İyi tasarlanmış bir uygunluk veya etkinlik uygulamasının uygunluk hedeflerine ulaşmak için bunların etkinliklerini grafik kullanıcıların yardımcı olur. Apple Watch kullanarak uygunluk ve etkinlik uygulamalar anlık Kalp oranı erişimi kalori yazma ve etkinlik algılama.
 
-[ ![](workout-apps-images/workout01.png "Uygunluk ve etkinlik uygulama örneği")](workout-apps-images/workout01.png)
+[![](workout-apps-images/workout01.png "Uygunluk ve etkinlik uygulama örneği")](workout-apps-images/workout01.png#lightbox)
 
 WatchOS 3, yeni _arka çalışan_ verir etkinlik ilgili uygulamalar üzerinde Apple Watch arka planda çalışan ve HealthKit verilerine erişim olanağı.
 
@@ -60,20 +60,20 @@ Arka plan çalışmasını etkinleştirmek için aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, izleme uzantının Yardımcısı iPhone uygulamanın çift `Info.plist` dosyayı düzenlemek için açın.
 2. Geçiş **kaynak** görünümü: 
 
-    [ ![](workout-apps-images/plist01.png "Kaynak Görünümü")](workout-apps-images/plist01.png)
+    [![](workout-apps-images/plist01.png "Kaynak Görünümü")](workout-apps-images/plist01.png#lightbox)
 3. Adlı yeni bir anahtar ekleyin `WKBackgroundModes` ve **türü** için `Array`: 
 
-    [ ![](workout-apps-images/plist02.png "WKBackgroundModes adlı yeni bir anahtar ekleyin")](workout-apps-images/plist02.png)
+    [![](workout-apps-images/plist02.png "WKBackgroundModes adlı yeni bir anahtar ekleyin")](workout-apps-images/plist02.png#lightbox)
 4. Dizi ile yeni bir öğe eklemek **türü** , `String` ve değerini `workout-processing`: 
 
-    [ ![](workout-apps-images/plist03.png "Dizi dize türünde ve etkinlik işleme değeri ile yeni bir öğe ekleyin")](workout-apps-images/plist03.png)
+    [![](workout-apps-images/plist03.png "Dizi dize türünde ve etkinlik işleme değeri ile yeni bir öğe ekleyin")](workout-apps-images/plist03.png#lightbox)
 5. Değişiklikleri dosyaya kaydedin.
 
 ## <a name="starting-a-workout-session"></a>Bir etkinlik oturumu başlatılıyor
 
 Bir etkinlik oturum açması için üç ana adım vardır:
 
-[ ![](workout-apps-images/workout02.png "Bir etkinlik oturum açması için üç ana adım")](workout-apps-images/workout02.png)
+[![](workout-apps-images/workout02.png "Bir etkinlik oturum açması için üç ana adım")](workout-apps-images/workout02.png#lightbox)
 
 1. Uygulama yetkilendirme HealthKit erişim verilerde istemeniz gerekir.
 2. Başlatılmakta etkinlik türü için bir etkinlik yapılandırma nesnesi oluşturun.
@@ -97,7 +97,7 @@ Aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, çift `Entitlements.plist` dosyayı düzenlemek için açın.
 2. Alt kısmına kaydırın ve denetleme **etkinleştirmek HealthKit**: 
 
-    [ ![](workout-apps-images/auth01.png "Denetimi etkinleştir HealthKit")](workout-apps-images/auth01.png)
+    [![](workout-apps-images/auth01.png "Denetimi etkinleştir HealthKit")](workout-apps-images/auth01.png#lightbox)
 3. Değişiklikleri dosyaya kaydedin.
 4. ' Ndaki yönergeleri izleyin [açık uygulama kimliği ve sağlama profili](~/ios/platform/healthkit.md) ve [uygulama kimliği ve sağlama profili ile Xamarin.iOS uygulamanızı ilişkilendirme](~/ios/platform/healthkit.md) bölümlerini [giriş HealthKit](~/ios/platform/healthkit.md) doğru uygulama sağlamak için makale.
 5. Son olarak, konusundaki yönergeleri kullanın [programlama durumu Seti](~/ios/platform/healthkit.md) ve [kullanıcının izin isteyen](~/ios/platform/healthkit.md) bölümlerini [HealthKit giriş](~/ios/platform/healthkit.md) makalesi isteği kullanıcının HealthKit veri deposuna erişmek için yetkilendirme.
@@ -273,7 +273,7 @@ private void StartOutdoorRun ()
 
 Uygulama bu etkinlik oturumu başlatır ve bunların izleme yüze kullanıcı anahtarları, bir küçük yeşil "adam çalışır" simge karşılaştığı görüntülenecek:
 
-[ ![](workout-apps-images/workout03.png "Nominal bir küçük yeşil çalışan adam simgesi görüntülenir")](workout-apps-images/workout03.png)
+[![](workout-apps-images/workout03.png "Nominal bir küçük yeşil çalışan adam simgesi görüntülenir")](workout-apps-images/workout03.png#lightbox)
 
 Kullanıcı bu simgeyi dokunur, uygulamasına geri götürülürsünüz.
 
@@ -281,7 +281,7 @@ Kullanıcı bu simgeyi dokunur, uygulamasına geri götürülürsünüz.
 
 Bir etkinlik oturumu yapılandırılmış ve başlatılan sonra oturumu (örneğin, kullanıcının Kalp hızı) hakkında veri toplamak ve oturum durumunu denetlemek uygulama gerekir:
 
-[ ![](workout-apps-images/workout04.png "Veri toplama ve Denetim Diyagramı")](workout-apps-images/workout04.png)
+[![](workout-apps-images/workout04.png "Veri toplama ve Denetim Diyagramı")](workout-apps-images/workout04.png#lightbox)
 
 1. **Örnekleri Gözlemleme** -uygulama, üzerinde işlem ve kullanıcıya görüntülenen HealthKit bilgi almak gerekir.
 2. **Olayları Gözlemleme** -uygulama HealthKit veya uygulamanın kullanıcı Arabirimi (örneğin, etkinlik duraklatma kullanıcı) oluşturulan olaylar yanıt vermesi gerekir.
@@ -502,7 +502,7 @@ Yeni iOS 10, bu kullanıcının iPhone etkinlik etkinlik listesi listesini içer
 
 Bitirmek ve etkinlik oturumu kaydetmek için aşağıdaki adımları gerekir:
 
-[ ![](workout-apps-images/workout05.png "Bitiş ve etkinlik oturum diyagramı kaydetme")](workout-apps-images/workout05.png)
+[![](workout-apps-images/workout05.png "Bitiş ve etkinlik oturum diyagramı kaydetme")](workout-apps-images/workout05.png#lightbox)
 
 1. İlk olarak, uygulama etkinlik oturumunu sona erdirmek gerekir.
 2. Etkinlik oturum HealthKit için kaydedilir.
@@ -642,7 +642,7 @@ WatchOS uygulama çalışırken, Mesajlaşma ve üst iOS uygulaması ile iletiş
 
 Bu işleminin nasıl çalıştığı bir göz atalım:
 
-[ ![](workout-apps-images/workout06.png "iPhone ve Apple Watch iletişim diyagramı")](workout-apps-images/workout06.png)
+[![](workout-apps-images/workout06.png "iPhone ve Apple Watch iletişim diyagramı")](workout-apps-images/workout06.png#lightbox)
 
 1. İPhone uygulamasını oluşturur bir `HKWorkoutConfiguration` nesne ve etkinlik türü ve konumu ayarlar.
 2. `HKWorkoutConfiguration` Nesne uygulamasının Apple Watch sürümü gönderilir ve zaten çalışmıyorsa sistemi tarafından başlatılır.

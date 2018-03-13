@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f7ded8fdc1274f7c98d8f7134f6a87c7ba767646
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b0d757c951f9244beb093a0a9b13ac1d069b507
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="reporting-bugs"></a>Raporlama hataları
 
@@ -70,7 +70,7 @@ Aşağıdaki bölümlerde, bilinen sorunlar ve çözümleri kapsar.
 
 Hata ayıklayıcı Xamarin.Mac uygulamalar korumalı alan, etkinleştirdiğinizde, varsayılan olarak, uygulamaya bağlanamıyor anlamına gelir, TCP üzerinden bağlanır etkin uygun izinler olmadan uygulamayı çalıştırmayı denerseniz, bir hata alıyorsunuz şekilde *"bağlanılamıyor hata ayıklayıcı"*. 
 
-[![Yetkilendirmeler düzenleme](troubleshooting-images/debug01.png "yetkilendirmeleri düzenleme")](troubleshooting-images/debug01-large.png)
+[![Yetkilendirmeler düzenleme](troubleshooting-images/debug01.png "yetkilendirmeleri düzenleme")](troubleshooting-images/debug01-large.png#lightbox)
 
 **İzin giden ağ bağlantıları (istemci)** izin için hata ayıklayıcı gerekli bir durumda, bu bir etkinleştirilmesi normal olarak hata ayıklama izin verir. Bu olmadan hata ayıklaması yapılamıyor olduğundan, biz güncelleştirdiniz `CompileEntitlements` için hedef `msbuild` hata ayıklama için korumalı herhangi bir uygulama yalnızca derlemeler için bu izni yetkilendirmeler otomatik olarak eklemek için. Yayın derlemeleri değiştirilmemiş yetkilendirmeler dosyasında belirtilen yetkilendirmeler kullanmanız gerekir.
 
@@ -80,7 +80,7 @@ Hata ayıklayıcı Xamarin.Mac uygulamalar korumalı alan, etkinleştirdiğinizd
 
 Bu gidip Xamarin.Mac proje seçenekleri açarak çözülebilir **Mac yapı** > **uluslararası** ve denetimi **Batı** Uluslararası hale getirme:
 
-[![Derleme seçenekleri düzenleme](troubleshooting-images/issue01.png "düzenleme derleme seçenekleri")](troubleshooting-images/issue01-large.png)
+[![Derleme seçenekleri düzenleme](troubleshooting-images/issue01.png "düzenleme derleme seçenekleri")](troubleshooting-images/issue01-large.png#lightbox)
 
 ### <a name="failed-to-compile-mm5103"></a>(Mm5103) derlenemedi
 
@@ -100,7 +100,7 @@ Yeni Visual Studio ile for Mac yüklü bir yeni Xamarin.Mac uygulaması projesi 
 
 Çift ise **Entitlements.plist** dosya, yetkilendirmeler Düzenleyicisi'ni görüntülenir:
 
-[![Yetkilendirmeler düzenleme](troubleshooting-images/entitlements02.png "yetkilendirmeleri düzenleme")](troubleshooting-images/entitlements02-large.png)
+[![Yetkilendirmeler düzenleme](troubleshooting-images/entitlements02.png "yetkilendirmeleri düzenleme")](troubleshooting-images/entitlements02-large.png#lightbox)
 
 Varolan Xamarin.Mac projeleri için el ile oluşturmanız gerekir **Entitlements.plist** nde projeye sağ tıklanarak dosya **çözüm paneli** ve seçerek **Ekle**  >  **Yeni dosya...** . Ardından, **Xamarin.Mac** > **boş özellik listesi**:
 
@@ -108,7 +108,7 @@ Varolan Xamarin.Mac projeleri için el ile oluşturmanız gerekir **Entitlements
 
 Girin `Entitlements` tıklayın ve ad için **yeni** düğmesi. Projenizi yetkilendirmeler dosyasını daha önce eklediyseniz, yeni bir dosya oluşturmak yerine proje eklemek için istenir:
 
-[![Bir dosyanın üzerine yazma doğrulama](troubleshooting-images/entitlements04.png "bir dosyanın üzerine yazma doğrulanıyor")](troubleshooting-images/entitlements04-large.png)
+[![Bir dosyanın üzerine yazma doğrulama](troubleshooting-images/entitlements04.png "bir dosyanın üzerine yazma doğrulanıyor")](troubleshooting-images/entitlements04-large.png#lightbox)
 
 ## <a name="contacting-support-business-or-enterprise-licenses"></a>Destek (iş veya enterprise lisans)
 

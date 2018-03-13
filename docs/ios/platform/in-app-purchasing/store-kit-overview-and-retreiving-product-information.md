@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a636a5ee2b027a2b2889c375f1fef5be67c379b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bafada037f912007201fd5e81b17302b21de3092
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="store-kit-overview-and-retrieving-product-information"></a>Paketi'ne Genel Bakış ve ürün bilgileri alınırken depolama
 
@@ -19,7 +19,7 @@ Bir uygulama içi satın alma için kullanıcı arabirimi, aşağıdaki ekran g�
 Herhangi bir işlem gerçekleşmeden önce uygulamayı ürünün fiyatını ve açıklamasını görüntülemek için almanız gerekir. Ardından kullanıcı bastığında **satın**, uygulama Apple kimliği oturum açma ve onay iletişim kutusu yöneten StoreKit isteğinde bulunur. Uygulama kodu StoreKit bildirir işlem sonra başarılı olduğu varsayılarak, işlem sonucu depolamak ve kullanıcı kendi satın alma erişim sağlamak gerekir.   
 
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image14.png "İşlem sonucu depolamak ve kullanıcı kendi satın alma erişim sağlamak gerekir uygulama kodu StoreKit bildirir")](store-kit-overview-and-retreiving-product-information-images/image14.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image14.png "İşlem sonucu depolamak ve kullanıcı kendi satın alma erişim sağlamak gerekir uygulama kodu StoreKit bildirir")](store-kit-overview-and-retreiving-product-information-images/image14.png#lightbox)
 
 ## <a name="classes"></a>Sınıflar
 
@@ -41,7 +41,7 @@ Aşağıdaki diyagramda (soyut sınıflar, uygulamanızda uygulanmalı) çeşitl
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image15.png "Çeşitli StoreKit sınıflarının soyut sınıflar arasındaki ilişkileri uygulamada uygulanmalı")](store-kit-overview-and-retreiving-product-information-images/image15.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image15.png "Çeşitli StoreKit sınıflarının soyut sınıflar arasındaki ilişkileri uygulamada uygulanmalı")](store-kit-overview-and-retreiving-product-information-images/image15.png#lightbox)   
    
    
    
@@ -64,7 +64,7 @@ Oturum sınama hesabı gerçek depoya açmak çalışırsanız, bu otomatik olar
 
 StoreKit kodu test etmek için test deposuna bağlı (iTunes Bağlan oluşturulan) bir özel test hesabıyla normal iTunes test hesabınız ve oturum açma, oturum kapatma gerekir. Geçerli hesap ziyaret dışında imzalamak için **ayarlar > iTunes ve uygulama mağazası** aşağıda gösterildiği gibi:
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image16.png "Geçerli hesap ziyaret ayarları iTunes oturumunu kapatın ve uygulama Mağazası")](store-kit-overview-and-retreiving-product-information-images/image16.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image16.png "Geçerli hesap ziyaret ayarları iTunes oturumunu kapatın ve uygulama Mağazası")](store-kit-overview-and-retreiving-product-information-images/image16.png#lightbox)
  
 bir test hesabı ile oturum *StoreKit tarafından uygulamanızda istendiğinde*:
 
@@ -72,19 +72,19 @@ bir test hesabı ile oturum *StoreKit tarafından uygulamanızda istendiğinde*:
 
 Oluşturmak için test kullanıcılar iTunes Bağlan tıklayın **kullanıcılar ve roller** ana sayfada.
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image17.png "İTunes test kullanıcılarını oluşturmak için Bağlan'ı tıklatın kullanıcılar ve roller ana sayfasında")](store-kit-overview-and-retreiving-product-information-images/image17.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image17.png "İTunes test kullanıcılarını oluşturmak için Bağlan'ı tıklatın kullanıcılar ve roller ana sayfasında")](store-kit-overview-and-retreiving-product-information-images/image17.png#lightbox)
 
 Seçin **Sandbox sınayıcılar**
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image18.png "Korumalı alan sınayıcılar seçme")](store-kit-overview-and-retreiving-product-information-images/image18.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image18.png "Korumalı alan sınayıcılar seçme")](store-kit-overview-and-retreiving-product-information-images/image18.png#lightbox)
 
 Varolan kullanıcılar listesi görüntülenir. Yeni bir kullanıcı eklemek veya var olan kaydını silin. Portal desteklemez (şu anda) görüntüle veya Düzenle (özellikle atadığınız parola) oluşturulan her bir test kullanıcı iyi kaydını tutmanız önerilir böylece kullanıcılar, test varolan sağlar. Test kullanıcısı sildikten sonra e-posta adresi için başka bir test hesap yeniden kullanılamaz.  
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image19.png "Varolan kullanıcılar listesi görüntülenir")](store-kit-overview-and-retreiving-product-information-images/image19.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image19.png "Varolan kullanıcılar listesi görüntülenir")](store-kit-overview-and-retreiving-product-information-images/image19.png#lightbox)   
    
  Yeni test kullanıcıları (örneğin, adı, parola, gizli soru ve yanıt) gerçek bir Apple kimliği benzer özelliklere sahip. Buraya girilen tüm ayrıntılar kaydını tutun. **Seçin iTunes mağazası** alan para birimini belirler ve uygulama içi satın dil bilgisi kullanacak oturum açan kullanıcı olarak.
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image20.png "Select iTunes mağazası alan kullanıcının para birimi ve kendi uygulama içi satın almalara dilini belirler")](store-kit-overview-and-retreiving-product-information-images/image20.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image20.png "Select iTunes mağazası alan kullanıcının para birimi ve kendi uygulama içi satın almalara dilini belirler")](store-kit-overview-and-retreiving-product-information-images/image20.png#lightbox)
 
 ## <a name="retrieving-product-information"></a>Ürün bilgileri alınıyor
 
@@ -102,7 +102,7 @@ Bir uygulama içi satın alma ürün satış ilk adımı görüntüleme: görün
 
 Genel etkileşim şöyle ( **StoreKit** iOS, yerleşiktir ve **App Store** Apple'nın sunucularından temsil eder):
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image21.png "Ürün bilgisi grafik alınıyor")](store-kit-overview-and-retreiving-product-information-images/image21.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image21.png "Ürün bilgisi grafik alınıyor")](store-kit-overview-and-retreiving-product-information-images/image21.png#lightbox)
 
 ### <a name="displaying-product-information-example"></a>Ürün bilgisi örnek görüntüleme
 
@@ -110,7 +110,7 @@ Genel etkileşim şöyle ( **StoreKit** iOS, yerleşiktir ve **App Store** Apple
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image23.png "Ana ekran uygulama Mağazası'ndan alınan bilgiler ürünleri görüntüler")](store-kit-overview-and-retreiving-product-information-images/image23.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image23.png "Ana ekran uygulama Mağazası'ndan alınan bilgiler ürünleri görüntüler")](store-kit-overview-and-retreiving-product-information-images/image23.png#lightbox)   
    
    
    
@@ -235,7 +235,7 @@ public override void RequestFailed (SKRequest request, NSError error)
 
 Bu ekran (hiçbir ürün bilgisi kullanılabilir olduğunda) hemen sonra yükleme örnek uygulaması gösterir:
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image24.png "Ürün bilgisi kullanılabilir olduğunda hemen sonra yükleme örnek uygulaması")](store-kit-overview-and-retreiving-product-information-images/image24.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image24.png "Ürün bilgisi kullanılabilir olduğunda hemen sonra yükleme örnek uygulaması")](store-kit-overview-and-retreiving-product-information-images/image24.png#lightbox)
 
 ## <a name="invalid-products"></a>Geçersiz ürünleri
 
@@ -296,7 +296,7 @@ Aşağıdaki ekran görüntülerinde sonuçları (Amerikan deposu için bir tane
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image25.png "İki farklı iTunes dil belirli sonuçları gösteren hesapları test etme")](store-kit-overview-and-retreiving-product-information-images/image25.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image25.png "İki farklı iTunes dil belirli sonuçları gösteren hesapları test etme")](store-kit-overview-and-retreiving-product-information-images/image25.png#lightbox)   
    
    
    

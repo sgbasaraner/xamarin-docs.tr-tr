@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 37c0b3f1f826893bef5c1a7ffb5d422c1c8c5c78
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc9765b3f6a77f47fdce32dbc3805dd7bd70a08a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-tab-bar-controller"></a>Sekme çubuğu denetleyicisi ile çalışma
 
@@ -20,7 +20,7 @@ _Bu makalede tasarlama ve sekmesini çubuğu denetleyicisiyle Xamarin.tvOS uygul
 
 Birçok tvOS uygulama türleri için birincil gezinti ekranın üst çalışan sekme çubuğunu sunulur. Kullanıcı sağa ve sola olası kategorileri ve değişiklikleri aşağıda içerik alanının kullanıcının seçimini yansıtmak için listesi arasında swipes.
 
-[ ![](tab-bars-images/tab01.png "Örnek Sekme çubuğu")](tab-bars-images/tab01.png)
+[![](tab-bars-images/tab01.png "Örnek Sekme çubuğu")](tab-bars-images/tab01.png#lightbox)
 
 Sekme çubuğunu varsayılan olarak saydam ve her zaman ekranın üstünde görünür. Odakta olduğunda, bir sekme çubuğunu ekranın üst 140 pikselleri kapsayacağı ancak odak aşağıdaki içerik alanının geçtiğinde hızla hemen slayt.
 
@@ -64,22 +64,22 @@ Xamarin.tvOS uygulamada sekmesini çubukları ile çalışmak için en kolay yol
     
 1. Yeni bir Xamarin.tvOS uygulamayı başlatın ve seçin **tvOS** > **uygulama** > **sekmeli uygulama**: 
 
-    [ ![](tab-bars-images/tab02.png "Sekmeli uygulama seçin")](tab-bars-images/tab02.png)
+    [![](tab-bars-images/tab02.png "Sekmeli uygulama seçin")](tab-bars-images/tab02.png#lightbox)
 1. Tüm yeni bir Xamarin.tvOS çözüm oluşturmak için istemleri izleyin.
 1. İçinde **çözüm paneli**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Değiştirmek için **simgesi** veya **başlık** için belirli bir kategori seçin **Sekme çubuğu öğesi** için **View Controller** içinde  **Belge Anahattı**:
 
-    [ ![](tab-bars-images/tab03a.png "Sekme çubuğu öğesi için Belge Anahattı görünüm denetleyiciye")](tab-bars-images/tab03a.png)
+    [![](tab-bars-images/tab03a.png "Sekme çubuğu öğesi için Belge Anahattı görünüm denetleyiciye")](tab-bars-images/tab03a.png#lightbox)
 1. Ardından gerekli özellikleri kümesinde **pencere öğesi sekmesini** , **özellikleri Explorer**: 
 
-    [ ![](tab-bars-images/tab03.png "Pencere öğesi sekmesi")](tab-bars-images/tab03.png)
+    [![](tab-bars-images/tab03.png "Pencere öğesi sekmesi")](tab-bars-images/tab03.png#lightbox)
 1. Yeni bir kategori (sekmesi) eklemek için doğrudan bir **View Controller** , tasarım yüzeyine: 
 
-    [ ![](tab-bars-images/tab04.png "Bir görünüm denetleyicisi")](tab-bars-images/tab04.png)
+    [![](tab-bars-images/tab04.png "Bir görünüm denetleyicisi")](tab-bars-images/tab04.png#lightbox)
 1. Denetim tıklatın ve sürükleyin **sekmesini View Controller** yeni **View Controller**.
 1. Açılır penceresinden seçin **görüntülemek denetleyicileri** Yeni Görünüm sekmesinde (kategori) eklemek için: 
 
-    [ ![](tab-bars-images/tab05.png "Sekmesini seçin")](tab-bars-images/tab05.png)
+    [![](tab-bars-images/tab05.png "Sekmesini seçin")](tab-bars-images/tab05.png#lightbox)
 1. Her bir Caterogies içerik alan normal, olarak UI düzenini iOS Tasarımcısı kullanıcı Arabirimi öğeleri ekleyerek tasarlayın.
 1. C# kodunda UI denetimlerinizi çalışmak için gerekli tüm olayları gösterir.
 1. C# kodunda kullanıma sunmak istediğiniz herhangi bir kullanıcı Arabirimi denetimlerini olarak adlandırın.
@@ -89,22 +89,22 @@ Xamarin.tvOS uygulamada sekmesini çubukları ile çalışmak için en kolay yol
     
 1. Yeni bir Xamarin.tvOS uygulamayı başlatın ve seçin **tvOS** > **uygulama** > **sekmeli uygulama**: 
 
-    [ ![](tab-bars-images/tab02vs.png "Sekmeli uygulama seçin")](tab-bars-images/tab02vs.png)
+    [![](tab-bars-images/tab02vs.png "Sekmeli uygulama seçin")](tab-bars-images/tab02vs.png#lightbox)
 1. Tüm yeni bir Xamarin.tvOS çözüm oluşturmak için istemleri izleyin.
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Değiştirmek için **simgesi** veya **başlık** için belirli bir kategori seçin **Sekme çubuğu öğesi** için **View Controller** içinde  **Belge Anahattı**:
 
-    [ ![](tab-bars-images/tab03avs.png "Belge Anahattı görünüm denetleyiciye")](tab-bars-images/tab03avs.png)
+    [![](tab-bars-images/tab03avs.png "Belge Anahattı görünüm denetleyiciye")](tab-bars-images/tab03avs.png#lightbox)
 1. Ardından gerekli özellikleri kümesinde **pencere öğesi sekmesini** , **özellikleri Explorer**: 
 
-    [ ![](tab-bars-images/tab03vs.png "Pencere öğesi sekmesi")](tab-bars-images/tab03vs.png)
+    [![](tab-bars-images/tab03vs.png "Pencere öğesi sekmesi")](tab-bars-images/tab03vs.png#lightbox)
 1. Yeni bir kategori (sekmesi) eklemek için sürükleyin bir **View Controller** gelen **araç** ve tasarım yüzeyine bırak: 
 
-    [ ![](tab-bars-images/tab04vs.png "Bir görünüm denetleyicisi")](tab-bars-images/tab04vs.png)
+    [![](tab-bars-images/tab04vs.png "Bir görünüm denetleyicisi")](tab-bars-images/tab04vs.png#lightbox)
 1. Denetim tıklatın ve sürükleyin **sekmesini View Controller** yeni **View Controller**.
 1. Açılır penceresinden seçin **görüntülemek denetleyicileri** Yeni Görünüm sekmesinde (kategori) eklemek için: 
 
-    [ ![](tab-bars-images/tab05vs.png "Sekmesini seçin")](tab-bars-images/tab05vs.png)
+    [![](tab-bars-images/tab05vs.png "Sekmesini seçin")](tab-bars-images/tab05vs.png#lightbox)
 1. Her bir Caterogies içerik alan normal, olarak UI düzenini iOS Tasarımcısı kullanıcı Arabirimi öğeleri ekleyerek tasarlayın.
 1. C# kodunda UI denetimlerinizi çalışmak için gerekli tüm olayları gösterir.
 1. C# kodunda kullanıma sunmak istediğiniz herhangi bir kullanıcı Arabirimi denetimlerini olarak adlandırın.
@@ -137,7 +137,7 @@ TabBar.Items [2].BadgeValue = "10";
 
 Hangi çalıştırdığınızda, aşağıdaki sonuçlar:
 
-[ ![](tab-bars-images/tab06.png "Gösterge ile sekme çubuğu öğesi")](tab-bars-images/tab06.png)
+[![](tab-bars-images/tab06.png "Gösterge ile sekme çubuğu öğesi")](tab-bars-images/tab06.png#lightbox)
 
 Kullanım `Title` özelliği `UITabBarItem` başlığını değiştirmek için ve `Image` simgeyi değiştirme özelliği.
 
@@ -152,7 +152,7 @@ Bu makalede, tasarlama ve sekmesini çubuğu denetleyicisiyle Xamarin.tvOS uygul
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

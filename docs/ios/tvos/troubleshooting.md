@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 278b9e782073a26dc04bac9418613ea4c09db445
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7b6d0901f8b01668626fc3b6a70a091e99e2287e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting"></a>Sorun giderme
 
@@ -46,7 +46,7 @@ Bu sorunu çözmek için aşağıdakileri yapın:
 1. Mac için Visual Studio'da Xamarin.tvOS proje dosyanızda sağ **Çözüm Gezgini** seçip **seçenekleri**.
 2. Seçin **tvOS yapı** ve üzerinde olduğundan emin olun **sürüm** yapılandırma: 
 
-    [ ![](troubleshooting-images/ts01.png "TvOS derleme seçenekleri seçin")](troubleshooting-images/ts01.png)
+    [![](troubleshooting-images/ts01.png "TvOS derleme seçenekleri seçin")](troubleshooting-images/ts01.png#lightbox)
 3. Ekleme `--bitcode=asmonly` için **ek mtouch bağımsız değişkenleri** alanına gelin ve **Tamam** düğmesi.
 4. Uygulamanızı yeniden **sürüm** yapılandırma.
 
@@ -124,7 +124,7 @@ Uygulamanız için yayın derlenir ve iTunes Bağlan yeniden gönderin.
 
 3 taraf kitaplığı (örneğin, MonoGame) kullanıyorsanız ve yayın derleme başarısız ile biten hata iletileri uzun bir dizi `Task "MTouch" execution -- FAILED`, eklemeyi deneyin `-gcc_flags="-framework OpenAL"` için **ek dokunma bağımsız değişkenleri**:
 
-[ ![](troubleshooting-images/mtouch01.png "Görev MTouch yürütme")](troubleshooting-images/mtouch01.png)
+[![](troubleshooting-images/mtouch01.png "Görev MTouch yürütme")](troubleshooting-images/mtouch01.png#lightbox)
 
 Ayrıca içermelidir `--bitcode=asmonly` içinde **ek dokunma bağımsız değişkenleri**, bağlayıcı seçeneklerini belirlemek **bağlantı tüm** ve temiz bir derleme yapın.
 
@@ -204,7 +204,7 @@ Bu dosyayı yerinde başarıyla PCL dosya Xamarin.tvOS projeye eklemek mümkün 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

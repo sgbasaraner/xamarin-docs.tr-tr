@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 716555c2456663cb2be24498348240c571849c24
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7048eb9c478d7ae10787e158f18b764b258da171
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="collection-views"></a>Koleksiyon görünümleri
 
@@ -36,7 +36,7 @@ iOS sağlar adlı bir düzen sınıf `UICollectionViewFlowLayout` satırı taban
 
 Hücreleri koleksiyon görünümü tarafından sunulan veri kümesindeki tek bir öğeyi temsil eden nesneleridir. Her bir hücre örneğidir `UICollectionViewCell` aşağıdaki şekilde gösterildiği gibi üç farklı görünümlerini oluşan sınıfı:
 
- [ ![](uicollectionview-images/01-uicollectionviewcell.png "Her bir hücre üç farklı görünümlerini aşağıda gösterildiği gibi oluşur")](uicollectionview-images/01-uicollectionviewcell.png)
+ [![](uicollectionview-images/01-uicollectionviewcell.png "Her bir hücre üç farklı görünümlerini aşağıda gösterildiği gibi oluşur")](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
 
 `UICollectionViewCell` Sınıfı bu görünümlerin her biri için aşağıdaki özelliklere sahiptir:
 
@@ -47,7 +47,7 @@ Hücreleri koleksiyon görünümü tarafından sunulan veri kümesindeki tek bir
 
 Ayarlayarak `ContentView` değerinden küçük olacak şekilde, `BackgroundView` ve `SelectedBackgroundView`, `BackgroundView` görsel olarak içerik, while çerçeve için kullanılan `SelectedBackgroundView` bir hücre seçildiğinde, aşağıda gösterildiği gibi gösterilir:
 
- [ ![](uicollectionview-images/02-cells.png "Farklı bir hücre öğeleri")](uicollectionview-images/02-cells.png)
+ [![](uicollectionview-images/02-cells.png "Farklı bir hücre öğeleri")](uicollectionview-images/02-cells.png#lightbox)
 
 Yukarıdaki ekran görüntüsü hücrelerde devralarak oluşturulan `UICollectionViewCell` ve ayarı `ContentView`, `SelectedBackgroundView` ve `BackgroundView` özellikleri, sırasıyla aşağıdaki kodda gösterildiği gibi:
 
@@ -92,7 +92,7 @@ Tamamlayıcı görünümleri, her bölüm ile ilgili bilgileri sunan görünüml
 
 Örneğin, bir tamamlayıcı görünüm belirli bir bölüm için bir başlık sunmak için aşağıdaki çizimde gösterildiği gibi kullanılabilir:
 
- [ ![](uicollectionview-images/02a-supplementary-view.png "Aşağıda gösterildiği gibi belirli bir bölüm için bir başlık sunmak için tamamlayıcı görünüm kullanılan")](uicollectionview-images/02a-supplementary-view.png)
+ [![](uicollectionview-images/02a-supplementary-view.png "Aşağıda gösterildiği gibi belirli bir bölüm için bir başlık sunmak için tamamlayıcı görünüm kullanılan")](uicollectionview-images/02a-supplementary-view.png#lightbox)
 
 Tamamlayıcı görünümü kullanmak için ilk olarak kayıtlı olması gerekir `ViewDidLoad` yöntemi:
 
@@ -122,7 +122,7 @@ Bunlar koleksiyon görünümünde herhangi bir yere yerleştirilebilir ve görü
 
 Decoration görünümlerdir görüntülenebilen tamamen visual görünümleri bir `UICollectionView`. Hücreleri ve Tamamlayıcı görünümleri aksine, bunlar verilere değil. Bunlar her zaman bir düzen ait bir alt kümesi içinde oluşturulur ve sonradan içeriğinin düzenini değiştirebilirsiniz. Örneğin, bir düzenleme görünümü içeriği ile birlikte kayar bir arka plan görünüm sunmak için kullanılabilecek `UICollectionView`, aşağıda gösterildiği gibi:
 
- [ ![](uicollectionview-images/02c-decoration-view.png "Kırmızı bir arka plan ile düzenleme görünümü")](uicollectionview-images/02c-decoration-view.png)
+ [![](uicollectionview-images/02c-decoration-view.png "Kırmızı bir arka plan ile düzenleme görünümü")](uicollectionview-images/02c-decoration-view.png#lightbox)
 
  Aşağıdaki kod parçacığı örnekleri kırmızıyla arka değişikliklerini `CircleLayout` sınıfı:
 
@@ -153,7 +153,7 @@ Kolaylık sağlamak için `UICollectionViewController` sınıfı kullanılabilir
 İle `UITableView`, `UICollectionView` sınıfı yalnızca, ekranda öğeleri için hücreleri almak için kendi veri kaynağı çağırın.
 Aşağıdaki resimde gösterildiği gibi ekranı kaydırarak hücreleri yeniden, kuyruğuna yerleştirilir:
 
- [ ![](uicollectionview-images/03-cell-reuse.png "Ekranı kaydırarak hücreleri kuyruğuna yeniden kullanım için aşağıda gösterildiği gibi yerleştirilir")](uicollectionview-images/03-cell-reuse.png)
+ [![](uicollectionview-images/03-cell-reuse.png "Ekranı kaydırarak hücreleri kuyruğuna yeniden kullanım için aşağıda gösterildiği gibi yerleştirilir")](uicollectionview-images/03-cell-reuse.png#lightbox)
 
 Hücre yeniden ile basitleştirilmiştir `UICollectionView` ve `UITableView`. Artık hücreleri sistemiyle kayıtlı gibi bir yeniden sırada kullanılabilir durumda olmazsa bir hücre doğrudan veri kaynağında oluşturmanız gerekir. Bir hücrenin yeniden sıranın hücreden kuyruktan çağrı yapılırken kullanılabilir durumda değilse, iOS, tür veya kaydedildiği nib alarak otomatik olarak oluşturur.
 Aynı tekniği de tamamlayıcı görünümler için kullanılabilir.
@@ -207,7 +207,7 @@ Veri kaynağıyla olduğu gibi `UICollectionViewController` için temsilci olara
 
 Bir hücre basıldığında, vurgulanan durumu hücre geçişleri ve kadar seçili kullanıcı kendi parmak hücreden kaldırır. Gerçekte seçilmeden önce bu geçici bir değişiklik hücrenin görünümünü sağlar. Seçimin, hücre üzerine `SelectedBackgroundView` görüntülenir. Yalnızca seçimi oluşmadan önce aşağıdaki şekilde vurgulanan durumunu gösterir:
 
- [ ![](uicollectionview-images/04-cell-highlight.png "Yalnızca seçimi gerçekleşmeden önce bu şekil vurgulanan durumunu gösterir.")](uicollectionview-images/04-cell-highlight.png)
+ [![](uicollectionview-images/04-cell-highlight.png "Yalnızca seçimi gerçekleşmeden önce bu şekil vurgulanan durumunu gösterir.")](uicollectionview-images/04-cell-highlight.png#lightbox)
 
 Vurgulama, uygulamak için `ItemHighlighted` ve `ItemUnhighlighted` yöntemlerinin `UICollectionViewDelegate` kullanılabilir. Örneğin, aşağıdaki kod, sarı bir arka plan uygulanır `ContentView` hücre vurgulanmış, beyaz arka plan beklemediğiniz vurgulanmış, yukarıdaki resimde gösterildiği gibi:
 
@@ -257,7 +257,7 @@ Her hücre bir `UICollectionView` kesme, kopyalama ve yapıştırma isteğe bağ
 
 Aşağıdaki ekran görüntüsünde bir hücre uzun basıldığında menüyü göster:
 
- [ ![](uicollectionview-images/04a-menu.png "Bu ekran bir hücre uzun basıldığında menüyü göster")](uicollectionview-images/04a-menu.png)
+ [![](uicollectionview-images/04a-menu.png "Bu ekran bir hücre uzun basıldığında menüyü göster")](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout" />
 
@@ -303,7 +303,7 @@ simpleCollectionViewController = new SimpleCollectionViewController (layout);
 
 Bir kılavuz düzeni içeriği için gereken tek şey budur. Ayrıca, yönlendirmeyi değiştiğinde, `UICollectionViewFlowLayout` içeriği aşağıda gösterildiği gibi uygun şekilde yeniden düzenleme işler:
 
- [ ![](uicollectionview-images/05-layout-orientation.png "Yönlendirme değişiklikleri örneği")](uicollectionview-images/05-layout-orientation.png)
+ [![](uicollectionview-images/05-layout-orientation.png "Yönlendirme değişiklikleri örneği")](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset" />
 
@@ -319,7 +319,7 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
 Bu, aşağıda gösterildiği gibi bölümü etrafında aralığı sonuçlanır:
 
- [ ![](uicollectionview-images/06-sectioninset.png "Aşağıda gösterildiği gibi bölüm aralığı")](uicollectionview-images/06-sectioninset.png)
+ [![](uicollectionview-images/06-sectioninset.png "Aşağıda gösterildiği gibi bölüm aralığı")](uicollectionview-images/06-sectioninset.png#lightbox)
 
  <a name="Subclassing_UICollectionViewFlowLayout" />
 
@@ -328,7 +328,7 @@ Bu, aşağıda gösterildiği gibi bölümü etrafında aralığı sonuçlanır:
 
 Kullanarak Edition'da `UICollectionViewFlowLayout` doğrudan, bu da bir satır boyunca içeriğinin düzenini daha fazla özelleştirmek için sınıflandırma. Örneğin, bu aşağıda gösterildiği gibi hücreleri bir kılavuza sarmalamak değil, ancak bunun yerine tek bir satır yatay kaydırma efekti ile oluşturur bir düzen oluşturmak için kullanılabilir:
 
- [ ![](uicollectionview-images/07-line-layout.png "Yatay kaydırma etkisi olan tek bir satır")](uicollectionview-images/07-line-layout.png)
+ [![](uicollectionview-images/07-line-layout.png "Yatay kaydırma etkisi olan tek bir satır")](uicollectionview-images/07-line-layout.png#lightbox)
 
 Bu sınıflara göre uygulamak için `UICollectionViewFlowLayout` gerektirir:
 
@@ -423,7 +423,7 @@ Geçersiz kılmak için anahtar yöntemler şunlardır:
 
 Örneğin, aynı içerik döngüsel bir düzende aşağıda gösterildiği gibi sunulması:
 
- [ ![](uicollectionview-images/08-circle-layout.png "Döngüsel özel aşağıda gösterildiği gibi düzeni")](uicollectionview-images/08-circle-layout.png)
+ [![](uicollectionview-images/08-circle-layout.png "Döngüsel özel aşağıda gösterildiği gibi düzeni")](uicollectionview-images/08-circle-layout.png#lightbox)
 
 Güçlü bir şey düzenleri hakkında yatay kaydırma düzene kılavuz benzeri düzeninden değiştirmek için olan ve daha sonra bu döngüsel düzeni için sağlanan düzeni sınıfı gerektirir `UICollectionView` değiştirilmiş olabilir. Hiçbir şey içinde `UICollectionView`, temsilci veya veri kaynağı kod değişiklikleri hiç.
 
@@ -435,7 +435,7 @@ Güçlü bir şey düzenleri hakkında yatay kaydırma düzene kılavuz benzeri 
 
 Bu yeni yöntemleri kullanarak, koleksiyon görünümünüzde yeniden sıralamak ve sipariş işleminin herhangi aşaması sırasında öğeleri görünümünü özelleştirme seçeneğiniz Sürükle kolayca uygulayabilirsiniz.
 
-[ ![](uicollectionview-images/intro01.png "Sipariş işlem örneği")](uicollectionview-images/intro01.png)
+[![](uicollectionview-images/intro01.png "Sipariş işlem örneği")](uicollectionview-images/intro01.png#lightbox)
 
 Bu makalede, sizi bir Xamarin.iOS uygulaması aynı zamanda bazı iOS 9 koleksiyon görünümü denetime diğer değişikliklerinin Sürükle sipariş uygulama bir göz atalım:
 
@@ -468,7 +468,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 Hızlı bir örnek olarak, yeni bir Xamarin.iOS projesi başlatın ve düzenleme **Main.storyboard** dosya. Sürükleme bir `UICollectionViewController` tasarım yüzeyine:
 
-[ ![](uicollectionview-images/quick01.png "Bir UICollectionViewController ekleme")](uicollectionview-images/quick01.png)
+[![](uicollectionview-images/quick01.png "Bir UICollectionViewController ekleme")](uicollectionview-images/quick01.png#lightbox)
 
 (Bu dosyasından belge anahattı bunu kolay olabilir) koleksiyon görünümü seçin. Özellikler paneli düzeni sekmesinde, aşağıdaki boyutları aşağıdaki ekran görüntüsünde gösterildiği gibi ayarlayın:
 
@@ -478,28 +478,28 @@ Hızlı bir örnek olarak, yeni bir Xamarin.iOS projesi başlatın ve düzenleme
 - **Min aralığı**: hücrelerin – 8 | Satırlar – 8
 - **Bölüm iç metinleri**: üst – 16 | Alt – 16 | Sol – 16 | Sağ – 16
 
-[ ![](uicollectionview-images/quick04.png "Koleksiyon görünümü boyutlarını ayarlama")](uicollectionview-images/quick04.png)
+[![](uicollectionview-images/quick04.png "Koleksiyon görünümü boyutlarını ayarlama")](uicollectionview-images/quick04.png#lightbox)
 
 Ardından, varsayılan hücre düzenleyin:
     - Mavi ve arka plan rengini değiştirin
     - Hücre için başlık olarak davranmak üzere etiket ekleme
     - Yeniden tanımlayıcı kümesine **hücre**
 
-[ ![](uicollectionview-images/quick02.png "Varsayılan hücre düzenleme")](uicollectionview-images/quick02.png)
+[![](uicollectionview-images/quick02.png "Varsayılan hücre düzenleme")](uicollectionview-images/quick02.png#lightbox)
 
 Boyutu değiştikçe hücre içinde ortalanmış etiket tutmak için kısıtlamalar ekleyin:
 
 İçinde **özelliği paneli** için _CollectionViewCell_ ve **sınıfı** için `TextCollectionViewCell`:
 
-[ ![](uicollectionview-images/quick05.png "TextCollectionViewCell için set sınıfı")](uicollectionview-images/quick05.png)
+[![](uicollectionview-images/quick05.png "TextCollectionViewCell için set sınıfı")](uicollectionview-images/quick05.png#lightbox)
 
 Ayarlama **koleksiyon yeniden kullanılabilir görünümü** için `Cell`:
 
-[ ![](uicollectionview-images/quick06.png "Koleksiyon yeniden kullanılabilir görünüm hücreye ayarlama")](uicollectionview-images/quick06.png)
+[![](uicollectionview-images/quick06.png "Koleksiyon yeniden kullanılabilir görünüm hücreye ayarlama")](uicollectionview-images/quick06.png#lightbox)
 
 Son olarak, etiketi seçin ve adlandırın `TextLabel`:
 
-[ ![](uicollectionview-images/quick07.png "ad etiketi TextLabel")](uicollectionview-images/quick07.png)
+[![](uicollectionview-images/quick07.png "ad etiketi TextLabel")](uicollectionview-images/quick07.png#lightbox)
 
 Düzen `TextCollectionViewCell` sınıfı ve aşağıdaki özellikleri ekleyin.:
 
@@ -695,7 +695,7 @@ UI yaptığınız değişiklikleri kaydedin ve uygulamayı çalıştırın.
 Kullanıcı bir öğeyi listeden seçer ve yeni bir konuma sürüklediği göz önünden öğesi'nin taşırken, diğer öğeler otomatik olarak animasyon.
 Kullanıcı yeni bir konumda öğesi düştüğünde, bu konuma bağlı kalın. Örneğin:
 
-[ ![](uicollectionview-images/intro01.png "Yeni bir konuma öğe sürükleme örneği")](uicollectionview-images/intro01.png)
+[![](uicollectionview-images/intro01.png "Yeni bir konuma öğe sürükleme örneği")](uicollectionview-images/intro01.png#lightbox)
 
 <a name="Using-a-Custom-Gesture-Recognizer" />
 
@@ -1205,7 +1205,7 @@ Bu bizim Özel düzen örneği oluşturur, her öğenin boyutunu sağlamak için
 
 Biz Xamarin.iOS uygulaması tekrar çalıştırırsanız koleksiyon görünümü şimdi aşağıdaki gibi görünür:
 
-[ ![](uicollectionview-images/custom01.png "Koleksiyon görünümü şimdi şöyle görünür")](uicollectionview-images/custom01.png)
+[![](uicollectionview-images/custom01.png "Koleksiyon görünümü şimdi şöyle görünür")](uicollectionview-images/custom01.png#lightbox)
 
 Biz önce Sürükle sipariş hala öğeleri olarak edebilirsiniz, ancak öğeleri şimdi bunların bırakıldığında yeni konumlarına uyacak şekilde boyutu değiştireceksiniz.
 
@@ -1300,5 +1300,5 @@ Bu basit bir Sürükle sipariş eylemi bir koleksiyon görünümü uygulama kaps
 - [iOS 9 örnekleri](https://developer.xamarin.com/samples/ios/iOS9/)
 - [Koleksiyon görünümü örneği](https://developer.xamarin.com/samples/monotouch/ios9/CollectionView/)
 - [SimpleCollectionView (örnek)](https://developer.xamarin.com/samples/SimpleCollectionView/)
-- [Olaylar, protokolleri ve temsilciler](~/ios/app-fundamentals/delegates-protocols-and-events.md)
+- [Olaylar, Protokoller ve Temsilciler](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 - [Tabloları ve hücreleri ile çalışma](~/ios/user-interface/controls/tables/index.md)

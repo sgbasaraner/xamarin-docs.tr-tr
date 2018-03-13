@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: ad621fa093379d5ad2dd81c81ce42dcaaa9bd923
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d915191e24b5238d5165237f6ede74635b31e08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
 `RelativeLayout` konum ve boyut görünümleri düzeni veya eşdüzey görünümleri özelliklerini göre için kullanılır. Farklı `AbsoluteLayout`, `RelativeLayout` taşıma bağlantı kavramı yok ve Alttan veya sağ kenarlarının düzeni göre öğeleri konumlandırma için olanaklara sahip değil. `RelativeLayout` kendi sınırların dışında konumlandırma öğelerini desteklemiyor.
 
-[ ![](relative-layout-images/layouts-sml.png "Xamarin.Forms düzenleri")](relative-layout-images/layouts.png "Xamarin.Forms düzenleri")
+[![](relative-layout-images/layouts-sml.png "Xamarin.Forms düzenleri")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms düzenleri")
 
 ## <a name="purpose"></a>Amaç
 
@@ -76,7 +76,7 @@ Yukarıdaki düzeni şu yönlerini dikkat edin:
 - Kutunun `y` koordinat -100 üst yarım yükseklik tanımlanır.
 
 > [!NOTE]
-> **Not**: kısıtlamaları tanımlanan şekilde nedeniyle, C# ' ta XAML ile belirtilen olandan daha karmaşık düzenleri yapmak mümkündür.
+> Kısıtlamaları tanımlanan şekilde nedeniyle, C# ' ta XAML ile belirtilen olandan daha karmaşık düzenleri olun mümkündür.
 
 Yukarıdaki örneklerde her ikisi de olarak kısıtlamalarını tanımlayan `RelativeToParent` &ndash; diğer bir deyişle, kendi üst öğesi göre değerlerdir. Başka bir görünüm olarak göreli kısıtlamaları tanımlamak mümkündür. Bu için (için Geliştirici) daha sezgisel düzenleri verir ve düzeni kodunuzu amacı kolayca daha belirgin hale getirebilir.
 

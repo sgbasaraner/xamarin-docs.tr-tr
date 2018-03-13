@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 66992aabdb98c83e52ab555dafa65ae8ac7fb47b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e958b4e48767e0c2246b9f237c681fbc362f6b00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Visual Studio Xamarin.iOS için giriş
 
@@ -53,15 +53,15 @@ Visual Studio'da xamarin'le geliştirmek için kullanıyor olmanız gerekir **en
 
 Mac için bağlanabilir yapı konak simgesi aracılığıyla ya da (sağlayan bir iOS uygulaması, açık) Visual Studio araç çubuğunda:
 
-[ ![](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png "Bağlan Mac simgesi")](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png "Bağlan Mac simgesi")](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png#lightbox)
 
 Veya **Araçlar > Seçenekler** Visual Studio ve seçme **Xamarin > iOS ayarları**:
 
- [ ![](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png "iOS seçeneği")](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png)
+ [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png "iOS seçeneği")](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png#lightbox)
 
 Mac yapı konağı tıklatarak değiştirebilirsiniz **Xamarin Mac arası bulma** düğmesi. Mac yapı konağı güncelleştirmek için aşağıdaki ekran gösterilir:
 
-  [ ![](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png "Xamarin Mac aracı iletişim kutusu")](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png "Xamarin Mac aracı iletişim kutusu")](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png#lightbox)
 
 
 ## <a name="visual-studio-toolbar-overview"></a>Visual Studio araç çubuğuna genel bakış
@@ -75,7 +75,7 @@ Bu araç çubuklarını işlevler aşağıda açıklanmıştır.
 
 Xamarin iOS geliştirme için ilgili denetimleri kırmızı daire içine alınır:
 
- [ ![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "Xamarin iOS geliştirme için ilgili denetimleri kırmızı daire içinde")](introduction-to-xamarin-ios-for-visual-studio-images/03.png "Xamarin iOS geliştirme için ilgili denetimleri kırmızı daire içinde")
+ [![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "Xamarin iOS geliştirme için ilgili denetimleri kırmızı daire içinde")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "Xamarin iOS geliştirme için ilgili denetimleri kırmızı daire içinde")
 
 -  **Başlat** - hata ayıklama veya uygulama seçili platformda çalışan başlatır. Bağlı bir Mac olmalıdır (iOS araç çubuğunda durum göstergesi bakın).
 -  **Çözüm yapılandırmaları** – kullanmak üzere yapılandırma seçmenize olanak tanır (örn., hata ayıklama, yayın).
@@ -86,7 +86,7 @@ Xamarin iOS geliştirme için ilgili denetimleri kırmızı daire içine alını
 
 Visual Studio'da araç iOS her Visual Studio sürümünde benzer. Bunlar tüm aşağıda verilmiştir:
 
-[ ![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS araç çubuğu")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS Toolbar")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 Her öğe aşağıda açıklanmıştır:
 
@@ -105,25 +105,25 @@ Seçeneği bulunmaktadır *çıkış* derleme, dağıtma ve bağlantı iletileri
 
 Aşağıdaki ekran görüntüsünde, proje türüne bağlı olarak değişebilir kullanılabilir çıktı windows gösterir:
 
-[ ![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "Kullanılabilir çıktı windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "Kullanılabilir çıktı windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
 
 - **Xamarin** – Bu, yalnızca Xamarin Mac ve etkinleştirme durumu bağlantısı gibi ilgili bilgileri içerir.
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Yalnızca Xamarin Mac ve etkinleştirme durumu bağlantısı gibi ilgili bilgileri")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Yalnızca Xamarin Mac ve etkinleştirme durumu bağlantısı gibi ilgili bilgileri")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Xamarin tanılama** – bu gibi etkileşim ile ve Android için Xamarin projeniz ilgili ayrıntılı bilgileri gösterir.
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Xamarin projesi hakkında ayrıntılı bilgi")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Xamarin projesi hakkında ayrıntılı bilgi")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 Hata ayıklama ve yapı gibi diğer varsayılan Visual Studio çıkış bölmeleri çıkış görünüm içinde hala kullanılabilir ve hata ayıklama çıktı ve MSBuild çıktı için kullanılır:
 
 -  **Hata ayıklama**
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Hata ayıklama çıktısı")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Hata ayıklama çıktısı")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
 - **Yapı** & **derleme sırası**
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild çıktı")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild çıktı")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 
 ## <a name="ios-project-properties"></a>iOS Project Properties

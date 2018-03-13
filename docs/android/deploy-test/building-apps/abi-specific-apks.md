@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 3bc53a8230b66b88319f729d7effe8ed75f0176b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf2f62929df63d08add76b7fb6de404d2780b2b3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="building-abi-specific-apks"></a>ABI özgü APKs oluşturma
 
@@ -42,7 +42,6 @@ Bu kılavuz yapı komut dosyası nasıl ele alınacaktır belirli ABI hedefleme 
 AT bu kılavuzun sonudur adımları kullanarak komut dosyası nasıl gösteren bir anlatım [Rake](http://martinfowler.com/articles/rake.html).
 
 
-<a name="Setting_android_versionCode" />
 
 ### <a name="creating-the-version-code-for-the-apk"></a>APK için sürüm kodu oluşturma
 
@@ -67,7 +66,7 @@ Bu sürüm kodu düzeni sekiz basamağa genişleterek, Google Play doğru APK bi
 
 Aşağıdaki diyagram, yukarıdaki listede açıklanan her kod konumunu gösterir:
 
-[![Renk tarafından kodlanmış sekiz basamaklı sürüm kodu biçimi diyagramı](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png)
+[![Renk tarafından kodlanmış sekiz basamaklı sürüm kodu biçimi diyagramı](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
 
 Google Play olun doğru APK göre aygıt teslim `versionCode` ve APK yapılandırma. En yüksek sürüm koduyla APK cihaza teslim edilecek. Örnek olarak, bir uygulama üç APKs aşağıdaki sürüm kodlara sahip olabilir:
@@ -88,7 +87,6 @@ Sürüm alır bazı x86 güncelleştirir veya hata daha yeni bir API (API düzey
 Bu sürüm kodlarını el ile koruma Geliştirici üzerinde önemli bir yük olabilir. Doğru hesaplama işlemi `android:versionCode` ve APK's oluşturma otomatikleştirilebilir.
 Bunu yapmak nasıl bir örneği, bu belgenin sonundaki kılavuzda ele alınacaktır.
 
-<a name="CreatingAndroidManifest" />
 
 ### <a name="create-a-temporary-androidmanifestxml"></a>Geçici AndroidManifest.XML oluşturma
 
@@ -123,7 +121,6 @@ Her komut satırı parametresini aşağıdaki listede açıklanmaktadır:
 -   `<CS_PROJ FILE>` &ndash; Bu yolu olan `.csproj` Xamarin.Android projesi için dosya.
 
 
-<a name="SignAndZipAlign" />
 
 ### <a name="sign-and-zipalign-the-apk"></a>Oturum ve Zipalign APK
 
@@ -139,7 +136,6 @@ Tüm Xamarin.Android uygulamaları zip-bir cihazda çalıştırmadan önce hizal
 zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 ```
 
-<a name="Automating_APK_Creation_With_Rake" />
 
 ## <a name="automating-apk-creation-with-rake"></a>Rake ile APK oluşturmayı otomatikleştirme
 
@@ -174,11 +170,11 @@ $ rake build
 
 Rake görev tamamlandıktan sonra olacaktır üç `bin` dosya klasörlerle `xamarin.helloworld.apk`. Sonraki ekran görüntüsü içeriklerini ile bu klasörlerinin her biri gösterir:
 
-[![Platforma özgü klasörleri xamarin.helloworld.apk içeren konumları](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png)
+[![Platforma özgü klasörleri xamarin.helloworld.apk içeren konumları](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 
 > [!NOTE]
-> **Not:** bu kılavuzda açıklanan derleme işlemi birçok farklı yapı sistemlerinden birini uygulanabilir. Biz önceden yazılmış bir örnek gerekmese de mümkün olmalıdır [Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) veya [sahte](http://fsharp.github.io/FAKE/).
+> Bu kılavuzda açıklanan derleme işlemi birçok farklı bir yapı sistemi uygulanabilir. Biz önceden yazılmış bir örnek gerekmese de mümkün olmalıdır [Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) veya [sahte](http://fsharp.github.io/FAKE/).
 
 
 ## <a name="summary"></a>Özet

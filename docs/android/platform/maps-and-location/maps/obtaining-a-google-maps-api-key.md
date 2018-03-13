@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: b529d0090595cc8a3020f37606d5dc3db5f0db74
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9402132b528d705455c183bb70e5bc9a270a8d05
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>API anahtarı Google alma eşlemeleri
 
@@ -23,7 +23,6 @@ Bir Maps API v2 anahtarı edinme, aşağıdaki adımları içerir:
 2.  Google API Konsolu'nda bir proje oluşturun.
 3.  API anahtarı edinme.
 
-<a name="Step_1_-_Obtaining_your_Signing_Key_Fingerprint" />
 
 ## <a name="obtaining-your-signing-key-fingerprint"></a>İmzalama anahtarı parmak alma
 
@@ -106,7 +105,6 @@ Certificate fingerprints:
 
 SHA-1 parmak izi kullanır (sonra listelenen **SHA1**) Bu kılavuzda daha sonra.
 
-<a name="Step_2_-Create_an_API_project" />
 
 ## <a name="creating-an-api-project"></a>Bir API projesi oluşturma
 
@@ -114,25 +112,24 @@ SHA-1 parmak izi kullanır (sonra listelenen **SHA1**) Bu kılavuzda daha sonra.
 
 1. Bir tarayıcıda gidin [Google geliştiriciler konsol](https://console.developers.google.com/): tıklatıp **proje oluştur**:
 
-   [![Google Developer konsolunda proje oluştur düğmesi](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png)
+   [![Google Developer konsolunda proje oluştur düğmesi](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
 2. İçinde **yeni proje** görünür, iletişim proje adı girin.
    İletişim kutusu, bu örnekte gösterildiği gibi proje adına göre bir benzersiz proje kimliği üretirler:
 
-   [![Yeni Proje XamarinMapsDemo adlı](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png)
+   [![Yeni Proje XamarinMapsDemo adlı](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
 3. Tıklatın **oluşturma** düğmesi. Bir dakika veya bunu sonra Proje oluşturulur ve gittiğiniz **API Yöneticisi** sayfası. İçinde **Kitaplığı** 'yi tıklatın **Google haritalar Android API'si**:
 
-   [![Google haritalar Android API'si kitaplık bölümünde tıklatarak](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png)
+   [![Google haritalar Android API'si kitaplık bölümünde tıklatarak](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
 4. Üstündeki **Google haritalar Android API'si** sayfasında, **etkinleştirmek** bu proje için etkinleştirmek için:
 
-   [![Pano bölümünde Etkinleştir düğmesini tıklatın](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png)
+   [![Pano bölümünde Etkinleştir düğmesini tıklatın](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
 
 Bu noktada API proje oluşturulup oluşturulmadığını ve Google haritalar Android API v2 eklendi. Ancak, kimlik bilgileri için oluşturduğunuz kadar bu API projenizde kullanamazsınız. Ardından bu anahtarı kullanmak için yetkili bir API anahtarı ve beyaz liste bir Xamarin.Android uygulaması oluşturmak üzere nasıl tümleştirildiği incelenmektedir.
 
-<a name="Obtaining_the_API_Key" />
 
 ## <a name="obtaining-the-api-key"></a>API anahtarı edinme
 
@@ -140,38 +137,37 @@ Sonra **Google Developer konsolunda** API projesi süredir oluşturulan, onu bir
 
 1. İçinde **Google haritalar Android API'si** görüntülenen sayfa (tıkladıktan sonra **etkinleştirmek** önceki adımda), tıklatın **kimlik bilgilerine Git** düğmesi:
 
-   [![Bu API etkin iletisi](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png)
+   [![Bu API etkin iletisi](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
 2. İçinde **kimlik bilgileri** sayfasında, **kimlik bilgileri ne yapmalıyım?** düğmesi:
 
-   [![Proje iletişim için kimlik bilgilerini ekleyin](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png)
+   [![Proje iletişim için kimlik bilgilerini ekleyin](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
 
 3. Bu düğmeye tıklandığında sonra API anahtarı oluşturulur. Ardından bu anahtar yalnızca uygulamanız bu anahtarla API'leri çağırmak şekilde kısıtlamak gereklidir. Tıklatın **kısıtlama anahtarı**:
 
-   [![Kimlik bilgileri sayfasında tıklatmak kısıtlama anahtarı](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png)
+   [![Kimlik bilgileri sayfasında tıklatmak kısıtlama anahtarı](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
 
 4. Değişiklik **adı** alanının **API anahtar 1** anahtar için kullanılır hatırlamanıza yardımcı olacak bir adla (**XamarinMapsDemoKey** Bu örnekte kullanılan). Bundan sonra öğesini **Android uygulamalarını** radyo düğmesi:
 
-   [![Kimlik bilgileri sayfasında Android uygulamaları seçme](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png)
+   [![Kimlik bilgileri sayfasında Android uygulamaları seçme](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png#lightbox)
 
 5. SHA-1 parmak izini eklemek için tıklatın **+ Ekle paket adı ve parmak izi**:
 
-   [![Tıklatmak Ekle paket adı ve parmak izi](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png)
+   [![Tıklatmak Ekle paket adı ve parmak izi](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
 
 6. Uygulamanızın paket adı girin ve SHA-1 sertifika parmak izini girin (aracılığıyla elde `keytool` bu kılavuzun önceki bölümlerinde açıklandığı gibi). Aşağıdaki örnekte, paket adı için `XamarinMapsDemo` girilen, alınan SHA-1 sertifika parmak izi arkasından **debug.keystore**:
 
-   [![Girdiğiniz paket com.xamarin.docs.android.map adıdır](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png)
+   [![Girdiğiniz paket com.xamarin.docs.android.map adıdır](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
 7. Google haritalar erişmek, APK için sırayla SHA-1 parmak izi içerir ve gerekir, APK imzalamak için kullandığınız her bir anahtar (hata ayıklama ve yayın) adlarını paketini, unutmayın. Hata ayıklama ve yayın APK oluşturmak için başka bir bilgisayar için bir bilgisayar kullanıyorsanız, örneğin, SHA-1 sertifika parmak izi ilk bilgisayarın hata ayıklama keystore gelen ve SHA-1 sertifika parmak izi yayın keystore gelen içermelidir İkinci bilgisayar. Tıklatın **+ Ekle paket adı ve parmak izi** Bu örnekte gösterildiği gibi başka bir parmak izi ve paket adı eklemek için:
 
-   [![Başka bir SHA-1 sertifika başka bir parmak izi ekleme oluşturur](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png)
+   [![Başka bir SHA-1 sertifika başka bir parmak izi ekleme oluşturur](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
 8. Tıklatın **kaydetmek** yaptığınız değişiklikleri kaydetmek için düğmesi. Ardından, API anahtarlarınızı listesi döndürülür. Daha önce oluşturduğunuz diğer API anahtarları varsa, aynı zamanda bir burada listelenir. Bu örnekte, yalnızca bir API anahtarı (önceki adımda oluşturulan) listelenir:
 
-   [![XamarinMapsDemoKey API anahtarları listesinde gösterilir](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png)
+   [![XamarinMapsDemoKey API anahtarları listesinde gösterilir](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
 
-<a name="Adding_the_Key" />
 
 ## <a name="adding-the-key-to-your-project"></a>Anahtar projenize ekleme
 

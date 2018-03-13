@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: dddd1ad4ae70b97f17ba71a7e96b553759e35695
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5fcb41f4f60adc8ca5be761c2b9a7449387a89d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="registering-applications-to-run-in-the-background"></a>Arka planda çalışan uygulamaları kaydetme
 
@@ -34,7 +34,7 @@ Kayıtlı uygulamaları birkaç kategoriye ayrılır:
 
 Uygulamaları ayarlayarak kaydedilebilir **gerekli arka plan modları** uygulamanın özelliğinde *Info.plist*. Uygulamanın gerektirdiği gibi sayıda kategorilerde kaydedebilirsiniz:
 
- [ ![](registering-applications-to-run-in-background-images/bgmodes.png "Arka plan modlarını ayarlama")](registering-applications-to-run-in-background-images/bgmodes.png)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "Arka plan modlarını ayarlama")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 Uygulama için arka plan konumu güncelleştirmeleri kaydetme için adım adım yönergeler için bkz: [arka plan konumu izlenecek](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md).
 
@@ -42,7 +42,7 @@ Uygulama için arka plan konumu güncelleştirmeleri kaydetme için adım adım 
 
 Ayarlanabilir başka bir özellik *Info.plist* olan *uygulama arka planda çalışmıyor*, veya `UIApplicationExitsOnSuspend` özelliği:
 
- [ ![](registering-applications-to-run-in-background-images/plist.png "Çalıştıran arka plan devre dışı bırakma")](registering-applications-to-run-in-background-images/plist.png)
+ [![](registering-applications-to-run-in-background-images/plist.png "Çalıştıran arka plan devre dışı bırakma")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 Bu Geliştirici tarafında yalnızca değiştirilebilir dışında iOS 7 + kapalı uygulama arka plan yenileme ayarını tam aynı etkiye sahiptir ve yukarıda ve iOS 4 için kullanılabilir. Uygulama arka hemen girdikten sonra askıya alınır ve herhangi bir işlem yapmak mümkün olmaz.
 

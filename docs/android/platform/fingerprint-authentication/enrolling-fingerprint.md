@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 494c808c8c65e0f3cf0a34b26d87069dd456718c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 20e6d693f2a3eba54afaf1d3c7054ad75d7a7610
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="enrolling-a-fingerprint"></a>Parmak izi kaydetme
 
@@ -46,7 +46,7 @@ Bir ekran kilidi kurulumu için aşağıdaki adımları gerçekleştirin:
 
 4. Buradan, parmak izi aygıt eklemek için dizisi izleyin:
 
-    [![Cihazda parmak izi eklemek için ekran görüntüleri bir dizi](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png)
+    [![Cihazda parmak izi eklemek için ekran görüntüleri bir dizi](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
 
 5. Son ekran, parmak izi tarayıcıya yerleştirin istenir: 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a8deede78256ff88046eb2bae1a255e86f162853
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1065fb91a23827c4876654470cda5022aa1d3b8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="certificates-and-identifiers"></a>Sertifikalar ve tanımlayıcıları
 
@@ -22,19 +22,19 @@ _Bu kılavuz gerekli sertifikaları ve bir Xamarin.Mac uygulamayı yayımlamak i
 
 Ziyaret [Apple Developer Member Center'da](http://developer.apple.com) Mac geliştirme için yapılandırılır. Ana menü aşağıda gösterilmiştir:
 
-[![Apple Geliştirici üye Merkezi'nde](certificates-identifiers-images/devcenter01.png "Apple Developer Member Center'da")](certificates-identifiers-images/devcenter01-large.png)
+[![Apple Geliştirici üye Merkezi'nde](certificates-identifiers-images/devcenter01.png "Apple Developer Member Center'da")](certificates-identifiers-images/devcenter01-large.png#lightbox)
 
 Tıklayın **tanımlayıcıları & profilleri, sertifikaları** bağlantı:
 
-[![Sertifikalar, tanımlayıcılar & profilleri seçme](certificates-identifiers-images/devcenter02.png "tanımlayıcıları & profilleri, sertifikaları seçme")](certificates-identifiers-images/devcenter02-large.png)
+[![Sertifikalar, tanımlayıcılar & profilleri seçme](certificates-identifiers-images/devcenter02.png "tanımlayıcıları & profilleri, sertifikaları seçme")](certificates-identifiers-images/devcenter02-large.png#lightbox)
 
 Ardından, tıklayın **sertifikaları bağlantısına** altında **Mac uygulamaları** bölümü:
 
-[![Sertifikaları bağlantısını seçerek](certificates-identifiers-images/devcenter03.png "sertifikaları bağlantısına seçme")](certificates-identifiers-images/devcenter03-large.png)
+[![Sertifikaları bağlantısını seçerek](certificates-identifiers-images/devcenter03.png "sertifikaları bağlantısına seçme")](certificates-identifiers-images/devcenter03-large.png#lightbox)
 
 Tıklayın **tüm** 'ı tıklatın ve bağlama  **+**  düğmesi:
 
-[![Tümünü seçme ve yeni bir öğe ekleme](certificates-identifiers-images/certif01.png "tüm seçerek ve yeni bir öğe ekleme")](certificates-identifiers-images/certif01-large.png)
+[![Tümünü seçme ve yeni bir öğe ekleme](certificates-identifiers-images/certif01.png "tüm seçerek ve yeni bir öğe ekleme")](certificates-identifiers-images/certif01-large.png#lightbox)
 
 Burada indirme alanından **ara sertifika** (dünya çapında Geliştirici ilişkileri sertifika yetkilisi ve geliştirici kimliği sertifika yetkilisi) gerekiyorsa. Ancak, bu kurulum geliştirici tarafından Xcode için otomatik olarak olmalıdır.
 
@@ -53,25 +53,25 @@ Geliştirici yazılan her bir uygulama için bir uygulama kimliği'ni kaydetmeni
 
 1. Girin bir **uygulama kimliği açıklaması** ve seçin **uygulama hizmetleri** uygulama gerektiren: 
 
-    [![Açıklama ve uygulama hizmetleri girme](certificates-identifiers-images/devcenter04.png "açıklama ve uygulama hizmetleri girme")](certificates-identifiers-images/devcenter04-large.png)
+    [![Açıklama ve uygulama hizmetleri girme](certificates-identifiers-images/devcenter04.png "açıklama ve uygulama hizmetleri girme")](certificates-identifiers-images/devcenter04-large.png#lightbox)
 2. Girin bir **paket kimliği** tıklatın ve uygulama için **devam** düğmesi: 
 
-    [![Bir paket kimliği girme](certificates-identifiers-images/devcenter05.png "bir paket kimliği girme")](certificates-identifiers-images/devcenter05-large.png)
+    [![Bir paket kimliği girme](certificates-identifiers-images/devcenter05.png "bir paket kimliği girme")](certificates-identifiers-images/devcenter05-large.png#lightbox)
 3. Bilgileri doğrulayın ve tıklatın **gönderme** düğmesi: 
 
-    [![Bilgileri doğrulanıyor](certificates-identifiers-images/devcenter06.png "bilgileri doğrulanıyor")](certificates-identifiers-images/devcenter06-large.png)
+    [![Bilgileri doğrulanıyor](certificates-identifiers-images/devcenter06.png "bilgileri doğrulanıyor")](certificates-identifiers-images/devcenter06-large.png#lightbox)
 
 Bazı **uygulama hizmetleri** yapılandırma (örneğin, iCloud) daha fazla gerektirebilir. Bu durumda, yeni oluşturduğunuz yeni uygulama Kimliğini seçin ve'ı tıklatın **Düzenle** düğmesi:
 
-[![Yeni uygulama kimliği düzenleme](certificates-identifiers-images/devcenter07.png "yeni uygulama kimliği düzenleme")](certificates-identifiers-images/devcenter07-large.png)
+[![Yeni uygulama kimliği düzenleme](certificates-identifiers-images/devcenter07.png "yeni uygulama kimliği düzenleme")](certificates-identifiers-images/devcenter07-large.png#lightbox)
 
 İCloud hizmetleri yapılandırmak için tıklatın **Düzenle** düğmesi:
 
-[![İCloud Hizmetleri Yapılandırma](certificates-identifiers-images/devcenter08.png "iCloud Hizmetleri'ni yapılandırma")](certificates-identifiers-images/devcenter08-large.png)
+[![İCloud Hizmetleri Yapılandırma](certificates-identifiers-images/devcenter08.png "iCloud Hizmetleri'ni yapılandırma")](certificates-identifiers-images/devcenter08-large.png#lightbox)
 
 Buradan Geliştirici bunlar kullanarak veritabanlarını yapılandırabilirsiniz:
 
-[![Veritabanlarını yapılandırma](certificates-identifiers-images/devcenter09.png "veritabanları yapılandırılıyor")](certificates-identifiers-images/devcenter09-large.png)
+[![Veritabanlarını yapılandırma](certificates-identifiers-images/devcenter09.png "veritabanları yapılandırılıyor")](certificates-identifiers-images/devcenter09-large.png#lightbox)
 
 ### <a name="register-macos-systems"></a>MacOS sistemleri kaydetme
 
@@ -79,17 +79,17 @@ Geliştirici, test etmek için bir sağlama profili oluşturmak için Mac bilgis
 
 Mac Geliştirici Merkezi seçin **tüm** gelen **aygıtları** 'ye tıklayın  **+**  düğmesi:
 
-[![Yeni bilgisayar ekleme](certificates-identifiers-images/devcenter10.png "yeni bilgisayar ekleme")](certificates-identifiers-images/devcenter10-large.png)
+[![Yeni bilgisayar ekleme](certificates-identifiers-images/devcenter10.png "yeni bilgisayar ekleme")](certificates-identifiers-images/devcenter10-large.png#lightbox)
 
 Girin bir **adı** ve **UUID** ekleyin ve'ı tıklatın bilgisayarın **devam** düğmesi. Bilgi ve ardından gözden **kaydetmek** düğmesi:
 
-[![Yeni bilgisayar bilgilerini girme](certificates-identifiers-images/devcenter11.png "yeni bilgisayar bilgilerini girme")](certificates-identifiers-images/devcenter11-large.png)
+[![Yeni bilgisayar bilgilerini girme](certificates-identifiers-images/devcenter11.png "yeni bilgisayar bilgilerini girme")](certificates-identifiers-images/devcenter11-large.png#lightbox)
 
 ### <a name="create-certificates"></a>Sertifikaları oluşturma
 
 Mac uygulamalarını imzalamak için kullanılan sertifikaları birkaç farklı türde oluşturmak için sertifikalar bölümünü kullanın:
 
-[![Yeni bir sertifika oluşturma](certificates-identifiers-images/certif01.png "yeni bir sertifika oluşturma")](certificates-identifiers-images/certif01-large.png)
+[![Yeni bir sertifika oluşturma](certificates-identifiers-images/certif01.png "yeni bir sertifika oluşturma")](certificates-identifiers-images/certif01-large.png#lightbox)
 
 Ana üç sertifika vardır:
 
@@ -107,22 +107,22 @@ Oluşturulan için yeni bir geliştirme sertifikası aşağıdakileri yapın:
 
 1. Seçin **Mac geliştirme** radyo düğmesini seçin ve **devam**: 
 
-     [![Geliştirme sertifikası ekleme](certificates-identifiers-images/certif02.png "geliştirme sertifikası ekleme")](certificates-identifiers-images/certif02-large.png)
+     [![Geliştirme sertifikası ekleme](certificates-identifiers-images/certif02.png "geliştirme sertifikası ekleme")](certificates-identifiers-images/certif02-large.png#lightbox)
 2. Sonraki ekranda, Anahtarlık erişimi bir sertifika imzalama isteği dosyasını karşıya yüklemek için oluşturmak için nasıl kullanılacağını açıklanmaktadır: 
 
-    [![Anahtarlık erişimi karşıya yükleme ekranında](certificates-identifiers-images/certif03.png "Anahtarlık erişimi karşıya yükleme ekranı")](certificates-identifiers-images/certif03-large.png)
+    [![Anahtarlık erişimi karşıya yükleme ekranında](certificates-identifiers-images/certif03.png "Anahtarlık erişimi karşıya yükleme ekranı")](certificates-identifiers-images/certif03-large.png#lightbox)
 3. Son sertifika oluşturulduğunda, daha sonra anlaşılacak böylece sertifika için anlamlı ortak bir ad seçin. Sonraki adımda bulunabilir şekilde dosyasının kaydedildiği unutmayın: 
 
      ![Sertifika verme](certificates-identifiers-images/image12.png "sertifika verme")
 4. Bir sertifika isteği dosyasını (uzantısı `.certSigningRequest`) Mac üzerinde yerel olarak kaydedilecek Nereye kaydettiğinizi unutmayın (varsayılan locationis Masaüstü) sonraki adımda seçilmesi gerekir: 
 
-     [![Sertifika dosyası karşıya yükleniyor](certificates-identifiers-images/image13.png "sertifika dosyası karşıya yükleniyor")](certificates-identifiers-images/image13-large.png)
+     [![Sertifika dosyası karşıya yükleniyor](certificates-identifiers-images/image13.png "sertifika dosyası karşıya yükleniyor")](certificates-identifiers-images/image13-large.png#lightbox)
 5. Tıklatın **karşıdan** içinde yüklemek için çift tıklayın ve sertifika almak için **Anahtarlık**: 
 
-     [![Geliştirme sertifikası indirme](certificates-identifiers-images/image15.png "geliştirme sertifikası yükleniyor")](certificates-identifiers-images/image15-large.png)
+     [![Geliştirme sertifikası indirme](certificates-identifiers-images/image15.png "geliştirme sertifikası yükleniyor")](certificates-identifiers-images/image15-large.png#lightbox)
 6. Tıklatın **karşıdan** içinde yüklemek için çift tıklayın ve sertifika almak için **Anahtarlık**. **Geliştirici sertifika yardımcı programını** gibi bu sertifikalar gösterir: 
 
-     [![Geliştirici sertifika yardımcı programını](certificates-identifiers-images/image16.png "Geliştirici sertifika yardımcı programını")](certificates-identifiers-images/image16-large.png)
+     [![Geliştirici sertifika yardımcı programını](certificates-identifiers-images/image16.png "Geliştirici sertifika yardımcı programını")](certificates-identifiers-images/image16-large.png#lightbox)
 7. Ayrıca, görünür **Anahtarlık** şöyle: 
 
      ![Anahtarlık erişimi sertifikada](certificates-identifiers-images/image17.png "Anahtarlık erişimi sertifikada")
@@ -135,39 +135,39 @@ App Store'dan bir uygulama yayımlamayı **Mac App Store** uygulama ve Mac Yükl
 
 1. Seçin **Mac App Store** tıklatın ve sertifika türü olarak **devam** düğmesi: 
 
-    [![Bir uygulama mağazası sertifika oluşturma](certificates-identifiers-images/certif04.png "bir uygulama mağazası sertifika oluşturma")](certificates-identifiers-images/certif04-large.png)
+    [![Bir uygulama mağazası sertifika oluşturma](certificates-identifiers-images/certif04.png "bir uygulama mağazası sertifika oluşturma")](certificates-identifiers-images/certif04-large.png#lightbox)
 2. Türünü seçin, oluşturmak için sertifika (bir uygulama mağazasında serbest bırakmak için her tür gerekecektir): 
 
-    [![Sertifika türü seçme](certificates-identifiers-images/certif05.png "sertifika türü seçme")](certificates-identifiers-images/certif05-large.png)
+    [![Sertifika türü seçme](certificates-identifiers-images/certif05.png "sertifika türü seçme")](certificates-identifiers-images/certif05-large.png#lightbox)
 3. Sonraki sayfaya nasıl kullanılacağı açıklanmaktadır **Anahtarlık erişimi** bir sertifika isteği dosyasını oluşturmak için. Yönergeleri izleyin: 
 
-     [![Anahtarlık isteği oluşturma](certificates-identifiers-images/certif06.png "Anahtarlık isteği oluşturma")](certificates-identifiers-images/certif06-large.png)
+     [![Anahtarlık isteği oluşturma](certificates-identifiers-images/certif06.png "Anahtarlık isteği oluşturma")](certificates-identifiers-images/certif06-large.png#lightbox)
 4. Bir açıklayıcı seçin **ortak ad** – adı metinde "Uygulama mağazası uygulaması" örnek kullanmak için: 
 
      ![Açıklayıcı bir ad girmeyi](certificates-identifiers-images/image20.png "açıklayıcı bir ad girin")
 5. Bir sertifika isteği dosyasını (uzantısı `.certSigningRequest`) Mac üzerinde yerel olarak kaydedilecek Nereye kaydettiğinizi unutmayın (varsayılan konum Masaüstü,): 
 
-     [![Sertifikayı kaydetme](certificates-identifiers-images/image21.png "sertifikayı kaydetme")](certificates-identifiers-images/image21-large.png)
+     [![Sertifikayı kaydetme](certificates-identifiers-images/image21.png "sertifikayı kaydetme")](certificates-identifiers-images/image21-large.png#lightbox)
 6. Tıklatın **karşıdan** sertifikanızı almak ve bunu yüklemek için çift tıklatın **Anahtarlık**: 
 
-      [![Uygulama mağazası sertifika indirme](certificates-identifiers-images/image23.png "App Store sertifika yükleme")](certificates-identifiers-images/image23-large.png)
+      [![Uygulama mağazası sertifika indirme](certificates-identifiers-images/image23.png "App Store sertifika yükleme")](certificates-identifiers-images/image23-large.png#lightbox)
 7. Tıklatın **devam** ve başka bir sertifika için olacaktır bu kez karşıdan yüklemek için tam aynı adımları *yükleyici*: 
 
-     [![Yükleyici seçme](certificates-identifiers-images/image24.png "yükleyici seçme")](certificates-identifiers-images/image24-large.png)
+     [![Yükleyici seçme](certificates-identifiers-images/image24.png "yükleyici seçme")](certificates-identifiers-images/image24-large.png#lightbox)
 8. Bir açıklayıcı seçin **ortak ad** – örneği kullanmak için adında "AppStore yükleyici" metin: 
 
      ![Sertifika adını ayarlama](certificates-identifiers-images/image25.png "sertifika adını ayarlama")
 9. Bir sertifika isteği dosyasını (uzantısı `.certSigningRequest`) Mac üzerinde yerel olarak kaydedilecek Nereye kaydettiğinizi unutmayın (varsayılan konum Masaüstü,): 
 
-     [![Sertifika karşıya](certificates-identifiers-images/image26.png "sertifikası karşıya yükleniyor")](certificates-identifiers-images/image26-large.png) 
+     [![Sertifika karşıya](certificates-identifiers-images/image26.png "sertifikası karşıya yükleniyor")](certificates-identifiers-images/image26-large.png#lightbox) 
 
-     [![Dağıtım sertifikası indirme](certificates-identifiers-images/image28.png "dağıtım sertifikası yükleniyor")](certificates-identifiers-images/image28-large.png)
+     [![Dağıtım sertifikası indirme](certificates-identifiers-images/image28.png "dağıtım sertifikası yükleniyor")](certificates-identifiers-images/image28-large.png#lightbox)
 10. Tıklatın **karşıdan** içinde yüklemek için çift tıklayın ve sertifika almak için **Anahtarlık**. Bu gibi sertifikalar Geliştirici sertifikası yardımcı programı'nı gösterir: 
 
-     [![Geliştirici sertifika yardımcı programını](certificates-identifiers-images/image29.png "Geliştirici sertifika yardımcı programını")](certificates-identifiers-images/image29-large.png)
+     [![Geliştirici sertifika yardımcı programını](certificates-identifiers-images/image29.png "Geliştirici sertifika yardımcı programını")](certificates-identifiers-images/image29-large.png#lightbox)
 11. İki yeni sertifika artık görünür durumda olur **Anahtarlık**: 
 
-     [![Anahtarlık erişimi sertifikada](certificates-identifiers-images/image30.png "Anahtarlık erişimi sertifikada")](certificates-identifiers-images/image30-large.png)
+     [![Anahtarlık erişimi sertifikada](certificates-identifiers-images/image30.png "Anahtarlık erişimi sertifikada")](certificates-identifiers-images/image30-large.png#lightbox)
 
 #### <a name="developer-id-certificates"></a>Geliştirici kimliği sertifikaları
 
@@ -177,22 +177,22 @@ Aşağıdakileri yapın:
 
 1. Gelen **sertifikaları** bölümünde, Başlat'ı tıklatın tarafından  **+**  düğmesine ve ardından **Geliştirici kimliği** radyo düğmesi: 
 
-    [![Bir geliştirici kimliği ekleme](certificates-identifiers-images/certif07.png "bir geliştirici kimliği ekleme")](certificates-identifiers-images/certif07-large.png)
+    [![Bir geliştirici kimliği ekleme](certificates-identifiers-images/certif07.png "bir geliştirici kimliği ekleme")](certificates-identifiers-images/certif07-large.png#lightbox)
 2. Tıklatın **devam** düğmesine tıklayın ve kimlik oluşturmak için geliştirici türünü seçin: 
 
-    [![Geliştirici kimliği türü seçme](certificates-identifiers-images/certif08.png "Geliştirici kimliği türü seçme")](certificates-identifiers-images/certif08-large.png)
+    [![Geliştirici kimliği türü seçme](certificates-identifiers-images/certif08.png "Geliştirici kimliği türü seçme")](certificates-identifiers-images/certif08-large.png#lightbox)
 3. İki gerekli olacak bir uygulamayı imzalamak için ve bir uygulamanın yükleyici imzalamak için. Sertifika istekleri için bu anahtarları adlandırırken dikkatli olun: metni içeren açıklayıcı adlar kullanın `Application` ve `Installer` bunlar daha sonra ayırt edici olabilir.
 4. Sonraki ekranda sertifikayı oluşturmak nasıl ayrıntılı yönergeleri sağlar **devam** düğmesi: 
 
-    [![Sertifika oluşturma](certificates-identifiers-images/certif09.png "sertifikası nasıl oluşturulur")](certificates-identifiers-images/certif09-large.png)
+    [![Sertifika oluşturma](certificates-identifiers-images/certif09.png "sertifikası nasıl oluşturulur")](certificates-identifiers-images/certif09-large.png#lightbox)
 5. Bir açıklayıcı seçin **ortak ad** – adı metinde "Developer kimliği uygulaması" örnek kullanmak için: 
 
      ![Sertifika için bir ad girmeyi](certificates-identifiers-images/image33.png "sertifika için bir ad girme")
 6. Bir sertifika isteği dosyasını (uzantısı `.certSigningRequest`) Mac üzerinde yerel olarak kaydedilecek Nereye kaydettiğinizi unutmayın (varsayılan konum Masaüstü,): 
 
-     [![Sertifika karşıya](certificates-identifiers-images/certif10.png "sertifikası karşıya yükleniyor")](certificates-identifiers-images/certif10-large.png) 
+     [![Sertifika karşıya](certificates-identifiers-images/certif10.png "sertifikası karşıya yükleniyor")](certificates-identifiers-images/certif10-large.png#lightbox) 
 
-     [![Geliştirici kimliği indirme](certificates-identifiers-images/certif11.png "geliştirici kodu indiriliyor")](certificates-identifiers-images/certif11-large.png)
+     [![Geliştirici kimliği indirme](certificates-identifiers-images/certif11.png "geliştirici kodu indiriliyor")](certificates-identifiers-images/certif11-large.png#lightbox)
 7. Tıklatın **karşıdan** içinde yüklemek için çift tıklayın ve sertifika almak için **Anahtarlık**.
 8. Tıklatın **devam** ve başka bir sertifika için olacaktır bu kez karşıdan yüklemek için tam aynı adımları *yükleyici*.
 9. Bir açıklayıcı seçin **ortak ad** – adında "Developer kimliği yükleyici" metin örnek kullanmak için: 
@@ -200,16 +200,16 @@ Aşağıdakileri yapın:
      ![Ortak bir ad girmeyi](certificates-identifiers-images/image38.png "ortak bir ad girin")
 10. Bir sertifika isteği dosyasını (uzantısı `.certSigningRequest`) Mac üzerinde yerel olarak kaydedilecek Nereye kaydettiğinizi unutmayın (varsayılan konum Masaüstü,): 
 
-     [![Bir sertifika karşıya](certificates-identifiers-images/certif10.png "bir sertifikası karşıya yükleniyor")](certificates-identifiers-images/certif10-large.png)
+     [![Bir sertifika karşıya](certificates-identifiers-images/certif10.png "bir sertifikası karşıya yükleniyor")](certificates-identifiers-images/certif10-large.png#lightbox)
 11. Sertifika indirme için kullanılabilir ise – tıklatın **karşıdan** düğmesini tıklatmadan önce **Bitti**: 
 
-     [![Bir sertifika indirme](certificates-identifiers-images/certif11.png "bir sertifika yükleme")](certificates-identifiers-images/certif11-large.png)
+     [![Bir sertifika indirme](certificates-identifiers-images/certif11.png "bir sertifika yükleme")](certificates-identifiers-images/certif11-large.png#lightbox)
 12. Tıklatın **karşıdan** içinde yüklemek için çift tıklayın ve sertifika almak için **Anahtarlık**. **Geliştirici sertifika yardımcı programını** gibi bu sertifikalar gösterir: 
 
-     [![Geliştirici sertifika yardımcı programını](certificates-identifiers-images/certif12.png "Geliştirici sertifika yardımcı programını")](certificates-identifiers-images/certif12-large.png)
+     [![Geliştirici sertifika yardımcı programını](certificates-identifiers-images/certif12.png "Geliştirici sertifika yardımcı programını")](certificates-identifiers-images/certif12-large.png#lightbox)
 13. Aşağıdaki öğeler görünür **Anahtarlık**: 
 
-     [![Anahtarlık erişimi sertifikada](certificates-identifiers-images/image43.png "Anahtarlık erişimi sertifikada")](certificates-identifiers-images/image43-large.png)
+     [![Anahtarlık erişimi sertifikada](certificates-identifiers-images/image43.png "Anahtarlık erişimi sertifikada")](certificates-identifiers-images/image43-large.png#lightbox)
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

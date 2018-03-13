@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d7b4c5a539470a3544d0117251f40fd6bd37f2b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 778e70f6817b71e5910aa85425d46261dfe9c803
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-property-lists"></a>Özellik listeleri ile çalışma
 
@@ -24,7 +24,7 @@ Mac için Visual Studio düzenleme uygulama özelliklerini ve yeteneklerini daha
 
 Bilgi özellik listesi ( `Info.plist`), uygulamanızın yapılandırma sistemi hakkında bilgiler sağlar gerekli iOS dosyasıdır. Mac için Visual Studio özel `Info.plist` altındaki sekmeleri denetlediği üç panel Düzenleyicisi pencerenin sol Düzenleyicisi özellikleri:
 
- [ ![](property-lists-images/tabs.png "Alt Info.plist Düzenleyicisi sekmeleri Düzenleyicisi pencerenin sol")](property-lists-images/tabs.png)
+ [![](property-lists-images/tabs.png "Alt Info.plist Düzenleyicisi sekmeleri Düzenleyicisi pencerenin sol")](property-lists-images/tabs.png#lightbox)
 
 Her paneli aşağıda özetlendiği gibi farklı özellikleri denetler:
 
@@ -57,11 +57,11 @@ Bu sonraki bölümlerde daha ayrıntılı olarak açıklanmıştır.
 Bu bölümde, uygulamanızın açıklayan önemli bilgiler içerir.
 **Tanımlayıcısı** depolanan iTunes Bağlan (uygulama mağazası uygulamaları için) hem de geliştirme ve dağıtım sertifikalarını ve iOS sağlama Portalı Uygulama kimlikleri listesini girilen paket tanımlayıcısı burada eşleşmelidir.
 
- [ ![](property-lists-images/image24.png "iOS uygulaması hedefi")](property-lists-images/image24.png)
+ [![](property-lists-images/image24.png "iOS uygulaması hedefi")](property-lists-images/image24.png#lightbox)
 
 ### <a name="device-deployment"></a>Aygıt dağıtımı
 
- [ ![](property-lists-images/deployment.png "Aygıt dağıtımı")](property-lists-images/deployment.png)
+ [![](property-lists-images/deployment.png "Aygıt dağıtımı")](property-lists-images/deployment.png#lightbox)
 
 Aygıt **dağıtım** bilgisi bölümleri görüntülenir seçerek, seçime bağlı olarak **aygıtları** açılır listede **uygulama hedef** yukarıdaki bölümde. **Ana arabirimi** açılan ayarlanmış **MainStoryboard** film şeridi tabanlı uygulamalarda. Kullanıcı arabirimi tamamen kodda yazılır, sonra bu boş bırakılabilir.
 
@@ -73,7 +73,7 @@ Aygıt **dağıtım** bilgisi bölümleri görüntülenir seçerek, seçime bağ
 
 **Durum çubuğu stilleri** bölümdür uygulamanın düzenlemek için bir grafik arabirim `UIStatusBarStyle`:
 
- [ ![](property-lists-images/status.png "Durum çubuğu stilleri")](property-lists-images/status.png)
+ [![](property-lists-images/status.png "Durum çubuğu stilleri")](property-lists-images/status.png#lightbox)
 
  <a name="Icons" />
 
@@ -89,11 +89,11 @@ Simgeler, görüntü ve resimler Info.plist dosyanızdaki kullanma hakkında bil
 
 `Info.plist` Eşlemeleri tümleştirme ve modları backgrounding belirtmek için özel bölümleri içerir. Desteklemek istediğiniz seçenekleri belirleyerek uygulamanıza sizin için gerekli özellikler ekleyeceksiniz.
 
- [ ![](property-lists-images/maps.png "MAPS tümleştirme")](property-lists-images/maps.png)
+ [![](property-lists-images/maps.png "MAPS tümleştirme")](property-lists-images/maps.png#lightbox)
 
 Xamarin Haritalar ile çalışma hakkında daha fazla bilgi için bkz [iOS eşlemeleri](~/ios/user-interface/controls/ios-maps/index.md) Kılavuzu.
 
- [ ![](property-lists-images/bging.png "Arka plan modları")](property-lists-images/bging.png)
+ [![](property-lists-images/bging.png "Arka plan modları")](property-lists-images/bging.png#lightbox)
 
 Arka plan modları hakkında daha fazla bilgi için Xamarin başvuran [iOS Backgrounding](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md) Kılavuzu.
 
@@ -101,7 +101,7 @@ Arka plan modları hakkında daha fazla bilgi için Xamarin başvuran [iOS Backg
 
 Gelişmiş panelindeki belge türleri ve uygulamasının desteklediği URL şemalarını denetler.
 
- [ ![](property-lists-images/image34.png "Gelişmiş paneli")](property-lists-images/image34.png)
+ [![](property-lists-images/image34.png "Gelişmiş paneli")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
 
@@ -116,7 +116,7 @@ Belirli türde dosyaları açma destekleyen uygulamalar için iOS sağlar `CFBun
 
 Bazen bir uygulamanın özel dosya türünü açarken desteklemesi gerekir. Örneğin, bir özel uzantısına sahip bir görüntü dosyaları açmaya istiyoruz *.xam*. Bir özel dosya türünü belirtmek için kullanarak özel bir UTI - Evrensel tür tanımlayıcısı - oluşturacağız `UIExportedTypeDeclarations` anahtarı. Aşağıdaki ekran görüntüsünde .xam uzantısı için özel bir UTI oluşturulacağını gösterir:
 
- [ ![](property-lists-images/uti.png "UTIs Düzenleyicisi")](property-lists-images/uti.png)
+ [![](property-lists-images/uti.png "UTIs Düzenleyicisi")](property-lists-images/uti.png#lightbox)
 
 Yalnızca olarak verilen tür UTIs belirtin, uygulamanızın belirli özel UTIs *türüne UTIs alınan* ( `UIImportedTypeDeclarations` anahtarı) desteklenir, ancak, uygulamanız tarafından ait olmayan özel türlerini belirtin.
 
@@ -126,7 +126,7 @@ Apple için özel UTIs kullanma hakkında daha fazla bilgi için bkz [kaydetme d
 
 (Protokolü olarak da bilinir) bir URL şeması adı URL'sinin ilk bölümüdür. Örneğin, `http://` ve `https://` ortak URL düzenler. Uygulamanız için özel bir URL şemasına oluşturma seçeneğiniz vardır. Özel URL şemalarını iletişim kurar ve veri diğer uygulamalarla İleri ve geri göndermek için kullanılır. Aşağıdaki ekran görüntüsü olarak adlandırılan yeni özel URL şeması oluşturma gösterilmektedir `monkeys://`:
 
- [ ![](property-lists-images/url.png "Özel URL'leri")](property-lists-images/url.png)
+ [![](property-lists-images/url.png "Özel URL'leri")](property-lists-images/url.png#lightbox)
 
 
 
@@ -136,15 +136,15 @@ Apple için özel UTIs kullanma hakkında daha fazla bilgi için bkz [kaydetme d
 
 **Kaynak** sekmesinde `Info.plist` dosya eklenmiş veya düzenlenmişse için özel değerler sağlar. Mac için Visual Studio en yaygın özelliklerinin bir listesi sağlar:
 
- [ ![](property-lists-images/image31.png "Aşağı açılır listeden yeni özellik ekleme")](property-lists-images/image31.png)
+ [![](property-lists-images/image31.png "Aşağı açılır listeden yeni özellik ekleme")](property-lists-images/image31.png#lightbox)
 
 Mac için Visual Studio bilinen bir özellik için geçerli bir değer listesi tarafından aşağıdaki ekran görüntüsünde gösterildiği gibi olur:
 
- [ ![](property-lists-images/image32.png "Bir bilinen değer listesinden bir değer seçin")](property-lists-images/image32.png)
+ [![](property-lists-images/image32.png "Bir bilinen değer listesinden bir değer seçin")](property-lists-images/image32.png#lightbox)
 
 Mac için Visual Studio, özellik türü de gösterildiği gibi algılar:
 
- [ ![](property-lists-images/image33.png "Kullanılabilir özellik türleri")](property-lists-images/image33.png)
+ [![](property-lists-images/image33.png "Kullanılabilir özellik türleri")](property-lists-images/image33.png#lightbox)
 
 Apple'nın gözden [uygulama ilgili kaynaklar](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) isteğe bağlı özellikler hakkında daha fazla bilgi için bağlantılar.
 

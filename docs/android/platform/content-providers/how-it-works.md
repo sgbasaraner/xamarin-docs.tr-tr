@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 142ef16606bbf47de073122791fa2509ed6b6353
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7802988833563469fcc25e03ee1bda2046591681
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="how-content-providers-work"></a>Nasıl içerik sağlayıcıları çalışma
 
@@ -23,14 +23,12 @@ ms.lasthandoff: 02/27/2018
 
 Bir içerik sağlayıcı normalde bir SQLite veritabanı tarafından desteklenir, ancak kod tüketen temel SQL hakkında bir şey bilmek gerekmez, API anlamına gelir. Sorguları Sabitleri (veri yapılarını bağımlılıkları azaltmak üzere), sütun adları başvurmak için kullanarak bir URI yapılır ve bir `ICursor` üzerinden yinelemek kullanıcı kodu döndürdü.
 
-<a name="Consuming_a_ContentProvider" />
 
 ## <a name="consuming-a-contentprovider"></a>Bir ContentProvider kullanma
 
 `ContentProviders` içinde kayıtlı bir URI üzerinden işlevleri kullanıma **AndroidManifest.xml** uygulamasının veriler yayımlar. Burada URI ve sunulan veri sütunları veri bağlamayı kolaylaştırmak için sabit olarak kullanılabilir bir kuralı yok. Android yerleşik `ContentProviders` tüm kolaylık sınıfları veri yapısında başvuru sabitleri sağlamak [ `Android.Providers` ](https://developer.xamarin.com/api/namespace/Android.Provider/) ad alanı.
 
 
-<a name="Built-In_Providers" />
 
 ### <a name="built-in-providers"></a>Yerleşik sağlayıcılar
 
@@ -51,13 +49,12 @@ Android sunar çok çeşitli sistem ve kullanıcı verilerini kullanarak erişim
 - *Sesli posta* &ndash; sesli posta iletilerinin geçmişi.
 
 
-<a name="Classes_Overview" />
 
 ## <a name="classes-overview"></a>Sınıfları genel bakış
 
 İle çalışırken kullanılan birincil sınıfların bir `ContentProvider` burada gösterilir:
 
-[![İçerik sağlayıcı uygulama ve tüketim uygulama etkileşimleri sınıf diyagramı](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png)
+[![İçerik sağlayıcı uygulama ve tüketim uygulama etkileşimleri sınıf diyagramı](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
 
 Bu diyagramda `ContentProvider` sorguları uygular ve diğer uygulamaların veri bulmak için kullandığı URI'si kaydeder. `ContentResolver` İçin 'proxy' gibi davranır `ContentProvider` (sorgu, INSERT, Update ve Delete yöntemleri). `SQLiteOpenHelper` Tarafından kullanılan verileri içeren `ContentProvider`, ancak bunu doğrudan uygulamaları kullanan gösterilmez.
 `CursorAdapter` Tarafından döndürülen imleç geçirir `ContentResolver` görüntülemek için bir `ListView`. `UriMatcher` Sorguları işlerken URI'ler ayrıştıran bir yardımcı sınıfıdır.

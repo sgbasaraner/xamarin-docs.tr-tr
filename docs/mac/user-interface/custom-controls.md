@@ -3,16 +3,16 @@ title: "Özel denetimler oluşturma"
 description: "Bu makalede, özel denetimler oluşturma ve bunlarla arabirim Oluşturucusu'nda çalışma açıklar."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f3d6301bc2c0237a268669fff437801bfb2657d1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ea88810384dfe8b1a08080953db19caddf25d6a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-custom-controls"></a>Özel denetimler oluşturma
 
@@ -22,7 +22,7 @@ C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı erişiminiz kullanı
 
 MacOS yerleşik kullanıcı denetimleri çeşitlilikte sağlarken işlevselliği Giden kutusu sağlanmayan sağlamak ya da özel bir kullanıcı Arabirimi tema (örneğin, bir oyun arabirimi) eşleştirmek için özel bir denetim oluşturmak gerekir zamanlar olabilir.
 
-[ ![](custom-controls-images/intro01.png "Özel bir kullanıcı Arabirimi denetim örneği")](custom-controls-images/intro01.png)
+[![](custom-controls-images/intro01.png "Özel bir kullanıcı Arabirimi denetim örneği")](custom-controls-images/intro01.png#lightbox)
 
 Bu makalede, biz Xamarin.Mac uygulamasında yeniden kullanılabilir bir özel kullanıcı arabirimi denetim oluşturma temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -50,7 +50,7 @@ Biz oluşturmakta özel denetim (sol fare düğmesini tıklama) kullanıcı giri
 
 Mac için Visual Studio'da bir özel kullanıcı arabirimi denetim için (veya yeni bir tane oluşturmak için) istediğiniz Xamarin.Mac projeyi açın. Yeni bir sınıf ekleyin ve bunu `NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom01.png "Yeni bir sınıf ekleme")](custom-controls-images/custom01.png)
+[![](custom-controls-images/custom01.png "Yeni bir sınıf ekleme")](custom-controls-images/custom01.png#lightbox)
 
 Ardından, düzenleme `NSFlipSwitch.cs` sınıfı ve şu şekilde görünür yapın:
 
@@ -336,19 +336,19 @@ Tam olarak tanımlanan bizim sahip özel bir denetim, biz ya da bu bizim Xamarin
 
 Arabirimi Oluşturucusu'nu kullanarak denetim eklemek için önce Xamarin.Mac projesinin temiz bir yapı yapın ve ardından `Main.storyboard` dosyayı düzenleme için arabirimi Oluşturucusu'nda açın:
 
-[ ![](custom-controls-images/custom02.png "Xcode'da film şeridi düzenleme")](custom-controls-images/custom02.png)
+[![](custom-controls-images/custom02.png "Xcode'da film şeridi düzenleme")](custom-controls-images/custom02.png#lightbox)
 
 Ardından, sürükleyin bir `Custom View` kullanıcı arabirimi tasarımı içine:
 
-[ ![](custom-controls-images/custom03.png "Özel bir görünüm Kitaplığı'ndan seçme")](custom-controls-images/custom03.png)
+[![](custom-controls-images/custom03.png "Özel bir görünüm Kitaplığı'ndan seçme")](custom-controls-images/custom03.png#lightbox)
 
 Halen seçili olan özel görünüm ile geçiş **kimlik denetçisi** görünümün değiştirip **sınıfı** için `NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom04.png "Ayar görünümün sınıfı")](custom-controls-images/custom04.png)
+[![](custom-controls-images/custom04.png "Ayar görünümün sınıfı")](custom-controls-images/custom04.png#lightbox)
 
 Geçiş **Yardımcısı Düzenleyicisi** ve oluşturma bir **çıkışı** özel denetim için (içinde bağlamak emin `ViewControler.h` dosya ve `.m` dosya):
 
-[ ![](custom-controls-images/custom05.png "Yeni bir çıkış yapılandırma")](custom-controls-images/custom05.png)
+[![](custom-controls-images/custom05.png "Yeni bir çıkış yapılandırma")](custom-controls-images/custom05.png#lightbox)
 
 Mac için Visual Studio dönün yaptığınız değişiklikleri kaydedin ve eşitlemek değişikliklere izin verecek. Düzen `ViewController.cs` dosya ve olun `ViewDidLoad` yöntemi görünüm aşağıdaki gibi:
 
@@ -369,7 +369,7 @@ Burada, biz yanıt `ValueChanged` biz yukarıda üzerinde tanımlanan olay `NSFl
 
 İsteğe bağlı olarak, biz arabirimi oluşturucuya dönün ve tanımlayan bir **eylem** denetimi:
 
-[ ![](custom-controls-images/custom06.png "Yeni bir eylem yapılandırma")](custom-controls-images/custom06.png)
+[![](custom-controls-images/custom06.png "Yeni bir eylem yapılandırma")](custom-controls-images/custom06.png#lightbox)
 
 Yeniden düzenleme `ViewController.cs` dosya ve aşağıdaki yöntemi ekleyin:
 
@@ -392,7 +392,7 @@ Bu makalede, yeniden kullanılabilir bir özel kullanıcı arabirimi denetim Xam
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacCustomControl (örnek)](https://developer.xamarin.com/samples/mac/MacCustomControl/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
-- [Veri bağlama ve anahtar-değer kodlama](~/mac/app-fundamentals/databinding.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Veri Bağlama ve Anahtar-Değer Kodlaması](~/mac/app-fundamentals/databinding.md)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Fare olayları işleme](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/EventOverview/HandlingMouseEvents/HandlingMouseEvents.html)

@@ -3,27 +3,26 @@ title: "Sekme düzeni TabHost ile"
 description: "Bu makalede bir yüksek düzeyde genel bakış sağlayacak TabHost, daha eski bir API sekmeli düzenleri bir Xamarin.Android uygulaması oluşturmak için kullanılır."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1CFF590A-AC86-C3B3-36CA-A70248BC7F97
+ms.assetid: 77B890A4-27A6-41DF-81BA-22C6116A8FB2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: ff61ca0a2bca466da3e33c93a17944915328b70c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e27557c65d2b3049457640a3492d090c5fa26a43
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="tab-layout-with-tabhost"></a>Sekme düzeni TabHost ile
 
 _Bu makalede bir yüksek düzeyde genel bakış sağlayacak TabHost, daha eski bir API sekmeli düzenleri bir Xamarin.Android uygulaması oluşturmak için kullanılır._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
 > [!NOTE]
-> **Not:** `TabHost` Google tarafından onaylanmaz eski bir API'dir. Geliştiriciler kullanarak sekmeli uygulamaları oluşturmak için kullanmaları [ActionBar](~/android/user-interface/controls/action-bar.md). `ActionBar` Tüm Android sürümünde kullanılabilir. Android 3.0 (API düzeyi 11) ilk sunulmuştur ve Android 2.2 (API düzeyi 8) ve Android 2.3 (API düzey 10) içinde geri alındığını [V7 uygulama Kitaplığı](http://developer.android.com/tools/support-library/features.html#v7-appcompat), Xamarin.Android kullanılabilir olduğu [Xamarin Android desteği Library - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) paket.
+> `TabHost` Google tarafından onaylanmaz eski bir API'dır. Geliştiriciler kullanarak sekmeli uygulamaları oluşturmak için kullanmaları [ActionBar](~/android/user-interface/controls/action-bar.md). `ActionBar` Tüm Android sürümünde kullanılabilir. Android 3.0 (API düzeyi 11) ilk sunulmuştur ve Android 2.2 (API düzeyi 8) ve Android 2.3 (API düzey 10) içinde geri alındığını [V7 uygulama Kitaplığı](http://developer.android.com/tools/support-library/features.html#v7-appcompat), Xamarin.Android kullanılabilir olduğu [Xamarin Android desteği Library - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) paket.
 
 `TabHost` Sekmeli kullanıcı interfacesIt oluşturma Xamarin.Android Android 2.2 ve Android 2.3 desteklemesi ve kullanamazsınız uygulamalar için uygundur daha eski, özgün API aranır **ActionBarSherlock**.
 Aşağıdaki beş bileşenleri ile ilgili tüm `TabHost` API'si:
@@ -44,7 +43,6 @@ Aşağıdaki diyagramda, nasıl bu bileşenlerin tümünü birlikte bir ilişki 
 
 Sekme içeriğinin etkinlikleri veya görünümler olabilir. Görünümleri nispeten basit ve basit ancak çok sayıda ilgisiz kod co-habitating etkinliğinde neden olabilir. Bu sorunları ve korumak sabit bir bloated sınıfı zayıf ayrımı içinde sonuçlanır. Buna karşılık, etkinlikleri sistem kaynaklarını gerektirir ancak kendi ayrı sınıfında kapsüllenmiş her sekme mantığı ile daha modüler bir yaklaşım için sağlar.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -54,11 +52,11 @@ Bu makalede eski üst düzey bileşenlerden açıklandığı `TabHost` Android v
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [Eylem Çubuğu](http://developer.android.com/guide/topics/ui/actionbar.html)
 - [TabHost](https://developer.xamarin.com/api/type/Android.Widget.TabHost/)
 - [TabHost.TabSpec](https://developer.xamarin.com/api/type/Android.Widget.TabHost+TabSpec/)
 - [TabWidget](https://developer.xamarin.com/api/type/Android.Widget.TabWidget/)
 - [TabActivity](https://developer.xamarin.com/api/type/Android.App.TabActivity/)
-- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [Eylem Çubuğu](http://developer.android.com/guide/topics/ui/actionbar.html)
 - [Android desteği kitaplığı v7 uygulama NuGet paketi](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 - [v7 uygulama kitaplığı](http://developer.android.com/tools/support-library/features.html#v7-appcompat)

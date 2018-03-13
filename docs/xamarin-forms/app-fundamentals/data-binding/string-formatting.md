@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 3b54ed876857f0cd04d7a304ff05b9710fbd9e04
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6735e9c03bee981f048231b53539c3b239f64484
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="string-formatting"></a>Biçimlendirme dizesi
 
@@ -121,7 +121,7 @@ Son bölümü kümeleri `BindingContext` değerine `Math.PI` varsayılan biçiml
 
 Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
 
-[![Dize biçimlendirme](string-formatting-images/stringformatting-small.png "dize biçimlendirme")](string-formatting-images/stringformatting-large.png "dize biçimlendirme")
+[![Dize biçimlendirme](string-formatting-images/stringformatting-small.png "dize biçimlendirme")](string-formatting-images/stringformatting-large.png#lightbox "dize biçimlendirme")
 
 ## <a name="viewmodels-and-string-formatting"></a>ViewModels ve biçimlendirme dizesi
 
@@ -174,7 +174,7 @@ Bu yaklaşım gösterilen **daha iyi renk seçici** olarak aynı ViewModel kulla
 
 Artık üç çiftlerini olan `Slider` ve `Label` aynı bağlı öğeleri kaynak özelliğinde `HslColorViewModel` nesnesi. Tek fark `Label` sahip bir `StringFormat` her görüntülenecek özellik `Slider` değeri.
 
-[![Daha iyi, seçici renk](string-formatting-images/bettercolorselector-small.png "daha iyi, seçici renk")](string-formatting-images/bettercolorselector-large.png "daha iyi, seçici renk")
+[![Daha iyi, seçici renk](string-formatting-images/bettercolorselector-small.png "daha iyi, seçici renk")](string-formatting-images/bettercolorselector-large.png#lightbox "daha iyi, seçici renk")
 
 Geleneksel iki basamaklı onaltılık biçimde RGB (kırmızı, yeşil, mavi) değerleri nasıl görüntüleneceğini merak ediyor olabilirsiniz. Bu tamsayı değerleri kullanılabilir doğrudan olmayan `Color` yapısı. Renk bileşenleri ViewModel içinde tamsayı değerleri hesaplamak ve özellikleri olarak göstermek için bir çözüm olacaktır. Ardından bunları biçimlendirebilirsiniz kullanarak `X2` belirtimi biçimlendirme.
 

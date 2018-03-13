@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0f270111ad4e10f035a3cb695564d789f40097fd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: aa2d2ce6cabe9c394b9807ca3d6328da5b4ba311
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-android-manifest"></a>Android derleme bildirimi ile çalışma
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -24,7 +23,6 @@ ms.lasthandoff: 02/27/2018
 **AndroidManifest.xml** yapı işlemi ve içinde bulunan XML parçası olarak oluşturulan **Properties/AndroidManifest.xml** özel öznitelikleri oluşturulmuş XML ile birleştirilir. Elde edilen birleştirilmiş **AndroidManifest.xml** bulunan **obj** alt; Örneğin, en bulunuyorsa **obj/Debug/android/AndroidManifest.xml** hata ayıklama derlemeleri . Birleştirme işlemi Önemsiz: XML öğelerini oluşturmak için özel öznitelikler kodundaki kullanır ve *ekler* bu elemanlara **AndroidManifest.xml**. 
 
 
-<a name="The_Basics" />
 
 ## <a name="the-basics"></a>Temeller
 
@@ -60,7 +58,6 @@ Bu örnek için eklemek aşağıdaki xml parçası neden **AndroidManifest.xml**
 `[Activity]` Özniteliği hiçbir etkisi vardır `abstract` türleri; `abstract` türleri yok sayılır.
 
 
-<a name="Activity_Name" />
 
 ### <a name="activity-name"></a>Etkinlik Adı
 
@@ -83,7 +80,6 @@ Bu örnekte aşağıdaki xml parçası üretir:
 
 *Not*: kullanması gereken `Name` özelliği yalnızca şekilde yeniden adlandırma geriye dönük uyumluluk nedenleriyle çalışma zamanında tür arama yavaşlaması. Bkz: dönüştürüldükten ad temel etkinliğin varsayılan türü adını ve sınıf adı bekliyor eski kodunuz varsa [Android aranabilir sarmalayıcısı adlandırma](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) uyumluluk koruma ile ilgili ipuçları için. 
 
-<a name="Activity_Title_Bar" />
 
 ### <a name="activity-title-bar"></a>Etkinlik başlık çubuğu
 
@@ -104,7 +100,6 @@ Bu örnekte aşağıdaki xml parçası üretir:
           android:name="md5a7a3c803e481ad8926683588c7e9031b.MainActivity" />
 ```
 
-<a name="Launchable_from_Application_Chooser" />
 
 ### <a name="launchable-from-application-chooser"></a>Uygulama Seçici gelen launchable
 
@@ -130,7 +125,6 @@ Bu örnekte aşağıdaki xml parçası üretir:
 ```
 
 
-<a name="Activity_Icon" />
 
 ### <a name="activity-icon"></a>Etkinlik simgesi
 
@@ -155,7 +149,6 @@ Bu örnekte aşağıdaki xml parçası üretir:
 </activity>
 ```
 
-<a name="Permissions" />
 
 ### <a name="permissions"></a>İzinler
 
@@ -178,11 +171,9 @@ Sürümde bildiriminin sürümü yapı (adresindeki **obj/Debug/android/AndroidM
 
 
 
-<a name="Advanced_Features" />
 
 ## <a name="advanced-features"></a>Gelişmiş Özellikler
 
-<a name="Intent_Actions_and_Features" />
 
 ### <a name="intent-actions-and-features"></a>Hedefi Eylemler ve Özellikler
 
@@ -214,7 +205,6 @@ Bu örnekte aşağıdaki xml parçası üretir:
 </activity>
 ```
 
-<a name="Application_Element" />
 
 ### <a name="application-element"></a>Uygulama öğesi
 
@@ -243,7 +233,6 @@ Bu örnekte, uygulamadaki tüm etkinlikler için varsayılan `Theme.Light` stili
 Yapılandırabileceğiniz birçok uygulama çapında öznitelik `<application>` öğesi; bu ayarları hakkında daha fazla bilgi için bkz: [ortak özellikler](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/#Public_Properties) bölümünü [ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/). 
 
 
-<a name="List_of_Custom_Attributes" />
 
 ## <a name="list-of-custom-attributes"></a>Özel öznitelikler listesi
 

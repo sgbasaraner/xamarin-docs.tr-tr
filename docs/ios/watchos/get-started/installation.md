@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/05/2017
-ms.openlocfilehash: f7e511d7f0a933ab7f29369e5e5f0aa46607c8f8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c423c9bf49c735673793f8e61134f7e705816d54
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installation"></a>Yükleme
 
@@ -55,19 +55,19 @@ Yeni bir "izleme Çözüm"... oluşturulamıyor yerine var olan bir iOS uygulama
 
 1. Varolan projeyi yoksa, öncelikle seçin **Dosya > Yeni bir çözüm** ve bir iOS uygulaması oluşturma (örneğin, bir **Single View uygulaması**):
 
-    [ ![](installation-images/cycle8-2-sml.png "Dosya > Yeni bir çözüm ve bir iOS uygulaması oluşturma")](installation-images/cycle8-2.png)
+    [![](installation-images/cycle8-2-sml.png "Dosya > Yeni bir çözüm ve bir iOS uygulaması oluşturma")](installation-images/cycle8-2.png#lightbox)
 
 2. İOS uygulaması oluşturulur (veya var olan iOS uygulamanızı kullanmayı planlıyorsanız sonra), çözüm üzerinde sağ tıklatın ve seçin **Ekle > Yeni Proje Ekle...** . İçinde **yeni proje** penceresi seçin **watchOS > Uygulama > WatchKit uygulama**:
 
-    [ ![](installation-images/cycle8-6-sml.png "WatchOS seçin > Uygulama > WatchKit uygulama")](installation-images/cycle8-6.png)
+    [![](installation-images/cycle8-6-sml.png "WatchOS seçin > Uygulama > WatchKit uygulama")](installation-images/cycle8-6.png#lightbox)
 
 3. Sonraki ekranda hangi iOS uygulaması projesi izleme uygulama içermelidir seçmenize olanak sağlar:
 
-    [ ![](installation-images/cycle8-7-sml.png "İOS uygulaması proje izleme uygulama içermelidir seçin")](installation-images/cycle8-7.png)
+    [![](installation-images/cycle8-7-sml.png "İOS uygulaması proje izleme uygulama içermelidir seçin")](installation-images/cycle8-7.png#lightbox)
 
 4. Son olarak, projeyi kaydetmek istediğiniz konumu seçin (ve isteğe bağlı olarak, kaynak denetimi etkin):
 
-    [ ![](installation-images/cycle8-8-sml.png "Proje kaydetmek istediğiniz konumu seçin")](installation-images/cycle8-8.png)
+    [![](installation-images/cycle8-8-sml.png "Proje kaydetmek istediğiniz konumu seçin")](installation-images/cycle8-8.png#lightbox)
 
 5. Mac için Visual Studio otomatik olarak yapılandırır [proje başvuruları ve **Info.plist** ayarları](~/ios/watchos/get-started/project-references.md) sizin için.
 
@@ -81,11 +81,11 @@ Gözcü uygulamanın üzerinde çift **Interface.storyboard** iOS Tasarımcısı
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![](installation-images/iosdesigner-sml.png "Tasarımcıda film şeridi")](installation-images/iosdesigner.png)
+[![](installation-images/iosdesigner-sml.png "Tasarımcıda film şeridi")](installation-images/iosdesigner.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](installation-images/iosdesigner-sml-vs.png "Tasarımcıda film şeridi")](installation-images/iosdesigner-vs.png)
+[![](installation-images/iosdesigner-sml-vs.png "Tasarımcıda film şeridi")](installation-images/iosdesigner-vs.png#lightbox)
 
 -----
 
@@ -152,7 +152,7 @@ WatchKit uygulamayı başlatmak için iki modu vardır:
 Xcode 8 (veya üstü) yüklendikten sonra Apple Watch benzeticileri iOS benzeticileri ayrı (aksine [Xcode 6](#xcode6), olarak göründüğü burada bir *dış görüntü*).
 İzleme uygulama projesini seçin ve başlangıç projesi olun simulator listesi gösterecektir *iOS benzeticileri* (aşağıda gösterildiği gibi) aralarından seçim yapabileceğiniz.
 
-[ ![](installation-images/xs-xcode8-watchos3-sml.png "Simulator türü seçme")](installation-images/xs-xcode8-watchos3.png)
+[![](installation-images/xs-xcode8-watchos3-sml.png "Simulator türü seçme")](installation-images/xs-xcode8-watchos3.png#lightbox)
 
 Hata ayıklama, başlattığınızda *iki* benzeticileri başlamalıdır - iOS simülatörü'nü *ve* Apple Watch Simulator. Kullanmak **komutu + Shift + H** için izleme menü ve saat yüz; gidin ve kullanmak için **donanım** ayarlamak için menü **zorla Touch baskısı**. İzleme paneli veya fare kaydırma dijital Dama yapma kullanarak benzetimini yapacaksınız.
 
@@ -195,13 +195,13 @@ Mac için Visual Studio izleme uygulama içeren bir bildirim başlayabileceğini
 İzleme uygulaması projesine sağ tıklayıp seçin **çalıştırmak ile > özel yapılandırma...** :
 
 
-[![](installation-images/runwith-customparams-sml.png "Özel yapılandırma çalıştırma")](installation-images/runwith-customparams.png)
+[![](installation-images/runwith-customparams-sml.png "Özel yapılandırma çalıştırma")](installation-images/runwith-customparams.png#lightbox)
 
 
 Açılır **özel parametreler** seçebileceğiniz penceresi **bildirim** (ve bir JSON yükü sağlamak), tuşuna basarak **çalıştırmak** benzeticisinde izleme uygulamasını başlatmak için:
 
 
-[![](installation-images/runwith-execargs-sml.png "Bildirim ve yükü ayarlama")](installation-images/runwith-execargs.png)
+[![](installation-images/runwith-execargs-sml.png "Bildirim ve yükü ayarlama")](installation-images/runwith-execargs.png#lightbox)
 
 
 

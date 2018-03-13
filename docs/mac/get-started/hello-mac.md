@@ -1,5 +1,5 @@
 ---
-title: Merhaba, Mac
+title: Hello, Mac
 description: "Bu kılavuz, ilk Xamarin.Mac uygulama oluşturma adımları ve Mac, Xcode ve arabirim Oluşturucu için Visual Studio gibi geliştirme zincirinin işleminde sunmaktadır. Çıkışlar ve kod için UI denetimleri kullanıma, Eylemler, aynı zamanda sunar ve son olarak, oluşturmak, çalıştırmak ve Xamarin.Mac uygulamayı test etme göstermektedir."
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 7e964f2bdb523720e044c309a2ec0801080be59b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: fdf5d1236c0d8f797bc53d01eada1777b1d92373
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="hello-mac"></a>Merhaba, Mac
+# <a name="hello-mac"></a>Hello, Mac
 
 Xamarin.Mac sağlayan tam olarak yerel Mac uygulamalar C# ve aynı OS X kitaplıkları ve geliştirme sırasında kullanılır arabirimi denetimlerini kullanarak .NET geliştirme *Objective-C* ve *Xcode*. Xamarin.Mac Xcode ile doğrudan tümleşir olduğundan, geliştirici Xcode'nın kullanabilir _arabirimi Oluşturucu_ bir uygulamanın kullanıcı arabirimleri (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için).
 
@@ -22,7 +22,7 @@ Xamarin.Mac uygulama yazılır olduğundan C# ve .NET, ayrıca, ortak, arka uç 
 
 Bu makalede Xamarin.Mac, oluşturma işleminde size taramasını tarafından Mac ve Xcode'nın arabirimi Oluşturucu için Visual Studio kullanarak bir Mac uygulaması oluşturmak için gereken temel kavramları tanıtılacaktır bir yalnızca **Hello, Mac** sayar uygulama bir düğme tıklamıştır:
 
-[ ![](hello-mac-images/run02.png "Merhaba, çalışan Mac uygulama örneği")](hello-mac-images/run02.png)
+[![](hello-mac-images/run02.png "Merhaba, çalışan Mac uygulama örneği")](hello-mac-images/run02.png#lightbox)
 
 Aşağıdaki kavramlar ele alınacaktır:
 
@@ -57,29 +57,29 @@ Başlamak için aşağıdakileri yapın:
 
 1. Mac için Visual Studio'yu başlatın:
 
-    [ ![](hello-mac-images/setup01.png "Ana Visual Studio için Mac arabirimi")](hello-mac-images/setup01.png)
+    [![](hello-mac-images/setup01.png "Ana Visual Studio için Mac arabirimi")](hello-mac-images/setup01.png#lightbox)
 
 2. Tıklayın **yeni çözüm...**  bağlantıyı açmak için ekranın üst sol alt köşesindeki **yeni proje** iletişim kutusunda:
 
-    [ ![](hello-mac-images/setup03.png "Mac için Visual Studio'da yeni bir çözüm oluşturma")](hello-mac-images/setup02.png)
+    [![](hello-mac-images/setup03.png "Mac için Visual Studio'da yeni bir çözüm oluşturma")](hello-mac-images/setup02.png#lightbox)
 
 3. Seçin **Mac** > **uygulama** > **Cocoa uygulama** tıklatıp **sonraki** düğmesi:
 
-    [ ![](hello-mac-images/setup03.png "Cocoa uygulama seçme")](hello-mac-images/setup03.png)
+    [![](hello-mac-images/setup03.png "Cocoa uygulama seçme")](hello-mac-images/setup03.png#lightbox)
 
 4. Girin `Hello_Mac` için **App Name**ve varsayılan olarak bir şey tutun. Tıklatın **sonraki**:
 
-    [ ![](hello-mac-images/setup05.png "Uygulama adını ayarlama")](hello-mac-images/setup05.png)
+    [![](hello-mac-images/setup05.png "Uygulama adını ayarlama")](hello-mac-images/setup05.png#lightbox)
 
 4. Çözümün oluşturulması birkaç farklı projelere barındırmak, geliştirici farklı bir ayarlamak isteyebilirsiniz **çözüm adı** burada ancak bu örnek, bırakın amacıyla aynı olma varsayılan ayarlama  **Proje adı**:
 
-    [ ![](hello-mac-images/setup04.png "Yeni çözüm ayrıntılarını doğrulanıyor")](hello-mac-images/setup04.png)
+    [![](hello-mac-images/setup04.png "Yeni çözüm ayrıntılarını doğrulanıyor")](hello-mac-images/setup04.png#lightbox)
 
 5. Tıklatın **oluşturma** düğmesi.
 
 Mac için Visual Studio yeni Xamarin.Mac uygulaması oluşturun ve uygulamanın çözüme eklenir varsayılan dosyalar görüntüleyin:
 
- [ ![](hello-mac-images/project01.png "Yeni çözüm varsayılan görünüm")](hello-mac-images/project01.png)
+ [![](hello-mac-images/project01.png "Yeni çözüm varsayılan görünüm")](hello-mac-images/project01.png#lightbox)
 
 Mac kullanımlar için Visual Studio **çözümleri** ve **projeleri**, Visual Studio mu tam aynı şekilde. Bir veya daha fazla projeleri tutabilen bir kapsayıcı çözümdür; projeleri uygulamaları, destekleme kitaplıkları, sınama uygulamalarını, vb. içerebilir. Bu durumda, Mac için Visual Studio çözüm ve bir uygulama projesi otomatik olarak oluşturmuştur.
 
@@ -246,7 +246,7 @@ Oluşturulan Xamarin.Mac uygulama projesi ve bileşenlerinin temel bir anlayış
 
 `Info.plist` Dosyayı içeren Xamarin.Mac uygulama hakkında bilgi gibi kendi **adı** ve **paket tanımlayıcı**:
 
-[ ![](hello-mac-images/infoplist01.png "Visual Studio Mac plist Düzenleyicisi")](hello-mac-images/infoplist01.png)
+[![](hello-mac-images/infoplist01.png "Visual Studio Mac plist Düzenleyicisi")](hello-mac-images/infoplist01.png#lightbox)
 
 Ve tanımlar _film şeridi_ altında Xamarin.Mac uygulama için kullanıcı arabirimi görüntülemek için kullanılacak **ana arabirimi** açılır. Yukarıdaki örnek durumunda `Main` açılır listede teklifiyle `Main.storyboard` projenin kaynak ağacında **Çözüm Gezgini**. Belirterek ayrıca uygulamanın simgelerinden tanımlar *varlık Kataloğu* bunları (Bu durumda AppIcons) içerir.
 
@@ -254,7 +254,7 @@ Ve tanımlar _film şeridi_ altında Xamarin.Mac uygulama için kullanıcı arab
 
 Uygulamanın `Entitlements.plist` dosyası denetler Xamarin.Mac uygulama gibi sahip yetkilendirmeler **korumalı alan** ve **iCloud**:
 
-[ ![](hello-mac-images/entitlements01.png "Visual Studio Mac yetkilendirmeler Düzenleyicisi")](hello-mac-images/entitlements01.png)
+[![](hello-mac-images/entitlements01.png "Visual Studio Mac yetkilendirmeler Düzenleyicisi")](hello-mac-images/entitlements01.png#lightbox)
 
 Hello World örnek için hiçbir yetkilendirmeler gerekli olacaktır. Sonraki bölümde Xcode'nın arabirimi Oluşturucu düzenlemek için nasıl kullanılacağı gösterilir `Main.storyboard` dosya ve Xamarin.Mac uygulamanın UI tanımlayın.
 
@@ -266,11 +266,11 @@ Xcode bir parçası olarak, bir kullanıcı arabirimi Tasarımcısı'nda görsel
 
 Başlamak için çift `Main.storyboard` dosyasını **Çözüm Gezgini** Xcode ve arabirim Oluşturucu düzenlemek için açın:
 
-[ ![](hello-mac-images/xcode01.png "Çözüm Gezgini'nde Main.storyboard dosyası")](hello-mac-images/xcode01.png)
+[![](hello-mac-images/xcode01.png "Çözüm Gezgini'nde Main.storyboard dosyası")](hello-mac-images/xcode01.png#lightbox)
 
 Bu Xcode başlatın ve aşağıdaki gibi bir şeyi aramak gerekir:
 
-[ ![](hello-mac-images/xcode02.png "Varsayılan Xcode arabirimi Oluşturucu görünümü")](hello-mac-images/xcode02.png)
+[![](hello-mac-images/xcode02.png "Varsayılan Xcode arabirimi Oluşturucu görünümü")](hello-mac-images/xcode02.png#lightbox)
 
 Arabirimini tasarlamak başlatmadan önce hızlı bir genel bakış, kullanılacak ana özelliklerle yönlendirmek için Xcode alın.
 
@@ -284,7 +284,7 @@ Arabirimini tasarlamak başlatmadan önce hızlı bir genel bakış, kullanılac
 
 Açarken bir `.storyboard` dosya ile açar Mac için Visual Studio'dan Xcode içinde bir **Proje Gezgini** sol taraftaki **arabirimi hiyerarşi** ve **arabirimi Düzenleyicisi**ortada ve **özellikleri & yardımcı programları** sağdaki bölümü:
 
-[ ![](hello-mac-images/xcode03.png "Xcode'da arabirimi Oluşturucu çeşitli bölümlerini")](hello-mac-images/xcode03.png)
+[![](hello-mac-images/xcode03.png "Xcode'da arabirimi Oluşturucu çeşitli bölümlerini")](hello-mac-images/xcode03.png#lightbox)
 
 Aşağıdaki bölümlerde bu Xcode özellikleri yapın ve bunları arabirimi Xamarin.Mac uygulaması oluşturmak için nasıl kullanılacağı her göz atın.
 
@@ -314,13 +314,13 @@ Açarken bir `.storyboard` dosya Mac oluşturur için Xcode, Visual Studio düze
 
 **Özellikleri & yardımcı programları** bölüm iki ana bölümlere ayrılmıştır **özellikleri** (denetçiler olarak da adlandırılır) ve **Kitaplığı**:
 
-[ ![](hello-mac-images/xcode04.png "Özellikler denetçisi")](hello-mac-images/xcode04.png)
+[![](hello-mac-images/xcode04.png "Özellikler denetçisi")](hello-mac-images/xcode04.png#lightbox)
 
 Başlangıçta bu bölümde ancak, bitmek üzere geliştirici bir öğedeki seçerse **arabirimi Düzenleyicisi** veya **arabirimi hiyerarşi**, **özellikleri** bölüm olacaktır Verilen öğe ve göre ayarlayabilirsiniz özellikler hakkındaki bilgileri ile doldurulur.
 
 İçinde **özellikleri** bölümünde, 8 farklı *denetçisi sekmeleri*, aşağıdaki çizimde gösterildiği gibi:
 
-[ ![](hello-mac-images/xcode05.png "Tüm denetçiler genel bakış")](hello-mac-images/xcode05.png)
+[![](hello-mac-images/xcode05.png "Tüm denetçiler genel bakış")](hello-mac-images/xcode05.png#lightbox)
 
 <a name="Properties_Utility_Types" />
 
@@ -339,7 +339,7 @@ Soldan sağa, aşağıdaki sekmelerden şunlardır:
 
 Kullanım **Kitaplığı** bölüm denetimleri ve grafik kullanıcı arabirimini oluşturmak için tasarımcı yerleştirilecek nesneleri bulmak için:
 
-[ ![](hello-mac-images/xcode06.png "Xcode kitaplığı denetçisi")](hello-mac-images/xcode06.png)
+[![](hello-mac-images/xcode06.png "Xcode kitaplığı denetçisi")](hello-mac-images/xcode06.png#lightbox)
 
 <a name="Creating_the_Interface" />
 
@@ -351,31 +351,31 @@ Aşağıdakileri yapın:
 
 1. Xcode'da, sürükleyin bir **düğme** gelen **kitaplığı bölüm**:
 
-    [ ![](hello-mac-images/xcode07.png "Kitaplık Denetçisi ' bir NSButton seçme")](hello-mac-images/xcode07.png)
+    [![](hello-mac-images/xcode07.png "Kitaplık Denetçisi ' bir NSButton seçme")](hello-mac-images/xcode07.png#lightbox)
 
 2. Düğmeyi üzerine bırakın **Görünüm** (altında **penceresi denetleyicisi**) içinde **arabirimi Düzenleyicisi**:
 
-    [ ![](hello-mac-images/xcode08.png "Arabirimi tasarımı düğme ekleme")](hello-mac-images/xcode08.png)
+    [![](hello-mac-images/xcode08.png "Arabirimi tasarımı düğme ekleme")](hello-mac-images/xcode08.png#lightbox)
 
 3. Tıklayın **başlık** özelliğinde **özniteliği denetçisi** düğmenin başlık değiştirip `Click Me`:
 
-    [ ![](hello-mac-images/xcode09.png "Düğmenin özelliklerini ayarlama")](hello-mac-images/xcode09.png)
+    [![](hello-mac-images/xcode09.png "Düğmenin özelliklerini ayarlama")](hello-mac-images/xcode09.png#lightbox)
 
 4. Sürükleme bir **etiket** gelen **kitaplığı bölüm**:
 
-    [ ![](hello-mac-images/xcode10.png "Kitaplık Denetçisi ' bir etiket seçme")](hello-mac-images/xcode10.png)
+    [![](hello-mac-images/xcode10.png "Kitaplık Denetçisi ' bir etiket seçme")](hello-mac-images/xcode10.png#lightbox)
 
 5. Etiketin üzerine bırakma **penceresi** düğmesinin yanındaki **arabirimi Düzenleyicisi**:
 
-    [ ![](hello-mac-images/xcode11.png "Arabirimi tasarımı için bir etiket ekleme")](hello-mac-images/xcode11.png)
+    [![](hello-mac-images/xcode11.png "Arabirimi tasarımı için bir etiket ekleme")](hello-mac-images/xcode11.png#lightbox)
 
 6. Etiket sağ tutamacı alın ve pencerenin kenarına olana kadar sürükleyin:
 
-    [ ![](hello-mac-images/xcode12.png "Etiket yeniden boyutlandırma")](hello-mac-images/xcode12.png)
+    [![](hello-mac-images/xcode12.png "Etiket yeniden boyutlandırma")](hello-mac-images/xcode12.png#lightbox)
 
 7. Yeni eklenen düğmesini seçin **arabirimi Düzenleyicisi**, tıklatıp **Kısıtlamaları Düzenleyicisi** simgesi ve penceresinin alt kısmındaki:
 
-    [ ![](hello-mac-images/xcode13.png "Kısıtlamaları düğme ekleme")](hello-mac-images/xcode13.png)
+    [![](hello-mac-images/xcode13.png "Kısıtlamaları düğme ekleme")](hello-mac-images/xcode13.png#lightbox)
 
 8. Düzenleyici üstündeki **kırmızı t-kirişleri** üst ve sol. Pencere yeniden boyutlandırılır gibi bu düğme aynı konumda ekranın sol üst köşesindeki tutar.
 
@@ -385,7 +385,7 @@ Aşağıdakileri yapın:
 
 11. Etiketi seçin ve'ı tıklatın **Kısıtlamaları Düzenleyicisi** yeniden simgesi:
 
-    [ ![](hello-mac-images/xcode14.png "Etikete kısıtlamaları ekleme")](hello-mac-images/xcode14.png)
+    [![](hello-mac-images/xcode14.png "Etikete kısıtlamaları ekleme")](hello-mac-images/xcode14.png#lightbox)
 
 12. Tıklayarak **kırmızı t-kirişleri** sağ ve sol üst **Kısıtlamaları Düzenleyicisi**, kendi verilen X ve Y konumları takılmış ve büyür ve pencere çalışır boyutlandırıldığında küçültmek için etiket bildirir uygulama.
 
@@ -397,7 +397,7 @@ Yeniden boyutlandırma ve taşıma geçici denetimleri sırasında arabirimi Olu
 
 Bakılacak yer **arabirimi hiyerarşi** bölüm düzeni ve kullanıcı arabirimi öğelerinin hiyerarşi nasıl gösterileceğini görmek için:
 
-[ ![](hello-mac-images/xcode15.png "Arabirim hiyerarşi içinde bir öğe seçme")](hello-mac-images/xcode15.png)
+[![](hello-mac-images/xcode15.png "Arabirim hiyerarşi içinde bir öğe seçme")](hello-mac-images/xcode15.png#lightbox)
 
 Buradan Geliştirici düzenlemek için kullanıcı Arabirimi öğeleri gerektiğinde yeniden sıralamak için sürükleyin öğeleri seçebilirsiniz. Bir kullanıcı Arabirimi öğesi başka bir öğe tarafından kapsanan, örneğin, bunlar pencerenin en üst öğede yapmak için listenin sürükleyin.
 
@@ -416,7 +416,7 @@ Xcode'da, **çıkışlar** ve **Eylemler** doğrudan kodda eklenen *denetimini s
 
 Xamarin.Mac geliştiriciler için bu Geliştirici istedikleri oluşturmak için C# dosyasına karşılık gelen Objective-C saplama dosyalarıyla sürükleyin anlamına gelir **çıkışı** veya **eylem**. Mac için Visual Studio'nun oluşturduğu adlı bir dosya `ViewController.h` arabirimi Oluşturucusu'nu kullanmak için oluşturulan bir Xcode projesi dolgusu bir parçası olarak:
 
-[ ![](hello-mac-images/xcode16.png "Xcode kaynağında görüntüleme")](hello-mac-images/xcode16.png)
+[![](hello-mac-images/xcode16.png "Xcode kaynağında görüntüleme")](hello-mac-images/xcode16.png#lightbox)
 
 Bu saplama `.h` dosya yansıtmalar `ViewController.designer.cs` Xamarin.Mac projeye yeni bir otomatik olarak eklenen `NSWindow` oluşturulur. Bu dosya arabirimi Oluşturucu tarafından yapılan değişiklikleri eşitlemek için kullanılan ve yerdir **çıkışlar** ve **Eylemler** kullanıcı Arabirimi öğeleri için C# kodu gösterilen şekilde oluşturulur.
 
@@ -430,7 +430,7 @@ Aşağıdakileri yapın:
 
 1. Ekranın üst eldeki sağda köşesindeki Xcode'da tıklatın **çift daire** açmak için düğmeye **Yardımcısı Düzenleyicisi**:
 
-    [ ![](hello-mac-images/outlet01.png "Yardımcısı Düzenleyicisi'ni görüntüleme")](hello-mac-images/outlet01.png)
+    [![](hello-mac-images/outlet01.png "Yardımcısı Düzenleyicisi'ni görüntüleme")](hello-mac-images/outlet01.png#lightbox)
 
 2. Xcode ile bölünmüş görünüm moduna geçiş yapar **arabirimi Düzenleyicisi** bir tarafında ve **Kod düzenleyicisinde** diğer.
 
@@ -438,25 +438,25 @@ Aşağıdakileri yapın:
 
 4. Üstündeki **Kod düzenleyicisinde** tıklayın **otomatik bağlantı** seçip `ViewController.h` dosyası:
 
-    [ ![](hello-mac-images/outlet02.png "Doğru dosya seçme")](hello-mac-images/outlet02.png)
+    [![](hello-mac-images/outlet02.png "Doğru dosya seçme")](hello-mac-images/outlet02.png#lightbox)
 
 5. Xcode şimdi seçili doğru dosya olmalıdır:
 
-    [ ![](hello-mac-images/outlet03.png "ViewController.h dosyanız görüntüleme")](hello-mac-images/outlet03.png)
+    [![](hello-mac-images/outlet03.png "ViewController.h dosyanız görüntüleme")](hello-mac-images/outlet03.png#lightbox)
 
 6. **Son adım çok önemlidir!** Geliştirici seçili doğru dosyanız varsa, bu kaydetmedi oluşturmak değiştiremezler **çıkışlar** ve **Eylemler** veya C# yanlış sınıfına sunulur!
 
 7. İçinde **arabirimi Düzenleyicisi**, basılı **denetim** anahtar klavyede ve tıklatıp sürükleme Kod Düzenleyicisi'ni yukarıda oluşturduğunuz etiketi yalnızca aşağıda `@interface ViewController : NSViewController {}` kod:
 
-    [ ![](hello-mac-images/outlet04.png "Prizine oluşturmak için sürükleme")](hello-mac-images/outlet04.png)
+    [![](hello-mac-images/outlet04.png "Prizine oluşturmak için sürükleme")](hello-mac-images/outlet04.png#lightbox)
 
 8. Bir iletişim kutusu görüntülenir. Bırakın **bağlantı** kümesine **çıkışı** ve girin `ClickedLabel` için **adı**:
 
-    [ ![](hello-mac-images/outlet05.png "Çıkış tanımlama")](hello-mac-images/outlet05.png)
+    [![](hello-mac-images/outlet05.png "Çıkış tanımlama")](hello-mac-images/outlet05.png#lightbox)
 
 9. Tıklatın **Bağlan** oluşturmak için düğmesini **çıkışı**:
 
-    [ ![](hello-mac-images/outlet06.png "Son çıkışı görüntüleme")](hello-mac-images/outlet06.png)
+    [![](hello-mac-images/outlet06.png "Son çıkışı görüntüleme")](hello-mac-images/outlet06.png#lightbox)
 
 10. Değişiklikleri dosyaya kaydedin.
 
@@ -471,19 +471,19 @@ Aşağıdakileri yapın:
 1. Xcode hala olduğundan emin olun **Yardımcısı Düzenleyicisi** ve **ViewController.h** dosyasıdır görünür **Kod düzenleyicisinde**.
 2. İçinde **arabirimi Düzenleyicisi**, basılı **denetim** anahtar klavyede ve Kod Düzenleyicisi'ni yukarıda oluşturduğunuz düğmesini tıklatıp sürükleme yalnızca aşağıda `@property (assign) IBOutlet NSTextField *ClickedLabel;` kod:
 
-    [ ![](hello-mac-images/action01.png "Bir eylem oluşturmak için sürükleme")](hello-mac-images/action01.png)
+    [![](hello-mac-images/action01.png "Bir eylem oluşturmak için sürükleme")](hello-mac-images/action01.png#lightbox)
 
 3. Değişiklik **bağlantı** için yazın **eylem**:
 
-    [ ![](hello-mac-images/action02.png "Eylemi tanımlama")](hello-mac-images/action02.png)
+    [![](hello-mac-images/action02.png "Eylemi tanımlama")](hello-mac-images/action02.png#lightbox)
 
 4. Girin `ClickedButton` olarak **adı**:
 
-    [ ![](hello-mac-images/action03.png "Yeni Eylem adlandırma")](hello-mac-images/action03.png)
+    [![](hello-mac-images/action03.png "Yeni Eylem adlandırma")](hello-mac-images/action03.png#lightbox)
 
 5. Tıklatın **Bağlan** oluşturmak için düğmesini **eylem**:
 
-    [ ![](hello-mac-images/action04.png "Son eylemi görüntüleme")](hello-mac-images/action04.png)
+    [![](hello-mac-images/action04.png "Son eylemi görüntüleme")](hello-mac-images/action04.png#lightbox)
 
 6. Değişiklikleri dosyaya kaydedin.
 
@@ -500,7 +500,7 @@ Geliştirici Visual Studio'ya geri Mac için Xcode geçiş yaptığında Xcode'd
 
 Seçer **ViewController.designer.cs** içinde **Çözüm Gezgini** görmek için nasıl **çıkışı** ve **eylem** yukarı C kablolu # kodu:
 
-[ ![](hello-mac-images/sync01.png "Xcode ile değişiklikler eşitleniyor")](hello-mac-images/sync01.png)
+[![](hello-mac-images/sync01.png "Xcode ile değişiklikler eşitleniyor")](hello-mac-images/sync01.png#lightbox)
 
 Bildirim nasıl iki tanımlarında **ViewController.designer.cs** dosyası:
 
@@ -534,7 +534,7 @@ Kullanıcı arabirimi ile oluşturulan ve bu kod kullanıma sunulan kullanıcı 
 
 İlk düğme tıklatıldığında her zaman, bu örnek uygulama için kaç kez düğmesine tıklanana göstermek için etiket güncelleştirilir. Bunu gerçekleştirmek için açık `ViewController.cs` dosyasını çift tıklatarak düzenleme için **Çözüm Gezgini**:
 
-[ ![](hello-mac-images/code01.png "Mac için Visual Studio'da ViewController.cs dosyayı görüntüleme")](hello-mac-images/code01.png)
+[![](hello-mac-images/code01.png "Mac için Visual Studio'da ViewController.cs dosyayı görüntüleme")](hello-mac-images/code01.png#lightbox)
 
 İlk olarak, bir sınıf düzeyi değişkeni oluşturun `ViewController` gelmiş tıklama sayısını izlemek için sınıf. Sınıf tanımını düzenlemek ve aşağıdaki gibi yapar:
 
@@ -586,7 +586,7 @@ Bir uygulama yerleşik olduğunda, geliştirici ne tür bir yapı istedikleri bi
 
 Geliştirici yapıdan seçin **yapılandırma Seçici** Mac ekran için Visual Studio üst sol alt köşesindeki:
 
-[ ![](hello-mac-images/run01.png "Hata ayıklama derleme seçme")](hello-mac-images/run01.png)
+[![](hello-mac-images/run01.png "Hata ayıklama derleme seçme")](hello-mac-images/run01.png#lightbox)
 
 <a name="Building_the_Application" />
 
@@ -608,11 +608,11 @@ Uygulamayı çalıştırmak için üç yolu vardır:
 
 Uygulama (Bu zaten oluşturulduğunu kurmadı varsa) oluşturmak, hata ayıklama modunda başlatmak ve buna ait ana arabirimi penceresini görüntülemek:
 
-[ ![](hello-mac-images/run02.png "Uygulamayı çalıştırma")](hello-mac-images/run02.png)
+[![](hello-mac-images/run02.png "Uygulamayı çalıştırma")](hello-mac-images/run02.png#lightbox)
 
 Birkaç kez düğmesine tıkladıysanız, etiket sayısı ile güncelleştirilmesi gerekir:
 
-[ ![](hello-mac-images/run03.png "Düğmesini tıklatarak sonuçlarını gösterme")](hello-mac-images/run03.png)
+[![](hello-mac-images/run03.png "Düğmesini tıklatarak sonuçlarını gösterme")](hello-mac-images/run03.png#lightbox)
 
 <a name="Where_to_Next" />
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: 7937e80b13ca7e3ecec1dc179adade666bd90635
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9cbc756c5ba61d764404ffabd347232a25dbdc58
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Xamarin.Forms içinde UrhoSharp kullanma
 
@@ -33,7 +33,7 @@ UrhoSharp kullanmadan önce geliştiricilerin kendi çözüme UrhoSharp Nuget pa
 UrhoSharp.Forms Nuget paketi tüm UrhoSharp nesneleri oluşturmak için gereken nesneleri içerir. UrhoSharp.Forms nuget paketini içeren `UrhoSurface` Xamarin.Forms UrhoSharp barındırmak için kullanılan sınıf.
 Başlamak için PCL üzerinde 's sağ **paketleri** klasörü ve select **paketleri Ekle...** . Arama terimi girin **UrhoSharp.Forms**seçin **Xamarin.Forms UrhoSharp**, ardından **Paketi Ekle**.
 
-[ ![](urhosharp-images/add-package-sml.png "Paketleri iletişim ekleyin")](urhosharp-images/add-package.png "paketleri iletişim ekleyin")
+[![](urhosharp-images/add-package-sml.png "Paketleri iletişim ekleyin")](urhosharp-images/add-package.png#lightbox "paketleri iletişim ekleyin")
 
 UrhoSharp.Forms NuGet paketini projeye eklenecek:
 

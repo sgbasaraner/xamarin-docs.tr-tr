@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 4c61a588eafdf0a86f4124d264c41cabef3e7a14
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 159bd2435a1d2b5252e0fd1b9d525cdf6cfa7207
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Merhaba, Android Multiscreen: Hızlı Başlangıç
 
@@ -22,7 +22,7 @@ _Bu iki parçalı kılavuz ikinci ekranı işlemek için Phoneword uygulama geni
 
 Bu kılavuzun izlenecek bölümünde, ikinci bir ekrana ekleyeceksiniz [Phoneword](https://developer.xamarin.com/samples/monodroid/Phoneword/) numaraları geçmişini izlemek için uygulama çevrilen uygulamasını kullanarak. [Son uygulama](https://developer.xamarin.com/samples/monodroid/PhonewordMultiscreen/) "çevrilip" numaralarını görüntüler ikinci bir ekran sağdaki ekran tarafından gösterildiği şekilde olacaktır:
 
-[![Örnek uygulama ekran görüntüleri](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![Örnek uygulama ekran görüntüleri](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 Eşlik eden [derinlemesine](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md) ne oluşturulmuş gözden geçirir ve mimari, gezinti ve yol boyunca karşılaştı diğer yeni Android kavramlar açıklanır.
 
@@ -44,15 +44,15 @@ Başlangıç açarak **Phoneword** Visual Studio ve düzenleme uygulama **Main.a
 
 Gelen **araç**, sürükleyin bir **düğmesini** tasarım üzerine yüzey ve aşağıdaki yerleştirin **TranslatedPhoneWord** kutusu TextView. İçinde **özellikleri** bölmesinde düğmeyi değiştirmek **kimliği** için `@+id/TranslationHistoryButton` 
 
-[![Yeni bir düğme sürükleyin](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png)
+[![Yeni bir düğme sürükleyin](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png#lightbox)
 
 Ayarlama **metin** düğme özelliğinin `@string/translationHistory`. Android Tasarımcısı bu tam anlamıyla yorumlar ancak düğmenin metni doğru gösterir böylece birkaç değişiklik oluşturacağız:
 
-[![Çeviri geçmişi düğme metni ayarlama](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string-sml.png)](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string.png)
+[![Çeviri geçmişi düğme metni ayarlama](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string-sml.png)](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string.png#lightbox)
 
 Genişletme **değerleri** düğümü altında **kaynakları** klasöründe **Çözüm Gezgini** ve dize kaynakları dosyasını çift tıklatın **Strings.xml**:
 
-[![Strings.XML açın](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png)
+[![Strings.XML açın](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png#lightbox)
 
 Ekleme `translationHistory` dize adı ve değeri **Strings.xml** dosya ve kaydedin:
 
@@ -66,17 +66,17 @@ Ekleme `translationHistory` dize adı ve değeri **Strings.xml** dosya ve kayded
 
 **Çeviri geçmişi** düğme metni yeni bir dize değeri yansıtacak şekilde güncelleştirin:
 
-[![Yeni bir dize değeri düğmesi yansıtır](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)
+[![Yeni bir dize değeri düğmesi yansıtır](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png#lightbox)
 
 İle **çeviri geçmişi** düğmesinin seçili tasarım yüzeyine, Bul `enabled` ayarı **özellikleri** bölmesi ve değerini ayarlama `false` düğmesini devre dışı bırakmak için. Bu tasarım yüzeyine koyu olacak düğmesi neden olur:
 
-[![Çeviri Geçmiş düğmesini devre dışı bırak](hello-android-multiscreen-quickstart-images/vs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/vs/06-enabled-false.png)
+[![Çeviri Geçmiş düğmesini devre dışı bırak](hello-android-multiscreen-quickstart-images/vs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/vs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>İkinci etkinlik oluşturma
 
 İkinci ekranı güç için ikinci bir etkinlik oluşturun. İçinde **Çözüm Gezgini**, sağ **Phoneword** proje ve seçin **Ekle > Yeni öğe...** :
 
-[![Yeni bir dosya ekleyin](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png)
+[![Yeni bir dosya ekleyin](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png#lightbox)
 
 İçinde **Yeni Öğe Ekle** iletişim kutusunda, seçin **Visual C# > etkinlik** ve etkinlik dosya adı **TranslationHistoryActivity.cs**.
 
@@ -171,7 +171,7 @@ Hiçbir hata bulunmadığından emin olmak için uygulama oluşturma ve kaydedin
 
 Bir öykünücü veya aygıt uygulamayı dağıtın. Aşağıdaki ekran görüntüleri çalışmasını göstermeye **Phoneword** uygulama:
 
-[![Örnek ekran görüntüleri](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![Örnek ekran görüntüleri](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -181,16 +181,16 @@ Başlangıç açarak **Phoneword** Mac ve düzenlemek için Visual Studio Proje 
 
 Gelen **araç**, sürükleyin bir **düğmesini** tasarım üzerine yüzey ve aşağıdaki yerleştirin **TranslatedPhoneWord** kutusu TextView. İçinde **özellikleri** paneli, düğmeyi değiştirmek **kimliği** için `@+id/TranslationHistoryButton` 
 
-[![Yeni bir düğme sürükleyin](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png)
+[![Yeni bir düğme sürükleyin](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png#lightbox)
 
 Ayarlama **metin** düğme özelliğinin `@string/translationHistory`. Android Tasarımcısı bu tam anlamıyla yorumlar ancak düğmenin metni doğru gösterir böylece birkaç değişiklik oluşturacağız:
 
-[![Çeviri geçmişi düğme metni ayarlama](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png)
+[![Çeviri geçmişi düğme metni ayarlama](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png#lightbox)
 
 
 Genişletme **değerleri** düğümü altında **kaynakları** klasöründe **çözüm paneli** ve dize kaynakları dosyasını çift tıklatın **Strings.xml**:
 
-[![Açık dizeleri](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png)
+[![Açık dizeleri](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png#lightbox)
 
 
 Ekleme `translationHistory` dize adı ve değeri **Strings.xml** dosya ve kaydedin:
@@ -205,12 +205,12 @@ Ekleme `translationHistory` dize adı ve değeri **Strings.xml** dosya ve kayded
 
 **Çeviri geçmişi** düğme metni yeni bir dize değeri yansıtacak şekilde güncelleştirin:
 
-[![Yeni bir dize değeri düğmesi yansıtır](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png)
+[![Yeni bir dize değeri düğmesi yansıtır](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png#lightbox)
 
 
 İle **çeviri geçmişi** tasarım yüzeyine, open seçili düğmesi **davranışı** sekmesinde **özellikleri paneli** çift tıklayın ve **etkin**  düğmesi devre dışı bırakmak için onay kutusu. Bu tasarım yüzeyine koyu olacak düğmesi neden olur:
 
-[![Çeviri Geçmiş düğmesini devre dışı bırak](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png)
+[![Çeviri Geçmiş düğmesini devre dışı bırak](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>İkinci etkinlik oluşturma
 
@@ -304,7 +304,7 @@ translateButton.Click += (sender, e) =>
 
 Bir öykünücü veya aygıt uygulamayı dağıtın. Aşağıdaki ekran görüntüleri çalışmasını göstermeye **Phoneword** uygulama:
 
-[![Örnek ekran görüntüleri](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![Örnek ekran görüntüleri](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 -----
 

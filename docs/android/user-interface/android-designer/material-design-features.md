@@ -8,17 +8,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: c0b5fa3e7eacb9f7fd8aa133a290d0e7654972ce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9c1797398fba580ab7f34526b10e1da455eb2dc5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="material-design-features"></a>Malzeme tasarım özellikleri
 
 _Bu konu, malzeme tasarım uyumlu düzenleri oluşturmak geliştiriciler için kolaylaştıran Tasarımcısı özellikleri açıklar. Bu bölümde tanıtır ve malzeme kılavuz, malzeme renk paletini, tipografik ölçek ve tema Düzenleyicisi'ni nasıl kullanılacağını açıklar._
 
-<a name="overview" />
+
+> [!Video https://youtube.com/embed/E3_ZjIOzVzY]
+
+**2016 gelişmesi: Herkes güzel uygulamaları malzeme tasarımıyla oluşturabilirsiniz**
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -37,7 +40,6 @@ Bu kılavuzda, biz aşağıdaki Tasarımcısı özellikleri bakmak gerekir:
 Biz, bu özelliklerin her biri bakın ve bunları nasıl kullanacağınızı örnekleri sağlayın.
 
 
-<a name="material_grid" />
 
 ## <a name="material-design-grid"></a>Malzeme Tasarım Kılavuzu
 
@@ -45,11 +47,11 @@ Malzeme Tasarım Kılavuzu menü Tasarımcı üstündeki araç çubuğundan kull
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Malzeme Tasarım Kılavuzu](material-design-features-images/vs/01-material-design-grid-sml.png)](material-design-features-images/vs/01-material-design-grid.png)
+[![Malzeme Tasarım Kılavuzu](material-design-features-images/vs/01-material-design-grid-sml.png)](material-design-features-images/vs/01-material-design-grid.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Malzeme Tasarım Kılavuzu](material-design-features-images/xs/01-material-design-grid-sml.png)](material-design-features-images/xs/01-material-design-grid.png)
+[![Malzeme Tasarım Kılavuzu](material-design-features-images/xs/01-material-design-grid-sml.png)](material-design-features-images/xs/01-material-design-grid.png#lightbox)
 
 -----
 
@@ -65,11 +67,11 @@ Bu öğeleri aşağıdaki ekran görüntüsünde görebilirsiniz:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Anahtar satır, aralık ve kılavuz](material-design-features-images/vs/02-grid-and-keylines-sml.png)](material-design-features-images/vs/02-grid-and-keylines.png)
+[![Anahtar satır, aralık ve kılavuz](material-design-features-images/vs/02-grid-and-keylines-sml.png)](material-design-features-images/vs/02-grid-and-keylines.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Anahtar satır, aralık ve kılavuz](material-design-features-images/xs/02-grid-and-keylines-sml.png)](material-design-features-images/xs/02-grid-and-keylines.png)
+[![Anahtar satır, aralık ve kılavuz](material-design-features-images/xs/02-grid-and-keylines-sml.png)](material-design-features-images/xs/02-grid-and-keylines.png#lightbox)
 
 -----
 
@@ -89,7 +91,7 @@ Bu yapılandırma değerlerini değiştirdiğinizde, bunlar Düzen XML dosyasın
 
 Bu katmana öğelerin her birini yapılandırılabilir. Malzeme Tasarım Kılavuzu menüsünün yanındaki aşağı üçgen tıklattığınızda, iletişim popover devre dışı bırak / kılavuz etkinleştirme, anahtar satırlar yerleşimini yapılandırmak ve boşluklar ayarlamanıza olanak veren açar. Tüm değerleri ifade edilir Not `dp` (yoğunluğu bağımsız piksel cinsinden):
 
-[![Kılavuz, anahtar satır ve aralığı yapılandırma](material-design-features-images/xs/03-grid-configuration-sml.png)](material-design-features-images/xs/03-grid-configuration.png)
+[![Kılavuz, anahtar satır ve aralığı yapılandırma](material-design-features-images/xs/03-grid-configuration-sml.png)](material-design-features-images/xs/03-grid-configuration.png#lightbox)
 
 Yeni bir anahtar satır eklemek için yeni bir uzaklık değeri girin **uzaklık** kutusunda, bir konum seçin (**sol**, **üst**, **sağ**, veya  **alt**) tıklatıp + yeni anahtar satır eklemek için simge.
 
@@ -102,20 +104,20 @@ Bu yapılandırma değerlerini değiştirdiğinizde, bunlar Düzen XML dosyasın
 
 Bir renk şimdi kabul her özellik Masası öğesi bu ekran görüntüsünde gösterildiği gibi malzeme tasarım renk paletini açmak için kullanabileceğiniz ek bir simge vardır:
 
-[![Renk simgesi](material-design-features-images/xs/04-new-color-icon-sml.png)](material-design-features-images/xs/04-new-color-icon.png)
+[![Renk simgesi](material-design-features-images/xs/04-new-color-icon-sml.png)](material-design-features-images/xs/04-new-color-icon.png#lightbox)
 
 Bu simgeye tıklattığınızda, bir iletişim popover bu özellik malzeme tasarım renk paletindeki rengi yapılandırmanızı olanaklı kılan açar:
 
-[![Malzeme tasarım renk paleti](material-design-features-images/xs/05-material-palette-sml.png)](material-design-features-images/xs/05-material-palette.png)
+[![Malzeme tasarım renk paleti](material-design-features-images/xs/05-material-palette-sml.png)](material-design-features-images/xs/05-material-palette.png#lightbox)
 
 Palet alt tonlar seçili birincil renk için bir aralığı görüntülerken renk paletini üst birincil malzeme tasarım renkleri görüntüler. Örneğin, seçtiğinizde, **Indigo olarak biliniyordu**, koleksiyonu **Indigo olarak biliniyordu** tonlar iletişim kutusunun en altında görüntülenir.
 Bir ton seçtiğinizde, renk özelliğinin seçili ton değiştirilir. Aşağıdaki örnekte, `Background Tint` düğmesine değiştirilir *Indigo olarak biliniyordu 500*:
 
-[![Indigo olarak biliniyordu 500 seçin](material-design-features-images/xs/06-indigo-sml.png)](material-design-features-images/xs/06-indigo.png)
+[![Indigo olarak biliniyordu 500 seçin](material-design-features-images/xs/06-indigo-sml.png)](material-design-features-images/xs/06-indigo.png#lightbox)
 
 `Background Tint` renk kodunu ayarlanır *Indigo olarak biliniyordu 500* (`#ff3f51b5`), ve bu değişikliği yansıtacak şekilde düğmenin arka plan rengini Tasarımcısı güncelleştirir:
 
-[![Arka plan TINT değişiklikleri](material-design-features-images/xs/07-background-tint-sml.png)](material-design-features-images/xs/07-background-tint.png)
+[![Arka plan TINT değişiklikleri](material-design-features-images/xs/07-background-tint-sml.png)](material-design-features-images/xs/07-background-tint.png#lightbox)
 
 Malzeme tasarım malzeme tasarım renk paletini hakkında daha fazla bilgi için bkz: [renk paletini Kılavuzu](http://www.google.com/design/spec/style/color.html#color-color-palette).
 
@@ -123,24 +125,23 @@ Malzeme tasarım malzeme tasarım renk paletini hakkında daha fazla bilgi için
 
 **Metin görünümü** bölümünü **özelliği** paneli **stili** sekmesi vardır olanak sağlayan bir simge arasından seçim yapmasını bir `TextAppearance` malzeme tasarıma uygun stili belirtimi:
 
-[![Stil sekmesi](material-design-features-images/xs/08-typo-scale-icon-sml.png)](material-design-features-images/xs/08-typo-scale-icon.png)
+[![Stil sekmesi](material-design-features-images/xs/08-typo-scale-icon-sml.png)](material-design-features-images/xs/08-typo-scale-icon.png#lightbox)
 
 Bu simgeye tıklattığınızda, açılır **tipografik ölçek** aralarından seçim yapabileceğiniz önceden yapılandırılmış metin stilleri bir listesini sunar iletişim popover:
 
-[![Metin stili Seçici](material-design-features-images/xs/09-text-appearance-sml.png)](material-design-features-images/xs/09-text-appearance.png)
+[![Metin stili Seçici](material-design-features-images/xs/09-text-appearance-sml.png)](material-design-features-images/xs/09-text-appearance.png#lightbox)
 
 Aşağıdaki örnekte tıklatarak **ekran 1** düğmenin metni büyük yazı tipini değiştirir **ekran 1**:
 
-[![Görüntü 1 stili](material-design-features-images/xs/10-display-1-sml.png)](material-design-features-images/xs/10-display-1.png)
+[![Görüntü 1 stili](material-design-features-images/xs/10-display-1-sml.png)](material-design-features-images/xs/10-display-1.png#lightbox)
 
 Metin stili **tipografik ölçek** iletişim izleyen **tema** ayarı. Örneğin, varsa **açık** tema Tasarımcısı'nda kullanılabilir metin stilleri yansıtmalar listesini seçilen **açık** tema:
 
-[![Açık tema](material-design-features-images/xs/11-light-theme-sml.png)](material-design-features-images/xs/11-light-theme.png)
+[![Açık tema](material-design-features-images/xs/11-light-theme-sml.png)](material-design-features-images/xs/11-light-theme.png#lightbox)
 
 -----
 
 
-<a name="theme_editor" />
 
 ## <a name="theme-editor"></a>Tema Düzenleyicisi
 
@@ -152,7 +153,7 @@ Metin stili **tipografik ölçek** iletişim izleyen **tema** ayarı. Örneğin,
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Tema Düzenleyicisi simgesi](material-design-features-images/xs/12a-theme-editor-icon-sml.png)](material-design-features-images/xs/12a-theme-editor-icon.png)
+[![Tema Düzenleyicisi simgesi](material-design-features-images/xs/12a-theme-editor-icon-sml.png)](material-design-features-images/xs/12a-theme-editor-icon.png#lightbox)
 
 -----
 
@@ -162,11 +163,11 @@ Sol panelinde **tema Düzenleyicisi** şu anda seçilen tema yapma renkleri list
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tema Düzenleyicisi](material-design-features-images/vs/05-theme-editor-sml.png)](material-design-features-images/vs/05-theme-editor.png)
+[![Tema Düzenleyicisi](material-design-features-images/vs/05-theme-editor-sml.png)](material-design-features-images/vs/05-theme-editor.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Tema Düzenleyicisi](material-design-features-images/xs/12b-theme-editor-sml.png)](material-design-features-images/xs/12b-theme-editor.png)
+[![Tema Düzenleyicisi](material-design-features-images/xs/12b-theme-editor-sml.png)](material-design-features-images/xs/12b-theme-editor.png#lightbox)
 
 -----
 
@@ -183,7 +184,6 @@ Sol taraftaki bir renk seçtiğinizde, sağ panelde, renk düzenlemenize yardım
 Bu sekmeleri ayrıntılı her biri bakalım.
 
 
-<a name="theme_edit_inherit_tab" />
 
 ### <a name="inherit-tab"></a>Sekme devral
 
@@ -191,11 +191,11 @@ Aşağıdaki örnekte görüldüğü gibi **devral** sekmesi listeler için stil
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Sekme devral](material-design-features-images/vs/06-inherit-tab-sml.png)](material-design-features-images/vs/06-inherit-tab.png)
+[![Sekme devral](material-design-features-images/vs/06-inherit-tab-sml.png)](material-design-features-images/vs/06-inherit-tab.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Sekme devral](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png)
+[![Sekme devral](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
 
 -----
 
@@ -203,7 +203,6 @@ Bu örnekte, **varsayılan tema** kullanan bir stil devralan `@color/background_
 Stil devralma hakkında daha fazla bilgi için bkz: [stilleri ve Temalar](http://developer.android.com/guide/topics/ui/themes.html#Inheritance).
 
 
-<a name="theme_edit_color_picker" />
 
 ### <a name="color-picker"></a>Renk Seçici
 
@@ -211,11 +210,11 @@ Aşağıdaki ekran görüntüsü gösterilmektedir **Renk Seçici**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Renk Seçici](material-design-features-images/vs/07-color-picker-sml.png)](material-design-features-images/vs/07-color-picker.png)
+[![Renk Seçici](material-design-features-images/vs/07-color-picker-sml.png)](material-design-features-images/vs/07-color-picker.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Renk Seçici](material-design-features-images/xs/14-color-picker-sml.png)](material-design-features-images/xs/14-color-picker.png)
+[![Renk Seçici](material-design-features-images/xs/14-color-picker-sml.png)](material-design-features-images/xs/14-color-picker.png#lightbox)
 
 -----
 
@@ -229,7 +228,6 @@ Bu örnekte, **arka plan** renk, herhangi bir değer arasında çeşitli yollarl
 
 Renk Seçici'de seçtiğiniz renk *değil* malzeme tasarım yönergeleri veya kullanılabilir renk kaynak kümesi için kısıtlanmış.
 
-<a name="theme_edit_resources" />
 
 ### <a name="resources"></a>Kaynaklar
 
@@ -237,18 +235,17 @@ Renk Seçici'de seçtiğiniz renk *değil* malzeme tasarım yönergeleri veya ku
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Kaynakları](material-design-features-images/vs/08-resources-sml.png)](material-design-features-images/vs/08-resources.png)
+[![Kaynakları](material-design-features-images/vs/08-resources-sml.png)](material-design-features-images/vs/08-resources.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Kaynakları](material-design-features-images/xs/15-resources-sml.png)](material-design-features-images/xs/15-resources.png)
+[![Kaynakları](material-design-features-images/xs/15-resources-sml.png)](material-design-features-images/xs/15-resources.png#lightbox)
 
 -----
 
 Kullanarak **kaynakları** sekmesinde seçimlerinizi renklerin bu listeye kısıtlar. Zaten başka bir tema kısmına atanmış bir renk kaynağı seçerseniz, "(aynı renk sahip oldukları için) iki bitişik öğeleri UI birlikte çalışabilir," göz önünde bulundurun ve kullanıcı ayırt etmek zor hale gelir.
 
 
-<a name="theme_edit_material_pallette" />
 
 ### <a name="material-palette"></a>Malzeme paleti
 
@@ -256,7 +253,7 @@ Kullanarak **kaynakları** sekmesinde seçimlerinizi renklerin bu listeye kısı
 
 **Malzeme palet** sekmesinde açar **malzeme tasarım renk paletini**. Böylece malzeme tasarım yönergeleri ile tutarlı bir renk değeri bu paletinden seçme renk seçiminizi kısıtlar.
 
-[![Malzeme paleti](material-design-features-images/vs/09-material-palette-sml.png)](material-design-features-images/vs/09-material-palette.png)
+[![Malzeme paleti](material-design-features-images/vs/09-material-palette-sml.png)](material-design-features-images/vs/09-material-palette.png#lightbox)
 
 Palet alt tonlar seçili birincil renk için bir aralığı görüntülerken renk paletini üst birincil malzeme tasarım renkleri görüntüler. Örneğin, seçtiğinizde, **Indigo olarak biliniyordu**, koleksiyonu **Indigo olarak biliniyordu** tonlar iletişim kutusunun en altında görüntülenir.
 Bir ton seçtiğinizde, renk özelliğinin seçili ton değiştirilir. Aşağıdaki örnekte, `Background Tint` düğmesine değiştirilir *Indigo olarak biliniyordu 500*:
@@ -265,7 +262,7 @@ Bir ton seçtiğinizde, renk özelliğinin seçili ton değiştirilir. Aşağıd
 
 `Background Tint` renk kodunu ayarlanır *Indigo olarak biliniyordu 500* (`#ff3f51b5`), ve bu değişikliği yansıtacak şekilde arka plan rengi Tasarımcısı güncelleştirir:
 
-[![Arka plan TINT değiştirildi](material-design-features-images/vs/11-background-tint-sml.png)](material-design-features-images/vs/11-background-tint.png)
+[![Arka plan TINT değiştirildi](material-design-features-images/vs/11-background-tint-sml.png)](material-design-features-images/vs/11-background-tint.png#lightbox)
 
 Malzeme tasarım malzeme tasarım renk paletini hakkında daha fazla bilgi için bkz: [renk paletini Kılavuzu](http://www.google.com/design/spec/style/color.html#color-color-palette).
 
@@ -273,12 +270,11 @@ Malzeme tasarım malzeme tasarım renk paletini hakkında daha fazla bilgi için
 
 **Malzeme palet** sekmesinde açar **malzeme tasarım renk paletini** açıklanan [önceki](#material_palette). Böylece malzeme tasarım yönergeleri ile tutarlı bir renk değeri bu paletinden seçme renk seçiminizi kısıtlar.
 
-[![Malzeme paleti](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png)
+[![Malzeme paleti](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png#lightbox)
 
 -----
 
 
-<a name="theme_create" />
 
 ### <a name="creating-a-new-theme"></a>Yeni bir tema oluşturma
 
@@ -290,7 +286,7 @@ Aşağıdaki örnekte, yeni özel bir tema oluşturmak için malzeme palet kulla
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Mavi 900 arka planını Değiştir](material-design-features-images/xs/17-change-background-to-blue-sml.png)](material-design-features-images/xs/17-change-background-to-blue.png)
+[![Mavi 900 arka planını Değiştir](material-design-features-images/xs/17-change-background-to-blue-sml.png)](material-design-features-images/xs/17-change-background-to-blue.png#lightbox)
 
 -----
 
@@ -299,11 +295,11 @@ Bir renk kaynağı değiştirildiğinde, ileti'yi mesajı ile açılır *geçerl
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Uyarı kaydedilmemiş değişiklikler](material-design-features-images/vs/13-unsaved-changes-sml.png)](material-design-features-images/vs/13-unsaved-changes.png)
+[![Uyarı kaydedilmemiş değişiklikler](material-design-features-images/vs/13-unsaved-changes-sml.png)](material-design-features-images/vs/13-unsaved-changes.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Uyarı kaydedilmemiş değişiklikler](material-design-features-images/xs/18-unsaved-changes-sml.png)](material-design-features-images/xs/18-unsaved-changes.png)
+[![Uyarı kaydedilmemiş değişiklikler](material-design-features-images/xs/18-unsaved-changes-sml.png)](material-design-features-images/xs/18-unsaved-changes.png#lightbox)
 
 -----
 
@@ -327,18 +323,17 @@ Tıklatarak önceki örnekte, devam etmeden **yeni Tema oluşturma** adlı yeni 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Eklenen özel tema](material-design-features-images/vs/14-custom-theme-sml.png)](material-design-features-images/vs/14-custom-theme.png)
+[![Eklenen özel tema](material-design-features-images/vs/14-custom-theme-sml.png)](material-design-features-images/vs/14-custom-theme.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Eklenen özel tema](material-design-features-images/xs/19-custom-theme-sml.png)](material-design-features-images/xs/19-custom-theme.png)
+[![Eklenen özel tema](material-design-features-images/xs/19-custom-theme-sml.png)](material-design-features-images/xs/19-custom-theme.png#lightbox)
 
 -----
 
 
 Şu anda seçilen tema proje tema olmadığından, seçilen tema güncelleştirmek veya yeni bir konum belirtmek için iletişim kutusu yok yok.
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -348,5 +343,5 @@ Bu konuda Xamarin.Android Tasarımcısı'nda kullanılabilen malzeme tasarım ö
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Malzeme tema](~/android/user-interface/material-theme.md)
+- [Malzeme Teması](~/android/user-interface/material-theme.md)
 - [Malzeme tasarım giriş](https://www.google.com/design/spec/material-design/introduction.html)

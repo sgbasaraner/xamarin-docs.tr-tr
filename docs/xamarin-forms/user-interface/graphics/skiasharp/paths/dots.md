@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 30b7e322d618492164fac5e439c5187616d61717
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 32326eb472b1bb8b4fbaf4066edc36255f5948ca
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dots-and-dashes"></a>Nokta ve tire
 
@@ -155,7 +155,7 @@ float[] GetPickerArray(Picker picker)
 
 Aşağıdaki ekran görüntülerinde en solundaki iOS ekranda noktalı çizgi gösterir:
 
-[![](dots-images/dotsanddashes-small.png "Üçlü sayfasının ekran görüntüsü nokta ve tire")](dots-images/dotsanddashes-large.png "Üçlü sayfasının ekran görüntüsü nokta ve tire")
+[![](dots-images/dotsanddashes-small.png "Üçlü sayfasının ekran görüntüsü nokta ve tire")](dots-images/dotsanddashes-large.png#lightbox "Üçlü sayfasının ekran görüntüsü nokta ve tire")
 
 Ancak, Android ekran ayrıca {10, 10} dizisi kullanılarak noktalı çizgi göstermek için beklenen ancak bunun yerine satır doludur. Ne oldu? Android ekran de vuruş caps ayarı varsa sorunudur `Square`. Bu, bunları doldurmak neden yarım vuruşun genişliğini tüm çizgilerle genişletir.
 
@@ -213,7 +213,7 @@ protected override void OnAppearing()
 
 Elbette, animasyonun görmek için programı çalıştırdığı gerekir:
 
-[![](dots-images/animatedspiral-small.png "Üçlü sayfasının ekran görüntüsü animasyonlu Spiral")](dots-images/animatedspiral-large.png "Üçlü sayfasının ekran görüntüsü animasyonlu Spiral")
+[![](dots-images/animatedspiral-small.png "Üçlü sayfasının ekran görüntüsü animasyonlu Spiral")](dots-images/animatedspiral-large.png#lightbox "Üçlü sayfasının ekran görüntüsü animasyonlu Spiral")
 
 Şimdi nasıl çizgiler çizme ve parametrik denklemini kullanarak Eğriler tanımlamak için gördünüz. Daha sonra yayımlanmış bir bölümde Eğriler çeşitli türlerde ele alınacaktır, `SKPath` destekler.
 

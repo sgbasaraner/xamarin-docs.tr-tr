@@ -3,14 +3,15 @@ title: "Bölüm 1 özeti. Xamarin.Forms nasıl sığmayan?"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c0f3313fa3c4d1075be7deeb871e303006c533e8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Bölüm 1 özeti. Xamarin.Forms nasıl sığmayan?
 
@@ -44,7 +45,7 @@ Geçerli Xamarin.Forms çözümünü şablonları projeleri Şablonları Windows
 
 Xamarin.Forms program toplu bir PCL veya bir SAP bulunmaktadır. Her platformları PCL çağıran küçük uygulama saplama oluşur. Xamarin.Forms API'ları eşleme her platformda yerel denetimlere böylece her platform özellik, görünüm korur:
 
-[![Üçlü ekran paylaşımı platform görselleri görüntüsü](images/ch01fg03-small.png "Xamarin.Forms denetimleri her platformda")](images/ch01fg03-large.png "her platformda Xamarin.Forms denetimleri")
+[![Üçlü ekran paylaşımı platform görselleri görüntüsü](images/ch01fg03-small.png "Xamarin.Forms denetimleri her platformda")](images/ch01fg03-large.png#lightbox "her platformda Xamarin.Forms denetimleri")
 
 Soldan sağa ekran bir iPhone, Android telefonla ve Windows 10 cep telefonu gösterir. Her ekranında, bir Xamarin.Forms sayfa içeriyor [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) metin görüntülemek için bir [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) Eylemler, başlatma için bir [ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) için bir açık/kapalı değer seçmesini ve [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) sürekli bir aralıkta bir değer belirtmek için. Bu görünüm tüm dört alt öğeleri olan bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) üzerinde bir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/).
 

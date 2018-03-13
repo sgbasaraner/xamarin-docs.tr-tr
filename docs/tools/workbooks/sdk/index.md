@@ -6,11 +6,11 @@ ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 57dec129a5f16b004e054a7a3fedd296bad92a3e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3978b046a8ab4d42cbf86bf524452a033b5dbb4d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Xamarin çalışma kitaplarını SDK ile çalışmaya başlama
 
@@ -28,15 +28,15 @@ Tümleştirme kitaplıkları en iyi birden çok platformlu kitaplıkları geliş
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Mac için taşınabilir kitaplığı şablonu Visual Studio](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png)
+[![Mac için taşınabilir kitaplığı şablonu Visual Studio](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Taşınabilir Kitaplığı şablonu Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png)
+[![Taşınabilir Kitaplığı şablonu Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png#lightbox)
 
 Visual Studio'da aşağıdaki hedef platformlar için taşınabilir kitaplığınızın seçtiğinizden emin olun isteyeceksiniz:
 
-[![Taşınabilir Kitaplığı platformları Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png)
+[![Taşınabilir Kitaplığı platformları Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
 
 -----
 
@@ -44,11 +44,11 @@ Kitaplığı projesi oluşturduktan sonra bir başvuru ekleyin bizim `Xamarin.Wo
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Mac için NuGet Visual Studio](images/xamarin-studio-nuget.png)](images/xamarin-studio-nuget.png)
+[![Mac için NuGet Visual Studio](images/xamarin-studio-nuget.png)](images/xamarin-studio-nuget.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![NuGet Visual Studio](images/visual-studio-nuget.png)](images/visual-studio-nuget.png)
+[![NuGet Visual Studio](images/visual-studio-nuget.png)](images/visual-studio-nuget.png#lightbox)
 
 -----
 
@@ -146,11 +146,11 @@ ve ardından yayımlanacağı [NuGet][nugetorg]. Var olduğunda, herhangi bir ç
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Çalışma kitabı ile tümleştirme](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png)
+[![Çalışma kitabı ile tümleştirme](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Çalışma kitabı ile tümleştirme](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png)
+[![Çalışma kitabı ile tümleştirme](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
 
 -----
 

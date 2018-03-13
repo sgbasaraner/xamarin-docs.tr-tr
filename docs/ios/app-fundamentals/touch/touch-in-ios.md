@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4e640979305a568649c59f6c75033296153b99de
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 838a11f078d735759eda1d45a082ccbad51e2779
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-ios"></a>İOS dokunma
 
@@ -23,7 +23,7 @@ Denetimlerini `UIKit` – bu altsınıflanmış UI denetim gelen – bunu Uıkit
 
 Ancak, görünümleri birçoğu `UIKit` varsayılan olarak etkin dokunma sahip değil. Dokunma bir denetimi etkinleştirmek için iki yolu vardır. İlk yolu kullanıcı etkileşimi etkin Tasarımcısı, iOS özelliği panelinde onay aşağıdaki ekran görüntüsünde gösterildiği gibi şudur:
 
- [ ![](touch-in-ios-images/image1.png "İOS Tasarımcısı özelliği panelinde kullanıcı etkileşimi Etkin onay kutusunu işaretleyin")](touch-in-ios-images/image1.png)
+ [![](touch-in-ios-images/image1.png "İOS Tasarımcısı özelliği panelinde kullanıcı etkileşimi Etkin onay kutusunu işaretleyin")](touch-in-ios-images/image1.png#lightbox)
 
 Biz de bir denetleyici ayarlamak için kullanabileceğiniz `UserInteractionEnabled` özelliğinin true üzerinde bir `UIView` sınıfı. Kullanıcı arabirimini kodda oluşturduysanız, bu gereklidir.
 
@@ -81,7 +81,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 Çok dokunma denetimlerinde varsayılan olarak etkin değil. Çok dokunma iOS tasarımcısı tarafından aşağıdaki ekran görüntüsünde gösterildiği gibi etkinleştirilebilir:
 
- [ ![](touch-in-ios-images/image2.png "İOS Tasarımcısı etkin çok dokunma")](touch-in-ios-images/image2.png)
+ [![](touch-in-ios-images/image2.png "İOS Tasarımcısı etkin çok dokunma")](touch-in-ios-images/image2.png#lightbox)
 
 Çok dokunma programlı olarak ayarlamak da mümkündür `MultipleTouchEnabled` aşağıdaki kod satırını gösterildiği gibi özelliği:
 

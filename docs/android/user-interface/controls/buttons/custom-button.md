@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: f77a9b8d3bb69bb47d973a56aed5ad1d49f9a02d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5131b4d09f01af6a6e8bed28a2df27bc801dfb80
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="custom-button"></a>Özel düğme
 
@@ -19,7 +19,7 @@ Bu bölümde, bir metin yerine özel bir görüntü ile bir düğme oluşturacak
 
 Sağ tıklatın ve aşağıdaki üç görüntüleri indirin, sonra kopyalamak için **kaynakları/drawable** projenizin dizin. Bunlar farklı düğme durumları için kullanılır.
 
- [![Normal durum yeşil Android simgesi](custom-button-images/android-normal.png)](custom-button-images/android-normal.png) [ ![odaklanmış durum turuncu Android simgesi](custom-button-images/android-focused.png)](custom-button-images/android-focused.png) [ ![sarı Android basılı durum simgesi](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png)
+ [![Normal durum yeşil Android simgesi](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [ ![odaklanmış durum turuncu Android simgesi](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [ ![sarı Android basılı durum simgesi](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)
 
 Yeni bir dosyada oluşturmak **kaynakları/drawable** adlı dizin **android_button.xml**. Aşağıdaki XML Ekle:
 
@@ -38,7 +38,7 @@ Bu düğme geçerli durumuna göre görüntüsünü değiştirir tek bir drawabl
 
 
 > [!NOTE]
-> **Not:** sırasını `<item>` öğeleri önemlidir. Bu drawable başvurulduğunda `<item>`s hangisinin geçerli düğmesi durumu için uygun olduğunu belirlemek için sıralı geçiş.
+> Sırasını `<item>` öğeleri önemlidir. Bu drawable başvurulduğunda `<item>`s hangisinin geçerli düğmesi durumu için uygun olduğunu belirlemek için sıralı geçiş.
 > "Normal" resmi son olduğundan, yalnızca uygulanan olduğunda olan koşullar `android:state_pressed` ve `android:state_focused` her ikisi de false değerlendirilir.
 
 Açık **Resources/layout/Main.axml** dosya ve ekleme [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) öğe:

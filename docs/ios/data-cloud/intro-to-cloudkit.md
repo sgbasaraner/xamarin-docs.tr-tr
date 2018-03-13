@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: f55620720bb986142a56de7e8602be56280006d4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2c48ae5386fda63aed43c24c09c10cfb87b93637
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -34,7 +34,7 @@ Aşağıda sunulan bu makaledeki adımları tamamlamak için gereklidir:
 
 CloudKit sunucuları İcloud'a Geliştirici erişmenizi sağlayacak bir yoludur. İCloud sürücü ve İcloud'a Fotoğraf Kitaplığı için temeli sağlar. CloudKit Mac OS X ve Apple iOS aygıtları üzerinde desteklenir.
 
- [ ![](intro-to-cloudkit-images/image1.png "CloudKit hem Mac OS X hem de Apple iOS cihazları nasıl desteklenir")](intro-to-cloudkit-images/image1.png)
+ [![](intro-to-cloudkit-images/image1.png "CloudKit hem Mac OS X hem de Apple iOS cihazları nasıl desteklenir")](intro-to-cloudkit-images/image1.png#lightbox)
 
 CloudKit iCloud hesabı altyapısı kullanır. İCloud hesapla oturum açmış bir kullanıcı varsa, CloudKit kullanıcıyı tanımlamak için kendi Kimliğini kullanır. Herhangi bir hesabı varsa, sınırlı salt okunur erişim sağlanacaktır.
 
@@ -55,11 +55,11 @@ Uygulama, bir Xamarin uygulaması CloudKit Framework kullanabilmeniz için önce
 1.  Proje, Mac veya Visual Studio için Visual Studio'da açın.
 2.  İçinde **Çözüm Gezgini**, açık **Info.plist** dosya ve olun **paket tanımlayıcısı** tanımlanan bir eşleşen **uygulama kimliği**sağlama parçası ayarlanmış olarak oluşturulan:
  
-    [ ![](intro-to-cloudkit-images/image26a.png "Paket tanımlayıcısı girin")](intro-to-cloudkit-images/image26a-orig.png "Info.plist file displaying Bundle Identifier")
+    [![](intro-to-cloudkit-images/image26a.png "Paket tanımlayıcısı girin")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
 
 3.  Listenin sonuna kaydırın **Info.plist** dosya ve seçin **etkin arka plan modları**, **konumu güncelleştirmeleri** ve **uzak bildirimler**:
 
-    [ ![](intro-to-cloudkit-images/image27a.png "Etkin arka plan modları, konum güncelleştirmeler ve uzak bildirimler seçin")](intro-to-cloudkit-images/image27a-orig.png "Info.plist file displaying background modes")
+    [![](intro-to-cloudkit-images/image27a.png "Etkin arka plan modları, konum güncelleştirmeler ve uzak bildirimler seçin")](intro-to-cloudkit-images/image27a-orig.png#lightbox "Info.plist file displaying background modes")
 4.  Çözüm seçip iOS projesine sağ tıklayın **seçenekleri**.
 5.  Seçin **iOS paket imzalama**seçin **Geliştirici kimlik** ve **sağlama profili** yukarıda oluşturduğunuz.
 6.  Olun **Entitlements.plist** içeren **etkinleştirmek iCloud** , **anahtar-değer depolama** ve **CloudKit** .
@@ -95,7 +95,7 @@ Bir istemci uygulaması alma ve diğer istemcilerinden ayrılmış çalışan ka
 
 CloudKit, yukarıda listelenen olarak aynı avantajları sağlar ve bulut tabanlı bilgileriyle çalışmaya uygulamak için tasarlanmıştır:
 
- [ ![](intro-to-cloudkit-images/image31.png "Kapsayıcıları kullanma CloudKit uygulamaları iletişim")](intro-to-cloudkit-images/image31.png)
+ [![](intro-to-cloudkit-images/image31.png "Kapsayıcıları kullanma CloudKit uygulamaları iletişim")](intro-to-cloudkit-images/image31.png#lightbox)
 
 Yalnızca uygulama olması gibi çok bir cihazda çalışan, iCloud çok bir uygulamanın iletişimlerinizde dolayısıyla taşır. Bu farklı iletişim siloları her kapsayıcıları çağrılır.
 
@@ -117,13 +117,13 @@ Kapsayıcılar, bağlı varsayılan olarak, belirli bir uygulamaya birebir olsa 
 
 Birincil işlevlerinden CloudKit biri uygulamanın veri modeli ve çoğaltma iCloud sunucuları kadar bu modelin almaktır. Bazı bilgiler oluşturan kullanıcıya yönelik, diğer bilgileri (örneğin, bir restoran incelemesi) genel kullanım için bir kullanıcı tarafından oluşturulmuş genel verilerdir veya uygulama için geliştirici yayımladıktan bilgi olabilir. Her iki durumda da İzleyici yalnızca tek bir kullanıcı değil, ancak kişiler bir topluluktur.
 
- [ ![](intro-to-cloudkit-images/image32.png "CloudKit kapsayıcı diyagramı")](intro-to-cloudkit-images/image32.png)
+ [![](intro-to-cloudkit-images/image32.png "CloudKit kapsayıcı diyagramı")](intro-to-cloudkit-images/image32.png#lightbox)
 
 Bir kapsayıcı içinde öncelikle ortak veritabanıdır. Burada tüm genel bilgileri yaşar ve birlikte mingles budur. Ayrıca, uygulamanın her kullanıcı için birkaç tekil özel veritabanları vardır.
 
 Bir iOS cihazında çalıştırıldığında, uygulamanın yalnızca bilgileri şu anda oturum açmış iCloud kullanıcı için erişebilir. Bu nedenle uygulamanın görünümü kapsayıcısının şu şekilde olacaktır:
 
- [ ![](intro-to-cloudkit-images/image33.png "Kapsayıcı uygulamaları görünümü")](intro-to-cloudkit-images/image33.png)
+ [![](intro-to-cloudkit-images/image33.png "Kapsayıcı uygulamaları görünümü")](intro-to-cloudkit-images/image33.png#lightbox)
 
 Yalnızca ortak veritabanı ve şu anda oturum açmış iCloud kullanıcıyla ilişkili özel veritabanı görebilirsiniz.
 
@@ -186,7 +186,7 @@ Veritabanı türleri arasındaki farklar şunlardır:
 
 Veritabanlarını ve kayıtları veritabanlarıdır içinde kapsayıcıları basılı tutun. Kayıtları yapılandırılmış veri CloudKit gelen ve giden taşınır mekanizması şunlardır:
 
- [ ![](intro-to-cloudkit-images/image34.png "Kapsayıcılar, veritabanlarını ve kayıtları veritabanlarıdır içinde tutun")](intro-to-cloudkit-images/image34.png)
+ [![](intro-to-cloudkit-images/image34.png "Kapsayıcılar, veritabanlarını ve kayıtları veritabanlarıdır içinde tutun")](intro-to-cloudkit-images/image34.png#lightbox)
 
 Kayıtları CloudKit Framework'teki açığa `CKRecord` anahtar-değer çiftleri sarmalar sınıfı. Bir uygulamada bir nesnenin örneğine eşdeğerdir bir `CKRecord` CloudKit içinde. Ayrıca, her `CKRecord` sahip bir nesne sınıfı için eşdeğer bir kayıt türü.
 
@@ -227,11 +227,11 @@ await CloudManager.SaveAsync (newRecord);
 
 Kayıtları kendileri tarafından verilen bir veritabanı içinde mevcut olmayan – kayıt bölge içinde kayıt gruplarının birlikte mevcut. Kayıt bölgeleri, tablo olarak geleneksel ilişkisel veritabanlarında değerlendirilebilir:
 
- [ ![](intro-to-cloudkit-images/image35.png "Kayıt grupları birlikte bir kayıt bölge içinde mevcut")](intro-to-cloudkit-images/image35.png)
+ [![](intro-to-cloudkit-images/image35.png "Kayıt grupları birlikte bir kayıt bölge içinde mevcut")](intro-to-cloudkit-images/image35.png#lightbox)
 
 Belirli bir kayıt bölge içinde birden çok kayıt ve verilen bir veritabanı içinde birden çok kayıt bölgeleri olabilir. Her veritabanı varsayılan kayıt bölge içerir:
 
- [ ![](intro-to-cloudkit-images/image36.png "Her veritabanı bir varsayılan kayıt hem de özel bölgesine içerir")](intro-to-cloudkit-images/image36.png)
+ [![](intro-to-cloudkit-images/image36.png "Her veritabanı bir varsayılan kayıt hem de özel bölgesine içerir")](intro-to-cloudkit-images/image36.png#lightbox)
 
 Varsayılan olarak kayıtları depolandığı budur. Ayrıca, özel kayıt bölgeleri oluşturulabilir. Hangi atomik işlemeleri ve değişiklik izleme temel bazda yapılır kayıt bölgeleri temsil eder.
 
@@ -258,7 +258,7 @@ var recordID =  new CKRecordID("My Record");
 
 Başvuruları verilen bir veritabanı içinde ilgili kayıtlar arasındaki ilişkileri sağlar:
 
- [ ![](intro-to-cloudkit-images/image37.png "Verilen bir veritabanı içinde ilgili kayıtlar arasındaki ilişkileri başvuruları sağlayın")](intro-to-cloudkit-images/image37.png)
+ [![](intro-to-cloudkit-images/image37.png "Verilen bir veritabanı içinde ilgili kayıtlar arasındaki ilişkileri başvuruları sağlayın")](intro-to-cloudkit-images/image37.png#lightbox)
 
 Böylece alt üst kaydının bir alt kayıt yukarıdaki örnekte, üst Çocuklar kendi. İlişki alt kaydının üst kayda gider ve olarak adlandırılır bir *geri başvuru*.
 
@@ -283,7 +283,7 @@ var reference = new CKReference(newRecord, new CKReferenceAction());
 
 Varlıklar İcloud'a karşıya ve belirli bir kaydıyla ilişkili büyük ve yapılandırılmamış veri dosyası için izin ver:
 
- [ ![](intro-to-cloudkit-images/image38.png "Varlıklar İcloud'a karşıya ve belirli bir kaydıyla ilişkili büyük ve yapılandırılmamış veri dosyası için izin ver")](intro-to-cloudkit-images/image38.png)
+ [![](intro-to-cloudkit-images/image38.png "Varlıklar İcloud'a karşıya ve belirli bir kaydıyla ilişkili büyük ve yapılandırılmamış veri dosyası için izin ver")](intro-to-cloudkit-images/image38.png#lightbox)
 
 İstemci üzerindeki bir `CKRecord` oluşturulur iCloud sunucuya karşıya yükleneceği dosya açıklar. A `CKAsset` dosyasını içerecek şekilde oluşturulur ve bu açıklayan kaydıyla ilişkili.
 
@@ -594,7 +594,7 @@ Abonelikler CloudKit Framework'teki açığa `CKSubscription` sınıfı. Bir kay
 
 C# kodunda abonelik uygulamadan önce nasıl abonelikleri işe hızlı bir genel bakış atalım:
 
- [ ![](intro-to-cloudkit-images/image39.png "Abonelikleri nasıl genel bakış")](intro-to-cloudkit-images/image39.png)
+ [![](intro-to-cloudkit-images/image39.png "Abonelikleri nasıl genel bakış")](intro-to-cloudkit-images/image39.png#lightbox)
 
 Yukarıdaki grafikte tipik abonelik işlemi aşağıdaki gibi gösterir:
 
@@ -697,7 +697,7 @@ Ardından, bu konularda ayrıntılı ele alacağız.
 
 Yukarıda belirtildiği gibi CloudKit uygulamanın belirli bir kullanıcının benzersiz şekilde tanımlamak bir yol sağlar:
 
- [ ![](intro-to-cloudkit-images/image40.png "Benzersiz olarak identifing belirli bir kullanıcının")](intro-to-cloudkit-images/image40.png)
+ [![](intro-to-cloudkit-images/image40.png "Benzersiz olarak identifing belirli bir kullanıcının")](intro-to-cloudkit-images/image40.png#lightbox)
 
 Bir kullanıcının cihazları ve tüm CloudKit kapsayıcı içindeki belirli kullanıcı özel veritabanları üzerinde çalışan bir istemci uygulaması yoktur. İstemci uygulaması belirli kullanıcılarla birine bağlanması geçiyor. Bu iCloud cihazda yerel olarak oturum açmış kullanıcının temel alır.
 
@@ -732,7 +732,7 @@ Yukarıdaki kod şu anda oturum açmış olan kullanıcının Kimliğini sağlam
 
 Her kullanıcı CloudKit bunları açıklayan belirli meta veriler var. Bu meta veriler CloudKit kayıt olarak temsil edilir:
 
- [ ![](intro-to-cloudkit-images/image41.png "CloudKit her kullanıcı bunları açıklayan belirli meta veriler içeriyor")](intro-to-cloudkit-images/image41.png)
+ [![](intro-to-cloudkit-images/image41.png "CloudKit her kullanıcı bunları açıklayan belirli meta veriler içeriyor")](intro-to-cloudkit-images/image41.png#lightbox)
 
 Özel veritabanı içinde bir kapsayıcı var. belirli bir kullanıcı için Arayan Kullanıcının tanımlayan bir kayıttır. Genel veritabanı, her bir kullanıcının kapsayıcısının içinde çok sayıda kullanıcı kayıtlarını vardır. Bunlardan biri şu anda oturum açmış kullanıcının kayıt kimliği eşleşen bir kayıt kimliği gerekir
 
@@ -768,7 +768,7 @@ Bu durumlarda, kullanıcı bu bilgileri ifşa uygulama isteyebilir. Kullanıcıy
 
 Kullanıcı olarak seçti-uygulama izin vermek için kullanıcı hesabı bilgilerini erişimi sınırlı varsayılarak, uygulamanın diğer kullanıcılara bulunabilirlik olabilir:
 
- [ ![](intro-to-cloudkit-images/image42.png "Bir kullanıcı uygulama diğer kullanıcılara bulunabilirlik olabilir")](intro-to-cloudkit-images/image42.png)
+ [![](intro-to-cloudkit-images/image42.png "Bir kullanıcı uygulama diğer kullanıcılara bulunabilirlik olabilir")](intro-to-cloudkit-images/image42.png#lightbox)
 
 İstemci uygulaması için bir kapsayıcı Bahsediyor ve kapsayıcı erişim kullanıcı bilgilerini İcloud'a Bahsediyor. Kullanıcı bir e-posta adresi sağlayabilir ve bulma geri kullanıcı hakkında bilgi almak için kullanılabilir. İsteğe bağlı olarak, kullanıcı kimliği kullanıcı hakkındaki bilgileri bulmak için de kullanılabilir.
 
@@ -849,40 +849,40 @@ Aşağıdakileri yapın:
 
 1. Uygulama için Ma için Visual Studio'da derleme **sürüm** > **iOS aygıtı**: 
 
-    [![](intro-to-cloudkit-images/shipping01.png "Uygulama sürümü için derleme")](intro-to-cloudkit-images/shipping01.png)
+    [![](intro-to-cloudkit-images/shipping01.png "Uygulama sürümü için derleme")](intro-to-cloudkit-images/shipping01.png#lightbox)
 
 2. Gelen **yapı** menüsünde, select **arşiv**: 
 
-    [![](intro-to-cloudkit-images/shipping02.png "Arşiv seçin")](intro-to-cloudkit-images/shipping02.png)
+    [![](intro-to-cloudkit-images/shipping02.png "Arşiv seçin")](intro-to-cloudkit-images/shipping02.png#lightbox)
 
 3. **Arşiv** oluşturulur ve Mac için Visual Studio'da görüntülenir: 
 
-    [![](intro-to-cloudkit-images/shipping03.png "Arşiv oluşturulur ve görüntülenir")](intro-to-cloudkit-images/shipping03.png)
+    [![](intro-to-cloudkit-images/shipping03.png "Arşiv oluşturulur ve görüntülenir")](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. Başlat **Xcode**.
 5. Gelen **penceresi** menüsünde, select **düzenleyici**: 
 
-    [![](intro-to-cloudkit-images/shipping04.png "Düzenleyici'yi seçin")](intro-to-cloudkit-images/shipping04.png)
+    [![](intro-to-cloudkit-images/shipping04.png "Düzenleyici'yi seçin")](intro-to-cloudkit-images/shipping04.png#lightbox)
 
 6. Uygulamanın Arşivi'ni seçin ve'ı tıklatın **dışarı aktar...**  düğmesi: 
 
-    [![](intro-to-cloudkit-images/shipping05.png "Uygulamanın arşiv")](intro-to-cloudkit-images/shipping05.png)
+    [![](intro-to-cloudkit-images/shipping05.png "Uygulamanın arşiv")](intro-to-cloudkit-images/shipping05.png#lightbox)
     
 7. Dışa aktarma için bir yöntem seçin ve tıklatın **sonraki** düğmesi: 
 
-    [![](intro-to-cloudkit-images/shipping06.png "Dışa aktarma için bir yöntem Seç")](intro-to-cloudkit-images/shipping06.png)
+    [![](intro-to-cloudkit-images/shipping06.png "Dışa aktarma için bir yöntem Seç")](intro-to-cloudkit-images/shipping06.png#lightbox)
 
 8. Seçin **geliştirme ekibi** tıklatın ve açılır listeden **Seç** düğmesi: 
 
-    [![](intro-to-cloudkit-images/shipping07.png "Geliştirme ekibi açılır listeden seçin")](intro-to-cloudkit-images/shipping07.png)
+    [![](intro-to-cloudkit-images/shipping07.png "Geliştirme ekibi açılır listeden seçin")](intro-to-cloudkit-images/shipping07.png#lightbox)
 
 9. Seçin **üretim** tıklatın ve açılır listeden **sonraki** düğmesi: 
 
-    [![](intro-to-cloudkit-images/shipping08.png "Üretim açılır listeden seçin")](intro-to-cloudkit-images/shipping08.png)
+    [![](intro-to-cloudkit-images/shipping08.png "Üretim açılır listeden seçin")](intro-to-cloudkit-images/shipping08.png#lightbox)
 
 10. ' I tıklatın ve ayarı gözden **verme** düğmesi: 
 
-    [![](intro-to-cloudkit-images/shipping09.png "Ayarları gözden geçirin")](intro-to-cloudkit-images/shipping09.png)
+    [![](intro-to-cloudkit-images/shipping09.png "Ayarları gözden geçirin")](intro-to-cloudkit-images/shipping09.png#lightbox)
 
 11. Sonuçta elde edilen uygulama oluşturmak için bir konum seçin `.ipa` dosya.
 
@@ -911,5 +911,5 @@ Bu makalede CloudKit API giriş kapsamına. Sağlama ve CloudKit kullanmak için
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [CloudKitAtlas (sample)](https://developer.xamarin.com/samples/monotouch/ios8/CloudKitAtlas/)
-- [İOS 8 giriş](~/ios/platform/introduction-to-ios8.md)
+- [iOS 8’e Giriş](~/ios/platform/introduction-to-ios8.md)
 - [Bir sağlama profili oluşturma](~/ios/get-started/installation/device-provisioning/index.md)

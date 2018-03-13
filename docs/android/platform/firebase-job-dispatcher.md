@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6b55e525849d57f2ad9e40ea64b75cfc65ef0727
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase iş dağıtıcı
 
@@ -138,7 +138,7 @@ Job myJob = dispatcher.NewJobBuilder()
 * A `Job`'s _ömrü_ (ne kadar süreyle bunu çalıştırmak için zamanlanacak) yalnızca aygıt yeniden başlatılır kadar olan &ndash; cihaz yeniden başlatıldıktan sonra `Job` kaybolur.
 * A `Job` değil yinelenen &ndash; yalnızca bir kez çalışacaktır.
 * A `Job` olabildiğince çabuk çalıştırmak üzere zamanlanmış.
-* İçin varsayılan yeniden deneme stratejisini bir `Job` kullanmaktır bir _üstel geri alma_ (daha fazla ayrıntı bölümünde ele alınan [bir RetryStrategy ayarı](#Setting_a_RestryStrategy))
+* İçin varsayılan yeniden deneme stratejisini bir `Job` kullanmaktır bir _üstel geri alma_ (daha fazla ayrıntı bölümünde ele alınan [bir RetryStrategy ayarı](#Setting_a_RetryStrategy))
 
 ### <a name="scheduling-a-job"></a>Zamanlama bir `Job`
 
@@ -164,12 +164,14 @@ Tarafından döndürülen değer `FirebaseJobDispatcher.Schedule` aşağıdaki t
 
 Bir işi özelleştirmek kullanılabilir. Bir işi nasıl özelleştirilebilir örnekler aşağıdakileri içerir:
 
-* [Bir projeye parametreler](#Passing_Parameters_to_a_Job) &ndash; A `Job` örneğin dosya indirme işini gerçekleştirmek için ek değerler gerektirebilir.
+* [Bir projeye parametreleri geçirme](#Passing_Parameters_to_a_Job) &ndash; A `Job` örneğin dosya indirme işini gerçekleştirmek için ek değerler gerektirebilir.
 * [Ayarlanmış kısıtlamalar](#Setting_Constraints) &ndash; belirli koşullar karşılandığında yalnızca bir işi çalıştırmak gerekli olabilir. Örneğin, yalnızca çalıştırılan bir `Job` aygıtın ne zaman şarj. 
 * [Belirten bir `Job` çalışması gerektiğini](#Setting_Job_Triggers) &ndash; Firebase iş dağıtıcı iş ne zaman çalışmalı bir saat belirtmek üzere uygulamaları sağlar.  
 * [Başarısız olan işler için bir yeniden deneme stratejisini bildirme](#Setting_a_RetryStrategy) &ndash; A _stratejisi yeniden deneme_ için kılavuzluk sağlar `FirebaseJobDispatcher` ne ile yapmak `Jobs` tamamlamak başarısız. 
 
 Her Bu konu, aşağıdaki bölümlerde daha incelenecektir.
+
+<a name="Passing_Parameters_to_a_Job" />
 
 #### <a name="passing-parameters-to-a-job"></a>Bir iş parametreleri geçirme
 
@@ -197,6 +199,7 @@ public override bool OnStartJob(IJobParameters jobParameters)
 } 
 ```
 
+<a name="Setting_Constraints" />
 
 #### <a name="setting-constraints"></a>Ayar kısıtlamaları
 
@@ -215,6 +218,8 @@ Job myJob = dispatcher.NewJobBuilder()
                       .Build();
 ```
 
+<a name="Setting_Job_Triggers" />
+
 #### <a name="setting-job-triggers"></a>Ayar iş Tetikleyicileri
 
 `JobTrigger` İş başlaması gereken hakkında işletim sistemi için kılavuzluk sağlar. A `JobTrigger` sahip bir _penceresi yürütme_ ne zaman zamanlanmış bir süredir tanımlayan `Job` çalıştırmanız gerekir. Yürütme penceresine sahip bir _penceresi başlangıç_ değeri ve bir _son penceresi_ değeri. Başlangıç penceresi cihaz işi çalıştırmadan önce beklemesi gereken saniye sayısını ve son penceresi değer çalıştırmadan önce beklenecek saniye sayısını `Job`. 
@@ -230,6 +235,8 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 Varsayılan `JobTrigger` bir iş değeri tarafından temsil edilen için `Trigger.Now`, belirten bir işi mümkün olan en kısa sürede zamanlanma sonra çalıştırılması...
+
+<a name="Setting_a_RetryStrategy" />
 
 #### <a name="setting-a-retrystrategy"></a>Bir RetryStrategy ayarlama
 

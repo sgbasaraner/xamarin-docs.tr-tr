@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3362744d0d201ef82c846c80b0e1a87426953c85
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ddf481a2356d49f11b96f5a8a6b7f7a492fefc9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>Bir ASP.NET Web hizmeti (ASMX) kullanma
 
@@ -74,7 +74,7 @@ ASMX hizmeti aşağıdaki işlemleri sağlar:
 Uygulamada kullanılan veri modeli hakkında daha fazla bilgi için bkz: [modelleme verileri](~/xamarin-forms/data-cloud/walkthrough.md).
 
 > [!NOTE]
-> **Not**: örnek uygulaması web hizmetine salt okunur erişim sağlayan ASMX Xamarin barındırılan hizmeti kullanır. Bu nedenle, oluşturmak, güncelleştirmek ve verileri silme işlemleri uygulamada kullanılan verileri değiştirmez. Ancak, ASMX hizmet barındırılabilir bir sürümü kullanılabilir **TodoASMXService** eşlik eden örnek uygulama klasöründe. ASMX hizmet verir tam barındırılabilir bu sürümü oluşturmak güncelleştirme okumak ve verilere erişim silin.
+> Örnek uygulaması web hizmetine salt okunur erişim sağlayan ASMX Xamarin barındırılan hizmeti kullanır. Bu nedenle, oluşturmak, güncelleştirmek ve verileri silme işlemleri uygulamada kullanılan verileri değiştirmez. Ancak, ASMX hizmet barındırılabilir bir sürümü kullanılabilir **TodoASMXService** eşlik eden örnek uygulama klasöründe. ASMX hizmet verir tam barındırılabilir bu sürümü oluşturmak güncelleştirme okumak ve verilere erişim silin.
 
 A *proxy* hizmetine bağlanmak uygulamanın sağlayan ASMX hizmeti kullanmak için oluşturulmuş olması gerekir. Proxy yöntemleri ve ilişkili hizmet yapılandırmasını tanımlar Süren hizmeti meta verileri tarafından oluşturulur. Bu meta veriler web hizmeti tarafından oluşturulan bir Web Hizmetleri Açıklama Dili (WSDL) belge şeklinde sunulur. Proxy web hizmeti için bir web başvuru platforma özgü projelerine ekleme tarafından oluşturulmuştur.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 500ad02d79cea79f59b1aca91b0312c9a9d6bac3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b82c0471985306962133c3bf7b084b49d5588bb6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="basic-bindings"></a>Temel bağlama
 
@@ -94,7 +94,7 @@ Ancak, sınıf adı dahil olmak üzere hedef nesnenin iyi bir anımsatıcı değ
 
 İşlemek gibi `Slider`, `Label` buna göre döndürür:
 
-[![Basice bağlama kod](basic-bindings-images/basiccodebinding-small.png "temel kod bağlama")](basic-bindings-images/basiccodebinding-large.png "temel kod bağlama")
+[![Basice bağlama kod](basic-bindings-images/basiccodebinding-small.png "temel kod bağlama")](basic-bindings-images/basiccodebinding-large.png#lightbox "temel kod bağlama")
 
 **Temel Xaml bağlama** sayfasıdır aynı **temel kod bağlama** dışında tüm veri bağlama XAML'de tanımlar:
 
@@ -190,7 +190,7 @@ public partial class AlternativeCodeBindingPage : ContentPage
 
 Bu programı çalıştırmayı biraz şaşırtıcı olabilir:
 
-[![Alternatif kod bağlama](basic-bindings-images/alternativecodebinding-small.png "alternatif kod bağlama")](basic-bindings-images/alternativecodebinding-large.png "alternatif kod bağlama")
+[![Alternatif kod bağlama](basic-bindings-images/alternativecodebinding-small.png "alternatif kod bağlama")](basic-bindings-images/alternativecodebinding-large.png#lightbox "alternatif kod bağlama")
 
 İOS ekranın sol sayfası belirdiğinde ekran nasıl görüneceği gösterilmektedir. Burada olan `Label`? 
 
@@ -319,7 +319,7 @@ Gördüğünüz gibi bu bağlama ifadeleri basitleştirme ve bazı durumlarda ç
 
 `BindingContext` Özelliği `StackLayout` ayarlanır `slider` nesnesi. Bu bağlama bağlamı her ikisi için de devralınan `Label` ve `BoxView`, her iki olan, kendi `Rotation` özelliklerini ayarlamak `Value` özelliği `Slider`: 
 
-[![İçerik devralma bağlama](basic-bindings-images/bindingcontextinheritance-small.png "içerik devralma bağlama")](basic-bindings-images/bindingcontextinheritance-large.png "içerik devralma bağlama")
+[![İçerik devralma bağlama](basic-bindings-images/bindingcontextinheritance-small.png "içerik devralma bağlama")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "içerik devralma bağlama")
 
 İçinde [sonraki makalede](binding-mode.md), göreceğiniz nasıl *bağlama modu* hedef ve kaynak nesneler arasındaki veri akışını değiştirebilirsiniz.
 

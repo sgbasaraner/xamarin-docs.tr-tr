@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2a10c161c49e7cd0d45d29522a98c0dc78f7adb7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 702a5986c9249eec38868895f55ef6f63b534b9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tab-bars-and-tab-bar-controllers"></a>Sekme çubukları ve sekme Çubuğu denetleyicileri
 
@@ -42,7 +42,7 @@ Sekmeleri örnekleridir `UITabBarItem` bulunan sınıfı bir `UITabBar` örneği
 
 Aşağıdaki uygulama oluşturmak için bu kılavuzda oluşturacağız:
 
-[ ![](creating-tabbed-applications-images/00-app.png "Örnek sekmeli uygulama")](creating-tabbed-applications-images/00-app.png)
+[![](creating-tabbed-applications-images/00-app.png "Örnek sekmeli uygulama")](creating-tabbed-applications-images/00-app.png#lightbox)
 
 Olmasa zaten bir sekmeli uygulama şablonu bu örnek için kullanılabilir Mac Visual Studio, uygulama nasıl oluşturulur daha iyi anlamak için boş bir projeden çalışmaya yapacağız.
 
@@ -55,9 +55,9 @@ Yeni bir uygulama oluşturarak başlayalım.
 
 Seçin **Dosya > Yeni > Çözüm** Mac ve select için Visual Studio menü öğesi bir **iOS > Uygulama > Boş proje** şablonu, proje adı `TabbedApplication`, aşağıda gösterildiği gibi:
 
-[ ![](creating-tabbed-applications-images/newsolution1.png "Boş proje şablonu seçin")](creating-tabbed-applications-images/newsolution1.png)
+[![](creating-tabbed-applications-images/newsolution1.png "Boş proje şablonu seçin")](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
-[ ![](creating-tabbed-applications-images/newsolution2.png "TabbedApplication proje adı")](creating-tabbed-applications-images/newsolution2.png)
+[![](creating-tabbed-applications-images/newsolution2.png "TabbedApplication proje adı")](creating-tabbed-applications-images/newsolution2.png#lightbox)
 
 
 
@@ -65,7 +65,7 @@ Seçin **Dosya > Yeni > Çözüm** Mac ve select için Visual Studio menü öğe
 
 Ardından, boş bir sınıf seçerek eklemek **Dosya > yeni dosya** ve seçme **genel: boş sınıfı** şablonu. Dosya adı `TabController` aşağıda gösterildiği gibi:
 
-[ ![](creating-tabbed-applications-images/02-newclass.png "TabController sınıfı ekleme")](creating-tabbed-applications-images/02-newclass.png)
+[![](creating-tabbed-applications-images/02-newclass.png "TabController sınıfı ekleme")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
 `TabController` Uygulanması içereceği sınıfı `UITabBarController` bir dizi yöneteceğiniz `UIViewControllers`. Kullanıcı bir sekme seçtiğinde `UITabBarController` uygun görünüm denetleyicisini görünümünü sunan ilgilenebilmek.
 
@@ -113,7 +113,7 @@ namespace TabbedApplication {
 
 Her biri için dikkat `UIViewController` örneği ayarlarız `Title` özelliği `UIViewController`. Ne zaman denetleyicileri eklenir `UITabBarController`, `UITabBarController` okuyacaksa `Title` her denetleyicisi ve aşağıda gösterildiği gibi ilişkili sekmenin etiketi görüntüleyin:
 
-[ ![](creating-tabbed-applications-images/00-app.png "Örnek uygulamayı çalıştırma")](creating-tabbed-applications-images/00-app.png)
+[![](creating-tabbed-applications-images/00-app.png "Örnek uygulamayı çalıştırma")](creating-tabbed-applications-images/00-app.png#lightbox)
 
 #### <a name="setting-the-tabcontroller-as-the-rootviewcontroller"></a>TabController RootViewController ayarlama
 
@@ -144,7 +144,7 @@ Alınacak `UITabController` ilk ekran olarak yüklemek için pencerenin yapmak i
 
 Biz uygulamayı şimdi çalıştırırsanız `UITabBarController` ilk sekmesi varsayılan olarak seçili birlikte yüklenir. İlişkili denetleyicinin sonuçlarında tarafından sunulan görüntülemek diğer sekmeleri birini seçerek `UITabBarController,` son kullanıcı ikinci sekmesinde burada seçilmiş aşağıda gösterildiği gibi:
 
-[ ![](creating-tabbed-applications-images/03-secondtab.png "Gösterilen ikinci sekmesi")](creating-tabbed-applications-images/03-secondtab.png)
+[![](creating-tabbed-applications-images/03-secondtab.png "Gösterilen ikinci sekmesi")](creating-tabbed-applications-images/03-secondtab.png#lightbox)
 
  <a name="Modifying_TabBarItems" />
 
@@ -185,7 +185,7 @@ tab2.View.BackgroundColor = UIColor.Orange;
 
 Yukarıdaki kod adlı bir resim varsayar `second.png` Mac için Visual Studio Proje kökündeki eklendi Gerçekte üç görüntüleri tüm aygıt çözümleri, aşağıda gösterildiği gibi kapsayacak şekilde bizim projeye ekledik:
 
- [ ![](creating-tabbed-applications-images/tabbedimages7new.png "Projeye eklenen görüntüleri")](creating-tabbed-applications-images/tabbedimages7new.png)
+ [![](creating-tabbed-applications-images/tabbedimages7new.png "Projeye eklenen görüntüleri")](creating-tabbed-applications-images/tabbedimages7new.png#lightbox)
 
 Sekme görüntünün saydamlık normal çözümlenmek 60 x 60 yüksek çözünürlüklü için ve 90 x 90 iPhone 6 ile 30 x 30 png olmalıdır çözümleme artı. Bizim kodda yalnızca adlı dosyayı yüklemek ihtiyacımız `second.png` ve iOS yüksek çözünürlüklü bir Retina görüntü ile cihazlarda otomatik olarak yükler. Daha fazla bilgiyi bu konuda [görüntülerle çalışma](~/ios/app-fundamentals/images-icons/index.md) kılavuzları. Varsayılan olarak seçili olduğunda mavi TINT ile gri sekmesini çubuğu öğelerdir.
 
@@ -193,13 +193,13 @@ Sekme görüntünün saydamlık normal çözümlenmek 60 x 60 yüksek çözünü
 
 Yukarıdaki görüntüleri de eklenemedi **kaynakları** içerikleri uygulama paket köküne otomatik olarak kopyalanacak özel bir dizin içinde dizini:
 
-[ ![](creating-tabbed-applications-images/tabbedapplication8.png "Görüntü kaynakları olarak")](creating-tabbed-applications-images/tabbedapplication8.png)
+[![](creating-tabbed-applications-images/tabbedapplication8.png "Görüntü kaynakları olarak")](creating-tabbed-applications-images/tabbedapplication8.png#lightbox)
 
 Ayrıca, biz ayarlandığında `Title` özelliği doğrudan üzerinde `TabBarItem`, herhangi bir değer için ayarlanmış geçersiz kılarsınız `Title` denetleyicisinde kendisi.
 
 Biz uygulamayı şimdi çalıştırdığınızda, ikinci sekmesi bizim Özel Başlık ve görüntü aşağıda gösterildiği gibi gösterir:
 
-[ ![](creating-tabbed-applications-images/05-customtab.png "Kare bir simge olan ikinci sekmesi")](creating-tabbed-applications-images/05-customtab.png)
+[![](creating-tabbed-applications-images/05-customtab.png "Kare bir simge olan ikinci sekmesi")](creating-tabbed-applications-images/05-customtab.png#lightbox)
 
  <a name="Setting_the_Badge_Value" />
 
@@ -214,7 +214,7 @@ tab3.TabBarItem.BadgeValue = "Hi";
 
 Bu çalıştığını kırmızı bir etiket aşağıda gösterildiği gibi sekmesini sol üst köşesindeki "Hi" dizesi ile sonuçlanır:
 
-[ ![](creating-tabbed-applications-images/06-badge.png "Hi rozet olan ikinci sekmesi")](creating-tabbed-applications-images/06-badge.png)
+[![](creating-tabbed-applications-images/06-badge.png "Hi rozet olan ikinci sekmesi")](creating-tabbed-applications-images/06-badge.png#lightbox)
 
 Gösterge genellikle bir numara göstergesi okunmamış, görüntülemek için kullanılan yeni öğeler. Gösterge kaldırmak için ayarlanmış `BadgeValue` aşağıda gösterildiği gibi null olarak:
 
@@ -236,7 +236,7 @@ Yukarıdaki örnekte, biz çalışmak nasıl oluşturulacağını gösterir bir 
 
 Bu senaryo için ilk ekran değil bir denetleyicisinden yükleyen bir `UITabBarController`. İçine bir düğmeye dokunarak ekranla kullanıcı etkileşim kurduğunda, aynı View Controller yüklenecek bir `UITabBarController`, hangi sonra sunulur kullanıcıya. Aşağıdaki ekran görüntüsünde uygulama akışı gösterilmektedir:
 
-[ ![](creating-tabbed-applications-images/inital-screen-application.png "Bu ekran uygulama akışı gösterilmektedir.")](creating-tabbed-applications-images/inital-screen-application.png)
+[![](creating-tabbed-applications-images/inital-screen-application.png "Bu ekran uygulama akışı gösterilmektedir.")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
 Bu örnek için yeni bir uygulama başlayalım. Yeniden kullanacağız **iPhone > Uygulama > Boş proje (C#)** şablonu, proje adlandırma bu kez `InitialScreenDemo`.
 
@@ -249,14 +249,14 @@ Bu örnekte, biz bizim görünüm denetleyicilerinin tutmak için film şeridi g
 
 Şimdi bu yeni film şeridi çağrısı **MainStoryboard** aşağıda gösterildiği gibi: 
 
-[ ![](creating-tabbed-applications-images/new-file-dialog.png "Bir MainStoryboard dosyası projeye ekleyin")](creating-tabbed-applications-images/new-file-dialog.png)
+[![](creating-tabbed-applications-images/new-file-dialog.png "Bir MainStoryboard dosyası projeye ekleyin")](creating-tabbed-applications-images/new-file-dialog.png#lightbox)
 
 Film şeridi olarak ele alınan önceden film şeridi olmayan dosyasına eklerken dikkat edilecek bazı önemli adım vardır [film şeritleri giriş](~/ios/user-interface/storyboards/index.md) Kılavuzu. Bunlar:
 
  
 1. Film şeridi adınızı ekleme **ana arabirimi** bölümünü `Info.plist`:
 
-    [![](creating-tabbed-applications-images/project-options.png "Ana arabirimi MainStoryboard için ayarlama")](creating-tabbed-applications-images/project-options.png)
+    [![](creating-tabbed-applications-images/project-options.png "Ana arabirimi MainStoryboard için ayarlama")](creating-tabbed-applications-images/project-options.png#lightbox)
 1. İçinde `App Delegate`, aşağıdaki kod ile penceresi yöntemini geçersiz kılın:
 
     ```csharp
@@ -270,11 +270,11 @@ Bu örnek için üç görünüm denetleyicisi ihtiyacınız olacak. Adlı bir `V
 
 Tasarımcı tarafından çift MainStoryboard.storyboard dosya tıklatarak açın ve üç görünüm denetleyicisi açın tasarım yüzeyine sürükleyin. Yukarıdaki adına karşılık gelen kendi sınıfı sağlamak için bu görünümü denetleyicilerinden her birinin istiyoruz altında bunu **kimliği > sınıfı**, aşağıdaki ekran görüntüsünde gösterildiği gibi adını yazın:
 
-[ ![](creating-tabbed-applications-images/class-name.png "ViewController1 için set sınıfı")](creating-tabbed-applications-images/class-name.png)
+[![](creating-tabbed-applications-images/class-name.png "ViewController1 için set sınıfı")](creating-tabbed-applications-images/class-name.png#lightbox)
 
 Mac için Visual Studio sınıfları ve gerekli designer dosyaları otomatik olarak oluşturur, bu çözüm defterinde, aşağıda gösterildiği gibi görülebilir:
 
-[ ![](creating-tabbed-applications-images/solution-pad2.png "Projedeki otomatik olarak oluşturulan dosyalar")](creating-tabbed-applications-images/solution-pad2.png)
+[![](creating-tabbed-applications-images/solution-pad2.png "Projedeki otomatik olarak oluşturulan dosyalar")](creating-tabbed-applications-images/solution-pad2.png#lightbox)
 
  <a name="Creating_the_UI" />
 
@@ -291,11 +291,11 @@ Sürükleme istiyoruz bir `Label` ve `Button` ViewController1 üzerine **araç**
 
 Biz bizim düğmesinin görünürlüğünü denetleme bir `TouchUpInside` olay ve biz arkasındaki kodda başvurduğu gerekir. Şimdi tanımlamak **adı** `aButton` özellikler aşağıdaki ekran görüntüsünde gösterildiği gibi panelinde:
 
-[ ![](creating-tabbed-applications-images/abutton-properties.png "Özellikler panelinde aButton kümesinin adı")](creating-tabbed-applications-images/abutton-properties.png)
+[![](creating-tabbed-applications-images/abutton-properties.png "Özellikler panelinde aButton kümesinin adı")](creating-tabbed-applications-images/abutton-properties.png#lightbox)
 
 Tasarım yüzeyi aşağıdaki ekran görüntüsüne benzer görünmelidir:
 
-[ ![](creating-tabbed-applications-images/design-surface1.png "Tasarım yüzeyi bu ekran görüntüsüne benzer görünmelidir")](creating-tabbed-applications-images/design-surface1.png)
+[![](creating-tabbed-applications-images/design-surface1.png "Tasarım yüzeyi bu ekran görüntüsüne benzer görünmelidir")](creating-tabbed-applications-images/design-surface1.png#lightbox)
 
 Biraz daha fazla ayrıntı için ekleyelim `ViewController2` ve `ViewController3`, her bir etiket ekleyerek ve metin 'İki' ve 'Üç' sırasıyla değiştirme. Bu kullanıcıya adresindeki arıyoruz hangi sekmesini/görünüm vurgular.
 
@@ -305,7 +305,7 @@ Yük oluşturacağız `ViewController1` uygulamayı ilk kez başlatıldığında
 
 Kullanıcı ne zaman serbest `aButton`, tetiklenmesi TouchUpInside olay istiyoruz. Şimdi düğmesini seçin ve **olaylar sekmesi** özellikleri ofisinizde, olay işleyicisi – bildirme `InitialActionCompleted` – bu kodda başvurulabilen şekilde. Bu ekran görüntüsünde gösterilmiştir:
 
-[ ![](creating-tabbed-applications-images/event-handler.png "Kullanıcı aButton bıraktığında TouchUpInside olay tetikler")](creating-tabbed-applications-images/event-handler.png)
+[![](creating-tabbed-applications-images/event-handler.png "Kullanıcı aButton bıraktığında TouchUpInside olay tetikler")](creating-tabbed-applications-images/event-handler.png#lightbox)
 
 Artık olay başlatıldığında düğmesini gizlemek için Görünüm denetleyicisini bildirmek ihtiyacımız `InitialActionCompleted`. İçinde `ViewController1`, kısmi aşağıdaki yöntemi ekleyin:
 
@@ -324,7 +324,7 @@ Dosyayı kaydedin ve uygulamayı çalıştırın. Ekran birer görüntülenir ve
 
 İçinde **araç**, arama **sekmesini çubuğu denetleyicisi** denetleyicileri & nesneleri altında ve bu tasarım yüzeyine sürükleyin. Aşağıdaki ekran görüntüsünde görüldüğü gibi Sekme çubuğu denetleyicisidir UI olmayan ve bu nedenle varsayılan olarak iki görünüm denetleyicileri onunla getirir:
 
-[ ![](creating-tabbed-applications-images/tabbarcontroller.png "Düzenine bir sekme çubuğu denetleyicisi ekleme")](creating-tabbed-applications-images/tabbarcontroller.png)
+[![](creating-tabbed-applications-images/tabbarcontroller.png "Düzenine bir sekme çubuğu denetleyicisi ekleme")](creating-tabbed-applications-images/tabbarcontroller.png#lightbox)
 
 Bu yeni görünüm denetleyicileri siyah bir çubuk altındaki seçip delete tuşuna basarak silin.
 
@@ -334,15 +334,15 @@ Bizim film şeridi biz Segues TabBarController ve bizim görünüm denetleyicile
  
 Her bizim sekmeleri ayarlamak için **CTRL tuşuna basıp tıklayın** her bizim görünüm denetleyicilerini sırayla TabBarController üç ve seçin ilişki birinden gelen **sekmesini** bağlam menüsünden Aşağıda gösterildiği gibi:
 
-[ ![](creating-tabbed-applications-images/context-menu.png "Sekme ilişki seçin")](creating-tabbed-applications-images/context-menu.png)
+[![](creating-tabbed-applications-images/context-menu.png "Sekme ilişki seçin")](creating-tabbed-applications-images/context-menu.png#lightbox)
 
 Aşağıdaki ekran görüntüsünde Şeridinizin benzemelidir:
 
-[ ![](creating-tabbed-applications-images/segue-layout.png "Film şeridi bu ekran görüntüsüne benzer olmalıdır")](creating-tabbed-applications-images/segue-layout.png)
+[![](creating-tabbed-applications-images/segue-layout.png "Film şeridi bu ekran görüntüsüne benzer olmalıdır")](creating-tabbed-applications-images/segue-layout.png#lightbox)
 
 Sekme çubuğu öğelerden birini tıklatın ve Özellikler paneli keşfetmek, aşağıda gösterildiği gibi bir dizi farklı seçenekler görebilirsiniz:
 
-[ ![](creating-tabbed-applications-images/properties-panel.png "Özellikler Explorer'ın sekmesini seçeneklerini ayarlama")](creating-tabbed-applications-images/properties-panel.png)
+[![](creating-tabbed-applications-images/properties-panel.png "Özellikler Explorer'ın sekmesini seçeneklerini ayarlama")](creating-tabbed-applications-images/properties-panel.png#lightbox)
 
 Biz bu rozet, başlığı ve iOS gibi belirli öznitelikleri düzenlemek için kullanabileceğiniz [tanımlayıcısı](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/UIKitUICatalog/TabBarItem.html), diğerlerinin yanı sıra
 
@@ -360,11 +360,11 @@ public override void ViewDidLoad ()
 
 Ne zaman uygulama çalıştığında ve kullanıcı dokunur UITabBarController ilk ekranda düğmesi, aşağıda gösterildiği gibi ilk sekmesindeki yerleştirilen ilk ekran görünümünden ile yüklenir:
 
-[ ![](creating-tabbed-applications-images/first-view.png "Örnek uygulama çıktısı")](creating-tabbed-applications-images/first-view.png)
+[![](creating-tabbed-applications-images/first-view.png "Örnek uygulama çıktısı")](creating-tabbed-applications-images/first-view.png#lightbox)
 
 <!--Save the files and run the application:
 
-[ ![](creating-tabbed-applications-images/inital-screen-application.png "Save the files and run the application")](creating-tabbed-applications-images/inital-screen-application.png)-->
+[![](creating-tabbed-applications-images/inital-screen-application.png "Save the files and run the application")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)-->
 
 ## <a name="summary"></a>Özet
 

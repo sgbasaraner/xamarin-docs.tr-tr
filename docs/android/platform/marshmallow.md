@@ -7,12 +7,12 @@ ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: b28ca68701394a8b7b0b543a5ae646910e7c8361
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c9ff9eb0b8d013485f0437d470ec49f1c1795d7a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="marshmallow-features"></a>Marshmallow özellikleri
 
@@ -20,7 +20,6 @@ _Bu makale size yardımcı olur Android 6.0 Marshmallow için uygulama geliştir
 
 Bu makalede Android 6.0 Marshmallow'deki yeni özelliklerin bir özetini sağlar, Android Marshmallow geliştirme için Xamarin.Android için nasıl hazırlanılacağını açıklamaktadır ve yeni Android Marshmallow kullanmak nasıl çalışılacağını örnek uygulamalar için bağlantılar sağlar Xamarin.Android uygulamaları özellikleri. 
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -29,7 +28,7 @@ Xamarin.Android Android Marshmallow destekler ve içerir:
 
 -   **API 23/Android 6.0 bağlamaları** &ndash; Android 6.0 aşağıda açıklanan yeni özellikleri için birçok yeni API'leri ekler; API düzeyi 23 hedeflediğinizde bu API'leri Xamarin.Android uygulamaları için kullanılabilir. Android 6.0 API'lerini hakkında daha fazla bilgi için bkz: [Android 6.0 API'lerini](http://developer.android.com/preview/api-overview.html). 
 
-[![Kahramanı görüntülerini tabletler ve telefonlardan Marshmallow çalıştırma](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png)
+[![Kahramanı görüntülerini tabletler ve telefonlardan Marshmallow çalıştırma](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
 Marshmallow yayın çoğunlukla "Lehçe ve kalite" odaklanan rağmen Xamarin.Android geliştiricileri için de ilgi birçok yeni özellik sağlar. Bu özellikler şunlardır: 
 
@@ -57,9 +56,6 @@ Ayrıca, çok sayıda çekirdek Android kitaplığı güncelleştirme ile Androi
 
 Ayrıca, çok sayıda çekirdek Android kitaplığı güncelleştirme ile Android Marshmallow yayımlanan ve bu güncelleştirmeleri Android Marshmallow ve önceki sürümleri, Android için yeni özellikler sağlar. Bu makalede, Android Marshmallow uygulamalarla oluşturmaya başlamak açıklar ve yeni özelliğine genel bakış Android 6. 0'vurgular sağlar. 
 
-
-<a name="requirements" />
-
 ## <a name="requirements"></a>Gereksinimler
 
 Aşağıdaki Xamarin tabanlı uygulamalarda yeni Android Marshmallow özellikleri kullanmak için gereklidir: 
@@ -74,7 +70,6 @@ Aşağıdaki Xamarin tabanlı uygulamalarda yeni Android Marshmallow özellikler
 
 Kullanmaya devam edebilirsiniz [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) API düzeyi 23 için özellikle geliştirme veya önceki bir sürümünü kullanıyorsanız. 
 
-<a name="gettingstarted" />
 
 ## <a name="getting-started"></a>Başlarken
 
@@ -90,13 +85,11 @@ Android Marshmallow Xamarin.Android ile kullanmaya başlamak için indirin ve An
 
 Bu adımların her biri aşağıdaki bölümlerde açıklanmıştır:
 
-<a name="updates" />
 
 ### <a name="install-xamarin-updates"></a>Xamarin güncelleştirmeleri yükle
 
 Xamarin Android 6.0 Marshmallow için desteği içeren güncelleştirmek için güncelleştirme kanala değiştirme **kararlı** ve tüm güncelleştirmeleri yükleyin. Güncelleştirmeleri kanaldan güncelleştirmeleri yükleme hakkında daha fazla bilgi için bkz: [güncelleştirmeleri kanalı değiştirmek](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/). 
 
-<a name="sdkpreview" />
 
 ### <a name="install-the-android-60-sdk"></a>Android 6.0 SDK'sını yükleyin
 
@@ -104,17 +97,16 @@ Android Marshmallow için bir Xamarin.Android projesi oluşturmak için önce An
 
 -   Android SDK Yöneticisi'ni başlatın (Mac için Visual Studio'da kullanın **Araçlar > SDK Manager**; Visual Studio'da kullanın **Araçlar > Android > Android SDK Manager**) ve en son Android SDK araçlarını yükleyin:
 
-    [![Android SDK Yöneticisi'nde Android SDK Araçları seçme](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png)
+    [![Android SDK Yöneticisi'nde Android SDK Araçları seçme](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png#lightbox)
 
 -   Ayrıca, en son yükleme **Android 6.0** SDK paketler:
 
-    [![Android 6.0 SDK paketleri Android SDK Yöneticisi'nde seçme](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png)
+    [![Android 6.0 SDK paketleri Android SDK Yöneticisi'nde seçme](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
 
 Android SDK Araçları Düzeltme 24.3.4 yüklemelisiniz veya sonraki bir sürümü.
 Android 6.0 SDK'sını yüklemek için Android SDK Yöneticisi'ni kullanma hakkında daha fazla bilgi için bkz: [SDK Manager](http://developer.android.com/tools/help/sdk-manager.html).
 
 
-<a name="xaproject" />
 
 ### <a name="start-a-xamarinandroid-project"></a>Start a Xamarin.Android Project
 
@@ -123,7 +115,6 @@ Yeni bir Xamarin.Android projesi oluşturun. Xamarin Android geliştirme yeniyse
 Bir Android projesi oluşturduğunuzda, hedef Android 6.0 MarshMallow için sürüm ayarlarını yapılandırmanız gerekir. Projeniz için Marshmallow hedeflemek için projeniz için yapılandırma **API düzeyi 23 (Xamarin.Android v6.0 desteği)**. Android API düzeyi düzeyleri yapılandırma hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md).
 
 
-<a name="emudev" />
 
 ### <a name="configure-an-emulator-or-device"></a>Bir öykünücü veya cihaz yapılandırma
 
@@ -135,19 +126,17 @@ Bir öykünücü kullanıyorsanız, Android AVD Yöneticisi'ni başlatın ve aş
 
 Örneğin, bu sanal aygıt Nexus 5 benzetmek için yapılandırılır:
 
-[![Nexus 5 cihaz, Android 6.0 hedef ve Intel Atom (x86) kullanarak bir AVD yapılandırma](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png)
+[![Nexus 5 cihaz, Android 6.0 hedef ve Intel Atom (x86) kullanarak bir AVD yapılandırma](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
 
 Nexus 5 gibi fiziksel bir aygıtı kullanıyorsanız, 6 veya 9, Android Marshmallow önizleme görüntüsünü yükleyebilirsiniz. Android Marshmallow için Cihazınızı güncelleştirme hakkında daha fazla bilgi için bkz: [donanım sistemi görüntüleri](http://developer.android.com/preview/download.html#images).
 
 
-<a name="newfeatures" />
 
 ## <a name="new-features"></a>Yeni Özellikler
 
 Android Marshmallow içinde sunulan değişiklikler çoğunu Android kullanıcı deneyimini iyileştirme, performansı artırma ve hataları düzelttikten odaklanır. Ancak, Marshmallow de Android platformu temelleri kapsamlı bazı değişiklikler sunmuştur. Aşağıdaki bölümlerde bu geliştirmeler vurgulayın ve uygulamanızda yeni Android Marshmallow özellikleri kullanarak başlamanıza yardımcı olmak için bağlantılar sağlar. 
 
 
-<a name="permissions" />
 
 ### <a name="runtime-permissions"></a>Çalışma zamanı izinleri
 
@@ -169,7 +158,6 @@ Bu örnek uygulamayı kullanmak için:
 Android Marshmallow yeni çalışma zamanı izinleri özellikleri hakkında daha fazla bilgi için bkz: [sistem izinleriyle çalışma](https://developer.android.com/preview/features/runtime-permissions.html).
 
 
-<a name="authentication" />
 
 ### <a name="authentication-enhancements"></a>Kimlik doğrulaması geliştirmeleri
 
@@ -181,8 +169,6 @@ Android Marshmallow parolaları gereksinimini ortadan kaldırabilirsiniz iki kim
 
 Sonraki bölümde açıklandığı örnek uygulamaları ve bağlantıları, hale bilinen bu yeni özellikleri ile yardımcı olabilir.
 
-
-<a name="fingerprint" />
 
 #### <a name="fingerprint-authentication"></a>Parmak izi kimlik doğrulaması
 
@@ -200,7 +186,6 @@ Bu örnek uygulama parmak izi okuyucu aygıtla gerektirdiğini unutmayın.
 Bu uygulama, parmak izi (veya parolanızı) depolamaz.
 
 
-<a name="voice" />
 
 #### <a name="voice-interactions"></a>Sesli etkileşimleri
 
@@ -210,7 +195,6 @@ Bkz: [Android uygulamanızı sesli etkileşimleri bir konuşma eklemek](https://
 Örnek bir uygulama kullanılabilir bir Xamarin.Android uygulaması sesli etkileşim API kullanma gösterilmektedir: [sesli etkileşimleri](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions).
 
 
-<a name="confirmcred" />
 
 #### <a name="confirm-credential"></a>Kimlik bilgisi onaylayın
 
@@ -225,7 +209,6 @@ Bu örnek uygulamayı kullanmak için:
 2.  Dokunun **satın alma** düğmesini tıklatın ve güvenli kilit ekranı kimlik bilgilerini doğrulayın.
 
 
-<a name="chrometabs" />
 
 ### <a name="chrome-custom-tabs"></a>Chrome özel sekmeler
 
@@ -245,7 +228,6 @@ Xamarin.Android uygulamanız bu özelliğin avantajlarından yararlanmak için k
 Bu özellik hakkında daha fazla bilgi için bkz: [Chrome özel sekmeler](https://developer.chrome.com/multidevice/android/customtabs).
 
 
-<a name="designlib" />
 
 ### <a name="material-design-support-library"></a>Malzeme tasarım destek kitaplığı
 
@@ -280,8 +262,6 @@ Bu örnek tasarım kitaplığı aşağıdaki özellikleri gösterir:
 
 Tasarım Kitaplığı hakkında daha fazla bilgi için bkz: [Android tasarım destek kitaplığı](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html) Android Geliştirici günlüğündeki.
 
-
-<a name="libraries" />
 
 ### <a name="additional-library-updates"></a>Ek Kitaplığı güncelleştirmeleri
 

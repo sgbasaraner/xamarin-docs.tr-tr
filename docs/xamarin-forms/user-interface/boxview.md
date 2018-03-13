@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 78ccb117e621b89d85e701b2ea027115f8681dc9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4d50ea5c3db0f5a141f1b48cf0a948c10b63f7f0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="boxview"></a>BoxView
 
@@ -68,7 +68,7 @@ A `BoxView` bir boyuttaki kısıtlı ve diğer Kısıtlanmamış. Örneğin, var
 
 Sonuç şöyledir:
 
-[![Temel BoxView](boxview-images/basicboxview-small.png "temel BoxView")](boxview-images/basicboxview-large.png "BasicBoxView")
+[![Temel BoxView](boxview-images/basicboxview-small.png "temel BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
 Varsa `VerticalOptions` ve `HorizontalOptions` özellikler kaldırılma `BoxView` etiketi veya şekilde ayarlanmış `Fill`, sonra `BoxView` sayfa boyutu tarafından kısıtlı olur ve sayfayı doldurmak için genişletir.
 
@@ -113,7 +113,7 @@ Kullanabileceğiniz `BoxView` sayfalarınızda yatay ve dikey çizgileri form ü
 
 Aşağıdaki biçimlendirme alt öğelerinin tümü `StackLayout`. Bu biçimlendirme birçok türdeki dekoratif oluşur `BoxView` ile kullanılan öğeleri `Label` öğe:
 
-[![Metin dekorasyonu](boxview-images/textdecoration-small.png "dekorasyonu")](boxview-images/textdecoration-large.png "dekorasyonu")
+[![Metin dekorasyonu](boxview-images/textdecoration-small.png "dekorasyonu")](boxview-images/textdecoration-large.png#lightbox "dekorasyonu")
 
 Sayfanın üstündeki şık üstbilgisi ile elde edilen bir `AbsoluteLayout` dört alt öğeleri olan `BoxView` öğeleri ve `Label`, tüm hangi olan belirli konumları ve boyutları atanan:
 
@@ -168,7 +168,7 @@ Bir paragraf metni tarafında her ikisi de kapsayan bir dikey çizgi son olarak,
 
 `BoxView` Renkleri görüntüleme için uygundur. Bu program kullanan bir `ListView` tüm ortak statik salt okunur alanları Xamarin.Forms listelemek için `Color` yapısı:
 
-[![ListView renkleri](boxview-images/listviewcolors-small.png "ListView renkleri")](boxview-images/listviewcolors-large.png "ListView renkleri")
+[![ListView renkleri](boxview-images/listviewcolors-small.png "ListView renkleri")](boxview-images/listviewcolors-large.png#lightbox "ListView renkleri")
 
 [ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) program içerir adlı bir sınıf `NamedColor`. Statik Oluşturucu tüm alanları erişmek için yansıma kullanan `Color` yapısı ve oluşturma bir `NamedColor` her biri için nesne. Bu statik depolanan `All` özelliği:
 
@@ -350,7 +350,7 @@ class LifeCell : BoxView
 
 **GameOfLife** program de dahil bir `LifeGrid` oyun mantığı çoğunu yalıtır sınıfı ve bir `MainPage` programın görselleri işleme sınıfı. Bunlar oyunun kurallarını açıklayan bir katmana içerir. Birkaç yüz gösteren eylemde program işte `LifeCell` sayfadaki nesneler:
 
-[![Yaşam oyunu](boxview-images/gameoflife-small.png "yaşam oyunu")](boxview-images/gameoflife-large.png "yaşam oyunu")
+[![Yaşam oyunu](boxview-images/gameoflife-small.png "yaşam oyunu")](boxview-images/gameoflife-large.png#lightbox "yaşam oyunu")
 
 <a name="digitalclock" />
 
@@ -358,7 +358,7 @@ class LifeCell : BoxView
 
 [ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) program oluşturur 210 `BoxView` bir eski moda 5 tarafından 7 iğneli görüntü nokta benzetimini yapmak için öğeleri. Dikey veya yatay modu zamanında okuyabilir, ancak yatay olarak büyük:
 
-[![İğneli saati](boxview-images/dotmatrixclock-small.png "iğneli saati")](boxview-images/dotmatrixclock-large.png "iğneli saati")
+[![İğneli saati](boxview-images/dotmatrixclock-small.png "iğneli saati")](boxview-images/dotmatrixclock-large.png#lightbox "iğneli saati")
 
 XAML dosyası biraz birden fazla örneği `AbsoluteLayout` saati kullanılır:
 
@@ -594,7 +594,7 @@ public partial class MainPage : ContentPage
 
 İğneli saati belirgin bir uygulama olduğu görünebilir `BoxView`, ancak `BoxView` öğeleri özellikli bir analog saat kullanıldıklarını ayrıca:
 
-[![BoxView saat](boxview-images/boxviewclock-small.png "BoxView saati")](boxview-images/boxviewclock-large.png "BoxView saati")
+[![BoxView saat](boxview-images/boxviewclock-small.png "BoxView saati")](boxview-images/boxviewclock-large.png#lightbox "BoxView saati")
 
 Tüm Görsellere [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) program alt öğeleri olan bir `AbsoluteLayout`. Bu öğeleri kullanarak boyuta sahip `LayoutBounds` özelliği eklenmiş ve kullanılarak döndürülen `Rotation` özelliği. 
 

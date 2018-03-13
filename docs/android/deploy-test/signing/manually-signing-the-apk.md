@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1625fe15d76ffe2bd3712d9126d9bd217bf60085
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f47fded9c09849f6d5f1329a4efd652df80816d5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manually-signing-the-apk"></a>APK el ile imzalama
 
-<a name="signing_legacy" />
 
 Uygulama sürümü için oluşturulduktan sonra böylece bir Android cihazında çalıştırılabilir APK önce dağıtım imzalanması gerekir. Bu işlem genellikle IDE ile yapılır, ancak APK el ile komut satırında imzalamak gerekli olduğu bazı durumlar vardır. Aşağıdaki adımlar, bir APK imzalama ile ilgilidir:
 
@@ -29,7 +28,6 @@ Uygulama sürümü için oluşturulduktan sonra böylece bir Android cihazında 
 Adımlarının sırasını önemlidir ve APK imzalamak için kullanılan hangi aracı bağlıdır. Kullanırken **apksigner**, ilk olarak önemli **zipalign** uygulama ve sahip imzaladıktan sonra **apksigner**.  Kullanmak gerekli değilse **jarsigner** APK imzalamak için sonra ilk kez oturum APK ve sonra çalıştırmak önemli olduğunu **zipalign**. 
 
 
-<a name="Prerequisites" />
 
 ## <a name="prerequisites"></a>Önkoşullar
 
@@ -38,7 +36,6 @@ Bu kılavuzu kullanarak odaklanacaktır **apksigner** Android SDK derleme araçl
 Android SDK derleme araçlarını daha eski bir sürümü kullanılarak oluşturulan uygulamaların kullanmalıdır **jarsigner** açıklandığı gibi [APK jarsigner ile oturum](#Sign_the_APK_with_jarsigner) aşağıda.
 
 
-<a name="Creating_a_Private_Keystore" />
 
 ## <a name="create-a-private-keystore"></a>Bir özel anahtar deposu oluşturma
 
@@ -53,7 +50,6 @@ Bu anahtar deposu korumak önemlidir. Ardından kaybolursa, Google Play uygulama
 Kayıp bir anahtar tarafından neden olduğu sorunu yalnızca çözüme yeni bir anahtar oluşturmak, APK yeni anahtarla yeniden oturum açın ve ardından yeni bir uygulama göndermek amacıyla olacaktır. Ardından eski uygulamayı Google Play'den kaldırılması gerekir. Bu yeni bir anahtar tehlikeye veya herkese dağıtılmış, benzer şekilde, daha sonra dağıtılacak uygulama resmi olmayan veya kötü amaçlı sürümleri için mümkündür.
 
 
-<a name="Create_a_New_Keystore" />
 
 ### <a name="create-a-new-keystore"></a>Yeni bir anahtar oluşturun
 
@@ -99,7 +95,6 @@ Bir anahtar deposunda saklanan anahtarlardan listelemek için kullanın **keytoo
 $ keytool -list -keystore xample.keystore
 ```
 
-<a name="Zipalign_the_APK" />
 
 ## <a name="zipalign-the-apk"></a>Zipalign APK
 
@@ -111,7 +106,6 @@ Bir APK ile oturum açmadan önce **apksigner**, ilk kullanarak dosya en iyi dur
 $ zipalign -f -v 4 mono.samples.helloworld-unsigned.apk helloworld.apk
 ```
 
-<a name="Manually_Signing_the_APK" />
 
 ## <a name="sign-the-apk"></a>APK oturum
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a891e5bf797742ceb1bb45bb8144fa77dec99b2c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0e271fb78cfd225f9ccdae9a515685e89bfd7ac2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-sirikit"></a>SiriKit uygulama
 
@@ -35,7 +35,7 @@ Kullanıcı, uygulama uzantının hizmetlerinden birini içeren Siri isteği yap
 
 Bu kılavuz, varolan bir uygulamaya SiriKit desteği dahil olmak üzere hızlı bir örnek sunacaktır. Bu örnek amacıyla, biz sahte MonkeyChat uygulamasını kullanarak:
 
-[ ![](implementing-sirikit-images/monkeychat01.png "MonkeyChat simgesi")](implementing-sirikit-images/monkeychat01.png)
+[![](implementing-sirikit-images/monkeychat01.png "MonkeyChat simgesi")](implementing-sirikit-images/monkeychat01.png#lightbox)
 
 Kullanıcının arkadaş kişi kendi rehberini MonkeyChat tutar, her bir ekran adı (ör, örneğin Bobo) ile ilişkili ve metin sohbetleri ekran adına göre her arkadaşınıza gönderin olanak tanır.
 
@@ -43,7 +43,7 @@ Kullanıcının arkadaş kişi kendi rehberini MonkeyChat tutar, her bir ekran a
 
 Gösterildiği gibi [anlama SiriKit kavramları](~/ios/platform/sirikit/understanding-sirikit.md) Kılavuzu, bir uygulamayla SiriKit genişletme ile ilgili üç ana bölümü vardır:
 
-[ ![](implementing-sirikit-images/elements01.png "SiriKit diyagramı uygulamayla genişletme")](implementing-sirikit-images/elements01.png)
+[![](implementing-sirikit-images/elements01.png "SiriKit diyagramı uygulamayla genişletme")](implementing-sirikit-images/elements01.png#lightbox)
 
 Bu güncelleştirmeler şunlardır:
 
@@ -75,20 +75,20 @@ Aşağıdakileri yapın:
 1. Mac için Visual Studio'yu başlatın ve MonkeyChat uygulamasını açın.
 2. Çözüm adına sağ tıklayın **çözüm paneli** seçip **Ekle** > **yeni proje...** : 
 
-    [ ![](implementing-sirikit-images/prep01.png "Yeni bir proje ekleyin")](implementing-sirikit-images/prep01.png)
+    [![](implementing-sirikit-images/prep01.png "Yeni bir proje ekleyin")](implementing-sirikit-images/prep01.png#lightbox)
 3. Seçin **iOS** > **Kitaplığı** > **sınıf kitaplığı** tıklatıp **sonraki** düğmesi: 
 
-    [ ![](implementing-sirikit-images/prep02.png "Sınıf kitaplığı seçin")](implementing-sirikit-images/prep02.png)
+    [![](implementing-sirikit-images/prep02.png "Sınıf kitaplığı seçin")](implementing-sirikit-images/prep02.png#lightbox)
 4. Girin `MonkeyChatCommon` için **adı** tıklatıp **oluşturma** düğmesi: 
 
-    [ ![](implementing-sirikit-images/prep03.png "MonkeyChatCommon için bir ad girin")](implementing-sirikit-images/prep03.png)
+    [![](implementing-sirikit-images/prep03.png "MonkeyChatCommon için bir ad girin")](implementing-sirikit-images/prep03.png#lightbox)
 5. Sağ tıklayın **başvuruları** ana uygulamada klasörünü **Çözüm Gezgini** seçip **başvuruları Düzenle...** . Denetleme **MonkeyChatCommon** proje ve tıklatın **Tamam** düğmesi: 
 
-    [ ![](implementing-sirikit-images/prep05.png "Onay MonkeyChatCommon proje")](implementing-sirikit-images/prep05.png)
+    [![](implementing-sirikit-images/prep05.png "Onay MonkeyChatCommon proje")](implementing-sirikit-images/prep05.png#lightbox)
 6. İçinde **Çözüm Gezgini**, ortak paylaşılan kod ana uygulamadan yerel kitaplığına sürükleyin.
 7. MonkeyChat söz konusu olduğunda, sürükleyin **DataModels** ve **işlemciler** ana uygulama yerel kitaplığa klasörlerinden: 
 
-    [ ![](implementing-sirikit-images/prep06.png "Çözüm Gezgini'nde DataModels ve işlemci klasörleri")](implementing-sirikit-images/prep06.png)
+    [![](implementing-sirikit-images/prep06.png "Çözüm Gezgini'nde DataModels ve işlemci klasörleri")](implementing-sirikit-images/prep06.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -96,11 +96,11 @@ Aşağıdakileri yapın:
 2. Çözüm adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **yeni proje...** .
 3. Seçin **Visual C#** > **paylaşılan proje** tıklatıp **sonraki** düğmesi: 
 
-    [ ![](implementing-sirikit-images/prep02w.png "Sınıf kitaplığı seçin")](implementing-sirikit-images/prep02w.png)
+    [![](implementing-sirikit-images/prep02w.png "Sınıf kitaplığı seçin")](implementing-sirikit-images/prep02w.png#lightbox)
 4. Girin `MonkeyChatCommon` için **adı** tıklatıp **oluşturma** düğmesi.
 5. Sağ tıklayın **başvuruları** ana uygulamada klasörünü **Çözüm Gezgini** seçip **başvuruları Düzenle...** . Denetleme **MonkeyChatCommon** proje ve tıklatın **Tamam** düğmesi: 
 
-    [ ![](implementing-sirikit-images/prep05w.png "Onay MonkeyChatCommon proje")](implementing-sirikit-images/prep05w.png)
+    [![](implementing-sirikit-images/prep05w.png "Onay MonkeyChatCommon proje")](implementing-sirikit-images/prep05w.png#lightbox)
 6. İçinde **Çözüm Gezgini**, ortak paylaşılan kodu paylaşılan bir proje için ana uygulama sürükleyin.
 7. MonkeyChat söz konusu olduğunda, sürükleyin **DataModels** ve **işlemciler** ana uygulama yerel kitaplığa klasörlerinden.
 
@@ -172,12 +172,12 @@ Aşağıdakileri yapın:
 2. Geçiş **kaynak** sekmesi.
 3. Ekleme `com.apple.developer.siri` **özelliği**ayarlayın **türü** için `Boolean` ve **değeri** için `Yes`: 
 
-    [ ![](implementing-sirikit-images/setup01.png "Com.apple.developer.siri özellik ekleme")](implementing-sirikit-images/setup01.png)
+    [![](implementing-sirikit-images/setup01.png "Com.apple.developer.siri özellik ekleme")](implementing-sirikit-images/setup01.png#lightbox)
 4. Değişiklikleri dosyaya kaydedin.
 5. Çift **proje dosyası** içinde **Çözüm Gezgini** düzenlemek için açın.
 6. Seçin **iOS paket imzalama** ve emin `Entitlements.plist` dosya seçildiğinde, **özel yetkilendirmeler** alan: 
 
-    [ ![](implementing-sirikit-images/setup02.png "Özel yetkilendirmeler alanında Entitlements.plist dosyası seçin")](implementing-sirikit-images/setup02.png)
+    [![](implementing-sirikit-images/setup02.png "Özel yetkilendirmeler alanında Entitlements.plist dosyası seçin")](implementing-sirikit-images/setup02.png#lightbox)
 7. Tıklatın **Tamam** değişiklikleri kaydetmek için düğmesi.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -185,7 +185,7 @@ Aşağıdakileri yapın:
 1. Çift `Entitlements.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın.
 3. Ekleme `com.apple.developer.siri` **özelliği**ayarlayın **türü** için `Boolean` ve **değeri** için `Yes`: 
 
-    [ ![](implementing-sirikit-images/setup01w.png "Com.apple.developer.siri özellik ekleme")](implementing-sirikit-images/setup01w.png)
+    [![](implementing-sirikit-images/setup01w.png "Com.apple.developer.siri özellik ekleme")](implementing-sirikit-images/setup01w.png#lightbox)
 4. Değişiklikleri dosyaya kaydedin.
 5. Çift **proje dosyası** içinde **Çözüm Gezgini** düzenlemek için açın.
 6. Seçin **iOS paket imzalama** ve emin `Entitlements.plist` dosya seçildiğinde, **özel yetkilendirmeler** alan.
@@ -218,7 +218,7 @@ Mac aşağıdakileri yapın:
 5. Girin bir **paket kimliği** Apple aşağıdaki öneri adlandırma kullanıcının.
 6. Ekranı aşağı kaydırarak **uygulama hizmetleri** bölümünde, select **SiriKit** tıklatıp **devam** düğmesi: 
 
-    [ ![](implementing-sirikit-images/setup03.png "SiriKit seçin")](implementing-sirikit-images/setup03.png)
+    [![](implementing-sirikit-images/setup03.png "SiriKit seçin")](implementing-sirikit-images/setup03.png#lightbox)
 7. Tüm ayarlar ardından doğrulayın **gönderme** uygulama kimliği.
 8. Seçin **sağlama profilleri** > **geliştirme**, tıklatın  **+**  düğmesi, select **Apple kimliği**, ardından **devam**.
 9. Seç'i tıklatın **tüm**, ardından **devam**.
@@ -228,21 +228,21 @@ Mac aşağıdakileri yapın:
 13. Xcode menüsünden seçin **tercihleri...**
 14. Seçin **hesapları**, ardından **ayrıntıları görüntüle...** düğmesi: 
 
-    [ ![](implementing-sirikit-images/setup04.png "Hesabı seçin.")](implementing-sirikit-images/setup04.png)
+    [![](implementing-sirikit-images/setup04.png "Hesabı seçin.")](implementing-sirikit-images/setup04.png#lightbox)
 15. Tıklatın **karşıdan tüm profiller** sol alt köşesindeki düğmesi: 
 
-    [ ![](implementing-sirikit-images/setup05.png "Tüm profillerin indirin")](implementing-sirikit-images/setup05.png)
+    [![](implementing-sirikit-images/setup05.png "Tüm profillerin indirin")](implementing-sirikit-images/setup05.png#lightbox)
 16. Emin **sağlama profili** oluşturulan Xcode'da yukarıdaki yükledi.
 17. Mac için Visual Studio'da SiriKit desteği eklemek için projeyi açın
 18. Çift `Info.plist` dosyasını **Çözüm Gezgini**.
 18. Emin **paket tanımlayıcı** yukarıdaki Apple Developer portalında oluşturulan bir eşleşen: 
 
-    [ ![](implementing-sirikit-images/setup06.png "Paket tanımlayıcısı")](implementing-sirikit-images/setup06.png)
+    [![](implementing-sirikit-images/setup06.png "Paket tanımlayıcısı")](implementing-sirikit-images/setup06.png#lightbox)
 18. İçinde **Çözüm Gezgini**seçin **proje**.
 19. Projeye sağ tıklayın ve seçin **seçenekleri**.
 21. Seçin **iOS paket imzalama**seçin **imzalama kimlik** ve **sağlama profili** yukarıda oluşturduğunuz: 
 
-    [ ![](implementing-sirikit-images/setup07.png "İmzalama kimlik ve sağlama profili seçin")](implementing-sirikit-images/setup07.png)
+    [![](implementing-sirikit-images/setup07.png "İmzalama kimlik ve sağlama profili seçin")](implementing-sirikit-images/setup07.png#lightbox)
 22. Tıklatın **Tamam** değişiklikleri kaydetmek için düğmesi.
 
 > [!IMPORTANT]
@@ -256,13 +256,13 @@ Uygulama herhangi bir kullanıcı özel sözlük ekler veya hedefleri uzantılar
 
 Uygulamanın Düzenle `Info.plist` dosya, geçiş **kaynak** görüntülemek ve eklemek `NSSiriUsageDescription` anahtar Siri ve hangi uygulamanın nasıl kullanacağını açıklayan bir dize değeri ile veri türleri gönderilir. Örneğin, "MonkeyChat kişiler Siri gönderilecek" MonkeyChat uygulama diyebilirsiniz:
 
-[ ![](implementing-sirikit-images/request01.png "Info.plist düzenleyicisinde NSSiriUsageDescription")](implementing-sirikit-images/request01.png)
+[![](implementing-sirikit-images/request01.png "Info.plist düzenleyicisinde NSSiriUsageDescription")](implementing-sirikit-images/request01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Uygulamanın Düzenle `Info.plist` dosya ve ekleme `NSSiriUsageDescription` anahtar Siri ve hangi uygulamanın nasıl kullanacağını açıklayan bir dize değeri ile veri türleri gönderilir. Örneğin, "MonkeyChat kişiler Siri gönderilecek" MonkeyChat uygulama diyebilirsiniz:
 
-[ ![](implementing-sirikit-images/request01w.png "Info.plist düzenleyicisinde NSSiriUsageDescription")](implementing-sirikit-images/request01w.png)
+[![](implementing-sirikit-images/request01w.png "Info.plist düzenleyicisinde NSSiriUsageDescription")](implementing-sirikit-images/request01w.png#lightbox)
 
 -----
 
@@ -460,128 +460,128 @@ Eklemek için bir `AppIntentVocabulary.plist` dosya uygulama projesi için aşa�
 
 1. Proje adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **yeni dosya...**   >  **iOS**:
 
-    [ ![](implementing-sirikit-images/plist01.png "Bir özellik listesi ekleme")](implementing-sirikit-images/plist01.png) 
+    [![](implementing-sirikit-images/plist01.png "Bir özellik listesi ekleme")](implementing-sirikit-images/plist01.png#lightbox) 
 2. Çift `AppIntentVocabulary.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın.
 3. Tıklatın  **+**  anahtar eklemek için ayarlanmış **adı** için `ParameterVocabularies` ve **türü** için `Array`:
 
-    [ ![](implementing-sirikit-images/plist02.png "ParameterVocabularies ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist02.png)
+    [![](implementing-sirikit-images/plist02.png "ParameterVocabularies ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist02.png#lightbox)
 4. Genişletme `ParameterVocabularies` tıklatıp  **+**  düğmesine tıklayın ve ayarlama **türü** için `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist03.png "Sözlüğe türünü ayarlayın")](implementing-sirikit-images/plist03.png)
+    [![](implementing-sirikit-images/plist03.png "Sözlüğe türünü ayarlayın")](implementing-sirikit-images/plist03.png#lightbox)
 5. Tıklatın  **+**  yeni bir anahtar eklemek için ayarlayın **adı** için `ParameterNames` ve **türü** için `Array`:
 
-    [ ![](implementing-sirikit-images/plist04.png "ParameterNames ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist04.png)
+    [![](implementing-sirikit-images/plist04.png "ParameterNames ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist04.png#lightbox)
 6. Tıklatın  **+**  ile yeni bir anahtar eklemek için **türü** , `String` ve değeri olarak kullanılabilir parametre adlarından biri. Örneğin, `INStartWorkoutIntent.workoutName`:
 
-    [ ![](implementing-sirikit-images/plist05.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05.png)
+    [![](implementing-sirikit-images/plist05.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05.png#lightbox)
 7. Ekleme `ParameterVocabulary` anahtarını `ParameterVocabularies` ile anahtar **türü** , `Array`:
 
-    [ ![](implementing-sirikit-images/plist06.png "Bu tür dizi ParameterVocabularies anahtarla ParameterVocabulary anahtarını ekleyin")](implementing-sirikit-images/plist06.png)
+    [![](implementing-sirikit-images/plist06.png "Bu tür dizi ParameterVocabularies anahtarla ParameterVocabulary anahtarını ekleyin")](implementing-sirikit-images/plist06.png#lightbox)
 8. Yeni bir anahtarla eklemek **türü** , `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist07.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist07.png)
+    [![](implementing-sirikit-images/plist07.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist07.png#lightbox)
 9. Ekleme `VocabularyItemIdentifier` ile anahtar **türü** , `String` ve dönem için benzersiz bir kimlik belirtin:
 
-    [ ![](implementing-sirikit-images/plist08.png "Dize türünde VocabularyItemIdentifier anahtarla ekleyin ve benzersiz bir kimlik belirtin")](implementing-sirikit-images/plist08.png)
+    [![](implementing-sirikit-images/plist08.png "Dize türünde VocabularyItemIdentifier anahtarla ekleyin ve benzersiz bir kimlik belirtin")](implementing-sirikit-images/plist08.png#lightbox)
 10. Ekleme `VocabularyItemSynonyms` ile anahtar **türü** , `Array`:
 
-    [ ![](implementing-sirikit-images/plist09.png "Bu tür dizi VocabularyItemSynonyms anahtarla ekleme")](implementing-sirikit-images/plist09.png)
+    [![](implementing-sirikit-images/plist09.png "Bu tür dizi VocabularyItemSynonyms anahtarla ekleme")](implementing-sirikit-images/plist09.png#lightbox)
 11. Yeni bir anahtarla eklemek **türü** , `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist10.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist10.png)
+    [![](implementing-sirikit-images/plist10.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist10.png#lightbox)
 12. Ekleme `VocabularyItemPhrase` ile anahtar **türü** , `String` ve olduğunu uygulamayı terimi tanımlama:
 
-    [ ![](implementing-sirikit-images/plist11.png "Dize türünde ve uygulama olduğunu tanımlama terim VocabularyItemPhrase anahtarla ekleme")](implementing-sirikit-images/plist11.png)
+    [![](implementing-sirikit-images/plist11.png "Dize türünde ve uygulama olduğunu tanımlama terim VocabularyItemPhrase anahtarla ekleme")](implementing-sirikit-images/plist11.png#lightbox)
 13. Ekleme `VocabularyItemPronunciation` ile anahtar **türü** , `String` ve ses telaffuz koşulunun:
 
-    [ ![](implementing-sirikit-images/plist12.png "Dize türünde ve ses telaffuz koşulunun VocabularyItemPronunciation anahtarla ekleme")](implementing-sirikit-images/plist12.png)
+    [![](implementing-sirikit-images/plist12.png "Dize türünde ve ses telaffuz koşulunun VocabularyItemPronunciation anahtarla ekleme")](implementing-sirikit-images/plist12.png#lightbox)
 14. Ekleme `VocabularyItemExamples` ile anahtar **türü** , `Array`:
 
-    [ ![](implementing-sirikit-images/plist13.png "Bu tür dizi VocabularyItemExamples anahtarla ekleme")](implementing-sirikit-images/plist13.png)
+    [![](implementing-sirikit-images/plist13.png "Bu tür dizi VocabularyItemExamples anahtarla ekleme")](implementing-sirikit-images/plist13.png#lightbox)
 15. Birkaç eklemek `String` terimi örnek kullanımları anahtarlarla:
 
-    [ ![](implementing-sirikit-images/plist14.png "Terim örnek kullanımları birkaç dize anahtarlarıyla ekleme")](implementing-sirikit-images/plist14.png)
+    [![](implementing-sirikit-images/plist14.png "Terim örnek kullanımları birkaç dize anahtarlarıyla ekleme")](implementing-sirikit-images/plist14.png#lightbox)
 16. Uygulamanın gereksinim tanımlamak için tüm diğer özel terimler için yukarıdaki adımları yineleyin.
 17. Daraltma `ParameterVocabularies` anahtarı.
 18. Ekleme `IntentPhrases` ile anahtar **türü** , `Array`:
 
-    [ ![](implementing-sirikit-images/plist15.png "Bu tür dizi IntentPhrases anahtarla ekleme")](implementing-sirikit-images/plist15.png)
+    [![](implementing-sirikit-images/plist15.png "Bu tür dizi IntentPhrases anahtarla ekleme")](implementing-sirikit-images/plist15.png#lightbox)
 19. Yeni bir anahtarla eklemek **türü** , `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist16.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist16.png)
+    [![](implementing-sirikit-images/plist16.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist16.png#lightbox)
 20. Ekleme `IntentName` ile anahtar **türü** , `String` ve hedefi örneğin:
 
-    [ ![](implementing-sirikit-images/plist17.png "Örneğin dize türünde ve amacı ile IntentName anahtarı Ekle")](implementing-sirikit-images/plist17.png)
+    [![](implementing-sirikit-images/plist17.png "Örneğin dize türünde ve amacı ile IntentName anahtarı Ekle")](implementing-sirikit-images/plist17.png#lightbox)
 21. Ekleme `IntentExamples` ile anahtar **türü** , `Array`:
 
-    [ ![](implementing-sirikit-images/plist18.png "Bu tür dizi IntentExamples anahtarla ekleme")](implementing-sirikit-images/plist18.png)
+    [![](implementing-sirikit-images/plist18.png "Bu tür dizi IntentExamples anahtarla ekleme")](implementing-sirikit-images/plist18.png#lightbox)
 22. Birkaç eklemek `String` terimi örnek kullanımları anahtarlarla:
 
-    [ ![](implementing-sirikit-images/plist19.png "Terim örnek kullanımları birkaç dize anahtarlarıyla ekleme")](implementing-sirikit-images/plist19.png)
+    [![](implementing-sirikit-images/plist19.png "Terim örnek kullanımları birkaç dize anahtarlarıyla ekleme")](implementing-sirikit-images/plist19.png#lightbox)
 23. Uygulama kullanım örneği sağlamanız gereken tüm hedefleri için yukarıdaki adımları yineleyin.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Proje adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **yeni dosya...**   >  **iOS**:
 
-    [ ![](implementing-sirikit-images/plist01w.png "Yeni Info.plist ekleme")](implementing-sirikit-images/plist01w.png) 
+    [![](implementing-sirikit-images/plist01w.png "Yeni Info.plist ekleme")](implementing-sirikit-images/plist01w.png#lightbox) 
 2. Çift `AppIntentVocabulary.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın.
 3. Tıklatın  **+**  anahtar eklemek için ayarlanmış **adı** için `ParameterVocabularies` ve **türü** için `Array`:
 
-    [ ![](implementing-sirikit-images/plist02w.png "ParameterVocabularies ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist02w.png)
+    [![](implementing-sirikit-images/plist02w.png "ParameterVocabularies ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist02w.png#lightbox)
 4. Genişletme `ParameterVocabularies` tıklatıp  **+**  düğmesine tıklayın ve ayarlama **türü** için `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist03w.png "Sözlüğe türünü ayarlayın")](implementing-sirikit-images/plist03w.png)
+    [![](implementing-sirikit-images/plist03w.png "Sözlüğe türünü ayarlayın")](implementing-sirikit-images/plist03w.png#lightbox)
 5. Tıklatın  **+**  yeni bir anahtar eklemek için ayarlayın **adı** için `ParameterNames` ve **türü** için `Array`:
 
-    [ ![](implementing-sirikit-images/plist04w.png "ParameterNames ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist04w.png)
+    [![](implementing-sirikit-images/plist04w.png "ParameterNames ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist04w.png#lightbox)
 6. Tıklatın  **+**  ile yeni bir anahtar eklemek için **türü** , `String` ve değeri olarak kullanılabilir parametre adlarından biri. Örneğin, `INStartWorkoutIntent.workoutName`:
 
-    [ ![](implementing-sirikit-images/plist05w.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05w.png)
+    [![](implementing-sirikit-images/plist05w.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05w.png#lightbox)
 7. Ekleme `ParameterVocabulary` anahtarını `ParameterVocabularies` ile anahtar **türü** , `Array`:
 
-    [ ![](implementing-sirikit-images/plist06w.png "Bu tür dizi ParameterVocabularies anahtarla ParameterVocabulary anahtarını ekleyin")](implementing-sirikit-images/plist06w.png)
+    [![](implementing-sirikit-images/plist06w.png "Bu tür dizi ParameterVocabularies anahtarla ParameterVocabulary anahtarını ekleyin")](implementing-sirikit-images/plist06w.png#lightbox)
 8. Yeni bir anahtarla eklemek **türü** , `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist07w.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist07w.png)
+    [![](implementing-sirikit-images/plist07w.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist07w.png#lightbox)
 9. Ekleme `VocabularyItemIdentifier` ile anahtar **türü** , `String` ve dönem için benzersiz bir kimlik belirtin:
 
-    [ ![](implementing-sirikit-images/plist08w.png "Dize türünde VocabularyItemIdentifier anahtarla ekleyin ve dönem için benzersiz bir kimlik belirtin")](implementing-sirikit-images/plist08w.png)
+    [![](implementing-sirikit-images/plist08w.png "Dize türünde VocabularyItemIdentifier anahtarla ekleyin ve dönem için benzersiz bir kimlik belirtin")](implementing-sirikit-images/plist08w.png#lightbox)
 10. Ekleme `VocabularyItemSynonyms` ile anahtar **türü** , `Array`:
 
-    [ ![](implementing-sirikit-images/plist09w.png "Bu tür dizi VocabularyItemSynonyms anahtarla ekleme")](implementing-sirikit-images/plist09w.png)
+    [![](implementing-sirikit-images/plist09w.png "Bu tür dizi VocabularyItemSynonyms anahtarla ekleme")](implementing-sirikit-images/plist09w.png#lightbox)
 11. Yeni bir anahtarla eklemek **türü** , `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist10w.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist10w.png)
+    [![](implementing-sirikit-images/plist10w.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist10w.png#lightbox)
 12. Ekleme `VocabularyItemPhrase` ile anahtar **türü** , `String` ve olduğunu uygulamayı terimi tanımlama:
 
-    [ ![](implementing-sirikit-images/plist11w.png "Dize türünde ve uygulama olduğunu tanımlama terim VocabularyItemPhrase anahtarla ekleme")](implementing-sirikit-images/plist11w.png)
+    [![](implementing-sirikit-images/plist11w.png "Dize türünde ve uygulama olduğunu tanımlama terim VocabularyItemPhrase anahtarla ekleme")](implementing-sirikit-images/plist11w.png#lightbox)
 13. Ekleme `VocabularyItemPronunciation` ile anahtar **türü** , `String` ve ses telaffuz koşulunun:
 
-    [ ![](implementing-sirikit-images/plist12w.png "Dize türünde ve ses telaffuz koşulunun VocabularyItemPronunciation anahtarla ekleme")](implementing-sirikit-images/plist12w.png)
+    [![](implementing-sirikit-images/plist12w.png "Dize türünde ve ses telaffuz koşulunun VocabularyItemPronunciation anahtarla ekleme")](implementing-sirikit-images/plist12w.png#lightbox)
 14. Ekleme `VocabularyItemExamples` ile anahtar **türü** , `Array`:
 
-    [ ![](implementing-sirikit-images/plist13w.png "Bu tür dizi VocabularyItemExamples anahtarla ekleme")](implementing-sirikit-images/plist13w.png)
+    [![](implementing-sirikit-images/plist13w.png "Bu tür dizi VocabularyItemExamples anahtarla ekleme")](implementing-sirikit-images/plist13w.png#lightbox)
 15. Birkaç eklemek `String` terimi örnek kullanımları anahtarlarla:
 
-    [ ![](implementing-sirikit-images/plist14w.png "Terim örnek kullanımları birkaç dize anahtarlarıyla ekleme")](implementing-sirikit-images/plist14w.png)
+    [![](implementing-sirikit-images/plist14w.png "Terim örnek kullanımları birkaç dize anahtarlarıyla ekleme")](implementing-sirikit-images/plist14w.png#lightbox)
 16. Uygulamanın gereksinim tanımlamak için tüm diğer özel terimler için yukarıdaki adımları yineleyin.
 17. Daraltma `ParameterVocabularies` anahtarı.
 18. Ekleme `IntentPhrases` ile anahtar **türü** , `Array`:
 
-    [ ![](implementing-sirikit-images/plist15w.png "Bu tür dizi IntentPhrases anahtarla ekleme")](implementing-sirikit-images/plist15w.png)
+    [![](implementing-sirikit-images/plist15w.png "Bu tür dizi IntentPhrases anahtarla ekleme")](implementing-sirikit-images/plist15w.png#lightbox)
 19. Yeni bir anahtarla eklemek **türü** , `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist16w.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist16w.png)
+    [![](implementing-sirikit-images/plist16w.png "Bu tür sözlüğü ile yeni bir anahtar ekleyin")](implementing-sirikit-images/plist16w.png#lightbox)
 20. Ekleme `IntentName` ile anahtar **türü** , `String` ve hedefi örneğin:
 
-    [ ![](implementing-sirikit-images/plist17w.png "Örneğin dize türünde ve amacı ile IntentName anahtarı Ekle")](implementing-sirikit-images/plist17w.png)
+    [![](implementing-sirikit-images/plist17w.png "Örneğin dize türünde ve amacı ile IntentName anahtarı Ekle")](implementing-sirikit-images/plist17w.png#lightbox)
 21. Ekleme `IntentExamples` ile anahtar **türü** , `Array`:
 
-    [ ![](implementing-sirikit-images/plist18w.png "Bu tür dizi IntentExamples anahtarla ekleme")](implementing-sirikit-images/plist18w.png)
+    [![](implementing-sirikit-images/plist18w.png "Bu tür dizi IntentExamples anahtarla ekleme")](implementing-sirikit-images/plist18w.png#lightbox)
 22. Birkaç eklemek `String` terimi örnek kullanımları anahtarlarla:
 
-    [ ![](implementing-sirikit-images/plist19w.png "Terim örnek kullanımları birkaç dize anahtarlarıyla ekleme")](implementing-sirikit-images/plist19w.png)
+    [![](implementing-sirikit-images/plist19w.png "Terim örnek kullanımları birkaç dize anahtarlarıyla ekleme")](implementing-sirikit-images/plist19w.png#lightbox)
 23. Uygulama kullanım örneği sağlamanız gereken tüm hedefleri için yukarıdaki adımları yineleyin.
 
 -----
@@ -612,27 +612,27 @@ Hedefleri uzantı çözüme eklemek için aşağıdakileri yapın:
 1. Sağ tıklayın **çözüm adı** içinde **çözüm paneli** seçip **Ekle** > **Yeni Proje Ekle...** .
 2. İletişim kutusundan **iOS** > **uzantıları** > **hedefi uzantısı** tıklatıp **sonraki** düğmesi: 
 
-    [ ![](implementing-sirikit-images/intents05.png "Hedefi uzantı Seç")](implementing-sirikit-images/intents05.png)
+    [![](implementing-sirikit-images/intents05.png "Hedefi uzantı Seç")](implementing-sirikit-images/intents05.png#lightbox)
 3. Sonraki girin bir **adı** tıklatın ve hedefi uzantısı için **sonraki** düğmesi: 
 
-    [ ![](implementing-sirikit-images/intents06.png "Hedefi uzantısı için bir ad girin")](implementing-sirikit-images/intents06.png)
+    [![](implementing-sirikit-images/intents06.png "Hedefi uzantısı için bir ad girin")](implementing-sirikit-images/intents06.png#lightbox)
 4. Son olarak, tıklatın **oluşturma** düğmesi hedefi uzantısı uygulamaları çözüme eklemek için: 
 
-    [ ![](implementing-sirikit-images/intents07.png "Hedefi uzantısı uygulamaları ekleyin")](implementing-sirikit-images/intents07.png)
+    [![](implementing-sirikit-images/intents07.png "Hedefi uzantısı uygulamaları ekleyin")](implementing-sirikit-images/intents07.png#lightbox)
 5. İçinde **Çözüm Gezgini**, sağ tıklayın **başvuruları** klasörü yeni oluşturulan hedefi uzantısı. (Uygulama yukarıda oluşturduğunuz) ortak paylaşılan kod kitaplığı projesi adını denetleyin ve tıklayın **Tamam** düğmesi: 
 
-    [ ![](implementing-sirikit-images/intents08.png "Ortak paylaşılan kod kitaplık projesinin adı seçin")](implementing-sirikit-images/intents08.png)
+    [![](implementing-sirikit-images/intents08.png "Ortak paylaşılan kod kitaplık projesinin adı seçin")](implementing-sirikit-images/intents08.png#lightbox)
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Sağ **çözüm adı** içinde **Çözüm Gezgini** seçip **Ekle** > **Yeni Proje Ekle...** .
 2. İletişim kutusundan **iOS** > **uzantıları** > **hedefi uzantısı** tıklatıp **sonraki** düğmesi: 
 
-    [ ![](implementing-sirikit-images/intents05w.png "Hedefi uzantı Seç")](implementing-sirikit-images/intents05w.png)
+    [![](implementing-sirikit-images/intents05w.png "Hedefi uzantı Seç")](implementing-sirikit-images/intents05w.png#lightbox)
 3. Sonraki girin bir **adı** tıklatın ve hedefi uzantısı için **Tamam** düğmesi.
 5. İçinde **Çözüm Gezgini**, sağ tıklayın **başvuruları** klasörü yeni oluşturulan hedefi uzantısı. (Uygulama yukarıda oluşturduğunuz) ortak paylaşılan kod kitaplığı projesi adını denetleyin ve tıklayın **Tamam** düğmesi: 
 
-    [ ![](implementing-sirikit-images/intents08w.png "Ortak paylaşılan kod kitaplık projesinin adı seçin")](implementing-sirikit-images/intents08w.png)
+    [![](implementing-sirikit-images/intents08w.png "Ortak paylaşılan kod kitaplık projesinin adı seçin")](implementing-sirikit-images/intents08w.png#lightbox)
     
 -----
 
@@ -644,7 +644,7 @@ Her uygulamanın çözüme eklemiş olduğunuz hedefleri uzantılar yapılandır
 
 Yalnızca normal uygulama uzantıyı gibi uygulamaya varolan anahtarlara sahip `NSExtension` ve `NSExtensionAttributes`. Hedefleri uzantı için yapılandırılması gereken iki yeni özniteliği vardır:
 
-[ ![](implementing-sirikit-images/intents01.png "Yapılandırılması gereken iki yeni öznitelikler")](implementing-sirikit-images/intents01.png)
+[![](implementing-sirikit-images/intents01.png "Yapılandırılması gereken iki yeni öznitelikler")](implementing-sirikit-images/intents01.png#lightbox)
 
 - **IntentsSupported** - gereklidir ve bir dizi uygulama amacı uzantı desteklemek istediği hedefi sınıf adını oluşur.
 - **IntentsRestrictedWhileLocked** -uzantının kilit ekranı davranışını belirtmek uygulama için isteğe bağlı bir anahtardır. Uygulama hedefi uzantısını kullanmak için oturum açmanız kullanıcının gerektiren istediği hedefi sınıf adlarının dizisini oluşur.
@@ -653,11 +653,11 @@ Hedefi uzantının yapılandırmak için `Info.plist` dosya, çift tıklatın **
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents02.png "Düzenleyicideki NSExtension ve NSExtensionAttributes anahtarları")](implementing-sirikit-images/intents02.png)
+[![](implementing-sirikit-images/intents02.png "Düzenleyicideki NSExtension ve NSExtensionAttributes anahtarları")](implementing-sirikit-images/intents02.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents02w.png "Düzenleyicideki NSExtension ve NSExtensionAttributes anahtarları")](implementing-sirikit-images/intents02w.png)
+[![](implementing-sirikit-images/intents02w.png "Düzenleyicideki NSExtension ve NSExtensionAttributes anahtarları")](implementing-sirikit-images/intents02w.png#lightbox)
 
 -----
 
@@ -665,11 +665,11 @@ Genişletme `IntentsSupported` anahtarı ve bu uzantı destekleneceğini herhang
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents09.png "INSendMessageIntent anahtarı")](implementing-sirikit-images/intents09.png)
+[![](implementing-sirikit-images/intents09.png "INSendMessageIntent anahtarı")](implementing-sirikit-images/intents09.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents09w.png "INSendMessageIntent anahtarı")](implementing-sirikit-images/intents09w.png)
+[![](implementing-sirikit-images/intents09w.png "INSendMessageIntent anahtarı")](implementing-sirikit-images/intents09w.png#lightbox)
 
 -----
 
@@ -677,11 +677,11 @@ Uygulama, isteğe bağlı olarak kullanıcının belirli bir amaç kullanmak iç
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents10.png "Eklenen INSendMessageIntent anahtarı")](implementing-sirikit-images/intents10.png)
+[![](implementing-sirikit-images/intents10.png "Eklenen INSendMessageIntent anahtarı")](implementing-sirikit-images/intents10.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents10w.png "Eklenen INSendMessageIntent anahtarı")](implementing-sirikit-images/intents10w.png)
+[![](implementing-sirikit-images/intents10w.png "Eklenen INSendMessageIntent anahtarı")](implementing-sirikit-images/intents10w.png#lightbox)
 
 -----
 
@@ -857,7 +857,7 @@ Daha fazla bilgi için lütfen bkz bizim [işlemek aşama Reference](~/ios/platf
 
 İsteğe bağlı hedefleri UI uzantısı uygulamanın kullanıcı Arabirimi ve Siri deneyim halinde markalama getirmek için bir fırsat sunar ve uygulamaya bağlı eşitleyerek kullanıcılar yapın. Bu uzantıya sahip uygulama marka yanı sıra dökümü görsel ve diğer bilgileri kullanıma sunabilirsiniz.
 
-[ ![](implementing-sirikit-images/intentsui01.png "Hedefleri UI uzantısı örnek çıkış")](implementing-sirikit-images/intentsui01.png)
+[![](implementing-sirikit-images/intentsui01.png "Hedefleri UI uzantısı örnek çıkış")](implementing-sirikit-images/intentsui01.png#lightbox)
 
 Yalnızca hedefleri uzantısını gibi amaçlarını UI uzantısı için aşağıdaki adımı Geliştirici yapın:
 
@@ -876,16 +876,16 @@ Hedefleri UI uzantı çözüme eklemek için aşağıdakileri yapın:
 1. Sağ tıklayın **çözüm adı** içinde **çözüm paneli** seçip **Ekle** > **Yeni Proje Ekle...** .
 2. İletişim kutusundan **iOS** > **uzantıları** > **hedefi UI uzantısı** tıklatıp **sonraki** düğmesi: 
 
-    [ ![](implementing-sirikit-images/intents11.png "Hedefi UI uzantı Seç")](implementing-sirikit-images/intents11.png)
+    [![](implementing-sirikit-images/intents11.png "Hedefi UI uzantı Seç")](implementing-sirikit-images/intents11.png#lightbox)
 3. Sonraki girin bir **adı** tıklatın ve hedefi uzantısı için **sonraki** düğmesi: 
 
-    [ ![](implementing-sirikit-images/intents12.png "Hedefi uzantısı için bir ad girin")](implementing-sirikit-images/intents12.png)
+    [![](implementing-sirikit-images/intents12.png "Hedefi uzantısı için bir ad girin")](implementing-sirikit-images/intents12.png#lightbox)
 4. Son olarak, tıklatın **oluşturma** düğmesi hedefi uzantısı uygulamaları çözüme eklemek için: 
 
-    [ ![](implementing-sirikit-images/intents13.png "Hedefi uzantısı uygulamaları ekleyin")](implementing-sirikit-images/intents13.png)
+    [![](implementing-sirikit-images/intents13.png "Hedefi uzantısı uygulamaları ekleyin")](implementing-sirikit-images/intents13.png#lightbox)
 5. İçinde **Çözüm Gezgini**, sağ tıklayın **başvuruları** klasörü yeni oluşturulan hedefi uzantısı. (Uygulama yukarıda oluşturduğunuz) ortak paylaşılan kod kitaplığı projesi adını denetleyin ve tıklayın **Tamam** düğmesi: 
 
-    [ ![](implementing-sirikit-images/intents14.png "Ortak paylaşılan kod kitaplık projesinin adı seçin")](implementing-sirikit-images/intents14.png)
+    [![](implementing-sirikit-images/intents14.png "Ortak paylaşılan kod kitaplık projesinin adı seçin")](implementing-sirikit-images/intents14.png#lightbox)
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -902,7 +902,7 @@ Hedefleri UI uzantının yapılandırma `Info.plist` dosya uygulama ile birlikte
 
 Yalnızca normal uygulama uzantıyı gibi uygulamaya varolan anahtarlara sahip `NSExtension` ve `NSExtensionAttributes`. Hedefleri uzantı için yapılandırılması gereken bir yeni öznitelik vardır:
 
-[ ![](implementing-sirikit-images/intents03.png "Yapılandırılması gereken bir yeni özniteliği")](implementing-sirikit-images/intents03.png)
+[![](implementing-sirikit-images/intents03.png "Yapılandırılması gereken bir yeni özniteliği")](implementing-sirikit-images/intents03.png#lightbox)
 
 **IntentsSupported** gereklidir ve bir dizi uygulama amacı uzantı desteklemek istediğiniz hedefi sınıf adını oluşur.
 
@@ -910,13 +910,13 @@ Yalnızca normal uygulama uzantıyı gibi uygulamaya varolan anahtarlara sahip `
 
 Hedefi UI uzantının yapılandırmak için `Info.plist` dosya, çift tıklatın **Çözüm Gezgini** düzenlemek için açın. Ardından, geçiş **kaynak** görüntüleyin. ardından genişletin `NSExtension` ve `NSExtensionAttributes` anahtarları Düzenleyicisi'nde:
 
-[ ![](implementing-sirikit-images/intents04.png "Düzenleyicideki NSExtension ve NSExtensionAttributes anahtarları")](implementing-sirikit-images/intents04.png)
+[![](implementing-sirikit-images/intents04.png "Düzenleyicideki NSExtension ve NSExtensionAttributes anahtarları")](implementing-sirikit-images/intents04.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Hedefi UI uzantının yapılandırmak için `Info.plist` dosya, çift tıklatın **Çözüm Gezgini** düzenlemek için açın. Genişletme `NSExtension` ve `NSExtensionAttributes` anahtarları Düzenleyicisi'nde:
 
-[ ![](implementing-sirikit-images/intents04w.png "Düzenleyicideki kurulacağı NSExtension ve NSExtensionAttributes anahtarları")](implementing-sirikit-images/intents04w.png)
+[![](implementing-sirikit-images/intents04w.png "Düzenleyicideki kurulacağı NSExtension ve NSExtensionAttributes anahtarları")](implementing-sirikit-images/intents04w.png#lightbox)
 
 -----
 
@@ -924,11 +924,11 @@ Genişletme `IntentsSupported` anahtarı ve bu uzantı destekleneceğini herhang
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents15.png "INSendMessageIntent anahtarı")](implementing-sirikit-images/intents15.png)
+[![](implementing-sirikit-images/intents15.png "INSendMessageIntent anahtarı")](implementing-sirikit-images/intents15.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents15w.png "INSendMessageIntent anahtarı")](implementing-sirikit-images/intents15w.png)
+[![](implementing-sirikit-images/intents15w.png "INSendMessageIntent anahtarı")](implementing-sirikit-images/intents15w.png#lightbox)
 
 -----
 

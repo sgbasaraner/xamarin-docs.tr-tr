@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/19/2017
-ms.openlocfilehash: b169bcc64af15de3d87bfb7f8059b4251f1a3ad9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1b1496f4a6a504c8e991f853c92f937015797aa6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="my-android-resourcedesignercs-file-will-not-update"></a>My Android Resource.designer.cs dosyasını güncelleştirmez
 
 > [!NOTE]
-> **Not:** Xamarin Studio 5.1.4 ve sonraki sürümlerinde bu sorunu Çözümlendi. Ancak, Mac için Visual Studio'daki sorun ortaya çıkarsa, lütfen dosya bir [yeni hata](~/cross-platform/troubleshooting/questions/howto-file-bug.md) yapı bilgi ve tam bir günlük çıktısı, tam sürüm oluşturma.
+> Xamarin Studio 5.1.4 ve sonraki sürümlerinde bu sorunu Çözümlendi. Ancak, Mac için Visual Studio'daki sorun ortaya çıkarsa, lütfen dosya bir [yeni hata](~/cross-platform/troubleshooting/questions/howto-file-bug.md) yapı bilgi ve tam bir günlük çıktısı, tam sürüm oluşturma.
 
 Xamarin.Studio 5.1 hatada kısmen veya tamamen .csproj dosyasındaki xml kodunu silerek .csproj dosyaları daha önce bozuk. Bu önemli Android bölümlerini yapı (Android Resource.designer.cs güncelleştirme gibi) sistem neden başarısız. Kararlı 5.1.4 itibariyle 15 Temmuz sürüm, bu hatanın düzeltildiğini; Ancak birçok durumda proje dosyası aşağıda açıklandığı gibi el ile onarılması gerekmektedir.
 

@@ -3,16 +3,16 @@ title: "1. bölüm. XAML ile çalışmaya başlama"
 description: "Bir Xamarin.Forms uygulaması XAML genellikle bir sayfanın visual içeriği tanımlamak için kullanılır. XAML dosyası her zaman için biçimlendirme kodu destek sağlayan bir C# kod dosyası ile ilişkilidir. Birlikte, bu iki dosya alt görünümleri ve özellik başlatma içeren yeni bir sınıf tanımına katkıda. XAML dosyası içinde sınıfları ve özellikleri XML öğeleri ve öznitelikleri ile başvurulan ve biçimlendirme ve kodun arasında bağlantı kurulur."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 8e02dbd8687fc10582874710db7ca6848f546751
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55c4fa73044b1c37e879ed7731161269bdbf8ba8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>1. bölüm. XAML ile çalışmaya başlama
 
@@ -195,7 +195,7 @@ Normal olarak oluşturulan kod dosyalarıyla kadar zaman harcamanız gerekmez an
 
 Derleme ve bu program çalıştırıldığında `Label` öğe XAML da anlaşılacağı gibi sayfasının ortasında görünür. Üç soldan sağa iOS, Android ve Windows 10 Mobile platformlarına:
 
-[![](get-started-with-xaml-images/xamlsamples.png "Xamarin.Forms görüntü varsayılan")](get-started-with-xaml-images/xamlsamples-large.png "Xamarin.Forms varsayılan görüntü")
+[![](get-started-with-xaml-images/xamlsamples.png "Xamarin.Forms görüntü varsayılan")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms varsayılan görüntü")
 
 Daha ilginç görseller için ihtiyacınız olan tek şey daha fazla XAML ilginç.
 
@@ -354,7 +354,7 @@ public MainPage()
 
 Ayarı `Content` sayfanın özelliğini değiştirir ayarını `Content` XAML dosyası bir özellik. Derleme ve yeni sürümü bu program, dağıtmak, ekranda bir düğme görüntülenir. Bunu tuşuna basarak gider `HelloXamlPage`. İPhone, Android ve Windows 10 Mobile sonuç sayfasında İşte aygıtları:
 
-[ ![](get-started-with-xaml-images/helloxaml1.png "Etiket metni Döndürülmüş")](get-started-with-xaml-images/helloxaml1-large.png "etiket metnini Döndürülmüş")
+[![](get-started-with-xaml-images/helloxaml1.png "Etiket metni Döndürülmüş")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "etiket metnini Döndürülmüş")
 
 Geri gidebilir `MainPage` kullanarak **< geri** sayfanın üst kısmındaki veya Android phone'da altındaki sol ok tuşunu kullanarak veya Windows 10 Mobile sayfasında altındaki sol ok tuşunu kullanarak iOS, düğme.
 
@@ -364,7 +364,7 @@ XAML işlemek için farklı yollar için deneme çekinmeyin `Label`. Unicode kar
 
 İşte bu şekilde görünür:
 
-[ ![](get-started-with-xaml-images/helloxaml2.png "Etiket metni Unicode karakterler içeren Döndürülmüş")](get-started-with-xaml-images/helloxaml2-large.png "Unicode karakterler içeren etiket metnini Döndürülmüş")
+[![](get-started-with-xaml-images/helloxaml2.png "Etiket metni Unicode karakterler içeren Döndürülmüş")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "Unicode karakterler içeren etiket metnini Döndürülmüş")
 
 ## <a name="xaml-and-code-interactions"></a>XAML ve kod etkileşimleri
 
@@ -392,7 +392,7 @@ XAML işlemek için farklı yollar için deneme çekinmeyin `Label`. Unicode kar
 
 Bu XAML dosyası sözdizimsel olarak tamamlandıktan ve İşte bu şekilde görünür:
 
-[ ![](get-started-with-xaml-images/xamlpluscode1.png "Bir sayfa üzerinde birden çok denetim")](get-started-with-xaml-images/xamlpluscode1-large.png "bir sayfada birden çok denetimleri")
+[![](get-started-with-xaml-images/xamlpluscode1.png "Bir sayfa üzerinde birden çok denetim")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "bir sayfada birden çok denetimleri")
 
 Ancak, bu programın işlevsel olarak deficient olması için dikkate alınması gereken olasıdır. Belki de `Slider` neden olması `Label` geçerli değerini görüntülemek için ve `Button` büyük olasılıkla program içinde bir şeyler için tasarlanmıştır.
 
@@ -483,7 +483,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 Programı ilk kez çalıştırdığınızda `Label` görüntülemez `Slider` çünkü değer `ValueChanged` olay henüz şu kurmadı. Ancak herhangi bir değişiklik `Slider` değeri görüntülenmesine neden olur:
 
-[ ![](get-started-with-xaml-images/xamlpluscode2.png "Görüntülenen kaydırıcı değeri")](get-started-with-xaml-images/xamlpluscode2-large.png "görüntülenen kaydırıcı değeri")
+[![](get-started-with-xaml-images/xamlpluscode2.png "Görüntülenen kaydırıcı değeri")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "görüntülenen kaydırıcı değeri")
 
 İçin şimdi `Button`. Şimdi bir yanıta benzetimini bir `Clicked` olan bir uyarı görüntüleyerek olay `Text` düğmesinin. Olay işleyicisi güvenli bir şekilde atama `sender` bağımsız değişkeni bir `Button` ve özelliklerini erişebilirsiniz:
 
@@ -530,7 +530,7 @@ Bu giriş ile XAML dosyasını ve kod dosyası için bir sınıf tanımı nasıl
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
-- [2. bölüm. Temel XAML sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-- [Bölüm 3. XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Bölüm 4. Veri bağlama temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [Bölüm 2. Temel XAML Sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [Bölüm 3. XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [Bölüm 4. Temel Veri Bağlama Bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
 - [Bölüm 5. Verileri için MVVM bağlama](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

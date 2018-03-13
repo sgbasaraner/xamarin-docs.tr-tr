@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 035956f5c39a77c625a6f4cb92cbfa67a42f2402
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e7a61dcf2cf2fabf575e30ef402121db3bea7912
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-user-interface-objects"></a>Kullanıcı arabirimi nesneleri oluşturma
 
@@ -42,17 +42,17 @@ Kullandığınız, hangi yöntemi denetim özelliklerini ve olayları yine C# il
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
- [ ![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png)
+ [![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
- [ ![](creating-ui-objects-images/image2b-vs.png "Araç kutusu paneli - Visual Stuio")](creating-ui-objects-images/image2b.png)
+ [![](creating-ui-objects-images/image2b-vs.png "Araç kutusu paneli - Visual Stuio")](creating-ui-objects-images/image2b.png#lightbox)
  
 -----
 
 Tasarım yüzeyine bir Denetim seçildiğinde **özellikleri paneli** denetleyen öznitelikleri gösterir. **Pencere öğesi > kimlik > adı** aşağıdaki ekran görüntüsünde doldurulur, alan olarak kullanılan *çıkışı* adı. Bu, C# denetimi nasıl başvurabilir.
 
- [ ![](creating-ui-objects-images/image3b.png "Özellikler pencere öğesi paneli")](creating-ui-objects-images/image3b.png)
+ [![](creating-ui-objects-images/image3b.png "Özellikler pencere öğesi paneli")](creating-ui-objects-images/image3b.png#lightbox)
 
 İOS Tasarımcısı'nı kullanarak bir daha ayrıntılı bilgi edinmek için bkz [Tasarımcısı iOS giriş](~/ios/user-interface/designer/introduction.md) Kılavuzu.
 
@@ -64,27 +64,27 @@ Film şeridi dosya bağlam menüsünü erişmeye ve açmak bir film şeridi Xcod
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
- [ ![](creating-ui-objects-images/imagexcode.png "Film şeridi bağlam menüsü - Xcode")](creating-ui-objects-images/imagexcode.png)
+ [![](creating-ui-objects-images/imagexcode.png "Film şeridi bağlam menüsü - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](creating-ui-objects-images/imagexcode-vs.png "Film şeridi bağlam menüsü - Xcode")](creating-ui-objects-images/imagexcode-vs.png)
+[![](creating-ui-objects-images/imagexcode-vs.png "Film şeridi bağlam menüsü - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 Denetimleri, tasarım yüzeyine sürüklenebilir **Nesne Kitaplığı** aşağıda gösterilmiştir:
 
- [ ![](creating-ui-objects-images/image5a.png "Xcode Nesne Kitaplığı")](creating-ui-objects-images/image5a.png)
+ [![](creating-ui-objects-images/image5a.png "Xcode Nesne Kitaplığı")](creating-ui-objects-images/image5a.png#lightbox)
 
 UI arabirimini oluşturmalısınız Oluşturucu ile tasarlarken bir **çıkışı** , C# başvurusu istediğiniz her denetim için. Bu açarak yapılır **Yardımcısı Düzenleyicisi** Merkezi'ni kullanarak **Düzenleyicisi** Xcode araç çubuğu düğmesi düğmesinde:
 
- [ ![](creating-ui-objects-images/image6a.png "Yardımcısı Düzenleyici düğmesi")](creating-ui-objects-images/image6a.png)
+ [![](creating-ui-objects-images/image6a.png "Yardımcısı Düzenleyici düğmesi")](creating-ui-objects-images/image6a.png#lightbox)
 
 Bir kullanıcı arabirimi nesnesinde'ı tıklatın; ardından **denetimi Sürükle** .h dosyasına. İçin ** denetimi Sürükle **, CTRL tuşunu basılı tutun sonra tıklayın ve kullanıcı arabirimi nesnesi üzerinde tutmak için çıkış (veya eylem) oluşturmakta olduğunuz. CTRL tuşunu basılı üstbilgi dosyası sürükleyin basılı tutun. Aşağıda sürükleyerek bitiş `@interface` tanımı. Mavi bir çizgi, bir resim yazısı Ekle çıkışı veya çıkışı koleksiyonu, aşağıdaki ekran görüntüsünde gösterildiği gibi görünmelidir.
 
 Öğesini serbest bıraktığınızda başvurulabilir bir C# özellik kodu oluşturmak için kullanılan çıkış için bir ad istenir:
 
- [ ![](creating-ui-objects-images/image8a.png "Prizine oluşturma")](creating-ui-objects-images/image8a.png)
+ [![](creating-ui-objects-images/image8a.png "Prizine oluşturma")](creating-ui-objects-images/image8a.png#lightbox)
 
 Nasıl Xcode'nın arabirimi Oluşturucu Mac için Visual Studio ile tümleşir. daha fazla bilgi için başvurmak [Xib kod oluşturma](~/ios/internals/xib-code-generation.md#generated) belge.
 
@@ -118,7 +118,7 @@ public override void ViewDidLoad () {
 
 Görünüm denetleyicileri tasarım yüzeyine eklendiğinde, iki karşılık gelen C# dosyalar projede oluşturulur. Bu örnekte, `ControlsViewController.cs` ve `ControlsViewController.designer.cs` otomatik olarak oluşturulan:
 
- [ ![](creating-ui-objects-images/image9b.png "ViewController parçalı sınıf")](creating-ui-objects-images/image9b.png)
+ [![](creating-ui-objects-images/image9b.png "ViewController parçalı sınıf")](creating-ui-objects-images/image9b.png#lightbox)
 
 `MainViewController.cs` Dosya içindir *kodunuzu*. Bu yerdir `View` gibi yaşam döngüsü yöntemler `ViewDidLoad` ve `ViewWillAppear` uygulanır ve ekleyebileceğiniz kendi özellikleri, alanları ve yöntemleri.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 55d692fa92dd08dd9c0887ed10013589afc98ec6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2276b67fc29f2752e4b178168a12e6e980b788d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-watchos"></a>WatchOS giriş
 
@@ -29,11 +29,11 @@ WatchOS uygulama çözüm 3 proje sahiptir:
 
 WatchOS 1 uygulamalardaki uzantısı'nda kod iPhone üzerinde çalışır – Apple Watch etkili bir şekilde bir dış görüntülenir. watchOS 2 ve 3 uygulamalar tamamen Apple Watch üzerinde çalıştırın. Bu fark, aşağıdaki çizimde gösterilmiştir:
 
-[ ![](intro-to-watchos-images/arch-sml.png "Bu diyagramda watchOS 1 ve 2 (ve büyük) watchOS arasındaki fark gösterilir")](intro-to-watchos-images/arch.png)
+[ ![](intro-to-watchos-images/arch-sml.png "Bu diyagramda watchOS 1 ve 2 (ve büyük) watchOS arasındaki fark gösterilir")](intro-to-watchos-images/arch.png#lightbox)
 
 WatchOS'ın hangi sürümü hedeflenen bağımsız olarak, Mac'ın çözüm Pad için Visual Studio'da eksiksiz bir çözüm şunun gibi görünür:
 
-[ ![](intro-to-watchos-images/projectstructure-sml.png "Çözüm paneli")](intro-to-watchos-images/projectstructure.png)
+[![](intro-to-watchos-images/projectstructure-sml.png "Çözüm paneli")](intro-to-watchos-images/projectstructure.png#lightbox)
 
 *Üst uygulama* bir watchOS normal iOS uygulaması çözümüdür. Bu yalnızca bir görünür olan çözümü projedir **Telefonda**. Bu uygulama için kullanım örnekleri öğreticileri, yönetim ekranları ve orta katman filtreleme, cacheing, vb. içerir. Ancak, yüklemek ve izleme uygulama/uzantısı olmadan çalıştırmak kullanıcı için olası **hiç** üst uygulama açmadan böylece tek seferlik başlatma veya Yönetim için çalıştırmak için üst uygulama gerekiyorsa gerekir, izleme programı kullanıcıya bildirmek için uygulama/uzantısı.
 
@@ -139,4 +139,4 @@ Apple belgelerine bakın:
 - [İlk izleme uygulama video](http://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple için izleme paketi Kılavuzu geliştirme](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
 - [Apple'nın WatchKit ipuçları](https://developer.apple.com/watchkit/tips/)
-- [WatchOS 3 giriş](~/ios/watchos/platform/introduction-to-watchos3/index.md)
+- [watchOS 3’e Giriş](~/ios/watchos/platform/introduction-to-watchos3/index.md)

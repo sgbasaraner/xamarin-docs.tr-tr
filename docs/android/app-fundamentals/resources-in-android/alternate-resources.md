@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e421a52b1ae97b0beef59352a756401ed661051e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternate-resources"></a>Diğer kaynaklar
 
@@ -142,7 +142,7 @@ Android temel kaynakları kuralları aşağıdaki test yineleme tarafından beli
 
 Bu kurallar, aynı zamanda aşağıdaki akış şemasında gösterilmiştir:
 
-[![Kaynakları akış çizelgesi](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png)
+[![Kaynakları akış çizelgesi](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png#lightbox)
 
 Sistemin yoğunluk özgü kaynakları arayan ve bunları bulunamıyor yoğunluğu belirli kaynaklar bulun ve bunları ölçeklendirmek deneyecek. Android varsayılan kaynakları kullanamazsınız.
 Örneğin, düşük yoğunluklu bir kaynak ve onu arayan kullanılabilir olmadığı durumlarda, Android varsayılan veya Orta yoğunluklu kaynakları kaynak yoğunluklu sürümü seçebilirsiniz. Yüksek yoğunluklu kaynak 0,75 faktörü gerektiren bir orta yoğunluklu kaynak Ölçeklendirmesi daha az görünürlük sorunları sonuçlanır 0,5 faktörüyle Genişletilebilir çünkü bunu yapar.
@@ -196,4 +196,4 @@ Sonraki ekranda yoğunluğu niteleyicisi olduğu `ldpi`, daha fazla kaynak dizin
 Bu işlem sonucunda, Android kaynak dizinde drawable kaynakları kullanır `drawable-en-port-ldpi` cihaz için.
 
 > [!NOTE]
-> **Not:** bu seçim işlemi bir özel durum ekran boyutu niteleyicileri sağlayın. Geçerli cihaz sağlar daha küçük bir ekran için tasarlanmış kaynak seçmek Android mümkündür. Örneğin, büyük ekran cihaz kaynakları kullanabilir için normal bir boyutta ekran sağlayın. Ancak bunun tersi geçerli değildir: aynı büyük ekran aygıt xlarge ekran için sağlanan kaynakları kullanmaz. Android verilen ekran boyutu eşleşen bir kaynak kümesi bulamazsanız, uygulama kilitleniyor.
+> Bu seçim işlemi bir özel durum ekran boyutu niteleyicileri sağlar. Geçerli cihaz sağlar daha küçük bir ekran için tasarlanmış kaynak seçmek Android mümkündür. Örneğin, büyük ekran cihaz kaynakları kullanabilir için normal bir boyutta ekran sağlayın. Ancak bunun tersi geçerli değildir: aynı büyük ekran aygıt xlarge ekran için sağlanan kaynakları kullanmaz. Android verilen ekran boyutu eşleşen bir kaynak kümesi bulamazsanız, uygulama kilitleniyor.

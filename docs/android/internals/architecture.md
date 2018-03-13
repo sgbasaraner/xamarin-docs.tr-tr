@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 9579acc6c070bf692b0db1bd444a31c9ea4aa7ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="architecture"></a>Mimari
 
@@ -22,13 +22,12 @@ Bu yürütme ortamı çalıştırır yan yana Android çalışma zamanı (resim)
 
 Android, ses, grafik, OpenGL ve telefon gibi sistem tesis çoğunu doğrudan yerel uygulamalar için kullanılabilir değildir, bunlar yalnızca birinde bulunan Android çalışma zamanı Java API'leri aracılığıyla sunulan [Java](https://developer.xamarin.com/api/namespace/Java.Lang/). * ad alanları veya [Android](https://developer.xamarin.com/api/namespace/Android/). * ad alanları. Mimari kabaca gibi şudur:
 
-[![Mono ve diyagramı resim çekirdek üstüne ve altına .NET/Java + bağlamaları](architecture-images/architecture1.png)](architecture-images/architecture1.png)
+[![Mono ve diyagramı resim çekirdek üstüne ve altına .NET/Java + bağlamaları](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
 Xamarin.Android geliştiriciler işletim sisteminde (düşük düzey erişimi için) .NET API'lerini bildikleri çağırma veya bir köprü tarafından sunulan Java API'ları sağlayan Android ad alanları açığa sınıflarını kullanarak çeşitli özelliklere erişim Android çalışma zamanı.
 
 Android sınıfları Android çalışma zamanı sınıflarının nasıl iletişim kuracağını hakkında daha fazla bilgi için bkz: [API tasarım](~/android/internals/api-design.md) belge.
 
-<a name="Application_Packages" />
 
 ## <a name="application-packages"></a>Uygulama paketleri
 
@@ -44,7 +43,6 @@ Android uygulama paketleri ile ZIP kapsayıcıları olan bir *.apk* dosya uzant�
 Xamarin.Android uygulamaları da içeren *Android aranabilir sarmalayıcılar* yönetilen koda çağrı Android izin vermek için.
 
 
-<a name="Android_Callable_Wrappers" />
 
 ## <a name="android-callable-wrappers"></a>Android aranabilir sarmalayıcılar
 
@@ -67,7 +65,6 @@ Genel başvuru açıkça serbest çağırarak [Java.Lang.Object.Dispose()](https
 Örnek yanlışlıkla örneği atma olarak iş parçacıkları arasında paylaşılabilir varsa aranabilir sarmalayıcılar yönetilen atma başka bir iş parçacığı başvurularından etkiler dikkatli olunması gerekir. En fazla koruması, yalnızca `Dispose()` aracılığıyla ayrılmış örneklerin `new` *veya* yöntemlerden, *bilmeniz* yeni örnekleri ve olabilen olmayan önbelleğe alınmış örnekleri her zaman ayırın iş parçacıkları arasında paylaşımı yanlışlıkla örneği neden.
 
 
-<a name="Managed_Callable_Wrapper_Subclasses" />
 
 ## <a name="managed-callable-wrapper-subclasses"></a>Aranabilir sarmalayıcısı alt sınıfların yönetilen
 
@@ -76,7 +73,6 @@ Burada "ilginç" uygulamaya özgü mantığı Canlı yönetilen aranabilir sarma
 Yönetilen aranabilir sarmalayıcılar gibi yönetilen aranabilir sarmalayıcısı alt sınıfların Ayrıca, üzerinden erişilebilir genel bir başvuru içeren [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) özelliği. Yalnızca yönetilen aranabilir sarmalayıcılar ile genel başvuruları açıkça çağırarak serbest bırakılabilirler gibi [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
 Yönetilen aranabilir sarmalayıcılar aksine *çok dikkatli* olarak bu tür örnekleri atma önce alınıp alınmayacağını *Dispose()*örneğinin lık Java örneği arasında eşleme bozar (örneği bir Android aranabilir sarmalayıcısı) ve yönetilen örneği.
 
-<a name="Java_Activation" />
 
 ### <a name="java-activation"></a>Java etkinleştirme
 
@@ -182,7 +178,6 @@ I/mono-stdout( 2993): [Managed: Value=]
 Yalnızca *Dispose()* , aranabilir sarmalayıcısı alt sınıfların Java nesne artık kullanılmayacak veya bir alt hiçbir örnek verilerini içeren bildiğinizde ve yönetilen *(IntPtr, JniHandleOwnership)* Oluşturucu sağlanmadı.
 
 
-<a name="Application_Startup" />
 
 ## <a name="application-startup"></a>Uygulama başlatma
 

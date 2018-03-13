@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 3214a76ee3f976f5dd2afb28edde07100db5a7a1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e53df69fdfd5b5c1fc98b667d4b75d06c16c35dc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xaml-standard-preview"></a>XAML standart (Önizleme)
 
@@ -71,10 +71,10 @@ Aşağıdaki XAML bir Xamarin.Forms kullanılan bazı XAML standart denetimler g
 ```
 
 > [!NOTE]
-> **Not:** xmlns gerektiren `a:` önektir XAML standart denetimlerinde geçerli Önizleme sınırlandırılmasıdır.
+> Xmlns gerektiren `a:` önektir XAML standart denetimlerinde geçerli Önizleme sınırlandırılmasıdır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Önizleme NuGet](https://aka.ms/xf-xamlstandard-nuget)
-- [Denetimleri başvurusu](controls.md)
+- [Denetimler Başvurusu](controls.md)

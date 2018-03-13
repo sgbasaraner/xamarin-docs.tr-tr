@@ -1,5 +1,5 @@
 ---
-title: "Xamarin Profil Oluşturucu"
+title: Xamarin Profiler
 description: "Bu kılavuz, Xamarin Profil Oluşturucu anahtar özelliklerini inceler. Bu Ara profil Oluşturucular, profil oluşturma ve ne zaman kullanılacağı ve standart bir iş akışı profil oluşturma Xamarin uygulamaları için."
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 9c95a1b71f83ee810b775420aab3ceafeeca0379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="xamarin-profiler"></a>Xamarin Profil Oluşturucu
+# <a name="xamarin-profiler"></a>Xamarin Profiler
 
 _Bu kılavuz, Xamarin Profil Oluşturucu anahtar özelliklerini inceler. Bu Ara profil Oluşturucular, profil oluşturma ve ne zaman kullanılacağı ve standart bir iş akışı profil oluşturma Xamarin uygulamaları için._
 
@@ -30,7 +30,7 @@ Bu kılavuz genel profil oluşturma senaryoları inceler ve profil oluşturucu �
 
 - [İndirme ve yükleme](#Download_and_Install)
 - [Profil oluşturucular ve profil oluşturma](#Profilers_and_Profiling)
-- [Xamarin Profil Oluşturucu](#Xamarin_Profiler)
+- [Xamarin Profiler](#Xamarin_Profiler)
 - [Profil Oluşturucu desteği](#Profiler_Support)
 - [Profil Oluşturucu temelleri](#Profiler_Basics)
     - [Uygulamanızda profil izin verme](#Allowing_Profiling_in_your_App)
@@ -74,7 +74,7 @@ Tasarlama ve uygulama geliştirme, erken iyileştirmeyecek önemlidir; diğer bi
 
 Profil oluşturma geliştirme tüm türleri yardımcı olur, ancak Mobil Geliştirme özellikle önemlidir. İyileştirilmemiş kodu mobil platformlarda masaüstü bilgisayarlarda çok daha belirgin ve uygulamanızın başarısını verimli bir şekilde çalışan güzel ve en iyi duruma getirilmiş koduna bağlıdır.
 
-## <a name="xamarin-profiler"></a>Xamarin Profil Oluşturucu
+## <a name="xamarin-profiler"></a>Xamarin Profiler
 
 Xamarin profil oluşturucu geliştiricilere profili uygulamalardan için bir yol sağlayan Mac veya Visual Studio için Visual Studio içinde. Profil Oluşturucu toplar ve geliştirici tarafından uygulamanın davranışını çözümlemek için daha sonra kullanılabilir uygulama hakkında bilgi görüntüler. Xamarin Profil Oluşturucu ile bir uygulama profili için farklı yollar sayıda öğesine bellek profili oluşturma ve istatistiksel örnekleme. Bu ayırma ve zaman profil oluşturucu gerçekleştirildiği sırasıyla Instruments.
 
@@ -212,11 +212,11 @@ Xamarin profil oluşturucu aşağıda gösterildiği gibi beş bölümlerden olu
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![](images/profiler-mac-sml.png "Mac için Visual Studio profil oluşturucu bölümlerde")](images/profiler-mac.png) 
+[![](images/profiler-mac-sml.png "Mac için Visual Studio profil oluşturucu bölümlerde")](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/profiler-vs.png "Visual Studio profil oluşturucu bölümlerde")](images/profiler-vs.png)
+[![](images/profiler-vs.png "Visual Studio profil oluşturucu bölümlerde")](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -234,11 +234,11 @@ Profil Oluşturucu üstünde profil oluşturma sırasında düzenli aralıklarla
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![](images/allocations1.png "Ayırma yöntemi")](images/allocations1.png) 
+[![](images/allocations1.png "Ayırma yöntemi")](images/allocations1.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/allocations1-vs.png "Ayırma yöntemi")](images/allocations1-vs.png)
+[![](images/allocations1-vs.png "Ayırma yöntemi")](images/allocations1-vs.png#lightbox)
 
 -----
 
@@ -248,11 +248,11 @@ Geliştiriciler nasıl uygulamasını kullanarak ve bellek boşaltma çözümlem
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-  [![](images/allocations3.png "Ayırmalar sekmesi")](images/allocations3.png) 
+  [![](images/allocations3.png "Ayırmalar sekmesi")](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations2-vs.png "Ayırmalar sekmesi")](images/allocations2-vs.png)
+  [![](images/allocations2-vs.png "Ayırmalar sekmesi")](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -264,11 +264,11 @@ Ayırmalar denetçisi görünümünü filtreleme ve nesneleri gruplama, istatist
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-  [![](images/allocations2.png "Çağrı ağacı sekmesi")](images/allocations2.png) 
+  [![](images/allocations2.png "Çağrı ağacı sekmesi")](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations3-vs.png "Çağrı ağacı sekmesi")](images/allocations3-vs.png)
+  [![](images/allocations3-vs.png "Çağrı ağacı sekmesi")](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -276,11 +276,11 @@ Ayırmalar denetçisi görünümünü filtreleme ve nesneleri gruplama, istatist
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-  [![](images/allocations4.png "Anlık görüntü sekmesi")](images/allocations4.png) 
+  [![](images/allocations4.png "Anlık görüntü sekmesi")](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations4-vs.png "Anlık görüntü sekmesi")](images/allocations4-vs.png)
+  [![](images/allocations4-vs.png "Anlık görüntü sekmesi")](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -292,15 +292,15 @@ Grafiği aşağıdaki ekran görüntüsünde gösterildiği gibi çalışan uygu
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Zaman profil oluşturucu izleme](images/time1.png)](images/time1.png) 
+[![Zaman profil oluşturucu izleme](images/time1.png)](images/time1.png#lightbox) 
 
-[![Profil Oluşturucu izleme – örnekleri listesi süresi](images/time3.png)](images/time3.png) 
+[![Profil Oluşturucu izleme – örnekleri listesi süresi](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Zaman profil oluşturucu izleme](images/time1-vs.png)](images/time1-vs.png) 
+[![Zaman profil oluşturucu izleme](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![Profil Oluşturucu izleme – örnekleri listesi süresi](images/time3-vs.png)](images/time3-vs.png) 
+[![Profil Oluşturucu izleme – örnekleri listesi süresi](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
@@ -309,11 +309,11 @@ Grafiği aşağıdaki ekran görüntüsünde gösterildiği gibi çalışan uygu
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-  [![](images/time2.png "Profil Oluşturucu izleme – çağrı ağacı süresi")](images/time2.png) 
+  [![](images/time2.png "Profil Oluşturucu izleme – çağrı ağacı süresi")](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/time2-vs.png "Profil Oluşturucu izleme – çağrı ağacı süresi")](images/time2-vs.png) 
+  [![](images/time2-vs.png "Profil Oluşturucu izleme – çağrı ağacı süresi")](images/time2-vs.png#lightbox) 
 
 -----
 
@@ -325,7 +325,7 @@ C# ve F # yönetilen kodu kullanarak, oldukça yaygın ve hangi asla silinecek n
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Döngüleri aracı](images/cycles-vs.png)](images/time1-vs.png) 
+[![Döngüleri aracı](images/cycles-vs.png)](images/time1-vs.png#lightbox) 
 
 -----
 
@@ -338,11 +338,11 @@ Bir uygulama ile başka bir yapılandırma profili varsa, aşağıdaki ileti ile
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Hata iletişim kutusu profil oluşturma](images/image001.png)](images/image001.png) 
+[![Hata iletişim kutusu profil oluşturma](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/image1vs.png "Hata iletişim kutusu profil oluşturma")](images/image1vs.png) 
+[![](images/image1vs.png "Hata iletişim kutusu profil oluşturma")](images/image1vs.png#lightbox) 
 
 -----
 
@@ -350,7 +350,7 @@ Bir uygulama ile başka bir yapılandırma profili varsa, aşağıdaki ileti ile
 Seçin **güncelleştirme** devam etmek için.
 
 <!---
-##Profiling Android Applications
+## Profiling Android Applications
 
 
 Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
@@ -358,7 +358,7 @@ Due to the recent inclusion of the profiling libraries into any new Android proj
 You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
 
 
-##Profiling iOS Applications
+## Profiling iOS Applications
 
 ### Profiling tvOS
 

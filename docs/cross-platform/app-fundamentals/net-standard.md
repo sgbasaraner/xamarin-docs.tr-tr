@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: 294d28c57978218986d62d1ee6579e8d283b8f72
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f448a3ee9c018aa475775a5ac2c614f3e7ddc324
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -29,12 +29,12 @@ Bunu bir Basitleştirilmiş, yeni nesil düşünebilirsiniz [taşınabilir sın�
 
 .NET standart Kitaplığı projelerinde taşınabilir kitaplığı projesi oluşturarak Xamarin Studio 6.2 içinde oluşturulabilir:
 
-[ ![](net-standard-images/xs01-sml.png "Yeni bir taşınabilir kitaplığı projesi oluşturma")](net-standard-images/xs01.png)
+[![](net-standard-images/xs01-sml.png "Yeni bir taşınabilir kitaplığı projesi oluşturma")](net-standard-images/xs01.png#lightbox)
 
 Proje oluşturulduktan sonra sağ tıklayın ve açın **proje seçenekleri** penceresi.
 İçinde **genel** proje .NET standart dönüştürülür ve belirli bir sürümünü kullanmak üzere ayarlanmış bölüm **Platform** aşağı açılan listesi:
 
-[ ![](net-standard-images/xs02-sml.png ".NET standart genel seçenekleri Dönüştür")](net-standard-images/xs02.png)
+[![](net-standard-images/xs02-sml.png ".NET standart genel seçenekleri Dönüştür")](net-standard-images/xs02.png#lightbox)
 
 Daha sonra [bir NuGet paketi oluşturma](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library.md) diğer geliştiricilere bir kitaplık paylaşımı için.
 

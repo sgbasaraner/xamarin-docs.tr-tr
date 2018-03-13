@@ -3,14 +3,15 @@ title: "Bölüm 19 özeti. Koleksiyon görünümleri"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 37afa3a54fd20745a65312fb5a24d958c8ec405f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 73b3ec3e60a8fca5c48f515eab2cbb8359618dbb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Bölüm 19 özeti. Koleksiyon görünümleri
 
@@ -97,7 +98,7 @@ Her bir öğe tarafından görüntülenen `ListView`, küçük bir görsel ağa�
 
 XAML'de ayarlamak olası bir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) için `DataTemplate` ve özel bir görsel ağaç olarak tanımlamak [ `View` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ViewCell.View/) özelliği `ViewCell`. (`View` içerik özellik `ViewCell` böylece `ViewCell.View` etiketleri gerekli değildir.) [ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList) örneği, bu teknik gösterir:
 
-[![Üçlü ekran görüntüsü özel adlı renk liste](images/ch19fg11-small.png "özel adlı renk liste")](images/ch19fg11-large.png "özel adlı renk listesi")
+[![Üçlü ekran görüntüsü özel adlı renk liste](images/ch19fg11-small.png "özel adlı renk liste")](images/ch19fg11-large.png#lightbox "özel adlı renk listesi")
 
 Tüm platformlar için sağa boyutlandırma alma zor olabilir. [ `RowHeight` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RowHeight/) Özelliği yararlıdır, ancak bazı durumlarda için çözümlemelere istersiniz [ `HasUnevenRows` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.HasUnevenRows/) daha az verimlidir özelliği, ancak zorlar `ListView` satır boyutu için. İOS ve Android için bu iki özellik birini uygun satır boyutlandırma almak için kullanmanız gerekir.
 
@@ -127,7 +128,7 @@ Bu, keşfetmek için [ **SchoolOfFineArts** ](https://github.com/xamarin/xamarin
 
 [ **StudentList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/StudentList) program kullanan bir `ImageCell` Öğrenciler ve kendi görüntülerini görüntülemek için bir `ListView`:
 
-[![Üçlü ekran görüntüsü Öğrenci listesi](images/ch19fg18-small.png "Öğrenci listesi")](images/ch19fg18-large.png "Öğrenci listesi")
+[![Üçlü ekran görüntüsü Öğrenci listesi](images/ch19fg18-small.png "Öğrenci listesi")](images/ch19fg18-large.png#lightbox "Öğrenci listesi")
 
 [ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader) örnek ekler bir [ `Header` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.Header/) özellik, ancak yalnızca görünür Android.
 
@@ -223,4 +224,4 @@ Başka bir kullanımını bir `TableView` bir menüsü. [ **MenuCommands** ](htt
 - [Bölüm 19 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch19-Apr2016.pdf)
 - [Bölüm 19 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
 - [ListView](~/xamarin-forms/user-interface/listview/index.md)
-- [Tablo görünümü](~/xamarin-forms/user-interface/tableview.md)
+- [TableView](~/xamarin-forms/user-interface/tableview.md)

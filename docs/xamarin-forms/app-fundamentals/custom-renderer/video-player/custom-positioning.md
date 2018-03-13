@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d4446d30491ee796ca93eadf2e107fc9d74748df
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e7f2ad9e94d68007b1b7d0cca212cd51515a0108
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-positioning"></a>Özel görüntü konumlandırma
 
@@ -472,7 +472,7 @@ Bu nedenle, `Position` özelliği `VideoPlayer` bağlanabilir `Position` özelli
 
 İlk üç nokta (···) gizler `ActivityIndicator`; önceki olduğu gibi aynı olduğundan **özel aktarım** sayfası. İki fark `Label` görüntüleme öğeleri `Position` ve `TimeToEnd` özellikleri. Bu iki arasında üç nokta `Label` öğeleri gizler iki `Button` gösterilen öğeleri **özel aktarım** sayfasında Oynat, Duraklat ve durdurun. Arka plan kodu mantığı de aynıdır **özel aktarım** sayfası.
 
-[![Özel konumlandırmasını](custom-positioning-images/custompositioning-small.png "özel konumlandırmasını")](custom-positioning-images/custompositioning-large.png "özel konumlandırma")
+[![Özel konumlandırmasını](custom-positioning-images/custompositioning-small.png "özel konumlandırmasını")](custom-positioning-images/custompositioning-large.png#lightbox "özel konumlandırma")
 
 Bu tartışma sonucuna `VideoPlayer`.
 

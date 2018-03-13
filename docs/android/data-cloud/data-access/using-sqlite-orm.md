@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: b1eb886685597e671dccf70063c34e102ce2cac9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b9523d76c04dae97b74744fbe2bd6bc7022c3194
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-sqlitenet"></a>SQLite.NET kullanma
 
@@ -21,7 +21,7 @@ Xamarin önerdiği SQLite.NET Android cihazda yerel SQLite veritabanındaki nesn
 
 Bir Xamarin uygulaması SQLite.NET kitaplığı eklemek için Ekle [SQLite.net PCL NuGet paketi](https://www.nuget.org/packages/sqlite-net-pcl/) kullanarak proje **SQLite net PCL** NuGet paketi:
 
-[ ![SQLite.NET NuGet paketi](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet paketi")](using-sqlite-orm-images/image1a.png)
+[![SQLite.NET NuGet paketi](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet paketi")](using-sqlite-orm-images/image1a.png#lightbox)
 
 SQLite.NET kitaplığının kullanılabilir olduktan sonra bir veritabanına erişmek için kullanmak için aşağıdaki üç adımı izleyin:
 
@@ -57,7 +57,7 @@ SQLite.NET kitaplığının kullanılabilir olduktan sonra bir veritabanına eri
 *DataAccess_Basic* bu belge için örnek kod şu şekilde görünür Android çalıştırırken. Kod basit SQLite.NET işlemleri gerçekleştirmek nasıl gösterir ve sonuçları, uygulamanın ana penceresinde metin olarak gösterilir.
 
 
-**Outlook Web Access (OWA)**
+**Android**
 
 ![Android SQLite.NET örnek](using-sqlite-orm-images/image3.png "Android SQLite.NET örnek")
 
@@ -185,7 +185,7 @@ foreach (var s in stocksStartingWithA) {
 ```
 
 > [!NOTE]
-> **Not:** tabloların adlarını, sınıflar ve onların öznitelikleri oluşturulan sütunları, veritabanınızdaki bir bağımlılık oluşturacak doğrudan SQL deyimleri yazarken. Kodunuzda bu adlar değiştirirseniz, tüm el ile yazılmış SQL deyimlerini güncelleştirmek unutmamanız gerekir.
+> SQL deyimleri doğrudan yazılırken tabloların adlarını, sınıflar ve onların öznitelikleri oluşturulan sütunları, veritabanınızdaki üzerinde bir bağımlılık oluşturun. Kodunuzda bu adlar değiştirirseniz, tüm el ile yazılmış SQL deyimlerini güncelleştirmek unutmamanız gerekir.
 
 ### <a name="deleting-an-object"></a>Bir nesne silme
 

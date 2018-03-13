@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: beb690fe495d142bb4b0424ad752101fc46da590
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 28cfb4cda27446b914c23a2ce4e8e9f845876107
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="location-services"></a>Konum Hizmetleri
 
@@ -54,7 +54,7 @@ API sürümü 21 (Android 5.0 Lolipop) hedef uygulamalar için veya üzeri, etki
 
 İzinleri ayarlamak için genişletme **özellikleri** klasöründe **çözüm paneli** çift tıklayın ve **AndroidManifest.xml**. İzinler altında listelenen **gerekli izinler**:
 
-[![Android bildirim gerekli izinler ayarlarının ekran görüntüsü](location-images/location-01-xs.png)](location-images/location-01-xs.png)
+[![Android bildirim gerekli izinler ayarlarının ekran görüntüsü](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
 
 Ya da bu izinleri ayarlama, Android uygulamanızı yerleşim sağlayıcıları erişmek için kullanıcıdan izin gerektiğini bildirir. API düzeyi 22 (Android 5.1) çalıştırın veya uygulamanın yüklü olduğu her zaman bu izinleri vermek için kullanıcıdan düşük ister aygıtlar. API çalıştıran cihazlarda 23 (Android 6.0) düzeyinde veya üzeri, uygulama istek konumu sağlayıcısının yapmadan önce bir çalıştırma izni denetimi yapmanız gerekir. 
 
@@ -334,11 +334,11 @@ else
 > [!NOTE]
 >  Kullanıcı tüm yerleşim sağlayıcıları, devre dışı bırakılırsa `GetBestProvider` döndürülecek `null`. Bu kodu gerçek bir cihazda nasıl çalıştığını görmek için GPS, Wi-Fi ve cep telefonu ağlar altında etkinleştirmek mutlaka **Google Ayarları > konumu > modu** bu ekran görüntüsünde gösterildiği gibi:
 
-[![Android telefonla ayarları konumu modu ekranı](location-images/location-02.png)](location-images/location-02.png)
+[![Android telefonla ayarları konumu modu ekranı](location-images/location-02.png)](location-images/location-02.png#lightbox)
 
 Aşağıdaki ekran görüntüsünde konumu çalışan kullanılarak uygulama gösterir `GetBestProvider`:
 
-[![Enlem ve boylam sağlayıcısı görüntüleme GetBestProvider uygulama](location-images/location-03.png)](location-images/location-03.png)
+[![Enlem ve boylam sağlayıcısı görüntüleme GetBestProvider uygulama](location-images/location-03.png)](location-images/location-03.png#lightbox)
 
 Aklınızda `GetBestProvider` sağlayıcı dinamik olarak değiştirmez. Bunun yerine, bir kez etkinlik yaşam döngüsü sırasında en iyi kullanılabilir sağlayıcıyı belirler. Ayarlandıktan sonra sağlayıcı durumu değişirse, ek kod, uygulamanın gerektirir `ILocationListener` yöntemleri &ndash; `OnProviderEnabled`, `OnProviderDisabled`, ve `OnStatusChanged` &ndash; ilgili her olasılığı işlemek için Sağlayıcı anahtarı.
 

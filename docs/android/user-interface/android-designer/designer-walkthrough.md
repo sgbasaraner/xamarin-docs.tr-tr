@@ -8,23 +8,21 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: b199e4370e93712211db125e427fb61da39cb296
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c9ec0d3bc9c3278f097b925ccb755323df950c62
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-the-android-designer"></a>Android Tasarımcısı'nı kullanarak
 
 _Bu konuda bir kılavuz Xamarin.Android Designer ' dir. Küçük renk tarayıcı uygulaması için kullanıcı arabirimi oluşturmak üzere nasıl gösterir; Bu kullanıcı arabirimi tamamen Tasarımcısı'nda oluşturulur._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
 Android kullanıcı arabirimleri kullanarak XML dosyalarının veya program aracılığıyla kod yazma bildirimli olarak oluşturulabilir. Xamarin.Android Tasarımcısı'nı oluşturmak ve XML dosyalarının elle düzenlendiği birçoğunu ile mücadele etmek zorunda kalmadan bildirim temelli düzenleri görsel değiştirmek geliştiricilerin sağlar. Tasarımcı Ayrıca uygulama bir cihaz ya da bir öykünücü yeniden dağıtmak zorunda kalmadan UI değişiklikleri değerlendirmek Geliştirici sağlayan gerçek zamanlı geri bildirim sağlar. Bu Android UI geliştirme büyük ölçüde hızlandırabilir. Bu makalede, Xamarin.Android Tasarımcısı görsel olarak bir kullanıcı arabirimi oluşturmak için nasıl kullanılacağını gösteren bir kılavuz sunar.
 
-<a name="Walkthrough" />
 
 ## <a name="walkthrough"></a>İzlenecek yol
 
@@ -32,7 +30,6 @@ Bu kılavuzun amacı renklerini, adlarını ve RGB değerleri listesini sunan bi
 
 Haydi başlayalım!
 
-<a name="Creating_a_New_Project" />
 
 ### <a name="creating-a-new-project"></a>Yeni proje oluşturma
 
@@ -42,13 +39,13 @@ Haydi başlayalım!
 
 Visual Studio'yu başlatın ve tıklayın **yeni proje...**  ardından **Visual C\# > Android > boş uygulama (Android)** şablonu:
 
-[ ![Android boş uygulama](designer-walkthrough-images/vs/01-android-app-sml.png)](designer-walkthrough-images/vs/01-android-app.png)
+[![Android boş uygulama](designer-walkthrough-images/vs/01-android-app-sml.png)](designer-walkthrough-images/vs/01-android-app.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Mac ve tıklatın için Visual Studio'yu başlatın **yeni çözüm...** . Seçin **Android uygulaması** şablonu ve tıklatın **sonraki**:
 
-[ ![Android boş uygulama](designer-walkthrough-images/xs/01-android-app-sml.png)](designer-walkthrough-images/xs/01-android-app.png)
+[![Android boş uygulama](designer-walkthrough-images/xs/01-android-app-sml.png)](designer-walkthrough-images/xs/01-android-app.png#lightbox)
 
 -----
 
@@ -56,20 +53,19 @@ Mac ve tıklatın için Visual Studio'yu başlatın **yeni çözüm...** . Seçi
 
 Yeni uygulama adı **DesignerWalkthrough** tıklatıp **Tamam**.
 
-[ ![Uygulama adı](designer-walkthrough-images/vs/02-name-app-sml.png)](designer-walkthrough-images/vs/02-name-app.png)
+[![Uygulama adı](designer-walkthrough-images/vs/02-name-app-sml.png)](designer-walkthrough-images/vs/02-name-app.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Yeni uygulama adı **DesignerWalkthrough**. Altında **Hedef platformlar**seçin **son ve en büyük** tıklatıp **sonraki**:
 
-[ ![Uygulama adı](designer-walkthrough-images/xs/02-designer-walkthrough-sml.png)](designer-walkthrough-images/xs/02-designer-walkthrough.png)
+[![Uygulama adı](designer-walkthrough-images/xs/02-designer-walkthrough-sml.png)](designer-walkthrough-images/xs/02-designer-walkthrough.png#lightbox)
 
 Sonraki iletişim ekranında tıklatın **oluşturma**.
 
 -----
 
 
-<a name="Adding_a_Layout" />
 
 ### <a name="adding-a-layout"></a>Bir düzen ekleme
 
@@ -79,38 +75,37 @@ Oluşturalım bir **LinearLayout** biz bizim kullanıcı arabirimi öğeleri tut
 
 Visual Studio'da sağ **kaynakları/düzeni** içinde **Çözüm Gezgini** seçip **Ekle > Yeni öğe...** . İçinde **Yeni Öğe Ekle** iletişim kutusunda **Android düzeni**. Dosya adı **ListItem.axml** tıklatıp **Ekle**:
 
-[ ![Yeni düzeni](designer-walkthrough-images/vs/03-new-layout-sml.png)](designer-walkthrough-images/vs/03-new-layout.png)
+[![Yeni düzeni](designer-walkthrough-images/vs/03-new-layout-sml.png)](designer-walkthrough-images/vs/03-new-layout.png#lightbox)
 
 Yeni **LISTITEM** düzeni Tasarımcısı'nda görüntülenir:
 
-[ ![Tasarımcı görünümü](designer-walkthrough-images/vs/04-designer-view-sml.png)](designer-walkthrough-images/vs/04-designer-view.png)
+[![Tasarımcı görünümü](designer-walkthrough-images/vs/04-designer-view-sml.png)](designer-walkthrough-images/vs/04-designer-view.png#lightbox)
 
 Tıklatın **kaynak** bu düzeni için XML kaynağını görüntülemek için Tasarımcısı'nın altındaki sekmesi:
 
-[ ![Tasarımcı XML](designer-walkthrough-images/vs/05-designer-xml-sml.png)](designer-walkthrough-images/vs/05-designer-xml.png)
+[![Tasarımcı XML](designer-walkthrough-images/vs/05-designer-xml-sml.png)](designer-walkthrough-images/vs/05-designer-xml.png#lightbox)
 
 Gelen **Görünüm** menüsünde tıklatın **diğer pencereler > Belge Anahattı** açmak için **belge anahattı**. **Belge anahattı** düzeni şu anda tek bir içerdiğini gösterir **LinearLayout** pencere öğesi:
 
-[ ![Belge Anahattı](designer-walkthrough-images/vs/06-document-outline-sml.png)](designer-walkthrough-images/vs/06-document-outline.png)
+[![Belge Anahattı](designer-walkthrough-images/vs/06-document-outline-sml.png)](designer-walkthrough-images/vs/06-document-outline.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Mac için Visual Studio'da sağ **kaynakları/düzeni** içinde **çözüm** doldurur ve seçin **Ekle > yeni dosya...** . İçinde **yeni dosya** iletişim kutusunda **Android > düzeni**. Dosya adı **LISTITEM** tıklatıp **yeni**:
 
-[ ![Yeni düzeni](designer-walkthrough-images/xs/03-new-layout-sml.png)](designer-walkthrough-images/xs/03-new-layout.png)
+[![Yeni düzeni](designer-walkthrough-images/xs/03-new-layout-sml.png)](designer-walkthrough-images/xs/03-new-layout.png#lightbox)
 
 Yeni **LISTITEM** düzeni Tasarımcısı'nda görüntülenir:
 
-[ ![Tasarımcı görünümü](designer-walkthrough-images/xs/04-designer-view-sml.png)](designer-walkthrough-images/xs/04-designer-view.png)
+[![Tasarımcı görünümü](designer-walkthrough-images/xs/04-designer-view-sml.png)](designer-walkthrough-images/xs/04-designer-view.png#lightbox)
 
 Tıklatın **kaynak** bu düzeni için XML kaynağını görüntülemek için Tasarımcısı'nın altındaki sekmesi. Tıkladığınızda **belge anahattı** sekmesini sağ tarafta düzeni şu anda tek bir içerdiğini gösterir **LinearLayout** pencere öğesi:
 
-[ ![Tasarımcı XML](designer-walkthrough-images/xs/05-designer-xml-sml.png)](designer-walkthrough-images/xs/05-designer-xml.png)
+[![Tasarımcı XML](designer-walkthrough-images/xs/05-designer-xml-sml.png)](designer-walkthrough-images/xs/05-designer-xml.png#lightbox)
 
 -----
 
 
-<a name="Creating_the_List_Item_User_Interface" />
 
 ### <a name="creating-the-list-item-user-interface"></a>Liste öğesi kullanıcı arabirimi oluşturma
 
@@ -120,11 +115,11 @@ Tıklatın **Tasarımcısı** tasarım yüzeyine döndürülecek sekmesi.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![ImageView bulun](designer-walkthrough-images/vs/07-locate-imageview-sml.png)](designer-walkthrough-images/vs/07-locate-imageview.png)
+[![ImageView bulun](designer-walkthrough-images/vs/07-locate-imageview-sml.png)](designer-walkthrough-images/vs/07-locate-imageview.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![ImageView bulun](designer-walkthrough-images/xs/06-locate-imageview-sml.png)](designer-walkthrough-images/xs/06-locate-imageview.png)
+[![ImageView bulun](designer-walkthrough-images/xs/06-locate-imageview-sml.png)](designer-walkthrough-images/xs/06-locate-imageview.png#lightbox)
 
 -----
 
@@ -132,11 +127,11 @@ Alternatif olarak, girebilirsiniz *ImageView* bulmak için arama çubuğunu içi
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![ImageView arama](designer-walkthrough-images/vs/08-imageview-search-sml.png)](designer-walkthrough-images/vs/08-imageview-search.png)
+[![ImageView arama](designer-walkthrough-images/vs/08-imageview-search-sml.png)](designer-walkthrough-images/vs/08-imageview-search.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![ImageView arama](designer-walkthrough-images/xs/07-imageview-search-sml.png)](designer-walkthrough-images/xs/07-imageview-search.png)
+[![ImageView arama](designer-walkthrough-images/xs/07-imageview-search-sml.png)](designer-walkthrough-images/xs/07-imageview-search.png#lightbox)
 
 -----
 
@@ -144,11 +139,11 @@ Bu sürükleme `ImageView` tasarım yüzeyine:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Tuval üzerinde ImageView](designer-walkthrough-images/vs/09-imageview-on-canvas-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas.png)
+[![Tuval üzerinde ImageView](designer-walkthrough-images/vs/09-imageview-on-canvas-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Tuval üzerinde ImageView](designer-walkthrough-images/xs/08-imageview-on-canvas-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas.png)
+[![Tuval üzerinde ImageView](designer-walkthrough-images/xs/08-imageview-on-canvas-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas.png#lightbox)
 
 -----
 
@@ -158,11 +153,11 @@ Ardından, sürükleyin bir `LinearLayout (Vertical)` pencere öğesini **araç*
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Mavi anahattı](designer-walkthrough-images/vs/10-blue-outline-sml.png)](designer-walkthrough-images/vs/10-blue-outline.png)
+[![Mavi anahattı](designer-walkthrough-images/vs/10-blue-outline-sml.png)](designer-walkthrough-images/vs/10-blue-outline.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Mavi anahattı](designer-walkthrough-images/xs/10-blue-outline-sml.png)](designer-walkthrough-images/xs/10-blue-outline.png)
+[![Mavi anahattı](designer-walkthrough-images/xs/10-blue-outline-sml.png)](designer-walkthrough-images/xs/10-blue-outline.png#lightbox)
 
 -----
 
@@ -170,11 +165,11 @@ Seçtiğinizde, `ImageView` Tasarımcısı'nda mavi anahattı taşır çevreleye
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![ImageView seçin](designer-walkthrough-images/vs/11-select-imageview-sml.png)](designer-walkthrough-images/vs/11-select-imageview.png)
+[![ImageView seçin](designer-walkthrough-images/vs/11-select-imageview-sml.png)](designer-walkthrough-images/vs/11-select-imageview.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![ImageView seçin](designer-walkthrough-images/xs/11-select-imageview-sml.png)](designer-walkthrough-images/xs/11-select-imageview.png)
+[![ImageView seçin](designer-walkthrough-images/xs/11-select-imageview-sml.png)](designer-walkthrough-images/xs/11-select-imageview.png#lightbox)
 
 -----
 
@@ -182,11 +177,11 @@ Ardından, sürükleyin bir `Text (Large)` pencere öğesini **araç** yeni ekle
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Yeşil vurgular](designer-walkthrough-images/vs/12-green-highlight-sml.png)](designer-walkthrough-images/vs/12-green-highlight.png)
+[![Yeşil vurgular](designer-walkthrough-images/vs/12-green-highlight-sml.png)](designer-walkthrough-images/vs/12-green-highlight.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Yeşil vurgular](designer-walkthrough-images/xs/12-green-highlight-sml.png)](designer-walkthrough-images/xs/12-green-highlight.png)
+[![Yeşil vurgular](designer-walkthrough-images/xs/12-green-highlight-sml.png)](designer-walkthrough-images/xs/12-green-highlight.png#lightbox)
 
 -----
 
@@ -194,11 +189,11 @@ Ardından, eklemek bir `Text (Small)` pencere öğesi aşağıdaki `Text (Large)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Küçük metin pencere öğesi ekleme](designer-walkthrough-images/vs/13-add-small-text-sml.png)](designer-walkthrough-images/vs/13-add-small-text.png)
+[![Küçük metin pencere öğesi ekleme](designer-walkthrough-images/vs/13-add-small-text-sml.png)](designer-walkthrough-images/vs/13-add-small-text.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Küçük metin pencere öğesi ekleme](designer-walkthrough-images/xs/13-add-small-text-sml.png)](designer-walkthrough-images/xs/13-add-small-text.png)
+[![Küçük metin pencere öğesi ekleme](designer-walkthrough-images/xs/13-add-small-text-sml.png)](designer-walkthrough-images/xs/13-add-small-text.png#lightbox)
 
 -----
 
@@ -206,18 +201,17 @@ Bu noktada, aşağıdaki ekran Tasarımcısı benzemelidir:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Tasarımcı yerleşimi](designer-walkthrough-images/vs/14-raw-layout-sml.png)](designer-walkthrough-images/vs/14-raw-layout.png)
+[![Tasarımcı yerleşimi](designer-walkthrough-images/vs/14-raw-layout-sml.png)](designer-walkthrough-images/vs/14-raw-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Tasarımcı yerleşimi](designer-walkthrough-images/xs/14-raw-layout-sml.png)](designer-walkthrough-images/xs/14-raw-layout.png)
+[![Tasarımcı yerleşimi](designer-walkthrough-images/xs/14-raw-layout-sml.png)](designer-walkthrough-images/xs/14-raw-layout.png#lightbox)
 
 -----
 
 İki `textView` pencere öğeleri iç olmayan `linearLayout1`, bunları sürükleyebilirsiniz `linearLayout1` içinde **belge anahattı** ve önceki ekran görüntüsünde gösterildiği gibi görünecek şekilde Yerleştir (altında girintili `linearLayout1`).
 
 
-<a name="Arranging_The_User_Interface" />
 
 ### <a name="arranging-the-user-interface"></a>Kullanıcı arabirimini düzenleme
 
@@ -241,13 +235,13 @@ Görüntülenecek kullanıcı arabirimini değiştirelim `ImageView` solda, iki 
 
 3.  Ekranı aşağı kaydırarak **ViewGroup** değiştirip `Width` ayarını `wrap_content`:
 
-[ ![Set kaydırma içeriği](designer-walkthrough-images/xs/15-wrap-content-sml.png)](designer-walkthrough-images/xs/15-wrap-content.png)
+[![Set kaydırma içeriği](designer-walkthrough-images/xs/15-wrap-content-sml.png)](designer-walkthrough-images/xs/15-wrap-content.png#lightbox)
 
 -----
 
 Değiştirmek için başka bir yolu `Width` ayardır kendi genişliği ayarı geçiş yapmak için pencere öğesinin sağ taraftaki üçgen tıklattığınızdan `wrap_content`:
 
-[ ![Genişliğini ayarlamak için sürükleyin](designer-walkthrough-images/xs/16-width-arrow-sml.png)](designer-walkthrough-images/xs/16-width-arrow.png)
+[![Genişliğini ayarlamak için sürükleyin](designer-walkthrough-images/xs/16-width-arrow-sml.png)](designer-walkthrough-images/xs/16-width-arrow.png#lightbox)
 
 Üçgen yeniden tıklandığında döndürür `Width` ayarını `match_parent`.
 
@@ -255,11 +249,11 @@ Ardından, geçiş **belge anahattı** ve kök seçin `LinearLayout`:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Kök LinearLayout seçin](designer-walkthrough-images/vs/16-root-linearlayout-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout.png)
+[![Kök LinearLayout seçin](designer-walkthrough-images/vs/16-root-linearlayout-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Kök LinearLayout seçin](designer-walkthrough-images/xs/17-root-linearlayout-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout.png)
+[![Kök LinearLayout seçin](designer-walkthrough-images/xs/17-root-linearlayout-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout.png#lightbox)
 
 -----
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -272,7 +266,7 @@ Kök ile `LinearLayout` seçili, geri dönmek **özellikleri** penceresinde tık
 
 Kök ile `LinearLayout` seçili, geri dönüp **özellikleri** sekmesinde **pencere öğesi**. Değişiklik `Orientation` ayarını `horizontal`:
 
-[ ![Yatay yönlendirme seçin](designer-walkthrough-images/xs/18-horizontal-orientation-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation.png)
+[![Yatay yönlendirme seçin](designer-walkthrough-images/xs/18-horizontal-orientation-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation.png#lightbox)
 
 -----
 
@@ -280,15 +274,14 @@ Bu noktada, aşağıdaki ekran Tasarımcısı benzemelidir:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Tasarımcı yerleşimi](designer-walkthrough-images/vs/18-designer-layout-sml.png)](designer-walkthrough-images/vs/18-designer-layout.png)
+[![Tasarımcı yerleşimi](designer-walkthrough-images/vs/18-designer-layout-sml.png)](designer-walkthrough-images/vs/18-designer-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Tasarımcı yerleşimi](designer-walkthrough-images/xs/19-designer-layout-sml.png)](designer-walkthrough-images/xs/19-designer-layout.png)
+[![Tasarımcı yerleşimi](designer-walkthrough-images/xs/19-designer-layout-sml.png)](designer-walkthrough-images/xs/19-designer-layout.png#lightbox)
 
 -----
 
-<a name="Modifying_the_Spacing" />
 
 ### <a name="modifying-the-spacing"></a>Aralık değiştirme
 
@@ -296,13 +289,13 @@ Bu noktada, aşağıdaki ekran Tasarımcısı benzemelidir:
 
 Ardından, biz pencere öğeleri arasında daha fazla boşluk sağlamak için kullanıcı arabiriminde doldurma ve kenar boşluğu ayarlarını değiştireceksiniz. Seçin `ImageView`, tıklatın **kategoriler** arama simgesine **özellikleri** penceresini açın ve aşağı kaydırın **düzeni** bölümü. Değişiklik `Min Height` için `70dp`, `Min Width` için `50dp`ve `padding` için `10dp`. Bu, tüm kenarlarına çevresindeki dolgunun geçerlidir `ImageView` ve dikey olarak elongates:
 
-[ ![Doldurma ayarlayın](designer-walkthrough-images/vs/19-padding-widths-sml.png)](designer-walkthrough-images/vs/19-padding-widths.png)
+[![Doldurma ayarlayın](designer-walkthrough-images/vs/19-padding-widths-sml.png)](designer-walkthrough-images/vs/19-padding-widths.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Ardından, biz pencere öğeleri arasında daha fazla boşluk sağlamak için kullanıcı arabiriminde doldurma ve kenar boşluğu ayarlarını değiştireceksiniz. Seçin `ImageView` tıklatıp **düzeni** altında sekmesinde **özellikleri**. Değişiklik `Padding` için `10dp`, `Min Width` için `50dp`ve `Min Height` için `70dp`. Bu, tüm kenarlarına çevresindeki dolgunun geçerlidir `ImageView` ve dikey olarak elongates:
 
-[ ![Doldurma ayarlayın](designer-walkthrough-images/xs/20-padding-widths-sml.png)](designer-walkthrough-images/xs/20-padding-widths.png)
+[![Doldurma ayarlayın](designer-walkthrough-images/xs/20-padding-widths-sml.png)](designer-walkthrough-images/xs/20-padding-widths.png#lightbox)
 
 -----
 
@@ -311,13 +304,13 @@ Ardından, biz pencere öğeleri arasında daha fazla boşluk sağlamak için ku
 Alt, sol, sağ ve üst ayarları doldurma ayarlanabilir bağımsız olarak değerlere girerek `paddingBottom`, `paddingLeft`, `paddingRight`, ve `paddingTop` alanlar, sırasıyla.
 Örneğin, `paddingLeft` alanı `5dp` ve `paddingBottom`, `paddingRight`, ve `paddingTop` alanları `10dp`:
 
-[ ![Özel doldurma ayarları](designer-walkthrough-images/vs/20-custom-padding-sml.png)](designer-walkthrough-images/vs/20-custom-padding.png)
+[![Özel doldurma ayarları](designer-walkthrough-images/vs/20-custom-padding-sml.png)](designer-walkthrough-images/vs/20-custom-padding.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Üst, sağ, alt ve sol ayarları doldurma bağımsız olarak değerlere girerek ayarlanabilir `Top`, `Right`, `Bottom`, ve `Left` alanlar, sırasıyla doldurma. Örneğin, `Left` doldurma değeri için `5dp` ve `Top`, `Right`, ve `Bottom` değerlere doldurma `10dp`. Unutmayın `Padding` ayarı değişiklikleri virgülle ayrılmış listesini bu değerleri için:
 
-[ ![Özel doldurma ayarları](designer-walkthrough-images/xs/21-custom-padding-sml.png)](designer-walkthrough-images/xs/21-custom-padding.png)
+[![Özel doldurma ayarları](designer-walkthrough-images/xs/21-custom-padding-sml.png)](designer-walkthrough-images/xs/21-custom-padding.png#lightbox)
 
 -----
 
@@ -325,18 +318,17 @@ Alt, sol, sağ ve üst ayarları doldurma ayarlanabilir bağımsız olarak değe
 
 Ardından, konumunu ince ayar `LinearLayout` iki içeren pencere öğesi `TextView` pencere öğeleri. İçinde **belge anahattı**seçin `linearLayout1`. İçinde **özellikleri** penceresinde, kaydırın **Düzen - ViewGroup** bölümü. Ayarlama `layout_marginBottom`, `layout_marginLeft`, `layout_marginRight`, ve `layout_marginTop` için `5dp`, `5dp`, `0dp`, ve `5dp` sırasıyla:
 
-[ ![Kenar boşluklarını ayarlama](designer-walkthrough-images/vs/21-margins-sml.png)](designer-walkthrough-images/vs/21-margins.png)
+[![Kenar boşluklarını ayarlama](designer-walkthrough-images/vs/21-margins-sml.png)](designer-walkthrough-images/vs/21-margins.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Ardından, konumunu ince ayar `LinearLayout` iki içeren pencere öğesi `TextView` pencere öğeleri. İçinde **belge anahattı**seçin `linearLayout1`. İçinde **özellikleri** bölmesinde, **düzeni** sekmesi. Ekranı aşağı kaydırarak **ViewGroup** bölümünde ve ayarlama `Left`, `Top`, `Right`, ve `Bottom` için kenar boşlukları `5dp`, `5dp`, `0dp`, ve `5dp` Sırasıyla:
 
-[ ![Kenar boşluklarını ayarlama](designer-walkthrough-images/xs/22-margins-sml.png)](designer-walkthrough-images/xs/22-margins.png)
+[![Kenar boşluklarını ayarlama](designer-walkthrough-images/xs/22-margins-sml.png)](designer-walkthrough-images/xs/22-margins.png#lightbox)
 
 -----
 
 
-<a name="Removing_the_Default_Image" />
 
 ### <a name="removing-the-default-image"></a>Varsayılan görüntü kaldırma
 
@@ -360,11 +352,10 @@ Kullanmakta olduğunuz çünkü `ImageView` renkleri (görüntüleri yerine) gö
 
 3.  Clear `Src` böylece boş ayarı:
 
-[ ![ImageView src ayarını kaldırın](designer-walkthrough-images/xs/23-clear-src-sml.png)](designer-walkthrough-images/xs/23-clear-src.png)
+[![ImageView src ayarını kaldırın](designer-walkthrough-images/xs/23-clear-src-sml.png)](designer-walkthrough-images/xs/23-clear-src.png#lightbox)
 
 -----
 
-<a name="Adding_a_ListView" />
 
 ### <a name="adding-a-listview-container"></a>ListView kapsayıcı ekleme
 
@@ -377,7 +368,7 @@ Kullanmakta olduğunuz çünkü `ImageView` renkleri (görüntüleri yerine) gö
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Yeni liste görünümü](designer-walkthrough-images/xs/24-new-listview-sml.png)](designer-walkthrough-images/xs/24-new-listview.png)
+[![Yeni liste görünümü](designer-walkthrough-images/xs/24-new-listview-sml.png)](designer-walkthrough-images/xs/24-new-listview.png#lightbox)
 
 -----
 
@@ -390,14 +381,13 @@ Açık **pencere öğesi** altında sekmesinde **özellikleri** değiştirip `Id
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Kimliği için myListView yeniden adlandır](designer-walkthrough-images/xs/25-change-id-sml.png)](designer-walkthrough-images/xs/25-change-id.png)
+[![Kimliği için myListView yeniden adlandır](designer-walkthrough-images/xs/25-change-id-sml.png)](designer-walkthrough-images/xs/25-change-id.png#lightbox)
 
 -----
 
 Bu noktada, kullanıcı arabirimimizi kullanılmaya hazırdır.
 
 
-<a name="Running_the_Application" />
 
 ### <a name="running-the-application"></a>Uygulamayı Çalıştırma
 
@@ -490,10 +480,9 @@ Bu kod bir özel kullanır `ListView` renk bilgilerini yüklemek ve bu verileri 
 
 Derleme ve uygulamayı çalıştırın. Aşağıdaki ekran görüntüsünde, uygulama bir cihazda çalıştırıldığında, nasıl göründüğünü, bir örnek verilmiştir:
 
-[ ![Son ekran görüntüsü](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png)
+[![Son ekran görüntüsü](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png#lightbox)
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: dda7597456421aa4ae401f56ed6cfc7983df29c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google bulut Mesajlaşma ile uzaktan bildirimleri
 
@@ -53,7 +53,7 @@ Google Cloud Messaging iletileri almak için [Google Play Hizmetleri](https://ww
 
 Visual Studio'da sağ **başvuruları > NuGet paketlerini Yönet...** ; Mac Visual Studio'da sağ **paketleri > paketleri Ekle...** . Arama **Xamarin Google Play Hizmetleri - GCM** bu pakete yükleyip **ClientApp** proje: 
 
-[ ![Google Play hizmetlerini yükleme](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png)
+[![Google Play hizmetlerini yükleme](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png#lightbox)
 
 Yüklediğinizde **Xamarin Google Play Hizmetleri - GCM**, **Xamarin Google Play Hizmetleri - Base** otomatik olarak yüklenir. Bir hata alırsanız, projenin değiştirme *Minimum Android hedef* dışında bir değere ayarlamak **SDK sürümüyle derleme** ve NuGet yüklemeyi yeniden deneyin. 
 
@@ -76,7 +76,7 @@ Alternatif olarak, Android 2.2 veya sonraki sürümünü (, Google Play mağazas
 
 İçinde [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md), biz bizim GCM özellikli uygulama için bir paket adı belirtilen (Bu paket adı da görevi gören *uygulama kimliği* bizim API anahtarı ve Gönderen Kimliği ile ilişkili). Özelliklerini açalım **ClientApp** proje ve paket adı bu dizeye ayarlayın. Bu örnekte, paket adı ayarlarız `com.xamarin.gcmexample`:
 
-[ ![Paket adı ayarlama](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png)
+[![Paket adı ayarlama](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png#lightbox)
 
 İstemci uygulaması bu paket adı yoksa GCM kayıt belirtecinizi alamıyor olacağını unutmayın *tam olarak* Google Developer konsolunda girdiğimiz paket adı ile eşleşmesi. 
 
@@ -192,7 +192,7 @@ Bu kod, Google Play Hizmetleri APK varlığını denetler ve sonucu iletisini al
 
 Şimdi tamamen yeniden oluşturun ve uygulamayı çalıştırın. Aşağıdaki ekran görüntüsü gibi görünen bir ekran görmeniz gerekir: 
 
-[ ![Google Play Hizmetleri'nin kullanılabilir](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png)
+[![Google Play Hizmetleri'nin kullanılabilir](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png#lightbox)
 
 Bu sonuç alamazsanız Google Play Hizmetleri APK Cihazınızı ve, üzerinde yüklü olduğunu doğrulayın **Xamarin Google Play Hizmetleri - GCM** paket eklenmiş olup, **ClientApp** proje açıklandığı gibi daha önce. Bir derleme hatası alırsanız çözümü temizleme ve projeyi yeniden oluşturmayı deneyin. 
 
@@ -271,11 +271,11 @@ Yukarıdaki örnek kodda değişiklik *YOUR_SENDER_ID* istemci uygulaması proje
 
 1.  İçine oturum [Google Cloud Console](https://console.cloud.google.com/) ve projenizin adına çekme menüsünü seçin. İçinde **proje bilgileri** projeniz için görüntülenen bölmesi **proje Ayarları'na gidin**:
 
-    [![XamarinGCM proje seçme](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png)
+    [![XamarinGCM proje seçme](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
 2.  Üzerinde **ayarları** sayfasında, bulun **proje numarası** &ndash; projeniz için gönderen Kimliği budur:
 
-    [![Görüntülenen Proje numarası](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png)
+    [![Görüntülenen Proje numarası](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 
 Biz başlatmak istediğiniz bizim `RegistrationIntentService` uygulamamıza çalışmaya başladığında. Düzen **MainActivity.cs** ve değiştirme `OnCreate` yöntemi böylece bizim `RegistrationIntentService` biz Google Play Hizmetleri'nin varlığını denetledikten sonra başlatılır: 
 
@@ -548,7 +548,7 @@ Bu konsol uygulamasını istemci uygulamasına gönderilecek istiyoruz bildirim 
 
 Şimdi arama **Json.NET** paketini ve projede yükleyin: 
 
-[ ![Json.NET paketi yükleniyor](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png)
+[![Json.NET paketi yükleniyor](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png#lightbox)
 
 
 #### <a name="add-a-reference-to-systemnethttp"></a>System.Net.Http bir başvuru ekleyin
@@ -630,7 +630,6 @@ Bu test uygulama sunucusu GCM'ye aşağıdaki JSON biçimli iletisini gönderir:
 GCM, buna karşılık, istemci uygulamanız bu iletiyi iletir. Şimdi yapı **MessageSender** ve burada çalıştırabileceğimiz, komut satırından bir konsol penceresi açın.
 
 
-<a name="tryit" />
 
 ### <a name="try-it"></a>Deneyin!
 
@@ -666,11 +665,11 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 Ayrıca, yeni bir bildirim simgesi bildirim tepsisinde göründükten bildirim: 
 
-[ ![Aygıtta Notiication simgesi görüntülenir](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png)
+[![Aygıtta Notiication simgesi görüntülenir](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 Bildirimleri görüntülemek için bildirim Tepsisi açtığınızda, bizim uzaktan bildirim görmeniz gerekir:
 
-[ ![Bildirim iletisi görüntülenir](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png)
+[![Bildirim iletisi görüntülenir](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png#lightbox)
 
 Tebrikler, uygulamanız kendi ilk uzaktan bildirim aldı.
 

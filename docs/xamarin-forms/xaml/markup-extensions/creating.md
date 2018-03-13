@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: eb7189226e4f5d7eb2b55bf61728e65db44ba57b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 737c55aea087094ceb5e6070261d0a3d724e8a01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>XAML biçimlendirme uzantıları oluşturma
 
@@ -117,7 +117,7 @@ public class HslColorExtension : IMarkupExtension<Color>
 
 Fark olduğunda `HslColorExtension` bir XML etiket, dört özellikleri öznitelik olarak ayarlanmış, ancak süslü ayraçlar arasında görüntülendiğinde, dört özellikleri tırnak işaretleri olmadan virgülle ayrılır. İçin varsayılan değerler `H`, `S`, ve `L` 0 ve varsayılan değerini `A` için varsayılan değerleri ayarlamak istiyorsanız bu özellikleri atlanabilir için 1 ' dir. Son burada parlaklığını normalde siyah sonuçları, 0, ancak yarı saydam ve görünür alfa kanal 0,5, bir örnek gösterilir sayfasının beyaz arka karşı gri:
 
-[![HSL renk Demo](creating-images/hslcolordemo-small.png "HSL renk Demo")](creating-images/hslcolordemo-large.png "HSL renk Tanıtımı")
+[![HSL renk Demo](creating-images/hslcolordemo-small.png "HSL renk Demo")](creating-images/hslcolordemo-large.png#lightbox "HSL renk Tanıtımı")
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>Bit eşlemler erişmek için biçimlendirme uzantısı
 
@@ -180,7 +180,7 @@ Ancak `ImageResourceExtension` gerektirir `Source` ayarlanacak, özelliği `Sour
 
 Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
 
-[![Görüntü kaynağı Demo](creating-images/imageresourcedemo-small.png "görüntü kaynak Demo")](creating-images/imageresourcedemo-large.png "görüntü kaynak Tanıtımı")
+[![Görüntü kaynağı Demo](creating-images/imageresourcedemo-small.png "görüntü kaynak Demo")](creating-images/imageresourcedemo-large.png#lightbox "görüntü kaynak Tanıtımı")
 
 ## <a name="service-providers"></a>Hizmet sağlayıcıları
 

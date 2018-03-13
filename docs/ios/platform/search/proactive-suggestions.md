@@ -3,16 +3,16 @@ title: "Öngörülü önerileri giriş"
 description: "Bu makalede öngörülü önerileri Xamarin.iOS uygulaması sürücü katılım için proaktif olarak yararlı bilgiler kullanıcıya otomatik olarak sunmak üzere sistem vererek nasıl kullanılacağı gösterilmektedir."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2762487d25befd15d8b57a002c5da4e9dcb15bb8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 15f649440b2a855189acff33afcef5e8272a0769
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>Öngörülü önerileri giriş
 
@@ -63,7 +63,7 @@ Uygulamanın verir görünmesi kişiler (ve ilgili kişi bilgilerini) **başvuru
 
 ## <a name="ride-sharing-based-suggestions"></a>Paylaşımı kılma tabanlı önerileri
 
-Bir kılma paylaşımı uygulaması kullanıyorsa [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API, iOS 10 düzenleyecek, uygulama Değiştirici bir seçenek olarak zamanlarda kullanıcı bir kılma istediğiniz olasılığı olduğunda. Uygulama aynı zamanda kılma paylaşımı uygulaması belirterek kaydedilmelidir `MKDirectionsModeRideShare` için [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW33) anahtarını kendi `Info.plist` dosya.
+Bir kılma paylaşımı uygulaması kullanıyorsa [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API, iOS 10 düzenleyecek, uygulama Değiştirici bir seçenek olarak zamanlarda kullanıcı bir kılma istediğiniz olasılığı olduğunda. Uygulama aynı zamanda kılma paylaşımı uygulaması belirterek kaydedilmelidir `MKDirectionsModeRideShare` için [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html) anahtarını kendi `Info.plist` dosya.
 
 Uygulamanın yalnızca kılma paylaşımı destekliyorsa, sistem öneri ile başlayan *"bir kılma Get..."*, diğer türleri (örneğin, Walking veya bisiklet) yönlendirme yönü destekleniyorsa, sistemin kullanacağı *"yönlendirmeler Get..."*
 
@@ -95,7 +95,7 @@ Bu özelliklerin tümü, ortak bir şey vardır, tüm kullandıkları `NSUserAct
 
 Yukarıda belirtildiği gibi `NSUserActivity` sistemi kullanıcı şu anda çalıştığını ile ekranda hangi bilgilerin anlamanıza yardımcı olur. `NSUserActivity` Hafif durumu, kullanıcının etkinliğini üzerinden uygulama gittikleri olarak yakalamak için bir mekanizma önbelleğe alma. Örneğin, bir restoran uygulamaya aranıyor:
 
-[ ![](proactive-suggestions-images/activity02.png "Önbelleğe alma mekanizması NSUserActivity hafif durumu")](proactive-suggestions-images/activity02.png)
+[![](proactive-suggestions-images/activity02.png "Önbelleğe alma mekanizması NSUserActivity hafif durumu")](proactive-suggestions-images/activity02.png#lightbox)
 
 İle aşağıdaki etkileşimler:
 
@@ -105,7 +105,7 @@ Yukarıda belirtildiği gibi `NSUserActivity` sistemi kullanıcı şu anda çal�
 
 Son ekran daha yakın bir göz atın:
 
-[ ![](proactive-suggestions-images/activity03.png "NSUserActivity ayrıntıları")](proactive-suggestions-images/activity03.png)
+[![](proactive-suggestions-images/activity03.png "NSUserActivity ayrıntıları")](proactive-suggestions-images/activity03.png#lightbox)
 
 Burada uygulama oluşturma bir `NSUserActivity` ve durumunu daha sonra yeniden bilgilerle doldurulur. Uygulama konumun ad ve adres gibi bazı meta veriler ayrıca eklemiştir. Oluşturulan bu etkinlikle uygulamanın, kullanıcının geçerli durumunu temsil eden bilmeniz iOS sağlar.
 
@@ -189,7 +189,7 @@ Bu etkinlik türü tanımlayıcısının olduğundan emin olmak Geliştirici ger
 
 Yukarıda gösterilen kodu en düşük düzeyde ile uygulama üç yeni iOS 10 özelliklerden yararlanmak için sunulmuştur:
 
-- **Handoff**
+- **İletim**
 - **Spotlight aramasının**
 - **Bağlamsal Siri anımsatıcıları**
 
@@ -324,7 +324,7 @@ Bir 3. taraf uygulama seçtiyseniz, hatırlanan ve bir sonraki sefer kullanıcı
 
 Uygulama etkileşimleri nasıl hibe bir göz atalım:
 
-[ ![](proactive-suggestions-images/activity04.png "Hibe etkileşimleri genel bakış")](proactive-suggestions-images/activity04.png)
+[![](proactive-suggestions-images/activity04.png "Hibe etkileşimleri genel bakış")](proactive-suggestions-images/activity04.png#lightbox)
 
 Uygulamasını oluşturur bir `INInteraction` içeren nesne bir **hedefi** (`INIntent`), **katılımcıları** ve **meta verileri**. **Hedefi** video arama yapmak veya kısa mesaj göndermek gibi bir kullanıcı eylemi temsil eder. **Katılımcıları** iletişimi alma kişileri içerir. **Meta veri** başarıyla gönderme iletisi, vb. gibi ek bilgileri tanımlar.
 
@@ -334,7 +334,7 @@ Etkileşim tam olarak doldurulan sonra çağrı `DonateInteraction` etkileşim k
 
 Uygulamayla ilgili kişi kartı kullanıcı etkileşim kurduğunda etkileşim birlikte bir `NSUserActivity`, ardından uygulamayı başlatmak için kullanılan:
 
-[ ![](proactive-suggestions-images/activity05.png "Etkileşim uygulamayı başlatmak için kullanılan bir NSUserActivity ile birlikte")](proactive-suggestions-images/activity05.png)
+[![](proactive-suggestions-images/activity05.png "Etkileşim uygulamayı başlatmak için kullanılan bir NSUserActivity ile birlikte")](proactive-suggestions-images/activity05.png#lightbox)
 
 Aşağıdaki örnekte bir Gönder ileti hedefinin göz atın:
 
@@ -449,7 +449,7 @@ Bazı Schema.org arka planı:
 - Çeşitli kavramlar kullanılabilir temsil eden 500'den fazla şemaları vardır.
 - Web sitesinde uygulama tarafından Geliştirici bazı kullanmanın faydaları elde edebilirsiniz `NSUserActivity` yerel bir uygulama.
 
-Bir ağaç yapısı, özel türleri gibi olduğu gibi şemaları düzenlenmiş *Restoran*, daha genel türlerinden gibi devral *yerel iş*. Daha fazla bilgi için lütfen bkz [Schema.org](#http://schema.org).
+Bir ağaç yapısı, özel türleri gibi olduğu gibi şemaları düzenlenmiş *Restoran*, daha genel türlerinden gibi devral *yerel iş*. Daha fazla bilgi için lütfen bkz [Schema.org](http://schema.org).
 
 Örneğin, web sayfası aşağıdaki veriler içeriyorsa:
 

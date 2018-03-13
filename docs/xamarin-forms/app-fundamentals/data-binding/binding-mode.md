@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e85bc98b5da4c6e529f150c6e7945a8556e2c60f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 887dc3cf710fb75d05d02af179bc218c15d31f97
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-mode"></a>Bağlama modu
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 02/27/2018
 
 Beklediğiniz gibi `Slider` 1 değerine Başlangıç Aşamasında durumundan başlatılmadan `Opacity` değerini `Label`. Bu, iOS ekran görüntüsü soldaki gösterilir:
 
-[![Bağlama ters](binding-mode-images/reversebinding-small.png "bağlama ters")](binding-mode-images/reversebinding-large.png "bağlama ters çevir")
+[![Bağlama ters](binding-mode-images/reversebinding-small.png "bağlama ters")](binding-mode-images/reversebinding-large.png#lightbox "bağlama ters çevir")
 
 Ancak, olabilir, surprised `Slider` Android ve UWP ekran görüntüleri göstermek gibi çalışmaya devam eder. Bu veri bağlama daha iyi ne zaman çalıştığını önermek görünüyor `Slider` bağlama hedefi yerine `Label` bekliyoruz gibi başlatma çalıştığından.
 
@@ -250,7 +250,7 @@ Bir ViewModel bağlama kaynağı olarak ayarlandığında, bir işleyici bağlam
 
 Programı ilk kez çalıştırdığınızda, `BoxView`, `Label`ve üç `Slider` öğeleridir ilk dayalı ViewModel tüm kümesinden `Color` özelliği ViewModel örneğinin başlatılmasından ayarlanır. Bu, iOS ekran görüntüsü soldaki gösterilir:
 
-[![Basit Renk Seçici](binding-mode-images/simplecolorselector-small.png "basit Renk Seçici")](binding-mode-images/simplecolorselector-large.png "basit Renk Seçici")
+[![Basit Renk Seçici](binding-mode-images/simplecolorselector-small.png "basit Renk Seçici")](binding-mode-images/simplecolorselector-large.png#lightbox "basit Renk Seçici")
 
 Kaydırıcılar işlemek gibi `BoxView` ve `Label` Android ve UWP ekran görüntüleri ile gösterildiği gibi buna göre güncelleştirilir.
 
@@ -661,7 +661,7 @@ public partial class SampleSettingsPage : ContentPage
 
 İlk kez çalıştırdığınızda soldaki iOS ekran program gösterir. Oluşturucuda `SampleSettingsViewModel` başlatır arka plan rengi beyaz ve içinde seçili olan `ListView`:
 
-[![Örnek ayarlar](binding-mode-images/samplesettings-small.png "örnek ayarlar")](binding-mode-images/samplesettings-large.png "örnek ayarlar")
+[![Örnek ayarlar](binding-mode-images/samplesettings-small.png "örnek ayarlar")](binding-mode-images/samplesettings-large.png#lightbox "örnek ayarlar")
 
 Diğer iki ekran görüntüleri değiştirilmiş ayarlarını göster. Bu sayfayla denemeler yaparken programın uyku veya aygıt ya da çalıştırıldığı öykünücüsü sonlandırmak için put unutmayın. Visual Studio hata ayıklayıcısı programdan sonlandırma değil neden olacak `OnSleep` geçersiz kılması `App` çağrılacak sınıfı.
 

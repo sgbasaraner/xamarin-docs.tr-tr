@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 94d88246090208913c4b340eaed221ab64b78f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a8849a75f3c26a83a030700878a3195fde7515f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin ile sürekli tümleştirme giriş
 
@@ -33,13 +33,13 @@ Yeniden sürekli tümleştirme ile değişiklikleri teslim etme eylemi projeyi o
 
 Aşağıdaki diyagram bu işlemi gösterilmektedir:
 
-[![](intro-to-ci-images/intro01-small.png "Bu diyagramda bu işlem gösterilir")](intro-to-ci-images/intro01.png)
+[![](intro-to-ci-images/intro01-small.png "Bu diyagramda bu işlem gösterilir")](intro-to-ci-images/intro01.png#lightbox)
 
 Mobil uygulamaları için sürekli tümleştirme benzersiz zorlukları tanıtır. Uygulamalar, yalnızca fiziksel aygıtlarda kullanılabilir algılayıcılar GPS veya kamera gibi gerektirebilir. Ayrıca, benzeticileri veya Öykünücüler yalnızca yaklaşık donanım ve Gizle veya sorunları soyutlamaması. Sonunda, mobil uygulama gerçekten müşteri hazır olduğundan emin olarak gerçek donanım üzerinde test etmek gereklidir.
 
 [Uygulama Center Test](https://docs.microsoft.com/en-us/appcenter/test-cloud) doğrudan fiziksel aygıtların yüzlerce uygulamaları test ederek belirli bu sorunu giderir. Geliştiriciler için güçlü bir UI testi izin otomatik kabul testleri yazma. Bu testler uygulama merkezine yüklendiğinde, CI sunucunun bunları otomatik olarak bir CI işleminin bir parçası aşağıdaki çizimde gösterildiği gibi çalıştırabilirsiniz:
 
-[![](intro-to-ci-images/intro02-small.png "Bu testler uygulama merkezine yüklendiğinde, CI sunucu bunları otomatik olarak bir CI işleminin bir parçası Bu diyagramda gösterildiği gibi çalıştırabilir")](intro-to-ci-images/intro02.png)
+[![](intro-to-ci-images/intro02-small.png "Bu testler uygulama merkezine yüklendiğinde, CI sunucu bunları otomatik olarak bir CI işleminin bir parçası Bu diyagramda gösterildiği gibi çalıştırabilir")](intro-to-ci-images/intro02.png#lightbox)
 
 # <a name="components-of-continuous-integration"></a>Sürekli Tümleştirme Bileşenleri
 
@@ -72,7 +72,7 @@ Visual Studio, Visual Studio Team Services ve Team Foundation Server, bkz: tüm 
 
 Bir web tarayıcısı aracılığıyla tamamen veya aracılığıyla Git çalışabilir [GUI istemcileri](http://git-scm.com/downloads/guis) Linux, Mac OSX ve Windows çalıştıran. Ortak depoları için ücretsizdir; Özel depoları gerektiren bir [planı Ücretli](https://github.com/pricing).
 
-Visual Studio 2015 ve Visual Studio Mac için Git için yerel destek sağlar; Microsoft Visual Studio 2013 ve önceki sürümlerinde, sağlar bir [Git indirilebilir uzantısı](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). Yukarıda belirtildiği gibi Visual Studio Team Services ve TFS Git sürüm denetimi TFVC'yi yerine kullanabilirsiniz.
+Visual Studio 2015 ve Visual Studio Mac için Git için yerel destek sağlar; eski sürümleri için Microsoft sağlayan bir [Git indirilebilir uzantısı](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). Yukarıda belirtildiği gibi Visual Studio Team Services ve TFS Git sürüm denetimi TFVC'yi yerine kullanabilirsiniz.
 
 
 ### <a name="subversion"></a>Alt sürüme
@@ -102,7 +102,7 @@ Team Foundation Server ile bir yapı makine belirli hedef platformlar için aşa
 
 Aşağıdaki diyagram bu topografi gösterir:
 
-[![](intro-to-ci-images/intro03-small.png "Bu diyagramda bu topografi gösterilir")](intro-to-ci-images/intro03.png)
+[![](intro-to-ci-images/intro03-small.png "Bu diyagramda bu topografi gösterilir")](intro-to-ci-images/intro03.png#lightbox)
 
 VSTS derlemeleri yerel sunucuya verilmiş bir Visual Studio Team Services projesi için yerel bir TFS sunucusu bağlayın mümkündür. Ayrıntılar için bkz [dağıtma ve bir yapı sunucusunu yapılandırmak](http://msdn.microsoft.com/en-us/library/ms181712.aspx) konusuna bakın.
 
@@ -110,13 +110,13 @@ VSTS derlemeleri yerel sunucuya verilmiş bir Visual Studio Team Services projes
 
 Uygulamalarınızı oluşturmak için Jenkins kullanırsanız, Visual Studio Team Services veya Team Foundation Server kodunuzu depolamak ve Jenkins CI derlemeleriniz için kullanılacak devam edebilirsiniz. Takım projenizin Git deposu veya kod TFVC'yi için ne zaman iade kodu bastığınızda Jenkins yapı tetikleyebilir. Ayrıntılar için bkz [Jenkins Visual Studio Team Services ile](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins).
 
-[![](intro-to-ci-images/intro04-small.png "Uygulamalarınızı oluşturmak için Jenkins kullanırsanız, Visual Studio Team Services veya Team Foundation Server kodunuzu depolamak ve Jenkins CI derlemeleriniz için kullanmaya devam")](intro-to-ci-images/intro04.png)
+[![](intro-to-ci-images/intro04-small.png "Uygulamalarınızı oluşturmak için Jenkins kullanırsanız, Visual Studio Team Services veya Team Foundation Server kodunuzu depolamak ve Jenkins CI derlemeleriniz için kullanmaya devam")](intro-to-ci-images/intro04.png#lightbox)
 
 ### <a name="git-and-jenkins"></a>Git ve Jenkins
 
 Başka bir ortak CI ortamını tamamen OS X dayalı olabilir. Bu senaryo, Git kaynak kodu denetimi ve Jenkins için yapı sunucusu kullanmakla ilgilidir. Bunların her ikisi de Visual Studio ile tek bir Mac OS X bilgisayarda yüklü Mac için çalışıyor. Bu Visual Studio Team Services + önceki bölümde tartışılan Jenkins ortamı için çok benzer.
 
-[![](intro-to-ci-images/intro05-small.png "Bu Visual Studio Team Services + önceki bölümde tartışılan Jenkins ortamı için çok benzer")](intro-to-ci-images/intro05.png)
+[![](intro-to-ci-images/intro05-small.png "Bu Visual Studio Team Services + önceki bölümde tartışılan Jenkins ortamı için çok benzer")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **Not: Jenkins olan [Xamarin tarafından desteklenmeyen](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md).**

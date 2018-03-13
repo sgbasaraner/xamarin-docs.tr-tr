@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/20/2017
-ms.openlocfilehash: f1e7e36dfa1bfe122084f0525d83f06760ca1fe0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d4ed2df994ace7f6de5ade78577e759bb811565c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="google-licensing-services"></a>Google Licensing Services
 
@@ -26,7 +26,7 @@ Her yanıtı özel olarak Google Play sunucu ve uygulama arasında paylaşılan 
 
 Google lisans uyguladı bir uygulama bir cihazda Google Play uygulaması tarafından barındırılan bir hizmete istekte bulunur. Google Play sonra lisans durumuna sahip yanıt Google lisans sunucusu bu isteği gönderir: 
 
-[ ![Lisans sunucusu iş akışı diyagramı](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png)
+[![Lisans sunucusu iş akışı diyagramı](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png#lightbox)
 
 Yukarıdaki diyagramda bu iş akışı gösterilmektedir: 
 
@@ -36,7 +36,6 @@ Yukarıdaki diyagramda bu iş akışı gösterilmektedir:
 
 Google lisans hizmeti de bir anahtar (Bu belgenin sonraki bölümlerinde ele alınmıştır) APK genişletme dosyaları bileşenidir. APK genişletme dosyaları indirilir genişletme dosyaları URL'lerini almak için Google lisans hizmetleri kullanan.
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Gereksinimler
 

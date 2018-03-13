@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 004f7c815a1629310ba4c0f4c6f4219581a12366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb3a2a9e60bda2a99a719bf75d23c29d42a94bdb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-watch-face"></a>Gözcü yüz oluşturma
 
@@ -22,11 +22,11 @@ _Bu kılavuz, Android takmak için bir özel izleme yüz hizmeti uygulamak açı
 
 Bu kılavuzda, özel bir Android takmak izleme yazıtipi oluşturma essentials göstermek için bir temel izleme yüz hizmeti oluşturulur. İlk izleme yüz hizmeti saat ve dakika olarak geçerli saati görüntüleyen basit bir dijital izleme görüntüler: 
 
-[![Dijital izleme yüz](creating-a-watchface-images/01-initial-face.png "ilk dijital izleme yüz örnek ekran görüntüsü")](creating-a-watchface-images/01-initial-face.png)
+[![Dijital izleme yüz](creating-a-watchface-images/01-initial-face.png "ilk dijital izleme yüz örnek ekran görüntüsü")](creating-a-watchface-images/01-initial-face.png#lightbox)
 
 Bu dijital izleme yüz geliştirilen ve test sonra daha fazla kod için daha yükseltmek için üç el ile analog izleme yüz Gelişmiş eklenir: 
 
-[ ![Analog izleme yüz](creating-a-watchface-images/02-example-watchface.png "son analog izleme yüz örnek ekran görüntüsü")](creating-a-watchface-images/02-example-watchface.png)
+[![Analog izleme yüz](creating-a-watchface-images/02-example-watchface.png "son analog izleme yüz örnek ekran görüntüsü")](creating-a-watchface-images/02-example-watchface.png#lightbox)
 
 Gözcü yüz Hizmetleri toplanmış ve yıpranması uygulama bir parçası olarak yüklenir. Aşağıdaki örneklerde, `MainActivity` izleme yüz hizmet paketlenir ve akıllı saate uygulamanın bir parçası olarak dağıtılan böylece yıpranması uygulama şablonu koddan fazlasını içerir. Gerçekte, bu uygulama yıpranması cihaz (veya öykünücü) yüklenen izleme yüz hizmet alma zamanıyla ilgili bir araç olarak hata ayıklama ve test için hizmet verecektir. 
 
@@ -47,11 +47,11 @@ Adlı yeni bir Android takmak projesi oluşturun **WatchFace** (yeni Xamarin.And
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Yeni Proje iletişim kutusu](creating-a-watchface-images/03-wear-project-vs-sml.png "yeni proje iletişim kutusunda takmak uygulama seçin")](creating-a-watchface-images/03-wear-project-vs.png)
+[![Yeni Proje iletişim kutusu](creating-a-watchface-images/03-wear-project-vs-sml.png "yeni proje iletişim kutusunda takmak uygulama seçin")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Yeni Proje iletişim kutusu](creating-a-watchface-images/03-wear-project-xs-sml.png "yeni proje iletişim kutusunda takmak uygulama seçin")](creating-a-watchface-images/03-wear-project-xs.png)
+[![Yeni Proje iletişim kutusu](creating-a-watchface-images/03-wear-project-xs-sml.png "yeni proje iletişim kutusunda takmak uygulama seçin")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -60,11 +60,11 @@ Paket adı ayarlamak `com.xamarin.watchface`:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Paket adı ayarı](creating-a-watchface-images/04-package-name-vs.png "com.xamarin.watchface için paket adını ayarlayın")](creating-a-watchface-images/04-package-name-vs.png)
+[![Paket adı ayarı](creating-a-watchface-images/04-package-name-vs.png "com.xamarin.watchface için paket adını ayarlayın")](creating-a-watchface-images/04-package-name-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Paket adı ayarı](creating-a-watchface-images/04-package-name-xs.png "com.xamarin.watchface için paket adını ayarlayın")](creating-a-watchface-images/04-package-name-xs.png)
+[![Paket adı ayarı](creating-a-watchface-images/04-package-name-xs.png "com.xamarin.watchface için paket adını ayarlayın")](creating-a-watchface-images/04-package-name-xs.png#lightbox)
 
 -----
 
@@ -72,13 +72,13 @@ Paket adı ayarlamak `com.xamarin.watchface`:
 
 Ayrıca, aşağı kaydırın ve etkinleştirme **Internet** ve **WAKE_LOCK** izinleri: 
 
-[ ![Gerekli izinleri](creating-a-watchface-images/05-required-permissions-vs.png "Internet etkinleştirmek ve WAKE_LOCK izinleri")](creating-a-watchface-images/05-required-permissions-vs.png)
+[![Gerekli izinleri](creating-a-watchface-images/05-required-permissions-vs.png "Internet etkinleştirmek ve WAKE_LOCK izinleri")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Minimum Android sürümü kümesine **Android 5.1 (API düzeyi 22)**. Ayrıca, etkinleştirme **Internet** ve **WakeLock** izinleri:
 
-[ ![Gerekli izinleri](creating-a-watchface-images/05-required-permissions-xs.png "Internet etkinleştirmek ve WakeLock izinleri")](creating-a-watchface-images/05-required-permissions-xs.png)
+[![Gerekli izinleri](creating-a-watchface-images/05-required-permissions-xs.png "Internet etkinleştirmek ve WakeLock izinleri")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
 
 -----
 
@@ -91,24 +91,24 @@ Ardından, indirme [preview.png](creating-a-watchface-images/preview.png) &ndash
 
 NuGet Paket Yöneticisi'ni başlatın (Visual Studio'da sağ **başvuruları** içinde **Çözüm Gezgini** seçip **NuGet paketlerini Yönet...** ). En son kararlı sürümü için projesini güncelleştirme **Xamarin.Android.Wear**: 
 
-[ ![NuGet Paket Yöneticisi eklemek](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "Xamarin.Android.Wear Paketi Ekle")](creating-a-watchface-images/06-add-wear-pkg-vs.png)
+[![NuGet Paket Yöneticisi eklemek](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "Xamarin.Android.Wear Paketi Ekle")](creating-a-watchface-images/06-add-wear-pkg-vs.png#lightbox)
 
 Sonraki, eğer **Xamarin.Android.Support.v13** olan yüklü, kaldırın:
 
-[ ![NuGet Paket Yöneticisi Kaldır](creating-a-watchface-images/07-uninstall-v13-sml.png "Xamarin.Support.v13 Kaldır")](creating-a-watchface-images/07-uninstall-v13.png)
+[![NuGet Paket Yöneticisi Kaldır](creating-a-watchface-images/07-uninstall-v13-sml.png "Xamarin.Support.v13 Kaldır")](creating-a-watchface-images/07-uninstall-v13.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 NuGet Paket Yöneticisi'ni başlatın (Mac için Visual Studio'da sağ **paketleri** içinde **çözüm bölmesinde** seçip **paketleri Ekle...** ). En son kararlı sürümü için projesini güncelleştirme **Xamarin.Android.Wear**: 
 
-[ ![NuGet Paket Yöneticisi eklemek](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "Xamarin.Android.Wear Paketi Ekle")](creating-a-watchface-images/06-add-wear-pkg-xs.png)
+[![NuGet Paket Yöneticisi eklemek](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "Xamarin.Android.Wear Paketi Ekle")](creating-a-watchface-images/06-add-wear-pkg-xs.png#lightbox)
 
 -----
 
 
 Derleme ve uygulamayı bir yıpranması cihaz veya öykünücü çalıştırma (Bunun nasıl yapılacağı hakkında daha fazla bilgi için bkz: [Başlarken](~/android/wear/get-started/index.md) Kılavuzu). Aşağıdaki uygulama ekran yıpranması aygıtta görmeniz gerekir:
 
-[ ![Uygulama ekran](creating-a-watchface-images/08-app-screen.png "yıpranması cihazda uygulama ekran")](creating-a-watchface-images/08-app-screen.png)
+[![Uygulama ekran](creating-a-watchface-images/08-app-screen.png "yıpranması cihazda uygulama ekran")](creating-a-watchface-images/08-app-screen.png#lightbox)
 
 Bu noktada, bir izleme yüz hizmet uygulaması henüz sağlamadığı temel yıpranması uygulama izleme yüz işlevi yoktur. Bu hizmet sonraki eklenir. 
 
@@ -117,7 +117,7 @@ Bu noktada, bir izleme yüz hizmet uygulaması henüz sağlamadığı temel yıp
 
 Android yıpranması Implements izlemek yüzeyleri aracılığıyla `CanvasWatchFaceService` sınıfı. `CanvasWatchFaceService` türetilmiş `WatchFaceService`, kendisi türetilir `WallpaperService` aşağıdaki çizimde gösterildiği gibi: 
 
-[ ![Devralma diyagramı](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService devralma diyagramı")](creating-a-watchface-images/09-inheritance-diagram.png)
+[![Devralma diyagramı](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService devralma diyagramı")](creating-a-watchface-images/09-inheritance-diagram.png#lightbox)
 
 `CanvasWatchFaceService` iç içe bir içeren `CanvasWatchFaceService.Engine`; bunu başlatır bir `CanvasWatchFaceService.Engine` izleme yüz çizim asıl işi yapan nesne. `CanvasWatchFaceService.Engine` türetilmiş `WallpaperService.Engine` Yukarıdaki diyagramda gösterildiği gibi. 
 
@@ -317,11 +317,11 @@ Bu dosyanın derleme eylem kümesine **AndroidResource**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Derleme eylemi](creating-a-watchface-images/10-android-resource-vs.png "AndroidResource eyleme kümesi oluşturma")](creating-a-watchface-images/10-android-resource-vs.png)
+[![Derleme eylemi](creating-a-watchface-images/10-android-resource-vs.png "AndroidResource eyleme kümesi oluşturma")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Derleme eylemi](creating-a-watchface-images/10-android-resource-xs.png "AndroidResource eyleme kümesi oluşturma")](creating-a-watchface-images/10-android-resource-xs.png)
+[![Derleme eylemi](creating-a-watchface-images/10-android-resource-xs.png "AndroidResource eyleme kümesi oluşturma")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
 
 -----
 
@@ -342,13 +342,13 @@ Derleme ve yıpranması aygıta uygulama dağıtabilirsiniz. Önceki gibi görü
 
 4.  Seçin **Xamarin örnek** izlemek yüz (sağ tarafta gösterilen): 
 
-    [ ![Watchface Seçici](creating-a-watchface-images/11-watchface-picker.png "Xamarin örnek izleme yüz bulmaya geçirme")](creating-a-watchface-images/11-watchface-picker.png)
+    [![Watchface Seçici](creating-a-watchface-images/11-watchface-picker.png "Xamarin örnek izleme yüz bulmaya geçirme")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
 
 5.  Dokunun **Xamarin örnek** seçmek için yüz izleyin. 
 
 Bu, o ana kadarki uygulanan özel izleme yüz hizmetini kullanmak için yıpranması cihaz izleme yüz değiştirir: 
 
-[ ![Dijital izleme yüz](creating-a-watchface-images/12-digital-watchface.png "yıpranması cihazda çalışan özel dijital izleme")](creating-a-watchface-images/12-digital-watchface.png)
+[![Dijital izleme yüz](creating-a-watchface-images/12-digital-watchface.png "yıpranması cihazda çalışan özel dijital izleme")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
 
 Uygulama uygulama böylece en az bir görece kaba izleme yazıtipi olmasıdır (örneğin, bir izleme yüz arka plan içermez ve arama değil `Paint` görünümlerini geliştirmek için yumuşatma yöntemleri). Ancak, özel izleme yüz oluşturmak için gerekli olan tam kemikler işlevleri uygulayın. 
 
@@ -476,7 +476,7 @@ Application.Context.UnregisterReceiver (timeZoneReceiver);
 
 Derleme ve uygulamayı yıpranması aygıta yeniden dağıtın. Gözcü yüz önce izleme yüz Seçici seçin. Sol tarafta izleme Seçici önizlemede gösterilen ve yeni izleme yüz sağ tarafta gösterilir:
 
-[ ![Analog izleme yüz](creating-a-watchface-images/13-analog-watchface.png "geliştirilmiş analog yüz Seçici ve cihaz")](creating-a-watchface-images/13-analog-watchface.png)
+[![Analog izleme yüz](creating-a-watchface-images/13-analog-watchface.png "geliştirilmiş analog yüz Seçici ve cihaz")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
 
 Bu ekran görüntüsünde, saniyeyi kez saniye başına taşımaktır. Bu kod bir yıpranması cihazda çalıştırdığınızda, Gözcü ortam moduna girdiğinde saniyeyi kaybolur.
 

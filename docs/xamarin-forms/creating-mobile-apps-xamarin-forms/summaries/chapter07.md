@@ -3,14 +3,15 @@ title: "Bölüm 7 özeti. XAML kodu karşılaştırması"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1263328a748ac0bacd368da361aeaff57c4cfa20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1104f7576cabfed9988154f3b6a8beb429136fb3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Bölüm 7 özeti. XAML kodu karşılaştırması
 
@@ -68,7 +69,7 @@ Her sınıf bir özelliğiyle tanımlamak için izin verilen bir [ `ContentPrope
 
  Çok satırlı bir dize ayarlandığında `Text` özelliği, satır sonu karakterleri, boşluk karakterleri dönüştürülür, ancak çok satırlı bir dize içeriği olarak görüntülendiğinde satır sonu karakterleri korunur `Label` veya `Label.Text` etiketler:
 
- [![Üçlü ekran paylaşımı metin çeşitleri](images/ch07fg03-small.png "biçimlendirilmiş metin Çeşitlemeler")](images/ch07fg03-large.png "biçimlendirilmiş metin farklılıkları")
+ [![Üçlü ekran paylaşımı metin çeşitleri](images/ch07fg03-small.png "biçimlendirilmiş metin Çeşitlemeler")](images/ch07fg03-large.png#lightbox "biçimlendirilmiş metin farklılıkları")
 
 
 

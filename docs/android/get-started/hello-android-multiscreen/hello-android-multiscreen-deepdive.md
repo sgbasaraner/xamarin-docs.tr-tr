@@ -3,16 +3,16 @@ title: "Merhaba, Android Multiscreen: Derinlemesine bakış"
 description: "Bu iki parçalı Kılavuzu'nda (Merhaba, Android Kılavuzu oluşturulan) temel Phoneword uygulama ikinci ekranı işlemek için genişletilir. Yol boyunca temel Android uygulama yapı taşları sunulur. Derin Dalış Android mimarisi içine daha iyi anlamasına yardımcı Android uygulaması yapısı ve işlevleri geliştirmenize yardımcı olması için dahil edilmiştir."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: AD3BAE9A-963C-4CF7-9733-111033034289
+ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: a47dea43b1fb1e84a0cd3dffc07b483497edbe09
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: acced081daa9416c5c8dcf90f769aaacd584ec9a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Merhaba, Android Multiscreen: Derinlemesine bakış
 
@@ -30,7 +30,6 @@ Keşfedin bu kılavuzda daha gelişmiş Android olarak Android mimarisi *uygulam
 
 İçinde [Hello, Android derinlemesine](~/android/get-started/hello-android/hello-android-deepdive.md), tek giriş noktası bulunmadığından Android uygulamaları benzersiz programlar olduğunu öğrendiniz. Bunun yerine, işletim sistemi (veya başka bir uygulama) sırayla uygulama için işleminin başlatan herhangi bir uygulamanın kayıtlı etkinliklerinin başlatır. Bu derinlemesine Android mimarisi içine, Android uygulama yapı taşları ve bunların işlevlerini sunarak nasıl Android uygulamaları oluşturulan anlama genişletir.
 
-<a name="AndroidApplicationBlocks" />
 
 ### <a name="android-application-blocks"></a>Android uygulaması blokları
 
@@ -52,7 +51,6 @@ Android çevresinde tasarlanmıştır *en az ayrıcalık prensibi* &ndash; çal�
 
 İletişim kurmak için uygulama blokları adlı zaman uyumsuz ileti göndermek *hedefleri* geri ve İleri. Hedefleri alıcı blok ve bazen bazı veriler hakkındaki bilgileri içerir. Amacına iki uygulama bileşenleri bağlama ve iletişim kurmalarına izin vererek gönderilen başka bir uygulama bileşeni olmasını bir şey bir uygulama bileşeni tetikleyicilerden. Hedefleri ve geriye göndererek almak ve kaydetmek için kamera uygulamasını başlatarak, konum bilgilerini toplama veya sonraki bir ekranından gezinme gibi karmaşık işlemleri koordine etmek için blokları elde edebilirsiniz.
 
-<a name="AndroidManifestXML" />
 
 ### <a name="androidmanifestxml"></a>AndroidManifest.XML
 

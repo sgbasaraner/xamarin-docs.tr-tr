@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 4798da42718658096509948bae07e5e5534d5af0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8f4d8253d56708f77ede7b5173f3dd771e1da0ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms için XAML Önizleyicisi
 
@@ -30,13 +30,13 @@ Daha fazla bilgi bulunmaktadır [sürüm notları](https://developer.xamarin.com
 
 **Önizleme** düğmesi XAML dosyası sağ tıklayıp seçerek Editor'ü görüntülenebilir **birlikte Aç > XAML Görüntüleyicisi**. Önizleme bölmesini sonra gösterilen veya tuşlarına basarak gizli **Önizleme** herhangi bir XAML belge pencerenin sağ üst köşedeki düğmesi:
 
-[ ![Mac için Visual Studio ListView denetimi Önizleme](xaml-previewer-images/xamlp-list-sml.png "Mac için Visual Studio Forms önizlemesinde")](xaml-previewer-images/xamlp-list.png "Mac için Visual Studio Forms önizlemesinde")
+[![Mac için Visual Studio ListView denetimi Önizleme](xaml-previewer-images/xamlp-list-sml.png "Mac için Visual Studio Forms önizlemesinde")](xaml-previewer-images/xamlp-list.png#lightbox "Mac için Visual Studio Forms önizlemesinde")
 
 ### <a name="visual-studio-on-windows"></a>Visual Studio Windows
 
 Kullanım **Görünüm > Diğer Pencereler > Xamarin.Forms Önizleyicisi** Önizleme penceresini açmak için Visual Studio menüsünde. Kullanım **Pencere > Yeni dikey sekme grubu** menü yan yana getirin.
 
-[ ![ListView denetimi Önizleme Visual Studio'da](xaml-previewer-images/xamlp-list-vs-sml.png "Visual Studio Forms önizlemesinde")](xaml-previewer-images/xamlp-list-vs.png "Visual Studio Forms önizlemesinde")
+[![ListView denetimi Önizleme Visual Studio'da](xaml-previewer-images/xamlp-list-vs-sml.png "Visual Studio Forms önizlemesinde")](xaml-previewer-images/xamlp-list-vs.png#lightbox "Visual Studio Forms önizlemesinde")
 
 ## <a name="xaml-preview-options"></a>XAML Önizleme seçenekleri
 

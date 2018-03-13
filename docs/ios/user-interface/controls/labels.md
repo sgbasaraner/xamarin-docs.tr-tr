@@ -7,19 +7,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 695d02c5fa0477053cd95d73e1b738332d14f0f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0fdeecc4465aa5709b452ef0b591ec4e5c262e3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="labels"></a>Etiketler
 
-`UILabel` Okuma yalnızca metin denetimi, tek veya çok satırlı görüntülemek için kullanılır. Bu makalede aşağıdaki konuları içerir:
-
-- [Bir etiket uygulama](#Implementing_a_Label)
-- [Kesilmesiyle ve kaydırma](#Truncating_and_Wrapping)
-- [Metin ve etiket biçimlendirme](#Formatting_Text_and_Label)
+`UILabel` Okuma yalnızca metin denetimi, tek veya çok satırlı görüntülemek için kullanılır. 
 
 ## <a name="implementing-a-label"></a>Bir etiket uygulama
 
@@ -52,6 +48,8 @@ Aşağıdaki özellikler özellikleri defterinde ayarlanabilir:
 ## <a name="truncating-and-wrapping"></a>Kesilmesiyle ve kaydırma
 
 İOS satırını kullanarak bilgi sonları için başvurmak [kesmek ve Kaydır](https://developer.xamarin.com/recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text/) tarif.
+
+<a name="Formatting_Text_and_Label"/>
 
 ## <a name="formatting-text-and-label"></a>Metin ve etiket biçimlendirme
 

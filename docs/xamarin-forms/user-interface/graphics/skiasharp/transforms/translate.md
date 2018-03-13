@@ -4,14 +4,15 @@ description: "SkiaSharp grafik kaydırılacak Çevir Dönüştür kullanmayı ö
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 491c82406dafceb876ddbb4a0a7204447b95f57d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cac2479af2778af6043a85583f9d7b518748d7da
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-translate-transform"></a>Çevir Dönüştür
 
@@ -68,7 +69,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Art arda dikdörtgenler page down trickle:
 
-[![](translate-images/accumulatedtranslate-small.png "Üçlü sayfasının ekran görüntüsü birikmiş çevir")](translate-images/accumulatedtranslate-large.png "Üçlü sayfasının ekran görüntüsü birikmiş Çevir")
+[![](translate-images/accumulatedtranslate-small.png "Üçlü sayfasının ekran görüntüsü birikmiş çevir")](translate-images/accumulatedtranslate-large.png#lightbox "Üçlü sayfasının ekran görüntüsü birikmiş Çevir")
 
 Birikmiş çeviri Etkenler varsa `dx` ve `dy`, çizim işlevinde belirtin noktası (`x`, `y`), grafik nesnesi bir noktada işlenmeden sonra (`x'`, `y'`), burada:
 
@@ -125,7 +126,7 @@ using (SKPaint textPaint = new SKPaint())
 
 Her üç örneklerin `Translate` tarafından verilen konumdan uzaklığı için metin görüntüleme için adlı `x` ve `y` değişkenleri. Ardından metin yeniden çeviri etkisiz başka bir renkle görüntülenir:
 
-[![](translate-images/translatetexteffects-small.png "Üçlü sayfasının ekran görüntüsü Çevir metin efektleri")](translate-images/translatetexteffects-large.png "Üçlü sayfasının ekran görüntüsü metin efektleri Çevir")
+[![](translate-images/translatetexteffects-small.png "Üçlü sayfasının ekran görüntüsü Çevir metin efektleri")](translate-images/translatetexteffects-large.png#lightbox "Üçlü sayfasının ekran görüntüsü metin efektleri Çevir")
 
 Her üç örneklerin negating farklı bir şekilde gösterilir `Translate` çağırın:
 
@@ -209,7 +210,7 @@ public class HendecagramArrayPage : ContentPage
 
 Sonuç şöyledir:
 
-[![](translate-images/hendecagramarray-small.png "Üçlü sayfasının ekran görüntüsü Hendecagram dizi")](translate-images/hendecagramarray-large.png "Üçlü sayfasının ekran görüntüsü Hendecagram dizisi")
+[![](translate-images/hendecagramarray-small.png "Üçlü sayfasının ekran görüntüsü Hendecagram dizi")](translate-images/hendecagramarray-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Hendecagram dizisi")
 
 Animasyon genellikle dönüşümler içerir. **Hendecagram animasyon** sayfa 11 işaret yıldız bir daire içinde taşır. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Sınıfı bazı alanlar ile başlar ve, geçersiz kılmalar `OnAppearing` ve `OnDisappearing` yöntemleri Xamarin.Forms süreölçer durdurmak ve başlatmak için:
 
@@ -294,7 +295,7 @@ public class HendecagramAnimationPage : ContentPage
 
 `PaintSurface` İşleyicisi çağrılarını `Translate` ilk Kanvasın ortasına çevirmek için iki kez, yöntemi ve ardından kalmaz dairenin çevresi çevir (0, 0). RADIUS dairenin hala sayfasının sınırlar içinde yıldız tutarken mümkün olduğunca büyük olacak şekilde ayarlanmıştır:
 
-[![](translate-images/hendecagramanimation-small.png "Üçlü sayfasının ekran görüntüsü Hendecagram animasyon")](translate-images/hendecagramanimation-large.png "Üçlü sayfasının ekran görüntüsü Hendecagram animasyon")
+[![](translate-images/hendecagramanimation-small.png "Üçlü sayfasının ekran görüntüsü Hendecagram animasyon")](translate-images/hendecagramanimation-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Hendecagram animasyon")
 
 Sayfa merkezi etrafında döner olarak yıldız aynı yönü tutar dikkat edin. Hiç döndürme değil. Bir işi döndürme dönüşümü için olmasıdır.
 

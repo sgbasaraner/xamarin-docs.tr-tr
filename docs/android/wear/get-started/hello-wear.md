@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: bac9402df544a57cceb98e816e268eb2dcb99c72
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8eed2d6b825a6e6dd7e956bf901246b9a630081a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-wear"></a>Merhaba, yıpranması
 
@@ -30,11 +30,11 @@ Yeni bir **Android takmak uygulama**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Yeni Proje iletişim kutusuna takmak yeni Android uygulaması oluşturma](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png)
+[![Yeni Proje iletişim kutusuna takmak yeni Android uygulaması oluşturma](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Yeni bir çözüm iletişim kutusunda takmak yeni Android uygulaması oluşturma](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png)
+[![Yeni bir çözüm iletişim kutusunda takmak yeni Android uygulaması oluşturma](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
 
 -----
 
@@ -47,13 +47,13 @@ Bu şablon otomatik olarak içeren **Xamarin Android Wearable Kitaplığı** NuG
 
 Emin **Minimum Android hedef** ayarlanır **Android 5.0 (Lolipop)** ya da daha sonra: 
 
-[![Visual Studio'da Android 5.0 hedef Framework'ü ayarlama](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png)
+[![Visual Studio'da Android 5.0 hedef Framework'ü ayarlama](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Hedef Framework'ü ayarlandığından emin olun **Android 5.0 (Lolipop)** ya da daha sonra:
 
-[ ![Mac için Visual Studio Android 5.0 hedef Framework'ü ayarlama](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png)
+[![Mac için Visual Studio Android 5.0 hedef Framework'ü ayarlama](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
 -----
 
@@ -144,11 +144,11 @@ Android takmak aygıt aygıt menülerle görüntülenmesi gerekir. Hata ayıklam
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Visual Studio aygıt menüde takmak AVD seçme](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png)
+[![Visual Studio aygıt menüde takmak AVD seçme](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Mac cihaz menü için Visual Studio'da takmak AVD seçme](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png)
+[![Mac cihaz menü için Visual Studio'da takmak AVD seçme](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
@@ -160,11 +160,11 @@ Bir izleme öykünücüsü kullanıyorsanız, uygulamasını başlatmak için bi
 
 Uygulama başarıyla dağıtıldıktan sonra yıpranması aygıt ekran aşağıdakine benzer bir ekran görüntülenir:
 
-[![Yıpranması uygulamasının başlangıç ekranı](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png)
+[![Yıpranması uygulamasının başlangıç ekranı](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
 Dokunun **BANA tıklayın!** düğmesi yıpranması cihaz ve bakın her dokunun ile sayısı artışı değişmiştir:
 
-[![3 tıklama sonra ekran takmak uygulama](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png)
+[![3 tıklama sonra ekran takmak uygulama](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 
 ## <a name="next-steps"></a>Sonraki Adımlar

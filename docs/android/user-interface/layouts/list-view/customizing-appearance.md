@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 18c53ed6428eff911420c696d45b341d8e0fa5c1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1bf481e4999365f4afc52cb9dda83c6e627950e1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-listviews-appearance"></a>ListView'ın görünümünü özelleştirme
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
 ListView görünümünü görüntülenen satır düzeni tarafından dikte edilir. Görünümü değiştirmek için bir `ListView`, farklı satır düzenini kullanın.
 
-<a name="Built-in_Row_Views" />
 
 ## <a name="built-in-row-views"></a>Yerleşik satır görünümleri
 
@@ -53,11 +51,11 @@ Kullanarak başvurulabilir on iki yerleşik görünüm vardır **Android.Resourc
 
 Her bir yerleşik satır görünüm ilişkili yerleşik bir stil içerir. Bu ekran görüntüleri her görünüm nasıl göründüğünü gösterir:
 
-[![TestListItem, SimpleSelectableListItem, SimpleListitem1 ve SimpleListItem2 ekran görüntüleri](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png)
+[![TestListItem, SimpleSelectableListItem, SimpleListitem1 ve SimpleListItem2 ekran görüntüleri](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
 
-[![SimpleListItemActivated1, SimpleListItemActivated2, SimpleListItemChecked ve SimpleListItemMultipleChecked ekran görüntüleri](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png)
+[![SimpleListItemActivated1, SimpleListItemActivated2, SimpleListItemChecked ve SimpleListItemMultipleChecked ekran görüntüleri](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
 
-[![SimpleListItemSingleChoice, TwoLineListItem, ActivityListItem ve SimpleExpandableListItem ekran görüntüleri](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png)
+[![SimpleListItemSingleChoice, TwoLineListItem, ActivityListItem ve SimpleExpandableListItem ekran görüntüleri](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
 
 **BuiltInViews/HomeScreenAdapter.cs** örnek dosyası (içinde **BuiltInViews** çözüm) Genişletilebilir olmayan liste öğesi ekranlar üretmek için kodunu içerir. Görünüm kümesinde `GetView` yöntemi şuna benzer:
 
@@ -88,7 +86,6 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 Grup görünümü ve alt görünümü özelliklerini sonra standart başvurarak ayarlanabilir `Text1` ve `Text2` yukarıda gösterildiği gibi tanımlayıcıları denetim. (Yukarıda gösterilen) SimpleExpandableListItem ekran tek satır grubu görünümü (SimpleExpandableListItem1) ve iki satır alt Görünüm (SimpleExpandableListItem2) gösteren bir örnek sağlar. Alternatif olarak, grubu görünümü için iki satırı (SimpleExpandableListItem2) yapılandırılabilir ve alt görünümü için bir satır (SimpleExpandableListItem1) yapılandırılabilir veya her ikisi de Görünüm Grup ve alt görünümü satırları aynı sayıda olabilir. 
 
 
-<a name="Accessories" />
 
 ## <a name="accessories"></a>Donatılar
 
@@ -102,7 +99,7 @@ Satır seçimi durumu göstermek için Görünüm sağında eklenen Donatılar s
 
 Daha önce bahsedilen Donatılar aşağıdaki ekranda, kendi ilgili sırayla gösterilmiştir:
 
-[![Ekran görüntüleri, SimpleListItemChecked, SimpleListItemSingleChoice ve SimpleListItemMultipleChoice Donatılar ile](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png)
+[![Ekran görüntüleri, SimpleListItemChecked, SimpleListItemSingleChoice ve SimpleListItemMultipleChoice Donatılar ile](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
 
 Bu Donatılar geçişi birini görüntülemek için gerekli düzeni kaynak kimliği bağdaştırıcıya sonra el ile seçim durumu gerekli satırlar için ayarlayın. Bu kod satırı oluşturmak ve atamak gösterilmiştir bir `Adapter` bu düzenlerden birini kullanarak:
 
@@ -112,7 +109,6 @@ ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListI
 
 `ListView` Kendi görüntülenmekte donatıyı bağımsız olarak farklı seçim modunu destekler. Karışıklığı önlemek için `Single` seçim modu ile `Checked` ve `SingleChoice` Donatılar ve `Multiple` moduyla `MultipleChoice` stili. Seçim modu tarafından denetlenen `ChoiceMode` özelliği `ListView`.
 
-<a name="Handling_API_Level" />
 
 ### <a name="handling-api-level"></a>İşleme API düzeyi
 
@@ -137,7 +133,6 @@ lv.ChoiceMode = Android.Widget.ChoiceMode.Single; // Single
 */
 ```
 
-<a name="Selecting_Items_Programmatically" />
 
 ### <a name="selecting-items-programmatically"></a>Program aracılığıyla öğeleri seçme
 
@@ -165,7 +160,6 @@ for (var i = 0; i < sparseArray.Size(); i++ )
 Console.WriteLine();
 ```
 
-<a name="Creating_Custom_Row_Layouts" />
 
 ## <a name="creating-custom-row-layouts"></a>Özel satır düzenleri oluşturma
 
@@ -188,7 +182,6 @@ Bu örnek, çeşitli yollarla önceki örneklerde farklıdır:
 
 Bu değişiklikler, etkinliğin görünümü ve özel satır görünümü oluşturma ve bunları işlemek için bağdaştırıcı ve etkinlik değişiklikleri kapsayan başlayarak, aşağıda açıklanmıştır.
 
-<a name="Adding_a_ListView_to_an_Activity_Layout" />
 
 ### <a name="adding-a-listview-to-an-activity-layout"></a>Bir etkinlik düzene ListView ekleme
 
@@ -220,7 +213,6 @@ Bu değişiklikler, etkinliğin görünümü ve özel satır görünümü oluşt
 
 Kullanmanın faydası bir `Activity` olan özel bir düzen (yerine bir `ListActivity`) ekranına başlığı gibi ek denetimleri ekleme yapamamasına içinde kaynaklandığını `TextView` Bu örnekte.
 
-<a name="Creating_a_Custom_Row_Layout" />
 
 ### <a name="creating-a-custom-row-layout"></a>Özel satır düzeni oluşturma
 
@@ -267,7 +259,6 @@ Başka bir AXML düzeni dosyasını liste görünümünde görünür her satır 
 
 Özel sıra düzenini birçok farklı denetim içerebilir ancak performans kaydırma karmaşık tasarımları tarafından etkilenebilir ve (özellikle, ağ üzerinden yüklenecek varsa) kullanarak görüntüleri. Kaydırma performans sorunlarını çözdükten üzerinde daha fazla bilgi için Google makalesine bakın.
 
-<a name="Referencing_a_Custom_Row_View" />
 
 ### <a name="referencing-a-custom-row-view"></a>Bir özel satır görünümü başvurma
 
@@ -309,7 +300,6 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 }
 ```
 
-<a name="Referencing_the_Custom_ListView_in_the_Activity" />
 
 ### <a name="referencing-the-custom-listview-in-the-activity"></a>Özel ListView etkinliğinde başvurma
 
@@ -343,10 +333,9 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 Sonuçta elde edilen ekran şöyle görünür:
 
-[![Sonuçta elde edilen CustomRowView ekran görüntüsü](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png)
+[![Sonuçta elde edilen CustomRowView ekran görüntüsü](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
 
 
-<a name="Customizing_the_Row_Selector_Color" />
 
 ### <a name="customizing-the-row-selector-color"></a>Satır seçici renk özelleştirme
 
@@ -386,10 +375,9 @@ android:background="@drawable/CustomSelector"
 
 Seçilen satırın ve karşılık gelen `Toast` iletisi şimdi şöyle görünür:
 
-[![Seçilen satırın seçili satır adını görüntüleme bildirim iletisi turuncu](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png)
+[![Seçilen satırın seçili satır adını görüntüleme bildirim iletisi turuncu](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
 
-<a name="Preventing_Flickering_on_Custom_Layouts" />
 
 ### <a name="preventing-flickering-on-custom-layouts"></a>Özel düzenleri titremeyi önleme
 

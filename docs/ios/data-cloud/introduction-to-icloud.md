@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: 7e02c92f9c1aafeb97da4905c17898b02362c960
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce2130985eb954abc4b4a1f4022eec97341eb902
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="icloud"></a>iCloud
 
@@ -48,7 +48,7 @@ Uygulamaların iCloud hem de kullanacak şekilde yapılandırılması gerekir [A
 
 -   **Yeni bir uygulama kimliği oluşturma** - bir uygulama kimliği oluşturma, özetlenen adımları izleyin [cihaz sağlamayı Kılavuzu depolama teknolojileri bölümü için sağlama](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)ve kontrol ettiğinizden emin olun **iCloud** olarak bir izin verilen hizmeti:
 
- [ ![](introduction-to-icloud-images/icloud-sml.png "İCloud izin verilen bir hizmet olarak denetleyin")](introduction-to-icloud-images/icloud.png)
+ [![](introduction-to-icloud-images/icloud-sml.png "İCloud izin verilen bir hizmet olarak denetleyin")](introduction-to-icloud-images/icloud.png#lightbox)
 
 - **Yeni bir sağlama profili oluşturun** - sağlama profili oluşturun, özetlenen adımları izleyin [cihaz sağlamayı Kılavuzu](~/ios/get-started/installation/device-provisioning/index.md#Provisioning_Profile) .
 
@@ -83,7 +83,7 @@ Bu ekran örnek kullanımını göstermektedir. Değişiklik bildirimleri iCloud
 
 
 
- [ ![](introduction-to-icloud-images/icloud-kv-arrows.png "Cihazlar arasında ileti akışı")](introduction-to-icloud-images/icloud-kv-arrows.png)
+ [![](introduction-to-icloud-images/icloud-kv-arrows.png "Cihazlar arasında ileti akışı")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
 ### <a name="setting-and-retrieving-data"></a>Veri alma ve ayarlama
 
@@ -151,13 +151,13 @@ Değişiklik olası nedenleri şunlardır: HtmlRadioButton (0), InitialSyncChang
 
 Bu diyagramda, nasıl tüm birlikte uyduğunu gösterilmektedir. Her cihazın yerel depolama (UbiquityContainer) ve arka plan programı veri bulutta gönderip ilgilenir işletim sisteminin iCloud kaydedilen verilerin gerekir. Tüm dosya erişimi UbiquityContainer FilePresenter/eşzamanlı erişimi engellemek için FileCoordinator yapılmalıdır. `UIDocument` Sınıfı bu sizin için gerçekleştirir; Bu örnek UIDocument kullanmayı gösterir.
 
- [ ![](introduction-to-icloud-images/icloud-overview.png "Belge depolama genel bakış")](introduction-to-icloud-images/icloud-overview.png)
+ [![](introduction-to-icloud-images/icloud-overview.png "Belge depolama genel bakış")](introduction-to-icloud-images/icloud-overview.png#lightbox)
 
 Basit bir iCloudUIDoc örnek uygulayan `UIDocument` tek bir metin alanı içeren bir alt kümesi. Metin olarak işlenir bir `UITextView` ve düzenlemeleri yayılır diğer cihazları İcloud'a tarafından bir bildirim iletisi kırmızı olarak gösterilir. Örnek kod çakışma çözümü gibi daha gelişmiş iCloud özellikleri ile ilgilenir değil.
 
 Bu ekran metni değiştirme ve tuşuna basarak sonra örnek uygulaması - gösterir **UpdateChangeCount** belge diğer cihazları İcloud'a yoluyla eşitlenir.
 
- [ ![](introduction-to-icloud-images/iclouduidoc.png "Bu ekran metni değiştirme ve UpdateChangeCount tuşuna basarak sonra örnek uygulaması gösterir")](introduction-to-icloud-images/iclouduidoc.png)
+ [![](introduction-to-icloud-images/iclouduidoc.png "Bu ekran metni değiştirme ve UpdateChangeCount tuşuna basarak sonra örnek uygulaması gösterir")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
 
 İCloudUIDoc örnek beş bölümü vardır:
 
@@ -403,15 +403,15 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
 Kullanıcıların iCloud belgelerde yönetebilir **belgeleri** ayarları; aracılığıyla uygulamanızı dışında "yaygınlığıyla kapsayıcısının" dizin silmek için geçirme ve dosya listesini görüntüleyebilirsiniz. Uygulama kodu belgeler kullanıcı tarafından nerede silinir durum kaldırabilir olmalıdır. İç uygulama verileri depolamaz **belgeleri** dizin.
 
- [ ![](introduction-to-icloud-images/icloudstorage.png "İcloud'a belge iş akışını yönetme")](introduction-to-icloud-images/icloudstorage.png)
+ [![](introduction-to-icloud-images/icloudstorage.png "İcloud'a belge iş akışını yönetme")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
 
 
 Bu uygulamayla ilgili iCloud belgelerinin durumunu bildiren cihazlarını iCloud etkinleştirilmiş bir uygulama kaldırmayı denediğinizde kullanıcılar ayrıca farklı uyarılar alırsınız.
 
- [ ![](introduction-to-icloud-images/icloud-delete1.png "Kullanıcının iCloud etkinleştirilmiş bir uygulama kullanıcıların cihazlarından kaldırma girişiminde bulunduğunda örnek iletişim")](introduction-to-icloud-images/icloud-delete1.png)
+ [![](introduction-to-icloud-images/icloud-delete1.png "Kullanıcının iCloud etkinleştirilmiş bir uygulama kullanıcıların cihazlarından kaldırma girişiminde bulunduğunda örnek iletişim")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
 
- [ ![](introduction-to-icloud-images/icloud-delete2.png "Kullanıcının iCloud etkinleştirilmiş bir uygulama kullanıcıların cihazlarından kaldırma girişiminde bulunduğunda örnek iletişim")](introduction-to-icloud-images/icloud-delete2.png)
+ [![](introduction-to-icloud-images/icloud-delete2.png "Kullanıcının iCloud etkinleştirilmiş bir uygulama kullanıcıların cihazlarından kaldırma girişiminde bulunduğunda örnek iletişim")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
 ## <a name="icloud-backup"></a>İcloud'a yedekleme
 

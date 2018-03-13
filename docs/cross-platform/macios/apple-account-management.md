@@ -2,16 +2,16 @@
 title: "Apple hesap yönetimi"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
+ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/05/2017
-ms.openlocfilehash: 0cf7456cec2e934516e15ac6cbc57109e6b57a79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 465ba4822a1004100160703f1607d99199f28a16
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="apple-account-management"></a>Apple hesap yönetimi
 
@@ -44,7 +44,7 @@ Bu özelliği kullanmak için bir Apple Geliştirici hesabınızın olması gere
 - En son fastlane Araçları'ndan olduğundan emin olun [https://download.fastlane.tools](https://download.fastlane.tools).
 - Başlamadan önce tüm kullanıcı lisans sözleşmelerini kabul etmek emin olun [Geliştirici Portalı](https://developer.apple.com/account/).
 
-# <a name="adding-an-apple-developer-account"></a>Apple Geliştirici hesabı ekleme
+## <a name="adding-an-apple-developer-account"></a>Apple Geliştirici hesabı ekleme
 
 1. Hesap yönetimi iletişim kutusu açmak için Git **Visual Studio > Tercihler > Apple Developer hesabı**:
 
@@ -68,8 +68,11 @@ Bu özelliği kullanmak için bir Apple Geliştirici hesabınızın olması gere
 
     ![](apple-account-management-images/image6.png)
 
-<a name="managing">
+
+<a name="managing"/>
     
+
+
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>İmzalama kimlikleri yönetmek ve sağlama profilleri
 
 Takım Ayrıntıları iletişim imzalama türüne göre düzenlenmiş kimlikleri listesini görüntüler. **Durum** sütun öneren, sertifikanın olup olmadığını: 
@@ -84,7 +87,7 @@ Takım Ayrıntıları iletişim imzalama türüne göre düzenlenmiş kimlikleri
 
   ![](apple-account-management-images/image7.png)
 
-### <a name="create-a-signing-identities"></a>İmzalama kimlik oluşturun
+## <a name="create-a-signing-identities"></a>İmzalama kimlik oluşturun
 
 Yeni bir imza kimliği oluşturmak için seçin **yeni bir sertifika oluşturmak** açılan düğmesine ve ihtiyaç duyduğunuz türünü seçin. Yeni imzalama doğru izinlere sahip kimlik birkaç saniye sonra görünür.
 
@@ -92,7 +95,7 @@ Aşağı açılır bir seçeneği devre dışı ve seçili, aşağıda gösteril
 
 ![](apple-account-management-images/image8.png)
 
-### <a name="download-provisioning-profiles"></a>Sağlama profilleri indirin
+## <a name="download-provisioning-profiles"></a>Sağlama profilleri indirin
 
 Takım Ayrıntıları iletişim ayrıca Geliştirici hesabınızı bağlı tüm sağlama profilleri listesini görüntüler. Tuşlarına basarak tüm sağlama profilleri yerel makinenize indirebilirsiniz **tüm profiller karşıdan** düğmesi
 
@@ -102,29 +105,28 @@ Takım Ayrıntıları iletişim ayrıca Geliştirici hesabınızı bağlı tüm 
 
 Uygulamanızı bir cihaza dağıtma hakkında daha fazla bilgi için bkz [cihaz sağlamayı](~/ios/get-started/installation/device-provisioning/index.md) Kılavuzu.
 
-
 ## <a name="troubleshooting"></a>Sorun giderme
 
-#### <a name="view-details-dialog-is-empty"></a>Ayrıntıları iletişim kutusunu görüntüle boştur
+### <a name="view-details-dialog-is-empty"></a>Ayrıntıları iletişim kutusunu görüntüle boştur
 
 Bu şu anda hata ile ilgili bilinen bir sorun olup [#53906](https://bugzilla.xamarin.com/show_bug.cgi?id=53906). Mac için Visual Studio en son kararlı sürümü kullandığınızdan emin olun
 
-#### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>Hesabınızda oturum sorunlarıyla karşılaşıyorsanız, lütfen aşağıdakileri deneyin:
+### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>Hesabınızda oturum sorunlarıyla karşılaşıyorsanız, lütfen aşağıdakileri deneyin:
 
 * Anahtarlık uygulamayı açın ve altından kategoriyi seçin *parolaları*. Arama `deliver.`ve tüm girişleri silin.
 
-#### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"Hesabı eklenirken hata oluştu. Lütfen bir uygulamaya özgü parolayla oturum"
+### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>"Hesabı eklenirken hata oluştu. Lütfen bir uygulamaya özgü parolayla oturum"
 
 Hesabınızdaki 2 faktörlü kimlik doğrulamasının etkin olmasıdır. Mac için Visual Studio en son kararlı sürümü kullandığınızdan emin olun
 
-#### <a name="failed-to-create-new-certificate"></a>Yeni bir sertifika oluşturulamadı
+### <a name="failed-to-create-new-certificate"></a>Yeni bir sertifika oluşturulamadı
 "Bu tür sertifikalar için üst sınıra ulaştınız"
 
 ![](apple-account-management-images/image10.png)
 
 En fazla izin verilen sertifika sayısına oluşturulmuş. Bu sorunu gidermek için Gözat [Apple Geliştirici Merkezi](https://developer.apple.com/account/ios/certificate/distribution) ve bir üretim sertifikaları iptal etme.
 
-#### <a name="known-issues"></a>Bilinen Sorunlar:
+## <a name="known-issues"></a>Bilinen Sorunlar
 
 * Bazen Ayrıntıları iletişim Ölçüsüz imzalama kimlikleri ve profilleri getirmek için zaman alabilir.
 * Genellikle odak Visual Studio'ya Mac için hesabınıza eklenemiyor neden bilgilerinizi girdikten sonra döndürmeyebilir. Bu durumda, işlemi yeniden deneyin.

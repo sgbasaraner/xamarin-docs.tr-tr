@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ef016d963f710ff54fc57b5e6e57181df030c8f6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e67646e5072f703af71fc3f0a7901fd8485f9710
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Bir HybridWebView uygulama
 
@@ -151,7 +151,7 @@ Bu eylemi çağıran [ `DisplayAlert` ](https://developer.xamarin.com/api/member
 1. Ekleme bir `ExportRenderer` özniteliği, Xamarin.Forms özel denetimi oluşturmak için kullanılacak belirtmek için özel Oluşturucu sınıfı. Bu öznitelik, özel Oluşturucu Xamarin.Forms ile kaydetmek için kullanılır.
 
 > [!NOTE]
-> **Not**: çoğu Xamarin.Forms öğeleri için her platform projesinde özel Oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse, varsayılan oluşturucu denetimin taban sınıfı için kullanılır. Ancak, özel Oluşturucu her platform projesinde işlenirken gereken bir [Görünüm](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) öğesi.
+> Çoğu Xamarin.Forms öğeleri için her platform projesinde özel Oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse, varsayılan oluşturucu denetimin taban sınıfı için kullanılır. Ancak, özel Oluşturucu her platform projesinde işlenirken gereken bir [Görünüm](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) öğesi.
 
 Aşağıdaki diyagram, her proje örnek uygulamasında, aralarındaki ilişkilerin birlikte sorumlulukları gösterir:
 
@@ -316,7 +316,7 @@ Bu işlevsellik şu şekilde gerçekleştirilir:
   - Kaynakları serbest bırakılır.
 
 > [!NOTE]
-> **Not**: `WKWebView` sınıfı yalnızca iOS 8 ve üzeri desteklenir.
+> `WKWebView` Sınıfı yalnızca iOS 8 ve üzeri desteklenir.
 
 ### <a name="creating-the-custom-renderer-on-android"></a>Android özel Oluşturucu Oluşturma
 
@@ -411,7 +411,7 @@ public class JSBridge : Java.Lang.Object
 Sınıf öğesinden türetilmelidir `Java.Lang.Object`, ve JavaScript için sunulan yöntemleri donatılmış, ile `[JavascriptInterface]` ve `[Export]` öznitelikleri. Bu nedenle, `invokeCSharpAction` JavaScript işlevi web sayfasına eklenen ve çalıştırılır, bunu çağıracak `JSBridge.InvokeAction` ile donatılmış nedeniyle yöntemi `[JavascriptInterface]` ve `[Export("invokeAction")]` öznitelikleri. Buna karşılık, `InvokeAction` yöntemini çağırır `HybridWebView.InvokeAction` hangi çağrılan açılır görüntülemek için kayıtlı eylem yöntemi.
 
 > [!NOTE]
-> **Not**: projeleri kullanan `[Export]` özniteliği için bir başvuru içermelidir `Mono.Android.Export`, veya bir derleyici hatasına neden olur.
+> Projeleri kullanan `[Export]` özniteliği için bir başvuru içermelidir `Mono.Android.Export`, veya bir derleyici hatasına neden olur.
 
 Unutmayın `JSBridge` sınıfı tutan bir `WeakReference` için `HybridWebViewRenderer` sınıfı. Bu iki sınıf arasında döngüsel bir başvuruya oluşturmamak için yapılır. Daha fazla bilgi için bkz: [zayıf başvurular](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx) konusuna bakın.
 

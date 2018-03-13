@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e138fc1176c646a2e4e9caf94462028dd7c68e9f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77365d5ed62b2ef2e81407ab1fa5aef55c592d0b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="bundle-for-mac-app-store"></a>Mac App Store için paket
 
@@ -25,11 +25,11 @@ Bu bölümde Mac uygulama Mağazası'nin Mac için Visual Studio kullanarak sür
 
 Değişiklik **yapılandırma** için **sürüm** kod imzalama ve paketleme seçenekleri güncelleştirmeden önce. Geliştirici şirketlerinin kullandığınızdan emin olun gerekiyor **kimlik** ve zaman oluşturduğumuz sağlama profili uygulama mağazasında yayımı için uygulamanızı imzalama.
 
- [![Kod imzalama seçenekleri düzenleme](bundling-images/config02.png "imzalama seçenekleri kod düzenleme")](bundling-images/config02-large.png)
+ [![Kod imzalama seçenekleri düzenleme](bundling-images/config02.png "imzalama seçenekleri kod düzenleme")](bundling-images/config02-large.png#lightbox)
 
 Bir yükleyici paketi oluşturma seçeneğini işaretlenen emin olun **Mac yapı** ayarları:
 
-[![Derleme seçenekleri düzenleme](bundling-images/config03.png "düzenleme derleme seçenekleri")](bundling-images/config03-large.png)
+[![Derleme seçenekleri düzenleme](bundling-images/config03.png "düzenleme derleme seçenekleri")](bundling-images/config03-large.png#lightbox)
 
 ## <a name="build"></a>Derleme
 

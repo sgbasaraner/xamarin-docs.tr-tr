@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 24d85d7be580f8db8621d91ebbb27c0b7881b4eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: de6829a0a698133ad9002ead1cd7c534a30b1f6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="lollipop-features"></a>Lolipop özellikleri
 
@@ -54,8 +54,6 @@ Aşağıdaki Xamarin tabanlı uygulamalarda yeni Android 5.0 özellikleri kullan
 Kullanmaya devam edebilirsiniz [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) API düzeyi 23 için özellikle geliştirme veya önceki bir sürümünü kullanıyorsanız.
 
 
-<a name="settingup" />
-
 ## <a name="setting-up-an-android-50-project"></a>Android 5.0 projesinde ayarlama
 
 Bir Android 5.0 projesi oluşturmak için SDK paketlerini ve en son araçları yüklemeniz gerekir. Android 5.0 hedefleyen bir Xamarin.Android projesi ayarlamak için aşağıdaki adımları kullanın:
@@ -66,11 +64,11 @@ Bir Android 5.0 projesi oluşturmak için SDK paketlerini ve en son araçları y
 
 3. Android SDK Yöneticisi'ni başlatın (Mac için Visual Studio'da kullanın **Araçları &gt; Open Android SDK Manager&hellip;**) ve Android SDK Araçları 23.0.5 yükleyin ya da daha sonra:
 
-    [![Android SDK Yöneticisi'nde Android SDK Araçları seçme](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png)
+    [![Android SDK Yöneticisi'nde Android SDK Araçları seçme](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png#lightbox)
 
    Ayrıca, en son Android 5.0 SDK paketlerin (API 21 veya üstü) yükleyin:
 
-    [![Android SDK Yöneticisi'nde Android 5.0 SDK paketleri yükleniyor](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png)
+    [![Android SDK Yöneticisi'nde Android 5.0 SDK paketleri yükleniyor](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
 
    Android SDK Yöneticisi'ni kullanma hakkında daha fazla bilgi için bkz: [SDK Manager](http://developer.android.com/tools/help/sdk-manager.html).
 
@@ -87,14 +85,9 @@ Bir Android 5.0 projesi oluşturmak için SDK paketlerini ve en son araçları y
 
 Not: Android M Önizleme hedefleme mevcut bir Android projesini güncelleştiriyorsanız güncelleştirmeniz gerekir **hedef Framework** ve **Android sürümü** yukarıda açıklanan değerler için.
 
-
-<a name="changes" />
-
 ## <a name="important-changes"></a>Önemli değişiklikler
 
 Daha önce yayımlanan Android uygulamaları Android 5.0 değişikliklerden etkilenir. Özellikle, Android 5.0 yeni bir çalışma zamanı ve önemli ölçüde değiştirilen bildirim biçimi kullanır.
-
-<a name="runtime" />
 
 ### <a name="android-runtime"></a>Android çalışma zamanı
 
@@ -108,7 +101,6 @@ Android 5.0 yeni Android çalışma zamanı (resim) Dalvik yerine varsayılan ç
 
 Var olan uygulamaları resim altında değişiklik olmadan çalışmalıdır &ndash; teknikleri önceki Dalvik çalışma zamanına benzersiz yararlanan uygulamalar dışında hangi çalışmayabilir altında resim. Bu değişiklikler hakkında daha fazla bilgi için bkz: [doğrulama uygulama davranışı üzerinde Android çalışma zamanı (resim)](http://developer.android.com/guide/practices/verifying-apps-art.html).
 
-<a name="notifchanges" />
 
 ### <a name="notification-changes"></a>Bildirim değişiklikleri
 
@@ -136,29 +128,26 @@ Kayıttan yürütme durumu Aktarım denetimleri, görüntü media bildirimlerini
 
 Android bildirimleri oluşturma hakkında daha fazla bilgi için bkz: [yerel bildirimler](~/android/app-fundamentals/notifications/local-notifications.md). [Uyumluluk](~/android/app-fundamentals/notifications/local-notifications.md#compatibility) bu makalenin bölümüne aşağı uyumlu bildirimleri oluşturma açıklanmaktadır Android önceki sürümleriyle.
 
-<a name="materialtheme" />
 
 ## <a name="material-theme"></a>Malzeme tema
 
 Yeni Android 5.0 malzeme tema büyük değişiklikler Görünüm ve kullanımında Android UI getirir. Görsel öğeleri artık kalın grafikler, tipografi ve yazdırma tabanlı tasarımının açık renkleri tactile yüzeyleri kullanın. Malzeme tema örnekleri aşağıdaki ekran görüntülerinde gösterilen:
 
-[![Malzeme tema giriş ekranı, uygulamaları ekran ve ayar ekran ekran görüntüleri](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png)
+[![Malzeme tema giriş ekranı, uygulamaları ekran ve ayar ekran ekran görüntüleri](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png#lightbox)
 
 Android 5.0 sol tarafta gösterilen giriş ekranı kutlayan. Uygulama listesinin ilk ekran center ekran görüntüsü, sağdaki ekran ise **ayarları** ekran. Google [malzeme tasarım](https://material.io/guidelines/material-design/introduction.html) belirtimi yeni malzeme teması kavramı arkasındaki temel tasarım kuralları açıklar.
 
 Malzeme tema, uygulamanızda kullanabileceğiniz üç yerleşik özellikleri içerir: `Theme.Material` koyu tema (varsayılan), `Theme.Material.Light` tema ve `Theme.Material.Light.DarkActionBar` tema: 
 
-[![Koyu ekran görüntüleri, açık ve DarkActionBar temaları](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png)
+[![Koyu ekran görüntüleri, açık ve DarkActionBar temaları](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
 
 Xamarin.Android uygulamaları malzeme tema özelliklerini kullanma hakkında daha fazla bilgi için bkz: [malzeme tema](~/android/user-interface/material-theme.md).
 
-<a name="animations" />
 
 ## <a name="animations"></a>Animasyon
 
 Android 5.0 dokunma geri bildirim animasyonları, etkinlik geçiş animasyonlarını ve uygulama arabirimleri kullanmak için daha sezgisel hale getirmek için görünüm durumuna geçiş animasyonlarını sağlar. Ayrıca, Android 5.0 kullanabileceğiniz uygulamaları *etkisi ortaya* görünümleri göster veya gizlemek için animasyonları. Kullanabileceğiniz *hareket eğri* nasıl hızlı bir şekilde yapılandırmak için ayarları veya yavaş animasyonları işlenir.
 
-<a name="touchanim" />
 
 ### <a name="touch-feedback-animations"></a>Geri bildirim animasyonları dokunma
 
@@ -170,7 +159,6 @@ Kalan dizisi (soldan sağa) ripple etkisi düğmesi kenarına nasıl yayılan g�
 
 Geri bildirim animasyonları Android 5.0 touch hakkında daha fazla bilgi için bkz: [Touch geri bildirim özelleştirme](http://developer.android.com/training/material/animations.html#Touch).
 
-<a name="activityanim" />
 
 ### <a name="activity-transition-animations"></a>Etkinlik geçiş animasyonlarını
 
@@ -184,7 +172,7 @@ Bir etkinlik diğerine geçiş yaptığında etkinlik geçiş animasyonlarını 
 
 Örneğin, aşağıdaki ekran görüntüleri dizisini paylaşılan öğesi geçiş gösterilmektedir:
 
-[![Çerçeve tarafından paylaşılan öğesi geçiş animasyonun çerçeve ekran görüntüleri](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png)
+[![Çerçeve tarafından paylaşılan öğesi geçiş animasyonun çerçeve ekran görüntüleri](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
 
 Paylaşılan öğesi (bir tırtıl fotoğraf) ilk etkinlik birkaç görünümlerde biridir; İkinci etkinlik ilk etkinlik geçişleri ikinci olarak yalnızca görünümünde olmasını büyütür.
 
@@ -220,7 +208,6 @@ Paylaşılan öğesi geçişleri animasyonları, birden çok tür gibi destekler
 
 Etkinlik geçiş animasyonlarını Android 5.0 hakkında daha fazla bilgi için bkz: [özelleştirme etkinlik geçişleri](http://developer.android.com/training/material/animations.html#Transitions).
 
-<a name="viewstate" />
 
 ### <a name="view-state-transition-animations"></a>Görünüm durumu geçiş animasyonlarını
 
@@ -232,23 +219,21 @@ Android 5.0 bir görünüm durumunu değiştirdiğinde çalıştırmak animasyon
 
 Görünüm durumu geçiş animasyonlarını Android 5.0 hakkında daha fazla bilgi için bkz: [hale getirmeyi görünüm durumu değişiklikleri](http://developer.android.com/training/material/animations.html#ViewState).
 
-<a name="reveal" />
 
 ### <a name="reveal-effect"></a>Etkili Göster
 
 *Etkisi ortaya* ortaya veya bir görünüm gizlemek için bu değişiklikleri RADIUS kırpma daire şeklindedir. Kırpma dairenin ilk ve son RADIUS ayarlayarak bu etkiyi kontrol edebilirsiniz. Aşağıdaki ekran görüntüleri dizisi ekranın açığa efekti animasyonu Merkezi'nden gösterilmektedir:
 
-[![Çerçeve tarafından açığa animasyon çerçeve ekran görüntüleri](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png)
+[![Çerçeve tarafından açığa animasyon çerçeve ekran görüntüleri](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
 
 Sonraki dizisi ekranın sol alt köşeden gerçekleşir açığa efekti animasyonu gösterilmektedir:
 
-[![Çerçeve ekran görüntüleri kırpma animasyonun tarafından çerçeve](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png)
+[![Çerçeve ekran görüntüleri kırpma animasyonun tarafından çerçeve](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
 
 Animasyon ters çevrilebilir ortaya; diğer bir deyişle, kırpma daire görünümü gizlemek için küçültmek yerine görünümü ortaya çıkarmak üzere büyütün.
 
 Android 5.0 açığa etkisi hakkında daha fazla bilgi için bkz: [ortaya efekti kullanmak](http://developer.android.com/training/material/animations.html#Reveal).
 
-<a name="curvedmotion" />
 
 ### <a name="curved-motion"></a>Eğri hareket
 
@@ -262,7 +247,6 @@ Bu animasyon özelliklerine ek olarak, Android 5.0 zaman ve hareket Eğriler ani
 
 Kullanabileceğiniz yeni `PathInterpolator` nasıl hareket ilişkilendirme gerçekleşir belirlemek için sınıf. `PathInterpolator` Belirtilen denetim noktalarına ve hareket Eğriler göre animasyon yolları arasında çapraz geçiş yapan bir ara olur. Eğri hareket ayarları Android 5.0 ile belirtme hakkında daha fazla bilgi için bkz: [kullanım eğri hareket](http://developer.android.com/training/material/animations.html#CurvedMotion).
 
-<a name="viewshadows" />
 
 ## <a name="view-shadows--elevation"></a>Görünüm gölgeleri & yükseltme
 
@@ -270,13 +254,12 @@ Android 5.0 içinde belirttiğiniz *ayrıcalık* yeni ayarlayarak bir görünüm
 
 Aşağıdaki örnek tarafından boş bir cast gölgeleri gösterilmektedir `TextView` ayrıcalık öznitelik 2dp, 4dp ve 6dp, sırasıyla ayarlandığında denetleme:
 
-[![Gölgeleri progessively büyük ekran görüntüleri görüntüleme](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png)
+[![Gölgeleri progessively büyük ekran görüntüleri görüntüleme](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
 
 Animasyonları bir görünümün görünümün arka plan üstüne geçici olarak artmaya görünmesini sağlamak için kullanılabilmesi için veya gölge ayarlarını görüntüle (yukarıda gösterildiği gibi) statik olabilir. Kullanabileceğiniz `ViewPropertyAnimator` bir görünüm ayrıcalıkların animasyon sınıfı. Bir görünüm ayrıcalıkların düzenini toplamıdır `elevation` ayarı artı bir `translationZ` üzerinden ayarlayabilirsiniz özelliği bir `ViewPropertyAnimator` yöntem çağrısı.
 
 Android 5.0 görünüm gölge hakkında daha fazla bilgi için bkz: [gölgeleri tanımlama ve kırpma görünümleri](http://developer.android.com/training/material/shadows-clipping.html).
 
-<a name="colorfeatures" />
 
 ## <a name="color-features"></a>Renk özellikleri
 
@@ -286,7 +269,6 @@ Android 5.0 uygulamaları renkte yönetmek için iki yeni özellik sağlar:
 
 -   *Belirgin renk ayıklama* dinamik olarak görüntülenen bir görüntü ile renk paleti koordine etmek için uygulamanızın renk temasını özelleştirmenize olanak sağlar.
 
-<a name="tinting" />
 
 ### <a name="drawable-tinting"></a>Drawable tonlamak
 
@@ -302,7 +284,6 @@ Bu logo mavi döngüsel bir arka plan üzerinde aşağıdaki örneklerde göster
 
 Drawable Android 5.0 ile tonlamak hakkında daha fazla bilgi için bkz: [Drawable tonlamak](http://developer.android.com/training/material/drawables.html#DrawableTint).
 
-<a name="colorextract" />
 
 ### <a name="prominent-color-extraction"></a>Belirgin renk ayıklama
 
@@ -322,13 +303,12 @@ Yeni Android 5.0 `Palette` sınıfı sağlar, böylece bunları dinamik olarak b
 
 Örneğin, aşağıdaki ekran görüntüleri bir fotoğraf uygulaması görüntüleme ekranındaki görüntüden belirgin renkleri ayıklar ve görüntünün eşleştirmek için renk düzenini uygulamanın uyarlamak için bu renkleri kullanır:
 
-[![Yeşil, pembe ve mavi tema rengi ayıklamaları ekran görüntüleri](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png)
+[![Yeşil, pembe ve mavi tema rengi ayıklamaları ekran görüntüleri](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png#lightbox)
 
 Yukarıdaki ekran görüntülerinde ayıklanan "Canlı ışık" Eylem çubuğu ayarlanır renk ve arka plan ayıklanan "Canlı koyu için" ayarlanmış rengi. Her yukarıdaki örnekte, bir satır küçük renk kareler görüntüden ayıklanmış palet renklerini göstermek için dahil edilmiştir.
 
 Renk ayıklama Android 5.0 hakkında daha fazla bilgi için bkz: [ayıklanıyor belirgin renkleri bir görüntüden](http://developer.android.com/training/material/drawables.html#ColorExtract).
 
-<a name="newuiwidgets" />
 
 ## <a name="new-ui-widgets"></a>Yeni kullanıcı Arabirimi pencere öğeleri
 
@@ -340,11 +320,10 @@ Android 5.0 iki yeni UI pencere öğeleri sunar:
 
 Her iki pencere öğeleri desteklenmiş malzeme tema özellikleri için destek içerir. Örneğin, `RecyclerView` animasyon ekleme ve kaldırma görünümleri için kullanır ve `CardView` kullandığı her kartı arka plan üstüne float görünür hale getirmek için gölge görüntüleyin. Bu yeni pencere öğeleri örnekleri aşağıdaki ekran görüntülerinde gösterilmektedir:
 
-[![RecyclerView ile oluşturulmuş uygulamalara ekran görüntüleri](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png)
+[![RecyclerView ile oluşturulmuş uygulamalara ekran görüntüleri](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 Sol taraftaki ekran örneğidir `RecyclerView` olarak bir e-posta uygulaması ve ekran görüntüsü üzerinde kullanılan sağa örneğidir `CardView` seyahat ayırma uygulamada kullanılan.
 
-<a name="recyclerview" />
 
 ### <a name="recyclerview"></a>RecyclerView
 
@@ -356,27 +335,25 @@ Kullandığınızda, bir `RecyclerView` pencere, belirtmelisiniz. bir `LayoutMan
 
 Aşağıdaki ekran görüntüleri gösteren bir `RecyclerView` 100 öğeleri içeren (her bir öğeyi oluşan bir `ImageView` ve `TextView`):
 
-[![Resimler arasında kaydırma RecyclerView uygulama ekran görüntüleri](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png)
+[![Resimler arasında kaydırma RecyclerView uygulama ekran görüntüleri](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png#lightbox)
 
 `RecyclerView` Bu büyük bir veri kümesinin kolayca işler &ndash; sona erdirmek için listenin başından kaydırma bu örnekteki listesinin uygulama yalnızca birkaç saniye sürer. `RecyclerView` Ayrıca animasyonları destekler; Aslında, animasyonları öğeler ekleme ve kaldırma için varsayılan olarak etkinleştirilir. İçin bir öğe eklendiğinde bir `RecyclerView`, ekran görüntüleri bu sırayla gösterildiği gibi buna belirerek:
 
-[![Çerçevesi tarafından fotoğraf öğesi Soluklaşan Çerçeve ekran görüntüsü](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png)
+[![Çerçevesi tarafından fotoğraf öğesi Soluklaşan Çerçeve ekran görüntüsü](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png#lightbox)
 
 Hakkında daha fazla bilgi için `RecyclerView`, bkz: [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
 
-<a name="cardview" />
 
 ### <a name="cardview"></a>Kart görünümü
 
 `CardView` Kayan bir kart yuvarlak köşeli benzetim basit bir görünümdür. Çünkü `CardView` yerleşik görünüm gölgeleri sahipse, visual derinliği uygulamanıza eklemek kolay bir yol sağlar. Aşağıdaki ekran görüntüleri üç metin odaklı örnekleri Göster `CardView`:
 
-[![Kart görünümü tabanlı öğeleriyle RecyclerView kullanarak uygulamaları örnek ekran görüntüleri](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png)
+[![Kart görünümü tabanlı öğeleriyle RecyclerView kullanarak uygulamaları örnek ekran görüntüleri](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 Yukarıdaki örnekte kartların her birine içeren bir `TextView`; üzerinden arka plan rengini ayarlama `cardBackgroundColor` özniteliği.
 
 Hakkında daha fazla bilgi için `CardView`, bkz: [kart görünümü](~/android/user-interface/controls/card-view.md).
 
-<a name="enhanced" />
 
 ## <a name="enhanced-notifications"></a>Gelişmiş bildirimleri
 
@@ -389,13 +366,13 @@ Büyük simge (yukarıdaki örnekte gösterildiği gibi) bir bildirim görüntü
 Android 5.0 ile bildirimler ayrıca cihaz kilit ekranı üzerinde yer alabilir.
 Örneğin, bir örnek ekran görüntüsü tek bir bildirim ile kilit ekranı şöyledir:
 
-[![Kilit ekranında görünen bildirim ekran görüntüsü](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png)
+[![Kilit ekranında görünen bildirim ekran görüntüsü](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png#lightbox)
 
 Kullanıcılar çift dokunmayla cihazın kilidini açmak ve bu bildirim kaynaklanan uygulama atlamak için kilit ekranı bildirim veya sağdan bildirim yok sayın. Bildirimleri sahip yeni bir *görünürlük* ayarı belirler ne kadar içerik kilit ekranı üzerinde görüntülenebilir. Kullanıcılar kilit ekranı bildirimler gösterilecek hassas içerikleri izin verilip verilmeyeceğini seçebilirsiniz.
 
 Android 5.0 tanıtır adlı yeni bir yüksek öncelikli bildirim sunu biçimi *ekran göstergesi*. Ekran göstergesi bildirimleri aşağı birkaç saniye ekranın üst kısmından kaydırın ve geri bildirim gölge ekranın üstünde için geri Çekilme. Ekran göstergesi bildirimleri sistem şu anda çalışan etkinlik kesintiye uğratmadan kullanıcı önünde önemli bilgileri koymak için kullanıcı Arabirimi olun. Aşağıdaki örnek bir uygulama üzerinde görüntüleyen basit bir ekran göstergesi bildirim gösterilmektedir:
 
-[![Heads-up bildirim örneği](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png)
+[![Heads-up bildirim örneği](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
 
 Ekran göstergesi bildirimleri genellikle aşağıdaki olaylar için kullanılır:
 
@@ -414,9 +391,8 @@ Bildirim kategorileri filtrelemek için kullanılan cihaz olduğunda hangi bildi
 
 Oluşturma ve en son Android 5.0 özellikleri ile bildirimleri başlatma hakkında ayrıntılı bilgi için bkz: [yerel bildirimler](~/android/app-fundamentals/notifications/local-notifications.md).
 
-<a name="newapis" />
 
-## <a name="new-apis"></a>Yeni API'leri
+## <a name="new-apis"></a>Yeni API'ler
 
 Yukarıda açıklanan yeni görünüm ve kullanımında özelliklerine ek olarak, Android 5.0 varolan multimedya özelliklerini, depolama ve kablosuz/bağlantı işlevselliğini genişleten yeni API'leri ekler. Ayrıca, Android 5.0 desteklemek için yeni bir iş Zamanlayıcı özellik yeni API'ları içerir.
 

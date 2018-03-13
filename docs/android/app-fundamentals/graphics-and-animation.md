@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 90a2eb219ae1189e7a48e60cde9761e3e9e93e0b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce51511c58d7d0f5a14e487b57897bfa0e0b20b3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="graphics-and-animation"></a>Grafikler ve animasyon
 
 _Android 2B grafik ve animasyonları desteklemek için çok zengin ve farklı bir çerçeve sağlar. Bu konu, bu çerçeveleri tanıtır ve özel grafikler ve animasyonları kullanmak için bir Xamarin.Android uygulamasına nasıl oluşturulacağını açıklar._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -61,7 +60,6 @@ Uygulamaları yoksa bu durumlarda daha kullanışlı aklınızda erişilebilirli
 Başvurmak [Google'nın erişilebilirlik Kılavuzu](http://developer.android.com/guide/topics/ui/accessibility/) Android'ın erişilebilirlik API kullanma hakkında daha fazla bilgi için.
 
 
-<a name="2D_Graphics" />
 
 ## <a name="2d-graphics"></a>2B grafik
 
@@ -71,7 +69,6 @@ Diğer bir yöntem kullanarak [tuvale](https://developer.xamarin.com/api/type/An
 
 İlk Drawable kaynakları inceleyelim. Bunlar daha basit ve en sık karşılaşılan özel çizim durumlarda kapsar.
 
-<a name="Drawable Resources" />
 
 ### <a name="drawable-resources"></a>Drawable kaynakları
 
@@ -153,7 +150,6 @@ Bu göründüğünü görmek için çalıştırın *AnimationsDemo* proje ve ana
 
 XML öğeleri ve Drawable kaynakların sözdizimi hakkında daha fazla ayrıntı için başvurun [Google belgelerine](http://developer.android.com/guide/topics/resources/drawable-resource.html#Shape).
 
-<a name="Using the Canvas Drawing API" />
 
 ### <a name="using-the-canvas-drawing-api"></a>Tuvale çizim API'yi kullanma
 
@@ -183,7 +179,6 @@ Tuvale sınıfı program aracılığıyla çizim yönergeler sağlamak için yö
 -   [Canvas.DrawText](https://developer.xamarin.com/api/member/Android.Graphics.Canvas.DrawText/p/System.String/System.Single/System.Single/Android.Graphics.Paint/) &ndash; belirtilen renk ile tuval üzerinde bir metin çizer. Metin konumda çizilir `x,y` .
 
 
-<a name="Drawing with the Canvas API" />
 
 #### <a name="drawing-with-the-canvas-api"></a>API tuvali ile çizme
 
@@ -218,7 +213,6 @@ Bu kodu Yukarıdaki ilk kırmızı boyama ve yeşil boyama nesnesi oluşturur. T
 
 ![Ekran kırmızı boyama ve yeşil boyama nesneleri ile](graphics-and-animation-images/image3.png)
 
-<a name="Animation" />
 
 ## <a name="animation"></a>Animasyon
 
@@ -232,7 +226,6 @@ Kullanıcıların kendi uygulamalarını taşımak şeyler ister. Animasyon, bir
 
 Genel olarak, özellik animasyon daha esnektir ve daha fazla özellik sunar olarak kullanmak için tercih edilen sistemidir.
 
-<a name="View Animations" />
 
 ### <a name="view-animations"></a>Görünüm animasyonları
 
@@ -319,7 +312,6 @@ myImage.StartAnimation(myAnimation);
 
 Biz nasıl görünüm animasyonları işe temel bilgiye sahip olduğunuza göre özellik animasyonları taşıma sağlar.
 
-<a name="Property Animations" />
 
 ### <a name="property-animations"></a>Özellik animasyonları
 
@@ -397,7 +389,6 @@ animator.Start();
 
 Önceki kod parçacığını gördüğünüz `ObjectAnimator` azaltabilir ve nesneyi animasyon için gerekli olan kodu basitleştirebilir.
 
-<a name="Drawable Animations" />
 
 ### <a name="drawable-animations"></a>Drawable animasyonları
 
@@ -442,7 +433,6 @@ protected override void OnCreate(Bundle bundle)
 
 Bu noktada biz API'leri Android bir uygulamada kullanılabilir animasyon temelleri kapsamına.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 

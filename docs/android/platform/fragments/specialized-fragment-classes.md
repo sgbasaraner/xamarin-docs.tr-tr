@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: e7b4349ee2664a94ef6dff3c6a58d5f8f97682a1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f962f4619352dbaaed8c8ffcf5d8c8305cb6ad62
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="specialized-fragment-classes"></a>Özelleştirilmiş parça sınıfları
 
@@ -24,15 +24,13 @@ Parçaları API bazı uygulamalarda bulunan daha yaygın işlevlerini kapsülley
 -   **PreferenceFragment** &ndash; bu parça tercih nesneleri listeleri olarak göstermek için kullanılır.
 
 
-<a name="The_ListFragment" />
 
 ## <a name="the-listfragment"></a>ListFragment
 
 `ListFragment` Kavram ve işlevselliği için de çok benzer `ListActivity`; sunan bir sarmalayıcı olan bir `ListView` bir parçası olarak. Görüntünün gösterir altında bir `ListFragment` tablet ve bir telefon çalıştıran:
 
-[![ListFragment ekran görüntüleri bir telefon ve tablet üzerinde](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png)
+[![ListFragment ekran görüntüleri bir telefon ve tablet üzerinde](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png#lightbox)
 
-<a name="Binding_Data_With_The_ListAdapter" />
 
 ### <a name="binding-data-with-the-listadapter"></a>ListAdapter ile veri bağlama
 
@@ -51,7 +49,6 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 
 Ayarlarken `ListAdapter`, kullanmak önemlidir `ListFragment.ListAdapter` özelliği ve `ListView.ListAdapter` özelliği. Kullanarak `ListView.ListAdapter` önemli başlatma kodun atlanması neden olur.
 
-<a name="Responding_to_User_Selection" />
 
 
 ### <a name="responding-to-user-selection"></a>Kullanıcı Seçimi yanıt
@@ -84,14 +81,13 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 
 Yukarıdaki, kullanıcı bir öğeyi seçtiğinde kodda `ListFragment`, yeni parça seçili öğe hakkında daha fazla ayrıntı gösteren barındırma etkinlik görüntülenir.
 
-<a name="DialogFragment" />
 
 
 ## <a name="dialogfragment"></a>DialogFragment
 
 *DialogFragment* iletişim nesnesi etkinliğin penceresinin en üstünde float bir parça içinde görüntülemek için kullanılan bir parçası değil. Yönetilen iletişim (Android 3. 0'dan başlayarak) API'ları değiştirmek için tasarlanmıştır. Aşağıdaki ekran görüntüsünde bir örneği gösterilmektedir bir `DialogFragment`:
 
-[![Yeni araç EditBox eklemek görüntüleme DialogFragment ekran görüntüsü](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png)
+[![Yeni araç EditBox eklemek görüntüleme DialogFragment ekran görüntüsü](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png#lightbox)
 
 A `DialogFragment` sağlar durumu parça ve iletişim arasında tutarlı kalır. Tüm etkileşimleri ve iletişim nesnenin denetimini aracılığıyla olacağını `DialogFragment` API'sini ve iletişim nesnesi üzerinde doğrudan çağrılar ile yapılması değil. `DialogFragment` API sağlayan her örneği ile bir `Show()` bir parça görüntülemek için kullanılan yöntem. Bir parçasını kurtulmak için iki yolu vardır:
 
@@ -106,13 +102,12 @@ Oluşturmak için bir `DialogFragment`, bir sınıfının devraldığı `Android
 - **OnCreateDialog** &ndash; bu özel bir iletişim kutusu oluşturur. Göstermek için genellikle kullanılan bir *AlertDialog*. Bu yöntemi geçersiz kılarken, geçersiz kılmak ise gerekli değildir `OnCreateView` .
 
 
-<a name="A_Simple_DialogFragment" />
 
 ### <a name="a-simple-dialogfragment"></a>Basit bir DialogFragment
 
 Aşağıdaki ekran görüntüsü, basit bir gösterir `DialogFragment` olan bir `TextView` ve iki `Button`: %s
 
-[![Örnek DialogFragment bir kutusu TextView ve iki düğmeleri](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png)
+[![Örnek DialogFragment bir kutusu TextView ve iki düğmeleri](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png#lightbox)
 
 `TextView` Kullanıcı bir düğmesini tıklamıştır sayısı görüntülenir `DialogFragment`, diğer düğmesini tıklatarak parça kapanacak. Kodunu `DialogFragment` değil:
 
@@ -145,7 +140,6 @@ public class MyDialogFragment : DialogFragment
 }
 ```
 
-<a name="Displaying_a_Fragment" />
 
 ### <a name="displaying-a-fragment"></a>Bir parça görüntüleme
 
@@ -164,14 +158,12 @@ public void ShowDialog()
 }
 ```
 
-<a name="Dismissing_a_Fragment" />
 
 ### <a name="dismissing-a-fragment"></a>Bir parça kapatılıyor
 
 Çağırma `Dismiss()` örneği üzerinde bir `DialogFragment` etkinliğinden kaldırılacak bir parça neden olur ve bu işlem kaydeder.
 Bir parça yok etme ile ilgili olan standart parça yaşam döngüsü yöntemlerini çağrılır.
 
-<a name="Alert_Dialog" />
 
 ### <a name="alert-dialog"></a>Uyarı iletişim kutusu
 
@@ -195,7 +187,6 @@ public class AlertDialogFragment : DialogFragment
 }
 ```
 
- <a name="PreferenceFragment" />
 
 
 ## <a name="preferencefragment"></a>PreferenceFragment
@@ -204,9 +195,8 @@ Tercihler yönetmenize yardımcı olmak için parçaları API sağlar `Preferenc
 ) &ndash; bir parçası olarak kullanıcı tercihleri hiyerarşisini gösterir. Kullanıcı tercihleri ile etkileşim gibi bunlar otomatik olarak kaydedilecek [SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html).
 Android 3.0 ya da daha yüksek uygulamalar kullanmak `PreferenceFragment` uygulamalarında tercihleri uğraşmanız. Aşağıdaki resimde bir örneği gösterilmektedir bir `PreferenceFragment`:
 
-[![Satır içi, iletişim ve başlatma seçeneklerle örnek PreferencesFragment](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png)
+[![Satır içi, iletişim ve başlatma seçeneklerle örnek PreferencesFragment](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
 
-<a name="Create_A_Preference_Fragment_from_a_Resource" />
 
 ### <a name="create-a-preference-fragment-from-a-resource"></a>Bir tercih parça kaynağı oluşturma
 
@@ -278,7 +268,6 @@ public class PrefFragment : PreferenceFragment
 }
 ```
 
- <a name="Querying_Activities_to_Create_a_Preference_Fragment" />
 
 
 ### <a name="querying-activities-to-create-a-preference-fragment"></a>Bir tercih parça oluşturmak için etkinlikleri sorgulama
@@ -316,4 +305,4 @@ public class MyActivityWithPreferences : Activity
 
 `MetaDataAttribute` Bildiren bir XML kaynak dosyası `PreferenceFragment` tercih hiyerarşi Şişir için kullanır. Varsa `MetatDataAttribute` çalışma zamanında bir özel durum atılır sonra sağlanmadı. Bu kod çalıştığında, `PreferenceFragment` aşağıdaki ekran görüntüsünde olduğu gibi görünür:
 
-[![Görüntülenen PreferenceFragment örnek uygulamasının ekran görüntüsü](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)
+[![Görüntülenen PreferenceFragment örnek uygulamasının ekran görüntüsü](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png#lightbox)

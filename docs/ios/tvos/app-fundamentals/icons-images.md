@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 670c990fb4f2e4d2a01ada83ea98e8e589b5c473
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-icons-and-images"></a>Simgeler ve görüntüleri ile çalışma
 
@@ -67,13 +67,13 @@ TvOS projeniz için başlatma resmi ayarlamak için lütfen aşağıdakileri yap
 
 1. İçinde **Çözüm Gezgini**, çift `Assets.xcassets` düzenlemek üzere açmak için: 
 
-    [ ![](icons-images-images/asset01.png "Assets.xcassets dosyası")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Assets.xcassets dosyası")](icons-images-images/asset01.png#lightbox)
 2. İçinde **varlık Düzenleyicisi**, tıklayın `LaunchImages` varlık: 
 
-    [ ![](icons-images-images/asset02.png "LaunchImages varlık")](icons-images-images/asset02.png)
+    [![](icons-images-images/asset02.png "LaunchImages varlık")](icons-images-images/asset02.png#lightbox)
 3. Tıklayın **Apple TV x 1** girişi başlatma görüntüsünü seçin ve isteğe bağlı olarak yeni bir görüntü sürükleme dosya sisteminden: 
 
-    [ ![](icons-images-images/asset03.png "Başlatma görüntüsünü seçin")](icons-images-images/asset03.png)
+    [![](icons-images-images/asset03.png "Başlatma görüntüsünü seçin")](icons-images-images/asset03.png#lightbox)
 4. Değişikliklerinizi kaydedin.
 
 <a name="Layered-Images" />
@@ -84,7 +84,7 @@ Apple TV, kullanıcının ekran içeriğini bağlı arasında yer şirketine yö
 
 Katmanlı görüntüleri içeren iki (2) için beş (5) gelen ayrı tam bir görüntü oluşturmak için birleştirilir katmanları. Arka plan katmanına hariç olmak üzere her katman bir derinliği atmosferini oluşturmak için saydamlığı yanı sıra kendi Z düzenini kullanır. Katmanlı bir görüntüyle kullanıcı etkileşim kurduğunda, daha yüksek Z sıralı Katmanlar ölçeklenir ve bu efekti oluşturmak için çakışan.
 
-[ ![](icons-images-images/layered01.png "Katmanlı görüntüleri Z sıralı diyagramı")](icons-images-images/layered01.png)
+[![](icons-images-images/layered01.png "Katmanlı görüntüleri Z sıralı diyagramı")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
 > **Not:** Layered görüntüleri, uygulamanızın simgelerini gereklidir ve diğer isteğe bağlı [odaklanabilir öğeleri](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (örneğin, üst raf görüntü). Ancak, Apple odak uygulamanızda alabilirsiniz herhangi bir görüntü için katmanlı görüntüleri kullanılmasını önerir.
@@ -109,7 +109,7 @@ Mümkün olduğunda, yerleşik her zaman kullanmalısınız `UIKit` odak geldiğ
 
 Eklenecek unutulmaması önemlidir; bir _güvenli bölge_ katmanlı görüntünüzü oluşturan her katman kenarlığa. Tek tek katmanları, ölçeklendirilebilir ve sırasında Parallax etkisi kırpılmış olduğundan çok katmanın kenarına yakın ise katmanların içeriğini kapalı kırpılacağını:
 
-[ ![](icons-images-images/layered02.png "35 piksel kenarlığı")](icons-images-images/layered02.png)
+[![](icons-images-images/layered02.png "35 piksel kenarlığı")](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images" />
 
@@ -128,7 +128,7 @@ tvOS katmanlı görüntülerle aşağıdaki biçimlerde çalışır:
 
 Oluşturulan Apple [Parallax Önizleyicisi](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) Önizleme ve oluşturulan katmanlı uygulama simgeleri ve isteğe bağlı odaklanabilir öğeleri için gereken görüntüler. Genele gitmeyi tamamlanmış katmanlı görüntü forms her katman gösterir:
 
-[ ![](icons-images-images/layered03.png "Parallax genele gitmeyi")](icons-images-images/layered03.png)
+[![](icons-images-images/layered03.png "Parallax genele gitmeyi")](icons-images-images/layered03.png#lightbox)
 
 Katmanlı bir görüntü önizlerken görüntü döndürmek ve Parallax efekti önizlemek için fareyi kullanabilirsiniz. Kullanım  **+**  (artı) ve  **-**  (eksi) düğmelerini katman ekleme ve kaldırma.
 
@@ -142,7 +142,7 @@ Apple'nın oluşturma ve katmanlı görüntüleri önizleme daha fazla bilgi iç
 
 Xamarin.tvOS uygulamanızı Apple TV giriş ekranı, aynı zamanda App Store için bir simge için yalnızca bir uygulama simge gerektirir. Uygulama simgesi ilk olası kullanıcınız harika izlenim olarak değiştirin ve sonra uygulamanızın amacı bir bakışta iletişim kurmanız gerekir.
 
-[ ![](icons-images-images/icon01.png "Uygulama simgesi")](icons-images-images/icon01.png)
+[![](icons-images-images/icon01.png "Uygulama simgesi")](icons-images-images/icon01.png#lightbox)
 
 Her uygulama, küçük ve büyük bir uygulama simgesini sürümü sağlamanız gerekir. Uygulama yüklendiğinde Apple TV giriş ekranında küçük simge kullanılır. Büyük sürüm App Store tarafından kullanılır. Büyük uygulama simge küçük simge sürüm Görünüm ve yapısını taklit etmelidir.
 
@@ -202,16 +202,16 @@ TvOS projeniz için gereken uygulama simgeleri ayarlamak için lütfen aşağıd
 
 1. İçinde **Çözüm Gezgini**, çift `Assets.xcassets` düzenlemek üzere açmak için: 
 
-    [ ![](icons-images-images/asset01.png "Assets.xcassets fileg")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
 2. İçinde **varlık Düzenleyicisi**, genişletin `App Icon & Top Shelf Image` varlık: 
 
-    [ ![](icons-images-images/asset04.png "Üst raf görüntü varlığı genişletin")](icons-images-images/asset04.png)
+    [![](icons-images-images/asset04.png "Üst raf görüntü varlığı genişletin")](icons-images-images/asset04.png#lightbox)
 3. Ardından, genişletin `App Icon - Small` varlık: 
 
-    [ ![](icons-images-images/asset05.png "App - küçük varlık simgesi")](icons-images-images/asset05.png)
+    [![](icons-images-images/asset05.png "App - küçük varlık simgesi")](icons-images-images/asset05.png#lightbox)
 4. Ardından `Back` varlık ve tıklayarak `Contents` girişi: 
 
-    [ ![](icons-images-images/asset06.png "Geri varlık genişletin")](icons-images-images/asset06.png)
+    [![](icons-images-images/asset06.png "Geri varlık genişletin")](icons-images-images/asset06.png#lightbox)
 5. Tıklayın **Apple TV girişi x 1** ve bir görüntü dosyası seçin.
 6. Yukarıdaki adımları yineleyin `Front` ve `Middle` varlıklar.
 7. Tanımlamak için aynı adımları yineleyin `App Icon - Large` varlık.
@@ -223,7 +223,7 @@ TvOS projeniz için gereken uygulama simgeleri ayarlamak için lütfen aşağıd
 
 Kullanıcının Apple TV giriş ekranında üst satırda Xamarin.tvOS uygulamanızı yerleştirdiğini, uygulamanızı kullanıcı tarafından seçildiğinde büyük bir üst raf görüntü görüntülenir. Bu görüntü, uygulamanızı özelliklerini vurgulamak veya içeriği doğrudan bağlantılar sağlar.
 
-[ ![](icons-images-images/topshelf01.png "Üst raf resim örneği")](icons-images-images/topshelf01.png)
+[![](icons-images-images/topshelf01.png "Üst raf resim örneği")](icons-images-images/topshelf01.png#lightbox)
 
 Üst raf görüntü ya da tek bir statik sağlanabilir `.png` veya `.lsr` dosyası (bkz [katmanlı görüntüleri oluşturma](#Creating-Layered-Images)) ya da dinamik olarak çalışma zamanında odaklanabilir öğeleri tek bir satır oluşturulamaz (bkz: [ Dinamik üst raf içerik](#Dynamic-Top-Shelf-Content) aşağıda).
 
@@ -253,13 +253,13 @@ Apple üst raf görüntülerinizi oluşturmak için aşağıdaki önerileri sağ
 
 1. İçinde **Çözüm Gezgini**, çift `Assets.xcassets` düzenlemek üzere açmak için: 
 
-    [ ![](icons-images-images/asset01.png "Assets.xcassets dosyası")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Assets.xcassets dosyası")](icons-images-images/asset01.png#lightbox)
 2. İçinde **varlık Düzenleyicisi**, genişletin `App Icon & Top Shelf Image` varlık: 
 
-    [ ![](icons-images-images/asset04.png "Üst raf görüntü varlığı genişletin")](icons-images-images/asset04.png)
+    [![](icons-images-images/asset04.png "Üst raf görüntü varlığı genişletin")](icons-images-images/asset04.png#lightbox)
 3. Tıklayın `Top Shelf Image` varlık: 
 
-    [ ![](icons-images-images/asset07.png "Üst raf görüntü varlığı")](icons-images-images/asset07.png)
+    [![](icons-images-images/asset07.png "Üst raf görüntü varlığı")](icons-images-images/asset07.png#lightbox)
 5. Tıklayın **Apple TV girişi x 1** ve bir görüntü dosyası seçin.
 6. Değişikliklerinizi kaydedin.
 
@@ -423,10 +423,10 @@ Aşağıdakileri yapın:
 
 1. İçinde **Çözüm Gezgini**, çift `Info.plist` düzenlemek üzere açmak için: 
 
-    [ ![](icons-images-images/info01.png "Info.plist dosyası")](icons-images-images/info01.png)
+    [![](icons-images-images/info01.png "Info.plist dosyası")](icons-images-images/info01.png#lightbox)
 2. İçinde **Info.Plist Düzenleyicisi**, varlıklar Kataloğu'nu seçin (yukarıda yapılandırılmış [uygulama simgeleri ayarı](#Setting-the-App-Icons) bölüm) için **uygulama simgeleri**: 
 
-    [ ![](icons-images-images/info02.png "Info.plist Düzenleyicisi")](icons-images-images/info02.png)
+    [![](icons-images-images/info02.png "Info.plist Düzenleyicisi")](icons-images-images/info02.png#lightbox)
 3. Ardından, varlıklar Kataloğu'nu seçin (yukarıda yapılandırılmış [başlatma görüntü ayarlama](#Setting-the-Launch-Image) bölüm) için **başlatma görüntüleri**.
 4. Değişikliklerinizi kaydedin.
 
@@ -438,7 +438,7 @@ Bu makalede tüm resim türleri ve Xamarin.tvOS uygulamada kullanılan boyutlar�
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

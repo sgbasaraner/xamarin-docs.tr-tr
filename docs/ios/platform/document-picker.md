@@ -7,11 +7,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a10dcbbdcd7792cb7c54c883566911264b6d81e6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a8f1632076a12b1737ba8294ac8b2f28f19dc77
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="document-picker"></a>Belge Seçici
 
@@ -54,7 +54,7 @@ Belge Seçici Xamarin ile kullanmak için gerekli koda Dalma, bu makalede iCloud
 
 Bir dosya birkaç farklı konumlardan değiştirilebildiğinden koordinasyon veri kaybını önlemek için kullanılması gerekir.
 
- [ ![](document-picker-images/image1.png "Dosya düzenleme kullanma")](document-picker-images/image1.png)
+ [![](document-picker-images/image1.png "Dosya düzenleme kullanma")](document-picker-images/image1.png#lightbox)
 
 Yukarıdaki resimde bir göz atalım:
 
@@ -193,7 +193,7 @@ Bul ve belgeleri listelemek için varolan kullanarak yoludur `NSMetadataQuery` A
 
 İOS 8, önce `NSMetadataQuery` gibi toplama yerel dosya değişiklikleri yavaştı: siler, oluşturur ve yeniden adlandırır.
 
- [ ![](document-picker-images/image2.png "NSMetadataQuery yerel dosya değişiklikleri genel bakış")](document-picker-images/image2.png)
+ [![](document-picker-images/image2.png "NSMetadataQuery yerel dosya değişiklikleri genel bakış")](document-picker-images/image2.png#lightbox)
 
 Yukarıdaki diyagramda:
 
@@ -208,7 +208,7 @@ Oluşturulmasına gecikme nedeniyle `NSMetadata` iki veri kaynakları açmak kay
 
 İOS 8 ' de `NSMetadataQuery` Stitching doğrudan yeni bir özellik ile kullanmak daha kolay olur:
 
- [ ![](document-picker-images/image3.png "Yeni bir özellik ile NSMetadataQuery Stitching çağrılır")](document-picker-images/image3.png)
+ [![](document-picker-images/image3.png "Yeni bir özellik ile NSMetadataQuery Stitching çağrılır")](document-picker-images/image3.png#lightbox)
 
 Yukarıdaki diyagramda Stitching kullanma:
 
@@ -824,7 +824,7 @@ Bu kod yerinde belge Seçici View Controller bir Xamarin iOS 8 uygulaması'nda u
 
 ### <a name="existing-behavior"></a>Var olan davranışı
 
- [ ![](document-picker-images/image31.png "Varolan davranışı genel bakış")](document-picker-images/image31.png)
+ [![](document-picker-images/image31.png "Varolan davranışı genel bakış")](document-picker-images/image31.png#lightbox)
 
 İOS 8 önce dış bir belgeye erişen bir bakalım:
 
@@ -839,7 +839,7 @@ Buradan belgeyi açmak ve düzenlemek ikinci uygulama için kullanılabilir.
 
 İOS 8'de, uygulamanın kendi uygulama kapsayıcısı dışındaki belgelere kolayca erişebilmesi için:
 
- [ ![](document-picker-images/image32.png "Bir uygulamanın kapsayıcı dışında belgeleri keşfetme")](document-picker-images/image32.png)
+ [![](document-picker-images/image32.png "Bir uygulamanın kapsayıcı dışında belgeleri keşfetme")](document-picker-images/image32.png#lightbox)
 
 Yeni İcloud'a belge Seçici kullanarak ( `UIDocumentPickerViewController`), bir iOS uygulaması, doğrudan bulmak ve erişim uygulama kapsayıcısı dışında. `UIDocumentPickerViewController` Kullanıcıya erişim izni vermek ve bunları düzenlemek için bir mekanizma bulunan belgeleri aracılığıyla izinleri sağlar.
 
@@ -910,16 +910,16 @@ Yukarıdaki kod bir belge bir iPhone cihazında çalıştırdığınızda Seçic
 
 1.  Kullanıcı uygulamayı başlatır ve ana arabirimi görüntülenir:   
  
-    [ ![](document-picker-images/image33.png "Ana arabirimi görüntülenir")](document-picker-images/image33.png)
+    [![](document-picker-images/image33.png "Ana arabirimi görüntülenir")](document-picker-images/image33.png#lightbox)
 1.  Kullanıcı Tap'ları **eylem** ekranın üstündeki düğmesi ve seçmek için sorulan bir **belge sağlayıcısı** kullanılabilir sağlayıcılar listesinden:   
  
-    [ ![](document-picker-images/image34.png "Kullanılabilir sağlayıcılar listesinden bir belge sağlayıcısı seçin")](document-picker-images/image34.png)
+    [![](document-picker-images/image34.png "Kullanılabilir sağlayıcılar listesinden bir belge sağlayıcısı seçin")](document-picker-images/image34.png#lightbox)
 1.  **Belge Seçici View Controller** görüntülenen seçili **belge sağlayıcısı**:   
  
-    [ ![](document-picker-images/image35.png "Belge Seçici View Controller görüntülenir")](document-picker-images/image35.png)
+    [![](document-picker-images/image35.png "Belge Seçici View Controller görüntülenir")](document-picker-images/image35.png#lightbox)
 1.  Kullanıcı dokunur üzerinde bir **belgenin klasör** içeriğini görüntülemek için:   
  
-    [ ![](document-picker-images/image36.png "Belgenin klasör içeriği")](document-picker-images/image36.png)
+    [![](document-picker-images/image36.png "Belgenin klasör içeriği")](document-picker-images/image36.png#lightbox)
 1.  Kullanıcının seçtiği bir **belge** ve **belge Seçici** kapalı.
 1.  Ana arabirimi görünürler, **belge** dış kapsayıcı ve görüntülenen içeriği yüklenir.
 
@@ -930,7 +930,7 @@ Belge Seçici View Controller gerçek görüntüsünü belge kullanıcı cihazda
 
 Yukarıdaki 8, iOS önce anlatıldığı gibi bir uygulama yalnızca uygulama kapsayıcısı parçası olan belgeleri erişebilir. İOS 8 bir uygulama, dış kaynaklardan belgeleri erişebilirsiniz:
 
- [ ![](document-picker-images/image37.png "Dış belgeler genel bakış yönetme")](document-picker-images/image37.png)
+ [![](document-picker-images/image37.png "Dış belgeler genel bakış yönetme")](document-picker-images/image37.png#lightbox)
 
 Kullanıcı bir belge bir dış kaynaktan seçtiğinde başvuru belgesini özgün belgesini işaret uygulama kapsayıcısı yazılır.
 
@@ -1021,10 +1021,10 @@ Belge Seçici View Controller iki farklı mod işlem özellikleri:
 
 1.  **Açık mod** – kullanıcı seçer ve harici belge belge Seçici oluştururken güvenlik kapsamına yer işareti uygulama kapsayıcısında bu modda.   
  
-    [ ![](document-picker-images/image37.png "Uygulama kapsayıcısında yer işareti bir güvenlik kapsamı")](document-picker-images/image37.png)
+    [![](document-picker-images/image37.png "Uygulama kapsayıcısında yer işareti bir güvenlik kapsamı")](document-picker-images/image37.png#lightbox)
 1.  **İçe aktarma moduna** – Bu mod, kullanıcı seçtiğinde ve dış belge, belge Seçici değil bir yer işareti oluşturur ancak bunun yerine, geçici bir konuma dosyaya kopyalayın ve bu konumda belge uygulama erişim sağlar:   
  
-    [ ![](document-picker-images/image38.png "Belge Seçici dosyayı geçici bir konuma kopyalayın ve bu konumda belge uygulama erişim sağlamak")](document-picker-images/image38.png)   
+    [![](document-picker-images/image38.png "Belge Seçici dosyayı geçici bir konuma kopyalayın ve bu konumda belge uygulama erişim sağlamak")](document-picker-images/image38.png#lightbox)   
  Uygulama herhangi bir nedenle sonlandırıldıktan sonra geçici konuma boşaltılır ve dosya kaldırıldı. Uygulama dosyasına erişimi tutması gerekiyorsa, bir kopya yapmak ve uygulama kapsayıcısı yerleştirin.
 
 
@@ -1069,7 +1069,7 @@ Bu, iki farklı uzantıları kullanılarak uygulanır:
 
 Aşağıdaki diyagramda, belge sağlayıcısı uzantıları ile çalışırken, normal veri akışı gösterilmektedir:
 
- [ ![](document-picker-images/image39.png "Belge sağlayıcısı uzantıları ile çalışırken bu diyagramda normal veri akışı gösterilmektedir")](document-picker-images/image39.png)
+ [![](document-picker-images/image39.png "Belge sağlayıcısı uzantıları ile çalışırken bu diyagramda normal veri akışı gösterilmektedir")](document-picker-images/image39.png#lightbox)
 
 Aşağıdaki süreç gerçekleşir:
 
@@ -1095,7 +1095,7 @@ Güvenlik nedeniyle, iOS 8 hakkında uygulama erişimi hangi dosya sağlayıcıs
 
 Aşağıdaki diyagramda yer işaretleri ve bir belge sağlayıcısı uzantısı ile çalışırken, veri akışı gösterilmektedir:
 
- [ ![](document-picker-images/image40.png "Bu diyagramda yer işaretleri ve bir belge sağlayıcısı uzantısı ile çalışırken veri akışı gösterilmektedir")](document-picker-images/image40.png)
+ [![](document-picker-images/image40.png "Bu diyagramda yer işaretleri ve bir belge sağlayıcısı uzantısı ile çalışırken veri akışı gösterilmektedir")](document-picker-images/image40.png#lightbox)
 
 Aşağıdaki süreç gerçekleşir:
 
@@ -1145,5 +1145,5 @@ Ayrıca, bu makalede kısaca belge sağlayıcısı uzantıları ve neden Gelişt
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [DocPicker (örnek)](https://developer.xamarin.com/samples/monotouch/ios8/DocPicker/)
-- [İOS 8 giriş](~/ios/platform/introduction-to-ios8.md)
+- [iOS 8’e Giriş](~/ios/platform/introduction-to-ios8.md)
 - [Uygulama uzantıları giriş](~/ios/platform/extensions.md)

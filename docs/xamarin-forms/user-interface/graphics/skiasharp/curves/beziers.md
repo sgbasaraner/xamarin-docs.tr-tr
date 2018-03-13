@@ -4,14 +4,15 @@ description: "Küp, ikinci derece ve conic Bézier eğrileri işlemek için Skia
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 8fdebd00b0b33c184337eacd0836dd81a19f161b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Üç tür Bézier eğrileri
 
@@ -88,7 +89,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Burada, tüm üç platformlarda çalışıyor:
 
-[![](beziers-images/beziercurve-small.png "Üçlü sayfasının ekran görüntüsü Bezier eğrisi")](beziers-images/beziercurve-large.png "Üçlü sayfasının ekran görüntüsü Bezier eğrisi")
+[![](beziers-images/beziercurve-small.png "Üçlü sayfasının ekran görüntüsü Bezier eğrisi")](beziers-images/beziercurve-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Bezier eğrisi")
 
 Matematiksel, eğri küp Polinomun ' dir. Eğriyi en çok üç noktalarda bir çizgide kesiştiğinden. Başlangıç noktasına eğri her zaman olduğu için ve aynı yönde tanjant, bir çizgide başlangıç noktası ilk denetim noktası. Uç noktada eğri her zaman olduğu için ve aynı yönde tanjant, ikinci denetiminden bir çizgide noktası bitiş noktası.
 
@@ -206,7 +207,7 @@ Başlangıç ve bitiş noktaları (`point0` ve `point3`) normal parametrik denkl
 
 Üç farklı açıları ile üç platformlarda çalışan program şöyledir:
 
-[![](beziers-images/beziercirculararc-small.png "Üçlü sayfasının ekran görüntüsü Bezier dairesel yay")](beziers-images/beziercirculararc-large.png "Üçlü sayfasının ekran görüntüsü Bezier dairesel yay")
+[![](beziers-images/beziercirculararc-small.png "Üçlü sayfasının ekran görüntüsü Bezier dairesel yay")](beziers-images/beziercirculararc-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Bezier dairesel yay")
 
 Yakından Windows Mobile ekranında aramak ve Bézier eğrisi özellikle Yarım Daireli 180 derece açıdır, ancak 90 derece açıdır görüntülendiğinde çeyrek daire yalnızca daha iyi uyacak şekilde göründüğü iOS ekran gösterir farklılık göstermesi gerektiğini görürsünüz.
 
@@ -288,7 +289,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Puanları bir sinusoidally salınım yapan değerine göre ilişkilendirileceğini `t`. Ara değerli noktaları ardından dört bağlı Bézier eğrileri bir dizi oluşturmak için kullanılır. Bir daire ilerlemesini kare gösteren üç platformlarda çalışan animasyon şöyledir:
 
-[![](beziers-images/squaringthecircle-small.png "Üçlü ekran görüntüsü Squaring daire sayfa")](beziers-images/squaringthecircle-large.png "Üçlü ekran görüntüsü Squaring daire sayfası")
+[![](beziers-images/squaringthecircle-small.png "Üçlü ekran görüntüsü Squaring daire sayfa")](beziers-images/squaringthecircle-large.png#lightbox "Üçlü ekran görüntüsü Squaring daire sayfası")
 
 Bu tür bir animasyon dairesel yaylara ve düz çizgiler işlenmek üzere algorithmically yeterince esnektir Eğriler olmadan olanaksız olacaktır.
 
@@ -337,7 +338,7 @@ Bunun nasıl ilişkili olduğunu görmek için bu koordinatları grafik kağıda
 
 Tüm üç platformlarda sonsuz oturum şöyledir:
 
-[![](beziers-images/bezierinfinity-small.png "Üçlü sayfasının ekran görüntüsü Bézier sonsuz")](beziers-images/bezierinfinity-large.png "Üçlü sayfasının ekran görüntüsü Bézier sonsuz")
+[![](beziers-images/bezierinfinity-small.png "Üçlü sayfasının ekran görüntüsü Bézier sonsuz")](beziers-images/bezierinfinity-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Bézier sonsuz")
 
 Tarafından işlenen sonsuz oturum daha doğru merkezi biraz daha yumuşak **yay sonsuz** gelen sayfa [ **yay çizmek için üç yol** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) makalesi.
 
@@ -400,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Ve burada tüm üç platformlarda çalışan:
 
-[![](beziers-images/quadraticcurve-small.png "Üçlü sayfasının ekran görüntüsü ikinci dereceden eğrisi")](beziers-images/quadraticcurve-large.png "Üçlü sayfasının ekran görüntüsü ikinci dereceden eğrisi")
+[![](beziers-images/quadraticcurve-small.png "Üçlü sayfasının ekran görüntüsü ikinci dereceden eğrisi")](beziers-images/quadraticcurve-large.png#lightbox "Üçlü sayfasının ekran görüntüsü ikinci dereceden eğrisi")
 
 Noktalı çizgiler başlangıç noktasını ve bitiş noktası eğri teğet ve denetim noktasına karşıladığından.
 
@@ -478,7 +479,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Burada, tüm üç platformlarda çalışıyor:
 
-[![](beziers-images/coniccurve-small.png "Üçlü sayfasının ekran görüntüsü Conic eğri")](beziers-images/coniccurve-large.png "Üçlü sayfasının ekran görüntüsü Conic eğri")
+[![](beziers-images/coniccurve-small.png "Üçlü sayfasının ekran görüntüsü Conic eğri")](beziers-images/coniccurve-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Conic eğri")
 
 Gördüğünüz gibi denetim noktası ağırlık daha yüksek olduğunda daha doğru eğri çekme görünüyor. Ağırlık sıfır eğri başlangıç noktasından bir çizgide uç noktasına olur.
 
@@ -542,7 +543,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Gördüğünüz gibi arasında visual fark yoktur `ConicTo` yolu kırmızı olarak gösterilir ve başvuru için görüntülenen temel daire:
 
-[![](beziers-images/coniccirculararc-small.png "Üçlü sayfasının ekran görüntüsü Conic dairesel yay")](beziers-images/coniccirculararc-large.png "Üçlü sayfasının ekran görüntüsü Conic dairesel yay")
+[![](beziers-images/coniccirculararc-small.png "Üçlü sayfasının ekran görüntüsü Conic dairesel yay")](beziers-images/coniccirculararc-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Conic dairesel yay")
 
 Ancak, açı 180 derece ve matematik başarısız olarak ayarlayın.
 

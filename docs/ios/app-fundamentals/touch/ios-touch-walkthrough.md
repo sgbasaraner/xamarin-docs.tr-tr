@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 848db0af436ad43e07e68de4d278f641ab83136d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c806eb51be5f585f2c94b438f6ca31a70aaa7551
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>İzlenecek yol – iOS kullanarak iletişim
 
@@ -24,9 +24,11 @@ Bu kılavuz çeşitli dokunma olaylarına yanıt kodunun nasıl yazılacağını
 Her bölüm sıfırdan kod yazmaya yönergeleri içerir.
 [Örnek kod başlangıç](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start) zaten tam film şeridi ve menü ekran içerir:
 
- [ ![](ios-touch-walkthrough-images/image3.png "Örnek menü ekran içerir")](ios-touch-walkthrough-images/image3.png)
+ [![](ios-touch-walkthrough-images/image3.png "Örnek menü ekran içerir")](ios-touch-walkthrough-images/image3.png#lightbox)
 
 Film şeridi için kodu ekleyin ve iOS kullanılabilir dokunma olayları farklı türleri hakkında bilgi almak için aşağıdaki yönergeleri izleyin. Bunun yerine, [tamamlanmış örnek](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_final) çalışan her şeyi öğrenin.
+
+<a name="Touch_Samples"/>
 
 ## <a name="touch-samples"></a>Dokunma örnekleri
 
@@ -35,7 +37,7 @@ Bu örnekte, biz API'leri dokunma bazıları gösterilmektedir. Dokunma olaylar�
 
 1. Projeyi açın **Touch_Start**. Her şeyi uygun olduğundan emin olmak için ilk projeyi çalıştırın ve dokunma **Touch örnekleri** düğmesi. (Hiçbiri düğmelerin çalışır halde) aşağıdakine benzer bir ekran görmeniz gerekir:
     
-    [![](ios-touch-walkthrough-images/image4.png "Örnek uygulaması çalışma dışı düğmeleriyle çalıştırın")](ios-touch-walkthrough-images/image4.png)
+    [![](ios-touch-walkthrough-images/image4.png "Örnek uygulaması çalışma dışı düğmeleriyle çalıştırın")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
 1. Dosyayı düzenlemek **TouchViewController.cs** ve sınıfa aşağıdaki iki örnek değişkenleri eklemek `TouchViewController`:
@@ -166,9 +168,9 @@ Bu örnekte, biz API'leri dokunma bazıları gösterilmektedir. Dokunma olaylar�
 
 1. Bu noktada örnekleri dokunmatik ekran tamamlanmıştır. Her görüntü ile etkileşimli olarak nasıl ekran aşağıdaki ekran görüntüsünde gösterildiği gibi değiştiğine dikkat edin:
         
-    [![](ios-touch-walkthrough-images/image4.png "Başlangıç uygulaması ekranı")](ios-touch-walkthrough-images/image4.png)
+    [![](ios-touch-walkthrough-images/image4.png "Başlangıç uygulaması ekranı")](ios-touch-walkthrough-images/image4.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image5.png "Bir düğme kullanıcının sürüklediği sonra ekranı")](ios-touch-walkthrough-images/image5.png)
+    [![](ios-touch-walkthrough-images/image5.png "Bir düğme kullanıcının sürüklediği sonra ekranı")](ios-touch-walkthrough-images/image5.png#lightbox)
  
 
 <a name="Gesture_Recognizer_Samples" />
@@ -183,7 +185,7 @@ Bu bölümde dokunma olaylarını kurtulun ve aşağıdaki hareketi tanıyıcıl
 
 Çalıştırırsanız [örnek kod başlangıç](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start) ve tıklayın **hareketi tanıyıcı örnekleri** düğme, aşağıdaki ekranı görürsünüz:
 
- [ ![](ios-touch-walkthrough-images/image6.png "Bu ekran hareketi tanıyıcı örnekleri düğmesini tıklatarak gösterir")](ios-touch-walkthrough-images/image6.png)
+ [![](ios-touch-walkthrough-images/image6.png "Bu ekran hareketi tanıyıcı örnekleri düğmesini tıklatarak gösterir")](ios-touch-walkthrough-images/image6.png#lightbox)
 
 Hareketi tanıyıcıları uygulamak için aşağıdaki adımları izleyin:
 
@@ -305,15 +307,17 @@ Biz yöntemi biçiminde hareketi için bir hedef Ata fark `HandleDrag` – bu y�
 1. Uygulamayı çalıştırın ve iki görüntü ile etkileşim.
 Aşağıdaki ekran görüntüsü bu etkileşimleri örneğidir:
     
-    [![](ios-touch-walkthrough-images/image7.png "Bu ekran görüntüsü, bir Sürükle etkileşimi gösterir.")](ios-touch-walkthrough-images/image7.png)
+    [![](ios-touch-walkthrough-images/image7.png "Bu ekran görüntüsü, bir Sürükle etkileşimi gösterir.")](ios-touch-walkthrough-images/image7.png#lightbox)
 
 
+
+<a name="Custom_Gesture_Recognizer"/>
 
 ## <a name="custom-gesture-recognizer"></a>Özel hareketi tanıyıcı
 
 Bu bölümde özel hareketi tanıyıcı oluşturmak için önceki bölümlerde kavramları uygulayacağız. Özel hareketi tanıyıcı olacak alt sınıfların `UIGestureRecognizer`, ekranda bir "V" kullanıcı çizer oluştururken tanımak sonra ve bir bit eşlem Değiştir. Aşağıdaki ekran görüntüsünde, bu ekranı örneğidir:
 
- [ ![](ios-touch-walkthrough-images/image8.png "Kullanıcı 'V' ekranda çizer olduğunda uygulama algılar")](ios-touch-walkthrough-images/image8.png)
+ [![](ios-touch-walkthrough-images/image8.png "Kullanıcı 'V' ekranda çizer olduğunda uygulama algılar")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 Özel hareketi tanıyıcınızı oluşturmak için aşağıdaki adımları izleyin:
 
@@ -490,9 +494,9 @@ Bu bölümde özel hareketi tanıyıcı oluşturmak için önceki bölümlerde k
 
 1. Uygulamayı çalıştırın ve ekranda bir "V" Çizim deneyin. Görüntü olan değişiklik, görüntülenen aşağıdaki ekran görüntülerinde gösterildiği gibi görmeniz gerekir:
     
-    [![](ios-touch-walkthrough-images/image9.png "İşaretli düğmesi")](ios-touch-walkthrough-images/image9.png)
+    [![](ios-touch-walkthrough-images/image9.png "İşaretli düğmesi")](ios-touch-walkthrough-images/image9.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image10.png "Düğmenin işaretli")](ios-touch-walkthrough-images/image10.png)
+    [![](ios-touch-walkthrough-images/image10.png "Düğmenin işaretli")](ios-touch-walkthrough-images/image10.png#lightbox)
 
 
 

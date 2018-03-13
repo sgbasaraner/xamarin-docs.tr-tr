@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3ff8800f4e8690069f5394193d11552d917baffe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e699fdc2092d17834c348c07f2440e40441ad86
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-settings"></a>Ayarlarıyla çalışma
 
@@ -27,7 +27,7 @@ Ayarlar hem iOS uygulaması hem de tarafından tanımlanan izleme uygulaması uz
 
 1. Sağ **Ekle > yeni dosya...**  ve **Settings.bundle** (adını düzenleyemezsiniz **yeni dosya** iletişim):
 
-   [ ![](settings-images/settings-add-sml.png "Yeni ayarlar paketi ekleme")](settings-images/settings-add.png)
+   [![](settings-images/settings-add-sml.png "Yeni ayarlar paketi ekleme")](settings-images/settings-add.png#lightbox)
 
 2. Adına değiştirme **ayarları Watch.bundle** (seçin ve yazın **komutu + R** yeniden adlandırmak için):
 
@@ -35,12 +35,12 @@ Ayarlar hem iOS uygulaması hem de tarafından tanımlanan izleme uygulaması uz
 
 3. Yeni bir anahtar ekleyin `ApplicationGroupContainerIdentifier` için **Root.plist** yapılandırdığınız, (örn. uygulama grubu için ayarlanmış değere sahip `group.com.xamarin.WatchSettings` Aşağıdaki örnekte):
 
-   [ ![](settings-images/settings-appgroup-sml.png "Root.plist ApplicationGroupContainerIdentifier anahtar ekleme")](settings-images/settings-appgroup.png)
+   [ ![](settings-images/settings-appgroup-sml.png "Root.plist ApplicationGroupContainerIdentifier anahtar ekleme")](settings-images/settings-appgroup.png#lightbox)
 
 4. Düzen **Settings-Watch.bundle/Root.plist** kullanılacak - istediğiniz seçenekleri içeren bir grup şablon dosyası içerir.
   TextField, iki durumlu anahtar ve kaydırıcısını varsayılan (silin ve kendi ayarlarınızla değiştirin):
 
-  [ ![](settings-images/rootplist-sml.png "Settings-Watch.bundle/Root.plist Düzenle")](settings-images/rootplist.png)
+  [![](settings-images/rootplist-sml.png "Settings-Watch.bundle/Root.plist Düzenle")](settings-images/rootplist.png#lightbox)
 
 
 ## <a name="use-settings-in-the-watch-app"></a>İzleme uygulama ayarlarını kullanma
@@ -58,7 +58,7 @@ var userName = shared.StringForKey ("name_preference");
 
 ## <a name="apple-watch-app"></a>Apple Watch uygulama
 
-[ ![](settings-images/settings-app-sml.png "İPhone yeni Apple Watch uygulaması")](settings-images/settings-app.png)
+[![](settings-images/settings-app-sml.png "İPhone yeni Apple Watch uygulaması")](settings-images/settings-app.png#lightbox)
 
 Kullanıcılar yeni aracılığıyla ayarlarıyla etkileşim **Apple Watch** kendi iPhone uygulama. Bu uygulama uygulamalar izleme ve ayrıca ayarları kullanıma sunulan kullanarak düzenleme Göster/Gizle olanak tanır. **ayarları Watch.bundle**.
 

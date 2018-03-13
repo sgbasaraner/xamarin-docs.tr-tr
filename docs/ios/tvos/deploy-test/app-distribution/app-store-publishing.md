@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a3c9c76ce173606d206166b2bcfb9760eb5634ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV uygulama mağazası yayımlama
 
@@ -154,12 +154,12 @@ Düzgün şekilde yapılandırılıp yapılandırılmadığını Xamarin.tvOS uy
     ![](app-store-publishing-images/buildxs01new.png "Yayın yapılandırmasını seçin")
 2. Gelen **yapı** menüsünde, select **yayımlama arşiv**:
 
-    [ ![](app-store-publishing-images/buildxs02new.png "Yayımlama Arşivi'ni seçin")](app-store-publishing-images/buildxs02new.png)
+    [![](app-store-publishing-images/buildxs02new.png "Yayımlama Arşivi'ni seçin")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. Arşiv oluşturulduktan sonra **arşivler** görünüm görüntülenecek:
 
-    [ ![](app-store-publishing-images/buildxs03new.png "Arşivler görünümü")](app-store-publishing-images/buildxs03new.png)
+    [![](app-store-publishing-images/buildxs03new.png "Arşivler görünümü")](app-store-publishing-images/buildxs03new.png#lightbox)
 
-#<a name="3-sign-and-distribute-your-app"></a>&#3;# oturum ve uygulamanızı dağıtın
+### <a name="sign-and-distribute-your-app"></a>Oturum ve uygulamanızı dağıtın
 
 Arşiv, uygulamanızın derleme her seferinde onu otomatik olarak açılır *arşivler Görünüm*, tüm görüntüleme projeleri arşivlenmiş; çözümü tarafından gruplandırılır. Varsayılan olarak bu görünüm yalnızca geçerli, açık çözüm gösterir. Arşivler sahip tüm çözümleri görmek için tıklayın **tüm arşivler Göster** seçeneği.
 
@@ -169,19 +169,19 @@ Uygulamanızı imzalamak ve dağıtım için hazırlamak için:
 
 1. Seçin **oturum ve Dağıt...** , aşağıda Resimli:
 
-    [ ![](app-store-publishing-images/buildxs04new.png ", TheSign ve Dağıt seçin...")](app-store-publishing-images/buildxs04new.png)
+    [![](app-store-publishing-images/buildxs04new.png ", TheSign ve Dağıt seçin...")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. Bu, Yayımlama Sihirbazı'nı açar. Seçin **App Store** dağıtım kanal bir paket oluşturmak ve uygulama yükleyicisi açmak için:
 
-    [ ![](app-store-publishing-images/distribute01.png "Uygulama mağazası dağıtım kanalını seçin")](app-store-publishing-images/distribute01.png)
+    [![](app-store-publishing-images/distribute01.png "Uygulama mağazası dağıtım kanalını seçin")](app-store-publishing-images/distribute01.png#lightbox)
 3. Sağlama profili ekranında, kimlik imzalama ve sağlama profili karşılık gelen seçin veya başka bir kimlikle yeniden oturum açın:
 
-    [ ![](app-store-publishing-images/distribute02.png "Kimlik imzalama ve sağlama profili karşılık gelen seçin")](app-store-publishing-images/distribute02.png)
+    [![](app-store-publishing-images/distribute02.png "Kimlik imzalama ve sağlama profili karşılık gelen seçin")](app-store-publishing-images/distribute02.png#lightbox)
 4. Paketinizi ayrıntılarını doğrulayın ve tıklatın **Yayımla** kaydetmek için `.ipa` paketi:
 
-    [ ![](app-store-publishing-images/distribute03.png "Paket ayrıntılarını doğrulayın")](app-store-publishing-images/distribute03.png)
+    [![](app-store-publishing-images/distribute03.png "Paket ayrıntılarını doğrulayın")](app-store-publishing-images/distribute03.png#lightbox)
 5. Bir kez, `.ipa` bırakıldı kaydedildi, uygulamanızı iTunes Connect uygulama yükleyicisi üzerinden yüklenecek hazırdır:
 
-    [ ![](app-store-publishing-images/distribute04.png "İTunes Bağlan uygulama yükleyicisi aracılığıyla yüklenen")](app-store-publishing-images/distribute04.png)
+    [![](app-store-publishing-images/distribute04.png "İTunes Bağlan uygulama yükleyicisi aracılığıyla yüklenen")](app-store-publishing-images/distribute04.png#lightbox)
 
 Dağıtımınız ile derleme oluşturulur ve arşivleneceğini, artık iTunes Bağlan uygulamanıza göndermek hazırsınız.
 
@@ -196,15 +196,15 @@ Kaydettikten sonra arşiv iş akışı Mac için Visual Studio içinde uygulama 
 
 2. Seçin *uygulamanızı teslim* tıklatıp *Seç* düğmesi:
 
-    [ ![](app-store-publishing-images/publishvs01.png "Uygulamanızı seçin teslim")](app-store-publishing-images/publishvs01.png)
+    [![](app-store-publishing-images/publishvs01.png "Uygulamanızı seçin teslim")](app-store-publishing-images/publishvs01.png#lightbox)
 
 3. Zip ya da yukarıda oluşturduğunuz IPA dosyasını seçin ve'ı tıklatın **Tamam** düğmesi.
 4. Uygulama Yükleyicisi dosya doğrular:
 
-    [ ![](app-store-publishing-images/publishvs02.png "Uygulama Yükleyicisi doğrulama ekranı")](app-store-publishing-images/publishvs02.png)
+    [![](app-store-publishing-images/publishvs02.png "Uygulama Yükleyicisi doğrulama ekranı")](app-store-publishing-images/publishvs02.png#lightbox)
 5. Tıklatın *sonraki* düğmesi ve uygulamayı doğrulanmış karşı App Store:
 
-    [ ![](app-store-publishing-images/publishvs03.png "Uygulama mağazası karşı Doğrulanmakta olan uygulama")](app-store-publishing-images/publishvs03.png)
+    [![](app-store-publishing-images/publishvs03.png "Uygulama mağazası karşı Doğrulanmakta olan uygulama")](app-store-publishing-images/publishvs03.png#lightbox)
 6. Tıklatın **Gönder** Apple uygulamaya gözden geçirme için Gönder düğmesi.
 7. Uygulama Yükleyicisi zaman dosyası başarıyla karşıya yüklendi size bildirir.
 
@@ -214,7 +214,7 @@ Kaydettikten sonra arşiv iş akışı Mac için Visual Studio içinde uygulama 
 
 Oturum iTunes geri Bağlan ve uygulamanızı kullanılabilir uygulamaları listesinden seçin, iTunes Bağlan durumu şimdi bu olduğunu göstermelidir **gözden geçirilmek üzere bekleyen** (geçici olarak okuyabilirsiniz **karşıya alınan** işlenirken):
 
-[ ![](app-store-publishing-images/image21.png "İTunes durum bağlanmak gözden geçirme için bekleniyor gösterme")](app-store-publishing-images/image21.png)
+[![](app-store-publishing-images/image21.png "İTunes durum bağlanmak gözden geçirme için bekleniyor gösterme")](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting" />
 
@@ -231,7 +231,7 @@ Bu makalede, yapılandırma, oluşturma ve gönderme Apple TV App Store yayını
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Simgeler ve görüntüleri ile çalışma](~/ios/tvos/app-fundamentals/icons-images.md)
+- [Simgelerle ve Görüntülerle Çalışma](~/ios/tvos/app-fundamentals/icons-images.md)
 - [Bilgisayarınızı uygulama gönderme yeni Apple TV için hazırlama](https://developer.apple.com/tvos/submit/)
 - [Uygulama mağazası gönderimi ipuçları](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [Ortak uygulama reddi](https://developer.apple.com/app-store/review/rejections/)

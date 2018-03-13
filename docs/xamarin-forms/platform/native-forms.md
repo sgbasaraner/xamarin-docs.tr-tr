@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: 89636b874f8dbc8f66280dcc1ed99d0f832ff312
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5a7d4ab69ff3ccd1a50ea4fccb6e494f7c73fc72
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-forms"></a>Yerel formlar
 
@@ -31,7 +31,7 @@ Bir Xamarin.Forms tüketimi için işlem [ `ContentPage` ](https://developer.xam
 Xamarin.Forms çağırarak başlatılmalı `Forms.Init` yerel bir proje oluşturmadan önce yöntemi bir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-sayfası türetilmiş. Ne zaman öncelikle bunu seçme bağımlı uygulama akışınız en uygun olduğunda – uygulama başlangıcında veya hemen önce gerçekleştirilebilir `ContentPage`-türetilen sayfasında yapılandırılmıştır. Bu makalede ve eşlik eden örnek uygulamaları `Forms.Init` yöntemi uygulama başlangıcında çağrılır.
 
 > [!NOTE]
-> **Not**: **NativeForms** örnek uygulama çözümü tüm Xamarin.Forms projeleri içermiyor. Bunun yerine, bir Xamarin.iOS projesi, bir Xamarin.Android projesi ve bir UWP projesi oluşur. Her proje kullanmak için yerel Forms kullanan yerel bir projedir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-sayfaları türetilmiş. Ancak, yerel projeleri uygulanamadı neden kullanmasına neden yoktur `ContentPage`-sayfaları PCL, .NET standart kitaplığı veya paylaşılan proje türetilmiş.
+> **NativeForms** örnek uygulama çözümü tüm Xamarin.Forms projeleri içermiyor. Bunun yerine, bir Xamarin.iOS projesi, bir Xamarin.Android projesi ve bir UWP projesi oluşur. Her proje kullanmak için yerel Forms kullanan yerel bir projedir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-sayfaları türetilmiş. Ancak, yerel projeleri uygulanamadı neden kullanmasına neden yoktur `ContentPage`-sayfaları PCL, .NET standart kitaplığı veya paylaşılan proje türetilmiş.
 
 Yerel formlarını kullanırken Xamarin.Forms gibi özellikleri [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/), [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/)ve veri bağlama altyapısı, tüm hala çalışma.
 
@@ -85,7 +85,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Bir kez `FinishedLaunching` yöntemi yürütülebilir, UI Xamarin.Forms tanımlı `PhonewordPage` sınıfı görüntülenir, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png "iOS PhonewordPage")
+[![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png#lightbox "iOS PhonewordPage")
 
 Kullanıcı Arabirimi, örneğin e dokunabilirsiniz üzerinde etkileşim bir [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), olay işleyicileri ile sonuçlanır `PhonewordPage` arka plan kodu çalıştırma. Örneğin, bir kullanıcının ne zaman dokunur **Arama Geçmişi** düğme, aşağıdaki olay işleyicisini gerçekleştirilir:
 
@@ -109,7 +109,7 @@ public void NavigateToCallHistoryPage()
 
 `NavigateToCallHistoryPage` Yöntemi dönüştürür Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-sayfasına türetilmiş bir `UIViewController` ile `CreateViewController` genişletme yöntemi ve kümelerini `Title` özelliği `UIViewController`. `UIViewController` Üzerine sonra gönderilen `UINavigationController` tarafından `PushViewController` yöntemi. Bu nedenle, kullanıcı arabirimini Xamarin.Forms tanımlanan `CallHistoryPage` sınıfı görüntülenir, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png "iOS CallHistoryPage")
+[![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png#lightbox "iOS CallHistoryPage")
 
 Zaman `CallHistoryPage` , geri dokunarak görüntülenir ok pop `UIViewController` için `CallHistoryPage` sınıfıyla `UINavigationController`, kullanıcıya döndürerek `UIViewController` için `PhonewordPage` sınıfı.
 
@@ -157,11 +157,11 @@ public class MainActivity : AppCompatActivity
 Parçaları hakkında daha fazla bilgi için bkz: [parçaları](~/android/platform/fragments/index.md).
 
 > [!NOTE]
-> **Not**: ek olarak `CreateFragment` genişletme yöntemi, Xamarin.Forms de içeren bir `CreateSupportFragment` yöntemi. `CreateFragment` Yöntemi oluşturur bir `Android.App.Fragment` API 11 hedefleyen uygulamalar kullanılır ve büyük olabilir. `CreateSupportFragment` Yöntemi oluşturur bir `Android.Support.V4.App.Fragment` 11 önce API sürümlerini hedefleyen uygulamalarda kullanılabilir.
+> Ek olarak `CreateFragment` genişletme yöntemi, Xamarin.Forms de içeren bir `CreateSupportFragment` yöntemi. `CreateFragment` Yöntemi oluşturur bir `Android.App.Fragment` API 11 hedefleyen uygulamalar kullanılır ve büyük olabilir. `CreateSupportFragment` Yöntemi oluşturur bir `Android.Support.V4.App.Fragment` 11 önce API sürümlerini hedefleyen uygulamalarda kullanılabilir.
 
 Bir kez `OnCreate` yöntemi yürütülebilir, UI Xamarin.Forms tanımlı `PhonewordPage` sınıfı görüntülenir, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[![](native-forms-images/android-phonewordpage.png "Android PhonewordPage")](native-forms-images/android-phonewordpage-large.png "Android PhonewordPage")
+[![](native-forms-images/android-phonewordpage.png "Android PhonewordPage")](native-forms-images/android-phonewordpage-large.png#lightbox "Android PhonewordPage")
 
 Kullanıcı Arabirimi, örneğin e dokunabilirsiniz üzerinde etkileşim bir [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), olay işleyicileri ile sonuçlanır `PhonewordPage` arka plan kodu çalıştırma. Örneğin, bir kullanıcının ne zaman dokunur **Arama Geçmişi** düğme, aşağıdaki olay işleyicisini gerçekleştirilir:
 
@@ -188,7 +188,7 @@ public void NavigateToCallHistoryPage()
 
 `NavigateToCallHistoryPage` Yöntemi Xamarin.Forms dönüştürür [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-sayfasına türetilmiş bir `Fragment` ile `CreateFragment` genişletme yöntemi ve ekler `Fragment` yığın parçaya yedekleyin. Bu nedenle, kullanıcı arabirimini Xamarin.Forms tanımlanan `CallHistoryPage` aşağıdaki ekran görüntüsünde gösterildiği gibi gösterilir:
 
-[![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png "Android CallHistoryPage")
+[![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png#lightbox "Android CallHistoryPage")
 
 Zaman `CallHistoryPage` , geri dokunarak görüntülenir ok pop `Fragment` için `CallHistoryPage` parça geri yığınından kullanıcıya döndürerek `Fragment` için `PhonewordPage` sınıfı.
 
@@ -271,7 +271,7 @@ public sealed partial class MainPage : Page
 
 Bir kez `MainPage` Oluşturucusu yürütülmeden, UI Xamarin.Forms tanımlı `PhonewordPage` sınıfı görüntülenir, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[![](native-forms-images/uwp-phonewordpage.png "UWP PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png "UWP PhonewordPage")
+[![](native-forms-images/uwp-phonewordpage.png "UWP PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png#lightbox "UWP PhonewordPage")
 
 Kullanıcı Arabirimi, örneğin e dokunabilirsiniz üzerinde etkileşim bir [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), olay işleyicileri ile sonuçlanır `PhonewordPage` arka plan kodu çalıştırma. Örneğin, bir kullanıcının ne zaman dokunur **Arama Geçmişi** düğme, aşağıdaki olay işleyicisini gerçekleştirilir:
 
@@ -293,7 +293,7 @@ public void NavigateToCallHistoryPage()
 
 Gezinti bölmesinde UWP ile gerçekleştirilen genellikle `Frame.Navigate` geçen yöntemi bir `Page` bağımsız değişkeni. Xamarin.Forms tanımlayan bir `Frame.Navigate` geçen genişletme yöntemi bir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-sayfası örneği türetilmiş. Bu nedenle, `NavigateToCallHistoryPage` yöntemini yürütür, Xamarin.Forms tanımlanan UI `CallHistoryPage` aşağıdaki ekran görüntüsünde gösterildiği gibi gösterilir:
 
-[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png "UWP CallHistoryPage")
+[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "UWP CallHistoryPage")
 
 Zaman `CallHistoryPage` , geri dokunarak görüntülenir ok pop `FrameworkElement` için `CallHistoryPage` uygulama arka yığınından kullanıcıya döndürerek `FrameworkElement` için `PhonewordPage` sınıfı.
 
@@ -356,4 +356,4 @@ Yerel Forms izin Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/a
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [NativeForms (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
-- [Yerel görünümleri](~/xamarin-forms/platform/native-views/index.md)
+- [Yerel Görünümler](~/xamarin-forms/platform/native-views/index.md)

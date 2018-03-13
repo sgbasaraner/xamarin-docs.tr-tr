@@ -7,12 +7,12 @@ ms.assetid: D3FDEA1C-F076-406F-BCC3-2A55D2C6ADEE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/07/2018
-ms.openlocfilehash: ae6b89e48005ca028db5d13f1a55f237888ae08b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 8fbb3f73fdc09f953ad5f7134020c1555d000d28
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="kitkat-features"></a>KitKat özellikleri
 
@@ -37,7 +37,7 @@ Bu kılavuz, Xamarin.Android geliştiriciler için KitKat üst düzey bir genel 
 
 KitKat kullanarak Xamarin.Android uygulamaları geliştirmek için ihtiyacınız *Xamarin.Android 4.11.0* veya Android SDK Yöneticisi aracılığıyla tarafından aşağıdaki ekran görüntüsünde gösterildiği gibi yüklü daha yüksek ve Android 4.4 (API düzeyi 19):
 
-[![Android SDK Yöneticisi'nde Android 4.4 seçme](kitkat-images/api19.png)](kitkat-images/api19.png)
+[![Android SDK Yöneticisi'nde Android 4.4 seçme](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
 
 <a name="Migrating_Your_App_to_KitKat" />
 
@@ -84,7 +84,7 @@ Harici depolama, artık iki tür - benzersiz uygulama ve verileri birden çok uy
 -  Bir özellik erişimi veya üzerinde bir yöntemi çağırmak tarafından bir dosya veya dizin yolu alıyorsanız `Environment` , gibi [ `GetExternalStorageDirectory` ](https://developer.xamarin.com/api/property/Android.OS.Environment.ExternalStorageDirectory/) veya [ `GetExternalStoragePublicDirectory` ](https://developer.xamarin.com/api/member/Android.OS.Environment.GetExternalStoragePublicDirectory/p/System.String/) , uygulamanızı gerektirir `READ_EXTERNAL_STORAGE` veya `WRITE_EXTERNAL_STORAGE` izni.
 
 > [!NOTE]
-> **Not:** `WRITE_EXTERNAL_STORAGE` gelir `READ_EXTERNAL_STORAGE` her zaman sadece bir izin kümesi gerekir böylece izni.
+> `WRITE_EXTERNAL_STORAGE` gelir `READ_EXTERNAL_STORAGE` her zaman sadece bir izin kümesi gerekir böylece izni.
 
 ### <a name="sms-consolidation"></a>SMS birleştirme
 
@@ -147,11 +147,11 @@ Yukarıdaki örnekte, bir otomatik, değişen özellik değerleri arasında Vars
 
 Aşağıdaki ekran görüntüsünde animasyonun önce uygulama gösterir:
 
-[![Animasyon başlatılmadan önce App ekran görüntüsü](kitkat-images/trans-before.png)](kitkat-images/trans-before.png)
+[![Animasyon başlatılmadan önce App ekran görüntüsü](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
 
 Aşağıdaki ekran görüntüsünde uygulama sonra animasyon gösterir:
 
-[![Animasyon tamamlandıktan sonra uygulama ekran görüntüsü](kitkat-images/trans-after.png)](kitkat-images/trans-after.png)
+[![Animasyon tamamlandıktan sonra uygulama ekran görüntüsü](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 Sonraki bölümde yer alan planda geçişle üzerinde daha fazla denetim elde edebilirsiniz.
 
@@ -161,7 +161,7 @@ Sonraki bölümde yer alan planda geçişle üzerinde daha fazla denetim elde ed
 
 Dinamik içerik barındıran statik UI bir adlandırılan öğedir bir *kapsayıcı* veya *Sahne temel*. Aşağıdaki örnek oluşturmak için Android Tasarımcısı'nı kullanan bir `RelativeLayout` adlı `container`:
 
-[![RelativeLayout kapsayıcısı oluşturmak için Android Tasarımcısı'nı kullanarak](kitkat-images/container.png)](kitkat-images/container.png)
+[![RelativeLayout kapsayıcısı oluşturmak için Android Tasarımcısı'nı kullanarak](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
 
 Örnek düzeni adlı bir düğme ayrıca tanımlar `sceneButton` aşağıda `container`. Bu düğme, geçiş tetikler.
 
@@ -237,22 +237,22 @@ sceneButton.Click += (o, e) => {
 
 Aşağıdaki ekran görüntüsünde işleminden önce animasyonun gösterilmektedir:
 
-[![Animasyon başlamadan önce uygulamasının ekran görüntüsü](kitkat-images/trans-after.png)](kitkat-images/trans-after.png)
+[![Animasyon başlamadan önce uygulamasının ekran görüntüsü](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 Aşağıdaki ekran görüntüsünde Sahne sonra animasyon gösterilmektedir:
 
-[![Animasyon tamamlandıktan sonra uygulamasının ekran görüntüsü](kitkat-images/scene.png)](kitkat-images/scene.png)
+[![Animasyon tamamlandıktan sonra uygulamasının ekran görüntüsü](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
 
 
 > [!NOTE]
-> **Not:** var. bir [bilinen hata](https://code.google.com/p/android/issues/detail?id=62450) Android geçişleri planda neden kitaplığı kullanılarak oluşturulan `GetSceneForLayout` bir kullanıcı bir etkinlik ikinci kez gittiğinde ayırmak için. Java geçici bir çözüm açıklanan [burada](http://www.doubleencore.com/2013/11/new-transitions-framework/).
+> Var olan bir [bilinen hata](https://code.google.com/p/android/issues/detail?id=62450) Android geçişleri planda neden kitaplığı kullanılarak oluşturulan `GetSceneForLayout` bir kullanıcı bir etkinlik ikinci kez gittiğinde ayırmak için. Java geçici bir çözüm açıklanan [burada](http://www.doubleencore.com/2013/11/new-transitions-framework/).
 
 
 ##### <a name="custom-transitions-in-scenes"></a>Görünümlerde özel geçişler
 
 Özel bir geçiş bir xml kaynak dosyasında tanımlanan `transition` altında dizin `Resources`aşağıdaki ekran görüntüsüne gösterildiği gibi:
 
-[![Kaynakları/geçiş dizini altındaki transition.xml dosyasının konumu](kitkat-images/resources.png)](kitkat-images/resources.png)
+[![Kaynakları/geçiş dizini altındaki transition.xml dosyasının konumu](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
 Aşağıdaki kod örneği için 5 saniye canlandırır ve kullandığı bir geçiş tanımlar [bir ara overshoot](http://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
 
@@ -307,7 +307,7 @@ Aşağıdaki kod bir tema saydam durumunu ve gezinti çubukları tanımlar:
 
 Aşağıdaki ekran görüntüsünde, yukarıda tema saydam durumu ve gezinti çubukları gösterir:
 
-[![Örnek uygulamasının ekran görüntüsü saydam durumunu ve gezinti çubukları](kitkat-images/theme.png)](kitkat-images/theme.png)
+[![Örnek uygulamasının ekran görüntüsü saydam durumunu ve gezinti çubukları](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
 
 <a name="user_content" />
 
@@ -338,7 +338,7 @@ StartActivityForResult (intent, save_request_code);
 
 Çağırma `StartActivityForResult` kullanıcı, görüntüyü seçmek için göz atabilirsiniz SAF UI başlatır:
 
-[![Görüntüye browing için depolama erişim Framework kullanarak uygulama örnek ekran görüntüsü](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png)
+[![Görüntüye browing için depolama erişim Framework kullanarak uygulama örnek ekran görüntüsü](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
 Kullanıcı bir görüntüsünü seçtikten sonra `OnActivityResult` döndürür `Android.Net.Uri` seçilen dosyanın. Aşağıdaki kod örneği, kullanıcının görüntü seçimi görüntüler:
 
@@ -368,7 +368,7 @@ StartActivityForResult (intentCreate, write_request_code);
 
 Yukarıdaki kod örneği, kullanıcının dosya adını değiştirin ve yeni dosya barındırmak için bir dizin seçin izin vererek SAF UI yükler:
 
-[![Dosya adı için NewDoc yüklemeleri dizininde değiştirme kullanıcının ekran görüntüsü](kitkat-images/saf-save.png)](kitkat-images/saf-save.png)
+[![Dosya adı için NewDoc yüklemeleri dizininde değiştirme kullanıcının ekran görüntüsü](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
 
 Kullanıcı bastığında **kaydetmek**, `OnActivityResult` iletilir `Android.Net.Uri` ile erişilen yeni oluşturulan dosya `data.Data`. URI, yeni dosyaya veri akışı için kullanılabilir:
 
@@ -396,11 +396,11 @@ Yükleme hakkında daha fazla bilgi için oluşturma ve depolama erişim Framewo
 Yazdırma içerik başlanmasıyla içinde KitKat Basitleştirilmiş [Yazdırma Hizmetleri](https://developer.xamarin.com/api/namespace/Android.PrintServices/) ve `PrintManager`. KitKat olan de tam olarak yararlanmak için ilk API sürümü [Google bulut yazdırma hizmeti API](https://developers.google.com/cloud-print/) kullanarak [Google bulut yazdırma uygulama](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint).
 KitKat ile otomatik olarak sevk çoğu cihazları Google bulut yazdırma uygulamasını indirin ve [HP yazdırma hizmeti eklentisi](https://play.google.com/store/apps/details?id=com.hp.android.printservice)ilk bağlandıklarında WiFi için. Bir kullanıcı kendi cihazın yazdırma ayarları giderek denetleyebilirsiniz **ayarlar > Sistem > Yazdırma**:
 
-[![Örnek ekran yazdırma ayarları ekran görüntüsü](kitkat-images/printing.png)](kitkat-images/printing.png)
+[![Örnek ekran yazdırma ayarları ekran görüntüsü](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
 
 > [!NOTE]
-> **Not:** yazdırma API'leri Google bulut yazdırma ile çalışmak için varsayılan olarak ayarlanır rağmen Android hala yeni API'leri kullanarak yazdırma içerik hazırlama ve yazdırma işlemek için diğer uygulamalarına göndermek, geliştiricilerin olanak sağlar.
+> Yazdırma API'leri Google bulut yazdırma ile çalışmak için varsayılan olarak ayarlanır rağmen Android hala yeni API'leri kullanarak yazdırma içerik hazırlama ve yazdırma işlemek için diğer uygulamalarına göndermek geliştiricilerin olanak sağlar.
 
 
 
@@ -410,14 +410,14 @@ KitKat otomatik olarak oluşturur bir [ `PrintDocumentAdapter` ](https://develop
 
 Yükleme ve web içeriği yazdırma Internet izin gerektirir:
 
-[![Internet izin uygulama ayarları](kitkat-images/internet.png)](kitkat-images/internet.png)
+[![Internet izin uygulama ayarları](kitkat-images/internet.png)](kitkat-images/internet.png#lightbox)
 
 ##### <a name="print-menu-item"></a>Yazdırma menü öğesi
 
 Yazdırma seçeneği genellikle etkinliğin içinde görünür [seçenekleri menüsü](http://developer.android.com/guide/topics/ui/menus.html#options-menu).
 Seçenekleri menüsü kullanıcıların üzerinde bir etkinlik eylemler gerçekleştirmesine izin verir. Ekranın sağ üst köşesinde olduğundan ve şöyle görünür:
 
-[![Yazdırma menü öğesi dispalyed ekranın sağ üst köşesinde, örnek ekran görüntüsü](kitkat-images/menu.png)](kitkat-images/menu.png)
+[![Yazdırma menü öğesi dispalyed ekranın sağ üst köşesinde, örnek ekran görüntüsü](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 
 Cihazıyla menü öğeleri tanımlanabilir *menü*altında dizin *kaynakları*. Aşağıdaki kodu öğesi adlı bir örnek menüsü tanımlar [yazdırma](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
@@ -500,9 +500,9 @@ void PrintPage ()
 
 Çağırma `Print` yazdırma işi seçeneklerini listeler yazdırma UI yükler. Kullanıcı Arabirimi kullanıcılara aşağıdaki ekran görüntüleri gösterildiği gibi yazdırma veya HTML içeriğini bir PDF için kaydetme seçeneği sağlar:
 
-[![Yazdır menüsünü görüntüleme PrintHtmlActivity ekran görüntüsü](kitkat-images/print1.png)](kitkat-images/print1.png)
+[![Yazdır menüsünü görüntüleme PrintHtmlActivity ekran görüntüsü](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
 
-[![Kaydetme PDF menü olarak görüntüleme PrintHtmlActivity ekran görüntüsü](kitkat-images/print2.png)](kitkat-images/print2.png)
+[![Kaydetme PDF menü olarak görüntüleme PrintHtmlActivity ekran görüntüsü](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
 <a name="hardware" />
 
@@ -524,7 +524,7 @@ HCE gerektirir HCE özellik ve `Nfc` izni uygulama kaydedilebilir `AndroidManife
 <uses-feature android:name="android.hardware.nfc.hce" />
 ```
 
-[![NFC'ye izin uygulama seçenekleri ayarlama](kitkat-images/nfc.png)](kitkat-images/nfc.png)
+[![NFC'ye izin uygulama seçenekleri ayarlama](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
 
 Çalışmak için arka planda çalıştırılabilmesi HCE sahip ve kullanıcı NFC işlem yaptığında HCE kullanarak uygulama çalışmıyorsa bile başlatmak gerekir. Biz HCE kodu olarak yazarak gerçekleştirebilirsiniz bir `Service`. HCE hizmeti uygulayan `HostApduService` aşağıdaki yöntemlerden uygulayan arabirimi:
 
@@ -588,7 +588,7 @@ KitKat ayrıca kullanıcının adımları izlemek için iki yeni algılayıcı t
 
 Aşağıdaki ekran görüntüsünde eylem adım sayacında gösterilmektedir:
 
-[![Bir adım sayaç görüntüleme SensorsActivity uygulamasının ekran görüntüsü](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png)
+[![Bir adım sayaç görüntüleme SensorsActivity uygulamasının ekran görüntüsü](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
 Oluşturabileceğiniz bir `SensorManager` çağırarak `GetSystemService(SensorService)` ve sonuç olarak atama bir `SensorManager`. Adım sayaç kullanmak için arama `GetDeafultSensor` üzerinde `SensorManager`. Algılayıcı kaydolun ve adım sayısı yardımıyla değişiklikleri dinlemek [ `ISensorEventListener` ](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/) arabirimi, aşağıdaki kod örneği tarafından gösterildiği gibi:
 
@@ -637,11 +637,10 @@ Cihaz yeniden başlatıldığı adım sayısı 0 olarak sıfırlar. Uygulamanız
 
 
 > [!NOTE]
-> **Not:** adım algılama ve KitKat birlikte verilir sayım API sırasında tüm telefonları ile algılayıcı bulunur. Çalıştırarak algılayıcı bulunup bulunmadığını kontrol edebilirsiniz `PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`, veya döndürülen değeri sağlamak için onay `GetDefaultSensor` değil `null`.
+> Adım algılama ve KitKat birlikte verilir sayım API sırasında tüm telefonları ile algılayıcı bulunur. Çalıştırarak algılayıcı bulunup bulunmadığını kontrol edebilirsiniz `PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`, veya döndürülen değeri sağlamak için onay `GetDefaultSensor` değil `null`.
 
 
- <a name="developer_tools" />
-
+<a name="developer_tools" />
 
 ## <a name="developer-tools"></a>Geliştirici Araçları
 
@@ -664,7 +663,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 Cihazınızda videonuzu bulabilirsiniz - kayıt tamamlandığında, Galerisi'nde görünür.
 
-<a name="other_kitkat_additions" />
 
 ## <a name="other-kitkat-additions"></a>Diğer KitKat eklemeler
 

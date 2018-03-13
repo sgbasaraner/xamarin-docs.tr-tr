@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: cddf3c58020b534abdc1541d967a9a7f5a4d891a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 440ee997b075b5c89504dcf20171fa3c8713e1ce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="images"></a>Görüntüler
 
@@ -79,7 +79,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 Aşağıdaki ekran görüntüleri her platformda yerel görüntü görüntüleme sonucu göster:
 
-[ ![Yerel ImageSource](images-images/local-sml.png "örnek uygulama yerel görüntü görüntüleme")](images-images/local.png "örnek uygulama yerel görüntü görüntüleme")
+[![Yerel ImageSource](images-images/local-sml.png "örnek uygulama yerel görüntü görüntüleme")](images-images/local.png#lightbox "örnek uygulama yerel görüntü görüntüleme")
 
 Daha fazla esneklik için `Device.RuntimePlatform` özelliği farklı bir resim dosyası veya bazı veya tüm platformlar için yol seçmek için bu kod örneğinde gösterildiği olarak kullanılabilir:
 
@@ -102,7 +102,7 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 Android alternatif çözüm görüntüleri yerleştirilmelidir [özel adlı dizinleri](http://developer.android.com/guide/practices/screens_support.html) Android projesinde, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-[![Android birden çok çözümleme görüntü konumu](images-images/xs-highdpisolution-sml.png "Android birden çok çözümleme görüntü konumu")](images-images/xs-highdpisolution.png "Android birden çok çözümleme görüntü konumu")
+[![Android birden çok çözümleme görüntü konumu](images-images/xs-highdpisolution-sml.png "Android birden çok çözümleme görüntü konumu")](images-images/xs-highdpisolution.png#lightbox "Android birden çok çözümleme görüntü konumu")
 
 ### <a name="additional-controls-that-display-images"></a>Görüntüleri göstermek ek denetimler
 
@@ -159,7 +159,7 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 
 Aşağıdaki ekran görüntüleri her platformda bir katıştırılmış resim görüntüleme sonucu göster:
 
-[ ![ResourceImageSource](images-images/resource-sml.png "örnek bir katıştırılmış resim görüntüleme uygulama")](images-images/resource.png "örnek uygulama bir katıştırılmış resim görüntüleme")
+[![ResourceImageSource](images-images/resource-sml.png "örnek bir katıştırılmış resim görüntüleme uygulama")](images-images/resource.png#lightbox "örnek uygulama bir katıştırılmış resim görüntüleme")
 
 <a name="Embedded_Images_in_Xaml" />
 
@@ -261,7 +261,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 Aşağıdaki ekran görüntüleri her platformda uzak bir görüntü görüntüleme sonucu göster:
 
-[![ImageSource indirilen](images-images/download-sml.png "örnek uygulama indirilen görüntü görüntüleme")](images-images/download.png "örnek uygulama indirilen görüntü görüntüleme")
+[![ImageSource indirilen](images-images/download-sml.png "örnek uygulama indirilen görüntü görüntüleme")](images-images/download.png#lightbox "örnek uygulama indirilen görüntü görüntüleme")
 
 <a name="Image_Caching" />
 

@@ -7,12 +7,12 @@ ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 4e5bf2b24845fa008c6f97a6d55e18a51bc82164
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7e107fc9ced62027bc793c97a388344d74becd66
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>İleti Firebase ile uzaktan bildirimleri bulut
 
@@ -22,7 +22,7 @@ _Bu kılavuz, bir Xamarin.Android uygulaması Firebase Cloud Messaging (anında 
 
 Bu kılavuzda, temel bir uygulama olarak adlandırılan **FCMClient** FCM Mesajlaşma essentials göstermek için oluşturulur. **FCMClient** Google Play Hizmetleri'nin varlığını denetler, FCM kayıt belirteçleri alır, Firebase konsolundan gönderdiğiniz uzak bildirimler görüntüler ve konu iletileri abone olur:
 
-[![Örnek uygulamasının ekran görüntüsü](remote-notifications-with-fcm-images/00-app-example-sml.png)](remote-notifications-with-fcm-images/00-app-example.png)
+[![Örnek uygulamasının ekran görüntüsü](remote-notifications-with-fcm-images/00-app-example-sml.png)](remote-notifications-with-fcm-images/00-app-example.png#lightbox)
 
 Aşağıdaki konular incelenecek:
 
@@ -56,7 +56,7 @@ Başlamak için adlı yeni bir boş Xamarin.Android projesi oluşturma **FCMClie
 
 Aşağıdaki örnekte, paket adı ayarlamak `com.xamarin.fcmexample`: 
 
-[![Paket adı ayarlama](remote-notifications-with-fcm-images/01-package-name-vs-sml.png)](remote-notifications-with-fcm-images/01-package-name-vs.png)
+[![Paket adı ayarlama](remote-notifications-with-fcm-images/01-package-name-vs-sml.png)](remote-notifications-with-fcm-images/01-package-name-vs.png#lightbox)
 
 Güncelleştirdiğiniz sırada **Android derleme bildirimi**, emin olmak için de onay `Internet` izin etkinleştirilir. 
 
@@ -68,7 +68,7 @@ Güncelleştirdiğiniz sırada **Android derleme bildirimi**, emin olmak için d
 
 Aşağıdaki örnekte, paket adı ayarlamak `com.xamarin.fcmexample`: 
 
-[![Paket adı ayarlama](remote-notifications-with-fcm-images/01-package-name-xs-sml.png)](remote-notifications-with-fcm-images/01-package-name-xs.png)
+[![Paket adı ayarlama](remote-notifications-with-fcm-images/01-package-name-xs-sml.png)](remote-notifications-with-fcm-images/01-package-name-xs.png#lightbox)
 
 Güncelleştirdiğiniz sırada **Android derleme bildirimi**, emin olmak için de onay `INTERNET` izni etkinse (altında **gerekli izinleri**). 
 
@@ -88,7 +88,7 @@ Google Play hizmetleri üzerinde Firebase Cloud Messaging bağımlı olduğundan
 
 3.  Bu pakete yükleyin **FCMClient** proje: 
 
-    [ ![Google Play Hizmetleri Bankası yükleme](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png)
+    [![Google Play Hizmetleri Bankası yükleme](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -98,7 +98,7 @@ Google Play hizmetleri üzerinde Firebase Cloud Messaging bağımlı olduğundan
 
 3.  Bu pakete yükleyin **FCMClient** proje: 
 
-    [ ![Google Play Hizmetleri Bankası yükleme](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png)
+    [![Google Play Hizmetleri Bankası yükleme](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png#lightbox)
 
 -----
 
@@ -125,7 +125,7 @@ FCM iletileri almak için [Xamarin Firebase - ileti](https://www.nuget.org/packa
 
 3.  Bu pakete yükleyin **FCMClient** proje: 
 
-    [ ![Xamarin Mesajlaşma Firebase yükleme](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png)
+    [![Xamarin Mesajlaşma Firebase yükleme](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -135,7 +135,7 @@ FCM iletileri almak için [Xamarin Firebase - ileti](https://www.nuget.org/packa
 
 3.  Bu pakete yükleyin **FCMClient** proje: 
 
-    [ ![Xamarin Mesajlaşma Firebase yükleme](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png)
+    [![Xamarin Mesajlaşma Firebase yükleme](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
 
 -----
  
@@ -166,7 +166,7 @@ Sonraki adım eklemektir **google services.json** projenizin kök dizinine dosya
 
 4.  İçinde **özellikleri** kümesi bölmesi, **yapı eylemi** için **GoogleServicesJson** (varsa **GoogleServicesJson** yapı eylemi gösterilmez, kaydedin ve çözümü kapatın, sonra yeniden):
 
-    [![Derleme eylemi GoogleServicesJson için ayarlama](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png)
+    [![Derleme eylemi GoogleServicesJson için ayarlama](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -178,7 +178,7 @@ Sonraki adım eklemektir **google services.json** projenizin kök dizinine dosya
 
 4.  Ayarlama **yapı eylemi** için **GoogleServicesJson**: 
 
-    [![Derleme eylemi GoogleServicesJson için ayarlama](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png)
+    [![Derleme eylemi GoogleServicesJson için ayarlama](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png#lightbox)
  
 -----
  
@@ -254,7 +254,7 @@ protected override void OnCreate (Bundle bundle)
 
 `IsPlayServicesAvailable` sonunda çağrılan `OnCreate` böylece Google Play Hizmetleri'nin çalıştığı her zaman uygulama başlatıldığında denetleyin. Uygulamanız varsa, bir `OnResume` yöntemi, çağrısı `IsPlayServicesAvailable` gelen `OnResume` de. Tamamen yeniden oluşturun ve uygulamayı çalıştırın. Tüm yapılandırılırsa düzgün bir şekilde, aşağıdaki ekran görüntüsü gibi görünen bir ekran görmeniz gerekir: 
 
-[![Google Play Hizmetleri'nin kullanılabilir olduğunu gösterir](remote-notifications-with-fcm-images/05-gps-available-sml.png)](remote-notifications-with-fcm-images/05-gps-available.png)
+[![Google Play Hizmetleri'nin kullanılabilir olduğunu gösterir](remote-notifications-with-fcm-images/05-gps-available-sml.png)](remote-notifications-with-fcm-images/05-gps-available.png#lightbox)
 
 Bu sonuç alamazsanız Google Play Hizmetleri APK aygıtınızda yüklü olduğunu doğrulayın (daha fazla bilgi için bkz: [ayarı yukarı Google Play Hizmetleri](https://developers.google.com/android/guides/setup)). Ayrıca, eklediğiniz doğrulayın **Xamarin.Google.Play.Services.Base** paketini, **FCMClient** proje daha önce açıklandığı gibi.
 
@@ -365,7 +365,7 @@ Uygulama sunucusu için bir belirteç gönderildiğinde `SendRegistrationToAppSe
 
 Alıcı hizmetlerini karşılandığından, bu hizmetleri yararlanmak için istemci uygulaması kodu yazılabilir. Aşağıdaki bölümlerde, kayıt belirtecinizi oturum için kullanıcı Arabirimi bir düğme eklenir (olarak da bilinir *örnek kimliği belirteci*), ve daha fazla kod eklenir `MainActivity` görüntülemek için `Intent` gelen uygulama başlatıldığında bilgi bir bildirim: 
 
-[![Uygulama ekranına eklenen günlüğü belirteci düğmesi](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png)
+[![Uygulama ekranına eklenen günlüğü belirteci düğmesi](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
 ### <a name="log-tokens"></a>Günlük belirteçleri
 
@@ -419,11 +419,11 @@ Uygulamanın Başlatıcısı `Intent` bu kodu eşlik eden herhangi bir veri otur
 
 Derleme ve çalıştırma **FCMClient** uygulama. **Günlük belirteci** düğmesi görüntülenir:
 
-[![Oturum belirteci düğmesi görüntülenir](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png)
+[![Oturum belirteci düğmesi görüntülenir](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
 Dokunun **günlük belirteci** düğmesi. IDE çıktı penceresinde aşağıdakine benzer bir ileti görüntülenir: 
 
-[![Çıktı penceresinde görüntülenen örnek ID simgesi](remote-notifications-with-fcm-images/07-token-received-sml.png)](remote-notifications-with-fcm-images/07-token-received.png)
+[![Çıktı penceresinde görüntülenen örnek ID simgesi](remote-notifications-with-fcm-images/07-token-received-sml.png)](remote-notifications-with-fcm-images/07-token-received.png#lightbox)
 
 İle uzun bir dize olarak etiketlenmiş **belirteci** Firebase konsoluna Yapıştır bir örnek kimliği belirteç &ndash; seçin ve bu dizesini Pano'ya kopyalayın. Bir örnek kimliği belirteci görmüyorsanız üstüne aşağıdaki satırı ekleyin `OnCreate` doğrulamak için yöntem **google services.json** doğru ayrıştırıldığında:
 
@@ -437,34 +437,34 @@ Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
 
 Oturum [Firebase konsol](https://console.firebase.google.com), projenizi seçin, **bildirimleri**, tıklatıp **ilk ileti gönder**: 
 
-[![Bilgisayarınızı ilk ileti düğmesi Gönder](remote-notifications-with-fcm-images/08-first-notification-sml.png)](remote-notifications-with-fcm-images/08-first-notification.png)
+[![Bilgisayarınızı ilk ileti düğmesi Gönder](remote-notifications-with-fcm-images/08-first-notification-sml.png)](remote-notifications-with-fcm-images/08-first-notification.png#lightbox)
 
 Üzerinde **oluşturma iletisi** sayfasında, ileti metnini girin ve seçin **tek aygıt**. IDE çıktı penceresinden örnek kimliği belirteci kopyalayın ve yapıştırın **FCM kayıt belirtecinizi** Firebase konsolunun alan: 
 
-[![Bir iletişim kutusu oluşturma](remote-notifications-with-fcm-images/09-compose-message-sml.png)](remote-notifications-with-fcm-images/09-compose-message.png)
+[![Bir iletişim kutusu oluşturma](remote-notifications-with-fcm-images/09-compose-message-sml.png)](remote-notifications-with-fcm-images/09-compose-message.png#lightbox)
 
 Android cihaz (veya öykünücü), Android dokunarak uygulama arka plan **genel bakış** düğmesi ve giriş ekranı temas. Cihaz hazır olduğunda tıklatın **iletisi gönder** Firebase konsolunda: 
 
-[![İleti düğmesi Gönder](remote-notifications-with-fcm-images/10-send-message-sml.png)](remote-notifications-with-fcm-images/10-send-message.png)
+[![İleti düğmesi Gönder](remote-notifications-with-fcm-images/10-send-message-sml.png)](remote-notifications-with-fcm-images/10-send-message.png#lightbox)
 
 Zaman **gözden geçirme ileti** iletişim kutusu gösterilir, tıklatın **Gönder**.
 Bildirim simgesini cihaz (veya öykünücü) bildirim alanında görünmelidir: 
 
-[![Bildirim simgesi görüntülenir](remote-notifications-with-fcm-images/11-notification-icon-sml.png)](remote-notifications-with-fcm-images/11-notification-icon.png)
+[![Bildirim simgesi görüntülenir](remote-notifications-with-fcm-images/11-notification-icon-sml.png)](remote-notifications-with-fcm-images/11-notification-icon.png#lightbox)
 
 İletiyi görüntülemek için bildirim simgesine açın. Bildirim iletisi, tam olarak ne içine yazılmış olmalıdır **ileti metni** Firebase konsolunun alan: 
 
-[![Bildirim iletisi cihazda görüntülenir](remote-notifications-with-fcm-images/12-notification-sml.png)](remote-notifications-with-fcm-images/12-notification.png)
+[![Bildirim iletisi cihazda görüntülenir](remote-notifications-with-fcm-images/12-notification-sml.png)](remote-notifications-with-fcm-images/12-notification.png#lightbox)
 
 Geri dönmek için bildirim simgesine dokunun **FCMClient** uygulama. `Intent` Gönderilen ek özellikler **FCMClient** IDE çıktı penceresinde listelenir: 
 
-[![Anahtar, ileti kimliği ve Daralt anahtar hedefi ek özellikler listeleri](remote-notifications-with-fcm-images/13-intent-extras-sml.png)](remote-notifications-with-fcm-images/13-intent-extras.png)
+[![Anahtar, ileti kimliği ve Daralt anahtar hedefi ek özellikler listeleri](remote-notifications-with-fcm-images/13-intent-extras-sml.png)](remote-notifications-with-fcm-images/13-intent-extras.png#lightbox)
 
 Bu örnekte, **gelen** anahtarını uygulama Firebase proje sayısını ayarlayın (Bu örnekte, `41590732`) ve **collapse_key** paket adını ayarlayın ( **com.xamarin.fcmexample**). Bir ileti almazsanız silmeyi deneyin **FCMClient** cihaz (veya öykünücü) uygulama ve yukarıdaki adımları yineleyin. 
 
 
 > [!NOTE]
-> **Not:** , zorla-Kapat uygulama, FCM bildirimleri teslim durdurur. Android arka plan hizmet yayınları yanlışlıkla veya gereksiz yere durdurulmuş uygulamaları bileşenlerinin başlatmasını engeller. (Bu davranış hakkında daha fazla bilgi için bkz: [başlatma durdurulmuş uygulamaları denetimlere](https://developer.android.com/about/versions/android-3.1.html#launchcontrols).) Bu nedenle, gerekli uygulama her zaman el ile kaldırmak için çalıştırmak ve hata ayıklama oturumu Durdur &ndash; bu iletileri alınacak devam edebilmesi için yeni bir belirteç oluşturmak için FCM zorlar.
+> Zorla-Kapat uygulama, FCM bildirimleri teslim durdurur. Android arka plan hizmet yayınları yanlışlıkla veya gereksiz yere durdurulmuş uygulamaları bileşenlerinin başlatmasını engeller. (Bu davranış hakkında daha fazla bilgi için bkz: [başlatma durdurulmuş uygulamaları denetimlere](https://developer.android.com/about/versions/android-3.1.html#launchcontrols).) Bu nedenle, gerekli uygulama her zaman el ile kaldırmak için çalıştırmak ve hata ayıklama oturumu Durdur &ndash; bu iletileri alınacak devam edebilmesi için yeni bir belirteç oluşturmak için FCM zorlar.
 
 ### <a name="add-a-custom-default-notification-icon"></a>Bir özel varsayılan bildirim simgesi ekleme
 
@@ -515,11 +515,11 @@ Bu kod bulur **abone bildirimi** düzeni düğmesini ve onun tıklatın işleyic
 
 Uygulamaları kaldırmak, yeniden oluşturmak ve yeniden çalıştırın. Tıklatın **Bildirimlere abone olma** düğmesi:
 
-[![Bildirimleri düğmesine abone olma](remote-notifications-with-fcm-images/14-subscribe-sml.png)](remote-notifications-with-fcm-images/14-subscribe.png)
+[![Bildirimleri düğmesine abone olma](remote-notifications-with-fcm-images/14-subscribe-sml.png)](remote-notifications-with-fcm-images/14-subscribe.png#lightbox)
 
 Uygulama başarıyla abone olursa görmelisiniz **konu eşitleme başarılı** IDE içinde çıktı penceresinde: 
 
-[![Çıktı penceresi konu başarılı eşitleme iletisi gösterir](remote-notifications-with-fcm-images/15-topic-sync-sml.png)](remote-notifications-with-fcm-images/15-topic-sync.png)
+[![Çıktı penceresi konu başarılı eşitleme iletisi gösterir](remote-notifications-with-fcm-images/15-topic-sync-sml.png)](remote-notifications-with-fcm-images/15-topic-sync.png#lightbox)
 
 Bir konu ileti göndermek için aşağıdaki adımları kullanın:
 
@@ -529,7 +529,7 @@ Bir konu ileti göndermek için aşağıdaki adımları kullanın:
 
 3.  İçinde **konu** aşağı açılır menüsünde, yerleşik konu seçmek **haber**: 
 
-    [ ![Haber konu seçme](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png)
+    [![Haber konu seçme](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png#lightbox)
 
 4.  Android cihaz (veya öykünücü), Android dokunarak uygulama arka plan **genel bakış** düğmesi ve giriş ekranı temas. 
 
@@ -537,11 +537,11 @@ Bir konu ileti göndermek için aşağıdaki adımları kullanın:
 
 6.  Görmek için IDE çıktı penceresini denetleyin **/konuları/haber** günlük çıkışı: 
 
-    [ ![/Topic/news iletiden gösterilir](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png)
+    [![/Topic/news iletiden gösterilir](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
 
 Bu ileti çıktı penceresinde görülür, bildirim simgesine ayrıca Android cihazda bildirim alanında görüntülenmelidir. Konu iletiyi görüntülemek için bildirim simgesine açın: 
 
-[![Konu ileti bildirim olarak görünür](remote-notifications-with-fcm-images/18-other-news-sml.png)](remote-notifications-with-fcm-images/18-other-news.png)
+[![Konu ileti bildirim olarak görünür](remote-notifications-with-fcm-images/18-other-news-sml.png)](remote-notifications-with-fcm-images/18-other-news.png#lightbox)
 
 Bir ileti almazsanız silmeyi deneyin **FCMClient** cihaz (veya öykünücü) uygulama ve yukarıdaki adımları yineleyin. 
 
@@ -593,7 +593,7 @@ Log.Debug(TAG, "Notification Message Body: " + message.GetNotification().Body);
 ```
 
 > [!NOTE]
-> **Not:** kesme noktası ayarlarsanız `FirebaseMessagingService`, hata ayıklama oturumunun olabilir veya bu kesme noktaları FCM iletileri nasıl teslim nedeniyle isabet değil.
+> Kesme noktası ayarlarsanız `FirebaseMessagingService`, hata ayıklama oturumunun olabilir veya bu kesme noktaları FCM iletileri nasıl teslim nedeniyle isabet değil.
  
 
 ### <a name="send-another-message"></a>Başka bir ileti gönderme
@@ -608,13 +608,13 @@ Uygulamaları kaldırmak, yeniden oluşturmak, yeniden çalıştırın ve başka
 
 4.  Uygulama ön planda çalıştığından emin olun ve ardından **iletisi gönder** Firebase konsolunda: 
 
-    [ ![Konsolundan başka bir ileti gönderme](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png)
+    [![Konsolundan başka bir ileti gönderme](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png#lightbox)
 
 5.  Zaman **gözden geçirme ileti** iletişim kutusu gösterilir, tıklatın **Gönder**.
 
 6.  Gelen ileti IDE çıkış penceresine kaydedilir:
 
-    [ ![İleti gövdesi çıkış penceresine yazdırılan](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png)
+    [![İleti gövdesi çıkış penceresine yazdırılan](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
 
 
 ### <a name="add-a-local-notifications-sender"></a>Yerel bildirimler göndereni Ekle
@@ -675,15 +675,15 @@ Uygulamaları kaldırmak, yeniden oluşturmak, yeniden çalıştırın ve sonra 
 
 4.  Uygulama ön planda çalıştığından emin olun ve ardından **iletisi gönder** Firebase konsolunda: 
 
-    [ ![Ön plan ileti gönderme](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png)
+    [![Ön plan ileti gönderme](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png#lightbox)
 
 Bu süre, çıktı penceresinde kaydedilen iletinin yeni bir bildirim de paketlenmiş &ndash; uygulama ön planda çalıştığı sırada bildirim simgesine bildirim tepsisinde görünür: 
 
-[![Ön plan ileti için bildirim simgesi](remote-notifications-with-fcm-images/22-foreground-icon-sml.png)](remote-notifications-with-fcm-images/22-foreground-icon.png)
+[![Ön plan ileti için bildirim simgesi](remote-notifications-with-fcm-images/22-foreground-icon-sml.png)](remote-notifications-with-fcm-images/22-foreground-icon.png#lightbox)
 
 Bildirim açtığınızda, Firebase konsol bildirimleri GUI gönderilen son ileti görmeniz gerekir: 
 
-[![Ön plan simgesiyle gösterilen ön bildirimi](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png)
+[![Ön plan simgesiyle gösterilen ön bildirimi](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
 
  
 ## <a name="troubleshooting"></a>Sorun giderme
@@ -710,4 +710,4 @@ Bu kılavuz bir Xamarin.Android uygulamasına bulut Firebase Mesajlaşma uzak bi
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [FCMNotifications (örnek)](https://developer.xamarin.com/samples/monodroid/Firebase/FCMNotifications)
-- [Firebase bulut Mesajlaşma](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)
+- [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)

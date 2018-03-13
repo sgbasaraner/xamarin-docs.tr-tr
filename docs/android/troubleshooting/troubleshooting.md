@@ -6,16 +6,15 @@ ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ce62e844a9ec76217947c0f0f5ed5e9a81336c7e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 145c8507ca5ebea6197fa8827b93f58fbc9bb078
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting-tips"></a>Sorun giderme ipuçları
 
-<a name="Getting_Diagnostic_Information" />
 
 ## <a name="getting-diagnostic-information"></a>Tanılama bilgileri alınıyor
 
@@ -27,8 +26,7 @@ Bu güncelleştirmeler şunlardır:
 3.  Android hata ayıklama günlük çıktısı.
 
 
- <a name="Diagnostic_MSBuild_Output" />
-
+<a name="Diagnostic_MSBuild_Output" />
 
 ## <a name="diagnostic-msbuild-output"></a>Tanılama MSBuild çıktı
 
@@ -55,7 +53,6 @@ Visual Studio tanılama MSBuild çıktısı için Mac/OS X: etkinleştirmek içi
 7.  Tanılama çıktıları hataları paneli içinde görünür olduğundan (**Görünüm > klavye takımı > hataları** ), yapı çıktı düğmesini tıklatarak.
 
 
- <a name="Device_Deployment_Logs" />
 
 
 ## <a name="device-deployment-logs"></a>Cihaz dağıtım günlükleri
@@ -74,7 +71,6 @@ Mac için Visual Studio her zaman cihaz dağıtım günlükleri yazar. Bunları 
 -  Günlük dosyalarına yazılır OS x'te `$HOME/Library/Logs/XamarinStudio-{VERSION}`.
 
 
- <a name="Android_Debug_Log_Output" />
 
 
 ## <a name="android-debug-log-output"></a>Android hata ayıklama günlük çıktısı
@@ -88,7 +84,6 @@ adb shell setprop PROPERTY_NAME PROPERTY_VALUE
 
 Sistem özellikleri işlem başlangıcı sırasında okuma ve böylece ayarlayın ya da uygulama başlatıldığında veya Sistem özellikleri değiştikten sonra uygulama yeniden başlatılmalıdır önce olması gerekir.
 
-<a name="Xamarin.Android_System_Properties" />
 
 
 ### <a name="xamarinandroid-system-properties"></a>Xamarin.Android System Properties
@@ -130,7 +125,6 @@ Visual Studio ile bir uyumsuzluk nedeniyle bu hata oluşur.
 
 Lütfen Visual Studio 2017 yüklemenizle birlikte karşılık gelen doğru System.ValueTuple NuGet seçin.
 
-<a name="GC_Messages" />
 
 ## <a name="gc-messages"></a>GC iletileri
 
@@ -162,7 +156,6 @@ D/Mono ( 2073): GC_MAJOR: (user request) pause 2.17ms, total 2.47ms, bridge 28.7
 
  *Genel*, büyük değeri `num_hash_entries`, daha fazla zaman `bridge` koleksiyonları alır ve büyük `total` harcanan süre toplama olacaktır.
 
- <a name="Global_Reference_Messages" />
 
 
 ## <a name="global-reference-messages"></a>Genel başvuru iletileri
@@ -254,14 +247,12 @@ Sorgulayarak GREF ve WREF sayısını sorgulayabilirsiniz `JniRuntime` nesnesi.
 
 `Java.Interop.JniRuntime.CurrentRuntime.WeakGlobalReferenceCount` -Zayıf başvuru sayısı
 
- <a name="Offline_Activation" />
 
 
 ## <a name="offline-activation"></a>Çevrimdışı etkinleştirme
 
 Xamarin.Android Windows etkinleştirilemiyor veya Mac OS X üzerinde Xamarin.Android'ın tam sürümünü yüklemek için, bkz: Lütfen [çevrimdışı etkinleştirme](~/android/get-started/installation/index.md) sayfası.
 
- <a name="Can't_upgrade_to_Indie/Business_from_Trial_Account" />
 
 
 ## <a name="cant-upgrade-to-indiebusiness-from-trial-account"></a>Indie/iş deneme hesabından yükseltemiyor.
@@ -275,7 +266,6 @@ Yakın zamanda Xamarin.Android satın alınan ve daha önce bir Xamarin.Android 
 
 Bu çalışır almalısınız. Sorunları yaşamaya devam ederseniz, denemek isteyebilirsiniz bir [çevrimdışı etkinleştirme](~/android/get-started/installation/index.md) istasyonunuzu etkinleştirmeyi tamamlamak için.
 
- <a name="Receiving_'Activation_Incomplete'_Error_Message" />
 
 
 ## <a name="receiving-activation-incomplete-error-message"></a>Alma ' etkinleştirme tamamlanmamış hata iletisi
@@ -285,7 +275,6 @@ Xamarin.Android Visual Studio için kullanırken bu sorun ortaya çıkabilir. Bu
 -  Günlük konumu: **LocalAppData %\\Xamarin\\günlükleri**
 
 
- <a name="Receiving_'Error_Retrieving_Update_Information'_Error_Message" />
 
 
 ## <a name="receiving-error-retrieving-update-information-error-message"></a>'Güncelleştirme bilgilerini alma hatası' hata iletisini almaya
@@ -315,14 +304,12 @@ Bunu başarmak için tercih platformunuz bulmak ve adımları izleyin:
 Bu hata iletisi görünmeye devam ederse, lütfen e-posta  **contact@xamarin.com** .
 
 
- <a name="Android_Debug_Logs" />
 
 
 ## <a name="android-debug-logs"></a>Android hata ayıklama günlükleri
 
 [Android hata ayıklama günlüklerini](~/android/deploy-test/debugging/android-debug-log.md) görmesini çalışma zamanı hataları ile ilgili ek bağlam sağlayabilir.
 
- <a name="Floating-Point_performance_is_terrible!" />
 
 
 ## <a name="floating-point-performance-is-terrible"></a>Kayan nokta performans korkunç!
@@ -339,7 +326,6 @@ Yayın derlemeleri yalnızca proje özellikleri sekmede seçilen ABIs dahil edil
 
 Uygulamanızı makul kayan nokta performans (örneğin oyunlar) gerektiriyorsa, etkinleştirmelisiniz *pushservice-v7a* ABI. Yalnızca desteklemek istediğiniz *pushservice-v7a* çalışma zamanı, buna karşın yalnızca destekleyen eski aygıtları *pushservice* uygulamanızı çalıştırma mümkün olmayacaktır.
 
- <a name="Could_not_locate_Android_SDK" />
 
 
 ## <a name="could-not-locate-android-sdk"></a>Android SDK bulunamadı.
@@ -347,9 +333,8 @@ Uygulamanızı makul kayan nokta performans (örneğin oyunlar) gerektiriyorsa, 
 2 yüklemeleri Google Android SDK Windows için kullanılabilir.
 .Exe yükleyici seçerseniz, yüklendiği Xamarin.Android söyleyin kayıt defteri anahtarlarını yazacaksınız. .Zip dosyasını seçin ve kendiniz sıkıştırmasını açın, Xamarin.Android için SDK'sı nereye bilmez. SDK Visual Studio giderek olduğu Xamarin.Android anlayabilirsiniz **Araçlar > Seçenekler > Xamarin > Android ayarları**:
 
-[![Xamarin Android ayarları Android SDK'sı konumu](troubleshooting-images/01a.png)]()
+[![Xamarin Android ayarları Android SDK'sı konumu](troubleshooting-images/01a.png)](troubleshooting-images/01a.png#lightbox)
 
-<a name="IDE_does_not_display_target_device" />
 
 
 ## <a name="ide-does-not-display-target-device"></a>IDE hedef aygıt görüntülenmez
@@ -393,7 +378,6 @@ emulator -partition-size 512 -avd MonoDroid
 
 Kullandığınız doğru simulator adı, yani olun [simulator yapılandırırken kullandığınız adı](~/android/get-started/installation/windows.md#device).
 
-<a name="INSTALL_FAILED_INVALID_APK_when_installing_a_package" />
 
 ## <a name="installfailedinvalidapk-when-installing-a-package"></a>Yükleme\_başarısız\_geçersiz\_bir paket yüklerken APK
 
@@ -410,7 +394,6 @@ Android paketini adları *gerekir* içeren bir nokta ('*.*'). Paket adı, bir s�
     -   Paket adı alanı içerecek şekilde değiştirmeniz bir '.'.
 
 
-<a name="INSTALL_FAILED_MISSING_SHARED_LIBRARY_when_installing_a_package" />
 
 
 ## <a name="installfailedmissingsharedlibrary-when-installing-a-package"></a>Yükleme\_başarısız\_eksik\_paylaşılan\_bir paket yüklerken kitaplığı
@@ -424,7 +407,6 @@ Hangi paylaşılan kitaplıklar gerektiğini belirlemek için görüntüleme *ol
 
 Örneğin, bir derleme başvurusu ekleme *Mono.Android.GoogleMaps.dll* örtük olarak ekleyecek bir `<uses-library/>` Google haritalar paylaşılan kitaplık için.
 
-<a name="INSTALL_FAILED_UPDATE_INCOMPATIBLE_when_installing_a_package" />
 
 
 ## <a name="installfailedupdateincompatible-when-installing-a-package"></a>Yükleme\_başarısız\_güncelleştirme\_bir paket yüklerken UYUMSUZ
@@ -450,7 +432,6 @@ E/PackageManager(  146): Package [PackageName] signatures do not match the previ
 
 Bu hatayı düzeltmek için tamamen uygulama aygıtınızdan yeniden yüklemeden önce kaldırın.
 
-<a name="INSTALL_FAILED_UID_CHANGED_when_installing_a_package" />
 
 ## <a name="installfaileduidchanged-when-installing-a-package"></a>Yükleme\_başarısız\_UID\_bir paket yüklerken değiştirildi
 
@@ -475,7 +456,6 @@ $ adb uninstall @PACKAGE_NAME@
 **KULLANMAYIN** `adb uninstall -k`bu gibi *korumak* uygulama verilerini ve bu nedenle hedef aygıttaki çakışan UID koruyabilirsiniz.
 
 
-<a name="Release_apps_fail_to_launch_on_device" />
 
 ## <a name="release-apps-fail-to-launch-on-device"></a>Yayın uygulamaları aygıtta başlatılamadı
 
@@ -603,7 +583,6 @@ using (var groupData = new JavaList<IDictionary<string, object>> ()) {
 
 [Bu bir sonraki sürümde düzeltilecektir](https://bugzilla.xamarin.com/show_bug.cgi?id=5401).
 
-<a name="Unexpected_NullReferenceExceptions" />
 
 ## <a name="unexpected-nullreferenceexceptions"></a>Beklenmeyen NullReferenceExceptions
 
@@ -635,7 +614,6 @@ Bu durumda olup olmadığını görmek için iletiye benzer şekilde, işleminde
 E/dalvikvm(  123): VM aborting
 ```
 
-<a name="Abort_due_to_Global_Reference_Exhaustion" />
 
 ## <a name="abort-due-to-global-reference-exhaustion"></a>Genel başvuru Tükenme nedeniyle iptal
 
@@ -726,7 +704,6 @@ Genellikle, hangi tür çok fazla sayıda örneğe sahip bulmak için kullanış
 
 Etkinleştirebilirsiniz [GREF günlüğü](~/android/troubleshooting/index.md) GREFs ne zaman oluşturulduğunu ve kaç tane var görmek için.
 
-<a name="Abort_due_to_JNI_type_mismatch" />
 
 ## <a name="abort-due-to-jni-type-mismatch"></a>JNI tür uyuşmazlığı nedeniyle iptal
 

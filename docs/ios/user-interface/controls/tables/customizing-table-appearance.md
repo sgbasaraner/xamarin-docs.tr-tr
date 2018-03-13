@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 12314e6ec5951a5a094ed8b0a5536b450853c5fb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a3f8ca8f4502b9585536815aef81f66cacd214f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-tables-appearance"></a>Bir tablonun görünümünü özelleştirme
 
@@ -29,7 +29,7 @@ Dört yerleşik stilleri vardır:
 
 Bu ekran görüntüleri her stili nasıl göründüğünü gösterir:
 
- [ ![](customizing-table-appearance-images/image7.png "Bu ekran görüntüleri her stili nasıl göründüğünü göster")](customizing-table-appearance-images/image7.png)
+ [![](customizing-table-appearance-images/image7.png "Bu ekran görüntüleri her stili nasıl göründüğünü göster")](customizing-table-appearance-images/image7.png#lightbox)
 
 Örnek **CellDefaultTable** Bu ekranlar üretmek için kodunu içerir. Hücre stili kümesinde `UITableViewCell` Oluşturucusu şuna benzer:
 
@@ -60,7 +60,7 @@ Hücreleri görünümü sağa eklenen aşağıdaki Donatılar sahip olabilir:
 
 Bu, nasıl göründüğünü oluşur:
 
- [ ![](customizing-table-appearance-images/image8.png "Örnek Donatılar")](customizing-table-appearance-images/image8.png)
+ [![](customizing-table-appearance-images/image8.png "Örnek Donatılar")](customizing-table-appearance-images/image8.png#lightbox)
 
 Ayarlayabileceğiniz bu Donatılar birini görüntülemek için `Accessory` özelliğinde `GetCell` yöntemi:
 
@@ -119,7 +119,7 @@ Bir tablonun görsel stilini değiştirmek için görüntülemek için özel hü
 
 CellCustomTable örnek uygulayan bir `UITableViewCell` özel yerleşimini tanımlayan bir alt `UILabel`s ve `UIImage` farklı yazı tipleri ve renkler ile. Sonuçta elde edilen hücreleri şöyle görünür:
 
- [ ![](customizing-table-appearance-images/image9.png "Özel hücre düzenleri")](customizing-table-appearance-images/image9.png)
+ [![](customizing-table-appearance-images/image9.png "Özel hücre düzenleri")](customizing-table-appearance-images/image9.png#lightbox)
 
 Özel hücre sınıfı yalnızca üç yöntem oluşur:
 

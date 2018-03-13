@@ -7,11 +7,11 @@ ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0b3471f607bbde6560af597b6b901e6fbd1ec0b0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 25220f37433037b55f13c4de5a07c0c09173a269
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="handoff"></a>İletimi
 
@@ -19,7 +19,7 @@ _Bu makalede aktarmak için bir Xamarin.iOS uygulaması ile iletim çalışma ka
 
 Apple aynı uygulama veya aynı etkinlik destekleyen başka bir uygulama çalıştıran başka bir cihaza iOS 8 ve OS X cihazlarını birinde başlatılan etkinliklerin aktarmak kullanıcı için ortak bir mekanizma sağlamak için Yosemite (10.10) iletimi kullanıma sunuldu.
 
-[ ![](handoff-images/handoff02.png "İletim işlemi gerçekleştirmeye dair bir örnek")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "İletim işlemi gerçekleştirmeye dair bir örnek")](handoff-images/handoff02.png#lightbox)
 
 Bu makalede, bir Xamarin.iOS uygulaması paylaşımı etkinlik etkinleştirme hızlı bir göz atalım ve ayrıntılı iletimi framework kapsar:
 
@@ -45,7 +45,7 @@ Bir etkinliği başka kullanıcının aygıtları iletilecek onu bir örneğinde
 
 Alıcı cihazda kullanıcı bir etkinlik için devamlılık kullanılabilir olduğuna dair bir bildirim alırsınız. Kullanıcı etkinliği yeni cihazda devam etmek seçerse (henüz çalıştırılıyorsa) belirtilen uygulama başlatıldıktan ve yükü `NSUserActivity` etkinlik yeniden başlatmak için kullanılır.
 
-[ ![](handoff-images/handoffinteractions.png "Devam ediliyor kullanıcı etkinlikleri genel bakış")](handoff-images/handoffinteractions.png)
+[![](handoff-images/handoffinteractions.png "Devam ediliyor kullanıcı etkinlikleri genel bakış")](handoff-images/handoffinteractions.png#lightbox)
 
 Takım Kimliği aynı Geliştirici paylaşan ve yanıt uygulamaları bir verilen _etkinlik türü_ devamlılık için uygundur. Bir uygulama altında destekliyorsa etkinlik türlerini tanımlar `NSUserActivityTypes` , anahtar kendi **Info.plist** dosya. Bu verildiğinde, devam ediliyor cihaz etkinlik türü takım kimliği temel alarak devamlılık gerçekleştirmek için app seçer ve isteğe bağlı olarak _etkinlik başlığı_.
 
@@ -114,21 +114,21 @@ Aşağıdakileri yapın:
 3. Zaten yapmadıysanız, tıklayın **tanımlayıcıları** ve uygulamanız için bir kimlik oluşturun (örneğin `com.company.appname`), mevcut kimliğinizi başka Düzenle
 4. Emin **iCloud** hizmet verilen kimlik için kontrol edildiyse: 
 
-    [ ![](handoff-images/provision01.png "Verilen kimlik için iCloud hizmetini etkinleştirme")](handoff-images/provision01.png)
+    [![](handoff-images/provision01.png "Verilen kimlik için iCloud hizmetini etkinleştirme")](handoff-images/provision01.png#lightbox)
 5. Değişikliklerinizi kaydedin.
 4. Tıklayın **sağlama profilleri** > **geliştirme** ve sağlama profili sizin için yeni bir yazılım geliştirme uygulama oluşturun: 
 
-    [ ![](handoff-images/provision02.png "Sağlama profili uygulama için yeni bir yazılım geliştirme oluşturma")](handoff-images/provision02.png)
+    [![](handoff-images/provision02.png "Sağlama profili uygulama için yeni bir yazılım geliştirme oluşturma")](handoff-images/provision02.png#lightbox)
 5. Karşıdan yükle ve yeni sağlama profili yüklemek veya Xcode profili karşıdan yükleyip kullanabilirsiniz.
 6. Xamarin.iOS projesi seçeneklerinizi düzenleyin ve yeni oluşturduğunuz sağlama profili kullandığınızdan emin olun: 
 
-    [ ![](handoff-images/provision03.png "Yeni oluşturduğunuz sağlama profili seçin")](handoff-images/provision03.png)
+    [![](handoff-images/provision03.png "Yeni oluşturduğunuz sağlama profili seçin")](handoff-images/provision03.png#lightbox)
 7. Ardından, düzenleme, **Info.plist** dosya ve sağlama profili oluşturmak için kullanılan uygulama kimliği kullandığından emin olun: 
 
-    [ ![](handoff-images/provision04.png "Uygulama Kimliği ayarlayın")](handoff-images/provision04.png)
+    [![](handoff-images/provision04.png "Uygulama Kimliği ayarlayın")](handoff-images/provision04.png#lightbox)
 8. Kaydırma **arka plan modları** bölümünde ve aşağıdakileri denetleyin: 
 
-    [ ![](handoff-images/provision05.png "Gerekli arka plan modlarını etkinleştir")](handoff-images/provision05.png)
+    [![](handoff-images/provision05.png "Gerekli arka plan modlarını etkinleştir")](handoff-images/provision05.png#lightbox)
 9. Tüm dosyalara değişiklikleri kaydedin.
 
 Yerinde bu ayarlarla uygulama Handoff'a Framework API'lerine erişmek hazır. Hazırlama hakkında ayrıntılı bilgi için lütfen bkz bizim [cihaz sağlamayı](~/ios/get-started/installation/device-provisioning/index.md) ve [uygulamanızı sağlama](~/ios/get-started/installation/device-provisioning/index.md) kılavuzları.
@@ -155,7 +155,7 @@ Etkinlik türü tanımlayıcısı oluşturulurken kullanılan bir `NSUserActivit
 
 Bu davranış desteklemek için gerekli etkinlik türü tanımlayıcıları oluşturmak için düzenleyin **Info.plist** dosya ve geçiş **kaynak** görünümü. Ekleme bir `NSUserActivityTypes` anahtar ve aşağıdaki tanımlayıcılar oluşturun:
 
-[ ![](handoff-images/type01.png "NSUserActivityTypes anahtarı ve plist düzenleyicisinde gerekli tanımlayıcıları")](handoff-images/type01.png)
+[![](handoff-images/type01.png "NSUserActivityTypes anahtarı ve plist düzenleyicisinde gerekli tanımlayıcıları")](handoff-images/type01.png#lightbox)
 
 Dört yeni etkinlik türü tanımlayıcıları, her örnekte sekmelerinin oluşturduğumuz **MonkeyBrowser** uygulama. Kendi uygulamaları oluştururken Değiştir `NSUserActivityTypes` etkinlikleri belirli etkinlik türü tanımlayıcıları ile uygulamanızı dizi destekler.
 
@@ -610,15 +610,15 @@ Başarılı, bir kullanıcı etkinliği iletimi aracılığıyla sorunsuz devaml
 
 Kullanıcı yeni bir URL ve dokunma girdiğinde bir sekmede **Git** düğmesi, yeni bir `NSUserActivity` kullanıcı şu anda gözatma URL'si içeren sekmenin için oluşturulur:
 
-[ ![](handoff-images/handoff01.png "Örnek iletimi uygulama")](handoff-images/handoff01.png)
+[![](handoff-images/handoff01.png "Örnek iletimi uygulama")](handoff-images/handoff01.png#lightbox)
 
 Başka bir kullanıcının aygıtları varsa **MonkeyBrowser** uygulamasının yüklü, aynı kullanıcı hesabı kullanarak iCloud imzalı, aynı ağ ve yakın bir yerde konumlandırıldığında içinde yukarıdaki cihaz, giriş animasyonuna etkinlik görüntülenecek ekranında (sol alt köşesindeki):
 
-[ ![](handoff-images/handoff02.png "Sol alt köşesindeki giriş ekranında görüntülenen iletimi etkinliği")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "Sol alt köşesindeki giriş ekranında görüntülenen iletimi etkinliği")](handoff-images/handoff02.png#lightbox)
 
 Kullanıcının yukarı iletimi simgesine sürüklediği, uygulama başlatılır ve kullanıcı etkinliğini belirtilen `NSUserActivity` yeni cihazda devam:
 
-[ ![](handoff-images/handoff03.png "Yeni cihaz üzerinde kullanıcı etkinliği devam")](handoff-images/handoff03.png)
+[![](handoff-images/handoff03.png "Yeni cihaz üzerinde kullanıcı etkinliği devam")](handoff-images/handoff03.png#lightbox)
 
 Ne zaman bir kullanıcı etkinliği başarıyla gönderildikten başka bir Apple aygıtı için gönderen kişinin `NSUserActivity` yapılan bir çağrı alacaksınız `UserActivityWasContinued` yöntemi kendi `NSUserActivityDelegate` , kullanıcı etkinliği başarıyla diğerine aktarıldı olduğunu bilmeniz izin vermek için aygıt.
 

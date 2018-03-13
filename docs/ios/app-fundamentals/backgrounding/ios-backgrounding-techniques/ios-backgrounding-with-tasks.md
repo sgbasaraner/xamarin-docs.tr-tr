@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0be4e7f1d8719fdd174d51399178eb1bc000c4b3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS görevlerle Backgrounding
 
@@ -114,11 +114,11 @@ Sona erme işleyicileri kodu çalıştırmak gerekli değildir; ancak, bir arka 
 
 Ön iOS 7, arka planda çalışan bir görev 600 saniye tamamlamak için olduğunu hatırlayın. Bu sınır için bir neden, arka planda çalışan bir görev cihaz uyanık görev süresince tutmanız şöyledir:
 
- [ ![](ios-backgrounding-with-tasks-images/ios6.png "Uygulama uyanık öncesi iOS 7 tutma görev grafiği")](ios-backgrounding-with-tasks-images/ios6.png)
+ [![](ios-backgrounding-with-tasks-images/ios6.png "Uygulama uyanık öncesi iOS 7 tutma görev grafiği")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
 iOS 7 arka plan işlemesi uzun pil ömrü için optimize edilmiştir. İOS 7'de, backgrounding fırsatçılıktan olur: cihaz uyku ve cihaz telefon görüşmeleri, bildirimler, gelen e-posta ve diğer işlemek için çağrıldığında bunun yerine bunların işlenmesini parçalar gittiğinde cihaz uyanık tutma yerine görevleri Uy Ortak kesintiler. Aşağıdaki diyagramda bir görevin nasıl kopmuş olabilir içine Insight sağlar Yukarı:
 
- [ ![](ios-backgrounding-with-tasks-images/ios7.png "Grafik bozuk görevinin sonrası iOS 7 öbekleri")](ios-backgrounding-with-tasks-images/ios7.png)
+ [![](ios-backgrounding-with-tasks-images/ios7.png "Grafik bozuk görevinin sonrası iOS 7 öbekleri")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
 Çalışma zamanı görevi artık sürekli olmadığından, ağ aktarımı gerçekleştirmek görevleri iOS 7 farklı şekilde ele gerekir. Geliştiriciler kullanmaları `NSURlSession` ağ aktarımları işlemek için API. Sonraki bölümde arka plan aktarımları bir genel bakıştır.
 

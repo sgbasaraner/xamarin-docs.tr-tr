@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 8b1715c8e7c3e9bb296577acd3d09a0f22488250
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authentication-and-authorization"></a>Kimlik doğrulama ve yetkilendirme
 
@@ -48,7 +48,7 @@ EShopOnContainers mobil uygulama kimlik doğrulaması yapmak ve API'ler için er
 -   IdentityServer sahip bir kaynak erişim elde edilir mobil uygulama isteyerek bir *erişim* bir API kaynağa erişim izni verir belirteci. İstemcilerin erişim belirteçleri isteyin ve API için iletin. Erişim belirteçleri, (varsa) istemci ve kullanıcı hakkındaki bilgileri içerir. API'leri daha sonra verilerine erişim yetkisi vermek için bu bilgileri kullanın.
 
 > [!NOTE]
-> **Not**: belirteçleri isteyebilmesi istemci IdentityServer ile kayıtlı olması gerekir.
+> Belirteçleri isteyebilmesi istemci IdentityServer ile kayıtlı olması gerekir.
 
 ### <a name="adding-identityserver-to-a-web-application"></a>Bir Web uygulamasına IdentityServer ekleme
 

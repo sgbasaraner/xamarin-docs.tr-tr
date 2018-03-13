@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cf43cfe31811e91524af7894ea347e3dba784d92
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 52a9fc206a2c303d13d80be4de743d98056f7684
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="menus"></a>Menüler
 
@@ -28,7 +28,7 @@ Menüleri Mac uygulamanın kullanıcı deneyiminin ayrılmaz bir parçası olan 
 - **Menü yerleştirme** -menü yuva her bir uygulama için belirir zaman kullanıcı sağ tıklatır veya denetim-uygulamanın simgesine tıklama ya da kullanıcı simgesini tıklattığı ve fare düğmesini tutar.
 - **Açılır düğmesi ve açılır listeleri** -açılır düğmesi seçilen bir öğeyi görüntüler ve kullanıcı tarafından tıklatıldığında seçmek üzere seçeneklerin bir listesini gösterir. Aşağı açılır listesi, genellikle geçerli görev bağlamına özgü komutları seçmek için kullanılır. açılan düğmesine türüdür. Her ikisi de bir penceresinde herhangi bir yerde görünebilir.
 
-[![Bir örnek menü](menu-images/intro01.png "bir örnek menüsü")](menu-images/intro01-large.png)
+[![Bir örnek menü](menu-images/intro01.png "bir örnek menüsü")](menu-images/intro01-large.png#lightbox)
 
 Bu makalede, biz Cocoa menü çubukları, menüler ve menü öğeleri Xamarin.Mac uygulama ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -38,7 +38,7 @@ Bir göz atalım isteyebilirsiniz [gösterme C# sınıfları / Objective-C yönt
 
 Her penceresinde bağlı kendi menü çubuğu sahip olduğu Windows işletim sistemi üzerinde çalışan uygulamalardan farklı olarak, bu uygulamadaki her penceresi için kullanılan ekranın üstünde çalışan bir tek menü çubuğu macOS üzerinde çalışan her uygulama vardır:
 
-[![Menü çubuğu](menu-images/appmenu01.png "menü çubuğu")](menu-images/appmenu01-large.png)
+[![Menü çubuğu](menu-images/appmenu01.png "menü çubuğu")](menu-images/appmenu01-large.png#lightbox)
 
 Bu menü çubuğundaki öğeleri etkin veya devre dışı geçerli bağlam veya uygulama ve kullanıcı arabirimi durumu belirli bir anda göre. Örneğin: üzerinde kullanıcı bir metin alanı seçerse, öğeleri **Düzenle** menü gelen gibi etkin **kopya** ve **Kes**.
 
@@ -64,21 +64,21 @@ Yeni bir Xamarin.Mac projesi oluşturduğunuzda, otomatik olarak macOS uygulama 
 
 Çift **Main.storyboard** dosyayı Xcode'nın arabirimi oluşturucusu ve, düzenleme menü Düzenleyicisi arabirimiyle sunulur için açın:
 
-[![Xcode kullanıcı Arabiriminde düzenleme](menu-images/defaultbar01.png "Xcode Arabiriminde düzenleme")](menu-images/defaultbar01-large.png)
+[![Xcode kullanıcı Arabiriminde düzenleme](menu-images/defaultbar01.png "Xcode Arabiriminde düzenleme")](menu-images/defaultbar01-large.png#lightbox)
 
 Buradan biz öğeleri gibi tıklatabilirsiniz **açık** menü öğesine **dosya** menü düzenleyin ve özelliklerini ayarla **öznitelikleri denetçisi**:
 
-[![Bir menünün öznitelikleri düzenleme](menu-images/defaultbar02.png "bir menünün öznitelikleri düzenleme")](menu-images/defaultbar02-large.png)
+[![Bir menünün öznitelikleri düzenleme](menu-images/defaultbar02.png "bir menünün öznitelikleri düzenleme")](menu-images/defaultbar02-large.png#lightbox)
 
 Ekleme, düzenleme ve menüleri ve bu makalenin sonraki bölümlerinde öğeleri silme içine elde edersiniz. Artık yalnızca hangi menüleri ve menü öğeleri varsayılan olarak kullanılabilir ve nasıl bunlar otomatik olarak bir dizi önceden tanımlanmış çıkışlar ve Eylemler aracılığıyla kodu maruz görmeyi istiyoruz için (daha fazla bilgi için bizim [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) belgeler).
 
 Örneğin, biz tıklayın **bağlantı denetçisi** için **açık** biz bunu otomatik olarak kablolu kadar görebilir menü öğesi `openDocument:` eylem: 
 
-[![Ekli eylem görüntüleme](menu-images/defaultbar03.png "ekli eylem görüntüleme")](menu-images/defaultbar03-large.png)
+[![Ekli eylem görüntüleme](menu-images/defaultbar03.png "ekli eylem görüntüleme")](menu-images/defaultbar03-large.png#lightbox)
 
 Seçerseniz **ilk Yanıtlayıcı** içinde **arabirimi hiyerarşi** ve aşağı gidin **bağlantı denetçisi**, tanımını görürsünüz `openDocument:` Eylem, **açık** menü öğesi eklendiği (birlikte kadar denetimleri otomatik olarak kablolu değil ve çeşitli diğer varsayılan eylemleri uygulama için):
 
-[![Tüm bağlı eylemler görüntüleme](menu-images/defaultbar04.png "tüm bağlı eylemler görüntüleme")](menu-images/defaultbar04-large.png) 
+[![Tüm bağlı eylemler görüntüleme](menu-images/defaultbar04.png "tüm bağlı eylemler görüntüleme")](menu-images/defaultbar04-large.png#lightbox) 
 
 Bu neden önemlidir? Bu otomatik olarak tanımlanan eylemleri otomatik olarak etkinleştir ve menü öğelerini devre dışı bırakın, yanı sıra için öğeler için yerleşik işlevsellik sağlamak diğer Cocoa kullanıcı arabirimi öğeleri ile nasıl çalıştığıyla sonraki bölümüne bakın.
 
@@ -98,11 +98,11 @@ Gibi diğer menü öğelerinin while **Kes**, **kopya**, ve **Yapıştır** değ
 
 Şimdi uygulamayı durdurun ve çift **Main.storyboard** dosyasını **çözüm paneli** Xcode'da düzenlemek üzere açmak için kullanıcının arabirimi Oluşturucu. Ardından, sürükleyin bir **metin görünümü** gelen **Kitaplığı** pencerenin görünümü denetleyicisine **arabirimi Düzenleyicisi**:
 
-[![Kitaplıktan bir metin görünümü seçerek](menu-images/appmenu05.png "kitaplıktan bir metin görünümü seçme")](menu-images/appmenu05-large.png)
+[![Kitaplıktan bir metin görünümü seçerek](menu-images/appmenu05.png "kitaplıktan bir metin görünümü seçme")](menu-images/appmenu05-large.png#lightbox)
 
 İçinde **kısıtlaması Düzenleyicisi** şimdi metin görünümü pencerenin kenarlarına sabitleme ve burada büyür ve tüm dört kırmızı t-kirişleri Düzenleyicisi üstündeki ve'ı tıklatarak penceresiyle küçültür ayarlayın **4 kısıtlamalarıEkle** düğmesi:
 
-[![Contraints düzenleme](menu-images/appmenu06.png "contraints düzenleme")](menu-images/appmenu06-large.png)
+[![Contraints düzenleme](menu-images/appmenu06.png "contraints düzenleme")](menu-images/appmenu06-large.png#lightbox)
 
 Değişikliklerinizi kaydetmek için kullanıcı arabirimi tasarımı ve değişiklikleri Xamarin.Mac projenizi ile eşitlemek Mac için Visual Studio geri dönebilirsiniz. Şimdi uygulamayı başlatmak, bazı metni metin görünüme yazın, seçin ve açmak **Düzenle** menüsü:
 
@@ -209,7 +209,7 @@ Biz tıklatırsanız **açık** düğmesi, bizim uyarı iletisi görüntülenir:
 
 Burada anahtar satırı `[Export ("openDocument:")]`, bunu belirten `NSMenu` , bizim **AppDelegate** bir yönteme sahip `void OpenDialog (NSObject sender)` , yanıt verir `openDocument:` eylem. Yukarıda, unutmayın, **açık** menü öğesi otomatik olarak kablolu yukarı Bu eylem için varsayılan arabirimi Oluşturucu:
 
-[![Görüntüleme ekli eylemleri](menu-images/defaultbar03.png "bağlı eylemler görüntüleme")](menu-images/defaultbar03-large.png)
+[![Görüntüleme ekli eylemleri](menu-images/defaultbar03.png "bağlı eylemler görüntüleme")](menu-images/defaultbar03-large.png#lightbox)
 
 Sonraki kendi menüsü, menü öğeleri ve eylemleri oluşturma ve yanıt kodu onlara bakalım.
 
@@ -453,7 +453,7 @@ Denetim tıklatın ve bir menü öğesine sürükleyin **ilk Yanıtlayıcı** al
 
 Film şeridi için değişiklikleri kaydetmek ve değişiklikleri eşitlemek Mac için Visual Studio geri dönün. Uygulama çalıştırırsanız, özel eylem bağlı menü öğesi otomatik olarak etkin / (üzerinde penceresi açık olan eylemiyle göre) devre dışı bırakılmış ve menü öğesi seçilerek eylem ateşlenir:
 
-[![Yeni Eylem sınama](menu-images/action05.png "yeni eylemi test etme")](menu-images/action05-large.png)
+[![Yeni Eylem sınama](menu-images/action05.png "yeni eylemi test etme")](menu-images/action05-large.png#lightbox)
 
 <a name="Adding,_Editing_and_Deleting_Menus" />
 
@@ -465,7 +465,7 @@ Bu bölümde biz gerekmez menü öğeleri kaldırma, menüler yeniden düzenleme
 
 Çift **Main.storyboard** dosyasını **çözüm paneli** düzenlemek üzere açmak için:
 
-[![Xcode kullanıcı Arabiriminde düzenleme](menu-images/maint01.png "Xcode Arabiriminde düzenleme")](menu-images/maint01-large.png)
+[![Xcode kullanıcı Arabiriminde düzenleme](menu-images/maint01.png "Xcode Arabiriminde düzenleme")](menu-images/maint01-large.png#lightbox)
 
 Belirli Xamarin.Mac uygulamamız için biz varsayılan kullanılmasını yapmayacağınız **Görünüm** biz kaldırmak olacak şekilde menüsü. İçinde **arabirimi hiyerarşi** seçin **Görünüm** ana menü çubuğunda bir parçası olan menü öğesi:
 
@@ -477,19 +477,19 @@ DELETE tuşlarına basın veya menü silmek için Geri Al. Ardından, biz tüm �
 
 Öğe üst öğe altına sürükleyin **menü** şu anda oldukları alt menüsünde:
 
-[![Menü öğeleri ana menüye sürükleme](menu-images/maint04.png "ana menüye menü öğeleri sürükleme")](menu-images/maint04-large.png)
+[![Menü öğeleri ana menüye sürükleme](menu-images/maint04.png "ana menüye menü öğeleri sürükleme")](menu-images/maint04-large.png#lightbox)
 
 Menünüze gibi görünmelidir:
 
-[![Yeni konumu öğelerde](menu-images/maint05.png "yeni konumu öğeleri")](menu-images/maint05-large.png)
+[![Yeni konumu öğelerde](menu-images/maint05.png "yeni konumu öğeleri")](menu-images/maint05-large.png#lightbox)
 
 Sonraki şimdi sürükleyin **metin** gelen altında alt menüyü **biçimi** menü ve arasında ana menü çubuğundaki yerleştirin **biçimi** ve **penceresi** menüler:
 
-[![Metin menüsü](menu-images/maint06.png "metin menüsü")](menu-images/maint06-large.png)
+[![Metin menüsü](menu-images/maint06.png "metin menüsü")](menu-images/maint06-large.png#lightbox)
 
 Edelim geri altında **biçimi** menü ve delete **yazı tipi** alt menü öğesi. Ardından, **biçimi** menü ve "Yazı tipi" yeniden adlandırın:
 
-[![Yazı tipi menü](menu-images/maint07.png "yazı tipi menüsü")](menu-images/maint07-large.png)
+[![Yazı tipi menü](menu-images/maint07.png "yazı tipi menüsü")](menu-images/maint07-large.png#lightbox)
 
 Ardından, özel bir menüyü seçildiklerinde, metin görünümündeki metni için otomatik olarak eklenen predefine tümce oluşturalım. Arama kutusuna üzerinde altındaki **kitaplığı denetçisi** türü menüde"." Bu, bulmak ve tüm menü kullanıcı Arabirimi öğeleri ile çalışmak kolaylaştırır:
 
@@ -502,42 +502,42 @@ Ardından, özel bir menüyü seçildiklerinde, metin görünümündeki metni i�
     ![Kitaplığı'nda yeni bir menü öğesi seçilerek](menu-images/maint10.png "Kitaplığı'nda yeni menü öğesi seçme")
 2. "Tümcecikleri" öğeyi yeniden adlandırın: 
 
-    [![Ayar menüsü adı](menu-images/maint09.png "ayar menüsü adı")](menu-images/maint09-large.png)
+    [![Ayar menüsü adı](menu-images/maint09.png "ayar menüsü adı")](menu-images/maint09-large.png#lightbox)
 3. Sonraki sürükleyin bir **menü** gelen **kitaplığı denetçisi**: 
 
     ![Kitaplıktan bir menüsünü seçerek](menu-images/maint11.png "kitaplıktan bir menü seçme")
 4. Ardından bırakma **menü** yeni **menü öğesi** biz yalnızca oluşturulan ve "Tümcecikleri" adını değiştirin: 
 
-    [![Menü adı düzenleme](menu-images/maint12.png "menüsü adı düzenleme")](menu-images/maint12-large.png)
+    [![Menü adı düzenleme](menu-images/maint12.png "menüsü adı düzenleme")](menu-images/maint12-large.png#lightbox)
 5. Artık üç varsayılan şimdi yeniden adlandırmak **menü öğeleri** "Adres", "Tarih" ve "Selamlama": 
 
-    [![Tümcecikleri menü](menu-images/maint13.png "tümcecikleri menüsü")](menu-images/maint13-large.png)
+    [![Tümcecikleri menü](menu-images/maint13.png "tümcecikleri menüsü")](menu-images/maint13-large.png#lightbox)
 6. Dördüncü ekleyelim **menü öğesi** sürükleyerek bir **menü öğesi** gelen **kitaplığı denetçisi** ve "İmza" çağırma: 
 
-    [![Menü öğesi adı düzenleme](menu-images/maint14.png "menü öğesi adı düzenleme")](menu-images/maint14-large.png)
+    [![Menü öğesi adı düzenleme](menu-images/maint14.png "menü öğesi adı düzenleme")](menu-images/maint14-large.png#lightbox)
 7. Menü çubuğu değişiklikleri kaydedin.
 
 Şimdi yeni bizim menü öğeleri için C# kodu gösterilen böylece özel eylemler kümesi oluşturalım. Xcode'da şimdi geçiş **Yardımcısı** görünümü:
 
-[![Gerekli eylemleri oluşturma](menu-images/maint15.png "gerekli eylemleri oluşturma")](menu-images/maint15-large.png)
+[![Gerekli eylemleri oluşturma](menu-images/maint15.png "gerekli eylemleri oluşturma")](menu-images/maint15-large.png#lightbox)
 
 Şimdi aşağıdakileri yapın:
 
 1. Gelen Control-sürükleyin **adresi** menü öğesine **AppDelegate.h** dosya.
 2. Anahtar **bağlantı** için yazın **eylem**: 
 
-    [![Eylem türü seçme](menu-images/maint17.png "eylem türü seçme")](menu-images/maint17-large.png)
+    [![Eylem türü seçme](menu-images/maint17.png "eylem türü seçme")](menu-images/maint17-large.png#lightbox)
 3. Girin bir **adı** "phraseAddress" tuşuna basın ve **Bağlan** düğmesi yeni bir eylem oluşturun: 
 
-    [![Eylem yapılandırma](menu-images/maint18.png "eylemi yapılandırma")](menu-images/maint18-large.png)
+    [![Eylem yapılandırma](menu-images/maint18.png "eylemi yapılandırma")](menu-images/maint18-large.png#lightbox)
 4. Yukarıdaki adımları yineleyin **tarih**, **selamlama**, ve **imza** menü öğeleri: 
 
-    [![Tamamlanmış Eylemler](menu-images/maint19.png "tamamlanmış Eylemler")](menu-images/maint19-large.png)
+    [![Tamamlanmış Eylemler](menu-images/maint19.png "tamamlanmış Eylemler")](menu-images/maint19-large.png#lightbox)
 5. Menü çubuğu değişiklikleri kaydedin.
 
 Sonraki biz biz içeriğini kodundan ayarlayabilmesi prizine bizim metin görünümü için oluşturmanız gerekir. Seçin **ViewController.h** dosyasını **Yardımcısı Düzenleyicisi** ve adlı yeni bir çıkış oluşturmak `documentText`:
 
-[![Prizine oluşturma](menu-images/maint20.png "prizine oluşturma")](menu-images/maint20-large.png)
+[![Prizine oluşturma](menu-images/maint20.png "prizine oluşturma")](menu-images/maint20-large.png#lightbox)
 
 Visual Studio Xcode değişikliklerden eşitlemek için Mac için geri dönün. Sonraki düzenleme **ViewController.cs** dosya ve şu şekilde görünür yapın:
 
@@ -895,36 +895,36 @@ Bağlam menüleri kullanıcı sağ tıklatır veya denetim tıklama öğeyi penc
 
 Düzenleyelim bizim **Main.storyboard** dosya Xcode'da ve eklemek bir **penceresi** bizim tasarım penceresini kendi **sınıfı** "NSPanel" için **kimlik denetçisi**, yeni bir ekleme **Yardımcısı** öğesinin **penceresi** menüsünde ve penceresini yeni kullanarak eklemektir bir **Göster ü**:
 
-[![Ayar segue türü](menu-images/context01.png "ayar segue türü")](menu-images/context01-large.png)
+[![Ayar segue türü](menu-images/context01.png "ayar segue türü")](menu-images/context01-large.png#lightbox)
 
 Şimdi aşağıdakileri yapın:
 
 1. Sürükleme bir **etiket** gelen **kitaplığı denetçisi** üzerine **Masası** penceresi ve kendi metin "Özellik" olarak ayarlanmış: 
 
-    [![Etiketin değerini düzenleme](menu-images/context03.png "etiketin değerini düzenleme")](menu-images/context03-large.png)
+    [![Etiketin değerini düzenleme](menu-images/context03.png "etiketin değerini düzenleme")](menu-images/context03-large.png#lightbox)
 2. Sonraki sürükleyin bir **menü** gelen **kitaplığı denetçisi** hiyerarşisini görüntüleme ve yeniden adlandırma üç varsayılan menü öğeleri görünüm denetleyicisine **belge**, **metin**  ve **yazı tipi**:
 
-    [![Gerekli menü öğelerini](menu-images/context02.png "gerekli menü öğeleri")](menu-images/context02-large.png)
+    [![Gerekli menü öğelerini](menu-images/context02.png "gerekli menü öğeleri")](menu-images/context02-large.png#lightbox)
 3. Şimdi control-gelen sürükleyin **özelliği etiket** üzerine **menü**:
 
-    [![Bir segue oluşturmak için sürükleme](menu-images/context04.png "bir segue oluşturmak için sürükleme")](menu-images/context04-large.png)
+    [![Bir segue oluşturmak için sürükleme](menu-images/context04.png "bir segue oluşturmak için sürükleme")](menu-images/context04-large.png#lightbox)
 4. Açılan iletişim kutusundan seçin **menü**: 
 
     ![Ayar segue türü](menu-images/context05.png "ayar segue türü")
 5. Gelen **kimlik denetçisi**, "PanelViewController" görünümü denetleyicinin sınıfa ayarlayın: 
 
-    [![Ayar segue sınıfı](menu-images/context10.png "ayar segue sınıfı")](menu-images/context10-large.png)
+    [![Ayar segue sınıfı](menu-images/context10.png "ayar segue sınıfı")](menu-images/context10-large.png#lightbox)
 6. Eşitlemek Mac için Visual Studio için dönün sonra arabirimi oluşturucuya döndürür.
 7. Geçiş **Yardımcısı Düzenleyicisi** seçip **PanelViewController.h** dosya.
 8. İçin bir eylem oluşturun **belge** menü öğesi adlı `propertyDocument`: 
 
-    [![Eylem yapılandırma](menu-images/context06.png "eylemi yapılandırma")](menu-images/context06-large.png)
+    [![Eylem yapılandırma](menu-images/context06.png "eylemi yapılandırma")](menu-images/context06-large.png#lightbox)
 9. Oluşturma işlemleri için kalan menü öğeleri Yinele: 
 
-    [![Gerekli eylemleri](menu-images/context07.png "gerekli eylemleri")](menu-images/context07-large.png)
+    [![Gerekli eylemleri](menu-images/context07.png "gerekli eylemleri")](menu-images/context07-large.png#lightbox)
 10. Son olarak prizine için oluşturun **özelliği etiket** adlı `propertyLabel`: 
 
-    [![Çıkış yapılandırma](menu-images/context08.png "çıkış yapılandırma")](menu-images/context08-large.png)
+    [![Çıkış yapılandırma](menu-images/context08.png "çıkış yapılandırma")](menu-images/context08-large.png#lightbox)
 11. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 Düzen **PanelViewController.cs** dosya ve aşağıdaki kodu ekleyin:
@@ -1013,26 +1013,26 @@ Aşağıdakileri yaparak uygulamamız için bir özel yerleştirme menü oluştu
     ![Boş bir arabirim tanımı ekleme](menu-images/dock02.png "boş bir arabirim tanımı ekleme")
 2. İçinde **çözüm paneli**, çift **DockMenu.xib** dosyayı Xcode'da düzenlemek için açın. Yeni bir **menü** aşağıdaki öğeleri içeren: **adresi**, **tarih**, **selamlama**, ve **imza** 
 
-    [![Kullanıcı arabirimini yerleştirmede](menu-images/dock03.png "kullanıcı arabirimini düzenleme")](menu-images/dock03-large.png)
+    [![Kullanıcı arabirimini yerleştirmede](menu-images/dock03.png "kullanıcı arabirimini düzenleme")](menu-images/dock03-large.png#lightbox)
 3. Ardından, özel bizim menüde için oluşturduğumuz bizim varolan eylemler şimdi bizim yeni menü öğeleri bağlanmak [ekleme, düzenleme ve silme menüleri](#Adding,_Editing_and_Deleting_Menus) yukarıdaki bölümde. Geçiş **bağlantı denetçisi** seçip **ilk Yanıtlayıcı** içinde **arabirimi hiyerarşi**. Aşağı kaydırın ve Bul `phraseAddress:` eylem. Bu eylemi daire bir satır sürükleyin **adresi** menü öğesi:
 
-    [![Hat üzeri bir eylem yukarı sürükleyerek](menu-images/dock04.png "kablo bir eylem yukarı sürükleyerek")](menu-images/dock04-large.png)
+    [![Hat üzeri bir eylem yukarı sürükleyerek](menu-images/dock04.png "kablo bir eylem yukarı sürükleyerek")](menu-images/dock04-large.png#lightbox)
 4. Karşılık gelen eylemlerini ekleme tüm menü öğelerinin için yineleyin: 
 
-    [![Gerekli eylemleri](menu-images/dock05.png "gerekli eylemleri")](menu-images/dock05-large.png)
+    [![Gerekli eylemleri](menu-images/dock05.png "gerekli eylemleri")](menu-images/dock05-large.png#lightbox)
 5. Ardından, **uygulama** içinde **arabirimi hiyerarşi**. İçinde **bağlantı denetçisi**, bir satırı daire sürükleyin `dockMenu` yeni oluşturduğumuz menüsüne çıkışı:
 
-    [![Kablo çıkış yukarı sürükleyerek](menu-images/dock06.png "kablo çıkış yukarı sürükleyerek")](menu-images/dock06-large.png)
+    [![Kablo çıkış yukarı sürükleyerek](menu-images/dock06.png "kablo çıkış yukarı sürükleyerek")](menu-images/dock06-large.png#lightbox)
 6. Yaptığınız değişiklikleri kaydedin ve Xcode ile eşitlemek Mac için Visual Studio için dönün.
 7. Çift **Info.plist** dosyayı düzenlemek için açın: 
 
-    [![Info.plist dosyasını düzenleyerek](menu-images/dock07.png "Info.plist dosyasını düzenleme")](menu-images/dock07-large.png)
+    [![Info.plist dosyasını düzenleyerek](menu-images/dock07.png "Info.plist dosyasını düzenleme")](menu-images/dock07-large.png#lightbox)
 8. Tıklatın **kaynak** ekranın altındaki sekmesi: 
 
-    [![Kaynak Görünümü seçerek](menu-images/dock08.png "kaynak görünümü seçme")](menu-images/dock08-large.png)
+    [![Kaynak Görünümü seçerek](menu-images/dock08.png "kaynak görünümü seçme")](menu-images/dock08-large.png#lightbox)
 9. Tıklatın **yeni giriş Ekle**, yeşil artı düğmesini tıklatın, özellik adı "AppleDockMenu" ve "DockMenu" (uzantısı olmadan yeni bizim .xib dosya adı) değerine ayarlayın: 
 
-    [![DockMenu öğesi ekleme](menu-images/dock09.png "DockMenu öğesi ekleme")](menu-images/dock09-large.png)
+    [![DockMenu öğesi ekleme](menu-images/dock09.png "DockMenu öğesi ekleme")](menu-images/dock09-large.png#lightbox)
 
 Şimdi uygulamamızı çalıştırmak ve yuva simgesini sağ tıklatın, yeni menü öğeleri görüntülenir:
 
@@ -1050,16 +1050,16 @@ Aşağıdakileri yaparak uygulamamız için özel bir açılır düğmesi oluşt
 
 1. Düzenleme **Main.storyboard** Xcode ve sürükleyin dosyasında bir **açılan düğmesine** gelen **kitaplığı denetçisi** üzerine **Masası** oluşturduğumuz içinde penceresi [bağlamsal menüleri](#Contextual_Menus) bölümü: 
 
-    [![Açılan düğme ekleme](menu-images/popup01.png "açılan düğme ekleme")](menu-images/popup01-large.png)
+    [![Açılan düğme ekleme](menu-images/popup01.png "açılan düğme ekleme")](menu-images/popup01-large.png#lightbox)
 2. Yeni bir menü öğesi ekleme ve açılan öğeleri başlıklarını kümesindeki: **adresi**, **tarih**, **selamlama**, ve **imza** 
 
-    [![Menü öğelerini yapılandırma](menu-images/popup02.png "menü öğelerini yapılandırma")](menu-images/popup02-large.png)
+    [![Menü öğelerini yapılandırma](menu-images/popup02.png "menü öğelerini yapılandırma")](menu-images/popup02-large.png#lightbox)
 3. Ardından, özel bizim menüde için oluşturduğumuz varolan eylemlerin şimdi bizim yeni menü öğeleri bağlanmak [ekleme, düzenleme ve silme menüleri](#Adding,_Editing_and_Deleting_Menus) yukarıdaki bölümde. Geçiş **bağlantı denetçisi** seçip **ilk Yanıtlayıcı** içinde **arabirimi hiyerarşi**. Aşağı kaydırın ve Bul `phraseAddress:` eylem. Bu eylemi daire bir satır sürükleyin **adresi** menü öğesi: 
 
-    [![Hat üzeri bir eylem yukarı sürükleyerek](menu-images/popup03.png "kablo bir eylem yukarı sürükleyerek")](menu-images/popup03-large.png)
+    [![Hat üzeri bir eylem yukarı sürükleyerek](menu-images/popup03.png "kablo bir eylem yukarı sürükleyerek")](menu-images/popup03-large.png#lightbox)
 4. Karşılık gelen eylemlerini ekleme tüm menü öğelerinin için yineleyin: 
 
-    [![Tüm gerekli eylemleri](menu-images/popup04.png "tüm gerekli eylemleri")](menu-images/popup04-large.png)
+    [![Tüm gerekli eylemleri](menu-images/popup04.png "tüm gerekli eylemleri")](menu-images/popup04-large.png#lightbox)
 5. Yaptığınız değişiklikleri kaydedin ve Xcode ile eşitlemek Mac için Visual Studio için dönün.
 
 Şimdi uygulamamızı çalıştırmak ve açılır penceresinden bir öğe seçin, bizim metin görünümünde metin değişir:
@@ -1076,6 +1076,6 @@ Bu makalede, menüler ve menü öğeleri Xamarin.Mac uygulamasında çalışan b
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacMenus (örnek)](https://developer.xamarin.com/samples/mac/MacMenus/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [İnsan Arabirimi yönergelerine - menüleri](https://developer.apple.com/macos/human-interface-guidelines/menus/menu-anatomy/)
 - [Uygulama menüleri ve açılır listeleri giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/MenuList/MenuList.html)

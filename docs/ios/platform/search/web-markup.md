@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 63bc1f0ed13fe65b36e95978da9ccc2ea8d4481c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8812c6a234e05e4d651effbeb83a7bcad38dc683
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-web-markup"></a>Web biçimlendirme ile arama
 
@@ -20,12 +20,12 @@ Bir web sitesi aracılığıyla kendi içeriğine erişim sağlayan uygulamalar 
 
 İOS uygulamanızı zaten mobil derin bağlama destekliyorsa ve Web sitenizi içerik, uygulamanızın, Apple içinde ayrıntılı bağlantılarını sunulan _Applebot_ web Gezgini bu içerik dizin ve otomatik olarak kendi bulut dizini ekleyin:
 
-[ ![](web-markup-images/webmarkup01.png "Bulut dizini genel bakış")](web-markup-images/webmarkup01.png)
+[![](web-markup-images/webmarkup01.png "Bulut dizini genel bakış")](web-markup-images/webmarkup01.png#lightbox)
 
 Apple bu sonuçları Spotlight arama ve Safari arama sonuçlarında belirir.
 Üzerinde kullanıcı dokunur varsa bunlardan birini sonuçları (ve uygulamanızı yüklü olan), uygulamanızda içeriğe uygulanır:
 
-[ ![](web-markup-images/webmarkup02.png "Derin bir Web sitesi arama sonuçlarında bağlama")](web-markup-images/webmarkup02.png)
+[![](web-markup-images/webmarkup02.png "Derin bir Web sitesi arama sonuçlarında bağlama")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>Web içerik dizinini etkinleştirme
 
@@ -154,7 +154,7 @@ Aynı bilgileri schema.org'ın JSON-LD biçiminde gösterilebilir:
 
 Zengin arama sonuçlarını son kullanıcıya sağlayan Web sitenizi meta verilerinin bir örnek gösterilmektedir:
 
-[ ![](web-markup-images/deeplink01.png "Zengin arama sonuçları aracılığıyla yapılandırılmış veri biçimlendirme")](web-markup-images/deeplink01.png)
+[![](web-markup-images/deeplink01.png "Zengin arama sonuçları aracılığıyla yapılandırılmış veri biçimlendirme")](web-markup-images/deeplink01.png#lightbox)
 
 Apple şu anda schema.org aşağıdaki şema türlerden destekler:
 

@@ -3,16 +3,16 @@ title: "İletişim kutuları"
 description: "Bu makalede iletişim kutuları ve Xamarin.Mac uygulamada kalıcı windows ile çalışma kapsar. Bu, Xcode ve arabirimi Oluşturucu standart iletişim kutuları ile çalışma ve C# kodunda bu denetimleri ile etkileşim kalıcı pencere oluşturma işlemini açıklar."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
+ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9b65e870fae0074726d0bdd46d9eecbe99240e98
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 661874ae8599fed35ce10213fece383eb81de94d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="dialogs"></a>İletişim kutuları
 
@@ -22,7 +22,7 @@ Bir iletişim kutusu yanıt olarak bir kullanıcı eylemi görüntülenir ve gen
 
 Windows (örneğin, uygulama devam etmeden önce kapatıldığında gerekir bir dışarı aktarma iletişim kutusu) kalıcı veya geçici bir durumda (örneğin, birden çok belge aynı anda açık olan bir metin düzenleyicisi) kullanılan olabilir.
 
-[ ![](dialog-images/dialog03.png "Açık bir iletişim kutusu")](dialog-images/dialog03.png)
+[![](dialog-images/dialog03.png "Açık bir iletişim kutusu")](dialog-images/dialog03.png#lightbox)
 
 Bu makalede, sizi bir Xamarin.Mac uygulamasında iletişim kutuları ve kalıcı Windows ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -44,25 +44,25 @@ Apple göre bir iletişim kutusunu sunmak için üç yolu vardır:
 
 Herhangi bir standart `NSWindow` kalıcı olarak görüntüleyerek özelleştirilmiş bir iletişim kutusu olarak kullanılabilir:
 
-[ ![](dialog-images/modal01.png "Bir örnek kalıcı pencere")](dialog-images/modal01.png)
+[![](dialog-images/modal01.png "Bir örnek kalıcı pencere")](dialog-images/modal01.png#lightbox)
 
 ### <a name="document-modal-dialog-sheets"></a>Belge Modal iletişim kutusu sayfaları
 
 A _sayfası_ iletişim kutusunu kapatmak kadar penceresiyle etkileşim kullanıcıların engelleme verilen belge penceresine, bağlı olan kalıcı bir iletişim kutusu. Bir sayfa, ortaya çıkar ve herhangi bir anda yalnızca bir sayfa için bir pencere aç olabilir penceresine eklenir.
 
-[ ![](dialog-images/sheet08.png "Bir örnek kalıcı sayfası")](dialog-images/sheet08.png)
+[![](dialog-images/sheet08.png "Bir örnek kalıcı sayfası")](dialog-images/sheet08.png#lightbox)
 
 ### <a name="preferences-windows"></a>Tercihler Windows
 
 Kullanıcı çok sık değişmeyen uygulamanın ayarlarını içeren bir kalıcı olmayan iletişim tercihleri penceredir. Tercihler Windows genellikle farklı ayar grupları arasında geçiş yapmak kullanıcının sağlayan bir araç içerir:
 
-[ ![](dialog-images/dialog02.png "Bir örnek tercih penceresi")](dialog-images/dialog02.png)
+[![](dialog-images/dialog02.png "Bir örnek tercih penceresi")](dialog-images/dialog02.png#lightbox)
 
 ### <a name="open-dialog"></a>Aç iletişim kutusu
 
 Aç iletişim kullanıcıları bulmak ve bir uygulamada bir öğeyi açmak için tutarlı bir yol sunar:
 
-[ ![](dialog-images/dialog03.png "Aç iletişim kutusu")](dialog-images/dialog03.png)
+[![](dialog-images/dialog03.png "Aç iletişim kutusu")](dialog-images/dialog03.png#lightbox)
 
 
 ### <a name="print-and-page-setup-dialogs"></a>Yazdırma ve Sayfa Yapısı iletişim kutuları
@@ -71,37 +71,37 @@ Standart yazdırma macOS sağlar ve sayfa Kurulum uygulamanızı görüntüleyeb
 
 Yazdır iletişim kutusu, hem de serbest Yüzen bir iletişim kutusu görüntülenebilir:
 
-[ ![](dialog-images/print01.png "Yazdır iletişim kutusu")](dialog-images/print01.png)
+[![](dialog-images/print01.png "Yazdır iletişim kutusu")](dialog-images/print01.png#lightbox)
 
 Veya bir sayfa olarak görüntülenebilir:
 
-[ ![](dialog-images/print02.png "Bir yazdırma sayfası")](dialog-images/print02.png)
+[![](dialog-images/print02.png "Bir yazdırma sayfası")](dialog-images/print02.png#lightbox)
 
 Sayfa Yapısı iletişim hem de serbest Yüzen bir iletişim kutusu gösterilebilir:
 
-[ ![](dialog-images/print03.png "Sayfa Yapısı iletişim")](dialog-images/print03.png)
+[![](dialog-images/print03.png "Sayfa Yapısı iletişim")](dialog-images/print03.png#lightbox)
 
 Veya bir sayfa olarak görüntülenebilir:
 
-[ ![](dialog-images/print04.png "Bir sayfa kurulum sayfası")](dialog-images/print04.png)
+[![](dialog-images/print04.png "Bir sayfa kurulum sayfası")](dialog-images/print04.png#lightbox)
 
 ### <a name="save-dialogs"></a>İletişim kutuları Kaydet
 
 Kaydet iletişim kullanıcılara bir uygulamada bir öğesini kaydetmek için tutarlı bir yol sağlar. İki durumlu Kaydet iletişim vardır: **en az** (daraltılmış olarak da bilinir):
 
-[ ![](dialog-images/save01.png "İletişim kaydetme")](dialog-images/save01.png)
+[![](dialog-images/save01.png "İletişim kaydetme")](dialog-images/save01.png#lightbox)
 
 Ve **Genişletilmiş** durumu:
 
-[ ![](dialog-images/save02.png "Bir genişletilmiş Kaydet iletişim kutusu")](dialog-images/save02.png)
+[![](dialog-images/save02.png "Bir genişletilmiş Kaydet iletişim kutusu")](dialog-images/save02.png#lightbox)
 
 **En az** Kaydet iletişim bir sayfa olarak da görüntülenebilir:
 
-[ ![](dialog-images/save03.png "En az sayfası Kaydet")](dialog-images/save03.png)
+[![](dialog-images/save03.png "En az sayfası Kaydet")](dialog-images/save03.png#lightbox)
 
 Gibi **Genişletilmiş** Kaydet iletişim:
 
-[ ![](dialog-images/save04.png "Genişletilmiş bir kaydetme sayfası")](dialog-images/save04.png)
+[![](dialog-images/save04.png "Genişletilmiş bir kaydetme sayfası")](dialog-images/save04.png#lightbox)
 
 Daha fazla bilgi için bkz: [iletişim kutularını](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowDialogs.html#//apple_ref/doc/uid/20000957-CH43-SW1) Apple'nın bölümünü [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 
@@ -116,20 +116,20 @@ Yeni bir pencere eklemek için aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, açık `Main.storyboard` dosyasını Xcode'nın arabirimi Oluşturucusu'nda düzenleme için.
 2. Yeni bir sürükleyin **View Controller** tasarım yüzeyine içine:
 
-    [ ![](dialog-images/new01.png "Kitaplıktan bir görünüm denetleyicisini seçme")](dialog-images/new01.png)
+    [![](dialog-images/new01.png "Kitaplıktan bir görünüm denetleyicisini seçme")](dialog-images/new01.png#lightbox)
 3. İçinde **kimlik denetçisi**, girin `CustomDialogController` için **sınıf adı**: 
 
-    [ ![](dialog-images/new02.png "Sınıf adı ayarlama")](dialog-images/new02.png)
+    [![](dialog-images/new02.png "Sınıf adı ayarlama")](dialog-images/new02.png#lightbox)
 4. Mac için Visual Studio'ya geri geçiş, Xcode ile eşitleme ve oluşturmak izin `CustomDialogController.h` dosya.
 5. Xcode için dönün ve Arabiriminizin tasarım: 
 
-    [ ![](dialog-images/new03.png "Xcode kullanıcı Arabiriminde tasarlama")](dialog-images/new03.png)
+    [![](dialog-images/new03.png "Xcode kullanıcı Arabiriminde tasarlama")](dialog-images/new03.png#lightbox)
 6. Oluşturma bir **kalıcı ü** ana penceresinde uygulamanızın denetim sürükleyerek yeni görünüm denetleyiciye UI öğeden iletişim kutusu penceresine iletişim kutusu açılır. Ata **tanımlayıcısı** `ModalSegue`: 
 
-    [ ![](dialog-images/new06.png "Kalıcı segue")](dialog-images/new06.png)
+    [![](dialog-images/new06.png "Kalıcı segue")](dialog-images/new06.png#lightbox)
 6. Herhangi bir kablo yukarı **Eylemler** ve **çıkışlar**: 
 
-    [ ![](dialog-images/new04.png "Bir eylem yapılandırma")](dialog-images/new04.png)
+    [![](dialog-images/new04.png "Bir eylem yapılandırma")](dialog-images/new04.png#lightbox)
 6. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 Olun `CustomDialogController.cs` aşağıdaki gibi dosya bakın:
@@ -249,7 +249,7 @@ Bu kod size bizim iletişim Xcode'nın arabirimi Oluşturucusu'nda tanımlanan s
 
 Uygulamamızı çalıştırmak ve özel iletişim kutusunu görüntüle:
 
-[ ![](dialog-images/new05.png "Örnek bir iletişim kutusu")](dialog-images/new05.png)
+[![](dialog-images/new05.png "Örnek bir iletişim kutusu")](dialog-images/new05.png#lightbox)
 
 Windows Xamarin.Mac uygulamasında kullanma hakkında daha fazla bilgi için lütfen bkz bizim [Windows ile birlikte çalışma](~/mac/user-interface/window.md) belgeleri.
 
@@ -264,19 +264,19 @@ A _sayfası_ iletişim kutusunu kapatmak kadar penceresiyle etkileşim kullanıc
 1. İçinde **Çözüm Gezgini**, açık `Main.storyboard` dosyasını Xcode'nın arabirimi Oluşturucusu'nda düzenleme için.
 2. Yeni bir sürükleyin **View Controller** tasarım yüzeyine içine:
 
-    [ ![](dialog-images/new01.png "Kitaplıktan bir görünüm denetleyicisini seçme")](dialog-images/new01.png)
+    [![](dialog-images/new01.png "Kitaplıktan bir görünüm denetleyicisini seçme")](dialog-images/new01.png#lightbox)
 2. Kullanıcı Arabiriminizin tasarım:
 
-    [ ![](dialog-images/sheet01.png "Kullanıcı Arabirimi tasarımı")](dialog-images/sheet01.png)
+    [![](dialog-images/sheet01.png "Kullanıcı Arabirimi tasarımı")](dialog-images/sheet01.png#lightbox)
 3. Oluşturma bir **sayfası ü** yeni görünüm denetleyiciye, ana pencereden: 
 
-    [ ![](dialog-images/sheet02.png "Sayfa segue türü seçme")](dialog-images/sheet02.png)
+    [![](dialog-images/sheet02.png "Sayfa segue türü seçme")](dialog-images/sheet02.png#lightbox)
 4. İçinde **kimlik denetçisi**, görünüm denetleyicinin adı **sınıfı** `SheetViewController`: 
 
-    [ ![](dialog-images/sheet03.png "Sınıf adı ayarlama")](dialog-images/sheet03.png)
+    [![](dialog-images/sheet03.png "Sınıf adı ayarlama")](dialog-images/sheet03.png#lightbox)
 5. Gerekli tanımlamak **çıkışlar** ve **Eylemler**: 
 
-    [ ![](dialog-images/sheet04.png "Gerekli çıkışlar ve eylemleri tanımlama")](dialog-images/sheet04.png)
+    [![](dialog-images/sheet04.png "Gerekli çıkışlar ve eylemleri tanımlama")](dialog-images/sheet04.png#lightbox)
 6. Değişikliklerinizi kaydetmek ve Visual Studio eşitlemek için Mac için geri dönün.
 
 Ardından, düzenleme `SheetViewController.cs` dosya ve şu şekilde görünür yapın:
@@ -407,7 +407,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 Uygulamamızı çalıştırmak ve sayfasını açın, penceresine eklenir:
 
-[ ![](dialog-images/sheet08.png "Bir örnek sayfası")](dialog-images/sheet08.png)
+[![](dialog-images/sheet08.png "Bir örnek sayfası")](dialog-images/sheet08.png#lightbox)
 
 <a name="Creating_a_Preferences_Dialog" />
 
@@ -481,36 +481,36 @@ Yeni bir pencere eklemek için aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, açık `Main.storyboard` dosyasını Xcode'nın arabirimi Oluşturucusu'nda düzenleme için.
 2. Yeni bir sürükleyin **penceresi denetleyicisi** tasarım yüzeyine içine:
 
-    [ ![](dialog-images/pref01.png "Kitaplıktan bir pencere denetleyicisi seçin")](dialog-images/pref01.png)
+    [![](dialog-images/pref01.png "Kitaplıktan bir pencere denetleyicisi seçin")](dialog-images/pref01.png#lightbox)
 3. Pencere yakın Yerleştir **menü çubuğu** Tasarımcısı:
 
-    [ ![](dialog-images/pref02.png "Yeni pencerede ekleme")](dialog-images/pref02.png)
+    [![](dialog-images/pref02.png "Yeni pencerede ekleme")](dialog-images/pref02.png#lightbox)
 4. Tercih görünümünüzde sekmeleri olacaktır gibi ekli View Controller kopyalarını oluşturun:
 
-    [ ![](dialog-images/pref03.png "Gerekli görünüm denetleyicileri ekleme")](dialog-images/pref03.png)
+    [![](dialog-images/pref03.png "Gerekli görünüm denetleyicileri ekleme")](dialog-images/pref03.png#lightbox)
 5. Yeni bir sürükleyin **araç denetleyicisi** gelen **Kitaplığı**:
 
-    [ ![](dialog-images/pref04.png "Kitaplıktan bir araç denetleyicisi seçin")](dialog-images/pref04.png)
+    [![](dialog-images/pref04.png "Kitaplıktan bir araç denetleyicisi seçin")](dialog-images/pref04.png#lightbox)
 6. Ve tasarım yüzeyine penceresinde bırakın:
 
-    [ ![](dialog-images/pref05.png "Yeni bir araç denetleyicisi ekleme")](dialog-images/pref05.png)
+    [![](dialog-images/pref05.png "Yeni bir araç denetleyicisi ekleme")](dialog-images/pref05.png#lightbox)
 7. Düzen araç tasarımını:
 
-    [ ![](dialog-images/pref06.png "Araç çubuğu düzeni")](dialog-images/pref06.png)
+    [![](dialog-images/pref06.png "Araç çubuğu düzeni")](dialog-images/pref06.png#lightbox)
 8. Denetim tıklatın ve her birinden sürükleyin **araç çubuğu düğmesi** yukarıda oluşturduğunuz görünümlere. Seçin bir **özel** türü ü:
 
-    [ ![](dialog-images/pref07.png "Ayar segue türü")](dialog-images/pref07.png)
+    [![](dialog-images/pref07.png "Ayar segue türü")](dialog-images/pref07.png#lightbox)
 9. Yeni Segue seçin ve ayarlayın **sınıfı** için `ReplaceViewSegue`:
 
-    [ ![](dialog-images/pref08.png "Ayar segue sınıfı")](dialog-images/pref08.png)
+    [![](dialog-images/pref08.png "Ayar segue sınıfı")](dialog-images/pref08.png#lightbox)
 10. İçinde **Menubar Tasarımcısı** tasarım yüzeyine uygulama menüsünden seçin **tercihleri...** denetim tıklatın ve oluşturmak için Tercihler penceresine sürükleyin bir **Göster** ü:
 
-    [ ![](dialog-images/pref09.png "Ayar segue türü")](dialog-images/pref09.png)
+    [![](dialog-images/pref09.png "Ayar segue türü")](dialog-images/pref09.png#lightbox)
 11. Değişikliklerinizi kaydetmek ve Visual Studio eşitlemek için Mac için geri dönün.
 
 Şu kodu çalıştırın ve seçerseniz **tercihleri...**  gelen **uygulama menüsü**, penceresi görüntülenir:
 
-[ ![](dialog-images/pref10.png "Bir örnek Tercihler penceresi")](dialog-images/pref10.png)
+[![](dialog-images/pref10.png "Bir örnek Tercihler penceresi")](dialog-images/pref10.png#lightbox)
 
 Windows ve araç çubuklarını ile çalışma hakkında daha fazla bilgi için lütfen bkz bizim [Windows](~/mac/user-interface/window.md) ve [araç çubukları](~/mac/user-interface/toolbar.md) belgeleri.
 
@@ -719,7 +719,7 @@ namespace SourceWriter
 
 Ardından, kullanıcı Arabirimi öğeleri yukarıda oluşturulan görünümleri ve tercih penceresi tercih sınıfı bağlayın. Arabirim Oluşturucu tercih görünüm denetleyicisini seçin ve geçiş **kimlik denetçisi**, denetleyici için özel bir sınıf oluşturun: 
 
-[ ![](dialog-images/prefs12.png "Kimlik denetçisi")](dialog-images/prefs12.png)
+[![](dialog-images/prefs12.png "Kimlik denetçisi")](dialog-images/prefs12.png#lightbox)
 
 Değişikliklerinizi eşitlemeyi ve düzenlemek için yeni oluşturulan sınıf açmak Mac için Visual Studio için dönün. Şuna benzer sınıfı olun:
 
@@ -758,7 +758,7 @@ Bu sınıf burada iki şey yaptığına dikkat edin: ilk olarak, bir yardımcı 
 
 Ardından, yeniden arabirimi Oluşturucusu'nda açın (ve yalnızca yukarıda yapılan değişiklikleri görmek için) film şeridi dosyasına çift tıklayın. Görünüme Tercihler arabirim oluşturmak için gerekli kullanıcı Arabirimi denetimlerini sürükleyin. Her denetim için geçiş **bağlama denetçisi** ve bağlamak için tek tek özellikleri **AppPreference** sınıfı:
 
-[ ![](dialog-images/prefs13.png "Bağlama denetçisi")](dialog-images/prefs13.png)
+[![](dialog-images/prefs13.png "Bağlama denetçisi")](dialog-images/prefs13.png#lightbox)
 
 Tüm panelleri (Görünüm denetleyicileri) için yukarıdaki adımları yineleyin ve tercih özellikleri gereklidir.
 
@@ -903,7 +903,7 @@ namespace SourceWriter
 
 Tüm bu değişikliklerle yerinde, kullanıcı uygulamanın Tercihler düzenler ve tercih penceresi kapanır değişiklikler için tüm açık Windows uygulanır:
 
-[ ![](dialog-images/prefs14.png "Bir örnek Tercihler penceresi")](dialog-images/prefs14.png)
+[![](dialog-images/prefs14.png "Bir örnek Tercihler penceresi")](dialog-images/prefs14.png#lightbox)
 
 <a name="The_Open_Dialog" />
 
@@ -954,7 +954,7 @@ Aç iletişim URL'lerinde dizisi olarak kullanıcının seçili dosyaları veya 
 
 Programını çalıştırın ve seçeneğini belirlerseniz **Aç...**  gelen öğe **dosya** menüsü, aşağıdaki görüntülenir: 
 
-[ ![](dialog-images/dialog03.png "Açık bir iletişim kutusu")](dialog-images/dialog03.png)
+[![](dialog-images/dialog03.png "Açık bir iletişim kutusu")](dialog-images/dialog03.png#lightbox)
 
 <a name="The_Print_and_Page_Setup_Dialogs" />
 
@@ -991,11 +991,11 @@ void ShowDocument (NSObject sender) {
 
 Biz ayarlarsanız `ShowPrintAsSheet` özelliğine `false`, uygulamayı çalıştırın ve yazdırma iletişim kutusu görüntüler, aşağıdaki görüntülenir:
 
-[ ![](dialog-images/print01.png "Yazdır iletişim kutusu")](dialog-images/print01.png)
+[![](dialog-images/print01.png "Yazdır iletişim kutusu")](dialog-images/print01.png#lightbox)
 
 Varsa ayarlamak `ShowPrintAsSheet` özelliğine `true`, uygulamayı çalıştırın ve yazdırma iletişim kutusu görüntüler, aşağıdaki görüntülenir:
 
-[ ![](dialog-images/print02.png "Bir yazdırma sayfası")](dialog-images/print02.png)
+[![](dialog-images/print02.png "Bir yazdırma sayfası")](dialog-images/print02.png#lightbox)
 
 Aşağıdaki kod sayfası düzeni iletişim kutusu görüntülenir:
 
@@ -1022,11 +1022,11 @@ void ShowLayout (NSObject sender) {
 
 Biz ayarlarsanız `ShowPrintAsSheet` özelliğine `false`, uygulamayı çalıştırın ve yazdırma düzeni iletişim kutusu görüntüler, aşağıdaki görüntülenir:
 
-[ ![](dialog-images/print03.png "Sayfa Yapısı iletişim")](dialog-images/print03.png)
+[![](dialog-images/print03.png "Sayfa Yapısı iletişim")](dialog-images/print03.png#lightbox)
 
 Varsa ayarlamak `ShowPrintAsSheet` özelliğine `true`, uygulamayı çalıştırın ve yazdırma düzeni iletişim kutusu görüntüler, aşağıdaki görüntülenir:
 
-[ ![](dialog-images/print04.png "Bir sayfa kurulum sayfası")](dialog-images/print04.png)
+[![](dialog-images/print04.png "Bir sayfa kurulum sayfası")](dialog-images/print04.png#lightbox)
 
 Yazdırma ve sayfa Kurulum iletişim kutuları ile çalışma hakkında daha fazla bilgi için lütfen Apple'nın bakın [NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092), [NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080) ve [yazdırma giriş](http://sdg.mesonet.org/people/brad/XCode3/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/#documentation/Cocoa/Conceptual/Printing/Printing.html#//apple_ref/doc/uid/10000083-SW1) belgeler.
 
@@ -1076,19 +1076,19 @@ void ShowSaveAs (NSObject sender)
 
 Biz ayarlarsanız `ShowSaveAsSheet` özelliğine `false`, uygulamayı çalıştırın ve seçin **Kaydet...**  gelen **dosya** menüsünde aşağıdaki görüntülenir:
 
-[ ![](dialog-images/save01.png "İletişim kutusu kaydetme")](dialog-images/save01.png)
+[![](dialog-images/save01.png "İletişim kutusu kaydetme")](dialog-images/save01.png#lightbox)
 
 Kullanıcı iletişim kutusu genişletebilirsiniz:
 
-[ ![](dialog-images/save02.png "Bir genişletilmiş Kaydet iletişim kutusu")](dialog-images/save02.png)
+[![](dialog-images/save02.png "Bir genişletilmiş Kaydet iletişim kutusu")](dialog-images/save02.png#lightbox)
 
 Biz ayarlarsanız `ShowSaveAsSheet` özelliğine `true`, uygulamayı çalıştırın ve seçin **Kaydet...**  gelen **dosya** menüsünde aşağıdaki görüntülenir:
 
-[ ![](dialog-images/save03.png "Sayfa kaydetme")](dialog-images/save03.png)
+[![](dialog-images/save03.png "Sayfa kaydetme")](dialog-images/save03.png#lightbox)
 
 Kullanıcı iletişim kutusu genişletebilirsiniz:
 
-[ ![](dialog-images/save04.png "Genişletilmiş bir kaydetme sayfası")](dialog-images/save04.png)
+[![](dialog-images/save04.png "Genişletilmiş bir kaydetme sayfası")](dialog-images/save04.png#lightbox)
 
 Apple'nın Kaydet iletişim ile çalışma hakkında daha fazla bilgi için lütfen bkz [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098) belgeleri.
 
@@ -1101,8 +1101,8 @@ Bu makalede kalıcı Windows, sayfaları ve Xamarin.Mac uygulama standart sistem
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacWindows (örnek)](https://developer.xamarin.com/samples/mac/MacWindows/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
-- [Menüleri](~/mac/user-interface/menu.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Menüler](~/mac/user-interface/menu.md)
 - [Windows](~/mac/user-interface/window.md)
 - [Araç Çubukları](~/mac/user-interface/toolbar.md)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

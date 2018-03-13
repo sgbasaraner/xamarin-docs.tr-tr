@@ -7,12 +7,12 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/25/2018
-ms.openlocfilehash: 20c7c5a9aaaf13cd9f4050254c7234ada78d926d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 447657d6f8509623272f37c48c7aecbdfd4cbaad
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android cihaz Yöneticisi
 
@@ -20,7 +20,6 @@ _Xamarin Android Aygıt Yöneticisi, şu anda önizlemede Google Eski Aygıt Yö
 
 ![Şu anda önizlemede](~/media/shared/preview.png)
 
-<a name="overview" />
  
 ## <a name="overview"></a>Genel Bakış
 
@@ -34,16 +33,16 @@ Android SDK Araçları sürüm 26.0.1 itibariyle Google UI tabanlı AVD ve SDK y
 
 Bu kılavuz yüklemek ve Windows'da Visual Studio için Xamarin Android Aygıt Yöneticisi'ni kullanmak nasıl açıklar (veya [Mac için](?tabs=vsmac)):
 
-[![Xamarin Android Aygıt Yöneticisi'nin aygıtlar sekmesinden ekran görüntüsü](xamarin-device-manager-images/win/01-devices-dialog-sml.png)](xamarin-device-manager-images/win/01-devices-dialog.png)
+[![Xamarin Android Aygıt Yöneticisi'nin aygıtlar sekmesinden ekran görüntüsü](xamarin-device-manager-images/win/01-devices-dialog-sml.png)](xamarin-device-manager-images/win/01-devices-dialog.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Bu kılavuz yüklemek ve Mac için Visual Studio için Xamarin Android Aygıt Yöneticisi'ni kullanmak nasıl açıklar (veya [Windows için](?tabs=vswin)):
 
-[![Xamarin Android Aygıt Yöneticisi'nin aygıtlar sekmesinden ekran görüntüsü](xamarin-device-manager-images/mac/01-devices-dialog-sml.png)](xamarin-device-manager-images/mac/01-devices-dialog.png)
+[![Xamarin Android Aygıt Yöneticisi'nin aygıtlar sekmesinden ekran görüntüsü](xamarin-device-manager-images/mac/01-devices-dialog-sml.png)](xamarin-device-manager-images/mac/01-devices-dialog.png#lightbox)
 
 > [!NOTE]
-> **Not:** bu kılavuz yalnızca Visual Studio Mac için geçerlidir.
+> Bu kılavuz yalnızca Visual Studio Mac için geçerlidir.
 Xamarin Studio Xamarin Android cihaz Yöneticisi ile uyumlu değil.
 
 -----
@@ -52,9 +51,6 @@ Xamarin Android Aygıt Yöneticisi'ni oluşturmak ve yapılandırmak için kulla
 Her AVD, fiziksel bir Android cihazı taklit eden bir öykünücü yapılandırmadır. Çalıştırın ve farklı fiziksel Android cihazları benzetimini yapılandırmaları çeşitli uygulamanızı test etmek mümkün kılar. Xamarin Android Aygıt Yöneticisi'ni Google'nın tek başına AVD (kullanım dışı bırakıldı) Yöneticisi değiştirir.
 
 Bu kılavuzda, yüklemek ve Android Aygıt Yöneticisi'ni başlatmak öğreneceksiniz. Oluşturma, çoğaltma, özelleştirme ve sanal aygıtların başlatma öğreneceksiniz. Bu kılavuz ayrıca accelerometer, GPS, Yönlendirme ve açık algılayıcı gibi benzetimli algılayıcılar etkinleştir/devre dışı bırakılır ve donanım türünü yapılandırmak için (örneğin, API düzeyi, CPU, bellek ve çözümleme), her sanal cihaz özelliklerini yapılandırmak nasıl açıklar Bu sanal aygıt tarafından kullanılan hızlandırma.
-
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -99,11 +95,10 @@ Xamarin Android Aygıt Yöneticisi'ni yüklemek için aşağıdaki adımları ku
 
 2. Çift **AndroidDevices.pkg** ve yükleme yönergelerini izleyin: 
 
-    [![Xamarin Android Aygıt Yöneticisi'ni Kurulum Sihirbazı](xamarin-device-manager-images/mac/30-installer-sml.png)](xamarin-device-manager-images/mac/30-installer.png)
+    [![Xamarin Android Aygıt Yöneticisi'ni Kurulum Sihirbazı](xamarin-device-manager-images/mac/30-installer-sml.png)](xamarin-device-manager-images/mac/30-installer.png#lightbox)
 
 -----
 
-<a name="dev-manager" /> 
  
 ## <a name="launching-the-device-manager"></a>Aygıt Yöneticisi'ni başlatma
 
@@ -111,7 +106,7 @@ Xamarin Android Aygıt Yöneticisi'ni yüklemek için aşağıdaki adımları ku
 
 Visual Studio 15,6 Preview 3 ve sonraki sürümlerinde, Xamarin Android Aygıt Yöneticisi'nden başlatabilirsiniz **Araçları** menüsü. Daha sonra Aygıt Yöneticisi'ni tıklatarak başlatmak veya Visual Studio 15,6 Preview 3 kullanıyorsanız **Araçlar > Android Emulator Manager**:
 
-[![Araçlar menüsünden başlatma](xamarin-device-manager-images/win/04-tools-menu-sml.png)](xamarin-device-manager-images/win/04-tools-menu.png)
+[![Araçlar menüsünden başlatma](xamarin-device-manager-images/win/04-tools-menu-sml.png)](xamarin-device-manager-images/win/04-tools-menu.png#lightbox)
 
 Visual Studio'nun önceki bir sürümünü kullanıyorsanız, Xamarin Android Aygıt Yöneticisi'ni Windows başlatılması **Başlat** menüsü.
 
@@ -125,11 +120,11 @@ Sağ **Xamarin Android Aygıt Yöneticisi'ni** seçip **daha > yönetici olarak 
 
 Visual Studio'da Mac 7.6 Preview 3 (şu anda'alfa kanal) veya sonrası, Xamarin Android Aygıt Yöneticisi'ni seçerek başlatabilirsiniz **Araçlar > öykünücü yöneticisini**:
 
-[![Araçlar menüsünden başlatma](xamarin-device-manager-images/mac/16-tools-menu-sml.png)](xamarin-device-manager-images/mac/16-tools-menu.png)
+[![Araçlar menüsünden başlatma](xamarin-device-manager-images/mac/16-tools-menu-sml.png)](xamarin-device-manager-images/mac/16-tools-menu.png#lightbox)
 
 Mac için Visual Studio'nun önceki bir sürümünü kullanıyorsanız, Xamarin Android Aygıt Yöneticisi'ni bağımsız olarak başlatılması gerekir. Bulun **Android cihazları** içinde **uygulamaları** klasörü ve başlatmak için çift tıklatın:
 
-[![Xamarin Android Aygıt Yöneticisi'ni konumda Bulucu](xamarin-device-manager-images/mac/31-location-in-finder-sml.png)](xamarin-device-manager-images/mac/31-location-in-finder.png)
+[![Xamarin Android Aygıt Yöneticisi'ni konumda Bulucu](xamarin-device-manager-images/mac/31-location-in-finder-sml.png)](xamarin-device-manager-images/mac/31-location-in-finder.png#lightbox)
 
 
 -----
@@ -151,17 +146,16 @@ Bu hata iletişim kutusu görürseniz tıklatın **Tamam** Android SDK Yönetici
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Android SDK Araçları 26.0 yükleme](xamarin-device-manager-images/win/03-sdk-tools-sml.png)](xamarin-device-manager-images/win/03-sdk-tools.png)
+[![Android SDK Araçları 26.0 yükleme](xamarin-device-manager-images/win/03-sdk-tools-sml.png)](xamarin-device-manager-images/win/03-sdk-tools.png#lightbox)
 
 Bu paketleri yüklendikten sonra SDK Yöneticisi'ni kapatın ve Android Aygıt Yöneticisi'ni yeniden başlatın.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Android SDK Araçları 26.0 yükleme](xamarin-device-manager-images/mac/03-sdk-tools-sml.png)](xamarin-device-manager-images/mac/03-sdk-tools.png)
+[![Android SDK Araçları 26.0 yükleme](xamarin-device-manager-images/mac/03-sdk-tools-sml.png)](xamarin-device-manager-images/mac/03-sdk-tools.png#lightbox)
 
 -----
 
-<a name="devices" />
  
 ## <a name="main-screen"></a>Ana Ekran
 
@@ -169,13 +163,13 @@ Bu paketleri yüklendikten sonra SDK Yöneticisi'ni kapatın ve Android Aygıt Y
 
 Android Aygıt Yöneticisi'ni ilk başlattığınızda, şu anda yapılandırılmış tüm sanal cihazlar görüntüleyen bir ekran gösterir. Her cihaz için **adı**, **işletim sistemi** (Android API düzey), **CPU**, **bellek** boyutu ve ekran çözünürlüğü görüntülenir:
 
-[![Yüklü aygıtların listesi ve bunların parametrelerini](xamarin-device-manager-images/win/05-installed-list-sml.png)](xamarin-device-manager-images/win/05-installed-list.png)
+[![Yüklü aygıtların listesi ve bunların parametrelerini](xamarin-device-manager-images/win/05-installed-list-sml.png)](xamarin-device-manager-images/win/05-installed-list.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Android Aygıt Yöneticisi'ni ilk başlattığınızda, şu anda yapılandırılmış tüm sanal cihazlar görüntüleyen bir ekran gösterir. Her cihaz için **adı**, **sistem görüntüsü** (Android API düzey), **CPU**, **bellek** boyutu ve ekran çözünürlüğü görüntülenir:
 
-[![Yüklü aygıtların listesi ve bunların parametrelerini](xamarin-device-manager-images/mac/05-devices-list-sml.png)](xamarin-device-manager-images/mac/05-devices-list.png)
+[![Yüklü aygıtların listesi ve bunların parametrelerini](xamarin-device-manager-images/mac/05-devices-list-sml.png)](xamarin-device-manager-images/mac/05-devices-list.png#lightbox)
 
 -----
 
@@ -183,13 +177,13 @@ Android Aygıt Yöneticisi'ni ilk başlattığınızda, şu anda yapılandırıl
 
 Listedeki bir aygıtı tıklattığınızda **Başlat** düğmesi, sağ tarafta görünür. Tıklayabilirsiniz **Başlat** düğmesi bu sanal cihazla öykünücü başlatmak için:
 
-[![Cihaz görüntüsü için Başlat düğmesi](xamarin-device-manager-images/win/06-start-button-sml.png)](xamarin-device-manager-images/win/06-start-button.png)
+[![Cihaz görüntüsü için Başlat düğmesi](xamarin-device-manager-images/win/06-start-button-sml.png)](xamarin-device-manager-images/win/06-start-button.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Tıklatın bir **Yürüt** düğmesi öykünücü tercih ettiğiniz sanal cihazla başlatmak için:
  
-[![Cihaz görüntüsü için Başlat düğmesi](xamarin-device-manager-images/mac/06-start-button-sml.png)](xamarin-device-manager-images/mac/06-start-button.png)
+[![Cihaz görüntüsü için Başlat düğmesi](xamarin-device-manager-images/mac/06-start-button-sml.png)](xamarin-device-manager-images/mac/06-start-button.png#lightbox)
  
 -----
 
@@ -197,17 +191,16 @@ Tıklatın bir **Yürüt** düğmesi öykünücü tercih ettiğiniz sanal cihazl
 
 Seçili sanal cihazla öykünücü başladıktan sonra **Başlat** düğmesi değişiklikleri bir **durdurmak** öykünücü durdurmak için kullanabileceğiniz düğmesi:
 
-[![Çalışan cihazın düğmesi Durdur](xamarin-device-manager-images/win/07-stop-button-sml.png)](xamarin-device-manager-images/win/07-stop-button.png)
+[![Çalışan cihazın düğmesi Durdur](xamarin-device-manager-images/win/07-stop-button-sml.png)](xamarin-device-manager-images/win/07-stop-button.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Seçili sanal cihazla öykünücü başladıktan sonra **Yürüt** düğmesi değişiklikleri bir **durdurmak** öykünücü durdurmak için kullanabileceğiniz düğmesi:
  
-[![Çalışan cihazın düğmesi Durdur](xamarin-device-manager-images/mac/07-stop-button-sml.png)](xamarin-device-manager-images/mac/07-stop-button.png)
+[![Çalışan cihazın düğmesi Durdur](xamarin-device-manager-images/mac/07-stop-button-sml.png)](xamarin-device-manager-images/mac/07-stop-button.png#lightbox)
  
 -----
 
-<a name="device-new" />
  
 ### <a name="new-device"></a>Yeni cihaz
 
@@ -215,13 +208,13 @@ Seçili sanal cihazla öykünücü başladıktan sonra **Yürüt** düğmesi de�
 
 Yeni bir cihaz oluşturmak için tıklatın **yeni** düğmesini (ekranın sağ üst bölümünde bulunur):
 
-[![Yeni bir cihaz oluşturmak için yeni düğmesi](xamarin-device-manager-images/win/08-new-button-sml.png)](xamarin-device-manager-images/win/08-new-button.png)
+[![Yeni bir cihaz oluşturmak için yeni düğmesi](xamarin-device-manager-images/win/08-new-button-sml.png)](xamarin-device-manager-images/win/08-new-button.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Yeni bir cihaz oluşturmak için tıklatın **yeni cihaz** düğmesini (ekranın sağ üst bölümünde bulunur):
  
-[![Yeni bir cihaz oluşturmak için yeni düğmesi](xamarin-device-manager-images/mac/08-new-button-sml.png)](xamarin-device-manager-images/mac/08-new-button.png)
+[![Yeni bir cihaz oluşturmak için yeni düğmesi](xamarin-device-manager-images/mac/08-new-button-sml.png)](xamarin-device-manager-images/mac/08-new-button.png#lightbox)
  
 -----
 
@@ -229,27 +222,27 @@ Yeni bir cihaz oluşturmak için tıklatın **yeni cihaz** düğmesini (ekranın
 
 Tıklatarak **yeni** başlatır **yeni cihaz** ekran:
 
-[![Yeni cihaz ekranı Aygıt Yöneticisi'nin](xamarin-device-manager-images/win/09-new-device-editor-sml.png)](xamarin-device-manager-images/win/09-new-device-editor.png)
+[![Yeni cihaz ekranı Aygıt Yöneticisi'nin](xamarin-device-manager-images/win/09-new-device-editor-sml.png)](xamarin-device-manager-images/win/09-new-device-editor.png#lightbox)
 
 Yeni bir cihaz yapılandırmak için **yeni cihaz** ekranında, aşağıdaki adımları kullanın:
 
 1. Tıklayarak benzetmek için fiziksel bir cihaz seçin **aygıt** açılır menü:
 
-    [![Cihaz aşağı açılır menüsü](xamarin-device-manager-images/win/10-device-menu-sml.png)](xamarin-device-manager-images/win/10-device-menu.png)
+    [![Cihaz aşağı açılır menüsü](xamarin-device-manager-images/win/10-device-menu-sml.png)](xamarin-device-manager-images/win/10-device-menu.png#lightbox)
 
 2. Tıklayarak bu sanal cihazla kullanmak için Sistem Görüntüsü Seç **sistem görüntüsü** açılır menü. Bu menü altında yüklü sistem görüntüleri listeler **yüklü**. **Karşıdan** bölüm geliştirme bilgisayarınızda şu anda kullanılabilir olan, ancak otomatik olarak yüklenen sistem görüntüleri listeler:
 
-    [![Sistem görüntüsü aşağı açılır menüsü](xamarin-device-manager-images/win/11-system-image-menu-sml.png)](xamarin-device-manager-images/win/11-system-image-menu.png)
+    [![Sistem görüntüsü aşağı açılır menüsü](xamarin-device-manager-images/win/11-system-image-menu-sml.png)](xamarin-device-manager-images/win/11-system-image-menu.png#lightbox)
 
 3. Cihazı yeni bir ad verin. Aşağıdaki örnekte, yeni cihaz adlı **Nexus 5 API 25**:
 
-    [![Yeni cihaz adlandırma](xamarin-device-manager-images/win/12-device-name-sml.png)](xamarin-device-manager-images/win/12-device-name.png)
+    [![Yeni cihaz adlandırma](xamarin-device-manager-images/win/12-device-name-sml.png)](xamarin-device-manager-images/win/12-device-name.png#lightbox)
 
 4. Değişiklik yapmanız özelliklerini düzenleyin. Özelliklerde değişiklik için bkz: [profil özellikleri](#properties) bu kılavuzda daha sonra.
 
 5. Açıkça ayarlamak için gereken ek özellikleri ekleyin. **Yeni cihaz** ekran yalnızca en sık değiştirilen özellikleri listeler, ancak tıklayabilirsiniz **Özellik Ekle** aşağı açılır menüde (alt sol köşe) ek özellikler eklemek için. Aşağıdaki örnekte, `hw.lcd.backlight` özellik eklenir:
 
-    [![Özellik aşağı açılır menü ekleme](xamarin-device-manager-images/win/13-add-property-menu-sml.png)](xamarin-device-manager-images/win/13-add-property-menu.png)
+    [![Özellik aşağı açılır menü ekleme](xamarin-device-manager-images/win/13-add-property-menu-sml.png)](xamarin-device-manager-images/win/13-add-property-menu.png#lightbox)
 
 6. Tıklatın **oluşturma** yeni cihaz oluşturmak için düğmeyi (alt sağ köşesinde):
 
@@ -261,37 +254,37 @@ Yeni bir cihaz yapılandırmak için **yeni cihaz** ekranında, aşağıdaki ad�
 
 8. Android Aygıt Yöneticisi'ni ile yüklü sanal aygıtların listesi yeni cihaz ekleyen bir **oluşturma** cihaz oluştururken İlerleme göstergesi:
 
-    [![Oluşturma İlerleme göstergesi](xamarin-device-manager-images/win/16-creating-the-device-sml.png)](xamarin-device-manager-images/win/16-creating-the-device.png)
+    [![Oluşturma İlerleme göstergesi](xamarin-device-manager-images/win/16-creating-the-device-sml.png)](xamarin-device-manager-images/win/16-creating-the-device.png#lightbox)
 
 9. Oluşturma işlemi tamamlandığında, yeni cihaz ile yüklü sanal aygıtların listesi gösterilen bir **Başlat** düğmesi, başlatmak hazır:
 
-   [![Yeni oluşturulan aygıt başlatmak hazır](xamarin-device-manager-images/win/17-created-device-sml.png)](xamarin-device-manager-images/win/17-created-device.png)
+   [![Yeni oluşturulan aygıt başlatmak hazır](xamarin-device-manager-images/win/17-created-device-sml.png)](xamarin-device-manager-images/win/17-created-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Tıklatarak **yeni cihaz** başlatır **yeni cihaz** ekran:
 
-[![Yeni cihaz ekranı Aygıt Yöneticisi'nin](xamarin-device-manager-images/mac/09-new-device-editor-sml.png)](xamarin-device-manager-images/mac/09-new-device-editor.png)
+[![Yeni cihaz ekranı Aygıt Yöneticisi'nin](xamarin-device-manager-images/mac/09-new-device-editor-sml.png)](xamarin-device-manager-images/mac/09-new-device-editor.png#lightbox)
 
 Yeni bir cihaz yapılandırmak için aşağıdaki adımları kullanın **yeni cihaz** ekran:
 
 1. Tıklayarak benzetmek için fiziksel bir cihaz seçin **aygıt** açılır menü:
 
-    [![Cihaz aşağı açılır menüsü](xamarin-device-manager-images/mac/10-device-menu-sml.png)](xamarin-device-manager-images/mac/10-device-menu.png)
+    [![Cihaz aşağı açılır menüsü](xamarin-device-manager-images/mac/10-device-menu-sml.png)](xamarin-device-manager-images/mac/10-device-menu.png#lightbox)
 
 2. Tıklayarak bu sanal cihazla kullanmak için Sistem Görüntüsü Seç **sistem görüntüsü** açılır menü. Bu menü altında yüklü sistem görüntüleri listeler **yüklü**. **karşıdan** (gösterilen varsa) bölümü geliştirme bilgisayarınızda şu anda kullanılabilir olan, ancak otomatik olarak yüklenen sistem görüntüleri listeler:
 
-    [![Sistem görüntüsü aşağı açılır menüsü](xamarin-device-manager-images/mac/11-system-image-menu-sml.png)](xamarin-device-manager-images/mac/11-system-image-menu.png)
+    [![Sistem görüntüsü aşağı açılır menüsü](xamarin-device-manager-images/mac/11-system-image-menu-sml.png)](xamarin-device-manager-images/mac/11-system-image-menu.png#lightbox)
 
 3. Cihazı yeni bir ad verin. Aşağıdaki örnekte, yeni cihaz adlı **Nexus 5 X API 25**:
 
-    [![Yeni cihaz adlandırma](xamarin-device-manager-images/mac/12-device-name-sml.png)](xamarin-device-manager-images/mac/12-device-name.png)
+    [![Yeni cihaz adlandırma](xamarin-device-manager-images/mac/12-device-name-sml.png)](xamarin-device-manager-images/mac/12-device-name.png#lightbox)
 
 4. Değişiklik yapmanız özelliklerini düzenleyin. Özelliklerde değişiklik için bkz: [profil özellikleri](#properties) bu kılavuzda daha sonra.
 
 5. Açıkça ayarlamak için gereken ek özellikleri ekleyin. **Yeni cihaz** ekran yalnızca en sık değiştirilen özellikleri listeler, ancak tıklayabilirsiniz **Özellik Ekle** aşağı açılır menüde (alt sol köşe) ek özellikler eklemek için:
 
-    [![Özellik aşağı açılır menü ekleme](xamarin-device-manager-images/mac/13-add-property-menu-sml.png)](xamarin-device-manager-images/mac/13-add-property-menu.png)
+    [![Özellik aşağı açılır menü ekleme](xamarin-device-manager-images/mac/13-add-property-menu-sml.png)](xamarin-device-manager-images/mac/13-add-property-menu.png#lightbox)
 
 6. Tıklatarak **özel** aygıt için yeni bir özellik tanımlamak için:
 
@@ -305,11 +298,11 @@ Yeni bir cihaz yapılandırmak için aşağıdaki adımları kullanın **yeni ci
 
 9. Cihaz oluşturduğu sırada Android Aygıt Yöneticisi'ni yeni cihaz ile cihaz listesine ekler. bir **oluşturma** İlerleme göstergesi:
 
-    [![Oluşturma İlerleme göstergesi](xamarin-device-manager-images/mac/17-creating-the-device-sml.png)](xamarin-device-manager-images/mac/17-creating-the-device.png)
+    [![Oluşturma İlerleme göstergesi](xamarin-device-manager-images/mac/17-creating-the-device-sml.png)](xamarin-device-manager-images/mac/17-creating-the-device.png#lightbox)
 
 10. Oluşturma işlemi tamamlandığında, yeni cihaz aygıt listesinde gösterilen bir **Yürüt** düğmesi, başlatmak hazır:
 
-   [![Yeni oluşturulan aygıt başlatmak hazır](xamarin-device-manager-images/mac/18-created-device-sml.png)](xamarin-device-manager-images/mac/18-created-device.png)
+   [![Yeni oluşturulan aygıt başlatmak hazır](xamarin-device-manager-images/mac/18-created-device-sml.png)](xamarin-device-manager-images/mac/18-created-device.png#lightbox)
 
 -----
 
@@ -322,13 +315,13 @@ Yeni bir cihaz yapılandırmak için aşağıdaki adımları kullanın **yeni ci
 
 Varolan bir sanal cihazın düzenlemek için cihazı seçin ve **Düzenle** düğmesini (ekranın sağ üst köşesinde bulunan):
 
-[![Düzenle düğmesi, yeni bir cihaz değiştirme](xamarin-device-manager-images/win/19-edit-button-sml.png)](xamarin-device-manager-images/win/19-edit-button.png)
+[![Düzenle düğmesi, yeni bir cihaz değiştirme](xamarin-device-manager-images/win/19-edit-button-sml.png)](xamarin-device-manager-images/win/19-edit-button.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Varolan bir sanal cihazın düzenlemek için seçin **ek seçenekler** açılır menü (dişli simgesi) ve select **Düzenle**:
  
-[![Yeni bir cihaz değiştirme menü seçimi Düzenle](xamarin-device-manager-images/mac/19-edit-button-sml.png)](xamarin-device-manager-images/mac/19-edit-button.png)
+[![Yeni bir cihaz değiştirme menü seçimi Düzenle](xamarin-device-manager-images/mac/19-edit-button-sml.png)](xamarin-device-manager-images/mac/19-edit-button.png#lightbox)
  
 -----
 
@@ -336,11 +329,11 @@ Tıklatarak **Düzenle** seçili sanal cihaz için cihaz Düzenleyici başlatıl
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Cihaz Düzenleyicisi ekranı](xamarin-device-manager-images/win/20-device-editor-sml.png)](xamarin-device-manager-images/win/20-device-editor.png)
+[![Cihaz Düzenleyicisi ekranı](xamarin-device-manager-images/win/20-device-editor-sml.png)](xamarin-device-manager-images/win/20-device-editor.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
  
-[![Cihaz Düzenleyicisi ekranı](xamarin-device-manager-images/mac/20-device-editor-sml.png)](xamarin-device-manager-images/mac/20-device-editor.png)
+[![Cihaz Düzenleyicisi ekranı](xamarin-device-manager-images/mac/20-device-editor-sml.png)](xamarin-device-manager-images/mac/20-device-editor.png#lightbox)
  
 -----
 
@@ -350,13 +343,13 @@ Tıklatarak **Düzenle** seçili sanal cihaz için cihaz Düzenleyici başlatıl
 
 Örneğin, aşağıdaki ekran görüntüsünde `hw.lcd.density` özelliği değiştirildiğinde **420** için **240**:
 
-[![Cihaz düzenleme örneği](xamarin-device-manager-images/win/21-device-editing-sml.png)](xamarin-device-manager-images/win/21-device-editing.png)
+[![Cihaz düzenleme örneği](xamarin-device-manager-images/win/21-device-editing-sml.png)](xamarin-device-manager-images/win/21-device-editing.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Örneğin, aşağıdaki ekran görüntüsünde `hw.lcd.density` özelliği değiştirildiğinde **320** için **240** ve `hw.ramSize` özelliği değiştirildiğinde **768**:
  
-[![Cihaz düzenleme örneği](xamarin-device-manager-images/mac/21-device-editing-sml.png)](xamarin-device-manager-images/mac/21-device-editing.png)
+[![Cihaz düzenleme örneği](xamarin-device-manager-images/mac/21-device-editing-sml.png)](xamarin-device-manager-images/mac/21-device-editing.png#lightbox)
  
 -----
 
@@ -364,7 +357,6 @@ Gerekli yapılandırma değişikliklerini yaptıktan sonra tıklatın **kaydetme
 Sanal cihaz özelliklerini değiştirme hakkında daha fazla bilgi için bkz: [profil özellikleri](#properties) bu kılavuzda daha sonra.
 
 
-<a name="addopt" />
  
 ### <a name="additional-options"></a>Ek Seçenekler
 
@@ -372,13 +364,13 @@ Sanal cihaz özelliklerini değiştirme hakkında daha fazla bilgi için bkz: [p
 
 Cihazları ile çalışmak için ek seçenekler kullanılabilir &hellip; sağ üst köşede menüde:
 
-[![Ek Seçenekler menüsünü konumu](xamarin-device-manager-images/win/22-overflow-menu-sml.png)](xamarin-device-manager-images/win/22-overflow-menu.png)
+[![Ek Seçenekler menüsünü konumu](xamarin-device-manager-images/win/22-overflow-menu-sml.png)](xamarin-device-manager-images/win/22-overflow-menu.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Bir aygıt ile çalışmak için ek seçenekler solunda bulunan aşağı açılır menüden kullanılabilir **Yürüt** düğmesi:
 
-[![Ek Seçenekler menüsünü konumu](xamarin-device-manager-images/mac/22-overflow-menu-sml.png)](xamarin-device-manager-images/mac/22-overflow-menu.png)
+[![Ek Seçenekler menüsünü konumu](xamarin-device-manager-images/mac/22-overflow-menu-sml.png)](xamarin-device-manager-images/mac/22-overflow-menu.png#lightbox)
 
 -----
 
@@ -388,11 +380,11 @@ Ek Seçenekler menüsünü aşağıdaki öğeleri içerir:
 
 -   **Yinelenen ve düzenleme** &ndash; şu anda seçili cihaz yineler ve bunun içinde açılacak **yeni cihaz** ekran farklı benzersiz bir ad ile. Örneğin, seçme **VisualStudio_android 23_x86_phone** tıklatıp **yinelenen ve düzenleme** bir sayaç adına ekler:
 
-    [![Yinelenen ve düzenleme ekranı](xamarin-device-manager-images/win/23-dupe-and-edit-sml.png)](xamarin-device-manager-images/win/23-dupe-and-edit.png)
+    [![Yinelenen ve düzenleme ekranı](xamarin-device-manager-images/win/23-dupe-and-edit-sml.png)](xamarin-device-manager-images/win/23-dupe-and-edit.png#lightbox)
 
 -   **Explorer'da ortaya** &ndash; sanal aygıt için dosyalarını tutan klasöründe bir Windows Explorer penceresi açar. Örneğin, seçme **Nexus 5 X API 25** tıklatıp **Explorer'da ortaya** aşağıdaki gibi bir pencere açılır:
 
-    [![Tıklama sonuçları Gezgininde ortaya](xamarin-device-manager-images/win/24-reveal-in-explorer-sml.png)](xamarin-device-manager-images/win/24-reveal-in-explorer.png)
+    [![Tıklama sonuçları Gezgininde ortaya](xamarin-device-manager-images/win/24-reveal-in-explorer-sml.png)](xamarin-device-manager-images/win/24-reveal-in-explorer.png#lightbox)
 
 -   **Fabrika sıfırlaması** &ndash; Seçilen aygıt çalıştırılırken cihaz iç durumuna kullanıcı değişiklikleri silme kendi varsayılan ayarlara sıfırlar. Bu değişiklik, sanal cihaz oluşturma ve düzenleme sırasında yaptığınız değişiklikler değiştirmez. Bu sıfırlama alınamaz anımsatıcı ile bir iletişim kutusu görünür. Tıklatın **kullanıcı verilerini temizleme** sıfırlama onaylamak için.
 
@@ -408,11 +400,11 @@ Ek Seçenekler menüsünü aşağıdaki öğeleri içerir:
 -   **Yinelenen ve düzenleme** &ndash; şu anda seçili cihaz yineler ve bunun içinde açılacak **yeni cihaz** ekran farklı benzersiz bir ad ile.
     Örneğin, seçme **Nexus 5 X API 25** tıklatıp **yinelenen ve düzenleme** bir sayaç adına ekler:
 
-    [![Yinelenen ve düzenleme ekranı](xamarin-device-manager-images/mac/23-dupe-and-edit-sml.png)](xamarin-device-manager-images/mac/23-dupe-and-edit.png)
+    [![Yinelenen ve düzenleme ekranı](xamarin-device-manager-images/mac/23-dupe-and-edit-sml.png)](xamarin-device-manager-images/mac/23-dupe-and-edit.png#lightbox)
 
 -   **Finder ortaya** &ndash; sanal aygıt için dosyalarını tutan klasöründe macOS Bulucu penceresi açılır. Örneğin, seçme **Nexus 5 X API 25** tıklatıp **Finder ortaya** aşağıdaki gibi bir pencere açılır:
 
-    [![Tıklama sonuçları Gezgininde ortaya](xamarin-device-manager-images/mac/24-reveal-in-finder-sml.png)](xamarin-device-manager-images/mac/24-reveal-in-finder.png)
+    [![Tıklama sonuçları Gezgininde ortaya](xamarin-device-manager-images/mac/24-reveal-in-finder-sml.png)](xamarin-device-manager-images/mac/24-reveal-in-finder.png#lightbox)
 
 -   **Fabrika sıfırlaması** &ndash; Seçilen aygıt çalıştırılırken cihaz iç durumuna kullanıcı değişiklikleri silme kendi varsayılan ayarlara sıfırlar. Bu değişiklik, sanal cihaz oluşturma ve düzenleme sırasında yaptığınız değişiklikler değiştirmez. Bu sıfırlama alınamaz anımsatıcı ile bir iletişim kutusu görünür. Tıklatın **kullanıcı verilerini temizleme** sıfırlama onaylamak için.
 
@@ -497,7 +489,7 @@ Geçici çözüm için bu sorun aşağıdakileri yapın:
 
 2. Günlük dosyalarından birini açın ve bulmak için çift **yapılandırma dosyası yolu**. Örneğin:
 
-    [![Günlük dosyasında yapılandırma dosyası yolu](xamarin-device-manager-images/win/34-config-file-path-sml.png)](xamarin-device-manager-images/win/34-config-file-path.png)
+    [![Günlük dosyasında yapılandırma dosyası yolu](xamarin-device-manager-images/win/34-config-file-path-sml.png)](xamarin-device-manager-images/win/34-config-file-path.png#lightbox)
 
 3. Bu konum ve çift **user.config** açın. 
 
@@ -528,7 +520,6 @@ Bir sorun bulursanız, Lütfen bir hata raporu tıklayarak dosya **Yardım > hat
 -----
 
  
-<a name="summary" />
  
 ## <a name="summary"></a>Özet
 
@@ -537,7 +528,7 @@ Bu kılavuz, Visual Studio için Xamarin Android Aygıt Yöneticisi'ni Visual St
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Android SDK Araçları yapılan değişiklikler](~/android/troubleshooting/sdk-cli-tooling-changes.md)
+- [Android SDK Aracı Üzerindeki Değişiklikler](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 - [Android SDK öykünücüsü ile hata ayıklama](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
 - [Sürüm Notları (Google) SDK Araçları](https://developer.android.com/studiohttps://developer.xamarin.com/releases/sdk-tools.html)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)

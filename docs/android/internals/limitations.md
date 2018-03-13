@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 11a7c9dcbe9481209d2eb90ff9d981f7437a1c99
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1b970432d7cd5b6a84b8af72ab616493f3cd36a7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="limitations"></a>Sınırlamalar
 
@@ -19,13 +19,11 @@ Android uygulamaları oluşturma işlemi sırasında Java proxy türleri oluştu
 
 Bu Masaüstü Mono karşılaştırıldığında Xamarin.Android sınırlamalar vardır:
 
-<a name="Limited_Dynamic_Language_Support" />
 
 ## <a name="limited-dynamic-language-support"></a>Sınırlı dinamik dil desteği
 
  [Android aranabilir sarmalayıcılar](~/android/platform/java-integration/android-callable-wrappers.md) Android çalışma zamanı gereken yönetilen kod çağırmak için her zaman gereklidir. Android aranabilir sarmalayıcılar derleme zamanında IL statik analizini göre oluşturulur. Net bunun sonucunda,:, *olamaz* bu dinamik türleri ayıklanıyor hiçbir şekilde olduğundan dinamik dil (IronPython, IronRuby, vb.) herhangi bir senaryoda sınıflara Java türleri (dolaylı sınıflara dahil), gerekli olduğu kullanma gerekli Android aranabilir sarmalayıcılar için derleme zamanında.
 
-<a name="Limited_Java_Generation_Support" />
 
 ## <a name="limited-java-generation-support"></a>Sınırlı Java oluşturma desteği
 
@@ -88,7 +86,6 @@ class MyIntentService : IntentService {
 }
 ```
 
-<a name="Generic_Csharp_classes" />
 
 ### <a name="generic-c-classes"></a>Genel C# sınıflar
 
@@ -150,7 +147,6 @@ Genel C# sınıflar yalnızca kısmen desteklenir. Aşağıdaki sınırlamalar b
     }
     ```
 
-<a name="Partial_Java_Generics_Support" />
 
 ## <a name="partial-java-generics-support"></a>Kısmi Java genel türler desteği
 
@@ -160,7 +156,7 @@ Bu sınırlama geçerli olmayan bazı sınıfları sahip olduğumuz ancak el ile
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Android aranabilir sarmalayıcılar](~/android/platform/java-integration/android-callable-wrappers.md)
+- [Android Çağrılabilir Sarmalayıcıları](~/android/platform/java-integration/android-callable-wrappers.md)
 - [JNI ile çalışma](~/android/platform/java-integration/working-with-jni.md)
 - [ExportAttribute](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute/)
 - [SuperString](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/)

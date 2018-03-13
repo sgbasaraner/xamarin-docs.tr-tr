@@ -7,23 +7,22 @@ ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/29/2017
-ms.openlocfilehash: 9f084899f44e0104d0aa2d4b3c0509812bd3fdd2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: ef073999e10e184806089bed3ef9ab93e2f28dd6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase bulut Mesajlaşma
 
 _Firebase bulut Mesajlaşma (FCM), mobil uygulamaları ve sunucu uygulamaları Mesajlaşma kolaylaştıran bir hizmettir. Bu makalede FCM nasıl çalıştığını genel bir bakış sağlar ve uygulamanızı FCM kullanabilmesi için Google hizmetlerin nasıl yapılandırılacağı açıklanmaktadır._
 
-[![Firebase Cloud Messaging kahramanı görüntüsü](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png)
+[![Firebase Cloud Messaging kahramanı görüntüsü](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
 
 Bu konuda nasıl Firebase bulut Mesajlaşma iletileri Xamarin.Android uygulamanıza bir uygulama sunucusu arasındaki yönlendiren bir üst düzey genel bakış sunar ve uygulamanızı FCM hizmetleri kullanabilmesi için kimlik bilgileri alınırken için adım adım bir yordam sağlar.
 
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -31,12 +30,11 @@ Firebase bulut Mesajlaşma (FCM) gönderme, Yönlendirme ve sunucu uygulamaları
 
 Aşağıdaki çizimde gösterildiği gibi FCM ileti gönderenler ve istemciler arasında bir aracı gibi davranır. A *istemci uygulaması* bir cihazda çalışan FCM özellikli bir uygulama olur. *Uygulama sunucusu* (siz veya şirketiniz tarafından sağlanan) istemci uygulamanızı FCM iletişim kuran FCM etkin sunucusudur. GCM FCM Firebase konsol bildirimleri GUI yoluyla doğrudan istemci uygulamaları için ileti göndermenizi sağlar:
 
-[![İstemci uygulaması ve bir uygulama sunucusu arasında FCM bulunur](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png)
+[![İstemci uygulaması ve bir uygulama sunucusu arasında FCM bulunur](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png#lightbox)
 
 FCM kullanarak, uygulama sunucuları iletileri tek bir cihazı, aygıtların bir gruba veya çok sayıda bir konuya abone olduğunuz cihaz gönderebilirsiniz. Bir istemci uygulaması FCM (örneğin, uzak bildirimleri almak için) bir uygulama sunucudan aşağı akış iletileri abone olmak için kullanabilirsiniz. Firebase iletileri farklı uygulama türleri hakkında daha fazla bilgi için bkz: [FCM iletileri hakkında](https://firebase.google.com/docs/cloud-messaging/concept-options).
 
 
-<a name="inaction" />
 
 ## <a name="firebase-cloud-messaging-in-action"></a>Eylem Mesajlaşma firebase bulut
 
@@ -64,7 +62,7 @@ Aşağıdaki bölümlerde istemci uygulamaları FCM aracılığıyla uygulama su
 
 Mesajlaşma gerçekleşebilmesi için öncelikle bir istemci uygulaması önce FCM ile kaydetmeniz gerekir. İstemci uygulaması, aşağıdaki çizimde gösterilen kayıt adımları tamamlamanız gerekir:
 
-[![Uygulama kayıt adımları diyagramı](firebase-cloud-messaging-images/02-app-registration-sml.png)](firebase-cloud-messaging-images/02-app-registration.png)
+[![Uygulama kayıt adımları diyagramı](firebase-cloud-messaging-images/02-app-registration-sml.png)](firebase-cloud-messaging-images/02-app-registration.png#lightbox)
 
 1.  İstemci uygulaması Gönderen Kimliği, API anahtarı ve uygulama kimliği için FCM geçirme bir kayıt belirtecinizi almak için FCM iletişim kurar.
 
@@ -77,13 +75,12 @@ Uygulama sunucusu, istemci uygulaması ile sonraki iletişim için kayıt belirt
 İstemci uygulaması artık uygulama sunucusundan iletileri almak istediğinde kayıt belirtecini silmek için uygulama sunucusuna bir istek gönderebilirsiniz. İstemci uygulaması bir aygıttan kaldırılırsa, FCM bu algılar ve uygulama kayıt belirtecini silmek sunucuya otomatik olarak bildirir.
 
 
-<a name="downstream" />
 
 ### <a name="downstream-messaging"></a>Aşağı Akış Mesajlaşma
 
 Aşağıdaki diyagramda, nasıl Firebase Cloud Messaging depolar ve aşağı akış iletileri iletir gösterilmektedir:
 
-[![Aşağı Akış Mesajlaşma deposu ve İleri FCM kullanır](firebase-cloud-messaging-images/03-downstream-sml.png)](firebase-cloud-messaging-images/03-downstream.png)
+[![Aşağı Akış Mesajlaşma deposu ve İleri FCM kullanır](firebase-cloud-messaging-images/03-downstream-sml.png)](firebase-cloud-messaging-images/03-downstream.png#lightbox)
 
 Uygulama sunucusu istemci uygulamasına bir aşağı akış ileti gönderdiğinde, yukarıdaki diyagramda numaralandırılmış olarak aşağıdaki adımları kullanır:
 
@@ -99,14 +96,11 @@ Uygulama sunucusu istemci uygulamasına bir aşağı akış ileti gönderdiğind
 
 Android aşağı akış FCM iletileri alma hakkında ayrıntılı bilgi için bkz: [FCM ile uzaktan bildirimleri](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
 
-
-<a name="topic" />
-
 ### <a name="topic-messaging"></a>Konu Mesajlaşma
 
 *Konu ileti* belirli bir konuyu çevirdiniz birden çok aygıt bir ileti göndermek bir uygulama sunucusu için mümkün kılar. Ayrıca, oluşturabilir ve Firebase konsol bildirimleri GUI aracılığıyla konu iletileri gönderebilirsiniz. Yönlendirme ve abone olunan istemcilere konu iletilerin teslim FCM işler. Bu özellik, hava durumu uyarıları, borsa bilgileri ve başlık haber gibi iletileri için kullanılabilir.
 
-[![Konu ileti diyagramı](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png)
+[![Konu ileti diyagramı](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png#lightbox)
 
 (İstemci uygulamasını daha önce açıklandığı gibi bir kayıt belirteci aldıktan sonra) aşağıdaki adımları konu Mesajlaşma kullanılır:
 
@@ -127,28 +121,28 @@ Uygulamanızda FCM Hizmetleri kullanabilmeniz için önce yeni bir proje oluştu
 
 1.  Oturum [Firebase konsol](https://console.firebase.google.com/) tıklatın ve Google hesabı (yani, Gmail adresiniz) ile **yeni proje oluştur**:
 
-    [![Yeni Proje düğmesi oluşturma](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png)
+    [![Yeni Proje düğmesi oluşturma](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png#lightbox)
 
     Varolan projeyi varsa tıklatın **Google proje alma**.
 
 2.  İçinde **proje oluşturma** iletişim kutusunda, projenizin adını girin ve tıklayın **proje oluştur**. Aşağıdaki örnekte, yeni bir proje adı verilen **XamarinFCM** oluşturulur:
 
-    [![Bir projesi oluştur iletişim kutusu](firebase-cloud-messaging-images/06-create-a-project-sml.png)](firebase-cloud-messaging-images/06-create-a-project.png)
+    [![Bir projesi oluştur iletişim kutusu](firebase-cloud-messaging-images/06-create-a-project-sml.png)](firebase-cloud-messaging-images/06-create-a-project.png#lightbox)
 
 3.  Firebase konsolunda **genel bakış**, tıklatın **Android uygulamanıza eklemek Firebase**:
 
-    [![Android uygulamanızı Firebase Ekle](firebase-cloud-messaging-images/07-add-firebase-sml.png)](firebase-cloud-messaging-images/07-add-firebase.png)
+    [![Android uygulamanızı Firebase Ekle](firebase-cloud-messaging-images/07-add-firebase-sml.png)](firebase-cloud-messaging-images/07-add-firebase.png#lightbox)
 
 4.  Sonraki ekranda, uygulamanızı paket adını girin. Bu örnekte, paket adı olan **com.xamarin.fcmexample**. Bu değer, Android uygulamanızın paket adı eşleşmelidir. Bir uygulama takma adı da girilebilir **uygulama takma ad** alan:
 
-    [![FCM örnek uygulama takma ad girme](firebase-cloud-messaging-images/08-package-name-sml.png)](firebase-cloud-messaging-images/08-package-name.png)
+    [![FCM örnek uygulama takma ad girme](firebase-cloud-messaging-images/08-package-name-sml.png)](firebase-cloud-messaging-images/08-package-name.png#lightbox)
 
 5.  Uygulamanızı dinamik bağlantılar, davetiye veya Google kimlik doğrulaması kullanıyorsa, imzalama sertifikası, hata ayıklama girmeniz gerekir. İmzalama sertifikanızın bulma hakkında daha fazla bilgi için bkz: [Keystore'nın MD5 veya SHA1 imza bulma](~/android/deploy-test/signing/keystore-signature.md).
     Bu örnekte, imzalama sertifikası boş bırakılır.
 
 6.  Tıklatın **Ekle uygulama**:
 
-    [![Uygulama Ekle düğmesi](firebase-cloud-messaging-images/09-add-app-sml.png)](firebase-cloud-messaging-images/09-add-app.png)
+    [![Uygulama Ekle düğmesi](firebase-cloud-messaging-images/09-add-app-sml.png)](firebase-cloud-messaging-images/09-add-app.png#lightbox)
 
     Bir sunucu API anahtarı ve bir istemci kimliği uygulama için otomatik olarak oluşturulur. Bu bilgiler, paketlenmiş bir **google services.json** tıkladığınızda, otomatik olarak karşıdan dosya **uygulama Ekle**.
     Bu dosyayı güvenli bir yerde kaydettiğinizden emin olun.
@@ -156,7 +150,6 @@ Uygulamanızda FCM Hizmetleri kullanabilmeniz için önce yeni bir proje oluştu
 Ekleme konusunda ayrıntılı bir örnek için **google services.json** android'de FCM anında bildirim iletileri almak için bir uygulama projesi için bkz: [FCM ile uzaktan bildirimleri](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
 
 
-<a name="furtherreading" />
 
 ## <a name="for-further-reading"></a>Daha Fazla Bilgi İçin
 
@@ -167,7 +160,6 @@ Ekleme konusunda ayrıntılı bir örnek için **google services.json** android'
 -   [RFC 6120](https://tools.ietf.org/html/rfc6120) ve [RFC 6121](https://tools.ietf.org/html/rfc6121) açıklayabilir ve Genişletilebilir ileti ve iletişim durumu Protokolü (XMPP) tanımlayın.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -176,4 +168,4 @@ Bu makalede Firebase bulut Mesajlaşma (FCM), genel bakış sağlanır. Tanımla
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Firebase bulut Mesajlaşma](https://firebase.google.com/docs/cloud-messaging/)
+- [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/)

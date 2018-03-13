@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 56d868f64de009d01930ec34ee2cb436276006ef
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 287f564ba74050aa8a06e5a582ae8db6657e440e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cross-platform-performance"></a>Platformlar arası performansı
 
@@ -20,23 +20,6 @@ _Xamarin platformuyla oluşturulan uygulamaların performansını artırmak içi
 
 Zayıf uygulama performans kendisini birçok yolla gösterir. Bir uygulama yapabilirsiniz yanıt vermeyen gibi görünebilir, yavaş kaydırma neden olabilir ve pil ömrünün azaltabilir. Ancak, performansı en iyi duruma getirme daha fazlasını verimli kod uygulama içerir. Uygulama performansı kullanıcı deneyimi de dikkate alınmalıdır. Örneğin, diğer etkinlikler gerçekleştirmeyi kullanıcı engellenmeden işlemlerini yürütmek sağlayarak kullanıcı deneyimini geliştirmek için yardımcı olabilir.
 
-Performans ve algılanan, Xamarin platformuyla yerleşik uygulamaların performansını artırmak için teknikler mevcuttur. Bunlara aşağıdakiler dahildir:
-
-- [Profil Oluşturucu kullanın](#profiler)
-- [IDisposable kaynakları serbest bırakmak](#idisposable)
-- [Olay aboneliği](#events)
-- [Zayıf başvurular Immortal nesneleri engellemek için kullanın](#weakreferences)
-- [Nesne oluşturma maliyetini gecikme](#lazy)
-- [Zaman uyumsuz işlemleri uygulama](#async)
-- [SGen atık toplayıcısını kullanın](#sgen)
-- [Uygulama boyutunu azaltın](#linker)
-- [Görüntü kaynakları en iyi duruma getirme](#optimizeimages)
-- [Uygulama etkinleştirme süresini azaltın](#activationperiod)
-- [Web hizmeti iletişimi azaltmak için](#webservicecommunication)
-
-Bu ücretsiz [Xamarin University video](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps) Xamarin uygulamaları tasarlamak için faydalı ipuçları de içerir.
-
-[ ![](memory-perf-best-practices-images/clancey-sml.png "Ücretsiz Xamarin University video ortak Tuzaklar önleme")](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)
 
 <a name="profiler" />
 
@@ -399,6 +382,6 @@ Bu makalede açıklanan ve Xamarin platformu kullanılarak oluşturulan uygulama
 - [Xamarin.Android Performance](~/android/deploy-test/performance.md)
 - [Xamarin profil oluşturucu giriş](~/tools/profiler/index.md)
 - [Xamarin.Forms performans](~/xamarin-forms/deploy-test/performance.md)
-- [Zaman uyumsuz desteğine genel bakış](~/cross-platform/platform/async.md)
+- [Zaman Uyumsuz Desteğe Genel Bakış](~/cross-platform/platform/async.md)
 - [IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/)
 - [Xamarin uygulamaları (video) ortak Tuzaklar önleme](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)

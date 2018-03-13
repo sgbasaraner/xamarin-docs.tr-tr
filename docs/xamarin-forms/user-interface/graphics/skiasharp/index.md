@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/11/2017
-ms.openlocfilehash: a49c442fcce31fb6b853359ddfafc9a43d0a2114
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eaebd8cbae996e9a5792d0a4898fafb72bdded47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-skiasharp-in-xamarinforms"></a>Xamarin.Forms içinde SkiaSharp kullanma
 
@@ -22,10 +22,9 @@ SkiaSharp .NET ve C# Google ürünlerinde yaygın kullanılan açık kaynaklı S
 
 Bu kılavuz, Xamarin.Forms programlamayla bildiğinizi varsayar.
 
-## <a name="webinar"></a>Web Semineri
+> [!VIDEO https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms/player]
 
-[![](images/skiasharpwebinarscreen.png "Xamarin.Forms Web Semineri SkiaSharp")](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)  
-["SkiaSharp için Xamarin.Forms" Web Semineri izleyin](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)
+**Web Semineri: Xamarin.Forms SkiaSharp**
 
 ## <a name="skiasharp-preliminaries"></a>SkiaSharp başlangıç kuralları
 
@@ -38,19 +37,19 @@ Eklenecek isteyeceksiniz SkiaSharp kullanan bir C# sayfasında bir `using` için
 > [!IMPORTANT]
 > `SkiaSharp.Views.Forms` Ad alanı da içeren bir `SKGLView` öğesinden türetilen sınıf `View` ancak OpenGL işleme grafik için kullanır. Kolaylık olması amacıyla, bu kılavuzda kendisine kısıtlayan `SKCanvasView`, ancak kullanarak `SKGLView` yerine oldukça benzer.
 
-## <a name="skiasharp-drawing-basicsbasicsindexmd"></a>[SkiaSharp çizim temelleri](basics/index.md)
+## <a name="skiasharp-drawing-basicsbasicsindexmd"></a>[Temel SkiaSharp Çizimi Bilgileri](basics/index.md)
 
 SkiaSharp ile çizebilirsiniz basit grafik şekiller daire, Oval ve dikdörtgenler bazılarıdır. Bu rakamları görüntülenmesini de SkiaSharp koordinatları, boyutlar ve renkler hakkında bilgi edineceksiniz.
 
-## <a name="skiasharp-lines-and-pathspathsindexmd"></a>[SkiaSharp satırları ve yolları](paths/index.md)
+## <a name="skiasharp-lines-and-pathspathsindexmd"></a>[SkiaSharp Satırları ve Yolları](paths/index.md)
 
 Bir grafik yolu bağlı düz çizgiler ve eğrilerle dizisidir. Yollar vuruş, doldurulmuş, veya her ikisini de. Bu konuda stroke sona erer ve birleştirmeler ve dahil kesikli çizgi çizme ve noktalı çizgiler ancak eğri geometri eksikliği durakları pek çok görünüşünün kapsar.
 
-## <a name="skiasharp-transformstransformsindexmd"></a>[SkiaSharp dönüşümler](transforms/index.md)
+## <a name="skiasharp-transformstransformsindexmd"></a>[SkiaSharp Dönüşümleri](transforms/index.md)
 
 Dönüşümler hep çevrilmiş, ölçeği, döndürülen eğri veya grafik nesneleri izin verin. Bu makalede ayrıca afin olmayan dönüşümler oluşturma ve yollara dönüşümler uygulanırken bir standart 3 x 3 dönüştürme matrisi nasıl kullanabileceğiniz gösterilmektedir.
 
-## <a name="skiasharp-curves-and-pathscurvesindexmd"></a>[SkiaSharp eğriler ve yolları](curves/index.md)
+## <a name="skiasharp-curves-and-pathscurvesindexmd"></a>[SkiaSharp Eğrileri ve Yolları](curves/index.md)
 
 Yollar incelenmesi Eğriler yolu nesnelere ekleme ve diğer güçlü yolu özellikleri yararlanmasını ile devam eder. Nasıl kısa metin dizesindeki tüm bir yolu belirtebilirsiniz, yol etkileri kullanma ve yol iç derinliklerine nasıl görürsünüz.
 

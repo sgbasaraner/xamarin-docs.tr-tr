@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 36d8e27ce06e38e1cf652558bfb5a83f572e4403
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>SiriKit kavramlarını anlama
 
@@ -57,7 +57,7 @@ Siri ve eşlemeleri tüm kullanıcı etkileşimleri yönetmek ve standart sistem
 
 Bu bölümde, nasıl SiriKit Siri kullanarak uygulama ile etkileşim kurmalarına izin verir genel bir bakış sunacaktır. Bu örnek amacıyla, biz sahte MonkeyChat uygulamasını kullanarak:
 
-[ ![](understanding-sirikit-images/monkeychat01.png "MonkeyChat simgesi")](understanding-sirikit-images/monkeychat01.png)
+[![](understanding-sirikit-images/monkeychat01.png "MonkeyChat simgesi")](understanding-sirikit-images/monkeychat01.png#lightbox)
 
 Kullanıcının arkadaş kişi kendi rehberini MonkeyChat tutar, her bir ekran adı (ör, örneğin Bobo) ile ilişkili ve metin sohbetleri ekran adına göre her arkadaşınıza gönderin olanak tanır.
 
@@ -179,7 +179,7 @@ Nasıl bir istek yapıldığında veya Siri isteği nasıl yanıt vereceğini ol
 
 Kullanıcı bir Siri sözlü istekte bulunduğunda bu Siri izleyeceği adımlar şunlardır:
 
-[ ![](understanding-sirikit-images/monkeychat02.png "Siri izlediği adımları")](understanding-sirikit-images/monkeychat02.png)
+[![](understanding-sirikit-images/monkeychat02.png "Siri izlediği adımları")](understanding-sirikit-images/monkeychat02.png#lightbox)
 
 1. İlk olarak, kullanıcının ses Siri geçen **konuşma** ve metne dönüştürür.
 2. Ardından, metin dönüştürülen bir **hedefi**, bir kullanıcının isteği gösterimini yapılandırılmış.
@@ -188,7 +188,7 @@ Kullanıcı bir Siri sözlü istekte bulunduğunda bu Siri izleyeceği adımlar 
 
 Uygulama Siri ile kullanıcının konuşmadaki yer alabilir üç ana yolu vardır:
 
-[ ![](understanding-sirikit-images/monkeychat03.png "Siri ile kullanıcılar konuşmadaki uygulama yer alabilir üç ana yolu")](understanding-sirikit-images/monkeychat03.png)
+[![](understanding-sirikit-images/monkeychat03.png "Siri ile kullanıcılar konuşmadaki uygulama yer alabilir üç ana yolu")](understanding-sirikit-images/monkeychat03.png#lightbox)
 
 1. **Sözlük** -uygulama Siri ile etkileşim için bilmeniz gereken sözcükleri nasıl söyler budur.
 2. **Uygulama mantığı** - bunlar eylemleri ve uygulama sürer yanıtları bağlı olarak amaçlar.
@@ -219,7 +219,7 @@ Yukarıdaki bilgilerin verildiğinde, aşağıdaki konuşma MonkeyChat uygulama 
 
 Uygulama konuşmada alan ilk Siri kullanıcının konuşma anlamanıza yardımcı olmak için rolüdür:
 
-[ ![](understanding-sirikit-images/monkeychat04.png "Kullanıcıların konuşma anlamak Siri yardımcı olma")](understanding-sirikit-images/monkeychat04.png)
+[![](understanding-sirikit-images/monkeychat04.png "Kullanıcıların konuşma anlamak Siri yardımcı olma")](understanding-sirikit-images/monkeychat04.png#lightbox)
 
 Siri adı "Bobo" veritabanına sahip değil, ancak uygulama yapar ve bu bilgileri, sözlük aracılığıyla Siri paylaşılan. Uygulama Siri için bunları belirtilen beri Bobo bir alıcı olduğunu algılar Siri da yardımcı olur bir *kişi*.
 
@@ -227,7 +227,7 @@ Siri daha fazla ileti içeriği gerektirip gerektirmediğini görmek için uygul
 
 Yukarıdaki örnekte, kullanıcı yanıtladı, *"Lütfen daha fazla muzlar Gönder"*, hangi Siri yapılandırılmış paketini **hedefi**:
 
-[ ![](understanding-sirikit-images/monkeychat05.png "Siri kullanıcının yanıt yapılandırılmış bir hedefi pakete ekler")](understanding-sirikit-images/monkeychat05.png)
+[![](understanding-sirikit-images/monkeychat05.png "Siri kullanıcının yanıt yapılandırılmış bir hedefi pakete ekler")](understanding-sirikit-images/monkeychat05.png#lightbox)
 
 Yapılandırılmış amacıyla aşağıdaki bilgileri içerir:
 
@@ -248,7 +248,7 @@ Siri otomatik olarak uygun bir oluşturacaksınız `NSUserActivity` kullanıcı 
 
 Uygulama hedefi işlenir ve Siri için bir yanıt döndürdü sonra ardından sonuçları kullanıcıya (sözlü ve görsel olarak) sunar:
 
-[ ![](understanding-sirikit-images/monkeychat06.png "Sözlü ve görsel olarak kullanıcıya sunulan sonuçları")](understanding-sirikit-images/monkeychat06.png)
+[![](understanding-sirikit-images/monkeychat06.png "Sözlü ve görsel olarak kullanıcıya sunulan sonuçları")](understanding-sirikit-images/monkeychat06.png#lightbox)
 
 Siri her uygulama için kullanılabilir etki alanları için birkaç yerleşik yanıt kullanıcı arabirimleri vardır. Ancak, MonkeyChat isteğe bağlı bir hedefi UI uzantı sağlanan olduğundan, yukarıdaki örnekte kullanıcıya konuşma sonuçlarını sunmak için kullanılır.
 
@@ -256,7 +256,7 @@ Siri her uygulama için kullanılabilir etki alanları için birkaç yerleşik y
 
 Uygulama Uzantısı amaçları ile ilgilenirken gerçekleştirmek için gereken üç ana görevleri şunlardır:
 
-[ ![](understanding-sirikit-images/monkeychat07.png "Hedefi yaşam döngüsü")](understanding-sirikit-images/monkeychat07.png)
+[![](understanding-sirikit-images/monkeychat07.png "Hedefi yaşam döngüsü")](understanding-sirikit-images/monkeychat07.png#lightbox)
 
 1. Uygulama gerekir **gidermek** her bir olay parametresi. Uygulama ve kullanıcı ne istenen üzerinde kabul kadar sonuç olarak, uygulama Çöz (kez başına her bir parametreyi) birden çok kez ve bazen birden çok kez aynı parametrenin çağırır.
 2. Uygulama gerekir **Onayla** , istenen hedefi işlemek ve böylelikle beklenen sonucu hakkında Siri söyleyin.
@@ -329,7 +329,7 @@ Sözcük ve tümcecikleri biçiminde tanımaya yardımcı olmak için Siri sağl
 
 Hedefleri uzantısı, uygulama ve Siri arasında ana etkileşimleri aşağıdaki gibi işlemekten sorumludur:
 
-[ ![](understanding-sirikit-images/intents01.png "Hedefleri uzantısı")](understanding-sirikit-images/intents01.png)
+[![](understanding-sirikit-images/intents01.png "Hedefleri uzantısı")](understanding-sirikit-images/intents01.png#lightbox)
 
 Hedefi uzantısı bir veya daha fazla amacı destekleyebilen, nasıl SiriKit uygulamada uygulamak istedikleri karar vermek için geliştirici kadar olur. Geliştirici, ele alınması gereken her amaç için ayrı bir hedefi uzantı de ekleyebilirsiniz.  Bu, böylece Siri uygulamayı karşı daha fazla bellek ve süresi işlemek için gerektiren açmak birden çok işlem yok Geliştirici hedefi uzantıları sayısı sınırı Apple istekleri belirtti.
 
@@ -355,7 +355,7 @@ Kullanıcıların ne yapacağını yaygın şeyler "uygulamanın adını, verbif
 
 Hedefleri UI uzantısı uygulamanın kullanıcı Arabirimi ve Siri deneyim halinde markalama getirmek için bir fırsat sunar ve uygulamaya bağlı eşitleyerek kullanıcılar yapın. Bu uzantı, uygulama marka yanı sıra dökümü görsel ve diğer bilgileri kullanıma sunabilirsiniz.
 
-[ ![](understanding-sirikit-images/intents02.png "Örnek hedefleri UI uzantısı çıktı")](understanding-sirikit-images/intents02.png)
+[![](understanding-sirikit-images/intents02.png "Örnek hedefleri UI uzantısı çıktı")](understanding-sirikit-images/intents02.png#lightbox)
 
 Hedefleri UI uzantısı her zaman döndürülecek bir `UIViewController` ve uygulama yöntemlerine ilk yanıt gider gösteren ek bilgiler gibi görünüm denetleyicisini içinde herhangi bir şey ekleyebilirsiniz. Hedefleri UI konumlarına erişmek için araba paylaşımı kılma ne kadar uzun sürer gibi uzun süren bir olayın durumu olan kullanıcı da güncelleştirebilirsiniz.
 

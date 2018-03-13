@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: e26fcb81bb99e5a49d16731777171b4efa4163c6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 739ee4ebeb3176d23ab1eb911baaab31a26252c4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-platform-specifics"></a>Android platformu özellikleri
 
@@ -54,7 +54,7 @@ App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust
 
 Yazılım klavyesini giriş denetimi odağa sahip olduğunda işletim modu ayarlanabilir alan giriş oluşur:
 
-[![](android-images/pan-resize.png "Mod platforma özgü işletim yumuşak klavye")](android-images/pan-resize-large.png "Soft Keyboard Operating Mode Plaform-Specific")
+[![](android-images/pan-resize.png "Mod platforma özgü işletim yumuşak klavye")](android-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Plaform-Specific")
 
 <a name="fastscroll" />
 
@@ -98,7 +98,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 Bu hızlı veri aracılığıyla kaydırma sonucu olan bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) hangi kaydırın parmak boyutunu değişiklikleri etkinleştirilebilir:
 
-[![](android-images/fastscroll.png "ListView FastScroll platforma özgü")](android-images/fastscroll-large.png "ListView FastScroll Plaform-Specific")
+[![](android-images/fastscroll.png "ListView FastScroll platforma özgü")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
 
 <a name="enable_swipe_paging" />
 
@@ -244,7 +244,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 Sonuç [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) ve [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) sayfası olayları uygulama Duraklat üzerinde harekete olmaz ve sırasıyla sürdürmek ve yazılım klavyesini olması durumunda olduğu zaman görüntülenen uygulama olan uygulama çıktığında duraklatıldı, onu da görüntülenir:
 
-[![](android-images/keyboard-on-resume.png "Yaşam döngüsü olayları platforma özgü")](android-images/keyboard-on-resume-large.png "yaşam döngüsü olayları platforma özgü")
+[![](android-images/keyboard-on-resume.png "Yaşam döngüsü olayları platforma özgü")](android-images/keyboard-on-resume-large.png#lightbox "yaşam döngüsü olayları platforma özgü")
 
 ## <a name="summary"></a>Özet
 
@@ -253,7 +253,7 @@ Bu makalede, Android platformu-Xamarin.Forms yerleşik özellikleri kullanma gö
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Platform özellikleri oluşturma](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [Platform Özellikleri Oluşturma](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (örnek)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [AndroidSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)
 - [AndroidSpecific.AppCompat](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)

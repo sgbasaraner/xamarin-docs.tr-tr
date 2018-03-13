@@ -4,26 +4,22 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 ms.technology: xamarin-cross-platform
-author: asb3993
-ms.author: amburns
-ms.date: 06/26/2017
-ms.openlocfilehash: c79b2277073996a580b455bde519ea959795d7ef
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: bradumbaugh
+ms.author: brumbaug
+ms.date: 03/06/2018
+ms.openlocfilehash: 6042ab9aa861a08da421140857459b02a78f7c70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-types-reference-guide"></a>Bağlama türü Başvuru Kılavuzu
-
-[//]: # (Özgün dosya https://github.com/xamarin/xamarin-macios/tree/master/docs/website/ altında yer alıyor.)
-[//]: (Bu bir PR kullanarak göndermek için (Dış dahil) tüm katkıda bulunanlar verir güncelleştirmeleri araçları değişiklikleri eşleşen belgelere) # [ // ]: (xamarin-macios/ana dışında değişiklikler kaybolacak üzerinde gelecekteki # güncelleştirmeleri))
 
 Bu belgede, oluşturulan kodda ve API sözleşme dosyalarınızı bağlama sürücü için ek açıklama eklemek için kullanabileceğiniz özniteliklerin listesi açıklanmaktadır.
 
 Xamarin.iOS ve Xamarin.Mac API sözleşmeleri C# ' ta biçimini tanımlayan çoğunlukla Arabirim tanımları Objective-C kodunu C# ortaya emin yazılır. İşlem bir karışımını arabirimi bildirimleri artı API sözleşme gerektirebilir bazı temel tür tanımlarını içerir. Bizim yardımcı Kılavuzu bağlama türlere giriş için bkz [bağlama Objective-C kitaplıkları](~/cross-platform/macios/binding/objective-c-libraries.md).
 
-
-# <a name="type-definitions"></a>Tür tanımları
+## <a name="type-definitions"></a>Tür tanımları
 
 Sözdizimi:
 
@@ -41,7 +37,7 @@ Bir tür bir protokol uyarlar Xamarin.iOS yüzeyleri tarafından şekilde satır
 
 Aşağıdaki gösterildiği nasıl Objective-C bildirimi `UITextField` Xamarin.iOS sözleşmede tanımlanmış olması:
 
-```csharp
+```objc
 @interface UITextField : UIControl <UITextInput> {
 
 }
@@ -57,10 +53,8 @@ interface UITextField : UITextInput {
 
 Diğer öznitelikleri arabirimine uygulama yanı sıra BaseType öznitelik yapılandırma birçok kod oluşturma yönlerini kontrol edebilirsiniz.
 
- <a name="Generating_Events" />
 
-
-## <a name="generating-events"></a>Olaylar oluşturma
+### <a name="generating-events"></a>Olaylar oluşturma
 
 Bir Xamarin.iOS ve Xamarin.Mac API tasarım biz Objective-C temsilci sınıfları C# olayları ve geri aramalar eşlemenizi özelliğidir. Kullanıcılar, bir örnek bazında gibi özellikleri atayarak Objective-C programlama düzeni benimsemeye isteyip istemediklerini seçebilir **temsilci** çeşitli yöntemleri uygulayan bir sınıf örneği, Objective-C çalışma zamanı çağrısı, veya seçerek C#-stil olayları ve özellikleri.
 
@@ -162,10 +156,8 @@ Yukarıdaki oluşturacak bir `UIScrollViewCondition` temsilci imzayla, yukarıda
 
 Ek olarak `DefaultValue` özniteliğini de kullanabilirsiniz `DefaultValueFromArgument` çağrısında belirtilen parametre değerini döndürmek için oluşturucunun yönlendirir veya `NoDefaultValue` varsayılan değer yoktur oluşturucunun bildirir parametresi.
 
- <a name="BaseTypeAttribute" />
 
-
-## <a name="basetypeattribute"></a>BaseTypeAttribute
+### <a name="basetypeattribute"></a>BaseTypeAttribute
 
 Sözdizimi:
 
@@ -182,7 +174,7 @@ public class BaseTypeAttribute : Attribute {
 }
 ```
 
-### <a name="basetypename"></a>BaseType.Name
+#### <a name="basetypename"></a>BaseType.Name
 
 Kullandığınız `Name` Objective-C dünyasında bu tür bağlanacağı adı denetleme özelliği. Bu genellikle C# türü, .NET Framework tasarım yönergeleri ile uyumlu olan, ancak, bu kuralı izlemez Objective-C adlarında eşleşen bir ad vermek için kullanılır.
 
@@ -196,8 +188,7 @@ interface NSUrlConnection {
 
 Belirtilen ad kullanılan değeri olarak oluşturulan için belirtilen `[Register]` bağlama özniteliği. Varsa `Name` belirtilmezse, tür kısa ad değeri olarak kullanılan `Register` oluşturulan çıktı özniteliği.
 
-
-### <a name="basetypeevents-and-basetypedelegates"></a>BaseType.Events ve BaseType.Delegates
+#### <a name="basetypeevents-and-basetypedelegates"></a>BaseType.Events ve BaseType.Delegates
 
 Bu özellikleri C# nesil sürücü için kullanılan-oluşturulan sınıflar olayları stili. Bunlar, kendi Objective-C temsilci sınıfı ile belirli bir sınıfın bağlamak için kullanılır. Çoğu durumda olduğu bir sınıf bildirimleri ve olayları göndermek için bir temsilci sınıfı kullanır karşılaşır. Örneğin bir `BarcodeScanner` bir yardımcı olması gereken `BardodeScannerDelegate` sınıfı. `BarcodeScanner` Sınıfı örneği atamanız gerekir "temsilci" özelliği genellikle sahip `BarcodeScannerDelegate` bu works while için kullanıcılarınız için C# kullanıma sunmak isteyebilirsiniz-stil olay arabirimini gibi ve kullandığınız durumlarda `Events` ve `Delegates` özelliklerini `BaseType` özniteliği.
 
@@ -216,10 +207,8 @@ public interface UIAccelerometerDelegate {
 }
 ```
 
- <a name="BaseType.KeepRefUntil" />
 
-
-### <a name="basetypekeeprefuntil"></a>BaseType.KeepRefUntil
+#### <a name="basetypekeeprefuntil"></a>BaseType.KeepRefUntil
 
 Bu sınıfın yeni örnekleri oluşturulduğunda bu öznitelik uygularsanız, söz konusu nesne örneğini geçici bir çözüm tarafından başvurulan kadar tutulacak `KeepRefUntil` çağrılmış. Bu, kodunuzu kullanılacak bir nesneye başvuru tutmak için kullanıcı istemediğinizde, Apı'lerinizi kullanılabilirliğini artırmak kullanışlıdır. Bu özelliğin değeri bir yöntem adıdır `Delegate` sınıfı bu olayları ile birlikte kullanmalısınız ve `Delegates` özellikleri de.
 
@@ -242,25 +231,20 @@ public interface UIActionSheetDelegate {
 }
 ```
 
- <a name="DisableDefaultCtorAttribute" />
 
-
-## <a name="disabledefaultctorattribute"></a>DisableDefaultCtorAttribute
+### <a name="disabledefaultctorattribute"></a>DisableDefaultCtorAttribute
 
 Bu öznitelik için arabirim tanımı uygulandığında varsayılan oluşturucu oluşturan Oluşturucu engeller.
 
 Nesne sınıfında diğer oluşturucular biriyle başlatılması gerektiğinde bu özniteliğini kullanın.
 
- <a name="PrivateDefaultCtorAttribute" />
 
-
-## <a name="privatedefaultctorattribute"></a>PrivateDefaultCtorAttribute
+### <a name="privatedefaultctorattribute"></a>PrivateDefaultCtorAttribute
 
 Bu öznitelik için arabirim tanımı uygulandığında varsayılan oluşturucu özel olarak işaretleyecektir. Bu, hala nesne bu sınıfın dahili uzantısı dosyanızdan örneği, ancak yalnızca paylaşmıyor sınıfınız kullanıcılara erişilemez anlamına gelir.
 
-<a name="CategoryAttribute" />
 
-## <a name="categoryattribute"></a>CategoryAttribute
+### <a name="categoryattribute"></a>CategoryAttribute
 
 Bu öznitelik bir tür tanımında Objective-C kategorileri bağlamak için ve Objective-C işlevselliği kullanıma sunan şekilde yansıtmak için C# genişletme yöntemleri olarak kullanıma sunmak için kullanın.
 
@@ -268,7 +252,7 @@ Kategoriler yöntemleri ve özellikleri bir sınıfta kullanılabilir kümesini 
 
 Bir kategori hedefi-C: nasıl gibidir budur
 
-```csharp
+```objc
 @interface UIView (MyUIViewExtension)
 -(void) makeBackgroundRed;
 @end
@@ -335,9 +319,8 @@ interface FooObject {
 
 Biz Bul olduğunda bir uyarı (BI1117) yayımlayacak mı bir `[Static]` üye iç bir `[Category]` tanımı. Gerçekten sahip olmak istiyorsanız `[Static]` üyeleri içinde `[Category]` , sessiz uyarı kullanarak tanımları `[Category (allowStaticMembers: true)]` ya da dekorasyon üyelik veya `[Category]` arabirim tanımıyla `[Internal]`.
 
-<a name="StaticAttribute" />
 
-## <a name="staticattribute"></a>StaticAttribute
+### <a name="staticattribute"></a>StaticAttribute
 
 Bu öznitelik bir sınıfa uygulandığında, yalnızca bir statik sınıf, bir türünden türemez oluşturur `NSObject` böylece `[BaseType]` özniteliği göz ardı edilir. Statik sınıflar kullanıma sunmak istediğiniz C genel değişkenleri barındırmak için kullanılır.
 
@@ -358,11 +341,8 @@ public partial class CBAdvertisement  {
 }
 ```
 
-<a name="Model_Definitions" />
 
-# <a name="model-definitions"></a>Model tanımları
-
-###<a name="protocol-definitionsmodel"></a>Protokol Tanımları/Model
+## <a name="protocol-definitionsmodel"></a>Protokol Tanımları/Model
 
 Modelleri genellikle Protokolü uygulaması tarafından kullanılır.
 Çalışma zamanı yalnızca gerçekten üzerine yöntemleri Objective-C ile kaydeder, bunların farklı.
@@ -370,9 +350,8 @@ Aksi takdirde yöntemi kaydedilmez.
 
 Bu genel olduğunda anlamına gelir, bir alt kümesi ile işaretlenmiş bir sınıf `ModelAttribute`, temel yöntemi çağırmalıdır değil.   Bu metodu çağıran bir özel durum oluşturur, herhangi bir yöntem, geçersiz kılmak için bir alt üzerindeki tüm davranışı uygulamak beklenir.
 
-<a name="AbstractAttribute" />
 
-## <a name="abstractattribute"></a>AbstractAttribute
+### <a name="abstractattribute"></a>AbstractAttribute
 
 Varsayılan olarak, bir protokol parçası olan üyeleri zorunlu değildir. Bu öğesinin bir alt kümesi oluşturmak kullanıcılara `Model` yalnızca C# sınıfı türetme ve yalnızca bunlar çok önem verdiğiniz yöntemlerini geçersiz kılma nesne. Kullanıcı bu yöntemin bir uygulaması sağlar Objective-C sözleşme bazen gerektirir (olanlar ile işaretlenmiş @required Objective-C yönergesini). Bu durumda, bu yöntemleri bayrak `Abstract` özniteliği.
 
@@ -390,10 +369,9 @@ public interface UITableViewDataSource {
 }
 ```
 
- <a name="DefaultValueAttribute" />
+<a name="DefaultValueAttribute" />
 
-
-## <a name="defaultvalueattribute"></a>DefaultValueAttribute
+### <a name="defaultvalueattribute"></a>DefaultValueAttribute
 
 Kullanıcı bu belirli yöntemi, Model nesnesi için bir yöntem sağlamıyorsa modeli yöntemi tarafından döndürülecek varsayılan bir değer belirtir
 
@@ -424,12 +402,11 @@ var camera = new Camera ();
 camera.ShouldUploadToServer = (camera, action) => return SomeDecision ();
 ```
 
-
-
 Ayrıca bkz: [NoDefaultValueAttribute](#NoDefaultValueAttribute), [DefaultValueFromArgumentAttribute](#DefaultValueFromArgumentAttribute).
 
+<a name="DefaultValueFromArgumentAttribute" />
 
-## <a name="defaultvaluefromargumentattribute"></a>DefaultValueFromArgumentAttribute
+### <a name="defaultvaluefromargumentattribute"></a>DefaultValueFromArgumentAttribute
 
 Sözdizimi:
 
@@ -455,11 +432,9 @@ public interface NSAnimationDelegate {
 
 Yukarıdaki örnek IF kullanıcısı `NSAnimation` Sınıf C# olaylar/özelliklerinden herhangi birini kullanmak seçtiğiniz ve ayarlanmadı `NSAnimation.ComputeAnimationCurve` yöntemi veya lambda için dönüş değerini ilerleme parametrede aktarılan değer olacaktır.
 
-
-
 Ayrıca bkz: [NoDefaultValueAttribute](#NoDefaultValueAttribute), [DefaultValueAttribute](#DefaultValueAttribute)
 
-## <a name="ignoredindelegateattribute"></a>IgnoredInDelegateAttribute
+### <a name="ignoredindelegateattribute"></a>IgnoredInDelegateAttribute
 
 Bazen bir olay kullanıma veya bu özniteliği eklemek ile donatılmış herhangi bir yöntemini oluşturulmasını önlemek için oluşturucunun girmemesini şekilde özelliği bir Model sınıfı ana bilgisayar sınıfına temsilci mantıklıdır.
 
@@ -475,8 +450,7 @@ public interface UIImagePickerControllerDelegate {
 }
 ```
 
-
-## <a name="delegatenameattribute"></a>DelegateNameAttribute
+### <a name="delegatenameattribute"></a>DelegateNameAttribute
 
 Bu öznitelik modeli yöntemlerinde dönüş değerleri kullanmak için temsilci imza adını ayarlamak için kullanılır.
 
@@ -497,7 +471,7 @@ Yukarıdaki tanımıyla oluşturucunun aşağıdaki ortak bildirim üretir:
 public delegate float NSAnimationProgress (MonoMac.AppKit.NSAnimation animation, float progress);
 ```
 
-## <a name="delegateapinameattribute"></a>DelegateApiNameAttribute
+### <a name="delegateapinameattribute"></a>DelegateApiNameAttribute
 
 Bu öznitelik ana bilgisayar sınıfında oluşturulan özelliğinin adını değiştirmek için oluşturucunun izin vermek için kullanılır. Bazen FooDelegate sınıfı yönteminin adı, temsilci sınıfı için anlamlı ancak tek bir özellik olarak ana bilgisayar sınıfındaki görünür durumunda faydalı olur.
 
@@ -520,8 +494,7 @@ Yukarıdaki tanımıyla Oluşturucu ana sınıf aşağıdaki ortak bildiriminde 
 public Func<NSAnimation, float, float> ComputeAnimationCurve { get; set; }
 ```
 
-
-## <a name="eventargsattribute"></a>EventArgsAttribute
+### <a name="eventargsattribute"></a>EventArgsAttribute
 
 Birden fazla parametre alan olayları için (Objective-C kuralı bir temsilci sınıfta ilk parametre gönderen nesne örneğini olmasıdır) olması için oluşturulan EventArgs sınıf istediğiniz adı sağlamanız gerekir. Bu gerçekleştirilir `EventArgs` yöntemi bildiriminde özniteliği, `Model` sınıfı.
 
@@ -552,9 +525,8 @@ Ardından, aşağıdaki UIImagePickerController sınıfında sunar:
 public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImage { add; remove; }
 ```
 
-<a name="EventNameAttribute" />
 
-## <a name="eventnameattribute"></a>EventNameAttribute
+### <a name="eventnameattribute"></a>EventNameAttribute
 
 Bu öznitelik, bir olay veya sınıfında oluşturulan özellik adını değiştirmek için oluşturucunun izin vermek için kullanılır. Bazen zaman yararlıdır adını `Model` sınıf yöntemi anlamlı model sınıfı için ancak bir olay veya özellik kaynak sınıfında tek görünür.
 
@@ -572,19 +544,14 @@ var webView = new UIWebView (...);
 webView.LoadFinished += delegate { Console.WriteLine ("done!"); }
 ```
 
- <a name="ModelAttribute" />
 
-
-## <a name="modelattribute"></a>ModelAttribute
+### <a name="modelattribute"></a>ModelAttribute
 
 Uyguladığınızda `Model` , sözleşme API, çalışma zamanı tür tanımında özniteliğine kullanıcı sınıfında bir yöntem geçersiz kıldı, çağrılarını sınıftaki yöntemlerin yalnızca belirir özel kod üretir. Bu öznitelik, genellikle bir Objective-C temsilci sınıfı sarmalama tüm API'leri için uygulanır.
 
- <a name="NoDefaultValueAttribute" />
+<a name="NoDefaultValueAttribute" />
 
-
-## <a name="nodefaultvalueattribute"></a>NoDefaultValueAttribute
-
-
+### <a name="nodefaultvalueattribute"></a>NoDefaultValueAttribute
 
 Model üzerinde yöntemi varsayılan bir dönüş değeri sağlamaz belirtir.
 
@@ -601,8 +568,7 @@ interface CameraDelegate {
 
 Ayrıca bkz: [DefaultValueAttribute](#DefaultValueAttribute) ve [DefaultValueAttribute](#DefaultValueAttribute).
 
-
-# <a name="protocols"></a>protokolleri
+## <a name="protocols"></a>protokolleri
 
 Objective-C Protokolü kavram gerçekten C# ' ta yok. C# arabirimlerine protokolleri benzer ancak bir protokol bildirilen özellikler ve yöntemler tüm bu uyarlar sınıfı tarafından uygulanmalı, bunların farklı. Bunun yerine bazı yöntemleri ve özellikleri isteğe bağlıdır.
 
@@ -680,7 +646,7 @@ interface MyTool {
 
 Yukarıdaki çünkü gereklidir bağlama süresi, `IMyProtocol` mevcut değil, diğer bir deyişle neden boş bir arabirim sağlamanız gerekir.
 
-## <a name="adopting-protocol-generated-interfaces"></a>Oluşturulan arabirimleri Protokolü uygulamasını kullanma
+### <a name="adopting-protocol-generated-interfaces"></a>Protokol oluşturulan arabirimleri uygulamasını kullanma
 
 Her şöyle protokoller için oluşturulan arabirimleri birini uygulayın:
 
@@ -705,7 +671,7 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 
 Arabirim örtük veya açık olarak uygulanırsa önemli değildir.
 
-## <a name="protocol-inlining"></a>Satır içi kullanım Protokolü
+### <a name="protocol-inlining"></a>Satır içi kullanım Protokolü
 
 Bir protokol benimsenmesi olarak bildirilen mevcut Objective-C türleri bağlamak olsa da, satır içi Protokolü doğrudan isteyeceksiniz. Bunu yapmak için yalnızca, protokol olarak olmadan herhangi bir arabirim bildirin `[BaseType]` özniteliği ve arabiriminiz için temel arabirimleri listesine protokolünde listesi.
 
@@ -724,17 +690,13 @@ interface Robot : SpeakProtocol {
 }
 ```
 
- <a name="Member_Definitions" />
 
-
-# <a name="member-definitions"></a>Üye tanımları
+## <a name="member-definitions"></a>Üye tanımları
 
 Bu bölümdeki öznitelikleri bir türde ayrı ayrı üyelerine uygulanır: özellik ve yöntem bildirimleri.
 
- <a name="AlignAttribute" />
 
-
-## <a name="alignattribute"></a>AlignAttribute
+### <a name="alignattribute"></a>AlignAttribute
 
 Özellik dönüş türleri hizalama değeri belirtmek için kullanılır. Belirli sınırlarında hizalanmalıdır adresleri işaretçiler belirli özellikler ele (Bu gerçekleşir örneğin bazı Xamarin.iOS içinde `GLKBaseEffect` 16 bayt olmalıdır özellikleri hizalı). Alıcı tasarlamanız için bu özelliği kullanın ve hizalama değeri kullanın. Bu genellikle ile kullanılan `OpenTK.Vector4` ve `OpenTK.Matrix4` Objective-C API'leri ile tümleştirildiğinde türleri.
 
@@ -747,10 +709,8 @@ public interface GLKBaseEffect {
 }
 ```
 
- <a name="AppearanceAttribute" />
 
-
-## <a name="appearanceattribute"></a>AppearanceAttribute
+### <a name="appearanceattribute"></a>AppearanceAttribute
 
 `Appearance` Özniteliği için iOS5 sınırlı Görünüm Yöneticisi'ni nereye sunulmuştur.
 
@@ -785,8 +745,7 @@ public partial class UIToolbar {
 }
 ```
 
-
-## <a name="autoreleaseattribute-xamarinios-54"></a>AutoReleaseAttribute (Xamarin.iOS 5.4)
+### <a name="autoreleaseattribute-xamarinios-54"></a>AutoReleaseAttribute (Xamarin.iOS 5.4)
 
 Kullanım `AutoReleaseAttribute` yöntemleri ve özellikleri yöntemine yöntem çağrısını sarmalamak için bir `NSAutoReleasePool`.
 
@@ -794,8 +753,7 @@ Objective-C dönüş varsayılan eklenen değerleri bazı yöntemler vardır `NS
 
 Bu öznitelik örneğin ağır özellikleri uygulanır (örneğin `UIImage.FromFile`) varsayılan eklenen nesneleri döndürür `NSAutoReleasePool`. İş parçacığı denetimi için ana döngü döndürmedi sürece bu öznitelik olmadan, görüntüleri korunması. Her zaman etkin arka plan yükleyici çeşit UF, iş parçacığı oldu ve iş için bekleyen, görüntüleri hiçbir zaman yayımlanması.
 
-
-## <a name="forcedtypeattribute"></a>ForcedTypeAttribute
+### <a name="forcedtypeattribute"></a>ForcedTypeAttribute
 
 `ForcedTypeAttribute` Döndürülen yönetilmeyen nesne bağlama tanımı'nda açıklanan türüyle eşleşmiyor olsa bile bir yönetilen türü oluşturulmasını zorlamak için kullanılıyor.
 
@@ -821,9 +779,7 @@ interface NSUrlSession {
 
 `ForcedTypeAttribute` Yalnızca geçerli `parameters`, `properties` ve `return value`.
 
-
-
-## <a name="bindasattribute"></a>BindAsAttribute
+### <a name="bindasattribute"></a>BindAsAttribute
 
 `BindAsAttribute` Bağlama verir `NSNumber`, `NSValue` ve `NSString`(numaralandırmaları) daha doğru C# türleri içine. Öznitelik daha iyi ve daha doğru oluşturmak için kullanılan yerel API üzerinden .NET API.
 
@@ -852,7 +808,7 @@ Geçerli desteklenen kapsülleme türleri şunlardır:
 * `NSNumber`
 * `NSString`
 
-### <a name="nsvalue"></a>NSValue
+#### <a name="nsvalue"></a>NSValue
 
 / Dosyalarına saklanmasını desteklenen aşağıdaki C# veri türleri `NSValue`:
 
@@ -874,7 +830,7 @@ Geçerli desteklenen kapsülleme türleri şunlardır:
 * CMTimeMapping
 * CATransform3D
 
-### <a name="nsnumber"></a>NSNumber
+#### <a name="nsnumber"></a>NSNumber
 
 / Dosyalarına saklanmasını desteklenen aşağıdaki C# veri türleri `NSNumber`:
 
@@ -894,7 +850,7 @@ Geçerli desteklenen kapsülleme türleri şunlardır:
 * nuint
 * Numaralandırmalar
 
-### <a name="nsstring"></a>NSString
+#### <a name="nsstring"></a>NSString
 
 `[BindAs]` conjuntion ile çalışır [numaralandırmaları NSString sabiti tarafından yedeklenen](#enum-attributes) daha iyi .NET API, örneğin oluşturabilmesi için:
 
@@ -913,7 +869,7 @@ CAScroll SupportedScrollMode { get; set; }
 
 Biz işleyecek `enum`  <->  `NSString` yalnızca sağlanan enum için yazarsanız dönüştürme `[BindAs]` olan [NSString sabiti tarafından yedeklenen](#enum-attributes).
 
-### <a name="arrays"></a>Diziler
+#### <a name="arrays"></a>Diziler
 
 `[BindAs]` Ayrıca diziler destekler desteklenen türlerden her birini bir örnek olarak aşağıdaki API tanımı sahip olabilir:
 
@@ -932,8 +888,7 @@ CAScroll? [] GetScrollModes (CGRect [] rects) { ... }
 
 `rects` Parametresi kapsüllenmiş içine bir `NSArray` içeren bir `NSValue` her `CGRect` ve bir dizi iade alırsınız `CAScroll?` içinde oluşturulan döndürülen değerleri kullanılarak `NSArray` içeren `NSStrings`.
 
-
-## <a name="bindattribute"></a>BindAttribute
+### <a name="bindattribute"></a>BindAttribute
 
 `Bind` Özniteliğine sahip iki kullanan bir yöntem veya özellik bildirimi ve tek tek bir alıcı veya özellik ayarlayıcı uygulandığında başka bir uygulandığında bir.
 
@@ -963,10 +918,8 @@ bool Active { get; set; }
 bool Visible { [Bind ("isVisible")] get; set; }
 ```
 
- <a name="AsyncAttribute" />
 
-
-## <a name="asyncattribute"></a>AsyncAttribute
+### <a name="asyncattribute"></a>AsyncAttribute
 
 Yalnızca Xamarin.iOS 6.3 kullanılabilir ve daha yeni.
 
@@ -1018,26 +971,19 @@ Task<string> UploadAsync (string file);
 
 Ve hatası, sonuçta elde edilen görev ayarlamak özel durum olacak bir `NSErrorException` elde edilen sarmalar `NSError`.
 
-### <a name="asyncattributeresulttype"></a>AsyncAttribute.ResultType
-
-
+#### <a name="asyncattributeresulttype"></a>AsyncAttribute.ResultType
 
 Döndürmek için değeri belirtmek için bu özelliği kullanmak `Task` nesnesi.   Bu parametre mevcut bir türü alır, bu nedenle, çekirdek API tanımlarını birinde tanımlanacak gerekir.
 
-
-### <a name="asyncattributeresulttypename"></a>AsyncAttribute.ResultTypeName
+#### <a name="asyncattributeresulttypename"></a>AsyncAttribute.ResultTypeName
 
 Döndürmek için değeri belirtmek için bu özelliği kullanmak `Task` nesnesi.   Bu parametre, istenen tür adını alır, bir dizi özellik, bir geri çağırma alan her bir parametreye üreteci oluşturur.
 
-
-### <a name="asyncattributemethodname"></a>AsyncAttribute.MethodName
-
-
+#### <a name="asyncattributemethodname"></a>AsyncAttribute.MethodName
 
 Oluşturulan zaman uyumsuz yöntemleri adını özelleştirmek için bu özelliği kullanın.   Varsayılan yöntemin adını kullanın ve "Zaman uyumsuz" metin eklemek için bu varsayılanı değiştirmek için bunu kullanabilirsiniz.
 
-
-## <a name="disablezerocopyattribute"></a>DisableZeroCopyAttribute
+### <a name="disablezerocopyattribute"></a>DisableZeroCopyAttribute
 
 Bu öznitelik dizesi parametreleri veya dize özellikleri için uygulanır ve bu parametre için hazırlama sıfır kopyalama dize kullanmamayı Kod Oluşturucu bildirir ve bunun yerine yeni bir NSString örnek C# dizeden oluşturun.
 Sıfır kopyalama dize kullanarak sıralama kullanmak için oluşturucunun istemeniz durumunda bu öznitelik yalnızca dizeleri gerekli `--zero-copy` komut satırı seçeneği veya derleme düzeyi özniteliğini `ZeroCopyStringsAttribute`.
@@ -1051,10 +997,8 @@ Aşağıdaki gibi iki özellikleri hedefi-C: gösterir
 @property(nonatomic,assign) NSString *name2;
 ```
 
- <a name="DisposeAttribute" />
 
-
-## <a name="disposeattribute"></a>DisposeAttribute
+### <a name="disposeattribute"></a>DisposeAttribute
 
 Uyguladığınızda `DisposeAttribute` eklenecek bir kod parçacığı sağlayan bir sınıfa `Dispose()` sınıfının yöntem uygulaması.
 
@@ -1069,10 +1013,8 @@ interface DatabaseConnection {
 }
 ```
 
- <a name="ExportAttribute" />
 
-
-## <a name="exportattribute"></a>ExportAttribute
+### <a name="exportattribute"></a>ExportAttribute
 
 `Export` Özniteliği bir yöntemi veya özelliği Objective-C çalışma zamanı için açığa çıkarılması bayrak için kullanılır. Bu öznitelik, bağlama aracı ve gerçek Xamarin.iOS ve Xamarin.Mac çalışma zamanları arasında paylaşılır. Özellikler, alıcı hem de ayarlayıcı dışarı base bildirime dayanarak oluşturulan için yöntemleri için parametre üretilen kod için verbatim geçirilir (bölümüne bakarak `BindAttribute` Bağlama aracı davranışın nasıl değiştirileceği hakkında bilgi için).
 
@@ -1095,15 +1037,11 @@ public class ExportAttribute : Attribute {
 
 [Seçici](http://developer.apple.com/library/ios/#documentation/cocoa/conceptual/objectivec/Chapters/ocSelectors.html) ve yöntem veya bağlı özellik temel Objective-C adını temsil eder.
 
- <a name="ExportAttribute.ArgumentSemantic" />
+
+#### <a name="exportattributeargumentsemantic"></a>ExportAttribute.ArgumentSemantic
 
 
-### <a name="exportattributeargumentsemantic"></a>ExportAttribute.ArgumentSemantic
-
- <a name="FieldAttribute" />
-
-
-## <a name="fieldattribute"></a>FieldAttribute
+### <a name="fieldattribute"></a>FieldAttribute
 
 Bu öznitelik, bir C genel değişkeni isteğe bağlı olarak yüklenir ve C# kodu kullanıma bir alan olarak kullanıma sunmak için kullanılır. Genellikle bu C ya da Objective-C tanımlanır ve bazı API'leri kullanılan ya da belirteçleri olabilir veya değerleri donuk olarak kullanılmalıdır sabitleri değerlerini almak için gerekli-kullanıcı kodu tarafından.
 
@@ -1122,7 +1060,19 @@ public class FieldAttribute : Attribute {
 
 Oluşturulan her zaman statik özelliklerdir.
 
-Alan özniteliği ile işaretlenmiş özellikleri türde olması `NSString`, `NSArray`, `nint`, `double`, `nfloat` veya `System.IntPtr`.
+Alan özniteliği ile işaretlenmiş özellikler aşağıdaki türde olabilir:
+
+* `NSString`
+* `NSArray`
+* `nint` / `int` / `long`
+* `nuint` / `uint` / `ulong`
+* `nfloat` / `float`
+* `double`
+* `CGSize`
+* `System.IntPtr`
+* Numaralandırmalar
+
+Ayarlayıcılar desteklenmemektedir [numaralandırmaları NSString sabitler tarafından yedeklenen](#enum-attributes), ancak bunlar el ile gerekirse bağlı olabilir.
 
 Örnek:
 
@@ -1134,14 +1084,11 @@ interface CameraEffects {
 }
 ```
 
-
-
-
-## <a name="internalattribute"></a>InternalAttribute
+### <a name="internalattribute"></a>InternalAttribute
 
 `Internal` Yöntemleri ya da özellikleri özniteliği uygulanabilir ve "dahili" kod oluşturulan derlemede koduna yalnızca erişilebilir hale getirme C# anahtar sözcüğüyle oluşturulan kod işaretleme etkisi vardır. Bu, genellikle çok düşük düzey API'leri gizlemek veya üzerine veya Oluşturucu tarafından desteklenmeyen API'ları için artırmak istediğiniz uygun olmayan bir ortak API sağlar ve bazı elle kodlama gerektiren için kullanılır.
 
-Bağlama tasarlama, genellikle yöntemi veya özelliği bu özniteliği kullanılarak Gizle ve yöntemi veya özelliği için farklı bir ad sağlayın ve ardından, C# tamamlayıcı destek dosya üzerinde kesin türü belirtilmiş bir sarmalayıcı eklediğiniz zaman, arka plandaki gösterir işlevselliği.
+Bağlama tasarlama, genellikle yöntemi veya özelliği bu özniteliği kullanılarak Gizle ve yöntemi veya özelliği için farklı bir ad sağlayın ve ardından, C# tamamlayıcı destek dosya üzerinde kesin türü belirtilmiş kullanıma sunan bir sarmalayıcı eklediğiniz zaman temel işlevselliği.
 
 Örneğin:
 
@@ -1168,36 +1115,28 @@ public NSObject this [NSObject idx] {
 }
 ```
 
-
-## <a name="isthreadstaticattribute"></a>IsThreadStaticAttribute
+### <a name="isthreadstaticattribute"></a>IsThreadStaticAttribute
 
 Bu öznitelik ile .NET açıklama eklemek bir özellik için yedekleme alanı bayrakları `[ThreadStatic]` özniteliği. Bu alan bir iş parçacığı statik değişkeni ise yararlı olur.
 
- <a name="MarshalNativeExceptions_(Xamarin.iOS_6.0.6)" />
-
-
-## <a name="marshalnativeexceptions-xamarinios-606"></a>MarshalNativeExceptions (Xamarin.iOS 6.0.6)
+### <a name="marshalnativeexceptions-xamarinios-606"></a>MarshalNativeExceptions (Xamarin.iOS 6.0.6)
 
 Bu öznitelik, bir yöntem destek yerel (ObjectiveC) özel durumları hale getirir.
 Çağırmak yerine `objc_msgSend` çağırma ObjectiveC özel durumları yakalar ve bunları yönetilen özel durumlar sıralar özel bir trampoline aracılığıyla doğrudan geçer.
 
 Şu anda yalnızca birkaç `objc_msgSend` imzalar desteklenir (, eksik monotouch_ ile yerel bağlama bağlama kullanan bir uygulama başarısız olduğunda bir imza desteklenmiyor, bulacaksınız*_objc_msgSend* simgesi), ancak daha fazla olabilir isteğiyle eklendi.
 
- <a name="NewAttribute" />
 
-
-## <a name="newattribute"></a>NewAttribute
+### <a name="newattribute"></a>NewAttribute
 
 Bu öznitelik, yöntemlere ve özelliklere sahip "Yeni" anahtar sözcüğü bildirimi önünde oluşturmak Oluşturucu uygulanır.
 
 Taban sınıf içinde zaten var olan bir alt kümesi içinde aynı yöntemi veya özelliği adı eklendiğinde Derleyici uyarılarını önlemek amacıyla kullanılır.
 
- <a name="NotificationAttribute" />
 
+### <a name="notificationattribute"></a>NotificationAttribute
 
-## <a name="notificationattribute"></a>NotificationAttribute
-
-Bu öznitelik oluşturucu üretmek bildirimleri sınıfı kesin türü belirtilmiş bir yardımcı olması için alanlarına uygulayabilirsiniz.
+Bu öznitelik alanları kesin türü belirtilmiş yardımcıyı bildirimleri sınıf oluşturucu üretmek için uygulayabilirsiniz.
 
 Bu öznitelik yükü yok taşımak bildirimler için bağımsız değişkenler olmadan kullanılabilir veya belirleyebileceğiniz bir `System.Type` başvuran başka bir API tanımı arabiriminde genellikle "EventArgs" ile biten ada sahip. Oluşturucu arabirimi o alt sınıfların bir sınıfına dönüşecektir `EventArgs` ve orada listelenen tüm özellikler içerir. `[Export]` Özniteliği kullanılmalıdır `EventArgs` Objective-C sözlüğün değeri getirmek aramak için kullanılan anahtarın adını listelemek için sınıf.
 
@@ -1244,7 +1183,6 @@ Döndürülen değerle `ObserveDidStart` kolayca şöyle bildirimleri almayı du
 ```csharp
 token.Dispose ();
 ```
-
 
 Ya da çağırabilirsiniz [NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject//) ve belirtecin geçip. Bildiriminizin parametreleri içeriyorsa, bir yardımcı belirtmelisiniz `EventArgs` arabirimi şöyle:
 
@@ -1306,8 +1244,7 @@ interface MyClass {
 }
 ```
 
-
-## <a name="nullallowedattribute"></a>NullAllowedAttribute
+### <a name="nullallowedattribute"></a>NullAllowedAttribute
 
 Bu özelliğe uygulandığında özellik değeri null için atanacak izin verme olarak işaretler. Bu yalnızca başvuru türleri için geçerli olur.
 
@@ -1327,14 +1264,14 @@ UIImage IconFile { get; set; }
 void SetImage ([NullAllowed] UIImage image, State forState);
 ```
 
-## <a name="overrideattribute"></a>OverrideAttribute
+<a name="OverrideAttribute"/>
+
+### <a name="overrideattribute"></a>OverrideAttribute
 
 Bu öznitelik belirli bu yöntem için bağlama "geçersiz kılma" anahtar sözcüğü ile işaretlenmiş olduğundan bağlama Oluşturucu istemek için kullanın.
 
- <a name="PreSnippetAttribute" />
 
-
-## <a name="presnippetattribute"></a>PreSnippetAttribute
+### <a name="presnippetattribute"></a>PreSnippetAttribute
 
 Giriş parametreleri doğrulandıktan sonra ancak Objective-C kodunu çağrılarını önce eklenecek biraz kod eklemesine bu özniteliği kullanabilirsiniz
 
@@ -1346,10 +1283,8 @@ Giriş parametreleri doğrulandıktan sonra ancak Objective-C kodunu çağrılar
 void Demo ();
 ```
 
- <a name="PrologueSnippetAttribute" />
 
-
-## <a name="prologuesnippetattribute"></a>PrologueSnippetAttribute
+### <a name="prologuesnippetattribute"></a>PrologueSnippetAttribute
 
 Bu öznitelik parametrelerinden herhangi birini oluşturulan yönteminde doğrulandığı önce eklenecek biraz kod eklemesine kullanabilirsiniz.
 
@@ -1361,10 +1296,8 @@ Bu öznitelik parametrelerinden herhangi birini oluşturulan yönteminde doğrul
 void Demo ();
 ```
 
- <a name="PostGetAttribute" />
 
-
-## <a name="postgetattribute"></a>PostGetAttribute
+### <a name="postgetattribute"></a>PostGetAttribute
 
 Belirtilen özellik değeri buradan getirmek için bu sınıftan çağrılacak bağlama Oluşturucu bildirir.
 
@@ -1389,10 +1322,8 @@ public interface NSOperation {
 
 Bu durumda, `Dependencies` özelliği ekleyerek veya kaldırarak bağımlılıklardan sonra çağrılacak `NSOperation` gerçek gösteren bir grafik sahibiz sağlama nesne yüklenen nesneleri, hem bellek sızıntıları, hem de Bellek Bozulması engelliyor.
 
- <a name="PostSnippetAttribute" />
 
-
-## <a name="postsnippetattribute"></a>PostSnippetAttribute
+### <a name="postsnippetattribute"></a>PostSnippetAttribute
 
 Kod altta yatan Objective-C yöntemi çağrılmış sonra eklenecek bazı C# kaynak kodu eklemesine bu özniteliği kullanabilirsiniz
 
@@ -1404,17 +1335,13 @@ Kod altta yatan Objective-C yöntemi çağrılmış sonra eklenecek bazı C# kay
 void Demo ();
 ```
 
- <a name="ProxyAttribute" />
 
-
-## <a name="proxyattribute"></a>ProxyAttribute
+### <a name="proxyattribute"></a>ProxyAttribute
 
 Bu öznitelik, proxy nesneleri olduğu bayrak değer döndürmek için uygulanır. Kullanıcı bağlantılardan ayırt değil bazı Objective-C API'lerini dönüş proxy nesneleri. Nesne olarak işaretlemek için bu öznitelik etkisi olan bir `DirectBinding` nesnesi. Xamarin.Mac bir senaryo için gördüğünüz [bu hatayı tartışma](https://bugzilla.novell.com/show_bug.cgi?id=670844).
 
- <a name="RetainListAttribute" />
 
-
-## <a name="retainlistattribute"></a>RetainListAttribute
+### <a name="retainlistattribute"></a>RetainListAttribute
 
 Parametresi için yönetilen başvuru tutun veya parametresine bir iç başvurusunu kaldırmak için oluşturucunun bildirir. Bu, başvurulan nesneler tutmak için kullanılır.
 
@@ -1430,10 +1357,7 @@ public class RetainListAttribute: Attribute {
 
 Bir örnek için bkz [foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs) ve [NSNotificationCenter.cs](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs)
 
- <a name="ReleaseAttribute_(Xamarin.iOS_6.0)" />
-
-
-## <a name="releaseattribute-xamarinios-60"></a>ReleaseAttribute (Xamarin.iOS 6.0)
+### <a name="releaseattribute-xamarinios-60"></a>ReleaseAttribute (Xamarin.iOS 6.0)
 
 Bu dönüş türleri oluşturucunun çağırmalıdır belirtmek için uygulanabilir `Release` onu dönmeden önce nesne üzerinde. Bir yöntem (aksine, en yaygın senaryo bir autoreleased nesnesi) tutuldu nesne verdiğinde yalnızca bu gereklidir
 
@@ -1447,33 +1371,25 @@ NSObject GetAndRetainObject ();
 
 Ayrıca bu tür bir işleve Objective-C döndürme bağlı nesne korumanız gerekir Xamarin.iOS çalışma zamanı bilir böylece bu öznitelik için oluşturulan kodu, yayılır.
 
- <a name="SealedAttribute" />
 
-
-## <a name="sealedattribute"></a>SealedAttribute
+### <a name="sealedattribute"></a>SealedAttribute
 
 Oluşturulan yöntemi korumalı olarak işaretlemek için oluşturucunun bildirir. Bu özniteliği belirtilmezse, varsayılan sanal bir yöntem (sanal bir yöntem, soyut bir yöntem veya diğer öznitelikleri nasıl kullanıldığını bağlı olarak bir geçersiz kılma) oluşturmaktır.
 
- <a name="StaticAttribute" />
 
-
-## <a name="staticattribute"></a>StaticAttribute
+### <a name="staticattribute"></a>StaticAttribute
 
 Zaman `Static` özniteliği uygulanan bir yöntemi veya özelliği statik yöntemi veya özelliği bu oluşturur. Bu özniteliği belirtilmezse, bir örnek yöntemi veya özelliği üreteci oluşturur.
 
- <a name="TransientAttribute" />
 
-
-## <a name="transientattribute"></a>TransientAttribute
+### <a name="transientattribute"></a>TransientAttribute
 
 Bu öznitelik değerleri başka bir deyişle, geçici, bayrak özelliklerine geçici olarak iOS tarafından oluşturulur ancak değil uzun ömürlü nesneleri kullanın. Bu öznitelik bir özelliğe uygulandığında oluşturucunun yönetilen sınıf nesnesine başvuru korumaz anlamına gelir. Bu özellik için bir yedekleme alanını oluşturmaz.
 
- <a name="WrapAttribute" />
 
+### <a name="wrapattribute"></a>WrapAttribute
 
-## <a name="wrapattribute"></a>WrapAttribute
-
-Xamarin.iOS/Xamarin.Mac bağlamaları tasarımında `Wrap` özniteliği, türü kesin belirlenmiş bir nesneyle zayıf yazılmış bir nesneyi kaydırmak için kullanılır. Bu, genellikle türünden olduğu bildirilir çoğunlukla Objective-C "temsilci" nesneleri ile oyuna gelir `id` veya `NSObject`. Xamarin.iOS ve Xamarin.Mac tarafından kullanılan bu temsilciler veya veri kaynağı türü olarak kullanıma sunmak için kuraldır `NSObject` ve kuralı "Weak" + yararlanılmasını ad ile adlandırılır. Objective-C "kimliği temsilci" özelliğinden olarak gösterilmesine bir `NSObject WeakDelegate { get; set; }` API sözleşme dosyası bir özellik.
+Xamarin.iOS/Xamarin.Mac bağlamaları tasarımında `Wrap` özniteliği, türü kesin belirlenmiş bir nesne zayıf yazılmış bir nesneyle kaydırmak için kullanılır. Bu, genellikle türünden olduğu bildirilir çoğunlukla Objective-C "temsilci" nesneleri ile oyuna gelir `id` veya `NSObject`. Xamarin.iOS ve Xamarin.Mac tarafından kullanılan bu temsilciler veya veri kaynağı türü olarak kullanıma sunmak için kuraldır `NSObject` ve kuralı "Weak" + yararlanılmasını ad ile adlandırılır. Objective-C "kimliği temsilci" özelliğinden olarak gösterilmesine bir `NSObject WeakDelegate { get; set; }` API sözleşme dosyası bir özellik.
 
 Ancak biz güçlü tür yüzey ve uygulamak için genellikle bu temsilciye atanmış değer güçlü bir tür `Wrap` özniteliği, yani kullanıcılar bazı ince denetim ihtiyacınız varsa veya alt düzey tric çözümlemelere gerekirse zayıf türleri kullanmayı da seçebilirsiniz görevleri veya kesin türü belirtilmiş özelliği çalışmalarının çoğu için kullanabilirsiniz.
 
@@ -1511,7 +1427,7 @@ var demo = new Demo ();
 demo.WeakDelegate = new SomeObject ();
 ```
 
-Ve bu olduğu kullanıcı, kesin türü belirtilmiş sürümünü kullanmak duyuru kullanıcı C# ' ın tür sistemi avantajlarından yararlanır ve kendi hedefi bildirmek için override anahtar sözcüğünü kullanarak ve kendisi için el ile sahip olup olmadığını nasıl dekorasyon yöntemiyle `Export`, o w yaptığımız beri Ağ kullanıcı bağlamasında:
+Ve bu olduğu kullanıcı, kesin türü belirtilmiş sürümünü kullanmak duyuru kullanıcı C# ' ın tür sistemi avantajlarından yararlanır ve kendi hedefi bildirmek için override anahtar sözcüğünü kullanarak ve kendisi için el ile sahip olup olmadığını nasıl dekorasyon yöntemiyle `Export`, yaptığımız beri kullanıcı için bağlama çalışır:
 
 ```csharp
 // This is the strong case,
@@ -1519,12 +1435,10 @@ class MyDelegate : DemoDelegate {
    override void Demo DoDemo () {}
 }
 
-
 var strongDemo = new Demo ();
 demo.Delegate = new MyDelegate ();
 ```
 
- <a name="Parameter_Attributes" />
 
 Başka bir kullanımını `Wrap` özniteliktir yöntemleri kesin türü belirtilmiş sürümünü desteklemek için.   Örneğin:
 
@@ -1552,14 +1466,13 @@ interface FooExplorer {
 }
 ```
 
-# <a name="parameter-attributes"></a>Parametre Öznitelikleri
+## <a name="parameter-attributes"></a>Parametre öznitelikleri
 
 Bu bölümde bir yöntemin tanımı parametrelerinde uygulayabileceğiniz öznitelikleri açıklanmaktadır yanı sıra `NullAttribute` bir bütün olarak bir özellik için geçerlidir.
 
+<a name="BlockCallback" />
 
-## <a name="blockcallback"></a>BlockCallback
-
-
+### <a name="blockcallback"></a>BlockCallback
 
 Bu öznitelik parametre türleri bağlayıcı bildirim söz konusu parametre çağırma Objective-C bloğuyla uyan ve bu şekilde sıralama C# temsilci bildirimlerden uygulanır.
 
@@ -1571,10 +1484,9 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 
 Ayrıca bkz: [CCallback](#CCallback).
 
+<a name="CCallback" />
 
-## <a name="ccallback"></a>CCallback
-
-
+### <a name="ccallback"></a>CCallback
 
 Bu öznitelik parametre türleri bağlayıcı bildirim söz konusu parametre C ABI işlevi işaretçisi çağırma kuralı için uyumlu ve bu şekilde sıralama C# temsilci bildirimlerden uygulanır.
 
@@ -1584,10 +1496,7 @@ Bu genellikle şu şekilde hedefi-C: tanımlanan geri aramalar için kullanılı
 
 Ayrıca bkz: [BlockCallback](#BlockCallback).
 
-
-## <a name="params"></a>Params
-
-
+### <a name="params"></a>Params
 
 Kullanabileceğiniz `[Params]` tanımı'ndaki "params" ekleme Oluşturucu için bir yöntem tanımını son dizi parametresinin özniteliği.   Bu bağlama için isteğe bağlı parametreler kolayca olanak sağlar.
 
@@ -1605,7 +1514,7 @@ Bu öğeleri geçirme için yalnızca bir dizi oluşturmak kullanıcıların ger
 
 <a name="plainstring" />
 
-## <a name="plainstring"></a>PlainString
+### <a name="plainstring"></a>PlainString
 
 Kullanabileceğiniz `[PlainString]` parametre olarak geçirme yerine bir C dize olarak bir dizeyi geçirmek için bağlama oluşturucunun istemek üzere dizesi parametreleri önünde öznitelik bir `NSString`.
 
@@ -1629,10 +1538,8 @@ void SetText (string theText);
 void LogMessage ([PlainString] string theText);
 ```
 
- <a name="RetainAttribute" />
 
-
-## <a name="retainattribute"></a>RetainAttribute
+### <a name="retainattribute"></a>RetainAttribute
 
 Belirtilen parametre bir başvuru tutmak için oluşturucunun bildirir. Oluşturucunun Bu alan için yedekleme deposu sağlayacak veya bir ad belirtebilirsiniz ( `WrapName`) değerinde depolamak için. Bu, Objective-C için parametre olarak geçirilir ve Objective-C, bu nesnenin kopyasını yalnızca devam edilecek bildiğinizde yönetilen bir nesne için bir başvuru tutmak kullanışlıdır. Örneğin, bir API gibi `SetDisplay (SomeObject)` aynı anda bir nesne, SetDisplay yalnızca görüntüleyebilir olası olduğundan bu öznitelik kullanırsınız. Birden fazla nesne (örneğin, için yığın benzeri API) izlemek gerekiyorsa kullanacağınız `RetainList` özniteliği.
 
@@ -1646,10 +1553,8 @@ public class RetainAttribute {
 }
 ```
 
- <a name="RetainListAttribute" />
 
-
-## <a name="retainlistattribute"></a>RetainListAttribute
+### <a name="retainlistattribute"></a>RetainListAttribute
 
 Parametresi için yönetilen başvuru tutun veya parametresine bir iç başvurusunu kaldırmak için oluşturucunun bildirir. Bu, başvurulan nesneler tutmak için kullanılır.
 
@@ -1665,12 +1570,8 @@ public class RetainListAttribute: Attribute {
 
 Bir örnek için bkz [foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs) ve [NSNotificationCenter.cs](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs)
 
- <a name="TransientAttribute" />
 
-
-## <a name="transientattribute"></a>TransientAttribute
-
-
+### <a name="transientattribute"></a>TransientAttribute
 
 Bu öznitelik parametreleri uygulanır ve yalnızca Objective-C C# geçiş kullanılır.  Bu geçiş sırasında çeşitli Objective-C NSObjects parametreleri Yönetilen Nesne gösterimine sarılır.
 
@@ -1682,11 +1583,12 @@ Bu öznitelik geri Objective-C için üzerine yönteminden döndürülürken mü
 
 Kural basittir: çalışma zamanı yerel nesnesinden yeni bir yönetilen temsilini oluşturmak zorunda sonra işlevi sonunda yerel nesne için tut sayısı bırakılacak ve yönetilen nesne tanıtıcı özelliğinin temizlenir.   Bu yönetilen nesne başvuru bıraktıysanız, bu başvuruyu gereksiz olacaktır anlamına gelir (Bu yöntemleri çağırma throw bir özel durum).
 
-Zorlanmış dispose geçirilen nesnesi oluşturulamadı ya da bir bekleyen Yönetilen Nesne gösterimini zaten olduysa, gerçekleşmez. <a name="Global_Attributes" />
+Zorlanmış dispose geçirilen nesnesi oluşturulamadı ya da bir bekleyen Yönetilen Nesne gösterimini zaten olduysa, gerçekleşmez. 
 
-# <a name="property-attributes"></a>Özellik öznitelikleri
 
-## <a name="notimplementedattribute"></a>NotImplementedAttribute
+## <a name="property-attributes"></a>Özellik öznitelikleri
+
+### <a name="notimplementedattribute"></a>NotImplementedAttribute
 
 Bu öznitelik, burada bir alıcı özelliğiyle bir taban sınıf içinde sunulmuştur ve değişebilir bir alt ayarlayıcı tanıtır Objective-C deyim desteklemek için kullanılır.
 
@@ -1719,7 +1621,9 @@ interface MyMutableString {
 }
 ```
 
-# <a name="enum-attributes"></a>Enum öznitelikleri
+<a name="enum-attributes"/>
+
+## <a name="enum-attributes"></a>Enum öznitelikleri
 
 Eşleme `NSString` sabitleri enum değerleri için daha iyi .NET API oluşturmak için kolay bir yolu olmadığını. Bu:
 
@@ -1760,7 +1664,7 @@ var constant = CallApiReturningAnNSString ();
 CallApiWithEnum (NSRunLoopModeExtensions.GetValue (constant));
 ```
 
-## <a name="defaultenumvalueattribute"></a>DefaultEnumValueAttribute
+### <a name="defaultenumvalueattribute"></a>DefaultEnumValueAttribute
 
 İşaretleme **bir** bu öznitelikle enum değeri. Bu liste değeri bilinmiyor, döndürülen sabiti olur.
 
@@ -1773,7 +1677,7 @@ Call (x.GetConstant ()); // NSDefaultRunLoopMode will be used
 
 Enum değeri donatılırsa sonra bir `NotSupportedException` oluşturulur.
 
-## <a name="errordomainattribute"></a>ErrorDomainAttribute
+### <a name="errordomainattribute"></a>ErrorDomainAttribute
 
 Hata kodları enum değerleri olarak bağlanır. Genellikle bir hata etki alanı için bunları yoktur ve her zaman hangisinin geçerli Bul (veya bir bile var olup olmadığını) kolay değildir.
 
@@ -1793,8 +1697,7 @@ Hata etki alanı enum ile ilişkilendirmek için bu özniteliği kullanabilirsin
 
 Ardından genişletme yöntemi çağırabilirsiniz `GetDomain` etki alanı herhangi bir hata sabit alınamıyor.
 
-
-## <a name="fieldattribute"></a>FieldAttribute
+### <a name="fieldattribute"></a>FieldAttribute
 
 Bu aynı olduğundan `[Field]` türü içinde sabitleri için kullanılan öznitelik. Bu ayrıca numaralandırmaları içinde belirli bir sabit bir değerle eşleştirmek için kullanılabilir.
 
@@ -1809,14 +1712,12 @@ Call (NSRunLoopModeExtensions.GetValue (constant)); // will return 1000
 
 Öyle değilse `null` değerdir mevcut bir `ArgumentNullException` oluşturulur.
 
-# <a name="global-attributes"></a>Genel Öznitelikler
+## <a name="global-attributes"></a>Genel Öznitelikler
 
 Genel Öznitelikler, kullanma ya da uygulanır `[assembly:]` özniteliği değiştiricisi gibi `LinkWithAttribute` veya olabilir her yerden, gibi kullanılan `Lion` ve `Since` öznitelikleri.
 
- <a name="LinkWithAttribute" />
 
-
-## <a name="linkwithattribute"></a>LinkWithAttribute
+### <a name="linkwithattribute"></a>LinkWithAttribute
 
 Bu bağlama bayrakları gcc_flags el ile yapılandırmak için tüketici kitaplığının zorlamadan ilişkili bir kitaplığı yeniden kullanmak için gereken ve bir kitaplıkta geçirilen fazladan mtouch bağımsız değişkenleri belirtmek geliştiricilere sağlayan bir derleme düzeyi özniteliğidir.
 
@@ -1864,10 +1765,8 @@ Değil sağlamak mümkündür bir `libraryName`, bu durumda `LinkWith` özniteli
 [assembly: LinkWith (LinkerFlags = "-lsqlite3")]
  ```
 
- <a name="LinkWithAttribute_Constructors" />
 
-
-### <a name="linkwithattribute-constructors"></a>LinkWithAttribute oluşturucular
+#### <a name="linkwithattribute-constructors"></a>LinkWithAttribute oluşturucular
 
 Bu Oluşturucu ile bağlantı ve kitaplık destekleyen desteklenen hedefleri ve kitaplığı ile bağlantı için gerekli olan herhangi bir isteğe bağlı kitaplık bayrağı, sonuçta elde edilen derlemesini katıştırmak için kitaplık belirtmenizi sağlar.
 
@@ -1889,69 +1788,51 @@ Not LinkTarget bağımsız değişkeni Xamarin.iOS tarafından algılanır ve ay
 [assembly: LinkWith ("libDemo.a", LinkTarget.Thumb | LinkTarget.Simulator, SmartLink = true, ForceLoad = true, IsCxx = true);
 ```
 
- <a name="LinkWithAttribute.ForceLoad" />
 
-
-### <a name="linkwithattributeforceload"></a>LinkWithAttribute.ForceLoad
+#### <a name="linkwithattributeforceload"></a>LinkWithAttribute.ForceLoad
 
 `ForceLoad` Karar vermek için kullanılan özellik desteklemediğini `-force_load` bağlantı bayrağı yerel kitaplığı bağlama için kullanılır. Şimdilik, bu her zaman true olmalıdır.
 
- <a name="LinkWithAttribute.Frameworks" />
 
-
-### <a name="linkwithattributeframeworks"></a>LinkWithAttribute.Frameworks
+#### <a name="linkwithattributeframeworks"></a>LinkWithAttribute.Frameworks
 
 Bağlanan kitaplığı hiçbir çerçevesinde sabit bir gereksinim olup olmadığını (dışında `Foundation` ve `UIKit`), ayarlamanız gerekir `Frameworks` gerekli platformu çerçeveleri boşlukla ayrılmış bir listesini içeren bir dize özelliği. Örneğin, bir kitaplık bağlama varsa gerektiren `CoreGraphics` ve `CoreText`, ayarlamalısınız `Frameworks` özelliğine `"CoreGraphics CoreText"`.
 
- <a name="LinkWithAttribute.IsCxx" />
 
-
-### <a name="linkwithattributeiscxx"></a>LinkWithAttribute.IsCxx
+#### <a name="linkwithattributeiscxx"></a>LinkWithAttribute.IsCxx
 
 Bu özellik, sonuçta elde edilen yürütülebilir varsayılan yerine bir C Derleyici bir C++ derleyicisi ile derlenmesi gerekiyorsa true olarak ayarlayın. Bağlama kitaplığı C++ ile yazılmış varsa bunu kullanın.
 
- <a name="LinkWithAttribute.LibraryName" />
 
-
-### <a name="linkwithattributelibraryname"></a>LinkWithAttribute.LibraryName
+#### <a name="linkwithattributelibraryname"></a>LinkWithAttribute.LibraryName
 
 Paket için yönetilmeyen kitaplık adı. Bu "bir" uzantılı bir dosya ve (örneğin, ARM ve benzetici x86 için) birden çok platform için nesne kodu içerebilir.
 
 Xamarin.iOS önceki sürümlerinde kullanıma `LinkTarget` kitaplığınızın desteklenen platform belirlemek için özelliği, ancak bu artık otomatik olarak algılanır ve `LinkTarget` özelliği yoksayılır.
 
- <a name="LinkWithAttribute.LinkerFlags" />
 
-
-### <a name="linkwithattributelinkerflags"></a>LinkWithAttribute.LinkerFlags
+#### <a name="linkwithattributelinkerflags"></a>LinkWithAttribute.LinkerFlags
 
 `LinkerFlags` Dize bağlama belirtmelerini herhangi bir ek bağlayıcı bayrağı gereken yerel kitaplığı uygulamasına bağlanırken için bir yol sağlar.
 
 Örneğin, yerel kitaplığı libxml2 ve zlib gerektiriyorsa, ayarlamalısınız `LinkerFlags` dizesinden `"-lxml2 -lz"`.
 
- <a name="LinkWithAttribute.LinkTarget" />
 
-
-### <a name="linkwithattributelinktarget"></a>LinkWithAttribute.LinkTarget
+#### <a name="linkwithattributelinktarget"></a>LinkWithAttribute.LinkTarget
 
 Xamarin.iOS önceki sürümlerinde kullanıma `LinkTarget` kitaplığınızın desteklenen platform belirlemek için özelliği, ancak bu artık otomatik olarak algılanır ve `LinkTarget` özelliği yoksayılır.
 
-
-
-### <a name="linkwithattributeneedsgccexceptionhandling"></a>LinkWithAttribute.NeedsGccExceptionHandling
+#### <a name="linkwithattributeneedsgccexceptionhandling"></a>LinkWithAttribute.NeedsGccExceptionHandling
 
 Bu özellik, bağlama kitaplığı GCC özel durum işleme kitaplığı (gcc_eh) gerektiriyorsa true olarak ayarlayın
 
- <a name="LinkWithAttribute.SmartLink" />
 
-
-### <a name="linkwithattributesmartlink"></a>LinkWithAttribute.SmartLink
+#### <a name="linkwithattributesmartlink"></a>LinkWithAttribute.SmartLink
 
 `SmartLink` Özelliği, belirlemek Xamarin.iOS izin vermek için true olarak ayarlanmalıdır olup olmadığını `ForceLoad` veya gereklidir.
 
- <a name="LinkWithAttribute.WeakFrameworks" />
 
-
-### <a name="linkwithattributeweakframeworks"></a>LinkWithAttribute.WeakFrameworks
+#### <a name="linkwithattributeweakframeworks"></a>LinkWithAttribute.WeakFrameworks
 
 `WeakFrameworks` Özelliği aynı şekilde çalışır `Frameworks` hariç bağlantı zamanında, özellik `-weak_framework` belirticisi gcc için her listelenen çerçeveleri geçirilir.
 
@@ -1959,10 +1840,7 @@ Bu özellik, bağlama kitaplığı GCC özel durum işleme kitaplığı (gcc_eh)
 
 Zayıf bağlama için iyi bir aday olacaktır `Frameworks` ister hesapları `CoreBluetooth`, `CoreImage`, `GLKit`, `NewsstandKit` ve `Twitter` yalnızca iOS 5 kullanılabilir olduğu.
 
- <a name="SinceAttribute_(iOS)_and_LionAttribute_(MacOS_X)" />
-
-
-## <a name="sinceattribute-ios-and-lionattribute-macos-x"></a>SinceAttribute (iOS) ve LionAttribute (MacOS X)
+### <a name="sinceattribute-ios-and-lionattribute-macos"></a>SinceAttribute (iOS) ve LionAttribute (macOS)
 
 Kullandığınız `Since` özniteliği bayrağı API'ler belirli bir noktada zamanında eklenen sahip olarak. Öznitelik, yalnızca türleri ve temel sınıfı, yöntemi veya özelliği kullanılabilir değilse, bir çalışma zamanı sorunu neden olabilecek yöntemleri bayrak için kullanılmalıdır.
 
@@ -2004,19 +1882,14 @@ public interface UITableViewController {
 
 `Lion` Özniteliği aynı şekilde ancak Lion ile sunulan türleri için uygulanır. Kullanmak için neden `Lion` bu iOS düzenlendi sıklıkla, OS X sürüm nadiren gerçekleşir ve kendi kod bu adı sürüm numarasına göre tarafından işletim sistemi unutmayın daha kolaydır karşı iOS kullanılan daha özel sürüm numarası olan
 
- <a name="AdviceAttribute" />
 
-
-## <a name="adviceattribute"></a>AdviceAttribute
-
-
+### <a name="adviceattribute"></a>AdviceAttribute
 
 Bu öznitelik, geliştiricilerin bunları kullanmak daha kullanışlı olabilir diğer API'leri hakkında bir ipucu vermek için kullanın.   Bir API kesin türü belirtilmiş bir sürümünü sağlayın, örneğin, bu öznitelik zayıf yazılmış öznitelikte daha iyi API geliştiriciye yönlendirmek için kullanabilirsiniz.
 
-Bu öznitelik bilgileri belgelerde gösterilir ve kendi kod geliştirme hakkında kullanıcı öneriler sağlamak için araçları geliştirilebilir. <a name="ZeroCopyStringsAttribute" />
+Bu öznitelik bilgileri belgelerde gösterilir ve Araçlar geliştirme hakkında kullanıcı önerileri vermek için geliştirilmiş olmalıdır
 
-
-## <a name="zerocopystringsattribute"></a>ZeroCopyStringsAttribute
+### <a name="zerocopystringsattribute"></a>ZeroCopyStringsAttribute
 
 Yalnızca Xamarin.iOS 5.4 kullanılabilir ve daha yeni.
 
@@ -2047,17 +1920,16 @@ Derleme düzeyinde özniteliği de uygulayabilirsiniz ve derlemenin tüm türler
 
     [assembly:ZeroCopyStrings]
 
-# <a name="strongly-typed-dictionaries"></a>Kesin türü belirtilmiş sözlük
+## <a name="strongly-typed-dictionaries"></a>Kesin türü belirtilmiş sözlük
 
 Xamarin.iOS 8.0 ile kolayca bu kaydırma kesin türü belirtilmiş sınıfları oluşturmak için destek gösterdiğimizi `NSDictionaries`.
 
 Bu her zaman kullanmak mümkün olmuştur sırada [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) el ile bir API ile birlikte veri türü, artık bunu yapmak çok daha kolaydır.  Daha fazla bilgi için bkz: [görünmesini güçlü türleri](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types).
 
-<a name="StrongDictionar"/>
 
-## <a name="strongdictionary"></a>StrongDictionary
+### <a name="strongdictionary"></a>StrongDictionary
 
-Bu öznitelik için bir arabirim uygulandığında, türetilen arabirimle aynı ada sahip bir sınıf oluşturucu üretecektir [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) ve kesin türü belirtilmiş bir alıcı arabiriminde tanımlanan her bir özellik kapatır hem de ayarlayıcı sözlüğü için.
+Bu öznitelik için bir arabirim uygulandığında, türetilen arabirimle aynı ada sahip bir sınıf oluşturucu üretecektir [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) ve bir kesin türü belirtilmiş arabiriminde tanımlanan her bir özellik kapatır ' Set'yordamı için Sözlük.
 
 Bu mevcut bir otomatik olarak oluşturulabilir bir sınıf oluşturur `NSDictionary` veya, oluşturulan yeni.
 
@@ -2111,7 +1983,7 @@ interface MyColoringKeys {
 }
 ```
 
-### <a name="strong-dictionary-types"></a>Güçlü sözlük türleri
+#### <a name="strong-dictionary-types"></a>Güçlü sözlük türleri
 
 Aşağıdaki veri türlerini desteklenen `StrongDictionary` tanımı:
 

@@ -7,18 +7,17 @@ ms.assetid: 62B6286F-3680-48F3-B91B-453692E457E5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 9b200bd335ea65bf46de00d2dc7382b7f838716b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: cd71617cce209ef0127023f69c2b503fee031e43
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="viewpager-with-fragments"></a>Parçalarla ViewPager
 
 _ViewPager jestsel Gezinti uygulamanıza olanak sağlayan bir düzen yöneticisidir. Sol ve sağ adıma veri sayfaları aracılığıyla jestsel Gezinti manyetik kullanıcıya sağlar. Bu kılavuz, parçaları veri sayfalarını kullanarak ViewPager ile swipeable bir kullanıcı Arabirimi uygulayan açıklanmaktadır._
 
-<a name="overview" />
  
 ## <a name="overview"></a>Genel Bakış
 
@@ -27,14 +26,12 @@ _ViewPager jestsel Gezinti uygulamanıza olanak sağlayan bir düzen yöneticisi
 Bu kılavuz parçaları temelleri kapsamaz &ndash; Xamarin.Android parçalanma alışık değilseniz, bkz: [parçaları](~/android/platform/fragments/index.md) parçaları ile çalışmaya başlamanıza yardımcı olmak için. 
 
 
-<a name="start" />
 
 ## <a name="start-an-app-project"></a>Bir uygulama projesi Başlat
 
 Adlı yeni bir Android projesi oluşturma **FlashCardPager**. Ardından, NuGet Paket Yöneticisi'ni başlatın (NuGet paketlerini yükleme hakkında daha fazla bilgi için bkz: [izlenecek yol: de dahil olmak üzere bir NuGet projenizdeki](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Bulma ve yükleme **Xamarin.Android.Support.v4** paketini açıklandığı gibi [Viewpager ve görünümleri](~/android/user-interface/controls/view-pager/viewpager-and-views.md). 
 
 
-<a name="datasource" />
 
 ## <a name="add-an-example-data-source"></a>Bir örnek veri kaynağı ekleme
 
@@ -61,7 +58,6 @@ Kaynak koduna `FlashCardDeck` şu adresten edinilebilir [FlashCardDeck.cs](https
 Bu kaynak dosyasını karşıdan yükleyin (veya kodu kopyalayıp yeni dosyaya yapıştırın **FlashCardDeck.cs** dosyası) ve projenize ekleyin.
 
 
-<a name="layout" />
 
 ## <a name="create-a-viewpager-layout"></a>ViewPager düzenini oluşturma
 
@@ -80,8 +76,6 @@ Açık **Resources/layout/Main.axml** ve içeriğini aşağıdaki XML ile deği�
 
 Bu XML tanımlayan bir `ViewPager` tüm ekranı kaplar. Tam adı kullanmalıdır Not **android.support.v4.view.ViewPager** çünkü `ViewPager` destek Kitaplığı'nda paketlenmiştir. `ViewPager` Yalnızca kullanılabilir [Android destek kitaplığı v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/); Android SDK'ın kullanılabilir değil.
 
-
-<a name="setup" />
 
 ## <a name="set-up-viewpager"></a>ViewPager ayarlayın
 
@@ -120,14 +114,13 @@ Bu kod şunları yapar:
 
 Derleme ve bu kodu çalıştırmak, aşağıdaki ekran görüntüsüne benzer bir ekran görmeniz gerekir: 
 
-[![Boş ViewPager ekran görüntüsü, FlashCardPager uygulamayla](viewpager-and-fragments-images/01-initial-screen-sml.png)](viewpager-and-fragments-images/01-initial-screen.png)
+[![Boş ViewPager ekran görüntüsü, FlashCardPager uygulamayla](viewpager-and-fragments-images/01-initial-screen-sml.png)](viewpager-and-fragments-images/01-initial-screen.png#lightbox)
 
 Bu noktada, `ViewPager` olan boş kullanılan parçaları bulunmaması nedeniyle doldurmak `ViewPager`, ve verilerde bulunan bu parçasının oluşturmak için bir bağdaştırıcı bulunmaması **FlashCardDeck**. 
 
 Aşağıdaki bölümlerde bir `FlashCardFragment` her flash kartı işlevselliğini uygulamak için oluşturmaktır ve `FragmentPagerAdapter` bağlanmak için oluşturulan `ViewPager` kısmında verilerinden oluşturulan parçaları için `FlashCardDeck`. 
 
 
-<a name="fragment" />
 
 ## <a name="create-the-fragment"></a>Parça oluşturun
 
@@ -135,7 +128,6 @@ Her flash kartı adlı bir kullanıcı Arabirimi parça tarafından yönetilecek
 `FlashCardFragment`kişinin görünümü oluşur bir `TextView` flash kartı sorun metin görüntüler. Bu görünüm kullanan olay işleyicisi uygulayacak bir `Toast` kullanıcı flash kartı soru dokunur yanıt görüntülemek için. 
 
 
-<a name="layout" />
 
 ### <a name="create-the-flashcardfragment-layout"></a>FlashCardFragment düzenini oluşturma
 
@@ -163,7 +155,6 @@ Her flash kartı adlı bir kullanıcı Arabirimi parça tarafından yönetilecek
 Bu düzen tek flash kartı parçasını tanımlar; her parça oluşan bir `TextView` büyük (100sp) yazı tipi kullanarak bir matematik sorun görüntüler. Bu metin flash kart üzerinde dikey ve yatay olarak ortalanır. 
 
 
-<a name="fcfclass" />
 
 ### <a name="create-the-initial-flashcardfragment-class"></a>İlk FlashCardFragment sınıfı oluşturma
 
@@ -205,7 +196,6 @@ Bu kod gerekli yerleştirir `Fragment` flash kartı görüntülemek için kullan
 Parça ait görünüm açıkça çağrısıyla şişirileceğini `inflater.Inflate`. `container` Değişkendir görünümün üst ve `false` bayrak söyler görünümün üst öğeye inflated görünümü ekleme engellemeye inflater (Bu zaman eklenir `ViewPager` çağrısı kullanıcının bağdaştırıcının `GetItem` yönteminde daha sonra bu izlenecek yol). 
 
 
-<a name="state" />
 
 ### <a name="add-state-code-to-flashcardfragment"></a>Durum kodu için FlashCardFragment ekleyin
 
@@ -251,8 +241,6 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 `answer` Değişkeni burada kullanılmaz, ancak daha sonra olay işleyici kodu bu dosyaya eklendiğinde kullanılacak. 
 
 
-<a name="adapter" />
-
 ## <a name="create-the-adapter"></a>Bağdaştırıcısı oluştur
 
 `ViewPager` arasında bulunur bağdaştırıcısı denetleyicisi nesnesini kullanan `ViewPager` ve veri kaynağı (ViewPager çizimde bkz [bağdaştırıcısı](~/android/user-interface/controls/view-pager/index.md#adapter) makale). Bu verilere erişmek için `ViewPager` türetilen özel bir bağdaştırıcı sağlamanızı ister `PagerAdapter`. Bu örnek parçaları kullandığından, onu kullanan bir `FragmentPagerAdapter` &ndash; `FragmentPagerAdapter` türetildiği `PagerAdapter`. 
@@ -297,7 +285,6 @@ namespace FlashCardPager
 Bu kod gerekli yerleştirir `FragmentPagerAdapter` uygulaması. Aşağıdaki bölümlerde bu yöntemlerin her biri çalışma kodu ile değiştirilir. Oluşturucusu amacı parça Yöneticisi geçirmektir `FlashCardDeckAdapter`ait temel sınıf oluşturucu. 
 
 
-<a name="ctor" />
 
 ### <a name="implement-the-adapter-constructor"></a>Uygulama bağdaştırıcısı Oluşturucusu
 
@@ -316,7 +303,6 @@ this.flashCardDeck = flashCards;
 Bu satır kod depolarının `FlashCardDeck` örneğine `FlashCardDeckAdapter` kullanır. 
 
 
-<a name="count" />
 
 ### <a name="implement-count"></a>Uygulama sayısı
 
@@ -333,7 +319,6 @@ public override int Count
 `NumCards` Özelliği `FlashCardDeck` veri kümesinde flash kartları (parça sayısı) sayısını döndürür. 
 
 
-<a name="getitem" />
 
 ### <a name="implement-getitem"></a>Implement GetItem
 
@@ -361,7 +346,6 @@ Bu kod şunları yapar:
 Zaman `ViewPager` işler `Fragment` adresindeki `position`, görüntülediği `TextBox` konumunda bulunan matematik sorunu dizeyi içeren `position` flash kartı deste içinde. 
 
 
-<a name="addadapter" />
 
 ## <a name="add-the-adapter-to-the-viewpager"></a>Bağdaştırıcı için ViewPager Ekle
 
@@ -378,10 +362,9 @@ Bu kod başlatır `FlashCardDeckAdapter`, içinde geçen `SupportFragmentManager
 Çekirdek uygulamasını tamamlanmıştır &ndash; oluşturmak ve uygulamayı çalıştırın.
 Ekranda soldaki sonraki ekran görüntüsünde gösterildiği gibi görünen ilk görüntüsü flash kartı deste görmeniz gerekir. Ardından geçirme sağ flash kartı deste geri taşımak için daha fazla flash kart görmek için sola geçirme:
 
-[![Çağrı cihazı göstergeleri olmadan FlashCardPager uygulama örnek ekran görüntüleri](viewpager-and-fragments-images/02-example-views-sml.png)](viewpager-and-fragments-images/02-example-views.png)
+[![Çağrı cihazı göstergeleri olmadan FlashCardPager uygulama örnek ekran görüntüleri](viewpager-and-fragments-images/02-example-views-sml.png)](viewpager-and-fragments-images/02-example-views.png#lightbox)
 
 
-<a name="pagetabstrip" />
 
 ## <a name="add-a-pager-indicator"></a>Çağrı cihazı göstergesi Ekle
 
@@ -409,10 +392,9 @@ Açık **Resources/layout/Main.axml** ve ekleme bir `PagerTabStrip` Düzen:
 
 Derleme ve uygulamayı çalıştırma, boş görmelisiniz `PagerTabStrip` her flash kartı üst kısmında görüntülenir: 
 
-[![Metin olmadan PagerTabStrip Closeup](viewpager-and-fragments-images/03-empty-pagetabstrip-sml.png)](viewpager-and-fragments-images/03-empty-pagetabstrip.png)
+[![Metin olmadan PagerTabStrip Closeup](viewpager-and-fragments-images/03-empty-pagetabstrip-sml.png)](viewpager-and-fragments-images/03-empty-pagetabstrip.png#lightbox)
 
 
-<a name="title" />
 
 ### <a name="display-a-title"></a>Bir başlığı görüntüleme
 
@@ -427,12 +409,11 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 Bu kod flash kartı deste konumda bir sorun sayıya dönüştürür. Sonuç dizesini bir Java dönüştürülür `String` için döndürülen `ViewPager`. Bu yeni yöntemiyle uygulamayı çalıştırdığınızda, her bir sayfa sorun sayısında görüntüler `PagerTabStrip`: 
 
-[![Her bir sayfada görüntülenen sorun numarasıyla FlashCardPager ekran görüntüleri](viewpager-and-fragments-images/04-pagetabstrip-sml.png)](viewpager-and-fragments-images/04-pagetabstrip.png)
+[![Her bir sayfada görüntülenen sorun numarasıyla FlashCardPager ekran görüntüleri](viewpager-and-fragments-images/04-pagetabstrip-sml.png)](viewpager-and-fragments-images/04-pagetabstrip.png#lightbox)
 
 İleri ve geri her flash kartı üstünde görüntülenen flash kartı deste sorun numarasında görmek için doğru çekin. 
 
 
-<a name="userinput" />
 
 ## <a name="handle-user-input"></a>Kullanıcı girişini işleme
 
@@ -450,12 +431,11 @@ questionBox.Click += delegate
 
 Bu `Click` olay işleyicisi yanıt kullanıcı dokunur olduğunda görüntülenen bir bildirim görüntüler `TextBox`. `answer` Değişkeni başlatılmış önceki durum bilgilerini geçirilmedi paket okuma zaman `OnCreateView`. Derleme ve uygulamayı çalıştırın, ardından yanıt görmek için her flash kart üzerindeki sorun metin dokunun: 
 
-[![Ekran görüntüleri, FlashCardPager uygulama matematik sorunu dokunduğunuz olduğunda bildirimleri](viewpager-and-fragments-images/05-answer-sml.png)](viewpager-and-fragments-images/05-answer.png)
+[![Ekran görüntüleri, FlashCardPager uygulama matematik sorunu dokunduğunuz olduğunda bildirimleri](viewpager-and-fragments-images/05-answer-sml.png)](viewpager-and-fragments-images/05-answer.png#lightbox)
 
 **FlashCardPager** bu kılavuzda sunulan kullanan bir `MainActivity` türetilen `FragmentActivity`, ancak aynı zamanda türetilemeyeceğini `MainActivity` gelen `AppCompatActivity` (de destek sağlayan parçaları yönetmek için). Görüntülemek için bir `AppCompatActivity` örnek, bkz: [FlashCardPager](https://developer.xamarin.com/samples/monodroid/UserInterface%5CFlashCardPager/) örnek galerisinde. 
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

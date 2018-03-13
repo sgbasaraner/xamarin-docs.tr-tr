@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/19/2017
-ms.openlocfilehash: 2eaf4c6180b51a827d8182d87ee2db0fd1726c8d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: fd6214f34c313db0d7a59291b73c5b29a9cc3592
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms gereksinimleri
 
@@ -86,29 +86,18 @@ Xamarin.Forms uygulamaları OS X El Capitan'üzerinde (10.11 sürümünü) geli�
 
 ## <a name="windows-system-requirements"></a>Windows sistem gereksinimleri
 
-Xamarin.Forms uygulamalar iOS ve Android için Xamarin geliştirmesini destekleyen herhangi bir Windows yüklemesinde oluşturulabilir. Bu, Visual Studio 2013 Update 2 veya daha yeni çalışan Windows 7 veya üstü gerektirir. Ağa bağlı bir Mac, iOS geliştirme için gereklidir.
-
-Windows uygulamaları aşağıdaki türleri için ek gereksinimler vardır:
+Xamarin.Forms uygulamalar iOS ve Android için Xamarin geliştirmesini destekleyen herhangi bir Windows yüklemesinde oluşturulabilir. Bu, Visual Studio 2015 ya da daha yeni çalışan Windows 7 veya üstü gerektirir. Ağa bağlı bir Mac, iOS geliştirme için gereklidir.
 
 ### <a name="universal-windows-platform-uwp"></a>Evrensel Windows Platformu (UWP)
 
 Xamarin.Forms uygulamalar için UWP geliştirme gerektirir:
 
-* Windows 10
+* Windows 10 (sonbaharda oluşturucuları güncelleştirme önerilir)
 
-* Visual Studio 2015 veya daha yeni
+* Visual Studio 2017 önerilir.
 
-* [Evrensel Windows geliştirici araçları](https://dev.windows.com/downloads/windows-10-sdk)
+* [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
 UWP projeleri, Visual Studio 2015 ve Visual Studio 2017'de oluşturulan Xamarin.Forms çözümlerinde dahil edilir.
 Ayrıca [bir evrensel Windows Platformu (UWP) uygulamasını eklemek](~/xamarin-forms/platform/windows/installation/universal.md) varolan Xamarin.Forms çözümünü için.
 
-
-
-### <a name="windows-81-and-windows-phone-81-winrt"></a>Windows 8.1 ve Windows Phone 8.1 WinRT
-
-Windows 8.1 ve Windows Phone 8.1 WinRT için Xamarin.Forms uygulama geliştirme gerektirir:
-
-* Windows 8.1
-
-* Visual Studio 2013 güncelleştirme 2 veya daha yeni

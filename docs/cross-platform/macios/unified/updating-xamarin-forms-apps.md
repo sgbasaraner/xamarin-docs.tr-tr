@@ -8,21 +8,18 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 52b53618e23a47884bee6cb821d85b15d759968c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 48b8d1cf8e6242fde632bceec5d482f53037a954
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Var olan Xamarin.Forms uygulamaları güncelleştirme
 
 _Birleşik API kullanın ve 1.3.1 sürüme güncelleştirmek için varolan bir Xamarin.Forms uygulaması güncelleştirmek için aşağıdaki adımları izleyin_
 
-
 > [!IMPORTANT]
 > Xamarin.Forms 1.3.1 Unified API destekler ilk sürüm olduğundan, çözümün tamamı için birleşik iOS uygulaması geçirme olarak aynı anda en son sürümünü kullanacak şekilde güncelleştirilmesi gerekir. Unified desteği için iOS projesi güncelleştirmeye ek olarak, ayrıca kodda düzenlemek gerekir, yani _tüm_ Çözümdeki projeler.
-
-
 
 Güncelleştirme iki adımda gerçekleştirilir:
 
@@ -44,12 +41,11 @@ Güncelleştirme iki adımda gerçekleştirilir:
 
     5. Güncelleştirme `MainPage` Windows Phone projesinde.
 
-
-# <a name="1-ios-app-unified-migration"></a>1. iOS uygulaması (Birleşik geçiş)
+## <a name="1-ios-app-unified-migration"></a>1. iOS uygulaması (Birleşik geçiş)
 
 Geçiş işleminin parçası Xamarin.Forms Unified API destekleyen sürümüne 1.3, yükseltmeyi gerektirir. Oluşturulacak doğru derleme başvuruları için sırayla biz öncelikle Unified API kullanmak için iOS projesi güncelleştirmeniz gerekir.
 
-## <a name="migration-tool"></a>Geçiş Aracı
+### <a name="migration-tool"></a>Geçiş Aracı
 
 Seçili böylece iOS projesi tıklatın ardından seçin **Proje > Xamarin.iOS Unified API geçiş...**  ve görüntülenen uyarı iletisini kabul ediyorum.
 
@@ -64,12 +60,11 @@ Bu otomatik olarak ayarlanır:
 
 **Temiz** ve **yapı** projenin düzeltmek için diğer hatalar olmadığından emin olun. Başka bir eylem gerekli olması gerekir. Bu adımları daha ayrıntılı olarak açıklanmıştır [Unified API belgeleri](~/cross-platform/macios/unified/updating-ios-apps.md).
 
-## <a name="update-native-ios-apis-if-required"></a>Yerel iOS API (gerekliyse) güncelleştir
+### <a name="update-native-ios-apis-if-required"></a>Yerel iOS API (gerekliyse) güncelleştir
 
 Ek iOS yerel kod (örneğin, özel oluşturucu veya bağımlılık Hizmetleri) eklediyseniz ek el ile kod düzeltmeleri gerçekleştirmeniz gerekebilir. Uygulamanızı yeniden derleyin ve başvurulacak [güncelleştirme var olan iOS uygulamaları yönergeleri](~/cross-platform/macios/unified/updating-ios-apps.md) gerekli olabilecek değişiklikleri hakkında daha fazla bilgi için. [Bu ipuçları](~/cross-platform/macios/unified/updating-tips.md) gerekli değişiklikleri belirlemenize yardımcı olur.
 
-
-# <a name="2-xamarinforms-131-update"></a>2. Xamarin.Forms 1.3.1 güncelleştirme
+## <a name="2-xamarinforms-131-update"></a>2. Xamarin.Forms 1.3.1 güncelleştirme
 
 İOS uygulaması için birleşik API güncelleştirildi sonra çözüm kalan Xamarin.Forms sürüm 1.3.1 güncelleştirilmesi gerekiyor. Şunları içerir:
 
@@ -78,22 +73,18 @@ Ek iOS yerel kod (örneğin, özel oluşturucu veya bağımlılık Hizmetleri) e
 
 Bu adımları aşağıda açıklanmıştır:
 
-
-## <a name="21-update-nuget-in-all-projects"></a>2.1 tüm projelerdeki güncelleştirme NuGet
+### <a name="21-update-nuget-in-all-projects"></a>2.1 tüm projelerdeki güncelleştirme NuGet
 
 Xamarin.Forms 1.3.1 için güncelleştirme sürüm öncesi Çözümdeki tüm projeleri için NuGet Paket Yöneticisi'ni kullanarak: PCL (varsa), iOS, Android ve Windows Phone. Önerilir Bu, **silin ve yeniden ekleyin** 1.3 sürüme güncelleştirmek için Xamarin.Forms NuGet paketi.
 
 **Not:** Xamarin.Forms sürüm 1.3.1 halen *yayın öncesi*. Bu seçmelisiniz anlamına gelir **yayın öncesi** seçeneği NuGet içinde (bir onay kutusu Mac için Visual Studio) veya bir açılan aşağı-liste Visual Studio aracılığıyla en son sürüm öncesi sürümünü görmek için.
 
-
 > [!IMPORTANT]
 > Visual Studio kullanıyorsanız, uygulamanın son sürümü NuGet Paket Yöneticisi'nin yüklü olduğundan emin olun. Visual Studio'da NuGet eski sürümleri Xamarin.Forms 1.3.1 Unified sürümü doğru yüklenmez. Git **Araçlar > Uzantılar ve güncelleştirmeler...**  ve tıklayın **yüklü** denetlemek için liste **Visual Studio için NuGet Paket Yöneticisi** en az sürüm 2.8.5. Eski ise tıklayın **güncelleştirmeleri** en son sürümü karşıdan yüklemek için liste.
 
-
-
 Xamarin.Forms 1.3.1 NuGet paketi güncelleştirdikten sonra her proje yeni yükseltmek için aşağıdaki değişiklikleri yapın `Xamarin.Forms.Application` sınıfı.
 
-## <a name="22-portable-class-library-or-shared-project"></a>2.2 taşınabilir sınıf kitaplığı (veya paylaşılan bir proje)
+### <a name="22-portable-class-library-or-shared-project"></a>2.2 taşınabilir sınıf kitaplığı (veya paylaşılan bir proje)
 
 Değişiklik **App.cs** dosya böylece:
 
@@ -116,15 +107,12 @@ Bu yeni `Application` temel sınıfı da destekler `OnStart`, `OnSleep`, ve `OnR
 
 `App` Sınıfının yeni bir geçirilir `LoadApplication` aşağıda açıklandığı gibi her uygulama projesi yöntemi:
 
-
-## <a name="23-ios-app"></a>2.3 iOS uygulaması
-
+### <a name="23-ios-app"></a>2.3 iOS uygulaması
 
 Değişiklik **AppDelegate.cs** dosya böylece:
 
  - Sınıfının devraldığı `FormsApplicationDelegate` (yerine `UIApplicationDelegate` önceden).
  - `LoadApplication` Yeni bir örneğini ile adlı `App`.
-
 
 ```csharp
 [Register ("AppDelegate")]
@@ -142,8 +130,7 @@ public partial class AppDelegate :
 }
 ```
 
-
-## <a name="23-android-app"></a>2.3 android uygulaması
+### <a name="23-android-app"></a>2.3 android uygulaması
 
 Değişiklik **MainActivity.cs** dosya böylece:
 
@@ -167,8 +154,7 @@ public class MainActivity :
 }
 ```
 
-
-## <a name="24-windows-phone-app"></a>2.4 Windows Phone Uygulama
+### <a name="24-windows-phone-app"></a>2.4 Windows Phone Uygulama
 
 Güncelleştirmek ihtiyacımız **MainPage** -XAML ve arkasındaki koda.
 
@@ -186,7 +172,6 @@ Güncelleştirilmiş bir örnek aşağıda gösterilen - (öznitelikleri kalan a
     ...>
 </winPhone:FormsApplicationPage>
 ```
-
 
 Değişiklik **MainPage.xaml.cs** dosya böylece:
 
@@ -207,7 +192,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
  }
 ```
 
-## <a name="troubleshooting"></a>Sorun giderme
+### <a name="troubleshooting"></a>Sorun giderme
 
 Bazen Xamarin.Forms NuGet paketi güncelleştirdikten sonra aşağıdakine benzer bir hata görürsünüz. NuGet güncelleştirici eski sürümlerinden başvurular tamamen kaldırmaz oluşur, **csproj** dosyaları.
 
@@ -226,16 +211,15 @@ Bu hataları gidermek için açın **csproj** dosyasını bir metin düzenleyici
 
 Bu eski başvuruları kaldırıldıktan sonra projeyi başarıyla oluşturması gerekir.
 
-# <a name="considerations"></a>Dikkat Edilecekler
+## <a name="considerations"></a>Dikkat Edilecekler
 
 Aşağıdaki noktaları dikkate bu uygulama bir veya daha fazla bileşen veya NuGet paketi dayalıysa varolan Xamarin.Forms projesini yeni birleşik API için Klasik API'SİNDEN dönüştürülürken dikkat edilmelidir.
 
-## <a name="components"></a>Bileşenler
+### <a name="components"></a>Bileşenler
 
 Uygulamanıza dahil herhangi bir bileşeni de birleşik API için güncelleştirilmesi gerekir veya derlemeye çalıştığınızda bir çakışma alırsınız. Herhangi bir dahil bileşeni için geçerli sürümü deposundan Xamarin bileşeni Unified API destekleyen yeni bir sürümle değiştirin ve temiz bir yapı yapın. Yazar tarafından dönüştürülmemiş herhangi bir bileşeni bileşen deposunda yalnızca uyarı 32 bit görüntüler.
 
-
-## <a name="nuget-support"></a>NuGet desteği
+### <a name="nuget-support"></a>NuGet desteği
 
 Biz Unified API desteği ile çalışmak için NuGet değişiklikleri katkıda bulunan, ancak değil yapılmış olan NuGet, yeni bir sürüm Biz yeni API'leri tanımak için NuGet alma değerlendirmek için.
 
@@ -244,24 +228,20 @@ Bileşenleri gibi o zamana kadar birleşik API'lerini destekleyen bir sürüm pr
 > [!IMPORTANT]
 > **Not:** biçiminde bir hata varsa _"hatası 3 'monotouch.dll' ve 'Xamarin.iOS.dll' aynı Xamarin.iOS projede içeremez - 'Xamarin.iOS.dll' 'monotouch.dll' tarafından başvurulan sırada açıkça başvurulmaktadır ' xxx Sürüm 0.0.000, Culture = neutral, PublicKeyToken = null ='"_ Unified API uygulamanıza dönüştürdükten sonra genellikle bir bileşen veya NuGet paketi birleşik API'sine güncelleştirilmemiş projesinde sahip nedeniyle istenir. Varolan bileşeni/NuGet kaldırmak, birleşik API'lerini destekleyen bir sürüme güncelleştirmek ve temiz bir yapı yapmanız gerekir.
 
+## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Xamarin.iOS uygulamaları 64 Bit etkinleştirme derlemeler
 
+Birleşik API'sine dönüştürülen bir Xamarin.iOS mobil uygulama için geliştirici 64-bit makine için uygulama uygulamanın seçeneklerinden oluşturulmasını etkinleştirmek için hala gerekir. Lütfen bakın **etkinleştirme 64 Bit oluşturur, Xamarin.iOS uygulamaları** , [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64/index.md#enable-64) belge 64 bit etkinleştirme hakkında ayrıntılı yönergeler için oluşturur.
 
-
-# <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Xamarin.iOS uygulamaları 64 Bit etkinleştirme derlemeler
-
-Birleşik API'sine dönüştürülen bir Xamarin.iOS mobil uygulama için geliştirici 64-bit makine için uygulama uygulamanın seçeneklerinden oluşturulmasını etkinleştirmek için hala gerekir. Lütfen bakın **etkinleştirme 64 Bit oluşturur, Xamarin.iOS uygulamaları** , [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64.md#enable-64) belge 64 bit etkinleştirme hakkında ayrıntılı yönergeler için oluşturur.
-
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 İOS uygulaması (destekleyen 64-bit mimariyi iOS platformunda) birleşik API geçirilen ve Xamarin.Forms uygulaması artık 1.3.1 sürüme güncelleştirilmesi.
 
 Xamarin.Forms uygulaması özel Oluşturucu gibi yerel kod içeriyorsa veya bağımlılık Hizmetleri bu yeni türleri kullanacak şekilde güncelleştirilmesi gerekebilir sonra yukarıda belirtildiği gibi [Unified API içinde sunulan](~/cross-platform/macios/index.md).
 
-
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [İOS uygulamaları güncelleştirme](~/cross-platform/macios/unified/updating-apps.md)
 - [İOS uygulamaları güncelleştirme](~/cross-platform/macios/unified/updating-ios-apps.md)
-- [Platformlar arası uygulamalar içindeki yerel türler ile çalışma](~/cross-platform/macios/native-types-cross-platform.md)
+- [Platformlar Arası Uygulamalarda Yerel Türlerle Çalışma](~/cross-platform/macios/native-types-cross-platform.md)
 - [İpuçları güncelleştiriliyor](~/cross-platform/macios/unified/updating-tips.md)
 - [Klasik vs Unified API farklılıkları](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 2c01a36eabb15fbe9b975c91328dfa7cfd651896
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: b7ffd069a8c99c2cdfd0ecb58fe7ef762e5a46f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="data-binding-and-key-value-coding"></a>Veri bağlama ve anahtar-değer kodlama
 
@@ -24,7 +24,7 @@ C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı anahtar-değer kodla
 
 Anahtar-değer kodlama ve veri Xamarin.Mac uygulamanızda teknikleri bağlama kullanarak, yazma ve doldurmak ve kullanıcı Arabirimi öğeleri ile çalışmak için korumanız için sahip kod miktarını önemli ölçüde düşürebilir. Ayrıca, yedekleme verilerinizi daha fazla ayırma faydası vardır (_veri modeli_) kullanıcı arabirimi, Önden bitiş (_Model-View-Controller_), başında bakımı kolay, daha esnek uygulama için Tasarım.
 
-[![Çalışan uygulama örneği](databinding-images/intro01.png "çalışan uygulama örneği")](databinding-images/intro01-large.png)
+[![Çalışan uygulama örneği](databinding-images/intro01.png "çalışan uygulama örneği")](databinding-images/intro01-large.png#lightbox)
 
 Bu makalede, biz anahtar-değer kodlama ve Xamarin.Mac uygulamasında veri bağlama ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -421,7 +421,7 @@ Veri tanımlanan Modelimizi ile basit bir örnek veri bağlamanın Xcode'nın ar
 
 İlk olarak, yeni bir ekleyelim **View Controller** için bizim **Main.storyboard** arabirimi Oluşturucusu'nda dosya ve alt sınıf adını `SimpleViewController`: 
 
-[![Yeni bir görünüm denetleyicisi ekleme](databinding-images/simple01.png "yeni bir görünüm denetleyicisi ekleme")](databinding-images/simple01-large.png)
+[![Yeni bir görünüm denetleyicisi ekleme](databinding-images/simple01.png "yeni bir görünüm denetleyicisi ekleme")](databinding-images/simple01-large.png#lightbox)
 
 Ardından, Mac için Visual Studio'ya geri dönün, düzenleme **SimpleViewController.cs** (otomatik olarak bizim projesine eklendi) dosyası ve bir örneğini kullanıma `PersonModel` veri formumuzun bağlama olacaktır. Aşağıdaki kodu ekleyin:
 
@@ -461,27 +461,27 @@ public override void ViewDidLoad ()
 
 Bizim form oluşturmak ihtiyacımız artık çift **Main.storyboard** dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Düzen formun aşağıdakine benzer aramak için:
 
-[![Xcode'da film şeridi düzenleme](databinding-images/simple02.png "xcode'da film şeridi düzenleme")](databinding-images/simple02-large.png)
+[![Xcode'da film şeridi düzenleme](databinding-images/simple02.png "xcode'da film şeridi düzenleme")](databinding-images/simple02-large.png#lightbox)
 
 Forma verilere bağlama `PersonModel` biz aracılığıyla sunulan `Person` anahtarı, aşağıdakileri yapın:
 
 1. Seçin **çalışan adı** metin alanı ve anahtara **bağlamaları denetçisi**.
 2. Denetleme **bağlamak** kutusunda ve seçin **basit View Controller** gelen açılır. Sonraki girin `self.Person.Name` için **anahtar yolu**: 
 
-    [![Anahtar yoluna girdiğinden](databinding-images/simple03.png "anahtar yoluna girme")](databinding-images/simple03-large.png)
+    [![Anahtar yoluna girdiğinden](databinding-images/simple03.png "anahtar yoluna girme")](databinding-images/simple03-large.png#lightbox)
 3. Seçin **Mesleği** metin alanı ve onay **bağlamak** kutusunda ve seçin **basit View Controller** gelen açılır. Sonraki girin `self.Person.Occupation` için **anahtar yolu**:  
 
-    [![Anahtar yoluna girdiğinden](databinding-images/simple04.png "anahtar yoluna girme")](databinding-images/simple04-large.png)
+    [![Anahtar yoluna girdiğinden](databinding-images/simple04.png "anahtar yoluna girme")](databinding-images/simple04-large.png#lightbox)
 4. Seçin **çalışan bir yöneticisi olan** onay kutusunu ve denetleyin **bağlamak** kutusunda ve seçin **basit View Controller** gelen açılır. Sonraki girin `self.Person.isManager` için **anahtar yolu**:  
 
-    [![Anahtar yoluna girdiğinden](databinding-images/simple05.png "anahtar yoluna girme")](databinding-images/simple05-large.png)
+    [![Anahtar yoluna girdiğinden](databinding-images/simple05.png "anahtar yoluna girme")](databinding-images/simple05-large.png#lightbox)
 5. Seçin **numarası, çalışanların yönetilen** metin alanı ve onay **bağlamak** kutusunda ve seçin **basit View Controller** gelen açılır. Sonraki girin `self.Person.NumberOfEmployees` için **anahtar yolu**:  
 
-    [![Anahtar yoluna girdiğinden](databinding-images/simple06.png "anahtar yoluna girme")](databinding-images/simple06-large.png)
+    [![Anahtar yoluna girdiğinden](databinding-images/simple06.png "anahtar yoluna girme")](databinding-images/simple06-large.png#lightbox)
 6. Çalışan bir yönetici değilse, sayı, çalışanların yönetilen etiket ve metin alanı gizleyin istiyoruz.
 7. Seçin **numarası, çalışanların yönetilen** etiketi genişletin **gizli** turndown ve onay **bağlamak** kutusunda ve seçin **basit View Controller** gelen açılır. Sonraki girin `self.Person.isManager` için **anahtar yolu**:  
 
-    [![Anahtar yoluna girdiğinden](databinding-images/simple07.png "anahtar yoluna girme")](databinding-images/simple07-large.png)
+    [![Anahtar yoluna girdiğinden](databinding-images/simple07.png "anahtar yoluna girme")](databinding-images/simple07-large.png#lightbox)
 8. Seçin `NSNegateBoolean` gelen **değeri Transformer** açılır:  
 
     ![NSNegateBoolean anahtar dönüşümü seçme](databinding-images/simple08.png "NSNegateBoolean anahtar dönüşümü seçme")
@@ -491,11 +491,11 @@ Forma verilere bağlama `PersonModel` biz aracılığıyla sunulan `Person` anah
 
 Uygulama, değerleri çalıştırırsanız `Person` özelliği otomatik olarak bizim formu doldurun:
 
-[![Bir otomatik olarak doldurulmuş formu gösteren](databinding-images/simple09.png "otomatik olarak doldurulan bir form gösterme")](databinding-images/simple09-large.png)
+[![Bir otomatik olarak doldurulmuş formu gösteren](databinding-images/simple09.png "otomatik olarak doldurulan bir form gösterme")](databinding-images/simple09-large.png#lightbox)
 
 Kullanıcıların forma yaptığı tüm değişiklikler geri yazılır `Person` görünüm denetleyicisini özelliği. Örneğin, unselecting **çalışan bir yöneticisi olan** güncelleştirmeleri `Person` örneğini bizim `PersonModel` ve **numarası, çalışanların yönetilen** etiket ve metin alanı aracılığıyla otomatik olarak (gizlidir veri bağlama):
 
-[![Yöneticileri olmayan çalışanların sayısını gizleme](databinding-images/simple10.png "Yöneticileri olmayan çalışanların sayısını gizleme")](databinding-images/simple10-large.png)
+[![Yöneticileri olmayan çalışanların sayısını gizleme](databinding-images/simple10.png "Yöneticileri olmayan çalışanların sayısını gizleme")](databinding-images/simple10-large.png#lightbox)
 
 <a name="Table_View_Data_Binding" />
 
@@ -505,7 +505,7 @@ Biz göz önünden veri bağlamanın temelleri sahip olduğunuza göre daha karm
 
 İlk olarak, yeni bir ekleyelim **View Controller** için bizim **Main.storyboard** arabirimi Oluşturucusu'nda dosya ve alt sınıf adını `TableViewController`:
 
-[![Yeni bir görünüm denetleyicisi ekleme](databinding-images/table01.png "yeni bir görünüm denetleyicisi ekleme")](databinding-images/table01-large.png)
+[![Yeni bir görünüm denetleyicisi ekleme](databinding-images/table01.png "yeni bir görünüm denetleyicisi ekleme")](databinding-images/table01-large.png#lightbox)
 
 Ardından, düzenleyelim **TableViewController.cs** (otomatik olarak bizim projesine eklendi) dosyası ve bir dizi sunmaya (`NSArray`), `PersonModel` sınıfları veri formumuzun bağlama olacaktır. Aşağıdaki kodu ekleyin:
 
@@ -572,7 +572,7 @@ public override void AwakeFromNib ()
 
 Bizim Tablo görünümü oluşturmak ihtiyacımız artık çift **Main.storyboard** dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Düzen tablonun aşağıdakine benzer aramak için:
 
-[![Yeni bir tablo görünümü yerleştirmede](databinding-images/table02.png "yeni bir tablo görünümü düzenleme")](databinding-images/table02-large.png)
+[![Yeni bir tablo görünümü yerleştirmede](databinding-images/table02.png "yeni bir tablo görünümü düzenleme")](databinding-images/table02-large.png#lightbox)
 
 Eklemek ihtiyacımız bir **dizi denetleyicisi** bizim tabloya bağlı veri sağlamak için aşağıdakileri yapın:
 
@@ -581,7 +581,7 @@ Eklemek ihtiyacımız bir **dizi denetleyicisi** bizim tabloya bağlı veri sağ
     ![Kitaplıktan bir dizi denetleyicisi seçme](databinding-images/table03.png "kitaplıktan bir dizi denetleyicisi seçme")
 2. Seçin **dizi denetleyicisi** içinde **arabirimi hiyerarşi** ve geçiş **özniteliği denetçisi**:  
 
-    [![Öznitelikleri denetçisi seçme](databinding-images/table04.png "öznitelikleri denetçisi seçme")](databinding-images/table04-large.png)
+    [![Öznitelikleri denetçisi seçme](databinding-images/table04.png "öznitelikleri denetçisi seçme")](databinding-images/table04-large.png#lightbox)
 3. Girin `PersonModel` için **sınıf adı**, tıklatın **artı** düğmesini tıklatın ve üç anahtarları ekleyin. Bunları `Name`, `Occupation` ve `isManager`:  
 
     ![Gerekli anahtar yollar ekleme](databinding-images/table05.png "gerekli anahtar yollar ekleme")
@@ -595,22 +595,22 @@ Bizim Tablo görünümü dizi denetleyiciyi bağlamak için ihtiyacımız artık
 
 1. Tablo görünümü seçin ve **denetçisi bağlama**:  
 
-    [![Bağlama denetçisi seçme](databinding-images/table07.png "bağlama denetçisi seçme")](databinding-images/table07-large.png)
+    [![Bağlama denetçisi seçme](databinding-images/table07.png "bağlama denetçisi seçme")](databinding-images/table07-large.png#lightbox)
 2. Altında **İçindekiler** turndown, select **bağlamak** ve **dizi denetleyicisi**. Girin `arrangedObjects` için **denetleyicisi anahtar** alan:  
 
     ![Denetleyici anahtar tanımlama](databinding-images/table08.png "denetleyicisi anahtarını tanımlama")
 3. Seçin **Tablo görünümü hücresi** altında **çalışan** sütun. İçinde **bağlamaları denetçisi** altında **değeri** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Name` için **Model anahtar yolu**:  
 
-    [![Model anahtar yolu ayarlanıyor](databinding-images/table09.png "modeli anahtar yolu ayarlanıyor")](databinding-images/table09-large.png)
+    [![Model anahtar yolu ayarlanıyor](databinding-images/table09.png "modeli anahtar yolu ayarlanıyor")](databinding-images/table09-large.png#lightbox)
 4. `objectValue` Geçerli `PersonModel` dizi denetleyicisi tarafından yönetilen dizisindeki.
 5. Seçin **Tablo görünümü hücresi** altında **Mesleği** sütun. İçinde **bağlamaları denetçisi** altında **değeri** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Occupation` için **Model anahtar yolu**:  
 
-    [![Model anahtar yolu ayarlanıyor](databinding-images/table10.png "modeli anahtar yolu ayarlanıyor")](databinding-images/table10-large.png)
+    [![Model anahtar yolu ayarlanıyor](databinding-images/table10.png "modeli anahtar yolu ayarlanıyor")](databinding-images/table10-large.png#lightbox)
 6. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 Biz uygulama çalıştırırsanız, tablonun bizim dizisi ile doldurulur `PersonModels`:
 
-[![Uygulamayı çalıştıran](databinding-images/table11.png "uygulamayı çalıştırma")](databinding-images/table11-large.png)
+[![Uygulamayı çalıştıran](databinding-images/table11.png "uygulamayı çalıştırma")](databinding-images/table11-large.png#lightbox)
 
 <a name="Outline_View_Data_Binding" />
 
@@ -620,7 +620,7 @@ veri bağlama anahat görünümü karşı bir tablo görünümü karşı bağlam
 
 İlk olarak, yeni bir ekleyelim **View Controller** için bizim **Main.storyboard** arabirimi Oluşturucusu'nda dosya ve alt sınıf adını `OutlineViewController`: 
 
-[![Yeni bir görünüm denetleyicisi ekleme](databinding-images/outline01.png "yeni bir görünüm denetleyicisi ekleme")](databinding-images/outline01-large.png)
+[![Yeni bir görünüm denetleyicisi ekleme](databinding-images/outline01.png "yeni bir görünüm denetleyicisi ekleme")](databinding-images/outline01-large.png#lightbox)
 
 Ardından, düzenleyelim **OutlineViewController.cs** (otomatik olarak bizim projesine eklendi) dosyası ve bir dizi sunmaya (`NSArray`), `PersonModel` sınıfları veri formumuzun bağlama olacaktır. Aşağıdaki kodu ekleyin:
 
@@ -690,7 +690,7 @@ public override void AwakeFromNib ()
 
 Bizim anahat görünümü oluşturmak ihtiyacımız artık çift **Main.storyboard** dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Düzen tablonun aşağıdakine benzer aramak için:
 
-[![Anahat görünümü oluşturma](databinding-images/outline02.png "özeti görünümü oluşturma")](databinding-images/outline02-large.png)
+[![Anahat görünümü oluşturma](databinding-images/outline02.png "özeti görünümü oluşturma")](databinding-images/outline02-large.png#lightbox)
 
 Eklemek ihtiyacımız bir **ağaç denetleyicisi** bizim anahat ilişkili veri sağlamak için şunları yapın:
 
@@ -699,7 +699,7 @@ Eklemek ihtiyacımız bir **ağaç denetleyicisi** bizim anahat ilişkili veri s
     ![Kitaplıktan bir ağaç denetleyicisi seçme](databinding-images/outline03.png "kitaplıktan bir ağaç denetleyicisi seçme")
 2. Seçin **ağaç denetleyicisi** içinde **arabirimi hiyerarşi** ve geçiş **özniteliği denetçisi**:  
 
-    [![Öznitelik denetçisi seçme](databinding-images/outline04.png "özniteliği denetçisi seçme")](databinding-images/outline04-large.png)
+    [![Öznitelik denetçisi seçme](databinding-images/outline04.png "özniteliği denetçisi seçme")](databinding-images/outline04-large.png#lightbox)
 3. Girin `PersonModel` için **sınıf adı**, tıklatın **artı** düğmesini tıklatın ve üç anahtarları ekleyin. Bunları `Name`, `Occupation` ve `isManager`:  
 
     ![Gerekli anahtar yollar ekleme](databinding-images/outline05.png "gerekli anahtar yollar ekleme")
@@ -717,22 +717,22 @@ Bizim anahat görünümü ağaç denetleyiciyi bağlamak için ihtiyacımız art
 
 1. Anahat görünümü seçin ve **bağlama denetçisi** seçin:  
 
-    [![Bağlama denetçisi seçme](databinding-images/outline07.png "bağlama denetçisi seçme")](databinding-images/outline07-large.png)
+    [![Bağlama denetçisi seçme](databinding-images/outline07.png "bağlama denetçisi seçme")](databinding-images/outline07-large.png#lightbox)
 2. Altında **anahat içeriği görüntüle** turndown, select **bağlamak** ve **ağaç denetleyicisi**. Girin `arrangedObjects` için **denetleyicisi anahtar** alan:  
 
     ![Denetleyici anahtarı ayarı](databinding-images/outline08.png "denetleyicisi tuş ayarlama")
 3. Seçin **Tablo görünümü hücresi** altında **çalışan** sütun. İçinde **bağlamaları denetçisi** altında **değeri** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Name` için **Model anahtar yolu**:  
 
-    [![Model anahtar yoluna girdiğinden](databinding-images/outline09.png "modeli anahtar yolu girme")](databinding-images/outline09-large.png)
+    [![Model anahtar yoluna girdiğinden](databinding-images/outline09.png "modeli anahtar yolu girme")](databinding-images/outline09-large.png#lightbox)
 4. `objectValue` Geçerli `PersonModel` ağaç denetleyicisi tarafından yönetilen dizisindeki.
 5. Seçin **Tablo görünümü hücresi** altında **Mesleği** sütun. İçinde **bağlamaları denetçisi** altında **değeri** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Occupation` için **Model anahtar yolu**:  
 
-    [![Model anahtar yoluna girdiğinden](databinding-images/outline10.png "modeli anahtar yolu girme")](databinding-images/outline10-large.png)
+    [![Model anahtar yoluna girdiğinden](databinding-images/outline10.png "modeli anahtar yolu girme")](databinding-images/outline10-large.png#lightbox)
 6. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 Biz uygulama çalıştırırsanız, anahattı bizim dizisi ile doldurulur `PersonModels`:
 
-[![Uygulamayı çalıştıran](databinding-images/outline11.png "uygulamayı çalıştırma")](databinding-images/outline11-large.png)
+[![Uygulamayı çalıştıran](databinding-images/outline11.png "uygulamayı çalıştırma")](databinding-images/outline11-large.png#lightbox)
 
 ### <a name="collection-view-data-binding"></a>Koleksiyon görünümü veri bağlama
 
@@ -860,7 +860,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 Hata, veri bağlamaları yapma içinde sonuçlanabilir bir _yerel kilitlenme_ yönetilmeyen kod ve Xamarin.Mac uygulamanız ile tamamen başarısız olmasına neden bir `SIGABRT` hata:
 
-[![Yerel kilitlenme iletişim kutusu örneği](databinding-images/debug01.png "yerel kilitlenme iletişim kutusu örneği")](databinding-images/debug01-large.png)
+[![Yerel kilitlenme iletişim kutusu örneği](databinding-images/debug01.png "yerel kilitlenme iletişim kutusu örneği")](databinding-images/debug01-large.png#lightbox)
 
 Genellikle dört ana nedeni vardır yerel çökme (Crash) veri bağlama sırasında:
 
@@ -873,15 +873,15 @@ Genellikle dört ana nedeni vardır yerel çökme (Crash) veri bağlama sırası
 
 Şimdi bulmak ve düzeltmek nasıl gösteriyoruz şekilde yerel çökmesine bizim veri bağlama neden oluyor. Arabirim Oluşturucusu'nda, koleksiyon görünümü örnekten ilk etiketi bizim bağlamasının değiştirelim `Name` için `Title`:
 
-[![Bağlama anahtarı düzenleme](databinding-images/debug02.png "bağlama anahtarı düzenleme")](databinding-images/debug02-large.png)
+[![Bağlama anahtarı düzenleme](databinding-images/debug02.png "bağlama anahtarı düzenleme")](databinding-images/debug02-large.png#lightbox)
 
 Şimdi değişikliği kaydetmek, Xcode ile eşitleme ve uygulamamızı çalıştırmak Mac için Visual Studio için dönün. Koleksiyon görünümü görüntülendiğinde, uygulama ile kısa bir süre içinde kilitleniyor bir `SIGABRT` hata (gösterildiği gibi **uygulama çıktısı** Mac için Visual Studio) bu yana `PersonModel` bir özellik anahtarı ile kullanıma sunmuyor `Title`:
 
-[![Bir bağlama hatası örneği](databinding-images/debug03.png "bir bağlama hatası örneği")](databinding-images/debug03-large.png)
+[![Bir bağlama hatası örneği](databinding-images/debug03.png "bir bağlama hatası örneği")](databinding-images/debug03-large.png#lightbox)
 
 Hata çok üstüne kaydırırsanız **uygulama çıktısı** sorunu çözmek için anahtarı görebiliriz:
 
-[![Hata günlüğünde sorunu bulma](databinding-images/debug04.png "hata günlüğünde sorunu bulma")](databinding-images/debug04-large.png)
+[![Hata günlüğünde sorunu bulma](databinding-images/debug04.png "hata günlüğünde sorunu bulma")](databinding-images/debug04-large.png#lightbox)
 
 Bu satırı bize söyleyen olan anahtar `Title` bağlama biz nesnesi mevcut değil. Biz değiştirirseniz, bağlama yeniden `Name` arabirimi Oluşturucu, kaydetme, eşitleme, yeniden oluşturun ve çalıştırın, uygulama sorun beklendiği gibi çalışır.
 
@@ -894,7 +894,7 @@ Bu makalede, veri bağlama ve anahtar-değer Xamarin.Mac uygulamada kodlama ile 
 
 - [MacDatabinding film şeridi (örnek)](https://developer.xamarin.com/samples/mac/MacDatabinding-Storyboard/)
 - [MacDatabinding XIBs (örnek)](https://developer.xamarin.com/samples/mac/MacDatabinding-XIBs/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Standart denetimler](~/mac/user-interface/standard-controls.md)
 - [Tablo görünümleri](~/mac/user-interface/table-view.md)
 - [Anahat görünümleri](~/mac/user-interface/outline-view.md)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 8bc262ff739cc65da80d887a6dea11ecc708e866
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 342e8189d9dec6eaa60a999d56a7891da845d247
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-storyboards"></a>Film şeritleri giriş
 
@@ -33,7 +33,7 @@ Film şeritleri Xamarin iş yükleri yüklü Visual Studio 2015 ve 2017 veya Mac
 
 Film şeridi bir uygulamadaki tüm ekranlar visual gösterimidir. Her Sahne temsil eden ile gerisinde, bir dizi içeren bir *View Controller* ve kendi *görünümleri*. Bu görünümler nesneleri içerebilir ve [denetimleri](~/ios/user-interface/controls/index.md) uygulamanız ile etkileşim kurmak kullanıcı izin. Bu koleksiyon görünümleri ve denetimlerin (veya *subviews*) olarak bilinen bir *içerik görünümü hiyerarşi*. Planda bağlı tarafından görünüm denetleyicileri arasında bir geçiş temsil eden nesneler ü. Bu normal olarak ilk görünümündeki bir nesne ve bağlantı görünümü arasında segue oluşturarak elde edilir. Tasarım yüzeyine ilişkilerde aşağıdaki görüntü gösterilmiştir:
 
- [ ![](images/storyboardsview.png "Tasarım yüzeyine ilişkileri bu görüntüde gösterilmiştir")](images/storyboardsview.png)
+ [![](images/storyboardsview.png "Tasarım yüzeyine ilişkileri bu görüntüde gösterilmiştir")](images/storyboardsview.png#lightbox)
 
 Gösterildiği gibi film şeridi her, planda zaten işlenmiş içerikle düzenleme ve bunları arasındaki bağlantıları gösterir.  Bu noktada, planda hakkında bir İphone'da konuşurken bir varsaymak güvenli olduğunu belirtmeye değer olan *Sahne* şeridinde birine eşit olan *ekran* cihazda içerik. Ancak, birden çok Sahne aynı anda – görünür olması mümkündür iPad ile Örneğin, bir Popover görünümü denetleyicisi kullanarak.
 
@@ -47,22 +47,22 @@ Film şeridi içeriğini bir XML dosyası olarak depolanır. AT derleme zamanı,
 
 A *Segue*, veya *ü nesne*, iOS geliştirme planda arasında bir geçiş temsil etmek için kullanılır. Bir segue oluşturmak için basılı **Ctrl** anahtar ve tıklatıp sürükleme bir Sahne alanından diğerine. Biz bizim fareyi sürüklediğinizde, aşağıdaki resimde gösterildiği gibi segue burada götürür belirten mavi bağlayıcı görüntülenir:
 
- [ ![](images/createsegue.png "Bu görüntüde gösterildiği gibi segue burada götürür belirten mavi bağlayıcı görüntülenir")](images/createsegue.png)
+ [![](images/createsegue.png "Bu görüntüde gösterildiği gibi segue burada götürür belirten mavi bağlayıcı görüntülenir")](images/createsegue.png#lightbox)
 
 Fare yukarı üzerinde bize bizim segue eylemini seçin izin vererek bir menüsü görüntülenir. Görüntülere benzeyebilir: 
 
 **Ön iOS 8 ve boyut sınıfları**:
 
-[ ![](images/segue1.png "Boyutu sınıfları olmadan eylem ü açılır")](images/segue1.png)
+[![](images/segue1.png "Boyutu sınıfları olmadan eylem ü açılır")](images/segue1.png#lightbox)
 
 **Boyutu sınıfları ve Uyarlamalı Segues kullanırken**:
 
-[ ![](images/16new.png "Boyut sınıfına sahip eylem ü açılır")](images/16new.png)
+[![](images/16new.png "Boyut sınıfına sahip eylem ü açılır")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
 > **Not:** , Windows sanal makinenizde VMWare kullanıyorsanız, CTRL tuşuna basıp tıklayın olarak eşlenmiş _sağ_ fare düğmesini varsayılan olarak. Bir Segue oluşturmak için klavye tercihlerinizi aracılığıyla düzenleyin **Tercihler** > **klavye ve fare** > **Fare kısayolları** ve yeniden eşleme, **İkincil düğme** aşağıda gösterildiği gibi:
 > 
-> [ ![](images/image22.png "Klavye ve fare tercih ayarları")](images/image22.png)
+> [![](images/image22.png "Klavye ve fare tercih ayarları")](images/image22.png#lightbox)
 > 
 > Artık normal olarak, görünüm denetleyicileri arasında segue ekleyebilmek için olması gerekir.
 
@@ -74,7 +74,7 @@ Geçişler, yeni bir görünüm denetleyicisi kullanıcıya nasıl sunulur ve na
 -  **Bırakma** – bırakma bir ü geri İtme veya kalıcı arasında gezinmek için kullanılan – Örneğin, kalıcı olarak sunulan görünüm denetleyicisini kapatarak ü. Bu, ek olarak yalnızca biri bırakma, ancak bir dizi itme ve kalıcı segues ve tek bir gezinti hiyerarşinizdeki birden çok adımı eylemi bırakma geri dönün. Bırakmayla nasıl kullanılacağını anlamak için okuyun iOS ü [oluşturma, bırakma Segues](https://developer.xamarin.com/recipes/ios/general/storyboard/unwind_segue/) tarif.
 -  **Sourceless** – sourceless segue ilk görünüm denetleyicisini içeren Sahne gösterir ve bu nedenle, kullanıcının görüntüleyebileceği önce görürsünüz. Aşağıda gösterilen segue tarafından temsil edilen:  
 
-    [ ![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png)
+    [![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png#lightbox)
 
 ### <a name="adaptive-segue-types"></a>Uyarlamalı ü türleri
 
@@ -82,7 +82,7 @@ Geçişler, yeni bir görünüm denetleyicisi kullanıcıya nasıl sunulur ve na
  
 Boyutu sınıflarını kullanarak herhangi bir uygulama aynı zamanda yeni kullanacağı [ *Uyarlamalı Segues*](~/ios/user-interface/storyboards/unified-storyboards.md). Boyutu sınıfları kullanırken, biz doğrudan wether belirtme olmayan olduğunu unutmayın bir iPhone veya iPad kullanıyoruz. Diğer bir deyişle, bakılmaksızın aynı çalışmak için sahip ne kadar Gayrimenkul her zaman görünür bir UI oluşturuyoruz. Ortam yüksek ve en iyi şekilde nasıl içerik sunmak belirleme Uyarlamalı Segues çalışın. Uyarlamalı Segues aşağıda gösterilmektedir: 
 
-[ ![](images/adaptivesegue.png "Uyarlamalı Segues açılır")](images/adaptivesegue.png)
+[![](images/adaptivesegue.png "Uyarlamalı Segues açılır")](images/adaptivesegue.png#lightbox)
 
 <table>
     <thead>
@@ -155,11 +155,11 @@ Bazen daha önce film şeridi olmayan dosya film şeridi eklemeniz gerekebilir. 
 
 1. Göz atarak yeni bir film şeridi dosya oluşturma **Dosya > Yeni Dosya > iOS > Film şeridi**aşağıda gösterildiği gibi: 
     
-    [ ![](images/new-storyboard-xs.png "Yeni dosya iletişim kutusu")](images/new-storyboard-xs.png)
+    [![](images/new-storyboard-xs.png "Yeni dosya iletişim kutusu")](images/new-storyboard-xs.png#lightbox)
 
 2. Film şeridi adınızı ekleme **ana arabirimi** bölümünü **Info.plist**, aşağıda gösterildiği gibi:
     
-    [ ![](images/infoplist.png "Info.plist Düzenleyicisi")](images/infoplist.png)
+    [![](images/infoplist.png "Info.plist Düzenleyicisi")](images/infoplist.png#lightbox)
     
     Bunu ilk görünüm denetleyiciye başlatmasını eşdeğeri yapar `FinishedLaunching` yöntemi uygulama temsilci içinde. Bu seçenek kümesi ile uygulamayı bir pencere (aşağıya bakın) başlatır, ana film şeridi yükler ve film şeridi'nın ilk View Controller (sourceless Segue yanında bir) örneği olarak atar `RootViewController` özelliği penceresinin ve ardından yapar pencerenin ekranda görünür.
 
@@ -174,11 +174,11 @@ Bazen daha önce film şeridi olmayan dosya film şeridi eklemeniz gerekebilir. 
 
 1. Projeye sağ tıklayarak yeni bir film şeridi dosya oluşturma **Ekle > Yeni Dosya > iOS > boş film şeridi**aşağıda gösterildiği gibi: 
     
-    [ ![](images/new-storyboard-vs.png "Yeni öğe iletişim kutusu")](images/new-storyboard-vs.png)
+    [![](images/new-storyboard-vs.png "Yeni öğe iletişim kutusu")](images/new-storyboard-vs.png#lightbox)
 
 2. Film şeridi adınızı ekleme **ana arabirimi** iOS aşağıda gösterildiği gibi uygulama bölümü:
     
-    [ ![](images/ios-app.png "Info.plist Düzenleyicisi")](images/ios-app.png)
+    [![](images/ios-app.png "Info.plist Düzenleyicisi")](images/ios-app.png#lightbox)
     
     Bunu ilk görünüm denetleyiciye başlatmasını eşdeğeri yapar `FinishedLaunching` yöntemi uygulama temsilci içinde. Bu seçenek kümesi ile uygulamayı bir pencere (aşağıya bakın) başlatır, ana film şeridi yükler ve film şeridi'nın ilk View Controller (sourceless Segue yanında bir) örneği olarak atar `RootViewController` özelliği penceresinin ve ardından yapar pencerenin ekranda görünür.
 
@@ -205,37 +205,37 @@ Bazen uygulamaları tasarımcı tarafından sağlanan yerleşik film şeridi ge�
 
 Aşağıdaki ekran görüntüsünde, iki görünüm denetleyicisinde bizim tasarım yüzeyi hiçbir aralarında ü gösterir. Sonraki bölümde, geçiş kodu nasıl ayarlanabilir size yol gösterecek.
 
- [ ![](images/viewcontrollerspink.png "Bu ekran görüntüsünde iki görünüm denetleyicisinde tasarım yüzeyine hiçbir aralarında ü gösterir")](images/viewcontrollerspink.png)
+ [![](images/viewcontrollerspink.png "Bu ekran görüntüsünde iki görünüm denetleyicisinde tasarım yüzeyine hiçbir aralarında ü gösterir")](images/viewcontrollerspink.png#lightbox)
 
 1. Ekleme bir _iPhone film şeridi boş_ var olan bir proje proje için:
     
-    [ ![](images/add-storyboard1.png "Film şeridi ekleme")](images/add-storyboard1.png)
+    [![](images/add-storyboard1.png "Film şeridi ekleme")](images/add-storyboard1.png#lightbox)
 
 2. Yeni oluşturulan şeridinde açmak için çift tıklayın ve yeni bir ekleme **Gezinti denetleyicisi** tasarım yüzeyine. Gezinti denetleyicisi olduğu gibi gelen bir kök görünümü denetleyicisiyle aşağıda gösterildiği gibi varsayılan olarak UI olmayan:
 
-    [ ![](images/uinavigationcontroller.png "Görünüm denetleyicileriyle Segues")](images/uinavigationcontroller.png)
+    [![](images/uinavigationcontroller.png "Görünüm denetleyicileriyle Segues")](images/uinavigationcontroller.png#lightbox)
 
 3. Seçin _View Controller_ altındaki siyah çubuğunda tıklatarak. Tasarımcıda 's **özelliği paneli**altında **kimlik** biz benzersiz bir kimliği yanı sıra özel bir sınıf için Görünüm denetleyicisini belirtebilirsiniz. Ayarlama **sınıf adı** ve **film şeridi kimliği** için `MainViewController`.
 
-    [ ![](images/identitypanelnew.png "Özel bir sınıf belirtin")](images/identitypanelnew.png)
+    [![](images/identitypanelnew.png "Özel bir sınıf belirtin")](images/identitypanelnew.png#lightbox)
 
 4. Daha sonra biz bizim film şeridi görünümü denetleyicilerinden örneği oluşturmak ihtiyacınız olacak ve bizim kodda başvurmak görsel taslak haline getirme kimliği kullanır. Film şeridi kimliği eşleşecek şekilde geri yükleme kimliği ayarlama durumu geri yüklenmesi gerekiyorsa, görünüm denetleyicisini doğru yeniden sağlar.
 
 5. Şu anda yalnızca bir görünüm denetleyicisi sahibiz. Başka bir görünüm denetleyicisi tasarım yüzeyine sürükleyin. İçinde **özelliği paneli**, sınıf ve film şeridi Kimliğine kimliği altında ayarlamak `PinkViewController`aşağıda gösterildiği gibi:
 
-    [ ![](images/pinkvcnew.png "Özellik paneli")](images/pinkvcnew.png)
+    [![](images/pinkvcnew.png "Özellik paneli")](images/pinkvcnew.png#lightbox)
     
     IDE görünümü denetleyicileri için özel bu sınıfları oluşturur. Bunlar görüntülenebilir **çözüm paneli**aşağıdaki ekran görüntüsünde gösterildiği gibi:
     
-    [ ![](images/solution-pad.png "Çözüm paneli")](images/solution-pad.png)
+    [![](images/solution-pad.png "Çözüm paneli")](images/solution-pad.png#lightbox)
 
 6. İçinde `PinkViewController`, denetleyicinin çerçeve merkezi tıklayarak görünümü seçin. Özellikler panelinde görünüm altında değiştirme **arka plan** macenta için:
     
-    [ ![](images/pinkcontroller.png "Arka plan rengini ayarlama")](images/pinkcontroller.png)
+    [![](images/pinkcontroller.png "Arka plan rengini ayarlama")](images/pinkcontroller.png#lightbox)
 
 7. Son olarak, bir düğmesinden sürükleyin **araç** üzerine `MainViewController`. İsteğe bağlı olarak özellikleri defterinde adını verin `PinkButton` ve başlık aşağıda gösterildiği gibi GoToPink:
 
-    [ ![](images/pinkbutton.png "Düğme adı ayarlama")](images/pinkbutton.png)
+    [![](images/pinkbutton.png "Düğme adı ayarlama")](images/pinkbutton.png#lightbox)
 
 Film şeridi tamamlandı, ancak biz projeyi şimdi dağıtırsanız, biz boş bir ekran alırsınız. Hala bizim film şeridi kullanın ve ilk görünüm olarak hizmet verecek bir kök görünümü denetimi ayarlamak için IDE bildirmek ihtiyacımız olmasıdır. Normalde bu bizim proje seçenekleri yukarıda gösterildiği gibi yapılabilir. Ancak bu örnekte, şunları yapacağız aşağıdakileri ekleyerek kodda, aynı sonucu elde **AppDelegate**:
 
@@ -351,13 +351,13 @@ Başlamadan önce 1-8'i yukarıdaki adımları izleyin. Bu adımda biz bizim fil
         - Satırlar: 2
         - 'Hidden' onay kutusu işaretli 
         
-    [ ![](images/passwordvc.png "Merkezi satırları")](images/passwordvc.png)
+    [![](images/passwordvc.png "Merkezi satırları")](images/passwordvc.png#lightbox)
     
 2. Pembe git düğmesi ve görünüm denetleyici Ctrl-düşürmesini tarafından arasında Segue oluşturma *PinkButton* için *PinkViewController*, seçerek **anında** üzerinde fare yukarı . 
 
 3. Üzerinde Segue'ı tıklatın ve bu verin *tanımlayıcısı* `SegueToPink`:
 
-    [ ![](images/namesegue.png "Üzerinde Segue'ı tıklatın ve tanımlayıcı SegueToPink verin")](images/namesegue.png)  
+    [![](images/namesegue.png "Üzerinde Segue'ı tıklatın ve tanımlayıcı SegueToPink verin")](images/namesegue.png#lightbox)  
     
 
 4. Son olarak, aşağıdaki ShouldPerformSegue yöntemine ekleyin `MainViewController` sınıfı:
@@ -402,29 +402,29 @@ Bir dış film şeridi başvuru eklemek için aşağıdakileri yapın:
 
 1. İçinde **Çözüm Gezgini**, proje adına sağ tıklayın ve seçin **Ekle** > **yeni dosya...**   >  **iOS** > **film şeridi**. Girin bir **adı** tıklatın ve yeni film şeridi için **yeni** düğmesi:
     
-    [ ![](images/ref01.png "Yeni dosya iletişim kutusu")](images/ref01.png)
+    [![](images/ref01.png "Yeni dosya iletişim kutusu")](images/ref01.png#lightbox)
     
 2. Normalde olur ve değişikliklerinizi kaydetmek gibi yeni film şeridi'nın planda düzenini tasarım: 
     
-    [ ![](images/ref02.png "Yeni Sahne düzeni")](images/ref02.png)
+    [![](images/ref02.png "Yeni Sahne düzeni")](images/ref02.png#lightbox)
     
 3. Başvuru iOS Tasarımcısı eklemek zorunda kalacaklarını film şeridi açın.
 
 4. Sürükleme bir **film şeridi başvuru** gelen **araç** tasarım yüzeyine: 
     
-    [ ![](images/ref03.png "Film şeridi başvurusu")](images/ref03.png)
+    [![](images/ref03.png "Film şeridi başvurusu")](images/ref03.png#lightbox)
     
 5. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, adını seçin **film şeridi** yukarıda oluşturduğunuz: 
 
-    [ ![](images/ref04.png "Pencere öğesi sekmesi")](images/ref04.png)
+    [![](images/ref04.png "Pencere öğesi sekmesi")](images/ref04.png#lightbox)
     
 6. Bir kullanıcı Arabirimi pencere öğesi (örneğin, bir düğme gibi) var olan bir görünüm üzerinde denetim tıklayın ve oluşturmak için yeni bir Segue **film şeridi başvuru** yeni oluşturduğunuz: 
 
-    [ ![](images/ref05.png "Bir segue oluşturma")](images/ref05.png) 
+    [![](images/ref05.png "Bir segue oluşturma")](images/ref05.png#lightbox) 
     
 7. Açılan menüden seçin **Göster** Segue tamamlamak için: 
 
-    [ ![](images/ref06.png "Segue tamamlamak için Göster seçme")](images/ref06.png) 
+    [![](images/ref06.png "Segue tamamlamak için Göster seçme")](images/ref06.png#lightbox) 
     
 8. Film şeridi için yaptığınız değişiklikleri kaydedin.
 
@@ -440,29 +440,29 @@ Belirli bir Sahne başvuru eklemek için bir dış film şeridi (ve değil ilk V
 
 2. Yeni bir görünüm ekleyin ve yerleşimi normal olarak tasarlamanız: 
 
-    [ ![](images/ref07.png "Yeni Sahne düzeni")](images/ref07.png)
+    [![](images/ref07.png "Yeni Sahne düzeni")](images/ref07.png#lightbox)
     
 3. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, girin bir **film şeridi kimliği** yeni Sahne ait görünüm denetleyicisi için: 
 
-    [ ![](images/ref08.png "Yeni planda görünümü denetleyici için bir film şeridi kimliği girin")](images/ref08.png)
+    [![](images/ref08.png "Yeni planda görünümü denetleyici için bir film şeridi kimliği girin")](images/ref08.png#lightbox)
     
 3. Başvuru iOS Tasarımcısı eklemek zorunda kalacaklarını film şeridi açın.
 
 4. Sürükleme bir **film şeridi başvuru** gelen **araç** tasarım yüzeyine: 
 
-    [ ![](images/ref03.png "Film şeridi başvurusu")](images/ref03.png)
+    [![](images/ref03.png "Film şeridi başvurusu")](images/ref03.png#lightbox)
     
 5. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, adını seçin **film şeridi** ve **başvuru kimliği** (film şeridi kimliği), Yukarıda oluşturduğunuz Sahne: 
 
-    [ ![](images/ref09.png "Pencere öğesi sekmesi ")](images/ref09.png)
+    [![](images/ref09.png "Pencere öğesi sekmesi ")](images/ref09.png#lightbox)
     
 6. Bir kullanıcı Arabirimi pencere öğesi (örneğin, bir düğme gibi) var olan bir görünüm üzerinde denetim tıklayın ve oluşturmak için yeni bir Segue **film şeridi başvuru** yeni oluşturduğunuz: 
 
-    [ ![](images/ref10.png "Bir segue oluşturma")](images/ref10.png) 
+    [![](images/ref10.png "Bir segue oluşturma")](images/ref10.png#lightbox) 
     
 7. Açılan menüden seçin **Göster** Segue tamamlamak için: 
 
-    [ ![](images/ref06.png "Segue tamamlamak için Göster seçme")](images/ref06.png) 
+    [![](images/ref06.png "Segue tamamlamak için Göster seçme")](images/ref06.png#lightbox) 
     
 8. Film şeridi için yaptığınız değişiklikleri kaydedin.
 
@@ -478,27 +478,27 @@ Belirli bir Sahne aynı film şeridi başvuru eklemek için aşağıdakileri yap
 
 2. Yeni bir görünüm ekleyin ve yerleşimi normal olarak tasarlamanız: 
 
-    [ ![](images/ref11.png "Yeni Sahne düzeni")](images/ref11.png)
+    [![](images/ref11.png "Yeni Sahne düzeni")](images/ref11.png#lightbox)
 
 3. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, girin bir **film şeridi kimliği** yeni Sahne ait görünüm denetleyicisi için: 
 
-    [ ![](images/ref12.png "Pencere öğesi sekmesi")](images/ref12.png)
+    [![](images/ref12.png "Pencere öğesi sekmesi")](images/ref12.png#lightbox)
     
 3. Sürükleme bir **film şeridi başvuru** gelen **araç** tasarım yüzeyine: 
 
-    [ ![](images/ref03.png "Film şeridi başvurusu")](images/ref03.png)
+    [![](images/ref03.png "Film şeridi başvurusu")](images/ref03.png#lightbox)
     
 5. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**seçin **başvuru kimliği** (film şeridi kimliği), yukarıda oluşturduğunuz Sahne: 
 
-    [ ![](images/ref13.png "Pencere öğesi sekmesi")](images/ref13.png)
+    [![](images/ref13.png "Pencere öğesi sekmesi")](images/ref13.png#lightbox)
     
 6. Bir kullanıcı Arabirimi pencere öğesi (örneğin, bir düğme gibi) var olan bir görünüm üzerinde denetim tıklayın ve oluşturmak için yeni bir Segue **film şeridi başvuru** yeni oluşturduğunuz: 
 
-    [ ![](images/ref14.png "Bir segue oluşturma")](images/ref14.png) 
+    [![](images/ref14.png "Bir segue oluşturma")](images/ref14.png#lightbox) 
     
 7. Açılan menüden seçin **Göster** Segue tamamlamak için: 
 
-    [ ![](images/ref06.png "Segue tamamlamak için Göster seçme")](images/ref06.png) 
+    [![](images/ref06.png "Segue tamamlamak için Göster seçme")](images/ref06.png#lightbox) 
     
 8. Film şeridi için yaptığınız değişiklikleri kaydedin.
 

@@ -7,23 +7,20 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 01c390af08e59f3b10888a183df7fa6758c2609c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5d1de42a398affc1b6b6c9b863df5bc86a016c08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started"></a>Başlarken
-
-<style type="text/css"> .terminal-blue { color: rgb(10,96,254); } .terminal-green { color: rgb(12,156,26); } .terminal-magenta { color: rgb(152,12,103); } </style>
-
 
 > [!IMPORTANT]
 > **Uyarı:** hedefi Sharpie Gelişmiş bilgi Objective-C (ve uzantılarının, C) ile deneyimli Xamarin geliştiriciler için bir araçtır. Objective-C Kitaplığı bağlamak denemeden önce yerel kitaplığı komut satırı (ve yerel kitaplığı nasıl çalıştığını iyi anlamış) oluşturmak düz bilgiye sahip olmalıdır.
 
 <a name="installing" />
 
-# <a name="installing-objective-sharpie"></a>Amaç Sharpie yükleme
+## <a name="installing-objective-sharpie"></a>Amaç Sharpie yükleme
 
 Amaç Sharpie şu anda Mac OS X 10.10 ve daha yeni bir tek başına komut satırı aracı ve _değil tam olarak desteklenen bir Xamarin ürün_. Bunu yalnızca Gelişmiş geliştiriciler tarafından Objective-C Kitaplığı bir 3. taraf için bir bağlama proje oluşturmanıza yardımcı için kullanılmalıdır.
 
@@ -34,9 +31,10 @@ Yükleyiciyi çalıştırın ve tüm izleyin ekran Yükleme Sihirbazı'ndan iste
   - [En son sürümü karşıdan yükle](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
   - [Forum Duyurusu](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
-> 💡 **İpucu:** kullanmak `sharpie update` en son sürüme güncelleştirmek için komutu.
+> [!TIP]
+> Kullanım `sharpie update` en son sürüme güncelleştirmek için komutu.
 
-# <a name="basic-walkthrough"></a>Temel gözden geçirme
+## <a name="basic-walkthrough"></a>Temel gözden geçirme
 
 Amaç Sharpie oluşturmanıza yardımcı olur Xamarin tanımları 3 taraf Objective-C Kitaplık C# bağlamak için gerekli bir komut satırı aracı sağlanır.
 Hedefi Sharpie, geliştirici kullanırken bile *olacak* otomatik olarak aracı tarafından işlenemedi sorunlarını gidermek üzere hedefi Sharpie bittikten sonra oluşturulan dosyalar değiştirmeniz gerekir.

@@ -2,16 +2,16 @@
 title: "fastlane iOS için - eşleşmesi"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 435ba4c3799288724625ca06016770b3ecad56a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d92f820e22277148b4de3ff87e3fdaca0f573f52
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane iOS için - eşleşmesi
 
@@ -56,15 +56,15 @@ Terminalinizde kullanarak proje dizinine dizini değiştirin ve çalıştırın:
 
 İstendiğinde, git deposu URL'sini girin:
 
- [ ![](match-images/fastlane-image7.png "Git deposu URL'sini girin")](match-images/fastlane-image7.png)
+ [![](match-images/fastlane-image7.png "Git deposu URL'sini girin")](match-images/fastlane-image7.png#lightbox)
 
 URL bulundu ve tıklayarak kopyalanan **kopyalama veya indirme** aşağıda gösterildiği gibi github.com'u üzerinde düğmesi:
 
-[ ![](match-images/fastlane-image6.png "URL altında github.com'u Kopyala veya indir düğmesi")](match-images/fastlane-image6.png)
+[![](match-images/fastlane-image6.png "URL altında github.com'u Kopyala veya indir düğmesi")](match-images/fastlane-image6.png#lightbox)
 
 Proje başlatma matchfile – ortam değişkenleri eşleşme Aracı'na iletmek için düzenlenebilir bir metin dosyası oluşturur. Matchfile örneği aşağıda gösterilmiştir:
 
-[ ![](match-images/fastlane-image8.png "Bir matchfile örneği")](match-images/fastlane-image8.png)
+[![](match-images/fastlane-image8.png "Bir matchfile örneği")](match-images/fastlane-image8.png#lightbox)
 
 <a name="running" />
 
@@ -88,7 +88,7 @@ Yeni sertifikalar ve profilleri oluşturmaya ek olarak, bu komutlardan herhangi 
 - Temel yönergelerini içeren Benioku dosyası
 - Bir eşleşme sürümü
 
-[ ![](match-images/fastlane-image9.png "Git deposu içinde proje yapısı")](match-images/fastlane-image9.png)
+[![](match-images/fastlane-image9.png "Git deposu içinde proje yapısı")](match-images/fastlane-image9.png#lightbox)
 
 Sağlama profilleri yüklenir `~/Library/MobileDevice/Provisioning Profiles`. Sertifikaları ve özel anahtarları, Anahtarlık doğrudan yüklenir.
 

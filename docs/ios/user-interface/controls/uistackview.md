@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 4555906512ecc36e3387f1b2483753e7f50a51ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 82bcd29a201be01bc8123e313e5a76b82668cb85
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="stack-view"></a>Yığın Görünümü
 
@@ -25,11 +26,15 @@ Yığın Görünümü denetimi (`UIStackView`), iOS cihazını yönünü ve ekra
 
 Bir yığın görünüme bağlı tüm subviews düzenini eksen, dağıtım, hizalama ve aralığı gibi tanımlanmış Geliştirici özelliklerindeki göre tarafından yönetilir:
 
-[ ![](uistackview-images/stacked01.png "Yığın düzeni diyagramı görüntüleme")](uistackview-images/stacked01.png)
+[![](uistackview-images/stacked01.png "Yığın düzeni diyagramı görüntüleme")](uistackview-images/stacked01.png#lightbox)
 
 Kullanırken bir `UIStackView` bir Xamarin.iOS uygulaması geliştirici ya da iOS Tasarımcısı veya ekleme ve C# kodunda subviews kaldırarak film şeridi içinde subviews tanımlayabilirsiniz.
 
 Bu belge iki bölümden oluşur: uygulama ilk yığın görüntülemek ve nasıl çalıştığı hakkında daha sonra bazı daha fazla teknik bilgi yardımcı olmak için hızlı bir başlangıç.
+
+> [!VIDEO https://youtube.com/embed/p3po6507Ip8]
+
+**UIStackView, göre [Xamarin Üniversitesi](https://university.xamarin.com/)**
 
 ## <a name="uistackview-quickstart"></a>UIStackView hızlı başlangıç
 
@@ -39,11 +44,11 @@ Bir giriş olarak `UIStackView` denetimi olduğumuz 1'den bir derecelendirme 5 g
 
 Yeni bir Xamarin.iOS projesi başlatın ve düzenleme **Main.storyboard** dosyası Xcode'nın arabirimi Oluşturucu. İlk olarak, tek bir sürükleyin **dikey yığın görünümü** üzerinde **View Controller**:
 
-[ ![](uistackview-images/quick01.png "Tek bir dikey yığın görünüm görünüm denetleyicisinde sürükleyin")](uistackview-images/quick01.png)
+[![](uistackview-images/quick01.png "Tek bir dikey yığın görünüm görünüm denetleyicisinde sürükleyin")](uistackview-images/quick01.png#lightbox)
 
 İçinde **özniteliği denetçisi**, aşağıdaki seçenekleri belirleyin:
 
-[ ![](uistackview-images/quick02.png "Yığın görünümü seçeneklerini ayarlama")](uistackview-images/quick02.png)
+[![](uistackview-images/quick02.png "Yığın görünümü seçeneklerini ayarlama")](uistackview-images/quick02.png#lightbox)
 
 Konum:
 
@@ -61,17 +66,17 @@ Bir yığın görünümü ile çalışırken, düşünebilirsiniz **hizalama** o
 
 Düzen, böylece aşağıdakine benzer bir etiket, ImageView, iki düğmeleri ve yatay bir yığın görünümü ekleyerek uygulamanın arabirimi devam edin:
 
-[ ![](uistackview-images/quick03.png "Yığın görünümü kullanıcı arabirimini düzenleme")](uistackview-images/quick03.png)
+[![](uistackview-images/quick03.png "Yığın görünümü kullanıcı arabirimini düzenleme")](uistackview-images/quick03.png#lightbox)
 
 Yatay yığın görünümü ile aşağıdaki seçenekleri yapılandırın:
 
-[ ![](uistackview-images/quick04.png "Yatay yığını görüntüleme seçeneklerini yapılandırın")](uistackview-images/quick04.png)
+[![](uistackview-images/quick04.png "Yatay yığını görüntüleme seçeneklerini yapılandırın")](uistackview-images/quick04.png#lightbox)
 
 Her "nokta" temsil eden simgeyi derecesi uzatılabilir için istemediğiniz çünkü bunu eklendiğinde yatay yığını görünümüne ayarlarız **hizalama** için **Center** ve  **Dağıtım** için **eşit doldurmak**.
 
 Son olarak, aşağıdaki yukarı wire **çıkışlar** ve **Eylemler**:
 
-[ ![](uistackview-images/quick05.png "Yığın Görünümü çıkışlar ve eylemleri")](uistackview-images/quick05.png)
+[![](uistackview-images/quick05.png "Yığın Görünümü çıkışlar ve eylemleri")](uistackview-images/quick05.png#lightbox)
 
 ### <a name="populate-a-uistackview-from-code"></a>Koddan UIStackView doldurma
 
@@ -168,7 +173,7 @@ Tüm gerekli kullanıcı Arabirimi öğeleri ve koduyla yerinde, şimdi çalış
 
 Kullanıcı ne zaman dokunur **artırmak derecelendirme** düğmesi, başka bir "yıldız" (en çok 5) ekran eklenir:
 
-[ ![](uistackview-images/intro01.png "Örnek uygulamayı çalıştırma")](uistackview-images/intro01.png)
+[![](uistackview-images/intro01.png "Örnek uygulamayı çalıştırma")](uistackview-images/intro01.png#lightbox)
 
 "Yıldız" otomatik olarak ortalanır ve yatay yığını görünümünde eşit olarak dağıtılır. Kullanıcı ne zaman dokunur **azaltmak derecelendirme** düğmesi, bir "yıldız" (hiçbiri bırakılır) kadar kaldırılır.
 

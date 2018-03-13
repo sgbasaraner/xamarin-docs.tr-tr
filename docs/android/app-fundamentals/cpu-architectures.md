@@ -7,12 +7,12 @@ ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6139b5e27e9689da6366a2107acc14a6adcfc928
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 3df6dc72eaed74ad335596d55db8b1295b16f3c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cpu-architectures"></a>CPU mimarisi
 
@@ -32,7 +32,7 @@ Genellikle açıkça bir mimari (veya mimarileri) belirlediğiniz için uygulama
 
 Visual Studio'da çift **özellikleri** projenizde altında **Çözüm Gezgini** seçip **Android seçenekleri** sayfası. Tıklatın **paketleme** sekmesinde ve doğrulayın **kullanım çalışma zamanı paylaşılan** devre dışı bırakıldı (Bu ayarın kapatılması açıkça desteklemek için hangi ABIs seçin izin verir). Tıklatın **Gelişmiş** sekmesi ve altında **Gelişmiş Özellikler**, desteklemek istediğiniz mimarileri denetleyin:
 
-[ ![Pushservice ve pushservice-v7a seçme](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png)
+[![Pushservice ve pushservice-v7a seçme](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -40,7 +40,7 @@ Genellikle açıkça bir mimari (veya mimarileri) belirlediğiniz için uygulama
 
 Mac için Visual Studio'da projenizde bulmak **çözüm** paneli, projenizin yanındaki dişli simgesine tıklayın ve seçin **seçenekleri**. İçinde **proje seçenekleri** iletişim kutusunda, tıklatın **Android derleme**. Tıklatın **genel** sekmesinde ve doğrulayın **kullanımı paylaşılan Mono çalışma zamanı** devre dışı bırakıldı (Bu ayarın kapatılması açıkça desteklemek için hangi ABIs seçin izin verir). Tıklatın **Gelişmiş** sekmesi ve altında **desteklenen ABIs**, desteklemek istediğiniz mimari ABIs denetleyin:
 
-[ ![Pushservice ve pushservice-v7a seçme](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png)
+[![Pushservice ve pushservice-v7a seçme](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png#lightbox)
 
 -----
 
@@ -66,7 +66,7 @@ Birden fazla CPU mimari hedeflemek için birden fazla ABI (ödün verme pahasın
 Seçin gerekmez **arm64 v8a** veya **x86_64** 64-bit aygıtlarda; hedeflemek için 64-bit desteği 64 bit donanımda uygulamanızı çalıştırmak için gerekli değildir. Örneğin, 64-bit ARM aygıtları (gibi [Nexus 9](http://www.google.com/nexus/9/)) için yapılandırılmış uygulamaların çalıştırabilirsiniz `armeabi-v7a`. 64-bit desteği etkinleştirme birincil avantajı, daha fazla bellek adreslemek uygulamanız için olası hale getirmektir.
 
 > [!NOTE]
-> **Not:**: 64 bit çalışma zamanı desteği şu anda Deneysel bir özellik. 64 bit çalışma zamanları olduğunu unutmayın *değil* 64 bit aygıtlarda uygulamanızı çalıştırmak için gereklidir. 
+> 64 bit çalışma zamanı desteği şu anda Deneysel bir özelliktir. 64 bit çalışma zamanları olduğunu unutmayın *değil* 64 bit aygıtlarda uygulamanızı çalıştırmak için gereklidir. 
 
 ## <a name="additional-information"></a>Ek Bilgiler
 

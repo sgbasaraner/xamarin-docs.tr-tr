@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 74635b10e97513d6b023cb44ede7745448aa153c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc6a5f3fe9ff63081936e5714dfb85058204ef33
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-google-play"></a>Google play yayımlama
 
@@ -19,7 +19,6 @@ Bir uygulama dağıtmak için çok sayıda uygulama pazarda olsa da, Google Play
 
 Bu bölümde yükseltmeniz ve uygulamanıza tanıtma Google Play yardımcı olmak için uygulamanızın Google Play'deki derecelendirme ve filtreleri için kullanma yönergeleri varlıklar toplama bir yayımcı olmasını kaydetme gibi Google Play belirli konuları ele alınacaktır bir uygulamayı belirli cihazlara dağıtımını kısıtlar.
 
-<a name="Requirements"  />
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -32,7 +31,6 @@ Google Play üzerinde yayımlanan bir APK en büyük boyutu 100 MB'tır. Bir uyg
 Google Play genel olarak kullanılabilir değil. Bazı konumları uygulamaları dağıtım için desteklenmiyor olabilir.
 
 
-<a name="Becoming_a_Publisher"  />
 
 ## <a name="becoming-a-publisher"></a>Bir yayımcı olma
 
@@ -53,14 +51,12 @@ Google Play tüm ülkelerde dünyada desteklemez. En güncel ülkelerin listesi 
 1.  [Google Play kullanıcılara dağıtmak üzere konumları desteklenen](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; tüm ülkelerde nerede dağıtılmış uygulamalar listesini budur.
 
 
-<a name="Preparing_Promotional_Assets"  />
 
 ### <a name="preparing-promotional-assets"></a>Promosyon varlıklar hazırlama
 
 Etkili bir şekilde yükseltmek ve bir uygulama Google play'de tanıtmak için ekran görüntüleri, grafik ve video gibi tanıtım varlıklar gönderilecek göndermek geliştiricilerin Google sağlar. Google Play tanıtım ve uygulama yükseltmek için bu varlıkları sonra kullanır.
 
 
-<a name="Launcher_Icons"  />
 
 #### <a name="launcher-icons"></a>Başlatıcı simgeler
 
@@ -83,7 +79,6 @@ Başlatıcı simgeleri için ipuçları:
 1.  **Alfa kanal kullanmak** &ndash; simgeleri olmalısınız alfa kanalını kullanın ve tam Çerçeveli görüntüleri olmamalıdır.
 
 
-<a name="High_Resolution_Application_Icon"  />
 
 #### <a name="high-resolution-application-icons"></a>Yüksek çözünürlüklü uygulama simgeleri
 
@@ -96,7 +91,6 @@ Google Play uygulamaları uygulama simgesi yüksek doğruluk sürümünü gerekt
 [Android varlık Studio](https://romannurik.github.io/AndroidAssetStudio/) uygun Başlatıcısı simgeler ve yüksek çözünürlüklü uygulama simgesi oluşturmak için yararlı bir araçtır.
 
 
-<a name="Screen_shots"  />
 
 #### <a name="screen-shots"></a>Ekran görüntüleri
 
@@ -108,7 +102,6 @@ Ekran görüntüleri için özellikleri şunlardır:
 1.  320w x 480h ya da x 800 y 480w veya 480w 854 h x. Landscaped görüntüleri kırpılır.
 
 
-<a name="Promotional_Graphic" />
 
 #### <a name="promotional-graphic"></a>Promosyon grafiği
 
@@ -118,7 +111,6 @@ Bu, Google Play tarafından kullanılan isteğe bağlı bir görüntüdür:
 1.  Resim kenarlık yok.
 
 
-<a name="Feature_Graphic" />
 
 #### <a name="feature-graphic"></a>Özellik grafiği
 
@@ -129,14 +121,12 @@ Google Play öne çıkan bölümü tarafından kullanılır. Bu grafiği tek ba�
 1.  Bu grafik ölçeği: grafik basit tutmak ve büyük metin kullanın.
 
 
-<a name="Video_Link" />
 
 #### <a name="video-link"></a>Video bağlantı
 
 Bu bir uygulama birtakım sergileyen video YouTube'da URL'dir. Video 30 saniye uzunluğu 2 dakika olarak ve en iyi uygulamanızın parçalarını sergiler gerekir.
 
 
-<a name="pubgp" />
 
 ### <a name="publishing-to-google-play"></a>Google play yayımlama
 
@@ -155,19 +145,19 @@ Xamarin Android 7.0 yayımlama uygulamalar için tümleşik bir iş akışı Goo
 
 İçinde [yayımlama arşiv](~/android/deploy-test/release-prep/index.md#archive), **dağıtım kanal** iletişim dağıtım için iki seçenek sunulur: **geçici** ve **Google Play** . Varsa **imzalama kimlik** iletişim bunun yerine görüntülenir, tıklatın **geri** geri dönmek için **dağıtım kanal** iletişim. Seçin **Google Play** tıklatıp **sonraki**:
 
-[ ![Dağıtım Kanalı iletişim](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png)
+[![Dağıtım Kanalı iletişim](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
 İçinde **imzalama kimlik** kimliğini oluşturulan iletişim kutusunda [yeni bir sertifika oluşturma](~/android/deploy-test/signing/index.md#newcert) tıklatıp **devam**:
 
-[ ![İmzalama kimlik iletişim kutusu](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png)
+[![İmzalama kimlik iletişim kutusu](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png#lightbox)
 
 İçinde **Google Play hesapları** iletişim kutusunda, tıklatın  **+**  düğmesi yürütmek yeni bir Google hesabı eklemek için:
 
-[ ![Google Play hesapları iletişim kutusu](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png)
+[![Google Play hesapları iletişim kutusu](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png#lightbox)
 
 İçinde **Google API erişimini kaydetmek** iletişim kutusunda, sağlamalıdır _istemci kimliği_ ve _gizli_ Google Play Geliştirici hesabınızda API erişim sağlar:
 
-[ ![Kaydı Google API erişimi iletişim kutusu](images/vs/04-register-google-api-access-sml.png)](images/vs/04-register-google-api-access.png)
+[![Kaydı Google API erişimi iletişim kutusu](images/vs/04-register-google-api-access-sml.png)](images/vs/04-register-google-api-access.png#lightbox)
 
 Sonraki bölümde, yeni bir Google API projesi oluşturun ve gerekli oluşturmak açıklanmaktadır _istemci kimliği_ ve _gizli_.
 
@@ -186,11 +176,11 @@ Mac için Visual Studio yayımlama uygulamaları Google play için tümleşik bi
 
 İçinde [yayımlama arşiv](~/android/deploy-test/release-prep/index.md#archive), **oturum ve Dağıt...**  iletişim dağıtım için iki seçenek sunulur. Seçin **Google Play**tıklatıp **sonraki**:
 
-[ ![Android dağıtım iletişim seçin](images/xs/01-select-google-play-sml.png)](images/xs/01-select-google-play.png)
+[![Android dağıtım iletişim seçin](images/xs/01-select-google-play-sml.png)](images/xs/01-select-google-play.png#lightbox)
 
 İçinde **Google Play API hesabı** iletişim kutusunda, sağlamalıdır _istemci kimliği_ ve _gizli_ Google Play Geliştirici hesabınızda API erişim sağlar:
 
-[ ![Google Play API hesabı iletişim](images/xs/02-google-play-api-account-sml.png)](images/xs/02-google-play-api-account.png)
+[![Google Play API hesabı iletişim](images/xs/02-google-play-api-account-sml.png)](images/xs/02-google-play-api-account.png#lightbox)
 
 Sonraki bölümde, yeni bir Google API projesi oluşturun ve gerekli oluşturmak açıklanmaktadır _istemci kimliği_ ve _gizli_.
 
@@ -203,34 +193,34 @@ Sonraki bölümde, yeni bir Google API projesi oluşturun ve gerekli oluşturmak
 Bir Google Play Geliştirici hesabı zaten yoksa bkz [yayımlama ile çalışmaya başlama](http://developer.android.com/distribute/googleplay/start.html).
 Ayrıca, Google Play Geliştirici API [Başlarken](https://developers.google.com/android-publisher/getting_started) Google Play Geliştirici API kullanımı açıklanmaktadır. Google Play Geliştirici konsolunda oturumu sonra tıklatın **ayarları**:
 
-[ ![Ayarlar simgesi](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png)
+[![Ayarlar simgesi](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)
 
 İçinde **ayarları** sayfasında, **API erişimini**tıklatıp **yeni proje oluştur** düğmesi:
 
-[ ![Yeni Proje düğmesi oluşturma](images/02-create-new-project-sml.png)](images/02-create-new-project.png)
+[![Yeni Proje düğmesi oluşturma](images/02-create-new-project-sml.png)](images/02-create-new-project.png#lightbox)
 
 Bir dakika veya bunu sonra yeni API projesi otomatik olarak oluşturulan ve Google Play Geliştirici konsol hesabınıza bağlanır.
 
 Sonraki adım (bir değil zaten oluşturulduysa) uygulaması için bir OAuth istemci oluşturmaktır. Kullanıcılar, uygulamayı kullanan özel verilerine erişmek istediğinde OAuth istemci kimliği, uygulamanızın kimliğini doğrulamak için kullanılır.
 Tıklatın **oluşturma OAuth istemcisi** yeni bir OAuth istemci oluşturmak için:
 
-[ ![OAuth istemcisi düğmesi oluşturma](images/03-create-oauth-client-sml.png)](images/03-create-oauth-client.png)
+[![OAuth istemcisi düğmesi oluşturma](images/03-create-oauth-client-sml.png)](images/03-create-oauth-client.png#lightbox)
 
 Birkaç saniye sonra yeni bir istemci kimliği oluşturulur. Tıklatın **Google geliştiriciler konsol görünümünde** Google Developer's konsolundaki Yeni istemci Kimliğini görmek için:
 
-[ ![Görüntülenen istemci kimliği](images/04-generated-client-id-sml.png)](images/04-generated-client-id.png)
+[![Görüntülenen istemci kimliği](images/04-generated-client-id-sml.png)](images/04-generated-client-id.png#lightbox)
 
 İstemci Kimliğini, adını ve oluşturma tarih görüntülenir. Tıklatın **Düzenle OAuth istemcisi** simgesi uygulamanız için istemci gizli anahtarı görüntülemek için:
 
-[ ![Görünüm uygulama kimlik bilgileri](images/05-google-developer-console-sml.png)](images/05-google-developer-console.png)
+[![Görünüm uygulama kimlik bilgileri](images/05-google-developer-console-sml.png)](images/05-google-developer-console.png#lightbox)
 
 OAuth İstemcisi varsayılan adı *Google Play Android Geliştirici*. Bu Xamarin.Android uygulamasının adı veya uygun bir ad değiştirilebilir. Bu örnekte, uygulama adını OAuth istemcisi adı değiştirilene **Uygulamam**:
 
-[ ![İstemci Kimliğini ve parolasını görüntülenir](images/06-client-id-and-secret-sml.png)](images/06-client-id-and-secret.png)
+[![İstemci Kimliğini ve parolasını görüntülenir](images/06-client-id-and-secret-sml.png)](images/06-client-id-and-secret.png#lightbox)
 
 Tıklatın **kaydetmek**değişiklikler kaydedilemiyor. Bu döndürür **kimlik bilgileri** tıklayarak kimlik bilgileri karşıdan yükleme konumu sayfasında **karşıdan JSON** simgesi:
 
-[ ![Yükleme JSON simgesi](images/07-download-json-sml.png)](images/07-download-json.png)
+[![Yükleme JSON simgesi](images/07-download-json-sml.png)](images/07-download-json.png#lightbox)
 
 Bu JSON dosyası istemci kimliği ve kesin ve yapıştırın gizli içerir **oturum ve Dağıt** sonraki adımda iletişim.
 
@@ -241,18 +231,18 @@ Bu JSON dosyası istemci kimliği ve kesin ve yapıştırın gizli içerir **otu
 
 Tamamlamak için istemci kimliği ve istemci parolası kullanın **Google Play API hesabı** Mac için Visual Studio'da iletişim kutusu Hesap bir açıklama vermek mümkündür &ndash; bu birden çok Google Play hesabını kaydetmek ve gelecekteki APK ait farklı Google Play hesaplara yüklemek mümkün kılar. İstemci Kimliğini ve istemci parolası için bu iletişim kutusunu kopyalayın ve tıklatın **kaydetmek**:
 
-[ ![Kaydı Google API erişimi iletişim kutusu](images/vs/05-enter-client-id-and-secret-sml.png)](images/vs/05-enter-client-id-and-secret.png)
+[![Kaydı Google API erişimi iletişim kutusu](images/vs/05-enter-client-id-and-secret-sml.png)](images/vs/05-enter-client-id-and-secret.png#lightbox)
 
 Bir web tarayıcısı açın ve Google Play Android Geliştirici hesabınızda oturum (, zaten oturum açtınız değil) ister. Oturum açtıktan sonra aşağıdaki komut istemini web tarayıcısında görüntülenir.
 Tıklatın **izin** uygulama yetkilendirmek için:
 
-[ ![Uygulama iletişim yetkilendirmek](images/vs/06-authorize-app-sml.png)](images/vs/06-authorize-app.png)
+[![Uygulama iletişim yetkilendirmek](images/vs/06-authorize-app-sml.png)](images/vs/06-authorize-app.png#lightbox)
 
 #### <a name="publish"></a>Yayımlama
 
 ' I tıklattıktan sonra **izin**, tarayıcı raporları _doğrulama kodu alındı. Kapatılıyor..._  ve uygulamayı Visual Studio'da Google Play hesapları listesine eklenir. İçinde **Google Play hesapları** iletişim kutusunda, tıklatın **devam**:
 
-[ ![Hesabı için Google Play Acccounts eklendi](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png)
+[![Hesabı için Google Play Acccounts eklendi](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
 Ardından, **Google Play izleme** iletişim sunulur. Google Play uygulamanızı karşıya yükleme için dört olası parça sunar:
 
@@ -263,33 +253,33 @@ Ardından, **Google Play izleme** iletişim sunulur. Google Play uygulamanızı 
 
 Hangi Google Play İzleme'ye tıklayın ve uygulama yüklemek için kullanılacak seçin **karşıya**. Seçerseniz **sunum**, bir yüzde değeri girdiğinizden emin olun:
 
-[ ![Alfa, Beta, sunum veya üretim seçin](images/vs/08-google-play-track-sml.png)](images/vs/08-google-play-track.png)
+[![Alfa, Beta, sunum veya üretim seçin](images/vs/08-google-play-track-sml.png)](images/vs/08-google-play-track.png#lightbox)
 
 Google Play sınama ve hazırlanan piyasa sürümlerini hakkında daha fazla bilgi için bkz: [alfa/beta testleri oluşturma](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en).
 
 Ardından, bir iletişim kutusu için imzalama sertifikası parola girmesini sunulur.
 Parolayı girin ve tıklayın **Tamam**:
 
-[ ![Parola iletişim imzalama](images/vs/09-certificate-password-sml.png)](images/vs/09-certificate-password.png)
+[![Parola iletişim imzalama](images/vs/09-certificate-password-sml.png)](images/vs/09-certificate-password.png#lightbox)
 
 **Arşiv Yöneticisi** karşıya yükleme ilerlemesini görüntüler:
 
-[ ![APK devam eden karşıya yükleme](images/vs/10-uploading-apk-sml.png)](images/vs/10-uploading-apk.png)
+[![APK devam eden karşıya yükleme](images/vs/10-uploading-apk-sml.png)](images/vs/10-uploading-apk.png#lightbox)
 
 Karşıya yükleme tamamlandığında, tamamlanma durumu sol alt köşesinde Visual Studio'nun gösterilir:
 
-[ ![Yayımlama proje tamamlanmış iletisi](images/vs/11-published-sml.png)](images/vs/11-published.png)
+[![Yayımlama proje tamamlanmış iletisi](images/vs/11-published-sml.png)](images/vs/11-published.png#lightbox)
 
 
 ### <a name="troubleshooting"></a>Sorun giderme
 
 Bir APK için Google Play zaten gönderildi gerekir, Not önce depolamak **Google Play Yayımla** çalışır. Bir APK zaten karşıya Yayımlama Sihirbazı şu hatayla görüntüler **hataları** bölmesi:
 
-[ ![Bu uygulama için ilk APK el ile yüklemeniz gerekir](images/vs/12-upload-error-sml.png)](images/vs/12-upload-error.png)
+[![Bu uygulama için ilk APK el ile yüklemeniz gerekir](images/vs/12-upload-error-sml.png)](images/vs/12-upload-error.png#lightbox)
 
 Olduğunda bu hata occures el ile (örneğin, bir geçici derleme) bir APK Google Play Geliştirici Konsolu aracılığıyla karşıya yükleme ve kullanma **dağıtım kanal** iletişim sonraki APK güncelleştirmeler için.  Daha fazla bilgi için bkz: [APK'el ile karşıya](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md). APK sürüm kodunu, aksi takdirde şu hata meydana gelir her karşıya yükleme ile değiştirmeniz gerekir:
 
-[ ![APK sürüm kod (1) ile zaten güncelleştirildi](images/vs/13-version-code-error-sml.png)](images/vs/13-version-code-error.png)
+[![APK sürüm kod (1) ile zaten güncelleştirildi](images/vs/13-version-code-error-sml.png)](images/vs/13-version-code-error.png#lightbox)
 
 Bu hatayı gidermek için uygulamanın farklı sürüm numarasıyla yeniden ve Google play yeniden gönderin **dağıtım kanal** iletişim.
 
@@ -297,15 +287,15 @@ Bu hatayı gidermek için uygulamanın farklı sürüm numarasıyla yeniden ve G
 
 Tamamlamak için istemci kimliği ve istemci parolası kullanın **Google Play API hesabı** Mac için Visual Studio'da iletişim kutusu Hesap bir açıklama vermek mümkündür &ndash; bu birden çok Google Play hesabını kaydetmek ve gelecekteki APK ait farklı Google Play hesaplara yüklemek mümkün kılar. İstemci Kimliğini ve istemci parolası için bu iletişim kutusunu kopyalayın ve tıklatın **kaydetmek**:
 
-[ ![Erişim iletişim yetkilendirmek](images/xs/10-register-sml.png)](images/xs/10-register.png)
+[![Erişim iletişim yetkilendirmek](images/xs/10-register-sml.png)](images/xs/10-register.png#lightbox)
 
 İstemci Kimliğini ve istemci parolası kabul edilirse bir **kaydı başarılı** iletisi görüntülenir. Tıklatın **sonraki**:
 
-[ ![Kayıt başarılı iletisi](images/xs/11-registration-successful-sml.png)](images/xs/11-registration-successful.png)
+[![Kayıt başarılı iletisi](images/xs/11-registration-successful-sml.png)](images/xs/11-registration-successful.png#lightbox)
 
 İçinde **Google Play hesabı** iletişim kutusunda, bir Google hesabı ve uygulama karşıya yükleme için bir izleme seçin:
 
-[ ![Google hesabı iletişim seçin](images/xs/12-choose-google-account-sml.png)](images/xs/12-choose-google-account.png)
+[![Google hesabı iletişim seçin](images/xs/12-choose-google-account-sml.png)](images/xs/12-choose-google-account.png#lightbox)
 
 Google Play uygulamanızı karşıya yükleme için dört olası parça sunar:
 
@@ -322,11 +312,11 @@ Google Play sınama ve hazırlanan piyasa sürümlerini hakkında daha fazla bil
 Ardından, bir imza kimliği, uygulamayı imzalamak için kullanılan seçin.
 Seçin **var olan anahtarı kullan** varolan kimlik imzalama kullanmak için Aksi halde Kılavuzu'na danışın [yeni bir sertifika oluşturma](~/android/deploy-test/signing/index.md#newcert) yeni bir anahtar oluşturma hakkında daha fazla bilgi için. Uygulamayı imzalamak için bir sertifika seçtikten sonra tıklatın **sonraki**:
 
-[ ![Android imzalama kimlik iletişim kutusu](images/xs/13-android-signing-identity-sml.png)](images/xs/13-android-signing-identity.png)
+[![Android imzalama kimlik iletişim kutusu](images/xs/13-android-signing-identity-sml.png)](images/xs/13-android-signing-identity.png#lightbox)
 
 Bu noktada uygulama Google Play karşıya yüklenebilir. **Google Play Yayımla** iletişim uygulamanız ile ilgili bilgileri özetler &ndash; tıklatın **Yayımla** Google Play uygulamanızı yayımlamak için:
 
-[ ![Yayımlama için Google Play iletişim kutusu](images/xs/14-publish-to-google-play-sml.png)](images/xs/14-publish-to-google-play.png)
+[![Yayımlama için Google Play iletişim kutusu](images/xs/14-publish-to-google-play-sml.png)](images/xs/14-publish-to-google-play.png#lightbox)
 
 Bir APK için Google Play zaten gönderildi gerekir, Not önce depolamak **Google Play Yayımla** çalışır. Bir APK karşıya aşağıdaki hata oluşabilir:
 

@@ -7,11 +7,11 @@ ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 44df6fce4ec6d667c096da01cfc339ec2afdb077
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec5ca2883c6e109a67ee8a4ecb25fe938d0df4ec
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>İzlenecek yol: yansıma API kullanarak bir uygulama oluşturma
 
@@ -34,7 +34,7 @@ Yansıma API kullanarak kadar kolaydır:
 
 Yansıma API kullanmayı göstermek için bir örneğe bakalım. Bu örnekte, biz aşağıda gösterildiği gibi basit veri girişi ekran yapı:
 
- [ ![](reflection-api-walkthrough-images/01-expense-entry.png "Bu örnekte, biz basit veri girdi ekranını aşağıda gösterildiği gibi yapı")](reflection-api-walkthrough-images/01-expense-entry.png)
+ [![](reflection-api-walkthrough-images/01-expense-entry.png "Bu örnekte, biz basit veri girdi ekranını aşağıda gösterildiği gibi yapı")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
 
@@ -119,7 +119,7 @@ window.RootViewController = nav;
 
 Biz uygulamayı çalıştırdığınızda, başlık görünür artık `UINavigationController’s` gezinti çubuğu olarak ekran görüntüsü aşağıda gösterilmiştir:
 
- [ ![](reflection-api-walkthrough-images/02-create-task.png "Şimdi biz uygulamayı çalıştırdığınızda, başlık UINavigationControllers gezinti çubuğunda görünür.")](reflection-api-walkthrough-images/02-create-task.png)
+ [![](reflection-api-walkthrough-images/02-create-task.png "Şimdi biz uygulamayı çalıştırdığınızda, başlık UINavigationControllers gezinti çubuğunda görünür.")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 Ekleyerek bir `UINavigationController`, biz şimdi yüksekliğindeki diğer özelliklerini yararlanabilir D Gezinti gereklidir. Örneğin, bir numaralandırma ekleyebiliriz `Expense` gider ve yüksekliğindeki kategori tanımlamak için sınıfı D seçimi ekran otomatik olarak oluşturur. Göstermek için değiştirme `Expense` eklemek için sınıfı bir `ExpenseCategory` gibi alan:
 
@@ -142,11 +142,11 @@ public class Expense
 
 Uygulamayı şimdi çalıştıran kategorisinin tablosunda yeni bir satırı gösterildiği gibi sonuçlanır:
 
- [ ![](reflection-api-walkthrough-images/03-set-details.png "Uygulamayı şimdi çalıştıran kategori tablosunda yeni bir satıra gösterildiği gibi sonuçları")](reflection-api-walkthrough-images/03-set-details.png)
+ [![](reflection-api-walkthrough-images/03-set-details.png "Uygulamayı şimdi çalıştıran kategori tablosunda yeni bir satıra gösterildiği gibi sonuçları")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 Satır seçilmesi, uygulama için yeni bir ekran numaralandırma, karşılık gelen satırlarla aşağıda gösterildiği gibi gezinme içinde sonuçları:
 
- [ ![](reflection-api-walkthrough-images/04-set-category.png "Uygulama için yeni bir ekran satır numaralandırma karşılık gelen gezinme içinde sonuçlarını satır seçme")](reflection-api-walkthrough-images/04-set-category.png)
+ [![](reflection-api-walkthrough-images/04-set-category.png "Uygulama için yeni bir ekran satır numaralandırma karşılık gelen gezinme içinde sonuçlarını satır seçme")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary" />
 

@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 70a7abb186c102fb803c0ab6fa38c7b2d8222292
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2d5a83b9f6278406e9b643277357df253f5fd524
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="listview"></a>ListView
 
 _ListView önemli bir Android uygulamaları UI bileşenidir; Kişiler veya Internet Sık Kullanılanlar uzun listelerine kısa listesini menü seçeneklerini her yerde kullanılır. Kaydırma ya da yerleşik tarzıyla biçimlendirilen ya da yaygın özelleştirilmiş satır listesini sunmak için basit bir yol sağlar._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -30,10 +29,9 @@ Bu kılavuz nasıl uygulanacağını anlatır `ListView` ve çeşitli `Adapter` 
 
 
 > [!NOTE]
-> **Not**: `RecyclerView` pencere öğesi olan bir daha gelişmiş ve esnek sürümü `ListView`. Çünkü `RecyclerView` ardıl olacak şekilde tasarlanmıştır `ListView` (ve `GridView`), kullanmanızı öneririz `RecyclerView` yerine `ListView` yeni uygulama geliştirme için. Daha fazla bilgi için bkz: [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
+> `RecyclerView` Pencere öğesi olan bir daha gelişmiş ve esnek sürümü `ListView`. Çünkü `RecyclerView` ardıl olacak şekilde tasarlanmıştır `ListView` (ve `GridView`), kullanmanızı öneririz `RecyclerView` yerine `ListView` yeni uygulama geliştirme için. Daha fazla bilgi için bkz: [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
 
 
-<a name="tutorial" />
 
 ## <a name="listview-tutorial"></a>ListView Öğreticisi
 
@@ -147,7 +145,7 @@ static readonly string[] countries = new String[] {
 
 Uygulamayı çalıştırın. Listeyi kaydırın veya onu filtrelemek için yazın ve sonra bir ileti görmek için bir öğeyi tıklatın. Şöyle bir şey görmeniz gerekir:
 
-[ ![Örnek penceresinin ekran görüntüsü ListView ülke adları](images/helloviews6.png)](images/helloviews6.png)
+[![Örnek penceresinin ekran görüntüsü ListView ülke adları](images/helloviews6.png)](images/helloviews6.png#lightbox)
 
 Bir sabit kodlanmış bir dize dizisi kullanarak en iyi tasarım uygulama olmadığını unutmayın. Bir Basitlik için Bu öğreticide göstermek için kullanılan [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/) pencere öğesi. İle gibi harici bir kaynak tarafından tanımlanan bir dize dizisi başvurmak için daha iyi uygulamadır bir `string-array` projenizdeki kaynak **Resources/Values/Strings.xml** dosya. Örneğin:
 
@@ -173,7 +171,6 @@ string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
 ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countries);
 ```
 
-<a name="going_further" />
 
 ## <a name="going-further-with-listview"></a>ListView ile devam
 
@@ -193,14 +190,13 @@ Diğer konular (aşağıda bağlı) ile çalışma kapsamlı bir göz atalım `L
 
 Genel Bakış (altı bölümlere ayrılmış) tartışma başlar `ListView` nasıl kullanılacağını giderek daha karmaşık örnekleri sunmadan önce sınıfının kendisini.
 
--   [ListView bölümleri ve İşlevler](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
+-   [ListView Bölümleri ve İşlevleri](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
 -   [ListView verilerle doldurma](~/android/user-interface/layouts/list-view/populating.md)
--   [ListView'ın görünümünü özelleştirme](~/android/user-interface/layouts/list-view/customizing-appearance.md)
--   [CursorAdapters kullanma](~/android/user-interface/layouts/list-view/cursor-adapters.md)
--   [Bir ContentProvider kullanma](~/android/user-interface/layouts/list-view/content-provider.md)
--   [ListView ve etkinlik yaşam döngüsü](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
+-   [ListView’ın Görünümünü Özelleştirme](~/android/user-interface/layouts/list-view/customizing-appearance.md)
+-   [CursorAdapters Kullanma](~/android/user-interface/layouts/list-view/cursor-adapters.md)
+-   [ContentProvider Kullanma](~/android/user-interface/layouts/list-view/content-provider.md)
+-   [ListView ve Etkinlik Yaşam Döngüsü](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

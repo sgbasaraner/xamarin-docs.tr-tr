@@ -2,27 +2,29 @@
 title: SQLite.NET kullanma
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
+ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2018
-ms.openlocfilehash: d18fe5960a44153626fbf0bda30e3485faf5b9fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b29826f1a7acc6bb8dcd0594c69a5cb7ff6db42
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="using-sqlitenet"></a>SQLite.NET kullanma
 
 Xamarin önerdiği SQLite.NET bir iOS cihazında yerel SQLite veritabanındaki nesneler depolanıp olanak sağlayan bir temel ORM kitaplığıdır.
 Nesne İlişkisel eşleme – kaydedin ve "nesneler" SQL deyimleri yazmak zorunda kalmadan veritabanından olanak sağlayan bir API ORM gösterir.
 
-## <a name="using-sqlitenet"></a>SQLite.NET kullanma
+<a name="Usage"/>
+
+## <a name="usage"></a>Kullanım
 
 Ekleme [SQLite.net PCL NuGet paketi](https://www.nuget.org/packages/sqlite-net-pcl/), isteğe bağlı olarak, projenize - bir gibi çeşitli platformlardan iOS, Android ve Windows destekler.
 
-  [ ![](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet paketi")](using-sqlite-orm-images/image1a.png)
+  [![](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet paketi")](using-sqlite-orm-images/image1a.png#lightbox)
 
 SQLite.NET kitaplığının kullanılabilir olduktan sonra bir veritabanına erişmek için kullanmak için aşağıdaki üç adımı izleyin:
 
@@ -68,7 +70,7 @@ Bu ad alanlarını dahil yapmanız gerekir:
 using SQLite; // from the github SQLite.cs class
 ```
 
-Bu vurgulanan projenize SQLite eklediğiniz gerektirir [burada](#Using_SQLite.NET). SQLite veritabanı tablosu için bir sınıf öznitelikleri ekleyerek tanımlanır unutmayın ( `Stock` sınıfı) yerine bir CREATE TABLE komutu.
+Bu vurgulanan projenize SQLite eklediğiniz gerektirir [burada](#Usage). SQLite veritabanı tablosu için bir sınıf öznitelikleri ekleyerek tanımlanır unutmayın ( `Stock` sınıfı) yerine bir CREATE TABLE komutu.
 
 ```csharp
 [Table("Items")]

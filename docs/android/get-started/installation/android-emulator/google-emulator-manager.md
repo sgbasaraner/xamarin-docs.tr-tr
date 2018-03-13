@@ -7,21 +7,20 @@ ms.assetid: 0C0BBEC0-C84A-4558-B905-4EF81FCD62F9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 12/22/2017
-ms.openlocfilehash: f275ff6c7d3e6eeec5eb3878cc39633d70238f66
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 1e90ebe55dbec9fdcc57b9eaab99e614fdc5cbbc
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="google-emulator-manager"></a>Google öykünücüsü yöneticisi
 
 Donanım hızlandırma etkinleştirildiğini doğruladıktan sonra (açıklandığı gibi [Android öykünücüsü donanım hızlandırmasını](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), test ve uygulamanızı hata ayıklama için kullanılacak sanal cihaz oluşturmak için sonraki adımdır. Eski Google Öykünücüsü Yöneticisi'ni kullanabilirsiniz (olarak da bilinen *Android sanal cihazı (AVD) Yöneticisi'ni*) Android SDK öykünücüsü tarafından kullanılacak sanal cihaz oluşturmak için.
 
 > [!NOTE]
-> **Not:** Android 8.0 Oreo hedefliyorsanız, kullanmalısınız [Xamarin Android Aygıt Yöneticisi'ni](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) oluşturmak ve sanal cihaz yapılandırmak için.
+> Android 8.0 Oreo hedefliyorsanız, kullanmalısınız [Xamarin Android Aygıt Yöneticisi'ni](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) oluşturmak ve sanal cihaz yapılandırmak için.
 
-<a name="sysimg" />
 
 ## <a name="installing-system-images"></a>Sistem görüntüleri yükleme
 
@@ -46,11 +45,11 @@ Aşağıdaki ekran görüntüsünde **Intel x86 Atom** görüntüleri yüklenir,
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Android 6.0 x86 sistem görüntüleri için Android öykünücüsü seçme](google-emulator-manager-images/win/03-select-x86-images-sml.png)](google-emulator-manager-images/win/03-select-x86-images.png)
+[![Android 6.0 x86 sistem görüntüleri için Android öykünücüsü seçme](google-emulator-manager-images/win/03-select-x86-images-sml.png)](google-emulator-manager-images/win/03-select-x86-images.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Android 6.0 x86 sistem görüntüleri için Android öykünücüsü seçme](google-emulator-manager-images/mac/02-select-x86-images-sml.png)](google-emulator-manager-images/mac/02-select-x86-images.png)
+[![Android 6.0 x86 sistem görüntüleri için Android öykünücüsü seçme](google-emulator-manager-images/mac/02-select-x86-images-sml.png)](google-emulator-manager-images/mac/02-select-x86-images.png#lightbox)
 
 -----
 
@@ -69,23 +68,21 @@ Android takmak için uygulama geliştiriyorsanız, aşağıdaki sistem görünt�
 Bu sistem görüntüleri yüklendikten sonra oluşturabileceğiniz **x86**-Android sanal cihaz (Bu açıklanmaktadır sonraki) sanal aygıt yapılandırması sırasında uygun API düzeyi ve CPU/ABI Seçenekler'i seçerek tabanlı.
 
 
-<a name="virtualdevice" />
-
 ## <a name="configuring-virtual-devices"></a>Sanal cihaz yapılandırma
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Sanal cihazlar aracılığıyla yapılandırılır **Android Emulator Manager** (olarak da adlandırılan _Android sanal cihaz Yöneticisi_ veya _AVD Yöneticisi_). Visual Studio'dan Android öykünücü yöneticisini başlatmak için tıklatın **Android Emulator Manager** araç çubuğunda simge:
 
-[ ![AVD simgesinin yeri](google-emulator-manager-images/win/04-avd-icon-sml.png)](google-emulator-manager-images/win/04-avd-icon.png)
+[![AVD simgesinin yeri](google-emulator-manager-images/win/04-avd-icon-sml.png)](google-emulator-manager-images/win/04-avd-icon.png#lightbox)
 
 Menü çubuğundan Android Öykünücüsü Yöneticisi'ni seçerek de başlatabilirsiniz **Araçlar > Android > Android Emulator Manager**:
 
-[![Android Emulator Manager menü öğesi konumu](google-emulator-manager-images/win/05-avd-manager-menu-item-sml.png)](google-emulator-manager-images/win/05-avd-manager-menu-item.png)
+[![Android Emulator Manager menü öğesi konumu](google-emulator-manager-images/win/05-avd-manager-menu-item-sml.png)](google-emulator-manager-images/win/05-avd-manager-menu-item.png#lightbox)
 
 **Android sanal cihazı (AVD) Yöneticisi'ni** iletişim varolan Android sanal aygıtların listesini görüntüler:
 
-[![Android sanal cihaz Yöneticisi](google-emulator-manager-images/win/06-virtual-device-manager-sml.png)](google-emulator-manager-images/win/06-virtual-device-manager.png)
+[![Android sanal cihaz Yöneticisi](google-emulator-manager-images/win/06-virtual-device-manager-sml.png)](google-emulator-manager-images/win/06-virtual-device-manager.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -93,17 +90,16 @@ Sanal cihazlar aracılığıyla yapılandırılır **Android Emulator Manager** 
 
 Menü çubuğundan Android Öykünücüsü Yöneticisi'ni seçerek başlatabilirsiniz **Araçlar > Google öykünücü yöneticisini**:
 
-[![Android Emulator Manager menü öğesi konumu](google-emulator-manager-images/mac/03-avd-manager-menu-item-sml.png)](google-emulator-manager-images/mac/03-avd-manager-menu-item.png)
+[![Android Emulator Manager menü öğesi konumu](google-emulator-manager-images/mac/03-avd-manager-menu-item-sml.png)](google-emulator-manager-images/mac/03-avd-manager-menu-item.png#lightbox)
 
 **Android sanal cihazı (AVD) Yöneticisi'ni** iletişim varolan Android sanal aygıtların listesini görüntüler:
 
-[![Android sanal cihaz Yöneticisi](google-emulator-manager-images/mac/05-virtual-device-manager-sml.png)](google-emulator-manager-images/mac/05-virtual-device-manager.png)
+[![Android sanal cihaz Yöneticisi](google-emulator-manager-images/mac/05-virtual-device-manager-sml.png)](google-emulator-manager-images/mac/05-virtual-device-manager.png#lightbox)
 
 -----
 
 Yeni sanal cihaz görüntüleri farklı aygıt özellikleri ve API düzeylerini oluşturabilirsiniz &ndash; özel cihaz tanımları ve sanal cihaz oluşturma sonraki bölümde açıklanmaktadır.
 
-<a name="custom-def" />
 
 ### <a name="creating-a-custom-device-definition"></a>Bir özel cihaz tanımı oluşturma
 
@@ -111,11 +107,11 @@ Bir özel cihaz tanımı oluşturmak için tıklatın **oluştur...**  içinde *
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Özel cihaz tanımı üzerinde nexus 6 tabanlı](google-emulator-manager-images/win/07-custom-device-sml.png)](google-emulator-manager-images/win/07-custom-device.png)
+[![Özel cihaz tanımı üzerinde nexus 6 tabanlı](google-emulator-manager-images/win/07-custom-device-sml.png)](google-emulator-manager-images/win/07-custom-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Özel cihaz tanımı üzerinde nexus 6 tabanlı](google-emulator-manager-images/mac/06-custom-device-sml.png)](google-emulator-manager-images/mac/06-custom-device.png)
+[![Özel cihaz tanımı üzerinde nexus 6 tabanlı](google-emulator-manager-images/mac/06-custom-device-sml.png)](google-emulator-manager-images/mac/06-custom-device.png#lightbox)
 
 -----
 
@@ -153,11 +149,11 @@ Tıklattıktan sonra **Tamam**, yeni aygıt yapılandırma varolan Android sanal
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Cihaz listesine eklenen MyNexus](google-emulator-manager-images/win/09-added-to-list-sml.png)](google-emulator-manager-images/win/09-added-to-list.png)
+[![Cihaz listesine eklenen MyNexus](google-emulator-manager-images/win/09-added-to-list-sml.png)](google-emulator-manager-images/win/09-added-to-list.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Cihaz listesine eklenen MyNexus](google-emulator-manager-images/mac/08-added-to-list-sml.png)](google-emulator-manager-images/mac/08-added-to-list.png)
+[![Cihaz listesine eklenen MyNexus](google-emulator-manager-images/mac/08-added-to-list-sml.png)](google-emulator-manager-images/mac/08-added-to-list.png#lightbox)
 
 -----
 
@@ -165,16 +161,15 @@ Yeni özel sanal cihaz aynı zamanda aygıt aşağı açılır menüyü eklenir:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Cihaz açılan menüsüne eklenen MyNexus](google-emulator-manager-images/win/10-available-custom-device-sml.png)](google-emulator-manager-images/win/10-available-custom-device.png)
+[![Cihaz açılan menüsüne eklenen MyNexus](google-emulator-manager-images/win/10-available-custom-device-sml.png)](google-emulator-manager-images/win/10-available-custom-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Cihaz açılan menüsüne eklenen MyNexus](google-emulator-manager-images/mac/09-available-custom-device-sml.png)](google-emulator-manager-images/mac/09-available-custom-device.png)
+[![Cihaz açılan menüsüne eklenen MyNexus](google-emulator-manager-images/mac/09-available-custom-device-sml.png)](google-emulator-manager-images/mac/09-available-custom-device.png#lightbox)
 
 -----
 
 
-<a name="cloning" />
 
 ### <a name="cloning-a-device-definition"></a>Bir cihaz tanımı kopyalama
 
@@ -182,11 +177,11 @@ Var olan bir cihaz tanımı seçmek mümkündür ve *kopya* yeni bir özel cihaz
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Kullanılabilir aygıta tanımları listesi](google-emulator-manager-images/win/11-device-definitions-sml.png)](google-emulator-manager-images/win/11-device-definitions.png)
+[![Kullanılabilir aygıta tanımları listesi](google-emulator-manager-images/win/11-device-definitions-sml.png)](google-emulator-manager-images/win/11-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Kullanılabilir aygıta tanımları listesi](google-emulator-manager-images/mac/10-device-definitions-sml.png)](google-emulator-manager-images/mac/10-device-definitions.png)
+[![Kullanılabilir aygıta tanımları listesi](google-emulator-manager-images/mac/10-device-definitions-sml.png)](google-emulator-manager-images/mac/10-device-definitions.png#lightbox)
 
 -----
 
@@ -194,11 +189,11 @@ Var olan bir cihaz tanımı seçmek mümkündür ve *kopya* yeni bir özel cihaz
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Kopya aygıt iletişim](google-emulator-manager-images/win/12-clone-device-sml.png)](google-emulator-manager-images/win/12-clone-device.png)
+[![Kopya aygıt iletişim](google-emulator-manager-images/win/12-clone-device-sml.png)](google-emulator-manager-images/win/12-clone-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Kopya aygıt iletişim](google-emulator-manager-images/mac/11-clone-device-sml.png)](google-emulator-manager-images/mac/11-clone-device.png)
+[![Kopya aygıt iletişim](google-emulator-manager-images/mac/11-clone-device-sml.png)](google-emulator-manager-images/mac/11-clone-device.png#lightbox)
 
 -----
 
@@ -210,7 +205,7 @@ Sonraki ekran görüntüsünde, ad olarak değiştirilmesini **Nexus 5 özel** v
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Özel Nexus 5 AVD](google-emulator-manager-images/mac/12-custom-nexus-sml.png)](google-emulator-manager-images/mac/12-custom-nexus.png)
+[![Özel Nexus 5 AVD](google-emulator-manager-images/mac/12-custom-nexus-sml.png)](google-emulator-manager-images/mac/12-custom-nexus.png#lightbox)
 
 -----
 
@@ -218,11 +213,11 @@ Tıklatarak **kopya aygıt** artık yeni bir cihaz tanımı oluşturur **aygıt 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Nexus 5 özel yeni bir kullanıcı cihaz tanımı görüntülenir](google-emulator-manager-images/win/14-new-definition-sml.png)](google-emulator-manager-images/win/14-new-definition.png)
+[![Nexus 5 özel yeni bir kullanıcı cihaz tanımı görüntülenir](google-emulator-manager-images/win/14-new-definition-sml.png)](google-emulator-manager-images/win/14-new-definition.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Nexus 5 özel yeni bir kullanıcı cihaz tanımı görüntülenir](google-emulator-manager-images/mac/13-new-definition-sml.png)](google-emulator-manager-images/mac/13-new-definition.png)
+[![Nexus 5 özel yeni bir kullanıcı cihaz tanımı görüntülenir](google-emulator-manager-images/mac/13-new-definition-sml.png)](google-emulator-manager-images/mac/13-new-definition.png#lightbox)
 
 -----
 
@@ -230,11 +225,11 @@ Yukarıda gösterildiği gibi her bir kullanıcı tarafından oluşturulan cihaz
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![AVD Nexus 5 özel kullanıcı aygıt tanımından oluşturma](google-emulator-manager-images/win/15-create-avd-sml.png)](google-emulator-manager-images/win/15-create-avd.png)
+[![AVD Nexus 5 özel kullanıcı aygıt tanımından oluşturma](google-emulator-manager-images/win/15-create-avd-sml.png)](google-emulator-manager-images/win/15-create-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![AVD Nexus 5 özel kullanıcı aygıt tanımından oluşturma](google-emulator-manager-images/mac/14-create-avd-sml.png)](google-emulator-manager-images/mac/14-create-avd.png)
+[![AVD Nexus 5 özel kullanıcı aygıt tanımından oluşturma](google-emulator-manager-images/mac/14-create-avd-sml.png)](google-emulator-manager-images/mac/14-create-avd.png#lightbox)
 
 -----
 
@@ -242,11 +237,11 @@ Sonra **Tamam** tıklandığında, özel cihaz yapılandırması, var olan Andro
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Cihaz açılan menüsüne eklenen yeni özel AVD](google-emulator-manager-images/win/16-new-avd-sml.png)](google-emulator-manager-images/win/16-new-avd.png)
+[![Cihaz açılan menüsüne eklenen yeni özel AVD](google-emulator-manager-images/win/16-new-avd-sml.png)](google-emulator-manager-images/win/16-new-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Cihaz açılan menüsüne eklenen yeni özel AVD](google-emulator-manager-images/mac/15-new-avd-sml.png)](google-emulator-manager-images/mac/15-new-avd.png)
+[![Cihaz açılan menüsüne eklenen yeni özel AVD](google-emulator-manager-images/mac/15-new-avd-sml.png)](google-emulator-manager-images/mac/15-new-avd.png#lightbox)
 
 -----
 

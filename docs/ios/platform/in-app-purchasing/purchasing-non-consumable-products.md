@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f5fbd2282dc2f1d5e9a3fa6d29e7b74fde89fc42
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 43aceca2eb86616fd6c9f51eb10c680e8cee9800
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="purchasing-non-consumable-products"></a>Tüketilemezi ürünleri satın alma
 
@@ -27,7 +27,7 @@ Olmayan tüketilebilir ürünleri 'müşteri tarafından sahip olunan'. Bunlar h
    
    
    
- [ ![](purchasing-non-consumable-products-images/image34.png "Satın alma işlemini bu ekran görüntüleri dizide gösterilir")](purchasing-non-consumable-products-images/image34.png)   
+ [![](purchasing-non-consumable-products-images/image34.png "Satın alma işlemini bu ekran görüntüleri dizide gösterilir")](purchasing-non-consumable-products-images/image34.png#lightbox)   
    
    
    
@@ -40,7 +40,7 @@ Aşağıdaki diyagramda, sınıflar ve Tüketilemezi ürün satın alma gerçekl
    
    
    
- [ ![](purchasing-non-consumable-products-images/image35.png "Sınıfları ve Tüketilemezi ürün gerçekleştirmek için App Store sunucusu arasındaki etkileşimler satın alma")](purchasing-non-consumable-products-images/image35.png)   
+ [![](purchasing-non-consumable-products-images/image35.png "Sınıfları ve Tüketilemezi ürün gerçekleştirmek için App Store sunucusu arasındaki etkileşimler satın alma")](purchasing-non-consumable-products-images/image35.png#lightbox)   
    
    
    

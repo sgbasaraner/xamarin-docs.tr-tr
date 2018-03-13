@@ -4,14 +4,15 @@ description: "Üç farklı yolla yaylar tanımlamak için SkiaSharp kullanmayı 
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 236f5da78022d6f6482ed66ffd439c4cd15766a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Yay çizmek için üç yol
 
@@ -100,7 +101,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Gördüğünüz gibi Başlangıç açısı ve tarama açısı negatif değerleri temel alabilir:
 
-[![](arcs-images/anglearc-small.png "Üçlü sayfasının ekran görüntüsü açı yay")](arcs-images/anglearc-large.png "Üçlü sayfasının ekran görüntüsü açı yay")
+[![](arcs-images/anglearc-small.png "Üçlü sayfasının ekran görüntüsü açı yay")](arcs-images/anglearc-large.png#lightbox "Üçlü sayfasının ekran görüntüsü açı yay")
 
 Yayı oluşturmak için bu yaklaşım algorithmically en kolayıdır ve Yayı açıklamak parametrik denklemini türetilen kolaydır. Elips ve başlangıç ve tarama açıları konumunu ve boyutunu bilerek, başlangıç ve bitiş noktaları Yayı basit Trigonometri kullanılarak hesaplanabilir:
 
@@ -205,11 +206,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Yeni bir `SKPath` nesnesi, her pasta dilimi için oluşturulur. Merkezi satırından yolu oluşan bir `ArcTo` geri Yayı ve başka bir satır merkezi sonuçlarından çizmek için `Close` çağırın. Bu program, her şeyi Merkezi'nden 50 piksel taşıyarak "ayrılmış" pasta dilimi görüntüler. Bu görev için her bir dilim tarama açısı Orta yön vektörü gerektirir:
 
-[![](arcs-images/explodedpiechart-small.png "Üçlü sayfasının ekran görüntüsü ayrılıp pasta grafik")](arcs-images/explodedpiechart-large.png "Üçlü sayfasının ekran görüntüsü ayrılıp pasta grafiği")
+[![](arcs-images/explodedpiechart-small.png "Üçlü sayfasının ekran görüntüsü ayrılıp pasta grafik")](arcs-images/explodedpiechart-large.png#lightbox "Üçlü sayfasının ekran görüntüsü ayrılıp pasta grafiği")
 
 Nasıl "açılımı" göründüğünü görmek için çıkış yalnızca açıklama `Translate` çağırın:
 
-[![](arcs-images/explodedpiechartunexploded-small.png "Üçlü sayfasının ekran görüntüsü ayrılıp pasta grafiği açılımı olmadan")](arcs-images/explodedpiechartunexploded-large.png "Üçlü sayfasının ekran görüntüsü ayrılıp pasta grafiği açılımı olmadan")
+[![](arcs-images/explodedpiechartunexploded-small.png "Üçlü sayfasının ekran görüntüsü ayrılıp pasta grafiği açılımı olmadan")](arcs-images/explodedpiechartunexploded-large.png#lightbox "Üçlü sayfasının ekran görüntüsü ayrılıp pasta grafiği açılımı olmadan")
 
 ## <a name="the-tangent-arc"></a>Eğim yay
 
@@ -413,7 +414,7 @@ public partial class TangentArcPage : InteractivePage
 
 Burada **tanjantını yay** üç tüm platformlarda çalışan sayfa:
 
-[![](arcs-images/tangentarc-small.png "Üçlü sayfasının ekran görüntüsü tanjantını yay")](arcs-images/tangentarc-large.png "Üçlü sayfasının ekran görüntüsü tanjantını yay")
+[![](arcs-images/tangentarc-small.png "Üçlü sayfasının ekran görüntüsü tanjantını yay")](arcs-images/tangentarc-large.png#lightbox "Üçlü sayfasının ekran görüntüsü tanjantını yay")
 
 Windows mobil aygıttaki üç nokta neredeyse colinear ve Yayı çok küçük.
 
@@ -490,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Üç platformlarda çalışan program şöyledir:
 
-[![](arcs-images/roundedheptagon-small.png "Üçlü sayfasının ekran görüntüsü yuvarlanmış Heptagon")](arcs-images/roundedheptagon-large.png "Üçlü sayfasının ekran görüntüsü yuvarlanmış Heptagon")
+[![](arcs-images/roundedheptagon-small.png "Üçlü sayfasının ekran görüntüsü yuvarlanmış Heptagon")](arcs-images/roundedheptagon-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yuvarlanmış Heptagon")
 
 ## <a name="the-elliptical-arc"></a>Elips yay
 
@@ -585,7 +586,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Burada üç platformlarda çalıştığı:
 
-[![](arcs-images/ellipticalarc-small.png "Üçlü sayfasının ekran görüntüsü elips yay")](arcs-images/ellipticalarc-large.png "Üçlü sayfasının ekran görüntüsü elips yay")
+[![](arcs-images/ellipticalarc-small.png "Üçlü sayfasının ekran görüntüsü elips yay")](arcs-images/ellipticalarc-large.png#lightbox "Üçlü sayfasının ekran görüntüsü elips yay")
 
 **Yay sonsuz** sayfası sonsuz oturum çizmek için elips yay kullanır. Sonsuz oturum 100 birimleri 100 birimler tarafından ayrılmış yarıçaplarını iki daireler dayanır:
 
@@ -653,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Kod kullanan `Bounds` özelliği `SKPath` tuvale boyutunu ölçeklendirmek için sonsuz sinüsünü boyutlarını belirlemek için:
 
-[![](arcs-images/arcinfinity-small.png "Üçlü sayfasının ekran görüntüsü yay sonsuz")](arcs-images/arcinfinity-large.png "Üçlü sayfasının ekran görüntüsü yay sonsuz")
+[![](arcs-images/arcinfinity-small.png "Üçlü sayfasının ekran görüntüsü yay sonsuz")](arcs-images/arcinfinity-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yay sonsuz")
 
 Hangi öneren sonucu biraz küçük görünüyor `Bounds` özelliği `SKPath` yolun büyük bir boyutu raporlama.
 
@@ -661,7 +662,7 @@ Dahili olarak, birden çok ikinci derece Bézier eğrileri kullanarak yay Skia y
 
 Sıkı bir sığdırma almak için `TightBounds` denetim noktaları dışlar özelliği. Yatay modunda çalışan ve kullanarak programı işte `TightBounds` yol sınırları almak için özellik:
 
-[![](arcs-images/arcinfinitytightbounds-small.png "Üçlü sayfasının ekran görüntüsü yay sonsuz sıkı sınırları ile")](arcs-images/arcinfinitytightbounds-large.png "Üçlü sayfasının ekran görüntüsü yay sonsuz ile sıkı sınırları")
+[![](arcs-images/arcinfinitytightbounds-small.png "Üçlü sayfasının ekran görüntüsü yay sonsuz sıkı sınırları ile")](arcs-images/arcinfinitytightbounds-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yay sonsuz ile sıkı sınırları")
 
 Düz çizgiler ve yaylar arasındaki bağlantıları matematiksel kesintisiz olsa da, arc değişikliği çizgide biraz ani görünebilir. Daha iyi sonsuz işareti sonraki sayfaya sunulur.
 

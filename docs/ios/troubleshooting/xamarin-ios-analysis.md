@@ -6,15 +6,23 @@ ms.assetid: C29B69F5-08E4-4DCC-831E-7FD692AB0886
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 06/26/2017
-ms.openlocfilehash: 7cf627f369b666bb54d0f512dc1361d2a685a057
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/06/2018
+ms.openlocfilehash: c7dc63cbed0dbdc13dfd2d32a0859c0fe7a29196
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinios-analysis-rules"></a>Xamarin.iOS analiz kuralları
 
+Xamarin.iOS analiz, daha iyi/daha çok en iyi duruma getirilmiş ayarları kullanılabilir olup olmadığını belirlemek için proje ayarlarınızı denetleyin kurallar kümesidir.
+
+Çözümleme kurallarını olası geliştirmeleri önceden bulmak ve geliştirme zamandan tasarruf için mümkün olduğunca sık çalıştırın.
+
+Visual Studio Mac'ın menüsü kuralları çalıştırmak için seçin **Proje > Kod Analizi çalıştırmak**.
+
+> [!NOTE]
+> Xamarin.iOS analiz yalnızca şu anda seçili yapılandırmanızı üzerinde çalışır. Hata ayıklama için Aracı'nı çalıştıran önerilir **ve** yayın yapılandırmaları.
 
 ## <a name="a-namexia0001xia0001-disabledlinkerrule"></a><a name="XIA0001"/>XIA0001: DisabledLinkerRule
 
@@ -39,5 +47,10 @@ Bunu ayarlamak için projeye Git > iOS Yapı > bağlayıcı davranışı.
 
 ## <a name="a-namexia0005xia0005-float32rule"></a><a name="XIA0005"/>XIA0005: Float32Rule
 
-- **Sorun:** float32 seçeneği kullanılarak değil (--Uygulama Nesne Ağacı seçenekleri = O float32 =) maliyet, özel olarak mobil Cihazınızda yüklü bir miktar performans çift duyarlık matematik sorunlarında daha yavaş olduğu yol açar. Precision ve büyük olasılıkla, uyumluluk etkiler, bu seçeneği etkinleştirmek için .NET çift duyarlıklı dahili olarak, hatta float için kullandığını unutmayın.
+- **Sorun:** float32 seçeneği kullanılarak değil (--Uygulama Nesne Ağacı seçenekleri = O float32 =) maliyet, özellikle mobil Cihazınızda yüklü bir miktar performans çift duyarlık matematik sorunlarında daha yavaş olduğu yol açar. Precision ve büyük olasılıkla, uyumluluk etkiler, bu seçeneği etkinleştirmek için .NET çift duyarlıklı dahili olarak, hatta float için kullandığını unutmayın.
 - **Düzeltme:** çift iOS projenizi tıklatın, derleme için Git > iOS oluşturma ve işaretini "tüm 32-bit float 64-bit float işlemleri".
+
+## <a name="a-namexia0006xia0006-httpclientavoidmanaged"></a><a name="XIA0006"/>XIA0006: HttpClientAvoidManaged
+
+- **Sorun:** yerine yönetilen bir daha iyi performans için daha küçük yürütülebilir boyutu, yerel HttpClient işleyici kullanmanız önerilir ve yeni standartları kolayca desteklemek için.
+- **Düzeltme:** çift iOS projenizi tıklatın, derleme için Git > iOS oluşturma ve HttpClient uygulamasını NSUrlSession (iOS 7 +) ya da CFNetwork için iOS 7 önceki sürümü desteklemek için değiştirin.

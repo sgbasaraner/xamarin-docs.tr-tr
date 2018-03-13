@@ -7,12 +7,12 @@ ms.assetid: D1277939-A1E8-468E-B136-820D816AF853
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: adfc0da404c6b9df79c3b2be51f8cafa302a6bc3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c4800c1fe844a03c20b28079640a5ddab8046b1f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-localization"></a>Android yerelleştirme
 
@@ -81,7 +81,7 @@ Kullanımı ile Çoğu geliştirici bilginiz **DPI** üzerinde sonekleri **drawa
 ![Birden çok kültürel tanımlayıcıları için kaynakları/drawable ve kaynakları/değerleri klasörlerinin ekran görüntüsü](localization-images/resources.png)
 
 > [!NOTE]
-> **Not:** gibi üst düzey bir dili belirtirken `es` iki karakter gerekli; yalnızca tam bir yerel ayar belirtirken, dizin adı biçimi tire ve küçük gerektirir ancak **r** iki ayırmak için Örneğin, bölümleri **pt rBR** veya **zh-rCN**. Bu, alt çizgi (ör. olan kodda, döndürülen değer karşılaştırma `pt_BR`). Bunların her ikisi de .NET değerine farklı `CultureInfo` sınıfını kullanır, sahip olduğu bir tire yalnızca (ör.) `pt-BR`). Xamarin platformlarında çalışırken bu farklılıklar aklınızda tutun.
+> Üst düzey bir dil gibi belirtirken `es` iki karakter gerekli; yalnızca tam bir yerel ayar belirtirken, dizin adı biçimi tire ve küçük gerektirir ancak **r** örneğinikibölümdenoluşur,ayırmakiçin**pt rBR** veya **zh-rCN**. Bu, alt çizgi (ör. olan kodda, döndürülen değer karşılaştırma `pt_BR`). Bunların her ikisi de .NET değerine farklı `CultureInfo` sınıfını kullanır, sahip olduğu bir tire yalnızca (ör.) `pt-BR`). Xamarin platformlarında çalışırken bu farklılıklar aklınızda tutun.
 
 #### <a name="stringsxml-file-format"></a>Strings.XML dosya biçimi
 
@@ -164,13 +164,13 @@ Android dize kaynaklarını de olanak tanır oluşturmanıza *miktar dizeleri* f
 
 ```xml
 <plurals name="numberOfTasks">
-         <!--
-                    As a developer, you should always supply "one" and "other"
-                    strings. Your translators will know which strings are actually
-                    needed for their language.
-             -->
-         <item quantity="one">There is %d task left.</item>
-         <item quantity="other">There are %d tasks still to do.</item>
+   <!--
+      As a developer, you should always supply "one" and "other"
+      strings. Your translators will know which strings are actually
+      needed for their language.
+    -->
+   <item quantity="one">There is %d task left.</item>
+   <item quantity="other">There are %d tasks still to do.</item>
  </plurals>
 ```
 
@@ -229,15 +229,13 @@ Android 4.2 (API düzeyi 17) kullanırken ve değerleri ile belirtilebilir daha 
 
 Aşağıdaki ekran görüntüsü gösterildiği [yerelleştirilmiş **Tasky** örnek](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) Arapça:
 
-[![Arapça Tasky uygulamasının ekran görüntüsü](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png) 
+[![Arapça Tasky uygulamasının ekran görüntüsü](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png#lightbox) 
 
 Sonraki hali gösterilmektedir [yerelleştirilmiş **Tasky** örnek](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) İbranice:
 
-[![İbranice Tasky uygulamasının ekran görüntüsü](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png)
+[![İbranice Tasky uygulamasının ekran görüntüsü](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png#lightbox)
 
 RTL metin yerelleştirilmiş kullanarak **Strings.xml** dosyaları aynı şekilde LTR metin olarak.
-
-<a name="testing" />
 
 ## <a name="testing"></a>Sınama
 

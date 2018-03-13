@@ -6,12 +6,12 @@ ms.assetid: 405A1FA0-4EFA-4AEB-B672-F36307B9CF16
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 83997018f4e08567a9150bf1e21374a98c8ddb4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 1d9cf345aa971c40f4132cc7970ed1244640da14
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-android"></a>Android dokunma
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 02/27/2018
 
 
 > [!NOTE]
-> **Not:** tüm Android aygıtlar dokunmatik ekranlar desteklemez. 
+> Tüm Android aygıtlar dokunmatik ekranlar desteklemez. 
 
 Bildirim dosyanızı şu etiket ekleme Google Play için yalnızca görünen dokunma etkinleştirilmiş olan aygıtları uygulamanıza neden olur:
 
@@ -90,11 +90,11 @@ Hareketleri, bir uygulama ile etkileşim kullanıcılar için harika bir yoludur
 
 Android 1.6 itibaren Android SDK hareketleri Oluşturucu adlı öykünücüsünde önceden yüklenmiş bir uygulama ile birlikte gelir. Bu uygulamayı bir uygulamaya katıştırılabilir önceden tanımlanmış hareketleri oluşturmak için geliştirici sağlar. Aşağıdaki ekran görüntüsünde hareketleri oluşturucu örneği gösterilmektedir:
 
-[![Örnek hareketlerle hareketleri Oluşturucu ekran görüntüsü](touch-in-android-images/image11.png)](touch-in-android-images/image11.png)
+[![Örnek hareketlerle hareketleri Oluşturucu ekran görüntüsü](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
 
 Google Play hareketi aracı adlı bu uygulamanın geliştirilmiş bir sürümü bulunamadı. Oluşturulduktan sonra hareketleri test etmenizi sağlar ancak bu hareketi hareketleri Oluşturucu gibi çok aracıdır. Bu sonraki ekran hareketlerini Oluşturucu gösterir:
 
-[![Örnek hareketlerle hareketi aracı ekran görüntüsü](touch-in-android-images/image12.png)](touch-in-android-images/image12.png)
+[![Örnek hareketlerle hareketi aracı ekran görüntüsü](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
 
 Hareketi aracı bunlar oluşturuldukça sınanacak hareketleri verdiğinden özel hareketler oluşturmak için biraz daha yararlı olur ve Google Play kolayca yüklenebilir.
 

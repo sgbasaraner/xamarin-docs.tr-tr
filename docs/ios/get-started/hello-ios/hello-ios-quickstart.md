@@ -1,5 +1,5 @@
 ---
-title: Merhaba, iOS
+title: Hello, iOS
 description: "Bu iki parçalı kılavuz Mac veya Visual Studio için Visual Studio kullanarak temel bir Xamarin.iOS uygulaması oluşturma ve Xamarin ile iOS uygulaması geliştirme ile ilgili temel bilgileri bir anlayış geliştirmek nasıl açıklar. Araçlar, kavramlar ve oluşturmak ve bir Xamarin.iOS uygulaması dağıtmak için gerekli adımları tanıtılacaktır."
 ms.topic: article
 ms.prod: xamarin
@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 269621056f0db807d8aebc8400b20d902d710b2c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7b1d56c62fe54d5b1e196e20e1a6989b542da1be
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS hızlı başlangıç
 
 Bu kılavuz bir sayısal telefon numarası kullanıcı tarafından girilen bir alfasayısal telefon numarasını çevirir bir uygulama oluşturmayı açıklar ve bu numarayı çağırır. Son uygulama şöyle görünür:
 
- [ ![](hello-ios-quickstart-images/image1.png "Hello.iOS hızlı başlangıç uygulaması")](hello-ios-quickstart-images/image1.png)
+ [![](hello-ios-quickstart-images/image1.png "Hello.iOS hızlı başlangıç uygulaması")](hello-ios-quickstart-images/image1.png#lightbox)
 
 
 <a name="Requirements" />

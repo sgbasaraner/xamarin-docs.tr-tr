@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: f1f420641691e700894687fef8ea3bd44fd60ff2
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d7f7e031d91cd1505ee255bbf0d25198bd9ae82a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-contentpage"></a>Bir ContentPage özelleştirme
 
@@ -99,7 +99,7 @@ Bu kod yalnızca gider `CameraPage`, hangi özel oluşturucu üzerinde her platf
 1. Ekleme bir `ExportRenderer` özniteliği, Xamarin.Forms sayfasını işlemek için kullanılacak belirtmek için sayfa Oluşturucu sınıfı. Bu öznitelik, özel Oluşturucu Xamarin.Forms ile kaydetmek için kullanılır.
 
 > [!NOTE]
-> **Not**: sayfa Oluşturucu her platform projesinde sağlamak isteğe bağlıdır. Bir sayfa işleyici kayıtlı değil, sayfa için varsayılan oluşturucu kullanılır.
+> Bir sayfa işleyici her platform projesinde sağlamak isteğe bağlıdır. Bir sayfa işleyici kayıtlı değil, sayfa için varsayılan oluşturucu kullanılır.
 
 Aşağıdaki diyagram, örnek uygulamasında, bunlar arasındaki ilişkinin yanı sıra her proje sorumlulukları gösterir:
 
@@ -248,7 +248,7 @@ Windows Phone platformunda, belirlenmiş bir başvuru platformda kullanılan yer
 Öğesinden türetilen özel Oluşturucu uygularken `PageRenderer` üzerindeki Windows çalışma zamanı `ArrangeOverride` de yöntemin sayfası denetimlerini düzenlemek için temel oluşturucu bunlarla yapmanız gerekenler bilmiyor olduğundan. Aksi durumda, boş bir sayfa sonuçlanır. Bu nedenle, bu örnekte `ArrangeOverride` yöntem çağrılarını `Arrange` yöntemi `Page` örneği.
 
 > [!NOTE]
-> **Not**: durdurmak ve bir Windows Phone 8.1 WinRT uygulamasında kameraya erişebilmesi nesnelerin silmek önemlidir. Bunun Sağlanamaması cihazın kamera erişmeye çalışan diğer uygulamalarla etkileyebilir. Daha fazla bilgi için bkz: `CleanUpCaptureResourcesAsync` örnek çözümü Windows Phone projede yöntemi ve [hızlı başlangıç: MediaCapture API'sini kullanarak video yakalama](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
+> Durdur ve bir Windows Phone 8.1 WinRT uygulamasında kameraya erişebilmesi nesnelerin silmek önemlidir. Bunun Sağlanamaması cihazın kamera erişmeye çalışan diğer uygulamalarla etkileyebilir. Daha fazla bilgi için bkz: `CleanUpCaptureResourcesAsync` örnek çözümü Windows Phone projede yöntemi ve [hızlı başlangıç: MediaCapture API'sini kullanarak video yakalama](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>UWP üzerinde sayfa Oluşturucu Oluşturma
 
@@ -297,7 +297,7 @@ Temel sınıfın çağrısı `OnElementChanged` yöntemi başlatır bir `Framewo
 Öğesinden türetilen özel Oluşturucu uygularken `PageRenderer` UWP üzerinde `ArrangeOverride` de yöntemin sayfası denetimlerini düzenlemek için temel oluşturucu bunlarla yapmanız gerekenler bilmiyor olduğundan. Aksi durumda, boş bir sayfa sonuçlanır. Bu nedenle, bu örnekte `ArrangeOverride` yöntem çağrılarını `Arrange` yöntemi `Page` örneği.
 
 > [!NOTE]
-> **Not**: durdurmak ve bir UWP uygulaması kameraya erişebilmesi nesnelerin silmek önemlidir. Bunun Sağlanamaması cihazın kamera erişmeye çalışan diğer uygulamalarla etkileyebilir. Daha fazla bilgi için bkz: [kamera önizlemesini görüntülemek](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
+> Durdur ve bir UWP uygulaması kameraya erişebilmesi nesnelerin silmek önemlidir. Bunun Sağlanamaması cihazın kamera erişmeye çalışan diğer uygulamalarla etkileyebilir. Daha fazla bilgi için bkz: [kamera önizlemesini görüntülemek](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
 
 ## <a name="summary"></a>Özet
 

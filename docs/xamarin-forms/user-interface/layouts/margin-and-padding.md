@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7bab512ef11f8e0f553a00f0240d82f860fe2676
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 461430ba27b5d6008338019e5feaebed7b09d4cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="margin-and-padding"></a>Kenar boşluğu bırakma ve doldurma
 
@@ -27,7 +27,7 @@ Kenar boşluğu bırakma ve doldurma ilgili düzeni kavramları şunlardır:
 
 Aşağıdaki diyagramda iki kavramları göstermektedir:
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "Kenar boşlukları ve doldurma kavramları")](margin-and-padding-images/margins-and-padding.png "kenar boşlukları ve doldurma kavramları")
+[![](margin-and-padding-images/margins-and-padding-sml.png "Kenar boşlukları ve doldurma kavramları")](margin-and-padding-images/margins-and-padding.png#lightbox "kenar boşlukları ve doldurma kavramları")
 
 Unutmayın [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) değerler eklenebilir. Bu nedenle, iki bitişik öğeleri 20 piksel kenar boşluğu belirtirseniz, öğeleri arasındaki uzaklığı 40 piksel olacaktır. Ayrıca, kenar boşluğu bırakma ve doldurma olan bir öğeyi ve herhangi bir içerik arasındaki uzaklığı kenar boşluğu artı doldurma olacaktır, her ikisi de, ne zaman uygulanacağını ADDITIVE.
 
@@ -63,7 +63,7 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> **Not**: `Thickness` genellikle kırpar veya içeriği overdraws değerleri negatif olabilir.
+> `Thickness` değerler genellikle kırpar veya içeriği overdraws negatif olabilir.
 
 ## <a name="summary"></a>Özet
 

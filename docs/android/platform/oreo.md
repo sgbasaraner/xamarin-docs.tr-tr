@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
+ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 478a285dc326b62bf2fc186599bfb7515988f9ee
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 03be7b624ffa9dd8774f291b96be27499cccab2b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="oreo-features"></a>Oreo özellikleri
 
@@ -20,12 +21,10 @@ _Xamarin.Android Android en son sürümü için uygulama geliştirmek için kull
 
 [Android 8.0 Oreo](https://developer.android.com/index.html) Google Android en son sürümü kullanılabilir. Android Oreo Xamarin.Android geliştiricilerine ilgi birçok yeni özellik sunar. Bu özellikler, XML, indirilebilir yazı tiplerini, otomatik doldurmaya ve resim içinde resim (PIP) bildirim kanalları, bildirim rozetleri, özel yazı tipi içerir. Bu yeni capabilties yeni API'ler Android Oreo içerir ve bu API'leri ve sonrasında Xamarin.Android 8.0 kullandığınızda Xamarin.Android uygulamaları için kullanılabilir.
 
-[![Android Oreo kahramanı görüntüsü](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png)
+[![Android Oreo kahramanı görüntüsü](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png#lightbox)
 
 Bu makale için Android 8.0 Oreo Xamarin.Android uygulamaları geliştirmeye başlamanıza yardımcı olmak için yapılandırılmıştır. Gerekli güncelleştirmeleri yüklemek, SDK'yı yapılandırmak ve test etmek için bir öykünücü (veya cihaz) oluşturmak nasıl açıklanmaktadır. Ayrıca Android Oreo özelliklerinin Xamarin.Android uygulamaları nasıl kullanılacağını gösteren örnek uygulamalar ile Android 8.0 Oreo'deki yeni özelliklerin bir özetini sağlar.
 
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -38,7 +37,6 @@ Aşağıdaki Xamarin tabanlı uygulamalarda Android Oreo özellikleri kullanmak 
 -   **Android SDK** &ndash; Android SDK 8.0 (API 26) veya sonrası Android SDK Yöneticisi aracılığıyla yüklü olmalıdır.
 
 
-<a name="gettingstarted" />
 
 ## <a name="getting-started"></a>Başlarken
 
@@ -55,7 +53,6 @@ Android Oreo Xamarin.Android ile kullanmaya başlamak için indirin ve Android O
 Bu adımların her biri aşağıdaki bölümlerde açıklanmıştır:
 
 
-<a name="updates" />
 
 ### <a name="update-visual-studio-and-xamarinandroid"></a>Visual Studio ve Xamarin.Android güncelleştir
 
@@ -81,7 +78,6 @@ Visual Studio Android Oreo desteği eklemek için aşağıdakileri yapın:
 Xamarin Android Oreo desteği hakkında daha fazla bilgi için bkz: [Xamarin.Android 8.0 sürüm notları](https://developer.xamarin.com/releases/android/xamarin.android_8/xamarin.android_8.0/).
 
 
-<a name="sdk" />
 
 ### <a name="install-the-android-sdk"></a>Android SDK'sını yükleyin
 
@@ -93,11 +89,11 @@ Xamarin.Android 8.0 ile bir proje oluşturmak için önce Xamarin Android SDK Y�
 
 2. Yükleme **Android 8.0 - Oreo** paketler. Android SDK öykünücüsü kullanıyorsanız, eklediğinizden emin olun **x86** ihtiyacınız olacak sistem görüntüler:
 
-    [![Android SDK Yöneticisi'nde Android 8.0 paketleri seçme](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png)
+    [![Android SDK Yöneticisi'nde Android 8.0 paketleri seçme](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
 
 3. Yükleme **Android SDK Araçları 26.0.2** veya sonraki sürümlerde, **Android SDK platformunuzun Araçlar 26.0.0** veya sonraki bir sürümü ve **Android SDK derleme-araçları 26.0.0** (veya üstü):
 
-    [![Android SDK Araçları 26 Android SDK Yöneticisi'nde seçme](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png)
+    [![Android SDK Araçları 26 Android SDK Yöneticisi'nde seçme](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -105,16 +101,15 @@ Xamarin.Android 8.0 ile bir proje oluşturmak için önce Xamarin Android SDK Y�
 
 2. Yükleme **Android 8.0 - Oreo** SDK paketler. Android SDK öykünücüsü kullanıyorsanız, eklediğinizden emin olun **x86** ihtiyacınız olacak sistem görüntüler:
 
-    [![Android 8.0 paketleri SDK Yöneticisi'nde seçme](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png)
+    [![Android 8.0 paketleri SDK Yöneticisi'nde seçme](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
 
 3. Yükleme **Android SDK Araçları 26.0.2** veya sonraki sürümlerde, **Android SDK platformunuzun Araçlar 26.0.0** veya sonraki bir sürümü ve **Android SDK derleme-araçları 26.0.0** (veya üstü):
 
-    [![Android SDK Araçları 26 SDK Yöneticisi'nde seçme](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png)
+    [![Android SDK Araçları 26 SDK Yöneticisi'nde seçme](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
 
 -----
 
 
-<a name="xaproject" />
 
 ### <a name="start-a-xamarinandroid-project"></a>Start a Xamarin.Android Project
 
@@ -122,7 +117,6 @@ Yeni bir Xamarin.Android projesi oluşturun. Xamarin Android geliştirme yeniyse
 
 Bir Android projesi oluşturduğunuzda, hedef Android 8.0 veya sonraki sürüm ayarlarını yapılandırmanız gerekir. Örneğin, Android 8.0 için projenizi hedeflemek için projenize hedef Android API düzeyini yapılandırmalısınız **Android 8.0 (API 26)**. API 26 ya da daha sonra hedef çerçeve düzeyi de ayarlamanız önerilir. Android API düzeyi düzeyleri yapılandırma hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md).
 
-<a name="emudev" />
 
 ### <a name="configure-an-emulator-or-device"></a>Bir öykünücü veya cihaz yapılandırma
 
@@ -173,7 +167,7 @@ Kullanılacak **avdmanager** yeni bir sanal cihaz oluşturmak için aşağıdaki
 
 Çalıştırdıktan sonra **avdmanager** , sanal cihazı oluşturmak için aygıt aşağı açılır menüde dahil edilir:
 
-[![Cihaz açılan menüsüne eklenen yeni AVD](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png)
+[![Cihaz açılan menüsüne eklenen yeni AVD](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -193,7 +187,7 @@ Kullanılacak **avdmanager** yeni bir sanal cihaz oluşturmak için aşağıdaki
 
 Kullandıktan sonra **avdmanager** , sanal cihazı oluşturmak için aygıt aşağı açılır menüde dahil edilir:
 
-[![Cihaz açılan menüsüne eklenen yeni AVD](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png)
+[![Cihaz açılan menüsüne eklenen yeni AVD](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
 
 -----
 
@@ -202,14 +196,12 @@ Android öykünücüsünde test ve hata ayıklama için yapılandırma hakkında
 Bir Nexus veya piksel gibi fiziksel bir aygıtı kullanıyorsanız, ya da Cihazınızı otomatik hava (OTA) Güncelleştirmeler üzerinden güncelleştirebilir veya bir sistem görüntüsünü karşıdan yüklemek ve Cihazınızı doğrudan flash. Android Oreo Cihazınızı el ile güncelleştirme hakkında daha fazla bilgi için bkz: [Nexus ve piksel cihazlar Fabrika görüntülerinin](https://developers.google.com/android/images).
 
 
-<a name="newfeatures" />
 
 ## <a name="new-features"></a>Yeni Özellikler
 
 Android Oreo çeşitli yeni özellikler ve bildirim kanalları, bildirim rozetleri, XML özel yazı tipi, indirilebilir yazı tiplerini, otomatik doldurmaya ve resim içinde resim gibi özellikler sunar. Aşağıdaki bölümlerde bu özellikler vurgulayın ve bağlantıları yardımcı olmak için bunları uygulamanızda kullanmaya başlama sağlayın.
 
 
-<a name="notifchan" />
 
 ### <a name="notification-channels"></a>Bildirim kanalları
 
@@ -219,20 +211,18 @@ Seçenekler, uygulamanızın kullanıcılar tarafından yapılan yansıtacak şe
 [Bildirim kanallarını](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan) bir bildirim kanalı oluşturmak ve yerel bildirimleri göndermek için kullanmak üzere açıklanmaktadır. Gerçek dünya kod örneği için bkz: [NotificationChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels) örnek; bu örnek uygulama iki kanalı yönetir ve ek bildirim seçeneklerini ayarlar.
 
 
-<a name="notifbadge" />
 
 ### <a name="notification-badges"></a>Bildirim rozetleri
 
 Bildirim rozetleri uygulama bu ekran görüntüsünde gösterildiği gibi görünmezse küçük noktalar şunlardır:
 
-[![Uygulama simgeleri üzerinde örnek bildirim rozetleri](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png)
+[![Uygulama simgeleri üzerinde örnek bildirim rozetleri](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
 Bu noktalar, bu uygulama simgesi ile ilişkili uygulama bir veya daha fazla bildirim kanalı için yeni bildirimleri belirtmek &ndash; kullanıcı henüz kapatıldığında veya üzerinde işlem bildirimleri bunlar. Kullanıcılar uzun-üzerindeki bir simge bildirim rozet ile ilişkili bildirimleri kapatılıyor veya uzun tuşuna menüsünden bildirimleri o appeaars hareket bakışta tuşuna basarak.
 
 Android Geliştirici bildirim rozetleri hakkında daha fazla bilgi için bkz: [bildirim rozetleri](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Badges) konu.
 
 
-<a name="customfonts" />
 
 ### <a name="custom-fonts-in-xml"></a>XML özel yazı tipleri
 
@@ -256,7 +246,6 @@ Android Oreo tanıtır *XML yazı tiplerini*, hangi mümkün kılar, özel yazı
 
 Stil ve Ağırlık ayrıntıları yanı sıra birden çok yazı tipi açıklayan bir yazı tipi ailesi XML dosyası da oluşturabilirsiniz. Daha fazla bilgi için bkz: Android Geliştirici [XML yazı tiplerini](https://developer.android.com/guide/topics/ui/look-and-feel/fonts-in-xml.html) konu.
 
-<a name="dlfonts" />
 
 ### <a name="downloadable-fonts"></a>İndirilebilir yazı tipleri
 
@@ -281,7 +270,6 @@ Uygulamanızı bir yazı tipi gerektiğinde, oluşturduğunuz bir `FontsRequest`
 Yazı tipleri yükleme hakkında daha fazla bilgi için bkz: Android Geliştirici [indirilebilir yazı tipleri](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html) konu.
 
 
-<a name="autofill" />
 
 ### <a name="autofill"></a>Otomatik doldurma
 
@@ -292,7 +280,6 @@ Yeni _otomatik doldurmaya_ Android Oreo framework kullanıcıların oturum açma
 Yeni otomatik doldurma özelliğinin ve uygulamanız otomatik doldurmaya için en iyi duruma getirme hakkında daha fazla bilgi için bkz: Android Geliştirici [otomatik doldurmaya Framework](https://developer.android.com/guide/topics/text/autofill.html) konu.
 
 
-<a name="pip" />
 
 ### <a name="picture-in-picture-pip"></a>Resim içinde resim (PIP)
 
@@ -313,20 +300,17 @@ PIP modunda olduğunda nasıl etkinliklerinizi hareket etmesi gerektiğini belir
 [PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture) örnek Oreo içinde sunulan taşınabilir cihazları için resim içinde resim (PIP) mod temel kullanımını gösterir. Örnek, görüntü modları veya diğer etkinlikler arasında ileri ve geri değiştirilirken devam bir video kesintisiz oynatılır.
 
 
-<a name="other" />
 
 ### <a name="other-features"></a>Diğer özellikler
 
 Android Oreo içeren diğer birçok Emoji destek kitaplığı konumu API, arka plan sınırları gibi yeni özellikler, uygulamalar, yeni ses codec bileşenleri, Web görünümü geliştirmeleri, geliştirilmiş klavye gezinti desteği ve için yeni bir AAudio (pro ses) API wide gam rengi yüksek performanslı düşük gecikme süreli ses, bu özellikler hakkında daha fazla bilgi için bkz: Android Geliştirici [Android Oreo özellikleri ve API'leri](https://developer.android.com/about/versions/oreo/android-8.0.html) konu.
 
 
-<a name="behavior" />
 
 ## <a name="behavior-changes"></a>Davranış değişiklikleri
 
 Android Oreo çeşitli sistem ve var olan uygulamaların işlevselliğini üzerinde bir etkisi olabilir API davranış değişiklikleri içerir. Bu değişiklikler aşağıda açıklanmıştır.
 
-<a name="bgsl" />
 
 ### <a name="background-execution-limits"></a>Arka plan yürütme sınırları
 
@@ -338,7 +322,6 @@ Kullanıcı deneyimini geliştirmek için Android Oreo uygulamaları neler yapab
 
 Android Geliştirici yeni arka plan yürütme sınırları hakkında daha fazla bilgi için bkz: [arka plan yürütme sınırları](https://developer.android.com/about/versions/oreo/background.html) konu.
 
-<a name="breaking" />
 
 ### <a name="breaking-changes"></a>Yeni Değişiklikler
 
@@ -348,7 +331,6 @@ Android Oreo hedef ya da daha yüksek uygunsa aşağıdaki değişiklikleri dest
 
 - Android Oreo hedefleyen uygulamalar için `PendingIntent.GetService()` arka planda başlatılan hizmetler getirilen yeni sınırları nedeniyle çalışmıyor. Android Oreo hedefliyorsanız, kullanmanız gereken [PendingIntent.GetBroadcast](https://developer.xamarin.com/api/member/Android.App.PendingIntent.GetBroadcast/p/Android.Content.Context/System.Int32/Android.Content.Intent/Android.App.PendingIntentFlags/) yerine.  
 
-<a name="sample_code" />
 
 ## <a name="sample-code"></a>Örnek kod
 
@@ -369,8 +351,12 @@ Android Oreo özelliklerden yararlanmak nasıl göstermek birkaç Xamarin.Androi
 -   [Konum güncelleştirmeleri ön plan hizmeti](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdFgService) konumu API ilişkili ve başlatılan ön plan hizmetini kullanarak bir cihazın konumunu hakkında güncelleştirmeleri almak için nasıl kullanılacağını gösterir.
 
 
+## <a name="video"></a>Video
 
-<a name="summary" />
+> [!VIDEO https://youtube.com/embed/OuvEcaMO-Ho]
+
+**C# ile Android 8.0 Oreo geliştirme**
+
 
 ## <a name="summary"></a>Özet
 

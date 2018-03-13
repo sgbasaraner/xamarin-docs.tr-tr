@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: beff54d2b2bb72b2adf1e77819c56004b92e13f7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 279b5bc1188c973fddc033f9b592e9acec703a59
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="passkit"></a>PassKit
 
@@ -22,7 +22,7 @@ Cüzdan İphone'lar için bir uygulamadır ve iPod iOS 6 dokunur. Depolar ve bar
 
 Bu belge Xamarin.iOS ile geçirmek Seti API kullanarak Cüzdan tanıtır ve nasıl sunucunuzda geçişleri uygulanacağını anlatır.
 
- [ ![](passkit-images/image1.png "Cüzdan depolar ve bir Phone tüm geçişleri düzenler")](passkit-images/image1.png)
+ [![](passkit-images/image1.png "Cüzdan depolar ve bir Phone tüm geçişleri düzenler")](passkit-images/image1.png#lightbox)
 
 
 ## <a name="requirements"></a>Gereksinimler
@@ -55,7 +55,7 @@ Geçişi Seti bu senaryoların her biri için bir alternatif sunar:
 
 Geçişi Seti bir API CocoaTouch içinde değil, yerine daha büyük bir ekosistemi uygulamalar, veri ve güvenli paylaşım kolaylaştırmak Hizmetleri ve barkodları yönetimi ve diğer verileri, bir parçasıdır. Bu üst düzey diyagramı yer alabilir farklı varlıkları oluşturma ve geçişleri kullanarak gösterir:
 
- [ ![](passkit-images/image2.png "Kullanıcı hikayesinin oluşturma ve geçişleri kullanarak bu üst düzey diyagramı varlıkları söz konusu'e gösterir.")](passkit-images/image2.png)
+ [![](passkit-images/image2.png "Kullanıcı hikayesinin oluşturma ve geçişleri kullanarak bu üst düzey diyagramı varlıkları söz konusu'e gösterir.")](passkit-images/image2.png#lightbox)
 
 Her bir parçası ekosistemi açıkça tanımlanmış rol vardır:
 
@@ -86,7 +86,7 @@ Bir seferde bir bilet, kupon veya kartı temsil eden veri koleksiyonudur. Bir te
 
 Beş geçişi türleri bu ekran görüntüsünde gösterilen (sırayla: kupon, genel, depolama kartı, binme geçişi ve olay bileti):
 
- [ ![](passkit-images/image3.png "Bu ekran görüntüsünde gösterilen beş geçişi türleri")](passkit-images/image3.png)
+ [![](passkit-images/image3.png "Bu ekran görüntüsünde gösterilen beş geçişi türleri")](passkit-images/image3.png#lightbox)
 
 ### <a name="file-structure"></a>Dosya yapısı
 
@@ -103,7 +103,7 @@ Gerçekte ZIP arşivini ile geçişi dosyasıdır bir **.pkpass** (gerekli) baz�
 
 Geçişi dosyasının dizin yapısını aşağıda gösterilen (ZIP arşivini içeriğini budur):
 
- [ ![](passkit-images/image4.png "Geçişi dosyasının dizin yapısını burada gösterilen")](passkit-images/image4.png)
+ [![](passkit-images/image4.png "Geçişi dosyasının dizin yapısını burada gösterilen")](passkit-images/image4.png#lightbox)
 
 ### <a name="passjson"></a>pass.json
 
@@ -238,9 +238,9 @@ Tür kimliği geçirmek aşağıdaki oluşturmak için.
 
 Geçirmek türü kimliği için her farklı ayarlamak için ilk adımdır _türü_ geçişi desteklenmez. Geçirmek kimliği (veya geçirmek tür tanımlayıcısı) geçişi için benzersiz bir tanımlayıcı oluşturur. Bir sertifika kullanılarak Geliştirici hesabınızla geçişi bağlamak için bu kimliği kullanacağız.
 
-1. İçinde [iOS sağlama Portalı'nın sertifikaları, tanımlayıcılarını ve profilleri bölümüne](https://developer.apple.com/account/overview.action), gitmek **tanımlayıcıları** seçip **geçirmek tür kimlikleri** . Ardından  **+**  yeni bir geçiş türü oluşturmak için düğmeye: [ ![ ] (passkit-images/passid.png "yeni bir geçiş türü oluşturma")](passkit-images/passid.png)
+1. İçinde [iOS sağlama Portalı'nın sertifikaları, tanımlayıcılarını ve profilleri bölümüne](https://developer.apple.com/account/overview.action), gitmek **tanımlayıcıları** seçip **geçirmek tür kimlikleri** . Ardından  **+**  yeni bir geçiş türü oluşturmak için düğmeye: [ ![ ] (passkit-images/passid.png "yeni bir geçiş türü oluşturma")](passkit-images/passid.png#lightbox)
 
-2.   Sağlayan bir **açıklama** (ad) ve **tanımlayıcısı** (benzersiz bir dize) geçişi için. Tüm geçirmek tür kimlikleri dizesi ile başlamalıdır Not `pass.` kullandığımız Bu örnekte `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "tanımlayıcısı ve açıklama sağlayın")](passkit-images/register.png)
+2.   Sağlayan bir **açıklama** (ad) ve **tanımlayıcısı** (benzersiz bir dize) geçişi için. Tüm geçirmek tür kimlikleri dizesi ile başlamalıdır Not `pass.` kullandığımız Bu örnekte `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "tanımlayıcısı ve açıklama sağlayın")](passkit-images/register.png#lightbox)
 
 
 3.   Tuşlarına basarak geçirmek Kimliğini onaylayın **kaydetmek** düğmesi.
@@ -252,11 +252,11 @@ Geçirmek türü kimliği için her farklı ayarlamak için ilk adımdır _tür�
 
 Bu geçirmek türü kimliği için yeni bir sertifika oluşturmak için aşağıdakileri yapın:
 
-1.  Listeden yeni oluşturulan geçirmek kimliği seçin ve'ı tıklatın **Düzenle** : [ ![ ] (passkit-images/pass-done.png "yeni geçirmek kimliği listeden seçin")](passkit-images/pass-done.png)
+1.  Listeden yeni oluşturulan geçirmek kimliği seçin ve'ı tıklatın **Düzenle** : [ ![ ] (passkit-images/pass-done.png "yeni geçirmek kimliği listeden seçin")](passkit-images/pass-done.png#lightbox)
 
     Ardından, seçin **sertifika oluştur...** :
 
-    [ ![](passkit-images/cert-dist.png "Sertifika Seç oluşturun")](passkit-images/cert-dist.png)
+    [![](passkit-images/cert-dist.png "Sertifika Seç oluşturun")](passkit-images/cert-dist.png#lightbox)
 
 
 2.  Bir sertifika imzalama isteği (CSR) oluşturmak için aşağıdaki adımları izleyin.
@@ -286,7 +286,7 @@ Biz geçirmek türü oluşturduğunuza göre biz benzeticisi veya bir aygıt üz
 
 Bir geçiş oluşturmak için kullanılan bu makaledeki örnek kodda bazı kaynak dosyaları vardır. Dosyaları kullanmak `CouponBanana.raw` CreateAPassManually dizininin dizin. Aşağıdaki dosyalar mevcuttur:
 
- [ ![](passkit-images/image18.png "Bu dosyaları yok")](passkit-images/image18.png)
+ [![](passkit-images/image18.png "Bu dosyaları yok")](passkit-images/image18.png#lightbox)
 
 Pass.JSON açın ve JSON düzenleyin. En az güncelleştirmelisiniz `passTypeIdentifier` ve `teamIdentifer` Apple Geliştirici hesabınızda eşleşecek şekilde.
 
@@ -330,11 +330,11 @@ Aşağıdaki örnekte bu makalede var. adlı bir proje kodudur `signpassnet` Win
 
 Bu araçları çıktısını (dosya adı .zip olarak ayarlama ve onu açarak) incelemek için olsaydı, aşağıdaki dosyaları görür (eklenmesi Not `manifest.json` ve `signature` dosyaları):
 
- [ ![](passkit-images/image19.png "Bu araçları çıktısını inceleniyor")](passkit-images/image19.png)
+ [![](passkit-images/image19.png "Bu araçları çıktısını inceleniyor")](passkit-images/image19.png#lightbox)
 
 İmzalı, ZIPped ve dosya (ör. yeniden adlandırılmış bir kez için `BananaCoupon.pkpass`) test etmek için simulator sürükleyin veya bunu kendinize gerçek bir aygıtta almak için e-posta. Bir ekran görürsünüz **Ekle** geçişi, şuna benzer:
 
- [ ![](passkit-images/image20.png "Geçişi ekranına ekleyin")](passkit-images/image20.png)
+ [![](passkit-images/image20.png "Geçişi ekranına ekleyin")](passkit-images/image20.png#lightbox)
 
 Normal olarak bu işlem ancak el ile geçişi oluşturma yalnızca bir arka uç sunucusu desteği gerektirmez kuponlar oluşturmakta olduğunuz küçük ölçekli işletmeler için bir seçenek olabilir, bir sunucuda otomatik.
 
@@ -344,7 +344,7 @@ Normal olarak bu işlem ancak el ile geçişi oluşturma yalnızca bir arka uç 
 
 Cüzdan geçirmek Seti ekosistemi merkezi bir parçasıdır. Bu ekran, boş Cüzdan ve geçişi listesi ve tek tek geçişleri nasıl göründüğünü gösterir:
 
- [ ![](passkit-images/image21.png "Bu ekran boş Cüzdan ve geçişi listesi ve tek tek geçişleri nasıl göründüğünü gösterir")](passkit-images/image21.png)
+ [![](passkit-images/image21.png "Bu ekran boş Cüzdan ve geçişi listesi ve tek tek geçişleri nasıl göründüğünü gösterir")](passkit-images/image21.png#lightbox)
 
 Cüzdan özellikleri:
 
@@ -377,9 +377,9 @@ Conduit uygulamalar, bir kullanıcı adına geçişleri alabilir ve kendi içeri
 
 Bu ekran gösterir nasıl **posta** iOS 6 geçişi eki tanır ve (işlemdeki olduğunda) sunar **Ekle** Cüzdan için.
 
- [ ![](passkit-images/image22.png "Bu ekran görüntüsü, iOS 6 Mail'de geçişi ek nasıl tanıdığını gösterir.")](passkit-images/image22.png)
+ [![](passkit-images/image22.png "Bu ekran görüntüsü, iOS 6 Mail'de geçişi ek nasıl tanıdığını gösterir.")](passkit-images/image22.png#lightbox)
 
- [ ![](passkit-images/image23.png "Bu ekran görüntüsü, posta Cüzdan bir geçişi ek eklemek nasıl sağladığını gösterir.")](passkit-images/image23.png)
+ [![](passkit-images/image23.png "Bu ekran görüntüsü, posta Cüzdan bir geçişi ek eklemek nasıl sağladığını gösterir.")](passkit-images/image23.png#lightbox)
 
 Geçiş için bir iletken olabilir bir uygulama geliştiriyorsanız, bunlar tarafından tanınan:
 
@@ -498,7 +498,7 @@ var passes = library.GetPasses ();  // returns PKPass[]
 
 Bu yöntem her zaman gerçek cihazlarda test şekilde simulator döndürülen geçişleri listesi filtre uygulamadığında olduğunu unutmayın. İki kuponlar eklendikten sonra bu liste bir UITableView örnek uygulama görünümlü bu görüntülenebilir:
 
- [ ![](passkit-images/image29.png "Örnek uygulama görünüm aşağıdaki gibi iki kuponlar eklendikten sonra")](passkit-images/image29.png)
+ [![](passkit-images/image29.png "Örnek uygulama görünüm aşağıdaki gibi iki kuponlar eklendikten sonra")](passkit-images/image29.png#lightbox)
 
 
 ### <a name="displaying-passes"></a>Geçişleri görüntüleme
@@ -520,7 +520,7 @@ string passInfo =
 
 Bu dize bir uyarı örnek olarak gösterilmiştir:
 
- [ ![](passkit-images/image30.png "Örnek kupon seçili uyarıda")](passkit-images/image30.png)
+ [![](passkit-images/image30.png "Örnek kupon seçili uyarıda")](passkit-images/image30.png#lightbox)
 
 Aynı zamanda `LocalizedValueForFieldKey()` tasarlanmış geçişleri alanlarındaki verileri almak üzere yöntemi (şunları öğrenmiş olacaksınız bu yana hangi alanlar mevcut olması). Kod örneği, bu göstermez.
 
@@ -541,7 +541,7 @@ NavigationController.PresentModalViewController (pkapvc, true);
 
 Geçişi ile sunulan **Ekle** ve **iptal** seçenekleri:
 
- [ ![](passkit-images/image20.png "Ekle ve iptal seçenekleriyle sunulan geçişi")](passkit-images/image20.png)
+ [![](passkit-images/image20.png "Ekle ve iptal seçenekleriyle sunulan geçişi")](passkit-images/image20.png#lightbox)
 
 ### <a name="replace-an-existing-pass"></a>Var olan bir parola Değiştir
 
@@ -613,7 +613,7 @@ Bu makalede geçirmek Seti sunulan, neden yararlıdır nedenlerinden bazıları 
 
 - [CreateAPassManually (örnek)](https://developer.xamarin.com/samples/PassKit/)
 - [PassKit örnek](https://developer.xamarin.com/samples/monotouch/PassKit/)
-- [İOS 6 giriş](~/ios/platform/introduction-to-ios6/index.md)
+- [iOS 6’ya Giriş](~/ios/platform/introduction-to-ios6/index.md)
 - [Passbook Programlama Kılavuzu](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Conceptual/PassKit_PG/Chapters/Introduction.html)
 - [Passbook geliştiricileri için](https://developer.apple.com/passbook/)
 - [Geçişi dosyaları hakkında](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html)

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d81776dcb48d33927ffde4087ceb3f408b38d16f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 036e1ddc95f8eabec3e87c13c25cad972c29a5d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>MacOS Sierra giriş
 
@@ -52,7 +52,7 @@ Daha fazla bilgi için lütfen Apple'nın bkz [ApplePay JS Framework](https://de
 
 Apple Safari web tarayıcısı, sayfaları sözcük işlemci ve birleşik, içeriğe duyarlı kullanıcı taşınabilir paneller gibi geleneksel kullanıcı Arabirimi öğeleri yerine yaptığı arabirimi sunmak için birçok yeni teknolojileri ve birden çok açın numaraları yayılan sayfası kullanım gibi modern macOS uygulamalar Windows.
 
-[ ![Sekmeli Mac penceresi örneği](images/content08.png)](images/content08.png)
+[![Sekmeli Mac penceresi örneği](images/content08.png)](images/content08.png#lightbox)
 
 Bizim [yapı Modern macOS uygulamaları](~/mac/platform/introduction-to-macos-sierra/modern-cocoa-apps.md) kılavuz kapsar birkaç ipuçları, özellikleri ve teknikler Geliştirici Xamarin.Mac modern macOS uygulamada oluşturmak için kullanabilirsiniz.
 
@@ -152,5 +152,5 @@ Apple'nın bkz [OS X v10.12 API Diffs](https://developer.apple.com/library/prere
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Mac örnekleri](https://developer.xamarin.com/samples/mac/)
+- [Mac Örnekleri](https://developer.xamarin.com/samples/mac/)
 - [OS X 10,12 yenilikler nelerdir?](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

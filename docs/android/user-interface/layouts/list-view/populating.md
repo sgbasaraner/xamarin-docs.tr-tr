@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: 74d8533d0a757a307d88125701a482dfefd5eec2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 12197d238ddc6ddc2bd8f48f77aa15f5eff22a0a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-listview-with-data"></a>ListView verilerle doldurma
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -23,7 +22,6 @@ Satır eklemek için bir `ListView` , Düzen ve uygulama eklemek gereken bir `IL
 
 Yerleşik bağdaştırıcıları görünüm kaynak kimliği her satır için kullanılan bir parametre olarak alın. Olanlar gibi yerleşik kaynakları kullanabilir `Android.Resource.Layout` , yazma kendi gerekmez.
 
-<a name="Using_ListActivity_and_ArrayAdapterString" />
 
 ## <a name="using-listactivity-and-arrayadapterltstringgt"></a>ListActivity ve ArrayAdapter kullanarak&lt;dize&gt;
 
@@ -43,13 +41,12 @@ public class HomeScreen : ListActivity {
 }
 ```
 
-<a name="Handling_Row_Clicks" />
 
 ### <a name="handling-row-clicks"></a>Satır işleme tıklar
 
 Genellikle bir `ListView` de (örneğin, bir tıklatın ya da bir kişi arama veya başka bir ekranını gösteren) bazı eylemleri gerçekleştirmek için bir satır touch kullanıcıya izin verir. Yanıt verecek şekilde kullanıcı rötuşları gerekir için daha fazla yöntemi uygulanan `ListActivity` &ndash; `OnListItemClick` &ndash; şöyle:
 
-[![Bir SimpleListItem ekran görüntüsü](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png)
+[![Bir SimpleListItem ekran görüntüsü](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
 ```csharp
 protected override void OnListItemClick(ListView l, View v, int position, long id)
@@ -61,9 +58,8 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 Kullanıcı bir satır touch artık ve `Toast` uyarı görünür:
 
-[![Ekran görüntüsü, bir satır işlemdeki açtığınızda görüntülenen bildirim](populating-images/basictable2.png)](populating-images/basictable2.png)
+[![Ekran görüntüsü, bir satır işlemdeki açtığınızda görüntülenen bildirim](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
-<a name="Implementing_a_ListAdapter" />
 
 ## <a name="implementing-a-listadapter"></a>Bir ListAdapter uygulama
 
@@ -110,7 +106,6 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 }
 ```
 
-<a name="Using_a_Custom_Adapter" />
 
 ### <a name="using-a-custom-adapter"></a>Özel bağdaştırıcı kullanma
 
@@ -122,7 +117,6 @@ ListAdapter = new HomeScreenAdapter(this, items);
 
 Bu örnek aynı satır Düzen kullandığından (`SimpleListItem1`) sonuçta elde edilen uygulama önceki örneğe benzer görünür.
 
-<a name="Row_View_Re-Use" />
 
 ### <a name="row-view-re-use"></a>Satır görünümü yeniden kullanma
 
@@ -147,13 +141,12 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 Bazı bağdaştırıcısı uygulamaları (gibi `CursorAdapter`) yoksa bir `GetView` yöntemi, iki farklı yöntem yerine duyarlar `NewView` ve `BindView` hangi zorunlu satır yeniden kullanımını sorumluluklarını ayırarak `GetView` iki içine yöntemleri. Var olan bir `CursorAdapter` belgenin devamındaki örnek.
 
-<a name="Enabling_Fast_Scrolling" />
 
 ## <a name="enabling-fast-scrolling"></a>Hızlı kaydırmayı etkinleştirme
 
 Hızlı kaydırma 'listesinin bir parçası doğrudan erişmek için bir kaydırma çubuğunun davranan bir ek tanıtıcısı' sağlayarak uzun listeleriyle kaydırma kullanıcıya yardımcı olur. Bu ekran hızlı kaydırma tutacağı gösterir:
 
-[![Kaydırma işleyici ile hızlı olarak kaydırma ekran görüntüsü](populating-images/fastscroll.png)](populating-images/fastscroll.png)
+[![Kaydırma işleyici ile hızlı olarak kaydırma ekran görüntüsü](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
 Görüntülenecek hızlı kaydırma tanıtıcı neden ayarı olarak basit `FastScrollEnabled` özelliğine `true`:
 
@@ -161,13 +154,12 @@ Görüntülenecek hızlı kaydırma tanıtıcı neden ayarı olarak basit `FastS
 ListView.FastScrollEnabled = true;
 ```
 
-<a name="Adding_a_Section_Index" />
 
 ### <a name="adding-a-section-index"></a>Bir bölüm dizini ekleme
 
 Uzun bir listesi ile hızlı kaydırma olduklarında bölüm dizini ek görüş kullanıcıları için sağlar. &ndash; 'bunlar kaydırılan için hangi bölüm' gösterir. Bir bağdaştırıcı alt uygulanmalı görünmesi bölüm dizini neden `ISectionIndexer` arabirimi görüntülenen satır bağlı olarak dizin metin girin:
 
-[![H ile başlayan bölümün yukarısında görünmesini H ekran görüntüsü](populating-images/sectionindex.png)](populating-images/sectionindex.png)
+[![H ile başlayan bölümün yukarısında görünmesini H ekran görüntüsü](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 Uygulanacak `ISectionIndexer` bir bağdaştırıcı için üç yöntem eklemeniz gerekir:
 

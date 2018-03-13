@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/18/2017
-ms.openlocfilehash: 88e8c66d36956649f0a996046f038d89a7267cf5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 213702d289adefe966f07c3ad0174156cbc69ee1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="java-integration-overview"></a>Java tümleştirmesine genel bakış
 
 _Java ekosistemi bileşenlerini farklı ve büyük bir koleksiyonunu içerir. Bu bileşenlerin çoğu bir Android uygulama geliştirmek için gereken süreyi azaltmak için kullanılabilir. Bu belge getirir ve geliştiriciler bu varolan Java bileşenleri kendi Xamarin.Android uygulaması geliştirme deneyimini geliştirmek için kullanabilir yollardan bazılarını üst düzey bir bakış sağlar._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -41,7 +40,6 @@ JNI, kullanarak ikinci bir teknik daha düşük bir düzeyde, çalışır ancak 
 Üçüncü teknik önceki iki tüketicisinin farklıdır: Java'dan C# kod bağlantı noktası oluşturma. Kod bir dilden diğerine taşıma zahmetli bir işlem olabilir, ancak bir aracı Yardım çabayla adlı küçültmek mümkündür *keskinleştirme*. Keskinleştirme, bir Java bir açık kaynak aracıdır-için-C# dönüştürücü. 
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -51,7 +49,7 @@ Bu belge kitaplıkları Java'dan bir Xamarin.Android uygulaması kullanılabilme
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Mimari](~/android/internals/architecture.md)
-- [Java kitaplığı bağlama](~/android/platform/binding-java-library/index.md)
+- [Java Kitaplığını Bağlama](~/android/platform/binding-java-library/index.md)
 - [JNI ile çalışma](~/android/platform/java-integration/working-with-jni.md)
 - [Sharpen](https://github.com/slluis/sharpen)
 - [Java yerel arabirimi](http://docs.oracle.com/javase/7/docs/technotes~/jni/index.html)

@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: b471742ae9fb365d75e8dd3ca0f93f5e55208f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 343694163c79ab4d7e8b78875282e7077db979e5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="adding-a-second-toolbar"></a>İkinci bir araç çubuğu ekleme
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış 
 
 `Toolbar` Birden çok Değiştir eylemi çubuğu yapabilirsiniz &ndash; içinde bir etkinlik birden çok kez kullanılabilir, olması olabilir ekran üzerinde herhangi bir yere yerleştirme için özelleştirilmiş ve kısmi genişliğini ekran span şekilde yapılandırılabilir. Aşağıdaki örnekler bir ikinci oluşturmak nasıl çalışılacağını `Toolbar` ve ekranın alt kısmında yerleştirin. Bu `Toolbar` uygulayan **kopya**, **Kes**, ve **Yapıştır** menü öğeleri. 
 
-<a name="define_second" />
 
 ## <a name="define-the-second-toolbar"></a>İkinci araç tanımlayın 
 
@@ -78,10 +76,9 @@ Düzen **Resources/values/styles.xml** ve aşağıdaki Aksan rengi stili tanım�
 
 Bu alt kısımdaki araç koyu amber renk sağlar. Derleme ve uygulamayı çalıştıran boş ikinci araç çubuğunu ekranın alt kısmında görüntüler: 
 
-[![Ekranın altındaki sarı ikinci araç ile uygulamasının ekran görüntüsü](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png)
+[![Ekranın altındaki sarı ikinci araç ile uygulamasının ekran görüntüsü](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
 
-<a name="second_menus" />
  
 ## <a name="add-edit-menu-items"></a>Düzen menüsü öğeleri Ekle 
 
@@ -100,7 +97,6 @@ Menü öğeleri için ikincil kopya eklemek için `Toolbar`:
 Aşağıdaki bölümlerde bu süreci ayrıntılı gösteren: **Kes**, **kopya**, ve **Yapıştır** menü öğeleri altına eklenen `Toolbar`. 
 
 
-<a name="second_resource" />
 
 ### <a name="define-the-edit-menu-resource"></a>Düzen menüsü kaynak tanımlayın
 
@@ -130,7 +126,6 @@ Aşağıdaki bölümlerde bu süreci ayrıntılı gösteren: **Kes**, **kopya**,
 Bu XML oluşturur **Kes**, **kopya**, ve **Yapıştır** menü öğelerini (eklenme simgelerle `mipmap-` klasörlerde [Eylem çubuğu değiştirme ](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
 
 
-<a name="inflate_menus" />
 
 ### <a name="inflate-the-menus"></a>Menüleri Şişir
 
@@ -149,18 +144,17 @@ Bu kod bulur `edit_toolbar` tanımlanan Görünüm **Main.axml**, başlığını
 
 Derleme ve uygulamayı çalıştırın. Uygulama çalıştırıldığında metin ve yukarıya eklenen simgeler aşağıda gösterildiği gibi görünür: 
 
-[![Alt araç kesme, kopyalama ve yapıştırma simgelerle diyagramı](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png)
+[![Alt araç kesme, kopyalama ve yapıştırma simgelerle diyagramı](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
 
 Dokunarak **Kes** menüsü simgesini görüntülenecek aşağıdaki bildirim neden olur: 
 
-[![Gösteren bildirim ekran kesme menüsü simgesini dokunduğunuz](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png)
+[![Gösteren bildirim ekran kesme menüsü simgesini dokunduğunuz](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
 
 Menü öğeleri ya da araç çubuğunda dokunarak elde edilen bildirimleri görüntüler: 
 
-[![Ekran bildirimleri, kaydetme, kopyalama ve yapıştırma dokunduğunuz menü öğeleri](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png)
+[![Ekran bildirimleri, kaydetme, kopyalama ve yapıştırma dokunduğunuz menü öğeleri](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
 
 
-<a name="up_button" />
 
 ## <a name="the-up-button"></a>Yukarı düğmesi 
 
@@ -187,7 +181,7 @@ SupportActionBar.SetHomeButtonEnabled (true);
 
 Kullanıcı ne zaman gider `MainActivity` için `DetailActivity`, `DetailActivity` görüntüler bir **yukarı** ekran görüntüsü gösterildiği gibi düğmesi (sol işaret ok):
 
-[![Bir araç çubuğunda yukarı düğmesi sol ok örneği ekran görüntüsü](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png)
+[![Bir araç çubuğunda yukarı düğmesi sol ok örneği ekran görüntüsü](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
 Bu dokunun **yukarı** düğme neden geri dönmek uygulama `MainActivity`. Birden çok hiyerarşi düzeyi ile daha karmaşık bir uygulamada bu düğmesine kullanıcı uygulamasında bir sonraki en yüksek düzeye yerine önceki ekrana döndürecektir. 
 

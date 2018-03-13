@@ -7,18 +7,17 @@ ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b2ed48ae9df7e950525fdc0cb97181ebe5a44dfb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d9342dc3a8d324f03cd31e1d03600449bfcf23f1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="designer-basics"></a>Tasarımcı temelleri
 
 _Bu konuda Tasarımcısı özellikleri tanıtır Tasarımcısı'nı başlatmak açıklanmaktadır, tasarım yüzeyine açıklar ve pencere öğesi özelliklerini düzenlemek için Özellikler bölmesi kullanmayı ayrıntıları._
 
-<a name="Launching_the_Designer" />
 
 ## <a name="launching-the-designer"></a>Tasarımcısı'nı başlatma
 
@@ -26,11 +25,11 @@ Tasarımcı bir düzen oluşturulduğunda veya var olan bir .axml dosyasını ç
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Visual Studio'da Tasarımcı ekranı](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png)
+[![Visual Studio'da Tasarımcı ekranı](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Mac için Visual Studio'da Tasarımcı ekranı](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png)
+[![Mac için Visual Studio'da Tasarımcı ekranı](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
 
 -----
 
@@ -39,20 +38,19 @@ Tasarımcı bir düzen oluşturulduğunda veya var olan bir .axml dosyasını ç
 
 Benzer şekilde, yeni bir düzen sağ tıklayarak ekleyebileceğiniz **düzeni** klasöründe **Çözüm Gezgini** ve seçerek **Ekle > Yeni öğe... > Android düzeni**:
 
-[![Yeni öğe iletişim ekleyin](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png)
+[![Yeni öğe iletişim ekleyin](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Benzer şekilde, yeni bir düzen sağ tıklayarak ekleyebileceğiniz **düzeni** klasöründe **çözüm paneli** ve seçerek **Ekle > Yeni Dosya > Android > düzeni**:
 
-[![Yeni dosya iletişim kutusu ekleme](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png)
+[![Yeni dosya iletişim kutusu ekleme](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
 
 -----
 
 Bu yeni bir .axml dosyası oluşturur ve tasarım yüzeyine yükler.
 
 
-<a name="Designer_Features" />
 
 ## <a name="designer-features"></a>Tasarımcısı özellikleri
 
@@ -60,11 +58,11 @@ Tasarımcı aşağıdaki ekran görüntüsünde gösterildiği gibi çeşitli ö
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tasarımcısı bölmeleri diyagramı](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png)
+[![Tasarımcısı bölmeleri diyagramı](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Tasarımcısı bölmeleri diyagramı](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png)
+[![Tasarımcısı bölmeleri diyagramı](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
 
 -----
 
@@ -97,7 +95,6 @@ Bir düzen Tasarımcısı'nda düzenlediğinizde, oluşturmak ve tasarımınız�
 -----
 
 
-<a name="Toolbar" />
 
 ## <a name="toolbar"></a>Araç Çubuğu
 
@@ -105,11 +102,11 @@ Yapılandırma seçicileri ve aracı menüleri (tasarım yüzeyi konumlandırıl
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tasarımcı araç diyagramı](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png)
+[![Tasarımcı araç diyagramı](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Tasarımcı araç diyagramı](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png)
+[![Tasarımcı araç diyagramı](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
 
 -----
 
@@ -143,7 +140,6 @@ Bu özelliklerin her biri şu konularda daha ayrıntılı açıklanmıştır:
 [Malzeme tasarım özellikleri](~/android/user-interface/android-designer/material-design-features.md) kapsamlı bir genel bakış sağlar **tema Düzenleyicisi** ve **malzeme Tasarım Kılavuzu**.
 
 
-<a name="Design_Surface" />
 
 ## <a name="design-surface"></a>Tasarım yüzeyi
 
@@ -151,17 +147,16 @@ Tasarımcı sürükleyip pencere öğeleri tasarım yüzeyine araç sağlar. (Ye
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Örnek ekleme satırlarında tasarım yüzeyi](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png)
+[![Örnek ekleme satırlarında tasarım yüzeyi](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Örnek ekleme satırlarında tasarım yüzeyi](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png)
+[![Örnek ekleme satırlarında tasarım yüzeyi](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
 
 -----
 
 Ayrıca, pencere öğeleri kopyalanabilir: kopya kullanabilirsiniz ve bir pencere öğesi veya kopyalamak için Yapıştır sürükleyip bırakabilirsiniz tuşlarına basarak sırasında var olan bir pencere öğesi <kbd>Ctrl</kbd> anahtarı.
 
-<a name="Context_Menu_Commands" />
 
 ### <a name="context-menu-commands"></a>Bağlam menü komutları
 
@@ -169,7 +164,7 @@ Bir bağlam menüsü tasarım yüzeyine hem belge anahattı de kullanılabilir. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tasarım yüzeyine sağ tıklattığınızda örnek bağlam menüsü](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png)
+[![Tasarım yüzeyine sağ tıklattığınızda örnek bağlam menüsü](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
 
 Bu örnekte, sağ tıklayarak bir `TextView` çeşitli seçenekler sunan bir bağlam menüsü açılır:
 
@@ -179,7 +174,7 @@ Bu örnekte, sağ tıklayarak bir `TextView` çeşitli seçenekler sunan bir ba�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Tasarım yüzeyine sağ tıklattığınızda örnek bağlam menüsü](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png)
+[![Tasarım yüzeyine sağ tıklattığınızda örnek bağlam menüsü](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
 
 Bu örnekte, sağ tıklayarak bir `TextView` çeşitli seçenekler sunan bir bağlam menüsü açılır:
 
@@ -198,7 +193,6 @@ Bu örnekte, sağ tıklayarak bir `TextView` çeşitli seçenekler sunan bir ba�
 -   **Silme**, **kopya**, ve **Kes** &ndash; sağ için uygulanan işlemler `TextView`.
 
 
-<a name="Zoom_Controls" />
 
 ### <a name="zoom-controls"></a>Yakınlaştırma denetimleri
 
@@ -206,11 +200,11 @@ Tasarım yüzeyine gösterildiği gibi birkaç denetimleri yakınlaştırma dest
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tasarım yüzeyi yakınlaştırma denetimlerini diyagramı](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png)
+[![Tasarım yüzeyi yakınlaştırma denetimlerini diyagramı](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Tasarım yüzeyi yakınlaştırma denetimlerini diyagramı](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png)
+[![Tasarım yüzeyi yakınlaştırma denetimlerini diyagramı](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
 
 -----
 
@@ -228,7 +222,6 @@ Bu denetimler kullanıcı arabiriminin Tasarımcısı'nda belirli alanları gör
 
 Seçilen yakınlaştırma ayarını uygulamanın çalışma zamanında kullanıcı arabiriminin etkilemez unutmayın.
 
-<a name="property_pad" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -238,11 +231,10 @@ Seçilen yakınlaştırma ayarını uygulamanın çalışma zamanında kullanıc
 
 Tasarımcı aracılığıyla pencere öğesi özelliklerini düzenlemeyi destekler **özelliği paneli**. Tasarımcı yüzeyine seçili pencere öğesi bağlı olarak özellik paneli değişiklik listelenen özellikleri. Zaman `Button` önceki örnekte seçildiğinde, söz konusu özellikleri `Button` pencere öğesi gösterilir:
 
-[![Özellik doldurma ekran görüntüsü](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png)
+[![Özellik doldurma ekran görüntüsü](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
 
 -----
 
-<a name="Property_Pad_Sections" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -272,7 +264,6 @@ Zaman `Button` önceki örnekte seçildiğinde, söz konusu özellikleri `Button
 -----
 
 
-<a name="Default_Values" />
 
 ### <a name="default-values"></a>Varsayılan değerler
 
@@ -287,7 +278,6 @@ Zaman `Button` önceki örnekte seçildiğinde, söz konusu özellikleri `Button
 
 -----
 
-<a name="Referencing_resources" />
 
 ### <a name="referencing-resources"></a>Başvuru kaynakları
 
@@ -299,13 +289,13 @@ Bu düğme tıklatıldığında kaynak seçici açar.
 
 Örneğin, aşağıdaki ekran görüntüsünde metin alanının sağındaki üç nokta tıklatıldığında kullanılabilir kaynakları gösterir bir `Button` pencere öğesinde **özellikleri** penceresi:
 
-[![İki kaynak listelenir örnek kaynaklar ekran görüntüsü](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png)
+[![İki kaynak listelenir örnek kaynaklar ekran görüntüsü](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Örneğin, aşağıdaki ekran görüntüsünde metin alanının sağındaki üç nokta tıklatıldığında kullanılabilir kaynakları gösterir bir `Button` pencere öğesinde **özelliği paneli**:
 
-[![İki kaynak listelenir örnek kaynaklar ekran görüntüsü](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png)
+[![İki kaynak listelenir örnek kaynaklar ekran görüntüsü](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
 
 -----
 
@@ -313,16 +303,15 @@ Sonraki örnekte kaynak seçicisini gösterilmektedir `Src` özelliği bir `Imag
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Kaynak Seçici simgesi kaynak için bir ImageView listeleme](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png)
+[![Kaynak Seçici simgesi kaynak için bir ImageView listeleme](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Kaynak Seçici simgesi kaynak için bir ImageView listeleme](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png)
+[![Kaynak Seçici simgesi kaynak için bir ImageView listeleme](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
 
 -----
 
 
-<a name="Boolean_Property_References" />
 
 ### <a name="boolean-property-references"></a>Boolean özelliği başvuruları
 
@@ -336,25 +325,21 @@ Sonraki örnekte kaynak seçicisini gösterilmektedir `Src` özelliği bir `Imag
 
 *Boolean* özellikleri bir onay kutusu özelliği panelinde olarak normal olarak gösterilir. Zaman bir `Boolean` özelliğini destekleyen kaynak başvuruları, özellik yanında küçük bir onay kutusu görüntülenir. İşaretli onay kutusu anlamına gelir `true` ve boş bir kutunun anlamına gelir `false`. Bir değer gibi doğrudan da girin `true` veya `false`. Fare giriş getirildiğinde, bir küçük metin alanı simgesi getirir. Değeri el ile girebilirsiniz isterseniz, üzerinde tıklatabilirsiniz.
 
-[![Boole özellikleri ayarlama örneği](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png)
+[![Boole özellikleri ayarlama örneği](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
 
-<a name="Grouped_Properties" />
 
 ## <a name="grouped-properties"></a>Gruplandırılmış özellikleri
 
 Bazı pencere öğeleri birlikte gruplandırılmış birden çok değerli özelliklere sahip (gibi `Padding`, örneğin). Bu özellik değerlerini listelenen **özelliği paneli** genişletilebilir, tek bir satırda. Bu özelliklerden bazıları gibi doğrudan gruplandırılmış satırda düzenlenebilir `Padding` aşağıda gösterilen özelliği:
 
-[![Padding özelliği için örnek ayarları](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png)
+[![Padding özelliği için örnek ayarları](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
 
 -----
 
-<a name="Editing_Properties_Inline" />
 
 ## <a name="editing-properties-inline"></a>Özellikler satır içi düzenleme
 
 Android Tasarımcısı'nı (özellik listesinde bu özellikleri için arama gerekmez) doğrudan tasarım yüzeyine belirli özelliklerin düzenlemeyi destekler. Metin, kenar boşluğu ve boyutu doğrudan düzenlenebilir özellikler içerir.
-
-<a name="Text" />
 
 ### <a name="text"></a>Metin
 
@@ -366,7 +351,7 @@ Bazı pencere öğeleri metin özelliklerini (gibi `Button` ve `TextView`), doğ
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Metin kaynak hello dize](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png)
+[![Metin kaynak hello dize](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
 
 -----
 
@@ -378,7 +363,7 @@ Yeni bir metin değeri girin veya yeni bir kaynak dizesi girebilirsiniz. Aşağ�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![SHIFT + Enter metin için yeni bir kaynak otomatik olarak bağlamak için](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png)
+[![SHIFT + Enter metin için yeni bir kaynak otomatik olarak bağlamak için](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
 
 -----
 
@@ -386,7 +371,6 @@ Bu değişiklik pencere öğesinde 's depolanan `text` özellik; atanan değer d
 Yeni bir metin dizesinde anahtar zaman basabilirsiniz <kbd>Shift</kbd> +
 <kbd>Enter</kbd> otomatik olarak yeni bir kaynak için girilen metin bağlamak için.
 
-<a name="Margin" />
 
 ### <a name="margin"></a>Kenar boşluğu
 
@@ -400,7 +384,7 @@ Bir pencere öğesini seçtiğinizde, Tasarımcı boyutunu veya pencere öğesin
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Kenar boşluğu gösteren ekran Tasarımcısı'nda işleme](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png)
+[![Kenar boşluğu gösteren ekran Tasarımcısı'nda işleme](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
 
 -----
 
@@ -412,12 +396,11 @@ Kenar boşluğu zaten ayarlanmışsa kenar kapladığı alanı belirten noktalı
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Noktalı bir düğme boşluk işaretleme çizgiler örneği](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png)
+[![Noktalı bir düğme boşluk işaretleme çizgiler örneği](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
 -----
 
 
-<a name="Size" />
 
 ### <a name="size"></a>Boyut
 
@@ -429,7 +412,7 @@ Daha önce belirtildiği gibi bir pencere öğesi seçildiğinde ' ı tıklatara
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Kaydırma içerik ve yeniden boyutlandırma tanıtıcıları](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png)
+[![Kaydırma içerik ve yeniden boyutlandırma tanıtıcıları](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
 
 -----
 
@@ -443,7 +426,7 @@ Boyut değeri ayarlandığında **sarmalamak içerik**, boyuta değiştirmek iç
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Eşleşme üst tanıtıcısı](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png)
+[![Eşleşme üst tanıtıcısı](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
 
 -----
 
@@ -457,7 +440,7 @@ Ayrıca, döngüsel yeniden boyutlandırma (yukarıdaki ekran görüntülerinde 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Döngüsel yeniden boyutlandırma](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png)
+[![Döngüsel yeniden boyutlandırma](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
 
 -----
 
@@ -469,12 +452,11 @@ Tüm kapsayıcıları düzenlenmesine izin `Size` bir pencere öğesinin. Örne�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Hiçbir yeniden boyutlandırma](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png)
+[![Hiçbir yeniden boyutlandırma](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
 
 -----
 
 
-<a name="Outline_View" />
 
 ## <a name="document-outline"></a>Belge Anahattı
 
@@ -487,7 +469,7 @@ Aşağıdaki örnekte içeren `LinearLayout` pencere öğesi seçili:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Belge Anahattı](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png)
+[![Belge Anahattı](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
 
 -----
 

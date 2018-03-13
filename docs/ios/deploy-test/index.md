@@ -1,31 +1,31 @@
 ---
-title: "Dağıtım ve test etme"
+title: "Dağıtım ve Test Etme"
 description: "Sabitlemeyi ve dağıtım kılavuzları"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0c152c389a6aa62512882863cd2830b436587475
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f051e855c9d32f5c9667dc70c7cb9cf9ba8105fb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
-# <a name="deployment-and-testing"></a>Dağıtım ve test etme
+# <a name="deployment-and-testing"></a>Dağıtım ve Test Etme
 
 Bu bölümde yanı sıra bir uygulama dağıtmak için test etmek için kullanılan konuları kapsar. Burada konuların hata ayıklama, sınayıcılar ve uygulama mağazası bir uygulamanın nasıl yayımlanacağını dağıtım için kullanılan araçları gibi nesnelerdir.
 
 
-##  <a name="app-distributioniosdeploy-testapp-distributionindexmd"></a>[Uygulama dağıtımı](~/ios/deploy-test/app-distribution/index.md)
+##  <a name="app-distributioniosdeploy-testapp-distributionindexmd"></a>[Uygulama Dağıtımı](~/ios/deploy-test/app-distribution/index.md)
 
 Bu makalede, yapılandırma, yapı ve de dahil olmak üzere çeşitli farklı yollarla dağıtım için bir Xamarin.iOS uygulaması yayımlama gösterilmektedir:
 
-- [Uygulama mağazası dağıtım](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
-- [Şirket içi (Kurumsal) dağıtım](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [Geçici dağıtım](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [App Store Dağıtımı](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [Şirket İçi (Kurumsal) Dağıtım](~/ios/deploy-test/app-distribution/in-house-distribution.md)
+- [Geçici Dağıtım](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 
 ##  <a name="ipa-deploymentiosdeploy-testapp-distributionipa-supportmd"></a>[IPA dağıtımı](~/ios/deploy-test/app-distribution/ipa-support.md)
 
@@ -35,7 +35,7 @@ Geçici ve kurumsal dağıtımlar sınama veya şirket içi kullanıcılara dağ
 
 Bu kılavuzlar dizi kod imzalama ve özellik listeleri ve uygulamanızın uygulama hizmetleri için sağlama ile çalışma gibi essentials sağlama kapsar. 
 
-## <a name="wireless-deploymentwireless-deploymentmd"></a>[Kablosuz dağıtma](wireless-deployment.md)
+## <a name="wireless-deploymentwireless-deploymentmd"></a>[Kablosuz Dağıtım](wireless-deployment.md)
 
  Xcode 9 dağıtmak ve uygulamanızın hatalarını ayıklama istediğiniz her zaman için donanım aygıtlarınızın sahip olmak yerine bir iOS cihazı veya Apple TV için bir ağ üzerinden dağıtma seçeneği sunulmuştur. Bu özellik şu anda önizlemede değil.
 
@@ -61,7 +61,7 @@ Bu makalede Instruments herhangi bir iOS aygıtı ve herhangi bir Xamarin.iOS uy
 
 
 
-##  <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[İzlenecek yol - Apple'nın gereç aracını kullanma](~/ios/deploy-test/walkthrough-apples-instrument.md)
+##  <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[İzlenecek Yol - Apple’ın İşaretleme Aracını Kullanma](~/ios/deploy-test/walkthrough-apples-instrument.md)
 
 Bu makalede Apple'nın Instruments aracının Xamarin ile oluşturulan bir iOS uygulaması bellek sorunları tanılamak için nasıl kullanılacağı anlatılmaktadır. Araçları başlatın, yığın anlık görüntülerini almak ve bellek büyüme çözümlemek nasıl gösterir. Ayrıca, Instruments görüntülemek ve bellek soruna neden tam satır kod sabitleme için nasıl kullanılacağını gösterir.
 

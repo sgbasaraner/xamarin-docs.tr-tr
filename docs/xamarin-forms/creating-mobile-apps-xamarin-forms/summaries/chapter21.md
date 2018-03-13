@@ -3,14 +3,15 @@ title: "Bölüm 21 özeti. Dönüşümler"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 378ce3fb39cfb5c42d5ec7611415f5420146a9cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Bölüm 21 özeti. Dönüşümler
 
@@ -49,7 +50,7 @@ Sıfır olmayan değerler, [ `TranslationX` ](https://developer.xamarin.com/api/
 
 Bir ortak çevirisi özellikleri biraz metin işleme dengelemek için kullanılır. Bu, gösterilmiştir [ **TextOffsets** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TextOffsets) örnek:
 
-[![Üçlü ekran görüntüsü metin kaydırır](images/ch21fg03-small.png "metin kaydırır")](images/ch21fg03-large.png "metin kaydırır")
+[![Üçlü ekran görüntüsü metin kaydırır](images/ch21fg03-small.png "metin kaydırır")](images/ch21fg03-large.png#lightbox "metin kaydırır")
 
 Birden çok kopyasını oluşturmak için başka bir etkin olduğu bir `Label` örnekte gösterildiği gibi bir 3B blok benzeyecek şekilde [ **BlockText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BlockText) örnek.
 
@@ -101,7 +102,7 @@ De dahil **Xamarin.FormsBook.Toolkit** olan bir [ `SecondTickConverter` ](https:
 
 [ **BoxViewClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BoxViewClock) kullanan `BoxView` daha kapsamlı grafikler için değer de dahil olmak üzere işaretler saatin yüzünü ve bunların uçları bir az uzaklığı bu döndürme aktarır:
 
-[![Üçlü ekran BoxView saatinin](images/ch21fg17-small.png "Analog Saat yüzünü")](images/ch21fg17-large.png "Analog Saat yüzü")
+[![Üçlü ekran BoxView saatinin](images/ch21fg17-small.png "Analog Saat yüzünü")](images/ch21fg17-large.png#lightbox "Analog Saat yüzü")
 
 Ayrıca bir [ `SecondBackEaseConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs) sınıfını **Xamarin.FormsBook.Toolkit** saniyeyi geri biraz şimdi, atlama önce çekme görünmesine neden olur ve ardından doğru konumuna geri dönün.
 

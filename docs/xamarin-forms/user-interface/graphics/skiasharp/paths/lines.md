@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a3090873569db2466db9ab25cc105ea59401df3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Satırları ve vuruş büyük harfler
 
@@ -92,7 +92,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Her bir üyesi için `SKStrokeCap` numaralandırma, işleyici çizer vuruş kalınlığı 50 piksel ve 2 piksel ile bir vuruş kalınlığı üstte konumlandırılmış başka bir satır ile iki satır. Bu ikinci satır geometrik başlangıç ve bitiş çizgi kalınlığı ve vuruş cap bağımsız satırının göstermeye yöneliktir:
 
-[![](lines-images/strokecaps-small.png "Üçlü sayfasının ekran görüntüsü vuruş Caps")](lines-images/strokecaps-large.png "Üçlü sayfasının ekran görüntüsü vuruş Caps")
+[![](lines-images/strokecaps-small.png "Üçlü sayfasının ekran görüntüsü vuruş Caps")](lines-images/strokecaps-large.png#lightbox "Üçlü sayfasının ekran görüntüsü vuruş Caps")
 
 Gördüğünüz gibi `Square` ve `Round` vuruş caps etkili bir şekilde genişletmek satırın uzunluğuna yarım vuruşun genişliğini satırın başındaki ve sonundaki yeniden tarafından. İşlenen grafik nesnesi boyutlarını belirlemek gerekli olduğunda bu uzantıyı önemli hale gelir.
 
@@ -230,7 +230,7 @@ T GetPickerItem<T>(Picker picker)
 
 Ekran görüntüsü, çeşitli gösterir `Picker` üç platformlarda seçimleri:
 
-[![](lines-images/multiplelines-small.png "Üçlü sayfasının ekran görüntüsü birden fazla satır")](lines-images/multiplelines-large.png "Üçlü sayfasının ekran görüntüsü birden fazla satır")
+[![](lines-images/multiplelines-small.png "Üçlü sayfasının ekran görüntüsü birden fazla satır")](lines-images/multiplelines-large.png#lightbox "Üçlü sayfasının ekran görüntüsü birden fazla satır")
 
 Sol gösterir, iPhone nasıl `SKPointMode.Points` numaralandırma üyesi neden `DrawPoints` her nokta işlemek için `SKPoint` satır uç ise bir kare olarak dizi `Butt` veya `Square`. Satır ucun ise daireler işlenir `Round`.
 

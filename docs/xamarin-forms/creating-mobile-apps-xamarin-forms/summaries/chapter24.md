@@ -3,14 +3,15 @@ title: "Bölüm 24 özeti. Sayfa gezintisi"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b8eac45c52093dea23c08a19d219fa0bbd8d55ab
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>Bölüm 24 özeti. Sayfa gezintisi
 
@@ -99,7 +100,7 @@ Belirli bir kalıcı sayfa için birden çok kez gittiğinizde, böylece kullan�
 
 [ **ViewGalleryType** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryType) örnek gösterilmektedir kullanarak bir `TableView` menü öğelerini listelemek. Her bir öğe ile ilişkili bir `Type` belirli bir sayfa için nesne. Bu öğe seçildiğinde, program sayfası oluşturur ve ona gider.
 
-[![Üçlü ekran görünümü galeri türü](images/ch24fg21-small.png "Tablo görünümü listeleme menü öğeleri")](images/ch24fg21-large.png "Tablo görünümü listeleme menü öğeleri")
+[![Üçlü ekran görünümü galeri türü](images/ch24fg21-small.png "Tablo görünümü listeleme menü öğeleri")](images/ch24fg21-large.png#lightbox "Tablo görünümü listeleme menü öğeleri")
 
 [ **ViewGalleryInst** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryInst) menü türleri yerine her sayfa örneklerini içerdiğinden, örnek biraz farklı. Bu her sayfasındaki bilgileri korumaya yardımcı olur, ancak tüm sayfaları program başlangıcında örneğinin oluşturulması gerekir.
 
@@ -173,5 +174,5 @@ Bunu geri yüklendiğinde genel durumda uyku moduna sayfalı bir program aynı s
 
 - [Bölüm 24 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch24-Apr2016.pdf)
 - [Bölüm 24 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
-- [Hiyerarşik gezinme](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
-- [Kalıcı sayfaları](~/xamarin-forms/app-fundamentals/navigation/modal.md)
+- [Hiyerarşik Gezinme](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
+- [Kalıcı Sayfalar](~/xamarin-forms/app-fundamentals/navigation/modal.md)

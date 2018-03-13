@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 71d13166bf047f6e645172a18cb5b24c3bc9f811
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2552538c4d586e9471c42aaf7d696955a0908d1b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Uygulama iTunes Connect yapılandırma
 
@@ -32,13 +32,13 @@ iTunes Bağlan aşağıdakiler için kullanılabilir:
 - Bir satış fiyat seçin veya uygulama ücretsiz yayımlanması belirtin.
 - Oyun merkezi ve uygulama içi satın alma gibi isteğe bağlı uygulama mağazası teknolojileri yapılandırın.
 
-Ayrıca, Apple App Store'da özellik karar verir durumda uygulama da çekici, yüksek çözünürlüklü resmi kullanılabilir olmalıdır. Daha fazla bilgi için lütfen Apple'nın bkz [iTunes Bağlan Geliştirici Kılavuzu](#https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225-CH1-SW1).
+Ayrıca, Apple App Store'da özellik karar verir durumda uygulama da çekici, yüksek çözünürlüklü resmi kullanılabilir olmalıdır. Daha fazla bilgi için lütfen Apple'nın bkz [iTunes Bağlan Geliştirici Kılavuzu](https://developer.apple.com/support/itunes-connect/).
 
 ## <a name="managing-agreements-tax-and-banking"></a>Yönetme anlaşmaları, vergi ve bankacılık
 
 **Anlaşmaları, vergi ve bankacılık** iTunes Bağlan bölümünde, iTunes Geliştirici ödemeler ilgili finansal gerekli bilgileri sağlayın ve withholdings vergi ve elinizde ile yerinde anlaşmaları durumunu izlemek için kullanılır Apple. App Store'dan iOS uygulama (ücretsiz veya satışı) yayınlamadan önce uygun anlaşmaları var ve varolan anlaşmaları yapılan tüm değişiklikler anlaştığınız gerekir.
 
-[ ![](itunesconnect-images/agreement01.png "Yönetme anlaşmaları, vergi ve bankacılık")](itunesconnect-images/agreement01.png)
+[![](itunesconnect-images/agreement01.png "Yönetme anlaşmaları, vergi ve bankacılık")](itunesconnect-images/agreement01.png#lightbox)
 
 Buradan şunları yapabilirsiniz:
 
@@ -61,13 +61,13 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 
 1. Tıklayın **uygulamalarım**:
 
-    [ ![](itunesconnect-images/add01.png "Uygulamalarım üzerinde tıklatın")](itunesconnect-images/add01.png)
+    [![](itunesconnect-images/add01.png "Uygulamalarım üzerinde tıklatın")](itunesconnect-images/add01.png#lightbox)
 2. Tıklatın  **+**  el sol alt köşesinde ve select üst **yeni iOS uygulaması**:
 
-    [ ![](itunesconnect-images/add02.png "Yeni bir iOS uygulaması ekleme")](itunesconnect-images/add02.png)
+    [![](itunesconnect-images/add02.png "Yeni bir iOS uygulaması ekleme")](itunesconnect-images/add02.png#lightbox)
 3. iTunes Bağlan görüntüler **yeni iOS uygulaması** iletişim:
 
-    [ ![](itunesconnect-images/add03.png "Yeni iOS uygulaması iletişim kutusu")](itunesconnect-images/add03.png)
+    [![](itunesconnect-images/add03.png "Yeni iOS uygulaması iletişim kutusu")](itunesconnect-images/add03.png#lightbox)
 4. Girin bir **adı** ve **sürüm numarası** uygulamanın uygulama Mağazası'nda görüntülenen.
 5. Seçin **birincil dili**.
 6. Girin bir **SKU** sayı, bu benzersiz bir sabit, kullanılan uygulama izleme olacaktır tanımlayıcısı. Bu son kullanıcı ile bu görüntülenmeyecek _olamaz_ uygulama oluşturulduktan sonra değiştirilmiş olabilir.
@@ -76,7 +76,7 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 
 Yeni uygulama iTunes Bağlan oluşturulur ve açıklama, fiyatlandırma, kategoriler, derecelendirme, vb. gibi gerekli bilgileri doldurmak hazır olacaktır.:
 
-[ ![](itunesconnect-images/add04.png "Yeni uygulama iTunes Bağlan oluşturulur.")](itunesconnect-images/add04.png)
+[![](itunesconnect-images/add04.png "Yeni uygulama iTunes Bağlan oluşturulur.")](itunesconnect-images/add04.png#lightbox)
 
 <a name="managing" />
 
@@ -110,7 +110,7 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 4. Kaydırma **ekran görüntüleri** bölümü.
 5. Seçin **görüntü boyutu** ve gerekli görüntüler (en fazla 5 ekran boyutu başına) sürükleyin:
 
-    [ ![](itunesconnect-images/screenshot01.png "Görüntü boyutu seçin ve gerekli görüntüleri sürükleme")](itunesconnect-images/screenshot01.png)
+    [![](itunesconnect-images/screenshot01.png "Görüntü boyutu seçin ve gerekli görüntüleri sürükleme")](itunesconnect-images/screenshot01.png#lightbox)
 6. Tüm gerekli ekran boyutları için yineleyin.
 7. Tıklatın **kaydetmek** yaptığınız değişiklikleri kaydetmek için ekranın üstündeki düğmesi.
 
@@ -183,7 +183,7 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 4. Kaydırma **adı** bölümü.
 5. Gerekli tüm bilgileri doldurun:
 
-    [ ![](itunesconnect-images/name01.png "Ad, açıklama, iTunes Bağlan yeni, anahtar sözcükleri ve URL'leri nedir düzenleme")](itunesconnect-images/name01.png)
+    [![](itunesconnect-images/name01.png "Ad, açıklama, iTunes Bağlan yeni, anahtar sözcükleri ve URL'leri nedir düzenleme")](itunesconnect-images/name01.png#lightbox)
 6. Tıklatın **kaydetmek** yaptığınız değişiklikleri kaydetmek için ekranın üstündeki düğmesi.
 
 > [!IMPORTANT]
@@ -248,10 +248,10 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 4. Kaydırma **genel uygulama bilgileri** bölümü.
 5. Gerekli tüm bilgileri doldurun:
 
-    [ ![](itunesconnect-images/general01.png "Genel uygulama bilgilerini iTunes Bağlan düzenleme")](itunesconnect-images/general01.png)
+    [![](itunesconnect-images/general01.png "Genel uygulama bilgilerini iTunes Bağlan düzenleme")](itunesconnect-images/general01.png#lightbox)
 6. Tıklayın **Düzenle** tarafından düğmesini **derecelendirme** derecelendirme bilgilerini ayarlamak için:
 
-    [ ![](itunesconnect-images/general02.png "Derecelendirme düzenleme")](itunesconnect-images/general02.png)
+    [![](itunesconnect-images/general02.png "Derecelendirme düzenleme")](itunesconnect-images/general02.png#lightbox)
 6. Tıklatın **kaydetmek** yaptığınız değişiklikleri kaydetmek için ekranın üstündeki düğmesi.
 
 > [!NOTE]
@@ -274,14 +274,14 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 5. Anahtar tarafından çevir **Game Center** için bölüm **üzerinde** konumu.
 5. Gerekli tüm bilgileri doldurun:
 
-    [ ![](itunesconnect-images/gamecenter01.png "Oyun merkezi bilgileri iTunes Bağlan düzenleme")](itunesconnect-images/gamecenter01.png)
+    [![](itunesconnect-images/gamecenter01.png "Oyun merkezi bilgileri iTunes Bağlan düzenleme")](itunesconnect-images/gamecenter01.png#lightbox)
 6. Tıklatın **kaydetmek** yaptığınız değişiklikleri kaydetmek için ekranın üstündeki düğmesi.
 
 Kullanım **Game Center** Game Center etkinleştirmek ve herhangi bir kullanılabilir korumak için sekme **liderlik** veya **başarılar** bu uygulama için:
 
-[ ![](itunesconnect-images/gamecenter02.png "Game Center etkinleştir")](itunesconnect-images/gamecenter02.png)
+[![](itunesconnect-images/gamecenter02.png "Game Center etkinleştir")](itunesconnect-images/gamecenter02.png#lightbox)
 
-[ ![](itunesconnect-images/gamecenter03.png "Bu uygulama için tüm kullanılabilir liderlik veya başarılar koru")](itunesconnect-images/gamecenter03.png)
+[![](itunesconnect-images/gamecenter03.png "Bu uygulama için tüm kullanılabilir liderlik veya başarılar koru")](itunesconnect-images/gamecenter03.png#lightbox)
 
 ## <a name="maintaining-app-review-information"></a>Uygulama gözden geçirme bilgi koruma
 
@@ -297,10 +297,10 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 4. Kaydırma **uygulama gözden geçirme bilgi** bölümü.
 5. Gerekli tüm bilgileri doldurun:
 
-    [ ![](itunesconnect-images/review01.png "Uygulama bilgileri gözden geçir iTunes Bağlan düzenleme")](itunesconnect-images/review01.png)
+    [![](itunesconnect-images/review01.png "Uygulama bilgileri gözden geçir iTunes Bağlan düzenleme")](itunesconnect-images/review01.png#lightbox)
 6. Başarılı bir şekilde gözden sonra uygulama mağazasında yayımlanacak uygulama nasıl istediğiniz seçin:
 
-    [ ![](itunesconnect-images/review02.png "İTunes Bağlan sürüm bilgilerini düzenleme")](itunesconnect-images/review02.png)
+    [![](itunesconnect-images/review02.png "İTunes Bağlan sürüm bilgilerini düzenleme")](itunesconnect-images/review02.png#lightbox)
 6. Tıklatın **kaydetmek** yaptığınız değişiklikleri kaydetmek için ekranın üstündeki düğmesi.
 
 
@@ -308,7 +308,7 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 
 Uygulamanız için satış yayınlamayı planlıyoruz, Apple'nın mevcut fiyatlandırma katmanlarına ve verilen fiyatlandırma etkinleşen tarih birini seçerek satış fiyatı ayarlamanız gerekir. Örneğin, bu yazma süresi itibariyle **Katman 1** fiyatlandırma aşağıdaki gibi görünür:
 
-[ ![](itunesconnect-images/price01.png "Fiyatlandırma bilgileri koruma")](itunesconnect-images/price01.png)
+[![](itunesconnect-images/price01.png "Fiyatlandırma bilgileri koruma")](itunesconnect-images/price01.png#lightbox)
 
 ### <a name="educational-discount"></a>Eğitim indirim
 
@@ -328,7 +328,7 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 2. ' I tıklatın, uygulamanızın üzerinde **simgesi**.
 3. Seçin **fiyatlandırma** sekmesi:
 
-    [ ![](itunesconnect-images/price02.png "Fiyatlandırma bilgileri iTunes Bağlan düzenleme")](itunesconnect-images/price02.png)
+    [![](itunesconnect-images/price02.png "Fiyatlandırma bilgileri iTunes Bağlan düzenleme")](itunesconnect-images/price02.png#lightbox)
 4. Seçin bir **kullanılabilirlik tarihi**.
 5. İstenen fiyatından seçin **fiyat katmanı** açılır liste.
 5. İsteğe bağlı olarak etkinleştirme **eğitim indirimleri kapsayan**.
@@ -341,7 +341,7 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 
 Sanal satış planlıyorsanız, uygulama içi ürünlerinizi (örneğin, yeni oyun düzeyleri veya uygulama özellikleri) uygulamanızdan bu bölümü oluşturmak ve sürdürmek için kullanacağınız öğeleri olanlar satın alın.
 
-[ ![](itunesconnect-images/inapp01.png "Uygulama içi satın alma bilgileri koruma")](itunesconnect-images/inapp01.png)
+[![](itunesconnect-images/inapp01.png "Uygulama içi satın alma bilgileri koruma")](itunesconnect-images/inapp01.png#lightbox)
 
 Xamarin.iOS uygulamasının uygulama içi satın almalara ile çalışma hakkında daha fazla bilgi için lütfen bkz bizim [uygulama içi satın alma](~/ios/platform/in-app-purchasing/index.md) belgeleri.
 
@@ -349,7 +349,7 @@ Xamarin.iOS uygulamasının uygulama içi satın almalara ile çalışma hakkın
 
 Uygulamanızın uygulama mağazasında yayımlanan sonra satın alma veya uygulama için ücretsiz olarak karşıdan kullanıcılar uygulama incelenmesi yazma ve yıldız derecelendirmeleri bırakın. Bu incelemeler görmek için bu bölümü kullanın. Örneğin:
 
-[ ![](itunesconnect-images/reviews01.png "Uygulama incelemeler görüntüleme")](itunesconnect-images/reviews01.png)
+[![](itunesconnect-images/reviews01.png "Uygulama incelemeler görüntüleme")](itunesconnect-images/reviews01.png#lightbox)
 
 ## <a name="summary"></a>Özet
 

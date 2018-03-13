@@ -3,16 +3,16 @@ title: "Evrensel Windows Platformu (UWP) uygulamasını ekleme"
 description: "Bu makalede, Visual Studio'da Mac için oluşturulmuş bir Xamarin.Forms çözümünü UWP uygulaması projesi eklemek açıklanmaktadır"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: ADF99B78-F1BC-48DF-9128-01B93C4411C1
+ms.assetid: 34AAA045-64B8-4FDE-BB49-3FF0B4FFA17C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
-ms.openlocfilehash: a3746165db83b5b8adba9adb862f9ea09f7069b9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 36865dac6bd2ad13b9d3e286ab18a035c1edb3d8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="adding-a-universal-windows-platform-uwp-app"></a>Evrensel Windows Platformu (UWP) uygulamasını ekleme
 
@@ -38,7 +38,7 @@ Windows 10 telefonlar, tabletler ve masaüstü bilgisayarlar üzerinde çalışa
 
  4 . Emin olun yeni UWP projesini yerleşik **Yapı > Configuration Manager** penceresi (Bu büyük olasılıkla olmaz işleminin gerçekleştiği bilgisayarlar varsayılan olarak). Değer çizgilerinin **yapı** ve **dağıtma** kutuları Evrensel projesi için:
 
-  [ ![](universal-images/configuration-sml.png "Yapılandırma Yöneticisi penceresi")](universal-images/configuration.png "Yapılandırma Yöneticisi penceresi")
+  [![](universal-images/configuration-sml.png "Yapılandırma Yöneticisi penceresi")](universal-images/configuration.png#lightbox "Yapılandırma Yöneticisi penceresi")
 
  5 . Sağ tıklatın ve proje **Ekle > başvuru** ve bir başvuru (PCL, .NET Standard veya paylaşılan Proje) Xamarin.Forms uygulaması projesi oluşturun.
 

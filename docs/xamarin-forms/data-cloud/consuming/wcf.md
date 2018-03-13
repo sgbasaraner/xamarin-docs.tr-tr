@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 372ea9a20e9f67c41c74fb01afb8110ee741a709
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5cf194dce9bf4d0af23ba663ab00cf94a8a1766c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Bir Windows Communication Foundation (WCF) Web hizmeti kullanma
 
@@ -76,7 +76,7 @@ WCF hizmeti aşağıdaki işlemleri sağlar:
 Uygulamada kullanılan veri modeli hakkında daha fazla bilgi için bkz: [modelleme verileri](~/xamarin-forms/data-cloud/walkthrough.md).
 
 > [!NOTE]
-> **Not**: örnek uygulaması web hizmetine salt okunur erişim sağlayan Xamarin barındırılan bir WCF Hizmeti kullanır. Bu nedenle, oluşturmak, güncelleştirmek ve verileri silme işlemleri uygulamada kullanılan verileri değiştirmez. Ancak, ASMX hizmet barındırılabilir bir sürümü kullanılabilir **TodoWCFService** eşlik eden örnek uygulama klasöründe. WCF hizmet verir tam barındırılabilir bu sürümü oluşturmak güncelleştirme okumak ve verilere erişim silin.
+> Örnek uygulaması web hizmetine salt okunur erişim sağlayan Xamarin barındırılan bir WCF Hizmeti kullanır. Bu nedenle, oluşturmak, güncelleştirmek ve verileri silme işlemleri uygulamada kullanılan verileri değiştirmez. Ancak, ASMX hizmet barındırılabilir bir sürümü kullanılabilir **TodoWCFService** eşlik eden örnek uygulama klasöründe. WCF hizmet verir tam barındırılabilir bu sürümü oluşturmak güncelleştirme okumak ve verilere erişim silin.
 
 A *proxy* hizmetine bağlanmak uygulama izin veren bir WCF hizmeti kullanmak için oluşturulmuş olması gerekir. Proxy yöntemleri ve ilişkili hizmet yapılandırmasını tanımlar Süren hizmeti meta verileri tarafından oluşturulur. Bu meta veriler web hizmeti tarafından oluşturulan bir Web Hizmetleri Açıklama Dili (WSDL) belge şeklinde sunulur. Proxy web hizmeti için hizmet başvurusu .NET standart kitaplığına eklemek için Visual Studio 2017 Microsoft WCF Web hizmeti başvuru sağlayıcısını kullanarak oluşturulabilir. Visual Studio 2017 içinde Microsoft WCF Web hizmeti başvuru sağlayıcısı kullanarak proxy oluşturma alternatif ServiceModel meta veri yardımcı Programracı (svcutil.exe) kullanmaktır. Daha fazla bilgi için bkz: [ServiceModel meta veri yardımcı Programracı (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
 

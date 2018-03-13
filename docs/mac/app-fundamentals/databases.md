@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c3de0150bd34667a9310b796bf98a6bff6c07a67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 39186735749174884646a72871accfa051d2901c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="databases"></a>Veritabanları
 
@@ -27,7 +27,7 @@ Bu makalede biz SQLite verilere erişmek için iki yol kapsayan:
 1. **Doğrudan erişim** - bir SQLite veritabanına doğrudan erişerek biz verileri veritabanından anahtar-değer kodlama için kullanabilir ve kullanıcı Arabirimi öğeleri ile veri bağlaması Xcode'nın arabirimi Oluşturucusu'nda oluşturulan. Anahtar-değer kodlama ve veri Xamarin.Mac uygulamanızda teknikleri bağlama kullanarak, yazma ve doldurmak ve kullanıcı Arabirimi öğeleri ile çalışmak için korumanız için sahip kod miktarını önemli ölçüde düşürebilir. Ayrıca, yedekleme verilerinizi daha fazla ayırma faydası vardır (_veri modeli_) kullanıcı arabirimi, Önden bitiş (_Model-View-Controller_), başında bakımı kolay, daha esnek uygulama için Tasarım.
 2. **SQLite.NET ORM** - açık kaynak kullanarak [SQLite.NET](http://www.sqlite.org) biz büyük ölçüde azaltabilir okumak ve bir SQLite veritabanından veri yazmak için gereken kod miktarını nesne ilişki Yöneticisi (ORM). Bu veriler, bir kullanıcı arabirimi öğesi gibi bir tablo görünümü doldurmak için daha sonra kullanılabilir.
 
-[![Çalışan uygulama örneği](databases-images/intro01.png "çalışan uygulama örneği")](databases-images/intro01-large.png)
+[![Çalışan uygulama örneği](databases-images/intro01.png "çalışan uygulama örneği")](databases-images/intro01-large.png#lightbox)
 
 Bu makalede, biz anahtar-değer kodlama ve Xamarin.Mac uygulamasında SQLite veritabanlarıyla veri bağlama ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
 
@@ -52,7 +52,7 @@ Aşağıdakileri yapın:
 1. İçinde **çözüm paneli**, sağ tıklayın **başvuruları** klasörü ve Seç **Düzenle başvurular**.
 2. Her ikisini de seçin **Mono.Data.Sqlite** ve **System.Data** derlemeler: 
 
-    [![Gerekli başvuruları ekleme](databases-images/reference01.png "gerekli başvuruları ekleme")](databases-images/reference01-large.png)
+    [![Gerekli başvuruları ekleme](databases-images/reference01.png "gerekli başvuruları ekleme")](databases-images/reference01-large.png#lightbox)
 3. Tıklatın **Tamam** düğmesine yaptığınız değişiklikleri kaydetmek ve başvurular ekleyin.
 
 ### <a name="modifying-the-data-model"></a>Veri modeli değiştirme
@@ -1019,7 +1019,7 @@ MacOS (örneğin, birleşik giriş kutusu) kullanımına menü denetimleri liste
 
 Örnek olarak, düzenleme basit bağlama Yukarıdaki örnek arabirimi oluşturucu ekleyin birleşik giriş kutusu ve adlı prizine kullanarak kullanıma `EmployeeSelector`:
 
-[![Birleşik giriş kutusu çıkışı gösterme](databases-images/combo01.png "birleşik giriş kutusu çıkışı gösterme")](databases-images/combo01-large.png)
+[![Birleşik giriş kutusu çıkışı gösterme](databases-images/combo01.png "birleşik giriş kutusu çıkışı gösterme")](databases-images/combo01-large.png#lightbox)
 
 İçinde **öznitelikleri denetçisi**, denetleme **Autocompletes** ve **veri kaynağını kullanan** özellikleri:
 
@@ -1924,7 +1924,7 @@ Paketi eklemek için aşağıdakileri yapın:
 1. İçinde **çözüm paneli**, sağ tıklatın **paketleri** klasörü ve select **paketleri Ekle...**
 2. Girin `SQLite.net` içinde **arama kutusu** seçip **sqlite net** girişi:
 
-    [![SQLite NuGet paketi ekleme](databases-images/nuget01.png "SQLite NuGet paketi ekleme")](databases-images/nuget01-large.png)
+    [![SQLite NuGet paketi ekleme](databases-images/nuget01.png "SQLite NuGet paketi ekleme")](databases-images/nuget01-large.png#lightbox)
 3. Tıklatın **Paketi Ekle** tamamlanması düğmesi.
 
 ### <a name="creating-the-data-model"></a>Veri modeli oluşturma
@@ -2063,7 +2063,7 @@ conn.Insert (Occupation);
 
 Bir örnek kullanım bizim UI Xcode'nın arabirimi Oluşturucu için bir tablo görünümü ekleyeceğiz. Bu tablo görünüm prizine aracılığıyla kullanıma (`OccupationTable`) biz C# kodu aracılığıyla erişebilmesi için:
 
-[![Bir tablo görünümü çıkışı gösterme](databases-images/table01.png "bir tablo görünümü çıkışı gösterme")](databases-images/table01-large.png)
+[![Bir tablo görünümü çıkışı gösterme](databases-images/table01.png "bir tablo görünümü çıkışı gösterme")](databases-images/table01-large.png#lightbox)
 
 Ardından, bu tabloyu SQLite.NET veritabanından verilerle doldurmak için özel sınıflar ekleyeceğiz.
 
@@ -2225,7 +2225,7 @@ Bu makalede, veri bağlama ve anahtar-değer Xamarin.Mac uygulama SQLite veritab
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MacDatabase (örnek)](https://developer.xamarin.com/samples/mac/MacDatabase/)
-- [Merhaba, Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Veri bağlama ve anahtar-değer kodlama](~/mac/app-fundamentals/databinding.md)
 - [Standart denetimler](~/mac/user-interface/standard-controls.md)
 - [Tablo görünümleri](~/mac/user-interface/table-view.md)

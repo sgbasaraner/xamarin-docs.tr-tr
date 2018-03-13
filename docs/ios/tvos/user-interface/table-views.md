@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 26a73c2536bf4b4959928bfb27958b1a10734bf5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af562ac03f2cd5f293f99c7509000499ad5deaa4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-table-views"></a>Tablo görünümler ile çalışma
 
@@ -22,7 +22,7 @@ TvOS içinde bir tablo görünümü, isteğe bağlı olarak grupları veya böl�
 
 Tablo görünümleri genellikle sütunlardan biri görüntülenen bir [bölünmüş görünümlü](~/ios/tvos/user-interface/split-views.md) ters tarafta görüntülenen seçili öğenin ayrıntılarını ile gezinti olarak:
 
-[ ![](table-views-images/intro01.png "Örnek tablo görünümü")](table-views-images/intro01.png)
+[![](table-views-images/intro01.png "Örnek tablo görünümü")](table-views-images/intro01.png#lightbox)
 
 <a name="About-Table-Views" />
 
@@ -30,7 +30,7 @@ Tablo görünümleri genellikle sütunlardan biri görüntülenen bir [bölünm�
 
 A `UITableView` isteğe bağlı olarak grupları veya bölümler düzenlenebilir bilgilerin hiyerarşik listesi olarak kaydırılabilir satır tek bir sütun görüntüler: 
 
-[ ![](table-views-images/table01.png "Seçilen bir öğeyi")](table-views-images/table01.png)
+[![](table-views-images/table01.png "Seçilen bir öğeyi")](table-views-images/table01.png#lightbox)
 
 Apple tabloları ile çalışmak için aşağıdaki önerileri vardır:
 
@@ -72,86 +72,86 @@ Başlamak için aşağıdakileri yapın:
     
 1. Visual Studio'da Mac için yeni bir tvOS uygulama projesi başlatın ve seçin **tvOS** > **uygulama** > **Single View uygulaması** tıklatıp  **Sonraki** düğmesi: 
 
-    [ ![](table-views-images/table02.png "Tek görünüm uygulaması seçin")](table-views-images/table02.png)
+    [![](table-views-images/table02.png "Tek görünüm uygulaması seçin")](table-views-images/table02.png#lightbox)
 1. Girin bir **adı** tıklatın ve uygulama için **sonraki**: 
 
-    [ ![](table-views-images/table03.png "Uygulama için bir ad girin")](table-views-images/table03.png)
+    [![](table-views-images/table03.png "Uygulama için bir ad girin")](table-views-images/table03.png#lightbox)
 1. Ya da ayarlamak **proje adı** ve **çözüm adı** veya Varsayılanları kabul edin ve **oluşturma** düğmesi yeni bir çözüm oluşturmak için: 
 
-    [ ![](table-views-images/table04.png "Proje adı ve çözüm adı")](table-views-images/table04.png)
+    [![](table-views-images/table04.png "Proje adı ve çözüm adı")](table-views-images/table04.png#lightbox)
 1. İçinde **çözüm paneli**, çift tıklatın `Main.storyboard` dosyayı iOS Tasarımcısı açın: 
 
-    [ ![](table-views-images/table05.png "Main.storyboard dosyası")](table-views-images/table05.png)
+    [![](table-views-images/table05.png "Main.storyboard dosyası")](table-views-images/table05.png#lightbox)
 1. Seçin ve delete **varsayılan görünüm denetleyicisi**: 
 
-    [ ![](table-views-images/table06.png "Seçin ve varsayılan görünüm denetleyicisi silin")](table-views-images/table06.png)
+    [![](table-views-images/table06.png "Seçin ve varsayılan görünüm denetleyicisi silin")](table-views-images/table06.png#lightbox)
 1. Seçin bir **bölme görünüm denetleyicisini** gelen **araç** ve tasarım yüzeyine sürükleyin.
 1. Varsayılan olarak, elde edersiniz bir [bölünmüş görünümlü](~/ios/tvos/user-interface/split-views.md) ile bir **Gezinti View Controller** ve **tablo View Controller** sol tarafındaki ve **View Controller** sağ taraftaki içinde. Bu, Apple'nın önerilen tvOS Tablo görünümünde kullanımını oluşur: 
 
-    [ ![](table-views-images/table08.png "Bölünmüş görünümü ekleme")](table-views-images/table08.png)
+    [![](table-views-images/table08.png "Bölünmüş görünümü ekleme")](table-views-images/table08.png#lightbox)
 1. Tablo görünümünde her bölümünü seçin ve özel bir Ata gerekecek **sınıf adı** içinde **pencere öğesi** sekmesinde **özellikleri Explorer** , bunu daha sonra C# dilinde erişebilmesi için kod. Örneğin, **tablo View Controller**: 
 
-    [ ![](table-views-images/table09.png "Bir sınıf adı atayın")](table-views-images/table09.png)
+    [![](table-views-images/table09.png "Bir sınıf adı atayın")](table-views-images/table09.png#lightbox)
 1. Özel bir sınıf için oluşturduğunuzdan emin olun **tablo View Controller**, **Tablo görünümü** ve tüm **prototip hücreleri**. Oluşturuldukları sırada Mac için visual Studio Proje ağacına özel sınıfları ekleyin: 
 
-    [ ![](table-views-images/table10.png "Proje ağacında özel sınıflar")](table-views-images/table10.png)
+    [![](table-views-images/table10.png "Proje ağacında özel sınıflar")](table-views-images/table10.png#lightbox)
 1. Ardından, Tablo görünümünde tasarım yüzeyine seçin ve onun özelliklerini gerektiği gibi ayarlayın. Sayısı gibi **prototip hücreleri** ve **stili** (düz veya Grouped): 
 
-    [ ![](table-views-images/table11.png "Pencere öğesi sekmesi")](table-views-images/table11.png)
+    [![](table-views-images/table11.png "Pencere öğesi sekmesi")](table-views-images/table11.png#lightbox)
 1. Her **prototip hücre**, onu seçin ve benzersiz bir Ata **tanımlayıcısı** içinde **pencere öğesi** sekmesinde **özellikleri Explorer**. Bu adım _çok önemli_ bu tanımlayıcı daha sonra ihtiyacınız olacak şekilde zaman, doldurmak tablo. Örneğin `AttrCell`: 
 
-    [ ![](table-views-images/table12.png "Pencere öğesi sekmesi")](table-views-images/table12.png)
+    [![](table-views-images/table12.png "Pencere öğesi sekmesi")](table-views-images/table12.png#lightbox)
 1. Hücre biri olarak sunmak için seçebilirsiniz [varsayılan tablo görünümü hücre türleri](#Table-View-Cell-Types) aracılığıyla **stili** açılır veya ayarlamak **özel** ve tasarım yüzeyi Düzen hücre kullanın diğer UI pencere öğeleri sürükleyerek **araç**: 
 
-    [ ![](table-views-images/table13.png "Hücre düzeni")](table-views-images/table13.png)
+    [![](table-views-images/table13.png "Hücre düzeni")](table-views-images/table13.png#lightbox)
 1. Benzersiz bir Ata **adı** prototip hücre tasarımında her kullanıcı Arabirimi öğesine **pencere öğesi** sekmesinde **özellikleri Explorer** daha sonra C# kodunda erişebilmesi için: 
 
-    [ ![](table-views-images/table14.png "Bir ad atayın")](table-views-images/table14.png)
+    [![](table-views-images/table14.png "Bir ad atayın")](table-views-images/table14.png#lightbox)
 1. Tüm Tablo görünümünde prototip hücrelerden biri için yukarıdaki adımı yineleyin.
 1. Ardından, özel sınıflar UI tasarım, Düzen Ayrıntılar görünümünü ve ata benzersiz kalanını atayın **adları** her kullanıcı Arabirimi öğesi Ayrıntılar için bunları C# ' de erişebilmesi için görüntüleyin. Örneğin: 
 
-    [ ![](table-views-images/table15.png "UI düzeni")](table-views-images/table15.png)
+    [![](table-views-images/table15.png "UI düzeni")](table-views-images/table15.png#lightbox)
 1. Film şeridi için yaptığınız değişiklikleri kaydedin.
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
     
 1. Visual Studio'da yeni bir tvOS uygulama projesi başlatın ve seçin **tvOS** > **Single View uygulaması** ve uygulamanız için bir ad girin. Tıklatın **Tamam** düğmesi yeni bir çözüm oluşturmak için: 
 
-    [ ![](table-views-images/table02-vs.png "Tek görünüm uygulaması seçin")](table-views-images/table02-vs.png)
+    [![](table-views-images/table02-vs.png "Tek görünüm uygulaması seçin")](table-views-images/table02-vs.png#lightbox)
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosyayı iOS Tasarımcısı açın: 
 
-    [ ![](table-views-images/table05-vs.png "Main.storyboard dosyası")](table-views-images/table05-vs.png)
+    [![](table-views-images/table05-vs.png "Main.storyboard dosyası")](table-views-images/table05-vs.png#lightbox)
 1. Seçin ve delete **varsayılan görünüm denetleyicisi**: 
 
-    [ ![](table-views-images/table06-vs.png "Seçin ve varsayılan görünüm denetleyicisi silin")](table-views-images/table06-vs.png)
+    [![](table-views-images/table06-vs.png "Seçin ve varsayılan görünüm denetleyicisi silin")](table-views-images/table06-vs.png#lightbox)
 1. Seçin bir **bölme görünüm denetleyicisini** gelen **araç** ve tasarım yüzeyine sürükleyin: 
 
-    [ ![](table-views-images/table07-vs.png "Bir bölme görünüm denetleyicisi")](table-views-images/table07-vs.png)
+    [![](table-views-images/table07-vs.png "Bir bölme görünüm denetleyicisi")](table-views-images/table07-vs.png#lightbox)
 1. Varsayılan olarak, elde edersiniz bir [bölünmüş görünümlü](~/ios/tvos/user-interface/split-views.md) ile bir **Gezinti View Controller** ve **tablo View Controller** sol tarafındaki ve **View Controller** sağ taraftaki içinde. Bu, Apple'nın önerilen tvOS Tablo görünümünde kullanımını oluşur: 
 
-    [ ![](table-views-images/table08-vs.png "Düzen kullanıcı Arabirimi")](table-views-images/table08-vs.png)
+    [![](table-views-images/table08-vs.png "Düzen kullanıcı Arabirimi")](table-views-images/table08-vs.png#lightbox)
 1. Tablo görünümünde her bölümünü seçin ve özel bir Ata gerekecek **sınıf adı** içinde **pencere öğesi** sekmesinde **özellikleri Explorer** , bunu daha sonra C# dilinde erişebilmesi için kod. Örneğin, **tablo View Controller**: 
 
-    [ ![](table-views-images/table09-vs.png "Pencere öğesi sekmesi")](table-views-images/table09-vs.png)
+    [![](table-views-images/table09-vs.png "Pencere öğesi sekmesi")](table-views-images/table09-vs.png#lightbox)
 1. Özel bir sınıf için oluşturduğunuzdan emin olun **tablo View Controller**, **Tablo görünümü** ve tüm **prototip hücreleri**. Oluşturuldukları sırada Mac için visual Studio Proje ağacına özel sınıfları ekleyin: 
 
-    [ ![](table-views-images/table10-vs.png "Proje ağacında özel sınıflar")](table-views-images/table10-vs.png)
+    [![](table-views-images/table10-vs.png "Proje ağacında özel sınıflar")](table-views-images/table10-vs.png#lightbox)
 1. Ardından, Tablo görünümünde tasarım yüzeyine seçin ve onun özelliklerini gerektiği gibi ayarlayın. Sayısı gibi **prototip hücreleri** ve **stili** (düz veya Grouped): 
 
-    [ ![](table-views-images/table11-vs.png "Pencere öğesi sekmesi")](table-views-images/table11-vs.png)
+    [![](table-views-images/table11-vs.png "Pencere öğesi sekmesi")](table-views-images/table11-vs.png#lightbox)
 1. Her **prototip hücre**, onu seçin ve benzersiz bir Ata **tanımlayıcısı** içinde **pencere öğesi** sekmesinde **özellikleri Explorer**. Bu adım _çok önemli_ bu tanımlayıcı daha sonra ihtiyacınız olacak şekilde zaman, doldurmak tablo. Örneğin `AttrCell`: 
 
-    [ ![](table-views-images/table12-vs.png "Bir tanımlayıcıyı atayın")](table-views-images/table12-vs.png)
+    [![](table-views-images/table12-vs.png "Bir tanımlayıcıyı atayın")](table-views-images/table12-vs.png#lightbox)
 1. Hücre biri olarak sunmak için seçebilirsiniz [varsayılan tablo görünümü hücre türleri](#Table-View-Cell-Types) aracılığıyla **stili** açılır veya ayarlamak **özel** ve tasarım yüzeyi Düzen hücre kullanın diğer UI pencere öğeleri sürükleyerek **araç**: 
 
-    [ ![](table-views-images/table13-vs.png "Stil açılır")](table-views-images/table13-vs.png)
+    [![](table-views-images/table13-vs.png "Stil açılır")](table-views-images/table13-vs.png#lightbox)
 1. Benzersiz bir Ata **adı** prototip hücre tasarımında her kullanıcı Arabirimi öğesine **pencere öğesi** sekmesinde **özellikleri Explorer** daha sonra C# kodunda erişebilmesi için: 
 
-    [ ![](table-views-images/table14-vs.png "Pencere öğesi sekmesi")](table-views-images/table14-vs.png)
+    [![](table-views-images/table14-vs.png "Pencere öğesi sekmesi")](table-views-images/table14-vs.png#lightbox)
 1. Tüm Tablo görünümünde prototip hücrelerden biri için yukarıdaki adımı yineleyin.
 1. Ardından, özel sınıflar UI tasarım, Düzen Ayrıntılar görünümünü ve ata benzersiz kalanını atayın **adları** her kullanıcı Arabirimi öğesi Ayrıntılar için bunları C# ' de erişebilmesi için görüntüleyin. Örneğin: 
 
-    [ ![](table-views-images/table15.png "UI düzeni")](table-views-images/table15.png)
+    [![](table-views-images/table15.png "UI düzeni")](table-views-images/table15.png#lightbox)
 1. Film şeridi için yaptığınız değişiklikleri kaydedin.
     
 -----
@@ -168,13 +168,13 @@ Bir listesini içeren bir seyahat kayıt uygulama örneği ele **Şehir**, benze
 
 Veri modeli için oluşturmak için bir **çekim**, proje adına sağ tıklayın **çözüm paneli** seçip **Ekle** > **yeni dosya...** . Girin `AttractionInformation` için **adı** tıklatıp **yeni** düğmesi: 
 
-[ ![](table-views-images/data01.png "AttractionInformation için bir ad girin")](table-views-images/data01.png)
+[![](table-views-images/data01.png "AttractionInformation için bir ad girin")](table-views-images/data01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Veri modeli için oluşturmak için bir **çekim**, proje adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **yeni öğe ...** . Seçin **sınıfı** ve girin `AttractionInformation` için **adı** tıklatıp **Ekle** düğmesi: 
 
-[ ![](table-views-images/data01-vs.png "Sınıfı seçin ve AttractionInformation için bir ad girin")](table-views-images/data01-vs.png)
+[![](table-views-images/data01-vs.png "Sınıfı seçin ve AttractionInformation için bir ad girin")](table-views-images/data01-vs.png#lightbox)
 
 -----
 
@@ -216,13 +216,13 @@ namespace tvTable
 
 Ardından, proje adına sağ tıklayın **çözüm paneli** yeniden seçip **Ekle** > **yeni dosya...** . Girin `CityInformation` için **adı** tıklatıp **yeni** düğmesi: 
 
-[ ![](table-views-images/data02.png "CityInformation için bir ad girin")](table-views-images/data02.png)
+[![](table-views-images/data02.png "CityInformation için bir ad girin")](table-views-images/data02.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Ardından, proje adına sağ tıklayın **Çözüm Gezgini** yeniden seçip **Ekle** > **yeni öğe...** . Girin `CityInformation` için **adı** tıklatıp **Ekle** düğmesi: 
 
-[ ![](table-views-images/data02-vs.png "CityInformation için bir ad girin")](table-views-images/data02-vs.png)
+[![](table-views-images/data02-vs.png "CityInformation için bir ad girin")](table-views-images/data02-vs.png#lightbox)
 
 -----
 
@@ -733,7 +733,7 @@ Tablo görünümünde belleğe yüklendiğinde, son olarak, örneklerini oluştu
 
 Bu belge listesinin başında belirtildiği gibi tablo görünümleri genellikle sütunlardan biri görüntülenir bir [bölünmüş görünümlü](~/ios/tvos/user-interface/split-views.md) ters tarafta görüntülenen seçili öğenin ayrıntılarını ile gezinti olarak. Örneğin: 
 
-[ ![](table-views-images/intro01.png "Örnek uygulamayı çalıştırma")](table-views-images/intro01.png)
+[![](table-views-images/intro01.png "Örnek uygulamayı çalıştırma")](table-views-images/intro01.png#lightbox)
 
 Bu tvOS standart desende olduğuna göre her şeyi araya getirmek için son adımlar bakalım ve sahip bölünmüş görünümü sağ ve sol yanlarından etkileşim birbirleri ile.
 
@@ -957,7 +957,7 @@ Bu makalede, tasarlama ve Xamarin.tvOS uygulama içinde tablo görünümleriyle 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [UITableViewController](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/doc/uid/TP40007523)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)

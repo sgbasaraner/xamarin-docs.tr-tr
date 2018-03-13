@@ -7,17 +7,17 @@ ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: c06dab9bf280a2543585d36147c7c3311f6445ad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 90dc37612f36eb914c3aaa140200762945ac4516
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-designer"></a>Android Designer
 
 _Bu makalede Xamarin.Android Tasarımcısı özellikleri kapsar. Tasarımcı pencere öğeleri görsel olarak düzenlemek için nasıl kullanılacağını ve nasıl özelliklerini düzenlemek gösteren tasarımcı temel kavramları kapsar. Ayrıca yatay ve dikey gibi alternatif görünümler için tasarlamak nasıl yanı sıra Tasarımcı temalar, diller ve cihaz yapılandırmalarını gibi çeşitli yapılandırmaları arasında kullanıcı arabirimleri ve kaynakları ile çalışmak için nasıl kullanılacağını gösterir._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -37,22 +37,20 @@ Bu makalede Xamarin.Android Tasarımcısı özelliklerinin çoğu araştırmalar
 9.  Malzeme Tasarım araçları malzeme tasarım uyumlu uygulamalar oluşturmak için nasıl kullanılacağını.
 
 
-<a name="Sections" />
 
 ## <a name="sections"></a>Bölümler
 
- [Android Tasarımcısı'nı kullanarak](~/android/user-interface/android-designer/designer-walkthrough.md)
+ [Android Designer’ı Kullanma](~/android/user-interface/android-designer/designer-walkthrough.md)
 
- [Tasarımcı temelleri](~/android/user-interface/android-designer/designer-basics.md)
+ [Temel Tasarımcı Bilgileri](~/android/user-interface/android-designer/designer-basics.md)
 
- [Kaynak niteleyicileri ve görselleştirme seçenekleri](~/android/user-interface/android-designer/resource-qualifiers.md)
+ [Kaynak Niteleyicileri ve Görselleştirme Seçenekleri](~/android/user-interface/android-designer/resource-qualifiers.md)
 
- [Alternatif Düzen görünümleri](~/android/user-interface/android-designer/alternative-layout-views.md)
+ [Alternatif Düzen Görünümleri](~/android/user-interface/android-designer/alternative-layout-views.md)
 
- [Malzeme tasarım özellikleri](~/android/user-interface/android-designer/material-design-features.md)
+ [Malzeme Tasarımı Özellikleri](~/android/user-interface/android-designer/material-design-features.md)
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Özet
 
@@ -63,4 +61,4 @@ Bu makalede ele alınan Xamarin.Android Tasarımcısı özellik kümesi. Tasarı
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Tasarımcı gözden geçirme](~/android/user-interface/android-designer/designer-walkthrough.md)
-- [Android kaynakları](~/android/app-fundamentals/resources-in-android/index.md)
+- [Android Kaynakları](~/android/app-fundamentals/resources-in-android/index.md)

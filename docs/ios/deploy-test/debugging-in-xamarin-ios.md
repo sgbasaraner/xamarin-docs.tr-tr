@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ca3afa892176a11c4688b4f4d8d34e59d1758585
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 18f9814941c4cd7d2719f23b6102361f013ba8a9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debugging"></a>Hata Ayıklama
 
@@ -34,11 +34,11 @@ Xamarin.iOS hata ayıklayıcı kullanan [Mono yumuşak hata ayıklayıcı](http:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging1.png "Kesme noktalarını ayarlama")](debugging-in-xamarin-ios-images/debugging1.png)
+[![](debugging-in-xamarin-ios-images/debugging1.png "Kesme noktalarını ayarlama")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging1a.png "Kesme noktalarını ayarlama")](debugging-in-xamarin-ios-images/debugging1a.png)
+[![](debugging-in-xamarin-ios-images/debugging1a.png "Kesme noktalarını ayarlama")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
@@ -46,13 +46,13 @@ Kodunuzda giderek ayarlanan tüm kesme noktaları görüntüleyebilirsiniz **kes
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/image0a.png "Kesme noktaları paneli")](debugging-in-xamarin-ios-images/image0a.png)
+[![](debugging-in-xamarin-ios-images/image0a.png "Kesme noktaları paneli")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  Kesme noktaları paneli otomatik olarak görüntülenmiyorsa, onu görünen seçerek yapabileceğiniz _Görünüm > Windows hata ayıklama > kesme noktaları_
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/image0.png "Kesme noktaları paneli")](debugging-in-xamarin-ios-images/image0.png)
+[![](debugging-in-xamarin-ios-images/image0.png "Kesme noktaları paneli")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  Kesme noktaları paneli otomatik olarak görüntülenmiyorsa, onu görünen seçerek yapabileceğiniz _hata ayıklama > Windows > kesme noktaları_
  
@@ -62,13 +62,13 @@ Herhangi bir uygulama hata ayıklama başlamadan önce her zaman yapılandırma 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7.png "Hata ayıklama simulator'da") ](debugging-in-xamarin-ios-images/debugging7.png) 
- [ ![ ] (debugging-in-xamarin-ios-images/debugging7a.png "fiziksel cihaz üzerindeki hata ayıklama")](debugging-in-xamarin-ios-images/debugging7a.png)
+[![](debugging-in-xamarin-ios-images/debugging7.png "Hata ayıklama simulator'da")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7a.png "fiziksel cihaz üzerindeki hata ayıklama")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7c.png "Hata ayıklama simulator'da") ](debugging-in-xamarin-ios-images/debugging7c.png) 
- [ ![ ] (debugging-in-xamarin-ios-images/debugging7d.png "fiziksel cihaz üzerindeki hata ayıklama")](debugging-in-xamarin-ios-images/debugging7d.png)
+[![](debugging-in-xamarin-ios-images/debugging7c.png "Hata ayıklama simulator'da")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7d.png "fiziksel cihaz üzerindeki hata ayıklama")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
 
 -----
 
@@ -77,11 +77,11 @@ Hata ayıklama başlatmak için hedef cihazı seçin veya IDE'yi benzer:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7b.png "Hedef cihazı seçin")](debugging-in-xamarin-ios-images/debugging7b.png)
+[![](debugging-in-xamarin-ios-images/debugging7b.png "Hedef cihazı seçin")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7e.png "Hedef cihazı seçin")](debugging-in-xamarin-ios-images/debugging7e.png)
+[![](debugging-in-xamarin-ios-images/debugging7e.png "Hedef cihazı seçin")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
@@ -91,11 +91,11 @@ Ardından tuşlarına basarak uygulamanızı dağıtmak **Yürüt** düğmesi.
 
 Bir kesme noktası isabet zaman kodu vurgulanan sarı olur:
 
-[ ![](debugging-in-xamarin-ios-images/image2.png "Kod vurgulanan sarı olur")](debugging-in-xamarin-ios-images/image2.png)
+[![](debugging-in-xamarin-ios-images/image2.png "Kod vurgulanan sarı olur")](debugging-in-xamarin-ios-images/image2.png#lightbox)
 
 Hata ayıklama nesneleri değerlerini İnceleme gibi araçları, bu noktada kodunuzda neler hakkında daha fazla bilgi almak için kullanılabilir:
 
-[ ![](debugging-in-xamarin-ios-images/image3.png "Bir renk değeri görüntüleme")](debugging-in-xamarin-ios-images/image3.png)
+[![](debugging-in-xamarin-ios-images/image3.png "Bir renk değeri görüntüleme")](debugging-in-xamarin-ios-images/image3.png#lightbox)
 
 ## <a name="conditional-breakpoints"></a>Koşullu kesme noktaları
 
@@ -108,26 +108,26 @@ Koşullu kesme noktası ayarlamak için erişim **kesme noktası Özellikleri pe
 
 - Yeni koşullu kesme noktası eklemek için bir kesme noktası ayarlamak istediğiniz kodu satır numarasını solundaki Düzenleyicisi kenar boşluğu sağ tıklatın ve yeni kesme seçin:
 
-    [ ![](debugging-in-xamarin-ios-images/image4.png "Yeni kesme noktası seçin")](debugging-in-xamarin-ios-images/image4.png)
+    [![](debugging-in-xamarin-ios-images/image4.png "Yeni kesme noktası seçin")](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
 - Varolan bir kesme noktası için bir koşul eklemek için kesme noktası sağ tıklatın ve **kesme noktası özellikleri** veya **kesme noktaları paneli** aşağıda gösterilen özellikleri düğmesini seçin:
 
-    [ ![](debugging-in-xamarin-ios-images/image5.png "Kesme noktaları paneli")](debugging-in-xamarin-ios-images/image5.png)
+    [![](debugging-in-xamarin-ios-images/image5.png "Kesme noktaları paneli")](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 
 Bu gibi durumlarda, altında istediğiniz koşulu sonra gerçekleşecek şekilde kesme noktasına girebilirsiniz:
 
-[ ![](debugging-in-xamarin-ios-images/image6.png "Koşul için gerçekleşmesi kesme noktası girin")](debugging-in-xamarin-ios-images/image6.png)
+[![](debugging-in-xamarin-ios-images/image6.png "Koşul için gerçekleşmesi kesme noktası girin")](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Koşullu kesme noktası Visual Studio 2015'te ilk ayarlamak için [normal bir kesme noktası belirleyerek](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/). Bağlam menüsünü görüntülemek için kesme noktası sağ tıklatın:
 
- [ ![](debugging-in-xamarin-ios-images/image4vs.png "Kesme noktası bağlam menüsü")](debugging-in-xamarin-ios-images/image4vs.png)
+ [![](debugging-in-xamarin-ios-images/image4vs.png "Kesme noktası bağlam menüsü")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
 Seçin **koşullar...**  görüntülemek için _kesme noktası ayarları_ menüsü:
 
- [ ![](debugging-in-xamarin-ios-images/image6vs.png "Kesme noktası ayarları menüsü")](debugging-in-xamarin-ios-images/image6vs.png)
+ [![](debugging-in-xamarin-ios-images/image6vs.png "Kesme noktası ayarları menüsü")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
 
 Burada, gerçekleşmesi için kesme altında istediğiniz koşulları girebilirsiniz
 
@@ -143,7 +143,7 @@ Bir kesme noktası erişildiğinde hata ayıklama araçları program yürütme �
 
 Mac için Visual Studio'da bunlar aşağıdaki gibi görünür:
 
- [ ![](debugging-in-xamarin-ios-images/image7.png "Geliştirici program yürütme denetime almak hata ayıklama araçlarını etkinleştirme")](debugging-in-xamarin-ios-images/image7.png)
+ [![](debugging-in-xamarin-ios-images/image7.png "Geliştirici program yürütme denetime almak hata ayıklama araçlarını etkinleştirme")](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
 Bunlar:
 
@@ -156,7 +156,7 @@ Bunlar:
 
 Visual Studio'da bunlar aşağıdaki gibi görünür:
 
-[ ![](debugging-in-xamarin-ios-images/image7vs.png "Geliştirici program yürütme denetime almak hata ayıklama araçlarını etkinleştirme")](debugging-in-xamarin-ios-images/image7vs.png)
+[![](debugging-in-xamarin-ios-images/image7vs.png "Geliştirici program yürütme denetime almak hata ayıklama araçlarını etkinleştirme")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
 Bunlar:
 
@@ -224,13 +224,13 @@ Bu özellik, hata ayıklama sırasında daha fazla bellek tüketir olduğundan, 
 
 Bu özelliği etkinleştirmek için emin olun **yalnızca proje kodunda hata ayıklama; framework koda adım yapmanız** seçeneği altında kaldırıldığında _Mac için Visual Studio > Tercihler > hata ayıklayıcı_ gösterildiği gibi menüsü Aşağıda:
 
-[ ![](debugging-in-xamarin-ios-images/debugging6.png "Mono'nın sınıf kitaplıkları hata ayıklama")](debugging-in-xamarin-ios-images/debugging6.png)
+[![](debugging-in-xamarin-ios-images/debugging6.png "Mono'nın sınıf kitaplıkları hata ayıklama")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Sınıf kitaplıkları Visual Studio'da hata ayıklamak için devre dışı bırakmalısınız **sadece kendi kodumu** altında _hata ayıklama > Seçenekler_ menüsü. İçinde _hata ayıklama > Genel_ düğümü, Temizle **sadece kendi kodumu etkinleştir** onay kutusu:
 
-[ ![](debugging-in-xamarin-ios-images/debugging6vs.png "Mono'nın sınıf kitaplıkları hata ayıklama")](debugging-in-xamarin-ios-images/debugging6vs.png)
+[![](debugging-in-xamarin-ios-images/debugging6vs.png "Mono'nın sınıf kitaplıkları hata ayıklama")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 

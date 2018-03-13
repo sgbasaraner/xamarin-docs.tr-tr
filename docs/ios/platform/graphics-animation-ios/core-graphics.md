@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: fe1796839524a271760a9beb82895fd6e93c7ad0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d53494e61d702b83a28534c644f33fb5327b5958
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="core-graphics"></a>Çekirdek grafikleri
 
@@ -40,6 +40,7 @@ Bu yaklaşım için bazı avantajları şunlardır:
 -  Uygulama paketi statik görüntülerinde gereksinimini azaltma uygulama boyutunu azaltabilirsiniz.
 -  Grafik cihaz üzerinden çözünürlüğü değişiklikleri daha esnektir haline gelir.
 
+<a name="Drawing_in_a_UIView_Subclass"/>
 
 ## <a name="drawing-in-a-uiview-subclass"></a>Bir UIView alt çizme
 
@@ -182,6 +183,8 @@ Aşağıda gösterildiği gibi kesikli vuruşları 10 birimler uzun, kısa çizg
  ![](core-graphics-images/02-dashed-stroke.png "Kesikli vuruşları içinde herhangi bir çizim işlemleri sonuç önce bu kod ekleme")
  
 Birleşik API içinde Xamarin.iOS kullanırken, dizi türü gerektiğini unutmayın bir `nfloat`ve ayrıca Math.PI için açıkça cast gerekir.
+
+<a name="Drawing_Images_and_Text"/>
 
 ## <a name="drawing-images-and-text"></a>Çizim görüntüler ve metinler
 
@@ -428,5 +431,5 @@ Bu makalede aracılığıyla sağlanan grafik yetenekleri inceledik *çekirdek g
 
 - [Çekirdek grafik örneği](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
 - [Grafikler ve animasyon gözden geçirme](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
-- [Çekirdek animasyon](~/ios/platform/graphics-animation-ios/core-animation.md)
+- [Temel Animasyon](~/ios/platform/graphics-animation-ios/core-animation.md)
 - [Animasyon tarif çekirdek](https://developer.xamarin.com/recipes/ios/animation/coreanimation)

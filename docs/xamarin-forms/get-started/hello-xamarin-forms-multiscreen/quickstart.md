@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 6a24ff05ae2a2c2368650c368cc408f0219ce21e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5457cb3a80208311bac66a0232afd9cb4dc02c87
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms Multiscreen hızlı başlangıç
 
 Bu hızlı başlangıç Phoneword uygulamayı uygulama için arama geçmişini izlemek için ikinci bir ekran ekleyerek genişletebilir gösterilmiştir. Son uygulama aşağıda gösterilmiştir:
 
-[![](quickstart-images/intro-app-examples-sml.png "Phoneword uygulama")](quickstart-images/intro-app-examples.png "Phoneword uygulama")
+[![](quickstart-images/intro-app-examples-sml.png "Phoneword uygulama")](quickstart-images/intro-app-examples.png#lightbox "Phoneword uygulama")
 
 Phoneword uygulamayı şu şekilde genişletir:
 
@@ -192,7 +192,7 @@ Phoneword uygulamayı şu şekilde genişletir:
             </StackLayout>
         </ContentPage>      
 
-  Değişiklikleri kaydetmek **CallHistoryPage.xaml** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **CallHistoryPage.xaml** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**, çift **App.xaml.cs** açmak için:
 
@@ -221,7 +221,7 @@ Phoneword uygulamayı şu şekilde genişletir:
             }
         }
 
-  Değişiklikleri kaydetmek **App.xaml.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **App.xaml.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**, çift **MainPage.xaml** açmak için:
 
@@ -239,7 +239,7 @@ Phoneword uygulamayı şu şekilde genişletir:
                   Clicked="OnCallHistory" />
         </StackLayout>
 
-  Değişiklikleri kaydetmek **MainPage.xaml** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **MainPage.xaml** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 1. İçinde **çözüm paneli**, çift **MainPage.xaml.cs** açmak için:
 
@@ -274,9 +274,9 @@ Phoneword uygulamayı şu şekilde genişletir:
             }
         }
 
-  Değişiklikleri kaydetmek **MainPage.xaml.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak **&#8984; + S**) ve dosyayı kapatın.
+  Değişiklikleri kaydetmek **MainPage.xaml.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
-1. Mac için Visual Studio'da seçin **Yapı > Yapı tüm** menü öğesi (veya basın **&#8984; + B**). Uygulamayı oluşturacaksınız ve Mac araç için Visual Studio'da bir başarı iletisi görüntülenir:
+1. Mac için Visual Studio'da seçin **Yapı > Yapı tüm** menü öğesi (veya basın  **&#8984; + B**). Uygulamayı oluşturacaksınız ve Mac araç için Visual Studio'da bir başarı iletisi görüntülenir:
 
   ![](quickstart-images/xs/build-successful.png "Yapı başarılı")
 

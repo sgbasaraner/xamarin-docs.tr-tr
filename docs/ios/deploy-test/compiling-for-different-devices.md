@@ -7,27 +7,26 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 13838215b32abe49a5fe07b04088bc4216250844
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 12b8f51156c2ed750c59ef79522121c6c5d2c03c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="compiling-for-different-devices"></a>Farklı aygıtlar için derleme
 
 Yürütülebilir dosyanın derleme özelliklerini projenin yapılandırılabilir **iOS yapı** proje adına sağ tıklayıp için gözatma bulunan özellikler sayfası **Seçenekleri > iOS yapı** içinde Mac için Visual Studio ve **özellikleri** Visual Studio'da:
 
-[[ide name="xs"]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](compiling-for-different-devices-images/image1.png "Projeleri iOS yapı Özellikler sayfası")](compiling-for-different-devices-images/image1.png) 
 
-[[/ide]] 
+[![](compiling-for-different-devices-images/image1.png "Projeleri iOS yapı Özellikler sayfası")](compiling-for-different-devices-images/image1.png#lightbox) 
 
-[[ide name="vs"]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](compiling-for-different-devices-images/image1a.png "Projeleri iOS yapı Özellikler sayfası")](compiling-for-different-devices-images/image1a.png)
+[![](compiling-for-different-devices-images/image1a.png "Projeleri iOS yapı Özellikler sayfası")](compiling-for-different-devices-images/image1a.png#lightbox)
 
-[[/ide]]
+-----
 
 Yapılandırma seçeneklerle yanı sıra kullanıcı arabirimini, komut satırı seçenekleri için kendi kümesi de geçirebilirsiniz [Xamarin.iOS Oluşturma Aracı (mtouch)](~/ios/deploy-test/mtouch.md).
 
@@ -66,9 +65,9 @@ Mono altyapısı makinelerinden uzun derleme sürelerini, arka uç altyapısı e
 
 Bu iOS Mac veya Visual Studio için Visual Studio'da derleme seçenekleri etkinleştirebilirsiniz.
 
-[ ![](compiling-for-different-devices-images/image2.png "LLVM etkinleştirme")](compiling-for-different-devices-images/image2.png)
+[![](compiling-for-different-devices-images/image2.png "LLVM etkinleştirme")](compiling-for-different-devices-images/image2.png#lightbox)
 
-[ ![](compiling-for-different-devices-images/image2a.png "LLVM etkinleştirme")](compiling-for-different-devices-images/image2a.png)
+[![](compiling-for-different-devices-images/image2a.png "LLVM etkinleştirme")](compiling-for-different-devices-images/image2a.png#lightbox)
 
  <a name="ARMV7_and_ARMV7s_support" />
 
@@ -132,7 +131,7 @@ Bunu yapmak için aşağıdaki adımları izlemesi gerekir:
 -  Ekleme `'-gcc_flags "-weak_framework iAd"'` için **ek seçenekler** her yapılandırması üzerinde zayıf bağlantı istiyor:
 
 
-[ ![](compiling-for-different-devices-images/image3.png "Ek Seçenekler")](compiling-for-different-devices-images/image3.png)
+[![](compiling-for-different-devices-images/image3.png "Ek Seçenekler")](compiling-for-different-devices-images/image3.png#lightbox)
 
 
 Buna ek olarak, burada mevcut iOS eski sürümlerinde çalışan türlerinin kullanımınızı koruma sağlamak gerekir. Bunu gerçekleştirmek için çeşitli yöntemler vardır, ancak biri ayrıştırma `UIDevice.CurrentDevice.SystemVersion`.
@@ -141,5 +140,5 @@ Buna ek olarak, burada mevcut iOS eski sürümlerinde çalışan türlerinin kul
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Linker](~/ios/deploy-test/linker.md)
+- [Bağlayıcı](~/ios/deploy-test/linker.md)
 - [Dış - iOS destek matrisi](http://iossupportmatrix.com/)

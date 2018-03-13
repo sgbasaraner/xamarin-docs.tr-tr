@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 0b3a714e8295ed60f201c202fbe30e45dbdcc205
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 7314074424933451ab3cc3ebbf63d0b6f56d9c30
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dark-theme"></a>Koyu tema
 
@@ -50,7 +50,7 @@ Bu izleyin [adım sorun giderme](~/xamarin-forms/user-interface/themes/index.md)
 
 Düğmeler ve etiketler bunları üreten biçimlendirme birlikte koyu tema bir örneği burada verilmiştir.
 
-[ ![](dark-images/dark-theme-sml.png "Düğmeler ve etiketler koyu tema")](dark-images/dark-theme.png "düğmeler ve etiketler koyu tema")
+[![](dark-images/dark-theme-sml.png "Düğmeler ve etiketler koyu tema")](dark-images/dark-theme.png#lightbox "düğmeler ve etiketler koyu tema")
 
 ```xaml
 <StackLayout Padding="20">

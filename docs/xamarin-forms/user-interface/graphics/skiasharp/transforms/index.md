@@ -4,14 +4,15 @@ description: "Dönüşümler SkiaSharp grafik görüntüleme hakkında bilgi edi
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 06db59f5585671342ef7dbaa2d2cf14ec6830c41
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 756261db8f82198e6c5a4330a663bbd9965e57f7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp dönüşümler
 
@@ -50,31 +51,31 @@ Gerçekten büyük fark SKiaSharp dönüşümler olmasıdır *yöntemleri* Xamar
 
 Bu bölümdeki tüm örnek programlar başlığı altında görünür **dönüştüren** giriş sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program ve [ **Dönüştüren** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms) klasörü çözümün.
 
-## <a name="the-translate-transformtranslatemd"></a>[Çevir Dönüştür](translate.md)
+## <a name="the-translate-transformtranslatemd"></a>[Çeviri Dönüşümü](translate.md)
 
 SkiaSharp grafik kaydırılacak Çevir Dönüştür kullanmayı öğrenin.
 
-## <a name="the-scale-transformscalemd"></a>[Ölçek dönüştürme](scale.md)
+## <a name="the-scale-transformscalemd"></a>[Ölçekleme Dönüşümü](scale.md)
 
 Çeşitli boyutlarda nesnelere ölçeklendirmeye yönelik SkiaSharp ölçeklendirme dönüşümü bulur.
 
-## <a name="the-rotate-transformrotatemd"></a>[Döndürme dönüşümü](rotate.md)
+## <a name="the-rotate-transformrotatemd"></a>[Döndürme Dönüşümü](rotate.md)
 
 Etkiler ve animasyonları SkiaSharp döndürme dönüşümü ile olası keşfedin.
 
-## <a name="the-skew-transformskewmd"></a>[Eğme dönüştürmesi](skew.md)
+## <a name="the-skew-transformskewmd"></a>[Eğme Dönüşümü](skew.md)
 
 Bkz. nasıl eğme dönüştürmesi Eğimli grafik nesneleri SkiaSharp oluşturabilirsiniz.
 
-## <a name="matrix-transformsmatrixmd"></a>[Matris dönüşümleri](matrix.md)
+## <a name="matrix-transformsmatrixmd"></a>[Matris Dönüşümleri](matrix.md)
 
 Çok yönlü dönüştürme matrisi ile SkiaSharp dönüşümler içine daha derin daha yakından inceleyin.
 
-## <a name="touch-manipulationstouchmd"></a>[Dokunma işlemeleri](touch.md)
+## <a name="touch-manipulationstouchmd"></a>[Dokunma İşlemeleri](touch.md)
 
 Dokunma işlemeleri sürükleyerek, ölçeklendirme ve döndürme uygulamak için kullanım matris dönüştürür.
 
-## <a name="non-affine-transformsnon-affinemd"></a>[Afin olmayan dönüşümler](non-affine.md)
+## <a name="non-affine-transformsnon-affinemd"></a>[İlişkili Olmayan Dönüşümler](non-affine.md)
 
 Afin olmayan dönüşüm efektleri ile oridinary ötesine gidin.
 

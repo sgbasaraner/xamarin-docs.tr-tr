@@ -7,30 +7,22 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 1ea4489cd6f9839d5d32c97aa7ded41e4f15538a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eb8bae676a4b5c682cdb204c6d38ffc1112b483a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="editing"></a>Düzenleme
 
 Tablo düzenleme özellikleri yöntemleri geçersiz kılarak etkin bir `UITableViewSource` bir alt kümesi. En basit düzenleme tek yöntemi geçersiz kılma ile uygulanabilir manyetik Silme hareketi davranıştır.
 Daha karmaşık (dahil olmak üzere taşıma satırlar) düzenleme düzenleme modunda tabloyla yapılabilir.
 
-Bu kılavuz aşağıdaki görünür:
-
-- [Manyetik silmek için](#Swipe_to_Delete)
-- [Düzenleme modu](#Edit_Mode)
-- [Satır ekleme düzenleme stili](#row_insertion_editing_style)
-
-<a name="Swipe_to_delete" />
-
 ## <a name="swipe-to-delete"></a>Manyetik silme
 
 Özellik silmek için manyetik doğal hareketi kullanıcıların beklediğiniz iOS içinde ' dir. 
 
- [ ![](editing-images/image10.png "Manyetik örneği silme")](editing-images/image10.png)
+ [![](editing-images/image10.png "Manyetik örneği silme")](editing-images/image10.png#lightbox)
 
 Göstermek için manyetik hareketi etkileyen üç yöntemi geçersiz kılmalar vardır bir **silme** bir hücreye düğmesi:
 
@@ -68,14 +60,13 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 Bu örneğin `UITableViewSource` kullanmak için güncelleştirilmiş bir `List<TableItem>` (bir dize dizisi yerine) desteklediğinden, veri kaynağı olarak ekleme ve silme öğeleri koleksiyondan.
 
-<a name="Edit_mode" />
 
 ## <a name="edit-mode"></a>Düzenleme modu
 
 Bir tablo düzenleme modunda olduğunda kullanıcı işlemdeki zaman Sil düğmesini gösterir her satırda bir kırmızı 'stop' pencere görür. Tablonun satır sırasını değiştirmek için sürüklenebilir belirtmek için bir 'işleyicisi' simgesi de görüntüler.
 **TableEditMode** örnek gösterildiği gibi bu özellikler uygular.
 
- [ ![](editing-images/image11.png "Gösterildiği gibi bu özellikleri TableEditMode örnek uygular")](editing-images/image11.png)
+ [![](editing-images/image11.png "Gösterildiği gibi bu özellikleri TableEditMode örnek uygular")](editing-images/image11.png#lightbox)
 
 Üzerinde bir dizi farklı yöntemler vardır `UITableViewSource` bir tablonun düzenleme modu davranışını etkiler:
 
@@ -136,13 +127,12 @@ ve kullanıcı tamamlandığında, düzenleme **Bitti** düğmesi kapatmak düze
 table.SetEditing (false, true);
 ```
 
-<a name="Edit_mode_–_row_insertion_editing_style" />
 
 ## <a name="row-insertion-editing-style"></a>Satır ekleme düzenleme stili
 
 Tablo içindeki satır ekleme bir seyrek kullanıcı arabirimi – standart iOS uygulamalarını ana örnekte **Düzenle kişi** ekran. Bu ekran satır ekleme işlevselliğini nasıl çalıştığı gösterilmektedir – Düzen modu yoktur ek bir satır, (tıklatıldığında) ek satırlar verilerini ekler. Düzenleme tamamlandığında, geçici **(Yeni Ekle)** satır kaldırılır.
 
- [ ![](editing-images/image12.png "Düzenleme tamamlandıktan sonra geçici ekleme yeni satır kaldırılır")](editing-images/image12.png)
+ [![](editing-images/image12.png "Düzenleme tamamlandıktan sonra geçici ekleme yeni satır kaldırılır")](editing-images/image12.png#lightbox)
 
 Üzerinde bir dizi farklı yöntemler vardır `UITableViewSource` bir tablonun düzenleme modu davranışını etkiler. Bu yöntemler aşağıdaki gibi örnek kodda uygulanmıştır:
 

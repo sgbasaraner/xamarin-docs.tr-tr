@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e3701960f246a8f627d991edf244656b5fd8958e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e81ecd10f4dfc101cf63ba9d052d15b51a367ee5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Taşınabilir sınıf kitaplıkları giriş
 
@@ -29,10 +29,6 @@ Bu sorunu gidermek için kod paylaşımını üç ana yaklaşım vardır: **.NET
 
 
 Bu sayfayı nasıl oluşturulacağını açıklar bir **PCL** sonra birden çok platforma özgü projeler tarafından başvurulan belirli bir profil hedefleyen projede.
-
-## <a name="requirements"></a>Gereksinimler
-
-Taşınabilir kitaplık projeleri Visual Studio'da macOS üzerinde Mac için otomatik olarak etkinleştirilir ve Visual Studio 2013 ve üzeri yerleşiktir.
 
 
 ## <a name="what-is-a-portable-class-library"></a>Taşınabilir sınıf kitaplığı nedir?
@@ -132,7 +128,7 @@ Y </td>
   </tbody>
 </table>
 
-Xamarin sütun Xamarin.iOS ve Xamarin.Android destekler ve üstü Visual Studio 2013 ile gönderilen tüm profiller ve oluşturduğunuz kitaplıkları özelliklerin kullanılabilirliği için seçtiğiniz diğer platformlar tarafından yalnızca sınırlandırılacak olgu yansıtır destekler.
+Xamarin sütun Xamarin.iOS ve Xamarin.Android destekleyen Visual Studio ile gönderilen tüm profiller ve oluşturduğunuz kitaplıkları özelliklerin kullanılabilirliği desteklemek için seçtiğiniz diğer platformlar tarafından yalnızca sınırlı olgu yansıtır.
 
 Bu birleşimleridir profilleri içerir:
 
@@ -170,7 +166,7 @@ Bu diyagramda kod paylaşmak için bir taşınabilir sınıf kitaplığı kullan
 
 
 
-[![](pcl-images/image1.png "Kod paylaşmak için bir taşınabilir sınıf kitaplığı kullanma, ancak aynı zamanda platforma bağımlı özellikleri geçirmek için bağımlılık ekleme kullanılarak platformlar arası uygulama mimarisi Bu diyagramda gösterilmektedir")](pcl-images/image1.png)
+[![](pcl-images/image1.png "Kod paylaşmak için bir taşınabilir sınıf kitaplığı kullanma, ancak aynı zamanda platforma bağımlı özellikleri geçirmek için bağımlılık ekleme kullanılarak platformlar arası uygulama mimarisi Bu diyagramda gösterilmektedir")](pcl-images/image1.png#lightbox)
 
 
 
@@ -212,7 +208,7 @@ Bu proje için PCL ayarlarını görüntülemek ve değiştirmek için projeye s
 
 
 
-[![](pcl-images/image4.png "Bu proje için PCL ayarlarını görüntülemek ve değiştirmek için projeye sağ tıklayın ve seçenekleri yapı burada gösterilen ekranı görmek için genel seçin")](pcl-images/image4.png)
+[![](pcl-images/image4.png "Bu proje için PCL ayarlarını görüntülemek ve değiştirmek için projeye sağ tıklayın ve seçenekleri yapı burada gösterilen ekranı görmek için genel seçin")](pcl-images/image4.png#lightbox)
 
 
 
@@ -224,7 +220,7 @@ Herhangi birini değiştirmek `Target Framework` seçenekleri otomatik olarak g�
 
 
 
-[![](pcl-images/image5.png "Hedef Framework seçeneklerinden herhangi birini değiştirmek otomatik olarak güncelleştirir geçerli profil uyumsuz seçenekler seçtiyseniz aynı zamanda bir uyarı ekranı görüntüler")](pcl-images/image5.png)
+[![](pcl-images/image5.png "Hedef Framework seçeneklerinden herhangi birini değiştirmek otomatik olarak güncelleştirir geçerli profil uyumsuz seçenekler seçtiyseniz aynı zamanda bir uyarı ekranı görüntüler")](pcl-images/image5.png#lightbox)
 
 
 
@@ -238,7 +234,7 @@ Kod PCL kitaplığa yazıldığında Mac Düzenleyicisi için Visual Studio seç
 
 
 
-[![](pcl-images/image6.png "Visual Studio'da kullanılabilir sınıfların yaklaşık yarısını aslında var. görüntülenme şeklini gösteren scrollbar sınıflardır yalnızca 14 kullanılabilir Mac uyarısı için kullanılan Profile136 varsayılan profili kullanarak g/ç")](pcl-images/image6.png)
+[![](pcl-images/image6.png "Visual Studio'da kullanılabilir sınıfların yaklaşık yarısını aslında var. görüntülenme şeklini gösteren scrollbar sınıflardır yalnızca 14 kullanılabilir Mac uyarısı için kullanılan Profile136 varsayılan profili kullanarak g/ç")](pcl-images/image6.png#lightbox)
 
 
 
@@ -246,7 +242,7 @@ Bir Xamarin.iOS veya Xamarin.Android projesinde – otomatik tamamlama System.IO
 
 
 
-[![](pcl-images/image7.png "Yaygın olarak dahil mevcut hiçbir PCL profili olmayan dosya ve dizin gibi sınıflara kullanılan 40 sınıfları vardır")](pcl-images/image7.png)
+[![](pcl-images/image7.png "Yaygın olarak dahil mevcut hiçbir PCL profili olmayan dosya ve dizin gibi sınıflara kullanılan 40 sınıfları vardır")](pcl-images/image7.png#lightbox)
 
 
 
@@ -261,7 +257,7 @@ PCL Proje oluşturulduktan sonra aynı şekilde normalde başvurular ekleyin her
 
 
 
-[![](pcl-images/image8.png "Mac için Visual Studio, başvuruları düğümüne sağ tıklayın ve düzenlemek başvuruları seçin, ardından gösterildiği gibi projeleri sekmesine geçin")](pcl-images/image8.png)
+[![](pcl-images/image8.png "Mac için Visual Studio, başvuruları düğümüne sağ tıklayın ve düzenlemek başvuruları seçin, ardından gösterildiği gibi projeleri sekmesine geçin")](pcl-images/image8.png#lightbox)
 
 
 
@@ -269,7 +265,7 @@ Aşağıdaki ekran görüntüsünde Xamarin.iOS projesi PCL kitaplığı alt ve 
 
 
 
-[![](pcl-images/image9.png "TaskyPortable örnek uygulama için çözüm paneli")](pcl-images/image9.png)
+[![](pcl-images/image9.png "TaskyPortable örnek uygulama için çözüm paneli")](pcl-images/image9.png#lightbox)
 
 
 
@@ -325,7 +321,7 @@ PCL ayarları görüntülenebilir ve projeye sağ tıklayıp seçerek değiştir
 
 
 
-[![](pcl-images/image13.png "PCL ayarları görüntülenebilir ve bu ekran görüntüsünde gösterildiği gibi projeye sağ tıklayıp özellikler kitaplığı seçerek değiştirildi")](pcl-images/image13.png)
+[![](pcl-images/image13.png "PCL ayarları görüntülenebilir ve bu ekran görüntüsünde gösterildiği gibi projeye sağ tıklayıp özellikler kitaplığı seçerek değiştirildi")](pcl-images/image13.png#lightbox)
 
 
 
@@ -340,7 +336,7 @@ Kod PCL kitaplığa yazıldığında, Visual Studio seçilen profil sınırlamal
 
 
 
-[![](pcl-images/image14.png "Varsayılan profili Profile136 kullanarak g/ç")](pcl-images/image14.png)
+[![](pcl-images/image14.png "Varsayılan profili Profile136 kullanarak g/ç")](pcl-images/image14.png#lightbox)
 
 
 
@@ -348,7 +344,7 @@ Normal bir proje ile – otomatik tamamlama System.IO ile olduğunu kullanılabi
 
 
 
-[![](pcl-images/image15.png "Normal projesinde otomatik olarak tamamlama")](pcl-images/image15.png)
+[![](pcl-images/image15.png "Normal projesinde otomatik olarak tamamlama")](pcl-images/image15.png#lightbox)
 
 
 
@@ -363,7 +359,7 @@ PCL Proje oluşturulduktan sonra aynı şekilde normalde başvurular ekleyin her
 
 
 
-[![](pcl-images/image16.png "Gösterildiği gibi Projeler sekmesi")](pcl-images/image16.png)
+[![](pcl-images/image16.png "Gösterildiği gibi Projeler sekmesi")](pcl-images/image16.png#lightbox)
 
 
 
@@ -371,7 +367,7 @@ Aşağıdaki ekran görüntüsünde Xamarin.iOS projesi PCL kitaplığı alt ve 
 
 
 
-[![](pcl-images/image17.png "TaskyPortable örnek uygulama için çözüm bölmesi")](pcl-images/image17.png)
+[![](pcl-images/image17.png "TaskyPortable örnek uygulama için çözüm bölmesi")](pcl-images/image17.png#lightbox)
 
 
 
@@ -393,7 +389,7 @@ Bazı ekran görüntüleri iOS, Android ve Windows Phone çalıştıran ortaya �
 
 
 
-[![](pcl-images/image18.png "İOS, Android ve Windows Phone çalıştıran ortaya çıkan uygulamaları bazı ekran görüntüleri İşte")](pcl-images/image18.png)
+[![](pcl-images/image18.png "İOS, Android ve Windows Phone çalıştıran ortaya çıkan uygulamaları bazı ekran görüntüleri İşte")](pcl-images/image18.png#lightbox)
 
 
 
@@ -406,7 +402,7 @@ Tamamen taşınabilir kodu verileri ve mantığı sınıfların sayısı paylaş
 
 
 
-[![](pcl-images/image19.png "Çözüm yapısı burada Visual Studio'da Mac ve Visual Studio için sırasıyla gösterilir")](pcl-images/image19.png)
+[![](pcl-images/image19.png "Çözüm yapısı burada Visual Studio'da Mac ve Visual Studio için sırasıyla gösterilir")](pcl-images/image19.png#lightbox)
 
 
 
@@ -511,8 +507,8 @@ Bu makalede kısaca avantajları ve taşınabilir sınıf kitaplıkları Tuzakla
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [TaskyPortable (örnek)](https://developer.xamarin.com/samples/mobile/TaskyPortable/)
-- [Platform uygulamaları oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+- [Platformlar Arası Uygulamalar Oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 - [Taşınabilir Visual Basic](~/cross-platform/platform/visual-basic/index.md)
-- [Paylaşılan projeleri](~/cross-platform/app-fundamentals/shared-projects.md)
+- [Paylaşılan Projeler](~/cross-platform/app-fundamentals/shared-projects.md)
 - [Paylaşım kodu seçenekleri](~/cross-platform/app-fundamentals/code-sharing.md)
 - [.NET Framework (Microsoft) ile platformlar arası geliştirme](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)

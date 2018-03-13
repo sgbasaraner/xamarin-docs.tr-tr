@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 605374c0f2bfe656e564e48d14ffe18ce5b7dfe5
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c6d10025ccc038ba160fe3c09f6ce92e97d916d2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="files"></a>Dosyalar
 
@@ -40,18 +40,18 @@ Bir dosyaya katıştırmak için bir **PCL** derlemesi oluşturun veya bir dosya
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Katıştırılmış kaynak yapı eylemi yapılandırma](files-images/vs-embeddedresource-sml.png "ayarı EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png "ayarı EmbeddedResource BuildAction")
+[![Katıştırılmış kaynak yapı eylemi yapılandırma](files-images/vs-embeddedresource-sml.png "ayarı EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "ayarı EmbeddedResource BuildAction")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![Metin dosyası katıştırılmış katıştırılmış kaynak yapı eylemi yapılandırma PCL içinde](files-images/xs-embeddedresource-sml.png "ayarı EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png "ayarı EmbeddedResource BuildAction")
+[![Metin dosyası katıştırılmış katıştırılmış kaynak yapı eylemi yapılandırma PCL içinde](files-images/xs-embeddedresource-sml.png "ayarı EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "ayarı EmbeddedResource BuildAction")
 
 -----
 
 `GetManifestResourceStream` Katıştırılmış dosyasını kullanarak erişmek için kullanılan kendi **kaynak kimliği**. Kaynak kimliği olan katıştırılmış-proje için varsayılan ad alanı öneki filename varsayılan olarak bu durumda derlemesidir **WorkingWithFiles** ve dosya adı **PCLTextResource.txt**, kaynak kimliği olacak şekilde `WorkingWithFiles.PCLTextResource.txt`.
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
 string text = "";
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -61,12 +61,12 @@ using (var reader = new System.IO.StreamReader (stream)) {
 
 `text` Değişkeni kullanılabilecek metni görüntülemek veya aksi halde kodda kullanın. Bu ekran görüntüsü [örnek uygulaması](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/) olarak işlenen metin gösteren bir `Label` denetim.
 
- [ ![Metin dosyası PCL katıştırılmış](files-images/pcltext-sml.png "katıştırılmış metin dosyasında PCL görüntülenen uygulama")](files-images/pcltext.png "katıştırılmış metin dosyasında PCL görüntülenen uygulama")
+ [![Metin dosyası PCL katıştırılmış](files-images/pcltext-sml.png "katıştırılmış metin dosyasında PCL görüntülenen uygulama")](files-images/pcltext.png#lightbox "katıştırılmış metin dosyasında PCL görüntülenen uygulama")
 
 Yükleme ve bir XML seri durumdan eşit olarak basit bir işlemdir. Aşağıdaki kod bir XML dosyası kurulduğunu yüklenen ve bir kaynaktan seri durumdan sonra bağlı gösterir bir `ListView` görüntülemek için. XML dosyasını içeren bir dizi `Monkey` nesneleri (örnek kodda sınıfı tanımlı).
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
 List<Monkey> monkeys;
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -77,7 +77,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [ ![XML dosyası katıştırılmış ListView içinde görüntülenen PCL içinde](files-images/pclxml-sml.png "katıştırılmış XML dosyasında PCL görüntülenen ListView içinde")](files-images/pclxml.png "katıştırılmış XML dosyasında PCL görüntülenen ListView içinde")
+ [![XML dosyası katıştırılmış ListView içinde görüntülenen PCL içinde](files-images/pclxml-sml.png "katıştırılmış XML dosyasında PCL görüntülenen ListView içinde")](files-images/pclxml.png#lightbox "katıştırılmış XML dosyasında PCL görüntülenen ListView içinde")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -106,7 +106,7 @@ var resourcePrefix = "WorkingWithFiles.WinPhone.";
 
 Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
 // note that the prefix includes the trailing period '.' that is required
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 Stream stream = assembly.GetManifestResourceStream
     (resourcePrefix + "SharedTextResource.txt");
 ```
@@ -129,7 +129,7 @@ Bazen belirli bir kaynak neden yüklenen değil anlaşılması zor olduğundan, 
 using System.Reflection;
 // ...
 // use for debugging, not in released app code!
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 foreach (var res in assembly.GetManifestResourceNames()) {
     System.Diagnostics.Debug.WriteLine("found resource: " + res);
 }
@@ -141,7 +141,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 Xamarin.Forms her biri kendi dosya sistemine sahip birden çok platformdaki çalıştığından yükleme ve kullanıcı tarafından oluşturulan dosyaları kaydetme için tek bir yaklaşım yoktur. Tamamlanmış ekran kaydetmek ve kaydeder ve bazı kullanıcı girişi - yükler ekran örnek uygulamasını içeren metin dosyalarını yüklemek nasıl göstermek için aşağıda gösterilmiştir:
 
- [ ![Kaydetme ve metin yükleme](files-images/saveandload-sml.png "kaydetme ve uygulama yükleme dosyalarında")](files-images/saveandload.png "kaydetme ve uygulama yükleme dosyaları")
+ [![Kaydetme ve metin yükleme](files-images/saveandload-sml.png "kaydetme ve uygulama yükleme dosyalarında")](files-images/saveandload.png#lightbox "kaydetme ve uygulama yükleme dosyaları")
 
 Her platformun biraz farklı dizin yapısını ve farklı dosya sistemi özellikleri vardır - örneğin çoğu Xamarin.iOS ve Xamarin.Android desteği `System.IO` işlevselliği Windows Phone yalnızca destekler, ancak `IsolatedStorage` ve [ `Windows.Storage` ](http://msdn.microsoft.com/library/windowsphone/develop/jj681698(v=vs.105).aspx) API'leri.
 
@@ -250,5 +250,5 @@ Bu belge katıştırılmış kaynakları yükleme ve kaydetme ve cihazın metin 
 
 - [FilesSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
 - [Oluştur, yazma ve bir dosya (UWP) okuma](/windows/uwp/files/quickstart-reading-and-writing-files/)
-- [Xamarin.Forms örnekleri](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms Örnekleri](https://github.com/xamarin/xamarin-forms-samples)
 - [Dosyalar çalışma kitabı](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/files/files.workbook)

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: d18cf055bb206099eecea0d9f417af571f3819e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8b266640bb0e1aa2bc584197e5fd7cbf4ab48e88
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-orientation"></a>Cihaz yönlendirmesini
 
@@ -31,7 +31,7 @@ Bu makalede, cihaz yönlendirmesini özelliklerden yararlanmak uygulamaları olu
 Xamarin.Forms kullanırken, cihaz yönlendirmesini denetlemek için desteklenen yöntem her proje için ayarları kullanmaktır.
 
 > [!NOTE]
-> **Not**: sürümünden yönlendirmeyi başarısız olarak denetlemek için özel Oluşturucu tabanlı saldırılara önleyen bir hata Xamarin.Forms 1.5.0. Bkz: [bu tartışma](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)Xamarin forumlarında daha fazla bilgi için bu tartışma.
+> Xamarin.Forms önleyen bir hata 1.5.0 itibariyle özel Oluşturucu tabanlı yönlendirmeyi başarısız olarak denetlemek çalışır. Bkz: [bu tartışma](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)Xamarin forumlarında daha fazla bilgi için bu tartışma.
 
 ### <a name="ios"></a>iOS
 
@@ -123,7 +123,7 @@ Windows Phone yatay görünümler her ikisinde de (dikey görüldüğü gibi) de
 Xamarin.Forms uygulamanız paylaşılan kod yön değişimleri bilgilendirmek için yerel olay sağlamaz. Ancak, `SizeChanged` olayı `Page` tetiklenen genişliği veya yüksekliği `Page` değişiklikler. Zaman genişliğini `Page` yüksekliği büyük yatay modunda aygıttır. Daha fazla bilgi için bkz: [ekran yönünü dayalı bir görüntüyü](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
 
 > [!NOTE]
-> **Not**: paylaşılan kodda yönlendirmesini değişikliklerin bildirimleri almak için bir var olan, ücretsiz NuGet paketi yoktur. Bkz: [GitHub deposuna](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) daha fazla bilgi için.
+> Paylaşılan kodda yönlendirmesini değişikliklerin bildirimleri almak için bir var olan, ücretsiz NuGet paketi yoktur. Bkz: [GitHub deposuna](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) daha fazla bilgi için.
 
 Alternatif olarak, geçersiz kılmak olası [ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/) yöntemi bir `Page`, herhangi bir düzeni eklemeden değiştirmek mantığı vardır. `OnSizeAllocated` Yöntemi çağrıldığında her bir `Page` aygıt Döndürülmüş whenver olur yeni boyutunu tahsis edilir. Unutmayın, temel uygulamayı `OnSizeAllocated` geçersiz kılmada temel uygulamayı çağırması önemlidir önemli düzeni işlevleri gerçekleştirir:
 
@@ -176,7 +176,7 @@ Böylece cihaz döndürüldüğünde, düzgün biçimde geçiş yerleşik düzen
 Arabirimler birden çok ekran boyutlarına ve uygulamaları için genellikle uygulama en iyi yöntem olarak düşünüldüğünde yukarıdaki kuralları da geçerlidir. Bu kılavuzda kalan her birincil düzenleri içinde Xamarin.Forms kullanarak esnek düzenleri belirli örnekleri açıklanmaktadır.
 
 > [!NOTE]
-> **Not**: daha anlaşılır olması için aşağıdaki bölümlerde tek türünü kullanan esnek düzenleri uygulamak göstermektedir `Layout` birer birer. Uygulamada, bu genellikle karışık kolaydır `Layout`daha basit ve en kolay anlaşılır kullanarak istenen bir düzen elde etmek için s `Layout` her bileşen için.
+> Daha anlaşılır olması için aşağıdaki bölümlerde tek türünü kullanan esnek düzenleri uygulamak göstermektedir `Layout` birer birer. Uygulamada, bu genellikle karışık kolaydır `Layout`daha basit ve en kolay anlaşılır kullanarak istenen bir düzen elde etmek için s `Layout` her bileşen için.
 
 ### <a name="stacklayout"></a>StackLayout
 

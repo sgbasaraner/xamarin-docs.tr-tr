@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: ba460bee067162f8e42f84f230f93cb1cf98ba98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b10894d6b18d78d682825000726c5ef2cbe5ba6b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---using-background-location"></a>İzlenecek yol - arka plan konumu kullanma
 
@@ -31,55 +31,55 @@ Bu kılavuzda bazı anahtar kavramlar, bir uygulama bir arka plan gerekli uygula
 
     Mac için Visual Studio'da, onu şöyle bir şey gibi görünür:
 
-    [![](location-walkthrough-images/image7.png "Arka plan modlarını etkinleştir ve konum güncelleştirmeleri onay kutularını işaretleyin")](location-walkthrough-images/image7.png)
+    [![](location-walkthrough-images/image7.png "Arka plan modlarını etkinleştir ve konum güncelleştirmeleri onay kutularını işaretleyin")](location-walkthrough-images/image7.png#lightbox)
 
     Visual Studio'da **Info.plist** aşağıdaki anahtar/değer çifti ekleyerek el ile güncelleştirilmesi gerekir:
 
-        ```csharp
-        <key>UIBackgroundModes</key>
-        <array>
-            <string>location</string>
-        </array>
-        ```
+    ```xml
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>location</string>
+    </array>
+    ```
 
 1. Uygulama kayıtlı, aygıttan konum verileri elde edebilirsiniz. İOS içinde `CLLocationManager` sınıf konum bilgilerine erişmek için kullanılan ve konum güncelleştirmeleri sağlamak olaylar oluşturabilir.
 
 1. Kod içinde adlı yeni bir sınıf oluşturma `LocationManager` çeşitli ekranları ve kod konumu güncelleştirmelere abone olmak için tek bir yer sağlar. İçinde `LocationManager` sınıfı, bir örneğini olun `CLLocationManager` adlı `LocMgr`:
 
-```csharp
-        public class LocationManager
-        {
-          protected CLLocationManager locMgr;
+    ```csharp
+    public class LocationManager
+    {
+        protected CLLocationManager locMgr;
 
-          public LocationManager (){
+        public LocationManager () {
             this.locMgr = new CLLocationManager();
             this.locMgr.PausesLocationUpdatesAutomatically = false;
 
             // iOS 8 has additional permissions requirements
             if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
-              locMgr.RequestAlwaysAuthorization (); // works in background
-              //locMgr.RequestWhenInUseAuthorization (); // only in foreground
+                locMgr.RequestAlwaysAuthorization (); // works in background
+                //locMgr.RequestWhenInUseAuthorization (); // only in foreground
             }
 
             if (UIDevice.CurrentDevice.CheckSystemVersion (9, 0)) {
-               locMgr.AllowsBackgroundLocationUpdates = true;
+                locMgr.AllowsBackgroundLocationUpdates = true;
             }
-          }
-
-          public CLLocationManager LocMgr{
-            get { return this.locMgr; }
-          }
         }
-```
 
-    The code above sets a number of properties and permissions on the [CLLocationManager](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/) class:
+        public CLLocationManager LocMgr {
+            get { return this.locMgr; }
+        }
+    }
+    ```
+
+    Yukarıdaki kod üzerinde bir dizi özellikler ve izinleri ayarlar [CLLocationManager](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/) sınıfı:
 
     - `PausesLocationUpdatesAutomatically` – Sistem konumu güncelleştirmeleri duraklatmak izin verilip verilmediğine bağlı olarak ayarlanabilir bir Boole değeri budur. Bazı cihazlarda, varsayılan olarak `true`, hangi arka plan yaklaşık 15 dakika sonra konum güncelleştirmeleri almayı durdurmak için cihazın neden olabilir.
     - `RequestAlwaysAuthorization` -Uygulama kullanıcı seçeneği konumu arka planda erişilmesine izin vermek için bu yöntemi geçirmelisiniz. `RequestWhenInUseAuthorization` Kullanıcı yalnızca uygulama ön planda olduğunda erişilecek konumuna izin ver seçeneği vermek isterseniz, ayrıca geçirilebilir.
     - `AllowsBackgroundLocationUpdates` – Askıya zaman konumu güncelleştirmeleri almak uygulama izin vermek için ayarlanan iOS 9 sunulan bir Boolean özelliği budur.
 
     > [!IMPORTANT]
-> **Uyarı**: iOS 8 (ve büyük) de bir girişe gerektirir **Info.plist** kullanıcı yetkilendirme isteği bir parçası olarak göstermek için dosya.
+    > **Uyarı**: iOS 8 (ve büyük) de bir girişe gerektirir **Info.plist** kullanıcı yetkilendirme isteği bir parçası olarak göstermek için dosya.
 
 1. Bir anahtar ekleyin `NSLocationAlwaysUsageDescription` veya `NSLocationWhenInUseUsageDescription` konumu veri erişimi istekleri uyarısında kullanıcıya görüntülenen bir dizeyle.
 
@@ -89,25 +89,25 @@ Bu kılavuzda bazı anahtar kavramlar, bir uygulama bir arka plan gerekli uygula
 1. İçinde `LocationManager` sınıfı, adlı bir yöntem oluşturma `StartLocationUpdates` aşağıdaki kod ile. Bu kodu nasıl gösterir konumu güncelleştirmeleri almaya başlamak `CLLocationManager`:
 
     ```csharp
-        if (CLLocationManager.LocationServicesEnabled) {
-          //set the desired accuracy, in meters
-          LocMgr.DesiredAccuracy = 1;
-          LocMgr.LocationsUpdated += (object sender, CLLocationsUpdatedEventArgs e) =>
-          {
-              // fire our custom Location Updated event
-              LocationUpdated (this, new LocationUpdatedEventArgs (e.Locations [e.Locations.Length - 1]));
-          };
-          LocMgr.StartUpdatingLocation();
-        }
-        ```
+    if (CLLocationManager.LocationServicesEnabled) {
+        //set the desired accuracy, in meters
+        LocMgr.DesiredAccuracy = 1;
+        LocMgr.LocationsUpdated += (object sender, CLLocationsUpdatedEventArgs e) =>
+        {
+            // fire our custom Location Updated event
+            LocationUpdated (this, new LocationUpdatedEventArgs (e.Locations [e.Locations.Length - 1]));
+        };
+        LocMgr.StartUpdatingLocation();
+    }
+    ```
 
-    There are several important things happening in this method. First, we perform a check to see if the application has access to location data on the device. We verify this by calling `LocationServicesEnabled` on the `CLLocationManager`. This method will return **false** if the user has denied the application access to location information.
+    Bu yöntemde gerçekleştiği birkaç önemli nokta vardır. İlk olarak, uygulama cihaz üzerinde konum verilerine erişimi olup olmadığını görmek için bir onay gerçekleştirin. Biz çağırarak doğrulayın `LocationServicesEnabled` üzerinde `CLLocationManager`. Bu yöntem döndürülecek **false** kullanıcı konumu ile ilgili bilgi için uygulama erişimi reddediliyorsa.
 
-1. Next, tell the location manager how often to update. `CLLocationManager` provides many options for filtering and configuring location data, including the frequency of updates. In this example, set the `DesiredAccuracy` to update whenever the location changes by a meter. For more information on configuring location update frequency and other preferences, refer to the [CLLocationManager Class Reference](http://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) in the Apple documentation.
+1. Ardından, güncelleştirmek için ne sıklıkta konum yöneticisine bildirir. `CLLocationManager` Filtreleme ve konum verileri, güncelleştirmelerinin sıklığını dahil olmak üzere yapılandırmak için birçok seçenek sağlar. Bu örnekte, ayarlamak `DesiredAccuracy` konumu ölçer tarafından değiştiğinde güncelleştirmek için. Konum güncelleştirme sıklığı ve diğer tercihlerinizi yapılandırma hakkında daha fazla bilgi için başvurmak [CLLocationManager sınıf başvurusu](http://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) Apple belgelerinde.
 
-1. Finally, call `StartUpdatingLocation` on the `CLLocationManager` instance. This tells the location manager to get an initial fix on the current location, and to start sending updates
+1. Son olarak, arama `StartUpdatingLocation` üzerinde `CLLocationManager` örneği. Bu ilk düzeltme geçerli konumu alma ve güncelleştirmeleri gönderme başlatmak için konum yöneticisine bildirir
 
-So far, the location manager has been created, configured with the kinds of data we want to receive, and has determined the initial location. Now the code needs to render the location data to the user interface. We can do this with a custom event that takes a `CLLocation` as an argument:
+Şu ana kadar konum yöneticisine istiyoruz almak için veri türleri yapılandırılmış oluşturulmuştur ve ilk konum belirledi. Şimdi kullanıcı arabiriminde konum verileri işlemek kod gerekir. Bu alan için özel bir olay yapabileceğimiz bir `CLLocation` bağımsız değişken olarak:
 
 ```csharp
 // event for the location changing
@@ -133,7 +133,7 @@ public class LocationUpdatedEventArgs : EventArgs
 }
 ```
 
-## <a name="user-interface"></a>Kullanıcı arabirimi
+## <a name="user-interface"></a>Kullanıcı Arabirimi
 
 1. Konum bilgileri görüntüler ekran oluşturmak için iOS Tasarımcısı'nı kullanın. Çift **Main.storyboard** başlamak için dosya.
 
@@ -146,45 +146,47 @@ public class LocationUpdatedEventArgs : EventArgs
 1. Çözüm defterinde çift `ViewController.cs` dosyasını ve arama ve LocationManager yeni bir örneğini oluşturmak üzere düzenleyebilirsiniz `StartLocationUpdates`üzerindeki.
   Kod aşağıdaki gibi değiştirin:
 
-        #region Computed Properties
-        public static bool UserInterfaceIdiomIsPhone {
-                    get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
-                }
+    ```csharp
+    #region Computed Properties
+    public static bool UserInterfaceIdiomIsPhone {
+                get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
+            }
 
-        public static LocationManager Manager { get; set;}
-        #endregion
+    public static LocationManager Manager { get; set;}
+    #endregion
 
-        #region Constructors
-        public ViewController (IntPtr handle) : base (handle)
-        {
-        // As soon as the app is done launching, begin generating location updates in the location manager
-            Manager = new LocationManager();
-            Manager.StartLocationUpdates();
-        }
+    #region Constructors
+    public ViewController (IntPtr handle) : base (handle)
+    {
+    // As soon as the app is done launching, begin generating location updates in the location manager
+        Manager = new LocationManager();
+        Manager.StartLocationUpdates();
+    }
 
-        #endregion
+    #endregion
+    ```
 
     Hiçbir veri görüntülenmesine karşın bu uygulama başlangıç üzerinde konumu güncelleştirmeleri başlatır.
 
 1. Konum güncelleştirmeleri alınan, ekran konumu bilgilerle güncelleştirin. Aşağıdaki yöntem konumdan alır bizim `LocationUpdated` olay ve kullanıcı Arabiriminde gösterir:
 
-        #region Public Methods
-        public void HandleLocationChanged (object sender, LocationUpdatedEventArgs e)
-        {
-            // Handle foreground updates
-            CLLocation location = e.Location;
+    ```csharp
+    #region Public Methods
+    public void HandleLocationChanged (object sender, LocationUpdatedEventArgs e)
+    {
+        // Handle foreground updates
+        CLLocation location = e.Location;
 
-            LblAltitude.Text = location.Altitude + " meters";
-            LblLongitude.Text = location.Coordinate.Longitude.ToString ();
-            LblLatitude.Text = location.Coordinate.Latitude.ToString ();
-            LblCourse.Text = location.Course.ToString ();
-            LblSpeed.Text = location.Speed.ToString ();
+        LblAltitude.Text = location.Altitude + " meters";
+        LblLongitude.Text = location.Coordinate.Longitude.ToString ();
+        LblLatitude.Text = location.Coordinate.Latitude.ToString ();
+        LblCourse.Text = location.Course.ToString ();
+        LblSpeed.Text = location.Speed.ToString ();
 
-            Console.WriteLine ("foreground updated");
-        }
-
-        #endregion
-
+        Console.WriteLine ("foreground updated");
+    }
+    #endregion
+    ```
 
 Hala abone olmak ihtiyacımız `LocationUpdated` olay AppDelegate ve kullanıcı arabirimini güncelleştirmek için yeni yöntemini çağırın. Aşağıdaki kodu ekleyin `ViewDidLoad,` hemen sonra `StartLocationUpdates` çağırın:
 
@@ -203,43 +205,47 @@ public override void ViewDidLoad ()
 
 Şimdi uygulamayı çalıştırdığınızda, aşağıdakine benzer görünmelidir:
 
-[![](location-walkthrough-images/image5.png "Bir örnek uygulamayı çalıştırma")](location-walkthrough-images/image5.png)
+[![](location-walkthrough-images/image5.png "Bir örnek uygulamayı çalıştırma")](location-walkthrough-images/image5.png#lightbox)
 
 ## <a name="handling-active-and-background-states"></a>Etkin ve arka plan durumları işleme
 
 1. Ön planda ve etkin durumdayken uygulamanın konumu güncelleştirmeleri çıktısı olduğu. Uygulama arka girdiğinde olanlar göstermek için geçersiz kılma `AppDelegate` ön ve arka plan arasında geçiş yaptığında uygulama konsola böylece uygulama izleme yöntemleri durum değişiklikleri:
 
-        public override void DidEnterBackground (UIApplication application)
-        {
-          Console.WriteLine ("App entering background state.");
-        }
+    ```csharp
+    public override void DidEnterBackground (UIApplication application)
+    {
+        Console.WriteLine ("App entering background state.");
+    }
 
-        public override void WillEnterForeground (UIApplication application)
-        {
-          Console.WriteLine ("App will enter foreground");
-        }
+    public override void WillEnterForeground (UIApplication application)
+    {
+        Console.WriteLine ("App will enter foreground");
+    }
+    ```
 
     Aşağıdaki kodu ekleyin `LocationManager` sürekli güncelleştirilen yeri yazdırmak için konum bilgileri doğrulamak için uygulama çıktısı, veri arka planda hala kullanılabilir:
 
-        public class LocationManager
+    ```csharp
+    public class LocationManager
+    {
+        public LocationManager ()
         {
-          public LocationManager ()
-          {
-            ...
-            LocationUpdated += PrintLocation;
-          }
-          ...
-
-          //This will keep going in the background and the foreground
-          public void PrintLocation (object sender, LocationUpdatedEventArgs e) {
-            CLLocation location = e.Location;
-            Console.WriteLine ("Altitude: " + location.Altitude + " meters");
-            Console.WriteLine ("Longitude: " + location.Coordinate.Longitude);
-            Console.WriteLine ("Latitude: " + location.Coordinate.Latitude);
-            Console.WriteLine ("Course: " + location.Course);
-            Console.WriteLine ("Speed: " + location.Speed);
-          }
+        ...
+        LocationUpdated += PrintLocation;
         }
+        ...
+
+        //This will keep going in the background and the foreground
+        public void PrintLocation (object sender, LocationUpdatedEventArgs e) {
+        CLLocation location = e.Location;
+        Console.WriteLine ("Altitude: " + location.Altitude + " meters");
+        Console.WriteLine ("Longitude: " + location.Coordinate.Longitude);
+        Console.WriteLine ("Latitude: " + location.Coordinate.Latitude);
+        Console.WriteLine ("Course: " + location.Course);
+        Console.WriteLine ("Speed: " + location.Speed);
+        }
+    }
+    ```
 
 1. Kod bir kalan sorun olmadığından: uygulama backgrounded olduğunda kullanıcı arabirimini güncelleştirme girişimi neden iOS onu sonlandıracak. Uygulama arka plan içine gittiğinde, konum güncelleştirmelerini aboneliği ve UI güncelleştirme durdurmak kod gerekir.
 
@@ -247,9 +253,11 @@ public override void ViewDidLoad ()
 
     Aşağıdaki kod parçacığını UI güncelleştirmeleri durdurmak ne zaman bilmek görünüm izin vermek için bir bildirim kullanmayı gösterir. Bu gidecek `ViewDidLoad`:
 
-        UIApplication.Notifications.ObserveDidEnterBackground ((sender, args) => {
-          Manager.LocationUpdated -= HandleLocationChanged;
-        });
+    ```csharp
+    UIApplication.Notifications.ObserveDidEnterBackground ((sender, args) => {
+        Manager.LocationUpdated -= HandleLocationChanged;
+    });
+    ```
 
     Uygulama çalışırken, çıktı aşağıdakine benzer görünecektir:
 

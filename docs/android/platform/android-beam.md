@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: bea8480c66a2ecf499375636c98511ca55ce7693
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e9936bb523db8ba8777df94a03bf12f9fa718fca
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-beam"></a>Android ışını
 
 Android ışını uygulamaların yakınında olduğunda NFC üzerinden bilgi paylaşmanızı sağlayan Android 4'teki yeni bir yakın alan iletişimi (NFC) teknolojisidir.
 
-[![İki bilgi paylaşımı yakın cihazlar gösteren diyagram](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png)
+[![İki bilgi paylaşımı yakın cihazlar gösteren diyagram](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
 Android ışını iki cihazlar aralık içinde olduğunda NFC iletiler göndererek çalışır. Aygıtları yaklaşık 4cm birbirinden Android ışını kullanarak veri paylaşabilir. Bir etkinlik bir cihaz üzerinde bir ileti oluşturur ve bir etkinlik (veya etkinlikler) belirtir, itme işleyebilir. Belirtilen etkinlik ön planda ve cihazların kapsama alanında olduğunda Android ışını ikinci cihaza ileti gönderme. Alıcı aygıtta ileti verileri içeren bir hedefi çağrılır.
 
@@ -30,7 +30,6 @@ Android ayarı iletilerinin Android ışını ile iki şekilde destekler:
 
 Her iki durumda da, Android ışını ile veri göndermek için uygulamanın gönderdiği bir `NdefMessage`, çeşitli veri paketleme `NdefRecords`. Biz Android ışını tetiklemeden önce ele alınması gereken önemli noktaları bir göz atalım. İlk olarak, biz oluşturma geri çağırma stiliyle karşılaşmayacağınızı bir `NdefMessage`.
 
-<a name="Creating_a_Message" />
 
 ## <a name="creating-a-message"></a>Bir ileti oluşturma
 
@@ -66,7 +65,6 @@ public NdefRecord CreateMimeRecord (String mimeType, byte [] payload)
 }
 ```
 
-<a name="Receiving_a_Message" />
 
 ## <a name="receiving-a-message"></a>Bir ileti alma
 
@@ -79,7 +77,7 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 
 Aşağıdaki ekran görüntüsünde, çalışan gösterilen Android ışını kullanan tam kod örneği için bkz: [Android ışını demo](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/) örnek galerisinde.
 
-[![Android ışını demo gelen örnek ekran görüntüleri](android-beam-images/24.png)](android-beam-images/24.png)
+[![Android ışını demo gelen örnek ekran görüntüleri](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 
 

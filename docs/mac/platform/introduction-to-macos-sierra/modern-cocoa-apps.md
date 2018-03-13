@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9073d64c43c6817b45dca02b870fcfe093ebf46d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 446db5c04849ac6fa320f3fe3b7e22b3d10bf9cf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="building-modern-macos-apps"></a>Modern macOS uygulamaları oluşturma
 
@@ -24,7 +24,7 @@ _Bu makalede, bazı ipuçları, özellik ve teknikleri Geliştirici Xamarin.Mac 
 
 Modern bir görünüme aşağıda gösterilen örnek uygulaması gibi modern bir pencere ve araç çubuğu görünümünü içerir:
 
-[ ![](modern-cocoa-apps-images/content08.png "Modern bir Mac uygulaması UI örneği")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "Modern bir Mac uygulaması UI örneği")](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views" />
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 Bu özellik ayrıca Xcode'nın arabirimi Oluşturucusu'nda penceresinin seçilmesi ve denetleme etkinleştirilebilir **tam boyutlu içerik görünümü**:
 
-[ ![](modern-cocoa-apps-images/content01.png "Xcode'nın arabirimi Oluşturucu ana film şeridi düzenleme")](modern-cocoa-apps-images/content01.png)
+[![](modern-cocoa-apps-images/content01.png "Xcode'nın arabirimi Oluşturucu ana film şeridi düzenleme")](modern-cocoa-apps-images/content01.png#lightbox)
 
 Tam boyutu içerik görünümü kullanırken, geliştirici başlık ve araç çubuğunda alanları altındaki içeriği belirli içerik (örneğin, etiketleri) altında slayt değil böylece uzaklığı gerekebilir.
 
@@ -145,11 +145,11 @@ topConstraint.Active = true;
 
 Normal macOS penceresinin başlık çubuğuna pencerenin üst kenarına çalıştıran bir standart içerir. Pencerenin bir araç çubuğu da içeriyorsa, bu başlık çubuğu alanı altında görüntülenir:
 
-[ ![](modern-cocoa-apps-images/content02.png "Standart Mac araç çubuğu")](modern-cocoa-apps-images/content02.png)
+[![](modern-cocoa-apps-images/content02.png "Standart Mac araç çubuğu")](modern-cocoa-apps-images/content02.png#lightbox)
 
 Kolaylaştırılmış bir araç kullanarak, başlık alanı kaybolur ve araç çubuğunun başlık çubuğunun konumda yukarı taşır zaman penceresini kapatın, simge durumuna küçült ve Ekranı Kapla düğmesi satır içi:
 
-[ ![](modern-cocoa-apps-images/content03.png "Kolaylaştırılmış Mac araç çubuğu")](modern-cocoa-apps-images/content03.png)
+[![](modern-cocoa-apps-images/content03.png "Kolaylaştırılmış Mac araç çubuğu")](modern-cocoa-apps-images/content03.png#lightbox)
 
 Geçersiz kılarak kolaylaştırılmış araç etkin `ViewWillAppear` yöntemi `NSViewController` ve aşağıdaki gibi görünmesi yapma:
 
@@ -171,7 +171,7 @@ Bu etkiyi tipik olarak kullanılan _Shoebox uygulamaları_ (bir pencere uygulama
 
 Uygulama tasarımı bağlı olarak, geliştirici de içeriğe duyarlı denetimleri etkinliği tabanlı kullanıcıya bunlar sağlamak üzere Title/araç çubuğu alanının altında sağ görünür bir donatıyı View Controller ile alan başlık çubuğu tamamlamak isteyebilirsiniz şu anda gerçekleştiriliyor:
 
-[ ![](modern-cocoa-apps-images/content04.png "Bir örnek donatıyı View Controller")](modern-cocoa-apps-images/content04.png)
+[![](modern-cocoa-apps-images/content04.png "Bir örnek donatıyı View Controller")](modern-cocoa-apps-images/content04.png#lightbox)
 
 Aksesuar görünüm denetleyicisini otomatik olarak bulanık ve olması Geliştirici müdahalesi olmadan sistem tarafından yeniden boyutlandırılabilir.
 
@@ -180,13 +180,13 @@ Bir donatıyı View Controller eklemek için aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` dosyayı düzenlemek için açın.
 2. Sürükleme bir **özel görünüm denetleyicisini** pencerenin hiyerarşiye: 
 
-    [ ![](modern-cocoa-apps-images/content05.png "Yeni bir özel görünüm denetleyicisi ekleme")](modern-cocoa-apps-images/content05.png)
+    [![](modern-cocoa-apps-images/content05.png "Yeni bir özel görünüm denetleyicisi ekleme")](modern-cocoa-apps-images/content05.png#lightbox)
 3. Düzen aksesuar görünüme ait kullanıcı Arabirimi: 
 
-    [ ![](modern-cocoa-apps-images/content06.png "Yeni görünümü tasarlama")](modern-cocoa-apps-images/content06.png)
+    [![](modern-cocoa-apps-images/content06.png "Yeni görünümü tasarlama")](modern-cocoa-apps-images/content06.png#lightbox)
 4. Aksesuar görünüm olarak kullanıma bir **çıkışı** ve diğer **Eylemler** veya **çıkışlar** için kullanıcı Arabiriminde: 
 
-    [ ![](modern-cocoa-apps-images/content07.png "Gerekli çıkışı ekleme")](modern-cocoa-apps-images/content07.png)
+    [![](modern-cocoa-apps-images/content07.png "Gerekli çıkışı ekleme")](modern-cocoa-apps-images/content07.png#lightbox)
 5. Değişiklikleri kaydedin.
 6. Visual Studio değişiklikleri eşitlemek Mac için geri dönün.
 
@@ -248,7 +248,7 @@ MacOS artık tam olarak yerelleştirilmiştir çünkü `Left` ve `Right` `NSLayo
 
 Ayrıca, macOS sistem uygulamanın pencereye donatıyı görünüm denetleyicileri ekleyebilirsiniz. Örneğin, burada birkaç uygulamanın Windows bir sanal penceresine birleştirilir Windows sekmeli oluşturmak için şunu yazın:
 
-[ ![](modern-cocoa-apps-images/content08.png "Sekmeli Mac penceresi örneği")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "Sekmeli Mac penceresi örneği")](modern-cocoa-apps-images/content08.png#lightbox)
 
 Genellikle, geliştirici sınırlı eylem kullanmak Xamarin.Mac uygulamalarını sekmeli Windows'da gerekir, sistem onları şekilde otomatik olarak işleyecek:
 
@@ -430,7 +430,7 @@ Ayrıca, yeni bir ekleme aksine katman yedeklenen görünümlerini kullanarak Ap
 
 Yedekleme katman ayarlayarak etkinleştirilebilir `WantsLayer` , bir `NSView` için `true` veya Xcode'nın arabirimi Oluşturucu altında içinde **görünüm etkileri denetçisi** denetleyerek **çekirdek animasyon katmanı**:
 
-[ ![](modern-cocoa-apps-images/content09.png "Görünüm etkileri denetçisi")](modern-cocoa-apps-images/content09.png)
+[![](modern-cocoa-apps-images/content09.png "Görünüm etkileri denetçisi")](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers" />
 
@@ -792,7 +792,7 @@ Apple önermek için aşağıdakileri yapın:
 
 Apple Geliştirici tasarlarken veya bir uygulamanın kullanıcı arabirimini düzenleme yerelleştirme desteklemek için kullanabileceğiniz çeşitli özellikler Xcode'nın arabirimi Oluşturucu sağlamıştır. **Metin yönü** bölümünü **özniteliği denetçisi** Geliştirici ipuçları nasıl yönü kullanılır ve bir select metin tabanlı görünümü güncelleştirilmiş sağlamasına olanak verir (gibi `NSTextField`):
 
-[ ![](modern-cocoa-apps-images/content10.png "Metin yönü seçenekleri")](modern-cocoa-apps-images/content10.png)
+[![](modern-cocoa-apps-images/content10.png "Metin yönü seçenekleri")](modern-cocoa-apps-images/content10.png#lightbox)
 
 Üç olası değerler için **metin yönü**:
 
@@ -851,7 +851,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 Modern macOS uygulamalar da görüntü oluşturma, düzenleme veya sunu uygulamalar için çalışır bir yeni koyu arabirimi görünümü benimseyebilirsiniz:
 
-[ ![](modern-cocoa-apps-images/content11.png "Koyu Mac penceresi UI örneği")](modern-cocoa-apps-images/content11.png)
+[![](modern-cocoa-apps-images/content11.png "Koyu Mac penceresi UI örneği")](modern-cocoa-apps-images/content11.png#lightbox)
 
 Bu pencere görüntülenmeden önce bir kod satırı ekleyerek yapılabilir. Örneğin:
 
@@ -898,7 +898,7 @@ Film şeritleri yalnızca bir uygulamanın kullanıcı arabirimi, Yukarı ancak 
 
 Denetleyicileri öğeleri oluşturma ve Segues soyut bir birimde toplamak ve tipik "izleme kodu" görünümü hiyerarşinin tamamında taşımak için gereken kaldırmak Geliştirici izin ver:
 
-[ ![](modern-cocoa-apps-images/content12.png "Xcode'nın arabirimi Oluşturucu kullanıcı Arabiriminde düzenleme")](modern-cocoa-apps-images/content12.png)
+[![](modern-cocoa-apps-images/content12.png "Xcode'nın arabirimi Oluşturucu kullanıcı Arabiriminde düzenleme")](modern-cocoa-apps-images/content12.png#lightbox)
 
 Daha fazla bilgi için lütfen bkz bizim [film şeritleri giriş](~/mac/platform/storyboards/index.md) belgeleri.
 

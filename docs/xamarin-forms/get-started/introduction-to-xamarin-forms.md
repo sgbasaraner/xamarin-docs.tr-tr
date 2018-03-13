@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 593e720e4a6125e2ef4a1c9488186cb2c04dcd66
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: be4b0c907774c33dfcd1818da167acb2dc3b04dd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms giriş
 
@@ -45,7 +45,7 @@ Bu makalede Xamarin.Forms framework temelleri açıklanır ve aşağıdaki konul
 
 Mac ve Visual Studio için Visual Studio'da kullanıcıya metin görüntüleyen basit Xamarin.Forms çözümünü olası, varsayılan Xamarin.Forms uygulaması şablonu oluşturur. Uygulama çalıştırıyorsanız, aşağıdaki ekran görüntüleri için benzer görünmelidir:
 
-[ ![](introduction-to-xamarin-forms-images/image05-sml.png "Varsayılan Xamarin.Forms uygulaması")](introduction-to-xamarin-forms-images/image05.png "varsayılan Xamarin.Forms uygulaması")
+[![](introduction-to-xamarin-forms-images/image05-sml.png "Varsayılan Xamarin.Forms uygulaması")](introduction-to-xamarin-forms-images/image05.png#lightbox "varsayılan Xamarin.Forms uygulaması")
 
 Ekran görüntüleri her ekranında karşılık gelen bir *sayfa* Xamarin.Forms içinde. A [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) temsil eden bir *etkinlik* Android içinde bir *View Controller* , iOS, veya bir *sayfa* Windows evrensel olarak Platformu (UWP). Yukarıdaki ekran görüntüleri örnek başlatır bir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) nesne ve görüntülemek için kullanan bir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/).
 
@@ -249,7 +249,7 @@ public class StackLayoutExample : ContentPage
 
 Varsayılan olarak [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) aşağıdaki ekran görüntülerinde gösterildiği gibi dikey yönlendirme varsayar:
 
-[ ![](introduction-to-xamarin-forms-images/image09-sml.png "Dikey StackLayout")](introduction-to-xamarin-forms-images/image09.png "dikey StackLayout")
+[![](introduction-to-xamarin-forms-images/image09-sml.png "Dikey StackLayout")](introduction-to-xamarin-forms-images/image09.png#lightbox "dikey StackLayout")
 
 Yönünü [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) yatay yönlendirme için aşağıdaki XAML kod örneğinde gösterildiği şekilde değiştirilebilir:
 
@@ -286,7 +286,7 @@ public class StackLayoutExample: ContentPage
 
 Aşağıdaki ekran görüntüleri, sonuçta elde edilen düzeni göster:
 
-[ ![](introduction-to-xamarin-forms-images/image10-sml.png "Yatay StackLayout")](introduction-to-xamarin-forms-images/image10.png "yatay StackLayout")
+[![](introduction-to-xamarin-forms-images/image10-sml.png "Yatay StackLayout")](introduction-to-xamarin-forms-images/image10.png#lightbox "yatay StackLayout")
 
 Denetimleri boyutunu aracılığıyla ayarlanabilir `HeightRequest` ve `WidthRequest` aşağıdaki XAML kod örneğinde gösterildiği gibi özellikleri:
 
@@ -329,7 +329,7 @@ Content = new StackLayout
 
 Aşağıdaki ekran görüntüleri, sonuçta elde edilen düzeni göster:
 
-[ ![](introduction-to-xamarin-forms-images/image11-sml.png "Yatay StackLayout LayoutOptions ile")](introduction-to-xamarin-forms-images/image11.png "LayoutOptions ile yatay StackLayout")
+[![](introduction-to-xamarin-forms-images/image11-sml.png "Yatay StackLayout LayoutOptions ile")](introduction-to-xamarin-forms-images/image11.png#lightbox "LayoutOptions ile yatay StackLayout")
 
 Hakkında daha fazla bilgi için [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) sınıfı için bkz: [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
 
@@ -662,7 +662,7 @@ Zaman `MyObject.FirstName` özellik değişikliklerini `OnPropertyChanged` yönt
 
 Xamarin.Forms sağlayan bir dizi farklı sayfa gezinti deneyimleri bağlı olarak, [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) kullanılan yazın. İçin [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örnekleri var olan iki Gezinti deneyimleri:
 
-- [Hiyerarşik gezinme](#Hierarchical_Navigation)
+- [Hiyerarşik Gezinme](#Hierarchical_Navigation)
 - [Kalıcı gezinme](#Modal_Navigation)
 
 [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/), [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) Ve [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) sınıfları alternatif gezinti deneyimleri sağlar. Daha fazla bilgi için bkz: [Gezinti](~/xamarin-forms/app-fundamentals/navigation/index.md).
@@ -753,10 +753,10 @@ Bu makalede Xamarin.Forms ve bu uygulamalarla yazmaya başlamak nasıl bir giri�
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [XAML temelleri](~/xamarin-forms/xaml/xaml-basics/index.md)
-- [Denetimleri başvurusu](~/xamarin-forms/user-interface/controls/index.md)
-- [Kullanıcı arabirimi](~/xamarin-forms/user-interface/index.md)
-- [Xamarin.Forms örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [HTML Temelleri](~/xamarin-forms/xaml/xaml-basics/index.md)
+- [Denetimler Başvurusu](~/xamarin-forms/user-interface/controls/index.md)
+- [Kullanıcı Arabirimi](~/xamarin-forms/user-interface/index.md)
+- [Xamarin.Forms Örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Başlarken örneği](https://developer.xamarin.com/samples/xamarin-forms/GettingStarted/)
 - [Xamarin.Forms](https://developer.xamarin.com/api/namespace/Xamarin.Forms/)
 - [Ücretsiz Self-Guided öğrenme (video)](https://university.xamarin.com/self-guided)

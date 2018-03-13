@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 03089e4760ebf19849cd4d34cafb7047d8915a4d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee0625f22062fef3c27a697ce33488274abc24d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="2d-drawing"></a>2B çizim
 
 SkiaSharp 2B grafik yapmak için güçlü bir C# API sağlar. Tarafından sağlanmıştır [Google Skia Kitaplığı](http://skia.org), Google Chrome, Firefox ve Android'ın grafik yığınları'nın temelini oluşturan aynı kitaplığı.
 
-[ ![](images/ide-sml.png "2B grafik yapmak için güçlü bir C# API SkiaSharp sağlar")](images/ide.png)
+[![](images/ide-sml.png "2B grafik yapmak için güçlü bir C# API SkiaSharp sağlar")](images/ide.png#lightbox)
 
 SkiaSharp taşınabilir bir kitaplığıdır ve rahat olarak gelir bir [platformlar arası NuGet paketi](https://www.nuget.org/packages/SkiaSharp)ve kutunun dışında aşağıdaki platformları destekler: macOS, Xamarin.Android, Xamarin.iOS ve Windows Masaüstü.
 
@@ -32,7 +32,7 @@ Xamarin.Forms içinde işlemek platformu grafik çapraz çalışmak öğrenin:
 
 - [Çizim temelleri](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)
   * [Basit bir daire çizme](~/xamarin-forms/user-interface/graphics/skiasharp/basics/circle.md)
-  * [Xamarin.Forms ile tümleştirme](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)
+  * [Xamarin.Forms ile Tümleştirme](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)
   * [Piksel ve CİHAZDAN bağımsız birimler](~/xamarin-forms/user-interface/graphics/skiasharp/basics/pixels.md)
   * [Temel animasyon](~/xamarin-forms/user-interface/graphics/skiasharp/basics/animation.md)
   * [Metin ve grafik tümleştirme](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)
@@ -43,7 +43,7 @@ Xamarin.Forms içinde işlemek platformu grafik çapraz çalışmak öğrenin:
   * [Yolun dolgu türleri](~/xamarin-forms/user-interface/graphics/skiasharp/paths/fill-types.md)
   * [Kullansa ve parametrik denklemini](~/xamarin-forms/user-interface/graphics/skiasharp/paths/polylines.md)
   * [Nokta ve tire](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)
-  * [Parmak boyama](~/xamarin-forms/user-interface/graphics/skiasharp/paths/finger-paint.md)
+  * [Parmak Boyama](~/xamarin-forms/user-interface/graphics/skiasharp/paths/finger-paint.md)
 - [Dönüşümler](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/index.md)
   * [Çevir Dönüştür](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md)
   * [Ölçek dönüştürme](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/scale.md)
@@ -54,15 +54,15 @@ Xamarin.Forms içinde işlemek platformu grafik çapraz çalışmak öğrenin:
   * [Olmayan afin dönüşümler](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)
   * [3B Döndürme](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md)
 - [Eğriler ve yolları](~/xamarin-forms/user-interface/graphics/skiasharp/curves/index.md)
-  * [Yay çizmek için üç yol](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)
-  * [Üç tür Bézier eğrileri](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)
-  * [SVG yol verileri](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)
-  * [Kırpma yolları ve bölgeler](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
-  * [Yol etkileri](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
-  * [Yollar ve metin](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
-  * [Yol bilgisi ve numaralandırması](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
+  * [Yay Çizmenin Üç Yolu](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)
+  * [Üç Tür Bézier Eğrisi](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)
+  * [SVG Yol Verileri](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)
+  * [Yollar ve Bölgeler ile Kırpma](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
+  * [Yol Etkileri](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
+  * [Yollar ve Metin](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
+  * [Yol Bilgileri ve Numaralandırması](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 
-## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Platform özel notlar](~/graphics-games/skiasharp/platform.md)
+## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Platforma Özgü Notlar](~/graphics-games/skiasharp/platform.md)
 
 Bu sayfa, iOS, Android, macOS ve Windows dahil farklı platformlarda SkiaSharp kurulum yönergelerini açıklar.
 

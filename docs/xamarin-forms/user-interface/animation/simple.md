@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: d1d91804c11d2e944bb618fadb3d659b512c5905
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb7ca216978e4c890349a44b07d5a383e9ca2384
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="simple-animations"></a>Basit animasyonları
 
@@ -130,7 +130,7 @@ Aşağıdaki ekran görüntüleri, her bir platform üzerinde devam eden çeviri
 ![](simple-images/translateto.png "Çeviri animasyon")
 
 > [!NOTE]
-> **Not**: öğenin başlangıçta ekranı düzenlendiği ve ekrana çevrilmiş, çeviri sonra ekranın düzeni kalır öğesi giriş ve kullanıcı ile etkileşime giremezler. Bu nedenle, bir görünüm içindeki son konumunu düzenleneceğini ve sonra gerçekleştirilen çevirileri gerekli önerilir.
+> Öğenin başlangıçta ekranı düzenlendiği ve ekrana çevrilen çeviri sonra öğenin giriş düzenini ekran devre dışı kalır ve kullanıcı ile etkileşime giremezler. Bu nedenle, bir görünüm içindeki son konumunu düzenleneceğini ve sonra gerçekleştirilen çevirileri gerekli önerilir.
 
 ### <a name="fading"></a>Soluklaşan
 
@@ -228,6 +228,6 @@ Bu makalede oluşturma ve kullanma animasyonları iptal etme gösterilen [ `View
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Zaman uyumsuz desteğine genel bakış](~/cross-platform/platform/async.md)
+- [Zaman Uyumsuz Desteğe Genel Bakış](~/cross-platform/platform/async.md)
 - [Temel animasyon (örnek)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/basic/)
 - [ViewExtensions](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/)

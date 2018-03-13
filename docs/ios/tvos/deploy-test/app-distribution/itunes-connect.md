@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5db53bef0f62937f7be0a5e5fb6f64f1bf3ca007
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b6fad9eadbff272f86f9e426e3f6eb5d48847127
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>İTunes bağlan, tvOS uygulama yapılandırma
 
@@ -39,11 +39,11 @@ Ayrıca isteğe bağlı olarak, gerektirebilir:
 
 Tüm tamamlanan yukarıdaki adımları, açın, uygulamanızın iTunes Connect kaydı ve sol kenar çubuğu'nu kullanarak tvOS desteği eklemek için seçin:
 
-[ ![](itunes-connect-images/connect01.png "Sol Kenar Çubuğu'nu kullanarak tvOS desteği ekleme")](itunes-connect-images/connect01.png)
+[![](itunes-connect-images/connect01.png "Sol Kenar Çubuğu'nu kullanarak tvOS desteği ekleme")](itunes-connect-images/connect01.png#lightbox)
 
 TvOS belirli bilgiler ekranlar sonra verilen iTunes Connect kaydı için kullanılabilir:
 
-[ ![](itunes-connect-images/connect02.png "TvOS belirli bilgileri ekranı")](itunes-connect-images/connect02.png)
+[![](itunes-connect-images/connect02.png "TvOS belirli bilgileri ekranı")](itunes-connect-images/connect02.png#lightbox)
 
 <a name="tvOS-Version-Information" />
 
@@ -51,7 +51,7 @@ TvOS belirli bilgiler ekranlar sonra verilen iTunes Connect kaydı için kullan�
 
 Sol Kenar Çubuğu'ndan seçin **gönderme 1.0 hazırlanma** tvOS uygulama bölümünün altında:
 
-[ ![](itunes-connect-images/connect03.png "tvOS sürüm bilgileri")](itunes-connect-images/connect03.png)
+[![](itunes-connect-images/connect03.png "tvOS sürüm bilgileri")](itunes-connect-images/connect03.png#lightbox)
 
 Bu ekranda aşağıdaki bilgileri sağlayın:
 
@@ -63,7 +63,7 @@ Bu ekranda aşağıdaki bilgileri sağlayın:
 
 Gerekli bilgileri girdikten sonra tıklatın **kaydetmek** yaptığınız değişiklikleri kaydetmek için ekranın sağ üst köşesinde düğmesini:
 
-[ ![](itunes-connect-images/connect04.png "tvOS sürüm bilgileri gönderme için hazır")](itunes-connect-images/connect04.png)
+[![](itunes-connect-images/connect04.png "tvOS sürüm bilgileri gönderme için hazır")](itunes-connect-images/connect04.png#lightbox)
 
 <a name="Submitting-for-Review" />
 
@@ -71,7 +71,7 @@ Gerekli bilgileri girdikten sonra tıklatın **kaydetmek** yaptığınız deği�
 
 Apple TV App Store gözden geçirme için Xamarin.tvOS uygulamanıza göndermek son hazır olduğunuzda, uygulamanın iTunes Connect kaydı dönün ve tıklatın **göndermek için gözden geçirme** ekranın üst sağ alt köşesindeki düğmesini:
 
-[ ![](itunes-connect-images/connect05.png "Gözden geçirme için Gönder")](itunes-connect-images/connect05.png)
+[![](itunes-connect-images/connect05.png "Gözden geçirme için Gönder")](itunes-connect-images/connect05.png#lightbox)
 
 <a name="Summary" />
 
@@ -83,7 +83,7 @@ Bu makalede Apple TV uygulama mağazası tvOS uygulama yayımlamayı iTunes Bağ
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 5bd19e04934f6b86143c93c759c0c2ac76956a7e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5b16fe1d6dab776af31e0aff97a00065517550ec
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="case-study-tasky"></a>Örnek olay incelemesi: Tasky
 
@@ -20,39 +20,15 @@ _Bu belgede, platformlar arası uygulamalar oluşturma ilkeleri Tasky taşınabi
 
 *Tasky* *taşınabilir* basit bir Yapılacaklar listesi uygulamasıdır. Bu belgenin nasıl tasarlandığı ve, yönergeleri yerleşik anlatılmaktadır [platformlar arası uygulamalar oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) belge. Tartışma aşağıdaki alanları kapsamaktadır:
 
+<a name="Design_Process" />
 
-### <a name="design"></a>Tasarlama
-
-Bu bölümde gereksinimleri oluşturma, ekran alıştırmalar oluşturma ve kod anahtar özelliklerini tanımlayan gibi yeni bir platformlar arası mobil uygulama projesi başlatmak için genel bir yaklaşım açıklanmaktadır.
-
- <a name="Common_Code" />
-
-
-### <a name="common-code"></a>Ortak kodun
-
-Çapraz platform nasıl açıklar veritabanı ve iş katmanı yapılandırılmıştır. A `TaskItemManager` sınıfı 'UI katmanı tarafından erişilen basit bir API' sağlamak için yazılır. Ortak kodun uygulama ayrıntılarını tarafından kapsüllenir `TaskItemManager` ve `TaskItem` döndürdüğü sınıfları. Her platform ortak koddan erişen bir **taşınabilir sınıf Library(PCL)**
-
- <a name="Platform-Specific_Applications" />
-
-
-### <a name="platform-specific-applications"></a>Platforma özel uygulamalar
-
-İOS, Android ve Windows Phone tasky çalışır. Her bir platforma özgü uygulama bir yerel kullanıcı aşağıdakileri yapmak için arabirimi uygular:
-
-1.  Görev listesini görüntüle
-2.  Oluşturma, düzenleme, kaydetme ve görevleri silme.
-
- <a name="Design_Process" />
-
-
-# <a name="design-process"></a>Tasarım işlemi
+## <a name="design-process"></a>Tasarım işlemi
 
 Oluşturma önerilir bir kodlama başlamadan önce elde etmek istediğiniz için yol haritası. Birden çok yolla sunulan işlevselliği oluşturmakta olduğunuz nerede platformlar arası geliştirme için özellikle geçerlidir. Ne kaydeder zaman ve çaba daha sonra geliştirme döngüsü oluşturmakta bir Temizle fikir başlayarak.
 
  <a name="Requirements" />
 
-
-## <a name="requirements"></a>Gereksinimler
+### <a name="requirements"></a>Gereksinimler
 
 Bir uygulama tasarlamanın ilk adımı, istenen özelliklerini belirlemektir. Bu üst düzey hedefleri olabilir veya ayrıntılı kullanım örnekleri. Tasky basit işlevsel gereksinimlere sahiptir:
 
@@ -60,23 +36,20 @@ Bir uygulama tasarlamanın ilk adımı, istenen özelliklerini belirlemektir. Bu
  -  Ekleme, düzenleme ve görevleri silme
  -  Bir görevin durumunu 'Tamamlandı' olarak ayarlayın
 
-
 Platforma özgü özellikleri kullanımınız göz önünde bulundurmalısınız.  Tasky iOS bölge sınırlaması ya da Windows Phone Canlı döşeme yararlanabilir mi? İlk sürümünde platforma özgü özellikleri kullanmayan olsa bile, iş ve veri katmanlarını uyum sağlayabileceğinden emin olmak şimdi planlamanız gerekir.
 
  <a name="User_Interface_Design" />
 
-
-## <a name="user-interface-design"></a>Kullanıcı arabirimi tasarımı
+### <a name="user-interface-design"></a>Kullanıcı arabirimi tasarımı
 
 Hedef platformlar genelinde uygulanabileceği bir üst düzey tasarımı başlayın. Not platform belirli UI kısıtlamalara ilgilenebilmek. Örneğin, bir `TabBarController` Windows Phone eşdeğer dört adede kadar görüntüleyebilir ancak iOS beşten fazla düğmeleri görüntüleyebilirsiniz.
 Tercih ettiğiniz (kağıt çalışır) aracını kullanarak ekran akış çizin.
 
- [ ![](case-study-tasky-images/taskydesign.png "Seçim kağıt works aracını kullanarak ekran akış çizme")](case-study-tasky-images/taskydesign.png)
+ [![](case-study-tasky-images/taskydesign.png "Seçim kağıt works aracını kullanarak ekran akış çizme")](case-study-tasky-images/taskydesign.png#lightbox)
 
  <a name="Data_Model" />
 
-
-## <a name="data-model"></a>Veri modeli
+### <a name="data-model"></a>Veri modeli
 
 Hangi verilerin depolanması gereken bilerek kullanmak için hangi Kalıcılık mekanizması belirlemenize yardımcı olacaktır. Bkz: [platformlar arası veri erişimi](~/cross-platform/app-fundamentals/index.md) aralarında karar vermeyle ilgili Yardım ve kullanılabilir depolama alanı mekanizmaları hakkında bilgi için. Bu proje için biz SQLite.NET kullanırsınız.
 
@@ -86,11 +59,9 @@ Her 'TaskItem' için üç özelliklerini depolamak Tasky gerekir:
  -  **Notlar** – dize
  -  **Bitti** – Boole
 
-
  <a name="Core_Functionality" />
 
-
-## <a name="core-functionality"></a>Çekirdek İşlevsellik
+### <a name="core-functionality"></a>Çekirdek İşlevsellik
 
 Kullanıcı arabirimi gereksinimlerini karşılamak üzere kullanmak için gereken API göz önünde bulundurun. Yapılacaklar listesi aşağıdaki işlevleri gerektirir:
 
@@ -100,33 +71,28 @@ Kullanıcı arabirimi gereksinimlerini karşılamak üzere kullanmak için gerek
  -  **Bir görevi silmek** – bir görev silindiğinde
  -  **Boş görev oluşturma** – yeni bir görev oluşturulduğunda
 
-
 Kodu yeniden elde etmek için bu API bir kez de uygulanmalıdır *taşınabilir sınıf kitaplığı*.
 
  <a name="Implementation" />
 
-
-## <a name="implementation"></a>Uygulama
+### <a name="implementation"></a>Uygulama
 
 Uygulama tasarımı anlaşılan sonra platformlar arası uygulaması olarak nasıl uygulanabilir göz önünde bulundurun. Bu uygulamanın mimarisi olur. Yer alan yönergeleri izleyerek [platformlar arası uygulamalar oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) belge, uygulama kodu olmalıdır bozuk aşağıdaki parçalara aşağı:
 
  -   **Ortak kodun** – görev verilerini depolamak için yeniden kullanışlı kodunu içerir; bir Model sınıfı ve bir API kaydetme yönetmek için ortak bir proje ve verileri yükleme.
  -   **Platforma özgü kodu** – ortak kodun 'arka uç' olarak kullanan bir yerel kullanıcı Arabirimi her işletim sistemi için uygulama platforma özgü projeleri.
 
-
- [ ![](case-study-tasky-images/taskypro-architecture.png "Platforma özgü projeleri ortak kodun arka ucu olarak kullanan bir yerel kullanıcı Arabirimi her işletim sistemi için uygulama")](case-study-tasky-images/taskypro-architecture.png)
+ [![](case-study-tasky-images/taskypro-architecture.png "Platforma özgü projeleri ortak kodun arka ucu olarak kullanan bir yerel kullanıcı Arabirimi her işletim sistemi için uygulama")](case-study-tasky-images/taskypro-architecture.png#lightbox)
 
 Bu iki bölümden oluşur aşağıdaki bölümlerde açıklanmıştır.
 
  <a name="Common_(PCL)_Code" />
 
-
-# <a name="common-pcl-code"></a>Ortak (PCL) kod
+## <a name="common-pcl-code"></a>Ortak (PCL) kod
 
 Tasky taşınabilir ortak kodun paylaşmak için taşınabilir sınıf kitaplığı stratejisi kullanır. Bkz: [paylaşımı kodu seçenekleri](~/cross-platform/app-fundamentals/code-sharing.md) belge kod paylaşımını seçenekleri açıklaması.
 
 Veri erişim katmanı ve veritabanı kod sözleşmeleri dahil olmak üzere tüm ortak kodun kitaplığı projesinde yerleştirilir.
-
 
 Tam PCL projeyi aşağıda gösterilmiştir. Tüm taşınabilir Kitaplığı'nda kod hedeflenen her platform ile uyumlu. Her yerel uygulama dağıtıldığında, bu kitaplığın başvurur.
 
@@ -134,14 +100,13 @@ Tam PCL projeyi aşağıda gösterilmiştir. Tüm taşınabilir Kitaplığı'nda
 
 Aşağıdaki sınıf diyagramı katmanı tarafından gruplandırılmış sınıflarını gösterir. `SQLiteConnection` Demirbaş kod Sqlite NET paketten bir sınıftır. Tasky için özel kod sınıfları kalan var. `TaskItemManager` Ve `TaskItem` sınıfları platforma özgü uygulamalarına sunulan API temsil eder.
 
- [ ![](case-study-tasky-images/classdiagram-core.png "Platforma özgü uygulamaları sunulan API TaskItemManager ve TaskItem sınıfları temsil eder")](case-study-tasky-images/classdiagram-core.png)
+ [![](case-study-tasky-images/classdiagram-core.png "Platforma özgü uygulamaları sunulan API TaskItemManager ve TaskItem sınıfları temsil eder")](case-study-tasky-images/classdiagram-core.png#lightbox)
 
 Ayrı katmanlara ad alanlarını kullanma her katman arasında başvurular yönetmenize yardımcı olur. Platforma özgü projeleri yalnızca eklemeniz bir `using` iş katmanı bildirimi. Veri katmanı ve veri erişim katmanı tarafından sunulan API yalıtılan `TaskItemManager` iş katmanı içinde.
 
  <a name="References" />
 
-
-## <a name="references"></a>Referanslar
+### <a name="references"></a>Referanslar
 
 Taşınabilir sınıf kitaplıkları her platform ve çerçeve özellikleri için destek değişen düzeylerine sahip birden çok platform genelinde kullanılabilir olması gerekir. Bu nedenle üzerinde paketleri ve framework kitaplıkları kullanılabilir sınırlamalar vardır. Örneğin, Xamarin.iOS c# desteklemez `dynamic` anahtar sözcüğü, dolayısıyla bu tür kodu Android üzerinde çalışır halde taşınabilir sınıf kitaplığı dinamik koduna bağlıdır herhangi bir paket kullanamaz. Mac için Visual Studio uyumsuz paket ve başvuruları ekleme engeller, ancak sınırlamaları beklenmeyen durumları daha sonra önlemek için göz önünde bulundurmanız istersiniz.
 
@@ -149,8 +114,7 @@ Not: Projelerinizi kullanmadığınız framework kitaplıkları başvuru görür
 
  <a name="Data_Layer_(DL)" />
 
-
-## <a name="data-layer-dl"></a>Veri katmanı (DT)
+### <a name="data-layer-dl"></a>Veri katmanı (DT)
 
 Veri katmanı için bir veritabanı, düz dosyalar veya başka bir mekanizma olup olmadığını verilerin fiziksel depolama alanı – yapar kodunu içerir. Tasky veri katmanı iki bölümden oluşur: SQLite NET kitaplığı ve yukarı kablo eklenen özel kod.
 
@@ -160,15 +124,13 @@ Nesne İlişkisel eşleme (ORM) veritabanı arabirim sağlayan SQLite NET kodu k
 
  <a name="SQLite_on_WIndows_Phone" />
 
-
-### <a name="sqlite-on-windows-phone"></a>Windows Phone üzerinde SQLite
+#### <a name="sqlite-on-windows-phone"></a>Windows Phone üzerinde SQLite
 
 Windows Phone, iOS ve her ikisi de sevk Android işletim sisteminin bir parçası olarak SQLite ile, uyumlu bir veritabanı altyapısı içermez. Tüm üç platformlarda kod paylaşmak için bir SQLite Windows phone yerel sürümü gereklidir. Bkz: [yerel bir veritabanı ile çalışan](~/xamarin-forms/app-fundamentals/databases.md) Sqlite için Windows Phone projenizi ayarlama hakkında daha fazla bilgi için.
 
  <a name="Using_an_Interface_to_Generalize_Data_Access" />
 
-
-### <a name="using-an-interface-to-generalize-data-access"></a>Veri erişimi genelleştirmek için bir arabirimi kullanma
+#### <a name="using-an-interface-to-generalize-data-access"></a>Veri erişimi genelleştirmek için bir arabirimi kullanma
 
 Veri katmanı bağımlılık alır `BL.Contracts.IBusinessIdentity` böylece birincil anahtar gerektiren soyut veri erişim yöntemleri uygulayabilirsiniz. Arabirimini uygulayan herhangi bir iş katmanı sınıf sonra veri katmanda kalıcı.
 
@@ -203,8 +165,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
  <a name="Locking_to_prevent_Concurrent_Access" />
 
-
-### <a name="locking-to-prevent-concurrent-access"></a>Eşzamanlı erişimi engellemek için kilitleme
+#### <a name="locking-to-prevent-concurrent-access"></a>Eşzamanlı erişimi engellemek için kilitleme
 
 A [kilit](http://msdn.microsoft.com/en-us/library/c5kehkcz(v=vs.100).aspx) içinde uygulanan `TaskItemDatabase` veritabanına eşzamanlı erişimi engellemek için sınıf. Bu farklı iş parçacıklarından eş zamanlı erişim seri hale getirilmiş sağlamaktır (Aksi halde UI bileşeni veritabanı arka plan iş parçacığı, güncelleştiriyor aynı anda okuma girişimi). Kilit nasıl uygulandığını örneği aşağıda gösterilmiştir:
 
@@ -228,15 +189,13 @@ Veri katmanı kodu çoğunu başka projelerde yeniden kullanılabilir. Katmandak
 
  <a name="Data_Access_Layer_(DAL)" />
 
-
-## <a name="data-access-layer-dal"></a>Veri erişim katmanı (DAL)
+### <a name="data-access-layer-dal"></a>Veri erişim katmanı (DAL)
 
 `TaskItemRepository` Sınıfı yalıtır veren kesin türü belirtilmiş bir API ile veri depolama mekanizmasını `TaskItem` oluşturulacak nesneleri silinmiş, alınan ve güncelleştirildi.
 
  <a name="Using_Conditional_Compilation" />
 
-
-### <a name="using-conditional-compilation"></a>Koşullu derleme kullanma
+#### <a name="using-conditional-compilation"></a>Koşullu derleme kullanma
 
 Dosya konumunu ayarlamak için koşullu derleme sınıfını kullanır - bu Platform Geçitler uygulayan bir örneğidir. Her platformda farklı koduna yolunu döndürür özelliği derler. Kod ve platforma özgü derleyici yönergeleri burada gösterilir:
 
@@ -268,15 +227,14 @@ Platforma bağlı olarak, çıktı olur "<app
 path>/Library/TaskDB.db3" iOS, "<app
 path>/Documents/TaskDB.db3" Android veya yalnızca "TaskDB.db3" Windows Phone için.
 
-## <a name="business-layer-bl"></a>İş Katmanı (bl'yi Denetlemeye)
+### <a name="business-layer-bl"></a>İş Katmanı (bl'yi Denetlemeye)
 
 İş katmanı modeli sınıfları ve bunları yönetmek için bir cephesi uygular.
 İçinde Tasky modeldir `TaskItem` sınıfı ve `TaskItemManager` yönetmek için bir API sağlamak için cephesi deseni uygular `TaskItems`.
 
  <a name="Façade" />
 
-
-### <a name="faade"></a>Cephesi
+#### <a name="faade"></a>Cephesi
 
  `TaskItemManager` sarmalar `DAL.TaskItemRepository` Get sağlamak için Kaydet ve Delete UI katmanları ve uygulama tarafından başvurulan yöntemleri.
 
@@ -284,8 +242,7 @@ path>/Documents/TaskDB.db3" Android veya yalnızca "TaskDB.db3" Windows Phone i�
 
  <a name="API_for_Platform-Specific_Code" />
 
-
-## <a name="api-for-platform-specific-code"></a>Platforma özgü kodu için API
+### <a name="api-for-platform-specific-code"></a>Platforma özgü kodu için API
 
 Ortak kodun yazıldıktan sonra toplamak ve tarafından kullanıma sunulan verileri görüntülemek için kullanıcı arabirimi oluşturulmalıdır. `TaskItemManager` Sınıfı erişmek için uygulama kodu için basit bir API sağlamak için cephesi deseni uygular.
 
@@ -297,8 +254,7 @@ Kalan bölümler Tasky UI platforma özgü uygulama ayrıntıları ele almaktad�
 
  <a name="iOS_App" />
 
-
-# <a name="ios-app"></a>iOS App
+## <a name="ios-app"></a>iOS App
 
 Sınıfları Tasky uygulama depolama ve verileri almak için ortak PCL project kullanarak iOS uygulamak için gereken sayıda vardır. Tam iOS Xamarin.iOS projesi aşağıda gösterilmiştir:
 
@@ -306,12 +262,11 @@ Sınıfları Tasky uygulama depolama ve verileri almak için ortak PCL project k
 
 Sınıfları katmanlara gruplandırılmış Bu diyagramda gösterilmektedir.
 
- [ ![](case-study-tasky-images/classdiagram-android.png "Sınıfları katmanlara gruplandırılmış Bu diyagramda gösterilmektedir")](case-study-tasky-images/classdiagram-android.png)
+ [![](case-study-tasky-images/classdiagram-android.png "Sınıfları katmanlara gruplandırılmış Bu diyagramda gösterilmektedir")](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References" />
 
-
-## <a name="references"></a>Referanslar
+### <a name="references"></a>Referanslar
 
 İOS uygulaması platforma özgü SDK kitaplıkları – ör başvurur. Xamarin.iOS ve MonoTouch.Dialog-1.
 
@@ -324,14 +279,12 @@ Uygulama katmanı ve kullanıcı arabirimi katmanı bu başvurular kullanarak bu
 
  <a name="Application_Layer_(AL)" />
 
-
-## <a name="application-layer-al"></a>Uygulama Katmanı (AL)
+### <a name="application-layer-al"></a>Uygulama Katmanı (AL)
 
 Uygulama Katmanı 'kullanıcı arabirimine PCL tarafından sunulan nesneleri bağlamak için ' gerekli platforma özgü sınıflar içerir. İOS özel uygulama görevleri görüntülemek yardımcı olmak üzere iki sınıf vardır:
 
  -   **EditingSource** – Bu sınıf görevler listesi kullanıcı arabirimine bağlamak için kullanılır. Çünkü `MonoTouch.Dialog` kullanılan manyetik Sil işlevselliğini etkinleştirmek için bu yardımcı uygulamak ihtiyacımız için görev listesi, `UITableView` . İOS özel Proje uyguladığı tek olacak şekilde geçirme silme iOS, ancak Android veya Windows Phone üzerinde yaygındır.
  -   **TaskDialog** – Bu sınıf, tek bir görev için kullanıcı Arabirimi bağlamak için kullanılır. Kullandığı `MonoTouch.Dialog` yansıma 'sarmalamak için ' API `TaskItem` doğru bir şekilde biçimlendirilmesi giriş ekranı izin vermek için doğru özniteliklerini içeren bir sınıf olan nesne.
-
 
 `TaskDialog` Sınıfını kullanan `MonoTouch.Dialog` ekran oluşturmak için öznitelikleri temel sınıf özellikleri. Sınıf şöyle görünür:
 
@@ -364,8 +317,7 @@ Bildirim `OnTap` öznitelikleri gerektiren bir yöntem adı – bu yöntemleri s
 
  <a name="User_Interface_Layer_(UI)" />
 
-
-## <a name="user-interface-layer-ui"></a>Kullanıcı arabirimi Katmanı (UI)
+### <a name="user-interface-layer-ui"></a>Kullanıcı arabirimi Katmanı (UI)
 
 Kullanıcı arabirimi katmanı aşağıdaki sınıflarını oluşur:
 
@@ -373,26 +325,22 @@ Kullanıcı arabirimi katmanı aşağıdaki sınıflarını oluşur:
 2.   **Ekranlar** – alt sınıflarının `UIViewController` her ekran ve davranışını tanımlayın. Ekranlar tie birlikte uygulama katmanı sınıflarla kullanıcı Arabirimi ve ortak API ( `TaskItemManager` ). Bu örnekte, kodda ekranlar oluşturulur ancak bunlar Xcode'nın arabirimi oluşturucu veya film şeridi Tasarımcısı kullanılarak tasarlanmış.
 3.   **Görüntüleri** – görsel öğeleri her uygulamanın önemli bir parçası olan. Tasky, iOS için normal ve Retina çözüm sağlanmalıdır giriş ekranı ve simge görüntülerine sahiptir.
 
-
  <a name="Home_Screen" />
 
-
-### <a name="home-screen"></a>Giriş ekranı
+#### <a name="home-screen"></a>Giriş ekranı
 
 Giriş ekranı bir `MonoTouch.Dialog` ekran SQLite veritabanı görevlerden listesini görüntüler. Öğesinden devralınan `DialogViewController` ve ayarlamak için kod uygulayan `Root` koleksiyonu içerecek şekilde `TaskItem` görüntülenecek nesneleri.
 
- [ ![](case-study-tasky-images/ios-taskylist.png "DialogViewController devralan ve görüntülenecek TaskItem nesneleri koleksiyonu içerecek şekilde kök ayarlamak için kod uygular")](case-study-tasky-images/ios-taskylist.png)
+ [![](case-study-tasky-images/ios-taskylist.png "DialogViewController devralan ve görüntülenecek TaskItem nesneleri koleksiyonu içerecek şekilde kök ayarlamak için kod uygular")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
 Görüntüleme ve görev listesi ile etkileşim ilgili iki ana yöntemler şunlardır:
 
 1.   **PopulateTable** – iş katmanın kullanan `TaskManager.GetTasks` koleksiyonu almak için yöntemini `TaskItem` görüntülenecek nesneleri.
 2.   **Seçili** – bir satır işlemdeki zaman içinde yeni bir ekran görev görüntüler.
 
-
  <a name="Task_Details_Screen" />
 
-
-### <a name="task-details-screen"></a>Görev Ayrıntıları ekranı
+#### <a name="task-details-screen"></a>Görev Ayrıntıları ekranı
 
 Görev Ayrıntıları silinmiş veya düzenlenebilmesi için görevleri izin veren bir giriş ekranı olur.
 
@@ -400,7 +348,7 @@ Tasky kullandığı `MonoTouch.Dialog`'s yansıma ekranı için API böylece yok
 
 Bu ekran görüntüsü gösterilmektedir boş bir ekran gösterir `Entry` filigran metni ayarı özniteliği **adı** ve **notları** alanlar:
 
- [ ![](case-study-tasky-images/ios-taskydetail.png "Bu ekran adı ve Notlar alanları filigran metni ayarlama girdi özniteliğini gösterir boş bir ekran gösterir")](case-study-tasky-images/ios-taskydetail.png)
+ [![](case-study-tasky-images/ios-taskydetail.png "Bu ekran adı ve Notlar alanları filigran metni ayarlama girdi özniteliğini gösterir boş bir ekran gösterir")](case-study-tasky-images/ios-taskydetail.png#lightbox)
 
 İşlevselliğini **görev ayrıntıları** (örneğin, kaydetme veya görevi silme) ekran uygulanan, içinde `HomeScreen` sınıfı bu nerede olduğundan `MonoTouch.Dialog.BindingContext` oluşturulur. Aşağıdaki `HomeScreen` yöntemi, görev ayrıntıları ekran desteklemektedir:
 
@@ -408,11 +356,9 @@ Bu ekran görüntüsü gösterilmektedir boş bir ekran gösterir `Entry` filigr
 2.   **SaveTask** – bu yöntem başvuru `TaskDialog` aracılığıyla sınıfı bir `OnTap` özniteliği. Aldığında çağrılan **kaydetmek** basıldığında ve kullandığı bir `MonoTouch.Dialog.BindingContext` kullanarak değişiklikleri kaydetmeden önce kullanıcının girdiği verileri almak üzere `TaskItemManager` .
 3.   **DeleteTask** – bu yöntem başvuru `TaskDialog` aracılığıyla sınıfı bir `OnTap` özniteliği. Kullandığı `TaskItemManager` birincil anahtarı (ID özelliği) kullanarak verileri silmek için.
 
-
  <a name="Android_App" />
 
-
-# <a name="android-app"></a>Android App
+## <a name="android-app"></a>Android App
 
 Tam Xamarin.Android projesi, aşağıda gösterilen:
 
@@ -420,12 +366,11 @@ Tam Xamarin.Android projesi, aşağıda gösterilen:
 
 Katman tarafından gruplandırılmış sınıflarla sınıf diyagramı:
 
- [ ![](case-study-tasky-images/classdiagram-android.png "Katman tarafından gruplandırılmış sınıflarla sınıf diyagramı")](case-study-tasky-images/classdiagram-android.png)
+ [![](case-study-tasky-images/classdiagram-android.png "Katman tarafından gruplandırılmış sınıflarla sınıf diyagramı")](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References" />
 
-
-## <a name="references"></a>Referanslar
+### <a name="references"></a>Referanslar
 
 Android uygulama projesi, Android SDK erişim sınıfları platforma özgü Xamarin.Android derleme başvurusu olmalıdır.
 
@@ -435,8 +380,7 @@ Bu ayrıca PCL proje (ör. başvurmalıdır TaskyPortableLibrary) ortak veri ve 
 
  <a name="Application_Layer_(AL)" />
 
-
-## <a name="application-layer-al"></a>Uygulama Katmanı (AL)
+### <a name="application-layer-al"></a>Uygulama Katmanı (AL)
 
 İnceledik iOS sürüm benzer daha önce uygulama katmanı Android Sürüm 'kullanıcı arabirimine çekirdek tarafından sunulan nesneleri bağlamak için ' gerekli platforma özgü sınıflar içerir.
 
@@ -444,8 +388,7 @@ Bu ayrıca PCL proje (ör. başvurmalıdır TaskyPortableLibrary) ortak veri ve 
 
  <a name="User_Interface_(UI)" />
 
-
-## <a name="user-interface-ui"></a>Kullanıcı Arabirimi (UI)
+### <a name="user-interface-ui"></a>Kullanıcı Arabirimi (UI)
 
 Android uygulamanızın kullanıcı arabirimi katmanı, kod ve XML Biçimlendirme birleşimidir.
 
@@ -453,45 +396,40 @@ Android uygulamanızın kullanıcı arabirimi katmanı, kod ve XML Biçimlendirm
  -   **Kaynakları/Drawable** – görüntüleri (simgeler) ve özel düğme.
  -   **Ekranlar** – her ekran ve davranışını tanımlamak etkinlik alt sınıflar. Uygulama katmanı sınıflarla kullanıcı Arabirimi ve ortak API birbirine bağlar (`TaskItemManager`).
 
-
  <a name="Home_Screen" />
 
-
-### <a name="home-screen"></a>Giriş ekranı
+#### <a name="home-screen"></a>Giriş ekranı
 
 Bir etkinlik alt giriş ekranı oluşur `HomeScreen` ve `HomeScreen.axml` (düğmesi ve görev listesi konumu) düzeni tanımlayan dosya. Ekran şöyle görünür:
 
- [ ![](case-study-tasky-images/android-taskylist.png "Ekran şöyle")](case-study-tasky-images/android-taskylist.png)
+ [![](case-study-tasky-images/android-taskylist.png "Ekran şöyle")](case-study-tasky-images/android-taskylist.png#lightbox)
 
 Giriş ekranı kod düğmesini tıklatarak ve listedeki öğeleri tıklatarak yanı listede doldurmak için işleyiciler tanımlar `OnResume` yöntemi (olan görev ayrıntıları ekranında yapılan değişiklikleri yansıtır şekilde). Veri, iş katmanın kullanılarak yüklenir `TaskItemManager` ve `TaskListAdapter` uygulama katmanından.
 
  <a name="Task_Details_Screen" />
 
-
-### <a name="task-details-screen"></a>Görev Ayrıntıları ekranı
+#### <a name="task-details-screen"></a>Görev Ayrıntıları ekranı
 
 Oluşan ayrıca görev ayrıntıları ekranına bir `Activity` bir alt kümesi ve bir AXML düzeni dosyası. Düzen giriş denetimlerini konumunu belirler ve C# sınıfı yüklemek ve kaydetmek için davranışını tanımlayan `TaskItem` nesneleri.
 
- [ ![](case-study-tasky-images/android-taskydetail.png "Yük ve TaskItem nesneleri kaydetmek için davranış sınıfı tanımlar")](case-study-tasky-images/android-taskydetail.png)
+ [![](case-study-tasky-images/android-taskydetail.png "Yük ve TaskItem nesneleri kaydetmek için davranış sınıfı tanımlar")](case-study-tasky-images/android-taskydetail.png#lightbox)
 
 Tüm PCL kitaplığı aracılığıyla başvurusudur `TaskItemManager` sınıfı.
 
  <a name="Windows_Phone_App" />
 
-
-# <a name="windows-phone-app"></a>Windows Phone Uygulama
+## <a name="windows-phone-app"></a>Windows Phone Uygulama
 Tam Windows Phone projesini:
 
  ![](case-study-tasky-images/taskywp7-solution.png "Windows Phone Uygulama tam Windows Phone projesini")
 
 Aşağıdaki diyagram katmanlara gruplandırılmış sınıflarını gösterir:
 
- [ ![](case-study-tasky-images/classdiagram-wp7.png "Bu diyagramda katmanlara gruplandırılmış sınıflarını gösterir")](case-study-tasky-images/classdiagram-wp7.png)
+ [![](case-study-tasky-images/classdiagram-wp7.png "Bu diyagramda katmanlara gruplandırılmış sınıflarını gösterir")](case-study-tasky-images/classdiagram-wp7.png#lightbox)
 
  <a name="References" />
 
-
-## <a name="references"></a>Referanslar
+### <a name="references"></a>Referanslar
 
 Platforma özgü proje gerekli platforma özgü kitaplıklar başvurmalıdır (gibi `Microsoft.Phone` ve `System.Windows`) geçerli bir Windows Phone uygulama oluşturmak için.
 
@@ -501,81 +439,70 @@ Bu ayrıca PCL proje (ör. başvurmalıdır `TaskyPortableLibrary`) kullanmaya `
 
  <a name="Application_Layer_(AL)" />
 
-
-## <a name="application-layer-al"></a>Uygulama Katmanı (AL)
+### <a name="application-layer-al"></a>Uygulama Katmanı (AL)
 
 Yeniden, iOS ve Android sürümleriyle gibi uygulama katmanı veri kullanıcı arabirimine bağlamak için Yardım görsel olmayan öğeler oluşur.
 
  <a name="ViewModels" />
 
-
-### <a name="viewmodels"></a>ViewModels
+#### <a name="viewmodels"></a>ViewModels
 
 ViewModels sarmalamak PCL verilerden ( `TaskItemManager`) ve Silverlight/XAML veri bağlama tarafından kullanılabilecek şekilde gösterir. Bu, platforma özgü davranış (platformlar arası uygulamalar belgede açıklandığı gibi) örneğidir.
 
  <a name="User_Interface_(UI)" />
 
-
-## <a name="user-interface-ui"></a>Kullanıcı Arabirimi (UI)
+### <a name="user-interface-ui"></a>Kullanıcı Arabirimi (UI)
 
 XAML biçimlendirme içinde bildirilen ve nesneleri görüntülemek için gereken kod miktarını azaltmak benzersiz bir veri bağlama özelliğine sahiptir:
 
 1.   **Sayfaları** – XAML dosyaları ve bunların arkasındaki koda kullanıcı arabirimi tanımlayın ve ViewModels ve PCL proje verilerini toplamak ve görüntülemek için başvuru.
 2.   **Görüntüleri** – giriş ekranı, arka plan ve simge görüntüleri olan kullanıcı arabirimi önemli bir parçası.
 
-
  <a name="MainPage" />
 
-
-### <a name="mainpage"></a>MainPage
+#### <a name="mainpage"></a>MainPage
 
 MainPage sınıfı kullandığı `TaskListViewModel` XAML'ın veri bağlama özellikleri kullanarak verileri görüntülemek için. Sayfanın `DataContext` zaman uyumsuz olarak doldurulmuş görünüm model olarak ayarlanmış. `{Binding}` XAML sözdiziminde verinin nasıl görüntüleneceğini belirler.
 
  <a name="TaskDetailsPage" />
 
-
-### <a name="taskdetailspage"></a>TaskDetailsPage
+#### <a name="taskdetailspage"></a>TaskDetailsPage
 
 Her görev bağlama tarafından görüntülenen `TaskViewModel` TaskDetailsPage.xaml tanımlanan XAML için. Görev veriler aracılığıyla alınır `TaskItemManager` iş katmanı içinde.
 
  <a name="Results" />
 
-
-# <a name="results"></a>Sonuçları
+## <a name="results"></a>Sonuçları
 
 Sonuçta elde edilen uygulamalar her platformda şöyle:
 
  <a name="iOS" />
 
-
-### <a name="ios"></a>iOS
+#### <a name="ios"></a>iOS
 
 'Add' düğmesi gibi iOS standart kullanıcı arabirimi tasarımı uygulamanın kullandığı gezinti çubuğunda konumlandırılmış ve yerleşik kullanarak **artı (+)** simgesi. Ayrıca varsayılan kullanır `UINavigationController` 'geri' düğmesini davranışı ve tabloda 'manyetik-Sil' destekler.
 
- [ ![](case-study-tasky-images/ios-taskylist.png "Ayrıca varsayılan UINavigationController geri düğmesini davranışı kullanır ve tabloda manyetik delete destekler") ](case-study-tasky-images/ios-taskylist.png) [ ![ ] (case-study-tasky-images/ios-taskydetail.png "UINavigationController varsayılan de kullanır Düğme davranışı yedekleyin ve tabloda manyetik delete destekler")](case-study-tasky-images/ios-taskydetail.png)
+ [![](case-study-tasky-images/ios-taskylist.png "Ayrıca varsayılan UINavigationController geri düğmesini davranışı kullanır ve tabloda manyetik delete destekler") ](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/ios-taskylist.png "UINavigationController varsayılan de kullanır Düğme davranışı yedekleyin ve tabloda manyetik delete destekler")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
  <a name="Android" />
 
-
-### <a name="android"></a>Android
+#### <a name="android"></a>Android
 
 Android uygulaması yerleşik düzeni 'görüntülenen bir onay işareti' gerektiren satırların dahil olmak üzere yerleşik denetimlerini kullanır. Donanım/sistem geri davranışı bir ekran geri düğmesini ek olarak desteklenir.
 
- [ ![](case-study-tasky-images/android-taskylist.png "Bir ekran geri düğmesini yanı sıra donanım/sistem geri davranışı desteklenen") ](case-study-tasky-images/android-taskylist.png) [ ![ ] (case-study-tasky-images/android-taskydetail.png "donanım/sistem geri davranışını ek olarak desteklenen bir ekran Geri düğmesi")](case-study-tasky-images/android-taskydetail.png)
+ [![](case-study-tasky-images/android-taskylist.png "Bir ekran geri düğmesini yanı sıra donanım/sistem geri davranışı desteklenen")](case-study-tasky-images/android-taskylist.png#lightbox)[![](case-study-tasky-images/android-taskylist.png "donanım/sistem geri davranışını ek olarak desteklenen bir ekran Geri düğmesi")](case-study-tasky-images/android-taskylist.png#lightbox)
 
  <a name="Windows_Phone" />
 
-
-### <a name="windows-phone"></a>Windows Phone
+#### <a name="windows-phone"></a>Windows Phone
 
 Windows Phone Uygulama gezinme çubuğu üstünde yerine ekranın altındaki uygulama çubuğunda doldurma standart bir düzen kullanır.
 
- [ ![](case-study-tasky-images/wp-taskylist.png "Gezinme çubuğu üstünde yerine ekranın altındaki uygulama çubuğunda doldurma standart düzeni, Windows Phone Uygulama kullanan") ](case-study-tasky-images/wp-taskylist.png) [ ![ ] (case-study-tasky-images/wp-taskydetail.png "Windows Phone uygulaması standart kullanır Gezinme çubuğu üstünde yerine ekranın altındaki uygulama çubuğunda doldurma düzeni")](case-study-tasky-images/wp-taskydetail.png)
+ [![](case-study-tasky-images/wp-taskylist.png "Gezinme çubuğu üstünde yerine ekranın altındaki uygulama çubuğunda doldurma standart düzeni, Windows Phone Uygulama kullanan") ](case-study-tasky-images/wp-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/wp-taskylist.png "Windows Phone uygulaması standart kullanır Gezinme çubuğu üstünde yerine ekranın altındaki uygulama çubuğunda doldurma düzeni")](case-study-tasky-images/wp-taskylist.png#lightbox)
 
  <a name="Summary" />
 
-
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu belge kodu yeniden kullanma üç mobil platformlarda kolaylaştırmak için basit bir uygulama katmanlı uygulama tasarımı ilkeleri nasıl uygulanmış ayrıntılı bir açıklama sağladı: iOS, Android ve Windows Phone.
 

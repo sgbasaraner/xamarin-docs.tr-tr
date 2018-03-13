@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 4d074dce06d5737bd6589efbc559c611425e5f19
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 18df6082f634d633d3f1ca8ea1e8d3f493532f47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="grid"></a>Kılavuz
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) görünümleri satırlar ve sütunlar halinde düzenleme destekler. Satırları ve sütunları orantılı boyutları veya mutlak boyutları için ayarlanabilir. `Grid` Düzeni geleneksel tabloları ile karıştırılmamalıdır ve tablo verileri sunmak için tasarlanmamıştır. `Grid` Satır, sütun veya hücre biçimlendirme kavramı yoktur. HTML tabloları aksine `Grid` tamamen içerik yerleştirmek için tasarlanmıştır.
 
-[ ![](grid-images/layouts-sml.png "Xamarin.Forms düzenleri")](grid-images/layouts.png "Xamarin.Forms düzenleri")
+[![](grid-images/layouts-sml.png "Xamarin.Forms düzenleri")](grid-images/layouts.png#lightbox "Xamarin.Forms düzenleri")
 
 Bu makalede ele alınacaktır:
 
@@ -54,7 +54,7 @@ Satır ve sütun bilgileri depolanır `Grid`'s `RowDefinitions`  &  `ColumnDefin
 - **Mutlak** &ndash; boyutları ve belirli, sabit yükseklik ve genişlik değerleri içeren sütun. Bir değer olarak belirtilen ve `GridUnitType.Absolute` C# ve olarak `#` XAML'de ile `#` ve istenen değer bırakılıyor.
 
 > [!NOTE]
-> **Not**: sütunların genişliğini değerleri olarak ayarlanan ' *'' Xamarin.Forms varsayılan olarak, hangi sağlar sütun kullanılabilir alanı doldurur.
+> Sütunların genişliğini değerleri olarak ayarlanan ' *'' Xamarin.Forms varsayılan olarak, hangi sağlar sütun kullanılabilir alanı doldurur.
 
 Üç satır ve iki sütun gereken bir uygulamayı göz önünde bulundurun. Alttaki tam olarak uzun 200px olmalı ve en üst satırda iki kez Orta satır olarak yüksekliğinde olması gerekir. Sol sütunda içeriğin sığması için geniş olması ve kalan alanı dolduracak şekilde sağ sütun gerekiyor.
 

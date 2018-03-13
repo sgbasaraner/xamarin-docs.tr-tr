@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 17b9c14579b30ea27d700424c52c94c3b3da9146
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7819201e76e268ea84bf2cc5d49a5a07b20a04e3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="programmatic-layout-constraints"></a>Programsal düzeni kısıtlamaları
 
@@ -69,7 +69,7 @@ OrangeView.HeightAnchor.ConstraintEqualTo (OrangeView.WidthAnchor, 2.0f);
 
 Tipik bir düzen kısıtlaması yalnızca doğrusal bir ifade olarak ifade edilebilir. Aşağıdaki örnek alın:
 
-[ ![](programmatic-layout-constraints-images/graph01.png "Doğrusal bir ifade olarak ifade edilen bir yerleşim kısıtlaması")](programmatic-layout-constraints-images/graph01.png)
+[![](programmatic-layout-constraints-images/graph01.png "Doğrusal bir ifade olarak ifade edilen bir yerleşim kısıtlaması")](programmatic-layout-constraints-images/graph01.png#lightbox)
 
 Hangi düzeni bağlayıcılarını kullanarak C# kod aşağıdaki satırı dönüştürülmesi:
 
@@ -178,7 +178,7 @@ Bu kılavuz, oluşturma ve iOS Tasarımcısı grafik oluşturarak aksine C# Otom
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Film şeritleri giriş](~/ios/user-interface/storyboards/index.md)
+- [Görsel Taslaklara Giriş](~/ios/user-interface/storyboards/index.md)
 - [iOS Designable denetimleri gözden geçirme](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [İOS için Xamarin Tasarımcısı ile otomatik Düzenle](~/ios/user-interface/designer/designer-auto-layout.md#modifying-in-code)
 - [Apple - kısıtlamaları program aracılığıyla oluşturma](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html#//apple_ref/doc/uid/TP40010853-CH16-SW1)

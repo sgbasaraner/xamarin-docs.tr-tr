@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: ad9129e06f43eea69518c4d876edc7cfd462f4e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ffde89558495c4b9ccb9ec41761b5fc7ca53db38
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="localization"></a>Yerelleştirme
 
@@ -71,7 +71,7 @@ Temel kaynaklar (RESX) dosyası (örnekler İngilizce varsayılan dildir varsay�
 
 Gibi anlamlı bir ad seçin **AppResources** ve basın **Tamam**.
 
-[ ![Kaynak dosyası ekleme](localization-images/resx-new-file-sml.png "yeni dosya iletişim kutusu")](localization-images/resx-new-file.png "yeni dosya iletişim kutusu")
+[![Kaynak dosyası ekleme](localization-images/resx-new-file-sml.png "yeni dosya iletişim kutusu")](localization-images/resx-new-file.png#lightbox "yeni dosya iletişim kutusu")
 
 İki dosya projeye eklenecek:
 
@@ -88,32 +88,32 @@ Varsayılan olarak kesin türü belirtilmiş başvuruları dizelere oluşturuldu
 
 Seçin **AppResources.resx** dosya ve Göster **özellikleri** bu yapı aracı olduğu görmek için paneli yapılandırın. Aşağıda gösterildiği ekran **özel araç: ResXFileCodeGenerator**.
 
-[[ide name="xs]]
 
-[ ![](localization-images/xs-resx-internal-sml.png "AppResources.Resx özellikleri paneli")](localization-images/xs-resx-internal.png)
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[[/ide]]
+[![](localization-images/vs-resx-internal-sml.png "Özellikler penceresi AppResources.Resx için")](localization-images/vs-resx-internal.png#lightbox)
 
-[[ide name="vs]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[ ![](localization-images/vs-resx-internal-sml.png "Özellikler penceresi AppResources.Resx için")](localization-images/vs-resx-internal.png)
+[![](localization-images/xs-resx-internal-sml.png "AppResources.Resx özellikleri paneli")](localization-images/xs-resx-internal.png#lightbox)
 
-[[/ide]]
+-----
 
 Kesin türü belirtilmiş dize özellikleri yapmak için `public`, yapılandırma için el ile değiştirmeniz gerekir **özel araç: PublicResXFileCodeGenerator**, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
 
-[[ide name="xs]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](localization-images/xs-resx-public-sml.png "AppResources.Resx özellikleri paneli")](localization-images/xs-resx-public.png)
+[![](localization-images/vs-resx-public-sml.png "Özellikler penceresi AppResources.Resx için")](localization-images/vs-resx-public.png#lightbox)
 
-[[/ide]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[[ide name="vs]]
+[![](localization-images/xs-resx-internal-sml.png "AppResources.Resx özellikleri paneli")](localization-images/xs-resx-internal.png#lightbox)
 
-[ ![](localization-images/vs-resx-public-sml.png "Özellikler penceresi AppResources.Resx için")](localization-images/vs-resx-public.png)
 
-[[/ide]]
+[![](localization-images/xs-resx-public-sml.png "AppResources.Resx özellikleri paneli")](localization-images/xs-resx-public.png#lightbox)
+
+-----
 
 Bu değişiklik isteğe bağlıdır ve yalnızca yerelleştirilmiş dizeleri (örneğin, RESX dosyaları farklı bir derlemede kodunuzu yerleştirdiğiniz varsa) farklı derlemeler başvuru isteyip istemediğinizi gerekli. Bu konu için örnek dizeleri bırakır `internal` bunlar burada kullanılır Xamarin.Forms PCL derlemede tanımlandığından.
 
@@ -605,13 +605,13 @@ Bu ayarları işlenmediyse yerelleştirilmiş RESX kaynaklar yüklenmeyecek.
 
 Windows Phone projeye sağ tıklayıp **özellikleri**. İçinde **uygulama** sekmesinde onay **desteklenen kültürler** uygulamasının desteklediği:
 
-[ ![](localization-images/winphone-projectproperties-sml.png "Proje Özellikleri - desteklenen kültürler")](localization-images/winphone-projectproperties.png "özellikleri - desteklenen kültürler proje")
+[![](localization-images/winphone-projectproperties-sml.png "Proje Özellikleri - desteklenen kültürler")](localization-images/winphone-projectproperties.png#lightbox "özellikleri - desteklenen kültürler proje")
 
 ##### <a name="wmappmanifestxml"></a>WMAppManifest.xml
 
 Windows Phone proje özellikleri düğümünü genişletin ve çift **WMAppManifest.xml** dosya. Tıklayın **paketleme** sekmesinde ve uygulama tarafından desteklenen tüm dillerde değer.
 
-[ ![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml - desteklenen diller")](localization-images/winphone-wmappmanifest.png "WMAppManifest.xml - desteklenen diller")
+[![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml - desteklenen diller")](localization-images/winphone-wmappmanifest.png#lightbox "WMAppManifest.xml - desteklenen diller")
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 

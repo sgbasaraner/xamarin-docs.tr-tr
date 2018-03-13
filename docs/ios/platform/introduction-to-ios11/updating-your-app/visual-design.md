@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2904a7da73f5bf6e8960f65239d1f8dc52ab1aba
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d66d8cd722aa9a7b6fe27db3f6128ee24309a1de
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-design-updates"></a>Görsel tasarım güncelleştirmeleri
 
@@ -51,7 +51,7 @@ iOS 11 doğrudan Gezinti çubuğu arama denetleyici ekleme yapılan. Bir arama d
 NavigationItem.SearchController = searchController;
 ```
 
-[![Arama çubuğunu büyük Gezinti başlık](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png)
+[![Arama çubuğunu büyük Gezinti başlık](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
 
 Uygulamanızı işlevselliğini, bağlı olarak olabilir veya bir kullanıcı listesini kaydırdığında gizlemek için arama çubuğunu istemeyebilirsiniz. Bu kullanarak ayarlamanız `HidesSearchBarWhenScrolling` özelliği.
 
@@ -75,7 +75,7 @@ iOS 7 [sunulan](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen) `topL
 
 Güvenli alan uygulamanız ve kısıtlamaları Süper görüntüsü ve bir görünüm arasında nasıl eklenir görünür alan düşünmek yeni yoludur. Örneğin, aşağıdaki resimde göz önünde bulundurun:
 
-[![Güvenli alan vs üst ve alt düzen kılavuzu](visual-design-images/image10-sml.png)](visual-design-images/image10.png)
+[![Güvenli alan vs üst ve alt düzen kılavuzu](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
 Bir görünüm eklendi ve yukarıdaki yeşil alanında görünür olmasını istiyorsanız, daha önce kendisine sınırlamak _alt_ , `TopLayoutGuide` ve _üst_ , `BottomLayoutGuide`. İOS 11'de, bunun yerine kendisine sınırlamak _üst_ ve _alt_ güvenli alanının. Bir örnek aşağıda verilmiştir:
 

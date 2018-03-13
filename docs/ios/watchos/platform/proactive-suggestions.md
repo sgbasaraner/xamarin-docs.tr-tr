@@ -3,16 +3,16 @@ title: "Öngörülü önerileri"
 description: "Bu makalede öngörülü önerileri watchOS 3 uygulama sürücü katılım için proaktif olarak yararlı bilgiler kullanıcıya otomatik olarak sunmak üzere sistem vererek nasıl kullanılacağı gösterilmektedir."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ca2476eef120c7d86b939934ec4b286e871d6a78
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f9711cc39662a7e77d926551a0d2b49363d8ec4d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="proactive-suggestions"></a>Öngörülü önerileri
 
@@ -61,7 +61,7 @@ Bu özelliklerin tümü, ortak bir şey vardır, tüm kullandıkları `NSUserAct
 
 Yukarıda belirtildiği gibi `NSUserActivity` sistemi kullanıcı şu anda çalıştığını ile ekranda hangi bilgilerin anlamanıza yardımcı olur. `NSUserActivity` Hafif durumu, kullanıcının etkinliğini üzerinden uygulama gittikleri olarak yakalamak için bir mekanizma önbelleğe alma. Örneğin, Restoran uygulamaya aranıyor:
 
-[ ![](proactive-suggestions-images/activity02.png "Restoran uygulama")](proactive-suggestions-images/activity02.png)
+[![](proactive-suggestions-images/activity02.png "Restoran uygulama")](proactive-suggestions-images/activity02.png#lightbox)
 
 İle aşağıdaki etkileşimler:
 
@@ -71,7 +71,7 @@ Yukarıda belirtildiği gibi `NSUserActivity` sistemi kullanıcı şu anda çal�
 
 Son ekran daha yakın bir göz atın:
 
-[ ![](proactive-suggestions-images/activity03.png "NSUserActivity yükü")](proactive-suggestions-images/activity03.png)
+[![](proactive-suggestions-images/activity03.png "NSUserActivity yükü")](proactive-suggestions-images/activity03.png#lightbox)
 
 Burada uygulama oluşturma bir `NSUserActivity` ve durumunu daha sonra yeniden bilgilerle doldurulur. Uygulama konumun ad ve adres gibi bazı meta veriler ayrıca eklemiştir. Oluşturulan bu etkinlikle uygulamanın, kullanıcının geçerli durumunu temsil eden bilmeniz iOS sağlar.
 
@@ -155,7 +155,7 @@ Bu etkinlik türü tanımlayıcısının olduğundan emin olun (`com.xamarin.pla
 
 Yukarıda gösterilen kodu en düşük düzeyde ile uygulama üç yeni iOS 10 özelliklerden yararlanmak için sunulmuştur:
 
-- **Handoff**
+- **İletim**
 - **Spotlight aramasının**
 - **Bağlamsal Siri anımsatıcıları**
 
@@ -365,5 +365,5 @@ Bu makalede, öngörülü öneriler ele ve nasıl geliştirici bir Xamarin.iOS u
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [watchOS örnekleri](https://developer.xamarin.com/samples/watchos/all/)
+- [watchOS Örnekleri](https://developer.xamarin.com/samples/watchos/all/)
 - [SiriKit Programlama Kılavuzu](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)

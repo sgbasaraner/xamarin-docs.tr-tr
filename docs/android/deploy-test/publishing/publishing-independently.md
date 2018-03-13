@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: fec57fbeb201d55e887969c5a50baf6a76c10e17
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e09bb1150c3cc53104b41b75a2c3d4d2db4e5ff
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="publishing-independently"></a>Bağımsız olarak yayımlama
 
 Var olan Android Pazar kullanmadan bir uygulamayı yayımlamak mümkündür. Bu bölümde, diğer yayımlama yöntemlerinden ve Xamarin.Android lisans düzeylerini anlatılmıştır.
 
-<a name="Xamarin_Licensing" />
 
 ## <a name="xamarin-licensing"></a>Xamarin lisanslama
 
@@ -31,43 +30,39 @@ Dört lisansları, geliştirme, dağıtımı ve Xamarin.Android uygulamaları da
 
 Ziyaret [visualstudio.com](https://www.visualstudio.com/xamarin/) Community Edition karşıdan yüklemeniz veya Professional ve Enterprise sürümleri satın alma hakkında daha fazla bilgi edinin.
 
-<a name="Allow_Installation_from_Unknown_Sources" />
 
 ## <a name="allow-installation-from-unknown-sources"></a>Bilinmeyen kaynaklardan yüklemesine izin ver
 
 Varsayılan olarak, kullanıcıların karşıdan yükleme ve Google Play dışındaki konumlardan uygulamaları Android engeller. Market dışı kaynaklardan gelen yüklenmesine izin vermek için bir kullanıcı etkinleştirmelisiniz *bilinmeyen kaynaklardan* bir aygıtta bir uygulamanın yüklemeye çalışmadan önce ayarlama. Bu ayarı altında bulunabilir **ayarlar > Güvenlik**, aşağıdaki çizimde gösterildiği gibi:
 
-[ ![Güvenlik ayarları ekranında](publishing-independently-images/settings.png)](publishing-independently-images/settings.png)
+[![Güvenlik ayarları ekranında](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
 
 > [!IMPORTANT]
-> **Not:** bazı ağ sağlayıcıları bu ayardan bağımsız olarak bilinmeyen kaynaklardan gelen uygulamaların yüklenmesini engelleyebilir.
+> Bazı ağ sağlayıcıları bu ayardan bağımsız olarak bilinmeyen kaynaklardan gelen uygulamaların yüklenmesini engelleyebilir.
 
 
-<a name="Publishing_by_E-Mail" />
 
 ## <a name="publishing-by-e-mail"></a>E-posta ile yayımlama
 
 APK yayın bir e-postaya ekleyerek kullanıcılara uygulama dağıtmak için hızlı ve kolay bir yoludur. Android destekli cihazında e-posta kullanıcı oturum açtığında, Android APK eki algılar ve görüntüleme bir **yükleme** düğme aşağıdaki resimde gösterildiği gibi:
 
-[ ![Yükle düğmesi ek için](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png)
+[![Yükle düğmesi ek için](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
 
 E-posta yoluyla dağıtım basit olsa da, korsanlık veya yetkisiz dağıtım karşı birkaç koruma sağlamaz. Ayrıca, burada uygulama alıcılarını birkaç ve uygulamayı dağıtma değil güvenilen durumlar için en iyi ayrılmıştır.
 
-<a name="Publishing_by_Web" />
 
 ## <a name="publishing-by-web"></a>Web yayımlayarak
 
 Bir web sunucusu tarafından bir uygulama dağıtmak mümkündür. Bu, web sunucusuna uygulama karşıya yükleme ve ardından indirme bağlantısının kullanıcılara sağlayarak gerçekleştirilir. Bir Android destekli cihaz uygulamayı yükler ve bağlantı gözatar, yükleme tamamlandıktan sonra bu uygulama otomatik olarak yüklenir.
 
-<a name="Manually_Installing_an_APK" />
 
 ## <a name="manually-installing-an-apk"></a>Bir APK el ile yükleme
 
 El ile yükleme, uygulamaları yüklemek için üçüncü bir seçenektir. Bir uygulamanın el ile yüklenmesini etkilemek için:
 
 1.   **APK kullanıcı için bir kopyasını dağıtmak** &ndash; bu kopyayı bir CD veya USB flash sürücü gibi dağıtılmış.
-1.   **(Kullanıcı) bir Android cihazında uygulamayı yükleyen** &ndash; komut satırı kullanmak *Android hata ayıklama köprüsü* (**adb**) aracı.   **adb** bir öykünücü örneğinde veya bir Android destekli aygıt ile iletişimi sağlayan çok yönlü bir komut satırı aracıdır. Android SDK'sı içerir **adb**; dizinde bulunan  **<sdk>/platform-tools /**.
+1.   **(Kullanıcı) bir Android cihazında uygulamayı yükleyen** &ndash; komut satırı kullanmak *Android hata ayıklama köprüsü* (**adb**) aracı. **adb** bir öykünücü örneğinde veya bir Android destekli aygıt ile iletişimi sağlayan çok yönlü bir komut satırı aracıdır. Android SDK'sı içerir **adb**; dizinde bulunan  **<sdk>/platform-tools /**.
 
 Android cihazı bir USB kablosuyla bilgisayarınıza bağlanması gerekir.
 Windows bilgisayarları tarafından kabul edilecek telefon satıcıdan ek USB sürücüler de gerekebilir **adb**. Yükleme yönergeleri için bu ek USB sürücüleri olduğundan bu belgenin kapsamı dışındadır.

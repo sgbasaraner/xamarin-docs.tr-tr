@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 2d9c2b27de7addc0ed1faeed038db81e2470087f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: da9b9230a466c70cd584a00af848ffe87dacbc5b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="coreimage"></a>CoreImage
 
@@ -214,7 +214,7 @@ foreach (var filter in filters){
 
 Liste kategorileri çıktı simulator'da şöyle – tüm filtreleri ve bunların parametrelerini görmek için listenin kaydırın.
 
- [ ![](introduction-to-coreimage-images/coreimage05.png "Liste kategorileri çıktı simulator'da şöyle")](introduction-to-coreimage-images/coreimage05.png)
+ [![](introduction-to-coreimage-images/coreimage05.png "Liste kategorileri çıktı simulator'da şöyle")](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
 Derleme tarayıcı veya Mac için Visual Studio veya Visual Studio'da otomatik tamamlama kullanılarak Xamarin.iOS.CoreImage API de gözatabilirsiniz Xamarin.iOS, sınıfında olarak listelenen her filtre açık. 
 

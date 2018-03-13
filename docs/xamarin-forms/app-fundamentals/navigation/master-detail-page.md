@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: f7e949902e2f960a9aa68c600514b7fefc8ae30d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9d774870a541630d8c6519f9dfeaeb21cacb98e8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="master-detail-page"></a>Ana-Ayrıntı Sayfası
 
@@ -22,7 +22,7 @@ _Xamarin.Forms MasterDetailPage iki ilgili sayfaları – bilgilerinin öğeleri
 
 Bir ana sayfa, genellikle aşağıdaki ekran görüntülerinde gösterildiği gibi öğeleri listesini görüntüler:
 
-[![](master-detail-page-images/masterpage-components.png "Ana sayfa bileşenleri")](master-detail-page-images/masterpage-components-large.png "ana sayfa bileşenleri")
+[![](master-detail-page-images/masterpage-components.png "Ana sayfa bileşenleri")](master-detail-page-images/masterpage-components-large.png#lightbox "ana sayfa bileşenleri")
 
 Öğe listesinin konumunu her platformda aynıdır ve öğelerden birini seçerek karşılık gelen Ayrıntı Sayfası'na gidin. Ayrıca, ana sayfa etkin Ayrıntı Sayfası'na gitmek için kullanılan bir düğmeyi içeren bir gezinti çubuğu özellikleri:
 

@@ -1,5 +1,5 @@
 ---
-title: "Yerelleştirme"
+title: "Uygulama kullanıcı arabirimi yerelleştirme"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 38b74c9f50ac0b61eecaa952367d41ef6242e8ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 510e8a6b0b2839a1a191538e7fb4e49bd005b450
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="localization"></a>Yerelleştirme
 
@@ -60,7 +60,7 @@ Almanca dizeleri (örneğin) çok uzun olabilir; Bazen İngilizce görece kısa 
 
 İngilizce, Almanca ve Japonca IOS home ekranda birkaç öğe için dize uzunlukları karşılaştırın:
 
-[ ![](localization-images/language-compare-sml.png "Almanca vs Japonca dize uzunluğu")](localization-images/language-compare.png)
+[![](localization-images/language-compare-sml.png "Almanca vs Japonca dize uzunluğu")](localization-images/language-compare.png#lightbox)
 
 Dikkat **ayarları** İngilizce (8 karakter) Almanca çeviri ancak yalnızca 2 karakter uzunlukta Japonca 13 karakter gerektirir.
 
@@ -264,13 +264,16 @@ Veya dize farklı amaç veya anlamı olduğunda yalnızca benzer olduklarından 
 
 Örneğin: bir açık/kapalı anahtar uygulamanızda olması ve anahtar denetim için metin 'on' ve 'off' yerelleştirilmesi gerekiyor düşünün. Siz de bu ayarın değerini başka bir yerde bir metin etiketi uygulamada görüntüler. Farklı dizeleri anahtarın durumu (varsayılan dilinizi aynı dizede olmaları durumunda bile) karşı– anahtar görüntülenmek örneğin kullanmanız gerekir:
 
-• "Açık" – görüntülenen anahtarda • "Kapalı" – anahtarda "Açık" • görüntülenen – "Kapalı" bir etiket • görüntülenen – bir etiketi görüntülenir
+-   "Açık" – anahtarda görüntülenir
+-   "Kapalı" – anahtarda görüntülenir
+-   Bir etiketi içinde "Açık" – görüntülenir
+-   "Kapalı" – bir etiket görüntülenir
 
 Bu, Çevirmen için en büyük esneklik sağlar:
 
-• Tasarım nedeniyle, anahtarın kendisini belki de küçük "açık" ve "kapalı" kullanır ancak görüntü etiketi büyük harf "Açık" ve "Kapalı" kullanır.
-• Bazı dillerde anahtar değeri tam (çevrilmiş) sözcük etiketinde görünebilir ancak kullanıcı arabirimi denetim uyacak şekilde kısaltılmış gerekebilir.
-• Alternatif olarak, bazı dillerde anahtarınızın çizmeye olabilir kullanın "T" ve "O" için kültür bilgisi ancak hala "Açık" veya "Off" okumak için etiket isteyebilirsiniz.
+-   Tasarım nedeniyle, belki de anahtar "açık" ve "kapalı" küçük kullanır ancak görüntü etiketi büyük harf "Açık" ve "Kapalı" kullanır.
+-   Bazı diller anahtar değeri tam (çevrilmiş) sözcük etiketinde görünebilir ancak kullanıcı arabirimi denetim uyacak şekilde kısaltılmış gerekebilir.
+-   Alternatif olarak, bazı dillerde kültür bilgisi için "Yeni" ve "O" kullanır, ancak hala "Açık" veya "Off" okumak için etiket isteyebilirsiniz, anahtar oluşturma olabilir.
 
 <!--
 # Testing
@@ -307,28 +310,24 @@ or
 
 When you are testing on the emulator, you can navigate using the settings app as above, or you can reset the locale using the ADB tool command. Using Command Prompt on Windows or Terminal on OS X, start `adb shell` then send commands to set the emulator’s locale. **adb** can usually be found on the Mac in `/Users/YOURNAME/Library/Developer/Xamarin/android-sdk-mac_x86/platform-tools/adb`
 
-###Spanish (Mexico)
+### Spanish (Mexico)
 setprop persist.sys.language es;setprop persist.sys.country MX;stop;sleep 5;start
 
-###French (France)
+### French (France)
 setprop persist.sys.language fr;setprop persist.sys.country FR;stop;sleep 5;start
 
-###Japanese (Japan)
+### Japanese (Japan)
 setprop persist.sys.language ja;setprop persist.sys.country JP;stop;sleep 5;start
 
-###Portuguese (Brazil)
+### Portuguese (Brazil)
 setprop persist.sys.language pt;setprop persist.sys.country BR;stop;sleep 5;start
 
-###English (USA)
+### English (USA)
 setprop persist.sys.language en;setprop persist.sys.country US;stop;sleep 5;start
 
 **TIP:** the default location of ADB on Mac OS X is
 `/Users/[USERNAME]/Library/Developer/Xamarin/android-sdk-mac_x86/platform-tools/adb shell`
 
-
-## Windows Phone
-
-Refer to Microsoft’s instructions for [How to test region settings for Windows Phone Emulator](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh394014(v=vs.105).aspx).
 -->
 
 
@@ -336,13 +335,16 @@ Refer to Microsoft’s instructions for [How to test region settings for Windows
 
 #### <a name="machine-translation"></a>Makine çevirisi
 
-Bu test için birçok çevrimiçi çeviri araçlardan birini bazı yerelleştirilmiş metin geliştirme sırasında uygulamanızda dahil etmek için kullanılacak yardımcı olabilir.
+Uygulamanıza çeviri özellikleri oluşturmak için göz önünde bulundurun [Azure Çeviricisi metin API](https://azure.microsoft.com/en-au/services/cognitive-services/translator-text-api/).
 
-- [Bing Çevirmen](https://www.bing.com/translator/) <!--Microsoft's Multilingual Application Toolkit helps you automatically translate strings, and is demonstrated with Xamarin.Forms in [this sample]().-->
+Test amacıyla, birçok çevrimiçi çeviri araçlardan birini bazı yerelleştirilmiş metin uygulamanızda geliştirme sırasında dahil etmek için kullanabilirsiniz:
 
-- [Google Çevir](http://translate.google.com)
+- [Bing Çevirmen](https://www.bing.com/translator/)
+- [Google Çevir](http://translate.google.com/)
 
 Diğer birçok kullanılabilir vardır. Makine çevirisi kalitesini genellikle uygulama yayımlamayı iyi kabul değil ilk gözden ve profesyonel çevirmenler veya anadili test olmadan.
+
+ <!--Microsoft's Multilingual Application Toolkit helps you automatically translate strings, and is demonstrated with Xamarin.Forms in [this sample]().-->
 
 #### <a name="professional-translation"></a>Profesyonel çevirisi
 

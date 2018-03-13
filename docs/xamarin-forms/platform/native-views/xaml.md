@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: fc44b2a6080832d11c610661244172ad4a6a0716
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f4345e107a32c3a583c246fe5dbe24590960c870
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-views-in-xaml"></a>XAML'de yerel görünümleri
 
@@ -51,13 +51,13 @@ Aşağıdaki kod örneğinde, her platform için bir Xamarin.Forms için yerel g
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
         xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
-        xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:SimpleColorPicker.Droid;assembly=SimpleColorPicker.Droid;targetPlatform=Android"
         xmlns:win="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255,
             Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
         x:Class="NativeViews.NativeViewDemo">
     <StackLayout Margin="20">
         <ios:UILabel Text="Hello World" TextColor="{x:Static ios:UIColor.Red}" View.HorizontalOptions="Start" />
-        <androidWidget:TextView Text="Hello World" x:Arguments="{x:Static formsandroid:Forms.Context}" />
+        <androidWidget:TextView Text="Hello World" x:Arguments="{x:Static androidLocal:MainActivity.Instance}" />
         <win:TextBlock Text="Hello World" />
     </StackLayout>
 </ContentPage>
@@ -72,7 +72,7 @@ Bağlanabilir özellikleri ve ekli bağlanabilir özellikleri de ayarlanabilir y
 > [!NOTE]
 > Stilleri yerel görünümlerle kullanılamaz stilleri yalnızca tarafından yedeklenen özellikleri hedefleyebilir çünkü dikkate `BindableProperty` nesneleri.
 
-Android pencere öğesi oluşturucular genellikle Android gerektirir `Context` bağımsız değişken olarak ve bu nesne, aracılığıyla kullanılabilir `Xamarin.Forms.Platform.Android.Forms.Context` nesnesi. Bu nedenle, bir Android pencere öğesi XAML'de oluştururken `Context` nesne gerekir genellikle bayraklarıdır pencere öğesi'nin oluşturucuya kullanarak `x:Arguments` ile öznitelik bir `x:Static` biçimlendirme uzantısı. Daha fazla bilgi için bkz: [bağımsız değişkenleri geçirme yerel görünümlere](#passing_arguments).
+Android pencere öğesi oluşturucular genellikle Android gerektirir `Context` nesne bir bağımsız değişken ve bu bir statik özellik aracılığıyla kullanılabilir hale getirilebilir olarak `MainActivity` sınıfı. Bu nedenle, bir Android pencere öğesi XAML'de oluştururken `Context` nesne gerekir genellikle bayraklarıdır pencere öğesi'nin oluşturucuya kullanarak `x:Arguments` ile öznitelik bir `x:Static` biçimlendirme uzantısı. Daha fazla bilgi için bkz: [bağımsız değişkenleri geçirme yerel görünümlere](#passing_arguments).
 
 > [!NOTE]
 > Bu yerel bir görünümle adlandırma Not `x:Name` taşınabilir sınıf kitaplığı (PCL) proje veya bir paylaşılan varlık proje (SAP) mümkün değildir. Bunun yapılması bir derleme hatası neden olacak yerel türünde bir değişken oluşturur. Ancak, yerel görünümler içinde sarmalamak `ContentView` örnekleri ve SAP kullanılan koşuluyla arka plan kod dosyasına alınır. Daha fazla bilgi için bkz: [koddan yerel bir görünüme başvuran](#native_view_code).
@@ -90,7 +90,7 @@ Yerel görünümleri özelliklerini veri bağlama de kullanabilirsiniz. Aşağı
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
         xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
-        xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:SimpleColorPicker.Droid;assembly=SimpleColorPicker.Droid;targetPlatform=Android"
         xmlns:win="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255,
             Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
         xmlns:local="clr-namespace:NativeSwitch"
@@ -101,7 +101,7 @@ Yerel görünümleri özelliklerini veri bağlama de kullanabilirsiniz. Aşağı
         <ios:UISwitch On="{Binding Path=IsSwitchOn, Mode=TwoWay, UpdateSourceEventName=ValueChanged}"
             OnTintColor="{x:Static ios:UIColor.Red}"
             ThumbTintColor="{x:Static ios:UIColor.Blue}" />
-        <androidWidget:Switch x:Arguments="{x:Static formsAndroid:Forms.Context}"
+        <androidWidget:Switch x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
             Checked="{Binding Path=IsSwitchOn, Mode=TwoWay, UpdateSourceEventName=CheckedChange}"
             Text="Enable Entry?" />
         <win:ToggleSwitch Header="Enable Entry?"
@@ -135,7 +135,7 @@ Aşağıdaki kod örneği iki tekniği gösterir:
         xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
         xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
         xmlns:androidGraphics="clr-namespace:Android.Graphics;assembly=Mono.Android;targetPlatform=Android"
-        xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:SimpleColorPicker.Droid;assembly=SimpleColorPicker.Droid;targetPlatform=Android"
         xmlns:winControls="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255, Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
         xmlns:winMedia="clr-namespace:Windows.UI.Xaml.Media;assembly=Windows, Version=255.255.255.255, Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
         xmlns:winText="clr-namespace:Windows.UI.Text;assembly=Windows, Version=255.255.255.255, Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
@@ -151,7 +151,7 @@ Aşağıdaki kod örneği iki tekniği gösterir:
                 </ios:UIFont>
             </ios:UILabel.Font>
         </ios:UILabel>
-        <androidWidget:TextView x:Arguments="{x:Static formsAndroid:Forms.Context}"
+        <androidWidget:TextView x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
                     Text="Simple Native Color Picker"
                     TextSize="24"
                     View.HorizontalOptions="Center">
@@ -187,7 +187,7 @@ Aşağıdaki kod örneği iki tekniği gösterir:
 [ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily) Ayarlamak için kullanılan Oluşturucu [ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily) yeni bir özellik `FontFamily` Evrensel Windows Platformu (UWP) üzerinde. `FontFamily` Adı bir alt öğesi yöntem bağımsız değişkeni tarafından belirtilen `x:Arguments` özniteliği.
 
 > [!NOTE]
-> **Not**: bağımsız değişken oluşturucu veya Fabrika yöntemi tarafından gerekli türleri eşleşmelidir.
+> Bağımsız değişkenler Oluşturucusu veya Fabrika yöntemi tarafından gerekli türlerinin eşleşmesi gerekir.
 
 Aşağıdaki ekran görüntüleri yazı tipini farklı yerel görünümleri ayarlamak için fabrika yöntemi ve oluşturucu bağımsız değişkenleri belirtme sonucu göster:
 
@@ -211,7 +211,7 @@ Yerel API, ardından istenen işlemleri gerçekleştirmek için yerel görünüm
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
         xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
-        xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:SimpleColorPicker.Droid;assembly=SimpleColorPicker.Droid;targetPlatform=Android"
         xmlns:winControls="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255,
             Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
         xmlns:local="clr-namespace:NativeViewInsideContentView"
@@ -219,20 +219,19 @@ Yerel API, ardından istenen işlemleri gerçekleştirmek için yerel görünüm
     <StackLayout Margin="20">
         <ContentView x:Name="contentViewTextParent" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
             <ios:UILabel Text="Text in a UILabel" TextColor="{x:Static ios:UIColor.Red}" />
-            <androidWidget:TextView x:Arguments="{x:Static formsAndroid:Forms.Context}"
+            <androidWidget:TextView x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
                 Text="Text in a TextView" />
             <winControls:TextBlock Text="Text in a TextBlock" />
         </ContentView>
         <ContentView x:Name="contentViewButtonParent" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
             <ios:UIButton TouchUpInside="OnButtonTap" View.HorizontalOptions="Center" View.VerticalOptions="Center" />
-            <androidWidget:Button x:Arguments="{x:Static formsAndroid:Forms.Context}"
+            <androidWidget:Button x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
                 Text="Scale and Rotate Text"
                 Click="OnButtonTap" />
             <winControls:Button Content="Scale and Rotate Text" />
         </ContentView>
     </StackLayout>
 </ContentPage>
-
 ```
 
 Yukarıdaki örnekte, yerel her platform için alt görünümlerdir [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) denetimleri ile `x:Name` almak için kullanılan öznitelik değeri `ContentView` arka plan kod:
@@ -297,7 +296,7 @@ Aşağıdaki kod örneğinde, yerel görünümler kullanan bir Xamarin.Forms say
         xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
         xmlns:iosLocal="clr-namespace:SubclassedNativeControls.iOS;assembly=SubclassedNativeControls.iOS;targetPlatform=iOS"
         xmlns:android="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
-        xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:SimpleColorPicker.Droid;assembly=SimpleColorPicker.Droid;targetPlatform=Android"
         xmlns:androidLocal="clr-namespace:SubclassedNativeControls.Droid;assembly=SubclassedNativeControls.Droid;targetPlatform=Android"
         xmlns:winControls="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255,
             Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
@@ -311,7 +310,7 @@ Aşağıdaki kod örneğinde, yerel görünümler kullanan bir Xamarin.Forms say
         </StackLayout>
         <iosLocal:MyUIPickerView ItemsSource="{Binding Fruits}"
             SelectedItem="{Binding SelectedFruit, Mode=TwoWay, UpdateSourceEventName=SelectedItemChanged}" />
-        <androidLocal:MySpinner x:Arguments="{x:Static formsAndroid:Forms.Context}"
+        <androidLocal:MySpinner x:Arguments="{x:Static androidLocal:MainActivity.Instance}"
             ItemsSource="{Binding Fruits}"
             SelectedObject="{Binding SelectedFruit, Mode=TwoWay, UpdateSourceEventName=ItemSelected}" />
         <winControls:ComboBox ItemsSource="{Binding Fruits}"
@@ -493,5 +492,5 @@ Bu makalede Xamarin.Forms XAML dosyaları yerel görünümleri kullanma gösteri
 - [Forms2Native (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Forms2Native/)
 - [NativeViewInsideContentView (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeViewInsideContentView/)
 - [SubclassedNativeControls (sample)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/SubclassedNativeControls/)
-- [Yerel formlar](~/xamarin-forms/platform/native-forms.md)
+- [Yerel Formlar](~/xamarin-forms/platform/native-forms.md)
 - [XAML'de bağımsız değişkenleri geçirme](~/xamarin-forms/xaml/passing-arguments.md)

@@ -3,14 +3,15 @@ title: "Bölüm 5 özeti. Boyutları postalarla"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 4454150b4caad86eb063ab7fcf8a721cbab9b5ec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1df1751c55c6a031bf9f26d774b739f4ca83fa91
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Bölüm 5 özeti. Boyutları postalarla
 
@@ -62,7 +63,7 @@ Hesaplayarak blok belirli dikdörtgenin içindeki metnin sığması olası bir `
 
 [ **EstimatedFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EstimatedFontSize) örneği, bu teknik gösterir. Bu programı önce yazıldı [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) onu kullanması için özelliği kullanılabilir bir [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) ile bir [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) benzetimini yapmak için ayarı bir kenar boşluğu.
 
-[![Tahmini yazı tipi boyutu Üçlü ekran](images/ch05fg07-small.png "metnin sığması için kullanılabilen boyut")](images/ch05fg07-large.png "metnin sığması için kullanılabilen boyut")
+[![Tahmini yazı tipi boyutu Üçlü ekran](images/ch05fg07-small.png "metnin sığması için kullanılabilen boyut")](images/ch05fg07-large.png#lightbox "metnin sığması için kullanılabilen boyut")
 
 ## <a name="a-fit-to-size-clock"></a>Uygun boyutu saati
 

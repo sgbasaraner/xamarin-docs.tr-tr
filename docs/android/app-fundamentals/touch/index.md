@@ -3,16 +3,16 @@ title: Dokunma
 description: "Dokunmatik ekranlar bugünün aygıtların çoğu üzerinde kullanıcıların hızlı ve verimli şekilde doğal ve sezgisel şekilde cihazlarla etkileşime girmesine izin. Bu etkileşimi yalnızca basit dokunma algılama sınırlı değildir - hareketleri de kullanmak da mümkündür. Örneğin, tutarak yakınlaştırma hareketi kullanıcı yakınlaştırmak veya uzaklaştırmak iki parmakları ekran parçası çimdik tarafından bu çok yaygın bir örneği bulunmaktadır. Bu kılavuzda dokunma inceler ve Android hareketleri."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4A17FD28-313F-4AAC-B82B-3847B4D64A88
+ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 8a207b327706bc23d946e5ade0efabd3d321a1d1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 791dd25796e1f9ba4d73b99dea0fd043431f0218
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="touch"></a>Dokunma
 
@@ -32,7 +32,7 @@ Bu kılavuzda her işletim sistemi için benzer bir biçimdedir: ilk olarak, pla
 
 ## <a name="sections"></a>Bölümler
 
--  [Android dokunma](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
+-  [Android’de Dokunma Özelliği](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 -  [İzlenecek yol: Android dokunma kullanma](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 -  [Çok dokunma izleme](touch-tracking.md)
 

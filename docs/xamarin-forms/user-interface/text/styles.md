@@ -3,16 +3,16 @@ title: Stilleri
 description: Xamarin.Forms stili metin
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
+ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 764fb77bedf9e00427348e95b4ecf029ae94741f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6da9b4d36c8caca23328318b4f2bff784038bacd
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="styles"></a>Stilleri
 
@@ -155,6 +155,6 @@ Erişilebilirlik emin olmak için uygulamanızın içinde metin ilgili stilleri 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Bölüm 12 Xamarin.Forms ile mobil uygulamaları oluşturma](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
-- [Stilleri](~/xamarin-forms/user-interface/styles/index.md)
+- [Stiller](~/xamarin-forms/user-interface/styles/index.md)
 - [Metin (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
 - [stili](http://developer.xamarin.comhttps://developer.xamarin.com/api/type/Xamarin.Forms.Style/)

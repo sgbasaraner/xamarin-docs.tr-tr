@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: df1287d2389d7645ee3f17b166af790f79aa70e1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 585d0422b4dc2b35fc8ba50ed82d2d34e53a784e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Ekli özellikler olarak etkisi parametreleri geçirme
 
@@ -29,7 +29,7 @@ _Ekli özellikler çalışma zamanı özelliği değişikliklere etkisi parametr
 Parametreleri ardından uygun denetimi ekli özellikler ve özellik değerleri ekleyerek efekti geçirilebilir. Ayrıca, yeni bir ekli özellik değeri belirterek parametreleri, çalışma zamanında'e değiştirilebilir.
 
 > [!NOTE]
-> **Not**: iliştirilmiş bir özellik olarak sınıfı ve bir noktayla ayrılmış bir özellik adı içeren öznitelikler, ancak diğer nesnelere bağlı ve XAML'de tanınabilir bir sınıftaki tanımlanmış bağlanabilir özelliği özel türüdür. Daha fazla bilgi için bkz: [ekli özellikler](~/xamarin-forms/xaml/attached-properties.md).
+> Ekli özellik bağlanabilir özelliği, ancak diğer nesnelere bağlı ve XAML'de tanınabilir bir sınıftaki bir sınıf ve bir noktayla ayrılmış bir özellik adı içeren öznitelikler tanımlanan özel bir türde değil. Daha fazla bilgi için bkz: [ekli özellikler](~/xamarin-forms/xaml/attached-properties.md).
 
 Örnek uygulamayı gösteren bir `ShadowEffect` tarafından görüntülenen metni gölge ekleyen bir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) denetim. Ayrıca, gölge rengini çalışma zamanında değiştirilebilir. Aşağıdaki diyagram, her proje örnek uygulamasında, aralarındaki ilişkilerin birlikte sorumlulukları gösterir:
 
@@ -434,7 +434,7 @@ Bu makalede, iliştirilmiş bir etkisi ve çalışma zamanında bir parametre de
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Özel oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Özel Oluşturucular](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
 - [Etkisi](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
 - [PlatformEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E/)
 - [RoutingEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/)

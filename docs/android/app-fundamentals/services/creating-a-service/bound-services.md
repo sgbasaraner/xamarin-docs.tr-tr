@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: topgenorth
+ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: a299969e6251bcea59ea2ec52db90d59cf0461ad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 04307eab1bc8dc28fa69315809e254c920fb6d56
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin.Android içinde Hizmetleri bağlı
 
@@ -36,7 +36,7 @@ Bu diyagramda, birbirleriyle nasıl etkinlik, hizmet bağlantı, bağlayıcı ve
 
 Bu kılavuz nasıl genişletileceğini ele alınacaktır `Service` ilişkili hizmet uygulanacak sınıf. Ayrıca uygulama ele alınacaktır `IServiceConnection` ve genişletme `Binder` bir istemci hizmetiyle iletişim kurmasına izin vermek için. Adlı tek bir Xamarin.Android projesi ile bir çözüm içerir, bu kılavuz, örnek bir uygulama eşlik  **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)**  . Bu, bir hizmeti uygulama ve nasıl etkinlik bağlanacağını gösterir çok basit bir uygulamadır. Yalnızca bir yöntemiyle çok basit bir API bağlı hizmeti olan `GetFormattedTimestamp`, kullanıcının hizmeti başlatıldığında bildiren bir dize ve ne kadar süreyle çalıştırıldığını döndürür. Uygulamanın, ayrıca el ile bağlantısını kesmek ve hizmete bağlamak kullanıcı verir.
 
-[![Android phone'da çalışan uygulamasının ekran görüntüsü](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png)
+[![Android phone'da çalışan uygulamasının ekran görüntüsü](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 
 ## <a name="implementing-and-consuming-a-bound-service"></a>Uygulama ve ilişkili hizmet kullanma
 

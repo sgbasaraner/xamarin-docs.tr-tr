@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6b4d63637eae7c1719f3f6e525327d416ddff59d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce5a7976f5bac68ca01b30a8d437aa83b8360580
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-styles"></a>Stilleri giriş
 
@@ -84,7 +84,7 @@ public class NoStylesPageCS : ContentPage
 
 Her [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) örneği tarafından görüntülenen metni görünümünü denetlemek için aynı özellik değerlerini sahip `Label`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
 
-[![](introduction-images/no-styles.png "Etiket görünüm stilleri olmadan")](introduction-images/no-styles-large.png "etiket görünüm stilleri olmadan")
+[![](introduction-images/no-styles.png "Etiket görünüm stilleri olmadan")](introduction-images/no-styles-large.png#lightbox "etiket görünüm stilleri olmadan")
 
 Her denetim görünümünü ayarlama yinelenen olabilir ve hataya. Bunun yerine, bir stil görünümünü tanımlayan ve gerekli denetimleri uygulanan oluşturulabilir.
 
@@ -142,6 +142,6 @@ Xamarin.Forms uygulamalar genellikle özdeş bir görünüme sahip birden çok d
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [stili](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
 - [Setter](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)

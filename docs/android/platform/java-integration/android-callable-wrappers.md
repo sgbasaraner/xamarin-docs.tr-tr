@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: f618f7257ab082a2a5b0aa587b135ad169d15133
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5b74b1486d72176207d3ccd669c85e249d0706b6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-callable-wrappers"></a>Android aranabilir sarmalayıcılar
 
@@ -22,7 +22,6 @@ Yönetilen kod Android çalışma zamanı çağırır her android aranabilir sar
 Android aranabilir sarmalayıcılar tarafından üretilen **monodroid.exe** sırasında program [derleme işlemi](~/android/deploy-test/building-apps/build-process.md): (doğrudan veya dolaylı olarak) devralan tüm türleri için oluşturulan [ Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/). 
 
 
-<a name="ACW_Naming" />
 
 ## <a name="android-callable-wrapper-naming"></a>Android aranabilir sarmalayıcısı adlandırma
 
@@ -74,7 +73,6 @@ Bu özellik ayarı eklendikten sonra `my.ActivityType` harici kod'ndan ve ad tar
 MD5SUM tabanlı ACW adlandırma Xamarin.Android 5. 0'sunulmuştur. Öznitelik adlandırma hakkında daha fazla bilgi için bkz: [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/). 
 
 
-<a name="Implementing_Interfaces" />
 
 ## <a name="implementing-interfaces"></a>Arabirimler uygulama
 
@@ -97,7 +95,6 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 }
 ```
 
-<a name="Implementation_Details" />
 
 ## <a name="implementation-details"></a>Uygulama Ayrıntıları
 

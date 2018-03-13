@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 5fab7579be256e478c69b76b5e41b8c1b0568ba6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: 9bebc33affef4a1a25667039dfcdbe345dbd2cd6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="api-design"></a>API tasarım
 
@@ -25,7 +25,6 @@ Objective-C kodunu ile iletişim kurmak için alt düzey çalışma zamanı bulu
 ## <a name="design-principles"></a>Tasarım ilkeleri
 
 Bu bizim tasarım ilkeleri (bunlar da Xamarin.Mac, Mono bağlamaları Objective-C OS x için geçerli) Xamarin.iOS bağlama için bazıları şunlardır:
-
 
 - Framework tasarım yönergeleri izleyin
 - Alt Objective-C sınıfları geliştiricilerine izin ver:
@@ -78,15 +77,14 @@ Xamarin.iOS oluşturan derlemeler çeşitli içerir *Xamarin.iOS profil*. [Derle
 
 ### <a name="major-namespaces"></a>Birincil ad alanları 
 
- <a name="MonoTouch.ObjCRuntime" />
+<a name="MonoTouch.ObjCRuntime" />
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
 [ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/) ad alanının C# ve Objective-c arasındaki dünyaları birleştirmesi geliştiriciler sağlar
 Cocoa # ve Gtk # deneyimlerden göre özellikle iOS için tasarlanan yeni bir bağlama budur.
 
- <a name="MonoTouch.Foundation" />
-
+<a name="MonoTouch.Foundation" />
 
 #### <a name="foundation"></a>Foundation
 
@@ -100,10 +98,7 @@ Bazı durumlarda Biz bu ad alanı temel alınan Objective-C Foundation türleri 
 
 - Çeşitli Yardımcısı API'leri açığa burada üçüncü taraf Objective-C API'leri, diğer iOS API'leri veya Xamarin.iOS tarafından şu anda bağlı değil API'larını bağlamak geliştiricilere izin vermek için.
 
-
 API bağlama ile ilgili daha fazla ayrıntı için bkz: [Xamarin.iOS bağlama Oluşturucu](~/cross-platform/macios/binding/binding-types-reference.md) bölümü.
-
- <a name="NSObject" />
 
 
 ##### <a name="nsobject"></a>NSObject
@@ -116,7 +111,6 @@ Mono atık toplama, nesnelerin tümü için sağlayacak sırada `Foundation.NSOb
 
 Türünüz sonlandırma gerçekleştirmeniz gerekirse, geçersiz kılma [NSObject.Dispose(bool) yöntemi](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose) Dispose parametresi olan "bool atma", ve ayarlayın, true olarak Dispose yöntemini çünkü çağrıldığından emin anlamına gelir, kullanıcı nesne üzerinde açıkça çağrılan Dispose (). Değeri false ise, bu, (bool atma) Dispose yöntemini sonlandırıcıyı sonlandırıcıyı iş parçacığında çağrıldığından emin anlamına gelir. []()
 
-<a name="Categories" />
 
 ##### <a name="categories"></a>Kategoriler
 
@@ -185,7 +179,6 @@ class Rotation_IOS6 {
 }
 ```
 
-<a name="PreserveAttribute" />
 
 ##### <a name="preserveattribute"></a>PreserveAttribute
 
@@ -197,8 +190,7 @@ Uygulama tarafından statik olarak bağlantılı olmayan her üye tabidir kaldı
 
 Bu öznitelik her üye bir türde veya türü uygulayabilirsiniz. Tüm türü korumak istiyorsanız, söz dizimini kullanabilirsiniz [korumak (AllMembers = true)] türünde.
 
- <a name="MonoTouch.UIKit" />
-
+<a name="MonoTouch.UIKit" />
 
 #### <a name="uikit"></a>Uıkit
 
@@ -206,8 +198,7 @@ Bu öznitelik her üye bir türde veya türü uygulayabilirsiniz. Tüm türü ko
 
 C# temsilciler ortak işlemler için sağlanır. Bkz: [Temsilciler](#Delegates) daha fazla bilgi için bölüm.
 
- <a name="OpenGLES" />
-
+<a name="OpenGLES" />
 
 #### <a name="opengles"></a>OpenGLES
 
@@ -219,8 +210,6 @@ OpenGLES 2.0 işlevselliği belgelenen ES20.GL türü kullanılabilir [burada](h
 
 OpenGLES 3.0 işlevselliği belgelenen ES30.GL türü kullanılabilir [burada](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/) türü.
 
- <a name="Binding_Design" />
-
 
 ### <a name="binding-design"></a>Tasarım bağlama
 
@@ -230,8 +219,6 @@ Yalnızca P/Invoke Windows ve Linux yerel kitaplıkları çağırmak için yarar
 
 Birkaç bölümleri Xamarin.iOS uygulamaları oluşturma, geliştiriciler yardımcı olacak kullanıcıları için gerekli değildir sonraki tartışma nasıl şeyler yapılır ve bunları daha karmaşık uygulamaları oluştururken yardımcı olacak anlayın.
 
-
- <a name="Types" />
 
 
 #### <a name="types"></a>Türler
@@ -254,16 +241,13 @@ UIView [] GetViews ();
 
 Buna ek olarak **Klasik API** gösterme yerine `CGRect`, `CGPoint` ve `CGSize` CoreGraphics API'SİNDEN biz olanlar yerini `System.Drawing` uygulamaları `RectangleF`, `PointF`ve `SizeF` yardımcı olacak şekilde OpenTK kullanan mevcut OpenGL kod geliştiricilerin korumak. Yeni 64 bit kullanırken **Unified API**, CoreGraphics API'nin kullanılması gerekir.
 
- <a name="Inheritance" />
-
+<a name="Inheritance" />
 
 #### <a name="inheritance"></a>Devralma
 
 Xamarin.iOS API tasarım, "temel" C# anahtar sözcüğünü kullanarak temel uygulamayı zincirleme yanı sıra "geçersiz kılma" anahtar sözcüğü türetilmiş bir sınıf kullanarak C#, bir türü genişletmek aynı şekilde yerel Objective-C türleri genişletmek geliştiricilere sağlar.
 
 Tüm Objective-C sistem zaten içinde Xamarin.iOS kitaplıkları Sarmalanan olduğundan bu tasarım geliştiricilerin kendi geliştirme sürecinin bir parçası olarak Objective-C Seçici ile ilgilenen kaçının olanak tanır.
-
- <a name="Types_and_Interface_Builder" />
 
 
 #### <a name="types-and-interface-builder"></a>Türleri ve arabirim Oluşturucusu
@@ -279,8 +263,7 @@ public partial class void MyView : UIView {
 }
 ```
 
-
- <a name="Delegates" />
+<a name="Delegates" />
 
 
 #### <a name="delegates"></a>Temsilciler
@@ -302,15 +285,13 @@ Objective-C sınıflarda bu programlama desenini kullanan sınıflar genellikle 
 
 Xamarin.iOS içinde bu temsilciye bağlamak için üç birbirini dışlayan mekanizmaları sunulur:
 
-1.  [Olayları aracılığıyla](#Events) .
-2.  [Aracılığıyla kesin türü belirtilmiş bir `Delegate`özelliği](#StrongDelegate) .
-3.  [Gevşek aracılığıyla yazılan bir `WeakDelegate`özelliği](#WeakDelegate) .
-
+1.  [Olayları aracılığıyla](#Via_Events).
+2.  [Aracılığıyla kesin türü belirtilmiş bir `Delegate` özelliği](#StrongDelegate)
+3.  [Gevşek aracılığıyla yazılan bir `WeakDelegate` özelliği](#WeakDelegate)
 
 Örneğin, göz önünde bulundurun [UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html) sınıfı. Bunun için gönderir bir [UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html) atandığı örneği [temsilci](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate) özelliği.
 
- <a name="Via_Events" />
-
+<a name="Via_Events" />
 
 ##### <a name="via-events"></a>Üzerinden olayları
 
@@ -320,7 +301,6 @@ Birçok türü için Xamarin.iOS otomatik olarak iletir uygun bir temsilci oluş
 -  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) yöntemi eşleştirilir [UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/) olay.
 -  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) yöntemi eşleştirilir [UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/) olay.
 
-
 Örneğin, bu basit bir program web yüklenirken görüntülediğinizde başlangıç ve bitiş zamanlarını kaydeder:
 
 ```csharp
@@ -329,8 +309,6 @@ var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.LoadStarted += (o, e) => startTime = DateTime.Now;
 web.LoadFinished += (o, e) => endTime = DateTime.Now;
 ```
-
- <a name="Via_Properties" />
 
 
 ##### <a name="via-properties"></a>Özellikleri
@@ -353,6 +331,7 @@ void SetupTextField (UITextField tf)
 
 `UITextField`'S `ShouldReturn` özelliği bu durumda TextField basılan dönüş düğmesi ile bir şeyler olup olmadığını belirler ve bir Boole değeri döndüren bir temsilci bağımsız değişken olarak alır. Bizim yönteminde döndürürüz *true* çağırana, ancak biz de klavye ekranından kaldırmak (textfield çağırdığında böyle `ResignFirstResponder`).
 
+<a name="StrongDelegate"/>
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>Temsilci özelliği aracılığıyla kesin türü belirtilmiş
 
@@ -389,8 +368,9 @@ Bu deseni da örnek durumda UIWebView, bazı denetimler için davranışını de
 
 Desen isteğe bağlı olarak birkaç denetimleri için veri sağlamak için de kullanılır. Örneğin, [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/) denetimi güçlü bir tablo işleme denetimi – ve Görünüm ve içeriği bir örneği tarafından yönlendirilen bir [UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
 
+<a name="WeakDelegate"/>
 
-Gevşek WeakDelegate özelliği aracılığıyla yazılan @###
+### <a name="loosely-typed-via-the-weakdelegate-property"></a>Gevşek WeakDelegate özelliği aracılığıyla yazılan
 
 Kesin türü belirtilmiş özelliği yanı sıra, aynı zamanda farklı şeyler bağlamak Geliştirici verir zayıf bir yazılı temsilci yoktur.
 Kesin türü belirtilmiş her yerde `Delegate` özelliği Xamarin.iOS'ın bağlamada, karşılık gelen gösterilir `WeakDelegate` özelliği de gösterilir.
@@ -423,7 +403,7 @@ web.WeakDelegate = new Notifier ();
 Bu kez Not `WeakDelegate` özelliği atanmış, `Delegate` özellik kullanılmayacak. Ayrıca, [dışarı aktarılacak] istediğiniz devralınan bir taban sınıf içinde yöntemi uygularsanız, genel bir yöntem olmalısınız.
 
 
-## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>C &#35;Objective-C temsilci desen eşleme;
+## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>C Objective-C temsilci desen eşleştirme&#35;
 
 Şuna Objective-C örnekleri gördüğünüzde:
 
@@ -440,7 +420,7 @@ foo.Delegate = new SomethingDelegate ();
 Objective-C eşleme kesin türü belirtilmiş sınıfları sınıfları temsilci sağlanan Xamarin.iOS sunuyoruz. Bunları kullanmak için olmaları sınıflara ve Xamarin.iOS'ın uygulama tarafından tanımlanan yöntemleri geçersiz kılma. Bölüm "modelleri" aşağıdaki nasıl çalıştığını daha fazla bilgi için bkz.
 
 
-##### <a name="mapping-delegates-to-c35"></a>Temsilciler C &#35;eşleme;
+##### <a name="mapping-delegates-to-c35"></a>C eşleme temsilciler&#35;
 
 Uıkit genel iki biçimde Objective-C temsilcileri kullanır.
 
@@ -575,12 +555,12 @@ public class AppController : UIApplicationDelegate {
 Seçici, bağımsız değişken veya C# eşlemeye türlerini bulmak için Objective-C üstbilgi dosyalarına araştırma yapmak için gerek yoktur ve, IntelliSense Visual Studio'dan Mac için güçlü türleriyle birlikte aldığını yararları şunlardır
 
 
-#### <a name="xib-outlets-and-c35"></a>XIB çıkışlar ve C &#35;
+#### <a name="xib-outlets-and-c35"></a>XIB çıkışlar ve C&#35;
 
 > [!IMPORTANT]
 > Bu bölümde, XIB dosyaları kullanırken çıkışlar IDE tümleşme açıklanmaktadır. İOS için Xamarin Tasarımcısı'nı kullanarak, bu tüm bir ad altında girerek değiştirilir **kimliği > adı** aşağıda gösterildiği gibi IDE özellikler bölümünde:
 >
-> [![](images/designeroutlet.png "Bir öğe adı iOS Tasarımcısı girme")](images/designeroutlet.png)
+> [![](images/designeroutlet.png "Bir öğe adı iOS Tasarımcısı girme")](images/designeroutlet.png#lightbox)
 >
 >İOS Tasarımcısı hakkında daha fazla bilgi için lütfen gözden [Tasarımcısı iOS giriş](~/ios/user-interface/designer/introduction.md#how-it-works) belge.
 

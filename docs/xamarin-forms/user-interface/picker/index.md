@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: edc724eb73b314c0accd3e8775b9b26b6eac16d9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc1aaffe4e31b596d57b5de30c87217ffba3772e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="picker"></a>Picker
 
@@ -20,11 +20,11 @@ _Seçici görünüm veri listesinden bir öğe seçmek için bir denetimdir._
 
 A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) öğeleri, kullanıcı seçebileceği kısa listesini görüntüler. Ancak, bir [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) ilk görüntülendiğinde, herhangi bir veri göstermez. Bunun yerine, değerini kendi [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/) özelliği, iOS ve Android platformları yer tutucu olarak gösterilir:
 
-[![](images/picker-initial.png "İlk Seçici görüntü")](images/picker-initial-large.png "ilk Seçici görüntüleme")
+[![](images/picker-initial.png "İlk Seçici görüntü")](images/picker-initial-large.png#lightbox "ilk Seçici görüntüleme")
 
 Zaman [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) kazancı odak, verileri görüntülenir ve kullanıcı bir öğeyi seçebilirsiniz:
 
-[![](images/picker-selection.png "Bir öğeyi seçerek Seçici")](images/picker-selection-large.png "öğeyi seçerek Seçici")
+[![](images/picker-selection.png "Bir öğeyi seçerek Seçici")](images/picker-selection-large.png#lightbox "öğeyi seçerek Seçici")
 
 Seçim seçili öğe olarak görüntülenir [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/):
 
@@ -38,4 +38,4 @@ Doldurmak için iki tekniği vardır bir [ `Picker` ](https://developer.xamarin.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Picker](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)
+- [Seçici](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2017
-ms.openlocfilehash: e9d3e2eecd4c03e7b3046e1ad86dd8a0d70a7f73
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 23a8fcd0633757bfffdb1761c3fc811268341b96
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-row-actions"></a>Satır Eylemler ile çalışma
 
@@ -177,7 +177,7 @@ table.Delegate = tableDelegate;
 
 Yukarıdaki kod çalıştırdığınızda ve kullanıcı swipes sol tablo satırını temel **Hi** yerine düğmesi görüntülenir **silmek** varsayılan olarak görüntülenen düğmesi:
 
-[ ![](row-action-images/action01.png "Yerine Sil düğmesini görüntülenmesini Hi düğmesi")](row-action-images/action01.png)
+[![](row-action-images/action01.png "Yerine Sil düğmesini görüntülenmesini Hi düğmesi")](row-action-images/action01.png#lightbox)
 
 Kullanıcı dokunur varsa **Hi** düğmesini `Hello World!` uygulamayı hata ayıklama modunda çalıştırdığınızda Visual Studio konsolunda Mac veya Visual Studio için yazılır.
 

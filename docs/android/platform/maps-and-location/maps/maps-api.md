@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: eddd723c07919db4749c63c5b4f1d05e9be81022
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 48e8827895001d2b1887816a9368fcc5bbc50bbf
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="maps-api"></a>Haritalar API'si
 
@@ -25,7 +25,6 @@ Maps API eşleme deneyimi üzerinde daha fazla denetim sağlamak istediğiniz du
 Artık kullanım dışı Google haritalar Android API'si v1, Google haritalar Android API v2 parçası olan [Google Play Hizmetleri](http://developer.android.com/google/play-services/index.html).
 Bu nedenle, Google haritalar Android API'si bir Xamarin.Android uygulaması'nda kullanmak da mümkündür önce bazı zorunlu Önkoşullar karşılamak gereklidir.
 
-<a name="Configuring_Maps_API_Prerequisites" />
 
 ## <a name="google-maps-api-prerequisites"></a>Google API Önkoşullar eşlemeleri
 
@@ -37,7 +36,6 @@ Birden çok öğe haritalar API'si kullanmadan önce yapılandırılması gereke
 -  Gerekli izinleri belirtin
 
 
-<a name="Google_APIs_Add-On" />
 
 ### <a name="install-the-google-play-services-sdk"></a>Google Play hizmetlerini SDK'sını yükleyin
 
@@ -53,9 +51,8 @@ Bir Xamarin.Android uygulaması haritalar API'si kullanmadan önce Google Play H
 ![Google Play Hizmetleri ek özellikler Android SDK Yöneticisi'nde altında görünür](maps-api-images/image01.png)
 
 > [!NOTE]
-> **Not:** tüm aygıtlarda APK olduğu olmayabilir lisanslı bir ürün ve Google Play hizmetleri sunar. Yüklenmemişse, Google haritalar cihazda çalışmaz.
+> Google Play hizmetlerini APK tüm aygıtlarda bulunmayabilir lisanslı bir üründür. Yüklenmemişse, Google haritalar cihazda çalışmaz.
 
-<a name="Binding_Google_Play_Services" />
 
 #### <a name="binding-google-play-services"></a>Binding Google Play Services
 
@@ -68,7 +65,6 @@ Google Play Hizmetleri istemci kitaplığı yüklendikten sonra bir Xamarin.Andr
 -  **Google Play Hizmetleri istemci kitaplığı el ile bağlama** -bu daha karmaşık bir yaklaşım ve Xamarin.Android 4.4 veya Xamarin.Android 4.6 Google Play Hizmetleri SDK'sı bağlamak için tek yoludur.
    Google Play Hizmetleri istemci kitaplığı el ile bağlama bu belgenin kapsamı dışında olsa da, bunu yapmak nasıl bir örneği bulunabilir [harita ve konum Demo v3 örnek](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3) github'da.
 
-<a name="Adding_the_Google_Play_Services_Component" />
 
 #### <a name="adding-the-google-play-services-map-package"></a>Google Play Hizmetleri harita paketi ekleme
 
@@ -78,7 +74,7 @@ Google Play Hizmetleri harita paketini eklemek için sağ tıklatın **başvurul
 
 Bu açılır **NuGet Paket Yöneticisi**. Tıklatın **Gözat** ve girin **Xamarin Google Play Hizmetleri haritalar** arama alanında. Seçin **Xamarin.GooglePlayServices.Maps** tıklatıp **yükleme**. (Bu paketi daha önce yüklemiş olduğu tıklatmak **güncelleştirme**.):
 
-[![Seçili Xamarin.GooglePlayServices.Maps Paketle NuGet Paket Yöneticisi](maps-api-images/image03-sml.png)](maps-api-images/image03.png)
+[![Seçili Xamarin.GooglePlayServices.Maps Paketle NuGet Paket Yöneticisi](maps-api-images/image03-sml.png)](maps-api-images/image03.png#lightbox)
 
 Aşağıdaki bağımlılık paketleri yüklenmiş dikkat edin:
 
@@ -87,7 +83,6 @@ Aşağıdaki bağımlılık paketleri yüklenmiş dikkat edin:
 -   **Xamarin.GooglePlayServices.Tasks**
 
 
-<a name="Creating_an_Emulator_with_Google_APIs" />
 
 ### <a name="create-an-emulator-with-google-apis"></a>Bir öykünücü Google API'leri ile oluşturma
 
@@ -96,14 +91,12 @@ Aşağıdaki bağımlılık paketleri yüklenmiş dikkat edin:
 ![Android Emulator Manager API düzeyi 19 için yapılandırılmış bir AVD ile](maps-api-images/image04.png)
 
 
-<a name="apikey" />
 
 ### <a name="obtain-a-google-maps-api-key"></a>Bir Google haritalar API'si anahtarı edinme
 
 Son adım, Google haritalar API'si anahtarı (eski Google haritalar v1'den bir API anahtarı yeniden kullanamazsınız unutmayın) almaktır. Edinme ve API anahtarını Xamarin.Android ile kullanma hakkında daha fazla bilgi için bkz: [bir Google haritalar API'si anahtarı edinme](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
  
 
-<a name="Specify_Permissions" />
 
 ### <a name="specify-the-required-permissions"></a>Gerekli izinleri belirtin
 
@@ -167,7 +160,6 @@ Aşağıdaki kod parçacığında eklenmeli ayarları örneğidir **AndroidManif
 </manifest>
 ```
 
-<a name="The_GoogleMap" />
 
 ## <a name="the-googlemap-class"></a>GoogleMap sınıfı
 
@@ -190,13 +182,12 @@ Aşağıdaki kod parçacığında eklenmeli ayarları örneğidir **AndroidManif
 
 Bu kapsayıcıların kullanıma bir `Map` örneğini döndüren özelliği `GoogleMap`. Tercih için verilmelidir [MapFragment](http://developer.android.com/reference/com/google/android/gms/maps/MapFragment.html) sınıf olarak bir geliştirici el ile uygulamalıdır tutar Demirbaş kod azaltır daha basit bir API.
 
-<a name="Adding_GoogleMap_To_An_Activity" />
 
 ### <a name="adding-a-mapfragment-to-an-activity"></a>Etkinlik için bir MapFragment ekleme
 
 Aşağıdaki ekran görüntüsünde çok basit örneğidir `MapFragment`:
 
-[![Bir eşleme parçası görüntüleyen bir cihazın ekran görüntüsü](maps-api-images/image05-sml.png)](maps-api-images/image05.png)
+[![Bir eşleme parçası görüntüleyen bir cihazın ekran görüntüsü](maps-api-images/image05-sml.png)](maps-api-images/image05.png#lightbox)
 
 Benzer şekilde diğer parça sınıfları, bu eklemek için iki yolu vardır `MapFragment` bir etkinlik için:
 
@@ -255,7 +246,6 @@ Yukarıdaki kod örneğinde, `OnMapReady` geri çağırma başlatır `_map` olu�
 Bu sonucu kullanmak nasıl bir örnek olarak, `OnResume` olduğu olarak adlandırılan, bu olup olmadığını kontrol edebilirsiniz `_map` null olmayan bir değer. Varsa `_map` ayarlanmış bir `GoogleMap` nesnesi `OnResume` yöntemleri işaretleyicileri ekleyin ve bir belirtilen boylam ve enlem kendi kamera taşımak için üzerindeki çağırabilirsiniz. Tam kod örneği için bkz: [SimpleMapDemo](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3/SimpleMapDemo).
 
 
-<a name="Map_Types" />
 
 ### <a name="map-types"></a>Eşlem türleri
 
@@ -274,7 +264,7 @@ Google eşlemeleri API'SİNDEN eşlemeleri beş farklı tür vardır:
 
 Aşağıdaki resimde üç farklı türlerinden eşlemelerinin, soldan sağa (normal, karma, terrain) görebilirsiniz:
 
-[![Üç örnek ekran görüntüleri eşleyin: Normal, karma ve Terrain](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png)
+[![Üç örnek ekran görüntüleri eşleyin: Normal, karma ve Terrain](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
 `GoogleMap.MapType` Özelliği ayarlayın ya da hangi tür eşlemesi görüntülenme şeklini değiştirmek için kullanılır. Aşağıdaki kod parçacığını bir uydu bağlantıları'nı görüntülemek nasıl gösterir.
 
@@ -287,7 +277,6 @@ if (_map != null) {
 }
 ```
 
-<a name="GoogleMap_Properties" />
 
 ### <a name="googlemap-properties"></a>GoogleMap özellikleri
 
@@ -317,7 +306,6 @@ if (_map != null) {
 }
 ```
 
-<a name="Interacting_with_the_Map" />
 
 ## <a name="interacting-with-the-map"></a>Harita ile etkileşim kurma
 
@@ -363,9 +351,8 @@ if (_map != null) {
 
 Önceki kod parçacığında, belirli bir konuma harita üzerinde tarafından temsil edilen bir [LatLng](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/LatLng) sınıfı. Yakınlaştırma düzeyi 18'e ayarlanır. Şifrelemeyle Kuzey saat yönünde pusula ölçüsüdür. Dikey 25 derece açı özelliği görüş açısı denetler ve eğimini belirtir. Aşağıdaki ekran görüntüsü gösterildiği `GoogleMap` önceki kod yürütme sonra:
 
-[![Örnek Google bir Eğimli ile belirtilen bir konuma gösteren eşleme açı görüntüleme](maps-api-images/image06-sml.png)](maps-api-images/image06.png)
+[![Örnek Google bir Eğimli ile belirtilen bir konuma gösteren eşleme açı görüntüleme](maps-api-images/image06-sml.png)](maps-api-images/image06.png#lightbox)
 
-<a name="Adding_Overlays_to_a_Map" />
 
 ### <a name="drawing-on-the-map"></a>Haritada çizme
 
@@ -377,13 +364,11 @@ Android haritalar API'si, aşağıdaki öğeleri bir haritada çizim için API'n
 
 -  **Çizgiler, çokgenler ve daireler** -etkinliklerin Haritası şekilleri ekleme izin ver API'leri bunlar.
 
-<a name="markers" />
 
 #### <a name="markers"></a>İşaretçileri
 
 Maps API sağlayan bir [işaret](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) tüm verileri bir harita üzerinde tek bir yerde hakkında yalıtan sınıfı. Varsayılan olarak Google haritalar tarafından sağlanan standart bir simge kullanırlar. Bir işaretçi görünümünü özelleştirmek ve kullanıcı tıklamalarına yanıt verme için mümkündür.
 
-<a name="AddingAMarker" />
 
 ##### <a name="adding-a-marker"></a>Bir işaretçi ekleme
 
@@ -403,9 +388,8 @@ if (_map != null) {
 
 İşaretin başlığı görüntülenir bir *bilgi penceresi* zaman kullanıcı dokunur üzerinde işaretçisi. Aşağıdaki ekran görüntüsünde, bu işaret nasıl göründüğünü gösterir:
 
-[![Bir işaretçi ve bilgi penceresi Vimy çıkıntı için örnek Google Haritası](maps-api-images/image07-sml.png)](maps-api-images/image07.png)
+[![Bir işaretçi ve bilgi penceresi Vimy çıkıntı için örnek Google Haritası](maps-api-images/image07-sml.png)](maps-api-images/image07.png#lightbox)
 
-<a name="Customizing_A_Marker" />
 
 ##### <a name="customizing-a-marker"></a>Bir işaretçi özelleştirme
 
@@ -437,7 +421,6 @@ if (_map != null)
 }
 ```
 
-<a name="Info_Windows" />
 
 #### <a name="info-windows"></a>Bilgileri Windows
 
@@ -455,13 +438,11 @@ Aşağıdaki resimde bazı özelleştirilmiş bilgileri windows bazı örnekleri
 
 ![Örnek işaret windows Melbourne, simge ve popülasyon dahil için. Pencerenin sağ yuvarlanmış köşeleri.](maps-api-images/marker-infowindows.png)
 
-<a name="Adding_an_overlay" />
 
 #### <a name="ground-overlays"></a>Plan yer paylaşımları
 
 Belirli bir konuma bir harita tanımlayın, işaretçileri aksine bir [GroundOverlay](http://developer.android.com/reference/com/google/android/gms/maps/model/GroundOverlay.html) konumlar veya harita alanı koleksiyonu tanımlamak için kullanılan bir görüntü.
 
-<a name="AddingAGroundOverlay" />
 
 ##### <a name="adding-a-groundoverlay"></a>Bir GroundOverlay ekleme
 
@@ -477,9 +458,8 @@ GroundOverlay myOverlay = _map.AddGroundOverlay(groundOverlayOptions);
 
 Aşağıdaki ekran görüntüsü bu katmana bir haritada gösterir:
 
-[![Bir Kutupsal ayı üzerini kaplamış şekilde görüntüsü örnek Haritası](maps-api-images/image09-sml.png)](maps-api-images/image09.png)
+[![Bir Kutupsal ayı üzerini kaplamış şekilde görüntüsü örnek Haritası](maps-api-images/image09-sml.png)](maps-api-images/image09.png#lightbox)
 
-<a name="Lines_Circles_and_Polygons" />
 
 #### <a name="lines-circles-and-polygons"></a>Çizgiler, daireler ve çokgenler
 
@@ -492,7 +472,6 @@ Bir harita eklenebilir geometrik şekiller üç basit türler şunlardır:
 -  **Daire** -bu bir daire harita üzerinde çizer.
 
 
-<a name="Polylines" />
 
 ##### <a name="polylines"></a>Kullansa
 
@@ -508,7 +487,6 @@ rectOptions.Add(new LatLng(37.35, -122.0)); // close the polyline - this makes a
 myMap.AddPolyline(rectOptions);
 ```
 
-<a name="Polygons" />
 
 ##### <a name="polygons"></a>Çokgenler
 
@@ -527,7 +505,6 @@ rectOptions.Add(new LatLng(37.35, -122.2));
 myMap.AddPolygon(rectOptions);
 ```
 
-<a name="Circles" />
 
 ##### <a name="circles"></a>Daireler
 
@@ -541,7 +518,6 @@ circleOptions.InvokeRadius (1000);
 _map.AddCircle (CircleOptions);
 ```
 
-<a name="RespondingToClicks" />
 
 ## <a name="responding-to-events"></a>Olaylara yanıt verme
 
@@ -555,7 +531,6 @@ Bir kullanıcı bir haritası olabilir etkileşimleri üç tür vardır:
 
 Bu olayların her biri aşağıdaki daha ayrıntılı olarak açıklanmıştır.
 
-<a name="Marker_Click_Events" />
 
 ### <a name="marker-click-events"></a>İşaretçi tıklama olayları
 
@@ -584,7 +559,6 @@ private void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs mark
 }
 ```
 
-<a name="Marker_Drag_Events" />
 
 ### <a name="marker-drag-events"></a>İşaretçi sürükleme olayları
 
@@ -602,7 +576,6 @@ Aşağıdaki listede sürüklenebilir bir işaretçisi gerçekleştirilecektir �
 
 Her biri `EventArgs` adlı tek bir özellik içeren `P0` başvuru diğer bir deyişle `Marker` sürüklenen nesne.
 
-<a name="Info_Window_Click_Events" />
 
 ### <a name="info-window-click-events"></a>Bilgi penceresi tıklama olayları
 

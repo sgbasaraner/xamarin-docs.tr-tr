@@ -7,18 +7,17 @@ ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: c334e78793f90b4f349f87e12e6b0093fe5cacf8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 4f6cfe61b5f91fb6703fdcdd20513ce6bc2dc161
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-android-wear"></a>Android yıpranması giriş
 
 _Harika Android uygulamaları geliştirmek için geldiğinde Google Android takmak başlanmasıyla, artık yalnızca telefonlar ve tabletler kısıtlanır. Android takmak Xamarin.Android'ın desteği C# kodunu bileğinizi üzerinde çalıştırmak mümkün hale getirir! Bu giriş, temel bir bakış Android takmak sağlar, anahtar özelliklerini açıklar ve Android takmak 2.0 kullanılabilir özelliklere genel bakış sunar. Bazı daha popüler Android takmak cihazları listeler ve daha fazla bilgi için Google Android takmak temel bir belge bağlantılar sağlar._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -29,47 +28,40 @@ Android yıpranması first-generation Motorola 360, LG'ın G izlemenize ve Samsu
 Xamarin.Android 5.0 ve sonrasındaki destekler Android takmak bizim Android 4.4W (API 20) aracılığıyla destek ve ek ekler bir NuGet paketi yıpranması özgü UI denetler. Xamarin.Android 5.0 ve sonrasındaki yıpranması uygulamalarınızı paketleme işlevi de içerir. NuGet paketleri, Android takmak bu kılavuzda açıklanan 2.0 için de kullanılabilir.
 
 
-<a name="basics" />
-
 ## <a name="android-wear-basics"></a>Android yıpranması temelleri
 
 Android yıpranması Android el uygulamaları farklı bir kullanıcı arabirimi standardı vardır. İlk wave yıpranması uygulamaların bir yardımcı genişletmek için tasarlanmış bazı şekilde, ancak Android yıpranması 2.0 ile başlayan el uygulamada, yıpranması uygulamalar kullanılan tek başına olabilir. Yıpranması uygulamayı dağıttığınızda, bir yardımcı el uygulaması ile paketlenmiştir. Çoğu takmak için taşınabilir yardımcı uygulama uygulamalar bağımlı, el uygulamalarla iletişim kurmak için bazı yol ihtiyaç duydukları. Aşağıdaki bölümlerde bu kullanım senaryoları açıklar ve gerekli Android takmak özelliklerin ana hatlarını vermektedir. 
 
 
-<a name="scenarios" />
 
 ### <a name="usage-scenarios"></a>Kullanım senaryoları
 
 Android takmak ilk sürümü öncelikle Gelişmiş bildirimleri geçerli el uygulamalarla genişletme ve taşınabilir uygulama wearable uygulama arasında veri eşitlemeye odaklanmıştır. Bu nedenle, bu senaryolar uygulamak oldukça basittir.
 
-<a name="notifications" />
 
 #### <a name="wearable-notifications"></a>Wearable bildirimleri
 
 Android takmak desteklemek için basit bildirimleri el ile wearable cihazı arasında paylaşılan yapısını yararlanmak için yoldur. Destek v4 bildirimi API kullanarak ve `WearableExtender` sınıfı (kullanılabilir [Xamarin Android destek kitaplığı](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)), gelen kutusu stili kartlar gibi platform yerel özelliklerini içine dokunun veya ses giriş. [RecipeAssistant](https://developer.xamarin.com/samples/monodroid/wear/RecipeAssistant/) örnek Android takmak cihazına listesini bildirimler göndermek nasıl gösteren kod örneği sağlar. 
 
 
-<a name="companion" />
 
 #### <a name="companion-applications"></a>Yardımcı uygulamalar
 
 Başka bir strateji wearable cihazda yerel olarak çalışan ve yardımcı el uygulamayla çiftleri tam bir uygulamanın oluşturmaktır. Bu yaklaşımın iyi bir örnektir [test](https://developer.xamarin.com/samples/monodroid/wear/Quiz/) nasıl taşınabilir bir aygıtta çalışan ve test sorularını wearable cihazda soran bir test oluşturulduğunu gösteren örnek uygulama. 
 
 
-<a name="ui" />
 
-### <a name="user-interface"></a>Kullanıcı arabirimi
+### <a name="user-interface"></a>Kullanıcı Arabirimi
 
 Birincil gezinti düzeni yıpranması için dikey olarak düzenlenmiş kartları dizisidir. Bu kartlar her ilişkili aynı satırda çıkışı katmanlı Eylemler sahip. `GridViewPager` Sınıfı bu işlevselliği sağlar; aynı bağdaştırıcısı kavram aynılarını `ListView`. Genellikle ilişkilendirmek `GridViewPager` ile bir `FragmentGridPagerAdaptor` (veya `GridPagerAdaptor`) olanak tanıyan her satır ve sütun hücreler olarak temsil eden bir `Fragment`: 
 
-[ ![Gezinti takmak](intro-to-wear-images/2d-picker-sml.png "takmak gezinme")](intro-to-wear-images/2d-picker.png)
+[![Gezinti takmak](intro-to-wear-images/2d-picker-sml.png "takmak gezinme")](intro-to-wear-images/2d-picker.png#lightbox)
 
 Ayrıca büyük oluşur eylem düğmelerinin kullanımını (olarak Resimli yukarıda) kısa açıklama metnini bunun altındaki bir daire renkli yapar önler.  [GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/) örnek nasıl kullanılacağını gösteren `GridViewPager` ve `GridPagerAdapter` yıpranması uygulama.
 
 Android takmak 2.0 yıpranması kullanıcı arabirimine bir gezinti bölümü, bir eylem bölümü ve satır içi eylem düğmeleri ekler. Android Android takmak 2.0 kullanıcı arabirimi öğeleri hakkında daha fazla bilgi için bkz: [anatomisi](https://www.google.com/design/spec-wear/system-overview/anatomy.html) konu. 
 
 
-<a name="comm" />
 
 ### <a name="communications"></a>İletişim
 
@@ -86,7 +78,6 @@ Bu hizmet, Android takmak tarafından otomatik olarak oluşturulacak.
 [FindMyPhone](https://developer.xamarin.com/samples/monodroid/wear/FindMyPhoneSample/) örnek gösterilmektedir nasıl uygulanacağını bir `WearableListenerService`.
 
 
-<a name="deploy" />
 
 ### <a name="deployment"></a>Dağıtım
 
@@ -94,7 +85,6 @@ Wearable her uygulamanın kendi APK dosyasının APK ana uygulama içinde katı�
 [Paketle birlikte çalışma](~/android/wear/deploy-test/packaging.md) dağıtımı daha ayrıntılı açıklanır. 
 
 
-<a name="further" />
 
 ## <a name="going-further"></a>Daha fazla işlenmesini 
 
@@ -114,34 +104,30 @@ Yapı ve ilk uygulamanızı test etmek için en iyi Android takmak ile aşina ş
 [Gözcü yüz oluşturma](~/android/wear/platform/creating-a-watchface.md) bir kırpılmış dijital izleme yüz hizmeti, bir analog stili izleme yüz ek özelliklerle geliştirir daha fazla kod ve ardından aşağı geliştirmek için adım adım yönergeler ve örnek kod sağlar. 
 
 
-<a name="wear2" />
 
 ## <a name="android-wear-20"></a>Android Wear 2.0
 
 Android takmak 2.0 tanıtır yeni özellikler ve yetenekler, çeşitli gibi *karışıklıklardan*, eğri düzenleri, gezinti ve eylem çekmeceleri ve genişletilmiş bildirimler. Ayrıca, takmak 2.0 el uygulamaları bağımsız olarak çalışır tek başına uygulamalar oluşturmanızı mümkün kılar. Yeni *bileğe kadar hareketleri* uygulamanız ile tek elli etkileşimleri yeteneği sağlar. Aşağıdaki bölümlerde bu özellikler vurgulayın ve yardımcı olması için bağlantıları uygulamanızda kullanmaya başlamanıza sağlayın.
 
 
-<a name="install2" />
 
 ### <a name="install-wear-20-packages"></a>Yükleme takmak 2.0 paketleri
 
 Xamarin.Android takmak 2.0 uygulamayla oluşturmak için eklemelisiniz **Xamarin.Android.Wear v2.0** paketini projenize (tıklatın **Gözat sekmesini**):
 
-[![Xamarin.Android.Wear v2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "Xamarin.Android.Wear v2.0 NuGet yükleyin")](intro-to-wear-images/wear-nuget-2.0.png)
+[![Xamarin.Android.Wear v2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "Xamarin.Android.Wear v2.0 NuGet yükleyin")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
 
 Bu NuGet paketi Android destek Wearable hem takmak Compat kitaplıkları için bağlamaları içerir.
 
 Ek olarak **Xamarin.Android.Wear**, yüklediğiniz öneririz **Xamarin.GooglePlayServices.Wearable** NuGet: 
 
-[![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "Install the Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png)
+[![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "Install the Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png#lightbox)
 
-<a name="wear2feat" />
 
 ### <a name="key-features-of-wear-20"></a>Yıpranması 2.0 temel özellikleri
 
 Android takmak 2.0 büyük Android takmak için ilk başlatma 2014 itibaren güncelleştirmesidir. Aşağıdaki bölümlerde Android takmak 2.0 anahtar özelliklerini vurgulayın ve bağlantıları yardımcı olmak için sağlanan uygulamanızda bu yeni özellikleri ile çalışmaya başlamak. 
 
-<a name="compl" />
 
 #### <a name="complications"></a>Zorluklar
 
@@ -152,7 +138,6 @@ Android takmak 2.0 büyük Android takmak için ilk başlatma 2014 itibaren gün
 Android zorluklar hakkında daha fazla bilgi için bkz: [izleme yüz zorluklar](https://developer.android.com/wear/preview/features/complications.html) konu. 
 
 
-<a name="drawers" />
 
 #### <a name="navigation-and-action-drawers"></a>Gezinti ve eylem çekmeceleri 
 
@@ -163,7 +148,6 @@ Android zorluklar hakkında daha fazla bilgi için bkz: [izleme yüz zorluklar](
 Bu iki yeni etkileşimli çekmeceleri hakkında daha fazla bilgi için bkz: Android [takmak gezinti ve eylemleri](https://developer.android.com/wear/preview/features/ui-nav-actions.html) konu. 
 
 
-<a name="curved" />
 
 #### <a name="curved-layouts"></a>Eğri düzenleri 
 
@@ -174,14 +158,12 @@ Yıpranması 2.0 eğri düzenleri yuvarlak yıpranması cihazlarda görüntülem
 `WearableRecyclerView` genişletir `RecyclerView` eğri düzenleri ve döngüsel kaydırma hareketleri desteklemek için sınıf. Daha fazla bilgi için bkz: Android [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) API belgeleri. 
 
 
-<a name="standalone" />
 
 #### <a name="standalone-apps"></a>Tek başına uygulamaları 
 
 Android takmak 2.0 uygulamaları el uygulamaları bağımsız olarak çalışabilir. Bunun anlamı, örneğin, akıllı izleme Yardımcısı taşınabilir aygıt devre dışı veya uzakta wearable aygıttan açık olsa bile tam işlevsellik sunmaya devam edebilirsiniz. Bu özellik hakkında daha fazla bilgi için bkz: Android [tek başına uygulamaları](https://developer.android.com/wear/preview/features/standalone-apps.html) konu.
 
 
-<a name="wrist" />
 
 #### <a name="wrist-gestures"></a>Bileğe kadar hareketleri 
 
@@ -196,7 +178,6 @@ Daha fazla bilgi için bkz: Android [bileğe kadar hareketleri](https://develope
 Satır içi Eylemler, akıllı yanıt, uzak giriş, genişletilmiş bildirimleri ve bildirimler için yeni bir köprü oluşturma modu gibi pek çok daha fazla takmak 2.0 özellikleri vardır. Android yeni takmak 2.0 özellikler hakkında daha fazla bilgi için bkz: [API genel bakış](https://developer.android.com/wear/preview/api-overview.html). 
 
 
-<a name="devices" />
 
 ## <a name="devices"></a>Cihazlar
 
@@ -210,7 +191,6 @@ Android takmak çalıştırabilirsiniz aygıtları bazı örnekleri şunlardır:
 * [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 
-<a name="reading" />
 
 ## <a name="further-reading"></a>Daha Fazla Bilgi
 
@@ -222,7 +202,6 @@ Google Android takmak belgelerini denetleyin:
 * [Android yıpranması 2.0](https://developer.android.com/wear/preview/index.html)
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Özet
 

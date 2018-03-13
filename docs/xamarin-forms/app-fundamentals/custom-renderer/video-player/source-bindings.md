@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d0842a54f725e5a9504668f977ba06648a96ee6d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 209b301c44da9bbb52ad8bf7fe867811a9b7617f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-video-sources-to-the-player"></a>Player video kaynaklarına bağlama
 
@@ -72,7 +72,7 @@ namespace VideoPlayerDemos
 
 Sayfa ilk kez yüklediğinde öğe seçilir `ListView`, bir video yürütmeye başlayın seçmeniz gerekir:
 
-[![Web Video seçin](source-bindings-images/selectwebvideo-small.png "seçin Web Video")](source-bindings-images/selectwebvideo-large.png "Web Video seçin")
+[![Web Video seçin](source-bindings-images/selectwebvideo-small.png "seçin Web Video")](source-bindings-images/selectwebvideo-large.png#lightbox "Web Video seçin")
 
 `Source` Özelliği `VideoPlayer` veri bağlamanın hedef olabileceği anlamına gelir bir bağlanabilirse özelliği tarafından desteklenir. Bu tarafından gösterilen **VideoPlayer için bağ** sayfası. Biçimlendirme **BindToVideoPlayer.xaml** dosyası bir video ve karşılık gelen bir başlık yalıtır aşağıdaki sınıfı tarafından desteklenen `VideoSource` nesnesi:
 

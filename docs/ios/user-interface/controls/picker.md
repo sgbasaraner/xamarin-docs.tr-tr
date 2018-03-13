@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: 402b17ddbb28fb8896ad0f158fe8dbcd17689f40
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 3418d0b7946e1da68380512d64bdfc8b13d1d784
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="picker"></a>Picker
 
@@ -22,7 +22,7 @@ Belirli bir kullanıcı servis talebi için seçiciler, tarih ve / veya saat aya
 
 Uygulama ve kullanarak makaleyi kapsar [Seçici](#picker) ve [tarih seçici](#datepicker) kontrol eder.
 
-<a name="picker">
+<a name="picker"/>
 
 ## <a name="picker"></a>Picker
 
@@ -143,7 +143,7 @@ Dönüş değeri, seçici olacaktır çevirir sayısını belirtir.
 Görünümünü `UIPickerView` kullanarak özelleştirilebilir `UIPickerView.UIPickerViewAppearance` sınıf veya göre geçersiz kılma `UIPickerViewModel.GetView` ve `UIPickerViewModel.GetRowHeight` yöntemleri `UIPickerViewModel`.
 
 
-<a name="datepicker">
+<a name="datepicker"/>
 
 ## <a name="date-picker"></a>Tarih Seçici
 
