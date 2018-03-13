@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e78b76a531e9f8ea88adca46fc59b2063fce14cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>İzlenecek yol - özel denetimleri, iOS için Xamarin Tasarımcısı ile kullanma
 
@@ -33,13 +33,13 @@ Bu kılavuzda ele içeriği bilindiğini varsayar [Başlarken kılavuzları](~/i
 1. Yeni bir çözüm oluşturmak **iOS > Uygulama > tek görünüm uygulaması > C#** şablon adlandırın `ScratchTicket`ve yeni proje sihirbaza devam edin:
 
 
-    [![](ios-designable-controls-walkthrough-images/01new.png "Yeni bir çözümü oluşturun")](ios-designable-controls-walkthrough-images/01new.png)
+    [![](ios-designable-controls-walkthrough-images/01new.png "Yeni bir çözümü oluşturun")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
 
 1. Adlı yeni bir boş sınıfı dosya oluşturma `ScratchTicketView`:
 
 
-    [![](ios-designable-controls-walkthrough-images/02new.png "Yeni ScratchTicketView sınıf oluşturma")](ios-designable-controls-walkthrough-images/02new.png)
+    [![](ios-designable-controls-walkthrough-images/02new.png "Yeni ScratchTicketView sınıf oluşturma")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
 
 1. İçin aşağıdaki kodu ekleyip `ScratchTicketView` sınıfı:
@@ -168,63 +168,50 @@ Bu kılavuzda ele içeriği bilindiğini varsayar [Başlarken kılavuzları](~/i
     
 1. Çift `Main.storyboard` dosyayı tasarımcısında açın:
 
-    
-    [![](ios-designable-controls-walkthrough-images/03new.png "İOS Tasarımcısı")](ios-designable-controls-walkthrough-images/03new.png)
-
+    [![](ios-designable-controls-walkthrough-images/03new.png "İOS Tasarımcısı")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 
 1. Sürükle ve bırak bir **resim görünümü** gelen **araç** film şeridi görünümünde üzerine.
 
-    
-    [![](ios-designable-controls-walkthrough-images/04new.png "Düzenine eklenen bir resim görünümü")](ios-designable-controls-walkthrough-images/04new.png)
+    [![](ios-designable-controls-walkthrough-images/04new.png "Düzenine eklenen bir resim görünümü")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
 
 1. Seçin **resim görünümü** değiştirip kendi **görüntü** özelliğine `Monkey.png`.
 
-    
-    [![](ios-designable-controls-walkthrough-images/05new.png "Görüntü görünüm görüntü özelliği Monkey.png için ayarlama")](ios-designable-controls-walkthrough-images/05new.png)
+    [![](ios-designable-controls-walkthrough-images/05new.png "Setting Image View Image property to Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
 1. Boyutu sınıfları kullanıyoruz gibi Biz bu görüntü görünüm sınırlamak gerekir. Görüntünün iki kez kısıtlaması moduna almak için tıklayın. Şimdi sınırlamak onu merkezine merkezi sabitleme tanıtıcı tıklayarak ve dikey ve yatay olarak hizala:
-    
-    
-    [![](ios-designable-controls-walkthrough-images/06new.png "Görüntü ortalama")](ios-designable-controls-walkthrough-images/06new.png)
 
-    
+    [![](ios-designable-controls-walkthrough-images/06new.png "Görüntü ortalama")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
+
 1. Yüksekliğini ve genişliğini sınırlamak için boyutu sabitleme işleyicilerinin ('şeklinde kemik' tanıtıcı) tıklayın ve genişlik ve yükseklik sırasıyla seçin:
 
-    
-    [![](ios-designable-controls-walkthrough-images/07new.png "Kısıtlamaları ekleme")](ios-designable-controls-walkthrough-images/07new.png)
+    [![](ios-designable-controls-walkthrough-images/07new.png "Kısıtlamaları ekleme")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 
 1. Araç çubuğu Güncelleştir düğmesini tıklatarak kısıtlamalarına göre çerçeve güncelleştirin:
 
-
-    [![](ios-designable-controls-walkthrough-images/08new.png "Kısıtlamaları araç çubuğu")](ios-designable-controls-walkthrough-images/08new.png)
+    [![](ios-designable-controls-walkthrough-images/08new.png "Kısıtlamaları araç çubuğu")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
 1. Ardından, projeyi derlemek böylece **karalama bilet Görünüm** altında görünür **özel bileşenleri** araç kutusunda:
 
-    
-    [![](ios-designable-controls-walkthrough-images/09new.png "Özel bileşenler araç kutusu")](ios-designable-controls-walkthrough-images/09new.png)
+    [![](ios-designable-controls-walkthrough-images/09new.png "Özel bileşenler araç kutusu")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
 
 1. Sürükleme ve bırakma bir **karalama bilet Görünüm** böylece monkey görüntünün üzerinde görünür. Karalama bilet görünüm monkey tamamen, aşağıda gösterildiği gibi kapsayan şekilde Sürükle tanıtıcıları ayarla:
 
-    
-    [![](ios-designable-controls-walkthrough-images/10new.png "Görüntü görünüm üzerinden karalama bilet Görünüm")](ios-designable-controls-walkthrough-images/10new.png)
-
+    [![](ios-designable-controls-walkthrough-images/10new.png "Görüntü görünüm üzerinden karalama bilet Görünüm")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
 
 1. Her iki görünümde seçmek için bir sınırlayıcı dikdörtgenini çizerek resim görünümü karalama bilet görünümüne kısıtlar. Sınırlamak için kısıtlamalarını temel alarak genişlik, yükseklik, merkezi ve orta ve güncelleştirme çerçeveleri aşağıda gösterildiği gibi seçenekleri seçin:
- 
-    
-    [![](ios-designable-controls-walkthrough-images/11new.png "Ortalama ve kısıtlamaları ekleme")](ios-designable-controls-walkthrough-images/11new.png)
+
+    [![](ios-designable-controls-walkthrough-images/11new.png "Ortalama ve kısıtlamaları ekleme")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
 
 
 1. Uygulamayı çalıştırın ve "devre dışı monkey gösterilmesi için görüntüyü karalama".
 
-
- [ ![](ios-designable-controls-walkthrough-images/10-app.png "Çalıştıran bir örnek uygulama")](ios-designable-controls-walkthrough-images/10-app.png)
+    [![](ios-designable-controls-walkthrough-images/10-app.png "Çalıştıran bir örnek uygulama")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="adding-design-time-properties"></a>Tasarım zamanı özellikleri ekleme
 
@@ -286,7 +273,7 @@ public override void Draw(CGRect rect)
 
 Dahil olmak üzere bir `ExportAttribute` ve `BrowsableAttribute` kümesine bağımsız değişkeniyle `true` Tasarımcısı'nda 's görüntülenmesini özelliği sonuçlanıyor **özelliği** paneli. Proje ile gibi dahil başka bir görüntü özelliği değiştirmeyi `FillTexture2.png`, sonuçları güncelleştirilirken Denetim tasarım zamanında aşağıda gösterildiği gibi:
 
- [ ![](ios-designable-controls-walkthrough-images/11-customproperty.png "Tasarım zamanı özelliklerini düzenleme")](ios-designable-controls-walkthrough-images/10-app.png)
+ [![](ios-designable-controls-walkthrough-images/11-customproperty.png "Tasarım zamanı özelliklerini düzenleme")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>Özet
 
