@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0d08b2ff5131996984dbe41862ad1d6aac33b3d0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e1232c96f5ea978c8adc640160a1e9b7e42663d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-ios-6"></a>İOS 6 giriş
 
 _iOS 6 çeşitli Xamarin.iOS 6 C# geliştiricileri için getirir uygulamaları geliştirmek için yeni teknolojiler içerir._
 
-[ ![](images/ios6-large.jpg "İOS 6 logosu")](images/ios6-large.jpg)
+[ ![](images/ios6-large.jpg "İOS 6 logosu")](images/ios6-large.jpg#lightbox)
 
 İOS 6 ve Xamarin.iOS 6 ile geliştiriciler artık yeteneğinin bol bu hedef iPhone 5 olanları dahil olmak üzere, iOS uygulamaları oluşturmak için kendi elden var.
 Bu belgede bazı kullanılabilir daha heyecan verici yeni özellikler ve her konunun makalelerinin bağlantıları listeler. Ayrıca, geliştiricilerin taşıyın iOS 6 ve iPhone 5 yeni çözünürlüğü gibi önemli birkaç değişiklikler dokunur.
@@ -92,11 +92,11 @@ Bu durum durum kaydetme bu uygulamaları gerçekleştirmek `ViewWillDisappear` v
 
 iPhone 5 aygıtların 640 x 1136 çözünürlüğü vardır. İOS önceki sürümlerini hedefleyen uygulama çalıştırıldığında bir iPhone 5, aşağıda gösterildiği gibi letterboxed görünür:
 
- [ ![](images/01-letterboxed.png "Önceki iOS sürümlerini hedeflenen uygulamalar iPhone 5 çalıştırdığınızda letterboxed görünür")](images/01-letterboxed.png)
+ [![](images/01-letterboxed.png "Önceki iOS sürümlerini hedeflenen uygulamalar iPhone 5 çalıştırdığınızda letterboxed görünür")](images/01-letterboxed.png#lightbox)
 
 Sırada görüntülenmesini uygulama için tam ekran iPhone 5, eklemeniz yeterlidir adlı bir resim `Default-568h@2x.png` 640 x 1136 çözünürlüğü sahip. Aşağıdaki ekran görüntüsü, bu görüntüyü eklenmiştir sonra çalışan uygulama gösterir:
 
- [ ![](images/02-fullscreen.png "Bu ekran görüntüsü, bu görüntüyü eklenmiştir sonra çalışan uygulama gösterir.")](images/02-fullscreen.png)
+ [![](images/02-fullscreen.png "Bu ekran görüntüsü, bu görüntüyü eklenmiştir sonra çalışan uygulama gösterir.")](images/02-fullscreen.png#lightbox)
 
 ### <a name="subclassing-uinavigationbar"></a>UINavigationBar alt sınıf yapma
 
@@ -130,7 +130,7 @@ navController = new UINavigationController (typeof(CustomNavBar), typeof(UIToolb
 
 Bu kullanarak `UINavigationBar` alt sonuçları aşağıdaki ekran görüntüsünde gösterildiği gibi görüntülenmesini görüntü görünümünde:
 
- [ ![](images/03-navbar.png "Bu ekran görüntüsünde gösterildiği gibi görüntülenmesini görüntü görünümünde bu UINavigationBar alt sonuçları kullanma")](images/03-navbar.png)
+ [![](images/03-navbar.png "Bu ekran görüntüsünde gösterildiği gibi görüntülenmesini görüntü görünümünde bu UINavigationBar alt sonuçları kullanma")](images/03-navbar.png#lightbox)
 
 ### <a name="interface-orientation"></a>Yönlendirme arabirimi
 

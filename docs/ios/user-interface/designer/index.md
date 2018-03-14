@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 20f1e7fe7e0042ec2d4ae3f5ae1299ef0ef9c9e4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 884811e4035aabd831f851015db098a0243a2388
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-designer"></a>iOS Tasarımcısı
 
@@ -21,13 +21,13 @@ _İOS için Xamarin Tasarımcısı Mac ve Visual Studio için Visual Studio ile 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 
-[![](images/designer-new1.png "İOS Tasarımcısı")](images/designer-new1.png)
+[![](images/designer-new1.png "İOS Tasarımcısı")](images/designer-new1.png#lightbox)
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-[![](images/designer-vs.png "İOS Tasarımcısı")](images/designer-vs.png)
+[![](images/designer-vs.png "İOS Tasarımcısı")](images/designer-vs.png#lightbox)
 
 
 -----
@@ -39,7 +39,7 @@ _İOS için Xamarin Tasarımcısı Mac ve Visual Studio için Visual Studio ile 
 Bu kılavuzlar varsayar ele içeriği aşina [Başlarken kılavuzları](~/ios/get-started/index.md).
 
 
-## <a name="ios-designer-basicsintroductionmd"></a>[iOS Tasarımcısı temelleri](introduction.md)
+## <a name="ios-designer-basicsintroductionmd"></a>[Temel iOS Designer Bilgileri](introduction.md)
 
 Bu kılavuz, Xamarin iOS tasarımcı özelliklerini kapsar. Tasarımcı denetimleri görsel olarak düzenlemek için nasıl kullanılacağını ve nasıl özelliklerini düzenlemek gösteren tasarımcı temel kavramları kapsar.
 

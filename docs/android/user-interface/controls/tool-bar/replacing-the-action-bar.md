@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 91d5612991c2297418cf7003c499c1a1bbfc7558
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e71c6ea816b8b732d21148db32fd9395732dd4c0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="replacing-the-action-bar"></a>Eylem çubuğunda değiştirme
 
-<a name="overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -36,16 +35,14 @@ Bir uygulamanın varsayılan eylem çubuğunda değiştirmek için bir `Toolbar`
 Aşağıdaki bölümlerde bu işlem ayrıntılı açıklanmıştır. Basit bir uygulama oluşturulur ve eylem çubuğunu değiştirilir özelleştirilmiş ile `Toolbar`. 
 
 
-<a name="start_project" />
 
 ## <a name="start-an-app-project"></a>Bir uygulama projesi Başlat
 
 Adlı yeni bir Android projesi oluşturma **ToolbarFun** (bkz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) yeni bir Android projesi oluşturma hakkında daha fazla bilgi için). Bu Proje oluşturulduktan sonra hedef ve minimum Android API düzeylerini ayarlamak **Android 5.0 (API düzeyi 21 - Lolipop)**. Ayar Android sürümü düzeyleri hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md). Uygulama yerleşik ve çalıştırmak, bu ekran görüntüsünde görülen varsayılan eylem çubuğunda görüntülenir: 
 
-[![Varsayılan eylem çubuğunun ekran görüntüsü](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png)
+[![Varsayılan eylem çubuğunun ekran görüntüsü](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
 
-<a name="custom_theme" />
 
 ## <a name="create-a-custom-theme"></a>Özel bir tema oluşturun
 
@@ -89,7 +86,6 @@ Düzen **Properties/AndroidManifest.xml** ve aşağıdakileri ekleyin `android:t
 Bir uygulamaya özel bir tema uygulama hakkında daha fazla bilgi için bkz: [kullanarak özel Temalar](~/android/user-interface/material-theme.md#customtheme). 
 
 
-<a name="toolbar_layout" />
 
 ## <a name="define-a-toolbar-layout"></a>Araç çubuğu düzeni tanımlayın
 
@@ -127,7 +123,6 @@ android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
 Bu ayar, böylece menü öğeleri koyu arka plan rengiyle Karşıtlık kullanılır.
 
 
-<a name="include_layout" />
 
 ## <a name="include-the-toolbar-layout"></a>Araç çubuğu düzeni içerir
 
@@ -153,7 +148,6 @@ Düzen dosyasını düzenleyin **Resources/layout/Main.axml** ve içeriğini aş
 Bu düzeni içerir `Toolbar` tanımlanan **toolbar.xml** ve kullandığı bir `RelativeLayout` belirtmek için `Toolbar` (yukarıda düğme) kullanıcı Arabirimi çok üstündeki alınacaksa. 
 
 
-<a name="activate_toolbar" />
 
 ## <a name="find-and-activate-the-toolbar"></a>Bul ve araç etkinleştirin
 
@@ -173,12 +167,11 @@ ActionBar.Title = "My Toolbar";
 
 Bu kod bulur `Toolbar` ve çağrıları `SetActionBar` böylece `Toolbar` varsayılan Eylem çubuğu özelliklerine sürer. Araç çubuğu başlığı olarak değiştirildiğinde **My araç**. Bu kod örneğinde görüldüğü gibi `ToolBar` doğrudan bir eylem çubuğu olarak başvurulabilir. Derleme ve bu uygulamayı çalıştırma &ndash; özelleştirilmiş `Toolbar` yerine varsayılan Eylem çubuğu görüntülenir: 
 
-[![Yeşil renk düzenini içeren özelleştirilmiş bir araç çubuğu ekran görüntüsü](replacing-the-action-bar-images/02-after-sml.png)](replacing-the-action-bar-images/02-after.png)
+[![Yeşil renk düzenini içeren özelleştirilmiş bir araç çubuğu ekran görüntüsü](replacing-the-action-bar-images/02-after-sml.png)](replacing-the-action-bar-images/02-after.png#lightbox)
 
 Dikkat `Toolbar` bağımsız stilde `Theme.Material.Light.DarkActionBar` uygulama geri kalanı için uygulanan tema. 
 
 
-<a name="main_menus" />
  
 ## <a name="add-menu-items"></a>Menü öğeleri ekleme 
 
@@ -197,13 +190,11 @@ Menülere ekleme `Toolbar`:
 Aşağıdaki bölümlerde bu işlem ayrıntılı ekleyerek göstermek **Düzenle** ve **kaydetmek** özelleştirilmiş menü öğelerine `Toolbar`. 
 
 
-<a name="menu_icons" />
 
 ### <a name="install-menu-icons"></a>Menü simgeleri yükleyin
 
 Devam etmeden `ToolbarFun` örnek uygulama, menü simgeleri uygulaması projesine ekleyin. Karşıdan [araç icons.zip](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons.zip?raw=true) ve onu sıkıştırmasını açın. Ayıklanan içeriğini kopyalayın *mipmap -* projeye klasörleri *mipmap -* altındaki klasörler **ToolbarFun/kaynakları** ve her eklenen simge dosyası projeye ekleyin.
 
-<a name="menu_resource" />
 
 ### <a name="define-a-menu-resource"></a>Menü kaynağı tanımlayın
 
@@ -239,7 +230,6 @@ Bu XML üç menü öğeleri oluşturur:
 
 `showAsAction` Özniteliklerini **Düzenle** ve **kaydetmek** menü öğeleri ayarlanır `ifRoom` &ndash; görünmesi şu menü öğeleri bu ayarı neden `Toolbar` varsa bunları görüntülenecek için yeterli yeri. **Tercihler** menü öğesi kümeleri `showAsAction` için `never` &ndash; bu neden olur **Tercihler** görünmesi menü *taşma* menü (üç Dikey noktalar). 
 
-<a name="on_create_options_menu" />
 
 ### <a name="implement-oncreateoptionsmenu"></a>Implement OnCreateOptionsMenu
 
@@ -256,7 +246,6 @@ public override bool OnCreateOptionsMenu(IMenu menu)
 Android çağrıları `OnCreateOptionsMenu` yöntemi uygulama menüsü kaynak bir etkinliğin belirtebilirsiniz. Bu yöntemde, **top_menus.xml** kaynak şişirileceğini geçirilen içine `menu`. Bu kod yeni neden **Düzenle**, **kaydetmek**, ve **Tercihler** görünmesi menü öğeleri `Toolbar`. 
 
 
-<a name="on_options_item_selected" />
 
 ### <a name="implement-onoptionsitemselected"></a>Uygulama OnOptionsItemSelected
 
@@ -275,15 +264,15 @@ Bir kullanıcı bir menü öğesi dokunur, Android çağırır `OnOptionsItemSel
 
 Derleme ve çalıştırma `ToolbarFun` araç çubuğunda yeni menü öğelerini görmek için. `Toolbar` Şimdi bu ekran görüntüsünde görüldüğü gibi üç menü simgeleri görüntüler: 
 
-[![Kaydetme, düzenleme, gösteren konumlarını Diyagram ve menü öğeleri taşması](replacing-the-action-bar-images/04-menu-items-sml.png)](replacing-the-action-bar-images/04-menu-items.png)
+[![Kaydetme, düzenleme, gösteren konumlarını Diyagram ve menü öğeleri taşması](replacing-the-action-bar-images/04-menu-items-sml.png)](replacing-the-action-bar-images/04-menu-items.png#lightbox)
 
 Bir kullanıcı dokunma zaman **Düzenle** belirtmek için menü öğesi, bir bildirim görüntülenir `OnOptionsItemSelected` yöntemi çağrıldı: 
 
-[![Düzenleme öğesi dokunduğunuz olmadığında görüntülenen bildirim ekran görüntüsü](replacing-the-action-bar-images/05-toast-displayed-sml.png)](replacing-the-action-bar-images/05-toast-displayed.png)
+[![Düzenleme öğesi dokunduğunuz olmadığında görüntülenen bildirim ekran görüntüsü](replacing-the-action-bar-images/05-toast-displayed-sml.png)](replacing-the-action-bar-images/05-toast-displayed.png#lightbox)
 
 Bir kullanıcı taşma menüsünü dokunur zaman **Tercihler** menü öğesi görüntülenir. Genellikle, daha az ortak Eylemler taşma menüde yerleştirilmelidir &ndash; Bu örnek için taşma menüsünü kullanır **Tercihler** kadar sık kullanılmadığından olarak **Düzenle** ve  **Kaydet**: 
 
-[![Taşma menüsünde görüntülenen ekran görüntüsü, Tercihler menü öğesi](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png)
+[![Taşma menüsünde görüntülenen ekran görüntüsü, Tercihler menü öğesi](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png#lightbox)
 
 Android Geliştirici Android menüleri hakkında daha fazla bilgi için bkz: [menüleri](https://developer.android.com/guide/topics/ui/menus.html) konu. 
  

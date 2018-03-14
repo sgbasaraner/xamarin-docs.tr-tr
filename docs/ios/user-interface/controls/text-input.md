@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: ce1014616d0cf5f6cd5228d69976dfeca546b382
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c45ea8cb7c0e3d12e94666d61c6fdf7e5828264e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="text-input"></a>Metin girişi
 
@@ -19,9 +19,9 @@ Kullanıcı metin girişi kabul ile gerçekleştirilir `UITextField` tek satırl
 
 Aşağıdaki ekran görüntüleri Mac için Visual Studio araç takımı bulunan bu denetimleri simgelerini göster:
 
- [ ![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png)
+ [![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png#lightbox)
 
- [ ![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png)
+ [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
 
 Çıkış adlı sonra film şeridi dosya kaydedilemedi, Mac için Visual Studio güncelleştirecektir `.designer.cs` parçalı sınıf ve sınıf dosyanıza denetimine başvuruda bulunan C# kodu ekleyebilirsiniz. Her denetim kendi benzersiz özellikleri ve C# kodunuzda erişilebilir olayları sahiptir.
 
@@ -32,7 +32,7 @@ Aşağıdaki ekran görüntüleri Mac için Visual Studio araç takımı bulunan
 
 `UITextField` Denetimi tek satırlık bir kullanıcı adı veya parola gibi metin girişi kabul etmek için en sık kullanılır. Bazı denetimi özelleştirmek için kullanılabilir seçenekler burada gösterilir:
 
- [ ![](text-input-images/image15a.png "UITextField özellikleri")](text-input-images/image15a.png)
+ [![](text-input-images/image15a.png "UITextField özellikleri")](text-input-images/image15a.png#lightbox)
 
 Bu denetimler, aşağıda açıklanmıştır:
 
@@ -76,7 +76,7 @@ View.Add(textfield1);
 
 `UITextView` Denetimi salt okunur metin görüntülemek veya birden çok satırlı metin girişi kabul etmek için kullanılabilir. Aynı seçenekleri çoğunu sahip `UITextField` (büyük/küçük harf gibi düzeltme, vb.).
 
- [ ![](text-input-images/image16a.png "UITextView özellikleri")](text-input-images/image16a.png)
+ [![](text-input-images/image16a.png "UITextView özellikleri")](text-input-images/image16a.png#lightbox)
 
 Belirli özellikler şunları içerir:
 

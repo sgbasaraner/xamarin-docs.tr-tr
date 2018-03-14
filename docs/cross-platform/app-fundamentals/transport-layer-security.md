@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/10/2017
-ms.openlocfilehash: 5237ed35116e5f8983df579d0ab68363996fb06f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b0f205c5ab2c65f0e2a99f912f3961f12a4f2b7a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="transport-layer-security-tls"></a>Aktarım Katmanı Güvenliği (TLS)
 
@@ -41,12 +41,12 @@ Bu bölümde, ağ Xamarin projelerinde yapılandırma seçeneklerinin bazıları
 
 Bu ayarları bulunabilir **proje Seçenekleri > Android seçenekleri** ve ardından tıklayarak **Gelişmiş** düğmesi: 
 
-[![Visual Studio'da HttpClient ve TLS yapılandırma](transport-layer-security-images/properties-vs-sml.png)](transport-layer-security-images/properties-vs.png)
+[![Visual Studio'da HttpClient ve TLS yapılandırma](transport-layer-security-images/properties-vs-sml.png)](transport-layer-security-images/properties-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 Bu ayarları bulunabilir **proje özellikleri > derleme seçenekleri > Gelişmiş** sekmesi:
 
-[![HttpClient ve TLS Mac için Xamarin Studio ve Visual Studio'yu yapılandırma](transport-layer-security-images/properties-xs-sml.png)](transport-layer-security-images/properties-xs.png)
+[![HttpClient ve TLS Mac için Xamarin Studio ve Visual Studio'yu yapılandırma](transport-layer-security-images/properties-xs-sml.png)](transport-layer-security-images/properties-xs.png#lightbox)
 
 -----
 
@@ -79,7 +79,7 @@ TLS (tüm projeleri için önerilir) 1.2 destekleyen yerel uygulama için yeni X
 >
 > Yerel seçeneği önerilir.
 
-# <a name="platform-specific-details"></a>Platforma özgü ayrıntıları
+## <a name="platform-specific-details"></a>Platforma özgü ayrıntıları
 
 Yukarıdaki Özet Xamarin projelerinde HttpClient ve SSL/TLS uygulaması proje düzeyi ayarları açıklanmaktadır. İos'ta aralarından seçim yapabileceğiniz yerel iki seçenek vardır ve HttpClient uygulama kodunda da bir dinamik olarak ayarlanabilir.
 
@@ -87,14 +87,14 @@ Yukarıdaki Özet Xamarin projelerinde HttpClient ve SSL/TLS uygulaması proje d
 - [**iOS ve Mac**](~/cross-platform/macios/http-stack.md)
 
 
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Uygulamalar, mümkün olduğunda Aktarım Katmanı Güvenliği (TLS) 1.2 kullanmalıdır.
 Yeni uygulamalar artık bu yapılandırma için varsayılan olarak ancak, bu makaledeki yönergeleri göre varolan uygulamalarında ayarları güncelleştirmeniz gerekebilir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Uygulama taşıma güvenliği](~/ios/app-fundamentals/ats.md)
+- [Uygulama Aktarım Güvenliği](~/ios/app-fundamentals/ats.md)
 - [Xamarin.Android Environment](~/android/deploy-test/environment.md)
 - [Xamarin döngüsü 9 (Şubat 2017)](https://releases.xamarin.com/stable-release-cycle-9/)
 - [TLS (Wikipedia)](https://en.wikipedia.org/wiki/Transport_Layer_Security)

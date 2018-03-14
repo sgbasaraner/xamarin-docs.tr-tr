@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1c24b1faf7b108466d6e93ffae8112d0dea6d844
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 282a4cb59545703c5172f8747cb5b633e7b648dc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sliders-switches-and-segmented-controls"></a>Kaydırıcılar, anahtarlar ve bölümlenmiş denetimleri
 
@@ -22,11 +22,11 @@ ms.lasthandoff: 02/27/2018
 
 Kaydırıcı denetimi basit bir sayısal değer bir aralık içinde seçilmesine olanak sağlar. Denetim 0 ile 1 arasında bir değer varsayılan olarak, ancak bu sınırları özelleştirilebilir.
 
- [ ![](slider-switch-segmented-controls-images/image25a.png "Kaydırıcı")](slider-switch-segmented-controls-images/image25a.png)
+ [![](slider-switch-segmented-controls-images/image25a.png "Kaydırıcı")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
 Aşağıdaki ekran Tasarımcısı'nda düzenlenebilir özellikleri gösterir:
 
- [ ![](slider-switch-segmented-controls-images/image26a.png "Kaydırıcı özellikleri")](slider-switch-segmented-controls-images/image25a.png)
+ [![](slider-switch-segmented-controls-images/image26a.png "Kaydırıcı özellikleri")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
 Bu değerleri kodda şu anda seçili değer görüntülemek için bir işleyici yukarı kablolama dahil olmak üzere, aşağıda gösterildiği gibi ayarlayabileceğiniz bir `UILabel` denetimi:
 
@@ -47,7 +47,7 @@ slider1.MaximumTrackTintColor = UIColor.Green;
 
 Özelleştirilmiş kaydırıcıyı şöyle görünür:
 
- [ ![](slider-switch-segmented-controls-images/image27a.png "Özel kaydırıcı")](slider-switch-segmented-controls-images/image28a.png)
+ [![](slider-switch-segmented-controls-images/image27a.png "Özel kaydırıcı")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
 > Şimdilik bir [hata](http://stackoverflow.com/a/19496179) neden `ThumbTint` çalışma zamanında beklendiği gibi işlenmeyebilir. Aşağıdaki kod satırını ekleyin **önce** yukarıdaki kodu geçici bir çözüm olarak. [[Kaynak](http://stackoverflow.com/a/21396794)]:
@@ -62,11 +62,11 @@ slider1.MaximumTrackTintColor = UIColor.Green;
 
 iOS kullanan `UISwitch` bir Boole değeri, temsil ettiği diğer platformlarda radyo düğmesi giriş olarak. Kullanıcı denetimi taşıyarak işleyebileceğiniz *Flash* arasında **açık/kapalı** konumlar.
 
- [ ![](slider-switch-segmented-controls-images/image28a.png "geçiş")](slider-switch-segmented-controls-images/image28a.png)
+ [![](slider-switch-segmented-controls-images/image28a.png "geçiş")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 İçindeki anahtar görünümünü özelleştirilebilir **özellikleri paneli** varsayılan durumunu denetlemenize olanak tanıyan, Designer **açık/kapalı TINT** renkleri ve bir **açık/kapalı görüntü**. Bu, aşağıdaki resimde gösterilmiştir:
 
- [ ![](slider-switch-segmented-controls-images/image29a.png "Anahtar Özellikler")](slider-switch-segmented-controls-images/image29a.png)
+ [![](slider-switch-segmented-controls-images/image29a.png "Anahtar Özellikler")](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
 Anahtar özelliklerini da kodda ayarlanabilir, örneğin aşağıdaki kodu varsayılan değerini anahtarıyla gösterecektir `On`:
 
@@ -81,15 +81,15 @@ switch1.On = true;
 
 Bölümlenmiş bir denetim, az sayıda seçenekleri ile etkileşime girmesine izin vermek için düzenli bir yoludur. Yatay yerleştirilmeden ve her segment ayrı bir düğme olarak işlev görür. Tasarımcı kullanırken, bölümlenmiş denetimi altında bulunabilir **araç > denetimleri**ve aşağıdaki görüntü gibi görünmelidir:
 
- [ ![](slider-switch-segmented-controls-images/segmentedcontrol.png "Bölümlenmiş denetimi")](slider-switch-segmented-controls-images/segmentedcontrol.png)
+ [![](slider-switch-segmented-controls-images/segmentedcontrol.png "Bölümlenmiş denetimi")](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
 
 Aşağıda gösterildiği gibi tasarım yüzeyine ayrı ayrı seçilecek her segment için benzersiz bir özelliği Designer sağlar:
 
- [ ![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "Bölümlenmiş denetimi")](slider-switch-segmented-controls-images/segmentedcontrolselection.png)
+ [![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "Bölümlenmiş denetimi")](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
 
 Bu daha kesin olarak her segment özelliklerini denetlemek için kullanılacak özellikler paneli sağlar. Düzenlenebilir özellikler aşağıdaki ekran görüntüsünde görebilirsiniz:
 
- [ ![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "Bölümlenmiş denetimi")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png)
+ [![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "Bölümlenmiş denetimi")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
 
 Bölümlenmiş denetim stilini iOS7 içinde kullanım dışı ve bu nedenle, bir iOS7 uygulama bu seçeneklerinde ayarlama hiçbir etkisi olmaz unutulmamalıdır.
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1e3139eb4c94264c91307f6f8a69b183f3bf7fa6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4917eafff020bb0e2d14a27d3c1a44d1d4087d7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-options"></a>Düzen Seçenekleri
 
@@ -25,11 +25,11 @@ Bir görünümü yeniden boyutlandırılmış veya Döndürülmüş düzenini de
 
 Bir kullanıcı aygıtı ne zaman döndürülür ve yönlendirme değişiklikleri gibi bir pencere yeniden boyutlandırır olduğunda sistem kendi otomatik boyutlandırma kurallarına göre bu pencereyi içindeki görünümler otomatik olarak yeniden boyutlandırılır. Bu kurallar ayarlanabilir C# kullanarak `AutoresizingMask` özelliği `UIView` veya **özellikleri paneli** Tasarımcısı aşağıda gösterildiği gibi iOS:
 
- [ ![](layout-options-images/image41.png "Visual Studio için Mac Tasarımcısı")](layout-options-images/image41.png)
+ [![](layout-options-images/image41.png "Visual Studio için Mac Tasarımcısı")](layout-options-images/image41.png#lightbox)
 
 Bir Denetim seçildiğinde, bu el ile denetim boyutları ve konumunu belirtmenize olanak tanır seçme yanı sıra **otomatik boyutlandırma** davranışı. Aşağıdaki ekran görüntüsünde gösterildiği gibi biz struts ve yaylar otomatik boyutlandırma denetiminde kaydının üst öğeye seçili görünümün ilişki tanımlamak için kullanabilirsiniz:
 
- [ ![](layout-options-images/image42.png "Visual Studio için Mac Tasarımcısı")](layout-options-images/image42.png)
+ [![](layout-options-images/image42.png "Visual Studio için Mac Tasarımcısı")](layout-options-images/image42.png#lightbox)
 
 Ayarlama bir *yay* yeniden boyutlandırmak görünüm genişliği veya yüksekliği kendi üst görünümü göre neden olur. Ayarlama bir *strut* kendisi ve bu belirli Kenar çubuğunda kendi üst görünümü arasındaki sabit uzaklığı korumak görünüm hale getirir.
 
@@ -43,7 +43,7 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAut
 
 Otomatik boyutlandırma ayarlarını test etmek için farklı etkinleştirmek **desteklenen cihaz yönler** projenin seçenekleri:
 
- [ ![](layout-options-images/image43a.png "Otomatik boyutlandırma ayarları")](layout-options-images/image43a.png)
+ [![](layout-options-images/image43a.png "Otomatik boyutlandırma ayarları")](layout-options-images/image43a.png#lightbox)
 
 Arkasındaki kodda yatay olarak yeniden boyutlandırmak iki metin denetimleri neden olan aşağıdaki kodu kullanabilirsiniz:
 
@@ -56,11 +56,11 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 
 Biz Tasarımcısı'nı kullanarak denetimler de ayarlayabilirsiniz. Struts aşağıda sergilenen olarak belirlenmesi görünümü alt kırpılmış olmadan sağa hizalı kalmak görüntü neden olur:
 
- [ ![](layout-options-images/autoresize.png "A")](layout-options-images/autoresize.png)
+ [![](layout-options-images/autoresize.png "A")](layout-options-images/autoresize.png#lightbox)
 
 Bu ekran görüntüleri nasıl denetimleri yeniden boyutlandırma veya ekran döndürüldüğünde kendilerini yeniden konumlandırmak göster:
 
- [ ![](layout-options-images/image44a.png "A")](layout-options-images/image44a.png)
+ [![](layout-options-images/image44a.png "A")](layout-options-images/image44a.png#lightbox)
 
 Metin görünümü ve metin alanı hem aynı sol tutmak için uzatma ve sağ kenar boşlukları nedeniyle dikkat edin `FlexibleWidth` ayarı. Görüntü alt ve sağ kenar boşluklarının – ekran döndürüldüğünde görüntü görünümünde tutma korur anlamı üst ve sol kenar boşluğu esnek, sahiptir. Karmaşık düzenleri genellikle bir kullanıcı arabirimi tutarlı tutmak için ve görünümün sınırları (döndürme veya başka bir yeniden boyutlandırma olayı nedeniyle) değiştirdiğinizde çakışan denetimlerini önlemek için bu ayarların her görünür denetimi belirtebilir.
 
