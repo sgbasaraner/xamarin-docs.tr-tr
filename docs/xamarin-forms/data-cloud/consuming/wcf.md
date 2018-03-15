@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 5cf194dce9bf4d0af23ba663ab00cf94a8a1766c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a02627d5e5b40fe9e7b2fdbd3a6995a2d96fbf03
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Bir Windows Communication Foundation (WCF) Web hizmeti kullanma
 
@@ -41,37 +41,12 @@ WCF Hizmeti ayarlama yönergeleri örnek uygulama eşlik eden readme dosyasında
 
 WCF hizmeti aşağıdaki işlemleri sağlar:
 
-<table>
-  <thead>
-    <tr>
-      <th>Çalışma</th>
-      <th>Açıklama</th>
-      <th>Parametreler</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GetTodoItems</td>
-      <td>Yapılacaklar öğelerini bir listesini alma</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CreateTodoItem</td>
-      <td>Yeni bir Yapılacaklar öğesi oluşturma</td>
-      <td>Seri hale getirilmiş bir XML <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>EditTodoItem</td>
-      <td>Güncelleştirme Yapılacaklar öğesi</td>
-      <td>Seri hale getirilmiş bir XML <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>DeleteTodoItem</td>
-      <td>Yapılacaklar öğesi silme</td>
-      <td>Seri hale getirilmiş bir XML <code>TodoItem</code></td>
-    </tr>
-  </tbody>
-</table>
+|Çalışma|Açıklama|Parametreler|
+|--- |--- |--- |
+|GetTodoItems|Yapılacaklar öğelerini bir listesini alma|
+|CreateTodoItem|Yeni bir Yapılacaklar öğesi oluşturma|Bir XML Todoıtem serileştirilmiş|
+|EditTodoItem|Güncelleştirme Yapılacaklar öğesi|Bir XML Todoıtem serileştirilmiş|
+|DeleteTodoItem|Yapılacaklar öğesi silme|Bir XML Todoıtem serileştirilmiş|
 
 Uygulamada kullanılan veri modeli hakkında daha fazla bilgi için bkz: [modelleme verileri](~/xamarin-forms/data-cloud/walkthrough.md).
 

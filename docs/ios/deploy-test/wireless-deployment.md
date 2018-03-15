@@ -1,6 +1,6 @@
 ---
 title: "Kablosuz dağıtma"
-description: "Bu önizleme özelliği iOS veya Apple TV cihazlara dağıtım için bir ağ bağlantısı üzerinden sağlar."
+description: "Bu özellik iOS veya Apple TV cihazlara dağıtım için bir ağ bağlantısı üzerinden sağlar."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
@@ -8,47 +8,40 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: 11961a21a7c4188c505c822a35531036fd953405
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7566669fb7d607ca6616b88cb32b770537146c94
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="wireless-deployment"></a>Kablosuz dağıtma
 
-_Bu önizleme özelliği iOS veya Apple TV cihazlara dağıtım için bir ağ bağlantısı üzerinden sağlar._
-
-![Önizleme sürümü](~/media/shared/preview.png)
-
-Geliştirici iş akışı önemli bir kısmını bir aygıta dağıtıyor. Xcode 9 dağıtmak ve uygulamanızın hatalarını ayıklama istediğiniz her zaman için donanım aygıtlarınızın sahip olmak yerine bir iOS cihazı veya Apple TV için bir ağ üzerinden dağıtma seçeneği sunulmuştur. Bu özellik şu anda önizlemede değil, Mac ve Visual Studio 15,6 sürümü için Visual Studio'da sunulmuştur.
+Geliştirici iş akışı önemli bir kısmını bir aygıta dağıtıyor. Xcode 9 dağıtmak ve uygulamanızın hatalarını ayıklama istediğiniz her zaman için donanım aygıtlarınızın sahip olmak yerine bir iOS cihazı veya Apple TV için bir ağ üzerinden dağıtma seçeneği sunulmuştur. Bu özellik Visual Studio'da Mac 7.4 ve Visual Studio 15,6 sürüm için sunulmuştur.
 
 Bu kılavuzda eşleştirin ve ağ üzerinden bir aygıta dağıtmak nasıl ayrıntıları verilmektedir.
 
 ## <a name="requirements"></a>Gereksinimler
 
-Kablosuz dağıtım olarak kullanılabilir bir **Önizleme** özelliği Mac için Visual Studio ve Visual Studio.
-
+Kablosuz dağıtımı, Mac için Visual Studio ve Visual Studio bir özellik olarak kullanılabilir.
 
 Kablosuz dağıtımını kullanmak için aşağıdakilere sahip olmanız gerekir:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 - macOS 10.12.4
-- Mac için Visual Studio en son Önizleme sürümü 
-    - Bu anahtarı yüklemek için [alfa veya Beta kanal](https://docs.microsoft.com/en-us/visualstudio/mac/update) Mac için Visual Studio'da
+- Mac için Visual Studio en son sürümü
 - Xcode 9.0 veya üzeri
 - Bir aygıtla iOS 11.0 veya tvOS 11.0 ve üzeri
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-- En son [Önizleme sürümü](https://www.visualstudio.com/vs/preview/) Visual Studio
+- Visual Studio en son sürümü
 - Bir aygıtla iOS 11.0 veya tvOS 11.0 ve üzeri
 
 Mac yapı ana bilgisayarda aşağıdaki bileşenler yüklü olmalıdır:
 
 - macOS 10.12.4
-- Visual Studio için Mac Önizleme
-    - Anahtara yüklemek için [alfa veya Beta kanal](https://docs.microsoft.com/en-us/visualstudio/mac/update) Mac için Visual Studio'da
+- Mac için Visual Studio
 - Xcode 9.0 veya üzeri
 
 -----

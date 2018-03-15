@@ -8,17 +8,17 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: facdcb6231b77714d6f5d0c7d496db12f75b1d08
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 921697657397662e92fb72c32e6efcc31745d7f1
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="bitmap-basics"></a>Bit eşlem temelleri
 
 _Bit eşlemler çeşitli kaynaklardan yüklemek ve bunları görüntüler._
 
-Bit eşlemler SkiaSharp içinde destek oldukça kapsamlıdır. Bu makale, yalnızca temel & #x 2014 kapsamaktadır; bit eşlemler yükleme ve bunların nasıl görüntüleneceği:
+Bit eşlemler SkiaSharp içinde destek oldukça kapsamlıdır. Bu makalede yalnızca temel kavramları kapsar &mdash; bit eşlemler yükleme ve bunların nasıl görüntüleneceği:
 
 ![](bitmaps-images/bitmapssample.png "İki bit eşlemler görüntüleme")
 
@@ -207,7 +207,7 @@ Bit eşlem monkey yatay bu ekran görüntülerinde genişletilir neden olan dikd
 
 [![](bitmaps-images/basicbitmaps-small.png "Bir Üçlü sayfasının ekran görüntüsü temel bit eşlemler")](bitmaps-images/basicbitmaps-large.png#lightbox "bir Üçlü sayfasının ekran görüntüsü temel bit eşlemler")
 
-Üçüncü görüntü & #x 2014; yalnızca programını çalıştırın ve bir fotoğraf kendi resim kitaplığı & #x 2014 yük görebileceğiniz; dikdörtgene ancak dikdörtgenin içinde de görüntülenir konum ve boyut bit eşlem'ın en boy oranını korumak için ayarlanır. Bir bit eşlem ve hedef dikdörtgen boyutuna göre faktörü ölçekleme ve dikdörtgenin alanındaki ortalama hesaplama gerektirdiğinden bu hesaplama biraz daha karmaşıktır:
+Üçüncü görüntü &mdash; programını çalıştırın ve bir fotoğraf kendi Resim Kitaplığı'ndan yük yalnızca görebileceğiniz &mdash; dikdörtgen ancak dikdörtgenin içinde de görüntülenir konum ve boyut bit eşlem'ın en boy oranını korumak için ayarlanır. Bir bit eşlem ve hedef dikdörtgen boyutuna göre faktörü ölçekleme ve dikdörtgenin alanındaki ortalama hesaplama gerektirdiğinden bu hesaplama biraz daha karmaşıktır:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

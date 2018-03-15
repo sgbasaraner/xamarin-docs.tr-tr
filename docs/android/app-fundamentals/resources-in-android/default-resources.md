@@ -6,12 +6,12 @@ ms.assetid: 762572F0-173A-D994-0510-8F36BEF3D487
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3d9c747cdf8e43f33b9310ac1156550066b400eb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 5cf5bd38612f0f763e30456b0dd42198a3c0ff06
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="default-resources"></a>Varsayılan kaynaklar
 
@@ -31,7 +31,7 @@ Kaynak türlerinin tam bir listesi aşağıda verilmiştir:
 -  **anim** &ndash; açıklayan XML dosyaları *Ara* animasyonları. Ara animasyonları animasyon yönergeleri bir görüntü veya metin boyutu büyüyen bir görünüm nesnesi veya örnek, döndürme içeriğine dönüşümleri gerçekleştirmek için bir dizi var. Yalnızca nesneleri görüntülemek için Ara animasyonları sınırlıdır.
 
 -  **renk** &ndash; renk durumu listesi açıklayan XML dosyaları. Renk durumu listeleri anlamak için bir kullanıcı Arabirimi pencere öğesi bir düğmesi gibi göz önünde bulundurun.
-   Basıldı veya devre dışı gibi farklı durumlara sahip hale getirebilir ve düğme durumunda her değişiklik ile renk değiştirebilir. Listeden bir durum listesinde gösterilir.
+   Basıldı veya devre dışı gibi farklı durumlara sahip olabilir ve düğme durumunda her değişiklik ile renk değiştirebilir. Listeden bir durum listesinde gösterilir.
 
 -  **drawable** &ndash; Drawable kaynaklardır uygulamasına derlenmiş ve ardından API çağrıları tarafından erişilen ya da diğer XML kaynaklar tarafından başvurulan grafikler için genel bir kavram.
    Bit eşlem dosyaları (.png, .gif, .jpg) drawables bazı örnekler şunlardır, olarak bilinen özel yeniden boyutlandırılabilir bit eşlemler [dokuz düzeltme ekleri](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch), durumu listeler, XML, vb. tanımlanan genel şekillerine.

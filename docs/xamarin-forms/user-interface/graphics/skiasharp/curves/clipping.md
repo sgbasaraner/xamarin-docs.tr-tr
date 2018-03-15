@@ -8,11 +8,11 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e84bce5d4280ded801ed58999a2570d3c6bd327e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>Kırpma yolları ve bölgeler
 
@@ -267,7 +267,7 @@ Ancak, aşırı `ClipPath` ve `ClipRect` ile `SKRegionOperation` parametreleri a
 
 Kullanmaya devam edebilirsiniz `SKRegionOperation` numaralandırma ancak gerektirir kırpma alanı cinsinden tanımladığınız bir [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) nesnesi.
 
-Yeni oluşturulan bir `SKRegion` nesnesi boş bir alana açıklar. Genellikle ilk nesne üzerinde çağrıdır [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) dikdörtgen bir bölgesi açıklamak böylece. Parametre `SetRect` olan bir bir `SKRectI` değeri & #x 2014; dikdörtgen değeri tamsayı özelliklere sahip. Ardından çağırabilirsiniz [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) ile bir `SKPath` nesnesi. Bu yolun iç ile aynıdır, ancak ilk dikdörtgen bölgesine kırpılmış bölge oluşturur.
+Yeni oluşturulan bir `SKRegion` nesnesi boş bir alana açıklar. Genellikle ilk nesne üzerinde çağrıdır [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) dikdörtgen bir bölgesi açıklamak böylece. Parametre `SetRect` olan bir bir `SKRectI` değeri &mdash; dikdörtgen değeri tamsayı özelliklere sahip. Ardından çağırabilirsiniz [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) ile bir `SKPath` nesnesi. Bu yolun iç ile aynıdır, ancak ilk dikdörtgen bölgesine kırpılmış bölge oluşturur.
 
 `SKRegionOperation` Numaralandırma birini çağırdığınızda oyuna yalnızca gelir [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) bunun gibi yöntemi aşırı:
 

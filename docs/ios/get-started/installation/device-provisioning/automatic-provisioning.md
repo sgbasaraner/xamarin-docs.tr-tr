@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: d7532d052c57ad46caca0cd6d6ce26d0e77dc05f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="automatic-provisioning"></a>Otomatik sağlama
 
@@ -34,23 +34,15 @@ Uygulamanız bir iOS cihazında dağıtım için otomatik olarak imzalamak için
 
 1. Bir iOS projesi Mac için Visual Studio'da açın
 
-2. Açık **Info.plist** dosyası:
+2. Açık **Info.plist** dosya.
 
-    ![Info.plist dosyası](automatic-provisioning-images/image1.png)
-
-3. İçinde **imzalama** bölümünde, ekibinden seçin **takım** açılır:
+3. İçinde **imzalama** bölümünde, seçin seçin **otomatik sağlamayı**:
 
     ![Takım Seçici açılan kutusu](automatic-provisioning-images/image2.png)
 
-4. Seçin **imzalama otomatik olarak yönetir** aşağıda gösterildiği gibi onay kutusunu. Burada bir uygulama kimliği oluşturmak için Visual Studio Mac için deneyecek, bu başlangıç otomatik imzalama işlemi, sağlama profili ve bir imza kimliği ve imzalama için kullanılacak bu yapıtların ayarlayın. Onay kutusu seçili olduğunda, imzalama kimlikleri seçmek için el ile denetimleri devre dışı bırakılır.
+4. Ekibinden seçin **takım** açılır.
 
-    ![Takımlar seçeneği otomatik olarak yönetme](automatic-provisioning-images/image3.png)
-
-5. Aşağıdaki iletişim kutusu, proje dosyası yeni oluşturulan sertifika kullanacak şekilde değiştirilecek bildiren ve sağlama profiliniz pop:
-
-    ![Proje dosyası öneren iletişim değiştirilecek](automatic-provisioning-images/image4.png)
-
-6. Birkaç saniye sonra bir imzalama sertifikası ve sağlama profili oluşturulan ve görüntülenir:
+6. Birkaç saniye sonra bir imzalama sertifikası ve sağlama profili oluşturulur:
 
     ![Sertifika ve profili başarıyla oluşturuldu](automatic-provisioning-images/image5.png)
 
@@ -71,7 +63,7 @@ Otomatik oturum etkin olduğunda, Mac için Visual Studio gerekiyorsa, aşağıd
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Ücretsiz sağlama](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
-- [Uygulama dağıtımı](~/ios/deploy-test/app-distribution/index.md)
+- [Ücretsiz Sağlama](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+- [Uygulama Dağıtımı](~/ios/deploy-test/app-distribution/index.md)
 - [Sorun giderme](~/ios/deploy-test/troubleshooting.md)
 - [Apple - uygulama dağıtım kılavuzu](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2017
-ms.openlocfilehash: b0afba90dab5cba4bad385f8d6447d8b83c1de3d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55b83151e9c345096aeb0bfdd686d50c5fde62fd
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xaml-namespaces"></a>XAML Ad Uzayları
 
@@ -38,40 +38,14 @@ XAML önekleri varsayılan olmayan ad alanlarını, türleri ad alanı içindeki
 
 Aşağıdaki tabloda ana hatlarını `x` Xamarin.Forms tarafından desteklenen ad öznitelikleri:
 
-<table>
- <thead>
-   <tr>
-     <td><strong>Construct</strong></td>
-     <td><strong>Açıklama</strong></td>
-   </tr>
- </thead>
- <tbody>
-   <tr>
-     <td><code>x:Arguments</code></td>
-     <td>Varsayılan olmayan bir oluşturucu ya da bir fabrika yöntemi nesne bildirimi oluşturucu bağımsız değişkenlerini belirtir.</td>
-   </tr>
-   <tr>
-     <td><code>x:Class</code></td>
-     <td>XAML içinde tanımlanan bir sınıf için ad alanı ve sınıf adını belirtir. Sınıf adı arka plan kod dosyasının sınıf adı eşleşmelidir. Bu yapıyı bir XAML dosyasının kök öğesinin yalnızca görünebileceğini unutmayın.</td>
-   </tr>
-   <tr>
-     <td><code>x:FactoryMethod</code></td>
-     <td>Nesneyi başlatmak için kullanılan Üreteç yöntemi belirtir.</td>
-   </tr>
-   <tr>
-     <td><code>x:Key</code></td>
-     <td>Her kaynak için benzersiz bir kullanıcı tanımlı anahtar belirten bir <code>ResourceDictionary</code>. Anahtarın değerini XAML kaynağı almak için kullanılır ve genellikle için bağımsız değişken olarak kullanılan <code>StaticResource</code> biçimlendirme uzantısı.</td>
-   </tr>
-   <tr>
-     <td><code>x:Name</code></td>
-     <td>XAML öğesi için bir çalışma zamanı nesne adı belirtir. Ayarı <code>x:Name</code> kod bir değişkende bildirmek için benzer.</td>
-   </tr>
-   <tr>
-     <td><code>x:TypeArguments</code></td>
-     <td>Genel tür bağımsız değişkenleri genel bir tür oluşturucuya belirtir.</td>
-   </tr>
- </tbody>
-</table>
+|Oluştur|Açıklama|
+|--- |--- |
+|`x:Arguments`|Varsayılan olmayan bir oluşturucu ya da bir fabrika yöntemi nesne bildirimi oluşturucu bağımsız değişkenlerini belirtir.|
+|`x:Class`|XAML içinde tanımlanan bir sınıf için ad alanı ve sınıf adını belirtir. Sınıf adı arka plan kod dosyasının sınıf adı eşleşmelidir. Bu yapıyı bir XAML dosyasının kök öğesinin yalnızca görünebileceğini unutmayın.|
+|`x:FactoryMethod`|Nesneyi başlatmak için kullanılan Üreteç yöntemi belirtir.|
+|`x:Key`|Her kaynak için benzersiz bir kullanıcı tanımlı anahtar belirten bir `ResourceDictionary`. Anahtarın değerini XAML kaynağı almak için kullanılır ve genellikle için bağımsız değişken olarak kullanılan `StaticResource` biçimlendirme uzantısı.|
+|`x:Name`|XAML öğesi için bir çalışma zamanı nesne adı belirtir. Ayarı `x:Name` kod bir değişkende bildirmek için benzer.|
+|`x:TypeArguments`|Genel tür bağımsız değişkenleri genel bir tür oluşturucuya belirtir.|
 
 Hakkında daha fazla bilgi için `x:Arguments`, `x:FactoryMethod`, ve `x:TypeArguments` öznitelikleri, [bağımsız değişkenleri geçirme XAML'de](~/xamarin-forms/xaml/passing-arguments.md).
 

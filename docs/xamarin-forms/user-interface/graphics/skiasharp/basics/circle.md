@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 5b09621f1d3a24f8061e5cd6551dd85ce93e36e3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Basit bir daire çizme
 
@@ -146,7 +146,7 @@ Program kendiniz çalıştırırken, telefon veya grafiği nasıl çizilme görm
 
 Bir `SKPaint` nesnesidir çizim özellikleri grafik koleksiyonu biraz daha fazla. Bu çok hafif nesnelerdir. Yeniden kullanabilir `SKPaint` nesneleri bu program, ya da birden çok oluşturabileceğiniz gibi `SKPaint` nesnelerin özelliklerini çizim çeşitli birleşimler için. Oluşturma ve bu nesnelerin dışında başlatma `PaintSurface` olay işleyicisi ve kaydedebilir bunları alanlar olarak sayfa sınıfınızda.
 
-Dairenin kenarlık genişliğini 25 piksel & #x 2014; olarak belirtilmiş olsa da veya çeyrek daire & #x 2014 RADIUS; İnce gibi görünüyor ve söz konusu iyi bir neden yoktur: mavi bir daire satırının yarı genişlikli getirilmemeli. Bağımsız değişkenleri `DrawCircle` yöntemi bir daire soyut geometrik koordinatlarını tanımlayın. Bu boyutuna yakın piksel mavi iç boyuta sahip olmadığından, ancak 25 piksel genişliğinde anahat geometrik daire & #x 2014 yayılan; Yarı iç ve dış yarısı.
+Dairenin kenarlık genişliğini 25 piksel olarak belirtilmiş olsa da &mdash; veya Çeyrek dairenin RADIUS &mdash; ince gibi görünüyor ve söz konusu iyi bir neden yoktur: mavi bir daire satırının yarı genişlikli getirilmemeli. Bağımsız değişkenleri `DrawCircle` yöntemi bir daire soyut geometrik koordinatlarını tanımlayın. Bu boyutuna yakın piksel mavi iç boyuta sahip olmadığından, ancak 25 piksel genişliğinde anahat geometrik daire yayılan &mdash; yarısı iç ve dış yarısı.
 
 Sonraki örnekte [Xamarin.Forms ile tümleştirme](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) makalede gösterilir bu görsel olarak.
 

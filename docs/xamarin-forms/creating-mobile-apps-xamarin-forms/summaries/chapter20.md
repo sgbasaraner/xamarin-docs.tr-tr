@@ -7,11 +7,11 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 86ae56fc2baac3eab0fbf375c5f67f7b2327721a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0ac316bc2cef04a80958c047427845dbdcc4137f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Bölüm 20 özeti. Zaman uyumsuz ve dosya g/ç
 
@@ -65,7 +65,7 @@ Geleneksel olarak, .NET [ `System.IO` ](https://developer.xamarin.com/api/namesp
 
 ### <a name="good-news-and-bad-news"></a>İyi haber ve hatalı Haberleri
 
-Xamarin.Forms uygulaması yerel depolamayı destekle & #x 2014 tarafından desteklenen tüm platformlar; uygulamaya özel depolama.
+Xamarin.Forms uygulaması yerel depolamayı destekle tarafından desteklenen tüm platformlar &mdash; uygulamaya özel depolama.
 
 Xamarin.iOS ve Xamarin.Android kitaplıkları Xamarin açıkça bu iki platform için uyarlanabilir .NET sürümünü içerir. Sınıflardan bunlar `System.IO` bu iki platform dosya g/ç uygulama yerel depolama ile gerçekleştirmek için kullanabilirsiniz.
 
@@ -117,7 +117,7 @@ Bu kitaplıklar kullanmak için uygulama çözümünü tüm projelerde içermeli
 
 ### <a name="keeping-it-in-the-background"></a>Arka planda tutma
 
-Birden çok zaman uyumsuz yöntemleri & #x 2014 çağrı yapmak kitaplıkları yöntemleri; gibi `WriteFileAsync` ve `ReadFileASync` Windows çalışma zamanı yöntemleri [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) sınıfı & #x 2014; kullanarak biraz daha verimli hale getirilebilir [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/) yöntemi geri kullanıcı arabirimi iş parçacığına değiştirme kaçının.
+Birden çok zaman uyumsuz yöntemleri çağrı yapmak kitaplıkları yöntemleri &mdash; gibi `WriteFileAsync` ve `ReadFileASync` Windows çalışma zamanı yöntemleri [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) sınıfı &mdash; biraz yapılabilir kullanarak daha verimli [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/) geri kullanıcı arabirimi iş parçacığı geçişi önlemek için yöntem.
 
 ### <a name="dont-block-the-ui-thread"></a>Kullanıcı Arabirimi iş parçacığı engelleme!
 

@@ -7,11 +7,11 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a40b4f00fd2a0dd3f61c4882a2ef25b8eb68a3a5
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Bölüm 21 özeti. Dönüşümler
 
@@ -19,9 +19,9 @@ Xamarin.Forms görünüm konumu ve boyutu genellikle üst tarafından belirlenen
 
 Xamarin.Forms dönüşümler üç temel türlerini destekler:
 
-- *Çeviri* & #x 2014; öğenin yatay veya dikey kaydırma
-- *Ölçek* & #x 2014; öğenin boyutunu değiştirme
-- *Döndürme* & #x 2014; bir nokta veya ekseni etrafında bir öğeyi aç
+- *Çeviri* &mdash; öğenin yatay veya dikey kaydırma
+- *Ölçek* &mdash; öğenin boyutunu değiştirme
+- *Döndürme* &mdash; bir nokta veya ekseni etrafında bir öğeyi aç
 
 Xamarin.Forms içinde ölçeklendirme isotropic; Bu genişlik ve yükseklik hep etkiler. Döndürme hem ekranın ve iki boyutlu yüzeyinde 3B uzaydaki desteklenir. Hiçbir eğme (veya çalıştırmaları) dönüştürme ve hiçbir genelleştirilmiş matris dönüştürme yok.
 

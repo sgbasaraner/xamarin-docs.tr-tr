@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 7c38ebb6b482f4097a4977accecc4a230d3f3ed3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="android-speech"></a>Android konuşma
 
@@ -128,11 +128,11 @@ Büyük ölçüde, Android cihazlar varsayılan gelen Google TTS hizmetinin yük
 
 ### <a name="step-1---instantiating-texttospeech"></a>1. adım - TextToSpeech örnek oluşturma
 
-`TextToSpeech` en fazla 3 parametre alabilir, ilk iki üçüncü ile gerekli olan isteğe bağlı olan (`AppContext`, `IOnInitListener`, `engine`). Dinleyici hizmeti ve test hatası için en az kullanılabilir Android metin okuma altyapılarının herhangi bir sayı olan altyapı ile bağlamak için kullanılır, cihaz Google kendi altyapısı sahip olur.
+`TextToSpeech` en fazla 3 parametre alabilir, ilk iki üçüncü ile gerekli olan isteğe bağlı olan (`AppContext`, `IOnInitListener`, `engine`). Dinleyici hizmeti ve test hata için kullanılabilir Android metin okuma altyapılarının herhangi bir sayı olan altyapısıyla bağlamak için kullanılır. En azından, cihaz Google kendi altyapısı sahip olur.
 
 ### <a name="step-2---finding-the-languages-available"></a>Adım 2 - kullanılabilir diller bulma
 
-`Java.Util.Locale` Ad alanında adlı yardımcı bir yöntem `GetAvailableLocales()`. Bu konuşma altyapısı tarafından desteklenen dillerin listesi sonra yüklü dilleri karşı test edilebilir.
+`Java.Util.Locale` Sınıfı içeren adlı bir yardımcı yöntem `GetAvailableLocales()`. Bu konuşma altyapısı tarafından desteklenen dillerin listesi sonra yüklü dilleri karşı test edilebilir.
 
 "Anladım" dillerin listesini oluşturmak için basit bir konudur. Ayrıca bir varsayılan dil (Dil Kullanıcı Ayarla bunlar ilk cihazlarını kurduğunuzda), her zaman olacak kadar bu örnekteki `List<string>` ilk parametre olarak "Varsayılan" sahipse, listenin geri kalanı sonucu bağlı olarak doldurulacaktır `textToSpeech.IsLanguageAvailable(locale)`.
 
@@ -186,7 +186,7 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 
 ### <a name="step-5---the-ioninitlistener"></a>Adım 5 - IOnInitListener
 
-Metin okuma, arabirim yöntemini dönüştürmek bir etkinlik için `OnInit` oluşturulması gerekir (Bu örnek bu oluşturma için belirtilen ikinci parametredir `TextToSpeech` sınıfı). Bu dinleyiciyi başlatır ve sonucu sınar.
+Metin okuma, arabirim yöntemini dönüştürmek bir etkinlik için `OnInit` uygulanması gerekir (Bu örnek bu oluşturma için belirtilen ikinci parametredir `TextToSpeech` sınıfı). Bu dinleyiciyi başlatır ve sonucu sınar.
 
 Dinleyici için her ikisini de sınamalısınız `OperationResult.Success` ve `OperationResult.Failure` en az.
 Aşağıdaki örnek, tam olarak bunu gösterir:

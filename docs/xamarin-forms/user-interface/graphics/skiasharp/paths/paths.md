@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6d2e600ccc85f6e72e7f913e7ffb501bf62ff69a
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="path-basics"></a>Yol temelleri
 
@@ -115,7 +115,7 @@ Gördüğünüz gibi ilk dağılım açıkça üç bağlantılı çizgilerin diz
 - `AddPath` başka bir yolu geçerli yolunu eklemek için
 - [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) geriye doğru başka bir yol eklemek için
 
-Aklınızda bir `SKPath` nesnesi tanımlar yalnızca geometri & #x 2014; bir dizi noktaları ve bağlantıları. Yalnızca bir `SKPath` ile birleştirilmiş bir `SKPaint` nesne işlenen belirli rengi, vuruşun genişliğini ve benzeri yoludur. Ayrıca, aklınızda `SKPaint` nesne geçirilen `DrawPath` yöntemi yolun tamamını özelliklerini tanımlar. Birkaç renkleri gerektiren bir şey çizmek istiyorsanız, her renk için ayrı bir yol kullanmanız gerekir.
+Aklınızda bir `SKPath` nesnesi tanımlar yalnızca geometri &mdash; bir dizi noktaları ve bağlantıları. Yalnızca bir `SKPath` ile birleştirilmiş bir `SKPaint` nesne işlenen belirli rengi, vuruşun genişliğini ve benzeri yoludur. Ayrıca, aklınızda `SKPaint` nesne geçirilen `DrawPath` yöntemi yolun tamamını özelliklerini tanımlar. Birkaç renkleri gerektiren bir şey çizmek istiyorsanız, her renk için ayrı bir yol kullanmanız gerekir.
 
 Başlangıç ve bitiş satırının görünümünü vuruş cap tarafından yalnızca tanımlandığı gibi iki satır arasındaki bağlantıyı görünümünü tarafından tanımlanan bir *vuruş birleştirme*. Bu ayarlayarak belirttiğiniz [ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/) özelliği `SKPaint` üyesi için [ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/) numaralandırma:
 

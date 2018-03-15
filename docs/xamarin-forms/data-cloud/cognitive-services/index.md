@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 650f8dceebb088b3601c21c1f5373fc4ae8c76dc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Bilişsel hizmetler zekasıyla ekleme
 
@@ -52,51 +52,20 @@ Smilies düğmesine tıklayarak `TodoListPage` gider `RateAppPage`, yüz ifade g
 
 Örnek uygulama için taşınabilir sınıf kitaplığı (PCL) proje beş ana klasörleri oluşur:
 
-<table>
-    <thead>
-        <tr><td><strong>Klasör</strong></td><td><strong>Amacı</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>Modelleri</strong></td>
-            <td>Uygulama için veri modeli sınıfları içerir. Bu içerir <code>TodoItem</code> tek bir uygulama tarafından kullanılan veri öğesi modeller sınıfı. Klasörü ayrıca farklı Microsoft Bilişsel hizmet API'lerden döndürülen modeli JSON yanıtlar için kullanılan sınıfları içerir.</td>
-        </tr>
-        <tr>
-            <td><strong>Depoları</strong></td>
-                        <td>İçeren <code>ITodoItemRepository</code> arabirimi ve <code>TodoItemRepository</code> veritabanı işlemlerini gerçekleştirmek için kullanılan sınıfı.</td>
-        </tr>
-        <tr>
-            <td><strong>Hizmetler</strong></td>
-                        <td>Farklı Microsoft Bilişsel hizmet API'leri, tarafından kullanılan arabirimleri birlikte erişmek için kullanılan sınıfları ve arabirimleri içerir <code>DependencyService</code> platform projelerinde arabirimleri uygulayan sınıflar bulmak için sınıf.</td>
-        </tr>
-        <tr>
-            <td><strong>Yardımcı programları</strong></td>
-            <td>İçeren <code>Timer</code> tarafından kullanılan sınıf <code>AuthenticationService</code> sınıfı 9 dakikada bir JWT erişim belirtecini yenileyin.</td>
-        </tr>
-        <tr>
-            <td><strong>Görünümler</strong></td>
-            <td>Uygulama için sayfalar içerir.</td>
-        </tr>
-    </tbody>
-</table>
+|Klasör|Amaç|
+|--- |--- |
+|Modeller|Uygulama için veri modeli sınıfları içerir. Bu içerir `TodoItem` tek bir uygulama tarafından kullanılan veri öğesi modeller sınıfı. Klasörü ayrıca farklı Microsoft Bilişsel hizmet API'lerden döndürülen modeli JSON yanıtlar için kullanılan sınıfları içerir.|
+|Depoları|İçeren `ITodoItemRepository` arabirimi ve `TodoItemRepository` veritabanı işlemlerini gerçekleştirmek için kullanılan sınıfı.|
+|Hizmetler|Farklı Microsoft Bilişsel hizmet API'leri, tarafından kullanılan arabirimleri birlikte erişmek için kullanılan sınıfları ve arabirimleri içerir `DependencyService` platform projelerinde arabirimleri uygulayan sınıflar bulmak için sınıf.|
+|Yardımcı programları|İçeren `Timer` tarafından kullanılan sınıf `AuthenticationService` sınıfı 9 dakikada bir JWT erişim belirtecini yenileyin.|
+|Görünümler|Uygulama için sayfalar içerir.|
 
 PCL proje ayrıca bazı önemli dosyaları içerir:
 
-<table>
-    <thead>
-      <tr><td><strong>Dosya</strong></td><td><strong>Amacı</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td><code>Constants</code> Microsoft Bilişsel hizmet çağrılan API'leri için uç noktalar ve API anahtarlarını belirtir sınıfı. API anahtar sabitleri farklı Bilişsel hizmet API'leri erişmek için güncelleştirilmesi gerekir.
-        </tr>
-        <tr>
-          <td><strong>App.xaml.cs</strong></td>
-          <td><code>App</code> Sınıfı, her bir platformda uygulama tarafından görüntülenen her iki ilk sayfa başlatmasını için sorumlu ve <code>TodoManager</code> veritabanı işlemlerini çağırmak için kullanılan sınıf.</td>
-        </tr>
-    </tbody>
-</table>
+|Dosya|Amaç|
+|--- |--- |
+|Constants.cs|`Constants` Microsoft Bilişsel hizmet çağrılan API'leri için uç noktalar ve API anahtarlarını belirtir sınıfı. API anahtar sabitleri farklı Bilişsel hizmet API'leri erişmek için güncelleştirilmesi gerekir.|
+|App.xaml.cs|`App` Sınıfı, her bir platformda uygulama tarafından görüntülenen her iki ilk sayfa başlatmasını için sorumlu ve `TodoManager` veritabanı işlemlerini çağırmak için kullanılan sınıf.|
 
 ### <a name="nuget-packages"></a>NuGet paketleri
 

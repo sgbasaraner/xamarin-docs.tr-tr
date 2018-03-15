@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: f448a3ee9c018aa475775a5ac2c614f3e7ddc324
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ab22881f383e00a67fda8d3e8ffc5d9a4f7f993e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -25,20 +25,7 @@ Bunu bir Basitleştirilmiş, yeni nesil düşünebilirsiniz [taşınabilir sın�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-## <a name="xamarin-studio"></a>Xamarin Studio
-
-.NET standart Kitaplığı projelerinde taşınabilir kitaplığı projesi oluşturarak Xamarin Studio 6.2 içinde oluşturulabilir:
-
-[![](net-standard-images/xs01-sml.png "Yeni bir taşınabilir kitaplığı projesi oluşturma")](net-standard-images/xs01.png#lightbox)
-
-Proje oluşturulduktan sonra sağ tıklayın ve açın **proje seçenekleri** penceresi.
-İçinde **genel** proje .NET standart dönüştürülür ve belirli bir sürümünü kullanmak üzere ayarlanmış bölüm **Platform** aşağı açılan listesi:
-
-[![](net-standard-images/xs02-sml.png ".NET standart genel seçenekleri Dönüştür")](net-standard-images/xs02.png#lightbox)
-
-Daha sonra [bir NuGet paketi oluşturma](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library.md) diğer geliştiricilere bir kitaplık paylaşımı için.
-
-## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio Mac gözden geçirme
+## <a name="visual-studio-for-mac"></a>Mac için Visual Studio
 
 Bu bölümde nasıl oluşturulacağı ve .NET standart Mac için Visual Studio kullanarak kitaplığı kullanmak anlatılmaktadır Tam bir uygulama için .NET standart kitaplığı örnek bölümüne bakın.
 
@@ -68,7 +55,7 @@ Sürümünüz içinde değiştirebileceğiniz `netstandard` değiştirerek `Targ
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-## <a name="visual-studio-windows-walkthrough"></a>Visual Studio'da (Windows) izlenecek yollar
+## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
 Bu bölümde oluşturmak ve .NET standart Visual Studio kullanarak kitaplığı kullanmak nasıl aracılığıyla anlatılmaktadır. Tam bir uygulama için .NET standart kitaplığı örnek bölümüne bakın.
 
@@ -104,7 +91,3 @@ Sürümünüz içinde değiştirebileceğiniz `netstandard` değiştirerek `Targ
 
 -----
 
-
-## <a name="related-links"></a>İlgili bağlantılar
-
-- [Sürüm Notları](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#.NET_Standard_Support)

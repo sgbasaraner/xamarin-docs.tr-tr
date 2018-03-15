@@ -8,11 +8,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 39e2084bf9ca888d6e39fc5f02a455d3500e568c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-scale-transform"></a>Ölçek dönüştürme
 
@@ -44,7 +44,7 @@ y' = sy · y
 public void Scale (Single s)
 ```
 
-Bu olarak bilinir *isotropic* ölçeklendirme & #x 2014; yani aynı her iki yönde de ölçeklendirme. İsotropic ölçeklendirme nesnenin en boy oranını korur.
+Bu olarak bilinir *isotropic* ölçeklendirme &mdash; yani aynı her iki yönde de ölçeklendirme. İsotropic ölçeklendirme nesnenin en boy oranını korur.
 
 İkinci [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) yöntemi yatay ve dikey ölçekleme için farklı değerler belirtmenize olanak sağlar:
 
@@ -168,7 +168,7 @@ Yuvarlak dikdörtgen sol üst köşesindeki konumlandırılmış `margin` tuvali
 
 [![](scale-images/centeredscale-small.png "Üçlü sayfasının ekran görüntüsü ortalanmış ölçek")](scale-images/centeredscale-large.png#lightbox "Üçlü sayfasının ekran görüntüsü ortalanmış ölçek")
 
-`Slider` Bu programda öğelerine sahip bir dizi & #x 2013; 10-10. Gördüğünüz gibi (Android Center'da Ekran gibi) ölçeklendirme dikey negatif değerler ölçeklendirme merkezi üzerinden geçirir yatay ekseni etrafında ters çevirmek nesneleri neden olur. Negatif değerler (Windows ekranın sağ taraftaki olduğu gibi) ölçeklendirme yatay ölçekleme merkezi üzerinden geçirir dikey ekseni etrafında ters çevirmek nesneleri neden olur.
+`Slider` Bu programda öğelerine sahip bir dizi &ndash;10-10. Gördüğünüz gibi (Android Center'da Ekran gibi) ölçeklendirme dikey negatif değerler ölçeklendirme merkezi üzerinden geçirir yatay ekseni etrafında ters çevirmek nesneleri neden olur. Negatif değerler (Windows ekranın sağ taraftaki olduğu gibi) ölçeklendirme yatay ölçekleme merkezi üzerinden geçirir dikey ekseni etrafında ters çevirmek nesneleri neden olur.
 
 Dördüncü bu sürümü `Scale` gerçekte bir kısayol bir yöntemdir. Bunun değiştirerek nasıl çalıştığını görmek isteyebilirsiniz `Scale` bu kodu aşağıdakilerle yöntemi:
 

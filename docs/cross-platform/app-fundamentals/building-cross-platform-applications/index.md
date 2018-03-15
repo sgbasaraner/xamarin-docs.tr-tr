@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: 7934738a546a266036573b81e15ef9b2fa28d7b4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 53c32003cd1a77a3aa5feb0ab26cedeab27789dc
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="sharing-code-options"></a>Paylaşım kodu seçenekleri
 
@@ -22,19 +22,19 @@ Platformlar arası mobil uygulamalar arasında kod paylaşmak için iki seçenek
 
 ## <a name="building-cross-platform-mobile-apps"></a>Platformlar arası mobil uygulamaları oluşturma
 
- [Genel bakış](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-0-overview.md)
+ [Genel bakış](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
- [Bölüm 1 – Xamarin mobil Platform anlama](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-1-understanding-the-xamarin-mobile-platform.md)
+ [Bölüm 1 – Xamarin mobil Platform anlama](~/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 
- [Bölüm 2 – mimarisi](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-2-architecture.md)
+ [Bölüm 2 – mimarisi](~/cross-platform/app-fundamentals/building-cross-platform-applications/architecture.md)
 
- [Bölüm 3 – Xamarin Çapraz Platform çözümü ayarladıktan](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-3-setting-up-a-xamarin-cross-platform-solution.md)
+ [Bölüm 3 – Xamarin Çapraz Platform çözümü ayarladıktan](~/cross-platform/app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution.md)
 
- [Bölüm 4 – ile birden çok platform ele alma](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-4-platform-divergence-abstraction-divergent-implementation.md)
+ [Bölüm 4 – ile birden çok platform ele alma](~/cross-platform/app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md)
 
- [5 – stratejileri paylaşımı pratik kod parçası](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-5-practical-code-sharing-strategies.md)
+ [5 – stratejileri paylaşımı pratik kod parçası](~/cross-platform/app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md)
 
- [Bölüm 6 - Test Etme ve App Store Onayları](~/cross-platform/app-fundamentals/building-cross-platform-applications/part-6-testing-and-app-store-approvals.md)
+ [Bölüm 6 - Test Etme ve App Store Onayları](~/cross-platform/app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md)
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 

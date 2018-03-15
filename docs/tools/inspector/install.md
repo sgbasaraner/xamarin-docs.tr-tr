@@ -1,5 +1,6 @@
 ---
-title: "Yükleme ve gereksinimler"
+title: "Inspector yükleme ve gereksinimler"
+description: "İndirme, yükleme ve Xamarin denetçisi kullanmak nasıl."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
@@ -7,35 +8,28 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: a587935e35882ed1dc68817fbbe1ae3e91200f29
-ms.sourcegitcommit: 0bdcd00b64d581d4c5179bc39ded4018c9374229
+ms.openlocfilehash: a2e6f254c77ac099b5700543db5763b8bbb44fef
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="installation-and-requirements"></a>Yükleme ve gereksinimler
-
-<script> var inspectorOnLoad işlevi () = {var primaryTextBase = "Xamarin çalışma kitaplarını & denetçisine"; var secondaryTextBase = "veya yükleyin"; var inspectorDownloadUrlMac = "https://dl.xamarin.com/interactive/XamarinInteractive.pkg"; var inspectorDownloadUrlWin = "https://dl.xamarin.com/interactive/XamarinInteractive.msi";
-
-  var aPrimary = document.getElementById("inspector-download-primary"); var aSecondary = document.getElementById("inspector-download-secondary");
-
-  var aMac = aPrimary; var aWin = aSecondary; var macTextBase = primaryTextBase; var winTextBase = secondaryTextBase;
-
-  if (/win/i.test(navigator.platform.toLowerCase())) { aMac = aSecondary; aWin = aPrimary; macTextBase = secondaryTextBase; winTextBase = primaryTextBase; }
-
-  aMac.href inspectorDownloadUrlMac; = aMac.text = macTextBase + "Mac"; aWin.href inspectorDownloadUrlWin; = aWin.text = winTextBase + "Windows"; };
-
-document.addEventListener ("DOMContentLoaded", inspectorOnLoad);
-</script>
+# <a name="inspector-installation-and-requirements"></a>Inspector yükleme ve gereksinimler
 
 ## <a name="download-and-installation"></a>İndirme ve yükleme
 
-<ol>
-  <li>İndirme ve yükleme <a href="https://dl.xamarin.com/interactive/XamarinInteractive.pkg" id="inspector-download-primary">Xamarin çalışma kitaplarını & Denetçisi Mac için</a> (<a href="https://dl.xamarin.com/interactive/XamarinInteractive.msi" id="inspector-download-secondary">veya Windows yükleme</a>).
-  </li>
-  <li><a href="~/tools/inspector/inspect.md"> Kendi uygulamanızı inceleyin!</a>
-    </li>
-</ol>
+
+# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+
+1. İndirme ve yükleme [Xamarin çalışma kitaplarını & Denetçisi for Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
+2. [Kendi uygulamanızı inceleyin!](~/tools/inspector/inspect.md)
+
+# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+
+1. İndirme ve yükleme [Xamarin çalışma kitaplarını & Denetçisi Mac için](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
+2. [Kendi uygulamanızı inceleyin!](~/tools/inspector/inspect.md)
+
+-----
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -57,43 +51,13 @@ Dinamik uygulama İnceleme Kurumsal müşteriler için kullanılabilir.
 
 ### <a name="supported-app-platforms"></a>Desteklenen uygulama platformları
 
-<table>
-<thead>
-  <tr>
-    <th>Uygulama platformu</th>
-    <th>IDE desteği</th>
-    <th>Notlar</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Mac (Birleşik)</td>
-    <td>Yalnızca Mac üzerinde desteklenir</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>iOS (Birleşik)</td>
-    <td>Desteklenen XS ve Visual Studio</td>
-    <td>İOS uygulamalarını Windows inceleniyor Mac yapı konakta da yüklenmesi denetçisinin aynı sürümünü gerektirir.</td>
-  </tr>
-  <tr>
-    <td>Android</td>
-    <td>Desteklenen XS ve Visual Studio</td>
-    <td>
-      <ul>
-        <li>Android hedeflemelidir > 4.0.3 =</li>
-        <li>Fastdev etkinleştirmiş olmanız gerekir</li>
-        <li>Google, Visual Studio veya Xamarin Android öykünücüsünü kullanmanız gerekir. Android 7 öykünücüsünü denetleme şu anda izin vermeyebilir.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>WPF</td>
-    <td>Yalnızca Windows Visual Studio'da desteklenir</td>
-    <td/>
-  </tr>
-</tbody>
-</table>
+|Uygulama platformu|IDE desteği|Notlar|
+|--- |--- |--- |
+|Mac (Birleşik)|Yalnızca Mac üzerinde desteklenir|
+|iOS (Birleşik)|Desteklenen XS ve Visual Studio|İOS uygulamalarını Windows inceleniyor Mac yapı konakta da yüklenmesi denetçisinin aynı sürümünü gerektirir.|
+|Android|Desteklenen XS ve Visual Studio|Android hedeflemelidir > ile 4.0.3, = **fastdev** etkin.<br />Google, Visual Studio veya Xamarin Android öykünücüsünü kullanmanız gerekir. Android 7 öykünücüsünü denetleme şu anda izin vermeyebilir.|
+|WPF|Yalnızca Windows Visual Studio'da desteklenir|
+
 
 <a name="reporting-bugs" />
 
@@ -101,7 +65,7 @@ Dinamik uygulama İnceleme Kurumsal müşteriler için kullanılabilir.
 
 Doğrudan Visual Studio bildirilen hatalar:
 
-- **→ Gönderme geri bildirim → rapor bir sorun Yardım**
+- **Yardım > Görüş Gönder > bir sorun bildirmek**
 
 Lütfen aşağıdaki bilgileri içerir:
 
@@ -111,12 +75,12 @@ Bu bilgiler önemlidir.
 
 Mac için Visual Studio
 
-- **Visual Studio → Visual Studio → Göster Ayrıntılar → kopyalama bilgiler hakkında**
+- **Visual Studio > Visual Studio hakkında > Ayrıntıları Göster > kopyalama bilgileri**
 - Hata raporu yapıştırın
 
 Xamarin Studio
 
-- **Xamarin Studio → Xamarin Studio → Göster hakkında → kopyalama bilgileri ayrıntıları**
+- **Xamarin Studio > Xamarin Studio hakkında > Ayrıntıları Göster > kopyalama bilgileri**
 - Hata raporu yapıştırın
 
 Visual Studio
@@ -135,7 +99,7 @@ Inspector istemci
 
 1.4.x da günlük dosyası Bulucu (macOS) veya doğrudan Gezgini'nde (Windows) ana menüden seçebilme özellikleri:
 
-- **Yardım → açığa günlük dosyası**
+- **Yardım > ortaya günlük dosyası**
 
 Mac için Visual Studio
 
@@ -148,11 +112,11 @@ Xamarin Studio
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Visual Studio içeriğini `Output` bölmesinde da bilgilendirici olabilir.
+- Visual Studio içeriğini **çıkış** bölmesinde da bilgilendirici olabilir.
 
 ### <a name="project-settings"></a>Proje ayarları
 
-Eklerseniz `.csproj` incelemek için çalıştığınız proje için son derece yararlı olacaktır. Bu, tek tek ayarlar hakkında isteyen daha kolaydır.
+Eklerseniz **.csproj** incelemek için çalıştığınız proje için son derece yararlı olacaktır. Bu, tek tek ayarlar hakkında isteyen daha kolaydır.
 
 Ayrıca hata ayıklama yapılandırmasını da olduğunu lütfen doğrulayın.
 
@@ -177,13 +141,13 @@ Nasıl çalışma kitaplarını & Denetçisi aldığınız bağlı olarak, iki k
 
 #### <a name="visual-studio-installer"></a>Visual Studio yükleyicisi
 
-Visual Studio 2017 varsa, "Visual Studio yükleyicisi" açın ve "Xamarin çalışma kitapları için" "Bileşenleri tek tek" bakın. İşaretlenirse, onay işaretini kaldırın ve sonra kaldırmak için "Değiştir"'i tıklatın.
+Visual Studio 2017 varsa, açık **Visual Studio yükleyicisi**ve konum **bileşenleri tek tek** için **Xamarin çalışma kitaplarını**. İşaretlenirse, onay işaretini kaldırın ve sonra kaldırmak için "Değiştir"'i tıklatın.
 
 #### <a name="system-uninstall"></a>Sistem Kaldır
 
 Çalışma kitapları & Denetçisi kendiniz ile indirilen yükleyiciyi yüklediyseniz, üzerinden mi kaldırılması gerekir **uygulamalar ve Özellikler** sistem ayarları sayfası Windows 10 veya aracılığıyla **Program Ekle/Kaldır**önceki sürümlerinde Windows Denetim Masası'nda.
 
-> **Başlatma → ayarları → sistem → uygulamalar ve Özellikler**
+> **Başlat > Ayarlar > Sistem > uygulamalar ve Özellikler**
 
 ![](install-images/windows-remove.png "Xamarin çalışma kitaplarını ve 'Uygulamalar ve Özellikler' listelendiği gibi denetçisi")
 

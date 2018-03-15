@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 08/28/2017
-ms.openlocfilehash: 024e73ddfe517f6fe9766607fa17efbd5703234c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a2b5a1135a4d08c2a89caf0fbf4b2cdb1ac624c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="system-requirements"></a>Sistem Gereksinimleri
 
@@ -32,7 +32,7 @@ Ziyaret [yükleme yönergeleri](#install) yazılım ve gerekli SDK'ları alma ha
 
 Bu tabloda, hangi platformlarda farklı geliştirme aracı & işletim sistemi birleşimlerine oluşturulabilir gösterilmektedir:
 
-[!include[](~/cross-platform/includes/development-environment.html)]
+[!include[](~/cross-platform/includes/development-environment.md)]
 
 
 > [!NOTE]
@@ -44,7 +44,7 @@ Bu tabloda, hangi platformlarda farklı geliştirme aracı & işletim sistemi bi
 
 Xamarin geliştirme için bir Mac bilgisayar kullanarak, aşağıdaki yazılım/SDK sürümleri gerektirir. İşletim sistemi sürümünüzü denetleyin ve yönergeleri izleyin [Xamarin yükleyici](#install).
 
-[!include[](~/cross-platform/includes/macos-requirements.html)]
+[!include[](~/cross-platform/includes/macos-requirements.md)]
 
 > [!NOTE]
 > Not: Xcode yüklü (güncelleştirilmiş üzerinde ve) [developer.apple.com](https://developer.apple.com/xcode/download/) veya Mac App Store aracılığıyla.
@@ -53,7 +53,7 @@ Xamarin geliştirme için bir Mac bilgisayar kullanarak, aşağıdaki yazılım/
 
 Xamarin mobil uygulamaları test ve hata ayıklama (Xamarin.Mac uygulamaları doğrudan geliştirme bilgisayarda; sınanabilir için fiziksel cihazlara USB üzerinden dağıtılabilir Apple Watch uygulamaları ilk eşleştirilmiş iPhone dağıtılır).
 
-[!include[](~/cross-platform/includes/macos-testing.html)]
+[!include[](~/cross-platform/includes/macos-testing.md)]
 
 
 <a name="windows" />
@@ -64,7 +64,7 @@ Xamarin geliştirme için bir Windows bilgisayar kullanarak, aşağıdaki yazıl
 İşletim sistemi sürümünüzü denetleyin (ve onaylayın, kullanmadığınız bir *Express* Visual Studio - Öyleyse sürümünü göz önünde bulundurun güncelleştirme bir *topluluk* edition).
 Visual Studio 2015 ve 2017 yükleyicileri Xamarin otomatik olarak yüklemek için bir seçenek içerir.
 
-[!include[](~/cross-platform/includes/windows-requirements.html)]
+[!include[](~/cross-platform/includes/windows-requirements.md)]
 
 
 > [!NOTE]
@@ -78,7 +78,7 @@ Visual Studio 2015 ve 2017 yükleyicileri Xamarin otomatik olarak yüklemek içi
 
 Xamarin mobil uygulamalar, test ve hata ayıklama (iOS cihazları Mac bilgisayara, Visual Studio çalıştıran bilgisayarda değil'e bağlı olması gerekir) için fiziksel cihazlara USB üzerinden dağıtılabilir.
 
-[!include[](~/cross-platform/includes/windows-testing.html)]
+[!include[](~/cross-platform/includes/windows-testing.md)]
 
 
 > [!NOTE]

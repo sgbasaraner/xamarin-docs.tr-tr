@@ -8,11 +8,11 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1d174e441cd46255d62283521e7db2802b49072f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="integrating-text-and-graphics"></a>Metin ve grafik tümleştirme
 
@@ -61,13 +61,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 `Left` Ve `Top` özelliklerini `SKRect` yapısını belirtmek işlenmiş metnin sol üst köşesinin koordinatlarını metin olarak görüntüleniyorsa, bir `DrawText` çağıran 0 X ve Y konumunu. Örneğin, bu program çalışırken bir iPhone 7 simulator'da `TextSize` ilk çağrısından hesaplama sonucunda 90.6254 değeri atanmış `MeasureText`. `SKRect` İçin ikinci çağrısından alınan değer `MeasureText` aşağıdaki özellik değerleri içeriyor:
 
 - `Left` = 6
-- `Top` = &#x2013;68
+- `Top` = &ndash;68
 - `Width` = 664.8214
 - `Height` = 88;
 
-X ve Y koordinatları unutmayın geçirmek için `DrawText` yöntemi solunda taban metni belirtin. `Top` Değeri gösterir metin bu taban çizgisi ve (68 BT 88 alanından çıkarılmasıyla) yukarıdaki 68 piksel kadar taşıyor taban aşağıda 20 piksel. `Left` 6 değeri gösterir metin X değeri sağındaki 6 piksel başlar `DrawText` çağırın. Bu, normal karakterler arası boşluk için sağlar. Metin sıkıca ekranın sol üst köşesinde görüntülemek istiyorsanız, bunların negatif geçirmek `Left` ve `Top` değerleri, X ve Y koordinatları olarak `DrawText`, bu örnek & #x 2013; 6 ve 68.
+X ve Y koordinatları unutmayın geçirmek için `DrawText` yöntemi solunda taban metni belirtin. `Top` Değeri gösterir metin bu taban çizgisi ve (68 BT 88 alanından çıkarılmasıyla) yukarıdaki 68 piksel kadar taşıyor taban aşağıda 20 piksel. `Left` 6 değeri gösterir metin X değeri sağındaki 6 piksel başlar `DrawText` çağırın. Bu, normal karakterler arası boşluk için sağlar. Metin sıkıca ekranın sol üst köşesinde görüntülemek istiyorsanız, bunların negatif geçirmek `Left` ve `Top` değerleri, X ve Y koordinatları olarak `DrawText`, bu örnekte, &ndash;6 ve 68.
 
-`SKRect` Yapısını tanımlar birkaç kullanışlı özellikleri ve yöntemleri, geri kalan içinde kullanılan bazıları `PaintSurface` işleyicisi. `MidX` Ve `MidY` değerleri dikdörtgen merkezi koordinatlarını gösterir. (7 iPhone örnekte bu 338.4107 değerler ve & #x 2013; 24.) Aşağıdaki kod ekranındaki metinleri merkezi için koordinatları kolay hesaplama için bu değerleri kullanır:
+`SKRect` Yapısını tanımlar birkaç kullanışlı özellikleri ve yöntemleri, geri kalan içinde kullanılan bazıları `PaintSurface` işleyicisi. `MidX` Ve `MidY` değerleri dikdörtgen merkezi koordinatlarını gösterir. (7 iPhone örnekte bu 338.4107 değerler ve &ndash;24.) Aşağıdaki kod ekranındaki metinleri merkezi için koordinatları kolay hesaplama için bu değerleri kullanır:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

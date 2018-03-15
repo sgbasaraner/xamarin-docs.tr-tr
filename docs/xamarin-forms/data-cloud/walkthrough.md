@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 6625edc1f661e5f9769de82ec48367e9f900e567
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="understanding-the-sample"></a>Örnek anlama
 
@@ -38,47 +38,19 @@ Her konuda bu kılavuzdaki için karşıdan yükleme bağlantısı sağlayan bir
 
 Her bir örnek uygulama için PCL proje üç ana klasörleri oluşur:
 
-<table>
-    <thead>
-        <tr><td><strong>Klasör</strong></td><td><strong>Amacı</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>Veri</strong></td>
-                        <td>Sınıflar ve arabirimler veri öğelerini yönetmek ve web hizmeti ile iletişim kurmak için kullanılan içerir. En azından, buna dahildir <code>TodoItemManager</code> bir özellik aracılığıyla sunulan sınıfı <code>App</code> web hizmeti işlemini çağırmak için sınıf.</td>
-        </tr>
-        <tr>
-            <td><strong>Modelleri</strong></td>
-                        <td>Uygulama için veri modeli sınıfları içerir. En azından, buna dahildir <code>TodoItem</code> tek bir uygulama tarafından kullanılan veri öğesi modeller sınıfı. Klasörü de modeli kullanıcı verileri için kullanılan ek sınıfları içerir.</td>
-        </tr>
-        <tr>
-            <td><strong>Görünümler</strong></td>
-                        <td>Uygulama için sayfalar içerir. Bu genellikle oluşan <code>TodoListPage</code> ve <code>TodoItemPage</code> sınıfları ve kimlik doğrulama amacıyla kullanılan ek sınıfları.</td>
-                </tr>
-    </tbody>
-</table>
+|Klasör|Amaç|
+|--- |--- |
+|Veri|Sınıflar ve arabirimler veri öğelerini yönetmek ve web hizmeti ile iletişim kurmak için kullanılan içerir. En azından, buna dahildir `TodoItemManager` bir özellik aracılığıyla sunulan sınıfı `App` web hizmeti işlemini çağırmak için sınıf.|
+|Modeller|Uygulama için veri modeli sınıfları içerir. En azından, buna dahildir `TodoItem` tek bir uygulama tarafından kullanılan veri öğesi modeller sınıfı. Klasörü de modeli kullanıcı verileri için kullanılan ek sınıfları içerir.|
+|Görünümler|Uygulama için sayfalar içerir. Bu genellikle oluşan `TodoListPage` ve `TodoItemPage` sınıfları ve kimlik doğrulama amacıyla kullanılan ek sınıfları.|
 
 Her uygulama için PCL proje de önemli dosyaların sayısı oluşur:
 
-<table>
-    <thead>
-      <tr><td><strong>Dosya</strong></td><td><strong>Amacı</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td><code>Constants</code> Sınıfı web hizmetiyle iletişim kurmak için uygulama tarafından kullanılan sabitlerini belirtir. Bu sabitleri kişisel arka uç hizmetinize erişmek için güncelleştirme üzerinde bir sağlayıcı oluşturulan gerektirir.
-        </tr>
-        <tr>
-            <td><strong>ITextToSpeech.cs</strong></td>
-            <td><code>ITextToSpeech</code> Belirleyen arabirimi <code>Speak</code> yöntemi tüm sınıflar tarafından sağlanmalıdır.</td>
-        </tr>
-        <tr>
-          <td><strong>TODO.cs</strong></td>
-          <td><code>App</code> Her platformda uygulama tarafından görüntülenen her iki ilk sayfa başlatmasını için sorumlu sınıfı ve <code>TodoItemManager</code> web hizmeti işlemini çağırmak için kullanılan sınıf.</td>
-        </tr>
-    </tbody>
-</table>
+|Dosya|Amaç|
+|--- |--- |
+|Constants.cs|`Constants` Sınıfı web hizmetiyle iletişim kurmak için uygulama tarafından kullanılan sabitlerini belirtir. Bu sabitleri kişisel arka uç hizmetinize erişmek için güncelleştirme üzerinde bir sağlayıcı oluşturulan gerektirir.|
+|ITextToSpeech.cs|`ITextToSpeech` Belirleyen arabirimi `Speak` yöntemi tüm sınıflar tarafından sağlanmalıdır.|
+|TODO.cs|`App` Her platformda uygulama tarafından görüntülenen her iki ilk sayfa başlatmasını için sorumlu sınıfı ve `TodoItemManager` web hizmeti işlemini çağırmak için kullanılan sınıf.|
 
 ### <a name="viewing-pages"></a>Sayfalarını görüntüleme
 

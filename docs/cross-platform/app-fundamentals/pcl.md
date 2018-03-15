@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e81ecd10f4dfc101cf63ba9d052d15b51a367ee5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5dd77232dc992880b18393c740b54c7784e4d049
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Taşınabilir sınıf kitaplıkları giriş
 
@@ -39,94 +39,13 @@ Ancak, bir taşınabilir sınıf kitaplığı oluşturduğunuzda, kodunuzu çal�
 
 Aşağıdaki tabloda .NET platforma göre değişir özelliklerden bazıları gösterilir. Belirli aygıtlar/platformlarda çalıştırması garantili olan bir PCL derleme yazmak için proje oluşturduğunuzda, hangi desteği gereklidir seçmeniz yeterlidir.
 
-<table border="1" cellpadding="1" cellspacing="1">
-  <tbody>
-    <tr>
-      <td>
-Özellik </td>
-      <td>
-.NET Framework </td>
-      <td>
-UWP uygulamaları </td>
-      <td>
-Silverlight </td>
-      <td>
-Windows Phone </td>
-      <td>
-Xamarin </td>
-    </tr>
-    <tr>
-      <td>
-Çekirdek </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-    </tr>
-    <tr>
-      <td>
-LINQ </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-    </tr>
-    <tr>
-      <td>
-IQueryable </td>
-       <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-7.5 + </td>
-      <td>
-Y </td>
-    </tr>
-    <tr>
-      <td>
-Serileştirme </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-    </tr>
-    <tr>
-      <td>
-Veri ek açıklamaları </td>
-      <td>
-4.0.3 + </td>
-      <td>
-Y </td>
-      <td>
-Y </td>
-      <td>
-      </td>
-      <td>
-Y </td>
-    </tr>
-  </tbody>
-</table>
+|Özellik|.NET Framework|UWP uygulamaları|Silverlight|Windows Phone|Xamarin|
+|---|---|---|---|---|---|
+|Çekirdek|Y|Y|Y|Y|Y|
+|LINQ|Y|Y|Y|Y|Y|
+|IQueryable|Y|Y|Y|7.5 +|Y|
+|Serileştirme|Y|Y|Y|Y|Y|
+|Veri ek açıklamaları|4.0.3 +|Y|Y||Y|
 
 Xamarin sütun Xamarin.iOS ve Xamarin.Android destekleyen Visual Studio ile gönderilen tüm profiller ve oluşturduğunuz kitaplıkları özelliklerin kullanılabilirliği desteklemek için seçtiğiniz diğer platformlar tarafından yalnızca sınırlı olgu yansıtır.
 

@@ -7,12 +7,12 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 823fad163e837adab5490446c23ab2f492679114
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google bulut Mesajlaşma ile uzaktan bildirimleri
 
@@ -507,32 +507,12 @@ Yukarıdaki XML'de değiştirme *YOUR_PACKAGE_NAME* istemci uygulaması projeniz
 
 Her ayar bu XML yaptığı bakalım:
 
-<table>
-    <thead>
-        <tr>
-            <th>Ayar</th>
-            <th>Açıklama</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>com.google.android.gms.gcm.GcmReceiver</code></td>
-            <td>Uygulamamıza yakalar ve gelen anında iletme bildirimi iletileri işleyen bir GCM alıcı uygulayan bildirir.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.permission.SEND</code></td>
-            <td>Yalnızca GCM sunucuları uygulamaya doğrudan iletiler gönderebilir bildirir.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.RECEIVE</code></td> 
-            <td>Uygulamamıza GCM yayın iletileri işleme reklam amaçlı Filtresi.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.REGISTRATION</code></td>
-            <td>Uygulamamıza yeni kayıt hedefleri işleme reklam amaçlı filtre (diğer bir deyişle, biz bir örnek kimliği dinleme hizmeti uyguladık).</td>
-        </tr>
-    </tbody>
-</table>
+|Ayar|Açıklama|
+|---|---|
+|`com.google.android.gms.gcm.GcmReceiver`|Uygulamamıza yakalar ve gelen anında iletme bildirimi iletileri işleyen bir GCM alıcı uygulayan bildirir.|
+|`com.google.android.c2dm.permission.SEND`|Yalnızca GCM sunucuları uygulamaya doğrudan iletiler gönderebilir bildirir.|
+|`com.google.android.c2dm.intent.RECEIVE`|Uygulamamıza GCM yayın iletileri işleme reklam amaçlı Filtresi.|
+|`com.google.android.c2dm.intent.REGISTRATION`|Uygulamamıza yeni kayıt hedefleri işleme reklam amaçlı filtre (diğer bir deyişle, biz bir örnek kimliği dinleme hizmeti uyguladık).|
 
 Alternatif olarak tasarlamanız `GcmListenerService` XML'de; belirtme yerine bu öznitelikler ile burada bunları belirttiğimiz **AndroidManifest.xml** böylece kod örnekleri izlemek daha kolay olur. 
 

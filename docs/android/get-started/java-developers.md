@@ -7,12 +7,12 @@ ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: 240fc917a154085a459c6612f68c8b71e3ef01bb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/13/2018
+ms.openlocfilehash: 7abcaa218c6755a58e6f35e982a1144060df0b3b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xamarin-for-java-developers"></a>Java geliştiricileri için Xamarin
 
@@ -433,342 +433,48 @@ Zaman uyumsuz programlama özellikler Xamarin desteği hakkında daha fazla bilg
 
 C# ' de Java'da kullanılan birçok dil anahtar sözcükleri kullanılır. Aynı zamanda bu tabloda listelendiği gibi aynı zamanda bir eşdeğer ancak farklı adlandırılmış karşılık gelen C# ' ta sahip Java anahtar sözcükleri sayısı vardır:
 
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-    <th>
-        <strong>Java</strong>
-    </th>
-    <th>
-        <strong>C#</strong>
-    </th>
-    <th>
-        <strong>Açıklama</strong>
-    </th>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">
-        <code>boolean</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/c8f5xwh7.aspx">bool</a>
-      </td>
-      <td valign="top">
-Boole değerleri bildirmek için kullanılan <code>true</code> ve <code>false</code>.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>extends</code>
-      </td>
-      <td valign="top">
-        <code>:</code>
-      </td>
-      <td valign="top">
-Sınıf ve arabirimler devralmak için önce gelir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>implements</code>
-      </td>
-      <td valign="top">
-        <code>:</code>
-      </td>
-      <td valign="top">
-Sınıf ve arabirimler devralmak için önce gelir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>import</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx">Kullanma</a>
-      </td>
-      <td valign="top">
-Ayrıca bir ad alanı diğer adı oluşturmak için kullanılan bir ad alanı türlerini alır.
-      </td>
-    </tr>
-    <tr>
-      <td valign="final">
-        <code>final</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/88c54tsw.aspx">korumalı</a>
-      </td>
-      <td valign="top">
-Sınıf türetme engeller; yöntemleri ve özellikleri türetilmiş sınıflarda geçersiz kılınmış engeller.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>instanceof</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/scekt9xw.aspx">is</a>
-      </td>
-      <td valign="top">
-Bir nesneyi belirtilen bir türle uyumlu olup olmadığını değerlendirir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>native</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/e59b22c5.aspx">extern</a>
-      </td>
-      <td valign="top">
-Harici olarak uygulanan bir yöntem bildirir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>package</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx">Namespace</a>
-      </td>
-      <td valign="top">
-İlgili nesne kümesi için bir kapsam bildirir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>T...</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/w5zay9db.aspx">params T[]</a>
-      </td>
-      <td valign="top">
-Değişken sayıda bağımsız değişken alan bir yöntem parametresi belirtir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <code>super</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx">temel</a>
-      </td>
-      <td valign="top">
-Türetilmiş bir sınıf içinde üst sınıftan üyelerine erişmek için kullanılır.
-      </td>
-    </tr>
-    <tr>
-      <td valign="synchronized">
-        <code>synchronized</code>
-      </td>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx">kilitleme</a>
-      </td>
-      <td valign="top">
-Kilit edinme ve sürüm koduyla önemli bir bölümünü sarmalar.
-      </td>
-    </tr>
-  </tbody>
-</table>
+|Java|C#|Açıklama|
+|---|---|---|
+|`boolean`|[bool](https://msdn.microsoft.com/en-us/library/c8f5xwh7.aspx)|Boole değerleri true ve false bildirmek için kullanılır.|
+|`extends`|`:`|Sınıf ve arabirimler devralmak için önce gelir.|
+|`implements`|`:`|Sınıf ve arabirimler devralmak için önce gelir.|
+|`import`|[using](https://msdn.microsoft.com/en-us/library/zhdeatwt.aspx)|Ayrıca bir ad alanı diğer adı oluşturmak için kullanılan bir ad alanı türlerini alır.|
+|`final`|[sealed](https://msdn.microsoft.com/en-us/library/88c54tsw.aspx)|Sınıf türetme engeller; yöntemleri ve özellikleri türetilmiş sınıflarda geçersiz kılınmış engeller.|
+|`instanceof`|[is](https://msdn.microsoft.com/en-us/library/scekt9xw.aspx)|Bir nesneyi belirtilen bir türle uyumlu olup olmadığını değerlendirir.|
+|`native`|[extern](https://msdn.microsoft.com/en-us/library/e59b22c5.aspx)|Harici olarak uygulanan bir yöntem bildirir.|
+|`package`|[namespace](https://msdn.microsoft.com/en-us/library/z2kcy19k.aspx)|İlgili nesne kümesi için bir kapsam bildirir.|
+|`T...`|[params T](https://msdn.microsoft.com/en-us/library/w5zay9db.aspx)|Değişken sayıda bağımsız değişken alan bir yöntem parametresi belirtir.|
+|`super`|[base](https://msdn.microsoft.com/en-us/library/hfw7t1ce.aspx)|Türetilmiş bir sınıf içinde üst sınıftan üyelerine erişmek için kullanılır.|
+|`synchronized`|[lock](https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx)|Kilit edinme ve sürüm koduyla önemli bir bölümünü sarmalar.|
 
 
 Ayrıca, C# için benzersiz ve Java hiçbir karşılık gelen birçok anahtar vardır. Xamarin.Android kodu genellikle yapar aşağıdaki C# anahtar sözcüklerini kullanın (Bu tablonun Xamarin.Android okunurken başvurmak yararlıdır [örnek koduna](https://developer.xamarin.com/samples/android/all/)):
 
-
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-    <th>
-        <strong>C#</strong>
-    </th>
-    <th>
-        <strong>Açıklama</strong>
-    </th>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/cscsdfbt.aspx">olarak</a>
-      </td>
-      <td valign="top">
-Uyumlu başvuru türleri veya boş değer atanabilir türleri arasında dönüştürmeler gerçekleştirir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hh156513.aspx">Zaman uyumsuz</a>
-      </td>
-      <td valign="top">
-Bir yöntem veya lambda ifadesi zaman uyumsuz olduğunu belirtir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/hh156528.aspx">await</a>
-      </td>
-      <td valign="top">
-Bir görevi tamamlanana kadar bir yönteminin yürütülmesi askıya alır.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/5bdb6693.aspx">Bayt</a>
-      </td>
-      <td valign="top">
-İmzasız 8 bit tam sayı türü.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/900fyy8e.aspx">Temsilci</a>
-      </td>
-      <td valign="top">
-Bir yöntemi veya anonim yöntemi kapsüllemek için kullanılır.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/sbbt4032.aspx">Enum</a>
-      </td>
-      <td valign="top">
-Bir numaralandırma adlandırılmış sabitler kümesini bildirir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/8627sbea.aspx">Olay</a>
-      </td>
-      <td valign="top">
-Bir yayımcı sınıf olayda bildirir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/f58wzh21.aspx">Sabit</a>
-      </td>
-      <td valign="top">
-Bir değişken taşınmasını engeller.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-get </td>
-      <td valign="top">
-Bir özelliğin değerini alan bir erişimci yöntemi tanımlar.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/dd469484.aspx">İçinde</a>
-      </td>
-      <td valign="top">
-Daha az türetilmiş bir tür genel arabiriminde kabul etmek bir parametre sağlar.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx">object</a>
-      </td>
-      <td valign="top">
-İçin bir diğer ad <code>Object</code> .NET Framework türü.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx">Çıkışı</a>
-      </td>
-      <td valign="top">
-Parametresi değiştiricisi veya genel tür parametresi bildirimi.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx">geçersiz kılma</a>
-      </td>
-      <td valign="top">
-Genişletir ya da bir devralınan üye uyarlamasını değiştirir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/6b0scde8.aspx">Kısmi</a>
-      </td>
-      <td valign="top">
-Birden çok dosyaya bölme için tanımını bildirir veya kendi uygulama yöntemi tanımından böler.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx">salt okunur</a>
-      </td>
-      <td valign="top">
-Sınıf üyesi bildirim zamanında yalnızca veya sınıf oluşturucu tarafından atanabilir bildirir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/14akc2c7.aspx">Ref</a>
-      </td>
-      <td valign="top">
-Başvuru yerine değere göre geçirilecek bağımsız değişken neden olur.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ms228368.aspx">ayarlama</a>
-      </td>
-      <td valign="top">
-Bir özelliğin değerini ayarlar bir erişimci yöntemi tanımlar.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/362314fe.aspx">Dize</a>
-      </td>
-      <td valign="top">
-Alias için <code>String</code> .NET Framework türü.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/ah19swz4.aspx">yapısı</a>
-      </td>
-      <td valign="top">
-Bir grup ilgili değişkenlerin yalıtan bir değer türü.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/58918ffs.aspx">typeof</a>
-      </td>
-      <td valign="top">
-Bir nesne türünü alır.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/bb383973.aspx">var</a>
-      </td>
-      <td valign="top">
-Örtük olarak yazılan yerel değişken bildirir.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx">Değer</a>
-      </td>
-      <td valign="top">
-Bir özellik atamak için istemci kodu istediği değeri başvuruyor.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx">Sanal</a>
-      </td>
-      <td valign="top">
-Türetilen bir sınıfta geçersiz kılınmak üzere bir yöntem sağlar.
-      </td>
-    </tr>
-  </tbody>
-</table>
+|C#|Açıklama|
+|---|---|
+|[as](https://msdn.microsoft.com/en-us/library/cscsdfbt.aspx)|Uyumlu başvuru türleri veya boş değer atanabilir türleri arasında dönüştürmeler gerçekleştirir.|
+|[async](https://msdn.microsoft.com/en-us/library/hh156513.aspx)|Bir yöntem veya lambda ifadesi zaman uyumsuz olduğunu belirtir.|
+|[await](https://msdn.microsoft.com/en-us/library/hh156528.aspx)|Bir görevi tamamlanana kadar bir yönteminin yürütülmesi askıya alır.|
+|[byte](https://msdn.microsoft.com/en-us/library/5bdb6693.aspx)|İmzasız 8 bit tam sayı türü.|
+|[delegate](https://msdn.microsoft.com/en-us/library/900fyy8e.aspx)|Bir yöntemi veya anonim yöntemi kapsüllemek için kullanılır.|
+|[enum](https://msdn.microsoft.com/en-us/library/sbbt4032.aspx)|Bir numaralandırma adlandırılmış sabitler kümesini bildirir.|
+|[event](https://msdn.microsoft.com/en-us/library/8627sbea.aspx)|Bir yayımcı sınıf olayda bildirir.|
+|[fixed](https://msdn.microsoft.com/en-us/library/f58wzh21.aspx)|Bir değişken taşınmasını engeller.|
+|`get`|Bir özelliğin değerini alan bir erişimci yöntemi tanımlar.|
+|[in](https://msdn.microsoft.com/en-us/library/dd469484.aspx)|Daha az türetilmiş bir tür genel arabiriminde kabul etmek bir parametre sağlar.|
+|[object](https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx)|.NET Framework nesne türü için bir diğer ad.|
+|[out](https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx)|Parametresi değiştiricisi veya genel tür parametresi bildirimi.|
+|[override](https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx)|Genişletir ya da bir devralınan üye uyarlamasını değiştirir.|
+|[Kısmi](https://msdn.microsoft.com/en-us/library/6b0scde8.aspx)|Birden çok dosyaya bölme için tanımını bildirir veya kendi uygulama yöntemi tanımından böler.|
+|[readonly](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx)|Sınıf üyesi bildirim zamanında yalnızca veya sınıf oluşturucu tarafından atanabilir bildirir.|
+|[ref](https://msdn.microsoft.com/en-us/library/14akc2c7.aspx)|Başvuru yerine değere göre geçirilecek bağımsız değişken neden olur.|
+|[set](https://msdn.microsoft.com/en-us/library/ms228368.aspx)|Bir özelliğin değerini ayarlar bir erişimci yöntemi tanımlar.|
+|[string](https://msdn.microsoft.com/en-us/library/362314fe.aspx)|.NET Framework'teki dize türü için diğer ad.|
+|[struct](https://msdn.microsoft.com/en-us/library/ah19swz4.aspx)|Bir grup ilgili değişkenlerin yalıtan bir değer türü.|
+|[typeof](https://msdn.microsoft.com/en-us/library/58918ffs.aspx)|Bir nesne türünü alır.|
+|[var](https://msdn.microsoft.com/en-us/library/bb383973.aspx)|Örtük olarak yazılan yerel değişken bildirir.|
+|[value](https://msdn.microsoft.com/en-us/library/a1khb4f8.aspx)|Bir özellik atamak için istemci kodu istediği değeri başvuruyor.|
+|[virtual](https://msdn.microsoft.com/en-us/library/9fkccyh4.aspx)|Türetilen bir sınıfta geçersiz kılınmak üzere bir yöntem sağlar.|
 
 
 <a name="interop" />

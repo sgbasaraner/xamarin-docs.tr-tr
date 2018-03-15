@@ -7,11 +7,11 @@ ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: db950915decd2bba216c7dcd6031797037a7c8e0
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>Bölüm 24 özeti. Sayfa gezintisi
 
@@ -118,7 +118,7 @@ Belirli bir kalıcı sayfa için birden çok kez gittiğinizde, böylece kullan�
 
 ## <a name="patterns-of-data-transfer"></a>Veri aktarımı desenleri
 
-Genellikle, veri sayfaları & #x 2014 arasında paylaşmak gereklidir; navigated sayfasına ve veri çağrılması sayfasına dönmek için bir sayfa için veri aktarmak için. Bunu yapmak için birçok tekniği vardır.
+Genellikle veri sayfaları arasında paylaşmak gerekli olan &mdash; navigated sayfasına ve veri çağrılması sayfasına geri dönmek bir sayfa için veri aktarmak. Bunu yapmak için birçok tekniği vardır.
 
 ### <a name="constructor-arguments"></a>Oluşturucu bağımsız değişkenleri
 

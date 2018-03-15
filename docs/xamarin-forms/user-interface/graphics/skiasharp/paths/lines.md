@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 341d850709ff27f4dc397cee3bb2fc5f73c0ec3c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Satırları ve vuruş büyük harfler
 
@@ -30,7 +30,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 
 Varsayılan olarak, `StrokeWidth` özelliğinin yeni oluşturulmuş `SKPaint` bir piksel satırının içinde kalınlığı işleme 1 değerini aynı etkiye sahip 0 nesnesidir. Ayarlama istersiniz, bu çok ince telefonlar gibi yüksek çözünürlüklü cihazlarda görünür `StrokeWidth` daha büyük bir değer. Ancak boyutlandırılabilir kalınlığı satırlar çizme başladıktan sonra başka bir sorun olayını: Başlangıç ve bitişini bu kalın satırların işlenme?
 
-Başlangıç ve bitişini satırların görünüşünü adlı bir *satır cap* veya Skia, bir *vuruş cap*. Bu bağlamda "cap" word tür hat & #x 2014 gösterir; bir şey satırın sonuna bulunur. Ayarladığınız [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) özelliği `SKPaint` aşağıdaki üyeleri birini nesnesine [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) numaralandırma:
+Başlangıç ve bitişini satırların görünüşünü adlı bir *satır cap* veya Skia, bir *vuruş cap*. Hat tür için bu bağlamda "cap" word başvuruyor &mdash; şey satırın sonuna bulunur. Ayarladığınız [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) özelliği `SKPaint` aşağıdaki üyeleri birini nesnesine [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) numaralandırma:
 
 - [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) (varsayılan)
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)

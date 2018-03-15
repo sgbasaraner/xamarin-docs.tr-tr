@@ -7,11 +7,11 @@ ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 394e1722c79bac5f034e9ad88eb1fed7e5090f8c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a3980c63c31f4fdf0297fdc9b05da3590f0cac54
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Bölüm 14 özeti. Mutlak düzeni
 
@@ -25,7 +25,7 @@ Bu bölümde Ayrıca, önemli özelliklerinden tanıtır *iliştirilmiş bağlan
 
 Alt öğesi olarak ekleyebileceğiniz `Children` koleksiyonu bir `AbsoluteLayout` standart kullanarak [ `Add` ](https://developer.xamarin.com/api/member/System.Collections.Generic.ICollection%3CT%3E.Add/p/T/) yöntemi, ancak `AbsoluteLayout` ayrıca genişletilmiş sağlar [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/) belirtmenize olanak tanır yöntemi bir [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/). Başka bir [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/) gerektirdiğine yalnızca bir [ `Point` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Point/), bu durumda alt Kısıtlanmamış ve kendisini boyutları.
 
-Oluşturabileceğiniz bir `Rectangle` değerini bir [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) dört #x 2014; & değerleri gerektiren üst göre alt sol üst köşesindeki konumunu belirten ilk iki ve belirten ikinci iki Çocuğunuzun boyutu. Veya kullanabileceğiniz bir [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/) gerektiren bir `Point` ve [ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/) değeri.
+Oluşturabileceğiniz bir `Rectangle` değerini bir [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) dört değer gerektiren &mdash; üst göre alt sol üst köşesindeki konumunu belirten ilk iki ve belirten ikinci iki Çocuğunuzun boyutu. Veya kullanabileceğiniz bir [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/) gerektiren bir `Point` ve [ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/) değeri.
 
 Bunlar `Add` yöntemleri gösterilen içinde [ **AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo), hangi konumları `BoxView` kullanarak öğeleri `Rectangle` değerleri ve bir `Label` yalnızca bir kullanaraköğe`Point` değeri.
 

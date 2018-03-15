@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 230c26c2537987f7ca09e28e05ec96186e5f7882
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="alternate-resources"></a>Diğer kaynaklar
 
@@ -44,7 +44,7 @@ Niteleyiciler bir kaynak türü eklerken aşağıdaki kurallar geçerlidir:
 Olası niteleyicileri başvurusunu aşağıda listelenmiştir:
 
 - **MCC ve MNC** &ndash; [mobil ülke kodu](http://en.wikipedia.org/wiki/List_of_mobile_country_codes) (MCC) ve isteğe bağlı olarak [mobil ağ kodu](http://en.wikipedia.org/wiki/Mobile_Network_Code) (MNC). SIM kart MCC sağlarken cihazın bağlandığı ağ MNC sağlayacaktır. Mobil ülke kodunu kullanarak hedef yerel ayarlarına mümkün olsa da, önerilen yaklaşım aşağıda belirtilen dil niteleyicisi kullanmaktır. Örneğin, Almanya, hedef kaynaklara niteleyici olacaktır `mcc262`. T-Mobile ABD hedef kaynaklarına niteleyici `mcc310-mnc026`.
-  Mobil ülke kodlarına ve mobil ağ kodları tam listesi için bkz: <http://mcclist.com/>.
+  Mobil ülke kodlarına ve mobil ağ kodları tam listesi için bkz: <http://mcc-mnc.com/>.
 
 - **Dil** &ndash; iki harfli [ISO 639-1 dil kodu](http://en.wikipedia.org/wiki/ISO_639-1) ve isteğe bağlı olarak izleyen iki harfli [ISO 3166 alfa 2 bölge kodu](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). 
   Her iki niteleyicileri sağlanan sonra tarafından ayrılmış bir `-r`. Örneğin, hedef Fransızca konuşan yerel sonra Niteleyici için `fr` kullanılır. French-Canadian yerel ayarlar, hedeflenecek `fr-rCA` kullanılacaktır. Dil kodlarını ve bölge kodları tam listesi için bkz: [kodları gösterimi, adları, diller için](http://www.loc.gov/standards/iso639-2/php/English_list.php) ve [ülke adları ve kod öğeleri](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm).

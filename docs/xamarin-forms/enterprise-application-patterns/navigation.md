@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a37773b666e015277d2fecc103066e82b6f7f108
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ec91a7c100f294437bb1498fcd56a35f5b19c399
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="navigation"></a>Gezinme
 
@@ -51,36 +51,13 @@ public interface INavigationService
 
 Bu arabirimi uygulayan bir sınıf aşağıdaki yöntemleri sağlamalısınız belirtir:
 
-<table>
-<thead>
-<tr class="header">
-<th>Yöntem</th>
-<th>Amaç</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>InitializeAsync</code></td>
-<td>Uygulama başlatıldığında bir iki sayfa gezinti gerçekleştirir.</td>
-</tr>
-<tr class="even">
-<td><code>NavigateToAsync<T></code></td>
-<td>Belirtilen sayfa için hiyerarşik Gezinti gerçekleştirir.</td>
-</tr>
-<tr class="odd">
-<td><code>NavigateToAsync<T>(parameter)</code></td>
-<td>Parametre geçirme belirtilen bir sayfaya hiyerarşik Gezinti gerçekleştirir.</td>
-</tr>
-<tr class="even">
-<td><code>RemoveLastFromBackStackAsync</code></td>
-<td>Önceki sayfaya gezinti yığından kaldırır.</td>
-</tr>
-<tr class="odd">
-<td><code>RemoveBackStackAsync</code></td>
-<td>Önceki tüm sayfaları Gezinti yığından kaldırır.</td>
-</tr>
-</tbody>
-</table>
+|Yöntem|Amaç|
+|--- |--- |
+|`InitializeAsync`|Uygulama başlatıldığında bir iki sayfa gezinti gerçekleştirir.|
+|`NavigateToAsync`|Belirtilen sayfa için hiyerarşik Gezinti gerçekleştirir.|
+|`NavigateToAsync(parameter)`|Parametre geçirme belirtilen bir sayfaya hiyerarşik Gezinti gerçekleştirir.|
+|`RemoveLastFromBackStackAsync`|Önceki sayfaya gezinti yığından kaldırır.|
+|`RemoveBackStackAsync`|Önceki tüm sayfaları Gezinti yığından kaldırır.|
 
 Ayrıca, `INavigationService` arabirimi belirtir uygulayan sınıfa sağlamalısınız bir `PreviousPageViewModel` özelliği. Bu özellik önceki sayfa gezinti yığınında ilişkili görünüm model türü döndürür.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: e9a6f44637b77bf53c3cab00ac5051e6a2f27386
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="working-with-jni"></a>JNI ile çalışma
 
@@ -154,7 +154,7 @@ Taban sınıfı korunur ve yönetilen kod içinde geçersiz kılınır her bir y
 
 Genellikle, Xamarin.Android otomatik olarak ACW oluşur Java kod oluşturur; bir sınıf bir Java sınıfından türetilen ve varolan Java yöntemlerini geçersiz kılar, bu oluşturma sınıfı ve yöntemi adları temel alır. Ancak, bazı senaryolarda, kod oluşturma aşağıda özetlendiği gibi yeterli, değil:
 
--   Android desteği eylem adları Düzen xml öznitelikleri, örneğin [android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) XML özniteliği. Belirtildiğinde, inflated görünümü örneği deneyin Java yöntemi arayın.
+-   Android eylem adları örneğin Düzen XML öznitelikleri destekler [android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) XML özniteliği. Belirtildiğinde, Java yöntemi aramak inflated görünümü örneği çalışır.
 
 -   [Java.io.Serializable](http://developer.android.com/reference/java/io/Serializable.html) arabirimi gerektirir `readObject` ve `writeObject` yöntemleri. Bu arabirim üyeleri değiller olduğundan, karşılık gelen bizim yönetilen uygulama Java kod bu yöntemlere kullanıma sunmuyor.
 

@@ -6,12 +6,12 @@ ms.assetid: 70ECDDC9-FA40-03B4-BF04-E7CFFFE4260D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/30/2017
-ms.openlocfilehash: 83e58625438a0b50d89ca8dac3e940c8742e5aec
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: e1890575f5c3a5bd2e0c0de0712ba459607e6139
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-android-assets"></a>Android varlıkları kullanma
 
@@ -44,7 +44,7 @@ Doğru seçme **BuildAction** dosyanın derleme zamanında APK paketlenirler sa�
 
 ## <a name="reading-assets"></a>Varlıklar okuma
 
-Varlıklar kullanarak okunur bir [AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/). Örneği `AssetManager` access tarafından kullanılabilir [varlıklar](https://developer.xamarin.com/api/property/Android.Content.Context.Assets/) özelliği bir `Android.Contet.Context`, bir etkinlik gibi.
+Varlıklar kullanarak okunur bir [AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/). Örneği `AssetManager` erişerek kullanılabilir [varlıklar](https://developer.xamarin.com/api/property/Android.Content.Context.Assets/) özelliği bir `Android.Content.Context`, bir etkinlik gibi.
 Aşağıdaki kodda, biz açmak bizim **read_asset.txt** varlık, içeriği okumak ve bir kutusu TextView kullanarak görüntüleyin.
 
 ```csharp

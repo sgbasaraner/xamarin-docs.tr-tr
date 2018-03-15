@@ -8,11 +8,11 @@ ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 16e9423c84e591e15a703b4d5bb204a8b642bb40
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 90be80d42c20ca7509037b5f59b34cc1bddde6de
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="touch-manipulations"></a>Dokunma işlemeleri
 
@@ -193,7 +193,7 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Varsa `HitTest` yöntemi döndürür `true` & #x 2014; ekran bit eşlem & #x 2014; göre kapladığı alanı içinde bir parmak işlemdeki sonra dokunma kimliği eklenen anlamı `TouchIds` koleksiyonu. Parmak ekranından kaldırır kadar bu kimliği bu parmak için touch olayların sırası temsil eder. Birden çok parmakları bit eşlem touch, sonra `touchIds` koleksiyonu, her parmak için touch ID içerir.
+Varsa `HitTest` yöntemi döndürür `true` &mdash; ekran tarafından bit eşlem kapladığı alanı içinde bir parmak işlemdeki anlamına &mdash; sonra da touch ID eklenen `TouchIds` koleksiyonu. Parmak ekranından kaldırır kadar bu kimliği bu parmak için touch olayların sırası temsil eder. Birden çok parmakları bit eşlem touch, sonra `touchIds` koleksiyonu, her parmak için touch ID içerir.
 
 `TouchAction` İşleyici de çağırır `ProcessTouchEvent` sınıfını `TouchManipulationBitmap`. Bu yerdir bazı (ancak tüm) gerçek dokunarak işleme oluşur.
 
@@ -404,7 +404,7 @@ class TouchManipulationManager
 
 Döndürme seçili olduğunda, bir parmak ve iki parmak işleme yöntemlerin her ikisi de döndürme ilk işleyin. Herhangi bir döndürme algılanırsa, döndürme bileşen etkili bir şekilde kaldırılır. Nelerin kaydırma ve ölçeklendirme olarak yorumlanır.
 
-Burada `OneFingerManipulate` yöntemi. Bir parmak döndürme etkin değil, mantığı basit & #x 2014 olur; yalnızca yeni noktası ve önceki noktası adlı bir vektör oluşturmak için kullandığı `delta` tam olarak çeviri karşılık gelir. Etkin bir parmak döndürme ile yöntemi açıları pivot noktası (bit eşlem Merkezi) yeni noktası ve önceki noktası döndürme matrisi oluşturmak için kullanır:
+Burada `OneFingerManipulate` yöntemi. Bir parmak döndürme etkinleştirilmemiş sonra mantığı basittir &mdash; yalnızca yeni noktası ve önceki noktası adlı bir vektör oluşturmak için kullandığı `delta` tam olarak çeviri karşılık gelir. Etkin bir parmak döndürme ile yöntemi açıları pivot noktası (bit eşlem Merkezi) yeni noktası ve önceki noktası döndürme matrisi oluşturmak için kullanır:
 
 ```csharp
 class TouchManipulationManager

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: f8b748ad1b57218d1e8aab11bdc1037cf3cfa14c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 98c38001ea7751c419d4be5b0f68339b06ec656f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-a-restful-web-service"></a>Bir RESTful Web hizmetini kullanma
 
@@ -49,42 +49,12 @@ REST hizmeti ayarlama yönergeleri örnek uygulama eşlik eden readme dosyasınd
 
 REST hizmeti ASP.NET Core kullanarak yazılır ve aşağıdaki işlemleri sağlar:
 
-<table>
-  <thead>
-    <tr>
-      <th>Çalışma</th>
-      <th>HTTP yöntemi</th>
-      <th>Göreli URI</th>
-      <th>Parametreler</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Yapılacaklar öğelerini bir listesini alma</td>
-      <td>AL</td>
-      <td>/api/todoitems/</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Yeni bir Yapılacaklar öğesi oluşturma</td>
-      <td>YAYINLA</td>
-      <td>/api/todoitems/</td>
-      <td>Biçimlendirilmiş JSON <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>Güncelleştirme Yapılacaklar öğesi</td>
-      <td>PUT</td>
-      <td>/api/todoitems/</td>
-      <td>Biçimlendirilmiş JSON <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>Yapılacaklar öğesi silme</td>
-      <td>DELETE</td>
-      <td>/api/todoitems/{id}</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+|Çalışma|HTTP yöntemi|Göreli URI|Parametreler|
+|--- |--- |--- |--- |
+|Yapılacaklar öğelerini bir listesini alma|AL|/api/todoitems/|
+|Yeni bir Yapılacaklar öğesi oluşturma|YAYINLA|/api/todoitems/|Todoıtem JSON biçimli|
+|Güncelleştirme Yapılacaklar öğesi|PUT|/api/todoitems/|Todoıtem JSON biçimli|
+|Yapılacaklar öğesi silme|DELETE|/api/todoitems/{id}|
 
 URI'ler çoğunluğu dahil `TodoItem` yolunda kimliği. Örneğin, silmek için `TodoItem` özelliği kimliği `6bb8a868-dba1-4f1a-93b7-24ebce87e243`, istemci bir silme isteği gönderir `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`. Örnek uygulama kullanılan veri modeli hakkında daha fazla bilgi için bkz: [modelleme verileri](~/xamarin-forms/data-cloud/walkthrough.md).
 

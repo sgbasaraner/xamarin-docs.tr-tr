@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/05/2017
-ms.openlocfilehash: 465ba4822a1004100160703f1607d99199f28a16
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: c0d328e784b0a12b0df1a6b2bf5b990ffa461da5
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="apple-account-management"></a>Apple hesap yönetimi
 
@@ -41,7 +41,7 @@ Bu özelliği kullanmak için bir Apple Geliştirici hesabınızın olması gere
 
 - İnternet'e bağlı olduğundan emin olun. Fastlane Apple Geliştirici Portalı ile doğrudan iletişim kurar olmasıdır.
 - Olduğundan emin olun [fastlane araçlarının yüklü](~/ios/deploy-test/provisioning/fastlane/index.md#Installation).
-- En son fastlane Araçları'ndan olduğundan emin olun [https://download.fastlane.tools](https://download.fastlane.tools).
+- En son fastlane Araçları'ndan olduğundan emin olun [ https://download.fastlane.tools ](https://download.fastlane.tools).
 - Başlamadan önce tüm kullanıcı lisans sözleşmelerini kabul etmek emin olun [Geliştirici Portalı](https://developer.apple.com/account/).
 
 ## <a name="adding-an-apple-developer-account"></a>Apple Geliştirici hesabı ekleme
@@ -69,8 +69,7 @@ Bu özelliği kullanmak için bir Apple Geliştirici hesabınızın olması gere
     ![](apple-account-management-images/image6.png)
 
 
-<a name="managing"/>
-    
+<a name="managing" />
 
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>İmzalama kimlikleri yönetmek ve sağlama profilleri

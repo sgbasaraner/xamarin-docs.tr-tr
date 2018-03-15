@@ -8,11 +8,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dcfcf43c89f26b4e721c9752b9cbad1f4a30cfc2
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Üç tür Bézier eğrileri
 
@@ -20,7 +20,7 @@ _Küp, ikinci derece ve conic Bézier eğrileri işlemek için SkiaSharp kullanm
 
 Bézier eğrisi Pierre Bézier (1910 – 1999) öğesini şirket eğri araba gövdeleri bilgisayar destekli tasarım için kullanılan Renault, Fransızca mühendislik adlandırılır.
 
-Bézier eğrileri etkileşimli tasarım için oldukça uygun olması için bilinir: Bunlar olan iyi davranan & #x 2014; diğer bir deyişle, sonsuz veya yönetilmeleri olmasını eğri & #x 2014 neden singularities yok; ve genellikle aesthetically güzel. Yazı tipleri bilgisayar tabanlı karakter ana hatlarını genellikle Bézier eğrileri tanımlanmıştır:
+Bézier eğrileri etkileşimli tasarım için oldukça uygun olması için bilinir: iyi çalışan &mdash; diğer bir deyişle, eğriyi sonsuz veya yönetilmeleri hale gelmesine neden singularities yok &mdash; ve genellikle aesthetically güzel . Yazı tipleri bilgisayar tabanlı karakter ana hatlarını genellikle Bézier eğrileri tanımlanmıştır:
 
 ![](beziers-images/beziersample.png "Bir örnek Bezier eğrisi")
 
@@ -411,7 +411,7 @@ Ancak, ikinci dereceden Bézier eğrisi şeklini birden çok ikinci derece Bézi
 
 ## <a name="the-conic-bzier-curve"></a>The Conic Bézier Curve
 
-Conic Bézier eğrisi & #x 2014; olarak da bilinen rasyonel ikinci dereceden Bézier eğrisi & #x 2014; Bézier eğrileri ailesine görece son bir ektir. İkinci dereceden Bézier eğrisi gibi bir başlangıç noktası, bir uç noktası ve bir denetim noktası rasyonel ikinci dereceden Bézier eğrisi içerir. Ancak rasyonel ikinci dereceden Bézier eğrisi de gerektirir bir *ağırlık* değeri. Bu adlı bir *rasyonel* parametrik formüller oranları içerdiğinden ikinci derece.
+Conic Bézier eğrisi &mdash; olarak da bilinen rasyonel ikinci dereceden Bézier eğrisi &mdash; Bézier eğrileri ailesine görece son ektir. İkinci dereceden Bézier eğrisi gibi bir başlangıç noktası, bir uç noktası ve bir denetim noktası rasyonel ikinci dereceden Bézier eğrisi içerir. Ancak rasyonel ikinci dereceden Bézier eğrisi de gerektirir bir *ağırlık* değeri. Bu adlı bir *rasyonel* parametrik formüller oranları içerdiğinden ikinci derece.
 
 Parametrik denklemini X ve Y aynı payda paylaşmak oranları için. Paydası denklemi işte *t* 0'dan arasında değişen 1 ve bir ağırlık değeri *w*:
 
@@ -425,7 +425,7 @@ x(t) = ((1 – t)²x₀ + 2wt(1 – t)x₁ + t²x₂)) ÷ d(t)
 
 y(t) = ((1 – t) ²y₀ + 2wt (1-t) y₁ + t²y₂)) ÷ d(t)
 
-Rasyonel ikinci derece Bézier eğrileri de denir *conics* herhangi bir conic bölüm & #x 2014; kesimleri tam olarak gösterebilir çünkü hiperboller, paraboller, üç nokta ve daireler.
+Rasyonel ikinci derece Bézier eğrileri de denir *conics* tam olarak herhangi bir conic bölümü parçalarını gösterebilir çünkü &mdash; hiperboller, paraboller, üç nokta ve daireler.
 
 Rasyonel ikinci dereceden Bézier eğrisi yolunu eklemek için kullanın [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) yöntemi veya [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) ayrı ile aşırı `x` ve `y` koordinatları:
 

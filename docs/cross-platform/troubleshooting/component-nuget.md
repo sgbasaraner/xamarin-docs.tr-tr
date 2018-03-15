@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: f3dbfb52d4fbcb4dd65f695a862f6b041d2b22c0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4de4517c960395e5d7d5a8fb2c537576e15fc007
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>NuGet bileşen başvurularını güncelleştirme
 
@@ -27,6 +27,82 @@ Bu kılavuz, NuGet paketlerini bileşen başvuruları değiştirmek için varola
 Görünmeyen bir eşdeğer NuGet paketine sahip, okumak için bir bileşen kullanıyorsanız [NuGet geçiş yolu olmayan bileşenler](#require-update) bölümüne bakın.
 
 Daha ayrıntılı yönergeler için NuGet paketlerini eklemek için bu sayfalara bakın [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) veya [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+
+## <a name="opening-a-project-containing-a-component"></a>Bir bileşen içeren bir proje açma
+
+Kasım 2017 ' olduğu [Duyuruldu](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) , Xamarin bileşen Deposu'nda dönüştürülmesine. Bileşenleri sunsetting ile ilerlemek için bir çaba içinde 15.6 Visual Studio sürümü ve Visual Studio 7.4 sürümünü Mac için artık bileşen projenizdeki destekler. 
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Visual Studio uygulamasına bir proje yüklerseniz, tüm bileşenleri projenizden el ile kaldırmanız gerekir, açıklayan aşağıdaki iletişim kutusu görüntülenir:
+
+![Bir bileşeni projenize bulundu ve kaldırılmalıdır iletişim açıklayan uyar](component-nuget-images/component-alert-vs.png)
+
+Projenizden bir bileşeni kaldırmak için:
+
+1. .Csproj dosyasını açın. Bunu yapmak için proje adına sağ tıklayın ve seçin **projeyi**. 
+
+2. Yeniden yüklenmeyen projeye sağ tıklayıp **{-proje-adınız} .csproj Düzenle**.
+
+3. Dosyadaki tüm başvuruları Bul `XamarinComponentReference`. Aşağıdaki örneğe benzer görünmelidir:
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+4. Başvurularının `XamarinComponentReference` ve dosyayı kaydedin. Yukarıdaki örnekte, tüm kaldırmak güvenli `ItemGroup`.
+
+5. Dosyayı kaydettikten sonra proje adına sağ tıklayın ve seçin **projeyi yeniden yükle**.
+
+6. Çözümünüzdeki her proje için yukarıdaki adımları yineleyin.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+
+Mac için Visual Studio uygulamasına bir proje yüklerseniz, tüm bileşenleri projenizden el ile kaldırmanız gerekir, açıklayan aşağıdaki iletişim kutusu görüntülenir:
+
+![Bir bileşeni projenize bulundu ve kaldırılmalıdır iletişim açıklayan uyar](component-nuget-images/component-alert.png)
+
+Projenizden bir bileşeni kaldırmak için:
+
+1. .Csproj dosyasını açın. Bunu yapmak için proje adına sağ tıklayın ve seçin **Araçlar > Düzenle dosya**.
+
+2. Dosyadaki tüm başvuruları Bul `XamarinComponentReference`. Aşağıdaki örneğe benzer görünmelidir:
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+3. Başvurularının `XamarinComponentReference` ve dosyayı kaydedin. Yukarıdaki örnekte, tüm kaldırmak güvenli `ItemGroup`
+
+4. Çözümünüzdeki her proje için yukarıdaki adımları yineleyin. 
+
+-----
 
 <a name="contain" />
 

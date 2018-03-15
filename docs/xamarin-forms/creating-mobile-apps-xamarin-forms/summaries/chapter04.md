@@ -7,11 +7,11 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 5ad53d7bc8c4ee54a47c4b327fb6f07bc1906ab9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 5559f9e6a4baf9d3f82701b5e3f341900ba83bae
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Bölüm 4 özeti. Yığın kaydırma
 
@@ -67,9 +67,9 @@ Dikey için `StackLayout`, `HorizontalOptions` ayarı, bir alt genişliğini iç
 
 Dikey için `StackLayout`, her alt dikey Kısıtlanmamış ve alır dikey yuva çocuğun yükseklik bağlı olarak, bu durumda `VerticalOptions` ayardır ilgisiz.
 
-Varsa dikey `StackLayout` kendisini Kısıtlanmamış & olan #x 2014; varsa, `VerticalOptions` ayar `Start`, `Center`, veya `End`, ardından yüksekliğini `StackLayout` alt toplam yüksekliği.
+Varsa dikey `StackLayout` kendisini Kısıtlanmamış&mdash;diğer bir deyişle, kendi `VerticalOptions` ayar `Start`, `Center`, veya `End`, ardından yüksekliğini `StackLayout` alt toplam yüksekliği.
 
-Ancak, dikey `StackLayout` dikey kısıtlı & #x 2014 if kendi `VerticalOptions` ayar `Fill`& #x 2014; ardından yüksekliğini `StackLayout` toplam yüksekliği büyük olabilir, kapsayıcı yüksekliğini olacaktır alt. Bu durumda ve en az bir alt öğe varsa bir `VerticalOptions` ayarı bir `Expands` işareti `true`, ardından ek alanı `StackLayout` ile bu alt öğeleri arasında eşit olarak ayrılan bir `Expands` işareti `true`. Alt toplam yüksekliği yüksekliğini sonra eşit `StackLayout`ve `Alignment` parçası `VerticalOptions` ayarı, alt kendi yuvasında dikey olarak nasıl konumlandırılacağını belirler.
+Ancak, dikey `StackLayout` dikey kısıtlı&mdash;, kendi `VerticalOptions` ayardır `Fill` &mdash;sonra yüksekliğini `StackLayout` toplam büyük olabilir, kapsayıcı yüksekliğini olacaktır alt yüksekliği. Bu durumda ve en az bir alt öğe varsa bir `VerticalOptions` ayarı bir `Expands` işareti `true`, ardından ek alanı `StackLayout` ile bu alt öğeleri arasında eşit olarak ayrılan bir `Expands` işareti `true`. Alt toplam yüksekliği yüksekliğini sonra eşit `StackLayout`ve `Alignment` parçası `VerticalOptions` ayarı, alt kendi yuvasında dikey olarak nasıl konumlandırılacağını belirler.
 
 Bu, gösterilmiştir [ **VerticalOptionsDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo) örnek.
 

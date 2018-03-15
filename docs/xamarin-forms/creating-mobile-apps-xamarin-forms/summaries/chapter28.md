@@ -7,11 +7,11 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0968270f657d3195855a752da311b4855283e971
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d7a75ce0303030d53315b5e698fc604a910c969c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Bölüm 28 özeti. Konum ve eşlemeleri
 
@@ -29,7 +29,7 @@ Bir açının Kuzey ve güneyinden ekvatora dünya işaretlerinin Merkezi'nden o
 
 ### <a name="longitude-and-meridians"></a>Boylam ve meridians
 
-Güney kutbu'na Kuzey kutbu'na gelen mükemmel daireye yarısının olan eşit boylam satırları olarak da bilinen *meridians*. Meridyeninden İngiltere'nın göre bunlar. Kurala göre 180 derece 0 dereceye pozitif değerler longitudes Meridyeninden doğuya doğru olduğunda ve longitudes Meridyeninden doğuya doğru negatif değerler 0 dereceye & #x 2013; 180 derece.
+Güney kutbu'na Kuzey kutbu'na gelen mükemmel daireye yarısının olan eşit boylam satırları olarak da bilinen *meridians*. Meridyeninden İngiltere'nın göre bunlar. Kurala göre 0 derece pozitif değerlerinden 180 derece için longitudes Meridyeninden doğuya doğru olduğunda ve longitudes Meridyeninden doğuya doğru 0 dereceye negatif değerleri &ndash;180 derece.
 
 ### <a name="the-equirectangular-projection"></a>Equirectangular projeksiyonu
 

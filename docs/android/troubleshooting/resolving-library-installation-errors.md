@@ -7,12 +7,12 @@ ms.assetid: 2AE68ACE-8496-445D-BF17-5E4097D4AE35
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 5589d512f9a4ee9c1148810f36fee12d561f725c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/14/2018
+ms.openlocfilehash: 66555139cfaab2074e7461be737f997a9bb9c7a7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="resolving-library-installation-errors"></a>Kitaplık yükleme hatalarını çözme
 
@@ -104,7 +104,7 @@ Yukarıdaki otomatik kurtarma adımları kullanarak çalışmış ve hala derlem
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    Varsa **m2repository** arşiv gösterilmiyor bu tabloda, oluşturabileceğiniz indirme URL'si eklenerek **https://dl-ssl.google.com/android/repository/** adını **m2repository**  karşıdan yüklemek için. Örneğin, **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** indirmek için **android\_m2repository\_r10.zip** .
+    Varsa **m2repository** arşiv gösterilmiyor bu tabloda, oluşturabileceğiniz indirme URL'si eklenerek  **https://dl-ssl.google.com/android/repository/**  adını **m2repository** karşıdan yüklemek için. Örneğin,  **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip** indirmek için **android\_m2repository\_r10.zip**.
 
 2.  Yukarıdaki tabloda gösterilen indirme URL'si karşılık gelen MD5 karması için dosyayı yeniden adlandırın. Örneğin, indirdiğiniz **android\_m2repository\_r25.zip**, kendisine yeniden adlandırma **0B3F1796C97C707339FB13AE8507AF50.zip**. İndirilen dosya indirme URL'si için MD5 karma tablosunda görünmüyorsa, kullanabileceğiniz bir [çevrimiçi MD5 Oluşturucu](http://www.webconfs.com/online-md5-generator.php) URL bir MD5 karma değeri dizeye dönüştürülemiyor. 
 
@@ -160,6 +160,8 @@ Karşıdan yüklemek için aşağıdaki adımları kullanın **m2repository** ve
     [![23.1.1.0/embedded klasöre kopyalanan dosyalar örneği](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png#lightbox)
 
 8.  Tüm dosyalar üzerinde kopyalandığından emin olun. **Katıştırılmış** dizin şimdi içermelidir dosyaları gibi **.jar**, **.aar**, ve **.pom**.
+
+9.  Herhangi bir ayıklanan sıkıştırmasını **.aar** dosyaları. Windows üzerinde append bir **.zip** uzantısı **.aar** dosya, sağ tıklatın ve seçin **tümünü ayıkla...** , Kaldır'ı **.zip** uzantısı. MacOS üzerinde sıkıştırmasını **.aar** kullanarak dosya **sıkıştırmasını** Terminal komutu (örneğin, **file.aar sıkıştırmasını**).
 
 Bu noktada, eksik bileşenleri el ile yüklemiş ve projenizin hatasız oluşturmalısınız. Aksi durumda, indirmiş doğrulayın **m2repository** **.zip** arşiv tam hata iletisi sürümünde karşılık gelen sürüm ve içeriğini yüklü olduğunu doğrulayın konumları Yukarıdaki adımlarda açıklandığı şekilde düzeltin. 
 

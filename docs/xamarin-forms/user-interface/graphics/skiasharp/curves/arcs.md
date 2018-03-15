@@ -8,11 +8,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 739efa994f172a7a1de82ac02d1c10b0d80f4c30
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Yay çizmek için üç yol
 
@@ -238,7 +238,7 @@ Bu üç nokta iki bağlı satırları tanımlayın:
 
 ![](arcs-images/tangentarcconnectinglines.png "Bir Eğim yay üç noktalarının bağlı çizgileri")
 
-Üç olan colinear & #x 2014; işaret ediyorsa diğer bir deyişle, aynı çizgide & #x 2014; kalan hiçbir yay çizilir.
+Üç noktalar colinear ise &mdash; diğer bir deyişle, aynı düz satırda kalan varsa &mdash; hiçbir yay çizileceğini.
 
 `ArcTo` Yöntemi de içeren bir `radius` parametresi. Bu, bir daire RADIUS tanımlar:
 

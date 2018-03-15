@@ -7,11 +7,11 @@ ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1df1751c55c6a031bf9f26d774b739f4ca83fa91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0c61727e90a03d618a7423e5b865a7fcc9e0b399
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Bölüm 5 özeti. Boyutları postalarla
 
@@ -42,7 +42,7 @@ Windows çalışma zamanı da inç 160 CİHAZDAN bağımsız birimler yakın bir
 - eşdeğer inç 160 birimler
 - santimetre 64 birimler
 
-Salt okunur [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) ve [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) tarafından tanımlanan özellikler `VisualElement` varsayılan "değerlerini & #x 2013; mock" 1. Yalnızca bir öğe olduğundan boyuta sahip ve düzende içerilen olduğunda bu özellikleri CİHAZDAN bağımsız birimler öğesinde gerçek boyutuna yansıtır. Bu boyut herhangi bir içerip `Padding` öğesinde ayarlanan ama `Margin`.
+Salt okunur [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) ve [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) tarafından tanımlanan özellikler `VisualElement` "değerlerini mock" varsayılan &ndash;1. Yalnızca bir öğe olduğundan boyuta sahip ve düzende içerilen olduğunda bu özellikleri CİHAZDAN bağımsız birimler öğesinde gerçek boyutuna yansıtır. Bu boyut herhangi bir içerip `Padding` öğesinde ayarlanan ama `Margin`.
 
 Bir görsel öğe harekete [ `SizeChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/) olay olduğunda kendi `Width` veya `Height` değişti. [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) örnek programın ekran boyutunu görüntülemek için bu olay kullanır.
 
@@ -75,7 +75,7 @@ Hesaplayarak blok belirli dikdörtgenin içindeki metnin sığması olası bir `
 
 ## <a name="empirically-fitting-text"></a>Empirically sığdırma metin
 
-Dikdörtgene metin sığması için başka bir empirically İşlenmiş metin boyutu hesaplamak ve yukarı veya aşağı ayarlamak için yoludur. Kitap çağrıları programa [ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/) öğenin istenen boyuta elde etmek için bir görsel öğe üzerinde. Yöntem kullanım dışı bırakıldı ve programlar yerine çağırın [`Measure`] (/ api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/).
+Dikdörtgene metin sığması için başka bir empirically İşlenmiş metin boyutu hesaplamak ve yukarı veya aşağı ayarlamak için yoludur. Kitap çağrıları programa [ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/) öğenin istenen boyuta elde etmek için bir görsel öğe üzerinde. Yöntem kullanım dışı bırakıldı ve programlar yerine çağırın [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/).
 
 İçin bir `Label`, ilk bağımsız değişken (kaydırma izin vermek için) kapsayıcının genişliği olmalıdır, ikinci bağımsız değişken ayarlanmalıdır için `Double.PositiveInfinity` Kısıtlanmamış yükseklik yapma. [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) örneği, bu teknik gösterir.
 

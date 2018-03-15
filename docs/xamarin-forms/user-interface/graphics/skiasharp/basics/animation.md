@@ -8,11 +8,11 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: e18ef7c77c1d5c93d53882233c65a56e5567fcd7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 347ecf72356915714200835263e38519c1ad8a13
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="basic-animation"></a>Temel animasyon
 
@@ -107,7 +107,7 @@ async Task AnimationLoop()
 
 ```
 
-`while` Döngüsü başlatan bir döngü süresi elde ederek `Slider`. Örneğin, 5 saniye cinsinden bir zaman budur. İkinci ifade değerini hesaplar `t` için *zaman*. İçin bir `cycleTime` 5, `t` artırır 0 ile 1 ile 5 saniyede. Bağımsız değişkeni `Math.Sin` ikinci deyimi 2π 5 saniyede ' 0'dan aralıkları. işlev. `Math.Sin` İşlevi 0 ile 1 geri 0 ve daha sonra & #x 2013; 1 ve 0 5 saniyede ancak değeri 1 veya – 1 olduğunda daha yavaş değiştirmek değerlerle arasında değişen bir değer döndürür. 1 değeri, böylece her zaman pozitif değerler ve ardından değerleri aralıkları için ½ ½ 0 değeri yaklaşık 1 ve 0 olduğunda daha yavaş ancak ½-1, 2 ile ayrılmıştır eklenir. Bu depolanan `scale` alan ve `SKCanvasView` geçersiz.
+`while` Döngüsü başlatan bir döngü süresi elde ederek `Slider`. Örneğin, 5 saniye cinsinden bir zaman budur. İkinci ifade değerini hesaplar `t` için *zaman*. İçin bir `cycleTime` 5, `t` artırır 0 ile 1 ile 5 saniyede. Bağımsız değişkeni `Math.Sin` ikinci deyimi 2π 5 saniyede ' 0'dan aralıkları. işlev. `Math.Sin` İşlevi 0 ile 1 arka 0 ve ardından arasında değişen bir değer döndürür &ndash;1 ve 0 5 saniyede ancak değeri 1 veya – 1 olduğunda daha yavaş değiştirmek değerlere sahip. 1 değeri, böylece her zaman pozitif değerler ve ardından değerleri aralıkları için ½ ½ 0 değeri yaklaşık 1 ve 0 olduğunda daha yavaş ancak ½-1, 2 ile ayrılmıştır eklenir. Bu depolanan `scale` alan ve `SKCanvasView` geçersiz.
 
 `PaintSurface` Yöntemi kullanan bu `scale` elipsin iki eksen hesaplamak için değer:
 

@@ -1,43 +1,37 @@
 ---
-title: "Yükleme ve gereksinimler"
+title: "Çalışma kitapları yükleme ve gereksinimler"
+description: "İndirme, yükleme ve Xamarin çalışma kitaplarını kullanmak nasıl."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: abc9f9402b55a11e313b9938f07f37e5329b55b6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: abd6ac7d4bce5a180db087488b32c878ed0a416b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="installation-and-requirements"></a>Yükleme ve gereksinimler
-
-<script> var inspectorOnLoad işlevi () = {var primaryTextBase = "Xamarin çalışma kitapları için"; var secondaryTextBase = "veya yükleyin"; var inspectorDownloadUrlMac "https://dl.xamarin.com/interactive/XamarinInteractive.pkg" =; var inspectorDownloadUrlWin = " https://DL.xamarin.com/interactive/XamarinInteractive.msi";
-
-  var aPrimary = document.getElementById("inspector-download-primary"); var aSecondary = document.getElementById("inspector-download-secondary");
-
-  var aMac = aPrimary; var aWin = aSecondary; var macTextBase = primaryTextBase; var winTextBase = secondaryTextBase;
-
-  if (/win/i.test(navigator.platform.toLowerCase())) { aMac = aSecondary; aWin = aPrimary; macTextBase = secondaryTextBase; winTextBase = primaryTextBase; }
-
-  aMac.href inspectorDownloadUrlMac; = aMac.text = macTextBase + "Mac"; aWin.href inspectorDownloadUrlWin; = aWin.text = winTextBase + "Windows"; };
-
-document.addEventListener ("DOMContentLoaded", inspectorOnLoad);
-</script>
+# <a name="workbooks-installation-and-requirements"></a>Çalışma kitapları yükleme ve gereksinimler
 
 <a name="install" />
 
 ## <a name="download-and-install"></a>İndirme ve yükleme
 
-<ol>
-  <li>Denetleme <a href="#Requirements"> gereksinimleri</a> aşağıda.</li>
-  <li>İndirme ve yükleme <a href="https://dl.xamarin.com/interactive/XamarinInteractive.pkg" id="inspector-download-primary">Mac için Xamarin çalışma kitaplarını</a> (<a href="https://dl.xamarin.com/interactive/XamarinInteractive.msi" id="inspector-download-secondary">veya Windows yükleme</a>).
-  </li>
-  <li>Başlat <a href="~/tools/workbooks/workbook.md"> çalma</a> çalışma kitaplarını ya da deneme ile <a href="https://developer.xamarin.com/workbooks/">örnekleri</a>.
-    </li>
-</ol>
+# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+
+1. Denetleme [gereksinimleri](#requirements) aşağıda.
+2. İndirme ve yükleme [için Xamarin çalışma kitaplarını Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
+3. Başlat [çalma](~/tools/workbooks/workbook.md) çalışma kitaplarını veya deneme [örnekleri](https://developer.xamarin.com/workbooks)
+
+# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+
+1. Denetleme [gereksinimleri](#Requirements) aşağıda.
+2. İndirme ve yükleme [Mac için Xamarin çalışma kitaplarını](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
+3. Başlat [çalma](~/tools/workbooks/workbook.md) çalışma kitaplarını veya deneme [örnekleri](https://developer.xamarin.com/workbooks)
+
+-----
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -48,52 +42,15 @@ document.addEventListener ("DOMContentLoaded", inspectorOnLoad);
 
 #### <a name="supported-app-platforms"></a>Desteklenen uygulama platformları
 
-<table>
-<thead>
-  <tr>
-    <th>Uygulama platformu</th>
-    <th>İşletim sistemi desteği</th>
-    <th>Notlar</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Mac (Birleşik)</td>
-    <td>Yalnızca Mac üzerinde desteklenir</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>iOS (Birleşik)</td>
-    <td>Mac ve Windows desteklenen</td>
-    <td>
-      <ul>
-        <li>Xamarin.iOS 11.0 ve Xcode 9.0 veya büyük Mac üzerinde yüklü olmalıdır</li>
-        <li>Yukarıdakilerin tümü, çalıştıran bir Mac yapı konak iOS çalışma kitaplarını Windows üzerinde çalışan gerektirir ve <a href="~/tools/ios-simulator.md">düğümlerde iOS simülatörü</a> Windows üzerinde yüklü.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Android</td>
-    <td>Mac ve Windows desteklenen</td>
-    <td>Google, Visual Studio veya Xamarin Android öykünücüsü, bir sanal aygıtla kullanmalısınız > 5.0 =</td>
-  </tr>
-  <tr>
-    <td>WPF</td>
-    <td>Yalnızca Windows üzerinde desteklenir</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>Konsol (.NET Framework)</td>
-    <td>Mac ve Windows desteklenen</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>Konsol (.NET çekirdek)</td>
-    <td>Mac ve Windows desteklenen</td>
-    <td/>
-  </tr>
-</tbody>
-</table>
+|Uygulama platformu|İşletim sistemi desteği|Notlar|
+|--- |--- |--- |
+|Mac (Birleşik)|Yalnızca Mac üzerinde desteklenir|
+|iOS (Birleşik)|Mac ve Windows desteklenen|Xamarin.iOS 11.0 ve Xcode 9.0 veya büyük Mac üzerinde yüklü olmalıdır Yukarıdakilerin tümü, çalıştıran bir Mac yapı konak iOS çalışma kitaplarını Windows üzerinde çalışan gerektirir ve [düğümlerde iOS simülatörü](~/tools/ios-simulator.md) Windows üzerinde yüklü.|
+|Android|Mac ve Windows desteklenen|Google, Visual Studio veya Xamarin Android öykünücüsü, bir sanal aygıtla kullanmalısınız > 5.0 =|
+|WPF|Yalnızca Windows üzerinde desteklenir|
+|Konsol (.NET Framework)|Mac ve Windows desteklenen|
+|Konsol (.NET çekirdek)|Mac ve Windows desteklenen|
+
 
 ## <a name="reporting-bugs"></a>Raporlama hataları
 
@@ -108,7 +65,7 @@ Lütfen [Github'da sorunları rapor][bugs]ve tüm aşağıdaki bilgileri içerir
 
 1.4.x da günlük dosyası Bulucu (macOS) veya doğrudan Gezgini'nde (Windows) ana menüden seçebilme özellikleri:
 
-- **Yardım → açığa günlük dosyası**
+- **Yardım > ortaya günlük dosyası**
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>Günlük yolları çalışma kitaplarını 1.3 ve önceki sürümleri:
 
@@ -121,23 +78,23 @@ Lütfen [Github'da sorunları rapor][bugs]ve tüm aşağıdaki bilgileri içerir
 
 Çalışma kitapları ana menüden:
 
-* **Yardım → kopyalama sürüm bilgileri**
+* **Yardım > kopyalama sürüm bilgileri**
 
 #### <a name="instructions-for-workbooks-13-and-earlier"></a>Ve daha önce çalışma kitaplarının 1.3 için yönergeler:
 
 Mac için Visual Studio
 
-- **Visual Studio → Visual Studio → Göster Ayrıntılar → kopyalama bilgiler hakkında**
+- **Visual Studio > Visual Studio hakkında > Ayrıntıları Göster > kopyalama bilgileri**
 - Hata raporu yapıştırın
 
 Visual Studio
 
-- **Visual Studio → bilgi Kopyala hakkında → Yardım**
+- **Yardım > Visual Studio hakkında > kopyalama bilgileri**
 - İşletim sistemi sürümünüz ve 32 bit veya 64-bit Windows çalıştırdığınızdan bizi bilgilendirin.
 
 ### <a name="samples"></a>Örnekler
 
-Ekleme ya da bağlantı `.workbooks` hatayı daha hızlı çözmenize yardımcı olabilecek, sorun yaşadığınız dosya.
+Ekleme ya da bağlantı **.workbooks** hatayı daha hızlı çözmenize yardımcı olabilecek, sorun yaşadığınız dosya.
 
 ### <a name="devices"></a>Cihazlar
 
@@ -148,7 +105,7 @@ Ekleme ya da bağlantı `.workbooks` hatayı daha hızlı çözmenize yardımcı
 - Android: x x86 kullandığınızdan emin olun öykünücüsü
 - Android: Hangi öykünücüsü platformu kullanıyorsunuz? Google öykünücüsü?
   Visual Studio Android öykünücüsü? Xamarin Android Player?
-- Windows İos'ta: Xamarin uzaktan iOS simülatörü hangi sürümü, yüklü olan (denetleyin `Add/Remove Programs` içinde `Control Panel`)?
+- Windows İos'ta: Xamarin uzaktan iOS simülatörü hangi sürümü, yüklü olan (denetleyin **Program Ekle/Kaldır** içinde **Denetim Masası**)?
 - Windows İos'ta: Lütfen Platform sürüm bilgileri Mac yapı ana bilgisayarınız için de sağlayın
 - Aygıt, ağ bağlantısı (denetimi web tarayıcısı aracılığıyla) var mı?
 
@@ -168,7 +125,7 @@ Visual Studio 2017 varsa, açık **Visual Studio yükleyicisi**ve konum **bileş
 
 Çalışma kitapları & Denetçisi kendiniz ile indirilen yükleyiciyi yüklediyseniz, üzerinden mi kaldırılması gerekir **uygulamalar ve Özellikler** sistem ayarları sayfası Windows 10 veya aracılığıyla **Program Ekle/Kaldır**önceki sürümlerinde Windows Denetim Masası'nda.
 
-> **Başlatma → ayarları → sistem → uygulamalar ve Özellikler**
+> **Başlat > Ayarlar > Sistem > uygulamalar ve Özellikler**
 
 ![](install-images/windows-remove.png "Xamarin çalışma kitaplarını ve içinde listelenen denetçisi &quot;uygulamaları &amp; özellikleri&quot;")
 
@@ -197,7 +154,7 @@ Eski sürümleri için el ile aşağıdaki kaldırmanız gerekir:
 
 ## <a name="downgrading"></a>Önceki sürüme indirme
 
-Paket tanımlayıcısı `/Applications/Xamarin Workbooks.app` değiştirildi `com.xamarin.Inspector` için `com.xamarin.Workbooks` gelecekteki Xamarin çalışma kitaplarını & Denetçisi yükleyicileri bölme kolaylaştırmak için 1.4 sürümde.
+Paket tanımlayıcısı **uygulamalar/Xamarin Workbooks.app** değiştirildi `com.xamarin.Inspector` için `com.xamarin.Workbooks` gelecekteki Xamarin çalışma kitaplarını & Denetçisi yükleyicileri bölme kolaylaştırmak için 1.4 sürümde.
 
 Eski yükleyicileri bir hata nedeniyle 1.3.2 veya eski yükleyicileri kullanarak 1.4 ya da daha yeni sürümleri düşürmek mümkün değil.
 

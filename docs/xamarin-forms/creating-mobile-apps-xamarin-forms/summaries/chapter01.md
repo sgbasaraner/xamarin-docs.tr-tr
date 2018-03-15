@@ -7,11 +7,11 @@ ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e1d246ea65e88bde07c3d527c18b7850aa09e08b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Bölüm 1 özeti. Xamarin.Forms nasıl sığmayan?
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/12/2018
 
 Bu sorun, mobil platformu hedeflerken yaygındır. Şu anda iki önemli mobil platformlar, iPhone ve iOS işletim sistemi ve, çeşitli telefonlar ve tabletler üzerinde çalışan Android işletim sistemi çalıştıran iPad cihazları Apple ailesi var. Başka bir önemli Microsoft'un Evrensel Windows Platformu (Windows 10 ve Windows 10 Mobile hedeflemek tek bir program sağlayan UWP), bir platformdur.
 
-Bu üç platformlar hedef istediği bir yazılım satıcısı ilgilenmeniz gerekir farklı kullanıcı arabirimi örneklerinde, üç farklı geliştirme ortamları, üç farklı programlama arabirimleri ve & #x 2014; belki de çoğu awkwardly & #x 2014; üç farklı programlama dillerini: Objective-C iPhone ve iPad, Android için Java ve C# Windows için.
+Bu üç platformlar hedef istediği bir yazılım satıcısı ilgilenmeniz gerekir farklı kullanıcı arabirimi örneklerinde, üç farklı geliştirme ortamları, üç farklı programlama arabirimleri ve&mdash;belki de en awkwardly&mdash; üç farklı programlama dillerini: Objective-C iPhone ve iPad, Android için Java ve C# Windows için.
 
 ## <a name="the-c-and-net-solution"></a>C# ve .NET çözümü
 

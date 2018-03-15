@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 21ae62ee0d43e688e63ca8b7feb6a8aebb227cd5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3bdf00a9e50b2bf66f51c825306c2ba8e6365dd2
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-itunesmetadataplist-file"></a>İTunesMetadata.plist dosyası
 
@@ -239,7 +239,7 @@ Kullanım `genre` ve `genreId` anahtarları iTunes iOS uygulamasına ait hangi T
 
 İOS uygulamaları için Apple şu anda aşağıdaki türler ve Tarz kimlikleri tanımlar:
 
-[!include[](~/ios/includes/table-appstore.html)]
+[!include[](~/ios/includes/table-appstore.md)]
 
 Daha fazla bilgi için lütfen Apple'nın bkz [Tarz kimlikleri ek](http://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html) belgeleri.
 
@@ -361,10 +361,10 @@ Bu makalede ele alınan `iTunesMetadata.plist` iTunes bir geçici hakkında bild
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Uygulama mağazası dağıtım](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [App Store Dağıtımı](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
 - [Uygulama iTunes Connect yapılandırma](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [Uygulama mağazası yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [App Store’da Yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Şirket içi dağıtım](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [Geçici dağıtım](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
-- [IPA desteği](~/ios/deploy-test/app-distribution/ipa-support.md)
+- [Geçici Dağıtım](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [IPA Desteği](~/ios/deploy-test/app-distribution/ipa-support.md)
 - [Sorun giderme](~/ios/deploy-test/troubleshooting.md)

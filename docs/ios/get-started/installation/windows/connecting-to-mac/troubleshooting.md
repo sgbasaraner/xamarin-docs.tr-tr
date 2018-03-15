@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5263d32ace14eb803bfd65b6a9b2ea5992ee1413
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ffa61004bdaaaaf400f5e0d5ed90b4e6b1dcb7e7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="connection-troubleshooting"></a>Bağlantı sorunlarını giderme
 
@@ -239,7 +239,6 @@ Visual Studio derleme konağa bağlanırken bir hata değerse, ek iletiler için
     [![](troubleshooting-images/troubleshooting-image12.png "Yardım'dan günlükleri toplamak > Xamarin > Zip günlükleri")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. .Zip dosyasını açtığınızda, aşağıdaki örneğe benzer dosyaların bir listesini görürsünüz. Bağlantı hataları için en önemli dosyalardır  **\*Ide.log** ve  **\*Ide.svclog** dosyaları. Bu dosyalar iki biraz farklı biçimlerde aynı iletilerini içerir. **.Svclog** XML ve iletileri aracılığıyla göz atmak istiyorsanız kullanışlıdır. **.Log** düz metin ve komut satırı araçlarını kullanarak iletileri filtrelemek istiyorsanız kullanışlıdır.
-
 
     Tüm iletileri aracılığıyla göz atmak için seçin ve açın **.svclog** dosyası:
 

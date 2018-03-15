@@ -7,11 +7,11 @@ ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 6e0f1abf04695dfb5348b631a9fbdbd2c81bc431
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ccae97021e86eb1375f948c5ad126253c6088037
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>Bölüm 11 özeti. Bağlanabilir altyapısı
 
@@ -47,9 +47,9 @@ Aslında, `Text` CLR özelliği, kullanılarak tamamen gerçekleştirilir `SetVa
 
 Bağlanabilir özelliği değişiklikleri tarafından yedeklenen bir özelliği her `BindableObject` ateşlenir bir [ `PropertyChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.PropertyChanged/) değişti özellik tanımlama olay. Özelliği aynı değere ayarlandığında bu olay tetiklenir değil.
 
-Bazı özellikler bağlanabilir özellikleri ve bazı Xamarin.Forms sınıfları & #x 2014 tarafından yedeklenen değil; gibi `Span` & #x 2014; öğesinden türetilen değil `BindableObject`. Türeyen bir sınıf `BindableObject` bağlanabilir özellikleri nedeniyle destekleyebilir `BindableObject` tanımlar `SetValue` ve `GetValue` yöntemleri.
+Bazı özellikler bağlanabilir özellikleri ve bazı Xamarin.Forms sınıfları tarafından yedeklenen değil &mdash; gibi `Span` &mdash; öğesinden türetilen değil `BindableObject`. Türeyen bir sınıf `BindableObject` bağlanabilir özellikleri nedeniyle destekleyebilir `BindableObject` tanımlar `SetValue` ve `GetValue` yöntemleri.
 
-Çünkü `Span` türünden türemez `BindableObject`, hiçbiri özellikleri & #x 2014; gibi `Text` & #x 2014; bağlanabilirse özelliği tarafından desteklenir. Nedeni budur bir `DynamicResource` ayarı `Text` özelliği `Span` bir özel durumla başlatır [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) önceki bölümde örnek. [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode) örnek kodu kullanarak dinamik kaynaklar ayarlama gösteren [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/) tarafından tanımlanan yöntemi `Element`. İlk bağımsız değişken türünde bir nesnedir `BindableProperty`.
+Çünkü `Span` türünden türemez `BindableObject`, özelliklerini hiçbiri &mdash; gibi `Text` &mdash; bağlanabilirse özelliği tarafından desteklenir. Nedeni budur bir `DynamicResource` ayarı `Text` özelliği `Span` bir özel durumla başlatır [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) önceki bölümde örnek. [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode) örnek kodu kullanarak dinamik kaynaklar ayarlama gösteren [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/) tarafından tanımlanan yöntemi `Element`. İlk bağımsız değişken türünde bir nesnedir `BindableProperty`.
 
 Benzer şekilde, [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) yöntemi tarafından tanımlanan `BindableObject` ilk bağımsız değişken türü sahip `BindableProperty`.
 

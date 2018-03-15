@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 64036af82ea49ad4d758a89767ff0da02eef094f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 26a543cc096d96346cd4503bf4fa2382f8ca9b78
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="set-up-device-for-development"></a>Aygıtı geliştirme için ayarlama
 
@@ -119,8 +119,7 @@ Windows 7'de sürücüleri yüklemek için:
 
 ### <a name="installing-unverified-drivers-in-windows-8"></a>Windows 8 doğrulanmamış sürücüleri yükleme
 
-Windows'da doğrulanmamış bir sürücü yüklemek için ek adımlar gerekli
-8. Aşağıdaki adımları sürücülerin Galaxy Nexus için nasıl yükleneceği açıklanmaktadır:
+Windows 8'de doğrulanmamış bir sürücü yüklemek için ek adımlar gerekebilir. Aşağıdaki adımları sürücülerin Galaxy Nexus için nasıl yükleneceği açıklanmaktadır:
 
 1.  **Windows 8 Gelişmiş Önyükleme Seçenekleri erişim** -Gelişmiş Önyükleme Seçenekleri erişmek için bilgisayar yeniden başlatıldığından bu adımı içerir. Komut satırı komut istemi başlatın ve aşağıdaki komutu kullanarak bilgisayarı yeniden başlatın:
 

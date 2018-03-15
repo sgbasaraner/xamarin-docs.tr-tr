@@ -7,11 +7,11 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 09f63dd418ea1fb523c028edb02c28c22bfdccd1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4f76b1060ee8a672319683525470aee00e3db001
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Bölüm 17 özeti. Kılavuz katılımınıza
 
@@ -29,16 +29,16 @@ Tanımı bir `Grid` XAML'de genellikle doldurma ile başlar [ `RowDefinitions` ]
 
 XAML'de [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/) dönüştürür basit metin dizeleri `GridLength` değerleri. Arka planda [ `GridLength` Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/) oluşturur `GridLength` değerine göre bir sayı ve türünde bir değer [ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/), üç üyesi olan bir numaralandırma:
 
-- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) & #x 2014; CİHAZDAN bağımsız birimler (XAML numarasında) genişliği veya yüksekliği belirtilen
-- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) & #x 2014; Genişlik ve yükseklik autosized hücre içeriğinin (XAML'de "Auto") dayalı olan
-- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) & #x 2014; Kalan yüksekliği veya genişliği ayrılır orantılı olarak (bir sayı ile "\*" adlı *yıldız*, XAML içinde)
+- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) &mdash; CİHAZDAN bağımsız birimler (XAML numarasında) genişliği veya yüksekliği belirtilen
+- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) &mdash; Genişlik ve yükseklik autosized hücre içeriğinin (XAML'de "Auto") dayalı olan
+- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) &mdash; Kalan yüksekliği veya genişliği ayrılır orantılı olarak (bir sayı ile "\*" adlı *yıldız*, XAML içinde)
 
-Her alt `Grid` de satır ve sütun (açık veya örtülü olarak) atanması gerekir. Çok satıra yayılmış ve sütun yayılma isteğe bağlıdır. Bunlar tüm kullanarak bağlanabilir özellikleri & #x 2014 bağlı belirtilir; tarafından tanımlanan özellikler `Grid` alt ancak ayarlanmış `Grid`. `Grid` dört statik ekli bağlanabilir özelliklerini tanımlar:
+Her alt `Grid` de satır ve sütun (açık veya örtülü olarak) atanması gerekir. Çok satıra yayılmış ve sütun yayılma isteğe bağlıdır. Bunlar tüm ekli bağlanabilir özellikler kullanılarak belirtilir &mdash; tarafından tanımlanan özellikler `Grid` alt ancak ayarlanmış `Grid`. `Grid` dört statik ekli bağlanabilir özelliklerini tanımlar:
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) & #x 2014; sıfır tabanlı satır; Varsayılan 0'dır
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) & #x 2014; sıfır tabanlı sütun; Varsayılan 0'dır
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) & #x 2014; sayı satırlarını alt yayılır; Varsayılan 1'dir
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) & #x 2014; sayı sütunlarını alt kapsayan; Varsayılan 1'dir
+- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; sıfır tabanlı satır; Varsayılan 0'dır
+- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; sıfır tabanlı sütun; Varsayılan 0'dır
+- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; sayı satırlarını alt yayılır; Varsayılan 1'dir
+- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; sayı sütunlarını alt kapsayan; Varsayılan 1'dir
 
 Kod içinde bir program ayarlamak ve bu değerleri almak için sekiz statik yöntemleri kullanın:
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 5334465905817336df91f5816596dc5723071811
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d5d5de21c4f397f203b4da5ea86e1f9a0e4714e9
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction"></a>Giriş
 
@@ -118,48 +118,16 @@ Ayrıca, bazı eShopOnContainers mobil uygulamaya sınıfları için birim testl
 
 EShopOnContainers mobil uygulama çözüm projelere kaynak kodu ve diğer kaynakları düzenler. Tüm projeleri kaynak kodu ve diğer kaynakları kategoriler halinde düzenlemek için klasörler kullanın. Aşağıdaki tabloda eShopOnContainers mobil uygulamayı olun projeleri özetlenmektedir:
 
-<table>
-<thead>
-<tr class="header">
-<th>Proje</th>
-<th>Açıklama</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>eShopOnContainers.Core</td>
-<td>Bu proje paylaşılan kullanıcı Arabirimi ve paylaşılan kodu içeren taşınabilir sınıf kitaplığı (PCL) projesidir.</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.Droid</td>
-<td>Bu proje Android özel kod tutar ve Android için giriş noktasıdır.</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.iOS</td>
-<td>Bu proje iOS özel kod tutar ve iOS uygulaması giriş noktası.</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.UWP</td>
-<td>Bu proje Evrensel Windows Platformu (UWP) belirli bir kod içerir ve Windows uygulaması için giriş noktasıdır.</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.TestRunner.Droid</td>
-<td>Bu proje için eShopOnContainers.UnitTests projeyi Android test Çalıştırıcısı ' dir.</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.TestRunner.iOS</td>
-<td>İOS test Çalıştırıcısı eShopOnContainers.UnitTests projesi için projesidir.</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.TestRunner.Windows</td>
-<td>Bu proje eShopOnContainers.UnitTests proje için evrensel Windows platformu test Çalıştırıcısı ' dir.</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.UnitTests</td>
-<td>Bu proje eShopOnContainers.Core proje için birim testleri içerir.</td>
-</tr>
-</tbody>
-</table>
+|Proje|Açıklama|
+|--- |--- |
+|eShopOnContainers.Core|Bu proje paylaşılan kullanıcı Arabirimi ve paylaşılan kodu içeren taşınabilir sınıf kitaplığı (PCL) projesidir.|
+|eShopOnContainers.Droid|Bu proje Android özel kod tutar ve Android için giriş noktasıdır.|
+|eShopOnContainers.iOS|Bu proje iOS özel kod tutar ve iOS uygulaması giriş noktası.|
+|eShopOnContainers.UWP|Bu proje Evrensel Windows Platformu (UWP) belirli bir kod içerir ve Windows uygulaması için giriş noktasıdır.|
+|eShopOnContainers.TestRunner.Droid|Bu proje için eShopOnContainers.UnitTests projeyi Android test Çalıştırıcısı ' dir.|
+|eShopOnContainers.TestRunner.iOS|İOS test Çalıştırıcısı eShopOnContainers.UnitTests projesi için projesidir.|
+|eShopOnContainers.TestRunner.Windows|Bu proje eShopOnContainers.UnitTests proje için evrensel Windows platformu test Çalıştırıcısı ' dir.|
+|eShopOnContainers.UnitTests|Bu proje eShopOnContainers.Core proje için birim testleri içerir.|
 
 EShopOnContainers mobil uygulama sınıflardan çok az kayıpla veya hiç değişiklik ile Xamarin.Forms uygulamalarda tekrar kullanılabilir.
 
@@ -167,76 +135,23 @@ EShopOnContainers mobil uygulama sınıflardan çok az kayıpla veya hiç deği�
 
 EShopOnContainers.Core PCL proje aşağıdaki klasör içerir:
 
-<table>
-<thead>
-<tr class="header">
-<th>Klasör</th>
-<th>Açıklama</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Animasyon</td>
-<td>XAML'de tüketilmesi animasyonları sağlayan sınıflar içerir.</td>
-</tr>
-<tr class="even">
-<td>Davranışlar</td>
-<td>Sınıfları görüntülemek için sunulan davranışları içerir.</td>
-</tr>
-<tr class="odd">
-<td>Denetimler</td>
-<td>Uygulama tarafından kullanılan özel denetimler içerir.</td>
-</tr>
-<tr class="even">
-<td>Dönüştürücüler</td>
-<td>Özel mantık bir bağlama için geçerli değer dönüştürücüler içerir.</td>
-</tr>
-<tr class="odd">
-<td>Etkiler</td>
-<td>İçeren <code>EntryLineColorEffect</code> Özel kenarlık rengini değiştirmek için kullanılan sınıf <code>Entry</code> kontrol eder.</td>
-</tr>
-<tr class="even">
-<td>Özel Durumlar</td>
-<td>Özel içeren <code>ServiceAuthenticationException</code>.</td>
-</tr>
-<tr class="odd">
-<td>Uzantıları</td>
-<td>İçin genişletme yöntemleri içeren <code>VisualElement</code> ve <code>IEnumerable<T> </code> sınıfları.</td>
-</tr>
-<tr class="even">
-<td>Yardımcıları</td>
-<td>Uygulama için yardımcı sınıfları içerir.</td>
-</tr>
-<tr class="odd">
-<td>Modeller</td>
-<td>Uygulama için model sınıfları içerir.</td>
-</tr>
-<tr class="even">
-<td>Özellikler</td>
-<td>İçeren <code>AssemblyInfo.cs</code>, bir .NET derlemesi meta veri dosyası.</td>
-</tr>
-<tr class="odd">
-<td>Hizmetler</td>
-<td>Arabirimleri ve uygulamaya sağlanan hizmetleri uygulayan sınıflar içerir.</td>
-</tr>
-<tr class="even">
-<td>Tetikleyiciler</td>
-<td>İçeren <code>BeginAnimation</code> XAML animasyonda çağırmak için kullanılan tetikleyici.</td>
-</tr>
-<tr class="odd">
-<td>Doğrulama</td>
-<td>Veri girişi doğrulama ilgili sınıflar içerir.</td>
-</tr>
-<tr class="even">
-<td>ViewModels</td>
-<td>Sayfalara gösterilen uygulama mantığını içerir.</td>
-</tr>
-<tr class="odd">
-<td>Görünümler</td>
-<td>Uygulama sayfaları içerir.</td>
-</tr>
-</tbody>
-</table>
+|Klasör|Açıklama|
+|--- |--- |
+|Animasyon|XAML'de tüketilmesi animasyonları sağlayan sınıflar içerir.|
+|Davranışlar|Sınıfları görüntülemek için sunulan davranışları içerir.|
+|Denetimler|Uygulama tarafından kullanılan özel denetimler içerir.|
+|Dönüştürücüler|Özel mantık bir bağlama için geçerli değer dönüştürücüler içerir.|
+|Etkiler|İçeren `EntryLineColorEffect` Özel kenarlık rengini değiştirmek için kullanılan sınıf `Entry` kontrol eder.|
+|Özel Durumlar|Özel içeren `ServiceAuthenticationException`.|
+|Uzantıları|İçin genişletme yöntemleri içeren `VisualElement` ve `IEnumerable` sınıfları.|
+|Yardımcıları|Uygulama için yardımcı sınıfları içerir.|
+|Modeller|Uygulama için model sınıfları içerir.|
+|Özellikler|İçeren `AssemblyInfo.cs`, bir .NET derlemesi meta veri dosyası.|
+|Hizmetler|Arabirimleri ve uygulamaya sağlanan hizmetleri uygulayan sınıflar içerir.|
+|Tetikleyiciler|İçeren `BeginAnimation` XAML animasyonda çağırmak için kullanılan tetikleyici.|
+|Doğrulama|Veri girişi doğrulama ilgili sınıflar içerir.|
+|ViewModels|Sayfalara gösterilen uygulama mantığını içerir.|
+|Görünümler|Uygulama sayfaları içerir.|
 
 ##### <a name="platform-projects"></a>Platform projeleri
 

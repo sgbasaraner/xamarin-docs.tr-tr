@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a4b8ac68da7bcb25ea55906e8fe060b7c7fdee9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 92ca65409dd82806278885bb03efd7b04ab1827d
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xib-files"></a>.xib dosyaları
 
@@ -67,7 +67,7 @@ Xcode'da düzenlemek için bir .xib dosyayı açtığınızda, Mac için Visual 
 
 #### <a name="properties--utilities"></a>Özellikleri & yardımcı programları
 
-**Özellikleri & yardımcı programları** biz ile çalışacaksınız iki ana bölümlere bölüm devided **özellikleri** (denetçiler olarak da adlandırılır) ve **Kitaplığı**:
+**Özellikleri & yardımcı programları** bölüm biz ile çalışacaksınız iki ana bölümlere ayrılmıştır **özellikleri** (denetçiler olarak da adlandırılır) ve **Kitaplığı**:
 
 ![Özellik denetçisi](xib-images/xcode04.png "Özellik denetçisi")
 
@@ -375,7 +375,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 Bu kod, Xcode ve arabirim Builder oluşturulur ve kullanıcı düğmesine tıklar dilediğiniz zaman çağrılacağı eylem ekler.
 
-Bazı kullanıcı Arabirimi öğeleri otomatik olarak Eylemler, örneğin, varsayılan menü çubuğunda öğeleri gibi yerleşik **Aç...**  menü öğesi (`openDocument:`). İçinde **çözüm paneli**, çift `AppDelegate.CS` dosyasını düzenlemek için açın ve aşağıdaki kodu ekleyin `DidFinishLaunching` yöntemi:
+Bazı kullanıcı Arabirimi öğeleri otomatik olarak Eylemler, örneğin, varsayılan menü çubuğunda öğeleri gibi yerleşik **Aç...**  menü öğesi (`openDocument:`). İçinde **çözüm paneli**, çift **AppDelegate.cs** dosyasını düzenlemek için açın ve aşağıdaki kodu ekleyin `DidFinishLaunching` yöntemi:
 
 ```csharp
 [Export ("openDocument:")]

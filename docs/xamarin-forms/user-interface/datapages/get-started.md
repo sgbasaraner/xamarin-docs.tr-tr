@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1e65207e987dbdab8bf2fe5f48f0b0a500dd27bc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3b5346b6d556f6437d9c9fc17897180fd0b41b1e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="getting-started-with-datapages"></a>DataPages ile çalışmaya başlama
 
@@ -177,7 +177,7 @@ Temalar sıfırdan oluşturmak için biraz daha fazla iş olduğu (bkz [Temalar 
 
 ## <a name="troubleshooting"></a>Sorun giderme
 
-<a name="loadtheme"/>
+<a name="loadtheme" />
 
 ## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Dosya veya derleme 'Xamarin.Forms.Theme.Light' ya da bağımlılıklarından biri yüklenemedi
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/0201
-ms.openlocfilehash: c5f6e6ef61e3705920770d317e4d5f680d4c8fbe
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 95d4bfd78ee77f9afafce61f52b7874299df543d
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting"></a>Sorun giderme
 
@@ -207,7 +207,7 @@ Bu sorunu çok nadir ve yeniden oluşturmak son derece sabit - bu genellikle ayn
 
 
 
-Lütfen XS günlükleri, attach **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**, **AndroidTools-{zaman damgası} .log**, ve ** bileşenleri-{zaman damgası} .log ** (XS eski sürümlerinde / MonoDevelop, yalnızca gönderme **~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**).
+Lütfen XS günlükleri, attach **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**, **AndroidTools-{zaman damgası} .log**, ve **bileşenleri-{zaman damgası} .log**(XS/MonoDevelop eski sürümleri yalnızca gönderme **~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**).
 
  **Not: Yukarıdaki sorunu XS 2.2 kesin olarak düzeltildi**
 
@@ -225,7 +225,7 @@ Xamarin.iOS 1.4 ile biz hata ayıklama için bir daha hassas yöntemi getirir, v
 
 İPhone benzeticisi çıkın ve yüklemeyi yeniden deneyin emin olun.
 
-<a name="trampolines"/>
+<a name="trampolines" />
 
 ## <a name="ran-out-of-trampolines-of-type-0"></a>Tür 0 trampolines dışında çalışan
 

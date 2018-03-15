@@ -7,11 +7,11 @@ ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 73b3ec3e60a8fca5c48f515eab2cbb8359618dbb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a085eb306ad81b3c9214df269f69558bc8fbfaa7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Bölüm 19 özeti. Koleksiyon görünümleri
 
@@ -31,7 +31,7 @@ Kullanılacak MVVM uygulamalar için ortak olan `ListView` nesneler seçilebilir
 
 [ **PickerDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo) örnek XAML ayarlamak için nasıl kullanılacağını gösteren `Picker` [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/) özelliği ve ekleme `string` öğelerine[ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) koleksiyonu. Kullanıcı seçtiğinde `Picker`, öğeleri görüntüler `Items` bir platforma bağımlı şekilde koleksiyonu.
 
-[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/) Olayı, kullanıcı bir öğeyi seçili olduğunda gösterir. Sıfır tabanlı [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) özelliği daha sonra seçilen öğeyi gösterir. Öğe seçiliyse `SelectedIndex` eşittir &#x2013;1.
+[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/) Olayı, kullanıcı bir öğeyi seçili olduğunda gösterir. Sıfır tabanlı [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) özelliği daha sonra seçilen öğeyi gösterir. Öğe seçiliyse, `SelectedIndex` eşittir &ndash;1.
 
 Aynı zamanda `SelectedIndex` seçilen öğe, ancak başlatma sonrasında ayarlanmalıdır `Items` koleksiyonu doldurulur. XAML'de, bu büyük olasılıkla bir özellik öğesi ayarlamak için kullanacağınız olduğunu anlamına gelir `SelectedIndex`.
 
@@ -82,11 +82,11 @@ Bu özellik ile denemek için kullanabileceğiniz [ `NamedColor` ](https://githu
 
 `ListView` Bu öğeleri görüntülemek için bir şablon gerekir. Kodda, ayarladığınız [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/) özelliği tarafından tanımlanan `ItemsView<TVisual>` için bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) kullanarak nesne [ `DataTemplate` Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) , bir türevi başvuran [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) sınıfı. `Cell` beş türevleri sahiptir:
 
-- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) &#x2014; iki içeren `Label` görünümler (kavramsal konuşulur)
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) &#x2014; ekler bir `Image` için görüntüleyin `TextCell`
-- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) &#x2014; içeren bir `Entry` ile görüntülemek bir `Label`
-- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) &#x2014; içeren bir `Switch` ile bir `Label`
-- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) &#x2014; herhangi `View` (olan büyük olasılıkla)
+- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) &mdash; iki içeren `Label` görünümler (kavramsal konuşulur)
+- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) &mdash; ekler bir `Image` için görüntüleyin `TextCell`
+- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) &mdash; içeren bir `Entry` ile görüntülemek bir `Label`
+- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) &mdash; içeren bir `Switch` ile bir `Label`
+- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) &mdash; herhangi `View` (olan büyük olasılıkla)
 
 ' I çağırın [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) ve [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) üzerinde `DataTemplate` değerleri ile ilişkilendirmek üzere nesnesine `Cell` özelliklerini veya veri bağlamaları ayarlamak için `Cell` öğelerin özelliklerini başvuran özellikleri `ItemsSource` koleksiyonu. Bu, gösterilmiştir [ **TextCellListCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) örnek.
 

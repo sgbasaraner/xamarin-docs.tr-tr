@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 861d47d001c10c14a0294536c6122cafb33a93ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e930004a91133f391f68221473f212b7caaf1b07
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>3B MonoGame koordinatları
 
@@ -47,7 +47,7 @@ Bu kılavuz, 3B alanda nesneleri taşıma odaklanır. Proje oluşturma modelleri
 
 Bizim robot geçici taşıma başlamadan önce oluşturacağız bir `Robot` sınıf çizme ve taşıma için mantık içerir. Oyun geliştiriciler bu kapsülleme mantığı ve verileri olarak başvurduğu bir *varlık*.
 
-Yeni bir boş sınıf dosyası ekleyin **MonoGame3D** taşınabilir sınıf kitaplığı (platforma özgü ModelAndVerts.Android değil). Ad BT ** Robot ** tıklatıp **yeni**:
+Yeni bir boş sınıf dosyası ekleyin **MonoGame3D** taşınabilir sınıf kitaplığı (platforma özgü ModelAndVerts.Android değil). Bu ad **Robot** tıklatıp **yeni**:
 
 ![](part3-images/image3.png "Robot adlandırın ve yeni'yi tıklatın")
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
-ms.openlocfilehash: 36865dac6bd2ad13b9d3e286ab18a035c1edb3d8
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4a8d2934c4fbdc5b748014cb7dc9a121ade8c37e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="adding-a-universal-windows-platform-uwp-app"></a>Evrensel Windows Platformu (UWP) uygulamasını ekleme
 
@@ -26,7 +26,7 @@ Denetleme <a href="#troubleshooting">sorun giderme</a> yararlı ipuçları için
 
 Windows 10 telefonlar, tabletler ve masaüstü bilgisayarlar üzerinde çalışacak bir UWP uygulaması eklemek için aşağıdaki yönergeleri izleyin:
 
- 1 . Sağ tıklatın ve çözüm **Ekle > Yeni proje...**  ve ekleme bir **boş uygulama (Evrensel Windows)** proje:
+ 1 . Sağ tıklatın ve çözüm **Ekle > Yeni proje... ** ve ekleme bir **boş uygulama (Evrensel Windows)** proje:
 
   ![](universal-images/add-wu.png "Yeni Proje iletişim kutusu ekleme")
 
@@ -34,7 +34,7 @@ Windows 10 telefonlar, tabletler ve masaüstü bilgisayarlar üzerinde çalışa
 
   ![](universal-images/target-version.png "Evrensel Windows platformu yeni proje iletişim kutusu")
 
- 3 . UWP projeye sağ tıklayıp **NuGet paketlerini Yönet...**  ve ekleme **Xamarin.Forms** paket. Çözümdeki diğer projeler Xamarin.Forms paket aynı sürüme güncelleştirildiğinden emin olun.
+ 3 . UWP projeye sağ tıklayıp **NuGet paketlerini Yönet... ** ve ekleme **Xamarin.Forms** paket. Çözümdeki diğer projeler Xamarin.Forms paket aynı sürüme güncelleştirildiğinden emin olun.
 
  4 . Emin olun yeni UWP projesini yerleşik **Yapı > Configuration Manager** penceresi (Bu büyük olasılıkla olmaz işleminin gerçekleştiği bilgisayarlar varsayılan olarak). Değer çizgilerinin **yapı** ve **dağıtma** kutuları Evrensel projesi için:
 
@@ -98,7 +98,7 @@ LoadApplication(new YOUR_NAMESPACE.App());
 
 12 . Yerel kaynaklardan herhangi (ör. Ekle görüntü dosyaları) gerekli varolan platform projelerden.
 
-<a name="troubleshooting"/>
+<a name="troubleshooting" />
 
 ## <a name="troubleshooting"></a>Sorun giderme
 
