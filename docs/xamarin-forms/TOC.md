@@ -266,7 +266,7 @@
 #### [Visual Studio XAML tasarımcısı neden Xamarin.Forms XAML dosyaları için çalışmıyor?](troubleshooting/questions/forms-xaml-designer.md)
 #### [Android derleme hatası: "LinkAssemblies" görevi beklenmedik şekilde başarısız oldu](troubleshooting/questions/android-linkassemblies-error.md)
 #### [Xamarin.Forms.Maps Android projem neden COMPILETODALVIK : BEKLENMEDİK ÜST DÜZEY HATASI ile başarısız oldu?](troubleshooting/questions/maps-compiletodalvik-error.md)
-## [Sürüm Notları](https://developer.xamarin.com/releases/mac/)
+## [Sürüm Notları](https://developer.xamarin.com/releases/xamarin-forms/)
 ## [Örnekler](samples/index.yml)
 ## [Xamarin.Forms Kitabı ile Mobil Uygulamalar Oluşturma](creating-mobile-apps-xamarin-forms/index.md)
 ## [Kurumsal Uygulama Desenleri e-Kitabı](enterprise-application-patterns/index.md)
