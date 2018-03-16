@@ -6,12 +6,12 @@ ms.assetid: 298139E2-194F-4A58-BC2D-1D22231066C4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/15/2018
+ms.openlocfilehash: db277f20e63a59690ffaa8a8544ff9540578d3f5
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="garbage-collection"></a>Çöp Toplama
 
@@ -21,12 +21,12 @@ Xamarin.Android Mono'nın kullandığı [basit kişinin atık toplayıcı](http:
 -   Ana koleksiyonları (Gen1 toplar ve büyük nesne yığın alanı). 
 
 > [!NOTE]
-> Bir açık koleksiyonuyla olmadığında [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) koleksiyonlarıdır *isteğe bağlı*, yığın ayırmaları göre. *Bu başvuru sistemi sayım değil*; nesneleri *bekleyen başvuru vardır hemen toplanmaz*, veya ne zaman bir kapsam çıkış yaptı. Yeni Ayırma için bellek yetersiz küçük yığın çalıştırıldığında GC çalıştırın. Hiçbir ayırmaları varsa, çalışmaz.
+> Bir açık koleksiyonuyla olmadığında [GC. Collect()](xref:System.GC.Collect) koleksiyonlarıdır *isteğe bağlı*, yığın ayırmaları göre. *Bu başvuru sistemi sayım değil*; nesneleri *bekleyen başvuru vardır hemen toplanmaz*, veya ne zaman bir kapsam çıkış yaptı. Yeni Ayırma için bellek yetersiz küçük yığın çalıştırıldığında GC çalıştırın. Hiçbir ayırmaları varsa, çalışmaz.
 
 
-Alt koleksiyonlar ucuz ve sık ve son ayrılmış ve kullanılmayan nesneler toplamak için kullanılır. Alt koleksiyonlar ayrılmış nesneleri sonra her birkaç MB gerçekleştirilir. Alt koleksiyonlar el ile yapılmalıdır çağırarak [GC. TOPLA (0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
+Alt koleksiyonlar ucuz ve sık ve son ayrılmış ve kullanılmayan nesneler toplamak için kullanılır. Alt koleksiyonlar ayrılmış nesneleri sonra her birkaç MB gerçekleştirilir. Alt koleksiyonlar el ile yapılmalıdır çağırarak [GC. TOPLA (0)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
 
-Ana koleksiyonları pahalı ve daha az sıklıkta ve tüm ölü nesneleri geri kazanmak için kullanılır. Bellek için geçerli yığın boyutu (öbek yeniden boyutlandırma önce) bitti sonra ana koleksiyonları gerçekleştirilir. Ana koleksiyonlar el ile yapılmalıdır çağırarak [GC. TOPLA ()](https://developer.xamarin.com/api/member/System.GC.Collect/) veya çağırarak [GC. (İnt) toplamak](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32) bağımsız değişkeniyle [GC. MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/). 
+Ana koleksiyonları pahalı ve daha az sıklıkta ve tüm ölü nesneleri geri kazanmak için kullanılır. Bellek için geçerli yığın boyutu (öbek yeniden boyutlandırma önce) bitti sonra ana koleksiyonları gerçekleştirilir. Ana koleksiyonlar el ile yapılmalıdır çağırarak [GC. TOPLA ()](xref:System.GC.Collect) veya çağırarak [GC. (İnt) toplamak](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) bağımsız değişkeniyle [GC. MaxGeneration](xref:System.GC.MaxGeneration). 
 
 
 
@@ -34,7 +34,7 @@ Ana koleksiyonları pahalı ve daha az sıklıkta ve tüm ölü nesneleri geri k
 
 Nesne türleri üç kategoriye ayrılır.
 
--   **Yönetilen nesneler**: yapmak türlerini *değil* devralınmalıdır [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) , örneğin [System.String](https://developer.xamarin.com/api/type/System.String/). 
+-   **Yönetilen nesneler**: yapmak türlerini *değil* devralınmalıdır [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) , örneğin [System.String](xref:System.String). 
     Bu, normal olarak GC tarafından toplanır. 
 
 -   **Java nesnelerini**: Android çalışma zamanı VM içinde var ancak Mono VM'ye gösterilmeyen Java türü. Bunlar sıkıcı ve daha ayrıntılı ele olmaz. Bu, normal olarak Android çalışma zamanı VM tarafından toplanır. 
@@ -71,7 +71,7 @@ Tüm budur tarafından başvuruluyor sürece eş nesnesinin örneği Canlı niha
 
 Eş nesneleri ve Android çalışma zamanı ve Mono VM'in içinde mantıksal olarak mevcuttur. Örneğin, bir [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) yönetilen eş örneği, karşılık gelen olacaktır [android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) framework eş Java örneği. Öğesinden devralan tüm nesneler [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) Beyanları her iki VM içinde olması bekleniyor. 
 
-Her iki VM gösterimi olan tüm nesneler yalnızca tek bir VM içinde mevcut olan nesneler karşılaştırılan genişletilmiş yaşam süresi vardır (aşağıdaki gibi bir [ `System.Collections.Generic.List<int>` ](https://developer.xamarin.com/api/type/System.Collections.Generic.List%601/)). Çağırma [GC. Toplama](https://developer.xamarin.com/api/member/System.GC.Collect/) toplama önce ya da VM tarafından nesne başvurulan olduğunu değil emin olmak Xamarin.Android GC gereksinimleriniz değiştikçe bu nesneler mutlaka toplamaz. 
+Her iki VM gösterimi olan tüm nesneler yalnızca tek bir VM içinde mevcut olan nesneler karşılaştırılan genişletilmiş yaşam süresi vardır (aşağıdaki gibi bir [ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601)). Çağırma [GC. Toplama](xref:System.GC.Collect) toplama önce ya da VM tarafından nesne başvurulan olduğunu değil emin olmak Xamarin.Android GC gereksinimleriniz değiştikçe bu nesneler mutlaka toplamaz. 
 
 Nesne ömrü kısaltmak için [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) çağrılmalıdır. Bu el ile "böylece daha hızlı toplanacak nesneleri sağlar genel başvuru boşaltma tarafından iki VM'ler arasında nesne bağlantısında sever". 
 
@@ -140,7 +140,7 @@ GC tamamlanmamış bir görünüme sahiptir çalışmıyor olabilir ve işlem GC
 Örneğin, bir örneğini bir [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) türü veya türetilmiş bir tür ise en az 20 bayt boyutunda (dikkat edin, vb. olmadan değiştirilebilir vs.). 
 [Aranabilir sarmalayıcılar yönetilen](~/android/internals/architecture.md) ek örnek üyeler, bu nedenle eklemeyin olduğunda bir [Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) için bellek, 10 MB blob başvuran örnek Xamarin.Android'ın GC, bilmeniz olmaz &ndash; GC 20 baytlık nesne görür ve 10 MB bellek canlı tutma Android çalışma zamanı ayrılan nesnelere bağlı olduğunu belirlemek mümkün olmayacaktır. 
 
-GC yardımcı olmak sık gereklidir. Ne yazık ki, *GC. AddMemoryPressure()* ve *GC. RemoveMemoryPressure()* desteklenmez, dolayısıyla, *bilmeniz* ihtiyacınız olabilecek el ile çağırmak için bir Java ayrılmış büyük nesne grafiği yalnızca serbest [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) istemi Java tarafı serbest bırakmak için bir GC bellek veya açıkça elden *Java.Lang.Object* alt sınıfların, yönetilen aranabilir sarmalayıcısı Java örneği arasında eşleme kesiliyor. Örneğin, [hata 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
+GC yardımcı olmak sık gereklidir. Ne yazık ki, *GC. AddMemoryPressure()* ve *GC. RemoveMemoryPressure()* desteklenmez, dolayısıyla, *bilmeniz* ihtiyacınız olabilecek el ile çağırmak için bir Java ayrılmış büyük nesne grafiği yalnızca serbest [GC. Collect()](xref:System.GC.Collect) istemi Java tarafı serbest bırakmak için bir GC bellek veya açıkça elden *Java.Lang.Object* alt sınıfların, yönetilen aranabilir sarmalayıcısı Java örneği arasında eşleme kesiliyor. Örneğin, [hata 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
 
 
 > [!NOTE]
@@ -314,7 +314,7 @@ class BetterActivity : Activity {
 
 ## <a name="minor-collections"></a>Alt koleksiyonlar
 
-Alt koleksiyonlar el ile yapılmalıdır çağırarak [GC. Collect(0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32). Alt koleksiyonlar (ana koleksiyonlarına kıyasla) ucuz, ancak önemli bir maliyet, çok sık tetiklemek istemediğiniz için sabit olması ve birkaç milisaniye bir duraklatma süresi olması gerekir. 
+Alt koleksiyonlar el ile yapılmalıdır çağırarak [GC. Collect(0)](xref:System.GC.Collect). Alt koleksiyonlar (ana koleksiyonlarına kıyasla) ucuz, ancak önemli bir maliyet, çok sık tetiklemek istemediğiniz için sabit olması ve birkaç milisaniye bir duraklatma süresi olması gerekir. 
 
 "Aynı şeyi tekrar tekrar yapılır çevrimi" uygulamanız varsa, iş hacmi sona erdikten sonra el ile SPN'i küçük bir koleksiyon önerilir olabilir. Örnek vergi döngüleri şunları içerir: 
 
@@ -326,7 +326,7 @@ Alt koleksiyonlar el ile yapılmalıdır çağırarak [GC. Collect(0)](https://d
 
 ## <a name="major-collections"></a>Ana koleksiyonları
 
-Ana koleksiyonlar el ile yapılmalıdır çağırarak [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) veya `GC.Collect(GC.MaxGeneration)`. 
+Ana koleksiyonlar el ile yapılmalıdır çağırarak [GC. Collect()](xref:System.GC.Collect) veya `GC.Collect(GC.MaxGeneration)`. 
 
 Bunlar nadiren gerçekleştirilmelidir ve ikinci bir duraklatma süresi, 512 MB öbek toplarken bir stil Android cihazına sahip olabilir. 
 

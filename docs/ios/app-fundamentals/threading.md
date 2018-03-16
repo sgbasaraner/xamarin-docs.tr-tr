@@ -6,21 +6,20 @@ ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 8be599f5b6541ef738ffa47a01374fd7f90044a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 693ada611dc24d3bb22de7c51efe378939a732ad
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="threading"></a>İş Parçacığı Oluşturma
 
-Xamarin.iOS çalışma zamanı .NET geliştiricilerinin API'leri iş parçacığı oluşturma erişmenizi sağlayan, açık hem de iş parçacıklarının kullanın ( `System.Threading.Thread, System.Threading.ThreadPool`), tam aralığı, görev destekler API'lerini yanı sıra zaman uyumsuz temsilci desenleri veya BeginXXX yöntemleri dolaylı olarak kullanırken Paralel kitaplığı.
+Xamarin.iOS çalışma zamanı geliştiriciler için .NET API'leri, açıkça iş parçacıkları kullanırken hem de iş parçacığı oluşturma erişmenizi (`System.Threading.Thread, System.Threading.ThreadPool`) ve tam aralığı, destekler API'lerini yanı sıra zaman uyumsuz temsilci desenleri veya BeginXXX yöntemleri dolaylı olarak kullanırken Görev paralel kitaplığı.
 
 
 
-Xamarin kesinlikle önerir, kullandığınız [görev paralel kitaplığı](http://msdn.microsoft.com/en-us/library/dd460717.aspx)
-
- (TPL) birkaç nedeni uygulamaları oluşturmak için:-varsayılan TPL Zamanlayıcı görev yürütme işlemi, burada çok fazla iş parçacığı sona bir senaryo kaçınarak gerçekleştirilir gibi gerekli iş parçacığı sayısını sırayla dinamik olarak büyüyecektir iş parçacığı havuzu için temsilci seçme CPU süresi için rekabet ayarlama. 
+Xamarin kesinlikle önerir, kullandığınız [görev paralel Kitaplığı](http://msdn.microsoft.com/en-us/library/dd460717.aspx) (TPL) birkaç nedeni uygulamaları oluşturmak için:
+-  Varsayılan TPL Zamanlayıcı görev yürütme işlemi, burada çok fazla iş parçacığı için CPU süresi rekabet yukarı bitiş bir senaryo kaçınarak gerçekleştirilir gibi gerekli iş parçacığı sayısını sırayla dinamik olarak büyüyecektir iş parçacığı havuzuna temsil edecek. 
 -  TPL görevleri açısından işlemleri hakkındaki görüşlerinizi daha kolaydır. Kolayca üzerlerinde değişiklik, onları zamanlamak, kendi yürütme serileştirmek veya birçok zengin bir dizi API ile paralel başlatın. 
 -  Yeni C# zaman uyumsuz dil uzantıları ile programlama temelidir. 
 
@@ -41,7 +40,6 @@ MyThreadedRoutine ()
 {  
     var result = DoComputation ();  
 
-    //
     // we want to update an object that is managed by the main
     // thread; To do so, we need to ensure that we only access
     // this from the main thread:
@@ -77,4 +75,4 @@ Not: Bu yana Xamarin.iOS 5.2, kendi sağlamak zorunda değilsiniz `NSAutoRelease
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Kullanıcı Arabirimi iş parçacığı ile çalışma](~/ios/user-interface/ios-ui/ui-thread.md)
+- [Kullanıcı Arabirimi İş Parçacığı ile Çalışma](~/ios/user-interface/ios-ui/ui-thread.md)

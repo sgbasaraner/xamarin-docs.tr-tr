@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Kodda iOS kullanıcı arabirimleri oluşturma
 
@@ -69,7 +69,7 @@ Boş proje şablonu 4 dosyaları projeye ekler:
 ## <a name="ios-templates"></a>iOS şablonları
 
 
-Mac için Visual Studio, boş bir şablon sağlamaz. Bir kullanıcı Arabirimi oluşturmak için birincil şekilde Apple önerir film şeridi desteğiyle tüm şablonları gelir. Ancak, bu, kullanıcı Arabiriminde tamamen kodda oluşturmak için mümkündür. 
+Mac için Visual Studio, boş bir şablon sağlamaz. Bir kullanıcı Arabirimi oluşturmak için birincil şekilde Apple önerir film şeridi desteğiyle tüm şablonları gelir. Ancak, kullanıcı Arabirimi tamamen kodda oluşturmak mümkündür. 
 
 Aşağıdaki adımları uygulamadan film şeridi kaldırma aracılığıyla Kılavuzu: 
 
@@ -316,7 +316,7 @@ Yukarıdaki örnekte, biz görünüm denetleyiciye bir düğme ekleyerek kod iç
 
 iOS kullanıcı arabirimleri görünüm hiyerarşisini oluşur. Etiketler, düğmeleri, kaydırıcılar, vb. gibi ek görünümler bazı üst görünüm subviews eklenir.
 
-Örneğin, için düzenleyelim `CustomViewController` burada kullanıcının girebileceği bir kullanıcı adı ve parola oturum açma ekranı oluşturma. Ekran bir düğmeyi ve iki metin alanları içerir.
+Örneğin, düzenleyelim `CustomViewController` burada kullanıcının girebileceği bir kullanıcı adı ve parola oturum açma ekranı oluşturma. Ekran bir düğmeyi ve iki metin alanları içerir.
 
 ### <a name="adding-the-text-fields"></a>Metin alanları ekleme
 
@@ -433,7 +433,7 @@ View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 
 ## <a name="adding-button-functionality"></a>Düğme işlevsellik ekleme
 
-Düğme tıklatıldığında, kullanıcılarınızın olmasını bir şey beklediği olup olmadığını bu uyarı veya başka bir ekrana gezinme. 
+Düğme tıklatıldığında, kullanıcılarınızın şey olmasını bekler. Örneğin, bir uyarı gösterilir veya başka bir ekrana Gezinti gerçekleştirilir. 
 
 İkinci bir görünüm denetleyicisini Gezinti yığına itilecek biraz kod ekleyelim.
 
@@ -497,7 +497,7 @@ Uıkit parçası olan denetimleri kullanarak ek olarak, özel görünümler de k
 
 ### <a name="inheriting-from-uiview"></a>UIView devralma
 
-Yapmamız gereken ilk şey özel görünüm için bir sınıf oluşturun. Biz kullanarak gerçekleştirirsiniz **sınıfı** adlı boş bir sınıf eklemek için Visual Studio şablon `CircleView`. Taban sınıfı ayarlanmalıdır `UIView`, hangi geri çağırma olduğu `UIKit` ad alanı. Biz de gerekir `System.Drawing` de ad alanı. Diğer çeşitli `System.*` ad alanları olmayacaktır Bu örnekte kullanılan, böylece bunları kaldırmak çekinmeyin.
+Yapmamız gereken ilk şey özel görünüm için bir sınıf oluşturun. Biz kullanarak gerçekleştirirsiniz **sınıfı** adlı boş bir sınıf eklemek için Visual Studio şablon `CircleView`. Taban sınıfı ayarlanmalıdır `UIView`, biz geri çağırma içinde olduğu `UIKit` ad alanı. Biz de gerekir `System.Drawing` de ad alanı. Diğer çeşitli `System.*` ad alanları olmayacaktır Bu örnekte kullanılan, böylece bunları kaldırmak çekinmeyin.
 
 Sınıfı aşağıdaki gibi görünmelidir:
 

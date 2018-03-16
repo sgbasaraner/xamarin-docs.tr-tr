@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: c5bafe12c2cf8c5f8d75757b22223c708ae248dc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef4de2d544f3bcfb661b29dd90de738ae0442373
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms görünümleri
 
@@ -107,7 +107,7 @@ Etiketler, düğmeler ve yaygın olarak da bilinir kaydırıcılar gibi kullanı
 
 |     |     |
 | --- | --- |
-| [`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) bir tarih ile platform tarih seçici seçmesini sağlar. İle izin verilen tarih aralığını ayarlamak [ `MinimumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) ve [ `MaximumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) özellikleri. [ `Date` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) Seçilen tarihten bir özelliktir ve [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) bu özelliği değiştiğinde olay tetiklenir.<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) | [![DatePicker örnek](views-images/DatePicker.png "DatePicker örnek")](views-images/DatePicker-Large.png#lightbox "DatePicker örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/DatePickerDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/DatePickerDemoPage.xaml) |
+| [`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) bir tarih ile platform tarih seçici seçmesini sağlar. İle izin verilen tarih aralığını ayarlamak [ `MinimumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) ve [ `MaximumDate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) özellikleri. [ `Date` ](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) Seçilen tarihten bir özelliktir ve [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) bu özelliği değiştiğinde olay tetiklenir.<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) / [Kılavuzu](~/xamarin-forms/user-interface/datepicker.md) / [örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker) | [![DatePicker örnek](views-images/DatePicker.png "DatePicker örnek")](views-images/DatePicker-Large.png#lightbox "DatePicker örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/DatePickerDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/DatePickerDemoPage.xaml) |
 |     |     |
 
 ### <a name="timepicker"></a>TimePicker

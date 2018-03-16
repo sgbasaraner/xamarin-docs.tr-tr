@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 30cfb1c8bbd65ec8ef69d2d9bc22906a8726ae62
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 1f3f9316aec4ebfa0bb0868dd341abbfaa613cbc
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="build-process"></a>Derleme işlemi
 
@@ -23,40 +23,37 @@ Xamarin.Android derleme işlemi her şeyi birlikte yapıştırma için sorumludu
 
 ## <a name="application-packages"></a>Uygulama paketleri
 
-Geniş bağlamında, Android uygulama paketleri iki tür vardır (`.apk` dosyaları), Xamarin.Android yapı sistem oluşturabilirsiniz:
+Geniş bağlamında, Android uygulama paketleri iki tür vardır (`.apk` dosyaları), Xamarin.Android yapı sistem oluşturabilirsiniz: 
 
--   **Yayın** tam olarak kendi içinde bulunan ve yürütmek için ek paketlerini gerektirmeyen derlemeleri. Sağlanan paketler bunlar bir uygulama mağazasının.
+-   **Yayın** tam olarak kendi içinde bulunan ve yürütmek için ek paketlerini gerektirmeyen derlemeleri. Sağlanan paketler bunlar bir uygulama mağazasının. 
 
--   **Hata ayıklama** olmayan derlemeleri.
+-   **Hata ayıklama** olmayan derlemeleri. 
 
 Değil tesadüfen bu MSBuild eşleşen `Configuration` paket oluşturur.
-
 
 ### <a name="shared-runtime"></a>Paylaşılan çalışma zamanı
 
 *Çalışma zamanı paylaşılan* temel sınıf kitaplığı sağlayan ek Android paketler çiftidir (`mscorlib.dll`, vs.) ve Android bağlama kitaplığı (`Mono.Android.dll`vb..). Hata ayıklama temel sınıf kitaplığı ve Android uygulama paketi içindeki küçük olması hata ayıklama paket izin vererek bağlama derlemelerde dahil olmak üzere yerine paylaşılan çalışma zamanı derlemeleri kullanır.
 
-Paylaşılan çalışma zamanı devre dışı bırakılması ayarlayarak hata ayıklama derlemelerinde `$(AndroidUseSharedRuntime)` özelliğine `False`.
+Paylaşılan çalışma zamanı devre dışı bırakılması ayarlayarak hata ayıklama derlemelerinde `$(AndroidUseSharedRuntime)` özelliğine `False`. 
 
 <a name="Fast_Deployment" />
 
 ### <a name="fast-deployment"></a>Hızlı Dağıtım
 
-*Hızlı Dağıtım* daha fazla Android uygulama paketi boyutunu küçültmek için paylaşılan çalışma zamanı ile birlikte çalışır. Bu paketin içinde uygulamanın derlemeleri paketleme değil tarafından gerçekleştirilir. Hedefe bunun yerine, kopyaladığınız `adb push`. Olduğundan bu işlem yapı/dağıtmak/hata ayıklama döngüsü hızlandırır varsa *yalnızca* derlemeler değiştirilirse, paket değil yeniden yüklenir. Bunun yerine, yalnızca güncelleştirilmiş derlemeler ile hedef aygıta yeniden eşitlenmiş.
+*Hızlı Dağıtım* daha fazla Android uygulama paketi boyutunu küçültmek için paylaşılan çalışma zamanı ile birlikte çalışır. Bu paketin içinde uygulamanın derlemeleri paketleme değil tarafından gerçekleştirilir. Hedefe bunun yerine, kopyaladığınız `adb push`. Olduğundan bu işlem yapı/dağıtmak/hata ayıklama döngüsü hızlandırır varsa *yalnızca* derlemeler değiştirilirse, paket değil yeniden yüklenir. Bunun yerine, yalnızca güncelleştirilmiş derlemeler ile hedef aygıta yeniden eşitlenmiş. 
 
-Hızlı Dağıtım engelleme cihazlarda vermesine bilinir `adb` dizinine eşitlenmesini `/data/data/@PACKAGE_NAME@/files/.__override__`.
+Hızlı Dağıtım engelleme cihazlarda vermesine bilinir `adb` dizinine eşitlenmesini `/data/data/@PACKAGE_NAME@/files/.__override__`. 
 
 Hızlı Dağıtım varsayılan olarak etkindir ve devre dışı hata ayıklama derlemeleri ayarlayarak `$(EmbedAssembliesIntoApk)` özelliğine `True`.
-
 
 
 ## <a name="msbuild-projects"></a>MSBuild projelerine
 
 Xamarin.Android oluşturma işlemi aynı zamanda Mac ve Visual Studio için Visual Studio tarafından kullanılan proje dosyası biçimi olan MSBuild temel alır.
-Normalde, kullanıcıların MSBuild dosyaları elle düzenleyin gerekmez &ndash; IDE tam olarak işlevsel projeleri oluşturur ve yapılan değişiklikler ile güncelleştirir ve gerektiğinde otomatik olarak yapı hedefleri çağırma.
+Normalde, kullanıcıların MSBuild dosyaları elle düzenleyin gerekmez &ndash; IDE tam olarak işlevsel projeleri oluşturur ve yapılan değişiklikler ile güncelleştirir ve gerektiğinde otomatik olarak yapı hedefleri çağırma. 
 
-İleri düzey kullanıcılar proje dosyasını doğrudan düzenleyerek yapı işlemi özelleştirilebilir olacak şekilde IDE'nin GUI tarafından desteklenmeyen şeyler isteyebilirsiniz.
-Bu sayfa yalnızca Xamarin.Android özgü özellikler ve özelleştirmeleri belgeleri &ndash; pek çok şey daha normal MSBuild öğeler, özellikleri ve hedefleri ile mümkündür.
+İleri düzey kullanıcılar proje dosyasını doğrudan düzenleyerek yapı işlemi özelleştirilebilir olacak şekilde IDE'nin GUI tarafından desteklenmeyen şeyler isteyebilirsiniz. Bu sayfa yalnızca Xamarin.Android özgü özellikler ve özelleştirmeleri belgeleri &ndash; pek çok şey daha normal MSBuild öğeler, özellikleri ve hedefleri ile mümkündür. 
 
 <a name="Build_Targets" />
 
@@ -79,13 +76,13 @@ Aşağıdaki yapı hedefleri Xamarin.Android projeleri için tanımlanmıştır:
 
 ## <a name="build-properties"></a>Yapı Özellikleri
 
-MSBuild özellikleri hedefleri davranışını denetler. Proje dosyası içinde örneğin belirtilir **MyApp.csproj**, içinde bir [MSBuild PropertyGroup öğesi](http://msdn.microsoft.com/en-us/library/t4w159bs.aspx).
+MSBuild özellikleri hedefleri davranışını denetler. Proje dosyası içinde örneğin belirtilir **MyApp.csproj**, içinde bir [MSBuild PropertyGroup öğesi](http://msdn.microsoft.com/en-us/library/t4w159bs.aspx). 
 
 -   **Yapılandırma** &ndash; , "Hata ayıklama" veya "Yayın" gibi kullanmak üzere derleme yapılandırma belirtir. Yapılandırma özelliği, hedef davranışını belirleyen diğer özellikler için varsayılan değerleri belirlemek için kullanılır. Ek yapılandırmalar, IDE içinde oluşturulabilir.
 
     *Varsayılan olarak*, `Debug` yapılandırma neden olur `Install` ve `SignAndroidPackage` diğer dosyaları varlığını gerektiren daha küçük bir Android paketini ve çalışmak için paketler oluşturma hedefler.
 
-    Varsayılan `Release` yapılandırma neden olur, `Install` ve `SignAndroidPackage` bir Android olan paket oluşturma hedefleri *tek başına*ve herhangi bir paket veya dosyaları yüklemeden kullanılabilir.
+    Varsayılan `Release` yapılandırma neden olur `Install` ve `SignAndroidPackage` olan bir Android paketini oluşturma hedefleri *tek başına*ve herhangi bir paket veya dosyaları yüklemeden kullanılabilir.
 
 -   **DebugSymbols** &ndash; Android paketini olup olmadığını belirleyen bir boolean değeri *debuggable*, birlikte `$(DebugType)` özelliği. Hata ayıklama simgeleri, ayarlar debuggable pakette `//application/@android:debuggable` özniteliğini `true`ve otomatik olarak ekler `INTERNET` izni böylece işleme bir hata ayıklayıcısı ekleyebilirsiniz. Bir uygulama debuggable varsa `DebugSymbols` olan `True` *ve* `DebugType` ya da boş bir dize veya `Full`.
 
@@ -117,6 +114,12 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 [İmzalama özellikleri](#Signing_Properties) de ne zaman uygun olan packaing yayın uygulamaları.
 
 
+-   **AndroidApkSigningAlgorithm** &ndash; ile kullanmak için imzalama algoritmasını belirten bir dize değeri `jarsigner -sigalg`.
+
+    Varsayılan değer `md5withRSA` şeklindedir.
+
+    Xamarin.Android 8.2 eklendi.
+
 -   **AndroidApplication** &ndash; projeyi Android uygulamaya ait olup olmadığını belirten bir Boole değeri (`True`) veya bir Android kitaplığı projesi için (`False` ya da mevcut değil).
 
     Yalnızca bir projeyle `<AndroidApplication>True</AndroidApplication>` Android bir paket içinde bulunabilir. (Ne yazık ki bu henüz, hangi Android kaynakları ile ilgili hafif ve garip hataları sonuçlanabilir doğrulanmaz.)
@@ -139,6 +142,27 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     Bu özellik `False` varsayılan olarak.
 
+-   **AndroidErrorOnCustomJavaObject** &ndash; türleri uygulayabilir olup olmadığını belirleyen bir boolean özelliği `Android.Runtime.IJavaObject` 
+     *olmadan* de içinden devralma `Java.Lang.Object` veya `Java.Lang.Throwable`:
+
+    ```csharp
+    class BadType : IJavaObject {
+        public IntPtr Handle {
+            get {return IntPtr.Zero;}
+        }
+
+        public void Dispose()
+        {
+        }
+    }
+    ```
+
+    Doğru olduğunda gibi türler XA4212 hataya neden olur, aksi takdirde XA4212 uyarı oluşturulur.
+
+    Bu özellik için destek Xamarin.Android 8.1 eklendi.
+
+    Bu özellik `True` varsayılan olarak.
+
 -   **AndroidFastDeploymentType** &ndash; A `:` (iki nokta üst üste)-ayrılmış ne türlerini denetlemek için değerlerin listesi için dağıtılabilir [hızlı dağıtım dizinine](#Fast_Deployment) hedef aygıttaki zaman `$(EmbedAssembliesIntoApk)` MSBuild özelliği `False`. Bir kaynak dağıtılan hızlı bu ise, *değil* oluşturulan katıştırılmış `.apk`, hangi dağıtım işlemlerini hızlandırmak. (Hızlı, ardından daha az sıklıkta dağıtılan daha `.apk` yeniden oluşturulması için gereksinimleri ve yükleme işlemi daha hızlı.) Geçerli değerler şunlardır:
 
     - `Assemblies`: Uygulama derlemeleri dağıtın.
@@ -155,23 +179,37 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     Xamarin.Android 6.1 eklendi.
 
--   **AndroidHttpClientHandlerType** &ndash; değerini ayarlama izin [ `XA_HTTP_CLIENT_HANDLER_TYPE` ortam değişkeni](~/android/deploy-test/environment.md).
-    Bu değer bir açıkça belirtilen geçersiz kılmaz `XA_HTTP_CLIENT_HANDLER_TYPE` değeri. Bir `XA_HTTP_CLIENT_HANDLER_TYPE` ortam değişkeni değeri belirtilen bir [ `@(AndroidEnvironment)` ](#AndroidEnvironment) dosya öncelik alır.
+-   **AndroidHttpClientHandlerType** &ndash; varsayılan denetimleri `System.Net.Http.HttpMessageHandler` tarafından kullanılacak olan uygulama `System.Net.Http.HttpClient` varsayılan oluşturucu. Bir bütünleştirilmiş kod tam tür adını değerdir bir `HttpMessageHandler` ile kullanım için uygun bir alt, [ `System.Type.GetType(string)` ](/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_).
+
+    Varsayılan değer `System.Net.Http.HttpClientHandler, System.Net.Http` şeklindedir.
+
+    Bu, bunun yerine içerecek şekilde kılınabilir `Xamarin.Android.Net.AndroidClientHandler`, ağ isteklerini gerçekleştirmek için Android Java API kullanır. Bu, temel alınan Android sürümü TLS 1.2 desteklediğinde, TLS 1.2 URL'lerine erişme sağlar.  
+    Yalnızca Android 5.0 ve sonrasındaki güvenilir bir şekilde Java aracılığıyla TLS 1.2 destek sağlar.
+
+    *Not*:, TLS 1.2 Destek Android sürüm 5.0 önce gerekli *veya* TLS 1.2 desteği ile gerekiyorsa `System.Net.WebClient` ve ardından ilgili API'ler, `$(AndroidTlsProvider)` kullanılmalıdır.
+
+    *Not*: Bu özellik ayarlayarak çalışır desteği [ `XA_HTTP_CLIENT_HANDLER_TYPE` ortam değişkeni](~/android/deploy-test/environment.md).
+    A `$XA_HTTP_CLIENT_HANDLER_TYPE` bir yapı eylemi sahip bir dosya içinde bulunan değer `@(AndroidEnvironment)` öncelikli olur.
 
     Xamarin.Android 6.1 eklendi.
 
--   **AndroidTlsProvider** &ndash; hangi TLS sağlayıcısı uygulamada kullanılması gerektiğini belirten bir dize değeri. Olası değerler şunlardır: Geçerli değerler şunlardır:
+-   **AndroidTlsProvider** &ndash; hangi TLS sağlayıcısı uygulamada kullanılması gerektiğini belirten bir dize değeri. Olası değerler şunlardır:
 
     - `btls`: Kullanın [Boring SSL](https://boringssl.googlesource.com/boringssl) ile TLS iletişim için [HttpWebRequest](https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx).
-      Bu, TLS 1.2 kullanımını sağlar.
+      Bu, tüm Android sürümlerinde TLS 1.2 kullanımını sağlar.
 
     - `legacy`: Geçmiş yönetilen SSL uygulaması ağ etkileşim için kullanın. Bu *yok* TLS 1.2 destekler.
 
-    - `default`, ya da unset / boş dize: Xamarin.Android 7.1'nde, bu eşdeğerdir `legacy`.
+    - `default`: İzin ver *Mono* varsayılan TLS sağlayıcısı seçmelisiniz.
+      Bu eşdeğer olan `legacy`Xamarin.Android 7.3 bile.  
+      *Not*: Bu değer görünür olması beklenmez `.csproj` değerleri, IDE "Default" değerini sonuçlarında *Temizleme* , `$(AndroidTlsProvider)` özelliği.
+
+    - Unset / boş dize: Xamarin.Android 7.1'nde, bu eşdeğerdir `legacy`.  
+      Xamarin.Android 7.3 içinde bu eşdeğer olan `btls`.
 
     Varsayılan değer boş bir dizedir.
 
-    **Deneysel**. Xamarin.Android 7.1 eklendi.
+    Xamarin.Android 7.1 eklendi.
 
 -   **AndroidLinkMode** &ndash; hangi tür belirtir [bağlama](~/android/deploy-test/linker.md) Android paket içinde bulunan derlemeler üzerinde gerçekleştirilmelidir. Yalnızca Android uygulaması projelerinde kullanılır. Varsayılan değer *SdkOnly*. Geçerli değerler şunlardır:
 
@@ -199,7 +237,7 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
     Derleme sırasında gerekli herhangi bir değeri gerçek üretmek için birleştirilecek `AndroidManifest.xml`.
     `$(AndroidManifest)` Paket adı içermelidir `/manifest/@package` özniteliği.
 
--   **AndroidSdkBuildToolsVersion** &ndash; Android SDK derleme araçlarını paket sağlar **aapt** ve **zipalign** Araçlar, diğerlerinin yanı sıra. Derleme araçları paketini birden çok farklı sürümlerini aynı anda yüklenebilir. Paketleme için seçilen derleme araçları paketini denetleniyor ve varsa, bir "tercih edilen" derleme araçları sürümüyle gerçekleştirilir; "tercih edilen" sürüm ise *değil* sunmak yüklü sürümü tutulan highested derleme Araçları Paketi kullanılır.
+-   **AndroidSdkBuildToolsVersion** &ndash; Android SDK derleme araçlarını paket sağlar **aapt** ve **zipalign** Araçlar, diğerlerinin yanı sıra. Derleme araçları paketini birden çok farklı sürümlerini aynı anda yüklenebilir. Paketleme için seçilen derleme araçları paketini denetleniyor ve varsa, bir "tercih edilen" derleme araçları sürümüyle gerçekleştirilir; "tercih edilen" sürüm ise *değil* sunmak yüksek sürümü tutulan yüklü derleme Araçları Paketi kullanılır.
 
     `$(AndroidSdkBuildToolsVersion)` MSBuild özelliği, tercih edilen derleme Araçları sürüm içerir. Varsayılan değer Xamarin.Android yapılandırma sistemi sağlar `Xamarin.Android.Common.targets`, ve (örneğin) en son aapt çıkışı bir önceki aapt sürüm kilitlenen varsa varsayılan değer bir alternatif derleme Araçları Sürüm seçmek için youur proje dosyası içinde geçersiz kılınabilir İş adı verilir.
 
@@ -272,6 +310,7 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     -   **Batı**: dahil Batı Kodlamalar gibi *Batı Avrupa (Mac)* \[macintosh, CP10000\], *İzlanda (Mac)* \[x-mac-İzlanda CP10079\], *Orta Avrupa (Windows)* \[ISO 8859-2, CP1250\], *Batı Avrupa (Windows)* \[ISO-8859-1 CP1252\], *Yunanca (Windows)* \[ISO-8859-7, CP1253\], *Orta Avrupa (ISO)* \[ISO 8859-2, CP28592\], *Latin 3 (ISO)* \[ISO-8859-3, CP28593\], *Yunanca (ISO)* \[ISO-8859-7, CP28597\], *Latin 9 (ISO)*  \[ISO-8859-15, CP28605\], *OEM Amerika Birleşik Devletleri* \[CP437\], *Batı Avrupa (DOS)* \[CP850\], *Portekizce (DOS)* \[CP860\], *İzlanda (DOS)* \[CP861\],  *Fransızca Kanada (DOS)* \[CP863\], ve *İskandinav (DOS)* \[CP865\].
 
+
     ```xml
     <MandroidI18n>West</MandroidI18n>
     ```
@@ -284,14 +323,14 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
 -   **AndroidVersionCodePattern** &ndash; özelleştirmek Geliştirici sağlayan bir dize özelliği `versionCode` bildiriminde.
     Bkz: [APK için sürüm kod oluşturma](~/android/deploy-test/building-apps/abi-specific-apks.md) karar verme hakkında bilgi için bir `versionCode`.
-
+    
     Bazı örnekler, `abi` olan `armeabi` ve `versionCode` bildirim `123`, `{abi}{versionCode}` versionCode, üretecektir `1123` zaman `$(AndroidCreatePackagePerAbi)` true, aksi takdirde 123 değeri oluşturur.
     Varsa `abi` olan `x86_64` ve `versionCode` bildirim `44`. Bu üretecektir `544` zaman `$(AndroidCreatePackagePerAbi)` true, aksi takdirde değerini oluşturur `44`.
 
     Biz biçim dizesi doldurma sol eklerseniz `{abi}{versionCode:0000}`, onu msgıd `50044` biz doldurma bırakılır çünkü `versionCode` ile `0`. Alternatif olarak, aşağıdaki gibi doldurma ondalık kullanabilirsiniz `{abi}{versionCode:D4}` hangi mu önceki örnek ile aynı.
 
     Yalnızca '0' ve 'biçimi dizeleri değerin itibaren desteklenir doldurma Dx' bir tamsayı olmalıdır.
-
+    
     Anahtar öğeleri önceden tanımlanmış
 
     -   **ABI** &ndash; uygulama targetted ABI ekler
@@ -303,9 +342,11 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     -   **minSDK** &ndash; eklemeleri desteklenen en düşük Sdk değerinden `AndroidManifest.xml` veya `11` hiçbiri tanımlanmışsa.
 
-    -   **versionCode** &ndash; gelen sürüm kodu direrctly kullanan `Properties\AndroidManifest.xml`.
+    -   **versionCode** &ndash; gelen sürüm kodu direrctly kullanan `Properties\AndroidManifest.xml`. 
 
-    Kullanarak özel öğeleri tanımlayabilirsiniz `AndroidVersionCodeProperties` özelliği (sonraki tanımlanmış).
+    Kullanarak özel öğeleri tanımlayabilirsiniz `$(AndroidVersionCodeProperties)` özelliği (sonraki tanımlanmış).
+
+    Varsayılan değer olarak ayarlanır `{abi}{versionCode:D6}`. Bir geliştirici eski davranışa tutmak isterse ayarlayarak varsayılan kılabilirsiniz `$(AndroidUseLegacyVersionCode)` özelliği `true`
 
     Xamarin.Android 7.2 eklendi.
 
@@ -313,6 +354,21 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     Xamarin.Android 7.2 eklendi.
 
+-   **AndroidUseLegacyVersionCode** &ndash; bir boolean özelliği, eski öncesi Xamarin.Android 8.2 davranışa dön versionCode hesaplama dönmek Geliştirici sağlar. Bu yalnızca Google Play Mağazası'nda mevcut uygulamalarla geliştiriciler için kullanılmalıdır. Yüksek oranda önerilir yeni `$(AndroidVersionCodePattern)` özelliği kullanılır.
+
+    Xamarin.Android 8.2 eklendi.
+
+-  **AndroidUseManagedDesignTimeResourceGenerator** &ndash; A boolean property which  will switch over the design time builds to use the managed resource parser rather  than `aapt`.
+
+    Xamarin.Android 8.1 eklendi.
+
+-  **AndroidUseApkSigner** &ndash; kullanmak Geliştirici sağlayan bir bool özelliği için `apksigner` aracı yerine `jarsigner`.
+
+    Xamarin.Android 8.2 eklendi.
+
+-  **AndroidApkSignerAdditionalArguments** &ndash; ek bağımsız değişkenler sağlamak Geliştirici sağlayan bir dize özelliği `apksigner` aracı.
+
+    Xamarin.Android 8.2 eklendi.
 
 ### <a name="binding-project-build-properties"></a>Bağlama proje derleme özellikleri
 
@@ -320,7 +376,7 @@ Aşağıdaki MSBuild özellikleri ile kullanılan [projeleri bağlama](~/android
 
 -   **AndroidClassParser** &ndash; denetleyen bir dize özelliği nasıl `.jar` dosyaları ayrıştırılır. Olası değerler şunlardır:
 
-    - **sınıf ayrıştırma**: kullanan `class-parse.exe` Java bayt bir JVM Yardım doğrudan ayrıştırılamadı. Bu Deneysel değerdir.
+    - **sınıf ayrıştırma**: kullanan `class-parse.exe` Java bayt bir JVM Yardım doğrudan ayrıştırılamadı. Bu Deneysel değerdir. 
 
 
     - **jar2xml**: kullanmak `jar2xml.jar` türleri ve üyeleri ayıklamak için Java yansıma kullanmak için bir `.jar` dosyası.
@@ -356,10 +412,9 @@ Aşağıdaki MSBuild özellikleri ile kullanılan [projeleri bağlama](~/android
     Varsayılan değer, bir sonraki sürümde değiştirir.
 
 
-
 ### <a name="resource-properties"></a>Kaynak özellikleri
 
-Kaynak özelliklerini kontrol nesil `Resource.designer.cs` Android kaynaklara erişim sağlayan dosya.
+Kaynak özelliklerini kontrol nesil `Resource.designer.cs` Android kaynaklara erişim sağlayan dosya. 
 
 -   **AndroidResgenExtraArgs** &ndash; geçirilecek ek komut satırı seçeneklerini belirtir. **aapt** Android varlıklar ve kaynakları işlerken komutu.
 
@@ -384,13 +439,13 @@ Varsayılan olarak, imzalama hedef gerekiyorsa, yeni bir hata ayıklama imzalama
 
 -   **AndroidKeyStore** &ndash; özel imzalama bilgilerini kullanılması gerekip gerekmediğini gösteren bir Boole değeri. Varsayılan değer `False`, varsayılan hata ayıklama imzalama anahtarı paketleri imzalamak için kullanılacak anlamına gelir.
 
--   **AndroidSigningKeyAlias** &ndash; diğer ad anahtarı için bir anahtar deposunda belirtir. Bu **keytool-diğer adı** anahtar deposu oluştururken kullanılan değer.
+-   **AndroidSigningKeyAlias** &ndash; diğer ad anahtarı için bir anahtar deposunda belirtir. Bu **keytool-diğer adı** anahtar deposu oluştururken kullanılan değer. 
 
 -   **AndroidSigningKeyPass** &ndash; anahtarı anahtar deposu dosyasının içinde parolasını belirtir. Bu değerdir ne zaman girilen `keytool` ister **$(AndroidSigningKeyAlias) için anahtar parola gir**.
 
 -   **AndroidSigningKeyStore** &ndash; tarafından oluşturulan anahtar deposu dosyasının dosya adını belirtir `keytool`. İçin sağlanan değer bu karşılık gelen **keytool - keystore** seçeneği.
 
--   **AndroidSigningStorePass** &ndash; için parolayı belirtir `$(AndroidSigningKeyStore)`. İçin sağlanan değer budur `keytool` anahtar deposu dosyasının oluştururken ve sorulan **bir anahtar parola gir:**.
+-   **AndroidSigningStorePass** &ndash; için parolayı belirtir `$(AndroidSigningKeyStore)`. İçin sağlanan değer budur `keytool` anahtar deposu dosyasının oluştururken ve sorulan **bir anahtar parola gir:**. 
 
 Örneğin, aşağıdakileri göz önünde bulundurun `keytool` çağırma:
 
@@ -421,11 +476,15 @@ Yukarıda oluşturulan anahtar deposu kullanmak için özellik grubu kullanın:
 </PropertyGroup>
 ```
 
+-   **AndroidDebugKeyAlgorithm** &ndash; için kullanılacak varsayılan algoritmasını belirtir `debug.keystore`. İçin varsayılan olarak `RSA`.
+
+-   **AndroidDebugKeyValidity** &ndash; için kullanılacak varsayılan geçerlilik belirtir `debug.keystore`. İçin varsayılan olarak `10950` veya `30 * 365` veya `30 years`.
+
 <a name="Build_Actions" />
 
 ## <a name="build-actions"></a>Eylemler derleme
 
-*Eylemler yapı* olan [dosyalara uygulanmasını](http://msdn.microsoft.com/en-us/library/bb629388.aspx) denetim dosyası nasıl işlenir ve proje içinde.
+*Eylemler yapı* olan [dosyalara uygulanmasını](http://msdn.microsoft.com/en-us/library/bb629388.aspx) denetim dosyası nasıl işlenir ve proje içinde. 
 
 <a name="AndroidEnvironment" />
 
@@ -492,10 +551,10 @@ Derleme Sistemi Android birden çok uygulama ikili arabirimi (ABIs) desteklediğ
 1.  Yol "algılaması".
 2.  Kullanarak `Abi` öğesi özniteliği.
 
-Yol algılaması ile yerel kitaplığı üst dizin adını ABI belirtmek için kullanılır, kitaplık hedefler. Bu nedenle, eklerseniz `lib/armeabi/libfoo.so` yapı, ardından ABI "olarak sniffed" `armeabi`.
+Yol algılaması ile yerel kitaplığı üst dizin adını ABI belirtmek için kullanılır, kitaplık hedefler. Bu nedenle, eklerseniz `lib/armeabi/libfoo.so` yapı, ardından ABI "olarak sniffed" `armeabi`. 
 
 
-### <a name="item-attribute-name"></a>Öğesi özniteliği adı
+#### <a name="item-attribute-name"></a>Öğesi özniteliği adı
 
 **ABI** &ndash; yerel kitaplığı ABI belirtir.
 
@@ -506,6 +565,13 @@ Yol algılaması ile yerel kitaplığı üst dizin adını ABI belirtmek için k
   </AndroidNativeLibrary>
 </ItemGroup>
 ```
+
+
+### <a name="androidaarlibrary"></a>AndroidAarLibrary
+
+Yapı eylemi `AndroidAarLibrary` doğrudan .aar dosyaları başvurmak için kullanılmalıdır. Bu yapı eylemi en yaygın olarak Xamarin bileşenleri tarafından kullanılır. Yani, Google Play ve çalışan diğer hizmetler almak için gereken .aar dosyalara başvurular eklemek için.
+
+Bu yapı eylemi benzer bir şekilde kabul edilecek dosyalarla katıştırılmış kaynakları Kitaplığı projelerinde çok bulundu. .aar Ara dizine ayıklanır. Ardından tüm varlıkları kaynak ve .jar dosyalarını uygun öğeyi gruplarında dahil edilir.  
 
 ### <a name="content"></a>İçerik
 
@@ -527,7 +593,6 @@ Xamarin.Android thw kullanılmaya çalışılıyor 5.1, başlangıç `@(Content)
 Bu dosyalar yoksayılır `$(EnableProguard)` MSBuild özelliği `True`.
 
 
-
 ## <a name="target-definitions"></a>Hedef tanımları
 
 Derleme işlemi Xamarin.Android özgü bölümlerini tanımlanan `$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets`, ancak normal dile özgü hedefleri gibi *Microsoft.CSharp.targets* derleme oluşturma için de gereklidir.
@@ -542,7 +607,7 @@ Tüm dil hedefleri almadan önce aşağıdaki yapı özelliklerini ayarlamanız 
 </PropertyGroup>
 ```
 
-Bunların tümü bu hedefler ve özellikler olabilir C# ' ta dahil içeri aktararak *Xamarin.Android.CSharp.targets*:
+Bunların tümü bu hedefler ve özellikler olabilir C# ' ta dahil içeri aktararak *Xamarin.Android.CSharp.targets*: 
 
 ```xml
 <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

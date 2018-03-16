@@ -7,12 +7,12 @@ ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 8595ecb63e49a4768120e98f41826b74c2dd43e4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 0a9a1f41810fe113ac3d88d2533411ac537840ab
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="fragments"></a>Parçalar
 
@@ -53,9 +53,9 @@ Aşağıdaki ekran görüntüsünde gösterildiği gibi parçalar Android API d�
 
 [![Android SDK Yöneticisi'nde API düzeyi seçme](images/02.png)](images/02.png#lightbox)
 
-Parçaları kullanılabilir Xamarin.Android 4.0 ve üzeri. Bir Xamarin.Android uygulaması en az hedeflemelidir API düzeyi 11 (Android 3.0) veya parçaları kullanmak için daha yüksek. Hedef Framework'ü, aşağıda gösterildiği gibi proje seçenekleri ayarlanabilir:
+Parçaları kullanılabilir Xamarin.Android 4.0 ve üzeri. Bir Xamarin.Android uygulaması en az hedeflemelidir API düzeyi 11 (Android 3.0) veya parçaları kullanmak için daha yüksek. Hedef Framework'ü, aşağıda gösterildiği gibi özellikleri projesinde ayarlanabilir:
 
-[![Proje seçenekleri hedef Framework API düzeyini ayarlama](images/03.png)](images/03.png#lightbox)
+[![Proje seçenekleri hedef Framework API düzeyini ayarlama](images/03-sml.png)](images/03.png#lightbox)
 
 Android destek paketi ve Xamarin.Android 4.2 kullanarak Android ya da daha yüksek eski sürümlerinde parçaları kullanmak da mümkündür. Bunun nasıl yapılacağı, bu bölümde belgelerde daha ayrıntılı ele alınmıştır.
 

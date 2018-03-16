@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: 9b801af77eceaf94b0ede98b6af51d55d6029fe6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ddc16dc1faaf623098aad5bca340c15f943223ba
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Canlı Player Kurulumu
 
@@ -68,7 +68,7 @@ Xamarin Canlı Player gerektirir:
 
   Hiçbir aygıt ise, bir QR kodu yönergeler görünür bir aygıtı eşleştirmeye eşleştirilmiş:
 
-    ![Çifti aygıt penceresi](install-images/manage-empty-windows.png)
+  ![Çifti aygıt penceresi](install-images/manage-empty-windows.png)
 
   Cihaz çifti için kurulamıyorsa hata görünebilir.
 
@@ -111,11 +111,11 @@ Xamarin Canlı Player gerektirir:
 
   Hiçbir aygıt eşleştirilmiş, bir QR kodu bir aygıtı eşleştirin konusunda yönergeler görünür:
 
-    ![Çifti aygıt penceresi](install-images/manage-empty.png)
+  ![Çifti aygıt penceresi](install-images/manage-empty.png)
 
   Cihaz çifti için kurulamıyorsa bir hata görünür:
 
-    ![Aygıt hata iletisine bağlanamıyor](install-images/error-cannot-connect.png)
+  ![Aygıt hata iletisine bağlanamıyor](install-images/error-cannot-connect.png)
 
 
 -----

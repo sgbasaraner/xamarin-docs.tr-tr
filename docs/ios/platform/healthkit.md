@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4f85f208c12561b6db9800d963e2d7bf32c2a4d0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e21794c9f1d8f010ec323774bc93987f4b89e1d
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -67,7 +67,7 @@ Bir iOS uygulaması sağlama hakkında daha fazla bilgi için [cihaz sağlamayı
 
 Açık bir oluşturulmasını **uygulama kimliği** ve uygun bir **sağlama profili** Apple içinde yapılır [iOS Geliştirme Merkezi](https://developer.apple.com/devcenter/ios/index.action). 
 
-Geçerli **uygulama kimlikleri** içinde listelenen [tanımlayıcıları & profilleri, sertifikaları](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) Dev Center bölümü. Genellikle, bu listede gösterilir **kimliği** değerlerini `*`, belirten, **uygulama kimliği*- **adı** sonekleri herhangi bir sayı ile kullanılabilir. Bu tür *joker uygulama kimlikleri* sistem durumu Kit ile kullanılamaz.
+Geçerli **uygulama kimlikleri** içinde listelenen [tanımlayıcıları & profilleri, sertifikaları](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) Dev Center bölümü. Genellikle, bu listede gösterilir **kimliği** değerlerini `*`, belirten, **uygulama kimliği** - **adı** sonekleri herhangi bir sayı ile kullanılabilir. Bu tür *joker uygulama kimlikleri* sistem durumu Kit ile kullanılamaz.
  
 Açık bir oluşturmak için **uygulama kimliği**, tıklatın  **+**  kullanmayı sağ üst düğmesini **iOS uygulama kimliği kaydetmek** sayfa:
 

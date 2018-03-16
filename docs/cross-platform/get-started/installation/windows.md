@@ -7,15 +7,15 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: bffc6bb1bc6537745fe9603906b5938fc3c34fe1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b15c9b05a4e476353322c6d29e94267313460bfe
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="installing-xamarin-in-visual-studio-on-windows"></a>Xamarin Windows Visual Studio yükleme
 
-Xamarin ile artık bulunduğundan hiçbir ek Visual Studio'ya'nin tüm sürümlerinde maliyet ve ayrı bir lisansı gerektirmez, Visual Studio yükleyicisi indirmek ve Xamarin Araçları'nı yüklemek için kullanabilirsiniz.
+Xamarin kullanmak ücretsiz ve Visual Studio'nin tüm sürümlerinde dahildir.
 
 <a name="requirements" />
 
@@ -25,7 +25,7 @@ Visual Studio Araçları için Xamarin yüklemek için gerekli şunlardır:
 
 1. Windows 7 veya daha yüksek.
 
-2. Visual Studio 2015 veya 2017 (Community, Professional veya Enterprise).
+2. Visual Studio 2017 (Community, Professional veya Enterprise).
 
 3. Visual Studio için Xamarin.
 
@@ -74,27 +74,6 @@ Visual Studio 2017 zaten yüklediyseniz, iş yüklerini değiştirmek için Visu
 
 Visual Studio 2017 yükleyip hakkında daha fazla bilgi için bkz: [yükleme Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio).
 
-
-<a name="vs2015" />
-
-### <a name="adding-xamarin-to-visual-studio-2015"></a>Visual Studio 2015 için Xamarin ekleme
-
-Visual Studio 2015 mevcut bir yüklemeye Xamarin.Android eklemek için aşağıdaki adımları kullanın:
-
-1. Sağ Windows **Başlat** düğmesine tıklayın ve ardından **programlar ve Özellikler**.
-
-2. Sağ **Microsoft Visual Studio** tıklatıp **değişiklik**.
-
-3. Visual Studio yükleyicisi iletişim kutusu göründüğünde tıklayın **Değiştir** düğmesi.
-
-4. İçinde **özellikleri** sekmesinde, aşağı kaydırarak **platformlar arası mobil geliştirme**. Yanındaki onay kutusuna tıklayın **C# / .NET (Xamarin)**:
-
-    ![C# ekleme / Visual Studio 2015 için .NET Xamarin](windows-images/06-add-xamarin.png)
-
-5. Tıklatın **güncelleştirme** Visual Studio için Xamarin eklemek için düğmeyi.
-
-
-<a name="verifying" />
 
 ### <a name="verifying-installation"></a>Yüklemeyi doğrulama
 

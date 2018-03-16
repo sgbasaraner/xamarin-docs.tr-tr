@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0456742ca30257670375e3ae781dcdc49707e2ce
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="the-command-interface"></a>Komut arabirimi
 
@@ -22,7 +22,7 @@ Komut verme arabirimi çok MVVM mimarisi için daha uygun olan komutları uygula
 
 Veri bağlama arasında izin vermek için bir `Button` ve ViewModel, `Button` iki özelliklerini tanımlar:
 
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) türü [`ICommand`](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/)
+- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) türü <xref:System.Windows.Input.ICommand>
 - [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.CommandParameter/) türü `Object`
 
 Komut arabirimi kullanmak için hedefleyen bir veri bağlama tanımlamanız `Command` özelliği `Button` kaynak türü ViewModel özelliğinde olduğu `ICommand`. İle ilişkili kod ViewModel içeren `ICommand` düğmesine tıklandığında çalıştırılan özelliği. Ayarlayabileceğiniz `CommandParameter` tüm olmaları durumunda birden çok düğmeleri arasında ayrım yapmak için rasgele veriye bağlı aynı `ICommand` ViewModel özelliği.
@@ -39,7 +39,7 @@ Bu komutlar, içinde bir ViewModel görünümünde belirli kullanıcı arabirimi
 
 ## <a name="the-icommand-interface"></a>The ICommand Interface
 
-[ `ICommand` ](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/) Arabirimi Xamarin.Forms parçası değil. Bunun yerine içinde tanımlandı [ `System.Windows.Input` ](https://developer.xamarin.com/api/namespace/System.Windows.Input/) ad alanı ve iki yöntem ve bir olay oluşur:
+<xref:System.Windows.Input.ICommand> Arabirimi Xamarin.Forms parçası değil. Bunun yerine içinde tanımlandı [System.Windows.Input](xref:System.Windows.Input) ad alanı ve iki yöntem ve bir olay oluşur:
 
 ```csharp
 public interface ICommand

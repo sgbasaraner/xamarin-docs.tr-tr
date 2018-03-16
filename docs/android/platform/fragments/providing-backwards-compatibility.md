@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: 670ec465843bbe819b41a53fff71b01ab78b0059
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f09aae1445cfcf9f4225af3de37b65ebb5a1b6b2
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Geriye dönük uyumluluk Android destek paketi ile sağlama
 
@@ -25,13 +25,13 @@ Parçaları yararlılığı olacaktır olmadan geriye dönük uyumluluk önceden
 
 Android destek paketi bir Xamarin.Android uygulaması için otomatik olarak eklenmez. Xamarin sağlar [Android destek kitaplığı v4 NuGet paketi](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) bir Xamarin.Android uygulamasına destek kitaplıkları ekleme basitleştirmek için. Destek paketleri uygulamayı dahil, bir Xamarin.Android dahil etmek için [Android destek kitaplığı v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) Xamarin.Android projenize bileşen aşağıdaki ekran görüntüsünde gösterildiği gibi: 
 
-[![Android destek kitaplığı ekran v4 paketini projeye eklenen](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png#lightbox)
+[![Android destek kitaplığı ekran v4 paketini projeye eklenen](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
 Bu adımları gerçekleştirdikten sonra parça Android önceki sürümlerinde kullanmak mümkün olur. Parça API'ları aşağıdaki istisnalar dışında bu önceki sürümlerinde, aynı anda çalışır: 
 
 -   **Minimum Android Version değiştirmeniz** &ndash; uygulamanın artık Android 3.0 veya üzerini, aşağıda gösterildiği gibi hedef gerekir: 
 
-    [![Uygulama özellikleri altında ayarlanmasına Minimum Android ekran görüntüsü, hedef](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png#lightbox)
+    [![Minimum Android ekran görüntüsü, hedef Android bildirim altında ayarlanıyor](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
 -   **FragmentActivity genişletme** &ndash; parçaları barındırma etkinlikleri öğesinden şimdi devralmalıdır `Android.Support.V4.App.FragmentActivity` , değil nesneden `Android.App.Activity` . 
 

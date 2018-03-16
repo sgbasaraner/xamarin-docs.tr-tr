@@ -8,20 +8,20 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c4b2a103821bb18da4878cd37335faa899e910be
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="working-with-user-defaults"></a>Kullanıcı varsayılanları ile çalışma
 
-_Bu makalede, bir Xamarin iOS uygulama veya uzantı varsayılan ayarları kaydetmek için NSUserDefault çalışmak yer almaktadır._
+_Bu makalede, bir Xamarin.iOS uygulaması veya uzantısı varsayılan ayarları kaydetmek için NSUserDefault çalışmak yer almaktadır._
 
 
-`NSUserDefaults` Sınıfı iOS uygulamaları ve uzantıları programlı olarak sistem genelinde varsayılan sistemi ile etkileşimde bulunmak için bir yol sağlar. Varsayılan olarak sistem kullanarak, kullanıcı bir uygulamanın davranışı veya (uygulama tasarımını göre) tercihlerini karşılamak için stil oluşturma yapılandırabilirsiniz. Örneğin, ölçüm vs verilerde İngiliz ölçümleri sunan veya belirli bir kullanıcı Arabirimi tema seçin.
+`NSUserDefaults` Sınıfı iOS uygulamaları ve uzantıları varsayılan olarak sistem genelinde sistemiyle program aracılığıyla etkileşim kurmak için bir yol sağlar. Varsayılan olarak sistem kullanarak, kullanıcı bir uygulamanın davranışı veya (uygulama tasarımını göre) tercihlerini karşılamak için stil oluşturma yapılandırabilirsiniz. Örneğin, ölçüm vs verilerde İngiliz ölçümleri sunan veya belirli bir kullanıcı Arabirimi tema seçin.
 
-Uygulama grupları, kullanılan `NSUserDefaults` Ayrıca belirli bir grubunda uygulamalar arasındaki (veya Uzantılar) iletişim kurmak için bir yol sağlar.
+Uygulama grupları ile kullanıldığında `NSUserDefaults` Ayrıca belirli bir grubunda uygulamalar arasındaki (veya Uzantılar) iletişim kurmak için bir yol sağlar.
 
 <a name="About-User-Defaults" />
 
@@ -32,7 +32,7 @@ Kullanıcı varsayılan olarak, yukarıda belirtildiği gibi (`NSUserDefaults`) 
 Uygulamanızı ilk kez yürütüldüğünde, `NSUserDefaults` anahtarları ve değerleri uygulamanın kullanıcı Varsayılanları veritabanından okur ve onları belleğe açma ve veritabanı her zaman okunurken önlemek için bir değer gereklidir önbelleğe alır. 
 
 > [!IMPORTANT]
-> **Not**: Apple artık önermek Geliştirici çağrısı `Synchronize` bellek içi önbellek veritabanı ile doğrudan eşitleme yöntemi. Bunun yerine, otomatik olarak bellek içi önbellek kullanıcının varsayılan veritabanı ile eşitlenmiş tutmak için düzenli aralıklarla çağrılır.
+> **Not**: Apple artık önerir Geliştirici çağrısı `Synchronize` bellek içi önbellek veritabanı ile doğrudan eşitleme yöntemi. Bunun yerine, otomatik olarak bellek içi önbellek kullanıcının varsayılan veritabanı ile eşitlenmiş tutmak için düzenli aralıklarla çağrılır.
 
 `NSUserDefaults` Sınıfı okumak ve tercih değerleri için ortak veri türleri gibi yazmak için birkaç kullanışlı yöntemler içerir: dize, tamsayı, kayan nokta, Boole ve URL'leri. Diğer veri türleri kullanılarak arşivlenebilir `NSData`, ardından okuma veya varsayılan olarak kullanıcı veritabanına yazılır. Daha fazla bilgi için lütfen Apple'nın bkz [tercihlerini ve ayarlarını Programlama Kılavuzu](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i).
 
@@ -46,7 +46,7 @@ Paylaşılan kullanıcı Varsayılanları örneği erişim kullanıcı varsayıl
 - Uygulamanın paket tanımlayıcısı etki alanı.
 - Bir `NSGlobalDomain` tüm uygulamalar tarafından paylaşılan Varsayılanları oluşan.
 - Her kullanıcının tercih edilen dilleri için ayrı bir etki.
-- Bir `NSRegistationDomain` aramaları her zaman başarılı olduğundan emin olmak için uygulama tarafından değiştirilebilir geçici Varsayılanları kümesiyle.
+- Bir `NSRegistrationDomain` aramaları her zaman başarılı olduğundan emin olmak için uygulama tarafından değiştirilebilir geçici Varsayılanları kümesiyle.
 
 Paylaşılan kullanıcı Varsayılanları örneğine erişmek için aşağıdaki kodu kullanın:
 
@@ -59,11 +59,11 @@ var plist = NSUserDefaults.StandardUserDefaults;
 
 ## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>Bir uygulama grubu NSUserDefaults örneği erişme
 
-Uygulama grupları kullanarak, yukarıda belirtildiği gibi `NSUserDefaults` uygulamalar arasındaki (veya Uzantılar) iletişim kurmak için belirli bir grup içinde kullanılabilir. Öncelikle, uygulama grubu ve gerekli uygulama kimlikleri doğru olarak yapılandırıldığından emin olmak gerekir **tanımlayıcıları & profilleri, sertifikaları** bölümünde [iOS Geliştirme Merkezi](https://developer.apple.com/devcenter/ios/) ve yüklendi üzerinde geliştirme ortamında.
+Uygulama grupları kullanarak, yukarıda belirtildiği gibi `NSUserDefaults` uygulamalar arasındaki (veya Uzantılar) iletişim kurmak için belirli bir grup içinde kullanılabilir. Öncelikle, uygulama grubu ve gerekli uygulama kimlikleri doğru olarak yapılandırıldığından emin olmak gerekir **tanımlayıcıları & profilleri, sertifikaları** bölümünde [iOS Geliştirme Merkezi](https://developer.apple.com/devcenter/ios/) ve yüklendi geliştirme ortamında.
 
-Ardından, uygulama ve/veya uzantı projelerinizi, yukarıda oluşturduğunuz geçerli uygulama kimlikleri biri gerekecektir, `Entitlements.plist` dosyanın sahip uygulama etkinleştirilmiş ve belirtilen grupları ve elde etmenizi uygulama paketine eklenen.
+Ardından, uygulama ve/veya uzantı projelerinizi, yukarıda oluşturduğunuz geçerli uygulama kimlikleri biri olması gerekir ve `Entitlements.plist` dosya sahip uygulama etkinleştirilmiş ve belirtilen grupları ile uygulama paketi dahil edilecek.
 
-İle tüm bir yerde, aşağıdaki kodu kullanarak paylaşılan uygulama grubu kullanıcı Varsayılanları erişilebilir:
+Yerinde tüm ile bu paylaşılan uygulama grubu kullanıcı varsayılan olarak aşağıdaki kodu kullanarak erişilebilir:
 
 ```csharp
 // Get App Group User Defaults
@@ -140,6 +140,6 @@ Bu makalede ele alınan `NSUserDefaults` sınıfı ve nasıl bu son kullanıcı 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [Tercihlerini ve ayarlarını Programlama Kılavuzu](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)
 - [NSUserDefaults](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/#//apple_ref/doc/constant_group/NSUserDefaults_Domains)

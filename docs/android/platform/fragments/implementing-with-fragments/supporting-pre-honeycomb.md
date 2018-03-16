@@ -6,38 +6,33 @@ ms.assetid: DACD0C14-5DDF-7BDE-6844-80550D301307
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 242adc94f04b3bda40238370ca924c1807a0c787
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 109c1e0f16d3a288160b64ec6ff833e5b31c4efd
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="supporting-pre-honeycomb-android-using-support-packages"></a>Destek paketleri kullanılarak öncesi bal peteği Android destekleme
 
 *Android destek paketi* geri bazı yeni API'nin bağlantı noktası kitaplıklarının oluşur &ndash; parçaları gibi &ndash; Android eski sürümleri için. Bu nedenle Android destek paketi ekleyerek, biz uygulamamız Android 2.3 cihazlarda aşağıdaki ekranlar tarafından gösterildiği gibi çalıştırabilirsiniz:
 
-![Parçaları izlenecek ekran görüntüsü](supporting-pre-honeycomb-images/00.png)
-
-![Ayrıntılar etkinlik ekran görüntüsü](supporting-pre-honeycomb-images/01.png)
-
+[![İzlenecek yol ve ayrıntıları etkinliği ekran görüntüleri parça](supporting-pre-honeycomb-images/01-sml.png)](supporting-pre-honeycomb-images/01.png#lightbox)
 
 ## <a name="adding-the-support-package"></a>Destek paketi ekleme
 
 Android destek paketi bir Xamarin.Android uygulaması için otomatik olarak eklenmez. Xamarin sağlar [Android destek kitaplığı v4 NuGet paketi](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) bir Xamarin.Android uygulamasına destek kitaplıkları ekleme basitleştirmek için.
 Destek paketleri uygulamayı dahil, bir Xamarin.Android dahil etmek için [Android destek kitaplığı v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) Xamarin.Android projenize bileşen aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
-![Android destek kitaplığı v4 paketi ekleme](supporting-pre-honeycomb-images/02.png)
+[![Android destek kitaplığı v4 paketi ekleme](supporting-pre-honeycomb-images/02-sml.png)](supporting-pre-honeycomb-images/02.png#lightbox)
 
 Paket eklendikten sonra hedef çerçevesini Android 2.2 veya üzeri değiştirin:
 
-![Hedef Framework API düzeyini değiştirme işleminin ekran görüntüsü](supporting-pre-honeycomb-images/03.png)
+[![Hedef Framework API düzeyini değiştirme işleminin ekran görüntüsü](supporting-pre-honeycomb-images/03-sml.png)](supporting-pre-honeycomb-images/03.png#lightbox)
 
 Ayrıca, en düşük Android sürümü aynı API düzeyi hedefler emin olun:
 
-![Minimum Android sürümü ayarlama işleminin ekran görüntüsü](supporting-pre-honeycomb-images/04.png)
-
-
+[![Minimum Android sürümü ayarlama işleminin ekran görüntüsü](supporting-pre-honeycomb-images/04-sml.png)](supporting-pre-honeycomb-images/04.png#lightbox)
 
 ### <a name="change-mainactivity-to-derive-from-fragmentactivity"></a>MainActivity FragmentActivity türetilen değiştirme
 

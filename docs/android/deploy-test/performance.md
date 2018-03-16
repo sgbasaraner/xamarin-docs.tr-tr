@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 3871955f723d1b3aec6245bba0502ca4f955d64c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 825b566ed45e8c337a1a452ec2c76a23e6a16462
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android Performance
 
@@ -156,7 +156,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 Kullanıcı kayarken [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/) çağrıları `GetView` görüntülemek için yeni görünümler istemek için geçersiz kılma – varsa kullanılmayan bir görünümde geçirir `convertView` parametresi. Bu değer ise `null` yeni bir kod oluşturur sonra [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) örneği, aksi takdirde `convertView` özellikleri sıfırlamak ve yeniden kullanılabilir.
 
-Daha fazla bilgi için bkz: [satır görünümü yeniden kullanma](~/android/user-interface/layouts/list-view/populating.md) içinde [ListView verilerle doldurma](~/android/user-interface/layouts/list-view/populating.md).
+Daha fazla bilgi için bkz: [satır görünümü yeniden kullanma](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use) içinde [ListView verilerle doldurma](~/android/user-interface/layouts/list-view/populating.md).
 
 <a name="removeeventhandlers" />
 
@@ -225,7 +225,7 @@ Kullanıcı UI çıktığında bir bildirim almak için uygulama [ `OnTrimMemory
 
 ## <a name="optimize-image-resources"></a>Görüntü kaynakları en iyi duruma getirme
 
-Görüntüleri uygulamaları kullanan, en pahalı kaynakları bazıları verilmiştir ve genellikle yüksek çözünürlüklerde yakalanır. Bu nedenle, bir görüntü görüntüleme görüntülediğinizde, cihazın ekran için gerekli çözünürlükte. Görüntü ekran daha yüksek çözünürlüğe ise, bu ölçeklendirilmelidir.
+Görüntüleri uygulamaları kullanan, en pahalı kaynakları bazıları verilmiştir ve genellikle yüksek çözünürlüklerde yakalanır. Bu nedenle, bir resim görüntülerken, cihazın ekran için gerekli çözünürlükte görüntüleyin. Görüntü ekran daha yüksek çözünürlüğe ise, bu ölçeklendirilmelidir.
 
 Daha fazla bilgi için bkz: [görüntü kaynakları en iyi duruma getirme](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) içinde [platformlar arası performans](~/cross-platform/deploy-test/memory-perf-best-practices.md) Kılavuzu.
 
