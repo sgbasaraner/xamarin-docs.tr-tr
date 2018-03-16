@@ -26,7 +26,7 @@ Denetleme <a href="#troubleshooting">sorun giderme</a> yararlı ipuçları için
 
 Windows 10 telefonlar, tabletler ve masaüstü bilgisayarlar üzerinde çalışacak bir UWP uygulaması eklemek için aşağıdaki yönergeleri izleyin:
 
- 1 . Sağ tıklatın ve çözüm **Ekle > Yeni proje... ** ve ekleme bir **boş uygulama (Evrensel Windows)** proje:
+ 1 . Sağ tıklatın ve çözüm **Ekle > Yeni proje...** ve ekleme bir **boş uygulama (Evrensel Windows)** proje:
 
   ![](universal-images/add-wu.png "Yeni Proje iletişim kutusu ekleme")
 
@@ -34,7 +34,7 @@ Windows 10 telefonlar, tabletler ve masaüstü bilgisayarlar üzerinde çalışa
 
   ![](universal-images/target-version.png "Evrensel Windows platformu yeni proje iletişim kutusu")
 
- 3 . UWP projeye sağ tıklayıp **NuGet paketlerini Yönet... ** ve ekleme **Xamarin.Forms** paket. Çözümdeki diğer projeler Xamarin.Forms paket aynı sürüme güncelleştirildiğinden emin olun.
+ 3 . UWP projeye sağ tıklayıp **NuGet paketlerini Yönet...** ve ekleme **Xamarin.Forms** paket. Çözümdeki diğer projeler Xamarin.Forms paket aynı sürüme güncelleştirildiğinden emin olun.
 
  4 . Emin olun yeni UWP projesini yerleşik **Yapı > Configuration Manager** penceresi (Bu büyük olasılıkla olmaz işleminin gerçekleştiği bilgisayarlar varsayılan olarak). Değer çizgilerinin **yapı** ve **dağıtma** kutuları Evrensel projesi için:
 
