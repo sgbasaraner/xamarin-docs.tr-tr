@@ -121,6 +121,7 @@
 ### [DataPages](user-interface/datapages/index.md)
 #### [Başlarken](user-interface/datapages/get-started.md)
 #### [Denetimler Başvurusu](user-interface/datapages/controls.md)
+### [DatePicker](user-interface/datepicker.md)
 ### [Grafikler](user-interface/graphics/index.md)
 #### [Xamarin.Forms İçinde CocosSharp Kullanma](user-interface/graphics/cocossharp.md)
 #### [Xamarin.Forms İçinde SkiaSharp Kullanma](user-interface/graphics/skiasharp/index.md)
