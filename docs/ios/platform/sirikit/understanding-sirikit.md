@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 67635b6a04579246467184cdff8d9f277b36ecc4
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>SiriKit kavramlarını anlama
 
@@ -65,108 +65,33 @@ Farklı kişilerin aynı istekte çok farklı biçimlerde yapabileceğiniz bu ya
 
 Örneğin, kullanıcının kendi arkadaş Bobo bir ileti göndermek istiyorsanız aşağıdaki konuşma Siri ile olabilir:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Kullanıcı</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hey Siri, send a MonkeyChat Message"</td>
-</tr>
-<tr>
-    <td>"Kime?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Bobo"</td>
-</tr>
-<tr>
-    <td>"Ne sizin için Bobo söyleyin istiyor musunuz?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Lütfen daha fazla muzlar Gönder"</td>
-</tr>
-</table>
+_Kullanıcı: Hey Siri, MonkeyChat iletisi gönderin._<br />
+_Siri: Kime?_<br />
+_Kullanıcı: Bobo._<br />
+_Siri: Ne için Bobo söylemek istiyorsunuz?_<br />
+_Kullanıcı: Lütfen daha fazla Muzlar gönderin._<br />
 
 Başka bir kişiye farklı bir konuşma ile aynı istekte yapabilir:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Kullanıcı</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Bobo MonkeyChat üzerinde bir ileti göndermek"</td>
-</tr>
-<tr>
-    <td>"Ne sizin için Bobo söyleyin istiyor musunuz?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Lütfen daha fazla muzlar Gönder"</td>
-</tr>
-</table>
+_Kullanıcı: Bobo MonkeyChat üzerinde bir ileti gönderin._<br />
+_Siri: Ne için Bobo söylemek istiyorsunuz?_<br />
+_Kullanıcı: Lütfen daha fazla muzlar gönderin._<br />
 
 ' İ tıklatın ve başka bir kullanıcı daha kısa bir istekte bulunun:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Kullanıcı</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"MonkeyChat Bobo Lütfen Gönder daha fazla muzlar"</td>
-</tr>
-<tr>
-    <td>"Tamam, iletiyi göndermeyi Lütfen daha fazla muzlar Monkeychat üzerinde Bobo için Gönder"</td>
-    <td></td>
-</tr>
-</table>
+_Kullanıcı: MonkeyChat Bobo Lütfen daha fazla muzlar gönderin._<br />
+_Siri: Tamam, iletiyi göndermeyi Lütfen daha fazla muzlar Monkeychat üzerinde Bobo gönderin._<br />
 
 Veya farklı bir dilde bile aynı istekte olun:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Kullanıcı</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"MonkeyChat Bobo s'il vous plaît envoyer artı de bananes"</td>
-</tr>
-<tr>
-    <td>"Oui, envoi message s’il vous plaît envoyer plus de bananes à Bobo sur Monkeychat"</td>
-    <td></td>
-</tr>
-</table>
+_Kullanıcı: MonkeyChat Bobo s'il vous plaît bananes envoyer artı de._<br />
+_Siri: OUI, envoi ileti s'il vous plaît envoyer artı de bananes à Bobo sur Monkeychat._<br />
 
 Henüz başka bir kullanıcı kendi konuşmada çok ayrıntılı olabilir:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Kullanıcı</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Merhaba Siri,, Lütfen bana bir ayrıcalık yapın ve göndermek için MonkeyChat uygulamasını başlatın ileti metinle Lütfen daha fazla muzlar Gönder"</td>
-</tr>
-<tr>
-    <td>"Kime?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Benim en iyi pal Bobo"</td>
-</tr>
-</table>
+_Kullanıcı: Hey Siri,, Lütfen bana bir ayrıcalık yapın ve göndermek için MonkeyChat uygulama başlatma iletisi metinle, lütfen daha fazla muzlar gönderin._<br />
+_Siri: Kime?_<br />
+_Kullanıcı: My en iyi pal Bobo._<br />
 
 Ayrıca, bir istek, bazı isteği nasıl yapıldı dayalı Siri yanıt vermeyebilir birçok yolu vardır:
 
@@ -198,24 +123,9 @@ Uygulama Siri ile kullanıcının konuşmadaki yer alabilir üç ana yolu vardı
 
 Yukarıdaki bilgilerin verildiğinde, aşağıdaki konuşma MonkeyChat uygulama ile nasıl etkileşime inceleyin:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Kullanıcı</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Merhaba Siri, MonkeyChat üzerinde Bobo iletisi gönder"</td>
-</tr>
-<tr>
-    <td>"Ne sizin için Bobo söyleyin istiyor musunuz?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Lütfen daha fazla muzlar Gönder"</td>
-</tr>
-</table>
+_Kullanıcı: Hey Siri, MonkeyChat üzerinde Bobo iletisi gönder._<br />
+_Siri: Ne için Bobo söylemek istiyorsunuz?_<br />
+_Kullanıcı: Lütfen daha fazla muzlar gönderin._<br />
 
 Uygulama konuşmada alan ilk Siri kullanıcının konuşma anlamanıza yardımcı olmak için rolüdür:
 

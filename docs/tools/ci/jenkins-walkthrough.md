@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 8d23211e28cb1b1dae13d67e32462888c66ff065
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff754a690627e7e2f0a5cd39dd669a4c9ddd47fb
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Jenkins Xamarin ile kullanma
 
@@ -343,40 +343,14 @@ Bu APK, özel bir anahtar ile imzalanmamış ve zip hizalanmalıdır dağıtım 
 
 Bu komutların her ikisi proje proje değişebilir komut satırı parametreleri gerektirir. Ayrıca, bu komut satırı parametreleri yapı çalıştırırken, konsol çıktısı görünmemelidir parolaları bazılarıdır. Bu komut satırı parametreleri bazıları ortam değişkenleri depolarız. İmzalama ve/veya zip hizalamak için gerekli ortam değişkenleri aşağıdaki tabloda açıklanmıştır:
 
-<table>
-    <thead>
-        <tr>
-            <td>Ortam değişkeni</td>
-            <td>Açıklama</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>KEYSTORE_FILE</td>
-            <td>Bu anahtar APK imzalama yoldur.</td>
-        </tr>
-        <tr>
-            <td>KEYSTORE_ALIAS</td>
-            <td>APK imzalamak için kullanılan bir anahtar anahtar.</td>
-        </tr>
-        <tr>
-            <td>INPUT_APK</td>
-            <td>Tarafından oluşturulan APK `xbuild`.</td>
-        </tr>
-        <tr>
-            <td>SIGNED_APK</td>
-            <td>İmzalı APK üretilen tarafından `jarsigner`.</td>
-        </tr>
-        <tr>
-            <td>FINAL_APK</td>
-            <td>Zip budur tarafından üretilen APK hizalı `zipalign`.</td>
-        </tr>
-        <tr>
-            <td>STORE_PASS</td>
-            <td>Bu dosyayı singing için anahtar deposu içeriğine erişmek için kullanılan paroladır.</td>
-        </tr>
-    </tbody>
-</table>
+|Ortam değişkeni|Açıklama|
+|--- |--- |
+|KEYSTORE_FILE|Bu anahtar APK imzalama yoldur.|
+|KEYSTORE_ALIAS|APK imzalamak için kullanılan bir anahtar anahtar.|
+|INPUT_APK|Tarafından oluşturulan APK `xbuild`.|
+|SIGNED_APK|İmzalı APK üretilen tarafından `jarsigner`.|
+|FINAL_APK|Zip budur tarafından üretilen APK hizalı `zipalign`.|
+|STORE_PASS|Bu dosyayı singing için anahtar deposu içeriğine erişmek için kullanılan paroladır.|
 
 Gereksinimleri bölümünde açıklandığı gibi bu ortam değişkenleri EnvInject eklentisi kullanarak derleme sırasında ayarlanabilir. Yeni bir derleme işi olmalıdır adım eklenen temel ekleme ortam değişkenlerini sonraki ekran görüntüsünde gösterildiği gibi:
 

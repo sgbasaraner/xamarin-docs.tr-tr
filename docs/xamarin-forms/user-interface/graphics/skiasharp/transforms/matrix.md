@@ -8,11 +8,11 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 9d5e65abe675ded48e9239f2cd10ceed4a7c3a52
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: b54e5258c76892620947d0a7ce673b4ff61f09f3
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="matrix-transforms"></a>Matris dönüşümleri
 
@@ -410,7 +410,7 @@ Bu program Oluşturucusu matris aşağıdaki çağrıyı yolu için geçerlidir:
 transformedPath.Transform(matrix);
 ```
 
-Yolun mu *değil* bu Matris özelliği olarak korur. Bunun yerine, bu dönüştürme tüm yol koordinatları için geçerlidir. Varsa `Transform` çağrılır yeniden dönüştürme yeniden uygulanır ve gittiğiniz geri tek dönüştürme alır başka bir matris uygulayarak yoludur. Neyse ki, `SKMatrix` yapısını tanımlayan bir [ `TryInverse` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.TryInvert/p/SkiaSharp.SKMatrix@/) matrisi edinir yöntemi belirtilen bir matris tersine çevirir:
+Yolun mu *değil* bu Matris özelliği olarak korur. Bunun yerine, bu dönüştürme tüm yol koordinatları için geçerlidir. Varsa `Transform` çağrılır yeniden dönüştürme yeniden uygulanır ve gittiğiniz geri tek dönüştürme alır başka bir matris uygulayarak yoludur. Neyse ki, `SKMatrix` yapısını tanımlayan bir [ `TryInverse` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.TryInvert/p/SkiaSharp.SKMatrix/) matrisi edinir yöntemi belirtilen bir matris tersine çevirir:
 
 ```csharp
 SKMatrix inverse;

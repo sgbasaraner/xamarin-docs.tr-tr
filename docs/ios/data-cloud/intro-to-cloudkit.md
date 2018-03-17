@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 2c48ae5386fda63aed43c24c09c10cfb87b93637
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e231043b1c4b0fa7ba72f2a371545036ffb21164
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -147,40 +147,12 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 
 Veritabanı türleri arasındaki farklar şunlardır:
 
-<table cellpadding="1" cellspacing="1" border="1" width="100%">
-<thead>
-<tr>
-<td></td>
-<td>Genel veritabanı</td>
-<td>Özel veritabanı</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Veri Türü</td>
-<td>Paylaşılan veri</td>
-<td>Geçerli kullanıcının veri</td>
-</tr>
-
-<tr>
-<td>Kota</td>
-<td>İçin geliştiricinin kota hesaba</td>
-<td>İçin kullanıcının kota hesaba</td>
-</tr>
-
-<tr>
-<td>Varsayılan izinleri</td>
-<td>Dünya okunabilir</td>
-<td>Kullanıcı okunabilir</td>
-</tr>
-
-<tr>
-<td>Düzenleme izinleri</td>
-<td>bir kayıt sınıfı düzeyi aracılığıyla iCloud Pano rolleri</td>
-<td>Yok</td>
-</tr>
-</tbody>
-</table>
+||Genel veritabanı|Özel veritabanı|
+|---|--- |--- |
+|**Veri türü**|Paylaşılan veri|Geçerli kullanıcının veri|
+|**Kota**|İçin geliştiricinin kota hesaba|İçin kullanıcının kota hesaba|
+|**Varsayılan izinleri**|Dünya okunabilir|Kullanıcı okunabilir|
+|**Düzenleme izinleri**|bir kayıt sınıfı düzeyi aracılığıyla iCloud Pano rolleri|Yok|
 
 ### <a name="records"></a>Kayıtlar
 

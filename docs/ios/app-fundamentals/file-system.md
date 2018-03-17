@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 36c793e7a9b7b30bcb0cdf2c7959fd2df36c8775
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fd6aa66a7e5e788babc0df3e94b8f3677a7625f0
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-the-file-system"></a>Dosya sistemi ile çalışma
 
@@ -238,78 +238,14 @@ Bu dizinleri ve bunların amaçları aşağıda listelenmiştir:
 
 &nbsp;
 
-<table>
-  <tbody>
-    <tr>
-      <td>
-Dizin </td>
-      <td>
-Açıklama </td>
-    </tr>
-    <tr>
-      <td>
-        <p>[ApplicationName] .app /</p>
-      </td>
-      <td>
-        <p><b>İOS 7 ve önceki içinde</b> bu <code>ApplicationBundle</code> uygulama yürütülebilir dosyasının depolandığı dizin. Bu dizin (örneğin, görüntüler ve Mac projesi için Visual Studio'da kaynaklar olarak işaretledikten diğer dosya türleri) uygulamanızı oluşturduğunuz dizin yapısını bulunmaktadır.</p>
-        <p>İçinde uygulama paket içerik dosyalarını erişmeniz gerekiyorsa, bu dizinin yolunu aracılığıyla kullanılabilir <code>NSBundle.MainBundle.BundlePath</code> özelliği.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Belge /</p>
-      </td>
-      <td>
-        <p>Kullanıcı belgeleri ve uygulama veri dosyalarını depolamak için bu dizin kullanın.</p>
-        <p>Bu dizinin içindekileri kullanıcıya (Bu varsayılan olarak devre dışı bırakılmış olsa) paylaşımı iTunes dosya yoluyla kullanılabilir hale getirilebilir. Ekleme bir <code>UIFileSharingEnabled</code> Info.plist dosyasını kullanıcıların bu dosyalara erişmesine izin vermek için mantıksal anahtar.</p>
-        <p>Bir uygulama, hemen dosya paylaşımı sağlamaz olsa bile, kullanıcıların bu dizinde gizleneceğini dosyaları yerleştirmekten kaçınmalısınız (veritabanı dosyaları gibi bunları paylaşmak istediğiniz sürece). Hassas dosyalar gizli kaldığı sürece bu dosyaları değil kullanıma sunulan (ve olması olası, değiştirilen veya silinen iTunes tarafından taşınan) sonraki bir sürümde dosya paylaşımı etkinse.</p>
-        <p>Kullanabileceğiniz <code>Environment.GetFolderPath
-(Environment.SpecialFolder.MyDocuments)</code> uygulamanız için belgeleri dizinin yolunu almak için yöntemi.</p>
-        <p>Bu dizinin içindekileri iTunes tarafından yedeklenir.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Kitaplığı /</p>
-      </td>
-      <td>
-        <p>Kitaplık dizinine doğrudan veritabanları veya diğer uygulama tarafından üretilen dosyalar gibi bir kullanıcı tarafından oluşturulmaz dosyalarını depolamak için uygun bir yerdir.
-Bu dizinin içindekileri hiçbir zaman kullanıcının iTunes aracılığıyla sunulur.</p>
-        <p>Kitaplığı'nda, kendi alt dizinler oluşturabilirsiniz; Ancak, zaten var. tercihlerini ve önbellekleri dahil olmak üzere, farkında olmalıdır bazı sistem tarafından oluşturulan dizinler burada.</p>
-        <p>(Dışında önbellekleri alt) bu dizinin içindekileri iTunes tarafından yedeklenir. Kitaplıkta oluşturduğunuz özel dizinler yedeklenecek.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Kitaplık/Tercihler /</p>
-      </td>
-      <td>
-        <p>Uygulamaya özgü tercih dosyaları bu dizinde depolanır. Bu dosyaları doğrudan oluşturmayın. Bunun yerine, kullanın <code>NSUserDefaults</code> sınıfı.</p>
-        <p>Bu dizinin içindekileri iTunes tarafından yedeklenir.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Kitaplığı/önbellekleri /</p>
-      </td>
-      <td>
-        <p>Önbellekleri uygulamanızı yardımcı olabilecek veri dosyalarını depolamak için uygun bir yerdir çalıştırın, ancak, gerekirse kolaylıkla yeniden oluşturulabilir dizindir. Uygulama oluşturup gerektiğinde bu dosyaları silmek ve gerekirse, bu dosyalar yeniden oluşturabilirsiniz. Uygulama çalışırken, bunu yapmaz ancak iOS 5 (altında son derece düşük depolama durumlar), bu dosyalar da silebilir.</p>
-        <p>Bu dizinin içindekileri bunlar kullanıcı cihazı yükler, mevcut olmaz anlamına gelir, iTunes tarafından yedeklenmez ve bunlar uygulamanızı güncelleştirilmiş bir sürümünü yükledikten sonra bulunmuyor olabilir.</p>
-        <p>Örneği için uygulamanızın ağa bağlanamıyor durumunda, verileri veya iyi bir çevrimdışı deneyimi sağlamak için dosyaları saklamak için önbellekleri dizin kullanabilirsiniz. Uygulamayı kaydedin ve bu verileri hızlı bir şekilde ağ yanıtlar için beklenirken alabilir, ancak bunu yedeklenmesi gerekmez ve kolayca kurtarılan veya geri yükleme veya sürüm güncelleştirdikten sonra yeniden oluşturulacak.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>tmp/</p>
-      </td>
-      <td>
-        <p>Uygulamalar, yalnızca bu dizindeki kısa bir süre için gereken geçici dosyaları depolayabilir. Artık gerekli olduklarında alanından tasarruf etmek için dosyaların silinmesi gerekir. Bir uygulama çalışmadığı zaman işletim sistemi dosyaları bu dizinden de silebilir.</p>
-        <p>Bu dizinin içindekileri iTunes tarafından yedeklenmez.</p>
-        <p>Örneğin, tmp dizininde (örneğin, Twitter Avatar veya e-posta eklerini) kullanıcıya görüntülenmesi için indirilen, ancak bunlar görüntülenebilir (ve gelecekte gerekliyse yeniden karşıdan sonra hangi silinemedi geçici dosyaları depolamak için kullanılabilir ).</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+|Dizin|Açıklama|
+|---|---|
+|[ApplicationName] .app /|**İOS 7 ve önceki içinde** bu `ApplicationBundle` uygulama yürütülebilir dosyasının depolandığı dizin. Bu dizin (örneğin, görüntüler ve Mac projesi için Visual Studio'da kaynaklar olarak işaretledikten diğer dosya türleri) uygulamanızı oluşturduğunuz dizin yapısını bulunmaktadır.<br /><br />İçinde uygulama paket içerik dosyalarını erişmeniz gerekiyorsa, bu dizinin yolunu aracılığıyla kullanılabilir `NSBundle.MainBundle.BundlePath` özelliği.|
+|Belge /|Kullanıcı belgeleri ve uygulama veri dosyalarını depolamak için bu dizin kullanın.<br /><br />Bu dizinin içindekileri kullanıcıya (Bu varsayılan olarak devre dışı bırakılmış olsa) paylaşımı iTunes dosya yoluyla kullanılabilir hale getirilebilir. Ekleme bir `UIFileSharingEnabled` Info.plist dosyasını kullanıcıların bu dosyalara erişmesine izin vermek için mantıksal anahtar.<br /><br />Bir uygulama, hemen dosya paylaşımı sağlamaz olsa bile, kullanıcıların bu dizinde gizleneceğini dosyaları yerleştirmekten kaçınmalısınız (veritabanı dosyaları gibi bunları paylaşmak istediğiniz sürece). Hassas dosyalar gizli kaldığı sürece bu dosyaları değil kullanıma sunulan (ve olması olası, değiştirilen veya silinen iTunes tarafından taşınan) sonraki bir sürümde dosya paylaşımı etkinse.<br /><br /> Kullanabileceğiniz `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` uygulamanız için belgeleri dizinin yolunu almak için yöntemi.<br /><br />Bu dizinin içindekileri iTunes tarafından yedeklenir.|
+|Kitaplığı /|Kitaplık dizinine doğrudan veritabanları veya diğer uygulama tarafından üretilen dosyalar gibi bir kullanıcı tarafından oluşturulmaz dosyalarını depolamak için uygun bir yerdir. Bu dizinin içindekileri hiçbir zaman kullanıcının iTunes aracılığıyla sunulur.<br /><br />Kitaplığı'nda, kendi alt dizinler oluşturabilirsiniz; Ancak, zaten var. tercihlerini ve önbellekleri dahil olmak üzere, farkında olmalıdır bazı sistem tarafından oluşturulan dizinler burada.<br /><br />(Dışında önbellekleri alt) bu dizinin içindekileri iTunes tarafından yedeklenir. Kitaplıkta oluşturduğunuz özel dizinler yedeklenecek.|
+|Kitaplık/Tercihler /|Uygulamaya özgü tercih dosyaları bu dizinde depolanır. Bu dosyaları doğrudan oluşturmayın. Bunun yerine, kullanın `NSUserDefaults` sınıfı.<br /><br />Bu dizinin içindekileri iTunes tarafından yedeklenir.|
+|Kitaplığı/önbellekleri /|Önbellekleri uygulamanızı yardımcı olabilecek veri dosyalarını depolamak için uygun bir yerdir çalıştırın, ancak, gerekirse kolaylıkla yeniden oluşturulabilir dizindir. Uygulama oluşturup gerektiğinde bu dosyaları silmek ve gerekirse, bu dosyalar yeniden oluşturabilirsiniz. Uygulama çalışırken, bunu yapmaz ancak iOS 5 (altında son derece düşük depolama durumlar), bu dosyalar da silebilir.<br /><br />Bu dizinin içindekileri bunlar kullanıcı cihazı yükler, mevcut olmaz anlamına gelir, iTunes tarafından yedeklenmez ve bunlar uygulamanızı güncelleştirilmiş bir sürümünü yükledikten sonra bulunmuyor olabilir.<br /><br />Örneği için uygulamanızın ağa bağlanamıyor durumunda, verileri veya iyi bir çevrimdışı deneyimi sağlamak için dosyaları saklamak için önbellekleri dizin kullanabilirsiniz. Uygulamayı kaydedin ve bu verileri hızlı bir şekilde ağ yanıtlar için beklenirken alabilir, ancak bunu yedeklenmesi gerekmez ve kolayca kurtarılan veya geri yükleme veya sürüm güncelleştirdikten sonra yeniden oluşturulacak.|
+|tmp/|Uygulamalar, yalnızca bu dizindeki kısa bir süre için gereken geçici dosyaları depolayabilir. Artık gerekli olduklarında alanından tasarruf etmek için dosyaların silinmesi gerekir. Bir uygulama çalışmadığı zaman işletim sistemi dosyaları bu dizinden de silebilir.<br /><br />Bu dizinin içindekileri iTunes tarafından yedeklenmez.<br /><br />Örneğin, tmp dizininde (örneğin, Twitter Avatar veya e-posta eklerini) kullanıcıya görüntülenmesi için indirilen, ancak bunlar görüntülenebilir (ve gelecekte gerekliyse yeniden karşıdan sonra hangi silinemedi geçici dosyaları depolamak için kullanılabilir ).|
 
 Bu ekran görüntüsü bir Bulucu penceresinde dizin yapısını gösterir:
 

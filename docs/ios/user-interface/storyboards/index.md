@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 342e8189d9dec6eaa60a999d56a7891da845d247
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a0b0ca9857e706a9a84f1c661f7f6ff294e112c1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="introduction-to-storyboards"></a>Film şeritleri giriş
 
@@ -84,32 +84,12 @@ Boyutu sınıflarını kullanarak herhangi bir uygulama aynı zamanda yeni kulla
 
 [![](images/adaptivesegue.png "Uyarlamalı Segues açılır")](images/adaptivesegue.png#lightbox)
 
-<table>
-    <thead>
-        <tr>
-            <th>Ü</th>
-            <th>Açıklama</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Göster</td>
-            <td>Bu çok benzer bir itme ü ancak ekran içeriğini dikkate alır. </td>
-        </tr>
-        <tr>
-            <td>Ayrıntıları Göster</td>
-            <td>Uygulama bir ana ve ayrıntı görünümünde (örneğin, bir bölme görünüm denetleyicisinde iPAd) görüntüler, içeriği ayrıntı görünümü değiştirir. Uygulamanın yalnızca ana görüntülerse <strong>veya</strong> ayrıntı, içerik görünümü denetleyicisi yığınının tepesindeki yerini alır.</td>
-        </tr>
-        <tr>
-            <td>Sunum</td>
-            <td>Bu kalıcı segue benzer ve sunu ve geçiş stilleri için seçilmesine izin verir.</td>
-        </tr>
-        <tr>
-            <td>Popover sunu</td>
-            <td>Bu içerik popover gösterir</td>
-        </tr>
-    </tbody>
-</table>
+|Ü|Açıklama|
+|--- |--- |
+|Göster|Bu çok benzer bir itme ü ancak ekran içeriğini dikkate alır.|
+|Ayrıntıları Göster|Uygulama bir ana ve ayrıntı görünümünde (örneğin, bir bölme görünüm denetleyicisinde iPad) görüntüler, içeriği ayrıntı görünümü değiştirir. Uygulamanın yalnızca ana veya ayrıntı gösterirse, içerik görünümü denetleyicisi yığınının tepesindeki yerini alır.|
+|Sunum|Bu kalıcı segue benzer ve sunu ve geçiş stilleri için seçilmesine izin verir.|
+|Popover sunu|Bu içerik popover gösterir|
 
 ### <a name="transferring-data-with-segues"></a>İle veri aktarma Segues
 

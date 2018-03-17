@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cef717a727b3b018b9eec3e8a402ae4f927f7cb8
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ca3dd71c3da316e467d8c388efbbded3d9778bf0
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Siri uzak ve Bluetooth denetleyicileri
 
@@ -39,43 +39,14 @@ TvOS uygulama geliştiricisi olarak, sınama Siri uzaktan'ın dokunmatik yüzey,
 
 Siri uzaktan tvOS uygulamanızı içinde beklenen kullanımları ve aşağıdaki özellikleri içerir:
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>Özelliği</b></td>
-    <td><b>Genel uygulama kullanımı</b></td>
-    <td><b>Oyun uygulaması kullanımı</b></td>
-</tr>
-<tr>
-    <td valign="top"><b>Touch Surface</b><br/>Manyetik gidin, seçin ve bağlam menülerini tutmak için basın.</td>
-    <td valign="top"><b>Dokunun/geçirme:</b><br/>UI Gezinti odaklanabilir öğeleri arasında.<br/><br/><b>' I tıklatın:</b><br/>Seçilen (odak) öğe etkinleştirir.</td>
-    <td valign="top"><b>Dokunun/geçirme:</b><br/>Oyun tasarımına bağlıdır ve kenarlarında e dokunabilirsiniz D-Pad'i kullanılabilir.<br/><br/><b>' I tıklatın:</b><br/>Birincil düğme işlevi gerçekleştirir.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Menü</b><br/>Önceki ekrana veya menüye dönmek için basın.</td>
-    <td valign="top">Apple TV giriş ekranına ana uygulama ekranından çıkar ve önceki ekrana döndürür.</td>
-    <td valign="top">Duraklatma ve sürdürme oyunlar, önceki ekrana geri döner ve ana uygulama ekranından Apple TV giriş ekranına çıkar.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Siri/arama</b><br/>Ülkelerde Siri ile tuşuna basın ve tüm diğer ülkelerde, görüntüler arama ekran ses denetimi için basılı tutun.</td>
-    <td valign="top">yok</td>
-    <td valign="top">yok</td>
-</tr>
-<tr>
-    <td valign="top"><b>Play/Pause</b><br/>Yürütmek ve medya duraklatmak veya uygulamalar, ikincil bir işlev sağlar.</td>
-    <td valign="top">Medya kayıttan yürütme ve Duraklat/Sürdür kayıttan yürütme başlatır.</td>
-    <td valign="top">Giriş video atlar veya ikincil düğmesi işlevini gerçekleştirir (varsa var).</td>
-</tr>
-<tr>
-    <td valign="top"><b>Giriş</b><br/>Giriş ekranına geri dönmek için tuşuna basın, çalışan uygulamaları görüntülemek, basılı Aygıt uyku moduna için çift tıklayın.</td>
-    <td valign="top">yok</td>
-    <td valign="top">yok</td>
-</tr>
-<tr>
-    <td valign="top"><b>Birim</b><br/>Denetimleri ses/video donanım birim eklendi.</td>
-    <td valign="top">yok</td>
-    <td valign="top">yok</td>
-</tr>
-</table>
+|Özellik|Genel uygulama kullanımı|Oyun uygulaması kullanımı|
+|---|---|---|
+|**Touch Surface**<br />Manyetik gidin, seçin ve bağlam menülerini tutmak için basın.|**Dokunun/geçirme**<br />UI Gezinti odaklanabilir öğeleri arasında.<br /><br />**' I tıklatın**<br />Seçilen (odak) öğe etkinleştirir.|**Dokunun/geçirme**<br />Oyun tasarımına bağlıdır ve kenarlarında e dokunabilirsiniz D-Pad'i kullanılabilir.<br /><br />**' I tıklatın**<br />Birincil düğme işlevi gerçekleştirir.|
+|**Menü**<br />Önceki ekrana veya menüye dönmek için basın.|Apple TV giriş ekranına ana uygulama ekranından çıkar ve önceki ekrana döndürür.|Duraklatma ve sürdürme oyunlar, önceki ekrana geri döner ve ana uygulama ekranından Apple TV giriş ekranına çıkar.|
+|**Siri/arama**<br />Ülkelerde Siri ile tuşuna basın ve tüm diğer ülkelerde, görüntüler arama ekran ses denetimi için basılı tutun.|yok|yok|
+|**Play/Pause**<br />Yürütmek ve medya duraklatmak veya uygulamalar, ikincil bir işlev sağlar.|Medya kayıttan yürütme ve Duraklat/Sürdür kayıttan yürütme başlatır.|Giriş video atlar veya ikincil düğmesi işlevini gerçekleştirir (varsa var).|
+|**Giriş**<br />Giriş ekranına geri dönmek için tuşuna basın, çalışan uygulamaları görüntülemek, basılı Aygıt uyku moduna için çift tıklayın.|yok|yok|
+|**Birim**<br />Denetimleri ses/video donanım birim eklendi.|yok|yok|
 
 <a name="Touch-Surface-Gestures" />
 
@@ -83,18 +54,10 @@ Siri uzaktan tvOS uygulamanızı içinde beklenen kullanımları ve aşağıdaki
 
 Siri uzak bilgisayarın Touch yüzeyini Xamarin.tvOS uygulamanızda yanıt verebilirsiniz tek parmak hareketleri çeşitli algılayabilir:
 
-<table width="100%">
-<tr>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture01.png"></td>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture02.png"></td>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture03.png"></td>
-</tr>
-<tr>
-    <td valign="top"><b>Geçirme:</b><br/>Kullanıcı Arabirimi öğeleri ekranında arasında seçim (odak) taşır (yukarı, aşağı sol, sağ). Geçirmeyi hızla eylemsizlik kullanarak içeriğin büyük listeleriyle kaydırmak için kullanılabilir.</td>
-    <td valign="top"><b>' I tıklatın:</b><br/>Seçili (odak) öğeyi etkinleştiren veya oyun birincil düğmesini gibi davranır. Bağlam menüleri veya ikincil işlevleri tıklatıp tutarak etkinleştirebilirsiniz.</td>
-    <td valign="top"><b>Dokunun:</b><br/>Hafifçe kenarları Touch yüzeyine dokunarak bir D-yukarı, aşağı, sola veya sağa dokunduğunuz alan bağlı olarak odağı taşıma Pad'i yön düğmeleri gibi davranır. Uygulamaya bağlı olarak, gizli denetimleri ortaya çıkarmak üzere kullanılabilir.</td>
-</tr>
-</table>
+|Geçirme|Şuna tıklayın|' A dokunun|
+|---|---|---|
+|![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
+|Kullanıcı Arabirimi öğeleri ekranında arasında seçim (odak) taşır (yukarı, aşağı sol, sağ). Geçirmeyi hızla eylemsizlik kullanarak içeriğin büyük listeleriyle kaydırmak için kullanılabilir.|Seçili (odak) öğeyi etkinleştiren veya oyun birincil düğmesini gibi davranır. Bağlam menüleri veya ikincil işlevleri tıklatıp tutarak etkinleştirebilirsiniz.|Hafifçe kenarları Touch yüzeyine dokunarak bir D-yukarı, aşağı, sola veya sağa dokunduğunuz alan bağlı olarak odağı taşıma Pad'i yön düğmeleri gibi davranır. Uygulamaya bağlı olarak, gizli denetimleri ortaya çıkarmak üzere kullanılabilir.|
 
 Apple Touch yüzeyini hareketleri ile çalışmak için aşağıdaki önerileri sağlar:
 
@@ -112,7 +75,7 @@ Touch yüzeyinde hareketleri ek olarak, uygulamanızı Touch yüzeyini tıklatar
 Ayrıca, menü düğmesine basarsa standart hareketi tanıyıcıyı algılanabilir `UIKit` öğeleri. Basılan menü düğmesi engellemek, geçerli görünümü ve görünüm denetleyicisini kapatma sorumlu ve önceki bir dönüş.
 
 > [!IMPORTANT]
-> **Not:** yapmanız gerekenler **her zaman** Yürüt/Duraklat düğmesini uzak işlev atayın. İşlev olmayan bir düğmeye sahip son kullanıcıya bozuk Ara uygulamanızı yapabilirsiniz. Bu düğme için geçerli bir işlev yoksa, birincil düğmeyi (yüzeyini tıklatın Touch) ile aynı işlevi atayın.
+> Yapmanız gerekenler **her zaman** Yürüt/Duraklat düğmesini uzak işlev atayın. İşlev olmayan bir düğmeye sahip son kullanıcıya bozuk Ara uygulamanızı yapabilirsiniz. Bu düğme için geçerli bir işlev yoksa, birincil düğmeyi (yüzeyini tıklatın Touch) ile aynı işlevi atayın.
 
 
 
@@ -319,77 +282,24 @@ Apple TV, 3. taraf, yapılan için iOS ile birlikte gelen standart Siri uzaktan 
 Oyun denetleyicileri oyunlar geliştirmek ve oyun içinde tümüyle yoğunlaşabilmek duygusu sağlamak için kullanılabilir. Böylece kullanım uzaktan ve denetleyici arasında geçiş yapmak zorunda değil standart Apple TV arabirimi denetlemek için de kullanılabilir.
 
 > [!IMPORTANT]
-> **Not:** Bluetooth oyun denetleyicileri olan son kullanıcıların yapabileceğiniz isteğe bağlı bir satın alma, uygulamanızın satın almak için kullanıcı zorlayamaz. Oyun denetleyicileri uygulamanız destekliyorsa, oyun tüm Apple TV kullanıcılar tarafından kullanışlı olmasını sağlamak, ayrıca Siri uzaktan desteklemesi gerekir.
-
+> Bluetooth oyun denetleyicileri son kullanıcıların yapabileceğiniz isteğe bağlı bir satın alma, uygulamanızın satın almak için kullanıcı zorlayamaz. Oyun denetleyicileri uygulamanız destekliyorsa, oyun tüm Apple TV kullanıcılar tarafından kullanışlı olmasını sağlamak, ayrıca Siri uzaktan desteklemesi gerekir.
 
 Oyun denetleyicileri tvOS uygulamanızı içinde beklenen kullanımları ve aşağıdaki özellikleri vardır:
-<table width="100%" border="1px">
-<tr>
-    <td><b>Özelliği</b></td>
-    <td><b>Genel uygulama kullanımı</b></td>
-    <td><b>Oyun uygulaması kullanımı</b></td>
-</tr>
-<tr>
-    <td valign="top"><b>D-Pad</b></td>
-    <td valign="top">Kullanıcı Arabirimi öğeleri (değişiklikleri odak) gider.</td>
-    <td valign="top">Oyun üzerinde bağlıdır.</td>
-</tr>
-<tr>
-    <td valign="top"><b>A</b></td>
-    <td valign="top">Seçilen (odak) öğe etkinleştirir.</td>
-    <td valign="top">Birincil düğme işlevi gerçekleştirir ve iletişim eylemleri onaylar.</td>
-</tr>
-<tr>
-    <td valign="top"><b>B</b></td>
-    <td valign="top">Önceki ekrana döndürür veya uygulamanın ana ekranında, giriş ekranına çıkar.</td>
-    <td valign="top">Önceki ekrana döndürür veya ikincil düğme işlevi gerçekleştirir.</td>
-</tr>
-<tr>
-    <td valign="top"><b>X</b></td>
-    <td valign="top">Medya kayıttan yürütme veya duraklatma/sürdürür kayıttan yürütme başlatır.</td>
-    <td valign="top">Oyun üzerinde bağlıdır.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Y</b></td>
-    <td valign="top">yok</td>
-    <td valign="top">Oyun üzerinde bağlıdır.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Menü</b></td>
-    <td valign="top">Önceki ekrana döndürür veya uygulamanın ana ekranında, giriş ekranına çıkar.</td>
-    <td valign="top">Duraklat/oyunlar, önceki ekrana geri döner veya giriş ekranına çıkar uygulamanın ana ekranında değilse sürdürün.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Sol Kama düğmesi</b></td>
-    <td valign="top">Sol gider.</td>
-    <td valign="top">Oyun üzerinde bağlıdır.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Sol tetikleyici</b></td>
-    <td valign="top">Sol gider.</td>
-    <td valign="top">Oyun üzerinde bağlıdır.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Sağ Kama düğmesi</b></td>
-    <td valign="top">Sağa gider.</td>
-    <td valign="top">Oyun üzerinde bağlıdır.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Doğru tetikleyici</b></td>
-    <td valign="top">Sağa gider</td>
-    <td valign="top">Oyun üzerinde bağlıdır.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Sol Thumbstick</b></td>
-    <td valign="top">Kullanıcı Arabirimi öğeleri (değişiklikleri odak) gider.</td>
-    <td valign="top">Oyun üzerinde bağlıdır.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Sağ Thumbstick</b></td>
-    <td valign="top">yok</td>
-    <td valign="top">Oyun üzerinde bağlıdır.</td>
-</tr>
-</table>
+
+|Özellik|Genel uygulama kullanımı|Oyun uygulaması kullanımı|
+|---|---|---|
+|**D-Pad**|Kullanıcı Arabirimi öğeleri (değişiklikleri odak) gider.|Oyun üzerinde bağlıdır.|
+|**A**|Seçilen (odak) öğe etkinleştirir.|Birincil düğme işlevi gerçekleştirir ve iletişim eylemleri onaylar.|
+|**B**|Önceki ekrana döndürür veya uygulamanın ana ekranında, giriş ekranına çıkar.|Önceki ekrana döndürür veya ikincil düğme işlevi gerçekleştirir.|
+|**X**|Medya kayıttan yürütme veya duraklatma/sürdürür kayıttan yürütme başlatır.|Oyun üzerinde bağlıdır.|
+|**Y**|yok|Oyun üzerinde bağlıdır.|
+|**Menü**|Önceki ekrana döndürür veya uygulamanın ana ekranında, giriş ekranına çıkar.|Duraklat/oyunlar, önceki ekrana geri döner veya giriş ekranına çıkar uygulamanın ana ekranında değilse sürdürün.|
+|**Sol Kama düğmesi**|Sol gider.|Oyun üzerinde bağlıdır.|
+|**Sol tetikleyici**|Sol gider.|Oyun üzerinde bağlıdır.|
+|**Sağ Kama düğmesi**|Sağa gider.|Oyun üzerinde bağlıdır.|
+|**Doğru tetikleyici**|Sağa gider|Oyun üzerinde bağlıdır.|
+|**Sol Thumbstick**|Kullanıcı Arabirimi öğeleri (değişiklikleri odak) gider.|Oyun üzerinde bağlıdır.|
+|**Sağ Thumbstick**|yok|Oyun üzerinde bağlıdır.|
 
 Apple oyun denetleyicileri ile çalışmak için aşağıdaki önerileri sağlar:
 

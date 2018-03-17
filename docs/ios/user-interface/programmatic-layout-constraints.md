@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 7819201e76e268ea84bf2cc5d49a5a07b20a04e3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4a3450026eff06555723b16093c7a0daf3d12ae7
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="programmatic-layout-constraints"></a>Programsal düzeni kısıtlamaları
 
@@ -79,32 +79,15 @@ PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Activ
 
 Burada C# kod parçalarını denklemi belirli bölümlerine karşılık gelen aşağıdaki gibidir:
 
-<table width="100%" border="1">
-<tr>
-<td width="50%"><b>Eşitlik</b></td><td><b>Kod</b></td>
-</tr>
-<tr>
-<td width="50%">Madde 1</td><td>PurpleView</td>
-</tr>
-<tr>
-<td width="50%">1 özniteliği</td><td>LeadingAnchor</td>
-</tr>
-<tr>
-<td width="50%">İlişki</td><td>ConstraintEqualTo</td>
-</tr>
-<tr>
-<td width="50%">Çarpan</td><td>Bu nedenle belirtilmemiş 1.0 varsayılanlara</td>
-</tr>
-<tr>
-<td width="50%">2 öğesi</td><td>OrangeView</td>
-</tr>
-<tr>
-<td width="50%">Öznitelik 2</td><td>TrailingAnchor</td>
-</tr>
-<tr>
-<td width="50%">Sabit</td><td>10.0</td>
-</tr>
-</table>
+|Eşitlik|Kod|
+|---|---|
+|Madde 1|PurpleView|
+|1 özniteliği|LeadingAnchor|
+|İlişki|ConstraintEqualTo|
+|Çarpan|Bu nedenle belirtilmemiş 1.0 varsayılanlara|
+|2 öğesi|OrangeView|
+|Öznitelik 2|TrailingAnchor|
+|Sabit|10.0|
 
 Verilen yerleşim kısıtlaması denklemi çözmek için gerekli olan parametreleri sağlamanın yanı sıra, düzen bağlantı yöntemlerin her biri zorunlu kendisine geçirilen parametrelerden biri tür güvenliği. Bu nedenle yatay kısıtlaması tutturur gibi `LeadingAnchor` veya `TrailingAnchor` yalnızca kullanılabilir ile yatay diğer bağlantı türleri ve çarpanları yalnızca boyutu sınırlaması sağlanır.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 3b1bb45ab87c85dff42b4f7ea5297eb3596b81a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5ab6f68aed791dd21516d663367ac5435e92d6cc
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="introduction-to-game-development-with-cocossharp"></a>CocosSharp oyun geliştirmeye giriş
 
@@ -38,4 +38,4 @@ Bu örneklerde sonuna oyuncunun hedef ekran dışına dönmeden Top tutmak yatay
 - [Oyun içeriği (örnek)](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Content.zip?raw=true)
 - [Projeyi (örnek)](https://developer.xamarin.com/samples/mobile/BouncingGame/)
 - [NuGet üzerinde CocosSharp PCL](http://www.nuget.org/packages/CocosSharp.PCL.Shared/)
-- [CocosSharp API belgeleri](http://developer.xamarin.comhttps://developer.xamarin.com/api/namespace/CocosSharp/)
+- [CocosSharp API belgeleri](https://developer.xamarin.com/api/namespace/CocosSharp/)

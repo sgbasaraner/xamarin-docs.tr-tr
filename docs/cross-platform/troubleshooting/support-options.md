@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 68b420f98461ee42862726a658d721b36326c203
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>Hangi destek seçenekleri için Xamarin var mı?
 
@@ -18,28 +18,13 @@ ms.lasthandoff: 03/09/2018
 
 Üzerinde gösterildiği gibi [Xamarin destek sayfası](https://www.xamarin.com/support), birkaç seçenek bulunur.  Bazı hızlı başlangıç önerileri şunlardır [yığın taşması neden olacak](http://stackoverflow.com/help/product-support) nasıl en iyi seçeneği seçin:
 
-<table>
-    <tr>
-        <td>"Bu hatayı anlamı nedir?" veya "Nasıl yedeklerim...?"</td>
-        <td><a href="http://stackoverflow.com/questions/ask?tags=xamarin">Yığın Taşması</a> altında <em>xamarin</em> etiketi</td>
-    </tr>
-    <tr>
-        <td>I Xamarin kaynak kodu üründe bu sorunun nedeni inanıyoruz.</td>
-        <td><a href="https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html">Xamarin Bugzilla</a></td>
-    </tr>
-    <tr>
-        <td>Bir fikir, özellik isteği ya da yeni belgeleri isteği sahibim.</td>
-        <td><a href="https://xamarin.uservoice.com">Xamarin UserVoice sayfası</a></td>
-    </tr>
-    <tr>
-        <td>Hangi kaynaklara, çerçeveleri veya Araçlar diğer kullanıcılar için tavsiye...? (ve diğer uçlu tartışmalara)</td>
-        <td><a href="https://forums.xamarin.com/">Xamarin forumları</a></td>
-    </tr>
-    <tr>
-        <td>Lisans ya da fiyatlandırma abonelikler hakkında bir sorunuz sahibim.</td>
-        <td>E-posta veya kişi bilgilerini kullanarak çağrı <a href="https://www.xamarin.com/faq">SSS</a></td>
-    </tr>
-</table>
+|   |   |
+|---|---|
+|"Bu hatayı anlamı nedir?" veya "Nasıl yedeklerim...?"|[Yığın Taşması](http://stackoverflow.com/questions/ask?tags=xamarin) altında *xamarin* etiketi|
+|I Xamarin kaynak kodu üründe bu sorunun nedeni inanıyoruz.|[Xamarin Bugzilla](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html)|
+|Bir fikir, özellik isteği ya da yeni belgeleri isteği sahibim.|[Xamarin UserVoice sayfası](https://xamarin.uservoice.com)|
+|Hangi kaynaklara, çerçeveleri veya Araçlar diğer kullanıcılar için tavsiye...? (ve diğer uçlu tartışmalara)|[Xamarin forumları](https://forums.xamarin.com)|
+|Lisans ya da fiyatlandırma abonelikler hakkında bir sorunuz sahibim.|E-posta veya kişi bilgilerini kullanarak çağrı [SSS](https://www.xamarin.com/faq)|
 
 Xamarin destek ekibi bu seçeneklerin her biri izlemenize yardımcı olur.  Tüm kullanıcıların kendi Düşünceli sorular ve yararlanabilir ve bilgili Xamarin Geliştirici topluluğu artırılmasına yardımcı olmak için raporlar katkıda öneririz.  Şüpheli kusurları için mümkün olduğunda sorunları resmi olarak Xamarin mühendislik ekibi tarafından izlenir emin olmak hata raporları göndermek emin olun.
 

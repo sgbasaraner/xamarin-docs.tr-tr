@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f6d19f0f6573b17dfb3feb6bf131686413d4e68f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 047f7d7497a114bf4b7c94e50bdf09862b882794
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="objective-c-support"></a>Objective-C desteği
 
@@ -201,13 +201,11 @@ Nedeniyle `NSDate` başvuru tarih, onu arasındaki tüm dönüştürmeler ve `Da
 
 Dönüştürme zaman `DateTime` için `NSDate` DateTime's `Kind` özelliğini dikkate alınır.
 
-<table>
-<tr><th> türü         </th><th> Sonuçları                                                                                            </th></tr>
-<!--tr><td> ------------ </td><td> -------------------------------------------------------------------------------------------------- </td></tr-->
-<tr><td> UTC          </td><td> Dönüştürme, olduğu gibi sağlanan DateTime nesnesi kullanılarak gerçekleştirilir.                                  </td></tr>
-<tr><td> Yerel        </td><td> Arama sonucu `ToUniversalTime ()` sağlanan DateTime nesnesi dönüştürme için kullanılır. </td></tr>
-<tr><td> Belirtilmemiş  </td><td> Sağlanan DateTime nesnesi UTC, böylece aynı davranışı türü varsayılır Utc ==.                </td></tr>
-</table>
+|türü|Sonuçları                                                                                            |
+|---|---|
+|UTC|Dönüştürme, sağlanan kullanarak gerçekleştirilir `DateTime` nesnesi olarak.|
+|Yerel|Arama sonucu `ToUniversalTime()` sağlanan içinde `DateTime` nesnesi, dönüştürme için kullanılır.|
+|Belirtilmemiş|Sağlanan `DateTime` nesne olduğu varsayılır UTC, böylece aynı davranışı türü Utc ==.|
 
 Dönüştürme, aşağıdaki formül kullanılarak yapılır:
 

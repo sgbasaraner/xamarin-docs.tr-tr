@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/12/2018
-ms.openlocfilehash: d47499c1e309fbc67c85b55cacbbba3942188f54
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 5c214fe4124b900ea63399b97084d1ce0e181d4a
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-datepicker"></a>DatePicker kullanma
 
@@ -48,7 +48,7 @@ DatePicker datePicker = new DatePicker
 };
 ```
 
-Zaman bir `DateTime` değerinde XAML ayrıştırıcısı kullanan XAML içinde belirtilen `DateTime.Parse` yöntemi ile bir `CultureInfo.InvariantCulture` dizeye dönüştürmek için bağımsız değişken bir `DateTime` değeri. Tarihleri kesin bir biçimde belirtilmesi gerekir: iki basamaklı ay, iki basamaklı gün ve eğik çizgiyle ayrılmış dört rakamlı yıl:
+Zaman bir `DateTime` değeri belirtilen XAML'de XAML ayrıştırıcısı kullanan `DateTime.Parse` yöntemi ile bir `CultureInfo.InvariantCulture` dizeye dönüştürmek için bağımsız değişken bir `DateTime` değeri. Tarihleri kesin bir biçimde belirtilmesi gerekir: iki basamaklı ay, iki basamaklı gün ve eğik çizgiyle ayrılmış dört rakamlı yıl:
 
 ```xaml
 <DatePicker MinimumDate="01/01/2018"
@@ -78,7 +78,7 @@ Kısıtlanmamış yatay düzen seçeneği gibi kullanmak da mümkündür `Center
             ··· />
 ```
 
-Ancak, bu önerilmez. Ayarını bağlı olarak `Format` özelliği, Seçili tarihleri farklı görüntü genişliği gerekebilir. Örneğin, "D" biçim dizesi neden `DateTime` uzun bir biçimde ve "Çarşamba, 12 Eylül 2018" tarihleri görüntülemek için "Cuma, May 4, 2018" daha büyük görüntü genişliğini gerektirir. Platforma bağlı olarak bu fark neden olabilecek `DateTime` genişliğini düzeninde ya da kesilecek görüntülenmek değiştirmek için görünümü.
+Ancak, bu önerilmez. Ayarını bağlı olarak `Format` özelliği, Seçili tarihleri farklı görüntü genişliği gerekebilir. Örneğin, "D" biçim dizesi neden `DateTime` uzun bir biçimde ve "Çarşamba, 12 Eylül 2018" tarihleri görüntülemek için "Cuma, May 4, 2018." daha büyük görüntü genişliğini gerektirir. Platforma bağlı olarak bu fark neden olabilecek `DateTime` genişliğini düzeninde ya da kesilecek görüntülenmek değiştirmek için görünümü.
 
 > [!TIP]
 > Varsayılan kullanmak en iyisidir `HorizontalOptions` ayarıyla `Fill` ile `DatePicker`ve genişliği kullanmamayı `Auto` koyma zaman `DatePicker` içinde bir `Grid` hücre.
@@ -139,7 +139,7 @@ XAML dosyası şöyledir:
 </ContentPage>
 ```
 
-Her `DatePicker` atanmış bir `Format` "D" özelliği için uzun tarih biçimi. Ayrıca dikkat `endDatePicker` nesne sahip hedefleyen bir bağlama kendi `MinimumDate` özelliği. Bağlama kaynağıdır seçili `Date` özelliği `startDatePicker` nesnesi. Bu, son tarihi daha sonra her zaman başlangıç tarihine eşit veya sağlar. İki ek olarak `DatePicker` nesneleri, bir `Switch` "Include toplamda iki gün" olarak etiketlenir. 
+Her `DatePicker` atanmış bir `Format` "D" özelliği için uzun tarih biçimi. Ayrıca dikkat `endDatePicker` nesne sahip hedefleyen bir bağlama kendi `MinimumDate` özelliği. Bağlama kaynağıdır seçili `Date` özelliği `startDatePicker` nesnesi. Bu, son tarihi daha sonra her zaman başlangıç tarihine eşit veya sağlar. İki ek olarak `DatePicker` nesneleri, bir `Switch` "her iki gün toplam içerir." olarak etiketlenmiş 
 
 İki `DatePicker` görünümleri sahip ilişik işleyiciler `DateSelected` olayı ve `Switch` için bir işleyici eklenmiş kendi `Toggled` olay. Bu olay işleyicileri ve iki tarih arasındaki gün yeni bir hesaplaması tetiklemek arka plan kod dosyasına verilmiştir:
 

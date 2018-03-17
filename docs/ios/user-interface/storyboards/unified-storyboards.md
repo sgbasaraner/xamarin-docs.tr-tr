@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 30a952bf0df4db34c749de3d6198877b7a9766b9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="unified-storyboards"></a>Birleşik film şeritleri
 
@@ -116,63 +116,23 @@ Bu bölümde, kullanıcı iOS 8 ile çalışırken yaşar ayırdedici nitelik ko
 
 Geliştirici bir iPhone üzerinde görebileceğiniz tipik ayırdedici nitelik koleksiyonu verilmiştir:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Özellik</td>
-    <td>Değer</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>Sıkıştır</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>Normal</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>Telefon</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>2,0</td>
-</tr>
-</tbody>
-</table>
+|Özellik|Değer|
+|--- |--- |
+|`HorizontalSizeClass`|Sıkıştır|
+|`VerticalSizeClass`|Normal|
+|`UserInterfaceIdom`|Telefon|
+|`DisplayScale`|2,0|
 
 Ayırdedici nitelik özelliklerinin tümü için değerlerine sahip olarak yukarıdaki kümesi bir tam olarak nitelenmiş ayırdedici nitelik koleksiyonunu temsil eder.
 
 Değerlerinin bazıları eksik bir ayırdedici nitelik koleksiyonu olması mümkündür (hangi Apple olarak başvurduğu *belirtilmemiş*):
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Özellik</td>
-    <td>Değer</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>Sıkıştır</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>{unspecified}</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>{unspecified}</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>{unspecified}</td>
-</tr>
-</tbody>
-</table>
+|Özellik|Değer|
+|--- |--- |
+|`HorizontalSizeClass`|Sıkıştır|
+|`VerticalSizeClass`|Belirtilmemiş|
+|`UserInterfaceIdom`|Belirtilmemiş|
+|`DisplayScale`|Belirtilmemiş|
 
 Geliştirici kendi ayırdedici nitelik toplamalarında ayırdedici nitelik ortamı istediğinde, genellikle, ancak onu tam bir koleksiyon yukarıdaki örnekte görüldüğü gibi döndürür.
 
@@ -216,7 +176,6 @@ Apple'nın görüntü varlıklar hakkında daha fazla bilgi için bkz: [UIImageA
 
 Nitelikler hiçbirini ayırdedici nitelik koleksiyonları birinde belirtilmeyen ve başka bir programda belirtilirse, yukarıda belirtildiği gibi belirtilen sürüme değer ayarlanır. Ancak, belirtilen belirli bir değeri birden fazla sürümü varsa, değeri son kullanılan değeri ayırdedici nitelik koleksiyonu olacaktır.
 
-
 ## <a name="adaptive-view-controllers"></a>Uyarlamalı görünüm denetleyicileri
 
 Bu bölümde, iOS görünümü ve görünüm denetleyicileri nitelikler ve boyutu sınıflarını otomatik olarak Geliştirici uygulamalarda daha Uyarlamalı olmasını kavramlarını nasıl benimseyen ayrıntılarını ele alınacaktır.
@@ -259,58 +218,11 @@ Bu bölümde, ayırdedici nitelik ortamı değiştiğinde ayırdedici nitelik ko
 
 iOS 8 Geliştirici aşağıdaki tabloda görüldüğü gibi ayırdedici nitelik değişikliği katılmak için kullanabileceği birkaç geri aramalar sağlar:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Aşama</td>
-    <td>Geri çağırma</td>
-    <td>Açıklama</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>Kurulum</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        <li><code>TraitCollectionDidChange</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Bu yöntem, ayırdedici nitelik koleksiyonu yeni değerini ayarlama önce ayırdedici nitelik değişiklik başında çağrılır.</li>
-        <li>Yöntemi, ayırdedici nitelik koleksiyon değeri değiştiğinde, ancak hiçbir animasyon gerçekleşmeden önce çağrılır.</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>Animasyon</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Bu yönteme geçirilen geçiş Düzenleyici sahip bir <code>AnimateAlongside</code> birlikte varsayılan animasyonları yürütülecek animasyonları eklemek Geliştirici imkan tanıyan özellik.</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>Temizleme</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Geçiş gerçekleştikten sonra kendi kodu temizleme dahil etmek geliştiricilere yönelik bir yöntem sağlar.</li>
-        </ul>
-    </td>
-</tr>
-</tbody>
-</table>
+|Aşama|Geri çağırma|Açıklama|
+|--- |--- |--- |
+|Kurulum|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Bu yöntem, ayırdedici nitelik koleksiyonu yeni değerini ayarlama önce ayırdedici nitelik değişiklik başında çağrılır.</li><li>Yöntemi, ayırdedici nitelik koleksiyon değeri değiştiğinde, ancak hiçbir animasyon gerçekleşmeden önce çağrılır.</li></ul>|
+|Animasyon|`WillTransitionToTraitCollection`|Bu yönteme geçirilen geçiş Düzenleyici sahip bir `AnimateAlongside` birlikte varsayılan animasyonları yürütülecek animasyonları eklemek Geliştirici imkan tanıyan özellik.|
+|Temizleme|`WillTransitionToTraitCollection`|Geçiş gerçekleştikten sonra kendi kodu temizleme dahil etmek geliştiricilere yönelik bir yöntem sağlar.|
 
 `WillTransitionToTraitCollection` Yöntemdir ayırdedici nitelik koleksiyonu değişiklikleri birlikte görünüm denetleyicileri animasyon için harika. `WillTransitionToTraitCollection` Yöntemi kullanılabilir yalnızca görünüm denetleyicilerinde ( `UIViewController`) değil, diğer ayırdedici nitelik ortamları gibi `UIViews`.
 

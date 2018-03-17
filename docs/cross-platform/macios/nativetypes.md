@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: b78ade19efed92ab3b2d8ba790f2d7334472bab4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 09858bd7902b44bbedd96f1be9c9c827131ee16f
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="native-types"></a>Yerel türler
 
@@ -27,28 +27,11 @@ Bu yeni veri türleri ile aynı kaynak kodu, 32 bit, 32 bit ve 64 bit veya 64 bi
 
 Aşağıdaki tabloda, bu yeni 32/64 bit world eşleşecek şekilde bizim veri türleri değişiklikleri gösterir:
 
-<table>
-        <tr>
-            <th>Yerel tür</th>
-            <th>32-bit yedekleme türü</th> 
-            <th>64-bit yedekleme türü</th>
-        </tr>
-        <tr>
-            <td><code>System.nint</code></td>
-        <td><code>System.Int32</code> (<code>int</code>)</td>
-        <td><code>System.Int64</code> (<code>long</code>)</td>
-        </tr>
-        <tr>
-            <td><code>System.nuint</code></td>
-        <td><code>System.UInt32</code> (<code>uint</code>)</td>
-        <td><code>System.UInt64</code> (<code>ulong</code>)</td>
-        </tr>
-        <tr>
-            <td><code>System.nfloat</code></td>
-        <td><code>System.Single</code> (<code>float</code>)</td>
-        <td><code>System.Double</code> (<code>double</code>)</td>
-        </tr>
-    </table>
+|Yerel tür|32-bit yedekleme türü|64-bit yedekleme türü|
+|--- |--- |--- |
+|`System.nint`|`System.Int32` (`int`)|`System.Int64` (`long`)|
+|`System.nuint`|`System.UInt32` (`uint`)|`System.UInt64` (`ulong`)|
+|`System.nfloat`|`System.Single` (`float`)|`System.Double` (`double`)|
 
 Fazla veya az bugün görünür şekilde aramak, C# kodu izin vermek için bu adları seçtik.
 
@@ -76,32 +59,15 @@ CoreGraphics ile kullanılan noktası, boyut ve dikdörtgen veri türleri 32 vey
 
 İçin taşırken **Unified**, örneklerini değiştirmeniz gerekecektir `System.Drawing` ile bunların `CoreGraphics` aşağıdaki tabloda gösterildiği gibi ortaklarınıza:
 
-<table>
-        <tr>
-            <th>System.Drawing eski türü</th>
-            <th>Yeni veri türü CoreGraphics</th> 
-            <th>Açıklama</th>
-        </tr>
-        <tr>
-        <td><code>RectangleF</code></td>
-        <td><code>CGRect</code></td>
-        <td>Kayan ayrı tutma dikdörtgen bilgi noktası.  </td>
-        </tr>
-        <tr>
-        <td><code>SizeF</code></td>
-        <td><code>CGSize</code></td>
-        <td>Kayan ayrı tutma noktasının boyutu bilgileri (genişlik, yükseklik)</td>
-        </tr>
-        <tr>
-        <td><code>PointF</code></td>
-        <td><code>CGPoint</code></td>
-        <td>Kayan nokta (X, Y) bilgi noktası tutar</td>
-        </tr>
-    </table>
+|System.Drawing eski türü|Yeni veri türü CoreGraphics|Açıklama|
+|--- |--- |--- |
+|`RectangleF`|`CGRect`|Kayan ayrı tutma dikdörtgen bilgi noktası.|
+|`SizeF`|`CGSize`|Kayan ayrı tutma noktasının boyutu bilgileri (genişlik, yükseklik)|
+|`PointF`|`CGPoint`|Kayan nokta (X, Y) bilgi noktası tutar|
 
 Eski veri türleri kullanılır float veri yapılarını öğelerini depolamak için yeni bir kullanan while `System.nfloat`.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Platformlar arası uygulamalar içindeki yerel türler ile çalışma](~/cross-platform/macios/native-types-cross-platform.md)
-- [Klasik vs Unified API farklılıkları](http://developer.xamarin.comhttps://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Platformlar Arası Uygulamalarda Yerel Türlerle Çalışma](~/cross-platform/macios/native-types-cross-platform.md)
+- [Klasik vs Unified API farklılıkları](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

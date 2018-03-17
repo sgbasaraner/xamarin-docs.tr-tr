@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 6042ab9aa861a08da421140857459b02a78f7c70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 568650a850b9db1fa22deef55eebb6a437e7e0b7
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="binding-types-reference-guide"></a>Bağlama türü Başvuru Kılavuzu
 
@@ -1987,70 +1987,20 @@ interface MyColoringKeys {
 
 Aşağıdaki veri türlerini desteklenen `StrongDictionary` tanımı:
 
-<table border="1" cellpadding="1" cellspacing="1" width="80%">
-<tbody>
-  <tr>
-    <td>C# arabirim türü</td>
-    <td>NSDictionary depolama türü</td>
-  </tr>
-  <tr>
-    <td>bool</td>
-    <td>Bir NSNumber depolanan Boole değeri</td>
-  </tr>
-  <tr>
-    <td>Numaralandırma değerleri</td>
-    <td>bir NSNumber depolanan tamsayı</td>
-  </tr>
-  <tr>
-    <td>int</td>
-    <td>bir NSNumber depolanan 32 bit tamsayı</td>
-  </tr>
-  <tr>
-    <td>uint</td>
-    <td>32 bit işaretsiz tamsayıyı bir NSNumber depolanan</td>
-  </tr>
-  <tr>
-    <td>nint</td>
-    <td>Bir NSNumber depolanan NSInteger</td>
-  </tr>
-  <tr>
-    <td>nuint</td>
-    <td>Bir NSNumber depolanan NSUInteger</td>
-  </tr>
-  <tr>
-    <td>long</td>
-    <td>bir NSNumber depolanan 64-bit tamsayı</td>
-  </tr>
-  <tr>
-    <td>float</td>
-    <td>bir NSNumber depolanan 32 bit tamsayı</td>
-  </tr>
-  <tr>
-    <td>çift</td>
-    <td>bir NSNumber depolanan 64-bit tamsayı</td>
-  </tr>
-  <tr>
-    <td>NSObject ve sınıfları</td>
-    <td>NSObject</td>
-  </tr>
-  <tr>
-    <td>NSDictionary</td>
-    <td>NSDictionary</td>
-  </tr>
-  <tr>
-    <td>dize</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>NSString</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>C# NSObject dizisi</td>
-    <td>NSArray</td>
-  </tr>
-  <tr>
-    <td>C# numaralandırmalar dizisi</td>
-    <td>NSNumbers değeriyle içeren NSArray</td>
-  </tr>
-</tbody>
+|C# arabirim türü|`NSDictionary` Depolama türü|
+|---|---|
+|`bool`|`Boolean` depolanmış bir `NSNumber`|
+|Numaralandırma değerleri|tamsayı saklanan bir `NSNumber`|
+|`int`|32 bit tamsayı depolanan bir `NSNumber`|
+|`uint`|32 bit işaretsiz tamsayıyı depolanan bir `NSNumber`|
+|`nint`|`NSInteger` depolanmış bir `NSNumber`|
+|`nuint`|`NSUInteger` depolanmış bir `NSNumber`|
+|`long`|64 bit tamsayı depolanan bir `NSNumber`|
+|`float`|32 bit tamsayı olarak saklanan bir `NSNumber`|
+|`double`|64 bit tam sayı olarak saklanan bir `NSNumber`|
+|`NSObject` ve sınıfları|`NSObject`|
+|`NSDictionary`|`NSDictionary`|
+|`string`|`NSString`|
+|`NSString`|`NSString`|
+|C# `Array` , `NSObject`|`NSArray`|
+|C# `Array` numaralandırmalar,|`NSArray` içeren `NSNumber` değerleri|

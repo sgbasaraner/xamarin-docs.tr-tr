@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: b076c7a71d81a474ca80ac32771d5512c21c167c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b4705bc9c8fdb1a671c7de2453ea088bf2afe424
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>İzlenecek yol - WCF ile çalışma
 
@@ -394,37 +394,12 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.iOS uygulaması tarafından kullan
 1. İçinde `HelloWorld.iOS` proje, bir başvuru ekleyin `HelloWorldServiceProxy` proje ve başvuru `System.ServiceModel` ad alanı.
 1. İçinde **Çözüm Gezgini**, çift `Main.storyboard` iOS Tasarımcısı'nda dosyayı açmak için. Ardından, aşağıdaki ekleyin `UIButton` ve `UITextView` denetimleri:
 
-    <table>
-        <thead>
-            <tr>
-                <td></td>
-                <td>Ad</td>
-                <td>Başlık</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>UIButton</code></td>
-                <td><code>sayHelloWorldButton</code></td>
-                <td>"Hello, World" söyleyin</td>
-            </tr>
-            <tr>
-                <td><code>UITextView</code></td>
-                <td><code>sayHelloWorldText</code></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><code>UIButton</code></td>
-                <td><code>getHelloWorldDataButton</code></td>
-                <td>"Hello, World" get veri</td>
-            </tr>
-            <tr>
-                <td><code>UITextView</code></td>
-                <td><code>getHelloWorldDataText</code></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    ||Ad|Başlık|
+    |--- |--- |--- |
+    |`UIButton`|`sayHelloWorldButton`|"Hello, World" söyleyin|
+    |`UITextView`|`sayHelloWorldText`||
+    |`UIButton`|`getHelloWorldDataButton`|"Hello, World" get veri|
+    |`UITextView`|`getHelloWorldDataText`||
 
     Kullanıcı Arabirimi denetimlerini eklendikten sonra aşağıdaki ekran görüntüsü benzemelidir:
 

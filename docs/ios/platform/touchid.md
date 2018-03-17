@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: a2378cb439ceed94751e61fd44b54aae3a65bebd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3564b4f7d41822fdd9ab167fb3e756f26678a17b
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -39,11 +39,8 @@ Anahtarlık Anahtarlık öğesi kendisi tarafından şifresi çözülemiyor; Bun
 
 İlk uygulamanızı bir parola olup olmadığını Anahtarlık sorgu. Yoksa, kullanıcı sürekli sorulan değil için bir parola sor gerekebilir. Parola güncelleştirilmesi gerekiyorsa, yeni bir parola kullanıcıdan ve Anahtarlığa güncelleştirilmiş değeri geçirin.
 
-
-> ℹ️ **Not**: veritabanından aldığınız tüm gizli anahtarlarla yalnızca en iyi yöntem değildir, ancak hiçbir gizli bellekte tutulacak bekleniyordu. Yalnızca bir gizlilik için gerekli olduğu gibi uzun ve kesinlikle genel değişkenine atamayın olarak tutmanız gerekir!
-
-
-
+> [!NOTE]
+> Bir gizli anahtarı kullanarak Anahtarlık aldıktan sonra verileri yapılan tüm başvuruları bellekten temizlenmelidir. Hiçbir zaman genel değişkenine atayın.
 
 ## <a name="keychain-acl-and-touch-id"></a>Anahtarlık ACL ve dokunma kimliği
 
@@ -53,32 +50,11 @@ Erişim denetim listesi, gerçekleşmesi için belirli bir işlemine izin vermek
 
 İOS 8 itibariyle var. Şimdi yeni bir kullanıcı varlığı İlkesi `SecAccessControl`, güvenli enclave bir iPhone 5s'dir ve üstü tarafından zorlanır. Aşağıda, yalnızca cihaz yapılandırma İlkesi değerlendirme nasıl etkileyebilir tablosundaki görebilirsiniz:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Aygıt Yapılandırması</td>
-    <td>İlke değerlendirmesi</td>
-    <td>Yedekleme mekanizması</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>Cihaz geçiş kodu olmadan</td>
-    <td>Erişim yok</td>
-    <td>Yok.</td>
-</tr>
-<tr>
-    <td>Cihaz geçiş kodu</td>
-    <td>Geçiş kodu gerektirir</td>
-    <td>Yok.</td>
-</tr>
-<tr>
-    <td>Dokunma Kimliğine sahip cihazı</td>
-    <td>Touch ID tercih eder</td>
-    <td>Geçiş kodu sağlar</td>
-</tr>
-</tbody>
-</table>
+|Aygıt Yapılandırması|İlke değerlendirmesi|Yedekleme mekanizması|
+|--- |--- |--- |
+|Cihaz geçiş kodu olmadan|Erişim yok|Yok.|
+|Cihaz geçiş kodu|Geçiş kodu gerektirir|Yok.|
+|Dokunma Kimliğine sahip cihazı|Touch ID tercih eder|Geçiş kodu sağlar|
 
 Güvenli Enclave içindeki tüm işlemleri birbirine güvenebilir. Bu, biz Anahtarlık öğesi şifre çözme yetkilendirmek için Touch ID kimlik doğrulaması sonucu kullanabileceğiniz anlamına gelir. Güvenli Enclave da geçiş kodunu kullanmaya geri durumda kullanıcı gerekir başarısız Touch ID eşleşen bir sayaç tutar.
 Adlı yeni bir çerçeve iOS 8 ' de _yerel kimlik doğrulaması_, kimlik doğrulama cihaz içinde bu işlemi destekler. Biz bu sonraki bölümde inceleyeceksiniz.

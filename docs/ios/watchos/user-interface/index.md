@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 0717b8484c6094bb1d9589c44df37745d9e21900
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f7a7b565372970cc487b664ed7415cf876e290b6
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="watchos-user-interface"></a>watchOS kullanıcı arabirimi
 
@@ -21,212 +21,23 @@ ms.lasthandoff: 03/09/2018
 
 Tüm denetimler programlı adlarını önekiyle `WKInterface` (ör.) `WKInterfaceLabel`, `WKInterfaceButton`).
 
-
-<table align="center" border="1" cellpadding="1" cellspacing="1">
-  <thead>
-      <th>
-        <strong>denetimi</strong>
-      </th>
-      <th>
-        <strong>Açıklama</strong>
-      </th>
-      <th>
-        <strong>ekran görüntüsü</strong>
-      </th>
-    </thead>
-    <tbody>
-    <tr>
-      <td valign="top">
-Etiketle </td>
-      <td valign="top">
-Kullanım <code>SetText</code> ve etiket denetimi içindeki metnin görünümünü denetlemek için diğer özellikleri. <code>NSAttributedString</code> Ayrıca desteklenir.
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/LabelDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/label.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Düğme </td>
-      <td valign="top">
-Oluşturun ve film şeridi özellikleri ayarlayın. <kbd>CTRL + Sürükle</kbd> eklemek için bir <code>Action</code> tıklandığında işleyicisi uygulamak için.
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ButtonDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/button.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Anahtar </td>
-      <td valign="top">
-Kullanım <code>SetOn</code> anahtar durumunu denetlemek için.
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SwitchDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/switch.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Kaydırıcı </td>
-      <td valign="top">
-Birçok farklı stillerde mümkündür.
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SliderDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/slider.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Görüntü </td>
-      <td valign="top">
-Kullanmak <code>myImage.SetImage("MyWatchImage")</code> izleme görüntülerinde yüklemeye veya <code>WKInterfaceDevice.CurrentDevice.AddCachedImage</code> bunları saatin üzerinde yinelenen kullanılmak üzere önbelleğe almak için.
-        <br />
-        <a href="~/ios/watchos/user-interface/image.md">Görüntü Denetim belgeleri</a>
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ImageDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/image.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Ayırıcı </td>
-      <td valign="top">
-Ayırıcı çekici izleme Uı'lar oluşturmaya yardımcı olmak için kullanın.
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SeparatorDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/separator.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-eşleme </td>
-      <td valign="top">
-Harita resminin saatin statik olarak görüntülenir, ancak birçok yönünü PIN'ler ekleme gibi görünümünü denetleyebilirsiniz.
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MapDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/map.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Film & InlineMove </td>
-      <td valign="top">
-Film olabilir ya da kendi başlarına açık veya satır içi <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MovieDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/movie.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Grup </td>
-      <td valign="top">
-Çekici izleme Uı'lar oluşturmaya yardımcı olmak için grupları kullanın.
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GroupDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/group.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Tablo </td>
-      <td valign="top">
-İOS tablolarda basitleştirilmiş bir sürümünü.
-Uygulama <code>DidSelectRow</code> değiştirmek üzere kullanıcı seçimi yanıt (veya bir segue kullanın).
-        <br />
-        <a href="~/ios/watchos/user-interface/table.md">Tablo denetim belgeleri</a>
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/TableDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/table.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Cihaz </td>
-      <td valign="top">
-        <code>WKInterfaceDevice.CurrentDevice</code> gibi özellikler içeren <code>ScreenBounds</code>, <code>ScreenScale</code>, ve <code>PreferredContentSizeCategory</code>.
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/DeviceDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/device.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <a href="~/ios/watchos/user-interface/menu.md">Menü</a>
-      </td>
-      <td valign="top">
-Film şeridi zorla tuşuna menü tanımlayın ve her düğme için eylemleri koda uygulanması.
-        <br />
-        <a href="~/ios/watchos/user-interface/menu.md">Menü denetim (zorla Touch) belgeleri</a>
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ControllerDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/controller.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Metin girişi </td>
-      <td valign="top">
-Kullanım <code>PresentTextInputController</code> ve <code>WKTextInputMode</code> numaralandırması.
-        <br />
-        <a href="~/ios/watchos/user-interface/text-input.md">Metin girişi belgeleri</a>
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/TextInputDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/textinput.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Dijital Dama yapma </td>
-      <td valign="top">
-Bir seçici sürücü için dijital Dama yapma kullanılabilir veya kendi dönüş kodu izlenebilir.
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/CrownDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/digital-crown.png" class="tableimg">
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-Hareketleri </td>
-      <td valign="top">
-Bir Sahne eklenebilir hareketi tanıma dört tür vardır: dokunun, geçirme, Pan ve LongPress.
-        <br />
-        <a href="https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs">Katalog kodu</a>
-      </td>
-      <td>
-        <img src="Images/gestures.png" class="tableimg">
-      </td>
-    </tr>
-    </tbody>
-</table>
-
+|Denetim|Açıklama|ekran görüntüsü|
+|---|---|---|
+|Etiketle|Kullanım `SetText` ve etiket denetimi içindeki metnin görünümünü denetlemek için diğer özellikleri. `NSAttributedString` Ayrıca desteklenir.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/LabelDetailController.cs)|![](Images/label.png)|
+|Düğme|Oluşturun ve film şeridi özellikleri ayarlayın. CTRL + Sürükle eklemek için bir `Action` tıklandığında işleyicisi uygulamak için.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ButtonDetailController.cs)|![](Images/button.png)|
+|Anahtar|Kullanım `SetOn` anahtar durumunu denetlemek için.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SwitchDetailController.cs)|![](Images/switch.png)|
+|Kaydırıcı|Birçok farklı stillerde mümkündür.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SliderDetailController.cs)|![](Images/slider.png)|
+|Görüntü|Kullanmak `myImage.SetImage("MyWatchImage")` izleme görüntülerinde yüklemeye veya `WKInterfaceDevice.CurrentDevice.AddCachedImage` bunları saatin üzerinde yinelenen kullanılmak üzere önbelleğe almak için.<br />[Görüntü Denetim belgeleri](~/ios/watchos/user-interface/image.md)<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ImageDetailController.cs)|![](Images/image.png)|
+|Ayırıcı|Ayırıcı çekici izleme Uı'lar oluşturmaya yardımcı olmak için kullanın.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/SeparatorDetailController.cs)|![](Images/separator.png)| 
+|eşleme|Harita resminin saatin statik olarak görüntülenir, ancak birçok yönünü PIN'ler ekleme gibi görünümünü denetleyebilirsiniz.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MapDetailController.cs)|![](Images/map.png)|
+|Film & InlineMove|Film olabilir ya da kendi başlarına açık veya satır içi<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/MovieDetailController.cs)|![](Images/movie.png)|
+|Grup|Çekici izleme Uı'lar oluşturmaya yardımcı olmak için grupları kullanın.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GroupDetailController.cs)|![](Images/group.png)|
+|Tablo|İOS tablolarda basitleştirilmiş bir sürümünü. Uygulama `DidSelectRow` değiştirmek üzere kullanıcı seçimi yanıt (veya bir segue kullanın).<br />[Tablo denetim belgeleri](~/ios/watchos/user-interface/table.md)<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/Table%20Detail%20Controller/TableDetailController.cs)|![](Images/table.png)|
+|Cihaz|`WKInterfaceDevice.CurrentDevice` gibi özellikler içeren `ScreenBounds`, `ScreenScale`, ve `PreferredContentSizeCategory`.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/DeviceDetailController.cs)|![](Images/device.png)|
+|[Menü](~/ios/watchos/user-interface/menu.md)|Film şeridi zorla tuşuna menü tanımlayın ve her düğme için eylemleri koda uygulanması.<br />[Menü denetim (zorla Touch) belgeleri](~/ios/watchos/user-interface/menu.md)<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ControllerDetailController.cs)|![](Images/controller.png)|
+|Metin girişi|Kullanım `PresentTextInputController` ve `WKTextInputMode` numaralandırması.<br />[Metin girişi belgeleri](~/ios/watchos/user-interface/text-input.md)<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/TextInputController.cs)|![](Images/textinput.png)|
+|Dijital Dama yapma|Bir seçici sürücü için dijital Dama yapma kullanılabilir veya kendi dönüş kodu izlenebilir.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/CrownDetailController.cs)|![](Images/digital-crown.png)|
+|Hareketleri|Bir Sahne eklenebilir hareketi tanıma dört tür vardır: dokunun, geçirme, Pan ve LongPress.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

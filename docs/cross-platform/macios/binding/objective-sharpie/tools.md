@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 0d6e953a6a45b78d470c7ff73e1d6faa7444a683
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4985d67f74d54644cbc033d6c76148f88d741ee1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="tools--commands"></a>Araçlar ve komutlar
 
@@ -53,19 +53,14 @@ Available Tools:
 
 Amaç Sharpie aşağıdaki araçları sağlar:
 
-<table>
-  <thead>
-    <tr><td>Aracı</td><td>Açıklama</td>
-  </thead>
-  <tbody>
-    <tr><td><b>xcode</b></td><td>Geçerli Xcode yükleme ve iOS ve Mac kullanılabilen SDK'ları sürümleri hakkında bilgi sağlar. Biz bizim bağlamaları oluşturduğunuzda biz daha sonra bu bilgileri kullanarak.</td></tr>
-    <tr><td><b>pod</b></td><td>Arar ve yapılandırır, (bir yerel dizine) yükler ve Objective-C bağlar <a href="https://cocoapods.org">CocoaPod</a> ana belirtim depodan kitaplıkları. Bu araç otomatik olarak geçirilecek girişin doğru türetme için yüklü CocoaPod değerlendirir <code>bind</code> aracı aşağıdaki. <em><strong>Yeni 3.0!</strong></em></td></tr>
-    <tr><td><b>Bağlama</b></td><td>Üstbilgi dosyaları ayrıştırır (<code>*.h</code>) Objective-C Kitaplığı'nda <a href="~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md">ilk <i>ApiDefinition.cs</i> ve <i>StructsAndEnums.cs</i> dosyaları</a>.</td></tr>
-    <tr><td><b>update</b></td><td>Hedefi Sharpie daha yeni sürümleri denetler ve yükler ve varsa yükleyici başlatır.</td></tr>
-    <tr><td><b>verify-docs</b></td><td>Hakkında ayrıntılı bilgiler gösterilmektedir <code>[Verify]</code> öznitelikleri.</td></tr>
-    <tr><td><b>Belgeleri</b></td><td>Bu belgede, varsayılan web tarayıcısı gider.</td></tr>
-  </tbody>
-</table>
+|Aracı|Açıklama|
+|--- |--- |
+|**xcode**|Geçerli Xcode yükleme ve iOS ve Mac kullanılabilen SDK'ları sürümleri hakkında bilgi sağlar. Biz bizim bağlamaları oluşturduğunuzda biz daha sonra bu bilgileri kullanarak.|
+|**pod**|Arar ve yapılandırır, (bir yerel dizine) yükler ve Objective-C bağlar [CocoaPod](https://cocoapods.org/) ana belirtim depodan kitaplıkları. Bu araç otomatik olarak geçirilecek girişin doğru türetme için yüklü CocoaPod değerlendirir `bind` aracı aşağıdaki. Yeni 3.0!|
+|**Bağlama**|Üstbilgi dosyaları ayrıştırır (`*.h`) ilk içine Objective-C Kitaplığı'nda [ApiDefinition.cs ve StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) dosyaları.|
+|**update**|Hedefi Sharpie daha yeni sürümleri denetler ve yükler ve varsa yükleyici başlatır.|
+|**verify-docs**|Hakkında ayrıntılı bilgiler gösterilmektedir `[Verify]` öznitelikleri.|
+|**Belgeleri**|Bu belgede, varsayılan web tarayıcısı gider.|
 
 Belirli bir amaç Sharpie aracını kullanarak Yardım almak için aracın adını girin ve `-help` seçeneği. Örneğin, `sharpie xcode -help` aşağıdaki çıktıyı döndürür:
 

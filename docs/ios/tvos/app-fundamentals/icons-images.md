@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e3d1663e07b16721d1aa7253e7d0150a609718e
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-icons-and-images"></a>Simgeler ve görüntüleri ile çalışma
 
@@ -40,17 +40,9 @@ Başlatma görüntü hızlı bir şekilde görüntülenir ve uygulamanızı hız
 
 Başlatma görüntüleri reklamları veya Artistik deyim için bir fırsat değildir, bunlar yalnızca uygulamanızı hızlı bir şekilde başlatır ve hazır izlenim vermek için mevcut kullanmak için.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Görüntü başlatma</b></td>
-</tr>
-<tr>
-    <td><b>Size</b></td>
-    <td>1920px x 1080px
-
-    Non-layered `.png` files only</td>
-</tr>
-</table>
+|Görüntü boyutu başlatma|Notlar|
+|---|---|
+|1920x1080px|Yalnızca olmayan katmanlı .png dosyaları|
 
 Apple, uygulamanızın başlatma görüntü tasarlamak için aşağıdaki önerileri sağlar:
 
@@ -146,39 +138,15 @@ Xamarin.tvOS uygulamanızı Apple TV giriş ekranı, aynı zamanda App Store iç
 
 Her uygulama, küçük ve büyük bir uygulama simgesini sürümü sağlamanız gerekir. Uygulama yüklendiğinde Apple TV giriş ekranında küçük simge kullanılır. Büyük sürüm App Store tarafından kullanılır. Büyük uygulama simge küçük simge sürüm Görünüm ve yapısını taklit etmelidir.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Küçük simgesi</b></td>
-    <td colspan="2"><b>Büyük simge</b></td>
-</tr>
-<tr>
-    <td><b>Gerçek Boyut</b></td>
-    <td>400px x 240px</td>
-    <td><b>Size</b></td>
-    <td>1280px x 768px</td>
-</tr>
-<tr>
-    <td><b>Güvenli bölge boyutu</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>Odaksız boyutu</b></td>
-    <td>300px x 180px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>Odaklanmış boyutu</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-</table>
+|Küçük simgesi||Büyük simge||
+|---|---|---|---|
+|Gerçek Boyut|400x240px|Boyut|1280x768px|
+|Güvenli bölge boyutu|370x222px|||
+|Odaksız boyutu|300x180px|||
+|Odaklanmış boyutu|370x222px|||
 
 > [!IMPORTANT]
-> **Not:** uygulama simgeleri olarak sağlanmalıdır **katmanlı görüntüleri**. Lütfen bakın [katmanlı görüntü](#Layered-Images) daha fazla ayrıntı için bölüm üstünde.
+> Uygulama simgeleri olarak sağlanmalıdır **katmanlı görüntüleri**. Lütfen bakın [katmanlı görüntü](#Layered-Images) daha fazla ayrıntı için bölüm üstünde.
 
 
 
@@ -227,17 +195,9 @@ Kullanıcının Apple TV giriş ekranında üst satırda Xamarin.tvOS uygulaman�
 
 Üst raf görüntü ya da tek bir statik sağlanabilir `.png` veya `.lsr` dosyası (bkz [katmanlı görüntüleri oluşturma](#Creating-Layered-Images)) ya da dinamik olarak çalışma zamanında odaklanabilir öğeleri tek bir satır oluşturulamaz (bkz: [ Dinamik üst raf içerik](#Dynamic-Top-Shelf-Content) aşağıda).
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Üst raf görüntüsü</b></td>
-</tr>
-<tr>
-    <td><b>Size</b></td>
-    <td>1920px x 720px
-
-    Static `.png` or layered `.lsr` file</td>
-</tr>
-</table>
+|Üst raf görüntü boyutu|Notlar|
+|---|---|
+|1920x720px|Statik .png veya katmanlı .lsr dosyası|
 
 Apple üst raf görüntülerinizi oluşturmak için aşağıdaki önerileri sağlar:
 
@@ -279,38 +239,12 @@ Bu dinamik üst raf içerik türü, kaydırma, odaklanabilir isteğe bağlı ola
 
 Aşağıdaki içerik boyutları gerekli olacaktır:
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>Poster (2:3)</b></td>
-    <td><b>Square (1:1)</b></td>
-    <td><b>HDTV (16:9)</b></td>
-</tr>
-<tr>
-    <td><b>Gerçek Boyut</b></td>
-    <td>404px x 608px</td>
-    <td>608px x 608px</td>
-    <td>908px x 512px</td>
-</tr>
-<tr>
-    <td><b>Güvenli bölge boyutu</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-<tr>
-    <td><b>Odaksız boyutu</b></td>
-    <td>333px x 500px</td>
-    <td>500px x 500px</td>
-    <td>782px x 440px</td>
-</tr>
-<tr>
-    <td><b>Odaklanmış boyutu</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-</table>
+||Poster (2:3)|Kare (1:1)|HDTV (16:9)|
+|---|---|---|---|
+|Gerçek Boyut|404x608px|608x608px|908x512px|
+|Güvenli bölge boyutu|380x570px|570x570px|852x479px|
+|Odaksız boyutu|333x500px|500x500px|782x440px|
+|Odaklanmış boyutu|380x570px|570x570px|852x479px|
 
 Apple görüntülemektedir içerik satır için aşağıdaki önerileri sağlar:
 
@@ -325,27 +259,14 @@ Apple görüntülemektedir içerik satır için aşağıdaki önerileri sağlar:
 
 Otomatik kaydırma yanı sıra kullanıcı başlıkları denetimini ele geçirmek ve Siri uzaktan kullanarak herhangi bir yönde kaydırın. Küçük bir yapmadan, döngüsel hareketi Siri bir başlık odakta olduğunda uzak Bu başlık Parallax etkisi etkinleşir.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Başlık resmi (ek geniş)</b></td>
-</tr>
-<tr>
-    <td><b>Gerçek Boyut</b></td>
-    <td>1940px x 624px</td>
-</tr>
-<tr>
-    <td><b>Güvenli bölge boyutu</b></td>
-    <td>1740px x 620px</td>
-</tr>
-<tr>
-    <td><b>Odaksız boyutu</b></td>
-    <td>1740px x 560px</td>
-</tr>
-<tr>
-    <td><b>Odaklanmış boyutu</b></td>
-    <td>1740px x 620px</td>
-</tr>
-</table>
+**Başlık resmi (ek geniş)**
+
+|   |   |
+|---|---|
+|Gerçek Boyut|1940x624px|
+|Güvenli bölge boyutu|1740x620px|
+|Odaksız boyutu|1740x560px|
+|Odaklanmış boyutu|1740x620px|
 
 İç metin başlıkları kaydırma ya da statik sağlanabilir `.png` veya katmanlı `.lsr` dosya.
 
@@ -366,44 +287,13 @@ Oyun Xamarin.tvOS uygulamanızı ise ve oyun merkezi desteği dahil birkaç daha
 - **Pano resmi** -, uygulamanızın Pano Game Center içinde üstünde görünür sağlanan isteğe bağlı bir görüntü olabilir. Bu görüntüleri odaklanabilir olmayan.
 - **Skorbordu resmi** -birine (1) için üç (3) arasında 16:9 en boy oranını görüntüleri uygulamanızı destekleyen her Skorbordu için sağlamanız gerekir. Bunlar ya da statik olabilir `.png` veya katmanlı `.lsr` dosyaları. Skorbordu resmi odaklanabilir.
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>Başarı simgeler</b></td>
-    <td><b>Pano resmi</b></td>
-    <td><b>Skorbordu resmi</b></td>
-</tr>
-<tr>
-    <td><b>Görünür boyutu</b></td>
-    <td>200px x 200px</td>
-    <td>923px x 150px</td>
-    <td>yok</td>
-</tr>
-<tr>
-    <td><b>Gerçek Boyut</b></td>
-    <td>320px x 320px</td>
-    <td>yok</td>
-    <td>659px x 371px</td>
-</tr>
-<tr>
-    <td><b>Güvenli bölge boyutu</b></td>
-    <td>yok</td>
-    <td>yok</td>
-    <td>618px x 348px</td>
-</tr>
-<tr>
-    <td><b>Odaksız boyutu</b></td>
-    <td>yok</td>
-    <td>yok</td>
-    <td>548px x 309px</td>
-</tr>
-<tr>
-    <td><b>Odaklanmış boyutu</b></td>
-    <td>yok</td>
-    <td>yok</td>
-    <td>618px x 348px</td>
-</tr>
-</table>
+||Başarı simgeler|Pano resmi|Skorbordu resmi|
+|---|---|---|---|
+|Görünür boyutu|200x200px|923x150px|yok|
+|Gerçek Boyut|320x320px|yok|659x371px|
+|Güvenli bölge boyutu|yok|yok|618x348px|
+|Odaksız boyutu|yok|yok|548x309px|
+|Odaklanmış boyutu|yok|yok|618x348px|
 
 Game Center ile çalışma hakkında daha fazla bilgi için lütfen Apple'nın bakın [oyun merkezi Programlama Kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html).
 

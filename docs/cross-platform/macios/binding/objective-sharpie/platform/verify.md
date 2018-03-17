@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: cda523cd9d762c3a3c1570e2abd0acb8a264d5dd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 10fb2e2824a05954e19f9b483884061b217be683
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="verify-attributes"></a>Öznitelikleri doğrulayın
 
@@ -29,32 +29,12 @@ Bağlama olduğunu doğruladıktan sonra düzeltin veya bu doğru olması için 
 
 Öznitelik sağlanan ipucu bağımsız değişkeni aşağıdaki belgeleriyle başvurulan çapraz olabilir. Belge herhangi üretilen `[Verify]` öznitelikleri bağlama tamamlandıktan sonra konsolda sağlanacaktır.
 
-<table>
-  <thead>
-  <tr>
-    <th>İpucu doğrulayın</th>
-    <th>Açıklama</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>InferredFromPreceedingTypedef</td>
-    <td>Bu bildirim adını ortak convention öğesinden tarafından çıkarımı yapılan hemen önce gelen <code>typedef</code> özgün yerel kaynak kodunda. Çıkarsanan adı bu kuralı belirsiz olduğu gibi doğru olduğundan emin olun.</td>
-  </tr>
-  <tr>
-    <td>ConstantsInterfaceAssociation</td>
-    <td>Hangi Objective-C arabirimiyle extern değişken bildirimi ilişkilendirilebilir belirlemek için aptal kanıtı yolu yoktur. Bu örnekleri bağlı olarak <code>[Field]</code> büyük olasılıkla 'Sabitleri' ortadan daha sezgisel bir API üretmek için somut arabirimi yakın-tarafından kısmi bir arabirimine özelliklerinde arabirimi tamamen.</td>
-  </tr>
-  <tr>
-    <td>MethodToProperty</td>
-    <td>Objective-C yöntemi, hiçbir parametre alan ve değer (void olmayan iade) döndürme gibi kuralı nedeniyle C# özelliği olarak bağlıydı. Genellikle yöntemleri bu gibi özellikleri olarak daha Hoş görünmesi bir API ortaya çıkarma bağlanmalıdır, ancak bağlama gerçekte bir yöntemi olması gerekir ve yanlış pozitif sonuç bazen oluşabilir.</td>
-  </tr>
-  <tr>
-    <td>StronglyTypedNSArray</td>
-    <td>Yerel <code>NSArray*</code> olarak bağlı <code>NSObject[]</code>. Daha güçlü API belgelerine (örn. üstbilgi dosyası açıklamaları) aracılığıyla ayarlanabilir beklentilerini göre bağlamadaki dizi türü mümkün olabilir ya da test aracılığıyla dizi içeriklerini İnceleme. Örneğin, bir NSArray içeren yalnızca NSNumber * * instancescan bağlı olarak <code>NSNumber[]</code> yerine <code>NSObject[]</code>.</td>
-  </tr>
-  </tbody>
-</table>
+|İpucu doğrulayın|Açıklama|
+|---|---|
+|InferredFromPreceedingTypedef|Bu bildirim adını ortak convention öğesinden tarafından çıkarımı yapılan hemen önce gelen `typedef` özgün yerel kaynak kodunda. Çıkarsanan adı bu kuralı belirsiz olduğu gibi doğru olduğundan emin olun.|
+|ConstantsInterfaceAssociation|Hangi Objective-C arabirimiyle extern değişken bildirimi ilişkilendirilebilir belirlemek için aptal kanıtı yolu yoktur. Bu örnekleri bağlı olarak `[Field]` büyük olasılıkla 'Sabitleri' ortadan daha sezgisel bir API üretmek için somut arabirimi yakın-tarafından kısmi bir arabirimine özelliklerinde arabirimi tamamen.|
+|MethodToProperty|Objective-C yöntemi, hiçbir parametre alan ve değer (void olmayan iade) döndürme gibi kuralı nedeniyle C# özelliği olarak bağlıydı. Genellikle yöntemleri bu gibi özellikleri olarak daha Hoş görünmesi bir API ortaya çıkarma bağlanmalıdır, ancak bağlama gerçekte bir yöntemi olması gerekir ve yanlış pozitif sonuç bazen oluşabilir.|
+|StronglyTypedNSArray|Yerel `NSArray*` olarak bağlı `NSObject[]`. Daha güçlü API belgelerine (örn. üstbilgi dosyası açıklamaları) aracılığıyla ayarlanabilir beklentilerini göre bağlamadaki dizi türü mümkün olabilir ya da test aracılığıyla dizi içeriklerini İnceleme. Örneğin, bir NSArray içeren yalnızca NSNumber * * instancescan bağlı olarak `NSNumber[]` yerine `NSObject[]`.|
 
 İpucunu kullanarak belgelerine de hızlı bir şekilde alabilir `sharpie verify-docs` aracı, örneğin:
 

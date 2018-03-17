@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: df9059b0e64b4a05b554f25b5f9d7f6031406633
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 68372d90b0567c662f0ae43e315663832f1f769b
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="application-icons"></a>Uygulama simgeleri
 
@@ -42,104 +42,66 @@ Bir Xamarin.iOS uygulaması görüntü varlıklarının UI denetimleri ve belge 
 
 Aşağıdaki görüntü varlık boyutları ve çözümlemeleri tüm iOS 9 (veya daha büyük) aracılığıyla iOS 5 hedefleyen bir Xamarin.iOS uygulaması gerektirdiği simgesi türlerini desteklemek için gereklidir:
 
-<table cellpadding="7" cellspacing="0" width="100%">
-    <tr valign="top">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="5" align="center" bgcolor="#F0F0F0"><b>iPhone</b></td>
-    </tr>
-    <tr valign="center">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 5 & 6</b></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 7 & 8</b></td>
-        <td align="center" bgcolor="#F9F9F9"><b>iOS 9 & 10<b><br/><i>(iPhone 6 & 7 Plus)</i></td>
-    </tr>
-    <tr valign="top" bgcolor="#F0F0F0">
-        <td width="200" align="center"><b>Simge türü</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>3x</b></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Uygulama simgesi</td>
-        <td align="center">57x57</td>
-        <td align="center">114x114</td>
-        <td align="center" style="color:#BBBBBB;">60x60<sup>(1)</sup></td>
-        <td align="center">120x120</td>
-        <td align="center">180x180</td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Spotlight</td>
-        <td align="center">29x29</td>
-        <td align="center">58x58</td>
-        <td align="center" style="color:#BBBBBB;">40x40<sup>(2)</sup></td>
-        <td align="center">80x80</td>
-        <td align="center">120x120</td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Ayarlar</td>
-        <td align="center" style="color:#BBBBBB;">29x29<sup>(3)(4)</sup></td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(3)(4)</sup></td>
-        <td align="center">-</td>
-        <td align="center">-</td>
-        <td align="center">87x87</td>
-    </tr>
-</table>
+### <a name="iphone-icon-sizes"></a>iPhone simgesi boyutları
 
-<table cellpadding="7" cellspacing="0" width="100%">
-    <tr valign="top">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="5" align="center" bgcolor="#F0F0F0"><b>iPad</b></td>
-    </tr>
-    <tr valign="center">
-        <td width="200" style="border-width: 0px;"></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 5 & 6</b></td>
-        <td colspan="2" align="center" bgcolor="#F9F9F9"><b>iOS 7 & 8</b></td>
-        <td colspan="1" align="center" bgcolor="#F9F9F9"><b>iOS&nbsp;9 & 10</b></td>
-    </tr>
-    <tr valign="top" bgcolor="#F0F0F0">
-        <td width="200" align="center"><b>Simge türü</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>1x</b></td>
-        <td align="center"><b>2x</b></td>
-        <td align="center"><b>2x<br/>iPad&nbsp;Pro</b></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Uygulama simgesi</td>
-        <td align="center">72x72</td>
-        <td align="center">144x144</td>
-        <td align="center">76x76</td>
-        <td align="center">152x152</td>
-        <td align="center">167x167<sup>(6)</sup></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Spotlight</td>
-        <td align="center">50x50</td>
-        <td align="center">100x100</td>
-        <td align="center">40x40</td>
-        <td align="center">80x80</td>
-        <td align="center" style="color:#BBBBBB;">120x120<sup>(5)</sup></td>
-    </tr>
-    <tr valign="top">
-        <td width="200" bgcolor="#F9F9F9" align="right">Ayarlar</td>
-        <td align="center" style="color:#BBBBBB;">29x29<sup>(3)(5)</sup></td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(3)(5)</sup></td>
-        <td align="center">-</td>
-        <td align="center">-</td>
-        <td align="center" style="color:#BBBBBB;">58x58<sup>(5)</sup></td>
-    </tr>
-</table>
+- **iPhone: iOS 9 & 10 (iPhone 6 & 7 Plus)**
 
-1. _Mac ve Xcode için her iki Visual Studio artık desteklemek için iOS 7 1 x görüntü ayarlama._
-2. _İOS 7 için 1 x görüntü ayarlama varlık kataloglar kullanılırken desteklenmiyor._
-3. _iOS 7 ve 8, iOS 5 ve 6 aynı görüntü boyutları kullanın._
-4. _Aynı görüntüler ve boyutları Spotlight simgesi olarak kullanır._
-5. _Aynı boyut simgeleri iPhone kullanır._
-6. _Yalnızca varlık Kataloğu görüntü kümesi ile desteklenir._
+    ||3x|
+    |---|---|
+    |Uygulama simgesi|180x180|
+    |Spotlight|120x120|
+    |Ayarlar|87x87|
 
-Apple'nın simgeleri hakkında daha fazla bilgi için lütfen bkz [simgesi ve görüntü boyutları](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1) belgeleri.
+- **iPhone: iOS 7 ve 8**
+
+    ||1x|2x|
+    |---|---|---|
+    |Uygulama simgesi|60x60<sup>1</sup>|120x120|
+    |Spotlight|40x40<sup>2</sup>|80x80|
+    |Ayarlar|-|-|
+
+- **iPhone: iOS 5 ve 6**
+
+    ||1x|2x|
+    |---|---|---|
+    |Uygulama simgesi|57x57|114x114|
+    |Spotlight|29x29|58x58|
+    |Ayarlar|29x29<sup>3, 4</sup>|58x58<sup>3, 4</sup>|
+
+### <a name="ipad-icon-sizes"></a>iPad simgesi boyutları
+
+- **iPad: iOS 9 & 10**
+
+    ||2x (iPad Pro)|
+    |---|---|
+    |Uygulama simgesi|167x167<sup>6</sup>|
+    |Spotlight|120x120<sup>6</sup>|
+    |Ayarlar|58x58<sup>5</sup>|
+
+- **iPad: iOS 7 & 8**
+
+    ||1x|2x|
+    |---|---|---|
+    |Uygulama simgesi|76x76|152x152|
+    |Spotlight|40x40|80x80|
+    |Ayarlar|-|-|
+
+- **iPad: iOS 5 & 6**
+
+    ||1x|2x|
+    |---|---|---|
+    |Uygulama simgesi|72x72|144x144|
+    |Spotlight|50x50|100x100|
+    |Ayarlar|29x29<sup>3, 5</sup>|58x58<sup>3, 5</sup>|
+
+ 1. Mac ve Xcode için her iki Visual Studio artık desteklemek için iOS 7 1 x görüntü ayarlama.
+ 2. İOS 7 için 1 x görüntü ayarlama varlık kataloglar kullanılırken desteklenmiyor.
+ 3. iOS 7 ve 8, iOS 5 ve 6 aynı görüntü boyutları kullanın.
+ 4. Aynı görüntüler ve boyutları Spotlight simgesi olarak kullanır.
+ 5. Aynı boyut simgeleri iPhone kullanır.
+ 6. Yalnızca varlık Kataloğu görüntü kümesi ile desteklenir.
+ 
+ Apple'nın simgeleri hakkında daha fazla bilgi için lütfen bkz [simgesi ve görüntü boyutları](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1) belgeleri.
 
 <a name="managing" />
 

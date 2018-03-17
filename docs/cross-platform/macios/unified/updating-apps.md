@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b1b6338494b9be98e677cf9d338410eae759feb8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a09ba93fe7c3f5ade6b5cafe44fd7ee2b0c33487
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Birleşik API için var olan uygulamaları güncelleştirme
 
@@ -49,7 +49,7 @@ Var olan Xamarin.Mac uygulamaları birleşik Mac için Visual Studio için yerle
 
 Mevcut bir Xamarin.Forms çözümünü Unified API kullanmak için bir iOS projesi güncelleştirmek için bu yönergeleri izleyin. Birleşik API desteği yalnızca Xamarin.Forms 1.3 kullanılabilir ve daha sonra böylece [yönergeleri](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md) de Xamarin.Forms uygulamanızı 1.3 sürüme güncelleştirmek açıklanmaktadır. Bunlar [ipuçları](~/cross-platform/macios/unified/updating-tips.md) özel oluşturucu veya bağımlılık Hizmetleri tüm yerel iOS kodunda güncelleştirme yardımcı olabilir.
 
-## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[Platformlar arası uygulamalar içindeki yerel türler ile çalışma](~/cross-platform/macios/nativetypes.md)
+## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[Platformlar Arası Uygulamalarda Yerel Türlerle Çalışma](~/cross-platform/macios/nativetypes.md)
 
 Bu makalede, Android veya Windows Phone işletim sistemleri gibi iOS olmayan cihazlara sahip code paylaşıldığı bir platformlar arası uygulamasında yeni iOS (nint, nuint, nfloat) birleşik API yerel türler kullanma yer almaktadır. Yerel türler ne zaman kullanılmalı içine bilgiler sağlar ve yeni türü platformlar arası koduyla burada kullanılmalıdır durumlarda birkaç olası çözümleri sağlar.
 
@@ -68,4 +68,4 @@ Bu yönergeleri izleyin [varolan bağlama Unified API desteklemek için projesin
 - [Xamarin.Forms uygulamaları güncelleştirme](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 - [Güncelleştirme bağlamaları](~/cross-platform/macios/unified/update-binding.md)
 - [İpuçları güncelleştiriliyor](~/cross-platform/macios/unified/updating-tips.md)
-- [Klasik vs Unified API farklılıkları](http://developer.xamarin.comhttps://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Klasik vs Unified API farklılıkları](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

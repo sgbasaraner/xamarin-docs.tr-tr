@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6e0eebef2404ce3f117fe897d456f3ef78a8f585
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="ios-extensions"></a>iOS uzantıları
 
@@ -44,63 +44,14 @@ Bu makalede aşağıdaki konuları içerir:
 
 ## <a name="extension-points"></a>Uzantı noktaları
 
-İOS 8 (ve büyük) oluşturulan uzantısı çeşitli türleri şunlardır:
-
-<table>
-<colgroup>
-<col />
-<col />
-<col />
-</colgroup>
-
-<thead>
-<tr>
-    <th >Tür</th>
-    <th >Açıklama</th>
-    <th >Uzantı noktası</th>
-    <th >Ana bilgisayar uygulaması</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-    <td >Eylem</td>
-    <td >Özel düzenleyici veya belirli bir medya türünün Görüntüleyicisi</td>
-    <td ><code>com.apple.ui-services</code></td>
-    <td >tüm</td>
-</tr>
-<tr>
-    <td >Belge sağlayıcısı</td>
-    <td >Bir uzak belge deposu kullanmak uygulamanın verir</td>
-    <td ><code>com.apple.fileprovider-ui</code></td>
-    <td >Kullanarak uygulamaları bir <a href="https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/">UIDocumentPickerViewController</a></td>
-</tr>
-<tr>
-    <td >Klavye</td>
-    <td >Alternatif klavyeler</td>
-    <td ><code>com.apple.keyboard-service</code></td>
-    <td >tüm</td>
-</tr>
-<tr>
-    <td >Fotoğraf düzenleme</td>
-    <td >Fotoğraf düzenleme ve düzenleme</td>
-    <td ><code>com.apple.photo-editing</code></td>
-    <td >Photos.App Düzenleyicisi</td>
-</tr>
-<tr>
-    <td >Paylaş</td>
-    <td >Veri Hizmetleri, vb. Mesajlaşma sosyal ağlarla paylaşır.</td>
-    <td ><code>com.apple.share-services</code></td>
-    <td >tüm</td>
-</tr>
-<tr>
-    <td >Bugün</td>
-    <td >Bugün ekranı ya da bildirim merkezi görünen "Pencere öğeleri"</td>
-    <td ><code>com.apple.widget-extensions</code></td>
-    <td >Bugün ve bildirim Merkezi</td>
-</tr>
-</tbody>
-</table>
+|Tür|Açıklama|Uzantı noktası|Ana bilgisayar uygulaması|
+|--- |--- |--- |--- |
+|Eylem|Özel düzenleyici veya belirli bir medya türünün Görüntüleyicisi|`com.apple.ui-services`|tüm|
+|Belge sağlayıcısı|Bir uzak belge deposu kullanmak uygulamanın verir|`com.apple.fileprovider-ui`|Kullanarak uygulamaları bir [UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|Klavye|Alternatif klavyeler|`com.apple.keyboard-service`|tüm|
+|Fotoğraf düzenleme|Fotoğraf düzenleme ve düzenleme|`com.apple.photo-editing`|Photos.App Düzenleyicisi|
+|Paylaş|Veri Hizmetleri, vb. Mesajlaşma sosyal ağlarla paylaşır.|`com.apple.share-services`|tüm|
+|Bugün|Bugün ekranı ya da bildirim merkezi görünen "Pencere öğeleri"|`com.apple.widget-extensions`|Bugün ve bildirim Merkezi|
 
 [Ek uzantı noktaları](~/ios/platform/introduction-to-ios10/index.md#app-extensions) iOS 10 eklendi.
 
