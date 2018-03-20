@@ -7,12 +7,12 @@ ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: b2da136ddfa6aab4121ba21d0e6f83b2390ba10b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 67b150650c21c781b7081de4e1f3b095c0ea560f
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin.Android alıcılar yayını
 
@@ -23,14 +23,14 @@ _Bu bölümde bir yayın alıcı kullanmayı açıklar._
 
 A _yayın alıcı_ bir uygulamanın iletileri yanıtlayın izin veren bir Android bileşenidir (bir Android [ `Intent` ](https://developer.xamarin.com/api/type/Android.Content.Intent/)) Android işletim sistemi veya bir uygulama tarafından yayınlanan. Yayınları izleyin bir _yayımlama-abone olma_ modeli &ndash; yayımlanan ve olay ilginizi çekiyor mu bu bileşenler tarafından alınan yayın olaya neden olur. 
 
-Android yayınları iki kategorisi tanımlar:
+Android yayınları iki tür tanımlar:
 
-* **Normal yayın** &ndash; belirsiz bir sırayla tüm kayıtlı yayın alıcılar için normal bir yayın yönlendirilir. Her alıcı hedefi tanımlanmamış bir sırayı alır. 
-* **Yayını sıralı** &ndash; sıralı bir yayın birer birer kayıtlı alıcılar için teslim edilir. Amaç alındığında, yayın sonlandırabilir veya yayın alıcı hedefi değiştirebilirsiniz.
+* **Açık yayın** &ndash; belirli bir uygulama bu tür yayınlar hedefleyin. Açık bir yayın en yaygın kullanımı bir etkinlik başlatmaktır. Bir telefon numarasını aramak bir uygulamanın ihtiyacı olduğunda açık bir yayın örneği; Android ve telefon numarası boyunca geçişi çevrilecek telefon uygulaması hedefleyen amacına gönderir. Android, ardından telefon uygulama amacı yönlendirir.
+* **Örtük broadcase** &ndash; bu yayınları cihazdaki tüm uygulamalar için gönderilir. Örtük bir yayın örneğidir `ACTION_POWER_CONNECTED` hedefi. Bu amacı, Android cihazın pil şarj olduğunu algılar her zaman yayımlanır. Android, bu amacı, bu olay için kayıtlı tüm uygulamalar için yönlendirir.
 
-Öğesinin bir alt yayın alıcıdır `BroadcastReceiver` sınıfı ve onu geçersiz kılması gerekir [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) yöntemi. Android yürütülecek `OnReceive` ana iş parçacığında, bu nedenle bu yöntem tasarlanmış hızlı bir şekilde çalıştırmak için. İş parçacığı içinde olduğunda dikkat'in alınması gereken `OnReceive` yöntemi tamamlandığında Android işlemi sonlandırabilir olduğundan. Bir yayın alıcı uzun süre çalışan iş gerçekleştirmelisiniz sonra zamanlamak için önerilen bir _iş_ kullanarak `JobScheduler` veya _Firebase iş dağıtıcı_. Bir iş ile çalışma zamanlaması ayrı bir Kılavuzu'nda incelenecektir.
+Öğesinin bir alt yayın alıcıdır `BroadcastReceiver` türü ve onu geçersiz kılması gerekir [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) yöntemi. Android yürütülecek `OnReceive` ana iş parçacığında, bu nedenle bu yöntem tasarlanmış hızlı bir şekilde çalıştırmak için. İş parçacığı içinde olduğunda dikkat'in alınması gereken `OnReceive` yöntemi tamamlandığında Android işlemi sonlandırabilir olduğundan. Bir yayın alıcı uzun süre çalışan iş gerçekleştirmelisiniz sonra zamanlamak için önerilen bir _iş_ kullanarak `JobScheduler` veya _Firebase iş dağıtıcı_. Bir iş ile çalışma zamanlaması ayrı bir Kılavuzu'nda incelenecektir.
 
-Bir _hedefi filtre_ Android düzgün iletileri yönlendirmek için bir yayın alıcı kaydetmek için kullanılır. Hedefi süzgeci çalışma zamanında belirlenebilir (Bu bazen olarak adlandırılır bir _bağlamı kayıtlı alıcı_ veya as _dinamik kayıt_) veya Android bildirimi (bir statikolaraktanımlanabilir_bildirimi kayıtlı alıcı_). Xamarin.Android sağlayan bir C# özniteliği, `IntentFilterAttribute`, statik olarak kaydedin (Bu açıklanır bu kılavuzun ilerleyen bölümlerinde daha ayrıntılı) hedefi filtre. 
+Bir _hedefi filtre_ Android düzgün iletileri yönlendirmek için bir yayın alıcı kaydetmek için kullanılır. Hedefi süzgeci çalışma zamanında belirlenebilir (Bu bazen olarak adlandırılır bir _bağlamı kayıtlı alıcı_ veya as _dinamik kayıt_) veya Android bildirimi (bir statikolaraktanımlanabilir_bildirimi kayıtlı alıcı_). Xamarin.Android sağlayan bir C# özniteliği, `IntentFilterAttribute`, statik olarak kaydedin (Bu açıklanır bu kılavuzun ilerleyen bölümlerinde daha ayrıntılı) hedefi filtre. Android 8. 0'dan başlayarak, onu örtük bir yayın için statik olarak kaydetmek bir uygulama için olası değil.
 
 Bir uygulama çalışırken bildirimi kayıtlı bir alıcı yanıt verebilir sırada bağlam kayıtlı bir alıcı yalnızca yayınlara yanıt bildirimi kayıtlı alıcı bağlam kayıtlı alıcı arasındaki birincil fark olduğu Uygulama çalışmıyor olsa bile yayınlar.  
 
@@ -68,7 +68,7 @@ Xamarin.Android sınıfı derlediğinde, AndroidManifest gerekli meta alıcı ka
 
 `OnReceive` Yöntemi bir başvuru alır `Intent` yayın alıcıya gönderilen. Bu yapar gönderenin yayın alıcıya değerleri geçirmek için hedefinin mümkün olur.
 
-### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>Bir yayın alıcı hedefi bir filtreyle statik olarak kaydetme
+### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>Statik olarak yayınlanan bir alıcı bir hedefi Filtresi ile kaydetme
 
 Zaman bir `BroadcastReceiver` ile donatılmış [ `IntentFilterAttribute` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/), Xamarin.Android gerekli ekleyecek `<intent-filter>` Android öğesine derleme zamanında bildirim. Aşağıdaki kod parçacığında, bir aygıt (kullanıcı tarafından uygun Android izinleri verilmiş varsa) önyükleme tamamlandığında, çalışacak bir yayın alıcı örneğidir:
 
@@ -98,9 +98,11 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
+Android 8.0 (API düzeyi 26) hedef uygulamaları ya da daha yüksek statik olarak örtük bir yayın için kayıt. Uygulamalar, açık bir yayın için hala statik olarak kaydedebilir. Bu kısıtlamanın dışında örtük yayınların küçük listesi verilmiştir. Bu özel durumlar açıklanmaktadır [örtük yayın özel durumları](https://developer.android.com/guide/components/broadcast-exceptions.html) Android belgelerinde Kılavuzu. Örtük yayınları ilginizi çekiyor mu uygulamaları kullanarak bu nedenle dinamik olarak gerçekleştirmelisiniz `RegisterReceiver` yöntemi. Bu sonraki açıklanmıştır.  
+
 ### <a name="context-registering-a-broadcast-receiver"></a>Bir yayın alıcı bağlam kaydetme 
 
-Bir alıcı bağlam kaydı çağırarak gerçekleştirilir `RegisterReceiver` yöntemi ve yayın alıcı olmalıdır çağrısıyla kaydı `UnregisterReceiver` yöntemi. Kaynakları sızmasını önlemek için artık bağlamına ilgili olduğunda alıcı kaydı önemlidir. Örneğin, bir hizmet güncelleştirmeleri kullanıcıya gösterilecek kullanılabilir bir etkinlik bildirmek için amacına yayın. Etkinlik başladığında, bu amaçlar için kaydetmeniz. Ne zaman etkinlik arka plan içine taşınır ve güncelleştirmeleri görüntülemek için kullanıcı Arabirimi artık görünür olduğundan kullanıcı artık görünür, onu alıcı kaydı. Aşağıdaki kod parçacığını kayıt ve aktivite bağlamında yayın bir alıcı kaydı örneğidir:
+Bağlam (dinamik kayıt olarak da bilinir) kaydı bir alıcı çağırarak gerçekleştirilir `RegisterReceiver` yöntemi ve yayın alıcı olmalıdır çağrısıyla kaydı `UnregisterReceiver` yöntemi. Kaynakları sızmasını önlemek için artık (etkinlik veya hizmet) bağlamının ilgili olduğunda alıcı kaydı önemlidir. Örneğin, bir hizmet güncelleştirmeleri kullanıcıya gösterilecek kullanılabilir bir etkinlik bildirmek için amacına yayın. Etkinlik başladığında, bu amaçlar için kaydetmeniz. Ne zaman etkinlik arka plan içine taşınır ve güncelleştirmeleri görüntülemek için kullanıcı Arabirimi artık görünür olduğundan kullanıcı artık görünür, onu alıcı kaydı. Aşağıdaki kod parçacığını kayıt ve aktivite bağlamında yayın bir alıcı kaydı örneğidir:
 
 ```csharp
 [Activity(Label = "MainActivity", MainLauncher = true, Icon = "@mipmap/icon")]
@@ -136,19 +138,10 @@ Etkinlik ön alana geldiğinde önceki örnekte kullanarak özel bir amaç için
 
 ## <a name="publishing-a-broadcast"></a>Bir yayın yayımlama
 
-Bir yayın kapsülleyerek yayımlanan bir _eylem_ amacına ve iki API'leri birine gönderme: 
+Bir yayın hedefi nesne oluşturma ve dağıtma ile cihazda yüklü olan tüm uygulamalara yayımlanabilir `SendBroadcast` veya `SendOrderedBroadcast` yöntemi.  
 
-1. **[`LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))** &ndash; İle yayımlanan hedefleri `LocalBroadcastManager` uygulama tarafından; alınan yalnızca başka bir uygulamaya yönlendirilmez. Bu geçerli uygulamadan hedefleri tutarak fazladan bir güvenlik düzeyi sağlar ve her şeyi işlemdeki olmadığından işlemler arası çağrıları yapma ile ilişkili olmamasıdır tercih edilen, olmalıdır. Bu kod parçacığını bir etkinlik bir hedefi kullanarak nasıl gönderme gösterir `LocalBroadcastManager`:
-
-   ```csharp
-   Intent message = new Intent("com.xamarin.example.TEST");
-   // If desired, pass some values to the broadcast receiver.
-   intent.PutExtra("key", "value");
-   Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
-   ```
-
-2. **[`Context.SendBroadcast`](https://developer.xamarin.com/api/member/Android.Content.Context.SendBroadcast/p/Android.Content.Intent/) yöntemleri** &ndash; çeşitli uygulamalarını bu yöntem vardır.
-   Bu yöntemler tüm sistemin yönelik amacı yayın. Bu, büyük bir bölümünü esneklik sağlar ancak uygulama almak için diğer uygulamaları kaydedebilir anlamına gelir. Bu bir güvenlik riski oluşturabilir. Uygulama hedefi yetkisiz erişim sağlamak için ek güvenlik uygulamak gerekebilir. Bu kod parçacığını birini kullanarak amacına gönderilmesi nasıl bir örnektir `SendBroadcast` yöntemleri:
+1. **Context.SendBroadcast yöntemleri** &ndash; çeşitli uygulamalarını bu yöntem vardır.
+   Bu yöntemler tüm sistemin yönelik amacı yayın. Yayın alıcıları thatwill belirsiz bir sırayla hedefi alırsınız. Bu, büyük bir bölümünü esneklik sağlar ancak kaydetmek ve amacı almak diğer uygulamalar için mümkün olduğu anlamına gelir. Bu bir güvenlik riski oluşturabilir. Uygulamalar, yetkisiz erişimi önlemek için ek güvenlik uygulamak gerekebilir. Olası bir çözüm kullanmaktır `LocalBroadcastManager` hangi yalnızca gönderme uygulamasının özel alanı içinde ileti. Bu kod parçacığını birini kullanarak amacına gönderilmesi nasıl bir örnektir `SendBroadcast` yöntemleri:
 
    ```csharp
    Intent message = new Intent("com.xamarin.example.TEST");
@@ -156,20 +149,30 @@ Bir yayın kapsülleyerek yayımlanan bir _eylem_ amacına ve iki API'leri birin
    intent.PutExtra("key", "value");
    SendBroadcast(intent);
    ```
-        
-> [!NOTE]
-> LocalBroadcastManager aracılığıyla kullanılabilir [Xamarin destek kitaplığı v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet paketi. 
 
-Bu kod parçacığında kullanarak bir yayın gönderme başka bir örnektir `Intent.SetAction` eylemi belirlemek üzere yöntem:
+    Bu kod parçacığında kullanarak bir yayın gönderme başka bir örnektir `Intent.SetAction` eylemi belirlemek üzere yöntem:
+    
+    ```csharp 
+    Intent intent = new Intent();
+    intent.SetAction("com.xamarin.example.TEST");
+    intent.PutExtra("key", "value");
+    SendBroadcast(intent);
+    ```
+   
+2. **Context.SendOrderedBroadcast** &ndash; yöntem budur çok benzer `Context.SendBroadcast`, hedefi recievers kaydedilen düzende alıcılar anda yayımlanmış tek olacağını olan arasındaki fark.
+   
+### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
-```csharp 
-Intent intent = new Intent();
-intent.SetAction("com.xamarin.example.TEST");
+[Xamarin destek kitaplığı v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) adlı bir yardımcı sınıfı sağlar [ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). `LocalBroadcastManager` Gönderip yayınları cihazdaki diğer uygulamalardan istemediğiniz uygulamalar için tasarlanmıştır. `LocalBroadcastManager` Yalnızca uygulama bağlamında iletiler yayımlar. Cihazdaki diğer uygulamalar ile yayımlanan mesajlarını alamıyor `LocalBroadcastManager`. 
+
+Bu kod parçacığını bir hedefi kullanarak gönderileceği gösterilmektedir `LocalBroadcastManager`:
+
+```csharp
+Intent message = new Intent("com.xamarin.example.TEST");
+// If desired, pass some values to the broadcast receiver.
 intent.PutExtra("key", "value");
-SendBroadcast(intent);
-```
-
-
+Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
+``` 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

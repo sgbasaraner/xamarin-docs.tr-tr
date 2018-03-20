@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase iş dağıtıcı
 
@@ -27,7 +27,7 @@ Bir Android uygulaması yanıt vereceğini kullanıcıya tutmak için iyi yollar
 Android zaten ancak bunlar hiçbirine kapsamlı bir çözüm arka planda, işi gerçekleştirerek ile yardımcı olmak için çeşitli API'ler sağlar:
 
 * **[Hedefi Hizmetleri](~/android/app-fundamentals/services/creating-a-service/intent-services.md)**  &ndash; çalışması zamanlamak için bir yol sağlar ancak amacı Hizmetleri iş gerçekleştirmek için harika.
-* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager)**  &ndash; bu API'ler yalnızca zamanlanması, ancak gerçekte çalışmayı gerçekleştirmek üzere bir yolunu sağlar çalışmaya izin verir. Ayrıca, AlarmManager yalnızca temel saat kısıtlamaları, belirli bir zamanda veya belirli bir süre geçtikten sonra bir alarm Yükselt anlamına gelir izin verir. 
+* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash; bu API'ler yalnızca zamanlanması, ancak gerçekte çalışmayı gerçekleştirmek üzere bir yolunu sağlar çalışmaya izin verir. Ayrıca, AlarmManager yalnızca temel saat kısıtlamaları, belirli bir zamanda veya belirli bir süre geçtikten sonra bir alarm Yükselt anlamına gelir izin verir. 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash; JobSchedule olan işlerini zamanlamak için işletim sistemiyle çalışan harika bir API. Ancak, bunu yalnızca API düzeyi 21 hedef bu Android uygulamaları için veya yüksek kullanılabilir. 
 * **[Yayın alıcıları](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; bir Android uygulaması yanıt veya sistem geniş olayları hedefleri olarak işlerini yapmak için yayın alıcıları kurulumu. Ancak, yayın alıcıları işin ne zaman çalıştırılması gerektiğini üzerinden herhangi bir denetimi sağlamıyorsa. Ayrıca Android işletim sistemindeki değişiklikler kısıtlar yayın alıcıları çalışırken ya da yanıt verebilir iş tür. 
 * **Google bulut ileti Ağ Yöneticisi'ni** &ndash; , bu, tartışmaya açık bir şekilde, uzun bir süredir akıllıca zamanlama arka plan en iyi şekilde çalışır. Ancak, GCMNetworkManager beri kullanım dışıdır. 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 0f018aa666f08792a1693a79e22da150f82712f6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ebbb4b527b27b87bb6357723978e730304658720
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="running-android-services-in-remote-processes"></a>Uzak işlemlerde çalışan Android Hizmetleri
 
@@ -415,7 +415,7 @@ Android izinleri olan bir hizmeti güvenli hale getirmek için iki genel yolu va
 
 İstemci izni açıkça istediğinde sırasında özel bir izni kullanmak için hizmet tarafından bildirildi.
 
-APK, hizmetinde bir izin oluşturmak için bir `permission` öğesi eklenir `manifest` öğesinde**AndroidManifest.xml**. Bu izni olmalıdır `name`, `protectionLevel`, ve `label` öznitelikleri kümesi. `name` İzni benzersiz olarak tanımlayan bir dize özniteliği ayarlanmalıdır. Adı görüntülenir **uygulama bilgisi** görünümünü **Android ayarları** (sonraki bölümde gösterildiği gibi).
+APK, hizmetinde bir izin oluşturmak için bir `permission` öğesi eklenir `manifest` öğesinde **AndroidManifest.xml**. Bu izni olmalıdır `name`, `protectionLevel`, ve `label` öznitelikleri kümesi. `name` İzni benzersiz olarak tanımlayan bir dize özniteliği ayarlanmalıdır. Adı görüntülenir **uygulama bilgisi** görünümünü **Android ayarları** (sonraki bölümde gösterildiği gibi).
 
 `protectionLevel` Özniteliği, yukarıda açıklanan dört dize değerlerden birine ayarlanmalıdır.  `label` Ve `description` dize kaynaklara başvurması gerekir ve kullanıcı için bir kolay ad ve açıklama sağlamak için kullanılır.
 

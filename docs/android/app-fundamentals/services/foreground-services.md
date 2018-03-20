@@ -6,24 +6,44 @@ ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: 96e8d1a3658a515b6b1d37cf0fdd93157954c01d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: d1267bc4a530deb6dfb6eb2e30bee2facabd8fed
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="foreground-services"></a>Ön plan Hizmetleri
 
-Bazı Hizmetleri kullanıcıların etkin olarak farkında olduklarından bazı görevleri gerçekleştiren, bu hizmetler olarak da bilinir _ön plan Hizmetleri_. Ön plan hizmet kullanıcı ile yönergeleri yürüten veya taramasını sağlayan bir uygulama örneğidir. Uygulama arka planda olsa bile, yine hizmet düzgün çalışması için yeterli kaynaklara sahip olduğunu ve kullanıcının uygulamaya erişmek için hızlı ve kullanışlı bir yol önemlidir. Bir Android uygulaması için bu bir ön plan hizmeti "Normal" hizmet daha yüksek önceliği almanız gerekir ve bir ön plan hizmet sağlamalısınız anlamına gelir bir `Notification` çalıştığı sürece, Android görüntülenir.
+Bağımlı bir hizmet veya başlatılan hizmet özel türde bir ön plan hizmetidir. Bazen Hizmetleri kullanıcılar etkin şekilde farkında olması gereken görevleri gerçekleştirir, bu hizmetler olarak da bilinir _ön plan Hizmetleri_. Ön plan hizmet kullanıcı ile yönergeleri yürüten veya taramasını sağlayan bir uygulama örneğidir. Uygulama arka planda olsa bile, yine hizmet düzgün çalışması için yeterli kaynaklara sahip olduğunu ve kullanıcının uygulamaya erişmek için hızlı ve kullanışlı bir yol önemlidir. Bir Android uygulaması için bu bir ön plan hizmeti "Normal" hizmet daha yüksek önceliği almanız gerekir ve bir ön plan hizmet sağlamalısınız anlamına gelir bir `Notification` çalıştığı sürece, Android görüntülenir.
  
-Bir ön plan hizmet oluşturulur ve diğer hizmet olarak başlatıldı. Hizmet başlatma sırasında kendisi ile Android ön plan hizmet olarak kaydeder.
- 
-Bu kılavuz, bir ön plan hizmeti kaydetmek için ve bu işlem sona erdiğinde hizmetini durdurmak için alınması gereken ek adımlar ele alınacaktır.
+Ön plan hizmetini başlatmak için uygulama hizmetini başlatmak için Android bildiren amacına gönderme gerekir. Ardından hizmetin kendisini Android ön plan hizmetiyle olarak kaydetmeniz gerekir. Android 8.0 (veya sonrası) çalıştıran uygulamaları kullanması gereken `Context.StartForegroundService` Android daha eski bir sürümü ile cihazlarda çalıştırılan uygulamalar kullanırken hizmetini başlatmak için yöntemi `Context.StartService`
+
+Bu C# genişletme yöntemi, bir ön plan hizmetinin nasıl başlatılacağı örneğidir. Android 8.0 ve üzeri kullanacağı `StartForegroundService` yöntemi, aksi takdirde eski `StartService` yöntemi kullanılır.  
+
+```csharp
+public static void StartForegroundServiceComapt<T>(this Context context, Bundle args = null) where T : Service
+{
+    var intent = new Intent(context, typeof(T));
+    if (args != null) 
+    {
+        intent.PutExtras(args);
+    }
+
+    if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+    {
+        context.StartForegroundService(intent);
+    }
+    else
+    {
+        context.StartService(intent);
+    }
+}
+```
 
 ## <a name="registering-as-a-foreground-service"></a>Ön plan hizmet olarak kaydetme
 
-Bağımlı bir hizmet veya başlatılan hizmet özel türde bir ön plan hizmetidir. Hizmeti başlatıldıktan sonra çağırır [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/) kendisini ön plan hizmet olarak Android ile kaydetmek için yöntem.   
+Bir ön plan Hizmet başladıktan sonra onu kendisi ile Android çağırarak kaydetmeniz gerekir [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/). Hizmet ile başladıysanız `Service.StartForegroundService` yöntemi ancak Android hizmetini durdurun ve uygulamayı vermeyen olarak bayrak kendisini kaydetmez.
 
 `StartForeground` her ikisi de zorunlu iki parametreleri alır:
  
@@ -78,8 +98,7 @@ Görüntülenen durum çubuğu uyarısı geçirerek de kaldırılabilir `true` y
 StopForeground(true);
 ```
 
-Hizmet çağrısıyla işlemi durduruldu durumunda `StopSelf` veya `StopService`, durum çubuğu notificaiton benzer şekilde kaldırılacak sonra.
-
+Hizmet çağrısıyla işlemi durduruldu durumunda `StopSelf` veya `StopService`, durum çubuğu uyarısı kaldırılacak.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

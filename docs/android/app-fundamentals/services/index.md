@@ -7,12 +7,12 @@ ms.assetid: BA371A59-6F7A-F62A-02FC-28253504ACC9
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/16/2018
-ms.openlocfilehash: 5dc1fb0fb02014e123b3a161394155bde725f288
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 08392872037783e0caaef4f2b19127adbe95151b
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="creating-android-services"></a>Android hizmetleri oluşturma
 
@@ -43,7 +43,7 @@ Arka plan iş iki geniş sınıflarda ayrılabilir:
 
 Dört farklı tür Android hizmetler şunlardır:
 
-* **Hizmet bağlı** &ndash; A _bağlı hizmet_ kendisiyle ilişkili bazı başka bir bileşeninin (genellikle bir etkinliği) sahip bir hizmettir. Bağımlı bir hizmet ilişkili bileşeni ve birbiriyle etkileşim için hizmet veren bir arabirim sağlar. Android hizmetine bağlı hiçbir istemci sonra hizmet kapanır.
+* **Hizmet bağlı** &ndash; A _bağlı hizmet_ kendisiyle ilişkili bazı başka bir bileşeninin (genellikle bir etkinliği) sahip bir hizmettir. Bağımlı bir hizmet ilişkili bileşeni ve birbiriyle etkileşim için hizmet veren bir arabirim sağlar. Android hizmetine bağlı hiçbir istemci sonra hizmet kapanır. 
 
 * **`IntentService`** &ndash; Bir  _`IntentService`_  özelleştirilmiş sınıfıdır `Service` hizmet oluşturma ve kullanım basitleştirir sınıfı. Bir `IntentService` ayrı otonom çağrıları işlemek için tasarlanmıştır. Aynı anda birden fazla çağrı işleyebilir, bir hizmet farklı bir `IntentService` gibi daha çok bir _iş kuyruğu İşlemci_ &ndash; iş sıraya ve bir `IntentService` her işlem, aynı anda tek iş parçacığı üzerinde işler. Genellikle, bir`IntentService` bir etkinlik veya bir parçasını bağlı değil. 
 
@@ -57,4 +57,26 @@ Hangi tür hizmetini kullanacak biçimde çok uygulama gereksinimlerine bağlıd
 
 Kendi işleminde aynı cihaza bir hizmeti çalıştırmaya mümkündür, bu bazen olarak adlandırılır bir _uzak hizmet_ veya farklı bir _işlem dışı hizmeti_. Bu oluşturmak için daha fazla çaba gerektirir ancak uygulamanın işlevselliğini başka uygulamalarla paylaşma gerektiği zaman için kullanışlı olabilir ve bazı durumlarda, bir uygulamanın kullanıcı deneyimini geliştirmek olabilir. 
 
-Bu hizmetlerin her birini kendi özelliklerine ve behaviours vardır ve bu nedenle, kendi kılavuzlarındaki daha ayrıntılı ele alınacaktır.
+### <a name="background-execution-limits-in-android-80"></a>Android 8.0 arka plan yürütme sınırları
+
+Android 8.0 (API düzeyi 26), artık Android uygulama başlatma serbestçe arka planda çalıştırma olanağı vardır. Ön olduğunda, bir uygulamayı başlatın ve Hizmetleri kısıtlama olmadan çalıştırın. Bir uygulamanın arka plan içine geçtiğinde, Android uygulama başlatmak ve hizmetleri kullanmak için belirli bir miktar verin. Bu süre dolduktan sonra uygulama artık hizmetlerin başlayabilir ve başlatılan hizmetlerin sonlandırılacak. AT bu noktadan herhangi bir iş gerçekleştirmek uygulama için olası değil. Android uygulama ön planda aşağıdaki koşullardan biri karşılanmalıdır olması için göz önünde bulundurur:
+
+* (Başlatıldı veya duraklatıldı) görünür bir etkinlik yok.
+* Uygulama bir ön plan hizmeti başlatıldı.
+* Başka bir uygulama ön planda ve arka planda Aksi durumda olacak bir uygulama bileşenlerini kullanıyor. Bu ön planda olduğundan, uygulama A bir hizmeti tarafından sağlanan bağlıysa uygulama B. uygulama B de olur örneğidir ön planda kabul ve Android tarafından arka planda olan sonlandırıldı değil.
+
+Burada, uygulama arka planda olsa bile Android uygulaması Uyandırma ve bu kısıtlamaları için bir kaç dakika, bazı işlemler gerçekleştirmek uygulama izin verme rahat olun bazı durumlar vardır:
+* Yüksek bir öncelik Firebase bulut ileti uygulama tarafından alınır.
+* Uygulama gibi bir yayın alır 
+* Uygulama alan bir yürüten bir `PendingIntent` yanıt olarak bir bildirim.
+
+Varolan Xamarin.Android uygulamaları Android 8. 0'doğabilecek sorunları önlemek için arka plan iş nasıl gerçekleştirdikleri değiştirmeniz gerekebilir. Android bir hizmet için bazı pratik alterantives şunlardır:
+
+* **Android iş Zamanlayıcı'yı kullanarak arka planda çalıştırmak için iş zamanlama veya [Firebase iş dağıtıcı](~/android/platform/firebase-job-dispatcher.md)**  &ndash; bu iki kitaplıkları, içinarkaplanişkurabilmeleriuygulamalariçinbirçerçevesağlar._işleri_, ayrı bir iş birimine. İşin ne zaman uygulamaları hakkında bazı ölçütlere birlikte işletim sistemini işlemiyle sonra zamanlayabilirsiniz.
+* **Ön planda hizmeti başlatmak** &ndash; ön plan hizmet zaman uygulama bazı görevleri arka planda gerçekleştirmelisiniz için yararlıdır ve kullanıcı düzenli olarak bu görev ile etkileşim kurmak için gerekli. Böylece kullanıcı uygulamayı bir arka plan görevi çalışıyorsa ve ayrıca izlemek veya görev ile etkileşim kurmak için bir yol sağlar farkındadır ön plan hizmet kalıcı bir bildirim görüntüler. Buna örnek olarak, kullanıcıya bir podcast tekrar oynatma veya daha sonra keyif böylece podcast bölüm belki de indirme bir pod yayımlama uygulaması olacaktır. 
+* **Yüksek bir öncelik Firebase bulut iletisi (FCM) kullanmak** &ndash; bir uygulama için yüksek bir öncelik FCM zaman Android alır, kısa bir süre için arka planda hizmetlerini çalıştırmak bu uygulama izin verir. Bu uygulama arka planda yoklar bir arka plan hizmeti sahip olmak için iyi bir seçenek olacaktır. 
+* **Uygulama ön alana zaman gelen için iş erteleneceği** &ndash; önceki çözümlerin hiçbiri uygulanabilir sonra uygulama duraklatıp uygulama ön plana geldiğinde iş için kendi yol geliştirmek gerekir.
+
+## <a name="related-links"></a>İlgili bağlantılar
+
+* [Android Oreo arka plan yürütme sınırları](https://www.youtube.com/watch?v=Pumf_4yjTMc)

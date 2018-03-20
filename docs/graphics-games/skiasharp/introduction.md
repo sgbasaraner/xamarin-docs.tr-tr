@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 50f99c48d0f53bd6a2dfaf42284137ce1e424b30
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 747c158460b23b91e4c2986d212802528cdd3979
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="an-introduction-to-skiasharp"></a>SkiaSharp giriş
 
@@ -20,7 +20,7 @@ _Bu SkiaSharp kavramları kısa bir giriş sağlar_
 
 SkiaSharp zengin ve güçlü 2B grafik 2B arabellekleri işlemek için kullanılan bir API sağlar.  Özel kullanıcı arabirimi öğeleri ve uygulamanıza birleştirilebilir 2B grafik uygulamak için bunları kullanabilirsiniz.  SkiaSharp olan bir .NET bağlama [Skia](https://skia.org) kitaplığı ve özellikleri ve bu kitaplığa gücünü devralır.
 
-Kitaplık şu anda çapraz platform kullanılabilir [NuGet paketi](https://www.nuget.org/packages/SkiaSharp), projeniz için NuGet başvuru ekleyerek dağıtabilirsiniz.
+Kitaplık şu anda çapraz platform kullanılabilir [NuGet paketi](https://www.nuget.org/packages/SkiaSharp), NuGet başvuru ekleyerek bunu projenize ekleyebilirsiniz.
 
 Çizmek için kodunuzu oluşturacak bir `SkCanvas` burada çizim işlemleri gerçekleşecek yüzeyini açıklar.
 

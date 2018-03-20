@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: c38a0a7f6897cd90f81c92348280539b33524b9c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 75dc51b5372ae4d8a322c29e39a585a547ab1963
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android cihaz Yöneticisi
 
@@ -308,7 +308,8 @@ Yeni bir cihaz yapılandırmak için aşağıdaki adımları kullanın **yeni ci
 
 
 <a name="device-edit" />
- 
+
+
 ### <a name="edit-device"></a>Cihaz Düzenle
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -415,6 +416,7 @@ Ek Seçenekler menüsünü aşağıdaki öğeleri içerir:
 
 <a name="properties" />
  
+
 ## <a name="profile-properties"></a>Profil özellikleri
 
 **Yeni cihaz** ve **aygıt Düzenle** ekranlar ilk sütununda, sanal cihaz özelliklerini ikinci sütundaki her bir özellik karşılık gelen değerleri listesi. Bir özellik seçtiğinizde, bu özellik için ayrıntılı bir açıklama sağ tarafta görüntülenir. Değiştirebileceğiniz kendi *donanım profilinin özelliklerini* ve kendi *AVD özellikleri*.

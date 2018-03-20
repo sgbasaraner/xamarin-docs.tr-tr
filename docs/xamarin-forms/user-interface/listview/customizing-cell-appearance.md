@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 62ac3ab4b3114447f0c67d86c601a688bb8ff1a7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 551a0de8cd4965815c67a795fb5723d4261a173c
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="cell-appearance"></a>Hücre görünümü
 
@@ -73,11 +73,9 @@ Windows Phone 8.1, hedeflerken unutmayın `ImageCell` görüntüleri varsayılan
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>Özel hücreler
-Yerleşik hücreleri gerekli düzeni sağlamıyorsa, özel hücreleri gerekli düzeni uygulanır. Örneğin, bir hücre eşit ağırlığa sahip iki etiketlerle sunmak isteyebilirsiniz. A `LabelCell` yetersiz olabilir çünkü `LabelCell` küçük olan bir etiketi yok.
+Yerleşik hücreleri gerekli düzeni sağlamıyorsa, özel hücreleri gerekli düzeni uygulanır. Örneğin, bir hücre eşit ağırlığa sahip iki etiketlerle sunmak isteyebilirsiniz. A `LabelCell` yetersiz olabilir çünkü `LabelCell` küçük olan bir etiketi yok. Çoğu hücre özelleştirmeleri ek salt okunur verileri (örneğin, ek etiketleri, görüntüleri veya başka görüntü bilgilerini) ekleyin.
 
 Tüm özel hücreleri öğesinden türetilmelidir [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), tüm yerleşik hücrenin yazdığı kullanım aynı temel sınıfı.
-
-Çoğu hücre özelleştirmeleri ek salt okunur verileri (örneğin, ek etiketleri, görüntüleri veya başka görüntü bilgilerini) ekleyin. Düğmeler veya odaklanmış olur diğer denetimlerin eklediyseniz, hücre Android tıklanabilir olmayabilir. Aşağıda bu sınırlamanın üstesinden gelmek için bir yol konusuna bakın.
 
 Xamarin.Forms 2 sunulan yeni bir [önbelleğe alma davranışı](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) üzerinde `ListView` bazı türleri için özel bir hücre kaydırma performansını geliştirmek için ayarlayabileceğiniz denetim.
 
@@ -261,30 +259,6 @@ var listView = new ListView {
 ```
 
 İOS ve Android, varsa [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) öğeleri geri dönüştürme ve özel oluşturucu özel hücre kullanır, özel Oluşturucu doğru özellik değişikliği bildirimi uygulamalıdır. Hücreleri yeniden yapıldığında bağlama bağlamı, kullanılabilir bir hücre ile güncelleştirildiğinde özellik değerlerine değişir `PropertyChanged` gerçekleştirilen olaylarının. Daha fazla bilgi için bkz: [bir ViewCell özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Hücre geri dönüştürme hakkında daha fazla bilgi için bkz: [önbelleğe alma stratejisi](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
-
-### <a name="enabling-row-selection-on-android"></a>Android'de etkinleştirme satır seçimi
-
-Ayrıca içeren hücreleri öğeleri gibi giriş satır seçimi izin vermek için düğmeler, basit bir [ `custom renderer` ](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) gereklidir. Genel kodda öğesinin bir alt kümesi oluşturmak `Button` böylece özel Oluşturucu platform projelerinde eklenebilir:
-
-```csharp
-public class ListButton : Button { }
-```
-
-Android için oluşturucu uygulama yalnızca ayarlar `Focusable` yanı sıra konak tıklanabilir düğmeleri seçilebilir için satırı sağlayan özelliği. Bu kod, Android uygulaması projesi eklenir:
-
-```csharp
-[assembly: ExportRenderer (typeof (ListButton), typeof (ListButtonRenderer))]
-// ...
-public class ListButtonRenderer : ButtonRenderer {
-    protected override void OnElementChanged (ElementChangedEventArgs<ListButton> e) {
-        base.OnElementChanged (e);
-        Control.Focusable = false;
-    }
-}
-```
-
-Yukarıda belirtildiği gibi yalnızca Android gerektirir `ButtonRenderer` uygulanacak. iOS ve Windows Phone platformlarını özel Oluşturucu uygulamadan tıkladığınız için düğmesine izin verin.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
