@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 7111c1716ef3a8869f8b2401a7653d9e9941977b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5e44635c9dfbe9fa069272f50d035476bd1aa6b9
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="manual-camera-controls"></a>El ile kamera denetimleri
 
@@ -370,7 +370,7 @@ Görünüm aşağıdaki ana öğeleri içerir:
 Görünüm Denetleyicisi'ni el ile odağı denetimi için kablo yukarı için aşağıdakileri yapın:
 
 
- 1. Aşağıdaki using deyimlerini:
+1. Aşağıdaki using deyimlerini:
 
     ```csharp
     using System;
@@ -387,7 +387,7 @@ Görünüm Denetleyicisi'ni el ile odağı denetimi için kablo yukarı için a�
     using System.Timers;
     ```  
   
- 1. Aşağıdaki özel değişkenleri ekleyin:
+1. Aşağıdaki özel değişkenleri ekleyin:
 
     ```csharp
     #region Private Variables

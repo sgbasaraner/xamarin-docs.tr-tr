@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: b4705bc9c8fdb1a671c7de2453ea088bf2afe424
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: ee39851070be2f302125162400d2214c732faeec
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>İzlenecek yol - WCF ile çalışma
 
@@ -40,10 +40,11 @@ Bu kılavuzda oluşturulması ve WCF hizmetlerini kullanarak bazı bilgisi oldu�
 1. Visual Studio 2017 başlatın ve yeni bir proje oluşturun.
 1. İçinde **yeni proje** iletişim kutusunda **WCF > WCF Hizmeti Kitaplığı** şablonu ve ad çözümü `HelloWorldService`:
 
-  ![](walkthrough-working-with-wcf-images/new-wcf-service.png "Yeni bir WCF Hizmeti kitaplığı oluşturun")
+    ![](walkthrough-working-with-wcf-images/new-wcf-service.png "Yeni bir WCF Hizmeti kitaplığı oluşturun")
 
 1. İçinde **Çözüm Gezgini**, adlı yeni bir sınıf ekleyin `HelloWorldData` projeye:
 
+    ```csharp
         using System.Runtime.Serialization;
 
         namespace HelloWorldService
@@ -64,10 +65,13 @@ Bu kılavuzda oluşturulması ve WCF hizmetlerini kullanarak bazı bilgisi oldu�
                 }
             }
         }
+    ```
+
 
 1. İçinde **Çözüm Gezgini**, yeniden adlandırma `IService1.cs` için `IHelloWorldService.cs`ve yeniden adlandırma `Service1.cs` için `HelloWorldService.cs`.
 1. İçinde **Çözüm Gezgini**, açık `IHelloWorldService.cs` ve kodu aşağıdaki kodla değiştirin:
 
+    ```csharp
         using System.ServiceModel;
 
         namespace HelloWorldService
@@ -82,11 +86,13 @@ Bu kılavuzda oluşturulması ve WCF hizmetlerini kullanarak bazı bilgisi oldu�
                 HelloWorldData GetHelloData(HelloWorldData helloWorldData);
             }
         }
-
+    ```
+  
     Bu hizmet için iki yöntem sunar: bir dizeyi bir parametre ve başka bir .NET nesnesini alır.
 
 1. İçinde **Çözüm Gezgini**, açık `HelloWorldService.cs` ve kodu aşağıdaki kodla değiştirin:
 
+    ```csharp
         using System;
 
         namespace HelloWorldService
@@ -110,9 +116,11 @@ Bu kılavuzda oluşturulması ve WCF hizmetlerini kullanarak bazı bilgisi oldu�
                 }
             }
         }
+    ```
 
 1. İçinde **Çözüm Gezgini**açın `App.config`, güncelleştirme `name` özniteliği `<service>` düğümü, `contract` özniteliği `<endpoint>` düğümünü ve `baseAddress` özniteliği`<add>` düğümü:
 
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <configuration>
             ...
@@ -133,17 +141,18 @@ Bu kılavuzda oluşturulması ve WCF hizmetlerini kullanarak bazı bilgisi oldu�
             </services>
             ...
         </configuration>
+    ```
 
 1. Derleme ve WCF Hizmeti çalıştırın. WCF test istemcisi tarafından barındırılan hizmetin:
 
-  ![](walkthrough-working-with-wcf-images/hosted-wcf-service.png "Test istemcisinde çalışan WCF Hizmeti")
+    ![](walkthrough-working-with-wcf-images/hosted-wcf-service.png "Test istemcisinde çalışan WCF Hizmeti")
 
 1. Çalışan WCF test istemcisi ile bir tarayıcıyı başlatın ve WCF hizmetine gidin:
 
-  ![](walkthrough-working-with-wcf-images/wcf-service-browser.png "WCF hizmet tarayıcı bilgileri sayfası")
+    ![](walkthrough-working-with-wcf-images/wcf-service-browser.png "WCF hizmet tarayıcı bilgileri sayfası")
 
 > [!IMPORTANT]
-> **Not:** aşağıdaki bölümde, yalnızca Windows 10 iş istasyonunda uzak bağlantıları kabul etmesi gerekiyorsa gereklidir. WCF Hizmeti dağıtmak için alternatif bir platformda varsa bölüm göz ardı edilebilir.
+> Aşağıdaki bölüm, yalnızca Windows 10 iş istasyonunda uzak bağlantıları kabul etmesi gerekiyorsa gereklidir. WCF Hizmeti dağıtmak için alternatif bir platformda varsa bölüm göz ardı edilebilir.
 
 <a name="Allow_Remote_Access_to_IIS_Express" />
 
@@ -154,7 +163,7 @@ Yerel olarak bir WCF barındırma bağlantıları yalnızca yerel makineden geld
 1.  **IIS Express kabul uzak bağlantıları yapılandırmak** -belirli bir bağlantı noktasını uzak bağlantıları kabul etmek IIS Express için yapılandırma dosyasını düzenleyerek ve ardından gelen trafiği kabul etmek IIS Express için bir kural ayarlama bu adımı içerir.
 1.  **Windows Güvenlik Duvarı'nda bir özel durum ekleyin** -Windows Uzak uygulamaları WCF Hizmeti ile iletişim için kullandığı güvenlik duvarı aracılığıyla bağlantı noktası açmanız gerekir.
 
-İş istasyonunuzu IP adresini bilmeniz gerekir. Bu örneğin amaçları doğrultusunda, iş istasyonu 192.168.1.143 IP adresi olduğunu varsayıyoruz.
+    İş istasyonunuzu IP adresini bilmeniz gerekir. Bu örneğin amaçları doğrultusunda, iş istasyonu 192.168.1.143 IP adresi olduğunu varsayıyoruz.
 
 1. Dış isteklerini dinlemek için IIS Express yapılandırarak başlayalım. Bu en IIS Express için yapılandırma dosyasını düzenleyerek yapabiliriz `[solutiondirectory]\.vs\config\applicationhost.config`aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
@@ -163,6 +172,7 @@ Yerel olarak bir WCF barındırma bağlantıları yalnızca yerel makineden geld
 
     Bulun `site` adı bir öğesiyle `HelloWorldWcfHost`. Aşağıdaki XML parçacığını gibi görünmelidir:
 
+    ```xml
         <site name="HelloWorldWcfHost" id="2">
             <application path="/" applicationPool="Clr4IntegratedAppPool">
                 <virtualDirectory path="/" physicalPath="\\vmware-host\Shared Folders\tom\work\xamarin\code\private-samples\webservices\HelloWorld\HelloWorldWcfHost" />
@@ -171,13 +181,17 @@ Yerel olarak bir WCF barındırma bağlantıları yalnızca yerel makineden geld
                 <binding protocol="http" bindingInformation="*:8733:localhost" />
             </bindings>
         </site>
-
+    ```
+ 
     Başka bir eklemeniz gerekir `binding` dış trafiği 8734 noktasına açın. Aşağıdaki XML eklemek `bindings` öğesi, kendi IP adresiyle IP adresini değiştirme:
 
-        <binding protocol="http" bindingInformation="*:8734:192.168.1.143" />
-
+    ```xml
+    <binding protocol="http" bindingInformation="*:8734:192.168.1.143" />
+    ```
+    
     Bu bağlantı noktası 8734 bilgisayarın dış IP adresi üzerinde uzak tüm IP adreslerinden gelen HTTP trafiği kabul etmek için IIS Express yapılandırabilir. Yukarıdaki kod parçacığında bu IIS Express çalıştıran bilgisayarın IP adresini 192.168.1.143 olduğunu varsayar. Değişikliklerden sonra `bindings` öğesi aşağıdaki gibi görünmelidir:
 
+    ```xml
         <site name="HelloWorldWcfHost" id="2">
             <application path="/" applicationPool="Clr4IntegratedAppPool">
                 <virtualDirectory path="/" physicalPath="\\vmware-host\Shared Folders\tom\work\xamarin\code\private-samples\webservices\HelloWorld\HelloWorldWcfHost" />
@@ -187,6 +201,7 @@ Yerel olarak bir WCF barındırma bağlantıları yalnızca yerel makineden geld
                 <binding protocol="http" bindingInformation="*:8734:192.168.1.143" />
             </bindings>
         </site>
+    ```
 
 1. Ardından, IIS Express'i yapılandırmak ihtiyacımız 8734 bağlantı noktasından gelen bağlantıları kabul edin. Başlangıç bir yönetici komut istemi ayarlama ve şu komutu çalıştırın:
 
@@ -215,7 +230,7 @@ Bir uygulama hizmeti kullanabilmeniz için önce bir web hizmeti proxy'si WCF hi
 1. Yapı `HelloWorldServiceProxy` projesi.
 
 > [!NOTE]
-> **Not**: Visual Studio 2017 içinde Microsoft WCF Web hizmeti başvuru sağlayıcısı kullanarak proxy oluşturma alternatif ServiceModel meta veri yardımcı Programracı (svcutil.exe) kullanmaktır. Daha fazla bilgi için bkz: [ServiceModel meta veri yardımcı Programracı (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+> Visual Studio 2017 içinde Microsoft WCF Web hizmeti başvuru sağlayıcısı kullanarak proxy oluşturma alternatif ServiceModel meta veri yardımcı Programracı (svcutil.exe) kullanmaktır. Daha fazla bilgi için bkz: [ServiceModel meta veri yardımcı Programracı (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Creating_a_Xamarin_Android_Application" />
 
@@ -227,6 +242,7 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.Android uygulaması tarafından ku
 1. İçinde `HelloWorld.Android` proje, bir başvuru ekleyin `HelloWorldServiceProxy` proje ve başvuru `System.ServiceModel` ad alanı.
 1. İçinde **Çözüm Gezgini**, açık `Resources/layout/main.axml` ve varolan XML aşağıdaki XML ile değiştirin:
 
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:orientation="vertical"
@@ -267,18 +283,22 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.Android uygulaması tarafından ku
                         android:id="@+id/getHelloWorldDataTextView" />
             </LinearLayout>
         </LinearLayout>
-
+    ```
+    
     Aşağıdaki ekran Tasarımcısı'nda kullanıcı arabirimini gösterir:
 
     [![](walkthrough-working-with-wcf-images/image09.png "Bu UI nasıl Tasarımcısı'nda göründüğünü, ekran budur")](walkthrough-working-with-wcf-images/image09.png#lightbox)
-
+    
 1. İçinde **Çözüm Gezgini**, açık `Resources/values/Strings.xml` ve aşağıdaki XML ekleyin:
 
-        <string name="say_hello_world">Say Hello World</string>
-        <string name="get_hello_world_data">Get Hello World data</string>
-
+    ```xml
+    <string name="say_hello_world">Say Hello World</string>
+    <string name="get_hello_world_data">Get Hello World data</string>
+    ```
+    
 1. İçinde **Çözüm Gezgini**, açık `MainActivity.cs` ve var olan kodu aşağıdaki kodla değiştirin:
 
+    ```csharp
         [Activity(Label = "HelloWorld.Android", MainLauncher = true)]
         public class MainActivity : Activity
         {
@@ -291,11 +311,13 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.Android uygulaması tarafından ku
             TextView _sayHelloWorldTextView;
             ...
         }
+    ```
 
     Değiştir `<insert_WCF_service_endpoint_here>` WCF Bitiş adresi.
 
 1. İçinde `MainActivity.cs`, değişiklik `OnCreate` aşağıdaki kod, BT'nin içerecek şekilde yöntemi:
 
+    ```csharp
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(bundle);
@@ -314,11 +336,13 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.Android uygulaması tarafından ku
             _sayHelloWorldButton.Click += SayHelloWorldButtonOnClick;
             _sayHelloWorldTextView = FindViewById<TextView>(Resource.Id.sayHelloWorldTextView);
         }
-
+    ```
+    
     Yukarıdaki kod sınıfı için örnek değişkenleri başlatır ve bazı olay işleyicilerini bağlayan.
 
 1. İçinde `MainActivity.cs`, aşağıdaki iki yöntemden ekleyerek istemci proxy sınıfının örneği:
 
+    ```csharp
         void InitializeHelloWorldServiceClient()
         {
             BasicHttpBinding binding = CreateBasicHttpBinding();
@@ -340,11 +364,13 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.Android uygulaması tarafından ku
             binding.ReceiveTimeout = timeout;
             return binding;
         }
-
+    ```
+    
     Yukarıdaki kod oluşturur ve başlatır bir `HelloWorldServiceClient` nesnesi.
 
 1. İçinde `MainActivity.cs`, iki düğme bile işleyicileri eklemek `Activity`:
 
+    ```csharp
         async void GetHelloWorldDataButtonOnClick(object sender, EventArgs e)
         {
             var data = new HelloWorldData
@@ -379,10 +405,11 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.Android uygulaması tarafından ku
                 Console.WriteLine(ex.Message);
             }
         }
-
+    ```
+  
 1. Uygulamayı çalıştırın, WCF hizmeti çalışıyor ve iki düğmeleri tıklatın emin olun. Uygulamayı WCF zaman uyumsuz olarak koşuluyla çağıracak `Endpoint` alanını doğru şekilde ayarlayın:
 
-  [![](walkthrough-working-with-wcf-images/image08.png "30 saniye içinde her WCF yöntemi bir yanıt alınmalıdır ve uygulamamızı bu ekran görüntüsüne benzer görünmelidir")](walkthrough-working-with-wcf-images/image08.png#lightbox)
+    [![](walkthrough-working-with-wcf-images/image08.png "30 saniye içinde her WCF yöntemi bir yanıt alınmalıdır ve uygulamamızı bu ekran görüntüsüne benzer görünmelidir")](walkthrough-working-with-wcf-images/image08.png#lightbox)
 
 <a name="Creating_a_Xamarin_iOS_Application" />
 
@@ -407,17 +434,20 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.iOS uygulaması tarafından kullan
 
 1. İçinde **Çözüm Gezgini**, açık `ViewController.cs` ve aşağıdaki kodu ekleyin:
 
+    ```xml
         public partial class ViewController : UIViewController
         {
             static readonly EndpointAddress Endpoint = new EndpointAddress("<insert_WCF_service_endpoint_here>");
             HelloWorldServiceClient _client;
             ...
         }
-
+    ```
+  
     Değiştir `<insert_WCF_service_endpoint_here>` WCF Bitiş adresi.
 
 1. İçinde `ViewController.cs`, güncelleştirme `ViewDidLoad` şekilde aşağıdakine benzer şekilde yöntemi:
 
+    ```csharp
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -426,9 +456,11 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.iOS uygulaması tarafından kullan
             getHelloWorldDataButton.TouchUpInside += GetHelloWorldDataButton_TouchUpInside;
             sayHelloWorldButton.TouchUpInside += SayHelloWorldButton_TouchUpInside;
         }
-
+    ```
+  
 1. İçinde `ViewController.cs`, ekleme `InitializeHelloWorldServiceClient` ve `CreateBasicHttpBinding` yöntemleri:
 
+    ```csharp
         void InitializeHelloWorldServiceClient()
         {
             BasicHttpBinding binding = CreateBasicHttpBinding();
@@ -450,9 +482,11 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.iOS uygulaması tarafından kullan
             binding.ReceiveTimeout = timeout;
             return binding;
         }
-
+    ```
+  
 1. İçinde `ViewController.cs`, olay işleyicileri ekleme `TouchUpInside` iki olaylarına `UIButton` örnekleri:
 
+    ```csharp
         async void GetHelloWorldDataButton_TouchUpInside(object sender, EventArgs e)
         {
             getHelloWorldDataText.Text = "Waiting for WCF...";
@@ -487,6 +521,7 @@ WCF Hizmeti Proxy'si şu şekilde bir Xamarin.iOS uygulaması tarafından kullan
                 Console.WriteLine(ex.Message);
             }
         }
+    ```
 
 1. Uygulamayı çalıştırın, WCF hizmeti çalışıyor ve iki düğmeleri tıklatın emin olun. Uygulamayı WCF zaman uyumsuz olarak koşuluyla çağıracak `Endpoint` alanını doğru şekilde ayarlayın:
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: ee612d4a8982a6ae505b4d329b9abbc84624a1e0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 66f4dcf14cd179795e9a23bccabe4289d74c7c5b
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -36,7 +36,7 @@ Açıklamaları olan ile başlayan satırlar `#`. Boş satırlar yok sayılır.
 
 Varsa *anahtar* büyük harfle, ardından başlatır *anahtar* bir ortam değişkeni kabul edilir ve **setenv**(3) belirtilen ortamdeğişkeniniayarlamakiçinkullanılır*değeri* işlem başlangıcı sırasında.
 
-Varsa *anahtar* sonra bir küçük harfle başlayan *anahtar* bir Android sistem özelliği olarak kabul edilir ve *değeri* olan *varsayılan değer*: Xamarin.Android yürütme davranışını denetleyen android Sistem özellikleri ilk Android sistem özelliği sunucudan arandığı ve herhangi bir değer varsa, ardından ortamı dosyasında belirtilen değer kullanılır. Bu izin vermektir `adb shell setprop` tanılama ortam dosyasından gelen değerleri geçersiz kılmak için kullanılacak.
+Varsa *anahtar* sonra bir küçük harfle başlayan *anahtar* bir Android sistem özelliği olarak kabul edilir ve *değeri* olan *varsayılan değer*: Xamarin.Android yürütme davranışını denetleyen android Sistem özellikleri ilk Android sistem özellik deposundan arandığı ve herhangi bir değer varsa, ardından ortamı dosyasında belirtilen değer kullanılır. Bu izin vermektir `adb shell setprop` tanılama ortam dosyasından gelen değerleri geçersiz kılmak için kullanılacak.
 
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android ortam değişkenleri
 
@@ -45,9 +45,9 @@ Xamarin.Android destekleyen `XA_HTTP_CLIENT_HANDLER_TYPE` aracılığıyla ya da
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
-Öğesinden devralmalıdır bütünleştirilmiş kod tam türü [HttpMessageHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpmessagehandler(v=vs.118).aspx) ve gelen oluşturulan [ `HttpClient()` varsayılan oluşturucu](https://msdn.microsoft.com/en-us/library/hh138077(v=vs.118).aspx).
+Öğesinden devralmalıdır bütünleştirilmiş kod tam türü [HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) ve gelen oluşturulan [ `HttpClient()` varsayılan oluşturucu](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor).
 
-Xamarin.Android 6.1 içinde varsayılan olarak, bu ortam değişkeni ayarlanmamış ve [HttpClientHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpclienthandler(v=vs.118).aspx) kullanılır.
+Xamarin.Android 6.1 içinde varsayılan olarak, bu ortam değişkeni ayarlanmamış ve [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) kullanılır.
 
 Alternatif olarak, değer `Xamarin.Android.Net.AndroidClientHandler` kullanmak için belirtilebilir [ `java.net.URLConnection` ](https://developer.xamarin.com/api/type/Java.Net.URLConnection/) ağ erişimi için hangi *olabilir* Android desteklediğinde, TLS 1.2 kullanımına izin verir.
 

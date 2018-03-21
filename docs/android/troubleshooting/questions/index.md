@@ -6,12 +6,12 @@ ms.assetid: 0F0FDD2B-FFB1-476F-B674-81DB3A5E1CF3
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 22ddf61d3636962273716d8d5c48857e0004bb42
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 69a5c905367f9e6dbd38acb664ad21b9dbe63efc
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="frequently-asked-questions"></a>Sıkça Sorulan Sorular
 
@@ -68,6 +68,11 @@ Bu sorunun en yaygın nedeni olan **Internet** izni olan bir hata ayıklama derl
 ### <a name="smarter-xamarin-android-support-v4--v13-nuget-packagesandroid-support-v4v13-librariesmd"></a>[Akıllı Xamarin Android Desteği v4 / v13 NuGet Paketleri](android-support-v4v13-libraries.md)
 
 `Support-v4` ve `Support-v13` kullanılamaz birlikte aynı uygulamada, diğer bir deyişle, bunlar karşılıklı olarak birbirini dışlar. Bunun nedeni, `Support-v13` gerçekten tüm türleri ve uyarlamasını içeren `Support-v4`. Çalışırsanız ve her ikisi de aynı projede başvuru yinelenen türü hatalarla karşılaşır.
+
+### <a name="how-do-i-resolve-a-pathtoolongexception-errorpath-too-long-exceptionmd"></a>[PathTooLongException hata nasıl giderebilirim?](path-too-long-exception.md)
+
+Bu makalede nasıl giderileceği açıklanmaktadır bir **PathTooLongException** bir Xamarin.Android projesi oluşturma sırasında ortaya çıkabilecek hata.
+
 
 
 ## <a name="deprecated"></a>Kullanım dışı

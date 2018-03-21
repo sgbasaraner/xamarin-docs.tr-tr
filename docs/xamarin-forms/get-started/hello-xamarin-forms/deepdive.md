@@ -7,33 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 3259e9b2bc9be52e8c19acce2dd031ad9046019b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ea02b4329d5a27e47a89f21b475bb5f6d9dea175
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms derin Dalış
 
 İçinde [Xamarin.Forms Quickstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md), Phoneword uygulama oluşturuldu. Bu makalede, ne Xamarin.Forms uygulamaların nasıl çalıştığı temellerini anlamak için oluşturulduğunu gözden geçirir.
-
-Aşağıdaki konular incelenir:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-- Visual Studio – Visual Studio ve yeni bir Xamarin.Forms uygulaması oluşturuluyor giriş giriş.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-- Mac – Visual Studio giriş Mac ve yeni bir Xamarin.Forms uygulaması oluşturmak için Visual Studio için giriş.
-
------
-
-- Xamarin.Forms uygulaması – bir Xamarin.Forms uygulaması temel bölümlerini turu anatomisi.
-- Mimari ve uygulama temelleri – uygulama her platformda nasıl başlatılır.
-- Kullanıcı Arabirimi (UI) – Xamarin.Forms içinde kullanıcı arabirimleri oluşturma.
-- Ek kavramları kullanıma sunulan Phoneword – Phoneword uygulamada kullanılan ek kavramlarını kısa açıklamaları.
-- Test ve dağıtımı – uygulama test önerileri ile Tamamlanıyor, dağıtım, oluşturma resmi ve daha fazla.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -52,6 +34,14 @@ Projeleri şunlardır:
 - Phoneword.iOS – bu proje iOS özel kod tutar ve iOS uygulaması için giriş noktasıdır.
 - Phoneword.UWP – bu proje Evrensel Windows Platformu (UWP) belirli bir kod tutar ve UWP uygulaması için giriş noktasıdır.
 
+## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms uygulaması anatomisi
+
+Aşağıdaki ekran görüntüsünde, Visual Studio'da Phoneword .NET standart kitaplığı proje içeriğini gösterir:
+
+![](deepdive-images/vs/net-standard-project.png "Phoneword .NET standart proje içeriği")
+
+Proje içeren bir **bağımlılıkları** içeren düğümü **NuGet** ve **SDK** düğümleri. **NuGet** düğümü projeye eklenen Xamarin.Forms NuGet paketi içerir ve **SDK** düğüm içerir `NETStandard.Library` tamamını NuGet paketlerini başvuruyor metapackage .NET standart tanımlayın.
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Mac için Visual Studio giriş
@@ -68,19 +58,7 @@ Projeleri şunlardır:
 - Phoneword.Droid – bu proje Android özel kod tutar ve Android uygulamaları için giriş noktasıdır.
 - Phoneword.iOS – bu proje iOS özel kod tutar ve iOS uygulamaları için giriş noktasıdır.
 
------
-
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms uygulaması anatomisi
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Aşağıdaki ekran görüntüsünde, Visual Studio'da Phoneword .NET standart kitaplığı proje içeriğini gösterir:
-
-![](deepdive-images/vs/net-standard-project.png "Phoneword .NET standart proje içeriği")
-
-Proje içeren bir **bağımlılıkları** içeren düğümü **NuGet** ve **SDK** düğümleri. **NuGet** düğümü projeye eklenen Xamarin.Forms NuGet paketi içerir ve **SDK** düğüm içerir `NETStandard.Library` tamamını NuGet paketlerini başvuruyor metapackage .NET standart tanımlayın.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Aşağıdaki ekran görüntüsünde, Mac için Visual Studio'da Phoneword PCL proje içeriğini gösterir:
 
@@ -202,8 +180,6 @@ namespace Phoneword.Droid
 
 ## <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 Evrensel Windows Platformu (UWP) uygulamaları `Init` Xamarin.Forms framework başlatır yöntemi çağrılır `App` sınıfı:
 
 ```csharp
@@ -230,15 +206,13 @@ namespace Phoneword.UWP
     }
 }
 ```
+
 Xamarin.Forms uygulaması ile yüklenen `LoadApplication` yöntemi.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+> [!NOTE]
+> Evrensel Windows Platformu (UWP) uygulamaları Xamarin.Forms oluşturulmuş, ancak yalnızca Visual Studio kullanarak Windows üzerinde olabilir.
 
-Evrensel Windows Platformu (UWP) uygulamaları Xamarin.Forms oluşturulmuş, ancak yalnızca Visual Studio kullanarak Windows üzerinde olabilir.
-
------
-
-## <a name="user-interface"></a>Kullanıcı arabirimi
+## <a name="user-interface"></a>Kullanıcı Arabirimi
 
 Kullanıcı arabirimi, bir Xamarin.Forms uygulaması oluşturmak için kullanılan dört ana denetim grubu yok.
 
@@ -302,43 +276,52 @@ Xamarin.Forms Phoneword uygulama bu makalede ele alınan değil birkaç kavram a
 
 - Etkinleştirme ve düğmelerini devre dışı bırakma. A [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) açmak veya kapatmak değiştirerek değiştirilebilir kendi [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) özelliği. Örneğin, aşağıdaki örnek devre dışı bırakır kod `callButton`:
 
-        callButton.IsEnabled = false;
+    ```csharp
+    callButton.IsEnabled = false;
+    ```
 
 - Uyarı iletişim kutusu görüntüleniyor. Kullanıcı aramayı bastığında **düğmesini** Phoneword uygulama gösterir bir *uyarı iletişim* yerleştirin ya da bir aramayı iptal et seçeneğine sahip. [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/System.String/) Yöntemi oluştur iletişim kutusu için kullanılan aşağıdaki kod örneğinde gösterildiği gibi:
 
-        await this.DisplayAlert (
-                "Dial a Number",
-                "Would you like to call " + translatedNumber + "?",
-                "Yes",
-                "No");
+    ```csharp
+    await this.DisplayAlert (
+            "Dial a Number",
+            "Would you like to call " + translatedNumber + "?",
+            "Yes",
+            "No");
+    ```
 
 - Aracılığıyla yerel özelliklerine erişme [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) sınıfı. Phoneword uygulamanın kullandığı `DependencyService` çözümlemek için sınıf `IDialer` Phoneword projeden aşağıdaki kod örneğinde gösterildiği gibi arabirimi platforma özgü telefon arama uygulamaları için:
 
-        async void OnCall (object sender, EventArgs e)
-        {
-            ...
-            var dialer = DependencyService.Get<IDialer> ();
-            ...
-        }
+    ```csharp
+    async void OnCall (object sender, EventArgs e)
+    {
+        ...
+        var dialer = DependencyService.Get<IDialer> ();
+        ...
+    }
+    ```
 
   Hakkında daha fazla bilgi için [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) sınıfı için bkz: [erişme yerel özellikleri DependencyService aracılığıyla](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
 - Bir URL içeren bir telefon araması yapılıyor. Phoneword uygulamanın kullandığı `OpenURL` sistem phone uygulamasını başlatmak için. URL oluşan bir `tel:` önekini ve ardından çağrılacak, telefon numarasına göre iOS projeden aşağıdaki kod örneğinde gösterildiği gibi:
 
-        return UIApplication.SharedApplication.OpenUrl (new NSUrl ("tel:" + number));
+    ```csharp
+    return UIApplication.SharedApplication.OpenUrl (new NSUrl ("tel:" + number));
+    ```
 
 - Platform düzeni uyguladıkça. [ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) Sınıfı kullanır aşağıdaki kod örneğinde farklı gösterildiği gibi bir platform başına temelinde işlevselliği ve uygulama düzenini özelleştirmek geliştiricilere sağlar [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)doğru her sayfasını görüntülemek için farklı platformlarda değerler:
 
-        <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-                     ...>
-            <ContentPage.Padding>
-                <OnPlatform x:TypeArguments="Thickness">
-                    <On Platform="iOS" Value="20, 40, 20, 20" />
-                    <On Platform="Android, WinPhone, Windows" Value="20" />
-                </OnPlatform>
-            </ContentPage.Padding>
-            ...
-        </ContentPage>
+    ```xaml
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" ... >
+        <ContentPage.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS" Value="20, 40, 20, 20" />
+                <On Platform="Android, WinPhone, Windows" Value="20" />
+            </OnPlatform>
+        </ContentPage.Padding>
+        ...
+    </ContentPage>
+    ```
 
   Platform tweaks hakkında daha fazla bilgi için bkz: [aygıt sınıfı](~/xamarin-forms/platform/device.md).
 

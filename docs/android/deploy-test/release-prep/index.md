@@ -6,12 +6,12 @@ ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/19/2018
+ms.openlocfilehash: e26c855133d0b32676aa2d0a6084754a80055e30
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Bir uygulama sürüm için hazırlama
 
@@ -40,13 +40,7 @@ Bu adımların her biri aşağıda ayrıntılı olarak açıklanmıştır.
 
 ## <a name="specify-the-application-icon"></a>Uygulama simgesi belirtme
 
-Her Xamarin.Android uygulaması uygulama simgesi belirtme önerilir. Bazı uygulama Pazar biri olmadan yayımlanmasını bir Android uygulaması izin vermez.
-
-`Icon` Özelliği `Application` öznitelik, bir Xamarin.Android projesi için uygulama simgesi belirtmek için kullanılır. Bu öznitelik dosyasında bildirilebilir **Properties\AssemblyInfo.cs**, bu örnek parçacığında gösterildiği gibi:
-
-```csharp
-[assembly: Application(Icon = "@drawable/icon")]
-```
+Her Xamarin.Android uygulaması uygulama simgesi belirtme önerilir. Bazı uygulama Pazar biri olmadan yayımlanmasını bir Android uygulaması izin vermez. `Icon` Özelliği `Application` öznitelik, bir Xamarin.Android projesi için uygulama simgesi belirtmek için kullanılır.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -61,6 +55,12 @@ Mac için Visual Studio'da da uygulama simgesi üzerinden belirtmek mümkündür
 [![Uygulama simgesi ayarlayın](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
+
+Bu örneklerde `@drawable/icon` konumda bulunan bir simge dosyası başvurduğu **Resources/drawable/icon.png** (unutmayın **.png** kaynak adının uzantısı dahil değildir). Bu öznitelik dosyasında da bildirilebilir **Properties\AssemblyInfo.cs**, bu örnek parçacığında gösterildiği gibi:
+
+```csharp
+[assembly: Application(Icon = "@drawable/icon")]
+```
 
 <a name="Versioning" />
 

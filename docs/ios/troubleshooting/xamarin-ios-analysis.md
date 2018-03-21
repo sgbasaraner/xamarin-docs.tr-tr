@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: c7dc63cbed0dbdc13dfd2d32a0859c0fe7a29196
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a63cc916d3c182baccb4ddd3c9003bdb8e5f30c7
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinios-analysis-rules"></a>Xamarin.iOS analiz kuralları
 
@@ -24,33 +24,45 @@ Visual Studio Mac'ın menüsü kuralları çalıştırmak için seçin **Proje >
 > [!NOTE]
 > Xamarin.iOS analiz yalnızca şu anda seçili yapılandırmanızı üzerinde çalışır. Hata ayıklama için Aracı'nı çalıştıran önerilir **ve** yayın yapılandırmaları.
 
-## <a name="a-namexia0001xia0001-disabledlinkerrule"></a><a name="XIA0001"/>XIA0001: DisabledLinkerRule
+<a name="XIA0001" />
+
+## <a name="xia0001-disabledlinkerrule"></a>XIA0001: DisabledLinkerRule
 
 - **Sorun:** bağlayıcı aygıt hata ayıklama modu için devre dışı bırakıldı.
 - **Düzeltme:** herhangi beklenmeyen durumları önlemek için bağlayıcı ile kodunuzu çalıştırmak denemelisiniz.
 Bunu ayarlamak için projeye Git > iOS Yapı > bağlayıcı davranışı.
 
-## <a name="a-namexia0002xia0002-testcloudagentreleaserule"></a><a name="XIA0002"/>XIA0002: TestCloudAgentReleaseRule
+<a name="XIA0002" />
+
+## <a name="xia0002-testcloudagentreleaserule"></a>XIA0002: TestCloudAgentReleaseRule
 
 - **Sorun:** Test bulut Aracısı'nı başlatma uygulama derlemeleri özel API kullandıkları gönderildiğinde, Apple tarafından reddedilir.
 - **Düzeltme:** Ekle veya #if gerekli düzeltme ve kodu tanımlar.
 
-## <a name="a-namexia0003xia0003-ipadebugbuildsrule"></a><a name="XIA0003"/>XIA0003: IPADebugBuildsRule
+<a name="XIA0003" />
+
+## <a name="xia0003-ipadebugbuildsrule"></a>XIA0003: IPADebugBuildsRule
 
 - **Sorun:** imzalama anahtarlarının Geliştirici kullanan hata ayıklama yapılandırmasını yalnızca şimdi Yayımlama Sihirbazı'nı kullanan dağıtım için gerektiği gibi bir IPA üretmemelidir.
 - **Düzeltme:** proje seçenekleri IPA derleme için hata ayıklama yapılandırmasını devre dışı bırakın.
 
-## <a name="a-namexia0004xia0004-missing64bitsupportrule"></a><a name="XIA0004"/>XIA0004: Missing64BitSupportRule
+<a name="XIA0004" />
+
+## <a name="xia0004-missing64bitsupportrule"></a>XIA0004: Missing64BitSupportRule
 
 - **Sorun:** desteklenen mimarisi "yayın | Aygıt"64-bit ARM64 eksik uyumlu değil. Apple AppStore 32 bit yalnızca iOS uygulamaları kabul etmiyor gibi bir sorun budur.
 - **Düzeltme:** çift iOS projenizi tıklatın, derleme için Git > iOS oluşturma ve desteklenen mimariler ARM64 sahip şekilde değiştirin.
 
-## <a name="a-namexia0005xia0005-float32rule"></a><a name="XIA0005"/>XIA0005: Float32Rule
+<a name="XIA0005" />
+
+## <a name="xia0005-float32rule"></a>XIA0005: Float32Rule
 
 - **Sorun:** float32 seçeneği kullanılarak değil (--Uygulama Nesne Ağacı seçenekleri = O float32 =) maliyet, özellikle mobil Cihazınızda yüklü bir miktar performans çift duyarlık matematik sorunlarında daha yavaş olduğu yol açar. Precision ve büyük olasılıkla, uyumluluk etkiler, bu seçeneği etkinleştirmek için .NET çift duyarlıklı dahili olarak, hatta float için kullandığını unutmayın.
 - **Düzeltme:** çift iOS projenizi tıklatın, derleme için Git > iOS oluşturma ve işaretini "tüm 32-bit float 64-bit float işlemleri".
 
-## <a name="a-namexia0006xia0006-httpclientavoidmanaged"></a><a name="XIA0006"/>XIA0006: HttpClientAvoidManaged
+<a name="XIA0006" />
+
+## <a name="xia0006-httpclientavoidmanaged"></a>XIA0006: HttpClientAvoidManaged
 
 - **Sorun:** yerine yönetilen bir daha iyi performans için daha küçük yürütülebilir boyutu, yerel HttpClient işleyici kullanmanız önerilir ve yeni standartları kolayca desteklemek için.
 - **Düzeltme:** çift iOS projenizi tıklatın, derleme için Git > iOS oluşturma ve HttpClient uygulamasını NSUrlSession (iOS 7 +) ya da CFNetwork için iOS 7 önceki sürümü desteklemek için değiştirin.

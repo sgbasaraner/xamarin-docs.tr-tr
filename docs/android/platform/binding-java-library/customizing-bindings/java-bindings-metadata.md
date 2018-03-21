@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="java-bindings-metadata"></a>Java Bindings Metadata
 
@@ -313,7 +313,7 @@ Burada özellikleri veya kitaplıkları yöntemlerinin geçirilen durumlarını 
 </mapping>
 ```
 
-Burada size Java sınıfı önlemlerin `SKRealReachSettings` adlı bir C# enum tanımlanan ve `SKRealReachSettings` ad alanında `Skobbler.Ngx.Map.RealReach`. `field` Girişleri Java sabiti adını tanımlar (örnek `UNIT\_SECOND`), enum giriş adını (örneğin `Second`) ve her iki varlıklar tarafından temsil edilen tamsayı değeri (örnek `0`). 
+Burada size Java sınıfı önlemlerin `SKRealReachSettings` adlı bir C# enum tanımlanan ve `SKMeasurementUnit` ad alanında `Skobbler.Ngx.Map.RealReach`. `field` Girişleri Java sabiti adını tanımlar (örnek `UNIT_SECOND`), enum giriş adını (örneğin `Second`) ve her iki varlıklar tarafından temsil edilen tamsayı değeri (örnek `0`). 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>Alıcı/ayarlayıcı yöntemlerini EnumMethods.xml kullanarak tanımlama
 
@@ -328,7 +328,7 @@ Verilen `SKRealReachSettings` enum aşağıdaki yukarıda tanımlanan **EnumMeth
 </mapping>
 ```
 
-İlk `method` satır eşlemeleri Java dönüş değerini `getMeasurementUnit` yönteme `SKRealReachSettings` enum. İkinci `method` satırının ilk parametresi eşlemeleri `setMeasurementUnit` aynı numaralandırmaya.
+İlk `method` satır eşlemeleri Java dönüş değerini `getMeasurementUnit` yönteme `SKMeasurementUnit` enum. İkinci `method` satırının ilk parametresi eşlemeleri `setMeasurementUnit` aynı numaralandırmaya.
 
 Tüm yerinde bu değişiklikler, izleme kodu Xamarin.Android ayarlamak için kullanabileceğiniz `MeasurementUnit`: 
 

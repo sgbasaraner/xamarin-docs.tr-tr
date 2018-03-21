@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: ffde89558495c4b9ccb9ec41761b5fc7ca53db38
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e04ea24883bdf1e29a538aaff92c555df8e1755f
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="localization"></a>Yerelleştirme
 
@@ -21,22 +21,6 @@ _Xamarin.Forms uygulamaları .NET kaynak dosyaları kullanarak yerelleştirilmi�
 ## <a name="overview"></a>Genel Bakış
 
 .NET uygulamaları kullanan yerelleştirme için yerleşik mekanizması [RESX dosyaları](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx) ve sınıflarda `System.Resources` ve `System.Globalization` ad alanları. Çevrilen dizelerin bulunduğu RESX dosyaları Xamarin.Forms derlemesindeki çevirileri kesin türü belirtilmiş erişim sağlayan derleyici tarafından üretilen bir sınıf birlikte katıştırılır. Çeviri metin ardından kodda alınabilir.
-
-Bu belgede aşağıdaki bölümler yer alır:
-
-**Xamarin.Forms kod Genelleştirme**
-
-* Ekleme ve bir Xamarin.Forms PCL uygulamasında dize kaynaklarını kullanma.
-* Yerel uygulamalar her dil algılamayı etkinleştirme.
-
-**XAML yerelleştirme**
-
-* XAML kullanarak yerelleştirme bir `IMarkupExtension`.
-* Yerel uygulamalar biçimlendirme uzantı etkinleştiriliyor.
-
-**Platforma özgü öğeleri yerelleştirme**
-
-* Yerelleştirme görüntüleri ve yerel uygulamalar, uygulama adı.
 
 ### <a name="sample-code"></a>Örnek kod
 
@@ -651,15 +635,17 @@ using Xamarin.Forms.Xaml;
 
 namespace UsingResxLocalization
 {
-    // You exclude the 'Extension' suffix when using in Xaml markup
-    [ContentProperty ("Text")]
+    // You exclude the 'Extension' suffix when using in XAML
+    [ContentProperty("Text")]
     public class TranslateExtension : IMarkupExtension
     {
-        readonly CultureInfo ci;
+        readonly CultureInfo ci = null;
         const string ResourceId = "UsingResxLocalization.Resx.AppResources";
 
-        private static readonly Lazy<ResourceManager> ResMgr = new Lazy<ResourceManager>(()=> new ResourceManager(ResourceId
-                                                                                                                  , typeof(TranslateExtension).GetTypeInfo().Assembly));
+        static readonly Lazy<ResourceManager> ResMgr = new Lazy<ResourceManager>(
+            () => new ResourceManager(ResourceId, IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly));
+
+        public string Text { get; set; }
 
         public TranslateExtension()
         {
@@ -669,24 +655,21 @@ namespace UsingResxLocalization
             }
         }
 
-        public string Text { get; set; }
-
-        public object ProvideValue (IServiceProvider serviceProvider)
+        public object ProvideValue(IServiceProvider serviceProvider)
         {
             if (Text == null)
-                return "";
+                return string.Empty;
 
             var translation = ResMgr.Value.GetString(Text, ci);
-
             if (translation == null)
             {
-                #if DEBUG
+#if DEBUG
                 throw new ArgumentException(
-                    String.Format("Key '{0}' was not found in resources '{1}' for culture '{2}'.", Text, ResourceId, ci.Name),
+                    string.Format("Key '{0}' was not found in resources '{1}' for culture '{2}'.", Text, ResourceId, ci.Name),
                     "Text");
-                #else
-                translation = Text; // returns the key, which GETS DISPLAYED TO THE USER
-                #endif
+#else
+                translation = Text; // HACK: returns the key, which GETS DISPLAYED TO THE USER
+#endif
             }
             return translation;
         }
@@ -699,7 +682,7 @@ Aşağıdaki madde işaretleri Yukarıdaki kod içindeki önemli öğelerini aç
 * Sınıf adlı `TranslateExtension`, ancak biz başvurabilir kural tarafından olduğu olarak **çevir** bizim biçimlendirme.
 * Sınıf uygulayan `IMarkupExtension`, çalışmaya tarafından onun için Xamarin.Forms gerekli.
 * `"UsingResxLocalization.Resx.AppResources"` RESX KAYNAKLARIMIZI kaynak tanımlayıcısıdır. Bizim varsayılan ad alanı, kaynak dosyalarının bulunduğu klasörü ve varsayılan RESX filename oluşur.
-* `ResourceManager` Sınıfı kullanılarak oluşturulur `typeof(TranslateExtension)` kaynaklardan yüklemek için geçerli derleme belirlemek için.
+* `ResourceManager` Sınıfı kullanılarak oluşturulur `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` kaynakları, yüklemek için geçerli derleme belirlemek için ve statik önbelleğinde `ResMgr` alan. Olarak oluşturulan bir `Lazy` oluşturulduktan ilk olarak kullanıldığı kadar ertelenir yazın `ProvideValue` yöntemi.
 * `ci` Seçilen kullanıcının dilini yerel işletim sisteminden almak için bağımlılık hizmeti kullanır.
 * `GetString` kaynak dosyalarından gerçek çevrilmiş dizesini alır yöntemidir. Windows Phone 8.1 ve evrensel Windows platformu `ci` null olur çünkü `ILocalize` arabirimi bu platformlarda uygulanan değil. Bu arama için eşdeğerdir `GetString` yöntemi yalnızca ilk parametresine sahip. Bunun yerine, kaynakların framework yerel otomatik olarak algılar ve çevrilmiş dize uygun RESX dosyasından alır.
 * Hata işleme bir özel durum atma tarafından eksik kaynakları hata ayıklama yardımcı olmak için birlikte (içinde `DEBUG` yalnızca modu).

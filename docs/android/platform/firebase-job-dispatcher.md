@@ -8,33 +8,32 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/19/2018
-ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: fbcb0190f609efc4396429a7961c2d49ab82576f
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase iş dağıtıcı
 
 _Bu kılavuz, Google Firebase iş dağıtıcı kitaplığından kullanarak arka plan iş zamanlama açıklanır._
 
-## <a name="firebase-job-dispatcher-overview"></a>Firebase iş dağıtıcı genel bakış
+## <a name="overview"></a>Genel Bakış
 
 Bir Android uygulaması yanıt vereceğini kullanıcıya tutmak için iyi yollarından biri, karmaşık veya uzun süre çalışan iş arka planda gerçekleştirilir sağlamaktır. Bununla birlikte, arka plan çalışması olumsuz kullanıcı deneyimini aygıtla etkilemez olduğunu önemlidir. 
 
-Örneğin, arka plan işi sorgu için birkaç dakikada değişiklikler belirli bir veri kümesi için bir Web sitesi yoklama. Cihazda felaket niteliğinde bir etkisi olabilir ancak bu zararsız, gibi görünüyor. Uygulama aygıtı Uyandırma, daha yüksek bir güç durumu CPU artırmasını Radyoları destekleyen ağ istekleri yapan ve sonuçlar işlenirken yukarı sona erer. Aygıt hemen gücü kapatın ve düşük güç boşta durumuna döndürmek için kötü alır. Kötü zamanlanmış arka plan çalışması durumunda gereksiz ve aşırı güç gereksinimleri ile cihaz yanlışlıkla tutabilir. Etkili bir şekilde (bir Web sitesi yoklama) bu seeming zararsız etkinlik aygıt daha kısa bir süre içinde kullanılamaz hale getirecek.
+Örneğin, arka plan işi bir Web sitesi üç veya dört dakikada bir sorgu için belirli bir veri kümesine değişiklikleri yoklama. Pil ömrünün felaket niteliğinde bir etkisi yoktur ancak bu zararsız, gibi görünüyor. Uygulama art arda aygıtı Uyandırma, daha yüksek bir güç durumu CPU kullanımı ile yükseltme, Radyoları güç, ağ istekleri ve sonuçlar işlenirken yapın. Aygıt hemen gücü kapatın ve düşük güç boşta durumuna döndürmek için kötü alır. Kötü zamanlanmış arka plan çalışması durumunda gereksiz ve aşırı güç gereksinimleri ile cihaz yanlışlıkla tutabilir. (Bir Web sitesi yoklama) bu zararsız görünen etkinlik aygıt daha kısa bir süre içinde kullanılamaz hale getirecek.
 
-Android zaten ancak bunlar hiçbirine kapsamlı bir çözüm arka planda, işi gerçekleştirerek ile yardımcı olmak için çeşitli API'ler sağlar:
+Android işlemi arka planda gerçekleştirmek ile yardımcı olması için aşağıdaki API'ler sağlar ancak kendi kendilerine bunlar akıllı iş zamanlaması için yeterli değil. 
 
 * **[Hedefi Hizmetleri](~/android/app-fundamentals/services/creating-a-service/intent-services.md)**  &ndash; çalışması zamanlamak için bir yol sağlar ancak amacı Hizmetleri iş gerçekleştirmek için harika.
-* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash; bu API'ler yalnızca zamanlanması, ancak gerçekte çalışmayı gerçekleştirmek üzere bir yolunu sağlar çalışmaya izin verir. Ayrıca, AlarmManager yalnızca temel saat kısıtlamaları, belirli bir zamanda veya belirli bir süre geçtikten sonra bir alarm Yükselt anlamına gelir izin verir. 
+* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash; bu API'ler yalnızca zamanlanacak ancak aslında çalışmayı gerçekleştirmek üzere bir yolunu sağlar çalışmaya izin verir. Ayrıca, AlarmManager yalnızca temel saat kısıtlamaları, belirli bir zamanda veya belirli bir süre geçtikten sonra bir alarm Yükselt anlamına gelir izin verir. 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash; JobSchedule olan işlerini zamanlamak için işletim sistemiyle çalışan harika bir API. Ancak, bunu yalnızca API düzeyi 21 hedef bu Android uygulamaları için veya yüksek kullanılabilir. 
-* **[Yayın alıcıları](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; bir Android uygulaması yanıt veya sistem geniş olayları hedefleri olarak işlerini yapmak için yayın alıcıları kurulumu. Ancak, yayın alıcıları işin ne zaman çalıştırılması gerektiğini üzerinden herhangi bir denetimi sağlamıyorsa. Ayrıca Android işletim sistemindeki değişiklikler kısıtlar yayın alıcıları çalışırken ya da yanıt verebilir iş tür. 
-* **Google bulut ileti Ağ Yöneticisi'ni** &ndash; , bu, tartışmaya açık bir şekilde, uzun bir süredir akıllıca zamanlama arka plan en iyi şekilde çalışır. Ancak, GCMNetworkManager beri kullanım dışıdır. 
+* **[Yayın alıcıları](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; bir Android uygulaması yanıt veya sistem genelinde olayları hedefleri olarak işlerini yapmak için yayın alıcıları kurulumu. Ancak, yayın alıcıları işin ne zaman çalıştırılması gerektiğini üzerinden herhangi bir denetimi sağlamıyorsa. Ayrıca Android işletim sistemindeki değişiklikler kısıtlar yayın alıcıları çalışırken ya da yanıt verebilir iş tür. 
 
-Etkin arka plan iş gerçekleştirmenin iki anahtar özellikler vardır (bazen denir bir _arka plan işi_ veya _iş_):
+Arka plan iş verimli bir şekilde gerçekleştirmek için iki anahtar özellikler vardır (bazen denir bir _arka plan işi_ veya _iş_):
 
-1. **Akıllıca iş zamanlama** &ndash; uygulamanın iş arka planda, gerçekleştirdiğinde bunu iyi vatandaşı mu olduğunu önemlidir. İdeal olarak, uygulama bir işin çalıştırılması talep değil. Bunun yerine, uygulama koşullar karşılandığında çalıştırmak için çalışan iş çalıştırın ve ardından, zamanlamak için karşılanması gereken koşulları belirtmeniz gerekir. Bu, akıllıca işlerini yapmak Android sağlar. Örneğin, ağ istekleri tüm ek yükü en fazla kullanılmasını ağ ile ilgili sağlamak için aynı anda çalıştırmak için toplu.
+1. **Akıllıca iş zamanlama** &ndash; uygulamanın iş arka planda, gerçekleştirdiğinde bunu iyi vatandaşı mu olduğunu önemlidir. İdeal olarak, uygulama bir işin çalıştırılması talep değil. Bunun yerine, uygulama iş çalıştırmak ve koşullar karşılandığında çalıştırmak için bu iş zamanlamak için karşılanması gereken koşulları belirtmeniz gerekir. Bu, akıllıca işlerini yapmak Android sağlar. Örneğin, ağ istekleri tüm ek yükü en fazla kullanılmasını ağ ile ilgili sağlamak için aynı anda çalıştırmak için toplu.
 2. **İş Kapsüllenen** &ndash; arka plan çalışması gerçekleştirmek için kod bağımsız olarak kullanıcı arabirimi çalıştırmak ve tamamlamak iş başarısız olursa yeniden zamanlamak görece olarak daha kolay bir ayrık bileşeninde kapsüllenmiş Bazı nedenlerden dolayı.
 
 Firebase iş dağıtıcı zamanlama arka plan iş basitleştirmek için akıcı bir API sağlar Google kitaplıktan ' dir. Google bulut Yöneticisi için değiştirme olması amaçlanmıştır. Firebase iş dağıtıcı aşağıdaki API'lerinin oluşur:
@@ -66,7 +65,7 @@ Firebase iş dağıtıcı ile çalışmaya başlamak için öncelikle eklemek [X
 
 Firebase iş dağıtıcı kitaplığı eklendikten sonra oluşturma bir `JobService` sınıfı ve örneği ile çalıştırmak için zamanlama `FirebaseJobDispatcher`.
 
-### <a name="creating-a-jobservice"></a>Oluşturma bir `JobService`
+### <a name="creating-a-jobservice"></a>Bir JobService oluşturma
 
 Firebase iş dağıtıcı kitaplığı tarafından gerçekleştirilen tüm iş genişleten bir türü yapılmalıdır `Firebase.JobDispatcher.JobService` soyut sınıf. Oluşturma bir `JobService` oluşturmaya çok benzer bir `Service` Android framework ile: 
 
@@ -74,7 +73,7 @@ Firebase iş dağıtıcı kitaplığı tarafından gerçekleştirilen tüm iş g
 2. Alt sınıfla tasarlamanız `ServiceAttribute`. Kesinlikle olmadığında gerekli olsa da, açıkça ayarlamak için önerilir `Name` hata ayıklamaya yardımcı olması için parametre `JobService`. 
 3. Ekleme bir `IntentFilter` bildirmek için `JobService` içinde **AndroidManifest.xml**. Bu ayrıca bulun ve çağırma Firebase iş dağıtıcı kitaplığı yardımcı olacak `JobService`.
 
-Aşağıdaki kod basit örneğidir `JobService` bir uygulama için:
+Aşağıdaki kod basit örneğidir `JobService` bazı iş zaman uyumsuz olarak gerçekleştirmek için bir uygulama için TPL kullanma:
 
 ```csharp
 [Service(Name = "com.xamarin.fjdtestapp.DemoJob")]
@@ -85,11 +84,14 @@ public class DemoJob : JobService
 
     public override bool OnStartJob(IJobParameters jobParameters)
     {
-        Log.Debug(TAG, "DemoJob::OnStartJob");
-        // Note: This runs on the main thread. Anything that takes longer than 16 milliseconds
-         // should be run on a seperate thread.
-        
-        return false; // return false because there is no more work to do.
+        Task.Run(() =>
+        {
+            // Work is happening asynchronously (code omitted)
+                       
+        });
+
+        // Return true because of the asynchronous work
+        return true;  
     }
 
     public override bool OnStopJob(IJobParameters jobParameters)
@@ -101,7 +103,7 @@ public class DemoJob : JobService
 }
 ```
 
-### <a name="creating-a-firebasejobdispatcher"></a>Oluşturma bir `FirebaseJobDispatcher`
+### <a name="creating-a-firebasejobdispatcher"></a>Bir FirebaseJobDispatcher oluşturma
 
 Herhangi bir iş zamanlanabilmesi için önce oluşturmak gerekli olan bir `Firebase.JobDispatcher.FirebaseJobDispatcher` nesnesi. `FirebaseJobDispatcher` Zamanlama için sorumlu olduğu bir `JobService`. Aşağıdaki kod parçacığını bir örneğini oluşturmak için bir yoldur `FirebaseJobDispatcher`: 
  
@@ -121,7 +123,7 @@ FirebaseJobDispatcher dispatcher = context.CreateJobDispatcher();
 
 Bir kez `FirebaseJobDispatcher` bırakıldı örneği, bu oluşturmak mümkündür bir `Job` ve kod çalıştırmadan `JobService` sınıfı. `Job` Tarafından oluşturulan bir `Job.Builder` nesne ve sonraki bölümde incelenecektir.
 
-### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>Oluşturma bir `Firebase.JobDispatcher.Job` ile `Job.Builder`
+### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>Bir Firebase.JobDispatcher.Job Job.Builder ile oluşturma
 
 `Firebase.JobDispatcher.Job` Sınıftır meta veri şifreleme için sorumlu çalıştırmak gerekli bir `JobService`. A`Job` işi çalıştırmadan önce karşılanması gereken herhangi bir kısıtlama gibi bilgileri içeren `Job` tekrarlanan türde veya çalıştırılacak iş neden olacak hiçbir tetikleyici.  Tam bir en az olarak bir `Job` olmalıdır bir _etiketi_ (projeye tanımlayan benzersiz bir dize `FirebaseJobDispatcher`) ve türünü `JobService` , çalıştırılmalıdır. Firebase iş dağıtıcı örneği `JobService` işin çalıştırma süresi olduğunda.  A `Job` örneği kullanılarak oluşturulan `Firebase.JobDispatcher.Job.JobBuilder` sınıfı. 
 
@@ -140,7 +142,7 @@ Job myJob = dispatcher.NewJobBuilder()
 * A `Job` olabildiğince çabuk çalıştırmak üzere zamanlanmış.
 * İçin varsayılan yeniden deneme stratejisini bir `Job` kullanmaktır bir _üstel geri alma_ (daha fazla ayrıntı bölümünde ele alınan [bir RetryStrategy ayarı](#Setting_a_RetryStrategy))
 
-### <a name="scheduling-a-job"></a>Zamanlama bir `Job`
+### <a name="scheduling-a-job"></a>Bir iş zamanlaması
 
 Oluşturduktan sonra `Job`, ile zamanlanması gerekiyor `FirebaseJobDispatcher` , çalıştırılmadan önce. Zamanlama için iki yöntem vardır bir `Job`:
 
@@ -173,7 +175,7 @@ Her Bu konu, aşağıdaki bölümlerde daha incelenecektir.
 
 <a name="Passing_Parameters_to_a_Job" />
 
-#### <a name="passing-parameters-to-a-job"></a>Bir iş parametreleri geçirme
+#### <a name="passing-jarameters-to-a-job"></a>Bir projeye jarameters geçirme
 
 Parametreler, işe oluşturarak geçirilir bir `Bundle` ile birlikte geçirilen `Job.Builder.SetExtras` yöntemi:
 
@@ -219,8 +221,6 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 <a name="Setting_Job_Triggers" />
-
-#### <a name="setting-job-triggers"></a>Ayar iş Tetikleyicileri
 
 `JobTrigger` İş başlaması gereken hakkında işletim sistemi için kılavuzluk sağlar. A `JobTrigger` sahip bir _penceresi yürütme_ ne zaman zamanlanmış bir süredir tanımlayan `Job` çalıştırmanız gerekir. Yürütme penceresine sahip bir _penceresi başlangıç_ değeri ve bir _son penceresi_ değeri. Başlangıç penceresi cihaz işi çalıştırmadan önce beklemesi gereken saniye sayısını ve son penceresi değer çalıştırmadan önce beklenecek saniye sayısını `Job`. 
 
@@ -283,7 +283,7 @@ Her iki yöntem bir tamsayı değeri döndürür:
 
 ## <a name="summary"></a>Özet
 
-Bu kılavuz Firebase iş dağıtıcı iş akıllıca arka planda gerçekleştirmek için nasıl kullanılacağı açıklanmıştır. Olarak gerçekleştirilecek iş yalıtılacak nasıl ele alınan bir `JobService` ve nasıl `FirebaseJobDispatcher` ölçütlerle belirtme çalışmanın zamanlamak için bir `JobTrigger` ve olan hataları nasıl işleneceğini bir `RetryStrategy`.
+Bu kılavuz Firebase iş dağıtıcı iş akıllıca arka planda gerçekleştirmek için nasıl kullanılacağı açıklanmıştır. Olarak gerçekleştirilecek iş yalıtılacak nasıl ele alınan bir `JobService` ve nasıl kullanılacağını `FirebaseJobDispatcher` ölçütlerle belirtme çalışmanın zamanlamak için bir `JobTrigger` ve olan hataları nasıl işleneceğini bir `RetryStrategy`.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 8674a8b846573c27e54660ae3bc065e07561f411
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 29b846453396d37adc689fe49e80299e8f35bbe2
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Objective-C kitaplıkları bağlama
 
@@ -93,7 +93,7 @@ namespace Cocos2D {
 
 Yukarıdaki örnek adlı bir sınıf tanımlar `Cocos2D.Camera` , türetilen `NSObject` temel türü (Bu tür geldiği `Foundation.NSObject`) ve bir statik özellik tanımlar (`ZEye`), bağımsız değişkenler ve yöntemi alın iki yöntem üç alır bağımsız değişkenler.
 
-API dosyası ve kullanabileceğiniz öznitelikler biçimi için ayrıntılı bir tartışma içinde ele [API tanımı dosyası](~/cross-platform/macios/binding/objective-c-libraries.md) bölümüne bakın.
+API dosyası ve kullanabileceğiniz öznitelikler biçimi için ayrıntılı bir tartışma içinde ele [API tanımı dosyası](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) bölümüne bakın.
 
 Tam bir bağlama üretmek için genellikle dört bileşenleri ile ilgilenecektir:
 
@@ -106,7 +106,7 @@ Bu grafik dosyaları ilişkiyi gösterir:
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "Bu grafik dosyaları ilişkiyi gösterir")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
 
-API tanımı dosyası: yalnızca ad alanları ve arabirim tanımları (ile bir arabirim içerebilir tüm üyeleri) içerir ve sınıflar, numaralandırmalar, temsilciler veya yapılar içermemesi gerekir. API tanımlama dosyası yalnızca API oluşturmak için kullanılan Sözleşme ' dir.
+API tanımı dosyası yalnızca (bir arabirim içeren tüm üyeleri olan), ad alanları ve arabirim tanımlarını içerir ve sınıflar, numaralandırmalar, temsilciler veya yapılar içermemesi gerekir. API tanımlama dosyası yalnızca API oluşturmak için kullanılan Sözleşme ' dir.
 
 Numaralandırmalar ister veya destek sınıfları alanınızın barındırılması "CameraMode" Yukarıdaki örnekte ayrı bir dosya üzerindeki fazladan kod CS dosyasında yok ve ayrı bir dosyada örneğin barındırılmalıdır bir numaralandırma değeridir `StructsAndEnums.cs` :
 
@@ -133,7 +133,7 @@ public partial class Camera {
 Oluşturma kitaplığına yerel bağlama oluşturur.
 
 Bu bağlama tamamlamak için yerel kitaplık projesine eklemeniz gerekir.  Bu projeye sağ tıklayıp seçerek projenize, Çözüm Gezgini'nde projeye üzerine Bulucu yerel kitaplığı bırakarak veya yerel kitaplığı ekleyerek yapabilirsiniz **Ekle**  >  **Dosyaları Ekle** yerel kitaplığı seçin.
-Kural tarafından yerel kitaplıkları "LIB" sözcüğüyle başlayan ve "bir" uzantısı ile bitmelidir. Bunu yaparken, Visual Studio Mac için iki dosya ekleyecektir: `.a` ve dosyası ne yerel kitaplığı içerir hakkında bilgi içeren otomatik olarak doldurulan C#:
+Kural tarafından yerel kitaplıkları "LIB" sözcüğüyle başlayan ve "bir" uzantısı ile bitmelidir. Bunu yaparken, Visual Studio Mac için iki dosya ekleyecektir: bir dosya ve ne yerel kitaplığı içerir hakkında bilgi içeren bir otomatik olarak doldurulan C# dosyası:
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Kural tarafından yerel kitaplıkları word lib ile başlayıp bitmelidir ile uzantısı bir")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
@@ -146,17 +146,17 @@ using ObjCRuntime;
 [assembly: LinkWith ("libMagicChord.a", SmartLink = true, ForceLoad = true)]
 ```
 
-LinkWith öznitelik kullanma hakkında tam Ayrıntılar bölümünde belgelenmiştir bizim [türleri Başvuru Kılavuzu bağlama](~/cross-platform/macios/binding/binding-types-reference.md).
+Tam nasıl kullanılacağı hakkında ayrıntılar [ `[LinkWith]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute) özniteliği konusunda belgelenir [türleri Başvuru Kılavuzu bağlama](~/cross-platform/macios/binding/binding-types-reference.md).
 
 Projeyi derlerken, durumuyla karşılaşırsınız artık bir `MagicChords.dll` bağlama ve yerel kitaplığı içeren dosya. Bu proje dağıtabilirsiniz veya diğer geliştiriciler için kendi elde edilen DLL'e kullanın.
 
 Bazen birkaç numaralandırma değerlerinin, temsilci tanımları veya diğer türleri gerektiğini fark edebilirsiniz. Bu yalnızca bir sözleşme olduğu gibi API tanımlarını dosyası de yerleştirmeyin
 
- <a name="The_API_definition_file" />
+<a name="The_API_definition_file" />
 
 ## <a name="the-api-definition-file"></a>API tanımlama dosyası
 
-API tanımlama dosyası arabirimleri sayısı oluşur. API tanımı arabirimlerde sınıf bildirimi içine kapatılacak ve ile tasarlanmalıdır [[BaseType]](~/cross-platform/macios/binding/binding-types-reference.md) özniteliği sınıf için temel sınıf belirtin.
+API tanımlama dosyası arabirimleri sayısı oluşur. API tanımı arabirimlerde sınıf bildirimi içine kapatılacak ve ile tasarlanmalıdır [ `[BaseType]` ](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) özniteliği sınıf için temel sınıf belirtin.
 
 Neden biz sınıfları arabirimleri yerine sözleşme tanımı kullanmadı merak ediyor olabilirsiniz. Bize API tanımlama dosyası yöntemi gövdesinde sağlamak zorunda veya bir özel durum oluşturduğunda veya anlamlı bir değere gerekiyordu bir gövde sağlamak zorunda kalmadan bir yöntem için sözleşme yazmaya izin için biz arabirimleri Çekildi.
 
@@ -166,7 +166,7 @@ Ancak biz arabirimi bir çatısını bir sınıf oluşturmak için kullandığı
 
 ### <a name="binding-methods"></a>Bağlama yöntemleri
 
-Bir yöntem bağlamak için yapabileceğiniz basit bağlama var. Yalnızca C# adlandırma kuralları ile arabiriminde bir yöntem bildirin ve yöntemiyle dekorasyon [[verme]](~/cross-platform/macios/binding/binding-types-reference.md) özniteliği. C# adınızı Xamarin.iOS çalışma zamanında Objective-C adla ne bağlar [verme] özniteliğidir. Dışarı aktarma özniteliği parametresinin Objective-C Seçici, bazı örnekler adıdır:
+Bir yöntem bağlamak için yapabileceğiniz basit bağlama var. Yalnızca C# adlandırma kuralları ile arabiriminde bir yöntem bildirin ve yöntemiyle dekorasyon [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) özniteliği. [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) Özniteliktir, C# adıyla Objective-C Xamarin.iOS çalışma zamanında ne bağlar. Parametresi, [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) özniteliği Objective-C Seçici adıdır. Bazı örnekler:
 
 ```csharp
 // A method, that takes no arguments
@@ -182,7 +182,7 @@ nint Add (nint a, nint b);
 void Draw (string text, nint column, nint row);
 ```
 
-Yukarıdaki örneklerde, örnek yöntemleri nasıl bağlayabilirsiniz gösterir. Statik yöntemler bağlamak için kullanmanız gerekir `[Static]` özniteliği şuna benzer:
+Yukarıdaki örneklerde, örnek yöntemleri nasıl bağlayabilirsiniz gösterir. Statik yöntemler bağlamak için kullanmanız gerekir [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) özniteliği şuna benzer:
 
 ```csharp
 // A static method, that takes no arguments
@@ -190,26 +190,26 @@ Yukarıdaki örneklerde, örnek yöntemleri nasıl bağlayabilirsiniz gösterir.
 void Beep ();
 ```
 
-Bu sözleşme bir arabirim parçası olduğundan ve bir kez daha öznitelikleri çözümlemelere gerekli olmayacak biçimde statik vs örneği bildirimleri kavramı arabirimine sahip gereklidir. Belirli bir bağlama yönteminden gizlemek istiyorsanız, yöntemiyle tasarlamanız [[dahili]](~/cross-platform/macios/binding/binding-types-reference.md) özniteliği.
+Bu sözleşme bir arabirim parçası olduğundan ve bir kez daha öznitelikleri çözümlemelere gerekli olmayacak biçimde statik vs örneği bildirimleri kavramı arabirimine sahip gereklidir. Belirli bir bağlama yönteminden gizlemek istiyorsanız, yöntemiyle tasarlamanız [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) özniteliği.
 
-`btouch-native` Komut başvurusu parametre null olmaması için denetimleri tanıtmak. Belirli bir parametre için null değerlere izin vermek istiyorsanız, kullanmak [[NullAllowed]](~/cross-platform/macios/binding/binding-types-reference.md) şöyle parametre özniteliği:
+`btouch-native` Komut başvurusu parametre null olmaması için denetimleri tanıtmak. Belirli bir parametre için null değerlere izin vermek istiyorsanız, kullanmak [ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute) şöyle parametre özniteliği:
 
 ```csharp
 [Export ("setText:")]
 string SetText ([NullAllowed] string text);
 ```
 
-Bir başvuru türü ile verilirken `[Export]` anahtar sözcük ayırma semantiğini de belirtebilirsiniz. Bu, veri sızmış emin olmak gereklidir.
+Bir başvuru türü ile verilirken [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) anahtar sözcük ayırma semantiğini de belirtebilirsiniz. Bu, veri sızmış emin olmak gereklidir.
 
 <a name="Binding_Properties" />
 
 ### <a name="binding-properties"></a>Bağlama özellikleri
 
-Kullanarak Objective-C özelliklerine bağlı yöntemler gibi [[verme]](~/cross-platform/macios/binding/binding-types-reference.md) özniteliği ve C# özellikleri için doğrudan eşleme. Yalnızca yöntemleri gibi özellikleri tasarlanabilir [[statik]](~/cross-platform/macios/binding/binding-types-reference.md) ve [[dahili]](~/cross-platform/macios/binding/binding-types-reference.md) öznitelikleri.
+Kullanarak Objective-C özelliklerine bağlı yöntemler gibi [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) özniteliği ve C# özellikleri için doğrudan eşleme. Yalnızca yöntemleri gibi özellikleri tasarlanabilir [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) ve [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) öznitelikleri.
 
-Kullandığınızda `[Export]` özniteliği kapsar btouch yerel altında bir özelliğe gerçekte iki yöntem bağlar: ' Set ' yordamı. Dışarı aktarmak için sağladığınız ad **basename** ve kurucu "Ayarla" ilk harfini kapatma, word eklenerek hesaplanır **basename** büyük harf ve ele Seçici yaparak içine bir bağımsız değişken. Bunun anlamı `[Export ("label")]` uygulanan bir özellik gerçekte "etiketi" bağlar ve "setLabel:" Objective-C yöntemleri.
+Kullandığınızda [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) özniteliği kapsar btouch yerel altında bir özelliğe gerçekte iki yöntem bağlar: ' Set ' yordamı. Dışarı aktarmak için sağladığınız ad **basename** ve kurucu "Ayarla" ilk harfini kapatma, word eklenerek hesaplanır **basename** büyük harf ve ele Seçici yaparak içine bir bağımsız değişken. Bunun anlamı `[Export ("label")]` uygulanan bir özellik gerçekte "etiketi" bağlar ve "setLabel:" Objective-C yöntemleri.
 
-Bazen Objective-C özellikleri yukarıda açıklanan düzeni izlemeyin ve adını el ile üzerine yazılır. Bu gibi durumlarda bağlama kullanılarak oluşturulur yolunu kontrol edebilirsiniz `[Bind]` alıcı veya ayarlayıcı, örneğin özniteliği:
+Bazen Objective-C özellikleri yukarıda açıklanan düzeni izlemeyin ve adını el ile üzerine yazılır. Bu gibi durumlarda bağlama kullanılarak oluşturulur yolunu kontrol edebilirsiniz [ `[Bind]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) alıcı veya ayarlayıcı, örneğin özniteliği:
 
 ```csharp
 [Export ("menuVisible")]
@@ -232,21 +232,21 @@ interface UIView_MyIn
 
 ' Set'yordamı açıkça tanımlandığı gibi `name` ve `setName` bağlamaları yukarıdaki.
 
-Kullanarak statik özellikleri için destek yanı sıra `[Static]`, iş parçacığı statik özellikleri ile işaretleme [[IsThreadStatic]](~/cross-platform/macios/binding/binding-types-reference.md), örneğin:
+Kullanarak statik özellikleri için destek yanı sıra [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute), iş parçacığı statik özellikleri ile işaretleme [ `[IsThreadStatic]` ](~/cross-platform/macios/binding/binding-types-reference.md#IsThreadStaticAttribute), örneğin:
 
 ```csharp
 [Export ("currentRunLoop")][Static][IsThreadStatic]
 NSRunLoop Current { get; }
 ```
 
-Yalnızca bazı parametreler ile işaretlenmesini yöntemlere izin gibi [[NullAllowed]](~/cross-platform/macios/binding/binding-types-reference.md), uygulayabileceğiniz [[NullAllowed]](~/cross-platform/macios/binding/binding-types-reference.md) bu null bir özellik için geçerli bir değer örneğin belirtmek için bir özellik için:
+Yalnızca bazı parametreler ile işaretlenmesini yöntemlere izin gibi [ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute), uygulayabileceğiniz [ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute) bu null bir özellik için geçerli bir değer örneğin belirtmek için bir özellik için:
 
 ```csharp
 [Export ("text"), NullAllowed]
 string Text { get; set; }
 ```
 
-[[NullAllowed]](~/cross-platform/macios/binding/binding-types-reference.md) parametre doğrudan ayarlayıcı üzerinde de belirtilebilir:
+[ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute) Parametre doğrudan ayarlayıcı üzerinde de belirtilebilir:
 
 ```csharp
 [Export ("text")]
@@ -257,8 +257,8 @@ string Text { get; [NullAllowed] set; }
 
 Aşağıdaki uyarılar özel bir denetim için bağlama ayarlama göz önünde bulundurulması:
 
-1. **Bağlama özellikleri statik olmalıdır** - özellikleri, bağlama tanımlarken `Static` özniteliği kullanılmalıdır.
-2. **Özellik adlarının tam olarak eşleşmelidir** -özelliği bağlamak için kullanılan ad özel denetiminde özelliğinin adı tam olarak eşleşmelidir.
+1. **Bağlama özellikleri statik olmalıdır** - özellikleri, bağlama tanımlarken [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) özniteliği kullanılmalıdır.
+ 2. **Özellik adlarının tam olarak eşleşmelidir** -özelliği bağlamak için kullanılan ad özel denetiminde özelliğinin adı tam olarak eşleşmelidir.
 3. **Özellik türleri tam olarak eşleşmelidir** -özelliği bağlamak için kullanılan değişken türü özel denetiminde özelliğinin türü ile tam olarak eşleşmelidir.
 4. **Kesme noktaları ve alıcı/ayarlayıcı** - kesme noktaları yer işareti veya özellik ayarlayıcı yöntemlerini hiçbir zaman edeceği.
 5. **Geri aramalar gözlemlemek** -özel denetimler özellik değerlerini değişikliklerin bildirilmesi gözlem geri aramalar kullanmanız gerekir.
@@ -269,13 +269,13 @@ Yukarıda listelenen uyarılar hiçbirini izlemek için hata sessizce çalışma
 
 #### <a name="objective-c-mutable-pattern-and-properties"></a>Objective-C değişebilir düzeni ve özellikleri
 
-Objective-C çerçeveleri bazı sınıflar ile değişebilir bir alt değişmez olduğu bir deyim kullanın.   Örneğin `NSString` değişmez sürümü sırada `NSMutableString` mutation izin veren sınıfıdır.
+Objective-C çerçeveleri bazı sınıflar ile değişebilir bir alt değişmez olduğu bir deyim kullanın. Örneğin `NSString` değişmez sürümü sırada `NSMutableString` mutation izin veren sınıfıdır.
 
-Bu sınıfların bir alıcı, ancak hiçbir ayarlayıcı özelliklerini içeren değişmez temel sınıf görmek için yaygın bir sorundur.   Kurucu tanıtmak değişebilir sürümü.   Bu C# ile gerçekten mümkün olmadığından, bu deyim C# ile çalışır bir deyim içine eşleme içeriyor.
+Bu sınıfların bir alıcı, ancak hiçbir ayarlayıcı özelliklerini içeren değişmez temel sınıf görmek için yaygın bir sorundur. Kurucu tanıtmak değişebilir sürümü. Bu C# ile gerçekten mümkün olmadığından, bu deyim C# ile çalışır bir deyim içine eşleme içeriyor.
 
-Bu C# eşlendiğinden hem alıcı hem de ayarlayıcı temel sınıfını eklemeyi, ancak setter işaretlemesini yoludur bir `[NotImplemented]` özniteliği.
+Bu C# eşlendiğinden hem alıcı hem de ayarlayıcı temel sınıfını eklemeyi, ancak setter işaretlemesini yoludur bir [ `[NotImplemented]` ](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute) özniteliği.
 
-Ardından, değişebilir bir alt kümesi üzerinde kullandığınız `[Override]` özelliği gerçekten üst öğenin davranışı geçersiz kılma olduğundan emin olmak için özellikte özniteliği.
+Ardından, değişebilir bir alt kümesi üzerinde kullandığınız [ `[Override]` ](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) özelliği gerçekten üst öğenin davranışı geçersiz kılma olduğundan emin olmak için özellikte özniteliği.
 
 Örnek:
 
@@ -292,11 +292,11 @@ interface MyMutableTree {
 }
 ```
 
- <a name="Binding_Constructors" />
+<a name="Binding_Constructors" />
 
 ### <a name="binding-constructors"></a>Bağlama oluşturucular
 
-**Btouch yerel** aracı otomatik olarak oluşturacağını fours oluşturucuları için belirli bir sınıfın sınıfınızda `Foo`, onu oluşturur:
+`btouch-native` Aracı otomatik olarak oluşturacağını fours oluşturucuları için belirli bir sınıfın sınıfınızda `Foo`, onu oluşturur:
 
 -  `Foo ()`: varsayılan Oluşturucusu (maps Objective-C'ın "Başlangıç" Oluşturucusu)
 -  `Foo (NSCoder)`: NIB dosyaları seri kaldırma sırasında kullanılan Oluşturucusu (eşlemeleri Objective-C için 's "initWithCoder:" Oluşturucusu).
@@ -310,11 +310,11 @@ Tanımladığınız oluşturucuları için bunlar arabirim tanımı içinde aşa
 IntPtr Constructor (CGRect frame);
 ```
 
- <a name="Binding_Protocols" />
+<a name="Binding_Protocols" />
 
 ### <a name="binding-protocols"></a>Bağlama protokolleri
 
-API tasarım belge bölümünde açıklandığı gibi [modelleri ve protokolleri ele](~/ios/internals/api-design/index.md), Xamarin.iOS Objective-C protokolleri ile işaretlenen sınıfları eşlemeleri [[Model]](~/cross-platform/macios/binding/binding-types-reference.md) özniteliği. Bu genellikle Objective-C temsilci sınıfları uygulanırken kullanılır.
+API tasarım belge bölümünde açıklandığı gibi [modelleri ve protokolleri ele](~/ios/internals/api-design/index.md#Models), Xamarin.iOS Objective-C protokolleri ile işaretlenen sınıfları eşlemeleri [ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) özniteliği. Bu genellikle Objective-C temsilci sınıfları uygulanırken kullanılır.
 
 Büyük bir normal bağlı ve bir temsilci sınıf arasında temsilci sınıfı bir veya daha fazla isteğe bağlı yöntemler olabilir farktır.
 
@@ -329,11 +329,11 @@ interface UIAccelerometerDelegate {
 }
 ```
 
-Bu isteğe bağlı bir yöntem tanımında olduğundan `UIAccelerometerDelegate` yapmak için başka bir şey yok. Ancak protokolünü gerekli bir yöntemi ise eklemeniz gerekir [[soyut]](~/cross-platform/macios/binding/binding-types-reference.md) özniteliği yöntemi. Bu gövde yöntemi için gerçekten sağlamak için kullanıcı uygulamasının zorlar.
+Bu isteğe bağlı bir yöntem tanımında olduğundan `UIAccelerometerDelegate` yapmak için başka bir şey yok. Ancak protokolünü gerekli bir yöntemi ise eklemeniz gerekir [ `[Abstract]` ](~/cross-platform/macios/binding/binding-types-reference.md#AbstractAttribute) özniteliği yöntemi. Bu gövde yöntemi için gerçekten sağlamak için kullanıcı uygulamasının zorlar.
 
 Genel olarak, protokolleri iletileri yanıtlayın sınıfları kullanılır. Bu genellikle Objective-C Protokolü yöntemlere yanıtlaması bir nesnenin örneğine "temsilci" özelliğine atayarak yapılır.
 
-Her iki Objective-C geniş desteklemek için eşleşmiş stili herhangi bir yerde kuraldır Xamarin.iOS içinde örneğini bir `NSObject` temsilci ve ayrıca sunmaya kesin türü belirtilmiş bir sürümünü atanabilir. Bu nedenle, genellikle kesin türü belirtilmiş bir "Temsilci" özelliği ve "geniş yazılmış WeakDelegate" sunuyoruz. Biz genellikle verme gevşek yazılmış sürümüyle bağlayın ve kullanırız [[sarmalamak]](~/cross-platform/macios/binding/binding-types-reference.md) kesin türü belirtilmiş sürümünü sağlamak için öznitelik.
+Xamarin.iOS kural her iki Objective-C gevşek bağlanmış stili herhangi bir yerde desteklemektir örneğini bir `NSObject` temsilci ve ayrıca sunmaya bir kesin türü belirtilmiş sürümünü atanabilir. Bu nedenle, genellikle her ikisi de sunuyoruz bir `Delegate` kesin türü belirtilmiş özelliği ve `WeakDelegate` geniş türü. Geniş yazılmış sürümüyle biz genellikle bağlamak [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute), ve kullanırız [ `[Wrap]` ](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute) kesin türü belirtilmiş sürümünü sağlamak için öznitelik.
 
 Bu size nasıl bağlı gösterir `UIAccelerometer` sınıfı:
 
@@ -354,7 +354,7 @@ interface UIAccelerometer {
 }
 ```
 
- <a name="iOS7ProtocolSupport" />
+<a name="iOS7ProtocolSupport" />
 
 **MonoTouch 7.0 yenilikler**
 
@@ -362,10 +362,10 @@ interface UIAccelerometer {
 
 Her protokol tanımı için `MyProtocol` Objective-C, var. Şimdi bir `IMyProtocol` Protokolü gerekli tüm yöntemleri listeler arabirimi yanı sıra tüm isteğe bağlı yöntemler sağlayan bir uzantı sınıfı.  Yukarıdaki, birleştirilmiş önceki soyut modeli sınıfları ayrı sınıfları kullanmak zorunda kalmadan Protokolü yöntemleri uygulamak geliştiricilerin Düzenleyicisi sağlar Xamarin Studio'da yeni desteğiyle.
 
-İçeren herhangi bir tanımının `[Protocol]` özniteliği gerçekte çok protokolleri kullanma şeklini geliştirmek üç destekleyen sınıfları oluşturun:
+İçeren herhangi bir tanımının [ `[Protocol]` ](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) özniteliği gerçekte çok protokolleri kullanma şeklini geliştirmek üç destekleyen sınıfları oluşturun:
 
 ```csharp
-// Full method implementation, contains all methods
+    // Full method implementation, contains all methods
     class MyProtocol : IMyProtocol {
         public void Say (string msg);
         public void Listen (string msg);
@@ -388,7 +388,7 @@ Her protokol tanımı için `MyProtocol` Objective-C, var. Şimdi bir `IMyProtoc
 
 Oluşturulan **arabirim tanımı** devreye girer.  Protokol gereken tüm yöntemleri sahip bir arabirimdir.  Bu, yalnızca arabirimi uygulamak için protokol uygulamak isterseniz geliştiriciler sağlar.  Çalışma zamanı Protokolü'nu benimseme olarak türü otomatik olarak kaydeder.
 
-Arabirimi yalnızca gerekli yöntemlerini listeler ve isteğe bağlı yöntemler kullanıma dikkat edin.  Bu protokol benimsemeye sınıfları için gerekli yöntemleri denetimi tam tür alır, ancak (el ile dışarı aktarım öznitelikleri kullanarak ve imza eşleştirme) zayıf yazmaya çözümlemelere gerekecek için isteğe bağlı Protokolü yöntemleri anlamına gelir.
+Arabirimi yalnızca gerekli yöntemlerini listeler ve isteğe bağlı yöntemler kullanıma dikkat edin.  Bu protokol benimsemeye sınıfları için gerekli yöntemleri denetimi tam tür alır, ancak zayıf yazmaya çözümlemelere gerekecek anlamına gelir (el ile kullanarak [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) öznitelikleri ve imza eşleştirme) için isteğe bağlı protokol yöntemleri.
 
 Protokollerini kullanan bir API kullanmak üzere kullanışlı hale getirmek Bağlama aracı ayrıca tüm isteğe bağlı yöntemleri gösteren bir uzantıları yöntemi sınıf oluşturur.  Bu bir API kullanıyor sürece, tüm yöntemleri sahip olarak protokolleri ele almanız mümkün olacağı anlamına gelir.
 
@@ -448,26 +448,7 @@ Arabirim örtük veya açık olarak uygulanırsa önemli değildir.
 
 ### <a name="binding-class-extensions"></a>Bağlama sınıf uzantıları
 
-<!--In Objective-C it is possible to extend classes with new methods,
-similar in spirit to C#'s extension methods. When one of these methods
-is present, you can use the `[Target]` attribute to flag the first
-parameter of a method as being the receiver of the Objective-C
-message.
-
-For example, in Xamarin.iOS we bound the extension methods that are defined on
-`NSString` when `UIKit` is imported as methods in the `UIView`, like this:
-
-```csharp
-[BaseType (typeof (UIResponder))]
-interface UIView {
-    [Bind ("drawAtPoint:withFont:")]
-    SizeF DrawString ([Target] string str, CGPoint point, UIFont font);
-}
-```
-
--->
-
-Objective-C yöntemleriyle yeni C# ' ın genişletme yöntemleri Ruhu benzer sınıflarını genişletmek mümkündür. Aşağıdaki yöntemlerden birini mevcut olduğunda kullanabileceğiniz `BaseType` Objective-C ileti alıcısı olarak yöntemi bayrak özniteliği.
+Objective-C yöntemleriyle yeni C# ' ın genişletme yöntemleri Ruhu benzer sınıflarını genişletmek mümkündür. Aşağıdaki yöntemlerden birini mevcut olduğunda kullanabileceğiniz [ `[BaseType]` ](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) Objective-C ileti alıcısı olarak yöntemi bayrak özniteliği.
 
 Örneğin, içinde Xamarin.iOS biz üzerinde tanımlanan genişletme yöntemleri bağlı `NSString` zaman `UIKit` yöntemleri olarak içe `NSStringDrawingExtensions`, şöyle:
 
@@ -479,15 +460,13 @@ interface NSStringDrawingExtensions {
 }
 ```
 
- <a name="Binding_Objective-C_Argument_Lists" />
+<a name="Binding_Objective-C_Argument_Lists" />
 
 ### <a name="binding-objective-c-argument-lists"></a>Objective-C bağımsız değişken listeleri bağlama
 
-Objective-C variadic bağımsız değişkenini destekler, Zach Gris tarafından açıklandığı aşağıdaki yöntemi kullanabilirsiniz [bu post](http://forums.monotouch.net/yaf_postst311_SOLVED-Binding-ObjectiveC-Argument-Lists.aspx).
+Objective-C variadic bağımsız değişkenini destekler. Örneğin:
 
-Objective-C iletisine şöyle görünür:
-
-```csharp
+```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
   NS_REQUIRES_NIL_TERMINATION ;
 ```
@@ -520,7 +499,7 @@ public void AppendWorkers(params Worker[] workers)
 }
 ```
 
- <a name="Binding_Fields" />
+<a name="Binding_Fields" />
 
 ### <a name="binding-fields"></a>Alanların bağlama
 
@@ -528,14 +507,14 @@ Bazen bir kitaplıkta bildirilen ortak alanlara erişmek isteyeceksiniz.
 
 Genellikle bu alanlar başvurulmalıdır dizeleri veya tamsayı değerlerini içerir. Bunlar genellikle sözlüklerindeki anahtarlarını ve belirli bir bildirim temsil eden dize olarak kullanılır.
 
-Bir alana bağlamak için bir özellik arabirim tanımı dosyanıza ekleyin ve özelliğiyle dekorasyon [[Field]](~/cross-platform/macios/binding/binding-types-reference.md) özniteliği. Bu öznitelik bir parametre alan: arama simgesine C adı. Örneğin:
+Bir alana bağlamak için bir özellik arabirim tanımı dosyanıza ekleyin ve özelliğiyle dekorasyon [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) özniteliği. Bu öznitelik bir parametre alan: arama simgesine C adı. Örneğin:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
 NSString NSSomeEventNotification { get; }
 ```
 
-Türünden türemez statik bir sınıf çeşitli alanları sarmalamak istiyorsanız `NSObject`, kullanabileceğiniz `[Static]` şöyle sınıfı özniteliği:
+Türünden türemez statik bir sınıf çeşitli alanları sarmalamak istiyorsanız `NSObject`, kullanabileceğiniz [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute_Class) şöyle sınıfı özniteliği:
 
 ```csharp
 [Static]
@@ -548,7 +527,7 @@ interface LonelyClass {
 Yukarıdaki oluşturacak bir `LonelyClass` hangi öğesinden türetilmiyor `NSObject` ve bir bağlama içerir `NSSomeEventNotification` 
  `NSString` olarak sunulan bir `NSString`.
 
-`[Field]` Özniteliği aşağıdaki veri türlerini uygulanabilir:
+[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) Özniteliği aşağıdaki veri türlerini uygulanabilir:
 
 -  `NSString` Başvurular (yalnızca salt okunur özellikler)
 -  `NSArray` Başvurular (yalnızca salt okunur özellikler)
@@ -624,17 +603,17 @@ interface MyType {
 }
 ```
 
-Yukarıdaki örnekte tasarlamanız karar `void Perform (NSString mode);` ile bir `[Internal]` özniteliği. Bu işlem **Gizle** bağlama tüketicileriniz sabiti tabanlı API'SİNDEN.
+Yukarıdaki örnekte tasarlamanız karar `void Perform (NSString mode);` ile bir [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) özniteliği. Bu işlem **Gizle** bağlama tüketicileriniz sabiti tabanlı API'SİNDEN.
 
-Ancak bu tür daha Hoş görünmesi API alternatif kullandıkça sınıflara sınırlandırır bir `[Wrap]` özniteliği. Bu oluşturulan yöntemler `virtual`, yani, hangi olabilir veya bunları - geçersiz kılmak için iyi bir seçimdir olması olmaz.
+Ancak bu tür daha Hoş görünmesi API alternatif kullandıkça sınıflara sınırlandırır bir [ `[Wrap]` ](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute) özniteliği. Bu oluşturulan yöntemler `virtual`, yani, hangi olabilir veya bunları - geçersiz kılmak için iyi bir seçimdir olması olmaz.
 
 Özgün işaretlemek için alternatiftir `NSString`-bağlı olarak, tanımı olarak `[Protected]`. Bu, gerekli olduğunda çalışması sınıflara izin verir ve wrap'ed sürüm hala çalışma ve kılınmadı yöntemini çağırın.
 
-### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>NSValue, NSNumber ve NSString daha iyi bir türe bağlama
+### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>Bağlama `NSValue`, `NSNumber`, ve `NSString` daha iyi türü
 
-[[BindAs]](~/cross-platform/macios/binding/binding-types-reference.md) özniteliğe izin bağlama `NSNumber`, `NSValue` ve `NSString`(numaralandırmaları) daha doğru C# türleri içine. Öznitelik daha iyi ve daha doğru oluşturmak için kullanılan yerel API üzerinden .NET API.
+[ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) Özniteliğe izin bağlama `NSNumber`, `NSValue` ve `NSString`(numaralandırmaları) daha doğru C# türleri içine. Öznitelik daha iyi ve daha doğru oluşturmak için kullanılan yerel API üzerinden .NET API.
 
-Yöntemlerde (dönüş değeri), parametreleri ve özellikleri ile işaretleme [[BindAs]](~/cross-platform/macios/binding/binding-types-reference.md). Tek kısıtlama, üye olan **bulunmamalıdır** içinde olması bir `[Protocol]` veya `[Model]` arabirimi.
+Yöntemlerde (dönüş değeri), parametreleri ve özellikleri ile işaretleme [ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute). Tek kısıtlama, üye olan **bulunmamalıdır** içinde olması bir [ `[Protocol]` ](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) veya [ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) arabirimi.
 
 Örneğin:
 
@@ -653,7 +632,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 Dahili olarak gerçekleştiririz `bool?`  <->  `NSNumber` ve `CGRect`  <->  `NSValue` dönüşümler.
 
-[[BindAs] ](~/cross-platform/macios/binding/binding-types-reference.md) de dizileri destekler `NSNumber` `NSValue` ve `NSString`(numaralandırmaları).
+[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) Ayrıca, dizilerin destekler `NSNumber` `NSValue` ve `NSString`(numaralandırmaları).
 
 Örneğin:
 
@@ -672,17 +651,17 @@ CAScroll [] SupportedScrollModes { get; set; }
 
 `CAScroll` olan bir `NSString` enum, yedeklenen biz sağa getirir `NSString` değer ve tür dönüştürmeleri tanıtıcı.
 
-Lütfen bakın [[BindAs] belgelerine](~/cross-platform/macios/binding/binding-types-reference.md) görmek için dönüştürme türleri desteklenir.
+Lütfen bakın [ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) desteklenen dönüştürme türlerini görmek için belgeleri.
 
- <a name="Binding_Notifications" />
+<a name="Binding_Notifications" />
 
 ### <a name="binding-notifications"></a>Bağlama bildirimleri
 
 Bildirimler için gönderilen iletileri olan `NSNotificationCenter.DefaultCenter` ve başka bir uygulamanın bir bölümünden yayın iletilerinin için bir mekanizma olarak kullanılır. Geliştiriciler genellikle kullanarak Bildirimlere abone [NSNotificationCenter](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/)'s [AddObserver](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/M/AddObserver/) yöntemi. Bir uygulamayı bildirim Merkezi'ne bir ileti gönderdiğinde, genellikle depolanan bir yükü içerdiği [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) sözlük. Bu sözlük zayıf yazılmış ve kullanıcıların hangi anahtarları sözlük ve sözlük içinde depolanan değerlerin türleri kullanılabilir belgelerinde okumak genellikle gerekir. Bunun dışında bilgi alma hataya, aynıdır. Bazen anahtarları varlığını bir boolean olarak kullanılır.
 
-Xamarin.iOS bağlama Oluşturucu bildirimleri bağlamak geliştiricilere yönelik destek sağlar. Bunu yapmak için ayarladığınız [[bildirim]](~/cross-platform/macios/binding/binding-types-reference.md) de olan bir özellikte özniteliği ile etiketlenmiş bir [[Field]](~/cross-platform/macios/binding/binding-types-reference.md) özelliği (olabilir genel veya özel).
+Xamarin.iOS bağlama Oluşturucu bildirimleri bağlamak geliştiricilere yönelik destek sağlar. Bunu yapmak için ayarladığınız [ `[Notification]` ](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute) de olan bir özellikte özniteliği ile etiketlenmiş bir [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) özelliği (olabilir genel veya özel).
 
-Bu öznitelik yükü yok taşımak bildirimler için bağımsız değişkenler olmadan kullanılabilir veya belirleyebileceğiniz bir `System.Type` başvuran başka bir API tanımı arabiriminde genellikle "EventArgs" ile biten ada sahip. Oluşturucu arabirimi o alt sınıfların bir sınıfına dönüşecektir `EventArgs` ve orada listelenen tüm özellikler içerir. `[Export]` Özniteliği Objective-C sözlüğün değeri getirmek aramak için kullanılan anahtarın adını listeye EventArgs sınıfında kullanılmalıdır.
+Bu öznitelik yükü yok taşımak bildirimler için bağımsız değişkenler olmadan kullanılabilir veya belirleyebileceğiniz bir `System.Type` başvuran başka bir API tanımı arabiriminde genellikle "EventArgs" ile biten ada sahip. Oluşturucu arabirimi o alt sınıfların bir sınıfına dönüşecektir `EventArgs` ve orada listelenen tüm özellikler içerir. [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) Özniteliği Objective-C sözlüğün değeri getirmek aramak için kullanılan anahtarın adını listeye EventArgs sınıfında kullanılmalıdır.
 
 Örneğin:
 
@@ -752,7 +731,7 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 });
 ```
 
- <a name="Binding_Categories" />
+<a name="Binding_Categories" />
 
 ### <a name="binding-categories"></a>Bağlama kategorileri
 
@@ -766,7 +745,7 @@ Kategoriler yöntemleri ve özellikleri bir sınıfta kullanılabilir kümesini 
 
 Yukarıdaki örnekte, bulunan bir kitaplık örnekleri genişletir `UIView` yöntemiyle `makeBackgroundRed`.
 
-Bu bağlamak için kullanabileceğiniz `[Category]` arabirim tanımı özniteliği.  Ne zaman kategori kullanarak özniteliği, anlamını `[BaseType]` özniteliği değiştirir genişletmek için türü genişletmek için temel sınıf belirtmek için kullanılır.
+Bu bağlamak için kullanabileceğiniz [ `[Category]` ](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute) arabirim tanımı özniteliği.  Kullanırken [ `[Category]` ](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute) özniteliği, anlamını [ `[BaseType]` ](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) özniteliği değiştirir genişletmek için türü genişletmek için temel sınıf belirtmek için kullanılır.
 
 Aşağıdaki gösterildiği nasıl `UIView` uzantıları bağlı ve C# genişletme yöntemleri açık:
 
@@ -792,7 +771,7 @@ picture;
 @end
 ```
 
-Kullanabilirsiniz ancak `Category` özniteliği de bildirimleri için bu deseni stili de yalnızca bunları tüm sınıf tanımına eklediğiniz.  Bunların her ikisi de aynı elde:
+Kullanabilirsiniz ancak [ `[Category]` ](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute) özniteliği de bildirimleri için bu deseni stili de yalnızca bunları tüm sınıf tanımına eklediğiniz.  Bunların her ikisi de aynı elde:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -827,7 +806,7 @@ interface SocialNetworking {
 }
 ```
 
- <a name="Binding_Blocks" />
+<a name="Binding_Blocks" />
 
 ### <a name="binding-blocks"></a>Blokları bağlama
 
@@ -837,7 +816,7 @@ Objective-c C# anonim yöntemler işlevsel denk getirmek için Apple tarafından
 - (void) enumerateObjectsUsingBlock:(void (^)(id obj, BOOL *stop) block
 ```
 
-Yukarıdaki açıklama adlı bir yöntem bildirir "*enumerateObjectsUsingBlock:*" adlı tek bir bağımsız değişken alan *blok*. Geçerli ortam ("Bu" işaretçisi, yerel değişkenleri ve parametreleri erişimi) yakalama desteğe sahiptir, bu bloğu bir C# anonim yöntemine benzer. Yukarıdaki yönteminde `NSSet` blok iki parametre ile çağırır bir `NSObject` ("kimliği obj" bölümü) ve bir işaretçi bir Boole değeri ("BOOL * Durdur") bölümü.
+Yukarıdaki açıklama adlı bir yöntem bildirir `enumerateObjectsUsingBlock:` adlı tek bir bağımsız değişken alan `block`. Geçerli ortam ("Bu" işaretçisi, yerel değişkenleri ve parametreleri erişimi) yakalama desteğe sahiptir, bu bloğu bir C# anonim yöntemine benzer. Yukarıdaki yönteminde `NSSet` blok iki parametre ile çağırır bir `NSObject` ( `id obj` bölümü) ve bir işaretçi bir Boole değeri ( `BOOL *stop`) bölümü.
 
 Bu tür bir API btouch ile bağlamak için C# temsilci ve böyle bir API giriş noktasından başvuru olarak blok türü imza ilk bildirmeniz gerekir:
 
@@ -872,13 +851,13 @@ s.Enumerate ((obj, stop) => {
 });
 ```
 
- <a name="GeneratingAsync" />
+<a name="GeneratingAsync" />
 
 ### <a name="asynchronous-methods"></a>Zaman uyumsuz yöntemleri
 
 Bağlama Oluşturucu belirli sınıfının yöntemleri zaman uyumsuz kolay yöntemlerin içine kapatabilirsiniz (bir görevi veya görev döndüren yöntemler&lt;T&gt;).
 
-Kullanabileceğiniz `[Async]` , void dönün ve olan son bağımsız değişken bir geri çağırma olduğu yöntemleri özniteliği.  Bu yönteme uyguladığınızda, bağlama oluşturucunun soneki bu yöntem bir sürümünü oluşturur `Async`.  Geri çağırma parametre almayan, dönüş değeri olacaktır bir `Task`, geri çağırma parametresi alırsa, sonuç olacak bir `Task<T>`.  Geri çağırma birden çok parametre sürerse ayarlamalısınız `ResultType` veya `ResultTypeName` istenen tüm özellikleri tutacak oluşturulan tür adını belirtmek için.
+Kullanabileceğiniz [ `[Async]` ](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute) , void dönün ve olan son bağımsız değişken bir geri çağırma olduğu yöntemleri özniteliği.  Bu yönteme uyguladığınızda, bağlama oluşturucunun soneki bu yöntem bir sürümünü oluşturur `Async`.  Geri çağırma parametre almayan, dönüş değeri olacaktır bir `Task`, geri çağırma parametresi alırsa, sonuç olacak bir `Task<T>`.  Geri çağırma birden çok parametre sürerse ayarlamalısınız `ResultType` veya `ResultTypeName` istenen tüm özellikleri tutacak oluşturulan tür adını belirtmek için.
 
 Örnek:
 
@@ -901,9 +880,9 @@ Task<string> LoadFileAsync (string file);
 
 Objective-C API'sindeki birçok yerde parametreleri olarak zayıf yazılmış geçirilir `NSDictionary` apı'leridir özel anahtarları ve değerleri, ancak bu hataya (geçersiz anahtarları geçirmek ve uyarı alın; geçersiz değerleri geçirmek ve hiçbir uyarıları alma) ve can sıkıcı birden çok dönüşleri olası anahtar adları ve değerleri aramak için belgeleri için gereksinim duydukları olarak kullanmak için.
 
-Çözüm, API ve arka planda kesin türü belirtilmiş sürümünü sağlar kesin türü belirtilmiş bir sürüm çeşitli temel alınan anahtarlar ve değerler eşlemeleri sağlamaktır.
+Kesin türü belirtilmiş sürüm API ve arka planda çeşitli temel alınan anahtarlar ve değerler eşlemeleri sağlar kesin türü belirtilmiş bir sürümünü sağlamak için çözümüdür.
 
-Örneğin, bunu Objective-C API kabul bir `NSDictionary` ve "alan XyzVolumeKey" anahtar alan olarak belgelenen bir `NSNumber` bir toplu değeri 0,0 ile 1.0 ve "bir dize alır XyzCaptionKey" için iyi bir kullanıcılarınızı istersiniz. Şuna benzer API:
+Örneğin, bunu Objective-C API onayladığınızda bir `NSDictionary` ve anahtar alan olarak belgelenen `XyzVolumeKey` hangi alır bir `NSNumber` 1.0 için bir birim değeri 0,0 ile ve `XyzCaptionKey` bir dize alır, kullanıcılarınızı iyi bir API istersiniz şuna benzer:
 
 ```csharp
 public class  XyzOptions {
@@ -916,7 +895,7 @@ public class  XyzOptions {
 
 Bunu yapmak için birkaç şey yapmanız gerekir:
 
-* Bu alt sınıfların kesin türü belirtilmiş bir sınıf oluşturun [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) ve çeşitli alıcılar ve ayarlayıcılar için her bir özellik sağlar.
+* Türü kesin belirlenmiş sınıf, o alt sınıfların oluşturma [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) ve çeşitli alıcılar ve ayarlayıcılar için her bir özellik sağlar.
 * Alma yöntemleri için aşırı bildirme `NSDictionary` yeni kesin türü belirtilmiş sürümünü almak için.
 
 Türü kesin belirlenmiş sınıf ya da el ile oluşturabilir veya sizin yerinize yapmaları için oluşturucunun kullanabilirsiniz.  Biz öncelikle neler olup bittiğini anlamak için bu el ile nasıl yapılacağını ve ardından otomatik yaklaşımı keşfedin.
@@ -954,12 +933,11 @@ interface XyzPanel {
 }
 ```
 
-API'nizi üzerine gerekmez varsa, güvenli bir şekilde NSDictionary tabanlı API kullanarak gizleyebilirsiniz [dahili](~/cross-platform/macios/binding/binding-types-reference.md) özniteliği.
+API'nizi üzerine gerekmez varsa, güvenli bir şekilde NSDictionary tabanlı API kullanarak gizleyebilirsiniz [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) özniteliği.
 
-Gördüğünüz gibi kullanırız `[Wrap]` yeni bir API giriş noktası yüzey özniteliğini ve biz bizim kesin türü belirtilmiş XyzOptions sınıfı kullanarak yüzey.
-Sarmalayıcı yöntemi de null geçirilmesini sağlar.
+Gördüğünüz gibi kullanırız [ `[Wrap]` ](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute) yeni bir API giriş noktası yüzey özniteliğini ve biz kesin türü belirtilmiş bizim kullanarak yüzey `XyzOptions` sınıfı.  Sarmalayıcı yöntemi de null geçirilmesini sağlar.
 
-Şimdi, biz değil Bahsediyor tek şey yerdir `XyzOptionsKeys` değerleri geldiği.  Bir API yüzeyleri XyzOptionsKeys gibi statik sınıfında aşağıdaki gibi anahtarlar genellikle Grup:
+Şimdi, biz değil Bahsediyor tek şey yerdir `XyzOptionsKeys` değerleri geldiği.  Bir API gibi statik sınıfında ortaya çıkarır anahtarlar genellikle grup `XyzOptionsKeys`, şöyle:
 
 ```csharp
 [Static]
@@ -974,9 +952,9 @@ class XyzOptionKeys {
 
 Bize bu kesin türü belirtilmiş sözlükler oluşturmak için otomatik desteği bakın.  Bu ortak Eskinin önler ve dış dosyası kullanmak yerine doğrudan, API sözleşmesindeki, sözlük tanımlayabilirsiniz.
 
-Kesin türü belirtilmiş bir sözlük oluşturmak için bir arabirim API'nizi, getirir ve onunla tasarlamanız [StrongDictionary](~/cross-platform/macios/binding/binding-types-reference.md) özniteliği.  Bu oluşturucu, öğesinden türetilen için arabirimle aynı ada sahip bir sınıf oluşturmanız gerekir söyler `DictionaryContainer` için güçlü yazılan erişimciler sağlar.
+Kesin türü belirtilmiş bir sözlük oluşturmak için bir arabirim API'nizi, getirir ve onunla tasarlamanız [StrongDictionary](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary) özniteliği.  Bu oluşturucu, öğesinden türetilen için arabirimle aynı ada sahip bir sınıf oluşturmanız gerekir söyler `DictionaryContainer` için güçlü yazılan erişimciler sağlar.
 
-`StrongDictionary` Özniteliği, sözlük anahtarları içeren statik sınıf adı olan bir parametre alır.  Ardından arabiriminin her bir özellik kesin türü belirtilmiş bir erişimcisi olur.  Varsayılan olarak, kodu özelliğinin adı statik sınıf "Anahtarı" soneki ile erişimci oluşturmak için kullanır.
+[ `[StrongDictionary]` ](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary) Özniteliği, sözlük anahtarları içeren statik sınıf adı olan bir parametre alır.  Ardından arabiriminin her bir özellik kesin türü belirtilmiş bir erişimci olur.  Varsayılan olarak, kodu özelliğinin adı statik sınıf "Anahtarı" soneki ile erişimci oluşturmak için kullanır.
 
 Bu, kesin türü belirtilmiş erişimcisi oluşturma artık dış bir dosya ya da alıcılar ve ayarlayıcılar her bir özellik için el ile oluşturmak zorunda kalmadan veya anahtarları el ile arama gerek kalmadan gerektirdiği anlamına gelir. kendiniz.
 
@@ -1007,9 +985,9 @@ interface XyzPanel {
 }
 ```
 
-Başvuru gerekebileceği, `XyzOption` üyeleri farklı bir alan (yani değil özelliğinin adı soneki `Key`), özelliğiyle tasarlamanız bir `Export` özniteliği ile kullanmak istediğiniz adı.
+Başvuru gerekebileceği, `XyzOption` üyeleri farklı bir alan (yani değil özelliğinin adı soneki `Key`), özelliğiyle tasarlamanız bir [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) adıyla aldığınız özniteliği kullanmak istediğiniz.
 
- <a name="Type_mappings" />
+<a name="Type_mappings" />
 
 ## <a name="type-mappings"></a>Türü eşlemeleri
 
@@ -1027,8 +1005,8 @@ Aşağıdaki tabloda Objective-C ve CocoaTouch world türlerinden Xamarin.iOS d�
 |`NSInteger`|`nint`|
 |`NSUInteger`|`nuint`|
 |`CFTimeInterval` / `NSTimeInterval`|`double`|
-|`NSString` ([bağlama hakkında daha fazla `NSString` ](~/ios/internals/api-design/nsstring.md))|`string`|
-|`char *`|`string` (Ayrıca bkz: [PlainString özniteliği](~/cross-platform/macios/binding/binding-types-reference.md#plainstring))|
+|`NSString` ([NSString bağlama hakkında daha fazla](~/ios/internals/api-design/nsstring.md))|`string`|
+|`char *`|`string` (Ayrıca bkz: [ `[PlainString]` ](~/cross-platform/macios/binding/binding-types-reference.md#plainstring))|
 |`CGRect`|`CGRect`|
 |`CGPoint`|`CGPoint`|
 |`CGSize`|`CGSize`|
@@ -1047,7 +1025,7 @@ Aşağıdaki tabloda Objective-C ve CocoaTouch world türlerinden Xamarin.iOS d�
 |`CFIndex`|`nint`|
 |`NSGlyph`|`nuint`|
 
- <a name="Arrays" />
+<a name="Arrays" />
 
 ### <a name="arrays"></a>Diziler
 
@@ -1071,15 +1049,15 @@ UIView [] GetPeerViews ();
 void SetViews (UIView [] views);
 ```
 
-Bu tahmin ya da gerçek dizisi içinde yer alan nesne türlerini bulmak için belgeleri aramak için kullanıcı zorlamadan uygun kod tamamlama gerçek türüyle sağlamak IDE sağlayacak kesin türü belirtilmiş bir C# dizi kullanacak şekilde olur.
+Bu tahmin ya da gerçek dizisi içinde yer alan nesne türlerini bulmak için belgeleri aramak için kullanıcı zorlamadan uygun kod tamamlama gerçek türüyle sağlamak IDE sağlayacak bir kesin türü belirtilmiş C# dizi kullanacak şekilde olur.
 
 Burada değil izleyebilirsiniz dizinin içindeki gerçek en çok türetilen tür aşağı durumlarda, kullandığınız `NSObject []` dönüş değeri olarak.
 
- <a name="Selectors" />
+<a name="Selectors" />
 
 ### <a name="selectors"></a>Seçici
 
-Seçici Objective-C API özel türü "SEL" olarak görünür. Bir seçici bağlanırken türüne eşleyen `ObjCRuntime.Selector`.  Genellikle seçiciler hedef nesnedeki çağırmak için bir nesne, hedef nesne hem bir seçici bir API sunulur. Bunların her ikisi de temelde sağlama karşılık gelen C# temsilciye: hem çağrılacak yöntem, hem de yöntemi çağırmak için nesne yalıtan bir şey.
+Özel tür olarak Objective-C API seçiciler görünmez `SEL`. Bir seçici bağlanırken türüne eşleyen `ObjCRuntime.Selector`.  Genellikle seçiciler hedef nesnedeki çağırmak için bir nesne, hedef nesne hem bir seçici bir API sunulur. Bunların her ikisi de temelde sağlama karşılık gelen C# temsilciye: hem çağrılacak yöntem, hem de yöntemi çağırmak için nesne yalıtan bir şey.
 
 Bu bağlama gibi görünüyor.
 
@@ -1107,7 +1085,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
-C# geliştiricileri için bağlama daha Hoş görünmesi yapmak için genellikle götüren bir yöntem sağlayacaktır bir `NSAction` C# Temsilciler ve Lambda'lar yerine kullanılacak izin veren parametresi `Target+Selector`. Bunu yapmak için genellikle "SetTarget" yöntemi bir "Dahili" özniteliği ile işaretleme tarafından saklayabilir ve daha sonra bu gibi yeni bir yardımcı yöntemi kullanıma:
+C# geliştiricileri için bağlama daha Hoş görünmesi yapmak için genellikle götüren bir yöntem sağlayacaktır bir `NSAction` C# Temsilciler ve Lambda'lar yerine kullanılacak izin veren parametresi `Target+Selector`. Bu genellikle Gizle yapmak için `SetTarget` ile işaretleme tarafından yöntemi bir [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) özniteliği ve daha sonra bu gibi yeni bir yardımcı yöntemi kullanıma:
 
 ```csharp
 // API.cs
@@ -1145,7 +1123,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
- <a name="Strings" />
+<a name="Strings" />
 
 ### <a name="strings"></a>Dizeler
 
@@ -1155,13 +1133,13 @@ Yalnızca durum kullanmak isteyebileceğiniz bir `NSString` dize belirteç olara
 
 Bazı nadir durumlarda, bir API C benzeri dize doğurabilir (`char *`) yerine bir Objective-C dize (`NSString *`). Bu gibi durumlarda parametresiyle açıklayabilirsiniz [ `[PlainString]` ](~/cross-platform/macios/binding/binding-types-reference.md#plainstring) özniteliği.
 
- <a name="outref_parameters" />
+<a name="outref_parameters" />
 
 ### <a name="outref-parameters"></a>out / ref parametreleri
 
 Bazı API'leri kendi parametrelerinde dönüş değerleri veya başvuruya göre parametreler Geçiren.
 
-İmza genellikle şöyle::
+Genellikle imza şöyle görünür:
 
 ```csharp
 - (void) someting:(int) foo withError:(NSError **) retError
@@ -1179,11 +1157,11 @@ void Something (nint foo, out NSError error);
 void SomeString (ref NSObject byref);
 ```
 
- <a name="Memory_management_attributes" />
+<a name="Memory_management_attributes" />
 
 ### <a name="memory-management-attributes"></a>Bellek yönetimi öznitelikleri
 
-Kullandığınızda `[Export]` özniteliği ve çağrılan yöntemi tarafından korunacak veri geçirme, ikinci bir parametresi örneğin geçirerek için bu bağımsız değişken semantiğini belirtebilirsiniz:
+Kullandığınızda [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) özniteliği ve çağrılan yöntemi tarafından korunacak veri geçirme, ikinci bir parametresi örneğin geçirerek için bu bağımsız değişken semantiğini belirtebilirsiniz:
 
 ```csharp
 [Export ("method", ArgumentSemantic.Retain)]
@@ -1191,23 +1169,23 @@ Kullandığınızda `[Export]` özniteliği ve çağrılan yöntemi tarafından 
 
 Yukarıdaki "Koru" semantiklerine sahip olarak değer bayrak. Kullanılabilir semantiğini şunlardır:
 
--  Ata:
--  Kopyalayın:
--  Koru:
+-  Ata
+-  Kopyala
+-  Tut
 
- <a name="Style_Guidelines" />
+<a name="Style_Guidelines" />
 
 ### <a name="style-guidelines"></a>Stil Kılavuzu
 
- <a name="Using_[Internal]" />
+<a name="Using_[Internal]" />
 
 #### <a name="using-internal"></a>[İç] kullanma
 
-Kullanabileceğiniz [[dahili]](~/cross-platform/macios/binding/binding-types-reference.md) genel API'si yönteminden gizlemek için öznitelik. Burada gösterilen API çok düşük düzey ve yüksek düzey bir uygulama bu yöntemine dayalı olarak ayrı bir dosyada sağlamak istediğiniz durumlarda bu yapmak isteyebilirsiniz.
+Kullanabileceğiniz [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) genel API'si yönteminden gizlemek için öznitelik. Burada gösterilen API çok düşük düzey ve yüksek düzey bir uygulama bu yöntemine dayalı olarak ayrı bir dosyada sağlamak istediğiniz durumlarda bu yapmak isteyebilirsiniz.
 
 Bu bağlama Oluşturucu sınırlamalarını içine çalıştırdığınızda, bazı Gelişmiş senaryolar bağlı olmayan türleri örneğin doğurabilir ve kendi şekilde bağlamak istediğiniz ve bu türlerde kendiniz kendi şekilde kaydırmak istediğiniz de kullanabilirsiniz.
 
- <a name="Event_Handlers_and_Callbacks" />
+<a name="Event_Handlers_and_Callbacks" />
 
 ## <a name="event-handlers-and-callbacks"></a>Olay işleyicileri ve geri aramalar
 
@@ -1248,7 +1226,8 @@ interface MyClassDelegate {
 
 Sınıf sarmalamak için yapmanız gerekir:
 
--  Ana bilgisayar sınıfınıza ekleyin, `[BaseType]` bildirimi kendi temsilci ve C#, ad olarak hareket türü kullanıma sunulan. Yukarıdaki örnekte, bizim "typeof (MyClassDelegate)" ve "WeakDelegate" sırasıyla olanlardır.
+-  Ana sınıfınız eklemek için [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
+   kendi temsilci ve size sunulan C# adı hareket türü bildirimi. Yukarıdaki örnekte, bizim olanlardır `typeof (MyClassDelegate)` ve `WeakDelegate` sırasıyla.
 -  Temsilci sınıfınızda ikiden fazla parametrelere sahip her yöntemi otomatik olarak oluşturulan EventArgs sınıfı için kullanmak istediğiniz türünü belirtmeniz gerekir.
 
 Bağlama Oluşturucu yalnızca tek bir olay hedef kaydırma sınırlı değildir, bu kurulum desteklemek için diziler vermeniz gerekir böylece birden fazla iletileri yaymak üzere bazı Objective-C sınıfları devretmenizi, mümkündür. Çoğu kurulumları gerekmez, ancak oluşturucunun bu gibi durumlarda desteklemeye hazırdır.
@@ -1274,7 +1253,7 @@ interface MyClassDelegate {
 }
 ```
 
-`EventArgs` Adını belirtmek için kullanılan `EventArgs` oluşturulacak sınıfı. İmza her kullanmanız gerekir (Bu örnekte, `EventArgs` türü nint "İle" özelliğini içerir).
+`EventArgs` Adını belirtmek için kullanılan `EventArgs` oluşturulacak sınıfı. İmza her kullanmanız gerekir (Bu örnekte, `EventArgs` içerecek bir `With` türü nint özelliği).
 
 Yukarıdaki tanımlarla oluşturucunun oluşturulan MyClass aşağıdaki olay üretir:
 
@@ -1298,35 +1277,36 @@ c.Loaded += delegate (sender, args){
 };
 ```
 
-Geri aramalar yalnızca olay çağrılarını gibi, birden çok potansiyel aboneye sahip olmak yerine farktır (örneğin, birden çok yöntem bir "Tıklama" veya "İndirme tamamlandı" bir olayın kanca) geri aramalar yalnızca tek bir abone olabilir.
+Geri aramalar yalnızca olay çağrılarını gibi, birden çok potansiyel aboneye sahip olmak yerine farktır (içine Örneğin, birden çok yöntem bağlama bir `Clicked` olay veya `DownloadFinished` olay) geri aramalar yalnızca tek bir abone olabilir.
 
-İşlem aynıdır, tek farkı oluşturulmayacak EventArgs sınıfın adını gösterme yerine EventArgs gerçekten elde edilen C# temsilci adı için kullanıldığını.
+İşlem aynıdır, tek fark, adını gösterme yerine `EventArgs` oluşturulur, EventArgs sınıfı gerçekten elde edilen C# temsilci adı için kullanılır.
 
-Temsilci sınıfında yöntemi bir değer döndürürse, bağlama Oluşturucu bu olaya yerine ana sınıfı temsilci yönteminde içine eşler. Bu durumlarda kullanıcının takma değil temsilciye yöntem tarafından döndürülen varsayılan değer sağlamanız gerekir. Kullanarak bunu `[DefaultValue]` veya `[DefaultValueFromArgument]` öznitelikleri.
+Temsilci sınıfında yöntemi bir değer döndürürse, bağlama Oluşturucu bu olaya yerine ana sınıfı temsilci yönteminde içine eşler. Bu durumlarda kullanıcının takma değil temsilciye yöntem tarafından döndürülen varsayılan değer sağlamanız gerekir. Kullanarak bunu [ `[DefaultValue]` ](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute) veya [ `[DefaultValueFromArgument]` ](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute) öznitelikleri.
 
-DefaultValue stillerinizin bir dönüş değeri olur ancak `[DefaultValueFromArgument]` hangi giriş bağımsız değişkenine döndürülecek belirtmek için kullanılır.
+[`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute) dönüş değeri stillerinizin olur ancak [ `[DefaultValueFromArgument]` ](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute) hangi giriş bağımsız değişkenine döndürülecek belirtmek için kullanılır.
 
- <a name="Enumerations_and_Base_Types" />
+<a name="Enumerations_and_Base_Types" />
 
 ## <a name="enumerations-and-base-types"></a>Numaralandırmalar ve taban türleri
 
 Numaralandırmalar veya btouch arabirim tanımı sistem tarafından doğrudan desteklenmeyen temel türleri de başvurabilirsiniz. Bunu yapmak için numaralandırmalar ve çekirdek türleri ayrı bir dosyaya koymak ve bu btouch için sağladığınız ek dosyalardan birini bir parçası olarak içerir.
 
- <a name="Linking_the_Dependencies" />
+<a name="Linking_the_Dependencies" />
 
 ## <a name="linking-the-dependencies"></a>Bağımlılıkları bağlama
 
 Uygulamanızın parçası olmayan API'leri bağlanıyorsanız, yürütülebilir dosyanın Bu kitaplıklar karşı bağlı olduğundan emin olmanız gerekir.
 
-Xamarin.iOS nasıl Kitaplıklarınızı bağlantı bildirmeniz gerekir, bu kullanarak yeni kitaplıkları ile bağlanma belirtin bazı ek yapı bağımsız değişkenler mtouch komutuyla çağırmak için derleme yapılandırmasını değiştirme ya da yapılabilir "-gcc_flags" seçeneği, ve ardından tırnak içine alınmış bir dizeyle, bu gibi program için gerekli olan tüm ek kitaplıklarını içerir:
+Xamarin.iOS nasıl Kitaplıklarınızı bağlantı bildirmeniz gerekir, bu da çağırmak için derleme yapılandırmasını değiştirmeyi tarafından yapılabilir `mtouch` bazı ek komutuyla yapı kullanarak yeni kitaplıkları ile bağlanma belirtin bağımsız değişkenler "-gcc_flags" seçeneği, Bu gibi program için gerekli olan tüm ek kitaplıkları içeren tırnak içine alınmış bir dize ve ardından:
 
-```csharp
+```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -force_load -lSystemLibrary -framework CFNetwork -ObjC"
 ```
 
 Yukarıdaki örnekte bağlayacaksınız `libMyLibrary.a`, `libSystemLibrary.dylib` ve `CFNetwork` framework kitaplığa son çalıştırılabilir.
 
-Ya da derleme düzeyi yararlanabilir `LinkWithAttribute`, bu sözleşme dosyalarınızda katıştırma (gibi `AssemblyInfo.cs`). Kullandığınızda `LinkWithAttribute`, yerel kitaplığınızın yaptığınız, bağlama, bu yerel kitaplığı ile uygulamanızı katıştırır gibi zaman kullanılabilir olması gerekir. Örneğin:
+Ya da derleme düzeyi yararlanabilir [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), bu sözleşme dosyalarınızda katıştırma (gibi `AssemblyInfo.cs`).
+Kullandığınızda [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), yerel kitaplığınızın yaptığınız, bağlama, bu yerel kitaplığı ile uygulamanızı katıştırır gibi zaman kullanılabilir olması gerekir. Örneğin:
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:
@@ -1336,15 +1316,15 @@ Ya da derleme düzeyi yararlanabilir `LinkWithAttribute`, bu sözleşme dosyalar
 [assembly: LinkWith ("libMyLibrary.a", LinkTarget.ArmV6 | LinkTarget.ArmV7 | LinkTarget.Simulator, ForceLoad = true, IsCxx = true)]
 ```
 
-Merak ediyor, neden, "force_load" komutu gerekiyor ve nedeni - ObjC bayrak kodda derler olsa da, gereken (Bağlayıcı/derleyici ölü kod eleme onu kaldırır) kategorileri desteklemek için gereken meta verilerini korumaz Xamarin.iOS için çalışma zamanında.
+Merak ediyor, neden ihtiyacınız `-force_load` komut ve neden olduğu - ObjC bayrak kodda derler olsa da, Kategoriler (Bağlayıcı/derleyici ölü kod eleme kaldırır) desteklemek için gereken meta verilerini korumaz, Çalışma zamanında Xamarin.iOS için gerekir.
 
- <a name="Assisted_References" />
+<a name="Assisted_References" />
 
 ## <a name="assisted-references"></a>Yardımlı başvuruları
 
 Eylem sayfaları ve uyarı kutuları gibi bazı geçici nesneler geliştiriciler için izlemek için sıkıcı ve bağlama Oluşturucu biraz burada yardımcı olabilir.
 
-İçin bir ileti gösterdi ve "Tamamlandı" bir olay, bu işleme geleneksel şekilde oluşturulmuş bir sınıf olsaydı örnek olabilir:
+Bir ileti gösterdi ve ardından oluşturulan bir sınıf sahipse, örneğin bir `Done` olay, bu işleme geleneksel şekilde olacaktır:
 
 ```csharp
 class Demo {
@@ -1372,7 +1352,7 @@ class Demo {
 
 Nasıl, artık sahip yerel bir değişken çalışır ve nesne sonlandıktan ayarlandığında başvuru silmek gerekli değildir, değişkeni bir örneğinde tutmak gerekli olduğuna dikkat edin.
 
-Bu yararlanmak için sınıfınız kümesinde olayları özelliğine sahip olmalı `[BaseType]` bildirimi ve ayrıca `KeepUntilRef` değişkeni nesne bu gibi kendi iş tamamlandığında çağrılan yöntemin adını ayarlayın:
+Bu yararlanmak için sınıfınız kümesinde olayları özelliğine sahip olmalı [ `[BaseType]` ](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) bildirimi ve ayrıca `KeepUntilRef` değişkenini nesne gibi kendi iş tamamlandıktan sonra çağrılan yöntemin adını ayarla Bu:
 
 ```csharp
 [BaseType (typeof (NSObject), KeepUntilRef="Dismiss"), Delegates=new string [] { "WeakDelegate" }, Events=new Type [] { typeof (SomeDelegate) }) ]
@@ -1382,11 +1362,11 @@ class Demo {
 }
 ```
 
- <a name="Inheriting_Protocols" />
+<a name="Inheriting_Protocols" />
 
 ## <a name="inheriting-protocols"></a>Protokolleri devralma
 
-Xamarin.iOS v3.2 itibariyle ile işaretlenen protokolleri içinden devralma olan destekliyoruz `[Model]` özelliği. Bu belirli API düzenleri gibi olarak içinde yararlıdır `MapKit` nerede `MKOverlay` protokolü, devraldığı `MKAnnotation` protokolünü ve devralınmalıdır sınıfların sayısı tarafından benimsenen `NSObject`.
+Xamarin.iOS v3.2 itibariyle ile işaretlenen protokolleri içinden devralma olan destekliyoruz [ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) özelliği. Bu belirli API düzenleri gibi olarak içinde yararlıdır `MapKit` nerede `MKOverlay` protokolü, devraldığı `MKAnnotation` protokolünü ve devralınmalıdır sınıfların sayısı tarafından benimsenen `NSObject`.
 
 Geçmişte Protokolü her uygulama için kopyalama gerekli, ancak bu durumda artık biz olabilir `MKShape` sınıf devralma `MKOverlay` protokolü ve oluşturacağını gereken tüm yöntemleri otomatik olarak.
 
