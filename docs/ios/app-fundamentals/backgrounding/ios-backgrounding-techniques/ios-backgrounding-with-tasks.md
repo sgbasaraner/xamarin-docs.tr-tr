@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ad75dfac55add7e03ffbdb910e0e62ebd0fd6c18
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS görevlerle Backgrounding
 
@@ -43,7 +43,7 @@ UIApplication.SharedApplication.EndBackgroundTask(taskID);
 Bir görev benzersiz bir tanımlayıcı ile kayıt işlemini çiftleri `taskID`ve eşleştirmelerinde sarmalar `BeginBackgroundTask` ve `EndBackgroundTask` çağrıları. Çağrı vermiyoruz tanımlayıcısını oluşturmak için `BeginBackgroundTask` yöntemi `UIApplication` nesne ve uzun süre çalışan görev üzerinde yeni bir iş parçacığı genellikle başlatın. Görev tamamlandığında diyoruz `EndBackgroundTask` ve aynı tanımlayıcıda geçirin. İOS, uygulama sonlandıracak bu önemlidir, çünkü bir `BeginBackgroundTask` çağrısı eşleşen yok `EndBackgroundTask`.
 
 > [!IMPORTANT]
-> **Not**: ana iş parçacığı ya da uygulamanın gereksinimlerine bağlı olarak bir arka plan iş parçacığı güvenli arka plan görevleri çalıştırabilir.
+> Ana iş parçacığı ya da uygulamanın gereksinimlerine bağlı olarak bir arka plan iş parçacığı güvenli arka plan görevleri çalıştırabilir.
 
 
 ## <a name="performing-tasks-during-didenterbackground"></a>DidEnterBackground sırasında görevleri gerçekleştirme
@@ -65,7 +65,7 @@ public override void DidEnterBackground (UIApplication application) {
 Geçersiz kılarak başlamak `DidEnterBackground` yönteminde `AppDelegate`, biz bizim göreviyle kaydetmek burada `BeginBackgroundTask` önceki örnekte yaptığımız gibi. Ardından, size yeni bir iş parçacığı oluşturma ve bizim uzun süre çalışan görev gerçekleştirin. Unutmayın `EndBackgroundTask` çağrısı şimdi yapıldığında gelen uzun süre çalışan görev içinde beri `DidEnterBackground` yöntemi zaten döndürdü.
 
 > [!IMPORTANT]
-> **Not**: iOS kullanan bir [izleme mekanizması](http://developer.apple.com/library/ios/qa/qa1693/_index.html) uygulamanın UI yanıt verebilir durumda kalmasını sağlamak için. Çok fazla zaman harcayan bir uygulama `DidEnterBackground` kullanıcı Arabiriminde vermemeye. Arka planda çalıştırılacak görevleri kapalı oluşturan verir `DidEnterBackground` zamanında kullanıcı Arabiriminin yanıt verebilir durumda kalmasını ve uygulama sonlandırılması izleme engelleyerek, döndürülecek.
+> iOS kullanan bir [izleme mekanizması](http://developer.apple.com/library/ios/qa/qa1693/_index.html) uygulamanın UI yanıt verebilir durumda kalmasını sağlamak için. Çok fazla zaman harcayan bir uygulama `DidEnterBackground` kullanıcı Arabiriminde vermemeye. Arka planda çalıştırılacak görevleri kapalı oluşturan verir `DidEnterBackground` zamanında kullanıcı Arabiriminin yanıt verebilir durumda kalmasını ve uygulama sonlandırılması izleme engelleyerek, döndürülecek.
 
 
 ## <a name="handling-background-task-time-limits"></a>İşleme arka plan görevi zaman sınırları
@@ -153,7 +153,7 @@ else {
 ```
 
 > [!IMPORTANT]
-> **Not**: iOS 6 arka plan UI güncelleştirmeleri desteklemez ve uygulamayı sonlandıracak gibi iOS 6 uyumlu kodda arka plan Arabiriminden güncelleştirmek için çağrıları yapma kaçının.
+> İOS 6 arka plan UI güncelleştirmeleri desteklemez ve uygulamayı sonlandıracak gibi iOS 6 uyumlu kodda arka plan Arabiriminden güncelleştirmek için çağrıları yapma kaçının.
 
 
 `NSURLSession` API zengin bir kimlik doğrulamasını işleyecek, başarısız aktarımlarını yönetmek ve - ancak değil sunucu-tarafı - istemci tarafı hata raporu özellikleri kümesi içerir. İOS 7 görev Kesintiler çalışma zamanı sunulan köprüsü yardımcı olur ve hızlı ve güvenilir bir şekilde büyük dosyaları aktarmak için de destek sağlar. Sonraki bölümde bu ikinci özellik araştırır.

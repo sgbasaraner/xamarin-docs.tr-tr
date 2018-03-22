@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="unified-storyboards"></a>Birleşik film şeritleri
 
@@ -581,7 +581,7 @@ Tasarımcı iOS Geliştirici boyutu sınıflarını kullanmak için film şeridi
  [![](unified-storyboards-images/sizeclass02.png "Boyutu sınıfları uyarı kullanın")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
-> **Not**: Otomatik Yerleşim gerekir ayrıca kontrol edileceği düzgün çalışması için boyutu sınıfları.
+> Otomatik düzeni düzgün çalışması için boyutu sınıfları ayrıca denetlenmesi gerekir.
 
 ### <a name="generic-device-types"></a>Genel cihaz türleri
 
@@ -630,7 +630,7 @@ Boyutu sınıfları ve iPhone ve iPad cihazları için Düzen nasıl etkiledikle
 Film şeritleri önce Geliştirici kullandı sonra varolan segue türleriyle tanıdık gelecektir **anında**, **kalıcı** ve **Popover**. Birleşik film şeridi dosya boyutu sınıfları etkin olduğunda, aşağıdaki Uyarlamalı ü (yukarıda açıklanan yeni görünüm denetleyicisini API karşılık gelir) türleri kullanılabilir hale getirilir: **Göster** ve **Ayrıntı Göster** .
 
 > [!IMPORTANT]
-> **Not**: zaman boyutu sınıfları etkinleştirilmesi, var olan segues yeni türleri dönüştürülmesi.
+> Boyutu sınıfları etkin olduğunda, var olan segues yeni türleri dönüştürülmesi.
 
 Bir iOS örneği birleşik film şeridi denetleyicisiyle bölme görünüm asıl görünümünde basit oyun Gezinti menüsü olan kullanan 8 uygulamayı alın. Kullanıcı bir menü düğmesine tıklarsa, seçilen öğenin View Controller bölme görünüm denetleyicisini Ayrıntılar bölümünde bir iPad cihazında çalıştırırken gösterilmesi gerekir. İPhone üzerinde öğesi'nin View Controller Gezinti yığına gönderilir.
 

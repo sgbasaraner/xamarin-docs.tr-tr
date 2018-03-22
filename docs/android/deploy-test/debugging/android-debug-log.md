@@ -6,12 +6,12 @@ ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/19/2018
-ms.openlocfilehash: ec6536ee9bdd5f25a7f9ef90e5cf052717b23143
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.date: 03/21/2018
+ms.openlocfilehash: 2e3225c0b0f984e52507ac472e26c4aee6a76909
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="android-debug-log"></a>Android hata ayıklama günlüğü
 
@@ -19,13 +19,15 @@ Kendi uygulamalarında hata ayıklama için yaygın eli geliştiriciler kullanı
 
 ## <a name="android-debug-log-overview"></a>Android hata ayıklama günlüğü'ne genel bakış
 
-**Hata ayıklama günlüğünü** aracı uygulama hata ayıklama sırasında günlük çıkışı görüntülemek için bir yol sağlar. Hata ayıklama günlüğü aşağıdaki cihazları destekler:
+**Hata ayıklama günlüğünü** aracı Visual Studio aracılığıyla uygulama hata ayıklama sırasında günlük çıkışı görüntülemek için bir yol sağlar. Hata ayıklama günlüğü aşağıdaki cihazları destekler:
 
 -   Fiziksel Android telefonlar, tabletler ve wearables.
 -   Google Android öykünücüsü üzerinde çalışan bir Android sanal cihazı. 
 
 > [!NOTE]
 > **Hata ayıklama günlüğünü** aracı Xamarin Canlı Player ile çalışmaz.
+
+**Hata ayıklama günlüğünü** uygulama cihaz üzerinde tek başına çalışırken, oluşturulan günlük iletilerini görüntülemez (yani, bunu Visual Studio'dan değilken).
 
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>Hata ayıklama günlüğü Visual Studio'dan erişme

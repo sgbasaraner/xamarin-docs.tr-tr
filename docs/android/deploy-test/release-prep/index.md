@@ -6,12 +6,12 @@ ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/19/2018
-ms.openlocfilehash: e26c855133d0b32676aa2d0a6084754a80055e30
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.date: 03/21/2018
+ms.openlocfilehash: baaa40bc89a1ca6728189563c8350f9c9f011762
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Bir uygulama sürüm için hazırlama
 
@@ -61,6 +61,9 @@ Bu örneklerde `@drawable/icon` konumda bulunan bir simge dosyası başvurduğu 
 ```csharp
 [assembly: Application(Icon = "@drawable/icon")]
 ```
+
+Normalde, `using Android.App` en üstündeki bildirilmiş **AssemblyInfo.cs** (ad alanı `Application` özniteliği `Android.App`); ancak, bu eklemeniz gerekebilir `using` zaten mevcut değilse deyimi.
+
 
 <a name="Versioning" />
 

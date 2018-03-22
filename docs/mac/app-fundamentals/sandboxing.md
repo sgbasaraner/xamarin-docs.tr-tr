@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9cf9cb2e4773b90ecdd9321c6627003be3fa1b8b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 71f076bb0dc7d552a041d48a6ce531dcff444de6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Korumalı alan Xamarin.Mac uygulama
 
@@ -174,7 +174,7 @@ Ardından, yeni uygulama kimliği ve sağlama profili Xamarin.Mac Projemizin se�
 6. Tıklatın **Bitti** düğmesi.
 
 > [!IMPORTANT]
-> **Not:** çıkıp yeni uygulama kimliği ve hazırlama Xcode tarafından yüklenen profili tanımak için Visual Studio edinilir Mac için yeniden başlatmanız gerekebilir.
+> Çıkmak ve yeni uygulama kimliği ve hazırlama Xcode tarafından yüklenen profili tanımak için Visual Studio edinilir Mac için yeniden başlatmanız gerekebilir.
 
 #### <a name="troubleshooting-provisioning-issues"></a>Sağlama sorunlarını giderme
 
@@ -308,7 +308,7 @@ Xamarin.Mac uygulamanın uygulama kapsayıcı dizini aşağıdaki özelliklere s
 - İçin _shoebox_ uygulama türleri (örneğin, Apple'nın fotoğraf uygulaması), kullanıcının içeriği kapsayıcıya çıkar.
 
 > [!IMPORTANT]
-> **Not:** ne yazık ki, Xamarin.Mac % 100 API kapsamı henüz (aksine Xamarin.iOS), sonuç olarak yok `NSHomeDirectory` API olmayan eşlenmiş Xamarin.Mac geçerli sürümde.
+> Ne yazık ki, Xamarin.Mac % 100 API kapsamı henüz (aksine Xamarin.iOS), sonuç olarak yok `NSHomeDirectory` API olmayan eşlenmiş Xamarin.Mac geçerli sürümde.
 
 Geçici bir çözüm olarak, aşağıdaki kodu kullanabilirsiniz:
 
@@ -413,7 +413,7 @@ Ne zaman kullanıcı içe aktaran bir kaynak dosyası projeye (aracılığıyla 
 Document-Scoped yer işareti yer işareti veri ve belge açabilirsiniz herhangi bir uygulama tarafından çözülebilir. Bu, kullanıcının başka bir kullanıcı ve tüm yer işaretleri için de çalışacak sahip proje dosyalarını göndermek izin taşınabilirlik destekler.
 
 > [!IMPORTANT]
-> **Not:** Document-Scoped Bookman yapabilirsiniz _yalnızca_ noktası tek bir dosya ve klasör değil ve bu dosya sistemi tarafından kullanılan bir konumda olamaz (gibi `/private` veya `/Library`).
+> Document-Scoped yer işareti olabilir _yalnızca_ noktası tek bir dosya ve klasör değil ve bu dosya sistemi tarafından kullanılan bir konumda olamaz (gibi `/private` veya `/Library`).
 
 #### <a name="using-security-scoped-bookmarks"></a>Güvenlik kapsamı yer işaretlerini kullanma
 
@@ -428,7 +428,7 @@ Document-Scoped yer işareti yer işareti veri ve belge açabilirsiniz herhangi 
 Bir kaynağa erişim teknisyene sonra yeniden erişim yeniden oluşturmak için 4. adıma dönmek gerekir. Xamarin.Mac uygulama yeniden başlatılırsa, 3. adıma dönün ve yer işareti yeniden çözümlemek.
 
 > [!IMPORTANT]
-> **Not:** Security-Scoped URL kaynaklarına erişimini yayımlamayı hatası çekirdek kaynakları sızıntısı için bir Xamarin.Mac uygulaması neden olur. Sonuç olarak, uygulama artık yeniden başlatılana kadar kapsayıcısı için dosya sistemi konumlarına eklemeniz mümkün olacaktır.
+> Security-Scoped URL kaynaklarına erişimini yayımlamayı hatası çekirdek kaynakları sızıntısı için bir Xamarin.Mac uygulaması neden olur. Sonuç olarak, uygulama artık yeniden başlatılana kadar kapsayıcısı için dosya sistemi konumlarına eklemeniz mümkün olacaktır.
 
 ### <a name="the-app-sandbox-and-code-signing"></a>Uygulama korumalı alan ve kod imzalama
 
@@ -493,7 +493,7 @@ Xamarin.Mac uygulama için uygulama Korumalı alan genellikle tasarlarken aşağ
 6. Geçiş stratejisi uygulayın.
 
 > [!IMPORTANT]
-> **Not:** yalnızca sandbox ana yürütülebilir dosya, uygulama paketi, ancak aynı zamanda dahil her yardımcı gerekir uygulama veya bu paketteki aracı. Bu Mac uygulama Mağazası'ndan dağıtılmış herhangi bir uygulama için gereklidir ve mümkünse, uygulama dağıtım herhangi diğer bir form için yapılması gerekir.
+> Yalnızca, uygulama paketi, ancak aynı zamanda dahil her yardımcı ana yürütülebilir dosya korumalı alan gerekir uygulama veya bu paketteki aracı. Bu Mac uygulama Mağazası'ndan dağıtılmış herhangi bir uygulama için gereklidir ve mümkünse, uygulama dağıtım herhangi diğer bir form için yapılması gerekir.
 
 Xamarin.Mac uygulamanın paketteki tüm yürütülebilir ikili dosyalarının listesi için Terminal içinde aşağıdaki komutu yazın:
 

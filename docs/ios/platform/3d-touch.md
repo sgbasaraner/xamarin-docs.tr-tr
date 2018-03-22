@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c5cd2671bb66aa89117012fe394bb724f7e22e1a
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-3d-touch"></a>3B dokunmatik giriş
 
@@ -65,7 +65,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 `MaximumPossibleForce` Özelliği için olası en yüksek değere döndürür `Force` özelliği [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/) uygulamayı çalıştıran iOS cihazı bağlı.
 
 > [!IMPORTANT]
-> **Not:** baskısı değişiklikleri neden olacak `TouchesMoved` oluşturulması için olay olsa bile X / Y koordinatları değişmemiştir. Bu davranış değişikliği nedeniyle, iOS uygulamaları için hazırlıklı olmalıdır `TouchesMoved` daha sık ve X için çağrılacak olay / Y koordinatları son aynı olacak şekilde `TouchesMoved` çağırın.
+> Baskısı değişiklikleri neden olacak `TouchesMoved` oluşturulması için olay olsa bile X / Y koordinatları değişmemiştir. Bu davranış değişikliği nedeniyle, iOS uygulamaları için hazırlıklı olmalıdır `TouchesMoved` daha sık ve X için çağrılacak olay / Y koordinatları son aynı olacak şekilde `TouchesMoved` çağırın.
 
 
 
@@ -281,7 +281,7 @@ Burada biz iki statik hızlı eylem öğeleri aşağıdaki anahtarları tanımla
 * `UIApplicationShortcutItemType` -Uygulamamıza öğesinde tanımlamak için kullanacağı bir dize değeridir. Daha fazla bilgi için aşağıdaki bölüme bakın.
 
 > [!IMPORTANT]
-> **Not:** ayarlanmış olan Hızlı kısayol kararları `Info.plist` dosya ile erişilemiyor `Application.ShortcutItems` özelliği. Bunlar yalnızca için iletilen `HandleShortcutItem` olay işleyicisi. 
+> Ayarlanmış olan Hızlı kısayol kararları `Info.plist` dosya ile erişilemiyor `Application.ShortcutItems` özelliği. Bunlar yalnızca için iletilen `HandleShortcutItem` olay işleyicisi. 
 
 
 

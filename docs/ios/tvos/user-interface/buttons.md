@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 4b2a470d7fe2a1f9d4b8df40836c934547adf614
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5da834e7e77fb8ab080c124bd09653bc840be3b0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-buttons"></a>Düğmeleri ile çalışma
 
@@ -130,7 +130,7 @@ namespace tvRemote
 Düğmenin sürece `Enabled` özelliği `true` ve başka bir denetim veya görünümü tarafından kapsanmıyor, Siri uzaktan kullanarak odak öğesi yapılabilir. Kullanıcı düğmesini seçer ve dokunma yüzeyini tıklar `ButtonPressed` yukarıda tanımlanan eylem yürütülebilir.
 
 > [!IMPORTANT]
-> **Not:** eylemler gibi atamak mümkün olmakla birlikte `TouchUpInside` için bir `UIButton` iOS oluştururken Tasarımcısı'nda bir **olay işleyicisi**, Apple TV dokunmatik ekran veya destek olmadığından hiçbir zaman çağrılacağı dokunma olayları. Varsayılan değer her zaman kullanmalısınız **eylem türü** oluştururken **Eylemler** tvOS kullanıcı arabirimi öğeleri için.
+> Eylemler gibi atamak mümkün olmakla birlikte `TouchUpInside` için bir `UIButton` oluştururken Tasarımcısı iOS içinde bir **olay işleyicisi**, Apple TV ekranında veya dokunma olaylarını destekleyen bir touch sahip olmadığından hiçbir zaman çağrılır. Varsayılan değer her zaman kullanmalısınız **eylem türü** oluştururken **Eylemler** tvOS kullanıcı arabirimi öğeleri için.
 
 
 
@@ -191,7 +191,7 @@ View.AddSubview (button);
 ```
 
 > [!IMPORTANT]
-> **Not:** eylemler gibi atamak mümkün olmakla birlikte `TouchUpInside` için bir `UIButton`, Apple TV ekranında veya dokunma olaylarını destekleyen bir touch sahip olmadığından hiçbir zaman çağrılır. Olayları gibi her zaman kullanmalısınız **AllEvents** veya **PrimaryActionTriggered**.
+> Eylemler gibi atamak mümkün olmakla birlikte `TouchUpInside` için bir `UIButton`, Apple TV ekranında veya dokunma olaylarını destekleyen bir touch sahip olmadığından hiçbir zaman çağrılır. Olayları gibi her zaman kullanmalısınız **AllEvents** veya **PrimaryActionTriggered**.
 
 
 

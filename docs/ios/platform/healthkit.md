@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3e21794c9f1d8f010ec323774bc93987f4b89e1d
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: e7075b67db94b6bf603bd96c637c9f7724ae1519
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -43,7 +43,7 @@ Bu makalede sunulan adımları tamamlamak için aşağıdakiler gereklidir:
 - **iOS 8 (veya daha büyük) cihaz** – 8 veya test için büyük iOS en son sürümünü çalıştıran bir iOS cihazı.
 
 > [!IMPORTANT]
-> **Not:** sistem durumu Seti, iOS 8 sunulmuştur. Şu anda, sistem durumu Seti iOS simulator'da kullanılabilir değil ve hata ayıklama fiziksel bir iOS cihazına bağlantısı gerektirir.
+> Sistem durumu Seti iOS 8 sunulmuştur. Şu anda, sistem durumu Seti iOS simulator'da kullanılabilir değil ve hata ayıklama fiziksel bir iOS cihazına bağlantısı gerektirir.
 
 
 
@@ -216,7 +216,7 @@ Satır içi tüm bu yöntemleri kodda yapılabilir `OnActivated`, ancak bunları
 `ReactToHealthCarePermissions()` Kullanıcı izinleri iletişim kurduğunda ve iki ayrı bilgi geçtikten sonra geri çağırma çağrılır: bir `bool` değer `true` kullanıcı izinleri iletişim ve bir ileetkileşimevarsa`NSError`, null olmayan, belirten bir tür izinler iletişim sunan ile ilişkili hata.
 
 > [!IMPORTANT]
-> **Not:** bu işlev bağımsız değişkenleri hakkında temizlenmesini: _başarı_ ve _hata_ parametreleri değil belirtmek kullanıcı durumu Seti veri erişim izni verilmiş olup olmadığını! Bunlar, yalnızca kullanıcı veri erişimine izin vermek için Fırsat verildiğini gösterir.
+> Bu işlev bağımsız değişkenleri hakkında temizlenmesini: _başarı_ ve _hata_ parametreleri değil belirtmek kullanıcı durumu Seti veri erişim izni verilmiş olup olmadığını! Bunlar, yalnızca kullanıcı veri erişimine izin vermek için Fırsat verildiğini gösterir.
 
 Uygulama veri erişimi olup olmadığını doğrulamak için `HKHealthStore.GetAuthorizationStatus()` kullanılan, tümleştirilmesidir `HKQuantityTypeIdentifierKey.HeartRate`. Döndürülen durumuna bağlı olarak, uygulamayı etkinleştirir veya veri girme yeteneğini devre dışı bırakır. Erişim reddi ilgilenmek için hiçbir standart kullanıcı deneyimi yoktur ve birçok olası seçeneğiniz vardır. Örnek uygulama durumu üzerinde ayarlanmış bir `HeartRateModel` sırayla ilgili olayları başlatır, tekil nesnesi.
 
@@ -404,7 +404,7 @@ Belli ki, uygulamanın tek bir denetleyici ayrı model nesnesi oluşturma ve den
 Düzgün olarak sağlanan iOS 8 geliştirme aygıt sisteminize ekleyin. Mac için Visual Studio dağıtım hedefi olarak seçin ve menüsünden **Çalıştır > hata ayıklama**.
 
 > [!IMPORTANT]
-> **Not:** sağlamak için ilgili hatalar yüzey bu noktada. Hataları gidermek için oluşturma ve yukarıdaki bir sistem durumu Seti uygulama bölümü sağlama gözden geçirin. Bileşenleri şunlardır: 
+> Bu noktada sağlamak için ilgili hatalar belirir. Hataları gidermek için oluşturma ve yukarıdaki bir sistem durumu Seti uygulama bölümü sağlama gözden geçirin. Bileşenleri şunlardır: 
 >
 > - **iOS Geliştirme Merkezi** -açık uygulama kimliği & sistem durumu Seti etkin sağlama profili. 
 > - **Proje Seçenekleri** -paket tanımlayıcısı (açık uygulama kimliği) ve sağlama profili.

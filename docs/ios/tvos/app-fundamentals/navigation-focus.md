@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 489f3bd43ff4515000127ac29de197435493d5a9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fe1358d330c2a0fd94016853cedeabe094c394da
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>Gezinti ve odak ile çalışma
 
@@ -123,7 +123,7 @@ Devralınan özel öğeleri için `UIView` veya `UIViewController`, odak güncel
 Odağı altyapısı hareket etmesini istemek için odak başa `PreferredFocusedView` kullanıcı Arabirimi öğesi, çağrı `SetNeedsUpdateFocus` görünüm denetleyicisini yöntemi.
 
 > [!IMPORTANT]
-> **Not:** çağırma `SetNeedsUpdateFocus` çağırıldığında karşı View Controller odağa sahip görünümü içeriyorsa, yalnızca bir etkisi olmaz.
+> Çağırma `SetNeedsUpdateFocus` çağırıldığında karşı View Controller odağa sahip görünümü içeriyorsa, yalnızca bir etkisi olmaz.
 
 
 

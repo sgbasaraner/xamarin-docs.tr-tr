@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 15ee039fbfa339a9246b2a4234f37caf685c80c6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4bba92180e77accaa42b70843fb5dbf12c94d632
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>İOS için fastlane giriş
 
@@ -32,7 +32,7 @@ fastlane farklı şekillerde kullanılabilir: dosya tabanlı araçlarla veya sü
 
 Bu kılavuz, özellikle iOS uygulamaları ile geliştirme için bir cihaz ayarlama ile ilgilenir ve odaklanır **cert**, **sigh** ve **eşleşen** yardımcı programları. 
 
-Dayanak olarak sağlanan içerik tam olarak bir sürekli tümleştirme sunucuda işlemini otomatikleştirmenin dahil olmak üzere uygulama dağıtım ile yardımcı olmak için kullanılır. Ancak, bu fastlane Xcode projeleri ve bu nedenle bazı araçlar veya komutları gibi desteklemek için Araçlar yapabilen bir 3. taraf Not önemli `fastlane init` csproj dosyalarıyla beklendiği gibi çalışmayabilir. Fastlane kullanma hakkında daha fazla bilgi için ek araçlar veya fastlane, kullanılarak Android için serbest başvurmak için [https://fastlane.tools/](https://fastlane.tools/)
+Dayanak olarak sağlanan içerik tam olarak bir sürekli tümleştirme sunucuda işlemini otomatikleştirmenin dahil olmak üzere uygulama dağıtım ile yardımcı olmak için kullanılır. Ancak, bu fastlane Xcode projeleri ve bu nedenle bazı araçlar veya komutları gibi desteklemek için Araçlar yapabilen bir 3. taraf Not önemli `fastlane init` csproj dosyalarıyla beklendiği gibi çalışmayabilir. Fastlane kullanma hakkında daha fazla bilgi için ek araçlar veya fastlane, kullanılarak Android için serbest bakın [https://fastlane.tools/](https://fastlane.tools/)
 
 <a name="Installation" />
 
@@ -44,10 +44,10 @@ Dayanak olarak sağlanan içerik tam olarak bir sürekli tümleştirme sunucuda 
     error: command line tools are already installed, use "Software Update" to install updates
     ```
 
-2. Fastlane Araçları'ndan indirin [https://download.fastlane.tools](https://download.fastlane.tools). 
+2. Fastlane Araçları'ndan indirin [ https://download.fastlane.tools ](https://download.fastlane.tools). 
 
     > [!NOTE]
-> Homebrew kullanarak fastlane araçları yüklemek mümkündür `brew cask install fastlane` veya Rubygems (2.0 veya üstü) kullanarak aracılığıyla `sudo gem install fastlane –NV`. Ancak Yükleyicisi'ni kullanarak doğru bağımlılıkları kullanılabilir olmasını sağlar. 
+    > Homebrew kullanarak fastlane araçları yüklemek mümkündür `brew cask install fastlane` veya Rubygems (2.0 veya üstü) kullanarak aracılığıyla `sudo gem install fastlane –NV`. Ancak Yükleyicisi'ni kullanarak doğru bağımlılıkları kullanılabilir olmasını sağlar. 
 
 3. Dosya unzipping tarafından fastlane yükleyin ve çift `install` yürütülebilir. "Bilinmeyen bir geliştiriciden olduğundan dosya açılamıyor", bildiren bir hata alırsanız, Tamam'ı tıklatın ve aşağıdakileri yapın:
     - Control + tıklayın `install` yürütülebilir. Bu iletişim görüntülenir:

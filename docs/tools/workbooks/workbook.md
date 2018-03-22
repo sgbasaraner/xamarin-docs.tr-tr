@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: c111d2f873270eab78eee92edc3d884d1e92fdd8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 69c4b25e17c31d57701f99e84f6f686c65dc7028
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="interactive-workbooks"></a>Etkileşimli çalışma kitapları
 
@@ -32,7 +32,7 @@ Penceresi düzenleme kod kod tamamlama, sözdizimi renklendirmesi, satır içi C
 
 [ ![](workbook-images/inspector-0.6.0-repl-small.png "Penceresi düzenleme kod kod tamamlama, sözdizimi renklendirmesi, satır içi Canlı tanılama ve çok satırlı deyimi desteği sağlar")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
-Xamarin çalışma kitaplarını kaydedilir bir `.workbook` CommonMark dosyası üst bazı meta veri dosyası (bkz [çalışma kitaplarını dosya türlerini](#Workbooks_Files_Types) çalışma kitaplarını kaydedilme hakkında daha fazla bilgi).
+Xamarin çalışma kitaplarını kaydedilir bir `.workbook` CommonMark dosyası üst bazı meta veri dosyası (bkz [çalışma kitaplarını dosya türlerini](#workbooks-files-types) çalışma kitaplarını kaydedilme hakkında daha fazla bilgi).
 
 ### <a name="nuget-package-support"></a>NuGet paketi desteği
 
@@ -132,7 +132,7 @@ Dizin içermelidir bir `index.workbook` Xamarin çalışma kitaplarında yüklen
 Düz metin, `.workbook` aynı dizininden kaynaklara başvuran dosya 0.99.3 çalışma kitaplarında açıldığında veya kaydedildiğinde, daha sonra onu dönüştürülecek bir `.workbook` paketi. Bu, hem Mac hem de Windows geçerlidir.
 
 > [!NOTE]
-> **Not:** Windows kullanıcıları açılır `package.workbook\index.workbook` dosyasını doğrudan ancak Aksi takdirde paket aynı Mac gibi davranacak
+> Windows kullanıcıları açılır `package.workbook\index.workbook` dosyasını doğrudan ancak Aksi takdirde paket aynı Mac gibi davranacak
 
 ### <a name="archives"></a>Arşivler
 

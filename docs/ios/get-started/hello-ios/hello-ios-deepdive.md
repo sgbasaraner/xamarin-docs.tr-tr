@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 500c3d1c6f38427a921097a0c3104254ec5cb263
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Merhaba, iOS derinlemesine bakış
 
@@ -306,7 +306,7 @@ public partial class ViewController : UIViewController
 `ViewController` Şimdi film şeridi, bu görünüm Denetleyici ile ilişkili içerik görünümü hiyerarşisinin etkileşimleri sürücüler. Ardından Görünüm denetleyicisinin rol görünüm yaşam döngüsü adlı bir işlem sunarak görünümleri yönetme hakkında bilgi edineceksiniz.
 
 > [!NOTE]
-> **Not:** kullanıcı etkileşimi gerektirmeyen yalnızca visual ekranlar **sınıfı** özelliği bırakılabilir boş **özellikleri paneli**. Bu görünüm denetleyicinin yedekleme sınıfı varsayılan uygulaması ayarlar bir `UIViewController`, özel kod ekleme planlamıyorsanız uygun olduğu.
+> Kullanıcı etkileşimi gerektirmeyen yalnızca visual ekranlar **sınıfı** özelliği bırakılabilir boş **özellikleri paneli**. Bu görünüm denetleyicinin yedekleme sınıfı varsayılan uygulaması ayarlar bir `UIViewController`, özel kod ekleme planlamıyorsanız uygun olduğu.
 
 ### <a name="view-lifecycle"></a>Görünüm yaşam döngüsü
 
@@ -416,7 +416,7 @@ Bazen uygulama kodundaki sorunları tanılamak zordur. Karmaşık kod sorunları
 Bir aygıt sağlamak için zaman alır ve bir Apple Developer hesabı gerektirir. [Cihaz sağlamayı](~/ios/get-started/installation/device-provisioning/index.md) kılavuz, bir cihaz geliştirme için hazır hale kapsamlı yönergeler verir.
 
 > [!NOTE]
-> **Not:** Apple, bir gereksinim nedeniyle günümüzde sağlamak ise gerekli bir geliştirme sertifikası veya _kimlik imzalama_ oluşturmak için aygıt veya simulator için kod. Adımları [cihaz sağlamayı Kılavuzu](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) bunu ayarlamak için.
+> Günümüzde, Apple, bir gereksinim nedeniyle sağlamak ise gerekli bir geliştirme sertifikası veya _kimlik imzalama_ oluşturmak için aygıt veya simulator için kod. Adımları [cihaz sağlamayı Kılavuzu](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) bunu ayarlamak için.
 
 Cihaz sağlandıktan sonra için iOS cihazını yapı araç hedef değiştirme ve tuşuna basarak içinde takarak dağıtabilirsiniz **Başlat** ( **Yürüt**) tarafından aşağıdaki ekran görüntüsünde gösterildiği gibi:
 

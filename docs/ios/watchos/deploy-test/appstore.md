@@ -8,16 +8,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: dfbc976da109a3813b8d7abd85adafbc9bb94fa0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c5b89570fdd3df80d39c6621fcd12a23babed9ee
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="deploying-to-the-app-store"></a>Uygulama deposuna dağıtma
 
 > [!IMPORTANT]
->  Gözden geçirmeyi unutmayın [Apple'nın izleme Seti gönderme Kılavuzu](https://developer.apple.com/app-store/watch/)ve [sorun giderme](#Troubleshooting) olabilecek sorunlar için bölüm.
+> Gözden geçirmeyi unutmayın [Apple'nın izleme Seti gönderme Kılavuzu](https://developer.apple.com/app-store/watch/)ve [sorun giderme](#Troubleshooting) olabilecek sorunlar için bölüm.
 
 - Olduğundan emin olun:
   - [**Dağıtım sağlama profilleri** ](#provisioning) projeleri için oluşturulan.
@@ -177,7 +177,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 Visual Studio en son sürümünü Mac ve, için olduğundan emin olun, **AppIcons.appiconset** görüntüleri eksiksiz bir kümesini içerir. Yine de bu hatayı görüyorsanız, kaynağını görüntülemek **Contents.json** gerekli tüm görüntüleri için bir giriş içerdiği onaylamak için. Alternatif olarak, Xamarin en son sürümünü kullandığınızı doğruladıktan sonra silip yeniden oluşturmanız **AppIcons.appiconset**.
 
 > [!IMPORTANT]
-> Not: Bir bilinen hata Visual Studio'da Mac'ın izleme simgesi için desteği yoktur: 88 x 88 piksel resmi bekliyor  **29x29@3x**  (87 x 87 piksel olmalıdır) görüntüsü.
+> Mac'ın izleme simgesi desteği Visual Studio'da bilinen bir hata varsa: 88 x 88 piksel resmi bekliyor  **29x29@3x**  (87 x 87 piksel olmalıdır) görüntüsü.
 
 
 Bu Mac - ya da Düzenle xcode'da görüntü varlığı için Visual Studio'da düzeltin veya el ile düzenlediğinizde **Contents.json** dosyası (eşleşecek şekilde [Bu örnek](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
@@ -196,7 +196,7 @@ Bu ileti doğrulama ve gönderme sırasında veya otomatik bir e-posta iTunes Ba
 Ensure you are using the latest version of Xcode and Xamarin's tools.
 -->
 > [!IMPORTANT]
-> Not: Gerekir **arşiv** uygulamanızı Mac ve Xcode 6.2 + ENTER anahtara doğrulamak ve iTunes Bağlan karşıya yüklemek için Visual Studio.
+> Yapmanız gerekenler **arşiv** uygulamanızı Mac ve Xcode 6.2 + ENTER anahtara doğrulamak ve iTunes Bağlan karşıya yüklemek için Visual Studio.
 
 
 Kararlı Xamarin kanalı ve Xcode 6.2 + kullanın.

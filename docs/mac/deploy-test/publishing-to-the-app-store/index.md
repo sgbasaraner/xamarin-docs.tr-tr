@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 86514dbd6b40e9d59ea9a598395cf6f0a3f4889a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4c7b0913d43d9db3b5414c831864dae8d0b4d61
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Uygulama mağazası yayımlama
 
@@ -37,7 +37,7 @@ Eklediğinizde [Mac Developer Program](https://developer.apple.com/devcenter/mac
 Durumunuz için doğru kayıt türü seçin.
 
 > [!NOTE]
-> **Not**: Burada yapılan seçimler bazı ekranlar bir geliştirici hesabını yapılandırırken görünecek şekilde etkiler. Bu belgede ekran görüntüleri ve açıklamaları perspektifinden yapılır bir **tek tek** Geliştirici hesabı. İçinde bir **şirket**, bazı seçenekler yalnızca kullanılabilir **takım Yönetim** kullanıcılar.
+> Burada yaptığınız seçimleri bir geliştirici hesabını yapılandırırken bazı ekranlar görünecek şekilde etkiler. Bu belgede ekran görüntüleri ve açıklamaları perspektifinden yapılır bir **tek tek** Geliştirici hesabı. İçinde bir **şirket**, bazı seçenekler yalnızca kullanılabilir **takım Yönetim** kullanıcılar.
 
 
 ### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[Sertifikalar ve Tanımlayıcılar](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)

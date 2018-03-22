@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b10894d6b18d78d682825000726c5ef2cbe5ba6b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dfae07d36c67c12d254cd70c22acb01b2fc1c9b0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough---using-background-location"></a>İzlenecek yol - arka plan konumu kullanma
 
@@ -79,7 +79,7 @@ Bu kılavuzda bazı anahtar kavramlar, bir uygulama bir arka plan gerekli uygula
     - `AllowsBackgroundLocationUpdates` – Askıya zaman konumu güncelleştirmeleri almak uygulama izin vermek için ayarlanan iOS 9 sunulan bir Boolean özelliği budur.
 
     > [!IMPORTANT]
-    > **Uyarı**: iOS 8 (ve büyük) de bir girişe gerektirir **Info.plist** kullanıcı yetkilendirme isteği bir parçası olarak göstermek için dosya.
+    > iOS 8 (ve büyük) de bir girişe gerektirir **Info.plist** kullanıcı yetkilendirme isteği bir parçası olarak göstermek için dosya.
 
 1. Bir anahtar ekleyin `NSLocationAlwaysUsageDescription` veya `NSLocationWhenInUseUsageDescription` konumu veri erişimi istekleri uyarısında kullanıcıya görüntülenen bir dizeyle.
 

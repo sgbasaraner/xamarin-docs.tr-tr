@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3d70aff4df91120402e2987598b8973172b46245
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 kullanıcı arabirimine genel bakış
 
@@ -173,7 +173,7 @@ Başvurmak [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-up
 Görünüm böylece okunmaya çalışılırken bir hiyerarşiye eklendikten sonra Öteleme değeri dinamik olarak üretilen `TopLayoutGuide` ve `BottomLayoutGuide` değerler `ViewDidLoad` 0 döndürür. Görünüm - Örneğin, içinde yüklendikten sonra değeri hesaplamak `ViewDidLayoutSubviews`.
 
 > [!IMPORTANT]
-> **Not**: `TopLayoutGuide` ve `BottomLayoutGuide` iOS 11 lehinde kaldıran yeni güvenli alan düzeni içinde kullanım dışı bırakılmıştır. Apple belirtilen güvenli alanı kullanarak iOS 11 ' önceki iOS sürümüyle uyumlu olduğunu. Daha fazla bilgi için bkz: [uygulamanız iOS 11 için güncelleştirme](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) Kılavuzu.
+> `TopLayoutGuide` ve `BottomLayoutGuide` iOS 11 lehinde kaldıran yeni güvenli alan düzeni içinde kullanım dışı bırakılmıştır. Apple belirtilen güvenli alanı kullanarak iOS 11 ' önceki iOS sürümüyle uyumlu olduğunu. Daha fazla bilgi için bkz: [uygulamanız iOS 11 için güncelleştirme](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) Kılavuzu.
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
@@ -252,7 +252,7 @@ Düğmeler şimdi chrome daha az metin olarak görüntülenir. Metin rengi yeni 
 Renk de görüntülere ne zaman uygulanabilir `RenderingMode` ayarlanır `UIImageRenderingMode.AlwaysTemplate`.
 
 > [!IMPORTANT]
-> Not: Kullanarak renk ayarlanamaz `UIAppearance`.
+> Renk kullanarak ayarlanamaz `UIAppearance`.
 
 
 ### <a name="dynamic-type"></a>Dinamik tür

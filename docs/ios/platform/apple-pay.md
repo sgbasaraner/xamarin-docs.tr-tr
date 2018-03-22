@@ -7,11 +7,11 @@ ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0ac2a19e9020113df273897a8ec2c86ee1763ec2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af899bb1c5708e3fc0be88db6224d9127f5a5c6d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay"></a>Apple Pay
 
@@ -118,7 +118,7 @@ Yeni test ortamını etkinleştirmek için aşağıdakileri yapın:
 4. Test ödeme kartları birini kullanın [Apple ödeme Kılavuzu](https://developer.apple.com/apple-pay/) ödeme yapmak için.
 
 > [!IMPORTANT]
->  **Not:** iCloud hesapları geçerek, cihaz otomatik olarak yeni test ortamına geçiş yapacağız. Ancak, Apple hala **gerektirir** ile gerçek sınanacak uygulama kartları iTunes App Store'da göndermeden önce bir üretim ortamında.
+> İCloud hesapları geçerek, cihaz otomatik olarak yeni test ortamına geçiş yapar. Ancak, Apple hala **gerektirir** ile gerçek sınanacak uygulama kartları iTunes App Store'da göndermeden önce bir üretim ortamında.
 
 ## <a name="summary"></a>Özet
 
@@ -127,7 +127,7 @@ Bu makalede, Apple Pay uygulamanızda kullanmak için gereken farklı öğeler i
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Uygulama içi satın alma](~/ios/platform/in-app-purchasing/index.md)
+- [Uygulama İçi Satın Alma](~/ios/platform/in-app-purchasing/index.md)
 - [PassKit giriş](~/ios/platform/passkit.md)
 - [PassKit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/)
 - [Apple Pay](https://developer.apple.com/apple-pay/)

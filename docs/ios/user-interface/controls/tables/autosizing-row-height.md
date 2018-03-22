@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c8d66ff8199d451ce7469fa893b7673589c9e320
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1b35905d14086dcfc0cb749c8e4cc7de1608dd5
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="auto-sizing-row-height"></a>Otomatik boyutlandırma satır yüksekliği
 
@@ -46,7 +46,7 @@ Ardından, hücre prototip seçin ve benzersiz bir vermek ihtiyacımız **tanım
 Örneğimizde, söz konusu olduğunda `GrowCell`. Biz tabloyu doldurmak olduğunda bu değer daha sonra kullanacağız.
 
 > [!IMPORTANT]
-> **Not:** tablonuz birden fazla hücre türü içeriyorsa (**prototip**), her tür kendi benzersiz olduğundan emin olun gerek `Identifier` çalışmak satır otomatik yeniden boyutlandırma.
+> Tablonuz birden fazla hücre türü içeriyorsa (**prototip**), her tür kendi benzersiz olduğundan emin olun gerek `Identifier` çalışmak satır otomatik yeniden boyutlandırma.
 
 Bizim hücre prototip her öğe için Ata bir **adı** C# kodu kullanıma sunmak için. Örneğin:
 

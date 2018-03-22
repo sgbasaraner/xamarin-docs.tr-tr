@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/29/2017
-ms.openlocfilehash: cfbe2df23317ee3ad11c9970ab892ddcc251b9d6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 08bf8b2b7c56983c43cf1ae080ab112e81851fbb
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="installing-xamarinios-on-windows"></a>Xamarin.iOS Windows yükleme
 
@@ -37,7 +37,7 @@ Aşağıdaki diyagram Xamarin.iOS geliştirme iş akışı basit bir genel bakı
 [![Xamarin.iOS geliştirme iş akışı](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
->  Visual Studio gerçekte projeler derlemek için ayrı bir MSBuild işlemi başlatır. Bu işlem, Visual Studio oluşturduğunda gerçekte iki SSH bağlantısını Windows Mac olduğu anlamına gelir, Mac için yeni bir bağlantı oluşturur. Derleme kaynağı [komut satırı](~/ios/get-started/installation/windows/connecting-to-mac/index.md) yalnızca bir MSBuild işlemi oluşturur. Bu diyagramda kolaylık sağlamak için tüm bağlantıları yalnızca bir ok temsil edilir.
+> Visual Studio gerçekte projeler derlemek için ayrı bir MSBuild işlemi başlatır. Bu işlem, Visual Studio oluşturduğunda gerçekte iki SSH bağlantısını Windows Mac olduğu anlamına gelir, Mac için yeni bir bağlantı oluşturur. Derleme kaynağı [komut satırı](~/ios/get-started/installation/windows/connecting-to-mac/index.md) yalnızca bir MSBuild işlemi oluşturur. Bu diyagramda kolaylık sağlamak için tüm bağlantıları yalnızca bir ok temsil edilir.
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -105,7 +105,7 @@ Yapmanız gerekenler mac konakta Xamarin.iOS araçlarını yüklemek için [Mac 
 Yazılım yüklendikten sonra Xamarin.iOS macOS bağlanmak Visual Studio için Xamarin izin verecek şekilde yapılandırmak için sonraki bölümlerde bulunan adımları izleyin.
 
 > [!IMPORTANT]
->  Windows makine olarak bağlı olduğu Mac Xamarin.iOS aynı sürümünü kullanıyor olmalıdır. Bu doğru olduğundan emin olmak için:
+> Windows makine olarak bağlı olduğu Mac Xamarin.iOS aynı sürümünü kullanıyor olmalıdır. Bu doğru olduğundan emin olmak için:
 >
 > - **Visual Studio 2015 ve önceki**: aynı olduğundan emin olun [güncelleştirmeleri kanal](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/) Mac için Visual Studio
 >

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 73f3beb87fffcb37ef3e36d54f634c3bc62da538
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-user-defaults"></a>Kullanıcı varsayılanları ile çalışma
 
@@ -32,7 +32,7 @@ Kullanıcı varsayılan olarak, yukarıda belirtildiği gibi (`NSUserDefaults`) 
 Uygulamanızı ilk kez yürütüldüğünde, `NSUserDefaults` anahtarları ve değerleri uygulamanın kullanıcı Varsayılanları veritabanından okur ve onları belleğe açma ve veritabanı her zaman okunurken önlemek için bir değer gereklidir önbelleğe alır. 
 
 > [!IMPORTANT]
-> **Not**: Apple artık önerir Geliştirici çağrısı `Synchronize` bellek içi önbellek veritabanı ile doğrudan eşitleme yöntemi. Bunun yerine, otomatik olarak bellek içi önbellek kullanıcının varsayılan veritabanı ile eşitlenmiş tutmak için düzenli aralıklarla çağrılır.
+> Apple artık önerir Geliştirici çağrısı `Synchronize` bellek içi önbellek veritabanı ile doğrudan eşitleme yöntemi. Bunun yerine, otomatik olarak bellek içi önbellek kullanıcının varsayılan veritabanı ile eşitlenmiş tutmak için düzenli aralıklarla çağrılır.
 
 `NSUserDefaults` Sınıfı okumak ve tercih değerleri için ortak veri türleri gibi yazmak için birkaç kullanışlı yöntemler içerir: dize, tamsayı, kayan nokta, Boole ve URL'leri. Diğer veri türleri kullanılarak arşivlenebilir `NSData`, ardından okuma veya varsayılan olarak kullanıcı veritabanına yazılır. Daha fazla bilgi için lütfen Apple'nın bkz [tercihlerini ve ayarlarını Programlama Kılavuzu](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i).
 
@@ -127,7 +127,7 @@ plist.SetBool(useHeader, "UseHeader");
 ```
 
 > [!IMPORTANT]
-> **Not:** uygulamanızı ilk kez yürütüldüğünde, `NSUserDefaults` anahtarları ve değerleri uygulamanın kullanıcı Varsayılanları veritabanından okur ve onları belleğe açma ve veritabanı her zaman okunurken önlemek için bir değer gereklidir önbelleğe alır.
+> Uygulamanızı ilk kez yürütüldüğünde, `NSUserDefaults` anahtarları ve değerleri uygulamanın kullanıcı Varsayılanları veritabanından okur ve onları belleğe açma ve veritabanı her zaman okunurken önlemek için bir değer gereklidir önbelleğe alır.
 
 
 

@@ -7,12 +7,12 @@ ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 2d5a83b9f6278406e9b643277357df253f5fd524
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/21/2018
+ms.openlocfilehash: 4225e45ecfe4a4a2cdb7e75b94823fc8fcd29fc4
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -56,10 +56,10 @@ Adlı bir XML dosyası oluşturma **list_item.xml** ve içinde kaydederek **kayn
 
 Bu dosya düzeni yerleştirilecek her bir öğe için tanımlar [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/).
 
-Açık `HelloListView.cs` ve genişletmek sınıfı [ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (yerine [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)):
+Açık `MainActivity.cs` ve genişletmek için sınıf değiştirme [ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (yerine [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)):
 
 ```csharp
-public class HelloListView : ListActivity
+public class MainActivity : ListActivity
 {
 ```
 
@@ -74,9 +74,9 @@ protected override void OnCreate (Bundle bundle)
 
     ListView.TextFilterEnabled = true;
 
-    ListView.ItemClick += delegate (object sender, ItemEventArgs args) {
-        // When clicked, show a toast with the TextView text
-        Toast.MakeText (Application, ((TextView)args.View).Text, ToastLength.Short).Show ();
+    ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+    {
+        Toast.MakeText(Application, ((TextView)args.View).Text, ToastLength.Short).Show();
     };
 }
 ```
@@ -93,7 +93,12 @@ Bu yöntem alır bir [ `ArrayAdapter<T>` ](https://developer.xamarin.com/api/typ
 Liste öğesi tasarımları için kendi düzeni dosyası tanımlayarak yerine platform tarafından sağlanan kullanabilirsiniz [ `ListAdapter` ](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/).
 Örneğin, kullanmayı deneyin `Android.Resource.Layout.SimpleListItem1` yerine `Resource.Layout.list_item`.
 
-Sonra [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle)) yöntemi, dize dizisi ekleyin:
+Aşağıdakileri ekleyin `using` deyimi:
+
+```csharp
+using System;
+```
+Ardından, aşağıdaki dize dizisi bir üyesi olarak eklemek `MainActivity`:
 
 ```csharp
 static readonly string[] countries = new String[] {
@@ -145,22 +150,23 @@ static readonly string[] countries = new String[] {
 
 Uygulamayı çalıştırın. Listeyi kaydırın veya onu filtrelemek için yazın ve sonra bir ileti görmek için bir öğeyi tıklatın. Şöyle bir şey görmeniz gerekir:
 
-[![Örnek penceresinin ekran görüntüsü ListView ülke adları](images/helloviews6.png)](images/helloviews6.png#lightbox)
+[![Örnek penceresinin ekran görüntüsü ListView ülke adları](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
 Bir sabit kodlanmış bir dize dizisi kullanarak en iyi tasarım uygulama olmadığını unutmayın. Bir Basitlik için Bu öğreticide göstermek için kullanılan [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/) pencere öğesi. İle gibi harici bir kaynak tarafından tanımlanan bir dize dizisi başvurmak için daha iyi uygulamadır bir `string-array` projenizdeki kaynak **Resources/Values/Strings.xml** dosya. Örneğin:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="countries_array">
-        <item>Bahrain</item>
-        <item>Bangladesh</item>
-        <item>Barbados</item>
-        <item>Belarus</item>
-        <item>Belgium</item>
-        <item>Belize</item>
-        <item>Benin</item>
-    </string-array>
+  <string name="app_name">HelloListView</string>
+  <string-array name="countries_array">
+    <item>Bahrain</item>
+    <item>Bangladesh</item>
+    <item>Barbados</item>
+    <item>Belarus</item>
+    <item>Belgium</item>
+    <item>Belize</item>
+    <item>Benin</item>
+  </string-array>
 </resources>
 ```
 
@@ -170,6 +176,9 @@ Bu kaynak dizeleri için kullanılacak [ `ArrayAdapter` ](https://developer.xama
 string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
 ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countries);
 ```
+Uygulamayı çalıştırın. Şöyle bir şey görmeniz gerekir:
+
+[![Örnek penceresinin ekran görüntüsü ListView küçük adlarının listesi](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
 
 
 ## <a name="going-further-with-listview"></a>ListView ile devam

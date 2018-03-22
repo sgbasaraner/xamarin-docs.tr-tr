@@ -8,22 +8,20 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 76f35819b00302f4a586643798afbd27416d3997
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1a77dcc8ae1c698e1f1ef40757ab03558f329719
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>NuGet paketleri için Xamarin el ile oluşturma
 
 _Bu sayfa Xamarin platformunu hedeflemeniz NuGet paketleri oluşturmanıza yardımcı olacak bazı ipuçları içerir._
 
 > [!NOTE]
-> Xamarin Studio 6.2 (ve Mac için Visual Studio) içeren yeteneği _otomatik olarak_ PCL, .NET standart veya paylaşılan projeleri NuGet paketleri oluşturun.
-> Başvurmak [Multiplatform kitaplıkları kod paylaşım](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md) daha fazla ayrıntı için Kılavuzu.
+> Xamarin Studio 6.2 (ve Mac için Visual Studio) içeren yeteneği _otomatik olarak_ PCL, .NET standart veya paylaşılan projeleri NuGet paketleri oluşturun. Başvurmak [Multiplatform kitaplıkları kod paylaşım](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md) daha fazla ayrıntı için Kılavuzu.
 
 ## <a name="nuget-package-xamarin-profiles"></a>NuGet paket Xamarin profilleri
-
 
 NuGet Web sitesinin [destekleyen birden çok .NET Framework sürümleri ve profilleri](https://docs.nuget.org/create/enforced-package-conventions) farklı Microsoft çerçeveler ve profillerini desteklemek nasıl ele alınmıştır ancak Xamarin tarafından kullanılan hedef framework adları içermez.
 

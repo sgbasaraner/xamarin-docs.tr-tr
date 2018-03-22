@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: a4491f550369bbb8515635ecbb7c1c2b74de48cf
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 357528c559de36329ca4bf12ab2597247a17222d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="app-transport-security"></a>Uygulama taşıma güvenliği
 
@@ -82,7 +82,7 @@ TLS düzeyi, kullanan web hizmeti tarafından kontrol edilir ve bu nedenle uygul
 Sunucuda bağlı olarak (özellikle 3 taraf hizmet ise) için varsayılır, devre dışı bırakmanız gerekebilir gizliliği iletmek veya daha düşük bir TLS düzeyini seçin. Bkz: [ATS seçenekleri yapılandırma](#Configuring-ATS-Options) daha fazla ayrıntı için bölüm aşağıda.
 
 > [!IMPORTANT]
-> **Not:** uygulama taşıma güvenliği kullanarak Xamarin uygulamaları için geçerli olmayan **yönetilen HTTPClient uygulamalarına**. CFNetwork kullanarak bağlantılara uygulanır **HTTPClient uygulamalarına** veya **NSURLSession HTTPClient uygulamalarına** yalnızca.
+> Uygulama taşıma güvenliği kullanarak Xamarin uygulamaları için geçerli olmayan **yönetilen HTTPClient uygulamalarına**. CFNetwork kullanarak bağlantılara uygulanır **HTTPClient uygulamalarına** veya **NSURLSession HTTPClient uygulamalarına** yalnızca.
 
 ### <a name="setting-the-httpclient-implementation"></a>HTTPClient uygulama ayarlama
 
@@ -138,7 +138,7 @@ Cons:
 
 Doğrudan veya bir web görünümü iOS 9'internet ' e bağlanmaya çalışılırken bir hata biçiminde alabilirsiniz:
 
-> Güvenli olmayan olduğundan uygulama taşıma güvenliği doğrulamaya HTTP (http://www.-the-blocked-domain.com) kaynak yükü engelledi. Geçici özel durumlar, uygulamanızın Info.plist dosyası aracılığıyla yapılandırılabilir.
+> Uygulama taşıma güvenliği doğrulamaya HTTP engelledi (http://www.-the-blocked-domain.com) , güvenli olduğundan kaynak yükü. Geçici özel durumlar, uygulamanızın Info.plist dosyası aracılığıyla yapılandırılabilir.
 
 İOS9 içinde uygulama Aktarım güvenlik (ATS) Internet kaynakların (örneğin, uygulamanızın arka uç sunucusu) ve uygulamanız arasındaki güvenli bağlantılar zorlar. Ayrıca, ATS iletişimi kullanılması `HTTPS` protokolü ve TLS sürüm 1.2 ile iletme gizliliği kullanılarak şifrelenmesi için üst düzey API iletişimi.
 
@@ -243,7 +243,7 @@ Mac için Visual Studio içinde çift `Info.plist` dosyasını **Çözüm Gezgin
 [![](ats-images/ats02.png "Info.plist dosyasının kaynağı görünümü")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> **Not:** uygulamanızı güvenli olmayan bir Web sitesine bir bağlantı gerektiriyorsa, aşağıdakileri yapmalısınız **her zaman** kullanarak özel durum olarak etki alanını girin `NSExceptionDomains` tamamen kullanarak devre dışı ATS kapatma yerine `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` yalnızca aşırı acil durumlarda kullanılmalıdır.
+> Uygulamanızı bir bağlantı güvenli olmayan bir Web sitesine gerektiriyorsa, aşağıdakileri yapmalısınız **her zaman** kullanarak özel durum olarak etki alanını girin `NSExceptionDomains` tamamen kullanarak devre dışı ATS kapatma yerine `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` yalnızca aşırı acil durumlarda kullanılmalıdır.
 
 
 

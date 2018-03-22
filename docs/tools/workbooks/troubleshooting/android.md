@@ -6,11 +6,11 @@ ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: eb188abb3e757f6f66af7758ced311ae1236d3ce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 530abec733ec1d842559bf9c898217a8e45465aa
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Android'de sorun giderme Xamarin çalışma kitapları
 
@@ -25,7 +25,8 @@ Android 5.0 veya sonraki sürümünü çalıştıran bir öykünücü olması ge
 
 Lütfen okuyun [Android öykünücüsünü ayarlama Belgelerimizi] [ android-emu] işlemle bilmiyorsanız.
 
-**Not:** çalışma kitapları 1.1 ve önceki deneyin (ve başarısız!) varsa kullanım ARM Öykünücüler. Bu, başlatma x86 öykünücüsü açma veya bir Android çalışma kitabı oluşturmadan tercih ettiğiniz geçici olarak çözmek için. Uyumlu olduğu sürece çalışma kitaplarını çalışan öykünücüsünü bağlanmak her zaman tercih eder.
+> [!NOTE]
+> Çalışma kitapları 1.1 ve önceki deneyin (başarısız kullanılabilir olmaları durumunda kullanım ARM Öykünücüler ve!). Bu, başlatma x86 öykünücüsü açma veya bir Android çalışma kitabı oluşturmadan tercih ettiğiniz geçici olarak çözmek için. Uyumlu olduğu sürece çalışma kitaplarını çalışan öykünücüsünü bağlanmak her zaman tercih eder.
 
 ## <a name="workbooks-wont-load"></a>Çalışma kitapları yüklenmiyor
 
@@ -33,7 +34,7 @@ Lütfen okuyun [Android öykünücüsünü ayarlama Belgelerimizi] [ android-emu
 
 İlk olarak, tüm Web sitesi öykünücüsü'nın web tarayıcısında test ederek, öykünücüsü tam olarak çalışan ağ erişimi olduğundan emin olun.
 
-### <a name="visual-studio-android-emulator-cannot-connect-to-internet"></a>Visual Studio Android öykünücüsü internet'e bağlanamıyor
+### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio Android öykünücüsü İnternete bağlanılamıyor
 
 Öykünücüsü ağ erişimi yoksa, Hyper-V ağ anahtarı düzeltmek için bu adımları gerekebilir. Sık Wi-Fi ağları arasında geçiş yapıyorsanız bu işlemi düzenli aralıklarla yineleyin gerekebilir:
 

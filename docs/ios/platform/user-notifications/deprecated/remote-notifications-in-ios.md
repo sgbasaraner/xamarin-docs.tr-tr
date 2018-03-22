@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="push-notifications-in-ios"></a>İOS anında iletme bildirimleri
 
 _Bu bölümde, iOS anında iletme bildirimlerini ele alınacaktır. Apple anında iletme bildirimleri ağ geçidi hizmeti ve iOS uygulamalarını yayımlama bildirimleri oynadığı rolü tanıtır. Güvenlik sertifikaları anında iletme bildirimlerini etkinleştirin ve tartışmak için gerekli oluşturma anlatılmıştır. Son olarak bu bölümde, uygulama sunucuları istemci mobil cihazları izlemek için gerçekleştirmeniz gerekir temizlik görevlerden bazılarını ele alınacaktır._
 
 > [!IMPORTANT]
-> **Not:** bu bölümdeki bilgiler, iOS 9 ilgilidir ve önceki, bunu burada daha önceki iOS sürümlerini desteklemek için bırakıldı. 10 ve üzeri iOS için lütfen bkz. [Kullanıcı bildirim Framework Kılavuzu](~/ios/platform/user-notifications/index.md) hem yerel hem de uzak bildirim iOS cihazında desteklemek için.
+> Bu bölümdeki bilgiler, iOS 9 ilgilidir ve önceki, bunu burada daha önceki iOS sürümlerini desteklemek için bırakıldı. 10 ve üzeri iOS için lütfen bkz. [Kullanıcı bildirim Framework Kılavuzu](~/ios/platform/user-notifications/index.md) hem yerel hem de uzak bildirim iOS cihazında desteklemek için.
 
 Anında iletme bildirimleri kısa tutulması ve yalnızca mobil uygulama, sunucu uygulaması için bir güncelleştirme başvurmalıdır bildirmek için yeterli veri içerir. Örneğin, sunucu uygulaması yalnızca yeni e-posta geldiğinde yeni e-posta gelmiş mobil uygulama bildirmek. Bildirim yeni eposta içermemesi. Uygun olduğunda mobil uygulama sonra yeni e-postaları sunucudan almak
 

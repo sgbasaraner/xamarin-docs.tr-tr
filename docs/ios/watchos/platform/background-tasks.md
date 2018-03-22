@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 83841e62d863bf4be4edef5c0b6b7d486f192f4d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8fd2b5069e175a68ff7609e75775db1929507582
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="background-tasks"></a>Arka plan görevleri
 
@@ -143,7 +143,7 @@ Sistem yeniden verecek bir `WKSnapshotRefreshBackgroundTask` uygulama (verileri 
 Uygulamanın ne zaman işaretler `WKSnapshotRefreshBackgroundTask` tamamlandı, sistemi otomatik olarak uygulamanın UI Snapshot götürecektir.
 
 > [!IMPORTANT]
-> **Not:** her zaman zamanlamak önemli bir ` WKSnapshotRefreshBackgroundTask` uygulamayı yeni veri aldı ve kendi kullanıcı arabirimi güncelleştirildi veya kullanıcı değiştirilmiş bilgileri göremez sonra.
+> Her zaman zamanlamak önemli bir ` WKSnapshotRefreshBackgroundTask` uygulamayı yeni veri aldı ve kendi kullanıcı arabirimi güncelleştirildi veya kullanıcı değiştirilmiş bilgileri göremez sonra.
 
 
 
@@ -630,7 +630,7 @@ Yuva sabitlenmiş uygulamaları aşağıdaki bekleyebilirsiniz:
 Kullanıcı çalıştırdı son uygulama kabul _en son kullanılan_ uygulama ve yuva son yuvasında kaplar. Buradan var. kullanıcı yuva kalıcı olarak sabitlemek seçebilirsiniz. Tüm diğer sık kullanılan uygulama kullanıcı Yuva zaten sabitlenmiş gibi en son kullanılan kabul edilir.
 
 > [!IMPORTANT]
-> **Not:** yalnızca giriş ekranına eklenen uygulamalar değil verilir düzenli bir zamanlama. Normal zamanlama ve arka plan almaya güncelleştirmeleri, bir uygulama _gerekir_ yuva eklenebilir.
+> Yalnızca giriş ekranına eklenen uygulamaları herhangi bir normal zamanlama verilen değil. Normal zamanlama ve arka plan almaya güncelleştirmeleri, bir uygulama _gerekir_ yuva eklenebilir.
 
 Uygulama için Önizleme ve başlatma görüntüleri olarak çalıştıklarının beri bu belgede daha önce belirtildiği gibi anlık görüntüleri watchOS 3 çok önemlidir. Bir yuva uygulamasında kullanıcı kapatır değilse, tam ekrana genişletin, ön girin ve çalıştırma, anlık görüntünün güncel zorunludur şekilde başlatın.
 

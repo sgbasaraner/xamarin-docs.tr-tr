@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: ea51dc2c7dadc5cc430df990c9ce79eac6e941da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 02116e8e11cb6ff050e2c885338777e1fd25c4cb
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="homekit"></a>HomeKit
 
@@ -77,7 +77,7 @@ Aşağıdakileri yapın:
 Yerinde bu ayarlarla uygulama HomeKit Framework API'lerine erişmek hazır. Hazırlama hakkında ayrıntılı bilgi için lütfen bkz bizim [cihaz sağlamayı](~/ios/get-started/installation/device-provisioning/index.md) ve [uygulamanızı sağlama](~/ios/get-started/installation/device-provisioning/index.md) kılavuzları.
 
 > [!IMPORTANT]
-> **Not:** etkin HomeKit uygulama test düzgün sağlanan gerçek iOS cihazı geliştirme için gerektirir. HomeKit iOS simülatörü sınanamıyor.
+> Etkin HomeKit uygulama sınama düzgün sağlanan gerçek iOS cihaz geliştirme için gerektirir. HomeKit iOS simülatörü sınanamıyor.
 
 ## <a name="the-homekit-accessory-simulator"></a>HomeKit donatıyı Simulator
 
@@ -143,7 +143,7 @@ Bu anahtar ayarlamak için aşağıdakileri yapın:
 6. Değişiklikleri dosyaya kaydedin.
 
 > [!IMPORTANT]
-> **Not:** ayarlanamadı `NSHomeKitUsageDescription` anahtarını `Info.plist` dosya uygulamada sonuçlanacak _sessizce sorunlu_ (çalışma zamanında sistem tarafından kapatılan) iOS 10 (veya daha büyük) çalıştırdığınızda hatasız.
+> Ayarlanamadı `NSHomeKitUsageDescription` anahtarını `Info.plist` dosya uygulamada sonuçlanacak _sessizce sorunlu_ (çalışma zamanında sistem tarafından kapatılan) iOS 10 (veya daha büyük) çalıştırdığınızda hatasız.
 
 ## <a name="connecting-to-homekit"></a>HomeKit için bağlanma
 
@@ -265,7 +265,7 @@ Giriş başarıyla oluşturulduysa çağırmanız gerekir `UpdatePrimaryHome` y�
 Giriş Yöneticisi'nin de izlemeniz `DidAddHome` ve `DidRemoveHome` uygulamanın kullanıcı arabirimi gerektiği şekilde olayları ve güncelleştirme.
 
 > [!IMPORTANT]
-> **Not:** `AlertView.PresentOKAlert` Yukarıdaki örnek kodda kullanılan bir yardımcı sınıfı ile iOS uyarıları daha kolay çalışma yapar HomeKitIntro uygulamada yöntemidir.
+> `AlertView.PresentOKAlert` Yukarıdaki örnek kodda kullanılan bir yardımcı sınıfı ile iOS uyarıları daha kolay çalışma yapar HomeKitIntro uygulamada yöntemidir.
 
 
 ## <a name="finding-new-accessories"></a>Yeni Donatılar bulma
@@ -275,7 +275,7 @@ Birincil Giriş tanımlanmış veya giriş Yöneticisi'nden yüklenmiş sonra Xa
 Çağrı `StartSearchingForNewAccessories` için yeni Donatılar aramaya başlamak için yöntem ve `StopSearchingForNewAccessories` bittiğinde yöntemi.
 
 > [!IMPORTANT]
-> **Not:** `StartSearchingForNewAccessories` uzun süreler için pil ömrünün ve iOS cihazı performansını olumsuz etkiler çünkü çalıştıran bırakılmamalıdır. Apple öneren arama `StopSearchingForNewAccessories` minute veya bulma donatıyı UI kullanıcıya sunulduğunda yalnızca arama sonra.
+> `StartSearchingForNewAccessories` uzun bir süre için pil ömrünün ve iOS cihazı performansını olumsuz etkiler çünkü çalıştıran bırakılmamalıdır. Apple öneren arama `StopSearchingForNewAccessories` minute veya bulma donatıyı UI kullanıcıya sunulduğunda yalnızca arama sonra.
 
 `DidFindNewAccessory` Yeni Donatılar bulunan ve için eklenecek olay çağrılır `DiscoveredAccessories` donatıyı tarayıcıda listesi.
 

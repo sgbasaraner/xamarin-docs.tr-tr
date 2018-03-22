@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 5a33993bdef16191b66127dcc68c57661636c0f8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ea635dfd5b7946c6d394d72bffbb328255b56b97
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="native-references"></a>Yerel başvuruları
 
@@ -22,7 +22,7 @@ _Yerel başvuruları yerel Framework bir Xamarin.iOS veya Xamarin.Mac veya bağl
 İOS 8.0 bu yana uygulama uzantıları xcode'da ana uygulama arasında kod paylaşmak için katıştırılmış bir çerçeve oluşturmak mümkün olmuştur. Yerel başvurusu özelliğini kullanarak (Xcode ile oluşturulan) Bu katıştırılmış çerçeveler Xamarin.iOS kullanmak mümkün olacaktır.
  
 > [!IMPORTANT]
-> **Not:** olmayacaktır herhangi bir Xamarin.iOS ya da Xamarin.Mac projeleri türünden katıştırılmış çerçeveler oluşturmak mümkündür, yerel başvuruları yalnızca var olan yerel (Objective-C) çerçeveleri tüketimi için izin verilir.
+> Herhangi bir Xamarin.iOS ya da Xamarin.Mac projeleri türünden katıştırılmış çerçeveler oluşturmak mümkün olmaz, yerel başvuruları yalnızca var olan yerel (Objective-C) çerçeveleri tüketimi için izin verir.
 
 
 

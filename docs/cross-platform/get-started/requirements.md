@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 08/28/2017
-ms.openlocfilehash: 2a2b5a1135a4d08c2a89caf0fbf4b2cdb1ac624c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 4a53053ebef88bf831b7749fa82f3444ecc26723
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="system-requirements"></a>Sistem Gereksinimleri
 
@@ -47,7 +47,7 @@ Xamarin geliştirme için bir Mac bilgisayar kullanarak, aşağıdaki yazılım/
 [!include[](~/cross-platform/includes/macos-requirements.md)]
 
 > [!NOTE]
-> Not: Xcode yüklü (güncelleştirilmiş üzerinde ve) [developer.apple.com](https://developer.apple.com/xcode/download/) veya Mac App Store aracılığıyla.
+> Xcode yüklenebilir (ve güncelleştirilmiş) üzerinde [developer.apple.com](https://developer.apple.com/xcode/download/) veya Mac App Store aracılığıyla.
 
 ### <a name="testing--debugging-on-macos"></a>Sınama & macOS üzerinde hata ayıklama
 

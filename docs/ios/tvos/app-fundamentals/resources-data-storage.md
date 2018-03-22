@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 768ee4a2f33475b5327bf9c0fd006f1da580d836
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e72c013516de5bcf97e2e9f58a7a4f5cd87c730b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="resources-and-data-storage"></a>Kaynakları ve veri depolama
 
@@ -35,7 +35,7 @@ Her tvOS uygulama varlıkları ve ek kaynaklar için indirdiğiniz geçici önbe
 Sonuç olarak, uygulamanızı daha önce indirilen içeriği başlatılır sonraki zaman kullanılabilir olmasını durduracak bağlı olamaz. Xamarin.tvOS uygulamanızı her zaman gerekli kaynakları varlığını denetlemek ve gerektiği gibi indirmeniz gerekir.
 
 > [!IMPORTANT]
-> **Not:** diğer varlıklar ve gerektiği gibi kaynakları yükleme yeteneğini sahip olsa da, öngörülemeyen sonuçlara yol açabilir gibi Apple uygulamanızın önbellek alanı tümünün tüketen karşı sizi uyarır.
+> Diğer varlıklar ve gerektiği gibi kaynakları yükleme yeteneğini sahip olsa da, öngörülemeyen sonuçlara yol açabilir gibi tüm uygulamanızın önbellek alanı tüketen karşı Apple sizi uyarır.
 
 
 
@@ -70,7 +70,7 @@ Bu kaynaklar, Apple TV birden çok başlatır, uygulamanızın, böylece hızlan
 Xcode (örneğin, tüm varlıklar için oyun Düzey 2) ilgili içerik verin kaynak etiketi ile ilişkili paketleri oluşturmak için kullanın. Daha sonra uygulamanız, bu kaynak etiketi belirterek isteğe bağlı kaynak ister. Uygulamanızı bir kullanıcı Arabirimi o içeriği belirten kullanıcı sunmalıdır yüklenmektedir. Daha fazla bilgi için lütfen Apple'nın bkz [isteğe bağlı kaynakları Kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083).
 
 > [!IMPORTANT]
-> **Not:** dikkatli uygulama sahip isteğe bağlı kaynakları indirmek için sayısı ve ayrı indirme boyutu arasındaki sağ denge için alınması gereken. Kullanıcı oyunlar sürekli yeni içerik indirmek için kesintiye uğrarsa veya tek bir yüklemeye çok fazla sürüyorsa, uygulamanızı engellenen hale gelebilir.
+> İsteğe bağlı kaynakları indirmek için uygulamanın olduğu durum sayısı ve ayrı indirme boyutu arasındaki sağ denge için dikkatli olunmalıdır. Kullanıcı oyunlar sürekli yeni içerik indirmek için kesintiye uğrarsa veya tek bir yüklemeye çok fazla sürüyorsa, uygulamanızı engellenen hale gelebilir.
 
 
 
@@ -85,7 +85,7 @@ Bu makalede bir Xamarin.tvOS uygulaması tvOS sistem tarafından yerleştirilen 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

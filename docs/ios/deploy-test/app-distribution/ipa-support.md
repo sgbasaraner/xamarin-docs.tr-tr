@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bee3480fc90c2eac5629e336c57daa90adf9c346
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fa0986141a44bbe7100268c629e606a5857e2699
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ipa-support"></a>IPA desteği
 
@@ -151,7 +151,7 @@ Sağlama profiliyle oluşturulur ve seçili, isteğe bağlı bir kez **iTunesMet
     ![](ipa-support-images/imagevs02.png "Geçici yapılandırma açılır listeden seçin")
 
     > [!NOTE]
-> Bir geçici yapılandırma yeni Xamarin.iOS projeleri için kullanılamayabilir. Kullanılabilir durumda değilse, seçin **sürüm** yapılandırma.
+    > Bir geçici yapılandırma yeni Xamarin.iOS projeleri için kullanılamayabilir. Kullanılabilir durumda değilse, seçin **sürüm** yapılandırma.
 
 3. Bir seçenek ekliyorsanız **iTunesMetadata.plist** dosya, tıklatın **...**  düğmesini tıklatın listeden seçin ve tıklatın **açık** düğmesi:
 
@@ -256,12 +256,12 @@ Bu makalede, bir Xamarin.iOS uygulaması App Store derleme için hazırlamak üz
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Uygulama mağazası dağıtım](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [App Store Dağıtımı](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
 - [Uygulama iTunes Connect yapılandırma](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [Uygulama mağazası yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [App Store’da Yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Şirket içi dağıtım](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [Geçici dağıtım](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
-- [İTunesMetadata.plist dosyası](~/ios/deploy-test/app-distribution/itunesmetadata.md)
+- [Geçici Dağıtım](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [iTunesMetadata.plist Dosyası](~/ios/deploy-test/app-distribution/itunesmetadata.md)
 - [Sorun giderme](~/ios/deploy-test/troubleshooting.md)
 - [iTunes resmi](~/ios/app-fundamentals/images-icons/app-icons.md#itunes)
 - [İOS cihazlar için Kurumsal uygulamaları dağıtma](http://developer.apple.com/library/ios/#featuredarticles/FA_Wireless_Enterprise_App_Distribution/Introduction/Introduction.html)

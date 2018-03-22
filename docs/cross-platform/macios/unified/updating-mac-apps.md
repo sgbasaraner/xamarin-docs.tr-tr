@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 35665731fb0b8b669a850c06929dd951589e6bf6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 46118b5879589c963898ab7f60c61bd8e38f3900
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-mac-apps"></a>Mevcut Mac uygulamaları güncelleştirme
 
@@ -116,7 +116,7 @@ Biz Unified API desteği ile çalışmak için NuGet değişiklikleri katkıda b
 Bileşenleri gibi o zamana kadar birleşik API'lerini destekleyen bir sürüm projenize dahil herhangi bir NuGet paket geçin ve daha sonra temiz bir yapı yapmak gerekir.
 
 > [!IMPORTANT]
-> **Not:** biçiminde bir hata varsa _"hatası 3 'monomac.dll' ve 'Xamarin.Mac.dll' aynı Xamarin.Mac projede içeremez - 'Xamarin.Mac.dll' 'monomac.dll' tarafından başvurulan sırada açıkça başvurulmaktadır ' xxx Sürüm 0.0.000, Culture = neutral, PublicKeyToken = null ='"_ Unified API uygulamanıza dönüştürdükten sonra genellikle bir bileşen veya NuGet paketi birleşik API'sine güncelleştirilmemiş projesinde sahip nedeniyle istenir. Varolan bileşeni/NuGet kaldırmak, birleşik API'lerini destekleyen bir sürüme güncelleştirmek ve temiz bir yapı yapmanız gerekir.
+> Formda bir hata varsa _"hatası 3 'monomac.dll' ve 'Xamarin.Mac.dll' aynı Xamarin.Mac projede içeremez - 'Xamarin.Mac.dll' 'monomac.dll' tarafından başvurulan sırada açıkça başvurulmaktadır ' xxx, sürüm 0.0.000, kültür = = neutral, PublicKeyToken = null'"_ Unified API uygulamanıza dönüştürdükten sonra genellikle bir bileşen veya NuGet paketi birleşik API'sine güncelleştirilmemiş projesinde sahip nedeniyle istenir. Varolan bileşeni/NuGet kaldırmak, birleşik API'lerini destekleyen bir sürüme güncelleştirmek ve temiz bir yapı yapmanız gerekir.
 
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>64 Bit etkinleştirme Xamarin.Mac uygulamaların derlemeler
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 7b1d56c62fe54d5b1e196e20e1a6989b542da1be
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6a26bb42ee0abcec70d17633152dd12bd200a737
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS hızlı başlangıç
 
@@ -90,7 +90,7 @@ Başlat ekranında tıklatın **yeni proje...**  yeni bir Xamarin.iOS çözüm o
   ![](hello-ios-quickstart-images/image8new.png "Bir etiket merkezi alanında tasarım yüzeyine sürükleyin")
 
   > [!NOTE]
-> **Not:** Getir **özellikleri paneli** veya **araç** giderek dilediğiniz zaman **Görünüm > klavye takımı**.
+  > Getir **özellikleri paneli** veya **araç** giderek dilediğiniz zaman **Görünüm > klavye takımı**.
 
 9. Tanıtıcıları yakalayın *sürükleyerek denetimleri* (denetimi etrafında daireler) ve geniş etiket yapın:
 
@@ -268,9 +268,8 @@ Başlat ekranında tıklatın **yeni proje...**  yeni bir Xamarin.iOS çözüm o
 
   ![](hello-ios-quickstart-images/image27new.png "Başlat'a basın")
 
-
   > [!NOTE]
-> **Not:** Apple, bir gereksinim nedeniyle günümüzde olması gerekebilir bir geliştirme sertifikası veya *kimlik imzalama* oluşturmak için aygıt veya simulator için kod. Adımları [cihaz sağlamayı Kılavuzu](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) bunu ayarlamak için.
+  > Günümüzde, Apple, bir gereksinim nedeniyle olması gerekebilir bir geliştirme sertifikası veya *kimlik imzalama* oluşturmak için aygıt veya simulator için kod. Adımları [cihaz sağlamayı Kılavuzu](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) bunu ayarlamak için.
 
 28. Bu uygulama iOS simülatörü'nü içinden başlatılır:
 
@@ -289,7 +288,7 @@ Bu kılavuz, bir alfasayısal telefon numarası bir sayısal telefon numarası �
 **Not**: Bu kılavuzda, bir Windows 10 sanal makinede Visual Studio Enterprise 2017 kullanılır. Ayarlama yukarıdaki gereksinimleri karşılayan sürece buradan farklılık gösterir ancak bazı ekran görüntüleri, ayarlamak için farklı görünebilir unutmayın.
 
 > [!NOTE]
-> **Bu kılavuza devam etmeden önce** , _gerekir_ Mac'iniz için Visual Studio'dan zaten bağlanmış. Xamarin.iOS oluşturmak ve iOS Tasarımcısı ve uygulamaları başlatmak için Apple'nın tooling kullandığından budur. Ayarlamak için adımları [Mac bilgisayara bağlayarak](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Kılavuzu.
+> Bu kılavuza devam etmeden önce zaten Mac'iniz için Visual Studio'dan bağlı gerekir. Xamarin.iOS oluşturmak ve iOS Tasarımcısı ve uygulamaları başlatmak için Apple'nın tooling kullandığından budur. Ayarlamak için adımları [Mac bilgisayara bağlayarak](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Kılavuzu.
 
 1. Visual Studio'dan başlatma **Başlat** menüsü:
 
@@ -333,7 +332,7 @@ Bu kılavuz, bir alfasayısal telefon numarası bir sayısal telefon numarası �
   ![](hello-ios-quickstart-images/vs-image10.png "'Bir Phoneword girmek için ' etiketinin metin özelliğini değiştirin")
 
   > [!NOTE]
-> **Not:** Getir **özellikleri** veya **araç** giderek dilediğiniz zaman **Görünüm** menüsü.
+  > Getir **özellikleri** veya **araç** giderek dilediğiniz zaman **Görünüm** menüsü.
 
 
 9. Arama sürükleyin ve araç kutusu içinde "metin alanı" için bir **metin alanı** gelen **araç** tasarım üzerine yüzey ve altında yerleştirin **etiket**. Kadar genişliğini ayarla **metin alanı** olarak aynı genişliği **etiket**:
@@ -377,7 +376,7 @@ Bu kılavuz, bir alfasayısal telefon numarası bir sayısal telefon numarası �
   ![](hello-ios-quickstart-images/vs-image19.png "PhoneTranslator adlı yeni bir sınıf ekleyin")
 
   > [!IMPORTANT]
-> C# simgesine sahip 'sınıfı' şablon seçtiğinizden emin olun. Aksi takdirde bu yeni sınıfa referans mümkün olmayabilir.
+  > C# simgesine sahip 'sınıfı' şablon seçtiğinizden emin olun. Aksi takdirde bu yeni sınıfa referans mümkün olmayabilir.
 
 
 17. Bu, yeni bir C# sınıfı oluşturur. Tüm şablon kodu kaldırın ve aşağıdaki kod ile değiştirin:

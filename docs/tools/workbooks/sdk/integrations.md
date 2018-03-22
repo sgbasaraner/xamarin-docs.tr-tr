@@ -6,11 +6,11 @@ ms.assetid: 002CE0B1-96CC-4AD7-97B7-43B233EF57A6
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 2e9f1282ec567e894f4e0841ae42f791d8a77d3f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e51aa9ab9d4d63d16b3a68d24084c872d831975
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="external-integrations"></a>Dış tümleştirmeler
 
@@ -55,6 +55,6 @@ Oturum sahip bir çalışma kitabı başvuruda veya dinamik derleme incelemek gi
 Tümleştirme etkin bir uygulama veya ilgi SDK ve oturum arasında bir köprü derlemesidir. Oturum, inceleyebilir veya hiçbir ortak API'ler sağlar ve yalnızca "arka planda" nesnesi oluşturan gibi görevleri gerçekleştirebilir özellikle bağlamında çalışma kitabının veya canlı anlamlı yeni API'leri sağlayabilir [Beyanları](~/tools/workbooks/sdk/representations.md).
 
 > [!NOTE]
-> Not: genel olmalı, ancak IntelliSense ortaya çıkması değil API'leri normal ile işaretlenebilir `[EditorBrowsable (EditorBrowsableState.Never)]` özniteliği.
+> Genel olmalı, ancak IntelliSense ortaya çıkması değil API'leri işaretlenir normal ile `[EditorBrowsable (EditorBrowsableState.Never)]` özniteliği.
 
 [nuget]: https://nuget.org/packages/Xamarin.Workbooks.Integration

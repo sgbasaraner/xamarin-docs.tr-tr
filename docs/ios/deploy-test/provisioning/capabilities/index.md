@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c038aba3989046e6df062e97ae7f777ae6238ade
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ffc694e2f513d61cf32e94d8dc3bae17c887521b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-capabilities"></a>Özellikleri ile çalışma
 
@@ -58,7 +58,7 @@ Bu bölümde Mac'ın otomatik sağlama için Visual Studio veya Geliştirici Mer
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 > [!IMPORTANT]
-> **Not**: tüm yetenekleri eklenebilir ve Mac için Visual Studio'daki yönetilen Aşağıdaki liste, desteklenen özellikler içerir:
+> Tüm özellikleri eklenebilir ve Mac için Visual Studio'daki yönetilen Aşağıdaki liste, desteklenen özellikler içerir:
 >
 >* HealthKit 
 >* HomeKit 
@@ -198,7 +198,7 @@ Geliştirici Merkezi'ni kullanarak bir uygulama kimliği oluşturarak ve ardınd
     ![Visual Studio için Mac proje seçenekleri](images/image16.png)
 
 > [!IMPORTANT]
-> Not: Entitlement.plist dosyasındaki yetkilendirme anahtarlar ve gizlilik anahtarları Info.plist dosyasında ayarlanan yüklemeniz gerekebilir. Bu yetkilendirme hakkında daha fazla bilgi sağlanan [yetkilendirmeler ile çalışma](~/ios/deploy-test/provisioning/entitlements.md) Kılavuzu.
+> Entitlement.plist dosyasındaki yetkilendirme anahtarlar ve gizlilik anahtarları Info.plist dosyasında ayarlanan gerekebilir. Bu yetkilendirme hakkında daha fazla bilgi sağlanan [yetkilendirmeler ile çalışma](~/ios/deploy-test/provisioning/entitlements.md) Kılavuzu.
 
 <a name="nextsteps" />
 
@@ -220,7 +220,7 @@ Aşağıdaki liste bazı roadblocks etkin bir uygulama hizmeti ile bir uygulama 
 -   Sağlama profilleri ve uygulama kimlikleri yüklendiğinden emin olun ve uygulamanın **Info.plist** (Xamarin projede) yukarıda yapılandırılan uygulama kimlikleri birini kullanma.
 -   Uygulamanın emin **Entitlements.plist** dosyasında (Xamarin Proje) sahip doğru hizmetinin etkinleştirilmiş.
 -   Uygun gizlilik anahtarları info.plist dosyasında ayarlandığından emin olun
--   Uygulamasının **iOS paket imzalama**, emin **özel yetkilendirmeler** ayarlanır **Entitlements.plist**. **Not:** bu _değil_ hata ayıklama ve iOS simülatörü varsayılan ayarı oluşturur.
+-   Uygulamasının **iOS paket imzalama**, emin **özel yetkilendirmeler** ayarlanır **Entitlements.plist**. Bu _değil_ hata ayıklama ve iOS simülatörü varsayılan ayarı oluşturur.
 
 <a name="summary" />
 

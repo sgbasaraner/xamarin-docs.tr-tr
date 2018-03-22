@@ -6,11 +6,11 @@ ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 6d80ef6bdac7f35b282f6347a0356453a413b39c
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 2961eb4726b9f313d01f8bc075e5ca362d708e92
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-icons"></a>Simgeler ile çalışma
 
@@ -79,7 +79,7 @@ Bir kez, [üst uygulama](~/ios/watchos/app-fundamentals/parent-app.md) kendi sim
 Simgeler yapılandırılmış olan doğru denetleyerek doğrulayabilirsiniz [Apple Watch ayarları uygulaması](~/ios/watchos/app-fundamentals/settings.md) iPhone benzeticisi, içinde veya oluşturma bir [bildirim](~/ios/watchos/platform/notifications.md) ve simge onaylayan bildirimi görüntülenir Ekran.
 
 > [!NOTE]
-> **Not**: simgeler (uygulama reddedilir App Store gönderme sırasında alfa kanal varsa) bir alfa kanal sahip olamaz. Alfa kanalı var ve kaldırmak, denetleyebilirsiniz [Mac OS x'te önizleme uygulamasını kullanarak](~/ios/watchos/troubleshooting.md#noalpha).
+> Simgeler (alfa kanal varsa, uygulamanın uygulama mağazası gönderme sırasında reddedilecek) alfa kanalı sahip olamaz. Alfa kanalı var ve kaldırmak, denetleyebilirsiniz [Mac OS x'te önizleme uygulamasını kullanarak](~/ios/watchos/troubleshooting.md#noalpha).
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

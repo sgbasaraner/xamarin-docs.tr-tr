@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 1b998628efc133590a543dd45730070a457d61d5
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 2c2ba84167924916c3bec27379d33c47e8dab360
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="uninstalling-xamarin"></a>Uninstalling Xamarin
 
@@ -69,7 +69,7 @@ rm -rf ~/Library/XamarinStudio-*
 Mono Microsoft .NET Framework'ün açık kaynak uygulamasıdır ve tüm Xamarin Products—Xamarin.iOS, Xamarin.Android ve Xamarin.Mac tarafından bu platformlar geliştirilmesini C# ' ta izin vermek için kullanılır.
 
 > [!IMPORTANT]
-> Not: De Unity gibi Mono kullanan diğer uygulamalar Xamarin dışında vardır. Başka bir bağımlılık üzerinde Mono kaldırmadan önce emin olun.
+> Ayrıca Unity gibi Mono kullanan diğer uygulamalar Xamarin dışında vardır. Başka bir bağımlılık üzerinde Mono kaldırmadan önce emin olun.
 
 Mono Framework bir makineden kaldırmak için terminale aşağıdaki komutları çalıştırın:
 
@@ -258,7 +258,7 @@ Visual Studio 2017 tamamen kaldırmak için seçin **kaldırma** üç çubuğund
 [![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Visual Studio tamamen kaldırın")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
-> **Uyarı:** Visual Studio yüklüyse yan yana (SxS) – bir yayın ve önizleme sürümü – gibi iki (veya daha fazla) örneklerini varsa bir örnek Xamarin işlevselliğinin diğer Visual Studio Örnekleri kaldırma şunları içerir:
+> Varsa yan yana (SxS) – bir yayın ve önizleme sürümü gibi Visual Studio iki (veya daha fazla) örneğinin yüklü – kaldırma bir örnek de dahil olmak üzere diğer Visual Studio örnekleri, bazı Xamarin işlevini kaldırabilir:
 >
 > - Xamarin Profiler
 > - Xamarin çalışma kitaplarını/denetçisi

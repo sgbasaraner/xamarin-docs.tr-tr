@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/19/2018
-ms.openlocfilehash: 54ec41636f491708ea72585d3889fbbca85c8eb1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e07a6b72f2821e8cc65e0b0d690dbadf1a6713b6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="launch-screens"></a>Ekranlar başlatma
 
@@ -179,7 +179,7 @@ Bu kısa izlenecek başlatma ekranı el ile varolan bir projeye eklenmiş film �
 -----
 
 > [!NOTE]
-> **Not**: A Başlat ekranında kullanılan film şeridi _gerekir_ yalnızca basit, yerleşik kullanıcı Arabirimi öğeleri içerir ve **olamaz** tüm hesaplamalar yapabilir veya özel bir sınıftan türetilen.
+> Başlatma ekranı kullanılan bir film şeridi _gerekir_ yalnızca basit, yerleşik kullanıcı Arabirimi öğeleri içerir ve **olamaz** tüm hesaplamalar yapabilir veya özel bir sınıftan türetilen.
 
 Birleşik bir film şeridi ile başlatma ekranı oluşturma hakkında daha fazla bilgi için lütfen bkz [dinamik başlatma ekranlar](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens) bölümünü [birleşik film şeritleri](~/ios/user-interface/storyboards/unified-storyboards.md) Kılavuzu.
 

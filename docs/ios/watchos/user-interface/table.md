@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c55ba4fb90181aaa1aa8ec52e2fcb3e2b2cc76d0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="table-control"></a>Tablo denetim
 
@@ -51,7 +51,8 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 ```
 
 > [!IMPORTANT]
-> **Not**: iOS gibi tablo satırları sanallaştırılmış değil. (Apple 20'den az önerir) satır sayısını sınırlamak deneyin.
+> İOS gibi tablo satırları sanallaştırılmış değil. (Apple 20'den az önerir) satır sayısını sınırlamak deneyin.
+
 Satırları oluşturduktan sonra her bir hücre doldurmanız gerekir (gibi `GetCell` iOS yapın). Bu kod parçacığını gelen [WatchTables örnek](https://developer.xamarin.com/samples/monotouch/watchOS/WatchTables/) her satır etiketinde güncelleştirir
 
 ```csharp
@@ -62,7 +63,7 @@ for (var i = 0; i < rows.Count; i++) {
 ```
 
 > [!IMPORTANT]
-> **Not:** kullanma `SetNumberOfRows` ve kullanarak, döngü `GetRowController` saate gönderilmek üzere tüm tablo neden olur. Tablonun sonraki görünümlerinde belirli satırlar eklemek veya kaldırmak gerekiyorsa kullanın `InsertRowsAt` ve `RemoveRowsAt` daha iyi performans için.
+> Kullanarak `SetNumberOfRows` ve kullanarak, döngü `GetRowController` saate gönderilmek üzere tüm tablo neden olur. Tablonun sonraki görünümlerinde belirli satırlar eklemek veya kaldırmak gerekiyorsa kullanın `InsertRowsAt` ve `RemoveRowsAt` daha iyi performans için.
 
 
 ## <a name="respond-to-taps"></a>Dokunma için yanıt
@@ -148,7 +149,7 @@ watchOS 3 tablolar için yeni bir özellik sunulmuştur: ayrıntı sayfaları ar
 ![](table-images/table-scroll-sml.png "Dikey ayrıntı disk belleği örneği") ![](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
-> **Uyarı:** bu özellik şu anda yalnızca Xcode arabirimi Oluşturucu film şeridi düzenleyerek kullanılabilir.
+> Bu özellik şu anda yalnızca Xcode arabirimi Oluşturucu film şeridi düzenleyerek kullanılabilir.
 
 Bu özelliği etkinleştirmek için seçin `WKInterfaceTable` tasarım yüzeyi ve onay **dikey ayrıntı disk belleği** seçeneği:
 

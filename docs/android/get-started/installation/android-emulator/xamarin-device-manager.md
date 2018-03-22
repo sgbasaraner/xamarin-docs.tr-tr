@@ -7,12 +7,12 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 75dc51b5372ae4d8a322c29e39a585a547ab1963
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.date: 03/20/2018
+ms.openlocfilehash: 01fb21729e919872935fd63af28a13642a11fa4b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android cihaz Yöneticisi
 
@@ -469,9 +469,9 @@ Bu özellikler hakkında daha fazla bilgi için bkz: [donanım profilinin özell
 
 ## <a name="troubleshooting"></a>Sorun giderme
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 Aşağıdaki Xamarin Android cihaz Yöneticisi ile ilgili genel sorunları ve geçici çözümleri açıklar:
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ### <a name="android-sdk-in-non-standard-location"></a>Standart olmayan konumda, Android SDK'sı
 
@@ -503,19 +503,64 @@ Geçici çözüm için bu sorun aşağıdakileri yapın:
 
 Bu değişikliği yaptıktan sonra **user.config**, Xamarin Android Aygıt Yöneticisi'ni başlatma gerekir.
 
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Anlık görüntü WiFi Android Oreo üzerinde devre dışı bırakır.
+
+Bir anlık görüntü Wi-Fi erişimi devre dışı duruma neden olabilecek sonra AVD yeniden başlatmak için Android Oreo benzetimli Wi-Fi erişim ile yapılandırılmış bir AVD varsa.
+
+Bu sorunu geçici olarak çözmek için
+
+1. AVD Xamarin Aygıt Yöneticisi'nde seçin.
+
+2. Ek seçenekler menüden **Explorer'da ortaya**.
+
+3. Gidin **anlık görüntüleri > default_boot**.
+
+4. Silme **snapshot.pb** dosyası:
+
+    [![Snapshot.pb dosyasının konumu](xamarin-device-manager-images/win/36-delete-snapshot-sml.png)](xamarin-device-manager-images/win/36-delete-snapshot.png#lightbox)
+
+5. AVD yeniden başlatın. 
+
+Bu değişiklikler yapıldıktan sonra AVD yeniden çalışmak Wi-Fi izin veren bir durumda yeniden başlatılır.
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Anlık görüntü WiFi Android Oreo üzerinde devre dışı bırakır.
+
+Bir anlık görüntü Wi-Fi erişimi devre dışı duruma neden olabilecek sonra AVD yeniden başlatmak için Android Oreo benzetimli Wi-Fi erişim ile yapılandırılmış bir AVD varsa.
+
+Bu sorunu geçici olarak çözmek için
+
+1. AVD Xamarin Aygıt Yöneticisi'nde seçin.
+
+2. Ek seçenekler menüden **Finder ortaya**.
+
+3. Gidin **anlık görüntüleri > default_boot**.
+
+4. Silme **snapshot.pb** dosyası:
+
+    [![Snapshot.pb dosyasının konumu](xamarin-device-manager-images/mac/36-delete-snapshot-sml.png)](xamarin-device-manager-images/mac/36-delete-snapshot.png#lightbox)
+
+5. AVD yeniden başlatın. 
+
+Bu değişiklikler yapıldıktan sonra AVD yeniden çalışmak Wi-Fi izin veren bir durumda yeniden başlatılır.
+
+-----
+
+
 ### <a name="generating-a-bug-report"></a>Bir hata raporu oluşturma
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Xamarin Android cihaz yukarıdaki sorun giderme ipuçları kullanarak çözümlenemeyen Yöneticisi ile ilgili bir sorun bulursanız, Lütfen bir hata raporu başlık çubuğunu sağ tıklatıp seçerek dosya **hata raporu oluşturmak**:
 
 ![Bir hata raporu dosyalama için menü öğesi konumu](xamarin-device-manager-images/win/35-bug-report.png)
 
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Şu anda hiçbir bilinen sorunları/geçici çözümler için Xamarin Android cihaz Yöneticisi Mac için Visual Studio üzerinde vardır 
-
-### <a name="generating-a-bug-report"></a>Bir hata raporu oluşturma
-
-Bir sorun bulursanız, Lütfen bir hata raporu tıklayarak dosya **Yardım > hata raporu oluşturmak**:
+Xamarin Android cihaz yukarıdaki sorun giderme ipuçları kullanarak çözümlenemeyen Yöneticisi ile ilgili bir sorun bulursanız, Lütfen bir hata raporu tıklayarak dosya **Yardım > hata raporu oluşturmak**:
 
 ![Bir hata raporu dosyalama için menü öğesi konumu](xamarin-device-manager-images/mac/35-bug-report.png)
 

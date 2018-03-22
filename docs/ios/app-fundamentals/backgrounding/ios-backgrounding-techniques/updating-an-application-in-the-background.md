@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7f7cfcd320fcb38a9b08dfd8fe7e0fae7ff808ec
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>Arka planda bir uygulamayı güncelleştirme
 
@@ -79,7 +79,7 @@ Güncelleştirme içeriği de bittiğinde, biz uygun durumu tamamlama işleyiciy
 Arka plan Fetch kullanan uygulamalar, arka plan Arabiriminden güncelleştirmek için çağrıları yapabilirsiniz. Uygulama kullanıcı oturum açtığında, kullanıcı Arabirimi en fazla tarih ve yeni içerik görüntüleme olacaktır. Kullanıcı uygulamayı yeni içerik olduğunda görebilmek için bu uygulamanın uygulama değiştirici anlık görüntüyü güncelleştirir.
 
 > [!IMPORTANT]
-> **Not**: bir kez `PerformFetch` olduğu olarak adlandırılan, uygulaması yaklaşık olarak 30 saniye yeni içerik indirme kazandırın ve tamamlanma işleyici blok çağırmak için vardır. Uygulama bu çok uzun sürerse sonlandırılır. Arka plan getirme ile kullanmayı _arka plan Aktarım Hizmeti_ medya veya diğer büyük dosyaları yüklerken.
+> Bir kez `PerformFetch` olduğu olarak adlandırılan, uygulaması yaklaşık olarak 30 saniye yeni içerik indirme kazandırın ve tamamlanma işleyici blok çağırmak için vardır. Uygulama bu çok uzun sürerse sonlandırılır. Arka plan getirme ile kullanmayı _arka plan Aktarım Hizmeti_ medya veya diğer büyük dosyaları yüklerken.
 
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
@@ -132,7 +132,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 Uzak bildirimler için uygulamanın işlevselliğini önemlidir içerikle sık güncelleştirmeler için kullanılmalıdır. Xamarin uzak bildirimleri hakkında daha fazla bilgi için bkz: [iOS anında iletme bildirimleri](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md) Kılavuzu.
 
 > [!IMPORTANT]
-> **Not**: Uzak Bildirimlerde güncelleştirme mekanizması arka plan Fetch dayalı olan, uygulama yeni içerik indirme kazandırın ve bildirim alma sonra 30 saniye içinde tamamlama işleyici blok çağrısı veya iOS olur çünkü Uygulama sonlanır. Uzak bildirimlerle eşleştirme göz önünde bulundurun _arka plan Aktarım Hizmeti_ ortam veya diğer büyük dosyaları arka planda yüklenirken.
+> Uzak Bildirimlerde güncelleştirme mekanizması arka plan Fetch dayandığından, uygulama yeni içerik indirme kazandırın ve bildirim alma sonra 30 saniye içinde tamamlama işleyici blok çağrısı veya iOS uygulama sonlandırılır. Uzak bildirimlerle eşleştirme göz önünde bulundurun _arka plan Aktarım Hizmeti_ ortam veya diğer büyük dosyaları arka planda yüklenirken.
 
 
 ### <a name="silent-remote-notifications"></a>Sessiz uzak bildirimler
@@ -156,7 +156,7 @@ Ancak, APNs sessiz bildirimleri "Paketle" normal uzaktan bildirim veya tutma yan
  [![](updating-an-application-in-the-background-images/silent.png "Normal bildirimleri cihaza APNs anında saklı sessiz bildirimler için tarafından bu diyagramda gösterildiği gibi kullanılabilir")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
-> **Not**: Apple uygulama gerektirir ve let APNs zamanlama kendi teslim sessiz anında iletme bildirimleri göndermek için geliştiricilere önerir.
+> Apple uygulama gerektiriyorsa her sessiz anında iletme bildirimleri göndermek için geliştiricileri ve bunların teslim zamanlama APNs sağlayabilirsiniz.
 
 
 Bu bölümde, biz bir arka plan gerekli kategoriye uymayan görevleri çalıştırmak için içerik arka planda yenileme için çeşitli seçenekler ele. Şimdi, bu API'leri eylem bazıları görelim.

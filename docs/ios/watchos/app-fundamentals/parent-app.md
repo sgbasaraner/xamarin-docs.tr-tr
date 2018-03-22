@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: dab1f5d571473fbbdb12ef78eed3788165c3f0a6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 82f85808da6776f2f718b21b2e87ff6d4d8087fd
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-the-parent-application"></a>Üst uygulama ile çalışma
 
 _WatchOS 1 iOS ve izleme uygulamada arasında veri paylaşımı_
 
 > [!IMPORTANT]
-> **Not:** örnekler yalnızca kullanarak üst uygulamaya erişmeyi watchOS 1 izleme uygulamalar üzerinde çalışır.
+> Aşağıdaki örnekler yalnızca kullanarak üst uygulamaya erişmeyi watchOS 1 izleme uygulamalar üzerinde çalışır.
 
 
 İzleme uygulaması ve birlikte paketlenebilir iOS uygulaması arasında iletişim kurmak için farklı yolu vardır:

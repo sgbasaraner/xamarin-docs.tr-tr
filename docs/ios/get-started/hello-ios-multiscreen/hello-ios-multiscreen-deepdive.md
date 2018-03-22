@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: a7d4af1563cb5fe5166c289c4ee5dca6ad3ffb00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0c21fbd86fc9069d52f5f5935f66500e9477ca02
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-multiscreen-deep-dive"></a>Merhaba, iOS Multiscreen derinlemesine bakış
 
@@ -40,7 +40,7 @@ Model-View-Controller olan bir *tasarım deseni* – kodda ortak bir sorun veya 
 MVC örüntüsü, bir GUI uygulamasının farklı bölümleri arasında mantıksal ayrım sağlar ve bize kod ve görünümlerde yeniden kolaylaştırır için yararlıdır. Şimdi hemen ve üç rollerinin her biri daha ayrıntılı olarak bakalım.
 
 > [!NOTE]
-> **Not**: MVC örüntüsü ASP.NET sayfaları ve WPF uygulamaları yapısını geniş benzer. Bu örneklerde, görünüm, gerçekte kullanıcı arabirimini açıklamak için sorumludur ve ASP.NET ASPX (HTML) sayfası veya bir WPF uygulamasında XAML karşılık gelen bileşenidir. Arka plan kod ASP.NET veya WPF karşılık gelen görünümü yönetmekten sorumlu bileşeni denetleyicisidir.
+> MVC örüntüsü, geniş ASP.NET sayfaları ve WPF uygulamaları yapısına benzerdir. Bu örneklerde, görünüm, gerçekte kullanıcı arabirimini açıklamak için sorumludur ve ASP.NET ASPX (HTML) sayfası veya bir WPF uygulamasında XAML karşılık gelen bileşenidir. Arka plan kod ASP.NET veya WPF karşılık gelen görünümü yönetmekten sorumlu bileşeni denetleyicisidir.
 
 
 ### <a name="model"></a>Model
@@ -52,7 +52,7 @@ MVC, tamamen belirsiz *veri kalıcılığını* ve *erişim* modeli. Nasıl veri
 Bazı durumlarda, MVC Model kısmı boş olabilir. Örneğin, biz Telefon Çeviricisi nasıl çalıştığını, oluşturduğumuz neden ve nasıl bizimle iletişime rapor hataları alınacağı açıklayan uygulamamıza bazı statik sayfaları eklemek isteyebilirsiniz. Bu uygulama ekranlar hala görünümler ve denetleyiciler kullanılarak oluşturulması, ancak herhangi bir gerçek Model veri bulunmaz.
 
 > [!NOTE]
-> **Not**: bazı belgeleri, MVC örüntüsü modeli kısmı tüm uygulama arka uç, yalnızca kullanıcı Arabirimi üzerindeki görüntülenen verileri başvuruda bulunabilir. Model modern yorumu kullandığımız bu kılavuzda, ancak bir ayrım özellikle önemli değildir.
+> Bazı belgeleri, MVC örüntüsü modeli kısmı tüm uygulama arka uç, yalnızca kullanıcı Arabirimi üzerindeki görüntülenen verileri başvurabilirsiniz. Model modern yorumu kullandığımız bu kılavuzda, ancak bir ayrım özellikle önemli değildir.
 
 
 ### <a name="view"></a>Görüntüle

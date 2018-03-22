@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 48b8d1cf8e6242fde632bceec5d482f53037a954
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2f14510e5968ebe24bd297365416fa8aa5a0c59
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Var olan Xamarin.Forms uygulamaları güncelleştirme
 
@@ -196,7 +196,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 Bazen Xamarin.Forms NuGet paketi güncelleştirdikten sonra aşağıdakine benzer bir hata görürsünüz. NuGet güncelleştirici eski sürümlerinden başvurular tamamen kaldırmaz oluşur, **csproj** dosyaları.
 
->\_PROJECT.csproj: hata: Bu proje bu bilgisayarda eksik olan NuGet paketlerine başvuruyor. Bunları indirmek NuGet paketi geri yüklemeyi etkinleştirin.  Daha fazla bilgi için http://go.microsoft.com/fwlink/?LinkID=322105 bakın. Dosyası eksik olduğundan... /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-Win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets. (SİZİN\_PROJE)
+>\_PROJECT.csproj: hata: Bu proje bu bilgisayarda eksik olan NuGet paketlerine başvuruyor. Bunları indirmek NuGet paketi geri yüklemeyi etkinleştirin.  Daha fazla bilgi için bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Dosyası eksik olduğundan... /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-Win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.targets. (SİZİN\_PROJE)
 
 Bu hataları gidermek için açın **csproj** dosyasını bir metin düzenleyicisinde açıp Ara `<Target` Xamarin.Forms, eski sürümleri öğesi aşağıda gösterildiği gibi başvurmak öğeleri. Tüm bu öğesinden el ile silmelisiniz **csproj** dosya ve değişiklikleri kaydedin.
 
@@ -226,7 +226,7 @@ Biz Unified API desteği ile çalışmak için NuGet değişiklikleri katkıda b
 Bileşenleri gibi o zamana kadar birleşik API'lerini destekleyen bir sürüm projenize dahil herhangi bir NuGet paket geçin ve daha sonra temiz bir yapı yapmak gerekir.
 
 > [!IMPORTANT]
-> **Not:** biçiminde bir hata varsa _"hatası 3 'monotouch.dll' ve 'Xamarin.iOS.dll' aynı Xamarin.iOS projede içeremez - 'Xamarin.iOS.dll' 'monotouch.dll' tarafından başvurulan sırada açıkça başvurulmaktadır ' xxx Sürüm 0.0.000, Culture = neutral, PublicKeyToken = null ='"_ Unified API uygulamanıza dönüştürdükten sonra genellikle bir bileşen veya NuGet paketi birleşik API'sine güncelleştirilmemiş projesinde sahip nedeniyle istenir. Varolan bileşeni/NuGet kaldırmak, birleşik API'lerini destekleyen bir sürüme güncelleştirmek ve temiz bir yapı yapmanız gerekir.
+> Formda bir hata varsa _"hatası 3 'monotouch.dll' ve 'Xamarin.iOS.dll' aynı Xamarin.iOS projede içeremez - 'Xamarin.iOS.dll' 'monotouch.dll' tarafından başvurulan sırada açıkça başvurulmaktadır ' xxx, sürüm 0.0.000, = Culture = neutral, PublicKeyToken = null'"_ Unified API uygulamanıza dönüştürdükten sonra genellikle bir bileşen veya NuGet paketi birleşik API'sine güncelleştirilmemiş projesinde sahip nedeniyle istenir. Varolan bileşeni/NuGet kaldırmak, birleşik API'lerini destekleyen bir sürüme güncelleştirmek ve temiz bir yapı yapmanız gerekir.
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Xamarin.iOS uygulamaları 64 Bit etkinleştirme derlemeler
 

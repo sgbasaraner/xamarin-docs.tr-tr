@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 15f649440b2a855189acff33afcef5e8272a0769
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e7252aa89e2514653fc730c7221d22cc053d2e24
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>Öngörülü önerileri giriş
 
@@ -68,7 +68,7 @@ Bir kılma paylaşımı uygulaması kullanıyorsa [MKDirectionsRequest](https://
 Uygulamanın yalnızca kılma paylaşımı destekliyorsa, sistem öneri ile başlayan *"bir kılma Get..."*, diğer türleri (örneğin, Walking veya bisiklet) yönlendirme yönü destekleniyorsa, sistemin kullanacağı *"yönlendirmeler Get..."*
 
 > [!IMPORTANT]
-> **Not:** [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/) uygulama alan nesnesi boylam ve enlem bilgi içermeyebilir ve coğrafi kodlama gerektirir.
+> [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/) uygulama alan nesnesi boylam ve enlem bilgi içermeyebilir ve coğrafi kodlama gerektirir.
 
 ## <a name="implementing-proactive-suggestions"></a>Öngörülü önerileri uygulama
 

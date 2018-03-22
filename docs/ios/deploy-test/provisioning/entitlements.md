@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 837a18fa09b7b1da3cf2d16d6e3e350250ae0829
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 8b5c88f4af3087f980b586113c274016935585c0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-entitlements"></a>Yetkilendirmeler ile çalışma
 
@@ -32,7 +32,7 @@ Entitlements.plist dosya yetkilendirmeler belirtmek için kullanılır ve uygula
 Ancak, bazı ek sağlama uygulama kodu doğru şekilde imzalanmış olduğundan emin olmak için gereklidir. Kullanılan sağlama profili etkin gerekli özelliğine sahip bir uygulama kimliği içermelidir. Bunun nasıl yapılacağı hakkında daha fazla bilgi için başvurmak [özellikleriyle çalışma](~/ios/deploy-test/provisioning/capabilities/index.md) Kılavuzu.
 
 > [!IMPORTANT]
-> Not:, Yeteneklerini kullanarak bir uygulamayı doğru özelliklerini doldurun Entitlements.plist dosya yardımcı olur, ancak bir Apple Geliştirici hesabını bağlı değil olarak bir sağlama profili oluşturulamıyor. Dağıtma ve uygulama dağıtmak için Geliştirici Portalı'nı kullanarak bir sağlama profili oluştur gerekecektir.
+> Entitlements.plist dosya özelliklerini kullanarak bir uygulama için doğru özelliklerini doldurun yardımcı olur, ancak bir Apple Geliştirici hesabını bağlı değil olarak bir sağlama profili oluşturulamıyor. Dağıtma ve uygulama dağıtmak için Geliştirici Portalı'nı kullanarak bir sağlama profili oluştur gerekecektir.
 
 ## <a name="set-entitlements-in-a-xamarinios-project"></a>Bir Xamarin.iOS projesi yetkilendirmeleri ayarlama
 

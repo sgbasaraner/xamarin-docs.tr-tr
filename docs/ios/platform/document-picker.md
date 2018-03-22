@@ -7,11 +7,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 4a8f1632076a12b1737ba8294ac8b2f28f19dc77
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25b9d6c0eebd51a7b47b31c35fb3d5b56e45c3b3
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="document-picker"></a>Belge Seçici
 
@@ -221,7 +221,7 @@ Yukarıdaki diyagramda Stitching kullanma:
 Stitching kullanarak uygulama artık yerel izlemek için bir veri kaynağı açmak sahip ve dosya değişiklikleri bulut tabanlı. Uygulama üzerinde güvenebilirsiniz artık `NSMetadataQuery` doğrudan.
 
 > [!IMPORTANT]
-> **Not**: Dikiş yalnızca çalışır yukarıdaki bölümde sunulan gibi dosya düzenleme uygulama kullanıyorsa. Dosya düzenleme kullanılmadığından, API için var olan öncesi iOS 8 davranışı varsayılan.
+> Yukarıdaki bölümde sunulan gibi dosya düzenleme uygulama kullanıyorsa Dikiş yalnızca çalışır. Dosya düzenleme kullanılmadığından, API için var olan öncesi iOS 8 davranışı varsayılan.
 
 
 
@@ -465,7 +465,7 @@ Aşağıdakileri yapın:
 6.  Sağ `Entitlements.plist` içinde **Çözüm Gezgini** düzenleyicisinde açın.
 
     > [!IMPORTANT]
-> **Not**: Visual ihtiyacınız olabilecek üzerinde sağ tıklayarak yetkilendirmeler Düzenleyicisi'ni açmak için seçerek Studio'da **birlikte Aç...** ve özellik listesi Düzenleyici seçme
+    > Visual Studio'da, bunun üzerinde sağ tıklayarak yetkilendirmeler Düzenleyicisi'ni açmak seçerek gerekebilir **birlikte Aç...** ve özellik listesi Düzenleyici seçme
 
 7.  Denetleme **etkinleştirmek iCloud** , **iCloud belgeleri** , **anahtar-değer depolama** ve **CloudKit** .
 8.  Olun **kapsayıcı** (yukarıda oluşturduğunuz gibi) uygulama için bulunmaktadır. Örnek: `iCloud.com.your-company.AppName`
@@ -793,7 +793,7 @@ namespace DocPicker
 ```
 
 > [!IMPORTANT]
-> **Not**: Yukarıdaki keşfedin ve listeleme belgeler bölümünden kodu Yukarıdaki kod içerir. Gerçek bir uygulamada görüneceği şekilde tamamının, burada sunulur. Kolaylık olması için bu örnek ile tek, sabit kodlanmış bir dosya çalışır (`test.txt`) yalnızca.
+> Yukarıdaki kod yukarıdaki keşfedin ve listeleme belgeler bölümünden kodu içerir. Gerçek bir uygulamada görüneceği şekilde tamamının, burada sunulur. Kolaylık olması için bu örnek ile tek, sabit kodlanmış bir dosya çalışır (`test.txt`) yalnızca.
 
 Yukarıdaki kod, uygulamanın geri kalanına çalışmak kolaylaştırmak için çeşitli iCloud sürücü kısayolları kullanıma sunar.
 
@@ -902,7 +902,7 @@ if (presentationPopover!=null) {
 ```
 
 > [!IMPORTANT]
-> **Not**: Geliştirici çağırmalısınız `StartAccessingSecurityScopedResource` yöntemi `NSUrl` harici bir belge erişilmeden önce. `StopAccessingSecurityScopedResource` Yöntemi çağrılır, belge yüklenirken hemen sonra güvenlik kilidi serbest bırakmak için.
+> Geliştirici çağırmalısınız `StartAccessingSecurityScopedResource` yöntemi `NSUrl` harici bir belge erişilmeden önce. `StopAccessingSecurityScopedResource` Yöntemi çağrılır, belge yüklenirken hemen sonra güvenlik kilidi serbest bırakmak için.
 
 ### <a name="sample-output"></a>Örnek Çıktı
 
@@ -1134,7 +1134,7 @@ Mac OS X Yosemite üzerinde Apple sağlamaz geriye dönük uyumluluk tüm belgel
 Bir kullanıcının hesabını sürücü İcloud'a geçirildikten sonra iCloud sürücü kullanarak yalnızca cihazlarda bu cihazlar arasında belgeleri değişiklikleri yaymak yapabilirsiniz.
 
 > [!IMPORTANT]
-> **Not**: geliştiriciler bu makalede ele alınan yeni özellikler yalnızca kullanıcı hesabının sürücü İcloud'a geçirdiyseniz kullanılabilir kullanan. 
+> Geliştiricilerin bu makalede ele alınan yeni özellikler yalnızca kullanıcı hesabının sürücü İcloud'a geçirdiyseniz kullanılabilir olduğunu bilmeniz gerekir. 
 
 ## <a name="summary"></a>Özet
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d5a8baec164eb5c70f6dae5b2fa4fd5271afbd1c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4ab11239caf5986bba52f080945d90a91ea9453e
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>İzlenecek yol - arka plan Aktarım Hizmeti ve NSURLSession kullanma
 
@@ -97,7 +97,7 @@ Biz indirme görevinin ilerleme bulmak istiyorsanız, biz kılabilirsiniz `DidWr
 Oturum temsilci API görevleri ile etkileşmek için geniş bir araç sağlar. Oturum tam listesi için temsilci yöntemlerini, başvurmak `NSUrlSessionDelegate` API belgeleri.
 
 > [!IMPORTANT]
-> **Not**: arka plan oturumları UI güncelleştirmek için tüm çağrıları açıkça UI iş parçacığında çağırarak çalıştırılması gereken şekilde bir arka plan iş parçacığı üzerinde başlatılacağı `InvokeOnMainThread` uygulama sonlandırma iOS önlemek için. 
+> Arka plan oturumları UI güncelleştirmek için tüm çağrıları açıkça UI iş parçacığında çağırarak çalıştırılması gereken şekilde bir arka plan iş parçacığı üzerinde başlatılacağı `InvokeOnMainThread` uygulama sonlandırma iOS önlemek için. 
 
 
 ## <a name="handling-transfer-completion"></a>İşleme aktarımı tamamlama

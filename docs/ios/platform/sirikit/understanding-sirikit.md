@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 67635b6a04579246467184cdff8d9f277b36ecc4
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0c1253391673e48f81c12b80719db485d276013d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>SiriKit kavramlarını anlama
 
@@ -274,7 +274,7 @@ Hedefleri UI uzantısı her zaman diğer Siri gibi içerik uygulama simgesine ve
 Uygulama Siri kullanıcıya Mesajlaşma gibi varsayılan olarak görüntüleme veya uygulamayı bir uygulamaya özel olarak hazırlanmış varsayılan deneyimi yeri değiştirebilirsiniz eşlemeleri bilgileri nerede değiştirebilirsiniz birkaç örneği vardır.
 
 > [!IMPORTANT]
-> **Not:** etkileşimli öğeler eklemek mümkün olmakla birlikte `UIButtons` veya `UITextFields` hedefi UI uzantının için `UIViewController`, bu amacı kullanıcı Arabiriminde etkileşimli olmayan olarak kesinlikle yasaktır ve kullanıcı etkileşim mümkün olmayacaktır. bunlarla.
+> Etkileşimli öğeler eklemek mümkün olmakla birlikte `UIButtons` veya `UITextFields` hedefi UI uzantının için `UIViewController`, bu amacı kullanıcı Arabiriminde etkileşimli olmayan olarak kesinlikle yasaktır ve kullanıcı etkileşim mümkün olmayacaktır.
 
 Siri varsayılan bir hedefi her türü için UI içerdiğinden hedefi UI uzantı sağlamak uygulama için tamamen isteğe bağlıdır. Ayrıca, hedefleri UI arabirimleri yalnızca belirli hedefleri Apple kabul kullanıcı için yararlı olacaktır kullanılabilir.
 
@@ -320,7 +320,7 @@ Uygulamanın, kullanıcı özel sözlük değiştiğinde Siri hemen güncelleşt
 Daha da önemlisi, uygulama _gerekir_ bu yana bir kullanıcı bir bilgiyi silindi ancak Siri hala algılamayı, saat veya gün sonra üzmeye hale bilgileri Siri sözlük hemen silin.
 
 > [!IMPORTANT]
-> **Not:** uygulama tüm kullanıcı belirli sözlük Siri kullanıcı uygulamayı sıfırlamayı seçerse veya varsa kaldırmalıdır bunlar oturum kapatma.
+> Uygulama tüm kullanıcı belirli sözlük Siri kullanıcı uygulamayı sıfırlamayı seçerse veya varsa kaldırmalıdır bunlar oturum kapatma.
 
 ## <a name="sirikit-permissions"></a>SiriKit izinleri
 

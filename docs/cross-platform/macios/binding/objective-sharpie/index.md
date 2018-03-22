@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: bcb7be862537a002e5a80462702ed1f2f8497cda
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 08796d38301ba9c6ae15c3ddfe700b1cd2166ace
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="objective-sharpie"></a>Amaç Sharpie
 
@@ -34,17 +34,13 @@ Genel API uygulamasına eşlemek için yerel kitaplık üstbilgi dosyaları ayr�
 Böylece bağlama olarak tam ve kapsamlı mümkün olduğunca hedefi Sharpie Clang ayrıştırma üstbilgi dosyaları kullanır. Bu, zaman ve çaba kalite bağlama üretmek için gereken önemli ölçüde azaltabilir.
 
 > [!IMPORTANT]
-> **Uyarı:** hedefi Sharpie Gelişmiş bilgi Objective-C (ve uzantılarının, C) ile deneyimli Xamarin geliştiriciler için bir araçtır. Objective-C Kitaplığı bağlamak denemeden önce yerel kitaplığı komut satırı (ve yerel kitaplığı nasıl çalıştığını iyi anlamış) oluşturmak düz bilgiye sahip olmalıdır.
-
-
+> Amaç Sharpie Gelişmiş bilgi Objective-C (ve uzantılarının, C) ile deneyimli Xamarin geliştiriciler için bir araçtır. Objective-C Kitaplığı bağlamak denemeden önce yerel kitaplığı komut satırı (ve yerel kitaplığı nasıl çalıştığını iyi anlamış) oluşturmak düz bilgiye sahip olmalıdır.
 
 ## <a name="history"></a>Geçmiş
 
 Biz alınan gelişen ve hedefi Sharpie Xamarin son üç yıl için dahili olarak kullanarak. Bir güçlü bir kanıtı olarak hedefi Sharpie gücünü, olarak API'leri Xamarin.iOS ve Xamarin.Mac iOS 8'de, Mac OS X 10.10 sürümünü, bu yana kullanılmaya ve watchOS 2.0 tamamen hedefi Sharpie ile ten. Xamarin yoğun üzerinde hedefi Sharpie dahili olarak kendi ürünleri derleme için kullanır.
 
 Ancak, hedefi Sharpie Objective-C ve C, komut satırında clang derleyici kullanmayı ve genellikle nasıl yerel kitaplıkları araya Gelişmiş bilgisi gerektiren bir çok Gelişmiş aracıdır. Bu yüksek çubuğu nedeniyle Biz bu GUI sahip Keçeli Sihirbazı yanlış beklentilerini ayarlar ve bu nedenle, hedefi Sharpie şu anda yalnızca bir komut satırı aracı olarak kullanılabilir.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

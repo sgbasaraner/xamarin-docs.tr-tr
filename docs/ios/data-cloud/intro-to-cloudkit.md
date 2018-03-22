@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: e231043b1c4b0fa7ba72f2a371545036ffb21164
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: c4ee5c0457dd1faea74cbbc30dd2d0f42087a8d0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -43,7 +43,7 @@ CloudKit kavramı, ortak ve özel veritabanlarını destekler. Ortak veritabanla
 CloudKit yapılandırılmış ve toplu veri destekler. Büyük dosya aktarımları sorunsuz bir şekilde işleyebilir. CloudKit verimli bir şekilde büyük dosyaları arka planda sunucuları iCloud gelen ve giden aktarma diğer görevlere odaklanmasını Geliştirici boşaltma mvc'deki.
 
 > [!NOTE]
-> **Not:** CloudKit olduğunu dikkate almak önemlidir bir _aktarım teknolojisi_. Tüm Kalıcılık sağlamaz; Bu yalnızca bilgi göndermek ve sunuculardan verimli bir şekilde almak için bir uygulama sağlar.
+> CloudKit olduğunu dikkate almak önemlidir bir _aktarım teknolojisi_. Tüm Kalıcılık sağlamaz; Bu yalnızca bilgi göndermek ve sunuculardan verimli bir şekilde almak için bir uygulama sağlar.
 
 Bu makalenin yazıldığı sırada Apple başlangıçta CloudKit ücretsiz yüksek sınırına bant genişliği ve depolama kapasitesine sahip sağlamaktadır. Büyük projeler veya büyük bir kullanıcı tabanı uygulamaları için Apple uygun maliyetli bir fiyatlandırma ölçek sağlanacak İpuçlu.
 
@@ -239,7 +239,7 @@ Başvuruları CloudKit Framework'teki açığa `CKReference` sınıfı. Bunlar k
 Başvuruları basamaklı siler arkasında mekanizma sağlar. Veritabanından bir üst kaydı silinirse, veritabanından herhangi bir alt kayıt (belirtildiği gibi bir ilişki) otomatik olarak silinir.
 
 > [!NOTE]
-> **Not**: sarkan işaretçileridir olasılığı CloudKit kullanırken. Örneğin, uygulama olan kayıt işaretçileri listesini getirilen, bir kayıt seçili ve kayıt için sorulan saatle kaydı artık veritabanında bulunmuyor olabilir. Bu durum kolaylıkla idare edecek bir uygulama kodlanmış olmalıdır.
+> Sallantıdaki işaretçileri olasılığı CloudKit kullanılırken edilir. Örneğin, uygulama olan kayıt işaretçileri listesini getirilen, bir kayıt seçili ve kayıt için sorulan saatle kaydı artık veritabanında bulunmuyor olabilir. Bu durum kolaylıkla idare edecek bir uygulama kodlanmış olmalıdır.
 
 Gerekli olmasa da, geri başvuruları CloudKit Framework ile çalışırken tercih edilir. Apple bu başvuru en verimli türü yapmak için sistem ince ayar.
 
@@ -395,7 +395,7 @@ Yukarıdaki kod hakkında dikkat edilecek noktalar üç:
 
 
 > [!NOTE]
-> **Not**: bağlantıları sürekli bırakılma veya kesintiye, geliştirici CloudKit çalışmak hata işleme olduğunda olmalısınız ilk ile ilgili olduğu mobil ağ iletişimleri, "kayıplı" doğası nedeniyle.
+> Bağlantıları sürekli bırakılma veya kesintiye, CloudKit çalışmak hata işleme olduğunda Geliştirici olmalısınız ilk ile ilgili olduğu mobil ağ iletişimleri, "kayıplı" doğası nedeniyle.
 
 ### <a name="fetching-a-record"></a>Bir kaydı getirme
 
@@ -560,7 +560,7 @@ Son olarak, sunucu tarafı sorgu çalıştığında veritabanına bağlı her ci
 Abonelikler CloudKit Framework'teki açığa `CKSubscription` sınıfı. Bir kayıt türü birleştirmek ( `RecordType`), bir koşul ( `NSPredicate`) ve bir Apple anında iletilen bildirim ( `Push`).
 
 > [!NOTE]
-> **Not**: CloudKit iter biraz CloudKit olmasını itme neyin neden olduğunu gibi belirli bilgileri içeren bir yükü içerdiğinden genişletilebilir.
+> CloudKit olmasını itme neyin neden olduğunu gibi belirli bilgileri içeren bir yükü içerdiğinden CloudKit iter biraz engagement'ta.
 
 #### <a name="how-subscriptions-work"></a>Abonelikleri nasıl çalışır
 
@@ -678,7 +678,7 @@ Bu iCloud geliyor olmadığından kullanıcı bilgilerini deposu yedekleme zengi
 Bir kapsayıcı tarafından kapsayıcı temelinde benzersiz, rastgele oluşturulan bir kullanıcı kimliği oluşturulur ve (e-posta adresi) kullanıcının iCloud hesabıyla ilişkilendirilmiş. Bu kullanıcı Kimliğini uygulamaya döndürülür ve geliştirici uygun herhangi bir şekilde kullanılabilir.
 
 > [!NOTE]
-> **Not**: farklı uygulamalar farklı CloudKit kapsayıcılara bağlandığından aynı iCloud kullanıcı farklı kullanıcı kimlikleri sahip aynı cihazda çalışan.
+> Farklı CloudKit kapsayıcılara bağlandığından aynı iCloud kullanıcı için aynı cihazda çalışan farklı uygulamalar farklı kullanıcı kimlikleri sahip olur.
 
 Aşağıdaki kod alır CloudKit kullanıcı kimliği için şu anda oturum açmış iCloud kullanıcı cihazda:
 
@@ -810,7 +810,7 @@ Geliştirici, zaman kazandırır geliştirme sırasında bir şema değişiklikl
 Uygulamayı dağıtmadan önce geliştirici kendi şeması ve verisi üretim ortamı kullanarak geçirebilirsiniz **CloudKit Pano**. Üretim ortamında çalıştırırken, sunucu şema programlı bir uygulamanın engeller. Geliştirici değişikliklerle hale getirebilir **CloudKit Pano** ancak hataları üretim ortamına sonucunda kaydındaki alanları eklemek çalışır.
 
 > [!NOTE]
-> **Not:** Simulator çalışır yalnızca iOS **geliştirme ortamı**. Geliştirici olduğunda bir uygulamayı test etmek hazır bir **üretim ortamında**, fiziksel bir iOS cihazına gereklidir.
+> Simulator çalışır yalnızca iOS **geliştirme ortamı**. Geliştirici olduğunda bir uygulamayı test etmek hazır bir **üretim ortamında**, fiziksel bir iOS cihazına gereklidir.
 
 
 ## <a name="shipping-a-cloudkit-enabled-app"></a>Uygulama etkin bir CloudKit aktarma

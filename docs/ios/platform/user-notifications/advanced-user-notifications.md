@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e20c9f068fe92e0dd711e0c20d31d713a0d03f0d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 46a0920efc8d80db7f3783654630f65086907f50
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="advanced-user-notifications"></a>Gelişmiş Kullanıcı bildirimleri
 
@@ -145,7 +145,7 @@ Uzak yukarıda sunulan bildirimler yanı sıra medya ekler yerel bildirimler, ay
 İOS 10 bildiriminde görüntü Media ekleri destekler (statik ve GIF), ses veya video ve sistem otomatik olarak görüntüler doğru özel kullanıcı Arabirimi türlerinin her biri bu ekleri için bildirim kullanıcıya sunulduğunda.
 
 > [!NOTE]
-> **Not:** dikkatli medya boyutu en iyi duruma getirme alınması gereken ve Uzak sunucudan medya indirmek için (veya yerel bildirimler için ortam derlemek için) sistem süresini uygulamanın hizmet çalışırken hem katı sınırları uygular Uzantı. Örneğin, görüntünün aşağı genişletilmiş bir sürümünü veya küçük bir küçük bildiriminde sunulacak bir video gönderme göz önünde bulundurun.
+> Her iki ortam boyutu en iyi duruma getirme dikkatli olunmalıdır ve uygulamanın hizmeti uzantı çalışırken Uzak sunucudan medya indirmek için (veya yerel bildirimler için ortam derlemek için) sistem süresini hem katı sınırları uygular. Örneğin, görüntünün aşağı genişletilmiş bir sürümünü veya küçük bir küçük bildiriminde sunulacak bir video gönderme göz önünde bulundurun.
 
 ## <a name="creating-custom-user-interfaces"></a>Özel kullanıcı arabirimi oluşturma
 
@@ -299,7 +299,7 @@ Burada özel bildirim UI görüntüleme aynı içerik bildirim (başlık, alt ba
 Bildirim içerik uzantının özel kullanıcı arabirimi tasarlamak için çift `MainInterface.storyboard` iOS Tasarımcısı düzenlemek üzere açmak için dosyayı sürükleyin istenen arabirim oluşturmak için gereken öğeleri (gibi `UILabels` ve `UIImageViews`).
 
 > [!NOTE]
-> **Not:** bildirim UI mu _değil_ bildirim içerik uzantısında metin alanları veya düğmeleri gibi etkileşimli denetimleri destekler. Film şeridi için eklenebilir, ancak kullanıcı etkileşim mümkün olmayacaktır. Özel bir bildirim kullanıcı Arabirimi için kullanıcı etkileşimi eklemek için bunun yerine özel eylemleri kullanın.
+> Bildirim UI mu _değil_ bildirim içerik uzantısında metin alanları veya düğmeleri gibi etkileşimli denetimleri destekler. Film şeridi için eklenebilir, ancak kullanıcı etkileşim mümkün olmayacaktır. Özel bir bildirim kullanıcı Arabirimi için kullanıcı etkileşimi eklemek için bunun yerine özel eylemleri kullanın.
 
 Kullanıcı arabirimini yerleştirilmiş ve gerekli denetimleri kullanıma C# kodu, açın `NotificationViewController.cs` düzenleme ve değiştirme `DidReceiveNotification` Kullanıcı bildirim genişletirken UI doldurmak için yöntemi. Örneğin:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 4747fb73358a60d10832a1e650acd90a5a4274d1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5e4bbc22403c6c0bfa5c8dc7ac4e3a39545051d4
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS güvenlik ve gizlilik özellikleri
 
@@ -44,7 +44,7 @@ Aşağıdaki genel güvenlik ve gizlilik için iOS 10 yapılan değişiklikler:
 Uygulamalar iOS 10 (veya sonraki sürümler) çalıştıran bir veya daha fazla gizlilik anahtarlarında girerek belirli özellikler veya kullanıcı bilgilerini erişmek için kendi hedefi statik olarak bildirmelidir kendi `Info.plist` neden uygulamanın istediği erişmek için kullanıcı açıklayan dosyaları.
 
 > [!IMPORTANT]
-> **Not** gerekli anahtarlarla sessizce sonlandırılacak sistem tarafından kısıtlı özellikleri veya kullanıcı bilgilerini birini erişmeye çalıştığında sağlamak için başarısız uygulamaları _hatasız_! Bir uygulama 10 İos'ta beklenmedik şekilde başarısız başlarsa, tüm gereken, olun `Info.plist` belirtilmedi.
+> Gerekli anahtarlarla sessizce sonlandırılacak sistem tarafından kısıtlı özellikleri veya kullanıcı bilgilerini birini erişmeye çalıştığında sağlamak için başarısız uygulamaları _hatasız_! Bir uygulama 10 İos'ta beklenmedik şekilde başarısız başlarsa, tüm gereken, olun `Info.plist` belirtilmedi.
 
 Aşağıdaki gizlilik anahtarların ilgili:
 
@@ -109,7 +109,7 @@ Herhangi bir gizlilik anahtarı ayarlamak için aşağıdakileri yapın:
 -----
 
 > [!IMPORTANT]
-> **Not:** örnekte ayarlanamadı, yukarıda verilen `NSHomeKitUsageDescription` anahtarını `Info.plist` dosya uygulamada sonuçlanacak _sessizce sorunlu_ (çalışma zamanında sistem tarafından kapatılan) iOS 10 çalıştırdığınızda hatasız (veya büyük).
+> Örnekte ayarlanamadı, yukarıda verilen `NSHomeKitUsageDescription` anahtarını `Info.plist` dosya uygulamada sonuçlanacak _sessizce sorunlu_ (çalışma zamanında sistem tarafından kapatılan) iOS 10 (veya daha büyük) çalıştırdığınızda hatasız.
 
 <a name="Summary" />
 

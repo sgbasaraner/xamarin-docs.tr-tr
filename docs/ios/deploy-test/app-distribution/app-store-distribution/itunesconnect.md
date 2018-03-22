@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: dc21b21e28de155aa7a0e7b5cf9734e752cce9a2
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 3d5c84aee12c374317a797aa41446630a441f6df
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Uygulama iTunes Connect yapılandırma
 
@@ -198,7 +198,7 @@ Bu bölümde (Apple tarafından atanan gibi) bağlanma uygulama kaydı uygulama 
 ### <a name="app-icon"></a>Uygulama simgesi
 
 > [!IMPORTANT]
->  **Not**: uygulama simgeleri artık Bağlan iTunes gönderildi. Aracılığıyla gönderilmelidir **AppIcon** görüntü projenizin kümesinde **Assets.xcassets** dosya. Daha fazla bilgi için bkz: [uygulama mağazası simgesini](~/ios/app-fundamentals/images-icons/app-store-icon.md) Kılavuzu.
+>  Uygulama simgeleri artık iTunes bağlantı gönderilir. Aracılığıyla gönderilmelidir **AppIcon** görüntü projenizin kümesinde **Assets.xcassets** dosya. Daha fazla bilgi için bkz: [uygulama mağazası simgesini](~/ios/app-fundamentals/images-icons/app-store-icon.md) Kılavuzu.
 
 Yüz etkileyici olması gerekir böylece kullanıcılar ve görüntü iyi küçük bir boyutta, uygulamanızın uygulama simgedir. Etkileyici simgeler temiz, basit ve hemen tanımlanabilir.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: c60927593f062c8ac9694d889ffbf581c09bab82
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4f7b55fa859473e84298151bc08878bc2161192
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="connecting-to-the-mac"></a>Mac bilgisayara bağlayarak
 
@@ -39,7 +39,7 @@ Aşağıdaki diyagram Xamarin.iOS geliştirme iş akışı basit bir genel bakı
 [![iOS geliştirme iş akışı](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
->  Visual Studio gerçekte projeler derlemek için ayrı bir MSBuild işlemi başlatır. Bu işlem, Visual Studio oluşturduğunda gerçekte iki SSH bağlantısını Windows Mac olduğu anlamına gelir, Mac için yeni bir bağlantı oluşturur. Derleme kaynağı [komut satırı](#commandline) yalnızca bir MSBuild işlemi oluşturur. Bu diyagramda kolaylık sağlamak için tüm bağlantıları yalnızca bir ok temsil edilir.
+> Visual Studio gerçekte projeler derlemek için ayrı bir MSBuild işlemi başlatır. Bu işlem, Visual Studio oluşturduğunda gerçekte iki SSH bağlantısını Windows Mac olduğu anlamına gelir, Mac için yeni bir bağlantı oluşturur. Derleme kaynağı [komut satırı](#commandline) yalnızca bir MSBuild işlemi oluşturur. Bu diyagramda kolaylık sağlamak için tüm bağlantıları yalnızca bir ok temsil edilir.
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -53,7 +53,7 @@ Sistem gereksinimleri bulunabilir [yükleme Xamarin.iOS Windows](~/ios/get-start
 #### <a name="compatibility"></a>Uyumluluk
 
 > [!IMPORTANT]
->  Windows makine olarak bağlı olduğu Mac Xamarin.iOS aynı sürümünü kullanıyor olmalıdır. Bu doğru olduğundan emin olmak için:                                                    
+> Windows makine olarak bağlı olduğu Mac Xamarin.iOS aynı sürümünü kullanıyor olmalıdır. Bu doğru olduğundan emin olmak için:                                                    
 >                                                                                                                 
 > - **Visual Studio 2015 ve önceki**: aynı olduğundan emin olun [güncelleştirmeleri kanal](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/) Mac için Visual Studio
 >                                                                                                                 
@@ -113,7 +113,7 @@ Mac, ona bağlanmak için çift tıklayarak seçin. Bir Mac bilgisayara bağlana
 Aracı Mac için yeni bir SSH bağlantısını oluşturmak için bu kimlik bilgilerini kullanır Başarılı olursa, bir SSH anahtarı oluşturulur ve olacaktır [kayıtlı](#commandline) içinde `authorized_keys` bu Mac dosyada Sonraki bağlantılarda aracı, en son bağlanılan bilinen yapı ana bilgisayara bağlanmak için kullanıcı adı ve anahtar dosyasını kullanmasını sağlar.
 
 > [!NOTE]
->  **Not**: kullanmalısınız _kullanıcıadı_ ve _tam adı_ kimlik bilgilerinizi girerken.  Bu kullanarak öğrenebilirsiniz `whoami` Terminal komutu.  Örneğin, aşağıdaki ekran görüntüsünde hesap adı olacaktır **amyb** ve **silinecektir yanıklara**:
+> Kullanmalısınız _kullanıcıadı_ ve _tam adı_ kimlik bilgilerinizi girerken.  Bu kullanarak öğrenebilirsiniz `whoami` Terminal komutu.  Örneğin, aşağıdaki ekran görüntüsünde hesap adı olacaktır **amyb** ve **silinecektir yanıklara**:
 >
 > ![Kullanıcı adı Terminal uygulamada bulma](images/image5.png)
 

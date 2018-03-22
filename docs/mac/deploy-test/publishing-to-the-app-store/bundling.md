@@ -8,18 +8,18 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 77365d5ed62b2ef2e81407ab1fa5aef55c592d0b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c3f94b448539b2e4073c7d8a1092df066e484dfc
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="bundle-for-mac-app-store"></a>Mac App Store için paket
 
 Bu bölümde Mac uygulama Mağazası'nin Mac için Visual Studio kullanarak sürümde için uygulama oluşturma temelleri açıklanır Ek özellikleri (örneğin, iCloud erişim ve anında iletme bildirimleri) bağlı olarak, daha fazla Kurulum gerekli olabilir, bu makalenin kapsamı beyon gider.
 
 > [!NOTE]
->  **Not**: Bu bölüme başlamadan önce Geliştirici sağlama profili için Mac uygulama mağazası oluşturmak için bir üretim oluşturmuş olmanız gerekir. Gerekli sağlama profilleri oluşturma hakkında daha önce bu belgedeki yönergelere bakın.
+> Bu bölüme başlamadan önce Geliştirici sağlama profili için Mac uygulama mağazası oluşturmak için bir üretim oluşturmuş olmanız gerekir. Gerekli sağlama profilleri oluşturma hakkında daha önce bu belgedeki yönergelere bakın.
 
 ## <a name="code-signing-options"></a>Kod imzalama seçenekleri
 

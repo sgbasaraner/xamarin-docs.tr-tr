@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b970ff3570079c0e9fba10718ddcd75fbe857f2c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e400a72f4c759662e70bfecc372134f8fda05ad6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="new-user-interface-styles"></a>Yeni kullanıcı arabirimi stilleri
 
@@ -101,7 +101,7 @@ Ayrıca, ayırdedici nitelik koleksiyonları tvOS 10 aşağıdaki özelliklere s
 - TvOS uygulama geçersiz kılarak ayırdedici nitelik koleksiyonu değişiklikleri işleyebildiğinden `TraitCollectionDidChange` yöntemi bir `UIView` veya `UIViewController` sınıfı.
 
 > [!IMPORTANT]
-> **Not:** Xamarin.tvOS erken Önizleme tvOS 10 için tam olarak desteklemeyen `UIUserInterfaceStyle` için `UITraitCollection` henüz. Tam destek gelecekteki bir sürümde eklenecek.
+> Xamarin.tvOS erken Önizleme tvOS 10 için tam olarak desteklemeyen `UIUserInterfaceStyle` için `UITraitCollection` henüz. Tam destek gelecekteki bir sürümde eklenecek.
 
 
 
@@ -124,7 +124,7 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 ```
 
 > [!IMPORTANT]
-> **Not:** ne yazık ki, Xamarin.tvOS Önizleme tvOS 10 için tam olarak desteklemeyen `UIUserInterfaceStyle` için `UITraitCollection`, bu tür özelleştirme henüz kullanılabilir değil. Tam destek gelecekteki bir sürümde eklenecek.
+> Ne yazık ki, Xamarin.tvOS Önizleme tvOS 10 için tam olarak desteklemeyen `UIUserInterfaceStyle` için `UITraitCollection`, bu tür özelleştirme henüz kullanılabilir değil. Tam destek gelecekteki bir sürümde eklenecek.
 
 <a name="Responding-to-Theme-Changes-Directly" />
 

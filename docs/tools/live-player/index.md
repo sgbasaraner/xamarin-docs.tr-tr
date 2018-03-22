@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 1fea2e2f7210e282fa1e27ad3a1203da2216791e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c636e706e702afa23c36a3d6c618f3e02c2582f1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarin-live-player"></a>Xamarin Live Player
 
@@ -20,8 +20,8 @@ Bu değişiklikleri Canlı aygıtınızda yansıtılmasını ve Xamarin Canlı P
 
 [![Xamarin Canlı Player: Kod, tarama, Test](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-1. Etkinleştirme *Xamarin Canlı Player* içinde **Tercihler**, ardından arasından seçim yapmasını **aygıtları** listesi.
-2. Hata ayıklama veya çalıştırın ve sonra Cihazınızı QRCodeto çifti tarayın.
+1. Etkinleştirme *Xamarin Canlı Player* içinde **Tercihler**, Cihazınızı seçin **aygıtları** listesi.
+2. Hata ayıklama veya çalıştırın ve sonra Cihazınızı eşleştirmeye QR kodunu tarayın.
 3. Uygulamayı sağ telefon veya Tabletinizi üzerinde çalışır.
 
 ## <a name="xamarin-live-player-setupinstallmd"></a>[Xamarin Canlı Player Kurulumu](install.md)

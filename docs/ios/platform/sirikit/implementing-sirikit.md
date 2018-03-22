@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0e271fb78cfd225f9ccdae9a515685e89bfd7ac2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 76787ecda1c2cd043b81482dcdbe3751d012ef74
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="implementing-sirikit"></a>SiriKit uygulama
 
@@ -211,7 +211,7 @@ Apple SiriKit framework SiriKit uygulayan herhangi bir Xamarin.iOS uygulaması y
 
 Mac aşağıdakileri yapın:
 
-1. Bir web tarayıcısında gidin [http://developer.apple.com](http://developer.apple.com) ve hesabınızda oturum.
+1. Bir web tarayıcısında gidin [ http://developer.apple.com ](http://developer.apple.com) ve hesabınızda oturum.
 2. Tıklayın **sertifikaları**, **tanımlayıcıları** ve **profilleri**.
 3. Seçin **sağlama profilleri** seçip **uygulama kimlikleri**, ardından  **+**  düğmesi.
 4. Girin bir **adı** yeni profil için.
@@ -246,7 +246,7 @@ Mac aşağıdakileri yapın:
 22. Tıklatın **Tamam** değişiklikleri kaydetmek için düğmesi.
 
 > [!IMPORTANT]
-> **Not:** test SiriKit 10 donanım aygıtı yalnızca gerçek bir iOS üzerinde çalışır ve 10 iOS simülatörü. Bir SiriKit yükleme konusunda sorun Xamarin.iOS uygulaması gerçek donanımda etkinleştirilirse, gerekli yetkilendirmeler, uygulama kimliği, imzalama tanımlayıcısı ve sağlama profili doğru Apple Geliştirici Portalı hem Visual Studio içinde Mac için yapılandırıldığından emin olun
+> Test SiriKit 10 donanım aygıtı yalnızca gerçek bir iOS üzerinde çalışır ve 10 iOS simülatörü. Bir SiriKit yükleme konusunda sorun Xamarin.iOS uygulaması gerçek donanımda etkinleştirilirse, gerekli yetkilendirmeler, uygulama kimliği, imzalama tanımlayıcısı ve sağlama profili doğru Apple Geliştirici Portalı hem Visual Studio içinde Mac için yapılandırıldığından emin olun
 
 ### <a name="requesting-siri-authorization"></a>Siri yetkilendirme isteme
 
@@ -432,7 +432,7 @@ namespace MonkeyChat
 ```
 
 > [!IMPORTANT]
-> **Not:** Siri özel sözlük ipuçları değerlendirir ve terminolojiyi mümkün olduğunca çok dahil. Ancak, özel sözlük kaydetmek önemli hale getirme sınırlıdır boşluk _yalnızca_ kafa, bu nedenle kayıtlı koşulları toplam sayısı en düşük tutma olabilir terminolojisi.
+> Siri özel sözlük ipuçları değerlendirir ve terminolojiyi mümkün olduğunca çok dahil. Ancak, özel sözlük kaydetmek önemli hale getirme sınırlıdır boşluk _yalnızca_ kafa, bu nedenle kayıtlı koşulları toplam sayısı en düşük tutma olabilir terminolojisi.
 
 Daha fazla bilgi için lütfen bkz bizim [kullanıcı belirli sözlük başvurusu](~/ios/platform/sirikit/understanding-sirikit.md) ve Apple'nın [belirtme özel sözlük başvuru](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1).
 
@@ -587,7 +587,7 @@ Eklemek için bir `AppIntentVocabulary.plist` dosya uygulama projesi için aşa�
 -----
 
 > [!IMPORTANT]
-> **Not:** `AppIntentVocabulary.plist` kaydedilecek Siri test ile geliştirme ve sırasında cihazlar özel sözlük içerecek şekilde Siri için biraz zaman alabilir. Sonuç olarak, tester, güncelleştirildiğinde uygulama belirli sözlük test denemeden önce birkaç dakika beklemeniz gerekecektir.
+> `AppIntentVocabulary.plist` Kaydedilecek Siri test ile geliştirme ve sırasında cihazlar özel sözlük içerecek şekilde Siri için biraz zaman alabilir. Sonuç olarak, tester, güncelleştirildiğinde uygulama belirli sözlük test denemeden önce birkaç dakika beklemeniz gerekecektir.
 
 Daha fazla bilgi için lütfen bkz bizim [uygulama özel sözlük başvuru](~/ios/platform/sirikit/understanding-sirikit.md) ve Apple'nın [belirtme özel sözlük başvuru](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1).
 
@@ -1013,7 +1013,7 @@ Siri Ayrıca uygulama gereken görünümün istenen boyuta uygulama işlemi tama
 Düzen iOS Tasarımcısı hedefleri UI uzantının kullanıcı arabirimi. Uzantının çift `MainInterface.storyboard` dosyasını **Çözüm Gezgini** düzenlemek için açın. Tüm kullanıcı arabirimi oluşturma ve değişiklikleri kaydetmek için gerekli kullanıcı Arabirimi öğeleri sürükleyin.
 
 > [!IMPORTANT]
-> **Not:** etkileşimli öğeler eklemek mümkün olmakla birlikte `UIButtons` veya `UITextFields` hedefi UI uzantının için `UIViewController`, bu amacı kullanıcı Arabiriminde etkileşimli olmayan olarak kesinlikle yasaktır ve kullanıcı etkileşim mümkün olmayacaktır. bunlarla.
+> Etkileşimli öğeler eklemek mümkün olmakla birlikte `UIButtons` veya `UITextFields` hedefi UI uzantının için `UIViewController`, bu amacı kullanıcı Arabiriminde etkileşimli olmayan olarak kesinlikle yasaktır ve kullanıcı etkileşim mümkün olmayacaktır.
 
 ### <a name="wire-up-the-user-interface"></a>Kablo yukarı kullanıcı arabirimi
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS sorun giderme
 
@@ -33,13 +33,6 @@ Bu sayfa, ek bilgi ve halen geliştirilme özellikleri için geçici çözümler
 ### <a name="general"></a>Genel
 
 <a name="deploy" />
-<!--
-* You cannot deploy to the App Store *from within Visual Studio for Mac or Visual Studio*
-    in the current release. You should create an **Archive** in Visual Studio for Mac
-    and then switch to Xcode to upload the archive to iTunes Connect. Visual Studio
-    is not currently supported (but will be a future release). Refer to the
-    [deployment guide](~/ios/watchos/deploy-test/appstore.md) for more information.
--->
 
 - Mac için Visual Studio'nun önceki sürümleri yanlış Göster birini **AppleCompanionSettings** sonuçlanır 88 x 88 piksel; olarak simgeleri bir **eksik simgesi hata** uygulamaya göndermek çalışırsanız Deposu.
     Bu simge 87 x 87 piksel olmalıdır (29 birimleri için  **@3x**  Retina ekranlar). Bu Mac - ya da Düzenle xcode'da görüntü varlığı için Visual Studio'da düzeltin veya el ile düzenlediğinizde **Contents.json** dosyası (eşleşecek şekilde [Bu örnek](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
@@ -47,14 +40,6 @@ Bu sayfa, ek bilgi ve halen geliştirilme özellikleri için geçici çözümler
 - Varsa izleme uzantısı projenin **Info.plist > WKApp paket kimliği** değil [doğru olarak ayarlanmış](~/ios/watchos/get-started/project-references.md) izleme uygulamanın eşleşecek şekilde **paket kimliği**, hata ayıklayıcı bağlanamaz ve görsel Mac için Studio iletiyle bekleyecek *"bağlanmak için hata ayıklayıcı bekleniyor"*.
 
 - Hata ayıklama içinde desteklenir **bildirimleri** modu ancak güvenilir olabilir. Yeniden deneniyor bazen çalışır. Onaylayın izleme uygulamanın **Info.plist** `WKCompanionAppBundleIdentifier` iOS üst/kapsayıcı uygulamanın paket tanımlayıcısı eşleşecek şekilde ayarlayın (IE. iPhone üzerinde çalışan bir).
-
-<!--
-- **Can't launch application on Watch simulator.** This seems to
-    be an issue with the iOS Simulator hanging when trying to
-    install an app that has changed. Xcode release notes (beta 4)
-    includes a similar known issue:
-    If the issue persists, reset the Simulator (**iOS Simulator > Reset Content and Settings...**).
--->
 
 - iOS Tasarımcısı bakışta veya bildirim arabirim denetleyicilerini entrypoint okları göstermez.
 
@@ -69,15 +54,6 @@ Bu sayfa, ek bilgi ve halen geliştirilme özellikleri için geçici çözümler
 ### <a name="visual-studio"></a>Visual Studio
 
 İOS Tasarımcısı için izleme paketi desteklemek *gerektirir* çözümü doğru şekilde yapılandırılmış. Proje başvurularını ayarlanmamışsa (bkz [başvuruları ayarlamak nasıl](~/ios/watchos/get-started/project-references.md)) sonra Tasarım yüzeyine düzgün çalışmaz.
-
-<!--
-* New Watch Kit apps created in Visual Studio might not allow
-    starting in Notifications mode.
-
-* You cannot deploy to the App Store from Visual Studio (see [notes above](#deploy)
-    and the [deployment guide](~/ios/watchos/deploy-test/appstore.md)). Use
-    Visual Studio for Mac and Xcode on your Mac Build Host.
-    -->
 
 <a name="noalpha" />
 
@@ -109,11 +85,10 @@ Mac OS X kullanma alfa kanal kaldırmak daha kolaydır **Önizleme** uygulama:
 ## <a name="manually-adding-interface-controller-files"></a>Arabirim Denetleyicisi dosyaları el ile ekleme
 
 > [!IMPORTANT]
-> Tasarımcıda özetlenen adımları gerektirmeyen iOS (hem Mac için Visual Studio hem de Visual Studio), izleme film şeritleri tasarlama Xamarin'ın izleme Seti destek içerir. Mac özellikleri pad için yalnızca bir arabirim denetleyicisi bir sınıf adı Visual Studio'da verin ve C# kod dosyaları otomatik olarak oluşturulur.
+> Tasarımcıda özetlenen adımları gerektirmeyen iOS (hem Mac için Visual Studio hem de Visual Studio), izleme film şeritleri tasarlama Xamarin'ın WatchKit destek içerir. Mac özellikleri pad için yalnızca bir arabirim denetleyicisi bir sınıf adı Visual Studio'da verin ve C# kod dosyaları otomatik olarak oluşturulur.
 
 
 *Varsa* Xcode arabirimi Oluşturucusu'nu kullanarak, izleme uygulamanız için yeni arabirim denetleyicilerini oluşturmak ve çıkışlar ve eylemleri C# dilinde kullanılabilir olacak şekilde, Xcode ile eşitlemeyi etkinleştirmek için aşağıdaki adımları izleyin:
-
 
 1. Gözcü uygulamanın açmak **Interface.storyboard** içinde **Xcode arabirimi Oluşturucu**.
     
@@ -256,7 +231,7 @@ Uygulamanızı gösterecek şekilde güncellemeniz gerekir parametresi `launchsi
 Ana uygulama paketi tam yolunu *izleme uygulama ve uzantısını içeren iOS uygulaması*.
 
 > [!NOTE]
-> *Not:* sağlamanız gerekir yolu içindir *iPhone uygulama .app dosyası*, yani iOS simülatörü dağıtılacak ve izleme uzantısı ve izleme uygulama içeren bir.
+> Yolun sağlamanız gerekir içindir *iPhone uygulama .app dosyası*, yani iOS simülatörü dağıtılacak ve izleme uzantısı ve izleme uygulama içeren bir.
 
 Örnek:
 

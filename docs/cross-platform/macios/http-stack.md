@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 06/12/2017
-ms.openlocfilehash: eff096b1dca15b9b11038a599987f632bca2352f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 01b316e296f78ea2739e2f3ed1bd8d8ec112fca8
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient yığını ve iOS/macOS için SSL/TLS uygulama Seçici
 
@@ -110,6 +110,7 @@ Bu farklı bir kullanmayı mümkün kılar `HttpMessageHandler` içinde bildiril
 SSL (Güvenli Yuva Katmanı) ve onun ardıl TLS (Aktarım Katmanı Güvenliği), HTTP ve diğer ağ bağlantıları üzerinden için destek sağlayan `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS veya Xamarin.Mac'ın `System.Net.Security.SslStream` uygulama Mono tarafından sağlanan yönetilen uygulama kullanmak yerine Apple'nın yerel SSL/TLS uygulama çağıracaktır. Apple'nın yerel uygulama, TLS 1.2 destekler.
 
 <a name="Mono" />
+
 > [!WARNING]
 > **Mono/yönetilen** TLS sağlayıcısıdır SSL v3 ve TLS v1 sınırlıdır. Bu TLS sağlayıcısı kullanım dışı bırakıldı ve artık Xamarin.iOS uygulamaları için kullanılabilir. 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 24fc64d1bd04cb1ebefb9bf9a359efb395b45074
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Kodda iOS kullanıcı arabirimleri oluşturma
 
@@ -620,7 +620,7 @@ Başlatma ekranı oluşturma hakkında daha fazla bilgi için aşağıdaki belge
 - [Film şeritleri ile başlatma ekranları yönetme](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]
-> **Not:** film şeritleri başlatma ekranı oluşturma birincil yöntemi olarak kullanılması gereken Apple iOS 9'dan sonra önerir.
+> Film şeritleri başlatma ekranı oluşturma birincil yöntemi olarak kullanılması gereken Apple iOS 9'dan sonra önerir.
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Başlatma görüntü öncesi iOS 8 uygulamaları oluşturma
 
@@ -629,7 +629,7 @@ Uygulama sürümleri iOS 8 Geri'yi hedefliyorsa statik görüntü .xib veya film
 Bu statik görüntü Info.plist dosyasında veya bir varlık kataloğunda (iOS 7 için) uygulamanızın olarak ayarlayabilirsiniz. Uygulamanızı çalışabilir her aygıt boyutu (320 x 480, 640 x 960, 640 x 1136) için ayrı görüntülere sağlamanız gerekir. Başlatma ekranı boyutları hakkında daha fazla bilgi için görüntülemek [başlatma ekran görüntüleri](~/ios/app-fundamentals/images-icons/launch-screens.md) Kılavuzu.
 
 > [!IMPORTANT]
-> **Not:** uygulamanızı başlatma ekran varsa, ekran tam olarak uymayan fark edebilirsiniz. Bu durumda, en az adlı bir 640 x 1136 görüntüsü eklediğinizden emin olmalısınız `Default-568@2x.png` , Info.plist için. 
+> Uygulamanızı başlatma ekran, ekran tam olarak uymayan karşılaşabilirsiniz. Bu durumda, en az adlı bir 640 x 1136 görüntüsü eklediğinizden emin olmalısınız `Default-568@2x.png` , Info.plist için. 
 
 
 

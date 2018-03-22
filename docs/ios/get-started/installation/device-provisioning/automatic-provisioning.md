@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 271d9e3f7ae04f03a132ae2fd0ebf531fe52578c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="automatic-provisioning"></a>Otomatik sağlama
 
@@ -24,7 +24,7 @@ _Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS
 - Xcode 9 veya üzeri
 
 > [!IMPORTANT]
->  Bu kılavuz, Mac için Visual Studio dağıtımı için bir Apple aygıt ayarlamak için nasıl kullanılacağı ve bir uygulamanın nasıl dağıtılacağı gösterilmektedir. Bunu yapmak için ya da Windows Visual Studio ile bunun için nasıl el ile adımlar için ayrıntılı adımları izlemeniz önerilir [el ile sağlama](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) Kılavuzu.
+> Bu kılavuz, Mac için Visual Studio dağıtımı için bir Apple aygıt ayarlamak için nasıl kullanılacağı ve bir uygulamanın nasıl dağıtılacağı gösterilmektedir. Bunu yapmak için ya da Windows Visual Studio ile bunun için nasıl el ile adımlar için ayrıntılı adımları izlemeniz önerilir [el ile sağlama](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) Kılavuzu.
 
 ## <a name="enabling-automatic-signing"></a>Otomatik imzalama etkinleştirme
 

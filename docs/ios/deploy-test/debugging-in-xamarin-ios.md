@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 18f9814941c4cd7d2719f23b6102361f013ba8a9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a449d692a2761f59135930d40ad3708d6ef2e9b9
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="debugging"></a>Hata Ayıklama
 
@@ -22,7 +22,7 @@ Visual Studio için C# ve diğer yönetilen dilleri kod hata ayıklama için Mac
 
 
 > [!NOTE]
-> **Önemli:** hata ayıklama modunda uygulamaları derlediğinizde, her kod satırı izlenmiş gibi Xamarin.iOS daha yavaştır ve çok daha büyük uygulamalar oluşturur. Serbest bırakmadan önce yayın derlemesi yaptığınızdan emin olun.
+> Hata ayıklama modunda uygulamaları derlediğinizde, her kod satırı izlenmiş gibi Xamarin.iOS daha yavaştır ve çok daha büyük uygulamalar oluşturur. Serbest bırakmadan önce yayın derlemesi yaptığınızdan emin olun.
 
 Xamarin.iOS hata ayıklayıcı IDE'yi tümleştirilmiştir ve geliştiricilerin simulator ve cihazda Xamarin.iOS tarafından desteklenen yönetilen dillerinden biri ile oluşturulan Xamarin.iOS uygulamalarda hata ayıklama olanak tanır.
 

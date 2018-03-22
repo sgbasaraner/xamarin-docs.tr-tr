@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 996723db83a1f972cce26090d1253f97b6c818d3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0a9b9651a735ef4300e19f5ccb231a616850d970
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="contacts-and-contactsui"></a>Kişiler ve ContactsUI
 
@@ -30,7 +30,7 @@ _Bu makalede, bir Xamarin.iOS uygulaması içinde çerçeve yeni kişiler ve ki�
 [![](contacts-images/add01.png "Bir iOS cihazında bir örnek kişi listesi")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
-> **Not:** varolan `AddressBook` ve `AddressBookUI` çerçeveler iOS 8 kullandığı (ve önceki) iOS 9'u kullanım dışı bırakıldı ve yeni değiştirilmelidir `Contacts` ve `ContactsUI` varolan tüm Xamarin.iOS için mümkün olan en kısa sürede çerçeveler uygulama. Yeni uygulamalar karşı yeni çerçeveleri yazılması gerekir.
+> Varolan `AddressBook` ve `AddressBookUI` çerçeveler iOS 8 kullandığı (ve önceki) iOS 9'u kullanım dışı bırakıldı ve yeni değiştirilmelidir `Contacts` ve `ContactsUI` çerçeveyi mümkün olan en kısa sürede varolan tüm Xamarin.iOS uygulaması. Yeni uygulamalar karşı yeni çerçeveleri yazılması gerekir.
 
 
 
@@ -144,7 +144,7 @@ var predicate = CNContact.GetPredicateForContacts("Appleseed");
 ```
 
 > [!IMPORTANT]
-> **Not:** genel ve bileşik koşulları kişiler çerçevesi tarafından desteklenmiyor.
+> Genel ve bileşik ifadeler kişiler çerçevesi tarafından desteklenmiyor.
 
 Örneğin, yalnızca fetch sınırlamak için **GivenName** ve **FamilyName** kişinin özelliklerini şu kodu kullanın:
 
@@ -190,7 +190,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 ```
 
 > [!IMPORTANT]
-> **Not:** `GetUnifiedContact` ve `GetUnifiedContacts` yöntemlerinin `CNContactStore` sınıfı _yalnızca_ kısmi sağlanan fetch anahtarları istenen özellikler sınırlı kişi döndürür.
+> `GetUnifiedContact` Ve `GetUnifiedContacts` yöntemlerinin `CNContactStore` sınıfı _yalnızca_ kısmi sağlanan fetch anahtarları istenen özellikler sınırlı kişi döndürür.
 
 ### <a name="unified-contacts"></a>Birleşik kişiler
 

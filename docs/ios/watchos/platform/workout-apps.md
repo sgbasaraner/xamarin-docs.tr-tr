@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 77bad4c31ad0cb11476c656aa495707d2a94aa8f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2282a340811d9932f9df3a1343b22ffc35247e54
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="workout-apps"></a>Etkinlik uygulamalar
 
@@ -472,7 +472,7 @@ Ayrıca yeni hareket duraklatıldı watchOS 3 için olan (`HKWorkoutEventType.Mo
 Uygulama hareket duraklatılmış bir olayı aldığında, kullanıcı hareket sürdürür ve hareket sürdürür olayı alındığında kadar veri toplamayı durdurmanız gerekir. Uygulama hareket duraklatılmış bir olaya yanıt olarak etkinlik oturumunda duraklatın değil.
 
 > [!IMPORTANT]
-> **Not:** hareket duraklatıldı ve hareket sürdürme olayları RunningWorkout etkinlik türü için yalnızca desteklenir (`HKWorkoutActivityType.Running`).
+> Hareket duraklatıldı ve hareket sürdürme olayları RunningWorkout etkinlik türü için yalnızca desteklenir (`HKWorkoutActivityType.Running`).
 
 Geçersiz kılarak bu olayları yeniden işlenebilir `DidGenerateEvent` yöntemi `HKWorkoutSessionDelegate`:
 
@@ -649,7 +649,7 @@ Bu işleminin nasıl çalıştığı bir göz atalım:
 3. Geçirilen etkinlik yapılandırmasında kullanarak, watchOS 3 uygulama yeni bir etkinlik oturumu başlatır (`HKWorkoutSession`).
 
 > [!IMPORTANT]
-> **Not:** üst iPhone uygulamanın bir etkinlik üzerinde Apple Watch başlatmak için watchOS 3 uygulama etkin arka çalışıyor olması gerekir. Lütfen bakın [etkinleştirme arka çalışan](#Enabling-Background-Running) üzerinde daha fazla ayrıntı için.
+> Bir etkinlik üzerinde Apple Watch başlatmak üst iPhone uygulama, watchOS 3 uygulama etkin arka plan çalıştıran olması gerekir. Lütfen bakın [etkinleştirme arka çalışan](#Enabling-Background-Running) üzerinde daha fazla ayrıntı için.
 
 Bu işlem bir etkinlik oturumu watchOS 3 uygulamada doğrudan başlatma işlemini için çok benzer. İPhone üzerinde aşağıdaki kodu kullanın:
 
@@ -764,7 +764,7 @@ Bu belgede belirtilen bilgiler tümünün alma, watchOS 3 göre etkinlik uygulam
 3. **watchOS 3 `OutdoorRunDelegate.cs`**  -özel `HKWorkoutSessionDelegate` için etkinlik olayları işlemek için.
 
 > [!IMPORTANT]
-> **Not:** aşağıdaki bölümlerde gösterilen kodu yalnızca watchOS 3 etkinlik uygulamalarında sağlanan yeni, Gelişmiş özellikleri uygulamak için gereken bölümleri içerir. Tüm destekleyici kodu ve sunmak ve kullanıcı arabirimini güncelleştirmek için kodu dahil değildir ancak diğer watchOS Belgelerimizi izleyerek kolayca oluşturulabilir.<p/>
+> Aşağıdaki bölümlerde gösterilen kodu yalnızca watchOS 3 etkinlik uygulamalarında sağlanan yeni, Gelişmiş özellikleri uygulamak için gereken bölümleri içerir. Tüm destekleyici kodu ve sunmak ve kullanıcı arabirimini güncelleştirmek için kodu dahil değildir ancak diğer watchOS Belgelerimizi izleyerek kolayca oluşturulabilir.<p/>
 
 
 

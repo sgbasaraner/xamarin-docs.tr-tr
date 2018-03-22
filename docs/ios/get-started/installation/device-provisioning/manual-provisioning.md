@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: e42b9d0b5eb64c17c96b66c9dbae7582551a06a0
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: ecda5823636a1b2d7e31a39e29f1d46cdf7118b6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manual-provisioning"></a>El ile sağlama
 
@@ -85,7 +85,7 @@ Geliştirici profili sertifikalar, bunların ilişkili anahtarları ve hesapla i
 -----
 
 > [!WARNING]
-> **Not:** sertifikayı ve ilişkili anahtarları kaybetme olabilir son derece kesintiye uğratan varolan sertifikaların iptal gerektirecek ve ilişkili tüm cihazları yeniden sağlama dahil olmak üzere geçici dağıtım için kayıtlı. Başarılı bir şekilde geliştirme sertifikaları ayarlayarak sonra bir yedek kopyasının dışarı aktarın ve bunları güvenli bir yerde saklayın. Bunun nasıl yapılacağı hakkında daha fazla bilgi için aktarma ve içeri aktarma sertifikaları ve profilleri bölümüne bakın [Bakımı sertifikaları](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) Apple'nın belgeleri kılavuzda.
+> Sertifikayı ve ilişkili anahtarları kaybetme varolan sertifikaların iptal gerektirecek ve ilişkili tüm cihazları yeniden sağlama dahil olmak üzere kayıtlı geçici dağıtımı için son derece kesintiye uğratan olabilir. Başarılı bir şekilde geliştirme sertifikaları ayarlayarak sonra bir yedek kopyasının dışarı aktarın ve bunları güvenli bir yerde saklayın. Bunun nasıl yapılacağı hakkında daha fazla bilgi için aktarma ve içeri aktarma sertifikaları ve profilleri bölümüne bakın [Bakımı sertifikaları](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) Apple'nın belgeleri kılavuzda.
 
 <a name="provisioning" />
 
@@ -209,12 +209,12 @@ Yeni sertifikalar veya sağlama profilleri Mac veya Visual Studio için Visual S
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 > [!IMPORTANT]
-> **Not:** durdurmanız ve herhangi bir yeni veya değiştirilmiş sertifikaları veya Xcode tarafından güncelleştirilmiş profilleri görürsünüz önce Mac için Visual Studio yeniden başlatmanız gerekebilir.
+> Durdurmanız ve herhangi bir yeni veya değiştirilmiş sertifikaları veya Xcode tarafından güncelleştirilmiş profilleri görürsünüz önce Mac için Visual Studio yeniden başlatmanız gerekebilir.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 > [!IMPORTANT]
-> **Not:** durdurmanız ve tüm yeni veya değiştirilmiş sertifikaları veya Xcode tarafından güncelleştirilmiş profilleri görürsünüz önce Visual Studio yeniden başlatmanız gerekebilir.
+> Durdurmanız ve tüm yeni veya değiştirilmiş sertifikaları veya Xcode tarafından güncelleştirilmiş profilleri görürsünüz önce Visual Studio yeniden başlatmanız gerekebilir.
 
 -----
 

@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 34b51f784b549caa0dda2eeda066bb39dfc13020
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0783372cd36d5a4984d09ee055257d525e7becb1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="multitasking-for-ipad"></a>İPad için çoklu
 
@@ -33,7 +33,7 @@ Ne zaman göz önünde bulundurmanız gerekenler sayıda [çoklu uygulamanızda 
 - [Özel donanım klavye kısayolları](#Custom-Hardware-Keyboard-Shortcuts)
 - [Kaynak Yönetimi](#Resource-Management-Considerations)
 
-Bir uygulama geliştiricisi olarak şunları da yapabilirsiniz [çevirin görevli,](#Opting-Out-of-Multitasking)dahil [PIP Video kayıttan yürütme devre dışı bırakma](#Disabling-PIP-Video-Playback).
+Bir uygulama geliştiricisi olarak şunları da yapabilirsiniz [dışında görevli opt](#Opting-Out-of-Multitasking)dahil [PIP Video kayıttan yürütme devre dışı bırakma](#Disabling-PIP-Video-Playback).
 
 Bu makalede Xamarin.iOS uygulamanızı doğru çoklu bir ortamda çalışır veya iyi değilse, çoklu dışında kabul etme uygulamanız için uygun emin olmak için gerekli olan adımları kapsar.
 
@@ -205,7 +205,7 @@ Lütfen örnek bakın [MultiTask uygulama](http://developer.xamarin.com/samples/
 
 İOS 8'ın tasarım kılavuzları ve en iyi yöntemler zaten kullanıyorsanız bile uygulamalar için verimli kaynak yönetimi hala bir sorun olabilir. Uygulamalar, iOS 9'da, bellek, CPU veya diğer sistem kaynaklarını özel kullanım artık yok.
 
-Sonuç olarak, sistem kaynaklarını verimli kullanmak üzere Xamarin.iOS uygulamanızı hassas veya yetersiz bellek durumlar altında sonlandırma yüzler. Bu çoklu çevirin uygulamalar eşit true, saniyenin bu yana uygulama hala bir slayt üzerinden panelinde veya saniyede 60 çerçeve altına düşmesine resim resmi ek kaynakları gerektiren veya yenileme hızı neden penceresinde çalıştırılması.
+Sonuç olarak, sistem kaynaklarını verimli kullanmak üzere Xamarin.iOS uygulamanızı hassas veya yetersiz bellek durumlar altında sonlandırma yüzler. Bu çoklu dışında opt uygulamaların eşit true, saniyenin bu yana uygulama hala bir slayt üzerinden panelinde veya saniyede 60 çerçeve altına düşmesine resim resmi ek kaynakları gerektiren veya yenileme hızı neden penceresinde çalıştırılması.
 
 Aşağıdaki kullanıcı eylemleri ve bunların etkilerini göz önünde bulundurun:
 
@@ -223,19 +223,16 @@ Apple'nın bkz [enerji verimliliği Kılavuzu iOS uygulamaları için](https://d
 
 <a name="Opting-Out-of-Multitasking" />
 
-## <a name="opting-out-of-multitasking"></a>Çoklu kullanmama-genişletme
+## <a name="opting-out-of-multitasking"></a>Çoklu dışında kullanmama
 
 Vardır tüm iOS 9 uygulamaları çoklu destekler Apple öneren olsa da, bir uygulama için belirli nedenleri oyunlar veya düzgün çalışması için tam ekran gerektiren kamera uygulamalar gibi değil de olabilir.
 
-Projenin Xamarin.iOS uygulamanızı panelinde ya da bir slayt çıkışı veya bölme görünüm modunda çalıştırın çevirin düzenleme **Info.plist** dosya ve denetleme **gerektirir tam ekran**:
+Projenin Xamarin.iOS uygulamanızı panelinde ya da bir slayt çıkışı veya bölme görünüm modunda çalıştır dışında kabul etmek düzenleme **Info.plist** dosya ve denetleme **gerektirir tam ekran**:
 
-[![](multitasking-images/fullscreen01.png "Çoklu kullanmama-genişletme")](multitasking-images/fullscreen01.png#lightbox)
+[![](multitasking-images/fullscreen01.png "Çoklu dışında kullanmama")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
-> **Not:** slayt çıkışı veya bölme görünüm çalışacak uygulamanızı görevli Opting genişletme engeller, ancak **değil** başka bir uygulama slayt çıkışı veya resim video resimde ile birlikte görüntülemede çalıştırılmasını engellemek için uygulama.
-
-
-
+> Çoklu dışında kullanmama uygulamanızı slayt çıkışı veya bölme görünüm çalışacak engeller, ancak bu başka bir uygulama slayt çıkışı ya da bir resim içinde resim video uygulamanızı birlikte görüntüleme çalıştırılmasını engellemez.
 
 <a name="Disabling-PIP-Video-Playback" />
 
@@ -243,7 +240,7 @@ Projenin Xamarin.iOS uygulamanızı panelinde ya da bir slayt çıkışı veya b
 
 Çoğu durumda, uygulamanızı bir resim resmi kayan penceresinde görüntüler herhangi bir video içerik yürütmek kullanıcı izin vermelidir. Ancak, burada bu, oyun Kes Sahne videolar gibi istenen değil durumlar olabilir.
 
-PIP video çalınmasını çevirin için uygulamanızı aşağıdakileri yapın:
+PIP video oynatmayı dışında kabul etmek için uygulamanızda aşağıdakileri yapın:
 
  - Kullanıyorsanız bir `AVPlayerViewController` video görüntülenecek ayarlamak `AllowsPictureInPicturePlayback` özelliğine `false`.
  - Kullanıyorsanız `AVPlayerLayer` video görüntülemek için örneği olmayan bir `AVPictureInPictureController`.

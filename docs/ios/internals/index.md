@@ -7,11 +7,11 @@ ms.assetid: 951713CD-D6AD-981C-A09E-4F2C98588D8B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: d6e9dc47f2610fbc1e84cc74880ced13d4c99dce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 00e5d84cd39312cdf6ac0107b4c7ffedcd82f3c0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-advanced-concepts-and-internals"></a>iOS Gelişmiş kavramları ve dahili bileşenleri
 
@@ -20,30 +20,30 @@ _Bu konuda MonoTouch API tasarım, derlemeler ve sınıflar gelen .NET temel sı
 
 
 
-##  <a name="api-designiosinternalsapi-designindexmd"></a>[API Design](~/ios/internals/api-design/index.md)
+##  <a name="api-designiosinternalsapi-designindexmd"></a>[API Tasarımı](~/ios/internals/api-design/index.md)
 
 Tasarım ilkeleri API bağlama arkasında açıklanmaktadır.
 
 
 
 
-##  <a name="available-assembliescross-platforminternalsavailable-assembliesmd"></a>[Kullanılabilir derlemeler](~/cross-platform/internals/available-assemblies.md)
+##  <a name="available-assembliescross-platforminternalsavailable-assembliesmd"></a>[Kullanılabilir Bütünleştirilmiş Kodlar](~/cross-platform/internals/available-assemblies.md)
 
 Kullanılabilir derleme ve sınıf gelen .NET temel sınıf kitaplığı'nı (BCL) listeler.
 
 
 
 
-##  <a name="xib-code-generationiosinternalsxib-code-generationmd"></a>[XIB kod oluşturma](~/ios/internals/xib-code-generation.md)
+##  <a name="xib-code-generationiosinternalsxib-code-generationmd"></a>[XIB Kodu Oluşturma](~/ios/internals/xib-code-generation.md)
 
 Ayrıca, Mac ve Xcode'nın arabirimi Oluşturucu için Visual Studio nasıl arabirimi Oluşturucu tasarım UI kullanmanıza olanak sağlayan kapsar.
 
 > [!IMPORTANT]
-> **Not**: Bu belgede yalnızca Xcode'nın arabirimi Oluşturucu ile Mac'ın tümleştirme için Visual Studio açıklanmaktadır. İOS Tasarımcısı hakkında daha fazla bilgi için lütfen gözden [iOS Tasarımcısı](~/ios/user-interface/designer/index.md) belge.
+> Bu belge, yalnızca Xcode'nın arabirimi Oluşturucu ile Mac'ın tümleştirme için Visual Studio açıklar. İOS Tasarımcısı hakkında daha fazla bilgi için lütfen gözden [iOS Tasarımcısı](~/ios/user-interface/designer/index.md) belge.
 
 
 
-##  <a name="ios-architectureiosinternalsarchitecturemd"></a>[iOS mimarisi](~/ios/internals/architecture.md)
+##  <a name="ios-architectureiosinternalsarchitecturemd"></a>[iOS Mimarisi](~/ios/internals/architecture.md)
 
 Xamarin.iOS uygulamaları Mono yürütme ortamında çalıştırın ve ARM assembler dili için C# kodu derlemek için tam şimdi, zaman Tıkların derleme kullanın. En düşük düzeyde Xamarin.iOS bu kılavuzda araştırır
 

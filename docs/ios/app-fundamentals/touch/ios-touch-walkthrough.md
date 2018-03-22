@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c806eb51be5f585f2c94b438f6ca31a70aaa7551
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 04c7a7235665e14fd128a3a70951168c1914c112
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>İzlenecek yol – iOS kullanarak iletişim
 
@@ -92,12 +92,12 @@ Bu örnekte, biz API'leri dokunma bazıları gösterilmektedir. Dokunma olaylar�
         }
     }
     ```
+    
     Bu yöntem denetleyerek çalışır bir `UITouch` nesne ve varsa dokunma nerede oluştuğunu temel bazı eylemleri gerçekleştirin:
 
     * _TouchImage içinde_ – metni görüntülemek `Touches Began` etiket ve değişiklik görüntü.
     * _DoubleTouchImage içinde_ – hareketi çift dokunmayla olduysa görüntülenen resmi değiştirin.
     * _DragImage içinde_ – dokunma başlatıldığını belirten bir bayrak ayarlayın. Yöntemi `TouchesMoved` Bu bayrak belirlemek için kullanacağı `DragImage` veya değil, ekran taşınması gereken biz sonraki adımda göreceksiniz gibi.
-
 
     Yukarıdaki kod yalnızca tek tek rötuşları ile ilgilenir olduğunda, yine davranışı yok kullanıcının ekranda kendi parmak taşınsa. Taşımayı yanıtlamasını uygulamak `TouchesMoved` aşağıdaki kodda gösterildiği gibi:
 
@@ -192,7 +192,7 @@ Hareketi tanıyıcıları uygulamak için aşağıdaki adımları izleyin:
 
 1. Dosyayı düzenlemek **GestureViewController.cs** ve aşağıdaki örnek değişkeni ekleyin:
 
-    ```chsarp
+    ```csharp
     #region Private Variables
     private bool imageHighlighted = false;
     private RectangleF originalImageFrame = RectangleF.Empty;
@@ -204,7 +204,7 @@ Pan hareketi tanıyıcı kullanacağı `originalImageFrame` görüntüyü ekrand
 
 1. Denetleyiciye aşağıdaki yöntemi ekleyin:
 
-    ```chsarp
+    ```csharp
     private void WireUpDragGestureRecognizer()
     {
         // Create a new tap gesture
@@ -223,7 +223,7 @@ Biz yöntemi biçiminde hareketi için bir hedef Ata fark `HandleDrag` – bu y�
 
 1. HandleDrag uygulamak için denetleyiciye aşağıdaki kodu ekleyin:
 
-    ```chsarp
+    ```csharp
     private void HandleDrag(UIPanGestureRecognizer recognizer)
     {
         // If it's just began, cache the location of the image
@@ -250,7 +250,7 @@ Biz yöntemi biçiminde hareketi için bir hedef Ata fark `HandleDrag` – bu y�
 
 1. Ekleme bir `UITapGestureRecognizer` DoubleTouchImage içinde görüntülenmesini görüntü değiştirir. Aşağıdaki yöntemi ekleyin `GestureViewController` denetleyicisi:
 
-    ```chsarp
+    ```csharp
     private void WireUpTapGestureRecognizer()
     {
         // Create a new tap gesture
@@ -286,7 +286,7 @@ Biz yöntemi biçiminde hareketi için bir hedef Ata fark `HandleDrag` – bu y�
 
 1. Değişiklik yapmak için ihtiyacımız son şey. `ViewDidLoad` böylece yalnızca eklediğimiz yöntemleri çağırır. Aşağıdaki kod benzer şekilde ViewDidLoad değiştirin:
 
-    ```chsarp
+    ```csharp
     public override void ViewDidLoad()
     {
         base.ViewDidLoad();
@@ -324,7 +324,7 @@ Bu bölümde özel hareketi tanıyıcı oluşturmak için önceki bölümlerde k
 
 1. Adlı projeye yeni bir sınıf ekleyin `CheckmarkGestureRecognizer`ve aşağıdaki kod gibi görünmesi:
 
-    ```chsarp
+    ```csharp
     using System;
     using CoreGraphics;
     using Foundation;
@@ -444,7 +444,7 @@ Bu bölümde özel hareketi tanıyıcı oluşturmak için önceki bölümlerde k
 
 1. Size özel hareketi tanıyıcı tanımladığınız göre (`CheckmarkGestureRecognizer`) Düzenle **CustomGestureViewController.cs** dosya ve aşağıdaki iki örnek değişkenleri ekleyin:
 
-    ```chsarp
+    ```csharp
     #region Private Variables
     private bool isChecked = false;
     private CheckmarkGestureRecognizer checkmarkGesture;
@@ -453,7 +453,7 @@ Bu bölümde özel hareketi tanıyıcı oluşturmak için önceki bölümlerde k
 
 1. Örneği ve bizim hareketi tanıyıcı yapılandırmak için denetleyiciye aşağıdaki yöntemi ekleyin:
 
-    ```chsarp
+    ```csharp
     private void WireUpCheckmarkGestureRecognizer()
     {
         // Create the recognizer
@@ -482,7 +482,7 @@ Bu bölümde özel hareketi tanıyıcı oluşturmak için önceki bölümlerde k
 
 1. Düzen `ViewDidLoad` çağırır böylece `WireUpCheckmarkGestureRecognizer`aşağıdaki kod parçacığında gösterildiği gibi:
 
-    ```chsarp
+    ```csharp
     public override void ViewDidLoad()
     {
         base.ViewDidLoad();

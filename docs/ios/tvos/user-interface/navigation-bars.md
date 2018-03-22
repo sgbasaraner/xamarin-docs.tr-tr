@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 9c6bbf27d4c8227d96e372e91e1ccf2c9e841ff8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0f59e8f5e732a45f7e6148a08de80fffc56dbb26
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-navigation-controllers"></a>Gezinti denetleyicileri ile çalışma
 
@@ -25,7 +25,7 @@ Gezinti çubukları bir başlık ve isteğe bağlı gezinti çubuğu düğmeleri
 Ayrıca (Center'da görüntülenir) başlığı için bir veya daha fazla gezinti çubuğu düğmelerinin gezinti çubukları içerebilir (`UIBarButtonItem`) ve sol tarafında çubuğunun üzerinde.
 
 > [!IMPORTANT]
-> **Not:** gezinti çubukları varsayılan olarak tamamen saydam. Gezinti çubuğu içeriğini altındaki içerik üzerinde okunabilir kalmasını sağlamak için dikkatli olunmalıdır. Örneğin, ne zaman bir tablo görünümü ya da koleksiyonu içeriği altında kayar.
+> Gezinti çubukları varsayılan olarak tamamen saydamdır. Gezinti çubuğu içeriğini altındaki içerik üzerinde okunabilir kalmasını sağlamak için dikkatli olunmalıdır. Örneğin, ne zaman bir tablo görünümü ya da koleksiyonu içeriği altında kayar.
 
 
 
@@ -77,7 +77,7 @@ Xamarin.tvOS uygulamasında Gezinti çubukları ile çalışmak için en kolay y
 -----
 
 > [!IMPORTANT]
-> **Not:** olayları gibi atamak mümkün olmakla birlikte `TouchUpInside` Apple TV ekranında veya dokunma olaylarını destekleyen bir touch sahip olmadığından bir kullanıcı Arabirimi öğesine (örneğin, bir UIButton) iOS Tasarımcısı'nda, hiçbir zaman çağrılır. Her zaman kullanmalısınız `Primary Action` olay işleyicileri tvOS için kullanıcı arabirimi öğeleri oluştururken olay.
+> Olayları gibi atamak mümkün olmakla birlikte `TouchUpInside` Apple TV ekranında veya dokunma olaylarını destekleyen bir touch sahip olmadığından bir kullanıcı Arabirimi öğesine (örneğin, bir UIButton) iOS Tasarımcısı'nda, hiçbir zaman çağrılır. Her zaman kullanmalısınız `Primary Action` olay işleyicileri tvOS için kullanıcı arabirimi öğeleri oluştururken olay.
 
 
 

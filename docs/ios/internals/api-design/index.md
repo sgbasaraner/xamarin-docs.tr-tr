@@ -8,68 +8,72 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 8c336799a4d46359a78432837101dad43b572aea
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: c333fd18e306c50bbfd41377638470cb45954883
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="api-design"></a>API tasarım
 
 Mono, parçası olan bir temel sınıf kitaplıkları çekirdek yanı sıra [Xamarin.iOS](http://www.xamarin.com/iOS) çeşitli iOS Mono ile yerel iOS uygulamaları oluşturmak geliştiriciler izin vermek için API için bağlamaları ile gelir.
 
-Xamarin.iOS özünde C# dünyayla Objective-C world arasında köprü birlikte çalışma altyapının yoktur, iOS için bağlamaları hem de CoreGraphics C tabanlı API'ler ister ve [OpenGLES](#OpenGLES).
+Xamarin.iOS özünde C# dünyayla C tabanlı API'ler CoreGraphics gibi iOS için bağlamaları yanı sıra Objective-C world arasında köprü birlikte çalışma altyapının yoktur ve [OpenGL ES](#OpenGLES).
 
-Objective-C kodunu ile iletişim kurmak için alt düzey çalışma zamanı bulunduğu [MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime). Bu, bağlantılarında üstünde [Foundation](#MonoTouch.Foundation), CoreFoundation ve [Uıkit](#MonoTouch.UIKit) sağlanır.
+Objective-C kodunu ile iletişim kurmak için alt düzey çalışma zamanı bulunduğu [MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime). Bu, bağlantılarında üstünde [Foundation](#MonoTouch.Foundation), CoreFoundation, ve [Uıkit](#MonoTouch.UIKit) sağlanır.
 
 ## <a name="design-principles"></a>Tasarım ilkeleri
 
-Bu bizim tasarım ilkeleri (bunlar da Xamarin.Mac, Mono bağlamaları Objective-C OS x için geçerli) Xamarin.iOS bağlama için bazıları şunlardır:
+(Ayrıca Xamarin.Mac, Objective-C Mono bağlamalarını macOS üzerinde uygulandıkları) bizim tasarım ilkeleri Xamarin.iOS bağlamaları için bazıları şunlardır:
 
-- Framework tasarım yönergeleri izleyin
+- İzleyin [Framework tasarım yönergeleri](https://docs.microsoft.com/dotnet/standard/design-guidelines)
 - Alt Objective-C sınıfları geliştiricilerine izin ver:
 
   - Varolan bir sınıftan türetilen
   - Zincir temel oluşturucuya çağırın
   - Yöntemleri geçersiz kılma ile geçersiz kılma sistem C# ' ın yapılması gerekir
+  - Sınıflara C# Standart yapıları ile çalışması gerekir
 
-- Bir alt kümesi C# Standart yapıları ile çalışması gerekir
 - Objective-C seçiciler geliştiricilerine gösterme
 - Rastgele Objective-C kitaplıkları çağırmak için bir mekanizma sağlar
 - Ortak Objective-C görevler kolay ve sabit Objective-C görevleri olası olun
 - C# özellikleri olarak Objective-C özelliklerini ortaya
 - Kesin türü belirtilmiş bir API ortaya çıkarır:
-- Tür güvenliği artırın
-- Çalışma zamanı hataları simge durumuna küçült
-- Dönüş türleri üzerinde IDE IntelliSense Al
-- IDE açılan belgelerine sağlar
+
+  - Tür güvenliği artırın
+  - Çalışma zamanı hataları simge durumuna küçült
+  - Dönüş türleri üzerinde IDE IntelliSense Al
+  - IDE açılan belgelerine sağlar
+
 - IDE araştırması API'leri teşvik edin:
+
+  - Örneğin, bu gibi zayıf yazılmış bir dizi gösterme yerine:
+    
+    ```objc
+    NSArray *getViews
+    ```
+    Bu gibi güçlü bir tür ortaya çıkarır:
+    
+    ```csharp
+    NSView [] Views { get; set; }
+    ```
+    
+    Bu Visual Studio Mac için API göz atarken otomatik tamamlama yapmak olanağı sağlar, tüm yapar `System.Array` döndürülen değeri, kullanılabilir işlemleri ve LINQ katılmayı dönüş değeri sağlar.
+
 - Yerel C# türleri:
 
-    - Örnek: Bu gibi zayıf yazılmış dizi gösterme yerine:
-        ```
-        NSArray *getViews
-        ```
-        Biz bunları bu gibi güçlü türlerini kullanır:
-    
-        ```
-        NSView [] Views { get; set; }
-        ```
-    
-    Bu, Visual Studio Mac için API göz atarken otomatik tamamlama yapmasını sağlar ve ayrıca tüm sağlar `System.Array` döndürülen değerin üzerinde kullanılabilir olması için işlemler ve LINQ katılmayı dönüş değeri sağlar
+  - [`NSString` olur `string`](~/ios/internals/api-design/nsstring.md)
+  - Kapatma `int` ve `uint` C# numaralandırmalar ve C# ile numaralandırmalar numaralandırmaları olması gereken parametreleri `[Flags]` öznitelikleri
+  - Tür bağımsız yerine `NSArray` nesneleri, dizileri türü kesin belirlenmiş diziler olarak kullanıma sunar.
+  - Olayları ve bildirimleri için kullanıcılar arasında bir seçim verin:
 
-- [Dize NSString olur](~/ios/internals/api-design/nsstring.md)
-- Numaralandırmalar C# numaralandırmalar ve C# numaralandırmaları [bayraklar] özniteliklere sahip olması gereken int ve uint parametreleri Aç
-- Tür bağımsız NSArray nesneleri yerine diziler kesin türü belirtilmiş bir dizi olarak kullanıma sunar.
-- Olayları ve bildirimleri, kullanıcılar arasında bir seçim verin:
-
-    - Kesin türü belirtilmiş varsayılan sürümdür
-    - Gelişmiş kullanım durumları için zayıf yazılmış sürümü
+    - Varsayılan olarak kesin türü belirtilmiş bir sürüm
+    - Gelişmiş kullanım durumları için zayıf yazılmış bir sürümü
 
 - Objective-C temsilci düzenini destekler:
 
     - C# olay sistemi
-    - C# temsilciler (Lambda'lar, anonim yöntemler ve System.Delegate) Objective-C API'lerini "Taşı" olarak kullanıma sunar.
+    - C# temsilciler kullanıma (Lambda'lar, anonim yöntemler ve `System.Delegate`) blokları olarak Objective-C API'leri
 
 ### <a name="assemblies"></a>Derlemeler
 

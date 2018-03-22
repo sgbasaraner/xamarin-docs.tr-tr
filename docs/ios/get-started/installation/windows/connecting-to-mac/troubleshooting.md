@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ffa61004bdaaaaf400f5e0d5ed90b4e6b1dcb7e7
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: d33f4ba5512985d62575885d44fdcebced8b61ed
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="connection-troubleshooting"></a>Bağlantı sorunlarını giderme
 
@@ -72,26 +72,34 @@ Xamarin derleme Konaktan Xamarin.iOS eski sürümleri artık gerekli değildir. 
 
 7. Mac adresini doğruladıktan sonra deneyin bir `ping` bu adrese `cmd.exe` Windows'da:
 
-        ping 10.1.8.95
-
+    ```
+    ping 10.1.8.95
+    ```
+    
     Ping işlemi başarısız olduysa Mac değil _yönlendirilebilir_ Windows bilgisayardan. Bu sorunu 2 bilgisayarlar arasında yerel ağ yapılandırmasının düzeyinde çözülmesi gerekir. Her iki makinelerin aynı yerel ağ üzerinde olduğundan emin olun.
 
 8. Ardından, kapatılmadığını `ssh` OpenSSH istemciden bağlanabilir başarıyla mac'e Windows'dan. Bu programı yüklemek için bir yoldur yüklemek için [Windows için Git](https://git-for-windows.github.io/). Daha sonra başlatabilirsiniz bir **Git Bash** komut istemi ve girişimi `ssh` , kullanıcı adınızı ile Mac ve IP adresi:
 
-        ssh amyb@10.1.8.95
-
+    ```bash
+    ssh amyb@10.1.8.95
+    ```
+    
 <a name="stepnine" />
 
 9. Varsa **8. adım başarılı**, gibi basit bir komut çalıştırmayı deneyebilirsiniz `ls` bağlantı üzerinden:
 
-        ssh amyb@10.1.8.95 'ls'
-
+    ```bash
+    ssh amyb@10.1.8.95 'ls'
+    ```
+    
     Bu giriş dizininize Mac üzerinde içeriğini listele Varsa `ls` komutu doğru çalışır ancak Visual Studio bağlantı hala, kontrol edebilirsiniz başarısız [bilinen sorunlar ve sınırlamalar](#knownissues) için Xamarin belirli zorluklar ilgili bölümü. Bu hiçbiri sorununuzu eşleşirse, lütfen [yeni bir hata raporu dosya](https://bugzilla.xamarin.com/newbug) ve altında açıklanan günlükleri attach [ayrıntılı günlük dosyalarını denetleyin](#verboselogs).
 
 10. Varsa **8 başarısız adım**, terminale Mac SSH sunucusu kabul etmiş olup olmadığını görmek için aşağıdaki komutu çalıştırabilirsiniz _herhangi_ bağlantıları:
 
-        ssh localhost
-
+    ```bash
+    ssh localhost
+    ```
+    
 11. 8. adım başarısız olursa, ancak **adım 10 başarılı**, ardından bağlantı noktası 22 Mac yapı konaktaki ağ yapılandırması nedeniyle Windows'dan erişilebilir değil büyük olasılıkla bir sorundur. Olası yapılandırma sorunlarını şunları içerir:
 
     - OS X Güvenlik Duvarı ayarlarını bağlantı vermemek. 3. adım iki kez kontrol emin olun.
@@ -161,8 +169,10 @@ Bildirilen nedenler:
 
     5. Aşağıdaki satırı dosyanın sonuna ekleyin:
 
-            UseDNS no
-
+        ```
+        UseDNS no
+        ```
+        
     6. Söyleyin satırları kaldırın `UseDNS yes` yeni ayar etkili olur emin olmak için.
 
     7. Dosyayı kaydedin.
@@ -179,16 +189,20 @@ Günlük dosyalarınızı bir sorun "yükleme sırasında", Göster "Karşıya" 
 
 1. Aşağıdaki komutu terminale Mac üzerinde çalıştırın:
 
-        open "$HOME/Library/Caches/Xamarin"
-
+    ```bash
+    open "$HOME/Library/Caches/Xamarin"
+    ```
+    
 2. Denetim tıklatın **XMA** klasörü ve select **taşımak için çöp**:
 
     [![](troubleshooting-images/troubleshooting-image8.png "Çöp kutusu için XMA klasörünü taşıma")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. Temizlemek için yardımcı olabilecek bir önbellek Windows de yoktur. Windows üzerinde yönetici olarak bir komut istemi açın:
 
-        del %localappdata%\Temp\Xamarin\XMA
-
+    ```
+    del %localappdata%\Temp\Xamarin\XMA
+    ```
+    
 ## <a name="warning-messages"></a>Uyarı iletileri
 
 Bu bölümde çıkış penceresine ve genellikle yoksayabilirsiniz günlükleri görünebilir birkaç iletileri anlatılmaktadır.
@@ -230,7 +244,7 @@ Visual Studio derleme konağa bağlanırken bir hata değerse, ek iletiler için
 1. Visual Studio'yu başlatın.
 
     > [!IMPORTANT]
->  Unutmayın **.svclogs** varsayılan olarak etkin değildir. Bunlara erişmek için Visual Studio içinde açıklandığı gibi ayrıntılı günlükleri ile başlayın gerekecektir [sürüm günlükleri](~/cross-platform/troubleshooting/questions/version-logs.md#visual-studio-startup-verbose-logs) Kılavuzu. Daha fazla bilgi için bkz [etkinlik günlüğü sorunlarını giderme uzantılarıyla](https://blogs.msdn.microsoft.com/visualstudio/2010/02/24/troubleshooting-extensions-with-the-activity-log/) blogu.
+    > Unutmayın **.svclogs** varsayılan olarak etkin değildir. Bunlara erişmek için Visual Studio içinde açıklandığı gibi ayrıntılı günlükleri ile başlayın gerekecektir [sürüm günlükleri](~/cross-platform/troubleshooting/questions/version-logs.md#visual-studio-startup-verbose-logs) Kılavuzu. Daha fazla bilgi için bkz [etkinlik günlüğü sorunlarını giderme uzantılarıyla](https://blogs.msdn.microsoft.com/visualstudio/2010/02/24/troubleshooting-extensions-with-the-activity-log/) blogu.
 
 2. Yapı ana bilgisayara bağlanmaya çalışır.
 
@@ -272,7 +286,7 @@ Normal günlük dosyaları sorunu tanılamak için yeterli bilgi hala sağlamazs
 
     ```bash
     grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"
-    ```
+   ```
 
 Bu ayrıntılı günlük dosyaları doğrudan bu sorunu gidermek için yeterli ipuçları belirtmezseniz, lütfen [yeni bir hata raporu dosya](https://bugzilla.xamarin.com/newbug) ve adım 5 ve 6. adım .log dosyasından .zip dosyasını ekleyin.
 

@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 82bcd29a201be01bc8123e313e5a76b82668cb85
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b8d3fc920610b357520dfebddb79492c44d4781c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="stack-view"></a>Yığın Görünümü
 
@@ -62,7 +62,7 @@ Konum:
 Bir yığın görünümü ile çalışırken, düşünebilirsiniz **hizalama** olarak **X** ve **Y** alt görünüm konumunu ve **dağıtım** olarak **Yükseklik** ve **genişliği**.
 
 > [!IMPORTANT]
-> **Not:** `UIStackView` tasarlanmıştır işleme olmayan kapsayıcı görünüm olarak ve bu nedenle, diğer alt sınıflarının gibi tuvale çizildiğinde değil `UIView`. Bu nedenle gibi özellikleri ayarlamak `BackgroundColor` veya geçersiz kılma `DrawRect` visual hiçbir etkisi olmaz.
+> `UIStackView` tasarlanmış bir işleme olmayan kapsayıcı görünüm olarak ve bu nedenle, diğer alt sınıflarının gibi tuvale çizildiğinde değil `UIView`. Bu nedenle gibi özellikleri ayarlamak `BackgroundColor` veya geçersiz kılma `DrawRect` visual hiçbir etkisi olmaz.
 
 Düzen, böylece aşağıdakine benzer bir etiket, ImageView, iki düğmeleri ve yatay bir yığın görünümü ekleyerek uygulamanın arabirimi devam edin:
 
@@ -209,7 +209,7 @@ Varsa `BaselineRelativeArrangement` özelliği `true`, subviews kullanmak yerine
  - Yatay bir yığın görünümü en uzun kendi alt görünüm için hem bir ilk ve son temel kullanır. En uzun görünüm aynı zamanda bir yığın görünüm ise, en uzun alt görünüm taban çizgisi olarak kullanır.
 
 > [!IMPORTANT]
-> **Not:** taban çizgisi hizalama taban yanlış konuma hesaplanır gibi uzamış ya da sıkıştırılmış alt görünüm boyutlarına çalışmaz. Alt Görünüm'ın sağlamak için taban çizgisi hizalamasını, **yükseklik** iç içerik görünümün eşleşen **yükseklik**.
+> Taban çizgisi yanlış konuma hesaplanır gibi temel hizalama uzamış ya da sıkıştırılmış alt görünüm boyutlarına çalışmaz. Alt Görünüm'ın sağlamak için taban çizgisi hizalamasını, **yükseklik** iç içerik görünümün eşleşen **yükseklik**.
 
 ### <a name="common-stack-view-uses"></a>Ortak yığın görünümü kullanır
 

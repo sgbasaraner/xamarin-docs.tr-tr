@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: d9e38f055414ff0eca70df4a4e38aa959b7d7237
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff19048504ee76db614306adebb71b7237139091
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>İOS için Xamarin Tasarımcısı ile otomatik Düzenle
 
@@ -88,7 +88,7 @@ Bir kısıtlama oluşturmak için bir tanıtıcı seçin ve herhangi bir yerde t
 Üç kesikli çizgiler diğer iki düğmeleri arasında unutmayın. Çizgiler belirtmek *bırakma alanları*, veya biz sınırlamak diğer öğeleri özniteliklerini. Yukarıdaki ekran görüntüsünde, diğer iki düğmeleri 3 Dikey bırakma alanlarını sunma ( *alt*, *centerY*, *üst*) bizim düğmesi sınırlamak için. Üst görünümünün yeşil kesikli çizgi kısıtlaması üst görünümün görünüm denetleyicisi sunar ve Düz yeşil kutunun üst düzen kılavuzu aşağıda bir kısıtlama görünümü denetleyicisi sunar anlamına gelir anlamına gelir.
 
 > [!IMPORTANT]
-> **Not**: Düzen kılavuzları bize durum çubukları veya araç çubukları gibi sistem çubukları varlığını dikkate üst ve alt kısıtlamalar oluşturmak izin kısıtlaması hedefler özel türleridir. Ana kullanır durum çubuğunun altında genişletme kapsayıcı görünümü en yeni sürüme sahip olduğundan iOS 6 ve iOS 7 arasında uyumlu bir uygulama için biridir. Üst düzen kılavuzu üzerinde daha fazla bilgi için bkz [Apple belgeleri](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
+> Düzen kılavuzları, bize üst oluşturmak izin kısıtlaması hedefleri ve durum çubukları veya araç çubukları gibi sistem çubukları varlığını dikkate alt kısıtlamalar özel türleridir. Ana kullanır durum çubuğunun altında genişletme kapsayıcı görünümü en yeni sürüme sahip olduğundan iOS 6 ve iOS 7 arasında uyumlu bir uygulama için biridir. Üst düzen kılavuzu üzerinde daha fazla bilgi için bkz [Apple belgeleri](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
 
 
 

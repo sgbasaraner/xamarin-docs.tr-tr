@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 48489ca7dc28dcc14a7810b15dc1ffa1fd4f7cf4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f619123fec036dfe919e977b4f218e8d235f0b82
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-web-services"></a>Web hizmetlerine giriş
 
@@ -29,8 +29,8 @@ Bu makalede aşağıdaki konular ele alınmıştır:
 Xamarin.Forms kullanan müşteriler için bu teknolojilerin her kullanarak tam örnekler vardır [Xamarin.Forms Web Hizmetleri](~/xamarin-forms/data-cloud/index.md) belgeleri.
 
 > [!IMPORTANT]
-> **Xamarin.iOS için Not:** iOS 9'da, böylece hassas bilgilerin yanlışlıkla açığa önleme uygulama Aktarım güvenlik (ATS) Internet kaynakların (örneğin, uygulamanızın arka uç sunucusu) ve uygulama arasında güvenli bağlantı zorlar. ATS uygulamaları iOS 9 yerleşik varsayılan olarak etkin olduğundan, tüm bağlantıları ATS güvenlik gereksinimlerini tabi olacaktır. Bağlantıları bu gereksinimlerini karşılamıyorsa, bir özel durum ile başarısız olur.
-
+> İOS 9'da, böylece hassas bilgilerin yanlışlıkla açığa önleme uygulama Aktarım güvenlik (ATS) Internet kaynakların (örneğin, uygulamanızın arka uç sunucusu) ve uygulama arasında güvenli bağlantı zorlar.
+> ATS uygulamaları iOS 9 yerleşik varsayılan olarak etkin olduğundan, tüm bağlantıları ATS güvenlik gereksinimlerini tabi olacaktır. Bağlantıları bu gereksinimlerini karşılamıyorsa, bir özel durum ile başarısız olur.
 
 Size ATS kullanmak mümkün değilse çevirin `HTTPS` protokolü ve güvenli iletişim Internet kaynakların. Bu uygulamanın güncelleştirerek sağlanabilir **Info.plist** dosya. Daha fazla bilgi için bkz: [uygulama taşıma güvenliği](~/ios/app-fundamentals/ats.md).
 
@@ -191,7 +191,7 @@ client.GetAsync<CustomersResponse>("",
 ```
 
 > [!IMPORTANT]
-> **Not:** ServiceStack ve RestSharp çağırın ve kullanmak kolaylaştırmak gibi araçlar Hizmetleri REST olsa da, bazen XML veya standart uymuyor JSON tüketmeye Önemsiz olmayan _DataContract_ seri hale getirme kuralları. Gerekirse, istek çağırma ve açıkça aşağıda ele ServiceStack.Text kitaplığını kullanarak uygun serileştirme tanıtıcı.
+> ServiceStack ve RestSharp çağırın ve kullanmak kolaylaştırmak gibi araçlar Hizmetleri REST olsa da, bazen XML veya standart uymuyor JSON tüketmeye Önemsiz olmayan _DataContract_ serileştirme kuralları. Gerekirse, istek çağırma ve açıkça aşağıda ele ServiceStack.Text kitaplığını kullanarak uygun serileştirme tanıtıcı.
 
 
 <a name="Options_for_consuming_RESTful_data" />

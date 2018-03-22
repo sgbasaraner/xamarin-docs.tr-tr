@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: a0b0ca9857e706a9a84f1c661f7f6ff294e112c1
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 85c05145ce2490468ac5d5fb9b8524853d46a9e3
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-storyboards"></a>Film şeritleri giriş
 
@@ -60,7 +60,7 @@ Fare yukarı üzerinde bize bizim segue eylemini seçin izin vererek bir menüs�
 [![](images/16new.png "Boyut sınıfına sahip eylem ü açılır")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
-> **Not:** , Windows sanal makinenizde VMWare kullanıyorsanız, CTRL tuşuna basıp tıklayın olarak eşlenmiş _sağ_ fare düğmesini varsayılan olarak. Bir Segue oluşturmak için klavye tercihlerinizi aracılığıyla düzenleyin **Tercihler** > **klavye ve fare** > **Fare kısayolları** ve yeniden eşleme, **İkincil düğme** aşağıda gösterildiği gibi:
+> Windows sanal makineniz için VMWare kullanıyorsanız, CTRL tuşuna basıp tıklayın olarak eşlenmiş _sağ_ fare düğmesini varsayılan olarak. Bir Segue oluşturmak için klavye tercihlerinizi aracılığıyla düzenleyin **Tercihler** > **klavye ve fare** > **Fare kısayolları** ve yeniden eşleme, **İkincil düğme** aşağıda gösterildiği gibi:
 > 
 > [![](images/image22.png "Klavye ve fare tercih ayarları")](images/image22.png#lightbox)
 > 

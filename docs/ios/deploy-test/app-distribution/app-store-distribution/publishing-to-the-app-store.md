@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef8fafb923dcad936ce0a049e715cdd163ea7222
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Uygulama mağazası yayımlama
 
@@ -185,7 +185,7 @@ Düzgün şekilde yapılandırılıp yapılandırılmadığını Xamarin.iOS uyg
 
 
 > [!NOTE]
-> Not: While eski _App Store_ ve _geçici_ yapılandırmaları şimdi kaldırılmış tüm Mac şablon projeleri için Visual Studio, eski proje hala Bu yapılandırmalar dahil bulabilirsiniz . Bu durumda, kullanmaya devam edebilirsiniz **App Store | Aygıt** listenin yukarıdaki 1. adımda yapılandırma.
+> While eski _App Store_ ve _geçici_ yapılandırmaları şimdi kaldırılmış tüm Mac şablon projeleri için Visual Studio, eski projeleri hala Bu yapılandırmalar içerdiğini fark edebilirsiniz. Bu durumda, kullanmaya devam edebilirsiniz **App Store | Aygıt** listenin yukarıdaki 1. adımda yapılandırma.
 
 ### <a name="sign-and-distribute-your-app"></a>Oturum ve uygulamanızı dağıtın
 
@@ -309,7 +309,7 @@ Dağıtımınız ile derleme oluşturulur ve arşivleneceğini, artık iTunes Ba
 ## <a name="submitting-your-app-to-apple"></a>Uygulamanızı apple'a gönderiliyor
 
 > [!NOTE]
-> Not: Apple iOS uygulamaları için doğrulama işlemi son zamanlarda değişti ve uygulamalarla reddedebilir `iTunesMetadata.plist` IPA dahil. Hatayla karşılaşırsanız `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`açıklanan geçici çözüm [burada](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) sorun gidermeniz gerekir.
+> Apple iOS uygulamaları için doğrulama işlemi son zamanlarda değişti ve uygulamalarla reddedebilir `iTunesMetadata.plist` IPA dahil. Hatayla karşılaşırsanız `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`açıklanan geçici çözüm [burada](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) sorun gidermeniz gerekir.
 
 Dağıtım yapı tamamlandı, iOS uygulamanız gözden geçirme için Apple göndermek ve App Store'da sürüm hazır olursunuz.
 

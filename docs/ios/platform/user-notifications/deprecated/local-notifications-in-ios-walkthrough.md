@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 72a66fae7a1d4554643c1b52796256cc0b3dbd31
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 846b292aed73a4980f4ce711ecefe4382fa7a321
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>İzlenecek yol - yerel bildirimler Xamarin.iOS içinde kullanma
 
 _Bu bölümde biz yerel bildirimlerinin bir Xamarin.iOS uygulaması nasıl kullanılacağını size rehberlik. Oluşturma ve uygulama tarafından alındığında bir uyarı oluşturan pop bir bildirim yayımlama temellerini gösterecek._
 
 > [!IMPORTANT]
-> **Not:** bu bölümdeki bilgiler, iOS 9 ilgilidir ve önceki, bunu burada daha önceki iOS sürümlerini desteklemek için bırakıldı. 10 ve üzeri iOS için lütfen bkz. [Kullanıcı bildirim Framework Kılavuzu](~/ios/platform/user-notifications/index.md) hem yerel hem de uzak bildirim iOS cihazında desteklemek için.
+> Bu bölümdeki bilgiler, iOS 9 ilgilidir ve önceki, bunu burada daha önceki iOS sürümlerini desteklemek için bırakıldı. 10 ve üzeri iOS için lütfen bkz. [Kullanıcı bildirim Framework Kılavuzu](~/ios/platform/user-notifications/index.md) hem yerel hem de uzak bildirim iOS cihazında desteklemek için.
 
 ## <a name="walkthrough"></a>İzlenecek yol
 

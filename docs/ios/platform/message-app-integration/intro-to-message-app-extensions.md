@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d9b6b5a778e0e4d5092d1036109f82896acf639b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 083920aba3c8dc83b157b591e194c43935dcc566
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="message-app-extension-basics"></a>İleti Uygulama Uzantısı temelleri
 
@@ -87,7 +87,7 @@ Görüntüyü bir etiket paketine dahil edilecek aşağıdaki gereksinimleri kar
 - Görüntüleri 206 x 206 işaret noktaları 100 x 100'den küçük veya büyük olamaz.
 
 > [!IMPORTANT]
-> **Not:** etiketi görüntüleri her zaman sağlanmalıdır adresindeki `@3x` 300 x 300 için 618 x 618 piksel aralığında çözümleme. Sistem otomatik olarak oluşturur `@2x` ve `@1x` gerektiği gibi çalışma zamanında sürümleri.
+> Etiket görüntüleri her zaman sağlanmalıdır adresindeki `@3x` 300 x 300 için 618 x 618 piksel aralığında çözümleme. Sistem otomatik olarak oluşturur `@2x` ve `@1x` gerektiği gibi çalışma zamanında sürümleri.
 
 Apple, bunlar tüm olası durumlarda en iyi göründüğünden emin olmak için etiket görüntü varlıklarının çeşitli farklı renkli arka plan (örneğin, beyaz, siyah, kırmızı, sarı ve çok renkli) ve üstünde fotoğraf karşı test önerir.
 

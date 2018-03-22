@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/25/2017
-ms.openlocfilehash: 7329e8ddb5b86adcf6e1efaa805149012be8853c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1dbff32b113bd1c3a6b2058a34c73977c59c9e5
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac nasıl çalışır?
 
@@ -109,7 +109,7 @@ Uygulama Nesne AĞACI etkin Xamarin.Mac çift tıklatarak **proje adı** içinde
 ![Uygulama Nesne AĞACI ek mmp bağımsız değişkenleri ekleme](how-it-works-images/aot01.png "Uygulama Nesne AĞACI ek mmp bağımsız değişkenleri ekleme")
 
 > [!IMPORTANT]
-> UYARI! Uygulama Nesne AĞACI etkinleştirme derleme bazen birkaç dakika kadar derleme zamanı önemli ölçüde artırır, ancak % 20 ortalama tarafından uygulama başlatma sürelerini geliştirebilir. Sonuç olarak, uygulama nesne AĞACI derleme yalnızca etkinleştirilmesi **sürüm** bir Xamarin.Mac uygulamasının oluşturur.
+> Uygulama Nesne AĞACI etkinleştirme derleme bazen birkaç dakika kadar derleme zamanı önemli ölçüde artırır, ancak % 20 ortalama tarafından uygulama başlatma sürelerini geliştirebilir. Sonuç olarak, uygulama nesne AĞACI derleme yalnızca etkinleştirilmesi **sürüm** bir Xamarin.Mac uygulamasının oluşturur.
 
 ### <a name="aot-compilation-options"></a>Uygulama Nesne Ağacı derleme seçenekleri
 
@@ -155,7 +155,7 @@ Kısmi statik kayıt içinde Xamarin.Mac çift tıklatarak etkin **proje adı** 
 Şeyler dahili olarak nasıl hakkında ile ilgili daha ayrıntılı bazı açıklamalar şunlardır:
 
 - [Objective-C seçiciler](~/ios/internals/objective-c-selectors.md)
-- [Kayıt şirketi](~/ios/internals/registrar.md)
+- [Kaydedici](~/ios/internals/registrar.md)
 - [İOS ve OS X için Xamarin Unified API](~/cross-platform/macios/unified/index.md)
 - [Theading temelleri](~/ios/app-fundamentals/threading.md)
 - [Temsilciler, protokolleri ve olaylar](~/ios/app-fundamentals/delegates-protocols-and-events.md)

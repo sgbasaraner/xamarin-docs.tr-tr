@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 2ee98b48feb8bc1e3431d796a7ca07a6c2e74790
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25c4cb980f77880ae690916ec45be3cd12a3cf10
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="app-store-distribution"></a>Uygulama mağazası dağıtım
 
@@ -37,7 +37,7 @@ Nasıl bir Xamarin.iOS uygulaması yayımlamayı planladığınız bağımsız o
 Aynı seçebileceğiniz **uygulama kimliği** ve **aygıtları** sağlama profili geliştirme için kullanılır, ancak zaten yoksa, tanımlamak için bir dağıtım sertifikası oluşturmanız gerekir, Uygulama mağazası uygulaması gönderirken kuruluş. Aşağıdaki bölümde dağıtım sertifikası oluşturma adımları açıklanmaktadır.
 
 > [!NOTE]
->  Not: Yalnızca Team aracıları ve yöneticilerin dağıtım sertifikalarını ve sağlama profilleri oluşturabilirsiniz.
+> Yalnızca Team aracıları ve yöneticilerin dağıtım sertifikalarını ve sağlama profilleri oluşturabilirsiniz.
 
 <a name="creatingcertificate" />
 

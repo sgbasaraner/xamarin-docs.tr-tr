@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 5e44635c9dfbe9fa069272f50d035476bd1aa6b9
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: f11305fcbf8a5b9bf6552fa31ecfa1c0e8e7a68f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manual-camera-controls"></a>El ile kamera denetimleri
 
@@ -881,7 +881,7 @@ Bir `AVCaptureWhiteBalanceTemperatureAndTintValues` yapısı ile aşağıdaki ü
 Kullanım `CaptureDevice.GetTemperatureAndTintValues`ve `CaptureDevice.GetDeviceWhiteBalanceGains`sıcaklık ve TINT, renk ve RGB arasında dönüştürme yöntemleri elde renk alanları.
 
 > [!NOTE]
-> **Not**: dönüştürme yordamları daha doğru yakınsa dönüştürülecek Planckian Locus değerdir.
+> Dönüştürme yordamları daha doğru yakınsa dönüştürülecek Planckian Locus değerdir.
 
 
 

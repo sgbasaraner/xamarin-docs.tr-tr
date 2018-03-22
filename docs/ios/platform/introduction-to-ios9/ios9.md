@@ -7,18 +7,18 @@ ms.assetid: 69A05B0E-8A0A-489F-8165-B10AC46FAF3C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bfdf0c73226eec472eb671d5543f5ce124919ab8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3f52ef88224e65f12502c9fbf82e240233890a82
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 uyumluluk
 
 _Hemen uygulamanıza iOS 9 özellikleri eklemeyi planladığınız yok olsa bile, uygulamalarınızı en son sürümünü Xamarin ile yeniden oluşturmalısınız._
 
 > [!IMPORTANT]
-> **Not:** bu bilgileri, bu sayfada zaten iOS 9 uyumluluk güncelleştirmeleri göndermedi uygulamaları iOS 8 veya daha önceki hedefleme uygulama Mağazası'nda zaten sahip müşteriler içindir. En son sürümleri - zaten kullanıyorsanız, Xcode 7 ve Xamarin.iOS 9 - uygulama geliştirme için lütfen ziyaret [iOS 9 giriş](~/ios/platform/introduction-to-ios9/index.md).
+> Bu sayfadaki bilgiler zaten uygulama Mağazası'ndaki uygulamaların olan iOS 8 hedefleme müşteriler için ya da daha önce kimin zaten iOS 9 uyumluluk güncelleştirmeleri göndermedi. En son sürümleri - zaten kullanıyorsanız, Xcode 7 ve Xamarin.iOS 9 - uygulama geliştirme için lütfen ziyaret [iOS 9 giriş](~/ios/platform/introduction-to-ios9/index.md).
 
 İlk iOS 9 Beta görüntülendiğinde iki sorunları eski uygulamaları iOS 9 başlatmak erişememe bildirilen Xamarin daha eski sürümleriyle belirledik.
 
@@ -110,5 +110,5 @@ Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaSc
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [iOS 9 uyumluluk sürüm bilgisi](https://releases.xamarin.com/ios-hotfix-for-ios-9-preview-xcode-6/)
-- [İOS 9 giriş](~/ios/platform/introduction-to-ios9/index.md)
+- [iOS 9’a Giriş](~/ios/platform/introduction-to-ios9/index.md)
 - [Xamarin.iOS uygulamaları iOS9 (video) güncelleştiriliyor](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)

@@ -6,11 +6,11 @@ ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: c4eed99533ba1aca1bd5ba23078866909330b542
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c0369fe52897a2557a92fd56ebcd816b8427faf7
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>İOS içinde Backgrounding giriş
 
@@ -67,7 +67,7 @@ Uygulama değiştirici iOS 7 sunulan, önemli denetim bir özelliktir. Çift dok
 Uygulama değiştirici kullanarak, kullanıcıların tüm backgrounded ve askıya alınmış uygulamaları anlık görüntüleri gezinebilirsiniz. Bir uygulama dokunarak ön alana başlatır. Yukarı geçirmeyi uygulamayı, işlem sonlandırılıyor arka plandan kaldırır. Biz uygulama değiştirici yakından sürer [iOS uygulama yaşam döngüsü Demo](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md) sonraki bölümde.
 
 > [!IMPORTANT]
-> **Not**: uygulama değiştirici backgrounded ve askıya alınmış uygulamalar arasında bir fark gösterme.
+> Uygulama değiştirici backgrounded ve askıya alınmış uygulamalar arasında bir fark göstermez.
 
 
 

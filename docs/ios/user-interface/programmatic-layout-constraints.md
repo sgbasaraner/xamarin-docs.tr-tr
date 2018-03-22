@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 4a3450026eff06555723b16093c7a0daf3d12ae7
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 774d6e6ecdb081650c6f008b1ac83c397f788d5b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="programmatic-layout-constraints"></a>Programsal düzeni kısıtlamaları
 
@@ -43,7 +43,7 @@ Aşağıdaki bölümlerde, her seçenek ayrıntılı üzerinden geçer.
 Kullanarak `NSLayoutAnchor` sınıfı, kısıtlanmasını kullanıcı Arabirimi öğeleri bağlantı özelliklerini temel kısıtlamalar oluşturmak için bir fluent arabirimi içeriyor. Örneğin, bir görünüm denetleyicisinin üst ve alt düzeni açığa çıkarır kılavuzları `TopAnchor`, `BottomAnchor` ve `HeightAnchor` kenar, merkezi, boyutu ve temel özellikleri bir görünüm sunar ancak bağlantı özellikleri.
 
 > [!IMPORTANT]
-> **Not:** standart bağlantı özellikler kümesini yanı sıra iOS görünümleri de dahil `LayoutMarginsGuides` ve `ReadableContentGuide` özellikleri. Bu özellikleri kullanıma `UILayoutGuide` nesneleri görünümün kenar boşlukları ve okunabilir çalışmak için kılavuzları sırasıyla içerik.
+> Bağlantı özellikleri standart kümesi yanı sıra iOS görünümleri de dahil `LayoutMarginsGuides` ve `ReadableContentGuide` özellikleri. Bu özellikleri kullanıma `UILayoutGuide` nesneleri görünümün kenar boşlukları ve okunabilir çalışmak için kılavuzları sırasıyla içerik.
 
 Düzen bağlayıcılarını bir kolay okunur, sıkıştırılmış biçimde kısıtlamalar oluşturmak için birkaç yöntem sağlar:
 

@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a8ae55f9cc3e2dd4818dec96a35017c76cc9623
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1b36d3ba8601d125d0a17173efb12c249224e78
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="notifications-in-xamarinios"></a>Xamarin.iOS bildirimleri
 
 _Bu bölümde Xamarin.iOS yerel bildirimleri uygulamak gösterilmektedir. Bu bir iOS bildirim çeşitli kullanıcı Arabirimi öğelerini açıklar ve API ele oluşturma ve bir bildirim görüntüleme ile söz konusu._
 
 > [!IMPORTANT]
-> **Not:** bu bölümdeki bilgiler, iOS 9 ilgilidir ve önceki, bunu burada daha önceki iOS sürümlerini desteklemek için bırakıldı. 10 ve üzeri iOS için lütfen bkz. [Kullanıcı bildirim Framework Kılavuzu](~/ios/platform/user-notifications/index.md) hem yerel hem de uzak bildirim iOS cihazında desteklemek için.
+> Bu bölümdeki bilgiler, iOS 9 ilgilidir ve önceki, bunu burada daha önceki iOS sürümlerini desteklemek için bırakıldı. 10 ve üzeri iOS için lütfen bkz. [Kullanıcı bildirim Framework Kılavuzu](~/ios/platform/user-notifications/index.md) hem yerel hem de uzak bildirim iOS cihazında desteklemek için.
 
 iOS kullanıcıya bir bildirim alındı göstermek için üç yol vardır:
 
@@ -78,7 +78,7 @@ notification.SoundName = UILocalNotification.DefaultSoundName;
 Bir bildirim bir ses çalınırsa Apple İnsan Arabirimi yönergelerine göre bu da bir rozet veya uyarı uygulamayı tanımlamak kullanıcının yardımcı olmak için bir uyarı tarafından eşlik etmelidir. Ses 30 saniyeden daha uzun olması durumunda, ayrıca, iOS varsayılan Ses yerine yürütülür.
 
 > [!IMPORTANT]
-> **Not**: iki kez temsilci bildirim ateşlenir iOS benzeticisinde hata yoktur. Bu sorun, uygulama bir cihazda çalıştırıldığında, oluşmamalıdır.
+> İki kez temsilci bildirim ateşlenir iOS benzeticisinde hata yoktur. Bu sorun, uygulama bir cihazda çalıştırıldığında, oluşmamalıdır.
 
 ## <a name="handling-notifications"></a>Bildirimleri işleme
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d01130989336ada855e936a6597b517fab5ee69
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e0db9df11436cf1613ac5eacdf293245f99b8855
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ad-hoc-distribution"></a>Geçici dağıtım
 
@@ -39,7 +39,7 @@ Test amacıyla şirket içi dağıtım için bir Xamarin.iOS uygulaması yayıml
 Sonraki bölümde dağıtım sertifikası ve sağlama dağıtım profili nasıl oluşturulacağı açıklanmıştır.
 
 > [!NOTE]
->  Not: Yalnızca Team aracıları ve yöneticilerin dağıtım sertifikalarını ve sağlama profilleri oluşturabilirsiniz.
+> Yalnızca Team aracıları ve yöneticilerin dağıtım sertifikalarını ve sağlama profilleri oluşturabilirsiniz.
 
 <a name="createcertificate" />
 

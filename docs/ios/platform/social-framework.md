@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 9892577d7e0ed3d3f622f881cc51db09eb44a8fd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7a190014abd3386a3a675d50ce6a89101d0588a7
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="social-framework"></a>Sosyal Framework
 
@@ -22,7 +22,7 @@ _Sosyal Framework Çin'de kullanıcıları için SinaWeibo yanı sıra Twitter v
 Sosyal Framework kullanarak uygulamaların tek API'sinden sosyal ağlarla kimlik doğrulamasını yönetmek zorunda kalmadan etkileşime izin verir. Görünüm denetleyicisini gönderileri yanı sıra her sosyal ağ API HTTP üzerinden tüketen izin veren bir Özet oluşturma için sağlanan bir sistem içerir.
 
 > [!IMPORTANT]
-> **Not:** bir platformlar arası API çeşitli sosyal ağlara bağlanmak, bkz: [Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) Xamarin bileşen Deposu'nda bileşen.
+> Platformlar arası API çeşitli sosyal ağlara bağlanmak bkz: [Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) Xamarin bileşen Deposu'nda bileşen.
 
 ## <a name="connecting-to-twitter"></a>Twitter hesabına bağlanma
 
