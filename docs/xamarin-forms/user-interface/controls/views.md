@@ -1,6 +1,6 @@
 ---
-title: "Xamarin.Forms görünümleri"
-description: "Xamarin.Forms görünümleri platformlar arası mobil kullanıcı arabirimleri yapı taşlarıdır."
+title: Xamarin.Forms görünümleri
+description: Xamarin.Forms görünümleri platformlar arası mobil kullanıcı arabirimleri yapı taşlarıdır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
@@ -8,8 +8,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: f7d27c5226741ec2b105633206ebaa0ac73d9a7b
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 45dc110104d7bb064aff1c883f65d894cbe6402f
+ms.sourcegitcommit: c3abb91d1a944de07d1b2b0878b02752c768d722
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 03/22/2018
@@ -100,7 +100,7 @@ Etiketler, düğmeler ve yaygın olarak da bilinir kaydırıcılar gibi kullanı
 
 |     |     |
 | --- | --- |
-| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) kullanıcının bir Boole değeri seçmesine izin veren bir açık/kapalı anahtar biçimini alır. [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) Anahtarının durumunu bir özelliktir ve [ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) durumu değiştiğinde olay tetiklenir.<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![Geçiş örnek](views-images/Switch.png "geçiş örnek")](views-images/Stepper-Large.png#lightbox "geçiş örnek")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
+| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) kullanıcının bir Boole değeri seçmesine izin veren bir açık/kapalı anahtar biçimini alır. [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) Anahtarının durumunu bir özelliktir ve [ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) durumu değiştiğinde olay tetiklenir.<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![Geçiş örnek](views-images/Switch.png "geçiş örnek")](views-images/Switch-Large.png#lightbox "geçiş örnek")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
 |     |     |
 
 ### <a name="datepicker"></a>DatePicker
