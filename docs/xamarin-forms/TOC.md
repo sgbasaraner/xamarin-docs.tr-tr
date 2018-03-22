@@ -180,6 +180,7 @@
 ### [Seçici](user-interface/picker/index.md)
 #### [Bir Seçicinin ItemsSource Özelliğini Ayarlama](user-interface/picker/populating-itemssource.md)
 #### [Bir Seçicinin Öğe Koleksiyonuna Veri Ekle](user-interface/picker/populating-items.md)
+### [Kaydırıcı](user-interface/slider.md)
 ### [Stiller](user-interface/styles/index.md)
 #### [Giriş](user-interface/styles/introduction.md)
 #### [Açık Stiller](user-interface/styles/explicit.md)
