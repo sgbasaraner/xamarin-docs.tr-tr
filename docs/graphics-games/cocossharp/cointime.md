@@ -1,6 +1,6 @@
 ---
-title: "Para zaman uygulama ayrıntıları"
-description: "Bu kılavuz para zaman oyundaki döşeme Eşlemleriyle Çalışma, varlıkları oluşturma, hareketli grafik animasyonu ve verimli çakışma uygulama da dahil olmak üzere uygulama ayrıntılarını açıklanır."
+title: Para zaman uygulama ayrıntıları
+description: Bu kılavuz para zaman oyundaki döşeme Eşlemleriyle Çalışma, varlıkları oluşturma, hareketli grafik animasyonu ve verimli çakışma uygulama da dahil olmak üzere uygulama ayrıntılarını açıklanır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5D285684-0417-4E16-BD14-2D1F6DEFBB8B
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: b3827d05ae9e563ae04dd4ab1e303577f6c9d82a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="coin-time-implementation-details"></a>Para zaman uygulama ayrıntıları
 
@@ -61,10 +61,7 @@ Döşeme tıklayarak yerleştirilebilen **mastersheet** tileset ve kutucuğa tı
 1. Çizmek için kutucuğa tıklayın
 1. Veya itme tıklatıp kutucuğu boyamak için harita üzerinde sürükleyin
 
-
     ![](cointime-images/image2.png "1 çizmek için kutucuğa tıklayın")
-
- 
 
 Tileset sol üst tüm para zaman terrain içerir. Düz, terrain içeren **SolidCollision** ekranın sol bölme özelliklerinde gösterildiği gibi özelliği:
 
@@ -97,15 +94,11 @@ Para zaman düzeyleri ekleme işlemini hiçbir kod değişikliklerini ve yalnız
 1. Varolan düzeyleriyle düzeyi numara sırası gibi devam eder yeni .tmx dosyasını yeniden adlandırın **level8.tmx**
 1. Visual Studio veya Mac için Visual Studio'da yeni .tmx dosyası Android düzeyleri klasörüne ekleyin. Dosya kullandığını doğrulayın **AndroidAsset** derleme eylemi.
 
-
     ![](cointime-images/image8.png "Dosya AndroidAsset yapı eylemi kullandığını doğrulayın")
-
 
 1. Yeni .tmx dosyası iOS düzeyleri klasörüne ekleyin. Özgün konumuna dosyasından bağlamak ve bunu kullandığını doğrulamak mutlaka **BundleResource** derleme eylemi.
 
-
     ![](cointime-images/image9.png "Özgün konumuna dosyasından bağlamak ve BundleResource yapı eylemi kullandığını doğrulamak emin olun")
-
 
 Yeni düzeyi düzeyi seçin ekranında düzeyi 9 görünmesi gereken (düzey dosya adları 0'da başlatılır, ancak düzey düğmeleri numarası 1 ile başlayan):
 

@@ -1,6 +1,6 @@
 ---
 title: Azure arama ile veri arama
-description: "Azure Search dizin oluşturma ve karşıya yüklenen veriler için özellikleri sorgulama sağlayan bir bulut hizmetidir. Bu, geleneksel bir uygulamada arama işlevini uygulama ile ilişkili arama algoritması karmaşıklık ve altyapı gereksinimleri kaldırır. Bu makalede, Microsoft Azure arama kitaplığı bir Xamarin.Forms uygulamasına Azure Search tümleştirmek için nasıl kullanılacağı gösterilmektedir."
+description: Azure Search dizin oluşturma ve karşıya yüklenen veriler için özellikleri sorgulama sağlayan bir bulut hizmetidir. Bu, geleneksel bir uygulamada arama işlevini uygulama ile ilişkili arama algoritması karmaşıklık ve altyapı gereksinimleri kaldırır. Bu makalede, Microsoft Azure arama kitaplığı bir Xamarin.Forms uygulamasına Azure Search tümleştirmek için nasıl kullanılacağı gösterilmektedir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: bf6b9f8aaa07e934a1e707b85ecaa24e4f3d99bf
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 24db1404e218eea86356f9bbc004e7d5850c2e7a
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="searching-data-with-azure-search"></a>Azure arama ile veri arama
 
@@ -119,7 +119,7 @@ searchClient.Indexes.Delete(Constants.Index);
 
 Dizin tanımladıktan sonra verileri iki modelden birini kullanarak karşıya yüklenebilir:
 
-- **Model çekme** – verileri düzenli aralıklarla alınan Azure DocumentDB, Azure SQL Database, Azure Blob Depolama veya SQL Server barındırılan bir Azure sanal makinesine.
+- **Model çekme** – verileri düzenli aralıklarla alınan Azure Cosmos DB, Azure SQL Database, Azure Blob Depolama veya SQL Server barındırılan bir Azure sanal makinesine.
 - **Model anında** – veri dizine program aracılığıyla gönderilir. Bu, bu makaledeki benimsenen modelidir.
 
 A `SearchIndexClient` örneği dizinine veri aktarmak için oluşturulması gerekir. Bu çağırarak gerçekleştirilebilir `SearchServiceClient.Indexes.GetClient` aşağıdaki kod örneğinde gösterildiği şekilde yöntemi:

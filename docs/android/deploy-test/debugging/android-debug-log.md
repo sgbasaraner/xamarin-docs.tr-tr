@@ -1,17 +1,17 @@
 ---
-title: "Android hata ayıklama günlüğü"
+title: Android hata ayıklama günlüğü
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2018
-ms.openlocfilehash: 2e3225c0b0f984e52507ac472e26c4aee6a76909
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.date: 03/22/2018
+ms.openlocfilehash: 1b6b8ed99c3b2ccc9c39499c9bb9f585bd335c46
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="android-debug-log"></a>Android hata ayıklama günlüğü
 
@@ -110,17 +110,24 @@ Cihaz seçtikten sonra **aygıt günlük** aracı otomatik olarak çalışan bir
 
 Komut satırı aracılığıyla hata ayıklama günlüğünü görüntülemek için başka bir seçenek değil. Bir komut istemi penceresi açın ve Android SDK platformunuzun Araçlar klasöre gidin (genellikle, SDK platformunuzun Araçlar klasöründen bulunur **C:\\Program Files (x86)\\Android\\android sdk\\ Platform araçlarını**).
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-Komut satırı aracılığıyla hata ayıklama günlüğünü görüntülemek için başka bir seçenek değil. Bir Terminal penceresi açın ve Android SDK platformunuzun Araçlar klasöre gidin (genellikle, SDK platformunuzun Araçlar klasöründen bulunur **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**).
-
------
-
 Yalnızca tek bir cihazı (fiziksel cihaz veya öykünücü) bağlı, günlük aşağıdaki komutu girerek görüntülenebilir:
 
 ```shell
 $ adb logcat
 ```
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+
+Komut satırı aracılığıyla hata ayıklama günlüğünü görüntülemek için başka bir seçenek değil. Bir Terminal penceresi açın ve Android SDK platformunuzun Araçlar klasöre gidin (genellikle, SDK platformunuzun Araçlar klasöründen bulunur **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**).
+
+Yalnızca tek bir cihazı (fiziksel cihaz veya öykünücü) bağlı, günlük aşağıdaki komutu girerek görüntülenebilir:
+
+```shell
+$ ./adb logcat
+```
+
+-----
+
 
 Birden çok aygıt bağlıysa, aygıt açıkça tanımlanmalıdır. Örneğin **adb -d logcat** yalnızca fiziksel cihazın günlük görüntüler bağlı, ancak **adb -e logcat** çalıştıran yalnızca öykünücüsü günlüğünü gösterir.
 

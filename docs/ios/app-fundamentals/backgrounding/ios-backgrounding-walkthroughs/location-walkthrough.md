@@ -1,5 +1,5 @@
 ---
-title: "İzlenecek yol - arka plan konumu kullanma"
+title: İzlenecek yol - arka plan konumu kullanma
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: dfae07d36c67c12d254cd70c22acb01b2fc1c9b0
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: efdabc5450b186c89785ee3cb19a3decdd6c2064
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="walkthrough---using-background-location"></a>İzlenecek yol - arka plan konumu kullanma
 
@@ -28,7 +28,6 @@ Bu kılavuzda bazı anahtar kavramlar, bir uygulama bir arka plan gerekli uygula
 
     Çözüm Gezgini altında çift tıklatın **Info.plist** dosyasını açın ve listenin alt kısmına kaydırın. Her ikisi için de işaretleyin **arka plan modlarını etkinleştir** ve **konumu güncelleştirmeleri** onay kutuları.
 
-
     Mac için Visual Studio'da, onu şöyle bir şey gibi görünür:
 
     [![](location-walkthrough-images/image7.png "Arka plan modlarını etkinleştir ve konum güncelleştirmeleri onay kutularını işaretleyin")](location-walkthrough-images/image7.png#lightbox)
@@ -38,7 +37,7 @@ Bu kılavuzda bazı anahtar kavramlar, bir uygulama bir arka plan gerekli uygula
     ```xml
     <key>UIBackgroundModes</key>
     <array>
-        <string>location</string>
+      <string>location</string>
     </array>
     ```
 

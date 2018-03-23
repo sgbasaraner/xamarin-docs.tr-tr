@@ -1,6 +1,6 @@
 ---
-title: "Bir Azure Cosmos DB belge veritabanı kullanma"
-description: "Bir Azure Cosmos DB belge veritabanı sorunsuz ölçeklendirme ve genel çoğaltma gerektiren uygulamalar için hızlı, yüksek oranda kullanılabilir, ölçeklenebilir veritabanı hizmet sunumu, JSON belgelerini düşük gecikmeli erişim sağlayan bir NoSQL veritabanıdır. Bu makalede, Microsoft Azure DocumentDB istemci kitaplığı Azure Cosmos DB belge veritabanı bir Xamarin.Forms uygulamasına tümleştirmek için nasıl kullanılacağı açıklanmaktadır."
+title: Bir Azure Cosmos DB belge veritabanı kullanma
+description: Bir Azure Cosmos DB belge veritabanı sorunsuz ölçeklendirme ve genel çoğaltma gerektiren uygulamalar için hızlı, yüksek oranda kullanılabilir, ölçeklenebilir veritabanı hizmet sunumu, JSON belgelerini düşük gecikmeli erişim sağlayan bir NoSQL veritabanıdır. Bu makalede Azure Cosmos DB standart .NET istemci kitaplığı Azure Cosmos DB belge veritabanı bir Xamarin.Forms uygulamasına tümleştirmek için nasıl kullanılacağı açıklanmaktadır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
@@ -9,15 +9,15 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 5013b35828cecc2e38600839f306f3c0fc1366b9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e2fa5ae12531069e1ad1bc19e110e4dcffe23a02
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Bir Azure Cosmos DB belge veritabanı kullanma
 
-_Bir Azure Cosmos DB belge veritabanı sorunsuz ölçeklendirme ve genel çoğaltma gerektiren uygulamalar için hızlı, yüksek oranda kullanılabilir, ölçeklenebilir veritabanı hizmet sunumu, JSON belgelerini düşük gecikmeli erişim sağlayan bir NoSQL veritabanıdır. Bu makalede, Microsoft Azure DocumentDB istemci kitaplığı Azure Cosmos DB belge veritabanı bir Xamarin.Forms uygulamasına tümleştirmek için nasıl kullanılacağı açıklanmaktadır._
+_Bir Azure Cosmos DB belge veritabanı sorunsuz ölçeklendirme ve genel çoğaltma gerektiren uygulamalar için hızlı, yüksek oranda kullanılabilir, ölçeklenebilir veritabanı hizmet sunumu, JSON belgelerini düşük gecikmeli erişim sağlayan bir NoSQL veritabanıdır. Bu makalede Azure Cosmos DB standart .NET istemci kitaplığı Azure Cosmos DB belge veritabanı bir Xamarin.Forms uygulamasına tümleştirmek için nasıl kullanılacağı açıklanmaktadır._
 
 > [!VIDEO https://youtube.com/embed/BoVH12igmbg]
 
@@ -33,23 +33,20 @@ Geliştirme amaçlı bir belge veritabanı bir öykünücü tüketilebilir. Öyk
 
 Bu makalede ve örnek uygulama ile birlikte gelen görevleri bir Azure Cosmos DB belge veritabanında depolandığı bir Yapılacaklar listesi uygulaması gösterir. Örnek uygulama hakkında daha fazla bilgi için bkz: [örnek anlama](~/xamarin-forms/data-cloud/walkthrough.md).
 
-> [!NOTE]
-> DocumentDB istemci kitaplığı şu anda Evrensel Windows Platformu (UWP) uygulamaları ile uyumlu değil. Ancak, bir Azure Cosmos DB belge veritabanı bir UWP uygulamasından DocumentDB istemci kitaplığı kullanan bir orta katman web hizmeti oluşturma ve bu hizmetten UWP uygulaması çağırma tarafından kullanılabilir.
-
 Azure Cosmos DB hakkında daha fazla bilgi için bkz: [Azure Cosmos DB belgeleri](/azure/cosmos-db/).
 
 ## <a name="setup"></a>Kurulum
 
 Bir Azure Cosmos DB belge veritabanı bir Xamarin.Forms uygulamayla tümleştirmek için işlem aşağıdaki gibidir:
 
-1. Cosmos DB hesabı oluşturun. Daha fazla bilgi için bkz: [Cosmos DB hesabı oluşturma](/azure/cosmos-db/documentdb-dotnetcore-get-started#step-1-create-a-documentdb-account).
-1. Ekleme [DocumentDB istemci Kitaplığı](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core) Xamarin.Forms çözüm platformu projelerin için NuGet paketi.
+1. Cosmos DB hesabı oluşturun. Daha fazla bilgi için bkz: [Azure Cosmos DB hesap oluşturmak](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account).
+1. Ekleme [Azure Cosmos DB standart .NET İstemci Kitaplığı](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core) Xamarin.Forms çözüm platformu projelerin için NuGet paketi.
 1. Ekleme `using` yönergeleri için `Microsoft.Azure.Documents`, `Microsoft.Azure.Documents.Client`, ve `Microsoft.Azure.Documents.Linq` Cosmos DB hesap erişecek sınıfları için ad alanları.
 
-Bu adımları gerçekleştirdikten sonra DocumentDB istemci kitaplığı yapılandırmak ve belge veritabanında isteklerini yürütmek için kullanılabilir.
+Bu adımları gerçekleştirdikten sonra Azure Cosmos DB standart .NET istemci kitaplığı yapılandırmak ve belge veritabanında isteklerini yürütmek için kullanılabilir.
 
 > [!NOTE]
-> Azure DocumentDB istemci kitaplığı yalnızca platform projelerine ve bir taşınabilir sınıf kitaplığı (PCL) projesine yüklenebilir. Bu nedenle, örnek bir paylaşılan erişim proje (kod yinelemesinden kaçınmak için SAP) uygulamasıdır. Ancak, `DependencyService` sınıfı platforma özgü projelerinde bulunan Azure DocumentDB istemci kitaplığı kod çağrılacak PCL projede kullanılabilir.
+> Azure Cosmos DB standart .NET istemci kitaplığı yalnızca platform projelerine ve bir taşınabilir sınıf kitaplığı (PCL) projesine yüklenebilir. Bu nedenle, örnek bir paylaşılan erişim proje (kod yinelemesinden kaçınmak için SAP) uygulamasıdır. Ancak, `DependencyService` sınıfı platforma özgü projelerinde bulunan Azure Cosmos DB standart .NET istemci kitaplığı kodu çağrılacak PCL projede kullanılabilir.
 
 ## <a name="consuming-the-azure-cosmos-db-account"></a>Azure Cosmos DB hesabı kullanma
 
@@ -59,7 +56,7 @@ Bu adımları gerçekleştirdikten sonra DocumentDB istemci kitaplığı yapıla
 DocumentClient client = new DocumentClient(new Uri(Constants.EndpointUri), Constants.PrimaryKey);
 ```
 
-Cosmos DB URI ve birincil anahtar için sağlanmalıdır `DocumentClient` Oluşturucusu. Bu, Azure Portalı'ndan elde edilebilir. Daha fazla bilgi için bkz: [Azure Cosmos DB hesabına Bağlan](/azure/cosmos-db/documentdb-dotnetcore-get-started#a-idconnectastep-3-connect-to-an-azure-cosmos-db-account).
+Cosmos DB URI ve birincil anahtar için sağlanmalıdır `DocumentClient` Oluşturucusu. Bu, Azure Portalı'ndan elde edilebilir. Daha fazla bilgi için bkz: [Azure Cosmos DB hesabına Bağlan](/azure/cosmos-db/sql-api-dotnetcore-get-started#Connect).
 
 ### <a name="creating-a-database"></a>Veritabanı oluşturma
 
@@ -226,12 +223,12 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, Microsoft Azure DocumentDB istemci kitaplığı Azure Cosmos DB belge veritabanı bir Xamarin.Forms uygulamasına tümleştirmek için nasıl kullanılacağı açıklanmıştır. Bir Azure Cosmos DB belge veritabanı sorunsuz ölçeklendirme ve genel çoğaltma gerektiren uygulamalar için hızlı, yüksek oranda kullanılabilir, ölçeklenebilir veritabanı hizmet sunumu, JSON belgelerini düşük gecikmeli erişim sağlayan bir NoSQL veritabanıdır.
+Bu makalede Azure Cosmos DB standart .NET istemci kitaplığı Azure Cosmos DB belge veritabanı bir Xamarin.Forms uygulamasına tümleştirmek için nasıl kullanılacağı açıklanmıştır. Bir Azure Cosmos DB belge veritabanı sorunsuz ölçeklendirme ve genel çoğaltma gerektiren uygulamalar için hızlı, yüksek oranda kullanılabilir, ölçeklenebilir veritabanı hizmet sunumu, JSON belgelerini düşük gecikmeli erişim sağlayan bir NoSQL veritabanıdır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [TodoDocumentDB (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
-- [Cosmos DB belgeleri](/azure/cosmos-db/)
-- [DocumentDB istemci kitaplığı](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
-- [Azure Cosmos DB API](https://msdn.microsoft.com/library/azure/dn948556.aspx)
+- [Yapılacaklar Azure Cosmos DB (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
+- [Azure Cosmos DB belgeleri](/azure/cosmos-db/)
+- [Azure Cosmos DB .NET standart istemci kitaplığı](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Azure Cosmos DB API](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)

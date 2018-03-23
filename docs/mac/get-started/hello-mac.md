@@ -1,6 +1,6 @@
 ---
 title: Hello, Mac
-description: "Bu kılavuz, ilk Xamarin.Mac uygulama oluşturma adımları ve Mac, Xcode ve arabirim Oluşturucu için Visual Studio gibi geliştirme zincirinin işleminde sunmaktadır. Çıkışlar ve kod için UI denetimleri kullanıma, Eylemler, aynı zamanda sunar ve son olarak, oluşturmak, çalıştırmak ve Xamarin.Mac uygulamayı test etme göstermektedir."
+description: Bu kılavuz, ilk Xamarin.Mac uygulama oluşturma adımları ve Mac, Xcode ve arabirim Oluşturucu için Visual Studio gibi geliştirme zincirinin işleminde sunmaktadır. Çıkışlar ve kod için UI denetimleri kullanıma, Eylemler, aynı zamanda sunar ve son olarak, oluşturmak, çalıştırmak ve Xamarin.Mac uygulamayı test etme göstermektedir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
@@ -8,19 +8,19 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: fdf5d1236c0d8f797bc53d01eada1777b1d92373
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 635577bbc35d9e80147ecf7e1a59540099f85b9d
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="hello-mac"></a>Hello, Mac
 
 Xamarin.Mac sağlayan tam olarak yerel Mac uygulamalar C# ve aynı OS X kitaplıkları ve geliştirme sırasında kullanılır arabirimi denetimlerini kullanarak .NET geliştirme *Objective-C* ve *Xcode*. Xamarin.Mac Xcode ile doğrudan tümleşir olduğundan, geliştirici Xcode'nın kullanabilir _arabirimi Oluşturucu_ bir uygulamanın kullanıcı arabirimleri (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için).
 
-Xamarin.Mac uygulama yazılır olduğundan C# ve .NET, ayrıca, ortak, arka uç kodu Xamarin.iOS ve Xamarin.Android mobil uygulamaları ile paylaşılabilir; her platformda tüm yerel bir deneyim sunarken.
+Ayrıca, Xamarin.Mac uygulamaları C# ve .NET içinde yazılmış olduğundan, ortak arka uç kodu Xamarin.iOS ve Xamarin.Android mobil uygulamaları ile paylaşılabilir; her platformda tüm yerel bir deneyim sunarken.
 
-Bu makalede Xamarin.Mac, oluşturma işleminde size taramasını tarafından Mac ve Xcode'nın arabirimi Oluşturucu için Visual Studio kullanarak bir Mac uygulaması oluşturmak için gereken temel kavramları tanıtılacaktır bir yalnızca **Hello, Mac** sayar uygulama bir düğme tıklamıştır:
+Bu makalede Xamarin.Mac, basit bir oluşturma işlemi boyunca taramasını tarafından Mac ve Xcode'nın arabirimi Oluşturucu için Visual Studio kullanarak bir Mac uygulaması oluşturmak için gereken temel kavramları tanıtılacaktır **Hello, Mac** sayar uygulama bir düğme tıklamıştır:
 
 [![](hello-mac-images/run02.png "Merhaba, çalışan Mac uygulama örneği")](hello-mac-images/run02.png#lightbox)
 
@@ -89,7 +89,7 @@ Mac kullanımlar için Visual Studio **çözümleri** ve **projeleri**, Visual S
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Xamarin.Mac uygulama anatomisi
 
-Tanıdık programlama iOS varsa, burada benzerlikler çok vardır. Aslında, iOS çok kavramlarını üzerinden çapraz şekilde Mac tarafından kullanılan Cocoa, slimmed aşağı sürümü CocoaTouch framework kullanır.
+İle programlama iOS sahibiyseniz, çok sayıda benzerlikler vardır. Aslında, iOS çok kavramlarını üzerinden çapraz şekilde Mac tarafından kullanılan Cocoa, slimmed aşağı sürümü CocoaTouch framework kullanır.
 
 Proje dosyalarında göz atın:
 
@@ -163,7 +163,7 @@ namespace Hello_Mac
 
 Bu kod, geliştirici önce bir iOS uygulaması oluşturdu, ancak oldukça basittir sürece muhtemelen tanınmayan olur.
 
-`FinishedLaunching` Yöntemi çalıştıktan sonra uygulama örneği ve gerçekte uygulamanın penceresi oluşturma ve görünümü içinde görüntüleme işleminin başlayan sorumludur.
+`DidFinishLaunching` Yöntemi çalıştıktan sonra uygulama örneği ve gerçekte uygulamanın penceresi oluşturma ve görünümü içinde görüntüleme işleminin başlayan sorumludur.
 
 `WillTerminate` Kullanıcı veya sistem uygulamasının bir kapatma örneği olduğunda yöntemi çağrılır. Geliştirici (kullanıcı tercihleri veya pencere boyutunu ve konumunu kaydetme gibi) sonlandırılmadan önce uygulamayı son haline getirmek için bu yöntem kullanmanız gerekir.
 
@@ -171,7 +171,7 @@ Bu kod, geliştirici önce bir iOS uygulaması oluşturdu, ancak oldukça basitt
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
-Cocoa (ve türetme, CocoaTouch) olarak bilinen kullanan *Model View Controller* (MVC) deseni. `ViewController` Bildirimi gerçek uygulama pencereyi nesne denetimleri temsil eder. Genellikle, oluşturulan her penceresi (ve diğer pek çok Windows'da için), yeni görünümler (denetimler) ekleme, vb. için göstermeyi gibi pencerenin yaşam döngüsü sorumlu olduğu bir denetleyicisi yoktur.
+Cocoa (ve türetme, CocoaTouch) olarak bilinen kullanan *Model View Controller* (MVC) deseni. `ViewController` Bildirimi gerçek uygulama penceresini denetleyen nesneyi temsil eder. Genellikle, oluşturulan her penceresi (ve diğer pek çok Windows'da için), yeni görünümler (denetimler) ekleme, vb. için göstermeyi gibi pencerenin yaşam döngüsü, sorumlu olduğu bir denetleyicisi yoktur.
 
 `ViewController` Ana pencerenin denetleyicisi bir sınıftır. Ana penceresinin yaşam döngüsü için sorumlu olduğu anlamına gelir. Bu ayrıntılı olarak daha sonra Şimdi Al hızlı bir bakış için denenecektir:
 
@@ -236,7 +236,7 @@ namespace Hello_Mac
 }
 ```
 
-Visual Studio tarafından otomatik olarak Mac için yönetilen ve herhangi bir pencere veya uygulama görünümünde eklenen denetimlere erişim veren kod pluming önkoşul sağlamak geliştirici genellikle designer dosyaları ile ilgili değildir.
+Visual Studio tarafından otomatik olarak Mac için yönetilen ve herhangi bir pencere veya uygulama görünümünde eklenen denetimlere erişim veren gerekli tesisat kod sağlamak gibi geliştirici genellikle designer dosyaları ile ilgili değildir.
 
 Oluşturulan Xamarin.Mac uygulama projesi ve bileşenlerinin temel bir anlayış ile arabirimi Oluşturucusu'nu kullanarak kullanıcı arabirimi oluşturmak için Xcode için geçiş yapar.
 
@@ -248,7 +248,7 @@ Oluşturulan Xamarin.Mac uygulama projesi ve bileşenlerinin temel bir anlayış
 
 [![](hello-mac-images/infoplist01.png "Visual Studio Mac plist Düzenleyicisi")](hello-mac-images/infoplist01.png#lightbox)
 
-Ve tanımlar _film şeridi_ altında Xamarin.Mac uygulama için kullanıcı arabirimi görüntülemek için kullanılacak **ana arabirimi** açılır. Yukarıdaki örnek durumunda `Main` açılır listede teklifiyle `Main.storyboard` projenin kaynak ağacında **Çözüm Gezgini**. Belirterek ayrıca uygulamanın simgelerinden tanımlar *varlık Kataloğu* bunları (Bu durumda AppIcons) içerir.
+Ayrıca tanımlar _film şeridi_ altında Xamarin.Mac uygulama için kullanıcı arabirimi görüntülemek için kullanılacak **ana arabirimi** açılır. Yukarıdaki örnek durumunda `Main` açılır listede teklifiyle `Main.storyboard` projenin kaynak ağacında **Çözüm Gezgini**. Belirterek ayrıca uygulamanın simgelerinden tanımlar *varlık Kataloğu* bunları (Bu durumda AppIcons) içerir.
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -300,7 +300,7 @@ Açarken bir `.storyboard` dosya Mac oluşturur için Xcode, Visual Studio düze
 
 ### <a name="interface-hierarchy"></a>Hiyerarşi arabirimi
 
-**Arabirimi hiyerarşi** bölümü sağlar, sahip gibi kullanıcı arabirimi birkaç anahtar özelliklerini kolayca erişmek Geliştirici **yer tutucuları** ve ana **penceresi**. Bu bölüm, kullanıcı arabirimi ve Ayarla bunlar etrafında hiyerarşide sürükleyerek yerleştirilir şeklinde yapmak ayrı ayrı öğeler (görünümler) erişmek için kullanılabilir.
+**Arabirimi hiyerarşi** bölümü sağlar kullanıcı arabiriminin birkaç anahtar özellikleri gibi kolayca erişmek geliştirici kendi **yer tutucuları** ve ana **penceresi**. Bu bölüm, kullanıcı arabirimini oluşturan ayrı ayrı öğeler (görünümler) erişmek için ve bunlar etrafında hiyerarşide sürükleyerek yuvalanmış şekilde ayarlamak için kullanılabilir.
 
 <a name="Interface_Editor" />
 
@@ -318,7 +318,7 @@ Açarken bir `.storyboard` dosya Mac oluşturur için Xcode, Visual Studio düze
 
 Başlangıçta bu bölümde ancak, bitmek üzere geliştirici bir öğedeki seçerse **arabirimi Düzenleyicisi** veya **arabirimi hiyerarşi**, **özellikleri** bölüm olacaktır Verilen öğe ve göre ayarlayabilirsiniz özellikler hakkındaki bilgileri ile doldurulur.
 
-İçinde **özellikleri** bölümünde, 8 farklı *denetçisi sekmeleri*, aşağıdaki çizimde gösterildiği gibi:
+İçinde **özellikleri** bölümünde, vardır sekiz farklı *denetçisi sekmeleri*, aşağıdaki çizimde gösterildiği gibi:
 
 [![](hello-mac-images/xcode05.png "Tüm denetçiler genel bakış")](hello-mac-images/xcode05.png#lightbox)
 
@@ -395,13 +395,13 @@ Aşağıdakileri yapın:
 
 Yeniden boyutlandırma ve taşıma geçici denetimleri sırasında arabirimi Oluşturucu dayalı yararlı ek ipuçları sağlayan fark [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). Bu kılavuzu tanıdık bir görünüm ve kullanımında Mac kullanıcıları için olan yüksek kaliteli uygulamaları oluşturmak için geliştirici yardımcı olur.
 
-Bakılacak yer **arabirimi hiyerarşi** bölüm düzeni ve kullanıcı arabirimi öğelerinin hiyerarşi nasıl gösterileceğini görmek için:
+Bakılacak yer **arabirimi hiyerarşi** bölüm düzeni ve kullanıcı arabirimini oluşturan öğeler hiyerarşisini nasıl gösterileceğini görmek için:
 
 [![](hello-mac-images/xcode15.png "Arabirim hiyerarşi içinde bir öğe seçme")](hello-mac-images/xcode15.png#lightbox)
 
 Buradan Geliştirici düzenlemek için kullanıcı Arabirimi öğeleri gerektiğinde yeniden sıralamak için sürükleyin öğeleri seçebilirsiniz. Bir kullanıcı Arabirimi öğesi başka bir öğe tarafından kapsanan, örneğin, bunlar pencerenin en üst öğede yapmak için listenin sürükleyin.
 
-Oluşturulan kullanıcı arabirimiyle birlikte Geliştirici Xamarin.Mac erişebilir ve C# kodunda etkileşime böylece kullanıcı Arabirimi öğeleri göstermek gerekir. Sonraki bölümde **çıkışlar ve eylemleri**, bunun nasıl yapılacağı gösterilmektedir.
+Oluşturulan kullanıcı arabirimiyle Geliştirici Xamarin.Mac erişebilir ve C# kodunda etkileşime böylece kullanıcı Arabirimi öğeleri göstermek gerekir. Sonraki bölümde **çıkışlar ve eylemleri**, bunun nasıl yapılacağı gösterilmektedir.
 
 <a name="Outlets_and_Actions" />
 
@@ -414,7 +414,7 @@ Bu nedenle nelerdir **çıkışlar** ve **Eylemler**? Geleneksel .NET kullanıc�
 
 Xcode'da, **çıkışlar** ve **Eylemler** doğrudan kodda eklenen *denetimini sürükleyerek*. Daha belirgin olarak oluşturmak için buna bir **çıkışı** veya **eylem**, geliştirici eklemek için bir denetim öğesi seçecektir bir **çıkışı** veya **eylem** basılı için **denetim** anahtar klavyede ve doğrudan koda denetleyen sürükleyin.
 
-Xamarin.Mac geliştiriciler için bu Geliştirici istedikleri oluşturmak için C# dosyasına karşılık gelen Objective-C saplama dosyalarıyla sürükleyin anlamına gelir **çıkışı** veya **eylem**. Mac için Visual Studio'nun oluşturduğu adlı bir dosya `ViewController.h` arabirimi Oluşturucusu'nu kullanmak için oluşturulan bir Xcode projesi dolgusu bir parçası olarak:
+Xamarin.Mac geliştiriciler için bu Geliştirici istedikleri oluşturmak için C# dosyasına karşılık gelen Objective-C saplama dosyalarıyla sürükleyin anlamına gelir **çıkışı** veya **eylem**. Mac için Visual Studio'nun oluşturduğu adlı bir dosya `ViewController.h` arabirimi oluşturucusunu kullanmak için oluşturulan bir Xcode projesi dolgusu bir parçası olarak:
 
 [![](hello-mac-images/xcode16.png "Xcode kaynağında görüntüleme")](hello-mac-images/xcode16.png#lightbox)
 
@@ -487,10 +487,10 @@ Aşağıdakileri yapın:
 
 6. Değişiklikleri dosyaya kaydedin.
 
-Kablolu yukarı ve C# kodundaki için kullanıcı arabirimi, Mac için Visual Studio'ya geri geçin ve onu Xcode ve arabirim Builder yapılan değişiklikleri eşitlemek istiyorum.
+Kablolu yukarı ve C# kodundaki için kullanıcı arabirimi ile Visual Studio'ya geri Mac için geçiş ve onu Xcode ve arabirim Builder yapılan değişiklikleri eşitlemek izin verin.
 
 > [!NOTE]
-> Büyük olasılıkla kullanıcı arabirimini oluşturmak için uzun zaman aldı ve **çıkışlar** ve **Eylemler** bunun için ilk uygulama ve iş, çok gibi görünebilir ancak çok sayıda yeni kavram kullanıma sunulmuştur ve çok zaman harcanan Yeni plan kapsayan. Bir süredir kapattığınızdan sonra arabirimi Oluşturucu, bu arabirimi ve tüm çalışma kendi **çıkışlar** ve **Eylemler** yalnızca bir veya iki dakika içinde oluşturulabilir.
+> Büyük olasılıkla kullanıcı arabirimini oluşturmak için uzun zaman aldı ve **çıkışlar** ve **Eylemler** bunun için ilk uygulama ve iş, çok gibi görünebilir ancak çok sayıda yeni kavram kullanıma sunulmuştur ve çok zaman harcanan Yeni plan kapsayan. Bir süredir kapattığınızdan ve arabirim Oluşturucu, bu arabirimi ve tüm çalışma sonra kendi **çıkışlar** ve **Eylemler** yalnızca bir veya iki dakika içinde oluşturulabilir.
 
 <a name="Synchronizing_Changes_with_Xcode" />
 
@@ -498,7 +498,7 @@ Kablolu yukarı ve C# kodundaki için kullanıcı arabirimi, Mac için Visual St
 
 Geliştirici Visual Studio'ya geri Mac için Xcode geçiş yaptığında Xcode'da yapmış olduğunuz değişiklikleri otomatik olarak Xamarin.Mac proje ile eşitlenir.
 
-Seçer **ViewController.designer.cs** içinde **Çözüm Gezgini** görmek için nasıl **çıkışı** ve **eylem** yukarı C kablolu # kodu:
+Seçin **ViewController.designer.cs** içinde **Çözüm Gezgini** görmek için nasıl **çıkışı** ve **eylem** yukarı C# dilinde kablolu Kod:
 
 [![](hello-mac-images/sync01.png "Xcode ile değişiklikler eşitleniyor")](hello-mac-images/sync01.png#lightbox)
 
@@ -524,13 +524,13 @@ Mac için Visual Studio bekleyen değişiklikler için **.h** dosya ve ilgili de
 Normalde, geliştirici hiçbir zaman açmanız gerekecek **ViewController.designer.cs**, burada yalnızca eğitim amacıyla verildi.
 
 > [!NOTE]
-> Çoğu durumda, Mac için Visual Studio otomatik olarak Xcode'da yapılan değişiklikleri görmek ve Xamarin.Mac projeye eşitleme. Eşitleme otomatik olarak gerçekleşmez kapalı örneği içinde geri Xcode ve bunları Visual Studio'ya geri Mac için yeniden geçin. Bu, normalde bir eşitleme döngüsü tetiklersiniz.
+> Çoğu durumda, Mac için Visual Studio otomatik olarak Xcode'da yapılan değişiklikleri görmek ve Xamarin.Mac projeye eşitleme. Eşitleme otomatik olarak gerçekleşmez kapalı örneği, geri Xcode geçiş yapın ve ardından Visual Studio'ya Mac için yeniden. Bu, normalde bir eşitleme döngüsü tetiklersiniz.
 
 <a name="Writing_the_Code" />
 
 ## <a name="writing-the-code"></a>Kod yazma
 
-Kullanıcı arabirimi ile oluşturulan ve bu kod kullanıma sunulan kullanıcı Arabirimi öğeleri **çıkışlar** ve **Eylemler**, sizi program hayata geçirin için kod yazma son hazırsınız.
+Oluşturulan kullanıcı arabirimi ve kodu aracılığıyla kullanıma sunulan kullanıcı Arabirimi öğeleri ile **çıkışlar** ve **Eylemler**, sizi program hayata geçirin için kod yazma son hazırsınız.
 
 İlk düğme tıklatıldığında her zaman, bu örnek uygulama için kaç kez düğmesine tıklanana göstermek için etiket güncelleştirilir. Bunu gerçekleştirmek için açık `ViewController.cs` dosyasını çift tıklatarak düzenleme için **Çözüm Gezgini**:
 
@@ -559,9 +559,9 @@ public override void ViewDidLoad ()
 }
 ```
 
-Kullanım `ViewDidLoad`, gibi başka bir yöntem yerine `Initialize`, çünkü `ViewDidLoad` çağrılır *sonra* işletim sistemi yüklenir ve kullanıcı arabiriminden örneği **.storyboard** dosya. Geliştirici önce etiket denetimi erişmeye çalıştığınız varsa **.storyboard** dosya tam olarak yüklenir ve örneği, elde edecekleri bir `NullReferenceException` hata olduğundan etiket denetimi henüz oluşturulmamış.
+Kullanım `ViewDidLoad`, gibi başka bir yöntem yerine `Initialize`, çünkü `ViewDidLoad` çağrılır *sonra* işletim sistemi yüklenir ve kullanıcı arabiriminden örneği **.storyboard** dosya. Geliştirici önce etiket denetimi erişmeye çalıştığınız varsa **.storyboard** dosya tam olarak yüklenir ve örneği, elde edecekleri bir `NullReferenceException` hata etiket denetimi henüz var olmayan olduğundan.
 
-Ardından, düğmesinin tıklatıldığında kullanıcının yanıt vermesi için kodu ekleyin. Aşağıdaki kısmi sınıfına ekleyin `ViewController` sınıfı:
+Ardından, düğmesinin tıklatıldığında kullanıcının yanıt vermesi için kodu ekleyin. Aşağıdaki kısmi yöntemine ekleyin `ViewController` sınıfı:
 
 ```csharp
 partial void ClickedButton (Foundation.NSObject sender) {
@@ -606,7 +606,7 @@ Uygulamayı çalıştırmak için üç yolu vardır:
 -  Gelen **çalıştırmak** menüsünde seçin **hata ayıklama**.
 -  Tıklatın **Yürüt** Visual Studio Mac araç çubuğu düğmesini (yukarıdaki **Çözüm Gezgini**).
 
-Uygulama (Bu zaten oluşturulduğunu kurmadı varsa) oluşturmak, hata ayıklama modunda başlatmak ve buna ait ana arabirimi penceresini görüntülemek:
+Uygulama (Bu zaten oluşturulduğunu kurmadı varsa) oluşturmak, hata ayıklama modunda başlatmak ve kendi ana arabirimi penceresini görüntüleyin:
 
 [![](hello-mac-images/run02.png "Uygulamayı çalıştırma")](hello-mac-images/run02.png#lightbox)
 

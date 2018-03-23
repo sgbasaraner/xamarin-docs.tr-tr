@@ -1,6 +1,6 @@
 ---
-title: "Kullanıcıların bir Azure Cosmos DB belge veritabanı ile kimlik doğrulaması"
-description: "Birden çok sunucu ve bölümler, sınırsız depolama ve işleme desteklerken yayılabilir bölümlenmiş koleksiyonlar Azure Cosmos DB belge veritabanlarını destekler. Bu makalede, bir kullanıcı yalnızca kendi belgeleri bir Xamarin.Forms uygulaması erişebilmesi için erişim denetimi bölümlenmiş koleksiyonlar ile birleştirme açıklanmaktadır."
+title: Kullanıcıların bir Azure Cosmos DB belge veritabanı ile kimlik doğrulaması
+description: Birden çok sunucu ve bölümler, sınırsız depolama ve işleme desteklerken yayılabilir bölümlenmiş koleksiyonlar Azure Cosmos DB belge veritabanlarını destekler. Bu makalede, bir kullanıcı yalnızca kendi belgeleri bir Xamarin.Forms uygulaması erişebilmesi için erişim denetimi bölümlenmiş koleksiyonlar ile birleştirme açıklanmaktadır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8de64d6489b4022e43bcf694f3b13d6f7eaaecbd
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Kullanıcıların bir Azure Cosmos DB belge veritabanı ile kimlik doğrulaması
 
@@ -22,12 +22,12 @@ _Birden çok sunucu ve bölümler, sınırsız depolama ve işleme desteklerken 
 
 Bölüm anahtarı, bölümlendirilmiş bir koleksiyon oluşturulurken belirtilen gerekir ve aynı bölüm anahtarına sahip belgelerin aynı bölümde depolanacak. Bu nedenle, kullanıcının kimliğini belirten bir bölüm anahtarı olarak yalnızca o kullanıcı için belgeleri depolar bölümlendirilmiş bir koleksiyon neden olur. Bu ayrıca Azure Cosmos DB belge veritabanı sayısı, kullanıcı ölçeklendirir ve öğeleri artırmak sağlar.
 
-Herhangi bir koleksiyonu erişim verilmesi gerekir ve DocumentDB API erişim denetimi modeli iki tür erişim yapılarını tanımlar:
+Herhangi bir koleksiyonu erişim verilmesi gerekir ve SQL API'yi erişim denetimi modeli iki tür erişim yapıları tanımlar:
 
 - **Ana anahtarları** Cosmos DB hesabı içindeki tüm kaynaklar için tam yönetim erişimi etkinleştirmek ve Cosmos DB hesap oluşturulduğunda oluşturulur.
 - **Kaynak belirteçleri** bir veritabanı kullanıcısı ve kullanıcının sahip bir koleksiyon veya bir belge gibi belirli bir Cosmos DB kaynak için izni arasındaki ilişkiyi yakalayın.
 
-Bir ana anahtar gösterme kötü amaçlı veya ihmalkar kullanma olasılığını Cosmos DB hesabına açar. Ancak, Cosmos DB kaynak belirteçleri okuma, yazma ve izin verilenler göre Cosmos DB hesabındaki belirli kaynakları silmek istemcileri izin vermek için güvenli bir mekanizma sağlar.
+Bir ana anahtar gösterme kötü amaçlı veya ihmalkar kullanma olasılığını Cosmos DB hesabına açar. Ancak, Azure Cosmos DB kaynak belirteçleri okuma, yazma ve izin verilenler göre bir Azure Cosmos DB hesap belirli kaynakları silmek istemcileri izin vermek için güvenli bir mekanizma sağlar.
 
 İsteyen tipik bir yaklaşım, oluşturma ve bir mobil uygulama için kaynak belirteçleri ileterek kaynak belirteci Aracısı kullanmaktır. Aşağıdaki diyagramda, nasıl belge veritabanı veri erişimi yönetmek için kaynak belirteci Aracısı örnek uygulamayı kullanan bir üst düzey genel bakış gösterilir:
 
@@ -44,7 +44,7 @@ Kaynak belirteci Aracısı Azure App hangi ana anahtar Cosmos DB hesabının sah
 > [!NOTE]
 > Kaynak belirtecinin süresi dolduğunda, sonraki belge veritabanı isteklerinin bir 401 Yetkisiz özel durumu alır. Bu noktada, Xamarin.Forms uygulamaları kimliğini yeniden oluşturmak ve bu yeni bir kaynak belirteç istemeniz gerekir.
 
-Cosmos DB bölümleme hakkında daha fazla bilgi için bkz: [bölümleme ve Azure Cosmos veritabanı ölçek](/azure/cosmos-db/partition-data/). Cosmos DB erişim denetimi hakkında daha fazla bilgi için bkz: [Cosmos DB verilere erişimin güvenliğini sağlama](/azure/cosmos-db/secure-access-to-data/) ve [erişim denetimi DocumentDB API'sindeki](/rest/api/documentdb/access-control-on-documentdb-resources/).
+Cosmos DB bölümleme hakkında daha fazla bilgi için bkz: [bölümleme ve Azure Cosmos veritabanı ölçek](/azure/cosmos-db/partition-data/). Cosmos DB erişim denetimi hakkında daha fazla bilgi için bkz: [Cosmos DB verilere erişimin güvenliğini sağlama](/azure/cosmos-db/secure-access-to-data/) ve [erişim denetimi SQL API'sindeki](/rest/api/documentdb/access-control-on-documentdb-resources/).
 
 ## <a name="setup"></a>Kurulum
 
@@ -58,11 +58,11 @@ Kaynak belirteci Aracısı bir Xamarin.Forms uygulamayla tümleştirmek için i�
 
 <a name="cosmosdb_configuration" />
 
-### <a name="cosmos-db-configuration"></a>Cosmos DB yapılandırma
+### <a name="azure-cosmos-db-configuration"></a>Azure Cosmos DB yapılandırma
 
 Erişim denetimi kullanan bir Cosmos DB hesabı oluşturma işlemi aşağıdaki gibidir:
 
-1. Cosmos DB hesabı oluşturun. Daha fazla bilgi için bkz: [Cosmos DB hesabı oluşturma](/azure/cosmos-db/documentdb-dotnetcore-get-started#step-1-create-a-documentdb-account).
+1. Cosmos DB hesabı oluşturun. Daha fazla bilgi için bkz: [Azure Cosmos DB hesap oluşturmak](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account).
 1. Cosmos DB hesabında adlı yeni bir koleksiyon oluşturma `UserItems`, bölüm anahtarı belirterek `/userid`.
 
 <a name="app_service_configuration" />
@@ -269,10 +269,10 @@ Bir kullanıcı yalnızca kendi bir Xamarin.Forms uygulaması belge veritabanı 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [TodoDocumentDBAuth (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+- [Yapılacaklar Azure Cosmos DB Auth (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
 - [Bir Azure Cosmos DB Belge Veritabanını Kullanma](~/xamarin-forms/data-cloud/cosmosdb/consuming.md)
 - [Azure Cosmos DB verilere erişimin güvenliğini sağlama](/azure/cosmos-db/secure-access-to-data/)
-- [Erişim denetimi DocumentDB API'sindeki](/rest/api/documentdb/access-control-on-documentdb-resources/).
+- [Erişim denetimi SQL API'sindeki](/rest/api/documentdb/access-control-on-documentdb-resources/).
 - [Bölüm ve ölçek Azure Cosmos veritabanı](/azure/cosmos-db/partition-data/)
-- [DocumentDB istemci kitaplığı](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Azure Cosmos DB istemci kitaplığı](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 - [Azure Cosmos DB API](https://msdn.microsoft.com/library/azure/dn948556.aspx)

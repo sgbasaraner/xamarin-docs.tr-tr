@@ -1,5 +1,5 @@
 ---
-title: "Kimlik doğrulama ve yetkilendirme"
+title: Kimlik doğrulama ve yetkilendirme
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 16cd5571a8c3b0e179046351e9996e55b040a9de
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authentication-and-authorization"></a>Kimlik doğrulama ve yetkilendirme
 
@@ -21,7 +21,7 @@ Microsoft, Google gibi dış kimlik doğrulama sağlayıcıları ASP.NET Core ki
 
 ## <a name="authentication"></a>Kimlik doğrulaması
 
-Uygulamanın geçerli kullanıcının kimliğinin bilinmesi gerektiğinde kimlik doğrulaması gereklidir. Kullanıcıları tanımlamak için ASP.NET Core'nın birincil geliştirici tarafından yapılandırılan bir veri deposu kullanıcı bilgilerini depolar ASP.NET Core kimlik üyelik sistemi mekanizmadır. Genellikle, Azure depolama, DocumentDB veya başka konumlara kimlik bilgilerini depolamak için özel depoları veya üçüncü taraf paketleri kullanılabilmesine rağmen bu veri depolama alanını bir EntityFramework deposu olacaktır.
+Uygulamanın geçerli kullanıcının kimliğinin bilinmesi gerektiğinde kimlik doğrulaması gereklidir. Kullanıcıları tanımlamak için ASP.NET Core'nın birincil geliştirici tarafından yapılandırılan bir veri deposu kullanıcı bilgilerini depolar ASP.NET Core kimlik üyelik sistemi mekanizmadır. Genellikle, bu veri deposu Azure storage, Azure Cosmos DB veya başka konumlara kimlik bilgilerini depolamak için özel depoları veya üçüncü taraf paketleri kullanılabilmesine rağmen bir EntityFramework deposu olacaktır.
 
 Bir yerel kullanıcı veri deposunu olun kimlik doğrulama senaryoları kullanın ve kimlik bilgilerini (ASP.NET MVC web uygulamalarında tipik olarak) tanımlama bilgileri aracılığıyla istekler arasında kalıcı hale getirmek için ASP.NET Core kimliği uygun bir çözümdür. Ancak, tanımlama bilgileri her zaman kalıcı yapma ve veri aktarırken bir doğal değildir. Örneğin, mobil uygulamadan erişilen RESTful uç noktalarını kullanıma sunan bir ASP.NET Core web uygulaması genellikle tanımlama bilgilerini bu senaryoda kullanılamaz olduğundan taşıyıcı belirteci kimlik doğrulaması kullanmanız gerekir. Ancak, taşıyıcı belirteçlerini kolayca alınabilir ve mobil uygulama web isteklerini yetkilendirme üstbilgisinin dahildir.
 

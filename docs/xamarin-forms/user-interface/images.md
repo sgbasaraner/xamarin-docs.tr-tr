@@ -1,6 +1,6 @@
 ---
-title: "Görüntüler"
-description: "Görüntüleri Xamarin.Forms ile platform genelinde paylaşılabilir, özellikle her platform için yüklenen olabilir veya görüntülenmek üzere indirilebilir."
+title: Görüntüler
+description: Görüntüleri Xamarin.Forms ile platform genelinde paylaşılabilir, özellikle her platform için yüklenen olabilir veya görüntülenmek üzere indirilebilir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 440ee997b075b5c89504dcf20171fa3c8713e1ce
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b2cc302cf45527319bb22a4942290e0b0ac414d7
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="images"></a>Görüntüler
 
@@ -24,7 +24,7 @@ Platforma özgü görüntüleri de simgeler ve başlangıç ekranında için ger
 
 Bu belge aşağıdaki konular ele alınmıştır:
 
-- [ **Yerel görüntü** ](#Local_Images) -iOS görüntüyü Retina veya Android yüksek DPI sürümleri gibi yerel çözümleri çözme dahil olmak üzere uygulama ile birlikte görüntüleri görüntüleme.
+- [ **Yerel görüntü** ](#Local_Images) -iOS görüntüyü Retina, Android veya UWP yüksek DPI sürümleri gibi yerel çözümleri çözme dahil olmak üzere uygulama ile birlikte görüntüleri görüntüleme.
 - [ **Görüntüleri katıştırılmış** ](#Embedded_Images) -katıştırılmış bir derleme kaynağı olarak görüntüleri görüntüleme.
 - [ **İndirilen görüntüleri** ](#Downloading_Images) - karşıdan yükleme ve görüntüleri görüntüleme.
 - [ **Simgeler ve splashscreens** ](#Icons_and_splashscreens) -platforma özgü simgeler ve başlangıç görüntüler.
@@ -94,15 +94,17 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>Yerel çözünürlük (Retina ve yüksek DPI)
 
-İOS ve Android platformları burada işletim sistemi cihazın özelliklerine göre çalışma zamanında uygun görüntüyü seçer, farklı bir resim çözümleri için destek içerir. Xamarin.Forms dosyaları doğru adlı ve projesinde bulunan diğer çözümleri otomatik olarak desteklediği için yerel görüntüleri yüklemek için yerel platformları API'lerini kullanır.
+iOS, Android, Windows Phone ve UWP burada işletim sistemi cihazın özelliklerine göre çalışma zamanında uygun görüntüyü seçer, farklı bir resim çözümleri için destek içerir. Xamarin.Forms dosyaları doğru adlı ve projesinde bulunan diğer çözümleri otomatik olarak desteklediği için yerel görüntüleri yüklemek için yerel platformları API'lerini kullanır.
 
 İOS 9 uygun varlık Kataloğu görüntü kümesi için gereken her bir çözümü için görüntüleri sürükleme olduğundan görüntülerini yönetmek için tercih edilen yolu. Daha fazla bilgi için bkz: [ekleme görüntülere bir varlık Kataloğu resmi ayarlama](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
-İOS 9 önce görüntünün retina sürümü olarak yerleştirilemedi **kaynakları** klasör - iki ve üç kez çözümüyle bir  **@2x**  veya  **@3x** dosya uzantısını (ör önce filename eklerinde. **myimage@2x.png**). Ancak, bu yöntem, bir iOS uygulaması görüntülerle çalışma Apple'nın kullanım dışıdır. Daha fazla bilgi için bkz: [görüntü boyutları ve dosya adları](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+İOS 9 önce görüntünün retina sürümü olarak yerleştirilemedi **kaynakları** klasör - iki ve üç kez çözümüyle bir **@2x** veya **@3x**dosya uzantısını (ör önce filename eklerinde. **myimage@2x.png**). Ancak, bu yöntem, bir iOS uygulaması görüntülerle çalışma Apple'nın kullanım dışıdır. Daha fazla bilgi için bkz: [görüntü boyutları ve dosya adları](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
 Android alternatif çözüm görüntüleri yerleştirilmelidir [özel adlı dizinleri](http://developer.android.com/guide/practices/screens_support.html) Android projesinde, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
 [![Android birden çok çözümleme görüntü konumu](images-images/xs-highdpisolution-sml.png "Android birden çok çözümleme görüntü konumu")](images-images/xs-highdpisolution.png#lightbox "Android birden çok çözümleme görüntü konumu")
+
+UWP ve Windows Phone görüntü dosya adları [ile sonekine `.scale-xxx` dosya uzantısı önce](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), burada `xxx` varlık için örneğin uygulanan ölçeklendirme yüzdesidir **myimage.scale 200.png**. Görüntüleri ardından başvurulabilir kod veya XAML Ölçek değiştiricisi olmadan, örneğin yalnızca için **myimage.png**. Platform üzerinde görüntünün geçerli DPI göre en yakın uygun varlık ölçek seçer.
 
 ### <a name="additional-controls-that-display-images"></a>Görüntüleri göstermek ek denetimler
 
@@ -168,7 +170,7 @@ Aşağıdaki ekran görüntüleri her platformda bir katıştırılmış resim g
 Hiçbir yerleşik türü dönüştürücü gelen olduğundan `string` için `ResourceImageSource`, bu tür görüntüleri XAML tarafından yerel olarak yüklenemiyor. Bunun yerine, basit bir özel XAML biçimlendirme uzantısı görüntüleri kullanarak yüklemek için yazılabilir bir **kaynak kimliği** XAML'de belirtilen:
 
 ```csharp
-[ContentProperty ("Source")]
+[ContentProperty (nameof(Source))]
 public class ImageResourceExtension : IMarkupExtension
 {
  public string Source { get; set; }
@@ -179,6 +181,7 @@ public class ImageResourceExtension : IMarkupExtension
    {
      return null;
    }
+   
    // Do your translation lookup here, using whatever method you require
    var imageSource = ImageSource.FromResource(Source);
 
