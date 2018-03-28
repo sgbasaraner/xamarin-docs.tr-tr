@@ -1,5 +1,5 @@
 ---
-title: "Xamarin.Forms hızlı başlangıç"
+title: Xamarin.Forms hızlı başlangıç
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 5ee36d63e2751eb5d09ee526755d62dda4ef537e
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 7c90b5bcca5a6b8d2a4b52c166ae6884646a61d2
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms hızlı başlangıç
 
@@ -31,7 +31,7 @@ Phoneword uygulama gibi oluşturun:
 
     ![](quickstart-images/vs/new-solution.png "New Project")
 
-3. İçinde **yeni proje** iletişim kutusunda, tıklatın **platformlar arası**seçin **Çapraz Platform uygulama (Xamarin.Forms)** şablon kümesi adı ve çözüm adı `Phoneword`, Proje için uygun bir konum seçin ve tıklatın **Tamam** düğmesi:
+3. İçinde **yeni proje** iletişim kutusunda, tıklatın **platformlar arası**seçin **mobil uygulama (Xamarin.Forms)** şablon kümesi adı ve çözüm adı `Phoneword`, seçin bir ' a tıklayın ve proje için uygun konumu **Tamam** düğmesi:
 
     ![](quickstart-images/vs/new-project.png "Platformlar arası proje şablonları")
 

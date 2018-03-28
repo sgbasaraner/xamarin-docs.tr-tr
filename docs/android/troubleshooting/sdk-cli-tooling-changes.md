@@ -1,6 +1,6 @@
 ---
-title: "Android SDK Araçları yapılan değişiklikler"
-description: "Android SDK yüklü API düzeylerini ve AVDs nasıl yönettiğini değişiklikler."
+title: Android SDK Araçları yapılan değişiklikler
+description: Android SDK yüklü API düzeylerini ve AVDs nasıl yönettiğini değişiklikler.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 69e9f08870a01c056951700978d07277af5edfa8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a16aa3704d9e0a63cfabde4b620452e7e2a5bf57
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Android SDK Araçları yapılan değişiklikler
 
@@ -20,7 +20,7 @@ _Android SDK yüklü API düzeylerini ve AVDs nasıl yönettiğini değişiklikl
 
 ## <a name="changes-to--android-sdk-tooling"></a>Android SDK Araçları yapılan değişiklikler
 
-Modern Android SDK Araçları sürümlerinde, varolan AVD ve SDK yöneticileri yeni düşünülerek kullanılmaz Google kaldırılmış _komut satırı arabirimi_ (CLI) araçları. Eski **android** program kaldırıldı ve GUI (grafik kullanıcı arabirimi) yöneticileri Mac ve Visual Studio için Xamarin eski sürümleri için Visual Studio sürümü Android SDK Araçları artık çalışmaz.
+Modern Android SDK Araçları sürümlerinde, Google varolan AVD ve SDK yöneticileri yeni CLI (komut satırı arabirimi) araç düşünülerek kullanılmaz kaldırdı. Eski **android** program kaldırıldı ve GUI (grafik kullanıcı arabirimi) yöneticileri Mac ve Visual Studio için Xamarin eski sürümleri için Visual Studio artık Android SDK Araçları 25.2.5 sürümü çalışmaz.
 
 
 ![Visual Studio'da Android IDE menüsü](sdk-cli-tooling-changes-images/android-ide-menu.png)
@@ -50,7 +50,7 @@ Adlı yeni bir program var. **sdkmanager** içinde **Araçlar/bin** klasör, And
 
 **Eklenmiş:** Android SDK Araçları 25.3.0 (Mart 2017) ve üzeri.
 
-Adlı yeni bir program var. **avdmanager** içinde **Araçlar/bin** klasör, Android SDK'ın. Bu araç, Google Android öykünücüsü için AVD ait korumak için kullanılır. Bu aracı kullanmayla ilgili daha fazla bilgi için bkz: [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
+Adlı yeni bir program var. **avdmanager** içinde **Araçlar/bin** klasör, Android SDK'ın. Bu araç, Google Android öykünücüsü AVDs korumak için kullanılır. Bu aracı kullanmayla ilgili daha fazla bilgi için bkz: [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
 
 ### <a name="downgrading"></a>Önceki sürüme indirme
 
@@ -65,6 +65,6 @@ Düşürmek, **Android SDK Araçları** Android SDK'ın önceki bir sürümünü
 
 - [Android SDK Kurulumu](~/android/get-started/installation/android-sdk.md)
 - [Android API düzeylerini anlama](~/android/app-fundamentals/android-api-levels.md)
-- [Sürüm Notları (Google) SDK Araçları](https://developer.android.com/studiohttps://developer.xamarin.com/releases/sdk-tools.html)
+- [Sürüm Notları (Google) SDK Araçları](https://developer.android.com/studio/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
-- [avdmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
+- [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)

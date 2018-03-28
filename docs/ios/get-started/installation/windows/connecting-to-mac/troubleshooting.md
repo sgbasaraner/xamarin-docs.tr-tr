@@ -1,6 +1,6 @@
 ---
-title: "Bağlantı sorunlarını giderme"
-description: "Bu kılavuz, bağlantı ve SSH sorunlar da dahil olmak üzere Yeni Bağlantı Yöneticisi'ni kullanarak karşılaşılabilir sorunlarıyla ilgili sorun giderme adımları sağlar."
+title: Bağlantı sorunlarını giderme
+description: Bu kılavuz, bağlantı ve SSH sorunlar da dahil olmak üzere Yeni Bağlantı Yöneticisi'ni kullanarak karşılaşılabilir sorunlarıyla ilgili sorun giderme adımları sağlar.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d33f4ba5512985d62575885d44fdcebced8b61ed
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 505bd755140e3d4cdd162caf694de386fc72a68a
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="connection-troubleshooting"></a>Bağlantı sorunlarını giderme
 
@@ -83,8 +83,7 @@ Xamarin derleme Konaktan Xamarin.iOS eski sürümleri artık gerekli değildir. 
     ```bash
     ssh amyb@10.1.8.95
     ```
-    
-<a name="stepnine" />
+    <a name="stepnine" />
 
 9. Varsa **8. adım başarılı**, gibi basit bir komut çalıştırmayı deneyebilirsiniz `ls` bağlantı üzerinden:
 

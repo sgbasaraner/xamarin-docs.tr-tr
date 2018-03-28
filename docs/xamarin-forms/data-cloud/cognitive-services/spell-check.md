@@ -1,6 +1,6 @@
 ---
-title: "Bing yazım denetimi API kullanarak yazım denetimi"
-description: "Bing yazım denetimi, sağlama sözcüklerin için satır içi önerileri bağlamsal yazım metin için denetimi gerçekleştirir. Bu makalede, bir Xamarin.Forms uygulaması yazım hatalarını gidermek için Bing yazım denetleme REST API kullanımı açıklanmaktadır."
+title: Bing yazım denetimi API kullanarak yazım denetimi
+description: Bing yazım denetimi, sağlama sözcüklerin için satır içi önerileri bağlamsal yazım metin için denetimi gerçekleştirir. Bu makalede, bir Xamarin.Forms uygulaması yazım hatalarını gidermek için Bing yazım denetleme REST API kullanımı açıklanmaktadır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: ad2bdf27323fd7d7e108a25387cd6aea6d442098
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 420eea4622d9c90c3587899fb24e707524990b19
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Bing yazım denetimi API kullanarak yazım denetimi
 
@@ -25,19 +25,19 @@ Bing yazım denetleme REST API iki çalışma modu vardır ve bir modu API için
 - `Spell` kısa metin (9 adede kadar sözcükler) büyük/küçük harf değişiklikleri düzeltir.
 - `Proof` uzun metin düzeltir, büyük/küçük harf düzeltmeleri ve temel noktalama sağlar ve agresif düzeltmeleri gizler.
 
-Bing yazım denetleme API kullanmak için bir API anahtarı alınması gerekir. Bu, elde edilebilir [ücretsiz Başlarken](https://www.microsoft.com/cognitive-services/sign-up?ReturnUrl=/cognitive-services/subscriptions?productId=%2fproducts%2fBing.Speech.Preview) Microsoft.com'daki.
+Bing yazım denetleme API kullanmak için bir API anahtarı alınması gerekir. Bu, elde edilebilir [deneyin Bilişsel hizmetler](https://azure.microsoft.com/try/cognitive-services/)
 
-Bing yazım denetleme API'si tarafından desteklenen dillerin bir listesi için bkz: [dil desteği](https://www.microsoft.com/cognitive-services/Bing-Spell-check-API/documentation#language-support) Microsoft.com'daki. Bing yazım denetleme API'si hakkında daha fazla bilgi için bkz: [Bing yazım denetleme API](https://www.microsoft.com/cognitive-services/bing-spell-check-api/documentation) Microsoft.com'daki.
+Bing yazım denetleme API'si tarafından desteklenen dillerin bir listesi için bkz: [desteklenen diller](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/). Bing yazım denetleme API'si hakkında daha fazla bilgi için bkz: [Bing yazım denetleme belgelerine](/azure/cognitive-services/bing-spell-check/).
 
 ## <a name="authentication"></a>Kimlik doğrulaması
 
 Bing yazım denetleme API'sine yapılan her isteği değeri olarak belirtilen bir API anahtarı gerektirir `Ocp-Apim-Subscription-Key` üstbilgi. Aşağıdaki kod örneği, API anahtarı eklemek gösterilmiştir `Ocp-Apim-Subscription-Key` isteği üstbilgisi:
 
 ```csharp
-using (var httpClient = new HttpClient())
+public BingSpellCheckService()
 {
-  httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
-  ...
+    httpClient = new HttpClient();
+    httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Constants.BingSpellCheckApiKey);
 }
 ```
 
@@ -45,27 +45,25 @@ Bing yazım denetleme API için geçerli bir API anahtarı geçirmek için hata 
 
 ## <a name="performing-spell-checking"></a>Yazım denetimi gerçekleştiriliyor
 
-Yazım denetimi elde edilebilir bir GET veya POST isteği yaparak `SpellCheck` adresindeki API'sine `https://api.cognitive.microsoft.com/bing/v5.0/SpellCheck`. Bir GET isteği yapılırken yazım işaretli olmasını metin sorgu parametresi olarak gönderilir. Bir POST isteği yaparken işaretli yazım metni istek gövdesinde gönderilir. GET istekleri yazım denetimi 1500 karakter sorgu parametresi dize uzunluğu sınırlaması nedeniyle sınırlıdır. Bu nedenle, kısa dizelerle işaretli yazım yükleniyor sürece POST istekleri genellikle yapılacaktır.
+Yazım denetimi elde edilebilir bir GET veya POST isteği yaparak `SpellCheck` adresindeki API'sine `https://api.cognitive.microsoft.com/bing/v7.0/SpellCheck`. Bir GET isteği yapılırken yazım işaretli olmasını metin sorgu parametresi olarak gönderilir. Bir POST isteği yaparken işaretli yazım metni istek gövdesinde gönderilir. GET istekleri yazım denetimi 1500 karakter sorgu parametresi dize uzunluğu sınırlaması nedeniyle sınırlıdır. Bu nedenle, kısa dizelerle işaretli yazım yükleniyor sürece POST istekleri tipik olarak yapılmalıdır.
 
 Örnek uygulamasında `SpellCheckTextAsync` yöntemini çağırır yazım işlem denetimi:
 
 ```csharp
 public async Task<SpellCheckResult> SpellCheckTextAsync(string text)
 {
-  string requestUri = GenerateRequestUri(Constants.BingSpellCheckEndpoint, text, SpellCheckMode.Spell);
-  var response = await SendRequestAsync(requestUri, Constants.BingSpellCheckApiKey);
-  var spellCheckResults = JsonConvert.DeserializeObject<SpellCheckResult>(response);
-  return spellCheckResults;
+    string requestUri = GenerateRequestUri(Constants.BingSpellCheckEndpoint, text, SpellCheckMode.Spell);
+    var response = await SendRequestAsync(requestUri);
+    var spellCheckResults = JsonConvert.DeserializeObject<SpellCheckResult>(response);
+    return spellCheckResults;
 }
 ```
 
 `SpellCheckTextAsync` Yöntemi bir istek URI oluşturur ve ardından isteği gönderir `SpellCheck` sonucu içeren bir JSON yanıtı döndürür API. Görüntü için arama yöntemi için döndürülen sonuç ile JSON yanıt serisi.
 
-Bing yazım denetleme REST API'si hakkında daha fazla bilgi için bkz: [yazım denetleme API](https://dev.cognitive.microsoft.com/docs/services/56e73033cf5ff80c2008c679/operations/57855119bca1df1c647bc358) Microsoft.com'daki.
-
 ### <a name="configuring-spell-checking"></a>Yazım denetimi yapılandırma
 
-HTTP sorgu parametrelerini belirterek işlemi denetleniyor yazım yapılandırılabilir. Bir GET isteği için ayarlanması gereken zorunlu parametreler gösteren aşağıdaki yöntemiyle zorunlu ve isteğe bağlı parametreler şunlardır:
+HTTP sorgu parametrelerini belirterek işlemi denetleniyor yazım yapılandırılabilir:
 
 ```csharp
 string GenerateRequestUri(string spellCheckEndpoint, string text, SpellCheckMode mode)
@@ -79,59 +77,56 @@ string GenerateRequestUri(string spellCheckEndpoint, string text, SpellCheckMode
 
 Bu yöntem kullanıma yazım ve yazım denetimi modu metni ayarlar.
 
-Zorunlu ve isteğe bağlı parametreler hakkında daha fazla bilgi için bkz: [yazım denetleme API](https://dev.cognitive.microsoft.com/docs/services/56e73033cf5ff80c2008c679/operations/57855119bca1df1c647bc358) Microsoft.com'daki.
+Bing yazım denetleme REST API'si hakkında daha fazla bilgi için bkz: [yazım denetleme API v7 başvurusu](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/).
 
 ### <a name="sending-the-request"></a>İsteği gönderme
 
 `SendRequestAsync` Metodu Bing yazım denetleme REST API'sine GET isteği yapar ve yanıt verir:
 
 ```csharp
-async Task<string> SendRequestAsync(string url, string apiKey)
+async Task<string> SendRequestAsync(string url)
 {
-  using (var httpClient = new HttpClient())
-  {
-    httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
     var response = await httpClient.GetAsync(url);
     return await response.Content.ReadAsStringAsync();
-  }
 }
 ```
 
 API anahtar değeri olarak ekleyerek bu yöntem GET isteğini derlemeler `Ocp-Apim-Subscription-Key` üstbilgi. GET isteğini sonra gönderilir `SpellCheck` çevrilecek belirten metin istek URL'si ve yazım denetimi modu ile API. Yanıt ardından okuma ve çağıran yönteme döndürdü.
 
-`SpellCheck` API istek başarılı olduğunu belirten, isteğin geçerli olduğunu ve istenen bilgileri yanıtta sağlanan yanıt, HTTP durum kodu 200 (Tamam) gönderir. Yanıtlar en olası hata yanıtları listesi için bkz [yazım denetleme API](https://dev.cognitive.microsoft.com/docs/services/56e73033cf5ff80c2008c679/operations/57855119bca1df1c647bc358) Microsoft.com'daki.
+`SpellCheck` API istek başarılı olduğunu belirten, isteğin geçerli olduğunu ve istenen bilgileri yanıtta sağlanan yanıt, HTTP durum kodu 200 (Tamam) gönderir. Yanıt nesneleri listesi için bkz: [yanıt nesneleri](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects).
 
 ### <a name="processing-the-response"></a>Yanıt işleme
 
 API yanıtını JSON biçiminde döndürülür. Aşağıdaki JSON verileri yanlış yazılmış metin için yanıt iletisi görüntüler `Go shappin tommorow`:
 
-```csharp
-{
-  "_type": "SpellCheck",
-  "flaggedTokens": [
-    {
-      "offset": 3,
-      "token": "shappin",
-      "type": "UnknownToken",
-      "suggestions": [
-        {
-          "suggestion": "shopping",
-          "score": 1
-        }
-      ]
-    },
-    {
-      "offset": 11,
-      "token": "tommorow",
-      "type": "UnknownToken",
-      "suggestions": [
-        {
-          "suggestion": "tomorrow",
-          "score": 1
-        }
-      ]
-    }
-  ]
+```json
+{  
+   "_type":"SpellCheck",
+   "flaggedTokens":[  
+      {  
+         "offset":3,
+         "token":"shappin",
+         "type":"UnknownToken",
+         "suggestions":[  
+            {  
+               "suggestion":"shopping",
+               "score":1
+            }
+         ]
+      },
+      {  
+         "offset":11,
+         "token":"tommorow",
+         "type":"UnknownToken",
+         "suggestions":[  
+            {  
+               "suggestion":"tomorrow",
+               "score":1
+            }
+         ]
+      }
+   ],
+   "correctionType":"High"
 }
 ```
 
@@ -162,11 +157,9 @@ Bu kod dolaşır `FlaggedTokens` koleksiyonu ve her yanlış yazılmış değiş
 
 Bu makalede Bing yazım denetleme REST API'si bir Xamarin.Forms uygulaması yazım hatalarını gidermek için nasıl kullanılacağı açıklanmıştır. Bing yazım denetimi, sağlama sözcüklerin için satır içi önerileri bağlamsal yazım metin için denetimi gerçekleştirir.
 
-
-
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bing yazım denetimi belgeleri](https://www.microsoft.com/cognitive-services/bing-spell-check-api/documentation)
+- [Bing yazım denetimi belgeleri](/azure/cognitive-services/bing-spell-check/)
 - [Bir RESTful Web hizmetini kullanma](~/xamarin-forms/data-cloud/consuming/rest.md)
 - [Yapılacaklar Bilişsel hizmetler (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
-- [Bing yazım denetimi API'si](https://dev.cognitive.microsoft.com/docs/services/56e73033cf5ff80c2008c679/operations/57855119bca1df1c647bc358)
+- [Bing yazım denetleme API v7 başvurusu](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)

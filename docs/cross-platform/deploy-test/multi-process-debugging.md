@@ -1,5 +1,5 @@
 ---
-title: "Çok İşlemli Hata Ayıklama"
+title: Çok İşlemli Hata Ayıklama
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 9454c65298dbb5417f91765f541d22ae1d6137d7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7bc230b43d0b50746a6076ffb2633e7fad0283d9
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="multi-process-debugging"></a>Çok İşlemli Hata Ayıklama
 
@@ -31,7 +31,7 @@ Hata ayıklama çok işlemle geliştiricilere yardımcı olmak için Mac için V
 
 Varsayılan olarak, Mac için Visual Studio tek tek projesinde görüntüler **çözüm yapılandırması** debug araç alanı. Hata ayıklama oturumu başlatıldığında, bu Mac için Visual Studio ile başlamalıdır ve hata ayıklayıcısını projesidir.
 
-Başlatmak ve Mac için birden çok işlem Visual Studio'da hata ayıklama için oluşturmak ise gerekli bir _çözüm yapılandırması_. Bir çözümde proje olması gereken bir çözüm yapılandırmasını açıklar hata ayıklama oturumu bir tıklatmayla başlatıldığında dahil **Başlat** düğmesini veya &#8984; &#8617; (**Cmd girin**) basıldığında. Aşağıdaki ekran görüntüsünde, birden çok çözüm yapılandırmaları olan Mac için Visual Studio'da Çözüm örneğidir:
+Başlatmak ve Mac için birden çok işlem Visual Studio'da hata ayıklama için oluşturmak ise gerekli bir _çözüm yapılandırması_. Bir çözümde proje olması gereken bir çözüm yapılandırmasını açıklar hata ayıklama oturumu bir tıklatmayla başlatıldığında dahil **Başlat** düğmesini veya ne zaman &#8984; &#8617; (**Cmd girin**) olan basılı. Aşağıdaki ekran görüntüsünde, birden çok çözüm yapılandırmaları olan Mac için Visual Studio'da Çözüm örneğidir:
 
 ![](multi-process-debugging-images/mpd01-xs.png "Birden çok çözüm yapılandırmaları Çözümle")
 
@@ -60,7 +60,7 @@ Hata ayıklama araç çubuğu açılır menüsü üzerinden seçilecek çözüm 
 
 Tek bir işlemde bir kesme noktası karşılaşıldığında, diğer işlemler çalışmaya devam ederken bu işlemi yürütme duraklatılır. Bir tek işlem senaryosunda, Mac için Visual Studio kolayca iş parçacığı yerel değişkenleri, klavye takımı tek bir dizi uygulama çıktıda gibi bilgileri görüntüleyebilirsiniz. Birden çok kesme noktaları ve büyük olasılıkla birden çok iş parçacığı ile birden çok işlem olduğunda, ancak bunu tüm iş parçacıklarının tüm bilgileri görüntülemenize çalışılırken bir hata ayıklama oturumu bilgileriyle başa çıkacak şekilde geliştirici için zorlamayı kanıtlayabilirsiniz (ve işlemler) aynı anda.
 
-Mac aynı anda yalnızca bir iş parçacığından diğerine bilgi görüntülenir için Visual Studio bu sorunu çözmek için bu olarak bilinir _etkin iş parçacığı_. Kesme noktasında duraklatır ilk iş parçacığı kabul _etkin iş parçacığı_. Etkin iş parçacığı odak noktası Geliştirici dikkat, iş parçacığı ' dir. Komutları gibi hata ayıklama **Step Over** &#8679; &#8984; O (Shift-Cmd-O) etkin iş parçacığı için verilir.
+Mac aynı anda yalnızca bir iş parçacığından diğerine bilgi görüntülenir için Visual Studio bu sorunu çözmek için bu olarak bilinir _etkin iş parçacığı_. Kesme noktasında duraklatır ilk iş parçacığı kabul _etkin iş parçacığı_. Etkin iş parçacığı odak noktası Geliştirici dikkat, iş parçacığı ' dir. Komutları gibi hata ayıklama **Step Over** &#8679; &#8984;O (Shift-Cmd-O) etkin iş parçacığı için verilir.
 
 **İş parçacığı paneli** tüm işlemleri ve çözüm yapılandırmasında İnceleme altındaki iş parçacıklarını bilgilerini görüntülemek ve etkin iş parçacığı nedir konusunda görsel ipuçları sağlar:
 
@@ -104,7 +104,7 @@ Tıklatarak **duraklatma** düğmesini **Debug araç** , a tıklayarak ayıklana
 
 ## <a name="creating-a-solution-configuration"></a>Bir çözüm yapılandırması oluşturma
 
-A _çözüm yapılandırması_ Visual Studio Mac için hata ayıklama oturumu ile intiated olduğunda çalıştırmak için hangi proje söyler **Başlat** düğmesi. Birden fazla çözüm yapılandırması her bir çözüm olabilir. Bu projenin hata ayıklama sırasında hangi projeleri çalışması belirtmek üzere mümkün kılar.
+A _çözüm yapılandırması_ Visual Studio için Mac ile hata ayıklama oturumu başlattığında çalıştırmak için hangi proje söyler **Başlat** düğmesi. Birden fazla çözüm yapılandırması her bir çözüm olabilir. Bu projenin hata ayıklama sırasında hangi projeleri çalışması belirtmek üzere mümkün kılar.
 
 Xamaring Studio'da yeni bir çözüm yapılandırması oluşturmak için:
 

@@ -1,16 +1,16 @@
 ---
-title: "Sınırlamalar"
+title: Sınırlamalar
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 43b099e8ddd6acc3e8cc4ce94580313a39a0c686
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c099797f0687f198ed220c1bd366bd93ab6c6e99
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="limitations"></a>Sınırlamalar
 
@@ -25,7 +25,7 @@ Bu Masaüstü Mono karşılaştırıldığında Xamarin.iOS sınırlamalar vard�
 
 Geleneksel Mono/.NET, iPhone statik olarak isteğe bağlı bir JIT Derleyici tarafından derlenmiş yerine önceden derlenmiş kod.
 
-Mono'nın [tam Uygulama Nesne AĞACI](http://www.mono-project.com/AOT#Full_AOT) teknoloji genel türler göre birkaç sınırlamalara sahiptir, bu olası her genel olgu Önden derleme zamanında belirlenebilir nedeni. Her zaman yalnızca zaman derleyicide kullanarak çalışma zamanında derlenmiş kod gibi normal .NET ya da Mono çalışma zamanları için bir sorun değildir. Ancak bu bir statik derleyici Xamarin.iOS gibi için bir sınama oluşturur.
+Mono'nın [tam Uygulama Nesne AĞACI](http://www.mono-project.com/docs/advanced/aot/#full-aot) teknoloji genel türler göre birkaç sınırlamalara sahiptir, bu olası her genel olgu Önden derleme zamanında belirlenebilir nedeni. Her zaman yalnızca zaman derleyicide kullanarak çalışma zamanında derlenmiş kod gibi normal .NET ya da Mono çalışma zamanları için bir sorun değildir. Ancak bu bir statik derleyici Xamarin.iOS gibi için bir sınama oluşturur.
 
 Bazı geliştiriciler, çalışan ortak sorunları şunları içerir:
 
@@ -117,13 +117,10 @@ Ancak tüm yansıma özellikleri, öznitelikleri ve değerleri getirme listeleni
 
 Mono olarak bu köprüleri sadece zaman tarafından uygulanan derleyici. Ne zaman, saat tamamlanan derleyici kullanarak tarafından iPhone iki önemli sınırlamalar vardır, bu aşamada gerekli:
 
--  Tüm geri çağırma yöntemleriyle bayrak [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/MonoPInvokeCallbackAttribute/) 
+-  Tüm geri çağırma yöntemleriyle bayrak [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
 -  Yöntem statik yöntemler olması, desteği yoktur örneği için yöntemleri. 
-
-
  
- <a name="No_Remoting" />
-
+<a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>Hiçbir uzaktan iletişim
 

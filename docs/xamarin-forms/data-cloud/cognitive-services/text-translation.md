@@ -1,6 +1,6 @@
 ---
-title: "Metin çevirisini Çeviricisi API kullanarak"
-description: "Microsoft Çeviricisi API konuşma ve REST API'si aracılığıyla metin çevirmek için kullanılabilir. Bu makalede Microsoft metin çeviri API başka bir Xamarin.Forms uygulaması bir dilden diğerine metne çevirmek için nasıl kullanılacağı açıklanmaktadır."
+title: Metin çevirisini Çeviricisi API kullanarak
+description: Microsoft Çeviricisi API konuşma ve REST API'si aracılığıyla metin çevirmek için kullanılabilir. Bu makalede Microsoft Çeviricisi metin API başka bir Xamarin.Forms uygulaması bir dilden diğerine metne çevirmek için nasıl kullanılacağı açıklanmaktadır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 68330242-92C5-46F1-B1E3-2395D8823B0C
@@ -8,15 +8,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: f403ebaffdf742c22e61b73aee7a42648fe597dc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1e71249e3114404cce2abcef081b9b6fa19693d8
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="text-translation-using-the-translator-api"></a>Metin çevirisini Çeviricisi API kullanarak
 
-_Microsoft Çeviricisi API konuşma ve REST API'si aracılığıyla metin çevirmek için kullanılabilir. Bu makalede Microsoft metin çeviri API başka bir Xamarin.Forms uygulaması bir dilden diğerine metne çevirmek için nasıl kullanılacağı açıklanmaktadır._
+_Microsoft Çeviricisi API konuşma ve REST API'si aracılığıyla metin çevirmek için kullanılabilir. Bu makalede Microsoft Çeviricisi metin API başka bir Xamarin.Forms uygulaması bir dilden diğerine metne çevirmek için nasıl kullanılacağı açıklanmaktadır._
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -25,50 +25,48 @@ _Microsoft Çeviricisi API konuşma ve REST API'si aracılığıyla metin çevir
 - Bir metin çeviri REST API'ın başka bir dilde metne bir dil metinden çevir. API çevirme önce gönderildiği metin dili otomatik olarak algılar.
 - Konuşma çeviri REST API'ın başka bir dilde metne bir dilden diğerine konuşma transcribe. API geri çevrilen metin konuşma metin okuma özelliklerini de tümleşir.
 
-Bu makalede, bir dil metinden başka bir metin çevirisi API'sini kullanmaya çevirirken odaklanır.
+Bu makalede, bir dil metinden başka bir çevirici metin API'sini kullanmaya çevirirken odaklanır.
 
-Metin çeviri API kullanmak için bir API anahtarı alınması gerekir. Bu yönergeleri izleyerek alınabilir [Başlarken](http://docs.microsofttranslator.com/text-translate.html) üzerinde [docs.microsofttranslator.com](http://docs.microsofttranslator.com/).
+Çevirici metin API kullanmak için bir API anahtarı alınması gerekir. Bu, elde edilebilir [Microsoft Çeviricisi metin API için kaydolma](/azure/cognitive-services/translator/translator-text-how-to-signup/).
 
-Microsoft Çeviricisi API'si hakkında daha fazla bilgi için bkz: [Microsoft Çeviricisi belgeleri](https://www.microsoft.com/cognitive-services/translator-api/documentation/TranslatorInfo/overview) Microsoft.com'daki.
+Microsoft Çeviricisi metin API'si hakkında daha fazla bilgi için bkz: [Çeviricisi metin API belgelerine](/azure/cognitive-services/translator/).
 
 ## <a name="authentication"></a>Kimlik doğrulaması
 
-Bilişsel hizmetler belirteç hizmetine penceresinden bir JSON Web Token (JWT) erişim belirteci metin çeviri API'sine yapılan her isteği gerektirir `https://api.cognitive.microsoft.com/sts/v1.0/issueToken`. Belirteç hizmete bir POST isteği yaparak bir belirteç elde edilebilir belirten bir `Ocp-Apim-Subscription-Key` API anahtar değeri olarak içeren üstbilgi.
+Bilişsel hizmetler belirteç hizmetine penceresinden bir JSON Web Token (JWT) erişim belirteci Çeviricisi metin API'sine yapılan her isteği gerektirir `https://api.cognitive.microsoft.com/sts/v1.0/issueToken`. Belirteç hizmete bir POST isteği yaparak bir belirteç elde edilebilir belirten bir `Ocp-Apim-Subscription-Key` API anahtar değeri olarak içeren üstbilgi.
 
 Aşağıdaki kod örneğinde bir erişim isteği belirteci Hizmeti'nden belirteç gösterilmektedir:
 
 ```csharp
-async Task<string> FetchTokenAsync(string fetchUri, string apiKey)
+public AuthenticationService(string apiKey)
 {
-  using (var client = new HttpClient())
-  {
-    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
+    subscriptionKey = apiKey;
+    httpClient = new HttpClient();
+    httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apiKey);
+}
+...
+async Task<string> FetchTokenAsync(string fetchUri)
+{
     UriBuilder uriBuilder = new UriBuilder(fetchUri);
     uriBuilder.Path += "/issueToken";
-
-    var result = await client.PostAsync(uriBuilder.Uri.AbsoluteUri, null);
+    var result = await httpClient.PostAsync(uriBuilder.Uri.AbsoluteUri, null);
     return await result.Content.ReadAsStringAsync();
-  }
 }
 ```
 
 Base64 metindir, döndürülen erişim belirteci süre sonu zamanı 10 dakikalık sahiptir. Bu nedenle, örnek uygulama erişim belirtecini 9 dakikada yeniler.
 
-Erişim belirteci her metin çeviri API belirtilmelidir olarak çağrısı bir `Authorization` dizesiyle önekli üstbilgi `Bearer`aşağıdaki kod örneğinde gösterildiği gibi:
+Erişim belirteci her Çevirmen metin API belirtilmelidir olarak çağrısı bir `Authorization` dizesiyle önekli üstbilgi `Bearer`aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
-using (var httpClient = new HttpClient())
-{
-  httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
-  ...
-}  
+httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
 ```
 
-Bilişsel hizmetler belirteci hizmeti hakkında daha fazla bilgi için bkz: [kimlik doğrulama belirteci API](http://docs.microsofttranslator.com/oauth-token.html) üzerinde [docs.microsofttranslator.com](http://docs.microsofttranslator.com/).
+Bilişsel hizmetler belirteci hizmeti hakkında daha fazla bilgi için bkz: [kimlik doğrulama belirteci API](http://docs.microsofttranslator.com/oauth-token.html).
 
 ## <a name="performing-text-translation"></a>Metin çeviri gerçekleştirme
 
-Metin çeviri elde edilebilir bir GET isteğine yaparak `Translate` adresindeki API'sine `https://api.microsofttranslator.com/v2/http.svc/Translate`. Örnek uygulamasında `TranslateTextAsync` yöntemini çağırır metin çeviri işlemi:
+Metin çeviri elde edilebilir bir GET isteğine yaparak `translate` adresindeki API'sine `https://api.microsofttranslator.com/v2/http.svc/translate`. Örnek uygulamasında `TranslateTextAsync` yöntemini çağırır metin çeviri işlemi:
 
 ```csharp
 public async Task<string> TranslateTextAsync(string text)
@@ -82,13 +80,13 @@ public async Task<string> TranslateTextAsync(string text)
 }
 ```
 
-`TranslateTextAsync` Yöntemi bir istek URI oluşturur ve belirteci Hizmeti'nden bir erişim belirteci alır. Metin çeviri isteği sonra gönderilir `Translate` sonucu içeren bir XML yanıtı döndürür API. XML yanıtı ayrıştırılır ve görüntülemek için arama yöntemi için bir çeviri sonuç döndürdü.
+`TranslateTextAsync` Yöntemi bir istek URI oluşturur ve belirteci Hizmeti'nden bir erişim belirteci alır. Metin çeviri isteği sonra gönderilir `translate` sonucu içeren bir XML yanıtı döndürür API. XML yanıtı ayrıştırılır ve görüntülemek için arama yöntemi için bir çeviri sonuç döndürdü.
 
-Metin çeviri REST API'leri hakkında daha fazla bilgi için bkz: [örnek kod](http://docs.microsofttranslator.com/text-translate.html#/default) üzerinde [docs.microsofttranslator.com](http://docs.microsofttranslator.com/).
+Metin çeviri REST API'leri hakkında daha fazla bilgi için bkz: [Microsoft Çeviricisi metin API](http://docs.microsofttranslator.com/text-translate.html).
 
 ### <a name="configuring-text-translation"></a>Metin çeviri yapılandırma
 
-HTTP sorgu parametrelerini belirterek metin çeviri işlemi yapılandırılabilir. Ayarlanmalıdır zorunlu parametreler gösteren aşağıdaki yöntemiyle zorunlu ve isteğe bağlı parametreler şunlardır:
+HTTP sorgu parametrelerini belirterek metin çeviri işlemi yapılandırılabilir:
 
 ```csharp
 string GenerateRequestUri(string endpoint, string text, string to)
@@ -100,12 +98,10 @@ string GenerateRequestUri(string endpoint, string text, string to)
 }
 ```
 
-Bu yöntem Çevrilecek metin ve metne çevirmek için dili ayarlar. Microsoft Translator tarafından desteklenen dillerin bir listesi için bkz: [diller](https://www.microsoft.com/translator/languages.aspx) Microsoft.com'daki.
+Bu yöntem Çevrilecek metin ve metne çevirmek için dili ayarlar. Microsoft Translator tarafından desteklenen dillerin bir listesi için bkz: [desteklenen diller Microsoft Çeviricisi metin API](/azure/cognitive-services/translator/languages/).
 
 > [!NOTE]
 > Bir uygulama metnin, hangi dilde bilmeniz gerekiyorsa `Detect` API, metin dizesi dilinin algılamak için çağrılabilir.
-
-Zorunlu ve isteğe bağlı parametreler hakkında daha fazla bilgi için bkz: [metin çeviri API](http://docs.microsofttranslator.com/text-translate.html#!/default/get_Translate) üzerinde [docs.microsofttranslator.com](http://docs.microsofttranslator.com/).
 
 ### <a name="sending-the-request"></a>İsteği gönderme
 
@@ -114,18 +110,20 @@ Zorunlu ve isteğe bağlı parametreler hakkında daha fazla bilgi için bkz: [m
 ```csharp
 async Task<string> SendRequestAsync(string url, string bearerToken)
 {
-  using (var httpClient = new HttpClient())
-  {
+    if (httpClient == null)
+    {
+        httpClient = new HttpClient();
+    }
     httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
+
     var response = await httpClient.GetAsync(url);
     return await response.Content.ReadAsStringAsync();
-  }
 }
 ```
 
-Bu yöntem için erişim belirteci ekleyerek GET isteğini derlemeler `Authorization` dizesiyle öneki, üst `Bearer`. GET isteğini sonra gönderilir `Translate` çevrilecek belirten metin istek URL'si ve metne çevirmek için dil ile API. Yanıt ardından okuma ve çağıran yönteme döndürdü.
+Bu yöntem için erişim belirteci ekleyerek GET isteğini derlemeler `Authorization` dizesiyle öneki, üst `Bearer`. GET isteğini sonra gönderilir `translate` çevrilecek belirten metin istek URL'si ve metne çevirmek için dil ile API. Yanıt ardından okuma ve çağıran yönteme döndürdü.
 
-`Translate` API istek başarılı olduğunu belirten, isteğin geçerli olduğunu ve istenen bilgileri yanıtta sağlanan yanıt, HTTP durum kodu 200 (Tamam) gönderir. Yanıt iletilerini olası hata yanıtları listesi için bkz: [alma çevir](http://docs.microsofttranslator.com/text-translate.html#!/default/get_Translate) üzerinde [docs.microsofttranslator.com](http://docs.microsofttranslator.com/).
+`translate` API istek başarılı olduğunu belirten, isteğin geçerli olduğunu ve istenen bilgileri yanıtta sağlanan yanıt, HTTP durum kodu 200 (Tamam) gönderir. Yanıt iletilerini olası hata yanıtları listesi için bkz: [alma çevir](http://docs.microsofttranslator.com/text-translate.html#!/default/get_Translate).
 
 ### <a name="processing-the-response"></a>Yanıt işleme
 
@@ -141,13 +139,11 @@ API yanıtını XML biçiminde döndürülür. Aşağıdaki XML verileri tipik b
 
 ## <a name="summary"></a>Özet
 
-Bu makalede Microsoft metin çeviri API bir Xamarin.Forms uygulaması başka bir dilde metne bir dil metinden çevirmek için nasıl kullanılacağı açıklanmıştır. Metin çevirme yanı sıra Microsoft Çeviricisi API ayrıca bir dilden diğerine konuşma başka bir dilde metne transcribe.
-
-
+Bu makalede Microsoft Çeviricisi metin API bir Xamarin.Forms uygulaması başka bir dilde metne bir dil metinden çevirmek için nasıl kullanılacağı açıklanmıştır. Metin çevirme yanı sıra Microsoft Çeviricisi API ayrıca bir dilden diğerine konuşma başka bir dilde metne transcribe.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Microsoft Çeviricisi belgeleri](https://www.microsoft.com/cognitive-services/translator-api/documentation/TranslatorInfo/overview)
+- [Çevirici metin API belgelerine](/azure/cognitive-services/translator/).
 - [Bir RESTful Web hizmetini kullanma](~/xamarin-forms/data-cloud/consuming/rest.md)
 - [Yapılacaklar Bilişsel hizmetler (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
-- [Metin çeviri API](http://docs.microsofttranslator.com/text-translate.html)
+- [Microsoft Çeviricisi metin API](http://docs.microsofttranslator.com/text-translate.html).

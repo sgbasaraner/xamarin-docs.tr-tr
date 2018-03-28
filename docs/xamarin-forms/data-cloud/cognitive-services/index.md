@@ -1,6 +1,6 @@
 ---
-title: "Bilişsel hizmetler zekasıyla ekleme"
-description: "Bilişsel Hizmetler Microsoft API'leri, SDK'ları ve Hizmetleri yüz tanıma, konuşma tanıma ve dil anlama gibi özellikler ekleyerek uygulamalarını daha akıllı hale geliştiricilerin kullanımına kümesidir. Bu makalede bazı Microsoft Bilişsel hizmet API'leri çağırmak nasıl gösteren bir örnek uygulama için bir giriş sağlar."
+title: Bilişsel hizmetler zekasıyla ekleme
+description: Bilişsel Hizmetler Microsoft API'leri, SDK'ları ve Hizmetleri yüz tanıma, konuşma tanıma ve dil anlama gibi özellikler ekleyerek uygulamalarını daha akıllı hale geliştiricilerin kullanımına kümesidir. Bu makalede bazı Microsoft Bilişsel hizmet API'leri çağırmak nasıl gösteren bir örnek uygulama için bir giriş sağlar.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: fd67629b9e8d0057ccf3b95b9e84ff1d16acbd7b
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Bilişsel hizmetler zekasıyla ekleme
 
@@ -23,12 +23,12 @@ _Bilişsel Hizmetler Microsoft API'leri, SDK'ları ve Hizmetleri yüz tanıma, k
 Eşlik eden örnek işlevsellik sağlayan bir Yapılacaklar listesi uygulamasıdır:
 
 - Görev listesini görüntüleyin.
-- Ekleyin ve yazılım klavyesini aracılığıyla veya konuşma tanıma Bing konuşma API ile gerçekleştirerek görevleri düzenleyin. Konuşma tanıma gerçekleştirme hakkında daha fazla bilgi için bkz: [konuşma tanıma Bing konuşma API kullanarak](speech-recognition.md).
+- Ekleyin ve yazılım klavyesini aracılığıyla veya Microsoft konuşma API ile Konuşma tanıma gerçekleştirerek görevleri düzenleyin. Konuşma tanıma gerçekleştirme hakkında daha fazla bilgi için bkz: [konuşma tanıma Microsoft konuşma API kullanarak](speech-recognition.md).
 - Bing yazım denetleme API kullanarak onay görevleri yazım. Daha fazla bilgi için bkz: [Bing yazım denetleme API kullanarak yazım denetimi](spell-check.md).
 - İngilizce görevlere Çeviricisi API kullanarak Almanca çevir. Daha fazla bilgi için bkz: [metin çevirisini Çeviricisi API kullanarak](text-translation.md).
 - Görevleri silme.
 - Bir görevin durumu 'Tamamlandı' olarak ayarlayın.
-- Uygulama duygu tanıma API'si kullanılarak duygu tanıma ile oranı. Daha fazla bilgi için bkz: [duygu tanıma duygu tanıma API'si kullanılarak](emotion-recognition.md).
+- Uygulama yüz API'yi kullanarak duygu tanıma ile oranı. Daha fazla bilgi için bkz: [duygu tanıma yüz API kullanarak](emotion-recognition.md).
 
 Görevler yerel bir SQLite veritabanında depolanır. Yerel bir SQLite veritabanı kullanma hakkında daha fazla bilgi için bkz: [yerel bir veritabanı ile çalışan](~/xamarin-forms/app-fundamentals/databases.md).
 
@@ -36,7 +36,7 @@ Görevler yerel bir SQLite veritabanında depolanır. Yerel bir SQLite veritaban
 
 ![](images/sample-application-1.png "TodoListPage")
 
-Yeni öğeler tıklayarak oluşturulabilir  *+*  gider düğmesini `TodoItemPage`. Bu sayfa ayrıca için bir görev seçerek gittiğinizde:
+Yeni öğeler tıklayarak oluşturulabilir *+* gider düğmesini `TodoItemPage`. Bu sayfa ayrıca için bir görev seçerek gittiğinizde:
 
 ![](images/sample-application-2.png "TodoItemPage")
 
@@ -46,7 +46,7 @@ Smilies düğmesine tıklayarak `TodoListPage` gider `RateAppPage`, yüz ifade g
 
 ![](images/sample-application-3.png "RateAppPage")
 
-`RateAppPage` Duygu tanıma API'si görüntülenmesini döndürülen duygu tanıma ile gönderilen kendi yüz fotoğrafı geçirmesine izin verir.
+`RateAppPage` Yüz API'sine görüntülenmesini döndürülen duygu tanıma ile gönderilen kendi yüz fotoğrafı geçirmesine izin verir.
 
 ## <a name="understanding-the-application-anatomy"></a>Uygulama anatomisi anlama
 
@@ -73,7 +73,7 @@ PCL proje ayrıca bazı önemli dosyaları içerir:
 
 - `Microsoft.Net.Http` – sağlar `HttpClient` isteği HTTP üzerinden sağlama sınıfı.
 - `Newtonsoft.Json` – .NET için bir JSON çerçeve sağlar.
-- `Microsoft.ProjectOxford.Emotion` – Duygu API'ye erişmek için bir istemci kitaplığı.
+- `Microsoft.ProjectOxford.Face` – Yüz API'ye erişmek için bir istemci kitaplığı.
 - `PCLStorage` – platformlar arası yerel dosya g/ç API'leri kümesi sağlar.
 - `sqlite-net-pcl` – SQLite veritabanı depolama sağlar.
 - `Xam.Plugin.Media` – platformlar arası fotoğraf alma ve API çekme sağlar.
@@ -117,11 +117,10 @@ public class TodoItem
 
 Örnek uygulama aşağıdaki Microsoft Bilişsel hizmetler çağırır:
 
-- Bing konuşma API. Daha fazla bilgi için bkz: [konuşma tanıma Bing konuşma API kullanarak](speech-recognition.md).
+- Microsoft konuşma API. Daha fazla bilgi için bkz: [konuşma tanıma Microsoft konuşma API kullanarak](speech-recognition.md).
 - Bing yazım denetimi API'si. Daha fazla bilgi için bkz: [Bing yazım denetleme API kullanarak yazım denetimi](spell-check.md).
 - API çevir. Daha fazla bilgi için bkz: [metin çevirisini Çeviricisi API kullanarak](text-translation.md).
-- Duygu tanıma API'si. Daha fazla bilgi için bkz: [duygu tanıma duygu tanıma API'si kullanılarak](emotion-recognition.md).
-
+- Yüz API. Daha fazla bilgi için bkz: [duygu tanıma yüz API kullanarak](emotion-recognition.md).
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

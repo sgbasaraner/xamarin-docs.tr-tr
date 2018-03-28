@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 55d72a49f90095a33577279d018e1696dda8fc42
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 246dd135b8a6e8a60bca9ba38e91ca8fd2d43674
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="gdb"></a>GDB
 
@@ -163,7 +163,7 @@ Bir ipucu: `_Gdb` MSBuild hedef daha önce çalışan uygulama örnekleri KILL. 
 
 ### <a name="monopmip-doesnt-work"></a>`mono_pmip` çalışmıyor
 
-`mono_pmip` İşlevi (için yararlı [Yönetilen yığın çerçeveleri alma](http://www.mono-project.com/Debugging#Debugging_with_GDB)) den dışarı aktarılan `libmonosgen-2.0.so`, hangi `_Gdb` hedef değil şu anda çekme. (Bu bir sonraki sürümde düzeltilecektir.)
+`mono_pmip` İşlevi (için yararlı [Yönetilen yığın çerçeveleri alma](http://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)) den dışarı aktarılan `libmonosgen-2.0.so`, hangi `_Gdb` hedef değil şu anda çekme. (Bu bir sonraki sürümde düzeltilecektir.)
 
 Bulunan işlevleri çağırma etkinleştirmek için `libmonosgen-2.0.so`, hedef cihazda kopyalamak `gdb-symbols` dizini:
 

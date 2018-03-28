@@ -1,6 +1,6 @@
 ---
-title: "Java kitaplığı bağlama"
-description: "Android topluluk uygulamanızı kullanmayı düşünebilirsiniz birçok Java kitaplıkları; yine de sahip istiyor musunuz? Bu kılavuz, Java kitaplıkları bağlamaları kitaplığı oluşturarak Xamarin.Android uygulamanıza eklemenizi açıklanmaktadır."
+title: Java kitaplığı bağlama
+description: Android topluluk uygulamanızı kullanmayı düşünebilirsiniz birçok Java kitaplıkları; yine de sahip istiyor musunuz? Bu kılavuz, Java kitaplıkları bağlamaları kitaplığı oluşturarak Xamarin.Android uygulamanıza eklemenizi açıklanmaktadır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: B39FF1D5-69C3-8A76-D268-C227A23C9485
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: f336767cb6aea8bd8c7ce44f6479850a63d473a6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 47e32a68b7b10a2d02ee41a9abf234be6f002f7b
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="binding-a-java-library"></a>Java kitaplığı bağlama
 
@@ -145,5 +145,5 @@ Aşağıdaki bağlama senaryo kılavuzları kurulduğu uygulamanız için bir Ja
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [JNI ile çalışma](~/android/platform/java-integration/working-with-jni.md)
-- [GAPI Metadata](http://www.mono-project.com/GAPI#Metadata)
+- [GAPI Metadata](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
 - [Yerel Kitaplıkları Kullanma](~/android/platform/native-libraries.md)

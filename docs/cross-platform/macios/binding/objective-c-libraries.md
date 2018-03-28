@@ -1,5 +1,5 @@
 ---
-title: "Objective-C kitaplıkları bağlama"
+title: Objective-C kitaplıkları bağlama
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
@@ -7,17 +7,17 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 29b846453396d37adc689fe49e80299e8f35bbe2
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 3b1894555c27e368fc80cc4ebaa1f6b40446e2aa
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Objective-C kitaplıkları bağlama
 
 Xamarin.iOS veya Xamarin.Mac ile çalışırken, bir üçüncü taraf Objective-C Kitaplığı kullanmak istediğiniz durumlarda karşılaşabilirsiniz. Bu durumlarda, yerel Objective-C kitaplıkları için C# bağlama oluşturmak için Xamarin bağlama projeleri kullanabilirsiniz. Proje iOS ve Mac API'ları C# getirmek için kullanırız aynı araçları kullanır.
 
-Bu belge, Objective-C API ' larını bağlamak açıklar yalnızca C API'lerini bağlanıyorsanız, standart .NET mekanizmasını bunun için kullanmanız gereken [P/Invoke framework](http://mono-project.com/Dllimport).
+Bu belge, Objective-C API ' larını bağlamak açıklar yalnızca C API'lerini bağlanıyorsanız, standart .NET mekanizmasını bunun için kullanmanız gereken [P/Invoke framework](http://www.mono-project.com/docs/advanced/pinvoke/).
 Statik olarak bağlantı bir C Kitaplığı hakkında ayrıntılar bulunur [bağlama yerel kitaplıkları](~/ios/platform/native-interop.md) sayfası.
 
 Bizim Yardımcısı bkz [türleri Başvuru Kılavuzu bağlama](~/cross-platform/macios/binding/binding-types-reference.md).

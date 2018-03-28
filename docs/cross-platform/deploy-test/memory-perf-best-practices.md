@@ -1,6 +1,6 @@
 ---
-title: "Platformlar arası performansı"
-description: "Xamarin platformuyla oluşturulan uygulamaların performansını artırmak için birçok tekniği vardır. Topluca bu teknikler bir CPU ve bir uygulama tarafından kullanılan bellek miktarına tarafından gerçekleştirilen çalışma miktarını önemli ölçüde azaltabilir. Bu makalede ve bu teknikler anlatılmaktadır."
+title: Platformlar arası performansı
+description: Xamarin platformuyla oluşturulan uygulamaların performansını artırmak için birçok tekniği vardır. Topluca bu teknikler bir CPU ve bir uygulama tarafından kullanılan bellek miktarına tarafından gerçekleştirilen çalışma miktarını önemli ölçüde azaltabilir. Bu makalede ve bu teknikler anlatılmaktadır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 287f564ba74050aa8a06e5a582ae8db6657e440e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e8b597221e806c2338d6f1965d3d151f998a3011
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="cross-platform-performance"></a>Platformlar arası performansı
 
@@ -291,7 +291,7 @@ Topluca bu anlamına birçok nesne ayrılan ancak Canlı kalmak değil, olacağ�
 
 ## <a name="reduce-the-size-of-the-application"></a>Uygulama boyutunu azaltın
 
-Derleme işlemi uygulamaları yürütülebilir boyutu nereden geldiğini anlamak için her platformda anlamak önemlidir:
+Bir uygulamanın yürütülebilir boyutu nereden geldiğini anlamak için her platformda derleme işlemi anlamak önemlidir:
 
 - iOS, tamamlanan,-ARM derleme dili için derlenmiş zamanı (Uygulama Nesne AĞACI) uygulamalardır. .NET framework ile yalnızca uygun bağlayıcı seçeneği etkinse çıkarılır kullanılmayan sınıfları içerir.
 - Android uygulamaları Ara dile (IL) derlenir ve MonoVM ve tam zamanında (JIT) derleme paketlenir. Yalnızca uygun bağlayıcı seçeneği etkinse kullanılmayan framework sınıfları çıkarılır.
@@ -352,7 +352,7 @@ Resim çözünürlüğü bağımsız olarak, görüntü kaynakları görüntüle
 
 ## <a name="reduce-the-application-activation-period"></a>Uygulama etkinleştirme süresini azaltın
 
-Tüm uygulamaların bir *etkinleştirme süresi*, uygulama başlatıldığında ve uygulama kullanıma hazır olduğunda arasındaki süreyi olduğu. Bu etkinleştirme süresi, uygulama kendi ilk izlenim kullanıcılara sağlar ve bu nedenle etkinleştirme süresi ve kullanıcıların algısı, uygulamanın olumlu bir ilk izlenim elde etmesine sırayla azaltmak önemlidir.
+Tüm uygulamaların bir *etkinleştirme süresi*, uygulama başlatıldığında ve uygulama kullanıma hazır olduğunda arasındaki süreyi olduğu. Bu etkinleştirme süresi, uygulama kendi ilk izlenim kullanıcılara sağlar ve bu nedenle etkinleştirme süresi ve kullanıcının algısı, uygulamanın olumlu bir ilk izlenim elde etmesine sırayla azaltmak önemlidir.
 
 İlk kullanıcı Arabiriminde bir uygulama görüntülemeden önce kullanıcıya uygulama başlayarak olduğunu belirtmek için bir giriş ekranı sağlamalıdır. Uygulama Hızlı Başlangıç kullanıcı Arabiriminde görüntüleyemiyor, giriş ekranı etkinleştirme süresi ilerlemeyi uygulama askıda kurmadı güvenceyi teklif kullanıcıya bildirmek için kullanılmalıdır. Bu güvenceyi bir ilerleme çubuğu veya benzer denetim olabilir.
 

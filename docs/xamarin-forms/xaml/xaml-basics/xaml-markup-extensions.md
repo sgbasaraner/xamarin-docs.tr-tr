@@ -1,18 +1,18 @@
 ---
-title: "Bölüm 3. XAML işaretleme uzantıları"
-description: "XAML işaretleme uzantılarına XAML'de nesneleri veya diğer kaynaklardan dolaylı olarak başvurulan değerleri ayarlamak özellikler sağlayan bir önemli özellik oluşturur. XAML işaretleme uzantılarına nesneleri paylaşımı ve bir uygulama genelinde kullanılan sabitleri başvuran için özellikle önemlidir, ancak bunların en büyük yardımcı programı veri bağlamaları buldukları."
+title: Bölüm 3. XAML işaretleme uzantıları
+description: XAML işaretleme uzantılarına XAML'de nesneleri veya diğer kaynaklardan dolaylı olarak başvurulan değerleri ayarlamak özellikler sağlayan bir önemli özellik oluşturur. XAML işaretleme uzantılarına nesneleri paylaşımı ve bir uygulama genelinde kullanılan sabitleri başvuran için özellikle önemlidir, ancak bunların en büyük yardımcı programı veri bağlamaları buldukları.
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 3/27/2018
+ms.openlocfilehash: cd881b79945c2b9c10e9bb1bc85fce98acb71026
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Bölüm 3. XAML işaretleme uzantıları
 
@@ -45,7 +45,7 @@ Bazı XAML sayfaları özellikleri aynı değerlere ayarlanmış olan çeşitli 
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do that!"
                 HorizontalOptions="Center"
@@ -53,7 +53,7 @@ Bazı XAML sayfaları özellikleri aynı değerlere ayarlanmış olan çeşitli 
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do the other thing!"
                 HorizontalOptions="Center"
@@ -61,7 +61,7 @@ Bazı XAML sayfaları özellikleri aynı değerlere ayarlanmış olan çeşitli 
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
     </StackLayout>
 </ContentPage>
@@ -136,7 +136,7 @@ Ayarlamak gerekli şimdi `HorizontalOptions` ve `VerticalOptions` bu kaynaklar b
         BorderWidth="3"
         Rotation="-15"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 `StaticResource` Biçimlendirme uzantısı ile süslü ayraçlar her zaman ayrılmış ve sözlük anahtarı içerir.
@@ -192,7 +192,7 @@ Bu iki kaynak aynı şekilde başvurulabilir `LayoutOptions` değerler:
         BorderWidth="{StaticResource borderWidth}"
         Rotation="{StaticResource rotationAngle}"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 Türündeki kaynaklar için `Color`, doğrudan bu tür özniteliklerini atarken kullandığınız aynı dize Beyanları kullanabilirsiniz. Tür dönüştürücüleri kaynak oluşturulduğunda çağrılır. Bir kaynak türü işte `Color`:
@@ -201,14 +201,10 @@ Türündeki kaynaklar için `Color`, doğrudan bu tür özniteliklerini atarken 
 <Color x:Key="textColor">Red</Color>
 ```
 
-`FontSize` Özelliği küçük bir sorunu gösterir. Özellik türü olarak tanımlanan `double`. Özellik üyesi için ayarlandığında `NamedSize` numaralandırma gibi `Large`, `FontSizeConverter` sınıfı kullanarak bir platforma bağımlı değer dönüştürmek için planda çalışır `Device.GetNamedSized` yöntemi.
-
-Ancak, bir kaynak yazı tipi boyutu için tanımlayamazsınız bir `double` ve "Büyük" değerine ayarlayın. XAML ayrıştırıcısı kaynak işler aynı anda değeri bir yazı tipi boyutu kullanılacak bilmiyor. 
-
-Bir kaynak olarak tanımlamak için çözümdür bir `string` kullanarak `x:String` türü:
+Genellikle, kümesi'ni programları bir `FontSize` üyesi özelliğine `NamedSize` numaralandırma gibi `Large`. `FontSizeConverter` Sınıfı kullanarak bir platforma bağımlı değer dönüştürmek için planda çalışır `Device.GetNamedSized` yöntemi. Ancak, bir yazı tipi boyutunu kaynak tanımlarken gösterilen sayısal bir değer kullanmak için daha fazla mantıklıdır burada olarak bir `x:Double` türü:
 
 ```xaml
-<x:String x:Key="fontSize">Large</x:String>
+<x:Double x:Key="fontSize">24</x:Double>
 ```
 
 Şimdi dışındaki tüm özelliklerini `Text` kaynak ayarları tarafından tanımlanır:
@@ -275,7 +271,7 @@ Altı paylaşılan değerleri erişme üç düğme ile son tam XAML dosyası ş�
                 BorderWidth="{StaticResource borderWidth}"
                 Rotation="{StaticResource rotationAngle}"
                 TextColor="{StaticResource textColor}"
-                FontSize"{StaticResource fontSize}" />
+                FontSize="{StaticResource fontSize}" />
 
         <Button Text="Do that!"
                 HorizontalOptions="{StaticResource horzOptions}"

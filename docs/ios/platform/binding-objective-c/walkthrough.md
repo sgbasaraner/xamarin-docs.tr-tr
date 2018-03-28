@@ -1,6 +1,6 @@
 ---
-title: "İzlenecek yol: bir iOS Objective-C Kitaplığı bağlama"
-description: "Bu makale varolan Objective-C Kitaplığı, InfColorPicker için bir Xamarin.iOS bağlama oluşturma uygulamalı bir kılavuz sağlar. Statik Objective-C Kitaplık derleme, onu bağlayarak ve bir Xamarin.iOS uygulaması'nda bağlama kullanma gibi konuları kapsar."
+title: 'İzlenecek yol: bir iOS Objective-C Kitaplığı bağlama'
+description: Bu makale varolan Objective-C Kitaplığı, InfColorPicker için bir Xamarin.iOS bağlama oluşturma uygulamalı bir kılavuz sağlar. Statik Objective-C Kitaplık derleme, onu bağlayarak ve bir Xamarin.iOS uygulaması'nda bağlama kullanma gibi konuları kapsar.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e4619f5b1d3f888b2557cf894aaa83106504766f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 44ed651413d66866f131a294158525440278b291
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>İzlenecek yol: bir iOS Objective-C Kitaplığı bağlama
 
@@ -94,7 +94,7 @@ Komut satırı araçları yüklü, biz Kılavuzu ile çalışmaya devam etmek ha
 Bu kılavuzda, aşağıdaki adımları şu konulara değineceğiz:
 
 - **[Bir statik kitaplık oluşturma](#Creating_A_Static_Library)**  -bir statik kitaplık oluşturma bu adımı içerir **InfColorPicker** Objective-C kodunu. Statik kitaplık olacaktır `.a` dosya uzantısı ve kitaplığı proje .NET derlemesi halinde katıştırılır.
-- **[Xamarin.iOS bağlama proje oluşturma](#Create_a_Xamarin.iOS_Binding_Project)**  -statik kitaplık biz oluşturduktan sonra bir Xamarin.iOS bağlama projesi oluşturmak için kullanacağız. Meta veri Objective-C API nasıl kullanılabileceği açıklanır C# kodu biçiminde ve yeni oluşturduğumuz statik kitaplık, bağlama proje oluşur. Bu meta verileri, genellikle API tanımları da adlandırılır. Kullanacağız  **[hedefi Sharpie](#Using_Objective_Sharpie)**  API tanımları oluşturma bizimle yardımcı olmak için.
+- **[Xamarin.iOS bağlama proje oluşturma](#Create_a_Xamarin.iOS_Binding_Project)**  -statik kitaplık biz oluşturduktan sonra bir Xamarin.iOS bağlama projesi oluşturmak için kullanacağız. Meta veri Objective-C API nasıl kullanılabileceği açıklanır C# kodu biçiminde ve yeni oluşturduğumuz statik kitaplık, bağlama proje oluşur. Bu meta verileri, genellikle API tanımları da adlandırılır. Kullanacağız **[hedefi Sharpie](#Using_Objective_Sharpie)** API tanımları oluşturma bizimle yardımcı olmak için.
 - **[API tanımlarını normalleştirin](#Normalize_the_API_Definitions)**  - hedefi Sharpie bize yardımcı olan bir harika iş yapar, ancak her şeyi yapamazsınız. Biz kullanılabilmesi için önce API tanımlarını yapmak için ihtiyacımız bazı değişiklikler ele alacağız.
 - **[Bağlama kitaplığı kullanarak](#Using_the_Binding)**  -son olarak, yeni oluşturulan bağlama Projemizin kullanmayı göstermek için bir Xamarin.iOS uygulaması oluşturacağız.
 
@@ -159,7 +159,7 @@ Bu proje InfColorPicker kaynak kodunda (kırmızı kutu) her örnek projesine do
 
     [![](walkthrough-images/image16b.png "Bağlantı ikiliyi kitaplıklara bölümü genişletin")](walkthrough-images/image16b.png#lightbox)
 
-13. Kullanım  **+**  düğmesi gerekli çerçeveleri çerçeveleri yukarıda listelenen eklemenize olanak sağlayan iletişim kutusunu açmak için:
+13. Kullanım **+** düğmesi gerekli çerçeveleri çerçeveleri yukarıda listelenen eklemenize olanak sağlayan iletişim kutusunu açmak için:
 
     [![](walkthrough-images/image16c.png "Yukarıda listelenen gerekli çerçeveleri çerçeveleri ekleyin")](walkthrough-images/image16c.png#lightbox)
 
@@ -183,7 +183,7 @@ Bir fat ikili oluşturma üç adım bir işlemdir:
 
 Tutarak bu üç adımı yerine basittir ve gelecekte Objective-C Kitaplığı güncelleştirmeler aldığında veya biz hata düzeltmeleri gerekiyorsa tekrarlamanız gerekebilir. Bu adımları otomatikleştirmek karar verirseniz, gelecek Bakım ve Destek iOS bağlama projesinin basitleştirir.
 
-Birçok aracı gibi görevler - bir kabuk betiği otomatik hale getirmek kullanılabilir vardır [rake](http://rake.rubyforge.org/), [xbuild](http://www.mono-project.com/Microsoft.Build), ve [olun](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Biz Xcode komut satırı araçlarını, biz de olun, bu nedenle diğer bir deyişle bu kılavuz için kullanılacak yapı sistemi yüklenirken. Burada bir **derleme görevleri dosyası** , bir iOS aygıtı ve herhangi bir kitaplığı simülatörü çalışması çok mimarisi paylaşılan kitaplığı oluşturmak için kullanabilirsiniz:
+Birçok aracı gibi görevler - bir kabuk betiği otomatik hale getirmek kullanılabilir vardır [rake](http://rake.rubyforge.org/), [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/), ve [olun](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Biz Xcode komut satırı araçlarını, biz de olun, bu nedenle diğer bir deyişle bu kılavuz için kullanılacak yapı sistemi yüklenirken. Burada bir **derleme görevleri dosyası** , bir iOS aygıtı ve herhangi bir kitaplığı simülatörü çalışması çok mimarisi paylaşılan kitaplığı oluşturmak için kullanabilirsiniz:
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild

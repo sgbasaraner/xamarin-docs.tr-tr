@@ -1,20 +1,19 @@
 ---
-title: "Eylem çubuğunda değiştirme"
+title: Eylem çubuğunda değiştirme
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5341D28E-B203-478D-8464-6FAFDC3A4110
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: e71c6ea816b8b732d21148db32fd9395732dd4c0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/27/2018
+ms.openlocfilehash: f02f77eb45086d1d568b367b28163a4773dcd80d
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="replacing-the-action-bar"></a>Eylem çubuğunda değiştirme
-
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -38,7 +37,7 @@ Aşağıdaki bölümlerde bu işlem ayrıntılı açıklanmıştır. Basit bir u
 
 ## <a name="start-an-app-project"></a>Bir uygulama projesi Başlat
 
-Adlı yeni bir Android projesi oluşturma **ToolbarFun** (bkz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) yeni bir Android projesi oluşturma hakkında daha fazla bilgi için). Bu Proje oluşturulduktan sonra hedef ve minimum Android API düzeylerini ayarlamak **Android 5.0 (API düzeyi 21 - Lolipop)**. Ayar Android sürümü düzeyleri hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md). Uygulama yerleşik ve çalıştırmak, bu ekran görüntüsünde görülen varsayılan eylem çubuğunda görüntülenir: 
+Adlı yeni bir Android projesi oluşturma **ToolbarFun** (bkz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) yeni bir Android projesi oluşturma hakkında daha fazla bilgi için). Bu Proje oluşturulduktan sonra hedef ve minimum Android API düzeylerini ayarlamak **Android 5.0 (API düzeyi 21 - Lolipop)** veya sonraki bir sürümü. Ayar Android sürümü düzeyleri hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md). Uygulama yerleşik ve çalıştırmak, bu ekran görüntüsünde görülen varsayılan eylem çubuğunda görüntülenir:
 
 [![Varsayılan eylem çubuğunun ekran görüntüsü](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
@@ -76,6 +75,8 @@ Bir olive-green `colorPrimary` ayarı araç çubuğunun arka plan rengini kullan
 ```xml
 <item name="android:colorPrimary">#5A8622</item>
 ```
+
+## <a name="apply-the-custom-theme"></a>Özel tema uygula
 
 Düzen **Properties/AndroidManifest.xml** ve aşağıdakileri ekleyin `android:theme` özniteliğini `<application>` öğesi uygulama kullanmayacağından `MyTheme` özel tema: 
 
@@ -136,12 +137,6 @@ Düzen dosyasını düzenleyin **Resources/layout/Main.axml** ve içeriğini aş
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-    <Button
-        android:id="@+id/MyButton"
-        android:layout_below="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World, Click Me!" />
 </RelativeLayout>
 ```
 
@@ -171,6 +166,7 @@ Bu kod bulur `Toolbar` ve çağrıları `SetActionBar` böylece `Toolbar` varsay
 
 Dikkat `Toolbar` bağımsız stilde `Theme.Material.Light.DarkActionBar` uygulama geri kalanı için uygulanan tema. 
 
+Uygulama çalışırken bir özel durum oluşursa, bkz: [sorun giderme](#troubleshooting) bölümüne bakın.
 
  
 ## <a name="add-menu-items"></a>Menü öğeleri ekleme 
@@ -193,7 +189,7 @@ Aşağıdaki bölümlerde bu işlem ayrıntılı ekleyerek göstermek **Düzenle
 
 ### <a name="install-menu-icons"></a>Menü simgeleri yükleyin
 
-Devam etmeden `ToolbarFun` örnek uygulama, menü simgeleri uygulaması projesine ekleyin. Karşıdan [araç icons.zip](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons.zip?raw=true) ve onu sıkıştırmasını açın. Ayıklanan içeriğini kopyalayın *mipmap -* projeye klasörleri *mipmap -* altındaki klasörler **ToolbarFun/kaynakları** ve her eklenen simge dosyası projeye ekleyin.
+Devam etmeden `ToolbarFun` örnek uygulama, menü simgeleri uygulaması projesine ekleyin. Karşıdan [araç çubuğu simgeleri](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)sıkıştırmasını açın ve ayıklanan içeriğini kopyalayın *mipmap -* projeye klasörleri *mipmap -* altındaki klasörler **ToolbarFun / Kaynakları** ve her eklenen simge dosyası projeye ekleyin.
 
 
 ### <a name="define-a-menu-resource"></a>Menü kaynağı tanımlayın
@@ -277,6 +273,19 @@ Bir kullanıcı taşma menüsünü dokunur zaman **Tercihler** menü öğesi gö
 Android Geliştirici Android menüleri hakkında daha fazla bilgi için bkz: [menüleri](https://developer.android.com/guide/topics/ui/menus.html) konu. 
  
 
+## <a name="troubleshooting"></a>Sorun giderme
+
+Aşağıdaki ipuçları eylem çubuğunda bir araç çubuğu ile değiştirirken oluşabilecek sorunları hata ayıklamak için yardımcı olabilir.
+
+### <a name="activity-already-has-an-action-bar"></a>Etkinlik bir eylem çubuğu zaten var.
+
+Uygulama açıklandığı gibi özel bir tema kullanmak için düzgün şekilde yapılandırılmamışsa, [özel tema uygulama](#apply-the-custom-theme), uygulama çalıştırılırken şu özel durum ortaya çıkabilir:
+
+![Özel tema kullanılmadığında oluşabilecek hata](replacing-the-action-bar-images/03-theme-not-defined.png)
+
+Ayrıca, bir hata iletisi gibi aşağıdaki üretilen: _Java.Lang.IllegalStateException: Bu etkinlik zaten penceresi dekorasyonu tarafından sağlanan bir eylem çubuğu vardır._ 
+
+Bu hatayı düzeltmek için aşağıdakileri doğrulayın `android:theme` özel tema eklenen özniteliğinin `<application>` (içinde **Properties/AndroidManifest.xml**) daha önce açıklandığı gibi [özel temauygulama](#apply-the-custom-theme). Ayrıca, bu hataya neden olabilir `Toolbar` düzeni veya özel tema düzgün yapılandırılmamış.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
