@@ -1,5 +1,5 @@
 ---
-title: "Android ışını"
+title: Android ışını
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 4172A798-89EC-444D-BC0C-0A7DD67EF98C
@@ -7,15 +7,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/06/2017
-ms.openlocfilehash: e9936bb523db8ba8777df94a03bf12f9fa718fca
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 08d15095c8d1d08a65f18d5ad867efdd89d3b795
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="android-beam"></a>Android ışını
 
-Android ışını uygulamaların yakınında olduğunda NFC üzerinden bilgi paylaşmanızı sağlayan Android 4'teki yeni bir yakın alan iletişimi (NFC) teknolojisidir.
+Android ışını uygulamaların yakınında olduğunda NFC üzerinden bilgi paylaşmanızı sağlayan Android 4.0 sunulan yakın alan iletişimi (NFC) bir teknolojidir.
 
 [![İki bilgi paylaşımı yakın cihazlar gösteren diyagram](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 

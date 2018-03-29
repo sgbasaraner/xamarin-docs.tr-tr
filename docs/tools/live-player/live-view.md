@@ -1,6 +1,7 @@
 ---
-title: "XAML Canlı Önizleme"
-description: "Gerçek zamanlı iOS veya Android cihazında uygulama kod değişikliklerini test"
+redirect_url: /xamarin/tools/live-player/
+title: XAML Canlı Önizleme
+description: Gerçek zamanlı iOS veya Android cihazında uygulama kod değişikliklerini test
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
@@ -8,11 +9,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 12/21/2017
-ms.openlocfilehash: f5c1649d625f2094fb710066f79a4ae89a696266
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 96ce096a57e46b36ebe6516ba0aff2733883e400
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-live-previewing"></a>XAML Canlı Önizleme
 
@@ -20,12 +21,12 @@ Xamarin Canlı Player avantajlarından biri Önizleme XAML sayfaları canlı, Vi
 
 ## <a name="requirements"></a>Gereksinimler
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Windows 7 veya sonraki sürümlerini çalıştıran bir makine.
 2. Visual Studio 2017 sürüm 15.4 veya üstü ile **.NET ile Mobil Geliştirme** yüklü iş yükü.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
 1. Bir Mac OS X 10.11 sürümünü, macOS 10.12 ya da daha fazla ile.
 2. Visual Studio Mac 7.2 veya daha sonra. En son sürümünü öneririz.
@@ -40,7 +41,7 @@ Xamarin Canlı Player avantajlarından biri Önizleme XAML sayfaları canlı, Vi
 
 İOS veya Android Cihazınızı ile canlı Xamarin Player kullanmadan önce Xamarin Canlı Player uygulamayı indirmek ve Visual Studio için açıklandığı gibi eşleştirin gerekir [yükleme](~/tools/live-player/install.md) Kılavuzu. Visual Studio aygıtınıza başarıyla eşleştirilmiş sonra XAML sayfanızın Canlı Önizleme başlayabilirsiniz. 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio 2017 düzenleyicisinde Canlı Önizleme istediğiniz XAML sayfası açın:
 
@@ -54,7 +55,7 @@ Xamarin Canlı Player avantajlarından biri Önizleme XAML sayfaları canlı, Vi
 
     ![](live-view-images/vs-image3.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
 1. Visual Studio'da Canlı Önizleme için Mac Düzenleyicisi istediğiniz XAML sayfası açın:
 

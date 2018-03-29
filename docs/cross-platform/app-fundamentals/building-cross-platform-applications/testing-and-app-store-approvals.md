@@ -4,14 +4,10 @@ Başlık: "Bölümü 6 – test etme ve uygulama mağazası onayları" ms.topic:
 
 # <a name="part-6---testing-and-app-store-approvals"></a>Bölüm 6 - test etme ve uygulama mağazası onayları
 
-<a name="Testing" />
-
 
 ## <a name="testing"></a>Sınama
 
 Birçok uygulama (bazı depoları üzerinde bile Android uygulamaları) bir onay işlemi yayımlanmadan önce geçmesi gerekir; sınama emin olmak için kritik olacak şekilde uygulamanızı Pazar ulaştığında (let alone müşterilerinizle başarılı). Test birçok, beta çok çeşitli donanım arasında sınama yönetmek için test Geliştirici düzeyi biriminden biçimde olabilir.
-
- <a name="Test_on_All_Platforms" />
 
 
 ### <a name="test-on-all-platforms"></a>Tüm platformlarda test
@@ -22,16 +18,12 @@ Bu her zaman işletim sistemi ve ayrıca farklı cihaz yetenekleri/yapılandırm
 
 Ayrıca, mümkün olduğu gibi birçok farklı fiziksel donanım aygıtlarında test etmeniz gerekir.
 
- <a name="Devices_in_cloud" />
-
 
 #### <a name="devices-in-cloud"></a>Bulutta cihazları
 
 Mobil telefon ve tablet ekosistemi test cihazları kullanılabilir gitgide artan sayısına olanaksız hale her zaman artıyor. Bu sorunu çözmek için hizmetlerin sayısı; böylece uygulamaların yüklü ve doğrudan içinde çok sayıda donanım gereksinimleri yatırım yapmalarına gerek kalmadan test birçok farklı cihaz uzaktan denetleme olanağı sunar.
 
 [Uygulama Merkezi Test](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) iOS ve Android uygulamaları farklı cihaz yüzlerce test etmek için kolay bir yol sunar.
-
- <a name="Test_Management" />
 
 
 ### <a name="test-management"></a>Test Yönetimi
@@ -44,10 +36,8 @@ Kuruluşunuz ya da bir beta programı ile dış kullanıcıları yönetme içind
 
 Uygulamanızın toplama ve kullanım ve hata raporu içinde yerleşik altyapısı sağlayan ve ayrıca Sınayıcılar ve cihazlarını kaydolma yardımcı olmak için sağlama işlemini hızlandırma bu sorunları gidermek için Hizmetleri Yardım dizi vardır .
 
-[Xamarin Öngörüler Önizleme](http://xamarin.com/insights) kilitlenme raporlama ve Gelişmiş uygulama kullanım bilgileri sağlayarak bu sorunu ikinci bölümü için bir çözüm sunar.
+[Visual Studio Uygulama Merkezi](/appcenter/) test sürüm dağıtım, kilitlenme bildirimini ve Gelişmiş uygulama kullanım bilgileri sağlayarak bu sorunları için bir çözüm sunar.
 
-
- <a name="Test_Automation" />
 
 
 ### <a name="test-automation"></a>Test Otomasyonu
@@ -55,12 +45,10 @@ Uygulamanızın toplama ve kullanım ve hata raporu içinde yerleşik altyapıs�
 Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) otomatik kullanıcı arabirimi yerel olarak çalıştırın ya da yüklenen test komut dosyaları oluşturmak için kullanılan [Center uygulamayı Test](https://docs.microsoft.com/appcenter/test-cloud/).
 
 
- <a name="Unit_Testing" />
 
 
 ## <a name="unit-testing"></a>Birim testi
 
- <a name="Touch.Unit" />
 
 
 #### <a name="touchunit"></a>Touch.Unit
@@ -69,29 +57,13 @@ Xamarin.iOS, testleri yazma JUnit/NUnit stili takip eden Touch.Unit adlı bir bi
 
 Başvurmak bizim [birim testi Xamarin.iOS](~/ios/deploy-test/touch.unit.md) belgelerine testleri yazma ve Touch.Unit çalıştırma hakkında bilgi.
 
- <a name="Andr.Unit" />
 
 
 #### <a name="andrunit"></a>Andr.Unit
 
 Touch.Unit Andr.Unit adlı Android için bir açık kaynak eşdeğeri yoktur. Buradan indirebilirsiniz [github](https://github.com/spouliot/Andr.Unit) ve aracı hakkında okuyun [ @spouliotın blog](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/).
 
- <a name="Windows_Phone" />
 
-
-#### <a name="windows-phone"></a>Windows Phone
-
-Windows Phone için test Kurulum birimi yardımcı olması için bazı bağlantılar şunlardır:
-
--   [http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/](http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/)
--   [http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/](http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/)
--   [http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7](http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7)
--   [http://mobile.dzone.com/articles/unit-testing-your-windows](http://mobile.dzone.com/articles/unit-testing-your-windows)
-
-
-&nbsp;
-
- <a name="App_Store_Approvals" />
 
 
 ## <a name="app-store-approvals"></a>Uygulama mağazası onayları
@@ -100,7 +72,6 @@ Apple ve Microsoft çalışması kendi platformlarda yalnızca deposu: Market ve
 
 Bir uygulamayı gözden geçirilmesi için bekleyen çok gerilimli olabilir - uygulamalar onay için bir "hedeflenen" başlatma tarihi önce hata için çok az kenar boşluğu ile gönderilen iş pressures genellikle anlamına gelir. En fazla iki hafta sürebilir ve mutlaka saydam değil. işlem: yoktur sınırlı geri bildirim, uygulamanızın ilerlemeyi son reddedildi veya onaylanmış kadar. Reddetme fırsatı, pazarlama pencerenin eksik, özellikle birden çok kez olur ve özgün başlatma tarih hafta geçirmek ve uygulama son onaylandığında anlamına gelebilir.
 
- <a name="Be_prepared" />
 
 
 ### <a name="be-prepared"></a>Hazırlıklı olun
@@ -117,7 +88,6 @@ Hesabınızı onaylandıktan sonra bir uygulama göndermeye hazırsınız. Uygul
 
 Bu bölüm geri kalanı uygulamanızı herhangi duraklamalarla onaylandığından emin olmak için dikkate yapması gereken şeyleri ele alınmaktadır.
 
- <a name="Quality" />
 
 
 ### <a name="quality"></a>Kalite
@@ -127,8 +97,6 @@ Belirgin sesleri, ancak uygulamalar genellikle reddedilen belirli bir kalite dü
 Kilitlenme reddetme için yaygın bir nedenidir. Uygulama kilitlenme yapmak çok kolay ise reddedilmesi garanti. Çoğu geliştirici, kilitlenme, ancak genellikle yaparlar Beklenti ile uygulamalarını gönderme yok. Göndermeden, yalnızca üzerinde her şeyi çalıştığından emin yetişememe odaklanan aynı zamanda, ağ sorunlarını ve bellek veya depolama alanı gibi kaynak kısıtlamaları gibi yaygın mobil hata senaryoları işlemek önce uygulamanız baştan sona test edin. Test etmek için simulator ve fiziksel cihazları kullanın - kodu bir benzeticisinde ne kadar iyi çalışır bağımsız olarak, yalnızca bir aygıt bir uygulamanın gerçek performans gösteren. Bul ve beta Test edenlere ekibi listeleme yapabilecekleriniz - üçüncü taraf hizmetleri beta dağılımı ve geri bildirim yönetmeye yardımcı olabilen varsa gibi birçok farklı cihaz kullanın.
 
 Tüm mobil işletim sistemleri yeterince hızlı başlamıyorsa uygulamanın KILL. İzin verilen süre değişir, ancak genel olarak uygulamaları birkaç saniye içinde yanıt ve arka plan görevlerinin daha uzun sürecektir herhangi bir iş yapabilir hedefleyin. Yük uzun sürmesine uygulamaları ya da olan normal kullanımda olmayan esnek yeterince reddedilir. Her zaman bir şey arka planda gerçekleştiği ya da uygulama çökme ve bir kez daha, reddedilen için görünür kullanıcı geri bildirim sağlayın.
-
- <a name="Check_Your_Edge_Cases" />
 
 
 ### <a name="check-your-edge-cases"></a>Edge çalışmalarınızı denetleyin
@@ -143,7 +111,6 @@ Aşağıdaki listede kaçırmış olabileceği kenar-durumlarda denetleme iyi bi
 -   **Donanım değişir** – desteklemeyi planladığınız en eski, en yavaş donanım test unutmayın. Uygulamanızı etkileyebilecek iki yön vardır: bir eski aygıt ve Kamera Mikrofon, GPS jiroskop veya diğer isteğe bağlı bir bileşen gibi donanım özellikleri için destek kullanılamayabilir performans. Uygulamaları kurtulabilirsiniz düzgün biçimde (ve çökme değil) bir bileşen olduğunda kullanılamaz.
 
 
- <a name="Guidelines_are_more_than_just_a_‘guide’" />
 
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>Daha fazlasını 'kılavuz' yönergelerdir
@@ -158,7 +125,6 @@ Windows geliştiricileri benzer şekilde dikkatli olmalıdır; sık karşılaş�
 
 Okuyup her platform için tasarım yönergeleri izleyin, tasarımcıları teşvik edin.
 
- <a name="Implementing_Platform-Specific_Features" />
 
 
 ### <a name="implementing-platform-specific-features"></a>Platforma özgü özelliklerini uygulama
@@ -171,7 +137,6 @@ Okuyup her platform için tasarım yönergeleri izleyin, tasarımcıları teşvi
 -   **Eşlemeleri** – mobil eşlenir yer paylaşımları ve diğer özellikleri eklemek için ancak harita saklamasını 'KREDİLERİ' bilgileri (örneğin, iOS5 Google logo) Bunun yapılması reddetme neden olacak şekilde dikkatli olmaması giderek daha çok yaygındır.
 
 
- <a name="Manage_Your_Metadata" />
 
 
 ### <a name="manage-your-metadata"></a>Meta verilerinizin yönetme
@@ -185,7 +150,6 @@ Reddedilen bir uygulamada sonuçlanabilir belirgin teknik sorunların yanı sır
 
 Uygulama meta verileri içine kadar çaba geliştirme ve test etme gibi içine yerleştirin. Sağ almak üzere zaman ayırdığınız faydalı olması için ikincil infringements meta veriler için uygulamaları reddetti.
 
- <a name="App_Stores:_Not_For_Everyone" />
 
 
 ### <a name="app-stores-not-for-everyone"></a>Uygulama mağazaları: Herkes için
@@ -198,8 +162,6 @@ Android en fazla esnekliği bu bağlamda sunar: uygulamaları (cihazın yapılan
 Apple iOS App Store onay işlemi atlar ve çalışanların şirket içi uygulamaları dağıtmak şirketlerin sağlayan Geliştirici Kurumsal programı kayıtlı geliştiriciler bir şirket içi dağıtım seçeneği sağlar.
 Ne yazık ki bu lisans extranet benzeri uygulama dağıtım için gereken diğer kapalı gruplarına müşteri veya tedarikçi adresi değil. [Enterprise (ve geçici) dağıtımı](~/ios/deploy-test/app-distribution/ipa-support.md)
 
-
- <a name="App_Store_Summary" />
 
 
 ### <a name="app-store-summary"></a>Uygulama mağazası özeti

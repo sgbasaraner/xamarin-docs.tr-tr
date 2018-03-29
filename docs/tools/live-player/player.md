@@ -1,6 +1,6 @@
 ---
-title: "Xamarin Canlı oynatıcı uygulaması"
-description: "Düzenle ve iOS veya Android cihazında gerçek zamanlı uygulamaları test etme"
+title: Xamarin Canlı oynatıcı uygulaması
+description: Düzenle ve iOS veya Android cihazında gerçek zamanlı uygulamaları test etme
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 6b0d62a9026c1248a66166e75ed41bb0148547a6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d666bb9a7749845265d50b86e46ef78e2036cb69
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Canlı oynatıcı uygulaması
 
@@ -20,17 +20,19 @@ ms.lasthandoff: 03/12/2018
 
 ## <a name="get-the-app"></a>Uygulamayı Al
 
-### <a name="xamarin-live-player-for-android"></a>Android için Xamarin Canlı Player
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
 Google Play'de Android için Xamarin Canlı Player kullanılabilir:
 
 [ ![Google play'de kullanılabilir](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 Google Play gerek kalmadan Android cihazlar için Xamarin Canlı Player aracılığıyla kullanılabilir [HockeyApp](https://aka.ms/xlp-hockeyapp) dağıtım. Android için seçim tarafından doğrudan Google Play'den yüklenebilir için erken Önizleme ek olarak, derlemeler [açık beta programı](https://play.google.com/apps/testing/com.xamarin.live)
 
-### <a name="xamarin-live-player-for-ios"></a>İOS için Xamarin Canlı Player
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
 Katılmak için kullanıcıların öneririz [Xamarin Canlı Player uygulama _iOS Önizleme_ ](https://aka.ms/liveplayeralpha) keyfini TestFlight üzerinden yapılan en son geliştirmeleri hızlı erişim için.
 
-
+-----
 
 ## <a name="using-the-app"></a>Uygulamasını kullanarak
 
@@ -44,7 +46,7 @@ Bastığınızda **Visual Studio çiftine**, bilgisayarınızda gösteren barkod
 
 ![İOS barkod tarayıcısı ekran görüntüsü](player-images/scan-iphone-sml.png) ![Android barkod tarayıcısı ekran görüntüsü](player-images/scan-android-sml.png)
 
-Bağlantı başarılı olursa, kod hemen (örneğin hesaplayıcı örnek) aygıtta çalıştırmanız gerekir:
+Bağlantı başarılı olursa, cihazda hemen kod çalıştırmanız gerekir (gibi [hesaplayıcı örnek](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
 
 ![Cihazda çalışan örnek hesaplayıcı uygulama](player-images/basic-calculator-iphone-sml.png)
 
@@ -52,7 +54,7 @@ Bağlantı başarılı olursa, kod hemen (örneğin hesaplayıcı örnek) aygıt
 
 Bilgi düğmesine basın **(i)** ortaya çıkarmak üzere uygulama altındaki **seçenekleri** menüsü:
 
-![Seçenekler menüsünün ekran görüntüsü](player-images/options.png)
+[ ![Seçenekler menüsünün ekran görüntüsü](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>Günlükleri
 
@@ -64,13 +66,13 @@ Sorunlara tanı koymak için günlüklere bakın.
 * Sürüm bilgileri.
 * Geri bildirim gönderin.
 
-![Ayarlarının ekran görüntüsü](player-images/settings.png)
+[ ![Ayarlarının ekran görüntüsü](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>Cihazları yönetme
 
 Bir cihaz ilk kez bağlanmak için'ndaki yönergeleri izleyin [gereksinimleri & Kurulum](~/tools/live-player/install.md). Birden çok cihazı (örneğin bir iOS ve bir Android) eşleştirin ve bunları IDE yönetebilirsiniz.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Visual Studio'da, **Araçlar > Xamarin Canlı Player > cihazları yönetme...**
 
@@ -84,7 +86,7 @@ Bu pencere şunları yapmanızı sağlar:
 
 Bu pencere aygıt listesinden de erişebilirsiniz.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
 Mac için Visual Studio'da, **Araçlar > (Xamarin Canlı Player) aygıtları yönetme...**
 

@@ -1,6 +1,6 @@
 ---
-title: "Xamarin.Forms için XAML Önizleyicisi"
-description: "Siz yazarken çizilir, Xamarin.Forms düzenleri bakın!"
+title: Xamarin.Forms için XAML Önizleyicisi
+description: Siz yazarken çizilir, Xamarin.Forms düzenleri bakın!
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 8f4d8253d56708f77ede7b5173f3dd771e1da0ea
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a7a9c4fed92cb4ed8c8c12e97129bc8379037acb
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms için XAML Önizleyicisi
 
@@ -26,17 +26,19 @@ Daha fazla bilgi bulunmaktadır [sürüm notları](https://developer.xamarin.com
 
 ## <a name="getting-started"></a>Başlarken
 
-### <a name="visual-studio-for-mac-on-mac"></a>Mac üzerinde Mac için Visual Studio
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Kullanım **Görünüm > Diğer Pencereler > Xamarin.Forms Önizleyicisi** Önizleme penceresini açmak için Visual Studio menüsünde. Kullanım **Pencere > Yeni dikey sekme grubu** menü yan yana getirin.
+
+[![ListView denetimi Önizleme Visual Studio'da](xaml-previewer-images/xamlp-list-vs-sml.png "Visual Studio Forms önizlemesinde")](xaml-previewer-images/xamlp-list-vs.png#lightbox "Visual Studio Forms önizlemesinde")
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 **Önizleme** düğmesi XAML dosyası sağ tıklayıp seçerek Editor'ü görüntülenebilir **birlikte Aç > XAML Görüntüleyicisi**. Önizleme bölmesini sonra gösterilen veya tuşlarına basarak gizli **Önizleme** herhangi bir XAML belge pencerenin sağ üst köşedeki düğmesi:
 
 [![Mac için Visual Studio ListView denetimi Önizleme](xaml-previewer-images/xamlp-list-sml.png "Mac için Visual Studio Forms önizlemesinde")](xaml-previewer-images/xamlp-list.png#lightbox "Mac için Visual Studio Forms önizlemesinde")
 
-### <a name="visual-studio-on-windows"></a>Visual Studio Windows
-
-Kullanım **Görünüm > Diğer Pencereler > Xamarin.Forms Önizleyicisi** Önizleme penceresini açmak için Visual Studio menüsünde. Kullanım **Pencere > Yeni dikey sekme grubu** menü yan yana getirin.
-
-[![ListView denetimi Önizleme Visual Studio'da](xaml-previewer-images/xamlp-list-vs-sml.png "Visual Studio Forms önizlemesinde")](xaml-previewer-images/xamlp-list-vs.png#lightbox "Visual Studio Forms önizlemesinde")
+-----
 
 ## <a name="xaml-preview-options"></a>XAML Önizleme seçenekleri
 

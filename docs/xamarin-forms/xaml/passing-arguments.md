@@ -1,6 +1,6 @@
 ---
-title: "XAML'de bağımsız değişkenleri geçirme"
-description: "Bu makalede, varsayılan olmayan kurucusuna, Fabrika yöntemlerini çağırmaya ve genel bir bağımsız değişken türünü belirtmek için bağımsız değişkenler geçirmek için kullanılan XAML öznitelikleri kullanma gösterilmektedir."
+title: XAML'de bağımsız değişkenleri geçirme
+description: Bu makalede, varsayılan olmayan kurucusuna, Fabrika yöntemlerini çağırmaya ve genel bir bağımsız değişken türünü belirtmek için bağımsız değişkenler geçirmek için kullanılan XAML öznitelikleri kullanma gösterilmektedir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2016
-ms.openlocfilehash: a30dd9b33466ac6907322f8c6b586c012452a44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 232f60bb7afca7acf73e63bd7e11e1b6ec47fbd2
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="passing-arguments-in-xaml"></a>XAML'de bağımsız değişkenleri geçirme
 
@@ -135,7 +135,7 @@ Fabrika yöntemleri çağırılabilir XAML'de yöntemin belirterek kullanarak ad
 </BoxView>
 ```
 
-İçindeki öğe sayısını `x:Arguments` etiketini ve bu öğeleri türlerini çağrılan Üreteç yöntemi bağımsız değişkenleri aynı olmalıdır. [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Üreteç yöntemi gerektiren dört [ `Int32` ](https://developer.xamarin.com/api/type/System.Int32/) sırasıyla 0 ile 255 arasında kırmızı, yeşil, mavi ve alfa değerleri temsil eden parametreleri. [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Üreteç yöntemi gerektiren dört [ `Double` ](https://developer.xamarin.com/api/type/System.Double/) ton, Doygunluk, parlaklığını ve sırasıyla 0 ile 1 arasında alfa değerleri temsil eden parametreleri. [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Üreteç yöntemi gerektiren bir [ `String` ](https://developer.xamarin.com/api/type/System.String/) onaltılık temsil eden (A) RGB rengi.
+İçindeki öğe sayısını `x:Arguments` etiketini ve bu öğeleri türlerini çağrılan Üreteç yöntemi bağımsız değişkenleri aynı olmalıdır. [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Üreteç yöntemi gerektiren dört [ `Int32` ](https://docs.microsoft.com/dotnet/api/system.int32) sırasıyla 0 ile 255 arasında kırmızı, yeşil, mavi ve alfa değerleri temsil eden parametreleri. [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Üreteç yöntemi gerektiren dört [ `Double` ](https://docs.microsoft.com/dotnet/api/system.double) ton, Doygunluk, parlaklığını ve sırasıyla 0 ile 1 arasında alfa değerleri temsil eden parametreleri. [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Üreteç yöntemi gerektiren bir [ `String` ](https://docs.microsoft.com/dotnet/api/system.string) onaltılık temsil eden (A) RGB rengi.
 
 Aşağıdaki ekran görüntüleri her çağırma sonucu göster [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) belirtilen bağımsız değişken değerlerle Üreteç yöntemi:
 

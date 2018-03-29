@@ -1,6 +1,6 @@
 ---
-title: "Xamarin Canlı Player Kurulumu"
-description: "Düzenle ve iOS veya Android cihazında gerçek zamanlı uygulamaları test etme"
+title: Xamarin Canlı Player Kurulumu
+description: Düzenle ve iOS veya Android cihazında gerçek zamanlı uygulamaları test etme
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: ddc16dc1faaf623098aad5bca340c15f943223ba
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 05d6a679f318406d1ee5c6893ae4d01452a79723
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Canlı Player Kurulumu
 
@@ -22,25 +22,28 @@ Bu değişiklikleri Canlı cihazda yansıtılmasını ve Xamarin Canlı Player, 
 
 ## <a name="1-get-the-app"></a>1. Uygulamayı Al
 
-### <a name="xamarin-live-player-for-android"></a>Android için Xamarin Canlı Player
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
 Google Play'de Android için Xamarin Canlı Player kullanılabilir:
 
 [ ![Google play'de kullanılabilir](install-images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 Google Play gerek kalmadan Android cihazlar için Xamarin Canlı Player aracılığıyla kullanılabilir [HockeyApp](https://aka.ms/xlp-hockeyapp) dağıtım. Android için seçim tarafından doğrudan Google Play'den yüklenebilir için erken Önizleme ek olarak, derlemeler [açık beta programı](https://play.google.com/apps/testing/com.xamarin.live)
 
-### <a name="xamarin-live-player-for-ios"></a>İOS için Xamarin Canlı Player
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
 Katılmak için kullanıcıların öneririz [Xamarin Canlı Player uygulama _iOS Önizleme_ ](https://aka.ms/liveplayeralpha) keyfini TestFlight üzerinden yapılan en son geliştirmeleri hızlı erişim için.
 
+-----
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="2-get-visual-studio-2017-preview-on-windows-or-for-mactabsvsmac"></a>2. Visual Studio 2017 önizlemesini Windows alın (veya [Mac için](?tabs=vsmac))
+## <a name="2-get-visual-studio-2017"></a>2. Get Visual Studio 2017
 
 Xamarin Canlı Player gerektirir:
 
-- Visual Studio 2017 [15.4](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/#visualstudio2017) ya da daha yeni.
-- Visual Studio bilgisayar ve aygıt aynı WiFi ağda
+- Visual Studio 2017 15.4 ya da daha yeni.
+- Visual Studio bilgisayar ve aynı WiFi ağ üzerindeki bir aygıt.
 
 ## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3. Xamarin Canlı Player'ı ilk kez kullanma
 
@@ -72,9 +75,9 @@ Xamarin Canlı Player gerektirir:
 
   Cihaz çifti için kurulamıyorsa hata görünebilir.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
-## <a name="2-get-visual-studio-for-mac-or-for-windowstabsvswin"></a>2. Mac için Visual Studio Al (veya [Windows için](?tabs=vswin))
+## <a name="2-get-visual-studio-for-mac"></a>2. Mac için Visual Studio Al
 
 Xamarin Canlı Player gerektirir:
 
@@ -120,7 +123,7 @@ Xamarin Canlı Player gerektirir:
 
 -----
 
-Herhangi bir sorunla karşılaşırsanız, bkz: [sınırlamalar ve sorun giderme](~/tools/live-player/troubleshooting.md).
+Tüm sorunlar yaşar veya bağlanamıyor isterseniz bkz [sınırlamalar ve sorun giderme](~/tools/live-player/troubleshooting.md).
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

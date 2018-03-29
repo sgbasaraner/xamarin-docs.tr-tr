@@ -1,6 +1,6 @@
 ---
 title: Xamarin Profiler
-description: "Bu kılavuz, Xamarin Profil Oluşturucu anahtar özelliklerini inceler. Bu Ara profil Oluşturucular, profil oluşturma ve ne zaman kullanılacağı ve standart bir iş akışı profil oluşturma Xamarin uygulamaları için."
+description: Bu kılavuz, Xamarin Profil Oluşturucu anahtar özelliklerini inceler. Bu Ara profil Oluşturucular, profil oluşturma ve ne zaman kullanılacağı ve standart bir iş akışı profil oluşturma Xamarin uygulamaları için.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7c44541c56d7b1a00a704cfc66812d5537ec83c4
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -48,7 +48,7 @@ Bu kılavuz genel profil oluşturma senaryoları inceler ve profil oluşturucu �
 ## <a name="download-and-install"></a>İndirme ve yükleme
 
 > [!NOTE]
-> **Not:** bir Mac bilgisayar üzerinde Mac için bu özelliği Windows ya da Visual Studio Enterprise ya da Visual Studio kilidini açmak için Visual Studio Enterprise abone olması gerekir
+> **Not:** olması gerekir bir [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) abone bir Mac bilgisayar üzerinde Mac için bu özelliği Windows ya da Visual Studio Enterprise ya da Visual Studio kilidini açmak için
 
 Xamarin profil oluşturucu bir tek başına uygulamadır ve gelen IDE içinde profil oluşturmayı etkinleştirmek için Mac için Visual Studio ve Visual Studio ile tümleşiktir.
 
@@ -60,10 +60,6 @@ Platformunuza ilişkin yükleme paketini indirin:
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 Yüklendikten sonra sisteminize Xamarin profil oluşturucu ekleme için yükleyiciyi başlatın.
-
-IDE tümleştirme Xamarin tüm yayın sürümlerinde kullanılabilir.
-Ancak, [Visual Studio Enterprise](https://www.xamarin.com/compare-visual-studio) profil oluşturma için gereklidir.
-
 
 
 ## <a name="profilers-and-profiling"></a>Profil oluşturucular ve profil oluşturma

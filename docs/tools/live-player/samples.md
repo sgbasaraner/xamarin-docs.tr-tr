@@ -1,6 +1,6 @@
 ---
-title: "Xamarin Canlı Player örnekleri"
-description: "Xamarin Player Canlı denemek için bazı örnekleri şunlardır"
+title: Xamarin Canlı Player örnekleri
+description: Xamarin Player Canlı denemek için bazı örnekleri aşağıda verilmiştir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: C71D34AD-747B-4826-838D-5138F5DCD7EF
@@ -8,32 +8,34 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 06/20/2017
-ms.openlocfilehash: 6f4ccfb70e3e8e4db0bfb692e63208b5fc89ffac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0e624568a86b08522d68b923b2d60a86144870da
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-live-player-samples"></a>Xamarin Canlı Player örnekleri
 
-_Xamarin Player Canlı denemek için bazı örnekleri şunlardır_
-
-## <a name="xamarinforms"></a>Xamarin.Forms
+## <a name="get-started-with-xamarinforms"></a>Xamarin.Forms ile çalışmaya başlama
 
 Ziyaret [örnek Galerisi](https://developer.xamarin.com/samples/xamarin-live-player/all/) Xamarin.Forms Xamarin Canlı Player birlikte çalışan örnekleri için.
 
-<a name="colorcontrol"/>
+## <a name="featured-samples"></a>Öne çıkan örnekleri
 
-## <a name="color-control-ios"></a>Renk denetimini (iOS)
+### <a name="basic-calculatorhttpsdeveloperxamarincomsamplesmobileliveplayerbasiccalculator"></a>[Temel hesaplayıcı](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator/)
 
-Bunu temel alarak [tarif](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image/), renk denetimini örnek bir fotoğraf iPhone alabilir ve renk düzeylerini ayarlamak sağlar:
+Bu Xamarin.Forms uygulaması, Android veya iOS Cihazınızda kullanabileceğiniz basit bir hesap makinesi sağlar.
 
-![Renk denetim örnek uygulama ekran görüntüsü](samples-images/color-control-sml.png)
+![Temel hesaplayıcı örnek ekran görüntüsü](samples-images/basic-calculator-sml.png)
 
-[Örnek indirme](https://developer.xamarin.com/samples/mobile/LivePlayer/ColorControl/)
+### <a name="bugsweeperhttpsdeveloperxamarincomsamplesmobileliveplayerbugsweeperlp"></a>[BugSweeper](https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/)
+
+Bu yeni bir sürpriz sunan, bilindik bir oyundur. 9x9 kutucuktan oluşan bir kılavuzda on böcek gizlenmiştir. Kazanmak için bu on böceğin hepsini bulup işaretlemeniz gerekir.
+
+![Android'de BugSweeper uygulama](samples-images/bugsweeper-sml.png)
+
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Renk denetimini (iOS) (örnek)](https://developer.xamarin.com/samples/mobile/LivePlayer/ColorControl/)
-- [Xamarin.Forms örnekleri](https://developer.xamarin.com/samples/xamarin-live-player/all/)
+- [Xamarin.Forms Canlı Player örnekleri](https://developer.xamarin.com/samples/xamarin-live-player/all/)

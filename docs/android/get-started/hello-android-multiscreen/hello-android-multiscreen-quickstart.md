@@ -1,6 +1,6 @@
 ---
-title: "Merhaba, Android Multiscreen: Hızlı Başlangıç"
-description: "Bu iki parçalı kılavuz ikinci ekranı işlemek için Phoneword uygulama genişletir. Yol boyunca temel Android uygulama yapı taşları daha derin Dalış Android mimarisi içine ile sunulur."
+title: 'Merhaba, Android Multiscreen: Hızlı Başlangıç'
+description: Bu iki parçalı kılavuz ikinci ekranı işlemek için Phoneword uygulama genişletir. Yol boyunca temel Android uygulama yapı taşları daha derin Dalış Android mimarisi içine ile sunulur.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 159bd2435a1d2b5252e0fd1b9d525cdf6cfa7207
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2913508159787f6d369f5e55f879addfc1b2ba4f
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Merhaba, Android Multiscreen: Hızlı Başlangıç
 
@@ -126,7 +126,7 @@ public class MainActivity : Activity
 }
 ```
 
-İçinde `MainActivity` sınıfı, kaydetmek için aşağıdaki kodu ekleyin **çeviri geçmişi** düğmesini (Bu satırından sonra yerleştirin `translationHistory` bildirimi):
+İçinde `MainActivity` sınıfı, kaydetmek için aşağıdaki kodu ekleyin **çeviri geçmişi** düğmesini (Bu satırından sonra yerleştirin `translateButton` bildirimi):
 
 ```csharp
 Button translationHistoryButton = FindViewById<Button> (Resource.Id.TranslationHistoryButton);

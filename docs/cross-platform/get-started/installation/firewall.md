@@ -1,6 +1,6 @@
 ---
-title: "Xamarin Güvenlik Duvarı'nı yapılandırma yönergeleri"
-description: "Şirketiniz için Xamarin'ın platform çalışmaya izin vermek için Güvenlik Duvarı'nda beyaz liste ile gereken ana listesi."
+title: Xamarin Güvenlik Duvarı'nı yapılandırma yönergeleri
+description: Şirketiniz için Xamarin'ın platform çalışmaya izin vermek için Güvenlik Duvarı'nda beyaz liste ile gereken ana listesi.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: de68c1a8ceec381faf1b867c708e04030d39c73a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c6e850594e23d650dbe67126143ce7d58fcaa82
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin Güvenlik Duvarı'nı yapılandırma yönergeleri
 
@@ -55,13 +55,6 @@ Aşağıdaki adresler, yazılım güncelleştirmeleri düzgün indirebilirsiniz 
 -  Software.xamarin.com (güncelleştirici hizmetini)
 -  download.visualstudio.microsoft.com
 -  dl.xamarin.com
-
-### <a name="xamarin-insights"></a>Xamarin Insights
-
-Aşağıdaki adresleri etkinlik Xamarin Öngörüler sunucunun ulaştığından emin olmak için eklenmesi gerekir:
-
-* https://xaapi.xamarin.com
-
 
 ## <a name="xamarin-mac-agent"></a>Xamarin Mac arası
 
