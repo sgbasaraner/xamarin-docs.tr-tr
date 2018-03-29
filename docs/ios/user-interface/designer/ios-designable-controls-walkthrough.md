@@ -1,6 +1,6 @@
 ---
-title: "İzlenecek yol - özel denetimleri, iOS için Xamarin Tasarımcısı ile kullanma"
-description: "Bu makale, özel bir denetim oluşturmak ve iOS için Xamarin Tasarımcısı'nda kullanmak üzere nasıl gösteren bir adım adım kılavuz sağlar. Sürükle / bir görünümü yoksaymış böylece bir denetim tasarımcının araç kullanılabilmesini kullanmayı gösterir. Ayrıca, tasarım zamanı ve çalışma zamanı sırasında düzgün işler için bir denetim uygulamak nasıl yanı sıra tasarım zamanında ayarlanabilir özelliklerin nasıl oluşturulacağı gösterilmektedir."
+title: İzlenecek yol - özel denetimleri, iOS için Xamarin Tasarımcısı ile kullanma
+description: Bu makale, özel bir denetim oluşturmak ve iOS için Xamarin Tasarımcısı'nda kullanmak üzere nasıl gösteren bir adım adım kılavuz sağlar. Sürükle / bir görünümü yoksaymış böylece bir denetim tasarımcının araç kullanılabilmesini kullanmayı gösterir. Ayrıca, tasarım zamanı ve çalışma zamanı sırasında düzgün işler için bir denetim uygulamak nasıl yanı sıra tasarım zamanında ayarlanabilir özelliklerin nasıl oluşturulacağı gösterilmektedir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4138ba0da1dd2174c53e6e35105c3199ea941f7f
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>İzlenecek yol - özel denetimleri, iOS için Xamarin Tasarımcısı ile kullanma
 
@@ -32,15 +32,11 @@ Bu kılavuzda ele içeriği bilindiğini varsayar [Başlarken kılavuzları](~/i
 
 1. Yeni bir çözüm oluşturmak **iOS > Uygulama > tek görünüm uygulaması > C#** şablon adlandırın `ScratchTicket`ve yeni proje sihirbaza devam edin:
 
-
     [![](ios-designable-controls-walkthrough-images/01new.png "Yeni bir çözümü oluşturun")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
-
 
 1. Adlı yeni bir boş sınıfı dosya oluşturma `ScratchTicketView`:
 
-
     [![](ios-designable-controls-walkthrough-images/02new.png "Yeni ScratchTicketView sınıf oluşturma")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
-
 
 1. İçin aşağıdaki kodu ekleyip `ScratchTicketView` sınıfı:
 

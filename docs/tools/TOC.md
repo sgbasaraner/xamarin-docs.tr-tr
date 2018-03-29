@@ -2,7 +2,6 @@
 ## [Live Player](live-player/index.md)
 ### [Kurulum](live-player/install.md)
 ### [Xamarin Live Player App](live-player/player.md)
-### [XAML Canlı Önizleme](live-player/live-view.md)
 ### [Örnekler](live-player/samples.md)
 ### [Sınırlamalar](live-player/limitations.md)
 ### [Sorun giderme](live-player/troubleshooting.md)
