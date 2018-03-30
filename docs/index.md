@@ -1,8 +1,8 @@
 ---
 layout: HubPage
-hide_bc: 
+hide_bc: true
 title: Xamarin Belgeleri
-description: "Xamarin, .NET kodu ve platforma özgü kullanıcı arabirimlerini kullanarak Android, iOS ve macOS için yerel uygulamalar oluşturmanıza olanak sağlar. Xamarin.Forms, C# veya XAML’de yazılan paylaşılan kullanıcı arabirimi koduyla yerel uygulamalar oluşturmanıza olanak sağlar."
+description: Xamarin, .NET kodu ve platforma özgü kullanıcı arabirimlerini kullanarak Android, iOS ve macOS için yerel uygulamalar oluşturmanıza olanak sağlar. Xamarin.Forms, C# veya XAML’de yazılan paylaşılan kullanıcı arabirimi koduyla yerel uygulamalar oluşturmanıza olanak sağlar.
 featureFlags:
 - clicktale
 ms.openlocfilehash: d73b8165fc1a71fbfe3202f694c4653788ccfb28
