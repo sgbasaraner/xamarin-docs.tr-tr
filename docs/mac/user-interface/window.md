@@ -1,6 +1,6 @@
 ---
 title: Windows
-description: "Bu makalede windows ve paneller Xamarin.Mac uygulamada çalışmaya kapsar. Oluşturma windows ve Xcode ve arabirim film şeritleri ve .xib dosyaları yükleme ve bunlarla program aracılığıyla çalışma Oluşturucusu paneller açıklar."
+description: Bu makalede windows ve paneller Xamarin.Mac uygulamada çalışmaya kapsar. Oluşturma windows ve Xcode ve arabirim film şeritleri ve .xib dosyaları yükleme ve bunlarla program aracılığıyla çalışma Oluşturucusu paneller açıklar.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f483fcfa9dfca1eb476ceab2b67e7a03bf4b6354
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4b8de30cecb738fecb13616a3b796c0b4fa5a51a
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="windows"></a>Windows
 
@@ -20,7 +20,7 @@ _Bu makalede windows ve paneller Xamarin.Mac uygulamada çalışmaya kapsar. Olu
 
 C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı Windows erişimi ve içinde çalışan bir geliştirici paneller *Objective-C* ve *Xcode* yapar. Xamarin.Mac Xcode ile doğrudan tümleşir nedeniyle, Xcode'nın kullanabilirsiniz _arabirimi Oluşturucu_ ve Windows ve paneller korumak (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için).
 
-Kendi amacına bağlı olarak, yönetmek ve bilgileri ile birlikte çalışır ve görüntüler koordine etmek için bir veya daha fazla pencereyi ekranda Xamarin.Mac uygulama oluşturabilir. Bir Windows asıl işlevler şunlardır:
+Kendi amacına bağlı olarak, yönetmek ve bilgileri ile birlikte çalışır ve görüntüler koordine etmek için bir veya daha fazla Windows ekranında Xamarin.Mac uygulama oluşturabilir. Bir pencere asıl işlevler şunlardır:
 
 1. Hangi görünümleri ve denetimleri bir alanı sağlamak üzere yerleştirilir ve yönetilebilir.
 2. Kabul etmek ve yanıt olarak klavye ve fare ile kullanıcı etkileşimi olaylarına tepki vermek için.

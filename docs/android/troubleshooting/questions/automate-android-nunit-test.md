@@ -6,86 +6,92 @@ ms.assetid: EA3CFCC4-2D2E-49D6-A26C-8C0706ACA045
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: acb213e8c73013bc9b2482afb45296c4e1f61ab5
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.date: 03/29/2018
+ms.openlocfilehash: 4d8ea267ef3a6bdea2db805725d5dd4220ab73c4
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Bir Android NUnit Test projesinin nasıl otomatikleştirmek?
 
 > [!NOTE]
-> Bu kılavuz, bir Android NUnit test projesi Xamarin.UITest proje adımlarını kapsar. Xamarin.UITest kılavuzları bulunabilir [burada](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
+> Bu kılavuz, bir Android NUnit test projesi Xamarin.UITest proje otomatikleştirmek açıklanmaktadır. Xamarin.UITest kılavuzları bulunabilir [burada](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
 
-Mac veya Visual Studio'da bir birim testi uygulama (Android) için Visual Studio'da bir Android birim testi projesi oluşturduğunuzda, varsayılan olarak otomatik olarak testlerinizi çalışmayacaktır.
-Hedef cihazda NUnit testleri çalıştırmak için kullanırız bir `Android.App.Instrumentation` oluşturulan ve kullanılarak gerçekleştirilen bir alt `adb shell am instrument` komutu.
-
-İlk olarak, oluşturduğumuz **TestInstrumentation.cs** öğesinin bir alt kümesi oluşturur dosya `Xamarin.Android.NUnitLite.TestSuiteInstrumentation` (bildirilen `Xamarin.Android.NUnitLite.dll`). `TestInstrumentation(IntPtr, JniHandleOwnership)` Oluşturucusu _gerekir_ sağlanan ve sanal `AddTests()` yöntemi geçersiz.
-`AddTests()` testleri denetimleri gerçekte yürütülür. Büyük ölçüde Demirbaş dosyasıdır.
-
-Ardından, `.csproj` eklemek için değiştirilmelidir `TestInstrumentation.cs`.
-
-İsteğe bağlı olarak, `.csproj` eklemek için değiştirilebilir `RunTests` olarak birim testleri çağırma belirleyebilmesini MSBuild hedef:
+Oluştururken bir **birim testi uygulama (Android)** Visual Studio projesi (veya **Android birim testi** Mac için Visual Studio Proje), varsayılan olarak otomatik olarak testlerinizi bu proje olacaktır.
+Hedef cihazda NUnit testleri çalıştırmak için oluşturabileceğiniz bir [Android.App.Instrumentation](https://developer.xamarin.com/api/type/Android.App.Instrumentation/) aşağıdaki komutu kullanarak tarafından başlatılan bir alt: 
 
 ```shell
-msbuild /t:RunTests Project.csproj
+adb shell am instrument 
 ```
 
-Yeni bir hedef kullanmak gerekli değildir; Bunun yerine karşılık gelen adb komutu kullanılabilir:
+Bu işlem aşağıdaki adımlarda açıklanmaktadır:
 
-```shell
-adb shell am instrument -w @PACKAGE_NAME@/app.tests.TestInstrumentation
-```
+1.  Adlı yeni bir dosya oluşturun **TestInstrumentation.cs**: 
 
-Değiştir `@PACKAGE\_NAME@` olarak uygun; mevcut değeri olan **AndroidManifest.xml** `/manifest/@package` özniteliği.
+    ```cs 
+    using System;
+    using System.Reflection;
+    using Android.App;
+    using Android.Content;
+    using Android.Runtime;
+    using Xamarin.Android.NUnitLite;
+     
+    namespace App.Tests {
+     
+        [Instrumentation(Name="app.tests.TestInstrumentation")]
+        public class TestInstrumentation : TestSuiteInstrumentation {
+     
+            public TestInstrumentation (IntPtr handle, JniHandleOwnership transfer) : base (handle, transfer)
+            {
+            }
+     
+            protected override void AddTests ()
+            {
+                AddTest (Assembly.GetExecutingAssembly ());
+            }
+        }
+    }
+    ```
+    Bu dosyadaki [Xamarin.Android.NUnitLite.TestSuiteInstrumentation](https://developer.xamarin.com/api/type/Xamarin.Android.NUnitLite.TestSuiteInstrumentation/) (gelen **Xamarin.Android.NUnitLite.dll**) oluşturmak için sınıflandırma `TestInstrumentation`.
+
+2.  Uygulama [TestInstrumentation](https://developer.xamarin.com/api/constructor/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.TestSuiteInstrumentation/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) oluşturucusu ve [AddTests](https://developer.xamarin.com/api/member/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.AddTests%28%29) yöntemi. `AddTests` Hangi testlerin gerçekte yürütülen yöntemi kontrol eder.
+
+3.  Değiştirme `.csproj` eklemek için dosya **TestInstrumentation.cs**. Örneğin:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+        ...
+        <ItemGroup>
+            <Compile Include="TestInstrumentation.cs" />
+        </ItemGroup>
+        <Target Name="RunTests" DependsOnTargets="_ValidateAndroidPackageProperties">
+            <Exec Command="&quot;$(_AndroidPlatformToolsDirectory)adb&quot; $(AdbTarget) $(AdbOptions) shell am instrument -w $(_AndroidPackage)/app.tests.TestInstrumentation" />
+        </Target>
+        ...
+    </Project>
+    ```
+
+3.  Birim testleri çalıştırmak için aşağıdaki komutu kullanın. Değiştir `PACKAGE_NAME` uygulamanın paket adı ile (paket adı uygulamanın içinde bulunabilir `/manifest/@package` özniteliği bulunan **AndroidManifest.xml**):
+
+    ```shell
+    adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
+    ```
+
+4.  İsteğe bağlı olarak, değiştirebileceğiniz `.csproj` eklemek için dosya `RunTests` MSBuild hedef. Bu, aşağıdakine benzer bir komutu ile birim testleri çağırmak mümkün kılar:
+
+    ```shell
+    msbuild /t:RunTests Project.csproj
+    ```
+    (Bu yeni hedef kullanarak gerekli olmadığına dikkat edin; önceki `adb` komutu yerine kullanılabilir `msbuild`.)
+
+Kullanma hakkında daha fazla bilgi için `adb shell am instrument` birim testleri çalıştırma, Android Geliştirici görmek için komutu [ADB ile testleri çalıştırma](https://developer.android.com/studio/test/command-line.html#RunTestsDevice) konu.
 
 
 > [!NOTE]
-> *Önemli*: ile [Xamarin.Android 5.0](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) sürüm, varsayılan paket adları Android aranabilir sarmalayıcılar dışarı aktarılan türü bütünleştirilmiş kod tam adının MD5SUM üzerinde tabanlı. Bu, iki farklı derlemelerden sağlanması ve bir paketleme hatası almamış aynı tam ada izin verir. Bu nedenle, kullandığınızdan emin olun \`adı\` özelliği \`Araçları\` okunabilir bir ACW/sınıf adı oluşturmak için relationshipend.
+> İle [Xamarin.Android 5.0](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) sürüm, varsayılan paket adları Android aranabilir sarmalayıcılar dışarı aktarılan türü bütünleştirilmiş kod tam adının MD5SUM üzerinde tabanlı. Bu, iki farklı derlemelerden sağlanması ve bir paketleme hatası almamış aynı tam ada izin verir. Bu nedenle, kullandığınızdan emin olun `Name` özellikte `Instrumentation` okunabilir bir ACW/sınıf adı oluşturmak için öznitelik.
 
-_ACW adı kullanılmalıdır `adb` komutu_. Yeniden adlandırma/C# sınıfı yeniden düzenleme böylece gerektirecektir değiştirme `RunTests` doğru ACW adını kullanmak için komutu.
-
-.Csproj dosya eklemeler:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <ItemGroup>
-        <Compile Include="TestInstrumentation.cs" />
-    </ItemGroup>
-    <Target Name="RunTests" DependsOnTargets="_ValidateAndroidPackageProperties">
-        <Exec Command="&quot;$(_AndroidPlatformToolsDirectory)adb&quot; $(AdbTarget) $(AdbOptions) shell am instrument -w $(_AndroidPackage)/app.tests.TestInstrumentation" />
-    </Target>
-</Project>
-```
-
-**TestInstruments.cs**:
-
-```cs 
-using System;
-using System.Reflection;
- 
-using Android.App;
-using Android.Content;
-using Android.Runtime;
- 
-using Xamarin.Android.NUnitLite;
- 
-namespace App.Tests {
- 
-    [Instrumentation(Name="app.tests.TestInstrumentation")]
-    public class TestInstrumentation : TestSuiteInstrumentation {
- 
-        public TestInstrumentation (IntPtr handle, JniHandleOwnership transfer) : base (handle, transfer)
-        {
-        }
- 
-        protected override void AddTests ()
-        {
-            AddTest (Assembly.GetExecutingAssembly ());
-        }
-    }
-}
-```
+_ACW adı kullanılmalıdır `adb` yukarıdaki komut_.
+Yeniden adlandırma/C# sınıfı yeniden düzenleme böylece gerektirecektir değiştirme `RunTests` doğru ACW adını kullanmak için komutu.
 

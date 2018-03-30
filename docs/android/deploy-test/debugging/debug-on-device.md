@@ -1,6 +1,6 @@
 ---
-title: "Cihazda hata ayıklama"
-description: "Bu makalede, bir Xamarin.Android uygulaması fiziksel Android cihazda hata ayıklama açıklanmaktadır."
+title: Cihazda hata ayıklama
+description: Bu makalede, bir Xamarin.Android uygulaması fiziksel Android cihazda hata ayıklama açıklanmaktadır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 153D3746-A27F-198B-48FE-D219C0133A79
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d340c3da220deacdb5606547a084e55d80c817e7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: df6d2b246d4f0298ff31228b5db82084a55a8dd4
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="debug-on-device"></a>Cihazda hata ayıklama
 
@@ -20,7 +20,7 @@ _Bu makalede, bir Xamarin.Android uygulaması fiziksel Android cihazda hata ayı
 
 ## <a name="debug-on-device-overview"></a>Aygıt bir genel bakış hata ayıklama
 
-Mac için Visual Studio veya Visual Studio kullanarak Android cihazında bir Xamarin.Android hata ayıklamak mümkündür. Hata ayıklama bir aygıtta oluşabilmesi için öncelikle olmalıdır [geliştirme için Kurulum](~/android/get-started/installation/set-up-device-for-development.md) ve PC veya Mac için bağlı
+Mac için Visual Studio veya Visual Studio kullanarak Android cihazında bir Xamarin.Android uygulaması hata ayıklamak mümkündür. Hata ayıklama bir aygıtta oluşabilmesi için öncelikle olmalıdır [geliştirme için Kurulum](~/android/get-started/installation/set-up-device-for-development.md) ve PC veya Mac için bağlı
 
 
 ## <a name="debug-application"></a>Uygulamanızın hatalarını ayıklama
