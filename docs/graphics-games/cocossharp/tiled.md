@@ -1,6 +1,6 @@
 ---
-title: "Döşenir CocosSharp ile kullanma"
-description: "Döşenir güçlü ve esnektir ve oyunlar için resme ve İzometrik bölmesi oluşturmak için olgun uygulama eşler. CocosSharp döşeli'nın yerel dosya biçimi için yerleşik tümleştirme sağlar."
+title: Döşenir CocosSharp ile kullanma
+description: Döşenir güçlü ve esnektir ve oyunlar için resme ve İzometrik bölmesi oluşturmak için olgun uygulama eşler. CocosSharp döşeli'nın yerel dosya biçimi için yerleşik tümleştirme sağlar.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 5a469a372a9299712be7aef46c51f3d644946535
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 68afa9d175140fd5104e83282a2f72c47625d882
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-tiled-with-cocossharp"></a>Döşenir CocosSharp ile kullanma
 
@@ -30,7 +30,7 @@ Zaman tamamlanmış biz aşağıdaki demo gerekir:
 ![](tiled-images/image1.png "Bu kılavuzdaki adımları uygulayarak oluşturduğunuz tanıtım uygulamasını")
 
 
-# <a name="the-purpose-of-tile-maps"></a>Döşeme eşlemeleri amacı
+## <a name="the-purpose-of-tile-maps"></a>Döşeme eşlemeleri amacı
 
 Döşeme eşlemeleri on yılları için oyun geliştirmede var, ancak 2B oyunlarda esthetics ve verimlilik için hala yaygın olarak kullanılır. Döşeme eşlemeleri çok yüksek düzeyde verimlilik kullanımlarını döşeme kümelerinin – döşeme haritalar tarafından kullanılan kaynak görüntüsü aracılığıyla elde edebilirsiniz. Döşeme kümesi, tek bir dosyaya birleştirilmiş görüntüleri koleksiyonudur. Döşeme eşlemelerinin kullanılan görüntüleri döşeme kümeleri başvurmak olmakla birlikte, birden çok daha küçük resimleri içeren dosyaları hareketli grafik sayfaları da denir veya hareketli grafik oyun geliştirme eşler. Biz kendi Tanıtımı kullanmaya başlayacağınız döşeme kümesine bir kılavuz ekleyerek döşeme kümelerinin nasıl kullanıldığı görselleştirin:
 
@@ -43,7 +43,7 @@ Döşeme eşlemeleri döşeme kümelerinden ayrı döşeme düzenleyin. Biz her 
 ![](tiled-images/image4.png "Bu görüntü aynı döşeme kümesini kullanarak olası düzenlemeleri gösterir")
 
 
-# <a name="working-with-tmx-files"></a>.Tmx dosyalarıyla çalışma
+## <a name="working-with-tmx-files"></a>.Tmx dosyalarıyla çalışma
 
 .Tmx dosya biçimi olabilir döşeli uygulama tarafından oluşturulan bir XML dosyasıdır [döşeli Web sitesinde ücretsiz olarak karşıdan](http://www.mapeditor.org/). .Tmx dosya biçimi döşeme eşlemeleri ilgili bilgileri depolar. Genellikle bir oyun her düzeyi veya ayrı bir alan için bir .tmx dosyası sahip olacaktır.
 
@@ -80,7 +80,7 @@ Biz göreceğiz oyun çalıştırırsanız döşeme harita ekranın sol alt kö�
 ![](tiled-images/image6.png "Döşeme harita oyun çalıştırırsanız, ekranın sol alt köşesinde görüntülenir")
 
 
-# <a name="considerations-for-rendering-pixel-art"></a>Piksel resim oluşturma konuları
+## <a name="considerations-for-rendering-pixel-art"></a>Piksel resim oluşturma konuları
 
 Piksel resim, video oyun geliştirme bağlamında genellikle el ile oluşturulan ve düşük çözünürlüklü görülür 2B visual resim başvuruyor. Piksel resim giderilirken olabilir oluşturma piksel resim kutucuğu kümeleri genellikle 16 veya 32 piksel genişlik ve yükseklik gibi düşük çözünürlüklü kutucukları eklemek için yoğun zamanı. Çalışma zamanında genişletilmiş değil, piksel resim genellikle Çoğu modern telefonlar ve tabletler için çok küçük.
 
@@ -161,7 +161,7 @@ protected override void AddedToScene ()
 ![](tiled-images/image8.png "Artık kutucuk harita bulanık görünmez")
 
 
-# <a name="using-tile-properties-at-runtime"></a>Çalışma zamanında döşeme özelliklerini kullanma
+## <a name="using-tile-properties-at-runtime"></a>Çalışma zamanında döşeme özelliklerini kullanma
 
 Şu ana kadar sahibiz bir `CCTileMap` .tmx dosyası yükleniyor ve, görüntüleme ancak biz ile etkileşim yolu yoktur. Özellikle, belirli döşeme (örneğin, bizim treasure Üstten kapaklı) özel mantık olması gerekir. Özel döşeme özellikleri ve bir kez çalışma zamanında tanımlanan bu özellikleri tepki vermek için çeşitli şekillerde algılamak nasıl adım adım.
 
@@ -175,7 +175,7 @@ Treasure Üstten kapaklı özellikleri gösterilmezse treasure Üstten kapaklı 
 
 ![](tiled-images/image10.png "Treasure Üstten kapaklı özellikleri gösterilmezse treasure Üstten kapaklı üzerinde sağ tıklayın ve döşeme Özellikler'i seçin")
 
-Döşeli özellikleri, bir ad ve değer ile uygulanır. Bir özellik eklemek için tıklatın  **+**  düğmesini tıklatın, bir ad girin **IsTreasure**, tıklatın **Tamam**, değeri girin **true**: 
+Döşeli özellikleri, bir ad ve değer ile uygulanır. Bir özellik eklemek için tıklatın **+** düğmesini tıklatın, bir ad girin **IsTreasure**, tıklatın **Tamam**, değeri girin **true**: 
 
 ![](tiled-images/image11.png "Bir özellik eklemek için düğmesini tıklatın, IsTreasure adı girin, Tamam'ı tıklatın, ardından true değerini girin")
 
@@ -273,7 +273,7 @@ Kod çoğu kendinden açıklamalıdır ancak treasure döşeme işlenmesini tart
 Diğer bir deyişle, treasure Üstten kapaklı basit bir parçasında olmak yerine bir varlık olması yararlı olacak `CCTileMap`. Oyun varlıklar hakkında daha fazla bilgi için bkz: [CocosSharp varlıklarda Kılavuzu](~/graphics-games/cocossharp/entities.md).
 
 
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuz bir CocosSharp uygulamasına döşeli tarafından oluşturulan .tmx dosyaları yüklemek nasıl ele alınmaktadır. Düşük çözünürlüklü piksel resim için hesap için uygulama çözümlemesi değiştirme ve döşeme varlık örnekleri oluşturma gibi özel mantık gerçekleştirmek için özelliklerine göre bulmak nasıl gösterir.
 

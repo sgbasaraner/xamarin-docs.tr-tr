@@ -1,6 +1,6 @@
 ---
-title: "SkiaSharp dönüşümler"
-description: "Dönüşümler SkiaSharp grafik görüntüleme hakkında bilgi edinin"
+title: SkiaSharp dönüşümler
+description: Dönüşümler SkiaSharp grafik görüntüleme hakkında bilgi edinin
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 10b23975fab8aa87019b9d0fed42decdc6adddfb
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 668488ab7efae66f1777e9ae6ded1f725833fe16
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp dönüşümler
 
@@ -49,7 +49,7 @@ SkiaSharp dönüşümler göre sol üst köşesindeki olan `SKCanvas` Xamarin.Fo
 
 Gerçekten büyük fark SKiaSharp dönüşümler olmasıdır *yöntemleri* Xamarin.Forms dönüşümler durumdayken *özellikleri*. Bu bir söz dizimi fark ötesinde anlamsal farktır: SkiaSharp dönüşümler bir duruma Xamarin.Forms dönüşümler kümesi bir işlem gerçekleştirin. SkiaSharp dönüşümler sonradan çizilmiş grafik nesneleri, ancak dönüştürme uygulanmadan önce çizilir değil grafik nesneler için geçerlidir. Buna karşılık, özellik ayarlanmışsa hemen Xamarin.Forms dönüştürme önceden işlenmiş öğesine uygulanır. Yöntemleri adlı gibi SkiaSharp dönüşümler toplu; Başka bir değerle özelliği ayarlandığında Xamarin.Forms dönüşümler değiştirilir.
 
-Bu bölümdeki tüm örnek programlar başlığı altında görünür **dönüştüren** giriş sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program ve [ **Dönüştüren** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms) klasörü çözümün.
+Bu bölümdeki tüm örnek programlar başlığı altında görünür **dönüştüren** giriş sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program ve [ **Dönüştüren** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms) klasörü çözümün.
 
 ## <a name="the-translate-transformtranslatemd"></a>[Çeviri Dönüşümü](translate.md)
 
@@ -87,4 +87,4 @@ Afin olmayan dönüşümler 2B nesnelere 3D alanda döndürmek için kullanın.
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

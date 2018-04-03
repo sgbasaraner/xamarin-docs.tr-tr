@@ -1,18 +1,18 @@
 ---
-title: "Android konuşma"
-description: "Bu makalede çok güçlü Android.Speech ad alanını kullanarak temelleri kapsar. En başından itibaren Android Konuşma tanıması ve metin olarak çıkış mümkün olmuştur. Bu oldukça basit bir işlemdir. Konuşma altyapısı yalnızca göz önünde bulundurulması mevcut metin okuma için ancak, daha karmaşık bir işlemdir, ancak ayrıca diller metin okuma (TTS) sisteminden yüklü ve kullanılabilir."
+title: Android konuşma
+description: Bu makalede çok güçlü Android.Speech ad alanını kullanarak temelleri kapsar. En başından itibaren Android Konuşma tanıması ve metin olarak çıkış mümkün olmuştur. Bu oldukça basit bir işlemdir. Konuşma altyapısı yalnızca göz önünde bulundurulması mevcut metin okuma için ancak, daha karmaşık bir işlemdir, ancak ayrıca diller metin okuma (TTS) sisteminden yüklü ve kullanılabilir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 04/02/2018
+ms.openlocfilehash: acc64fee37e1a6046991355389a09a29e1889993
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="android-speech"></a>Android konuşma
 
@@ -158,15 +158,21 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
+Bu kod çağırır [TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/) belirtilen yerel ayar için dil paketi zaten aygıtta ise test etmek için. Bu yöntem bir [LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/), geçirilen yerel ayarı için dil kullanılabilir olup olmadığını gösterir. Varsa `LanguageAvailableResult` dil gösterir `NotSupported`, sonra hiçbir voice paket (bile) indirilebilir o dil için. Varsa `LanguageAvailableResult` ayarlanır `MissingData`, aşağıda adım 4'te açıklandığı gibi yeni bir dil paketini karşıdan yüklemek mümkündür.
+
 ### <a name="step-3---setting-the-speed-and-pitch"></a>Adım 3 - hızı ve sıklığı ayarlama
 
 Android sağlar kullanıcıya, konuşma sesi değiştirilerek alter `SpeechRate` ve `Pitch` (hızı ve konuşma dilini oranını). Bu 0'dan 1'e her ikisi için de 1 olan "normal" konuşma gider.
 
 ### <a name="step-4---testing-and-loading-new-languages"></a>Adım 4 - sınama ve yeni dilleri yükleme
 
-Bu kullanılarak gerçekleştirilen bir `Intent` içinde yorumlanmasını sonucunda `OnActivityResult`. Kullanılan konuşma metin örnek aksine `RecognizerIntent` olarak bir `PutExtra` parametresi `Intent`, hedefi kullanan yükleme bir `Action`.
+Yeni bir dil indirme işlemi gerçekleştirildiğinde kullanarak bir `Intent`. Bu amacı sonucunu neden [OnActivityResult](https://developer.xamarin.com/api/member/Android.App.Activity.OnActivityResult/) çağrılacak yöntem. Konuşma metin örnek aksine (kullanılan [RecognizerIntent](https://developer.xamarin.com/api/type/Android.Speech.RecognizerIntent/) olarak bir `PutExtra` parametresi `Intent`), test etme ve yükleme `Intent`s `Action`-tabanlı:
 
-Aşağıdaki kodu kullanarak Google yeni bir dil yüklemek mümkündür. Sonucu `Activity` dil gerekliyse ve onu olup olmadığını denetler indirme gerçekleşmesi istemde sonra dil yükler.
+-   [TextToSpeech.Engine.ActionCheckTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionCheckTtsData/) &ndash; Starts an activity from the platform `TextToSpeech` engine to verify proper installation and availability of language resources on the device.
+
+-   [TextToSpeech.Engine.ActionInstallTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionInstallTtsData/) &ndash; Starts an activity that prompts the user to download the necessary languages.
+
+Aşağıdaki kod örneği, bu eylemleri için Türkçe kaynaklar test ve yeni bir dil indirmek için nasıl kullanılacağı gösterilmektedir:
 
 ```csharp
 var checkTTSIntent = new Intent();
@@ -183,6 +189,19 @@ protected override void OnActivityResult(int req, Result res, Intent data)
     }
 }
 ```
+
+`TextToSpeech.Engine.ActionCheckTtsData` testler için Türkçe kaynaklar kullanılabilirliği. `OnActivityResult` Bu test tamamlandıktan sonra çağrılır. Dil kaynakları yüklenmek üzere gerekiyorsa `OnActivityResult` harekete `TextToSpeech.Engine.ActionInstallTtsData` gereken dilleri indirmek kullanıcının sağlayan bir etkinlik başlatmak için eylem. Not Bu `OnActivityResult` uygulama denetlemez `Result` Basitleştirilmiş Bu örnekte, belirlenmesi zaten dil paketi indirilmesi gerektiğini yapılmış olduğundan, kod.
+
+`TextToSpeech.Engine.ActionInstallTtsData` Eylem nedenler **Google TTS ses veri** indirmek için diller seçme için kullanıcıya sunulacak etkinlik:
+
+![Google TTS ses veri etkinliği](speech-images/01-google-tts-voice-data.png)
+
+Örnek olarak, kullanıcı Fransızca seçer ve Fransızca sesli veri indirmek için indirme simgesini:
+
+![Fransızca Dil yükleme örneği](speech-images/02-selecting-french.png)
+
+İndirme tamamlandıktan sonra bu verilerin yükleme otomatik olarak gerçekleşir.
+
 
 ### <a name="step-5---the-ioninitlistener"></a>Adım 5 - IOnInitListener
 

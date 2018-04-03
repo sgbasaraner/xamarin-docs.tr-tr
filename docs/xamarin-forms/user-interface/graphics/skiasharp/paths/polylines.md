@@ -1,6 +1,6 @@
 ---
 title: Kullansa ve parametrik denklemini
-description: "İle parametrik denklemini tanımlayabilirsiniz çizgiyi işlemek için SkiaSharp kullanın"
+description: İle parametrik denklemini tanımlayabilirsiniz çizgiyi işlemek için SkiaSharp kullanın
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: e40fd215d23e7da6f1356bba17fac84ce91007ae
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: dce14ead2de6a21b99209ed12fbb99729734149a
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="polylines-and-parametric-equations"></a>Kullansa ve parametrik denklemini
 
@@ -117,4 +117,4 @@ Dikkat `SKPath` oluşturulan bir `using` bloğu. Bu `SKPath` daha fazla bellek t
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

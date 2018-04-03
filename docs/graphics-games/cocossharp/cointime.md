@@ -1,5 +1,5 @@
 ---
-title: Para zaman uygulama ayrıntıları
+title: Para saati oyun ayrıntıları
 description: Bu kılavuz para zaman oyundaki döşeme Eşlemleriyle Çalışma, varlıkları oluşturma, hareketli grafik animasyonu ve verimli çakışma uygulama da dahil olmak üzere uygulama ayrıntılarını açıklanır.
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: 8c33b74af80a14df1626ab39ba8c055a81259194
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="coin-time-implementation-details"></a>Para zaman uygulama ayrıntıları
+# <a name="coin-time-game-details"></a>Para saati oyun ayrıntıları
 
 _Bu kılavuz para zaman oyundaki döşeme Eşlemleriyle Çalışma, varlıkları oluşturma, hareketli grafik animasyonu ve verimli çakışma uygulama da dahil olmak üzere uygulama ayrıntılarını açıklanır._
 
@@ -24,27 +24,27 @@ Para, iOS ve Android için oyun bir tam platformer saattir. Oyun bir düzeyinde 
 
 Bu kılavuz, aşağıdaki konuları kapsayan, para zaman içinde uygulama ayrıntıları ele alınmıştır:
 
-- [TMX dosyalarıyla çalışma](#Working_with_TMX_Files)
-- [Yükleme düzeyi](#Level_Loading)
-- [Varlıklar ekleme](#Adding_New_Entities)
-- [Animasyonlu varlıklar](#Animated_Entities)
+- [Tmx dosyalarıyla çalışma](#working-with-tmx-files)
+- [Yükleme düzeyi](#level-loading)
+- [Varlıklar ekleme](#adding-new-entities)
+- [Animasyonlu varlıklar](#animated-entities)
 
 
-# <a name="content-in-coin-time"></a>Para sürede içerik
+## <a name="content-in-coin-time"></a>Para sürede içerik
 
 Para, tam bir CocosSharp proje nasıl organize gösteren bir örnek proje saattir. Para zaman yapısı eklenmesini ve içeriğin bakım basitleştirmek sağlamayı amaçlar. Kullandığı **.tmx** tarafından oluşturulan dosyaları [döşeli](http://www.mapeditor.org) düzeyleri ve animasyonları tanımlamak için XML dosyaları için. En az çaba ile değiştirerek veya yeni içerik ekleyerek elde edilebilir. 
 
 Bu yaklaşım öğrenme ve deneme için etkili bir proje para zaman yaparken, ayrıca nasıl profesyonel oyunlar yansıtır yapılır. Bu kılavuzda ekleme ve içeriği değiştirme basitleştirmek için geçen yaklaşımlar bazıları açıklanmaktadır.
 
 
-# <a name="working-with-tmx-files"></a>TMX dosyalarıyla çalışma
+## <a name="working-with-tmx-files"></a>Tmx dosyalarıyla çalışma
 
 Para zaman düzeyleri tarafından çıkış .tmx dosya biçimi kullanılarak tanımlanmış [döşeli](http://www.mapeditor.org) döşeme Eşleme Düzenleyicisi. Döşeli ile çalışma hakkında ayrıntılı bilgi için bkz: [kullanarak döşenir Cocos Sharp Kılavuzu ile](~/graphics-games/cocossharp/tiled.md). 
 
 Her düzey bulunan kendi .tmx dosyasında tanımlanan **CoinTime/varlıklar/içeriğe/düzeyleri** klasör. Tüm para zaman düzeyleri tanımlanan bir tileset dosya paylaşımı **mastersheet.tsx** dosya. Bu dosya döşeme düz çakışma olup olmadığı veya döşeme bir varlık örneği tarafından değiştirilmesi gereken gibi her bölme için özel özellikleri tanımlar. Mastersheet.tsx dosyası yalnızca bir kez tanımlanabilir ve tüm düzeyleri arasında kullanılan özellikler sağlar. 
 
 
-## <a name="editing-a-tile-map"></a>Döşeme harita düzenleme
+### <a name="editing-a-tile-map"></a>Döşeme harita düzenleme
 
 Döşeme eşlemini düzenlemek için .tmx dosyasını çift veya döşeli Dosya menüsünden aracılığıyla açarak döşeli içinde .tmx dosyasını açın. Üç katman düzeyinde döşeme eşlemeleri içeren para süre: 
 
@@ -54,7 +54,8 @@ Döşeme eşlemini düzenlemek için .tmx dosyasını çift veya döşeli Dosya 
 
 Biz daha sonra inceleyeceksiniz gibi bu üç katmanı tüm para zaman düzeyleri düzeyi yükleme kodu bekliyor.
 
-### <a name="editing-terrain"></a>Terrain düzenleme
+#### <a name="editing-terrain"></a>Terrain düzenleme
+
 Döşeme tıklayarak yerleştirilebilen **mastersheet** tileset ve kutucuğa tıklandığında eşleyin. Örneğin, bir düzeyinde yeni terrain boyamak için şunu yazın:
 
 1. Terrain katmanı seçin
@@ -67,7 +68,8 @@ Tileset sol üst tüm para zaman terrain içerir. Düz, terrain içeren **SolidC
 
 ![](cointime-images/image3.png "Ekranın sol bölme özelliklerinde gösterildiği gibi düz, terrain SolidCollision özelliği içerir")
 
-### <a name="editing-entities"></a>Varlıkları düzenleme
+#### <a name="editing-entities"></a>Varlıkları düzenleme
+
 Varlıklar eklenemez veya – terrain gibi bir düzeyinden kaldırılamaz. **Mastersheet** tileset bunlar sağa kaydırma olmadan görünmeyebilir şekilde tüm varlıklar hakkında yarı yarıya yatay olarak yerleştirilen vardır:
 
 ![](cointime-images/image4.png "Bunlar sağa kaydırma olmadan görünmeyebilir mastersheet tileset tüm varlıklar hakkında yarı yarıya yatay olarak yerleştirilen sahiptir, bu nedenle")
@@ -85,7 +87,7 @@ Dosyası değiştirildiğinde ve kaydedilen sonra değişiklikler otomatik olara
 ![](cointime-images/image7.png "Dosyası değiştirildiğinde ve kaydedilen sonra değişiklikler otomatik olarak proje yerleşik çalıştırın ve olup olmadığını gösterir")
 
 
-## <a name="adding-new-levels"></a>Yeni düzeyleri ekleme
+### <a name="adding-new-levels"></a>Yeni düzeyleri ekleme
 
 Para zaman düzeyleri ekleme işlemini hiçbir kod değişikliklerini ve yalnızca birkaç küçük değişiklikler projeye gerektirir. Yeni bir düzeyi eklemek için:
 
@@ -105,7 +107,7 @@ Yeni düzeyi düzeyi seçin ekranında düzeyi 9 görünmesi gereken (düzey dos
 ![](cointime-images/image10.png "Yeni düzeyi düzeyi seçin ekranında düzeyi 9 düzeyi dosya adları 0 başlangıcında olarak görünür, ancak düzey düğmeleri 1 rakamla başlayamaz")
 
 
-# <a name="level-loading"></a>Yükleme düzeyi
+## <a name="level-loading"></a>Yükleme düzeyi
 
 Daha önce gösterildiği gibi yeni düzeyleri gerektiren herhangi bir değişiklik kodda – doğru adlı ve eklenen oyun düzeyleri otomatik olarak algılar. **düzeyleri** doğru yapı eylemi klasörüyle (**BundleResource**veya **AndroidAsset**).
 
@@ -201,7 +203,7 @@ private void GoToLevel(int levelNumber)
 Sonraki biz adlı yöntemleri göz atın `GoToLevel`.
 
 
-## <a name="loadlevel"></a>LoadLevel
+### <a name="loadlevel"></a>LoadLevel
 
 `LoadLevel` Yöntemdir .tmx dosyası yükleniyor ve eklemeyi sorumlu `GameScene`. Bu yöntem çakışma veya varlıklar gibi etkileşimli tüm nesneler oluşturmaz – yalnızca görsel olarak da adlandırılan düzeyi için oluşturduğu *ortam*.
 
@@ -227,7 +229,7 @@ private void LoadLevel(int levelNumber)
 Şu anda CocosSharp katmanları olmadan kaldırarak ve bunları kendi üst öğeye yeniden ekleyerek yeniden sıralama izin vermiyor `CCScene` (olduğu `GameScene` bu durumda), son birkaç satır yönteminin katmanları yeniden sıralamak için gereklidir.
 
 
-## <a name="createcollision"></a>CreateCollision
+### <a name="createcollision"></a>CreateCollision
 
 `CreateCollision` Yöntemi yapıları bir `LevelCollision` gerçekleştirmek için kullanılan örnek *düz çakışma* player ve ortam arasında.
 
@@ -245,7 +247,7 @@ Bu çakışma olmadan player düzey-döner ve oyun unplayable olacaktır. Düz �
 Çakışma para zaman içinde ek kod – döşeli dosyaları yalnızca değişiklikler ile eklenebilir. 
 
 
-## <a name="processtileproperties"></a>ProcessTileProperties
+### <a name="processtileproperties"></a>ProcessTileProperties
 
 Bir düzey yüklenir ve çakışma oluşturulur, sonra `ProcessTileProperties` döşeme özelliğe göre mantığı gerçekleştirmek üzere çağırılır. Para saati içeren bir `PropertyLocation` özellikleri ve bu özellikleri içeren kutucuğa koordinatlarını tanımlamak için yapısı:
 
@@ -343,7 +345,7 @@ private bool TryCreateEntity(string entityType, float worldX, float worldY)
 ```
 
 
-# <a name="adding-new-entities"></a>Varlıklar ekleme
+## <a name="adding-new-entities"></a>Varlıklar ekleme
 
 Para zaman oyun nesnelerine için varlık deseni kullanır (içinde ele [CocosSharp varlıklarda Kılavuzu](~/graphics-games/cocossharp/entities.md)). Tüm varlıklar devralınmalıdır `CCNode`, başka bir deyişle, bunlar eklenebilir alt olarak `gameplayLayer`.
 
@@ -352,19 +354,19 @@ Her bir varlık türü bir liste veya tek örnek aracılığıyla da başvurulma
 Var olan kodu varlık türleri bir dizi yeni varlıklar oluşturmak nasıl örnekleri olarak sağlar. Aşağıdaki adımlarda, yeni bir varlık oluşturmak için kullanılabilir:
 
 
-## <a name="1---define-a-new-class-using-the-entity-pattern"></a>1 - varlık modeli kullanarak yeni bir sınıf tanımlama
+### <a name="1---define-a-new-class-using-the-entity-pattern"></a>1 - varlık modeli kullanarak yeni bir sınıf tanımlama
 
 Öğesinden devralınan bir sınıf oluşturmak için bir varlık oluşturmak için tek gereksinim olan `CCNode`. Çoğu varlık gibi bazı visual sahip bir `CCSprite`, hangi eklenecek kurucusu varlıkta alt olarak.
 
-CoinTime sağlar `AnimatedSpriteEntity` sınıfını animasyonlu varlıklar oluşturulmasını basitleştirir. Animasyon kapsamında daha ayrıntılı olarak [animasyonlu varlıkların bölüm](#Animated_Entities).
+CoinTime sağlar `AnimatedSpriteEntity` sınıfını animasyonlu varlıklar oluşturulmasını basitleştirir. Animasyon kapsamında daha ayrıntılı olarak [animasyonlu varlıkların bölüm](#animated-entities).
 
 
-## <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 – yeni bir giriş TryCreateEntity switch ifadesine ekleyin
+### <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 – yeni bir giriş TryCreateEntity switch ifadesine ekleyin
 
 Yeni varlık örneklerini içinde başlatılamaz `TryCreateEntity`. Varlık çerçevesi her mantığı çakışma, AI veya okuma giriş gibi gerektiriyorsa sonra `GameScene` nesnesine başvuru tutmanız gerekir. Birden çok örneği gerekirse (gibi `Coin` veya `Enemy` örnekleri), ardından yeni `List` eklenmelidir `GameScene` sınıfı.
 
 
-## <a name="3--modify-tile-properties-for-the-new-entity"></a>3 – yeni bir varlık için döşeme özelliklerini değiştirme
+### <a name="3--modify-tile-properties-for-the-new-entity"></a>3 – yeni bir varlık için döşeme özelliklerini değiştirme
 
 Kod yeni varlık oluşturmayı destekler sonra yeni varlık tileset eklenmesi gerekir. Herhangi bir düzeye açarak tileset düzenlenebilir `.tmx` dosya. 
 
@@ -389,7 +391,7 @@ Tileset var olanın üzerine yaz **mastersheet.tsx** tileset:
 ![](cointime-images/image15.png "He tileset varolan mastersheet.tsx tileset üzerine yazmanız gerekir")
 
 
-# <a name="entity-tile-removal"></a>Varlık döşeme kaldırma
+## <a name="entity-tile-removal"></a>Varlık döşeme kaldırma
 
 Döşeme harita oyun yüklendiğinde, tek tek döşeme statik nesneleridir. Taşıma gibi özel davranış varlıklar gerektirir, varlıkları oluşturulduğunda para zamanı kodu döşeme ortadan kaldırır.
 
@@ -453,7 +455,7 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="entity-offsets"></a>Varlık uzaklıkları
+## <a name="entity-offsets"></a>Varlık uzaklıkları
 
 Döşeme oluşturduğu varlıklar, varlık center kutucuğa Merkezi ile hizalayarak konumlandırılır. Daha büyük varlıklar, ister `Door`, doğru yerleştirilmesi için ek özellikler ve mantığı kullanın. 
 
@@ -493,12 +495,12 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="animated-entities"></a>Animasyonlu varlıklar
+## <a name="animated-entities"></a>Animasyonlu varlıklar
 
 Para zaman birkaç animasyonlu varlıkları içerir. `Player` Ve `Enemy` varlıklarını oynatmak ilerlemesi animasyonları ve `Door` varlık tüm bozuk para toplandığında açılış animasyonun oynar.
 
 
-## <a name="achx-files"></a>.achx dosyaları
+### <a name="achx-files"></a>.achx dosyaları
 
 Para zaman animasyonları .achx dosyalarında tanımlanır. Her animasyon arasında tanımlanan `AnimationChain` tanımlanan aşağıdaki animasyonda gösterildiği gibi etiketler **propanimations.achx**:
 
@@ -533,7 +535,7 @@ Bu animasyon yalnızca statik görüntü görüntülenirken depo varlıkta kayna
 Diğer tüm AnimationChain özellikleri .achx dosyasındaki para zamanına göre göz ardı edilir.
 
 
-## <a name="animatedspriteentity"></a>AnimatedSpriteEntity
+### <a name="animatedspriteentity"></a>AnimatedSpriteEntity
 
 Animasyon mantığı bulunduğu `AnimatedSpriteEntity` temel sınıf olarak kullanılan çoğu varlık için veren sınıfı `GameScene`. Aşağıdaki işlevleri sağlar:
 
@@ -562,7 +564,7 @@ walkRightAnimation = animations.Find (item => item.Name == "WalkRight");
 ```
 
 
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuz, uygulama ayrıntılarını para süreyi kapsar. Para zaman tam oyun olmasını oluşturuldu, ancak ayrıca kolayca değiştiren ve genişletilmiş bir projedir. Okuyucular yeni düzeyleri ekleme ve daha fazla para zaman nasıl uygulandığını anlamak için yeni varlıklar oluşturma zaman yapmayı değişiklikler düzeyleri için harcadıkları önerilir.
 

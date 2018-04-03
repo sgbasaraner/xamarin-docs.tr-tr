@@ -1,6 +1,6 @@
 ---
-title: "Basit bir daire çizme"
-description: "SkiaSharp çizim tuvalini ve boyama dahil olmak üzere, temellerini öğrenin"
+title: Basit bir daire çizme
+description: SkiaSharp çizim tuvalini ve boyama dahil olmak üzere, temellerini öğrenin
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 402470c3a27ba4327afa6e77336d60748abad436
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Basit bir daire çizme
 
@@ -20,7 +20,7 @@ _SkiaSharp çizim tuvalini ve boyama dahil olmak üzere, temellerini öğrenin_
 
 Bu makalede grafik oluşturma dahil SkiaSharp kullanarak Xamarin.Forms içinde çizim kavramlar tanıtılır bir `SKCanvasView` işleme grafikler, ana bilgisayar nesnesine `PaintSurface` olay ve kullanarak bir `SKPaint` renk ve diğer çizim belirtmek için nesne öznitelikler.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program SkiaSharp makaleleri bu dizisi için tüm örnek kodunu içerir. İlk sayfa alınarak **Basit Daire** ve sayfa sınıfının çağırır [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Bu kodu nasıl 100 piksel RADIUS ile sayfasının ortasında bir daire çizileceğini gösterir. Anahat dairenin kırmızı ve dairenin iç mavi.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program SkiaSharp makaleleri bu dizisi için tüm örnek kodunu içerir. İlk sayfa alınarak **Basit Daire** ve sayfa sınıfının çağırır [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Bu kodu nasıl 100 piksel RADIUS ile sayfasının ortasında bir daire çizileceğini gösterir. Anahat dairenin kırmızı ve dairenin iç mavi.
 
 ![](circle-images/circleexample.png "Kırmızı renkle mavi bir daire")
 
@@ -154,4 +154,4 @@ Sonraki örnekte [Xamarin.Forms ile tümleştirme](~/xamarin-forms/user-interfac
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

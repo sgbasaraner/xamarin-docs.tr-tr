@@ -1,6 +1,6 @@
 ---
-title: "CocosSharp varlıklar"
-description: "Varlık düzeni oyun kod düzenlemek için güçlü bir yoludur. Okunabilirliğini artırır, kod korumak daha kolay hale getirir ve yerleşik üst/alt işlevselliğini kullanır."
+title: CocosSharp varlıklar
+description: Varlık düzeni oyun kod düzenlemek için güçlü bir yoludur. Okunabilirliğini artırır, kod korumak daha kolay hale getirir ve yerleşik üst/alt işlevselliğini kullanır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: fe722ce75f0322ab60bb6fd967ff2c498b2e7b20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb4af0f76f6b266cad4eb969d987a346b7396aa9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="entities-in-cocossharp"></a>CocosSharp varlıklar
 
@@ -34,7 +34,7 @@ Tamamlanmış oyun şuna benzeyecektir:
 ![](entities-images/image1.png "Tamamlanmış oyun şuna benzeyecektir")
 
 
-# <a name="introduction-to-game-entities"></a>Oyun varlıklar giriş
+## <a name="introduction-to-game-entities"></a>Oyun varlıklar giriş
 
 İşleme, çakışma, fizik veya yapay zeka mantığı gerek nesneleri tanımlayan sınıflar oyun varlıklardır. Neyse ki, temel bir oyunun kodu mevcut varlıklar genellikle oyun kavramsal nesneleri eşleşir. Bu doğruysa bir oyunda gereken varlıklar tanımlayan daha kolay gerçekleştirilebilir. 
 
@@ -51,7 +51,7 @@ Tamamlanmış oyun şuna benzeyecektir:
 Bu varlıklar oyundaki kendi sınıfları olabilir ve her bir örnek örneklemesi ötesinde çok az kayıpla veya hiç Kurulum gerektirir.
 
 
-# <a name="general-vs-specific-entity-types"></a>Genel vs. Belirli bir varlık türleri
+## <a name="general-vs-specific-entity-types"></a>Belirli bir varlık türleri ve genel
 
 Bir varlık sistemini kullanarak oyun geliştiriciler tarafından karşılaştığı ilk soruları kendi varlıklar genelleştirmek için ne kadar biridir. Birkaç özelliklerine göre farklılık gösterse bile uygulamalarının en belirli sınıfları, varlığın her türü için tanımlarsınız. Daha fazla genel sistemleri bir sınıfına eşlemediğinden birleştirmek ve özelleştirilebilecek örneğine izin verme.
 
@@ -84,7 +84,7 @@ Kullanılan Genelleştirme düzeyini de dahil olmak üzere birçok etmenlere ba�
 Basitleştirmek amacıyla, biz belirli bir sınıf tabanlı yaklaşım ile tek bir sevk ve madde işareti varlık Bu öğretici için kullanırsınız.
 
 
-# <a name="project-setup"></a>Proje Kurulumu
+## <a name="project-setup"></a>Proje Kurulumu
 
 Bizim varlıklar uygulama başlamadan önce bir proje oluşturmak gerekir. Biz CocosSharp proje şablonları projesi oluşturmayı basitleştirmek için kullanırsınız. [Bu post denetleyin](http://forums.xamarin.com/discussion/26822/cocossharp-project-templates-for-xamarin-studio) Mac şablonları için Visual Studio'dan bir CocosSharp projesi oluşturma hakkında bilgi için. Bu kılavuzda kalan proje adı kullanacağı **EntityProject**.
 
@@ -110,14 +110,14 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 CocosSharp çözümleri yapılacağı hakkında daha fazla bilgi için bkz: bizim [birden çok çözümleri CocosSharp işleme kılavuzuna](~/graphics-games/cocossharp/resolutions.md).
 
 
-# <a name="adding-content-to-the-project"></a>Projeye içerik ekleme
+## <a name="adding-content-to-the-project"></a>Projeye içerik ekleme
 
 Projemizin oluşturulduktan sonra yer alan dosyaları ekleyeceğiz [bu içerik zip dosyası](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true). Bunu yapmak için ZIP dosyasını indirin ve onu sıkıştırmasını açın. Her ikisi de eklemek **ship.png** ve **bullet.png** için **içerik** klasör. **İçerik** klasörü içinde olacaktır **varlıklar** klasörü android'de ve iOS projesi kökündeki olacaktır. Eklendikten sonra her iki dosyalarında görmeliyiz **içerik** klasörü:
 
 ![](entities-images/image2.png "Eklendikten sonra her iki dosya içerik klasöründe olmalıdır")
 
 
-# <a name="creating-the-ship-entity"></a>Sevk varlık oluşturma
+## <a name="creating-the-ship-entity"></a>Sevk varlık oluşturma
 
 `Ship` Sınıfı bizim oyunun ilk varlık olacaktır. Eklemek için bir `Ship` sınıfı, ilk adlı bir klasör oluşturun **varlıklar** projenin kök düzeyinde. Yeni bir sınıf ekleyin **varlıklar** adlı bir klasör `Ship`:
 
@@ -179,16 +179,16 @@ Biz şimdi göreceğiz bizim oyun bizim sevk varlık çalıştırırsanız:
 ![](entities-images/image4.png "Oyun çalıştırırken sevk varlık görüntülenir")
 
 
-## <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>CCNode CCSprite yerine neden devralınmalıdır?
+### <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>CCNode CCSprite yerine neden devralınmalıdır?
 
 Bu noktada bizim `Ship` için basit bir sarmalayıcı sınıftır bir `CCSprite` örneği. Bu yana `CCSprite` de devraldığı `CCNode`, biz doğrudan devralınan `CCSprite`, hangi azaltılmış kodda `Ship.cs`. Ayrıca, doğrudan içinden devralma `CCSprite` bellekteki nesne sayısını azaltır ve bağımlılık ağacı küçülterek performansı artırabilir.
 
 Kaynağından devralındı avantajlar rağmen biz `CCNode` bazı gizlemek için `CCSprite` her örneğinden özellikleri. Örneğin, `Texture` özelliği olmayan değiştirilmelidir dışında `Ship` sınıfı ve içinden devralma `CCNode` bu özelliği gizle olanak tanır. Bizim varlıkların Genel üyeler oyun büyük büyüdükçe ve ek geliştiricileri için takım eklendikçe özellikle önemli hale gelmiştir.
 
 
-# <a name="adding-input-to-the-ship"></a>Sevk giriş ekleme
+## <a name="adding-input-to-the-ship"></a>Sevk giriş ekleme
 
-Bizim sevk ekranda görünür olmasını şimdi biz giriş eklemek olacaktır. Yaklaşımımız alınan yaklaşımın benzer olacaktır [CocosSharp Kılavuzu giriş](~/graphics-games/cocossharp/first-game/part2.md), biz hareket kodunu yerleştirme ancak bu `Ship` sınıfı yerine içeren `CCLayer` veya `CCScene`.
+Bizim sevk ekranda görünür olmasını şimdi biz giriş eklemek olacaktır. Yaklaşımımız alınan yaklaşımın benzer olacaktır [BouncingGame Kılavuzu](~/graphics-games/cocossharp/bouncing-game.md), biz hareket kodunu yerleştirme ancak bu `Ship` sınıfı yerine içeren `CCLayer` veya `CCScene`.
 
 Koda ekleme `Ship` kullanıcı ekran yerde değecek için taşıma desteklemek için:
 
@@ -230,7 +230,7 @@ public class Ship : CCNode
 Birçok 'em oyunlar uygulama geleneksel denetleyicisi tabanlı taşıma mimicking en yüksek hız, atış. Bu, biz yalnızca kodumuza kısa tutmak için hemen taşıma uygulamak belirtti.
 
 
-# <a name="creating-the-bullet-entity"></a>Madde işareti varlık oluşturma
+## <a name="creating-the-bullet-entity"></a>Madde işareti varlık oluşturma
 
 Bizim basit oyun ikinci varlıkta madde işaretleri görüntüleme bir varlıktır. Olduğu gibi `Ship` varlık, `Bullet` varlık içerecek bir `CCSprite` böylece ekranında görüntülenir. Taşıma için kullanıcı girişi dayanmayacak taşıma mantığı farklıdır; Bunun yerine, `Bullet` örnekleri hız özellikleri kullanılarak bir çizgide taşınır.
 
@@ -288,7 +288,7 @@ namespace EntityProject
 `Schedule` Çerçeve her çağrılacak temsilcileri ekleme yöntemi sağlar. Bu durumda biz eklediğiniz `ApplyVelocity` yöntemi böylece bizim madde işareti göre hız değerlerini taşır. `Schedule` Metodu bir `Action<float>`, burada float parametre süreyi (saniye cinsinden) zamana dayalı taşıma uygulamak için kullanırız son çerçeve itibaren belirtir. Zamanından bu yana değeri saniye cinsinden ölçülür ve hareket bizim hız değerlerini temsil eden *saniye başına piksel*.
 
 
-# <a name="adding-bullets-to-gamelayer"></a>GameLayer ekleme işaretleri
+## <a name="adding-bullets-to-gamelayer"></a>GameLayer ekleme işaretleri
 
 Biz herhangi eklemeden önce `Bullet` bizim oyun örneklerine biz yapacak bir kapsayıcı özellikle bir `List<Bullet>`. Değiştirme `GameLayer` madde işaretleri listesini içerecek şekilde:
 
@@ -422,14 +422,14 @@ Biz oyunu çalıştırmak ve bakın artık `Ship` çekim `Bullet` örnekleri:
 ![](entities-images/image1.png "Oyun çalıştırın ve sevk madde işareti örnekleri çekim")
 
 
-# <a name="why-gamelayer-has-ship-and-bullets-members"></a>Neden GameLayer sevk ve madde işaretlerini üyeler içeriyor
+## <a name="why-gamelayer-has-ship-and-bullets-members"></a>Neden GameLayer sevk ve madde işaretlerini üyeler içeriyor
 
 Bizim `GameLayer` sınıfı tanımlayan bizim varlık örneklerini başvuruları tutmak için iki alan (`ship` ve `bullets`), ancak bunlarla hiçbir şey yapmaz. Ayrıca, varlıklar, taşıma ve atma gibi kendi davranışı sorumludur. Bu nedenle neden eklediğimiz `ship` ve `bullets` alanları `GameLayer`?
 
 Bir tam oyun uygulaması mantık gerektiren bu üyeleri eklediğimiz neden olduğundan `GameLayer` farklı varlıklar arasındaki etkileşim için. Örneğin, bu oyun oynatıcısının yok edilmesi enemies dahil etmek için daha fazla geliştirilebilir. Bu enemies yer bir `List` içinde `GameLayer`ve test etmek için mantığı olup olmadığını `Bullet` örnekleri birbiriyle çakışır ile enemies gerçekleştirilmesi `GameLayer` de. Diğer bir deyişle, `GameLayer` kökü *sahibi* tüm varlık örnekleri ve varlık örnekleri arasındaki etkileşimler sorumlu.
 
 
-# <a name="bullet-destruction-considerations"></a>Madde işareti yok etme hakkında dikkat edilecek noktalar
+## <a name="bullet-destruction-considerations"></a>Madde işareti yok etme hakkında dikkat edilecek noktalar
 
 Bizim oyun yok etme için kod şu anda eksik `Bullet` örnekleri. Her `Bullet` örneğinin ekranda taşıma mantığı vardır, ancak biz herhangi off-screen yok etmek için herhangi bir kod eklemediniz `Bullet` örnekleri.
 
@@ -437,8 +437,7 @@ Ayrıca, yok etme `Bullet` örnekleri değil de ait `GameLayer`. Örneğin, ekra
 
 En basit yok etme desteklemek için fabrika sınıfı sorumluluğunda genişletmek için çözümüdür. Fabrika olduğu gibi başka nesneler tarafından işlenmesi yok varlık örneğini bildirilebilir sonra `GameLayer` kendi listelerinden varlık örneğini kaldırma. 
 
-
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuz devralarak CocosSharp varlıklar oluşturmak nasıl gösterir `CCNode` sınıfı. Bu varlık, kendi görselleri ve Özel mantık oluşturulmasını işleme, kendi içinde bulunan nesneleridir. Bu kılavuz bir varlık (taşıma ve diğer varlıklar oluşturulmasını) ait kod kök varlık kapsayıcısında (Çakışma ve diğer varlık etkileşim mantığı) ait kodundan belirler.
 

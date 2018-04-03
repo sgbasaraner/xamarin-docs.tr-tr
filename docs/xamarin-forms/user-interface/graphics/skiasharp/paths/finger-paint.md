@@ -1,6 +1,6 @@
 ---
 title: Parmak boyama
-description: "Tuvalde boyamak için parmakları kullanın."
+description: Tuvalde boyamak için parmakları kullanın.
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: b4213d71c2eca6c2552ac674a0203d7a2cc36e1b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dacb9f399ad044d2d5e9c960bce398092766020c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="finger-painting"></a>Parmak boyama
 
@@ -24,7 +24,7 @@ Bir `SKPath` nesne sürekli olarak güncelleştirilebilir ve görüntülenir. Bu
 
 Xamarin.Forms dokunma desteği Xamarin.Forms dokunma izleme etkili ek dokunma desteği sağlamak için geliştirilen için tek tek parmakları ekranda izleme izin vermiyor. Bu makalede açıklanan [ **çağırma olayları etkileri**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Örnek program [ **dokunma izleme etkisi gösterileri** ](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) finger-painting programı da dahil olmak üzere SkiaSharp kullanan iki sayfa içerir.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) çözümü bu dokunma izleme olayı içerir. Taşınabilir sınıf kitaplığı proje içeriyor `TouchEffect` sınıfı, `TouchActionType` numaralandırma, `TouchActionEventHandler` temsilci ve `TouchActionEventArgs` sınıfı. Her platform projeleri içeren bir `TouchEffect` sınıfı, platform için; iOS projesi de içerir bir `TouchRecognizer` sınıfı.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) çözümü bu dokunma izleme olayı içerir. Taşınabilir sınıf kitaplığı proje içeriyor `TouchEffect` sınıfı, `TouchActionType` numaralandırma, `TouchActionEventHandler` temsilci ve `TouchActionEventArgs` sınıfı. Her platform projeleri içeren bir `TouchEffect` sınıfı, platform için; iOS projesi de içerir bir `TouchRecognizer` sınıfı.
 
 **Parmak boyama** sayfasındaki **SkiaSharpFormsDemos** parmak boyama basitleştirilmiş bir uygulamasıdır. Bırakmaz renk seçimine izin ver veya genişliği vuruş yapmak, tuvalin temizlemek için hiçbir yolu yoktur ve Elbette resminiz kaydedemezsiniz.
 
@@ -169,6 +169,6 @@ Parmak resimler yalnızca, beceri tarafından sınırlıdır:
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Dokunma izleme etkisi gösterileri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
 - [Olayları etkileri çağırma](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

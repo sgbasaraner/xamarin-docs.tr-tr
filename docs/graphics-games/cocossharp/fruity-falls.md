@@ -1,6 +1,6 @@
 ---
-title: "Fruity döner oyun ayrıntıları"
-description: "Bu kılavuz, ortak CocosSharp ve fizik, içerik yönetimi, oyun durumu ve oyun tasarım gibi oyun geliştirme kavramları kapsayan Fruity döner oyun gözden geçirir."
+title: Fruity döner oyun ayrıntıları
+description: Bu kılavuz, ortak CocosSharp ve fizik, içerik yönetimi, oyun durumu ve oyun tasarım gibi oyun geliştirme kavramları kapsayan Fruity döner oyun gözden geçirir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A5664930-F9F0-4A08-965D-26EF266FED24
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 307fdec697f2b94ddfdfe0c380e02fd69e197132
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d37b289249e5c9e2c23b45c998d1e24960637ba6
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="fruity-falls-game-details"></a>Fruity döner oyun ayrıntıları
 
@@ -22,7 +22,7 @@ Fruity düştüğünde ve player kırmızı ve sarı ulaşılacak durumlardır r
 
 ![](fruity-falls-images/image1.png "Oyun amacı olabildiğince çok puan mümkün olduğunca ulaşılacak durumlardır açılan yanlış Kutusu'na oyun bitiş izin vererek olmadan almaktır")
 
-Fruity döner genişletir içinde tanıtılan kavramları [BouncingGame Kılavuzu](~/graphics-games/cocossharp/first-game/index.md) aşağıdakileri ekleyerek:
+Fruity döner genişletir içinde tanıtılan kavramları [BouncingGame Kılavuzu](~/graphics-games/cocossharp/bouncing-game.md) aşağıdakileri ekleyerek:
 
  - PNG'ler formunda içerik
  - Gelişmiş fizik
@@ -32,20 +32,20 @@ Fruity döner genişletir içinde tanıtılan kavramları [BouncingGame Kılavuz
  - Oyun varlıklar kullanan kodu kuruluş
  - Eğlenceli ve yeniden yürütme değeri odaklanmış oyun tasarım
 
-BouncingGame CocosSharp kavramları Tanıtımı odaklanırken, tamamlanmış bir oyun üründe hepsini bir araya getirmek nasıl Fruity döner gösterir. Bu kılavuz BouncingGame başvurduğundan okuyucular ilk kendilerini kazanmalısınız [BouncingGame Kılavuzu](~/graphics-games/cocossharp/first-game/index.md) bu kılavuzu okuduktan önce.
+Sırada [BouncingGame Kılavuzu](~/graphics-games/cocossharp/bouncing-game.md) CocosSharp kavramları Tanıtımı odaklanmış, Fruity döner tamamlanmış bir oyun üründe hepsini bir araya getirmek gösterilmektedir. Bu kılavuz BouncingGame başvurduğundan okuyucular ilk kendilerini kazanmalısınız [BouncingGame Kılavuzu](~/graphics-games/cocossharp/bouncing-game.md) bu kılavuzu okuduktan önce.
 
 Bu kılavuz, kendi oyun yapmanıza yardımcı olacak bilgiler Fruity döner tasarımını ve uygulama kapsar. Aşağıdaki konuları içerir:
 
 
-- [Oyun denetleyicisi sınıfı](#GameController_Class)
-- [Oyun varlıklar](#Game_Entities)
-- [Ulaşılacak durumlardır grafik](#Fruit_Graphics)
-- [Fizik](#Physics)
-- [Oyun içeriği](#Game_Content)
-- [GameCoefficients](#GameCoefficients)
+- [Oyun denetleyicisi sınıfı](#gamecontroller-class)
+- [Oyun varlıklar](#game-entities)
+- [Ulaşılacak durumlardır grafik](#fruit-graphics)
+- [Fizik](#physics)
+- [Oyun içerik](#game-content)
+- [GameCoefficients](#gamecoefficients)
 
 
-# <a name="gamecontroller-class"></a>Oyun denetleyicisi sınıfı
+## <a name="gamecontroller-class"></a>Oyun denetleyicisi sınıfı
 
 Fruity döner PCL proje içeren bir `GameController` oyun başlatmasını ve görüntülerin arasında taşıma sorumlu olan sınıf. Bu sınıf, yinelenen kod ortadan kaldırmak için iOS ve Android projeler tarafından kullanılır.
 
@@ -79,7 +79,7 @@ GameView.DesignResolution = new CCSizeI (width, height);
 Son olarak, `GameController` sınıfı tarafından çağrılan bir statik yöntem sağlar `CCGameScene` başka bir geçiş `CCScene`. Bu yöntem arasında hareket etmek için kullanılan `TitleScene` ve `GameScene`.
 
 
-# <a name="game-entities"></a>Oyun varlıklar
+## <a name="game-entities"></a>Oyun varlıklar
 
 Fruity döner varlık desenini oyun nesnelerin çoğu için kullanır. Bu desen hakkında ayrıntılı bir açıklama bulunabilir [CocosSharp varlıklarda Kılavuzu](~/graphics-games/cocossharp/entities.md).
 
@@ -107,7 +107,7 @@ public Fruit ()
 ```
 
 
-## <a name="fruit-graphics"></a>Ulaşılacak durumlardır grafik
+### <a name="fruit-graphics"></a>Ulaşılacak durumlardır grafik
 
 `CreateFruitGraphic` Yöntemi oluşturur bir `CCSprite` örneği ve ona ekler `Fruit`. `IsAntialiased` Özelliği false olarak ayarlanmış bir pixelated görünüm oyun vermek için. Bu değer, tüm false olarak ayarlayın `CCSprite` ve `CCLabel` oyun boyunca örnekleri:
 
@@ -179,7 +179,7 @@ if (GameCoefficients.ShowCollisionAreas)
 ![](fruity-falls-images/image4.png "ExtraPointsLabel renk ulaşılacak durumlardır görüntü karşıtlığını tutmak için ayarlanır ve PositionY değerini CCSprite fruits üzerinde CCLabel merkezi için ayarlanır")
 
 
-## <a name="collision"></a>Çakışma
+### <a name="collision"></a>Çakışma
 
 Fruity döner geometri klasöründe nesneleri kullanarak bir özel çakışma çözümü uygular:
 
@@ -218,17 +218,17 @@ private void CreateCollision()
 }
 ```
 
-Çakışma mantığı kapsanan [daha sonra bu kılavuzdaki](#Collision).
+Çakışma mantığı kapsanan [daha sonra bu kılavuzdaki](#collision).
 
 
-# <a name="physics"></a>Fizik
+## <a name="physics"></a>Fizik
 
 Fruity düştüğünde de fizik iki kategoriye ayrılabilir: taşıma ve çakışma. 
 
 
-## <a name="movement-using-velocity-and-acceleration"></a>Hız ve Hızlandırma kullanarak taşıma
+### <a name="movement-using-velocity-and-acceleration"></a>Hız ve Hızlandırma kullanarak taşıma
 
-Fruity döner kullanan `Velocity` ve `Acceleration` varlıklarını, benzer şekilde hareket denetlemek için değerler [BouncingGame](~/graphics-games/cocossharp/first-game/index.md). Varlıkları adlı bir yöntemi, taşıma mantığı uygulamak `Activity`, adlandırılan bir kez çerçeve başına. Örneğin, hareket uyarlamasını görebiliriz `Fruit` sınıfı `Activity` yöntemi:
+Fruity döner kullanan `Velocity` ve `Acceleration` varlıklarını, benzer şekilde hareket denetlemek için değerler [BouncingGame](~/graphics-games/cocossharp/bouncing-game.md). Varlıkları adlı bir yöntemi, taşıma mantığı uygulamak `Activity`, adlandırılan bir kez çerçeve başına. Örneğin, hareket uyarlamasını görebiliriz `Fruit` sınıfı `Activity` yöntemi:
 
 ```csharp
 public void Activity(float frameTimeInSeconds)
@@ -274,7 +274,7 @@ public void HandleInput(CCPoint touchPoint)
 }
 ```
 
-## <a name="collision"></a>Çakışma
+### <a name="collision"></a>Çakışma
 
 Fruity döner uygulayan ulaşılacak durumlardır ve diğer collidable nesneler arasında yarı gerçekçi çakışma gibi `Paddle` ve `GameScene.Splitter`. Çakışma hata ayıklama yardımcı olmak için Fruity döner çakışma alanları değiştirerek görünür hale getirilebilir `GameCoefficients.ShowDebugInfo` içinde `GameCoefficients.cs` dosyası:
 
@@ -330,7 +330,8 @@ private void PerformCollision()
 }
 ```
 
-### <a name="fruitvsborders"></a>FruitVsBorders
+#### <a name="fruitvsborders"></a>FruitVsBorders
+
 `FruitVsBorders` çakışma, farklı bir sınıf içinde yer alan mantığı güvenmek yerine çakışma için kendi mantığı gerçekleştirir. Bu farkı ulaşılacak durumlardır ve ekranının Kenarlıklar arasında çakışma mükemmel düz değil – ekran kenarından dikkatli raket taşıma tarafından edilmesini ulaşılacak durumlardır olasıdır çünkü bulunmaktadır. Ulaşılacak durumlardır zaman ile raket isabet ekran dışına Sıçrama, ancak player yavaş ulaşılacak durumlardır iter, kenar geçmiş ve ekranın taşır:
 
 
@@ -352,7 +353,8 @@ private void FruitVsBorders(Fruit fruit)
 }
 ```
 
-### <a name="fruitvsbins"></a>FruitVsBins
+#### <a name="fruitvsbins"></a>FruitVsBins
+
 `FruitVsBins` Yöntemdir herhangi ulaşılacak durumlardır iki depo birine düştüğü olmadığını denetlemek için sorumlu. Bu durumda, (eşleşme ulaşılacak durumlardır/bin renkleri varsa) player puanlar veya (renkleri eşleşmiyorsa) oyun sona erer:
 
 
@@ -380,7 +382,8 @@ private void FruitVsBins(Fruit fruit)
 }
 ```
 
-### <a name="fruitvspaddle-and-fruitpolygoncollision"></a>FruitVsPaddle ve FruitPolygonCollision
+#### <a name="fruitvspaddle-and-fruitpolygoncollision"></a>FruitVsPaddle ve FruitPolygonCollision
+
 Ulaşılacak durumlardır raket ve ulaşılacak durumlardır Bölümlendirici (iki depo ayırarak alan) karşılaştırması ve her ikisi de Bel çakışma `FruitPolygonCollision` yöntemi. Bu yöntem üç bölümden oluşur:
 
 1. Nesneleri birbiriyle çakışır alıp almadığını Sına
@@ -419,7 +422,7 @@ Matematik içinde yer alan çakışma mantığının arkasındaki `Polygon` ve `
  
 
 
-# <a name="game-content"></a>Oyun içeriği
+## <a name="game-content"></a>Oyun içerik
 
 Fruity düştüğünde resmi hemen BouncingGame oyun ayırır. Oyun tasarımları benzer olmakla birlikte, oynatıcıları hemen nasıl iki oyunlar konum bir fark görmez. Oyun severler genellikle kendi görselleri tarafından oyun denemeye karar verin. Bu nedenle, geliştiricilerin görsel olarak çekici alımında kaynak yatırımları yaparlar oldukça önemlidir oyun.
 
@@ -432,7 +435,7 @@ Resim Fruity eşiğin aşağıdaki hedefleri ile oluşturuldu:
  - Kaynak ağır animasyonları olmadan basit görsel efektler oluşturma olanağı
 
 
-## <a name="content-location"></a>İçerik konumu
+### <a name="content-location"></a>İçeriğin konumu
 
 Fruity döner Android projesi görüntüleri klasöründeki tüm içeriği içerir:
 
@@ -445,9 +448,9 @@ Bu aynı dosyalar yinelemesinden kaçınmak için iOS projesi bağlanır ve her 
 İçerik içinde yer almıyor dikkate değerdir **Ld** veya **Hd** varsayılan CocosSharp şablonunun parçası olan klasörler. **Ld** ve **Hd** klasörleri içerik – bir telefon ve tabletler gibi daha yüksek çözünürlükte aygıtları için bir gibi düşük çözünürlüklü cihazlar için iki kümesi sağlayan oyunlar için kullanılacak yöneliktir. Farklı ekran boyutları için içerik sağlamak gerekmez şekilde Fruity döner resim bilerek pixelated ile estetik, oluşturulur. Bu nedenle, **Ld** ve **Hd** klasörleri projeden tamamen da kaldırılmıştır.
 
 
-## <a name="gamescene-layering"></a>GameScene katmanlama
+### <a name="gamescene-layering"></a>GameScene katmanlama
 
-Bu kılavuzda daha önce belirtildiği gibi GameScene tüm oyun nesne örneğini oluşturmada, konumlandırma ve nesneler arası mantığı (örneğin, çakışma) sorumludur. Tüm nesneler, dört birine eklenir `CCLayer` örnekleri:
+Bu kılavuzda daha önce belirtildiği gibi `GameScene` tüm oyun nesne örneğini oluşturmada, konumlandırma ve nesneler arası mantığı (örneğin, çakışma) sorumludur. Tüm nesneler, dört birine eklenir `CCLayer` örnekleri:
 
 
 ```csharp
@@ -488,7 +491,7 @@ private void CreateBackground()
 ```
 
 
-## <a name="vine-entity"></a>Asma varlık
+### <a name="vine-entity"></a>Asma varlık
 
 `Vine` Varlık içerik için benzersiz olarak kullanılan – oyunlar üzerinde hiçbir etkisi olmaz. Yirmi oluşur `CCSprite` örnekler, deneme yanılma asma her zaman ekranın üstünde ulaştığında emin olmak için seçilen bir sayı:
 
@@ -557,7 +560,7 @@ public void Activity(float frameTimeInSeconds)
 Döndürme az miktarda geri asma eklendiğini fark `vineAngle` katsayısı. Bu değer, ne kadar vines döndürme ayarlamak için değiştirilebilir.
 
 
-# <a name="gamecoefficients"></a>GameCoefficients
+## <a name="gamecoefficients"></a>GameCoefficients
 
 Adlı bir sınıf Fruity döner içerecek şekilde her iyi oyun yineleme, ürünüdür `GameCoefficients` denetleyen oyun nasıl oynatılır. Bu sınıf, Denetim fizik, oluşturma ve puanlama düzeni oyuna genelinde kullanılan açıklayıcı değişkenleri içerir.
 
@@ -606,7 +609,7 @@ public static class GameCoefficients
 ```
 
 
-# <a name="conclusion"></a>Sonuç
+## <a name="conclusion"></a>Sonuç
 
 Bu kılavuz Fruity döner oyun incelediniz. İçerik, fizik ve oyun durum yönetimi dahil olmak üzere kavramlarını ele.
 

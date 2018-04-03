@@ -1,6 +1,6 @@
 ---
-title: "Dokunma işlemeleri"
-description: "Dokunma sürükleyerek, çimdik ve döndürme uygulamak için kullanım matris dönüşümleri"
+title: Dokunma işlemeleri
+description: Dokunma sürükleyerek, çimdik ve döndürme uygulamak için kullanım matris dönüşümleri
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 90be80d42c20ca7509037b5f59b34cc1bddde6de
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 1fbc9826b9edd3d4c8f7e4b47c3ea835d5625343
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="touch-manipulations"></a>Dokunma işlemeleri
 
@@ -691,5 +691,5 @@ Kod koleksiyonunda döngü ve bit eşlemler koleksiyonunun başından sonuna yı
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Olayları etkileri çağırma](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

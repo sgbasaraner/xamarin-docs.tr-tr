@@ -1,6 +1,6 @@
 ---
-title: "İle CCAction animasyon ekleme"
-description: "CCAction sınıfını eklemeyi animasyonları CocosSharp oyunlara basitleştirir. Animasyonlarına işlevselliğini uygulayan veya Lehçe eklemek için kullanılabilir."
+title: İle CCAction animasyon ekleme
+description: CCAction sınıfını eklemeyi animasyonları CocosSharp oyunlara basitleştirir. Animasyonlarına işlevselliğini uygulayan veya Lehçe eklemek için kullanılabilir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74DBD02A-6F10-4104-A61B-08CB49B733FB
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 2852cf0e141e8239cee8dbe580576f4571c919a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e64789f4e86dbcd47fc760fd9d4d7fb61c76121
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="animating-with-ccaction"></a>İle CCAction animasyon ekleme
 
@@ -23,7 +23,7 @@ _CCAction sınıfını eklemeyi animasyonları CocosSharp oyunlara basitleştiri
 Bu Kılavuzu adlı bir proje kullanır **ActionProject** hangi [burada indirilebilir](https://developer.xamarin.com/samples/mobile/CCAction). Bu kılavuzu kullanır `CCDrawNode` içinde ele sınıfı [çizim geometri CCDrawNode ile](~/graphics-games/cocossharp/ccdrawnode.md) Kılavuzu.
 
 
-# <a name="running-the-actionproject"></a>ActionProject çalıştırma
+## <a name="running-the-actionproject"></a>ActionProject çalıştırma
 
 **ActionProject** iOS ve Android için yerleşik bir CocosSharp çözümüdür. Hem nasıl kullanılacağına ilişkin bir kod örneği olarak hizmet veren `CCAction` sınıfı ve gerçek zamanlı demo yaygın olarak `CCAction` uygulamaları.
 
@@ -39,8 +39,7 @@ Sol taraftaki etiketleri tıklayarak değişiklikleri hangi tür `CCAction` dair
 
 ![](ccaction-images/image3.gif "Konum etiketinin tıklatarak değiştirilebilmesi için farklı değerler döngüsü")
 
-
-# <a name="common-variable-changing-ccactions"></a>Ortak değişken değiştirme CCActions 
+## <a name="common-variable-changing-ccaction-classes"></a>Ortak değişken değiştirme CCAction sınıfları
 
 **ActionProject** aşağıdaki kullanan `CCAction`-CocosSharp parçası olan sınıflarını devralıp:
 
@@ -94,13 +93,13 @@ Word ile biter yukarıda listelenen türlerinin her biri *için* anlamına `CCAc
 Her "İçin" sınıfı ayrıca, bağımsız değişken değeri geçerli değerine üzerinde eklemek bir "İle" sürümüne sahip `CCNode`. Örneğin, oluşturma bir `CCMoveBy` X bir konumunu = 100 ve Y = 200 neden olur `CCNode` sağ 100 birimlerine ve 200 birimleri olan eylemi başlatıldığı adresindeki konumdan taşınan örneği.
 
 
-# <a name="easing-actions"></a>Eylemler kolaylaştırma
+## <a name="easing-actions"></a>Eylemler kolaylaştırma
 
 Varsayılan olarak, değişken değiştirme eylemleri gerçekleştirecek *doğrusal ilişkilendirme* – eylem sabit bir oranda istenen değeri doğru hareket eder. Enterpolasyonla varsa *konumu* doğrusal olarak, taşıma nesne hemen başlatmak ve eylem başında ve sonunda taşımayı durdurun ve eylemi yürüten gibi kendi hızı sabit kalır. 
 
 Olmayan doğrusal ilişkilendirme daha az jarring ve CocosSharp değişkeni değiştirme eylemleri değiştirmek için kullanılan eylemler kolaylaştırma bir çeşitli sağlamadığından, Lehçe, bir öğe ekler.
 
-İçinde **ActionProject** örnek, biz geçirebilirsiniz bu ikinci etikette tıklayarak hareket hızı eylem türleri arasında (varsayılan olarak  **<None>** ):
+İçinde **ActionProject** örnek, biz geçirebilirsiniz bu ikinci etikette tıklayarak hareket hızı eylem türleri arasında (varsayılan olarak **<None>**):
 
 ![](ccaction-images/image4.gif "Kullanıcı bu ikinci etikette tıklayarak hareket hızı eylem türleri arasında geçiş yapabilirsiniz")
 
@@ -128,35 +127,35 @@ Uygulama tarafından gösterildiği gibi tam aynı kolaylaştırma diğer deği�
 ![](ccaction-images/image5.gif "Tam aynı kolaylaştırma CCRotateTo gibi diğer değişken ayarı eylemleri uygulanabilir")
 
 
-# <a name="easing-in-out-and-inout"></a>In, Out ve Inout kolaylaştırma
+## <a name="easing-in-out-and-inout"></a>In, Out ve Inout kolaylaştırma
 
 Tüm hareket hızı Eylemler durumunda `In`, `Out`, veya `InOut` hareket hızı türü eklenir. Bu koşulları kolaylaştırma uygulandığında bakın: `In` kolaylaştırma başında uygulanacak anlamına gelir `Out` sonunda anlamına gelir ve `InOut` hem başlangıç ve bitiş anlamına gelir.
 
 Bir `In` eylem kolaylaştırma bir değişkeni, tüm ilişkilendirme (her ikisi de başında ve sonunda) boyunca uygulandığı şekilde etkileyecek, ancak genellikle hareket hızı eylem en tanınabilir özelliklerini başında gerçekleşir. Benzer şekilde, `Out` hareket hızı Eylemler davranışlarını ilişkilendirme sonunda tarafından işlemleri. Örneğin, `CCEaseBounceOut` bir nesne eylem sonunda geçirmek neden olur.
 
 
-## <a name="out"></a>Out
+### <a name="out"></a>Out
 
 `Out` genellikle kolaylaştırma ilişkilendirme sonunda en dikkat çeken değişiklikleri uygular. Örneğin, `CCEaseExponentialOut` hedef değer yaklaştığında değiştirme değişkeni değişikliği hızı yavaş:
 
 ![](ccaction-images/image6.gif "Hedef değer yaklaştığında CCEaseExponentialOut değiştirme değişkeni değişikliği hızı yavaş")
 
 
-## <a name="in"></a>İçindeki
+### <a name="in"></a>İçindeki
 
 `In` genellikle kolaylaştırma ilişkilendirme başındaki en dikkat çeken değişikliğini uygular. Örneğin, `CCEaseExponentialIn` eylemi başında daha yavaş taşır:
 
 ![](ccaction-images/image7.gif "CCEaseExponentialIn daha yavaş eylemi başında taşır")
 
 
-## <a name="inout"></a>Inout
+### <a name="inout"></a>Inout
 
 `InOut` genellikle hem başlangıç ve bitiş en dikkat çeken değişiklikleri uygular. `InOut` kolaylaştırma genellikle simetrik. Örneğin, `CCEaseExponentialInOut` eylemi başında ve sonunda yavaş taşır:
 
 ![](ccaction-images/image8.gif "CCEaseExponentialInOut eylemi başında ve sonunda yavaş taşıma")
 
 
-# <a name="implementing-a-custom-ccaction"></a>Özel CCAction uygulama
+## <a name="implementing-a-custom-ccaction"></a>Özel CCAction uygulama
 
 Biz kadarki ele sınıfların tümü ortak işlevsellik sağlamak için CocosSharp içinde yer almaktadır. Özel `CCAction` uygulamaları ek esneklik sağlayabilir. Örneğin, bir `CCAction` böylece kullanıcı deneyimi kazandığı, deneyimi çubuğu düzgün bir şekilde büyür bir deneyim çubuğu doldurulmuş oranını denetleyen kullanılabilir.
 
@@ -226,7 +225,7 @@ LineWidthAction aşağıdaki animasyonda gösterildiği gibi çeşitli şekiller
 ![](ccaction-images/image9.gif "LineWidthAction çeşitli şekillerde çizgi genişliğini değiştirmek için herhangi bir hareket hızı eylem içeren bu animasyonda gösterildiği gibi birleştirilebilir")
 
 
-## <a name="interpolation-and-the-update-method"></a>İlişkilendirme ve güncelleştirme yöntemi
+### <a name="interpolation-and-the-update-method"></a>İlişkilendirme ve güncelleştirme yöntemi
 
 Yukarıdaki sınıflarda değerlerini depolama yanı sıra yalnızca mantığı yaşadığı `LineWidthState.Update` yöntemi. `startWidth` Değişkeni depolar hedef genişliğini `LineNode` eylem başlangıcında ve `deltaWidth` değişkeni depolar eylemi süresince ne kadar değerini değiştirir.
 
@@ -247,7 +246,7 @@ castedTarget.Width = startWidth + deltaWidth * 1;
 `time` Değeri 0 ile 1 - arasında genellikle olacaktır, ancak her zaman - ve `Update` uygulamalarında bu sınırlar değil varsayın. Hareket hızı bazı yöntemler (gibi `CCEaseBackIn` ve `CCEaseBackOut`) bir saat değeri 0'dan 1 aralığın dışında sağlayacaktır.
 
 
-# <a name="conclusion"></a>Sonuç
+## <a name="conclusion"></a>Sonuç
 
 İlişkilendirme ve kolaylaştırma özellikle kullanıcı arabirimleri oluştururken zarif bir oyun oluşturma önemli bir parçasıdır. Bu kılavuz kullanmayı kapsar `CCActions` konumu ve döndürme gibi standart değerler ve aynı zamanda özel değerler yanı. `LineWidthState` Ve `LineWidthAction` sınıfları özel bir eylemi uygulamak nasıl gösterir.
 

@@ -1,6 +1,6 @@
 ---
-title: "SkiaSharp çizim temelleri"
-description: "SkiaSharp grafik kavramları ve koordinatları temellerini öğrenin"
+title: SkiaSharp çizim temelleri
+description: SkiaSharp grafik kavramları ve koordinatları temellerini öğrenin
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,19 +8,19 @@ ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: fb12924ff181439de601ecc07e1c7f3fe63a6616
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 194081c5cb8878a418a188003d0f8c40286b2922
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp çizim temelleri
 
 _SkiaSharp grafik kavramları ve koordinatları temellerini öğrenin_
 
-Xamarin.Forms uygulamanıza SkiaSharp NuGet paketi ekledikten sonra SkiaSharp grafik kullanmaya başlayabilirsiniz. [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) çözüm içinde aşamalı olarak daha gelişmiş dersleri teknikleri programlama SkiaSharp gösteren birkaç sayfalar içerir.
+Xamarin.Forms uygulamanıza SkiaSharp NuGet paketi ekledikten sonra SkiaSharp grafik kullanmaya başlayabilirsiniz. [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) çözüm içinde aşamalı olarak daha gelişmiş dersleri teknikleri programlama SkiaSharp gösteren birkaç sayfalar içerir.
 
-Bu bölümdeki tüm örnek programlar başlığı altında görünür **SkiaSharp Temelleri** giriş sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program ve [ **Temelleri** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics) klasörü çözümün.
+Bu bölümdeki tüm örnek programlar başlığı altında görünür **SkiaSharp Temelleri** giriş sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program ve [ **Temelleri** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics) klasörü çözümün.
 
 ## <a name="drawing-a-simple-circlecirclemd"></a>[Basit Bir Daire Çizme](circle.md)
 
@@ -50,4 +50,4 @@ Bit eşlemler çeşitli kaynaklardan yüklemek ve bunları görüntüler.
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

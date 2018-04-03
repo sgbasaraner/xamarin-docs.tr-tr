@@ -1,6 +1,6 @@
 ---
-title: "Satırları ve vuruş büyük harfler"
-description: "Farklı vuruş caps satırıyla çizmek için SkiaSharp kullanmayı öğrenin"
+title: Satırları ve vuruş büyük harfler
+description: Farklı vuruş caps satırıyla çizmek için SkiaSharp kullanmayı öğrenin
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 341d850709ff27f4dc397cee3bb2fc5f73c0ec3c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 96b8a990f4644d5e4c9c8ffe6cdb6c173c50657c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Satırları ve vuruş büyük harfler
 
@@ -36,7 +36,7 @@ Başlangıç ve bitişini satırların görünüşünü adlı bir *satır cap* v
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 
-Bu, en iyi bir örnek programla gösterilmiştir. Giriş sayfasının ikinci bölümü [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) programı adlı bir sayfa ile başlayan **vuruş Caps** göre [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) sınıfı. Bu sayfayı tanımlayan bir `PaintSurface` üç üyelerini döngü olay işleyicisi `SKStrokeCap` ad numaralandırma üyesi görüntüleme ve o vuruş cap kullanarak çizgi çizme numaralandırması:
+Bu, en iyi bir örnek programla gösterilmiştir. Giriş sayfasının ikinci bölümü [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programı adlı bir sayfa ile başlayan **vuruş Caps** göre [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) sınıfı. Bu sayfayı tanımlayan bir `PaintSurface` üç üyelerini döngü olay işleyicisi `SKStrokeCap` ad numaralandırma üyesi görüntüleme ve o vuruş cap kullanarak çizgi çizme numaralandırması:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -244,4 +244,4 @@ Satırları bağlı veya bağlı grafik yolları ile çalışmanın kritik önem
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

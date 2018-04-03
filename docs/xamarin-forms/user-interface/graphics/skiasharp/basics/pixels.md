@@ -1,6 +1,6 @@
 ---
-title: "Piksel ve CİHAZDAN bağımsız birimler"
-description: "SkiaSharp koordinatları ve Xamarin.Forms koordinatları arasındaki farklar inceleyin"
+title: Piksel ve CİHAZDAN bağımsız birimler
+description: SkiaSharp koordinatları ve Xamarin.Forms koordinatları arasındaki farklar inceleyin
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 5e07377584996694aa8597af79317957c51050ec
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1698c18eafdce0585daa81c9462ee038c15586bd
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Piksel ve CİHAZDAN bağımsız birimler
 
@@ -26,7 +26,7 @@ Xamarin.Forms içinde biraz programlama Xamarin.Forms koordinatları ve boyutlar
 
 Bu daireler *olan* Xamarin.Forms boyutları karşılaştırıldığında küçük. Xamarin.Forms temel platform tarafından oluşturulan bir CİHAZDAN bağımsız birim üzerinde koordinatları ve boyutları taban sırasında varsayılan olarak, SkiaSharp piksel birimlerinde çizer. (Xamarin.Forms koordinat sistemi hakkında daha fazla bilgi bulunabilir [bölüm 5. Boyutlarıyla ilgilenme](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md) defterinin *Xamarin.Forms ile Mobile Apps oluşturma*.)
 
-Sayfanın [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) başlıklı program **yüzeyini boyutu** üç farklı kaynaklardan görüntü yüzeyini boyutunu göstermek için SkiaSharp metin çıktısı kullanır:
+Sayfanın [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) başlıklı program **yüzeyini boyutu** üç farklı kaynaklardan görüntü yüzeyini boyutunu göstermek için SkiaSharp metin çıktısı kullanır:
 
 - Normal Xamarin.Forms [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) ve [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) özelliklerini `SKCanvasView` nesnesi.
 - [ `CanvasSize` ](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKCanvasView.CanvasSize/) Özelliği `SKCanvasView` nesnesi.
@@ -165,4 +165,4 @@ canvas.DrawOval(rect, paint);
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

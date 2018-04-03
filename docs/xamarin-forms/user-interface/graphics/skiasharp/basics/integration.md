@@ -1,6 +1,6 @@
 ---
-title: "Xamarin.Forms ile tümleştirme"
-description: "Dokunma ve Xamarin.Forms öğeleri yanıt SkiaSharp grafik oluşturma"
+title: Xamarin.Forms ile tümleştirme
+description: Dokunma ve Xamarin.Forms öğeleri yanıt SkiaSharp grafik oluşturma
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: aa6011c783228848212c633c1c8059c402fdaa3f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 3edc71977820ca618447e02caa032cf908e1aae4
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="integrating-with-xamarinforms"></a>Xamarin.Forms ile tümleştirme
 
@@ -23,7 +23,7 @@ SkiaSharp grafik Xamarin.Forms rest çeşitli şekillerde ile tümleştirebilirs
 ![](integration-images/integrationexample.png "Kaydırıcılar renkle seçme")
 
 Xamarin.Forms içinde etkileşimli SkiaSharp grafik oluşturmak için başka bir touch bir yaklaşımdır.
-İkinci sayfasında [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) programdır alınarak **dokunun geçiş doldurmak**. Basit bir daire iki yolla çizer &mdash; dolgu olmadan ve dolgu ile &mdash; yükseğe tarafından dokunun. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Sınıfı gösterir SkiaSharp grafik kullanıcı girişine yanıt nasıl değiştirebilirsiniz.
+İkinci sayfasında [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programdır alınarak **dokunun geçiş doldurmak**. Basit bir daire iki yolla çizer &mdash; dolgu olmadan ve dolgu ile &mdash; yükseğe tarafından dokunun. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Sınıfı gösterir SkiaSharp grafik kullanıcı girişine yanıt nasıl değiştirebilirsiniz.
 
 Bu sayfa için `SKCanvasView` sınıfı örneği [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) ayrıca bir Xamarin.Forms ayarlar dosyası [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) görünümündeki:
 
@@ -241,4 +241,4 @@ Ancak iki model için bir fikir almak için en iyi yolu bunlarla kendiniz deneme
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,6 +1,6 @@
 ---
 title: Yol etkileri
-description: "Yollara vuruş yapması ve doldurmak için kullanılacak izin verecek çeşitli yol etkilerini Bul"
+description: Yollara vuruş yapması ve doldurmak için kullanılacak izin verecek çeşitli yol etkilerini Bul
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 60d60939c0f7bd3961400a3e8d769fdfa17184a2
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 140e5768db797f36299bef358e0296ae57398535
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="path-effects"></a>Yol etkileri
 
@@ -1415,4 +1415,4 @@ Yol etkilerini garip birleşimleri basit nokta ve tire bu aralığa gördünüz,
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -53,6 +53,7 @@
 #### [Mac App Store’a Yükle](deploy-test/publishing-to-the-app-store/uploading.md)
 ## [Gelişmiş Kavramlar ve İç İşlevler](internals/index.md)
 ### [AOT](internals/aot.md)
+### [Kullanılabilir Bütünleştirilmiş Kodlar](~/cross-platform/internals/available-assemblies.md?context=xamarin/mac)
 ### [Mac Mimarisi](internals/architecture.md)
 ### [Xamarin.Mac nasıl çalışır?](internals/how-it-works.md)
 ### [Çerçeveler](internals/frameworks.md)

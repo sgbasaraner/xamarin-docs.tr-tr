@@ -1,6 +1,6 @@
 ---
-title: "Kare hızı CCSpriteSheet ile geliştirme"
-description: "CCSpriteSheet birleştirme ve bir doku çok sayıda görüntü dosyaları kullanmak için işlevsellik sağlar. Doku sayısını azaltarak oyunun yükleme süreleri ve kare hızı artırabilir."
+title: Kare hızı CCSpriteSheet ile geliştirme
+description: CCSpriteSheet birleştirme ve bir doku çok sayıda görüntü dosyaları kullanmak için işlevsellik sağlar. Doku sayısını azaltarak oyunun yükleme süreleri ve kare hızı artırabilir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1334030-750C-4C60-8B84-1A8A54B0D00E
@@ -8,20 +8,20 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: ec8a641fbd15f826e92ada62f65b17dd46b369e4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e2bb5b98b5c93fb625ce645692d8a3ccb3d143b
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="improving-framerate-with-ccspritesheet"></a>Kare hızı CCSpriteSheet ile geliştirme
+# <a name="improving-frame-rate-with-ccspritesheet"></a>Kare hızı CCSpriteSheet ile geliştirme
 
 _CCSpriteSheet birleştirme ve bir doku çok sayıda görüntü dosyaları kullanmak için işlevsellik sağlar. Doku sayısını azaltarak oyunun yükleme süreleri ve kare hızı artırabilir._
 
 Birçok oyun sorunsuzca çalıştırması ve mobil donanımda hızlı bir şekilde yüklemek için en iyi duruma getirme çaba gerektirir. `CCSpriteSheet` Sınıfı tarafından CocosSharp oyunlar karşılaştı birçok ortak performans sorunlarına yardımcı olabilir. Bu kılavuz ortak performans sorunlarını ve bunları gidermek nasıl kapsar kullanarak `CCSpriteSheet` sınıfı.
 
 
-# <a name="what-is-a-sprite-sheet"></a>Hareketli grafik sayfası nedir?
+## <a name="what-is-a-sprite-sheet"></a>Hareketli grafik sayfası nedir?
 
 A *hareketli grafik sayfası*, hangi de başvurulabilir için farklı bir *doku atlas*, tek bir dosyada birden fazla görüntü birleştiren bir görüntü. Bu içerik yükleme süreleri yanı sıra çalışma zamanı performansını iyileştirebilir.
 
@@ -30,7 +30,7 @@ A *hareketli grafik sayfası*, hangi de başvurulabilir için farklı bir *doku 
 ![](ccspritesheet-images/image1.png "Ayrı ayrı görüntülere herhangi bir boyutta olabilir ve sonuçta elde edilen hareketli grafik sayfası tamamen doldurulması için gerekli değildir")
 
 
-## <a name="render-states"></a>İşleme durumları
+### <a name="render-states"></a>Durumları işleme
 
 Görsel CocosSharp nesneler (gibi `CCSprite`) köşe arabellekleri oluşturulmasını gerektiren MonoGame veya OpenGL gibi geleneksel grafik API'si işleme kod üzerinden işleme kodu basitleştirmek (kısmında özetlendiği gibi [3B grafik ile çizme MonoGame tepe](~/graphics-games/monogame/3d/part2.md) Kılavuzu). Kendi Basitlik rağmen CocosSharp ayarı maliyetini ortadan kaldırmaz *durumları işlemek*, işleme kodunun dokuları veya diğer işleme ile ilgili durumları geçmelidir sayısı olduğu.
 
@@ -62,7 +62,7 @@ Tüm `CCSprite` örnekleridir aynı alt `CCNode`, sonra da CocosSharp oluşturma
 
 Elbette, ideal durum birden fazla görüntü sahip olmasına rağmen bir tek işleme durumu sağlamaktır. CocosSharp oyunlar gerçekleştirmek bu tüm görüntüleri tek bir dosyada birleştirmek, ardından bu tek dosyası yükleniyor (kendi eşlik eden birlikte **.plist** dosyası) içine bir `CCSpriteSheet`. Kullanarak `CCSpriteSheet` sınıfı için çok sayıda görüntü varsa veya sahip olduğu çok oyunlar daha önemli hale karmaşık düzenler. 
 
-## <a name="load-times"></a>Yükleme süreleri
+### <a name="load-times"></a>Yükleme süreleri
 
 Tek bir dosyada birden fazla görüntü birleştirme oyunun yükleme süreleri için pek çok geliştirir:
 
@@ -70,7 +70,7 @@ Tek bir dosyada birden fazla görüntü birleştirme oyunun yükleme süreleri i
  - Daha az dosyaları yükleme .png üstbilgileri ayrıştırılırken gibi daha az dosya başına yükünü anlamına gelir
  - Daha az dosyalarının yüklenmesi daha az arama DVD'ler ve geleneksel bilgisayarın sabit sürücüler gibi disk tabanlı medya önemlidir zaman gerektirir
 
-# <a name="using-ccspritesheet-in-code"></a>CCSpriteSheet kod içinde kullanma
+## <a name="using-ccspritesheet-in-code"></a>CCSpriteSheet kod içinde kullanma
 
 Oluşturmak için bir `CCSpriteSheet` örneği, kodu tedarik görüntü ve her çerçeve için kullanılacak görüntünün bölgeleri tanımlayan bir dosya gerekir. Görüntü olarak yüklenen bir **.png** veya **.xnb** dosyası (kullanıyorsanız [içerik ardışık düzen](~/graphics-games/cocossharp/content-pipeline/index.md)). Çerçeve tanımlama dosyası bir **.plist** el ile oluşturulan dosya veya *TexturePacker* (hangi aşağıda ele alacağız).
 
@@ -110,7 +110,7 @@ CCSprite sprite = new CCSprite (frame);
 Bu yana `CCSprite` Oluşturucusu gerçekleştirebileceğiniz bir `CCSpriteFrame` parametresi, kod hiçbir zaman sahip ayrıntılarını araştırmak `CCSpriteFrame`, hangi doku gibi kullanır veya ana hareketli grafik sayfasındaki görüntüsünün bölgesinden.
 
 
-#  <a name="creating-a-sprite-sheet-plist"></a>Sayfa .plist bir hareketli grafik oluşturma
+## <a name="creating-a-sprite-sheet-plist"></a>Hareketli grafik sayfası .plist oluşturma
 
 Oluşturulan ve el ile düzenlenmiş bir xml tabanlı dosyasını .plist dosyasıdır. Benzer şekilde, görüntü düzenleme programlarında daha büyük bir dosyada birden çok dosya birleştirmek için kullanılabilir. Oluşturma ve hareketli grafik sayfaları çok zaman alabilir koruma itibaren dosyaları CocosSharp biçiminde dışarı aktarabilirsiniz TexturePacker program ele alacağız. TexturePacker ücretsiz ve "Pro" sürüm sunar ve Windows ve Mac OS için kullanılabilir. Bu kılavuzda kalan ücretsiz sürüm kullanılarak izlenebilir. 
 
@@ -124,13 +124,13 @@ Görüntü dosyaları (gibi **.png**) TexturePacker için sürükle-bunları Win
 
 Hareketli grafik sayfası vermek için tıklatın **Yayımla hareketli grafik sayfası** düğmesini tıklatın ve hareketli grafik sayfası için bir konum seçin. TexturePacker bir .plist dosyası ve bir görüntü dosyasına kaydeder.
 
-Ortaya çıkan dosyalar kullanmak için .png ve .plist CocosSharp projeye ekleyin. Dosyaları CocosSharp projelerine ekleme hakkında daha fazla bilgi için bkz: [BouncingGame Kılavuzu Uygulama](~/graphics-games/cocossharp/first-game/part2.md). Dosyalar eklendiğinde, bunların içine yüklenebilir bir `CCSpriteSheet` önceki yukarıdaki kodda gösterildiği:
+Ortaya çıkan dosyalar kullanmak için .png ve .plist CocosSharp projeye ekleyin. Dosyaları CocosSharp projelerine ekleme hakkında daha fazla bilgi için bkz: [BouncingGame Kılavuzu](~/graphics-games/cocossharp/bouncing-game.md). Dosyalar eklendiğinde, bunların içine yüklenebilir bir `CCSpriteSheet` önceki yukarıdaki kodda gösterildiği:
 
 ```csharp
 CCSpriteSheet sheet = new CCSpriteSheet ("sheet.plist", "sheet.png"); 
 ```
 
-## <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>TexturePacker hareketli grafik sayfasını korumak için dikkat edilecek noktalar
+### <a name="considerations-for-maintaining-a-texturepacker-sprite-sheet"></a>TexturePacker hareketli grafik sayfasını korumak için dikkat edilecek noktalar
 
 Oyunlar geliştirilen gibi sanatçılar, ekleyin, kaldırın veya resim değiştirin. Herhangi bir değişiklik güncelleştirilmiş hareketli grafik sayfası gerektirir. Aşağıdaki konular hareketli grafik sayfası Bakımı kolaylaştırmaya:
 
@@ -144,7 +144,7 @@ Oyunlar geliştirilen gibi sanatçılar, ekleyin, kaldırın veya resim değişt
 
     ![](ccspritesheet-images/image10.png "Klasör yollarını eklemek için veri bölümünde Gelişmiş Göster tıklatıp Prepend klasör adını denetleyin")
 
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuz, oluşturma ve kullanma alınmaktadır `CCSpriteSheet` sınıfı. İçine yüklenen dosyalar oluşturma da kapsar `CCSpriteSheet` TexturePacker programını kullanarak örnekleri.
 

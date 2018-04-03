@@ -1,18 +1,18 @@
 ---
-title: "Visual Studio Android öykünücüsü"
-description: "Bu kılavuz, yapılandırmak ve Visual Studio 2015'te Xamarin.Android uygulamaları geliştirmek için Visual Studio Android öykünücüsü kullanma açıklanmaktadır."
+title: Visual Studio Android öykünücüsü
+description: Bu kılavuz, yapılandırmak ve Visual Studio 2015'te Xamarin.Android uygulamaları geliştirmek için Visual Studio Android öykünücüsü kullanma açıklanmaktadır.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: CD128CB9-499F-4558-B49F-77248824EFDF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: a31d90e6d5abd574eb6187953082e1b70f66a113
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/30/2018
+ms.openlocfilehash: 49ae82e1d2b72d7cdebd3ab91833be88a3e95424
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="visual-studio-android-emulator"></a>Visual Studio Android öykünücüsü
 
@@ -21,6 +21,9 @@ _Bu kılavuz, yapılandırmak ve Visual Studio 2015'te Xamarin.Android uygulamal
 ## <a name="visual-studio-android-emulator-overview"></a>Visual Studio Android öykünücüsü'ne genel bakış
 
 Microsoft Visual Studio 2015 bir Xamarin.Android uygulaması hata ayıklama için hedef olarak kullanılabilir bir Android öykünücü içerir: *Android için Visual Studio öykünücüsü*. Bu öykünücüsü daha hızlı başlatma ve Android SDK'sı ile birlikte gelen varsayılan öykünücü daha yürütme sürelerinin sonuçta geliştirme bilgisayarınıza Hyper-V yeteneklerini kullanır. Android için Visual Studio öykünücüsü varsayılan Android SDK öykünücüsü alternatif olarak bir Xamarin.Android uygulaması geliştirilirken kullanılır.
+
+> [!NOTE]
+> Visual Studio Android öykünücüsü yalnızca Visual Studio 2015 ile uyumlu olan &ndash; Visual Studio 2017 ile çalışmaz.
 
 Bu kılavuz, uygulamanızı test etmek için Visual Studio'dan Microsoft Android öykünücüsü başlatmak nasıl açıklar ve öykünücüsünde kullanılabilen çeşitli özellikleri açıklar. Seçilecek öğreneceksiniz *aygıt profilleri* (varsayılan Android SDK öykünücüsü aygıt tanımlarında benzer) Android cihazları farklı türlerde benzetimini yapmak için. Son olarak, bir sorun giderme bölümü, ortak Tuzaklar ve geçici çözümler açıklanmaktadır.
 

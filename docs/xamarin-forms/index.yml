@@ -2,35 +2,35 @@
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
-  description: "Xamarin.Forms, .NET geliştiricilerinin mobil uygulamaları ve tablet ve masaüstü uygulamaları oluşturması için eksiksiz bir platformlar arası kullanıcı arabirimi araç seti sunar."
+  description: Xamarin.Forms, .NET geliştiricilerinin mobil uygulamaları ve tablet ve masaüstü uygulamaları oluşturması için eksiksiz bir platformlar arası kullanıcı arabirimi araç seti sunar.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: landing-page
-  ms.openlocfilehash: ff86846ded6ca9dffce616a4e0e3415b58fc20da
-  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.openlocfilehash: ae192b3f07c4d6c180644871e48b6bc749a633c2
+  ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
   ms.translationtype: HT
   ms.contentlocale: tr-TR
-  ms.lasthandoff: 02/27/2018
+  ms.lasthandoff: 04/03/2018
 abstract:
-  description: "Xamarin.Forms, .NET geliştiricileri için eksiksiz bir platformlar arası kullanıcı arabirimi araç seti sunar. Visual Studio’da C# kullanarak tamamen yerel Android, iOS ve Windows uygulamaları oluşturun."
+  description: Xamarin.Forms, .NET geliştiricileri için eksiksiz bir platformlar arası kullanıcı arabirimi araç seti sunar. Visual Studio’da C# kullanarak tamamen yerel Android, iOS ve Windows uygulamaları oluşturun.
   menu:
     items:
     - href: ~/xamarin-forms/samples/
-      text: "Xamarin.Forms Örnekleri"
+      text: Xamarin.Forms Örnekleri
     - href: https://developer.xamarin.com/releases/xamarin-forms/
-      text: "Release Notes (Sürüm Notları)"
+      text: Release Notes (Sürüm Notları)
     - href: https://developers.google.com/
-      text: "Google’ın Geliştirici Belgeleri"
+      text: Google’ın Geliştirici Belgeleri
     - href: https://developer.apple.com/documentation/
-      text: "Apple’ın Geliştirici Belgeleri"
+      text: Apple’ın Geliştirici Belgeleri
     - href: /visualstudio/
       text: Visual Studio
 sections:
-- title: "Başlarken"
+- title: Başlarken
   items:
   - type: paragraph
-    text: "Android, iOS ve Windows’u hedefleyerek Xamarin ve C# ile ilk Xamarin.Forms uygulamanızı nasıl oluşturacağını öğrenin."
+    text: Android, iOS ve Windows’u hedefleyerek Xamarin ve C# ile ilk Xamarin.Forms uygulamanızı nasıl oluşturacağını öğrenin.
   - type: list
     style: icon48
     items:
@@ -40,13 +40,13 @@ sections:
       href: ~/xamarin-forms/get-started/installation.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Hello, Xamarin.Forms
+      text: Hızlı başlangıç
       href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: "Çoklu Ekran Uygulamaları"
+      text: Çoklu Ekran Uygulamaları
       href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
-- title: "Kılavuzlar"
+- title: Kılavuzlar
   items:
   - type: grid
     style: columns
@@ -57,25 +57,25 @@ sections:
       className: cardsB
       items:
       - href: ~/xamarin-forms/get-started/index.md
-        html: "Xamarin.Forms’u kullanmaya başlamanızı sağlayacak öğreticiler. Her şeyin doğru şekilde yüklendiğinden emin olun ve ilk Xamarin.Forms uygulamalarınızı oluşturun."
+        html: Xamarin.Forms’u kullanmaya başlamanızı sağlayacak öğreticiler. Her şeyin doğru şekilde yüklendiğinden emin olun ve ilk Xamarin.Forms uygulamalarınızı oluşturun.
         image:
           src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
           href: ~/xamarin-forms/get-started/index.md
-        title: "Başlarken"
+        title: Başlarken
       - href: ~/xamarin-forms/user-interface
-        html: "Xamarin.Forms XAML içinde kullanılabilir olan tüm kullanıcı arabirimi denetimleri hakkında bilgi edinin."
+        html: Xamarin.Forms XAML içinde kullanılabilir olan tüm kullanıcı arabirimi denetimleri hakkında bilgi edinin.
         image:
           src: ~/media/icons/i_user-interface.svg
           href: ~/xamarin-forms/user-interface/
-        title: "Kullanıcı Arabirimi"
+        title: Kullanıcı Arabirimi
       - href: ~/xamarin-forms/deploy-test/
-        html: "Uygulamalarınızı derlemeye ve dağıtmaya ilişkin yönergeler ve bunları önceden test etmeye yönelik ipuçları!"
+        html: Uygulamalarınızı derlemeye ve dağıtmaya ilişkin yönergeler ve bunları önceden test etmeye yönelik ipuçları!
         image:
           src: ~/media/icons/i_deploy-test.svg
           href: ~/xamarin-forms/deploy-test/
-        title: "Dağıtım ve Test Etme"
+        title: Dağıtım ve Test Etme
       - href: ~/xamarin-forms/data-cloud/
-        html: "Yerel ve uzak veri depolama ve alma ve diğer bulut tabanlı hizmetler."
+        html: Yerel ve uzak veri depolama ve alma ve diğer bulut tabanlı hizmetler.
         image:
           src: ~/media/icons/i_data-cloud.svg
           href: ~/xamarin-forms/data-cloud/
@@ -85,30 +85,30 @@ sections:
       className: cardsB
       items:
       - href: ~/xamarin-forms/app-fundamentals/
-        html: "Xamarin.Forms uygulamaları oluşturmak için bilmeniz gereken her şey; örneğin, dosyalar, görüntüler, veritabanları vb. ile çalışma."
+        html: Xamarin.Forms uygulamaları oluşturmak için bilmeniz gereken her şey; örneğin, dosyalar, görüntüler, veritabanları vb. ile çalışma.
         image:
           src: ~/media/icons/i_app-build.svg
           href: ~/xamarin-forms/app-fundamentals/
         title: Uygulama Temelleri
       - href: ~/
-        html: "Özel Oluşturucular gibi Xamarin.Forms platform özellikleri ve her bir yayının diğer önemli özellikleri ile çalışma."
+        html: Özel Oluşturucular gibi Xamarin.Forms platform özellikleri ve her bir yayının diğer önemli özellikleri ile çalışma.
         image:
           src: ~/media/icons/i_platform.svg
           href: ~/
-        title: "Platform Özellikleri"
+        title: Platform Özellikleri
       - href: ~/xamarin-forms/xaml/
-        html: "Bildirimli olarak kullanıcı arabirimleri oluşturun ve bunları mobil platformlarda ve masaüstü platformlarında paylaşın."
+        html: Bildirimli olarak kullanıcı arabirimleri oluşturun ve bunları mobil platformlarda ve masaüstü platformlarında paylaşın.
         image:
           src: ~/media/icons/i_xaml-forms.svg
           href: ~/xamarin-forms/xaml/
         title: XAML
       - href: ~/xamarin-forms/internals/
-        html: "Xamarin.Forms iç işlevleri hakkında ek bilgi ve yerelleştirme ve erişilebilirlik gibi özellikler konusunda yardım."
+        html: Xamarin.Forms iç işlevleri hakkında ek bilgi ve yerelleştirme ve erişilebilirlik gibi özellikler konusunda yardım.
         image:
           src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
           href: ~/xamarin-forms/internals/
-        title: "Gelişmiş Kavramlar ve İç İşlevler"
-- title: "Başvuru"
+        title: Gelişmiş Kavramlar ve İç İşlevler
+- title: Başvuru
   items:
   - type: list
     style: cards
@@ -116,9 +116,9 @@ sections:
     items:
     - title: API
       html: <p><a href="https://developer.xamarin.com/api/root/Xamarin.Forms/">Xamarin.Forms API belgeleri</a></p>
-    - title: "Örnekler"
-      html: "<p><a href=\"https://developer.xamarin.com/samples/xamarin-forms/all/\">Xamarin.Forms Örnekleri</a></p>"
-    - title: "Çalışma Kitapları"
+    - title: Örnekler
+      html: <p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms Örnekleri</a></p>
+    - title: Çalışma Kitapları
       html: <p><a href="https://developer.xamarin.com/workbooks#xamarin-forms">Xamarin.Forms Workbooks</a></p>
     - title: Kitaplar
-      html: "<p><a href=\"~/xamarin-forms/creating-mobile-apps-xamarin-forms\">Mobil Uygulamalar e-kitabı oluşturma</a></p><p><a href=\"~/xamarin-forms/enterprise-application-patterns\">Kurumsal Uygulama Desenleri e-kitabı</a></p>"
+      html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">Mobil Uygulamalar e-kitabı oluşturma</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">Kurumsal Uygulama Desenleri e-kitabı</a></p>

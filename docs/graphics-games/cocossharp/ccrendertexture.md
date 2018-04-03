@@ -1,17 +1,17 @@
 ---
-title: "Performans ve CCRenderTexture ile görsel efektler"
-description: "CCRenderTexture draw çağrıları azaltarak kendi CocosSharp oyunlar performansını artırmak için geliştiricilere olanak sağlar ve görsel efektler oluşturmak için kullanılabilir. Bu kılavuz, bu sınıfın etkili bir şekilde kullanmak nasıl uygulamalı örneği sağlamak için CCRenderTexture örnek eşlik."
+title: Performans ve CCRenderTexture ile görsel efektler
+description: CCRenderTexture draw çağrıları azaltarak kendi CocosSharp oyunlar performansını artırmak için geliştiricilere olanak sağlar ve görsel efektler oluşturmak için kullanılabilir. Bu kılavuz, bu sınıfın etkili bir şekilde kullanmak nasıl uygulamalı örneği sağlamak için CCRenderTexture örnek eşlik.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F02147C2-754B-4FB4-8BE0-8261F1C5F574
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 8283c299d0e6529ef4cf8c285ec47b4d42fc682a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36661344fc0f4b9e132e3f721c50f82f3a8db057
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>Performans ve CCRenderTexture ile görsel efektler
 
@@ -24,7 +24,7 @@ Bu kılavuz nasıl kullanılacağını inceler `CCRenderTexture` toplanabilir ka
 ![](ccrendertexture-images/image1.png "Bu kılavuz CCRenderTexture örnek proje başvurur")
 
 
-# <a name="card--a-typical-entity"></a>Kart – tipik varlık
+## <a name="card--a-typical-entity"></a>Kart – tipik varlık
 
 Konumundaki nasıl kullanılacağını arayan önce `CCRenderTexture` nesnesi, biz ilk tanıyın kendisini ile `Card` bu proje boyunca keşfetmek için kullanacağız varlık `CCRenderTexture` sınıfı. `Card` Sınıftır özetlenen varlık desen aşağıdaki tipik bir varlık [varlık kılavuzu](~/graphics-games/cocossharp/entities.md). Kart sınıfı tüm görsel bileşenleri sahiptir (örneklerini `CCSprite` ve `CCLabel`) alanlar olarak listelenen:
 
@@ -65,7 +65,7 @@ Her visual bileşen kendisini işler yüklendiğinde oluşabilecek iki sorunlar�
 - Biz daha sonra inceleyeceksiniz gibi saydamlık gibi belirli görsel efektler doğru bir şekilde uygulanamayacağını
 
 
-## <a name="card-draw-calls"></a>Kart çizim çağrıları
+### <a name="card-draw-calls"></a>Kart çizim çağrıları
 
 Bizim kodu tam olarak bulunabilir, basitleştirme *toplanabilir kartı oyun* (CCG) "Sihirli: toplama" veya "Hearthstone" gibi. Bizim oyun yalnızca aynı anda üç karttan görüntüler ve olası birimleri (mavi, yeşil ve turuncu) az sayıda sahiptir. Bunun aksine, tam oyun yirmiden kartları ekran belirli bir zamanda olabilir ve oyuncu kendi deste oluştururken seçebileceğiniz kartları yüzlerce sahip olabilir. Bizim oyun performans sorunlarından şu anda saptanmamış olsa bile, tam bir oyun benzer bir uygulama olabilir.
 
@@ -76,7 +76,7 @@ Bizim kodu tam olarak bulunabilir, basitleştirme *toplanabilir kartı oyun* (CC
 Üç karttan ekranda sahip olmasına rağmen biz (her kart sonuçlarında altı çağrıları, performans bilgi hesapları için bir tane daha fazla görüntüleme metin çizme) on dokuz çizim çağrıları olduğunu dikkat edin. Draw çağrıları önemli bir etkisi oyunun performansına vardır, böylece bunları azaltmanın yollarını birkaç CocosSharp sağlar. Bir teknik açıklanan [CCSpriteSheet Kılavuzu](~/graphics-games/cocossharp/ccspritesheet.md). Kullanılacak başka bir tekniktir `CCRenderTexture` Biz bu kılavuzda inceleyeceğiz gibi her bir varlık için bir çağrı azaltmak için.
 
 
-## <a name="card-transparency"></a>Kart saydamlık
+### <a name="card-transparency"></a>Kart saydamlık
 
 Bizim `Card` varlık içeren bir `Opacity` aşağıdaki kod parçacığında gösterildiği gibi denetim saydam özelliği:
 
@@ -143,7 +143,7 @@ Bunun neden oluştuğunu görselleştirmenize yardımcı olmak için biz her vis
 Kullanarak bir `CCRenderTexture` bu kılavuzda göreceğiz gibi tüm kart saydam kart içinde bileşenleri tek tek işleme etkilemeden hale getirmemize sağlar.
 
 
-# <a name="using-ccrendertexture"></a>CCRenderTexture kullanma
+## <a name="using-ccrendertexture"></a>CCRenderTexture kullanma
 
 Her bileşenin tek tek işleme sorunları belirledik, biz işleme için açmak bir `CCRenderTexture` ve davranışı karşılaştırın.
 
@@ -159,7 +159,7 @@ protected override void AddedToScene ()
 ```
 
 
-## <a name="card-draw-calls"></a>Kart çizim çağrıları
+### <a name="card-draw-calls"></a>Kart çizim çağrıları
 
 Biz oyun şimdi çalıştırırsanız dört on dokuz öğesinden küçültülmüş çizim çağrıları göreceğiz (her bir kart azaltılmış altı bir gelen):
 
@@ -168,7 +168,7 @@ Biz oyun şimdi çalıştırırsanız dört on dokuz öğesinden küçültülmü
 Daha önce belirtildiği gibi bu tür azaltma önemli bir etkisi ekranında daha fazla visual varlıklarla oyunlar üzerinde olabilir.
 
 
-## <a name="card-transparency"></a>Kart saydamlık
+### <a name="card-transparency"></a>Kart saydamlık
 
 Bir kez `useRenderTextures` ayarlanır `true`, saydam kartları farklı sokacak:
 
@@ -181,7 +181,7 @@ Bir kez `useRenderTextures` ayarlanır `true`, saydam kartları farklı sokacak:
 En bariz farklar ayrıntıları metin (siyah açık gri yerine) ve (açık yerine koyu ve doygunluğu azaltılmış) robot hareketli olan.
 
 
-# <a name="ccrendertexture-details"></a>CCRenderTexture ayrıntıları
+## <a name="ccrendertexture-details"></a>CCRenderTexture ayrıntıları
 
 Kullanmanın avantajları gördük göre `CCRenderTexture`, içinde nasıl kullanıldığı bir bakalım `Card` varlık.
 
@@ -256,7 +256,7 @@ private void SwitchToRenderTexture()
 Aşağıdaki bölümlerde keşfedin `SwitchToRenderTexture` yöntemi. 
 
 
-## <a name="ccrendertexture-size"></a>CCRenderTexture boyutu
+### <a name="ccrendertexture-size"></a>CCRenderTexture boyutu
 
 CCRenderTexture Oluşturucusu iki boyutlarının gerektirir. İlk boyutunu denetler `CCRenderTexture` zaman çizildiğinde ve ikinci piksel genişlik ve yükseklik içeriğini belirtir. `Card` Varlık başlatır, `CCRenderTexture` arka plan kullanma [ContentSize](https://developer.xamarin.com/api/property/CocosSharp.CCSprite.ContentSize/). Bizim oyun sahip bir `DesignResolution` 512 tarafından gösterildiği gibi 384, `ViewController.LoadGame` iOS ve `MainActivity.LoadGame` android'de:
 
@@ -293,7 +293,7 @@ renderTexture = new CCRenderTexture(unitResolution, pixelResolution);
 ![](ccrendertexture-images/image9.png "Karşılaştırmak için arka plan eşleştirilecek pixelResolution değerini değiştirebilirsiniz. İki katına olmadan contentSize ve sonucu karşılaştırın")
 
 
-## <a name="rendering-to-a-ccrendertexture"></a>Bir CCRenderTexture işleme
+### <a name="rendering-to-a-ccrendertexture"></a>Bir CCRenderTexture işleme
 
 Genellikle, CocosSharp görsel nesneleri açıkça işlenmez. Görsel nesneler için bunun yerine, eklenen bir `CCLayer` parçası olan bir `CCScene`. CocosSharp otomatik olarak işler `CCScene` ve her çerçevesinde çağrılan herhangi bir işleme kod olmadan, visual hiyerarşisi. 
 
@@ -355,7 +355,7 @@ foreach (var component in visualComponents)
 this.AddChild(renderTexture.Sprite);
 ```
 
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuzda ele `CCRenderTexture` sınıfı kullanarak bir `Card` collectible kartı oyunda kullanılabilecek varlık. Nasıl kullanılacağı gösterilmiştir `CCRenderTexture` çerçeve oranını artırmak ve düzgün şekilde varlık genelinde saydamlık uygulamak için sınıf.
 

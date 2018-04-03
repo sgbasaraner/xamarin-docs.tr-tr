@@ -1,6 +1,6 @@
 ---
-title: "Xamarin.Forms içinde CocosSharp kullanma"
-description: "CocosSharp kesin şekli, resim ve metin işleme Gelişmiş görselleştirme için uygulama eklemek için kullanılabilir"
+title: Xamarin.Forms içinde CocosSharp kullanma
+description: CocosSharp kesin şekli, resim ve metin işleme Gelişmiş görselleştirme için uygulama eklemek için kullanılabilir
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 395defa300da7b8f68746162d877a4fdb17ded9e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 83852b6b2d7324ae6aaf6b1dbf86a6ef7f9ac509
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Xamarin.Forms içinde CocosSharp kullanma
 
@@ -197,7 +197,7 @@ Aşağıdaki grafikte, tipik bir CocosSharp hiyerarşi görselleştirmenize yard
 
 ![](cocossharp-images/image4.png "Tipik CocosSharp hiyerarşisi")
 
-Yalnızca bir `CCScene` aynı anda etkin olabilir. Çoğu birden çok kullanabilmesi `CCLayer` sıralama içeriği ancak uygulamamız örneklerine tek kullanır. Benzer şekilde, birden çok görsel nesneler çoğu oyunlar kullanır, ancak biz yalnızca uygulamamıza birinde sahip olacaksınız. Daha ayrıntılı bir tartışma visual hiyerarşi bulunabilir CocosSharp hakkında [geçirmek oyun izlenecek](~/graphics-games/cocossharp/first-game/index.md).
+Yalnızca bir `CCScene` aynı anda etkin olabilir. Çoğu birden çok kullanabilmesi `CCLayer` sıralama içeriği ancak uygulamamız örneklerine tek kullanır. Benzer şekilde, birden çok görsel nesneler çoğu oyunlar kullanır, ancak biz yalnızca uygulamamıza birinde sahip olacaksınız. Daha ayrıntılı bir tartışma visual hiyerarşi bulunabilir CocosSharp hakkında [BouncingGame izlenecek](~/graphics-games/cocossharp/bouncing-game.md).
 
 Başlangıçta `GameScene` sınıfı neredeyse boş olacaktır – yalnızca başvurusunda karşılamak için oluşturacağız `HomePage`. Adlı, PCL yeni bir sınıf ekleyin `GameScene`. Gelen alması gerektiğini `CCScene` gibi sınıfı:
 

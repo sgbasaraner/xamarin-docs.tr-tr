@@ -1,6 +1,6 @@
 ---
-title: "Birden çok çözümleri CocosSharp işleme"
-description: "Bu kılavuz çeşitli çözümler cihazlarda düzgün görüntülemek oyun geliştirmek için CocosSharp çalışmak nasıl gösterir."
+title: Birden çok çözümleri CocosSharp işleme
+description: Bu kılavuz çeşitli çözümler cihazlarda düzgün görüntülemek oyun geliştirmek için CocosSharp çalışmak nasıl gösterir.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 859ABF98-2646-431A-A4A8-3E7E48DA5A43
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 9b76376bdbcf10bf35768cfdb79b6823388e303c
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 772b0d6408a5ba438c5eb0be04a9b549e29b40f9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>Birden çok çözümleri CocosSharp işleme
 
@@ -32,7 +32,7 @@ Varsayılan çözünürlük CocosSharp, fiziksel piksel oyun koordinatları ile 
 Bu belge yukarıdaki tabloda gösterilen sorunu gidermek için CocosSharp kullanmayı kapsar. Diğer bir deyişle, biz – ekran çözünürlüğü bağımsız olarak ilk satırın gösterildiği gibi işleme herhangi bir cihazda nasıl ele alacağız.
 
 
-# <a name="working-with-setdesignresolutionsize"></a>SetDesignResolutionSize ile çalışma
+## <a name="working-with-setdesignresolutionsize"></a>SetDesignResolutionSize ile çalışma
 
 `CCScene` Sınıfı tipik olarak tüm görsel nesneler için kök kapsayıcı olarak kullanılır, ancak ayrıca adlı bir statik yöntem sunar `SetDesignResolutionSize` tüm planda için varsayılan boyutunu belirtmek için. Diğer bir deyişle `SetDesignResolutionSize` yöntemi donanım çözümleri çeşitli görüntülenecektir oyun geliştirmek geliştiricilere olanak sağlar. CocosSharp proje şablonları aşağıdaki kodda gösterildiği gibi varsayılan proje boyutunu 1024 x 768'olarak ayarlamak için bu yöntemi kullanın:
 
@@ -77,7 +77,7 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 ```
 
 
-# <a name="ccsceneresolutionpolicy"></a>CCSceneResolutionPolicy
+## <a name="ccsceneresolutionpolicy"></a>CCSceneResolutionPolicy
 
 `SetDesignResolutionSize` bize nasıl oyun pencerenin istenen çözümleme ayarlar belirtmenizi sağlar. Aşağıdaki bölümlerde 500 x 500 görüntü ile farklı görüntülenme göstermek `CCSceneResolutonPolicy` geçirilen değerleri `SetDesignResolutionSize` yöntemi. Aşağıdaki değerleri tarafından sağlanan `CCSceneResolutionPolicy` enum:
 
@@ -93,7 +93,7 @@ Tüm ekran görüntüleri yatay yönde (960 x 640) iPhone 4s çözünürlükte �
 ![](resolutions-images/image4.png "Tüm ekran görüntüleri yatay yönde 960 x 640 iPhone 4s çözünürlükte üretilen ve bu görüntüyü kullanma")
 
 
-## <a name="ccsceneresolutionpolicyshowall"></a>CCSceneResolutionPolicy.ShowAll
+### <a name="ccsceneresolutionpolicyshowall"></a>CCSceneResolutionPolicy.ShowAll
 
 `ShowAll` tüm oyun çözümleme ekran görünür olur, ancak görüntülenebilir belirtir *letterboxing* (için farklı en boy oranlarına ayarlamak için siyah çubuklar). Bu ilke tüm oyun görünümü ekrandaki tüm bozulma gösterilecek garanti olarak yaygın olarak kullanılır.
 
@@ -109,7 +109,7 @@ Letterboxing istenen çözünürlüğe daha geniş olan fiziksel en boy oranın�
 ![](resolutions-images/image5.png "Letterboxing istenen çözünürlüğe daha geniş olan fiziksel en boy oranını hesaba görüntünün sağ ve sol tarafından görülebilir")
 
 
-## <a name="ccsceneresolutionpolicyexactfit"></a>CCSceneResolutionPolicy.ExactFit
+### <a name="ccsceneresolutionpolicyexactfit"></a>CCSceneResolutionPolicy.ExactFit
 
 `ExactFit` tüm oyun çözümleme hiçbir letterboxing ekran ile görünür olacağını belirtir. Görüntülenebilir alanı bozulabilir (en boy oranını tutulmaz) donanım en boy oranını göre.
 
@@ -125,7 +125,7 @@ Hiçbir letterboxing görünür, ancak aygıt çözünürlüğü dikdörtgen old
 ![](resolutions-images/image6.png "Hiçbir letterboxing görünür, ancak aygıt çözünürlüğü dikdörtgen olduğundan oyun görünümü bozuk")
 
 
-## <a name="ccsceneresolutionpolicyfixedwidth"></a>CCSceneResolutionPolicy.FixedWidth
+### <a name="ccsceneresolutionpolicyfixedwidth"></a>CCSceneResolutionPolicy.FixedWidth
 
 `FixedWidth` Görünüm genişliğini geçirilen genişlik değeri eşleşir belirtir `SetDesignResolutionSize`, ancak görüntülenebilir yükseklik fiziksel cihazın en boy oranını tabidir. Geçirilen yükseklik değeri `SetDesignResolutionSize` fiziksel cihazın en boy oranını göre çalışma zamanında hesaplanır beri göz ardı edilir. Başka bir deyişle, hesaplanan yükseklik (ve ekran dışı bırakılıyor oyun görünüm bölümlerinde sonuçlanır) istenen yüksekliği veya hesaplanan yükseklik (ve daha fazla görüntülenmesini oyun görünümünün sonuçlanır) istenen yüksekliği daha büyük olabilir küçük olabilir. Bu daha görüntülenmesini oyun sonuçlanabilir beri letterboxing oluştu gibi görünebilir; Ancak, ek boşluk mutlaka herhangi bir görsel nesne burada görünüyorsa siyah olmaz. 
 
@@ -141,7 +141,7 @@ Hesaplanan yüksekliği yaklaşık 333 birimleri olacak şekilde 4s iPhone: 2, 3
 ![](resolutions-images/image7.png "Hesaplanan yüksekliği yaklaşık 333 birimdir 4s iPhone: 2, 3 en boy oranını sahiptir, bu nedenle")
 
 
-## <a name="ccsceneresolutionpolicyfixedheight"></a>CCSceneResolutionPolicy.FixedHeight
+### <a name="ccsceneresolutionpolicyfixedheight"></a>CCSceneResolutionPolicy.FixedHeight
 
 Kavramsal olarak, `FixedHeight` benzer şekilde davranır `FixedWidth` – oyun geçirilen yükseklik değeri uyarlar `SetDesignResolutionSize,` ancak dışına fiziksel çözünürlük tabanlı çalışma zamanında genişliği hesaplar. Yukarıda görüntülenen genişlikte Bunun anlamı söz edildiği gibi daha küçük veya oyun olma bölümünde kaynaklanan istenen genişliği büyük ekran veya daha fazla, sırasıyla görüntülenmesini oyun kapalı.
 
@@ -157,7 +157,7 @@ Aşağıdaki ekran görüntüsünde yatay modunda çalışan uygulama oluşturul
 ![](resolutions-images/image8.png "Ek çözümleme ekranın sağ tarafta görüntülenebilir olması için bu ilkeyi 0 X değerini sola hizalı tutar")
 
 
-## <a name="ccsceneresolutionpolicynoborder"></a>CCSceneResolutionPolicy.NoBorder
+### <a name="ccsceneresolutionpolicynoborder"></a>CCSceneResolutionPolicy.NoBorder
 
 `NoBorder` (hiçbir bozulma) özgün en boy oranını koruyarak hiçbir letterboxing uygulamayla görüntülenecek çalışır. İstenen Çözümleme 's en boy oranını cihazın fiziksel en boy oranını eşleşirse, hiçbir kırpma meydana gelir. En boy oranlarına eşleşmiyorsa, ardından kırpma meydana gelir.
 
@@ -173,7 +173,7 @@ Aşağıdaki ekran görüntüsünde kırpılmış tüm 500 görüntü genişliğ
 ![](resolutions-images/image9.png "Bu ekran görüntüsü kırpılmış tüm 500 görüntü genişliğini piksel görüntülenirken görünen üst ve alt parçalarını görüntüler")
 
 
-## <a name="ccsceneresolutionpolicycustom"></a>CCSceneResolutionPolicy.Custom
+### <a name="ccsceneresolutionpolicycustom"></a>CCSceneResolutionPolicy.Custom
 
 `Custom` Her etkinleştirir `CCScene` kendi özel görünüm penceresinin içinde belirtilen çözünürlük göre belirtmek için `SetDesignResolutionSize`.
 
@@ -207,7 +207,7 @@ Yukarıdaki kod sonuçları şunlardır:
 ![](resolutions-images/image10.png "Yukarıdaki kod bu ekran görüntüsünde sonuçları")
 
 
-# <a name="defaulttexeltocontentsizeratio"></a>DefaultTexelToContentSizeRatio
+## <a name="defaulttexeltocontentsizeratio"></a>DefaultTexelToContentSizeRatio
 
 `DefaultTexelToContentSizeRatio` Daha yüksek çözünürlük ekranlar ile cihazlarda daha yüksek çözünürlükte dokuları kullanarak basitleştirir. Özellikle, bu özellik oyunlar boyutu veya görsel öğelerin konumlandırmasını değiştirmek için gerek kalmadan daha yüksek çözünürlükte varlıklar kullanmanıza olanak sağlar. 
 
@@ -249,7 +249,7 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 ```
 
 
-## <a name="defaulttexeltocontentsizeratio-example"></a>DefaultTexelToContentSizeRatio Example
+### <a name="defaulttexeltocontentsizeratio-example"></a>DefaultTexelToContentSizeRatio example
 
 Görmek için nasıl `DefaultTexelToContentSizeRatio` visual boyutunu etkiler öğeleri, yukarıda sunulan kodu göz önünde bulundurun:
 
@@ -278,7 +278,7 @@ CCSprite.DefaultTexelToContentSizeRatio = 2;
 ![](resolutions-images/image12.png "Biz oyun çalıştırırsanız şimdi 1000 x 1000 doku tam olarak görünür olur")
 
 
-## <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio Details
+### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio details
 
 `DefaultTexelToContentSizeRatio` Özelliği `static,` uygulamadaki tüm hareketli grafik başka bir deyişle, aynı değere paylaşır. Tipik farklı çözümler için yapılan varlıklar oyunlar için varlıkları her çözümleme kategorisi için eksiksiz bir kümesini içeren bir yaklaşımdır. Varsayılan Mac şablonları için CocosSharp Visual Studio sağlamak **ld** ve **hd** dokuları iki kümelerini destekleme oyunlar için yararlı olabilecek varlıklar için klasörler. Bir örnek içerik klasörünü içerikle gibi görünebilir:
 
@@ -313,11 +313,11 @@ backgroundSprite  = new CCSprite ("background");
 ```
 
 
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu makalede, aygıt çözünürlüğü bağımsız olarak doğru bir şekilde görüntüleyen oyunlar oluşturma yer almaktadır. Kullanım örnekleri farklı gösterir `CCSceneResolutionPolicy` aygıt çözünürlüğü göre oyunu yeniden boyutlandırma için değerleri. Ayrıca bir örnek sağlar `DefaultTexelToContentSizeRatio` ayrı olarak yeniden boyutlandırılıp görsel öğeleri gerek kalmadan içeriği birden çok kümesini barındırmak için kullanılabilir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [CocosSharp giriş](~/graphics-games/cocossharp/first-game/index.md)
+- [CocosSharp giriş](~/graphics-games/cocossharp/index.md)
 - [CocosSharp API belgeleri](https://developer.xamarin.com/api/namespace/CocosSharp/)

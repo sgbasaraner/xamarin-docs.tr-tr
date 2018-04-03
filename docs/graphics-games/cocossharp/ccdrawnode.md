@@ -1,6 +1,6 @@
 ---
-title: "Geometri CCDrawNode ile çizme"
-description: "CCDrawNode satırları, daire ve üçgen gibi temel çizim nesneler için yöntemleri sağlar."
+title: Geometri CCDrawNode ile çizme
+description: CCDrawNode satırları, daire ve üçgen gibi temel çizim nesneler için yöntemleri sağlar.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 46A3C3CE-74CC-4A3A-AB05-B694AE182ADB
@@ -8,20 +8,20 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: a7b62b131db3fc224ef59bdb9189b96d61129f30
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a2471981f2e88ff8af9a803ff8f5a99e5b9266f
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="drawing-geometry-with-ccdrawnode"></a>Geometri CCDrawNode ile çizme
 
-_CCDrawNode satırları, daire ve üçgen gibi temel çizim nesneler için yöntemleri sağlar._
+_`CCDrawNode` Satırlar, daire ve üçgen gibi temel çizim nesneler için yöntemleri sağlar._
 
 `CCDrawNode` CocosSharp sınıfında ortak geometrik şekiller çizmek için birden çok yöntemler sağlar. Öğesinden devralınan `CCNode` sınıfı ve genellikle eklenir `CCLayer` örnekleri. Bu kılavuz kullanmayı kapsar `CCDrawNode` özel işleme gerçekleştirmek için örnekleri. Ayrıca kullanılabilir çizim işlevleri kapsamlı bir listesini ekran görüntüleri ve kod örnekleri sağlar.
 
 
-# <a name="creating-a-ccdrawnode"></a>Bir CCDrawNode oluşturma
+## <a name="creating-a-ccdrawnode"></a>Bir CCDrawNode oluşturma
 
 `CCDrawNode` Sınıfı, daire, dikdörtgenin ve satırları gibi geometrik nesneleri çizmek için kullanılabilir. Örneğin, aşağıdaki kod örneği nasıl oluşturulacağını gösterir bir `CCDrawNode` bir daire çizer örneğinin bir `CCLayer` sınıfı uygulama:
 
@@ -52,12 +52,12 @@ Bu kod, çalışma zamanında aşağıdaki daire üretir:
 ![](ccdrawnode-images/image1.png "Çalışma zamanında bu daire bu kod üretmez")
 
 
-# <a name="draw-method-details"></a>Yöntem ayrıntıları çizme
+## <a name="draw-method-details"></a>Yöntem ayrıntıları çizme
 
 Çizim ile ilgili birkaç ayrıntı bir göz atalım bir `CCDrawNode`:
 
 
-## <a name="draw-methods-positions-are-relative-to-the-ccdrawnode"></a>Çizim yöntemleri konumlar olan göreli CCDrawNode için
+### <a name="draw-methods-positions-are-relative-to-the-ccdrawnode"></a>Göreli CCDrawNode konumlar olan yöntemleri çizme
 
 Tüm çizim yöntemleri çizim için en az bir konum değeri gerektirir. Bu konum göreli değerdir `CCDrawNode` örneği. Bunun anlamı `CCDrawNode` kendisini bir konuma sahiptir ve tüm yapılan çağrıları çizin `CCDrawNode` de bir veya daha fazla konum değerleri alır. Bu değerleri nasıl birleştirmek anlamanıza yardımcı olması için bazı örnekler bakalım.
 
@@ -94,7 +94,7 @@ Draw yöntemi çağrıldığında çizilmiş nesne sürece değiştirilemez `CCD
 Tarafından çizilmiş nesneleri `CCNodes` tarafından da etkilenen `CCNode` örneğinin `Rotation` ve `Scale` özellikleri.
 
 
-## <a name="draw-methods-do-not-need-to-be-called-every-frame"></a>Çizim yöntemleri olarak adlandırılan her çerçeve olması gerekli değildir
+### <a name="draw-methods-do-not-need-to-be-called-every-frame"></a>Çizim yöntemleri, her çerçeve çağrılması gerekmez.
 
 Çizim yöntemleri kalıcı bir görsel oluşturmak için yalnızca bir kez çağrılması gerekir. Çağrısı yukarıdaki örnekte `DrawCircle` oluşturucusunun içinde `GameLayer` – `DrawCircle` çerçeve her ekran yenilendiğinde daire yeniden çizmek için çağrılması gerekmez.
 
@@ -103,7 +103,7 @@ Bu, genellikle yalnızca bir çerçeve ekranına bir şey işlemez ve çerçeve 
 Her çerçeve çizim yöntemleri olarak adlandırılan sonra nesneleri sonunda içinde arama accumulate `CCDrawNode` örneği, bir düşüş kare hızı, daha fazla nesneleri çizilmiş gibi sonuçlanır.
 
 
-## <a name="each-ccdrawnode-supports-multiple-draw-calls"></a>Birden fazla çizim çağrı her CCDrawNode destekler
+### <a name="each-ccdrawnode-supports-multiple-draw-calls"></a>Birden fazla çizim çağrı her CCDrawNode destekler
 
 `CCDrawNode` örnekleri birden çok şekiller çizmek için kullanılabilir. Bu karmaşık visual nesnelerinin tek bir nesnede örtülen olanak verir. Örneğin, aşağıdaki kodu biriyle birden çok daireler işlemek için kullanılabilir `CCDrawNode`:
 
@@ -123,25 +123,25 @@ Aşağıdaki grafikte sonuçları:
 ![](ccdrawnode-images/image2.png "Bu grafikte sonuçları")
 
 
-# <a name="draw-call-examples"></a>Çağrı örnekler çizme
+## <a name="draw-call-examples"></a>Çağrı örnekler çizme
 
 Aşağıdaki çizim çağrıları kullanılabilir `CCDrawNode`:
 
-- [DrawCatmullRom](#DrawCatmullRom)
-- [DrawCircle](#DrawCircle)
-- [DrawCubicBezier](#DrawCubicBezier)
-- [DrawEllipse](#DrawEllipse)
-- [DrawLineList](#DrawLineList)
-- [DrawPolygon](#DrawPolygon)
-- [DrawQuadBezier](#DrawQuadBezier)
-- [DrawRect](#DrawRect)
-- [DrawSegment](#DrawSegment)
-- [DrawSolidArc](#DrawSolidArc)
-- [DrawSolidCircle](#DrawSolidCircle)
-- [DrawTriangleList](#DrawTriangleList)
+- [`DrawCatmullRom`](#drawcatmullrom)
+- [`DrawCircle`](#drawcircle)
+- [`DrawCubicBezier`](#drawcubicbezier)
+- [`DrawEllipse`](#drawellipse)
+- [`DrawLineList`](#drawlinelist)
+- [`DrawPolygon`](#drawpolygon)
+- [`DrawQuadBezier`](#drawquadbezier)
+- [`DrawRect`](#drawrect)
+- [`DrawSegment`](#drawsegment)
+- [`DrawSolidArc`](#drawsolidarc)
+- [`DrawSolidCircle`](#drawsolidcircle)
+- [`DrawTriangleList`](#drawtrianglelist)
 
 
-## <a name="drawcardinalspline"></a>DrawCardinalSpline
+### <a name="drawcardinalspline"></a>DrawCardinalSpline
 
 `DrawCardinalSpline` değişken sayıda noktaları aracılığıyla eğri bir çizgi oluşturur. 
 
@@ -171,7 +171,7 @@ drawNode.DrawCardinalSpline (
 ![](ccdrawnode-images/image3.png "Eğri çizmek için kullanılacak kaç kesim kesimleri parametre denetler")
 
 
-## <a name="drawcatmullrom"></a>DrawCatmullRom
+### <a name="drawcatmullrom"></a>DrawCatmullRom
 
 `DrawCatmullRom` Eğri bir çizgi geçen noktaları, benzer değişken sayıda oluşturur `DrawCardinalLine`. Bu yöntem gerilim parametre içermez.
 
@@ -192,7 +192,7 @@ drawNode.DrawCatmullRom (
 ![](ccdrawnode-images/image4.png "Eğri bir çizgi geçen noktası DrawCardinalLine için benzer bir değişken sayısı DrawCatmullRom oluşturur")
 
 
-## <a name="drawcircle"></a>DrawCircle
+### <a name="drawcircle"></a>DrawCircle
 
 `DrawCircle` bir çevre dairenin oluşturur bir verilen `radius`.
 
@@ -208,7 +208,7 @@ drawNode.DrawCircle (
 ![](ccdrawnode-images/image5.png "Belirli bir RADIUS dairenin çevre DrawCircle oluşturur")
 
 
-## <a name="drawcubicbezier"></a>DrawCubicBezier
+### <a name="drawcubicbezier"></a>DrawCubicBezier
 
 `DrawCubicBezier` denetim noktaları arasında iki nokta yolunu ayarlamak için kullanarak, iki nokta arasındaki eğri bir çizgi çizer.
 
@@ -228,7 +228,7 @@ drawNode.DrawCubicBezier (
  ![](ccdrawnode-images/image6.png "DrawCubicBezier eğri bir çizgi arasında iki nokta çizer.")
 
 
-## <a name="drawellipse"></a>DrawEllipse
+### <a name="drawellipse"></a>DrawEllipse
 
 `DrawEllipse` özetini oluşturur bir *elips*, genellikle adlandırılır oval (iki geometrik aynı olmasa da). Elips şeklini tarafından tanımlanan bir `CCRect` örneği.
 
@@ -245,7 +245,7 @@ drawNode.DrawEllipse (
 ![](ccdrawnode-images/image8.png "DrawEllipse oval genellikle adlandırılır elips özetini oluşturur")
 
 
-## <a name="drawline"></a>DrawLine
+### <a name="drawline"></a>DrawLine
 
 `DrawLine` belirli bir genişlikte bir çizgiyle noktalarına bağlanır. Bu yöntem benzer `DrawSegment`, yuvarlak uç noktaları aksine düz uç noktalar oluşturur dışında.
 
@@ -263,7 +263,7 @@ drawNode.DrawLine (
 ![](ccdrawnode-images/image9.png "Belirli bir genişlikte bir satır noktalarıyla DrawLine bağlanır")
 
 
-## <a name="drawlinelist"></a>DrawLineList
+### <a name="drawlinelist"></a>DrawLineList
 
 `DrawLineList` tarafından belirlenen nokta çiftleri bağlayarak birden fazla satır oluşturur bir `CCV3F_C4B` dizi. `CCV3F_C4B` Yapı konumu ve rengi için değerleri içerir. `verts` Parametresi her zaman içermelidir noktalarının, çift sayı her satırın iki noktaları tarafından tanımlanan.
 
@@ -288,7 +288,7 @@ drawNode.DrawLineList (verts);
 
 
 
-## <a name="drawpolygon"></a>DrawPolygon
+### <a name="drawpolygon"></a>DrawPolygon
 
 `DrawPolygon` doldurulmuş çokgen bir değişken genişlik ve renk özetini oluşturur.
 
@@ -315,7 +315,7 @@ drawNode.DrawPolygon (verts,
 ![](ccdrawnode-images/image11.png "DrawPolygon doldurulmuş çokgen bir değişken genişlik ve renk özetini oluşturur.")
 
 
-## <a name="drawquadbezier"></a>DrawQuadBezier
+### <a name="drawquadbezier"></a>DrawQuadBezier
 
 `DrawQuadBezier` iki nokta ile bir satır bağlanır. Benzer şekilde davranır `DrawCubicBezier` ancak yalnızca bir tek bir denetim noktası destekler.
 
@@ -335,7 +335,7 @@ drawNode.DrawQuadBezier (
 ![](ccdrawnode-images/image12.png "DrawQuadBezier iki nokta ile bir satır bağlanır.")
 
 
-## <a name="drawrect"></a>DrawRect
+### <a name="drawrect"></a>DrawRect
 
 `DrawRect` doldurulmuş dikdörtgen bir değişken genişlik ve renk özetini oluşturur.
 
@@ -354,7 +354,7 @@ drawNode.DrawRect(shape,
 ![](ccdrawnode-images/image13.png "DrawRect doldurulmuş dikdörtgen bir değişken genişlik ve renk özetini oluşturur.")
 
 
-## <a name="drawsegment"></a>DrawSegment
+### <a name="drawsegment"></a>DrawSegment
 
 `DrawSegment` iki nokta satırı değişken genişlik ve renk ile bağlanır. Aşağıdakine benzer `DrawLine`, dışında düz uç noktaları yerine yuvarlak uç noktaları oluşturur.
 
@@ -371,7 +371,7 @@ drawNode.DrawSegment (from: new CCPoint (0, 0),
 ![](ccdrawnode-images/image14.png "DrawSegment iki nokta satırı değişken genişlik ve renk ile bağlanır.")
 
 
-## <a name="drawsolidarc"></a>DrawSolidArc
+### <a name="drawsolidarc"></a>DrawSolidArc
 
 `DrawSolidArc` doldurulmuş bir üçgen verilen renk ve RADIUS oluşturur.
 
@@ -390,7 +390,7 @@ drawNode.DrawSolidArc(
 ![](ccdrawnode-images/image15.png "Doldurulmuş bir üçgen verilen renk ve RADIUS DrawSolidArc oluşturur")
 
 
-## <a name="drawsolidcircle"></a>DrawSolidCircle
+### <a name="drawsolidcircle"></a>DrawSolidCircle
 
 `DrawCircle` doldurulmuş bir daire verilen RADIUS oluşturur.
 
@@ -407,7 +407,7 @@ drawNode.DrawSolidCircle(
 ![](ccdrawnode-images/image16.png "Doldurulmuş bir daire verilen RADIUS DrawCircle oluşturur")
 
 
-## <a name="drawtrianglelist"></a>DrawTriangleList
+### <a name="drawtrianglelist"></a>DrawTriangleList
 
 `DrawTriangleList` üçgenler listesini oluşturur. Her üçgen üç tarafından tanımlanan `CCV3F_C4B` bir dizi örnekleri. Dizi tepe sayısı geçirilen `verts` parametresi üç katı olmalıdır. Tek bilgi yer alan Not `CCV3F_C4B` verts ve bunların renk – konumudur `DrawTriangleList` yöntemi dokuları çizim üçgenle desteklemez.
 
@@ -432,7 +432,7 @@ drawNode.DrawTriangleList (verts);
 ![](ccdrawnode-images/image17.png "DrawTriangleList üçgenler listesini oluşturur")
 
 
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuz nasıl oluşturulacağını açıklar bir `CCDrawNode` ve ilkel tabanlı işleme gerçekleştirin. Her bir çizim çağrıları bir örnek sağlar.
 
