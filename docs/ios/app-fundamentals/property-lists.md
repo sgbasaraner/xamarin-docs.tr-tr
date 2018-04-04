@@ -1,18 +1,17 @@
 ---
-title: "Özellik listeleri ile çalışma"
-description: "Bu belge Info.plist ve Entitlements.plist ile çalışmak için Visual Studio için Mac'ın grafik ve gelişmiş özellik listesi (.plist) Düzenleyicisi içerir. Ayar simgeler ve iOS uygulamalardan başlatma görüntülerde gösterilmektedir Mac için Visual Studio içinde"
-ms.topic: article
+title: Özellik listeleri ile çalışma
+description: Bu belge Info.plist ve Entitlements.plist ile çalışmak için Visual Studio için Mac'ın grafik ve gelişmiş özellik listesi (.plist) Düzenleyicisi içerir. Ayar simgeler ve iOS uygulamalardan başlatma görüntülerde gösterilmektedir Mac için Visual Studio içinde
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 778e70f6817b71e5910aa85425d46261dfe9c803
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f6ee7a606243f5d21d827546b528ca5d9d3f0281
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-property-lists"></a>Özellik listeleri ile çalışma
 

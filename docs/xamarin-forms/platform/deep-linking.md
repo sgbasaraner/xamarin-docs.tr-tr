@@ -1,7 +1,6 @@
 ---
-title: "Uygulama dizin oluşturma ve derin bağlama"
-description: "Uygulama dizin arama sonuçlarında görünmesini ilgili kalmak için birkaç kullandıktan sonra Aksi takdirde unutulursa uygulamaları sağlar. Derin bağlama uygulamaların uygulama verilerini içeren, genellikle derin bir bağlantıdan başvurulan sayfasına giderek arama sonucu yanıt izin verir. Bu makalede, uygulama dizin kullanmayı ve Xamarin.Forms uygulaması içeriği iOS ve Android cihazlarda aranabilir yapmak için derin bağlama gösterilmektedir."
-ms.topic: article
+title: Uygulama dizin oluşturma ve derin bağlama
+description: Uygulama dizin arama sonuçlarında görünmesini ilgili kalmak için birkaç kullandıktan sonra Aksi takdirde unutulursa uygulamaları sağlar. Derin bağlama uygulamaların uygulama verilerini içeren, genellikle derin bir bağlantıdan başvurulan sayfasına giderek arama sonucu yanıt izin verir. Bu makalede, uygulama dizin kullanmayı ve Xamarin.Forms uygulaması içeriği iOS ve Android cihazlarda aranabilir yapmak için derin bağlama gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: 38d3b6da0dd33e038f2d50209280f2983faf6013
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d302e24ee74290eecd3dd9ad3f81921d6654cc10
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-indexing-and-deep-linking"></a>Uygulama dizin oluşturma ve derin bağlama
 

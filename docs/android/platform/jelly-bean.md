@@ -1,18 +1,17 @@
 ---
-title: "Jelly Çekirdeklere özellikleri"
-description: "Bu belgede Android 4.1 sunulan geliştiriciler için yeni özellikler üst düzey bir genel bakış sağlar. Bu özellikler şunlardır: Gelişmiş bildirimleri, büyük dosyalar, multimedya, eşler arası ağ bulma, animasyonları, yeni izinler güncelleştirmeleri paylaşmak için Android ışını güncelleştirmeler."
-ms.topic: article
+title: Jelly Çekirdeklere özellikleri
+description: 'Bu belgede Android 4.1 sunulan geliştiriciler için yeni özellikler üst düzey bir genel bakış sağlar. Bu özellikler şunlardır: Gelişmiş bildirimleri, büyük dosyalar, multimedya, eşler arası ağ bulma, animasyonları, yeni izinler güncelleştirmeleri paylaşmak için Android ışını güncelleştirmeler.'
 ms.prod: xamarin
 ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 136484644779ac40e661f50ff19cf15884c864c2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1d8068ccfc8d0f159a88704370261ec5f20d8b7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="jelly-bean-features"></a>Jelly Çekirdeklere özellikleri
 

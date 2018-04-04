@@ -1,18 +1,17 @@
 ---
-title: "Xamarin Android cihaz Yöneticisi"
-description: "Xamarin Android Aygıt Yöneticisi, şu anda önizlemede Google Eski Aygıt Yöneticisi'ni değiştirir. Bu kılavuz, Xamarin Android Aygıt Yöneticisi'ni oluşturmak ve Android sanal Android cihazları öykünmek cihazlar (AVDs) yapılandırmak için nasıl kullanılacağını açıklar. Bu sanal cihazlar ve fiziksel cihaz üzerindeki kullanan gerek kalmadan uygulamanızı test çalıştırmak için kullanabilirsiniz."
-ms.topic: article
+title: Xamarin Android cihaz Yöneticisi
+description: Xamarin Android Aygıt Yöneticisi, şu anda önizlemede Google Eski Aygıt Yöneticisi'ni değiştirir. Bu kılavuz, Xamarin Android Aygıt Yöneticisi'ni oluşturmak ve Android sanal Android cihazları öykünmek cihazlar (AVDs) yapılandırmak için nasıl kullanılacağını açıklar. Bu sanal cihazlar ve fiziksel cihaz üzerindeki kullanan gerek kalmadan uygulamanızı test çalıştırmak için kullanabilirsiniz.
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/20/2018
-ms.openlocfilehash: 01fb21729e919872935fd63af28a13642a11fa4b
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3dd67f25e389adda1af31f4a2b85abd4cfd751d0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android cihaz Yöneticisi
 
@@ -495,7 +494,7 @@ Geçici çözüm için bu sorun aşağıdakileri yapın:
 
 3. Bu konum ve çift **user.config** açın. 
 
-4. İçinde **user.config**, bulun  **&lt;ayarlarını&gt;**  öğesi ekleyin bir **AndroidSdkPath** özniteliği için. Bu öznitelik, Android SDK'sı, bilgisayarınızda yüklü olduğu yola ayarlayın ve dosyayı kaydedin. Örneğin,  **&lt;ayarlarını&gt;**  Android SDK adresindeki yüklenmişse, aşağıdaki gibi görünür **C:\\programları\\Android\\SDK**:
+4. İçinde **user.config**, bulun **&lt;ayarlarını&gt;** öğesi ekleyin bir **AndroidSdkPath** özniteliği için. Bu öznitelik, Android SDK'sı, bilgisayarınızda yüklü olduğu yola ayarlayın ve dosyayı kaydedin. Örneğin, **&lt;ayarlarını&gt;** Android SDK adresindeki yüklenmişse, aşağıdaki gibi görünür **C:\\programları\\Android\\SDK**:
         
     ```xml
     <UserSettings SdkLibLastWriteTimeUtcTicks="636409365200000000" AndroidSdkPath="C:\Programs\Android\SDK" />

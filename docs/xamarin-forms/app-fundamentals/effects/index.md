@@ -1,18 +1,17 @@
 ---
 title: Etkiler
-description: "Xamarin.Forms kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir. Efektler yerel denetimler için özel Oluşturucu uygulama çözümlemelere gerek kalmadan özelleştirilmek üzere her platformda izin verir."
-ms.topic: article
+description: Xamarin.Forms kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir. Efektler yerel denetimler için özel Oluşturucu uygulama çözümlemelere gerek kalmadan özelleştirilmek üzere her platformda izin verir.
 ms.prod: xamarin
 ms.assetid: 8AF168A7-4CD9-4603-B961-15B8B1543784
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: dd8b98982052e15744bf67ece6a25cd940a9875a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 63d7750294321a28dbde833f72fe6b7277ada397
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="effects"></a>Etkiler
 

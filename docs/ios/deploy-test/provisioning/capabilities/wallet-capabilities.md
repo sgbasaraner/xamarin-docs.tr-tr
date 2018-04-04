@@ -1,18 +1,17 @@
 ---
-title: "Cüzdan özellikleri"
-description: "Bir uygulama genelde yetenekleri ekleme sağlama ek kurulum gerektirir. Bu kılavuz Cüzdan özellikleri için gereken kurulum açıklar."
-ms.topic: article
+title: Cüzdan özellikleri
+description: Bir uygulama genelde yetenekleri ekleme sağlama ek kurulum gerektirir. Bu kılavuz Cüzdan özellikleri için gereken kurulum açıklar.
 ms.prod: xamarin
 ms.assetid: BD9475E6-F586-488C-93D4-8A2A1629B99B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 952fa7dfa93c1dcb45eafe4eec08c73d2a8571eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f41ba2b693b37f39ea49f62e322932537014a317
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="wallet-capabilities"></a>Cüzdan özellikleri
 
@@ -37,7 +36,7 @@ Cüzdan ile kullanmak için yeni bir sağlama profili oluşturmak için aşağı
     
     ![Uygulama Kimliği seçimi](wallet-capabilities-images/image17.png)
 
-3.  Tıklatın  **+**  üst simgesine sağ sayfasının.
+3.  Tıklatın **+** üst simgesine sağ sayfasının.
 4.  Yeni bir uygulama kimliği, vererek kaydetmek bir **adı** ve bir paket tanımlayıcısı. (Bu paket tanımlayıcısı projenizdeki paket kimliği eşleşmesi gerektiğini unutmayın):
    
     ![Uygulama Kimliği ayrıntılarını Ekle](wallet-capabilities-images/image18.png)

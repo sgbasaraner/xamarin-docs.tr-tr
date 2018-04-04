@@ -1,18 +1,17 @@
 ---
-title: "Zaman uyumsuz genel bakış"
-description: "Zaman uyumsuz işlemleri ifade etmek için iki yeni anahtar sözcüklerin – sürüm 5 – C# dili en son sürümünü sunulan: async ve await. Bu anahtar sözcükler, başka bir iş parçacığında (örneğin, ağ erişimi) uzun süre çalışan işlemlerini yürütmek için görev paralel kitaplığı kullanan basit kod yazmak ve kolayca tamamlama sonuçlarına erişme olanak tanır. Xamarin.iOS ve Xamarin.Android en son sürümlerini zaman uyumsuz desteği ve await - bu belge, açıklamalar ve Xamarin ile yeni sözdizimini kullanarak bir örnek sağlar."
-ms.topic: article
+title: Zaman uyumsuz genel bakış
+description: 'Zaman uyumsuz işlemleri ifade etmek için iki yeni anahtar sözcüklerin – sürüm 5 – C# dili en son sürümünü sunulan: async ve await. Bu anahtar sözcükler, başka bir iş parçacığında (örneğin, ağ erişimi) uzun süre çalışan işlemlerini yürütmek için görev paralel kitaplığı kullanan basit kod yazmak ve kolayca tamamlama sonuçlarına erişme olanak tanır. Xamarin.iOS ve Xamarin.Android en son sürümlerini zaman uyumsuz desteği ve await - bu belge, açıklamalar ve Xamarin ile yeni sözdizimini kullanarak bir örnek sağlar.'
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 4762612075a866581339b198552b8e26c9a1f6fa
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0ecad6259cb0d472ac39afb0a6be980d4582812c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="async-support-overview"></a>Zaman uyumsuz desteğine genel bakış
 

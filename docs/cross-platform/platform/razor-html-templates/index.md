@@ -1,18 +1,17 @@
 ---
-title: "Razor şablonları kullanarak yapı HTML görünümleri"
+title: Razor şablonları kullanarak yapı HTML görünümleri
 description: " HTML oluşturmak için bir tam ekran Web sayfasını kullanarak karmaşık bir platformlar arası şekilde biçimlendirme özellikle HTML, Javascript ve CSS bir Web sitesi projeden zaten varsa işlemek için basit ve etkili bir yol olabilir."
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 5c69b8e71cac5d9f0385728ca75a5f311cb24fc0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fa361e48f8f7e236a3295deda2d80a02ef06b34d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>Razor şablonları kullanarak yapı HTML görünümleri
 

@@ -1,18 +1,17 @@
 ---
-title: "Visual Studio Xamarin.iOS için giriş"
-description: "Bu makalede, yapı ve Visual Studio kullanarak Xamarin iOS uygulamaları test gösterilmektedir. Visual Studio yeni iOS projeleri oluşturmak, bir iOS uygulaması oluşturma ve ardından derleme, test ve ana bilgisayar Apple'nın derleyici ve simulator ve Xamarin'ın derleme araç zinciri ağa bağlı bir Mac kullanarak hata ayıklama için nasıl kullanılacağını anlatılmıştır."
-ms.topic: article
+title: Visual Studio Xamarin.iOS için giriş
+description: Bu makalede, yapı ve Visual Studio kullanarak Xamarin iOS uygulamaları test gösterilmektedir. Visual Studio yeni iOS projeleri oluşturmak, bir iOS uygulaması oluşturma ve ardından derleme, test ve ana bilgisayar Apple'nın derleyici ve simulator ve Xamarin'ın derleme araç zinciri ağa bağlı bir Mac kullanarak hata ayıklama için nasıl kullanılacağını anlatılmıştır.
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e958b4e48767e0c2246b9f237c681fbc362f6b00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a8264d3ebd5f294b1b77fbbafd660825d5ce5180
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Visual Studio Xamarin.iOS için giriş
 

@@ -1,18 +1,17 @@
 ---
-title: "Birleşik film şeritleri"
-description: "Birleşik film şeritleri iOS cihazı ekran boyutlarına genişleyen aralığını kapsamak amacıyla birden çok film şeritleri yerine tek bir film şeridi ile kullanıcı arabirimini oluşturmak Geliştirici izin verir. Bu makalede, birleştirilmiş film şeridi Xamarin.iOS içinde işlemde daha derin bir genel bakış verecek şekilde tasarlanmıştır."
-ms.topic: article
+title: Birleşik film şeritleri
+description: Birleşik film şeritleri iOS cihazı ekran boyutlarına genişleyen aralığını kapsamak amacıyla birden çok film şeritleri yerine tek bir film şeridi ile kullanıcı arabirimini oluşturmak Geliştirici izin verir. Bu makalede, birleştirilmiş film şeridi Xamarin.iOS içinde işlemde daha derin bir genel bakış verecek şekilde tasarlanmıştır.
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="unified-storyboards"></a>Birleşik film şeritleri
 
@@ -680,7 +679,7 @@ Ve uygulamayı iPhone benzeticisi üzerinde çalıştırdığınızda öğesi ek
 
  [![](unified-storyboards-images/exclude05.png "Öğesinin ne zaman eksik iPhone benzeticisi çalışan uygulamaya")](unified-storyboards-images/exclude05.png#lightbox)
 
-Bir dışlama durumu bir öğeyi kaldırmak için öğeyi seçmeniz yeterlidir **tasarım yüzeyi**, listenin sonuna kaydırın **özelliği Explorer** tıklatıp  **-** kaldırmak için durum yanındaki düğmesini.
+Bir dışlama durumu bir öğeyi kaldırmak için öğeyi seçmeniz yeterlidir **tasarım yüzeyi**, listenin sonuna kaydırın **özelliği Explorer** tıklatıp **-**kaldırmak için durum yanındaki düğmesini.
 
 Film şeritleri birleşik uygulaması görmek için bakmak `UnifiedStoryboard` örnek Xamarin iOS 8 uygulama bu belgeye eklenmiş.
 

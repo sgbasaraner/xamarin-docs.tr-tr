@@ -1,18 +1,17 @@
 ---
-title: "Örnek anlama"
-description: "Bu konu, farklı bir web Hizmetleri ile iletişim gösterilmiştir Xamarin.Forms örnek uygulamayı bir kılavuz sağlar. Her web hizmeti ayrı örnek bir uygulamayı kullanırken, işlevsel olarak benzerdir ve ortak sınıfları paylaşın."
-ms.topic: article
+title: Örnek anlama
+description: Bu konu, farklı bir web Hizmetleri ile iletişim gösterilmiştir Xamarin.Forms örnek uygulamayı bir kılavuz sağlar. Her web hizmeti ayrı örnek bir uygulamayı kullanırken, işlevsel olarak benzerdir ve ortak sınıfları paylaşın.
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: e9738a766762dd64cdfbb034d4eaa54f76aca311
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="understanding-the-sample"></a>Örnek anlama
 
@@ -56,7 +55,7 @@ Her uygulama için PCL proje de önemli dosyaların sayısı oluşur:
 
 Örnek uygulamalar çoğunluğu en az iki sayfa içerir:
 
-- **TodoListPage** – bu sayfayı bir listesini görüntüler `TodoItem` örnekleri ve onay simgesi varsa `TodoItem.Done` özelliği `true`. Bir öğeyi tıklatarak gider `TodoItemPage`. Ayrıca, yeni öğeler tıklayarak oluşturulabilir  *+*  simgesi.
+- **TodoListPage** – bu sayfayı bir listesini görüntüler `TodoItem` örnekleri ve onay simgesi varsa `TodoItem.Done` özelliği `true`. Bir öğeyi tıklatarak gider `TodoItemPage`. Ayrıca, yeni öğeler tıklayarak oluşturulabilir *+* simgesi.
 - **TodoItemPage** – bu sayfa seçilen ayrıntılarını görüntüler `TodoItem`ve düzenlenebilir, kaydedildi, silinen konuşulan ve izin verir.
 
 Ayrıca, bazı örnek uygulamalar kullanıcı kimlik doğrulaması işlemini yönetmek için kullanılan ek sayfalar içerir.

@@ -1,18 +1,17 @@
 ---
-title: "Android hizmetleri oluşturma"
-description: "Bu kılavuz bir etkin kullanıcı arabirimi olmadan yapılacak işleri izin Android bileşenleridir Xamarin.Android Hizmetleri açıklanır. Hizmetleri zaman alıcıdır hesaplamaları, dosyaları, müzik, oynatma indirme gibi arka planda gerçekleştirilen görevleri için çok sık kullanılan ve benzeri. Hizmetler için uygun farklı senaryoları açıklar ve bunları hem uzun süre çalışan arka plan görevleri gerçekleştirmek için yanı sıra uzak yordam çağrıları için bir arabirim sağlamak için uygulama gösterilmektedir."
-ms.topic: article
+title: Android hizmetleri oluşturma
+description: Bu kılavuz bir etkin kullanıcı arabirimi olmadan yapılacak işleri izin Android bileşenleridir Xamarin.Android Hizmetleri açıklanır. Hizmetleri zaman alıcıdır hesaplamaları, dosyaları, müzik, oynatma indirme gibi arka planda gerçekleştirilen görevleri için çok sık kullanılan ve benzeri. Hizmetler için uygun farklı senaryoları açıklar ve bunları hem uzun süre çalışan arka plan görevleri gerçekleştirmek için yanı sıra uzak yordam çağrıları için bir arabirim sağlamak için uygulama gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: BA371A59-6F7A-F62A-02FC-28253504ACC9
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 08392872037783e0caaef4f2b19127adbe95151b
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 2e942d1085822fee935ae0f23f2253f23d49a43d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-android-services"></a>Android hizmetleri oluşturma
 
@@ -45,7 +44,7 @@ Dört farklı tür Android hizmetler şunlardır:
 
 * **Hizmet bağlı** &ndash; A _bağlı hizmet_ kendisiyle ilişkili bazı başka bir bileşeninin (genellikle bir etkinliği) sahip bir hizmettir. Bağımlı bir hizmet ilişkili bileşeni ve birbiriyle etkileşim için hizmet veren bir arabirim sağlar. Android hizmetine bağlı hiçbir istemci sonra hizmet kapanır. 
 
-* **`IntentService`** &ndash; Bir  _`IntentService`_  özelleştirilmiş sınıfıdır `Service` hizmet oluşturma ve kullanım basitleştirir sınıfı. Bir `IntentService` ayrı otonom çağrıları işlemek için tasarlanmıştır. Aynı anda birden fazla çağrı işleyebilir, bir hizmet farklı bir `IntentService` gibi daha çok bir _iş kuyruğu İşlemci_ &ndash; iş sıraya ve bir `IntentService` her işlem, aynı anda tek iş parçacığı üzerinde işler. Genellikle, bir`IntentService` bir etkinlik veya bir parçasını bağlı değil. 
+* **`IntentService`** &ndash; Bir _`IntentService`_ özelleştirilmiş sınıfıdır `Service` hizmet oluşturma ve kullanım basitleştirir sınıfı. Bir `IntentService` ayrı otonom çağrıları işlemek için tasarlanmıştır. Aynı anda birden fazla çağrı işleyebilir, bir hizmet farklı bir `IntentService` gibi daha çok bir _iş kuyruğu İşlemci_ &ndash; iş sıraya ve bir `IntentService` her işlem, aynı anda tek iş parçacığı üzerinde işler. Genellikle, bir`IntentService` bir etkinlik veya bir parçasını bağlı değil. 
 
 * **Hizmet başlatıldı** &ndash; A _hizmeti başlatıldı_ bazı diğer Android bileşeni (örneğin, bir etkinlik) tarafından başlatılan bir şey açıkça bildiren kadar continously arka planda çalışan bir hizmettir ve hizmeti durdurmak için. Bağımlı bir hizmet farklı olarak başlatılan bir hizmet doğrudan bağlı istemcilere sahip değil. Bu nedenle, böylece bunlar düzgün biçimde gerektiği gibi yeniden başlatılabilir başlatılan Hizmetleri tasarlamanız önemlidir.
 

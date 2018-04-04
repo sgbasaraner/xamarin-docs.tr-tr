@@ -1,18 +1,17 @@
 ---
-title: "Özel oluşturucu giriş"
-description: "Özel oluşturucu görünümünü ve Xamarin.Forms denetimleri davranışını özelleştirmek için güçlü bir yaklaşım sağlayın. Bunlar küçük stil değişiklikleri veya karmaşık platforma özgü düzeni ve davranışını özelleştirme için kullanılabilir. Bu makalede özel Oluşturucu bir giriş sağlar ve özel Oluşturucu oluşturma süreci özetlenmektedir."
-ms.topic: article
+title: Özel oluşturucu giriş
+description: Özel oluşturucu görünümünü ve Xamarin.Forms denetimleri davranışını özelleştirmek için güçlü bir yaklaşım sağlayın. Bunlar küçük stil değişiklikleri veya karmaşık platforma özgü düzeni ve davranışını özelleştirme için kullanılabilir. Bu makalede özel Oluşturucu bir giriş sağlar ve özel Oluşturucu oluşturma süreci özetlenmektedir.
 ms.prod: xamarin
 ms.assetid: 264314BE-1C5C-4727-A14E-F6F98151CDBD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 837d75bd4ecde92d4c375c680a5f5e7ff231f825
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e555c038d66033d925da42e4c70b89d5caac8ad6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Özel oluşturucu giriş
 

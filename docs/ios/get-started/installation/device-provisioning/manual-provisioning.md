@@ -1,18 +1,17 @@
 ---
-title: "El ile sağlama"
-description: "Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlamaya yöneliktir. Bu kılavuz, geliştirme sertifikalar istemek ve profilleri, uygulama hizmetleri ile çalışma ve cihaza bir uygulama dağıtmak inceleyeceksiniz."
-ms.topic: article
+title: El ile sağlama
+description: Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlamaya yöneliktir. Bu kılavuz, geliştirme sertifikalar istemek ve profilleri, uygulama hizmetleri ile çalışma ve cihaza bir uygulama dağıtmak inceleyeceksiniz.
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: ecda5823636a1b2d7e31a39e29f1d46cdf7118b6
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3f321366b3afc814aef1c586af2707b1caeef4c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="manual-provisioning"></a>El ile sağlama
 
@@ -36,7 +35,7 @@ Geliştirme ekiplerinin, sertifikalar ve profilleri erişerek yönetilebilir [ta
 
 İmzalama kimlik oluşturmak için aşağıdakileri yapın:
 
-1. Oturum açma [Geliştirici Portalı'nın sertifikaları, tanımlayıcılar ve profilleri bölümüne](https://developer.apple.com/account/overview.action) seçip **sertifikaları** konusundaki **iOS uygulamaları** sütun. Ardından, isabet  **+**  yeni bir sertifika oluşturmak için:
+1. Oturum açma [Geliştirici Portalı'nın sertifikaları, tanımlayıcılar ve profilleri bölümüne](https://developer.apple.com/account/overview.action) seçip **sertifikaları** konusundaki **iOS uygulamaları** sütun. Ardından, isabet **+** yeni bir sertifika oluşturmak için:
 
     [![](manual-provisioning-images/cert-plus.png "Tıklatın + yeni bir sertifika oluşturmak için")](manual-provisioning-images/cert-plus.png#lightbox)
 
@@ -119,7 +118,7 @@ Geliştirme için bir sağlama profili oluştururken, biz hangi cihazların uygu
 
   [![](manual-provisioning-images/add04.png "Aygıtları bağlantıya tıklayın")](manual-provisioning-images/add04.png#lightbox)
 
-8. Tıklatın  **+**  düğmesi:
+8. Tıklatın **+** düğmesi:
 
   [![](manual-provisioning-images/add05.png "Tıklatın + düğmesi")](manual-provisioning-images/add05.png#lightbox)
 
@@ -148,7 +147,7 @@ Bir sağlama profili oluşturmadan önce bir *uygulama kimliği* yapılması ger
 ### <a name="app-id"></a>Uygulama Kimliği
 
 1. İçinde [Geliştirici Portalı](https://developer.apple.com/account/overview.action) göz *sertifika, tanımlayıcılarını ve profiller* Apple Developer Center'da bölümünde. Seçin **uygulama kimlikleri** altında **tanımlayıcıları**.
-2. Tıklatın  **+**  düğmesine tıklayın ve sağlayan bir **adı**:
+2. Tıklatın **+** düğmesine tıklayın ve sağlayan bir **adı**:
 
     [![](manual-provisioning-images/appid05a.png "Bir ad sağlayın")](manual-provisioning-images/appid05a.png#lightbox)
 3. Uygulama önek önceden yüklenmiş. Seçin **joker uygulama kimliği** uygulama sonek için. Bir paket kimliği şu biçimde girin `com.[DomainName].*`:
@@ -164,7 +163,7 @@ Uygulama Kimliği oluşturulduktan sonra sağlama profili üretilebilir. Bu sağ
 El ile geliştirme için bir sağlama profili oluşturmak için şunu yapın:
 
 1. Gözatmak için Safari kullanmak [Apple geliştiriciler üye Merkezi](https://developer.apple.com/membercenter/index.action)ve bölümünün altında *tanımlayıcıları & profilleri, sertifikaları* sağlama profilleri seçin.
-2. Tıklatın  **+**  düğmesi, yeni bir profil oluşturmak için sağ üst köşedeki.
+2. Tıklatın **+** düğmesi, yeni bir profil oluşturmak için sağ üst köşedeki.
 3. Gelen **geliştirme** bölümünde, radyo düğmesini işaretleyin **iOS uygulaması geliştirme**ve basın **devam**:
 
     [![](manual-provisioning-images/provisioning-profile01.png "Oluşturmak için profili türünü seçin")](manual-provisioning-images/provisioning-profile01.png#lightbox)

@@ -1,17 +1,17 @@
 ---
-title: "Xamarin Studio'da nasıl iOS projeleri için Mono çalışma zamanı ortam değişkenlerini ayarlama?"
-ms.topic: article
+title: Xamarin Studio'da nasıl iOS projeleri için Mono çalışma zamanı ortam değişkenlerini ayarlama?
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 1176CEA9-C7F1-411B-8F1A-99374E8AFF33
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/31/2017
-ms.openlocfilehash: 6032ea89aa54719cc4b0fdde67e67f1ec8fb183b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5f4f3a2de012d35ddca9c1fa830d599d9d5acb17
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-do-i-set-mono-runtime-environment-variables-for-ios-projects-in-xamarin-studio"></a>Xamarin Studio'da nasıl iOS projeleri için Mono çalışma zamanı ortam değişkenlerini ayarlama?
 
@@ -25,6 +25,6 @@ Bir uygulama için bir ortam değişkeni kalıcı olarak ayarlamak için bu ek m
    --setenv=NAME=VALUE
 ```
 
-Ayarlanabilir ortam değişkenleri görmek için Mono adam sayfasına bakın: [http://docs.go-mono.com/?link=man%3amono (1)](http://docs.go-mono.com/?link=man%3amono(1)) başlıklı bölüme bakın: `ENVIRONMENT VARIABLES`
+Ayarlanabilir ortam değişkenleri görmek için Mono adam sayfasına bakın: [ http://docs.go-mono.com/?link=man%3amono(1) ](http://docs.go-mono.com/?link=man%3amono(1)) başlıklı bölüme bakın: `ENVIRONMENT VARIABLES`
 
 ![](xs-mono-runtime-images/environment-variables.jpg "Bir proje için ortam değişkenlerini ayarlama")

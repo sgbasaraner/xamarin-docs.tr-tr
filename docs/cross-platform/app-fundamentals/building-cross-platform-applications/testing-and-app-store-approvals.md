@@ -1,5 +1,5 @@
 #<a name="---"></a>---
-Başlık: "Bölümü 6 – test etme ve uygulama mağazası onayları" ms.topic: makalesi ms.prod: xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology: platformlar arası xamarin Yazar: asb3993 ms.author: amburns ms.date: 23/03/2017
+Başlık: "Bölümü 6 – test etme ve uygulama mağazası onayları" ms.prod: xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology: platformlar arası xamarin Yazar: asb3993 ms.author: amburns ms.date: 23/03/2017
 ---
 
 # <a name="part-6---testing-and-app-store-approvals"></a>Bölüm 6 - test etme ve uygulama mağazası onayları

@@ -1,18 +1,17 @@
 ---
-title: "İzlenecek yol - CoreGraphics ve CoreAnimation kullanma"
-description: "Bu makalede nasıl çekirdek grafikleri ve çekirdek animasyon kullanan bir uygulama oluşturmak adım adım gösterilmektedir. Görüntüyü bir yol boyunca seyahat animasyon nasıl yanı sıra nasıl yanıt olarak kullanıcı dokunma ekranında çizileceğini gösterir."
-ms.topic: article
+title: İzlenecek yol - CoreGraphics ve CoreAnimation kullanma
+description: Bu makalede nasıl çekirdek grafikleri ve çekirdek animasyon kullanan bir uygulama oluşturmak adım adım gösterilmektedir. Görüntüyü bir yol boyunca seyahat animasyon nasıl yanı sıra nasıl yanıt olarak kullanıcı dokunma ekranında çizileceğini gösterir.
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c62601ff446c114e97e9d4c2ded3727d08220095
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f857accfcdec4cb60e781936d1d0836dbf8d6ffb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="drawing-and-animating-along-a-path"></a>Çizim ve bir yol boyunca animasyon ekleme
 
@@ -183,6 +182,6 @@ Bu makalede, biz grafikler ve animasyon kavramları birbirine bağlı bir örnek
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Çekirdek animasyon](~/ios/platform/graphics-animation-ios/core-animation.md)
-- [Çekirdek grafikleri](~/ios/platform/graphics-animation-ios/core-graphics.md)
+- [Temel Animasyon](~/ios/platform/graphics-animation-ios/core-animation.md)
+- [Temel Grafikler](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [Animasyon tarif çekirdek](https://developer.xamarin.com/recipes/ios/animation/coreanimation)

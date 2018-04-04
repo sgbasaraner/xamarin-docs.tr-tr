@@ -1,18 +1,17 @@
 ---
-title: "Merhaba, tvOS Hızlı Başlangıç Kılavuzu"
-description: "Bu kılavuz ilk Xamarin.tvOS uygulamanızı ve kendi geliştirme araç zinciri oluşturmada size yol gösterir. Aynı zamanda kod için UI denetimleri gösterir ve oluşturmak, çalıştırmak ve Xamarin.tvOS uygulama sınamak üzere verilmektedir Xamarin Tasarımcı ' da sunar."
-ms.topic: article
+title: Merhaba, tvOS Hızlı Başlangıç Kılavuzu
+description: Bu kılavuz ilk Xamarin.tvOS uygulamanızı ve kendi geliştirme araç zinciri oluşturmada size yol gösterir. Aynı zamanda kod için UI denetimleri gösterir ve oluşturmak, çalıştırmak ve Xamarin.tvOS uygulama sınamak üzere verilmektedir Xamarin Tasarımcı ' da sunar.
 ms.prod: xamarin
 ms.assetid: 6E0AFE58-A13B-492F-861E-D5D73EB1C4A3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 5eccb36b3c6a437ddc1ec055e779d8f78460643e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0adf6e326dd29db15b6bd90626f424b803dc0bc9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Merhaba, tvOS Hızlı Başlangıç Kılavuzu
 

@@ -1,18 +1,18 @@
 ---
 title: watchOS sorun giderme
-description: "Bilinen sorunlar ve watchOS geliştirme sorunlara yönelik geçici çözümler."
-ms.topic: article
+description: Bilinen sorunlar ve watchOS geliştirme sorunlara yönelik geçici çözümler.
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS sorun giderme
 
@@ -35,7 +35,7 @@ Bu sayfa, ek bilgi ve halen geliştirilme özellikleri için geçici çözümler
 <a name="deploy" />
 
 - Mac için Visual Studio'nun önceki sürümleri yanlış Göster birini **AppleCompanionSettings** sonuçlanır 88 x 88 piksel; olarak simgeleri bir **eksik simgesi hata** uygulamaya göndermek çalışırsanız Deposu.
-    Bu simge 87 x 87 piksel olmalıdır (29 birimleri için  **@3x**  Retina ekranlar). Bu Mac - ya da Düzenle xcode'da görüntü varlığı için Visual Studio'da düzeltin veya el ile düzenlediğinizde **Contents.json** dosyası (eşleşecek şekilde [Bu örnek](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
+    Bu simge 87 x 87 piksel olmalıdır (29 birimleri için **@3x** Retina ekranlar). Bu Mac - ya da Düzenle xcode'da görüntü varlığı için Visual Studio'da düzeltin veya el ile düzenlediğinizde **Contents.json** dosyası (eşleşecek şekilde [Bu örnek](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
 
 - Varsa izleme uzantısı projenin **Info.plist > WKApp paket kimliği** değil [doğru olarak ayarlanmış](~/ios/watchos/get-started/project-references.md) izleme uygulamanın eşleşecek şekilde **paket kimliği**, hata ayıklayıcı bağlanamaz ve görsel Mac için Studio iletiyle bekleyecek *"bağlanmak için hata ayıklayıcı bekleniyor"*.
 

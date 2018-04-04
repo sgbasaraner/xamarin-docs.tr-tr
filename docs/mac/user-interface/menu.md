@@ -1,18 +1,17 @@
 ---
-title: "Menüler"
-description: "Bu makalede, bir Xamarin.Mac uygulamasında Menülerle çalışma yer almaktadır. Oluşturma ve menüleri ve menü öğeleri Xcode ve arabirim Oluşturucu koruyarak ve bunlarla program aracılığıyla çalışma açıklar."
-ms.topic: article
+title: Menüler
+description: Bu makalede, bir Xamarin.Mac uygulamasında Menülerle çalışma yer almaktadır. Oluşturma ve menüleri ve menü öğeleri Xcode ve arabirim Oluşturucu koruyarak ve bunlarla program aracılığıyla çalışma açıklar.
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 52a9fc206a2c303d13d80be4de743d98056f7684
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50c9cf333ff7965bbdfbb964a2301e677eb6aa59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="menus"></a>Menüler
 
@@ -439,7 +438,7 @@ Ardından, uygulamanın film şeridi dosyasına çift tıklayarak **çözüm pan
 
 ![Öznitelikleri denetçisi](menu-images/action01.png "öznitelikleri denetçisi")
 
-Tıklatın  **+**  alt kısmındaki düğmesi **öznitelikleri denetçisi** yeni bir özel eylem eklemek için:
+Tıklatın **+** alt kısmındaki düğmesi **öznitelikleri denetçisi** yeni bir özel eylem eklemek için:
 
 ![Yeni bir eylem ekleme](menu-images/action02.png "yeni bir eylem ekleme")
 

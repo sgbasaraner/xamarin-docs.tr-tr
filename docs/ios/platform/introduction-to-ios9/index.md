@@ -1,18 +1,17 @@
 ---
-title: "İOS 9 giriş"
-description: "Bu makalede Xamarin.iOS geliştiriciler için tüm yeni ve değiştirilen API'ler ve iOS 9 kullanılabilir özellikler sunar."
-ms.topic: article
+title: İOS 9 giriş
+description: Bu makalede Xamarin.iOS geliştiriciler için tüm yeni ve değiştirilen API'ler ve iOS 9 kullanılabilir özellikler sunar.
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5b26989603695cfb309fba5a5318f7ef4d2460e2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 10ed9154b92e6f13dd71f83cf4fed47585dc795f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-ios-9"></a>İOS 9 giriş
 
@@ -212,8 +211,8 @@ Ayrıca bu örnekleri (yardımcı Mac OS X sürümlerinin yakında!) iOS bölüm
 
 - [iOS 9 örnekleri](https://developer.xamarin.com/samples/ios/iOS9/)
 - [3B dokunmatik giriş](~/ios/platform/3d-touch.md)
-- [Uygulama taşıma güvenliği](~/ios/app-fundamentals/ats.md)
-- [İPad için çoklu](~/ios/platform/multitasking.md)
+- [Uygulama Aktarım Güvenliği](~/ios/app-fundamentals/ats.md)
+- [iPad için Çoklu Görev Gerçekleştirme](~/ios/platform/multitasking.md)
 - [Kişiler ve kişileri kullanıcı Arabirimi](~/ios/platform/contacts.md)
 - [Yeni arama API'leri](~/ios/platform/search/index.md)
 - [Görünüm yığın giriş](~/ios/user-interface/controls/uistackview.md)
@@ -221,7 +220,7 @@ Ayrıca bu örnekleri (yardımcı Mac OS X sürümlerinin yakında!) iOS bölüm
 - [Oyun geliştirmeleri](~/ios/platform/gaming/index.md)
 - [HomeKit giriş](~/ios/platform/homekit.md)
 - [İletim giriş](~/ios/platform/handoff.md)
-- [Ek iOS 9 Framework değişiklikleri](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
+- [Ek iOS 9 Çerçeve Değişiklikleri](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
 - [Sorun giderme](~/ios/platform/introduction-to-ios9/troubleshooting.md)
 - [iOS 9 geliştiricileri için](https://developer.apple.com/ios/pre-release/)
 - [Yeni iOS 9.0 nedir](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

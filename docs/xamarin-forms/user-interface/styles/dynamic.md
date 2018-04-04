@@ -1,18 +1,17 @@
 ---
 title: Dinamik stilleri
-description: "Stilleri değil özelliği değişikliklere yanıt verir ve bir uygulama süresi değişmeden kalır. Örneğin, bir stil ayarlayıcı örneklerden birini, kaldırılan değiştirilirse bir görsel öğe ya da eklenen yeni bir ayarlayıcı örnek atadıktan sonra değişiklikler görsel öğe için uygulanmaz. Ancak, uygulamalar çalışma zamanında dinamik olarak stil değişiklikleri dinamik kaynaklar kullanarak yanıt verebilir."
-ms.topic: article
+description: Stilleri değil özelliği değişikliklere yanıt verir ve bir uygulama süresi değişmeden kalır. Örneğin, bir stil ayarlayıcı örneklerden birini, kaldırılan değiştirilirse bir görsel öğe ya da eklenen yeni bir ayarlayıcı örnek atadıktan sonra değişiklikler görsel öğe için uygulanmaz. Ancak, uygulamalar çalışma zamanında dinamik olarak stil değişiklikleri dinamik kaynaklar kullanarak yanıt verebilir.
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 9710e322460058902d89ec1a57c374b93beb82fb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c484bdc90ec039a8d70209deabbe283cf7100610
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="dynamic-styles"></a>Dinamik stilleri
 

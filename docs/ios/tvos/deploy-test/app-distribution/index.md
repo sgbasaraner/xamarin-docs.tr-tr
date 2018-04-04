@@ -1,18 +1,17 @@
 ---
-title: "Uygulama dağıtım genel bakış"
-description: "Bu belge Xamarin.tvOS uygulaması için kullanılabilen dağıtım teknikleri genel bir bakış sağlar ve konusunda daha ayrıntılı belgeler için bir işaretçi olarak görev yapar."
-ms.topic: article
+title: Uygulama dağıtım genel bakış
+description: Bu belge Xamarin.tvOS uygulaması için kullanılabilen dağıtım teknikleri genel bir bakış sağlar ve konusunda daha ayrıntılı belgeler için bir işaretçi olarak görev yapar.
 ms.prod: xamarin
 ms.assetid: D5E0F446-C083-4E21-9788-FC84D32D00C4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3e96e98f90c7f4c849a9f679b2de819ccaabfec0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e5be0bef158c87fe06516d9a58e34c741e6e14b1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-distribution-overview"></a>Uygulama dağıtım genel bakış
 

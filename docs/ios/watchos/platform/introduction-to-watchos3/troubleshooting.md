@@ -1,18 +1,17 @@
 ---
 title: watchOS 3 sorun giderme
-description: "Bu makalede, Xamarin Apple Watch uygulamalarda watchOS 3 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir."
-ms.topic: article
+description: Bu makalede, Xamarin Apple Watch uygulamalarda watchOS 3 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir.
 ms.prod: xamarin
 ms.assetid: 5911D898-0E23-40CC-9F3C-5F61B4D50ADC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 02ec4c3c9827f7cfac48184eb12491faaa0c92c8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 159c6a6dadcaa325abc7fd747abc9b2ba2f26a9c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="watchos-3-troubleshooting"></a>watchOS 3 sorun giderme
 
@@ -111,5 +110,5 @@ Bir uygulama watchOS yerleştirme arka girdiğinde SpriteKit ve SceneKit planda 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [watchOS örnekleri](https://developer.xamarin.com/samples/watchos/all/)
+- [watchOS Örnekleri](https://developer.xamarin.com/samples/watchos/all/)
 - [WatchOS 3 yenilikler nelerdir?](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

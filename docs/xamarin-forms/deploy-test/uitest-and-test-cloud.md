@@ -1,18 +1,17 @@
 ---
 title: Xamarin.Forms Xamarin.UITest ve uygulama Center ile testi otomatik hale getirme
-description: "Xamarin.Forms ile Xamarin UITest bileşen aygıtları yüzlerce üzerinde bulutta çalıştırmak için UI testleri yazmak için kullanılır."
-ms.topic: article
+description: Xamarin.Forms ile Xamarin UITest bileşen aygıtları yüzlerce üzerinde bulutta çalıştırmak için UI testleri yazmak için kullanılır.
 ms.prod: xamarin
 ms.assetid: b674db3d-c526-4e31-a9f4-b6d6528ce7a9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: 78788524c1afdda127762049018ca769926f729e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f671f31dcc0aaf339a7c9f3d6465f4777a8f7f7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="automate-xamarinforms-testing-with-xamarinuitest-and-app-center"></a>Xamarin.Forms Xamarin.UITest ve uygulama Center ile testi otomatik hale getirme
 
@@ -219,7 +218,7 @@ Uygulama Merkezi Test testleri gönderme hakkında daha fazla bilgi için bkz: [
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [UITestSample](https://developer.xamarin.com/samples/xamarin-forms/UsingUITest/)
-- [Xamarin.Forms örnekleri](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms Örnekleri](https://github.com/xamarin/xamarin-forms-samples)
 - [Uygulama Merkezi Test](/appcenter/test-cloud/)
 - [Xamarin.UITest](/appcenter/test-cloud/uitest/)
 - [NUnit](http://www.nunit.org)

@@ -1,17 +1,16 @@
 ---
-title: "İzlenecek yol: yansıma API kullanarak bir uygulama oluşturma"
-description: "Öğeleri API yanı sıra, MonoTouch.Dialog (yüksekliğindeki D) bir öznitelik tabanlı yansıma API de içerir. Yansıma API yüksekliğindeki oluşturma ekranlar yapar D öznitelikleri sınıflarıyla dekorasyon olarak kadar kolay. Bu makale yansıma API'yi kullanarak bir uygulama oluşturmak nasıl gösteren aracılığıyla ilerlemesi sağlar."
-ms.topic: article
+title: 'İzlenecek yol: yansıma API kullanarak bir uygulama oluşturma'
+description: Öğeleri API yanı sıra, MonoTouch.Dialog (yüksekliğindeki D) bir öznitelik tabanlı yansıma API de içerir. Yansıma API yüksekliğindeki oluşturma ekranlar yapar D öznitelikleri sınıflarıyla dekorasyon olarak kadar kolay. Bu makale yansıma API'yi kullanarak bir uygulama oluşturmak nasıl gösteren aracılığıyla ilerlemesi sağlar.
 ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: ec5ca2883c6e109a67ee8a4ecb25fe938d0df4ec
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e56eaeccb2e09d9f1ad84245bf41e2a4bf1b56f1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>İzlenecek yol: yansıma API kullanarak bir uygulama oluşturma
 

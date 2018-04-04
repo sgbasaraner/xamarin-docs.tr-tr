@@ -1,18 +1,17 @@
 ---
 title: CloudKit
-description: "iCloud API'leri bir kullanıcı hesabı otomatik eşitleme için desteğiyle iCloud verilerini depolamak iOS 8 uygulamaları etkinleştirir. CloudKit kullanarak kullanıcıların iCloud etkinleştirildiği aygıtlar arasında tutarlı ve sorunsuz bir deneyim sağlar. Bu makalede kolaylık API'sini kullanarak, iOS 8 uygulama CloudKit etkinleştirme kapsar."
-ms.topic: article
+description: iCloud API'leri bir kullanıcı hesabı otomatik eşitleme için desteğiyle iCloud verilerini depolamak iOS 8 uygulamaları etkinleştirir. CloudKit kullanarak kullanıcıların iCloud etkinleştirildiği aygıtlar arasında tutarlı ve sorunsuz bir deneyim sağlar. Bu makalede kolaylık API'sini kullanarak, iOS 8 uygulama CloudKit etkinleştirme kapsar.
 ms.prod: xamarin
 ms.assetid: 66B207F2-FAA0-4551-B43B-3DB9F620C397
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: c4ee5c0457dd1faea74cbbc30dd2d0f42087a8d0
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 33ceff4549e4afbb1e5fecf3bd380fdb9a3df5f2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 

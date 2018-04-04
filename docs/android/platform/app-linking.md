@@ -1,18 +1,17 @@
 ---
-title: "Android, uygulama olarak bağlama"
-description: "Bu kılavuz, app-bağlama, Web sitelerinde URL'lere yanıtlamak mobil uygulamalar sağlayan bir teknik Android 6.0 nasıl desteklediği ele alınacaktır. Uygulama bağlama ne olduğu, nasıl bir Android 6.0 uygulamada uygulama bağlama uygulanacağını ve bir etki alanı için mobil uygulama izinleri vermek için bir Web sitesi yapılandırma ele alınacaktır."
-ms.topic: article
+title: Android, uygulama olarak bağlama
+description: Bu kılavuz, app-bağlama, Web sitelerinde URL'lere yanıtlamak mobil uygulamalar sağlayan bir teknik Android 6.0 nasıl desteklediği ele alınacaktır. Uygulama bağlama ne olduğu, nasıl bir Android 6.0 uygulamada uygulama bağlama uygulanacağını ve bir etki alanı için mobil uygulama izinleri vermek için bir Web sitesi yapılandırma ele alınacaktır.
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2ef6b8044387d759e26d05c1468caaad7efb9bdc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-linking-in-android"></a>Android, uygulama olarak bağlama
 
@@ -56,7 +55,7 @@ App-Android 6.0 bağlantılar kurma iki ana adımdan oluşur:
 Bir Android uygulamasını bir etkinlikte bir Web sitesinden bir URI (veya olası bir dizi URI'ler) eşleşen bir hedefi filtresi yapılandırmak gereklidir. Xamarin.Android içinde bir etkinlik eklemek tarafından bu ilişki kurulur [IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/). Hedefi filtre aşağıdaki bilgileri bildirmeniz gerekir:
 
 * **`Intent.ActionView`** &ndash; Bu bilgileri görüntülemek için isteklerini yanıtlamasını hedefi filtre kaydeder
-* **`Categories`** &ndash;  Hedefi filtre hem kaydedeceğini  **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)**  ve  **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)**  düzgün kaldırabilmek için URI web işleyin.
+* **`Categories`** &ndash;  Hedefi filtre hem kaydedeceğini **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** ve **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** düzgün kaldırabilmek için URI web işleyin.
 * **`DataScheme`** &ndash; Hedefi filtre bildirmelidir `http` ve/veya `https`. Bu, yalnızca iki geçerli şemaları geçerlidir.
 * **`DataHost`** &ndash; Bu URI kaynaklanan etki alanıdır.
 * **`DataPathPrefix`** &ndash; Bu Web sitesinde kaynakları isteğe bağlı bir yoludur.

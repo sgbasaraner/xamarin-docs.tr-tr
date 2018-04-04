@@ -1,18 +1,17 @@
 ---
-title: "Uygulama mağazası dağıtım"
-description: "Bu belge için Apple App Store dağıtım için gereksinimleri kapsar."
-ms.topic: article
+title: Uygulama mağazası dağıtım
+description: Bu belge için Apple App Store dağıtım için gereksinimleri kapsar.
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 25c4cb980f77880ae690916ec45be3cd12a3cf10
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 7a38c77dde7a66f2db194cd8888a2c32a3529a9a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-store-distribution"></a>Uygulama mağazası dağıtım
 
@@ -45,7 +44,7 @@ Aynı seçebileceğiniz **uygulama kimliği** ve **aygıtları** sağlama profil
 
 1. Gözat *tanımlayıcıları & profilleri, sertifikaları* Apple Developer Member Center'da bölümü.
 2. Altında *sertifikaları*seçin **üretim**.
-3. Tıklatın  **+**  yeni bir sertifika oluşturmak için düğmeye.
+3. Tıklatın **+** yeni bir sertifika oluşturmak için düğmeye.
 4. Altında *üretim* başlığını seçin **App Store ve geçici**:
 
     [![](images/createcertmanually01.png "Uygulama mağazası ve geçici seçin")](images/createcertmanually01.png#lightbox)
@@ -81,7 +80,7 @@ Olarak herhangi diğer sağlama oluşturduğunuz profil ile bir uygulama kimliğ
 
 
 1. İçinde [Apple Geliştirici Merkezi](https://developer.apple.com/account/overview.action) göz *sertifika, tanımlayıcılarını ve profiller* bölümü. Seçin **uygulama kimlikleri** altında **tanımlayıcıları**.
-2. Tıklatın  **+**  düğmesine tıklayın ve sağlayan bir **adı** hangi tanımlar ve bu Portalı'nda.
+2. Tıklatın **+** düğmesine tıklayın ve sağlayan bir **adı** hangi tanımlar ve bu Portalı'nda.
 3. Uygulama önek takım Kimliğiniz ayarlanması gerekir ve değiştirilemez. Explicit veya joker uygulama kimliği seçin ve bir paket kimliği gibi geriye doğru DNS biçimde girin:
     - **Açık**: com [etkialanıadı]. [ AppName]
     - **Joker karakter**: com [etkialanıadı]. *
@@ -97,7 +96,7 @@ Dağıtım profili oluşturmak için gerekli gerekli bileşenleri olduktan sonra
 
     [![](images/distribute01.png "RSelect sağlama > Dağıtım")](images/distribute01.png#lightbox)
 
-2. Tıklatın  **+**  düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **App Store**:
+2. Tıklatın **+** düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **App Store**:
 
     [![](images/distribute02.png "Bir uygulama mağazası dağıtım profili oluştur")](images/distribute02.png#lightbox)
 

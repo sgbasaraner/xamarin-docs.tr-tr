@@ -1,17 +1,16 @@
 ---
-title: "Özel görüntü Aktarım denetimleri"
-ms.topic: article
+title: Özel görüntü Aktarım denetimleri
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5463a91dba5840ebe655aa1509d9f98e73643d26
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-video-transport-controls"></a>Özel görüntü Aktarım denetimleri
 
@@ -521,19 +520,19 @@ namespace FormsVideoLibrary.UWP
 
 Unicode karakterler kullanarak simgesel **Yürüt**, **duraklatma**, ve **durdurmak** görüntüleri sorunlu. [Çeşitli teknik](https://unicode-table.com/en/blocks/miscellaneous-technical/) Unicode standart bölümünü tanımlayan üç sembol karakterlerinin bu amaç için görünen uygun. Bunlar:
 
-- 0x23F5 (siyah Orta sağı üçgen) veya & #x23F5; için **Yürüt**
-- 0x23F8 (çift dikey çubuk) veya & #x23F8; için **Duraklat**
-- 0x23F9 (siyah kare) veya & #x23F9; için **Durdur**
+- 0x23F5 (siyah Orta sağı üçgen) veya &#x23F5; için **Yürüt**
+- 0x23F8 (çift dikey çubuk) veya &#x23F8; için **duraklatma**
+- 0x23F9 (siyah kare) veya &#x23F9; için **Durdur**
 
 Ne olursa olsun nasıl bu simgeleri tarayıcınızda görüntülenir (ve farklı tarayıcılar işlemek bunları farklı şekillerde), tutarlı bir şekilde Xamarin.Forms tarafından desteklenen platformlarda görüntülendikleri değil. İOS ve UWP cihazlarda **duraklatma** ve **durdurmak** karakter içerebilir mavi 3B arka plan ve ön plan beyaz grafiksel bir görünüm. Android'de, simge yalnızca mavi olduğu durumda değil. Ancak, için 0x23F5 codepoint **Yürüt** UWP ve onu aynı görünüme iOS ve Android bile desteklenir yok.
 
 Bu nedenle, 0x23F5 codepoint kullanılamaz **Yürüt**. İyi bir alternatif aşağıdaki gibidir:
 
-- 0x25B6 (siyah sağı üçgen) veya & #x25B6; için **Yürüt**
+- 0x25B6 (siyah sağı üçgen) veya &#x25B6; için **Yürüt**
 
 3B görünümünü benzemez düz bir siyah üçgen olması dışında bu üç tüm platformlar tarafından desteklenir **duraklatma** ve **durdurmak**. Bunu yapmanın bir değişken koduyla 0x25B6 codepoint izlemektir:
 
-- 0x25B6 0xFE0F (değişken 16) tarafından izlenen veya & #x25B6; & #xFE0F; için **Yürüt**
+- 0x25B6 0xFE0F (değişken 16) tarafından izlenen veya &#x25B6; &#xFE0F; için **Yürüt**
 
 Aşağıda gösterilen biçimlendirmede kullanılan budur. İOS, verir **Yürüt** aynı 3B görünüme sembol **duraklatma** ve **durdurmak** düğmeleri, ancak değişken Android ve UWP üzerinde çalışmıyor.
 

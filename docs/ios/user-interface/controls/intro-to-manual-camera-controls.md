@@ -1,18 +1,17 @@
 ---
 title: El ile kamera denetimleri
-description: "AVFoundation Framework el ile kamera denetimleri için izin vererek harika fotoğrafları çekin kullanıcıların her zamankinden daha kolay hale getirir. Bu çerçeve kullanarak, bir uygulama kamera odak, beyaz dengesi ve Etkilenme ayarları üzerinde doğrudan denetim gerçekleşebilir. Bir uygulama, köşeli parantez içindeki Etkilenme yakalamaları otomatik olarak farklı Etkilenme ayarlarla görüntülerini yakalamak için de kullanabilirsiniz. Bu makalede, bir basit iOS 8 mobil uygulama el ile kamera denetimleri kullanarak hızlı bir bakış sürer."
-ms.topic: article
+description: AVFoundation Framework el ile kamera denetimleri için izin vererek harika fotoğrafları çekin kullanıcıların her zamankinden daha kolay hale getirir. Bu çerçeve kullanarak, bir uygulama kamera odak, beyaz dengesi ve Etkilenme ayarları üzerinde doğrudan denetim gerçekleşebilir. Bir uygulama, köşeli parantez içindeki Etkilenme yakalamaları otomatik olarak farklı Etkilenme ayarlarla görüntülerini yakalamak için de kullanabilirsiniz. Bu makalede, bir basit iOS 8 mobil uygulama el ile kamera denetimleri kullanarak hızlı bir bakış sürer.
 ms.prod: xamarin
 ms.assetid: 56340225-5F3C-4BFC-9A79-61496D7FE5B5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: f11305fcbf8a5b9bf6552fa31ecfa1c0e8e7a68f
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 8545dce1b9232e396c4c9e71ad5f20649eef2417
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="manual-camera-controls"></a>El ile kamera denetimleri
 

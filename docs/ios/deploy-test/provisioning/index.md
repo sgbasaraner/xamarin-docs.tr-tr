@@ -1,18 +1,17 @@
 ---
-title: "Kod imzalama ve sağlama"
+title: Kod imzalama ve sağlama
 description: Temelleri
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2017
-ms.openlocfilehash: 49ffcd78dddc7f64fd1fb4bbdf871d097c44c6a6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ff9d9e779f246c0cd2fde4332f6c80aae4b43d49
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="code-signing-and-provisioning"></a>Kod imzalama ve sağlama
 
@@ -20,14 +19,14 @@ ms.lasthandoff: 02/27/2018
 
 Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlamaya yöneliktir. Bu kılavuz, geliştirme sertifikalar istemek ve profilleri, uygulama hizmetleri ile çalışma ve cihaza bir uygulama dağıtmak inceleyeceksiniz.
 
-## <a name="working-with-capabilitiescapabilitiesindexmd"></a>[Özellikleri ile çalışma](capabilities/index.md)
+## <a name="working-with-capabilitiescapabilitiesindexmd"></a>[Yetenekler ile Çalışma](capabilities/index.md)
 
 Uygulama Hizmetleri IOS uygulama işlevselliğini genişletmek için kullanma
 
 Bir uygulama genelde yetenekleri ekleme sağlama ek kurulum gerektirir. Bu kılavuz, tüm özellikler için gereken kurulum açıklar.
 
 
-## <a name="working-with-entitlementsentitlementsmd"></a>[Yetkilendirmeler ile çalışma](entitlements.md)
+## <a name="working-with-entitlementsentitlementsmd"></a>[Yetkilendirmelerle Çalışma](entitlements.md)
 
 Yetkilendirmeler özel uygulama özellikleri ve onları kullanmak üzere doğru şekilde yapılandırılmış uygulamalar için güvenlik izinler ' dir. Bu kılavuz, bunları iOS uygulamanızı sağlamak için nasıl kullanılacağını açıklar.
 

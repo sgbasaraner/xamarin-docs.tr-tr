@@ -1,18 +1,17 @@
 ---
-title: "Etkinlik yaşam döngüsü"
-description: "Android uygulamaları temel yapı bloğu etkinliklerin olduğundan ve farklı durumlara sayısında bulunabilir. Etkinlik yaşam döngüsü örneklemesi ile başlar ve yok etme ile sona erer ve birçok durumları arasında içerir. Bir etkinlik durumu değiştiğinde, uygun yaşam döngüsü olay yöntemi, Yaklaşan durum değişikliği etkinliği bildiren ve bu değişikliği uyarlamak için kod yürütmesine izin veren adı verilir. Bu makalede etkinlikleri yaşam döngüsü inceler ve Sorumluluk açıklar bir etkinlik her iyi çalışan, güvenilir bir uygulamanın parçası olarak bu durum değişiklikleri sırasında vardır."
-ms.topic: article
+title: Etkinlik yaşam döngüsü
+description: Android uygulamaları temel yapı bloğu etkinliklerin olduğundan ve farklı durumlara sayısında bulunabilir. Etkinlik yaşam döngüsü örneklemesi ile başlar ve yok etme ile sona erer ve birçok durumları arasında içerir. Bir etkinlik durumu değiştiğinde, uygun yaşam döngüsü olay yöntemi, Yaklaşan durum değişikliği etkinliği bildiren ve bu değişikliği uyarlamak için kod yürütmesine izin veren adı verilir. Bu makalede etkinlikleri yaşam döngüsü inceler ve Sorumluluk açıklar bir etkinlik her iyi çalışan, güvenilir bir uygulamanın parçası olarak bu durum değişiklikleri sırasında vardır.
 ms.prod: xamarin
 ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/28/2018
-ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f35f3e59d8b669795ade3d370894e45866cea1ff
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="activity-lifecycle"></a>Etkinlik yaşam döngüsü
 

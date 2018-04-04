@@ -1,18 +1,17 @@
 ---
 title: Sorun giderme
-description: "Bu makalede, Xamarin.iOS uygulamaları iOS 9 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir."
-ms.topic: article
+description: Bu makalede, Xamarin.iOS uygulamaları iOS 9 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir.
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: ca3697b355a45e06f941a6dfd610cd19f922ca75
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1b335fc6b19d87a46059511baf866433691b1b4d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting"></a>Sorun giderme
 
@@ -150,7 +149,7 @@ Bu sorunu çözmek için aşağıdakileri yapın:
 3. Altında **AYGITLARI** yan paneli, aygıt, sağ tıklatın ve seçin seçin **sağlama profilleri göster...** : 
 
     [![](troubleshooting-images/untrusted03.png "SShow sağlama profilleri")](troubleshooting-images/untrusted03.png#lightbox)
-4. Her sağlama profilinde şu anda tıklatın ve aygıt seçin  **-**  düğmesi silmek için: 
+4. Her sağlama profilinde şu anda tıklatın ve aygıt seçin **-** düğmesi silmek için: 
 
     [![](troubleshooting-images/untrusted04.png "Bir sağlama profili silme")](troubleshooting-images/untrusted04.png#lightbox)
 5. Gelen **Xcode** menüsünde, select **tercihleri...**  ve **hesapları**: 

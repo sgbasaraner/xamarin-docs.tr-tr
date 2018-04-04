@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.Forms giriş"
-description: "Xamarin.Forms bir platformlar arası geliştiricilerin kolayca Android, iOS, Windows ve Windows Phone arasında paylaşılan kullanıcı arabirimleri oluşturmanıza olanak tanır UI Araç Seti soyutlama yerel olarak yedeklenen ' dir. Kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir. Bu makale Xamarin.Forms ve bu uygulamalarla yazmaya başlamak nasıl bir giriş sağlar."
-ms.topic: article
+title: Xamarin.Forms giriş
+description: Xamarin.Forms bir platformlar arası geliştiricilerin kolayca Android, iOS, Windows ve Windows Phone arasında paylaşılan kullanıcı arabirimleri oluşturmanıza olanak tanır UI Araç Seti soyutlama yerel olarak yedeklenen ' dir. Kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir. Bu makale Xamarin.Forms ve bu uygulamalarla yazmaya başlamak nasıl bir giriş sağlar.
 ms.prod: xamarin
 ms.assetid: f619595f-3ee7-439b-a1bc-d13e5106e6e9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: be4b0c907774c33dfcd1818da167acb2dc3b04dd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6428f1658245ec5ecf47e474bc5ffd5d49663bf2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms giriş
 

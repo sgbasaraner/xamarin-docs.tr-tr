@@ -1,18 +1,17 @@
 ---
-title: "İOS anında iletme bildirimleri"
-description: "Bu bölümde, iOS anında iletme bildirimlerini ele alınacaktır. Apple anında iletme bildirimleri ağ geçidi hizmeti ve iOS uygulamalarını yayımlama bildirimleri oynadığı rolü tanıtır. Güvenlik sertifikaları anında iletme bildirimlerini etkinleştirin ve tartışmak için gerekli oluşturma anlatılmıştır. Son olarak bu bölümde, uygulama sunucuları istemci mobil cihazları izlemek için gerçekleştirmeniz gerekir temizlik görevlerden bazılarını ele alınacaktır."
-ms.topic: article
+title: İOS anında iletme bildirimleri
+description: Bu bölümde, iOS anında iletme bildirimlerini ele alınacaktır. Apple anında iletme bildirimleri ağ geçidi hizmeti ve iOS uygulamalarını yayımlama bildirimleri oynadığı rolü tanıtır. Güvenlik sertifikaları anında iletme bildirimlerini etkinleştirin ve tartışmak için gerekli oluşturma anlatılmıştır. Son olarak bu bölümde, uygulama sunucuları istemci mobil cihazları izlemek için gerçekleştirmeniz gerekir temizlik görevlerden bazılarını ele alınacaktır.
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="push-notifications-in-ios"></a>İOS anında iletme bildirimleri
 
@@ -51,7 +50,7 @@ Her biri önceki bölümde belirtildiği ortamları, kendi sertifika gerektirir.
 
     [![](remote-notifications-in-ios-images/image6new.png "Uygulama kimlikleri bölümüne gidin ve yeni bir uygulama kimliği oluşturma")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  Tıkladığınızda  **+**  düğmesi görebilirsiniz için uygulama kimliği, açıklama ve bir paket tanımlayıcısı girmek sonraki ekran görüntüsünde gösterildiği gibi:
+3.  Tıkladığınızda **+** düğmesi görebilirsiniz için uygulama kimliği, açıklama ve bir paket tanımlayıcısı girmek sonraki ekran görüntüsünde gösterildiği gibi:
 
     [![](remote-notifications-in-ios-images/image7new.png "Uygulama kimliği için paket tanımlayıcısı ve açıklama girin")](remote-notifications-in-ios-images/image7new.png#lightbox)
 

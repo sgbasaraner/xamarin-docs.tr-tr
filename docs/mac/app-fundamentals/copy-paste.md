@@ -1,18 +1,17 @@
 ---
-title: "Kopyala ve Yapıştır"
-description: "Bu makalede kopyalama sağlamak ve bir Xamarin.Mac uygulamasında yapıştırmak için çalışma alanı'nı çalışmak kapsar. Nasıl çalışacağınız gösterilmektedir standart veri türleriyle birden çok uygulama ve belirli bir uygulamanın içinden özel veri desteklemek nasıl arasında paylaşılabilir."
-ms.topic: article
+title: Kopyala ve Yapıştır
+description: Bu makalede kopyalama sağlamak ve bir Xamarin.Mac uygulamasında yapıştırmak için çalışma alanı'nı çalışmak kapsar. Nasıl çalışacağınız gösterilmektedir standart veri türleriyle birden çok uygulama ve belirli bir uygulamanın içinden özel veri desteklemek nasıl arasında paylaşılabilir.
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: ba937a6eae7f0f74bcf044f1248d49a421e82de5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cf81666403f687ce997e20f6f5f097dc9fcf1421
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="copy-and-paste"></a>Kopyala ve Yapıştır
 

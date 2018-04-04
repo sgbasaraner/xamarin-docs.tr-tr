@@ -1,18 +1,17 @@
 ---
-title: "iOS veri erişimi"
-description: "Çoğu uygulama verileri cihaz üzerinde yerel olarak kaydetmek için bazı gereksinim vardır. Veri miktarını trivially küçük olmadığı sürece, bu genellikle bir veritabanı ve veri katmanı veritabanı erişimi yönetmek üzere uygulamada gerektirir. iOS \"yerleşik\" SQLite veritabanı altyapısı vardır ve depolamak ve veri almak için erişim Xamarin'ın platform tarafından basitleştirilmiştir. Bu belge, bir SQLite veritabanına erişmek gösterilmiştir."
-ms.topic: article
+title: iOS veri erişimi
+description: Çoğu uygulama verileri cihaz üzerinde yerel olarak kaydetmek için bazı gereksinim vardır. Veri miktarını trivially küçük olmadığı sürece, bu genellikle bir veritabanı ve veri katmanı veritabanı erişimi yönetmek üzere uygulamada gerektirir. iOS "yerleşik" SQLite veritabanı altyapısı vardır ve depolamak ve veri almak için erişim Xamarin'ın platform tarafından basitleştirilmiştir. Bu belge, bir SQLite veritabanına erişmek gösterilmiştir.
 ms.prod: xamarin
 ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 6dba862055cc266b2af1eaf87418fe7ebf5830c5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 47f2567d81f61568aad639330dc5133856e31936
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-data-access"></a>iOS veri erişimi
 

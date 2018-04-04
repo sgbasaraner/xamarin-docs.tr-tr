@@ -1,18 +1,17 @@
 ---
-title: "Özel bir düzen oluşturma"
-description: "Xamarin.Forms – StackLayout, AbsoluteLayout, RelativeLayout ve kılavuz, dört düzeni sınıfları tanımlar ve her alt farklı bir şekilde düzenler. Ancak, bazen onu Xamarin.Forms tarafından sağlanmayan bir düzen kullanarak sayfa içeriği düzenlemek gereklidir. Bu makalede, nasıl özel yerleşim sınıfı yazılacağını açıklar ve alt öğelerini yatay sayfa boyunca düzenler ve ek satırlar sonraki alt öğelerini görüntüsünü sarmalar bir yönlendirme duyarlı WrapLayout sınıfını gösterir."
-ms.topic: article
+title: Özel bir düzen oluşturma
+description: Xamarin.Forms – StackLayout, AbsoluteLayout, RelativeLayout ve kılavuz, dört düzeni sınıfları tanımlar ve her alt farklı bir şekilde düzenler. Ancak, bazen onu Xamarin.Forms tarafından sağlanmayan bir düzen kullanarak sayfa içeriği düzenlemek gereklidir. Bu makalede, nasıl özel yerleşim sınıfı yazılacağını açıklar ve alt öğelerini yatay sayfa boyunca düzenler ve ek satırlar sonraki alt öğelerini görüntüsünü sarmalar bir yönlendirme duyarlı WrapLayout sınıfını gösterir.
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 4c7bf5f2c867faef7d9baf8d511393dbe2d129a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0728ac110fcf86f44a5ccb5ddd80b00af1b8d62
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-custom-layout"></a>Özel bir düzen oluşturma
 

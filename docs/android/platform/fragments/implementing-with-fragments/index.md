@@ -1,18 +1,17 @@
 ---
-title: "Parçaları ile uygulama"
-description: "Android 3.0 parçaları sunmuştur. Parçalar, farklı boyutlardaki ekranlarda çalıştırılabilecek uygulama yazma sürecinin karmaşıklığına yanıt vermek için kullanılan, kendi içindeki modüler bileşenlerdir. Bu makalede parçaları Xamarin.Android uygulamaları geliştirmek için nasıl kullanılacağı ve önceden Android 3.0 cihazlarda parçaları desteklemek nasıl anlatılmaktadır."
-ms.topic: article
+title: Parçaları ile uygulama
+description: Android 3.0 parçaları sunmuştur. Parçalar, farklı boyutlardaki ekranlarda çalıştırılabilecek uygulama yazma sürecinin karmaşıklığına yanıt vermek için kullanılan, kendi içindeki modüler bileşenlerdir. Bu makalede parçaları Xamarin.Android uygulamaları geliştirmek için nasıl kullanılacağı ve önceden Android 3.0 cihazlarda parçaları desteklemek nasıl anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 2ed67eac51f6edcfda16caf73e4667c49124082c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 81f1f992de450ee62c4c1d2e80da858b024be594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-with-fragments"></a>Parçaları ile uygulama
 

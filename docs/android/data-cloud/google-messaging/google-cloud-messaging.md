@@ -1,18 +1,17 @@
 ---
 title: Google Cloud Messaging
-description: "Google Cloud Messaging (GCM), mobil uygulamaları ve sunucu uygulamaları Mesajlaşma kolaylaştıran bir hizmettir. Bu makalede GCM nasıl çalıştığını genel bir bakış sağlar ve uygulamanızı GCM kullanabilmeniz için Google hizmetlerin nasıl yapılandırılacağı açıklanmaktadır."
-ms.topic: article
+description: Google Cloud Messaging (GCM), mobil uygulamaları ve sunucu uygulamaları Mesajlaşma kolaylaştıran bir hizmettir. Bu makalede GCM nasıl çalıştığını genel bir bakış sağlar ve uygulamanızı GCM kullanabilmeniz için Google hizmetlerin nasıl yapılandırılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: f44899ecf5ba2d904333b71226cdd6c7dcea8db0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 73ff82f3bf36aa54422c1693c6bf07731480b7f7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 

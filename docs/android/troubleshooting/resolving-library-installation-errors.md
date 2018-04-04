@@ -1,18 +1,18 @@
 ---
-title: "Kitaplık yükleme hatalarını çözme"
-description: "Bazı durumlarda, Android destek kitaplıkları yüklenirken hatalar alabilirsiniz. Bu kılavuz, bazı yaygın hatalar için geçici çözümler sağlar."
-ms.topic: article
+title: Kitaplık yükleme hatalarını çözme
+description: Bazı durumlarda, Android destek kitaplıkları yüklenirken hatalar alabilirsiniz. Bu kılavuz, bazı yaygın hatalar için geçici çözümler sağlar.
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 2AE68ACE-8496-445D-BF17-5E4097D4AE35
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 66555139cfaab2074e7461be737f997a9bb9c7a7
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 6f280a90994ff40ebd8a07d2cab49ddc2b3d6ca1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="resolving-library-installation-errors"></a>Kitaplık yükleme hatalarını çözme
 
@@ -104,7 +104,7 @@ Yukarıdaki otomatik kurtarma adımları kullanarak çalışmış ve hala derlem
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    Varsa **m2repository** arşiv gösterilmiyor bu tabloda, oluşturabileceğiniz indirme URL'si eklenerek  **https://dl-ssl.google.com/android/repository/**  adını **m2repository** karşıdan yüklemek için. Örneğin,  **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip** indirmek için **android\_m2repository\_r10.zip**.
+    Varsa **m2repository** arşiv gösterilmiyor bu tabloda, oluşturabileceğiniz indirme URL'si eklenerek **https://dl-ssl.google.com/android/repository/** adını **m2repository** karşıdan yüklemek için. Örneğin,  **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip** indirmek için **android\_m2repository\_r10.zip**.
 
 2.  Yukarıdaki tabloda gösterilen indirme URL'si karşılık gelen MD5 karması için dosyayı yeniden adlandırın. Örneğin, indirdiğiniz **android\_m2repository\_r25.zip**, kendisine yeniden adlandırma **0B3F1796C97C707339FB13AE8507AF50.zip**. İndirilen dosya indirme URL'si için MD5 karma tablosunda görünmüyorsa, kullanabileceğiniz bir [çevrimiçi MD5 Oluşturucu](http://www.webconfs.com/online-md5-generator.php) URL bir MD5 karma değeri dizeye dönüştürülemiyor. 
 

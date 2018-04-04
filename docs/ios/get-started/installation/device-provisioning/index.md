@@ -1,18 +1,17 @@
 ---
-title: "Cihaz sağlama"
-description: "Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlamaya yöneliktir. Bu kılavuz, geliştirme sertifikalar istemek ve profilleri, uygulama hizmetleri ile çalışma ve cihaza bir uygulama dağıtmak inceleyeceksiniz."
-ms.topic: article
+title: Cihaz sağlama
+description: Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlamaya yöneliktir. Bu kılavuz, geliştirme sertifikalar istemek ve profilleri, uygulama hizmetleri ile çalışma ve cihaza bir uygulama dağıtmak inceleyeceksiniz.
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 3ff77e909c86e627a6a1ea4875d8bef7db3f8d63
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: e04ebd041c64d474fafe12c387f558e740773c98
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="device-provisioning"></a>Cihaz sağlama
 

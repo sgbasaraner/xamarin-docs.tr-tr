@@ -1,20 +1,19 @@
 ---
-title: "Dağıtım ve test etme"
-description: "Bu bölüm, bir uygulamayı test, performansı iyileştirmek, sürüm için hazırlama, bir sertifika ile oturum açın ve bir uygulama Mağazası'na yayımlamak açıklanmaktadır kılavuzları içerir."
-ms.topic: article
+title: Dağıtım ve Test Etme
+description: Bu bölüm, bir uygulamayı test, performansı iyileştirmek, sürüm için hazırlama, bir sertifika ile oturum açın ve bir uygulama Mağazası'na yayımlamak açıklanmaktadır kılavuzları içerir.
 ms.prod: xamarin
 ms.assetid: 568C0B85-EFF3-AF6F-5605-95055193D367
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 5ddc2a258ad09de2cdd8214dceb533441812ae54
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d7453af3721cbdb6b93d884322cee1cd5115c317
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="deployment-and-testing"></a>Dağıtım ve test etme
+# <a name="deployment-and-testing"></a>Dağıtım ve Test Etme
 
 Bu bölüm, bir uygulamayı test, performansı iyileştirmek, sürüm için hazırlama, bir sertifika ile oturum açın ve bir uygulama Mağazası'na yayımlamak açıklanmaktadır kılavuzları içerir.
 
@@ -23,11 +22,11 @@ Bu bölüm, bir uygulamayı test, performansı iyileştirmek, sürüm için haz�
 
 Bu makalede, bir xamarin Android uygulama paketi ve hata ayıklama sırasında verimli paket dağıtımı için kullanılan ve geliştirme aşamalarını yayın ilişkili stratejiler bağlı bölümlerini inceler.
 
-##  <a name="building-appsbuilding-appsindexmd"></a>[Yapı uygulamalar](building-apps/index.md)
+##  <a name="building-appsbuilding-appsindexmd"></a>[Uygulamalar Oluşturma](building-apps/index.md)
 
 Bu bölümde, oluşturma işlemi nasıl çalıştığını ve nasıl ABI özgü APKs geliştireceğinizi açıklar açıklanmaktadır.
 
-##  <a name="command-line-emulatorcommand-line-emulatormd"></a>[Komut satırı öykünücüsü](command-line-emulator.md)
+##  <a name="command-line-emulatorcommand-line-emulatormd"></a>[Komut Satırı Öykünücüsü](command-line-emulator.md)
 
 Bu makalede, komut satırı aracılığıyla öykünücü başlatma kısaca ele alınır.
 

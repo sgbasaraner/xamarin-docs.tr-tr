@@ -1,18 +1,17 @@
 ---
-title: "Çok çekirdekli aygıtları & Xamarin.Android"
-description: "Android üzerinde birkaç farklı bilgisayar mimarileri çalıştırabilirsiniz. Bu belge, bir Xamarin.Android uygulaması için işe farklı CPU mimari açıklanmaktadır. Bu belge nasıl Android uygulamaları da anlatılmıştır farklı CPU mimariyi desteklemek için hazırlanmıştır. Uygulama ikili arabirimi (ABI) sunulan ve bir Xamarin.Android uygulaması'nda kullanmak için hangi ABIs ilgili yönergeler sağlanacaktır."
-ms.topic: article
+title: Çok çekirdekli aygıtları & Xamarin.Android
+description: Android üzerinde birkaç farklı bilgisayar mimarileri çalıştırabilirsiniz. Bu belge, bir Xamarin.Android uygulaması için işe farklı CPU mimari açıklanmaktadır. Bu belge nasıl Android uygulamaları da anlatılmıştır farklı CPU mimariyi desteklemek için hazırlanmıştır. Uygulama ikili arabirimi (ABI) sunulan ve bir Xamarin.Android uygulaması'nda kullanmak için hangi ABIs ilgili yönergeler sağlanacaktır.
 ms.prod: xamarin
 ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: ac525805fce99f44ea1efb132fb99f6d3a01f2f3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0288ba6aa8a3c9eb89208161f60ba831723444c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Çok çekirdekli aygıtları & Xamarin.Android
 

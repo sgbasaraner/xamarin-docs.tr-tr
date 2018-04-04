@@ -1,18 +1,17 @@
 ---
 title: ViewPager
-description: "ViewPager jestsel Gezinti uygulamanıza olanak sağlayan bir düzen yöneticisidir. Sol ve sağ adıma veri sayfaları aracılığıyla jestsel Gezinti manyetik kullanıcıya sağlar. Bu kılavuz, jestsel Gezinti ViewPager, sahip olan ve olmayan parçaları uygulamak açıklanmaktadır. Ayrıca, nasıl PagerTitleStrip ve PagerTabStrip kullanarak sayfa göstergeleri ekleneceğini açıklar."
-ms.topic: article
+description: ViewPager jestsel Gezinti uygulamanıza olanak sağlayan bir düzen yöneticisidir. Sol ve sağ adıma veri sayfaları aracılığıyla jestsel Gezinti manyetik kullanıcıya sağlar. Bu kılavuz, jestsel Gezinti ViewPager, sahip olan ve olmayan parçaları uygulamak açıklanmaktadır. Ayrıca, nasıl PagerTitleStrip ve PagerTabStrip kullanarak sayfa göstergeleri ekleneceğini açıklar.
 ms.prod: xamarin
 ms.assetid: D42896C0-DE7C-4818-B171-CB2D5E5DD46A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 5e2f93eea970a15df03b00cc962ca7482624973d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bd687175048bb6a19dde21e66619667511a76796
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="viewpager"></a>ViewPager
 

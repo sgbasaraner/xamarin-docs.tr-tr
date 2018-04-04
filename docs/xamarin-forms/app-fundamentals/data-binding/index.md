@@ -1,18 +1,17 @@
 ---
-title: "Veri Bağlama"
-description: "Veri bağlama bir özelliğindeki değişiklikler otomatik olarak diğer özelliğinde yansıtılır bir iki nesnelerin özelliklerini bağlama, tekniğidir. Veri bağlama modelini görünümü ViewModel (MVVM) uygulama mimarisi ayrılmaz bir parçasıdır."
-ms.topic: article
+title: Veri Bağlama
+description: Veri bağlama bir özelliğindeki değişiklikler otomatik olarak diğer özelliğinde yansıtılır bir iki nesnelerin özelliklerini bağlama, tekniğidir. Veri bağlama modelini görünümü ViewModel (MVVM) uygulama mimarisi ayrılmaz bir parçasıdır.
 ms.prod: xamarin
 ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: eefff0ea23135c09d86284c0fddba9e80f50004a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee8481696b0ef85aec949c6def7767e57eb99e17
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="data-binding"></a>Veri Bağlama
 
@@ -37,27 +36,27 @@ Tanıtım programlarda olanlar gibi [ **DataBindingDemos** ](https://developer.x
 
 Veri bağlamaları makaleleri aşağıdaki serisinde incelediniz:
 
-## <a name="basic-bindingsbasic-bindingsmd"></a>[Temel bağlama](basic-bindings.md)
+## <a name="basic-bindingsbasic-bindingsmd"></a>[Temel Bağlamalar](basic-bindings.md)
 
 Veri bağlama hedef ve kaynak arasındaki farkı öğrenin ve kod ve XAML basit veri bağlama bakın.
 
-## <a name="binding-modebinding-modemd"></a>[Bağlama modu](binding-mode.md)
+## <a name="binding-modebinding-modemd"></a>[Bağlama Modu](binding-mode.md)
 
 Bağlama modunu iki nesne arasındaki veri akışını nasıl kontrol edebilir bulur.
 
-## <a name="string-formattingstring-formattingmd"></a>[Biçimlendirme dizesi](string-formatting.md)
+## <a name="string-formattingstring-formattingmd"></a>[Dize Biçimlendirmesi](string-formatting.md)
 
 Veri bağlama biçimlendirmek ve dize olarak nesneleri görüntülemek için kullanın.
 
-## <a name="binding-pathbinding-pathmd"></a>[Bağlama yolu](binding-path.md)
+## <a name="binding-pathbinding-pathmd"></a>[Bağlama Yolu](binding-path.md)
 
 İçine inebilirsiniz `Path` alt özellikleri ve koleksiyon üyeleri erişmek için veri bağlama özelliği.
 
-## <a name="binding-value-convertersconvertersmd"></a>[Bağlama değer dönüştürücüler](converters.md)
+## <a name="binding-value-convertersconvertersmd"></a>[Bağlama Değeri Dönüştürücüleri](converters.md)
 
 Veri bağlama içindeki değerleri değiştirmek için bağlama değer dönüştürücüler kullanın.
 
-## <a name="the-command-interfacecommandingmd"></a>[The Command Interface](commanding.md)
+## <a name="the-command-interfacecommandingmd"></a>[Komut Arabirimi](commanding.md)
 
 Uygulama `Command` veri bağlamaları özelliğiyle.
 
@@ -67,4 +66,4 @@ Uygulama `Command` veri bağlamaları özelliğiyle.
 
 - [Veri bağlama gösterileri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
 - [Veri bağlama bölüm Xamarin.Forms defterinden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
-- [XAML işaretleme uzantıları](~/xamarin-forms/xaml/markup-extensions/index.md)
+- [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/markup-extensions/index.md)

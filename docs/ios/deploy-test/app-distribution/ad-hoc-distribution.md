@@ -1,18 +1,17 @@
 ---
-title: "Geçici dağıtım"
-description: "Bu belge, öncelikle kişilerin geniş bir grupla bir Xamarin.iOS uygulamaları test etmek için kullanılan geçici dağıtım teknikleri genel bir bakış sağlar."
-ms.topic: article
+title: Geçici dağıtım
+description: Bu belge, öncelikle kişilerin geniş bir grupla bir Xamarin.iOS uygulamaları test etmek için kullanılan geçici dağıtım teknikleri genel bir bakış sağlar.
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e0db9df11436cf1613ac5eacdf293245f99b8855
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 9b862a39d8fb8fe079b83b8842281fad5ec903e4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ad-hoc-distribution"></a>Geçici dağıtım
 
@@ -48,7 +47,7 @@ Sonraki bölümde dağıtım sertifikası ve sağlama dağıtım profili nasıl 
 
 1. Gözat *tanımlayıcıları & profilleri, sertifikaları* Apple Developer Member Center'da bölümü.
 2. Altında *sertifikaları*seçin **üretim**.
-3. Tıklatın  **+**  yeni bir sertifika oluşturmak için düğmeye.
+3. Tıklatın **+** yeni bir sertifika oluşturmak için düğmeye.
 4. Altında *üretim* başlığını seçin **şirket içi ve geçici**, veya **App Store ve geçici**program üyeliğinizi bağlı olarak:
 
   [![](ad-hoc-distribution-images/cert-first-small.png "Şirket içi ve Ad Hoc seçin veya uygulama depolama ve geçici")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
@@ -82,7 +81,7 @@ Olarak herhangi diğer sağlama oluşturduğunuz profil ile bir uygulama kimliğ
 
 
 1. İçinde [Apple Geliştirici Merkezi](https://developer.apple.com/account/overview.action) göz *sertifika, tanımlayıcılarını ve profiller* bölümü. Seçin **uygulama kimlikleri** altında **tanımlayıcıları**.
-2. Tıklatın  **+**  düğmesine tıklayın ve sağlayan bir **adı** hangi tanımlar ve bu Portalı'nda.
+2. Tıklatın **+** düğmesine tıklayın ve sağlayan bir **adı** hangi tanımlar ve bu Portalı'nda.
 3. Uygulama önek takım Kimliğiniz ayarlanması gerekir ve değiştirilemez. Explicit veya joker uygulama kimliği seçin ve bir paket kimliği gibi geriye doğru DNS biçimde girin:
     - **Explicit**: `com.[DomainName].[AppName]`
     - **Joker karakter**: `com.[DomainName].*`
@@ -93,7 +92,7 @@ Dağıtım profili oluşturmak için gerekli gerekli bileşenleri olduktan sonra
 
 1. Apple sağlama Portalı'na dönün ve seçin **sağlama > Dağıtım**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "seçin sağlama > Dağıtım")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
-2. Tıklatın  **+**  düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **geçici**:
+2. Tıklatın **+** düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **geçici**:
 
     [![](ad-hoc-distribution-images/distribute02.png "Bir geçici dağıtım türü oluşturma")](ad-hoc-distribution-images/distribute02.png#lightbox)
 

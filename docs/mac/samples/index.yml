@@ -1,23 +1,23 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Xamarin.Mac Örnekleri"
+title: Xamarin.Mac Örnekleri
 metadata:
-  description: "Mobil uygulama geliştiricileri için platformlar arası Xamarin.Mac örnek uygulamaları."
+  description: Mobil uygulama geliştiricileri için platformlar arası Xamarin.Mac örnek uygulamaları.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/27/2018
-  ms.topic: article
-  ms.openlocfilehash: b367917c1605ccb6e50a55621521b56942ef8f54
-  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.topic: sample
+  ms.openlocfilehash: f29128999930e7120a84ab61c6e3bb1154084410
+  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
   ms.translationtype: HT
   ms.contentlocale: tr-TR
-  ms.lasthandoff: 02/28/2018
+  ms.lasthandoff: 04/04/2018
 abstract:
-  description: "C# ve Xamarin ile mobil uygulamalar oluşturmaya başlamanıza yardımcı olacak Xamarin.Mac örnek uygulamaları ve kod tanıtımları."
+  description: C# ve Xamarin ile mobil uygulamalar oluşturmaya başlamanıza yardımcı olacak Xamarin.Mac örnek uygulamaları ve kod tanıtımları.
   menu:
     items:
     - href: https://developer.xamarin.com/samples/mac/all/
-      text: "Tüm Xamarin.Mac Örnekleri"
+      text: Tüm Xamarin.Mac Örnekleri
 sections:
 - title: 
   items:
@@ -26,32 +26,32 @@ sections:
     className: cardsW
     items:
     - href: https://developer.xamarin.com/samples/mac/Hello_Mac/
-      html: "Mac geliştirmesine başlamak için Merhaba Dünya uygulaması."
+      html: Mac geliştirmesine başlamak için Merhaba Dünya uygulaması.
       image:
         src: images/hellomac.png
         href: https://developer.xamarin.com/samples/mac/Hello_Mac/
       title: Hello, Mac
     - href: https://developer.xamarin.com/samples/mac/MacControls/
-      html: "Mac uygulamaları için kullanıcı arabirimi denetimi örnekleri."
+      html: Mac uygulamaları için kullanıcı arabirimi denetimi örnekleri.
       image:
         src: images/controls.png
         href: https://developer.xamarin.com/samples/mac/MacControls/
       title: MacControls
     - href: https://developer.xamarin.com/samples/mac/MacImages/
-      html: "Mac uygulamaları için kullanıcı arabirimi denetimi örnekleri."
+      html: Mac uygulamaları için kullanıcı arabirimi denetimi örnekleri.
       image:
         src: images/images.png
         href: https://developer.xamarin.com/samples/mac/MacImages/
       title: MacImages
     - href: https://developer.xamarin.com/samples/mac/SourceWriter/
-      html: "Kod tamamlama ve sözdizimi vurgulama için destek sağlayan basit düzenleyici."
+      html: Kod tamamlama ve sözdizimi vurgulama için destek sağlayan basit düzenleyici.
       image:
         src: images/sourcewriter.png
         href: https://developer.xamarin.com/samples/mac/SourceWriter/
       title: SourceWriter
     - href: https://developer.xamarin.com/samples/mac/all/
-      html: "Xamarin.Mac örnek uygulamalarından ve kod tanıtımlarından oluşan tam bir set."
+      html: Xamarin.Mac örnek uygulamalarından ve kod tanıtımlarından oluşan tam bir set.
       image:
         src: ~/media/shared/sample-download.svg
         href: https://developer.xamarin.com/samples/mac/all/
-      title: "Tüm Xamarin.Mac örnekleri"
+      title: Tüm Xamarin.Mac örnekleri

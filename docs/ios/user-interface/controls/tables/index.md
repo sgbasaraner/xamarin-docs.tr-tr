@@ -1,18 +1,17 @@
 ---
-title: "Tabloları ve hücreleri ile çalışma"
-description: "Xamarin.iOS ile UITableView kullanarak verileri görüntüleme"
-ms.topic: article
+title: Tabloları ve hücreleri ile çalışma
+description: Xamarin.iOS ile UITableView kullanarak verileri görüntüleme
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/06/2016
-ms.openlocfilehash: f6abcaa3a771954785df83e80c7e46dd200e6986
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1cda3632a75c7e462e763a34fdb5b586237b670
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tables-and-cells"></a>Tabloları ve hücreleri ile çalışma
 
@@ -33,9 +32,9 @@ Bu makaleler de dahil olmak üzere sekmelerle çalışma kapsamlı bir göz atal
 
  [Tablo bölümleri &amp; işlevi](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
 
- [Bir tablo verilerle doldurma](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)
+ [Bir Tabloyu Verilerle Doldurma](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)
 
- [Bir tablonun görünümünü özelleştirme](~/ios/user-interface/controls/tables/customizing-table-appearance.md)
+ [Bir Tablonun Görünümünü Özelleştirme](~/ios/user-interface/controls/tables/customizing-table-appearance.md)
 
  [Düzenleme](~/ios/user-interface/controls/tables/editing.md)
  
@@ -43,14 +42,14 @@ Bu makaleler de dahil olmak üzere sekmelerle çalışma kapsamlı bir göz atal
 
  [Bir film şeridi tabloları oluşturma](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
  
- [Otomatik boyutlandırma satır yüksekliği](~/ios/user-interface/controls/tables/autosizing-row-height.md)
+ [Satır Yüksekliğini Otomatik Boyutlandırma](~/ios/user-interface/controls/tables/autosizing-row-height.md)
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [WorkingWithTables (örnek)](https://developer.xamarin.com/samples/monotouch/WorkingWithTables/)
 - [Film şeritleri (örnek) tablolarında](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
-- [Film şeritleri giriş](~/ios/user-interface/storyboards/index.md)
+- [Görsel Taslaklara Giriş](~/ios/user-interface/storyboards/index.md)
 - [Bir tablo görünümü tarif film şeridi](https://developer.xamarin.com/recipes/ios/general/storyboard/storyboard_a_tableview)
 - [MonoTouch.Dialog giriş](~/ios/user-interface/monotouch.dialog/index.md)
 - [Github'da TableEditing örnek](https://github.com/xamarin/monotouch-samples/tree/master/TableEditing)

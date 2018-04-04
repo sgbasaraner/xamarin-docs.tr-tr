@@ -1,18 +1,17 @@
 ---
 title: Bir rota bir harita vurgulama
-description: "Bu makalede, bir çoklu çizgi katmana bir harita Ekle açıklanmaktadır. Çoklu satır bir katmana, genellikle bir haritada bir yol göstermek veya gerekli olan herhangi bir şekli oluşturmak için kullanılan bağlantılı çizgi parçaları dizisidir."
-ms.topic: article
+description: Bu makalede, bir çoklu çizgi katmana bir harita Ekle açıklanmaktadır. Çoklu satır bir katmana, genellikle bir haritada bir yol göstermek veya gerekli olan herhangi bir şekli oluşturmak için kullanılan bağlantılı çizgi parçaları dizisidir.
 ms.prod: xamarin
 ms.assetid: FBFDC715-1654-4188-82A0-FC522548BCFF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c7becef16009596148b4de28e4e8f6892cb44fe1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f781a472a63d97c8859aff36b28e0fd4fa0c7756
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="highlighting-a-route-on-a-map"></a>Bir rota bir harita vurgulama
 
@@ -31,7 +30,7 @@ Zaman bir [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Ma
 1. [Özelleştirme](#Customizing_the_Map) özel bir işleyici eşlemesi için her platformda oluşturarak eşleme.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) başlatılmış ve kullanılmadan önce yapılandırılması gerekir. Daha fazla bilgi için bkz: [ `Maps Control` ](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) başlatılmış ve kullanılmadan önce yapılandırılması gerekir. Daha fazla bilgi için bkz. [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
 Özel oluşturucu kullanılarak bir harita özelleştirme hakkında daha fazla bilgi için bkz: [bir harita PIN özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
@@ -303,5 +302,5 @@ Bu makalede bir haritada bir yol göstermek veya gerekli olan herhangi bir şekl
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Çoklu çizgi harita Ovlerlay (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
-- [Bir harita PIN özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
+- [Bir Harita Raptiyesini Özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)

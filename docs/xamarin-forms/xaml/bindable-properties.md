@@ -1,18 +1,17 @@
 ---
-title: "Bağlanabilir özellikleri"
-description: "Xamarin.Forms içinde ortak dil çalışma zamanı (CLR) özellikleri işlevselliğini bağlanabilir özellikleri tarafından genişletilir. Bir bağlanabilirse özel türde bir özellik, özelliğin değerini Xamarin.Forms özellik sistemi tarafından nerede izlenen özelliğidir. Bu makalede bağlanabilirse özelliklerine bir giriş sağlar ve oluşturmak ve bunları kullanmak gösterilmiştir."
-ms.topic: article
+title: Bağlanabilir özellikleri
+description: Xamarin.Forms içinde ortak dil çalışma zamanı (CLR) özellikleri işlevselliğini bağlanabilir özellikleri tarafından genişletilir. Bir bağlanabilirse özel türde bir özellik, özelliğin değerini Xamarin.Forms özellik sistemi tarafından nerede izlenen özelliğidir. Bu makalede bağlanabilirse özelliklerine bir giriş sağlar ve oluşturmak ve bunları kullanmak gösterilmiştir.
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: ab8c4cfd92a048efb87f7508e53fc024a9c46405
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 7e1d3c82036ef703014ae548a6719937e89d22f4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="bindable-properties"></a>Bağlanabilir özellikleri
 

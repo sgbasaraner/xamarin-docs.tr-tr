@@ -1,18 +1,17 @@
 ---
-title: "Bir DataTemplate oluşturma"
-description: "Veri şablonları ResourceDictionary veya bir özel tür veya uygun Xamarin.Forms hücre türü satır içi de oluşturulabilir. Bu makalede her teknik araştırır."
-ms.topic: article
+title: Bir DataTemplate oluşturma
+description: Veri şablonları ResourceDictionary veya bir özel tür veya uygun Xamarin.Forms hücre türü satır içi de oluşturulabilir. Bu makalede her teknik araştırır.
 ms.prod: xamarin
 ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 5721aee95e39b56e9732129774a03f08e0db6cc0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cd4266fb8e7d68a9f93bd169ca70c6a0f516a357
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-datatemplate"></a>Bir DataTemplate oluşturma
 
@@ -290,6 +289,6 @@ Bu makalede veri şablonlarının, satır içi, özel bir tür veya içinde nas�
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Hücre görünümü](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
+- [Hücre Görünümü](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
 - [Veri şablonları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
 - [DataTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)

@@ -1,20 +1,19 @@
 ---
-title: "Platform özellikleri"
-description: "Bu bölümdeki belgeler için Android özel özellikleri kapsar. Burada parçaları kullanarak, maps ile çalışma ve içerik sağlayıcılarını verilerle Kapsüllenen gibi konular bulabilirsiniz."
-ms.topic: article
+title: Platform Özellikleri
+description: Bu bölümdeki belgeler için Android özel özellikleri kapsar. Burada parçaları kullanarak, maps ile çalışma ve içerik sağlayıcılarını verilerle Kapsüllenen gibi konular bulabilirsiniz.
 ms.prod: xamarin
 ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 2cc8121664afa5130efd2f138a8ea8567948bea5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 69a70fe399bc95a9d8b24cc839382f2f3bee553e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="platform-features"></a>Platform özellikleri
+# <a name="platform-features"></a>Platform Özellikleri
 
 _Bu bölümdeki belgeler için Android özel özellikleri kapsar. Burada parçaları kullanarak, maps ile çalışma ve içerik sağlayıcılarını verilerle Kapsüllenen gibi konular bulabilirsiniz._
 
@@ -22,18 +21,18 @@ _Bu bölümdeki belgeler için Android özel özellikleri kapsar. Burada parçal
 
 Android ışını uygulamaların yakınında olduğunda NFC üzerinden bilgi paylaşmanızı sağlayan Android 4'teki yeni bir yakın alan iletişimi (NFC) teknolojisidir.
 
-## <a name="fingerprint-authenticationandroidplatformfingerprint-authenticationindexmd"></a>[Parmak izi kimlik doğrulaması](~/android/platform/fingerprint-authentication/index.md)
+## <a name="fingerprint-authenticationandroidplatformfingerprint-authenticationindexmd"></a>[Parmak İzi Kimlik Doğrulaması](~/android/platform/fingerprint-authentication/index.md)
 
 Bu bölüm Android 6. 0 ', bir Xamarin.Android uygulaması ilk sunulan parmak izi kimlik doğrulaması kullanacak şekilde nasıl anlatır.
 
 
-## <a name="firebase-job-dispatcherandroidplatformfirebase-job-dispatchermd"></a>[Firebase iş dağıtıcı](~/android/platform/firebase-job-dispatcher.md)
+## <a name="firebase-job-dispatcherandroidplatformfirebase-job-dispatchermd"></a>[Firebase İş Dağıtıcı](~/android/platform/firebase-job-dispatcher.md)
 
 Bu kılavuz Firebase iş dağıtıcı ve onu bir Xamarin.Android uygulaması içinde çalışan arka plan işleri kolaylaştırmak için nasıl kullanılacağını açıklar.
 
 
 
-##  <a name="fragmentsandroidplatformfragmentsindexmd"></a>[Parçaları](~/android/platform/fragments/index.md)
+##  <a name="fragmentsandroidplatformfragmentsindexmd"></a>[Parçalar](~/android/platform/fragments/index.md)
 
 Android 3.0 parçaları, daha esnek tasarımları telefonlar ve tabletler bulunan çok sayıda farklı ekran boyutlarına desteklemek nasıl gösteren sunmuştur. Bu makalede parçaları Xamarin.Android uygulamaları geliştirmek için nasıl kullanılacağı ve aynı zamanda önceden Android 3.0 (API düzeyi 11) cihazlarda parçaları desteklemek nasıl ele alınacaktır. 
 
@@ -78,13 +77,13 @@ Android 4.4 (KitKat) kullanıcıların ve geliştiricilerin özelliklerine cornu
 
 
 
-##  <a name="android-41-jelly-beanandroidplatformjelly-beanmd"></a>[Android 4.1 Jelly Çekirdeklere](~/android/platform/jelly-bean.md)
+##  <a name="android-41-jelly-beanandroidplatformjelly-beanmd"></a>[Android 4.1 Jelly Bean](~/android/platform/jelly-bean.md)
 
 Bu belgede Android 4.1 sunulan geliştiriciler için yeni özellikler üst düzey bir genel bakış sağlar. Bu özellikler şunlardır: Gelişmiş bildirimleri, büyük dosyalar, multimedya, eşler arası ağ bulma, animasyonları, yeni izinler güncelleştirmeleri paylaşmak için Android ışını güncelleştirmeler. 
 
 
 
-##  <a name="android-40-ice-cream-sandwichandroidplatformice-cream-sandwichmd"></a>[Android 4.0 dondurma Sandwich](~/android/platform/ice-cream-sandwich.md)
+##  <a name="android-40-ice-cream-sandwichandroidplatformice-cream-sandwichmd"></a>[Android 4.0 Ice Cream Sandwich](~/android/platform/ice-cream-sandwich.md)
 
 Bu makalede birkaç uygulama geliştiricileri için kullanılabilen yeni özellikleri açıklar *Android 4 API - dondurma Sandwich*. Birkaç yeni kullanıcı arabirimi teknolojilerini kapsar ve çeşitli uygulamalar ve cihazlar arasında veri paylaşımı için Android 4 sunan yeni özellikler inceler. 
 
@@ -100,7 +99,7 @@ Bir ContentProvider bir veri deposu yalıtır ve erişmek için bir API sağlar.
 
 
 
-##  <a name="maps-and-locationandroidplatformmaps-and-locationindexmd"></a>[Harita ve konum](~/android/platform/maps-and-location/index.md)
+##  <a name="maps-and-locationandroidplatformmaps-and-locationindexmd"></a>[Haritalar ve Konum](~/android/platform/maps-and-location/index.md)
 
 Bu bölümde eşlemeleri ve konumu ile Xamarin.Android nasıl kullanılacağı açıklanmaktadır. Kullanarak yerleşik eşlemeleri uygulama yararlanarak her şeyi kapsayan [Google eşlemeleri Android API v2](https://developers.google.com/maps/documentation/android/) doğrudan. Ayrıca, tek bir API konumu düzeltmeleri, Wi-Fi konumu ve GPS elde etmek uygulama izin vermek için cep telefonu Üçlü kullanın konum Hizmetleri ile çalışmak için nasıl kullanılacağını açıklar. 
 
@@ -111,11 +110,11 @@ Bu bölümde eşlemeleri ve konumu ile Xamarin.Android nasıl kullanılacağı a
 Bu bölümde, konuşma ve konuşma Android metni metin tesis kullanma açıklanmaktadır. Aynı zamanda dil paketlerini ve aygıta konuşulan metin yorumu yüklenmesini kapsar. 
 
 
-##  <a name="binding-a-java-librarybinding-java-libraryindexmd"></a>[Java kitaplığı bağlama](binding-java-library/index.md)
+##  <a name="binding-a-java-librarybinding-java-libraryindexmd"></a>[Java Kitaplığını Bağlama](binding-java-library/index.md)
 
 Bu kılavuz, Java kitaplıkları bağlamaları kitaplığı oluşturarak Xamarin.Android uygulamaları dahil açıklanmaktadır.
 
-##  <a name="java-integrationjava-integrationindexmd"></a>[Java tümleştirme](java-integration/index.md)
+##  <a name="java-integrationjava-integrationindexmd"></a>[Java Tümleştirmesi](java-integration/index.md)
 
 Bu makalede, geliştiricilerin Xamarin.Android uygulamaları varolan Java bileşenleri yeniden yolu genel bir bakış sağlar.
 

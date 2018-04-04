@@ -1,18 +1,17 @@
 ---
-title: "Sertifikalar ve tanımlayıcıları"
-description: "Bu kılavuz gerekli sertifikaları ve Xamarin.Mac uygulama yayımlamak için gereken tanımlayıcıları oluşturmada size yol gösterir."
-ms.topic: article
+title: Sertifikalar ve tanımlayıcıları
+description: Bu kılavuz gerekli sertifikaları ve Xamarin.Mac uygulama yayımlamak için gereken tanımlayıcıları oluşturmada size yol gösterir.
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a1065fb91a23827c4876654470cda5022aa1d3b8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d94819be2c014aec5edfae19959ce949ee8dcd4b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="certificates-and-identifiers"></a>Sertifikalar ve tanımlayıcıları
 
@@ -32,7 +31,7 @@ Ardından, tıklayın **sertifikaları bağlantısına** altında **Mac uygulama
 
 [![Sertifikaları bağlantısını seçerek](certificates-identifiers-images/devcenter03.png "sertifikaları bağlantısına seçme")](certificates-identifiers-images/devcenter03-large.png#lightbox)
 
-Tıklayın **tüm** 'ı tıklatın ve bağlama  **+**  düğmesi:
+Tıklayın **tüm** 'ı tıklatın ve bağlama **+** düğmesi:
 
 [![Tümünü seçme ve yeni bir öğe ekleme](certificates-identifiers-images/certif01.png "tüm seçerek ve yeni bir öğe ekleme")](certificates-identifiers-images/certif01-large.png#lightbox)
 
@@ -77,7 +76,7 @@ Buradan Geliştirici bunlar kullanarak veritabanlarını yapılandırabilirsiniz
 
 Geliştirici, test etmek için bir sağlama profili oluşturmak için Mac bilgisayarlarını kayıtlı olması gerekir. Bunlar en fazla Mac uygulamalarını test etme için 100 bilgisayarları kaydedebilirsiniz.
 
-Mac Geliştirici Merkezi seçin **tüm** gelen **aygıtları** 'ye tıklayın  **+**  düğmesi:
+Mac Geliştirici Merkezi seçin **tüm** gelen **aygıtları** 'ye tıklayın **+** düğmesi:
 
 [![Yeni bilgisayar ekleme](certificates-identifiers-images/devcenter10.png "yeni bilgisayar ekleme")](certificates-identifiers-images/devcenter10-large.png#lightbox)
 
@@ -175,7 +174,7 @@ Xamarin.Mac uygulama (sürüm Apple App Store aracılığıyla değil) otomatik 
 
 Aşağıdakileri yapın:
 
-1. Gelen **sertifikaları** bölümünde, Başlat'ı tıklatın tarafından  **+**  düğmesine ve ardından **Geliştirici kimliği** radyo düğmesi: 
+1. Gelen **sertifikaları** bölümünde, Başlat'ı tıklatın tarafından **+** düğmesine ve ardından **Geliştirici kimliği** radyo düğmesi: 
 
     [![Bir geliştirici kimliği ekleme](certificates-identifiers-images/certif07.png "bir geliştirici kimliği ekleme")](certificates-identifiers-images/certif07-large.png#lightbox)
 2. Tıklatın **devam** düğmesine tıklayın ve kimlik oluşturmak için geliştirici türünü seçin: 

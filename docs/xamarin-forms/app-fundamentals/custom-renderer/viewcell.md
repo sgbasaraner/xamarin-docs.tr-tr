@@ -1,18 +1,17 @@
 ---
-title: "Bir ViewCell özelleştirme"
-description: "Xamarin.Forms ViewCell ListView ya da bir geliştirici tarafından tanımlanan görünüm içeren tablo görünümü eklenebilir bir hücre olduğunda. Bu makalede, bir Xamarin.Forms ListView denetimi içinde barındırılan bir ViewCell için özel Oluşturucu Oluşturma gösterilir. Bu, engeller Xamarin.Forms düzeni hesaplamalar ListView kaydırma sırasında sürekli adlı durdurur."
-ms.topic: article
+title: Bir ViewCell özelleştirme
+description: Xamarin.Forms ViewCell ListView ya da bir geliştirici tarafından tanımlanan görünüm içeren tablo görünümü eklenebilir bir hücre olduğunda. Bu makalede, bir Xamarin.Forms ListView denetimi içinde barındırılan bir ViewCell için özel Oluşturucu Oluşturma gösterilir. Bu, engeller Xamarin.Forms düzeni hesaplamalar ListView kaydırma sırasında sürekli adlı durdurur.
 ms.prod: xamarin
 ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 9e980dd428ec0efab8578a25f9191dbc71bbaf6c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e5f4f2d4c4025cce21026cc611af650616e69e2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-viewcell"></a>Bir ViewCell özelleştirme
 

@@ -1,18 +1,17 @@
 ---
-title: "Görüntüler"
-description: "Bu makalede, görüntüler ve Xamarin.Mac uygulama simgeleri ile çalışma yer almaktadır. Oluşturma ve uygulamanızın simgesi oluşturmak için gereken ve C# kodu ve Xcode'nın arabirimi Oluşturucu'da görüntü kullanarak görüntüleri koruma açıklar."
-ms.topic: article
+title: Görüntüler
+description: Bu makalede, görüntüler ve Xamarin.Mac uygulama simgeleri ile çalışma yer almaktadır. Oluşturma ve uygulamanızın simgesi oluşturmak için gereken ve C# kodu ve Xcode'nın arabirimi Oluşturucu'da görüntü kullanarak görüntüleri koruma açıklar.
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dc33dc78c09c0b5b7cb7533afdd2f95b8ebd9c4e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="images"></a>Görüntüler
 
@@ -46,7 +45,7 @@ Görüntüyü kullanmak için bir Xamarin.Mac uygulamasında eklerken, çeşitli
 - **[Kullanım dışı] ana proje ağacı** -doğrudan projeleri ağacına görüntülerini eklenebilir. Kod ana proje ağacından depolanan görüntüleri çağrılırken hiçbir klasör konumu belirtildi. Örneğin: `NSImage image = NSImage.ImageNamed("tags.png");`. 
 - **[Kullanım dışı] Kaynaklar klasörünü** -özel **kaynakları** klasördür kullanıcının uygulamanın parçası olacak herhangi bir dosyayı paketini için simge, başlatma ekranı veya genel gibi görüntüleri (veya başka görüntü veya dosya Geliştirici Eklenecek istediği). Depolanan görüntüleri çağrılırken **kaynakları** kod klasöründen, görüntüleri gibi yalnızca ana proje ağacında depolanan, hiçbir klasör konumu belirtilmiş. Örneğin: `NSImage.ImageNamed("tags.png")`.
 - **Özel klasör veya alt klasör [kullanım dışı]** -Geliştirici projeleri kaynak ağacına özel bir klasör ekleyin ve vardır görüntüleri depolamak. Dosyanın nereye eklenir konumu daha fazla proje düzenlenmesine yardımcı olmak için bir alt klasöre iç içe. Örneğin, geliştirici eklediyseniz bir `Card` proje ve bir alt klasörü klasörüne `Hearts` bu klasöre sonra görüntüyü depolamak **Jack.png** içinde `Hearts` klasörünü `NSImage.ImageNamed("Card/Hearts/Jack.png")` yansımayı yüklemek çalışma zamanı.
-- **Varlık Kataloğu görüntü [tercih edilen] kümeleri** - OS X El Capitan, eklenen **varlık kataloglar görüntü kümeleri** tüm sürümleri veya için Etkenler ölçekleme ve çeşitli aygıtları desteklemek gerekli olan bir görüntü gösterimlerini içeren, uygulama. Görüntü varlıklar dosya kalmak yerine (**@1x**,  **@2x** ).
+- **Varlık Kataloğu görüntü [tercih edilen] kümeleri** - OS X El Capitan, eklenen **varlık kataloglar görüntü kümeleri** tüm sürümleri veya için Etkenler ölçekleme ve çeşitli aygıtları desteklemek gerekli olan bir görüntü gösterimlerini içeren, uygulama. Görüntü varlıklar dosya kalmak yerine (**@1x**, **@2x**).
 
 <a name="asset-catalogs" />
 
@@ -68,7 +67,7 @@ Yukarıda belirtildiği gibi bir **varlık kataloglar görüntü kümeleri** tü
 
     [![Görüntüyü düzenleme kümesi adı](image-images/imageset04.png "kümesi adı görüntüyü düzenleme")](image-images/imageset04-large.png#lightbox)
     
-Özel bir **vektör** sınıfı için eklenene gibi **görüntü kümeleri** bize eklemeyi sağlayan bir _PDF_ yerine tek tek bit eşlem dosyaları dahil olmak üzere casset vektör görüntüde biçimlendirilmiş farklı çözümler. Bu yöntemi kullanarak, bir tek vektör dosya için sağladığınız  **@1x**  (vektör PDF dosyası olarak biçimlendirilmiş) çözümleme ve  **@2x**  ve  **@3x**  dosya sürümleri derleme zamanında oluşturulan ve uygulamanın pakete eklenen.
+Özel bir **vektör** sınıfı için eklenene gibi **görüntü kümeleri** bize eklemeyi sağlayan bir _PDF_ yerine tek tek bit eşlem dosyaları dahil olmak üzere casset vektör görüntüde biçimlendirilmiş farklı çözümler. Bu yöntemi kullanarak, bir tek vektör dosya için sağladığınız **@1x** (vektör PDF dosyası olarak biçimlendirilmiş) çözümleme ve **@2x** ve **@3x** dosya sürümleri derleme zamanında oluşturulan ve uygulamanın pakete eklenen.
 
 [![Düzenleyici arabirimi resmi ayarlama](image-images/imageset05.png "Düzenleyici arabirimi resmi ayarlama")](image-images/imageset05-large.png#lightbox)
 
@@ -142,7 +141,7 @@ Bir Xamarin.Mac uygulaması (simgeler, özel denetimler, özel imleçler, özel 
 Bir görüntü standart ve yüksek çözünürlüklü sürümleri oluşturduğunuzda, görüntü çifti için bu adlandırma kuralını Xamarin.Mac projenize ekleme yaparken izleyin:
 
 - **Standart çözümleme**  - **ImageName.filename uzantısı** (örnek: **tags.png**)
-- **Yüksek çözünürlüklü**   -   **ImageName@2x.filename-extension**  (örnek:  **tags@2x.png** )
+- **Yüksek çözünürlüklü**   -  **ImageName@2x.filename-extension** (örnek: **tags@2x.png**)
 
 Bir projeye eklendiğinde, bunlar şu şekilde görünür:
 
@@ -150,7 +149,7 @@ Bir projeye eklendiğinde, bunlar şu şekilde görünür:
 
 Bir kullanıcı Arabirimi öğesi arabirimi Oluşturucu görüntü atandığı yalnızca dosyasında öğrenmiş olacaksınız _görüntü adı_**.** _dosya adı uzantısı_ biçimi (örnek: **tags.png**). Aynı görüntüyü C# kod içinde kullanma için dosyada öğrenmiş olacaksınız _görüntü adı_**.** _dosya adı uzantısı_ biçimi.
 
-Xamarin.Mac uygulama bir Mac üzerinde çalıştırdığınızda _görüntü adı_**.** _dosya adı uzantısı_ biçim görüntüsü standart çözümleme ekranlarda kullanılacak  **ImageName@2x.filename-extension**  görüntü otomatik olarak çekilen Retina görüntü taban Mac'ler.
+Xamarin.Mac uygulama bir Mac üzerinde çalıştırdığınızda _görüntü adı_**.** _dosya adı uzantısı_ biçim görüntüsü standart çözümleme ekranlarda kullanılacak **ImageName@2x.filename-extension** görüntü otomatik olarak çekilen Retina görüntü taban Mac'ler.
 
 
 ## <a name="using-images-in-interface-builder"></a>Arabirim Oluşturucusu'nda görüntüleri kullanma
@@ -176,7 +175,7 @@ Bir görüntüyü arabirimi Oluşturucusu'nda kullanmak için aşağıdakileri y
      ![Araç çubuğu Düzenleyicisi'nde görüntülenen görüntünün](image-images/ib04.png "araç çubuğu Düzenleyicisi'nde görüntülenen resmi")
 6. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
-Kendi görüntü özelliği ayarlanmış olması veren herhangi bir kullanıcı Arabirimi öğe için yukarıdaki adımlarını **özniteliği denetçisi**. Yeniden eklediyseniz, bir  **@2x**  Görüntü dosyanızın sürümü, onu otomatik olarak kullanılacak üzerinde Retina görüntü tabanlı Mac'ler.
+Kendi görüntü özelliği ayarlanmış olması veren herhangi bir kullanıcı Arabirimi öğe için yukarıdaki adımlarını **özniteliği denetçisi**. Yeniden eklediyseniz, bir **@2x** Görüntü dosyanızın sürümü, onu otomatik olarak kullanılacak üzerinde Retina görüntü tabanlı Mac'ler.
 
 > [!IMPORTANT]
 > Görüntü kullanılabilir durumda olmazsa **görüntü adı** açılan listesinde, Xcode .storyboard projenizde kapatıp Visual Studio'dan Mac için Görüntü hala kullanılabilir durumda değilse, emin olun, **yapı eylemi** olan `BundleResource` ve görüntü için eklenen **kaynakları** klasör.
@@ -189,7 +188,7 @@ Bir görüntü Xamarin.Mac uygulamanızda kullanarak C# kodu belleğe yüklerken
 NSImage image = NSImage.ImageNamed("tags.png");
 ```
 
-Yukarıdaki kod statik kullanır `ImageNamed("...")` yöntemi `NSImage` verilen görüntü bellekten yüklemek için sınıf **kaynakları** görüntü bulunamazsa klasörü `null` döndürülür. İsteyip arabirimi Oluşturucusu'nda, atanan görüntüleri dahil ettiğiniz bir  **@2x**  Görüntü dosyanızın sürümü, onu otomatik olarak kullanılacak üzerinde Retina görüntü tabanlı Mac'ler.
+Yukarıdaki kod statik kullanır `ImageNamed("...")` yöntemi `NSImage` verilen görüntü bellekten yüklemek için sınıf **kaynakları** görüntü bulunamazsa klasörü `null` döndürülür. İsteyip arabirimi Oluşturucusu'nda, atanan görüntüleri dahil ettiğiniz bir **@2x** Görüntü dosyanızın sürümü, onu otomatik olarak kullanılacak üzerinde Retina görüntü tabanlı Mac'ler.
 
 Uygulama paketi (Mac dosya sisteminden) dışında yansımaları yüklemek için aşağıdaki kodu kullanın:
 

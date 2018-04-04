@@ -1,18 +1,17 @@
 ---
 title: Mobil yazılım geliştirme yaşam döngüsü giriş
 description: Bu makalede, mobil uygulamalar göre yazılım geliştirme yaşam döngüsü açıklar ve bazı mobil projeleri oluştururken gerekli konuları ele alır. Yalnızca sağ ve oluşturmaya başlayın atlamak isteyen geliştiriciler için bu kılavuzda atlandı ve daha sonra daha eksiksiz bir mobil geliştirme anlamak için okuyun.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 144e71677ad5477c7e1cfb5211cc5860995642bb
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: c49723038870b7b222bdada7823f1571c5d89d9e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Mobil yazılım geliştirme yaşam döngüsü giriş
 

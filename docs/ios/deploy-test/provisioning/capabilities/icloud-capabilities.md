@@ -1,18 +1,17 @@
 ---
-title: "iCloud özellikleri"
-description: "Bir uygulama genelde yetenekleri ekleme sağlama ek kurulum gerektirir. Bu kılavuz iCloud özellikleri için gereken kurulum açıklar."
-ms.topic: article
+title: iCloud özellikleri
+description: Bir uygulama genelde yetenekleri ekleme sağlama ek kurulum gerektirir. Bu kılavuz iCloud özellikleri için gereken kurulum açıklar.
 ms.prod: xamarin
 ms.assetid: 3CBAC982-D8DE-48DD-97CD-32B551D9DB85
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 22a1cd8a300533560f617fd60fc99474922247d0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e18bff7f32303cb0c5016e4ade4b39723921534
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="icloud-capabilities"></a>iCloud özellikleri
 
@@ -47,7 +46,7 @@ Aşağıdaki adımlar bu adımları uygularken size kılavuzluk eder:
     
      ![Apple Geliştirici Merkezi ana sayfası](icloud-capabilities-images/image22.png)
 
-2.  Altında **tanımlayıcıları** seçin **iCloud kapsayıcıları**ve ardından  **+**  yeni bir kapsayıcı oluşturmak için:  
+2.  Altında **tanımlayıcıları** seçin **iCloud kapsayıcıları**ve ardından **+** yeni bir kapsayıcı oluşturmak için:  
     
     ![iCloud kapsayıcı ekranı](icloud-capabilities-images/image23.png)
 
@@ -65,7 +64,7 @@ Yeni bir uygulama kimliği oluşturmak ve bir kapsayıcı eklemek için aşağı
     
     ![Tanımlayıcı bölümünde Geliştirici Merkezi](icloud-capabilities-images/image26.png)
 
-2.  Seçin  **+**  düğmesi yeni bir uygulama kimliği eklemek için: 
+2.  Seçin **+** düğmesi yeni bir uygulama kimliği eklemek için: 
     
     ![Yeni uygulama kimliği düğme ekleme](icloud-capabilities-images/image27.png)
 

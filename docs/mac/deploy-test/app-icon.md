@@ -1,18 +1,17 @@
 ---
 title: Uygulama simgesi
-description: "Bu makalede, görüntüleri .icns dosyasına paketleme ve Xamarin.Mac projesinde simgesi dahil olmak üzere bir Xamarin.Mac uygulamanın simgesi için gerekli görüntü oluşturulması ele alınmaktadır."
-ms.topic: article
+description: Bu makalede, görüntüleri .icns dosyasına paketleme ve Xamarin.Mac projesinde simgesi dahil olmak üzere bir Xamarin.Mac uygulamanın simgesi için gerekli görüntü oluşturulması ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: ceeb0d33b00288e2a50dc7f758902c1dbc7ab04a
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 3603e43b4b98d1387c718d0a6010d38aa01440c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-icon"></a>Uygulama simgesi
 
@@ -55,9 +54,9 @@ Lütfen okuyun [uygulama simgesi Galerisi](https://developer.apple.com/library/m
 Diğer görüntü Geliştirici Xamarin.Mac uygulamasında kullanma edecek gibi herhangi bir kaynakta, uygulama simgesine sağlanan hem standart hem de Retina çözüm sürüm gerekir. Yeniden, diğer herhangi bir görüntü gibi kullanmak bir `@2x` simge dosyaları adlandırırken Biçimlendir:
 
 - **Standart çözümleme**  - _görüntü adı_**.** _dosya adı uzantısı_ (örnek: **icon_512x512.png**)
-- **Yüksek çözünürlüklü**  - _görüntü adı_**@2x.** _dosya adı uzantısı_ (örnek:  **icon_512x512@2x.png** )
+- **Yüksek çözünürlüklü**  - _görüntü adı_**@2x.** _dosya adı uzantısı_ (örnek: **icon_512x512@2x.png**)
 
-Örneğin, uygulamanın simgesi 512 x 512 sürümünü temin etmek için dosyanın sayfadayken **icon_512x512.png** ve  **icon_512x512@2x.png** .
+Örneğin, uygulamanın simgesi 512 x 512 sürümünü temin etmek için dosyanın sayfadayken **icon_512x512.png** ve **icon_512x512@2x.png**.
 
 Simge kullanıcılar gördüğünüzde tüm konumları harika görünüyor emin olmak için aşağıda listelenen boyutları kaynaklarında sağlar:
 

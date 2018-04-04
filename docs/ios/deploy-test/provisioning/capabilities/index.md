@@ -1,18 +1,17 @@
 ---
-title: "Özellikleri ile çalışma"
-description: "Bir uygulama genelde yetenekleri ekleme sağlama ek kurulum gerektirir. Bu kılavuz, tüm özellikler için gereken kurulum açıklar."
-ms.topic: article
+title: Özellikleri ile çalışma
+description: Bir uygulama genelde yetenekleri ekleme sağlama ek kurulum gerektirir. Bu kılavuz, tüm özellikler için gereken kurulum açıklar.
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: ffc694e2f513d61cf32e94d8dc3bae17c887521b
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: ff918ac104e7eab4f2e8c0d0be46df240138c97c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-capabilities"></a>Özellikleri ile çalışma
 
@@ -141,7 +140,7 @@ Geliştirici Merkezi'ni kullanarak bir uygulama kimliği oluşturarak ve ardınd
 
     ![Uygulama Kimliği seçim Geliştirici Merkezi](images/image6.png)
 
-4.  Tuşuna  **+**  yeni bir uygulama kimliği oluşturmak için sağ üst köşedeki düğmesi
+4.  Tuşuna **+** yeni bir uygulama kimliği oluşturmak için sağ üst köşedeki düğmesi
 5.  Bir uygulama kimliği açıklaması girin, açık uygulama kimliği seçin ve bir paket kimliği şu biçimde girin `com.domain.appname`. Bu paket kimliği, uygulamanın paket Kimliğini projenizdeki eşleşmesi gerekir:
 
     ![Uygulama Kimliği ayrıntıları ekleme](images/image7.png)
@@ -168,7 +167,7 @@ Geliştirici Merkezi'ni kullanarak bir uygulama kimliği oluşturarak ve ardınd
 
     ![Profil bölümü sağlama](images/image10.png)
 
-2.  Tuşuna  **+**  yeni bir sağlama profili oluşturmak için sağ üst köşedeki düğmesini.
+2.  Tuşuna **+** yeni bir sağlama profili oluşturmak için sağ üst köşedeki düğmesini.
 3.  İhtiyaç ve tıklatın sağlama profili türünü seçin **devam**:
 
     ![Sağlama profili seçimi](images/image11.png)

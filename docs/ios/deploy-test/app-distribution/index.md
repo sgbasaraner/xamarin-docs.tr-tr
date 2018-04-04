@@ -1,18 +1,17 @@
 ---
-title: "Uygulama dağıtım genel bakış"
-description: "Bu belge Xamarin.iOS uygulamaları için kullanılabilir dağıtım teknikleri genel bir bakış sağlar ve konusunda daha ayrıntılı belgeler için bir işaretçi olarak görev yapar."
-ms.topic: article
+title: Uygulama dağıtım genel bakış
+description: Bu belge Xamarin.iOS uygulamaları için kullanılabilir dağıtım teknikleri genel bir bakış sağlar ve konusunda daha ayrıntılı belgeler için bir işaretçi olarak görev yapar.
 ms.prod: xamarin
 ms.assetid: 341D36DB-BB07-FA94-BCC9-5F8C0B18C179
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4be12c5530f59dc027672d8db72b966711a531d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 76de5b46559676e36b9d1f9b71575323beec414e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-distribution-overview"></a>Uygulama dağıtım genel bakış
 

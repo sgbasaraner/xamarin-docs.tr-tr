@@ -1,18 +1,17 @@
 ---
-title: "Xamarin ile oyun geliştirme giriş"
-description: "Oyun geliştirme yapısını diğer tür uygulamaları geliştirme araçlarındaki önemli ölçüde farklı olabilir. Bu makalede Xamarin.iOS ve Xamarin.Android kullanılan teknoloji özellikleri oyun geliştirmeye giriş ' dir. Oyunlar nasıl yapılacağını, üst düzey bir tartışma ve teknolojilerinin kullanılabilir örnekleme Xamarin.iOS ve Xamarin.Android ile sağlar."
-ms.topic: article
+title: Xamarin ile oyun geliştirme giriş
+description: Oyun geliştirme yapısını diğer tür uygulamaları geliştirme araçlarındaki önemli ölçüde farklı olabilir. Bu makalede Xamarin.iOS ve Xamarin.Android kullanılan teknoloji özellikleri oyun geliştirmeye giriş ' dir. Oyunlar nasıl yapılacağını, üst düzey bir tartışma ve teknolojilerinin kullanılabilir örnekleme Xamarin.iOS ve Xamarin.Android ile sağlar.
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 9d1ce2da87d6f169efb5431f734695f6876cf3f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b2df6d431004bbfa140b6cae1d069404af92c1df
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Xamarin ile oyun geliştirme giriş
 
@@ -97,8 +96,8 @@ Bazı içerik ardışık düzen çok hızlı ve hiçbir el ile çaba gerektirir.
 Oyun geliştirme işleminde yer alan kişiler için yeni rolleri ve başlıkları tanıtır. Çoğu oyun geliştiricilerin uzmanlık alanlarından sayısı mevcut için tam bir oyun serbest bırakmak için gerekli niteliklere geniş kümesini karşılamak mümkün değildir. Bunun tam geliştirme – yalnızca bazı yaygın olanları alanlarının listesini olmadığını unutmayın.
 
 - **Programcı** – bu makalede bu kategoriye ayrılır okuma çoğu kişi. Oyun geliştirmede Programcı rol oyun olmayan uygulama bir programcı rolünde benzer. Ekleme ve içerik görüntüleme ve – Elbette – hataları düzelttikten belirli bir projenin sistemleri bağlamında ortak görevler için geliştirme oyun akışını denetlemek için mantığı yazma sorumlulukları içerir.
-- **2B sanatçı** – 2B Sanatçılar oluşturmaktan sorumlu *2B varlıklar*. Bunlar oyunun GUI, Parçacık, ortamları ve karakterler için resim dosyalarını içerir. Geliştirdiğiniz oyun 3B ise, 2B Sanatçılar ortamları ve karakterler için sorumlu olmayabilir. Ücretsiz bulabilirsiniz oyununuzu için resim [http://opengameart.org/](http://opengameart.org/) .
-- **3B tasarımcıları** – 3B tasarımcıları oluşturmaktan sorumlu *3B varlıklar*. Bu ortamlarda, karakterler ve özellik (Mobilya, araçları ve diğer inanimate nesneler) için 3B modelleri içerir. 3B tasarımcıları ve 3B animatörleri takım boyutuna bağlı olarak bazı ekipler birbirinden. Ücretsiz bulabilirsiniz oyununuzu için 3B bir resim [http://opengameart.org/](http://opengameart.org/) .
+- **2B sanatçı** – 2B Sanatçılar oluşturmaktan sorumlu *2B varlıklar*. Bunlar oyunun GUI, Parçacık, ortamları ve karakterler için resim dosyalarını içerir. Geliştirdiğiniz oyun 3B ise, 2B Sanatçılar ortamları ve karakterler için sorumlu olmayabilir. Ücretsiz bulabilirsiniz oyununuzu için resim [ http://opengameart.org/ ](http://opengameart.org/) .
+- **3B tasarımcıları** – 3B tasarımcıları oluşturmaktan sorumlu *3B varlıklar*. Bu ortamlarda, karakterler ve özellik (Mobilya, araçları ve diğer inanimate nesneler) için 3B modelleri içerir. 3B tasarımcıları ve 3B animatörleri takım boyutuna bağlı olarak bazı ekipler birbirinden. Ücretsiz bulabilirsiniz oyununuzu için 3B bir resim [ http://opengameart.org/ ](http://opengameart.org/) .
 - **Oyun Tasarımcısı** – oyun tasarımcıları nasıl Oyun oynanan tanımlamak için sorumlu. Bu ayarı gibi üst düzey kararları oyun, genel amacı, oyun ve nasıl bir oynatıcı oyun ilerler içerebilir. Oyun tasarımcıları da katsayısını taşıma veya düzeyi ups tanımlama ve düzey düzeni tasarlama eşleme girişi eylemlerine gibi çok ayrıntılı kararlarında söz konusu olabilir. Aklınızda terimi *Tasarımcısı* oyun Tasarımcısı veya bağlam bağlı olarak bir görsel tasarımcı başvurabilir.
 - **Ses Tasarımcısı** – ses tasarımcıları oyunun ses varlıkları için sorumlu. Bazı ekipler küçük ekipleri için tüm ses sorumlu tek olabilir, ancak ses efekti ve composers, oluşturmaktan sorumlu olan kişiler birbirinden.
 
@@ -171,9 +170,9 @@ Kullanıma [UrhoSharp kılavuzları](~/graphics-games/urhosharp/index.md) başla
 
 Yukarıdaki vurgulanmış teknolojileri yalnızca bir örnek teknolojilerden olur. Diğer önemli teknolojileri şunları içerir:
 
-- **Hareketli grafik Seti** – Xamarin tüm yerel API işlevselliğini erişmenizi Apple'nın hareketli grafik Seti oyun framework için destek sağlar. Hareketli grafik paketi Apple tarafından oluşturulan teknolojisi olduğundan, iOS ekosistemi geri kalanı ile derin tümleştirme sağlar. Android kullanılamaz doğal olarak, hareketli grafik Seti platformlar arası değil. Bu post hareketli grafik Seti'ni kullanma hakkında daha fazla bilgi için bkz: [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **Sahne Seti** – Xamarin de destek sağlar 3B grafik iOS uygulamalarda uygulama basitleştirir Apple'nın Sahne Seti çerçevesi için. Sahne Seti Ayrıca, tümleştirme ve platforma özgü konuları hareketli grafik Seti için yukarıdaki nedenle Apple'nın sağladığı teknolojisidir. Bu post Sahne Seti hakkında daha fazla bilgi için bkz: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **OpenTK –** (hangi açık araç seti için anlamına gelir) OpenTK iOS, Apple ve Mac için alt düzey OpenGL erişim sağlar donanım. Ana sayfanın OpenTK hakkında daha fazla bilgi için bkz: [http://www.opentk.com/](http://www.opentk.com/)
+- **Hareketli grafik Seti** – Xamarin tüm yerel API işlevselliğini erişmenizi Apple'nın hareketli grafik Seti oyun framework için destek sağlar. Hareketli grafik paketi Apple tarafından oluşturulan teknolojisi olduğundan, iOS ekosistemi geri kalanı ile derin tümleştirme sağlar. Android kullanılamaz doğal olarak, hareketli grafik Seti platformlar arası değil. Hareketli grafik Seti'ni kullanma hakkında daha fazla bilgi için bu gönderisine bakın:  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **Sahne Seti** – Xamarin de destek sağlar 3B grafik iOS uygulamalarda uygulama basitleştirir Apple'nın Sahne Seti çerçevesi için. Sahne Seti Ayrıca, tümleştirme ve platforma özgü konuları hareketli grafik Seti için yukarıdaki nedenle Apple'nın sağladığı teknolojisidir. Sahne Seti hakkında daha fazla bilgi için bu gönderisine bakın: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **OpenTK –** (hangi açık araç seti için anlamına gelir) OpenTK iOS, Apple ve Mac için alt düzey OpenGL erişim sağlar donanım. Ana sayfanın OpenTK hakkında daha fazla bilgi için bkz:  [http://www.opentk.com/](http://www.opentk.com/)
 
 
 # <a name="summary"></a>Özet

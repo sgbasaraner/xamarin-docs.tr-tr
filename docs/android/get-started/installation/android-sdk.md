@@ -1,18 +1,17 @@
 ---
 title: Android SDK Kurulumu
-description: "Visual Studio Google'nın tek başına SDK Manager değiştiren bir Android SDK Manager içerir. Bu kılavuz SDK Manager Android SDK Araçları, platformlar ve geliştirme Xamarin.Android uygulamaları için gereken diğer bileşenleri indirmek için nasıl kullanılacağını açıklar."
-ms.topic: article
+description: Visual Studio Google'nın tek başına SDK Manager değiştiren bir Android SDK Manager içerir. Bu kılavuz SDK Manager Android SDK Araçları, platformlar ve geliştirme Xamarin.Android uygulamaları için gereken diğer bileşenleri indirmek için nasıl kullanılacağını açıklar.
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 585bcac193d6824bc7c96092c14e40fd7971b0e2
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 45ab1930300ac704da0a1fee25c08d40aa35ac5c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-sdk-setup"></a>Android SDK Kurulumu
 
@@ -202,8 +201,8 @@ Bir platformun tüm bileşenlerin yüklü olduğundan ve platform adının yanı
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Bileşenlerinden (ve hangi bileşenlerin yüklü) tıklayarak görmek için bir platform genişletebilirsiniz  **+**  platform solundaki kutusunu.
-Tıklatın  **-**  için bir platform listeleme bileşen unexpand için.
+Bileşenlerinden (ve hangi bileşenlerin yüklü) tıklayarak görmek için bir platform genişletebilirsiniz **+** platform solundaki kutusunu.
+Tıklatın **-** için bir platform listeleme bileşen unexpand için.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 

@@ -1,18 +1,17 @@
 ---
-title: "Xamarin.Android içinde Hizmetleri bağlı"
-description: "Bağımlı hizmetler (örneğin, bir Android etkinlik) istemci ile etkileşim kurabilen bir istemci-sunucu arabirimi Android hizmetlerdir. Bu kılavuz, ilişkili hizmet ve bir Xamarin.Android uygulaması kullanma oluşturmayla ilgili anahtar bileşenleri ele alınacaktır."
-ms.topic: article
+title: Xamarin.Android içinde Hizmetleri bağlı
+description: Bağımlı hizmetler (örneğin, bir Android etkinlik) istemci ile etkileşim kurabilen bir istemci-sunucu arabirimi Android hizmetlerdir. Bu kılavuz, ilişkili hizmet ve bir Xamarin.Android uygulaması kullanma oluşturmayla ilgili anahtar bileşenleri ele alınacaktır.
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 04307eab1bc8dc28fa69315809e254c920fb6d56
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 18cfe6acae08efac85223c9c121a12f102f846cc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin.Android içinde Hizmetleri bağlı
 
@@ -34,7 +33,7 @@ Bu diyagramda, birbirleriyle nasıl etkinlik, hizmet bağlantı, bağlayıcı ve
 
 ![Hizmet bileşenleri birbirleriyle nasıl ilişkili olduğunu gösteren bir diyagram](bound-services-images/bound-services-02.png "ve hizmet bileşenlerinin birbirleriyle nasıl ilişkili olduğunu gösteren diyagram.")
 
-Bu kılavuz nasıl genişletileceğini ele alınacaktır `Service` ilişkili hizmet uygulanacak sınıf. Ayrıca uygulama ele alınacaktır `IServiceConnection` ve genişletme `Binder` bir istemci hizmetiyle iletişim kurmasına izin vermek için. Adlı tek bir Xamarin.Android projesi ile bir çözüm içerir, bu kılavuz, örnek bir uygulama eşlik  **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)**  . Bu, bir hizmeti uygulama ve nasıl etkinlik bağlanacağını gösterir çok basit bir uygulamadır. Yalnızca bir yöntemiyle çok basit bir API bağlı hizmeti olan `GetFormattedTimestamp`, kullanıcının hizmeti başlatıldığında bildiren bir dize ve ne kadar süreyle çalıştırıldığını döndürür. Uygulamanın, ayrıca el ile bağlantısını kesmek ve hizmete bağlamak kullanıcı verir.
+Bu kılavuz nasıl genişletileceğini ele alınacaktır `Service` ilişkili hizmet uygulanacak sınıf. Ayrıca uygulama ele alınacaktır `IServiceConnection` ve genişletme `Binder` bir istemci hizmetiyle iletişim kurmasına izin vermek için. Adlı tek bir Xamarin.Android projesi ile bir çözüm içerir, bu kılavuz, örnek bir uygulama eşlik **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** . Bu, bir hizmeti uygulama ve nasıl etkinlik bağlanacağını gösterir çok basit bir uygulamadır. Yalnızca bir yöntemiyle çok basit bir API bağlı hizmeti olan `GetFormattedTimestamp`, kullanıcının hizmeti başlatıldığında bildiren bir dize ve ne kadar süreyle çalıştırıldığını döndürür. Uygulamanın, ayrıca el ile bağlantısını kesmek ve hizmete bağlamak kullanıcı verir.
 
 [![Android phone'da çalışan uygulamasının ekran görüntüsü](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 

@@ -1,18 +1,17 @@
 ---
-title: "iOS Tasarımcısı"
-description: "İOS için Xamarin Tasarımcısı Mac ve Visual Studio için Visual Studio ile tamamen tümleşiktir iOS film şeridi ve arabirim Oluşturucu biçimleri için görsel tasarımcı olur. Böylece dosyaları Mac için Visual Studio veya Visual Studio Xcode'nın arabirimi Oluşturucu yanı sıra düzenlenebilir Tasarımcısı iOS film şeridi and.xib biçimleri ile tam uyumluluk tutar. Ayrıca, iOS için Xamarin Tasarımcısı Düzenleyicisi'nde tasarım zamanında işleme özel denetimler gibi gelişmiş özellikleri destekler."
-ms.topic: article
+title: iOS Tasarımcısı
+description: İOS için Xamarin Tasarımcısı Mac ve Visual Studio için Visual Studio ile tamamen tümleşiktir iOS film şeridi ve arabirim Oluşturucu biçimleri için görsel tasarımcı olur. Böylece dosyaları Mac için Visual Studio veya Visual Studio Xcode'nın arabirimi Oluşturucu yanı sıra düzenlenebilir Tasarımcısı iOS film şeridi and.xib biçimleri ile tam uyumluluk tutar. Ayrıca, iOS için Xamarin Tasarımcısı Düzenleyicisi'nde tasarım zamanında işleme özel denetimler gibi gelişmiş özellikleri destekler.
 ms.prod: xamarin
 ms.assetid: E35EFB69-EBBA-40E3-ADBE-CB8016F17127
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 884811e4035aabd831f851015db098a0243a2388
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 98d11b54ace70d4c4a82b2caebbe97cff02e0544
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-designer"></a>iOS Tasarımcısı
 

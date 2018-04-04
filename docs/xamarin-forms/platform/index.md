@@ -1,20 +1,19 @@
 ---
-title: "Platform özellikleri"
-description: "Xamarin.Forms ile platforma özgü özelliklerden yararlanabilir"
-ms.topic: article
+title: Platform Özellikleri
+description: Xamarin.Forms ile platforma özgü özelliklerden yararlanabilir
 ms.prod: xamarin
 ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: 950cc4a8611b05c22825ef89a85827fa0d3e5f7b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 454969d8a59128423d632452033b8ba84ee0bc98
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="platform-features"></a>Platform özellikleri
+# <a name="platform-features"></a>Platform Özellikleri
 
 Xamarin.Forms genişletilebilir ve birleştirme platforma özgü özellikleri kullanarak olanak tanır [etkileri](~/xamarin-forms/app-fundamentals/effects/index.md), [özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md), [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md)ve daha fazlası.
 
@@ -22,11 +21,11 @@ Xamarin.Forms genişletilebilir ve birleştirme platforma özgü özellikleri ku
 
 Bu kılavuz, mevcut Xamarin.Forms Android uygulamaları güncelleştirerek malzeme tasarımını uygulamak açıklar.
 
-## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Uygulama dizin oluşturma ve derin bağlama](deep-linking.md)
+## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Uygulama Dizini Oluşturma ve Ayrıntılı Bağlantı Sağlama](deep-linking.md)
 
 Uygulama dizin arama sonuçlarında görünmesini ilgili kalmak için birkaç kullandıktan sonra Aksi takdirde unutulursa uygulamaları sağlar. Derin bağlama uygulamaların uygulama verilerini içeren, genellikle derin bir bağlantıdan başvurulan sayfasına giderek arama sonucu yanıt izin verir.
 
-## <a name="device-classdevicemd"></a>[Aygıt sınıfı](device.md)
+## <a name="device-classdevicemd"></a>[Cihaz Sınıfı](device.md)
 
 Nasıl kullanılacağını `Device` platforma özgü davranış paylaşılan kodu ve (XAML kullanılarak dahil) kullanıcı arabirimini oluşturmak için sınıfı. Ayrıca kapsayan `BeginInvokeOnMainThread` arka plan iş parçacıkları kullanıcı Arabirimi denetimlerini değiştirirken gerekli olduğu.
 
@@ -38,11 +37,11 @@ Bazı iOS stil aracılığıyla gerçekleştirilebilir **Info.plist** ve `UIAppe
 
 Xamarin.Forms artık macOS uygulamaları için Önizleme destek sahiptir.
 
-## <a name="native-formsnative-formsmd"></a>[Yerel formlar](native-forms.md)
+## <a name="native-formsnative-formsmd"></a>[Yerel Formlar](native-forms.md)
 
 Yerel Forms izin Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-yerel Xamarin.iOS, Xamarin.Android ve evrensel Windows Platformu (UWP) projeler tarafından tüketilen sayfalarına türetilmiş.
 
-## <a name="native-viewsnative-viewsindexmd"></a>[Yerel görünümleri](native-views/index.md)
+## <a name="native-viewsnative-viewsindexmd"></a>[Yerel Görünümler](native-views/index.md)
 
 İOS, Android ve evrensel Windows platformu yerel görünümleri doğrudan Xamarin.Forms başvurulabilir. Xamarin.Forms görünümleri ile etkileşim kurabilir ve özellikleri ve olay işleyicileri yerel görünümler üzerinde ayarlanabilir.
 
@@ -50,7 +49,7 @@ Yerel Forms izin Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/a
 
 Platform özellikleri yalnızca özel oluşturucu veya efektler gerektirmeden belirli bir platformda kullanılabilir olan işlevsellik kullanmasına olanak sağlar.
 
-## <a name="pluginspluginsmd"></a>[Eklentileri](plugins.md)
+## <a name="pluginspluginsmd"></a>[Eklentiler](plugins.md)
 
 Çok çeşitli açık kaynak eklentileri Github, Nuget ve Xamarin bileşen Deposu'nda Xamarin.Forms uygulamaları uzatmaya yardımcı olmak için kullanılabilir.
 

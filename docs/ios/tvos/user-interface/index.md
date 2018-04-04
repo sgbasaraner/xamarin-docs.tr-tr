@@ -1,20 +1,19 @@
 ---
-title: "Kullanıcı arabirimi"
-description: "Kullanıcı Arabirimi (UI) denetimler de dahil olmak üzere genel kullanıcı deneyimini (UX) kapsamı kullanmak Xcode'nın arabirimi oluşturucusu ve UX tasarım ilkeleri Xamarin.tvOS ile çalışırken."
-ms.topic: article
+title: Kullanıcı Arabirimi
+description: Kullanıcı Arabirimi (UI) denetimler de dahil olmak üzere genel kullanıcı deneyimini (UX) kapsamı kullanmak Xcode'nın arabirimi oluşturucusu ve UX tasarım ilkeleri Xamarin.tvOS ile çalışırken.
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c77cc6f9954c5fb7d1a303748efc5c3182a0c138
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a30bd02a9545717175daf1381730afce6b72218d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="user-interface"></a>Kullanıcı arabirimi
+# <a name="user-interface"></a>Kullanıcı Arabirimi
 
 _Kullanıcı Arabirimi (UI) denetimler de dahil olmak üzere genel kullanıcı deneyimini (UX) kapsamı kullanmak Xcode'nın arabirimi oluşturucusu ve UX tasarım ilkeleri Xamarin.tvOS ile çalışırken._
 
@@ -74,7 +73,7 @@ Bu makalede tasarlama ve metin ve arama alanlarını Xamarin.tvOS uygulama için
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [tvOS örnekleri](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS İnsan Arabirimi kılavuzları](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS için uygulama programlama kılavuzu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

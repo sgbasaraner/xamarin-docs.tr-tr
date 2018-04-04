@@ -1,18 +1,17 @@
 ---
 title: EventKit
-description: "Bu kılavuz, erişmek ve EventKit gösterilen Takvim veritabanında depolanan takvimleri, CalendarEvents ve anımsatıcıları verilerle çalışma hakkında genel bir bakış sağlar. Ana sınıflar ve onların rol EventKit framework ile ilişkili ortak görevleri bir dizi yanı sıra EventKit programlama'kapsar."
-ms.topic: article
+description: Bu kılavuz, erişmek ve EventKit gösterilen Takvim veritabanında depolanan takvimleri, CalendarEvents ve anımsatıcıları verilerle çalışma hakkında genel bir bakış sağlar. Ana sınıflar ve onların rol EventKit framework ile ilişkili ortak görevleri bir dizi yanı sıra EventKit programlama'kapsar.
 ms.prod: xamarin
 ms.assetid: 00E88629-357D-1FCD-4FCE-1330D5D9D32C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a08bc67a9af653a9a646ad62071df0400ce58c12
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a8439586ac92f8139cf9341611125352c85706e5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="eventkit"></a>EventKit
 

@@ -1,18 +1,17 @@
 ---
-title: "Google bulut Mesajlaşma ile uzaktan bildirimleri"
-description: "Bu kılavuz, bir Xamarin.Android uygulaması Google Cloud Messaging (anında iletme bildirimleri olarak da bilinir) uzaktan bildirimleri uygulamak için nasıl kullanılacağını hakkında adım adım bir açıklama sağlar. Google Cloud Messaging (GCM) ile iletişim kurmak için uygulamanız gereken çeşitli sınıflar açıklanmaktadır, Android bildirim GCM için erişim izinlerini ayarlamak nasıl açıklar ve bir örnek test programla uçtan uca ileti gösterir."
-ms.topic: article
+title: Google bulut Mesajlaşma ile uzaktan bildirimleri
+description: Bu kılavuz, bir Xamarin.Android uygulaması Google Cloud Messaging (anında iletme bildirimleri olarak da bilinir) uzaktan bildirimleri uygulamak için nasıl kullanılacağını hakkında adım adım bir açıklama sağlar. Google Cloud Messaging (GCM) ile iletişim kurmak için uygulamanız gereken çeşitli sınıflar açıklanmaktadır, Android bildirim GCM için erişim izinlerini ayarlamak nasıl açıklar ve bir örnek test programla uçtan uca ileti gösterir.
 ms.prod: xamarin
 ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 823fad163e837adab5490446c23ab2f492679114
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 969b1b36659ac52782d30a1840ba352524e5e3c6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google bulut Mesajlaşma ile uzaktan bildirimleri
 

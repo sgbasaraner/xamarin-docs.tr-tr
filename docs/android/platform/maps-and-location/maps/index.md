@@ -1,18 +1,17 @@
 ---
-title: "Eşlemeleri"
-description: "Bu makalede eşlemeleri ve konumu ile Xamarin.Android nasıl kullanılacağı açıklanmaktadır. Google eşlemeleri Android API V2 kullanarak doğrudan yerleşik eşlemeleri uygulamanın yararlanarak her şeyi içerir."
-ms.topic: article
+title: Eşlemeleri
+description: Bu makalede eşlemeleri ve konumu ile Xamarin.Android nasıl kullanılacağı açıklanmaktadır. Google eşlemeleri Android API V2 kullanarak doğrudan yerleşik eşlemeleri uygulamanın yararlanarak her şeyi içerir.
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: bb166c78e15ea91408a2a52b4da78cfa884f7621
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e57dc07aefbd1c80a53f4225f5f44fe72a9ddb9a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="maps"></a>Eşlemeleri
 
@@ -33,8 +32,8 @@ Bu bölümdeki konular, çok çeşitli eşleme özelliklerini kapsar.
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MapsAndLocationDemo_v3 (örnek)](https://developer.xamarin.com/samples/monodroid/MapsAndLocationDemo_v3/)
-- [Etkinlik yaşam döngüsü](~/android/app-fundamentals/activity-lifecycle/index.md)
-- [API anahtarı Google alma eşlemeleri](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
+- [Etkinlik Yaşam Döngüsü](~/android/app-fundamentals/activity-lifecycle/index.md)
+- [Google Haritalar API Anahtarını Alma](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
 - [Google API'leri eklentisi](http://code.google.com/android/add-ons/google-apis/reference/index.html?com/google/android/maps/package-summary.html)
 - [Amaçlar listesi: Google uygulamaları Android cihazlarda çağırma](http://developer.android.com/guide/appendix/g-app-intents.html)
 - [Konum ve eşlemeleri](http://developer.android.com/guide/topics/location/index.html)

@@ -1,18 +1,17 @@
 ---
 title: Olaylar, protokolleri ve temsilciler
-description: "Bu makalede geri aramalar almak ve kullanıcı arabirimi denetimlerini veri ile doldurmak için kullanılan anahtar iOS teknolojiler sunar. Bu, olaylar, protokolleri ve temsilciler teknolojilerdir. Bu makalede ne açıklanmaktadır her birini ve nasıl her kullanılan C# ' dan. İOS denetimleri Xamarin.iOS Xamarin.iOS Objective-C Kavramları protokolleri ve temsilciler gibi için destek sağlar. nasıl tanıdık .NET olayları da kullanıma sunmak için nasıl kullanır gösterir (Objective-C temsilciler olmamalıdır C# ile temsilciler kafası). Bu makalede ayrıca nasıl protokolleri – hem Objective-C Temsilciler ve temsilci olmayan senaryolarda temel olarak kullanıldığını gösteren örnekler sağlar."
-ms.topic: article
+description: Bu makalede geri aramalar almak ve kullanıcı arabirimi denetimlerini veri ile doldurmak için kullanılan anahtar iOS teknolojiler sunar. Bu, olaylar, protokolleri ve temsilciler teknolojilerdir. Bu makalede ne açıklanmaktadır her birini ve nasıl her kullanılan C# ' dan. İOS denetimleri Xamarin.iOS Xamarin.iOS Objective-C Kavramları protokolleri ve temsilciler gibi için destek sağlar. nasıl tanıdık .NET olayları da kullanıma sunmak için nasıl kullanır gösterir (Objective-C temsilciler olmamalıdır C# ile temsilciler kafası). Bu makalede ayrıca nasıl protokolleri – hem Objective-C Temsilciler ve temsilci olmayan senaryolarda temel olarak kullanıldığını gösteren örnekler sağlar.
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="events-protocols-and-delegates"></a>Olaylar, protokolleri ve temsilciler
 

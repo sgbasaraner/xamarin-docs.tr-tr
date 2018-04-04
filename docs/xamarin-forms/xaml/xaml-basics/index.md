@@ -1,30 +1,29 @@
 ---
 title: Xamarin.Forms XAML temelleri
-description: "Mobil cihazlar için platformlar arası biçimlendirme ile çalışmaya başlama"
-ms.topic: article
+description: Mobil cihazlar için platformlar arası biçimlendirme ile çalışmaya başlama
 ms.prod: xamarin
 ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: a3f3dbbe0f12cfa7cc1fc6606ec8bd48a96e407c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 991d928c2c58f05098a41c84aba295a31636ab96
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML temelleri
 
-XAML — Genişletilebilir uygulama biçimlendirme dili — geliştiricilerin kodu yerine biçimlendirme Xamarin.Forms uygulamalarda kullanıcı arabirimleri tanımlamanızı sağlar. XAML bir Xamarin.Forms programında hiçbir zaman gerekli, ancak bunu genellikle daha kısa ve eşdeğer kod görsel olarak daha tutarlı ve potansiyel olarak oluşturulabildiğinden. XAML popüler MVVM (Model-View-ViewModel) uygulama mimarisi ile kullanım için uygun özellikle: XAML XAML tabanlı veri bağlamaları ViewModel koduna bağlı Görünüm tanımlar.
+XAML (eXtensible Application Markup Language), geliştiricilerin kod yerine biçimlendirme kullanarak Xamarin.Forms uygulamalarında kullanıcı arabirimlerini tanımlamasına olanak sağlar. XAML bir Xamarin.Forms programında hiçbir zaman gerekli, ancak bunu genellikle daha kısa ve eşdeğer kod görsel olarak daha tutarlı ve potansiyel olarak oluşturulabildiğinden. XAML popüler MVVM (Model-View-ViewModel) uygulama mimarisi ile kullanım için uygun özellikle: XAML XAML tabanlı veri bağlamaları ViewModel koduna bağlı Görünüm tanımlar.
 
 ## <a name="xaml-basics-contents"></a>XAML temelleri içeriği
 
 * [Genel bakış](#Overview)
-* [1. bölüm. XAML ile çalışmaya başlama](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-* [2. bölüm. Temel XAML sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-* [Bölüm 3. XAML işaretleme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-* [Bölüm 4. Veri bağlama temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+* [Bölüm 1. XAML Kullanmaya Başlarken](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+* [Bölüm 2. Temel XAML Sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+* [Bölüm 3. XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+* [Bölüm 4. Temel Veri Bağlama Bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
 * [Bölüm 5. Verileri için MVVM bağlama](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
 
 Bu XAML temelleri makaleler yanı sıra bölümlerde rehberi indirebilirsiniz [Xamarin.Forms ile Mobile Apps oluşturma](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md):
@@ -112,4 +111,4 @@ Xamarin.Forms ve XML ile aşina olduğunuzda okuma Başlat [Kısım 1. XAML ile 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 - [Xamarin.Forms giriş](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Mobile Apps defteri oluşturma](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
-- [Xamarin.Forms örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms Örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)

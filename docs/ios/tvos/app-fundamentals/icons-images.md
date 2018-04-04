@@ -1,18 +1,17 @@
 ---
-title: "Simgeler ve görüntüleri ile çalışma"
-description: "Bu makalede tasarlama ve simgeler ve Xamarin.tvOS uygulama içinde görüntülerle çalışma kapsar."
-ms.topic: article
+title: Simgeler ve görüntüleri ile çalışma
+description: Bu makalede tasarlama ve simgeler ve Xamarin.tvOS uygulama içinde görüntülerle çalışma kapsar.
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 927a77d5671e877e93e5375b61220ac595891179
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: c888ecf3d7e0f21734f2b89176eed56bf778dbf9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-icons-and-images"></a>Simgeler ve görüntüleri ile çalışma
 
@@ -122,7 +121,7 @@ Oluşturulan Apple [Parallax Önizleyicisi](http://itunespartner.apple.com/asset
 
 [![](icons-images-images/layered03.png "Parallax genele gitmeyi")](icons-images-images/layered03.png#lightbox)
 
-Katmanlı bir görüntü önizlerken görüntü döndürmek ve Parallax efekti önizlemek için fareyi kullanabilirsiniz. Kullanım  **+**  (artı) ve  **-**  (eksi) düğmelerini katman ekleme ve kaldırma.
+Katmanlı bir görüntü önizlerken görüntü döndürmek ve Parallax efekti önizlemek için fareyi kullanabilirsiniz. Kullanım **+** (artı) ve **-** (eksi) düğmelerini katman ekleme ve kaldırma.
 
 Yeni bir katmanlı görüntüsü oluştururken LSR formatında dışa ve uygulamanızın pakete eklenen.
 

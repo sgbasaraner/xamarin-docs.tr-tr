@@ -1,7 +1,6 @@
 ---
-title: "C# 6 yeni genel bakış özellikleri"
-description: "C# dili – sürüm 6 – en son sürümünü daha az Demirbaş, geliştirilmiş daha anlaşılır olması ve daha fazla tutarlılık sağlamak için dil gelişmeye devam eder. Temizleyici başlatma sözdizimi kullanma yeteneğini catch/finally blokları ve null-conditional await? işleç özellikle kullanışlıdır."
-ms.topic: article
+title: C# 6 yeni genel bakış özellikleri
+description: C# dili – sürüm 6 – en son sürümünü daha az Demirbaş, geliştirilmiş daha anlaşılır olması ve daha fazla tutarlılık sağlamak için dil gelişmeye devam eder. Temizleyici başlatma sözdizimi kullanma yeteneğini catch/finally blokları ve null-conditional await? işleç özellikle kullanışlıdır.
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.technology: xamarin-cross-platform
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 80456287c92913b048b73f40d2db6dcb16cc270d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2a189a19280576876e5d5a6a4fa34d2d00cab330
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="c-6-new-features-overview"></a>C# 6 yeni genel bakış özellikleri
 
@@ -52,7 +51,7 @@ Mac için Visual Studio sisteminizdeki Mono yükleme otomatik olarak güncelleş
 
 Windows kullanıcıları olmalıdır [Visual Studio 2015 veya 2017 ^](https://www.visualstudio.com/) (Windows için Xamarin Studio IDE'yi seçtiğiniz olsa bile) C# 6 Kodu derlemek için yüklü.
 
-^ veya  *[Microsoft derleme araçları 2015](http://www.microsoft.com/en-us/download/details.aspx?id=48159)*  komutu için derleme veya derleme sunucuları, örneğin satır.
+^ veya *[Microsoft derleme araçları 2015](http://www.microsoft.com/en-us/download/details.aspx?id=48159)* komutu için derleme veya derleme sunucuları, örneğin satır.
 
 ## <a name="using-c-6"></a>C# 6 kullanarak
 

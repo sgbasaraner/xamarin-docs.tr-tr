@@ -1,18 +1,18 @@
 ---
-title: "Merhaba, Android: Hızlı Başlangıç"
-description: "Bu iki parçalı Kılavuzu'nda (Visual Studio veya Visual Studio için Mac kullanarak), ilk Xamarin.Android uygulaması oluşturma ve Xamarin ile Android uygulaması geliştirme ile ilgili temel bilgileri bir anlayış geliştirmek. Yol boyunca araçları, kavramlar ve oluşturmak ve bir Xamarin.Android uygulaması dağıtmak için gerekli adımları görülecektir."
-ms.topic: article
+title: 'Merhaba, Android: Hızlı Başlangıç'
+description: Bu iki parçalı Kılavuzu'nda (Visual Studio veya Visual Studio için Mac kullanarak), ilk Xamarin.Android uygulaması oluşturma ve Xamarin ile Android uygulaması geliştirme ile ilgili temel bilgileri bir anlayış geliştirmek. Yol boyunca araçları, kavramlar ve oluşturmak ve bir Xamarin.Android uygulaması dağıtmak için gerekli adımları görülecektir.
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: bbe243b108be6e0060ba9067db58a9875c7b5153
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-quickstart"></a>Merhaba, Android: Hızlı Başlangıç
 
@@ -276,7 +276,7 @@ Seçimi iletişim kutusundan sıkıştırması açılmış Xamarin AdApp simgele
 
 Her biri için bu adımları yineleyin **mipmap -** içeriğini kadar klasörleri **mipmap -** Xamarin uygulama simgeleri klasörler, bunların karşılık gelen kopyalanır **mipmap -** klasörlerde **Phoneword** projesi.
 
-Tüm simgeleri Xamarin.Android projesi kopyaladıktan sonra açmak **proje seçenekleri** nde projeye sağ tıklatarak iletişim **çözüm paneli**. Seçin **Yapı > Android uygulaması** seçip  **@mipmap/icon**  gelen **uygulama simgesi** birleşik giriş kutusu:
+Tüm simgeleri Xamarin.Android projesi kopyaladıktan sonra açmak **proje seçenekleri** nde projeye sağ tıklatarak iletişim **çözüm paneli**. Seçin **Yapı > Android uygulaması** seçip **@mipmap/icon** gelen **uygulama simgesi** birleşik giriş kutusu:
 
 [![Proje simgesini ayarlama](hello-android-quickstart-images/vs/25-set-project-icon-sml.png)](hello-android-quickstart-images/vs/25-set-project-icon.png#lightbox)
 
@@ -518,7 +518,7 @@ Seçimi iletişim kutusundan sıkıştırması açılmış Xamarin AdApp simgele
 
 Her biri için bu adımları yineleyin **mipmap -** içeriğini kadar klasörleri **mipmap -** Xamarin uygulama simgeleri klasörler, bunların karşılık gelen kopyalanır **mipmap -** klasörlerde **Phoneword** projesi.
 
-Tüm simgeleri Xamarin.Android projesi kopyaladıktan sonra açmak **proje seçenekleri** nde projeye sağ tıklatarak iletişim **çözüm paneli**. Seçin **Yapı > Android uygulaması** seçip  **@mipmap/icon**  gelen **uygulama simgesi** birleşik giriş kutusu:
+Tüm simgeleri Xamarin.Android projesi kopyaladıktan sonra açmak **proje seçenekleri** nde projeye sağ tıklatarak iletişim **çözüm paneli**. Seçin **Yapı > Android uygulaması** seçip **@mipmap/icon** gelen **uygulama simgesi** birleşik giriş kutusu:
 
 [![Proje simgesini ayarlama](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
 

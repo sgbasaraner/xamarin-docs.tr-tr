@@ -1,18 +1,17 @@
 ---
-title: "JNI ile çalışma"
-description: "Xamarin.Android içinde C# Java yerine Android uygulamaları yazma izin verir. Birkaç derlemeler ile Xamarin.Android Mono.Android.dll ve Mono.Android.GoogleMaps.dll dahil olmak üzere, Java kitaplıkları için bağlamaları sağlayan sağlanır. Ancak, bağlamaları için olası her Java kitaplığı sağlanmayan ve her Java tür ve üye sağlanan bağlamaları bağlayabilirsiniz değil. İlişkisiz Java türleri ve üyeleri kullanmak için Java yerel arabirimi (JNI) kullanılabilir. Bu makalede JNI Java türleri ve üyeleri Xamarin.Android uygulamalardan etkileşim için nasıl kullanılacağı gösterilmektedir."
-ms.topic: article
+title: JNI ile çalışma
+description: Xamarin.Android içinde C# Java yerine Android uygulamaları yazma izin verir. Birkaç derlemeler ile Xamarin.Android Mono.Android.dll ve Mono.Android.GoogleMaps.dll dahil olmak üzere, Java kitaplıkları için bağlamaları sağlayan sağlanır. Ancak, bağlamaları için olası her Java kitaplığı sağlanmayan ve her Java tür ve üye sağlanan bağlamaları bağlayabilirsiniz değil. İlişkisiz Java türleri ve üyeleri kullanmak için Java yerel arabirimi (JNI) kullanılabilir. Bu makalede JNI Java türleri ve üyeleri Xamarin.Android uygulamalardan etkileşim için nasıl kullanılacağı gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 4b5874a0f0e4289201f68299e2e37660cabc9ecf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-jni"></a>JNI ile çalışma
 

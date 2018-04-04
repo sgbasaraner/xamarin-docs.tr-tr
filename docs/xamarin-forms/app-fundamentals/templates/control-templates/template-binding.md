@@ -1,18 +1,17 @@
 ---
-title: "Bağlamanın ControlTemplate dışında"
-description: "Ortak özellikler için bir denetim şablonu verilere denetimler bağlama şablonu bağlamaları kolayca değiştirilecek denetim şablonu denetimlerinde özellik değerlerini etkinleştirme izin verin. Bu makalede, veri bağlama denetimi şablonundan gerçekleştirmek için şablonu bağlamalar kullanılarak gösterilmektedir."
-ms.topic: article
+title: Bağlamanın ControlTemplate dışında
+description: Ortak özellikler için bir denetim şablonu verilere denetimler bağlama şablonu bağlamaları kolayca değiştirilecek denetim şablonu denetimlerinde özellik değerlerini etkinleştirme izin verin. Bu makalede, veri bağlama denetimi şablonundan gerçekleştirmek için şablonu bağlamalar kullanılarak gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 5b330c448a135cbcf8fc2745debc48924e29c103
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3b306c79aea9bd2192aa73eddcf95790a9b24353
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-from-a-controltemplate"></a>Bağlamanın ControlTemplate dışında
 
@@ -68,7 +67,7 @@ Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
 
 ![](template-binding-images/teal-theme.png "Deniz denetim şablonu bağlamalar kullanılarak şablonu")
 
-## <a name="creating-a-templatebinding-in-c35"></a>C &#35;TemplateBinding oluşturma;
+## <a name="creating-a-templatebinding-in-c35"></a>C'de TemplateBinding oluşturma&#35;
 
 C# ' ta, bir [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) kullanılarak oluşturulan `TemplateBinding` aşağıdaki kod örneğinde gösterildiği şekilde Oluşturucusu:
 

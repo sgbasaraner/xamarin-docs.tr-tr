@@ -1,17 +1,16 @@
 ---
-title: "Yerelleştirme ile çalışma"
-description: "Birden çok dil için watchOS uygulamalarınızı uyarlama"
-ms.topic: article
+title: Yerelleştirme ile çalışma
+description: Birden çok dil için watchOS uygulamalarınızı uyarlama
 ms.prod: xamarin
 ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9ad3499a232e5f2b2ef362f772ed0197e71e6bee
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c765005491f55a1bdcadb1bc5aea97f693dc4570
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-localization"></a>Yerelleştirme ile çalışma
 
@@ -86,13 +85,13 @@ Film şeridi saatin işlendiğinde kullanılacak doğru değerleri otomatik olar
 
 #### <a name="storyboard-images"></a>Film şeridi görüntüleri
 
-Örnek bir çözüm de içeren bir  **gradient@2x.png**  her dil klasöründe görüntü. Bu görüntü (ör. her dil için farklı olabilir çevirme gereken metin katıştırılmış sahip veya kullanım yansır yerelleştirilmiş).
+Örnek bir çözüm de içeren bir **gradient@2x.png** her dil klasöründe görüntü. Bu görüntü (ör. her dil için farklı olabilir çevirme gereken metin katıştırılmış sahip veya kullanım yansır yerelleştirilmiş).
 
 Yalnızca görüntü ayarlama **görüntü** film şeridi ve doğru görüntüyü özelliğinde işlenmediğinde kullanıcı tarafından seçilen dile göre izleme.
 
 ![](localization-images/storyboard-image.png "Görüntüleri film şeridi resim özelliği ayarlı")
 
-Not: tüm Apple saatlerde Retina görüntüler, yalnızca olduğundan  **@2x**  görüntü sürümü gereklidir. Belirtmeniz gerekmez  **@2x**  film şeridi içinde.
+Not: tüm Apple saatlerde Retina görüntüler, yalnızca olduğundan **@2x** görüntü sürümü gereklidir. Belirtmeniz gerekmez **@2x** film şeridi içinde.
 
 ### <a name="watch-extension"></a>İzleme uzantısı
 
@@ -130,7 +129,7 @@ Kod tarafından doldurulur görüntüleri iki yolla ayarlanabilir.
   displayImage.SetImage("gradient"); // image in Watch App (as shown above)
   ```
 
-2. Gözcü kullanmaya uzantısından bir görüntü taşıyabilirsiniz `FromBundle` ve uygulama kullanıcının dil seçimi için doğru görüntüyü otomatik olarak seçer. Örnek bir çözüm yoktur görüntüyü  **language@2x.png**  her dil klasörünü ve onu görüntülenir `DetailController` aşağıdaki kodu kullanarak:
+2. Gözcü kullanmaya uzantısından bir görüntü taşıyabilirsiniz `FromBundle` ve uygulama kullanıcının dil seçimi için doğru görüntüyü otomatik olarak seçer. Örnek bir çözüm yoktur görüntüyü **language@2x.png** her dil klasörünü ve onu görüntülenir `DetailController` aşağıdaki kodu kullanarak:
 
   ```csharp
   using (var image = UIImage.FromBundle ("language")) {
@@ -138,7 +137,7 @@ Kod tarafından doldurulur görüntüleri iki yolla ayarlanabilir.
   }
   ```
 
-  Belirtmeniz gerekmez Not  **@2x**  görüntünün filename söz konusu olduğunda.
+  Belirtmeniz gerekmez Not **@2x** görüntünün filename söz konusu olduğunda.
 
 İkinci yöntem, ayrıca saatin işlemek için uzak bir sunucudan bir görüntü yüklerseniz geçerlidir; Ancak bu durumda, indirdiğiniz resim kullanıcı tercihlerine göre doğru yerelleştirilmiş emin olun.
 

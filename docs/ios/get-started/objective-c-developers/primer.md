@@ -1,17 +1,16 @@
 ---
-title: "C# Primer Objective-C geliştiricileri için"
-description: "Xamarin.iOS platformlar genelinde paylaşılmak üzere C# yazılan platform belirsiz kod sağlar. Ancak, var olan iOS uygulamaları zaten oluşturulmuş Objective-C kodunu yararlanan isteyebilirsiniz. Bu makalede Xamarin ve C# dili taşımak isteyen Objective-C geliştiriciler için kısa bir primer görev yapar."
-ms.topic: article
+title: C# Primer Objective-C geliştiricileri için
+description: Xamarin.iOS platformlar genelinde paylaşılmak üzere C# yazılan platform belirsiz kod sağlar. Ancak, var olan iOS uygulamaları zaten oluşturulmuş Objective-C kodunu yararlanan isteyebilirsiniz. Bu makalede Xamarin ve C# dili taşımak isteyen Objective-C geliştiriciler için kısa bir primer görev yapar.
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bfc91ba92b2ed62e61d7ba99dec03784933295bd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 717e131dd4025ea07780f6e52d8171fd15272dac
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="c-primer-for-objective-c-developers"></a>C# Primer Objective-C geliştiricileri için
 

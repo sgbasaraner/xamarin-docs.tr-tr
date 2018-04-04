@@ -1,16 +1,16 @@
 ---
-title: "I dosyalarını ekleyebilir veya Visual Studio'da oluşturduktan sonra bir IPA dosyasından dosyaları kaldırmak?"
-ms.topic: article
+title: I dosyalarını ekleyebilir veya Visual Studio'da oluşturduktan sonra bir IPA dosyasından dosyaları kaldırmak?
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6C3082FB-C3F1-4661-BE45-64570E56DE7C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be792c95de7aa66d64278e47b2ca6b354e611273
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8b61ba38491b2085233dd1b30a82bc57d2baaed
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>I dosyalarını ekleyebilir veya Visual Studio'da oluşturduktan sonra bir IPA dosyasından dosyaları kaldırmak?
 
@@ -86,4 +86,4 @@ file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530
 
 Ve App Store doğrulama işlemi benzer bir hata iletisi rapor eder:
 
-> HATA ITMS-90035: "imzası geçersiz. Korumalı bir kaynağı eksik veya geçersiz olur. İkili [iPhoneApp1.app/iPhoneApp1] yolundaki geçersiz bir imza içeriyor. Uygulama dağıtım sertifikası veya değil, geçici bir sertifika geliştirme sertifikası ile imzalanmış emin olun. Xcode kod imzalama ayarlarında (Proje düzeyindeki tüm değerleri geçersiz kılmak) hedef düzeyinde doğru olduğundan emin olun. Ayrıca, bir yayın hedef Xcode'da Simulator hedef kullanılarak karşıya yüklemekte olduğunuz paket oluşturuldu emin olun. Kod imzalama ayarlarınızın doğru olduğundan eminseniz, Xcode'da "Temiz tümünü"'i seçin, Bulucu "yapı" dizininde silin ve yayın hedef yeniden oluşturun. Daha fazla bilgi için lütfen bakın [https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> HATA ITMS-90035: "imzası geçersiz. Korumalı bir kaynağı eksik veya geçersiz olur. İkili [iPhoneApp1.app/iPhoneApp1] yolundaki geçersiz bir imza içeriyor. Uygulama dağıtım sertifikası veya değil, geçici bir sertifika geliştirme sertifikası ile imzalanmış emin olun. Xcode kod imzalama ayarlarında (Proje düzeyindeki tüm değerleri geçersiz kılmak) hedef düzeyinde doğru olduğundan emin olun. Ayrıca, bir yayın hedef Xcode'da Simulator hedef kullanılarak karşıya yüklemekte olduğunuz paket oluşturuldu emin olun. Kod imzalama ayarlarınızın doğru olduğundan eminseniz, Xcode'da "Temiz tümünü"'i seçin, Bulucu "yapı" dizininde silin ve yayın hedef yeniden oluşturun. Daha fazla bilgi için lütfen bakın [ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

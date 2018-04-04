@@ -1,18 +1,17 @@
 ---
-title: "UrhoSharp - 3B/2B altyapısı"
-description: "UrhoSharp geometri, malzemeler, ışık ve Kameralar'ı kullanarak uygulamalarınızın animasyonlu 3B ve 2B planda oluşturmak için kullanılan bir platformlar arası üst düzey 3B ve 2B altyapısıdır."
-ms.topic: article
+title: UrhoSharp - 3B/2B altyapısı
+description: UrhoSharp geometri, malzemeler, ışık ve Kameralar'ı kullanarak uygulamalarınızın animasyonlu 3B ve 2B planda oluşturmak için kullanılan bir platformlar arası üst düzey 3B ve 2B altyapısıdır.
 ms.prod: xamarin
 ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 747c38c4a279b740bf52645c00df85ea9357f4a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c8df53d90ab1245aecff3eab1393c009b7910aa5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp - 3B/2B altyapısı
 
@@ -26,7 +25,7 @@ UrhoSharp Visual Studio veya Visual Studio için Mac yüklenebilir ve aşağıda
 
 Bu makalede UrhoSharp ve özelliklerini basit 3B oyunlar kullanımda ve 3B görselleştirme için üst düzey bir genel bakış sağlar.
 
-##  <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[UrhoSharp kullanma](~/graphics-games/urhosharp/using.md)
+##  <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[UrhoSharp Kullanma](~/graphics-games/urhosharp/using.md)
 
 Bu belgede oyun oluşturmak veya uygulamanız için 3B bir görselleştirmesi oluşturmak için kullanacağı UrhoSharp temel kavramlarını açıklar.
 

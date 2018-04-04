@@ -1,17 +1,16 @@
 ---
-title: "İletimi"
-description: "Bu makalede aktarmak için bir Xamarin.iOS uygulaması ile iletim çalışma kapsar kullanıcı üzerinde çalışan uygulamalar arasında kullanıcı etkinlikleri kullanıcının diğer aygıtlar."
-ms.topic: article
+title: İletimi
+description: Bu makalede aktarmak için bir Xamarin.iOS uygulaması ile iletim çalışma kapsar kullanıcı üzerinde çalışan uygulamalar arasında kullanıcı etkinlikleri kullanıcının diğer aygıtlar.
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 25220f37433037b55f13c4de5a07c0c09173a269
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bb665c7ffd4241fac14be13ebd8f113d11afd417
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="handoff"></a>İletimi
 
@@ -463,7 +462,7 @@ Bu JSON dosyası biçiminde uygulama kimlikleri listesini belirtir bir sözlük 
 }
 ```
 
-JSON dosyasını imzalamak için (doğru sahip olması `Content-Type` , `application/pkcs7-mime`), kullanın **Terminal** uygulama ve `openssl` bir sertifika ve anahtar iOS tarafından güvenilen bir sertifika yetkilisi tarafından verilen komutunu (bkz: [ http://support.apple.com/kb/ht5012](http://support.apple.com/kb/ht5012) bir listesi için). Örneğin:
+JSON dosyasını imzalamak için (doğru sahip olması `Content-Type` , `application/pkcs7-mime`), kullanın **Terminal** uygulama ve `openssl` bir sertifika ve anahtar iOS tarafından güvenilen bir sertifika yetkilisi tarafından verilen komutunu (bkz: [ http://support.apple.com/kb/ht5012 ](http://support.apple.com/kb/ht5012) bir listesi için). Örneğin:
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",

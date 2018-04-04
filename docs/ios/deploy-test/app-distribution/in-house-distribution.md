@@ -1,18 +1,17 @@
 ---
-title: "Şirket içi dağıtım"
-description: "Bu belgeyi şirket içinde Apple Enterprise Developer Program üyesi uygulamaların dağıtım kısa bir genel bakış sağlar."
-ms.topic: article
+title: Şirket içi dağıtım
+description: Bu belgeyi şirket içinde Apple Enterprise Developer Program üyesi uygulamaların dağıtım kısa bir genel bakış sağlar.
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4da96f3119fb46fbeb22ad3d6c68b3099f6d0698
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c11148928ab0fa028f9cc4a9cb50b27a0e195847
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-house-distribution"></a>Şirket içi dağıtım
 
@@ -53,7 +52,7 @@ Süresi dolmuş sertifikaları olamaz yenilendi ve bunun yerine, ayrıntılı ol
 
 1. Gözat *tanımlayıcıları & profilleri, sertifikaları* Apple Developer Member Center'da bölümü.
 2. Altında *sertifikaları*seçin **üretim**.
-3. Tıklatın  **+**  yeni bir sertifika oluşturmak için düğmeye.
+3. Tıklatın **+** yeni bir sertifika oluşturmak için düğmeye.
 4. Altında *üretim* başlığını seçin **şirket içi ve geçici**:
 
    [![](in-house-distribution-images/createcertmanually01.png "Şirket içi ve geçici seçin")](in-house-distribution-images/createcertmanually01.png#lightbox)
@@ -96,7 +95,7 @@ Olarak herhangi diğer sağlama oluşturduğunuz profil ile bir uygulama kimliğ
 
 
 1. İçinde [Apple Geliştirici Merkezi](https://developer.apple.com/account/overview.action) göz *sertifika, tanımlayıcılarını ve profiller* bölümü. Seçin **uygulama kimlikleri** altında **tanımlayıcıları**.
-2. Tıklatın  **+**  düğmesine tıklayın ve sağlayan bir **adı** hangi tanımlar ve bu Portalı'nda.
+2. Tıklatın **+** düğmesine tıklayın ve sağlayan bir **adı** hangi tanımlar ve bu Portalı'nda.
 3. Uygulama önek takım Kimliğiniz ayarlanması gerekir ve değiştirilemez. Explicit veya joker uygulama kimliği seçin ve bir paket kimliği gibi geriye doğru DNS biçimde girin: **Explicit**: com [etkialanıadı]. [ AppName] **joker**: com [etkialanıadı]. *
 4. Seçin [uygulama hizmetleri](~/ios/get-started/installation/device-provisioning/index.md#appservices) , uygulamanızı gerektirir.
 5. Tıklatın **devam** düğmesi ve yeni bir uygulama kimliği oluşturmak için açık ekran yönergeleri izleyerek
@@ -107,7 +106,7 @@ Dağıtım profili oluşturmak için gerekli gerekli bileşenleri olduktan sonra
 
    [![](in-house-distribution-images/distribute01.png "Sağlama seçin > Dağıtım")](in-house-distribution-images/distribute01.png#lightbox)
 
-2. Tıklatın  **+**  düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **şirket içi**:
+2. Tıklatın **+** düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **şirket içi**:
 
    [![](in-house-distribution-images/distribute02.png "Bir şirket içi dağıtım profili oluştur")](in-house-distribution-images/distribute02.png#lightbox)
 

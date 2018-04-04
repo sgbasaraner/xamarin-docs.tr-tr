@@ -1,18 +1,17 @@
 ---
-title: "Azure Active Directory B2C Azure mobil uygulamaları ile tümleştirme"
-description: "Azure Active Directory B2C bir tüketiciye yönelik web ve mobil uygulamaları için bulut kimlik yönetimi çözümüdür. Bu makalede, Azure Active Directory B2C kimlik doğrulaması ve yetkilendirme için bir Azure Mobile Apps örneğine Xamarin.Forms ile sağlamak için nasıl kullanılacağı gösterilmektedir."
-ms.topic: article
+title: Azure Active Directory B2C Azure mobil uygulamaları ile tümleştirme
+description: Azure Active Directory B2C bir tüketiciye yönelik web ve mobil uygulamaları için bulut kimlik yönetimi çözümüdür. Bu makalede, Azure Active Directory B2C kimlik doğrulaması ve yetkilendirme için bir Azure Mobile Apps örneğine Xamarin.Forms ile sağlamak için nasıl kullanılacağı gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 53F52036-A997-4D0F-86B4-4302C6913136
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: c28ddc09b07066de67f5c974cf5c2128726c6932
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cafc1e78779dc393fa0409daa08b3daa8948a1ee
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Azure Active Directory B2C Azure mobil uygulamaları ile tümleştirme
 

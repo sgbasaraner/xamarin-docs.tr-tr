@@ -1,18 +1,17 @@
 ---
 title: Java Bindings Metadata
-description: "C# kod Xamarin.Android: Java kitaplıkları Java yerel arabirimi (JNI içinde) belirtilen alt düzey ayrıntıların soyutlar sistemdir bağlamaları aracılığıyla çağırır. Xamarin.Android bu bağlamaların oluşturan bir araç sağlar. Bu araç, ad alanlarını değiştirme ve üyeleri yeniden adlandırma gibi yordamları gerçekleştirmeye olanak tanıyan meta verileri kullanarak bir bağlama nasıl oluşturulduğunu Geliştirici denetimi sağlar. Bu belge meta verileri nasıl çalıştığı açıklanmaktadır, bu meta veri öznitelikleri özetler destekler ve bu meta verileri değiştirerek bağlama sorunları gidermek açıklanmaktadır."
-ms.topic: article
+description: 'C# kod Xamarin.Android: Java kitaplıkları Java yerel arabirimi (JNI içinde) belirtilen alt düzey ayrıntıların soyutlar sistemdir bağlamaları aracılığıyla çağırır. Xamarin.Android bu bağlamaların oluşturan bir araç sağlar. Bu araç, ad alanlarını değiştirme ve üyeleri yeniden adlandırma gibi yordamları gerçekleştirmeye olanak tanıyan meta verileri kullanarak bir bağlama nasıl oluşturulduğunu Geliştirici denetimi sağlar. Bu belge meta verileri nasıl çalıştığı açıklanmaktadır, bu meta veri öznitelikleri özetler destekler ve bu meta verileri değiştirerek bağlama sorunları gidermek açıklanmaktadır.'
 ms.prod: xamarin
 ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 6dea13fcda43cad22b8bea9838bbcb23b97820c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="java-bindings-metadata"></a>Java Bindings Metadata
 
@@ -246,7 +245,7 @@ Bir yöntemin dönüş türünü değiştirir. Bu dönüş özniteliği (değiş
 
 ### <a name="obfuscated"></a>gizlenmiş
 
-Java kitaplıkları belirsizleştirirseniz araçları bağlama Xamarin.Android oluşturucu ve C# sarmalayıcı sınıfları oluşturmak yeteneğini etkileyebilir. Karıştırılmış sınıfların özellikleri içerir: * sınıf adını içeren bir  **$** , yani **$.class** * sınıf adının tamamen küçük harf karakter yani tehlikeye  **a.class**
+Java kitaplıkları belirsizleştirirseniz araçları bağlama Xamarin.Android oluşturucu ve C# sarmalayıcı sınıfları oluşturmak yeteneğini etkileyebilir. Karıştırılmış sınıfların özellikleri içerir: * sınıf adını içeren bir **$**, yani **$.class** * sınıf adının tamamen küçük harf karakter yani tehlikeye  **a.class**
 
 Bu kod parçacığında, bir "beklemediğiniz karıştırılmış" C# türü oluşturmak nasıl örneğidir:
 

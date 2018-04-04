@@ -1,18 +1,17 @@
 ---
-title: "XAML işaretleme uzantıları"
-description: "Hangi XAML özniteliklerini ayarla kaynakları aralığını genişletin"
-ms.topic: article
+title: XAML işaretleme uzantıları
+description: Hangi XAML özniteliklerini ayarla kaynakları aralığını genişletin
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 11889115b65608c750690c33052a9c86f7081e25
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b81bc4b31edd1d8b8f5f43f97885c38e889dd32c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xaml-markup-extensions"></a>XAML işaretleme uzantıları
 
@@ -46,11 +45,11 @@ Süslü ayraçlar hiçbir öznitelik ayardır *her zaman* XAML biçimlendirme uz
 
 Bu makalede iki bölüme ayrılır:
 
-## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[XAML biçimlendirme uzantıları kullanma](consuming.md)  
+## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[XAML Biçimlendirme Uzantılarını Kullanma](consuming.md)  
 
 XAML biçimlendirme uzantıları Xamarin.Forms içinde tanımlı kullanın.
 
-## <a name="creating-xaml-markup-extensionscreatingmd"></a>[XAML biçimlendirme uzantıları oluşturma](creating.md) 
+## <a name="creating-xaml-markup-extensionscreatingmd"></a>[XAML Biçimlendirme Uzantıları Oluşturma](creating.md) 
 
 Kendi özel XAML biçimlendirme uzantıları yazma.
 
@@ -60,6 +59,6 @@ Kendi özel XAML biçimlendirme uzantıları yazma.
 
 - [Biçimlendirme uzantıları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 - [XAML biçimlendirme uzantıları bölüm Xamarin.Forms defterinden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [Kaynak sözlükleri](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Dinamik stilleri](~/xamarin-forms/user-interface/styles/dynamic.md)
+- [Kaynak Sözlükler](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Dinamik Stiller](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Veri Bağlama](~/xamarin-forms/app-fundamentals/data-binding/index.md)

@@ -1,17 +1,16 @@
 ---
 title: Backgrounding
-description: "Arka plan işleme veya backgrounding başka bir uygulama ön planda çalıştığı sırada görevleri arka planda uygulamaları izin vererek işlemidir. Bu kılavuz, arka plan iOS işlemleri giriş olarak görev yapar."
-ms.topic: article
+description: Arka plan işleme veya backgrounding başka bir uygulama ön planda çalıştığı sırada görevleri arka planda uygulamaları izin vererek işlemidir. Bu kılavuz, arka plan iOS işlemleri giriş olarak görev yapar.
 ms.prod: xamarin
 ms.assetid: F377440C-C5D9-4267-85D8-2C816E3A0300
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2bba7c0908fb78ca199cc654adad645afaf47a02
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ae3e732008c6503f511dc4be9cad874ecfe1272d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="backgrounding"></a>Backgrounding
 
@@ -25,11 +24,11 @@ Bu kılavuz ve izlenecek yollar eşlik, biz arka planda uygulama görevleri öğ
 
 ## <a name="contents"></a>İçindekiler
 
-1.  [İOS içinde Backgrounding giriş](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md)
-1.  [Uygulama yaşam döngüsü Tanıtımı](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md)
-1.  [iOS Backgrounding teknikleri](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/index.md)
-1.  [İzlenecek yollar: iOS Backgrounding](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
-1.  [iOS Backgrounding Kılavuzu](~/ios/app-fundamentals/backgrounding/ios-backgrounding-guidance.md)
+1.  [iOS’ta Arka Planda İşlemeye Giriş](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md)
+1.  [Uygulama Yaşam Döngüsü Tanıtımı](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md)
+1.  [iOS Arka Planda İşleme Teknikleri](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/index.md)
+1.  [İzlenecek Yollar: iOS’ta Arka Planda İşleme](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
+1.  [iOS Arka Planda İşlemeRehberi](~/ios/app-fundamentals/backgrounding/ios-backgrounding-guidance.md)
 
 ## <a name="summary"></a>Özet
 

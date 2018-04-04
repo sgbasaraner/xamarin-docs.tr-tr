@@ -1,16 +1,16 @@
 ---
-title: "Nasıl Xamarin lisansları el ile eşitlemek?"
-ms.topic: article
+title: Nasıl Xamarin lisansları el ile eşitlemek?
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: D0BD93E9-3A1F-4E5B-8EE8-36ADC33DCFE4
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 2413b6b7563a6ed1e17a8db61d2d61ddc85e71ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b06a1a7d525c91d7c3973b2b02d3d2835ce482f9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-do-i-manually-resynchronize-xamarin-licenses"></a>Nasıl Xamarin lisansları el ile eşitlemek?
 
@@ -49,7 +49,7 @@ Bu hızlı işlem bazı durumlarda yeterli olabilir disk üzerindeki Lisans dosy
 
 4.  Yinelenen bilgisayar adları çifti görürseniz, kullanın **etkinliğini** kaldırmak için açılır menü öğesi _her ikisi de_ çiftinin üyeleri:
     
-    ![Lisans https://store.xamarin.com/account/my/subscription/computers üzerinde devre dışı bırak ->](resync-licenses-images/deactivate.png "çiftinin her iki üyeleri kaldırmak için devre dışı bırak açılır menü öğesini kullanın")
+    ![Lisans -> etkinliğini üzerinde https://store.xamarin.com/account/my/subscription/computers ] (resync-licenses-images/deactivate.png "çiftinin her iki üyeleri kaldırmak için devre dışı bırak açılır menü öğesini kullanın")
 
 5.  Disk üzerinde hala mevcut lisans dosyaları kalan tüm kopyalarını silin.
     -   Windows

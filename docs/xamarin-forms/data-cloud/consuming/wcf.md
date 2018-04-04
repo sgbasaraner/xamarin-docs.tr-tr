@@ -1,18 +1,17 @@
 ---
 title: Bir Windows Communication Foundation (WCF) Web hizmeti kullanma
-description: "WCF hizmet odaklı uygulamalar oluşturmak için Microsoft'un birleşik çerçevedir. Geliştiricilerin güvenli, güvenilir, işlenen ve birlikte çalışabilir dağıtılmış uygulamalar oluşturmalarını sağlar. Bu makalede, bir Xamarin.Forms uygulaması WCF Basit Nesne Erişim Protokolü (SOAP) hizmetinden kullanma gösterilmektedir."
-ms.topic: article
+description: WCF hizmet odaklı uygulamalar oluşturmak için Microsoft'un birleşik çerçevedir. Geliştiricilerin güvenli, güvenilir, işlenen ve birlikte çalışabilir dağıtılmış uygulamalar oluşturmalarını sağlar. Bu makalede, bir Xamarin.Forms uygulaması WCF Basit Nesne Erişim Protokolü (SOAP) hizmetinden kullanma gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: a02627d5e5b40fe9e7b2fdbd3a6995a2d96fbf03
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: c626008012ccdab2f8ed2c719b34a45471598d47
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Bir Windows Communication Foundation (WCF) Web hizmeti kullanma
 

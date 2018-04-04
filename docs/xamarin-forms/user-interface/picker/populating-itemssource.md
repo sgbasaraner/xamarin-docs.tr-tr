@@ -1,18 +1,17 @@
 ---
-title: "Bir seçici'nın ItemsSource özelliği ayarlama"
-description: "Seçici görünüm veri listesinden bir öğe seçmek için bir denetimdir. Bu makalede ItemsSource özelliği ayarlanarak bir seçici verilerle doldurmak nasıl ve nasıl öğe seçimi kullanıcı tarafından yanıt açıklanmaktadır."
-ms.topic: article
+title: Bir seçici'nın ItemsSource özelliği ayarlama
+description: Seçici görünüm veri listesinden bir öğe seçmek için bir denetimdir. Bu makalede ItemsSource özelliği ayarlanarak bir seçici verilerle doldurmak nasıl ve nasıl öğe seçimi kullanıcı tarafından yanıt açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 5e3d20ad213df9fd9331c71c84003c7738bd5a29
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf3940bc1bc0318bad4d785388f9dc9292af80ca
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>Bir seçici'nın ItemsSource özelliği ayarlama
 
@@ -182,4 +181,4 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 - [Seçici Demo (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
 - [Monkey uygulama (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
 - [Bağlanabilir Seçici (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
-- [Picker](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)
+- [Seçici](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)

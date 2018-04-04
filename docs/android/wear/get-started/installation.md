@@ -1,18 +1,17 @@
 ---
-title: "Kurulum ve yükleme"
-description: "Bu makalede, bilgisayar ve cihazlar Android takmak geliştirme için hazırlamak için gereken yapılandırma ayrıntılarını ve yükleme adımları anlatılmaktadır. Bu makalenin sonundaki, Mac ve/veya Microsoft Visual Studio için Visual Studio'ya Xamarin.Android yıpranması yüklemesi tümleşik çalışma gerekir ve ilk Xamarin.Android yıpranması uygulamanızı oluşturmaya başlamak için hazır olması."
-ms.topic: article
+title: Kurulum ve yükleme
+description: Bu makalede, bilgisayar ve cihazlar Android takmak geliştirme için hazırlamak için gereken yapılandırma ayrıntılarını ve yükleme adımları anlatılmaktadır. Bu makalenin sonundaki, Mac ve/veya Microsoft Visual Studio için Visual Studio'ya Xamarin.Android yıpranması yüklemesi tümleşik çalışma gerekir ve ilk Xamarin.Android yıpranması uygulamanızı oluşturmaya başlamak için hazır olması.
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 012f563dcdaa70e33d641a4d8fb52df1622c260a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 86ed62075f5c39eaf7b0e348020f4a9361764727
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setup-and-installation"></a>Kurulum ve yükleme
 

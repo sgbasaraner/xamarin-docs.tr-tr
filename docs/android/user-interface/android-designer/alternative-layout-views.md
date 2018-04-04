@@ -1,18 +1,17 @@
 ---
-title: "Alternatif Düzen görünümleri"
-description: "Bu konuda nasıl düzenleri kaynak niteleyicileri kullanarak sürümlü olabilir açıklanmaktadır. Örneğin, cihaz yatay modda olduğunda, yalnızca kullanılan bir düzen sürümünü ve olabilir yalnızca dikey modu için bir düzen sürümü."
-ms.topic: article
+title: Alternatif Düzen görünümleri
+description: Bu konuda nasıl düzenleri kaynak niteleyicileri kullanarak sürümlü olabilir açıklanmaktadır. Örneğin, cihaz yatay modda olduğunda, yalnızca kullanılan bir düzen sürümünü ve olabilir yalnızca dikey modu için bir düzen sürümü.
 ms.prod: xamarin
 ms.assetid: 5EBF51FC-9048-F0CF-624A-D8782A91C1FD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: c2df60a79ea3b5a0ff226cfaade0440db13fd5ea
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2228169ed5d8575c9e332c85d963fca0400dea8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="alternative-layout-views"></a>Alternatif Düzen görünümleri
 

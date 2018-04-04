@@ -1,18 +1,17 @@
 ---
-title: "Apple TV uygulama mağazası yayımlama"
-description: "Bu makalede, yapılandırma, yapı ve dağıtım Apple TV App Store aracılığıyla Xamarin.tvOS uygulama yayımlama gösterilmektedir. Uygulamanızı dağıtım için hazırlamak üzere nasıl, Apple'nın araçları gözden geçirme için uygulamanızı göndermek için nasıl kullanılacağı ve, son olarak, uygulamanızı Apple TV uygulama Mağazası'na yayımlamak nasıl kapsayan bir adım adım kılavuz içerir."
-ms.topic: article
+title: Apple TV uygulama mağazası yayımlama
+description: Bu makalede, yapılandırma, yapı ve dağıtım Apple TV App Store aracılığıyla Xamarin.tvOS uygulama yayımlama gösterilmektedir. Uygulamanızı dağıtım için hazırlamak üzere nasıl, Apple'nın araçları gözden geçirme için uygulamanızı göndermek için nasıl kullanılacağı ve, son olarak, uygulamanızı Apple TV uygulama Mağazası'na yayımlamak nasıl kapsayan bir adım adım kılavuz içerir.
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV uygulama mağazası yayımlama
 
@@ -80,7 +79,7 @@ Apple özel uygulama hizmetleri için benzersiz bir kimlik oluşturduğunuzda, t
 Bir uygulama kimliği oluşturma ve isteğe bağlı olarak yetkilendirmeler seçerek Apple'nın web tabanlı iOS sağlama portalı kullanarak aşağıdaki adımları içerir:
 
 1. Seçin **sağlama** > **geliştirme**.
-2. Tıklatın  **+**  düğmesine tıklayın ve sağlayan bir **adı** ve **paket kimliği** yeni uygulama için.
+2. Tıklatın **+** düğmesine tıklayın ve sağlayan bir **adı** ve **paket kimliği** yeni uygulama için.
 3. Ekranın alt kısmına kaydırın ve seçin **uygulama hizmetleri** , gerekir Xamarin.tvOS uygulamanız tarafından.
 4. Tıklatın **devam** düğmesi ve aşağıdaki ekran yeni bir uygulama kimliği oluşturma yönergeleri
 
@@ -114,7 +113,7 @@ tvOS kullanan *sağlama profilleri* belirli uygulama yapı nasıl dağıtılabil
 Hazırlama Apple'nın web tabanlı iOS sağlama portalı kullanarak aşağıdaki adımları içerir:
 
 1.  Seçin **sağlama** > **dağıtım**.
-2.  Tıklatın  **+**  düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **Apple TV App Store**.
+2.  Tıklatın **+** düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **Apple TV App Store**.
 3.  Seçin **uygulama kimliği** için dağıtım profili oluşturmak istediğiniz aşağı açılan listeden.
 4.  Uygulamayı imzalamak için gerekli sertifikayı seçin.
 5.  Girin bir **adı** yeni **dağıtım profili** ve profil oluşturur.

@@ -1,18 +1,17 @@
 ---
-title: "Yeni kullanıcı arabirimi stilleri"
-description: "Bu makalede, açık yer almaktadır ve koyu UI temalar, Apple tvOS için 10 ve nasıl Xamarin.tvOS uygulamada uygulanacağı ekledi."
-ms.topic: article
+title: Yeni kullanıcı arabirimi stilleri
+description: Bu makalede, açık yer almaktadır ve koyu UI temalar, Apple tvOS için 10 ve nasıl Xamarin.tvOS uygulamada uygulanacağı ekledi.
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: e400a72f4c759662e70bfecc372134f8fda05ad6
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: da75a99e842b13d42251cdd1c5195ec66ff4a513
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="new-user-interface-styles"></a>Yeni kullanıcı arabirimi stilleri
 
@@ -186,7 +185,7 @@ Apple tvOS film şeritleri arabirimi Oluşturucu düzenlerken aşağıdaki yeten
 
 * Geliştirici UI temada göre kullanıcı arabirimi öğeleri farklı varyasyonları belirleyebilir **özniteliği denetçisi**:
     
-    * Şimdi çeşitli özelliklere sahip bir  **+**  hangi UI tema belirli bir sürümü eklemek için tıklattığınız yanlarında: 
+    * Şimdi çeşitli özelliklere sahip bir **+** hangi UI tema belirli bir sürümü eklemek için tıklattığınız yanlarında: 
 
         [![](user-interface-styles-images/theme08.png "UI tema belirli bir sürümü ekleme")](user-interface-styles-images/theme08.png#lightbox) 
     

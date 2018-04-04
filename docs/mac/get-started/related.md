@@ -1,18 +1,17 @@
 ---
-title: "İlgili belgeler"
-description: "MacOS geliştiriciler için ek belgelere bağlantıları."
-ms.topic: article
+title: İlgili belgeler
+description: MacOS geliştiriciler için ek belgelere bağlantıları.
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 000061d8ed884f1eb248517c6131ec49134cb8a1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ff26747a395b48163dbabf0b058f28427182d41a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="related-documentation"></a>İlgili belgeler
 
@@ -24,17 +23,17 @@ Ek olarak Mac bölümünü [developer.xamarin.com](~/mac/get-started/index.md) X
 
 - [**Yığın Taşması** ](http://stackoverflow.com/) -basit bir gibi soruları kapatmak için harika bir kaynak ["nasıl t otomatik bir NSOutlineView tüm düğümleri genişletin"](http://stackoverflow.com/questions/519751/nsoutlineview-auto-expand-all-nodes). Bu örnekler genellikle Objective-C ve C# dönüştürülmesi gerekiyorsa olur, ancak bir alt kümesini yanıtlar C# yok.
 
-## <a name="user-interface"></a>Kullanıcı arabirimi
+## <a name="user-interface"></a>Kullanıcı Arabirimi
 
 Kullanıcı arabirimi Xamarin.Mac uygulama, geliştiriciler C# ve .NET ile çalışma erişimi aynı olduğunda, çalışan bir geliştirici denetleyen *Objective-C* ve *Xcode* yapar. Xamarin.Mac Xcode ile doğrudan tümleşir olduğundan, geliştirici Xcode'nın kullanabilir _arabirimi Oluşturucu_ ve bir uygulamanın kullanıcı arabirimleri korumak (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için).
 
 Aşağıda listelenen kılavuzları Xamarin.Mac uygulama macOS öğeleri ile çalışma hakkında ayrıntılı bilgi sağlar:
 
 - [Windows](~/mac/user-interface/window.md)
-- [İletişim kutuları](~/mac/user-interface/dialog.md)
-- [Uyarıları](~/mac/user-interface/alert.md)
-- [Menüleri](~/mac/user-interface/menu.md)
+- [İletişim Kutuları](~/mac/user-interface/dialog.md)
+- [Uyarılar](~/mac/user-interface/alert.md)
+- [Menüler](~/mac/user-interface/menu.md)
 - [Araç Çubukları](~/mac/user-interface/toolbar.md)
-- [Tablo görünümleri](~/mac/user-interface/table-view.md)
-- [Anahat görünümleri](~/mac/user-interface/outline-view.md)
-- [Kaynak listeleri](~/mac/user-interface/source-list.md)
+- [Tablo Görünümleri](~/mac/user-interface/table-view.md)
+- [Anahat Görünümleri](~/mac/user-interface/outline-view.md)
+- [Kaynak Listeleri](~/mac/user-interface/source-list.md)

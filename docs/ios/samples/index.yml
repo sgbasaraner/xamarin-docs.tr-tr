@@ -1,23 +1,23 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Xamarin.iOS Örnekleri"
+title: Xamarin.iOS Örnekleri
 metadata:
-  description: "Mobil uygulama geliştiricileri için platformlar arası Xamarin.iOS örnek uygulamaları."
+  description: Mobil uygulama geliştiricileri için platformlar arası Xamarin.iOS örnek uygulamaları.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
-  ms.topic: article
-  ms.openlocfilehash: b0c3efa12cbeb045104b2ce823cbf57cd1f56f75
-  ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+  ms.topic: sample
+  ms.openlocfilehash: 9a22147adbcd59fe7168af8e717d065d6d27b85e
+  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
   ms.translationtype: HT
   ms.contentlocale: tr-TR
-  ms.lasthandoff: 03/12/2018
+  ms.lasthandoff: 04/04/2018
 abstract:
-  description: "C# ve Xamarin ile mobil uygulamalar oluşturmaya başlamanıza yardımcı olacak Xamarin.iOS örnek uygulamaları ve kod tanıtımları."
+  description: C# ve Xamarin ile mobil uygulamalar oluşturmaya başlamanıza yardımcı olacak Xamarin.iOS örnek uygulamaları ve kod tanıtımları.
   menu:
     items:
     - href: https://developer.xamarin.com/samples/ios/all/
-      text: "Tüm Xamarin.iOS Örnekleri"
+      text: Tüm Xamarin.iOS Örnekleri
 sections:
 - title: 
   items:
@@ -26,44 +26,44 @@ sections:
     className: cardsW
     items:
     - href: https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/
-      html: "Algılanan yüzeylere nesneleri yerleştirmek için ARKit genişletilmiş gerçeklik tanıtımı."
+      html: Algılanan yüzeylere nesneleri yerleştirmek için ARKit genişletilmiş gerçeklik tanıtımı.
       image:
         src: images/arkit.png
         href: https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/
       title: ARKit (iOS 11)
     - href: https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/
-      html: "MapKit’teki yeni iOS 11 özellikleri: yakınlaştırma düzeyi temelinde işaretçileri gruplama ve bölme."
+      html: 'MapKit’teki yeni iOS 11 özellikleri: yakınlaştırma düzeyi temelinde işaretçileri gruplama ve bölme.'
       image:
         src: images/mapkit.png
         href: https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/
       title: MapKit (iOS 11)
     - href: https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel/
-      html: "Azure’ın Özel Görüntü İşleme Hizmeti ile eğitilmiş bir modeli kullanan iOS 11 Vision çerçevesi ve CoreML."
+      html: Azure’ın Özel Görüntü İşleme Hizmeti ile eğitilmiş bir modeli kullanan iOS 11 Vision çerçevesi ve CoreML.
       image:
         src: images/coremlazure.png
         href: https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel/
       title: CoreML ve Azure (iOS 11)
     - href: https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/
-      html: "ContactsUI görünüm denetleyicilerini ve özelliklerini kullanma."
+      html: ContactsUI görünüm denetleyicilerini ve özelliklerini kullanma.
       image:
         src: images/contacts.png
         href: https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/
       title: QuickContacts
     - href: https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/
-      html: "watchOS içinde kullanılabilir olan kullanıcı arabirimi denetim paketi."
+      html: watchOS içinde kullanılabilir olan kullanıcı arabirimi denetim paketi.
       image:
         src: images/watchos.png
         href: https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/
-      title: "WatchKit Kataloğu"
+      title: WatchKit Kataloğu
     - href: https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/
-      html: "tvOS üzerinde UIKit çerçevesindeki birçok görünüm ve denetimin nasıl kullanılacağını gösterir."
+      html: tvOS üzerinde UIKit çerçevesindeki birçok görünüm ve denetimin nasıl kullanılacağını gösterir.
       image:
         src: images/tvosui.png
         href: https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/
-      title: "tvOS Kullanıcı Arabirimi Kataloğu"
+      title: tvOS Kullanıcı Arabirimi Kataloğu
     - href: https://developer.xamarin.com/samples/ios/all/
-      html: "Xamarin.iOS örnek uygulamalarından ve kod tanıtımlarından oluşan tam bir set."
+      html: Xamarin.iOS örnek uygulamalarından ve kod tanıtımlarından oluşan tam bir set.
       image:
         src: ~/media/shared/sample-download.svg
         href: https://developer.xamarin.com/samples/ios/all/
-      title: "Tüm Xamarin.iOS örnekleri"
+      title: Tüm Xamarin.iOS örnekleri

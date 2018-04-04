@@ -1,18 +1,17 @@
 ---
 title: PassKit
-description: "Cüzdan depolayan ve barkodları ve müşteri hareketleri telefonlarını 'gerçek dünya' ile bağlamak için diğer bilgileri görüntüleyen bir sistem iOS uygulamasıdır."
-ms.topic: article
+description: Cüzdan depolayan ve barkodları ve müşteri hareketleri telefonlarını 'gerçek dünya' ile bağlamak için diğer bilgileri görüntüleyen bir sistem iOS uygulamasıdır.
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 279b5bc1188c973fddc033f9b592e9acec703a59
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1c8ac92c5ff7eed5116587ed13755ddee74a877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="passkit"></a>PassKit
 
@@ -238,7 +237,7 @@ Tür kimliği geçirmek aşağıdaki oluşturmak için.
 
 Geçirmek türü kimliği için her farklı ayarlamak için ilk adımdır _türü_ geçişi desteklenmez. Geçirmek kimliği (veya geçirmek tür tanımlayıcısı) geçişi için benzersiz bir tanımlayıcı oluşturur. Bir sertifika kullanılarak Geliştirici hesabınızla geçişi bağlamak için bu kimliği kullanacağız.
 
-1. İçinde [iOS sağlama Portalı'nın sertifikaları, tanımlayıcılarını ve profilleri bölümüne](https://developer.apple.com/account/overview.action), gitmek **tanımlayıcıları** seçip **geçirmek tür kimlikleri** . Ardından  **+**  yeni bir geçiş türü oluşturmak için düğmeye: [ ![ ] (passkit-images/passid.png "yeni bir geçiş türü oluşturma")](passkit-images/passid.png#lightbox)
+1. İçinde [iOS sağlama Portalı'nın sertifikaları, tanımlayıcılarını ve profilleri bölümüne](https://developer.apple.com/account/overview.action), gitmek **tanımlayıcıları** seçip **geçirmek tür kimlikleri** . Ardından **+** yeni bir geçiş türü oluşturmak için düğmeye: [ ![ ] (passkit-images/passid.png "yeni bir geçiş türü oluşturma")](passkit-images/passid.png#lightbox)
 
 2.   Sağlayan bir **açıklama** (ad) ve **tanımlayıcısı** (benzersiz bir dize) geçişi için. Tüm geçirmek tür kimlikleri dizesi ile başlamalıdır Not `pass.` kullandığımız Bu örnekte `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "tanımlayıcısı ve açıklama sağlayın")](passkit-images/register.png#lightbox)
 

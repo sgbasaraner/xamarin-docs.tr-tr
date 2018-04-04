@@ -1,18 +1,17 @@
 ---
-title: "Sekmeli sayfası"
-description: "Xamarin.Forms TabbedPage sekmeler ve daha büyük bir ayrıntı alanı listesini ayrıntı alanına içeriği yüklerken her sekmesi oluşur. Bu makalede bir TabbedPage sayfaları toplulukta gezinmek için nasıl kullanılacağı gösterilmektedir."
-ms.topic: article
+title: Sekmeli sayfası
+description: Xamarin.Forms TabbedPage sekmeler ve daha büyük bir ayrıntı alanı listesini ayrıntı alanına içeriği yüklerken her sekmesi oluşur. Bu makalede bir TabbedPage sayfaları toplulukta gezinmek için nasıl kullanılacağı gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 2ec783b6963fc4ae14166ebf1e56bf8a802ba8b4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 11287d38ec0e01e068ca385c92e6a6efdc323aeb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tabbed-page"></a>Sekmeli sayfası
 

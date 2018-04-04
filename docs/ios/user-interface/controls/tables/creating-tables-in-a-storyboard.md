@@ -1,18 +1,17 @@
 ---
-title: "İOS Tasarımcısı sekmelerle çalışma"
-description: "Önceki bölümlerde tabloları kullanarak geliştirme incelediniz. Bu konuda beşinci ve son bölümünde, biz ne biz kadar öğrendiniz toplama ve film şeridi kullanarak temel bir işi listesi uygulaması oluşturun."
-ms.topic: article
+title: İOS Tasarımcısı sekmelerle çalışma
+description: Önceki bölümlerde tabloları kullanarak geliştirme incelediniz. Bu konuda beşinci ve son bölümünde, biz ne biz kadar öğrendiniz toplama ve film şeridi kullanarak temel bir işi listesi uygulaması oluşturun.
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 869719b1d3514fee4b45f61dcdb34a0bcf54f7b2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>İOS Tasarımcısı sekmelerle çalışma
 
@@ -115,7 +114,7 @@ Ardından, aşağıda gösterildiği gibi yeni görevler ekleyecek bir düğme o
 Aşağıdakileri yapın: 
 
 -  Sürükleme bir **çubuğu düğme öğesi** için araç _sağ taraftaki gezinti çubuğunun_.
--  İçinde **özellikleri paneli**altında **çubuğu düğme öğesi** seçin **tanımlayıcısı: eklemek** (Bunu yapmak için bir  *+*  artı düğmesini). 
+-  İçinde **özellikleri paneli**altında **çubuğu düğme öğesi** seçin **tanımlayıcısı: eklemek** (Bunu yapmak için bir *+* artı düğmesini). 
 -  Böylece, daha sonraki bir aşamada bu kodu tanımlanabilir bir ad verin. Not bir sınıf adı kök View Controller vermeniz gerekir (örneğin **ItemViewController**) çubuğu düğme öğesi'nin adı izin vermek için.
 
 

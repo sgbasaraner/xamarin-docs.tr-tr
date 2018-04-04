@@ -1,18 +1,17 @@
 ---
-title: "Web hizmetlerine erişimi kimlik doğrulaması"
-description: "Bu kılavuz, kimlik doğrulama Hizmetleri kullanıcılarının yalnızca kendi verilerine erişim yaparken bir arka uç paylaşmalarını sağlamak için bir Xamarin.Forms uygulaması şekilde entegre açıklanmaktadır. Yerleşik kimlik doğrulama mekanizmaları kullanılarak farklı sağlayıcıları tarafından sunulan ve OAuth kimlik sağlayıcısı karşı kimlik doğrulaması için Xamarin.Auth bileşenini kullanarak bir REST hizmeti temel kimlik doğrulaması kullanarak kapsanan konular içerir."
-ms.topic: article
+title: Web hizmetlerine erişimi kimlik doğrulaması
+description: Bu kılavuz, kimlik doğrulama Hizmetleri kullanıcılarının yalnızca kendi verilerine erişim yaparken bir arka uç paylaşmalarını sağlamak için bir Xamarin.Forms uygulaması şekilde entegre açıklanmaktadır. Yerleşik kimlik doğrulama mekanizmaları kullanılarak farklı sağlayıcıları tarafından sunulan ve OAuth kimlik sağlayıcısı karşı kimlik doğrulaması için Xamarin.Auth bileşenini kullanarak bir REST hizmeti temel kimlik doğrulaması kullanarak kapsanan konular içerir.
 ms.prod: xamarin
 ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 0139a7a921861b5d1c9a3639ee2c7e25ee6cf5fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df0e188efd2791b03a63c31b715ed1da77079230
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-access-to-web-services"></a>Web hizmetlerine erişimi kimlik doğrulaması
 
@@ -34,7 +33,7 @@ Azure Mobile Apps Dış kimlik sağlayıcıları, çeşitli kimlik doğrulama ve
 
 Azure Active Directory B2C bir tüketiciye yönelik web ve mobil uygulamaları için bulut kimlik yönetimi çözümüdür. Bu makalede Microsoft kimlik doğrulama kitaplığı (MSAL) ve Azure Active Directory B2C tüketici kimlik yönetimini Xamarin.Forms uygulamasına tümleştirmek için nasıl kullanılacağı gösterilmektedir.
 
-## <a name="integrating-azure-active-directory-b2c-with-azure-mobile-appsazure-ad-b2c-mobile-appmd"></a>[Azure Active Directory B2C Azure mobil uygulamaları ile tümleştirme](azure-ad-b2c-mobile-app.md)
+## <a name="integrating-azure-active-directory-b2c-with-azure-mobile-appsazure-ad-b2c-mobile-appmd"></a>[Azure Active Directory B2C’yi Azure Mobile Apps ile Tümleştirme](azure-ad-b2c-mobile-app.md)
 
 Azure Active Directory B2C, Azure Mobile Apps için kimlik doğrulama iş akışı yönetmek için kullanılabilir. Bu yaklaşım ile kimlik yönetimi deneyimi buluta tam olarak tanımlanır ve mobil uygulama kodunuzu değiştirmeden değiştirilebilir. Bu makalede, Azure Active Directory B2C kimlik doğrulaması ve yetkilendirme için bir Azure Mobile Apps örneğine Xamarin.Forms ile sağlamak için nasıl kullanılacağı gösterilmektedir.
 
@@ -45,5 +44,5 @@ Amazon SimpleDB kendi kaynak tabanlı izinler sistem sağlamaz. Bunun yerine, bi
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Web hizmetlerine giriş](~/cross-platform/data-cloud/web-services/index.md)
-- [Zaman uyumsuz desteğine genel bakış](~/cross-platform/platform/async.md)
+- [Web Hizmetlerine Giriş](~/cross-platform/data-cloud/web-services/index.md)
+- [Zaman Uyumsuz Desteğe Genel Bakış](~/cross-platform/platform/async.md)

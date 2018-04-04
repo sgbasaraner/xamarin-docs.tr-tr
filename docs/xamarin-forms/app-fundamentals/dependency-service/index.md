@@ -1,18 +1,17 @@
 ---
 title: DependencyService
-description: "Xamarin.Forms platforma özgü projelerinde davranışını tanımlamak geliştiricilerin sağlar. DependencyService yerel işlevselliği erişmek paylaşılan kod izin vererek sağ platform uygulaması sonra bulur."
-ms.topic: article
+description: Xamarin.Forms platforma özgü projelerinde davranışını tanımlamak geliştiricilerin sağlar. DependencyService yerel işlevselliği erişmek paylaşılan kod izin vererek sağ platform uygulaması sonra bulur.
 ms.prod: xamarin
 ms.assetid: 403479F2-6751-41F2-ADCE-3AF595062FE4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 70e6550368575b6441b19cee2139859204132090
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 58ba2cb896ad8a63ea2232246772e24e32301483
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="dependencyservice"></a>DependencyService
 
@@ -31,4 +30,4 @@ Bu kılavuz Aşağıdaki makaleler oluşur:
 
 - [DependencyService (örnek) kullanma](https://developer.xamarin.com/samples/UsingDependencyService)
 - [DependencyService (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
-- [Xamarin.Forms örnekleri](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms Örnekleri](https://github.com/xamarin/xamarin-forms-samples)

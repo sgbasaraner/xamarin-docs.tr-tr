@@ -1,18 +1,17 @@
 ---
 title: SiriKit uygulama
-description: "Bu makalede bir Xamarin.iOS uygulamaları SiriKit destek uygulamak için gerekli adımlar kapsanmaktadır."
-ms.topic: article
+description: Bu makalede bir Xamarin.iOS uygulamaları SiriKit destek uygulamak için gerekli adımlar kapsanmaktadır.
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 76787ecda1c2cd043b81482dcdbe3751d012ef74
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5fdc05de19799ce7b553428c23f860186909bcbb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-sirikit"></a>SiriKit uygulama
 
@@ -213,14 +212,14 @@ Mac aşağıdakileri yapın:
 
 1. Bir web tarayıcısında gidin [ http://developer.apple.com ](http://developer.apple.com) ve hesabınızda oturum.
 2. Tıklayın **sertifikaları**, **tanımlayıcıları** ve **profilleri**.
-3. Seçin **sağlama profilleri** seçip **uygulama kimlikleri**, ardından  **+**  düğmesi.
+3. Seçin **sağlama profilleri** seçip **uygulama kimlikleri**, ardından **+** düğmesi.
 4. Girin bir **adı** yeni profil için.
 5. Girin bir **paket kimliği** Apple aşağıdaki öneri adlandırma kullanıcının.
 6. Ekranı aşağı kaydırarak **uygulama hizmetleri** bölümünde, select **SiriKit** tıklatıp **devam** düğmesi: 
 
     [![](implementing-sirikit-images/setup03.png "SiriKit seçin")](implementing-sirikit-images/setup03.png#lightbox)
 7. Tüm ayarlar ardından doğrulayın **gönderme** uygulama kimliği.
-8. Seçin **sağlama profilleri** > **geliştirme**, tıklatın  **+**  düğmesi, select **Apple kimliği**, ardından **devam**.
+8. Seçin **sağlama profilleri** > **geliştirme**, tıklatın **+** düğmesi, select **Apple kimliği**, ardından **devam**.
 9. Seç'i tıklatın **tüm**, ardından **devam**.
 10. Tıklatın **Tümünü Seç** yeniden, ardından **devam**.
 11. Girin bir **profil adı** Apple kullanarak önerileri adlandırma kullanıcının, ardından **devam**.
@@ -462,16 +461,16 @@ Eklemek için bir `AppIntentVocabulary.plist` dosya uygulama projesi için aşa�
 
     [![](implementing-sirikit-images/plist01.png "Bir özellik listesi ekleme")](implementing-sirikit-images/plist01.png#lightbox) 
 2. Çift `AppIntentVocabulary.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın.
-3. Tıklatın  **+**  anahtar eklemek için ayarlanmış **adı** için `ParameterVocabularies` ve **türü** için `Array`:
+3. Tıklatın **+** anahtar eklemek için ayarlanmış **adı** için `ParameterVocabularies` ve **türü** için `Array`:
 
     [![](implementing-sirikit-images/plist02.png "ParameterVocabularies ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist02.png#lightbox)
-4. Genişletme `ParameterVocabularies` tıklatıp  **+**  düğmesine tıklayın ve ayarlama **türü** için `Dictionary`:
+4. Genişletme `ParameterVocabularies` tıklatıp **+** düğmesine tıklayın ve ayarlama **türü** için `Dictionary`:
 
     [![](implementing-sirikit-images/plist03.png "Sözlüğe türünü ayarlayın")](implementing-sirikit-images/plist03.png#lightbox)
-5. Tıklatın  **+**  yeni bir anahtar eklemek için ayarlayın **adı** için `ParameterNames` ve **türü** için `Array`:
+5. Tıklatın **+** yeni bir anahtar eklemek için ayarlayın **adı** için `ParameterNames` ve **türü** için `Array`:
 
     [![](implementing-sirikit-images/plist04.png "ParameterNames ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist04.png#lightbox)
-6. Tıklatın  **+**  ile yeni bir anahtar eklemek için **türü** , `String` ve değeri olarak kullanılabilir parametre adlarından biri. Örneğin, `INStartWorkoutIntent.workoutName`:
+6. Tıklatın **+** ile yeni bir anahtar eklemek için **türü** , `String` ve değeri olarak kullanılabilir parametre adlarından biri. Örneğin, `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05.png#lightbox)
 7. Ekleme `ParameterVocabulary` anahtarını `ParameterVocabularies` ile anahtar **türü** , `Array`:
@@ -526,16 +525,16 @@ Eklemek için bir `AppIntentVocabulary.plist` dosya uygulama projesi için aşa�
 
     [![](implementing-sirikit-images/plist01w.png "Yeni Info.plist ekleme")](implementing-sirikit-images/plist01w.png#lightbox) 
 2. Çift `AppIntentVocabulary.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın.
-3. Tıklatın  **+**  anahtar eklemek için ayarlanmış **adı** için `ParameterVocabularies` ve **türü** için `Array`:
+3. Tıklatın **+** anahtar eklemek için ayarlanmış **adı** için `ParameterVocabularies` ve **türü** için `Array`:
 
     [![](implementing-sirikit-images/plist02w.png "ParameterVocabularies ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist02w.png#lightbox)
-4. Genişletme `ParameterVocabularies` tıklatıp  **+**  düğmesine tıklayın ve ayarlama **türü** için `Dictionary`:
+4. Genişletme `ParameterVocabularies` tıklatıp **+** düğmesine tıklayın ve ayarlama **türü** için `Dictionary`:
 
     [![](implementing-sirikit-images/plist03w.png "Sözlüğe türünü ayarlayın")](implementing-sirikit-images/plist03w.png#lightbox)
-5. Tıklatın  **+**  yeni bir anahtar eklemek için ayarlayın **adı** için `ParameterNames` ve **türü** için `Array`:
+5. Tıklatın **+** yeni bir anahtar eklemek için ayarlayın **adı** için `ParameterNames` ve **türü** için `Array`:
 
     [![](implementing-sirikit-images/plist04w.png "ParameterNames ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist04w.png#lightbox)
-6. Tıklatın  **+**  ile yeni bir anahtar eklemek için **türü** , `String` ve değeri olarak kullanılabilir parametre adlarından biri. Örneğin, `INStartWorkoutIntent.workoutName`:
+6. Tıklatın **+** ile yeni bir anahtar eklemek için **türü** , `String` ve değeri olarak kullanılabilir parametre adlarından biri. Örneğin, `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05w.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05w.png#lightbox)
 7. Ekleme `ParameterVocabulary` anahtarını `ParameterVocabularies` ile anahtar **türü** , `Array`:

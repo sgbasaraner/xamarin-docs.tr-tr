@@ -1,18 +1,17 @@
 ---
 title: HomeKit
-description: "HomeKit ev Otomasyon cihazları denetlemek için Apple'nın çerçevedir. Bu makalede HomeKit tanıtır ve HomeKit donatıyı Simulator ve basit bir Xamarin.iOS uygulaması yazma bu Donatılar ile etkileşim kurmak için yapılandırma test Donatılar kapsar."
-ms.topic: article
+description: HomeKit ev Otomasyon cihazları denetlemek için Apple'nın çerçevedir. Bu makalede HomeKit tanıtır ve HomeKit donatıyı Simulator ve basit bir Xamarin.iOS uygulaması yazma bu Donatılar ile etkileşim kurmak için yapılandırma test Donatılar kapsar.
 ms.prod: xamarin
 ms.assetid: 90C0C553-916B-46B1-AD52-1E7332792283
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 02116e8e11cb6ff050e2c885338777e1fd25c4cb
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5699465330a4d2a5b983ec7661f80c1ed4f14bde
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="homekit"></a>HomeKit
 
@@ -104,7 +103,7 @@ HomeKit donatıyı Simulator başlamak ve birkaç sanal Donatılar oluşturmak i
 1. Uygulamaları klasöründen HomeKit donatıyı Simulator başlatın: 
 
     [![](homekit-images/simulator02.png "HomeKit donatıyı Simulator")](homekit-images/simulator02.png#lightbox)
-2. Tıklatın  **+**  düğmesine tıklayın ve ardından **yeni donatıyı...** : 
+2. Tıklatın **+** düğmesine tıklayın ve ardından **yeni donatıyı...** : 
 
     [![](homekit-images/simulator03.png "Yeni bir donatıyı ekleme")](homekit-images/simulator03.png#lightbox)
 3. Yeni donatıyı hakkındaki bilgileri doldurun ve tıklayın **son** düğmesi: 

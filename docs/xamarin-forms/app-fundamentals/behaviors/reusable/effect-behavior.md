@@ -1,18 +1,17 @@
 ---
-title: "Yeniden kullanılabilir EffectBehavior"
-description: "Davranışları arka plan kod dosyaları koddan işleme kazan kalıbı etkisi kaldırma bir denetime efekt eklemek için yararlı bir yaklaşım ' dir. Bu makalede, bir denetim için bir efekt eklemek için bir Xamarin.Forms davranışını kullanarak gösterilmektedir."
-ms.topic: article
+title: Yeniden kullanılabilir EffectBehavior
+description: Davranışları arka plan kod dosyaları koddan işleme kazan kalıbı etkisi kaldırma bir denetime efekt eklemek için yararlı bir yaklaşım ' dir. Bu makalede, bir denetim için bir efekt eklemek için bir Xamarin.Forms davranışını kullanarak gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 698e2baef26a985fa40c2943cd25aefae55381f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1612d1e87f0e05c859babd93fd03ac9a5736b47
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="reusable-effectbehavior"></a>Yeniden kullanılabilir EffectBehavior
 
@@ -163,7 +162,7 @@ Bu makalede, bir denetime efekt eklemek için bir davranış kullanarak gösteri
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Etkileri](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [Etkiler](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [Etkili davranış (örnek)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
 - [Behavior](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
 - [Davranışı<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)

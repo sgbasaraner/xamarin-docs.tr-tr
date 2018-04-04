@@ -1,24 +1,23 @@
 ---
-title: "Google Mesajlaşma"
-description: "Bu bölüm, Google Mesajlaşma Hizmetleri kullanarak Xamarin.Android uygulamaları uygulamak açıklar kılavuzları içerir."
-ms.topic: article
+title: Google Mesajlaşma
+description: Bu bölüm, Google Mesajlaşma Hizmetleri kullanarak Xamarin.Android uygulamaları uygulamak açıklar kılavuzları içerir.
 ms.prod: xamarin
 ms.assetid: 85E8DF92-D160-4763-A7D3-458B4C31635F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 3e36eedf720b1905d708ffe4bd6e61c96fa38cf4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f68b4dc12586d482fd9d3f8901bf3fd09469b0bd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="google-messaging"></a>Google Mesajlaşma
 
 _Bu bölüm, Google Mesajlaşma Hizmetleri kullanarak Xamarin.Android uygulamaları uygulamak açıklar kılavuzları içerir._
 
-## <a name="firebase-cloud-messagingfirebase-cloud-messagingmd"></a>[Firebase bulut Mesajlaşma](firebase-cloud-messaging.md)
+## <a name="firebase-cloud-messagingfirebase-cloud-messagingmd"></a>[Firebase Cloud Messaging](firebase-cloud-messaging.md)
 
 Firebase bulut Mesajlaşma (FCM), mobil uygulamaları ve sunucu uygulamaları Mesajlaşma kolaylaştıran bir hizmettir. FCM Google Google Cloud Messaging devamıdır. Bu makalede FCM nasıl çalıştığını genel bir bakış sağlar ve uygulamanızı FCM hizmetleri kullanabilmesi için kimlik bilgileri alınırken için adım adım bir yordam sağlar.
 

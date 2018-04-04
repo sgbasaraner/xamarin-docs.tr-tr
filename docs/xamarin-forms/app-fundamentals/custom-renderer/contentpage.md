@@ -1,18 +1,17 @@
 ---
-title: "Bir ContentPage özelleştirme"
-description: "Bir ContentPage, tek bir görünüm görüntüler ve ekranın en kaplar görsel bir öğedir. Bu makalede, geliştiricilerin kendi platforma özgü özelleştirme varsayılan yerel işlemeyle geçersiz kılmasına etkinleştirme ContentPage sayfası için özel Oluşturucu Oluşturma gösterilir."
-ms.topic: article
+title: Bir ContentPage özelleştirme
+description: Bir ContentPage, tek bir görünüm görüntüler ve ekranın en kaplar görsel bir öğedir. Bu makalede, geliştiricilerin kendi platforma özgü özelleştirme varsayılan yerel işlemeyle geçersiz kılmasına etkinleştirme ContentPage sayfası için özel Oluşturucu Oluşturma gösterilir.
 ms.prod: xamarin
 ms.assetid: A4E61D93-73D9-4668-8D1C-DB6FC2491822
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: d7f7e031d91cd1505ee255bbf0d25198bd9ae82a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 58f5a64f85dbe5a6889e6ff598c14fdfd9b0a5df
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-contentpage"></a>Bir ContentPage özelleştirme
 

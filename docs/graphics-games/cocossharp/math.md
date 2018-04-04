@@ -1,18 +1,17 @@
 ---
 title: 2B matematik CocosSharp ile
 description: Bu kılavuz, oyun geliştirmeye yönelik 2B matematik kapsar. Ortak oyun geliştirme görevleri gerçekleştirmek nasıl göstermek için CocosSharp kullanır ve bu görevlerin arkasında matematik açıklar.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 484bd8b19f2c51dac57a46a1ef93610ed5e13419
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: ae1300936a24ac1381496eaaf78aefb875bd5ed6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>2B matematik CocosSharp ile
 

@@ -1,18 +1,17 @@
 ---
 title: Uygulama paketi boyutu
-description: "Bu makalede, bir xamarin Android uygulama paketi ve hata ayıklama sırasında verimli paket dağıtımı için kullanılan ve geliştirme aşamalarını yayın ilişkili stratejiler bağlı bölümlerini inceler."
-ms.topic: article
+description: Bu makalede, bir xamarin Android uygulama paketi ve hata ayıklama sırasında verimli paket dağıtımı için kullanılan ve geliştirme aşamalarını yayın ilişkili stratejiler bağlı bölümlerini inceler.
 ms.prod: xamarin
 ms.assetid: 8D70CDDD-3D3C-9949-8045-AB8F93D18E74
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 430b07918b13878e3561b55ff841a64855183fa7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: babe45c39f6a69dd9384f3bce8fe28ada31ebfdf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="application-package-size"></a>Uygulama paketi boyutu
 

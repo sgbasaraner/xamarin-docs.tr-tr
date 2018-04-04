@@ -1,44 +1,44 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Platformlar Arası Örnekler"
+title: Platformlar Arası Örnekler
 metadata:
-  description: "Mobil uygulama geliştiricileri için platformlar arası Xamarin örnek uygulamaları."
+  description: Mobil uygulama geliştiricileri için platformlar arası Xamarin örnek uygulamaları.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/26/2018
-  ms.topic: article
-  ms.openlocfilehash: 24f32938930d7cf13374536f9513640ab8e834dc
-  ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+  ms.topic: sample
+  ms.openlocfilehash: e60722dbd99ab845c63eee2c585905f8d06e5279
+  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
   ms.translationtype: HT
   ms.contentlocale: tr-TR
-  ms.lasthandoff: 03/12/2018
+  ms.lasthandoff: 04/04/2018
 abstract:
-  description: "C# ve Xamarin ile mobil uygulamalar oluşturmaya başlamanıza yardımcı olacak Xamarin platformlar arası örnek uygulamaları ve kod tanıtımları."
+  description: C# ve Xamarin ile mobil uygulamalar oluşturmaya başlamanıza yardımcı olacak Xamarin platformlar arası örnek uygulamaları ve kod tanıtımları.
   menu:
     items:
     - href: https://developer.xamarin.com/samples/
-      text: "Tüm Xamarin Örnekleri"
+      text: Tüm Xamarin Örnekleri
 sections:
-- title: "Başlarken"
+- title: Başlarken
   items:
   - type: list
     style: cards
     className: cardsW
     items:
     - href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
-      html: "Bu örnek, verilerin depolandığı ve verilere yerel bir SQLite veritabanından erişildiği, Xamarin.Form ile oluşturulan bir Yapılacaklar listesi uygulamasını gösterir."
+      html: Bu örnek, verilerin depolandığı ve verilere yerel bir SQLite veritabanından erişildiği, Xamarin.Form ile oluşturulan bir Yapılacaklar listesi uygulamasını gösterir.
       image:
         src: images/todo.png
         href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
       title: Todo
     - href: https://github.com/xamarinhq/app-myshoppe
-      html: "Satış temsilcilerine, satış performansını izleme, müşteri adaylarını yönetme, kişilerini görüntüleme, siparişleri yönetme ve ürün kataloğuna göz atma gücü sunan tanıtım uygulaması."
+      html: Satış temsilcilerine, satış performansını izleme, müşteri adaylarını yönetme, kişilerini görüntüleme, siparişleri yönetme ve ürün kataloğuna göz atma gücü sunan tanıtım uygulaması.
       image:
         src: images/myshoppe.png
         href: https://github.com/xamarinhq/app-myshoppe
       title: My Shoppe
     - href: https://github.com/xamarin/app-crm
-      html: "Satış temsilcilerine, satış performansını izleme, müşteri adaylarını yönetme, kişilerini görüntüleme, siparişleri yönetme ve ürün kataloğuna göz atma gücü sunan tanıtım uygulaması."
+      html: Satış temsilcilerine, satış performansını izleme, müşteri adaylarını yönetme, kişilerini görüntüleme, siparişleri yönetme ve ürün kataloğuna göz atma gücü sunan tanıtım uygulaması.
       image:
         src: images/crm.png
         href: https://github.com/xamarin/app-crm
@@ -50,38 +50,38 @@ sections:
     className: cardsW
     items:
     - href: https://github.com/xamarinhq/app-acquaint/
-      html: "Ayrıntı ve düzenleme ekranı ile kişi listesi uygulaması. Kaynak kod, hem Xamarin.Forms hem de Xamarin yerel uygulamalarında kullanılabilir."
+      html: Ayrıntı ve düzenleme ekranı ile kişi listesi uygulaması. Kaynak kod, hem Xamarin.Forms hem de Xamarin yerel uygulamalarında kullanılabilir.
       image:
         src: images/acquaint.jpg
         href: https://github.com/xamarinhq/app-acquaint
       title: Acquaint
     - href: https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps
-      html: "Xamarin ve Azure’ın yer aldığı bir uygulama paketi oluşturan Connect 2017 tanıtımı."
+      html: Xamarin ve Azure’ın yer aldığı bir uygulama paketi oluşturan Connect 2017 tanıtımı.
       image:
         src: images/smarthotel360.png
         href: https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps
       title: SmartHotel360
     - href: https://github.com/Microsoft/BikeSharing360_MobileApps
-      html: "Xamarin ve Azure’ın yer aldığı bir uygulama paketi oluşturan Connect 2016 tanıtımı."
+      html: Xamarin ve Azure’ın yer aldığı bir uygulama paketi oluşturan Connect 2016 tanıtımı.
       image:
         src: images/bikesharing360.png
         href: https://github.com/Microsoft/BikeSharing360_MobileApps
       title: BikeSharing360
     - href: https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile
-      html: "Azure’daki kapsayıcılar kullanılarak uygulamaları oluşturmaya yönelik kurumsal mimari rehber."
+      html: Azure’daki kapsayıcılar kullanılarak uygulamaları oluşturmaya yönelik kurumsal mimari rehber.
       image:
         src: images/eshop.png
         href: https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile
       title: eShop
-- title: "Tüm Örnekler"
+- title: Tüm Örnekler
   items:
   - type: list
     style: cards
     className: cardsW
     items:
     - href: https://developer.xamarin.com/samples/
-      html: "Xamarin platformlar arası örnek uygulamaları ve kod tanıtımlarından oluşan tam bir set."
+      html: Xamarin platformlar arası örnek uygulamaları ve kod tanıtımlarından oluşan tam bir set.
       image:
         src: ~/media/shared/sample-download.svg
         href: https://developer.xamarin.com/samples/
-      title: "Tüm Xamarin örnekleri"
+      title: Tüm Xamarin örnekleri

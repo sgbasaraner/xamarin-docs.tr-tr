@@ -1,18 +1,17 @@
 ---
 title: Bir Amazon SimpleDB hizmetini kullanma
-description: "Amazon SimpleDB depolamak ve Amazon'ın bulut verilerde sorgu olanağı sağlayan bir web hizmetidir. Bu makalede, .NET için AWS SDK'sı sorgu, oluşturmak, değiştirmek ve SimpleDB hizmetinde depolanan verileri silmek için nasıl kullanılacağı açıklanmaktadır."
-ms.topic: article
+description: Amazon SimpleDB depolamak ve Amazon'ın bulut verilerde sorgu olanağı sağlayan bir web hizmetidir. Bu makalede, .NET için AWS SDK'sı sorgu, oluşturmak, değiştirmek ve SimpleDB hizmetinde depolanan verileri silmek için nasıl kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 823819AA-15F9-4144-B355-78A10AD37513
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 5604477ff182711a63ba2b0e6bbcbbcc082a76ed
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 1602319dbf5a5d00ac5de75f2d438b9aea692699
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-an-amazon-simpledb-service"></a>Bir Amazon SimpleDB hizmetini kullanma
 

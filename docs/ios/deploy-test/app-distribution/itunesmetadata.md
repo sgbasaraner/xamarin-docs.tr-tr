@@ -1,18 +1,17 @@
 ---
-title: "İTunesMetadata.plist dosyası"
-description: "Bu makalede iTunes geçici dağıtım sınama veya kurumsal dağıtım için kullanılarak bir iOS uygulaması hakkında bilgi sağlamak için kullanılan iTunesMetadata.plist dosya kapsar."
-ms.topic: article
+title: İTunesMetadata.plist dosyası
+description: Bu makalede iTunes geçici dağıtım sınama veya kurumsal dağıtım için kullanılarak bir iOS uygulaması hakkında bilgi sağlamak için kullanılan iTunesMetadata.plist dosya kapsar.
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3bdf00a9e50b2bf66f51c825306c2ba8e6365dd2
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 1b1b0c758126acb0c1e7953ea36e5ac871ee20ef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="the-itunesmetadataplist-file"></a>İTunesMetadata.plist dosyası
 
@@ -306,7 +305,7 @@ Aşağıdakileri yapın:
 4. Çift `iTunesMetadata.plist` dosyasını **Çözüm Gezgini** düzenlemek üzere açmak için:
 
     ![](itunesmetadata-images/image02.png "İTunesMetadata.plist Düzenleyicisi")
-5. Yeşil tıklatın  **+**  yeni bir giriş oluşturun ve girmek için `UIRequiredDeviceCapabilities` anahtar adı:
+5. Yeşil tıklatın **+** yeni bir giriş oluşturun ve girmek için `UIRequiredDeviceCapabilities` anahtar adı:
 
     ![](itunesmetadata-images/image03.png "Yeni bir giriş oluşturabilir ve UIRequiredDeviceCapabilities anahtar adı girin")
 6. Tıklayın **dize** değer türü ve select **sözlük** açılan listeden:
@@ -315,7 +314,7 @@ Aşağıdakileri yapın:
 7. Özelliğin adı sözlüğün girişleri ortaya solundaki turndown tıklatın:
 
     ![](itunesmetadata-images/image05.png "Dictionary girişlerinin Göster")
-8. Tıklayın **yeni giriş Ekle** metin yeşil ardından  **+**  sözlüğe bir giriş eklemek için:
+8. Tıklayın **yeni giriş Ekle** metin yeşil ardından **+** sözlüğe bir giriş eklemek için:
 
     ![](itunesmetadata-images/image06.png "Sözlüğe bir giriş ekleyin")
 9. Girin `armv7` anahtar adını, türünü **Boolean** ve girin **Evet** değeri olarak:

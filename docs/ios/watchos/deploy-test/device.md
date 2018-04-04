@@ -1,18 +1,17 @@
 ---
-title: "Gözcü cihazlarda test etme"
-description: "Apple Watch test etmek için uygulamaları dağıtma"
-ms.topic: article
+title: Gözcü cihazlarda test etme
+description: Apple Watch test etmek için uygulamaları dağıtma
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d1d00a4d561551435e7d2333520dc614a79dcad3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="testing-on-watch-devices"></a>Gözcü cihazlarda test etme
 
@@ -26,7 +25,7 @@ ms.lasthandoff: 03/09/2018
 
 ## <a name="devices"></a>Cihazlar
 
-Gerçek iPhone veya iPad iOS uygulamalarını test etme geliştirme Merkezi'nde kaydedilmesi için cihazın her zaman gereklidir. Aygıt listesi şöyle (artı işaretini tıklatın  **+**  yeni aygıt eklemek için):
+Gerçek iPhone veya iPad iOS uygulamalarını test etme geliştirme Merkezi'nde kaydedilmesi için cihazın her zaman gereklidir. Aygıt listesi şöyle (artı işaretini tıklatın **+** yeni aygıt eklemek için):
 
 ![](device-images/devices-sml.png "Aygıt listesi şöyle")
 

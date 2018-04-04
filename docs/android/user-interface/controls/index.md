@@ -1,18 +1,17 @@
 ---
 title: Denetimler
-description: "Xamarin.Android kullanıcı arabirimleri oluşturmak için yapı taşları"
-ms.topic: article
+description: Xamarin.Android kullanıcı arabirimleri oluşturmak için yapı taşları
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 25afd284fc88df4f23aaa3dfa1f47a3dc4fee551
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="controls"></a>Denetimler
 
@@ -26,14 +25,14 @@ Xamarin.Android tüm Android tarafından sağlanan yerel kullanıcı arabirimi d
 ![Örnek ActionBar](images/action-bar.png)
 
 
-## <a name="auto-completeandroiduser-interfacecontrolsauto-completemd"></a>[Otomatik Tamamlama](~/android/user-interface/controls/auto-complete.md)
+## <a name="auto-completeandroiduser-interfacecontrolsauto-completemd"></a>[Otomatik Tamamla](~/android/user-interface/controls/auto-complete.md)
 
 `AutoCompleteTextView` Kullanıcı yazarak sırada gösteren tamamlama önerileri otomatik olarak bir düzenlenebilir metin görünümü öğedir. Öneriler listesi bir açılan menüden kullanıcı düzenleme kutusu içeriğini değiştirmek için bir öğe seçebileceği görüntülenir.
 
 ![Otomatik Tamamlama örneği](images/auto-complete.png)
 
 
-## <a name="buttonsandroiduser-interfacecontrolsbuttonsindexmd"></a>[Düğmeleri](~/android/user-interface/controls/buttons/index.md)
+## <a name="buttonsandroiduser-interfacecontrolsbuttonsindexmd"></a>[Düğmeler](~/android/user-interface/controls/buttons/index.md)
 
 Düğmeleri bir eylemi gerçekleştirmek için kullanıcı dokunur kullanıcı Arabirimi öğeleri değildir.
 
@@ -62,42 +61,42 @@ Düğmeleri bir eylemi gerçekleştirmek için kullanıcı dokunur kullanıcı A
 ![Örnek metnini düzenle](images/edit-text.png)
 
 
-## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[Galerisi](~/android/user-interface/controls/gallery.md)
+## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[Galeri](~/android/user-interface/controls/gallery.md)
 
 `Gallery` Yatay kaydırma listedeki öğeleri görüntülemek için kullanılan bir düzen pencere öğesi olan; Bu görünüm merkezinde geçerli seçim yerleştirir.
 
 ![Örnek Galerisi](images/gallery.png)
 
 
-## <a name="navigation-barandroiduser-interfacecontrolsnavigation-barmd"></a>[Gezinti çubuğu](~/android/user-interface/controls/navigation-bar.md)
+## <a name="navigation-barandroiduser-interfacecontrolsnavigation-barmd"></a>[Gezinti Çubuğu](~/android/user-interface/controls/navigation-bar.md)
 
 *Gezinti çubuğu* Gezinti denetimleri için donanım düğmeleri içermez cihazlarda sağlar **giriş**, **geri**, ve **menü**.
 
 ![Örnek gezinti çubuğu](images/navigation-bar.png)
 
 
-## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[Pickers](~/android/user-interface/controls/pickers/index.md)
+## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[Seçiciler](~/android/user-interface/controls/pickers/index.md)
 
 *Seçiciler* Android tarafından sağlanan iletişim kutuları kullanarak bir tarih veya saat çekme kullanıcıya izin UI öğeleridir.
 
 ![Örnek Seçici](images/picker.png)
 
 
-## <a name="popup-menuandroiduser-interfacecontrolspopup-menumd"></a>[Açılır menüsü](~/android/user-interface/controls/popup-menu.md)
+## <a name="popup-menuandroiduser-interfacecontrolspopup-menumd"></a>[Açılır Menü](~/android/user-interface/controls/popup-menu.md)
 
 `PopupMenu` belirli bir görünüme bağlı açılır menüler görüntülemek için kullanılır.
 
 ![Örnek açılır menüsü](images/popup-menu.png)
 
 
-## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Değer değiştirici](~/android/user-interface/controls/spinner.md)
+## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Değer Değiştirici](~/android/user-interface/controls/spinner.md)
 
 `Spinner` kümesinden tek bir değer seçmek için bir hızlı yol sağlayan bir UI öğedir. Aşağı açılan listesine simmilar olur. 
 
 ![Örnek değer değiştirici](images/spinner.png)
 
 
-## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[geçiş](~/android/user-interface/controls/switch.md)
+## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[Anahtar](~/android/user-interface/controls/switch.md)
 
 `Switch` iki durumlu arasında böyle bir birimi geçiş veya kapalı bir kullanıcının bir kullanıcı Arabirimi öğedir. `Switch` Varsayılan değerdir kapalı.
 
@@ -125,7 +124,7 @@ Düğmeleri bir eylemi gerçekleştirmek için kullanıcı dokunur kullanıcı A
 ![Örnek ViewPager](images/viewpager.png)
 
 
-## <a name="webviewandroiduser-interfacecontrolsweb-viewmd"></a>[Web görünümü](~/android/user-interface/controls/web-view.md)
+## <a name="webviewandroiduser-interfacecontrolsweb-viewmd"></a>[WebView](~/android/user-interface/controls/web-view.md)
 
 `WebView` web sayfalarını görüntüleme için kendi pencere oluşturun (veya hatta tam bir tarayıcı geliştirmek) izin veren bir UI öğedir.
 

@@ -1,18 +1,17 @@
 ---
 title: TestFlight kullanma
-description: "TestFlight artık Apple'nın ait ve beta Xamarin.iOS uygulamalarınızı test etmek için birincil yoludur. Bu makalede iTunes Connect ile çalışmaya, uygulamanızı karşıya TestFlight işleminin – tüm adımlarda size yol gösterir."
-ms.topic: article
+description: TestFlight artık Apple'nın ait ve beta Xamarin.iOS uygulamalarınızı test etmek için birincil yoludur. Bu makalede iTunes Connect ile çalışmaya, uygulamanızı karşıya TestFlight işleminin – tüm adımlarda size yol gösterir.
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: adc08009de308598041adb79dc02bf83bcf4a2f2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5a6e90aab3aae408d4daace81875e44f075818bd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-testflight"></a>TestFlight kullanma
 
@@ -69,7 +68,7 @@ Aşağıdaki iş akışı Beta uygulamanızı test etmek için TestFlight kullan
     [![](testflight-images/my-apps.png "Uygulamalarım seçin")](testflight-images/my-apps.png#lightbox)
 
 
-3.  Üzerinde **My uygulamaları** ekranında, tıklayın  **+**  yeni bir uygulama eklemek için ekranın sol üst köşesindeki düğmesi. Mac ve iOS Geliştirici hesabınız varsa, burada yeni uygulama türü seçmek için istenir.
+3.  Üzerinde **My uygulamaları** ekranında, tıklayın **+** yeni bir uygulama eklemek için ekranın sol üst köşesindeki düğmesi. Mac ve iOS Geliştirici hesabınız varsa, burada yeni uygulama türü seçmek için istenir.
 
 İle sunulur **yeni iOS uygulaması** uygulamanızın Info.plist tam olarak aynı bilgileri içermesi gerekir gönderme penceresi
 
@@ -204,7 +203,7 @@ Varolan iTunes Bağlan kullanıcılar listesinde görünür. Bunları seçmek i�
 
 [![](testflight-images/internal-tester.png "İç Tester anahtarda Aç")](testflight-images/internal-tester.png#lightbox)
 
-Listede olmayan bir kullanıcı eklemek için seçin  **+**  düğmesine *kullanıcılar*ve bir hesap oluşturmak için ilk adını, soyadını ve e-posta adresi sağlayın. Kullanıcı hesabını etkinleştirmek için e-postalarına onaylamanız gerekir:
+Listede olmayan bir kullanıcı eklemek için seçin **+** düğmesine *kullanıcılar*ve bir hesap oluşturmak için ilk adını, soyadını ve e-posta adresi sağlayın. Kullanıcı hesabını etkinleştirmek için e-postalarına onaylamanız gerekir:
 
 [![](testflight-images/add-new-user.png "Kullanıcı ekleme")](testflight-images/add-new-user.png#lightbox)
 

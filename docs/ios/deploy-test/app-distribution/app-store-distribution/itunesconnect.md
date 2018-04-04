@@ -1,18 +1,17 @@
 ---
-title: "Uygulama iTunes Connect yapılandırma"
-description: "Bu makalede Kurulum ve dağıtım App Store'dan yayımlanabilecek böylece iTunes Bağlan bir Xamarin.iOS uygulamasına korumak için gerekli adımlar kapsanmaktadır."
-ms.topic: article
+title: Uygulama iTunes Connect yapılandırma
+description: Bu makalede Kurulum ve dağıtım App Store'dan yayımlanabilecek böylece iTunes Bağlan bir Xamarin.iOS uygulamasına korumak için gerekli adımlar kapsanmaktadır.
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d5c84aee12c374317a797aa41446630a441f6df
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: b54313668a2cb87a6cce0b8c519a06247524df81
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Uygulama iTunes Connect yapılandırma
 
@@ -62,7 +61,7 @@ Uygulamasında aşağıdakilerin [iTunes Bağlan](https://itunesconnect.apple.co
 1. Tıklayın **uygulamalarım**:
 
     [![](itunesconnect-images/add01.png "Uygulamalarım üzerinde tıklatın")](itunesconnect-images/add01.png#lightbox)
-2. Tıklatın  **+**  el sol alt köşesinde ve select üst **yeni iOS uygulaması**:
+2. Tıklatın **+** el sol alt köşesinde ve select üst **yeni iOS uygulaması**:
 
     [![](itunesconnect-images/add02.png "Yeni bir iOS uygulaması ekleme")](itunesconnect-images/add02.png#lightbox)
 3. iTunes Bağlan görüntüler **yeni iOS uygulaması** iletişim:

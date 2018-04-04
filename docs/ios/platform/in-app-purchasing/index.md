@@ -1,17 +1,16 @@
 ---
-title: "Uygulama içi satın alma"
-description: "iOS uygulamaları, dijital ürün ve hizmetlerini deposu Seti API'lerini kullanarak satmak. Ürünler oluşturulur ve iTunes Bağlan Portal'da yönetilir. Apple işlem yönetir ve bunların satmak önce tüm ürünleri onaylar ve her bir işleme (şu anda % 30) için bir ücret ister. Apple uygulamanızda dijital satış için uygulama içi satın kullanır, ancak fiziksel mal ve sayısal olmayan hizmetleri satışlarının kullanamazsınız gerektirir. Dijital Ürün ve Hizmetleri için alternatif ödeme seçenekleri sunan reddedilmesi büyük olasılıkla uygulamalardır. Bu belge, uygulamanızı mağaza Seti kullanacak şekilde yapılandırılmasını açıklamaktadır ve en yaygın uygulama içi satın alma senaryoları Xamarin.iOS örnekler sağlar."
-ms.topic: article
+title: Uygulama içi satın alma
+description: iOS uygulamaları, dijital ürün ve hizmetlerini deposu Seti API'lerini kullanarak satmak. Ürünler oluşturulur ve iTunes Bağlan Portal'da yönetilir. Apple işlem yönetir ve bunların satmak önce tüm ürünleri onaylar ve her bir işleme (şu anda % 30) için bir ücret ister. Apple uygulamanızda dijital satış için uygulama içi satın kullanır, ancak fiziksel mal ve sayısal olmayan hizmetleri satışlarının kullanamazsınız gerektirir. Dijital Ürün ve Hizmetleri için alternatif ödeme seçenekleri sunan reddedilmesi büyük olasılıkla uygulamalardır. Bu belge, uygulamanızı mağaza Seti kullanacak şekilde yapılandırılmasını açıklamaktadır ve en yaygın uygulama içi satın alma senaryoları Xamarin.iOS örnekler sağlar.
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: af8eb556215679bab2da8f54e8231f7d7d3ed418
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a8dec6051caeba55c45df29c085ecfcddd160d2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-app-purchasing"></a>Uygulama içi satın alma
 
@@ -38,15 +37,15 @@ Uygulama içi satın alma desteklemek için Xcode 7 ve üstünde 5.0 veya daha y
 
 ## <a name="contents"></a>İçindekiler
 
- * [Uygulama içi satın alma temelleri ve yapılandırma](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
+ * [Temel Uygulama İçi Satın Alma Bilgileri ve Yapılandırması](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
- * [Mağaza Paketi'ne Genel Bakış ve yazdırılacak ürün bilgileri](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+ * [Mağaza Paketine Genel Bakış ve Ürün Bilgilerini Alma](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
 
- * [Kaynaklarda ürünleri satın alma](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
+ * [Tüketilebilir Ürünler Satın Alma](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
 
- * [Tüketilemezi ürünleri satın alma](~/ios/platform/in-app-purchasing/purchasing-non-consumable-products.md)
+ * [Tüketilebilir Olmayan Ürünler Satın Alma](~/ios/platform/in-app-purchasing/purchasing-non-consumable-products.md)
 
- * [İşlemleri ve doğrulama](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
+ * [İşlemler ve Doğrulama](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
 
  * [Abonelikler ve Raporlama](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 

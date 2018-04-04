@@ -1,18 +1,17 @@
 ---
 title: iCloud
-description: "Apple iOS 5 iCloud Apple'nın sunucularındaki verileri depolamak ve (aracılığıyla kendi Apple kimliği) aynı kişi tarafından kullanılan tüm cihazlar arasında eşitlenmesini sağlamak uygulamalara izin vermek üzere bir hizmet olarak kullanıma sunuldu. Burada, cihazlardaki verileri için Apple'nın sunucularından yedeklenen bir yedek bileşeni da sahiptir. Bu belge, bazı API sağlanan iCloud Apple tarafından depolamak ve bunların sunucularıyla C# örnekleri küçük anahtar-değer çiftlerini depolamak için ve belgeleri depolamak için verileri almak için kullanmayı açıklar. Ayrıca, nasıl İcloud'a yedekleme uygulamanızın tasarımınu etkileyebilir anlatılmaktadır."
-ms.topic: article
+description: Apple iOS 5 iCloud Apple'nın sunucularındaki verileri depolamak ve (aracılığıyla kendi Apple kimliği) aynı kişi tarafından kullanılan tüm cihazlar arasında eşitlenmesini sağlamak uygulamalara izin vermek üzere bir hizmet olarak kullanıma sunuldu. Burada, cihazlardaki verileri için Apple'nın sunucularından yedeklenen bir yedek bileşeni da sahiptir. Bu belge, bazı API sağlanan iCloud Apple tarafından depolamak ve bunların sunucularıyla C# örnekleri küçük anahtar-değer çiftlerini depolamak için ve belgeleri depolamak için verileri almak için kullanmayı açıklar. Ayrıca, nasıl İcloud'a yedekleme uygulamanızın tasarımınu etkileyebilir anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: ce2130985eb954abc4b4a1f4022eec97341eb902
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c9e7c920855d2002f52d05e28c5225f301cd62b1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="icloud"></a>iCloud
 

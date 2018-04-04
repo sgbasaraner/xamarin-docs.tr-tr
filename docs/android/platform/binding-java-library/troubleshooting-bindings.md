@@ -1,18 +1,17 @@
 ---
-title: "Sorun giderme bağlamaları"
-description: "Bu makalede, olası nedenleri ve bunları çözmek için önerilen yol birlikte bağlamaları oluştururken oluşabilir serveral sık karşılaşılan hataların özetlenmektedir."
-ms.topic: article
+title: Sorun giderme bağlamaları
+description: Bu makalede, olası nedenleri ve bunları çözmek için önerilen yol birlikte bağlamaları oluştururken oluşabilir serveral sık karşılaşılan hataların özetlenmektedir.
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: da6286eed091114c117c723f462bbb8cac77034b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-bindings"></a>Sorun giderme bağlamaları
 
@@ -51,7 +50,7 @@ Android kitaplığı decompiled sonra kaynak kodu inceleyin. Genel olarak bakıl
 
 - **Gizleme özelliklerine sınıfları** &ndash; karıştırılmış sınıfların özellikleri içerir:
 
-    - Sınıf adını içeren bir  **$** , yani **$.class**
+    - Sınıf adını içeren bir **$**, yani **$.class**
     - Sınıf adı tamamen küçük harf karakter yani tehlikeye **a.class**      
 
 - **`import` başvurulmayan kitaplıkları deyimleri** &ndash; başvurulmayan kitaplığı tanımlamak ve bu bağımlılıkların Xamarin.Android bağlama projeyle ekleyip bir **yapı eylemi** , **ReferenceJar**  veya **EmbedddedReferenceJar**.

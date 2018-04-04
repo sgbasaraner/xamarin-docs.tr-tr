@@ -1,18 +1,17 @@
 ---
-title: "Satır Eylemler ile çalışma"
-description: "Bu kılavuz UISwipeActionsConfiguration veya UITableViewRowAction tablo satır için özel manyetik eylemlerini oluşturmak nasıl gösterir"
-ms.topic: article
+title: Satır Eylemler ile çalışma
+description: Bu kılavuz UISwipeActionsConfiguration veya UITableViewRowAction tablo satır için özel manyetik eylemlerini oluşturmak nasıl gösterir
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/25/2017
-ms.openlocfilehash: 23a8fcd0633757bfffdb1761c3fc811268341b96
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c257406f3ad81e8144b47e099c9a00f3fdae30cb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-row-actions"></a>Satır Eylemler ile çalışma
 

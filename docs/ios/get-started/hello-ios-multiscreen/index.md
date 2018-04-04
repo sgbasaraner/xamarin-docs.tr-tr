@@ -1,18 +1,18 @@
 ---
 title: Merhaba, iOS Multiscreen
-description: "Bu iki parçalı kılavuzdaki biz Hello oluşturduğumuz Phoneword uygulama genişletin, ikinci bir ekran işlemek için iOS Kılavuzu. Model-View-Controller tasarım deseni neden şekilde, boyunca ilk bizim iOS Gezinti uygulamak ve iOS uygulama yapısı ve işlevleri daha derin bir anlayış geliştirin."
-ms.topic: article
+description: Bu iki parçalı kılavuzdaki biz Hello oluşturduğumuz Phoneword uygulama genişletin, ikinci bir ekran işlemek için iOS Kılavuzu. Model-View-Controller tasarım deseni neden şekilde, boyunca ilk bizim iOS Gezinti uygulamak ve iOS uygulama yapısı ve işlevleri daha derin bir anlayış geliştirin.
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 79f57ac0-37d0-4593-9dcf-fca93ad0be65
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: d727667685d72de1bd42a9dc7e6f2be77f740cf3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95be7bd39aced5dad680efbae0bd7e0f4d040f7c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-ios-multiscreen"></a>Merhaba, iOS Multiscreen
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 02/27/2018
 
 Bu kılavuzun ilk bölümünde uygulamamıza kullanarak adlı numaraları geçmişini izlemek için Phoneword uygulamamız ikinci ekranı ekleyeceğiz.
 
-##  <a name="part-2-deep-diveiosget-startedhello-ios-multiscreenhello-ios-multiscreen-deepdivemd"></a>[2. Kısım: Derinlemesine bakış](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
+##  <a name="part-2-deep-diveiosget-startedhello-ios-multiscreenhello-ios-multiscreen-deepdivemd"></a>[Bölüm 2: Derinlemesine İnceleme](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
 
 
 

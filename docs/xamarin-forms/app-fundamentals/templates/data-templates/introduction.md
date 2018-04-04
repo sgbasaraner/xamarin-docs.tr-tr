@@ -1,18 +1,17 @@
 ---
-title: "Giriş"
-description: "Xamarin.Forms veri şablonları, desteklenen denetimlere veri sunumu tanımlama yeteneği sağlar. Bu makalede veri şablonları, gerekli neden inceleniyor tanıtılmaktadır."
-ms.topic: article
+title: Giriş
+description: Xamarin.Forms veri şablonları, desteklenen denetimlere veri sunumu tanımlama yeteneği sağlar. Bu makalede veri şablonları, gerekli neden inceleniyor tanıtılmaktadır.
 ms.prod: xamarin
 ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: e7c1a8b233538b7ad40a18e44747bef672210516
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6b71e1cb5f45a580aaf04c267028af1740cb560e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction"></a>Giriş
 
@@ -135,6 +134,6 @@ Görünüm hiyerarşisinde daha düşük veri şablonları önceliklidir tanıml
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Hücre görünümü](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
+- [Hücre Görünümü](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
 - [Veri şablonları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
 - [DataTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)

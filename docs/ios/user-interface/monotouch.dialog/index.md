@@ -1,17 +1,16 @@
 ---
-title: "MonoTouch.Dialog giriş"
-description: "(Yüksekliğindeki MonoTouch.Dialog D) araç seti, hızlı uygulama geliştirme Xamarin.iOS UI için vazgeçilmez bir çerçevedir. YÜKSEKLİĞİNDEKİ D, hızlı ve kolay karmaşık uygulama gezinti denetleyicileri, tablolar vb. birçoğunu yerine bildirim temelli bir yaklaşım kullanarak kullanıcı Arabirimi tanımlamanızı sağlar. Ayrıca, yüksekliğindeki D esnek bir tam denetim veya çekme yenileme, arka plan görüntüsü yükleme gibi ek özellikler yanı sıra yaklaşım ellerini ile geliştiriciler sağlayabilir, destek ve JSON verilerini aracılığıyla dinamik kullanıcı Arabirimi oluşturma arama API kümesi vardır. Bu kılavuz yüksekliğindeki ile çalışmak için kullanılabilecek çeşitli yöntemler sunar D ve ardından ayrıntılı Gelişmiş kullanım çekecek."
-ms.topic: article
+title: MonoTouch.Dialog giriş
+description: (Yüksekliğindeki MonoTouch.Dialog D) araç seti, hızlı uygulama geliştirme Xamarin.iOS UI için vazgeçilmez bir çerçevedir. YÜKSEKLİĞİNDEKİ D, hızlı ve kolay karmaşık uygulama gezinti denetleyicileri, tablolar vb. birçoğunu yerine bildirim temelli bir yaklaşım kullanarak kullanıcı Arabirimi tanımlamanızı sağlar. Ayrıca, yüksekliğindeki D esnek bir tam denetim veya çekme yenileme, arka plan görüntüsü yükleme gibi ek özellikler yanı sıra yaklaşım ellerini ile geliştiriciler sağlayabilir, destek ve JSON verilerini aracılığıyla dinamik kullanıcı Arabirimi oluşturma arama API kümesi vardır. Bu kılavuz yüksekliğindeki ile çalışmak için kullanılabilecek çeşitli yöntemler sunar D ve ardından ayrıntılı Gelişmiş kullanım çekecek.
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b9bf4c5ee803aa60a2730703e64fcf73d07efdb5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: be979b35ffdd597dae74f1f661a381ae44433b10
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-monotouchdialog"></a>MonoTouch.Dialog giriş
 

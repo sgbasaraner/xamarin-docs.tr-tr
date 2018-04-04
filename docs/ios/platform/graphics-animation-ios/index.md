@@ -1,17 +1,16 @@
 ---
 title: Grafikler ve iOS animasyonda
-description: "Uygulama kavramları"
-ms.topic: article
+description: Uygulama kavramları
 ms.prod: xamarin
 ms.assetid: 3FEF45F2-C0F0-4D66-8796-9674FFE6740F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: ece988f2ba29ec4656631d993e4c4b99a276b199
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 99c05efa13027aca4935425d2a731613f250ec93
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="graphics-and-animation-in-ios"></a>Grafikler ve iOS animasyonda
 
@@ -22,11 +21,11 @@ ms.lasthandoff: 02/27/2018
 
 CoreImage bir dizi yerleşik filtreler ve görüntüleri ve video yüz algılama dahil olmak üzere, uygulama etkileri sağlayan bir iOS 5'de sunulan yeni bir çerçevedir.
 
-##  <a name="core-graphicsiosplatformgraphics-animation-ioscore-graphicsmd"></a>[Çekirdek grafikleri](~/ios/platform/graphics-animation-ios/core-graphics.md)
+##  <a name="core-graphicsiosplatformgraphics-animation-ioscore-graphicsmd"></a>[Temel Grafikler](~/ios/platform/graphics-animation-ios/core-graphics.md)
 
 Alt düzey çizim destek sağlayan çekirdek grafikleri iOS framework makalede açıklanır. Çekirdek grafikleri geometri, görüntüler ve PDF çizmek için nasıl kullanılacağını gösterir.
 
-##  <a name="core-animationiosplatformgraphics-animation-ioscore-animationmd"></a>[Çekirdek animasyon](~/ios/platform/graphics-animation-ios/core-animation.md)
+##  <a name="core-animationiosplatformgraphics-animation-ioscore-animationmd"></a>[Temel Animasyon](~/ios/platform/graphics-animation-ios/core-animation.md)
 
 Bu makalede nasıl doğrudan alt düzey animasyon denetimi kullanmak için yüksek performanslı, Uıkit, akıcı animasyonları yanı sıra sağladığını gösteren çekirdek animasyon çerçevesi inceler.
 

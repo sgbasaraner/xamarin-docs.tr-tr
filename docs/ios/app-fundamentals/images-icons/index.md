@@ -1,18 +1,17 @@
 ---
-title: "Görüntüleri ve simgeler"
-description: "Bu bölümde simgelerle kullanarak gibi bir Xamarin.iOS uygulaması görüntülerle çalışma kapak, ekranlar başlatma makalelerin veya bunları dahil olmak üzere çeşitli denetimleri ve özel belge türleri için simgeleri sağlama içerir."
-ms.topic: article
+title: Görüntüleri ve simgeler
+description: Bu bölümde simgelerle kullanarak gibi bir Xamarin.iOS uygulaması görüntülerle çalışma kapak, ekranlar başlatma makalelerin veya bunları dahil olmak üzere çeşitli denetimleri ve özel belge türleri için simgeleri sağlama içerir.
 ms.prod: xamarin
 ms.assetid: 0AB8CC07-11E4-0D75-4119-AED1A1252424
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 904ba5db84101651d10605fadf8e8861db0ddc1f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fd191c898d5bb015d2d394d42db1049bb0128fb7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="images-and-icons"></a>Görüntüleri ve simgeler
 
@@ -34,15 +33,15 @@ Varlıklar bir iOS uygulaması içinde kullanılan, görüntü birkaç yolu vard
 Bu varlıkları nerede kullanılacak çeşitli yerlerde yanı sıra, bir iOS uygulaması için görüntü varlıkların oluştururken dikkate alınması gereken bazı noktalar vardır. Bunların her biri yalnızca kaç görüntü varlıklarının gerekli olacaktır, ancak bu varlıkları nasıl oluşturulduğunu üzerinde bir etkisi vardır. Aşağıdaki konular gerekli olacak görüntüleri varlıklar, bu varlıkları uygulamanın pakette nasıl bulunur ve görüntü varlıklarının gerekli işlevselliği sağlamak için nasıl tüketilen türlerini kapsar:
 
 
-## <a name="displaying-an-imageiosapp-fundamentalsimages-iconsdisplaying-an-imagemd"></a>[Bir görüntü görüntüleme](~/ios/app-fundamentals/images-icons/displaying-an-image.md)
+## <a name="displaying-an-imageiosapp-fundamentalsimages-iconsdisplaying-an-imagemd"></a>[Bir Görüntüyü Görüntüleme](~/ios/app-fundamentals/images-icons/displaying-an-image.md)
 
 Bu makalede, bir Xamarin.iOS uygulaması ve C# kodu kullanarak veya iOS Tasarımcısı denetiminde atama, görüntü görüntüleme bir görüntü varlığı dahil olmak üzere yer almaktadır.
 
-## <a name="application-iconsiosapp-fundamentalsimages-iconsapp-iconsmd"></a>[Uygulama simgeleri](~/ios/app-fundamentals/images-icons/app-icons.md)
+## <a name="application-iconsiosapp-fundamentalsimages-iconsapp-iconsmd"></a>[Uygulama Simgeleri](~/ios/app-fundamentals/images-icons/app-icons.md)
 
 Bu makale, bir uygulama simgesi olarak kullanılacak bir görüntü varlığı bir Xamarin.iOS uygulaması yönetme ve dahil kapsar.
 
-## <a name="alternate-app-iconsiosapp-fundamentalsimages-iconsalternate-app-iconsmd"></a>[Diğer uygulama simgeleri](~/ios/app-fundamentals/images-icons/alternate-app-icons.md)
+## <a name="alternate-app-iconsiosapp-fundamentalsimages-iconsalternate-app-iconsmd"></a>[Alternatif Uygulama Simgeleri](~/ios/app-fundamentals/images-icons/alternate-app-icons.md)
 
 Apple bazı geliştirmeler simgesini yönetmek bir uygulama sağlayan iOS 10.3 ekledi:
 
@@ -52,11 +51,11 @@ Apple bazı geliştirmeler simgesini yönetmek bir uygulama sağlayan iOS 10.3 e
  - `SetAlternameIconName` -Uygulamanın simgesi verilen alternatif simgesi geçiş yapmak için bu yöntemi kullanın.
 
 
-## <a name="launch-screensiosapp-fundamentalsimages-iconslaunch-screensmd"></a>[Ekranlar başlatma](~/ios/app-fundamentals/images-icons/launch-screens.md)
+## <a name="launch-screensiosapp-fundamentalsimages-iconslaunch-screensmd"></a>[Başlatma Ekranları](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 Bu makalede her iOS aygıtı boyutu ve çözümleme için bir evrensel başlatma ekranı sağlamak üzere özel türde bir film şeridi kullanmayı ele alır.
 
-## <a name="custom-document-typesiosapp-fundamentalsimages-iconscustom-document-typesmd"></a>[Özel belge türleri](~/ios/app-fundamentals/images-icons/custom-document-types.md)
+## <a name="custom-document-typesiosapp-fundamentalsimages-iconscustom-document-typesmd"></a>[Özel Belge Türleri](~/ios/app-fundamentals/images-icons/custom-document-types.md)
 
 Bu makale, bir özel belge türü simgesi olarak kullanılacak bir görüntü varlığı bir Xamarin.iOS uygulaması yönetme ve dahil kapsar.
 

@@ -1,18 +1,17 @@
 ---
-title: "Uygulama mağazası yayımlama"
-description: "Bu makalede, yapılandırma, yapı ve dağıtım App Store aracılığıyla bir Xamarin.iOS uygulaması yayımlama gösterilmektedir. Uygulama dağıtım için hazırlama, Apple'nın araçları gözden geçirme için uygulamanıza göndermek için nasıl kullanılacağı ve, son olarak, uygulama mağazası uygulamanızı yayımlamak nasıl kapsayan bir adım adım kılavuz içerir."
-ms.topic: article
+title: Uygulama mağazası yayımlama
+description: Bu makalede, yapılandırma, yapı ve dağıtım App Store aracılığıyla bir Xamarin.iOS uygulaması yayımlama gösterilmektedir. Uygulama dağıtım için hazırlama, Apple'nın araçları gözden geçirme için uygulamanıza göndermek için nasıl kullanılacağı ve, son olarak, uygulama mağazası uygulamanızı yayımlamak nasıl kapsayan bir adım adım kılavuz içerir.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: ef8fafb923dcad936ce0a049e715cdd163ea7222
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5d78cb81f27ce7478719ff9f11f4eb38fddc3981
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Uygulama mağazası yayımlama
 
@@ -71,7 +70,7 @@ Apple özel uygulama hizmetleri için benzersiz bir kimlik oluşturduğunuzda, i
 Bir uygulama kimliği oluşturma ve isteğe bağlı olarak yetkilendirmeler seçerek Apple'nın web tabanlı iOS sağlama portalı kullanarak aşağıdaki adımları içerir:
 
 1. İçinde **tanımlayıcıları & profilleri, sertifikaları** bölümünde seçin **tanımlayıcıları** > **uygulama kimliği**.
-2. Tıklatın  **+**  düğmesine tıklayın ve sağlayan bir **adı** ve **paket kimliği** yeni uygulama için.
+2. Tıklatın **+** düğmesine tıklayın ve sağlayan bir **adı** ve **paket kimliği** yeni uygulama için.
 3. Ekranın alt kısmına kaydırın ve seçin **uygulama hizmetleri** , gerekir Xamarin.iOS uygulamanız tarafından.
 4. Tıklatın **devam** düğmesi ve aşağıdaki ekran yeni bir uygulama kimliği oluşturma yönergeleri
 
@@ -109,7 +108,7 @@ iOS kullanan *sağlama profilleri* belirli uygulama yapı nasıl dağıtılabili
 Hazırlama Apple'nın web tabanlı iOS sağlama portalı kullanarak aşağıdaki adımları içerir:
 
 1.  Seçin **sağlama** > **dağıtım**.
-2.  Tıklatın  **+**  düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **App Store**.
+2.  Tıklatın **+** düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **App Store**.
 3.  Seçin **uygulama kimliği** için dağıtım profili oluşturmak istediğiniz aşağı açılan listeden.
 4.  Uygulamayı imzalamak için geçerli bir üretim (dağıtım) sertifika seçin.
 5.  Girin bir **adı** yeni **dağıtım profili** ve profil oluşturur.

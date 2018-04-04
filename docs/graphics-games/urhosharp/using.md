@@ -1,17 +1,16 @@
 ---
 title: UrhoSharp kullanma
-description: "UrhoSharp altyapısı genel bakış"
-ms.topic: article
+description: UrhoSharp altyapısı genel bakış
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cd30f17d631216a3ea119a262aca6d294394a77f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cdb32c0fe9aa1a267bda5768b9026667723d694c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-urhosharp"></a>UrhoSharp kullanma
 
@@ -497,7 +496,7 @@ Kaynak türü bellek bütçeleri ayarlanabilir: izin verilenden daha fazla belle
 
 Urho3D çalıştığında varolan dosya biçimleri mümkün olduğunca kullanın ve özel dosya biçimleri modelleri için yalnızca kesinlikle gerekli gibi olduğunda tanımlamak (*.mdl) ve animasyonların (*.ani). Bu varlıklar türleri için bir dönüştürücü - Urho sağlar [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) fbx, dae, 3ds ve obj, vb. gibi birçok popüler 3B formatlar tüketebileceği.
 
-Ayrıca vardır bir kullanışlı eklentisi Blender [https://github.com/reattiva/Urho3D-Blender](https://github.com/reattiva/Urho3D-Blender) Blender varlıklarınızı Urho3D için uygun biçimde verebilirsiniz.
+Ayrıca vardır bir kullanışlı eklentisi Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) Blender varlıklarınızı Urho3D için uygun biçimde verebilirsiniz.
 
 ## <a name="background-loading-of-resources"></a>Kaynakların arka planda yükleme
 
@@ -529,7 +528,7 @@ soundSource.AutoRemove = true;
 
 # <a name="particles"></a>Particles
 
-Parçacık bazı basit ve ekonomik efektler uygulamanıza ekleme basit bir yol sağlar.  Gibi araçları kullanarak PEX biçiminde depolanan parçacık tüketebileceği [http://onebyonedesign.com/flash/particleeditor/](http://onebyonedesign.com/flash/particleeditor/).
+Parçacık bazı basit ve ekonomik efektler uygulamanıza ekleme basit bir yol sağlar.  Gibi araçları kullanarak PEX biçiminde depolanan parçacık tüketebileceği [ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/).
 
 Parçacık bir düğüme eklenebilecek bileşenleridir.  Düğümün çağırmanız gerekir `CreateComponent<ParticleEmitter2D>` yöntemi parçacık oluşturmak ve ardından etkili özelliğini 2B bir etkisi, ayarlayarak parçacık yapılandırmak için kaynak önbellekten yüklenir.
 

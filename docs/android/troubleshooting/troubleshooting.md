@@ -1,17 +1,17 @@
 ---
-title: "Sorun giderme ipuçları"
-ms.topic: article
+title: Sorun giderme ipuçları
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/15/2018
-ms.openlocfilehash: 015fff63c612c3acf29681b90c1e945c5e460034
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 961f9f38687790343f225d95c74e00e98f594c28
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-tips"></a>Sorun giderme ipuçları
 
@@ -200,7 +200,7 @@ Sonuç dört iletileri şunlardır:
 -  Zayıf genel başvuru yok etme: ile başlayan satırları bunlar *-w-* .
 
 
-Tüm iletilerindeki *grefc* değerdir Xamarin.Android oluşturdu, genel başvuru sayısı sırada *grefwc* değeri Xamarin.Android oluşturdu zayıf genel başvurular sayısıdır. *İşlemek* veya *obj tanıtıcı* değerdir JNI tanıtıcı değeri ve sonrasında karakter '  */* ' tanıtıcı değeri türü: */L* yerel bir referans için */G* genel başvuruları için ve */W* zayıf genel başvurular için.
+Tüm iletilerindeki *grefc* değerdir Xamarin.Android oluşturdu, genel başvuru sayısı sırada *grefwc* değeri Xamarin.Android oluşturdu zayıf genel başvurular sayısıdır. *İşlemek* veya *obj tanıtıcı* değerdir JNI tanıtıcı değeri ve sonrasında karakter ' */*' tanıtıcı değeri türü: */L* yerel bir referans için */G* genel başvuruları için ve */W* zayıf genel başvurular için.
 
 GC işleminin bir parçası olarak genel başvurular (+ g +) zayıf genel başvurular dönüştürülür (neden + w + ve - g-), bir Java tarafı GC başlayacağı zamana ve toplanan olmadığını görmek için zayıf genel başvuru sonra denetlenir. Hala kullanımda değilse yeni bir gref zayıf ref oluşturulur (+ g +, -w-), aksi takdirde zayıf ref yok (-w).
 
@@ -270,7 +270,7 @@ Bu çalışır almalısınız. Sorunları yaşamaya devam ederseniz, denemek ist
 
 ## <a name="receiving-activation-incomplete-error-message"></a>Alma ' etkinleştirme tamamlanmamış hata iletisi
 
-Xamarin.Android Visual Studio için kullanırken bu sorun ortaya çıkabilir. Bu sorunu çözmek için lütfen günlükleri şu konuma gönderin  *contact@xamarin.com* .
+Xamarin.Android Visual Studio için kullanırken bu sorun ortaya çıkabilir. Bu sorunu çözmek için lütfen günlükleri şu konuma gönderin *contact@xamarin.com*.
 
 -  Günlük konumu: **LocalAppData %\\Xamarin\\günlükleri**
 
@@ -301,7 +301,7 @@ Bunu başarmak için tercih platformunuz bulmak ve adımları izleyin:
 5. Kimlik bilgilerinizi girin
 6. Güncelleştirmeleri denetle
 
-Bu hata iletisi görünmeye devam ederse, lütfen e-posta  **contact@xamarin.com** .
+Bu hata iletisi görünmeye devam ederse, lütfen e-posta **contact@xamarin.com**.
 
 
 

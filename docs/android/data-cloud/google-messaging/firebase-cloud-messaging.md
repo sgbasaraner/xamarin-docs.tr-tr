@@ -1,18 +1,17 @@
 ---
-title: "Firebase bulut Mesajlaşma"
-description: "Firebase bulut Mesajlaşma (FCM), mobil uygulamaları ve sunucu uygulamaları Mesajlaşma kolaylaştıran bir hizmettir. Bu makalede FCM nasıl çalıştığını genel bir bakış sağlar ve uygulamanızı FCM kullanabilmesi için Google hizmetlerin nasıl yapılandırılacağı açıklanmaktadır."
-ms.topic: article
+title: Firebase bulut Mesajlaşma
+description: Firebase bulut Mesajlaşma (FCM), mobil uygulamaları ve sunucu uygulamaları Mesajlaşma kolaylaştıran bir hizmettir. Bu makalede FCM nasıl çalıştığını genel bir bakış sağlar ve uygulamanızı FCM kullanabilmesi için Google hizmetlerin nasıl yapılandırılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: ef073999e10e184806089bed3ef9ab93e2f28dd6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef2c23d16545d03dc267054a96f8b0f8883afcf1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase bulut Mesajlaşma
 

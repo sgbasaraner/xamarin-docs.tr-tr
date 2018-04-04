@@ -1,18 +1,17 @@
 ---
 title: Eklentileri
-description: "Xamarin.Forms uygulamalarına yerel işlevselliği ekleyin"
-ms.topic: article
+description: Xamarin.Forms uygulamalarına yerel işlevselliği ekleyin
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2016
-ms.openlocfilehash: ad338e655c1aeb475122c837ca5c805e491f84bc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5770d13c46998872752820b7a0cbb222a04c3ff8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="plugins"></a>Eklentileri
 
@@ -35,7 +34,7 @@ Oluşturma ve Nuget paketleri (ve Xamarin bileşenleri) kendi eklentileri yayım
 
 Örneğin, aşağıdaki eklenti listesi olan tüm açık kaynaklı ve örnekleri için karşılık gelen [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) bölümü:
 
-- **Metin okuma** Ahmet Montemagno tarafından &ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech) ve [NuGet  ](https://www.nuget.org/packages/Xam.Plugin.Battery)
+- **Metin okuma** Ahmet Montemagno tarafından &ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech) ve [NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
 - **Pil durumu** Ahmet Montemagno tarafından &ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery) ve [NuGet](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech/)
 
 Bu yönergeler için yaptığınız gibi bu Github projeleri iyi bir başlangıç noktası kendi platformlar arası eklenti oluşturmak için sağlayabilir [bir eklenti için Xamarin oluşturma](https://github.com/xamarin/plugins#create-a-plugin-for-xamarin).

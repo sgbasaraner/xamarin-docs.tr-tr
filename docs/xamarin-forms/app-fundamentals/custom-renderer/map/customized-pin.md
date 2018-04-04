@@ -1,18 +1,17 @@
 ---
-title: "Bir harita PIN özelleştirme"
-description: "Bu makalede her platformda yerel bir harita özelleştirilmiş bir PIN ve PIN'i veri özelleştirilmiş bir görünümünü görüntüler harita denetiminin özel Oluşturucu Oluşturma gösterilir."
-ms.topic: article
+title: Bir harita PIN özelleştirme
+description: Bu makalede her platformda yerel bir harita özelleştirilmiş bir PIN ve PIN'i veri özelleştirilmiş bir görünümünü görüntüler harita denetiminin özel Oluşturucu Oluşturma gösterilir.
 ms.prod: xamarin
 ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 312bda44a6b390c6ba486d5a3d60dfe4fb770a2e
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 353575bad91c9bade0207a0aa271d9de7ec50240
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-map-pin"></a>Bir harita PIN özelleştirme
 
@@ -33,7 +32,7 @@ Oluşturma işlemi için özel Oluşturucu oluşturarak platforma özgü özelle
 Her öğe artık sırasıyla uygulamak için incelenecektir bir `CustomMap` her platformda yerel bir harita özelleştirilmiş bir PIN ve PIN'i veri özelleştirilmiş bir görünümünü görüntüler Oluşturucu.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) başlatılmış ve kullanılmadan önce yapılandırılması gerekir. Daha fazla bilgi için bkz: [ `Maps Control` ](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) başlatılmış ve kullanılmadan önce yapılandırılması gerekir. Daha fazla bilgi için bkz. [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
 <a name="Creating_the_Custom_Map" />
 

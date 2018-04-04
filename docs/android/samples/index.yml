@@ -1,23 +1,23 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Xamarin.Android Örnekleri"
+title: Xamarin.Android Örnekleri
 metadata:
-  description: "Mobil uygulama geliştiricileri için Xamarin.Android örnek uygulamaları."
+  description: Mobil uygulama geliştiricileri için Xamarin.Android örnek uygulamaları.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/20/2018
-  ms.topic: article
-  ms.openlocfilehash: df9b864542bbdbf57ed9096ce8e869a056b021c3
-  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.topic: sample
+  ms.openlocfilehash: 58c8cf15dc196071268172980279cb19f269cc4a
+  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
   ms.translationtype: HT
   ms.contentlocale: tr-TR
-  ms.lasthandoff: 02/28/2018
+  ms.lasthandoff: 04/04/2018
 abstract:
-  description: "C# ve Xamarin ile mobil uygulamalar oluşturmaya başlamanıza yardımcı olacak Xamarin Android örnek uygulamaları ve kod tanıtımları."
+  description: C# ve Xamarin ile mobil uygulamalar oluşturmaya başlamanıza yardımcı olacak Xamarin Android örnek uygulamaları ve kod tanıtımları.
   menu:
     items:
     - href: https://developer.xamarin.com/samples/android/all/
-      text: "Tüm Xamarin.Android Örnekleri"
+      text: Tüm Xamarin.Android Örnekleri
 sections:
 - title: 
   items:
@@ -26,56 +26,56 @@ sections:
     className: cardsW
     items:
     - href: https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/
-      html: "Bu örnek, Android Lollipop’ta sunulan yeni Malzeme Tasarımı API’lerini gösterir."
+      html: Bu örnek, Android Lollipop’ta sunulan yeni Malzeme Tasarımı API’lerini gösterir.
       image:
         src: images/material-design.png
         href: https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/
-      title: "Malzeme Tasarımı"
+      title: Malzeme Tasarımı
     - href: https://developer.xamarin.com/samples/monodroid/GooglePlayServices/
-      html: "Bu çözüm, haritalar API’sinin birkaç kullanımını göstermek için Xamarin Google Play Services NuGet kullanır."
+      html: Bu çözüm, haritalar API’sinin birkaç kullanımını göstermek için Xamarin Google Play Services NuGet kullanır.
       image:
         src: images/gps.png
         href: https://developer.xamarin.com/samples/monodroid/GooglePlayServices/
       title: Google Play Services
     - href: https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/
-      html: "Bu örnek, bir dizi matematik problemini flash kartlarda sunan bir uygulamayı uygulamak için ViewPager ve PagerTabStrip’in birlikte nasıl kullanılacağını gösterir."
+      html: Bu örnek, bir dizi matematik problemini flash kartlarda sunan bir uygulamayı uygulamak için ViewPager ve PagerTabStrip’in birlikte nasıl kullanılacağını gösterir.
       image:
         src: images/flash.png
         href: https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/
-      title: "Flash Kart Çağrı Cihazı"
+      title: Flash Kart Çağrı Cihazı
     - href: https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/
-      html: "Parçalar, farklı boyutlardaki ekranlarda çalıştırılabilecek uygulama yazma sürecinin karmaşıklığına yanıt vermek için kullanılan, kendi içindeki modüler bileşenlerdir."
+      html: Parçalar, farklı boyutlardaki ekranlarda çalıştırılabilecek uygulama yazma sürecinin karmaşıklığına yanıt vermek için kullanılan, kendi içindeki modüler bileşenlerdir.
       image:
         src: images/fragments.png
         href: https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/
-      title: "Parçalar"
+      title: Parçalar
     - href: https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/
-      html: "Android’de çok dokunmalı izlemeyi kullanan renkli parmak boyama uygulaması."
+      html: Android’de çok dokunmalı izlemeyi kullanan renkli parmak boyama uygulaması.
       image:
         src: images/fingerpaint.png
         href: https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/
       title: Parmak Boyama
     - href: https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/
-      html: "Android 5.0 Lollipop ile birlikte sunulan yeni CardView ve RecyclerView pencere öğelerinin nasıl kullanılacağını öğrenmek için bu örneği kullanın."
+      html: Android 5.0 Lollipop ile birlikte sunulan yeni CardView ve RecyclerView pencere öğelerinin nasıl kullanılacağını öğrenmek için bu örneği kullanın.
       image:
         src: images/recycler.png
         href: https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/
       title: RecyclerViewer
     - href: https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/
-      html: "Android 5.0 Lollipop’ta Eylem Çubuğunu yeni Araç Çubuğu ile değiştiren Android örneği."
+      html: Android 5.0 Lollipop’ta Eylem Çubuğunu yeni Araç Çubuğu ile değiştiren Android örneği.
       image:
         src: images/toolbar.png
         href: https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/
-      title: "Araç Çubuğu"
+      title: Araç Çubuğu
     - href: https://developer.xamarin.com/samples/monodroid/wear/WatchFace/
-      html: "Özel bir Android Wear saat kadranını uygulama."
+      html: Özel bir Android Wear saat kadranını uygulama.
       image:
         src: images/watchface.png
         href: https://developer.xamarin.com/samples/monodroid/wear/WatchFace/
       title: WatchFace
     - href: https://developer.xamarin.com/samples/android/all/
-      html: "Xamarin.Android örnek uygulamalarından ve kod tanıtımlarından oluşan tam bir set."
+      html: Xamarin.Android örnek uygulamalarından ve kod tanıtımlarından oluşan tam bir set.
       image:
         src: ~/media/shared/sample-download.svg
         href: https://developer.xamarin.com/samples/android/all/
-      title: "Tüm Xamarin.Android örnekleri"
+      title: Tüm Xamarin.Android örnekleri

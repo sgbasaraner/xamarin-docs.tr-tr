@@ -1,18 +1,18 @@
 ---
 title: Merhaba, Android Multiscreen
-description: "Bu iki parçalı kılavuzda Hello oluşturulan Phoneword uygulama genişletin ikinci ekranı işlemek için Android Kılavuzu. Android uygulaması yapısı ve işlevsellik daha iyi anlamasına geliştirirken yol boyunca bu kılavuz temel Android uygulama yapı taşları ve inebilirsiniz Android mimariye tanıtılacaktır."
-ms.topic: article
+description: Bu iki parçalı kılavuzda Hello oluşturulan Phoneword uygulama genişletin ikinci ekranı işlemek için Android Kılavuzu. Android uygulaması yapısı ve işlevsellik daha iyi anlamasına geliştirirken yol boyunca bu kılavuz temel Android uygulama yapı taşları ve inebilirsiniz Android mimariye tanıtılacaktır.
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D82EC193-2CB7-44C3-8688-0CEBDF60C3D6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/02/2016
-ms.openlocfilehash: c61e3dfd76f077d36d4bf6f8f43e3aa794e31644
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a168e285358fff51b923200e55784b566df29d9d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-multiscreen"></a>Merhaba, Android Multiscreen
 

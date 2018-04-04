@@ -1,18 +1,17 @@
 ---
-title: "İOS 11 giriş"
+title: İOS 11 giriş
 description: Yeni iOS 11 deneyin Xamarin ile API'leri.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 22C38EA6-6DA9-4B92-B41B-814E589033F6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: b379a0b35e676849c4d321c5f49b9d611c521d44
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0b3993f09b6516c9c0d4f13a82d97d3cf289330c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-ios-11"></a>İOS 11 giriş
 
@@ -58,7 +57,7 @@ PDFKit getiren PDF oluşturma ve düzenleme özellikleri uygulamalarınızı 11,
 
 Siri artık listeleri ve notları ve diğer uygulama adları gibi diğer geliştirmeler dahil olmak üzere daha da fazla etkileşimleri destekler.
 
-## <a name="visionvisionmd"></a>[Görme](vision.md)
+## <a name="visionvisionmd"></a>[Vision](vision.md)
 
 Görüntü çeşitli yüz algılama ve tanıma, CoreML modelleri, yeni barkod algılama API'leri, metin ve yatay algılama ve daha fazla genel nesne algılama gibi ve izleme iOS için işleme ve analizi özellik getirir.
 

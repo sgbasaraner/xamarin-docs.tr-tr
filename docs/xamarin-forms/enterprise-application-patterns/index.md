@@ -1,18 +1,17 @@
 ---
-title: "Kurumsal uygulama Xamarin.Forms eBook kullanarak düzenleri"
-description: "Uyarlanabilir, sürdürülebilir ve sınanabilir Xamarin.Forms Kurumsal uygulamaları geliştirmek için Mimari Kılavuzu"
-ms.topic: article
+title: Kurumsal uygulama Xamarin.Forms eBook kullanarak düzenleri
+description: Uyarlanabilir, sürdürülebilir ve sınanabilir Xamarin.Forms Kurumsal uygulamaları geliştirmek için Mimari Kılavuzu
 ms.prod: xamarin
 ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 7ed546ac975ce1956d94d509486e4cfb25d28100
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: b7f69e987eb4f628dfaf5422bc1ce52108d90634
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Kurumsal uygulama Xamarin.Forms eBook kullanarak düzenleri
 
@@ -22,7 +21,7 @@ _Uyarlanabilir, sürdürülebilir ve sınanabilir Xamarin.Forms Kurumsal uygulam
 
 Bu e-kitap gevşek bağlantı korurken Model View ViewModel (MVVM) deseni, bağımlılık ekleme, gezinti, doğrulama ve yapılandırma yönetimi, uygulama hakkında yönergeler sağlar. Ayrıca, aynı zamanda bir yönerge yoktur gerçekleştirdiği kimlik doğrulama ve yetkilendirme kapsayıcılı mikro ve birim testi verilere IdentityServer ile.
 
-## <a name="prefaceprefacemd"></a>[Preface](preface.md)
+## <a name="prefaceprefacemd"></a>[Önsöz](preface.md)
 
 Bu bölümde, amacını ve kapsamını Kılavuzu ve kimlerin adresindeki hedefler açıklanmaktadır.
 
@@ -34,17 +33,17 @@ Kurumsal uygulamaları, geliştiricilerin uygulama mimarisi geliştirme sırası
 
 Model-View-ViewModel (MVVM) deseni, uygulamanın kendi kullanıcı arabiriminden (UI) iş ve sunu mantığı düzgün bir şekilde ayırmak için yardımcı olur. Uygulama mantığı ve UI arasında temiz bir ayrım bakımı çok sayıda geliştirme sorunları gidermek için yardımcı olur ve bir uygulama sınamak için korumak ve gelişmesi daha kolay hale getirebilir. Kodu yeniden kullanın fırsatlar büyük ölçüde artırabilir ve geliştiricilerin sağlar ve bunların ilgili bölümleri Uygulama geliştirirken UI tasarımcıları daha kolayca işbirliği.
 
-## <a name="dependency-injectiondependency-injectionmd"></a>[Bağımlılık ekleme](dependency-injection.md)
+## <a name="dependency-injectiondependency-injectionmd"></a>[Bağımlılık Ekleme](dependency-injection.md)
 
 Bağımlılık ekleme, bu türlerine bağlıdır kodundan somut türleri ayırma sağlar. Genellikle kayıtlar ve arabirimleri ve soyut türler arasındaki eşlemeleri listesi tutan bir kapsayıcı ve uygulama ya da bu tür genişletmek somut türleri kullanır.
 
 Bağımlılık ekleme kapsayıcıları sınıf örneklerini oluşturmak ve kapsayıcı yapılandırmasını temel alarak kendi ömürleri yönetmek için bir olanak sağlayarak nesneleri arasındaki ilişki azaltın. Nesne oluşturma sırasında kapsayıcı nesne gerektiren bağımlılıkları içine yerleştirir. Bu bağımlılıkların henüz oluşturulmadı, kapsayıcıyı oluşturur ve bağımlılıklarını ilk giderir.
 
-## <a name="communicating-between-loosely-coupled-componentscommunicating-between-loosely-coupled-componentsmd"></a>[Bileşenleri arasında kabaca iletişim eşleşmiş](communicating-between-loosely-coupled-components.md)
+## <a name="communicating-between-loosely-coupled-componentscommunicating-between-loosely-coupled-componentsmd"></a>[Gevşek Bir Şekilde Eşlenen Bileşenler Arasında İletişim](communicating-between-loosely-coupled-components.md)
 
 Xamarin.Forms [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) sınıfı uygulayan Yayımla-abone nesne ve türü başvurularını bağlamak kullanışsız bileşenleri arasındaki iletişim ileti tabanlı olanak deseni. Bu mekanizma Yayımcılar ve aboneleri birbirlerine bağımsız olarak geliştirilen ve test bileşenleri de verirken bileşenleri arasındaki bağımlılıkları azaltmaya yardımcı başvuru gerek kalmadan iletişim kurmasına izin verir.
 
-## <a name="navigationnavigationmd"></a>[Gezinme](navigation.md)
+## <a name="navigationnavigationmd"></a>[Gezinti](navigation.md)
 
 Xamarin.Forms genellikle kullanıcı Arabirimi ile kullanıcı etkileşimi veya uygulama, iç mantık temelli durumu yapılan değişiklikler sonucunda sonuçları sayfa gezintisi için destek içerir. Ancak, gezinti MVVM desenini kullanan uygulamalarda uygulamak için karmaşık olabilir.
 
@@ -60,15 +59,15 @@ Bağlamında, Model ViewModel modeli (MVVM) deseni, bir görünüm modeli veya m
 
 Ayarlar, uygulama derlenmeden değiştirilecek davranışı izin vererek uygulama kodundan davranışını yapılandırır veri ayrımı sağlar. Uygulama ayarları, bir uygulama oluşturur ve yönetir verileri ve kullanıcı ayarları, uygulamanın davranışı etkiler ve sık sık yeniden ayarlama gerektirmeyen özelleştirilebilir bir uygulamanın ayarlardır.
 
-## <a name="containerized-microservicescontainerized-microservicesmd"></a>[Kapsayıcılı mikro](containerized-microservices.md)
+## <a name="containerized-microservicescontainerized-microservicesmd"></a>[Kapsayıcılı Mikro Hizmetler](containerized-microservices.md)
 
 Mikro uygulama geliştirme ve modern bulut uygulamaları çeviklik, ölçek ve güvenilirlik gereksinimlerine uygun dağıtım bir yaklaşım sunmaktadır. Ana avantajları mikro, bunlar bağımsız olarak, belirli bir işlevsel alan isteğe bağlı olarak gereksiz yere alanlarının ölçeklendirmeden desteklemek için daha fazla işlem gücü veya ağ bant genişliği gerektiren genişletilebilir, yani ölçeklendirilmiş olabileceğini biridir artan talep etkilenmeyen uygulama.
 
-## <a name="authentication-and-authorizationauthentication-and-authorizationmd"></a>[Kimlik doğrulama ve yetkilendirme](authentication-and-authorization.md)
+## <a name="authentication-and-authorizationauthentication-and-authorizationmd"></a>[Kimlik Doğrulaması ve Yetkilendirme](authentication-and-authorization.md)
 
 Bir ASP.NET MVC web uygulamasıyla iletişim kuran bir Xamarin.Forms uygulamada kimlik doğrulama ve yetkilendirme tümleştirmek için birçok yaklaşım vardır. Burada, kimlik doğrulama ve yetkilendirme IdentityServer 4 kullanan kapsayıcılı kimlik mikro hizmet ile gerçekleştirilir. IdentityServer, taşıyıcı belirteci kimlik doğrulaması gerçekleştirmek için ASP.NET Core kimliği ile tümleşir ASP.NET Core bir açık kaynak Openıd Connect ve OAuth 2.0 çerçevedir.
 
-## <a name="accessing-remote-dataaccessing-remote-datamd"></a>[Uzak verilere erişme](accessing-remote-data.md)
+## <a name="accessing-remote-dataaccessing-remote-datamd"></a>[Uzak Verilere Erişme](accessing-remote-data.md)
 
 Birçok modern web tabanlı çözüm olun işlevselliği için Uzak istemci uygulamaları sağlamak için web sunucuları tarafından barındırılan bir web Hizmetleri kullanın. Bir web hizmeti sunan operations web API'si oluşturur ve istemci uygulamaları verileri veya API sunan işlemlerini nasıl uygulandığını bilmeden web API'si verecek olması gerekir.
 

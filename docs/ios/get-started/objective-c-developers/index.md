@@ -1,17 +1,16 @@
 ---
-title: "Objective-C geliştiriciler için Xamarin"
-description: "Bir Objective-C geliştiriciyseniz yararlanarak için iyi yolunuzu üzerinde olan becerileri ve kod yararlanın sırasında Xamarin platformunda varolan Objective-C kodunu yararları C# yeniden. Bu bölümde Xamarin.iOS için giriş noktası olarak hizmet verir ve noktalarını bol mevcut Objective-C koddan C# kullanma hakkında bilgi için."
-ms.topic: article
+title: Objective-C geliştiriciler için Xamarin
+description: Bir Objective-C geliştiriciyseniz yararlanarak için iyi yolunuzu üzerinde olan becerileri ve kod yararlanın sırasında Xamarin platformunda varolan Objective-C kodunu yararları C# yeniden. Bu bölümde Xamarin.iOS için giriş noktası olarak hizmet verir ve noktalarını bol mevcut Objective-C koddan C# kullanma hakkında bilgi için.
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 275cce891801cd542d202960efc3da668fa8f07b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e29762fb258f7d796878c85bfe6f7aaa93207c5e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Objective-C geliştiriciler için Xamarin
 

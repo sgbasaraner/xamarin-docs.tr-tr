@@ -1,18 +1,17 @@
 ---
-title: "Giriş etkileri"
-description: "Efektler izin yerel denetimlere özelleştirilmek üzere her platformda ve genellikle küçük stil değişiklikler için kullanılır. Bu makalede etkileri tanıtılmaktadır, etkiler ve özel Oluşturucu arasında sınır özetler ve PlatformEffect sınıfı tanımlar."
-ms.topic: article
+title: Giriş etkileri
+description: Efektler izin yerel denetimlere özelleştirilmek üzere her platformda ve genellikle küçük stil değişiklikler için kullanılır. Bu makalede etkileri tanıtılmaktadır, etkiler ve özel Oluşturucu arasında sınır özetler ve PlatformEffect sınıfı tanımlar.
 ms.prod: xamarin
 ms.assetid: 30CB8615-8F39-4762-BDB7-333D2B57D112
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 037c82aa31c167e44a88619cba91a5be8035d0fa
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 598136f43a23070d8bab04c18106738c9e6b0a52
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-effects"></a>Giriş etkileri
 

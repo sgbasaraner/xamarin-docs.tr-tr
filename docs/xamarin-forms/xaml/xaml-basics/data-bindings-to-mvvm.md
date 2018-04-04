@@ -1,18 +1,17 @@
 ---
-title: "Bölüm 5. Veri bağlamaları MVVM için"
-description: "Model-View-ViewModel (MVVM) tasarım örüntüsü XAML ile göz önünde bulunmuştur. Üç yazılım katmanlar arasında ayrım düzeni zorlar — Görünüm; adlı XAML kullanıcı arabirimi Model adı verilen temel alınan verileri; ve görünüm modeli arasında bir aracı ViewModel çağrılır. Genellikle görünümü ve ViewModel XAML dosyasında tanımlanan veri bağlamaları üzerinden bağlanır. Görünüm için Bindingparameters'te ViewModel, genellikle bir örneğidir."
-ms.topic: article
+title: Bölüm 5. Veri bağlamaları MVVM için
+description: Model-View-ViewModel (MVVM) tasarım örüntüsü XAML ile göz önünde bulunmuştur. Üç yazılım katmanlar arasında ayrım düzeni zorlar — Görünüm; adlı XAML kullanıcı arabirimi Model adı verilen temel alınan verileri; ve görünüm modeli arasında bir aracı ViewModel çağrılır. Genellikle görünümü ve ViewModel XAML dosyasında tanımlanan veri bağlamaları üzerinden bağlanır. Görünüm için Bindingparameters'te ViewModel, genellikle bir örneğidir.
 ms.prod: xamarin
 ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 207bf7649d588f973b400cb452d9d8b246955cdb
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 95cd79a4bd6da47757cfeb12a2862ccb5a66fee2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Bölüm 5. Veri bağlamaları MVVM için
 

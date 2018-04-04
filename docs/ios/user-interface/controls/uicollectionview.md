@@ -1,18 +1,17 @@
 ---
-title: "Koleksiyon görünümleri"
-description: "Koleksiyon görünümlerini rasgele düzenleri kullanarak görüntülenecek içerik izin verin. Ayrıca özel düzenler desteklerken kılavuz benzeri düzeni kutudan çıktığında, kolayca oluşturma sağlarlar."
-ms.topic: article
+title: Koleksiyon görünümleri
+description: Koleksiyon görünümlerini rasgele düzenleri kullanarak görüntülenecek içerik izin verin. Ayrıca özel düzenler desteklerken kılavuz benzeri düzeni kutudan çıktığında, kolayca oluşturma sağlarlar.
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 7048eb9c478d7ae10787e158f18b764b258da171
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 75ad331a265c14892f101b1aa7956d2cde3beec8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="collection-views"></a>Koleksiyon görünümleri
 
@@ -140,7 +139,7 @@ Decoration görünümlerdir görüntülenebilen tamamen visual görünümleri bi
 
 ## <a name="data-source"></a>veri kaynağı
 
-Diğer parçaları iOS, gibi gibi `UITableView` ve `MKMapView`, `UICollectionView` kendi verisinden alır bir *veri kaynağı*, Xamarin.iOS içinde sunulan  **`UICollectionViewDataSource`**  sınıfı. Bu sınıf, içeriği sağlamaktan sorumludur `UICollectionView` gibi:
+Diğer parçaları iOS, gibi gibi `UITableView` ve `MKMapView`, `UICollectionView` kendi verisinden alır bir *veri kaynağı*, Xamarin.iOS içinde sunulan **`UICollectionViewDataSource`** sınıfı. Bu sınıf, içeriği sağlamaktan sorumludur `UICollectionView` gibi:
 
 -  **Hücreleri** – döndürülen `GetCell` yöntemi.
 -  **Ek görünümler** – döndürülen `GetViewForSupplementaryElement` yöntemi.

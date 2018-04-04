@@ -1,18 +1,17 @@
 ---
-title: "Gözcü yüz oluşturma"
-description: "Bu kılavuz, Android takmak için bir özel izleme yüz hizmeti uygulamak açıklanmaktadır. Bir kırpılmış bir analog stili izleme yüz oluşturmak için daha fazla kod tarafından izlenen dijital izleme yüz hizmet aşağı oluşturmak için adım adım yönergeler sağlanmıştır."
-ms.topic: article
+title: Gözcü yüz oluşturma
+description: Bu kılavuz, Android takmak için bir özel izleme yüz hizmeti uygulamak açıklanmaktadır. Bir kırpılmış bir analog stili izleme yüz oluşturmak için daha fazla kod tarafından izlenen dijital izleme yüz hizmet aşağı oluşturmak için adım adım yönergeler sağlanmıştır.
 ms.prod: xamarin
 ms.assetid: 4D3F9A40-A820-458D-A12A-D784BB11F643
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: fb3a2a9e60bda2a99a719bf75d23c29d42a94bdb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c02755cc3ff5b46a5a97b6c14185794d8ad538d8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-watch-face"></a>Gözcü yüz oluşturma
 

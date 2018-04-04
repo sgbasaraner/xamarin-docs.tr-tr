@@ -1,7 +1,6 @@
 ---
 title: Bir Azure Cosmos DB belge veritabanı kullanma
 description: Bir Azure Cosmos DB belge veritabanı sorunsuz ölçeklendirme ve genel çoğaltma gerektiren uygulamalar için hızlı, yüksek oranda kullanılabilir, ölçeklenebilir veritabanı hizmet sunumu, JSON belgelerini düşük gecikmeli erişim sağlayan bir NoSQL veritabanıdır. Bu makalede Azure Cosmos DB standart .NET istemci kitaplığı Azure Cosmos DB belge veritabanı bir Xamarin.Forms uygulamasına tümleştirmek için nasıl kullanılacağı açıklanmaktadır.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
 ms.technology: xamarin-forms
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: e2fa5ae12531069e1ad1bc19e110e4dcffe23a02
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: a4656b5eb9a8159f1b3dc39c8cf62509101d219e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Bir Azure Cosmos DB belge veritabanı kullanma
 

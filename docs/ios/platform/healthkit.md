@@ -1,18 +1,17 @@
 ---
 title: HealthKit
-description: "HealthKit Merkezi, Eşgüdümlü ve güvenli bir veri deposu için sistem durumu ile ilgili bilgiler sağlar iOS 8'de sunulan bir çerçevedir. İşletim sistemi, gizlilik ve güvenlik durumu bilgisi ve sistem durumu uygulama, kullanıcı için bir Pano sağlar. Kullanıcının izni olan uygulamalar okuma ve çok çeşitli sistem durumu bilgisi yazma."
-ms.topic: article
+description: HealthKit Merkezi, Eşgüdümlü ve güvenli bir veri deposu için sistem durumu ile ilgili bilgiler sağlar iOS 8'de sunulan bir çerçevedir. İşletim sistemi, gizlilik ve güvenlik durumu bilgisi ve sistem durumu uygulama, kullanıcı için bir Pano sağlar. Kullanıcının izni olan uygulamalar okuma ve çok çeşitli sistem durumu bilgisi yazma.
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e7075b67db94b6bf603bd96c637c9f7724ae1519
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a569bcff3ac33d008788bb0b946bd027fa5c0ea8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -69,14 +68,14 @@ Açık bir oluşturulmasını **uygulama kimliği** ve uygun bir **sağlama prof
 
 Geçerli **uygulama kimlikleri** içinde listelenen [tanımlayıcıları & profilleri, sertifikaları](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) Dev Center bölümü. Genellikle, bu listede gösterilir **kimliği** değerlerini `*`, belirten, **uygulama kimliği** - **adı** sonekleri herhangi bir sayı ile kullanılabilir. Bu tür *joker uygulama kimlikleri* sistem durumu Kit ile kullanılamaz.
  
-Açık bir oluşturmak için **uygulama kimliği**, tıklatın  **+**  kullanmayı sağ üst düğmesini **iOS uygulama kimliği kaydetmek** sayfa:
+Açık bir oluşturmak için **uygulama kimliği**, tıklatın **+** kullanmayı sağ üst düğmesini **iOS uygulama kimliği kaydetmek** sayfa:
 
 
 [![](healthkit-images/image02.png "Apple Geliştirici Portalı üzerinde bir uygulama kaydetme")](healthkit-images/image02.png#lightbox)
 
 Bir uygulama açıklaması oluşturduktan sonra görüntünün yukarıda gösterildiği gibi kullanın **açık uygulama kimliği** bölümünde, uygulamanız için bir kimlik oluşturun. İçinde **uygulama hizmetleri** bölümünde, onay **sistem durumu Seti** içinde **Hizmetleri'ni etkinleştir** bölümü.
 
-İşiniz bittiğinde, basın **devam** kaydetmek için düğmesini **uygulama kimliği** hesabınızda. Size geri gidersiniz **sertifikalar, tanımlayıcılarını ve profilleri** sayfası. Tıklatın **sağlama profilleri** geçerli sağlama profillerinizi listesine alıp tıklatın  **+**  kullanmayı sağ üst köşesinde düğmesini **iOS ekleme Sağlama profili** sayfası. Seçin **iOS uygulaması geliştirme** seçeneğini ve tıklayın **devam** almak için **uygulama Kimliğini seçin** sayfası. Burada, açık seçtiğiniz **uygulama kimliği** daha önce belirttiğiniz:
+İşiniz bittiğinde, basın **devam** kaydetmek için düğmesini **uygulama kimliği** hesabınızda. Size geri gidersiniz **sertifikalar, tanımlayıcılarını ve profilleri** sayfası. Tıklatın **sağlama profilleri** geçerli sağlama profillerinizi listesine alıp tıklatın **+** kullanmayı sağ üst köşesinde düğmesini **iOS ekleme Sağlama profili** sayfası. Seçin **iOS uygulaması geliştirme** seçeneğini ve tıklayın **devam** almak için **uygulama Kimliğini seçin** sayfası. Burada, açık seçtiğiniz **uygulama kimliği** daha önce belirttiğiniz:
 
 
 [![](healthkit-images/image03.png "Açık uygulama kimliği seçin")](healthkit-images/image03.png#lightbox)
