@@ -7,11 +7,11 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 836f404e25679f01e1bd330582cf469299c73243
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a94e1011557a5c7487315681e6e7c4d106ae4ba1
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp dönüşümler
 
@@ -48,7 +48,7 @@ SkiaSharp dönüşümler göre sol üst köşesindeki olan `SKCanvas` Xamarin.Fo
 
 Gerçekten büyük fark SKiaSharp dönüşümler olmasıdır *yöntemleri* Xamarin.Forms dönüşümler durumdayken *özellikleri*. Bu bir söz dizimi fark ötesinde anlamsal farktır: SkiaSharp dönüşümler bir duruma Xamarin.Forms dönüşümler kümesi bir işlem gerçekleştirin. SkiaSharp dönüşümler sonradan çizilmiş grafik nesneleri, ancak dönüştürme uygulanmadan önce çizilir değil grafik nesneler için geçerlidir. Buna karşılık, özellik ayarlanmışsa hemen Xamarin.Forms dönüştürme önceden işlenmiş öğesine uygulanır. Yöntemleri adlı gibi SkiaSharp dönüşümler toplu; Başka bir değerle özelliği ayarlandığında Xamarin.Forms dönüşümler değiştirilir.
 
-Bu bölümdeki tüm örnek programlar başlığı altında görünür **dönüştüren** giriş sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program ve [ **Dönüştüren** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms) klasörü çözümün.
+Bu bölümdeki tüm örnek programlar başlığı altında görünür **dönüştüren** giriş sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program ve [ **Dönüştüren** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms) klasörü çözümün.
 
 ## <a name="the-translate-transformtranslatemd"></a>[Çeviri Dönüşümü](translate.md)
 

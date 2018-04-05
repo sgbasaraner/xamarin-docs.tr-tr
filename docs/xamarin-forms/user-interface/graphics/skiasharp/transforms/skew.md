@@ -7,11 +7,11 @@ ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: c9f5f9f20296b1c2443a8addeebd4d12ccaa1ab4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 39547ebaf301a9b6dca6a90cb5ede831b19862cf
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-skew-transform"></a>Eğme dönüştürmesi
 
@@ -39,7 +39,7 @@ public void Skew (SKPoint skew)
 
 Ancak, bu iki yöntemden birini yalıtım modunda kullanıyor olmanız, olası değil.
 
-**Eğme denemeler** eğme ile denemeler sayfa sağlar –10 ile 10 arasında bu aralık değerleri. Bir metin dizesi iki elde eğme değerlerle sayfanın sol üst köşesinde konumlandırılır `Slider` öğeleri. Burada `PaintSurface` işleyicisinde [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) sınıfı:
+**Eğme denemeler** eğme ile denemeler sayfa sağlar –10 ile 10 arasında bu aralık değerleri. Bir metin dizesi iki elde eğme değerlerle sayfanın sol üst köşesinde konumlandırılır `Slider` öğeleri. Burada `PaintSurface` işleyicisinde [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) sınıfı:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -109,7 +109,7 @@ Bu diyagramda α açı gibi Eğim açısı olarak eğme belirterek daha rahat d�
 
 100 piksel dikey 150 piksel kaydırma oranını bu örnekte, açının tanjantını 56.3 derece döndürülür.
 
-XAML dosyası **eğme açı deneme** sayfa benzer **eğme açı** dışında sayfasında `Slider` öğeleri 90 derece – 90 ' aralığı. [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) Arka plan kodu dosya sayfasında metni merkezleri ve kullandığı `Translate` sayfa merkezine eğriltme, bir merkezi ayarlamak için. Kısa bir `SkewDegrees` yöntemi kodu altındaki değerler eğme açıları dönüştürür:
+XAML dosyası **eğme açı deneme** sayfa benzer **eğme açı** dışında sayfasında `Slider` öğeleri 90 derece – 90 ' aralığı. [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) Arka plan kodu dosya sayfasında metni merkezleri ve kullandığı `Translate` sayfa merkezine eğriltme, bir merkezi ayarlamak için. Kısa bir `SkewDegrees` yöntemi kodu altındaki değerler eğme açıları dönüştürür:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -154,7 +154,7 @@ Bir açının olumlu veya olumsuz 90 derece yaklaştığında tanjantını sonsu
 
 [![](skew-images/skewangleexperiment-small.png "Üçlü sayfasının ekran görüntüsü eğme açı deneme")](skew-images/skewangleexperiment-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme açı deneme")
 
-Küçük negatif yatay eğme olarak eğik veya italik metin taklit **eğik metin** sayfası gösterilmektedir. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Sınıfı gösterir nasıl yapılır:
+Küçük negatif yatay eğme olarak eğik veya italik metin taklit **eğik metin** sayfası gösterilmektedir. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Sınıfı gösterir nasıl yapılır:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

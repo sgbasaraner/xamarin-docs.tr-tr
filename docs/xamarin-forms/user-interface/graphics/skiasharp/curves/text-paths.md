@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 77005665d163e7f9f62325b94cc5c779a7873f78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c0b793a495278d91429045d7e396917d02c1412e
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="paths-and-text"></a>Yollar ve metin
 
@@ -45,7 +45,7 @@ Bu görevlerden birini kırpma. **Kırpma metin** sayfa kırpması yol "CODE" wo
 
 [![](text-paths-images/clippingtext-small.png "Üçlü sayfasının ekran görüntüsü kırpma metin")](text-paths-images/clippingtext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü kırpma metin")
 
-[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Sınıfı oluşturucusu katıştırılmış bir kaynak olarak depolanan bit eşlemi yükleyen **medya** klasörü çözümün:
+[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Sınıfı oluşturucusu katıştırılmış bir kaynak olarak depolanan bit eşlemi yükleyen **medya** klasörü çözümün:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -126,7 +126,7 @@ Kırpma yolunu ayarladıktan sonra bit eşlem görüntülenebilir ve karakter an
 
 [![](text-paths-images/textpatheffect-small.png "Üçlü sayfasının ekran görüntüsü metin yolu etkisini")](text-paths-images/textpatheffect-large.png#lightbox "Üçlü sayfasının ekran görüntüsü metin yolu efekti")
 
-İş kadar [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) sınıfı alanlarını ve Oluşturucusu oluşur. İki `SKPaint` nesneleri iki farklı amaçlar için kullanılan alanları olarak tanımlanmamış: ilk (adlı `textPathPaint`) simgesi ile dönüştürmek için kullanılan bir `TextSize` 1 D yolu etkisi yoluna 50. İkinci (`textPaint`) simgesi yolu etkileyen ile büyük sürümünü görüntülemek için kullanılır. Bu nedenle, `Style` nesnesi bu ikinci boyama kümesine `Stroke`, ancak `StrokeWidth` özelliği 1 D yolu etkisi kullanırken bu özellik gerekli değildir çünkü ayarlı değil:
+İş kadar [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) sınıfı alanlarını ve Oluşturucusu oluşur. İki `SKPaint` nesneleri iki farklı amaçlar için kullanılan alanları olarak tanımlanmamış: ilk (adlı `textPathPaint`) simgesi ile dönüştürmek için kullanılan bir `TextSize` 1 D yolu etkisi yoluna 50. İkinci (`textPaint`) simgesi yolu etkileyen ile büyük sürümünü görüntülemek için kullanılır. Bu nedenle, `Style` nesnesi bu ikinci boyama kümesine `Stroke`, ancak `StrokeWidth` özelliği 1 D yolu etkisi kullanırken bu özellik gerekli değildir çünkü ayarlı değil:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -213,7 +213,7 @@ Normalde [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SK
 
 Ayrıca, çağırabilirsiniz `GetFillPath` döndürülen yolunda `GetTextPath` ancak ilk başta, hangi, görünüm ister tamamen emin olmayabilir.
 
-**Karakter ana hattını anahatları** sayfa tekniği gösterir. Tüm ilgili kod `PaintSurface` işleyicisine [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) sınıfı.
+**Karakter ana hattını anahatları** sayfa tekniği gösterir. Tüm ilgili kod `PaintSurface` işleyicisine [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) sınıfı.
 
 Oluşturucusu oluşturarak başlar bir `SKPaint` adlı nesne `textPaint` ile bir `TextSize` özellik sayfasının boyutuna bağlı. Bu yol kullanmaya dönüştürülür `GetTextPath` yöntemi. Koordinat değişkenleri `GetTextPath` etkili bir şekilde yolun ekranında Merkezi:
 
@@ -287,7 +287,7 @@ public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOf
 
 Bu yöntem ayarda yönergeler sağlamak için hiçbir olanak sahip `TextSize` özelliği `SKPaint` yolu baştan sona çalıştırmak için mükemmel boyutta bir metin yapmak için. Bazen bu metin boyutu kendi anlayabilir. Bazen bir sonraki makalede açıklanan için yol ölçme işlevleri kullanmanız gerekir.
 
-**Döngüsel metin** program daire metin sarmalar. Tam olarak sığması için metin boyutu kolaydır, dairenin çevresi belirlemek kolaydır. `PaintSurface` İşleyicisine [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) sınıfı bir RADIUS sayfa boyutuna göre dairenin hesaplar. Bu daireye dönüşür `circularPath`:
+**Döngüsel metin** program daire metin sarmalar. Tam olarak sığması için metin boyutu kolaydır, dairenin çevresi belirlemek kolaydır. `PaintSurface` İşleyicisine [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) sınıfı bir RADIUS sayfa boyutuna göre dairenin hesaplar. Bu daireye dönüşür `circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage

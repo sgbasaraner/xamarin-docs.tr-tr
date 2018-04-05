@@ -7,11 +7,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: dd9694a05632cd5f37cb583d15bc93311a49cfdc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e01d3e228a0684865fb09dd7a4cbb0e2f0b49125
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Piksel ve CİHAZDAN bağımsız birimler
 
@@ -31,7 +31,7 @@ Sayfanın [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xama
 - [ `CanvasSize` ](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKCanvasView.CanvasSize/) Özelliği `SKCanvasView` nesnesi.
 - [ `Size` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Size/) Özelliği `SKImageInfo` tutarlıdır değeri `Width` ve `Height` iki önceki sayfada kullanılan özellikler.
 
-[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs) Sınıfı bu değerleri görüntülemek nasıl gösterir. Oluşturucu kaydeder `SKCanvasView` nesnesi içinde erişilebilmeleri adına bir alan olarak `PaintSurface` olay işleyicisi:
+[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs) Sınıfı bu değerleri görüntülemek nasıl gösterir. Oluşturucu kaydeder `SKCanvasView` nesnesi içinde erişilebilmeleri adına bir alan olarak `PaintSurface` olay işleyicisi:
 
 ```csharp
 SKCanvasView canvasView;
@@ -114,7 +114,7 @@ Ek olarak `DrawCircle` yöntemi, `SKCanvas` Ayrıca iki tanımlar `DrawOval` eli
 public void DrawOval (Single cx, Single cy, Single rx, Single ry, SKPaint paint)
 ```
 
-Görüntü yüzeyini doldurur elips çizme mümkün mü? **Elips doldurun** sayfasını gösteren nasıl. `PaintSurface` Olay işleyicisini [ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs) sınıfı çıkarır vuruşun genişliğini yarım `xRadius` ve `yRadius` tüm elips sığması için değerleri ve kendi Görüntü yüzeyini özetlemektedir:
+Görüntü yüzeyini doldurur elips çizme mümkün mü? **Elips doldurun** sayfasını gösteren nasıl. `PaintSurface` Olay işleyicisini [ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs) sınıfı çıkarır vuruşun genişliğini yarım `xRadius` ve `yRadius` tüm elips sığması için değerleri ve kendi Görüntü yüzeyini özetlemektedir:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
