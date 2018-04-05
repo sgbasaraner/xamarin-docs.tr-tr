@@ -7,11 +7,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 9f7e3f64122f3b95291973d032aaf507dfbc8fab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 95c023d702d165b7a8a0ba392b2f87af58bfae07
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="finger-painting"></a>Parmak boyama
 
@@ -27,7 +27,7 @@ Xamarin.Forms dokunma desteği Xamarin.Forms dokunma izleme etkili ek dokunma de
 
 **Parmak boyama** sayfasındaki **SkiaSharpFormsDemos** parmak boyama basitleştirilmiş bir uygulamasıdır. Bırakmaz renk seçimine izin ver veya genişliği vuruş yapmak, tuvalin temizlemek için hiçbir yolu yoktur ve Elbette resminiz kaydedemezsiniz.
 
-[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml) dosya yerleştirmelerin `SKCanvasView` tek hücreye `Grid` ve ekler `TouchEffect` , `Grid`:
+[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml) dosya yerleştirmelerin `SKCanvasView` tek hücreye `Grid` ve ekler `TouchEffect` , `Grid`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -50,7 +50,7 @@ Xamarin.Forms dokunma desteği Xamarin.Forms dokunma izleme etkili ek dokunma de
 
 Ekleme `TouchEffect` doğrudan `SKCanvasView` tüm platformlar altında çalışmaz.
 
-[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs) arka plan kod dosyası tanımlar depolamak için iki koleksiyon `SKPath` nesneleri yanı sıra bir `SKPaint` nesne bu yolları işlemek için:
+[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs) arka plan kod dosyası tanımlar depolamak için iki koleksiyon `SKPath` nesneleri yanı sıra bir `SKPaint` nesne bu yolları işlemek için:
 
 ```csharp
 public partial class FingerPaintPage : ContentPage

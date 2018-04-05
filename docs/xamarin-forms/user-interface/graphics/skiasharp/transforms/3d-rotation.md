@@ -7,11 +7,11 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 47daca2ab94f718aeb5ce474c87edce3c3bd77a4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="3d-rotations"></a>3B Döndürme
 
@@ -221,7 +221,7 @@ y"y = / ((sin (α) / derinliği) ·x + 1)
 
 Kullanırken `SKMatrix44`, çeşitli çarparak tüm 3B Döndürme ve perspektif işlemleri gerçekleştirmek `SKMatrix44` değerleri. İki boyutlu bir 3 x 3 matris 4 tarafından 4 ayıklayabilirsiniz sonra matrisi kullanarak [ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/) özelliği `SKMatrix44` sınıfı. Bu özellik bir tanıdık döndürür `SKMatrix` değeri.
 
-**Döndürme 3B** sayfa ile 3B Döndürme denemeler sağlar. [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) dosya başlatır dört kaydırıcılar X, Y ve Z eksenleri etrafında döndürme ayarlamak ve derinliği değeri ayarlamak için:
+**Döndürme 3B** sayfa ile 3B Döndürme denemeler sağlar. [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) dosya başlatır dört kaydırıcılar X, Y ve Z eksenleri etrafında döndürme ayarlamak ve derinliği değeri ayarlamak için:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -302,7 +302,7 @@ Kullanırken `SKMatrix44`, çeşitli çarparak tüm 3B Döndürme ve perspektif 
 
 Dikkat `depthSlider` ile başlatılmış bir `Minimum` 250 değeri. Bu, burada Döndürülmüş 2B nesne X ve Y koordinatları 250 piksel RADIUS başlangıcı etrafında tarafından tanımlanan bir daire sınırlı olduğunu gösterir. Bu nesnenin 3B uzaydaki herhangi bir döndürme her zaman 250'den koordinat değerleri neden olur.
 
-[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) arka plan kodu dosya 300 piksel kare şeklinde bir bit eşlem yükler:
+[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) arka plan kodu dosya 300 piksel kare şeklinde bir bit eşlem yükler:
 
 ```csharp
 public partial class Rotation3DPage : ContentPage

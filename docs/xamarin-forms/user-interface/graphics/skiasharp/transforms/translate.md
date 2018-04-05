@@ -7,11 +7,11 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 573848186a8f389ac18e22ea4c3b7d4fe1503449
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 98bf81df3eed951893c6bb717d933cfb61e029d3
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-translate-transform"></a>Çevir Dönüştür
 
@@ -35,7 +35,7 @@ Bu bağımsız değişken negatif olabilir. İkinci bir [ `Translate` ](https://
 public void Translate (SKPoint point)
 ```
 
-**Birikmiş çevir** sayfasında [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) örnek program gösterir, birden çok çağıran `Translate` yöntemi toplu. [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Çapraz uzatmak için her biri önceki dikdörtgenin yetecek kadar uzaklığı, sınıfı aynı dikdörtgen 20 sürümlerini görüntüler. Burada `PaintSurface` olay işleyicisi:
+**Birikmiş çevir** sayfasında [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) örnek program gösterir, birden çok çağıran `Translate` yöntemi toplu. [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Çapraz uzatmak için her biri önceki dikdörtgenin yetecek kadar uzaklığı, sınıfı aynı dikdörtgen 20 sürümlerini görüntüler. Burada `PaintSurface` olay işleyicisi:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -78,7 +78,7 @@ y' = y + dy
 
 Bunlar olarak bilinir *dönüştürme formüller* çeviri için. Varsayılan değerleri `dx` ve `dy` için yeni bir `SKCanvas` 0.
 
-Çeviri dönüştürme olarak gölge etkiler ve benzer teknikleri kullanmak için ortak olan **Çevir metin efektleri** sayfası gösterilmektedir. İlgili bölümü işte `PaintSurface` işleyicisinde [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) sınıfı:
+Çeviri dönüştürme olarak gölge etkiler ve benzer teknikleri kullanmak için ortak olan **Çevir metin efektleri** sayfası gösterilmektedir. İlgili bölümü işte `PaintSurface` işleyicisinde [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) sınıfı:
 
 ```csharp
 float textSize = 150;
@@ -137,7 +137,7 @@ Yalnızca ilk örneği çağırır `Translate` yeniden ancak negatif değerler. 
 
 Ancak bir çağrısından taşıyan dönüşümler hakkında endişelenmenize gerek yoktur `PaintSurface` sonraki işleyici. Her yeni çağrı `PaintSurface` baştan sunar `SKCanvas` varsayılan dönüşümler nesnesiyle.
 
-Başka bir yaygın kullanımı `Translate` dönüştürme olduğu için görsel bir nesne oluşturma başlangıçta çizim için uygun koordinatları kullanılarak oluşturuldu. Örneğin, merkezi bir noktada (0, 0) ile bir analog saat koordinatlarını belirtmek isteyebilirsiniz. Dönüşümler görüntülemek için istediğiniz yere sonra kullanabilirsiniz. Bu, gösterilmiştir [**Hendecagram dizi**] sayfası. [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Sınıfı başlar oluşturarak bir `SKPath` 11 işaret yıldız nesnesi. `HendecagramPath` Nesne tanımlanmış olarak ortak statik ve salt okunur böylece diğer sunum programlarından erişilebilir. Statik bir oluşturucu oluşturulur:
+Başka bir yaygın kullanımı `Translate` dönüştürme olduğu için görsel bir nesne oluşturma başlangıçta çizim için uygun koordinatları kullanılarak oluşturuldu. Örneğin, merkezi bir noktada (0, 0) ile bir analog saat koordinatlarını belirtmek isteyebilirsiniz. Dönüşümler görüntülemek için istediğiniz yere sonra kullanabilirsiniz. Bu, gösterilmiştir [**Hendecagram dizi**] sayfası. [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Sınıfı başlar oluşturarak bir `SKPath` 11 işaret yıldız nesnesi. `HendecagramPath` Nesne tanımlanmış olarak ortak statik ve salt okunur böylece diğer sunum programlarından erişilebilir. Statik bir oluşturucu oluşturulur:
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -211,7 +211,7 @@ Sonuç şöyledir:
 
 [![](translate-images/hendecagramarray-small.png "Üçlü sayfasının ekran görüntüsü Hendecagram dizi")](translate-images/hendecagramarray-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Hendecagram dizisi")
 
-Animasyon genellikle dönüşümler içerir. **Hendecagram animasyon** sayfa 11 işaret yıldız bir daire içinde taşır. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Sınıfı bazı alanlar ile başlar ve, geçersiz kılmalar `OnAppearing` ve `OnDisappearing` yöntemleri Xamarin.Forms süreölçer durdurmak ve başlatmak için:
+Animasyon genellikle dönüşümler içerir. **Hendecagram animasyon** sayfa 11 işaret yıldız bir daire içinde taşır. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Sınıfı bazı alanlar ile başlar ve, geçersiz kılmalar `OnAppearing` ve `OnDisappearing` yöntemleri Xamarin.Forms süreölçer durdurmak ve başlatmak için:
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: 0068540ec385ab3be56865c7728eb3128154a2ea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43699e77bc8b7365c6d5f7fbf27e19a945e69e22
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="limitations"></a>Sınırlamalar
 
@@ -51,7 +51,7 @@ Aşağıdaki öğeler de dahil olmak üzere Xamarin Canlı Player çalıştırab
 - Sınırlı yansıma desteği (şu anda SQLite ve Json.NET gibi bazı yaygın NuGets etkiler). Diğer NuGets hala desteklenmiyor olabilir.
 - Bazı sistem sınıfları kılınamaz (örneğin, bir alt sınıfı uygulayamaz).
 - Sağlama gerektiren bazı platform özellikleri (ancak bu Fotoğraf Galerisi erişim gibi ortak işlemleri için yapılandırılmış) Xamarin Canlı Player uygulamasında çalışamaz.
-- Derleme adımları ve özel hedefleri göz ardı edilir. Örneğin, araçları gibi Fody, Retit, AutoFac ve AutoMapper dahil edilemez.
+- Derleme adımları ve özel hedefleri göz ardı edilir. Örneğin, Fody, Refit, AutoFac ve AutoMapper gibi araçlar dahil edilemez.
 - F # projeleri Android desteklenmiyor ve sınırlı destek iOS
 - Özel genel sınıfları ve arabirimleri ile Gelişmiş senaryolar desteklenmiyor.
 

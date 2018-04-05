@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 668b1f437b78535bd4cdf3bb3f80154dbf281a02
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Yay çizmek için üç yol
 
@@ -73,7 +73,7 @@ path.ArcTo (oval, startAngle, sweepAngle, false);
 
 Bu sürümü `ArcTo` bir çizgi geçerli konumundan Yayı başlangıcına çizer. Bu, Yayı daha büyük bir dağılım ortasında bir yerde olabileceği anlamına gelir.
 
-**Açı yay** sayfa açıları sweep ve başlangıç belirtmek için iki kaydırıcılar kullanmanıza imkan tanır. İki XAML dosyası başlatır `Slider` öğeleri ve bir `SKCanvasView`. `PaintCanvas` İşleyicisinde [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) dosya çizer oval ve iki kullanarak yay `SKPaint` alanlar olarak tanımlı nesneler:
+**Açı yay** sayfa açıları sweep ve başlangıç belirtmek için iki kaydırıcılar kullanmanıza imkan tanır. İki XAML dosyası başlatır `Slider` öğeleri ve bir `SKCanvasView`. `PaintCanvas` İşleyicisinde [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) dosya çizer oval ve iki kullanarak yay `SKPaint` alanlar olarak tanımlı nesneler:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,7 +110,7 @@ y oval =. MidY + (oval. Yükseklik / 2) * sin(angle)
 
 `angle` Değerdir ya da `startAngle` veya `startAngle + sweepAngle`.
 
-Yayı tanımlamak için iki açıları kullanımını çizin, örneğin bir pasta grafiği yapmak amacıyla, istediğiniz Yayı Açısal uzunluğu burada bildiğiniz durumlarda en iyisidir. **Ayrılıp pasta grafik** sayfa bu gösterir. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Sınıfı, bazı üretilmiş veri ve renkleri tanımlamak için bir iç sınıf kullanır:
+Yayı tanımlamak için iki açıları kullanımını çizin, örneğin bir pasta grafiği yapmak amacıyla, istediğiniz Yayı Açısal uzunluğu burada bildiğiniz durumlarda en iyisidir. **Ayrılıp pasta grafik** sayfa bu gösterir. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Sınıfı, bazı üretilmiş veri ve renkleri tanımlamak için bir iç sınıf kullanır:
 
 ```csharp
 class ChartData
@@ -259,7 +259,7 @@ Son çizgide ve dağılım eklenen arc şöyledir:
 
 Dağılımı ikinci Eğim noktasından devam edebilir.
 
-**Tanjantını yay** sayfası Eğim yay denemeler sağlar. Öğesinden türetilen birkaç sayfa ilk budur [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/InteractivePage.cs), birkaç kullanışlı tanımlayan `SKPaint` nesneleri ve gerçekleştirir `TouchPoint` işleme:
+**Tanjantını yay** sayfası Eğim yay denemeler sağlar. Öğesinden türetilen birkaç sayfa ilk budur [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), birkaç kullanışlı tanımlayan `SKPaint` nesneleri ve gerçekleştirir `TouchPoint` işleme:
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -309,7 +309,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-`TangentArcPage` Sınıfı türer `InteractivePage`. Oluşturucuda [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) dosyasıdır örnek oluşturma ve başlatma sorumlu `touchPoints` dizi ve ayarı `baseCanvasView` (içinde `InteractivePage`) için `SKCanvasView` nesne örneği [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) dosyası:
+`TangentArcPage` Sınıfı türer `InteractivePage`. Oluşturucuda [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) dosyasıdır örnek oluşturma ve başlatma sorumlu `touchPoints` dizi ve ayarı `baseCanvasView` (içinde `InteractivePage`) için `SKCanvasView` nesne örneği [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) dosyası:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -419,7 +419,7 @@ Windows mobil aygıttaki üç nokta neredeyse colinear ve Yayı çok küçük.
 
 Eğim Yayı yuvarlak dikdörtgen gibi yuvarlak köşeleri oluşturmak için idealdir. Çünkü `SKPath` zaten içeren bir `AddRoundedRect` yöntemi, **yuvarlanmasını Heptagon** sayfa nasıl kullanılacağı gösterilmektedir `ArcTo` yedi taraflı Çokgen köşelerinde yuvarlama. (Kod için normal bir Çokgen genelleştirilmiş.)
 
-`PaintSurface` İşleyicisine [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) sınıfı içeren bir `for` heptagon ve bunlar yedi taraftan, Orta noktalar hesaplamak için ikinci bir yedi köşe koordinatlarını hesaplamak için döngü Köşeleri. Bu orta noktalar sonra yolu oluşturmak için kullanılır:
+`PaintSurface` İşleyicisine [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) sınıfı içeren bir `for` heptagon ve bunlar yedi taraftan, Orta noktalar hesaplamak için ikinci bir yedi köşe koordinatlarını hesaplamak için döngü Köşeleri. Bu orta noktalar sonra yolu oluşturmak için kullanılır:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -543,7 +543,7 @@ Eğimli elips arasında iki nokta sığmayacak kadar büyük değil, büyüklük
 
 Yayı tanımlamak için bu yaklaşım ilk karşılaştığınız karmaşık sesleri olsa da döndürülmüş elips bir yay tanımlanmasına olanak tanır yalnızca yaklaşımdır ve yaylar dağılımı diğer bölümleri ile tümleştirmek gerektiğinde en kolay yaklaşım genellikle olur.
 
-**Elips yay** sayfası etkileşimli olarak iki nokta ve boyutunu ve rotasyonunu elipsin ayarlamanıza olanak sağlar. `EllipticalArcPage` Sınıfı türer `InteractivePage`ve `PaintSurface` işleyicisinde [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) arka plan kod dosyasına çizer dört yaylar:
+**Elips yay** sayfası etkileşimli olarak iki nokta ve boyutunu ve rotasyonunu elipsin ayarlamanıza olanak sağlar. `EllipticalArcPage` Sınıfı türer `InteractivePage`ve `PaintSurface` işleyicisinde [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) arka plan kod dosyasına çizer dört yaylar:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -613,7 +613,7 @@ Dört teğet noktalarını ortalanmış bir sonsuz işareti (0, 0) noktasında 1
 
 ![](arcs-images/infinitycoordinates.png "İki daire teğet çizgili ve koordinatları")
 
-`PaintSurface` İşleyicisinde [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) sınıfı konumlandırır sonsuz oturum böylece (0, 0) noktası sayfasının ortasında yerleştirilir ve ekran boyutu yoluna ölçeklendirir:
+`PaintSurface` İşleyicisinde [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) sınıfı konumlandırır sonsuz oturum böylece (0, 0) noktası sayfasının ortasında yerleştirilir ve ekran boyutu yoluna ölçeklendirir:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

@@ -7,11 +7,11 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 7435807e77a9a79d7fc3821675c1d959a16caa8f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 859677a3dcfcddd0b333c9ddf60c01e2093b6a5b
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="basic-animation"></a>Temel animasyon
 
@@ -24,7 +24,7 @@ Neden olarak Xamarin.Forms SkiaSharp grafik animasyon uygulayabilirsiniz `PaintS
 **Pulsating elips** sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program canlandırır elips iki eksenlerinin böylece pulsating olması için görünür ve hatta kontrol edebilirsiniz Bu pulsation oranı:
 
 
-[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) dosya başlatır bir Xamarin.Forms `Slider` ve `Label` kaydırıcıyı geçerli değerini görüntülemek için. Bu tümleştirmek için ortak bir yoludur bir `SKCanvasView` diğer Xamarin.Forms görünümlerle:
+[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) dosya başlatır bir Xamarin.Forms `Slider` ve `Label` kaydırıcıyı geçerli değerini görüntülemek için. Bu tümleştirmek için ortak bir yoludur bir `SKCanvasView` diğer Xamarin.Forms görünümlerle:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -149,7 +149,7 @@ Dikkat `SKPaint` nesnesi oluşturulur bir `using` bloğu. Gibi birçok SkiaSharp
 
  Bu örnekte daha iyi bir çözüm iki oluşturmak olacaktır `SKPaint` nesneleri alanlar olarak bir kez ve bunları kaydedin.
 
-Ne olduğunu **genişletme daireler** animasyon yapar. [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) Sınıfı başlar dahil olmak üzere çeşitli alanları tanımlayarak bir `SKPaint` nesnesi:
+Ne olduğunu **genişletme daireler** animasyon yapar. [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) Sınıfı başlar dahil olmak üzere çeşitli alanları tanımlayarak bir `SKPaint` nesnesi:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage

@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 312d487111f8e36170c97ca7a29fb91556c72569
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Üç tür Bézier eğrileri
 
@@ -46,7 +46,7 @@ Eğriyi dağılımı anki noktada başlar. Tam küp Bezier eğrisini dört nokta
 
 Sonuç eğri başlangıç noktadan başlar ve bir uç noktada sona erer. Eğriyi iki denetim noktaları aracılığıyla genellikle iletmez; Bunun yerine bunları doğru eğri çekmesini kadar LIKE mıknatıs işlev.
 
-Deneme tarafından için küp Bézier eğrisi bir fikir almak için en iyi yoludur. Bu amacı **Bezier eğrisi** türetilen sayfa `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) dosya başlatır `SKCanvasView` ve `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) arka plan kod dosyası oluşturur dört `TouchPoint` kurucusu nesneleri. `PaintSurface` Olay işleyicisi oluşturur bir `SKPath` sekmesindeki dört temel bir Bézier eğrisi işlemek için `TouchPoint` nesneleri ve ayrıca noktalı tanjant çizgileri denetim noktalarından Uç noktalara çizer:
+Deneme tarafından için küp Bézier eğrisi bir fikir almak için en iyi yoludur. Bu amacı **Bezier eğrisi** türetilen sayfa `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) dosya başlatır `SKCanvasView` ve `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) arka plan kod dosyası oluşturur dört `TouchPoint` kurucusu nesneleri. `PaintSurface` Olay işleyicisi oluşturur bir `SKPath` sekmesindeki dört temel bir Bézier eğrisi işlemek için `TouchPoint` nesneleri ve ayrıca noktalı tanjant çizgileri denetim noktalarından Uç noktalara çizer:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -128,7 +128,7 @@ L = 4 × tan(α / 4) / 3
 
 Dolayısıyla L 0.265 eşittir 45 derece açı çizimde gösterilmektedir. Kod içinde bu değeri dairenin istenen yarıçap çarpılan.
 
-**Bezier dairesel yay** sayfası bir Bézier eğrisi en fazla 180 derece arasında değişen açı dairesel yay yaklaşık tanımlamayla denemeler sağlar. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) dosya başlatır `SKCanvasView` ve `Slider` açı seçme. `PaintSurface` Olay işleyicisini [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) arka plan kod dosyasına (0, 0) noktası Kanvasın ortasına ayarlamak için bir dönüşüm kullanır. Karşılaştırma için bu noktasında ortalanmış bir daire çizer ve Bézier eğrisi için iki denetim noktaları hesaplar:
+**Bezier dairesel yay** sayfası bir Bézier eğrisi en fazla 180 derece arasında değişen açı dairesel yay yaklaşık tanımlamayla denemeler sağlar. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) dosya başlatır `SKCanvasView` ve `Slider` açı seçme. `PaintSurface` Olay işleyicisini [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) arka plan kod dosyasına (0, 0) noktası Kanvasın ortasına ayarlamak için bir dönüşüm kullanır. Karşılaştırma için bu noktasında ortalanmış bir daire çizer ve Bézier eğrisi için iki denetim noktaları hesaplar:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -216,7 +216,7 @@ Yakından Windows Mobile ekranında aramak ve Bézier eğrisi özellikle Yarım 
 
 RADIUS dairenin 100, ardından olup olmadığını *L* 55 ve anımsaması kolay bir sayı ise.
 
-**Daireye karesini** sayfa canlandırır şekil bir daire ve kare arasında. Daireye olan koordinatları bu dizi tanımında ilk sütununda gösterilen dört Bézier eğrileri tarafından benzetilir [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) sınıfı:
+**Daireye karesini** sayfa canlandırır şekil bir daire ve kare arasında. Daireye olan koordinatları bu dizi tanımında ilk sütununda gösterilen dört Bézier eğrileri tarafından benzetilir [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) sınıfı:
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -292,7 +292,7 @@ Puanları bir sinusoidally salınım yapan değerine göre ilişkilendirileceği
 
 Bu tür bir animasyon dairesel yaylara ve düz çizgiler işlenmek üzere algorithmically yeterince esnektir Eğriler olmadan olanaksız olacaktır.
 
-**Bezier sonsuz** sayfası aynı zamanda bir Bézier eğrisi dairesel yay yaklaşık yeteneğini avantajlarından yararlanır. Burada `PaintSurface` işleyicisinden [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) sınıfı:
+**Bezier sonsuz** sayfası aynı zamanda bir Bézier eğrisi dairesel yay yaklaşık yeteneğini avantajlarından yararlanır. Burada `PaintSurface` işleyicisinden [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) sınıfı:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -359,7 +359,7 @@ public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 
 İçin geçerli konumundan eğri yöntemleri eklemek `point2` ile `point1` denetim noktası olarak.
 
-İkinci derece Bézier eğrileri deneyimleyebilirsiniz **ikinci dereceden eğrisi** çok benzer sayfa **Bezier eğrisi** yalnızca üç dokunma noktaları sahip dışında sayfa. Burada `PaintSurface` işleyicisinde [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) arka plan kod dosyası:
+İkinci derece Bézier eğrileri deneyimleyebilirsiniz **ikinci dereceden eğrisi** çok benzer sayfa **Bezier eğrisi** yalnızca üç dokunma noktaları sahip dışında sayfa. Burada `PaintSurface` işleyicisinde [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) arka plan kod dosyası:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -436,7 +436,7 @@ public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 
 En son fark `weight` parametresi.
 
-**Conic eğri** sayfası bu Eğriler denemeler sağlar. `ConicCurvePage` Sınıfı türer `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) dosya başlatır bir `Slider` ağırlık değeri 2 ile –2 arasındaki seçin. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) arka plan kod dosyası oluşturur üç `TouchPoint` nesneleri ve `PaintSurface` işleyici yalnızca denetime teğet çizgili sonuç eğri işler noktalar:
+**Conic eğri** sayfası bu Eğriler denemeler sağlar. `ConicCurvePage` Sınıfı türer `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) dosya başlatır bir `Slider` ağırlık değeri 2 ile –2 arasındaki seçin. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) arka plan kod dosyası oluşturur üç `TouchPoint` nesneleri ve `PaintSurface` işleyici yalnızca denetime teğet çizgili sonuç eğri işler noktalar:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -490,7 +490,7 @@ Denetim noktası ve ağırlığını kullanmayı türetilen çok kolaydır `Coni
 
 Trigonometri dairenin merkezi denetim noktasından uzaklığını belirlemek için kullanabilirsiniz: Açının kosinüsü yarım α tarafından bölünmüş daire RADIUS değil. Başlangıç ve bitiş noktaları arasında dairesel yay çizmek için aynı bu yarım açının kosinüsünü için ağırlığını ayarlayın. Açı 180 derece ise, ardından tanjant çizgileri hiçbir zaman karşılamak ve Ağırlık sıfırdır dikkat edin. Ancak açıları küçük için 180 derece, matematik düzgün çalışır.
 
-**Conic dairesel yay** sayfa bu gösterir. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) dosya başlatır bir `Slider` açı seçme. `PaintSurface` İşleyicisinde [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) arka plan kod dosyasına hesaplar denetim noktası ve Ağırlık:
+**Conic dairesel yay** sayfa bu gösterir. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) dosya başlatır bir `Slider` açı seçme. `PaintSurface` İşleyicisinde [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) arka plan kod dosyasına hesaplar denetim noktası ve Ağırlık:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

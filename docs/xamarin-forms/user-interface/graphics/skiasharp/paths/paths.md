@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 3a828baccda83822237d2564d771bcd89c9099e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b2881148631435c9082b42cad0e784100b010b46
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-basics"></a>Yol temelleri
 
@@ -50,7 +50,7 @@ Bu beş yöntemlerden hiçbiri çizgi veya eğri açıklamak gerekli tüm bilgil
 
 Başka bir çağrıyı bir dağılım biter `MoveTo` veya `RMoveTo`, yeni bir dağılım veya yapılan bir çağrı başlar `Close`, dağılımı kapatır. `Close` Yöntemi otomatik olarak geçerli noktasından bir çizgide dağılımı ilk noktasına ekler ve yolun kapalı olarak işaretler herhangi vuruş caps işlenir anlamına gelir.
 
-Açık ve kapalı dağılımlarını arasındaki farkı gösterilmiştir **iki üçgen dağılımlarını** sayfası, kullanan bir `SKPath` iki üçgenler işlemek için iki dağılımlarını nesnesiyle. İlk dağılımı açık ve ikinci kapalı. Burada [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) sınıfı:
+Açık ve kapalı dağılımlarını arasındaki farkı gösterilmiştir **iki üçgen dağılımlarını** sayfası, kullanan bir `SKPath` iki üçgenler işlemek için iki dağılımlarını nesnesiyle. İlk dağılımı açık ve ikinci kapalı. Burada [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) sınıfı:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -122,7 +122,7 @@ Başlangıç ve bitiş satırının görünümünü vuruş cap tarafından yaln�
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) yuvarlak bir birleştirme için
 - [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) kesilmiş Tasarımlı dışı bir birleştirme için
 
-**Vuruş birleştirmeler** sayfasında bu üç vuruş benzer şekilde kod ile birleştirme gösterir **vuruş Caps** sayfası. Bu `PaintSurface` olay işleyicisini [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) sınıfı:
+**Vuruş birleştirmeler** sayfasında bu üç vuruş benzer şekilde kod ile birleştirme gösterir **vuruş Caps** sayfası. Bu `PaintSurface` olay işleyicisini [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) sınıfı:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

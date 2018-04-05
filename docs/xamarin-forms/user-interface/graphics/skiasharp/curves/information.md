@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 998c804f02eed808c0a1493b054e754a7670aa70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 82ac4ea49462c7520219e1a621ea3946297b1b45
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-information-and-enumeration"></a>Yol bilgisi ve numaralandırması
 
@@ -31,7 +31,7 @@ Makalede [ **yolları ve metin** ](~/xamarin-forms/user-interface/graphics/skias
 
 [ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Sınıfı yardımcı olabilir. [Oluşturucusu](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) kabul eden bir `SKPath` bağımsız değişkeni ve [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) özelliği uzunluğunu gösterir.
 
-Bu, gösterilmiştir **yol uzunluğu** dayanır örnek **Bezier eğrisi** sayfası. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) dosya türer `InteractivePage` ve dokunma arabirimi içerir:
+Bu, gösterilmiştir **yol uzunluğu** dayanır örnek **Bezier eğrisi** sayfası. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) dosya türer `InteractivePage` ve dokunma arabirimi içerir:
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -52,7 +52,7 @@ Bu, gösterilmiştir **yol uzunluğu** dayanır örnek **Bezier eğrisi** sayfas
 </local:InteractivePage>
 ```
 
-[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) arka plan kod dosyasına uç noktaları tanımlamak ve bir küp Bézier eğrisi noktalarını kontrol etmek için dört dokunma noktaları taşımanızı sağlar. Üç alan bir metin dizesi tanımlayan bir `SKPaint` nesne ve metin hesaplanan genişliği:
+[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) arka plan kod dosyasına uç noktaları tanımlamak ve bir küp Bézier eğrisi noktalarını kontrol etmek için dört dokunma noktaları taşımanızı sağlar. Üç alan bir metin dizesi tanımlayan bir `SKPaint` nesne ve metin hesaplanan genişliği:
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -242,7 +242,7 @@ Bazı bilgiler `SKPoint` dizi gereksizdir. Örneğin, varsa bir `Move` fiil tara
 
 Sorunlu fiili ancak olduğunda `Close`. Bu komut bir çizgide geçerli konumundan göre daha önce oluşturulmuş dağılımı başlangıcına çizer `Move` komutu. İdeal olarak, `Close` tek nokta yerine bu iki nokta fiil temin etmelidir. Kötüsü noktası eşlik olan `Close` fiili olduğunda her zaman (0, 0). Bir yol listeleme, büyük olasılıkla korumak sağlamanız gerekir, yani `Move` noktası ve geçerli konumu.
 
-Statik [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) sınıfı eğri yaklaşık küçük düz çizgiler bir dizi Bézier eğrileri üç tür dönüştürme birkaç yöntem içerir. (Parametrik formüller makalesinde sunulan [ **üç türleri, Bézier eğrileri**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Yöntemi yalnızca bir birim uzunluğu olan çok sayıda kısa çizgiler içine bir çizgide böler:
+Statik [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) sınıfı eğri yaklaşık küçük düz çizgiler bir dizi Bézier eğrileri üç tür dönüştürme birkaç yöntem içerir. (Parametrik formüller makalesinde sunulan [ **üç türleri, Bézier eğrileri**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Yöntemi yalnızca bir birim uzunluğu olan çok sayıda kısa çizgiler içine bir çizgide böler:
 
 ```csharp
 static class PathExtensions
@@ -426,7 +426,7 @@ Yöntem adlı değişken her dağılımını ilk noktasını korur bildirim `fir
 
 [![](information-images/globulartext-small.png "Üçlü sayfasının ekran görüntüsü Globular metin")](information-images/globulartext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Globular metin")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Sınıfı oluşturucusu bu dönüşüm gerçekleştirir. Oluşturduğu bir `SKPaint` nesnesi için metin ve ardından edinir bir `SKPath` nesnesinin `GetTextPath` yöntemi. Bu geçirilen yoludur `CloneWithTransform` genişletme yöntemi bir dönüşüm işlevi ile birlikte: 
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Sınıfı oluşturucusu bu dönüşüm gerçekleştirir. Oluşturduğu bir `SKPaint` nesnesi için metin ve ardından edinir bir `SKPath` nesnesinin `GetTextPath` yöntemi. Bu geçirilen yoludur `CloneWithTransform` genişletme yöntemi bir dönüşüm işlevi ile birlikte: 
 
 ```csharp
 public class GlobularTextPage : ContentPage

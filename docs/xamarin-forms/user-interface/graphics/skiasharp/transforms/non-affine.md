@@ -7,11 +7,11 @@ ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 52bed94724d330b74a9604c54fcfebad1e562267
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c3d39038fbaf5ed6601102a0aa16860c7a5a7a6
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="non-affine-transforms"></a>Afin olmayan dönüşümler
 
@@ -95,7 +95,7 @@ y' = y / (0.01·x + 1)
 
 `Persp` Bu hücre adları parçası foreshortening kutunun sağ tarafında Görüntüleyici'dan daha ileride olan şimdi eğildiğini çünkü "perspektife" anlamına gelir.
 
-**Test perspektifini** sayfası değerlerle denemeler sağlar `Persp0` ve `Pers1` nasıl çalıştıklarını için bir fikir almak için. Bu matris hücrelerin makul değerlerini kadar küçük, `Slider` Evrensel Windows platformu düzgün bunları işleyemiyor. UWP sorun, iki uyum sağlayacak şekilde `Slider` öğelerinde [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) aralığı 1 -1'den başlatılması gerekir:
+**Test perspektifini** sayfası değerlerle denemeler sağlar `Persp0` ve `Pers1` nasıl çalıştıklarını için bir fikir almak için. Bu matris hücrelerin makul değerlerini kadar küçük, `Slider` Evrensel Windows platformu düzgün bunları işleyemiyor. UWP sorun, iki uyum sağlayacak şekilde `Slider` öğelerinde [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) aralığı 1 -1'den başlatılması gerekir:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -149,7 +149,7 @@ y' = y / (0.01·x + 1)
 </ContentPage>
 ```
 
-Kaydırıcılar için olay işleyicileri [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) arka plan kod dosyasına –0.01 ve 0,01 aralığı böylece bu değerleri 100 ile ayırın. Ayrıca, bir bitmap Oluşturucusu yükler:
+Kaydırıcılar için olay işleyicileri [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) arka plan kod dosyasına –0.01 ve 0,01 aralığı böylece bu değerleri 100 ile ayırın. Ayrıca, bir bitmap Oluşturucusu yükler:
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -240,7 +240,7 @@ Bu tür afin olmayan bir dönüşüm olan bir *Konik dönüştürme*. Afin olmay
 
 ![](non-affine-images/tapertransform.png "Konik Dönüştür tabi bir kutusu")
 
-[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Sınıfı bu parametrelere göre afin olmayan bir dönüşüm genelleştirilmiş bir hesaplama gerçekleştirir:
+[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Sınıfı bu parametrelere göre afin olmayan bir dönüşüm genelleştirilmiş bir hesaplama gerçekleştirir:
 
 - dikdörtgen boyutu dönüştürülmekte olan görüntünün
 - sivrileşen dikdörtgen tarafında gösteren bir numaralandırma
@@ -349,7 +349,7 @@ static class TaperTransform
 }
 ```
 
-Bu sınıf kullanılır **Konik dönüştürme** sayfası. İki XAML dosyası başlatır `Picker` numaralandırma değerlerini seçmek için öğeleri ve `Slider` Konik kesir seçme. [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) İşleyici birleştirir iki Konik dönüştürme Çevir dönüşümler bit eşlem sol üst köşesindeki göre dönüştürme yapmak için:
+Bu sınıf kullanılır **Konik dönüştürme** sayfası. İki XAML dosyası başlatır `Picker` numaralandırma değerlerini seçmek için öğeleri ve `Slider` Konik kesir seçme. [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) İşleyici birleştirir iki Konik dönüştürme Çevir dönüşümler bit eşlem sol üst köşesindeki göre dönüştürme yapmak için:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -398,7 +398,7 @@ Afin olmayan dönüşüm dikdörtgen dışbükey herhangi quadrilateral dönüş
 
 [![](non-affine-images/shownonaffinematrix-small.png "Üçlü sayfasının ekran görüntüsü olmayan afin Matrisi Göster")](non-affine-images/shownonaffinematrix-large.png#lightbox "Üçlü sayfasının ekran görüntüsü olmayan afin Matrisi Göster")
 
-Bit eşlem köşelerinde birinin iç açı 180 derece büyüktür yaptığınızda, veya birbiriyle arası iki kenara doğrulamaya çalışma sürece, program başarıyla bu yöntemi kullanarak dönüştürme hesaplar [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) sınıfı:
+Bit eşlem köşelerinde birinin iç açı 180 derece büyüktür yaptığınızda, veya birbiriyle arası iki kenara doğrulamaya çalışma sürece, program başarıyla bu yöntemi kullanarak dönüştürme hesaplar [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) sınıfı:
 
 ```csharp
 static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint ptLL, SKPoint ptLR)
@@ -459,7 +459,7 @@ Hesaplama kolaylığı için bu yöntem bu dönüşümler bit eşlem dört köş
 
 Son koordinatları sağdaki dört dokunma noktalarıyla ilişkili dört noktalarıdır. Bit eşlem köşelerinde son koordinatlarını bunlar.
 
-G ve H bit eşlem yüksekliğini ve genişliğini temsil eder. İlk dönüştürme (`S`) yalnızca 1 piksel kare bit eşlem ölçeklendirir. Afin olmayan dönüşüm ikinci dönüşüm olan `N`, ve üçüncü afin dönüşüm `A`. Sahip, olduğu gibi daha önce afin afin dönüşüm üç noktalarında dayalı, bu yüzden [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) yöntemi ve dördüncü satırı içermeyen (a, b) noktası.
+G ve H bit eşlem yüksekliğini ve genişliğini temsil eder. İlk dönüştürme (`S`) yalnızca 1 piksel kare bit eşlem ölçeklendirir. Afin olmayan dönüşüm ikinci dönüşüm olan `N`, ve üçüncü afin dönüşüm `A`. Sahip, olduğu gibi daha önce afin afin dönüşüm üç noktalarında dayalı, bu yüzden [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) yöntemi ve dördüncü satırı içermeyen (a, b) noktası.
 
 `a` Ve `b` değerler hesaplanan üçüncü dönüştürme afin olmasını sağlayın. Kod afin dönüşüm tersini alır ve ardından, sağ alt köşedeki eşlemek için kullanır. (A, b) noktası olmasıdır.
 

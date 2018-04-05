@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 274c8e9a79fa3fadff14f1174d86aad04d902b05
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="dots-and-dashes"></a>Nokta ve tire
 
@@ -29,7 +29,7 @@ Genellikle, tire ve boşluk uzunluklarını vuruşun genişliğini birden fazla 
 
 Ancak, `StrokeCap` ayarıyla `SKPaint` nesne de etkiler bu nokta ve tire. Kısa süre içinde anlatıldığı gibi bu dizi öğeleri üzerinde bir etkisi yoktur.
 
-Noktalı ve kesikli satır gösterilen üzerinde **nokta ve kısa çizgilerden** sayfası. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) dosya başlatır iki `Picker` görünümleri, vuruş cap ve bir tire dizi seçmek için ikinci seçmenize izin vermek için bir tane:
+Noktalı ve kesikli satır gösterilen üzerinde **nokta ve kısa çizgilerden** sayfası. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) dosya başlatır iki `Picker` görünümleri, vuruş cap ve bir tire dizi seçmek için ikinci seçmenize izin vermek için bir tane:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -92,7 +92,7 @@ Noktalı ve kesikli satır gösterilen üzerinde **nokta ve kısa çizgilerden**
 
 İlk üç öğe `dashArrayPicker` vuruşun genişliğini 10 piksel olduğunu varsayın. {10, 10} dizidir noktalı çizgi için {30, 10} olan kesikli bir çizgi ve {10, 10, 30, 10 için} için nokta ve tire satırıdır. (Diğer üç kısa süre içinde incelenecektir.)
 
-[ `DotsAndDashesPage` Arka plan kod dosyasına](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) içeren `PaintSurface` olay işleyicisi ve birkaç erişmek için yardımcı yordamları `Picker` görünümleri:
+[ `DotsAndDashesPage` Arka plan kod dosyasına](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) içeren `PaintSurface` olay işleyicisi ve birkaç erişmek için yardımcı yordamları `Picker` görünümleri:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,7 +168,7 @@ Noktalı ve kesikli satır bir vuruş yapmak için Windows ekran gösterir cap `
 
 Şu ana kadar hiç ikinci parametrenin yapılmadığını `SKPathEffect.CreateDash` yöntemi. Bu parametre adlı `phase` satırının başına, nokta ve tire desen içindeki uzaklığı ifade eder. Örneğin, tire diziyse, {10, 10} ve `phase` 10'dur ve satır bir nokta yerine boşluk ile başlar.
 
-Bir ilginç uygulaması `phase` animasyonda parametresidir. **Animasyonlu Spiral** sayfa benzer **Archimedean Spiral** , dışında sayfasında [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) sınıfı canlandırır `phase` parametresi. Sayfa ayrıca animasyon için başka bir yaklaşım gösterir. Önceki örneği [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) kullanılan `Task.Delay` animasyon denetlemek için yöntem. Bu örnekte bunun yerine Xamarin.Forms kullanan `Device.Timer` yöntemi:
+Bir ilginç uygulaması `phase` animasyonda parametresidir. **Animasyonlu Spiral** sayfa benzer **Archimedean Spiral** , dışında sayfasında [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) sınıfı canlandırır `phase` parametresi. Sayfa ayrıca animasyon için başka bir yaklaşım gösterir. Önceki örneği [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) kullanılan `Task.Delay` animasyon denetlemek için yöntem. Bu örnekte bunun yerine Xamarin.Forms kullanan `Device.Timer` yöntemi:
 
 
 ```csharp

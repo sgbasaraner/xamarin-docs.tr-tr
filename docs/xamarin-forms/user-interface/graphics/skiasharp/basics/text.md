@@ -7,11 +7,11 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1e8ad47867fb1821df1e427aa777ead1a7da19a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4ef9f1b634d2ecfa73a94bfd562a68593dfdc575
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="integrating-text-and-graphics"></a>Metin ve grafik tümleştirme
 
@@ -23,7 +23,7 @@ Bu makalede, metin ölçmek, büyük olasılıkla metnin belirli bir boyuta öl�
 
 SkiaSharp `Canvas` sınıfı ayrıca bir dikdörtgen çizmek için yöntemler içerir ([`DrawRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawRect/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/)) ve yuvarlak köşeli dikdörtgen ([`DrawRoundRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawRoundRect/p/SkiaSharp.SKRect/System.Single/System.Single/SkiaSharp.SKPaint/)). Bu yöntemleri olarak tanımlanması için dikdörtgen gerektiren bir `SKRect` değeri.
 
-**Çerçeveli metin** sayfa merkezleri sayfası ve bir çerçeve ile yuvarlak dikdörtgen çiftinden oluşan çevreleyen kısa bir metin dizesi. [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) Sınıfı nasıl yapıldığını gösterir.
+**Çerçeveli metin** sayfa merkezleri sayfası ve bir çerçeve ile yuvarlak dikdörtgen çiftinden oluşan çevreleyen kısa bir metin dizesi. [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) Sınıfı nasıl yapıldığını gösterir.
 
 İçinde SkiaSharp kullandığınız `SKPaint` sınıfı kümesi metin ve yazı tipi özniteliklerini, ancak Ayrıca, İşlenmiş metin boyutunu almak üzere kullanabilir. Aşağıdaki başlangıcını `PaintSurface` olay işleyici çağırması iki farklı `MeasureText` yöntemleri. İlk [ `MeasureText` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.MeasureText/p/System.String/) çağrısı sahip basit bir `string` bağımsız değişkeni ve metin piksel genişliği göre geçerli yazı tipi özniteliklerini döndürür. Program sonra yeni hesaplar `TextSize` özelliği `SKPaint` nesne tabanlı geçerli bu işlenmiş genişliği `TextSize` özelliği ve görüntü alanının genişliği. Bunu ayarlamak için tasarlanmıştır `TextSize` metin dizesini böylece ekran genişliği % 90'ını işlenmek üzere:
 

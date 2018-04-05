@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 88b9dacef7a77d5f18908bdcb696e5172ceaa8c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6288a773fb7122c16b405b8a5056b23b7a59fb6d
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-path-fill-types"></a>Yolun dolgu türleri
 
@@ -32,7 +32,7 @@ Sarma ve çift-tek algoritmaları herhangi bir kapalı alan doldurulmuş veya bu
 
 Birçok rutin yollarını ile sarma algoritması genellikle kapalı bir yol alanlarının tüm doldurur. Çift-tek algoritması genellikle daha ilginç sonuçlar üretir.
 
-Klasik beş işaret yıldız, örnekte gösterildiği şekilde örnektir **Five-Pointed yıldız** sayfası. [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) dosya başlatır iki `Picker` yolu seçmek için görünümleri Dolgu türü ve yol vuruş veya dolu ya da her ikisini ve hangi sırayla:
+Klasik beş işaret yıldız, örnekte gösterildiği şekilde örnektir **Five-Pointed yıldız** sayfası. [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) dosya başlatır iki `Picker` yolu seçmek için görünümleri Dolgu türü ve yol vuruş veya dolu ya da her ikisini ve hangi sırayla:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

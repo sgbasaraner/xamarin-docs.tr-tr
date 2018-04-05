@@ -7,11 +7,11 @@ ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 0bd13cc58d4f15b46edc03eda35f04d7ca866dec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2b730690e508c29e9bee45ccfdd05d5dd6e92d7b
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp eğriler ve yolları
 
@@ -19,7 +19,7 @@ _Eğriler çizme ve yol özellikleri kullanmak için SkiaSharp kullanmayı öğr
 
 İncelenmesi [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) yöntemleri ve özellikleri başlangıcından içinde [SkiaSharp satırları ve yolları](~/xamarin-forms/user-interface/graphics/skiasharp/paths/index.md) makalesi. Eğrileri eklemek yöntemleriyle makaleleri burada devam bir `SKPath` nesneleri ve diğer güçlü yolu özellikleri yararlanma. Nasıl kısa metin dizesindeki tüm bir yolu belirtebilirsiniz, yol etkileri kullanma ve yol iç derinliklerine nasıl görürsünüz.
 
-Bu bölümdeki tüm örnek programlar başlığı altında görünür **eğriler ve daha yolları** giriş sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program ve [ **Eğriler** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves) klasörü çözümün.
+Bu bölümdeki tüm örnek programlar başlığı altında görünür **eğriler ve daha yolları** giriş sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program ve [ **Eğriler** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves) klasörü çözümün.
 
 ## <a name="three-ways-to-draw-an-arcarcsmd"></a>[Yay Çizmenin Üç Yolu](arcs.md)
 

@@ -7,11 +7,11 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 87bddc8d541167cef350658ac69f8aaac6d6a2ee
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6f7de8724a16e8c9c900123ce7da79d33b51a08c
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="matrix-transforms"></a>Matris dönüşümleri
 
@@ -321,7 +321,7 @@ SKMatrix.RotateDegrees(ref R, degrees, px, py);
 
 Bu yöntemler yapmak *değil* döndürme dönüşümü var olan bir dönüştürme için birleştirme. Yöntemleri matrisi tüm hücreleri ayarlayın. İşlevsel olarak aynı `MakeRotation` ve `MakeRotationDegrees` yöntemleri örneği yoktur ancak bu `SKMatrix` değeri.
 
-Sahip olduğunuz varsayalım bir `SKPath` görüntülemek istediğiniz, ancak biraz farklı bir yön veya farklı bir orta nokta olmasını tercih nesnesi. Çağırarak bu yolun tüm koordinatların değiştirebilirsiniz [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/) yöntemi `SKPath` ile bir `SKMatrix` bağımsız değişkeni. **Yolu dönüştürme** sayfa bunun nasıl yapılacağı gösterilmektedir. [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs) Sınıf başvurularını `HendecagramPath` bir alan nesnesinde ancak kurucusu bir dönüşüm bu yolun uygulamak için kullanır:
+Sahip olduğunuz varsayalım bir `SKPath` görüntülemek istediğiniz, ancak biraz farklı bir yön veya farklı bir orta nokta olmasını tercih nesnesi. Çağırarak bu yolun tüm koordinatların değiştirebilirsiniz [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/) yöntemi `SKPath` ile bir `SKMatrix` bağımsız değişkeni. **Yolu dönüştürme** sayfa bunun nasıl yapılacağı gösterilmektedir. [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs) Sınıf başvurularını `HendecagramPath` bir alan nesnesinde ancak kurucusu bir dönüşüm bu yolun uygulamak için kullanır:
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -438,15 +438,15 @@ Son bu yöntemi kullanırsanız, aklınızda `SKRect` yapısı Döndürülmüş 
 
 Afin dönüştürme için bir fikir almak için bir etkileşimli olarak ekran geçici bir bit eşlem üç köşelerinde taşıma ve hangi dönüşüm sonuçları görmesini yoludur. Bu fikirdir arkasında **afin Matrisi Göster** sayfası. Bu sayfa ayrıca diğer gösterim kullanılan iki sınıf gerektirir:
 
-[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/TouchPoint.cs) Sınıfı ekran sürüklenebilir saydam bir daire görüntüler. `TouchPoint` gerektiren bir `SKCanvasView` veya bir üst öğesi olan bir öğeyi bir `SKCanvasView` sahip [ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/TouchEffect.cs) bağlı. Ayarlama `Capture` özelliğine `true`. İçinde `TouchAction` olay işleyicisi program çağırmalıdır `ProcessTouchEvent` yönteminde `TouchPoint` her `TouchPoint` örneği. Yöntem `true` dokunma olay taşıma dokunma noktasında oluştuysa. Ayrıca, `PaintSurface` işleyici çağırmalıdır `Paint` yöntemi her `TouchPoint` kendisine geçirme örneği `SKCanvas` nesnesi.
+[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) Sınıfı ekran sürüklenebilir saydam bir daire görüntüler. `TouchPoint` gerektiren bir `SKCanvasView` veya bir üst öğesi olan bir öğeyi bir `SKCanvasView` sahip [ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) bağlı. Ayarlama `Capture` özelliğine `true`. İçinde `TouchAction` olay işleyicisi program çağırmalıdır `ProcessTouchEvent` yönteminde `TouchPoint` her `TouchPoint` örneği. Yöntem `true` dokunma olay taşıma dokunma noktasında oluştuysa. Ayrıca, `PaintSurface` işleyici çağırmalıdır `Paint` yöntemi her `TouchPoint` kendisine geçirme örneği `SKCanvas` nesnesi.
 
 `TouchPoint` bir ortak gösteren SkiaSharp visual ayrı bir sınıfta saklanmasını yolu. Sınıf görsel özelliklerini belirtmek için özellikler tanımlayabilir ve bir yöntem adlı `Paint` ile bir `SKCanvas` bağımsız değişkeni, işleyebilirsiniz.
 
 `Center` Özelliği `TouchPoint` nesne konumunu belirtir. Bu özellik konumunu ayarlayabilirsiniz; Kullanıcı tuvale daire sürüklendiğinde özelliğini değiştirir.
 
-**Afin matris sayfasını göster** de gerektirir [ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/MatrixDisplay.cs) sınıfı. Bu sınıf hücrelerinin görüntüler bir `SKMatrix` nesnesi. İki genel yöntemi vardır: `Measure` işlenmiş matris boyutlarını elde edilir ve `Paint` görüntülemek için. Sınıfı içeren bir `MatrixPaint` türünde özellik `SKPaint` , değiştirilebilir farklı yazı tipi boyutu veya renk için.
+**Afin matris sayfasını göster** de gerektirir [ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) sınıfı. Bu sınıf hücrelerinin görüntüler bir `SKMatrix` nesnesi. İki genel yöntemi vardır: `Measure` işlenmiş matris boyutlarını elde edilir ve `Paint` görüntülemek için. Sınıfı içeren bir `MatrixPaint` türünde özellik `SKPaint` , değiştirilebilir farklı yazı tipi boyutu veya renk için.
 
-[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml) dosya başlatır `SKCanvasView` ve ekler bir `TouchEffect`. [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs) arka plan kod dosyası oluşturur üç `TouchPoint` nesneleri ve katıştırılmış yükleyen bir bit eşlem üç köşelerinde karşılık gelen konumlara ayarlar Kaynak:
+[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml) dosya başlatır `SKCanvasView` ve ekler bir `TouchEffect`. [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs) arka plan kod dosyası oluşturur üç `TouchPoint` nesneleri ve katıştırılmış yükleyen bir bit eşlem üç köşelerinde karşılık gelen konumlara ayarlar Kaynak:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage

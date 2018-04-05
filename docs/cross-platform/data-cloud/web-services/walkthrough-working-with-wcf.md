@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 7f6885415e1b5e0c988d13fe331703213b9b8fb7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b317c4c82ec736c7f4c8306036e43cf04086a82
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>İzlenecek yol - WCF ile çalışma
 
@@ -167,7 +167,6 @@ Yerel olarak bir WCF barındırma bağlantıları yalnızca yerel makineden geld
 1. Dış isteklerini dinlemek için IIS Express yapılandırarak başlayalım. Bu en IIS Express için yapılandırma dosyasını düzenleyerek yapabiliriz `[solutiondirectory]\.vs\config\applicationhost.config`aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
     [![](walkthrough-working-with-wcf-images/image05.png "Bu yapılandırma dosyası için IIS Express solutiondirectory.vsconfigapplicationhost.config düzenleyerek bu ekran görüntüsünde gösterildiği gibi yapabiliriz")](walkthrough-working-with-wcf-images/image05.png#lightbox)
-
 
     Bulun `site` adı bir öğesiyle `HelloWorldWcfHost`. Aşağıdaki XML parçacığını gibi görünmelidir:
 

@@ -7,11 +7,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 4c2650d4586f210b121c4c72b79e92ce72d135fe
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09a81cd84f145512b9fbbf0db009335eac8a95a9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-scale-transform"></a>Ölçek dönüştürme
 
@@ -60,7 +60,7 @@ public void Scale (SKPoint size)
 
 Dördüncü `Scale` yöntemi açıklanan kısa süre içinde.
 
-**Temel ölçek** sayfasını gösteren `Scale` yöntemi. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) XAML dosyasını içeren iki `Slider` olanak tanıyan öğelerin yatay ve dikey ölçeklendirme etkenleri 0 ile 10 arasında seçin. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) arka plan kodu dosyasını çağırmak için bu değerleri kullanan `Scale` yuvarlak dikdörtgen görüntüleme kesikli çizgi ile vuruş ve bazı metin sol üst köşede sığacak şekilde boyutlandırılmış önce Tuvale köşe:
+**Temel ölçek** sayfasını gösteren `Scale` yöntemi. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) XAML dosyasını içeren iki `Slider` olanak tanıyan öğelerin yatay ve dikey ölçeklendirme etkenleri 0 ile 10 arasında seçin. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) arka plan kodu dosyasını çağırmak için bu değerleri kullanan `Scale` yuvarlak dikdörtgen görüntüleme kesikli çizgi ile vuruş ve bazı metin sol üst köşede sığacak şekilde boyutlandırılmış önce Tuvale köşe:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -120,7 +120,7 @@ public void Scale (Single sx, Single sy, Single px, Single py)
 
 `px` Ve `py` parametreleri tanımlayan adlandırılır noktası *center ölçeklendirme* SkiaSharp belgeleri olarak adlandırılır, ancak bir *pivot noktası*. Bu bir sol üst köşesindeki göre ölçeklendirme tarafından etkilenmez tuvalin noktasıdır. Tüm ölçeklendirme bu merkezi göre gerçekleşir.
 
-[ **Ortalanmış ölçek** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/CenteredScalePage.xaml.cs) sayfası bunun nasıl çalıştığını gösterir. `PaintSurface` İşleyici benzer **temel ölçek** dışında programı `margin` değeri hesaplanan metni yatay olarak ortalamak için program en iyi dikey modunda çalıştığı anlamına gelir:
+[ **Ortalanmış ölçek** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/CenteredScalePage.xaml.cs) sayfası bunun nasıl çalıştığını gösterir. `PaintSurface` İşleyici benzer **temel ölçek** dışında programı `margin` değeri hesaplanan metni yatay olarak ortalamak için program en iyi dikey modunda çalıştığı anlamına gelir:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -216,7 +216,7 @@ Ne zaman, birleştirme `Translate` ve `Scale` çağrıları, sırası önemlidir
 
 `SKPath` Sınıfı tanımlayan salt okunur [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) döndüren özelliği bir `SKRect` yolunda koordinatları kapsamını tanımlama. Örneğin, `Bounds` özelliği daha önce oluşturduğunuz hendecagram yolundan elde `Left` ve `Top` dikdörtgen özellikleridir yaklaşık – 100, `Right` ve `Bottom` özellikleri yaklaşık 100 ve `Width` ve `Height` yaklaşık 200 özelliklerdir. (Gerçek değerler biraz daha az yıldız noktalarının bir daire RADIUS 100 ile tanımlanır, ancak yalnızca üst noktası yatay veya dikey ekseni olan paralel çünkü çoğu.)
 
-Bu bilgiler kullanılabilirliğini ölçek türetmek ve Etkenler tuvale boyutunu yoluna ölçekleme için uygun Çevir mümkün olmalıdır anlamına gelir. [ **Eşyönsüz ölçeklendirme** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) sayfa bu 11 işaret yıldızla gösterir. Bir *Eşyönsüz* ölçek anlamına gelir, yani yıldız, özgün en boy oranını korumak olmaz yatay ve dikey yönde eşit olduğunu. İlgili kod işte `PaintSurface` işleyici:
+Bu bilgiler kullanılabilirliğini ölçek türetmek ve Etkenler tuvale boyutunu yoluna ölçekleme için uygun Çevir mümkün olmalıdır anlamına gelir. [ **Eşyönsüz ölçeklendirme** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) sayfa bu 11 işaret yıldızla gösterir. Bir *Eşyönsüz* ölçek anlamına gelir, yani yıldız, özgün en boy oranını korumak olmaz yatay ve dikey yönde eşit olduğunu. İlgili kod işte `PaintSurface` işleyici:
 
 ```csharp
 SKPath path = HendecagramPage.HendecagramPath;
@@ -261,7 +261,7 @@ pathBounds.Inflate(strokePaint.StrokeWidth / 2,
 
 Bu artırır `pathBounds` dikdörtgeni dört kenara 1,5 birimlerde tarafından. Bu, yalnızca vuruş birleştirme yuvarlandığında makul bir çözümdür. Gönye uzun olamaz ve hesaplamak zordur.
 
-Bir metin ile benzer bir teknik olarak kullanabilirsiniz **Eşyönsüz metin** sayfası gösterilmektedir. İlgili bölümü işte `PaintSurface` işleyicisinden [ `AnisotropicTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AnisotropicTextPage.cs) sınıfı:
+Bir metin ile benzer bir teknik olarak kullanabilirsiniz **Eşyönsüz metin** sayfası gösterilmektedir. İlgili bölümü işte `PaintSurface` işleyicisinden [ `AnisotropicTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicTextPage.cs) sınıfı:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -297,7 +297,7 @@ Grafik nesneleri en boy oranını korumak gerekiyorsa, isotropic ölçeklendirme
 - Grafik nesne boyutlara göre bölünmüş yatay ve dikey sayfa boyutları en az temel nesne ölçeklendirin.
 - Sayfanın ortasına ölçeklendirilmiş nesnesine center çevir.
 
-[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs) Ters sırada yıldız görüntülemeden önce aşağıdaki adımları gerçekleştirir:
+[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs) Ters sırada yıldız görüntülemeden önce aşağıdaki adımları gerçekleştirir:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

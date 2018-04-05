@@ -7,11 +7,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 7ea99612f85a853bcd045b773df0a01f33427a89
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="svg-path-data"></a>SVG yol verileri
 
@@ -147,7 +147,7 @@ Statik [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/member/Sk
 
 [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Yöntemdir mevcut bir SVG yol verileri almak için kullanışlı `SKPath` nesne başka bir programa aktarmak veya XML gibi metin tabanlı bir dosya biçiminde depolamak için. ( `ToSvgPathData` Yöntemi bu makaledeki örnek kodda gösterildiği değil.) Yapmak *değil* beklediğiniz `ToSvgPathData` tam yolunu oluşturulan yöntem çağrıları için karşılık gelen bir dize döndürecek şekilde. Özellikle, birden çok yaylar dönüştürülür öğreneceksiniz `QuadTo` komutları ve nasıl döndürüldüğü yolu veri göründükleri `ToSvgPathData`.
 
-**Yolu veri Hello** sayfasında spells word çıkışı "MERHABA" SVG yol verileri kullanarak. Hem `SKPath` ve `SKPaint` nesneleri alanlar olarak tanımlanan [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) sınıfı:
+**Yolu veri Hello** sayfasında spells word çıkışı "MERHABA" SVG yol verileri kullanarak. Hem `SKPath` ve `SKPaint` nesneleri alanlar olarak tanımlanan [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) sınıfı:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -218,7 +218,7 @@ Yolun yatay modunda görüntülendiğinde daha makul arar tuvale doldurur:
 
 [![](path-data-images/pathdatahello-small.png "Üçlü sayfasının ekran görüntüsü yolu veri Hello")](path-data-images/pathdatahello-large.png#lightbox "sayfasının yolu veri Hello Üçlü ekran görüntüsü")
 
-**Yolu veri kat** sayfa benzerdir. Yol ve boyama nesneleri her ikisi de alanlar olarak tanımlanan [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) sınıfı:
+**Yolu veri kat** sayfa benzerdir. Yol ve boyama nesneleri her ikisi de alanlar olarak tanımlanan [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) sınıfı:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -291,7 +291,7 @@ Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
 
 Normalde, bir `SKPath` nesnesi, bir alan olarak tanımlanır, yolun dağılımlarını oluşturucu veya başka bir yöntem içinde tanımlanması gerekir. Ancak, SVG yol verileri kullanırken yolu tamamen alan tanımında belirtilebilir gördünüz.
 
-Önceki **çirkin Analog Saat** içinde örnek [ **döndürme dönüştürme** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) makale saatin ellerini basit satır olarak görüntülenir. **Oldukça Analog Saat** aşağıdaki program bu satırlarla değiştirir `SKPath` alanlar olarak tanımlı nesneler [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) ile birlikte sınıf `SKPaint` nesneler:
+Önceki **çirkin Analog Saat** içinde örnek [ **döndürme dönüştürme** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) makale saatin ellerini basit satır olarak görüntülenir. **Oldukça Analog Saat** aşağıdaki program bu satırlarla değiştirir `SKPath` alanlar olarak tanımlı nesneler [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) ile birlikte sınıf `SKPaint` nesneler:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage

@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 4097aea4079555b26b586db5ec63fa261d5e7946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 47f5a6fdcfb6ee795f84ca8e19c0954b68a2fae9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-effects"></a>Yol etkileri
 
@@ -50,7 +50,7 @@ Bu değerler *değil* vuruşun genişliğini göre. Örneğin, 10 vuruşun geni�
 
 [![](effects-images/animateddottedtext-small.png "Üçlü sayfasının ekran görüntüsü noktalı metin animasyonlu")](effects-images/animateddottedtext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü animasyonlu noktalı metin")
 
-[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Sınıfı bazı sabitleri tanımlayarak başlar ve ayrıca geçersiz kılar `OnAppearing` ve `OnDisappearing` animasyon için yöntemleri:
+[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Sınıfı bazı sabitleri tanımlayarak başlar ve ayrıca geçersiz kılar `OnAppearing` ve `OnDisappearing` animasyon için yöntemleri:
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -158,7 +158,7 @@ Yol uzunluğu uyacak şekilde tire deseni uzunluğunu ayarlamak mümkündür, an
 
 [![](effects-images/dotdashmorph-small.png "Üçlü sayfasının ekran görüntüsü nokta tire Morph")](effects-images/dotdashmorph-large.png#lightbox "Üçlü sayfasının ekran görüntüsü noktalı çizgi Morph")
 
-[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Geçersiz kılmaları sınıf `OnAppearing` ve `OnDisappearing` yöntemleri önceki program oldu, ancak sınıf tanımlar gibi `SKPaint` nesnesi bir alan olarak:
+[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Geçersiz kılmaları sınıf `OnAppearing` ve `OnDisappearing` yöntemleri önceki program oldu, ancak sınıf tanımlar gibi `SKPaint` nesnesi bir alan olarak:
 
 ```csharp
 public class DotDashMorphPage : ContentPage
@@ -287,7 +287,7 @@ Genel olarak, geçişi için yol `Create1DPath` küçük ve (0, 0) noktası etra
 
 `Translate` Üye yolun çizgi veya eğri çoğaltılmış olarak aynı yönde kalmasına neden olur. İçin `Rotate`, yolun bir eğri teğet göre döndürülür. Yolun normal yönünü yatay çizgiler için vardır. `Morph` benzer `Rotate` yolu da vuruş satır eğimi eşleşecek şekilde eğri dışında.
 
-**1 D yolu etkisi** sayfanın şu üç seçenekten gösterir. [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) dosyası numaralandırması üç üyelerine karşılık gelen üç öğeleri içeren bir seçici tanımlar:
+**1 D yolu etkisi** sayfanın şu üç seçenekten gösterir. [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) dosyası numaralandırması üç üyelerine karşılık gelen üç öğeleri içeren bir seçici tanımlar:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -323,7 +323,7 @@ Genel olarak, geçişi için yol `Create1DPath` küçük ve (0, 0) noktası etra
 </ContentPage>
 ```
 
-[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs) arka plan kod dosyası üç tanımlar `SKPathEffect` nesneleri alanları olarak. Bunlar tüm kullanılarak oluşturulan `SKPathEffect.Create1DPath` ile `SKPath` kullanılarak oluşturulan nesneler `SKPath.ParseSvgPathData`. İlk basit bir kutu, ikinci bir Karo şekli ve üçüncü dikdörtgen şeklinde. Bu, üç etkisi stilleri göstermek için kullanılır:
+[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs) arka plan kod dosyası üç tanımlar `SKPathEffect` nesneleri alanları olarak. Bunlar tüm kullanılarak oluşturulan `SKPathEffect.Create1DPath` ile `SKPath` kullanılarak oluşturulan nesneler `SKPath.ParseSvgPathData`. İlk basit bir kutu, ikinci bir Karo şekli ve üçüncü dikdörtgen şeklinde. Bu, üç etkisi stilleri göstermek için kullanılır:
 
 ```csharp
 public partial class OneDimensionalPathEffectPage : ContentPage
@@ -422,7 +422,7 @@ Doğru değeri bulma *bir* catenary telefonun sayfa boyutlarına uyacak şekilde
 
 COSH (w/2/a) = 1 + h / a
 
-Aşağıdaki yöntemi [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) sınıfı, sol ve sağ eşittir işaretinin iki ifadeye başvurarak bu eşitlik içerir `left` ve `right`. Küçük değerler için *bir*, `left` değerinden daha büyük `right`; büyük değerler için *bir*, `left` olan değerinden `right`. `while` Döngü en iyi bir değeri temel olarak daraltır *bir*:
+Aşağıdaki yöntemi [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) sınıfı, sol ve sağ eşittir işaretinin iki ifadeye başvurarak bu eşitlik içerir `left` ve `right`. Küçük değerler için *bir*, `left` değerinden daha büyük `right`; büyük değerler için *bir*, `left` olan değerinden `right`. `while` Döngü en iyi bir değeri temel olarak daraltır *bir*:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -551,7 +551,7 @@ Kullanılan yolu bu programı tanımlayan `Create1DPath` sağlamak için (0, 0) 
 
 (0, 0) demet yolu noktasıdır böyle olduğunda, tanıtıcı `phase` bağımsız değişkeni animasyonlu, belki de su altındaki kapsamı ve onu en üstünde dökme taşıyıcı bandı çevresinde döndürüleceğini demet gibi görünebilir.
 
-[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs) Sınıfı geçersiz Kılmalara göre ile animasyon uygulayan `OnAppearing` ve `OnDisappearing` yöntemleri. Yolun kabı için sayfanın oluşturucuda tanımlanır:
+[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs) Sınıfı geçersiz Kılmalara göre ile animasyon uygulayan `OnAppearing` ve `OnDisappearing` yöntemleri. Yolun kabı için sayfanın oluşturucuda tanımlanır:
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -712,7 +712,7 @@ public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 
 Varsayılan olarak, tarama satırları yatay. Varsa `matrix` tarama satırları saat yönünde Döndürülmüş, parametre döndürme içerir.
 
-**Tarama doldurun** sayfa bu yolu etkiyi gösterir. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Sınıfı tanımlayan üç yolu etkileri alanlar olarak, 6 piksel birbirinden olduklarını belirten bir ölçeklendirme faktörü ile 3 piksel genişliği yatay tarama satırıyla ilk aralıklı. Satırları arasında ayrım bu nedenle 3 pikseldir. 6 piksel genişliği dikey tarama satırıyla 24 piksel (Bu nedenle ayrılmasıdır 18 piksel), birbirinden aralıklı için ikinci yol etkili olan ve üçüncü Yatık tarama 12 piksel geniş aralıklı 36 piksel birbirinden satırlar aranır. 
+**Tarama doldurun** sayfa bu yolu etkiyi gösterir. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Sınıfı tanımlayan üç yolu etkileri alanlar olarak, 6 piksel birbirinden olduklarını belirten bir ölçeklendirme faktörü ile 3 piksel genişliği yatay tarama satırıyla ilk aralıklı. Satırları arasında ayrım bu nedenle 3 pikseldir. 6 piksel genişliği dikey tarama satırıyla 24 piksel (Bu nedenle ayrılmasıdır 18 piksel), birbirinden aralıklı için ikinci yol etkili olan ve üçüncü Yatık tarama 12 piksel geniş aralıklı 36 piksel birbirinden satırlar aranır. 
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -812,7 +812,7 @@ public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 
 Çoğaltılmış yolu normal olarak doldurulan alanı yerine ekranın sol ve üst kenarlar ile hizalanır. 0 ve yatay ve dikey uzaklık sol ve üst iki tarafından belirtmek için ölçeklendirme etkenleri arasında çeviri Etkenler sağlayarak bu davranışı geçersiz kılabilirsiniz.
 
-**Yolu döşemeyi doldurmak** sayfa bu yolu etkiyi gösterir. Alanı döşeme için kullanılan yolu alanı olarak tanımlanan [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) sınıfı. Bu yol 80 piksel kare olduğu anlamına gelir yatay ve dikey koordinatlarını aralıktan – 40 40 için: 
+**Yolu döşemeyi doldurmak** sayfa bu yolu etkiyi gösterir. Alanı döşeme için kullanılan yolu alanı olarak tanımlanan [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) sınıfı. Bu yol 80 piksel kare olduğu anlamına gelir yatay ve dikey koordinatlarını aralıktan – 40 40 için: 
 
 ```csharp
 public class PathTileFillPage : ContentPage
@@ -868,7 +868,7 @@ public static SKPathEffect CreateCorner (Single radius)
 
 Tek bir bağımsız değişken adlı rağmen `radius` yarım istenen köşe RADIUS ile ayarlamanız gerekir. (Bu bir arka plandaki Skia kod özelliğidir.)
 
-Burada `PaintSurface` işleyicisinde [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) sınıfı:
+Burada `PaintSurface` işleyicisinde [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) sınıfı:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -944,7 +944,7 @@ Son değişken efekt için kullanılan sözde rastgele dizisi oluşturmak için 
 
 [![](effects-images/jitterexperiment-small.png "Üçlü değişimi deneme sayfasının ekran görüntüsü")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
-Straightfoward programdır. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) dosya başlatır iki `Slider` öğeleri ve bir `SKCanvasView`:
+Straightfoward programdır. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) dosya başlatır iki `Slider` öğeleri ve bir `SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -1000,7 +1000,7 @@ Straightfoward programdır. [ **JitterExperimentPage.xaml** ](https://github.com
 </ContentPage>
 ```
 
-`PaintSurface` İşleyicisinde [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs) arka plan kod dosyasına çağrılır her bir `Slider` değer değişiklikleri. Çağırır `SKPathEffect.CreateDiscrete` iki kullanarak `Slider` dikdörtgen vuruş yapmak için kullanan ve değerler:
+`PaintSurface` İşleyicisinde [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs) arka plan kod dosyasına çağrılır her bir `Slider` değer değişiklikleri. Çağırır `SKPathEffect.CreateDiscrete` iki kullanarak `Slider` dikdörtgen vuruş yapmak için kullanan ve değerler:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1031,7 +1031,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Bu etkiyi; bu durumda doldurulmuş alanı özetini rastgele bu sapmalar tabi olduğunu doldurmak için de kullanabilirsiniz. **Değişimi metin** sayfa gösteren metni görüntülemek için bu yolu etkiyi kullanıyor. Kodda çoğu `PaintSurface` işleyicisine [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) sınıfı boyutlandırma ve metin ortalama zamanının:
+Bu etkiyi; bu durumda doldurulmuş alanı özetini rastgele bu sapmalar tabi olduğunu doldurmak için de kullanabilirsiniz. **Değişimi metin** sayfa gösteren metni görüntülemek için bu yolu etkiyi kullanıyor. Kodda çoğu `PaintSurface` işleyicisine [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) sınıfı boyutlandırma ve metin ortalama zamanının:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1086,7 +1086,7 @@ Bu yöntemin bir temel kullanım yolu etkileri hiç gerektirmez. Varsa `SKPaint`
 
 Örneğin, varsa `src` yoludur RADIUS 500, basit bir daire ve `SKPaint` nesnesini 100 vuruşun genişliğini belirtir sonra `dst` yolu 450 ve diğer RADIUS 550 yarıçapını ile biriyle iki eşmerkezli daireler olur. Yöntem çağrıldığında `GetFillPath` bu doldurma çünkü `dst` yol aynıdır vuruş yapması `src` yolu. Ancak aynı zamanda vuruş `dst` yol anahatları görmek için yol.
 
-**Yol anahattına dokunun** bu gösterir. `SKCanvasView` Ve `TapGestureRecognizer` içinde örneği [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml) dosya. [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs) arka plan kod dosyası üç tanımlar `SKPaint` nesneleri ile vuruş yapması için iki alanları olarak vuruş 100 ve 20 ve doldurma üçüncü genişliklerini:
+**Yol anahattına dokunun** bu gösterir. `SKCanvasView` Ve `TapGestureRecognizer` içinde örneği [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml) dosya. [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs) arka plan kod dosyası üç tanımlar `SKPaint` nesneleri ile vuruş yapması için iki alanları olarak vuruş 100 ve 20 ve doldurma üçüncü genişliklerini:
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1239,7 +1239,7 @@ Bir açık kullanımını `CreateSum` tanımlamaktır bir `SKPaint` ile tek bir 
 
 [![](effects-images/catsinframe-small.png "Üçlü sayfasının ekran görüntüsü kediler içinde çerçeve")](effects-images/catsinframe-large.png#lightbox "Üçlü sayfasının ekran görüntüsü kediler, çerçeve")
 
-[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Sınıfı başlayan birkaç alanları tanımlayarak. İlk alanından tanıyabilir [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) sınıfıyla [ **SVG yol verileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) makalesi. Çizgi ve yay çerçevenin Tarak düzeni için ikinci yol dayanır:
+[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Sınıfı başlayan birkaç alanları tanımlayarak. İlk alanından tanıyabilir [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) sınıfıyla [ **SVG yol verileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) makalesi. Çizgi ve yay çerçevenin Tarak düzeni için ikinci yol dayanır:
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1353,7 +1353,7 @@ Yol etkilerini arkasında algoritmaları her zaman bazı görseller dikdörtgeni
 
 Kullanmak için ortak olan `SKPathEffect.CreateCompose` bazı değişim başka bir yolu efekti eklemek için. Kesinlikle kendiniz deneyebilirsiniz, ancak biraz farklı bir örnek şudur:
 
-**Kesikli tarama satırları** elips kesik tarama satırlar ile doldurur. Çoğu iş [ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) sınıfı gerçekleştirilir alan tanımlarını sağ. Bu alanların bir tire etkili olur ve bir tarama efekti tanımlayın. Olarak tanımlanan `static` , ardından içinde başvurulduğundan bir `SKPathEffect.CreateCompose` Çağır `SKPaint` tanımı:
+**Kesikli tarama satırları** elips kesik tarama satırlar ile doldurur. Çoğu iş [ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) sınıfı gerçekleştirilir alan tanımlarını sağ. Bu alanların bir tire etkili olur ve bir tarama efekti tanımlayın. Olarak tanımlanan `static` , ardından içinde başvurulduğundan bir `SKPathEffect.CreateCompose` Çağır `SKPaint` tanımı:
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage
