@@ -1,18 +1,17 @@
 ---
 title: İzlenecek yol - özel denetimleri, iOS için Xamarin Tasarımcısı ile kullanma
 description: Bu makale, özel bir denetim oluşturmak ve iOS için Xamarin Tasarımcısı'nda kullanmak üzere nasıl gösteren bir adım adım kılavuz sağlar. Sürükle / bir görünümü yoksaymış böylece bir denetim tasarımcının araç kullanılabilmesini kullanmayı gösterir. Ayrıca, tasarım zamanı ve çalışma zamanı sırasında düzgün işler için bir denetim uygulamak nasıl yanı sıra tasarım zamanında ayarlanabilir özelliklerin nasıl oluşturulacağı gösterilmektedir.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 4138ba0da1dd2174c53e6e35105c3199ea941f7f
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 4a7fb6cba82b52f2a3506df7a36b4813a88ff583
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>İzlenecek yol - özel denetimleri, iOS için Xamarin Tasarımcısı ile kullanma
 
