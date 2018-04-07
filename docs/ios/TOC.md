@@ -189,7 +189,6 @@
 ##### [Uzak Bildirimler](platform/user-notifications/deprecated/remote-notifications-in-ios.md)
 ### [Geniş Renk](platform/wide-color.md)
 ## [Veri ve Bulut Hizmetleri](data-cloud/index.md)
-### [Azure Bağlı Hizmetler](~/cross-platform/data-cloud/connected-services.md?context=xamarin/ios)
 ### [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/ios)
 #### [Başlarken](~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/ios)
 ##### [1. Adım Yazmaç](~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/ios)

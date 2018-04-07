@@ -166,7 +166,6 @@
 ### [Yerel Kitaplıkları Kullanma](platform/native-libraries.md)
 ### [Renderscript](platform/renderscript.md)
 ## [Veri ve Bulut Hizmetleri](data-cloud/index.md)
-### [Azure Bağlı Hizmetler](~/cross-platform/data-cloud/connected-services.md?context=xamarin/android)
 ### [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/android)
 #### [Başlarken](~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/android)
 ##### [1. Adım Yazmaç](~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/android)
