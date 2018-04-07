@@ -6,12 +6,12 @@ ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 12/22/2017
-ms.openlocfilehash: f074bca7571188b14a36bd4e6c59a6fdf8df9339
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/04/2018
+ms.openlocfilehash: d5921c549c299197bdc442c9b883b49064655f76
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android öykünücüsünde donanım hızlandırma
 
@@ -20,13 +20,14 @@ Android SDK öykünücüsü donanım hızlandırmasını, Intel's şekilde bası
 
 ## <a name="haxm-overview"></a>HAXM genel bakış
 
-HAXM bir konak makinesi üzerinde Android uygulaması öykünme hızlandırmak için Intel Sanallaştırma Teknolojisi (VT) kullanan bir donanım destekli sanallaştırma (hiper yönetici) altyapısıdır. Android x86 birlikte Intel ve resmi Android SDK Yöneticisi tarafından HAXM VT etkin sistemlerde daha hızlı Android öykünmesi için izin veren koşuluyla öykünücü görüntüler. VT yetenekleri olan bir Intel CPU bir makinesinde geliştiriyorsanız, büyük ölçüde Android SDK öykünücüsü hızlandırmak için HAXM yararlanabilir (, CPU VT destekleyip desteklemediğini emin değilseniz bkz [belirlemek, bilgisayarınızı işlemci destekleyen Intel Sanallaştırma Teknolojisi](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
+HAXM bir konak makinesi üzerinde Android uygulaması öykünme hızlandırmak için Intel Sanallaştırma Teknolojisi (VT) kullanan bir donanım destekli sanallaştırma (hiper yönetici) altyapısıdır. Android x86 birlikte Intel ve resmi Android SDK Yöneticisi tarafından HAXM VT etkin sistemlerde daha hızlı Android öykünmesi için izin veren koşuluyla öykünücü görüntüler. 
 
-Android SDK öykünücüsü otomatik olarak kullanılabilir olduğunda HAXM kullanır. Seçtiğinizde, bir **x86**-sanal aygıt dayalı (açıklandığı gibi [yapılandırma ve kullanım](~/android/deploy-test/debugging/android-sdk-emulator/index.md)), sanal cihazın donanım hızlandırmasını HAXM kullanır. Android SDK öykünücüsü ilk kez kullanmadan önce HAXM yüklenir ve Android SDK öykünücüsü kullanılabilir olduğunu doğrulamak için iyi bir fikirdir.
+VT yetenekleri olan bir Intel CPU bir makinesinde geliştiriyorsanız, büyük ölçüde Android SDK öykünücüsü hızlandırmak için HAXM yararlanabilir (, CPU VT destekleyip desteklemediğini emin değilseniz bkz [belirlemek, bilgisayarınızı işlemci destekleyen Intel Sanallaştırma Teknolojisi](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
 
 > [!NOTE]
-> Bir sanal makinede HAXM çalıştırılamıyor.
+> Bir VM hızlandırılmış öykünücüsü VirtualBox, VMWare veya Docker tarafından barındırılan bir VM'nin gibi başka bir VM içinde çalıştırılamaz. Google Android öykünücüsü çalıştırmalısınız [sistem donanımınız üzerinde doğrudan](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
+Android SDK öykünücüsü otomatik olarak kullanılabilir olduğunda HAXM kullanır. Seçtiğinizde, bir **x86**-sanal aygıt dayalı (açıklandığı gibi [yapılandırma ve kullanım](~/android/deploy-test/debugging/android-sdk-emulator/index.md)), sanal cihazın donanım hızlandırmasını HAXM kullanır. Android SDK öykünücüsü ilk kez kullanmadan önce HAXM yüklenir ve Android SDK öykünücüsü kullanılabilir olduğunu doğrulamak için iyi bir fikirdir.
 
 ## <a name="verifying-haxm-installation"></a>HAXM yüklemesini doğrulama
 
@@ -180,6 +181,11 @@ Cihaz koruyucusu etkinse, devre dışı bırakmak için aşağıdaki adımları 
 8. Bilgisayar yeniden başlatıldıktan sonra Hyper-V (önceki adımlarda açıklandığı gibi) devre dışı bırakıldığından emin olmak için yeniden denetleyin.
 
 Hyper-V hala devre dışı değil ise, etki alanına katılmış bilgisayarınızın ilkeleri cihaz koruyucusu veya kimlik bilgisi koruma devre dışı engelleyebilir. Bu durumda, etki alanı yöneticiniz, kimlik bilgisi koruma dışında opt olanak sağlamak için bir muafiyet isteyebilir. Alternatif olarak, olmayan HAXM kullanmak için etki alanına katılmış bir bilgisayarı kullanabilirsiniz.
+
+## <a name="hardware-acceleration-and-amd-cpus"></a>Donanım hızlandırma ve AMD CPU'lar
+
+Google Android öykünücüsü şu anda AMD donanım hızlandırmasını desteklediğinden [yalnızca Linux üzerinde](https://developer.android.com/studio/run/emulator-acceleration.html#dependencies), donanım hızlandırmasını Windows çalıştıran AMD tabanlı bilgisayarlar için kullanılabilir değil.
+
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 

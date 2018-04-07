@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: ff36deff996a92fca512158252c64e5c29046be9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="list-appearance"></a>Liste Görünümü
 
@@ -117,14 +117,12 @@ Bizim Not:
 - Değiştirilen `ListView`'s `ItemsSource` gruplanmış listesi
 
 ### <a name="customizing-grouping"></a>Gruplandırma özelleştirme
-ListView içinde gruplandırma temel uygulamak nasıl gördük, grup üstbilgileri görüntüsünü özelleştirmek nasıl görelim.
 
-Benzer şekilde nasıl `ListView` sahip bir `ItemTemplate` satırları görüntülenme tanımlamak için `ListView` sahip bir `GroupHeaderTemplate`. Bu, yukarıda, özel bir grup üstbilgisi şablonuyla ListView örneğidir:
+Listesinde gruplama etkinleştirilmişse grup üstbilgisi da özelleştirilebilir.
 
-![](customizing-list-appearance-images/grouping-depth.png "ListView özelleştirilmiş GroupHeaderTemplate ile")
+Benzer şekilde nasıl `ListView` sahip bir `ItemTemplate` satırları görüntülenme tanımlamak için `ListView` sahip bir `GroupHeaderTemplate`. 
 
-
-Bu tasarım XAML'de nasıl şöyledir:
+XAML Grup üstbilgisinde özelleştirilmesine bir örnek aşağıda gösterilmiştir:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>

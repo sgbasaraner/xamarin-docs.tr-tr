@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6ec46a5e098ba14925102211a27fcce8c27970e9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -121,47 +121,46 @@ Ardından, aşağıdaki bölümde, bu uyarılar göz önünde bulundurarak API u
 
 Bu nedenle uygulamamız için bazı Touch ID kimlik doğrulama ekleme konumundaki bakalım. Bu kılavuzda biz kullanacaksanız [film şeridi tablo](https://developer.xamarin.com/samples/StoryboardTable/) örnek. Cihaz sahibi bir şey bu listeye eklemek için yalnızca, herhangi bir öğe ekleyin izin vererek dağıtmayı istediğimizi yok emin olmak istiyoruz!
 
-1.  Örneği indirmek ve Mac için Visual Studio'da çalıştırın
-2.  Çift tıklatın `MainStoryboard.Storyboard` iOS Tasarımcısı örneği açın. Bu örnek ile kimlik doğrulaması denetleyecek uygulamamız için yeni bir ekran eklemek istiyoruz. Bu önce geçerli gidecek `MasterViewController`.
-3.  Yeni bir sürükleyin **View Controller** gelen **araç** için **tasarım yüzeyi**. Bu olarak ayarlamak **kök View Controller** tarafından **Ctrl + Sürükle** gelen **Gezinti denetleyicisi**:
+1. Örneği indirmek ve Mac için Visual Studio'da çalıştırın
+2. Çift tıklatın `MainStoryboard.Storyboard` iOS Tasarımcısı örneği açın. Bu örnek ile kimlik doğrulaması denetleyecek uygulamamız için yeni bir ekran eklemek istiyoruz. Bu önce geçerli gidecek `MasterViewController`.
+3. Yeni bir sürükleyin **View Controller** gelen **araç** için **tasarım yüzeyi**. Bu olarak ayarlamak **kök View Controller** tarafından **Ctrl + Sürükle** gelen **Gezinti denetleyicisi**:
 
     [![](touchid-images/image4.png "Kök görünüm denetleyicisini ayarlama")](touchid-images/image4.png#lightbox)
 4.  Yeni Görünüm denetleyicisini `AuthenticationViewController`.
-5.  Ardından, bir düğme sürükleyin ve bunu Yerleştir `AuthenticationViewController`. Bu çağrı `AuthenticateButton`ve metin verin `Add a Chore`.
-6.  Bir olay oluşturma `AuthenticateButton` adlı `AuthenticateMe`.
-7.  El ile oluşturmak gelen ü `AuthenticationViewController` altındaki siyah bir çubuk tıklayarak ve **Ctrl + Sürükle** çubuğundan `MasterViewController` ve seçme **itme** (veya **Göster** boyutu sınıfları kullanıyorsanız):
+5. Ardından, bir düğme sürükleyin ve bunu Yerleştir `AuthenticationViewController`. Bu çağrı `AuthenticateButton`ve metin verin `Add a Chore`.
+6. Bir olay oluşturma `AuthenticateButton` adlı `AuthenticateMe`.
+7. El ile oluşturmak gelen ü `AuthenticationViewController` altındaki siyah bir çubuk tıklayarak ve **Ctrl + Sürükle** çubuğundan `MasterViewController` ve seçme **itme** (veya **Göster** boyutu sınıfları kullanıyorsanız):
 
     [![](touchid-images/image5.png "MasterViewController ve anında iletme seçme çubuğundan sürükleyin ya Göster")](touchid-images/image6.png#lightbox)
-8.  Tıklayın yeni oluşturulan ü ve tanımlayıcı verin `AuthenticationSegue`aşağıda gösterildiği gibi:
+8. Tıklayın yeni oluşturulan ü ve tanımlayıcı verin `AuthenticationSegue`aşağıda gösterildiği gibi:
 
     [![](touchid-images/image7.png "Kümesi için AuthenticationSegue segue tanımlayıcısı")](touchid-images/image7.png#lightbox)
-9.  Aşağıdaki kodu ekleyin `AuthenticationViewController`:
+9. Aşağıdaki kodu ekleyin `AuthenticationViewController`:
 
-    ```
+    ```csharp
     partial void AuthenticateMe (UIButton sender)
-        {
-            var context = new LAContext();
-            NSError AuthError;
-            var myReason = new NSString("To add a new chore");
+    {
+        var context = new LAContext();
+        NSError AuthError;
+        var myReason = new NSString("To add a new chore");
 
-
-            if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError)){
-                var replyHandler = new LAContextReplyHandler((success, error) => {
-
-                    this.InvokeOnMainThread(()=>{
-                        if(success){
-                            Console.WriteLine("You logged in!");
-                            PerformSegue("AuthenticationSegue", this);
-                        }
-                        else{
-                            //Show fallback mechanism here
-                        }
-                    });
-
+        if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError)){
+            var replyHandler = new LAContextReplyHandler((success, error) => {
+                this.InvokeOnMainThread(()=> {
+                    if(success)
+                    {
+                        Console.WriteLine("You logged in!");
+                        PerformSegue("AuthenticationSegue", this);
+                    }
+                    else
+                    {
+                        // Show fallback mechanism here
+                    }
                 });
-                context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, myReason, replyHandler);
-            };
-        }
+            });
+            context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, myReason, replyHandler);
+        };
+    }
     ```
 
 Bu yerel kimlik doğrulaması kullanarak Touch ID kimlik doğrulama uygulamak için gereken tüm koddur. Aşağıdaki görüntü vurgulanan satırları yerel kimlik doğrulaması kullanımını göster:
