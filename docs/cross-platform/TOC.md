@@ -83,7 +83,6 @@
 ### [HttpClient Yığını ve SSL/TLS Uygulama Seçicisi](macios/http-stack.md)
 ## [Sorun giderme](troubleshooting/index.md)
 ### [Sık Sorulan Sorular](troubleshooting/questions/index.md)
-#### [Visual Studio 2017 Sürüm Adayını Xamarin ile Kullanabilir miyim?](troubleshooting/questions/visualstudio-2017-rc.md)
 #### [Bir PCL’de hangi kitaplıkların desteklendiğini görüntüleyebilir miyim?](troubleshooting/questions/pcl-support-libraries.md)
 #### [PCL Yansıma API’si](troubleshooting/questions/pcl-reflection.md)
 #### [PCL örnek olay incelemesi: Microsoft TPL Dataflow NuGet paketi için System.Diagnostics.Tracing ile ilgili sorunları nasıl çözebilirim?](troubleshooting/questions/pcl-case-study.md)
@@ -96,12 +95,14 @@
 #### [Ne zaman ve nasıl bir hata raporu bildirmeliyim?](troubleshooting/questions/howto-file-bug.md)
 #### [Jenkins neden Xamarin tarafından desteklenmiyor?](troubleshooting/questions/xamarin-jenkins.md)
 #### [Hata ayıklayıcı için hangi proje ayarları gereklidir?](troubleshooting/questions/debugger-settings.md)
+
+### Visual Studio Soruları
+#### [Yapılandırma yöneticisinde devre dışı bırakılan onay kutularını dağıtma](troubleshooting/questions/deploy-checkboxes.md)
+#### [Yükleme sonrasında eksik olan Visual Studio uzantıları](troubleshooting/questions/missing-vs-extensions.md)
+#### [Visual Studio için Xamarin’de nasıl kapsamlı bir kaldırma işlemi gerçekleştiririm?](troubleshooting/questions/uninstall-xamarin-vs.md)
+#### [Visual Studio işleminin geçerli çağrı yığınlarını nasıl toplarım?](troubleshooting/questions/vs-callstack.md)
+#### [Visual Studio neden başvurulan kitaplık projemi derlememe dahil etmiyor?](troubleshooting/questions/vs-config-manager.md)
+
 ### [Bileşen Başvurularını NuGet’e Güncelleştirme](troubleshooting/component-nuget.md)
 ### [Destek Seçenekleri](troubleshooting/support-options.md)
-### [Eski Lisans Soruları](troubleshooting/legacy-licenses/index.md)
-#### [Xamarin Platformu Takım Yönetimi](troubleshooting/legacy-licenses/team-management.md)
-#### [Hesabımın e-posta adresini nasıl değiştirebilirim?](troubleshooting/legacy-licenses/change-email.md)
-#### [Xamarin lisanslarını kendim nasıl yeniden eşitleyebilirim?](troubleshooting/legacy-licenses/resync-licenses.md)
-#### [Bazı belirli lisans hataları](troubleshooting/legacy-licenses/licensing-errors.md)
-#### [Neden Visual Studio’da Xamarin veya Mac için Visual Studio oturumunu açamıyorum?](troubleshooting/legacy-licenses/login-troubleshooting.md)
 ## [Örnekler](samples/index.yml)
