@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 54c70fda22782dfa9b6617c0832f2c17f0169b57
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="webview"></a>Web görünümü
 
@@ -399,6 +399,8 @@ Tamamlanan yükleme:
 En son gelişmeleri her işleme ve JavaScript derleme donanım hızlandırılmış gibi teknolojileri benimsemeye popüler web tarayıcılarının gördünüz. Ne yazık ki, güvenlik kısıtlamaları nedeniyle bu geliştirmeleri çoğunu kullanılabilir değil, iOS equaivalent `WebView`, `UIWebView`. Xamarin.Forms `WebView` kullanan `UIWebView`. Bu bir sorun olursa, kullanan özel Oluşturucu yazma gerekir `WKWebView`, daha hızlı tarama destekler. Unutmayın `WKWebView` yalnızca iOS 8 ve sonraki sürümleri desteklenir.
 
 Varsayılan olarak android'de WebView yerleşik tarayıcı olarak yaklaşık olarak hızlıdır.
+
+[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) Microsoft Edge işleme altyapısı kullanır. Masaüstü ve tablet aygıtları aynı performans Edge tarayıcı kullanarak olarak görmeniz gerekir.
 
 `WebBrowser` Denetimi Windows Phone 8 ve Windows Phone 8.1 mu değil destek en yeni HTML5 özellikleri ve performansın sıklıkla olabilir. Siteleri Windows Phone içinde 's nasıl görüntüleneceğini unutmayın `WebView`. Internet Explorer'da test etmek yeterli değil.
 

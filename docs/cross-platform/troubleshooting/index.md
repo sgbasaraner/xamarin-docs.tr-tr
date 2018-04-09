@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: e7776ed249307e7a6ba4401bfb409f749c4581e8
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: babdce968dc74117a19d64755790da57c32d26aa
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="troubleshooting"></a>Sorun giderme
 
@@ -28,21 +28,8 @@ Bileşen değiştirmek için varolan Xamarin çözümleri güncelleştirmek nas�
 
 Xamarin ürünler için destek seçenekleri.
 
-### <a name="legacy-license-questionslegacy-licensesindexmd"></a>[Eski Lisans Soruları](legacy-licenses/index.md)
-
-Xamarin kullanıcıların eski platform lisansları ile ilgili sorun giderme makaleleri. (MSDN lisans sahipleri için başvurmak [lisans seçenekleri Kılavuzu](~/cross-platform/get-started/requirements.md) yerine.)
-
 ## <a name="product-specific-questions"></a>Ürüne özgü soruları
 
 - [Android](~/android/troubleshooting/questions/index.md)
 - [iOS](~/ios/troubleshooting/questions/index.md)
 - [Xamarin.Forms](~/xamarin-forms/troubleshooting/questions/index.md)
-
-
-
-## <a name="related-links"></a>İlgili bağlantılar
-
-- [Android sık sorulan sorular](~/android/troubleshooting/questions/index.md)
-- [iOS sık sorulan sorular](~/ios/troubleshooting/questions/index.md)
-- [Xamarin.Forms ile ilgili SSS](~/xamarin-forms/troubleshooting/questions/index.md)
-- [Xamarin.UITest SSS](https://developer.xamarin.com~/testcloud/uitest/questions/)
