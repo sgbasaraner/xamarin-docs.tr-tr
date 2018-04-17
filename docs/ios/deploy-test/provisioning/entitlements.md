@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 6ced541ca9df6fcae1643dc14c2e19807e972822
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f158ab7e51eb7610566ed052b326fecf016add8a
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-entitlements"></a>Yetkilendirmeler ile çalışma
 
@@ -97,7 +97,7 @@ Xamarin.iOS Yapılacaklar aşağıdaki Entitlements.plist dosya eklemek için:
 
 Yetkilendirme anahtarları Entitlements.plist Düzenleyicisi'ni kaynağı paneli eklenebilir. Gerekli anahtarlarla, kullanırken normalde aşağıda Entitlements.plist Düzenleyicisi ancak olan başvuru için listelenen eklenir.
 
-### <a name="wallet"></a>Wallet
+### <a name="wallet"></a>Cüzdan
 
 *   **Açıklama**: resmi olarak Passbook da bilinen Cüzdan depolar ve geçişleri yöneten bir uygulamadır. Bu geçiş, kredi kartı, depolama kartları, binme geçişleri veya biletleri olabilir.
 
@@ -119,7 +119,7 @@ Yetkilendirme anahtarları Entitlements.plist Düzenleyicisi'ni kaynağı paneli
     - **İcloud'a belge & CloudKit**
         - **Anahtarları**: com.apple.developer.ubiquity kapsayıcı tanımlayıcıları
         - **Dize**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
-    - **iCloud KeyValue Storage**
+    - **iCloud KeyValue depolama**
         - **Anahtar**: com.apple.developer.ubiquity kvstore tanımlayıcısı
         - **Dize**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
@@ -128,12 +128,15 @@ Yetkilendirme anahtarları Entitlements.plist Düzenleyicisi'ni kaynağı paneli
     - `$(CFBundleIdentifier)` Dize başlıyorsa `iCloud` ve iCloud kapsayıcı içindeki adımları göredir crated ayarlanır [özellikleriyle çalışma](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) Kılavuzu.
     - $`(TeamIdentifierPrefix)` Ve `$(CFBundleIdentifier)` yer tutucuları kullanılabilir ve doğru değerlerin için derleme zamanında değiştirilecektir.
 
+> [!IMPORTANT]
+> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nın genel veri koruma düzenleme (GDPR) düzgün bir şekilde işlemek geliştiricilere yardımcı olmak için.
+
 ### <a name="app-groups"></a>Uygulama grupları
 
 - **Açıklama**: farklı uygulamaları (veya bir uygulama ve uzantılarını) bir paylaşılan dosya depolama konumu erişmek bir uygulama grubu sağlar.
 
     - **Anahtar**: com.apple.security.application grupları
-    - **String**: group.$(CFBundleIdentifier)
+    - **Dize**: group.$(CFBundleIdentifier)
 
 <a name="apple-pay" />
 
@@ -151,18 +154,18 @@ Yetkilendirme anahtarları Entitlements.plist Düzenleyicisi'ni kaynağı paneli
 ### <a name="siri"></a>Siri
 
 - **Açıklama**: SiriKit, uygulama uzantıları, yeni hedefleri ve hedefleri UI kullanarak iOS cihazında Siri tarafından erişilebilen hizmetler sağlamak için bir iOS uygulaması ve haritalar uygulama sağlar çerçeveleri. Daha fazla bilgi için giriş SiriKit Kılavuzu'na bakın.
-    - **Key**: com.apple.developer.siri
+    - **Anahtar**: com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>Kişisel VPN
 
-- **Key**: com.apple.developer.networking.vpn.api
-- **String**: allow-vpn
+- **Anahtar**: com.apple.developer.networking.vpn.api
+- **Dize**: izin ver-vpn
 
 ### <a name="keychain-sharing"></a>Anahtarlık paylaşımı
 
 - **Açıklama**: Anahtarlık paylaşımı, uygulama geliştiriciler aynı ekibiniz tarafından geliştirilen diğer uygulamalarla depolanan aygıt Anahtarlıkta parolaları paylaşabilmesini sağlar. Anahtarlık erişim grubu tanımlayıcısı dizesi içinde geçirerek erişimi kısıtlanabilir.
     - **Anahtar**: Anahtarlık erişim grupları
-    - **String**: $(AppIdentifierPrefix) $(CFBundleIdentifier)
+    - **Dize**: $(appıdentifierprefix) $(CFBundleIdentifier)
 
 ### <a name="inter-app-audio"></a>Uygulamalar Arası Ses
 
@@ -173,25 +176,25 @@ Yetkilendirme anahtarları Entitlements.plist Düzenleyicisi'ni kaynağı paneli
 ### <a name="associated-domains"></a>İlişkili etki alanları
 
 - **Açıklama**: Evrensel bağlantıları bu yetkilendirme ile iletilmesi gereken şekilde, işlenmesi gereken etki alanları ilişkili. Evrensel bağlantılar, uygulama ve Web sitesi arasında bağlama derin izin vermek için uygulanabilir. Uygulama destekler ve her bir girdi ile başlaması gereken her etki alanı için bir girdi sağlanması `applinks:`
-    - **Key**: com.apple.developer.associated-domains
-    - **String**: webcredentials:example.com
+    - **Anahtar**: com.apple.developer.associated etki alanları
+    - **Dize**: webcredentials:example.com
 
 ### <a name="data-protection"></a>Veri koruma
 
 - **Açıklama**: veri korumayı etkinleştirmek yerleşik şifreleme donanımını şifrelenmiş biçimde uygulamanızda kullanılan hassas verileri depolamak için kullanır. Varsayılan olarak, koruma düzeyini (cihaz kilitli değil sonra dosyaları yalnızca erişilebilir olduğunda) koruma tamamlamak için ayarlanır.
-    - **Key**: com.apple.developer.default-data-protection
-    - **String**: NSFileProtectionComplete
+    - **Anahtar**: com.apple.developer.default veri koruması
+    - **Dize**: NSFileProtectionComplete
 
 ### <a name="homekit"></a>HomeKit
 
 - **Açıklama**: HomeKit framework yukarı, yapılandırma ayarı için bir platform sağlar ve desteklenen ev Otomasyon aygıtlardan – tüm iOS cihazı yönetme. HomeKit kullanma hakkında daha fazla bilgi için giriş HomeKit Kılavuzu'na bakın.
-    - **Key**: com.apple.developer.homekit
+    - **Anahtar**: com.apple.developer.homekit
     - **Boolean**: Evet
 
 ### <a name="healthkit"></a>HealthKit
 
 - **Açıklama**: HealthKit, sistem durumu ile ilgili bilgiler için merkezi, Eşgüdümlü ve güvenli veri deposu sağlayan iOS 8'de sunulan bir çerçevedir. HealthKit kullanma hakkında daha fazla bilgi için giriş HealthKit Kılavuzu'na bakın.
-    - **Key**: com.apple.developer.healthkit
+    - **Anahtar**: com.apple.developer.healthkit
     - **Boolean**: Evet
 
 ### <a name="wireless-accessory-configuration"></a>Kablosuz Aksesuar Yapılandırması

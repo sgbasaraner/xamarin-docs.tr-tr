@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 7e18bff7f32303cb0c5016e4ade4b39723921534
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e426423854e7c569576c374ea1284c4de099a2d1
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="icloud-capabilities"></a>iCloud özellikleri
 
@@ -21,14 +21,8 @@ iCloud içeriklerini depolamak ve cihazlar arasında paylaşmak için iOS kullan
 
 İCloud ekleme yeteneği uygulamaya diğer uygulama hizmetleri nedeniyle daha biraz daha zordur _kapsayıcıları_. Kapsayıcıları iCloud içinde bir uygulama için bilgileri depolamak ve – kullanıcının iOS cihazında korumalı alan gibi yinelenmeli için bir tek iCloud hesabıyla bulunan tüm bilgileri sağlamak için kullanılır. Kapsayıcıları hakkında daha fazla bilgi için başvurmak [CloudKit giriş](~/ios/data-cloud/intro-to-cloudkit.md) Kılavuzu.
 
-<!--# Xcode
-
-The steps in section [Adding App Services ](~/ios/deploy-test/provisioning/capabilities/index.md) above can be used to toggle the required iCloud capability. Depending on which means of storage is being used in your app, you may need to do additional setup. The image below shows the iCloud capabilities pane:
-
- ![iCloud Capability section](icloud-capabilities-images/image21.png)
-
-First select the required service. If iCloud Documents or CloudKit have been selected, you must select a container. Selecting the default container will create a new container that is unique to the app. Alternatively, if you have created a container either via Xcode or the developer portal, select it here.
--->
+> [!IMPORTANT]
+> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nın genel veri koruma düzenleme (GDPR) düzgün bir şekilde işlemek geliştiricilere yardımcı olmak için.
 
 <a name="icloud-developer-center" />
 

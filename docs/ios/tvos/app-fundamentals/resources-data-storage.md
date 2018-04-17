@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b4d96ef50498b454da583a955169b9d51c29dd01
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8103dcc1c2e1e8c2375a86d51580b1ea3fcce432
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="resources-and-data-storage"></a>Kaynakları ve veri depolama
 
@@ -55,6 +55,9 @@ Sonuç olarak, Xamarin.tvOS uygulamanız tüm kullanıcı verilerini bir iCloud 
 
 - **iCloud anahtar-değer depolama (KVS)** - küçük parça bilgi (1 MB'tan az) uygulamanız gerekebilir olduğunu (kullanıcı tercihleri gibi), iCloud KVS depolama kullanabilir. iCloud KVS verileri otomatik olarak Bulut ve tüm aynı uygulamayı çalıştıran kullanıcının cihazlarını eşitlenmedi. Daha fazla bilgi için lütfen bkz [anahtar-değer depolama](~/ios/data-cloud/introduction-to-icloud.md) bölümünü bizim [icloud giriş](~/ios/data-cloud/introduction-to-icloud.md) belge veya Apple'nın [içinde iCloud için anahtar-değer verileri tasarlama](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForKey-ValueDataIniCloud.html#//apple_ref/doc/uid/TP40012094-CH7) belgeler.
 - **CloudKit** - için Apple'nın CloudKit Framework büyük parça bilgi (1 MB'tan fazla), depolama kullanın. İCloud KVS depolama CloudKit veri uygulamanızı (yanı sıra tek bir kullanıcıya özel) tüm kullanıcıları arasında paylaşılabilir. Daha fazla bilgi formunda, lütfen bakın bizim [CloudKit giriş](~/ios/data-cloud/intro-to-cloudkit.md) belgelerine veya Apple'nın [CloudKit Hızlı Başlangıç](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987).
+
+> [!IMPORTANT]
+> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nın genel veri koruma düzenleme (GDPR) düzgün bir şekilde işlemek geliştiricilere yardımcı olmak için.
 
 <a name="On-Demand-Resources" />
 

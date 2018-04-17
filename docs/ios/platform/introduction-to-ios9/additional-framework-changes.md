@@ -6,17 +6,17 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5561cccfd0968c309526aae1e5dc90831ca681b4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0ae286ddbc61f48cbdd257dc453a2d9680bba703
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Ek iOS 9 çerçeveleri değişiklikleri
 
 _Bu makalede, ek, küçük değişiklikler veya iOS 9 varolan çerçeveyi geliştirmeler kapsar._
 
-[![](additional-framework-changes-images/ios9-sml.png "iOS 9 Logo")](additional-framework-changes-images/ios9.png#lightbox)
+[![](additional-framework-changes-images/ios9-sml.png "iOS 9 logosu")](additional-framework-changes-images/ios9.png#lightbox)
 
 İOS için önemli değişiklikler yanı sıra Apple iOS 9 değişikliklerini ve birkaç varolan çerçeveleri geliştirmeleri yaptı.
 
@@ -64,6 +64,9 @@ Daha fazla bilgi için lütfen aşağıdaki belgelere bakın:
 - [CloudKit JS başvuru](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359) -Apple CloudKit JS belgeleri.
 - [CloudKit Web Hizmetleri başvurusu](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240) -CloudKit HTTP arabirimine açıklar Apple'nın başvuru.
 - [CloudKit Kataloğu: Giriş CloudKit (Cocoa ve JavaScript)](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) -CloudKit ve CloudKit JS kullanarak Apple'nın örnek uygulaması.
+
+> [!IMPORTANT]
+> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nın genel veri koruma düzenleme (GDPR) düzgün bir şekilde işlemek geliştiricilere yardımcı olmak için.
 
 ## <a name="foundation-framework-additions"></a>Foundation Framework eklemeler
 
@@ -138,7 +141,7 @@ Aşağıdaki değişiklikler yapılmıştır [LAContext](https://developer.xamar
 - **TouchIdAuthenticationMaximumAllowableReuseDuration** - Returns the maximum amount of time that a touch ID authentication can be reused.
 - **EvaluatedPolicyDomainState** - alır veya hesaplanan bir ilke durumunu ayarlar.
 - **MaxBiometryFailures** -iOS 9 amorti.
-- **TouchIdAuthenticationAllowableReuseDuration** Gets or sets the amount of time that a touch ID authentication can be reused.
+- **TouchIdAuthenticationAllowableReuseDuration** alır veya touch ID kimlik doğrulama yeniden kullanılabilir süre miktarını ayarlar.
 - **EvaluateAccessControl** - zaman uyumsuz olarak bir kimlik doğrulama ilkesini değerlendirir.
 - **Geçersiz** -verilen touch ID kimlik doğrulama geçersiz kılar.
 - **IsCredentialSet** -döndürür `true` kimlik bilgileri şu anda ayarlarsanız.

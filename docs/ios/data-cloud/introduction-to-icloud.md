@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: c9e7c920855d2002f52d05e28c5225f301cd62b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a62d4621a8f3ace64401d64e35c806317a591c03
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="icloud"></a>iCloud
 
@@ -30,6 +30,9 @@ Dört depolama türleri kullanılabilir:
 - **Tek tek dosyalar ve dizinler** - çok sayıda farklı dosya doğrudan dosya sistemini de yönetmek için.
 
 Bu belge - anahtar-değer çiftleri ve UIDocument sınıfları - ilk iki türleri ve Xamarin.iOS içinde bu özellikleri kullanmak nasıl anlatılmaktadır.
+
+> [!IMPORTANT]
+> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nın genel veri koruma düzenleme (GDPR) düzgün bir şekilde işlemek geliştiricilere yardımcı olmak için.
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -437,4 +440,4 @@ Son olarak nasıl İcloud'a yedekleme eklenmesi uygulama tasarımınızı etkile
 - [iCloud Semineri örnek kod](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
 - [iCloud Semineri slayt](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
 - [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
-- [iCloud Storage](http://support.apple.com/kb/HT4847)
+- [iCloud depolama](http://support.apple.com/kb/HT4847)

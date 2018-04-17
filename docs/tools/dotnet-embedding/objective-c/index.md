@@ -6,17 +6,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 74d62121e9c99061c118f3ab85c27328ca950b9d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 66ba31b1054559516fdbfbeb0421a82f4a0e9fa5
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="objective-c-support"></a>Objective-C desteği
 
 ## <a name="specific-features"></a>Belirli özellikler
 
-ObjC nesil belirtmeye değer olan birkaç, özel bir özelliğe sahiptir.
+Objective-C nesil belirtmeye değer olan birkaç özelliklere sahiptir.
 
 ### <a name="automatic-reference-counting"></a>Otomatik başvuru sayımı
 
@@ -24,76 +24,79 @@ Otomatik başvuru sayım (ARC) kullanılmasıdır **gerekli** oluşturulan bağl
 
 ### <a name="nsstring-support"></a>NSString desteği
 
-Kullanıma API'leri `System.String` türleri uygulamasına dönüştürülür `NSString`. Bu bellek yönetimi postalarla daha kolay hale getirir `char*`.
+Kullanıma API'leri `System.String` türleri uygulamasına dönüştürülür `NSString`. Bu bellek yönetimi ile zaman ilgilenme daha kolay hale getirir `char*`.
 
 ### <a name="protocols-support"></a>Protokolleri destekler
 
-Yönetilen arabirimleri, tüm üyeleri nerede ObjC protokollere dönüştürülür `@required`.
+Yönetilen arabirimleri, tüm üyeleri nerede Objective-C protokollere dönüştürülür `@required`.
 
 ### <a name="nsobject-protocol-support"></a>NSObject protokol desteği
 
-Varsayılan olarak varsayılan karma olan varsayıyoruz ve eşitlik hem .net hem de ObjC çalışma zamanı, ince ve birbirinin yerine çok benzer bir semantik paylaştıkları gibi.
+Varsayılan olarak, varsayılan karma ve eşitlik hem .NET hem de Objective-C çalışma zamanı benzer bir semantik paylaşımı şeklinde birbirinin yerine, olarak kabul edilir.
 
-Ne zaman bir yönetilen türü geçersiz kılmaları `Equals(Object)` veya `GetHashCode` genellikle defaut (.NET) davranışa en iyisi değil demektir. Varsayılan Objective-C davranışa ya da olacağı kabul edilebilir.
+Ne zaman bir yönetilen türü geçersiz kılar `Equals(Object)` veya `GetHashCode`, genellikle varsayılan (.NET) davranış yeterli değil demektir; bu varsayılan Objective-C davranışı olasıdır gelir yeterli ya da.
 
-Böyle durumda Oluşturucu geçersiz kılmaları [ `isEqual:` ](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418795-isequal?language=objc) yöntemi ve [ `hash` ](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418859-hash?language=objc) tanımlanan özelliği [ `NSObject` Protokolü](https://developer.apple.com/reference/objectivec/1418956-nsobject?language=objc). Bu ObjC koddan saydam olarak kullanılmak üzere özel yönetilen uygulama sağlar.
+Böyle durumlarda, oluşturucu geçersiz kılmaları [ `isEqual:` ](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418795-isequal?language=objc) yöntemi ve [ `hash` ](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418859-hash?language=objc) tanımlanan özelliği [ `NSObject` Protokolü](https://developer.apple.com/reference/objectivec/1418956-nsobject?language=objc). Bu, Objective-C kodunu saydam olarak kullanılmak üzere özel yönetilen uygulama sağlar.
+
+### <a name="exceptions-support"></a>Özel durumlar desteği
+
+Geçirme `--nativeexception` bağımsız değişken olarak `objcgen` yönetilen özel durumlar yakalanan ve işlenen Objective-C özel durumlar dönüştürür. 
 
 ### <a name="comparison"></a>Karşılaştırma
 
-Yönetilen uygulama türleri `IComparable` veya genel sürümü `IComparable<T>` döndürür ObjC kolay yöntemleri oluşturacak bir `NSComparisonResult` ve kabul bir `nil` bağımsız değişkeni. Bu API ObjC geliştiriciler, daha kolay örneğin sağlar
+Yönetilen uygulama türleri `IComparable` (veya genel sürümünün `IComparable<T>`) döndüren Objective-C kolay yöntemler oluşturacak bir `NSComparisonResult` ve kabul bir `nil` bağımsız değişkeni. Bu API Objective-C geliştiriciler için daha kolay hale getirir. Örneğin:
 
-```csharp
+```objc
 - (NSComparisonResult)compare:(XAMComparableType * _Nullable)other;
 ```
 
 ### <a name="categories"></a>Kategoriler
 
-Yönetilen Uzantılar yöntemleri kategoriye dönüştürülür. Örneğin aşağıdaki genişletme yöntemleri üzerinde `Collection`:
+Yönetilen Uzantılar yöntemleri kategoriye dönüştürülür. Örneğin, aşağıdaki genişletme yöntemleri üzerinde `Collection`:
 
 ```csharp
-    public static class SomeExtensions {
-
-        public static int CountNonNull (this Collection collection) { ... }
-
-        public static int CountNull (this Collection collection) { ... }
-    }
+public static class SomeExtensions {
+    public static int CountNonNull (this Collection collection) { ... }
+    public static int CountNull (this Collection collection) { ... }
+}
 ```
 
 Bunun gibi bir Objective-C kategorisi oluşturacak:
 
-```csharp
+```objc
 @interface Collection (SomeExtensions)
 
 - (int)countNonNull;
 - (int)countNull;
+
 @end
 ```
 
-Tek bir yönetilen türü birden çok Objective-C kategori oluşturulan sonra çeşitli türleri genişletir.
+Tek bir yönetilen türü çeşitli türleri genişletir, birden çok Objective-C kategori üretilir.
 
 ### <a name="subscripting"></a>Alt Simge Oluşturma
 
 Yönetilen Dizinli Özellikler nesne alt simge oluşturma uygulamasına dönüştürülür. Örneğin:
 
 ```csharp
-    public bool this[int index] {
-        get { return c[index]; }
-        set { c[index] = value; }
-    }
+public bool this[int index] {
+    get { return c[index]; }
+    set { c[index] = value; }
+}
 ```
 
 Objective-C benzer oluşturacak:
 
-```csharp
+```objc
 - (id)objectAtIndexedSubscript:(int)idx;
 - (void)setObject:(id)obj atIndexedSubscript:(int)idx;
 ```
 
 hangi Objective-C subscripting sözdizimi kullanılabilir:
 
-```csharp
-    if ([intCollection [0] isEqual:@42])
-        intCollection[0] = @13;
+```objc
+if ([intCollection [0] isEqual:@42])
+    intCollection[0] = @13;
 ```
 
 Dizin türüne bağlı olarak, uygun olan yerlerde dizinlenmiş veya anahtarlı alt simge oluşturma oluşturulur.
@@ -104,13 +107,13 @@ Bu [makale](http://nshipster.com/object-subscripting/) alt simge oluşturma içi
 
 ### <a name="constructors-vs-initializers"></a>Oluşturucular vs başlatıcıları
 
-Kullanılamaz (NS_UNAVAILABLE) işaretlenmemişse Objective-C, başlatıcı hiçbirini herhangi bir üst sınıf devralma zincirinde prototipleri çağırabilirsiniz.
+Kullanılamaz olarak işaretlendiğinden sürece Objective-C, başlatıcı hiçbirini herhangi bir üst sınıf devralma zincirinde prototipleri çağırabilirsiniz (`NS_UNAVAILABLE`).
 
-C# ' ta, açıkça Oluşturucusu üyesi bir sınıf içinde bildirmeniz gerekir, bu oluşturucular devralınmaz anlamına gelir.
+C# ' ta Oluşturucusu üyesi oluşturucular devralınmaz anlamına gelir bir sınıf içinde açıkça bildirilmelidir.
 
-C# API Objective-C için doğru gösterimini kullanıma sunmak için eklediğimiz `NS_UNAVAILABLE` üst sınıfı'ndan alt sınıfında mevcut değil Başlatıcısı için.
+Objective-C, C# API'si sağ gösterimini kullanıma sunmak için `NS_UNAVAILABLE` üst sınıfı'ndan alt sınıfında mevcut değil Başlatıcı eklenir.
 
-C# API:
+C# API'Sİ:
 
 ```csharp
 public class Unique {
@@ -132,7 +135,7 @@ public class SuperUnique : Unique {
 
 Objective-C API ortaya:
 
-```objectivec
+```objc
 @interface SuperUnique : Unique
 
 - (instancetype)initWithId:(int)id NS_UNAVAILABLE;
@@ -141,89 +144,106 @@ Objective-C API ortaya:
 @end
 ```
 
-Burada görebiliriz `initWithId:` kullanılamaz olarak işaretlenmiş.
+Burada, `initWithId:` kullanılamaz olarak işaretlenmiş.
 
 ### <a name="operator"></a>İşleç
 
-ObjC işleci desteklemediği C# yaptığı gibi işleçleri sınıf seçici dönüştürülür için aşırı yükleme:
+Objective-C işleci desteklemediği C# yaptığı gibi işleçleri sınıf seçici dönüştürülür için aşırı yükleme:
 
 ```csharp
-    public static AllOperators operator + (AllOperators c1, AllOperators c2)
-    {
-        return new AllOperators (c1.Value + c2.Value);
-    }
+public static AllOperators operator + (AllOperators c1, AllOperators c2)
+{
+    return new AllOperators (c1.Value + c2.Value);
+}
 ```
 
 to
 
-```csharp
+```objc
 + (instancetype)add:(Overloads_AllOperators *)anObjectC1 c2:(Overloads_AllOperators *)anObjectC2;
 ```
 
-De dahil yaygın şekilde ancak, bazı .NET dillerini İşleç aşırı yüklemesi, desteklemeyen bir ["kolay"](https://msdn.microsoft.com/en-us/library/ms229032(v=vs.110).aspx) yöntemi işleci aşırı yanı sıra adlı.
+De dahil yaygın şekilde ancak, bazı .NET dillerini İşleç aşırı yüklemesi, desteklemeyen bir ["kolay"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) yöntemi işleci aşırı yanı sıra adlı.
 
-İşleç sürümü ve "kolay" sürümü bulunursa, yalnızca kolay sürüm oluşturulmayacak, aynı objective-c adına oluşturacak şekilde.
+İşleç sürümü ve "kolay" sürümü bulunursa, yalnızca kolay sürüm oluşturulmayacak, aynı Objective-C adına oluşturacak şekilde.
 
 ```csharp
-    public static AllOperatorsWithFriendly operator + (AllOperatorsWithFriendly c1, AllOperatorsWithFriendly c2)
-    {
-        return new AllOperatorsWithFriendly (c1.Value + c2.Value);
-    }
+public static AllOperatorsWithFriendly operator + (AllOperatorsWithFriendly c1, AllOperatorsWithFriendly c2)
+{
+    return new AllOperatorsWithFriendly (c1.Value + c2.Value);
+}
 
-    public static AllOperatorsWithFriendly Add (AllOperatorsWithFriendly c1, AllOperatorsWithFriendly c2)
-    {
-        return new AllOperatorsWithFriendly (c1.Value + c2.Value);
-    }
+public static AllOperatorsWithFriendly Add (AllOperatorsWithFriendly c1, AllOperatorsWithFriendly c2)
+{
+    return new AllOperatorsWithFriendly (c1.Value + c2.Value);
+}
 ```
 
 Olur:
 
-```csharp
+```objc
 + (instancetype)add:(Overloads_AllOperatorsWithFriendly *)anObjectC1 c2:(Overloads_AllOperatorsWithFriendly *)anObjectC2;
 ```
 
 ### <a name="equality-operator"></a>Eşitlik işleci
 
-İçinde genel işlecinde == C# bir genel operatör olarak belirtilenlerle yukarıdaki işlenir.
+Genel işlecinde `==` C# ' ta yukarıda da belirtildiği gibi işleci genel işlenir.
 
-Ancak, "kolay" eşittir işleci bulunması durumunda, her iki işleç == ve işleci! = oluşturma atlandı.
+Ancak, "kolay" eşittir işleci bulunması durumunda, her iki işleç `==` and işleci `!=` oluşturma atlanacak.
 
 ### <a name="datetime-vs-nsdate"></a>DateTime vs NSDate
 
-Gelen [NSDate'nın](https://developer.apple.com/reference/foundation/nsdate?language=objc) belgeleri:
+Gelen [ `NSDate` ](https://developer.apple.com/reference/foundation/nsdate?language=objc) belgeleri:
 
-> NSDate nesneleri tek bir nokta, zaman içindeki herhangi belirli calendrical sistem veya saat dilimi bağımsız kapsüller. Date nesneleri temsil eden bir sabit zaman aralığı bir mutlak başvuru tarihi göre değişmez (00:1 Ocak 2001 00:00 UTC).
+> `NSDate` nesnelerin tek bir nokta, zaman içindeki herhangi belirli calendrical sistem veya saat dilimi bağımsız kapsüller. Date nesneleri temsil eden bir sabit zaman aralığı bir mutlak başvuru tarihi göre değişmez (00:1 Ocak 2001 00:00 UTC).
 
 Nedeniyle `NSDate` başvuru tarih, onu arasındaki tüm dönüştürmeler ve `DateTime` UTC olarak yapılmalıdır.
 
 #### <a name="datetime-to-nsdate"></a>DateTime NSDate için
 
-Dönüştürme zaman `DateTime` için `NSDate` DateTime's `Kind` özelliğini dikkate alınır.
+Dönüştürme zaman `DateTime` için `NSDate`, `Kind` özellikte `DateTime` dikkate alınır:
 
-|türü|Sonuçları                                                                                            |
+|türü|Sonuçları|
 |---|---|
-|UTC|Dönüştürme, sağlanan kullanarak gerçekleştirilir `DateTime` nesnesi olarak.|
-|Yerel|Arama sonucu `ToUniversalTime()` sağlanan içinde `DateTime` nesnesi, dönüştürme için kullanılır.|
-|Belirtilmemiş|Sağlanan `DateTime` nesne olduğu varsayılır UTC, böylece aynı davranışı türü Utc ==.|
+|`Utc`|Dönüştürme, sağlanan kullanarak gerçekleştirilir `DateTime` nesnesi olarak.|
+|`Local`|Arama sonucu `ToUniversalTime()` sağlanan içinde `DateTime` nesnesi, dönüştürme için kullanılır.|
+|`Unspecified`|Sağlanan `DateTime` nesne olduğu varsayılır, böylece aynı davranışı UTC zaman `Kind` olan `Utc`.|
 
-Dönüştürme, aşağıdaki formül kullanılarak yapılır:
+Dönüştürme, aşağıdaki formülü kullanır:
 
-> [!NOTE]
-> **TimeInterval** DateTimeObjectTicks - NSDateReferenceDateTicks [dt] = / [TicksPerSecond](https://msdn.microsoft.com/en-us/library/system.timespan.tickspersecond(v=vs.110).aspx)
+```
+TimeInterval = DateTimeObjectTicks - NSDateReferenceDateTicks / TicksPerSecond
+```
 
-Biz TimeInterval sonra NSDate'nın kullanırız [dateWithTimeIntervalSinceReferenceDate:](https://developer.apple.com/reference/foundation/nsdate/1591577-datewithtimeintervalsincereferen?language=objc) Seçici oluşturun.
+Bu formülde: 
+
+- `NSDateReferenceDateTicks` temel alınarak hesaplanır `NSDate` başvuru 00:00:00 UTC tarihi 1 Ocak 2001: 
+    ```csharp
+    new DateTime (year:2001, month:1, day:1, hour:0, minute:0, second:0, kind:DateTimeKind.Utc).Ticks;
+    ```
+- [`TicksPerSecond`](https://docs.microsoft.com/dotnet/api/system.timespan.tickspersecond) üzerinde tanımlanan [`TimeSpan`](https://docs.microsoft.com/dotnet/api/system.timespan)
+
+Oluşturmak için `NSDate` nesnesi `TimeInterval` ile kullanılan `NSDate` [dateWithTimeIntervalSinceReferenceDate:](https://developer.apple.com/reference/foundation/nsdate/1591577-datewithtimeintervalsincereferen?language=objc) Seçici.
 
 #### <a name="nsdate-to-datetime"></a>DateTime değerine NSDate
 
-Bir NSDate alma biz varsayıyoruz DateTime NSDate giderek başvuru tarihi olan örneğidir **1 Ocak 2001 00:00:00 UTC** ve aşağıdaki formülü kullanın:
+Dönüştürme işlemi `NSDate` için `DateTime` aşağıdaki formülü kullanır:
+
+```
+DateTimeTicks = NSDateTimeIntervalSinceReferenceDate * TicksPerSecond + NSDateReferenceDateTicks
+```
+
+Bu formülde: 
+
+- `NSDateReferenceDateTicks` temel alınarak hesaplanır `NSDate` başvuru 00:00:00 UTC tarihi 1 Ocak 2001: 
+    ```csharp
+    new DateTime (year:2001, month:1, day:1, hour:0, minute:0, second:0, kind:DateTimeKind.Utc).Ticks;
+    ```
+- [`TicksPerSecond`](https://docs.microsoft.com/dotnet/api/system.timespan.tickspersecond) üzerinde tanımlanan [`TimeSpan`](https://docs.microsoft.com/dotnet/api/system.timespan)
+
+Hesaplandıktan sonra `DateTimeTicks`, `DateTime` [Oluşturucusu](https://docs.microsoft.com/dotnet/api/system.datetime.-ctor?#System_DateTime__ctor_System_Int64_System_DateTimeKind_) , ayarı çağrılır kendi `kind` için `DateTimeKind.Utc`.
 
 > [!NOTE]
-> **DateTimeTicks** = NSDateTimeIntervalSinceReferenceDate * [TicksPerSecond](https://msdn.microsoft.com/en-us/library/system.timespan.tickspersecond(v=vs.110).aspx) + NSDateReferenceDateTicks[dt]
+> `NSDate` olabilir `nil`, ancak bir `DateTime` okunamayan tanımı tarafından .NET içindeki bir yapı `null`. Size, bir `nil` `NSDate`, varsayılan çevrilir `DateTime` eşlendiği değeri `DateTime.MinValue`.
 
-Biz hesaplanan sonra **DateTimeTicks** aşağıdaki DateTime kullanırız [Oluşturucusu](https://msdn.microsoft.com/en-us/library/w0d47c9c(v=vs.110).aspx) ayarı kendi `kind` için `DateTimeKind.Utc`.
-
-Farkında olması gereken bazı noktalar vardır, NSDate olabilir `nil` ancak bir DateTime .NET yapıda ve tanım gereği, olamaz `null`. Size, bir `nil` NSDate biz Çevir onu eşleştiren varsayılan DateTime değerine `DateTime.MinValue`.
-
-MinValue ve MaxValue ayrıca farklı, büyük veya daha düşük bir değer verdiğinizde, DateTime türüne ait ayarlarız şekilde NSDate DateTime'nın daha büyük ve alt sınırları destekleyebilmesi [MaxValue](https://msdn.microsoft.com/en-us/library/system.datetime.maxvalue(v=vs.110).aspx) veya [MinValue](https://msdn.microsoft.com/en-us/library/system.datetime.minvalue(v=vs.110).aspx) sırasıyla.
-
-**dt**: NSDate başvuru tarihi **1 Ocak 2001 00:00:00 UTC** => `new DateTime (year:2001, month:1, day:1, hour:0, minute:0, second:0, kind:DateTimeKind.Utc).Ticks;`
+`NSDate` daha yüksek bir maksimum ve daha düşük bir minimum değer destekleyen `DateTime`. Dönüştürme zaman `NSDate` için `DateTime`, bu daha yüksek ve düşük değerler dönüştürülen `DateTime` [MaxValue](https://docs.microsoft.com/dotnet/api/system.datetime.maxvalue) veya [MinValue](https://docs.microsoft.com/dotnet/api/system.datetime.minvalue)sırasıyla.

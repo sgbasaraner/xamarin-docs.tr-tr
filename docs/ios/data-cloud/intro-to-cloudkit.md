@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 33ceff4549e4afbb1e5fecf3bd380fdb9a3df5f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4765b91bdc1f64be7e2ea67622db7af8634f1347
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -20,6 +20,9 @@ _iCloud API'leri bir kullanıcı hesabı otomatik eşitleme için desteğiyle iC
 CloudKit framework bu erişim iCloud uygulamaların geliştirilmesini kolaylaştırır. Bu, uygulama verilerini ve varlık hakları yanı sıra uygulama bilgilerini güvenli bir şekilde erişebildiklerinden alınmasını içerir. Bu paketi kişisel bilgi paylaşımı olmadan kullanıcıların iCloud kimlikleri ile uygulamalara erişim sağlayarak kullanıcılara anonim bir katman sağlar.
 
 Geliştiriciler, istemci-tarafı uygulamalarını odaklanmanıza ve sunucu tarafı uygulama mantığı yazmak gereğini ortadan iCloud izin verin. CloudKit kimlik doğrulaması, özel ve ortak veritabanları ve yapılandırılmış veri ve varlık depolama hizmetleri sağlar.
+
+> [!IMPORTANT]
+> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nın genel veri koruma düzenleme (GDPR) düzgün bir şekilde işlemek geliştiricilere yardımcı olmak için.
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -276,7 +279,7 @@ newRecord ["name"] = asset;
 
 Biz şimdi tüm CloudKit temel nesnelerinde kapsamına. Kapsayıcı uygulamaları ilişkili ve veritabanlarını içerir. Veritabanlarını kayıt bölgelere gruplandırılmış ve kayıt tanımlayıcılarla işaret kayıtları içerir. Üst-alt ilişkisi başvurular kullanarak kayıtları arasında tanımlanır. Son olarak, büyük dosyaları karşıya ve varlıkları kullanarak kayıtları için ilişkili.
 
-## <a name="cloudkit-convenience-api"></a>CloudKit Convenience API
+## <a name="cloudkit-convenience-api"></a>CloudKit kolaylık API
 
 Apple CloudKit ile çalışmak için iki farklı API kümesi sunar:
 
@@ -881,6 +884,6 @@ Bu makalede CloudKit API giriş kapsamına. Sağlama ve CloudKit kullanmak için
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [CloudKitAtlas (sample)](https://developer.xamarin.com/samples/monotouch/ios8/CloudKitAtlas/)
+- [CloudKitAtlas (örnek)](https://developer.xamarin.com/samples/monotouch/ios8/CloudKitAtlas/)
 - [iOS 8’e Giriş](~/ios/platform/introduction-to-ios8.md)
 - [Bir sağlama profili oluşturma](~/ios/get-started/installation/device-provisioning/index.md)

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: e9738a766762dd64cdfbb034d4eaa54f76aca311
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 703441e3fc58beeb33e519f3781387a59c1c1cef
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="understanding-the-sample"></a>Örnek anlama
 
@@ -86,7 +86,7 @@ Web hizmeti işlemleri yoluyla erişilir `TodoItemManager` üzerinden sınıfı 
 
 Ayrıca, bazı örnek uygulamaları ek yöntemleri içeren `TodoItemManager` kullanıcı kimlik doğrulaması işlemini yönetmek için kullanılan sınıf.
 
-Web hizmeti işlemleri doğrudan çağırmak yerine `TodoItemManager` yöntemleri çağırma içine eklenen bağımlı bir sınıfı yöntemleri `TodoItemManager` Oluşturucusu. Örneğin, bir örnek uygulama yerleştirir `SimpleDBStorage` içine sınıf `TodoItemManager` Amazon'ın SimpleDB Hizmeti'ne karşı işlemlerini çağıran bir uygulama sağlamak için Oluşturucusu.
+Web hizmeti işlemleri doğrudan çağırmak yerine `TodoItemManager` yöntemleri çağırma içine eklenen bağımlı bir sınıfı yöntemleri `TodoItemManager` Oluşturucusu. Örneğin, bir örnek uygulama yerleştirir `RestService` içine sınıf `TodoItemManager` verilere erişmek için REST API'lerini kullanan bir uygulama sağlamak için Oluşturucusu.
 
 ### <a name="translating-text-to-speech"></a>Metin okuma çevirme
 
@@ -113,4 +113,3 @@ Bu konuda farklı web Hizmetleri ile iletişim kurma göstermek için kullanıla
 - [WCF sürüm (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF)
 - [REST sürüm (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
 - [Azure sürümü (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzure)
-- [Amazon Web Services sürüm (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWS)

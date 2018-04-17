@@ -5,15 +5,14 @@ ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: d4ad9dde4004440985ff247d2f986ede385f981f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/13/2018
+ms.openlocfilehash: 086576ea7d806bb0768fbe4563df7fca99244ccb
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="fonts"></a>Yazı Tipleri
-
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -41,7 +40,7 @@ Android desteği kitaplığı v26 yazı tipi API düzeyine 26 backport desteği 
             app:fontStyle="normal" 
             app:fontWeight="400" />
 
-</font-family>    
+</font-family>
 ```
 
 Yazı tipleri düzgün bir şekilde bir Android uygulamasına sağlanan sürece, bunlar bir UI pencere öğesi ayarlayarak uygulanabilir [ `fontFamily` özniteliği](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily). Örneğin, aşağıdaki kod parçacığını bir yazı tipi kutusu TextView içinde görüntülemek nasıl gösterir:
@@ -49,8 +48,8 @@ Yazı tipleri düzgün bir şekilde bir Android uygulamasına sağlanan sürece,
 ```xml
 <TextView
     android:text="The quick brown fox jumped over the lazy dog."
-    android:fontFamily="@font/caveat_bold"
-    app:fontFamily="@font/caveat_bold"
+    android:fontFamily="@font/sourcesanspro_regular"
+    app:fontFamily="@font/sourcesanspro_regular"
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
@@ -58,14 +57,12 @@ Yazı tipleri düzgün bir şekilde bir Android uygulamasına sağlanan sürece,
 
 Bu kılavuzda ilk yazı tiplerini Android bir kaynak olarak kullanmak üzere nasıl ele almaktadır ve çalışma zamanında yazı tiplerini yüklemek nasıl tartışmak taşıyın.
 
-
 ## <a name="fonts-as-a-resource"></a>Bir kaynak olarak yazı tipleri
 
 Bir Android APK bir yazı tipi paketleme, her zaman kullanılabilir olmasını sağlar. Yazı tipi dosyası (ya da bir. Fot adı veya bir. OTF dosyası) bir alt dizinindeki dosyaları kopyalayarak bir Xamarin.Android uygulaması gibi diğer herhangi bir kaynağa eklenir **kaynakları** bir Xamarin.Android projesi klasörü. Yazı tipleri kaynakları saklanır bir **yazı tipi** , alt dizin **kaynakları** projenin klasör. 
 
-
 > [!NOTE]
->  Yazı tipleri olmalıdır bir **yapı eylemi** , **AndroidResource** veya bunların son APK da paketlenmiş değil. Yapı eyleminin IDE tarafından otomatik olarak ayarlanması gerekir.
+> Yazı tipleri olmalıdır bir **yapı eylemi** , **AndroidResource** veya bunların son APK da paketlenmiş değil. Yapı eyleminin IDE tarafından otomatik olarak ayarlanması gerekir.
 
 Pek çok benzer yazı tipi dosyaları (örneğin, aynı yazı tipiyle farklı ağırlıkları veya stiller) olduğunda bir yazı tipi ailesi gruplandırmak mümkündür.
 
@@ -75,7 +72,7 @@ Pek çok benzer yazı tipi dosyaları (örneğin, aynı yazı tipiyle farklı a�
 
 Yazı tipi ailesi, farklı ağırlıkları ve stiller sahip yazı tiplerini kümesidir. Örneğin, kalın veya Yatık yazı tipi için ayrı yazı tipi dosyaları olabilir. Yazı tipi ailesi tarafından tanımlanan `font` tutulan bir XML dosyası öğelerinde **kaynakları/yazı tipi** dizin. Her yazı tipi ailesi kendi XML dosyası olmalıdır.
 
-Oluşturmak için bir yazı tipi ailesi ilk için tüm yazı tipi eklemek **kaynakları/yazı tipi** klasör. Ardından yazı tipi ailesi için yazı tipi klasöründe yeni bir XML dosyası oluşturun. Bu XML dosyasını bir kök sahip `font-family` içeren bir veya daha fazla öğe `font` öğeleri. Her `font` öğesi bir yazı tipi özniteliklerini bildirir. 
+Oluşturmak için bir yazı tipi ailesi ilk için tüm yazı tipi eklemek **kaynakları/yazı tipi** klasör. Ardından yazı tipi ailesi için yazı tipi klasöründe yeni bir XML dosyası oluşturun. XML dosyasının adı, başvurulan yazı tipleri herhangi bir benzeşim veya ilişki sahiptir; Kaynak dosyanın herhangi bir yasal Android kaynak dosya adı olabilir. Bu XML dosyasını bir kök sahip `font-family` içeren bir veya daha fazla öğe `font` öğeleri. Her `font` öğesi bir yazı tipi özniteliklerini bildirir.
 
 Aşağıdaki XML bir yazı tipi ailesi örneğidir _kaynakları Sans Pro_ birçok farklı yazı tipi ağırlıkları tanımlar yazı tipi. Bu dosya olarak kaydedilir **kaynakları/yazı tipi** adlı klasörü **sourcesanspro.xml**:
 
@@ -86,7 +83,7 @@ Aşağıdaki XML bir yazı tipi ailesi örneğidir _kaynakları Sans Pro_ birço
     <font android:font="@font/sourcesanspro_regular" 
           android:fontStyle="normal" 
           android:fontWeight="400"
-          app:font="@font/sourcesanspro_" 
+          app:font="@font/sourcesanspro_regular" 
           app:fontStyle="normal" 
           app:fontWeight="400" />
     <font android:font="@font/sourcesanspro_bold" 
@@ -136,7 +133,6 @@ Yazı tipi ailesi tanımlandıktan sonra bu bildirimli olarak ayarlayarak kullan
     />
 ```
 
-
 ### <a name="programmatically-assigning-fonts"></a>Program aracılığıyla yazı tiplerini atama
 
 Yazı tipleri program aracılığıyla ayarlanabilir kullanarak [ `Resources.GetFont` ](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int)) alma yöntemi bir [ `Typeface` ](https://developer.android.com/reference/android/graphics/Typeface.html) nesnesi. Çok sayıda görünümleri olan bir `TypeFace` pencere öğesi için yazı tipi atamak için kullanılan özellik. Bu kod parçacığını programlı olarak yazı tipi kutusu TextView üzerinde nasıl ayarlanacağı gösterir:
@@ -154,14 +150,13 @@ var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceSt
 textView1.Typeface = typeface;
 ```
 
-
 ## <a name="downloading-fonts"></a>Yazı tipleri indirme
 
 Uygulama kaynağı olarak paketleme yazı tipleri yerine, Android, bir uzak kaynaktan yazı tipleri yükleyebilirsiniz. Bu APK boyutunu azaltma arzu etkisi olmaz. 
 
 Yazı tipleri Yardımı ile yüklenen bir _yazı tipi sağlayıcısı_. Karşıdan yükleme ve yazı tipleri cihazda tüm uygulamalar için önbelleğe almayı yönetir özel bir içerik sağlayıcı budur. Android 8.0 içeren gelen yazı tiplerini yüklemek için bir yazı tipi sağlayıcısı [Google yazı tipi depo](http://fonts.google.com). Bu varsayılan yazı tipi Itanium tabanlı sistemler için API Düzey 14 Android destek kitaplığı v26 ile backported sağlayıcısıdır.
- 
- Bir uygulama için bir yazı tipi istekte bulunduğunda, yazı tipi sağlayıcısı ilk yazı tipi zaten aygıtta olup olmadığını kontrol eder. Aksi durumda, ardından yazı tipi indirmeyi dener. İndirilen, ardından Android yazı olamaz, varsayılan sistem yazı tipini kullanır. Yazı tipi yüklendikten sonra yalnızca ilk istekte uygulama cihazda tüm uygulamalar için kullanılabilir.
+
+Bir uygulama için bir yazı tipi istekte bulunduğunda, yazı tipi sağlayıcısı ilk yazı tipi zaten aygıtta olup olmadığını kontrol eder. Aksi durumda, ardından yazı tipi indirmeyi dener. İndirilen, ardından Android yazı olamaz, varsayılan sistem yazı tipini kullanır. Yazı tipi yüklendikten sonra yalnızca ilk istekte uygulama cihazda tüm uygulamalar için kullanılabilir.
 
 Bir yazı tipi yüklemek için bir istek yapıldığında, uygulama yazı tipi sağlayıcısı doğrudan sorgulamaz. Bunun yerine, uygulamalar bir örneğini kullanacak [ `FontsContract` ](https://developer.android.com/reference/android/provider/FontsContract.html) API (veya [ `FontsContractCompat` ](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html) destek kitaplığı 26 kullanılıyorsa).  
 
@@ -184,19 +179,18 @@ Hangi yaklaşımın kullanıldığında bağımsız olarak, yazı tipleri önce 
              app:fontProviderPackage="com.google.android.gms" 
              app:fontProviderQuery="VT323"
              app:fontProviderCerts="@array/com_google_android_gms_fonts_certs"
-    >
+>
 </font-family>
 ```
 
 `font-family` Öğesi Android yazı tiplerini yüklemek için gerektirdiği bilgiler bildirme aşağıdaki öznitelikleri içerir:
- 
+
 1. **fontProviderAuthority** &ndash; istek için kullanılacak yazı tipi sağlayıcısının yetkilisi.
 2. **fontPackage** &ndash; istek için kullanılacak yazı tipi sağlayıcısı için paketi. Bu, sağlayıcısının kimliğini doğrulamak için kullanılır.
 3. **fontQuery** &ndash; bu istenen yazı tipini bulun yazı tipi sağlayıcısı yardımcı olacak bir dizedir. Yazı tipi sağlayıcıya özel yazı tipi sorgu hakkında ayrıntılar. [ `QueryBuilder` ](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/DownloadableFonts/QueryBuilder.cs) Sınıfını [indirilebilir yazı tipleri](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/) örnek uygulaması sağlar bazı bilgiler sorgu biçimi için yazı tipi Google yazı tipleri açık kaynak koleksiyondan.
 4. **fontProviderCerts** &ndash; sağlayıcı ile imzalanması gerektiğini sertifikalar için karma kümesi listesiyle kaynak dizi.
 
 Yazı tipleri tanımlandıktan sonra ilgili bilgi sağlamak gerekli olabilir _yazı tipi sertifikaları_ yüklemeyle ilgili.
-
 
 ### <a name="font-certificates"></a>Yazı tipi sertifikaları
 
@@ -226,7 +220,6 @@ Yazı tipi sağlayıcısı cihazda önceden yüklenmiş olarak bulunmuyor veya u
 
 Yerinde bu kaynak dosyaları ile uygulama yazı tiplerini indirme yeteneğine sahiptir.
 
-
 ### <a name="declaring-downloadable-fonts-as-resources"></a>Kaynaklar olarak indirilebilir yazı tipleri bildirme
 
 İndirilebilir yazı tiplerini listeleme tarafından **AndroidManifest.XML**, Android zaman uyumsuz olarak yükleyecek yazı tiplerini uygulama ilk kez başlatıldığında. Yazı tipini kendileri kullanıcının buna benzer bir dizi kaynak dosyasını, listelenir: 
@@ -238,14 +231,13 @@ Yerinde bu kaynak dosyaları ile uygulama yazı tiplerini indirme yeteneğine sa
         <item>@font/vt323</item>
     </array>
 </resources>
-```        
+```
 
 Bu yazı tiplerini yüklemek için de bildirilmesi sahip oldukları **AndroidManifest.XML** ekleyerek `meta-data` bir alt öğesi olarak `application` öğesi. Örneğin, bir kaynak dosyasında bildirilen indirilebilir yazı tipleri **Resources/values/downloadable_fonts.xml**, bu kod parçacığında bildirime eklenecek olacaktır: 
 
 ```xml
 <meta-data android:name="downloadable_fonts" android:resource="@array/downloadable_fonts" />
 ```
-
 
 ### <a name="downloading-a-font-with-the-font-apis"></a>Yazı tipi yazı tipi API'leri ile indirme
 
@@ -269,17 +261,16 @@ FontRequest request = new FontRequest("com.google.android.gms.fonts", "com.googl
 Geçirilmeden önce `FontRequest` için `FontContractCompat.RequestFont` yöntemi, oluşturulmalıdır iki nesne vardır:
 
 * **`FontsContractCompat.FontRequestCallback`** &ndash; Genişletilmelidir soyut bir sınıf budur. Olacak bir geri çağırma olduğu zaman çağrılan `RequestFont` tamamlandı. Bir Xamarin.Android uygulaması bir alt kümesi olmalıdır `FontsContractCompat.FontRequestCallback` ve geçersiz kılma `OnTypefaceRequestFailed` ve `OnTypefaceRetrieved`, yükleme başarısız olursa veya sırasıyla başarılı olduğunda gerçekleştirilecek eylemleri sağlama.
-* **`Handler`** &ndash; Bu bir `Handler` tarafından doğrulayacak `RequestFont` gerekiyorsa, bir iş parçacığı üzerinde yazı tipi yüklemek için. Yazı tipleri gereken **değil** UI iş parçacığında indirilebilir.  
+* **`Handler`** &ndash; Bu bir `Handler` tarafından doğrulayacak `RequestFont` gerekiyorsa, bir iş parçacığı üzerinde yazı tipi yüklemek için. Yazı tipleri gereken **değil** UI iş parçacığında indirilebilir.
 
 Bu kod parçacığında, bir yazı tipi Google yazı tipleri açık kaynak koleksiyonundan zaman uyumsuz olarak yükleyecek bir C# sınıfı örneğidir. Bunu uygulayan `FontRequestCallback` arabirim ve C# olayını başlatır, `FontRequest` bitirdi. 
-
 
 ```csharp
 public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
 {
     // A very simple font query; replace as necessary
     public static readonly String FontToDownload = "Courgette";
-    
+
     Android.OS.Handler Handler = null;
 
     public event EventHandler<FontDownloadEventArg> FontDownloaded = delegate
@@ -305,7 +296,7 @@ public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
         base.OnTypefaceRetrieved(typeface);
         FontDownloaded(this, new FontDownloadEventArg(typeface));
     }
-    
+
     Handler GetHandlerThreadHandler()
     {
         if (Handler == null)
@@ -335,9 +326,8 @@ public class FontDownloadEventArg : EventArgs
 }
 ```
 
-
-
 Bu yardımcı kullanmak için yeni bir `FontDownloadHelper` oluşturulan ve bir olay işleyicisi atanır:  
+
 ```csharp
 var fontHelper = new FontDownloadHelper();
 
@@ -348,11 +338,9 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-
 ## <a name="summary"></a>Özet
 
-Bu kılavuzun indirilebilir yazı tipleri ve yazı tipleri kaynaklar olarak desteklemek için Android 8.0 yeni API'lerinde açıklanmıştır. Nasıl bir APK varolan yazı tipleri katıştırmak için ve bir düzende kullanılacağını açıklanmıştır. Program aracılığıyla veya yazı tipi meta veriler kaynak dosyalarında bildirme Android 8.0 bir yazı tipi sağlayıcısından indirme yazı tipleri nasıl desteklediği açıklanmıştır. 
-
+Bu kılavuzun indirilebilir yazı tipleri ve yazı tipleri kaynaklar olarak desteklemek için Android 8.0 yeni API'lerinde açıklanmıştır. Nasıl bir APK varolan yazı tipleri katıştırmak için ve bir düzende kullanılacağını açıklanmıştır. Program aracılığıyla veya yazı tipi meta veriler kaynak dosyalarında bildirme Android 8.0 bir yazı tipi sağlayıcısından indirme yazı tipleri nasıl desteklediği açıklanmıştır.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

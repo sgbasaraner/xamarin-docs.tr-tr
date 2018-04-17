@@ -1,21 +1,21 @@
 ---
 title: Web Hizmetleri kullanma
-description: Bu kılavuz sağlamak için farklı bir web Hizmetleri ile iletişim gösterilmiştir oluşturma, okuma, güncelleştirme ve silme (CRUD) işlevlerinin bir Xamarin.Forms uygulaması için. Kapsanan konular ASMX Hizmetleri, WCF hizmetleri, REST Hizmetleri, Azure Mobile Apps ve Amazon Web Hizmetleri ile iletişim kurmasını içerir.
+description: Bu kılavuz sağlamak için farklı bir web Hizmetleri ile iletişim gösterilmiştir oluşturma, okuma, güncelleştirme ve silme (CRUD) işlevlerinin bir Xamarin.Forms uygulaması için. Kapsanan konular ASMX Hizmetleri, WCF hizmetleri, REST Hizmetleri ve Azure Mobile Apps ile iletişim kurmasını içerir.
 ms.prod: xamarin
 ms.assetid: 8B360BDA-E4E3-4A3F-9004-0E35362F49F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 530b57c009a1f76d3756d7315856f74b6cda2f66
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a4c842ea7fd37ade9be0a9cb3e3ff7e50a6d1491
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="consuming-web-services"></a>Web Hizmetleri kullanma
 
-_Bu kılavuz sağlamak için farklı bir web Hizmetleri ile iletişim gösterilmiştir oluşturma, okuma, güncelleştirme ve silme (CRUD) işlevlerinin bir Xamarin.Forms uygulaması için. Kapsanan konular ASMX Hizmetleri, WCF hizmetleri, REST Hizmetleri, Azure Mobile Apps ve Amazon Web Hizmetleri ile iletişim kurmasını içerir._
+_Bu Kılavuzu gösterir sağlamak için farklı bir web Hizmetleri ile iletişim nasıl oluşturma, okuma, güncelleştirme ve silme (CRUD) işlevlerinin bir Xamarin.Forms uygulaması için. Kapsanan konular ASMX Hizmetleri, WCF hizmetleri, REST Hizmetleri ve Azure Mobile Apps ile iletişim kurmasını içerir.
 
 ## <a name="consuming-an-aspnet-web-service-asmxxamarin-formsdata-cloudconsumingasmxmd"></a>[Bir ASP.NET Web hizmeti (ASMX) kullanma](~/xamarin-forms/data-cloud/consuming/asmx.md)
 
@@ -32,11 +32,6 @@ Temsili durum aktarımı (REST) web hizmetleri oluşturmaya yönelik bir mimari 
 ## <a name="consuming-an-azure-mobile-appxamarin-formsdata-cloudconsumingazuremd"></a>[Bir Azure mobil uygulaması kullanma](~/xamarin-forms/data-cloud/consuming/azure.md)
 
 Azure Mobile Apps ile ölçeklenebilir arka uçlarını desteği Mobil kimlik doğrulama, çevrimdışı eşitleme ve anında iletme bildirimleri ile Azure App Service içinde barındırılan uygulamalar geliştirmesine olanak sağlar. Yalnızca bir Node.js arka ucu kullanan Azure mobil uygulamalar için geçerlidir, bu makalede, sorgu, Ekle, Güncelleştir ve Azure Mobile Apps örneği tablosunda depolanan verileri silme açıklanmaktadır.
-
-## <a name="consuming-an-amazon-simpledb-servicexamarin-formsdata-cloudconsumingawsmd"></a>[Bir Amazon SimpleDB hizmetini kullanma](~/xamarin-forms/data-cloud/consuming/aws.md)
-
-Amazon SimpleDB depolamak ve Amazon'ın bulut verilerde sorgu olanağı sağlayan bir web hizmetidir. Bu makalede, sorgu, oluşturmak ve değiştirmek için .NET için AWS SDK'yı kullanın ve SimpleDB hizmetinde depolanan verileri sil açıklanmaktadır.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

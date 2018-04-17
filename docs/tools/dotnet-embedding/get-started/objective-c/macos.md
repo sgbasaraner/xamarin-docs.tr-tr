@@ -6,165 +6,84 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: c129079aad14ac9e8aad6f73670ce9a43a36f222
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f75ced921cd240e280b5dd6f7366ccceefb5e40e
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="getting-started-with-macos"></a>MacOS ile çalışmaya başlama
 
 
 ## <a name="what-you-will-need"></a>İhtiyacınız olacak
 
-* ' Ndaki yönergeleri izleyin bizim [Objective-C ile çalışmaya başlama](~/tools/dotnet-embedding/get-started/objective-c/index.md) Kılavuzu.
+* ' Ndaki yönergeleri izleyin [Objective-C ile çalışmaya başlama](~/tools/dotnet-embedding/get-started/objective-c/index.md) Kılavuzu.
 
-* İle kullanmak için bir .NET derlemesi **Embeddinator 4000**.
+## <a name="hello-world"></a>Merhaba Dünya
 
-* MacOS Cocoa uygulama
+İlk olarak, C# basit Merhaba Dünya örneği oluşturun.
 
-' Ndaki yönergeleri izlediğinizden sonra lütfen devam bizim [Objective-C ile çalışmaya başlama](~/tools/dotnet-embedding/get-started/objective-c/index.md) Kılavuzu. Bir .NET derlemesi zaten varsa, doğrudan atlayabilirsiniz **kullanarak Embeddinator 4000** bölümü.
+### <a name="create-c-sample"></a>C# örnek oluşturma
 
-## <a name="creating-a-net-assembly"></a>Bir .NET derlemesi oluşturma
+Mac için Visual Studio'yu açın, adlı yeni bir Mac sınıf kitaplığı proje oluşturma **csharp gelen hello**ve kaydetmesi **~/Projects/hello-from-csharp**.
 
-Açmak için ihtiyacınız bir .NET derlemesi oluşturmak için [Mac için Visual Studio](https://www.visualstudio.com/vs/visual-studio-mac/) ve yeni bir **.NET kitaplığı projesi** yapılması tarafından *Dosya > Yeni bir çözüm > Diğer > .NET > Kitaplığı*. Sonraki tıklatın ve verin *hava durumu* olarak *proje adı*ve tıklayın *oluşturma*.
-
-Sonraki adımları izleyin:
-
-1. Silme **MyClass.cs** dosya ve **özellikleri** klasör.
-
-2. Sağ tıklayın *hava durumu Proje > Ekle > yeni dosya.*
-
-3. Seçin *boş sınıfı* ve **XAMWeatherFetcher** adıyla yeni'ye tıklayın.
-
-4. Değiştir *XAMWeatherFetcher.cs* aşağıdaki kod ile:
+Kodla `MyClass.cs` aşağıdaki kod parçacığıyla dosyası:
 
 ```csharp
-using System;
-using System.Json;
-using System.Net;
-
-public class XAMWeatherFetcher {
-
-    static string urlTemplate = @"https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22{0}%2C%20{1}%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
-    public string City { get; private set; }
-    public string State { get; private set; }
-
-    public XAMWeatherFetcher (string city, string state)
+using AppKit;
+public class MyNSView : NSTextView
+{
+    public MyNSView ()
     {
-        City = city;
-        State = state;
-    }
-
-    public XAMWeatherResult GetWeather ()
-    {
-        try {
-            using (var wc = new WebClient ()) {
-                var url = string.Format (urlTemplate, City, State);
-                var str = wc.DownloadString (url);
-                var json = JsonValue.Parse (str)["query"]["results"]["channel"]["item"]["condition"];
-                var result = new XAMWeatherResult (json["temp"], json["text"]);
-                return result;
-            }
-        }
-        catch (Exception ex) {
-            // Log some of the exception messages
-            Console.WriteLine (ex.Message);
-            Console.WriteLine (ex.InnerException?.Message);
-            Console.WriteLine (ex.InnerException?.InnerException?.Message);
-
-            return null;
-        }
-
-    }
-}
-
-public class XAMWeatherResult {
-    public string Temp { get; private set; }
-    public string Text { get; private set; }
-
-    public XAMWeatherResult (string temp, string text)
-    {
-        Temp = temp;
-        Text = text;
+        Value = "Hello from C#";
     }
 }
 ```
 
-Göreceksiniz `Using System.Json;` ihtiyacımız aşağıdakileri yapmak için bu durumu düzeltmek için hata; sağlar:
+Projeyi oluşturun. Elde edilen derlemeyi olarak kaydedilecek **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**.
 
-1. Çift tıklatın **başvuruları** klasör.
+### <a name="bind-the-managed-assembly"></a>Yönetilen derleme bağlama
 
-2. Tıklayın **paketleri** sekmesi.
-
-3. Denetleme **System.Json**.
-
-4. Click **Ok**.
-
-Yukarıdaki tüm yapmak için ihtiyacımız yaptıktan sonra bizim .NET derlemesi tıklayarak yapıdır *yapı menüsüyle > Yapı tüm* veya ⌘ + b. İleti üst durum çubuğunda görünmelidir yürütmeye oluşturun.
-
-Şimdi sağ tıklayın *hava durumu* proje düğümüne ve select *Finder ortaya*. Finder Git *bin/Debug* ; klasörü iç, bulacaksınız **Weather.dll.**
-
-## <a name="using-embeddinator-4000"></a>Embeddinator 4000 kullanma
-
-Embeddinator 4000 bizim pkg Yükleyicisi'ni kullanarak yüklediyseniz ve yüklendikten sonra yeni terminal oturumu başlatıldı, size kullanabilmek için **objcgen** komutu (Aksi halde, mutlak yolu kullanabilirsiniz: `/Library/Frameworks/Xamarin.Embeddinator-4000.framework/Commands/objcgen`); **objcgen** .NET derlemesinden yerel kitaplık oluşturmak için ihtiyacımız aracıdır.
-
-Terminali açın, `cd` Weather.dll, içeren klasöre ve yürütme **objcgen** aşağıda gösterilen bağımsız değişkenlerle:
+Yönetilen derleme için doğal bir çerçeve oluşturmak için embeddinator çalıştırın:
 
 ```shell
-cd /Users/Alex/Projects/Weather/Weather/bin/Debug
-
-objcgen --debug --outdir=output -c Weather.dll
+cd ~/Projects/hello-from-csharp
+objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll --target=framework --platform=macOS-modern --abi=x86_64 --outdir=output -c --debug
 ```
 
-Her şeyi, yerleştirilecek içine **çıkış** yanındaki dizin *Weather.dll*. Kendi .NET derlemesi varsa Değiştir *Weather.dll* onu ve yukarıdaki aynı adımları izleyin.
+Framework yerleştirilecek **~/Projects/hello-from-csharp/output/hello-from-csharp.framework**.
 
-## <a name="using-the-generated-output-in-an-xcode-project"></a>Xcode projesinde oluşturulan çıktı kullanma
+### <a name="use-the-generated-output-in-an-xcode-project"></a>Xcode projesinde oluşturulan çıktı kullanın
 
-Xcode açın ve yeni bir **macOS Cocoa uygulama** ve adlandırın **MyWeather**. Sağ tıklayın *MyWeather proje düğümüne*seçin *"MyWeather" için dosyaları Ekle*, gitmek **çıkış** tarafından oluşturulan dizin *Embeddinator 4000* , aşağıdaki dosyaları ekleyin:
+Xcode açın ve yeni bir Cocoa uygulaması oluşturun. Adlandırın **csharp gelen hello** seçip **Objective-C** dili.
 
-* bindings.h
-* embeddinator.h
-* glib.h
-* Mono support.h
-* mono_embeddinator.h
-* objc-support.h
-* libWeather.dylib
-* Weather.dll
+Açık **~/Projects/hello-from-csharp/output** Finder, select içinde dizin **csharp.framework gelen hello**, Xcode projeye sürükleyin ve bırakın yukarıdaki **csharp gelen hello**  proje klasöründe.
 
-Emin olun **gerekirse öğeleri Kopyala** dosya iletişim kutusu seçenekleri panelinde denetlenir.
+![Sürükle ve bırak framework](macos-images/hello-from-csharp-mac-drag-drop-framework.png)
 
-Emin olmak ihtiyacımız artık **libWeather.dylib** ve **Weather.dll** uygulama paket alın:
+Emin olun **gerekirse öğeleri Kopyala** açılır iletişim denetlenir ve tıklayın **son**.
 
-* Tıklayın *MyWeather proje düğümüne*.
-* Seçin *derleme aşamaları* sekmesi.
-* Yeni bir ekleme *kopyalama dosyaları aşaması*.
-* Üzerinde *hedef* seçin **çerçeveler** ve ekleme **libWeather.dylib**.
-* Yeni bir ekleme *kopyalama dosyaları aşaması*.
-* Üzerinde *hedef* seçin **yürütülebilir dosyalar**, ekleme **Weather.dll** ve emin olun *kod oturum kopyasında* denetlenir.
+![Gerekirse öğeleri kopyala](macos-images/hello-from-csharp-mac-copy-items-if-needed.png)
 
-Şimdi açmak **ViewController.m** ve içeriği ile değiştirin:
+Seçin **csharp gelen hello** proje ve gidin **csharp gelen hello** hedefin **genel** sekmesi. İçinde **katıştırılmış ikili** bölümünde **csharp.framework gelen hello**.
 
-```objective-c
+![Katıştırılmış ikili dosyalar](macos-images/hello-from-csharp-mac-embedded-binaries.png)
+
+Açık **ViewController.m**ve içeriği ile değiştirin:
+
+```objc
 #import "ViewController.h"
-#import "bindings.h"
+
+#include "hello-from-csharp/hello-from-csharp.h"
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    XAMWeatherFetcher * fetcher = [[XAMWeatherFetcher alloc] initWithCity:@"Boston" state:@"MA"];
-    XAMWeatherResult * weather = [fetcher getWeather];
-
-    NSString * result;
-    if (weather)
-        result = [NSString stringWithFormat:@"%@ °F - %@", weather.temp, weather.text];
-    else
-        result = @"An error occured";
-
-    NSTextField * textField = [NSTextField labelWithString:result];
-    [self.view addSubview:textField];
+    
+    MyNSView *view = [[MyNSView alloc] init];
+    view.frame = CGRectMake(0, 200, 200, 200);
+    [self.view addSubview: view];
 }
 
 @end
@@ -172,6 +91,6 @@ Emin olmak ihtiyacımız artık **libWeather.dylib** ve **Weather.dll** uygulama
 
 Son olarak Xcode projesini çalıştırın ve şunun gibi görünür:
 
-![MyWeather örnek çalışıyor](macos-images/weather-from-csharp-macos.png)
+![Merhaba örnekten benzeticisinde çalıştıran C#](macos-images/hello-from-csharp-mac.png)
 
-Daha kapsamlı ve daha iyi görünümlü bir örnek kullanılabilir [burada](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather).
+Daha eksiksiz ve sonrasının bir örnek kullanılabilir [burada](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather).

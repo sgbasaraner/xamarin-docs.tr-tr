@@ -7,13 +7,13 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: ed934e4a5896a004e0f226d156109df182cfebd3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 20d5a81a6a33465e5b883e495600b57400adf199
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="f35"></a>F&#35;
+# <a name="f35"></a>F&AMP;#35;
 
 F # bir açık kaynak, platformlar arası, ilk işlevsel programlama için .NET dilidir.
 
@@ -21,7 +21,7 @@ F # succinctness, expressivity ve tür çıkarımı yapılan işlevsel programla
 
 F # bulunmaktadır Xamarin desteklenen platformlar tümüne Xamarin kullanıcılara bir programlama dili olarak: Android, macOS ve iOS.
 
-- [F# Kılavuzu](https://docs.microsoft.com/en-us/dotnet/fsharp/)
+- [F# Kılavuzu](https://docs.microsoft.com/dotnet/fsharp/)
 - [F # ve Xamarin ile çalışmaya başlama](overview.md)
 - [F # mobil örnekleri](samples.md)
 
@@ -36,4 +36,3 @@ F # Visual Studio Mac için desteklenen bir dil değil Desteklenen özellikler �
 - F # Etkileşimli'de sözdizimi vurgulama
 - F # şablonlarını Xamarin.Forms, iOS ve Android için
 - [*ve daha fazlası...*](https://developer.xamarin.com/releases/studio/xamarin.studio_6.0/xamarin.studio_6.0/#F_Enhancements)
-

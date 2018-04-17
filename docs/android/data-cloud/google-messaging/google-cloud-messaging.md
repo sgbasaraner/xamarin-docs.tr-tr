@@ -1,19 +1,19 @@
 ---
-title: Google Cloud Messaging
+title: Google Cloud Messaging'i
 description: Google Cloud Messaging (GCM), mobil uygulamaları ve sunucu uygulamaları Mesajlaşma kolaylaştıran bir hizmettir. Bu makalede GCM nasıl çalıştığını genel bir bakış sağlar ve uygulamanızı GCM kullanabilmeniz için Google hizmetlerin nasıl yapılandırılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 73ff82f3bf36aa54422c1693c6bf07731480b7f7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: 29cccf414759a79a8ba74dfc35b7ba9f6a1cc5d6
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="google-cloud-messaging"></a>Google Cloud Messaging
+# <a name="google-cloud-messaging"></a>Google Cloud Messaging'i
 
 _Google Cloud Messaging (GCM), mobil uygulamaları ve sunucu uygulamaları Mesajlaşma kolaylaştıran bir hizmettir. Bu makalede GCM nasıl çalıştığını genel bir bakış sağlar ve uygulamanızı GCM kullanabilmeniz için Google hizmetlerin nasıl yapılandırılacağı açıklanmaktadır._
 
@@ -21,6 +21,9 @@ _Google Cloud Messaging (GCM), mobil uygulamaları ve sunucu uygulamaları Mesaj
 
 Bu konu, uygulamanızı ve uygulama sunucusu arasında iletileri Google Cloud Messaging nasıl yönlendiren bir üst düzey genel bakış sağlar ve uygulamanızı GCM hizmetleri kullanabilmesi için kimlik bilgileri alınırken için adım adım bir yordam sağlar.
 
+> [!NOTE]
+> GCM kılınan tarafından [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM).
+> GCM sunucu ve istemci API'leri [kullanım dışı bırakılmış](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html) ve artık 11 Nisan 2019 olan en kısa sürede kullanılabilir olacaktır.
 
 ## <a name="overview"></a>Genel Bakış
 

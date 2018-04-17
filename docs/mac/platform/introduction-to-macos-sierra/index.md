@@ -7,11 +7,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ab373d708d47ad7c3dbbf4507284be04a1f9934
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3b8211e4c38fd37040fab5b35be4709d4b926c91
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>MacOS Sierra giriş
 
@@ -64,6 +64,9 @@ CloudKit framework macOS Sierra hızlı ve kolay bir şekilde kaydeder veya kend
 Gönderme ve paylaşılan kayıt davetleri kabul etme CloudKit tam bir kullanıcı Arabirimi sağlar ve kullanıcı kayıtları erişimi kişileri tam okuma/yazma denetime sahiptir.
 
 Daha fazla bilgi için lütfen Apple'nın bkz [CloudKit Framework başvurusu](https://developer.apple.com/reference/clockkit) ve [CloudKit JS Framework başvurusu](https://developer.apple.com/reference/cloudkitjs).
+
+> [!IMPORTANT]
+> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nın genel veri koruma düzenleme (GDPR) düzgün bir şekilde işlemek geliştiricilere yardımcı olmak için.
 
 <a name="Safari-App-Extensions-Support" />
 

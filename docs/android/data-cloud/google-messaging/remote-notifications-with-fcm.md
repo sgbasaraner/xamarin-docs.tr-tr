@@ -6,12 +6,12 @@ ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: c6e1d36d871b4bb41a1e53d6e58ba8940813b29f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: e2f25504b971a0332dc51dc9b017c9c83222ec57
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>İleti Firebase ile uzaktan bildirimleri bulut
 
@@ -427,7 +427,7 @@ Dokunun **günlük belirteci** düğmesi. IDE çıktı penceresinde aşağıdaki
 İle uzun bir dize olarak etiketlenmiş **belirteci** Firebase konsoluna Yapıştır bir örnek kimliği belirteç &ndash; seçin ve bu dizesini Pano'ya kopyalayın. Bir örnek kimliği belirteci görmüyorsanız üstüne aşağıdaki satırı ekleyin `OnCreate` doğrulamak için yöntem **google services.json** doğru ayrıştırıldığında:
 
 ```csharp
-Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
+Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
 `google_app_id` Çıkış penceresine kaydedilip değeri eşleşmelidir `mobilesdk_app_id` kayıtlı değer **google services.json**. 
@@ -548,7 +548,7 @@ Bir ileti almazsanız silmeyi deneyin **FCMClient** cihaz (veya öykünücü) uy
 
 Foregrounded uygulamalarında bildirimleri almak için uygulamanız gereken `FirebaseMessagingService`. Bu hizmet de, veri yüklerini alma ve Yukarı Akış ileti göndermek için gereklidir. Aşağıdaki örnekler genişleten bir hizmet uygulamak nasıl çalışılacağını `FirebaseMessagingService` &ndash; elde edilen uygulama ön planda çalışırken uzak bildirimler işleyebilen olacaktır. 
 
-### <a name="implement-firebasemessagingservice"></a>Implement FirebaseMessagingService
+### <a name="implement-firebasemessagingservice"></a>Uygulama FirebaseMessagingService
 
 `FirebaseMessagingService` Hizmeti içeren bir `OnMessageReceived` gelen iletileri işlemek için yazma yöntemi. Unutmayın `OnMessageReceived` bildirim iletileri için çağrılan *yalnızca* uygulama ön planda çalışırken. Uygulama arka planda çalıştırırken (Bu kılavuzda daha önce gösterildiği gibi) otomatik olarak oluşturulan bir bildirim görüntülenir. 
 
@@ -683,6 +683,27 @@ Bu süre, çıktı penceresinde kaydedilen iletinin yeni bir bildirim de paketle
 Bildirim açtığınızda, Firebase konsol bildirimleri GUI gönderilen son ileti görmeniz gerekir: 
 
 [![Ön plan simgesiyle gösterilen ön bildirimi](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
+
+
+## <a name="disconnecting-from-fcm"></a>FCM bağlantısı kesiliyor
+
+Konuyu aboneliğinizi iptal etmek için çağrı [UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29) yöntemi [FirebaseMessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging) sınıfı. Örneğin, aboneliğinizi iptal etmek _haber_ daha önce abone için konu bir **Unsubscribe** düğme, aşağıdaki işleyici kodu düzeniyle eklenebiliyordu:
+
+```csharp
+var unSubscribeButton = FindViewById<Button>(Resource.Id.unsubscribeButton);
+unSubscribeButton.Click += delegate {
+    FirebaseMessaging.Instance.UnsubscribeFromTopic("news");
+    Log.Debug(TAG, "Unsubscribed from remote notifications");
+};
+```
+
+FCM değerlerinin aygıttan kaydını kaldırmak için örnek kimliği çağırarak silme [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29) yöntemi [FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId) sınıfı. Örneğin:
+
+```csharp
+FirebaseInstanceId.Instance.DeleteInstanceId();
+```
+
+Bu yöntem çağrısı siler örnek kimliği ve ilişkili veriler. Sonuç olarak, aygıta FCM veri düzenli gönderme durdurulur.
 
  
 ## <a name="troubleshooting"></a>Sorun giderme

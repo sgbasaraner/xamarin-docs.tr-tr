@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: df0e188efd2791b03a63c31b715ed1da77079230
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc34cf265885708fa6392936a8dbc9d82796e2fd
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="authenticating-access-to-web-services"></a>Web hizmetlerine erişimi kimlik doğrulaması
 
@@ -36,11 +36,6 @@ Azure Active Directory B2C bir tüketiciye yönelik web ve mobil uygulamaları i
 ## <a name="integrating-azure-active-directory-b2c-with-azure-mobile-appsazure-ad-b2c-mobile-appmd"></a>[Azure Active Directory B2C’yi Azure Mobile Apps ile Tümleştirme](azure-ad-b2c-mobile-app.md)
 
 Azure Active Directory B2C, Azure Mobile Apps için kimlik doğrulama iş akışı yönetmek için kullanılabilir. Bu yaklaşım ile kimlik yönetimi deneyimi buluta tam olarak tanımlanır ve mobil uygulama kodunuzu değiştirmeden değiştirilebilir. Bu makalede, Azure Active Directory B2C kimlik doğrulaması ve yetkilendirme için bir Azure Mobile Apps örneğine Xamarin.Forms ile sağlamak için nasıl kullanılacağı gösterilmektedir.
-
-## <a name="authenticating-users-with-an-amazon-simpledb-serviceawsmd"></a>[Kullanıcıların bir Amazon SimpleDB hizmeti ile kimlik doğrulaması](aws.md)
-
-Amazon SimpleDB kendi kaynak tabanlı izinler sistem sağlamaz. Bunun yerine, bir kimlik sağlayıcısı kimlik doğrulaması, kullanıcıların yalnızca kendi verilerine erişim SimpleDB etki alanında olmasını sağlamak için kullanılabilir. Bu makalede, kullanıcıların kendi SimpleDB veriye erişimi kısıtlamak açıklanmaktadır.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

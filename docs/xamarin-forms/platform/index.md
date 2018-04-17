@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: 454969d8a59128423d632452033b8ba84ee0bc98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd46411f3662652ef26addc76f273d6071401a6f
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="platform-features"></a>Platform Özellikleri
 
@@ -33,9 +33,17 @@ Nasıl kullanılacağını `Device` platforma özgü davranış paylaşılan kod
 
 Bazı iOS stil aracılığıyla gerçekleştirilebilir **Info.plist** ve `UIAppearance` API. Bu kılavuz, çekirdek Spotlight arama da dahil olmak üzere bir Xamarin.Forms çözümünü iOS uygulamaya iOS 9 özellikleri içerecek şekilde nasıl örnekleri içerir.
 
+## <a name="gtkgtkmd"></a>[GTK](gtk.md)
+
+Xamarin.Forms GTK # uygulamaları için Önizleme destek artık sahiptir.
+
 ## <a name="macmacmd"></a>[Mac](mac.md)
 
 Xamarin.Forms artık macOS uygulamaları için Önizleme destek sahiptir.
+
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+
+Xamarin.Forms artık Windows Presentation Foundation (WPF) uygulamaları için Önizleme destek sahiptir.
 
 ## <a name="native-formsnative-formsmd"></a>[Yerel Formlar](native-forms.md)
 
@@ -45,7 +53,7 @@ Yerel Forms izin Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/a
 
 İOS, Android ve evrensel Windows platformu yerel görünümleri doğrudan Xamarin.Forms başvurulabilir. Xamarin.Forms görünümleri ile etkileşim kurabilir ve özellikleri ve olay işleyicileri yerel görünümler üzerinde ayarlanabilir.
 
-## <a name="platform-specificsplatform-specificsindexmd"></a>[Platform-Specifics](platform-specifics/index.md)
+## <a name="platform-specificsplatform-specificsindexmd"></a>[Platform özellikleri](platform-specifics/index.md)
 
 Platform özellikleri yalnızca özel oluşturucu veya efektler gerektirmeden belirli bir platformda kullanılabilir olan işlevsellik kullanmasına olanak sağlar.
 
@@ -58,7 +66,7 @@ Platform özellikleri yalnızca özel oluşturucu veya efektler gerektirmeden be
 Xamarin.Forms dört farklı türde Windows projesi için destek içerir:
 
 * Windows Phone 8 Silverlight (Xamarin.Forms tarafından desteklenen orijinal Windows platformuna)
-* Windows Phone 8.1 (WinRT),
+* Windows Phone 8.1 (WinRT)
 * Windows 8.1 (WinRT) ve
 * Evrensel Windows Platformu (Windows 10).
 
