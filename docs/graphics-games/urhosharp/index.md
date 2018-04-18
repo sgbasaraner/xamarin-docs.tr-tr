@@ -7,25 +7,25 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: c8df53d90ab1245aecff3eab1393c009b7910aa5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 564d106cc0192e818b87342ae0590e20afe507ae
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp - 3B/2B altyapısı
 
 _UrhoSharp geometri, malzemeler, ışık ve Kameralar'ı kullanarak uygulamalarınızın animasyonlu 3B ve 2B planda oluşturmak için kullanılan bir platformlar arası üst düzey 3B ve 2B altyapısıdır._
 
-![](images/video.gif "Örnek UrhoSharp oyun")
+![Örnek UrhoSharp oyun](images/video.gif)
 
 UrhoSharp Visual Studio veya Visual Studio için Mac yüklenebilir ve aşağıdaki platformları hiçbirini hedeflemek için kullanılan bir NuGet paketi olarak dağıtılmış: Android, MacOS, iOS, tvOS ve Windows.
 
-##  <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[UrhoSharp giriş](~/graphics-games/urhosharp/introduction.md)
+## <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[UrhoSharp giriş](~/graphics-games/urhosharp/introduction.md)
 
 Bu makalede UrhoSharp ve özelliklerini basit 3B oyunlar kullanımda ve 3B görselleştirme için üst düzey bir genel bakış sağlar.
 
-##  <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[UrhoSharp Kullanma](~/graphics-games/urhosharp/using.md)
+## <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[UrhoSharp Kullanma](~/graphics-games/urhosharp/using.md)
 
 Bu belgede oyun oluşturmak veya uygulamanız için 3B bir görselleştirmesi oluşturmak için kullanacağı UrhoSharp temel kavramlarını açıklar.
 
@@ -54,7 +54,6 @@ Oluşturduk [örnekler github'da](http://github.com/xamarin/urho-samples) UrhoSh
 İOS, Android, tüm örneklerini çalıştırma Mac ve Windows.
 Ayrıca UrhoSharp sayısı olan [çalışma kitaplarını](https://developer.xamarin.com/workbooks/) dahil olmak üzere [Planet dünya](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook) ve [keşfetme koordinatları](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook).
 
-
 ## <a name="copyright"></a>Telif Hakkı
 
 Bu belge Xamarin Inc orijinal içerikten ancak Urho3D projesi için açık kaynak belgelerindeki yaygın çizer ve ekran görüntüleri Cocos2D projeden içerir.
@@ -62,8 +61,6 @@ Bu belge Xamarin Inc orijinal içerikten ancak Urho3D projesi için açık kayna
 ## <a name="license"></a>Lisans
 
 UrhoSharp lisans şu adresten edinilebilir [http://download.xamarin.com/content/licenses/URHO.LICENSE](http://download.xamarin.com/content/licenses/URHO.LICENSE)
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

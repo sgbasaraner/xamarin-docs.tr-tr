@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: f78b16a99d8bc828e26bb6aecdb67d4ba07e18d4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7dcf3cba72a07b06236e29ddf2603745fd348596
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="map"></a>eşleme
 
@@ -95,8 +95,9 @@ Xamarin belge'ndaki yönergeleri izleyin [Google haritalar API'si v2 anahtarı a
 Bu yönergeleri uyguladıktan sonra API anahtarını yapıştırın **Properties/AndroidManifest.xml** dosyası (kaynağı görüntüle ve Bul/güncelleştirme aşağıdaki öğeyi):
 
 ```xml
-<meta-data android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AbCdEfGhIjKlMnOpQrStUvWValueGoesHere" />
+<meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="YOUR_API_KEY"/>
 ```
 
 Geçerli bir API anahtarı eşlemeleri denetim Android üzerinde gri bir kutu olarak görüntüler.
@@ -169,7 +170,7 @@ Geçerli `MapType` değerler şunlardır:
 
 Yukarıdaki kod parçacığında gösterildiği gibi sağladığı bir `MapSpan` map Oluşturucusu örneğine ayarlar ilk görünümü (noktası merkezi ve yakınlaştırma düzeyi) yüklendiğinde harita. `MoveToRegion` Eşleme sınıf yöntemi kullanılabilecek eşleme konumu ya da Yakınlaştırma düzeyini değiştirme hedefi. Yeni bir oluşturmanın iki yolu vardır `MapSpan` örneği:
 
--  **MapSpan.FromCenterAndRadius()** - static method to create a span from a  `Position` and specifying a  `Distance` .
+-  **MapSpan.FromCenterAndRadius()** -bir aralık oluşturmak için statik yöntemi bir `Position` ve belirterek bir `Distance` .
 -  **Yeni MapSpan ()** -kullanan Oluşturucusu bir `Position` ve enlem ve boylam görüntülenecek Santigrat.
 
 

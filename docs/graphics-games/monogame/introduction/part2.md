@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 89f5148dacfb229750839e4554199f78c8d15126
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc4ab2e77bfce9c9ba6043533bcfda5a359d322e
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>Bölüm 2 – WalkingGame uygulama
 
@@ -19,42 +19,39 @@ _Bu kılavuz, oyun mantığı ve içeriği ile taşıma animasyonlu bir hareketl
 
 Bu kılavuzun önceki bölümleri boş MonoGame projeleri nasıl oluşturulacağını gösterir. Basit bir oyun tanıtım yaparak Biz bu önceki bölümleri oluşturacaksınız. Bu makalede aşağıdaki bölümleri içerir:
 
- - Bizim Oyun içeriği unzipping
- - MonoGame sınıfına genel bakış
- - Bizim ilk hareketli grafik oluşturma
- - CharacterEntity oluşturma
- - Oyuna CharacterEntity ekleme
- - Animasyon sınıfı oluşturma
- - CharacterEntity için ilk animasyon ekleme
- - Taşıma için karakter ekleme
- - Taşıma ve animasyon eşleştirme
+- Bizim Oyun içeriği unzipping
+- MonoGame sınıfına genel bakış
+- Bizim ilk hareketli grafik oluşturma
+- CharacterEntity oluşturma
+- Oyuna CharacterEntity ekleme
+- Animasyon sınıfı oluşturma
+- CharacterEntity için ilk animasyon ekleme
+- Taşıma için karakter ekleme
+- Taşıma ve animasyon eşleştirme
 
 
-# <a name="unzipping-our-game-content"></a>Bizim Oyun içeriği unzipping
+## <a name="unzipping-our-game-content"></a>Bizim Oyun içeriği unzipping
 
 Kod yazmaya başlamadan önce biz bizim oyun sıkıştırmasını isteyeceksiniz *içerik*. Oyun geliştiriciler sık kullandığınız terimi *içerik* genellikle visual sanatçılar, oyun tasarımcıları ya da ses tasarımcıları tarafından oluşturulan kodu olmayan dosyaları belirtmek için. Ortak içerik türlerini görselleri görüntülemek, ses çalma veya yapay bilgileri (AI) davranışını denetlemek için kullanılan dosyalar içerir. Oyun Geliştirme ekibinizin perspektif içeriği genellikle programcıları olmayan tarafından oluşturulur.
 
 Burada kullanılan içerik bulunabilir [github'da](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true). Biz bu kılavuzda daha sonra erişimi bir konuma yüklenen şu dosyaları gerekir.
 
-
-# <a name="monogame-class-overview"></a>MonoGame sınıfına genel bakış
+## <a name="monogame-class-overview"></a>MonoGame sınıfına genel bakış
 
 Yeni başlayanlar biz temel işlemede kullanılan MonoGame sınıfları inceleyeceksiniz:
 
- - `SpriteBatch` – 2B grafik ekrana çizmek için kullanılan. *Hareketli grafik* ekranda görüntüleri göstermek için kullanılan 2B görsel öğeler. `SpriteBatch` Nesne çizmek tek bir hareketli grafik bir zaman arasında kendi `Begin` ve `End` yöntemleri ya da birden fazla hareketli grafik birlikte gruplandırılabilir veya *toplu*.
- - `Texture2D` – Çalışma zamanında bir görüntü nesneyi temsil eder. `Texture2D` Bunlar ayrıca dinamik olarak çalışma zamanında oluşturulabilir olsa da örnekleri genellikle dosya biçimlerden .png veya .bmp, gibi oluşturulur. `Texture2D` örnekleri ile oluşturulurken kullanılan `SpriteBatch` örnekleri.
- - `Vector2` – genellikle görsel nesneler konumlandırma için kullanılan 2B koordinat sisteminde bir konumu temsil eder. MonoGame de içeren `Vector3` ve `Vector4` ancak yalnızca kullanacağız `Vector2` bu kılavuzda.
- - `Rectangle` – bir dört taraflı alanıyla konum, genişlik ve yükseklik. Biz bu hangi kısmının tanımlamak için kullanmaya başlayacağınız bizim `Texture2D` biz animasyonları ile çalışmaya başladığınızda işlenecek.
+- `SpriteBatch` – 2B grafik ekrana çizmek için kullanılan. *Hareketli grafik* ekranda görüntüleri göstermek için kullanılan 2B görsel öğeler. `SpriteBatch` Nesne çizmek tek bir hareketli grafik bir zaman arasında kendi `Begin` ve `End` yöntemleri ya da birden fazla hareketli grafik birlikte gruplandırılabilir veya *toplu*.
+- `Texture2D` – Çalışma zamanında bir görüntü nesneyi temsil eder. `Texture2D` Bunlar ayrıca dinamik olarak çalışma zamanında oluşturulabilir olsa da örnekleri genellikle dosya biçimlerden .png veya .bmp, gibi oluşturulur. `Texture2D` örnekleri ile oluşturulurken kullanılan `SpriteBatch` örnekleri.
+- `Vector2` – genellikle görsel nesneler konumlandırma için kullanılan 2B koordinat sisteminde bir konumu temsil eder. MonoGame de içeren `Vector3` ve `Vector4` ancak yalnızca kullanacağız `Vector2` bu kılavuzda.
+- `Rectangle` – bir dört taraflı alanıyla konum, genişlik ve yükseklik. Biz bu hangi kısmının tanımlamak için kullanmaya başlayacağınız bizim `Texture2D` biz animasyonları ile çalışmaya başladığınızda işlenecek.
 
 Biz de MonoGame rağmen ad alanı Microsoft tarafından – tutulmayan unutmamalısınız. `Microsoft.Xna` Ad alanı içinde MonoGame mevcut XNA projeleri için MonoGame geçirmek kolaylaştırmak için kullanılır.
 
-
-# <a name="rendering-our-first-sprite"></a>Bizim ilk hareketli grafik oluşturma
+## <a name="rendering-our-first-sprite"></a>Bizim ilk hareketli grafik oluşturma
 
 Sonraki biz MonoGame 2B işleme gerçekleştirme göstermek için ekrana tek bir hareketli grafik çizer.
 
-
-## <a name="creating-a-texture2d"></a>Bir Texture2D oluşturma
+### <a name="creating-a-texture2d"></a>Bir Texture2D oluşturma
 
 Oluşturmamız gerekir bir `Texture2D` bizim hareketli grafik oluşturulurken kullanılacak örneği. Tüm oyun içeriği sonuçta adlı bir klasörde yer **içerik** platforma özgü projesinin içinde bulunur. İçerik platformuna özel yapı eylemleri kullanmanız gerektiği gibi paylaşılan MonoGame projeleri içerik içeremez. CocosSharp geliştiriciler bilinen bir kavram içerik klasörü bulacaksınız – bunlar CocosSharp ve MonoGame projeleri aynı yerde bulunur. İçerik klasörünü, iOS projesi ve varlıklar klasör Android projesi içinde bulunabilir.
 
@@ -67,7 +64,6 @@ Bizim oyunun içeriği eklemek için sağ **içerik** klasörü ve select **Ekle
 ![](part2-images/image2.png "İçerik klasörü şimdi charactersheet.png dosyasını içerir")
 
 Ardından, charactersheet.png dosyasını yüklemek ve oluşturmak için kodu ekleyeceğiz bir `Texture2D`. Bu açık yapmak için `Game1.cs` dosyasını açıp aşağıdaki alan Game1.cs sınıfına ekleyin:
-
 
 ```csharp
 Texture2D characterSheetTexture;
@@ -83,8 +79,8 @@ protected override void LoadContent()
     // TODO: use this.Content to load your game content here
 }
 ```
-Biz varsayılan proje zaten başlatır unutmamalısınız `spriteBatch` bize için örneği. Biz bu daha sonra kullanacağız ancak biz hazırlamak için herhangi bir ek kod ekleme olmaz `spriteBatch` kullanmak için. Diğer taraftan, bizim `spriteSheetTexture` biz bundan sonra başlatacak şekilde başlatma gerektiriyor mu `spriteBatch` oluşturulur:
 
+Biz varsayılan proje zaten başlatır unutmamalısınız `spriteBatch` bize için örneği. Biz bu daha sonra kullanacağız ancak biz hazırlamak için herhangi bir ek kod ekleme olmaz `spriteBatch` kullanmak için. Diğer taraftan, bizim `spriteSheetTexture` biz bundan sonra başlatacak şekilde başlatma gerektiriyor mu `spriteBatch` oluşturulur:
 
 ```csharp
 protected override void LoadContent()
@@ -100,7 +96,6 @@ protected override void LoadContent()
 ```
 
 Biz sahip olduğunuza göre bir `SpriteBatch` örneği ve `Texture2D` biz işleme kodumuza ekleyebilirsiniz örneği `Game1.Draw` yöntemi:
-
 
 ```csharp
 protected override void Draw(GameTime gameTime)
@@ -124,36 +119,33 @@ Oyun şimdi çalıştıran charactersheet.png oluşturulan doku görüntüleme t
 
 ![](part2-images/image3.png "Oyun şimdi çalıştıran charactersheet.png oluşturulan doku görüntüleme tek bir hareketli grafik gösterir")
 
-
-#  <a name="creating-the-characterentity"></a>CharacterEntity oluşturma
+## <a name="creating-the-characterentity"></a>CharacterEntity oluşturma
 
 Tek bir hareketli grafik ekranına işlemek için kod kadarki ekledik; Ancak, diğer sınıflar oluşturmadan tam oyun geliştirmek için bulamadığımız, biz kodu kuruluş sorunla çalışır.
 
-
-## <a name="what-is-an-entity"></a>Bir varlık nedir?
+### <a name="what-is-an-entity"></a>Bir varlık nedir?
 
 Oyun kod düzenlemek için genel bir desen her oyun için yeni bir sınıf oluşturmaktır *varlık* türü. Bir varlık oyun geliştirme (tümü gerekli değildir) aşağıdaki özelliklere bazıları içerebilen bir nesnedir:
 
- - Hareketli grafik, metin veya 3D modeli gibi bir görsel öğe
- - Fizik veya yolu ayarla veya giriş yanıtlama player karakter patrolling bir birim gibi her bir çerçeve davranış
- - Oluşturulan ve dinamik olarak gücü görünmesini ve oynatıcısının toplanmakta olan gibi yok
+- Hareketli grafik, metin veya 3D modeli gibi bir görsel öğe
+- Fizik veya yolu ayarla veya giriş yanıtlama player karakter patrolling bir birim gibi her bir çerçeve davranış
+- Oluşturulan ve dinamik olarak gücü görünmesini ve oynatıcısının toplanmakta olan gibi yok
 
 Varlık kuruluş sistemleri karmaşık olabilir ve bu birçok oyun motorları varlıklar yönetmenize yardımcı olmak için sınıflar sağlar. Tam oyunlar genellikle Geliştirici Bölümü hakkında daha fazla kuruluş gerektiren belirtmeye değer olacak şekilde biz çok basit varlık sistem uygulanması.
 
 
-## <a name="defining-the-characterentity"></a>CharacterEntity tanımlama
+### <a name="defining-the-characterentity"></a>CharacterEntity tanımlama
 
 Arayacağız bizim varlık `CharacterEntity`, aşağıdaki özelliklere sahiptir:
 
- - Kendi yükleme yeteneği `Texture2D`
- - Kendisini yürüyen animasyon güncelleştirmek için arama yöntemleri içeren dahil olmak üzere işleme yeteneği
- - `X `ve Y özelliklerini karakterin konumu denetlemek için.
- - Özelliği kendisini – özellikle güncelleştirmek için dokunma değerlerinden ekran ve konumu uygun şekilde ayarlayın.
+- Kendi yükleme yeteneği `Texture2D`
+- Kendisini yürüyen animasyon güncelleştirmek için arama yöntemleri içeren dahil olmak üzere işleme yeteneği
+- `X` ve Y özelliklerini karakterin konumu denetlemek için.
+- Özelliği kendisini – özellikle güncelleştirmek için dokunma değerlerinden ekran ve konumu uygun şekilde ayarlayın.
 
 Eklemek için `CharacterEntity` bizim oyun, sağ tıklatın ya da denetim tıklatıldığında **WalkingGame** proje ve seçin **Ekle > yeni dosya...** . Seçin **boş sınıfı** seçeneği ve yeni dosya adı **CharacterEntity**, ardından **yeni**.
 
 Özelliği ilk ekleyeceğiz `CharacterEntity` yüklemek için bir `Texture2D` kendisini çizmek için iyi. Biz yeni eklenen değiştirecek `CharacterEntity.cs` gibi dosya:
-
 
 ```csharp
 using System;
@@ -203,8 +195,7 @@ namespace WalkingGame
 
 Yukarıdaki kod konumlandırma, oluşturma ve yükleme için içeriği sorumluluğu ekler `CharacterEntity`. Yukarıdaki kod gerçekleştirilecek bazı noktalar çıkış noktası için bir dakikanızı atalım.
 
-
-## <a name="why-are-x-and-y-floats"></a>Neden olduğu X ve Y float?
+### <a name="why-are-x-and-y-floats"></a>Neden olduğu X ve Y float?
 
 Oyun programlama için yeni olan geliştiriciler neden merak ediyor `float` türü tersine kullanılıyor `int` veya `double`. 32-bitlik bir değer alt düzey işleme kodda konumlandırma için en yaygın nedenidir. Çift tür, nadiren nesneleri konumlandırma için gerekli olan duyarlık için 64 bit kaplar. Bir 32 bit fark Önemsiz görünebilir, ancak birçok modern oyun on binlerce konum değerleri işleme gerektiren grafik her çerçeve (30 veya 60 kez saniye başına) içerir. Bellek miktarı kesme gitmesi grafik ardışık düzen tarafından yarısı oyunun performans üzerinde önemli bir etkisi olabilir.
 
@@ -212,25 +203,22 @@ Oyun programlama için yeni olan geliştiriciler neden merak ediyor `float` tür
 
 Son olarak, ekran bizim karakter taşır mantığı bunu oyunun zamanlama değerleri kullanarak şekilde yapmak görürsünüz. Kullanmak ihtiyacımız şekilde verilen çerçevede ne kadar zaman geçtikten hız çarparak sonucunu bir tam sayı nadiren neden olacak `float` için `X` ve `Y`.
 
-
-## <a name="why-is-charactersheettexture-static"></a>CharacterSheetTexture neden olduğunu statik?
+### <a name="why-is-charactersheettexture-static"></a>CharacterSheetTexture neden olduğunu statik?
 
 `characterSheetTexture` `Texture2D` Charactersheet.png dosya çalışma zamanı gösterimini örneğidir. Diğer bir deyişle, her piksel renk değerlerini kaynağından ayıklanan gibi içeren **charactersheet.png** dosya. Bizim oyun iki oluşturmak için olsaydı `CharacterEntity` örnekleri her biri erişim charactersheet.png bilgileri gerekir. Bu durumda biz charactersheet.png iki kez yüklenirken performans maliyeti tabi istemezsiniz veya ram depolanan yinelenen doku bellek olmasını istersiniz. Kullanarak bir `static` alan verir bize aynı paylaşmak `Texture2D` tüm `CharacterEntity` örnekleri.
 
 Kullanarak `static` üyeleri için içerik çalışma zamanı gösterimini simplistic bir çözümdür ve yüklemeyi kaldırma içeriği gibi daha büyük oyunlarda bir düzeyinden diğerine geçerken karşılaşılan sorunları adresi değil. Bu kılavuzun kapsamı dışındadır olan, daha karmaşık çözümler kullanılarak MonoGame'nın içerik ardışık düzeni veya özel bir içerik yönetim sistemi oluşturma içerir.
 
-
-## <a name="why-is-spritebatch-passed-as-an-argument-instead-of-instantiated-by-the-entity"></a>Neden bir bağımsız değişken INSTEAD of örneği varlık tarafından olarak SpriteBatch geçirilen mi?
+### <a name="why-is-spritebatch-passed-as-an-argument-instead-of-instantiated-by-the-entity"></a>Neden bir bağımsız değişken INSTEAD of örneği varlık tarafından olarak SpriteBatch geçirilen mi?
 
 `Draw` Alır uygulandığı şekilde yöntemi bir `SpriteBatch` bağımsız değişkeni, ancak buna karşın `characterSheetTexture` tarafından örneği `CharacterEntity`.
 
 Bunun nedeni en verimli işleme olasıdır çünkü aynı `SpriteBatch` örneği kullanılan tüm `Draw` çağrıları ve ne zaman tüm `Draw` çağrıları tek bir dizi arasında yapılan `Begin` ve `End` çağrıları. Elbette, bizim oyun yalnızca tek bir varlık örneği içerir, ancak daha karmaşık oyunlar aynı kullanmak birden çok varlık veren düzeni yararlanacaktır `SpriteBatch` örneği.
 
 
-# <a name="adding-characterentity-to-the-game"></a>Oyuna CharacterEntity ekleme
+## <a name="adding-characterentity-to-the-game"></a>Oyuna CharacterEntity ekleme
 
 Ekledik göre bizim `CharacterEntity` kendisini işlemeye koduyla biz kodda değiştirebilirsiniz `Game1.cs` bu yeni bir varlık örneği kullanmak için. Bunu değiştir yapmak için `Texture2D` ile alan bir `CharacterEntity` alanındaki `Game1`:
-
 
 ```csharp
 public class Game1 : Game
@@ -247,7 +235,6 @@ public class Game1 : Game
 
 Ardından, bu varlık örneklemesi ekleyeceğiz `Game1.Initialize`:
 
-
 ```csharp
 protected override void Initialize()
 {
@@ -258,7 +245,6 @@ protected override void Initialize()
 ```
 
 Biz de kaldırmanız gerekir `Texture2D` oluşturulması `LoadContent` , artık içinde işlenir beri bizim `CharacterEntity`. `Game1.LoadContent` aşağıdaki gibi görünmelidir:
-
 
 ```csharp
 protected override void LoadContent()
@@ -294,15 +280,14 @@ Biz oyun çalıştırırsanız, şimdi karakter göreceğiz. Varsayılan 0 X ve 
 
 ![](part2-images/image4.png "Varsayılan 0 X ve Y bu yana karakter ekranın sol üst köşesinde karşı sonra konumlandırılır")
 
-
-# <a name="creating-the-animation-class"></a>Animasyon sınıfı oluşturma
+## <a name="creating-the-animation-class"></a>Animasyon sınıfı oluşturma
 
 Şu anda bizim `CharacterEntity` tam görüntüler **charactersheet.png** dosya. Bu düzenlemenin bir dosyada birden çok görüntü olarak adlandırılır bir *hareketli grafik sayfası*. Genellikle, bir hareketli grafik hareketli grafik sayfası yalnızca bir kısmını işlemez. Biz değiştirecek `CharacterEntity` bu kısmı işlemek için **charactersheet.png**, ve bu bölümü yürüyen animasyon görüntülemek için zaman içinde değişir.
 
 Oluşturacağız `Animation` mantığı ve CharacterEntity animasyon durumunu denetlemek için sınıf. Animasyon sınıfı herhangi bir varlığa yalnızca kullanılabilen genel bir sınıf olacaktır `CharacterEntity` animasyonları. Ultimate `Animation` sınıfı sağlayacaktır bir `Rectangle` hangi `CharacterEntity` kendisini çizerken kullanır. Ayrıca oluşturacağız bir `AnimationFrame` animasyon tanımlamak için kullanılan sınıfı.
 
 
-## <a name="defining-animationframe"></a>AnimationFrame tanımlama
+### <a name="defining-animationframe"></a>AnimationFrame tanımlama
 
 `AnimationFrame` animasyon ilgili herhangi bir mantık içermez. Biz, yalnızca verileri depolamak için kullanırsınız. Eklemek için `AnimationFrame` sınıfı, sağ tıklatın veya denetim tıklatıldığında **WalkingGame** paylaşılan proje ve select **Ekle > yeni dosya...** Bir ad girin **AnimationFrame** tıklatıp **yeni** düğmesi. Biz değiştireceksiniz `AnimationFrame.cs` aşağıdaki kodu içeren dosya:
 
@@ -323,11 +308,10 @@ namespace WalkingGame
 
 `AnimationFrame` Sınıfı iki parça bilgi içerir:
 
- - `SourceRectangle` – Alanını tanımlar `Texture2D` tarafından görüntüleneceği `AnimationFrame`. Bu değer, üst sol olan (0, 0) ile piksel cinsinden ölçülür.
- - `Duration` – Ne kadar süreyle tanımlayan bir `AnimationFrame` kullanıldığında görüntülenen bir `Animation`.
+- `SourceRectangle` – Alanını tanımlar `Texture2D` tarafından görüntüleneceği `AnimationFrame`. Bu değer, üst sol olan (0, 0) ile piksel cinsinden ölçülür.
+- `Duration` – Ne kadar süreyle tanımlayan bir `AnimationFrame` kullanıldığında görüntülenen bir `Animation`.
 
-
-## <a name="defining-animation"></a>Animasyon tanımlama
+### <a name="defining-animation"></a>Animasyon tanımlama
 
 `Animation` İçereceği sınıfı bir `List<AnimationFrame>` hangi çerçeve ne kadar zaman geçtikten göre şu anda görüntülenen geçiş yapmak için mantığı yanı sıra.
 
@@ -388,25 +372,21 @@ namespace WalkingGame
 
 Bazı ayrıntılar bakalım `Animation` sınıfı.
 
-
-## <a name="frames-list"></a>Çerçeve listesi
+### <a name="frames-list"></a>Çerçeve listesi
 
 `frames` Üyesidir ne ekleyebilmemiz için verileri depolar. Animasyon başlatır kod ekleyeceksiniz `AnimationFrame` için örnekler `frames` aracılığıyla listesinde `AddFrame` yöntemi. Daha eksiksiz bir uygulama sunabilir `public` yöntemler veya değiştirmek için Özellikler `frames`, ancak bu kılavuz çerçeveler ekleme işlevselliğini sınırla.
 
-
-## <a name="duration"></a>Süre
+### <a name="duration"></a>Süre
 
 Süre döndürür toplam süresi `Animation,` hangi içerilen tüm süre eklenerek elde edilir `AnimationFrame` örnekleri. Bu değer, ise önbelleğe `AnimationFrame` değişmez nesne olan, ancak biz animasyonuna eklendikten sonra değiştirilebilen bir sınıf olarak AnimationFrame uygulanan olduğundan, bu değeri özellik erişildiğinde hesaplamak ihtiyacımız.
 
-
-## <a name="update"></a>Güncelleştirme
+### <a name="update"></a>Güncelleştirme
 
 `Update` Yöntemi her çerçeve (diğer bir deyişle, tüm oyun güncelleştirilir her zaman) adlı. Amacı artırmaktır `timeIntoAnimation` şu anda görüntülenen çerçeve döndürmek için kullanılan üyesi. Mantık `Update` engeller `timeIntoAnimation` engeller şimdiye kadar tüm animasyon süreden daha büyük.
 
 Biz kullanmaya başlayacağınız için `Animation` sonuna ulaştı zaman yineleyin bu animasyon olmasını istiyoruz sonra yürüyen animasyon görüntülenecek sınıf. Biz olmadığını denetleyerek gerçekleştirebilirsiniz `timeIntoAnimation` büyük `Duration` değeri. Öyleyse başına geri döngü ve döngü animasyonda kalanı koruyabilirsiniz.
 
-
-## <a name="obtaining-the-current-frames-rectangle"></a>Geçerli çerçevenin dikdörtgen alma
+### <a name="obtaining-the-current-frames-rectangle"></a>Geçerli çerçevenin dikdörtgen alma
 
 Amacı `Animation` sınıfı, sonuçta sağlamak için bir `Rectangle` kullanılabileceği bir hareketli grafik çizerken. Şu anda `Animation` sınıfı değiştirmek için mantığı içeren `timeIntoAnimation` da edinilir kullanacağız üye `Rectangle` görüntülenmesi gerekir. Biz oluşturarak gerçekleştirirsiniz bir `CurrentRectangle` özelliğinde `Animation` sınıfı. Bu özellik içine kopyalamak `Animation` sınıfı:
 
@@ -453,19 +433,18 @@ public Rectangle CurrentRectangle
 }
 ```
 
-# <a name="adding-the-first-animation-to-characterentity"></a>CharacterEntity için ilk animasyon ekleme
+## <a name="adding-the-first-animation-to-characterentity"></a>CharacterEntity için ilk animasyon ekleme
 
 `CharacterEntity` Taramasını ve konumu, hem de geçerli bir başvuru animasyonlarını içerecek `Animation` görüntüleniyor.
 
 İlk olarak, bizim ilk ekleyeceğiz `Animation,` , o ana kadarki yazıldığı şekilde işlevselliğini sınamak için kullanacağız. Aşağıdaki üyeleri CharacterEntity sınıfına ekleyelim:
-
 
 ```csharp
 Animation walkDown;
 Animation currentAnimation;
 ```
 
- Ardından, şimdi tanımlamak `walkDown` animasyon. Yapmak için bunu değiştirmek `CharacterEntity` şekilde Oluşturucusu:
+Ardından, şimdi tanımlamak `walkDown` animasyon. Yapmak için bunu değiştirmek `CharacterEntity` şekilde Oluşturucusu:
 
 ```csharp
 public CharacterEntity (GraphicsDevice graphicsDevice)
@@ -485,6 +464,7 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
     walkDown.AddFrame (new Rectangle (32, 0, 16, 16), TimeSpan.FromSeconds (.25));
 }
 ```
+
 Daha önce belirtildiği gibi çağırmak ihtiyacımız `Animation.Update` yürütmek animasyonların zaman tabanlı. Ayrıca atamak ihtiyacımız `currentAnimation`. Şimdi biz atama `currentAnimation` için `walkDown`, ancak biz taşıma mantığımızı uyguladığınızda Biz bu kodu daha sonra değiştirme. Ekleyeceğiz `Update` yönteme `CharacterEntity` gibi:
 
 
@@ -501,7 +481,6 @@ public void Update(GameTime gameTime)
 
 Biz sahip olduğunuza `currentAnimation` olan atanan ve güncelleştirilmiş, biz bunu bizim çizim gerçekleştirmek için kullanabilirsiniz. Biz değiştireceksiniz `CharacterEntity.Draw` gibi:
 
-
 ```csharp
 public void Draw(SpriteBatch spriteBatch)
 {
@@ -515,7 +494,6 @@ public void Draw(SpriteBatch spriteBatch)
 
 Alma için son adımı `CharacterEntity` animasyon çağırmaktır yeni eklenen `Update` yönteminden `Game1`. Değiştirme `Game1.Update` gibi:
 
-
 ```csharp
 protected override void Update(GameTime gameTime)
 {
@@ -528,13 +506,11 @@ protected override void Update(GameTime gameTime)
 
 ![](part2-images/image5.gif "CharacterEntity walkDown animasyonunun şimdi oynayacağı")
 
-
-# <a name="adding-movement-to-the-character"></a>Taşıma için karakter ekleme
+## <a name="adding-movement-to-the-character"></a>Taşıma için karakter ekleme
 
 Ardından, biz taşıma dokunma denetimlerini kullanarak bizim karakter ekleme. Kullanıcının ekran dokunduğunda karakter ekran burada işlemdeki noktası taşınır. Hiçbir rötuşları algılanırsa karakter yerinde görünecektir.
 
-
-## <a name="defining-getdesiredvelocityfrominput"></a>Defining GetDesiredVelocityFromInput
+### <a name="defining-getdesiredvelocityfrominput"></a>GetDesiredVelocityFromInput tanımlama
 
 Biz MonoGame'nın kullanmaya başlayacağınız `TouchPanel` dokunmatik ekran geçerli durumu hakkında bilgi sağlayan sınıf. Denetleyecek bir yöntem ekleyelim `TouchPanel` ve bizim karakterin istenen hız döndürür:
 
@@ -567,7 +543,6 @@ Vector2 GetDesiredVelocityFromInput()
 
 Kullanıcının ekran temas, biz ilk dokunma doğru karakter diğer bir deyişle taşınır, `TouchLocation` dizin 0 konumunda. İlk karakterin konumu ve ilk dokunma 's konumu arasındaki farkı eşit istenen hız yaparız:
 
-
 ```csharp
         desiredVelocity.X = touchCollection [0].Position.X - this.X;
         desiredVelocity.Y = touchCollection [0].Position.Y - this.Y;
@@ -578,10 +553,9 @@ Aşağıda, taşıma karakter aynı hızda tutar matematik biraz olur. Bu neden 
 `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)` Deyimi denetimini hız durumda olmayan-sıfır – diğer bir deyişle, bu denetimi etkinleştirilmişse kullanıcı aynı nokta karakterin geçerli konumu olarak bitişik olmayan emin olmak için. Ardından dokunma uzakta nasıl bakılmaksızın sabit olması karakterin hızı ayarlamak ihtiyacımız olmadığını ise. Biz bunu 1 uzunluğu olan sonuçları hangi hız vektör normalleştirme tarafından gerçekleştirmek. Hız vektör karakter saniyede 1 piksel adresindeki taşınır 1 anlamına gelir. Biz bu 200 istenen hızını değeri çarparak hızlandırma.
 
 
-## <a name="applying-velocity-to-position"></a>Hız konuma uygulama
+### <a name="applying-velocity-to-position"></a>Hız konuma uygulama
 
 Döndürülen hız `GetDesiredVelocityFromInput` karakterin uygulanmalıdır `X` ve `Y` değerleri çalışma zamanında hiçbir etkisi yoktur. Biz değiştireceksiniz `Update` yöntemini aşağıdaki şekilde:
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -606,19 +580,16 @@ Biz bizim oyun şimdi çalıştırırsanız biz karakter dokunma konumun doğru 
 
 ![](part2-images/image6.gif "Karakter dokunma konumun doğru taşıma")
 
-
-# <a name="matching-movement-and-animation"></a>Taşıma ve animasyon eşleştirme
+## <a name="matching-movement-and-animation"></a>Taşıma ve animasyon eşleştirme
 
 Taşıma ve tek bir animasyon yürütmeyi bizim karakter sahibiz sonra biz bizim animasyonları kalanı tanımlamak sonra karakter hareketini yansıtmak için bunları kullanın. Zaman tamamlanmış biz sekiz animasyonları toplam gerekir:
 
- - Animasyon yukarı, aşağı, sol taramasını ve sağa için
- - Animasyon durumu için hala ve aşağı yukarı, karşılıklı, sol ve sağ
+- Animasyon yukarı, aşağı, sol taramasını ve sağa için
+- Animasyon durumu için hala ve aşağı yukarı, karşılıklı, sol ve sağ
 
-
-## <a name="defining-the-rest-of-the-animations"></a>Animasyon kalan tanımlama
+### <a name="defining-the-rest-of-the-animations"></a>Animasyon kalan tanımlama
 
 İlk ekleyeceğiz `Animation` için örnekler `CharacterEntity` bizim animasyonları burada eklediğimiz aynı yerde tamamı için sınıf `walkDown`. Biz bunu yaptıktan sonra `CharacterEntity` aşağıdaki olacaktır `Animation` üyeleri:
-
 
 ```csharp
 Animation walkDown;
@@ -635,7 +606,6 @@ Animation currentAnimation;
 ```
 
 Animasyonları tanımlama olasılığınız yüksektir artık `CharacterEntity` şekilde Oluşturucusu:
-
 
 ```csharp
 public CharacterEntity (GraphicsDevice graphicsDevice)
@@ -768,8 +738,7 @@ Bu kod karakter düzgün taramasını Dağıt ve onu durduğunda taramasını so
 
 ![](part2-images/image7.gif "Bu kodun sonucunda karakter düzgün taramasını Dağıt ve bunu durduğunda taramasını son yönü yüz olmasıdır")
 
-
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuz bir platformlar arası oluşturmak için MonoGame ile çalışmaya nasıl hareketli grafikler, taşıma nesneleri, giriş algılama ve animasyon oyun gösterilmiştir. Genel amaçlı animasyon sınıfı oluşturma kapsar. Kod mantığı düzenlemek için bir karakter varlığı nasıl oluşturulacağını gösterir.
 

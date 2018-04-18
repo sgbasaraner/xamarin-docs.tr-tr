@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 9fb19b86ca303f8be3506d267dd75dc9db6cfca6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c94ed2e06ee57b67745b6a02692df2360aeb9754
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>MonoGame oyun geliştirmeye giriş
 
@@ -27,16 +27,16 @@ Bu örneklerde sonuna player dokunmatik giriş animasyonlu bir karakterle burada
 
 Bu kılavuzda sonucunu gösterir:
 
-![](images/image1.gif "Kılavuzda yerleşik uygulama")
+![Fare aşağıdaki örnek bir oyun karakterin animasyon](images/image1.gif)
 
-# <a name="monogame-and-xna"></a>Monogame ve XNA
+## <a name="monogame-and-xna"></a>Monogame ve XNA
 
 MonoGame kitaplığı, Microsoft'un XNA kitaplıkta sözdizimi ve işlevsellik taklit etmek üzere tasarlanmıştır.  Hiçbir değişikliğe sahip MonoGame içinde kullanılacak çoğu XNA kodu izin vererek Microsoft.Xna ad alanı – altındaki tüm MonoGame nesneleri vardır. 
 
 XNA ile hakkında bilgi sahibi geliştiriciler önceden MonoGame'nın sözdizimi hakkında bilginiz olması gerekir ve MonoGame ile çalışma hakkında ek bilgi isteyen geliştiriciler mevcut çevrimiçi XNA izlenecek yollar, API belgelerine ve tartışmaları başvuru mümkün olacaktır.
 
 
-# <a name="walkthrough-parts"></a>İzlenecek yol bölümleri
+## <a name="walkthrough-parts"></a>İzlenecek yol bölümleri
 
 - [Bölüm 1 – platformlar arası MonoGame proje oluşturma](~/graphics-games/monogame/introduction/part1.md)
 - [Bölüm 2 – WalkingGame uygulama](~/graphics-games/monogame/introduction/part2.md)

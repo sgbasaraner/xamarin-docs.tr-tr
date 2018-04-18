@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: bb551b548f241cacfc4cb700d247684c15f6fcf7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 212a190b56465a8401b17b7a379a1f083d8f8d87
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin Güvenlik Duvarı'nı yapılandırma yönergeleri
 
@@ -21,14 +21,14 @@ Yükleme ve düzgün çalışması Xamarin ürünleri için sırayla belirli uç
 
 ## <a name="endpoints-to-whitelist"></a>Güvenilir listeye uç noktaları
 
-### <a name="xamarin-installer"></a>Xamarin Installer
+### <a name="xamarin-installer"></a>Xamarin yükleyici
 
 Aşağıdaki bilinen adresleri yazılımının Xamarin Yükleyicisi'nin en son sürümünü kullanırken düzgün bir şekilde yüklenmesi sırayla eklenmesi gerekir:
 
 -  xamarin.com (Yükleyici bildirimleri)
 -  DL.xamarin.com (paket yükleme konumu)
 -  dl.google.com (Android SDK yüklemek için)
--  download.oracle.com (JDK)
+-  download.Oracle.com (JDK)
 -  VisualStudio.com (Kurulum paketlerini indirmek konumu)
 -  go.microsoft.com (Kurulum URL çözümleme)
 -  aka.MS (Kurulum URL çözümleme)
@@ -42,8 +42,8 @@ Aşağıdaki adresleri Xamarin bileşen Deposu'nda veya NuGet erişmek için ekl
 
 -  components.xamarin.com (Xamarin bileşenleri deposunu kullanmak üzere)
 -  xampubdl.BLOB.Core.Windows.NET (ana bileşenler deposu indirmeleri)
--  www.nuget.org (NuGet erişim için)
--  az320820.vo.msecnd.net (NuGet downloads)
+-  www\.nuget.org (NuGet erişim için)
+-  az320820.VO.msecnd.NET (NuGet indirmeleri)
 -  DL ssl.google.com (Google bileşenleri)
 
 
@@ -52,8 +52,8 @@ Aşağıdaki adresleri Xamarin bileşen Deposu'nda veya NuGet erişmek için ekl
 Aşağıdaki adresler, yazılım güncelleştirmeleri düzgün indirebilirsiniz emin olmak için eklenecek gerekir:
 
 -  Software.xamarin.com (güncelleştirici hizmetini)
--  download.visualstudio.microsoft.com
--  dl.xamarin.com
+-  download.VisualStudio.microsoft.com
+-  DL.xamarin.com
 
 ## <a name="xamarin-mac-agent"></a>Xamarin Mac arası
 

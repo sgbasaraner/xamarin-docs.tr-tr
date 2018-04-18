@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0273b4f13c91fd766530ff7c0976096de3239dc5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3538efef107778397bd8c799bdd63eb6c2f3de3
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>3B MonoGame koordinatları
 
@@ -23,26 +23,26 @@ Sunulan kavramları Lineer Cebir kaynaklanan ancak güçlü matematik arka plan 
 
 Biz, aşağıdaki konuları kapsayan:
 
- - Proje Oluşturma
- - Bir Robot varlığı oluşturma
- - Robot varlık taşıma
- - Matris çarpım
- - Kamera varlık oluşturma
- - Girişi kamera taşıma
+- Proje Oluşturma
+- Bir Robot varlığı oluşturma
+- Robot varlık taşıma
+- Matris çarpım
+- Kamera varlık oluşturma
+- Girişi kamera taşıma
 
 İşlemi tamamladıktan sonra size bir proje ile daire ve dokunma girişi tarafından denetlenen bir kamera taşıma anlamamıza sahip olursunuz:
 
 ![](part3-images/image1.gif "İşlemi tamamladıktan sonra uygulama bir proje ile daire ve dokunma girişi tarafından denetlenen bir kamera taşıma anlamamıza içerir")
 
 
-# <a name="creating-a-project"></a>Proje Oluşturma
+## <a name="creating-a-project"></a>Proje Oluşturma
 
 Bu kılavuz, 3B alanda nesneleri taşıma odaklanır. Proje oluşturma modellerini ve köşe diziler için ile başlarsınız [, şurada bulunabilir](https://developer.xamarin.com/samples/mobile/ModelsAndVertsMG/). Yüklendikten sonra sıkıştırmasını açın ve çalıştırdığı ve görmeliyiz aşağıdaki emin olmak için projeyi açın:
 
 ![](part3-images/image2.png "Yüklendikten sonra sıkıştırmasını açın ve onu çalıştırır ve bu görünüm görüntülenmelidir emin olmak için projeyi açın")
 
 
-# <a name="creating-a-robot-entity"></a>Bir Robot varlığı oluşturma
+## <a name="creating-a-robot-entity"></a>Bir Robot varlığı oluşturma
 
 Bizim robot geçici taşıma başlamadan önce oluşturacağız bir `Robot` sınıf çizme ve taşıma için mantık içerir. Oyun geliştiriciler bu kapsülleme mantığı ve verileri olarak başvurduğu bir *varlık*.
 
@@ -51,7 +51,6 @@ Yeni bir boş sınıf dosyası ekleyin **MonoGame3D** taşınabilir sınıf kita
 ![](part3-images/image3.png "Robot adlandırın ve yeni'yi tıklatın")
 
 Değiştirme `Robot` gibi sınıfı:
-
 
 ```csharp
 using System;
@@ -88,7 +87,7 @@ namespace MonoGame3D
 
                     effect.View = Matrix.CreateLookAt (
                         cameraPosition, cameraLookAtVector, cameraUpVector);
-                        
+
                     float fieldOfView = Microsoft.Xna.Framework.MathHelper.PiOver4;
                     float nearClipPlane = 1;
                     float farClipPlane = 200;
@@ -109,7 +108,6 @@ namespace MonoGame3D
 ```
 
 `Robot` Kodudur temelde aynı kodda `Game1` çizim için bir `Model`. Gözden geçirme için `Model` yükleme ve çizim bkz [modellerle çalışma üzerinde bu kılavuzda](~/graphics-games/monogame/3d/part1.md). Biz şimdi tüm kaldırabilirsiniz `Model` yükleme ve koddan işleme `Game1`ve bunların yerine bir `Robot` örneği:
-
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -135,7 +133,7 @@ namespace MonoGame3D
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = true;
-                        
+
             Content.RootDirectory = "Content";
         }
 
@@ -226,7 +224,7 @@ namespace MonoGame3D
                     2);
             }
         }
-    }                                          
+    }
 }
 ```
 
@@ -234,15 +232,13 @@ namespace MonoGame3D
 
 ![](part3-images/image4.png "Kod şimdi çalıştırırsanız, uygulama bir Sahne çoğunlukla altında kat çizilmiş yalnızca bir robot ile görüntülenir")
 
-
-# <a name="moving-the-robot"></a>Robot taşıma
+## <a name="moving-the-robot"></a>Robot taşıma
 
 Biz sahip olduğunuza göre bir `Robot` sınıfı, robot taşıma mantığı ekleyebiliriz. Bu durumda, biz yalnızca oyun saate bir daire içinde taşımak robot hale getireceğiz. Bu bir biraz pratik gerçek bir oyun girişi için bir karakter genellikle yanıt verebilir veya bize 3B konumlandırma ve döndürme keşfetmek için bir ortam sağlar yapay zeka, ancak beri uygulamasıdır.
 
 Biz gerekir gelen dışında tek bilgi `Robot` sınıfı, geçerli oyun süre. Ekleyeceğiz bir `Update` alacak yöntemi bir `GameTime` parametresi. Bu `GameTime` parametresi, robot son konumunu belirlemek için kullanacağız bir açı değişkeni artırmak için kullanılır.
 
 İlk olarak, açı alanın ekleyeceğiz `Robot` altında sınıf `model` alan:
-
 
 ```csharp
 public class Robot
@@ -251,11 +247,10 @@ public class Robot
 
     // new code:
     float angle;
-    ... 
+    ...
 ```
 
  Biz bu değeri artırabilirsiniz artık bir `Update` işlevi:
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -267,17 +262,15 @@ public void Update(GameTime gameTime)
 
 Emin olmak ihtiyacımız `Update` yöntemi çağrılır `Game1.Update`:
 
-
 ```csharp
 protected override void Update(GameTime gameTime)
 {
     robot.Update (gameTime);
     base.Update(gameTime);
-} 
+}
 ```
 
 Elbette, bu noktada Açı alanı hiçbir şey yapmaz – kullanmak için kod yazmanız gerekir. Biz değiştireceksiniz `Draw` yöntemi böylece biz world hesaplayabilirsiniz `Matrix` adanmış bir yöntem: 
-
 
 ```csharp
 public void Draw(Vector3 cameraPosition, float aspectRatio)
@@ -296,7 +289,7 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 
             effect.View = Matrix.CreateLookAt (
                 cameraPosition, cameraLookAtVector, cameraUpVector);
-                
+
             float fieldOfView = Microsoft.Xna.Framework.MathHelper.PiOver4;
             float nearClipPlane = 1;
             float farClipPlane = 200;
@@ -307,18 +300,17 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 
         mesh.Draw ();
     }
-} 
+}
 ```
 
 Ardından, biz uygulamak `GetWorldMatrix` yönteminde `Robot` sınıfı:
-
 
 ```csharp
 Matrix GetWorldMatrix()
 {
     const float circleRadius = 8;
     const float heightOffGround = 3;
-    
+
     // this matrix moves the model "out" from the origin
     Matrix translationMatrix = Matrix.CreateTranslation (
         circleRadius, 0, heightOffGround);
@@ -330,15 +322,14 @@ Matrix GetWorldMatrix()
     Matrix combined = translationMatrix * rotationMatrix;
 
     return combined;
-} 
+}
 ```
 
 Bu kod çalıştırmanın sonuçlarını bir daire içinde taşıma robot sonuçlanır:
 
 ![](part3-images/image5.gif "Bu kod sonuçları bir daire içinde taşıma robot çalışıyor.")
 
-
-# <a name="matrix-multiplication"></a>Matris çarpım
+## <a name="matrix-multiplication"></a>Matris çarpım
 
 Yukarıdaki kod oluşturarak robot döndüğü bir `Matrix` içinde `GetWorldMatrix` yöntemi. `Matrix` Yapısı (kümesi konum) Çevir, döndürün ve ölçeklendirmek için kullanılan 16 float değerleri içerir (boyutunu ayarlayın). Biz atadığınızda `effect.World` özelliği biz bildiren sistem nasıl getirin, boyut ve ne olursa olsun hizalanması işleme arka plandaki çizim olması oluşacağını (bir `Model` veya köşeleri geometriye). 
 
@@ -348,9 +339,9 @@ Neyse ki, `Matrix` yapısı matrisleri genel türleri oluşturulmasını basitle
 
 Döndürme matris oluşturuyoruz ikinci matris olduğu kullanarak `CreateRotationZ` matris. Bu, döndürme oluşturmak için kullanılan üç yöntem biridir:
 
- - `CreateRotationX`
- - `CreateRoationY`
- - `CreateRotationZ`
+- `CreateRotationX`
+- `CreateRoationY`
+- `CreateRotationZ`
 
 Her yöntem hakkında belirli bir eksen döndürerek döndürme matris oluşturur. Örneğimizde, biz "yedekleme" işaret Z ekseni etrafında döndürme. Aşağıdaki nasıl eksen tabanlı döndürme görselleştirmenize yardımcı olabilecek çalışır:
 
@@ -359,7 +350,6 @@ Her yöntem hakkında belirli bir eksen döndürerek döndürme matris oluşturu
 Ayrıca kullanıyoruz `CreateRotationZ` nedeniyle zamanla artar Açı alanı yöntemiyle bizim `Update` çağrılan yöntem. Sonuç `CreateRotationZ` yöntemi bizim robot başlangıcı Zaman geçtikçe Yörünge neden olur.
 
 Kodu son satırının iki matrisi tek istekte birleştirir:
-
 
 ```csharp
 Matrix combined = translationMatrix * rotationMatrix;
@@ -370,7 +360,6 @@ Bu normal çarpma biraz farklı çalıştığını matris çarpım olarak adland
 ![](part3-images/image8.png "Görselleştirme pf yukarıdaki satırın konumunu ve döndürme etkiler yolu")
 
 Matris çarpım sırasını sonucu nasıl etkileyebileceğini anlamanıza yardımcı olması için burada matris çarpım ters aşağıdakileri göz önünde bulundurun:
-
 
 ```csharp
 Matrix combined = rotationMatrix * translationMatrix;
@@ -384,13 +373,11 @@ Kod ile ters çarpma çalıştırırsanız biz döndürme önce geçerli olmadı
 
 ![](part3-images/image10.gif "Yerinde modeli döndürür")
 
-
-# <a name="creating-the-camera-entity"></a>Kamera varlık oluşturma
+## <a name="creating-the-camera-entity"></a>Kamera varlık oluşturma
 
 `Camera` Varlık tüm giriş tabanlı taşıma gerçekleştirmek ve Özellikler atama için özellikler sağlamak için gerekli mantığı içerecek `BasicEffect` sınıfı.
 
 İlk statik kamera (hiçbir giriş tabanlı taşıma) uygulamak ve bizim varolan bir projeye tümleştirebilirsiniz. Yeni bir sınıf ekleyin **MonoGame3D** taşınabilir sınıf kitaplığı (aynı proje ile `Robot.cs`) ve adlandırın **kamera**. Dosyasının içeriğini aşağıdaki kodla değiştirin:
-
 
 ```csharp
 using System;
@@ -427,7 +414,7 @@ namespace MonoGame3D
                 float nearClipPlane = 1;
                 float farClipPlane = 200;
                 float aspectRatio = graphicsDevice.Viewport.Width / (float)graphicsDevice.Viewport.Height;
-                
+
                 return Matrix.CreatePerspectiveFieldOfView(
                     fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
             }
@@ -448,8 +435,7 @@ namespace MonoGame3D
 
 Yukarıdaki kod koddan çok benzer `Game1` ve `Robot` , Ata matrisleri üzerinde `BasicEffect`. 
 
-Biz yeni tümleştirebilirsiniz artık `Camera` bizim mevcut projeleri sınıfına. İlk olarak, biz değiştireceksiniz `Robot` yapılacak sınıfı bir `Camera` örneğini kendi` Draw `çok yinelenen kod giderilecektir yöntemi. Değiştir `Robot.Draw` aşağıdaki yöntemiyle:
-
+Biz yeni tümleştirebilirsiniz artık `Camera` bizim mevcut projeleri sınıfına. İlk olarak, biz değiştireceksiniz `Robot` yapılacak sınıfı bir `Camera` örneğini kendi `Draw` çok yinelenen kod giderilecektir yöntemi. Değiştir `Robot.Draw` aşağıdaki yöntemiyle:
 
 ```csharp
 public void Draw(Camera camera)
@@ -468,11 +454,10 @@ public void Draw(Camera camera)
 
         mesh.Draw ();
     }
-} 
+}
 ```
 
 Ardından, değişiklik `Game1.cs` dosyası:
-
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -499,7 +484,7 @@ namespace MonoGame3D
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = true;
-                        
+
             Content.RootDirectory = "Content";
         }
 
@@ -585,35 +570,32 @@ namespace MonoGame3D
             }
         }
     }
-} 
+}
 ```
 
 Değişiklikler `Game1` önceki sürümünden (ile tanımlanmış `// New camera code` ) şunlardır:
 
- - `Camera` alanı `Game1`
- - `Camera` Örnekleme içinde `Game1.Initialize`
- - `Camera.Update` Çağır `Game1.Update`
- - `Robot.Draw` Şimdi geçen bir `Camera` parametresi
- - `Game1.Draw` Şimdi kullanan `Camera.ViewMatrix` ve `Camera.ProjectionMatrix`
+- `Camera` alanı `Game1`
+- `Camera` Örnekleme içinde `Game1.Initialize`
+- `Camera.Update` Çağır `Game1.Update`
+- `Robot.Draw` Şimdi geçen bir `Camera` parametresi
+- `Game1.Draw` Şimdi kullanan `Camera.ViewMatrix` ve `Camera.ProjectionMatrix`
 
-
-# <a name="moving-the-camera-with-input"></a>Girişi kamera taşıma
+## <a name="moving-the-camera-with-input"></a>Girişi kamera taşıma
 
 Şu ana kadar ekledik bir `Camera` varlık ile çalışma zamanı davranışını değiştirmek için herhangi bir şey bu işlemi yapmadıysanız ancak. Kullanıcının veren davranışı ekleyeceğiz için:
 
- - Sola doğru kamerayı ekranın sol tarafındaki dokunma
- - Sağa kamerayı ekranın sağ tarafındaki dokunma
- - Dokunmatik ekran kamera ilerlemek için merkezi
+- Sola doğru kamerayı ekranın sol tarafındaki dokunma
+- Sağa kamerayı ekranın sağ tarafındaki dokunma
+- Dokunmatik ekran kamera ilerlemek için merkezi
 
-
-## <a name="making-lookat-relative"></a>LookAt göreli yapma
+### <a name="making-lookat-relative"></a>LookAt göreli yapma
 
 Biz öncelikle güncelleştireceğim `Camera` eklemek için sınıfı bir `angle` kullanılır alanı yönünü ayarlama `Camera` karşılıklı. Şu anda, bizim `Camera` yerel durumdadır yönünü belirler `lookAtVector`, için atanan `Vector3.Zero`. Diğer bir deyişle, bizim `Camera` başlangıcı sırasında her zaman görünür. Kamera geçerse, kamera karşılıklı açı da değiştirir:
 
 ![](part3-images/image11.gif "Kamera geçerse, ardından kamera karşılıklı açı da değiştirir")
 
-İstediğimiz `Camera` – konumuna bakılmaksızın aynı yönde en az karşılıklı için biz döndürme mantığı uygulayana kadar` Camera `girişi kullanma. Ayarlamak için ilk değişiklik olacaktır `lookAtVector` dışına bizim geçerli konumuna bağlı için değişken yerine mutlak bir konumdaki görünümlü:
-
+İstediğimiz `Camera` – konumuna bakılmaksızın aynı yönde en az karşılıklı için biz döndürme mantığı uygulayana kadar `Camera` girişi kullanma. Ayarlamak için ilk değişiklik olacaktır `lookAtVector` dışına bizim geçerli konumuna bağlı için değişken yerine mutlak bir konumdaki görünümlü:
 
 ```csharp
 public class Camera
@@ -635,7 +617,7 @@ public class Camera
             return  Matrix.CreateLookAt (
                 position, lookAtVector, upVector);
         }
-    } 
+    }
     ...
 ```
 
@@ -643,15 +625,13 @@ Bu, sonuçlanır `Camera` düz üzerinde world görüntüleme. Dikkat ilk `posit
 
 ![](part3-images/image12.png "Bu görünüm oyun çalıştıran görüntüler")
 
-
-## <a name="creating-an-angle-variable"></a>Bir açının değişkeni oluşturma
+### <a name="creating-an-angle-variable"></a>Bir açının değişkeni oluşturma
 
 `lookAtVector` Değişkeni bizim kamera görüntüleme açı denetler. Şu anda negatif Y ekseni görüntülemek için düzeltilen ve aşağı biraz eğildiğinde (gelen `-.5f` Z değeri). Oluşturacağız bir `angle` ayarlamak için kullanılan değişken `lookAtVector` özelliği. 
 
 Bu kılavuzun önceki bölümlerinde matrisleri nesneler nasıl çizilir döndürmek için kullanılabilir gösterdi. Biz matrisleri gibi vektörlerinin döndürmek için de kullanabilirsiniz `lookAtVector` kullanarak `Vector3.Transform` yöntemi. 
 
 Ekleme bir `angle` alan ve değiştirme `ViewMatrix` özelliğini aşağıdaki gibi:
-
 
 ```csharp
 public class Camera
@@ -678,12 +658,11 @@ public class Camera
             return  Matrix.CreateLookAt (
                 position, lookAtVector, upVector);
         }
-    } 
+    }
     ...
 ```
 
-
-## <a name="reading-input"></a>Giriş okuma
+### <a name="reading-input"></a>Giriş okuma
 
 Bizim `Camera` varlık artık tam olarak denetlenebilir açı değişkenleri ve konum – biz giriş göre değiştirmek yeterlidir.
 
@@ -693,13 +672,11 @@ Kullanıcı sol üçüncü temas sonra ayarlamanız `angle` değeri böylece `Ca
 
 İlk olarak, kullanarak bir ekleyin nitelemek için deyimi `TouchPanel` ve `TouchCollection` sınıfları `Camera.cs`:
 
-
 ```csharp
 using Microsoft.Xna.Framework.Input.Touch; 
 ```
 
 Ardından, değişiklik `Update` dokunma paneli okuyun ve ayarlamak için yöntem `angle` ve `position` değişkenleri uygun şekilde:
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -734,7 +711,7 @@ public void Update(GameTime gameTime)
             angle -= (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
     }
-} 
+}
 ```
 
 Şimdi `Camera` giriş touch yanıt verir:
@@ -747,8 +724,7 @@ Kullanıcının ekran temas, kod, ilk dokunma sol, Orta veya ekranın sağ üç�
 
 Kullanıcının üçüncü merkezi temas varsa ekranda, ardından kamera İleri taşınır. Bu başlangıçta negatif Y ekseni işaret eden olarak tanımlanmış, sonra kullanılarak oluşturulan bir matris tarafından döndürülen iletme vektör elde ederek ilk gerçekleştirilir `Matrix.CreateRotationZ` ve `angle` değeri. Son olarak `forwardVector` uygulanan `position` kullanarak `unitsPerSecond` katsayısı.
 
-
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuz, taşıma ve döndürmek alınmaktadır `Models` 3D boşluk kullanarak `Matrices` ve `BasicEffect.World` özelliği. Taşıma, bu formu, 3B oyunlarda nesneleri taşıma için temeli sağlar. Bu izlenecek yol da nasıl uygulanacağını kapsayan bir `Camera` herhangi bir konumu ve açı dünyadan görüntülemek için varlık.
 

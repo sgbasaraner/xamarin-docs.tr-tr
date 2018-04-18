@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 25a05bcd094011042b3dc33a1b837460d5893be0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4736bedd413663af098bbad522cc56f432e36ea0
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>3B grafik köşeleri ile MonoGame içinde çizme
 
@@ -29,19 +29,18 @@ Yukarıda gösterildiği gibi küre birden çok üçgenler açıkça oluşur. Bi
 
 Bu kılavuzda aşağıdaki konular ele alınacaktır:
 
- - Proje oluşturma
- - Köşeleri oluşturma
- - Çizim kod ekleme
- - Bir doku ile işleme
- - Doku koordinatları değiştirme
- - Köşeleri modelleri ile işleme
+- Proje oluşturma
+- Köşeleri oluşturma
+- Çizim kod ekleme
+- Bir doku ile işleme
+- Doku koordinatları değiştirme
+- Köşeleri modelleri ile işleme
 
 Tamamlanmış projenin köşe dizisi kullanılarak çizilmiş Damalı kat içerir:
 
 ![](part2-images/image3.png "Tamamlanmış projenin köşe dizisi kullanılarak çizilmiş Damalı kat içerir")
 
-
-# <a name="creating-a-project"></a>Proje Oluşturma
+## <a name="creating-a-project"></a>Proje Oluşturma
 
 İlk olarak, biz bizim başlangıç noktası olarak hizmet verecek bir projesi indirirsiniz. Modeli projesi kullanacağız [, şurada bulunabilir](https://developer.xamarin.com/samples/mobile/ModelRenderingMG/).
 
@@ -51,12 +50,11 @@ Tamamlanmış projenin köşe dizisi kullanılarak çizilmiş Damalı kat içeri
 
 Bu proje sonuna biz kendi özel köşe işleme robot ile birleştirerek `Model`, biz robot işleme kod silmek için giderek değil. Bunun yerine, biz Temizle yalnızca `Game1.Draw` 6 robots çizim şimdilik kaldırmak için çağırın. Bunu yapmak için açın **Game1.cs** dosya ve bulun `Draw` yöntemi. Aşağıdaki kod içerecek şekilde değiştirin:
 
-
 ```csharp
 protected override void Draw(GameTime gameTime)
 {
-    GraphicsDevice.Clear(Color.CornflowerBlue);
-    base.Draw(gameTime);
+  GraphicsDevice.Clear(Color.CornflowerBlue);
+  base.Draw(gameTime);
 }
 ```
 
@@ -64,36 +62,33 @@ Bu, boş bir mavi ekran görüntüleme bizim oyunda neden olur:
 
 ![](part2-images/image5.png "Bu, boş bir mavi ekran görüntüleme oyunda neden olacak")
 
-
-# <a name="creating-the-vertices"></a>Köşeleri oluşturma
+## <a name="creating-the-vertices"></a>Köşeleri oluşturma
 
 Bizim geometri tanımlamak için köşeleri dizisi oluşturacağız. Bu kılavuzda, bir 3B düzlem (3B uzaydaki kare, bir uçak) oluşturuluyor. Bizim düzlemi dört yanları ve dört köşe olsa da, her biri üç köşeleri gerektiren iki üçgenler oluşacaktır. Bu nedenle, biz altı noktaları toplam tanımlama.
 
 Şu ana kadar biz genel bir fikir tepe hakkında konuşurken ancak MonoGame köşe için kullanılabilecek bazı standart yapılar sağlar:
 
- - `Microsoft.Xna.Framework.Graphics.VertexPositionColor`
- - `Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture`
- - `Microsoft.Xna.Framework.Graphics.VertexPositionNormalTexture`
- - `Microsoft.Xna.Framework.Graphics.VertexPositionTexture`
+- `Microsoft.Xna.Framework.Graphics.VertexPositionColor`
+- `Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture`
+- `Microsoft.Xna.Framework.Graphics.VertexPositionNormalTexture`
+- `Microsoft.Xna.Framework.Graphics.VertexPositionTexture`
 
 Her tür adı içerdiği bileşenleri gösterir. Örneğin, `VertexPositionColor` konumu ve rengi değerlerini içerir. Her bileşenlerini bakalım:
 
- - Konum – tüm köşe türler bir `Position` bileşeni. `Position` Değerleri tanımlayın köşe 3B alanda (X, Y ve Z) bulunduğu.
- - Renk – köşeleri belirtebilirsiniz isteğe bağlı olarak bir `Color` özel tonlamak gerçekleştirmek için değer.
- - Normal – normalleri nesnenin yüzeyinin karşılıklı hangi yolla tanımlayın. Normalleri yönü bu yana aydınlatma sahip bir nesne oluşturma, bir yüzey etkileri ne kadar açık aldığı karşılıklı gereklidir. Normalleri olarak belirtilen genellikle bir *birim vektör* – 1 uzunluğuna sahip bir 3B vektör.
- - Doku – doku doku hangi kısmının verilen köşelerde görünmesi gereken doku koordinatları – başka bir deyişle, ifade eder. Bir 3B nesnesi ile bir doku işleme, doku değerleri gereklidir. Doku koordinatlar değerleri 0 ile 1 arasında kalan yani normalleştirilmiş koordinatları belirlenir. Biz doku koordinatları bu kılavuzun ilerleyen bölümlerinde daha ayrıntılı olarak ele alacağız.
+- Konum – tüm köşe türler bir `Position` bileşeni. `Position` Değerleri tanımlayın köşe 3B alanda (X, Y ve Z) bulunduğu.
+- Renk – köşeleri belirtebilirsiniz isteğe bağlı olarak bir `Color` özel tonlamak gerçekleştirmek için değer.
+- Normal – normalleri nesnenin yüzeyinin karşılıklı hangi yolla tanımlayın. Normalleri yönü bu yana aydınlatma sahip bir nesne oluşturma, bir yüzey etkileri ne kadar açık aldığı karşılıklı gereklidir. Normalleri olarak belirtilen genellikle bir *birim vektör* – 1 uzunluğuna sahip bir 3B vektör.
+- Doku – doku doku hangi kısmının verilen köşelerde görünmesi gereken doku koordinatları – başka bir deyişle, ifade eder. Bir 3B nesnesi ile bir doku işleme, doku değerleri gereklidir. Doku koordinatlar değerleri 0 ile 1 arasında kalan yani normalleştirilmiş koordinatları belirlenir. Biz doku koordinatları bu kılavuzun ilerleyen bölümlerinde daha ayrıntılı olarak ele alacağız.
 
 Bizim düzlemi kat hizmet verir ve biz kullanacağız şekilde bizim işleme gerçekleştirirken bir doku uygulamak isteyeceksiniz `VertexPositionTexture` bizim köşeleri tanımlamak için türü.
 
 Bizim Game1 sınıfı için ilk olarak, bir üye ekleyeceğiz:
-
 
 ```csharp
 VertexPositionTexture[] floorVerts; 
 ```
 
 Ardından, bizim tepe tanımlamak `Game1.Initialize`. Bu makalenin önceki bölümlerinde başvurulan sağlanan şablonu içermiyor bildirimi bir `Game1.Initialize` tüm yöntem eklemek ihtiyacımız şekilde yöntemi `Game1`:
-
 
 ```csharp
 protected override void Initialize ()
@@ -116,8 +111,7 @@ Bizim köşeleri nasıl görüneceğini görselleştirmenize yardımcı olmak i�
 
 Bizim işleme kod uygulama tamamlanana kadar köşeleri görselleştirmek için bizim diyagramda yararlanmayı gerekir.
 
-
-# <a name="adding-drawing-code"></a>Çizim kodunu ekleme
+## <a name="adding-drawing-code"></a>Çizim kodunu ekleme
 
 Konumlar tanımlanan bizim geometri için sahip olduğumuz, biz bizim işleme kod yazabilirsiniz.
 
@@ -128,11 +122,10 @@ Konumlar tanımlanan bizim geometri için sahip olduğumuz, biz bizim işleme ko
 ...
 VertexPositionTexture[] floorVerts;
 // new code:
-BasicEffect effect; 
+BasicEffect effect;
 ```
 
 Ardından, değişiklik `Initialize` yöntemi etkisi tanımlamak için:
-
 
 ```csharp
 protected override void Initialize ()
@@ -150,11 +143,10 @@ protected override void Initialize ()
     effect = new BasicEffect (graphics.GraphicsDevice);
 
     base.Initialize ();
-} 
+}
 ```
 
 Şimdi biz çizim gerçekleştirmek için kod ekleyebilirsiniz:
-
 
 ```csharp
 void DrawGround()
@@ -193,7 +185,7 @@ void DrawGround()
             // The number of triangles to draw
             2);
     }
-} 
+}
 ```
 
 Çağrılacak gerekir `DrawGround` içinde bizim `Game1.Draw`:
@@ -215,13 +207,11 @@ Uygulama çalıştırıldığında şunları görüntüler:
 
 Yukarıdaki kod Ayrıntılar bazıları bakalım.
 
-
-## <a name="view-and-projection-properties"></a>Projeksiyon özelliklerini görüntüleme ve
+### <a name="view-and-projection-properties"></a>Projeksiyon özelliklerini görüntüleme ve
 
 `View` Ve `Projection` denetim özelliklerini nasıl biz Sahne görüntüleyin. Biz model işleme kodunu yeniden eklediğinizde, biz bu kodu daha sonra değiştirme. Özellikle, `View` konumunu ve kamera yönünü denetler ve `Projection` denetimleri *görünüm alanı* (kullanılabileceği kamera yakınlaştırmak için).
 
-
-## <a name="techniques-and-passes"></a>Teknikleri ve geçişleri
+### <a name="techniques-and-passes"></a>Teknikleri ve geçişleri
 
 Bir kez biz gerçek işleme biz gerçekleştirebilirsiniz bizim etkisi özellikleri atadınız. 
 
@@ -229,8 +219,7 @@ Biz değiştirme olmaz `CurrentTechnique` bu kılavuz, ancak daha gelişmiş oyu
 
 Göz önünde bulundurmanız gereken önemli şey olan `foreach` döngü sağlayan temel karmaşıklığını bağımsız olarak herhangi bir etkisi işlemek aynı C# kodu `BasicEffect`.
 
-
-## <a name="drawuserprimitives"></a>DrawUserPrimitives
+### <a name="drawuserprimitives"></a>DrawUserPrimitives
 
 `DrawUserPrimitives` Burada köşeleri işlendiğini olur. İlk parametresi, biz bizim köşeleri nasıl organize yöntemi bildirir. Böylece kullandığımız için her üçgen üç sıralı köşeleri tarafından tanımlanan bunları yapılandırılmış `PrimitiveType.TriangleList` değeri.
 
@@ -240,15 +229,13 @@ Göz önünde bulundurmanız gereken önemli şey olan `foreach` döngü sağlay
 
 Son olarak, işlemek için kaç tane üçgenler belirtin. İki üçgenler bizim köşe dizi içeriyor, bu nedenle 2 değerini geçirin.
 
-
-# <a name="rendering-with-a-texture"></a>Bir doku ile işleme
+## <a name="rendering-with-a-texture"></a>Bir doku ile işleme
 
 Bu noktada uygulamamıza beyaz düzlemi (perspektifindeki) işler. Bizim düzlemi oluşturulurken kullanılacak Projemizin doku sonraki ekleyeceğiz. 
 
 Örneği basit tutmak için .png doğrudan Projemizin yerine MonoGame ardışık düzen aracını kullanarak ekleyeceğiz. Bunu yapmak için indirme [bu .png dosyası](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true) bilgisayarınıza. Yüklendikten sonra sağ **içerik** seçin ve çözüm paneli klasöründe **Ekle > dosyaları Ekle...**  . Android üzerinde çalışıyorsanız, ardından bu klasörü altında bulunur **varlıklar** Android özgü proje klasöründe. İOS varsa, daha sonra bu klasör iOS proje kök dizininde olacaktır. Konuma gidin, **checkerboard.png** kaydedilir ve bu dosyayı seçin. Dizine dosya kopyalamak için seçin.
 
 Ardından, oluşturmak için kodu ekleyeceğiz bizim `Texture2D` örneği. İlk olarak, ekleyin `Texture2D` bir üyesi olarak `Game1` altında `BasicEffect` örneği:
-
 
 ```csharp
 ...
@@ -274,11 +261,10 @@ protected override void LoadContent()
     {
         checkerboardTexture = Texture2D.FromStream (this.GraphicsDevice, stream);
     }
-} 
+}
 ```
 
 Ardından, değişiklik `DrawGround` yöntemi. Yalnızca gerekli atamak için değişikliktir `effect.TextureEnabled` için `true` ve ayarlamak için `effect.Texture` için `checkerboardTexture`:
-
 
 ```csharp
 void DrawGround()
@@ -315,7 +301,7 @@ void DrawGround()
             0,
             2);
     }
-} 
+}
 ```
 
 Son olarak değiştirmek ihtiyacımız `Game1.Initialize` yöntemi de doku atamak için bizim köşelerinin düzenler:
@@ -353,8 +339,7 @@ Size kodu çalıştırırsanız, biz bizim düzlemi şimdi Damalı bir desen gö
 
 ![](part2-images/image8.png "Düzlemi şimdi Damalı bir desen görüntüler")
 
-
-# <a name="modifying-texture-coordinates"></a>Doku değiştirme koordinatları
+## <a name="modifying-texture-coordinates"></a>Doku değiştirme koordinatları
 
 MonoGame kullandığı koordinatları 0 ile 1 arasında yerine 0 ile doku genişliği veya yüksekliği arasında olan doku koordinatları normalleştirilmiş. Aşağıdaki diyagramda, normalleştirilmiş koordinatları görselleştirmenize yardımcı olabilir:
 
@@ -391,7 +376,7 @@ protected override void Initialize ()
     effect = new BasicEffect (graphics.GraphicsDevice);
 
     base.Initialize ();
-} 
+}
 ```
 
 20 kez yinelenen doku sonuçları:
@@ -399,10 +384,9 @@ protected override void Initialize ()
 ![](part2-images/image10.png "Bu 20 kez yinelenen doku sonuçları")
 
 
-# <a name="rendering-vertices-with-models"></a>Köşeleri modelleri ile işleme
+## <a name="rendering-vertices-with-models"></a>Köşeleri modelleri ile işleme
 
 Bizim düzlemi düzgün işleme, biz her şeyi birlikte görüntüleme modelleri yeniden ekleyebilirsiniz. İlk olarak, model kodunu yeniden ekleyeceğiz bizim `Game1.Draw` yöntemiyle (değiştirilmiş konumlar):
-
 
 ```csharp
 protected override void Draw(GameTime gameTime)
@@ -425,7 +409,6 @@ protected override void Draw(GameTime gameTime)
 
 Ayrıca oluşturacağız bir `Vector3` içinde `Game1` bizim kameranın konumunu göstermek için. Bir alanı altında ekleyeceğiz bizim `checkerboardTexture` bildirimi:
 
-
 ```csharp
 ...
 Texture2D checkerboardTexture;
@@ -434,7 +417,6 @@ Vector3 cameraPosition = new Vector3(0, 10, 10);
 ```
 
 Ardından, yerel kaldırmak `cameraPosition` değişkeni `DrawModel` yöntemi:
-
 
 ```csharp
 void DrawModel(Vector3 modelPosition)
@@ -458,7 +440,6 @@ void DrawModel(Vector3 modelPosition)
 
 Benzer şekilde yerel kaldırmak `cameraPosition` değişkeni `DrawGround` yöntemi:
 
-
 ```csharp
 void DrawGround()
 {
@@ -478,7 +459,6 @@ Biz kodu çalıştırırsanız şimdi biz modelleri ve zemin aynı anda görebil
 
 Biz kamera konumunu değiştirirseniz (gibi X değerini artırarak, bu durumda taşır kamera sola) değeri başından başlayarak ve modelleri etkiler görebiliriz:
 
-
 ```csharp
 Vector3 cameraPosition = new Vector3(15, 10, 10);
 ```
@@ -487,8 +467,7 @@ Bu kod sonuçları şunlardır:
 
 ![](part2-images/image3.png "Bu kod bu görünümde sonuçları")
 
-
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuzda köşe dizi özel işleme gerçekleştirmek için nasıl kullanılacağı gösterilmiştir. Bu durumda, Damalı kat bizim köşe tabanlı işlemesi bir doku ile birleştirerek oluşturduğumuz ve `BasicEffect`, ancak kodu herhangi 3B işleme için temel olarak hizmet etmesi Burada sunulan. Temel köşe işleme ile aynı modellere karışabilir de gösterilmiştir.
 

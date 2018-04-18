@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: 6a721eedc278864b79d5f2b3cb16fb7075bfb15d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1c1d8e24ecea2e1606f7f134aaa5ecf619e155c6
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Canlı Player Kurulumu
 
@@ -37,7 +37,7 @@ Katılmak için kullanıcıların öneririz [Xamarin Canlı Player uygulama _iOS
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="2-get-visual-studio-2017"></a>2. Get Visual Studio 2017
+## <a name="2-get-visual-studio-2017"></a>2. Visual Studio 2017 Al
 
 Xamarin Canlı Player gerektirir:
 
@@ -129,4 +129,4 @@ Tüm sorunlar yaşar veya bağlanamıyor isterseniz bkz [sınırlamalar ve sorun
 
 - [Sınırlamalar](~/tools/live-player/limitations.md)
 - [Sorun giderme](~/tools/live-player/troubleshooting.md)
-- [Xamarin Canlı Player örnekleri](~/tools/livehttps://developer.xamarin.com/samples.md)
+- [Xamarin Canlı Player örnekleri](~/tools/live-player/samples.md)

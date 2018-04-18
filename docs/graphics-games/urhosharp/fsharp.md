@@ -6,11 +6,12 @@ ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 1fff90056f39660695c1e6d9ed307fad575b5127
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/29/2017
+ms.openlocfilehash: 1496ff10a089829a01ad9993dfbca87d10b18991
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="programming-urhosharp-with-f"></a>F # ile programlama UrhoSharp
 
@@ -30,7 +31,7 @@ Hiçbir F # şablonlar UrhoSharp için henüz kullanılabilir, böylece kendi Ur
 1. Silme **Main.storyboard** dosya. Açık **Info.plist** dosya ve **iPhone / iPod dağıtım bilgileri** bölmesinde, silmek `Main` içinde dize **ana arabirimi** açılır.
 1. Silme **ViewController.fs** de dosya.
 
-## <a name="building-hello-world-in-urho"></a>Building Hello World in Urho
+## <a name="building-hello-world-in-urho"></a>Urho yapı Hello World
 
 Şimdi, oyunun sınıfları tanımlama başlamaya hazırsınız. En az bir alt sınıfı tanımlamanız gerekir `Urho.Application` ve geçersiz kılma kendi `Start` yöntemi. Bu dosyayı oluşturmak için F # projeye sağ tıklayın, seçin **yeni dosya Ekle...**  ve boş bir F # sınıfı projenize ekleyin. Yeni dosyayı projenize dosyaların listesini sonuna eklenir ancak göründüğü şekilde sürükleyin gerekir *önce* içinde kullanılan **AppDelegate.fs**.
 

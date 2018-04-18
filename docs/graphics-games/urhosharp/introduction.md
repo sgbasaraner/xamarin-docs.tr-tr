@@ -7,17 +7,17 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 243498e1d5a24a0a6b8d1e911b374df61dfa6971
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6c46d7648d1f1bb8863abe092bae5c44850d3cf1
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="an-introduction-to-urhosharp"></a>UrhoSharp giriş
 
 _Bu UrhoSharp kavramları kısa bir giriş sağlar_
 
-![](introduction-images/urhosharp-icon.png "Xamarin ve .NET geliştiricileri için güçlü bir 3B oyun altyapısı UrhoSharp.")
+![UrhoSharp logosu](introduction-images/urhosharp-icon.png)
 
 UrhoSharp Xamarin ve .NET geliştiricileri için güçlü bir 3B oyun alt yapısıdır.  Apple'nın SceneKit ve SpriteKit içinde Ruhu benzer ve fizik dahil, gezinti, ağ ve çok daha hala platform olan while.
 
@@ -25,7 +25,7 @@ Bir .NET bağlaması olan [Urho3D](http://urho3d.github.io/) altyapısı ve geli
 
 UrhoSharp kutusu dışında işlevlerin çok oyun altyapısıyla verilmiştir:
 
- - Güçlü 3B grafik oluşturma
+- Güçlü 3B grafik oluşturma
 - [Fizik benzetimi](https://developer.xamarin.com/api/namespace/Urho.Physics/) (madde işareti kitaplığı kullanarak)
 - [Sahne işleme](https://developer.xamarin.com/api/type/Urho.Scene/)
 - Await/zaman uyumsuz desteği
@@ -38,15 +38,15 @@ UrhoSharp kutusu dışında işlevlerin çok oyun altyapısıyla verilmiştir:
 - [Çakışma algılaması için dışbükey hull oluşturma](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape/) (StanHull kullanarak)
 - [Ses çalma](https://developer.xamarin.com/api/namespace/Urho.Audio/) (ile **libvorbis**)
 
-# <a name="getting-started"></a>Başlarken
+## <a name="getting-started"></a>Başlarken
 
 UrhoSharp olarak dağıtılmış rahat bir [NuGet paketi](https://www.nuget.org/) ve Windows, Mac, Android veya iOS hedefleyen C# veya F # projelerinize eklenebilir.  NuGet hem programınızı çalıştırmak için gereken kitaplıklar yanı sıra motoru tarafından kullanılan temel varlıklar (CoreData) ile birlikte gelir.
 
-## <a name="urho-as-a-portable-class-library"></a>Taşınabilir sınıf kitaplığı olarak Urho
+### <a name="urho-as-a-portable-class-library"></a>Taşınabilir sınıf kitaplığı olarak Urho
 
 Urho paket platforma özgü projeden veya tüm kodunuzu tüm platformlarda yeniden olanak tanıyan bir taşınabilir sınıf kitaplığı proje tüketilebilir.  Bu tüm her platformda yapmak zorunda platform belirli giriş noktası yazın ve ardından Denetim paylaşılan oyun kodunuzu aktarmak için anlamına gelir.
 
-## <a name="samples"></a>Örnekler
+### <a name="samples"></a>Örnekler
 
 Mac için Visual Studio veya Visual Studio'da örnek çözümden açarak Urho özellikleri hakkında bilgi sahibi alabilirsiniz:
 
@@ -68,7 +68,7 @@ Aşağıdaki örnek, altyapısı yapabileceğini nedir gösterir:
 
 Diğer örnekleri tek tek her örnek özelliklerini gösterirken.
 
-# <a name="basic-structure"></a>Basit Yapı
+## <a name="basic-structure"></a>Basit Yapı
 
 Oyununuzu alt sınıf gereken [ `Application` ](https://developer.xamarin.com/api/type/Urho.Application/) sınıfı, burada oyununuzu Kurulum budur (üzerinde [ `Setup` ](https://developer.xamarin.com/api/member/Urho.Application.Setup/) yöntemi) ve oyununuzu başlatın (içinde [ `Start` ](https://developer.xamarin.com/api/member/Urho.Application.Start) yöntemi).  Ardından, ana kullanıcı arabiriminizi oluşturun.  Bir 3B Sahne, bazı kullanıcı Arabirimi öğeleri ve basit bir davranış eklemeyi kurulumu için API'ler gösterir küçük bir örnek size rehberlik olacak.
 
@@ -98,7 +98,7 @@ class MySample : Application {
         UI.Root.AddChild(helloText);
 
         // Create a top-level scene, must add the Octree
-    // to visualize any 3D content.
+        // to visualize any 3D content.
         var scene = new Scene();
         scene.CreateComponent<Octree>();
         // Box
@@ -133,7 +133,9 @@ Bize burada neler olduğunu açıklayın.
 
 Uygulamanızı başlatmak için bu gibi uygulama sınıfının yeni bir örneğini oluşturarak ve ardından altyapısı başlatma işlevini çağırın:
 
-    new MySample().Run();
+```csharp
+new MySample().Run();
+```
 
 Çalışma zamanı çağıracağı `Setup` ve `Start` sizin için yöntemleri.  Geçersiz kılarsanız `Setup` altyapısı parametreleri (Bu örnekte gösterme) yapılandırabilirsiniz.
 
@@ -141,50 +143,56 @@ Geçersiz kılmanız gerekir `Start` bu oyununuzu başlatacak şekilde.  Bu yön
 
 Aşağıdaki kod parçası, UI çerçevesi metin öğesi oluşturun ve uygulamanıza eklemek için kullanır:
 
-        // UI text
-        var helloText = new Text()
-        {
-            Value = "Hello World from UrhoSharp",
-            HorizontalAlignment = HorizontalAlignment.Center,
-            VerticalAlignment = VerticalAlignment.Center
-        };
-        helloText.SetColor(new Color(0f, 1f, 1f));
-        helloText.SetFont(
-            font: ResourceCache.GetFont("Fonts/Font.ttf"),
-            size: 30);
-        UI.Root.AddChild(helloText);
+```csharp
+// UI text
+var helloText = new Text()
+{
+    Value = "Hello World from UrhoSharp",
+    HorizontalAlignment = HorizontalAlignment.Center,
+    VerticalAlignment = VerticalAlignment.Center
+};
+helloText.SetColor(new Color(0f, 1f, 1f));
+helloText.SetFont(
+    font: ResourceCache.GetFont("Fonts/Font.ttf"),
+    size: 30);
+UI.Root.AddChild(helloText);
+```
 
 UI çerçevesi çok basit bir oyun kullanıcı arabirimi sağlamak için yoktur ve bu yeni düğüm ekleyerek çalışır [ `UI.Root` ](https://developer.xamarin.com/api/property/Urho.Gui.UI.Root/) düğümü.
 
-Bizim örnek kurulumları ikinci bölümü ana görünüm.  Bu, çeşitli ışık, kamera ve bir görünüm penceresinin ekleme ekranında bir 3B kutunun oluşturma bir 3B Sahne, oluşturma adımları içerir.  Bu bölümde daha ayrıntılı ele alınan dizelerle "[Sahne, düğümler, bileşenleri ve kameralar](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras)"
+Bizim örnek kurulumları ikinci bölümü ana görünüm.  Bu, çeşitli ışık, kamera ve bir görünüm penceresinin ekleme ekranında bir 3B kutunun oluşturma bir 3B Sahne, oluşturma adımları içerir.  Bu bölümde daha ayrıntılı ele alınan dizelerle [Sahne, düğümler, bileşenleri ve kameralar](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras).
 
 Bizim örnek üçüncü parçası birkaç Eylemler tetikler.  Eylemlerdir'ın belirli bir efekt açıklayan ve oluşturulduktan sonra bunlar tarif yürütülebilir isteğe bağlı bir düğüm tarafından çağırarak [ `RunActionAsync` ](https://developer.xamarin.com/api/member/Urho.Node.RunActionsAsync) yöntemi bir `Node`.
 
 İlk eylem Sıçrama efekti kutusuyla ölçeklendirir ve ikinci bir kutunun sonsuza kadar döndürür:
 
-    await boxNode.RunActionsAsync(
-        new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
+```csharp
+await boxNode.RunActionsAsync(
+    new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
+```
 
 Yukarıdaki nasıl oluşturuyoruz ilk eylem gösteren bir [ `ScaleTo` ](https://developer.xamarin.com/api/type/Urho.Actions.ScaleTo/) , bu eylemdir yalnızca ikinci bir değeri bir doğrultusunda için bir düğümü scale özelliği ölçeklendirmek istediğiniz belirten bir tarif.  Bu eylem sırayla hareket hızı bir eylem kaydırılan [ `EaseBounceOut` ](https://developer.xamarin.com/api/type/Urho.Actions.EaseBounceInOut/) eylem.  Hareket hızı Eylemler doğrusal bir eylemin yürütülmesi deforme ve efekti uygulamak, bu durumda geçirmek çıkış etkisi sağlar.
 Bu nedenle bizim tarif olarak yazılmış:
 
-    var recipe = new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1));
+```csharp
+var recipe = new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1));
+```
 
 Tarif oluşturulduktan sonra biz tarif yürütün:
 
-    await boxNode.RunActionsAsync (recipe)
+```csharp
+await boxNode.RunActionsAsync (recipe)
+```
 
 Bekleme belirten eylemi tamamladığında bu satırı sonra yürütmeye devam etmek istiyor musunuz.  Eylem tamamlandıktan sonra biz ikinci animasyon tetikler.
 
 [Kullanarak UrhoSharp](~/graphics-games/urhosharp/using.md) belge Urho ve oyun oluşturmak için kodunuzu nasıl kavramları daha ayrıntılı olarak inceler.
 
-# <a name="copyrights"></a>Telif Hakkı
+## <a name="copyrights"></a>Telif Hakkı
 
 Bu belge Xamarin Inc orijinal içerikten ancak Urho3D projesi için açık kaynak belgelerindeki yaygın çizer ve ekran görüntüleri Cocos2D projeden içerir.
 
-
-
-## <a name="related-links"></a>İlgili bağlantılar
+### <a name="related-links"></a>İlgili bağlantılar
 
 - [Planet Earth çalışma kitabı](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook)
 - [Koordinatları çalışma kitabı keşfetme](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook)

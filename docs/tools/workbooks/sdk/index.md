@@ -5,17 +5,18 @@ ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: bc8ae0304e5b044cc1a898820d0ac33e33dfec0d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/30/2017
+ms.openlocfilehash: ad7341776c2f37d4eb6238a26d5b12ee9e340ff7
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Xamarin çalışma kitaplarını SDK ile çalışmaya başlama
 
 Bu belge tümleştirmeler Xamarin çalışma kitapları için geliştirme ile çalışmaya başlama için hızlı bir kılavuz sağlar. Bu çoğunu kararlı Xamarin kitaplarıyla çalışır ancak **NuGet paketlerini aracılığıyla tümleştirmeler yüklenirken yalnızca desteklenir çalışma kitaplarını 1.3**, alfa kanal yazma zaman.
 
-# <a name="general-overview"></a>Genel bakış
+## <a name="general-overview"></a>Genel bakış
 
 Xamarin çalışma kitaplarını tümleştirmeler olan kullanmak küçük kitaplıkları [ `Xamarin.Workbooks.Integrations` NuGet] [ nuget] SDK Xamarin çalışma kitaplarını ve Inspector ile geliştirilmiş deneyimler sağlamak için aracıları tümleştirmek için.
 

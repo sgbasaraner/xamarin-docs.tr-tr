@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 37e6b0a6365b1e93192c0eaad4fd3975c3cbf010
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e7ce8320441f6b248b183a8698a4f41c78bf2d64
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame oyun yüzeyi başvurusu
 
@@ -19,24 +19,20 @@ _Oyun yüzeyi MonoGame giriş cihazları erişmek için standart, platformlar ar
 
 `GamePad` birden çok MonoGame platformlarda giriş aygıtlardan giriş okumak için kullanılabilir. Bu kılavuz, oyun yüzeyi sınıfıyla çalışmak nasıl gösterir. Her giriş aygıtı düzeni ve sağladığı düğme sayısını farklı olduğundan, bu kılavuz çeşitli aygıt eşlemeleri Göster diyagramları içerir.
 
-
-# <a name="gamepad-as-a-replacement-for-xbox360gamepad"></a>Oyun yüzeyi yerini almak üzere Xbox360GamePad
+## <a name="gamepad-as-a-replacement-for-xbox360gamepad"></a>Oyun yüzeyi yerini almak üzere Xbox360GamePad
 
 Sağlanan özgün XNA API `Xbox360GamePad` PC ve Xbox 360 oyun denetleyicisinde okuma girişten için sınıf. MonoGame bu ile değiştirilen bir `GamePad` Xbox 360 denetleyicileri (örneğin, iOS veya Xbox One) çoğu MonoGame platformlarda kullanılamaz olduğundan sınıfı. Ad değişikliği, kullanımını rağmen `GamePad` sınıfı benzer `Xbox360GamePad` sınıfı.
 
-
-# <a name="reading-input-from-gamepad"></a>Oyun yüzeyi girişten okuma
+## <a name="reading-input-from-gamepad"></a>Oyun yüzeyi girişten okuma
 
 `GameController` Sınıfı herhangi bir MonoGame platformda okuma giriş standartlaştırılmış bir yol sağlar. Bu bilgileri iki yöntem sunar:
 
- - `GetState` – denetleyicinin düğmeler, analog çubukları ve d-Pad'i geçerli durumunu döndürür.
- - `GetCapabilities` – Denetleyici belirli olup düğmeleri veya titreşimi destekleyen gibi donanım özellikleri hakkında bilgi döndürür.
+- `GetState` – denetleyicinin düğmeler, analog çubukları ve d-Pad'i geçerli durumunu döndürür.
+- `GetCapabilities` – Denetleyici belirli olup düğmeleri veya titreşimi destekleyen gibi donanım özellikleri hakkında bilgi döndürür.
 
-
-## <a name="example-moving-a-character"></a>Örnek: bir karakter taşıma
+### <a name="example-moving-a-character"></a>Örnek: bir karakter taşıma
 
 Aşağıdaki kodu ayarlayarak bir karakter taşımak için sol kaydırma çubuğu'nın nasıl kullanılabileceğini gösterir, `XVelocity` ve `YVelocity` özellikleri. Bu kod varsayar `characterInstance` sahip olan bir nesne örneği `XVelocity` ve `YVelocity` özellikleri:
-
 
 ```csharp
 // In Update, or some code called every frame:
@@ -46,13 +42,11 @@ characterInstance.XVelocity = gamePadState.ThumbSticks.Left.X * characterInstanc
 characterInstance.YVelocity = gamePadState.ThumbSticks.Left.Y * characterInstance.MaxSpeed;
 ```
 
-
-## <a name="example-detecting-pushes"></a>Örnek: İter algılama
+### <a name="example-detecting-pushes"></a>Örnek: İter algılama
 
 `GamePadState` olup belirli bir düğmeye basıldığında denetçisinin geçerli durumu hakkında bilgi sağlar. Bağlantı, bir karakter yapma gibi bazı eylemler, düğme gönderilen denetimi gerektirir (son çerçeve değil, ancak bu dilimidir) veya serbest (son çerçeve aşağı, ancak bu çerçeve aşağı yok edildi). 
 
 Bu tür bir mantık, önceki çerçeve depolamak yerel değişkenler gerçekleştirmek için `GamePadState` ve geçerli çerçeve `GamePadState` oluşturulması gerekir. Aşağıdaki örnek önceki çerçevenin depolamak ve nasıl kullanılacağını gösterir `GamePadState` atlama uygulamak için:
-
 
 ```csharp
 // At class scope:
@@ -76,11 +70,9 @@ currentGamePadState.Buttons.A == ButtonState.Pressed
 }
 ```
 
-
-## <a name="example-checking-for-buttons"></a>Örnek: Düğmelerini denetleniyor
+### <a name="example-checking-for-buttons"></a>Örnek: Düğmelerini denetleniyor
 
 `GetCapabilities` bir denetleyici belirli düğmesini veya analog çubuk gibi belirli donanım olup olmadığını denetlemek için kullanılabilir. Aşağıdaki kod, her iki düğmeleri varlığını gerektiren bir oyun denetleyicisi üzerinde B ve Y düğmeleri denetlemek gösterilmektedir:
-
 
 ```csharp
 var capabilities = GamePad.GetCapabilities(PlayerIndex.One);
@@ -92,29 +84,24 @@ if(!hasBButton || !hasXButton)
 }
 ```
 
-
-# <a name="ios"></a>iOS
+## <a name="ios"></a>iOS
 
 iOS uygulamaları kablosuz denetleyicisinin giriş destekler.
 
 > [!IMPORTANT]
 > MonoGame 3.5 için NuGet paketlerini kablosuz oyun denetleyicileri için destek içermez. İos'ta oyun yüzeyi sınıfını kullanarak MonoGame 3.5 kaynağından oluşturma veya MonoGame 3.6 NuGet ikili dosyalarını kullanarak gerektirir. 
 
-
-
-## <a name="ios-game-controller"></a>iOS oyun denetleyicileri
+### <a name="ios-game-controller"></a>iOS oyun denetleyicileri
 
 `GamePad` Sınıfı kablosuz denetleyicilerinden okuma özellikleri döndürür. Özelliklerinde `GamePad` aşağıdaki çizimde gösterildiği gibi standart iOS iyi kapsamı denetleyicisi donanım sağlayın:
 
 ![](input-images/image1.png "Oyun yüzeyi özelliklerinde iyi kapsamı standart iOS için denetleyici donanımı, bu diyagramda gösterildiği gibi sağlayın")
 
-
-# <a name="apple-tv"></a>Apple TV
+## <a name="apple-tv"></a>Apple TV
 
 Apple TV oyunlar Siri uzaktan ya da kablosuz oyun denetleyicileri için giriş kullanabilirsiniz.
 
-
-## <a name="siri-remote"></a>Siri uzaktan
+### <a name="siri-remote"></a>Siri uzaktan
 
 *Siri uzaktan* yerel giriş Apple TV için aygıttır. Siri uzaktan değerlerinden aracılığıyla olaylarını okunabilmesine rağmen (gösterildiği gibi [Siri uzaktan ve Bluetooth denetleyicileri Kılavuzu](~/ios/tvos/platform/remote-bluetooth.md)), `GamePad` sınıfı Siri uzak değerleri dönebilirsiniz.
 
@@ -124,28 +111,24 @@ Dikkat `GamePad` yalnızca play düğmesinden giriş okuyabilir ve yüzeyini tou
 
 Bu yana dokunmatik yüzey taşıma okuyun `DPad` özelliği, hareket değerleri kullanarak raporlanır `ButtonState` sınıfı. Diğer bir deyişle, değerler yalnızca olarak kullanılabilir `ButtonState.Pressed` veya `ButtonState.Released`, sayısal değerleri veya hareketleri aksine.
 
-
-## <a name="apple-tv-game-controller"></a>Apple TV oyun denetleyicileri
+### <a name="apple-tv-game-controller"></a>Apple TV oyun denetleyicileri
 
 Apple TV için oyun denetleyicileri oyun denetleyicileri iOS uygulamaları için aynı şekilde davranır. Daha fazla bilgi için bkz: [iOS oyun denetleyicileri bölüm](#iOS_Game_Controller). 
 
-
-# <a name="xbox-one"></a>Xbox One
+## <a name="xbox-one"></a>Xbox One
 
 Xbox tek bir konsoldan okuma giriş Xbox bir oyun denetleyicisinden destekler.
 
-
-## <a name="xbox-one-game-controller"></a>Xbox bir oyun denetleyicisi
+### <a name="xbox-one-game-controller"></a>Xbox bir oyun denetleyicisi
 
 Xbox bir oyun denetleyicisi Xbox One ' için en yaygın giriş aygıttır. `GamePad` Sınıfı denetleyicisinin donanımdan giriş değerlerini sağlar.
 
 ![](input-images/image3.png "Oyun denetleyicisi donanımdan giriş değerleri oyun yüzeyi sınıfı sağlar")
 
-
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 Bu kılavuz MonoGame'nın genel bir bakış sağlanan `GamePad` sınıfı, giriş okuma mantığı ve diyagramları ortak uygulanacak nasıl `GamePad` uygulamaları.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [MonoGame GamePad](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_GamePad)
+- [MonoGame oyun yüzeyi](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_GamePad)

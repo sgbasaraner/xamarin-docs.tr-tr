@@ -6,11 +6,12 @@ ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cdb32c0fe9aa1a267bda5768b9026667723d694c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/29/2017
+ms.openlocfilehash: 7d54203fe391af6acde70f4c2a073b7f71332c91
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-urhosharp"></a>UrhoSharp kullanma
 
@@ -20,7 +21,7 @@ Temel kavramları familiarized istediğiniz ilk oyununuzu yazmadan önce:, Sahne
 
 <a name="scenenodescomponentsandcameras"/>
 
-# <a name="scenes-nodes-components-and-cameras"></a>Planda, düğümler, bileşenleri ve kameralar
+## <a name="scenes-nodes-components-and-cameras"></a>Planda, düğümler, bileşenleri ve kameralar
 
 Sahne modeli bir bileşen tabanlı Sahne grafik tanımlanabilir. Ayrıca tüm Sahne temsil eder kök düğümden başlayarak bir hiyerarşinin Sahne düğümlerinin Sahne oluşur. Her [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/) 3B bir dönüştürme (konum, döndürme ve ölçek), bir ad, bir kimlik artı rastgele sayıda bileşeni vardır.  Bileşenleri yaşama bir düğüm Getir, görsel bir ekleme yapabilir ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel)), ses yayma ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource)), bir çakışma sınır vb. sağlayabilir.
 
@@ -28,7 +29,7 @@ Planda ve Kurulum düğümleri kullanarak oluşturabileceğiniz [Urho Düzenleyi
 
 , Sahne ayarlamaya ek olarak, kurulum için gereken bir [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/), kullanıcıya gösterilen ne belirler budur.
 
-## <a name="setting-up-your-scene"></a>Sahne ayarlama
+### <a name="setting-up-your-scene"></a>Sahne ayarlama
 
 Genellikle, bu formu başlangıç yönteminizi oluşturacak:
 
@@ -52,7 +53,7 @@ planeObject.Model = ResourceCache.GetModel ("Models/Plane.mdl");
 planeObject.SetMaterial(ResourceCache.GetMaterial("Materials/StoneTiled.xml"));
 ```
 
-## <a name="components"></a>Bileşenler
+### <a name="components"></a>Bileşenler
 
 3B nesneleri oluşturma, ses kayıttan yürütme, fizik ve komut dosyalı mantığı güncelleştirmeleri tüm düğümlerin içine çağırarak farklı bileşenleri oluşturarak etkin [ `CreateComponent<T>()` ](https://developer.xamarin.com/api/member/Urho.Node.CreateComponent%3CT%3E/p/Urho.CreateMode/System.UInt32/).  Örneğin, düğüm ve bu gibi açık bileşeni Kurulum:
 
@@ -82,11 +83,11 @@ Sıradan bileşenleri ister [ `Light` ](https://developer.xamarin.com/api/type/U
 
 Çok çeşitli düğümleriniz hayata geçirin ekleyebilirsiniz Bileşenleri Kitaplığı birlikte: kullanıcıya görünen öğeleri (modellerin), ses, katı gövdeleri, çakışma şekiller, kamera, açık kaynakları, parçacık vericileri ve çok daha fazlasını.
 
-## <a name="shapes"></a>Şekiller
+### <a name="shapes"></a>Şekiller
 
 Kolaylık, çeşitli şekiller Urho.Shapes ad alanında basit düğümleri olarak kullanılabilir.  Bunlar, kutuları, Küreler, koniler, silindir ve düzlemleri içerir.
 
-## <a name="camera-and-viewport"></a>Kamera ve Görünüm penceresi
+### <a name="camera-and-viewport"></a>Kamera ve Görünüm penceresi
 
 Yalnızca açık gibi kameralar, bileşenleridir bileşeni için bir düğüm eklemek gerekmez, bu yapılır şöyle:
 
@@ -104,7 +105,7 @@ Renderer.SetViewPort (0, new Viewport (Context, scene, camera, null))
 
 Ve şimdi oluşturduğunuzu sonuçlarını görüyor olmalısınız.
 
-## <a name="identification-and-scene-hierarchy"></a>Tanımlama ve Sahne hiyerarşisi
+### <a name="identification-and-scene-hierarchy"></a>Tanımlama ve Sahne hiyerarşisi
 
 Düğümlerin bileşenleri adları yoktur; bileşenler aynı düğümde içinde yalnızca tanımlanır, türü ve dizin oluşturma sırayla girilir düğümün bileşen listesinde, örneğin, alabilirsiniz [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light) dışı bileşen `lightNode` nesnesi Yukarıdaki şöyle:
 
@@ -128,13 +129,13 @@ Unutmayın [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Node/)ait alt
 
 Oluşturmak mümkündür bir `Node` bir Sahne ait olmayan. Örneğin, yüklenen olabilir veya kaydedilmiş bir görünüm olduğundan taşıma kamera ile kullanışlıdır ardından kamera birlikte gerçek Sahne kaydedilmeyecek ve Sahne yüklendiğinde yok edilmeyecek. Ancak, geometri, fizik veya komut dosyası bileşenleri eklenmemiş bir düğüme oluşturma ve daha sonra Sahne taşıma bu bileşenlerin doğru çalışmamasına neden olur unutmayın.
 
-## <a name="scene-updates"></a>Sahne güncelleştirmeleri
+### <a name="scene-updates"></a>Sahne güncelleştirmeleri
 
 Güncelleştirmeleri etkin bir Sahne (varsayılan) her ana döngü tekrarında otomatik olarak da güncelleştirilir.  Uygulamanın [ `SceneUpdate` ](https://developer.xamarin.com/api/event/Urho.Scene.SceneUpdate/) olay işleyicisi üzerinde çağrılır.
 
 Düğümler ve bileşenleri devre dışı bırakarak Sahne Update'ten bırakılabileceğini bkz [ `Enabled` ](https://developer.xamarin.com/api/member/Urho.Node.Enabled).  Davranış belirli bileşene bağlıdır, ancak ses kaynak bileşenini devre dışı bırakma, sesini kapatır sırada örneğin drawable bileşen devre dışı bırakma de görünmez, kolaylaştırır. Bir düğüm devre dışıysa, tüm bileşenleri kendi etkinleştir/devre dışı durumuna bakılmaksızın devre dışı olarak kabul edilir.
 
-# <a name="adding-behavior-to-your-components"></a>Davranış bileşenlerinizin ekleme
+## <a name="adding-behavior-to-your-components"></a>Davranış bileşenlerinizin ekleme
 
 En iyi yolu oyununuzu yapısı aktör veya oyununuzu öğede kapsülleyen kendi bileşen olmasını sağlamaktır.  Bu özellik kılar kendi içinde davranışını görüntülemek için kullanılan varlıklar gelen.
 
@@ -142,7 +143,7 @@ Bir bileşenin davranışı ekleme en basit yolu sıraya ve C# zaman uyumsuz pro
 
 Alternatif olarak, tam olarak bileşeniniz için bileşen özelliklerinizi (tabanlı çerçeve davranışı bölümünde açıklanmıştır) her çerçeve güncelleştirerek olanlar kontrol edebilirsiniz.
 
-## <a name="actions"></a>Eylemler
+### <a name="actions"></a>Eylemler
 
 Davranış kolayca eylemleri kullanarak çok düğümlerine ekleyebilirsiniz.  Eylemler çeşitli düğüm özelliklerini değiştirmek ve bir süre boyunca yürütmek veya birkaç kez verilen animasyon eğri ile yineleyin.
 
@@ -182,7 +183,7 @@ Yukarıdaki örnekte buluta taşıyın ve aynı anda Kıs.
 
 Bu C# kullandığınızı fark edeceksiniz await, doğrusal olarak davranışı elde etmek istediğiniz hakkında düşünmeye sağlar.
 
-## <a name="basic-actions"></a>Temel eylemleri
+### <a name="basic-actions"></a>Temel eylemleri
 
 İçinde UrhoSharp desteklenen eylemler şunlardır:
 
@@ -196,7 +197,7 @@ Bu C# kullandığınızı fark edeceksiniz await, doğrusal olarak davranışı 
 
 Diğer gelişmiş özellikleri birleşimi içerir [ `Spawn` ](https://developer.xamarin.com/api/type/Urho.Actions.Spawn) ve [ `Sequence` ](https://developer.xamarin.com/api/type/Urho.Actions.Sequence) eylemler.
 
-## <a name="easing---controlling-the-speed-of-your-actions"></a>Kolaylaştırma - eylemlerinizi hızına denetleme
+### <a name="easing---controlling-the-speed-of-your-actions"></a>Kolaylaştırma - eylemlerinizi hızına denetleme
 
 Kolaylaştırma animasyon unfold ve, animasyonları çok daha fazla eğlenceli hale getirebilir biçimini yönlendiren bir yoludur.  Varsayılan olarak, Eylemler doğrusal bir davranış örneğin sahip bir [ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo) eylem çok robot taşıma sahip olabilir.  Eylemleriniz eyleme bu gibi bir durumda davranışını değiştirmek için bir hareket hızı yavaş taşımayı başlatmak, hızlandırmak ve yavaş sonuna ulaşana bir kayabilir ([`EasyInOut`](https://developer.xamarin.com/api/type/Urho.Actions.EasyInOut)).
 
@@ -212,7 +213,7 @@ Birçok hareket hızı modu vardır, aşağıdaki tabloda çeşitli hareket hız
 
 ![Modları kolaylaştırma](using-images/easing.png "bu grafik çeşitli hareket hızı türleri ve davranışları süre boyunca denetleme bunlar nesnenin değerini gösterir")
 
-## <a name="using-actions-and-async-code"></a>Eylemler ve zaman uyumsuz kod kullanma
+### <a name="using-actions-and-async-code"></a>Eylemler ve zaman uyumsuz kod kullanma
 
 İçinde [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component/) alt bileşen davranışını hazırlar ve işlevselliği için sürücüleri bir zaman uyumsuz yöntem tanıtmak.
 C# kullanarak bu yöntem çağıracaktır sonra `await` programınızın, başka bir bölümünden anahtar sözcüğü ya da, `Application.Start` yöntemi veya bir kullanıcı veya Öykü noktasına uygulamanızda yanıt.
@@ -267,7 +268,7 @@ class Robot : Component {
 
 İçinde `Launch` yöntemi üç eylem yukarıda başlatılacağı: Sahne robot gelir, bu eylem 0,6 saniye döneminde düğüm konumunu değiştirir.  Bu bir zaman uyumsuz seçenek olduğuna göre bu çağrı olan sonraki yönerge olarak eşzamanlı olarak gerçekleşecek şekilde `MoveRandomly`.  Bu yöntem rastgele bir konuma paralel robot konumunu değiştirir.  Bu iki bileşik Eylemler, yeni bir konuma taşımayı gerçekleştirerek sağlanır ve asıl geri dönerseniz getirin ve robot etkin kaldığı sürece bu işlemi yineleyin.  Ve şeyleri daha ilginç hale getirmek için robot aynı anda çekim tutmak.  Çekim 0,1 saniyede yalnızca başlar.
 
-## <a name="frame-based-behavior-programming"></a>Çerçeve tabanlı davranış programlama
+### <a name="frame-based-behavior-programming"></a>Çerçeve tabanlı davranış programlama
 
 Bileşeniniz Eylemler kullanmak yerine kare kare temelinde davranışını denetlemek istiyorsanız, yapmayı tercih geçersiz kılmaktır [ `OnUpdate` ](https://developer.xamarin.com/api/member/Urho.Component.OnUpdate) yöntemi, [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component) bir alt kümesi.  Bu yöntem, çerçeve başına bir kez çağrılır ve yalnızca ReceiveSceneUpdates özelliği true olarak ayarlarsanız çağrılır.
 
@@ -299,7 +300,7 @@ var rotator = new Rotator() { RotationSpeed = rotationSpeed };
 boxNode.AddComponent (rotator);
 ```
 
-## <a name="combining-styles"></a>Birleştirme stilleri
+### <a name="combining-styles"></a>Birleştirme stilleri
 
 Yangın ve unut stilini programlama için harikadır davranışı çoğunu programlama için zaman uyumsuz/eylem tabanlı modelini kullanabilirsiniz, ancak bazı kodunun her çerçevesi de çalıştırmak için bileşenin davranışını da yapılandırarak ince ayar.
 
@@ -316,7 +317,7 @@ Yangın ve unut stilini programlama için harikadır davranışı çoğunu progr
     }
 ```
 
-# <a name="loading-and-saving-scenes"></a>Yükleme ve planda kaydetme
+## <a name="loading-and-saving-scenes"></a>Yükleme ve planda kaydetme
 
 Planda yüklenir ve XML biçiminde kaydedilir; İşlevler bkz [ `LoadXml` ](https://developer.xamarin.com/api/member/Urho.Scene.LoadXml) ve [ `SaveXML()` ](https://developer.xamarin.com/api/member/Urho.Scene.SaveXml). Bir Sahne yüklendiğinde, tüm var olan içeriğin (alt düğümleri ve bileşenleri) ilk kaldırılır. Düğümler ve geçici ile işaretlenmiş bileşenleri `Temporary` özelliği kaydedilmeyecek. Tüm yerleşik bileşenleri ve özellikleri serileştiricinin işlediği ancak özel özellikler ve bileşen sınıflarında tanımlanan alanları işlemek akıllı değil. Ancak, iki sanal yöntemler bu sağlar:
 
@@ -355,7 +356,7 @@ class MyComponent : Component {
 }
 ```
 
-## <a name="object-prefabs"></a>Object Prefabs
+### <a name="object-prefabs"></a>Nesne Prefabs
 
 Burada dinamik olarak oluşturulacak yeni nesneler gerekir, yalnızca yüklenirken veya tüm planda kaydetme oyunlar için yeterince esnektir değil. Diğer taraftan, karmaşık nesneleri oluşturma ve bunların özelliklerini ayarlama kodda de can sıkıcı olur. Bu nedenle, ayrıca kendi alt düğümleri, bileşenleri ve öznitelikleri içeren bir Sahne düğümü kaydetmek mümkündür. Bu, bir grup olarak daha sonra kolayca yüklenebilir.  Kaydedilmiş bir nesne, genellikle bir prefab da adlandırılır. Bunu yapmak için üç yolu vardır:
 
@@ -374,7 +375,7 @@ using (var file = new File(Context, prefabPath, FileMode.Read))
 }
 ```
 
-# <a name="events"></a>Olaylar
+## <a name="events"></a>Olaylar
 
 Olay sayısı UrhoObjects yükseltmek, bu C# olayları olarak bunları oluşturan çeşitli sınıflarında ortaya çıkmış.  Ek C#-tabanlı olay modeli, bu da kullanmak mümkün bir `SubscribeToXXX` abone olma ve aboneliği belirteci tutmak sağlayacak yöntemleri daha sonra aboneliği için kullanabilirsiniz.  Fark eski abone olmak birçok arayanlara izin verir, ikincisi yalnızca biri sağlar ancak izin veren daha Hoş görünmesi lambda stili kullanılacak yaklaşmak ve henüz, aboneliğin kolay kaldırmaya izin vardır.  Bunlar karşılıklı olarak birbirini dışlar.
 
@@ -421,7 +422,7 @@ public void override Start ()
 
 Olay işleyici tarafından alınan her olay için belirli olacaktır ve olay yükü içeren kesin türü belirtilmiş olay bağımsız değişkenleri sınıfı parametresidir.
 
-# <a name="responding-to-user-input"></a>Kullanıcı girişine yanıt
+## <a name="responding-to-user-input"></a>Kullanıcı girişine yanıt
 
 Tuş vuruşları gibi çeşitli olayları aşağı olaya abone olmak ve teslim edilmesini girişine yanıt abone:
 
@@ -459,7 +460,7 @@ protected override void OnUpdate(float timeStep)
 }
 ```
 
-# <a name="resources-assets"></a>Kaynakları (varlık)
+## <a name="resources-assets"></a>Kaynakları (varlık)
 
 Kaynaklar yığın depolama biriminden başlatma veya çalışma zamanı sırasında yüklenen çoğu UrhoSharp şeyler şunlardır:
 
@@ -492,13 +493,13 @@ Kaynakları da el ile oluşturulan ve bunlar diskten yüklü olarak olsaydı kay
 
 Kaynak türü bellek bütçeleri ayarlanabilir: izin verilenden daha fazla bellek kaynaklarının kullanılmasına, en eski kaynak önbellekten kullanılmıyorsa artık kaldırılacak. Varsayılan olarak bellek bütçeleri sınırsız olarak ayarlanır.
 
-## <a name="bringing-3d-models-and-images"></a>3B modelleri ve görüntüleri hale getirme
+### <a name="bringing-3d-models-and-images"></a>3B modelleri ve görüntüleri hale getirme
 
 Urho3D çalıştığında varolan dosya biçimleri mümkün olduğunca kullanın ve özel dosya biçimleri modelleri için yalnızca kesinlikle gerekli gibi olduğunda tanımlamak (*.mdl) ve animasyonların (*.ani). Bu varlıklar türleri için bir dönüştürücü - Urho sağlar [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) fbx, dae, 3ds ve obj, vb. gibi birçok popüler 3B formatlar tüketebileceği.
 
 Ayrıca vardır bir kullanışlı eklentisi Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) Blender varlıklarınızı Urho3D için uygun biçimde verebilirsiniz.
 
-## <a name="background-loading-of-resources"></a>Kaynakların arka planda yükleme
+### <a name="background-loading-of-resources"></a>Kaynakların arka planda yükleme
 
 Normalde, aşağıdakilerden birini kullanarak kaynak isterken `ResourceCache`'s `Get` yöntemi, bunlar için gereken tüm adımları birkaç milisaniye sürebilir hemen ana iş parçacığında, yüklenen (diskten dosya yüklemek, verilerini ayrıştırma, gerekirse GPU'ya karşıya yükleme ) ve bu nedenle kare hızı bırakmaları neden olabilir.
 
@@ -510,7 +511,7 @@ Son olarak en uzun süreyi (milisaniye cinsinden) üzerinde her çerçeve harcan
 
 <a name="sound"/>
 
-# <a name="sound"></a>Ses
+## <a name="sound"></a>Ses
 
 Ses oyun oynama, önemli bir parçasıdır ve UrhoSharp framework oyunda ses çalma bir yol sağlar.  Ekleyerek sesleri çal bir [ `SoundSource` ](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource/) bileşeni bir [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node) ve kaynaklarınızı adlandırılmış bir dosyadan yürütülüyor.
 
@@ -526,7 +527,7 @@ soundSource.AutoRemove = true;
 
 <a name="particles"/>
 
-# <a name="particles"></a>Particles
+## <a name="particles"></a>Particles
 
 Parçacık bazı basit ve ekonomik efektler uygulamanıza ekleme basit bir yol sağlar.  Gibi araçları kullanarak PEX biçiminde depolanan parçacık tüketebileceği [ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/).
 
@@ -561,22 +562,19 @@ Ve bu blok doku kullanırsanız ne aşağıdaki gibidir:
 
 ![Parçacık kutusunu dokusuyla](using-images/image-2.png "ve bu blok doku kullanıyorsanız göründüğünü")
 
-# <a name="multithreading-support"></a>Çoklu iş parçacığı desteği
+## <a name="multithreading-support"></a>Çoklu iş parçacığı desteği
 
 UrhoSharp bir tek iş parçacıklı kitaplıktır.  Bu arka plan iş parçacığı UrhoSharp içinde yöntemleri çağırmak çalışmamalısınız, veya uygulama durumu bozulmasını risk ve büyük olasılıkla, uygulamanızın kilitlenme anlamına gelir.
 
 Arka planda bazı kodlar çalıştırmak ve ana UI Urho bileşenlerini güncelleştirmek istiyorsanız, kullanabileceğiniz [ `Application.InvokeOnMain(Action)` ](https://developer.xamarin.com/api/member/Urho.Application.InvokeOnMain) yöntemi.  Ek olarak görev await C# kullanın ve .NET, kod, uygun iş parçacığı üzerinde yürütülür sağlamak için API'ler.
 
-
-# <a name="urhoeditor"></a>UrhoEditor
+## <a name="urhoeditor"></a>UrhoEditor
 
 Platformunuza Urho Düzenleyicisi'ni indirebilirsiniz [Urho Web sitesi](http://urho3d.github.io/), indirme gidin ve en son sürümünü seçin.
 
-# <a name="copyrights"></a>Telif Hakkı
+## <a name="copyrights"></a>Telif Hakkı
 
 Bu belge Xamarin Inc orijinal içerikten ancak Urho3D projesi için açık kaynak belgelerindeki yaygın çizer ve ekran görüntüleri Cocos2D projeden içerir.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

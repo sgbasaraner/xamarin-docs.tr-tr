@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 643ae8f30dc6447b548448f77883b204d8dc76c2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 34702fafdd0d767362b0ca32ab56e880ed7cb366
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-team-city-with-xamarin"></a>Takım Şehir Xamarin ile kullanma
 
@@ -39,7 +39,7 @@ TeamCity ayarlama ile ilgili birkaç adım vardır:
 
 - **A TeamCity proje oluşturma** – önceki üç adımı tamamlandıktan sonra tüm meta verilerin içerecek TeamCity proje oluşturmanız gerekir kaynak kodunu almak, projeler derlemek ve Xamarin Test Cloud sınamaları göndermek gerekli.
 
-# <a name="requirements"></a>Gereksinimler
+## <a name="requirements"></a>Gereksinimler
 
 İle deneyimi [Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud) gereklidir.
 
@@ -88,7 +88,6 @@ Derleme betiğinin bir Powershell dosyası (Windows) veya bir bash komut dosyas�
 - [**SAHTE** ](http://fsharp.github.io/FAKE/) – F varolan .NET kitaplıklarına gerekirse kullanmak mümkün kılan # dayalı DSL budur.
 
 Komut dosyası dili kullanılır, Tercihler ve gereksinimlerine bağlıdır. [TaskyPro Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash) örnek olarak Rake kullanma örneği içeren bir [komut dosyası derleme](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
-
 
 > [!NOTE]
 > MSBuild veya NAnt, ancak bu yetersizliği gibi bir XML tabanlı yapı sistem anlamlılık ve yazılım oluşturmak için adanmış bir DSL Bakımı kullanmak da mümkündür.
@@ -166,35 +165,35 @@ TeamCity yüklü olduğundan ve Mac için Visual Studio, projenizin oluşturabil
 
 1. Web tarayıcısı aracılığıyla TeamCity açarak başlatıldı. Kök projesine gidin:
 
-    ![](teamcity-images/image2.png "Kök projesine gidin") kök proje altında yeni bir alt projesi oluşturun:
+    ![Kök proje Git](teamcity-images/image2.png "kök proje Git") kök proje altında yeni bir alt projesi oluşturun:
 
-    ![](teamcity-images/image3.png "Kök proje altındaki kök projesine gidin, yeni bir alt projesi oluşturma")
+    ![Kök proje altındaki kök projesine gidin, yeni bir alt proje oluşturma](teamcity-images/image3.png "Bul kök proje altındaki kök projesi için yeni bir alt projesi oluşturma")
 2. Alt Proje oluşturulduktan sonra yeni bir yapı yapılandırması ekleyin:
 
-    ![](teamcity-images/image5.png "Alt Proje oluşturulduktan sonra yeni bir yapı yapılandırması Ekle")
+    ![Alt Proje oluşturulduktan sonra yeni bir yapı yapılandırma eklemek](teamcity-images/image5.png "alt proje oluşturulduktan sonra yeni bir yapı yapılandırması Ekle")
 3. VC proje için yapı yapılandırması ekleyin. Bu sürüm denetim ayarı ekran gerçekleştirilir:
 
-    ![](teamcity-images/image6.png "Bu sürüm denetim ayarı ekran gerçekleştirilir")
+    ![Bu sürüm denetim ayarı ekran yapılır](teamcity-images/image6.png "bu sürüm denetim ayarı ekran gerçekleştirilir")
 
     Oluşturulan hiçbir VC proje ise, aşağıda gösterilen yeni VC kök sayfasından oluşturmak için seçeneğiniz vardır:
 
-    ![](teamcity-images/image7.png "Oluşturulan hiçbir VC proje varsa, yeni VC kök sayfasından oluşturmak için seçeneğiniz vardır")
+    ![Oluşturulan hiçbir VC proje varsa, yeni VC kök sayfasından oluşturmak için seçeneğiniz vardır](teamcity-images/image7.png "oluşturulan hiçbir VC proje varsa, yeni VC kök sayfasından oluşturmak için seçeneğiniz vardır")
 
     VC kök bağlandıktan sonra derleme adımları tespit TeamCity checkout proje ve otomatik olarak deneyin. İle TeamCity bilginiz varsa, algılanan oluşturma adımlarının birini seçebilirsiniz. Şu an için algılanan oluşturma adımlarının yoksaymak güvenlidir.
 
 4. Ardından, bir derleme tetikleyici yapılandırın. Belirli koşullar gerçekleştiğinde ne zaman bir kullanıcı kodu depoya kaydeder gibi bir yapıyı sıraya koyar. Aşağıdaki ekran görüntüsünde bir yapı tetikleyici eklemeyi gösterir:
 
-    ![](teamcity-images/image8.png "Bu ekran görüntüsünde bir yapı tetikleyici eklemeyi gösterir") yapı tetikleyici yapılandırma örneği aşağıdaki ekran görüntüsünde görebilirsiniz:
+    ![Bu ekran görüntüsünde bir yapı tetikleyici eklemeyi gösterir](teamcity-images/image8.png "bu ekran görüntüsünde bir yapı tetikleyici eklemeyi gösterir") yapı tetikleyici yapılandırma örneği aşağıdaki ekran görüntüsünde görebilirsiniz:
 
-    ![](teamcity-images/image9.png "Bu ekran görüntüsünde bir yapı tetikleyici yapılandırma örneği görülebilir.")
+    ![Bu ekran görüntüsünde bir yapı tetikleyici yapılandırma örneği görülebilir](teamcity-images/image9.png "bu ekran görüntüsünde bir yapı tetikleyici yapılandırma örneği görülebilir")
 
 5. Ortam değişkenleri olarak bazı değerlerini depolama yapı komut kümesini parametreleştirme önceki bölümde önerilen. Bu değişkenler yapı yapılandırma parametreleri ekran aracılığıyla eklenebilir. Test bulut API anahtarı, iOS cihaz kimliği ve aşağıdaki ekran görüntüsünde gösterildiği gibi Android cihaz kimliği için değişkenleri ekleyin:
 
-    ![](teamcity-images/image11.png "Test bulut API anahtarı, iOS cihaz kimliği ve Android cihaz kimliği için değişkenleri ekleyin")
+    ![Test bulut API anahtarı, iOS cihaz kimliği ve Android cihaz kimliği için değişkenleri eklemek](teamcity-images/image11.png "Test bulut API anahtarı, iOS cihaz kimliği ve Android cihaz kimliği için değişkenleri ekleyin")
 
 6. Sıraya alma Test bulut uygulamaya ve uygulama derlemek için derleme betiğindeki çağıracağı bir derleme adımı eklemek için son adımdır bakın. Aşağıdaki ekran görüntüsü, bir uygulama oluşturmak için bir Rakefile kullanan bir derleme adımı örneğidir:
 
-    ![](teamcity-images/image12.png "Bu ekran görüntüsünde bir uygulama oluşturmak için bir Rakefile kullanan bir derleme adımı örneğidir")
+    ![Bu ekran görüntüsünde bir uygulama oluşturmak için bir Rakefile kullanan bir derleme adımı örneğidir](teamcity-images/image12.png "bu ekran görüntüsünde bir uygulama oluşturmak için bir Rakefile kullanan bir derleme adımı örneğidir")
 
 7. Bu noktada, yapı yapılandırması tamamlanır. Projeyi düzgün şekilde yapılandırıldığını doğrulamak için bir derlemeyi tetiklemek için iyi bir fikirdir. Bunu yapmak için iyi bir depoya küçük, önemsiz bir değişikliği kaydetmek için yoldur. TeamCity yürütme algılar ve bir yapı başlatmak gerekir.
 

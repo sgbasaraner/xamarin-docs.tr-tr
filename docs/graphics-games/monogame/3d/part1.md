@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 871e4b1ad058dd97635dab228522620850b229b7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e778df7fa6dd27aee8282154c99faf5ca5791ce
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-the-model-class"></a>Model sınıfını kullanma
 
@@ -21,27 +21,26 @@ MonoGame API içeren bir `Model` verileri depolamak için kullanılan sınıfı 
 
 Bu kılavuzda kullanılır [anlamamıza 3B modeli](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true) ve aşağıdakileri kapsar:
 
- - Yeni bir oyun projesi başlatma
- - Model ve onun doku için XNBs oluşturma
- - XNBs oyun projeye dahil
- - Bir 3B modeli çizme
- - Birden fazla modeli çizme
+- Yeni bir oyun projesi başlatma
+- Model ve onun doku için XNBs oluşturma
+- XNBs oyun projeye dahil
+- Bir 3B modeli çizme
+- Birden fazla modeli çizme
 
 Tamamlandığında, Projemizin şu şekilde görünür:
 
-![](part1-images/image1.png "Bunu yaptıktan sonra proje şöyle görünür")
+![Tamamlanan örnek altı robots gösterme](part1-images/image1.png)
 
-
-# <a name="creating-an-empty-game-project"></a>Boş bir oyun projesi oluşturma
+## <a name="creating-an-empty-game-project"></a>Boş bir oyun projesi oluşturma
 
 İlk MonoGame3D adlı bir oyun projesi kurmanız gerekir. Yeni bir MonoGame projesi oluşturma hakkında daha fazla bilgi için bkz: [bir Çapraz Platform Monogame proje oluşturma bu kılavuzda](~/graphics-games/monogame/introduction/part1.md).
 
 Geçmeden önce biz proje açar ve doğru şekilde dağıtır doğrulamanız gerekir. Bir kez dağıtılan biz boş bir mavi ekran görmeniz gerekir:
 
-![](part1-images/image2.png "Bir kez dağıtılan Geliştirici boş bir mavi ekran görmeniz gerekir")
+![Boş mavi oyun ekran](part1-images/image2.png)
 
 
-# <a name="including-the-xnbs-in-the-game-project"></a>XNBs oyun projeye dahil
+## <a name="including-the-xnbs-in-the-game-project"></a>XNBs oyun projeye dahil
 
 .Xnb dosya biçimi yerleşik içerik için standart bir uzantıdır (tarafından oluşturulan içeriği [MonoGame ardışık düzen aracı](http://www.monogame.net/documentation/?page=Pipeline)). Tüm yerleşik içeriği (.fbx dosya modelimizi durumunda olan) kaynak dosyası ve bir hedef dosya (.xnb dosyası) sahiptir. Uygulamalar tarafından gibi oluşturulabilecek ortak bir 3B modeli biçimi .fbx biçimidir [Maya](http://www.autodesk.com/products/maya/overview) ve [Blender](http://www.blender.org/). 
 
@@ -53,20 +52,19 @@ Unzip [Content.zip dosya](https://github.com/xamarin/mobile-samples/blob/master/
 
 İki dosya artık bizim projesinin bir parçası olması gerekir:
 
-![](part1-images/xnbsinxs.png "İki dosya artık projenin bir parçası olmalıdır")
+![Çözüm Gezgini içerik klasörünü xnb dosyaları](part1-images/xnbsinxs.png)
 
 Mac için Visual Studio otomatik olarak yeni eklenen XNBs için yapı eylemi ayarlı değil. İOS için her dosyaları seçin ve sağ **yapı eylemi -> BundleResource**. Android için her dosyaları seçin ve sağ **yapı eylemi -> AndroidAsset**.
 
-# <a name="rendering-a-3d-model"></a>Bir 3B Model oluşturma
+## <a name="rendering-a-3d-model"></a>Bir 3B model oluşturma
 
 Model ekran görmek gereken son adım yükleme ve kod çizim eklemektir. Özellikle, biz aşağıdakileri yapmanız:
 
- - Tanımlayan bir `Model` örneğini bizim `Game1` sınıfı
- - Yükleme `Model` örneğini `Game1.LoadContent`
- - Çizim `Model` örneğini `Game1.Draw`
+- Tanımlayan bir `Model` örneğini bizim `Game1` sınıfı
+- Yükleme `Model` örneğini `Game1.LoadContent`
+- Çizim `Model` örneğini `Game1.Draw`
 
 Değiştir `Game1.cs` kod dosyasının (bulunan **WalkingGame** PCL) aşağıdaki:
-
 
 ```csharp
 public class Game1 : Game
@@ -81,7 +79,7 @@ public class Game1 : Game
     {
         graphics = new GraphicsDeviceManager(this);
         graphics.IsFullScreen = true;
-                    
+
         Content.RootDirectory = "Content";
     }
     protected override void LoadContent()
@@ -162,17 +160,13 @@ public class Game1 : Game
         base.Draw(gameTime);
     }
 }
-                                                                                                                 
 ```
 
 Biz bu kodu çalıştırırsanız biz model ekran görürsünüz:
 
-![](part1-images/image8.png "Bu kodu çalıştırırsanız, model ekran görüntülenir")
+![Ekranda gösterilen modelini](part1-images/image8.png "bu kodu çalıştırırsanız, model ekran görüntülenir")
 
-Yukarıdaki kod daha önemli kısımlarını bazıları bakalım.
-
-
-## <a name="model-class"></a>Model sınıfı
+### <a name="model-class"></a>Model sınıfı
 
 `Model` Sınıftır içerik dosyalarını (.fbx dosyaları gibi) 3B işleme gerçekleştirmek için temel sınıf. 3B geometri, doku başvuruları da dahil olmak üzere işleme için gereken bilgilerin tümünü içerir ve `BasicEffect` konumlandırma, aydınlatma ve kamera değerleri denetleyen örnekleri.
 
@@ -180,20 +174,17 @@ Yukarıdaki kod daha önemli kısımlarını bazıları bakalım.
 
 Her `Model` bir veya daha fazla oluşur `ModelMesh` aracılığıyla sunulan örnekleri `Meshes` özelliği. Kabul, ancak bir `Model` tek bir oyun (bir robot veya bir araba gibi), her nesne `ModelMesh` farklı çizilebilir `BasicEffect` değerleri. Örneğin, tek tek kafes bölümleri bir robot veya bir araba üzerinde Tekerlek Bacak temsil ve biz atayabilir `BasicEffect` Tekerlek döndürme veya Bacak yapmak için değerler taşır. 
 
-
-## <a name="basiceffect-class"></a>BasicEffect sınıfı
+### <a name="basiceffect-class"></a>BasicEffect sınıfı
 
 `BasicEffect` Sınıfı işleme seçenekleri denetlemek için özellikler sağlar. Vermiyoruz için ilk değişiklik `BasicEffect` çağırmaktır `EnableDefaultLighting` yöntemi. Adından da anlaşılacağı gibi bu, doğrulamak için çok kullanışlıdır varsayılan aydınlatma sağlayan bir `Model` beklendiği gibi oyun görüntülenir. Biz çıkarırsanız `EnableDefaultLighting` yalnızca kendi doku ile ancak hiçbir gölgelendirme veya aynasal Işıma işlenen model göreceğiz sonra çağırın:
 
-
 ```csharp
-//effect.EnableDefaultLighting (); 
+//effect.EnableDefaultLighting ();
 ```
 
-![](part1-images/image9.png "Yalnızca kendi doku ile ancak hiçbir gölgelendirme veya aynasal Işıma işlenen model")
+![Yalnızca kendi doku ile ancak hiçbir gölgelendirme veya aynasal Işıma işlenen model](part1-images/image9.png "yalnızca kendi doku ile ancak hiçbir gölgelendirme veya aynasal Işıma işlenen model")
 
 `World` Özelliği, konum, döndürme ve modelin ölçeğini ayarlamak için kullanılabilir. Kullandığı yukarıdaki kodu `Matrix.Identity` anlamına değeri `Model` oyun tam olarak belirtilen .fbx dosyasında oluşturmaz. Biz matrisleri ve daha ayrıntılı olarak 3B koordinatları kapsayan [bölüm 3](~/graphics-games/monogame/3d/part3.md), ancak bir örnek olarak biz konumunu değiştirebilirsiniz `Model` değiştirerek `World` özelliğini aşağıdaki gibi:
-
 
 ```csharp
 // Z is up, so changing Z to 3 moves the object up 3 units:
@@ -203,10 +194,9 @@ effect.World = Matrix.CreateTranslation (modelPosition);
 
 Bu kod 3 world birimler tarafından taşınan nesne sonuçlanır:
 
-![](part1-images/image10.png "Bu kod 3 world birimler tarafından taşınan nesnesindeki sonuçları")
+![Bu kod 3 world birimler tarafından taşınan nesne sonuçlanır](part1-images/image10.png "3 world birimler tarafından taşınan nesne bu kodu sonuçlanır")
 
 Üzerinde atanan son iki özellik `BasicEffect` olan `View` ve `Projection`. Biz de 3B kameralar kapsayan [bölüm 3](~/graphics-games/monogame/3d/part3.md), ancak örnek olarak, biz kamera konumu yerel değiştirerek değiştirebilirsiniz `cameraPosition` değişkeni:
-
 
 ```csharp
 // The 8 has been changed to a 30 to move the Camera further back
@@ -215,10 +205,9 @@ var cameraPosition = new Vector3 (0, 30, 0);
 
 Kamera, başka arka taşımıştır sonuçta görebiliriz `Model` perspektif nedeniyle daha küçük görünmesini:
 
-![](part1-images/image11.png "Kamera daha fazla geri perspektif nedeniyle daha küçük görünmesini modelinde kaynaklanan taşındı")
+![Kamera perspektif nedeniyle daha küçük görünmesini modelinde kaynaklanan başka arka taşındı](part1-images/image11.png "kamera perspektif nedeniyle daha küçük görünmesini modelinde kaynaklanan başka arka taşındı")
 
-
-# <a name="rendering-multiple-models"></a>Birden çok modelleri oluşturma
+## <a name="rendering-multiple-models"></a>Birden çok modelleri oluşturma
 
 Tek bir yukarıda belirtildiği gibi `Model` birden çok kez çizilebilir. Bu işlemi kolaylaştırmak için taşıma ulaşacağız `Model` kod istenen alan kendine özgü bir yöntem çizim `Model` bir parametre olarak konumu. Bir kez tamamlandı, bizim `Draw` ve `DrawModel` yöntemleri gibi görünür:
 
@@ -266,10 +255,9 @@ void DrawModel(Vector3 modelPosition)
 
 Bu robot altı kat çizilen modeli sonuçlanır:
 
-![](part1-images/image1.png "Bu robot altı kat çizilen modeli sonuçları")
+![Bu robot altı kat çizilen modeli sonuçları](part1-images/image1.png "bu robot altı kat çizilen modeli sonuçları")
 
-
-# <a name="summary"></a>Özet
+## <a name="summary"></a>Özet
 
 MonoGame'nın bu kılavuzda sunulan `Model` sınıfı. Bir .xnb bir .fbx dosyası dönüştürme kapsayan oturum aç, yüklenebilir bir `Model` sınıfı. Ayrıca gösterir nasıl değiştirileceği bir `BasicEffect` örneği etkileyebilir `Model` çizim.
 

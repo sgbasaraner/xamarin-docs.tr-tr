@@ -6,11 +6,12 @@ ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 3788b6d6a9c9c9c84b8974a78f0a3c32ae6b6a3e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/29/2017
+ms.openlocfilehash: 47ac762e472e6c45e40f8b0a3b47b53b550c5da7
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="urhosharp-windows-support"></a>UrhoSharp Windows desteği
 
@@ -24,7 +25,7 @@ Sayfalarında varsayımında `MyGame` sınıfıdır `Application` sınıfı.
 
 Bu konuda kullanmayı gösteren tam örnek görebilirsiniz bizim [örnekleri](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples)
 
-# <a name="standalone-project"></a>Standalone Project
+## <a name="standalone-project"></a>Tek başına proje
 
 ### <a name="creating-a-project"></a>Proje Oluşturma
 
@@ -38,6 +39,7 @@ Uygulamanızı başlatmak için bunu yapın:
 DesktopUrhoInitializer.AssetsDirectory = "../Assets";
 new MyGame().Run();
 ```
+
 ### <a name="example"></a>Örnek
 
 [Tam örnek](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/Desktop)
@@ -128,4 +130,3 @@ Windows.Forms projesi oluşturun, Urho NuGet başvuru ve varlıkları (veri dizi
 ### <a name="configuring-and-launching-urho-from-windowsforms"></a>Yapılandırma ve Urho Windows.Forms öğesinden başlatma
 
 Formdan Urho başlatmak için bkz: [tam örnek](https://github.com/xamarin/urho-samples/blob/master/FeatureSamples/WinForms/SamplesForm.cs)
-

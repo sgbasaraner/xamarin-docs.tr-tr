@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 59aab811a51517d052902b40cb9e43a7cda6d654
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 603128db1df85e0dabb041d1eb79f250eb5d3872
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-3d-graphics-with-monogame"></a>3B grafik MonoGame ile giriş
 
@@ -24,7 +24,7 @@ MonoGame olduğu neredeyse XNA ile karşılaştı geliştiriciler MonoGame geli�
 İlk bölümü nasıl 3D model oyununuzu için bir .fbx dosyasından ekleneceği kapsanmaktadır. Sonraki bölümde taşıma ve geçici bir çözüm arayan gibi ortak denetimleri içeren bir 3B kamera oluşturulacağını açıklar. Son kısım daha derin Dalış içine alır `VertexBuffer` işleme modellerle karşılaştırılan 3B işleme hakkında daha fazla denetime izin veren sınıfı .fbx dosyalarından yüklendi.
 
 
-# <a name="subsections"></a>Alt bölümleri
+## <a name="topics"></a>Konuları
 
 - [Model sınıfını kullanma](~/graphics-games/monogame/3d/part1.md)
 - [3B grafik köşeleri ile çizme](~/graphics-games/monogame/3d/part2.md)
