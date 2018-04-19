@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7dcf3cba72a07b06236e29ddf2603745fd348596
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 050e37d208c3ba5a330d7ecc6df9d106e14f8bb9
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="map"></a>eşleme
 
@@ -72,15 +72,26 @@ Harita görüntüler önce bazı platformlarda ek yapılandırma adımları gere
 
 ### <a name="ios"></a>iOS
 
-İOS 7 Harita Denetim "yalnızca works", bu nedenle uzun olarak `FormsMaps.Init()` çağrı yapılır.
+Konum Hizmetleri iOS erişmek için aşağıdaki anahtarları ayarlamanız gerekir **Info.plist**:
 
-İOS 8 iki anahtar eklenmesi gerekir **Info.plist** dosya: [ `NSLocationAlwaysUsageDescription` ](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) ve [ `NSLocationWhenInUseUsageDescription` ](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26). XML gösterimi aşağıda gösterilen - güncelleştirmeniz gerekir `string` uygulamanızı konum bilgileri nasıl kullanarak yansıtmak için değerler:
+- iOS 11
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – uygulama kullanımda olduğunda konum hizmetleri kullanmak için
+    - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) – her zaman konum Hizmetleri kullanma
+- iOS 10 ve önceki
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – uygulama kullanımda olduğunda konum hizmetleri kullanmak için
+    - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – her zaman konum Hizmetleri kullanma    
+    
+İOS 11 ve önceki desteklemek için tüm üç anahtarları içerebilir: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, ve `NSLocationAlwaysUsageDescription`.
+
+Bu anahtarları için XML gösterimi **Info.plist** aşağıda gösterilmiştir. Güncelleştirmeniz gerekir `string` uygulamanızı konum bilgileri nasıl kullanarak yansıtmak için değerler:
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
-    <string>Can we use your location</string>
+<string>Can we use your location at all times?</string>
 <key>NSLocationWhenInUseUsageDescription</key>
-    <string>We are using your location</string>
+<string>Can we use your location when your app is being used?</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Can we use your location at all times?</string>
 ```
 
 **Info.plist** girişleri da eklenebilir **kaynak** düzenlerken Görünüm **Info.plist** dosyası:

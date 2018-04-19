@@ -1,31 +1,37 @@
 ---
-title: SQLite.NET kullanma
+title: SQLite.NET Android ile kullanma
+description: SQLite.NET PCL NuGet kitaplığı Xamarin.Android uygulamaları için bir basit veri erişim mekanizma sağlar.
 ms.prod: xamarin
 ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 59ba1ef60b0f63ed98302bf65c4d43c8ae207f22
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: 00a937204147c418ada5570cf8021ebe1e6cfa28
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="using-sqlitenet"></a>SQLite.NET kullanma
 
 Xamarin önerdiği SQLite.NET Android cihazda yerel SQLite veritabanındaki nesneler kolayca depolanıp olanak sağlayan çok basit bir ORM kitaplığıdır. ORM temsil eden nesne ilişkisel eşlemek için &ndash; kaydedin ve "nesneler" SQL deyimleri yazmak zorunda kalmadan veritabanından olanak sağlayan bir API.
 
-## <a name="using-sqlitenet"></a>SQLite.NET kullanma
+Bir Xamarin uygulaması SQLite.NET kitaplığı eklemek için aşağıdaki NuGet paketini projenize ekleyin:
 
-Bir Xamarin uygulaması SQLite.NET kitaplığı eklemek için Ekle [SQLite.net PCL NuGet paketi](https://www.nuget.org/packages/sqlite-net-pcl/) kullanarak proje **SQLite net PCL** NuGet paketi:
+- **Paket adı:** SQLite net PCL
+- **Yazar:** Frank A. Krueger
+- **Kimliği:** sqlite net pcl
+- **URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet paketi](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet paketi")](using-sqlite-orm-images/image1a.png#lightbox)
 
+> [!TIP]
+> Kullanılabilir farklı SQLite paket sayısı – (Bu üst arama sonucu olmayabilir) doğru olanı seçtiğinizden emin olun.
+
 SQLite.NET kitaplığının kullanılabilir olduktan sonra bir veritabanına erişmek için kullanmak için aşağıdaki üç adımı izleyin:
 
-
-1.  **Kullanarak bir ekleme deyimi** &ndash; veri erişimi olduğu gerekli C# dosyalarını için aşağıdaki ifadeyi ekleyin: 
+1.  **Kullanarak bir ekleme deyimi** &ndash; veri erişimi olduğu gerekli C# dosyalarını için aşağıdaki ifadeyi ekleyin:
 
     ```csharp
     using SQLite;
@@ -206,7 +212,7 @@ SQLite üç farklı iş parçacığı modlarını destekler: *tek iş parçacı�
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
-SQLite Android sürümü birkaç adım gerektiren bir kısıtlaması vardır. Varsa çağrısı `SqliteConnection.SetConfig` gibi bir SQLite özel durum üreten `library used incorrectly`, aşağıdaki geçici çözüm kullanmanız gerekir: 
+SQLite Android sürümü birkaç adım gerektiren bir kısıtlaması vardır. Varsa çağrısı `SqliteConnection.SetConfig` gibi bir SQLite özel durum üreten `library used incorrectly`, aşağıdaki geçici çözüm kullanmanız gerekir:
 
 1.  Yerel bağlantı **libsqlite.so** kitaplığı böylece `sqlite3_shutdown` ve `sqlite3_initialize` API uygulamasına sunulur:
 
@@ -228,8 +234,6 @@ SQLite Android sürümü birkaç adım gerektiren bir kısıtlaması vardır. Va
     ```
 
 Bu geçici çözüm için de çalışır. `Mono.Data.Sqlite` kitaplığı. Ve çoklu iş parçacığı SQLite hakkında daha fazla bilgi için bkz: [SQLite ve birden çok iş parçacığı](https://www.sqlite.org/threadsafe.html). 
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

@@ -1,16 +1,17 @@
 ---
-title: SQLite.NET kullanma
+title: İOS SQLite.NET kullanma
+description: SQLite.NET PCL NuGet kitaplığı Xamarin.iOS uygulamaları için bir basit veri erişim mekanizma sağlar.
 ms.prod: xamarin
 ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 01/18/2018
-ms.openlocfilehash: 8d68df2c29afe828482da7c5747b30dc5d30a5de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: e7287a4f6b4e3f1203f6181c900c05565d9b5050
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="using-sqlitenet"></a>SQLite.NET kullanma
 
@@ -21,32 +22,47 @@ Nesne İlişkisel eşleme – kaydedin ve "nesneler" SQL deyimleri yazmak zorund
 
 ## <a name="usage"></a>Kullanım
 
-Ekleme [SQLite.net PCL NuGet paketi](https://www.nuget.org/packages/sqlite-net-pcl/), isteğe bağlı olarak, projenize - bir gibi çeşitli platformlardan iOS, Android ve Windows destekler.
+Bir Xamarin uygulaması SQLite.NET kitaplığı eklemek için aşağıdaki NuGet paketini projenize ekleyin:
 
-  [![](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet paketi")](using-sqlite-orm-images/image1a.png#lightbox)
+- **Paket adı:** SQLite net PCL
+- **Yazar:** Frank A. Krueger
+- **Kimliği:** sqlite net pcl
+- **URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+
+[![SQLite.NET NuGet paketi](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet paketi")](using-sqlite-orm-images/image1a.png#lightbox)
+
+> [!TIP]
+> Kullanılabilir farklı SQLite paket sayısı – (Bu üst arama sonucu olmayabilir) doğru olanı seçtiğinizden emin olun.
 
 SQLite.NET kitaplığının kullanılabilir olduktan sonra bir veritabanına erişmek için kullanmak için aşağıdaki üç adımı izleyin:
 
-
 1. **Kullanarak bir ekleme deyimi** -veri erişimi olduğu gerekli C# dosyalarını için aşağıdaki ifadeyi ekleyin:
 
-        using SQLite;
+    ```csharp
+    using SQLite;
+    ```
 
 1. **Boş bir veritabanı oluşturun** -SQLiteConnection sınıfı oluşturucusu dosya yolunu geçirerek bir veritabanı başvurusu oluşturulabilir. Dosya zaten var. – otomatik olarak oluşturulur, gerekli, aksi halde var olan veritabanı dosyasını açılacak varsa denetlemek gerekmez.
 
-        var db = new SQLiteConnection (dbPath);
+    ```csharp
+    var db = new SQLiteConnection (dbPath);
+    ```
 
     Bu belgede açıklanan kuralları göre dbPath değişkeni belirlenmesi.
 
 1. **Verileri Kaydet** - SQLiteConnection nesne, komutları CreateTable ve bu gibi ekleme gibi kendi yöntemler çağrılarak çalıştırılır veritabanı oluşturduktan sonra:
 
-        db.CreateTable<Stock> ();
-        db.Insert (newStock); // after creating the newStock object
+    ```csharp
+    db.CreateTable<Stock> ();
+    db.Insert (newStock); // after creating the newStock object
+    ```
 
 1. **Verileri** - almak için bir nesne (veya nesnelerin bir listesini) aşağıdaki sözdizimini kullanın:
 
-        var stock = db.Get<Stock>(5); // primary key id of 5
-        var stockList = db.Table<Stock>();
+    ```csharp
+    var stock = db.Get<Stock>(5); // primary key id of 5
+    var stockList = db.Table<Stock>();
+    ```
 
 ## <a name="basic-data-access-sample"></a>Temel veri erişim örneği
 
@@ -54,14 +70,13 @@ SQLite.NET kitaplığının kullanılabilir olduktan sonra bir veritabanına eri
 
 **iOS**
 
- ![](using-sqlite-orm-images/image2.png "iOS SQLite.NET örnek")
+ [![iOS SQLite.NET örnek](using-sqlite-orm-images/image2-sml.png)](using-sqlite-orm-images/image2-sml.png#lightbox)
 
 Aşağıdaki kod örneği, temel alınan veritabanı erişimi kapsülleyen SQLite.NET kitaplığı kullanarak tüm veritabanını etkileşim gösterir. Bunu gösterir:
 
 1.  Veritabanı dosyası oluşturma
 1.  Bazı veri nesnesi oluşturma ve bunları kaydederek ekleme
 1.  Veriyi sorgulama
-
 
 Bu ad alanlarını dahil yapmanız gerekir:
 
@@ -187,7 +202,6 @@ SQLite üç farklı iş parçacığı modlarını destekler: *tek iş parçacı�
 ```csharp
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

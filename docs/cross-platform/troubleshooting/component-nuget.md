@@ -7,28 +7,21 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.date: 11/22/2017
-ms.openlocfilehash: a76adab41e9f7de5abb391e69a5b27783e0c3a63
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: e3adee1b56b833442a8c927672cf903d45d03e84
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>NuGet bileşen başvurularını güncelleştirme
 
-_Bileşen başvuruları uygulamalarınızı gelecekteki sağlaması için NuGet paketleri ile değiştirin._
+> [!NOTE]
+> Xamarin bileşenleri Visual Studio artık desteklenmemektedir ve NuGet paketleri tarafından değiştirilmelidir. Bileşen başvuruları, projelerden el ile kaldırmak için aşağıdaki yönergeleri izleyin.
 
-Bu kılavuz, NuGet paketlerini bileşen başvuruları değiştirmek için varolan Xamarin çözümleri güncelleştirme açıklanmaktadır.
+NuGet paketlerini eklemek için bu yönergeleri başvurmak [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) veya [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-- [NuGet paketlerini içeren bileşenleri](#contain)
-- [NuGet değişikliklerini bileşenleriyle](#replace)
-
-Çoğu bileşenleri yukarıdaki kategoriden ayrılır.
-Görünmeyen bir eşdeğer NuGet paketine sahip, okumak için bir bileşen kullanıyorsanız [NuGet geçiş yolu olmayan bileşenler](#require-update) bölümüne bakın.
-
-Daha ayrıntılı yönergeler için NuGet paketlerini eklemek için bu sayfalara bakın [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) veya [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
-
-## <a name="opening-a-project-containing-a-component"></a>Bir bileşen içeren bir proje açma
+## <a name="manually-removing-component-references"></a>Bileşen başvuruları el ile kaldırma
 
 Kasım 2017 ' olduğu [Duyuruldu](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) , Xamarin bileşen Deposu'nda dönüştürülmesine. Bileşenleri sunsetting ile ilerlemek için bir çaba içinde 15.6 Visual Studio sürümü ve Visual Studio 7.4 sürümünü Mac için artık bileşen projenizdeki destekler. 
 
@@ -40,7 +33,7 @@ Visual Studio uygulamasına bir proje yüklerseniz, tüm bileşenleri projenizde
 
 Projenizden bir bileşeni kaldırmak için:
 
-1. .Csproj dosyasını açın. Bunu yapmak için proje adına sağ tıklayın ve seçin **projeyi**. 
+1. Açık **.csproj** dosya. Bunu yapmak için proje adına sağ tıklayın ve seçin **projeyi**. 
 
 2. Yeniden yüklenmeyen projeye sağ tıklayıp **{-proje-adınız} .csproj Düzenle**.
 
@@ -100,9 +93,21 @@ Projenizden bir bileşeni kaldırmak için:
 
 3. Başvurularının `XamarinComponentReference` ve dosyayı kaydedin. Yukarıdaki örnekte, tüm kaldırmak güvenli `ItemGroup`
 
-4. Çözümünüzdeki her proje için yukarıdaki adımları yineleyin. 
+4. Çözümünüzdeki her proje için yukarıdaki adımları yineleyin.
 
 -----
+
+> [!WARNING]
+> Aşağıdaki yönergeler, yalnızca Visual Studio'nun eski sürümlerinde çalışır.
+> **Bileşenleri** düğümdür artık Visual Studio 2017 veya Mac için Visual Studio geçerli sürümlerinde kullanılabilir
+
+Aşağıdaki bölümlerde, NuGet paketlerini bileşen başvuruları değiştirmek için varolan Xamarin çözümleri güncelleştirmek açıklanmaktadır.
+
+- [NuGet paketlerini içeren bileşenleri](#contain)
+- [NuGet değişikliklerini bileşenleriyle](#replace)
+
+Çoğu bileşenleri yukarıdaki kategoriden ayrılır.
+Görünmeyen bir eşdeğer NuGet paketine sahip, okumak için bir bileşen kullanıyorsanız [NuGet geçiş yolu olmayan bileşenler](#require-update) bölümüne bakın.
 
 <a name="contain" />
 
@@ -147,14 +152,12 @@ Unutmayın **paketleri** sekmesini büyük olasılıkla boş olacaktır:
 
 _NuGet bağımlılıkları içerebilir, ancak bunlar göz ardı._
 
-
 NuGet paket var. değiştirme onaylamak için arama [NuGet.org](https://www.nuget.org/packages), bileşen adı kullanarak veya alternatif olarak yazar tarafından.
 
 Örnek olarak, popüler bulabilirsiniz **sqlite net pcl** için arayarak paketi:
 
 - [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) – Ürün adı.
 - [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – Yazar profili.
-
 
 ### <a name="updating-the-solution"></a>Çözüm güncelleştiriliyor
 
