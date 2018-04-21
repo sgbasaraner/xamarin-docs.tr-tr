@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: 0a4bab44cfa260060c990949b45d3f5e6b103d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: df6a848023febcb7fc65cf6616aeae3b43b39262
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin.Mac hata iletileri (mmp)
 
@@ -122,7 +122,7 @@ Bu genellikle Xamarin.Mac bir hata olduğunu gösterir; Lütfen sırasında bir 
 
 <a name="MM0080" />
 
-#### <a name="mm0080-disabling-newrefcount---new-refcountfalse-is-deprecated"></a>MM0080: Disabling NewRefCount, --new-refcount:false, is deprecated.
+#### <a name="mm0080-disabling-newrefcount---new-refcountfalse-is-deprecated"></a>MM0080: NewRefCount devre dışı bırakma,--yeni-refcount:false, kullanım dışıdır.
 
 <!-- 0088 used by mtouch -->
 <!-- 0089 used by mtouch -->
@@ -131,7 +131,7 @@ Bu genellikle Xamarin.Mac bir hata olduğunu gösterir; Lütfen sırasında bir 
 
 #### <a name="mm0091-this-version-of-xamarinmac-requires-the--sdk-shipped-with-xcode--either-upgrade-xcode-to-get-the-required-header-files-or-use-the-dynamic-registrar-or-set-the-managed-linker-behaviour-to-link-platform-or-link-framework-sdks-only-to-try-to-avoid-the-new-apis"></a>MM0091: Bu sürümü Xamarin.Mac gerektirir * SDK (Xcode ile birlikte gelen *). Ya da gerekli başlık dosyaları almak veya dinamik kayıt kullanın veya yönetilen bağlayıcı davranışa bağlantı Platform veya yalnızca bağlantı Framework SDK'ları için (yeni API'leri önlemek) ayarlamak için Xcode yükseltin.
 
-Xamarin.Mac başlık dosyalarından statik kayıt şirketi ile uygulamanızı hata iletisinde belirtilen SDK sürümü gerektiriyor... Bu hatayı düzeltmek için önerilen yöntem gerekli SDK almak için Xcode yükseltmek için bu tüm gerekli başlık dosyaları dahil eder. Yüklü Xcode birden çok sürümü veya varsayılan olmayan bir konumda bir Xcode kullanmak istiyorsanız, IDE'nin tercihlerinde Xcode konumun doğru ayarladığınızdan emin olun.
+Xamarin.Mac başlık dosyalarından statik kayıt şirketi ile uygulamanızı hata iletisinde belirtilen SDK sürümü gerektirir. Bu hatayı düzeltmek için önerilen yöntem gerekli SDK almak için Xcode yükseltmek için bu tüm gerekli başlık dosyaları dahil eder. Yüklü Xcode birden çok sürümü veya varsayılan olmayan bir konumda bir Xcode kullanmak istiyorsanız, IDE'nin tercihlerinde Xcode konumun doğru ayarladığınızdan emin olun.
 
 Bir alternatif, olası çözüm olan yönetilen bağlayıcı etkinleştirmek için. Bu, kullanılmayan API, çoğu durumda, üst bilgi dosyaları eksik (veya tamamlanmamış) nerede yeni API dahil kaldırır. Ancak projeniz olandan, Xcode daha yeni bir SDK sürümünde sunulan API kullanıyorsa bu çalışmaz sağlar.
 
@@ -309,7 +309,7 @@ Karışık mod derlemeleri bağlayıcı tarafından işlenemez.
 
 Bkz: https://msdn.microsoft.com/en-us/library/x0w2664k.aspx karma mod derlemeler hakkında daha fazla bilgi için.
 
-## <a name="mm3xxx-aot"></a>MM3xxx: AOT
+## <a name="mm3xxx-aot"></a>MM3xxx: Uygulama Nesne AĞACI
 
 ### <a name="mm30xx-aot-general-errors"></a>MM30xx: Uygulama Nesne AĞACI (Genel) hataları
 
@@ -341,7 +341,7 @@ Bkz: https://msdn.microsoft.com/en-us/library/x0w2664k.aspx karma mod derlemeler
 
 #### <a name="mm4001-the-main-template-could-not-be-expanded-to-0"></a>MM4001: Ana şablon için genişletilemedi `{0}`.
 
-### <a name="mm41xx-registrar"></a>MM41xx: registrar
+### <a name="mm41xx-registrar"></a>MM41xx: Kaydedici
 
 <a name="MM4134" />
 
@@ -371,7 +371,7 @@ Bkz: https://msdn.microsoft.com/en-us/library/x0w2664k.aspx karma mod derlemeler
 
 <a name="MM5203" />
 
-#### <a name="mm5203-cant-find-libxammaca-likely-because-of-a-corrupted-xamarinmac-installation-please-reinstall-xamarinmac"></a>MM5203: libxammac.a, olası bir bozuk Xamarin.Mac yüklemesi nedeniyle bulunamıyor. Please reinstall Xamarin.Mac.
+#### <a name="mm5203-cant-find-libxammaca-likely-because-of-a-corrupted-xamarinmac-installation-please-reinstall-xamarinmac"></a>MM5203: libxammac.a, olası bir bozuk Xamarin.Mac yüklemesi nedeniyle bulunamıyor. Lütfen Xamarin.Mac yeniden yükleyin.
 
 <a name="MM5204" />
 
@@ -433,9 +433,9 @@ Bkz: [eşdeğer mtouch uyarı](~/ios/troubleshooting/mtouch-errors.md#MT5218).
 <!-- MM6xxx: mmp internal tools -->
 <!-- MM7xxx: reserved -->
 
-## <a name="mm8xxx-runtime"></a>MM8xxx: runtime
+## <a name="mm8xxx-runtime"></a>MM8xxx: çalışma zamanı
 
-### <a name="mm800x-misc"></a>MM800x: misc
+### <a name="mm800x-misc"></a>MM800x: diğer
 
 <!-- 8000 used by mtouch -->
 <!-- 8001 used by mtouch -->

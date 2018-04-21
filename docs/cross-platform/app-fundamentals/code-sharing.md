@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 7531a8a21b6895de6113f5edd85d09a5e150877e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ec3cb08b227b268c4c755545e8bc76b9e234d093
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="sharing-code-options"></a>Paylaşım kodu seçenekleri
 
@@ -136,7 +136,7 @@ Elde edilen derlemeyi diğer geliştiricilerle paylaşabilirsiniz planlıyorsan�
 
 Seçtiğiniz stratejisi paylaşımı kod, hedeflediğiniz platformlar tarafından yürütülür. Projeniz için en uygun bir yöntem seçin.
 
-PCL veya .NET standart paylaşılabilir kodu kitaplıkları (özellikle NuGet üzerinde yayımlama) oluşturmak için iyi bir seçenek olabilir. Paylaşılan projeleri iyi arası platforma uygulamalarını içinde çok sayıda Platform özgü işlevsellik kullanmayı planladığınız uygulama geliştiricileri için çalışır.
+PCL veya .NET standart paylaşılabilir kodu kitaplıkları (özellikle NuGet üzerinde yayımlama) oluşturmak için iyi bir seçenek olabilir. Paylaşılan projeleri de kendi platformlar arası uygulamalar çok sayıda Platform özgü işlevsellik kullanmayı planladığınız uygulama geliştiricileri için çalışır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

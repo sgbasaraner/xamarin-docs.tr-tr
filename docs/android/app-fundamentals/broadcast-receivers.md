@@ -6,17 +6,16 @@ ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/19/2018
-ms.openlocfilehash: 75d42da4ba01aaefded0081da02b8e1651695f46
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/20/2018
+ms.openlocfilehash: 9c17641312384634983c2cbb34fa923a9416c9f7
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin.Android alıcılar yayını
 
 _Bu bölümde bir yayın alıcı kullanmayı açıklar._
-
 
 ## <a name="broadcast-receiver-overview"></a>Yayın alıcı genel bakış
 
@@ -55,7 +54,7 @@ public class SampleReceiver : BroadcastReceiver
     public override void OnReceive(Context context, Intent intent)
     {
         // Do stuff here.
-        
+
         String value = intent.GetStringExtra("key");
     }
 }
@@ -97,9 +96,9 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
-Android 8.0 (API düzeyi 26) hedef uygulamaları ya da daha yüksek statik olarak örtük bir yayın için kayıt. Uygulamalar, açık bir yayın için hala statik olarak kaydedebilir. Bu kısıtlamanın dışında örtük yayınların küçük listesi verilmiştir. Bu özel durumlar açıklanmaktadır [örtük yayın özel durumları](https://developer.android.com/guide/components/broadcast-exceptions.html) Android belgelerinde Kılavuzu. Örtük yayınları ilginizi çekiyor mu uygulamaları kullanarak bu nedenle dinamik olarak gerçekleştirmelisiniz `RegisterReceiver` yöntemi. Bu sonraki açıklanmıştır.  
+Android 8.0 (API düzeyi 26) hedef uygulamaları ya da daha yüksek statik olarak örtük bir yayın için kayıt. Uygulamalar, açık bir yayın için hala statik olarak kaydedebilir. Bu kısıtlamanın dışında örtük yayınların küçük listesi verilmiştir. Bu özel durumlar açıklanmaktadır [örtük yayın özel durumları](https://developer.android.com/guide/components/broadcast-exceptions.html) Android belgelerinde Kılavuzu. Örtük yayınları ilginizi çekiyor mu uygulamaları kullanarak bu nedenle dinamik olarak gerçekleştirmelisiniz `RegisterReceiver` yöntemi. Bu sonraki açıklanmıştır.
 
-### <a name="context-registering-a-broadcast-receiver"></a>Bir yayın alıcı bağlam kaydetme 
+### <a name="context-registering-a-broadcast-receiver"></a>Bir yayın alıcı bağlam kaydetme
 
 Bağlam (dinamik kayıt olarak da bilinir) kaydı bir alıcı çağırarak gerçekleştirilir `RegisterReceiver` yöntemi ve yayın alıcı olmalıdır çağrısıyla kaydı `UnregisterReceiver` yöntemi. Kaynakları sızmasını önlemek için artık (etkinlik veya hizmet) bağlamının ilgili olduğunda alıcı kaydı önemlidir. Örneğin, bir hizmet güncelleştirmeleri kullanıcıya gösterilecek kullanılabilir bir etkinlik bildirmek için amacına yayın. Etkinlik başladığında, bu amaçlar için kaydetmeniz. Ne zaman etkinlik arka plan içine taşınır ve güncelleştirmeleri görüntülemek için kullanıcı Arabirimi artık görünür olduğundan kullanıcı artık görünür, onu alıcı kaydı. Aşağıdaki kod parçacığını kayıt ve aktivite bağlamında yayın bir alıcı kaydı örneğidir:
 
@@ -108,22 +107,22 @@ Bağlam (dinamik kayıt olarak da bilinir) kaydı bir alıcı çağırarak gerç
 public class MainActivity: Activity 
 {
     MySampleBroadcastReceiver receiver;
-    
+
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
         receiver = new MySampleBroadcastReceiver()
-        
+
         // Code omitted for clarity
     }
-    
+
     protected override OnResume() 
     {
         base.OnResume();
         RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
         // Code omitted for clarity
     }
-    
+
     protected override OnPause() 
     {
         UnregisterReceiver(receiver);
@@ -150,28 +149,32 @@ Bir yayın hedefi nesne oluşturma ve dağıtma ile cihazda yüklü olan tüm uy
    ```
 
     Bu kod parçacığında kullanarak bir yayın gönderme başka bir örnektir `Intent.SetAction` eylemi belirlemek üzere yöntem:
-    
+
     ```csharp 
     Intent intent = new Intent();
     intent.SetAction("com.xamarin.example.TEST");
     intent.PutExtra("key", "value");
     SendBroadcast(intent);
     ```
-   
+
 2. **Context.SendOrderedBroadcast** &ndash; yöntem budur çok benzer `Context.SendBroadcast`, hedefi recievers kaydedilen düzende alıcılar anda yayımlanmış tek olacağını olan arasındaki fark.
-   
+
 ### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
-[Xamarin destek kitaplığı v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) adlı bir yardımcı sınıfı sağlar [ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). `LocalBroadcastManager` Gönderip yayınları cihazdaki diğer uygulamalardan istemediğiniz uygulamalar için tasarlanmıştır. `LocalBroadcastManager` Yalnızca uygulama bağlamında iletiler yayımlar. Cihazdaki diğer uygulamalar ile yayımlanan mesajlarını alamıyor `LocalBroadcastManager`. 
+[Xamarin destek kitaplığı v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) adlı bir yardımcı sınıfı sağlar [ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). `LocalBroadcastManager` Gönderip yayınları cihazdaki diğer uygulamalardan istemediğiniz uygulamalar için tasarlanmıştır. `LocalBroadcastManager` İle kayıtlı bu yayın alıcıları ve bu uygulamanın bağlamında iletileri yalnızca yayımlayacak `LocalBroadcastManager`. Bu kod parçacığı ile yayın bir alıcı kaydı örneğidir `LocalBroadcastManager`:
 
-Bu kod parçacığını bir hedefi kullanarak gönderileceği gösterilmektedir `LocalBroadcastManager`:
+```csharp
+Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this). RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
+```
+
+Cihazdaki diğer uygulamalar ile yayımlanan mesajlarını alamıyor `LocalBroadcastManager`. Bu kod parçacığını bir hedefi kullanarak gönderileceği gösterilmektedir `LocalBroadcastManager`:
 
 ```csharp
 Intent message = new Intent("com.xamarin.example.TEST");
 // If desired, pass some values to the broadcast receiver.
 intent.PutExtra("key", "value");
 Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
-``` 
+```
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
@@ -180,7 +183,7 @@ Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast
 - [Context.SendBroadcast](https://developer.xamarin.com/api/member/Android.Content.Context.SendBroadcast/p/Android.Content.Intent/)
 - [Context.UnregisterReceiver](https://developer.xamarin.com/api/member/Android.Content.Context.UnregisterReceiver/p/Android.Content.BroadcastReceiver/)
 - [Hedefi](https://developer.xamarin.com/api/type/Android.Content.Intent/)
-- [IntentFilter](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)
+- [Intentfilter](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)
 - [LocalBroadcastManager](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))
 - [Android yerel bildirimler](~/android/app-fundamentals/notifications/local-notifications.md)
 - [Android kitaplığı v4 destek](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)

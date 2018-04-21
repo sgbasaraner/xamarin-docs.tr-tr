@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/18/2018
-ms.openlocfilehash: 00a937204147c418ada5570cf8021ebe1e6cfa28
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e8e6e98cb6ada8d8da494e408e8db66ad5038799
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-sqlitenet"></a>SQLite.NET kullanma
+# <a name="using-sqlitenet-with-android"></a>SQLite.NET Android ile kullanma
 
 Xamarin önerdiği SQLite.NET Android cihazda yerel SQLite veritabanındaki nesneler kolayca depolanıp olanak sağlayan çok basit bir ORM kitaplığıdır. ORM temsil eden nesne ilişkisel eşlemek için &ndash; kaydedin ve "nesneler" SQL deyimleri yazmak zorunda kalmadan veritabanından olanak sağlayan bir API.
 
 Bir Xamarin uygulaması SQLite.NET kitaplığı eklemek için aşağıdaki NuGet paketini projenize ekleyin:
 
-- **Paket adı:** SQLite net PCL
+- **Paket adı:** sqlite net pcl
 - **Yazar:** Frank A. Krueger
 - **Kimliği:** sqlite net pcl
 - **URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)

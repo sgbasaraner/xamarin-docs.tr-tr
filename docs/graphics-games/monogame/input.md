@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: e7ce8320441f6b248b183a8698a4f41c78bf2d64
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: ac87ee44163d53b11c15538f382379aae962cbb2
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame oyun yüzeyi başvurusu
 
@@ -25,7 +25,7 @@ Sağlanan özgün XNA API `Xbox360GamePad` PC ve Xbox 360 oyun denetleyicisinde 
 
 ## <a name="reading-input-from-gamepad"></a>Oyun yüzeyi girişten okuma
 
-`GameController` Sınıfı herhangi bir MonoGame platformda okuma giriş standartlaştırılmış bir yol sağlar. Bu bilgileri iki yöntem sunar:
+`GamePad` Sınıfı herhangi bir MonoGame platformda okuma giriş standartlaştırılmış bir yol sağlar. Bu bilgileri iki yöntem sunar:
 
 - `GetState` – denetleyicinin düğmeler, analog çubukları ve d-Pad'i geçerli durumunu döndürür.
 - `GetCapabilities` – Denetleyici belirli olup düğmeleri veya titreşimi destekleyen gibi donanım özellikleri hakkında bilgi döndürür.
