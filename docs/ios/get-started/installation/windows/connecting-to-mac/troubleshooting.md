@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: f30e49122c343a967a2348c03ce4f06d9452dc76
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f5bd88da2d95f91add9e19c7a53d793256b49238
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="connection-troubleshooting"></a>Bağlantı sorunlarını giderme
 
@@ -114,36 +114,36 @@ Xamarin derleme Konaktan Xamarin.iOS eski sürümleri artık gerekli değildir. 
 
 <a name="knownissues" />
 
-## <a name="known-issues-and-limitations"></a>Bilinen sorunlar ve sınırlamalar
+### <a name="known-issues-and-limitations"></a>Bilinen sorunlar ve sınırlamalar
 
 > [!NOTE]
 > Bu bölüm, yalnızca başarıyla Mac kullanıcı adı ve parolayı OpenSSH SSH istemcisini kullanarak Mac yapı konağa 8 ve 9 Yukarıdaki adımlarda anlatıldığı gibi bağladınız mı geçerlidir.
 
-### <a name="invalid-credentials-please-try-again"></a>"Geçersiz kimlik bilgileri. Lütfen yeniden deneyin."
+#### <a name="invalid-credentials-please-try-again"></a>"Geçersiz kimlik bilgileri. Lütfen yeniden deneyin."
 
 Bilinen nedenler:
 
 - **Sınırlama** – hesabı kullanarak yapı ana bilgisayara oturum açmak çalışırken bu hata görüntülenebilir _tam adı_ adı vurgulu bir karakter içeriyorsa. Bu bir kısıtlamasıdır [SSH.NET kitaplığı](https://sshnet.codeplex.com/) SSH bağlantısı için Xamarin kullanan. **Geçici çözüm**: adım yukarıdaki 5'in bakın.
 
-### <a name="unable-to-authenticate-with-ssh-keys-please-try-to-log-in-with-credentials-first"></a>"SSH anahtarları ile kimlik doğrulaması yapılamıyor. Lütfen ilk kimlik bilgileriyle oturum deneyin"
+#### <a name="unable-to-authenticate-with-ssh-keys-please-try-to-log-in-with-credentials-first"></a>"SSH anahtarları ile kimlik doğrulaması yapılamıyor. Lütfen ilk kimlik bilgileriyle oturum deneyin"
 
 Bilinen neden:
 
 - **SSH güvenlik kısıtlaması** – bu ileti genellikle bir dosya veya tam yolunu dizinlerde anlamına gelir **$HOME/.ssh/authorized\_anahtarları** Mac içinetkinyazmaizinlerinesahip_diğer_ veya _grup_ üyeleri. **Ortak düzeltme**: çalıştırmak `chmod og-w "$HOME"` Mac üzerinde Terminal komut istemindeki Hangi belirli dosya veya dizin hakkındaki ayrıntılar için çalıştırın soruna neden olan `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"` Terminal ve ardından açık **sshd.log** dosya masaüstünüzden ve Ara "kimlik doğrulaması reddedildi: hatalı sahipliği veya modları".
 
-### <a name="trying-to-connect-never-completes"></a>"... Bağlanmaya" hiçbir zaman tamamlanmıyor
+#### <a name="trying-to-connect-never-completes"></a>"... Bağlanmaya" hiçbir zaman tamamlanmıyor
 
 - **Hata [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**  – Bu sorun üzerinde Xamarin 4.1 durum **oturum açma kabuğu** içinde **Gelişmiş Seçenekler** Mac kullanıcı için bağlam menüsü  **Sistem tercihleri &gt; kullanıcılar &amp; grupları** dışında bir değere ayarlanır **/bin/bash**. (Xamarin 4.2 ile başlayarak, bu senaryo bunun yerine "bağlanamadı" hata iletisine yol açar.) **Geçici çözüm**: değişiklik **oturum açma kabuğu** özgün varsayılan dön **/bin/bash**.
 
 <a name="tryagain" />
 
-### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>"MacBuildHost.local için bağlanamadı. Lütfen yeniden deneyin."
+#### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>"MacBuildHost.local için bağlanamadı. Lütfen yeniden deneyin."
 
 Bildirilen nedenler:
 
 - **Hata** – birkaç kullanıcı günlük dosyalarındaki daha ayrıntılı bir hata ile birlikte "beklenmeyen bir hata oluştu SSH kullanıcı için yapılandırılırken... Bu hata iletisini gördünüz Oturum işlemi zaman aşımına uğradı"bir Active Directory ya da diğer dizin hizmeti etki alanı kullanıcı hesabı kullanarak yapı ana bilgisayara oturum açma girişiminde bulunulduğunda. **Geçici çözüm:** yerel bir kullanıcı hesabı kullanmayı yapı ana bilgisayara oturum açın.
 
-- **Hata** – bazı kullanıcılar bu hata bağlantı iletişim kutusunda Mac adını çift tıklatarak yapı ana bilgisayara bağlanmaya çalışılırken gördünüz. **Olası geçici çözüm**: [Mac el ile eklemeniz](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manual-add) IP adresini kullanarak.
+- **Hata** – bazı kullanıcılar bu hata bağlantı iletişim kutusunda Mac adını çift tıklatarak yapı ana bilgisayara bağlanmaya çalışılırken gördünüz. **Olası geçici çözüm**: [Mac el ile eklemeniz](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac) IP adresini kullanarak.
 
 - **Hata [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)**  – bazı kullanıcılar, Windows ve Mac yapı ana bilgisayar arasında bir kablosuz ağ bağlantısı kullanırken bu hatası arasında çalıştırma. **Olası geçici çözüm**: her iki bilgisayar kablolu ağ bağlantısı taşıyın.
 
@@ -181,7 +181,7 @@ Bildirilen nedenler:
 
 <a name="clearing" />
 
-### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Aracısı, IDB, yapı ve Mac Tasarımcı aracısında temizleme
+#### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Aracısı, IDB, yapı ve Mac Tasarımcı aracısında temizleme
 
 Günlük dosyalarınızı bir sorun "yükleme sırasında", Göster "Karşıya" veya "Başlangıç" adımlar herhangi bir Mac aracıları için silmeyi deneyebilirsiniz **XMA** yeniden yüklemek için Visual Studio zorlamak için Önbellek klasörü.
 
@@ -201,31 +201,31 @@ Günlük dosyalarınızı bir sorun "yükleme sırasında", Göster "Karşıya" 
     del %localappdata%\Temp\Xamarin\XMA
     ```
     
-## <a name="warning-messages"></a>Uyarı iletileri
+### <a name="warning-messages"></a>Uyarı iletileri
 
 Bu bölümde çıkış penceresine ve genellikle yoksayabilirsiniz günlükleri görünebilir birkaç iletileri anlatılmaktadır.
 
-### <a name="there-is-a-mismatch-between-the-installed-xamarinios--and-the-local-xamarinios"></a>"... Yüklü Xamarin.iOS ve yerel Xamarin.iOS arasında bir uyuşmazlık var."
+#### <a name="there-is-a-mismatch-between-the-installed-xamarinios--and-the-local-xamarinios"></a>"... Yüklü Xamarin.iOS ve yerel Xamarin.iOS arasında bir uyuşmazlık var."
 
 Mac ve Windows aynı Xamarin dağıtım kanala güncelleştirilir onayladıktan sürece, bu uyarı yoksayılabilir.
 
-### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>"'Ls /usr/bin/mono' yürütülemedi: ExitStatus = 1"
+#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>"'Ls /usr/bin/mono' yürütülemedi: ExitStatus = 1"
 
 Mac OS X 10.11 sürümünü (El Capitan) çalıştığı sürece bu ileti yoksayılabilir veya daha yeni. Xamarin de denetler bu iletiyi OS X 10.11 sürümünü bir sorunu olmadığından **/usr/local/bin/mono**, doğru olduğu için konumu beklenen `mono` OS X 10.11 sürümünü üzerinde.
 
-### <a name="bonjour-service-macbuildhost-did-not-respond-with-its-ip-address"></a>"Bonjour hizmet 'MacBuildHost' kendi IP adresiyle yanıt vermedi."
+#### <a name="bonjour-service-macbuildhost-did-not-respond-with-its-ip-address"></a>"Bonjour hizmet 'MacBuildHost' kendi IP adresiyle yanıt vermedi."
 
-Bağlantı iletişim kutusu Mac yapı ana bilgisayarın IP adresi görüntülemez fark sürece bu ileti yoksayılabilir. IP adresi _olan_ bu iletişim kutusunda eksik, yine [Mac el ile eklemeniz](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manual-add).
+Bağlantı iletişim kutusu Mac yapı ana bilgisayarın IP adresi görüntülemez fark sürece bu ileti yoksayılabilir. IP adresi _olan_ bu iletişim kutusunda eksik, yine [Mac el ile eklemeniz](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac).
 
-### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>"Geçersiz kullanıcı bir 10.1.8.95 öğesinden" ve "Giriş\_userauth\_isteği: geçersiz kullanıcı bir [ön kimlik doğrulama]"
+#### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>"Geçersiz kullanıcı bir 10.1.8.95 öğesinden" ve "Giriş\_userauth\_isteği: geçersiz kullanıcı bir [ön kimlik doğrulama]"
 
 Bu iletileri bakarsanız fark edebilirsiniz **sshd.log**. Bu iletiler normal bağlantı işleminin bir parçasıdır. Xamarin kullanıcıadı kullandığından göründükleri **bir** geçici olarak alınırken _SSH parmak izi_.
 
-## <a name="output-window-and-log-files"></a>Çıktı penceresi ve günlük dosyaları
+### <a name="output-window-and-log-files"></a>Çıktı penceresi ve günlük dosyaları
 
 Visual Studio derleme konağa bağlanırken bir hata değerse, ek iletiler için denetlemek için 2 konumları vardır: Çıktı penceresi ve günlük dosyaları.
 
-### <a name="output-window"></a>Çıktı Penceresi
+#### <a name="output-window"></a>Çıktı Penceresi
 
 Çıktı penceresi başlatmak için en iyi yerdir. Ana bağlantı adımları ve hataları ile ilgili iletileri görüntüler. Çıktı penceresinde Xamarin iletilerini görüntülemek için:
 
@@ -235,7 +235,7 @@ Visual Studio derleme konağa bağlanırken bir hata değerse, ek iletiler için
 
 [![](troubleshooting-images/troubleshooting-image11.png "Xamarin Çıkış sekmesinde seçin")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
-### <a name="log-files"></a>Günlük dosyaları
+#### <a name="log-files"></a>Günlük dosyaları
 
 Çıktı penceresi sorunu tanılamak için yeterli bilgi içermiyorsa, günlük dosyalarını aramak için sonraki yerdir. Günlük dosyaları çıktı penceresinde görünmeyen ek tanılama iletileri içerir. Günlük dosyalarını görüntülemek için:
 
@@ -262,7 +262,7 @@ Visual Studio derleme konağa bağlanırken bir hata değerse, ek iletiler için
 
 <a name="verboselogs" />
 
-### <a name="verbose-log-files"></a>Ayrıntılı günlük dosyaları
+#### <a name="verbose-log-files"></a>Ayrıntılı günlük dosyaları
 
 Normal günlük dosyaları sorunu tanılamak için yeterli bilgi hala sağlamazsanız denemek için bir son ayrıntılı günlük kaydını etkinleştirmek için tekniktir. Hata raporları hakkında ayrıntılı günlükler da tercih edilen.
 
@@ -287,6 +287,12 @@ Normal günlük dosyaları sorunu tanılamak için yeterli bilgi hala sağlamazs
    ```
 
 Bu ayrıntılı günlük dosyaları doğrudan bu sorunu gidermek için yeterli ipuçları belirtmezseniz, lütfen [yeni bir hata raporu dosya](https://bugzilla.xamarin.com/newbug) ve adım 5 ve 6. adım .log dosyasından .zip dosyasını ekleyin.
+
+## <a name="troubleshooting-automatic-mac-provisioning"></a>Mac otomatik sağlama sorunlarını giderme
+
+### <a name="ide-log-files"></a>IDE günlük dosyaları
+
+Kullanarak herhangi bir sorunla karşılaşırsanız [Mac otomatik sağlamayı](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning), depolanan Visual Studio 2017 IDE günlükleri, bir göz atalım **%LOCALAPPDATA%\Xamarin\Logs\15.0**.
 
 ## <a name="troubleshooting-build-and-deployment-errors"></a>Derleme ve dağıtım hatalarını giderme
 
@@ -369,5 +375,5 @@ Bir yapı sorun giderme ve davranış Mac üzerinde depolanan geçici derleme do
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Mac’e Bağlanma](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
-- [Visual Studio ortamınızı XMA (video) ile bir Mac bağlanma](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)
+- [Mac çifti](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+- [Xamarin Mac yapı aracısını - Xamarin Üniversitesi Şimşek Ders](https://www.youtube.com/watch?v=MBAPBtxkjFQ)

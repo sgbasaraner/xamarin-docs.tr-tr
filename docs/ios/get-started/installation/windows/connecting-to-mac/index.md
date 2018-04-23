@@ -1,189 +1,245 @@
 ---
-title: Mac bilgisayara bağlayarak
-description: Visual Studio için Xamarin.iOS oluşturma, derleme ve Visual Studio IDE kullanarak bir Windows bilgisayarda iOS uygulamalarının hatalarını geliştiricilerin olanak sağlar. Bu kılavuz, özellikleri Xamarin.iOS Visual Studio için sağlanan ve nasıl Mac bağlantısı yapı konak yapılan açıklar.
+title: Mac çifti
+description: Bu kılavuz, Visual Studio 2017 Mac yapı ana bilgisayara bağlanmak için Mac çiftine kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/19/2017
-ms.openlocfilehash: 5a76c443521276a66e820fa0b1877ae2a4cce8f0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/16/2018
+ms.openlocfilehash: adaa74e206b1e756398f1ef1a38f387082c1e8f5
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
-# <a name="connecting-to-the-mac"></a>Mac bilgisayara bağlayarak
+# <a name="pair-to-mac"></a>Mac çifti
 
-_Visual Studio için Xamarin.iOS oluşturma, derleme ve Visual Studio IDE kullanarak bir Windows bilgisayarda iOS uygulamalarının hatalarını geliştiricilerin olanak sağlar. Bu kılavuz, özellikleri Xamarin.iOS Visual Studio için sağlanan ve nasıl Mac bağlantısı yapı konak yapılan açıklar._
+_Bu kılavuz, Visual Studio 2017 Mac yapı ana bilgisayara bağlanmak için Mac çiftine kullanmayı açıklar._
 
-Visual Studio gibi birçok avantaj sunar SSH üzerinden Mac bilgisayara bağlanır:
+## <a name="overview"></a>Genel Bakış
 
-- Visual Studio'yu başlatın ve derleme aracısı doğrudan denetleyebilirsiniz. El ile başlatma ve durdurma gerektiren bir kullanıcıya görünen uygulama artık yoktur.
+Yalnızca Mac'te çalışan Apple'nın derleme araçları erişim gerektiren yerel iOS uygulamaları oluşturma Bu nedenle, Visual Studio 2017 Xamarin.iOS uygulamaları oluşturmak için ağ üzerinden erişilebilen bir Mac bilgisayara bağlamanız gerekir.
 
-- Visual Studio'da yeni bağlantı Yöneticisi bulmak, kimlik doğrulaması ve Mac yapı konak unutmayın.
+Visual Studio 2017'ın çifti Mac özelliği bulur bağlanır, kimlik doğrulamasını ve Windows tabanlı iOS geliştiricileri üretken çalışabilmeniz için Mac yapı konakları hatırlıyor. 
 
-- Tüm iletişimin güvenli bir şekilde SSH yoluyla tünelli olduğundan, yalnızca bir tek bağlantı bağlantı noktası 22 için gereklidir.
+Mac çifti aşağıdaki geliştirme iş akışını sağlar:
 
-- Gerçekleşmeden hemen visual Studio değişiklikleri bildirilir. Örneğin, bir iOS aygıtı araç çubuğunda zaman takılı anında güncelleştirilir.
+- Geliştiriciler Visual Studio 2017 içinde Xamarin.iOS kod yazabilirsiniz.
 
-- Visual Studio birden çok örneği aynı anda bağlanabilir.
+- Visual Studio 2017 Mac yapı konak bir ağ bağlantı açar ve derleyin ve iOS uygulamayı imzalamak için bu makinede derleme araçları kullanır.
 
-- Bağlantı üzerinde geliştirme intrude değil. Bu yalnızca bir bağlantı Mac için Mac, hata ayıklama veya iOS Tasarımcısı kullanarak gibi gerekli olduğu bir işlemi gerçekleştirirken ister.
+- Mac üzerinde ayrı bir uygulamayı çalıştırmak için gerekli – Visual Studio 2017 Mac derlemeleri SSH üzerinden güvenli bir şekilde çağırır.
 
-Mac Bağlantı Aracısı tarafından denetlenen farklı bölümleri – Örneğin, iOS Tasarımcı Aracısı'nı ve derleme aracısı – işlevlerini için birden çok işlem oluşur. Bu aracı denetlenir ve Visual Studio tarafından güncelleştirildi ve kilitlenme olsaydı herhangi bir bağımsız işlemler otomatik olarak yeniden başlatılır.
+- Gerçekleşmeden hemen visual Studio 2017 değişiklikleri bildirilir. Örneğin, bir iOS aygıtı için Mac prize takılı veya ağda kullanılabilir hale gelir, iOS anında araç güncelleştirir.
 
-Aşağıdaki diyagram Xamarin.iOS geliştirme iş akışı basit bir genel bakış gösterilir:
+- Visual Studio 2017 birden çok örneğini aynı anda mac'e bağlayabilirsiniz.
 
-[![iOS geliştirme iş akışı](images/xma2.png)](images/xma2.png#lightbox)
-
-> [!IMPORTANT]
-> Visual Studio gerçekte projeler derlemek için ayrı bir MSBuild işlemi başlatır. Bu işlem, Visual Studio oluşturduğunda gerçekte iki SSH bağlantısını Windows Mac olduğu anlamına gelir, Mac için yeni bir bağlantı oluşturur. Derleme kaynağı [komut satırı](#commandline) yalnızca bir MSBuild işlemi oluşturur. Bu diyagramda kolaylık sağlamak için tüm bağlantıları yalnızca bir ok temsil edilir.
-
-## <a name="requirements"></a>Gereksinimler
-
-Xamarin.iOS Visual Studio için harika bir feat gerçekleştirir: oluşturma, derleme ve Visual Studio IDE kullanarak bir Windows bilgisayarda iOS uygulamalarında hata ayıklama geliştiricilerin olanak sağlar. Bu tek başına yapamayacağı – iOS uygulamalarının Apple'nın derleyici oluşturulamaz ve Apple'nın sertifikaları ve kod imzalama araçları dağıtılamaz. Bu, Xamarin.iOS Visual Studio yüklemesi için ağa bağlı bir Mac OS X bilgisayarla bağlantı gerektirdiği anlamına gelir (için refered olarak olduğu *konak* veya *konak yapı*) sizin için bu görevleri gerçekleştirmek için. Xamarin'ın araçları yapılandırdıktan sonra işlemi mümkün olduğunca sorunsuz hale getirir.
-
-### <a name="system-requirements"></a>Sistem Gereksinimleri
-
-Sistem gereksinimleri bulunabilir [yükleme Xamarin.iOS Windows](~/ios/get-started/installation/windows/index.md#system-requirements) Kılavuzu
-
-
-#### <a name="compatibility"></a>Uyumluluk
-
-> [!IMPORTANT]
-> Windows makine olarak bağlı olduğu Mac Xamarin.iOS aynı sürümünü kullanıyor olmalıdır. Bu doğru olduğundan emin olmak için:                                                    
->                                                                                                                 
-> - **Visual Studio 2015 ve önceki**: aynı olduğundan emin olun [güncelleştirmeleri kanal](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/) Mac için Visual Studio
->                                                                                                                 
-> - **Visual Studio 2017, yayın sürümü**: üzerinde olduğundan emin olun **kararlı** kanal, Visual Studio for Mac
->                                                                                                                 
-> - **Visual Studio 2017, Önizleme sürümü**: üzerinde olduğundan emin olun **alfa** kanal, Visual Studio for Mac Visual Studio Xamarin.iOS SDK ve Xcode kayıtlı ve uyumlu sürümlerde denetlemez.
->   Derleme hataları kaynaklanan derleme aracısı tarafından denetlenir; ve Tasarımcısı hataları kaynaklanan iOS Tasarımcısı aracısı tarafından.
-
-### <a name="connecting-to-the-mac"></a>Mac bilgisayara bağlayarak
-
-#### <a name="mac-setup"></a>Mac Kurulumu
-
-Mac ana bilgisayar ayarlamak için Visual Studio için Xamarin uzantısı Mac arasındaki iletişimi etkinleştir Bunu yapmak için izin **uzaktan oturum açma** aşağıdaki adımları izleyerek Mac:
-
-1. Açık *Spotlight* (**⌘ alanı**) arayın ve *uzaktan oturum açma* ve ardından *paylaşım* sonucu. Bu açılır *sistem tercihleri* adresindeki *paylaşım* paneli:
-
-   [![Uzaktan oturum açma için Spotlight arama](images/spotlight.png)](images/spotlight.png#lightbox)
-
-2. Değer çizgilerinin *uzaktan oturum açma* seçeneğini *hizmet* Mac bilgisayara bağlanmak Visual Studio için Xamarin izin vermek için soldaki listesi:
-
-   [![Değer çizgilerinin hizmeti listesinde uzak oturum seçeneği](images/sharing.png)](images/sharing.png#lightbox)
-
-3. Olduğundan emin olun *uzaktan oturum açma* erişim için izin verilecek şekilde ayarlandığını *tüm* kullanıcılar veya Mac kullanıcı adınız veya grup sağdaki listede izin verilen kullanıcılar listesinde eklenmiştir.
-
-İmzalı uygulamaları engelleyecek şekilde varsayılan olarak ayarlanmış OS X Güvenlik duvarı varsa, buna ek olarak, izin gerekebilir `mono-sgen` gelen bağlantıları almak için. Bu durumda, isteyen bir uyarı iletişim kutusu görünür.
-
-Mac'inizde geçerli, açık oturum koşuluyla aynı ağ üzerinde ise, artık Visual Studio tarafından bulunabilir olması gerekir.
-
-Visual Studio başlatın ve bu yüzden, bir kullanıcı olarak çalıştırmanız gereken şey Mac'inizde aracısını durdurun.
-
-### <a name="windows-setup"></a>Windows Kurulumu
-
-Emin olun [yükleme](~/ios/get-started/installation/windows/index.md) Windows makinenizde Xamarin araçları.
-
-### <a name="connecting-to-the-mac-build-host"></a>Mac yapı ana bilgisayara bağlanma
-
-Mac yapı ana bilgisayara bağlanmak için iki yol vardır:
-
-İOS araç çubuğunda:
-
-[![İOS araç çubuğu](images/image1.png)](images/image1.png#lightbox)
-
-Veya **Araçlar > Seçenekler** Visual Studio'da seçme **Xamarin > iOS ayarları** tıklatıp **Xamarin Mac arası bulma** düğmesi:
-
-[![Finding Xamarin Mac Agent](images/image2.png)](images/image2.png#lightbox)
-
-Her iki durumda da gezinme neden **Mac Aracısı** iletişim kutusunda, aşağıda gösterilmiştir:
-
-[![Mac aracı iletişim kutusu](images/image3.png)](images/image3.png#lightbox)
-
-Bu ya da daha önce bağlanmış ve bilinen makine ya da kullanılabilir makineleri olarak depolanan tüm makinelerin bir listesini görüntüler *uzaktan oturum açma*.
-
-Mac, ona bağlanmak için çift tıklayarak seçin. Bir Mac bilgisayara bağlanan ilk kez uzaktan bağlantıya izin vermek için Mac kullanıcı kimlik bilgilerinizi girmeniz istenir:
-
-[![Mac kullanıcı kimlik bilgilerini girin](images/image4.png)](images/image4.png#lightbox)
-
-Aracı Mac için yeni bir SSH bağlantısını oluşturmak için bu kimlik bilgilerini kullanır Başarılı olursa, bir SSH anahtarı oluşturulur ve olacaktır [kayıtlı](#commandline) içinde `authorized_keys` bu Mac dosyada Sonraki bağlantılarda aracı, en son bağlanılan bilinen yapı ana bilgisayara bağlanmak için kullanıcı adı ve anahtar dosyasını kullanmasını sağlar.
+- İOS uygulamaları oluşturmak için Windows komut satırı kullanmak da mümkündür.
 
 > [!NOTE]
-> Kullanmalısınız _kullanıcıadı_ ve _tam adı_ kimlik bilgilerinizi girerken.  Bu kullanarak öğrenebilirsiniz `whoami` Terminal komutu.  Örneğin, aşağıdaki ekran görüntüsünde hesap adı olacaktır **amyb** ve **silinecektir yanıklara**:
+> Bu kılavuzdaki yönergeleri izlemeden önce aşağıdaki adımları tamamlayın: 
+> 
+> - Bir Windows makinesinde [Visual Studio 2017 yükleyin](~/cross-platform/get-started/installation/windows.md)
+> - Mac'te [yükleyin](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) ve [Mac için Visual Studio](https://docs.microsoft.com/visualstudio/mac/installation)
 >
-> ![Kullanıcı adı Terminal uygulamada bulma](images/image5.png)
+> Mac için Visual Studio yüklememeyi tercih ediyorsanız, Visual Studio 2017 Xamarin.iOS ve Mono ile otomatik olarak Mac yapı konak yapılandırabilirsiniz.
+> Daha fazla bilgi için bkz: [otomatik Mac sağlama](#automatic-mac-provisioning).
 
-Bağlantı başarıyla yapıldığında ile ana bilgisayar seçimi iletişim kutusunda görüntülenir bir **bağlı** simgesinin yanında, aşağıda gösterildiği gibi:
+## <a name="enable-remote-login-on-the-mac"></a>Mac üzerinde uzaktan oturum açmayı etkinleştirme
 
-[![Ana bilgisayar seçimi iletişim kutusunu yanında bağlı simgesi](images/image6.png)](images/image6.png#lightbox)
+Mac yapı ana bilgisayar ayarlamak için önce uzak oturum açma etkinleştirin:
 
-Yalnızca olabilir bir bağlı Mac herhangi bir zamanda.
+1. Mac sistem tercihleri açın ve gidin **paylaşım** bölmesi.
 
-Listesinde, her bir makine bağlı ya da aksi takdirde bir bağlam menüsü olanak sağ tıklatın, görünecektir **Bağlan**, **Bağlantıyı Kes**, veya **Mac unuttunuz** olarak gerekli:
+2. Denetleme **uzaktan oturum açma** içinde **hizmet** listesi.
 
-[![Bağlanma, bağlantıyı kesme veya Unut bu Mac bağlam menüleri](images/image7.png)](images/image7.png#lightbox)
+    ![Uzak oturum açma etkinleştirme](images/sharing.png "uzaktan oturum açma etkinleştirme")
 
-İsterseniz **bu Mac unuttunuz**, yeniden bağlanmak için kimlik bilgilerinizi yeniden girmeniz gerekir.
+    İçin erişime izin verecek şekilde yapılandırılmış olduğundan emin olun **tüm kullanıcılar**, ya da Mac kullanıcı adınız veya Grup listesinde yer izin verilen kullanıcılar.
 
-<a name="manual-add"/>
+3. İstenirse, macOS Güvenlik Duvarı'nı yapılandırın.
 
-### <a name="manually-adding-a-mac"></a>El ile bir Mac ekleme
+    MacOS güvenlik duvarını gelen bağlantıları engellemek üzere ayarlarsanız, izin gerekebilir `mono-sgen` gelen bağlantıları almak için. Bu durumda, isteyen bir uyarı görüntülenir.
 
-Bazı durumlarda ana bilgisayar seçimi iletişim kutusunda listelenen mDNS adını göremiyorsanız, Mac el ile eklemek isteyebilirsiniz. Bunu yapmak için aşağıdaki adımları izleyin:
+4. Windows makine aynı ağ üzerinde ise, Mac artık Visual Studio 2017 bulunabilir olması gerekir. Mac hala değil bulunabilirlik ise deneyin [el ile bir Mac ekleme](#manually-add-a-mac) veya göz atın [sorun giderme kılavuzu](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md).
 
-1. Mac'ın IP adresi ya da göz atarak bulun **sistem tercihleri > paylaşım > Uzak oturum açma** Mac:
+## <a name="connect-to-the-mac-from-visual-studio-2017"></a>Visual Studio 2017 mac'e bağlanma
 
-   [![Sistem tercihleri Mac'ın IP adresi](images/image8.png)](images/image8.png#lightbox)
+Bu uzak oturum etkin artık Mac için Visual Studio 2017 bağlanmak
 
-   Veya komut satırı kullanmayı tercih ederseniz, girerek IP adresinizi bulabilirsiniz `ipconfig getifaddr en0` Terminal içine (bağlantı türüne bağlı olarak değişkeni olabileceğini unutmayın `en1`, `en2` vs.):
+1. Visual Studio 2017 ' var olan bir iOS projesi açın veya seçerek yeni bir tane oluşturun **Dosya > Yeni > Proje** ve bir iOS proje şablonu seçme.
 
-   [![Terminal uygulamasında IP adresi](images/image9.png)](images/image9.png#lightbox)
+2. Açık **Mac çiftine** iletişim. 
 
-2. Visual Studio ve ana bilgisayar seçimi iletişim kutusunda dönüş **Mac Ekle...** :
+    - Kullanım **Mac çiftine** düğmesi iOS araç çubuğu:
 
-   [![Ana bilgisayar seçimi iletişim kutusu](images/image10.png)](images/image10.png#lightbox)
+        ![Mac düğmesi vurgulanmış çiftine ile iOS araç](images/ios-toolbar.png "Mac düğmesi vurgulanmış çiftine ile iOS araç çubuğu")
 
-3. Mac Ekle iletişim kutusuna, Mac IP adresini girin ve tıklayın **Ekle**:
+    - Ya da seçin **Araçlar > iOS > Mac çiftine**.
 
-   [![Mac adresini Mac Ekle iletişim kutusuna girin](images/image11.png)](images/image11.png#lightbox)
+    - **Mac çiftine** iletişim tüm daha önce bağlanmış ve şu anda kullanılabilir Mac yapı ana bilgisayarların listesini görüntüler:
 
-4. Son olarak, kullanıcı adı (değil tam ad), Mac yönetici hesabı ve karşılık gelen bir parola girin:
+        ![Mac iletişim çiftine](images/pairtomac.png "Mac iletişim çifti")
 
-   [![Kullanıcı adı ve parola girin](images/image12.png)](images/image12.png#lightbox)
+3. Mac listeden seçin. **Bağlan**'a tıklayın. 
 
-Tıkladığınızda **oturum açma**, Visual Studio SSH kullanarak Mac makinesine günlüğe kaydeder ve bu Mac bilinen bir makine ekleyeceksiniz.
+4. Kullanıcı adı ve parola girin.
+    
+    - Tüm paticular Mac, bağlandığınız ilk kez bu makine için kullanıcı adı ve parola girmeniz istenir:
 
-<a name="commandline"/>
+        ![Mac için bir kullanıcı adı ve parola girme](images/auth.png "Mac için bir kullanıcı adı ve parola girme")
 
-### <a name="command-line-support"></a>Komut satırı desteği
+        > [!TIP]
+        > Oturum açarken tam adı yerine, sistem kullanıcı adı kullanın.
 
-Aracı, bir Xamarin.iOS yapılandırma komut satırından da destekler.  Kullanmak için aşağıdaki gerekli parametreleri için MSBuild geçmesi gerekir:
+    - Mac çifti, Mac için yeni bir SSH bağlantısını oluşturmak için bu kimlik bilgilerini kullanır. Başarılı olursa, bir anahtar eklenen **authorized_keys** Mac dosyada Aynı Mac sonraki bağlantılar otomatik olarak oturum açma.
 
-- `ServerAddress` – Mac sunucunun IP adresi.
+5. Mac çiftine Mac otomatik olarak yapılandırır.
 
-- `ServerUser` – Mac sunucuya oturum açmak için kullanılacak kullanıcı adı (tam adı değil).
+    [Visual Studio 2017 sürüm 15,6 başlangıç](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning), Visual Studio 2017 yükler veya Mono güncelleştirir ve Xamarin.iOS bağlı Mac'te yapı konağı olarak (Xcode hala gerekir Not elle yüklenmesi). Bkz: [otomatik Mac sağlama](#automatic-mac-provisioning) daha fazla ayrıntı için.
 
-- `ServerPassword` (İsteğe bağlı) Mac ana bilgisayara oturum açmak için – kullanılan parola.
+6. Bağlantı durumu simgesi arayın.
+    
+    - Ne zaman Visual Studio 2017 bağlı bir Mac, bu Mac'ın öğesinde **Mac çiftine** iletişim şu anda bağlı olduğunu belirten bir simge görüntüler:
 
-`ServerPassword` Parametresi zorunlu değildir.
+        ![Mac bağlı](images/connected.png "Mac bağlı")
 
-Bunun yerine, bir parola geçirildi, ilk kez Visual Studio veya komut satırı kullanarak ya da bu belirli Windows, Mac ve kullanıcı yapılandırması için bir anahtar çifti oluşturulur ve gelecekte kullanım için Windows bilgisayarında depolanır. İçinde bulunur **%localappdata%\Xamarin\MonoTouch\id_rsa**.  Değil geçirirseniz `ServerPassword` parametresi `id_rsa` keyfile kimlik doğrulaması için kullanılır.
+      Aynı anda yalnızca bir bağlı Mac olabilir.
 
-Mac 10.211.55.2'na bağlanmak için bir örnek komut **xamUser** hesabı parolayla **İstanbul** aşağıda gösterilmiştir:
+      > [!TIP]
+      > Tüm Mac sağ **Mac çiftine** olanak tanıyan bir bağlam menüsü liste getirir **Bağlan...** , **Bu Mac unuttunuz**, veya **bağlantısını**:
+      >
+      > ![Mac bağlam menülerini çiftine](images/contextmenu.png "çiftine Mac bağlam menüleri") 
+      >
+      > Seçerseniz **bu Mac unuttunuz**, seçili Mac için kimlik bilgilerinizi unutulursa. Bu Mac yeniden bağlanmak için kullanıcı adı ve parolanızı yeniden girmeniz gerekir.
+
+Bir Mac yapı konağa başarıyla eşleştirilmiş değilse, Visual Studio 2017 Xamarin.iOS uygulamaları oluşturmak hazır olursunuz. Bir göz atalım [Visual Studio Xamarin.iOS için giriş](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md) Kılavuzu.
+
+Mac eşleştirin mümkün edilmemiş, deneyin [el ile bir Mac ekleme](#manually-add-a-mac) veya göz atın [sorun giderme kılavuzu](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md).
+
+## <a name="manually-add-a-mac"></a>El ile bir Mac Ekle
+
+Listelenen belirli bir Mac görmüyorsanız **Mac çiftine** iletişim kutusunda, el ile ekleyin:
+
+1. Mac'ın IP adresi bulun. 
+
+    - Açık **sistem tercihleri > paylaşımı > Uzak oturum açma** Mac:
+
+        [![Sistem tercihleri Mac'ın IP adresi > paylaşım](images/sharing-ipaddress.png "sistem tercihleri Mac'ın IP adresi > paylaşım")](images/sharing.png#lightbox)
+
+    - Alternatif olarak, komut satırını kullanın. Terminale bu komutu yürütün: 
+   
+        ```bash
+        $ ipconfig getifaddr en0
+        196.168.1.8
+        ```
+
+      Ağ yapılandırmanıza bağlı olarak, bir arabirim adı dışında kullanmanız gerekebilir `en0`. Örneğin: `en1`, `en2`vb.
+
+2. Visual Studio 2017'ın içinde **Mac çiftine** iletişim kutusunda **Mac Ekle...** :
+
+    [![Mac iletişim çiftine Mac Ekle düğmesini](images/addtomac.png "Mac iletişim çiftine eklemek Mac düğmesi")](images/addtomac-large.png#lightbox)
+
+3. Mac'ın IP adresi girin ve tıklayın **Ekle**:
+
+    ![Mac'ın IP adresi girerek](images/enteripaddress.png "Mac'ın IP adresi girerek")
+
+4. Mac için kullanıcı adı ve parola girin:
+
+    ![Bir kullanıcı adı ve parola girin](images/auth.png "bir kullanıcı adı ve parola girme")
+
+   > [!TIP]
+   > Oturum açarken tam adı yerine, sistem kullanıcı adı kullanın.
+
+5. Tıklatın **oturum açma** Visual Studio 2017 mac'e SSH üzerinden bağlanma ve bilinen makineler listesine ekleyin.
+
+## <a name="automatic-mac-provisioning"></a>Mac otomatik sağlama
+
+İle başlayarak [Visual Studio 2017 sürüm 15,6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning), Mac çiftine otomatik olarak Xamarin.iOS uygulamaları oluşturmak için gerekli yazılım ile bir Mac sağlar: Mono, Xamarin.iOS (yazılım framework değil Mac IDE için Visual Studio ) ve çeşitli araçlar Xcode ile ilgili (ancak değil Xcode kendisini).
+
+> [!IMPORTANT]
+> - Mac çiftine Xcode yükleyemezsiniz; Ayrıca Mac yapı konakta onu el ile yüklemeniz gerekir. Xamarin.iOS geliştirme için gereklidir.
+> - Mac otomatik sağlamayı uzaktan oturum açma Mac üzerinde etkinleştirildiğinden ve Mac ağ üzerinden erişilebilen Windows makine gerektirir. Bkz: [etkinleştirme uzaktan oturum açma Mac](#enable-remote-login-on-the-mac) daha fazla ayrıntı için.
+
+Visual Studio 2017 olduğunda Mac çiftine gerçekleştirir gerekli yazılım yüklemeleri/güncelleştirmeleri [Mac bilgisayara bağlayarak](#connect-to-the-mac-from-visual-studio-2017).
+
+### <a name="mono"></a>Mono
+
+Mac çiftine Mono yüklendiğinden emin olmak için kontrol eder. Yüklü değilse, Mac çiftine indirin ve Mac üzerinde Mono en son kararlı sürümü yükleyin 
+
+İlerleme durumu, aşağıdaki ekran görüntüleri (yakınlaştırma için tıklatın) tarafından gösterildiği gibi çeşitli istemleri tarafından belirtilir:
+
+||Onay yükleyin|İndirme|Yükleme
+|---|---|---|---|
+|Mono|[![Mono yüklemesi eksik](images/mono-missing.png "eksik Mono yükleme")](images/mono-missing-large.png#lightbox)|[![Mono indirme](images/mono-downloading.png "Mono indirme")](images/mono-downloading-large.png#lightbox)|[![Mono yükleme](images/mono-installing.png "Mono yükleme")](images/mono-installing-large.png#lightbox)|
+
+### <a name="xamarinios"></a>Xamarin.iOS 
+
+Mac çiftine Windows makinesinde yüklü olan sürümle eşleştirmek için Mac üzerinde Xamarin.iOS yükseltir.
+
+> [!IMPORTANT]
+> Mac çiftine alfa/beta tarafından yapılan kararlı Mac üzerinde Xamarin.iOS düşürmek değil. For Mac yüklü Visual Studio varsa ayarlayın, [yayın kanal](https://docs.microsoft.com/visualstudio/mac/update) gibi:
+> - Visual Studio 2017 kullanıyorsanız seçin **kararlı** Visual Studio for Mac güncelleştirmelerini kanal
+> - Visual Studio 2017 Preview kullanıyorsanız seçin **alfa** Visual Studio for Mac güncelleştirmelerini kanal
+
+İlerleme durumu, aşağıdaki ekran görüntüleri (yakınlaştırma için tıklatın) tarafından gösterildiği gibi çeşitli istemleri tarafından belirtilir:
+
+||Onay yükleyin|İndirme|Yükleme
+|---|---|---|---|
+|Xamarin.iOS|[![Xamarin.iOS yüklemesi eksik](images/xamios-missing.png "eksik Xamarin.iOS yükleme")](images/xamios-missing-large.png#lightbox)|[![Xamarin.iOS indirme](images/xamios-downloading.png "Xamarin.iOS indirme")](images/xamios-downloading-large.png#lightbox)|[![Xamarin.iOS yükleme](images/xamios-installing.png "Xamarin.iOS yükleme")](images/xamios-installing-large.png#lightbox)|
+
+### <a name="xcode-tools-and-license"></a>Xcode araçlarını ve lisans
+
+Ayrıca, Mac çiftine Xcode yüklü lisansını kabul olup olmadığını belirlemek için kontrol eder. Mac çiftine Xcode yüklemez olsa da, aşağıdaki ekran görüntülerinde (yakınlaştırma için tıklatın) gösterildiği gibi lisans kabulünü için iste:
+
+||Onay yükleyin|Lisans Kabulünü|
+|---|---|---|
+|Xcode|[![Xcode yüklemesi eksik](images/xcode-missing.png "eksik Xcode yükleme")](images/xcode-missing-large.png#lightbox)|[![Xcode lisans](images/xcode-license.png "Xcode lisans")](images/xcode-license-large.png#lightbox)|
+
+Ayrıca, Mac çiftine yükleyin veya Xcode ile dağıtılmış çeşitli paketler güncelleştirin. Örneğin:
+
+- **MobileDeviceDevelopment.pkg**
+- **XcodeExtensionSupport.pkg**
+- **MobileDevice.pkg**
+- **XcodeSystemResources.pkg**
+
+Bu paketleri yükleme, bir istem duymadan ve hızla gerçekleşir.
+
+> [!NOTE]
+> Bu araçları Xcode komut satırı olan macOS 10.9 itibariyle araçlarından, ayrı [Xcode ile yüklü](https://developer.apple.com/library/content/technotes/tn2339/_index.html).
+
+### <a name="troubleshooting-automatic-mac-provisioning"></a>Mac otomatik sağlama sorunlarını giderme
+
+Otomatik sağlama Mac kullanarak güçlükle karşılaşırsanız, depolanmış Visual Studio 2017 IDE günlüklerini bakalım **%LOCALAPPDATA%\Xamarin\Logs\15.0**. Bu günlükler daha iyi hatayı tanılamak ve destek alma yardımcı olmak için hata iletileri içerebilir.
+
+## <a name="build-ios-apps-from-the-windows-command-line"></a>İOS uygulamaları Windows komut satırı derleme 
+
+Xamarin.iOS uygulamaları komut satırından derleme Mac destekler çifti. Örneğin:
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword
 ```
+Parametreleri geçirilen `msbuild` yukarıdaki örnekte şunlardır:
 
-### <a name="summary"></a>Özet
+- `ServerAddress` – Mac yapı konak IP adresi.
+- `ServerUser` – Mac yapı konağı açarken kullanılacak kullanıcı adı.
+  Tam adınızı yerine sistem kullanıcı adınızı kullanın.
+- `ServerPassword` – Mac yapı konağı açarken kullanılacak parola.
+ 
+> [!NOTE]
+> Visual Studio 2017 depolar `msbuild` aşağıdaki dizinde: **C:\Program Files (x86) \Microsoft Visual Studio\2017\<sürüm > \MSBuild\15.0\Bin**
 
-Bu Visual Studio ve Visual Studio kullanarak Xamarin.iOS uygulamaları geliştirmek sağlayarak Mac, iOS yapı ve tasarımcı araçları arasında keşfedilen bağlantı makalesi.
+Visual Studio 2017 ya da komut satırı, belirli bir Mac yapı konağa Mac çiftine açtığında ilk kez SSH anahtarlarını ayarlar. Bu anahtarları ile sonraki oturum açma bilgileri, bir kullanıcı adı veya parola gerektirmez. Yeni oluşturulan anahtarları depolanır **%LOCALAPPDATA%\Xamarin\MonoTouch**.
 
-### <a name="related-links"></a>İlgili bağlantılar
+Varsa `ServerPassword` parametresi, bir komut satırı derleme çağrısından atlanırsa, kaydedilmiş SSH anahtarları kullanılarak Mac yapı konağına oturum açma girişimlerini Mac çifti.
 
-- [Yükleme](~/ios/get-started/installation/windows/index.md)
+## <a name="summary"></a>Özet
+
+Bu makalede Mac çiftine Xamarin.iOS yerel iOS uygulamaları oluşturmak Visual Studio 2017 geliştiriciler etkinleştirme Mac yapı konak, Visual Studio 2017 bağlanmak için nasıl kullanılacağı açıklanmaktadır.
+
+## <a name="next-steps"></a>Sonraki adımlar
+
 - [Bağlantı Sorunlarını Giderme](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
-- [Visual Studio ortamınızı XMA (video) ile bir Mac bağlanma](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)
+- [Xamarin Mac yapı aracısını - Xamarin Üniversitesi Şimşek Ders](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Visual Studio için Xamarin.iOS’a Giriş](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)

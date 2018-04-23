@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a8264d3ebd5f294b1b77fbbafd660825d5ce5180
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 859f84fbe329d79e9e1e6a8b7445fe2a7f03af23
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Visual Studio Xamarin.iOS için giriş
 
@@ -36,39 +36,25 @@ Visual Studio içinde iOS için geliştirmeye çok sayıda fayda sağlar:
 
 Birkaç yapılandırma seçeneği kullanılabilir olduğundan, geliştirme gereksinimleriniz için en iyi çalıştığı karar vermem. Bunlar, aşağıda listelenmiştir:
 
--  Ana makine geliştirme Mac kullanın ve Visual Studio yüklüyse Windows sanal makine çalıştırın. VM yazılım gibi kullanmanızı öneririz [Parallels](http://www.parallels.com/products/desktop/) veya [VMWare](http://www.vmware.com/products/fusion/) .
--  Mac yalnızca bir yapı konağı olarak kullanın. Bu senaryoda, bir Windows makineyle aynı ağa simply bağlı olacaktır [gerekli](~/cross-platform/get-started/installation/windows.md#installation) araçları yüklü.
+-  Mac ana geliştirme makinenizi kullanın ve Visual Studio yüklüyse Windows sanal makine çalıştırın. VM yazılım gibi kullanmanızı öneririz [Parallels](http://www.parallels.com/products/desktop/) veya [VMWare](http://www.vmware.com/products/fusion/) .
+-  Mac yalnızca bir yapı konağı olarak kullanın. Bu senaryoda, bir Windows makineyle aynı ağa bağlı olurdu [gerekli](~/cross-platform/get-started/installation/windows.md#installation) araçları yüklü.
 
 
 Her iki durumda da, aşağıdaki adımları izlemelisiniz:
 
-- [Mac konakta Xamarin.iOS Araçları'nı yükleme](https://docs.microsoft.com/visualstudio/mac/installation)
-- [Mac yapılandırın](~/ios/get-started/installation/windows/index.md#configuring)
+- [Mac için Visual Studio yükleme](https://docs.microsoft.com/visualstudio/mac/installation)
 - [Windows'ta Xamarin araçlarını yükleme](~/cross-platform/get-started/installation/windows.md)
-
-Visual Studio'da xamarin'le geliştirmek için kullanıyor olmanız gerekir **en az** Visual Studio 2015 Professional ya da daha yüksek. Xamarin olacak **çalışmıyor** Express sürümleri, Visual Studio ile gibi eklentiler desteklemez.
 
 ## <a name="connecting-to-the-mac"></a>Mac bilgisayara bağlayarak
 
-Mac için bağlanabilir yapı konak simgesi aracılığıyla ya da (sağlayan bir iOS uygulaması, açık) Visual Studio araç çubuğunda:
+Visual Studio, Mac yapı ana bilgisayarına bağlanmak için yönergeleri izleyin [Mac çiftine](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Kılavuzu.
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png "Bağlan Mac simgesi")](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png#lightbox)
-
-Veya **Araçlar > Seçenekler** Visual Studio ve seçme **Xamarin > iOS ayarları**:
-
- [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png "iOS seçeneği")](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png#lightbox)
-
-Mac yapı konağı tıklatarak değiştirebilirsiniz **Xamarin Mac arası bulma** düğmesi. Mac yapı konağı güncelleştirmek için aşağıdaki ekran gösterilir:
-
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png "Xamarin Mac aracı iletişim kutusu")](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png#lightbox)
 
 
 ## <a name="visual-studio-toolbar-overview"></a>Visual Studio araç çubuğuna genel bakış
 
 Visual Studio için Xamarin iOS, standart araç ve yeni iOS araç çubuğu öğeleri ekler.
 Bu araç çubuklarını işlevler aşağıda açıklanmıştır.
-
-
 
 ### <a name="standard-toolbar"></a>Standart araç çubuğu
 
@@ -81,11 +67,11 @@ Xamarin iOS geliştirme için ilgili denetimleri kırmızı daire içine alını
 -  **Çözüm platformları** -iPhone veya dağıtım için iPhoneSimulator seçmenize olanak sağlar.
 
 
-### <a name="ios-toolbar"></a>iOS Toolbar
+### <a name="ios-toolbar"></a>iOS araç çubuğu
 
 Visual Studio'da araç iOS her Visual Studio sürümünde benzer. Bunlar tüm aşağıda verilmiştir:
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS Toolbar")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS araç çubuğu")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 Her öğe aşağıda açıklanmıştır:
 
@@ -125,7 +111,7 @@ Hata ayıklama ve yapı gibi diğer varsayılan Visual Studio çıkış bölmele
     [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild çıktı")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 
-## <a name="ios-project-properties"></a>iOS Project Properties
+## <a name="ios-project-properties"></a>iOS proje özellikleri
 
 Visual Studio'nun proje özellikleri erişilebilir proje adına sağ tıklayıp seçerek *özellikleri* bağlam menüsünde. Bu, iOS Uygulamanızı yapılandırmak aşağıdaki ekran görüntüsünde gösterildiği gibi sağlar:
 
@@ -174,7 +160,7 @@ Görünümünüze nesneleri eklemek için kullanın **araç** öğeleri, tasarı
 
 ### <a name="device-logging"></a>Cihaz günlüğe kaydetme
 
-Visual Studio 2015 ve üzeri Android ve iOS günlük klavye takımı birleşik
+Visual Studio 2017, Android ve iOS günlük klavye takımı birleştirilmiş.
 
 Android ve iOS cihazları için günlükleri göstermek için Visual Studio için yeni cihaz günlük araç penceresi sağlar. Aşağıdaki komutları yürüterek gösterilebilir:
 
@@ -212,7 +198,7 @@ Bu makalede, Visual Studio için Xamarin iOS kullanma açıklanmaktadır. Listel
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Xamarin.iOS Installation](~/ios/get-started/installation/windows/index.md)
+- [Xamarin.iOS yükleme](~/ios/get-started/installation/windows/index.md)
 - [Cihaz sağlama](~/ios/get-started/installation/device-provisioning/index.md)
 - [Kodda iOS kullanıcı Arabirimi oluşturma](~/ios/app-fundamentals/ios-code-only.md)
 - [Visual Studio ortamınızı XMA (video) ile bir Mac bağlanma](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)
