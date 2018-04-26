@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: ae1300936a24ac1381496eaaf78aefb875bd5ed6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33573d14d77f0582caca7d1e71b839563a3dd110
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>2B matematik CocosSharp ile
 
@@ -264,7 +264,7 @@ Bu kod, aşağıdaki davranış oluşur:
 
 `System.Math.Atan2` Bir açının uzaklığı dönüştürmek için kullanılabilir. İşlev adı `Atan2` trigonometrik işlevi arktanjantını gelir. "2" soneki bu işlev standart ayıran `Atan` kesinlikle arktanjantını matematiksel davranışını eşleşen işlevi. Arctangent -90 arasında bir değer döndüren bir işlev değil ve + 90 derece (veya eşdeğeri radyan cinsinden). Bilgisayar oyunları dahil olmak üzere birçok uygulama, genellikle tam bir 360 derece değerleri gerektiren böylece `Math` sınıfı içerir `Atan2` bu gereksinimi karşılamak için.
 
-Yukarıdaki kod Y parametresi ilk olarak, ardından X parametresi çağrılırken geçtiğini fark `Atan2` yöntemi. Bu geriye doğru normal X, Y konum koordinatlarını sıralama arasındadır. Daha fazla bilgi için [Atan2 belgeleri bkz](https://msdn.microsoft.com/en-us/library/system.math.atan2(v=vs.110).aspx).
+Yukarıdaki kod Y parametresi ilk olarak, ardından X parametresi çağrılırken geçtiğini fark `Atan2` yöntemi. Bu geriye doğru normal X, Y konum koordinatlarını sıralama arasındadır. Daha fazla bilgi için [Atan2 belgeleri bkz](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx).
 
 Ayrıca dikkate değerdir dönüş değeri, `Atan2` radyan cinsinden olduğu açıları ölçmek için kullanılan başka bir birimdir. Bu kılavuz değil radyan ayrıntılarını içerir, ancak unutmayın, tüm trigonometrik işlevler `System.Math` ad alanı, herhangi bir değere derece CocosSharp nesnelerde kullanılmadan önce dönüştürülmesi gerekir böylece radyan kullanın. Radyan cinsinden hakkında daha fazla bilgi bulunabilir [radian Wikipedia sayfasındaki](http://en.wikipedia.org/wiki/Radian).
 

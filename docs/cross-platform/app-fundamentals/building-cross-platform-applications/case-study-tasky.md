@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f8e663ab2e274bff1ae8b700586d4c6749f04545
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 690edabd53752ff0347fdb232a4bbfcb1ba6e84d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="case-study-tasky"></a>Örnek olay incelemesi: Tasky
 
@@ -166,7 +166,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 #### <a name="locking-to-prevent-concurrent-access"></a>Eşzamanlı erişimi engellemek için kilitleme
 
-A [kilit](http://msdn.microsoft.com/en-us/library/c5kehkcz(v=vs.100).aspx) içinde uygulanan `TaskItemDatabase` veritabanına eşzamanlı erişimi engellemek için sınıf. Bu farklı iş parçacıklarından eş zamanlı erişim seri hale getirilmiş sağlamaktır (Aksi halde UI bileşeni veritabanı arka plan iş parçacığı, güncelleştiriyor aynı anda okuma girişimi). Kilit nasıl uygulandığını örneği aşağıda gösterilmiştir:
+A [kilit](http://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx) içinde uygulanan `TaskItemDatabase` veritabanına eşzamanlı erişimi engellemek için sınıf. Bu farklı iş parçacıklarından eş zamanlı erişim seri hale getirilmiş sağlamaktır (Aksi halde UI bileşeni veritabanı arka plan iş parçacığı, güncelleştiriyor aynı anda okuma girişimi). Kilit nasıl uygulandığını örneği aşağıda gösterilmiştir:
 
 ```csharp
 static object locker = new object ();
@@ -253,7 +253,7 @@ Kalan bölümler Tasky UI platforma özgü uygulama ayrıntıları ele almaktad�
 
  <a name="iOS_App" />
 
-## <a name="ios-app"></a>iOS App
+## <a name="ios-app"></a>iOS uygulaması
 
 Sınıfları Tasky uygulama depolama ve verileri almak için ortak PCL project kullanarak iOS uygulamak için gereken sayıda vardır. Tam iOS Xamarin.iOS projesi aşağıda gösterilmiştir:
 
@@ -357,7 +357,7 @@ Bu ekran görüntüsü gösterilmektedir boş bir ekran gösterir `Entry` filigr
 
  <a name="Android_App" />
 
-## <a name="android-app"></a>Android App
+## <a name="android-app"></a>Android uygulaması
 
 Tam Xamarin.Android projesi, aşağıda gösterilen:
 

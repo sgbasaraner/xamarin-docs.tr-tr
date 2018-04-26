@@ -7,18 +7,18 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 1b317c4c82ec736c7f4c8306036e43cf04086a82
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 297aac4ba4a564e4506d841d3e11718ad79307e2
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>İzlenecek yol - WCF ile çalışma
 
 _Bu kılavuz, Xamarin ile oluşturulan bir mobil uygulama BasicHttpBinding sınıfı kullanarak bir WCF web hizmeti nasıl tüketebileceği kapsar._
 
 
-Arka uç sistemleri ile iletişim kurabilmesi mobil uygulamalar için ortak bir gereksinimdir. Birçok seçenek ve arka uç çerçeveleri, biri olan seçenekleri vardır [Windows Communication Foundation](http://msdn.microsoft.com/en-us/library/ms731082.aspx) (WCF). Bu kılavuzu kullanarak bir WCF hizmeti bir Xamarin mobil uygulamayı nasıl tüketebileceği örneği sağlayacak `BasicHttpBinding` sınıfı. İzlenecek yol aşağıdaki konuları içerir:
+Arka uç sistemleri ile iletişim kurabilmesi mobil uygulamalar için ortak bir gereksinimdir. Birçok seçenek ve arka uç çerçeveleri, biri olan seçenekleri vardır [Windows Communication Foundation](http://msdn.microsoft.com/library/ms731082.aspx) (WCF). Bu kılavuzu kullanarak bir WCF hizmeti bir Xamarin mobil uygulamayı nasıl tüketebileceği örneği sağlayacak `BasicHttpBinding` sınıfı. İzlenecek yol aşağıdaki konuları içerir:
 
 1.  **Bir WCF hizmeti oluşturma** -bu bölümdeki iki yöntem sahip çok basit bir WCF Hizmeti oluşturacağız. Bir C# nesnesi başka bir yöntem sürer ilk yöntem bir dize parametresi olur. Bu bölümde ayrıca WCF Hizmeti Uzaktan erişime izin vermek için bir geliştiricinin iş istasyonu yapılandırmak nasıl ele alınacaktır.
 1.  **Bir Xamarin.Android uygulaması oluşturma** -WCF Hizmeti oluşturulduktan sonra WCF hizmetini kullanacak olan basit bir Xamarin.Android uygulaması oluşturacağız. Bu bölümde, WCF Hizmeti ile iletişimi kolaylaştırmak için bir WCF hizmeti proxy sınıfı oluşturmak nasıl ele alınacaktır.
@@ -228,7 +228,7 @@ Bir uygulama hizmeti kullanabilmeniz için önce bir web hizmeti proxy'si WCF hi
 1. Yapı `HelloWorldServiceProxy` projesi.
 
 > [!NOTE]
-> Visual Studio 2017 içinde Microsoft WCF Web hizmeti başvuru sağlayıcısı kullanarak proxy oluşturma alternatif ServiceModel meta veri yardımcı Programracı (svcutil.exe) kullanmaktır. Daha fazla bilgi için bkz: [ServiceModel meta veri yardımcı Programracı (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+> Visual Studio 2017 içinde Microsoft WCF Web hizmeti başvuru sağlayıcısı kullanarak proxy oluşturma alternatif ServiceModel meta veri yardımcı Programracı (svcutil.exe) kullanmaktır. Daha fazla bilgi için bkz: [ServiceModel meta veri yardımcı Programracı (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Creating_a_Xamarin_Android_Application" />
 
@@ -535,6 +535,6 @@ Bu öğretici Xamarin.Android ve Xamarin.iOS kullanarak mobil uygulamada bir WCF
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [HelloWorld (örnek)](https://developer.xamarin.com/samples/mobile/WCF-Walkthrough/)
-- [WCF ile hizmet odaklı uygulamalar geliştirme](https://docs.microsoft.com/en-us/dotnet/framework/wcf/index)
-- [Nasıl yapılır: bir Windows Communication Foundation istemcisi oluşturma](https://docs.microsoft.com/en-us/dotnet/framework/wcf/how-to-create-a-wcf-client)
-- [ServiceModel meta veri yardımcı Programracı (svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [WCF ile hizmet odaklı uygulamalar geliştirme](https://docs.microsoft.com/dotnet/framework/wcf/index)
+- [Nasıl yapılır: bir Windows Communication Foundation istemcisi oluşturma](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
+- [ServiceModel meta veri yardımcı Programracı (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

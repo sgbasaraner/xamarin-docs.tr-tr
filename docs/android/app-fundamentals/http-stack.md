@@ -6,83 +6,79 @@ ms.assetid: D7ABAFAB-5CA2-443D-B902-2C7F3AD69CE2
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: 2bc9b2a454b306f0794ef3704daa7e0fe6d04ef8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/20/2018
+ms.openlocfilehash: bedcf0603fffc9886155881f91972203104ba155
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient yığını ve Android için SSL/TLS uygulama Seçici
 
-_HttpClient yığını ve SSL/TLS uygulama seçiciler, Xamarin.Android uygulamaları tarafından kullanılan HttpClient ve SSL/TLS uygulaması belirler._
+HttpClient yığını ve SSL/TLS uygulama seçiciler, Xamarin.Android uygulamaları tarafından kullanılan HttpClient ve SSL/TLS uygulaması belirler.
 
-## <a name="overview"></a>Genel Bakış
+Projeleri başvurmalıdır **System.Net.Http** derleme.
 
-Xamarin.Android Android uygulaması TLS ayarlarını denetleyen iki birleşik giriş kutuları sağlar. Tek bir birleşik giriş kutusu tanımlar ve hangi `HttpMessageHandler` başlatılırken kullanacağı bir `HttpClient` hangi TLS uygulaması web istekleri tarafından kullanılacak diğer tanımlayan sırasında nesne.
+> [!WARNING]
+> **Nisan, 2018** – Artırılmış Güvenlik nedeniyle PCI uyumluluğunu içeren gereksinimlerini birincil Bulutu sağlayıcıları ve web sunucuları, TLS 1.2 eski sürümleri desteklenmesini durdurmak için beklenir.  TLS eski sürümleri kullanmak için Visual Studio varsayılan önceki sürümlerinde oluşturulan Xamarin projeleri.
+>
+> Uygulamalarınızı bu sunucuları ve Hizmetleri ile çalışmaya devam emin olmak için **Xamarin projelerinizi güncelleştirmeniz gerekir `Android HttpClient` ve `Native TLS 1.2` aşağıda gösterilen ayarları daha sonra yeniden oluşturun ve uygulamalarınızı yeniden dağıtma** için Kullanıcılar.
 
-> [!NOTE]
-> Projeleri başvurmalıdır **System.Net.Http** derleme.
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+Xamarin.Android HttpClient yapılandırma bulunduğu **proje Seçenekleri > Android seçenekleri**, ardından **Gelişmiş Seçenekler** düğmesi.
 
-HttpClient yığın ayarlarını bir Xamarin.Android projesi için Proje seçenekleri bulunur. Tıklayın **Android seçenekleri** sekmesini ve ardından tıklatın **Gelişmiş Seçenekler** düğmesi. Bu görüntüler **Gelişmiş Android seçenekleri** biri HttpClient uygulaması diğeri SSL/TLS uygulaması için iki birleşik giriş kutuları olan iletişim:
+TLS 1.2 desteği için önerilen ayarları şunlardır:
 
-
-[![Visual Studio Android Options](http-stack-images/tls07-vs-sml.png)](http-stack-images/tls07-vs.png#lightbox)
-
-## <a name="httpclient-stack-selector"></a>HttpClient Stack Selector
-
-Bu proje seçeneği denetleyen `HttpMessageHandler` uygulama her zaman kullanılacak bir `HttpClient` nesnesi. Varsayılan olarak, bu yönetilen olduğu `HttpClientHandler`.
-
-[![Visual Studio'da Android HttpClient uygulama birleşik giriş kutusu](http-stack-images/tls04-vs-sml.png)](http-stack-images/tls04-vs.png#lightbox) 
+[![Visual Studio Android seçenekleri](http-stack-images/android-win-sml.png)](http-stack-images/android-win.png#lightbox)
 
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
-HttpClient yığın ayarlarını bir Xamarin.Android projesi için Proje seçenekleri bulunur. Tıklayın **Yapı > Android derleme** ayarları ve tıklayarak **genel** sekmesi:
+Xamarin.Android HttpClient yapılandırma bulunduğu **proje Seçenekleri > Yapı > Android derleme** ayarları ve tıklatın **genel** sekmesi.
 
-[![Visual Studio için Mac Android seçenekleri](http-stack-images/tls07-xs-sml.png)](http-stack-images/tls07-xs.png#lightbox)
+TLS 1.2 desteği için önerilen ayarları şunlardır:
 
-## <a name="httpclient-stack-selector"></a>HttpClient Stack Selector
-
-Bu proje seçeneği denetleyen `HttpMessageHandler` uygulama her zaman kullanılacak bir `HttpClient` nesnesi. Varsayılan olarak, bu yönetilen olduğu `HttpClientHandler`.
-
-![Mac için Visual Studio'da Android HttpClient uygulama birleşik giriş kutusu](http-stack-images/tls04-xs.png )
+[![Visual Studio için Mac Android seçenekleri](http-stack-images/android-mac-sml.png)](http-stack-images/android-mac.png#lightbox)
 
 -----
+
+## <a name="alternative-configuration-options"></a>Alternatif yapılandırma seçenekleri
+
+### <a name="androidclienthandler"></a>AndroidClientHandler
+
+AndroidClientHandler her şeyi yönetilen kodda uygulama yerine yerel Java/OS kod temsilciler yeni işleyicidir.
+**Önerilen seçenek budur.**
+
+#### <a name="pros"></a>Uzmanları
+
+- Yerel API daha iyi performans ve daha küçük yürütülebilir boyutu için kullanın.
+- En son standartları, örneğin destekler. TLS 1. 2.
+
+#### <a name="cons"></a>Simgeler
+
+- Android 5.0 veya sonrasını gerektirir.
+- Bazı HttpClient özellikleri/seçenekler kullanılamaz.
 
 ### <a name="managed-httpclienthandler"></a>Yönetilen (HttpClientHandler)
 
 Yönetilen işleyici önceki Xamarin.Android sürümleriyle birlikte tam olarak yönetilen HttpClient işleyicidir.
 
-#### <a name="pros"></a>Uzmanları:
+#### <a name="pros"></a>Uzmanları
 
 - Bu en (Özellikler) ile uyumlu MS .NET ve Xamarin'ın eski sürümlerini olur.
 
-#### <a name="cons"></a>Cons:
+#### <a name="cons"></a>Simgeler
 
 - Tam işletim sistemiyle (ör.) ile tümleştirildikten değil sınırlı TLS 1.0).
 - (Ör. genellikle çok daha yavaş şifreleme) yerel API daha.
 - Büyük uygulamalar oluşturma daha yönetilen kodu gerektirir.
 
-### <a name="androidclienthandler"></a>AndroidClientHandler
 
-AndroidClientHandler her şeyi yönetilen kodda uygulama yerine yerel Java/OS kod temsilciler yeni işleyicidir.
-
-#### <a name="pros"></a>Uzmanları:
-
-- Yerel API daha iyi performans ve daha küçük yürütülebilir boyutu için kullanın.
-- En son standartları, örneğin destekler. TLS 1.2.
-
-#### <a name="cons"></a>Cons:
-
-- Android 5.0 veya sonrasını gerektirir.
-- Bazı HttpClient özellikleri/seçenekler kullanılamaz.
 
 ### <a name="choosing-a-handler"></a>Bir işleyici seçme
 
-Arasında seçim `AndroidClientHandler` ve `HttpClientHandler` sonra uygulamanızın gereksinimlerine bağlıdır. `AndroidClientHandler` Aşağıdakilerin tümü uygularsanız, iyi bir seçimdir:
+Arasında seçim `AndroidClientHandler` ve `HttpClientHandler` sonra uygulamanızın gereksinimlerine bağlıdır. `AndroidClientHandler` en güncel güvenlik desteği ör önerilir.
 
 -   TLS 1.2 + desteği gerektirir.
 -   Uygulamanızı Android 5.0 (API 21) hedefleme veya sonraki bir sürümü.
@@ -122,11 +118,11 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 
 Bu proje seçeneği hangi temel TLS kitaplık tüm web isteği tarafından kullanılacak denetimleri her ikisi de `HttpClient` ve `WebRequest`. Varsayılan olarak, TLS 1.2 seçilir:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![Visual Studio'da TLS/SSL uygulaması birleşik giriş kutusu](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
 [![Mac için Visual Studio'da TLS/SSL uygulaması birleşik giriş kutusu](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png#lightbox)
 
@@ -158,13 +154,13 @@ Bir Xamarin.Android uygulaması TLS ayarları denetleyebilir üç yolu vardır:
 
 Xamarin.Android TLS kullanımı ile ilgili iki ortam değişkenleri şunlardır:
 
--   `XA_HTTP_CLIENT_HANDLER_TYPE` &ndash; Bu ortam değişkenini varsayılan bildirir `HttpMessageHandler` uygulama kullanacak. Örneğin:
+- `XA_HTTP_CLIENT_HANDLER_TYPE` &ndash; Bu ortam değişkenini varsayılan bildirir `HttpMessageHandler` uygulama kullanacak. Örneğin:
 
     ```csharp
     XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler
     ```
 
--   `XA_TLS_PROVIDER` &ndash; Bu ortam değişkenini hangi TLS kitaplığı, ya da kullanılacak tanımlayacağınız `btls`, `legacy`, veya `default` (olduğu bu değişken atlanması ile aynı):
+- `XA_TLS_PROVIDER` &ndash; Bu ortam değişkenini hangi TLS kitaplığı, ya da kullanılacak tanımlayacağınız `btls`, `legacy`, veya `default` (olduğu bu değişken atlanması ile aynı):
 
     ```csharp
     XA_TLS_PROVIDER=btls
@@ -172,11 +168,11 @@ Xamarin.Android TLS kullanımı ile ilgili iki ortam değişkenleri şunlardır:
 
 Bu ortam değişkeni ekleyerek ayarlanır bir _ortam dosya_ projeye. Bir yapı eylemi zaman aşımına UNIX olarak biçimlendirilmiş bir düz metin dosyasıyla bir ortam dosyasıdır **AndroidEnvironment**:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Visual Studio'da AndroidEnvironment yapı eyleminin ekran görüntüsü.](http-stack-images/tls03-vs.png)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
 ![Ekran görüntüsü AndroidEnvironment yapı Mac için Visual Studio eylemi](http-stack-images/tls03-xs.png)
 

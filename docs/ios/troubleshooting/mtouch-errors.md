@@ -1,5 +1,5 @@
 ---
-title: Xamarin.iOS errors
+title: Xamarin.iOS hataları
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
@@ -7,13 +7,13 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 0187b65e4c10e7cc03715a997a90fbddab9bd532
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71cddc07863002a887cada2bb0db0f8d25fd1a17
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="xamarinios-errors"></a>Xamarin.iOS errors
+# <a name="xamarinios-errors"></a>Xamarin.iOS hataları
 
 ## <a name="mt0xxx-mtouch-error-messages"></a>MT0xxx: mtouch hata iletileri
 
@@ -480,7 +480,7 @@ Lütfen en iyi davranışı sağlamak için Xcode yükseltin.
 
 <a name="MT0080" />
 
-### <a name="mt0080-disabling-newrefcount---new-refcountfalse-is-deprecated"></a>MT0080: Disabling NewRefCount, --new-refcount:false, is deprecated.
+### <a name="mt0080-disabling-newrefcount---new-refcountfalse-is-deprecated"></a>MT0080: NewRefCount devre dışı bırakma,--yeni-refcount:false, kullanım dışıdır.
 
 Bu, bildiren bir uyarı olduğu yeni devre dışı bırakma isteği refcount (--yeni - refcount:false) yoksayıldı.
 
@@ -631,7 +631,7 @@ Derleme yapı hedef adı geçerli bir dosya adı olmalıdır.
 
 <a name="MT0109" />
 
-### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: Sağlanan yol daha farklı bir yoldan derleme '{0}' yüklendi (yolu sağlanan: {1}, gerçek yol: {2}).
+### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: Derleme '{0}' sağlanan yol daha farklı bir yoldan yüklendi (yolu sağlanan: {1}, gerçek yol: {2}).
 
 Bu, uygulama tarafından başvurulan bir derleme başka bir konumdan istenenden yüklü olduğunu belirten bir uyarıdır.
 
@@ -1500,7 +1500,7 @@ Bu tür sorunlar için bir hata raporu dosya önemlidir. Çoğu durumda, uygun d
 
 <a name="MT2006" />
 
-### <a name="mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a>MT2006: gelen mscorlib.dll yüklenemiyor: *. Please reinstall Xamarin.iOS.
+### <a name="mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a>MT2006: gelen mscorlib.dll yüklenemiyor: *. Lütfen Xamarin.iOS yeniden yükleyin.
 
 Bu, genellikle Xamarin.iOS yükleme ile ilgili bir sorun olduğunu gösterir. Xamarin.iOS yeniden yüklemeyi deneyin.
 
@@ -1653,11 +1653,11 @@ Soruna neden bütünleştirilmiş hata iletisinde adlandırılmıştır. Derleme
 
 <a name="MT2104" />
 
-### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: '{0}' derlemesi karma mod olduğu gibi bağlantı oluşturulamıyor.
+### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: Derleme bağlantı kurulamıyor '{0}' karma mod olduğu gibi.
 
 Karışık mod derlemeleri bağlayıcı tarafından işlenemez.
 
-Bkz: https://msdn.microsoft.com/en-us/library/x0w2664k.aspx karma mod derlemeler hakkında daha fazla bilgi için.
+Bkz: https://msdn.microsoft.com/library/x0w2664k.aspx karma mod derlemeler hakkında daha fazla bilgi için.
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: Uygulama Nesne AĞACI hata iletileri
 
@@ -2060,7 +2060,7 @@ Lütfen doğrulayın `Register` hata iletisinde belirtilen yönetilen Sınıf ö
 
 <a name="MT4161" />
 
-### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: Kayıt bulundu desteklenmeyen yapısı '\*': bir yapıyı tüm alanlarda yapıları olması gerekir (alan '\*' türüyle '{2}' bir yapı değil).
+### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: Kayıt bulundu desteklenmeyen yapısı '\*': bir yapıyı tüm alanlarda yapıları olması gerekir (alan '\*'türündeki'{2}' bir yapı değil).
 
 Kayıt şirketi desteklenmeyen alanlar yapısıyla bulundu.
 
@@ -2157,7 +2157,7 @@ Bu yerel bir kitaplık için bir bağlama projesini geliştirirken çalıştır�
 
 <a name="MT5101" />
 
-### <a name="mt5101-missing--compiler-please-install-xcode-command-line-tools-component"></a>MT5101: Missing '*' compiler. Lütfen 'Komut satırı araçları' bileşeni yükleyin
+### <a name="mt5101-missing--compiler-please-install-xcode-command-line-tools-component"></a>MT5101: Eksik ' *' derleyici. Lütfen 'Komut satırı araçları' bileşeni yükleyin
 
 <a name="MT5102" />
 
@@ -2179,7 +2179,7 @@ Bu yerel bir kitaplık için bir bağlama projesini geliştirirken çalıştır�
 
 Bu genellikle Xamarin.iOS bir hata olduğunu gösterir; Lütfen en dosyalama [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
-### <a name="mt52xx-linking"></a>MT52xx: Linking
+### <a name="mt52xx-linking"></a>MT52xx: bağlama
 
 <!--
   MT52xx linking
@@ -2448,7 +2448,7 @@ Uygulamada derlemeleri yönetilen koddan (IL kodu kaldırma) çıkarma bağlanı
 
 Hata ayıklama simgeleri uygulamadan çıkarma bir güvenlik hatası oluştu.
 
-## <a name="mt7xxx-msbuild-error-messages"></a>MT7xxx: MSBuild error messages
+## <a name="mt7xxx-msbuild-error-messages"></a>MT7xxx: MSBuild hata iletileri
 
 <!--
  MT7xxx msbuild errors
@@ -2798,7 +2798,7 @@ Burada * olabilir:
 
 <a name="MT7055" />
 
-### <a name="mt7055-import-error-reading-file-"></a>MT7055: Import: Error Reading File: *.
+### <a name="mt7055-import-error-reading-file-"></a>MT7055: Alma: dosya okuma hatası: *.
 
 *MSBuild görevi: PropertyListEditorTaskBase*
 
@@ -2834,7 +2834,7 @@ Burada * olabilir:
 
 <a name="MT7061" />
 
-### <a name="mt7061-merge-error-reading-file-"></a>MT7061: Merge: Error Reading File: *.
+### <a name="mt7061-merge-error-reading-file-"></a>MT7061: Birleştirme: dosya okuma hatası: *.
 
 *MSBuild görevi: PropertyListEditorTaskBase*
 
@@ -2883,7 +2883,7 @@ Burada * olabilir:
 
 <a name="MT8001" />
 
-### <a name="mt8001-version-mismatch-between-the-native-xamarinios-runtime-and-monotouchdll-please-reinstall-xamarinios"></a>MT8001: Yerel Xamarin.iOS çalışma zamanı ve monotouch.dll sürüm uyuşmazlığı. Please reinstall Xamarin.iOS.
+### <a name="mt8001-version-mismatch-between-the-native-xamarinios-runtime-and-monotouchdll-please-reinstall-xamarinios"></a>MT8001: Yerel Xamarin.iOS çalışma zamanı ve monotouch.dll sürüm uyuşmazlığı. Lütfen Xamarin.iOS yeniden yükleyin.
 
 <a name="MT8002" />
 
@@ -2945,7 +2945,7 @@ Bu genellikle Xamarin.iOS bir hata olduğunu gösterir; Lütfen en dosyalama [ h
 
 <a name="MT8013" />
 
-### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013: Dönüş değeri yöntemi için geçersiz DelegateProxyAttribute *.*: temsilci ({2}) 'İşleyicisi' alan olmadan türü belirtir. Lütfen en dosyalama http://bugzilla.xamarin.com.
+### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013: Dönüş değeri yöntemi için geçersiz DelegateProxyAttribute *.*: temsilci ({2}) 'İşleyicisi' alan olmadan türünü belirtir. Lütfen en dosyalama http://bugzilla.xamarin.com.
 
 Söz konusu yöntemi DelegateProxy özniteliği geçersiz.
 
@@ -2953,7 +2953,7 @@ Bu genellikle Xamarin.iOS bir hata olduğunu gösterir; Lütfen en dosyalama [ h
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: Dönüş değeri yöntemi için geçersiz DelegateProxyAttribute *.*: temsilci 's ({2}) 'İşleyicisi' alanı null. Lütfen en dosyalama http://bugzilla.xamarin.com.
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: Dönüş değeri yöntemi için geçersiz DelegateProxyAttribute *.*: temsilci 's ({2}) 'İşleyicisi' alandır null. Lütfen en dosyalama http://bugzilla.xamarin.com.
 
 Söz konusu yöntemi DelegateProxy özniteliği geçersiz.
 

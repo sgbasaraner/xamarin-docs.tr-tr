@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c6a5233c9cdc043986f106712895439fa008b41
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="working-with-the-file-system"></a>Dosya sistemi ile çalışma
 
@@ -77,7 +77,7 @@ using (TextReader reader = new StreamReader("./TestData/test.xml")) {
 }
 ```
 
-İçin MSDN belgelerine başvurun [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml.aspx) hakkında daha fazla bilgi için ad alanı [seri hale getirme](http://msdn.microsoft.com/en-us/library/system.xml.serialization.aspx). Da gözden geçirmelisiniz [Xamarin.iOS belgelerine](~/ios/deploy-test/linker.md) bağlayıcı üzerinde – genellikle, eklemeniz gerekir `[Preserve]` özniteliği düşündüğünüz serileştirmek için sınıflar.
+İçin MSDN belgelerine başvurun [System.Xml](http://msdn.microsoft.com/library/system.xml.aspx) hakkında daha fazla bilgi için ad alanı [seri hale getirme](http://msdn.microsoft.com/library/system.xml.serialization.aspx). Da gözden geçirmelisiniz [Xamarin.iOS belgelerine](~/ios/deploy-test/linker.md) bağlayıcı üzerinde – genellikle, eklemeniz gerekir `[Preserve]` özniteliği düşündüğünüz serileştirmek için sınıflar.
 
  <a name="Creating_Files_and_Directories" />
 
@@ -102,7 +102,7 @@ var directoryname = Path.Combine (documents, "NewDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-System.IO ad alanı hakkında daha fazla bilgi için bkz: [MSDN belgelerine](http://msdn.microsoft.com/en-us/library/system.io.aspx).
+System.IO ad alanı hakkında daha fazla bilgi için bkz: [MSDN belgelerine](http://msdn.microsoft.com/library/system.io.aspx).
 
 
 ### <a name="serializing-json"></a>JSON seri hale getirme
@@ -244,7 +244,7 @@ Bu dizinleri ve bunların amaçları aşağıda listelenmiştir:
 |Kitaplığı /|Kitaplık dizinine doğrudan veritabanları veya diğer uygulama tarafından üretilen dosyalar gibi bir kullanıcı tarafından oluşturulmaz dosyalarını depolamak için uygun bir yerdir. Bu dizinin içindekileri hiçbir zaman kullanıcının iTunes aracılığıyla sunulur.<br /><br />Kitaplığı'nda, kendi alt dizinler oluşturabilirsiniz; Ancak, zaten var. tercihlerini ve önbellekleri dahil olmak üzere, farkında olmalıdır bazı sistem tarafından oluşturulan dizinler burada.<br /><br />(Dışında önbellekleri alt) bu dizinin içindekileri iTunes tarafından yedeklenir. Kitaplıkta oluşturduğunuz özel dizinler yedeklenecek.|
 |Kitaplık/Tercihler /|Uygulamaya özgü tercih dosyaları bu dizinde depolanır. Bu dosyaları doğrudan oluşturmayın. Bunun yerine, kullanın `NSUserDefaults` sınıfı.<br /><br />Bu dizinin içindekileri iTunes tarafından yedeklenir.|
 |Kitaplığı/önbellekleri /|Önbellekleri uygulamanızı yardımcı olabilecek veri dosyalarını depolamak için uygun bir yerdir çalıştırın, ancak, gerekirse kolaylıkla yeniden oluşturulabilir dizindir. Uygulama oluşturup gerektiğinde bu dosyaları silmek ve gerekirse, bu dosyalar yeniden oluşturabilirsiniz. Uygulama çalışırken, bunu yapmaz ancak iOS 5 (altında son derece düşük depolama durumlar), bu dosyalar da silebilir.<br /><br />Bu dizinin içindekileri bunlar kullanıcı cihazı yükler, mevcut olmaz anlamına gelir, iTunes tarafından yedeklenmez ve bunlar uygulamanızı güncelleştirilmiş bir sürümünü yükledikten sonra bulunmuyor olabilir.<br /><br />Örneği için uygulamanızın ağa bağlanamıyor durumunda, verileri veya iyi bir çevrimdışı deneyimi sağlamak için dosyaları saklamak için önbellekleri dizin kullanabilirsiniz. Uygulamayı kaydedin ve bu verileri hızlı bir şekilde ağ yanıtlar için beklenirken alabilir, ancak bunu yedeklenmesi gerekmez ve kolayca kurtarılan veya geri yükleme veya sürüm güncelleştirdikten sonra yeniden oluşturulacak.|
-|tmp/|Uygulamalar, yalnızca bu dizindeki kısa bir süre için gereken geçici dosyaları depolayabilir. Artık gerekli olduklarında alanından tasarruf etmek için dosyaların silinmesi gerekir. Bir uygulama çalışmadığı zaman işletim sistemi dosyaları bu dizinden de silebilir.<br /><br />Bu dizinin içindekileri iTunes tarafından yedeklenmez.<br /><br />Örneğin, tmp dizininde (örneğin, Twitter Avatar veya e-posta eklerini) kullanıcıya görüntülenmesi için indirilen, ancak bunlar görüntülenebilir (ve gelecekte gerekliyse yeniden karşıdan sonra hangi silinemedi geçici dosyaları depolamak için kullanılabilir ).|
+|tmp /|Uygulamalar, yalnızca bu dizindeki kısa bir süre için gereken geçici dosyaları depolayabilir. Artık gerekli olduklarında alanından tasarruf etmek için dosyaların silinmesi gerekir. Bir uygulama çalışmadığı zaman işletim sistemi dosyaları bu dizinden de silebilir.<br /><br />Bu dizinin içindekileri iTunes tarafından yedeklenmez.<br /><br />Örneğin, tmp dizininde (örneğin, Twitter Avatar veya e-posta eklerini) kullanıcıya görüntülenmesi için indirilen, ancak bunlar görüntülenebilir (ve gelecekte gerekliyse yeniden karşıdan sonra hangi silinemedi geçici dosyaları depolamak için kullanılabilir ).|
 
 Bu ekran görüntüsü bir Bulucu penceresinde dizin yapısını gösterir:
 

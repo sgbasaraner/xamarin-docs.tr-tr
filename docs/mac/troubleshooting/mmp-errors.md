@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: df6a848023febcb7fc65cf6616aeae3b43b39262
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 7f0d40e4adb16e47db18d0796afa42c66af096ce
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin.Mac hata iletileri (mmp)
 
@@ -34,11 +34,11 @@ Tam sürüm bilgilerini almak için en kolay yolu kullanmaktır **Xamarin Studio
 
 <a name="MM0001" />
 
-#### <a name="mm0001-this-version-of-xamarinmac-requires-mono-0-the-current-mono-version-is-1-please-update-the-monoframework-from-httpmono-projectcomdownloads"></a>MM0001: Xamarin.Mac bu sürümü (geçerli Mono {1} sürümüdür) Mono {0} gerektirir. Lütfen gelen Mono.framework güncelleştirin http://mono-project.com/Downloads
+#### <a name="mm0001-this-version-of-xamarinmac-requires-mono-0-the-current-mono-version-is-1-please-update-the-monoframework-from-httpmono-projectcomdownloads"></a>MM0001: Xamarin.Mac bu sürümü Mono gerektirir {0} (geçerli Mono sürümü {1}). Lütfen gelen Mono.framework güncelleştirin http://mono-project.com/Downloads
 
 <a name="MM0003" />
 
-#### <a name="mm0003-application-name-0exe-conflicts-with-an-sdk-or-product-assembly-dll-name"></a>MM0003: Bir SDK veya ürün derlemesi (.dll) adıyla uygulama adı '{0} .exe' çakışıyor.
+#### <a name="mm0003-application-name-0exe-conflicts-with-an-sdk-or-product-assembly-dll-name"></a>MM0003: Uygulama adı '{0}.exe' bir SDK veya ürün derlemesi (.dll) adıyla çakışıyor.
 
 <a name="MM0007" />
 
@@ -46,7 +46,7 @@ Tam sürüm bilgilerini almak için en kolay yolu kullanmaktır **Xamarin Studio
 
 <a name="MM0008" />
 
-#### <a name="mm0008-you-should-provide-one-root-assembly-only-found-0-assemblies-1"></a>MM0008: Bir kök derleme yalnızca, bulunan {0} derlemeleri sağlamalısınız: '{1}'
+#### <a name="mm0008-you-should-provide-one-root-assembly-only-found-0-assemblies-1"></a>MM0008: Bir kök derleme yalnızca, bulunan sağlamalıdır {0} derlemeler: '{1}'
 
 <a name="MM0010" />
 
@@ -56,7 +56,7 @@ Tam sürüm bilgilerini almak için en kolay yolu kullanmaktır **Xamarin Studio
 
 <a name="MM0016" />
 
-#### <a name="mm0016-the-option-0-has-been-deprecated"></a>MM0016: '{0}' seçeneği kullanım dışı bırakıldı.
+#### <a name="mm0016-the-option-0-has-been-deprecated"></a>MM0016: Seçeneği '{0}' kullanım dışı bırakıldı.
 
 <a name="MM0017" />
 
@@ -68,15 +68,15 @@ Tam sürüm bilgilerini almak için en kolay yolu kullanmaktır **Xamarin Studio
 
 <a name="MM0020" />
 
-#### <a name="mm0020-the-valid-options-for-0-are-1"></a>MM0020: '{0}' geçerli Seçenekler '{1}' dir.
+#### <a name="mm0020-the-valid-options-for-0-are-1"></a>MM0020: İçin geçerli seçenek '{0}'olan'{1}'.
 
 <a name="MM0023" />
 
-#### <a name="mm0023-application-name-0exe-conflicts-with-another-user-assembly"></a>MM0023: Başka bir kullanıcı derlemesi uygulama adı '{0} .exe' çakışıyor.
+#### <a name="mm0023-application-name-0exe-conflicts-with-another-user-assembly"></a>MM0023: Uygulama adı '{0}.exe' başka bir kullanıcı derlemesi ile çakışıyor.
 
 <a name="MM0026" />
 
-#### <a name="mm0026-could-not-parse-the-command-line-argument-0-1"></a>MM0026: komut satırı bağımsız değişkeni '{0}' ayrıştırılamadı: {1}
+#### <a name="mm0026-could-not-parse-the-command-line-argument-0-1"></a>MM0026: komut satırı bağımsız değişkeni ayrıştırılamadı '{0}': {1}
 
 <a name="MM0043" />
 
@@ -104,7 +104,7 @@ Tam sürüm bilgilerini almak için en kolay yolu kullanmaktır **Xamarin Studio
 
 <a name="MM0060" />
 
-#### <a name="mm0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned-0-but-that-directory-does-not-exist"></a>MM0060: şu anda seçili Xcode sistemde bulunamadı. 'xcode-select--yazdırma yolu' '{0}' döndürdü, ancak bu dizin mevcut değil.
+#### <a name="mm0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned-0-but-that-directory-does-not-exist"></a>MM0060: şu anda seçili Xcode sistemde bulunamadı. 'xcode döndürülen Seç--yazdırma yolu' '{0}', ancak bu dizin mevcut değil.
 
 <a name="MM0068" />
 
@@ -141,7 +141,7 @@ Son straw çözüm Xamarin.Mac daha eski bir sürümü kullanmak olabilir, proje
 
 <a name="MM0097" />
 
-#### <a name="mm0097-machineconfig-file-0-can-not-be-found"></a>MM0097: 'machine.config {0}' dosyası bulunamıyor.
+#### <a name="mm0097-machineconfig-file-0-can-not-be-found"></a>MM0097: machine.config dosyasının '{0}' bulunamadı.
 
 <a name="MM0098" />
 
@@ -169,27 +169,27 @@ Son straw çözüm Xamarin.Mac daha eski bir sürümü kullanmak olabilir, proje
 
 <a name="MM1402" />
 
-#### <a name="mm1402-the-assembly-0-is-not-compatible-with-this-tool"></a>MM1402: '{0}' derlemesi bu aracı ile uyumlu değil
+#### <a name="mm1402-the-assembly-0-is-not-compatible-with-this-tool"></a>MM1402: Derleme '{0}' Bu aracı ile uyumlu değil
 
 <a name="MM1403" />
 
-#### <a name="mm1403-0-1-could-not-be-found-target-framework-0-is-unusable-to-package-the-application"></a>MM1403: {0} '{1}' bulunamadı. Uygulama paketi için hedef çerçevesi '{0}' kullanılamaz.
+#### <a name="mm1403-0-1-could-not-be-found-target-framework-0-is-unusable-to-package-the-application"></a>MM1403: {0} '{1}' bulunamadı. Hedef çerçevesi '{0}' uygulama paketi için kullanılamaz.
 
 <a name="MM1404" />
 
-#### <a name="mm1404-target-framework-0-is-invalid"></a>MM1404: Hedef framework '{0}' geçersiz.
+#### <a name="mm1404-target-framework-0-is-invalid"></a>MM1404: Hedef Framework'ü '{0}' geçersiz.
 
 <a name="MM1405" />
 
-#### <a name="mm1405-usefullxammacframework-must-always-target-framework-net-45-not-0-which-is-invalid"></a>MM1405: useFullXamMacFramework her zaman framework .NET 4.5, değil '{0 geçersiz}' hedeflemesi gerekir
+#### <a name="mm1405-usefullxammacframework-must-always-target-framework-net-45-not-0-which-is-invalid"></a>MM1405: useFullXamMacFramework her zaman framework .NET 4.5, hedeflemelidir değil '{0}' geçersiz
 
 <a name="MM1406" />
 
-#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406: Hedef framework '{0}' zaman geçersiz atamak Xamarin.Mac 4.5 .NET çerçevesinin.
+#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406: Hedef Framework'ü '{0}' geçersiz olduğunda atamak Xamarin.Mac 4.5 .NET çerçevesinin.
 
 <a name="MM1407" />
 
-#### <a name="mm1407-mismatch-between-xamarinmac-reference-0-and-target-framework-selected-1"></a>MM1407: '{1}' Xamarin.Mac Başvurusu '{0}' hem de hedef framework arasında uyuşmazlık seçili.
+#### <a name="mm1407-mismatch-between-xamarinmac-reference-0-and-target-framework-selected-1"></a>MM1407: Xamarin.Mac başvuru arasında uyuşmazlık '{0}'ve seçilen hedef çerçevesi'{1}'.
 
 ### <a name="mm15xx-assembly-gathering-not-requiring-linker-errors"></a>MM15xx: Derleme (Bağlayıcı gerektirmeyen) toplama hataları
 
@@ -201,23 +201,23 @@ Son straw çözüm Xamarin.Mac daha eski bir sürümü kullanmak olabilir, proje
 
 <a name="MM1600" />
 
-#### <a name="mm1600-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1600: Olmayan bir makine-O dinamik kitaplığı (Bilinmeyen üstbilgi ' 0 x {0}'): {1}.
+#### <a name="mm1600-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1600: Olmayan bir makine-O dinamik kitaplığı (Bilinmeyen üstbilgi ' 0 x{0}'): {1}.
 
 <a name="MM1601" />
 
-#### <a name="mm1601-not-a-static-library-unknown-header-0-1"></a>MM1601: Olmayan bir statik kitaplık (Bilinmeyen üstbilgisi '{0}'): {1}.
+#### <a name="mm1601-not-a-static-library-unknown-header-0-1"></a>MM1601: Olmayan bir statik kitaplık (Bilinmeyen üstbilgi '{0}'): {1}.
 
 <a name="MM1602" />
 
-#### <a name="mm1602-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1602: Olmayan bir makine-O dinamik kitaplığı (Bilinmeyen üstbilgi ' 0 x {0}'): {1}.
+#### <a name="mm1602-not-a-mach-o-dynamic-library-unknown-header-0x0-1"></a>MM1602: Olmayan bir makine-O dinamik kitaplığı (Bilinmeyen üstbilgi ' 0 x{0}'): {1}.
 
 <a name="MM1603" />
 
-#### <a name="mm1603-unknown-format-for-fat-entry-at-position-0-in-1"></a>MM1603: {1} içinde {0} konumundaki fat girişi için bilinmeyen biçimi.
+#### <a name="mm1603-unknown-format-for-fat-entry-at-position-0-in-1"></a>MM1603: Konumundaki fat girişi bilinmeyen biçimi {0} içinde {1}.
 
 <a name="MM1604" />
 
-#### <a name="mm1604-file-of-type-0-is-not-a-macho-file-1"></a>MM1604: Dosya türü {0} MachO dosyası ({1}) değil.
+#### <a name="mm1604-file-of-type-0-is-not-a-macho-file-1"></a>MM1604: Dosya türü {0} MachO dosyası değil ({1}).
 
 ## <a name="mm2xxx-linker"></a>MM2xxx: Linker
 
@@ -233,19 +233,19 @@ Son straw çözüm Xamarin.Mac daha eski bir sürümü kullanmak olabilir, proje
 
 <a name="MM2003" />
 
-#### <a name="mm2003-option-0-will-be-ignored-since-linking-is-disabled"></a>MM2003: bağlama devre dışı olduğundan '{0}' seçeneği göz ardı edilir
+#### <a name="mm2003-option-0-will-be-ignored-since-linking-is-disabled"></a>MM2003: Seçenek '{0}' bağlama devre dışı olduğundan göz ardı edilir
 
 <a name="MM2004" />
 
-#### <a name="mm2004-extra-linker-definitions-file-0-could-not-be-located"></a>MM2004: 'Ek bağlayıcı tanımları {0}' dosyası bulunamadı.
+#### <a name="mm2004-extra-linker-definitions-file-0-could-not-be-located"></a>MM2004: Ek bağlayıcı tanımları dosya '{0}' bulunamadı.
 
 <a name="MM2005" />
 
-#### <a name="mm2005-definitions-from-0-could-not-be-parsed"></a>MM2005: '{0}' tanımları ayrıştırılamadı.
+#### <a name="mm2005-definitions-from-0-could-not-be-parsed"></a>MM2005: Tanımları '{0}' ayrıştırılamadı.
 
 <a name="MM2006" />
 
-#### <a name="mm2006-native-library-0-was-referenced-but-could-not-be-found"></a>MM2006: '{0}' yerel kitaplığı başvuruldu ancak öğe bulunamadı.
+#### <a name="mm2006-native-library-0-was-referenced-but-could-not-be-found"></a>MM2006: Yerel Kitaplığı '{0}' başvuruldu ancak öğe bulunamadı.
 
 <a name="MM2007" />
 
@@ -253,7 +253,7 @@ Son straw çözüm Xamarin.Mac daha eski bir sürümü kullanmak olabilir, proje
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: {0} tarafından başvurulan. \ {1\} ** bu iletiyi MM2006 için ilgili **
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: başvurduğu {0}.{1}     ** Bu iletiyi MM2006 için ilgili **
 
 <a name="MM2010" />
 
@@ -261,15 +261,15 @@ Son straw çözüm Xamarin.Mac daha eski bir sürümü kullanmak olabilir, proje
 
 <a name="MM2011" />
 
-#### <a name="mm2011-unknown-tlsprovider-0--valid-values-are-default-or-appletls"></a>MM2011: Bilinmeyen TLSProvider ' {0}.  Varsayılan veya appletls geçerli değerler:
+#### <a name="mm2011-unknown-tlsprovider-0--valid-values-are-default-or-appletls"></a>MM2011: Bilinmeyen TLSProvider '{0}.  Varsayılan veya appletls geçerli değerler:
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Yalnızca ilk {0} {1} "gösterilen uyarıları başvurduğu". ** Bu iletiyi ilgili 2009 olarak **
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Yalnızca ilk {0} , {1} "gösterilen uyarıları başvurduğu". ** Bu iletiyi ilgili 2009 olarak **
 
 <a name="MM2013" />
 
-#### <a name="mm2013-failed-to-resolve-the-reference-to-0-referenced-in-1-the-app-will-not-include-the-referenced-assembly-and-may-fail-at-runtime"></a>MM2013: "{1}" içinde başvurulan "{0}" referansı çözülemedi. Uygulama başvurulan derlemeyi içermez ve çalışma zamanında başarısız olabilir.
+#### <a name="mm2013-failed-to-resolve-the-reference-to-0-referenced-in-1-the-app-will-not-include-the-referenced-assembly-and-may-fail-at-runtime"></a>MM2013: başvuru çözülemedi "{0}", başvurulan"{1}". Uygulama başvurulan derlemeyi içermez ve çalışma zamanında başarısız olabilir.
 
 <a name="MM2014" />
 
@@ -283,7 +283,7 @@ Son straw çözüm Xamarin.Mac daha eski bir sürümü kullanmak olabilir, proje
 
 <a name="MM2017" />
 
-#### <a name="mm2017-could-not-process-xml-description-0"></a>MM2017: XML açıklama işlenemedi: {0}
+#### <a name="mm2017-could-not-process-xml-description-0"></a>MM2017: XML açıklama işleyemedi: {0}
 
 <a name="MM202x" />
 
@@ -303,11 +303,11 @@ Soruna neden bütünleştirilmiş hata iletisinde adlandırılmıştır. Derleme
 
 <a name="MM2104" />
 
-#### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: '{0}' derlemesi karma mod olduğu gibi bağlantı oluşturulamıyor.
+#### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: Derleme bağlantı kurulamıyor '{0}' karma mod olduğu gibi.
 
 Karışık mod derlemeleri bağlayıcı tarafından işlenemez.
 
-Bkz: https://msdn.microsoft.com/en-us/library/x0w2664k.aspx karma mod derlemeler hakkında daha fazla bilgi için.
+Bkz: https://msdn.microsoft.com/library/x0w2664k.aspx karma mod derlemeler hakkında daha fazla bilgi için.
 
 ## <a name="mm3xxx-aot"></a>MM3xxx: Uygulama Nesne AĞACI
 
@@ -315,7 +315,7 @@ Bkz: https://msdn.microsoft.com/en-us/library/x0w2664k.aspx karma mod derlemeler
 
 <a name="MM3001" />
 
-#### <a name="mm3001-could-not-aot-the-assembly-0"></a>MM3001: AOT '{0}' derlemesi yüklenemedi
+#### <a name="mm3001-could-not-aot-the-assembly-0"></a>MM3001: AOT derlemesi yüklenemedi '{0}'
 
 <!-- 3002 used by mtouch -->
 <!-- 3003 used by mtouch -->
@@ -327,11 +327,11 @@ Bkz: https://msdn.microsoft.com/en-us/library/x0w2664k.aspx karma mod derlemeler
 
 <a name="MM3009" />
 
-#### <a name="mm3009-aot-of-0-was-requested-but-was-not-found"></a>MM3009: '{0}' uygulama nesne AĞACI istendi ancak bulunamadı
+#### <a name="mm3009-aot-of-0-was-requested-but-was-not-found"></a>MM3009: Uygulama Nesne AĞACI, '{0}' istendi ancak bulunamadı
 
 <a name="MM3010" />
 
-#### <a name="mm3010-exclusion-of-aot-of-0-was-requested-but-was-not-found"></a>MM3010: '{0}' uygulama nesne AĞACI hariç istendi ancak bulunamadı
+#### <a name="mm3010-exclusion-of-aot-of-0-was-requested-but-was-not-found"></a>MM3010: Uygulama Nesne AĞACI hariç '{0}' istendi ancak bulunamadı
 
 ## <a name="mm4xxx-code-generation"></a>MM4xxx: kod oluşturma
 
@@ -345,7 +345,7 @@ Bkz: https://msdn.microsoft.com/en-us/library/x0w2664k.aspx karma mod derlemeler
 
 <a name="MM4134" />
 
-#### <a name="mm4134-your-application-is-using-the-0-framework-which-isnt-included-in-the-macos-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-osx-2-while-youre-building-with-the-macos-1-sdk-this-configuration-is-not-supported-with-the-static-registrar-pass---registrardynamic-as-an-additional-mmp-argument-in-your-projects-mac-build-option-to-select-alternatively-select-a-newer-sdk-in-your-apps-mac-build-options"></a>MM4134: Uygulamanızı MacOS (MacOS {1} SDK'sı ile oluşturduğunuz sırada bu framework OSX {2} içinde sunulmuştur.) ve uygulamanızı oluşturmak için kullandığınız SDK'sı bulunup '{0}' framework kullanarak Bu yapılandırma, statik kayıt şirketi (pass--Kaydedici: dinamik seçeneğinde seçmek için projenizin Mac yapı ek mmp bağımsız değişken olarak) ile desteklenmiyor. Alternatif olarak daha yeni bir SDK'sı, uygulamanızın Mac derleme seçenekleri belirleyin.
+#### <a name="mm4134-your-application-is-using-the-0-framework-which-isnt-included-in-the-macos-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-osx-2-while-youre-building-with-the-macos-1-sdk-this-configuration-is-not-supported-with-the-static-registrar-pass---registrardynamic-as-an-additional-mmp-argument-in-your-projects-mac-build-option-to-select-alternatively-select-a-newer-sdk-in-your-apps-mac-build-options"></a>MM4134: Uygulamanızı kullanarak '{0}' MacOS ve uygulamanızı oluşturmak için kullandığınız SDK'ın dahil edilmemiştir framework (Bu çerçeve OSX sunulan {2}ile MacOS oluşturmakta olduğunuz yaparken {1} SDK.) Bu yapılandırma, statik kayıt şirketi (pass--Kaydedici: dinamik seçeneğinde seçmek için projenizin Mac yapı ek mmp bağımsız değişken olarak) ile desteklenmiyor. Alternatif olarak daha yeni bir SDK'sı, uygulamanızın Mac derleme seçenekleri belirleyin.
 
 ## <a name="mm5xxx-gcc-and-toolchain"></a>MM5xxx: GCC ve araç zinciri
 
@@ -353,7 +353,7 @@ Bkz: https://msdn.microsoft.com/en-us/library/x0w2664k.aspx karma mod derlemeler
 
 <a name="MM5101" />
 
-#### <a name="mm5101-missing-0-compiler-please-install-xcode-command-line-tools-component"></a>MM5101: '{0}' derleyici eksik. Lütfen 'Komut satırı araçları' bileşenini yükleyin.
+#### <a name="mm5101-missing-0-compiler-please-install-xcode-command-line-tools-component"></a>MM5101: Eksik '{0}' derleyici. Lütfen 'Komut satırı araçları' bileşenini yükleyin.
 
 <!-- 5102 used by mtouch -->
 
@@ -379,7 +379,7 @@ Bkz: https://msdn.microsoft.com/en-us/library/x0w2664k.aspx karma mod derlemeler
 
 <a name="MM5205" />
 
-#### <a name="mm5205-invalid-architecture-0-valid-architectures-are-i386-and-x8664-when---profilemobile"></a>MM5205: Geçersiz mimari '{0}'. Geçerli mimarileri: i386 ve x86_64 (zaman--profil mobil =).
+#### <a name="mm5205-invalid-architecture-0-valid-architectures-are-i386-and-x8664-when---profilemobile"></a>MM5205: Geçersiz mimarisi '{0}'. Geçerli mimarileri: i386 ve x86_64 (zaman--profil mobil =).
 
 <a name="MM5218" />
 
@@ -428,7 +428,7 @@ Bkz: [eşdeğer mtouch uyarı](~/ios/troubleshooting/mtouch-errors.md#MT5218).
 
 <a name="MM5310" />
 
-#### <a name="mm5310-installnametool-failed-with-an-error-code-0-check-build-log-for-details"></a>MM5310: install_name_tool '{0}' hata koduyla başarısız oldu. Ayrıntılar için yapı günlüğünü denetleyin.
+#### <a name="mm5310-installnametool-failed-with-an-error-code-0-check-build-log-for-details"></a>MM5310: install_name_tool hata koduyla başarısız oldu '{0}'. Ayrıntılar için yapı günlüğünü denetleyin.
 
 <!-- MM6xxx: mmp internal tools -->
 <!-- MM7xxx: reserved -->

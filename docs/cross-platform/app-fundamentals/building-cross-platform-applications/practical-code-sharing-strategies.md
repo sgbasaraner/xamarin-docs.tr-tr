@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: d5f639cffc8ff2d134731374bd72663fec81c6a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6f6b88bf29e94a221b2ef58b3299348eb08d33fa
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>5 - stratejileri paylaşımı pratik kod parçası
 
@@ -200,7 +200,7 @@ Yalıtılmış depolama kaydetme ve tüm iOS, Android ve daha eski Windows Phone
 
 Windows Phone Xamarin.iOS ve Xamarin.Android ortak dosya erişim kodu izin vermek için yazılacak uygulanan (Silverlight) içinde dosya erişimi için varsayılan mekanizmadır. `System.IO.IsolatedStorage` Sınıfı, tüm üç platformlarda üzerinden başvurulabilir bir [paylaşılan proje](~/cross-platform/app-fundamentals/shared-projects.md).
 
-Başvurmak [yalıtılmış depolama genel bakış için Windows Phone](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402541(v=vs.105).aspx) daha fazla bilgi için.
+Başvurmak [yalıtılmış depolama genel bakış için Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx) daha fazla bilgi için.
 
 Yalıtılmış Depolama API'leri kullanılamayan [taşınabilir sınıf kitaplıkları](~/cross-platform/app-fundamentals/pcl.md). PCL için bir alternatif [PCLStorage NuGet](https://pclstorage.codeplex.com/)
 
@@ -297,7 +297,7 @@ Bu durumlarda mobil uygulama sürebilir eylemler şunlardır:
 Var olan bir [Xamarin.iOS örnek](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample) kullanılabilir (Apple üzerinde temel [ulaşılabilirlik örnek kod](http://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html) ) ağ kullanılabilirliğini saptamaya yardımcı olmak üzere.
 
 
-## <a name="webservices"></a>WebServices
+## <a name="webservices"></a>Webservices'a
 
 Belgelerimize bakın [Web Hizmetleri ile çalışma](~/cross-platform/data-cloud/web-services/index.md), hangi kapsayan REST, erişme Xamarin.iOS kullanarak SOAP ve WCF uç noktaları. Elle craft web istekleri mümkündür ve ancak kitaplık vardır bu Azure, RestSharp ve ServiceStack dahil olmak üzere daha kolay yapmak kullanılabilir yanıtları ayrıştırılamıyor. Xamarin uygulamaları bile temel WCF işlemleri erişilebilir.
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 017691ece68f979eea1627c0442f49018d5742fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e4720ac44876620783b32f731c44afe5a623231
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin ile sürekli tümleştirme giriş
 
@@ -36,7 +36,7 @@ Aşağıdaki diyagram bu işlemi gösterilmektedir:
 
 Mobil uygulamaları için sürekli tümleştirme benzersiz zorlukları tanıtır. Uygulamalar, yalnızca fiziksel aygıtlarda kullanılabilir algılayıcılar GPS veya kamera gibi gerektirebilir. Ayrıca, benzeticileri veya Öykünücüler yalnızca yaklaşık donanım ve Gizle veya sorunları soyutlamaması. Sonunda, mobil uygulama gerçekten müşteri hazır olduğundan emin olarak gerçek donanım üzerinde test etmek gereklidir.
 
-[Uygulama Center Test](https://docs.microsoft.com/en-us/appcenter/test-cloud) doğrudan fiziksel aygıtların yüzlerce uygulamaları test ederek belirli bu sorunu giderir. Geliştiriciler için güçlü bir UI testi izin otomatik kabul testleri yazma. Bu testler uygulama merkezine yüklendiğinde, CI sunucunun bunları otomatik olarak bir CI işleminin bir parçası aşağıdaki çizimde gösterildiği gibi çalıştırabilirsiniz:
+[Uygulama Center Test](https://docs.microsoft.com/appcenter/test-cloud) doğrudan fiziksel aygıtların yüzlerce uygulamaları test ederek belirli bu sorunu giderir. Geliştiriciler için güçlü bir UI testi izin otomatik kabul testleri yazma. Bu testler uygulama merkezine yüklendiğinde, CI sunucunun bunları otomatik olarak bir CI işleminin bir parçası aşağıdaki çizimde gösterildiği gibi çalıştırabilirsiniz:
 
 [![](intro-to-ci-images/intro02-small.png "Bu testler uygulama merkezine yüklendiğinde, CI sunucu bunları otomatik olarak bir CI işleminin bir parçası Bu diyagramda gösterildiği gibi çalıştırabilir")](intro-to-ci-images/intro02.png#lightbox)
 
@@ -48,21 +48,21 @@ Ticari ve açık kaynaklı araçları CI desteklemek için tasarlanmış kapsaml
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services ve Team Foundation Server
 
-[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) ve [Team Foundation Server](http://msdn.microsoft.com/en-us/vstudio/ff637362.aspx) (TFS) olan derleme Microsoft'un işbirliği araçları sürekli tümleştirme hizmetleri, izleme görev, Çevik planlama ve raporlama araçlarını ve sürüm Denetim. Sürüm denetimi ile VSTS ve TFS (Team Foundation sürüm denetimi veya TFVC'yi) kendi sistem veya GitHub üzerinde barındırılan projeleri ile çalışabilir.
+[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) ve [Team Foundation Server](http://msdn.microsoft.com/vstudio/ff637362.aspx) (TFS) olan derleme Microsoft'un işbirliği araçları sürekli tümleştirme hizmetleri, izleme görev, Çevik planlama ve raporlama araçlarını ve sürüm Denetim. Sürüm denetimi ile VSTS ve TFS (Team Foundation sürüm denetimi veya TFVC'yi) kendi sistem veya GitHub üzerinde barındırılan projeleri ile çalışabilir.
 
  - Visual Studio Team Services aracılığıyla bulut hizmetleri sağlar. Herhangi bir ayrılmış donanım veya altyapı gerektirir ve herhangi bir yere Visual Studio, coğrafi olarak olan takımlar için cazip hale getirme gibi popüler geliştirme araçları ve web tarayıcıları aracılığıyla erişilebilen, birincil avantajı olmasıdır Dağıtılmış. Beş geliştirici ekipleri için boş ya da daha az, büyüyen bir takım uyum sağlamak için hangi ek lisanslar satın sonra.
  - TFS şirket içi Windows sunucuları için tasarlanmış ve yerel ağ veya bu ağa bir VPN bağlantısı üzerinden erişilebilir. Birincil avantajı, tam olarak yapı sunucularının yapılandırmasını denetlemek ve herhangi bir ek yazılım veya hizmetleri gerekli yükleyebilirsiniz ' dir. TFS küçük ekipleri için ücretsiz giriş seviyesi Express sürümü vardır.
 
 TFS ve VSTS Visual Studio ile sıkı bir şekilde tümleştirilmiştir ve birçok sürüm denetimi ve tek bir IDE rahatlık CI görevleri gerçekleştirmek geliştiricilerin olanak sağlar. Takım Gezgini her yerde eklentisi Eclipse (aşağıya bakın) için de kullanılabilir. Mac için Visual Studio TFS veya VSTS için herhangi bir destek sağlamaz.
 
-Visual Studio Team hizmetin yapı sistem (Android, iOS ve Windows) hedef istediğiniz her platform için bir yapı tanımı içinde oluşturduğunuz Xamarin projeleri için doğrudan desteğe sahiptir. Uygun Xamarin lisans her derleme tanımı için gereklidir. Yerel bağlanmak mümkündür, bu amaç için Visual Studio Team Services sunucusuna Xamarin özellikli TFS derlemesi. Bu kurulum ile VSTS sıraya alınan derlemeleri yerel sunucuya verilmiş. Ayrıntılar için başvurmak [dağıtma ve bir yapı sunucusunu yapılandırmak](https://msdn.microsoft.com/en-us/library/ms181712.aspx). Alternatif olarak, Jenkins veya takım şehir gibi başka bir yapı aracını kullanabilirsiniz.
+Visual Studio Team hizmetin yapı sistem (Android, iOS ve Windows) hedef istediğiniz her platform için bir yapı tanımı içinde oluşturduğunuz Xamarin projeleri için doğrudan desteğe sahiptir. Uygun Xamarin lisans her derleme tanımı için gereklidir. Yerel bağlanmak mümkündür, bu amaç için Visual Studio Team Services sunucusuna Xamarin özellikli TFS derlemesi. Bu kurulum ile VSTS sıraya alınan derlemeleri yerel sunucuya verilmiş. Ayrıntılar için başvurmak [dağıtma ve bir yapı sunucusunu yapılandırmak](https://msdn.microsoft.com/library/ms181712.aspx). Alternatif olarak, Jenkins veya takım şehir gibi başka bir yapı aracını kullanabilirsiniz.
 
-Visual Studio, Visual Studio Team Services ve Team Foundation Server, bkz: tüm uygulama yaşam döngüsü yönetimi (ALM) özelliklerini tam özeti [Xamarin uygulamalarıyla uygulama yaşam döngüsü yönetimi](https://msdn.microsoft.com/en-us/library/mt162217(v=vs.140).aspx) konusuna bakın.
+Visual Studio, Visual Studio Team Services ve Team Foundation Server, bkz: tüm uygulama yaşam döngüsü yönetimi (ALM) özelliklerini tam özeti [Xamarin uygulamalarıyla uygulama yaşam döngüsü yönetimi](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx) konusuna bakın.
 
 
 ### <a name="team-explorer-everywhere"></a>Takım Gezgini Her Yerde
 
-[Takım Gezgini her yerde](http://msdn.microsoft.com/en-us/library/gg413285.aspx) dışında Visual Studio geliştirme ekipleri için Team Foundation Server ve Visual Studio Team Services gücünü getirir. Takım projeleri şirket içinde veya bulutta Eclipse ya da platformlar arası komut satırı istemci OS X ve Linux için bağlanmak geliştiricilerin sağlar. Takım Gezgini her yerde tam sağlar (Git dahil), sürüm denetimi için iş öğeleri erişebilir ve özellikleri Windows olmayan platformları için derleme.
+[Takım Gezgini her yerde](http://msdn.microsoft.com/library/gg413285.aspx) dışında Visual Studio geliştirme ekipleri için Team Foundation Server ve Visual Studio Team Services gücünü getirir. Takım projeleri şirket içinde veya bulutta Eclipse ya da platformlar arası komut satırı istemci OS X ve Linux için bağlanmak geliştiricilerin sağlar. Takım Gezgini her yerde tam sağlar (Git dahil), sürüm denetimi için iş öğeleri erişebilir ve özellikleri Windows olmayan platformları için derleme.
 
 
 ### <a name="git"></a>Git
@@ -103,11 +103,11 @@ Aşağıdaki diyagram bu topografi gösterir:
 
 [![](intro-to-ci-images/intro03-small.png "Bu diyagramda bu topografi gösterilir")](intro-to-ci-images/intro03.png#lightbox)
 
-VSTS derlemeleri yerel sunucuya verilmiş bir Visual Studio Team Services projesi için yerel bir TFS sunucusu bağlayın mümkündür. Ayrıntılar için bkz [dağıtma ve bir yapı sunucusunu yapılandırmak](http://msdn.microsoft.com/en-us/library/ms181712.aspx) konusuna bakın.
+VSTS derlemeleri yerel sunucuya verilmiş bir Visual Studio Team Services projesi için yerel bir TFS sunucusu bağlayın mümkündür. Ayrıntılar için bkz [dağıtma ve bir yapı sunucusunu yapılandırmak](http://msdn.microsoft.com/library/ms181712.aspx) konusuna bakın.
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services ve Jenkins
 
-Uygulamalarınızı oluşturmak için Jenkins kullanırsanız, Visual Studio Team Services veya Team Foundation Server kodunuzu depolamak ve Jenkins CI derlemeleriniz için kullanılacak devam edebilirsiniz. Takım projenizin Git deposu veya kod TFVC'yi için ne zaman iade kodu bastığınızda Jenkins yapı tetikleyebilir. Ayrıntılar için bkz [Jenkins Visual Studio Team Services ile](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins).
+Uygulamalarınızı oluşturmak için Jenkins kullanırsanız, Visual Studio Team Services veya Team Foundation Server kodunuzu depolamak ve Jenkins CI derlemeleriniz için kullanılacak devam edebilirsiniz. Takım projenizin Git deposu veya kod TFVC'yi için ne zaman iade kodu bastığınızda Jenkins yapı tetikleyebilir. Ayrıntılar için bkz [Jenkins Visual Studio Team Services ile](https://www.visualstudio.com/docs/marketplace/integrate/service-hooks/services/jenkins).
 
 [![](intro-to-ci-images/intro04-small.png "Uygulamalarınızı oluşturmak için Jenkins kullanırsanız, Visual Studio Team Services veya Team Foundation Server kodunuzu depolamak ve Jenkins CI derlemeleriniz için kullanmaya devam")](intro-to-ci-images/intro04.png#lightbox)
 
@@ -123,4 +123,4 @@ Başka bir ortak CI ortamını tamamen OS X dayalı olabilir. Bu senaryo, Git ka
 
 # <a name="summary"></a>Özet
 
-Bu belge sürekli tümleştirme kavramını ve yazılım geliştirme ekiplerinin getirir avantajları sunar. Sürüm denetimi önemini rolü ve sorumlulukları yapı server'ın yanı sıra açıklanmıştır. Belgeyi daha sonra kaynak kodu denetimi için kullanım ve sunucuları yapı araçlardan bazıları tartışmak için geçti. Ayrıca kalitesini ve uygulamalarını işlevselliğini kanıtlamak otomatikleştirilmiş testleri çalıştırarak harika uygulamaları yayımlamak geliştiriciler yardımcı olan uygulama Center Test sunulmuştur. Uygulamalar ve uygulama merkezi testleri bulunabilir gönderme üzerinde belgeleri ayrıntılı [burada](https://docs.microsoft.com/en-us/appcenter/test-cloud). Son olarak, anlamanıza yardımcı olması için bu araçları ve bileşenler bir araya getireceğinizi nasıl biz ana hatlarıyla kuruluşlar için sürekli tümleştirme oluşturabilirsiniz birkaç farklı CI ortamlarda. Visual Studio Team Services ve Team Foundation Server Xamarin projelerle kullanarak daha fazla bilgi için bkz: [yapılandırma TFVC'yi](https://docs.microsoft.com/vsts/tfvc/overview) ve bu [sürekli tümleştirme giriş](https://docs.microsoft.com/en-us/vsts/build-release/actions/ci-cd-part-1). Benzer şekilde, Jenkins kullanıyorsanız, bkz: [kullanarak Jenkins xamarin'le](~/tools/ci/jenkins-walkthrough.md) sürekli tümleştirme kurulumu hakkında ayrıntılı bilgi için.
+Bu belge sürekli tümleştirme kavramını ve yazılım geliştirme ekiplerinin getirir avantajları sunar. Sürüm denetimi önemini rolü ve sorumlulukları yapı server'ın yanı sıra açıklanmıştır. Belgeyi daha sonra kaynak kodu denetimi için kullanım ve sunucuları yapı araçlardan bazıları tartışmak için geçti. Ayrıca kalitesini ve uygulamalarını işlevselliğini kanıtlamak otomatikleştirilmiş testleri çalıştırarak harika uygulamaları yayımlamak geliştiriciler yardımcı olan uygulama Center Test sunulmuştur. Uygulamalar ve uygulama merkezi testleri bulunabilir gönderme üzerinde belgeleri ayrıntılı [burada](https://docs.microsoft.com/appcenter/test-cloud). Son olarak, anlamanıza yardımcı olması için bu araçları ve bileşenler bir araya getireceğinizi nasıl biz ana hatlarıyla kuruluşlar için sürekli tümleştirme oluşturabilirsiniz birkaç farklı CI ortamlarda. Visual Studio Team Services ve Team Foundation Server Xamarin projelerle kullanarak daha fazla bilgi için bkz: [yapılandırma TFVC'yi](https://docs.microsoft.com/vsts/tfvc/overview) ve bu [sürekli tümleştirme giriş](https://docs.microsoft.com/vsts/build-release/actions/ci-cd-part-1). Benzer şekilde, Jenkins kullanıyorsanız, bkz: [kullanarak Jenkins xamarin'le](~/tools/ci/jenkins-walkthrough.md) sürekli tümleştirme kurulumu hakkında ayrıntılı bilgi için.

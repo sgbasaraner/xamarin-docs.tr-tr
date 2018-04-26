@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ad18382a7143c7b1cc6bbecb3867c042512eb562
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6de16095d9e1267587a050e8081f87f896f3153e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-web-services"></a>Web hizmetlerine giriş
 
@@ -22,7 +22,7 @@ Doğru çalışması için birçok mobil uygulama bulutta bağımlıdır ve bu n
 Bu makalede aşağıdaki konular ele alınmıştır:
 
 - [REST Hizmetleri](#rest)
-- [ASP.Net Web Services (ASMX)](#asmx)
+- [ASP.Net Web Hizmetleri (ASMX)](#asmx)
 - [WCF hizmetleri](#wcf)
 
 Xamarin.Forms kullanan müşteriler için bu teknolojilerin her kullanarak tam örnekler vardır [Xamarin.Forms Web Hizmetleri](~/xamarin-forms/data-cloud/index.md) belgeleri.
@@ -281,7 +281,7 @@ var result = doc.Root.Descendants("rxtermsProperties")
 
 <a name="asmx" />
 
-## <a name="aspnet-web-service-asmx"></a>ASP.NET Web Service (ASMX)
+## <a name="aspnet-web-service-asmx"></a>ASP.NET Web hizmeti (ASMX)
 
 ASMX Basit Nesne Erişim Protokolü (SOAP) kullanarak iletileri gönder web hizmetleri oluşturma yeteneği sağlar. SOAP oluşturmak ve web hizmetlerine erişme platformdan bağımsız ve dilden bağımsız bir protokoldür. ASMX hizmet tüketicileri herhangi bir şey platform, nesne modeli ya da hizmet uygulamak için kullanılan programlama dili hakkında bilmeniz gerek yoktur. Bunlar yalnızca SOAP ileti gönderme ve alma nasıl anlamanız gerekir.
 
@@ -337,7 +337,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 Görev paralel kitaplığı (TPL) aynı zaman uyumsuz işlemleri kapsülleyerek bir APM başlamak son yöntemi çifti kullanma işlemini basitleştirebilir `Task` nesnesi. Bu kapsülleme birden çok aşırı tarafından sağlanan `Task.Factory.FromAsync` yöntemi. Bu yöntem oluşturur bir `Task` yürütmelerinin `TodoService.EndGetTodoItems` yöntemi bir kere `TodoService.BeginGetTodoItems` yöntemi tamamlayan, ile `null` hiçbir veri içine geçirilen gösteren parametre `BeginGetTodoItems` temsilci. Son olarak, değeri `TaskCreationOptions` numaralandırmasını belirtir oluşturulması ve görevlerini yürütülmesi için varsayılan davranış kullanılmalıdır.
 
-APM hakkında daha fazla bilgi için bkz: [zaman uyumsuz programlama modeli](https://msdn.microsoft.com/en-us/library/ms228963(v=vs.110).aspx) ve [TPL ve geleneksel .NET Framework zaman uyumsuz Programming](https://msdn.microsoft.com/en-us/library/dd997423(v=vs.110).aspx) konusuna bakın.
+APM hakkında daha fazla bilgi için bkz: [zaman uyumsuz programlama modeli](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) ve [TPL ve geleneksel .NET Framework zaman uyumsuz Programming](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) konusuna bakın.
 
 ASMX hizmeti kullanma hakkında daha fazla bilgi için bkz: [ASP.NET Web hizmeti (ASMX) kullanan](~/xamarin-forms/data-cloud/consuming/asmx.md).
 
@@ -364,7 +364,7 @@ Web hizmeti ile bir WCF kullanmak için Xamarin platform kullanma hakkında daha
 
 A *proxy* hizmetine bağlanmak uygulama izin veren bir WCF hizmeti kullanmak için oluşturulmuş olması gerekir. Proxy yöntemleri ve ilişkili hizmet yapılandırmasını tanımlar Süren hizmeti meta verileri tarafından oluşturulur. Bu meta veriler web hizmeti tarafından oluşturulan bir Web Hizmetleri Açıklama Dili (WSDL) belge şeklinde sunulur. Proxy web hizmeti için hizmet başvurusu .NET standart kitaplığına eklemek için Visual Studio 2017 Microsoft WCF Web hizmeti başvuru sağlayıcısını kullanarak oluşturulabilir.
 
-Visual Studio 2017 içinde Microsoft WCF Web hizmeti başvuru sağlayıcısı kullanarak proxy oluşturma alternatif ServiceModel meta veri yardımcı Programracı (svcutil.exe) kullanmaktır. Daha fazla bilgi için bkz: [ServiceModel meta veri yardımcı Programracı (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+Visual Studio 2017 içinde Microsoft WCF Web hizmeti başvuru sağlayıcısı kullanarak proxy oluşturma alternatif ServiceModel meta veri yardımcı Programracı (svcutil.exe) kullanmaktır. Daha fazla bilgi için bkz: [ServiceModel meta veri yardımcı Programracı (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 
@@ -416,7 +416,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 Görev paralel kitaplığı (TPL) aynı zaman uyumsuz işlemleri kapsülleyerek bir APM başlamak son yöntemi çifti kullanma işlemini basitleştirebilir `Task` nesnesi. Bu kapsülleme birden çok aşırı tarafından sağlanan `Task.Factory.FromAsync` yöntemi. Bu yöntem oluşturur bir `Task` yürütmelerinin `TodoServiceClient.EndGetTodoItems` yöntemi bir kere `TodoServiceClient.BeginGetTodoItems` yöntemi tamamlayan, ile `null` hiçbir veri içine geçirilen gösteren parametre `BeginGetTodoItems` temsilci. Son olarak, değeri `TaskCreationOptions` numaralandırmasını belirtir oluşturulması ve görevlerini yürütülmesi için varsayılan davranış kullanılmalıdır.
 
-APM hakkında daha fazla bilgi için bkz: [zaman uyumsuz programlama modeli](https://msdn.microsoft.com/en-us/library/ms228963(v=vs.110).aspx) ve [TPL ve geleneksel .NET Framework zaman uyumsuz Programming](https://msdn.microsoft.com/en-us/library/dd997423(v=vs.110).aspx) konusuna bakın.
+APM hakkında daha fazla bilgi için bkz: [zaman uyumsuz programlama modeli](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) ve [TPL ve geleneksel .NET Framework zaman uyumsuz Programming](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) konusuna bakın.
 
 Bir WCF hizmetini kullanma hakkında daha fazla bilgi için bkz: [bir Windows Communication Foundation (WCF) Web hizmeti kullanan](~/xamarin-forms/data-cloud/consuming/wcf.md).
 
@@ -462,5 +462,5 @@ Bu kılavuz, farklı bir web hizmeti teknolojileri kullanma gösterilmektedir. K
 
 - [Webservices'a örnek](https://developer.xamarin.com/samples/mobile/WebServices/WebServiceSamples/)
 - [Xamarin.Forms Web Hizmetleri](~/xamarin-forms/data-cloud/index.md)
-- [ServiceModel meta veri yardımcı Programracı (svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
-- [BasicHttpBinding](http://msdn.microsoft.com/en-us/library/system.servicemodel.basichttpbinding.aspx)
+- [ServiceModel meta veri yardımcı Programracı (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [BasicHttpBinding](http://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

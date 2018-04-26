@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: f94959062f01a363319494eb510f1a6e42fe36b6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 52f4c51258d1b635adcd697bccb7dd553acc0d5e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="localization"></a>Yerelleştirme
 
@@ -110,7 +110,7 @@ Uygulama kullanıcı tarafından giriş verileri, kendi yerel yansıtan bir Cult
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-Bkz: [sayısal dizeleri ayrıştırma](http://msdn.microsoft.com/en-us/library/xbtzcc4w(v=vs.110).aspx) ve [ayrıştırma tarih ve saat dizelerini](http://msdn.microsoft.com/en-us/library/2h3syy57(v=vs.110).aspx) ek bilgi için MSDN makaleleri.
+Bkz: [sayısal dizeleri ayrıştırma](http://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx) ve [ayrıştırma tarih ve saat dizelerini](http://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx) ek bilgi için MSDN makaleleri.
 
 <a name="rtl" />
 
@@ -130,7 +130,7 @@ Bu diller destekleyen uygulamalar için sağdan sola okuyucular, örneğin uyum 
 
 Bile aynı karakter kümesini kullandığınızda farklı diller farklı şekilde, kendi alfabesinde sıralama düzenini tanımlayın.
 
-Bkz: [dize karşılaştırma ayrıntı](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) içinde [kullanarak dizeleri .NET Framework için en iyi uygulamaları](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx) burada dili (CultureInfo) etkiler sıralama düzenini bir örnek.
+Bkz: [dize karşılaştırma ayrıntı](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) içinde [kullanarak dizeleri .NET Framework için en iyi uygulamaları](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx) burada dili (CultureInfo) etkiler sıralama düzenini bir örnek.
 
 Dile özgü sıralama ek kod, iş mantığı uygulamak için gerekli olabilecek şekilde sıralama mobil platformlarda yerleşik veritabanı özellikleri destekleyecek olası değil.
 
@@ -312,4 +312,4 @@ Teknik Ayrıntılar ilgilendiğiniz platform için okuma devam edin:
 
 - [Apple'nın yerelleştirme genel bakış](https://developer.apple.com/internationalization/)
 - [Android yerelleştirme denetim listesi](http://developer.android.com/distribute/tools/localization-checklist.html)
-- [(MSDN) dünya çapında kullanılmaya hazır uygulamalar geliştirmek için en iyi uygulamalar](http://msdn.microsoft.com/en-us/library/w7x1y988%28v=vs.90%29.aspx)
+- [(MSDN) dünya çapında kullanılmaya hazır uygulamalar geliştirmek için en iyi uygulamalar](http://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

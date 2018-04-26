@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: d434782e2586b1ed4f42984f2eeb72191b0dc171
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 98b4b4a9e7bc28dd444cfdcb1afdfbe64cb1aee0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="cross-platform-performance"></a>Platformlar arası performansı
 
@@ -211,7 +211,7 @@ double Compute(double x)
 
 Geç Başlatma ilk kez oluşur `Lazy<T>.Value` özelliği erişilir. Sarmalanan türü oluşturulur ve ilk erişimde döndürülen ve gelecekteki tüm erişimi için depolanan.
 
-Geç başlatma hakkında daha fazla bilgi için bkz: [geç başlatma](https://msdn.microsoft.com/en-us/library/dd997286(v=vs.110).aspx).
+Geç başlatma hakkında daha fazla bilgi için bkz: [geç başlatma](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx).
 
 <a name="async" />
 
@@ -377,8 +377,8 @@ Bu makalede açıklanan ve Xamarin platformu kullanılarak oluşturulan uygulama
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Xamarin.iOS Performance](~/ios/deploy-test/performance.md)
-- [Xamarin.Android Performance](~/android/deploy-test/performance.md)
+- [Xamarin.iOS performans](~/ios/deploy-test/performance.md)
+- [Xamarin.Android performans](~/android/deploy-test/performance.md)
 - [Xamarin profil oluşturucu giriş](~/tools/profiler/index.md)
 - [Xamarin.Forms performans](~/xamarin-forms/deploy-test/performance.md)
 - [Zaman Uyumsuz Desteğe Genel Bakış](~/cross-platform/platform/async.md)

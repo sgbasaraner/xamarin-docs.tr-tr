@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 08/28/2017
-ms.openlocfilehash: fe15e96780df7e47ce0530acbb04605ad48bf5ee
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ed9992eb162b57cd9c0dd1bc9f4abda4235bac12
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="system-requirements"></a>Sistem Gereksinimleri
 
@@ -82,14 +82,14 @@ Xamarin mobil uygulamalar, test ve hata ayıklama (iOS cihazları Mac bilgisayar
 
 > [!NOTE]
 >
->* [Windows Phone 8.1 öykünücüsü indirme](https://www.microsoft.com/en-us/download/details.aspx?id=43719).
+>* [Windows Phone 8.1 öykünücüsü indirme](https://www.microsoft.com/download/details.aspx?id=43719).
 >* Windows Phone 10 öykünücüsü Visual Studio 2015 UWP SDK ile birlikte gelir.
 
 <a name="install" />
 
 ## <a name="installation-instructions"></a>Yükleme Yönergeleri
 
-En son Xamarin sürüm macOS için yüklenebilir [xamarin.com/download](http://xamarin.com/download). Windows için izleyin [Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio) yükleme yönergeleri.
+En son Xamarin sürüm macOS için yüklenebilir [xamarin.com/download](http://xamarin.com/download). Windows için izleyin [Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) yükleme yönergeleri.
 
 Bizim geçerli ürün sürümleri tam listesi edinilebilir [geçerli sürümleri sayfa](http://developer.xamarin.com/releases/current/). Bu sayfa ayrıca ayrı ayrı ürün sürümleri (ve sürüm notları bağlantılar) bizim beta ve alfa kanalları için özetlenir.
 

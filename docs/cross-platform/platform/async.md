@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 0ecad6259cb0d472ac39afb0a6be980d4582812c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 638e16a47d30e1d4d61fe9e7d19a0245261e5d7f
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="async-support-overview"></a>Zaman uyumsuz desteğine genel bakış
 
@@ -23,7 +23,7 @@ Xamarin'in zaman uyumsuz destek Mono 3.0 temeli üzerinde oluşturulmuştur ve .
 
 Bu belge yeni zaman uyumsuz tanıtır ve anahtar sözcükler sonra zaman uyumsuz yöntemleri Xamarin.iOS ve Xamarin.Android uygulama bazı basit örnekler üzerinden yetenekte bekler.
 
-C# 5 (pek çok örnekleri ve farklı kullanım senaryoları dahil) zaman uyumsuz bir yeni özelliklerin daha ayrıntılı bir tartışma için MSDN belgelerine başvurun [uyumsuz ve bekleme ile zaman uyumsuz programlama](http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx).
+C# 5 (pek çok örnekleri ve farklı kullanım senaryoları dahil) zaman uyumsuz bir yeni özelliklerin daha ayrıntılı bir tartışma için MSDN belgelerine başvurun [uyumsuz ve bekleme ile zaman uyumsuz programlama](http://msdn.microsoft.com/library/vstudio/hh191443.aspx).
 
 Örnek uygulama basit zaman uyumsuz web (ana iş parçacığı engellenmeden) istekte sonra indirilen html ve karakter sayısı ile kullanıcı arabirimini güncelleştirir.
 
@@ -69,7 +69,7 @@ Kullanarak await arayanın iş parçacığı – engellemez çağırana yerine d
 
 Görev tamamlandığında yöntemi kodu aynı zamanda yürütme devam ettirir. Bu, (varsa) bir try-catch-finally bloğu deneyin kapsamına döndürme içerir. await finally bloğunda veya bir catch kullanılamaz.
 
-Daha fazla bilgi edinin [MSDN'de await](http://msdn.microsoft.com/en-us/library/vstudio/hh156528.aspx).
+Daha fazla bilgi edinin [MSDN'de await](http://msdn.microsoft.com/library/vstudio/hh156528.aspx).
 
 ## <a name="exception-handling"></a>Özel Durum İşleme
 
@@ -85,7 +85,7 @@ Tamamlanması uzun zaman zaman uyumsuz yöntem iptal desteklemelidir. Genellikle
 
 Görev kendisini iptal eder ve iptal bildirir.
 
-İptal etme hakkında daha fazla bilgi için bkz: [zaman uyumsuz bir görevi iptal etme](http://msdn.microsoft.com/en-us/library/vstudio/jj155761.aspx) konusuna bakın.
+İptal etme hakkında daha fazla bilgi için bkz: [zaman uyumsuz bir görevi iptal etme](http://msdn.microsoft.com/library/vstudio/jj155761.aspx) konusuna bakın.
 
 ## <a name="example"></a>Örnek
 
@@ -202,9 +202,9 @@ Bu belge, Xamarin.iOS ve Xamarin.Android için yeni dil anahtar sözcükleri ve 
 - [HttpClient (iOS) (örnek)](https://developer.xamarin.com/samples/monotouch/HttpClient/)
 - [MapKitSearch (iOS) (örnek)](https://github.com/xamarin/monotouch-samples/tree/master/MapKitSearch)
 - [Web Semineri: C# zaman uyumsuz iOS ve Android (video)](http://xamarin.wistia.com/medias/k27mc627xz)
-- [Zaman uyumsuz programlama ile Async ve Await (MSDN)](http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx)
-- [Async uygulamanızda (MSDN) ayarlama ince](http://msdn.microsoft.com/en-us/library/vstudio/jj155761.aspx)
+- [Zaman uyumsuz programlama ile Async ve Await (MSDN)](http://msdn.microsoft.com/library/vstudio/hh191443.aspx)
+- [Async uygulamanızda (MSDN) ayarlama ince](http://msdn.microsoft.com/library/vstudio/jj155761.aspx)
 - [Await ve kullanıcı Arabirimi ve kilitlenmeleri! ! My! (MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2011/01/13/10115163.aspx)
 - [Görevler (MSDN) tamamlandıkça işleme](http://blogs.msdn.com/b/pfxteam/archive/2012/08/02/processing-tasks-as-they-complete.aspx)
-- [Görev Tabanlı Zaman Uyumsuz Desen (TAP)](http://msdn.microsoft.com/en-us/library/hh873175.aspx)
+- [Görev Tabanlı Zaman Uyumsuz Desen (TAP)](http://msdn.microsoft.com/library/hh873175.aspx)
 - [C# 5 (Eric Lippert'ın blogu) – asynchrony anahtar sözcükleri giriş hakkında](http://blogs.msdn.com/b/ericlippert/archive/2010/11/11/whither-async.aspx)

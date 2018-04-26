@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5ca2918a0348254407fcbfff030def6c36af4988
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71bfccdcab73b651f458dd8d9c5396bffd55004b
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Merhaba, iOS derinlemesine bakış
 
@@ -85,7 +85,7 @@ Sağ tarafta olan *çözüm bölmesinde*, dizin yapısını içerir ve tüm dosy
 
 İçinde [Hello, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) gözden geçirme, oluşturduğunuz adlı bir çözüm **Phoneword** ve bir iOS projesi - yerleştirilmiş **Phoneword_iOS** - içindeki. Proje içinde öğeleri içerir:
 
--  **Başvuruları** -oluşturmak ve uygulamayı çalıştırmak için gerekli olan derlemeleri içerir. .NET derleme başvurularını gibi görmek için dizini genişletin [sistem](http://msdn.microsoft.com/en-us/library/system%28v=vs.110%29.aspx) , System.Core, ve [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml%28v=vs.110%29.aspx) , Xamarin'ın Xamarin.iOS derlemesine başvuru yanı sıra.
+-  **Başvuruları** -oluşturmak ve uygulamayı çalıştırmak için gerekli olan derlemeleri içerir. .NET derleme başvurularını gibi görmek için dizini genişletin [sistem](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx) , System.Core, ve [System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx) , Xamarin'ın Xamarin.iOS derlemesine başvuru yanı sıra.
 -  **Paketleri** -paket dizini hazır NuGet paketlerini içerir.
 -  **Kaynakları** -kaynak klasör, diğer medya depolar.
 -  **Main.cs** – Bu, uygulamanın ana giriş noktası içerir. Ana uygulama sınıfın adını uygulamayı başlatmak için `AppDelegate`, geçirilen.

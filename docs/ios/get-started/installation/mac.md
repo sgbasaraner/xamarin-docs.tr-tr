@@ -7,23 +7,23 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 580c322f4dc2239f4397afcefd9403c612f34bb1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f8a494da3cf9b84c20c91bd81c2585cfb8f4a6f1
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="installing-and-configuring-xamarinios-on-mac"></a>Yükleme ve Xamarin.iOS Mac üzerinde yapılandırma
 
 > [!NOTE]
-> Bu içerik için Visual Studio için Mac yükleme kılavuzları taşındı [docs.microsoft.com](https://docs.microsoft.com/en-us/visualstudio/mac/installation).
+> Bu içerik için Visual Studio için Mac yükleme kılavuzları taşındı [docs.microsoft.com](https://docs.microsoft.com/visualstudio/mac/installation).
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Mobil Geliştirmeye Giriş](~/cross-platform/get-started/introduction-to-mobile-development.md)
-- [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
+- [Merhaba, iPhone](~/ios/get-started/hello-ios/index.md)
 - [Geliştirme sağlama profilleri oluşturma](http://developer.apple.com/library/ios/#documentation/ToolsLanguages/Conceptual/DevPortalGuide/CreatingandDownloadingDevelopmentProvisioningProfiles/CreatingandDownloadingDevelopmentProvisioningProfiles.html)
 - [Düzenleyici'yi kullanarak sağlama](http://developer.apple.com/library/ios/#recipes/xcode_help-devices_organizer/articles/provision_device_for_development-generic.html)
 - [Portalını kullanarak hazırlama](http://developer.apple.com/library/ios/#recipes/ProvisioningPortal_Recipes/DownloadingaProvisioningProfile/DownloadingaProvisioningProfile.html)

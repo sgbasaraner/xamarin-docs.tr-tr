@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7a25aa1043dcaf52406059d3fa184da36dc4875e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6a43b9ad3c9af0a4118c40fb128f8890ac0ffe40
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>İzlenecek yol: bir iOS Objective-C Kitaplığı bağlama
 
@@ -547,7 +547,7 @@ Bağlama kitaplığı yukarıda oluşturduğunuz iOS kullanmak için bir örnek 
 
 1. **Xamarin.iOS projesi oluşturma** -adlı yeni bir Xamarin.iOS projesi eklemek **InfColorPickerSample** aşağıdaki ekran görüntüsünde gösterildiği gibi çözüme:
 
-    ![](walkthrough-images/use01vs.png "Create Xamarin.iOS Project")
+    ![](walkthrough-images/use01vs.png "Xamarin.iOS projesi oluşturma")
 
 1. **Bağlama projesine başvuru ekleyin** -güncelleştirme **InfColorPickerSample** bir başvuru içeriyor böylece proje **InfColorPickerBinding** proje:
 
@@ -616,7 +616,7 @@ Bu kılavuzda iki tekniği aşağıdakiler ele alınacaktır: ilk güçlü bir t
 
 Xamarin.iOS uygulaması yanıtlamak için güçlü bir temsilci kullanarak son `colorPickerControllerDidFinish:` ileti:
 
-**Subclass InfColorPickerControllerDelegate** - Add a new class to the project called `ColorSelectedDelegate`. Sınıfı, aşağıdaki kodu olacak biçimde düzenleyin:
+**Bir alt InfColorPickerControllerDelegate** -adlı projeye yeni bir sınıf ekleyin `ColorSelectedDelegate`. Sınıfı, aşağıdaki kodu olacak biçimde düzenleyin:
 
 ```csharp
 using InfColorPickerBinding;
@@ -735,4 +735,4 @@ Bu makalede oluşturma ve Xamarin.iOS bağlama proje kullanma sürecinde gitti. 
 - [Bağlama Ayrıntıları](~/cross-platform/macios/binding/overview.md)
 - [Bağlama türü Başvuru Kılavuzu](~/cross-platform/macios/binding/binding-types-reference.md)
 - [Objective-C geliştiriciler için Xamarin](~/ios/get-started/objective-c-developers/index.md)
-- [Çerçeve Tasarım Yönergeleri](http://msdn.microsoft.com/en-us/library/ms229042.aspx)
+- [Çerçeve Tasarım Yönergeleri](http://msdn.microsoft.com/library/ms229042.aspx)

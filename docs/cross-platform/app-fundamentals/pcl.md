@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: feef0a4083d2455cc189ddab6ed22762c044d848
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 799ee198f776b963bb8779d71bacc322001e2882
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Taşınabilir sınıf kitaplıkları giriş
 
@@ -55,7 +55,7 @@ Bu birleşimleridir profilleri içerir:
 -  Windows Phone 8
 -  UWP uygulamaları
 
-Daha fazla bilgiyi farklı profilleri yetenekleri hakkında [Microsoft'un Web sitesi](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx) ve başka bir topluluk üyenin bkz [PCL profil özeti](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) desteklenen framework bilgileri ve diğer notlar içerir.
+Daha fazla bilgiyi farklı profilleri yetenekleri hakkında [Microsoft'un Web sitesi](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx) ve başka bir topluluk üyenin bkz [PCL profil özeti](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) desteklenen framework bilgileri ve diğer notlar içerir.
 
 
 
@@ -429,4 +429,4 @@ Bu makalede kısaca avantajları ve taşınabilir sınıf kitaplıkları Tuzakla
 - [Taşınabilir Visual Basic](~/cross-platform/platform/visual-basic/index.md)
 - [Paylaşılan Projeler](~/cross-platform/app-fundamentals/shared-projects.md)
 - [Paylaşım kodu seçenekleri](~/cross-platform/app-fundamentals/code-sharing.md)
-- [.NET Framework (Microsoft) ile platformlar arası geliştirme](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)
+- [.NET Framework (Microsoft) ile platformlar arası geliştirme](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)

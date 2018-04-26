@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 930b52e5b2a532e71594f26af79035db2cc5fb25
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 85dc675a9b18b974f21532298e4d3028bdecd0b7
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ios-architecture"></a>iOS mimarisi
 
@@ -23,14 +23,14 @@ Aşağıdaki diyagramda Bu mimarinin temel bir bakış gösterilir:
 
 ## <a name="native-and-managed-code-an-explanation"></a>Yerel ve yönetilen kod: bir açıklama
 
-İçin Xamarin geliştirirken koşulları *yerel ve yönetilen* kodu genellikle kullanılır. [Yönetilen kod](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) tarafından yönetilen yürütülmesinin sahip kodu [.NET Framework ortak dil çalışma zamanı](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx), veya Xamarin'ın büyük-küçük harf: Mono çalışma zamanı. Bir ara dile veririz budur.
+İçin Xamarin geliştirirken koşulları *yerel ve yönetilen* kodu genellikle kullanılır. [Yönetilen kod](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) tarafından yönetilen yürütülmesinin sahip kodu [.NET Framework ortak dil çalışma zamanı](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx), veya Xamarin'ın büyük-küçük harf: Mono çalışma zamanı. Bir ara dile veririz budur.
 
 Yerel kod yerel olarak (örneğin, Objective-C veya bir KOL yonga üzerinde bile uygulama nesne AĞACI derlenmiş kod) belirli platformda çalışacak kodudur. Bu kılavuz nasıl uygulama nesne AĞACI, yönetilen kodu yerel koda derlenen inceler ve bir Xamarin.iOS uygulaması nasıl çalışır, erişimi de sahip sırasında tam kullanımını bağlamaları kullanımı ile Apple'nın iOS API yapmadan açıklanmaktadır. NET'in BCL ve Gelişmiş dil C# gibi.
 
 
-## <a name="aot"></a>AOT
+## <a name="aot"></a>UYGULAMA NESNE AĞACI
 
-Herhangi bir Xamarin platform uygulamasını derlerken Mono C# (veya F #) derleyici çalışacak ve C# ve F # kodunuzu Microsoft Ara dili (MSIL içine) derlenir. Bir Xamarin.Android, Xamarin.Mac uygulama veya bile bir Xamarin.iOS uygulaması simulator'da çalıştırıyorsanız [.NET ortak dil çalışma zamanı (CLR)](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx) bir sadece anında (JIT) derleyicide kullanarak MSIL derler. Bu yerel koda derlenmiş çalışma zamanında, uygulamanız için doğru mimari çalıştırabilirsiniz.
+Herhangi bir Xamarin platform uygulamasını derlerken Mono C# (veya F #) derleyici çalışacak ve C# ve F # kodunuzu Microsoft Ara dili (MSIL içine) derlenir. Bir Xamarin.Android, Xamarin.Mac uygulama veya bile bir Xamarin.iOS uygulaması simulator'da çalıştırıyorsanız [.NET ortak dil çalışma zamanı (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx) bir sadece anında (JIT) derleyicide kullanarak MSIL derler. Bu yerel koda derlenmiş çalışma zamanında, uygulamanız için doğru mimari çalıştırabilirsiniz.
 
 Ancak, iOS, bir cihazda dinamik olarak üretilen kod yürütmeyi izin vermez Apple tarafından ayarlanan güvenlik sınırlaması yoktur.
 Biz bu güvenlik protokolleri uyması emin olmak için Xamarin.iOS yerine şimdi, zaman Tıkların derleyici yönetilen kodu derlemek için kullanır. Bu, isteğe bağlı olarak LLVM ile Apple'nın ARM tabanlı işlemci üzerinde dağıtılabilir, cihazlar için en iyi duruma getirilmiş ikili, bir yerel iOS oluşturur. Bu birlikte nasıl uyduğunu kaba diyagramı aşağıda gösterilmiştir:
