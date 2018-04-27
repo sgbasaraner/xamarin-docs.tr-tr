@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
 ms.openlocfilehash: f851c1ca241be9e3c94a70b1f63135a46575d471
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="adding-a-universal-windows-platform-uwp-app"></a>Evrensel Windows Platformu (UWP) uygulamasını ekleme
 
@@ -25,25 +25,25 @@ Denetleme <a href="#troubleshooting">sorun giderme</a> yararlı ipuçları için
 
 Windows 10 telefonlar, tabletler ve masaüstü bilgisayarlar üzerinde çalışacak bir UWP uygulaması eklemek için aşağıdaki yönergeleri izleyin:
 
- 1 . Sağ tıklatın ve çözüm **Ekle > Yeni proje...** ve ekleme bir **boş uygulama (Evrensel Windows)** proje:
+ 1. Sağ tıklatın ve çözüm **Ekle > Yeni proje...** ve ekleme bir **boş uygulama (Evrensel Windows)** proje:
 
   ![](universal-images/add-wu.png "Yeni Proje iletişim kutusu ekleme")
 
- 2 . İçinde **yeni evrensel Windows platformu projesi** iletişim kutusunda, uygulama üzerinde çalışacağı Windows 10 en az ve hedef sürümlerini seçin:
+ 2. İçinde **yeni evrensel Windows platformu projesi** iletişim kutusunda, uygulama üzerinde çalışacağı Windows 10 en az ve hedef sürümlerini seçin:
 
   ![](universal-images/target-version.png "Evrensel Windows platformu yeni proje iletişim kutusu")
 
- 3 . UWP projeye sağ tıklayıp **NuGet paketlerini Yönet...** ve ekleme **Xamarin.Forms** paket. Çözümdeki diğer projeler Xamarin.Forms paket aynı sürüme güncelleştirildiğinden emin olun.
+ 3. UWP projeye sağ tıklayıp **NuGet paketlerini Yönet...** ve ekleme **Xamarin.Forms** paket. Çözümdeki diğer projeler Xamarin.Forms paket aynı sürüme güncelleştirildiğinden emin olun.
 
- 4 . Emin olun yeni UWP projesini yerleşik **Yapı > Configuration Manager** penceresi (Bu büyük olasılıkla olmaz işleminin gerçekleştiği bilgisayarlar varsayılan olarak). Değer çizgilerinin **yapı** ve **dağıtma** kutuları Evrensel projesi için:
+ 4. Emin olun yeni UWP projesini yerleşik **Yapı > Configuration Manager** penceresi (Bu büyük olasılıkla olmaz işleminin gerçekleştiği bilgisayarlar varsayılan olarak). Değer çizgilerinin **yapı** ve **dağıtma** kutuları Evrensel projesi için:
 
   [![](universal-images/configuration-sml.png "Yapılandırma Yöneticisi penceresi")](universal-images/configuration.png#lightbox "Yapılandırma Yöneticisi penceresi")
 
- 5 . Sağ tıklatın ve proje **Ekle > başvuru** ve bir başvuru (PCL, .NET Standard veya paylaşılan Proje) Xamarin.Forms uygulaması projesi oluşturun.
+ 5. Sağ tıklatın ve proje **Ekle > başvuru** ve bir başvuru (PCL, .NET Standard veya paylaşılan Proje) Xamarin.Forms uygulaması projesi oluşturun.
 
   ![](universal-images/addref-sml.png "Başvuru Yöneticisi iletişim kutusu")
 
- 6 . UWP projesinde Düzenle **App.xaml.cs** içerecek şekilde `Init` yöntemi çağrısı içinde `OnLaunched` satır 52 geçici yöntemi:
+ 6. UWP projesinde Düzenle **App.xaml.cs** içerecek şekilde `Init` yöntemi çağrısı içinde `OnLaunched` satır 52 geçici yöntemi:
 
 ```csharp
 // under this line
@@ -52,15 +52,15 @@ rootFrame.NavigationFailed += OnNavigationFailed;
 Xamarin.Forms.Forms.Init (e); // requires the `e` parameter
 ```
 
- 7 . UWP projesinde Düzenle **MainPage.xaml** kaldırarak `Grid` içindeki `Page` öğesi.
+ 7. UWP projesinde Düzenle **MainPage.xaml** kaldırarak `Grid` içindeki `Page` öğesi.
 
- 8 . İçinde **MainPage.xaml**, yeni bir ekleme `xmlns` için giriş `Xamarin.Forms.Platform.UWP`:
+ 8. İçinde **MainPage.xaml**, yeni bir ekleme `xmlns` için giriş `Xamarin.Forms.Platform.UWP`:
 
 ```csharp
 xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 ```
 
- 9 . İçinde **MainPage.xaml**, kök değiştirin `<Page` öğesine `<forms:WindowsPage`:
+ 9. İçinde **MainPage.xaml**, kök değiştirin `<Page` öğesine `<forms:WindowsPage`:
 
 ```xaml
 <forms:WindowsPage
@@ -70,13 +70,13 @@ xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 </forms:WindowsPage>
 ```
 
- 10 . UWP projesinde Düzenle **MainPage.xaml.cs** kaldırmak için `: Page` devralma belirleyici sınıf adı için (bunu şimdi devralınacağı beri `WindowsPage` önceki adımda yaptığınız değişiklikleri nedeniyle):
+ 10. UWP projesinde Düzenle **MainPage.xaml.cs** kaldırmak için `: Page` devralma belirleyici sınıf adı için (bunu şimdi devralınacağı beri `WindowsPage` önceki adımda yaptığınız değişiklikleri nedeniyle):
 
 ```csharp
 public sealed partial class MainPage  // REMOVE ": Page"
 ```
 
- 11 . İçinde **MainPage.xaml.cs**, ekleme `LoadApplication` Çağır `MainPage` Oluşturucusu Xamarin.Forms uygulaması başlatmak için:
+ 11. İçinde **MainPage.xaml.cs**, ekleme `LoadApplication` Çağır `MainPage` Oluşturucusu Xamarin.Forms uygulaması başlatmak için:
 
 ```csharp
 // below this existing line
@@ -95,7 +95,7 @@ LoadApplication(new YOUR_NAMESPACE.App());
   * Location
 -->
 
-12 . Yerel kaynaklardan herhangi (ör. Ekle görüntü dosyaları) gerekli varolan platform projelerden.
+12. Yerel kaynaklardan herhangi (ör. Ekle görüntü dosyaları) gerekli varolan platform projelerden.
 
 <a name="troubleshooting" />
 

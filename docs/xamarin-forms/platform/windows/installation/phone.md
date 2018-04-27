@@ -7,10 +7,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
 ms.openlocfilehash: 55bd4bdcfde4c91ad5c9b94bef486207466e135d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="adding-a-windows-phone-app"></a>Windows Phone uygulama ekleme
 
@@ -36,7 +36,7 @@ Xamarin.Forms.Forms.Init (e); // requires LaunchActivatedEventArgs
 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated) {}
 ```
 
- 5 . Düzen **MainPage.xaml** -kök öğesi değiştirme `<Page` için `<forms:WindowsPhonePage` *ve* tanımlamak `xmlns:forms` kullandığı:
+ 5. Düzen **MainPage.xaml** -kök öğesi değiştirme `<Page` için `<forms:WindowsPhonePage` *ve* tanımlamak `xmlns:forms` kullandığı:
 
 ```xaml
 <forms:WindowsPhonePage
@@ -46,13 +46,13 @@ if (e.PreviousExecutionState == ApplicationExecutionState.Terminated) {}
 </forms:WindowsPhonePage>
 ```
 
- 6 . Düzen **MainPage.xaml.cs** kaldırmak için `: PhonePage` devralma belirleyici sınıf adı.
+ 6. Düzen **MainPage.xaml.cs** kaldırmak için `: PhonePage` devralma belirleyici sınıf adı.
 
 ```csharp
 public sealed partial class MainPage  // REMOVE ": PhonePage"
 ```
 
- 7 . Hala **MainPage.xaml.cs**, ekleme `LoadApplication` Çağır `MainPage` Oluşturucusu (etrafında satır 28) Xamarin.Forms uygulamanızı başlatmak için:
+ 7. Hala **MainPage.xaml.cs**, ekleme `LoadApplication` Çağır `MainPage` Oluşturucusu (etrafında satır 28) Xamarin.Forms uygulamanızı başlatmak için:
 
 ```csharp
 // below this existing line
@@ -61,9 +61,9 @@ this.InitializeComponent();
 LoadApplication(new YOUR_NAMESPACE.App());
 ```
 
-8 . Çift **Package.appxmanifest** genellikle gereklidir bu özellikleri ayarlamak için:
+8. Çift **Package.appxmanifest** genellikle gereklidir bu özellikleri ayarlamak için:
 
   * Internet (istemci ve sunucu)
 
-9 . Son olarak, tüm yerel kaynakları (ör. Ekle görüntü dosyaları) gerekli varolan platform projelerden.
+9. Son olarak, tüm yerel kaynakları (ör. Ekle görüntü dosyaları) gerekli varolan platform projelerden.
 
