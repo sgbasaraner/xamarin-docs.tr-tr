@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 9bdad3e7d3e16dfe906f96bce2b92cdb9ee6260a
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 76192f48bedebb183c64c83e34c3908cc85d591c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="path-effects"></a>Yol etkileri
 
@@ -854,7 +854,7 @@ public class PathTileFillPage : ContentPage
 
 Özgün ekran görüntüsünde ölçeklendirme özellikle Android ekranda bazı bozulmaya neden olur.
 
-Bu kutucuklar her zaman tüm görünür ve hiçbir zaman kesilmiş dikkat edin. Dışında Windows 10 Mobile ekranında, doldurulan alanı yuvarlak dikdörtgen şeklinde bile korumalı değil. Bu kutucuklar için belirli bir alandaki bir kesecek şekilde kırpma yolu kullanın.
+Bu kutucuklar her zaman tüm görünür ve hiçbir zaman kesilmiş dikkat edin. İlk iki ekran görüntüleri üzerinde doldurulan alanı yuvarlak dikdörtgen şeklinde bile korumalı değil. Bu kutucuklar için belirli bir alandaki bir kesecek şekilde kırpma yolu kullanın.
 
 Ayarı deneyin `Style` özelliği `SKPaint` nesnesine `Stroke`, doldurulmuş yerine ana hatlarıyla tek tek kutucuklar görürsünüz.
 
@@ -927,7 +927,7 @@ Bu etkiyi vuruş yapması veya temel doldurma ile kullanabileceğiniz `Style` ö
 
 Bu yuvarlak heptagon önceki programın aynı olduğunu görürsünüz. Daha fazla ikna gerekiyorsa köşe yarıçapını gerçekten 100 yerine 50 belirtilen `SKPathEffect.CreateCorner` çağrısı, açıklamadan çıkarın program ve bkz: 100 RADIUS daire son deyiminde koyulan köşede.
 
-## <a name="random-jitter"></a>Random Jitter
+## <a name="random-jitter"></a>Rastgele değişimi
 
 Bazen bilgisayar grafik kusursuz düz çizgilerden istediğinizi oldukça değildir ve küçük rastgele istenen. Bu durumda, deneyin istersiniz [ `SKPathEffect.CreateDiscrete` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDiscrete/p/System.Single/System.Single/System.UInt32/) yöntemi:
 

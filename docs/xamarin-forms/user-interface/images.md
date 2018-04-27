@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: ddbcb74d34f09c7bb60891148bd50b36bc5094c3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e8ad5ba3bdfa61ae1b2f4404016f204a8c1747c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="images"></a>Görüntüler
 
@@ -58,7 +58,6 @@ Görüntü dosyaları her uygulama projesine eklendi ve paylaşılan Xamarin.For
 
 - **iOS** - tercih edilen yönetmek ve kullanmak için iOS 9 olduğundan görüntüleri desteklemek için bir yol **varlık Kataloğu görüntü kümeleri**, hangi içermelidir tüm sürümleri için Etkenler ölçekleme ve çeşitli aygıtları desteklemek gerekli olan görüntünün bir uygulama. Daha fazla bilgi için bkz: [ekleme görüntülere bir varlık Kataloğu resmi ayarlama](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 - **Android** -yerleştirin görüntülerinde **kaynakları/drawable** ile dizin **yapı eylemi: AndroidResource**. Görüntüyü yüksek ve düşük DPI sürümleri de sağlanan (uygun şekilde adlı **kaynakları** gibi alt dizinleri **ldpi drawable**, **hdpi drawable**ve **xhdpi drawable**).
-- **Windows Phone** -yerleştirin görüntüleri ile uygulamanın kök dizininde **yapı eylemi: içerik**.
 - **Evrensel Windows Platformu (UWP)** -yerleştirin görüntüleri ile uygulamanın kök dizininde **yapı eylemi: içerik**.
 
 > [!IMPORTANT]
@@ -93,7 +92,7 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>Yerel çözünürlük (Retina ve yüksek DPI)
 
-iOS, Android, Windows Phone ve UWP burada işletim sistemi cihazın özelliklerine göre çalışma zamanında uygun görüntüyü seçer, farklı bir resim çözümleri için destek içerir. Xamarin.Forms dosyaları doğru adlı ve projesinde bulunan diğer çözümleri otomatik olarak desteklediği için yerel görüntüleri yüklemek için yerel platformları API'lerini kullanır.
+iOS, Android ve UWP burada işletim sistemi cihazın özelliklerine göre çalışma zamanında uygun görüntüyü seçer, farklı bir resim çözümleri için destek içerir. Xamarin.Forms dosyaları doğru adlı ve projesinde bulunan diğer çözümleri otomatik olarak desteklediği için yerel görüntüleri yüklemek için yerel platformları API'lerini kullanır.
 
 İOS 9 uygun varlık Kataloğu görüntü kümesi için gereken her bir çözümü için görüntüleri sürükleme olduğundan görüntülerini yönetmek için tercih edilen yolu. Daha fazla bilgi için bkz: [ekleme görüntülere bir varlık Kataloğu resmi ayarlama](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
@@ -103,7 +102,7 @@ Android alternatif çözüm görüntüleri yerleştirilmelidir [özel adlı dizi
 
 [![Android birden çok çözümleme görüntü konumu](images-images/xs-highdpisolution-sml.png "Android birden çok çözümleme görüntü konumu")](images-images/xs-highdpisolution.png#lightbox "Android birden çok çözümleme görüntü konumu")
 
-UWP ve Windows Phone görüntü dosya adları [ile sonekine `.scale-xxx` dosya uzantısı önce](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), burada `xxx` varlık için örneğin uygulanan ölçeklendirme yüzdesidir **myimage.scale 200.png**. Görüntüleri ardından başvurulabilir kod veya XAML Ölçek değiştiricisi olmadan, örneğin yalnızca için **myimage.png**. Platform üzerinde görüntünün geçerli DPI göre en yakın uygun varlık ölçek seçer.
+UWP resim dosya adları [ile sonekine `.scale-xxx` dosya uzantısı önce](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), burada `xxx` varlık için örneğin uygulanan ölçeklendirme yüzdesidir **myimage.scale 200.png**. Görüntüleri ardından başvurulabilir kod veya XAML Ölçek değiştiricisi olmadan, örneğin yalnızca için **myimage.png**. Platform üzerinde görüntünün geçerli DPI göre en yakın uygun varlık ölçek seçer.
 
 ### <a name="additional-controls-that-display-images"></a>Görüntüleri göstermek ek denetimler
 

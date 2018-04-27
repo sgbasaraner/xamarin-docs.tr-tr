@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 2e0a5ff433de034da0170e3aa9a19ab50ddc3cb6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 97f0917e4e8670ab379aae1b2707ae08cb29bb70
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="displaying-pop-ups"></a>Açılır pencerelere görüntüleme
 
@@ -45,7 +45,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 ## <a name="guiding-users-through-tasks"></a>Görevleri boyunca yol gösterici kullanıcılar
 
-[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) bir ortak UI iOS öğedir. Xamarin.Forms [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/) yöntemi, Android ve Windows Phone yerel alternatifleri işleme platformlar arası uygulamalar, bu denetim dahil etmenizi sağlar.
+[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) bir ortak UI iOS öğedir. Xamarin.Forms [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/) yöntemi, Android ve UWP yerel alternatifleri işleme platformlar arası uygulamalar, bu denetim dahil etmenizi sağlar.
 
 Bir eylem sayfasını görüntülemek için `await` [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/) herhangi [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), ileti geçirme ve düğmesini etiketleri dizeleri olarak. Yöntemi, kullanıcı tarafından tıklandığını düğmesinin dize etiketi döndürür. Basit bir örnek aşağıda gösterilmiştir:
 

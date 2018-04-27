@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 58f5a64f85dbe5a6889e6ff598c14fdfd9b0a5df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da3025f2616c91488ec70e25836351b08e957494
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-contentpage"></a>Bir ContentPage özelleştirme
 
 _Bir ContentPage, tek bir görünüm görüntüler ve ekranın en kaplar görsel bir öğedir. Bu makalede, geliştiricilerin kendi platforma özgü özelleştirme varsayılan yerel işlemeyle geçersiz kılmasına etkinleştirme ContentPage sayfası için özel Oluşturucu Oluşturma gösterilir._
 
-Yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu her Xamarin.Forms denetleyebilir. Zaman bir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) iOS içinde bir Xamarin.Forms uygulaması tarafından işlenen `PageRenderer` sınıf örneği, hangi sırayla yerel başlatır `UIViewController` denetim. Android platformunda `PageRenderer` sınıfı başlatır bir `ViewGroup` denetim. Windows Phone ve evrensel Windows Platformu (UWP) `PageRenderer` sınıfı başlatır bir `FrameworkElement` denetim. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu her Xamarin.Forms denetleyebilir. Zaman bir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) iOS içinde bir Xamarin.Forms uygulaması tarafından işlenen `PageRenderer` sınıf örneği, hangi sırayla yerel başlatır `UIViewController` denetim. Android platformunda `PageRenderer` sınıfı başlatır bir `ViewGroup` denetim. Üzerinde Evrensel Windows Platformu (UWP), `PageRenderer` sınıfı başlatır bir `FrameworkElement` denetim. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Aşağıdaki diyagram arasındaki ilişkiyi gösterir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) ve uyguladıktan karşılık gelen yerel denetimlere:
 
@@ -197,57 +197,6 @@ namespace CustomRenderer.Droid
 Temel sınıfın çağrısı `OnElementChanged` yöntemi bir Android başlatır `ViewGroup` görünümleri oluşan bir gruptur denetim. Canlı Kamera akış yalnızca işleyici zaten var olan bir Xamarin.Forms öğesine bağlı değil ve bir sayfa örneği var olması koşuluyla, özel Oluşturucu tarafından işlenen koşuluyla işlenir.
 
 Bir dizi kullanan yöntemleri çağırarak sayfa özelleştirildikten `Camera` canlı akış kamera ve bir fotoğraf önce yakalama olanağı sağlamak için API `AddView` yöntemi çağrılır Canlı Kamera eklemek için kullanıcı Arabirimi için akış `ViewGroup`.
-
-### <a name="creating-the-page-renderer-on-windows-phone"></a>Windows Phone üzerinde sayfa Oluşturucu Oluşturma
-
-Aşağıdaki kod örneği Windows Phone platformu için sayfa Oluşturucu gösterir:
-
-```csharp
-[assembly: ExportRenderer (typeof(CameraPage), typeof(CameraPageRenderer))]
-namespace CustomRenderer.WinPhone81
-{
-    public class CameraPageRenderer : PageRenderer
-    {
-        ...
-
-        protected override void OnElementChanged (VisualElementChangedEventArgs e)
-        {
-            base.OnElementChanged (e);
-
-            if (e.OldElement != null || Element == null) {
-                return;
-            }
-
-            try {
-                ...
-                var container = ContainerElement as Canvas;
-
-                SetupUserInterface ();
-                SetupEventHandlers ();
-                SetupLiveCameraStream ();
-                container.Children.Add (page);
-            }
-            ...
-        }
-
-        protected override Size ArrangeOverride(Size finalSize)
-        {
-            page.Arrange(new Windows.Foundation.Rect(0, 0, finalSize.Width, finalSize.Height));
-            return finalSize;
-        }
-        ...
-    }
-}
-```
-
-Temel sınıfın çağrısı `OnElementChanged` yöntemi bir Windows Phone başlatır `Canvas` denetimi, sayfa işlenir. Canlı Kamera akış yalnızca işleyici zaten var olan bir Xamarin.Forms öğesine bağlı değil ve bir sayfa örneği var olması koşuluyla, özel Oluşturucu tarafından işlenen koşuluyla işlenir.
-
-Windows Phone platformunda, belirlenmiş bir başvuru platformda kullanılan yerel sayfasına aracılığıyla erişilebilir `ContainerElement` özelliği ile `Canvas` belirlenmiş bir başvuru olan denetim `FrameworkElement`. Bir dizi kullanan yöntemleri çağırarak sayfa özelleştirildikten `MediaCapture` canlı akış kamera ve özelleştirilmiş sayfası eklenmesi fotoğraf yakalama olanağı sağlamak için API `Canvas` görüntülemek için.
-
-Öğesinden türetilen özel Oluşturucu uygularken `PageRenderer` üzerindeki Windows çalışma zamanı `ArrangeOverride` de yöntemin sayfası denetimlerini düzenlemek için temel oluşturucu bunlarla yapmanız gerekenler bilmiyor olduğundan. Aksi durumda, boş bir sayfa sonuçlanır. Bu nedenle, bu örnekte `ArrangeOverride` yöntem çağrılarını `Arrange` yöntemi `Page` örneği.
-
-> [!NOTE]
-> Durdur ve bir Windows Phone 8.1 WinRT uygulamasında kameraya erişebilmesi nesnelerin silmek önemlidir. Bunun Sağlanamaması cihazın kamera erişmeye çalışan diğer uygulamalarla etkileyebilir. Daha fazla bilgi için bkz: `CleanUpCaptureResourcesAsync` örnek çözümü Windows Phone projede yöntemi ve [hızlı başlangıç: MediaCapture API'sini kullanarak video yakalama](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>UWP üzerinde sayfa Oluşturucu Oluşturma
 

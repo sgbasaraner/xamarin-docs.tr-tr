@@ -1,27 +1,27 @@
 ---
 title: Xamarin.Forms giriş
-description: Xamarin.Forms bir platformlar arası geliştiricilerin kolayca Android, iOS, Windows ve Windows Phone arasında paylaşılan kullanıcı arabirimleri oluşturmanıza olanak tanır UI Araç Seti soyutlama yerel olarak yedeklenen ' dir. Kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir. Bu makale Xamarin.Forms ve bu uygulamalarla yazmaya başlamak nasıl bir giriş sağlar.
+description: Xamarin.Forms bir platformlar arası geliştiricilerin kolayca Android, iOS ve evrensel Windows platformu arasında paylaşılan kullanıcı arabirimleri oluşturmanıza olanak tanır UI Araç Seti soyutlama yerel olarak yedeklenen ' dir. Kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir. Bu makale Xamarin.Forms ve bu uygulamalarla yazmaya başlamak nasıl bir giriş sağlar.
 ms.prod: xamarin
 ms.assetid: f619595f-3ee7-439b-a1bc-d13e5106e6e9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 6428f1658245ec5ecf47e474bc5ffd5d49663bf2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9f7c9d1b410d9d1d699644148903fdc6cfeec4fd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms giriş
 
-_Xamarin.Forms bir platformlar arası geliştiricilerin kolayca Android, iOS, Windows ve Windows Phone arasında paylaşılan kullanıcı arabirimleri oluşturmanıza olanak tanır UI Araç Seti soyutlama yerel olarak yedeklenen ' dir. Kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir. Bu makale Xamarin.Forms ve bu uygulamalarla yazmaya başlamak nasıl bir giriş sağlar._
+_Xamarin.Forms bir platformlar arası geliştiricilerin kolayca Android, iOS, Windows ve evrensel Windows platformu arasında paylaşılan kullanıcı arabirimleri oluşturmanıza olanak tanır UI Araç Seti soyutlama yerel olarak yedeklenen ' dir. Kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir. Bu makale Xamarin.Forms ve bu uygulamalarla yazmaya başlamak nasıl bir giriş sağlar._
 
 <a name="Overview" />
 
 ## <a name="overview"></a>Genel Bakış
 
-Xamarin.Forms geliştiricilerin hızla platformlar arası kullanıcı arabirimleri oluşturmalarına olanak sağlayan bir çerçevedir. Bu, iOS, Android, Windows veya Windows Phone yerel denetimlerini kullanarak işlenen kullanıcı arabirimi için kendi soyutlama sağlar. Bu uygulamaları kendi kullanıcı arabirimi kodu büyük bir kısmı paylaşabilir ve hala hedef platformu yerel Görünüm ve yapısını korur anlamına gelir.
+Xamarin.Forms geliştiricilerin hızla platformlar arası kullanıcı arabirimleri oluşturmalarına olanak sağlayan bir çerçevedir. Bu, iOS, Android veya evrensel Windows Platformu (UWP) yerel denetimlerini kullanarak işlenen kullanıcı arabirimi için kendi soyutlama sağlar. Bu uygulamaları kendi kullanıcı arabirimi kodu büyük bir kısmı paylaşabilir ve hala hedef platformu yerel Görünüm ve yapısını korur anlamına gelir.
 
 Xamarin.Forms karmaşık uygulamalar için zamanla gelişmesi uygulamaların hızlı prototipi oluşturulurken sağlar. Xamarin.Forms uygulamaları yerel uygulamalardır çünkü bunlar tarayıcı korumalı alan, sınırlı API'leri veya düşük performans gibi diğer araç takımları sınırlamaları yok. Xamarin.Forms kullanılarak yazılmış uygulamalar için herhangi bir verecek API'nin veya temel platform özelliklerini gibi (ancak bunlarla sınırlı olmamak üzere) CoreMotion, PassKit ve StoreKit iOS; NFC ve Google Play hizmetlerini android'de; ve Windows döşeme. Ayrıca, yerel kullanıcı Arabirimi Araç Seti kullanarak diğer bölümleri oluşturulduğu sırada Xamarin.Forms ile oluşturulan kendi kullanıcı arabirimi bölümlerini sahip uygulamalar oluşturmak mümkündür.
 
@@ -120,39 +120,6 @@ namespace HelloXamarinFormsWorld.Android
 ```
 
 `OnCreate` Geçersiz kılma çağırarak Xamarin.Forms framework başlatır `Init` yöntemi. Bu uygulamada Xamarin.Forms uygulaması yüklenmeden önce yüklenmesi Xamarin.Forms Android özgü uyarlamasını neden olur.
-
-<a name="Launching_in_Windows_Phone" />
-
-#### <a name="windows-phone-81-winrt"></a>Windows Phone 8.1 (WinRT)
-
-Windows çalışma zamanı uygulamalarında `Init` Xamarin.Forms framework başlatır yöntemi çağrılır `App` sınıfı:
-
-```csharp
-Xamarin.Forms.Forms.Init (e);
-
-if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-{
-  ...
-}
-```
-
-Bu uygulamanın yüklenmesi Xamarin.Forms Windows Phone özel uyarlamasını neden olur. İlk Xamarin.Forms sayfası tarafından başlatılan `MainPage` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
-
-```csharp
-public partial class MainPage
-{
-    public MainPage()
-    {
-      this.InitializeComponent();
-      this.NavigationCacheMode = NavigationCacheMode.Required;
-      this.LoadApplication(new HelloXamarinFormsWorld.App());
-    }
-}
-```
-
-Xamarin.Forms uygulaması ile yüklenen `LoadApplication` yöntemi.
-
-Xamarin.Forms Windows 8.1 desteği de vardır. Bu yapılandırma hakkında bilgi için proje türleri, bkz: [kurulum Windows projeleri](~/xamarin-forms/platform/windows/installation/index.md).
 
 #### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
@@ -747,7 +714,7 @@ Alternatif olarak, mobil uygulamalarla oluşturma Xamarin.Forms, kitap Charles P
 
 ## <a name="summary"></a>Özet
 
-Bu makalede Xamarin.Forms ve bu uygulamalarla yazmaya başlamak nasıl bir giriş sağlanır. Xamarin.Forms bir platformlar arası geliştiricilerin kolayca Android, iOS, Windows ve Windows Phone arasında paylaşılan kullanıcı arabirimleri oluşturmanıza olanak tanır UI Araç Seti soyutlama yerel olarak yedeklenen ' dir. Kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir.
+Bu makalede Xamarin.Forms ve bu uygulamalarla yazmaya başlamak nasıl bir giriş sağlanır. Xamarin.Forms bir platformlar arası geliştiricilerin kolayca Android, iOS ve evrensel Windows platformu arasında paylaşılan kullanıcı arabirimleri oluşturmanıza olanak tanır UI Araç Seti soyutlama yerel olarak yedeklenen ' dir. Kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

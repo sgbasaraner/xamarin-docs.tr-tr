@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4adff8a95f9981dbecc44bf177dcd98b7984a3a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ffb013c355db34ef7456404d6f9dcaec75743420
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Bir HybridWebView uygulama
 
 _Xamarin.Forms özel kullanıcı arabirimi denetimlerini düzenleri ve denetimleri ekranında yerleştirmek için kullanılan görünüm sınıfından türetilmelidir. Bu makalede çağrılacak C# kodu JavaScript'ten izin vermek için platforma özgü web denetimleri geliştirmek nasıl gösteren bir HybridWebView özel denetim için özel Oluşturucu Oluşturma gösterilir._
 
-Her Xamarin.Forms görünüm yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu yok. Zaman bir [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) iOS, bir Xamarin.Forms uygulaması tarafından işlenen `ViewRenderer` sınıf örneği, hangi sırayla yerel başlatır `UIView` denetim. Android platformunda `ViewRenderer` sınıfı başlatır bir `View` denetim. Windows Phone ve evrensel Windows Platformu (UWP) `ViewRenderer` sınıfı başlatır yerel `FrameworkElement` denetim. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Her Xamarin.Forms görünüm yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu yok. Zaman bir [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) iOS, bir Xamarin.Forms uygulaması tarafından işlenen `ViewRenderer` sınıf örneği, hangi sırayla yerel başlatır `UIView` denetim. Android platformunda `ViewRenderer` sınıfı başlatır bir `View` denetim. Üzerinde Evrensel Windows Platformu (UWP), `ViewRenderer` sınıfı başlatır yerel `FrameworkElement` denetim. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Aşağıdaki diyagram arasındaki ilişkiyi gösterir [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) ve uyguladıktan karşılık gelen yerel denetimlere:
 
@@ -417,13 +417,13 @@ Unutmayın `JSBridge` sınıfı tutan bir `WeakReference` için `HybridWebViewRe
 > [!IMPORTANT]
 > Android derleme bildirimi ayarlar üzerinde Android Oreo olun **hedef Android sürümü** için **otomatik**. Aksi takdirde, bu kodu çalıştıran hata iletisi "invokeCSharpAction tanımlı değil" neden olur.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Windows Phone üzerinde özel Oluşturucu Oluşturma ve UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP üzerinde özel Oluşturucu Oluşturma
 
-Aşağıdaki kod örneği, Windows Phone ve UWP için özel Oluşturucu gösterir:
+Aşağıdaki kod örneğinde UWP için özel Oluşturucu gösterir:
 
 ```csharp
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class HybridWebViewRenderer : ViewRenderer<HybridWebView, Windows.UI.Xaml.Controls.WebView>
     {

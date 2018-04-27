@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: e84427ba576528ed76f5885605c423bf6499d20c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a8ab35b3ec13c76e1e00da6e3265e3e337e37b7e
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-a-view"></a>Bir görünümü uygulama
 
 _Xamarin.Forms özel kullanıcı arabirimi denetimlerini düzenleri ve denetimleri ekranında yerleştirmek için kullanılan görünüm sınıfından türetilmelidir. Bu makalede Önizleme video akışına cihazın kameradan görüntülemek için kullanılan bir Xamarin.Forms özel denetim için özel Oluşturucu Oluşturma gösterilir._
 
-Her Xamarin.Forms görünüm yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu yok. Zaman bir [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) iOS, bir Xamarin.Forms uygulaması tarafından işlenen `ViewRenderer` sınıf örneği, hangi sırayla yerel başlatır `UIView` denetim. Android platformunda `ViewRenderer` sınıfı başlatır yerel `View` denetim. Windows Phone ve evrensel Windows Platformu (UWP) `ViewRenderer` sınıfı başlatır yerel `FrameworkElement` denetim. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Her Xamarin.Forms görünüm yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu yok. Zaman bir [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) iOS, bir Xamarin.Forms uygulaması tarafından işlenen `ViewRenderer` sınıf örneği, hangi sırayla yerel başlatır `UIView` denetim. Android platformunda `ViewRenderer` sınıfı başlatır yerel `View` denetim. Üzerinde Evrensel Windows Platformu (UWP), `ViewRenderer` sınıfı başlatır yerel `FrameworkElement` denetim. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Aşağıdaki diyagram arasındaki ilişkiyi gösterir [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) ve uyguladıktan karşılık gelen yerel denetimlere:
 
@@ -263,13 +263,13 @@ namespace CustomRenderer.Droid
 
 Koşuluyla `Control` özelliği `null`, `SetNativeControl` yöntemi yeni bir örneğini oluşturmak için çağrılır `CameraPreview` denetlemek ve kendisine bir başvuru atamak `Control` özelliği. `CameraPreview` Denetimidir kullanan platforma özgü özel bir denetim `Camera` kameradan Önizleme akışı sağlamak için API. `CameraPreview` Denetim ardından yapılandırılmış, koşuluyla özel Oluşturucu yeni bir Xamarin.Forms öğesine bağlı. Bu yapılandırma yeni bir yerel oluşturursunuz `Camera` belirli donanım kamera erişimini nesne ve işlemek için bir olay işleyicisi kaydetme `Click` olay. Sırayla Bu işleyici durdurun ve onu dokunduğunuz video önizlemesi başlattığınızda. `Click` Olay aboneliği kaldırılan gelen değişiklikler Xamarin.Forms öğesi Oluşturucu bağlıysa.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Windows Phone üzerinde özel Oluşturucu Oluşturma ve UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP üzerinde özel Oluşturucu Oluşturma
 
-Aşağıdaki kod örneği, Windows Phone ve UWP için özel Oluşturucu gösterir:
+Aşağıdaki kod örneğinde UWP için özel Oluşturucu gösterir:
 
 ```csharp
 [assembly: ExportRenderer (typeof(CameraPreview), typeof(CameraPreviewRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class CameraPreviewRenderer : ViewRenderer<CameraPreview, Windows.UI.Xaml.Controls.CaptureElement>
     {
@@ -317,7 +317,7 @@ namespace CustomRenderer.WinPhone81
 Koşuluyla `Control` özelliği `null`, yeni bir `CaptureElement` örneği ve `InitializeAsync` yöntemi çağrıldığında, kullanan `MediaCapture` kameradan Önizleme akışı sağlamak için API. `SetNativeControl` Yöntemi bir başvuru atamak için çağrıldıktan sonra `CaptureElement` için örnek `Control` özelliği. `CaptureElement` Kontrol çıkarır bir `Tapped` tarafından işlenen olay `OnCameraPreviewTapped` durdurmanız ve onu dokunduğunuz video önizlemesi başlattığınızda yöntemi. `Tapped` Olay abone için özel Oluşturucu yeni bir Xamarin.Forms öğesi bağlı ve yalnızca zaman Oluşturucu öğesi değişiklikleri bağlı gelen iptal.
 
 > [!NOTE]
-> Durdur ve bir Windows Phone ya da UWP uygulaması kamera erişim sağlayan nesnelerin silmek önemlidir. Bunun Sağlanamaması cihazın kamera erişmeye çalışan diğer uygulamalarla etkileyebilir. Daha fazla bilgi için bkz: ve [hızlı başlangıç: MediaCapture API'sini kullanarak video yakalama](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) Windows çalışma zamanı uygulamaları için ve [kamera önizlemesini görüntülemek](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) UWP uygulamalar için.
+> Durdur ve bir UWP uygulaması kameraya erişebilmesi nesnelerin silmek önemlidir. Bunun Sağlanamaması cihazın kamera erişmeye çalışan diğer uygulamalarla etkileyebilir. Daha fazla bilgi için bkz: [kamera önizlemesini görüntülemek](/windows/uwp/audio-video-camera/simple-camera-preview-access/).
 
 ## <a name="summary"></a>Özet
 

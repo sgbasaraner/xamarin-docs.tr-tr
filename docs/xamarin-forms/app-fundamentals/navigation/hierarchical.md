@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: afaf0c702cdba1ba9c5d2c9d158501c50501f910
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc5b24474230fd2b2477f020ac24cd72996d7b1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hierarchical-navigation"></a>Hiyerarşik gezinme
 
@@ -47,7 +47,7 @@ Düzenini bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamari
 
 - İos'ta, gezinti çubuğunda bir başlık görüntüler ve sahip sayfanın en üstünde bulunduğundan bir *geri* önceki sayfaya döner düğmesi.
 - Android, gezinti çubuğunda bir simge, bir başlığı görüntüler sayfanın en üstünde bulunduğundan ve bir *geri* önceki sayfaya döner düğmesi. Simge tanımlanan `[Activity]` süsler özniteliği `MainActivity` Android platforma özgü projesinde sınıfı.
-- Windows Phone üzerinde bir gezinti çubuğu bir başlık görüntüleyen sayfanın en üstünde mevcuttur. Windows Phone eksik *geri* çünkü gezinti çubuğunda düğmesini bir ekran *geri* düğmesi ekranın alt kısmında varsa.
+- Evrensel Windows platformu üzerinde bir gezinti çubuğu bir başlık görüntüleyen sayfanın en üstünde mevcuttur. 
 
 Tüm platformlarda değerini [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) özellik sayfası başlık olarak görüntülenir.
 

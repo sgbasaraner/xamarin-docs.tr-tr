@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d55d8c8d98828097c842cc383037db88097b963d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 035254f87e52801d5ff7419f9ad9d5503f060020
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="carousel-page"></a>Karusel sayfası
 
@@ -45,7 +45,7 @@ Sağdan sola taşır için ikinci sayfasında, aşağıdaki ekran görüntüleri
 - [Doldurmak](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage` alt koleksiyonuyla [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örnekleri.
 - [Ata](#Populating_a_CarouselPage_with_a_Template) bir koleksiyona [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) özelliği ve ata bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) için [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) döndürüleceközelliği[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) koleksiyonundaki nesneleri için örnek.
 
-Her iki yaklaşımın ile `CarouselPage` sonra görünen her sayfada görüntülenecek sonraki sayfaya taşıma manyetik etkileşim sırayla olur. Bu gezinme deneyimi doğal ve Windows Phone kullanıcıları tanıdık devam edebilir.
+Her iki yaklaşımın ile `CarouselPage` sonra görünen her sayfada görüntülenecek sonraki sayfaya taşıma manyetik etkileşim sırayla olur. 
 
 > [!NOTE]
 > A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) yalnızca ile doldurulabilir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örnekleri veya `ContentPage` türevleri.
@@ -246,7 +246,7 @@ Hakkında daha fazla bilgi için [ `CarouselPage` ](https://developer.xamarin.co
 
 ## <a name="summary"></a>Özet
 
-Bu makalede nasıl kullanılacağı gösterilmiştir bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) sayfaları toplulukta gidin. `CarouselPage` Bir galeri gibi içerik sayfaları arasında gezinmek için kullanıcıların yan yana doğru çekin bir sayfa ve doğal ve Windows Phone kullanıcıları tanıdık hissi bir gezinme deneyimi sağlar.
+Bu makalede nasıl kullanılacağı gösterilmiştir bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) sayfaları toplulukta gidin. `CarouselPage` Bir galeri benzediğini içerik sayfaları arasında gezinmek için kullanıcıların yan yana doğru çekin bir sayfadır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

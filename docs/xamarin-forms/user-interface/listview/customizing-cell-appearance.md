@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: df0e113f0c76ea9bde58da7a7ceccd50edd5b227
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 74f65021c23515e78e630f907a89ffde74de4da4
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="cell-appearance"></a>Hücre görünümü
 
@@ -62,8 +62,6 @@ TextCells işlenir yerel denetimlerini çalışma zamanında olarak özel bir k�
 - `TextColor` &ndash; metin rengi
 - `DetailColor` &ndash; Ayrıntı metin rengi
 - `ImageSource` &ndash; metnin yanında görüntülenecek resmi
-
-Windows Phone 8.1, hedeflerken unutmayın `ImageCell` görüntüleri varsayılan olarak ölçekleme sağlamaz. Ayrıca, Windows Phone 8.1 hangi ayrıntılı metin sunulan tek platformdur aynı renk ve yazı tipi varsayılan olarak birincil metin olarak olduğuna dikkat edin. Windows Phone 8.0 işler `ImageCell` aşağıda görüldüğü gibi:
 
 ![](customizing-cell-appearance-images/image-cell-default.png "Varsayılan ImageCell örneği")
 

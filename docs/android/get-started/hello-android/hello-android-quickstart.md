@@ -7,12 +7,12 @@ ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 44c3e4b0f05526560ff4b32808ba476110ce5e8f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hello-android-quickstart"></a>Merhaba, Android: Hızlı Başlangıç
 
@@ -114,7 +114,7 @@ Sonraki adım, telefon numaralarını alfasayısal sayısal çevirmek için baz�
 
 İçinde **Yeni Öğe Ekle** iletişim kutusunda **Visual C# > kod** ve yeni kod dosyası adı **PhoneTranslator.cs**:
 
-[![Add PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png#lightbox)
+[![PhoneTranslator.cs Ekle](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png#lightbox)
 
 Bu, yeni bir boş C# sınıfı oluşturur. Aşağıdaki kod bu dosyaya ekleyin:
 
@@ -185,11 +185,10 @@ Kullanıcı arabirimini oluşturan yedekleme koda ekleyerek wire üzere kod ekle
 (Resource.Layout.Main)` çağrıları. İlk olarak, şablonu kodu değiştirmek için `OnCreate` yöntemi aşağıdakine benzer:
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {
@@ -420,13 +419,10 @@ Kullanıcı arabirimini oluşturan yedekleme koda ekleyerek wire üzere kod ekle
 Başlamak için bir olay işleyicisi ekleyerek **çevir** düğmesi. İçinde `MainActivity` sınıfı, Bul `OnCreate` yöntemi. İçinde düğmesi kod ekleme `OnCreate`, aşağıdaki `base.OnCreate(bundle)` ve `SetContentView (Resource.Layout.Main)` çağrıları. Kod işleme şablonu düğmesini kaldırmak için `OnCreate` yöntemi aşağıdakine benzer:
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {

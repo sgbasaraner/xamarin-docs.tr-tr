@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 638243958fce34871089b10185f150492dbd2b0d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c27f94302037e4e19c9d72131e7137c8a4004d5c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="stacklayout"></a>StackLayout
 
@@ -215,8 +215,6 @@ Title="StackLayouts">
 Yukarıdaki kod aşağıdaki düzende sonuçları:
 
 ![](stack-layout-images/stack.png "Karmaşık StackLayout")
-
-Düğmeleri Windows Phone tarafından nasıl işlendiğini içinde bir fark nedeniyle dikkat edin, daireleri bazıları, Windows Phone ekran görüntüsü boxviews tarafından değiştirilmiştir.
 
 Dikkat `StackLayouts`s iç içe geçmiş, bazı durumlarda düzenleri iç içe geçme aynı düzen içindeki tüm öğeler sunma daha kolay olabilir çünkü. Ayrıca, çünkü dikkat `StackLayout` çakışan öğeleri sayfa değil sahip düzeni niceties bazıları içinde bulunan diğer düzenleri sayfaları desteklemiyor.
 

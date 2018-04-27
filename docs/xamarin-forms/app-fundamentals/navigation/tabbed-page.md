@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 11287d38ec0e01e068ca385c92e6a6efdc323aeb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4210f672cdc68acc45b1f547dcc2e6933298df93
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tabbed-page"></a>Sekmeli sayfası
 
@@ -39,7 +39,6 @@ Düzenini bir [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Fo
     > [!NOTE]
   > Uygulama Android kullanırken, her sekme ayrıca bir simge görüntülemek unutmayın. Ayrıca, `TabbedPageRenderer` Android uygulama bir overridable için `SetTabIcon` bir özel akıştan sekmesini simgeler yüklemek için kullanılan yöntem `Drawable`. Bu geçersiz kılma üzerinde simgelerle SVG görüntüleri kullanmayı mümkün kılar bir `TabbedPage`.
 
-- Windows Phone, ekranın en üstünde sekmeler listesi görüntülenir ve ayrıntı alanı aşağıdadır. Varsa bir ekranda sığması için çok fazla küçük ve kullanıcı adlarını otomatik olarak dönüştürülür bir sekmeye sekmeler koleksiyonunu.
 - Windows tablet form-faktörleri, sekmelerin her zaman görünmez ve kullanıcılar sağdan aşağı gerekir (veya bağlı fare varsa sağ tıklatın,) sekmeleri görüntülemek için bir `TabbedPage` (aşağıda gösterildiği gibi).
 
 ![](tabbed-page-images/windows-tabs.png "Windows TabbedPage sekmeleri")

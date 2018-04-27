@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 8d6276a96d591363c88be4ff7edd8a9d039fb29d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71c10e1de8b94b8d9799d144fb603c82c40ca9eb
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="colors"></a>Renkleri
 
@@ -44,7 +44,7 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-Bu renkler her platformda gösterilir. Son renk - fark `Accent` -blue-ish renk iOS ve Android; için bu değeri Xamarin.Forms tarafından tanımlanır. Windows Phone üzerinde `Accent` kırmızı gösterildiği *, bu cihaz için kullanıcı tarafından seçilen Aksan rengi olduğundan*; kullanıcının tercihlerini bağlı olarak bu değer değişiklikleri.
+Bu renkler her platformda gösterilir. Son renk - fark `Accent` -blue-ish renk iOS ve Android; için bu değeri Xamarin.Forms tarafından tanımlanır.
 
  [![Renk demo](colors-images/colors-sml.png "renk Demo")](colors-images/colors.png#lightbox "renk Tanıtımı")
 
@@ -59,8 +59,6 @@ Geliştiriciler ayarlamak için bu değeri kullanabilirsiniz bir `Color` özelli
 Temizlemek için rengini ayarlayın.
 
 ## <a name="coloraccent"></a>Color.Accent
-
-Windows Phone üzerinde kullanıcı tarafından seçilen tamamlayıcı renk budur. İyi Windows Phone uygulamaları kendi stil bir parçası olarak yerel bir görünüm sağlamak için bunu kullanın.
 
 İOS ve Android cihazlarda Bu örnek, varsayılan arka plan üzerinde görünür, ancak varsayılan metin rengi ile aynı değil karşıt bir renk ayarlanır.
 

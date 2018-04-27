@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 1e295ac424c311472ff175d4627c5fb12641d31f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dots-and-dashes"></a>Nokta ve tire
 
@@ -164,7 +164,7 @@ Bu sorunu gidermek, vuruş cap kullanırken almak için `Square` veya `Round`, d
 - {30, 10} hale {20, 20} kesikli çizgi için
 - {10, 10, 30, 10} {0, 20, 20, 20} için bir noktalı ve kesikli satır haline gelir.
 
-Noktalı ve kesikli satır bir vuruş yapmak için Windows ekran gösterir cap `Round`. `Round` Vuruş cap kalın satırlarında genellikle nokta ve tire en iyi görünümünü verir.
+Noktalı ve kesikli satır vuruş için UWP ekran gösterir cap `Round`. `Round` Vuruş cap kalın satırlarında genellikle nokta ve tire en iyi görünümünü verir.
 
 Şu ana kadar hiç ikinci parametrenin yapılmadığını `SKPathEffect.CreateDash` yöntemi. Bu parametre adlı `phase` satırının başına, nokta ve tire desen içindeki uzaklığı ifade eder. Örneğin, tire diziyse, {10, 10} ve `phase` 10'dur ve satır bir nokta yerine boşluk ile başlar.
 

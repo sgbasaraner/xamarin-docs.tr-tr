@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 09328e1c6d884898aed86f2cb8ab1b84bf6d5cab
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 52c86c63c328729211c4fbd22bd10b5eb1e56615
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="fonts"></a>Yazı Tipleri
 
@@ -50,7 +50,7 @@ label.FontSize = 24;
 
 Aynı zamanda `NamedSize` dört yerleşik seçenekleri; olan numaralandırması Xamarin.Forms her platform için en iyi boyutu seçer.
 
--  **Micro**
+-  **Mikro**
 -  **Küçük**
 -  **Orta**
 -  **Büyük**
@@ -166,7 +166,7 @@ Birden çok belirtmek için `Font` ayarları, gerekli ayarları tek yazı tipi �
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="MarkerFelt-Thin" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>
@@ -178,7 +178,7 @@ Birden çok belirtmek için `Font` ayarları, gerekli ayarları tek yazı tipi �
 
 ## <a name="using-a-custom-font"></a>Özel yazı tipi kullanma
 
-Yerleşik yazı dışında bir yazı tipi kullanarak bazı platforma özgü kodlama gerektirir. Bu ekran özel yazı tipi gösterir **Lobster** gelen [Google açık kaynak yazı tipleri](https://www.google.com/fonts) iOS, Android ve Windows Phone Xamarin.Forms kullanarak çizilir.
+Yerleşik yazı dışında bir yazı tipi kullanarak bazı platforma özgü kodlama gerektirir. Bu ekran özel yazı tipi gösterir **Lobster** gelen [Google açık kaynak yazı tipleri](https://www.google.com/fonts) Xamarin.Forms kullanılarak işlenir.
 
  [![İOS ve Android özel yazı tipi](fonts-images/custom-sml.png "özel yazı tipleri örnek")](fonts-images/custom.png#lightbox "özel yazı tipi örneği")
 
@@ -240,7 +240,7 @@ Aynı zamanda [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#pr
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="Lobster-Regular" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>

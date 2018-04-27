@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2018
-ms.openlocfilehash: 238e224a1dfbc17089c8b6d03e78043f77f3f383
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 18c49afdd08921b81573da94c23e66f1dd48a25f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Bir uygulama sürüm için hazırlama
 
@@ -192,7 +192,7 @@ Otomatik olarak hata ayıklama derlemeleri Not daha kolay hata ayıklama yapmak 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Bile [devre dışı hata ayıklama](#Disable_Debugging), yeniden ekleyerek veya yapılandırma seçeneklerini veya izinleri kaldırarak bir uygulama paketini saldırganlar için hala mümkündür. Bu ters mühendislik, hata ayıklama ya da yetkisiz değiştirmeye karşı uygulamayla sağlar.
-[Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) yönetilen kod belirsizleştirirseniz ve çalışma zamanı güvenlik durumu algılama kodu derleme zamanında bir Xamarin.Android uygulamasına ekleme için kullanılabilir.
+[Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) yönetilen kod belirsizleştirirseniz ve çalışma zamanı güvenlik durumu algılama kodu algılamak ve uygulama kökü belirtilmiş bir cihaz üzerinde çalışıp çalışmadığını yanıt vermek için derleme zamanında bir Xamarin.Android uygulamasına ekleme için kullanılabilir.
 
 Visual Studio ile Dotfuscator CE eklenmiştir, ancak yalnızca Visual Studio 2015 güncelleştirme 3 (ve üzeri) Xamarin.Android ile çalışmak için doğru sürümde. Dotfuscator kullanmak için tıklatın **Araçlar > PreEmptive tarafından koruması - Dotfuscator**.
 
@@ -202,7 +202,7 @@ Bunu yapılandırıldıktan sonra Dotfuscator CE otomatik olarak oluşturulan he
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Bile [devre dışı hata ayıklama](#Disable_Debugging), yeniden ekleyerek veya yapılandırma seçeneklerini veya izinleri kaldırarak bir uygulama paketini saldırganlar için hala mümkündür. Bu ters mühendislik, hata ayıklama ya da yetkisiz değiştirmeye karşı uygulamayla sağlar.
-Mac için Visual Studio desteklemez, ancak kullanabilirsiniz [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) yönetilen kod belirsizleştirirseniz ve çalışma zamanı güvenlik durumu algılama kodu derleme zamanında bir Xamarin.Android uygulamasına ekleme için Visual Studio ile .
+Mac için Visual Studio desteklemez, ancak kullanabilirsiniz [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) yönetilen kod belirsizleştirirseniz ve çalışma zamanı güvenlik durumu algılama kodu derleme zamanında bir Xamarin.Android uygulamasına ekleme için Visual Studio ile algılamak ve uygulama kökü belirtilmiş bir cihaz üzerinde çalışıp çalışmadığını yanıt vermek için.
 
 Dotfuscator CE yapılandırmak için lütfen bkz [kullanarak Dotfuscator Community Edition Xamarin ile](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator).
 Bunu yapılandırıldıktan sonra Dotfuscator CE otomatik olarak oluşturulan her yapı koruyun.
@@ -267,7 +267,7 @@ Bir Xamarin.Android uygulaması sürüm için hazırlık yaparken, desteklenen C
 Bu seçenek etkinleştirildiğinde, bir APK her desteklenen ABI's için oluşturulacak (seçili **Gelişmiş** sekmesinde, açıklandığı gibi [CPU mimarileri](~/android/app-fundamentals/cpu-architectures.md)) tüm desteklenen tek, büyük bir APK yerine ABI ait. Bu seçenek, yalnızca proje sürüm modu için yapılandırıldığında ve varsayılan olarak devre dışıdır.
 
 
-### <a name="multi-dex"></a>Multi-Dex
+### <a name="multi-dex"></a>Çok Dex
 
 Zaman **etkinleştirmek çok Dex** seçeneği etkin olduğunda, Android SDK Araçları 65 K yöntemi sınırını atlamak için kullanılan **.dex** dosya biçimi. 65K yöntemi sınırlaması Java yöntemleri sayısına göre bir uygulama _başvuruları_ (uygulama bağımlı kitaplıkları de dahil) &ndash; olan yöntemlerini sayısına göre değil _yazılan Kaynak kodu_. Uygulamanın yalnızca birkaç yöntemleri tanımlar ancak birçok kullanır (veya büyük kitaplıklar) 65 K sınırı aşıldı mümkündür.
 
@@ -304,7 +304,7 @@ Yayımlama işlemine başlamak için'nde projeye sağ **Çözüm Gezgini** seçi
 
 **Arşiv...**  başlatır **arşiv Yöneticisi** ve bu ekran görüntüsünde gösterildiği gibi uygulama paketi arşivleme işlemi başlar:
 
-[![Archive Manager](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png#lightbox)
+[![Arşiv Yöneticisi](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png#lightbox)
 
 Bir arşiv oluşturmak için başka bir çözüme sağ yoldur **Çözüm Gezgini** seçip **arşiv tüm...** , çözüm oluşturan ve bir arşiv oluşturabilirsiniz tüm Xamarin projeleri arşivler:
 

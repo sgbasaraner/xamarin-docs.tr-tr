@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 5956cd13708f4e7e73926fc01e6142d9cf4a8edb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3e96ce2064391d585943f4d79453f8b4f8c6f583
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>ActionBar sekmeli düzenleri
 
@@ -93,7 +93,7 @@ protected override void OnCreate(Bundle bundle)
     tab.SetIcon(Resource.Drawable.tab1_icon);
     tab.TabSelected += (sender, args) => {
                            // Do something when tab is selected
-                       }
+                       };
     ActionBar.AddTab(tab);
 
     tab = ActionBar.NewTab();
@@ -101,7 +101,7 @@ protected override void OnCreate(Bundle bundle)
     tab.SetIcon(Resource.Drawable.tab2_icon);
     tab.TabSelected += (sender, args) => {
                            // Do something when tab is selected
-                       }
+                       };
     ActionBar.AddTab(tab);
 }
 ```
@@ -184,5 +184,5 @@ Bu kılavuzda ActionBar kullanarak bir Xamarin.Android sekmeli kullanıcı arabi
 - [Eylem Çubuğu](http://developer.android.com/guide/topics/ui/actionbar.html)
 - [ActionBarActivity](http://developer.android.com/reference/android/support/v7/app/ActionBarActivity.html)
 - [Eylem çubuğu düzeni](http://developer.android.com/design/patterns/actionbar.html)
-- [Android v7 AppCompat](http://developer.android.com/tools/support-library/features.html#v7-appcompat)
+- [Android v7 uygulama](http://developer.android.com/tools/support-library/features.html#v7-appcompat)
 - [Xamarin.Android destek kitaplığı v7 uygulama NuGet paketi](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)

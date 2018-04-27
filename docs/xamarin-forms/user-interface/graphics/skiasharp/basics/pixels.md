@@ -7,11 +7,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: e01d3e228a0684865fb09dd7a4cbb0e2f0b49125
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 95f782fd4670782217d8ce4bc055341747a71170
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Piksel ve CİHAZDAN bağımsız birimler
 
@@ -102,7 +102,7 @@ Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
 
 Gördüğünüz gibi `CanvasSize` özelliği `SKCanvasView` ve `Size` özelliği `SKImageInfo` değeri piksel boyutlarını raporlamada tutarlı. `Height` Ve `Width` özelliklerini `SKCanvasView` Xamarin.Forms özellikleri ve platform tarafından tanımlanan CİHAZDAN bağımsız birim görünümünde boyutunu bildirin.
 
-CİHAZDAN bağımsız birim başına 2 piksel sol iOS 7 simulator'da sahip, Android Nexus 5 Merkezi'ndeki birim başına 3 piksel, ve Nokia Lumia 925 sağdaki birim başına 2,25 piksel sahiptir. Kullanıcının neden basit yuvarlak iPhone aynı boyutta hakkında gösterilen önceki görünüyor ve Windows phone, ancak Android phone'da küçük olduğunu.
+Sol taraftaki iOS 7 simulator CİHAZDAN bağımsız birim başına 2 piksel, ve Android Nexus 5 Merkezi'ndeki birim başına 3 piksel sahiptir. İşte bu nedenle daha önce gösterilen basit daire farklı boyutlarda farklı platformlarda sahiptir.
 
 Tamamen CİHAZDAN bağımsız birimler çalışmaya tercih ediyorsanız, bunu ayarlayarak yapabilirsiniz `IgnorePixelScaling` özelliği `SKCanvasView` için `true`. Ancak, sonuçlar beğenebileceğiniz değil. Grafik piksel boyutu CİHAZDAN bağımsız birimler görünümü boyutuna eşit olan küçük bir aygıt yüzeyinde SkiaSharp işler. (Örneğin, SkiaSharp 360 x 512 piksel görüntü yüzeyinin Nexus 5'te kullanırsınız.) Sonra görüntü boyutu, belirgin bit eşlem jaggies kaynaklanan ölçeklendirme yaparken.
 

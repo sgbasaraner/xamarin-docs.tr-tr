@@ -6,19 +6,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: d75c5714e53961ff5704c72b5508514f8cd2e898
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bcd277145de13a95a0b19aa4945b02078af52978
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Tablet ve Masaüstü uygulamaları için düzeni
 
 Xamarin.Forms desteklenen platformlarda kullanılabilir tüm cihaz türlerini destekler, bu nedenle telefonlarının yanı sıra, uygulamalar üzerinde de çalışabilir:
 
-* iPads,
+* iPad cihazları,
 * Android tabletler
-* Windows tabletler ve masaüstü bilgisayarlar (Windows 8.1 veya Windows 10 çalıştıran).
+* Windows tabletler ve masaüstü bilgisayarlar (Windows 10 çalıştıran).
 
 Bu sayfa kısaca ele alınmıştır:
 
@@ -53,12 +53,7 @@ Gözden geçirme [Android kaynakları](~/android/app-fundamentals/resources-in-a
 
 ### <a name="windows-tablets-and-desktops"></a>Windows tabletler ve masaüstü bilgisayarlar
 
-Tablet ve Windows çalıştıran masaüstü bilgisayarları desteklemek için iki desteklenen proje türleri birini kullanmanız gerekir:
-
-* [Windows 8.1](~/xamarin-forms/platform/windows/installation/tablet.md) -
-  özellikle Windows 8.1 tabletler ve masaüstü bilgisayarlar için uygulamalar oluşturur.
-* [Windows UWP Destek](~/xamarin-forms/platform/windows/installation/universal.md) -
-  hem Windows 10 telefonlar, tabletler ve masaüstü bilgisayarlar üzerinde çalışan Evrensel uygulamalar oluşturur.
+Tablet ve Windows çalıştıran masaüstü bilgisayarları desteklemek için kullanmanız gerekecektir [Windows UWP Destek](~/xamarin-forms/platform/windows/installation/index.md), Windows 10 çalıştıran Evrensel uygulamaları oluşturur.
 
 Windows tabletler ve masaüstü bilgisayarlar üzerinde çalışan uygulamalar için rastgele boyutları ayrıca çalışan tam ekran için boyutlandırılabilir.
 

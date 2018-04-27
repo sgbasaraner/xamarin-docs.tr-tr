@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 9d822444196479dabd19f43f45f289117f64c05e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-listview"></a>ListView özelleştirme
 
 _Xamarin.Forms ListView dikey bir liste olarak verilerinin bir koleksiyonunu görüntüleyen bir görünüm değil. Bu makalede, yerel liste denetimi performansı hakkında daha fazla denetime izin vererek platforma özgü liste denetimleri ve yerel hücre düzenleri yalıtan özel Oluşturucu Oluşturma gösterilir._
 
-Her Xamarin.Forms görünüm yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu yok. Zaman bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) iOS içinde bir Xamarin.Forms uygulaması tarafından işlenen `ListViewRenderer` sınıf örneği, hangi sırayla yerel başlatır `UITableView` denetim. Android platformunda `ListViewRenderer` sınıfı başlatır yerel `ListView` denetim. Windows Phone ve evrensel Windows Platformu (UWP) `ListViewRenderer` sınıfı başlatır yerel `ListView` denetim. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Her Xamarin.Forms görünüm yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu yok. Zaman bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) iOS içinde bir Xamarin.Forms uygulaması tarafından işlenen `ListViewRenderer` sınıf örneği, hangi sırayla yerel başlatır `UITableView` denetim. Android platformunda `ListViewRenderer` sınıfı başlatır yerel `ListView` denetim. Üzerinde Evrensel Windows Platformu (UWP), `ListViewRenderer` sınıfı başlatır yerel `ListView` denetim. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Aşağıdaki diyagram arasındaki ilişkiyi gösterir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ve uyguladıktan karşılık gelen yerel denetimi:
 
@@ -467,15 +467,15 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 
 Yöntemi, yeni bir örneğini oluşturur `NativeAndroidListViewAdapter` yerel veri sağlayan sınıf `ListView` denetlemek, bağlanabilirse sağlanan `NativeListView.Items` özelliği değişti.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Windows Phone üzerinde özel Oluşturucu Oluşturma ve UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP üzerinde özel Oluşturucu Oluşturma
 
-Aşağıdaki kod örneği, Windows Phone ve UWP için özel Oluşturucu gösterir:
+Aşağıdaki kod örneğinde UWP için özel Oluşturucu gösterir:
 
 ```csharp
-[assembly: ExportRenderer (typeof(NativeListView), typeof(NativeWinPhoneListViewRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeListView), typeof(NativeUWPListViewRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneListViewRenderer : ListViewRenderer
+    public class NativeUWPListViewRenderer : ListViewRenderer
     {
         ListView listView;
 

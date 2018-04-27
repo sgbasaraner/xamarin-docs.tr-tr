@@ -6,12 +6,12 @@ ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: e8d1064e76c2ccdeb14302d30428cd932444a0f5
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.date: 04/26/2018
+ms.openlocfilehash: f5c05ce308a10747ad3e18e4a1d141d29fd6c8a1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms hızlı başlangıç
 
@@ -29,13 +29,13 @@ Phoneword uygulama gibi oluşturun:
 
 2. Visual Studio'da sırasıyla **yeni proje oluştur...**  yeni bir proje oluşturmak için:
 
-    ![](quickstart-images/vs/new-solution.png "New Project")
+    ![](quickstart-images/vs/new-solution.png "Yeni Proje")
 
 3. İçinde **yeni proje** iletişim kutusunda, tıklatın **platformlar arası**seçin **mobil uygulama (Xamarin.Forms)** şablon kümesi adı ve çözüm adı `Phoneword`, seçin bir ' a tıklayın ve proje için uygun konumu **Tamam** düğmesi:
 
     ![](quickstart-images/vs/new-project.png "Platformlar arası proje şablonları")
 
-4. İçinde **yeni Çapraz Platform uygulaması** iletişim kutusunda, tıklatın **boş uygulama**seçin **Xamarin.Forms** UI teknoloji olarak seçin **.NET standart** olarak Kod paylaşımı stratejisi ve tıklatın **Tamam** düğmesi:
+4. İçinde **yeni Çapraz Platform uygulaması** iletişim kutusunda, tıklatın **boş uygulama**seçin **.NET standart** kod paylaşımı stratejisi ve tıklatın olarak **Tamam** düğmesi:
 
     ![](quickstart-images/vs/new-app.png "Yeni platformlar arası uygulaması")
 
@@ -53,7 +53,7 @@ Phoneword uygulama gibi oluşturun:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -523,7 +523,7 @@ Phoneword uygulama gibi oluşturun:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -630,7 +630,7 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **Phoneword.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **App.xaml.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 13. İçinde **çözüm paneli**seçin **Phoneword** proje, sağ tıklatın ve seçin **Ekle > yeni dosya...** :
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 1e1039f513534885dffe9fef348d567243651e22
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 5c9eed8f48a40bc7feaadd0c644610f691713e9b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="app-class"></a>Uygulama sınıfı
 
@@ -26,7 +26,7 @@ Ayrıca sunan [yaşam döngüsü yöntemleri](~/xamarin-forms/app-fundamentals/a
 Seçtiğiniz şablonun bağlı olarak, `App` sınıfı tanımlanması iki yoldan biriyle:
 
 * **C#**, veya
-* **XAML & C#**
+* **XAML VE C#**
 
 Oluşturmak için bir **uygulama** XAML, varsayılan kullanılarak sınıf **uygulama** XAML ile sınıfı yerini **uygulama** sınıfı ve ilişkili arka plan kod, aşağıdaki kod örneğinde gösterildiği gibi:
 
@@ -149,7 +149,7 @@ Bu sınıf sonra her platforma özgü projesinde örneği ve geçirilen `LoadApp
 Her platform için kod aşağıdaki bölümlerde gösterilmiştir. En son Xamarin.Forms çözümünü şablonlar zaten uygulamanız için önceden yapılandırılmış tüm bu kodu içerir.
 
 
-### <a name="ios-project"></a>iOS Project
+### <a name="ios-project"></a>iOS projesi
 
 İOS `AppDelegate` şimdi sınıfının devraldığı `FormsApplicationDelegate`. Olmalıdır:
 
@@ -173,7 +173,7 @@ public partial class AppDelegate :
 }
 ```
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Android projesi
 
 Android `MainActivity` şimdi devraldığı `FormsApplicationActivity`. İçinde `OnCreate` geçersiz kılma `LoadApplication` yöntemi örneği ile çağrılır `App` sınıfı.
 
@@ -198,70 +198,9 @@ public class MainActivity :
 > Var olan daha yeni bir [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) temel Android malzeme tasarım daha iyi desteklemek için kullanılan sınıfı.
 > Bu varsayılan Android şablonu gelecekte olur, ancak izleyebilirsiniz [bu yönergeleri](~/xamarin-forms/platform/android/appcompat.md) mevcut Android uygulamalarınızı güncelleştirmek için.
 
-
-### <a name="windows-phone-project"></a>Windows Phone Project
-
-Ana sayfa (Silverlight tabanlı) Windows Phone projedeki alması gerektiğini `FormsApplicationPage`. Bunun anlamı XAML ve C# ' ta `MainPage` başvuru `FormsApplicationPage` sınıfında gösterildiği gibi.
-
-XAML, özel bir ad alanı kullanır, böylece kök öğesi yansıtır `FormsApplicationPage` sınıfı:
-
-```xaml
-<winPhone:FormsApplicationPage
-   ...
-   xmlns:winPhone="clr-namespace:Xamarin.Forms.Platform.WinPhone;assembly=Xamarin.Forms.Platform.WP8"
-    ...>
-</winPhone:FormsApplicationPage>
-```
-
-C# öğesinden devralınan `FormsApplicationPage` sınıfı ve çağrıları `LoadApplication` , Xamarin.Forms örneği oluşturmak için `App`. Açıkça nitelemek için uygulama ad alanını kullanmak için iyi bir uygulama olduğuna dikkat edin `App` Windows Phone uygulamaları da kendi olduğundan `App` Xamarin.Forms için ilgisiz sınıfı.
-
-```csharp
-public partial class MainPage :
-    global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage // superclass new in 1.3
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-
-        global::Xamarin.Forms.Forms.Init();
-        LoadApplication(new YOUR_APP_NAMESPACE.App()); // new in 1.3, use the correct namespace
-    }
- }
-```
-
-### <a name="windows-81-project"></a>Windows 8.1 Project
-
-Ana sayfanın [Windows 8.1 (WinRT tabanlı)](~/xamarin-forms/platform/windows/installation/tablet.md) projeleri şimdi öğesinden devralınan `WindowsPage`. XAML için yani `MainPage` başvuru `WindowsPage` sınıfında gösterildiği gibi:
-
-XAML, özel bir ad alanı kullanır, böylece kök öğesi yansıtır `FormsApplicationPage` sınıfı:
-
-```xaml
-<forms:WindowsPage
-   ...
-   xmlns:forms="using:Xamarin.Forms.Platform.WinRT"
-   ...>
-</forms:WindowsPage>
-```
-
-C# arkasındaki koda 's yapım çağırmalısınız `LoadApplication` , Xamarin.Forms örneği oluşturmak için `App`. Açıkça nitelemek için uygulama ad alanını kullanmak için iyi bir uygulama olduğuna dikkat edin `App` UWP uygulamaları da kendi olduğundan `App` Xamarin.Forms için ilgisiz sınıfı.
-
-```csharp
-public partial class MainPage
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        LoadApplication(new YOUR_APP_NAMESPACE.App());
-    }
- }
-```
-
-Unutmayın `Forms.Init()` çağrılması gerekir **App.xaml.cs** satır 65 geçici.
-
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>Windows 10 için evrensel Windows projesi (UWP)
 
-[Evrensel Windows projesi](~/xamarin-forms/platform/windows/installation/universal.md) Xamarin.Forms desteği şu anda önizlemede.
+Bkz: [kurulum Windows projeleri](~/xamarin-forms/platform/windows/installation/index.md) Xamarin.Forms UWP desteği hakkında bilgi için.
 
 Ana sayfanın UWP projesini alması gerektiğini `WindowsPage`. Bunun anlamı XAML ve C# ' ta `MainPage` başvuru `FormsApplicationPage` sınıfında gösterildiği gibi.
 

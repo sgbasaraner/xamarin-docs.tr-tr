@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: a153791893f99a472c3fcf91a205bf91ed971e13
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ddd779fc7eb1a10e74c68504367083ff0efcdfcd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -53,7 +53,7 @@ ListView hücreleri özelleştirme hakkında daha fazla bilgi için bkz: [ListVi
 ListView gibi etkileşim stilleri destekler:
 
 - **[Çekme yenileme](interactivity.md#Pull_to_Refresh)**  &ndash; ListView her platformda çekme yenileme destekler.
-- **[Bağlam Eylemler](interactivity.md#Context_Actions)**  &ndash; ListView listesini tek tek öğelerde alma eylemini destekler. Örneğin, İos'ta manyetik eylemi uygulamak veya uzun dokunma Android ve Windows Phone eylemler.
+- **[Bağlam Eylemler](interactivity.md#Context_Actions)**  &ndash; ListView listesini tek tek öğelerde alma eylemini destekler. Örneğin, İos'ta manyetik eylemi uygulamak veya uzun dokunma Android eylemler.
 - **[Seçim](interactivity.md#selectiontaps)**  &ndash; seçimleri ve bir satır dokunduğunuz durumlarda eyleme kaldırılmasına için dinler.
 
 ![](images/context-default.png "ListView bağlam eylemleri ile")

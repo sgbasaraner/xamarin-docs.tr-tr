@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 24d9dd332275fd811c0ff60fc514ae0f84c6ee07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 864e81b6955fd5138c4055a3f202695803139ac6
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="layouts"></a>Düzenleri
 
@@ -180,7 +180,7 @@ Xamarin.Forms ve yerleşik düzenleri cihaz yönlendirmesini değişiklikleri i�
 
 ### <a name="layout-for-tablet-and-desktop-appstabletmd"></a>[Tablet ve Masaüstü uygulamaları için düzeni](tablet.md)
 
-iOS, Android ve Windows platformları üzerinde büyük ekran boyutlarına desteklemez tablet aygıtları (yanı sıra dizüstü ve masaüstü bilgisayarlar Windows için). Xamarin.Forms cihaz türüne ve sayfa düzeni ayarlama algılama veya farklı bir sayfa için büyük ekranlar tamamen kullanarak uygulamanızı büyük ekranlar için en iyi hale getirmenize olanak tanır.
+iOS, Android ve evrensel Windows platformu üzerinde büyük ekran boyutlarına desteklemez tablet aygıtları (yanı sıra dizüstü ve masaüstü bilgisayarlar Windows için). Xamarin.Forms cihaz türüne ve sayfa düzeni ayarlama algılama veya farklı bir sayfa için büyük ekranlar tamamen kullanarak uygulamanızı büyük ekranlar için en iyi hale getirmenize olanak tanır.
 
 ### <a name="creating-a-custom-layoutcustommd"></a>[Özel Düzen Oluşturma](custom.md)
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.openlocfilehash: ed37e723d4b1a7997890c41886df8d117425e270
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="webview"></a>Web görünümü
 
@@ -33,12 +33,12 @@ Bu kılavuz aşağıdaki bölümlerden oluşur:
 Web görünümü şu içerik türlerini desteği ile birlikte gelir:
 
 - HTML ve CSS Web siteleri &ndash; WebView HTML ve CSS, JavaScript desteği dahil olmak üzere kullanılarak yazılan Web siteleri için tam destek vardır.
-- Belgeleri &ndash; WebView yerel bileşenleri her platformda kullanılarak uygulanır, Web görünümü her platformda görüntülenebilir belgeleri görüntüleyebiliyorsa olmasıdır. PDF dosyalarını iOS ve Android ancak olmayan Windows Phone iş anlamına gelir.
+- Belgeleri &ndash; WebView yerel bileşenleri her platformda kullanılarak uygulanır, Web görünümü her platformda görüntülenebilir belgeleri görüntüleyebiliyorsa olmasıdır. PDF dosyalarını iOS ve Android iş anlamına gelir.
 - HTML dizelerini &ndash; WebView bellek HTML dizelerden gösterebilir.
 - Yerel dosya &ndash; WebView türlerinden herhangi birini içerik yukarıdaki uygulamada katıştırılmış sunabileceği.
 
 > [!NOTE]
-> `WebView` Internet Explorer'ın bu platformda desteklenir olsa bile Windows ve Windows Phone Silverlight, Flash veya herhangi bir ActiveX denetimini desteklemiyor.
+> `WebView` Internet Explorer'ın bu platformda desteklenir olsa bile Windows Silverlight, Flash veya herhangi bir ActiveX denetimini desteklemiyor.
 
 ### <a name="websites"></a>Web siteleri
 
@@ -110,7 +110,7 @@ browser.Source = htmlSource;
 
 Yukarıdaki kod `@` HTML olarak bir dize değişmez değer, tüm olağan kaçış karakterleri yoksayılır anlamı işaretlemek için kullanılır.
 
-### <a name="local-html-content"></a>Local HTML Content
+### <a name="local-html-content"></a>Yerel HTML içeriği
 
 Web görünümü HTML, CSS içeriğini görüntüleyebilir ve Javascript uygulama içinde katıştırılmış. Örneğin:
 
@@ -231,28 +231,9 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
 }
 ```
 
-#### <a name="windows-phone"></a>Windows Phone
+#### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
-Windows Phone üzerinde HTML, CSS ve görüntüleri proje kök dizininde kümesine yapı eylemiyle yerleştirin *içerik* aşağıda gösterildiği gibi:
-
-![](webview-images/windows-vs.png "Windows Phone yerel dosyaları")
-
-Windows Phone üzerinde `BaseUrl` ayarlanmalı `""`:
-
-```csharp
-[assembly: Dependency (typeof(BaseUrl_Windows))]
-namespace WorkingWithWebview.Windows {
-  public class BaseUrl_Windows : IBaseUrl {
-    public string Get() {
-      return "";
-    }
-  }
-}
-```
-
-#### <a name="windows-runtime-and-universal-windows-platform"></a>Windows çalışma zamanı ve evrensel Windows platformu
-
-Windows çalışma zamanı ve evrensel Windows Platformu (UWP) projelerde HTML, CSS ve görüntüleri proje kök dizininde kümesine yapı eylemiyle yerleştirin *içerik*.
+Evrensel Windows Platformu (UWP) projelerde HTML, CSS ve görüntüleri proje kök dizininde kümesine yapı eylemiyle yerleştirin *içerik*.
 
 `BaseUrl` Ayarlanmalı `"ms-appx-web:///"`:
 
@@ -402,14 +383,11 @@ Varsayılan olarak android'de WebView yerleşik tarayıcı olarak yaklaşık ola
 
 [UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) Microsoft Edge işleme altyapısı kullanır. Masaüstü ve tablet aygıtları aynı performans Edge tarayıcı kullanarak olarak görmeniz gerekir.
 
-`WebBrowser` Denetimi Windows Phone 8 ve Windows Phone 8.1 mu değil destek en yeni HTML5 özellikleri ve performansın sıklıkla olabilir. Siteleri Windows Phone içinde 's nasıl görüntüleneceğini unutmayın `WebView`. Internet Explorer'da test etmek yeterli değil.
-
 ## <a name="permissions"></a>İzinler
 
 Sırayla `WebView` çalışmak için her platform için izinlerinin ayarlandığından emin olmanız gerekir. Bazı platformlarda unutmayın `WebView` hata ayıklama modunda, ancak sürüm için değil yapılandırıldığında çalışır. Hata ayıklama modunda Mac için Visual Studio tarafından varsayılan olarak android'de internet erişimi için olanlar gibi bazı izinler ayarlanan olmasıdır.
 
-- **Windows Phone 8.0** &ndash; gerektirir `ID_CAP_WEBBROWSERCOMPONENT` denetiminin ve `ID_CAP_NETWORKING` internet erişimi için.
-- **Windows Phone 8.1 ve UWP** &ndash; ağ içerik görüntülerken, Internet (istemci ve sunucu) özelliği gerektirir.
+- **UWP** &ndash; ağ içerik görüntülerken, Internet (istemci ve sunucu) özelliği gerektirir.
 - **Android** &ndash; gerektirir `INTERNET` içeriği ağdan görüntülenirken. Yerel içerik özel izinler gerektirir.
 - **iOS** &ndash; özel izinler gerektirir.
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/15/2016
-ms.openlocfilehash: 9402bd53ab3bfb0b11182eb700aa560e8f962de3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 513b9b3738b9481444cdad10daa9b11a8441c9dd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>Oluşturucu temel sınıflar ve yerel denetimleri
 
@@ -34,7 +34,7 @@ Dışında `MapRenderer` sınıfı, platforma özgü Oluşturucu aşağıdaki ad
 
 Aşağıdaki tabloda her Xamarin.Forms uygulaması yerel denetim sınıfları ve oluşturucu listeler [sayfa](~/xamarin-forms/user-interface/controls/pages.md) türü:
 
-|Sayfa|Renderer|iOS|Android|Android (uygulama)|UWP|
+|Sayfa|Oluşturucu|iOS|Android|Android (uygulama)|UWP|
 |--- |--- |--- |--- |--- |--- |
 |[`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)|[PageRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/contentpage.md)|UIViewController|ViewGroup||FrameworkElement|
 |[`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)|PhoneMasterDetailRenderer (iOS – telefon), TabletMasterDetailPageRenderer (iOS – Tablet), MasterDetailRenderer (Android), MasterDetailPageRenderer (Android uygulama), MasterDetailPageRenderer (UWP)|UIViewController (telefon) UISplitViewController (Tablet)|DrawerLayout (v4)|DrawerLayout (v4)|FrameworkElement (özel denetimi)|
@@ -47,7 +47,7 @@ Aşağıdaki tabloda her Xamarin.Forms uygulaması yerel denetim sınıfları ve
 
 Aşağıdaki tabloda her Xamarin.Forms uygulaması yerel denetim sınıfları ve oluşturucu listeler [düzeni](~/xamarin-forms/user-interface/controls/layouts.md) türü:
 
-|Düzen|Renderer|iOS|Android|UWP|
+|Düzen|Oluşturucu|iOS|Android|UWP|
 |--- |--- |--- |--- |--- |
 |[`ContentPresenter`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)|ViewRenderer|UIView|Görüntüle|FrameworkElement|
 |[`ContentView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)|ViewRenderer|UIView|Görüntüle|FrameworkElement|
@@ -63,10 +63,10 @@ Aşağıdaki tabloda her Xamarin.Forms uygulaması yerel denetim sınıfları ve
 
 Aşağıdaki tabloda her Xamarin.Forms uygulaması yerel denetim sınıfları ve oluşturucu listeler [Görünüm](~/xamarin-forms/user-interface/controls/views.md) türü:
 
-|Görünümler|Renderer|iOS|Android|Android (uygulama)|UWP|
+|Görünümler|Oluşturucu|iOS|Android|Android (uygulama)|UWP|
 |--- |--- |--- |--- |--- |--- |
 |[`ActivityIndicator`](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
-|[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)|BoxRenderer (iOS ve Android), BoxViewRenderer (Windows Phone ve WinRT)|UIView|ViewGroup||Dikdörtgen|
+|[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)|BoxRenderer (iOS ve Android), BoxViewRenderer (UWP)|UIView|ViewGroup||Dikdörtgen|
 |[`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)|ButtonRenderer|UIButton|Düğme|AppCompatButton|Düğme|
 |[`CarouselView`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselView/)|CarouselViewRenderer|UIScrollView|RecyclerView||FlipView|
 |[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)|DatePickerRenderer|UITextField|EditText||DatePicker|
@@ -90,7 +90,7 @@ Aşağıdaki tabloda her Xamarin.Forms uygulaması yerel denetim sınıfları ve
 
 Aşağıdaki tabloda her Xamarin.Forms uygulaması yerel denetim sınıfları ve oluşturucu listeler [hücre](~/xamarin-forms/user-interface/controls/cells.md) türü:
 
-|Hücreleri|Renderer|iOS|Android|UWP|
+|Hücreleri|Oluşturucu|iOS|Android|UWP|
 |--- |--- |--- |--- |--- |
 |[`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/)|EntryCellRenderer|Bir UITextField ile UITableViewCell|LinearLayout kutusu TextView ve EDITTEXT|Metin kutusu ile DataTemplate|
 |[`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/)|SwitchCellRenderer|Bir UISwitch ile UITableViewCell|Anahtar|DataTemplate TextBlock ve ToggleSwitch içeren bir Kılavuzu|

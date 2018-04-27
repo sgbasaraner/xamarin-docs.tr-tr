@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 511a7052b07a853279f91211b3e3b1219f125c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d16c45b7f7cb7eef67a905b6fbcb9b8675b0b2ba
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview-interactivity"></a>ListView etkileşim
 
@@ -53,12 +53,10 @@ Seçimi etkin:
 
 ![](interactivity-images/selection-default.png "ListView etkin seçimle")
 
-Windows Phone dahil olmak üzere bazı hücreler unutmayın `SwitchCell` visual durumlarına seçimi yanıtta güncelleştirme.
-
 <a name="Context_Actions" />
 
 ## <a name="context-actions"></a>Bağlam Eylemler
-Genellikle, kullanıcıların bir öğe üzerinde eyleme isteyeceksiniz bir `ListView`. Örneğin, e-postaları için posta uygulama listesini göz önünde bulundurun. İOS, ileti silmek için doğru çekin ve Windows Phone üzerinde bir ileti uzun tuşuna basın ve sonra silin:
+Genellikle, kullanıcıların bir öğe üzerinde eyleme isteyeceksiniz bir `ListView`. Örneğin, e-postaları için posta uygulama listesini göz önünde bulundurun. İOS, ileti silmek için doğru çekin::
 
 ![](interactivity-images/context-default.png "ListView bağlam eylemleri ile")
 
@@ -149,8 +147,6 @@ listView.IsPullToRefreshEnabled = true;
 ![](interactivity-images/refresh-start.png "ListView sürüyor yenilemek için çekme")
 
 Çekme yenileme kullanıcı olarak çekme yayımladı. Liste güncelleştiriliyor sırada ne kullanıcının gördüğü budur: ![ ] (interactivity-images/refresh-in-progress.png "ListView isteme yenileme tamamlandı")
-
-Xamarin.Forms 1.4.3 itibariyle Windows Phone 8.1 çekme yenileme desteklenmemektedir unutmayın. Çekme yenileme uygulaması Xamarin.Forms tarafından sağlanan Windows phone 8, çekme yenileme yerel platform özelliği olmadığından. Son olarak, unutmayın (diğer bir deyişle, dikey kaydırma gerekli değilse), listedeki tüm öğelerin ekranda sığabilecek o çekme yenileme Windows Phone üzerinde çalışmaz.
 
 ListView çekme yenileme olaylara yanıt olanak sağlayan birkaç olayları gösterir.
 

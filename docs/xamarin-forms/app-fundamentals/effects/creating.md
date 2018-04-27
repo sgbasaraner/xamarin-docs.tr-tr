@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 773636cf879439477a6f71e44f13ae66b8f10ea8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="creating-an-effect"></a>Efekt oluşturma
 
@@ -43,7 +43,7 @@ Bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) den
 
 Aşağıdaki bölümlerde platforma özgü uygulanması açıklanmaktadır `FocusEffect` sınıfı.
 
-## <a name="ios-project"></a>iOS Project
+## <a name="ios-project"></a>iOS projesi
 
 Aşağıdaki örnekte gösterildiği kod `FocusEffect` uygulama iOS projesi için:
 
@@ -96,7 +96,7 @@ namespace EffectsDemo.iOS
 
 `OnElementPropertyChanged` Geçersiz kılma bağlanabilirse özellik değişikliklerini Xamarin.Forms denetimindeki yanıt verir. Zaman [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) özellik değişikliklerini `BackgroundColor` denetiminin özelliği denetimi odağı varsa beyaza değiştirilmiş, aksi takdirde Açık Mor olarak değiştirilir. Bu işlev içinde kaydırılan bir `try` / `catch` durumda etkisi eklendiği denetimi yoktur engelleme bir `BackgroundColor` özelliği.
 
-## <a name="android-project"></a>Android Project
+## <a name="android-project"></a>Android projesi
 
 Aşağıdaki örnekte gösterildiği kod `FocusEffect` uygulama Android projesi için:
 
@@ -150,17 +150,17 @@ namespace EffectsDemo.Droid
 
 `OnElementPropertyChanged` Geçersiz kılma bağlanabilirse özellik değişikliklerini Xamarin.Forms denetimindeki yanıt verir. Zaman [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) özellik değişikliklerini denetimi odağı varsa denetimin arka plan rengi beyaz değiştirildiğinde, aksi takdirde açık yeşil değiştirilir. Bu işlev içinde kaydırılan bir `try` / `catch` durumda etkisi eklendiği denetimi yoktur engelleme bir `BackgroundColor` özelliği.
 
-## <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone & Evrensel Windows platformu projeleri
+## <a name="universal-windows-platform-projects"></a>Evrensel Windows platformu projeleri
 
-Aşağıdaki örnekte gösterildiği kod `FocusEffect` uygulaması Windows Phone ve evrensel Windows Platformu (UWP) projeleri için:
+Aşağıdaki örnekte gösterildiği kod `FocusEffect` uygulama Evrensel Windows Platformu (UWP) projeleri için:
 
 ```csharp
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.WinRT;
+using Xamarin.Forms.Platform.UWP;
 
 [assembly: ResolutionGroupName("MyCompany")]
 [assembly: ExportEffect(typeof(FocusEffect), "FocusEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class FocusEffect : PlatformEffect
     {

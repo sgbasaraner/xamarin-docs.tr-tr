@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: f1f0bb0ce282479a7b185257880244863bb67a60
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="list-appearance"></a>Liste Görünümü
 
@@ -35,7 +35,7 @@ Gruplandırma etkinleştirmek için:
 - Ayarlama `ListView`'s `ItemsSource` bu listeye.
 - Ayarlama `IsGroupingEnabled` true.
 - Ayarlama [ `GroupDisplayBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/) grup başlığı olarak kullanılan özellik gruplarının bağlamak için.
-- [İsteğe bağlı] Ayarlama [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) grubu için kısa bir ad olarak kullanılan özellik gruplarının bağlamak için. Kısa ad bağlantı listeleri (iOS, Windows Phone üzerinde döşeme rigt tarafı sütun) için kullanılır.
+- [İsteğe bağlı] Ayarlama [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) grubu için kısa bir ad olarak kullanılan özellik gruplarının bağlamak için. Kısa ad bağlantı listeleri (sağ taraftaki sütun iOS) için kullanılır.
 
 Grupları için bir sınıf oluşturarak başlayın:
 
@@ -120,7 +120,7 @@ Bizim Not:
 
 Listesinde gruplama etkinleştirilmişse grup üstbilgisi da özelleştirilebilir.
 
-Benzer şekilde nasıl `ListView` sahip bir `ItemTemplate` satırları görüntülenme tanımlamak için `ListView` sahip bir `GroupHeaderTemplate`. 
+Benzer şekilde nasıl `ListView` sahip bir `ItemTemplate` satırları görüntülenme tanımlamak için `ListView` sahip bir `GroupHeaderTemplate`.
 
 XAML Grup üstbilgisinde özelleştirilmesine bir örnek aşağıda gösterilmiştir:
 
@@ -206,7 +206,7 @@ XAML'de:
 <a name="Row_Separators" />
 
 ## <a name="row-separators"></a>Satır ayırıcı
-Ayırıcı satırlar arasında görüntülenir `ListView` öğeleri varsayılan olarak iOS ve Android. Windows Phone bu platformları UX yönergeleri başına ayırıcı satırları desteklemez. İOS ve Android ayırıcı satırlarında gizlemek tercih ediyorsanız, ayarlamak `SeparatorVisibility` , ListView özelliği. Seçeneklerini `SeparatorVisibility` şunlardır:
+Ayırıcı satırlar arasında görüntülenir `ListView` öğeleri varsayılan olarak iOS ve Android. İOS ve Android ayırıcı satırlarında gizlemek tercih ediyorsanız, ayarlamak `SeparatorVisibility` , ListView özelliği. Seçeneklerini `SeparatorVisibility` şunlardır:
 
 * **Varsayılan** -iOS ve Android cihazlarda bir ayırıcı satır gösterir.
 * **Hiçbiri** -tüm platformlarda ayırıcı gizler.

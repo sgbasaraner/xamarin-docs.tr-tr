@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 01953d55a104a70b0451c9b796c732254afb081e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88821c5315fc338b5195e42ea4b2bc3e648e6ea1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService giriş
 
@@ -48,53 +48,64 @@ public interface ITextToSpeech {
 
 ### <a name="implementation-per-platform"></a>Uygulama platformu başına
 
-Uygun bir arabirim tasarlanmış sonra bu arabirim, hedeflediğiniz her platform için projedeki uygulanmalıdır. Örneğin, aşağıdaki uygulayan sınıflar `ITextToSpeech` Windows Phone arabiriminde:
+Uygun bir arabirim tasarlanmış sonra bu arabirim, hedeflediğiniz her platform için projedeki uygulanmalıdır. Örneğin, aşağıdaki uygulayan sınıf `ITextToSpeech` iOS arabiriminde:
 
 ```csharp
-namespace TextToSpeech.WinPhone
+namespace UsingDependencyService.iOS
 {
-  public class TextToSpeechImplementation : ITextToSpeech
-  {
-      public TextToSpeechImplementation() {}
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer ();
 
-      public async void Speak(string text)
-      {
-          SpeechSynthesizer synth = new SpeechSynthesizer();
-          await synth.SpeakTextAsync(text);
-      }
-  }
+            var speechUtterance = new AVSpeechUtterance (text) {
+                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
+                Volume = 0.5f,
+                PitchMultiplier = 1.0f
+            };
+
+            speechSynthesizer.SpeakUtterance (speechUtterance);
+        }
+    }
 }
 ```
 
-Her uygulama için sırası varsayılan (parametresiz) oluşturucusu olması gerektiğini unutmayın `DependencyService` Bu örneği için. Parametresiz oluşturucular arabirimi tarafından tanımlanamıyor.
-
 ### <a name="registration"></a>Kayıt
 
-Her uygulama arabirimi ile kayıtlı olması gerekiyor `DependencyService` meta verileri özniteliğine sahip. Aşağıdaki kod, Windows Phone için uygulama kaydeder:
+Her uygulama arabirimi ile kayıtlı olması gerekiyor `DependencyService` meta verileri özniteliğine sahip. Aşağıdaki kod, iOS için uygulama kaydeder:
 
 ```csharp
-using TextToSpeech.WinPhone;
-
-[assembly: Xamarin.Forms.Dependency (typeof (TextToSpeechImplementation))]
-namespace TextToSpeech.WinPhone {
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
   ...
+}
 ```
 
 Tüm bir araya getirilmesi, platforma özgü uygulama şöyle görünür:
 
 ```csharp
-[assembly: Xamarin.Forms.Dependency (typeof (TextToSpeechImplementation))]
-namespace TextToSpeech.WinPhone {
-  public class TextToSpeechImplementation : ITextToSpeech
-  {
-      public TextToSpeechImplementation() {}
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer ();
 
-      public async void Speak(string text)
-      {
-          SpeechSynthesizer synth = new SpeechSynthesizer();
-          await synth.SpeakTextAsync(text);
-      }
-  }
+            var speechUtterance = new AVSpeechUtterance (text) {
+                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
+                Volume = 0.5f,
+                PitchMultiplier = 1.0f
+            };
+
+            speechSynthesizer.SpeakUtterance (speechUtterance);
+        }
+    }
 }
 ```
 
@@ -102,7 +113,7 @@ Not:, kayıt sınıf düzeyinde değil ad alanı düzeyinde gerçekleştirilir.
 
 #### <a name="universal-windows-platform-net-native-compilation"></a>Evrensel Windows platformu .NET yerel derleme
 
-.NET yerel derleme seçeneğini kullanan UWP projeleri izlemelidir bir [biraz farklı yapılandırma](~/xamarin-forms/platform/windows/installation/universal.md#target-invocation-exception) Xamarin.Forms başlatırken. .NET yerel derleme biraz farklı kayıt bağımlılık Hizmetleri için de gerektirir.
+.NET yerel derleme seçeneğini kullanan UWP projeleri izlemelidir bir [biraz farklı yapılandırma](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception) Xamarin.Forms başlatırken. .NET yerel derleme biraz farklı kayıt bağımlılık Hizmetleri için de gerektirir.
 
 İçinde **App.xaml.cs** dosya, UWP projesini kullanarak tanımlanan her bağımlılık hizmeti el ile kaydetmeniz `Register<T>` aşağıda gösterildiği gibi yöntemi:
 

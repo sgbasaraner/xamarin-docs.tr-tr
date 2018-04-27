@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 050e37d208c3ba5a330d7ecc6df9d106e14f8bb9
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e296ca79ee03e7fc61532758219b65946a8d4381
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="map"></a>eşleme
 
@@ -50,7 +50,7 @@ Android aynı parametreleri geçmelidir `Forms.Init`:
 Xamarin.FormsMaps.Init(this, bundle);
 ```
 
-Windows çalışma zamanı (WinRT) ve evrensel Windows Platformu (UWP) için aşağıdaki kodu kullanın:
+Evrensel Windows Platformu (UWP) için aşağıdaki kodu kullanın:
 
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
@@ -60,7 +60,7 @@ Bu çağrı her platform için aşağıdaki dosyaları ekleyin:
 
 -  **iOS** -AppDelegate.cs dosya `FinishedLaunching` yöntemi.
 -  **Android** -MainActivity.cs dosya `OnCreate` yöntemi.
--  **WinRT ve UWP** -MainPage.xaml.cs dosyasında `MainPage` Oluşturucusu.
+-  **UWP** -MainPage.xaml.cs dosyasında `MainPage` Oluşturucusu.
 
 NuGet paketi eklendi ve başlatma yöntemi her applcation içinde bir kez `Xamarin.Forms.Maps` API'leri ortak PCL ya da paylaşılan proje kod içinde kullanılabilir.
 
@@ -132,9 +132,9 @@ Bunlardan bazıları aşağıdaki ekran gösterilir:
 
 Son iki gerekli olduğu uygulamalar harita verilerini indirmek için bir ağ bağlantısı gerektirir. Android hakkında okuyun [izinleri](http://developer.android.com/reference/android/Manifest.permission.html) daha fazla bilgi için.
 
-### <a name="windows-runtime-and-universal-windows-platform"></a>Windows çalışma zamanı ve evrensel Windows platformu
+### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
-Windows çalışma zamanı ve evrensel Windows platformu eşlemeleri kullanmak için bir yetkilendirme belirteci oluşturmanız gerekir. Daha fazla bilgi için bkz: [eşlemeleri kimlik doğrulama anahtarı isteği](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx) MSDN'de.
+Evrensel Windows platformu üzerinde eşlemeleri kullanmak için bir yetkilendirme belirteci oluşturmanız gerekir. Daha fazla bilgi için bkz: [eşlemeleri kimlik doğrulama anahtarı isteği](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx) MSDN'de.
 
 Kimlik doğrulama belirteci sonra belirtilmelidir `FormsMaps.Init("AUTHORIZATION_TOKEN")` Bing Haritalar ile uygulama kimliğini doğrulamak için yöntem çağrısı.
 
@@ -255,7 +255,7 @@ MyMap.MoveToRegion(
 
 ## <a name="summary"></a>Özet
 
-Xamarin.Forms.Maps Xamarin.Forms çözümdeki her projeye eklenmelidir ayrı bir NuGet ' dir. Ek başlatma kodu, iOS, Android, WinRT ve UWP iyi bazı yapılandırma adımlarını olarak gereklidir.
+Xamarin.Forms.Maps Xamarin.Forms çözümdeki her projeye eklenmelidir ayrı bir NuGet ' dir. Ek başlatma kodu, iOS, Android ve UWP için de bazı yapılandırma adımlarını olarak gereklidir.
 
 Bir kez yapılandırılan eşlemeleri API, yalnızca birkaç kodunun PIN işaretli eşlemeleri işlemek için kullanılabilir. Eşlemeleri daha gelişmiş ile bir [özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 

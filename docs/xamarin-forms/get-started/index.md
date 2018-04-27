@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms ile çalışmaya başlama
-description: Xamarin.Forms yerel kullanıcı iOS, Android, Windows Phone ve evrensel Windows platformu uygulamaları arasında paylaşılan arabirimi düzenleri verimli bir şekilde oluşturmak geliştiriciler sağlayan bir platformlar arası UI araç takımıdır. Bu seri Xamarin.Forms geliştirme temelleri tanıtır ve birden çok platform ve çok ekran uygulamaları derleme kapsar.
+description: Xamarin.Forms yerel kullanıcı iOS, Android ve evrensel Windows platformu uygulamaları arasında paylaşılan arabirimi düzenleri verimli bir şekilde oluşturmak geliştiriciler sağlayan bir platformlar arası UI araç takımıdır. Bu seri Xamarin.Forms geliştirme temelleri tanıtır ve birden çok platform ve çok ekran uygulamaları derleme kapsar.
 ms.prod: xamarin
 ms.assetid: d87d7232-242c-4ec4-81e9-36103d7e8fcf
 ms.technology: xamarin-forms
@@ -8,20 +8,20 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 58c0fa2041c106f697166891c0e88a409283c17f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da5547de1f21b1f02462f47a4e6ffee43dd0d1bf
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="getting-started-with-xamarinforms"></a>Xamarin.Forms ile çalışmaya başlama
 
-_Xamarin.Forms yerel kullanıcı iOS, Android, Windows Phone ve evrensel Windows platformu uygulamaları arasında paylaşılan arabirimi düzenleri verimli bir şekilde oluşturmak geliştiriciler sağlayan bir platformlar arası UI araç takımıdır. Bu seri Xamarin.Forms geliştirme temelleri tanıtır ve birden çok platform ve çok ekran uygulamaları derleme kapsar._
+_Xamarin.Forms yerel kullanıcı iOS, Android ve evrensel Windows platformu uygulamaları arasında paylaşılan arabirimi düzenleri verimli bir şekilde oluşturmak geliştiriciler sağlayan bir platformlar arası UI araç takımıdır. Bu seri Xamarin.Forms geliştirme temelleri tanıtır ve birden çok platform ve çok ekran uygulamaları derleme kapsar._
 
 Yükleme ve platformlar arası geliştirme uygulamak Kurulum yöntemler genel bakış için bkz: [Xamarin.Forms gereksinimleri](installation.md) ve [yükleme](~/cross-platform/get-started/installation/index.md).
 
 > [!div class="nextstepaction"]
-> [Xamarin.Forms Quickstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
+> [Xamarin.Forms hızlı başlangıç](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
 
 
 

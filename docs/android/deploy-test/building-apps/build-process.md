@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 2833c645a07a3717d9baeeec11e5fa7f9087725a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 806ed841ec4db037a063bb458e1eed13226e08bd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="build-process"></a>Derleme işlemi
 
@@ -91,7 +91,7 @@ MSBuild özellikleri hedefleri davranışını denetler. Proje dosyası içinde 
 
     - **PdbOnly**: "PDB" simgeleri oluşturulur. Uygulama paketi olacak *değil* debuggable olabilir.
 
-    Varsa `DebugType` ayarlı değil veya boş bir dize sonra `DebugSymbols` özelliği, uygulama th debuggable olup olmadığını denetler.
+    Varsa `DebugType` ayarlı değil veya boş bir dize sonra `DebugSymbols` özelliği denetler desteklemediğini debuggable uygulamasıdır.
 
 
 ### <a name="install-properties"></a>Özellikleri yükleme
@@ -110,7 +110,7 @@ Yükleme özellikleri davranışını denetleyen `Install` ve `Uninstall` hedefl
 ### <a name="packaging-properties"></a>Paketleme özellikleri
 
 Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve tarafından kullanılan `Install` ve `SignAndroidPackage` hedefler.
-[İmzalama özellikleri](#Signing_Properties) de ne zaman uygun olan packaing yayın uygulamaları.
+[İmzalama özellikleri](#Signing_Properties) olan de ilgili olduğunda paketleme yayın uygulamaları.
 
 
 -   **AndroidApkSigningAlgorithm** &ndash; ile kullanmak için imzalama algoritmasını belirten bir dize değeri `jarsigner -sigalg`.
@@ -238,7 +238,7 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
 -   **AndroidSdkBuildToolsVersion** &ndash; Android SDK derleme araçlarını paket sağlar **aapt** ve **zipalign** Araçlar, diğerlerinin yanı sıra. Derleme araçları paketini birden çok farklı sürümlerini aynı anda yüklenebilir. Paketleme için seçilen derleme araçları paketini denetleniyor ve varsa, bir "tercih edilen" derleme araçları sürümüyle gerçekleştirilir; "tercih edilen" sürüm ise *değil* sunmak yüksek sürümü tutulan yüklü derleme Araçları Paketi kullanılır.
 
-    `$(AndroidSdkBuildToolsVersion)` MSBuild özelliği, tercih edilen derleme Araçları sürüm içerir. Varsayılan değer Xamarin.Android yapılandırma sistemi sağlar `Xamarin.Android.Common.targets`, ve (örneğin) en son aapt çıkışı bir önceki aapt sürüm kilitlenen varsa varsayılan değer bir alternatif derleme Araçları Sürüm seçmek için youur proje dosyası içinde geçersiz kılınabilir İş adı verilir.
+    `$(AndroidSdkBuildToolsVersion)` MSBuild özelliği, tercih edilen derleme Araçları sürüm içerir. Varsayılan değer Xamarin.Android yapılandırma sistemi sağlar `Xamarin.Android.Common.targets`, ve (örneğin) en son aapt çıkışı bir önceki aapt sürüm kilitlenen varsa varsayılan değer bir alternatif derleme Araçları Sürüm seçmek için proje dosyası içinde geçersiz kılınabilir İş adı verilir.
 
 -   **AndroidSupportedAbis** &ndash; noktalı virgül içeren bir dize özelliği (`;`)-ayrılmış listesini içine dahil edilmesi gereken ABIs `.apk`.
 
@@ -264,9 +264,9 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     Bu özellik olmalıdır `True` sürüm yapıları için ve `False` hata ayıklama yapıları için. Bu *olabilir* olmasına gerek `True` hızlı dağıtım hedef aygıt desteklemiyorsa hata ayıklama derlemelerinde.
 
-    Bu özellik olduğunda `False`, sonra `$(AndroidFastDeploymentType)` MSBuild özelliği de denetler embedd ne olacağını içine `.apk`, dağıtım ve rebuidl kez etkileyebilir.
+    Bu özellik olduğunda `False`, sonra `$(AndroidFastDeploymentType)` MSBuild özelliği de denetler ne içine katıştırılır `.apk`, hangi etkisi dağıtım ve kez yeniden derleyin.
 
--   **EnableLLVM** &ndash; LLVM zaman Ahead zaman kullanılan olup olmadığını belirleyen bir boolean özelliği yerel kod içine assemblines derleme.
+-   **EnableLLVM** &ndash; LLVM zaman Ahead zaman kullanılan olup olmadığını belirleyen bir boolean özelliği yerel kod içine derlemeler oluşturma.
 
     Xamarin.Android 5.1, bu özellik için destek eklendi.
 
@@ -330,9 +330,9 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     Yalnızca '0' ve 'biçimi dizeleri değerin itibaren desteklenir doldurma Dx' bir tamsayı olmalıdır.
     
-    Anahtar öğeleri önceden tanımlanmış
+    Önceden tanımlanmış anahtar öğeleri
 
-    -   **ABI** &ndash; uygulama targetted ABI ekler
+    -   **ABI** &ndash; uygulama için hedeflenen ABI ekler  
         -   1 &ndash; `armeabi`
         -   2 &ndash; `armeabi-v7a`
         -   3 &ndash; `x86`
@@ -341,23 +341,23 @@ Paketleme özelliklerini Android paketini oluşturulmasını denetlemek ve taraf
 
     -   **minSDK** &ndash; eklemeleri desteklenen en düşük Sdk değerinden `AndroidManifest.xml` veya `11` hiçbiri tanımlanmışsa.
 
-    -   **versionCode** &ndash; gelen sürüm kodu direrctly kullanan `Properties\AndroidManifest.xml`. 
+    -   **versionCode** &ndash; doğrudan sürüm kodunu kullanan `Properties\AndroidManifest.xml`. 
 
     Kullanarak özel öğeleri tanımlayabilirsiniz `$(AndroidVersionCodeProperties)` özelliği (sonraki tanımlanmış).
 
-    Varsayılan değer olarak ayarlanır `{abi}{versionCode:D6}`. Bir geliştirici eski davranışa tutmak isterse ayarlayarak varsayılan kılabilirsiniz `$(AndroidUseLegacyVersionCode)` özelliği `true`
+    Varsayılan değer olarak ayarlanır `{abi}{versionCode:D6}`. Bir geliştirici eski davranışı tutmak isterse ayarlayarak varsayılan kılabilirsiniz `$(AndroidUseLegacyVersionCode)` özelliği `true`
 
     Xamarin.Android 7.2 eklendi.
 
--   **AndroidVersionCodeProperties** &ndash; A string property which allows the developer to define custom items to use with the `AndroidVersionCodePattern`. Biçiminde olan bir `key=value` çifti. Tüm öğeleri `value` tamsayı değeri olmalıdır. Örneğin: `screen=23;target=$(_SupportedApiLevel)`. Mevcut veya özel MSBuild kullanma yapabilir gördüğünüz dize özellikleri.
+-   **AndroidVersionCodeProperties** &ndash; ile kullanmak üzere özel öğeler tanımlamak Geliştirici sağlayan bir dize özelliği `AndroidVersionCodePattern`. Biçiminde olan bir `key=value` çifti. Tüm öğeleri `value` tamsayı değeri olmalıdır. Örneğin: `screen=23;target=$(_SupportedApiLevel)`. Mevcut veya özel MSBuild kullanma yapabilir gördüğünüz dize özellikleri.
 
     Xamarin.Android 7.2 eklendi.
 
--   **AndroidUseLegacyVersionCode** &ndash; bir boolean özelliği, eski öncesi Xamarin.Android 8.2 davranışa dön versionCode hesaplama dönmek Geliştirici sağlar. Bu yalnızca Google Play Mağazası'nda mevcut uygulamalarla geliştiriciler için kullanılmalıdır. Yüksek oranda önerilir yeni `$(AndroidVersionCodePattern)` özelliği kullanılır.
+-   **AndroidUseLegacyVersionCode** &ndash; bir boolean özelliği, eski öncesi Xamarin.Android 8.2 davranışı dön versionCode hesaplama dönmek Geliştirici sağlar. Bu yalnızca Google Play Mağazası'nda mevcut uygulamalarla geliştiriciler için kullanılmalıdır. Yüksek oranda önerilir yeni `$(AndroidVersionCodePattern)` özelliği kullanılır.
 
     Xamarin.Android 8.2 eklendi.
 
--  **AndroidUseManagedDesignTimeResourceGenerator** &ndash; A boolean property which  will switch over the design time builds to use the managed resource parser rather  than `aapt`.
+-  **AndroidUseManagedDesignTimeResourceGenerator** &ndash; yönetilen kaynak ayrıştırıcı kullanmak için tasarım zamanla geçecektir bir boolean özelliği derlemeler yerine `aapt`.
 
     Xamarin.Android 8.1 eklendi.
 
@@ -394,7 +394,7 @@ Aşağıdaki MSBuild özellikleri ile kullanılan [projeleri bağlama](~/android
 
 -   **AndroidCodegenTarget** &ndash; kod oluşturma hedef ABI denetleyen bir dize özelliği. Olası değerler şunlardır:
 
-    - **XamarinAndroid**: Android 1.0 için mevcut itibaren Mono JNI bağlama API'sini kullanır. Xamarin.Android 5.0 veya üzeri ile oluşturulmuş bağlama derlemeler için yalnızca bir Xamarin.Android 5.0 veya üzeri (API/ABI ekleme), üzerinde çalıştırılabilir, ancak *kaynak* önceki ürün sürümleri ile uyumludur.
+    - **XamarinAndroid**: Android 1.0 için mevcut itibaren Mono JNI bağlama API'sini kullanır. Xamarin.Android 5.0 veya üzeri oluşturulmuş bağlama derlemeler için yalnızca bir Xamarin.Android 5.0 veya üzeri (API/ABI ekleme), üzerinde çalıştırılabilir, ancak *kaynak* önceki ürün sürümleri ile uyumludur.
 
     - **XAJavaInterop1**: kullanım Java.Interop JNI etkinleştirmeleri için. Kullanarak bağlama derlemeler `XAJavaInterop1` yalnızca derleme ve Xamarin.Android 6.1 veya sonrası yürütün. Xamarin.Android 6.1 ve üzeri bağlama `Mono.Android.dll` bu değere sahip.
 
@@ -576,7 +576,7 @@ Bu yapı eylemi benzer bir şekilde kabul edilecek dosyalarla katıştırılmı�
 
 Normal `Content` yapı eylemi (biz büyük olasılıkla maliyetli ilk çalıştırma adım desteklemek nasıl dahil edilir henüz gibi) desteklenmez.
 
-Xamarin.Android thw kullanılmaya çalışılıyor 5.1, başlangıç `@(Content)` yapı eylemi neden olur bir `XA0101` uyarı.
+Xamarin.Android kullanılmaya çalışılıyor 5.1, başlangıç `@(Content)` yapı eylemi neden olur bir `XA0101` uyarı.
 
 ### <a name="linkdescription"></a>LinkDescription
 
@@ -606,7 +606,7 @@ Tüm dil hedefleri almadan önce aşağıdaki yapı özelliklerini ayarlamanız 
 </PropertyGroup>
 ```
 
-Bunların tümü bu hedefler ve özellikler olabilir C# ' ta dahil içeri aktararak *Xamarin.Android.CSharp.targets*: 
+Tüm bu hedefleri ve özellikleri içeri aktararak C# ' ta dahil edilebilir *Xamarin.Android.CSharp.targets*: 
 
 ```xml
 <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: b8392dad578f94380e90da24cbf44120d38f754d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09cd92b436be97f5490ac74890e4b0723bcd5701
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="checking-device-orientation"></a>Cihaz yönlendirmesini denetleniyor
 
@@ -20,7 +20,7 @@ Bu makalede kullanmak için size yol gösterecektir [ `DependencyService` ](http
 - **[Arabirimi oluşturma](#Creating_the_Interface)**  &ndash; anlamak arabirimi nasıl paylaşılan kod içinde oluşturulur.
 - **[iOS uygulaması](#iOS_Implementation)**  &ndash; iOS için yerel kodda arabirimini uygulayan öğrenin.
 - **[Android uygulaması](#Android_Implementation)**  &ndash; arabirimini yerel kodda Android için uygulama öğrenin.
-- **[Windows uygulaması](#WindowsImplementation)**  &ndash; Windows Phone ve evrensel Windows Platformu (UWP) için yerel kodda arabirimini uygulayan öğrenin.
+- **[UWP uygulaması](#WindowsImplementation)**  &ndash; arabirimini yerel kodda Evrensel Windows Platformu (UWP) uygulaması öğrenin.
 - **[Paylaşılan kod içinde uygulama](#Implementing_in_Shared_Code)**  &ndash; nasıl kullanacağınızı öğrenin `DependencyService` paylaşılan koddan yerel uygulama çağırmak için.
 
 Uygulamayı kullanarak `DependencyService` aşağıdaki yapı ayarlanmıştır:
@@ -145,9 +145,9 @@ Bu öznitelik sınıfı uygulaması kaydeder `IDeviceOrientaiton` anlamına arab
 
 <a name="WindowsImplementation" />
 
-## <a name="windows-phone-and-universal-windows-platform-implementation"></a>Windows Phone ve evrensel Windows Platform uygulaması
+## <a name="universal-windows-platform-implementation"></a>Evrensel Windows Platform uygulaması
 
-Aşağıdaki kod uygulayan `IDeviceOrientation` arabirimi Windows Phone ve evrensel Windows Platformu:
+Aşağıdaki kod uygulayan `IDeviceOrientation` Evrensel Windows platformu arabiriminde:
 
 ```csharp
 namespace DependencyServiceSample.WindowsPhone

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 3f098e7f403a4f5e9fd924b8745348197cd4f843
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b437b42c1cb4dd8cbe7612a680032d84e852ff6
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="checking-battery-status"></a>Pil durumu denetleniyor
 
@@ -22,7 +22,6 @@ Xamarin.Forms geçerli pil durumunu denetleme işlevselliği içermediğinden bu
 - **[Arabirimi oluşturma](#Creating_the_Interface)**  &ndash; arabirimi paylaşılan kodda nasıl oluşturulduğunu anlayın.
 - **[iOS uygulaması](#iOS_Implementation)**  &ndash; iOS için yerel kodda arabirimini uygulayan öğrenin.
 - **[Android uygulaması](#Android_Implementation)**  &ndash; arabirimini yerel kodda Android için uygulama öğrenin.
-- **[Windows Phone Uygulama](#Windows_Phone_Implementation)**  &ndash; arabirimini yerel kodda Windows Phone için uygulama öğrenin.
 - **[Evrensel Windows Platform uygulaması](#UWPImplementation)**  &ndash; arabirimini yerel kodda Evrensel Windows Platformu (UWP) uygulaması öğrenin.
 - **[Paylaşılan kod içinde uygulama](#Implementing_in_Shared_Code)**  &ndash; nasıl kullanacağınızı öğrenin `DependencyService` paylaşılan koddan yerel uygulama çağırmak için.
 
@@ -311,74 +310,6 @@ namespace DependencyServiceSample.Droid
 
 Bu öznitelik sınıfı uygulaması kaydeder `IBattery` anlamına arabirimi `DependencyService.Get<IBattery>` kullanılabilir paylaşılan kod bir örneğini oluşturabilirsiniz.
 
-<a name="Windows_Phone_Implementation" />
-
-## <a name="windows-phone-implementation"></a>Windows Phone uygulaması
-
-Windows Phone güç API Android ve iOS eşdeğerleri daha az bilgi sağladığından bu uygulama Android ve iOS sürümlerinden daha sınırlıdır.
-
-```csharp
-using System;
-using Windows.ApplicationModel.Core;
-using DependencyServiceSample.WinPhone;
-
-namespace DependencyServiceSample.WinPhone
-{
-  public class BatteryImplementation : IBattery
-  {
-    private int last;
-    private BatteryStatus status = BatteryStatus.Unknown;
-
-    public BatteryImplementation()
-    {
-      last = DefaultBattery.RemainingChargePercent;
-    }
-
-    Windows.Phone.Devices.Power.Battery battery;
-    private Windows.Phone.Devices.Power.Battery DefaultBattery
-    {
-      get { return battery ?? (battery = Windows.Phone.Devices.Power.Battery.GetDefault()); }
-    }
-    public int RemainingChargePercent
-    {
-      get
-      { return DefaultBattery.RemainingChargePercent; }
-    }
-
-    public  BatteryStatus Status
-    {
-      get { return status; }
-    }
-
-    public PowerSource PowerSource
-    {
-      get
-      {
-        if (status == BatteryStatus.Full || status == BatteryStatus.Charging)
-          return PowerSource.Ac;
-
-        return PowerSource.Battery;
-      }
-    }
-  }
-}
-```
-
-Bu ekleme `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` deyimleri.
-
-```csharp
-using System;
-using Windows.ApplicationModel.Core;
-using DependencyServiceSample.WinPhone;
-
-[assembly: Xamarin.Forms.Dependency (typeof (BatteryImplementation))]
-namespace DependencyServiceSample.WinPhone {
-  public class BatteryImplementation : IBattery {
-    ...
-```
-
-Bu öznitelik sınıfı uygulaması kaydeder `IBattery` anlamına arabirimi `DependencyService.Get<IBattery>` paylaşılan kodda bir örneğini oluşturmak için kullanılabilir.
-
 <a name="UWPImplementation" />
 
 ## <a name="universal-windows-platform-implementation"></a>Evrensel Windows Platform uygulaması
@@ -537,7 +468,7 @@ public MainPage ()
 }
 ```
 
-Bu uygulamayı iOS, Android veya Windows platformları çalıştıran ve düğmesine basarak aygıtın geçerli güç durumunu yansıtacak şekilde güncelleştirme düğmesi metni neden olur.
+Bu uygulamayı iOS çalıştıran, Android veya UWP ve düğmesine basarak aygıtın geçerli güç durumunu yansıtacak şekilde güncelleştirme düğmesi metni neden olur.
 
 ![](battery-info-images/battery.png "Pil durumu örneği")
 

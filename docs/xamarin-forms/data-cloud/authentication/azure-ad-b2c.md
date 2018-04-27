@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: f17a6ad012aff81674db943b7d65e65ba77dca52
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 627c6773c099c9cf45f871a9bb73a201bf98271a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Kullanıcıların Azure Active Directory B2C ile kimlik doğrulaması
 
@@ -60,7 +60,7 @@ Microsoft kimlik doğrulama kitaplığı (MSAL) NuGet kitaplığı Xamarin.Forms
 
 ### <a name="portable-class-library"></a>Taşınabilir Sınıf Kitaplığı
 
-Windows Phone 8.1 MSAL desteklemez ve MSAL tüketen PCLs böylece bu hedef kaldırmanız gerekir. Bu, Profile7 kullanmak için PCLs yeniden hedefleme tarafından gerçekleştirilebilir. PCLs hakkında daha fazla bilgi için bkz: [taşınabilir sınıf kitaplıkları giriş](~/cross-platform/app-fundamentals/pcl.md).
+MSAL tüketen PCLs Profile7 kullanılacak güncellendiyse gerekir. PCLs hakkında daha fazla bilgi için bkz: [taşınabilir sınıf kitaplıkları giriş](~/cross-platform/app-fundamentals/pcl.md).
 
 ### <a name="ios"></a>iOS
 

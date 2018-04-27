@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: d07026fbcc43a43a9f26d85ad15d5a4e3165e2ef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 110c608558059ba0f207b4cff343b428125e1784
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -282,11 +282,7 @@ Yukarıdaki kod aşağıdaki düzende sonuçları:
 
 ![](absolute-layout-images/abs.png "Karmaşık AbsoluteLayout")
 
-Düğmeleri Windows Phone tarafından nasıl işlendiğini içinde bir fark nedeniyle dikkat edin, daireleri bazıları, Windows Phone ekran görüntüsü boxviews tarafından değiştirilmiştir.
-
 Dikkat `AbsoluteLayout`s iç içe geçmiş, bazı durumlarda düzenleri iç içe geçme aynı düzen içindeki tüm öğeler sunma daha kolay olabilir çünkü.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

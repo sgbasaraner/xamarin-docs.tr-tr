@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 8315f1a0056c6a6f084ebfe2c29f0c0c2bb30330
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 02bea7e2ec927277a92c0732b25f590b5ae6704b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="files"></a>Dosyalar
 
@@ -99,9 +99,6 @@ var resourcePrefix = "WorkingWithFiles.iOS.";
 #if __ANDROID__
 var resourcePrefix = "WorkingWithFiles.Droid.";
 #endif
-#if WINDOWS_PHONE
-var resourcePrefix = "WorkingWithFiles.WinPhone.";
-#endif
 
 Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
 // note that the prefix includes the trailing period '.' that is required
@@ -142,7 +139,7 @@ Xamarin.Forms her biri kendi dosya sistemine sahip birden çok platformdaki çal
 
  [![Kaydetme ve metin yükleme](files-images/saveandload-sml.png "kaydetme ve uygulama yükleme dosyalarında")](files-images/saveandload.png#lightbox "kaydetme ve uygulama yükleme dosyaları")
 
-Her platformun biraz farklı dizin yapısını ve farklı dosya sistemi özellikleri vardır - örneğin çoğu Xamarin.iOS ve Xamarin.Android desteği `System.IO` işlevselliği Windows Phone yalnızca destekler, ancak `IsolatedStorage` ve [ `Windows.Storage` ](http://msdn.microsoft.com/library/windowsphone/develop/jj681698(v=vs.105).aspx) API'leri.
+Her platformun biraz farklı dizin yapısını ve farklı dosya sistemi özellikleri vardır - örneğin çoğu Xamarin.iOS ve Xamarin.Android desteği `System.IO` işlevselliği Evrensel Windows platformu yalnızca destekler, ancak [ `Windows.Storage` ](/uwp/api/windows.storage/) API'leri.
 
 Bu sorunla karşılaşmamak için örnek uygulama yüklemek ve dosyaları kaydetmek için Xamarin.Forms PCL bir arabirim tanımlar. Bu aygıtta yüklemek ve metin dosyaları kaydetmek için basit bir API depolanacağı sağlar.
 
@@ -190,9 +187,9 @@ namespace WorkingWithFiles {
 }
 ```
 
-### <a name="universal-windows-platform-uwp-windows-81-and-windows-phone-81"></a>Evrensel Windows Platformu (UWP), Windows 8.1 ve Windows Phone 8.1
+### <a name="universal-windows-platform-uwp"></a>Evrensel Windows Platformu (UWP)
 
-Farklı bir dosya sistemi API – bu platformlar sahip [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) – başka bir deyişle kaydetmek ve dosyaları yüklemek için kullanılır.
+Farklı bir dosya sistemi API – UWP sahip [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) – yani kaydetmek ve dosyaları yüklemek için kullanılır.
 `ISaveAndLoad` Arabirimi, aşağıda gösterildiği gibi uygulanabilir:
 
 ```csharp
@@ -226,7 +223,6 @@ namespace WindowsApp
     }
 }
 ```
-
 
 <a name="Saving_and_Loading_in_Shared_Projects" />
 

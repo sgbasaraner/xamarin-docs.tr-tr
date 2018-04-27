@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: b9a5e7c15fd1105a9ca4661ff38e4eb2c92dd10f
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 24bf7bd7fb2aa51968a96bdbf808030604665c26
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Satırları ve vuruş büyük harfler
 
@@ -235,7 +235,7 @@ Sol gösterir, iPhone nasıl `SKPointMode.Points` numaralandırma üyesi neden `
 
 Bunun yerine kullandığınızda `SKPointMode.Lines`Center'da Android ekranda gösterildiği gibi `DrawPoints` yöntemi her çifti arasında bir satır çizer `SKPoint` değerlerini, belirtilen satır ucun bu durumda kullanarak `Round`.
 
-Windows mobil aygıtı sonucunu gösterir `SKPointMode.Polygon` değeri. Dizideki art arda gelen noktaları arasında bir çizgi çizilir, ancak çok yakından bakarsanız, bu satırları bağlanmamış görürsünüz. Bu ayrı satırların her biri başlar ve belirtilen satır ucun ile biter. Seçerseniz `Round` caps, satırları bağlanacağı görünebilir, ancak gerçekten bağlı.
+UWP ekran sonucunu gösterir `SKPointMode.Polygon` değeri. Dizideki art arda gelen noktaları arasında bir çizgi çizilir, ancak çok yakından bakarsanız, bu satırları bağlanmamış görürsünüz. Bu ayrı satırların her biri başlar ve belirtilen satır ucun ile biter. Seçerseniz `Round` caps, satırları bağlanacağı görünebilir, ancak gerçekten bağlı.
 
 Satırları bağlı veya bağlı grafik yolları ile çalışmanın kritik önem taşıyan bir boyut değil.
 

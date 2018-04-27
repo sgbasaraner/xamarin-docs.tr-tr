@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: c02929c49d9757f0814208d5f4fce7d258a689bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bca36189100942e21d1d750dd156dab0cf45fc4
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Ekli özellikler olarak etkisi parametreleri geçirme
 
@@ -183,7 +183,7 @@ Stilleri hakkında daha fazla bilgi için bkz: [stilleri](~/xamarin-forms/user-i
 
 Aşağıdaki bölümlerde platforma özgü uygulanması açıklanmaktadır `LabelShadowEffect` sınıfı.
 
-### <a name="ios-project"></a>iOS Project
+### <a name="ios-project"></a>iOS projesi
 
 Aşağıdaki örnekte gösterildiği kod `LabelShadowEffect` uygulama iOS projesi için:
 
@@ -257,7 +257,7 @@ public class LabelShadowEffect : PlatformEffect
 
 `OnElementPropertyChanged` Yöntemi güncelleştirmeleri RADIUS, renk veya gölgenin uygun sağlanan `ShadowEffect` ekli özellik değeri değişti. Bu geçersiz kılma birçok kez çağrılabilir olarak değiştirildiğinde bir özellik için bir onay her zaman yapılmalıdır.
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Android projesi
 
 Aşağıdaki örnekte gösterildiği kod `LabelShadowEffect` uygulama Android projesi için:
 
@@ -345,14 +345,14 @@ public class LabelShadowEffect : PlatformEffect
 
 `OnElementPropertyChanged` Yöntemi güncelleştirmeleri RADIUS, renk veya gölgenin uygun sağlanan `ShadowEffect` ekli özellik değeri değişti. Bu geçersiz kılma birçok kez çağrılabilir olarak değiştirildiğinde bir özellik için bir onay her zaman yapılmalıdır.
 
-### <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone & Evrensel Windows platformu projeleri
+### <a name="universal-windows-platform-project"></a>Evrensel Windows platformu projesi
 
-Aşağıdaki örnekte gösterildiği kod `LabelShadowEffect` uygulaması Windows Phone ve evrensel Windows Platformu (UWP) projeleri için:
+Aşağıdaki örnekte gösterildiği kod `LabelShadowEffect` uygulama Evrensel Windows Platformu (UWP) proje için:
 
 ```csharp
 [assembly: ResolutionGroupName ("MyCompany")]
 [assembly: ExportEffect (typeof(LabelShadowEffect), "LabelShadowEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class LabelShadowEffect : PlatformEffect
     {
@@ -401,7 +401,7 @@ namespace EffectsDemo.WinPhone81
 }
 ```
 
-Windows çalışma zamanı ve evrensel Windows platformu gölge efekti sağlamıyorsa ve böylece `LabelShadowEffect` uygulaması hem platformlarda benzetim bir ikinci bir uzaklık ekleyerek [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) birincilarkasında`Label`. `OnAttached` Yöntemi oluşturur Yeni `Label` ve bazı yerleşim özellikleri ayarlar `Label`. Ardından kullanarak ekli özellik değerlerini alma yöntemlerini çağıran `ShadowEffect` alıcılar ve ayarlayarak gölge oluşturur [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)ve [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) özelliklerini konumunu ve renk denetlemek için `Label`. `shadowLabel` Daha sonra eklenen birincil uzaklığı `Label`. Bu işlev içinde kaydırılan bir `try` / `catch` durumda etkisi bağlı denetimi yoktur engelleme `Control.Layer` özellikleri. Hiçbir uygulama tarafından sağlanan `OnDetached` yöntemi temizleme gerekli olduğundan.
+Evrensel Windows platformu gölge efekti sağlamaz ve böylece `LabelShadowEffect` uygulaması hem platformlarda benzetim bir ikinci bir uzaklık ekleyerek [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) birincil arkasında `Label`. `OnAttached` Yöntemi oluşturur Yeni `Label` ve bazı yerleşim özellikleri ayarlar `Label`. Ardından kullanarak ekli özellik değerlerini alma yöntemlerini çağıran `ShadowEffect` alıcılar ve ayarlayarak gölge oluşturur [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)ve [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) özelliklerini konumunu ve renk denetlemek için `Label`. `shadowLabel` Daha sonra eklenen birincil uzaklığı `Label`. Bu işlev içinde kaydırılan bir `try` / `catch` durumda etkisi bağlı denetimi yoktur engelleme `Control.Layer` özellikleri. Hiçbir uygulama tarafından sağlanan `OnDetached` yöntemi temizleme gerekli olduğundan.
 
 #### <a name="responding-to-property-changes"></a>Özellik değişikliklere yanıt verme
 

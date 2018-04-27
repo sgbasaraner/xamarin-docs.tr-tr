@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3e5f4f2d4c4025cce21026cc611af650616e69e2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4d1d4323e42df6240fee7be42ae8fac70a2b3f1f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-viewcell"></a>Bir ViewCell özelleştirme
 
 _Xamarin.Forms ViewCell ListView ya da bir geliştirici tarafından tanımlanan görünüm içeren tablo görünümü eklenebilir bir hücre olduğunda. Bu makalede, bir Xamarin.Forms ListView denetimi içinde barındırılan bir ViewCell için özel Oluşturucu Oluşturma gösterilir. Bu, engeller Xamarin.Forms düzeni hesaplamalar ListView kaydırma sırasında sürekli adlı durdurur._
 
-Her Xamarin.Forms hücrenin yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu yok. Zaman bir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) iOS içinde bir Xamarin.Forms uygulaması tarafından işlenen `ViewCellRenderer` sınıf örneği, hangi sırayla yerel başlatır `UITableViewCell` denetim. Android platformunda `ViewCellRenderer` sınıfı başlatır yerel `View` denetim. Windows Phone ve evrensel Windows Platformu (UWP) `ViewCellRenderer` sınıfı başlatır yerel `DataTemplate`. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Her Xamarin.Forms hücrenin yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu yok. Zaman bir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) iOS içinde bir Xamarin.Forms uygulaması tarafından işlenen `ViewCellRenderer` sınıf örneği, hangi sırayla yerel başlatır `UITableViewCell` denetim. Android platformunda `ViewCellRenderer` sınıfı başlatır yerel `View` denetim. Üzerinde Evrensel Windows Platformu (UWP), `ViewCellRenderer` sınıfı başlatır yerel `DataTemplate`. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Aşağıdaki diyagram arasındaki ilişkiyi gösterir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) ve uyguladıktan karşılık gelen yerel denetimlere:
 
@@ -169,7 +169,7 @@ Aşağıdaki diyagram, her proje örnek uygulamasında, aralarındaki ilişkiler
 
 ![](viewcell-images/screenshots.png "Her platformda NativeCell")
 
-`ViewCellRenderer` Sınıfı özel hücre işlemek için platforma özel yöntemler sunar. Bu `GetCell` iOS platformunda yöntemi `GetCellCore` Android platformunda yöntemi ve `GetTemplate` Windows Phone platformunda yöntemi.
+`ViewCellRenderer` Sınıfı özel hücre işlemek için platforma özel yöntemler sunar. Bu `GetCell` iOS platformunda yöntemi `GetCellCore` Android platformunda yöntemi ve `GetTemplate` UWP yöntemi.
 
 Her özel Oluşturucu sınıfı ile donatılmış bir `ExportRenderer` Xamarin.Forms ile oluşturucuyu kaydeder özniteliği. Öznitelik iki parametre – işlenen Xamarin.Forms hücre tür adını ve özel Oluşturucu Tür adını alır. `assembly` Özniteliğine öneki belirtir. öznitelik tüm derlemesi için geçerlidir.
 
@@ -519,15 +519,15 @@ Aşağıdaki kod örneğinde düzeni tanımını gösterir `NativeAndroidCell.ax
 
 Bu iki bu düzeni belirtir `TextView` kontrol eder ve bir `ImageView` denetim hücrenin içeriği görüntülemek için kullanılır. İki `TextView` denetimleri içinde dikey yönelimli bir `LinearLayout` denetimiyle içinde bulunan tüm denetimler bir `RelativeLayout`.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Windows Phone üzerinde özel Oluşturucu Oluşturma ve UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP üzerinde özel Oluşturucu Oluşturma
 
-Aşağıdaki kod örneği, Windows Phone ve UWP için özel Oluşturucu gösterir:
+Aşağıdaki kod örneğinde UWP için özel Oluşturucu gösterir:
 
 ```csharp
-[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeWinPhoneCellRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeUWPCellRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneCellRenderer : ViewCellRenderer
+    public class NativeUWPCellRenderer : ViewCellRenderer
     {
         public override Windows.UI.Xaml.DataTemplate GetTemplate(Cell cell)
         {
@@ -574,4 +574,4 @@ Bu makalede için özel Oluşturucu Oluşturma gösterilmiştir bir [ `ViewCell`
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [ListView performansı](~/xamarin-forms/user-interface/listview/performance.md)
-- [CustomRendererViewCell (sample)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
+- [CustomRendererViewCell (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)

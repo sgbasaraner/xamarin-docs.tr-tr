@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: e555c038d66033d925da42e4c70b89d5caac8ad6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Özel oluşturucu giriş
 
@@ -19,7 +19,7 @@ _Özel oluşturucu görünümünü ve Xamarin.Forms denetimleri davranışını 
 
 Xamarin.Forms [sayfalar, Düzen ve denetimlerin](~/xamarin-forms/user-interface/controls/index.md) platformlar arası mobil kullanıcı arabirimleri açıklamak için ortak bir API sunar. Her platformda farklı işlenen her sayfası, Düzen ve denetim kullanarak bir `Renderer` sırayla (Xamarin.Forms gösterimine karşılık gelen), yerel bir denetimi oluşturur sınıfı ekranda düzenler ve belirtilen davranışı ekler Paylaşılan kod.
 
-Geliştiriciler kendi özel uygulayabilirsiniz `Renderer` görünümünü ve/veya Denetim davranışını özelleştirmek için sınıflar. Özel oluşturucu için belirli bir türde tek bir yerde denetim diğer platformlarda varsayılan davranışı verirken özelleştirmek için bir uygulama projesi eklenebilir; ya da farklı özel Oluşturucu iOS, Android ve Windows Phone farklı bir görünüm oluşturmak için her uygulama projesi eklenebilir. Ancak, bir basit denetim özelleştirme gerçekleştirmek için özel Oluşturucu sınıfı uygulama ağır yanıt görülür. Etkiler, bu işlemi basitleştirmek ve genellikle küçük stil değişiklikler için kullanılır. Daha fazla bilgi için bkz: [efektler](~/xamarin-forms/app-fundamentals/effects/index.md).
+Geliştiriciler kendi özel uygulayabilirsiniz `Renderer` görünümünü ve/veya Denetim davranışını özelleştirmek için sınıflar. Özel oluşturucu için belirli bir türde tek bir yerde denetim diğer platformlarda varsayılan davranışı verirken özelleştirmek için bir uygulama projesi eklenebilir; ya da farklı özel Oluşturucu iOS, Android ve evrensel Windows Platformu (UWP) farklı bir görünüm oluşturmak için her uygulama projesi eklenebilir. Ancak, bir basit denetim özelleştirme gerçekleştirmek için özel Oluşturucu sınıfı uygulama ağır yanıt görülür. Etkiler, bu işlemi basitleştirmek ve genellikle küçük stil değişiklikler için kullanılır. Daha fazla bilgi için bkz: [efektler](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 ## <a name="examining-why-custom-renderers-are-necessary"></a>İnceleniyor neden özel Oluşturucu gerekli olan
 
@@ -51,7 +51,7 @@ public class MyEntry : Entry
 `local` Ad alanı öneki herhangi bir şey olabilir. Ancak, `namespace` ve `assembly` değerlerin özel denetim ayrıntılarını eşleşmesi gerekir. Ad alanı bildirildiğinde öneki özel denetim başvurmak için kullanılır.
 
 > [!NOTE]
-> Tanımlama `xmlns` paylaşılan projeleri PCLs içinde çok daha kolaydır. Belirlemek kolay olacak şekilde bir PCL bütünleştirilmiş koda derlenmemiş `assembly=CustomRenderer` değeri olmalıdır. Paylaşılan projeleri kullanırken (XAML dahil) tüm paylaşılan varlıklar her olması durumunda iOS, Android ve Windows Phone anlamına gelir başvuran projeler derlenen projeleri sahip kendi *derleme adları* mümkün değildir çok yazmak için `xmlns` bildirimi değeri her uygulama için farklı olması gerektiğinden. Paylaşılan projeleri için XAML içinde özel denetimler her uygulama projesi aynı derleme adı ile yapılandırılmasını gerektirir.
+> Tanımlama `xmlns` paylaşılan projeleri PCLs içinde çok daha kolaydır. Belirlemek kolay olacak şekilde bir PCL bütünleştirilmiş koda derlenmemiş `assembly=CustomRenderer` değeri olmalıdır. Paylaşılan projeleri kullanırken (XAML dahil) tüm paylaşılan varlıklar her olması durumunda iOS, Android ve UWP anlamına gelir başvuran projeler derlenen projeleri sahip kendi *derleme adları* yazmak için için mümkün değildir `xmlns` bildirimi değeri her uygulama için farklı olması gerektiğinden. Paylaşılan projeleri için XAML içinde özel denetimler her uygulama projesi aynı derleme adı ile yapılandırılmasını gerektirir.
 
 `MyEntry` Özel denetim sonra işlenen her platformda gri bir arka planda aşağıdaki ekran görüntülerinde gösterildiği gibi:
 

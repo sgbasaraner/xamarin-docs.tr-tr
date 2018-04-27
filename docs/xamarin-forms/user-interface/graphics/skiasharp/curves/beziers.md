@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 7b7bd83c474c7e0d32a693e06b5f12696ec5efa2
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Üç tür Bézier eğrileri
 
@@ -92,7 +92,7 @@ Burada, tüm üç platformlarda çalışıyor:
 
 Matematiksel, eğri küp Polinomun ' dir. Eğriyi en çok üç noktalarda bir çizgide kesiştiğinden. Başlangıç noktasına eğri her zaman olduğu için ve aynı yönde tanjant, bir çizgide başlangıç noktası ilk denetim noktası. Uç noktada eğri her zaman olduğu için ve aynı yönde tanjant, ikinci denetiminden bir çizgide noktası bitiş noktası.
 
-Küp Bézier eğrisi her zaman dört noktası bağlanma dışbükey quadrilateral ile sınırlıdır. Bu adlı bir *dışbükey hull*. Başlangıç ve bitiş noktası arasındaki çizgide üzerinde denetim noktaları kalan, Bézier eğrisi düz bir çizgi işler. Ancak Windows mobil aygıttan ekran gösterdiği gibi Eğri ayrıca kendisini arası.
+Küp Bézier eğrisi her zaman dört noktası bağlanma dışbükey quadrilateral ile sınırlıdır. Bu adlı bir *dışbükey hull*. Başlangıç ve bitiş noktası arasındaki çizgide üzerinde denetim noktaları kalan, Bézier eğrisi düz bir çizgi işler. Ancak üçüncü ekran gösterdiği gibi Eğri ayrıca kendisini arası.
 
 Bir yol dağılımı birden çok bağlı küp Bézier eğrileri içerebilir, ancak iki küp Bézier eğrileri arasındaki bağlantıyı yalnızca aşağıdaki üç nokta colinear ise kesintisiz (diğer bir deyişle, bir çizgide bulunan):
 
@@ -106,7 +106,7 @@ Bazen, bir küp Bézier eğrisi işlemek temel parametrik denklemini bilmek yara
 
 x(t) = (1 – t)³x₀ + 3t(1 – t)²x₁ + 3t²(1 – t)x₂ + t³x₃
 
-y(t) = (1 – t)³y₀ + 3t(1 – t)²y₁ + 3t²(1 – t)y₂ + t³y₃
+y(t) = (1-t) ³y₀ + 3t (1-t) ²y₁ + 3t² (1-t) y₂ + t³y₃
 
 3'ün en yüksek üs küp polynomials bunlar onaylar. Gerektiğini doğrulamak kolayca `t` 0'a eşit, nokta (x₀, y₀), başlangıç noktası olduğu ve ne zaman `t` eşittir 1, (x₃, y₃), uç noktası olduğu noktasıdır. Başlangıç noktasını yakınında (düşük değerler için `t`), ilk denetim noktası (x₁, y₁) güçlü bir efekt ve yakınında uç noktasına sahip ('T yüksek değerler ') ikinci denetim noktası (x₂, y₂) güçlü bir etkisi olmaz.
 
@@ -124,7 +124,7 @@ Aşağıdaki diyagramda etiketli dört noktalarını gösterir `pto`, `pt1`, `pt
 
 Başlangıç ve bitiş noktalarını satırlarından denetim noktalarına tanjantını daire ve Bézier eğrisi ve bunlar uzunluğu *L*. En iyi Bézier eğrisi dairesel yay yakın yukarıda Alıntı yapılan ilk makale gösterir, bu uzunluğu *L* aşağıdaki gibi hesaplanır:
 
-L = 4 × tan(α / 4) / 3
+M = 4 × tan(α / 4) / 3
 
 Dolayısıyla L 0.265 eşittir 45 derece açı çizimde gösterilmektedir. Kod içinde bu değeri dairenin istenen yarıçap çarpılan.
 
@@ -208,7 +208,7 @@ Başlangıç ve bitiş noktaları (`point0` ve `point3`) normal parametrik denkl
 
 [![](beziers-images/beziercirculararc-small.png "Üçlü sayfasının ekran görüntüsü Bezier dairesel yay")](beziers-images/beziercirculararc-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Bezier dairesel yay")
 
-Yakından Windows Mobile ekranında aramak ve Bézier eğrisi özellikle Yarım Daireli 180 derece açıdır, ancak 90 derece açıdır görüntülendiğinde çeyrek daire yalnızca daha iyi uyacak şekilde göründüğü iOS ekran gösterir farklılık göstermesi gerektiğini görürsünüz.
+Üçüncü ekran yakından bakın ve Bézier eğrisi özellikle Yarım Daireli 180 derece açıdır, ancak 90 derece açıdır görüntülendiğinde çeyrek daire yalnızca daha iyi uyacak şekilde göründüğü iOS ekran gösterir farklılık göstermesi gerektiğini görürsünüz.
 
 Çeyrek daire şöyle yönlendirilmiş olduğunda, iki denetim noktası koordinatları hesaplama oldukça kolaydır:
 
@@ -345,9 +345,9 @@ Tarafından işlenen sonsuz oturum daha doğru merkezi biraz daha yumuşak **yay
 
 İkinci dereceden Bézier eğrisi yalnızca bir denetim noktası varsa ve eğri yalnızca üç noktaları tarafından tanımlanır: başlangıç noktasını, denetim noktası ve bitiş noktası. İkinci derece Polinomun eğri olacak şekilde, 2, en yüksek üs olması dışında parametrik denklemini küp Bézier eğrisi çok benzer:
 
-x(t) = (1 – t)²x₀ + 2t(1 – t)x₁ + t²x₂
+x(t) = (1-t) ²x₀ + 2t (1-t) x₁ + t²x₂
 
-y(t) = (1 – t)²y₀ + 2t(1 – t)y₁ + t²y₂
+y(t) = (1-t) ²y₀ + 2t (1-t) y₁ + t²y₂
 
 İkinci dereceden Bézier eğrisi yolunu eklemek için kullanın [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) yöntemi veya [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/System.Single/System.Single/System.Single/System.Single/) ayrı ile aşırı `x` ve `y` koordinatları:
 
@@ -408,7 +408,7 @@ Noktalı çizgiler başlangıç noktasını ve bitiş noktası eğri teğet ve d
 
 Ancak, ikinci dereceden Bézier eğrisi şeklini birden çok ikinci derece Béziers elips yay yaklaşık için gereken neden olduğu elips, değil. İkinci derece Bézier bunun yerine bir parabol parçasıdır.
 
-## <a name="the-conic-bzier-curve"></a>The Conic Bézier Curve
+## <a name="the-conic-bzier-curve"></a>Conic Bézier eğrisi
 
 Conic Bézier eğrisi &mdash; olarak da bilinen rasyonel ikinci dereceden Bézier eğrisi &mdash; Bézier eğrileri ailesine görece son ektir. İkinci dereceden Bézier eğrisi gibi bir başlangıç noktası, bir uç noktası ve bir denetim noktası rasyonel ikinci dereceden Bézier eğrisi içerir. Ancak rasyonel ikinci dereceden Bézier eğrisi de gerektirir bir *ağırlık* değeri. Bu adlı bir *rasyonel* parametrik formüller oranları içerdiğinden ikinci derece.
 
@@ -420,7 +420,7 @@ Teorik, rasyonel ikinci derece, her üç koşullarını üç ayrı ağırlık de
 
 Orta terim de ağırlık değeri içerir ve ifade paydası tarafından bölünür dışında X ve Y koordinatları için parametrik denklemini parametrik denklemini ikinci derece Bézier için benzerdir:
 
-x(t) = ((1 – t)²x₀ + 2wt(1 – t)x₁ + t²x₂)) ÷ d(t)
+x(t) = ((1 – t) ²x₀ + 2wt (1-t) x₁ + t²x₂)) ÷ d(t)
 
 y(t) = ((1 – t) ²y₀ + 2wt (1-t) y₁ + t²y₂)) ÷ d(t)
 

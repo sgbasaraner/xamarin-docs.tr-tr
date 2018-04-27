@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 9d1b10925f1455c303950eff342764b1fbc9275d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b06b17ce8f19f7f7cabe35c23de5b61db8f71dbe
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="device-orientation"></a>Cihaz yönlendirmesini
 
@@ -28,9 +28,6 @@ Bu makalede, cihaz yönlendirmesini özelliklerden yararlanmak uygulamaları olu
 ## <a name="controlling-orientation"></a>Yönlendirme denetleme
 
 Xamarin.Forms kullanırken, cihaz yönlendirmesini denetlemek için desteklenen yöntem her proje için ayarları kullanmaktır.
-
-> [!NOTE]
-> Xamarin.Forms önleyen bir hata 1.5.0 itibariyle özel Oluşturucu tabanlı yönlendirmeyi başarısız olarak denetlemek çalışır. Bkz: [bu tartışma](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)Xamarin forumlarında daha fazla bilgi için bu tartışma.
 
 ### <a name="ios"></a>iOS
 
@@ -57,7 +54,6 @@ Select bir anahtar-değer Düzenleyici arabirimi kullanarak değerlerini düzenl
 ![Cihaz yönler Visual Studio'da Mac için desteklenir.](device-orientation-images/orientation-xam-source.png)
 
 -----
-
 
 ### <a name="android"></a>Android
 
@@ -93,27 +89,9 @@ Xamarin.Android yönünü belirtmek için çeşitli seçenekler destekler:
 
 Yerel Android API çok sayıda yönlendirme nasıl yönetilir üzerinde denetim sağlar, kullanıcının açıkça çelişen seçenekleri de dahil olmak üzere Tercihler ifade dikkat edin.
 
-### <a name="windows-phone"></a>Windows Phone
+### <a name="universal-windows-platform"></a>Evrensel Windows platformu
 
-Windows Phone RT üzerinde desteklenen yönler ayarlanmış <span class="UIItem">Package.appxmanifest</span> dosya. Bildirim açma desteklenen yönler burada seçilebilir yapılandırma Panosu gösterecek:
-
-![](device-orientation-images/vs-winrt-config.png "Package.appxmanifest Visual Düzenleyicisi")
-
-Windows Phone 8 (Silverlight)'de desteklenen yönler kod ile ayarlanır <span class="UIItem">MainPage.xaml.cs</span> dosya. Varsayılan proje şablonu değeri zaten aşağıdaki kod satırını ile ayarlanır:
-
-```csharp
-SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-```
-
-Windows Phone hizalama seçeneklerini belirtmek için istediğiniz yönler etkinleştirmek için kod ile değiştirin:
-
-```csharp
-SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-SupportedOrientations = SupportedPageOrientation.Portrait; // portrait only
-SupportedOrientations = SupportedPageOrientation.Landscape; // landscape only
-```
-
-Windows Phone yatay görünümler her ikisinde de (dikey görüldüğü gibi) desteklediğini unutmayın soldan sağa ve sağdan sola yönler. Kullanılmakta olan belirlemek mümkün değil.
+Evrensel Windows Platformu (UWP üzerinde), desteklenen yönler ayarlanmış **Package.appxmanifest** dosya. Bildirim açma desteklenen yönler burada seçilebilir yapılandırma Panosu gösterecek.
 
 <a name="Reacting_to_Changes_in_Orientation" />
 

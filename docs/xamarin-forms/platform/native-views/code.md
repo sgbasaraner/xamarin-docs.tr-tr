@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7979e43cdde60b1b0248118e591c096295847acb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 46284fd1b0863f904e9f24f125aef75fe3eb8caa
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="native-views-in-c"></a>C# yerel görünümleri
 
@@ -34,7 +34,6 @@ Xamarin.Forms paylaşılan projede bu yöntemleri kullanarak uygun platforma öz
 
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
-- **Windows çalışma zamanı** – Xamarin.Forms.Platform.WinRT
 - **Evrensel Windows Platformu (UWP)** – Xamarin.Forms.Platform.UWP
 
 ## <a name="adding-platform-specific-views-on-each-platform"></a>Her platformda platforma özgü görünümler ekleme
@@ -70,7 +69,7 @@ contentView.Content = textView.ToView();
 
 Örnek varsayar `stackLayout` ve `contentView` örnekleri, daha önce XAML veya C# içinde oluşturuldu.
 
-### <a name="windows-runtime-and-universal-windows-platform"></a>Windows çalışma zamanı ve evrensel Windows platformu
+### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
 Aşağıdaki kod örneğinde nasıl ekleneceğini gösterir bir `TextBlock` için bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ve [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: 67e392bb3672e54a1e2fe709af9cf5deb3dae5e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c9cf700ea798ac316e806c40cb90eedc7ded9fa5
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-text-to-speech"></a>Metin okuma uygulama
 
@@ -20,7 +20,7 @@ Kullanan bir platformlar arası uygulamayı oluştururken bu makale size yol gö
 - **[Arabirimi oluşturma](#Creating_the_Interface)**  &ndash; arabirimi paylaşılan kodda nasıl oluşturulduğunu anlayın.
 - **[iOS uygulaması](#iOS_Implementation)**  &ndash; iOS için yerel kodda arabirimini uygulayan öğrenin.
 - **[Android uygulaması](#Android_Implementation)**  &ndash; arabirimini yerel kodda Android için uygulama öğrenin.
-- **[Windows uygulaması](#WindowsImplementation)**  &ndash; Windows Phone ve evrensel Windows Platformu (UWP) için yerel kodda arabirimini uygulayan öğrenin.
+- **[UWP uygulaması](#WindowsImplementation)**  &ndash; arabirimini yerel kodda Evrensel Windows Platformu (UWP) uygulaması öğrenin.
 - **[Paylaşılan kod içinde uygulama](#Implementing_in_Shared_Code)**  &ndash; nasıl kullanacağınızı öğrenin `DependencyService` paylaşılan koddan yerel uygulama çağırmak için.
 
 Uygulamayı kullanarak `DependencyService` aşağıdaki yapı ayarlanmıştır:
@@ -122,9 +122,9 @@ namespace DependencyServiceSample.Droid
 
 <a name="WindowsImplementation" />
 
-## <a name="windows-phone-and-universal-windows-platform-implementation"></a>Windows Phone ve evrensel Windows Platform uygulaması
+## <a name="universal-windows-platform-implementation"></a>Evrensel Windows Platform uygulaması
 
-Windows Phone ve evrensel Windows platformu, konuşma API sahip `Windows.Media.SpeechSynthesis` ad alanı. Yalnızca uyarısıyla belirliyoruz anımsaması olan **mikrofon** yetenek bildiriminde aksi API'leri engellendiğini konuşma erişim.
+Evrensel Windows platformu, konuşma API sahip `Windows.Media.SpeechSynthesis` ad alanı. Yalnızca uyarısıyla belirliyoruz anımsaması olan **mikrofon** yetenek bildiriminde aksi API'leri engellendiğini konuşma erişim.
 
 ```csharp
 [assembly:Dependency(typeof(TextToSpeechImplementation))]
@@ -165,7 +165,7 @@ public MainPage ()
 }
 ```
 
-İOS, Android veya Windows platformları ve düğmesi, her platformda yerel konuşma SDK kullanarak konuşma uygulamanın neden olacak tuşlarına basarak bu uygulamayı çalıştırıyor.
+İOS, Android veya UWP bu uygulamayı çalıştıran ve düğmesine basarak her platformda yerel konuşma SDK kullanarak, konuşma uygulama sonuçlanır.
 
  ![iOS ve Android metin okuma düğmesi](text-to-speech-images/running.png "metin okuma örnek")
 

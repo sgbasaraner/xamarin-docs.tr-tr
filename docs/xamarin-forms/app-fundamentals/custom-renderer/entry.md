@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 1e8ef47ceb381a0e4e163aaa24795d46264195da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-an-entry"></a>Bir giriş özelleştirme
 
 _Xamarin.Forms giriş denetimi düzenlenmesi metnin tek bir satırı sağlar. Bu makalede, geliştiricilerin kendi platforma özgü özelleştirme varsayılan yerel işlemeyle geçersiz kılmasına etkinleştirme giriş denetimi için özel Oluşturucu Oluşturma gösterilir._
 
-Yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu her Xamarin.Forms denetleyebilir. Zaman bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetimi, bir Xamarin.Forms uygulaması iOS tarafından işlenir `EntryRenderer` sınıf örneği, tasarrufludur yerel başlatır `UITextField` denetim. Android platformunda `EntryRenderer` sınıfı başlatır bir `EditText` denetim. Windows Phone ve evrensel Windows Platformu (UWP) `EntryRenderer` sınıfı başlatır bir `TextBox` denetim. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu her Xamarin.Forms denetleyebilir. Zaman bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetimi, bir Xamarin.Forms uygulaması iOS tarafından işlenir `EntryRenderer` sınıf örneği, tasarrufludur yerel başlatır `UITextField` denetim. Android platformunda `EntryRenderer` sınıfı başlatır bir `EditText` denetim. Üzerinde Evrensel Windows Platformu (UWP), `EntryRenderer` sınıfı başlatır bir `TextBox` denetim. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Aşağıdaki diyagram arasındaki ilişkiyi gösterir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) ve uyguladıktan karşılık gelen yerel denetimi:
 
@@ -178,13 +178,13 @@ namespace CustomRenderer.Android
 
 Temel sınıfın çağrısı `OnElementChanged` yöntemi bir Android başlatır `EditText` denetimiyle Oluşturucu için kişinin atanmasını denetlemek için bir başvuru `Control` özelliği. Arka plan rengini sonra ile açık yeşil ayarlayın `Control.SetBackgroundColor` yöntemi.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Windows Phone üzerinde özel Oluşturucu Oluşturma ve UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>UWP üzerinde özel Oluşturucu Oluşturma
 
-Aşağıdaki kod örneği, Windows Phone ve UWP için özel Oluşturucu gösterir:
+Aşağıdaki kod örneğinde UWP için özel Oluşturucu gösterir:
 
 ```csharp
 [assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class MyEntryRenderer : EntryRenderer
     {

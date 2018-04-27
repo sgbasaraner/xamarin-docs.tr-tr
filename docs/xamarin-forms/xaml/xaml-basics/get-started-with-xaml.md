@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: f1d347cc37ab065e09cb2627ee2122797280f3c1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f8032966b49f6f023642b0d1338e8c5d740b66e0
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>1. bölüm. XAML ile çalışmaya başlama
 
@@ -192,7 +192,7 @@ Mac için Visual Studio proje oluşturduğunda, bir C# kod dosyası oluşturmak 
 
 Normal olarak oluşturulan kod dosyalarıyla kadar zaman harcamanız gerekmez ancak bunlarla bilgi sahibi olmanız gerekir böylece bazen çalışma zamanı özel durumları oluşturulan dosyalar kodunda üzerinde oluşturulur.
 
-Derleme ve bu program çalıştırıldığında `Label` öğe XAML da anlaşılacağı gibi sayfasının ortasında görünür. Üç soldan sağa iOS, Android ve Windows 10 Mobile platformlarına:
+Derleme ve bu program çalıştırıldığında `Label` öğe XAML da anlaşılacağı gibi sayfasının ortasında görünür. Üç soldan sağa iOS, Android ve UWP platformlarına:
 
 [![](get-started-with-xaml-images/xamlsamples.png "Xamarin.Forms görüntü varsayılan")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms varsayılan görüntü")
 
@@ -351,11 +351,11 @@ public MainPage()
 }
 ```
 
-Ayarı `Content` sayfanın özelliğini değiştirir ayarını `Content` XAML dosyası bir özellik. Derleme ve yeni sürümü bu program, dağıtmak, ekranda bir düğme görüntülenir. Bunu tuşuna basarak gider `HelloXamlPage`. İPhone, Android ve Windows 10 Mobile sonuç sayfasında İşte aygıtları:
+Ayarı `Content` sayfanın özelliğini değiştirir ayarını `Content` XAML dosyası bir özellik. Derleme ve yeni sürümü bu program, dağıtmak, ekranda bir düğme görüntülenir. Bunu tuşuna basarak gider `HelloXamlPage`. İPhone, Android ve UWP sonuç sayfasında şöyledir:
 
 [![](get-started-with-xaml-images/helloxaml1.png "Etiket metni Döndürülmüş")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "etiket metnini Döndürülmüş")
 
-Geri gidebilir `MainPage` kullanarak **< geri** sayfanın üst kısmındaki veya Android phone'da altındaki sol ok tuşunu kullanarak veya Windows 10 Mobile sayfasında altındaki sol ok tuşunu kullanarak iOS, düğme.
+Geri gidebilir `MainPage` kullanarak **< geri** sol oka sayfanın üst veya alt kısmındaki Android phone'da veya sol oka sayfanın en üstündeki Windows 10 kullanarak iOS, düğme.
 
 XAML işlemek için farklı yollar için deneme çekinmeyin `Label`. Unicode karakterlerin metne katıştırmak gerekirse, standart XML söz dizimini kullanabilirsiniz. Örneğin, tebrik akıllı tırnak işaretleri içine alın için kullanın:
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 2ddaba4541af52ae119fbf504fdcc66ba357c113
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3205d83ba207322d4c53c4c6e98d4890ad48a77
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Canlı oynatıcı uygulaması
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 04/04/2018
 
 Google Play'de Android için Xamarin Canlı Player kullanılabilir:
 
-[ ![Google play'de kullanılabilir](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
+[![Google play'de kullanılabilir](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 Google Play gerek kalmadan Android cihazlar için Xamarin Canlı Player aracılığıyla kullanılabilir [HockeyApp](https://aka.ms/xlp-hockeyapp) dağıtım. Android için seçim tarafından doğrudan Google Play'den yüklenebilir için erken Önizleme ek olarak, derlemeler [açık beta programı](https://play.google.com/apps/testing/com.xamarin.live)
 
@@ -53,7 +53,7 @@ Bağlantı başarılı olursa, cihazda hemen kod çalıştırmanız gerekir (gib
 
 Bilgi düğmesine basın **(i)** ortaya çıkarmak üzere uygulama altındaki **seçenekleri** menüsü:
 
-[ ![Seçenekler menüsünün ekran görüntüsü](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![Seçenekler menüsünün ekran görüntüsü](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>Günlükleri
 
@@ -61,11 +61,11 @@ Sorunlara tanı koymak için günlüklere bakın.
 
 ### <a name="settings"></a>Ayarlar
 
-* Derleme ve çalışma zamanı hataları görüntüsünü değiştir.
-* Sürüm bilgileri.
-* Geri bildirim gönderin.
+- Derleme ve çalışma zamanı hataları görüntüsünü değiştir.
+- Sürüm bilgileri.
+- Geri bildirim gönderin.
 
-[ ![Ayarlarının ekran görüntüsü](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![Ayarlarının ekran görüntüsü](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>Cihazları yönetme
 
@@ -107,9 +107,8 @@ Bu pencere aygıt listesinden de erişebilir:
 
 Tüm sorunları bakın karşılaşırsanız [sınırlamalar ve sorun giderme](~/tools/live-player/troubleshooting.md).
 
-
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Sınırlamalar](~/tools/live-player/limitations.md)
 - [Sorun giderme](~/tools/live-player/troubleshooting.md)
-- [Xamarin Canlı Player örnekleri](~/tools/livehttps://developer.xamarin.com/samples.md)
+- [Xamarin Canlı Player örnekleri](samples.md)

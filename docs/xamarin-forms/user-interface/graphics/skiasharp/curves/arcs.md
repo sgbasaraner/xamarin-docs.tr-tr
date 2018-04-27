@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: aba193ca38d60db52298fdf239d936310a4ac193
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Yay çizmek için üç yol
 
@@ -415,8 +415,6 @@ Burada **tanjantını yay** üç tüm platformlarda çalışan sayfa:
 
 [![](arcs-images/tangentarc-small.png "Üçlü sayfasının ekran görüntüsü tanjantını yay")](arcs-images/tangentarc-large.png#lightbox "Üçlü sayfasının ekran görüntüsü tanjantını yay")
 
-Windows mobil aygıttaki üç nokta neredeyse colinear ve Yayı çok küçük.
-
 Eğim Yayı yuvarlak dikdörtgen gibi yuvarlak köşeleri oluşturmak için idealdir. Çünkü `SKPath` zaten içeren bir `AddRoundedRect` yöntemi, **yuvarlanmasını Heptagon** sayfa nasıl kullanılacağı gösterilmektedir `ArcTo` yedi taraflı Çokgen köşelerinde yuvarlama. (Kod için normal bir Çokgen genelleştirilmiş.)
 
 `PaintSurface` İşleyicisine [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) sınıfı içeren bir `for` heptagon ve bunlar yedi taraftan, Orta noktalar hesaplamak için ikinci bir yedi köşe koordinatlarını hesaplamak için döngü Köşeleri. Bu orta noktalar sonra yolu oluşturmak için kullanılır:
@@ -605,9 +603,9 @@ RADIUS dairenin 100 birimdir ve α 150 veya 41,8 derece bölünmüş 100 arksin�
 
 Eğim noktası koordinatları, ardından bu bilgileri kullanarak hesaplanabilir:
 
-x = 112·cos(41.8) = 83
+x 112·cos(41.8) = 83 =
 
-y = 112·sin(41.8) = 75
+y 112·sin(41.8) = 75 =
 
 Dört teğet noktalarını ortalanmış bir sonsuz işareti (0, 0) noktasında 100 daire yarıçaplarını ile çizmek için gerekli olan tüm şunlardır:
 

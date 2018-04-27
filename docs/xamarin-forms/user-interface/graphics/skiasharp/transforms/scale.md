@@ -7,11 +7,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 09a81cd84f145512b9fbbf0db009335eac8a95a9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: b4a36e15bd5db72ef113748282175c6d31a95966
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-scale-transform"></a>Ölçek dönüştürme
 
@@ -27,13 +27,13 @@ _Çeşitli boyutlarda nesnelere ölçeklendirmeye yönelik SkiaSharp ölçeklend
 
 x' = x + dx
 
-y' = y + dy
+y' y + GN =
 
 Ölçeklendirme faktörleri `sx` ve `sy` ADDITIVE yerine çarpma şunlardır:
 
 x' = sx · x
 
-y' = sy · y
+y' sy · = y
 
 0 Çevir faktörlerin varsayılan değerlerdir; 1 ölçek faktörlerin varsayılan değerlerdir.
 
@@ -167,7 +167,7 @@ Yuvarlak dikdörtgen sol üst köşesindeki konumlandırılmış `margin` tuvali
 
 [![](scale-images/centeredscale-small.png "Üçlü sayfasının ekran görüntüsü ortalanmış ölçek")](scale-images/centeredscale-large.png#lightbox "Üçlü sayfasının ekran görüntüsü ortalanmış ölçek")
 
-`Slider` Bu programda öğelerine sahip bir dizi &ndash;10-10. Gördüğünüz gibi (Android Center'da Ekran gibi) ölçeklendirme dikey negatif değerler ölçeklendirme merkezi üzerinden geçirir yatay ekseni etrafında ters çevirmek nesneleri neden olur. Negatif değerler (Windows ekranın sağ taraftaki olduğu gibi) ölçeklendirme yatay ölçekleme merkezi üzerinden geçirir dikey ekseni etrafında ters çevirmek nesneleri neden olur.
+`Slider` Bu programda öğelerine sahip bir dizi &ndash;10-10. Gördüğünüz gibi (Android Center'da Ekran gibi) ölçeklendirme dikey negatif değerler ölçeklendirme merkezi üzerinden geçirir yatay ekseni etrafında ters çevirmek nesneleri neden olur. Negatif değerler (UWP ekranın sağ taraftaki olduğu gibi) ölçeklendirme yatay ölçekleme merkezi üzerinden geçirir dikey ekseni etrafında ters çevirmek nesneleri neden olur.
 
 Dördüncü bu sürümü `Scale` gerçekte bir kısayol bir yöntemdir. Bunun değiştirerek nasıl çalıştığını görmek isteyebilirsiniz `Scale` bu kodu aşağıdakilerle yöntemi:
 
@@ -206,9 +206,9 @@ canvas.Scale(sx, sy, px, py);
 
 Böylece toplam dönüştürme formülü tek tek dönüşümler araya geldiğinde:
 
- x' = sx · (x – px) + px
+ x' = sx · (x – piksel) + piksel
 
- y' = sy · (y – py) + py
+ y' sy · = (y-py) + py
 
 Aklınızda varsayılan değerlerini `sx` ve `sy` 1. Pivot noktası (piksel, py) Bu formüller tarafından dönüştürülmüş değil kendiniz ikna kolaydır. Tuvale göre aynı konumda kalır.
 

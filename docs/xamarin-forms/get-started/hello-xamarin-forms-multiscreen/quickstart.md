@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 268622ff8bc7ff05771096549ed694c57139366d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 066f084187a486ca2f88882890b5e9ad277b8cff
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms Multiscreen hızlı başlangıç
 
@@ -24,7 +24,7 @@ Phoneword uygulamayı şu şekilde genişletir:
 
 1. Visual Studio'yu başlatın. Başlangıç sayfasında **Proje Aç...** hem de **Proje Aç** iletişim Phoneword projesi için çözüm dosyasını seçin:
 
-    ![](quickstart-images/vs/open-solution.png "Open Project")
+    ![](quickstart-images/vs/open-solution.png "Proje Aç")
 
 2. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword** proje ve seçin **Ekle > Yeni öğe...** :
 
@@ -46,7 +46,7 @@ Phoneword uygulamayı şu şekilde genişletir:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -174,7 +174,7 @@ Phoneword uygulamayı şu şekilde genişletir:
 
 3. İçinde **yeni dosya** iletişim kutusunda **Forms > Forms ContentPage Xaml**, yeni dosya adı **CallHistoryPage**, tıklatıp **yeni** düğme. Bu adlı bir sayfaya ekler **CallHistoryPage** projeye:
 
-    ![](quickstart-images/xs/add-callhistorypage-class.png "Add Forms ContentPage")
+    ![](quickstart-images/xs/add-callhistorypage-class.png "Forms ContentPage Ekle")
 
 4. İçinde **çözüm paneli**, çift **CallHistoryPage.xaml** açmak için:
 
@@ -192,7 +192,7 @@ Phoneword uygulamayı şu şekilde genişletir:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
