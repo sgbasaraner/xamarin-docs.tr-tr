@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 74f65021c23515e78e630f907a89ffde74de4da4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 37ecc76d9774b3f375af92f2a00c6c687358f065
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="cell-appearance"></a>Hücre görünümü
 
@@ -70,7 +70,7 @@ TextCells işlenir yerel denetimlerini çalışma zamanında olarak özel bir k�
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>Özel hücreler
-Yerleşik hücreleri gerekli düzeni sağlamıyorsa, özel hücreleri gerekli düzeni uygulanır. Örneğin, bir hücre eşit ağırlığa sahip iki etiketlerle sunmak isteyebilirsiniz. A `LabelCell` yetersiz olabilir çünkü `LabelCell` küçük olan bir etiketi yok. Çoğu hücre özelleştirmeleri ek salt okunur verileri (örneğin, ek etiketleri, görüntüleri veya başka görüntü bilgilerini) ekleyin.
+Yerleşik hücreleri gerekli düzeni sağlamıyorsa, özel hücreleri gerekli düzeni uygulanır. Örneğin, bir hücre eşit ağırlığa sahip iki etiketlerle sunmak isteyebilirsiniz. A `TextCell` yetersiz olabilir çünkü `TextCell` küçük olan bir etiketi yok. Çoğu hücre özelleştirmeleri ek salt okunur verileri (örneğin, ek etiketleri, görüntüleri veya başka görüntü bilgilerini) ekleyin.
 
 Tüm özel hücreleri öğesinden türetilmelidir [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), tüm yerleşik hücrenin yazdığı kullanım aynı temel sınıfı.
 
