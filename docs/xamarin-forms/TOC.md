@@ -16,6 +16,7 @@
 #### [Bölüm 4. Temel Veri Bağlama Bilgileri](xaml/xaml-basics/data-binding-basics.md)
 #### [Bölüm 5. Veri Bağlamaları - MVVM](xaml/xaml-basics/data-bindings-to-mvvm.md)
 ### [XAML Derlemesi](xaml/xamlc.md)
+### [Canlı Yeniden Yükleme](xaml/live-reload.md)
 ### [XAML Previewer](xaml/xaml-previewer.md)
 ### [XAML Ad Alanları](xaml/namespaces.md)
 ### [XAML Biçimlendirme Uzantıları](xaml/markup-extensions/index.md)
