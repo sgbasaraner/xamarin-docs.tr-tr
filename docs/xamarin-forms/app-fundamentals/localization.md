@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 7cae53187c9bc35d55f34dca664e28280cdab062
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f179fcfc26dd73bf1655c786078dce1f6a02b3a9
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="localization"></a>Yerelleştirme
 
@@ -165,7 +165,7 @@ Bir uygulama geliştirilen ve temel RESX dosyasına eklenen metin var. gibi her 
 </data>
 ```
 
-**AppResources.ja.resx (Japanese)**
+**AppResources.ja.resx (Japonca)**
 
 ```xml
 <data name="AddButton" xml:space="preserve">
@@ -201,7 +201,7 @@ myEntry.Placeholder = AppResources.NotesPlaceholder;
 myButton.Text = AppResources.AddButton;
 ```
 
-İOS, Android ve Windows platformları işler aynı kullanıcı arabiriminde beklediğiniz, metnin bir kaynaktan yüklendiğinden uygulamanın birden çok dillere çevirmek olası şimdi dışında yerine sabit kodlanmış. Çeviri önce her platformda kullanıcı arabirimini gösteren ekran görüntüsü aşağıda verilmiştir:
+İOS, Android ve evrensel Windows Platformu (UWP) işler aynı kullanıcı arabiriminde beklediğiniz, metnin bir kaynaktan yüklendiğinden uygulamanın birden çok dillere çevirmek olası şimdi dışında yerine sabit kodlanmış. Çeviri önce her platformda kullanıcı arabirimini gösteren ekran görüntüsü aşağıda verilmiştir:
 
 ![](localization-images/simple-example-english.png "Platformlar arası Uı'lar çeviri önce")
 
@@ -274,7 +274,7 @@ public interface ILocalize
 }
 ```
 
-İkinci olarak, kullanın [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) Xamarin.Forms içinde `App` arabirimi çağırın ve bizim RESX kaynakları kültür doğru değerine ayarlamak için sınıf. Biz el ile bu değer Windows Phone ve evrensel Windows platformu için bu yana kaynakları framework otomatik olarak ayarlamak üzere gerekmez dikkat edin, bu platformlarda seçilen dil tanır.
+İkinci olarak, kullanın [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) Xamarin.Forms içinde `App` arabirimi çağırın ve bizim RESX kaynakları kültür doğru değerine ayarlamak için sınıf. Bildirim biz el ile bu değer Evrensel Windows platformu için bu yana kaynakları framework otomatik olarak ayarlamanız gerekmez, bu platformlarda seçilen dil tanır.
 
 ```csharp
 if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
@@ -326,7 +326,7 @@ public class PlatformCulture
 
 ### <a name="platform-specific-code"></a>Platforma özgü kodu
 
-Bu bilgileri, iOS, Android ve Windows platformları, biraz farklı şekillerde kullanıma sunmak için görüntülenecek dili algılamak için kodu platforma özgü olmalıdır. Kodunu `ILocalize` bağımlılık hizmetidir sağlanan Aşağıda her platform için emin olmak için ek platforma özgü gereksinimler birlikte yerelleştirilmiş metin doğru şekilde işlenir.
+Bu bilgiler, iOS, Android ve UWP, biraz farklı şekillerde kullanıma sunmak için görüntülenecek dili algılamak için kodu platforma özgü olmalıdır. Kodunu `ILocalize` bağımlılık hizmetidir sağlanan Aşağıda her platform için emin olmak için ek platforma özgü gereksinimler birlikte yerelleştirilmiş metin doğru şekilde işlenir.
 
 Platforma özgü kodu da burada işletim sistemi tarafından desteklenmeyen bir yerel ayar tanımlayıcısı yapılandırmak kullanıcı veren durumlarda işlemesi gerekir. NET'in `CultureInfo` sınıfı. Bu durumlarda, desteklenmeyen yerel ayarlar algılamak ve en iyi yerine için özel kod yazılmış olmalıdır. NET uyumlu yerel ayar.
 
@@ -553,48 +553,9 @@ Bu kod Android uygulaması projesine eklendikten sonra otomatik olarak çevrilen
 > [!NOTE]
 >️ **Uyarı:** çevrilen dizelerin yayın Android derlemeleriniz ancak değil hata ayıklama sırasında çalışıyorsanız, sağ tıklayın **Android projesi** seçip **Seçenekleri > Yapı > Android Yapı** ve emin **hızlı derleme dağıtım** değil ticked. Bu seçenek kaynakları yükleme ile ilgili sorunlara neden olur ve yerelleştirilmiş uygulamaları sınıyorsanız kullanılmamalıdır.
 
-#### <a name="windows-application-projects"></a>Windows Uygulama projeleri
+#### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
-Windows 8.1 ve evrensel Windows Platformu (UWP) projeleri bağımlılık hizmeti gerektirmez – bu platformlar kaynağın kültür doğru şekilde otomatik olarak ayarlanır.
-
-Bu belgenin sonraki bölümlerinde açıklanan XAML biçimlendirme uzantısı uygulama gerektirebilir `ILocalize` Windows Phone için aşağıda gösterilen uygulama.
-
-##### <a name="windows-phone-80"></a>Windows Phone 8.0
-
-Kullanılan değil ancak `App` sınıfı, Windows Phone uygulamasını işte `ILocalize` bağımlılık hizmeti. Bu sınıf Windows Phone uygulaması projesine ekleyin; Daha sonra açıklanan XAML biçimlendirme uzantısı uyguluyorsanız, gerekli olacaktır:
-
-```csharp
-[assembly: Dependency(typeof(UsingResxLocalization.WinPhone.Localize))]
-
-namespace UsingResxLocalization.WinPhone
-{
-    public class Localize : UsingResxLocalization.ILocalize
-    {
-        public void SetLocale (CultureInfo ci) { }
-        public System.Globalization.CultureInfo GetCurrentCultureInfo ()
-        {
-            return System.Threading.Thread.CurrentThread.CurrentUICulture;
-        }
-    }
-}
-
-```
-
-Windows Phone 8.0 projeleri düzgün bir şekilde görüntülenecek yerelleştirilmiş metni için yapılandırılmış olması gerekir.
-Proje seçenekleri desteklenen diller seçili *ve* **WMAppManifest.xml** dosyaları.
-Bu ayarları işlenmediyse yerelleştirilmiş RESX kaynaklar yüklenmeyecek.
-
-##### <a name="project-options"></a>Proje seçenekleri
-
-Windows Phone projeye sağ tıklayıp **özellikleri**. İçinde **uygulama** sekmesinde onay **desteklenen kültürler** uygulamasının desteklediği:
-
-[![](localization-images/winphone-projectproperties-sml.png "Proje Özellikleri - desteklenen kültürler")](localization-images/winphone-projectproperties.png#lightbox "özellikleri - desteklenen kültürler proje")
-
-##### <a name="wmappmanifestxml"></a>WMAppManifest.xml
-
-Windows Phone proje özellikleri düğümünü genişletin ve çift **WMAppManifest.xml** dosya. Tıklayın **paketleme** sekmesinde ve uygulama tarafından desteklenen tüm dillerde değer.
-
-[![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml - desteklenen diller")](localization-images/winphone-wmappmanifest.png#lightbox "WMAppManifest.xml - desteklenen diller")
+Evrensel Windows Platformu (UWP) projeleri bağımlılık hizmeti gerektirmez. Bunun yerine, bu platform otomatik olarak kaynağın kültür doğru şekilde ayarlar.
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
@@ -683,7 +644,7 @@ Aşağıdaki madde işaretleri Yukarıdaki kod içindeki önemli öğelerini aç
 * `"UsingResxLocalization.Resx.AppResources"` RESX KAYNAKLARIMIZI kaynak tanımlayıcısıdır. Bizim varsayılan ad alanı, kaynak dosyalarının bulunduğu klasörü ve varsayılan RESX filename oluşur.
 * `ResourceManager` Sınıfı kullanılarak oluşturulur `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` kaynakları, yüklemek için geçerli derleme belirlemek için ve statik önbelleğinde `ResMgr` alan. Olarak oluşturulan bir `Lazy` oluşturulduktan ilk olarak kullanıldığı kadar ertelenir yazın `ProvideValue` yöntemi.
 * `ci` Seçilen kullanıcının dilini yerel işletim sisteminden almak için bağımlılık hizmeti kullanır.
-* `GetString` kaynak dosyalarından gerçek çevrilmiş dizesini alır yöntemidir. Windows Phone 8.1 ve evrensel Windows platformu `ci` null olur çünkü `ILocalize` arabirimi bu platformlarda uygulanan değil. Bu arama için eşdeğerdir `GetString` yöntemi yalnızca ilk parametresine sahip. Bunun yerine, kaynakların framework yerel otomatik olarak algılar ve çevrilmiş dize uygun RESX dosyasından alır.
+* `GetString` kaynak dosyalarından gerçek çevrilmiş dizesini alır yöntemidir. Evrensel Windows platformu üzerinde `ci` null olur çünkü `ILocalize` arabirimi bu platformlarda uygulanan değil. Bu arama için eşdeğerdir `GetString` yöntemi yalnızca ilk parametresine sahip. Bunun yerine, kaynakların framework yerel otomatik olarak algılar ve çevrilmiş dize uygun RESX dosyasından alır.
 * Hata işleme bir özel durum atma tarafından eksik kaynakları hata ayıklama yardımcı olmak için birlikte (içinde `DEBUG` yalnızca modu).
 
 Aşağıdaki XAML parçacığını biçimlendirme uzantısı kullanmayı gösterir. Çalışması için iki adım vardır:
@@ -809,92 +770,23 @@ Uygulamayı şimdi uygulama adı ve görüntü yerelletirilmesi. Bir ekran gör�
 
 ![](localization-images/android-imageicon.png "Android örnek uygulama metin ve görüntü yerelleştirme")
 
-### <a name="windows-phone-80-application-project"></a>Windows Phone 8.0 uygulama projesi
+### <a name="universal-windows-platform-application-projects"></a>Evrensel Windows Platform uygulaması projeleri
 
-Windows Phone basit bir yerleşik yöntem belirli bir yerelleştirilmiş görüntüsü seçme veya uygulama adı yerelleştirme sahip değil.
-
-#### <a name="images"></a>Görüntüler
-
-Yükleme görüntüsünü kullanarak nasıl uygulayabilir yerelleştirilmiş bu sınırlamaya geçici almak için örnek bir öneri sunar bir [özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) için `Image` denetim.
-
-Özel oluşturucu kodu - aşağıda gösterilen kaynağı ise bir `FileImageSource` filename ayıklar ve yerelleştirilmiş görüntü kullanarak bir yolu derlemeler `CurrentUICulture`. Böylece geri dönüşler beklendiği gibi çalışmayabilir bazı dillerde özel işlem gerektiren; örnekte varsayılan yalnızca iki harfli dil kodunu dışındaki bazı özel durumlarda kullanmaktır:
-
-```csharp
-using System.IO;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.WinPhone;
-
-[assembly: ExportRenderer(typeof(Image), typeof(UsingResxLocalization.WinPhone.LocalizedImageRenderer))]
-namespace UsingResxLocalization.WinPhone
-{
-    public class LocalizedImageRenderer : ImageRenderer
-    {
-        protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
-        {
-            base.OnElementChanged(e);
-
-            if (e.NewElement != null)
-            {
-                var s = e.NewElement.Source as FileImageSource;
-                if (s != null)
-                {
-                    var fileName = s.File;
-                    string ci = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString();
-                    // you might need some custom logic here to support particular cultures and fallbacks
-                    if (ci == "pt-BR") {
-                        // use the complete string 'as is'
-                    } else if (ci == "zh-CN") {
-                         // we could have named the image directories differently,
-                         // but this keeps them consisent with RESX file naming
-                        ci = "zh-Hans";
-                    } else if (ci == "zh-TW" || ci == "zh-HK") {
-                        ci = "zh-Hant";
-                    } else {
-                        // for all others, just use the two-character language code
-                        ci = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
-                    }
-                    e.NewElement.Source = Path.Combine("Assets/" + ci + "/" + fileName);
-                }
-            }
-        }
-    }
-}
-```
-
-Bu kod, aşağıda gösterilen dizin yapısına yerelleştirilmiş görüntülerle çalışır. (Daha özel yerel ayarlar işleme ve geri görüntüleri olmadığında dönmeden) gibi belirli yerelleştirme gereksinimlerinizi karşılayacak şekilde kodu değiştirmeniz önerilir:
-
-![](localization-images/winphone-resources.png "WinPhone yerelleştirilmiş görüntü dizin yapısı")
-
-Windows Phone şimdi görüntü yerelletirilmesi. Bir ekran görüntüsünü sonucu (İspanyolca ve Basitleştirilmiş Çince) aşağıdadır:
-
-![](localization-images/winphone-image-sml.png "WinPhone örnek uygulama metin ve görüntü yerelleştirme")
-
-#### <a name="app-name"></a>Uygulama adı
-
-Microsoft'un belgelerine bakın [Windows Phone 8.0 Uygulama Başlığı yerelleştirme](http://msdn.microsoft.com/library/windows/apps/ff967550(v=vs.105).aspx).
-
-### <a name="windows-phone-81-and-universal-windows-platform-application-projects"></a>Windows Phone 8.1 ve evrensel Windows platformu uygulama projeleri
-
-Windows Phone 8.1 ve evrensel Windows platformu ikisi de yerelleştirilmesi resimler ve uygulama adı basitleştiren bir kaynak altyapısı sahip.
+Evrensel Windows platformu yerelleştirilmesi resimler ve uygulama adı basitleştiren bir kaynak altyapısı sahiptir.
 
 #### <a name="images"></a>Görüntüler
 
 Görüntüleri bir kaynağa özel klasöre yerleştirerek aşağıdaki ekran görüntüsünde gösterildiği gibi yerelleştirilebilir:
 
-![](localization-images/uwp-image-folder-structure.png "WinPhone 8.1 ve UWP görüntü yerelleştirme klasör yapısı")
+![](localization-images/uwp-image-folder-structure.png "UWP görüntü yerelleştirme klasör yapısı")
 
 Çalışma zamanında Windows Kaynak Altyapısı kullanıcının bölgesel ayarına göre uygun görüntüyü seçer.
-
-#### <a name="app-name"></a>Uygulama adı
-
-Microsoft'un belgelerine bakın [Windows 8.1 mağazası uygulamalarını: uygulamanızı kullanıcılara açıklayan bilgileri yerelleştirme](https://msdn.microsoft.com/library/windows/apps/hh454044.aspx) ve [uygulama bildirimden dizeleri Yükleniyor](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323.aspx#loading_strings_from_the_app_manifest.).
 
 ## <a name="summary"></a>Özet
 
 Xamarin.Forms uygulamaları RESX dosyaları ve .NET Genelleştirme sınıflarını kullanarak yerelleştirilmiş olmalıdır. Kullanıcı tercih hangi dilde algılamaya yönelik platforma özgü kodu az miktarda dışında çoğu yerelleştirme çaba merkezi ortak kodu.
 
-Görüntüleri genellikle hem iOS hem de Android sağlanan çok çözünürlük desteği yararlanmak için platforma özgü şekilde ele alınır. Windows Phone görüntüleri bir çapraz platform kolay şekilde yerelleştirme için özel kod gerektirir; Örnek kod, bu özelliği eklemek için sağlandı.
-
+Görüntüleri genellikle hem iOS hem de Android sağlanan çok çözünürlük desteği yararlanmak için platforma özgü şekilde ele alınır. 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

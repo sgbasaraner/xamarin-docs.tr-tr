@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6288a773fb7122c16b405b8a5056b23b7a59fb6d
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: d22ebf0e150c064835fa73765a65025f10ef4c2a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-path-fill-types"></a>Yolun dolgu türleri
 
@@ -165,7 +165,7 @@ Normalde, yolun Dolgu türü dolgular ve vuruşları değil, ancak iki etkiler, 
 
 [![](fill-types-images/fivepointedstar-small.png "Üçlü sayfasının ekran görüntüsü Five-Pointed yıldız")](fill-types-images/fivepointedstar-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Five-Pointed yıldız")
 
-Android ve Windows mobil ekran görüntüleri tipik çift-tek ve sarma etkileri gösterir ancak vuruş ve dolgu sırasını sonuçları de etkiler.
+Android ve UWP ekran görüntüleri tipik çift-tek ve sarma etkileri gösterir ancak vuruş ve dolgu sırasını sonuçları de etkiler.
 
 Sarma algoritması çizgileri çizilir yönü bağlıdır. Satırları bir noktadan diğerine çizildiğini belirtebilir genellikle ne zaman bir yolu oluşturmakta olduğunuz, bu yön denetleyebilirsiniz. Ancak, `SKPath` sınıfı ayrıca yöntemler gibi tanımlayan `AddRect` ve `AddCircle` tüm dağılımlarını çizin. Bu nesnelerin nasıl çizilir denetlemek için bir parametre türü yöntemleri dahil [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), iki üye vardır:
 
