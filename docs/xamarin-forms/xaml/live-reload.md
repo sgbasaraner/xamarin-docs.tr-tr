@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: 11e876207285689b230bb2fada3a4c836443e360
-ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
+ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
+ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin dinamik yeniden yükle
 
@@ -31,7 +31,7 @@ Dinamik yeniden yükleme şu anda yalnızca Visual Studio 2017 içinde kullanıl
 * [Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3) veya üstü.
 
 ## <a name="getting-started"></a>Başlarken
-### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Visual Studio marketten Xamarin dinamik yeniden yükleyin.
+### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Visual Studio marketten Xamarin dinamik yeniden yükleyin
 
 Xamarin Canlı yeniden Visual Studio Market'te dağıtılır. Uzantıyı yüklemek için ziyaret [Visual Studio Market'te Xamarin Canlı yeniden sayfasında](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload) Web sitesi ve tıklatın **karşıdan**.
 
@@ -39,9 +39,9 @@ Xamarin Canlı yeniden Visual Studio Market'te dağıtılır. Uzantıyı yüklem
 
 ![Visual Studio yükleyicisi Xamarin Canlı yükle onay](images/LiveReloadVSIXInstall.png)
 
-> Alternatif olarak, içinde arayabilirsiniz **çevrimiçi** sekmesinde **Uzantılar ve güncelleştirmeler** Visual Studio içinde iletişim.
+Alternatif olarak, içinde arayabilirsiniz **çevrimiçi** sekmesinde **Uzantılar ve güncelleştirmeler** Visual Studio içinde iletişim.
 
-### <a name="2-configure-your-app-to-use-live-reload"></a>2. Dinamik yeniden kullanmak için uygulamanızı yapılandırın.
+### <a name="2-configure-your-app-to-use-live-reload"></a>2. Dinamik yeniden kullanmak için uygulamanızı yapılandırma
 
 Dinamik yeniden varolan mobil uygulamalara ekleme, üç adımda yapılabilir:
 
@@ -66,7 +66,7 @@ public partial class App : Application
 }
 ```
 
-### <a name="3-start-live-reloading"></a>3. Dinamik yeniden başlatın.
+### <a name="3-start-live-reloading"></a>3. Dinamik yeniden Başlat
 
 Derleme ve uygulamanızı dağıtın. Uygulama dağıtılmış olduğunda, XAML dosyasını açın, bazı değişiklikler yapın ve dosyayı kaydedin. Değişikliklerinizi dağıtım hedef imzalanmasını.
 
@@ -110,18 +110,13 @@ Hayır. Aslında, hatta tüm desteklenen uygulama hedeflerinizi (Android, iOS ve
 * Yalnızca .NET standart kitaplıkları ile çalışır.
 * CSS stil sayfaları desteklenmez.
 * Kullanıcı Arabirimi durumu yeniden dağıtır arasında MVVM kullanmadığınız sürece korunmasını değil.
-
-## <a name="live-reload-server"></a>Dinamik yeniden sunucu
-
-Senaryolarda bağlantı burada çalışan uygulamalardan makinenize (kullanarak gösterilen `localhost` veya `127.0.0.1` içinde **araçları > Seçenekler > Xamarin > Canlı yeniden**) mümkün değildir (yani güvenlik duvarları, farklı ağlarda) Uzak bir sunucusu bunun yerine, hangi IDE ve uygulama yapılandırabileceğiniz conect için.
-
-Dinamik yeniden kullanan standart [MQTT Protokolü](http://mqtt.org/) için exchange iletileri ve bu nedenle ile iletişim kurabildiğini [üçüncü taraf sunucular](https://github.com/mqtt/mqtt.github.io/wiki/servers). Var olan bile [ortak sunucuları](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (olarak da bilinen *aracıların*) kullanılabilir, kullanabilirsiniz. Dinamik yeniden test edilmiştir ile `broker.hivemq.com` ve `iot.eclipse.org` tarafından sağlanan hizmetlerin yanı sıra ana bilgisayar adlarını [www.cloudmqtt.com](https://www.cloudmqtt.com) ve [www.cloudamqp.com](https://www.cloudamqp.com). Bulutta, kendi MQTT sunucusu gibi dağıtabilirsiniz [azure'da HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud) veya [tavşan MQ AWS üzerinde](http://www.rabbitmq.com/ec2.html). 
-
-Herhangi bir bağlantı yapılandırabilirsiniz, ancak uzak sunucular için varsayılan 1883 bağlantı noktası kullanmak için yaygın bir durumdur. Uzak sunuculara bağlanmak güvenli olması için dinamik yeniden iletileri güçlü uçtan uca AES simetrik şifreleme kullanır. Varsayılan olarak, şifreleme anahtarını ve başlatma vektörü (IV) her Visual Studio oturumunda yeniden oluşturulur.
+* Uygulama genelinde kaynakları yeniden (yani **App.xaml** veya kaynak sözlüklerindeki paylaşılan), uygulama gezinti sıfırlanır.
 
 ## <a name="troubleshooting"></a>Sorun giderme
 
-Zaman uygulaması oluşturulur, bilgileri **Araçlar > Seçenekler > Xamarin > dinamik yeniden** (ana bilgisayar adı, bağlantı noktası ve şifreleme anahtarları) katıştırılmış uygulamada, bu nedenle olduğunda `LiveReload.Init();` çalıştığında, hiçbir eşleştirme veya yapılandırma olduğu bağlantının başarılı olması gereklidir.
+### <a name="app-doesnt-connect"></a>Uygulama bağlanmıyor
+
+Zaman uygulaması oluşturulur, bilgileri **Araçlar > Seçenekler > Xamarin > dinamik yeniden** (ana bilgisayar adı, bağlantı noktası ve şifreleme anahtarları) katıştırılmış uygulamada, bu nedenle olduğunda `LiveReload.Init()` çalıştığında, hiçbir eşleştirme veya yapılandırma olduğu bağlantının başarılı olması gereklidir.
 
 Normal ağ sorunları dışında (Güvenlik Duvarı, farklı bir ağ aygıtı), uygulamanın başarıyla IDE bağlanılamayabilir ana nedeni çünkü yapılandırmasıyla Visual Studio'da bir farklılık gösterir. Bu durumlarda ortaya çıkabilir:
 
@@ -131,6 +126,13 @@ Normal ağ sorunları dışında (Güvenlik Duvarı, farklı bir ağ aygıtı), 
 
 Bu durumların tüm oluşturma ve uygulama yeniden dağıtma çözülür.
 
+### <a name="uninstalling-preview-1"></a>Önizleme 1 kaldırma
+
+Eski bir önizleme varsa ve kaldırmayı sorunlar yaşıyorsanız, aşağıdaki adımları izleyin:
+
+1. Klasörünü silmek **C:\Program Files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** (Not: "Kurumsal" yüklü sürümünüz ile değiştirin ve "ile"2017"ise, Önizleme" kararlı bir VS yüklenir)
+2. Açık bir **Geliştirici komut istemi** , Visual Studio ve çalıştırma için `devenv /updateconfiguration`. 
+
 ## <a name="tips--tricks"></a>İpuçları ve püf noktaları
 
 * Dinamik yeniden yükleme ayarlarını değiştirmeyin sürece (şifreleme anahtarları dahil olmak üzere gelmesi gibi dışı **otomatik oluşturma şifreleme anahtarları**) ve aynı makineden derleme, derleme ve sonra ilk uygulama dağıtma gerekmez kod veya bağımlılıkları değiştirmediğiniz sürece dağıtın. Yalnızca önceden dağıtılmış bir uygulamayı yeniden başlatabilirsiniz ve son kullanılan ana bilgisayarı bağlanır.
@@ -138,3 +140,21 @@ Bu durumların tüm oluşturma ve uygulama yeniden dağıtma çözülür.
 * Aynı Visual Studio oturuma bağlanabilirsiniz kaç cihazlarda herhangi bir kısıtlama yoktur. Dağıtma ve dinamik reloading çalışma hepsinde aynı anda görmek için gereken sayıda aygıtları/benzeticileri uygulamayı başlatın.
 
 * Dinamik yeniden yalnızca uygulamanızı kullanıcı arabirimi bölümünü yeniden ancak bunu yapar *değil* sayfalarınızı yeniden oluştururken, görünüm modeli (veya bağlama içeriği), değiştirin. Yani *tüm* uygulama durumu eklenen bağımlılıklar dahil olmak üzere yeniden yükler arasında her zaman korunur.
+
+## <a name="live-reload-server"></a>Dinamik yeniden sunucu
+
+Senaryolarda bağlantı burada çalışan uygulamalardan makinenize (kullanarak gösterilen `localhost` veya `127.0.0.1` içinde **araçları > Seçenekler > Xamarin > Canlı yeniden**) mümkün değildir (yani güvenlik duvarları, farklı ağlarda) Uzak bir sunucusu bunun yerine, hangi IDE ve uygulama yapılandırabileceğiniz conect için.
+
+Dinamik yeniden kullanan standart [MQTT Protokolü](http://mqtt.org/) için exchange iletileri ve bu nedenle ile iletişim kurabildiğini [üçüncü taraf sunucular](https://github.com/mqtt/mqtt.github.io/wiki/servers). Var olan bile [ortak sunucuları](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (olarak da bilinen *aracıların*) kullanılabilir, kullanabilirsiniz. Dinamik yeniden test edilmiştir ile `broker.hivemq.com` ve `iot.eclipse.org` tarafından sağlanan hizmetlerin yanı sıra ana bilgisayar adlarını [www.cloudmqtt.com](https://www.cloudmqtt.com) ve [www.cloudamqp.com](https://www.cloudamqp.com). Bulutta, kendi MQTT sunucusu gibi dağıtabilirsiniz [azure'da HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud) veya [tavşan MQ AWS üzerinde](http://www.rabbitmq.com/ec2.html). 
+
+Herhangi bir bağlantı yapılandırabilirsiniz, ancak uzak sunucular için varsayılan 1883 bağlantı noktası kullanmak için yaygın bir durumdur. Uzak sunuculara bağlanmak güvenli olması için dinamik yeniden iletileri güçlü uçtan uca AES simetrik şifreleme kullanır. Varsayılan olarak, şifreleme anahtarını ve başlatma vektörü (IV) her Visual Studio oturumunda yeniden oluşturulur.
+
+Büyük olasılıkla en kolay yolu yüklemektir [mosquitto](https://mosquitto.org) azure'da boş bir Ubuntu VM Server'da:
+
+1. Azure Portalı'nda yeni bir Ubuntu Server VM oluşturma
+2. Ağ sekmesinde 1883 (varsayılan MQTT bağlantı noktası) için yeni bir gelen bağlantı noktası kuralı ekleme
+3. Açık [bulut Kabuk](https://docs.microsoft.com/azure/cloud-shell/overview) (modu bash)
+4. Yazın `ssh [USERNAME]@[PUBLIC_IP]` 1'de seçtiğiniz kullanıcı adı kullanarak) ve VM genel bakış sayfanıza gösterilen genel IP
+5. Çalıştırma `sudo apt-get install mosquitto`, 1'de seçtiğiniz parola girme)
+
+Artık kendi MQTT sunucusuna bağlanmak için bu IP kullanabilirsiniz.
