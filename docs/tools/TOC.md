@@ -28,6 +28,7 @@
 #### [Örnek Tümleştirmeler](workbooks/sdk/samples.md)
 ## [.NET Embedding](dotnet-embedding/index.md)
 ### [Başlarken](dotnet-embedding/get-started/index.md)
+#### [Yükleme](dotnet-embedding/get-started/install/install.md)
 #### [C](dotnet-embedding/get-started/c.md)
 #### [Java](dotnet-embedding/get-started/java/index.md)
 ##### [Android](dotnet-embedding/get-started/java/android.md)
