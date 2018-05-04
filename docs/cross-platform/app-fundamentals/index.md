@@ -1,5 +1,5 @@
 ---
-title: Uygulama Temelleri
+title: Kod paylaşımını
 description: Uygulama kavramları
 ms.prod: xamarin
 ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
@@ -7,33 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: f5bd66cfcfb6ee06abac7bec9151e7325ebb32a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 01116a35dca80cd92ea16232a2abb127f60d9f0a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="application-fundamentals"></a>Uygulama Temelleri
+# <a name="sharing-code"></a>Kod paylaşımını
 
 Bu bölümde bazı daha yaygın şeyler görevleri veya geliştiriciler mobil uygulamaları geliştirirken bilmeniz gereken kavramlar hakkında bir kılavuz sağlar.
 
-##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Platformlar Arası Uygulamalar Oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
-
-Xamarin seçme ve mobil uygulamalarınızı tasarlayıp zaman birkaç aklınızda tutarak, mobil platformlarda paylaşımı inanılmaz kod unutmayın, pazara, süresini azaltabilir, varolan yeteneğiniz yararlanın, mobil erişim için Müşteri talebi karşılamak, ve platformlar arası karmaşıklığı azaltın. &nbsp;Bu belge aşağıdaki avantajları yardımcı programı ve üretkenlik uygulamaları için kullanıldıklarını için önemli bilgiler özetlenmiştir.
-
-## <a name="code-sharing-optionscode-sharingmd"></a>[Kod Paylaşma Seçenekleri](code-sharing.md)
+## <a name="code-sharing-overviewcode-sharingmd"></a>[Kod paylaşımı genel bakış](code-sharing.md)
 
 Taşınabilir sınıf kitaplıkları (PCLs), paylaşılan projeleri ve .NET standart kitaplıkları dahil Xamarin projeleri için kullanılabilir seçenekleri paylaşımı farklı kodu hakkında bilgi edinin.
-
-
-## <a name="accessibilityaccessibilitymd"></a>[Erişilebilirlik](accessibility.md)
-
-Erişilebilir uygulamalar oluşturmaya yönelik ipuçları.
-
-
-## <a name="localizationlocalizationmd"></a>[Yerelleştirme](localization.md)
-
-Yerel ayar kullanan uygulamalar yapmak için yönergeleri birden çok dillere çevrilebilir.
 
 
 ##  <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[Taşınabilir Sınıf Kitaplıkları](~/cross-platform/app-fundamentals/pcl.md)
@@ -55,18 +41,3 @@ NuGet paketleri otomatik olarak PCL ya da .NET standart projelerden oluşturulab
 ##  <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[NuGet paketleri için Xamarin el ile oluşturma](~/cross-platform/app-fundamentals/nuget-manual.md)
 
 NuGet paketleri oluşturmak için ipuçları Xamarin platformuyla çalışır.
-
-##  <a name="cross-platform-data-accessxamarin-formsdata-cloudindexmd"></a>[Çapraz Platform veri erişimi](~/xamarin-forms/data-cloud/index.md)
-
-Çoğu uygulama verileri cihaz üzerinde yerel olarak kaydetmek için bazı gereksinim vardır. Veri miktarını trivially küçük olmadığı sürece, bu genellikle bir veritabanı ve veri katmanı veritabanı erişimi yönetmek üzere uygulamada gerektirir. iOS ve Android "yerleşik" SQLite veritabanı altyapısı sahip ve depolamak ve veri almak için erişim Xamarin'ın platform tarafından basitleştirilmiştir. [Android veri erişimi](~/android/data-cloud/data-access/index.md), [iOS veri erişimi](~/ios/data-cloud/data/index.md), ve [Xamarin.Forms veri erişimi](~/xamarin-forms/data-cloud/index.md) kılavuzlar, her platformda SQLite erişmek nasıl örnekleri sağlar.
-
-
-##  <a name="transport-layer-securitytransport-layer-securitymd"></a>[Aktarım Katmanı Güvenliği](transport-layer-security.md)
-
-Uygulamanızın ağ bağlantısını korumak için seçimleri yapın doğru SSL/TLS uygulaması hakkında bilgiler.
-
-
-##  <a name="notificationsxamarin-formsdata-cloudpush-notificationsindexmd"></a>[Bildirimler](~/xamarin-forms/data-cloud/push-notifications/index.md)
-
-Mobil uygulama bildirimleri bazı uygulama belirli olay gerçekleştirilmedi kullanıcı bildiren bir örtük yolu olarak kullanır. Bildirimleri genellikle arka planda çalışan bir uygulama işleminin durumunu kullanıcıya bildirmek için kullanılır. Buna örnek olarak, büyük bir dosya indirme. Bu etkinlik arka planda gerçekleşmesi gereken şekilde bu dosyayı indirmek için bir uzun zaman alabilir. Yükleme tamamlandığında, kullanıcı tarafından bir bildirim olgu bilgilendirilir.
-Ayrıca, bildirim ares yerel uygulamalar yalnızca bunlarla sınırlı değil. Bildirimler için mobil uygulamaları yayımlamak sunucu uygulamaları için de mümkündür. Bu makalede, Android ve iOS bildirimleri kullanmayı ele alınacaktır.

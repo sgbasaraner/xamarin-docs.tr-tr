@@ -6,14 +6,13 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f75ced921cd240e280b5dd6f7366ccceefb5e40e
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 3620312ff3fbf9d7aa879ae6d318f0b39eec386a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-with-macos"></a>MacOS ile çalışmaya başlama
-
 
 ## <a name="what-you-will-need"></a>İhtiyacınız olacak
 
@@ -27,7 +26,7 @@ ms.lasthandoff: 04/16/2018
 
 Mac için Visual Studio'yu açın, adlı yeni bir Mac sınıf kitaplığı proje oluşturma **csharp gelen hello**ve kaydetmesi **~/Projects/hello-from-csharp**.
 
-Kodla `MyClass.cs` aşağıdaki kod parçacığıyla dosyası:
+Kodla **MyClass.cs** aşağıdaki kod parçacığıyla dosyası:
 
 ```csharp
 using AppKit;
@@ -44,7 +43,9 @@ Projeyi oluşturun. Elde edilen derlemeyi olarak kaydedilecek **~/Projects/hello
 
 ### <a name="bind-the-managed-assembly"></a>Yönetilen derleme bağlama
 
-Yönetilen derleme için doğal bir çerçeve oluşturmak için embeddinator çalıştırın:
+Yönetilen bir derleme sahip olduğunda, .NET katıştırma çağırarak bağlayın.
+
+Bölümünde açıklandığı gibi [yükleme](~/tools/dotnet-embedding/get-started/install/install.md) Kılavuzu, bu yapılabilir, projenizin oluşturma sonrası adımı olarak özel bir MSBuild hedef veya el ile:
 
 ```shell
 cd ~/Projects/hello-from-csharp
@@ -89,8 +90,8 @@ Açık **ViewController.m**ve içeriği ile değiştirin:
 @end
 ```
 
-Son olarak Xcode projesini çalıştırın ve şunun gibi görünür:
+Son olarak, Xcode projesini çalıştırın ve şunun gibi görünür:
 
 ![Merhaba örnekten benzeticisinde çalıştıran C#](macos-images/hello-from-csharp-mac.png)
 
-Daha eksiksiz ve sonrasının bir örnek kullanılabilir [burada](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather).
+Daha eksiksiz ve sonrasının bir örnek [buradan kullanılabilir](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather).

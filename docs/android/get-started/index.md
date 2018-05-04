@@ -1,5 +1,5 @@
 ---
-title: Android’i Kullanmaya Başlarken
+title: Xamarin.Android ile Android uygulamaları geliştirmeye başlayın
 description: Xamarin.Android, Java, ancak esneklik ve modern bir dili (C#) şıklık, .NET temel sınıf kitaplığı (BCL) ve birinci sınıf bir IDE (gücünü ile olduğu gibi aynı kullanıcı Arabirimi denetimlerini kullanarak yerel Android uygulamaları oluşturmak mümkün kılar Visual Studio) parmaklarınızın ucunda. Bu seri Xamarin.Android geliştirme ile ilgili temel bilgiler sunar. İşlem, Kurulum ve yükleme ilk uygulamanızı oluşturma için alır.
 ms.prod: xamarin
 ms.assetid: D3BC68C5-87C1-50AF-ED0A-55EBF07CBD8B
@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 ms.custom: xamu-video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/25/2017
-ms.openlocfilehash: 8a9abb7e9a5640994d67c1fb33d15d8405442b6c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: a60331a6c8cd1b65e51a63b221cbdb7182803bd1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-series"></a>Kullanmaya başlama serisini
 

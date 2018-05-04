@@ -1,5 +1,5 @@
 ---
-title: Denetimler
+title: Android denetimleri (Pencere)
 description: Xamarin.Android kullanıcı arabirimleri oluşturmak için yapı taşları
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
@@ -7,14 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28418c3b3fedcd24963008eb3b59ffa782d791f1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="controls"></a>Denetimler
-
+# <a name="android-controls-widgets"></a>Android denetimleri (Pencere)
 
 Xamarin.Android tüm Android tarafından sağlanan yerel kullanıcı arabirimi denetimlerini (Pencere) kullanıma sunar. Bu denetimler, kolayca Xamarin.Android uygulamaları Android Tasarımcısı'nı kullanarak veya programlı şekilde XML düzeni dosyaları aracılığıyla eklenebilir. Seçtiğiniz yöntem bağımsız olarak, tüm kullanıcı arabirimi nesne özellikleri ve yöntemleri C# Xamarin.Android gösterir. Aşağıdaki bölümlerde, en yaygın Android kullanıcı arabirimi denetimlerini tanıtır ve Xamarin.Android uygulamalarda eklemenizi açıklanmaktadır.
 

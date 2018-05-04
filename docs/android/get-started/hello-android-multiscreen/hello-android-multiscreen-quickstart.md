@@ -7,12 +7,12 @@ ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 67644caedd268aac45a86c03a69ba017976fc103
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/30/2018
+ms.openlocfilehash: d8f909ab522b5bbf08a2b666fd4f64340e60b3e5
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Merhaba, Android Multiscreen: Hızlı Başlangıç
 
@@ -108,10 +108,11 @@ Bu sınıf, oluşturmakta olduğunuz bir `ListActivity` ve yeni bir düzen dosya
 
 ### <a name="adding-translation-history-code"></a>Çeviri geçmişi kod ekleme
 
-Bu uygulamayı (kullanıcı ilk ekranda çevrilen) telefon numaralarını toplar ve bunları ikinci ekranına geçirir. Telefon numaralarını dizelerinin listesini depolanır. Listeleri desteklemek için aşağıdaki ekleyin `using` üstüne yönerge `MainActivity` sınıfı:
+Bu uygulamayı (kullanıcı ilk ekranda çevrilen) telefon numaralarını toplar ve bunları ikinci ekranına geçirir. Telefon numaralarını dizelerinin listesini depolanır. Listeler (ve daha sonra kullanılan hedefleri) desteklemek için aşağıdaki ekleyin `using` üst kısmındaki yönergeleri **MainActivity.cs**:
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 Ardından, telefon numaralarıyla doldurulabilir boş bir liste oluşturun.
@@ -246,10 +247,11 @@ Bu sınıftaki bir `ListActivity` oluşturulur ve yeni bir düzen dosyası için
 
 ### <a name="adding-translation-history-code"></a>Çeviri geçmişi kod ekleme
 
-Bu uygulamayı (kullanıcı ilk ekranda çevrilen) telefon numaralarını toplar ve bunları ikinci ekranına geçirir. Telefon numaralarını dizelerinin listesini depolanır. Listeleri desteklemek için aşağıdaki ekleyin `using` üstüne yönerge `MainActivity` sınıfı:
+Bu uygulamayı (kullanıcı ilk ekranda çevrilen) telefon numaralarını toplar ve bunları ikinci ekranına geçirir. Telefon numaralarını dizelerinin listesini depolanır. Listeler (ve daha sonra kullanılan hedefleri) desteklemek için aşağıdaki ekleyin `using` üst kısmındaki yönergeleri **MainActivity.cs**:
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 Ardından, telefon numaralarıyla doldurulabilir boş bir liste oluşturun. `MainActivity` Sınıfı şu şekilde görünür:

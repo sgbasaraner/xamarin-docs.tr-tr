@@ -1,16 +1,16 @@
 ---
-title: .NET hataları katıştırma
+title: .NET katıştırma hataları
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/11/2018
-ms.openlocfilehash: 0bc4451d8eb93b826fc673bc4e163c9b7b68c36e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 677242ea12f8fd87d82f337eafd96a1743ad806a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="net-embedding-errors"></a>.NET hataları katıştırma
 
@@ -92,7 +92,7 @@ Bu oluşturucunun sonraki bir sürümde düzeltme düşündüğünüz bilinen bi
 
 Olmadığı için ortak bir dosya aralarında aracı hata iletisinde çerçeveleri birleştirilemedi.
 
-Bu eklenmesinde bir hata Embeddinator 4000 gösterebilir; Lütfen sırasında bir hata raporu dosya [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) bir test çalışması ile.
+Bu eklenmesinde bir hata .NET katıştırma gösterebilir; Lütfen sırasında bir hata raporu dosya [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) bir test çalışması ile.
 
 <a name="EM0011" />
 
@@ -142,9 +142,9 @@ Verilen komut satırı seçeneği söz dizimi `A` aracı tarafından ayrıştır
 
 ### <a name="em0099-internal-error--please-file-a-bug-report-with-a-test-case-httpsgithubcommonoembeddinator-4000issues"></a>EM0099: İç hata *. Lütfen bir test çalışması ile bir hata raporu dosya (https://github.com/mono/Embeddinator-4000/issues).
 
-Embeddinator 4000 içinde bir iç tutarsızlık denetimi başarısız olduğunda bu hata iletisini bildirilir.
+.NET katıştırma içinde bir iç tutarsızlık denetimi başarısız olduğunda bu hata iletisini bildirilir.
 
-Bu eklenmesinde bir hata Embeddinator 4000 gösterir; Lütfen sırasında bir hata raporu dosya [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) bir test çalışması ile.
+Bu eklenmesinde bir hata .NET katıştırma gösterir; Lütfen sırasında bir hata raporu dosya [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) bir test çalışması ile.
 
 <!-- 1xxx: code processing -->
 
@@ -189,7 +189,7 @@ public class MyType {
 }
 ```
 
-Oluşturulan bu gibi durumlarda yalnızca iki `init` Seçici oluşturuldu, her iki arama mono, içine ancak sonraki için hiçbir sarmalayıcı mevcut.
+Oluşturulan bu gibi durumlarda yalnızca iki `init` Seçici oluşturuldu, her iki arama Mono, içine ancak sonraki için hiçbir sarmalayıcı mevcut.
 
 <a name="EM1030" />
 
@@ -224,7 +224,7 @@ public class MyType {
 }
 ```
 
-Oluşturulan bu gibi durumlarda yalnızca iki `increment` Seçici oluşturuldu, her iki arama mono, içine ancak sonraki için hiçbir sarmalayıcı mevcut.
+Oluşturulan bu gibi durumlarda yalnızca iki `increment` Seçici oluşturuldu, her iki arama Mono, içine ancak sonraki için hiçbir sarmalayıcı mevcut.
 
 <a name="EM1033" />
 
@@ -236,7 +236,7 @@ Bu bir **uyarı** , yöntem `M` işleci kolay ada sahip başka bir yöntemi gös
 
 ### <a name="em1034-extension-method-m-is-not-generated-inside-a-category-because-they-cannot-be-created-on-primitive-type-t-a-normal-static-method-was-generated"></a>EM1034: Uzantı yöntemi `M` ilkel tür üzerinde oluşturulamayacağı için bir kategori içinde oluşturulmaz `T`. Normal, statik bir yöntem oluşturuldu.
 
-Bu bir **uyarı** bir primivite üzerinde bir genişletme yöntemi yazın (örneğin `System.Int32`) bulundu. İçinde ObjC ilkel türüne kategorileri oluşturmak mümkün değil. Bunun yerine oluşturucunun olması oluşturacak normal, statik bir yöntem.
+Bu bir **uyarı** bir primivite üzerinde bir genişletme yöntemi yazın (örneğin `System.Int32`) bulundu. Objective-C ilkel türüne kategorileri oluşturmak mümkün değil. Bunun yerine oluşturucunun olması oluşturacak normal, statik bir yöntem.
 
 <a name="EM1040" />
 
@@ -286,7 +286,7 @@ Bu bir **uyarı** o öğeye `E` diğer öğeleri aynı sınıfı üzerinde adıy
 
 Bu bir **uyarı** hedefleyen `E` Xamarin.iOS ve Xamarin.Mac kullanım için desteklenmeyen olarak kabul edilir. 
 
-Statik veya dinamik Embeddinator kitaplıkların tüketimi ek çalışma adımları veya tweaks gerektirebilir ve çoğu kullanım durumlarında kaçınılmalıdır.
+Statik veya dinamik .NET katıştırma kitaplıkları tüketimini ek çalışma adımları veya tweaks gerektirebilir ve çoğu kullanım durumlarında kaçınılmalıdır.
 
 Kaldırmayı düşünün, `--target` parametresi veya geçişi `--target=framework` yerine.
 

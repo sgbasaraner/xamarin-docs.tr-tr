@@ -5,11 +5,11 @@ title: Xamarin Belgeleri
 description: Xamarin, .NET kodu ve platforma özgü kullanıcı arabirimlerini kullanarak Android, iOS ve macOS için yerel uygulamalar oluşturmanıza olanak sağlar. Xamarin.Forms, C# veya XAML’de yazılan paylaşılan kullanıcı arabirimi koduyla yerel uygulamalar oluşturmanıza olanak sağlar.
 featureFlags:
 - clicktale
-ms.openlocfilehash: de03c1bd1b7874e6a837fbbb9e88a353f19afca5
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: a2f8c6ddedcff89f357ed8a984954d9f91c0477f
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -831,12 +831,12 @@ ms.lasthandoff: 04/03/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-cross-platform-fundamentals.svg?branch=master" data-linktype="external">
+                                                        <img alt="Sharing Code" src="~/media/index/xamarin-cross-platform-fundamentals.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Uygulama Temelleri</h3>
-                                                    <p>Dosya işleme, görüntüler vb. gibi temel görevler için paylaşılabilir kod yazmaya ilişkin temel bilgileri öğrenin.</p>
+                                                    <h3>Kod Paylaşma</h3>
+                                                    <p>Android, iOS ve Windows arasında kod ve kitaplıkları paylaşmaya yönelik farklı seçenekler hakkında bilgi edinin.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -850,12 +850,12 @@ ms.lasthandoff: 04/03/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Platform Features" src="~/media/index/xamarin-cross-platform-platform-features.svg?branch=master" data-linktype="external">
+                                                        <img alt="Language Support" src="~/media/index/xamarin-cross-platform-platform-features.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Platform Özellikleri</h3>
-                                                    <p>FaceID ve ARKit gibi platforma özgü özellikler ve iOS üzerindeki en son eklemelerle çalışma.</p>
+                                                    <h3>Dil Desteği</h3>
+                                                    <p>Xamarin projeleri C# ve F# dillerinde yazılabilir ve VB’de yazılmış kitaplıkları kullanabilir. Razor şablonları da desteklenir.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -873,8 +873,8 @@ ms.lasthandoff: 04/03/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Dağıtım ve Test</h3>
-                                                    <p>Birden fazla platform için uygulamaları derleme ve dağıtma.</p>
+                                                    <h3>Hata Ayıklama ve Performans</h3>
+                                                    <p>Hangi platformu hedeflediğiniz fark etmeksizin uygulamanızı geliştirmenize yardımcı olacak ipuçları.</p>
                                                 </div>
                                             </div>
                                         </div>

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
-ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
+ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin dinamik yeniden yükle
 
@@ -106,13 +106,33 @@ Hayır. Aslında, hatta tüm desteklenen uygulama hedeflerinizi (Android, iOS ve
 ## <a name="limitations"></a>Sınırlamalar
 
 * Yalnızca XAML yeniden yüklenmesi desteklenir.
-* Yalnızca Visual Studio'da desteklenir.
-* Yalnızca .NET standart kitaplıkları ile çalışır.
-* CSS stil sayfaları desteklenmez.
 * Kullanıcı Arabirimi durumu yeniden dağıtır arasında MVVM kullanmadığınız sürece korunmasını değil.
-* Uygulama genelinde kaynakları yeniden (yani **App.xaml** veya kaynak sözlüklerindeki paylaşılan), uygulama gezinti sıfırlanır.
+
+## <a name="known-issues"></a>Bilinen Sorunlar
+
+* Yalnızca Visual Studio'da desteklenir.
+* Yalnızca .NET standart kitaplıkları ile çalışır. Bu, sonraki Önizleme sürümünde düzeltilecektir.
+* CSS stil sayfaları desteklenmez. Bu, sonraki Önizleme sürümünde düzeltilecektir.
+* Uygulama genelinde kaynakları yeniden (yani **App.xaml** veya kaynak sözlüklerindeki paylaşılan), uygulama gezinti sıfırlanır. Bu, sonraki Önizleme sürümünde düzeltilecektir.
+* UWP hata ayıklama çalışma zamanı çökmeyle neden olabilir ancak XAML düzenleme. Geçici çözüm: Kullanmak **başlatın (Ctrl + F5) hata ayıklama olmadan** yerine **hata ayıklama (F5) Başlangıç**.
 
 ## <a name="troubleshooting"></a>Sorun giderme
+
+### <a name="error-codes"></a>Hata kodları
+
+* **XLR001**: *geçerli projeye başvuruda bulunan 'Xamarin.LiveReload' NuGet Paket sürümü [VERSION] ancak Xamarin Canlı yeniden uzantısı sürümü [VERSION] gerektirir.*
+
+  Hızlı yineleme ve canlı yeniden yükle özelliği evrimi izin vermek üzere nuget paketi ve Visual Studio uzantısı tam olarak eşleşmelidir. Nuget paketi yüklediğiniz uzantısı aynı sürüme güncelleştirin.
+
+* **XLR002**: *Canlı yeniden en azından 'MqttHostname' özelliği komut satırından derlerken. Alternatif olarak, 'EnableLiveReload', 'özelliği devre dışı bırakmak için false' olarak ayarlayın.*
+
+  Dinamik yeniden tarafından gerekli özelliklerinin ne zaman kullanılabilir değil komut satırından (veya sürekli tümleştirme) oluşturma ve açıkça sağlanmalıdır. 
+
+* **XLR003**: *Canlı yeniden nuget paketi gerektirir Xamarin Canlı yeniden Visual Studio uzantısı yükleme.*
+
+  Dinamik yeniden nuget paketi başvuran bir projeyi derleme denedi ancak Visual uzantısı yüklü değil.  
+
+
 
 ### <a name="app-doesnt-connect"></a>Uygulama bağlanmıyor
 
@@ -145,7 +165,7 @@ Eski bir önizleme varsa ve kaldırmayı sorunlar yaşıyorsanız, aşağıdaki 
 
 Senaryolarda bağlantı burada çalışan uygulamalardan makinenize (kullanarak gösterilen `localhost` veya `127.0.0.1` içinde **araçları > Seçenekler > Xamarin > Canlı yeniden**) mümkün değildir (yani güvenlik duvarları, farklı ağlarda) Uzak bir sunucusu bunun yerine, hangi IDE ve uygulama yapılandırabileceğiniz conect için.
 
-Dinamik yeniden kullanan standart [MQTT Protokolü](http://mqtt.org/) için exchange iletileri ve bu nedenle ile iletişim kurabildiğini [üçüncü taraf sunucular](https://github.com/mqtt/mqtt.github.io/wiki/servers). Var olan bile [ortak sunucuları](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (olarak da bilinen *aracıların*) kullanılabilir, kullanabilirsiniz. Dinamik yeniden test edilmiştir ile `broker.hivemq.com` ve `iot.eclipse.org` tarafından sağlanan hizmetlerin yanı sıra ana bilgisayar adlarını [www.cloudmqtt.com](https://www.cloudmqtt.com) ve [www.cloudamqp.com](https://www.cloudamqp.com). Bulutta, kendi MQTT sunucusu gibi dağıtabilirsiniz [azure'da HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud) veya [tavşan MQ AWS üzerinde](http://www.rabbitmq.com/ec2.html). 
+Dinamik yeniden kullanan standart [MQTT Protokolü](http://mqtt.org/) için exchange iletileri ve bu nedenle ile iletişim kurabildiğini [üçüncü taraf sunucular](https://github.com/mqtt/mqtt.github.io/wiki/servers). Var olan bile [ortak sunucuları](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (olarak da bilinen *aracıların*) kullanılabilir, kullanabilirsiniz. Dinamik yeniden test edilmiştir ile `broker.hivemq.com` ve `iot.eclipse.org` tarafından sağlanan hizmetlerin yanı sıra ana bilgisayar adlarını [www.cloudmqtt.com](https://www.cloudmqtt.com) ve [www.cloudamqp.com](https://www.cloudamqp.com). Bulutta, kendi MQTT sunucusu gibi dağıtabilirsiniz [azure'da HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
 
 Herhangi bir bağlantı yapılandırabilirsiniz, ancak uzak sunucular için varsayılan 1883 bağlantı noktası kullanmak için yaygın bir durumdur. Uzak sunuculara bağlanmak güvenli olması için dinamik yeniden iletileri güçlü uçtan uca AES simetrik şifreleme kullanır. Varsayılan olarak, şifreleme anahtarını ve başlatma vektörü (IV) her Visual Studio oturumunda yeniden oluşturulur.
 

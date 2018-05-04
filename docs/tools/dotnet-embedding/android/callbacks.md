@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 72786ac4bceca2635747ebcc844a98b0ce60383f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b2584d1e76c2f4ed0fb0a924beda3fd2554a57d
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="callbacks-on-android"></a>Android'de geri aramalar
 
@@ -44,7 +44,7 @@ public abstract class AbstractClass : Java.Lang.Object
 Bunun çalışmasını sağlamak için ayrıntıları aşağıdadır:
 
 - `[Register]` iyi paket adı oluşturur Java'da--bir paketi otomatik olarak oluşturulan adı olmadan alırsınız.
-- Sınıflara `Java.Lang.Object` sınıfı Xamarin.Android'ın Java oluşturucuyu çalıştırmak için Embeddinator işaret eder.
+- Sınıflara `Java.Lang.Object` sınıfı Xamarin.Android'ın Java oluşturucuyu çalıştırmak için .NET katıştırmak için sinyal.
 - Boş Oluşturucusu: Java koddan kullanmak istediğiniz.
 - `(IntPtr, JniHandleOwnership)` Oluşturucusu: Xamarin.Android C# oluşturmak için kullanır-Java nesnelerini eşdeğeridir.
 - `[Export]` Java yönteme kullanıma sunmak için Xamarin.Android işaret eder. Java world küçük yöntemleri kullanın istemeyebilir bu yana biz de yöntem adını değiştirebilirsiniz.
@@ -64,7 +64,7 @@ public class JavaCallbacks : Java.Lang.Object
 ```
 `JavaCallbacks` Bunu test etmek için herhangi bir sınıf olduğu sürece olabilir bir `Java.Lang.Object`.
 
-Şimdi, Embeddinator bir AAR oluşturmak için .NET derleme çalıştırın. Bkz: [Getting Started guide](~/tools/dotnet-embedding/get-started/java/android.md) Ayrıntılar için.
+Şimdi, .NET katıştırma bir AAR oluşturmak için .NET derleme çalıştırın. Bkz: [Getting Started guide](~/tools/dotnet-embedding/get-started/java/android.md) Ayrıntılar için.
 
 Android Studio uygulamasına AAR dosya alındıktan sonra birim testi yazalım:
 
@@ -153,7 +153,7 @@ Burada, giden oldukça bit yoktur biz:
 
 Bu sınıf ekleme ve yeni AAR oluşturma sonra geçişleri bizim birim testi. Geri aramalar için bu deseni değil gördüğünüz *ideal*, ancak ortak.
 
-Java birlikte çalışma hakkında daha fazla bilgi için harika bkz [Xamarin.Android belgelerine](https://developer.xamarin.com/guides/android/advanced_topics/java_integration_overview/working_with_jni/) Bu konu hakkında.
+Java birlikte çalışma hakkında daha fazla bilgi için harika bkz [Xamarin.Android belgelerine](~/android/platform/java-integration/working-with-jni.md) Bu konu hakkında.
 
 ## <a name="interfaces"></a>Arabirimler
 
@@ -169,7 +169,8 @@ public interface IJavaCallback : IJavaObject
     void Send(string text);
 }
 ```
-`IJavaObject` Xamarin.Android arabirimi budur ancak Aksi durumda bu tam olarak aynı olduğundan Embeddinator sinyalleri bir `abstract` sınıfı.
+
+`IJavaObject` sinyalleri .NET katıştırmak için bir Xamarin.Android arabirimi budur ancak Aksi durumda bu tam olarak aynı olduğundan bir `abstract` sınıfı.
 
 Xamarin.Android şu anda bu arabirim için Java kod oluşturmaz olduğundan, aşağıdaki Java C# projenize ekleyin:
 
@@ -180,7 +181,8 @@ public interface IJavaCallback {
     void send(String text);
 }
 ```
-Dosyanın herhangi bir yere koyun, ancak yapı eylemi ayarlamak için emin olun `AndroidJavaSource`. Bu Embeddinator AAR dosyanıza derlenmiş için uygun bir dizine kopyalayın işaret.
+
+Dosyanın herhangi bir yere koyun, ancak yapı eylemi ayarlamak için emin olun `AndroidJavaSource`. Bu AAR dosyanıza derlenmiş için uygun dizine kopyalamak için .NET katıştırma işaret.
 
 Ardından, `Invoker` uygulaması oldukça aynı olacaktır:
 
@@ -281,15 +283,15 @@ Var olan birkaç şey Biz bu senaryoları geliştirmek olabilir:
     - Bu yapı eylemiyle Java kaynak dosyası ekleme gereksinimini ortadan kaldırır `AndroidJavaSource`.
 1. Xamarin.Android yüklemek için bir yol sağlamak bir `Invoker` sanal sınıflar için.
     - Bu sınıfta işaretlemek için gereksinimini ortadan kaldırır bizim `virtual` örnek `abstract`.
-1. Oluştur `Invoker` Embeddinator için otomatik olarak sınıfları
+1. Oluştur `Invoker` .NET katıştırmak için otomatik olarak sınıfları
     - Bu karmaşık, ancak ortak olacak. Xamarin.Android zaten Java bağlama projeleri için buna benzer bir şey yapıyor.
 
-Burada yapılacak işleri çok yoktur, ancak bu geliştirmeler Embeddinator mümkündür.
+Burada yapılacak işleri çok yoktur, ancak bu geliştirmeler, .NET katıştırma mümkündür.
 
 ## <a name="further-reading"></a>Daha Fazla Bilgi
 
 * [Android Başlarken](~/tools/dotnet-embedding/get-started/java/android.md)
 * [Ön Android araştırma](~/tools/dotnet-embedding/android/index.md)
-* [Embeddinator sınırlamaları](~/tools/dotnet-embedding/limitations.md)
+* [.NET katıştırma sınırlamaları](~/tools/dotnet-embedding/limitations.md)
 * [Açık kaynak projesine katkıda bulunan](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
 * [Hata kodları ve açıklamaları](~/tools/dotnet-embedding/errors.md)

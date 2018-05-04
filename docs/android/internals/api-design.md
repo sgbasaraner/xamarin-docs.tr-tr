@@ -1,18 +1,18 @@
 ---
-title: API tasarım
+title: Xamarin.Android API tasarım ilkeleri
 ms.prod: xamarin
 ms.assetid: 3E52D815-D95D-5510-0D8F-77DAC7E62EDE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: a9c0b02457f006f75dc5b6f0a52e68865d620f67
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 611046954e8ef359476d2bd12a69f04041d869f1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="api-design"></a>API tasarım
+# <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android API tasarım ilkeleri
 
 
 ## <a name="overview"></a>Genel Bakış
@@ -59,7 +59,6 @@ Bu bizim tasarım ilkeleri Xamarin.Android bağlama için bazıları
     - C# temsilciler (Lambda'lar, anonim yöntemler ve System.Delegate), uygun ve geçerli olduğunda, yerine tek yöntemi arabirimleri kullanıma sunar.
 
     - Rastgele Java kitaplıkları çağırmak için bir mekanizma sağlar ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)).
-
 
 
 ## <a name="assemblies"></a>Derlemeler

@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 9364b4c56951ac9ebd3870e4afe41a40f9e1f455
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e064eda3db9aa0156869cf1c7392823553af9bd2
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="binding-types-reference-guide"></a>Bağlama türü Başvuru Kılavuzu
 
@@ -1141,10 +1141,10 @@ Bu öznitelik ile .NET açıklama eklemek bir özellik için yedekleme alanı ba
 Bu öznitelik, bir yöntem destek yerel (Objective-C) özel durumları hale getirir.
 Çağırmak yerine `objc_msgSend` çağırma ObjectiveC özel durumları yakalar ve bunları yönetilen özel durumlar sıralar özel bir trampoline aracılığıyla doğrudan geçer.
 
-Şu anda yalnızca birkaç `objc_msgSend` imzalar desteklenir (, eksik monotouch_ ile yerel bağlama bağlama kullanan bir uygulama başarısız olduğunda bir imza desteklenmiyor, bulacaksınız*_objc_msgSend* simgesi), ancak daha fazla olabilir isteğiyle eklendi.
+Şu anda yalnızca birkaç `objc_msgSend` imzalar desteklenir (, eksik monotouch_ ile yerel bağlama bağlama kullanan bir uygulama başarısız olduğunda bir imza desteklenmiyor, bulacaksınız *_objc_msgSend* simgesi), ancak daha fazla olabilir isteğiyle eklendi.
 
 
-### <a name="newattribute"></a>NewAttribute
+### <a name="newattribute"></a>Newattrıbute
 
 Bu öznitelik yöntemlerine uygulanır ve oluşturucunun sağlamak için özellikler oluşturmak `new` bildirimi önünde anahtar sözcüğü.
 
@@ -1493,7 +1493,7 @@ Bu öznitelik parametre türleri bağlayıcı bildirim söz konusu parametre ça
 
 Bu genellikle şu şekilde hedefi-C: tanımlanan geri aramalar için kullanılır
 
-```csharp
+```objc
 typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 
@@ -1513,7 +1513,7 @@ typedef returnType (*SomeTypeDefinition) (int parameter1, NSString *parameter2);
 
 Ayrıca bkz: [BlockCallback](#BlockCallback).
 
-### <a name="params"></a>Params
+### <a name="params"></a>Parametreleri
 
 Kullanabileceğiniz `[Params]` tanımı'ndaki "params" ekleme Oluşturucu için bir yöntem tanımını son dizi parametresinin özniteliği.   Bu bağlama için isteğe bağlı parametreler kolayca olanak sağlar.
 

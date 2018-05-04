@@ -7,13 +7,13 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ec3cb08b227b268c4c755545e8bc76b9e234d093
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 97e6167304ebf50a149fce379eb34e8a46c8d3e8
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="sharing-code-options"></a>Paylaşım kodu seçenekleri
+# <a name="sharing-code-overview"></a>Paylaşım kod genel bakış
 
 _Bu belge kod platformlar arası projeler arasında paylaşımı için farklı yöntemler karşılaştırır: paylaşılan projeleri, taşınabilir sınıf kitaplıkları ve avantajları ve dezavantajları dahil .NET standart._
 

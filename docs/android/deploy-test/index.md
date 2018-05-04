@@ -1,17 +1,17 @@
 ---
-title: Dağıtım ve Test Etme
+title: Sınama, en iyi duruma getirme ve Xamarin.Android uygulamaları dağıtma
 description: Bu bölüm, bir uygulamayı test, performansı iyileştirmek, sürüm için hazırlama, bir sertifika ile oturum açın ve bir uygulama Mağazası'na yayımlamak açıklanmaktadır kılavuzları içerir.
 ms.prod: xamarin
 ms.assetid: 568C0B85-EFF3-AF6F-5605-95055193D367
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: d7453af3721cbdb6b93d884322cee1cd5115c317
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 5b3061f30f6f120cf8edb41ccf5e70ae853aeb9e
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="deployment-and-testing"></a>Dağıtım ve Test Etme
 
@@ -54,7 +54,7 @@ Bu kılavuz bir Xamarin.Android uygulaması Android cihazında sistem uygulamas�
 
 Bu makalede, uygulamanın son boyutunu azaltmak için Xamarin.Android tarafından kullanılan bağlama işlemini anlatılmaktadır. Gerçekleştirilebilir ve bazı yönergeler ve sorun giderme önerileri bağlayıcı kullanarak sonuçlanabilir hatalarını azaltmak için sağlayan bağlama çeşitli düzeyinden birini açıklar.
 
-## <a name="xamarinandroid-performanceandroiddeploy-testperformancemd"></a>[Xamarin.Android Performance](~/android/deploy-test/performance.md)
+## <a name="xamarinandroid-performanceandroiddeploy-testperformancemd"></a>[Xamarin.Android performans](~/android/deploy-test/performance.md)
 
 Xamarin.Android ile oluşturulan uygulamaların performansını artırmak için birçok tekniği vardır. Topluca bu teknikler bir CPU ve bir uygulama tarafından kullanılan bellek miktarına tarafından gerçekleştirilen çalışma miktarını önemli ölçüde azaltabilir.
 

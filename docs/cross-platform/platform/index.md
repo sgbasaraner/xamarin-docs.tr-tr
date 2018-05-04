@@ -1,5 +1,5 @@
 ---
-title: Platform Özellikleri
+title: Dil Desteği
 description: Platformlar arası uygulama özelliklerinin ve kavramlarının.
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
@@ -7,21 +7,22 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: a1699c8bde336c040253a5560a2979de8b3fabf5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f22bb1b37f3e03f63c9e47cf71d5df57ade0042f
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="platform-features"></a>Platform Özellikleri
+# <a name="language-support"></a>Dil Desteği
 
 Bu bölümde bazı daha gelişmiş platformlar arası uygulama özelliklerinin ve kavramlarının açıklayan belgelerini içerir.
 
-##  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[Zaman Uyumsuz Desteğe Genel Bakış](~/cross-platform/platform/async.md)
+## <a name="c"></a>C# 
+###  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[Zaman Uyumsuz Desteğe Genel Bakış](~/cross-platform/platform/async.md)
 
 Zaman uyumsuz işlemleri ifade etmek için iki yeni anahtar sözcüklerle sürüm 5 C# sunulan: async ve await. Bu anahtar sözcükler, başka bir iş parçacığında (örneğin, ağ erişimi) uzun süre çalışan işlemlerini yürütmek için görev paralel kitaplığı kullanan basit kod yazmak ve kolayca tamamlama sonuçlarına erişme olanak tanır. Xamarin.iOS ve Xamarin.Android en son sürümlerini zaman uyumsuz desteği ve await - bu belge, açıklamalar ve Xamarin ile yeni sözdizimini kullanarak bir örnek sağlar.
 
-## <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[C# 6 Dil Özellikleri](~/cross-platform/platform/csharp-six.md)
+### <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[C# 6 Dil Özellikleri](~/cross-platform/platform/csharp-six.md)
 
 C# dili – sürüm 6 – en son sürümünü daha az Demirbaş, geliştirilmiş daha anlaşılır olması ve daha fazla tutarlılık sağlamak için dil gelişmeye devam eder. Temizleyici başlatma sözdizimi, kullanabilme `await` içinde `catch/finally` blokları ve null-conditional `?` işleci özellikle kullanışlıdır.
 
@@ -37,7 +38,3 @@ Visual Studio, Xamarin uygulamaları birleştirilebilir Visual.NET kullanarak ta
 
 Xamarin, geliştiricilerin birlikte kolayca verileri HTML, Javascript ve CSS ile el ile HTML dizelerini kod oluşturmanın uğraşmadan birleştirmek için C# ASP.NET MVC ile ilk olarak sunulan Razor şablon motoru yararlanmanızı sağlar.
 Bu makalede Razor şablonların Xamarin ile Android ve iOS için nasıl kullanılacağı gösterilmektedir.
-
-##  <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[NuGet paketleri için Xamarin el ile oluşturma](~/cross-platform/app-fundamentals/nuget-manual.md)
-
-NuGet paketleri oluşturmak için ipuçları Xamarin platformuyla çalışır.

@@ -7,16 +7,16 @@ metadata:
   ms.author: crdun
   ms.date: 04/25/2018
   ms.topic: landing-page
-  ms.openlocfilehash: 51ca9ee767acf453b252a967e0bbcd083c52ce20
-  ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+  ms.openlocfilehash: 9a08ccb3b00990a8b8425a2eb95d1f2390dda30e
+  ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
   ms.translationtype: HT
   ms.contentlocale: tr-TR
-  ms.lasthandoff: 04/26/2018
+  ms.lasthandoff: 05/03/2018
 abstract:
-  description: Xamarin, mobil uygulamalar ve tablet ve masaüstü uygulamaları için platformlar arası geliştirme platformu sağlar.
+  description: Xamarin, mobil uygulamalar ile tablet ve masaüstü uygulamaları için platformlar arası geliştirme çözümü sağlar. Bu bölümde, hedeflenen tüm platformlarda geçerli olan ayrıntılar ele alınır.
   menu:
     items:
-    - href: ~/cross-platform/samples/
+    - href: ~/cross-platform/samples/index.yml
       text: Xamarin Örnekleri
     - href: /visualstudio/
       text: Visual Studio
@@ -35,13 +35,21 @@ sections:
       text: Gereksinimler
       href: ~/cross-platform/get-started/requirements.md
     - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Başlarken
+        src: ~/media/icons/i_desktop-phone.svg
+      text: Xamarin.Forms
       href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Çoklu Ekran Uygulamaları
-      href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
+      text: Android
+      href: ~/android/get-started/hello-android/hello-android-quickstart
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobile-app-developement.svg
+      text: iOS
+      href: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_xplat-code.svg
+      text: Mac
+      href: ~/mac/get-started/hello-mac.md
 - title: Kılavuzlar
   items:
   - type: list
@@ -54,30 +62,36 @@ sections:
         src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
         href: ~/cross-platform/get-started/index.md
       title: Başlarken
+    - href: ~/cross-platform/platform
+      html: Xamarin C#, F# ve Razor şablon oluşturma motorunu destekler.
+      image:
+        src: ~/media/icons/i_app-build.svg
+        href: ~/cross-platform/platform
+      title: Dil Desteği
     - href: ~/cross-platform/app-fundamentals/
       html: Uygulama oluşturmak için bilmeniz gereken her şey.
       image:
-        src: ~/media/icons/i_app-build.svg
-        href: ~/cross-platform/app-fundamentals/
-      title: Uygulama Temelleri
-    - href: ~/cross-platform/platform
-      html: Platform özellikleriyle çalışma.
-      image:
         src: ~/media/icons/i_platform.svg
-        href: ~/
-      title: Platform Özellikleri
+        href: ~/cross-platform/app-fundamentals/
+      title: Kod Paylaşma
+    - href: ~/cross-platform/deploy-test/performance.md
+      html: Uygulama performansı ve güvenliği için yönergeler.
+      image:
+        src: https://docs.microsoft.com/en-us/media/common/i_code-performance.svg
+        href: ~/cross-platform/deploy-test/performance.md
+      title: Performans ve Güvenlik
     - href: ~/cross-platform/deploy-test/
-      html: Uygulamalarınızı derlemeye ve dağıtmaya ilişkin yönergeler ve bunları önceden test etmeye yönelik ipuçları!
+      html: Hata ayıklama ve dağıtım için ipuçları.
       image:
         src: ~/media/icons/i_deploy-test.svg
         href: ~/cross-platform/deploy-test/
-      title: Dağıtım ve Test Etme
-    - href: ~/cross-platform/macios/
-      html: iOS, watchOS, tvOS ve macOS SDK’larının ortak özellikleri.
+      title: Dağıtım ve Hata Ayıklama
+    - href: ~/cross-platform/desktop/
+      html: Mobil uygulama geliştirmek isteyen .NET masaüstü geliştiricilerine yönelik yönergeler.
       image:
-        src: https://docs.microsoft.com/media/logos/logo_xcode.svg
-        href: ~/cross-platform/macios/
-      title: Apple Platformu (Mac ve iOS)
+        src: https://docs.microsoft.com/en-us/media/common/i_xplat-code.svg
+        href: ~/cross-platform/desktop/
+      title: Masaüstü Geliştiricileri
 - title: Platformlar
   items:
   - type: list
@@ -85,14 +99,14 @@ sections:
     className: cardsD
     items:
     - title: Xamarin.Forms
-      href: ~/xamarin-forms/index.md
+      href: ~/xamarin-forms/index.yml
       html: <p><a href="~/xamarin-forms/get-started/index.md">Başlarken</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">Uygulama Temelleri</a><br /><a href="~/xamarin-forms/user-interface/index.md">Kullanıcı Arabirimi</a><br /><a href="~/xamarin-forms/platform/index.md">Platform Özellikleri</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Dağıtım ve Test</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Veri ve Bulut Hizmetleri</a><br /><a href="~/xamarin-forms/internals/index.md">Gelişmiş Kavramlar ve İç İşlevler</a></p>
     - title: Android
-      href: ~/android/index.md
+      href: ~/android/index.yml
       html: <p><a href="~/android/get-started/index.md">Başlarken</a><br /><a href="~/android/app-fundamentals/index.md">Uygulama Temelleri</a><br /><a href="~/android/user-interface/index.md">Kullanıcı Arabirimi</a><br /><a href="~/android/platform/index.md">Platform Özellikleri</a><br /><a href="~/android/deploy-test/index.md">Dağıtım ve Test</a><br /><a href="~/android/data-cloud/index.md">Veri ve Bulut Hizmetleri</a><br /><a href="~/android/internals/index.md">Gelişmiş Kavramlar ve İç İşlevler</a></p>
     - title: iOS
-      href: ~/ios/index.md
+      href: ~/ios/index.yml
       html: <p><a href="~/ios/get-started/index.md">Başlarken</a><br /><a href="~/ios/app-fundamentals/index.md">Uygulama Temelleri</a><br /><a href="~/ios/user-interface/index.md">Kullanıcı Arabirimi</a><br /><a href="~/ios/platform/index.md">Platform Özellikleri</a><br /><a href="~/ios/deploy-test/index.md">Dağıtım ve Test</a><br /><a href="~/ios/data-cloud/index.md">Veri ve Bulut Hizmetleri</a><br /><a href="~/ios/internals/index.md">Gelişmiş Kavramlar ve İç İşlevler</a></p>
     - title: Mac
-      href: ~/mac/index.md
+      href: ~/mac/index.yml
       html: <p><a href="~/mac/get-started/index.md">Başlarken</a><br /><a href="~/mac/app-fundamentals/index.md">Uygulama Temelleri</a><br /><a href="~/mac/user-interface/index.md">Kullanıcı Arabirimi</a><br /><a href="~/mac/platform/index.md">Platform Özellikleri</a><br /><a href="~/mac/deploy-test/index.md">Dağıtım ve Test</a><br /><a href="~/mac/internals/index.md">Gelişmiş Kavramlar ve İç İşlevler</a></p>

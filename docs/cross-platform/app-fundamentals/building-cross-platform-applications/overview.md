@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b3b15736b5ec750e0b8db078cf428a7f573bc435
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e4a55829e35329a50b2e121311b0102328e6fea9
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="building-cross-platform-applications-overview"></a>Platform uygulamaları genel bakış oluşturma
 
@@ -25,7 +25,7 @@ Xamarin değil yalnızca bir "yazma-kez, her yerde Çalıştır" platform, güç
 Xamarin platformlar arası uygulamalar oluşturma için önemli noktaları bir özeti aşağıda verilmiştir:
 
 -   **C# kullanan** -uygulamalarınızı C# dilinde yazma. C# ile yazılmış varolan kod iOS ve Android Xamarin kolayca kullanarak bağlantı noktası kurulmuş ve açıkça Windows uygulamalarında kullanılır.
--   **MVC veya MVVVM tasarım desenleri kullanan** -modeli/görünüme/denetleyiciye desenini kullanarak uygulamanızın kullanıcı arabirimi geliştirin. Bir modeli/görünüme/denetleyiciye yaklaşım ya da bir görünüm/modeli/ViewModel yaklaşım kullanarak uygulamanızı mimari "Modeli" ve rest arasında NET bir ayrım olduğu. Uygulamanızın hangi kısımlarının yerel kullanıcı arabirimi öğelerinin her platform için (iOS, Android, Windows, Mac) kullanarak ve bu iki bileşenden uygulamanıza bölmek için kılavuz olarak kullanın belirleyin: "Temel" ve "Kullanıcı arabirimi".
+-   **MVC veya MVVM tasarım desenleri kullanan** -modeli/görünüme/denetleyiciye desenini kullanarak uygulamanızın kullanıcı arabirimi geliştirin. Bir modeli/görünüme/denetleyiciye yaklaşım ya da bir görünüm/modeli/ViewModel yaklaşım kullanarak uygulamanızı mimari "Modeli" ve rest arasında NET bir ayrım olduğu. Uygulamanızın hangi kısımlarının yerel kullanıcı arabirimi öğelerinin her platform için (iOS, Android, Windows, Mac) kullanarak ve bu iki bileşenden uygulamanıza bölmek için kılavuz olarak kullanın belirleyin: "Temel" ve "Kullanıcı arabirimi".
 -   **Yerel arabirimleri oluşturmak** -her bir işletim sistemine özel uygulama farklı kullanıcı arabirimi katman (içinde uygulanan C# ile Yardım yerel UI Tasarım araçları) sağlar:
 
 1.  İos'ta, Uıkit API'ları isteğe bağlı olarak, kullanıcı Arabirimi görsel olarak oluşturmak için Xamarin'ın iOS Tasarımcısı kullanarak, yerel görünümlü uygulamaları oluşturmak için kullanın.

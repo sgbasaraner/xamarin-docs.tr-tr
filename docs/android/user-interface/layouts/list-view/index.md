@@ -1,17 +1,17 @@
 ---
-title: ListView
+title: ListView içinde Xamarin.Android kullanma
 description: ListView önemli bir Android uygulamaları UI bileşenidir; Kişiler veya Internet Sık Kullanılanlar uzun listelerine kısa listesini menü seçeneklerini her yerde kullanılır. Kaydırma ya da yerleşik tarzıyla biçimlendirilen ya da yaygın özelleştirilmiş satır listesini sunmak için basit bir yol sağlar.
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2018
-ms.openlocfilehash: 8499b9f186c12df22518893b6677cab22f0a3568
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: c5c8222df16b265f3b44f3ee3fcd9053d827cf6a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -220,7 +220,7 @@ Bu konular sunulan kümesini `ListView` ve bazı örnekleri yerleşik özellikle
 - [CustomRowView (örnek)](https://developer.xamarin.com/samples/CustomRowView/)
 - [FastScroll (örnek)](https://developer.xamarin.com/samples/FastScroll/)
 - [SectionIndex (örnek)](https://developer.xamarin.com/samples/SectionIndex/)
-- [SimpleCursorTableAdapter (sample)](https://developer.xamarin.com/samples/SimpleCursorTableAdapter/)
+- [SimpleCursorTableAdapter (örnek)](https://developer.xamarin.com/samples/SimpleCursorTableAdapter/)
 - [CursorTableAdapter (örnek)](https://developer.xamarin.com/samples/CursorTableAdapter/)
 - [Etkinlik yaşam döngüsü Öğreticisi](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Tabloları ve hücrelerde (Xamarin.iOS) ile çalışma](~/ios/user-interface/controls/tables/index.md)

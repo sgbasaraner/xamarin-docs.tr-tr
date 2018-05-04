@@ -1,17 +1,17 @@
 ---
-title: Kurulum ve yükleme
+title: 'Yükleme ve kurma OS onXamarin.Android takmak '
 description: Bu makalede, bilgisayar ve cihazlar Android takmak geliştirme için hazırlamak için gereken yapılandırma ayrıntılarını ve yükleme adımları anlatılmaktadır. Bu makalenin sonundaki, Mac ve/veya Microsoft Visual Studio için Visual Studio'ya Xamarin.Android yıpranması yüklemesi tümleşik çalışma gerekir ve ilk Xamarin.Android yıpranması uygulamanızı oluşturmaya başlamak için hazır olması.
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 86ed62075f5c39eaf7b0e348020f4a9361764727
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 14162663c518fdd1324f2b0340592fbae491d112
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="setup-and-installation"></a>Kurulum ve yükleme
 
@@ -23,7 +23,7 @@ Aşağıdaki Android takmak Xamarin tabanlı uygulamalar oluşturmak için gerek
 
 -   **Visual Studio veya Mac için Visual Studio** &ndash; , Visual Studio, Visual Studio 2015 Professional kullanarak ya da daha sonra gerekli değilse.
 
--   **Xamarin.Android** &ndash; Xamarin.Android 4.17 or later must be installed and configured with either Visual Studio or Visual Studio for Mac.
+-   **Xamarin.Android** &ndash; Xamarin.Android 4.17 veya üstü yüklü ve Mac için Visual Studio veya Visual Studio ile yapılandırılmış
 
 -   **Android SDK** -Android SDK 5.0.1 (API 21) veya sonrası Android SDK Yöneticisi aracılığıyla yüklü olmalıdır.
 

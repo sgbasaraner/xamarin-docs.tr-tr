@@ -1,18 +1,18 @@
 ---
-title: Embeddinator 4000 ObjC için en iyi yöntemler
+title: .NET Objective-C için en iyi yöntemler katıştırma
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: ca5face9865c60fabe8359c2bf356d5d5555f517
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 9f31190d54b187e1dc298fe1c2a8d443862f10de
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="embeddinator-4000-best-practices-for-objc"></a>Embeddinator 4000 ObjC için en iyi yöntemler
+# <a name="net-embedding-best-practices-for-objective-c"></a>Objective-C için en iyi uygulamaları .NET katıştırma
 
 Bu bir taslak ve içinde eşitleme özellikleriyle aracı tarafından şu anda desteklenmiyor olabilir. Umuyoruz bu belgeyi ayrı olarak gelişmesi ve sonunda son aracı eşleşmesi, uzun vadeli en iyi yaklaşımın - değil hemen geçici çözümler yani önerdiğimiz.
 
@@ -106,7 +106,7 @@ Bu adlandırma kuralı .NET GC dünyada eşleşme vardır; .NET yöntemi ile bir
 
 ## <a name="exceptions"></a>Özel Durumlar
 
-Özel durumlar hatalarını raporlamak için kapsamlı bir şekilde kullanmak için .NET içinde sessiz commont olur. Ancak, bunlar yavaş ve ObjC içinde oldukça aynı değildir. Mümkün olduğunda Objective-C geliştiriciden gizle.
+.NET özel durumlar hatalarını raporlamak için kapsamlı bir şekilde kullanmak için bu durum oldukça yaygındır. Ancak, bunlar yavaş ve Objective C'deki oldukça aynı Mümkün olduğunda Objective-C geliştiriciden gizle.
 
 Örneğin, .NET `Try` düzeni Objective-C kodunu kullanmak çok daha kolay olacaktır:
 
@@ -138,6 +138,6 @@ Oluşturucunun izleyin aynı `return nil` oluşturulan için desen `init*` yönt
 
 Objective-C C# yaptığı gibi bunlar için sınıf seçici dönüştürülür şekilde aşırı yüklenmiş işleçler izin vermiyor.
 
-["Kolay"](/dotnet/standard/design-guidelines/operator-overloads/) adlandırılmış yöntemi yerine işleci aşırı oluşturulan zaman bulundu ve kolay bir API kullanmak üretebilir.
+["Kolay"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) adlandırılmış yöntemleri işlecin yerine oluşturulan zaman bulundu ve kolay bir API kullanmak üretebilir.
 
 İşleçler geçersiz kılma sınıfları `==` ve/veya `!=` de standart eşittir (nesne) yöntemin üzerine yazması gerekir.

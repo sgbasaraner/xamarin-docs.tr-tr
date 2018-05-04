@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 2178d567f1ccfe803ebce8b7b623c31c290999bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fec14b0f7328bee1d0866ba02f28202e8d63e8cb
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started"></a>Başlarken
 
@@ -23,7 +23,7 @@ Başlamadan önce kullanıma [sistem gereksinimleri](requirements.md) ve [yükle
 ## <a name="build-your-first-app"></a>İlk uygulamanızı oluşturma
 
 > [!div class="nextstepaction"]
-> [Xamarin.Forms Quickstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
+> [Xamarin.Forms hızlı başlangıç](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
 
 Yerel kullanıcı Arabirimi teknolojilerini (örneğin, Android XML veya Xcode film şeritleri) kullanarak bir uygulama oluşturmak istiyorsanız, bu platforma özgü Kılavuzlar birini deneyin:
 
@@ -42,6 +42,10 @@ Bu belge açıklar *Xamarin nasıl çalıştığını* en üst düzey ve iOS, An
 ###  <a name="introduction-to-the-mobile-software-development-lifecyclecross-platformget-startedintroduction-to-mobile-sdlcmd"></a>[Mobil yazılım geliştirme yaşam döngüsü giriş](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
 
 Bu makalede, mobil uygulamalar göre yazılım geliştirme yaşam döngüsü açıklar ve bazı mobil projeleri oluştururken gerekli konuları ele alır. Yalnızca sağ ve oluşturmaya başlayın atlamak isteyen geliştiriciler için bu kılavuzda atlandı ve daha sonra daha eksiksiz bir mobil geliştirme anlamak için okuyun.
+
+##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Platformlar Arası Uygulamalar Oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+
+Xamarin seçme ve mobil uygulamalarınızı tasarlayıp zaman birkaç aklınızda tutarak, mobil platformlarda paylaşımı inanılmaz kod unutmayın, pazara, süresini azaltabilir, varolan yeteneğiniz yararlanın, mobil erişim için Müşteri talebi karşılamak, ve platformlar arası karmaşıklığı azaltın. &nbsp;Bu belge aşağıdaki avantajları yardımcı programı ve üretkenlik uygulamaları için kullanıldıklarını için önemli bilgiler özetlenmiştir.
 
 ###  <a name="introducing-visual-studio-for-machttpsdocsmicrosoftcomvisualstudiomac"></a>[Mac için Visual Studio’ya Giriş](https://docs.microsoft.com/visualstudio/mac/)
 
