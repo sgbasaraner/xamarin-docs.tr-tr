@@ -7,25 +7,20 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 4156d712b91ad069d482debdf0731be8b649287a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2018
+ms.openlocfilehash: b5de9d673a348ddd4b939ae387257f835b37117a
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Android SDK Araçları yapılan değişiklikler
 
 _Android SDK yüklü API düzeylerini ve AVDs nasıl yönettiğini değişiklikler._
 
-## <a name="changes-to--android-sdk-tooling"></a>Android SDK Araçları yapılan değişiklikler
+## <a name="changes-to-android-sdk-tooling"></a>Android SDK Araçları yapılan değişiklikler
 
-Modern Android SDK Araçları sürümlerinde, Google varolan AVD ve SDK yöneticileri yeni CLI (komut satırı arabirimi) araç düşünülerek kullanılmaz kaldırdı. Eski **android** program kaldırıldı ve GUI (grafik kullanıcı arabirimi) yöneticileri Mac ve Visual Studio için Xamarin eski sürümleri için Visual Studio artık Android SDK Araçları 25.2.5 sürümü çalışmaz.
-
-
-![Visual Studio'da Android IDE menüsü](sdk-cli-tooling-changes-images/android-ide-menu.png)
-
-Kullanılmaya çalışılıyor **android** program komut satırı aracılığıyla aşağıdaki gibi hata iletisine neden olur:
+En son Android SDK Araçları sürümlerinde, Google varolan AVD ve SDK yöneticileri lehinde kaldıran yeni CLI (komut satırı arabirimi) araç kaldırdı. **Android** program kaldırıldı ve Google GUI (grafik kullanıcı arabirimi) yöneticileri Mac ve Visual Studio için Xamarin eski sürümleri için Visual Studio artık Android SDK Araçları 25.2.5 sürümü çalışmaz. Örneğin, kullanılmaya çalışılıyor **android** program komut satırı aracılığıyla aşağıdaki gibi hata iletisine neden olur:
 
 ```shell
 The "android" command is deprecated.
@@ -34,11 +29,21 @@ For command-line tools, use tools\bin\sdkmanager.bat
 and tools\bin\avdmanager.bat
 ```
 
-Bu nedenle yönetmek ve Öykünücüler ve Android SDK güncelleştirmek için CLI araçlarını kullanmanız gerekir.
+Aşağıdaki bölümler Android SDK ve Android SDK 25.3.0 kullanarak Android sanal aygıtların nasıl yönetileceğini açıklar ve daha sonra.
+
+### <a name="ui-tools"></a>UI araçları
+
+Visual Studio ve Mac için Visual Studio şimdi devam etmeyen Google GUI tabanlı yöneticileri Xamarin donanımlarının sağlar:
+
+-   Android SDK Araçları, platformlar ve Xamarin.Android uygulamaları geliştirmek için gereken diğer bileşenleri indirmek için kullanacağınız [Xamarin Android SDK Manager](~/android/get-started/installation/android-sdk.md) yerine eski Google SDK Yöneticisi.
+
+-   Oluşturma ve Android sanal cihaz yapılandırmak için kullanın [Xamarin Android Aygıt Yöneticisi'ni](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) yerine eski Google öykünücüsü yöneticisi.
+
+Bu araçlar Google GUI tabanlı için işlevsel olarak eşdeğerdir yöneticileri bunlar değiştirin.
 
 ### <a name="cli-tools"></a>CLI araçlarını
 
-Aşağıdaki programlar artık Android SDK Araçları için komut satırı arabirimi oluşturan:
+Alternatif olarak, yönetmek ve Öykünücüler ve Android SDK güncelleştirmek için CLI araçlarını kullanabilirsiniz. Aşağıdaki programlar artık Android SDK Araçları için komut satırı arabirimi oluşturan:
 
 #### <a name="sdkmanager"></a>sdkmanager
 
@@ -64,6 +69,7 @@ Düşürmek, **Android SDK Araçları** Android SDK'ın önceki bir sürümünü
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Android SDK Kurulumu](~/android/get-started/installation/android-sdk.md)
+- [Android cihaz Yöneticisi](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)
 - [Android API düzeylerini anlama](~/android/app-fundamentals/android-api-levels.md)
 - [Sürüm Notları (Google) SDK Araçları](https://developer.android.com/studio/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/04/2017
-ms.openlocfilehash: b5bccfa38a9f382789585284765183efa42b6a3d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 54f3d3c475e506e7d451af5125e90a0f51aa7374
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin ile sürekli tümleştirme giriş
 
@@ -35,9 +35,8 @@ Uygulama Merkezi ile Xamarin.iOS ve Xamarin.Android çözümlerini doğrudan Git
 
 ### <a name="using-teamcity-with-xamarintoolsciteamcitymd"></a>[Xamarin ile TeamCity Kullanma](~/tools/ci/teamcity.md)
 
-Bu kılavuz, mobil uygulamaları derlemek ve bunları Xamarin Test Cloud göndermek için TeamCity kullanma ile ilgili adımlar açıklanmaktadır.
+Bu kılavuz, mobil uygulamaları derlemek ve bunları App merkezi testine göndermek için TeamCity kullanma ile ilgili adımlar açıklanmaktadır.
 
-###  <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Xamarin ile Jenkins Kullanma](~/tools/ci/jenkins-walkthrough.md)
+### <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Xamarin ile Jenkins Kullanma](~/tools/ci/jenkins-walkthrough.md)
 
 Bu kılavuz, Jenkins sürekli tümleştirme sunucusu olarak ayarlayın ve Xamarin ile oluşturulan mobil uygulamaları derleme otomatikleştirmek göstermektedir. Jenkins OS x'te yüklemek, yapılandırmak ve sürüm denetimi sistemine değişiklikler uygulandıktan zaman Xamarin.iOS ve Xamarin.Android uygulamaları derlemek için işler ayarlamak nasıl açıklar.
-

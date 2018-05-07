@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 500b4c63131ab850b4b9d7c6a0aec49b313ec426
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 47480adfdff5ee3282c1c7fa422260184f91c071
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>Hangi destek seçenekleri için Xamarin var mı?
 
@@ -33,8 +33,6 @@ Xamarin destek ekibi bu seçeneklerin her biri izlemenize yardımcı olur.  Tüm
 ### <a name="visual-studio-email-support-incidents-for-xamarin-topics"></a>Visual Studio e-posta desteği olaylar için Xamarin konuları
 
 Xamarin SDK ve IDE özellikleri teknik destek olaylar için uygun bir parçası olarak [Visual Studio abone Avantajlarınızı](https://msdn.microsoft.com/subscriptions/bb266240) ve [Microsoft Premier Destek](https://www.microsoft.com/microsoftservices/support.aspx).  Bu Visual Studio UWP ve ASP.NET gibi diğer geliştirme platformları için ilkeleriyle eşleştiğini.  Bu şekilde Xamarin Destek ekibine atanacak Xamarin olaylar gönderildi.  Bkz: [Microsoft destek SSS](https://support.microsoft.com/gp/offerprophone) bu olayları için ilkeleri hakkında daha fazla bilgi için.
-
-Xamarin Test Cloud için destek olaylarının giderek gönderilebilen [Test bulut oturum açma sayfasına](https://testcloud.xamarin.com/login) ve açma **Destek** bağlantı.
 
 ### <a name="information-for-users-migrating-from-expired-xamarin-subscriptions-to-visual-studio-subscriptions"></a>Visual Studio abonelik süresi dolan Xamarin aboneliklerden geçirme kullanıcılar için bilgiler
 

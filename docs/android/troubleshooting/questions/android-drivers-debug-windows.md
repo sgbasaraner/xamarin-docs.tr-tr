@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/19/2017
-ms.openlocfilehash: 5799d3bd40effcad4404532c47bdab73bc6cfc98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 77a7f50ab9d8f351dcefcbbdd50e88e18a13645d
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>Android, Windows hata ayıklamak hangi USB sürücüleri gerekiyor mu?
 
@@ -25,7 +25,7 @@ Diğer cihazları özellikle aygıt üreticisi tarafından yayımlanan USB sür�
 
 Manfacturer bağlı olarak, gerekli tam USB sürücüsü izlemek zor olabilir. Android uygulamalarını test etme için bazı alternatifleri Android öykünücüsünde veya dış sınaması hizmetleri kullanarak da dahil olmak üzere Windows geliştirmiştir. Bunlardan bazıları şunlardır:
 
-- [Xamarin Test Cloud](https://xamarin.com/test-cloud) - bulut sınama Hizmetleri gerçek Android cihazları yüzlerce üzerinde çalıştırın.
+- [Uygulama Merkezi Test](https://docs.microsoft.com/appcenter/test-cloud/) - bulut sınama Hizmetleri gerçek Android cihazları yüzlerce üzerinde çalıştırın.
 
 - [Android için Visual Studio Öykünücüsü](https://www.visualstudio.com/en-us/features/msft-android-emulator-vs.aspx)
 

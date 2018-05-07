@@ -1,74 +1,68 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Xamarin Araçları"
+title: Xamarin Araçları
 metadata:
-  description: "Xamarin geliştirme deneyiminizin iyileştirilmesine yardımcı olacak araçlar."
+  description: Xamarin geliştirme deneyiminizin iyileştirilmesine yardımcı olacak araçlar.
   author: conceptdev
   ms.author: crdun
   ms.date: 02-17-2018
   ms.topic: landing-page
-  ms.openlocfilehash: 61fa7aa174a4c5681f36b11d808cd02fc3c5908b
-  ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+  ms.openlocfilehash: b1f47f67677c2618b89b52ab2c015a8a4da48f95
+  ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
   ms.translationtype: HT
   ms.contentlocale: tr-TR
-  ms.lasthandoff: 03/15/2018
+  ms.lasthandoff: 05/04/2018
 abstract:
-  description: "Xamarin geliştirme deneyiminizin iyileştirilmesine yardımcı olacak araçlar."
+  description: Xamarin geliştirme deneyiminizin iyileştirilmesine yardımcı olacak araçlar.
   menu:
     items:
     - href: https://visualstudio.com/
       text: Visual Studio
     - href: https://developer.xamarin.com/releases/#mac
-      text: "Release Notes (Sürüm Notları)"
+      text: Release Notes (Sürüm Notları)
 sections:
-- title: "Araçlar"
+- title: Araçlar
   items:
   - type: list
     style: cards
     className: cardsC
     items:
     - href: ~/tools/live-player/index.md
-      html: "Visual Studio ile Live Player uygulamasını kullanarak dakikalar içinde Xamarin’i kullanmaya başlayın."
+      html: Visual Studio ile Live Player uygulamasını kullanarak dakikalar içinde Xamarin’i kullanmaya başlayın.
       image:
         src: ~/media/index/xamarin-tools-live-player.svg?branch=master
         href: ~/tools/live-player/index.md
       title: Xamarin Live Player
     - href: ~/tools/inspector/index.md
-      html: "Kullanıcı arabiriminizi anlayın ve hatalarını ayıklayın."
+      html: Kullanıcı arabiriminizi anlayın ve hatalarını ayıklayın.
       image:
         src: ~/media/index/xamarin-tools-inspector.svg?branch=master
         href: ~/tools/inspector/index.md
       title: Xamarin Inspector
     - href: ~/tools/workbooks/index.md
-      html: "C# ve Xamarin platformunu etkileşimli olarak öğrenin."
+      html: C# ve Xamarin platformunu etkileşimli olarak öğrenin.
       image:
         src: https://docs.microsoft.com/en-us/media/illustrations/dynamics-resource-library.svg
         href: ~/tools/workbooks/index.md
       title: Xamarin Workbooks
     - href: ~/tools/ios-simulator.md
-      html: "Windows’da Visual Studio kullanarak iOS Simülatörü ile etkileşim kurun."
+      html: Windows’da Visual Studio kullanarak iOS Simülatörü ile etkileşim kurun.
       image:
         src: ~/media/index/xamarin-tools-windows-simulator.svg?branch=master
         href: ~/tools/ios-simulator.md
-      title: "Windows için iOS Simülatörü"
+      title: Windows için iOS Simülatörü
     - href: ~/tools/profiler/index.md
-      html: "Performans sorunlarını belirleyin ve düzeltin."
+      html: Performans sorunlarını belirleyin ve düzeltin.
       image:
         src: ~/media/index/xamarin-tools-profiler.svg?branch=master
         href: ~/tools/profiler/index.md
       title: Xamarin Profiler
     - href: ~/tools/dotnet-embedding/index.md
-      html: "Mevcut .NET kodunuzun diğer programlama dillerinden kullanılmasına olanak sağlar."
+      html: Mevcut .NET kodunuzun diğer programlama dillerinden kullanılmasına olanak sağlar.
       image:
         src: ~/media/index/xamarin-cross-platform-dotnet-embedding.svg
         href: ~/tools/dotnet-embedding/index.md
       title: .NET Embedding
-    - href: https://developer.xamarin.com/testcloud/
-      html: "Herhangi bir cihazda uygulamanızı test edin."
-      image:
-        src: https://docs.microsoft.com/en-us/media/illustrations/team-services-agile-track.svg
-        href: https://developer.xamarin.com/testcloud/
-      title: Xamarin Test Cloud
 - title: Platformlar
   items:
   - type: list
@@ -77,13 +71,13 @@ sections:
     items:
     - title: Xamarin.Forms
       href: ~/xamarin-forms/index.md
-      html: "<p><a href=\"~/xamarin-forms/get-started/index.md\">Başlarken</a><br /><a href=\"~/xamarin-forms/app-fundamentals/index.md\">Uygulama Temelleri</a><br /><a href=\"~/xamarin-forms/user-interface/index.md\">Kullanıcı Arabirimi</a><br /><a href=\"~/xamarin-forms/platform/index.md\">Platform Özellikleri</a><br /><a href=\"~/xamarin-forms/deploy-test/index.md\">Dağıtım ve Test</a><br /><a href=\"~/xamarin-forms/xaml/index.md\">XAML</a><br /><a href=\"~/xamarin-forms/data-cloud/index.md\">Veri ve Bulut Hizmetleri</a><br /><a href=\"~/xamarin-forms/internals/index.md\">Gelişmiş Kavramlar ve İç İşlevler</a></p>"
+      html: <p><a href="~/xamarin-forms/get-started/index.md">Başlarken</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">Uygulama Temelleri</a><br /><a href="~/xamarin-forms/user-interface/index.md">Kullanıcı Arabirimi</a><br /><a href="~/xamarin-forms/platform/index.md">Platform Özellikleri</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Dağıtım ve Test</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Veri ve Bulut Hizmetleri</a><br /><a href="~/xamarin-forms/internals/index.md">Gelişmiş Kavramlar ve İç İşlevler</a></p>
     - title: Android
       href: ~/android/index.md
-      html: "<p><a href=\"~/android/get-started/index.md\">Başlarken</a><br /><a href=\"~/android/app-fundamentals/index.md\">Uygulama Temelleri</a><br /><a href=\"~/android/user-interface/index.md\">Kullanıcı Arabirimi</a><br /><a href=\"~/android/platform/index.md\">Platform Özellikleri</a><br /><a href=\"~/android/deploy-test/index.md\">Dağıtım ve Test</a><br /><a href=\"~/android/data-cloud/index.md\">Veri ve Bulut Hizmetleri</a><br /><a href=\"~/android/internals/index.md\">Gelişmiş Kavramlar ve İç İşlevler</a></p>"
+      html: <p><a href="~/android/get-started/index.md">Başlarken</a><br /><a href="~/android/app-fundamentals/index.md">Uygulama Temelleri</a><br /><a href="~/android/user-interface/index.md">Kullanıcı Arabirimi</a><br /><a href="~/android/platform/index.md">Platform Özellikleri</a><br /><a href="~/android/deploy-test/index.md">Dağıtım ve Test</a><br /><a href="~/android/data-cloud/index.md">Veri ve Bulut Hizmetleri</a><br /><a href="~/android/internals/index.md">Gelişmiş Kavramlar ve İç İşlevler</a></p>
     - title: iOS
       href: ~/ios/index.md
-      html: "<p><a href=\"~/ios/get-started/index.md\">Başlarken</a><br /><a href=\"~/ios/app-fundamentals/index.md\">Uygulama Temelleri</a><br /><a href=\"~/ios/user-interface/index.md\">Kullanıcı Arabirimi</a><br /><a href=\"~/ios/platform/index.md\">Platform Özellikleri</a><br /><a href=\"~/ios/deploy-test/index.md\">Dağıtım ve Test</a><br /><a href=\"~/ios/data-cloud/index.md\">Veri ve Bulut Hizmetleri</a><br /><a href=\"~/ios/internals/index.md\">Gelişmiş Kavramlar ve İç İşlevler</a></p>"
+      html: <p><a href="~/ios/get-started/index.md">Başlarken</a><br /><a href="~/ios/app-fundamentals/index.md">Uygulama Temelleri</a><br /><a href="~/ios/user-interface/index.md">Kullanıcı Arabirimi</a><br /><a href="~/ios/platform/index.md">Platform Özellikleri</a><br /><a href="~/ios/deploy-test/index.md">Dağıtım ve Test</a><br /><a href="~/ios/data-cloud/index.md">Veri ve Bulut Hizmetleri</a><br /><a href="~/ios/internals/index.md">Gelişmiş Kavramlar ve İç İşlevler</a></p>
     - title: Mac
       href: ~/mac/index.md
-      html: "<p><a href=\"~/mac/get-started/index.md\">Başlarken</a><br /><a href=\"~/mac/app-fundamentals/index.md\">Uygulama Temelleri</a><br /><a href=\"~/mac/user-interface/index.md\">Kullanıcı Arabirimi</a><br /><a href=\"~/mac/platform/index.md\">Platform Özellikleri</a><br /><a href=\"~/mac/deploy-test/index.md\">Dağıtım ve Test</a><br /><a href=\"~/mac/internals/index.md\">Gelişmiş Kavramlar ve İç İşlevler</a></p>"
+      html: <p><a href="~/mac/get-started/index.md">Başlarken</a><br /><a href="~/mac/app-fundamentals/index.md">Uygulama Temelleri</a><br /><a href="~/mac/user-interface/index.md">Kullanıcı Arabirimi</a><br /><a href="~/mac/platform/index.md">Platform Özellikleri</a><br /><a href="~/mac/deploy-test/index.md">Dağıtım ve Test</a><br /><a href="~/mac/internals/index.md">Gelişmiş Kavramlar ve İç İşlevler</a></p>
