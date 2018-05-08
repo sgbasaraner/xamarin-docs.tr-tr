@@ -6,12 +6,12 @@ ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 5fdc05de19799ce7b553428c23f860186909bcbb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="implementing-sirikit"></a>SiriKit uygulama
 
@@ -95,7 +95,7 @@ Aşağıdakileri yapın:
 2. Çözüm adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **yeni proje...** .
 3. Seçin **Visual C#** > **paylaşılan proje** tıklatıp **sonraki** düğmesi: 
 
-    [![](implementing-sirikit-images/prep02w.png "Sınıf kitaplığı seçin")](implementing-sirikit-images/prep02w.png#lightbox)
+    [![](implementing-sirikit-images/prep02.w157-sml.png "Sınıf kitaplığı seçin")](implementing-sirikit-images/prep02.w157.png#lightbox)
 4. Girin `MonkeyChatCommon` için **adı** tıklatıp **oluşturma** düğmesi.
 5. Sağ tıklayın **başvuruları** ana uygulamada klasörünü **Çözüm Gezgini** seçip **başvuruları Düzenle...** . Denetleme **MonkeyChatCommon** proje ve tıklatın **Tamam** düğmesi: 
 
@@ -459,7 +459,7 @@ Eklemek için bir `AppIntentVocabulary.plist` dosya uygulama projesi için aşa�
 
 1. Proje adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **yeni dosya...**   >  **iOS**:
 
-    [![](implementing-sirikit-images/plist01.png "Bir özellik listesi ekleme")](implementing-sirikit-images/plist01.png#lightbox) 
+    [![](implementing-sirikit-images/plist01.png "Bir özellik listesi ekleme")](implementing-sirikit-images/plist01.png#lightbox)
 2. Çift `AppIntentVocabulary.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın.
 3. Tıklatın **+** anahtar eklemek için ayarlanmış **adı** için `ParameterVocabularies` ve **türü** için `Array`:
 
@@ -472,7 +472,7 @@ Eklemek için bir `AppIntentVocabulary.plist` dosya uygulama projesi için aşa�
     [![](implementing-sirikit-images/plist04.png "ParameterNames ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist04.png#lightbox)
 6. Tıklatın **+** ile yeni bir anahtar eklemek için **türü** , `String` ve değeri olarak kullanılabilir parametre adlarından biri. Örneğin, `INStartWorkoutIntent.workoutName`:
 
-    [![](implementing-sirikit-images/plist05.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05.png#lightbox)
+    [![](implementing-sirikit-images/plist05.png "INStartWorkoutIntent.workoutName anahtarı")](implementing-sirikit-images/plist05.png#lightbox)
 7. Ekleme `ParameterVocabulary` anahtarını `ParameterVocabularies` ile anahtar **türü** , `Array`:
 
     [![](implementing-sirikit-images/plist06.png "Bu tür dizi ParameterVocabularies anahtarla ParameterVocabulary anahtarını ekleyin")](implementing-sirikit-images/plist06.png#lightbox)
@@ -521,9 +521,10 @@ Eklemek için bir `AppIntentVocabulary.plist` dosya uygulama projesi için aşa�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Proje adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **yeni dosya...**   >  **iOS**:
+1. Proje adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle > Yeni öğe... > Apple > özellik listesi > Info.plist**:
 
-    [![](implementing-sirikit-images/plist01w.png "Yeni Info.plist ekleme")](implementing-sirikit-images/plist01w.png#lightbox) 
+    [![](implementing-sirikit-images/plist01.w157-sml.png "Yeni Info.plist ekleme")](implementing-sirikit-images/plist01.w157.png#lightbox)
+
 2. Çift `AppIntentVocabulary.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın.
 3. Tıklatın **+** anahtar eklemek için ayarlanmış **adı** için `ParameterVocabularies` ve **türü** için `Array`:
 
@@ -536,7 +537,7 @@ Eklemek için bir `AppIntentVocabulary.plist` dosya uygulama projesi için aşa�
     [![](implementing-sirikit-images/plist04w.png "ParameterNames ve dizi türü adı ayarlayın")](implementing-sirikit-images/plist04w.png#lightbox)
 6. Tıklatın **+** ile yeni bir anahtar eklemek için **türü** , `String` ve değeri olarak kullanılabilir parametre adlarından biri. Örneğin, `INStartWorkoutIntent.workoutName`:
 
-    [![](implementing-sirikit-images/plist05w.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05w.png#lightbox)
+    [![](implementing-sirikit-images/plist05w.png "INStartWorkoutIntent.workoutName anahtarı")](implementing-sirikit-images/plist05w.png#lightbox)
 7. Ekleme `ParameterVocabulary` anahtarını `ParameterVocabularies` ile anahtar **türü** , `Array`:
 
     [![](implementing-sirikit-images/plist06w.png "Bu tür dizi ParameterVocabularies anahtarla ParameterVocabulary anahtarını ekleyin")](implementing-sirikit-images/plist06w.png#lightbox)
@@ -625,11 +626,11 @@ Hedefleri uzantı çözüme eklemek için aşağıdakileri yapın:
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Sağ **çözüm adı** içinde **Çözüm Gezgini** seçip **Ekle** > **Yeni Proje Ekle...** .
-2. İletişim kutusundan **iOS** > **uzantıları** > **hedefi uzantısı** tıklatıp **sonraki** düğmesi: 
+2. İletişim kutusundan **Visual C# > iOS uzantıları > hedefi uzantısı** tıklatıp **sonraki** düğmesi:
 
-    [![](implementing-sirikit-images/intents05w.png "Hedefi uzantı Seç")](implementing-sirikit-images/intents05w.png#lightbox)
+    [![](implementing-sirikit-images/intents05.w157-sml.png "Hedefi uzantı Seç")](implementing-sirikit-images/intents05.w157.png#lightbox)
 3. Sonraki girin bir **adı** tıklatın ve hedefi uzantısı için **Tamam** düğmesi.
-5. İçinde **Çözüm Gezgini**, sağ tıklayın **başvuruları** klasörü yeni oluşturulan hedefi uzantısı. (Uygulama yukarıda oluşturduğunuz) ortak paylaşılan kod kitaplığı projesi adını denetleyin ve tıklayın **Tamam** düğmesi: 
+1. İçinde **Çözüm Gezgini**, sağ tıklayın **başvuruları** klasörü yeni oluşturulan hedefleri uzantısı'nın ve **Ekle > başvuru**. (Uygulama yukarıda oluşturduğunuz) ortak paylaşılan kod kitaplığı projesi adını denetleyin ve tıklayın **Tamam** düğmesi:
 
     [![](implementing-sirikit-images/intents08w.png "Ortak paylaşılan kod kitaplık projesinin adı seçin")](implementing-sirikit-images/intents08w.png#lightbox)
     
@@ -1070,7 +1071,7 @@ Bu makalede, SiriKit kapsamdaki ve gösterilen nasıl Siri ve haritalar uygulama
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [ElizaChat Sample](https://developer.xamarin.com/samples/monotouch/ios10/ElizaChat/)
+- [ElizaChat örnek](https://developer.xamarin.com/samples/monotouch/ios10/ElizaChat/)
 - [SiriKit Programlama Kılavuzu](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
 - [Hedefleri Framework başvurusu](https://developer.apple.com/reference/intents)
 - [Hedefleri UI Framework başvurusu](https://developer.apple.com/reference/intentsui)

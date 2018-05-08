@@ -6,12 +6,12 @@ ms.assetid: 70FF2F9A-71BD-317E-C881-A44D82DF1BD8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/29/2018
-ms.openlocfilehash: ea3d4a7f848847d6a9f7341faec47294a4cab3f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/10/2018
+ms.openlocfilehash: 8d1dc410d5336d9c2505a18720cc7f734e838c39
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="using-the-android-designer"></a>Android Tasarımcısı'nı kullanarak
 
@@ -36,9 +36,9 @@ Haydi başlayalım!
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Visual Studio'yu başlatın ve tıklayın **yeni proje...**  ardından **Visual C\# > Android > boş uygulama (Android)** şablonu:
+Visual Studio'yu başlatın ve tıklayın **yeni proje...**  ardından **Visual C\# > Android > Android uygulaması (Xamarin)** şablonu:
 
-[![Android boş uygulama](designer-walkthrough-images/vs/01-android-app-sml.png)](designer-walkthrough-images/vs/01-android-app.png#lightbox)
+[![Android boş uygulama](designer-walkthrough-images/vs/01-android-app-sml.w157.png)](designer-walkthrough-images/vs/01-android-app.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -74,7 +74,7 @@ Oluşturalım bir **LinearLayout** biz bizim kullanıcı arabirimi öğeleri tut
 
 Visual Studio'da sağ **kaynakları/düzeni** içinde **Çözüm Gezgini** seçip **Ekle > Yeni öğe...** . İçinde **Yeni Öğe Ekle** iletişim kutusunda **Android düzeni**. Dosya adı **ListItem.axml** tıklatıp **Ekle**:
 
-[![Yeni düzeni](designer-walkthrough-images/vs/03-new-layout-sml.png)](designer-walkthrough-images/vs/03-new-layout.png#lightbox)
+[![Yeni düzeni](designer-walkthrough-images/vs/03-new-layout-sml.w157.png)](designer-walkthrough-images/vs/03-new-layout.w157.png#lightbox)
 
 Yeni **LISTITEM** düzeni Tasarımcısı'nda görüntülenir:
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 83fb7a03b3426631fcf772bcb3605fea44fd4f2b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3485a7ebf9c54c2aa084dd11f32cd028cbc68aff
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="user-interface"></a>Kullanıcı Arabirimi
 
@@ -51,7 +51,7 @@ Görüntüleri Xamarin.Forms ile platform genelinde paylaşılabilir, özellikle
 
 ## <a name="layoutslayoutsindexmd"></a>[Düzenler](layouts/index.md)
 
-Xamarin.Forms düzenlemek için birkaç düzeni ekran içerik var. `StackLayout`, `Grid`, `AbsoluteLayout`, `ScrollView`, ve `RelativeLayout` her güzel, yanıt veren kullanıcı arabirimleri oluşturmak için kullanılabilir.
+Xamarin.Forms düzenlemek için birkaç düzeni ekran içerik var. `StackLayout`, `Grid`, `FlexLayout`, `AbsoluteLayout`, `ScrollView`, ve `RelativeLayout` her güzel, yanıt veren kullanıcı arabirimleri oluşturmak için kullanılabilir.
 
 ## <a name="listviewlistviewindexmd"></a>[ListView](listview/index.md)
 
@@ -84,6 +84,10 @@ Xamarin.Forms sunan ve metin almak için birkaç görünüm vardır. Metin gör�
 ## <a name="themesthemesindexmd"></a>[Temalar](themes/index.md)
 
 Xamarin.Forms Temalar standart denetimler için belirli bir görsel görünümünü tanımlayın. Uygulamanın kaynak sözlüğüne bir tema ekledikten sonra standart denetimlerin görünümünü değiştirir.
+
+## <a name="visual-state-managervisual-state-managermd"></a>[Görsel durum Yöneticisi](visual-state-manager.md)
+
+Görsel durum Yöneticisi kodundan boyutu veya cihaz yönlendirmesini değişikliklere uyum düzeni de dahil olmak üzere, kullanıcı arabirimindeki değişiklikleri tetiklemek için yapılandırılmış bir yol sağlar.
 
 ## <a name="webviewwebviewmd"></a>[WebView](webview.md)
 

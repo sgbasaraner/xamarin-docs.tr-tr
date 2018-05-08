@@ -6,12 +6,12 @@ ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 8afc15a75b6d34d9b3f094fe2c92f2b6623ee63f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/24/2018
+ms.openlocfilehash: f1f733fa91be7bf76e19896e78809d18494891d3
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="displaying-an-image"></a>Bir görüntü görüntüleme
 
@@ -66,6 +66,7 @@ Kullanırken bir **resmi ayarlama** iOS Tasarımcısı ', kümenin adını aşa�
 1. Varlık Kataloğu'ndan açmak **Çözüm Gezgini**, sol üst köşede tıklatıp **artı** düğmesi:
 
     ![](displaying-an-image-images/asset5.png "Artı düğmesi")
+
 2. Seçin **görüntü kümesi Ekle** ve resmi ayarlama Düzenleyicisi'ni yeni bir görüntü kümesi için görüntülenir. Buradan, görüntüleri her farklı aygıtlar için sürükleyin ve ve gerekli çözümler. (Not: Bu çözümler belirtilen çözünürlük eşleşen [görüntü boyutları ve dosya adları](~/ios/app-fundamentals/images-icons/displaying-an-image.md) belge):
 
     ![](displaying-an-image-images/asset7.png "Görüntü Düzenleyicisi'ni ayarlayın")
@@ -318,5 +319,5 @@ Bu kod yeni bir oluşturur `UIImageView` ve bir başlangıç boyutunu ve konumun
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Görüntüleri (örnek) ile çalışma](https://developer.xamarin.com/samples/WorkingWithImages/)
-- [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
+- [Merhaba, iPhone](~/ios/get-started/hello-ios/index.md)
 - [Özel bir simge ve görüntü oluşturma yönergeleri](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

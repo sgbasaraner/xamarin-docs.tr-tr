@@ -6,12 +6,12 @@ ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: a6cb08f19aac46ffa089914e28c732660caa52b2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/11/2018
+ms.openlocfilehash: 2d9f2198dbb88e7614944ac73729a4e6eca42647
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-a-jar"></a>Bağlama bir. JAR
 
@@ -81,7 +81,7 @@ Aşağıdaki adımlarla başlatmadan önce lütfen indirin [picasso 2.x.x.jar](h
 
 İlk olarak, yeni bağlamalar kitaplık projesi oluşturun. Visual Studio'da Mac veya Visual Studio için yeni bir çözüm oluşturun ve seçin *Android bağlamaları Kitaplığı* şablonu. (Bu kılavuzda ekran görüntüleri Visual Studio'yu kullanın, ancak Mac için Visual Studio çok benzer.) Çözüm adı **JarBinding**: 
 
-[![JarBinding kitaplığı projesi oluşturma](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png#lightbox)
+[![JarBinding kitaplığı projesi oluşturma](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
 
 Şablon içeren bir **Jar'lar** eklediğiniz klasörü. Bağlamaları kitaplık projesine JAR(s). Sağ **Jar'lar** klasörü ve select **Ekle > varolan öğeyi**: 
 
@@ -130,7 +130,7 @@ Aşağıdaki adımlarda, indirin ve görüntüyü görüntülemek için bağlama
 
 İlk olarak, bağlamaları kitaplığı tüketir yeni bir Xamarin.Android uygulaması oluşturma. Çözüme sağ tıklayın ve seçin **Yeni Proje Ekle**; yeni proje adı **BindingTest**. Bu uygulama bağlamaları kitaplığı olarak aynı çözümde bu kılavuzda basitleştirmek için oluşturuyoruz; Ancak, bağlamaları kitaplığı tüketen uygulamayı bunun yerine, farklı bir çözümde bulunan olabilir: 
 
-[![Yeni BindingTest proje ekleyin](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png#lightbox)
+[![Yeni BindingTest proje ekleyin](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
 Sağ **başvuruları** düğümünün **BindingTest** proje ve seçin **Başvuru Ekle...** :
 

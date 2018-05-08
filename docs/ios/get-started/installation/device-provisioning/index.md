@@ -6,12 +6,12 @@ ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 07/15/2017
-ms.openlocfilehash: e04ebd041c64d474fafe12c387f558e740773c98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="device-provisioning"></a>Cihaz sağlama
 
@@ -47,23 +47,14 @@ Bu adımları oluşturulan veya uygulamalar ve cihazlar dahil olmak üzere geli�
 
 <a name="Provisioning_Profile" />
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
 ## <a name="provisioning-your-device"></a>Cihazınızı sağlama
 
-Mac için Visual Studio ile iOS Cihazınızı sağlamak için iki yolu vardır:
+İOS Cihazınızı sağlamak için iki yolu vardır:
 
-* **Otomatik olarak (önerilen)** – Select **imzalama otomatik olarak yönetir** Mac otomatik olarak oluşturup imzalama kimlikleri, uygulama kimlikleri ve sağlama yönetmek için Visual Studio için Info.plist dosyasında seçeneği Profiller.  Otomatik sağlama yönetme hakkında daha fazla bilgi için bkz: [otomatik sağlamayı](automatic-provisioning.md) Kılavuzu. Bu, bir iOS aygıtı sağlama önerilen yoludur.
+* **Otomatik olarak (önerilen)** – Select **otomatik sağlamayı** projeniz Visual Studio otomatik olarak oluşturup imzalama kimlikleri, uygulama kimlikleri ve sağlama profillerini yönetmek için düzeni. Otomatik sağlama yönetme hakkında daha fazla bilgi için bkz: [otomatik sağlamayı](automatic-provisioning.md) Kılavuzu. Bu, bir iOS aygıtı sağlama önerilen yoludur.
 
 * **El ile** – imzalama kimlikleri, uygulama kimlikleri ve sağlama profilleri oluşturulabilir ve Apple Geliştirici Portalı açıklandığı gibi yönetilen [el ile sağlama](manual-provisioning.md) Kılavuzu. Bu yapıtların sonra açıklandığı gibi yönetilebilir [Apple hesap yönetimi](~/cross-platform/macios/apple-account-management.md) Kılavuzu.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-## <a name="provisioning-your-device"></a>Cihazınızı sağlama
-
-Dağıtım için bir Apple aygıt ayarlama ve Visual Studio Windows üzerindeki uygulamayla dağıtma adımları için ayrıntılı adımları izlemeniz önerilir [el ile sağlama](manual-provisioning.md) Kılavuzu.
-
------
 
 <a name="appservices" />
 
@@ -74,9 +65,6 @@ Apple özel uygulama hizmetleri, bir Xamarin.iOS uygulaması için etkin hale ge
 * Bir uygulama kimliği ile gerekli uygulama hizmetleri oluşturun.
 * Yeni bir [sağlama profili](#Provisioning_Profile) , bu uygulama kimliğini içerir.
 * Xamarin.iOS projesinde yetkilendirmeler ayarlayın
-
-> [!NOTE]
-> Şu anda, Mac için Visual Studio'da oluşturulan profiller sağlama projeler (Entitlements.plist) seçili hesap yetkilendirmeler içine olmayacaktır. Bu işlev gelecekteki IDE sürümlerinde eklenecektir. Uygulama Hizmetleri kullanmanız gerekiyorsa, yönergeleri izlemeniz önerilir [el ile sağlama](manual-provisioning.md) Kılavuzu.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

@@ -1,5 +1,5 @@
 ---
-title: Hello, iOS
+title: Merhaba, iOS hızlı başlangıç
 description: Bu iki parçalı kılavuz Mac veya Visual Studio için Visual Studio kullanarak temel bir Xamarin.iOS uygulaması oluşturma ve Xamarin ile iOS uygulaması geliştirme ile ilgili temel bilgileri bir anlayış geliştirmek nasıl açıklar. Araçlar, kavramlar ve oluşturmak ve bir Xamarin.iOS uygulaması dağıtmak için gerekli adımları tanıtılacaktır.
 ms.topic: quickstart
 ms.prod: xamarin
@@ -7,19 +7,18 @@ ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/23/2017
-ms.openlocfilehash: dc9b86845dc91c7fb8ec3a88a5862e5e9f6de18d
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.date: 05/02/2017
+ms.openlocfilehash: c82343b3ec36512a8cfd7ba3b96862eac14bfafd
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS hızlı başlangıç
 
 Bu kılavuz bir sayısal telefon numarası kullanıcı tarafından girilen bir alfasayısal telefon numarasını çevirir bir uygulama oluşturmayı açıklar ve bu numarayı çağırır. Son uygulama şöyle görünür:
 
  [![](hello-ios-quickstart-images/image1.png "Hello.iOS hızlı başlangıç uygulaması")](hello-ios-quickstart-images/image1.png#lightbox)
-
 
 <a name="Requirements" />
 
@@ -42,7 +41,7 @@ Xamarin.iOS aşağıdaki ayarlar ile çalışır:
 
 Xamarin.iOS aşağıdaki ayarlar ile çalışır:
 
--  Visual Studio 2015 veya 2017 Professional veya daha yüksek en son sürümü Windows 7 veya üstünü, yukarıdaki belirtimlerine uygun bir Mac yapı konak ile eşlendi.
+-  Visual Studio 2017 Community, Professional veya Enterprise Windows 7 veya üzeri, en son sürümünü yukarıdaki belirtimlerine uygun bir Mac yapı konak ile eşlendi.
 
 [Xamarin.iOS Windows Yükleme Kılavuzu](~/ios/get-started/installation/windows/index.md) adım adım yükleme yönergeleri için kullanılabilir.
 
@@ -63,7 +62,6 @@ Bu kılavuz, bir alfasayısal telefon numarası bir sayısal telefon numarası �
 Başlat ekranında tıklatın **yeni proje...**  yeni bir Xamarin.iOS çözüm oluşturmak için:
 
 ![](hello-ios-quickstart-images/image3new.png "iOS çözümü")
-
 
 2. Gelen **yeni çözüm iletişim**, seçin **iOS > Uygulama > tek görünüm uygulaması** şablonu, C# seçili olduğundan emin olma. Tıklatın **sonraki**:
 
@@ -294,51 +292,42 @@ Bu kılavuz, bir alfasayısal telefon numarası bir sayısal telefon numarası �
 
   ![](hello-ios-quickstart-images/image001-.png "Başlangıç ekranı")
 
-  Arama kutusuna altında **yeni çözüm** girin _Single View uygulaması_seçip **Single View uygulaması (iPhone)** yeni bir Xamarin.iOS çözüm oluşturmak için:
+  Seçerek yeni bir Xamarin.iOS çözüm oluşturmak **Dosya > Yeni > Proje... > Visual C# > iPhone & iPad > iOS uygulaması (Xamari**:
 
-  ![](hello-ios-quickstart-images/image002-.png "Bir tek görünüm uygulaması ekleyin")
+  ![İOS uygulaması (Xamarin) proje türü seçin](hello-ios-quickstart-images/image002.w157.png "iOS uygulaması (Xamarin) proje türü seçin")
 
+  Görüntülenen sonraki iletişim kutusunda, seçin **Single View uygulaması** şablonu ve tuşuna **Tamam** projesi oluşturmak için:
 
-2. Proje ve çözüm adı `Phoneword`aşağıda gösterildiği gibi:
+  ![Tek bir görünüm proje şablonu seçin](hello-ios-quickstart-images/image002-2.w157.png "tek bir görünüm seçin proje şablonu")
 
-  ![](hello-ios-quickstart-images/vs-image3.png "Proje PhonewordiOS ve yeni çözüm Phoneword adı")
-
-
-3. Tuşuna **Tamam** yeni proje oluşturmak için
-
-4. Araç çubuğu Xamarin Mac arası simgesinde yeşil olduğunu doğrulayın.
+1. Araç çubuğu Xamarin Mac arası simgesinde yeşil olduğunu doğrulayın.
 
     ![Araç çubuğu Xamarin Mac arası simgesinde yeşil olduğundan emin olun](hello-ios-quickstart-images/vs-image4.png)
 
     Değilse, bu Mac yapı konak bağlantı olduğu anlamına gelir, adımları [Yapılandırma Kılavuzu](~/ios/get-started/installation/windows/connecting-to-mac/index.md) bağlı.
 
-
-5. Açık **Main.storyboard** içinde çift tarafından iOS Tasarımcısı dosyasında **Çözüm Gezgini**:
+1. Açık **Main.storyboard** içinde çift tarafından iOS Tasarımcısı dosyasında **Çözüm Gezgini**:
 
   ![](hello-ios-quickstart-images/vs-image7.png "İOS Tasarımcısı")
 
-6. Açık **araç** sekmesinde "Arama çubuğuna etiket" yazın ve sürükleyin bir **etiket** tasarım yüzeyine (Merkezi alanında):
+1. Açık **araç** sekmesinde "Arama çubuğuna etiket" yazın ve sürükleyin bir **etiket** tasarım yüzeyine (Merkezi alanında):
 
   ![](hello-ios-quickstart-images/vs-image8.png "Bir etiket merkezi alanında tasarım yüzeyine sürükleyin")
 
-
-7. Ardından, işler, yakalayın *sürükleyerek denetimleri* ve daha geniş etiket yapın:
+1. Ardından, işler, yakalayın *sürükleyerek denetimleri* ve daha geniş etiket yapın:
 
   ![](hello-ios-quickstart-images/vs-image9.png "Daha geniş etiketi yap")
 
-
-8. İle **etiket** tasarım yüzeyine seçili kullanmak **özellikleri Windows** değiştirmek için **metin** özelliği **etiket** için "Enter bir Phoneword: "
+1. İle **etiket** tasarım yüzeyine seçili kullanmak **özellikleri Windows** değiştirmek için **metin** özelliği **etiket** için "Enter bir Phoneword: "
 
   ![](hello-ios-quickstart-images/vs-image10.png "'Bir Phoneword girmek için ' etiketinin metin özelliğini değiştirin")
 
   > [!NOTE]
   > Getir **özellikleri** veya **araç** giderek dilediğiniz zaman **Görünüm** menüsü.
 
-
-9. Arama sürükleyin ve araç kutusu içinde "metin alanı" için bir **metin alanı** gelen **araç** tasarım üzerine yüzey ve altında yerleştirin **etiket**. Kadar genişliğini ayarla **metin alanı** olarak aynı genişliği **etiket**:
+1. Arama sürükleyin ve araç kutusu içinde "metin alanı" için bir **metin alanı** gelen **araç** tasarım üzerine yüzey ve altında yerleştirin **etiket**. Kadar genişliğini ayarla **metin alanı** olarak aynı genişliği **etiket**:
 
   ![](hello-ios-quickstart-images/vs-image12.png "Etiket aynı genişlikte metin alanı olana kadar genişliğini ayarla")
-
 
 10. İle **metin alanı** tasarım yüzeyine seçili, değiştirme **metin alanı**'s **adı** özelliği kimlik bölümünde **özellikleri**için `PhoneNumberText`, değiştirip **metin** "1-855-XAMARIN" özelliği:
 
@@ -371,9 +360,9 @@ Bu kılavuz, bir alfasayısal telefon numarası bir sayısal telefon numarası �
   ![](hello-ios-quickstart-images/vs-image18.png "Telefon numaralarını alfasayısal sayısal çevirmek için bazı kod ekleme")
 
 
-16. İçinde **yeni dosya** iletişim kutusunda **Apple > sınıfı** ve yeni dosya adı `PhoneTranslator`:
+16. İçinde **Yeni Öğe Ekle** iletişim (projeye sağ tıklayın ve ardından Ekle'yi seçin > Yeni öğe...), select **Apple > sınıfı** ve yeni dosya adı `PhoneTranslator`:
 
-  ![](hello-ios-quickstart-images/vs-image19.png "PhoneTranslator adlı yeni bir sınıf ekleyin")
+  ![](hello-ios-quickstart-images/vs-image19.w157.png "PhoneTranslator adlı yeni bir sınıf ekleyin")
 
   > [!IMPORTANT]
   > C# simgesine sahip 'sınıfı' şablon seçtiğinizden emin olun. Aksi takdirde bu yeni sınıfa referans mümkün olmayabilir.

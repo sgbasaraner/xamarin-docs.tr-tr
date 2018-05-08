@@ -6,12 +6,12 @@ ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 9fd3ff17dc9af3fd30a7d5b31e8cea7ff8669a51
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2017
+ms.openlocfilehash: b27d415240f3b8cd25c4bc54f6d176c50e42a250
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="enhanced-user-notifications"></a>Gelişmiş Kullanıcı bildirimleri
 
@@ -548,10 +548,10 @@ Bir hizmet uzantısı bir Xamarin.iOS uygulaması uygulamak için aşağıdakile
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Uygulamanın çözümü Visual Studio'da açın.
-2. Çözüm adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **Yeni Proje Ekle**.
-3. Seçin **iOS** > **uzantıları** > **bildirim hizmeti uzantıları**: 
+2. Çözüm adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle > Yeni proje...** .
+3. Seçin **Visual C# > iOS uzantıları > bildirim hizmeti uzantı**:
 
-    [![](enhanced-user-notifications-images/extension01w.png "Bildirim hizmeti uzantıları seçin")](enhanced-user-notifications-images/extension01w.png#lightbox)
+    [![](enhanced-user-notifications-images/extension01.w157-sml.png "Bildirim hizmeti uzantıları seçin")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
 4. Girin bir **adı** tıklatın ve uzantı için **Tamam** düğmesi.
 
 -----

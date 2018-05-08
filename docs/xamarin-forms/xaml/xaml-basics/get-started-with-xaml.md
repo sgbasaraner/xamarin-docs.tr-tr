@@ -6,12 +6,12 @@ ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: f8032966b49f6f023642b0d1338e8c5d740b66e0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/10/2018
+ms.openlocfilehash: bc535160816ad186baaa5e802eceb6ae40347d75
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>1. bölüm. XAML ile çalışmaya başlama
 
@@ -23,9 +23,9 @@ _Bir Xamarin.Forms uygulaması XAML genellikle bir sayfanın visual içeriği ta
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Windows, Visual Studio seçmek için kullanın. **Dosya > Yeni > Proje** menüsünde. İçinde **yeni proje** iletişim kutusunda **Visual C# > Çapraz Platform** soldaki ve ardından **(Xamarin.Forms veya yerel) Çapraz Platform uygulaması** merkezi listesinden. 
+Windows, Visual Studio seçmek için kullanın. **Dosya > Yeni > Proje** menüsünde. İçinde **yeni proje** iletişim kutusunda **Visual C# > Çapraz Platform** soldaki ve ardından **mobil uygulama (Xamarin.Forms)** merkezi listesinden. 
 
-![](get-started-with-xaml-images/win/newprojectdialog.png "Yeni Proje iletişim kutusu")
+![](get-started-with-xaml-images/win/newprojectdialog.w157.png "Yeni Proje iletişim kutusu")
 
 Çözüm için bir konum seçin, bir ad verin **XamlSamples** (veya ne olursa olsun, tercih ettiğiniz) ve basın **Tamam**.
 
@@ -226,7 +226,7 @@ Program hala derler ve devam etmeden önce dağıtır sınayın.
 
 XAML tabanlı diğer eklemek için `ContentPage` , projeniz sınıflarını seçin **XamlSamples** PCL proje ve çağırma **Proje > Yeni Öğe Ekle** menü öğesi. Sol tarafındaki **Yeni Öğe Ekle** iletişim kutusunda **Visual C#** ve **Xamarin.Forms**. Listeden seçin **içerik sayfasını** (değil **içerik sayfası (C#)**, yalnızca kod sayfası oluşturur veya **içerik görünümü**, bir sayfa değil). Örneğin, sayfa, bir ad verin **HelloXamlPage.xaml**:
 
-![](get-started-with-xaml-images/win/addnewitemdialog.png "Yeni öğe iletişim ekleyin")
+![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "Yeni öğe iletişim ekleyin")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 

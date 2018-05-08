@@ -4,14 +4,14 @@ description: Kaynak ve hedef arasındaki bilgi akışını denetleme
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: fdcba9b680bd548371883788af9e4eda755d91df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: charlespetzold
+ms.author: chape
+ms.date: 05/01/2018
+ms.openlocfilehash: 1aa612d8b855158f09bc0aeaad1520a44b3d9637
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-mode"></a>Bağlama modu
 
@@ -58,6 +58,7 @@ Bağlama modu üyesi ile belirtilen [ `BindingMode` ](https://developer.xamarin.
 - [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; Kaynak ve hedef arasında çift yönlü veri gider
 - [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; veri kaynağından hedefe gider.
 - [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; veri kaynağına hedeften gider
+- [`OneTime`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; veri kaynağından hedef ancak yalnızca giden `BindingContext` değişiklikleri (Xamarin.Forms 3.0 ile yeni)
 
 Her bağlanabilirse bağlanabilir özelliği oluşturulduğunda ayarlanır modu bağlama varsayılan ve kullanılabilir olduğu özelliğinin [ `DefaultBindingMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableProperty.DefaultBindingMode/) özelliği `BindableProperty` nesnesi. Bu özellik veri bağlama hedef olduğunda bu varsayılan bağlama modu modu etkin gösterir.
 
@@ -94,6 +95,15 @@ Salt okunur bağlanabilirse özelliklere sahip bir varsayılan bağlama modu `On
 - `SelectedItem` özelliği `ListView`
 
 Bağlamada olan stratejinin `SelectedItem` özelliği bağlama kaynağı ayarı neden. Bu makalenin sonraki bölümlerinde örnek bu davranışı geçersiz kılar.
+
+### <a name="one-time-bindings"></a>Tek seferlik bağlamaları
+
+Bir varsayılan bağlama modu çeşitli özellikleri olan `OneTime`. Bunlar:
+
+- `IsTextPredictionEnabled` özelliği `Entry`
+- `Text`, `BackgroundColor`, ve `Style` özelliklerini `Span`.
+
+Hedef bir bağlama modu özelliklerle `OneTime` bağlama bağlamı değiştiğinde güncelleştirilir. Kaynak Özellikleri'nde değişiklikleri izlemek gerekli olmadığından bu hedef özellikler hakkında daha fazla bağlamaları için bu bağlama altyapısı basitleştirir.
 
 ## <a name="viewmodels-and-property-change-notifications"></a>ViewModels ve özellik değişikliği bildirimleri
 
@@ -198,6 +208,8 @@ public class HslColorViewModel : INotifyPropertyChanged
 Zaman `Color` özelliği değişiklikleri, statik `GetNearestColorName` yönteminde `NamedColor` sınıfı (de dahil **DataBindingDemos** çözüm) en yakın adlandırılmış rengi alır ve ayarlar `Name` özelliği. Bu `Name` özelliğine sahip bir özel `set` sınıfın dışından ndan ayarlanamıyor şekilde erişimcisi.
 
 Bir ViewModel bağlama kaynağı olarak ayarlandığında, bir işleyici bağlama altyapısı iliştirir `PropertyChanged` olay. Bu şekilde bağlama özelliklerine yapılan değişiklikler, bildirim ve ardından hedef özelliklerini değiştirilen değerleri ayarlayabilirsiniz.
+
+Ancak, bir hedef özellik olduğunda (veya `Binding` bir hedef özellik tanımını) sahip bir `BindingMode` , `OneTime`, üzerinde bir işleyici eklemek bağlama altyapısı için gerekli değildir `PropertyChanged` olay. Target özelliği güncelleştirilmiş yalnızca `BindingContext` değişiklikleri ve kaynak özelliği değiştiğinde değil. 
 
 **Basit Renk Seçici** XAML dosyası başlatır `HslColorViewModel` sayfanın kaynak sözlüğü ve başlatır `Color` özelliği. `BindingContext` Özelliği `Grid` ayarlanmış bir `StaticResource` bu kaynağa başvuran uzantısı bağlama:
 

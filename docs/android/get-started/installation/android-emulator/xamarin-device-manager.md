@@ -1,41 +1,36 @@
 ---
 title: Android öykünücüsünü Xamarin Android cihaz Yöneticisi ile yönetme
-description: Xamarin Android Aygıt Yöneticisi, şu anda önizlemede Google Eski Aygıt Yöneticisi'ni değiştirir. Bu kılavuz, Xamarin Android Aygıt Yöneticisi'ni oluşturmak ve Android sanal Android cihazları öykünmek cihazlar (AVDs) yapılandırmak için nasıl kullanılacağını açıklar. Bu sanal cihazlar ve fiziksel cihaz üzerindeki kullanan gerek kalmadan uygulamanızı test çalıştırmak için kullanabilirsiniz.
+description: Bu kılavuz, Xamarin Android Aygıt Yöneticisi'ni oluşturmak ve Android sanal Android cihazları öykünmek cihazlar (AVDs) yapılandırmak için nasıl kullanılacağını açıklar. Bu sanal cihazlar ve fiziksel cihaz üzerindeki kullanan gerek kalmadan uygulamanızı test çalıştırmak için kullanabilirsiniz.
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/26/2018
-ms.openlocfilehash: 2b41c23bb880ca6150fa5f3f487eb00d8a7a19d8
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 05/03/2018
+ms.openlocfilehash: 420ffc905659c6fd6245dc8cc3bdae4cb9401a63
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android cihaz Yöneticisi
 
-_Xamarin Android Aygıt Yöneticisi, şu anda önizlemede Google Eski Aygıt Yöneticisi'ni değiştirir. Bu kılavuz, Xamarin Android Aygıt Yöneticisi'ni oluşturmak ve Android sanal Android cihazları öykünmek cihazlar (AVDs) yapılandırmak için nasıl kullanılacağını açıklar. Bu sanal cihazlar ve fiziksel cihaz üzerindeki kullanan gerek kalmadan uygulamanızı test çalıştırmak için kullanabilirsiniz._
+_Bu kılavuz, Xamarin Android Aygıt Yöneticisi'ni oluşturmak ve Android sanal Android cihazları öykünmek cihazlar (AVDs) yapılandırmak için nasıl kullanılacağını açıklar. Bu sanal cihazlar ve fiziksel cihaz üzerindeki kullanan gerek kalmadan uygulamanızı test çalıştırmak için kullanabilirsiniz._
 
-![Şu anda önizlemede](~/media/shared/preview.png)
- 
 ## <a name="overview"></a>Genel Bakış
 
-Donanım hızlandırma etkinleştirildiğini doğruladıktan sonra (açıklandığı gibi [donanım hızlandırmasını](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), test ve uygulamanızı hata ayıklama için kullanılacak sanal cihaz oluşturmak için sonraki adımdır. Android SDK öykünücüsü tarafından kullanılacak sanal cihaz oluşturmak için Xamarin Android Aygıt Yöneticisi'ni kullanabilirsiniz.
-
-Neden yerine Xamarin Android Aygıt Yöneticisi'ni kullanmak istediğiniz [Google Aygıt Yöneticisi'ni](~/android/get-started/installation/android-emulator/google-emulator-manager.md)?
-Android SDK Araçları sürüm 26.0.1 itibariyle Google UI tabanlı AVD ve SDK yöneticilerinin lehinde kaldıran yeni (komut satırı arabirimi) CLI araçlarını desteği kaldırdı. Bu değişikliği nedeniyle kullanmalısınız [Xamarin SDK Manager](~/android/get-started/installation/android-sdk.md) ve Xamarin Android cihaz Android SDK Araçları 26.0.1 güncelleştirdiğinizde Yöneticisi ve daha sonra (olmayan Android 8.0 Oreo geliştirme için gerekli).
+Donanım hızlandırma etkinleştirildiğini doğruladıktan sonra (açıklandığı gibi [donanım hızlandırmasını](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), test ve uygulamanızı hata ayıklama için kullanılacak sanal cihaz oluşturmak için Xamarin Android Aygıt Yöneticisi'ni kullanmak için sonraki adımdır.
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Bu kılavuz yüklemek ve Windows'da Visual Studio için Xamarin Android Aygıt Yöneticisi'ni kullanmak nasıl açıklar (veya [Mac için](?tabs=vsmac)):
+Bu kılavuz Windows Visual Studio için Xamarin Android Aygıt Yöneticisi'ni kullanmak nasıl açıklar (veya [Mac için](?tabs=vsmac)):
 
 [![Xamarin Android Aygıt Yöneticisi'nin aygıtlar sekmesinden ekran görüntüsü](xamarin-device-manager-images/win/01-devices-dialog-sml.png)](xamarin-device-manager-images/win/01-devices-dialog.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Bu kılavuz yüklemek ve Mac için Visual Studio için Xamarin Android Aygıt Yöneticisi'ni kullanmak nasıl açıklar (veya [Windows için](?tabs=vswin)):
+Bu kılavuz Mac için Visual Studio için Xamarin Android Aygıt Yöneticisi'ni kullanmak nasıl açıklar (veya [Windows için](?tabs=vswin)):
 
 [![Xamarin Android Aygıt Yöneticisi'nin aygıtlar sekmesinden ekran görüntüsü](xamarin-device-manager-images/mac/01-devices-dialog-sml.png)](xamarin-device-manager-images/mac/01-devices-dialog.png#lightbox)
 
@@ -48,7 +43,7 @@ Xamarin Studio Xamarin Android cihaz Yöneticisi ile uyumlu değil.
 Xamarin Android Aygıt Yöneticisi'ni oluşturmak ve yapılandırmak için kullandığınız *Android sanal cihaz* (AVDs) çalışan [Android SDK öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 Her AVD, fiziksel bir Android cihazı taklit eden bir öykünücü yapılandırmadır. Çalıştırın ve farklı fiziksel Android cihazları benzetimini yapılandırmaları çeşitli uygulamanızı test etmek mümkün kılar. Xamarin Android Aygıt Yöneticisi'ni Google'nın tek başına AVD (kullanım dışı bırakıldı) Yöneticisi değiştirir.
 
-Bu kılavuzda, yüklemek ve Android Aygıt Yöneticisi'ni başlatmak öğreneceksiniz. Oluşturma, çoğaltma, özelleştirme ve sanal aygıtların başlatma öğreneceksiniz. Bu kılavuz ayrıca accelerometer, GPS, Yönlendirme ve açık algılayıcı gibi benzetimli algılayıcılar etkinleştir/devre dışı bırakılır ve donanım türünü yapılandırmak için (örneğin, API düzeyi, CPU, bellek ve çözümleme), her sanal cihaz özelliklerini yapılandırmak nasıl açıklar Bu sanal aygıt tarafından kullanılan hızlandırma.
+Bu kılavuzda, Android Aygıt Yöneticisi'ni oluşturma, çoğaltma, özelleştirme ve sanal aygıtların başlatmak için nasıl kullanılacağını öğreneceksiniz. Bu kılavuz ayrıca accelerometer, GPS, Yönlendirme ve açık algılayıcı gibi benzetimli algılayıcılar etkinleştir/devre dışı bırakılır ve donanım türünü yapılandırmak için (örneğin, API düzeyi, CPU, bellek ve çözümleme), her sanal cihaz özelliklerini yapılandırmak nasıl açıklar Bu sanal aygıt tarafından kullanılan hızlandırma.
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -56,74 +51,37 @@ Bu kılavuzda, yüklemek ve Android Aygıt Yöneticisi'ni başlatmak öğrenecek
 
 Xamarin Android Aygıt Yöneticisi'ni kullanmak için aşağıdakiler gerekir:
 
-- Visual Studio 2017 15,5 veya sonraki bir sürümü gereklidir. Visual Studio Community sürümü ve üzeri desteklenir.
+- Visual Studio 2017 15.7 veya sonraki bir sürümü gereklidir. Visual Studio Community sürümü ve üzeri desteklenir.
 
-- Visual Studio 4.8 veya sonraki bir sürümü için Xamarin. Xamarin güncelleştirme hakkında daha fazla bilgi için bkz: [güncelleştirmeleri kanalı değiştirmek](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/).
+- Visual Studio 4.9 veya sonraki bir sürümü için Xamarin. Xamarin güncelleştirme hakkında daha fazla bilgi için bkz: [güncelleştirmeleri kanalı değiştirmek](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/).
 
-- En son sürümünü [Xamarin Aygıt Yöneticisi'ni yükleyici](https://go.microsoft.com/fwlink/?linkid=865528) Windows için.
-
-- **Android SDK** &ndash; Android SDK yüklü olması gerekir (bkz [Android SDK Kurulum](~/android/get-started/installation/android-sdk.md)), ve sonraki bölümde açıklandığı gibi SDK Araçları sürüm 26.0'in yüklenmesi gerekir. Android SDK'sı şu konumda (zaten yüklü değilse) yüklediğinizden emin olun: **C:\\Program Files (x86)\\Android\\android sdk**.
+- **Android SDK** &ndash; Android SDK yüklü olması gerekir (bkz [Android SDK Kurulum](~/android/get-started/installation/android-sdk.md)), ve sonraki bölümde açıklandığı gibi SDK Araçları sürüm 26,0 veya üstü yüklü olmalıdır. Android SDK'sı şu konumda (zaten yüklü değilse) yüklediğinizden emin olun: **C:\\Program Files (x86)\\Android\\android sdk**.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-- Visual Studio Mac 7.4 veya daha sonra.
-
-- En son sürümünü [Xamarin Aygıt Yöneticisi'ni yükleyici](https://go.microsoft.com/fwlink/?linkid=865527) macOS için.
+- Visual Studio Mac 7.5 veya üstü.
 
 - **Android SDK** &ndash; Android SDK 8.0 (API 26) veya daha sonra SDK Yöneticisi aracılığıyla yüklenmesi gerekir.
 
 -----
 
-## <a name="installing-the-device-manager"></a>Aygıt Yöneticisi'ni yükleme
-
-Xamarin Android Aygıt Yöneticisi'ni yüklemek için aşağıdaki adımları kullanın:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-1. Karşıdan [Xamarin Aygıt Yöneticisi'ni yükleyici](https://go.microsoft.com/fwlink/?linkid=865528) Windows için.
-
-2. Çift **Xamarin.DeviceManager.msi** ve yükleme yönergelerini izleyin: 
-
-    ![Xamarin Android Aygıt Yöneticisi'ni Kurulum Sihirbazı](xamarin-device-manager-images/win/30-installer.png)
-
-
-> [!NOTE]
-> İle başlayarak [Visual Studio 2017 Önizleme 5](https://www.visualstudio.com/vs/preview/), Android Aygıt Yöneticisi'ni bir parçası olarak VS2017 yükleyici olarak dağıtılmış. Visual Studio 2017 Önizleme 5 ile Xamarin Android Aygıt Yöneticisi'ni almak için ayrı bir yükleyici indirmek için gerek yoktur.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-1. Karşıdan [Xamarin Aygıt Yöneticisi'ni yükleyici](https://go.microsoft.com/fwlink/?linkid=865527) macOS için.
-
-2. Çift **AndroidDevices.pkg** ve yükleme yönergelerini izleyin: 
-
-    [![Xamarin Android Aygıt Yöneticisi'ni Kurulum Sihirbazı](xamarin-device-manager-images/mac/30-installer-sml.png)](xamarin-device-manager-images/mac/30-installer.png#lightbox)
-
------
 ## <a name="launching-the-device-manager"></a>Aygıt Yöneticisi'ni başlatma
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Visual Studio 15,6 Preview 3 ve sonraki sürümlerinde, Xamarin Android Aygıt Yöneticisi'nden başlatabilirsiniz **Araçları** menüsü. Daha sonra Aygıt Yöneticisi'ni tıklatarak başlatmak veya Visual Studio 15,6 Preview 3 kullanıyorsanız **Araçlar > Android Emulator Manager**:
+Xamarin Android Aygıt Yöneticisi'nden başlatın **Araçları** menüsünde tıklayarak **Araçlar > Android Emulator Manager**:
 
 [![Araçlar menüsünden başlatma](xamarin-device-manager-images/win/04-tools-menu-sml.png)](xamarin-device-manager-images/win/04-tools-menu.png#lightbox)
 
-Visual Studio'nun önceki bir sürümünü kullanıyorsanız, Xamarin Android Aygıt Yöneticisi'ni Windows başlatılması **Başlat** menüsü.
-
-![Xamarin Android Aygıt Yöneticisi'nde Başlat menüsü](xamarin-device-manager-images/win/31-start-menu.png)
-
-Sağ **Xamarin Android Aygıt Yöneticisi'ni** seçip **daha > yönetici olarak çalıştır**. Başlatılırken şu hata iletişim kutusu görürseniz, bkz: [sorun giderme](#troubleshooting) bölümü geçici çözüm yönergeleri için:
+Başlatılırken şu hata iletişim kutusu görürseniz, bkz: [sorun giderme](#troubleshooting) bölümü geçici çözüm yönergeleri için:
 
 ![Android SDK'sı örneği hata](xamarin-device-manager-images/win/32-sdk-error.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Visual Studio'da Mac 7.6 Preview 3 (şu anda'alfa kanal) veya sonrası, Xamarin Android Aygıt Yöneticisi'ni seçerek başlatabilirsiniz **Araçlar > öykünücü yöneticisini**:
+Mac için Visual Studio'da Xamarin Android Aygıt Yöneticisi'ni seçerek başlatma **Araçlar > öykünücü yöneticisini**:
 
 [![Araçlar menüsünden başlatma](xamarin-device-manager-images/mac/16-tools-menu-sml.png)](xamarin-device-manager-images/mac/16-tools-menu.png#lightbox)
-
-Mac için Visual Studio'nun önceki bir sürümünü kullanıyorsanız, Xamarin Android Aygıt Yöneticisi'ni bağımsız olarak başlatılması gerekir. Bulun **Android cihazları** içinde **uygulamaları** klasörü ve başlatmak için çift tıklatın:
-
-[![Xamarin Android Aygıt Yöneticisi'ni konumda Bulucu](xamarin-device-manager-images/mac/31-location-in-finder-sml.png)](xamarin-device-manager-images/mac/31-location-in-finder.png#lightbox)
 
 -----
 

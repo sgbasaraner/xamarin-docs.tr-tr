@@ -4,14 +4,14 @@ description: Bir uygulama genelde yetenekleri ekleme sağlama ek kurulum gerekti
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/15/2017
-ms.openlocfilehash: ff918ac104e7eab4f2e8c0d0be46df240138c97c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: asb3993
+ms.author: amburns
+ms.date: 05/06/2018
+ms.openlocfilehash: e6fc3d38fef7c7c3204d1413911ddfa9a486c67c
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="working-with-capabilities"></a>Özellikleri ile çalışma
 
@@ -31,7 +31,7 @@ Bu özellikler Xamarin.iOS projeleri ile kullanılabilir. Hizmetlerin tam listes
 * Uygulama içi satın alma
 * Uygulamalar Arası Ses
 * Apple Pay
-* Wallet
+* Cüzdan
 * Anında iletme bildirimi
 * Kişisel VPN
 * Siri
@@ -44,20 +44,18 @@ Bu özellikler Xamarin.iOS projeleri ile kullanılabilir. Hizmetlerin tam listes
 * NFC etiketinin okuma
 
 
-Özellikleri ya da Visual Studio aracılığıyla Mac için veya el ile Apple Geliştirici Portalı'nda etkinleştirilebilir. Cüzdan, Apple Pay ve iCloud gibi belirli özelliklerini uygulama kimliklerini ek yapılandırma gerektirir.
+Özellikleri ya da Visual Studio aracılığıyla Mac ve Visual Studio 2017 için veya el ile Apple Geliştirici Portalı'nda etkinleştirilebilir. Cüzdan, Apple Pay ve iCloud gibi belirli özelliklerini uygulama kimliklerini ek yapılandırma gerektirir.
 
-Bu kılavuzda, uygulamanızda Mac için ve gerekli olabilecek herhangi bir ek ayar dahil olmak üzere Geliştirici Merkezi aracılığıyla el ile hem Visual Studio'da bu uygulama hizmetlerinin her biri etkinleştirmek açıklanmaktadır. 
+Bu kılavuz, bu uygulama hizmetlerin uygulamanızda Visual Studio'da otomatik ve el ile gerekli olabilecek herhangi bir ek ayar dahil olmak üzere Geliştirici Merkezi aracılığıyla her birini etkinleştirmek açıklanmaktadır. 
 
 ## <a name="adding-app-services"></a>Uygulama Hizmetleri ekleme
 
-Özellikleri kullanmak için uygulamayı doğru hizmetinin etkinleştirilmiş bir uygulama kimliği içeren geçerli bir sağlama profili olması gerekir. Bu sağlama profili oluşturma ya da otomatik olarak Mac için Visual Studio veya el ile Apple Developer Center'da yapılabilir.
+Özellikleri kullanmak için uygulamayı doğru hizmetinin etkinleştirilmiş bir uygulama kimliği içeren geçerli bir sağlama profili olması gerekir. Bu sağlama profili oluşturma ya da otomatik olarak Mac ve Visual Studio 2017 için Visual Studio veya el ile Apple Geliştirici Merkezi'ndeki yapılabilir.
 
-Bu bölümde Mac'ın otomatik sağlama için Visual Studio veya Geliştirici Merkezi çoğu işlevlerini etkinleştirmek için nasıl kullanılacağı açıklanmaktadır. Cüzdan, iCloud, Apple Pay ve ek kurulum gerektirir uygulama grupları gibi bazı özellikler vardır. Bu bitişik kılavuzları ayrıntılı açıklanmıştır.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+Bu bölümde, Visual Studio'nun otomatik sağlama veya Geliştirici Merkezi çoğu işlevlerini etkinleştirmek için nasıl kullanılacağı açıklanmaktadır. Cüzdan, iCloud, Apple Pay ve ek kurulum gerektirir uygulama grupları gibi bazı özellikler vardır. Bu bitişik kılavuzları ayrıntılı açıklanmıştır.
 
 > [!IMPORTANT]
-> Tüm özellikleri eklenebilir ve Mac için Visual Studio'daki yönetilen Aşağıdaki liste, desteklenen özellikler içerir:
+> Tüm özellikleri, eklenen ve otomatik sağlama ile yönetilir. Aşağıdaki liste, desteklenen özellikler içerir:
 >
 >* HealthKit 
 >* HomeKit 
@@ -72,10 +70,13 @@ Bu bölümde Mac'ın otomatik sağlama için Visual Studio veya Geliştirici Mer
 >
 >Anında iletme bildirimleri, oyun Merkezi, uygulama içi satın alma, haritalar, Anahtarlık paylaşımı, ilişkili etki alanları ve veri koruma özellikleri şu anda desteklenmiyor. Bu özellikler eklemek için el ile sağlama kullanması ve adımları [Geliştirici Merkezi](#devcenter) bölümü.
 
+## <a name="using-the-ide"></a>IDE kullanma
 
-Özellikleri eklenir **Entitlements.plist** Mac için Visual Studio'da Özellikleri eklemek için aşağıdaki adımları izleyin:
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-1. Açık **Info.plist** iOS uygulamanızın dosyasını ve olun **imzalama otomatik olarak yönetir** seçilir. Adımları [otomatik sağlamayı](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) yardıma gereksinim duyarsanız Kılavuzu:
+Özellikleri eklenir **Entitlements.plist** Mac için Visual Studio'da Özellikleri eklemek için aşağıdaki adımları kullanın:
+
+1. Açık **Info.plist** seçin ve iOS uygulama dosyasının **otomatik olarak sağlama** düzeni ve **takım** açılan kutusundan. Adımları [otomatik sağlamayı](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) yardıma gereksinim duyarsanız Kılavuzu:
 
     ![İmzalama seçeneği otomatik olarak yönetme](images/manage-signing.png)
 
@@ -93,39 +94,29 @@ Bu bölümde Mac'ın otomatik sağlama için Visual Studio veya Geliştirici Mer
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Otomatik Visual Studio 2017 sağlama şu anda hiçbir desteği olduğundan kullanmalısınız [Geliştirici Merkezi](#devcenter) oluşturmak için bir doğru uygulama hizmetleri ile bir uygulama kimliği.
+Özellikleri eklenir **Entitlements.plist**. Visual Studio 2017 içinde özellikleri eklemek için aşağıdaki adımları kullanın:
+
+1. Bölümünde açıklandığı gibi bir Mac için Visual Studio 2017 eşleştirin [Mac çiftine](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Kılavuzu.
+
+2. Hazırlama Seçenekleri'ni seçerek açmak **Proje > sağlama özellikleri...**
+
+3. Seçin **otomatik olarak sağlama** düzeni ve **takım** açılan kutusundan. Adımları [otomatik sağlamayı](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) yardıma gereksinim duyarsanız Kılavuzu:
+
+    ![İmzalama seçeneği otomatik olarak yönetme](images/manage-signing-vs.png)
+
+4. Açık **Entitlements.plist** dosya ve eklemek istediğiniz özelliği seçin. Dosyayı kaydedin.
+
+    Kaydetme **Entitlement.plist** iki işlemi yapar:
+
+    * Bu özellik, uygulama Kimliğinize ekler
+    * Entitlements.plist dosyanızı yetkilendirme anahtar/değer çifti ekler.
 
 -----
 
-<!--
-<a name="xcode" />
-
-## Xcode
-
-Xamarin developers can also use Xcode to quickly create a provisioning profile with a suitable App ID. This process, described below, can be used for any app service in the list:
-
-1.  Open Xcode and create a ‘dummy’ project. Give the dummy project the same name as your Xamarin.iOS project. The bundle identifier should be identical to the bundle identifier of your Xamarin.iOS project:
-
-    ![Xcode Create Project](images/image1.png)
-
-2.  Ensure **Automatically manage signing** is selected:
-
-    ![Automatically manage signing selection](images/image2.png)
-
-3.  Once the app has been created, go to the tab named **Capabilities**:
-
-    ![Xcode Capabilities tab](images/image3.png)
-
-4.  Browse to the capability that you wish to add, and move the switch to the **ON** position.
-5.  This will create a provisioning profile with an App ID that contains the capability and adds the entitlement to the profile.
-6.  In Visual Studio for Mac / Visual Studio, browse to **Project Options > Bundle Signing** and set the provisioning profile to the one that was just created in Xcode:
-
-    ![Visual Studio for Mac Project Options](images/image4.png)
--->
 
 <a name="devcenter" />
 
-## <a name="developer-center"></a>Geliştirici Merkezi
+## <a name="using-the-developer-center"></a>Geliştirici Merkezi'ni kullanma
 
 Geliştirici Merkezi'ni kullanarak bir uygulama kimliği oluşturarak ve ardından bir sağlama profili oluşturmak için bu uygulama kimliği kullanılarak gerektiren bir iki adım işlemidir. Bu adımlar aşağıda ayrıntılı olarak açıklanmaktadır.
 
@@ -190,7 +181,7 @@ Geliştirici Merkezi'ni kullanarak bir uygulama kimliği oluşturarak ve ardınd
 
 8.  Tuşuna **karşıdan** indirme düğmesine tıklayın ve sağlama profili yüklemek için bir Bulucu dosyasına çift tıklayın.
 
-9. Mac sağlamak için Visual Studio kullanıyorsanız **imzalama otomatik olarak yönetir** seçeneği de serbest seçili **Info.plist** dosyası
+9. Visual Studio kullanıyorsanız emin **el ile sağlama** seçeneği işaretlidir.
 
 10. Visual Studio for Mac / Visual Studio, Gözat ' **proje Seçenekleri > paket imzalama** ve yeni oluşturduğunuz bir sağlama profili ayarlayın:
 

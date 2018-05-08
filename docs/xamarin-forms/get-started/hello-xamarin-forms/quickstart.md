@@ -6,12 +6,12 @@ ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/26/2018
-ms.openlocfilehash: f5c05ce308a10747ad3e18e4a1d141d29fd6c8a1
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 05/03/2018
+ms.openlocfilehash: 6a0107ec11955f99c62a6f59f9bf82291dee9224
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms hızlı başlangıç
 
@@ -33,7 +33,7 @@ Phoneword uygulama gibi oluşturun:
 
 3. İçinde **yeni proje** iletişim kutusunda, tıklatın **platformlar arası**seçin **mobil uygulama (Xamarin.Forms)** şablon kümesi adı ve çözüm adı `Phoneword`, seçin bir ' a tıklayın ve proje için uygun konumu **Tamam** düğmesi:
 
-    ![](quickstart-images/vs/new-project.png "Platformlar arası proje şablonları")
+    ![](quickstart-images/vs/new-project.w157.png "Platformlar arası proje şablonları")
 
 4. İçinde **yeni Çapraz Platform uygulaması** iletişim kutusunda, tıklatın **boş uygulama**seçin **.NET standart** kod paylaşımı stratejisi ve tıklatın olarak **Tamam** düğmesi:
 
@@ -168,7 +168,7 @@ Phoneword uygulama gibi oluşturun:
 
 12. İçinde **Yeni Öğe Ekle** iletişim kutusunda **Visual C# > kod > sınıfı**, yeni dosya adı **PhoneTranslator**, tıklatıp **Ekle** düğmesi :
 
-    ![](quickstart-images/vs/add-translator-class.png "Yeni sınıf ekleyin")
+    ![](quickstart-images/vs/add-translator-class.w157.png "Yeni sınıf ekleyin")
 
 13. İçinde **PhoneTranslator.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod, bir telefon numarasına bir telefon sözcük çevirir:
 
@@ -234,7 +234,7 @@ Phoneword uygulama gibi oluşturun:
 
 15. İçinde **Yeni Öğe Ekle** iletişim kutusunda **Visual C# > kod > arabirimi**, yeni dosya adı **IDialer**, tıklatıp **Ekle** düğmesi:
 
-    ![](quickstart-images/vs/add-idialer-interface.png "Yeni arabirimi Ekle")
+    ![](quickstart-images/vs/add-idialer-interface.w157.png "Yeni arabirimi Ekle")
 
 16. İçinde **IDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kodu tanımlayan bir `Dial` çevrilmiş telefon numarasını aramak için her platformda uygulanmalı yöntemi:
 
@@ -257,9 +257,9 @@ Phoneword uygulama gibi oluşturun:
 
     ![](quickstart-images/vs/add-new-item-ios.png "Yeni Öğe Ekle")
 
-18. İçinde **Yeni Öğe Ekle** iletişim kutusunda **Apple > kod > sınıfı**, yeni dosya adı **Telefon Çeviricisi**, tıklatıp **Ekle** düğmesi:
+18. İçinde **Yeni Öğe Ekle** iletişim kutusunda **Visual C# > kod > sınıfı**, yeni dosya adı **Telefon Çeviricisi**, tıklatıp **Ekle** düğmesi:
 
-    ![](quickstart-images/vs/new-phone-dialer-ios.png "Yeni sınıf ekleyin")
+    ![](quickstart-images/vs/new-phone-dialer-ios.w157.png "Yeni sınıf ekleyin")
 
 19. İçinde **PhoneDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod oluşturur <code>Dial</code> iOS platformunda çevrilmiş telefon numarasını aramak için kullanılan yöntem:
 
@@ -291,7 +291,7 @@ Phoneword uygulama gibi oluşturun:
 
 21. İçinde **Yeni Öğe Ekle** iletişim kutusunda **Visual C# > Android > sınıfı**, yeni dosya adı **Telefon Çeviricisi**, tıklatıp **Ekle** düğmesi:
 
-    ![](quickstart-images/vs/new-phone-dialer-android.png "Yeni sınıf ekleyin")
+    ![](quickstart-images/vs/new-phone-dialer-android.w157.png "Yeni sınıf ekleyin")
 
 22. İçinde **PhoneDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod oluşturur `Dial` Android platformunda çevrilmiş telefon numarasını aramak için kullanılan yöntem:
 
@@ -391,7 +391,7 @@ Phoneword uygulama gibi oluşturun:
 
 27. İçinde **Yeni Öğe Ekle** iletişim kutusunda **Visual C# > kod > sınıfı**, yeni dosya adı **Telefon Çeviricisi**, tıklatıp **Ekle** düğmesi:
 
-    ![](quickstart-images/vs/new-phone-dialer-uwp.png "Yeni sınıf ekleyin")
+    ![](quickstart-images/vs/new-phone-dialer-uwp.w157.png "Yeni sınıf ekleyin")
 
 28. İçinde **PhoneDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod oluşturur `Dial` yöntemi ve evrensel Windows platformu üzerinde bir çevrilmiş telefon numarasını aramak için kullanılan yardımcı yöntemler:
 
@@ -523,7 +523,7 @@ Phoneword uygulama gibi oluşturun:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, UWP" Value="20" />
+                <On Platform="Android, WinPhone, Windows" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -630,7 +630,7 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **App.xaml.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **Phoneword.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 13. İçinde **çözüm paneli**seçin **Phoneword** proje, sağ tıklatın ve seçin **Ekle > yeni dosya...** :
 

@@ -5,12 +5,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.date: 04/05/2017
-ms.openlocfilehash: 21af0ef09644f39f9be42788b3d8f4977a2143d3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: a4ca803085f31ff0db5dd4f194b705d765447c9d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="apple-account-management"></a>Apple hesap yönetimi
 
@@ -18,23 +18,20 @@ Apple hesabı yönetim arabirimi Apple kimliği ile ilişkili tüm geliştirme e
 
 Apple Kimliğinizi kimlik doğrulaması ile komut satırında gerçekleştirilir [fastlane](https://fastlane.tools/). fastlane başarıyla doğrulanması, makinenizde yüklenmelidir. İçinde ayrıntılı fastlane ve nasıl yükleneceği hakkında daha fazla bilgi [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) kılavuzları.
 
-Mac için Visual Studio'da Apple hesabı iletişim kutusu aşağıdakileri sağlar:
+Apple hesabı iletişim aşağıdakileri sağlar:
 
 * **Sertifikaları oluşturmak ve yönetmek** 
 * **Oluşturma ve sağlama profilleri yönetme** 
 
 Bunun nasıl yapılacağı hakkında bilgi, bu kılavuzda açıklanan.
 
-Paket imzalama araçları iOS, aşağıdakileri yapmak için de kullanabilirsiniz:
-
-* **Yeni bir imza kimliği mevcut bir profiline Ekle** 
-* **Yeni cihazları sağlamak** 
+Otomatik olarak oluşturup imzalama kimlikleri, uygulama kimlikleri ve sağlama profillerini yönetmek için iOS otomatik sağlama araçları da kullanabilirsiniz.
 
 Bu özellikler kullanma hakkında daha fazla bilgi için başvurmak [cihaz sağlamayı](~/ios/get-started/installation/device-provisioning/index.md) Kılavuzu.
 ️
 ## <a name="requirements"></a>Gereksinimler
 
-Mac için Visual Studio Apple hesap yönetimi kullanılabilir Windows için Visual Studio üzerinde şu anda kullanılabilir değil.
+Apple hesap yönetimi, Mac ve Visual Studio 2017 (sürüm 15.7 ve üzeri) için Visual Studio edinilebilir
 
 Bu özelliği kullanmak için bir Apple Geliştirici hesabınızın olması gerekir. Apple Geliştirici hesapları hakkında daha fazla bilgi kullanılabilir [cihaz sağlamayı](~/ios/get-started/installation/device-provisioning/index.md) Kılavuzu.
 
@@ -44,6 +41,8 @@ Bu özelliği kullanmak için bir Apple Geliştirici hesabınızın olması gere
 - Başlamadan önce tüm kullanıcı lisans sözleşmelerini kabul etmek emin olun [Geliştirici Portalı](https://developer.apple.com/account/).
 
 ## <a name="adding-an-apple-developer-account"></a>Apple Geliştirici hesabı ekleme
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 1. Hesap yönetimi iletişim kutusu açmak için Git **Visual Studio > Tercihler > Apple Developer hesabı**:
 
@@ -57,18 +56,35 @@ Bu özelliği kullanmak için bir Apple Geliştirici hesabınızın olması gere
  
 5. Seçin **her zaman izin ver** kimlik bilgilerinizi kullanmak Visual Studio izin vermek için uyarı iletişim kutusunda:
 
-    ![](apple-account-management-images/image4.png)
+    ![Uyarı iletişim her zaman izin ver](apple-account-management-images/image4.png)
 
 6. Hesabınız başarıyla eklendikten sonra Apple Kimliğinizi ve Apple Kimliğinizi parçası olan tüm takımlar görürsünüz.
 
-    ![](apple-account-management-images/image5.png)
+    ![Apple Geliştirici hesabı iletişim eklenen hesaplarıyla](apple-account-management-images/image5.png)
 
 7. Tüm ekip seçip tuşuna **ayrıntıları görüntüle...** düğme. Bu, tüm oturum kimlikleri ve makinenize yüklü sağlama profilleri listesi görüntülenir:
 
-    ![](apple-account-management-images/image6.png)
+    ![Kimlikleri imzalama ve sağlama profilleri makinenizde görünümü ayrıntıları ekran gösterme](apple-account-management-images/image6.png)
 
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-<a name="managing" />
+1. Visual Studio 2017 Apple Kimliğinizi eklemeden önce geliştirme ortamınızı olduğundan emin olun [bir Mac yapı konağa eşleştirilmiş](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+
+1. Hesap Yönetimi penceresini açmak için Git **Araçlar > Seçenekler > Xamarin > Apple hesapları**:
+
+    ![Apple hesapları seçenekleri ekranı](apple-account-management-images/prov1.png)
+
+1. Seçin **Ekle** düğmesine tıklayın ve Apple kimliği ve parola girin:
+
+    ![Kullanıcı adı ve parola iletişim kutusu](apple-account-management-images/prov1a.png)
+
+1. Hesabınız başarıyla eklendikten sonra Apple Kimliğinizi ve Apple Kimliğinizi parçası olan tüm takımlar görürsünüz.
+ 
+1. Tüm ekip seçip tuşuna **ayrıntıları görüntüle...** düğme. Bu, tüm oturum kimlikleri ve makinenize yüklü sağlama profilleri listesi görüntülenir:
+
+    ![Kullanıcı adı ve parola iletişim kutusu](apple-account-management-images/prov2.png)
+
+-----
 
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>İmzalama kimlikleri yönetmek ve sağlama profilleri
@@ -83,21 +99,37 @@ Takım Ayrıntıları iletişim imzalama türüne göre düzenlenmiş kimlikleri
 
 * **Süresi dolmuş** – sertifikanın süresi doldu. Bu, Anahtarlık kaldırmanız gerekir.
 
-  ![](apple-account-management-images/image7.png)
+  ![Takım Ayrıntıları iletişim bilgileri](apple-account-management-images/image7.png)
 
 ## <a name="create-a-signing-identities"></a>İmzalama kimlik oluşturun
 
-Yeni bir imza kimliği oluşturmak için seçin **yeni bir sertifika oluşturmak** açılan düğmesine ve ihtiyaç duyduğunuz türünü seçin. Yeni imzalama doğru izinlere sahip kimlik birkaç saniye sonra görünür.
+Yeni bir imza kimliği oluşturmak için seçin **oluşturduğunuz sertifika** açılan düğmesine ve ihtiyaç duyduğunuz türünü seçin. Yeni imzalama doğru izinlere sahip kimlik birkaç saniye sonra görünür.
 
-Aşağı açılır bir seçeneği devre dışı ve seçili, aşağıda gösterildiği gibi bu tür bir sertifika oluşturmak için doğru takım izinlere sahip değil demektir.
+Aşağı açılır bir seçeneği devre dışı ve seçili, bu tür bir sertifika oluşturmak için doğru takım izinlere sahip değil demektir.
 
-![](apple-account-management-images/image8.png)
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+
+![Sertifika seçeneklerini oluşturma](apple-account-management-images/image8.png)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+![Sertifika seçeneklerini oluşturma](apple-account-management-images/prov3.png)
+
+-----
 
 ## <a name="download-provisioning-profiles"></a>Sağlama profilleri indirin
 
 Takım Ayrıntıları iletişim ayrıca Geliştirici hesabınızı bağlı tüm sağlama profilleri listesini görüntüler. Tuşlarına basarak tüm sağlama profilleri yerel makinenize indirebilirsiniz **tüm profiller karşıdan** düğmesi
 
-![](apple-account-management-images/image9.png)
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+
+![Sağlama profilleri bölüm indirin](apple-account-management-images/image9.png)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+![Sağlama profilleri bölüm indirin](apple-account-management-images/prov4.png)
+
+-----
 
 ## <a name="ios-bundle-signing"></a>iOS paket imzalama
 
@@ -120,13 +152,10 @@ Hesabınızdaki 2 faktörlü kimlik doğrulamasının etkin olmasıdır. Mac iç
 ### <a name="failed-to-create-new-certificate"></a>Yeni bir sertifika oluşturulamadı
 "Bu tür sertifikalar için üst sınıra ulaştınız"
 
-![](apple-account-management-images/image10.png)
+![Sertifika sınırı iletişim kutusu](apple-account-management-images/image10.png)
 
 En fazla izin verilen sertifika sayısına oluşturulmuş. Bu sorunu gidermek için Gözat [Apple Geliştirici Merkezi](https://developer.apple.com/account/ios/certificate/distribution) ve bir üretim sertifikaları iptal etme.
 
 ## <a name="known-issues"></a>Bilinen Sorunlar
 
-* Bazen Ayrıntıları iletişim Ölçüsüz imzalama kimlikleri ve profilleri getirmek için zaman alabilir.
-* Genellikle odak Visual Studio'ya Mac için hesabınıza eklenemiyor neden bilgilerinizi girdikten sonra döndürmeyebilir. Bu durumda, işlemi yeniden deneyin.
-* Mac için Visual Studio'da oluşturulan sağlama profilleri, projenizde seçili yetkilendirmeleri (Entitlements.plist) hesaba katmaz. Bu işlev gelecekteki IDE sürümlerinde eklenecektir.
 * Dağıtım sağlama profilleri varsayılan olarak App Store’u hedefleyecektir. Şirket İçi veya Geçici profiller el ile oluşturulmalıdır.

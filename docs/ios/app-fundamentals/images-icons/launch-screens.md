@@ -1,17 +1,17 @@
 ---
-title: Ekranlar başlatma
+title: Xamarin.iOS uygulamaları için ekranlar başlatma
 description: Bu makalede, tüm iOS cihazları için uygulama başlatma ekranı herhangi çözümleme ve yönü, tek bir birleşik film şeridi kullanarak oluşturun açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 01/19/2018
-ms.openlocfilehash: 991c2f30bcca1969e336f7269ad2a22ce6245b95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2018
+ms.openlocfilehash: d5a267bfa8655a9b9c6d4dba9d8cf9d16624ba9b
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="launch-screens"></a>Ekranlar başlatma
 
@@ -96,17 +96,19 @@ Bu kısa izlenecek başlatma ekranı el ile varolan bir projeye eklenmiş film �
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Yeni bir proje oluşturun. Visual Studio'da seçin **Dosya > Yeni > Proje**ve ardından **Single View uygulaması (iPhone)**:
-    
-    ![Seçili yeni proje penceresinin Single View uygulaması (iPhone)](launch-screens-images/launch01-vs.png)
+1. Yeni bir proje oluşturun. Visual Studio'da seçin **Dosya > Yeni > Proje > Visual C# > iPhone & iPad > iOS uygulaması (Xamarin)**:
 
-    - Proje adı, bir konum seçin ve Seç **Tamam**.
+    ![Seçili yeni proje penceresinin iOS uygulaması (Xamarin)](launch-screens-images/launch01.w157.png)
+
+    Seçin **Single View uygulaması** şablonu ve ardından **Tamam**:
+
+    ![Tek görünüm uygulaması şablonu](launch-screens-images/launch01-2.w157.png)
 
 2. Varsa **Kaynakları > LaunchScreen.xib** bulunmaktadır **Çözüm Gezgini**, dosya üzerinde sağ tıklayıp seçerek silme **silmek**. Bu dosya, bir sonraki adımda film şeridi ile değiştirilecek.
 
 3. Başlatma ekranı kullanmak için bir film şeridi oluşturun. İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçin **Ekle > Yeni öğe...**  arkasından **boş film şeridi**. Bu film şeridi ad **LaunchScreen.storyboard** tıklatıp **Ekle**:
 
-    ![Yeni Öğe Ekle penceresiyle boş seçili film şeridi](launch-screens-images/launch03-vs.png)
+    ![Yeni Öğe Ekle penceresiyle boş seçili film şeridi](launch-screens-images/launch03.w157.png)
 
 4. Kullanmak üzere proje yapılandırma **LaunchScreen.storyboard** başlatma ekranı şeridini olarak:
 
@@ -119,7 +121,7 @@ Bu kısa izlenecek başlatma ekranı el ile varolan bir projeye eklenmiş film �
 
     - İçinde **Çözüm Gezgini**, sağ tıklayın **varlık kataloglar** seçip **Add varlık Catalog**. Bu yeni varlık katalog adı **varlıklar**:
 
-    ![Yeni Öğe Ekle penceresiyle seçili varlık Kataloğu](launch-screens-images/launch05-vs.png)
+    ![Yeni Öğe Ekle penceresiyle seçili varlık Kataloğu](launch-screens-images/launch05.w157.png)
 
     - Yeni bir ayarlayın görüntü ekleme **varlıklar** varlık açıklandığı gibi katalog [ekleme görüntülere bir varlık Kataloğu resmi ayarlama](~/ios/app-fundamentals/images-icons/displaying-an-image.md) bölümünü [görüntü görüntüleme](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Kılavuzu.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 44c3e4b0f05526560ff4b32808ba476110ce5e8f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7faf4ef090815ea799209e76816113f06889bd21
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="hello-android-quickstart"></a>Merhaba, Android: Hızlı Başlangıç
 
@@ -64,10 +64,10 @@ Visual Studio Android öykünücüsü kullanıyorsanız, Hyper-V bilgisayarını
 
 Visual Studio'yu başlatın.  Tıklatın **Dosya > Yeni > Proje** yeni bir proje oluşturmak için.
 
-İçinde **yeni proje** iletişim kutusunda, tıklatın **boş uygulama (Android)** şablonu.
+İçinde **yeni proje** iletişim kutusunda, tıklatın **Android uygulaması** şablonu.
 Yeni proje adı `Phoneword`. Tıklatın **Tamam** yeni proje oluşturmak için:
 
-[![Yeni Proje Phoneword olduğu](hello-android-quickstart-images/vs/02-new-project-name-sml.png)](hello-android-quickstart-images/vs/02-new-project-name.png#lightbox)
+[![Yeni Proje Phoneword olduğu](hello-android-quickstart-images/vs/02-new-project-name-sml.w157.png)](hello-android-quickstart-images/vs/02-new-project-name.w157.png#lightbox)
 
 ### <a name="creating-the-layout"></a>Düzen oluşturma
 
@@ -112,9 +112,9 @@ Sonraki adım, telefon numaralarını alfasayısal sayısal çevirmek için baz�
 
 [![Yeni Öğe Ekle](hello-android-quickstart-images/vs/12-add-new-item-sml.png)](hello-android-quickstart-images/vs/12-add-new-item.png#lightbox)
 
-İçinde **Yeni Öğe Ekle** iletişim kutusunda **Visual C# > kod** ve yeni kod dosyası adı **PhoneTranslator.cs**:
+İçinde **Yeni Öğe Ekle** iletişim kutusunda **Visual C# > kod > kod dosyası** ve yeni kod dosyası adı **PhoneTranslator.cs**:
 
-[![PhoneTranslator.cs Ekle](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png#lightbox)
+[![PhoneTranslator.cs Ekle](hello-android-quickstart-images/vs/14-add-class-sml.w157.png)](hello-android-quickstart-images/vs/14-add-class.w157.png#lightbox)
 
 Bu, yeni bir boş C# sınıfı oluşturur. Aşağıdaki kod bu dosyaya ekleyin:
 
@@ -185,10 +185,11 @@ Kullanıcı arabirimini oluşturan yedekleme koda ekleyerek wire üzere kod ekle
 (Resource.Layout.Main)` çağrıları. İlk olarak, şablonu kodu değiştirmek için `OnCreate` yöntemi aşağıdakine benzer:
 
 ```csharp
+using System;
 using Android.App;
-using Android.OS;
+using Android.Content;
 using Android.Widget;
-using Core;
+using Android.OS;
 
 namespace Phoneword
 {
@@ -419,10 +420,13 @@ Kullanıcı arabirimini oluşturan yedekleme koda ekleyerek wire üzere kod ekle
 Başlamak için bir olay işleyicisi ekleyerek **çevir** düğmesi. İçinde `MainActivity` sınıfı, Bul `OnCreate` yöntemi. İçinde düğmesi kod ekleme `OnCreate`, aşağıdaki `base.OnCreate(bundle)` ve `SetContentView (Resource.Layout.Main)` çağrıları. Kod işleme şablonu düğmesini kaldırmak için `OnCreate` yöntemi aşağıdakine benzer:
 
 ```csharp
+using System;
 using Android.App;
-using Android.OS;
+using Android.Content;
+using Android.Runtime;
+using Android.Views;
 using Android.Widget;
-using Core;
+using Android.OS;
 
 namespace Phoneword
 {

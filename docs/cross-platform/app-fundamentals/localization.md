@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 52f4c51258d1b635adcd697bccb7dd553acc0d5e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 2e108947ce8237b9f48b201e60c2252cfb0bc376
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="localization"></a>Yerelleştirme
 
@@ -18,7 +18,7 @@ Bu kılavuz kavramları tanıtır *uluslararası* ve *yerelleştirme* ve bu kavr
 
 Xamarin uygulamaları yerelleştirme düz ilişkin Teknik Ayrıntılar için atlamak istiyorsanız, bu platforma özgü nasıl yapılır makaleleri biriyle başlatın:
 
-- [**Xamarin.Forms** ](~/xamarin-forms/app-fundamentals/localization.md) platformlar arası yerelleştirme RESX dosyaları kullanma.
+- [**Xamarin.Forms** ](~/xamarin-forms/app-fundamentals/localization/index.md) platformlar arası yerelleştirme RESX dosyaları kullanma.
 - [**Xamarin.iOS** ](~/ios/app-fundamentals/localization/index.md) yerel platform yerelleştirme.
 - [**Xamarin.Android** ](~/android/app-fundamentals/localization.md) yerel platform yerelleştirme.
 
@@ -302,7 +302,7 @@ Bu kavramlar Xamarin ile olası çeşitli platforma özgü ve platformlar arası
 
 Teknik Ayrıntılar ilgilendiğiniz platform için okuma devam edin:
 
-- [Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization.md) platformlar arası yerelleştirme RESX dosyaları kullanma.
+- [Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization/index.md) platformlar arası yerelleştirme RESX dosyaları kullanma.
 - [Xamarin.iOS](~/ios/app-fundamentals/localization/index.md) yerel platform yerelleştirme.
 - [Xamarin.Android](~/android/app-fundamentals/localization.md) yerel platform yerelleştirme.
 

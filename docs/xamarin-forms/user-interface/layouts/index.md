@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 864e81b6955fd5138c4055a3f202695803139ac6
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2f57ac5b5b54b2606618c5e59fb544cae7c77e88
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="layouts"></a>Düzenleri
 
@@ -28,6 +28,7 @@ Her bir düzen denetimi, ekran yönünü değişiklikleri işlemesi hakkında ay
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash; koordinatları ayarlayarak görünümleri düzenleme & Mutlak değerler veya oranları bakımından boyutu için kullanılır. AbsoluteLayout yanı sıra görünümleri katman sol, sağ veya center bağlamak için kullanılabilir.
 * **[RelativeLayout](relative-layout.md)**  &ndash; kısıtlamaları kendi üst öğenin boyut ve konum göre ayarlayarak görünümleri düzenlemek için kullanılan.
 * **[Kılavuz](grid.md)**  &ndash; bir kılavuz görünümlerde düzenlemek için kullanılır. Satırları ve sütunları mutlak değerler veya oranları bakımından belirtilebilir.
+* **[FlexLayout](flex-layout.md)**  &ndash; görünümleri ile kaydırma yatay veya dikey olarak düzenlemek için kullanılan.
 * **[ScrollView](scroll-view.md)**  &ndash; bir görünüm tamamen ekran sınırları içinde sığamıyorsa zaman kaydırmayı sağlamak için kullanılır.
 * **[LayoutOptions](layout-options.md)**  &ndash; hizalama ve kendi üst göreli bir görünüm için genişletme tanımlayın.
 * **[Giriş saydamlık](#input_transparency)**  &ndash; bir öğe girişi alıp almadığını belirtir.
@@ -59,6 +60,23 @@ Ne zaman ilişkin bir örnek `StackLayout` iyi bir seçimdir olması, bir düğm
   <Button HorizontalOptions="End" Text="Button" />
 </StackLayout>
 ```
+
+### <a name="flexlayoutflex-layoutmd"></a>[FlexLayout](flex-layout.md)
+
+`FlexLayout` Benzer `StackLayout` içeren yatay veya dikey alt görünümleri görüntüler:
+
+```xaml
+<FlexLayout Direction="Column"
+            AlignItems="Center"
+            JustifyContent="SpaceEvenly">
+        
+    <Label Text="FlexLayout in Action" />
+    <Button Text="Button" />
+    <Label Text="Another Label" />
+</FlexLayout>
+```
+
+Ancak, bir tek bir satır veya columm, sığması için çok fazla alt öğe varsa `FlexLayout` de bu görünümleri kaydırma yeteneğine sahiptir. `FlexLayout` CSS Esnek kutusunu düzeni modülü üzerinde temel alır ve birçok konumlandırma ve alt öğelerini hizalama için aynı yerleşik seçenekleri vardır.
 
 ### <a name="absolutelayoutabsolute-layoutmd"></a>[AbsoluteLayout](absolute-layout.md)
 

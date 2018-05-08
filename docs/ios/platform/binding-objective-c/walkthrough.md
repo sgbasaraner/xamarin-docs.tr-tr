@@ -6,12 +6,12 @@ ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 6a43b9ad3c9af0a4118c40fb128f8890ac0ffe40
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.date: 05/02/2017
+ms.openlocfilehash: 5954d705e403a3c8230c3125efcf836c3930c459
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>İzlenecek yol: bir iOS Objective-C Kitaplığı bağlama
 
@@ -128,6 +128,7 @@ Bu proje InfColorPicker kaynak kodunda (kırmızı kutu) her örnek projesine do
 3. Seçin **Framework & Kitaplığı**, **Cocoa Touch statik kitaplık** şablonu ve tıklatın **sonraki** düğmesi:
 
     [![](walkthrough-images/image05.png "Cocoa Touch statik kitaplık şablonu seçin")](walkthrough-images/image05.png#lightbox)
+
 4. Girin `InfColorPicker` için **proje adı** tıklatıp **sonraki** düğmesi:
 
     [![](walkthrough-images/image06.png "InfColorPicker proje adı girin")](walkthrough-images/image06.png#lightbox)
@@ -276,11 +277,11 @@ Biz kullanmadan önce **hedefi Sharpie** bağlama işlemini otomatikleştirmek i
 
 1. Gelen **dosya** menüsünde, select **yeni** > **proje...** :
 
-    ![](walkthrough-images/bind01vs.png "Yeni bir proje başlangıç")
+    ![Yeni bir proje başlangıç](walkthrough-images/bind01vs.png "yeni bir proje başlangıç")
 
-1. Yeni Proje iletişim kutusundan **iOS** > **bağlamaları Kitaplığı**:
+1. Yeni Proje iletişim kutusundan **Visual C# > iPhone & iPad > iOS bağlamaları kitaplığı (Xamarin)**:
 
-    ![](walkthrough-images/bind02vs.png "İOS bağlamaları kitaplığı seçin")
+    [![İOS bağlamaları kitaplığı seçin](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
 1. "InfColorPickerBinding" olarak girin **adı** tıklatıp **Tamam** çözümü oluşturmak için düğmesi.
 
@@ -289,8 +290,6 @@ Biz kullanmadan önce **hedefi Sharpie** bağlama işlemini otomatikleştirmek i
 ![](walkthrough-images/bind03vs.png "Çözüm Gezgini'nde Çözüm yapısı")
 
 -----
-
-
 
 - **ApiDefinition.cs** -bu dosya nasıl Objective-C API'nin C# ' ta sarılır tanımlamak sözleşmeleri içerir.
 - **Structs.cs** - bu dosyanın tüm yapıları tutacak veya numaralandırma değerlerinden oluşan arabirimleri ve temsilciler tarafından gereklidir.
@@ -332,8 +331,7 @@ Kitaplığı eklemek için aşağıdaki adımları izleyin:
 
 -----
 
-
-Bir dosya projeye eklendiğinde, Xamarin.iOS otomatik olarak ayarlar **yapı eylemi** dosyasını **ObjcBindingNativeLibrary**ve adlı özel bir dosya oluşturun `libInfColorPickerSDK.linkwith.cs`.
+Zaman **bir** Xamarin.iOS otomatik olarak ayarlayacak dosyası projeye eklenir **yapı eylemi** dosyasını **ObjcBindingNativeLibrary**ve özel bir dosya oluşturun adlı `libInfColorPickerSDK.linkwith.cs`.
 
 
 Bu dosyayı içeren `LinkWith` nasıl tanıtıcı biz yalnızca statik kitaplığa eklenen Xamarin.iOS söyler özniteliği. Bu dosyanın içeriğini aşağıdaki kod parçacığında gösterilmektedir:
@@ -536,6 +534,7 @@ Bağlama kitaplığı yukarıda oluşturduğunuz iOS kullanmak için bir örnek 
 1. **İPhone kullanıcı arabirimi oluşturma** -çift tıklatın **MainStoryboard.storyboard** dosyasını **InfColorPickerSample** iOS Tasarımcısı düzenlemek için proje. Ekleme bir **düğmesini** görüntülemek ve çağrısından `ChangeColorButton`aşağıda gösterildiği gibi:
 
     ![](walkthrough-images/use03.png "Görünüme düğme ekleme")
+
 1. **InfColorPickerView.xib ekleme** -InfColorPicker Objective-C Kitaplığı içeren bir **.xib** dosya. Xamarin.iOS değil içereceği bu **.xib** bağlama projesinde bizim örnek uygulama çalışma zamanı hataları neden olacak. Geçici çözüm bu eklemektir **.xib** Xamarin.iOS Projemizin dosyasına. Xamarin.iOS projesi, sağ tıklatın ve seçin seçin **Ekle > dosyaları Ekle**ve ekleme **.xib** dosya aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
     ![](walkthrough-images/use04.png "InfColorPickerView.xib Ekle")
@@ -544,10 +543,11 @@ Bağlama kitaplığı yukarıda oluşturduğunuz iOS kullanmak için bir örnek 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
+1. **Xamarin.iOS projesi oluşturma** -adlı yeni bir Xamarin.iOS projesi eklemek **InfColorPickerSample** kullanarak **Single View uygulaması** şablonu:
 
-1. **Xamarin.iOS projesi oluşturma** -adlı yeni bir Xamarin.iOS projesi eklemek **InfColorPickerSample** aşağıdaki ekran görüntüsünde gösterildiği gibi çözüme:
+    [![iOS uygulaması (Xamarin) projesi](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
 
-    ![](walkthrough-images/use01vs.png "Xamarin.iOS projesi oluşturma")
+    [![Şablonu seçin](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
 
 1. **Bağlama projesine başvuru ekleyin** -güncelleştirme **InfColorPickerSample** bir başvuru içeriyor böylece proje **InfColorPickerBinding** proje:
 
@@ -559,10 +559,7 @@ Bağlama kitaplığı yukarıda oluşturduğunuz iOS kullanmak için bir örnek 
 
 1. **InfColorPickerView.xib ekleme** -InfColorPicker Objective-C Kitaplığı içeren bir **.xib** dosya. Xamarin.iOS değil içereceği bu **.xib** bağlama projesinde bizim örnek uygulama çalışma zamanı hataları neden olacak. Geçici çözüm bu eklemektir **.xib** bizim Xamarin.iOS projeden dosyasına bizim **Mac yapı konağı**. Xamarin.iOS projesi, sağ tıklatın ve seçin seçin **Ekle** > **varolan öğeyi...** ve ekleme **.xib** dosya.
 
-
 -----
-
-
 
 Ardından, Objective-C ve nasıl bunları bağlama ve C# kodu işleme protokollerin hızlı bir göz atalım.
 

@@ -6,12 +6,12 @@ ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/19/2017
-ms.openlocfilehash: 859f84fbe329d79e9e1e6a8b7445fe2a7f03af23
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.date: 05/02/2018
+ms.openlocfilehash: fbd48deb0b18dcd3ac0d40e379e21d5967f81e0d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Visual Studio Xamarin.iOS için giriş
 
@@ -48,8 +48,6 @@ Her iki durumda da, aşağıdaki adımları izlemelisiniz:
 ## <a name="connecting-to-the-mac"></a>Mac bilgisayara bağlayarak
 
 Visual Studio, Mac yapı ana bilgisayarına bağlanmak için yönergeleri izleyin [Mac çiftine](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Kılavuzu.
-
-
 
 ## <a name="visual-studio-toolbar-overview"></a>Visual Studio araç çubuğuna genel bakış
 
@@ -136,14 +134,17 @@ Visual Studio'nun proje özellikleri erişilebilir proje adına sağ tıklayıp 
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>İOS uygulamaları için yeni bir proje oluşturma
 
-Yeni bir iOS projesi gelen Visual Studio içinde oluşturarak yapılır herhangi bir proje türü'olduğu gibi. Seçme **Dosya > Yeni proje** bazı yeni bir iOS projesi oluşturmak için kullanılabilir şablonları gösteren aşağıda gösterilen iletişim kutusu açılır:
+Yeni bir iOS projesi gelen Visual Studio içinde oluşturarak yapılır herhangi bir proje türü'olduğu gibi. Seçme **Dosya > Yeni proje** bazı yeni bir iOS projesi oluşturmak için kullanılabilir proje türleri gösteren aşağıda gösterilen iletişim kutusunu açar:
 
+![Yeni proje oluşturma](introduction-to-xamarin-ios-for-visual-studio-images/newproject.w157.png)
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/newproject.png "Yeni proje oluşturma")
+Seçme **iOS uygulaması (Xamarin)** yeni bir Xamarin.iOS uygulaması oluşturmak için aşağıdaki şablonlardan gösterir:
+
+![Bir iOS uygulaması için şablonu seçme](introduction-to-xamarin-ios-for-visual-studio-images/newproject-2.w157.png)
 
 Film şeridi ve .xib dosyaları iOS Tasarımcısı kullanarak Visual Studio'da düzenlenebilir. Film şeridi oluşturmak için film şeridi şablonlardan birini seçin. Bu oluşturacak bir **Main.storyboard** dosyasını **Çözüm Gezgini** aşağıdaki ekran görüntüsüne gösterildiği gibi:
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.png "Çözüm Gezgini'nde Main.storyboard dosyası")
+![Çözüm Gezgini'nde Main.storyboard dosyası](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.w157.png)
 
 Oluşturma veya düzenleme Şeridinizin başlatmak için çift `Main.storyboard` iOS Tasarımcısı açmak için:
 

@@ -6,12 +6,12 @@ ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/16/2017
-ms.openlocfilehash: 492b06420d27f902faf7240003ebe5e16416a5cb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2017
+ms.openlocfilehash: 73ca0974a42bf661a89327148b68341114297084
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="message-app-extension-basics"></a>İleti Uygulama Uzantısı temelleri
 
@@ -131,11 +131,12 @@ Bir özel etiket deneyimi oluşturmak için aşağıdakileri yapın:
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Visual Studio'yu başlatın.
-2. Bir ileti uygulama uzantısı eklemek için çözümü açın. 
-3. Seçin **iOS** > **uzantıları** > **iMessage uzantısı** tıklatıp **sonraki** düğmesi: 
+2. Bir ileti uygulama uzantısı eklemek için çözümü açın.
+3. Seçin ** iOS uzantıları > iMessage uzantısı (iOS) ** tıklatıp **sonraki** düğmesi:
 
-    [![](intro-to-message-app-extensions-images/message01w.png "İMessage uzantısı seçin")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. Girin bir **uzantı adı** tıklatıp **Tamam** düğmesi
+    [![Select iMessage uzantısı (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+
+4. Girin bir **adı** tıklatıp **Tamam** düğmesi
 
 -----
 
@@ -158,7 +159,7 @@ Aşağıdakileri yapın:
 1. İçinde **çözüm paneli**, uzantının proje adına sağ tıklayın ve seçin **Ekle** > **yeni dosya...**   >  **iOS | Apple Watch** > **Arabirim Denetleyicisi**.
 2. Girin `StickerBrowserViewController` için **adı** tıklatıp **yeni** düğmesi: 
 
-    [![](intro-to-message-app-extensions-images/browser01.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.png#lightbox)
+    [![](intro-to-message-app-extensions-images/browser01.png "StickerBrowserViewController için bir ad girin")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. Açık `StickerBrowserViewController.cs` dosyayı düzenlemek için.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -166,7 +167,7 @@ Aşağıdakileri yapın:
 1. İçinde **Çözüm Gezgini**, uzantının proje adına sağ tıklayın ve seçin **Ekle** > **yeni dosya...**   >  **iOS | Apple Watch** > **Arabirim Denetleyicisi**.
 2. Girin `StickerBrowserViewController` için **adı** tıklatıp **yeni** düğmesi: 
 
-    [![](intro-to-message-app-extensions-images/browser01w.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.png#lightbox)
+    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "StickerBrowserViewController için bir ad girin")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. Açık `StickerBrowserViewController.cs` dosyayı düzenlemek için.
 
 -----
