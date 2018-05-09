@@ -7,9 +7,9 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/28/2018
-ms.openlocfilehash: cb46744b3c0a2f50a02491cc4824dfd4cf847235
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/07/2018
+ms.openlocfilehash: 811abacff330bf7b6e6240691cb6a15ebbd9d242
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/07/2018
@@ -76,7 +76,7 @@ Xamarin.Forms, CSS stil sayfaları ayrıştırılır ve derleme süresi yerine �
 [![CSS stil MonkeyApp ayrıntı sayfası](css-images/MonkeyAppDetailPage.png "MonkeyApp ayrıntı CSS stil sayfasıyla")](css-images/MonkeyAppDetailPage-Large.png#lightbox "CSS stil MonkeyApp Ayrıntı Sayfası")
 
 > [!NOTE]
-> Arka plan rengini stilini belirlemek şu anda olası değil bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) bir stil sayfasını kullanarak. Bu nedenle, örnek uygulamasında [ `NavigationPage.BarBackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.BarBackgroundColor/) özelliği, kodda ayarlanır.
+> Arka plan rengini stilini belirlemek şu anda olası değil bir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) bir stil sayfasını kullanarak. Bu nedenle, örnek uygulamasında [ `NavigationPage.BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) özelliği, kodda ayarlanır.
 
 ## <a name="consuming-a-style-sheet"></a>Stil sayfası kullanma
 
@@ -91,7 +91,7 @@ Stil sayfası yüklemek için kullanılan yaklaşım vardır.
 
 ### <a name="xaml"></a>XAML
 
-Stil sayfası yüklenen ve ile Ayrıştırılan [ `StyleSheet` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StyleSheets.StyleSheet/) eklenmeden önce sınıfı [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) sayfası için:
+Stil sayfası yüklenen ve ile Ayrıştırılan [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) eklenmeden önce sınıfı [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) sayfası için:
 
 ```xaml
 <ContentPage ...>
@@ -102,12 +102,12 @@ Stil sayfası yüklenen ve ile Ayrıştırılan [ `StyleSheet` ](https://develop
 </ContentPage>
 ```
 
-[ `StyleSheet.Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StyleSheets.Source/) Özellik belirtir stil sayfası kapsayan XAML dosyasının konumunu göreli veya proje köküne ilişkin bir URI olarak URI ile başlarsa bir `/`.
+[ `StyleSheet.Source` ](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) Özellik belirtir stil sayfası kapsayan XAML dosyasının konumunu göreli veya proje köküne ilişkin bir URI olarak URI ile başlarsa bir `/`.
 
 > [!WARNING]
 > CSS dosyası etkinleştirilmişse yüklenemeyecek yapı eylemi ayarlı değil **EmbeddedResource**.
 
-Alternatif olarak, stil sayfası yüklenebilir ve ile Ayrıştırılan [ `StyleSheet` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StyleSheets.StyleSheet/) tarafından sınıf satır içi kullanım içinde bir `CDATA` bölümü:
+Alternatif olarak, stil sayfası yüklenebilir ve ile Ayrıştırılan [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) tarafından sınıf satır içi kullanım içinde bir `CDATA` bölümü:
 
 ```xaml
 <ContentPage ...>
@@ -126,7 +126,7 @@ Alternatif olarak, stil sayfası yüklenebilir ve ile Ayrıştırılan [ `StyleS
 
 ### <a name="c"></a>C#
 
-C# ' ta bir stil sayfası katıştırılmış bir kaynağı yüklenebilir ve eklenen [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) sayfası için:
+C# ' ta bir stil sayfası katıştırılmış bir kaynağı yüklenebilir ve eklenen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) sayfası için:
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -144,7 +144,7 @@ public partial class MyPage : ContentPage
 
 İlk bağımsız değişken `StyleSheet.FromAssemblyResource` yöntemi stil sayfası içeren derlemenin, ikinci bağımsız değişkeni bir `string` kaynak tanımlayıcısını temsil eden. Kaynak tanımlayıcısı elde edilebilir **özellikleri** CSS dosyası seçildiğinde penceresi.
 
-Alternatif olarak, stil sayfası gelen yüklenebilir bir `StringReader` ve eklenen [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) sayfası için:
+Alternatif olarak, stil sayfası gelen yüklenebilir bir `StringReader` ve eklenen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) sayfası için:
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -179,7 +179,7 @@ stacklayout {
 }
 ```
 
-Bu herhangi seçiciyi [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) stil sayfasına tüketen ve bunların kenar boşluklarını Tekdüzen kalınlığı 20 için ayarlar sayfaları öğelerde.
+Bu herhangi seçiciyi [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) stil sayfasına tüketen ve bunların kenar boşluklarını Tekdüzen kalınlığı 20 için ayarlar sayfaları öğelerde.
 
 > [!NOTE]
 > `element` Seçici alt sınıflar belirtilen türde tanımlamıyor.
@@ -194,7 +194,7 @@ Görsel ağaç öğeleri, büyük küçük harfe duyarlı ile temel sınıfı ta
 }
 ```
 
-Bu herhangi seçiciyi [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) stil sayfasına tüketen ve bunların arka plan ayarlayan öğelerinin renk için `lightgray`.
+Bu herhangi seçiciyi [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) stil sayfasına tüketen ve bunların arka plan ayarlayan öğelerinin renk için `lightgray`.
 
 > [!NOTE]
 > `^base` Seçici Xamarin.Forms için özeldir ve CSS belirtiminin bir parçası değil.
@@ -209,7 +209,7 @@ Görsel ağaç ayrı ayrı öğeler seçilebilir büyük küçük harfe duyarlı
 }
 ```
 
-Öğe bu seçiciyi, [ `StyleId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.StyleId/) özelliği ayarlanmış `listView`. Ancak, varsa `StyleId` özellik ayarlanmamışsa, seçici kullanmaya geri döner `x:Name` öğesi. Bu nedenle, aşağıdaki örnekte XAML, `#listView` Seçici sıralanmayacağı [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) , `x:Name` özniteliği `listView`ve buna ait arka plan rengini ayarlamak `lightgray`.
+Öğe bu seçiciyi, [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) özelliği ayarlanmış `listView`. Ancak, varsa `StyleId` özellik ayarlanmamışsa, seçici kullanmaya geri döner `x:Name` öğesi. Bu nedenle, aşağıdaki örnekte XAML, `#listView` Seçici sıralanmayacağı [ `ListView` ](xref:Xamarin.Forms.ListView) , `x:Name` özniteliği `listView`ve buna ait arka plan rengini ayarlamak `lightgray`.
 
 ```xaml
 <ContentPage ...>
@@ -241,7 +241,7 @@ Belirli bir sınıfa öznitelik öğeleriyle seçilebilir büyük küçük harfe
 }
 ```
 
-Bir CSS sınıfı ayarlayarak bir XAML öğesine atanabilir [ `StyleClass` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.StyleClass/) özelliği öğenin CSS sınıfı adı. Bu nedenle, aşağıdaki XAML örnekte stilleri tarafından tanımlanan `.detailPageTitle` sınıf ilk atanan [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), while tarafından tanımlanan stiller `.detailPageSubtitle` sınıf ikinci atanan `Label`.
+Bir CSS sınıfı ayarlayarak bir XAML öğesine atanabilir [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) özelliği öğenin CSS sınıfı adı. Bu nedenle, aşağıdaki XAML örnekte stilleri tarafından tanımlanan `.detailPageTitle` sınıf ilk atanan [ `Label` ](xref:Xamarin.Forms.Label), while tarafından tanımlanan stiller `.detailPageSubtitle` sınıf ikinci atanan `Label`.
 
 ```xaml
 <ContentPage ...>
@@ -269,7 +269,7 @@ listview image {
 }
 ```
 
-Bu herhangi seçiciyi [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) , alt öğelerini [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) öğeleri ve bunların yüksekliğini ve genişliğini 60 olarak ayarlar. Bu nedenle, aşağıdaki örnekte XAML, `listview image` Seçici sıralanmayacağı [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) bir alt öğesi olan [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)ve yüksekliğini ve genişliğini 60 olarak ayarlar.
+Bu herhangi seçiciyi [ `Image` ](xref:Xamarin.Forms.Image) , alt öğelerini [ `ListView` ](xref:Xamarin.Forms.ListView) öğeleri ve bunların yüksekliğini ve genişliğini 60 olarak ayarlar. Bu nedenle, aşağıdaki örnekte XAML, `listview image` Seçici sıralanmayacağı [ `Image` ](xref:Xamarin.Forms.Image) bir alt öğesi olan [ `ListView` ](xref:Xamarin.Forms.ListView)ve yüksekliğini ve genişliğini 60 olarak ayarlar.
 
 ```xaml
 <ContentPage ...>
@@ -308,7 +308,7 @@ stacklayout>image {
 }
 ```
 
-Bu herhangi seçiciyi [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) öğeleri doğrudan alt [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) öğeleri ve bunların yükseklik ve genişlik 200'e ayarlar. Bu nedenle, aşağıdaki örnekte XAML, `stacklayout>image` Seçici sıralanmayacağı [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) doğrudan alt öğesi olan [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)ve yüksekliğini ve genişliğini 200'e ayarlar.
+Bu herhangi seçiciyi [ `Image` ](xref:Xamarin.Forms.Image) öğeleri doğrudan alt [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) öğeleri ve bunların yükseklik ve genişlik 200'e ayarlar. Bu nedenle, aşağıdaki örnekte XAML, `stacklayout>image` Seçici sıralanmayacağı [ `Image` ](xref:Xamarin.Forms.Image) doğrudan alt öğesi olan [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)ve yüksekliğini ve genişliğini 200'e ayarlar.
 
 ```xaml
 <ContentPage ...>
@@ -401,7 +401,7 @@ Aşağıdaki özellikleri şu anda desteklenmiyor:
 - Yerleşim özellikleri (kutusu veya kılavuz).
 - Özellikleri, gibi `font`, ve `border`.
 
-Ayrıca, hiçbir `inherit` değeri ve bu nedenle devralma desteklenmiyor. Bu nedenle, örneğin, ayarlayamazsınız `font-size` bir düzende özellik ve tüm beklediğiniz [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) değeri alması için düzeninde örnekleri. Bir özel durum `direction` varsayılan değere sahip özelliği, `inherit`.
+Ayrıca, hiçbir `inherit` değeri ve bu nedenle devralma desteklenmiyor. Bu nedenle, örneğin, ayarlayamazsınız `font-size` bir düzende özellik ve tüm beklediğiniz [ `Label` ](xref:Xamarin.Forms.Label) değeri alması için düzeninde örnekleri. Bir özel durum `direction` varsayılan değere sahip özelliği, `inherit`.
 
 ### <a name="color"></a>Renk
 

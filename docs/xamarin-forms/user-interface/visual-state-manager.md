@@ -7,10 +7,10 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
-ms.date: 05/01/2018
-ms.openlocfilehash: 15519e504f7eec7b85bacb439e729b8be2422888
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
-ms.translationtype: MT
+ms.date: 05/07/2018
+ms.openlocfilehash: f511f5c33b947704a42df850d2772c0b26511173
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/07/2018
 ---
@@ -30,7 +30,7 @@ Görsel durumlarını toplanır _visual durumu grupları_. Bir görsel durumuna 
 - "Devre dışı"
 - "Odaklanmış"
 
-Bu görsel durum grubu öğesinden türetilen tüm sınıflar için desteklenen [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/), için temel sınıfı olan [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) ve [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). 
+Bu görsel durum grubu öğesinden türetilen tüm sınıflar için desteklenen [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), için temel sınıfı olan [ `View` ](xref:Xamarin.Forms.View) ve [ `Page` ](xref:Xamarin.Forms.Page). 
 
 Ayrıca kendi görsel durumuna grupları tanımlayabileceğiniz ve görsel durumlarını, bu makale olarak gösterilmektedir.
 
@@ -73,9 +73,9 @@ Ardından, INSERT `VisualStateManager.VisualStateGroups` bu etiketlerin arasınd
 
 Bu biraz garip görünebilir. Normalde, içerik veya özellik öğeleri için bu sıralama iki etiketleri arasında görünür yalnızca biçimlendirme olur ve `VisualStateManager.VisualStateGroups` etiketi ne olduğunu.
 
-Bunun nedeni yasal XAML sözdizimi, [ `VisualStateGroups` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty/) tarafından tanımlanan bir ekli bağlanabilirse özellik [ `VisualStateManager` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateManager.VisualStateGroups) sınıfı. (Ekli bağlanabilir özellikler hakkında daha fazla bilgi için bkz: [ekli özellikler](~/xamarin-forms/xaml/attached-properties.md).) Bunun nasıl `VisualStateGroups` özelliği eklendiği `Entry` nesnesi.
+Bunun nedeni yasal XAML sözdizimi, [ `VisualStateGroups` ](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) tarafından tanımlanan bir ekli bağlanabilirse özellik [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager) sınıfı. (Ekli bağlanabilir özellikler hakkında daha fazla bilgi için bkz: [ekli özellikler](~/xamarin-forms/xaml/attached-properties.md).) Bunun nasıl `VisualStateGroups` özelliği eklendiği `Entry` nesnesi.
 
-`VisualStateGroups` Özelliği türüdür [ `VisualStateGroupList` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateGroupList/), koleksiyonu olduğu [ `VisualStateGroup` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateGroup/) nesneleri. İçinde `VisualStateManager.VisualStateGroups` etiketler, bir çift ekleyin `VisualStateGroup` görsel durumlarını eklemek istediğiniz her grup için etiketler:
+`VisualStateGroups` Özelliği türüdür [ `VisualStateGroupList` ](xref:Xamarin.Forms.VisualStateGroupList), koleksiyonu olduğu [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) nesneleri. İçinde `VisualStateManager.VisualStateGroups` etiketler, bir çift ekleyin `VisualStateGroup` görsel durumlarını eklemek istediğiniz her grup için etiketler:
 
 ```xaml
 <Entry FontSize="18">
@@ -93,7 +93,7 @@ Dikkat `VisualStateGroup` etikete sahip bir `x:Name` grubunun adını belirten �
 <VisualStateGroup Name="CommonStates">
 ```
 
-`VisualStateGroup` Sınıfı tanımlayan adlı bir özellik [ `States` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateGroup/States/), koleksiyonu olduğu [ `VisualState` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualState/) nesneleri. `States` içerik özelliği `VisualStateGroups` dahil edebileceğiniz şekilde `VisualState` doğrudan arasında etiketler `VisualStateGroup` etiketler.
+`VisualStateGroup` Sınıfı tanımlayan adlı bir özellik [ `States` ](xref:Xamarin.Forms.VisualStateGroup.States), koleksiyonu olduğu [ `VisualState` ](xref:Xamarin.Forms.VisualState) nesneleri. `States` içerik özelliği `VisualStateGroups` dahil edebileceğiniz şekilde `VisualState` doğrudan arasında etiketler `VisualStateGroup` etiketler.
 
 Sonraki adım, o grupta visual her durum için etiketler çifti eklemektir. Bunlar ayrıca kullanılarak tanımlanabilir `x:Name` veya `Name`:
 
@@ -117,7 +117,7 @@ Sonraki adım, o grupta visual her durum için etiketler çifti eklemektir. Bunl
 </Entry>
 ```
 
-`VisualState` adlı bir özelliğini tanımlar [ `Setters` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualState/Setters/), koleksiyonu olduğu [ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/) nesneleri. Aynı bunlar `Setter` kullandığınız nesneleri bir [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) nesnesi.
+`VisualState` adlı bir özelliğini tanımlar [ `Setters` ](xref:Xamarin.Forms.VisualState.Setters), koleksiyonu olduğu [ `Setter` ](xref:Xamarin.Forms.Setter) nesneleri. Aynı bunlar `Setter` kullandığınız nesneleri bir [ `Style` ](xref:Xamarin.Forms.Style) nesnesi.
 
 `Setters` olan _değil_ içerik özelliği `VisualState`, özellik öğesi etiketleri dahil etmek gerekli olmayacak biçimde `Setters` özelliği:
 

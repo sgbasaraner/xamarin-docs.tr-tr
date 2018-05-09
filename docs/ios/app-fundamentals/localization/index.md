@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 96ee8343bb2b99fdc0be9437aaa7737a70b8c19c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5ee04614a500618846ad3acf2a38f279351d6e9d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="ios-localization"></a>iOS yerelleştirme
 
@@ -19,7 +19,7 @@ _Bu belgede iOS SDK'ın yerelleştirme özelliklerini ve Xamarin ile erişmek na
 
 Başvurmak [uluslararası Kodlamalar](encodings.md) Unicode olmayan veri işlemelidir uygulamalarında karakter kümelerini/kod sayfaları dahil olmak üzere ilgili yönergeler için.
 
-## <a name="ios-platform-features"></a>iOS platformu özellikleri
+## <a name="ios-platform-features"></a>iOS Platform Özellikleri
 
 Bu bölümde iOS içindeki yerelleştirme özelliklerinden bazıları açıklanmaktadır. Geçin [sonraki bölümde](#basics) özel kod ve örnekler görmek için.
 
@@ -166,7 +166,7 @@ Bir örnek **es/Localizable.strings** (örn. Örnek dosyasından İspanyolca):
 
 2. Varsayılan görüntü dosyası yerleştirin **flag.png** içinde **Base.lproj** (yerel geliştirme dil dizin).
 
-3. İsteğe bağlı olarak görüntüde yerelleştirilmiş sürümleri yerleştirin **.lproj** klasörleri her bir dilin (ör.) **es.lproj**, **ja.lproj**). Aynı adı kullanmak **flag.png** her dil dizinde.
+3. İsteğe bağlı olarak görüntüde yerelleştirilmiş sürümleri yerleştirin **.lproj** klasörleri her bir dilin (ör.) **Es.lproj**, **ja.lproj**). Aynı adı kullanmak **flag.png** her dil dizinde.
 
 Görüntü için belirli bir dil yoksa, iOS varsayılan yerel dili klasörüne geri dönmesi ve görüntünün buradan yükleyin.
 
@@ -359,5 +359,5 @@ Bu makalede yerleşik kaynak işleme ve film şeridi özelliklerini kullanarak i
 - [Tasky (yerelleştirilmiş film şeridi) (örnek)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard)
 - [Apple yerelleştirme Kılavuzu](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourUserInterface/InternationalizingYourUserInterface.html)
 - [Platformlar arası yerelleştirme genel bakış](~/cross-platform/app-fundamentals/localization.md)
-- [Xamarin.Forms yerelleştirme](~/xamarin-forms/app-fundamentals/localization.md)
+- [Xamarin.Forms yerelleştirme](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [Android yerelleştirme](~/android/app-fundamentals/localization.md)

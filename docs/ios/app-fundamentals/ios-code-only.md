@@ -6,12 +6,12 @@ ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 7e8460d2c946159a9869322d6d4944d213d3d801
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Kodda iOS kullanıcı arabirimleri oluşturma
 
@@ -33,9 +33,7 @@ Aşağıdaki diyagram aygıt ekranına kullanıcı arabirimi Getir penceresi, g�
 
 [![](ios-code-only-images/image9.png "Bu diyagram penceresi, görünümler, Subviews ve görünüm denetleyicisi arasındaki ilişkileri gösterir")](ios-code-only-images/image9.png#lightbox)
 
-
 Bu görünüm hiyerarşileri kullanılarak oluşturulabilir [iOS için Xamarin Tasarımcısı](~/ios/user-interface/designer/index.md) Mac için Visual Studio'da, ancak bunu tamamen kod içinde çalışma konusunda temel bilgiye sahip iyi. Bu makalede bazı hale getirmek için temel noktaları ve yalnızca kod kullanıcı arabirimi geliştirme ile çalışmaya anlatılmaktadır.
-
 
 -----
 
@@ -45,16 +43,17 @@ Bu görünüm hiyerarşileri kullanılarak oluşturulabilir [iOS için Xamarin T
 
 ## <a name="ios-blank-project-template"></a>iOS boş proje şablonu
 
-İPhone kullanarak Visual Studio'da ilk olarak, bir iOS projesi oluşturun **boş proje** şablonu, aşağıda gösterilen denetleyicileri ve görünümleri eklemek için genişletilen.
+İlk olarak, Visual Studio kullanarak bir iOS projesi oluşturun. **Dosya > Yeni Proje > Visual C# > iPhone & iPad > iOS uygulaması (Xamarin)** proje, aşağıda gösterilen:
 
+[![Yeni Proje iletişim kutusu](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
-[![](ios-code-only-images/blankapp-vs.png "Yeni Proje iletişim kutusu")](ios-code-only-images/blankapp-vs.png#lightbox)
+Ardından **boş uygulama** proje şablonu:
 
+[![Bir şablon iletişim seçin](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
 
 Boş proje şablonu 4 dosyaları projeye ekler:
 
-
-[![](ios-code-only-images/empty-project.png "Proje dosyaları")](ios-code-only-images/empty-project.png#lightbox)
+[![Proje dosyaları](ios-code-only-images/empty-project.w157-sml.png "proje dosyaları")](ios-code-only-images/empty-project.w157.png#lightbox)
 
 
 1. **AppDelegate.cs** -içeren bir `UIApplicationDelegate` alt `AppDelegate` , iOS uygulama olayları işlemek için kullanılır. Uygulama penceresi oluşturulur `AppDelegate`'s `FinishedLaunching` yöntemi.
@@ -99,18 +98,12 @@ Aşağıdaki adımları uygulamadan film şeridi kaldırma aracılığıyla Kıl
             return true;
         }
 
+Eklenen kod `FinishedLaunching` yöntemidir, yukarıdaki 5. adımda kod iOS uygulamanız için bir pencere oluşturmak için gereken en düşük miktarı.
+
 
 -----
 
-## <a name="creating-a-window"></a>Bir pencere oluşturma
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-Eklenen kod `FinishedLaunching` yöntemdir adım 3 Yukarıdaki kod iOS uygulamanız için bir pencere oluşturmak için gereken en düşük miktarı.  
-
------
 
 iOS uygulamaları kullanan yerleşik [MVC örüntüsü](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller). Bir uygulama görüntüler ilk ekran pencerenin kök görünümü denetleyicisinden oluşturulur. Bkz: [Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md) MVC hakkında daha fazla ayrıntı kendisini desen için yol.
 
@@ -223,7 +216,7 @@ Adlı yeni bir sınıf ekleyin `CustomViewController` aşağıda gösterildiği 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](ios-code-only-images/customviewcontroller.png "CustomViewController adlı yeni bir sınıf ekleyin")](ios-code-only-images/customviewcontroller.png#lightbox)
+[![](ios-code-only-images/customviewcontroller.w157-sml.png "CustomViewController adlı yeni bir sınıf ekleyin")](ios-code-only-images/customviewcontroller.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 

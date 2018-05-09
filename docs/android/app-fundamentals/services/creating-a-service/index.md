@@ -5,12 +5,12 @@ ms.assetid: A78A55E7-FB5C-4C42-8E3E-939B5E98F9EB
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/01/2018
-ms.openlocfilehash: d1e0fdb1c4b159b6db283d7b9b3be673b73a0ee0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: 00785ad161f5f05fd70b059bb0a3f1c8d6c31f97
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-a-service"></a>Hizmet Oluşturma
 
@@ -82,8 +82,8 @@ Gönderme Android bir hizmeti başlatmak için en temel yolu olan bir `Intent` h
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **Örtük hedefi** &ndash; hedefi bu tür kabaca tanımlayan eylemi, gerçekleştirilmelidir, ancak bu eylemi tamamlamak için tam hizmeti bilinmiyor. Bir harf "Kime Whom BT May sorunu..." olarak örtük amacına olarak düşünülebilir.
-    Amaç eşleşen bir hizmetiniz varsa android amacını ve sözlüğünün içeriğini inceleyin.
+-   **Örtük hedefi** &ndash; hedefi bu tür kabaca tanımlayan kullanıcının gerçekleştirmek istediği, ancak bu eylemi tamamlamak için tam hizmeti bilinmiyor eylem. Bir harf "Kime Whom BT May sorunu..." olarak örtük amacına olarak düşünülebilir.
+    Android hedefinin içeriğini inceleyin ve amacı ile eşleşen bir hizmetiniz olup olmadığını belirler.
 
     Bir _hedefi filtre_ kayıtlı hizmet örtük hedefle eşleşen yardımcı olmak için kullanılır. Eklenen bir XML öğesi hedefi bir filtredir **AndroidManifest.xml** gerekli meta örtük amacına sahip bir hizmet eşleşen yardımcı olmak için verileri içerir.
 

@@ -7,9 +7,9 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/18/2018
-ms.openlocfilehash: 001c9f6f26fc96ca0fd0d25e150c5ec9409e552a
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/07/2018
+ms.openlocfilehash: 3201c3161d66163cabffdb36465356192bdd3843
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/07/2018
@@ -21,27 +21,27 @@ _Sağdan sola yerelleştirme Xamarin.Forms uygulamalarına sağdan sola akış y
 > [!NOTE]
 > Sağdan sola yerelleştirme iOS 9 veya üstü ve API 17 ya da daha yüksek android'de kullanılmasını gerektirir.
 
-Akış yönü kullanıcı Arabirimi öğeleri sayfada göz tarafından taranır yönüdür. Arapça ve İbranice gibi bazı diller kullanıcı Arabirimi öğeleri bir sağdan sola akış yönü düzenlenmiştir olmasını gerektirir. Bu ayarlanarak sağlanabilir [ `VisualElement.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği. Bu özellik alır veya kendi düzeni denetleyen ve birine ayarlamalıdır herhangi bir üst öğesi içinde hangi kullanıcı Arabirimi öğeleri akış yönünü ayarlar [ `FlowDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlowDirection/) numaralandırma değerlerinin:
+Akış yönü kullanıcı Arabirimi öğeleri sayfada göz tarafından taranır yönüdür. Arapça ve İbranice gibi bazı diller kullanıcı Arabirimi öğeleri bir sağdan sola akış yönü düzenlenmiştir olmasını gerektirir. Bu ayarlanarak sağlanabilir [ `VisualElement.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği. Bu özellik alır veya kendi düzeni denetleyen ve birine ayarlamalıdır herhangi bir üst öğesi içinde hangi kullanıcı Arabirimi öğeleri akış yönünü ayarlar [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) numaralandırma değerlerinin:
 
-- [`LeftToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.LeftToRight/)
-- [`RightToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.RightToLeft/)
-- [`MatchParent`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.MatchParent/)
+- [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
+- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
-Ayarı [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliğine [ `RightToLeft` ](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.RightToLeft/) öğe üzerinde hizalama genellikle sağa, sağdan sola okuma sırası ve denetim düzenini gelen akış için ayarlar Sağdan sola:
+Ayarı [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliğine [ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft) öğe üzerinde hizalama genellikle sağa, sağdan sola okuma sırası ve denetim düzenini gelen akış için ayarlar Sağdan sola:
 
 [![Arapça sağdan sola akış yönü ile TodoItemPage](rtl-images/TodoItemPage-Arabic.png "Arapça sağdan sola akış yönü ile TodoItemPage")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "TodoItemPage Arapça sağdan sola akış yönü ile")
 
 > [!TIP]
-> Yalnızca ayarlamalısınız [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) ilk düzeni özelliği. Çalışma zamanında bu değeri değiştirmeden performansını etkiler bir pahalı düzen işlemine neden olur.
+> Yalnızca ayarlamalısınız [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) ilk düzeni özelliği. Çalışma zamanında bu değeri değiştirmeden performansını etkiler bir pahalı düzen işlemine neden olur.
 
-Varsayılan [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) üst öğesi olmayan bir öğe için özellik değeri [ `LeftToRight` ](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.LeftToRight/), ancak varsayılan `FlowDirection` bir üst öğeye sahip bir öğe için [ `MatchParent`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.MatchParent/). Bu nedenle, bir öğenin devralır `FlowDirection` görsel ağaç ve herhangi bir öğe içindeki kendi üst öğesinden özellik değeri üst öğesinden alır değeri geçersiz kılar.
+Varsayılan [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) üst öğesi olmayan bir öğe için özellik değeri [ `LeftToRight` ](xref:Xamarin.Forms.FlowDirection.LeftToRight), ancak varsayılan `FlowDirection` bir üst öğeye sahip bir öğe için [ `MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent). Bu nedenle, bir öğenin devralır `FlowDirection` görsel ağaç ve herhangi bir öğe içindeki kendi üst öğesinden özellik değeri üst öğesinden alır değeri geçersiz kılar.
 
 > [!TIP]
-> Bir uygulama sağdan sola yazılan diller için yerelleştirme ayarlanmadığında [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özellik sayfası veya kök bir düzen. Bu sayfa veya akış yönü uygun şekilde yanıt vermesi kök düzeni, içindeki tüm öğeleri neden olur.
+> Bir uygulama sağdan sola yazılan diller için yerelleştirme ayarlanmadığında [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özellik sayfası veya kök bir düzen. Bu sayfa veya akış yönü uygun şekilde yanıt vermesi kök düzeni, içindeki tüm öğeleri neden olur.
 
 ## <a name="respecting-device-flow-direction"></a>Saygı aygıt akış yönü
 
-Seçilen dile dayalı cihazın akış yönü saygı göstermek ve bölge bir açık Geliştirici seçimdir ve otomatik olarak gerçekleştirilmez. Ayarlanarak sağlanabilir [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özellik sayfasında veya kök düzeni için `static` [ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.FlowDirection/) değeri:
+Seçilen dile dayalı cihazın akış yönü saygı göstermek ve bölge bir açık Geliştirici seçimdir ve otomatik olarak gerçekleştirilmez. Ayarlanarak sağlanabilir [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özellik sayfasında veya kök düzeni için `static` [ `Device.FlowDirection` ](xref:Xamarin.Forms.Device.FlowDirection) değeri:
 
 ```xaml
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
@@ -51,7 +51,7 @@ Seçilen dile dayalı cihazın akış yönü saygı göstermek ve bölge bir aç
 this.FlowDirection = Device.FlowDirection;
 ```
 
-Tüm alt öğeler sayfası veya kök düzen, varsayılan olarak sonra devralır [ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.FlowDirection/) değeri.
+Tüm alt öğeler sayfası veya kök düzen, varsayılan olarak sonra devralır [ `Device.FlowDirection` ](xref:Xamarin.Forms.Device.FlowDirection) değeri.
 
 ## <a name="platform-setup"></a>Platform Kurulumu
 
@@ -76,7 +76,7 @@ Daha fazla bilgi için bkz: [yerelleştirme temelleri iOS içinde](https://docs.
 Sağdan sola yerelleştirme sonra test belirtildi bir sağdan sola ayara aygıt/benzeticide üzerinde bölge ve dil değiştirerek **Info.plist**.
 
 > [!WARNING]
-> Lütfen bölge ve dil sağdan sola yerel iOS, her değiştirildiğinde unutmayın [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) görünümleri yerel ayarlar için gereken kaynakları eklemezseniz bir özel durum oluşturur. Örneğin, bir uygulama olan Arapça'test edilirken bir `DatePicker`, emin olun **mideast** seçildiyse **uluslararası** bölümünü **iOS yapı** bölmesi.
+> Lütfen bölge ve dil sağdan sola yerel iOS, her değiştirildiğinde unutmayın [ `DatePicker` ](xref:Xamarin.Forms.DatePicker) görünümleri yerel ayarlar için gereken kaynakları eklemezseniz bir özel durum oluşturur. Örneğin, bir uygulama olan Arapça'test edilirken bir `DatePicker`, emin olun **mideast** seçildiyse **uluslararası** bölümünü **iOS yapı** bölmesi.
 
 ### <a name="android"></a>Android
 
@@ -119,29 +119,29 @@ Sağdan sola yerelleştirme uygun sağdan sola yerel cihazda bölge ve dil deği
 
 Xamarin.Forms sağdan sola yerelleştirme şu anda bir dizi sınırlama vardır:
 
-- [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) Düğme konumu, araç çubuğu öğesi konumu ve geçiş animasyon aygıt yerel tarafından denetlenen yerine [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği.
-- [`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Manyetik yönü Çevir değil.
-- [`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) görsel içerik Çevir değil.
-- [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/) ve [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet/p/System.String/System.String/System.String/System.String[]/) yönlendirmesini aygıt yerel tarafından denetlenen yerine [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği.
-- [`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) İçerik saygı [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği.
+- [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) Düğme konumu, araç çubuğu öğesi konumu ve geçiş animasyon aygıt yerel tarafından denetlenen yerine [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği.
+- [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) Manyetik yönü Çevir değil.
+- [`Image`](xref:Xamarin.Forms.Image) görsel içerik Çevir değil.
+- [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/) ve [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet/p/System.String/System.String/System.String/System.String[]/) yönlendirmesini aygıt yerel tarafından denetlenen yerine [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği.
+- [`WebView`](xref:Xamarin.Forms.WebView) İçerik saygı [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği.
 - A `TextDirection` eklemek için metin hizalamasını denetlemek için özellik olması gerekiyor.
 
 ### <a name="ios"></a>iOS
 
-- [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) Yönlendirme aygıt yerel tarafından denetlenen yerine [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği.
-- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) Metin hizalama aygıt bölgeye göre denetlenir yerine [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği.
-- [`ContextActions`](https://developer.xamarin.com/api/property/Xamarin.Forms.Cell.ContextActions/) hareketleri ve hizalama ters değil.
+- [`Stepper`](xref:Xamarin.Forms.Stepper) Yönlendirme aygıt yerel tarafından denetlenen yerine [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği.
+- [`EntryCell`](xref:Xamarin.Forms.EntryCell) Metin hizalama aygıt bölgeye göre denetlenir yerine [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği.
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) hareketleri ve hizalama ters değil.
 
 ### <a name="android"></a>Android
 
-- [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Yönlendirme aygıt yerel tarafından denetlenen yerine [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği.
-- [`ContextActions`](https://developer.xamarin.com/api/property/Xamarin.Forms.Cell.ContextActions/) yerleştirme aygıt yerel ayarı tarafından denetlenen yerine [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği.
+- [`SearchBar`](xref:Xamarin.Forms.SearchBar) Yönlendirme aygıt yerel tarafından denetlenen yerine [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği.
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) yerleştirme aygıt yerel ayarı tarafından denetlenen yerine [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği.
 
 ### <a name="uwp"></a>UWP
 
-- [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) Metin hizalama aygıt bölgeye göre denetlenir yerine [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği.
-- [`FlowDirection`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği tarafından devralınan değil [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) alt.
-- [`ContextActions`](https://developer.xamarin.com/api/property/Xamarin.Forms.Cell.ContextActions/) Metin hizalama aygıt bölgeye göre denetlenir yerine [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) özelliği.
+- [`Editor`](xref:Xamarin.Forms.Editor) Metin hizalama aygıt bölgeye göre denetlenir yerine [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği.
+- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği tarafından devralınan değil [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) alt.
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) Metin hizalama aygıt bölgeye göre denetlenir yerine [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği.
 
 ## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Sağ sol dil için destek ile Xamarin.University
 

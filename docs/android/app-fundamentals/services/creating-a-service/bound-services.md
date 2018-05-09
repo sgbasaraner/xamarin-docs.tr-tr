@@ -6,12 +6,12 @@ ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/16/2018
-ms.openlocfilehash: 1cb151cc5c741a020fcbb398441ed4958ec5980b
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.date: 05/04/2018
+ms.openlocfilehash: f4fe1bd753260f05dedb452655572d290c0781d0
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin.Android içinde Hizmetleri bağlı
 
@@ -42,8 +42,8 @@ Bu kılavuz nasıl genişletileceğini ele alınacaktır `Service` ilişkili hiz
 Bağlı hizmeti kullanmak bir Android uygulaması uygulanması gereken üç bileşeni vardır:
 
 1. **Genişletme `Service` sınıfı ve yaşam döngüsü geri çağırma yöntemleri uygulamak** &ndash; Bu sınıf hizmet istenen iş gerçekleştirecek bir kod bulunacaktır. Aşağıdaki daha ayrıntılı olarak ele alınacaktır.
-2. **Bu uygulayan bir sınıf oluşturun `IServiceConnection`**  &ndash; bu nesne hizmetinden istemci, olduğundan bağlı (veya bağlantısı kesildi olduğunda) bildiren geri arama yöntemleri içerir. Hizmet bağlantı ayrıca istemcinin doğrudan hizmetiyle etkileşim kurmak için kullanabileceği bir nesneye başvuru sağlar. Bu başvuru olarak bilinen _bağlayıcı_.
-3. **Bu uygulayan bir sınıf oluşturun `IBinder`**  &ndash; A _bağlayıcı_ uygulamasını bir istemci hizmeti ile iletişim kurmak için kullandığı bir API sağlar. Bağlayıcı istemci yalıtır ve ilişkili hizmet uygulamasından gizler API sağlayabilir veya bağlayıcı ya da bağlı hizmetine başvuru doğrudan çağrılacak yöntemlerine olanak sağlayabilir. Bir `IBinder` gerekli kodu uzak yordam çağrıları için sağlamanız gerekir. Gerekli (veya önerilen) olmadığından uygulamak için `IBinder` doğrudan arabirim. Bir `IBinder` yerine uygulamaların genişletmek `Binder` çoğu gerektirdiği temel işlevleri sağlayan bir `IBinder`.
+2. **Bu uygulayan bir sınıf oluşturun `IServiceConnection`**  &ndash; bu arabirim sağlayan geri arama yöntemleri olacak çağrılan istemci hizmeti bağlantısı değiştiğinde bildirmek için Android tarafından yani istemci bağlı için bağlantısı kesilmiş veya var. hizmet. Hizmet bağlantı ayrıca istemcinin doğrudan hizmetiyle etkileşim kurmak için kullanabileceği bir nesneye başvuru sağlar. Bu başvuru olarak bilinen _bağlayıcı_.
+3. **Bu uygulayan bir sınıf oluşturun `IBinder`**  &ndash; A _bağlayıcı_ uygulamasını bir istemci hizmeti ile iletişim kurmak için kullandığı bir API sağlar. Bağlayıcı istemci yalıtır ve ilişkili hizmet uygulamasından gizler API sağlayabilir veya bağlayıcı ya da bağlı hizmetine başvuru doğrudan çağrılacak yöntemlerine olanak sağlayabilir. Bir `IBinder` gerekli kodu uzak yordam çağrıları için sağlamanız gerekir. Gerekli (veya önerilen) olmadığından uygulamak için `IBinder` doğrudan arabirim. Bunun yerine uygulamaların genişletmelidir `Binder` çoğu gerektirdiği temel işlevleri sağlayan türü bir `IBinder`.
 4. **Başlangıç ve bir hizmetine bağlama** &ndash; hizmeti bağlantısı, bağlayıcı ve hizmeti oluşturulduktan sonra Android uygulama hizmetini başlatma ve kendisine bağlama sorumludur.
 
 Bu adımların her biri aşağıdaki bölümlerde daha ayrıntılı açıklanmıştır.

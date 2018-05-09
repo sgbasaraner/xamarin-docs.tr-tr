@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6bac16a8ce9859e819299689489d9aad982c1f7f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a8201301fc0437ecb79a81f40e865f14dc6af020
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="designer-basics"></a>Tasarımcı temelleri
 
@@ -37,7 +37,7 @@ Tasarımcı bir düzen oluşturulduğunda veya var olan bir .axml dosyasını ç
 
 Benzer şekilde, yeni bir düzen sağ tıklayarak ekleyebileceğiniz **düzeni** klasöründe **Çözüm Gezgini** ve seçerek **Ekle > Yeni öğe... > Android düzeni**:
 
-[![Yeni öğe iletişim ekleyin](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
+[![Yeni öğe iletişim ekleyin](designer-basics-images/vs/02-add-new-layout-sml.w157.png)](designer-basics-images/vs/02-add-new-layout.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
