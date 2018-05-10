@@ -84,6 +84,7 @@
 #### [Xamarin.Mac Birleşik Uygulamalarını 64 bit’e Güncelleştirme](~/cross-platform/macios/32-and-64/mac-64-bit.md?context=xamarin/mac)
 ### [Platformlar Arası Uygulamalarda Yerel Türlerle Çalışma](~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/mac)
 ### [HttpClient Yığını ve SSL/TLS Uygulama Seçicisi](~/cross-platform/macios/http-stack.md?context=xamarin/mac)
+### [Derleme İyileştirmeleri](~/cross-platform/macios/optimizations.md?context=xamarin/mac)
 ## [Gelişmiş Kavramlar ve İç İşlevler](internals/index.md)
 ### [AOT](internals/aot.md)
 ### [Kullanılabilir Bütünleştirilmiş Kodlar](~/cross-platform/internals/available-assemblies.md?context=xamarin/mac)
