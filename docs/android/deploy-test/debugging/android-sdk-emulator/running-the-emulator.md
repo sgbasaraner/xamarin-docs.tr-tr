@@ -1,21 +1,21 @@
 ---
-title: Android SDK öykünücüsü çalıştırma
-description: Uygulamanızı Android SDK öykünücüsü ile hata ayıklama
+title: Google Android öykünücüsü çalıştırma
+description: Google Android öykünücüsü uygulamanızla hata ayıklama
 ms.prod: xamarin
 ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 630520f88dd23d3860b5f42fbb9bc4eb35ca2c4b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0e290b24c0d7a98b1abaf647fe76e56867042645
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="running-the-android-sdk-emulator"></a>Android SDK öykünücüsü çalıştırma
+# <a name="running-the-google-android-emulator"></a>Google Android öykünücüsü çalıştırma
 
-Bu kılavuzda, hata ayıklama ve uygulamanızı test etme için Android SDK öykünücüsü sanal bir aygıt başlatmak öğreneceksiniz.
+Bu kılavuzda, hata ayıklama ve uygulamanızı test etme için Google Android öykünücüsü sanal bir aygıt başlatmak öğreneceksiniz.
 
 ## <a name="using-a-pre-configured-virtual-device"></a>Önceden yapılandırılmış bir sanal cihaz kullanımıyla
 
@@ -27,9 +27,9 @@ Visual Studio görünür önceden yapılandırılmış sanal cihazlar cihaz aç�
 
 -   **Visual Studio\_android 23\_arm\_tablet**
 
--   **VisualStudio\_android-23\_x86\_phone** 
+-   **Visual Studio\_android 23\_x86\_telefon** 
 
--   **VisualStudio\_android-23\_x86\_tablet** 
+-   **Visual Studio\_android 23\_x86\_tablet** 
 
 [![Sanal cihazlar](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png#lightbox)
 
@@ -80,13 +80,13 @@ Aygıt açılır menüsünden sanal cihazı seçtikten sonra şunlardan birini s
 
 -----
 
-Android öykünücüsünde başladıktan sonra Xamarin.Android öykünücüsünü uygulamayı dağıtın. Öykünücü ile yapılandırılmış sanal cihaz görüntüsü uygulamayı çalıştırır. Android SDK öykünücüsü, örnek bir ekran görüntüsü aşağıda gösterilen (öykünücü adlı boş bir uygulamayı çalıştıran **Uygulamam**):
+Android öykünücüsünde başladıktan sonra Xamarin.Android öykünücüsünü uygulamayı dağıtın. Öykünücü ile yapılandırılmış sanal cihaz görüntüsü uygulamayı çalıştırır. Google Android öykünücüsü, örnek bir ekran görüntüsü aşağıda gösterilen (öykünücü adlı boş bir uygulamayı çalıştıran **Uygulamam**):
 
 ![Boş bir uygulaması çalıştıran öykünücüsü](running-the-emulator-images/emulator-running.png)
 
 Öykünücü çalıştıran kalmış olabilir; kapatmak ve uygulama her çalıştırıldığında yeniden başlatmak gerekli değildir. Bir Xamarin.Android uygulaması öykünücüsünde ilk çalıştırıldığında uygulama tarafından izlenen targetted API düzeyi için paylaşılan Xamarin.Android çalışma zamanı yüklendi. Çalışma zamanı yükleme birkaç dakika sürebilir, bu nedenle lütfen bekleyin. Yalnızca ilk Xamarin.Android uygulaması öykünücüsünü dağıtıldığında çalışma zamanı yükleme kurulur &ndash; yalnızca uygulama öykünücüsünü kopyaladığınızdan sonraki dağıtımları daha hızlı.
 
-Android SDK öykünücüsü kullanma hakkında daha fazla bilgi için aşağıdaki Android Geliştirici konulara bakın:
+Google Android öykünücüsü kullanma hakkında daha fazla bilgi için aşağıdaki Android Geliştirici konulara bakın:
 
 -   [Ekranda gezinme](https://developer.android.com/studio/run/emulator.html#navigate)
 

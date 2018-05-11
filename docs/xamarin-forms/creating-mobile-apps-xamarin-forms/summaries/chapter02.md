@@ -6,11 +6,11 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c206b124349614db7249609707bd22e8a4efe6d8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 81bcc8e2f8627264820a859123e1be1a9f960a92
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Bölüm 2 özeti. Bir uygulama anatomisi
 
@@ -202,7 +202,7 @@ Bu iki özellik yalnızca göre tanımlanan `Label`, ancak `HorizontalAlignment`
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bölüm 2 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)
-- [Bölüm 2 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
-- [Bölüm 2 F # örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
+- [Bölüm 2 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
+- [Bölüm 2 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+- [Bölüm 2 F # örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [Xamarin.Forms ile çalışmaya başlama](~/xamarin-forms/get-started/index.md)

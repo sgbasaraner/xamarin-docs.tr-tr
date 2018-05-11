@@ -3,14 +3,13 @@ title: Çalışma kitapları yükleme ve gereksinimler
 description: İndirme, yükleme ve Xamarin çalışma kitaplarını kullanmak nasıl.
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 68cac91a9b430d2abd138c0bb8bd334b65986329
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4d3217140605be8567d70e6dcf63d60a02e6b2fb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="workbooks-installation-and-requirements"></a>Çalışma kitapları yükleme ve gereksinimler
 
@@ -116,7 +115,7 @@ Ekleme ya da bağlantı **.workbooks** hatayı daha hızlı çözmenize yardımc
 
 Nasıl çalışma kitaplarını & Denetçisi aldığınız bağlı olarak, iki kaldırma yordamları gerçekleştirmeniz gerekebilir. Bu yazılımı tamamen kaldırmak için hem de gözden geçirin.
 
-#### <a name="visual-studio-installer"></a>Visual Studio yükleyicisi
+#### <a name="visual-studio-installer"></a>Visual Studio Yükleyicisi
 
 Visual Studio 2017 varsa, açık **Visual Studio yükleyicisi**ve konum **bileşenleri tek tek** için **Xamarin çalışma kitaplarını**. İşaretlenirse, onay işaretini kaldırın ve ardından **Değiştir** kaldırmak için.
 
@@ -132,7 +131,7 @@ Visual Studio 2017 varsa, açık **Visual Studio yükleyicisi**ve konum **bileş
 
 <a name="uninstall-macos" />
 
-### <a name="macos"></a>macOS
+### <a name="macos"></a>MacOS
 
 İle başlayarak [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), Xamarin çalışma kitaplarını & Denetçisi kaldırılması terminal durumundan çalıştırarak:
 

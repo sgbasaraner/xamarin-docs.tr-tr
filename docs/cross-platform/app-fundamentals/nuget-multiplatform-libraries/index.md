@@ -1,19 +1,18 @@
 ---
-title: NuGet Projects (Nugetizer 3000)
+title: NuGet proje (Nugetizer 3000)
 description: Otomatik olarak kod 'Nugetizer 3000' kullanarak platformları arasında paylaşmak için NuGet paketlerini oluşturun!
 ms.prod: xamarin
 ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: 2ef8bfc15aaa2e66683c38584f05b94d20a2a9c3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 60c78385d0ffd2fbbdd7af5a4ef4af63e30feb9f
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="nuget-projects-nugetizer-3000"></a>NuGet Projects (Nugetizer 3000)
+# <a name="nuget-projects-nugetizer-3000"></a>NuGet proje (Nugetizer 3000)
 
 _Otomatik olarak kod 'Nugetizer 3000' kullanarak platformları arasında paylaşmak için NuGet paketlerini oluşturun!_
 

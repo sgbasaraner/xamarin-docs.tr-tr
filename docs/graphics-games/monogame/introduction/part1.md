@@ -3,15 +3,14 @@ title: Bölüm 1 – platformlar arası MonoGame oluşturma
 description: Bu kılavuz, iOS ve Android MonoGame kullanarak yeni bir proje oluşturmak gösterilmiştir. Mac çözümüyle her platform için bir proje yanı sıra, platformlar arası paylaşılan kod projesi için Visual Studio sonucudur. Bu proje çalıştırıldığında boş bir mavi ekran görüntülenir.
 ms.prod: xamarin
 ms.assetid: FC69E69B-04D4-45DF-9BBF-2A6CDEAD9B2F
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 1c859c5a8d8c5d8b0539d4158895e816d47d3d5e
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: bd7990b94e678c205f9ce636f4eb0d28180fc6ec
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>Bölüm 1 – platformlar arası MonoGame oluşturma
 

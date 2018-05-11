@@ -8,11 +8,11 @@ ms.custom: video
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 4a7a8a96ff22cf02d04ffdfff684d454d1a28024
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="oreo-features"></a>Oreo özellikleri
 
@@ -31,7 +31,7 @@ Aşağıdaki Xamarin tabanlı uygulamalarda Android Oreo özellikleri kullanmak 
 
 -   **Visual Studio** &ndash; Windows kullanıyorsanız, 15,5 veya Visual Studio sonraki bir sürümü gereklidir.  Mac kullanıyorsanız, Visual Studio sürümü 7.2.0 Mac için gereklidir.
 
--   **Xamarin.Android** &ndash; Xamarin.Android 8.0 or later must be installed and configured with Visual Studio.
+-   **Xamarin.Android** &ndash; Xamarin.Android 8.0 veya üstünü yüklenir ve Visual Studio ile yapılandırılır.
 
 -   **Android SDK** &ndash; Android SDK 8.0 (API 26) veya sonrası Android SDK Yöneticisi aracılığıyla yüklü olmalıdır.
 
@@ -110,7 +110,7 @@ Xamarin.Android 8.0 ile bir proje oluşturmak için önce Xamarin Android SDK Y�
 
 
 
-### <a name="start-a-xamarinandroid-project"></a>Start a Xamarin.Android Project
+### <a name="start-a-xamarinandroid-project"></a>Bir Xamarin.Android projesi Başlat
 
 Yeni bir Xamarin.Android projesi oluşturun. Xamarin Android geliştirme yeniyseniz, bkz: [Hello, Android](~/android/get-started/hello-android/index.md) Xamarin.Android projeleri oluşturma hakkında bilgi edinmek için.
 
@@ -190,7 +190,7 @@ Kullandıktan sonra **avdmanager** , sanal cihazı oluşturmak için aygıt aşa
 
 -----
 
-Android öykünücüsünde test ve hata ayıklama için yapılandırma hakkında daha fazla bilgi için bkz: [Android SDK öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Android öykünücüsünde test ve hata ayıklama için yapılandırma hakkında daha fazla bilgi için bkz: [Google Android öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Bir Nexus veya piksel gibi fiziksel bir aygıtı kullanıyorsanız, ya da Cihazınızı otomatik hava (OTA) Güncelleştirmeler üzerinden güncelleştirebilir veya bir sistem görüntüsünü karşıdan yüklemek ve Cihazınızı doğrudan flash. Android Oreo Cihazınızı el ile güncelleştirme hakkında daha fazla bilgi için bkz: [Nexus ve piksel cihazlar Fabrika görüntülerinin](https://developers.google.com/android/images).
 

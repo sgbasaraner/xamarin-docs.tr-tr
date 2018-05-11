@@ -3,15 +3,14 @@ title: Birden çok çözümleri CocosSharp işleme
 description: Bu kılavuz çeşitli çözümler cihazlarda düzgün görüntülemek oyun geliştirmek için CocosSharp çalışmak nasıl gösterir.
 ms.prod: xamarin
 ms.assetid: 859ABF98-2646-431A-A4A8-3E7E48DA5A43
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 4077af2351b8ab3ef718a71cc672add54b6ef05a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 577a3edbd106b6fba298b3ee5999265ef955f9dd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>Birden çok çözümleri CocosSharp işleme
 
@@ -25,8 +24,8 @@ Varsayılan çözünürlük CocosSharp, fiziksel piksel oyun koordinatları ile 
 | **Cihazı** | **Ekran çözünürlüğü** | **Örnek ekran görüntüsü** |
 |--- | --- |--- |
 |İstediğiniz görüntüleme|368 x 240 (ile siyah çubuklar en boy oranını için)| ![368 x 240 (ile siyah çubuklar en boy oranını için)](resolutions-images/image1.png) |
-|iPhone 4s|960x640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
-|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920x1080](resolutions-images/image3.png) |
+|iPhone 4s|960x640| ![iPhone 4s 960 x 640](resolutions-images/image2.png) |
+|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920 x 1080](resolutions-images/image3.png) |
 
 Bu belge yukarıdaki tabloda gösterilen sorunu gidermek için CocosSharp kullanmayı kapsar. Diğer bir deyişle, biz – ekran çözünürlüğü bağımsız olarak ilk satırın gösterildiği gibi işleme herhangi bir cihazda nasıl ele alacağız.
 
@@ -248,7 +247,7 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 ```
 
 
-### <a name="defaulttexeltocontentsizeratio-example"></a>DefaultTexelToContentSizeRatio example
+### <a name="defaulttexeltocontentsizeratio-example"></a>DefaultTexelToContentSizeRatio örneği
 
 Görmek için nasıl `DefaultTexelToContentSizeRatio` visual boyutunu etkiler öğeleri, yukarıda sunulan kodu göz önünde bulundurun:
 
@@ -277,7 +276,7 @@ CCSprite.DefaultTexelToContentSizeRatio = 2;
 ![](resolutions-images/image12.png "Biz oyun çalıştırırsanız şimdi 1000 x 1000 doku tam olarak görünür olur")
 
 
-### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio details
+### <a name="defaulttexeltocontentsizeratio-details"></a>DefaultTexelToContentSizeRatio ayrıntıları
 
 `DefaultTexelToContentSizeRatio` Özelliği `static,` uygulamadaki tüm hareketli grafik başka bir deyişle, aynı değere paylaşır. Tipik farklı çözümler için yapılan varlıklar oyunlar için varlıkları her çözümleme kategorisi için eksiksiz bir kümesini içeren bir yaklaşımdır. Varsayılan Mac şablonları için CocosSharp Visual Studio sağlamak **ld** ve **hd** dokuları iki kümelerini destekleme oyunlar için yararlı olabilecek varlıklar için klasörler. Bir örnek içerik klasörünü içerikle gibi görünebilir:
 

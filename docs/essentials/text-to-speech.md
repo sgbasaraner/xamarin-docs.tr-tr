@@ -2,15 +2,14 @@
 title: Xamarin.Essentials okuma
 description: Bir uygulamayı kullanmasına yerleşik geri metin aygıttan ve ayrıca altyapısı destekleyebilir sorgu kullanılabilir diller konuşma metin okuma altyapılarındaki TextToSpeech sınıfı sağlar.
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
-ms.technology: xamarin-crossplatform
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: e5ee5a324c6e753d389f7e80df106dbf4af1a8ca
-ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
+ms.openlocfilehash: 2fcb97eafda15a73e2b7e5441f1d6c94f75af0ce
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials okuma
 

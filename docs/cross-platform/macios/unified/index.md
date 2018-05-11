@@ -3,15 +3,14 @@ title: Birleşik API
 description: Yeni stil API zamankinden kod Mac ve iOS yanı sıra aynı 32 ve 64 bit uygulamalarını desteklemek ikili sağlayarak arasında paylaşmak için kolaylaştırır.
 ms.prod: xamarin
 ms.assetid: 14311617-1BC2-42CC-AF3F-9F97733EE2D0
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: d0ad5b08aaf5e7b14f75611a28d389e3f7e0477c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bee477a8e84e8cfdd20e89b7ca51c1ac40c0ee52
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="unified-api"></a>Birleşik API
 

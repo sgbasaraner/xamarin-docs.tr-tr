@@ -2,15 +2,14 @@
 title: Bölüm 3 - bir Xamarin Çapraz Platform çözümü ayarladıktan
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: 6e8dfab76881bc972e00abe7cbbea238e335d9a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a13765805a3bc6be05522700960b032acbc864b5
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Bölüm 3 - bir Xamarin Çapraz Platform çözümü ayarladıktan
 
@@ -23,7 +22,7 @@ Yeni bir çapraz platform uygulaması oluştururken, ilk adım boş bir çözüm
  <a name="Sharing_Code" />
 
 
-## <a name="sharing-code"></a>Kod paylaşımını
+## <a name="sharing-code"></a>Kod Paylaşma
 
 Başvurmak [kodu paylaşım seçeneklerini](~/cross-platform/app-fundamentals/code-sharing.md) belge nasıl kod paylaşımını platformlarında uygulanacağı ayrıntılı bir açıklaması için.
 
@@ -48,7 +47,7 @@ Taşınabilir sınıf kitaplığı (PCL) Xamarin.iOS ve Xamarin.Android, yanı s
 Daha fazla bilgiyi Xamarin'ın hakkında [desteklemek için taşınabilir sınıf kitaplıkları](~/cross-platform/app-fundamentals/pcl.md) ve görmek için iletideki yönergeleri izleyin nasıl [TaskyPortable örnek](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable) çalışır.
 
 
-### <a name="net-standard"></a>.NET Standard
+### <a name="net-standard"></a>.NET standart
 
 2016'da, sunulan [.NET standart](~/cross-platform/app-fundamentals/net-standard.md) projeleri Windows kullanılan derlemeleri oluşturan platformları, Xamarin platformları (iOS, Android, Mac) ve Linux kod paylaşmak için kolay bir yol sağlar.
 

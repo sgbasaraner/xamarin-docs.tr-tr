@@ -3,21 +3,20 @@ title: Araçlar ve komutlar
 description: Hedefi Sharpie ve komut satırı bağımsız değişkenleri ile bunları kullanmaya dahil araçlarına genel bakış.
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 8a307739134fe3b76692fbef5c1dc028af01017d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0e333ce7c336d13c8b55326a5d51a64092885dfd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="tools--commands"></a>Araçlar ve komutlar
 
 _Hedefi Sharpie ve komut satırı bağımsız değişkenleri ile bunları kullanmaya dahil araçlarına genel bakış._
 
-<style type="text/css"> .terminal-blue { color: rgb(10,96,254); } .terminal-green { color: rgb(12,156,26); } .terminal-magenta { color: rgb(152,12,103); } </style>
+<style type="text/css"> .Terminal mavi {color: rgb(10,96,254);} .terminal yeşil {renk: rgb(12,156,26);} .terminal macenta {renk: rgb(152,12,103);} </style>
 
 
 Hedefi Sharpie başarıyla olduğunda [yüklü](~/cross-platform/macios/binding/objective-sharpie/get-started.md), bir terminal açın ve ile öğrenmeniz <em>komutları</em> hedefi Sharpie sahip sunmak:
@@ -54,11 +53,11 @@ Amaç Sharpie aşağıdaki araçları sağlar:
 
 |Aracı|Açıklama|
 |--- |--- |
-|**xcode**|Geçerli Xcode yükleme ve iOS ve Mac kullanılabilen SDK'ları sürümleri hakkında bilgi sağlar. Biz bizim bağlamaları oluşturduğunuzda biz daha sonra bu bilgileri kullanarak.|
+|**Xcode**|Geçerli Xcode yükleme ve iOS ve Mac kullanılabilen SDK'ları sürümleri hakkında bilgi sağlar. Biz bizim bağlamaları oluşturduğunuzda biz daha sonra bu bilgileri kullanarak.|
 |**pod**|Arar ve yapılandırır, (bir yerel dizine) yükler ve Objective-C bağlar [CocoaPod](https://cocoapods.org/) ana belirtim depodan kitaplıkları. Bu araç otomatik olarak geçirilecek girişin doğru türetme için yüklü CocoaPod değerlendirir `bind` aracı aşağıdaki. Yeni 3.0!|
 |**Bağlama**|Üstbilgi dosyaları ayrıştırır (`*.h`) ilk içine Objective-C Kitaplığı'nda [ApiDefinition.cs ve StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) dosyaları.|
 |**update**|Hedefi Sharpie daha yeni sürümleri denetler ve yükler ve varsa yükleyici başlatır.|
-|**verify-docs**|Hakkında ayrıntılı bilgiler gösterilmektedir `[Verify]` öznitelikleri.|
+|**doğrulama belgeleri**|Hakkında ayrıntılı bilgiler gösterilmektedir `[Verify]` öznitelikleri.|
 |**Belgeleri**|Bu belgede, varsayılan web tarayıcısı gider.|
 
 Belirli bir amaç Sharpie aracını kullanarak Yardım almak için aracın adını girin ve `-help` seçeneği. Örneğin, `sharpie xcode -help` aşağıdaki çıktıyı döndürür:

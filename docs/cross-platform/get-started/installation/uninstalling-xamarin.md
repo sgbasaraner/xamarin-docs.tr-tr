@@ -1,19 +1,18 @@
 ---
-title: Uninstalling Xamarin
+title: Xamarin kaldırma
 description: Xamarin ürünleri bir bilgisayardan kaldırma
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: ae01fdcefa06dbfe3412eeac427477d898fd6ea5
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: d1b88ad97a1cecaadd84226bca61c7f2b262438d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
-# <a name="uninstalling-xamarin"></a>Uninstalling Xamarin
+# <a name="uninstalling-xamarin"></a>Xamarin kaldırma
 
 Bu kılavuz, Xamarin macOS veya Windows Visual Studio'dan çıkartın açıklanmaktadır.
 
@@ -79,7 +78,7 @@ sudo rm /etc/paths.d/mono-commands
 
 <a name="uninstallandroid" />
 
-### <a name="uninstall-xamarinandroid"></a>Uninstall Xamarin.Android
+### <a name="uninstall-xamarinandroid"></a>Xamarin.Android kaldırma
 
 Bir Android SDK ve Xamarin.Android kaldırırken kaldırılmaları gerekir Java SDK gibi Xamarin.Android kullanırken gerekli olan öğe sayısı vardır. Bu bölümde, gerekli tüm bölümleri kaldırma aracılığıyla kılavuzluk eder.
 
@@ -118,7 +117,7 @@ rm -rf ~/.android/avd
 
 <a name="uninstallios" />
 
-### <a name="uninstall-xamarinios"></a>Uninstall Xamarin.iOS
+### <a name="uninstall-xamarinios"></a>Xamarin.iOS kaldırma
 
 Xamarin.iOS iOS C# veya F # kullanarak uygulama geliştirme sağlar. Xamarin.iOS bir makineden kaldırmak için aşağıdaki adımları izleyin:
 
@@ -135,7 +134,7 @@ sudo pkgutil --forget com.xamarin.xamarin.ios.pkg
 
 <a name="uninstallmac" />
 
-### <a name="uninstall-xamarinmac"></a>Uninstall Xamarin.Mac
+### <a name="uninstall-xamarinmac"></a>Xamarin.Mac kaldırma
 
 Xamarin.Mac ürün ve Mac lisanstan sırasıyla yok etmek aşağıdaki iki komutu kullanarak makinenizden kaldırılabilir:
 

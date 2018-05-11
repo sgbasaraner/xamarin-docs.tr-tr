@@ -3,14 +3,13 @@ title: Google Play birleştirin bileşenleri ve NuGet Hizmetleri
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: e0ba5ee9417917b834ab060a94f72d1f071b4912
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cfd417f4fc01b07b4334259c45472eb24b73abd8
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>Google Play birleştirin bileşenleri ve NuGet Hizmetleri
 
@@ -31,7 +30,7 @@ Google gerçekte yalnızca gelir iki .jar dosyaları Google Play Hizmetleri içi
 
 Bizim araçları düzgün söyleyin oldu çünkü tutarsızlık var `aapt.exe` maksimum kaynak API düzeyini belirli bir uygulamanın için kullanılacak oluştu. Bu anlamına gelir, Google Play Hizmetleri'nin (KitKat) bağlama Zencefilli kurabiye gibi daha düşük bir API düzeyine kullanarak denedik, derleme hataları aldık.
 
-### <a name="unifying-google-play-services"></a>Unifying Google Play Services
+### <a name="unifying-google-play-services"></a>Google Play hizmetlerini birleştirin
 
 Şimdi biz Xamarin.Android daha yeni sürümlerinde söyleyin `aapt.exe` bu sorunu bize kaybolduktan şekilde kullanmak için hangi en fazla kaynak sürümü.
 
@@ -40,7 +39,7 @@ Yani, Zencefilli kurabiye/ICS/JellyBean / (farklı .jar dosyasına tamamen oldu�
 Geliştiriciler için işleri kolaylaştırmak için biz şimdi bizim bileşenleri ve NuGet birleşik iki paketlere:
 
 -   Google Play Hizmetleri (Froyo) (bağlar `google-play-services-froyo.jar`)
--   Google Play Services (Binds `google-play-services.jar`)
+-   Google Play Hizmetleri (bağlar `google-play-services.jar`)
 
 ### <a name="which-one-should-be-used"></a>Hangisinin kullanılsın mı?
 

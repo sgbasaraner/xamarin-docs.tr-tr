@@ -7,15 +7,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: a399aa1c314f1e93377a7831b430e563d9fd1b13
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c42ebdca44e47e29ac74a263f0d11d4d4c120586
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="google-emulator-manager"></a>Google öykünücüsü yöneticisi
 
-Donanım hızlandırma etkinleştirildiğini doğruladıktan sonra (açıklandığı gibi [Android öykünücüsü donanım hızlandırmasını](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), test ve uygulamanızı hata ayıklama için kullanılacak sanal cihaz oluşturmak için sonraki adımdır. Eski Google Öykünücüsü Yöneticisi'ni kullanabilirsiniz (olarak da bilinen *Android sanal cihazı (AVD) Yöneticisi'ni*) Android SDK öykünücüsü tarafından kullanılacak sanal cihaz oluşturmak için.
+Donanım hızlandırma etkinleştirildiğini doğruladıktan sonra (açıklandığı gibi [Android öykünücüsü donanım hızlandırmasını](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), test ve uygulamanızı hata ayıklama için kullanılacak sanal cihaz oluşturmak için sonraki adımdır. Eski Google Öykünücüsü Yöneticisi'ni kullanabilirsiniz (olarak da bilinen *Android sanal cihazı (AVD) Yöneticisi'ni*) Google Android öykünücüsü tarafından kullanılacak sanal cihaz oluşturmak için.
 
 > [!NOTE]
 > Android 8.0 Oreo hedefliyorsanız, kullanmalısınız [Xamarin Android Aygıt Yöneticisi'ni](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) oluşturmak ve sanal cihaz yapılandırmak için.

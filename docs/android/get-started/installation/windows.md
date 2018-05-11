@@ -6,12 +6,12 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/10/2018
-ms.openlocfilehash: c9155e1d3ebff52337e65cf3b8cd7dc16b8cdb37
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/04/2018
+ms.openlocfilehash: b1cf87ed8c5614a113a03232547a6753da26bc2d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="windows-installation"></a>Windows yükleme
 
@@ -67,20 +67,25 @@ Android SDK Araçları Paketi sürümü 25.2.3 kadar sürümlerini yüklemek iç
 
 Xamarin Android SDK Yöneticisi'ni kullanma hakkında daha fazla bilgi için bkz: [Android SDK Kurulum](~/android/get-started/installation/android-sdk.md).
 
+### <a name="google-android-emulator"></a>Google Android öykünücüsü
 
-### <a name="android-emulator"></a>Android öykünücüsü
+[Google Android öykünücüsü](https://developer.android.com/studio/run/emulator) geliştirmek ve bir Xamarin.Android uygulaması sınamak için yararlı aracı olabilir. Örneğin, tablet gibi bir fiziksel aygıt geliştirilmesi sırasında kullanıma hazır olmayabilir ya da bir geliştirici kodu kaydetmeden önce bilgisayarlarında bazı tümleştirme testleri çalıştırmak isteyebilirsiniz.
 
-Test etmek için kullanılacak fiziksel bir Android cihazı yoksa, uygulamanızı test etmek için Android öykünücüsünde kullanabilirsiniz. Google Android öykünücüsü hakkında daha fazla bilgi için bkz: [Android SDK öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Bir bilgisayarı bir Android cihazında öykünen aşağıdaki bileşenleri içerir:
 
-Google Android öykünücüsü Intel'in kullanan diğer Öykünücüler tarafından kullanılan sanallaştırma teknolojileriyle çakışabilir HAXM (donanım hızlandırılmış yürütme Yöneticisi'nde). Üç ana sanallaştırma teknolojilerini şunlardır:
+* **Google Android öykünücüsü** &ndash; dayalı bir öykünücü budur [QEMU](https://www.qemu.org/) Geliştirici iş istasyonunda çalıştıran sanallaştırılmış bir cihaz oluşturur.
+* **Bir öykünücü görüntünüzün** &ndash; bir _öykünücü görüntünüzün_ bir şablon veya donanım ve işletim sistemi, sanallaştırılmış amaçlanmıştır belirtimi. Örneğin, bir öykünücü görüntünüzün Google Play Hizmetleri yüklü Android 7.0 çalıştıran X içinde Nexus 5 için donanım gereksinimlerini tanımlamak. Başka bir öykünücü görüntünüzün özel Android 6.0 çalıştıran 10" tablo olabilir.
+* **Android sanal cihazı (AVD)** &ndash; bir _Android sanal cihazı_ öykünücüsü görüntüden oluşturulan benzetilmiş bir Android cihazı. Çalıştıran ve Android uygulamalarını test ederken Xamarin.Android Android belirli AVD başlangıç öykünücüsü, Başlat, APK yükleyin ve ardından uygulamayı çalıştırın.
 
--   **Hyper-V** (Android ve Windows Phone öykünücüsü için Visual Studio öykünücüsü tarafından kullanılır) 
+Önemli bir iyileştirme x86 üzerinde geliştirme tabanlı bilgisayarlarda zaman performans x86 için en iyi duruma getirilir özel öykünücüsü görüntülerini kullanarak elde edilebilir mimarisi ve iki sanallaştırma teknolojilerini biri:
 
--   **Sanal kutusunu** (Genymotion tarafından kullanılır)
+1. Microsoft'un Hyper-V &ndash; Windows 10 Nisan güncelleştirme çalıştıran bilgisayarlarda kullanılabilir.
+2. Intel'in donanım hızlandırılmış yürütme Yöneticisi'ni (HAXM) &ndash; x86 üzerinde kullanılabilir OS X, macOS veya Windows eski sürümünü çalıştıran bilgisayarlar.
 
--   **Intel HAXM** (Google Android SDK öykünücüsü tarafından kullanılır) 
+Hyper-V ve HAXM, Google Android öykünücüsü hakkında daha fazla bilgi için lütfen bkz [Android öykünücüsü donanım hızlandırmasını](~/android/get-started/installation/android-emulator/hardware-acceleration.md) Kılavuzu.
 
-Bir geliştirme bilgisayarın CPU aynı anda yalnızca bir sanallaştırma teknolojisini desteklemek için yalnızca bir kullanımda geliştirme bilgisayarınızda olması en iyisidir.
+> [!NOTE]
+> Önceki Windows sürümlerinde HAXM Hyper-V ile uyumlu değil. Bu senaryoda ya da gerekli [Hyper-V devre dışı](/xamarin/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md?tabs=vswin#disabling-hyper-v) veya x86 olmayan yavaş öykünücüsü görüntüleri kullanmak için en iyi duruma getirme.
 
 <a name="device" />
 
@@ -115,5 +120,6 @@ Sonraki adım göz atın yapmaktır [Hello, Android](~/android/get-started/hello
 - [Xamarin için Visual Studio araçlarını yükleme](~/cross-platform/get-started/installation/windows.md)
 - [Sistem Gereksinimleri](~/cross-platform/get-started/requirements.md)
 - [Android SDK Kurulumu](~/android/get-started/installation/android-sdk.md)
-- [Android SDK Emulator](~/android/get-started/installation/android-emulator/index.md)
+- [Google Android öykünücüsü](~/android/get-started/installation/android-emulator/index.md)
 - [Aygıtı geliştirme için ayarlama](~/android/get-started/installation/set-up-device-for-development.md)
+- [Uygulamaların Android öykünücüsünde çalıştırın](https://developer.android.com/studio/run/emulator#Requirements)

@@ -3,15 +3,14 @@ title: Xamarin Güvenlik Duvarı'nı yapılandırma yönergeleri
 description: Şirketiniz için Xamarin'ın platform çalışmaya izin vermek için Güvenlik Duvarı'nda beyaz liste ile gereken ana listesi.
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: 212a190b56465a8401b17b7a379a1f083d8f8d87
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 34ac0b0eb2563b2122d7b093b19ac3a6ac78cbe5
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin Güvenlik Duvarı'nı yapılandırma yönergeleri
 

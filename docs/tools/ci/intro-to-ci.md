@@ -3,15 +3,14 @@ title: Xamarin ile sürekli tümleştirme giriş
 description: Sürekli Tümleştirme otomatik derleme derler ve isteğe bağlı olarak kod eklendiğinde veya projenin sürüm denetimi deponuza geliştiriciler tarafından değiştirilen bir uygulama testleri bir yazılım mühendislik uygulamadır. Bu makalede, sürekli tümleştirme genel kavramlar ve bazı seçenekleri sürekli tümleştirme için Xamarin projelerle ele alınacaktır.
 ms.prod: xamarin
 ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 5e4720ac44876620783b32f731c44afe5a623231
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e441e3a2f967bf7bed0a236375ce708966fdb6eb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin ile sürekli tümleştirme giriş
 

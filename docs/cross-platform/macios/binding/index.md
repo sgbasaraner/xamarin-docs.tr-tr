@@ -2,15 +2,14 @@
 title: Objective-C bağlama
 ms.prod: xamarin
 ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: fef2826f536042dc9be830a4c0dc358658c359d9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 721036993061d08dadf8b279e13981caaa51f91f
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="binding-objective-c"></a>Objective-C bağlama
 
@@ -55,4 +54,4 @@ Geçmişte [Mac bağlama](~/mac/platform/binding.md) çok manuel bir işlem dene
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [iOS bağlama](~/ios/platform/binding-objective-c/index.md)
-- [Mac Binding](~/mac/platform/binding.md)
+- [Mac bağlama](~/mac/platform/binding.md)

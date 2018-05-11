@@ -3,15 +3,14 @@ title: Visual Basic.NET dilinde Xamarin iOS ve Android
 description: Visual Basic.NET dilinde yazılan iş mantığı kullanan yerel Xamarin.iOS ve Xamarin.Android uygulamalar oluşturmak nasıl XThis izlenecek yol gösterir.
 ms.prod: xamarin
 ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 54231d42383d491678b6152e67c01c5e39a1f958
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 3b92442668f6bd86c1c521dd6b476e4bbb43c1ec
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>Visual Basic.NET dilinde Xamarin iOS ve Android
 

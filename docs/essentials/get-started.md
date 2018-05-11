@@ -2,15 +2,14 @@
 title: Xamarin.Essentials
 description: Xamarin.Essentials tüm iOS, Android veya UWP çalışır bir tek platformlar arası API sağlar erişilebilen uygulama paylaşılan kullanıcı arabirimini nasıl oluşturulduğunu olsun kodu.
 ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
-ms.technology: xamarin-crossplatform
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 960682c4b7776214ab303e861be4e3a8bfa9388a
-ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
+ms.openlocfilehash: 700c148424da7e50a519659bf9766ce248e66dda
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials ile çalışmaya başlama
 

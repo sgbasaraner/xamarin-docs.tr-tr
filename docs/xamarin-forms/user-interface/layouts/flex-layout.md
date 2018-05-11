@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: bba5007acb54852b9427c57c26aba6358c4c5771
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
-ms.translationtype: HT
+ms.openlocfilehash: 7585138cd6c33c2a5dc537ba28101a84e1c4b7ae
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -24,11 +24,11 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) Xamarin.Forms sür
 
 `FlexLayout` türetilen [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) ve devralan bir [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) türündeki özelliği `IList<View>`.
 
-`FlexLayout` altı ortak bağlanabilir özellikleri ve beş ekli bağlanabilir özellikleri tanımlar. (Ekli bağlanabilirse özelliklerle bilmiyorsanız bkz  **[ekli özellikler](~/xamarin-forms/xaml/attached-properties.md)**.) Bu özellikler üzerinde bölümlerde ayrıntılı olarak açıklanmıştır **[altı bağlanabilir özellikleri](#bindable-properties)** ve **[beş iliştirilmiş bağlanabilir Özellikler](#attached-properties)**. Ancak, bu makalede bir bölümü bazı ile başlayan **[ortak uygulamaları](#common-applications)** , `FlexLayout` , bu özelliklerin çoğu daha az resmi açıklar. Makalenin sonundaki nasıl birleştirileceğini görürsünüz `FlexLayout` ile [CSS stil sayfaları](~/xamarin-forms/user-interface/styles/css/index.md).
+`FlexLayout` altı ortak bağlanabilir özellikleri ve boyutunu, Yönlendirme ve onun alt öğelerin hizalamasını etkileyen beş ekli bağlanabilir özellikleri tanımlar. (Ekli bağlanabilirse özelliklerle bilmiyorsanız bkz  **[ekli özellikler](~/xamarin-forms/xaml/attached-properties.md)**.) Bu özellikler üzerinde bölümlerde ayrıntılı olarak açıklanmıştır **[bağlanabilir özellikleri ayrıntılı](#bindable-properties)** ve  **[ekli bağlanabilir özellikleri ayrıntılı](#attached-properties)**. Ancak, bu makalede bir bölümü bazı ile başlayan **[genel kullanım senaryoları](#common-scenarios)** , `FlexLayout` , bu özelliklerin çoğu daha az resmi açıklar. Makalenin sonundaki nasıl birleştirileceğini görürsünüz `FlexLayout` ile [CSS stil sayfaları](~/xamarin-forms/user-interface/styles/css/index.md).
 
-<a name="common-applications" />
+<a name="common-scenarios" />
 
-## <a name="common-applications"></a>Genel uygulamalar
+## <a name="common-usage-scenarios"></a>Genel kullanım senaryoları
 
 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** örnek programı içeren birkaç sayfa bazı yaygın kullanımları, bu yol oluşturduk `FlexLayout` ve özellikleriyle birlikte denemeler olanak sağlar.
 
@@ -71,7 +71,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) Xamarin.Forms sür
 
 - [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) Özelliği türüdür [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) ve öğeleri artı ekseninde nasıl hizalanacağını belirtir. `Center` Seçenek yatay olarak ortalanmış her bir öğeyi neden olur.
 
-    Kullanmakta olduğunuz varsa bir `StackLayout` yerine bir `FlexLayout` bu görev için tüm öğeleri atayarak Merkezi `HorizontalOptions` her öğeye özelliğinin `Center`. `HorizontalOptions` Özelliği çocuklar için işe yaramazsa bir `FlexLayout`, ancak bu tek `AlignItems` özelliği aynı hedefe gerçekleştirir. Gerekiyorsa, kullanabileceğiniz `AlignSelf` geçersiz kılmak için bağlanabilirse özelliği eklenmiş `AlignItems` özelliği ayrı öğeleri için:
+    Kullanmakta olduğunuz varsa bir `StackLayout` yerine bir `FlexLayout` bu görev için tüm öğeleri atayarak Merkezi `HorizontalOptions` her öğeye özelliğinin `Center`. `HorizontalOptions` Özelliği çocuklar için işe yaramazsa bir `FlexLayout`, ancak tek `AlignItems` özelliği aynı hedefe gerçekleştirir. Gerekiyorsa, kullanabileceğiniz `AlignSelf` geçersiz kılmak için bağlanabilirse özelliği eklenmiş `AlignItems` özelliği ayrı öğeleri için:
 
     ```xaml
     <Label Text="FlexLayout in Action"
@@ -85,7 +85,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) Xamarin.Forms sür
 
     Kullanmakta olduğunuz varsa bir `StackLayout`, atamanız gerekir `VerticalOptions` her öğeye özelliğinin `CenterAndExpand` benzer bir etkiye elde etmek için. Ancak `CenterAndExpand` seçeneği her bir öğe arasındaki ilk öğeden önce ve son öğeden sonra iki katı kadar alan ayırmak. Taklit edebilirsiniz `CenterAndExpand` seçeneği `VerticalOptions` ayarlayarak `JustifyContent` özelliği `FlexLayout` için `SpaceAround`.
 
-Bunlar `FlexLayout` özellikler bölümünde daha ayrıntılı olarak ele alınmıştır **[altı bağlanabilir özellikleri](#bindable-properties)** aşağıda.
+Bunlar `FlexLayout` özellikler bölümünde daha ayrıntılı olarak ele alınmıştır **[bağlanabilir özellikleri ayrıntılı](#bindable-properties)** aşağıda.
 
 ### <a name="using-flexlayout-for-wrapping-items"></a>Öğeleri kaydırma için FlexLayout kullanma
 
@@ -190,7 +190,7 @@ Aşamalı olarak üstten alta kaydırılan üç platformlarda çalışan program
 
 [![Fotoğraf kaydırma sayfası](flex-layout-images/PhotoWrapping.png "fotoğraf kaydırma sayfası")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
 
-### <a name="holy-grail-layout-with-flexlayout"></a>FlexLayout Holy grail Düzen
+### <a name="page-layout-with-flexlayout"></a>Sayfa düzeni FlexLayout ile
 
 Adlı web tasarımında standart bir düzeni olduğunu [ _holy grail_ ](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) çok istenen, ancak genellikle sabit tat ile hayata geçirmek bir düzen biçimde olduğundan. Sayfanın üst kısmındaki bir üstbilgi ve altbilgi altındaki her iki genişletme tam sayfa genişliğine göre, düzeni oluşur. Sayfanın ortasına kaplayan olan ancak genellikle içeren bir sütun halinde menü içerik ve destek bilgileri solundaki ana içerik (bazen adlı bir _kenara_ alan) sağ. [CSS esnek kutu düzeni belirtimi 5.4.1 bölümünü](http://www.w3.org/TR/css-flexbox-1/#order-accessibility) holy grail Düzen içeren bir esnek kutu nasıl gerçekleştiğini açıklar.
 
@@ -377,16 +377,16 @@ Her üç monkeys bir `FlexLayout` içinde yer alan bir `Frame` bir açık yükse
 
 `Order` Ayarıyla &ndash;1 nedenler `Image` ilk her iç içe bir görüntülenecek öğesi `FlexLayout` alt koleksiyon içindeki konumuna bakılmaksızın görünümleri. `AlignSelf` Özelliği `Center` neden `Image` içinde ortalanmış için `FlexLayout`. Bu ayarı geçersiz kılar `AlignItems` varsayılan değere sahip özelliği, `Stretch`seçeneğidir; yani, `Label` ve `Button` alt tam genişliğini uzatılır `FlexLayout`.
 
-Her üç `FlexLayout` görünümleri, boş bir `Label` önündeki `Button`, ancak bir `Grow` 1 ayarlayarak. Bu fazladan dikey spae bu boş olarak ayrılan anlamına gelir `Label`, hangi etkili bir şekilde iter `Button` altına.
+Her üç `FlexLayout` görünümleri, boş bir `Label` önündeki `Button`, ancak bir `Grow` 1 ayarlayarak. Bu tüm fazla dikey boşluğu bu boş olarak ayrılan anlamına gelir `Label`, hangi etkili bir şekilde iter `Button` altına.
 
 <a name="bindable-properties" />
 
-## <a name="the-six-bindable-properties"></a>Altı bağlanabilir özellikleri
+## <a name="the-bindable-properties-in-detail"></a>Ayrıntılı bağlanabilir özellikleri
 
 Bazı ortak uygulamaları gördünüz göre `FlexLayout`, özelliklerini `FlexLayout` daha ayrıntılı olarak incelediniz. 
-`FlexLayout` üzerinde ayarladığınız altı bağlanabilir özelliklerini tanımlar `FlexLayout` kendisi, kod veya XAML, ancak `Position` bu makalede özelliği dahil değildir.
+`FlexLayout` üzerinde ayarladığınız altı bağlanabilir özelliklerini tanımlar `FlexLayout` kendisi, kod veya denetim orientatin ve hizalama XAML. (Bu özelliklerden birini [ `Position` ](xref:Xamarin.Forms.FlexLayout.Position), bu makalede ele alınmamıştır.)
 
-Beş kullanarak bağlanabilir özelliklerini kalan olan deneyebilirsiniz **denemeler** sayfasında **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** örnek. Bu sayfa alt öğelerini ekleyip sayesinde bir `FlexLayout` ve beş bağlanabilir özellikleri birleşimlerini ayarlamak için. Tüm alt `FlexLayout` olan `Label` çeşitli renkleri ve boyutları, görünümleri ile `Text` bir sayı konumuna karşılık gelen özelliği `Children` koleksiyonu.
+Beş ile kullanarak bağlanabilir özelliklerini kalan deneyebilirsiniz **denemeler** sayfasında **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** örnek. Bu sayfa alt öğelerini ekleyip sayesinde bir `FlexLayout` ve beş bağlanabilir özellikleri birleşimlerini ayarlamak için. Tüm alt `FlexLayout` olan `Label` çeşitli renkleri ve boyutları, görünümleri ile `Text` bir sayı konumuna karşılık gelen özelliği `Children` koleksiyonu.
 
 Program başladığında, beş `Picker` görünümleri görüntüler bu beş varsayılan değerlerini `FlexLayout` özellikleri. `FlexLayout` Ekranın üç alt öğeleri içerir:
 
@@ -493,7 +493,7 @@ Gibi `AlignItems`, `AlignContent` özelliği de alt artı ekseninde hizalar anca
 
 <a name="attached-properties" />
 
-## <a name="the-five-attached-bindable-properties"></a>Beş iliştirilmiş bağlanabilir Özellikler
+## <a name="the-attached-bindable-properties-in-detail"></a>Ayrıntılı bağlanabilirse ekli özellikler
 
 `FlexLayout` beş ekli bağlanabilir özelliklerini tanımlar. Bu özellikleri üzerinde alt ayarlayın `FlexLayout` ve yalnızca bu belirli alt ile ilgilidir.
 
@@ -531,7 +531,7 @@ Hiçbir referansı fark `FlexLayout` üst `Label`. XAML'de özelliğini şöyle 
 
 ### <a name="the-basis-property"></a>Temel özelliği
 
-[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) Ekli bağlanabilirse özelliği, bir alt öğesi için ayrılan alan miktarını gösterir `FlexLayout` ana eksende. Boyutu belirtilen tarafından `Basis` özelliği boyutudur üst ana eksende `FlexLayout`. Diğer bir deyişle, `Basis` alt sütunlarında düzenlenir alt satır veya yüksekliği düzenlenir alt genişliğini belirtir.
+[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) Ekli bağlanabilirse özelliği, bir alt öğesi için ayrılan alan miktarını gösterir `FlexLayout` ana eksende. Boyutu belirtilen tarafından `Basis` özelliği boyutudur üst ana eksende `FlexLayout`. Bu nedenle, `Basis` alt sütunlarında düzenlenir alt satır veya yüksekliği düzenlenir alt genişliğini belirtir.
 
 `Basis` Özelliği türüdür [ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis), bir yapı. Boyutu ya CİHAZDAN bağımsız birim veya boyutunun yüzdesi olarak belirtilen `FlexLayout`. Varsayılan değer olan `Basis` özelliktir statik özelliği `FlexBasis.Auto`, alt genişlik veya yüksekliğinden kullanılan istenen anlamına gelir.
 
@@ -615,7 +615,7 @@ Kullanabileceğiniz [CSS stil](~/xamarin-forms/user-interface/styles/css/index.m
 
 [![CSS katalog öğeleri sayfası](flex-layout-images/CssCatalogItems.png "CSS katalog öğeleri sayfası")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
-Özgün **CatalogItemsPage.xaml** dosya sahip beş `Style` tanımlarında kendi `Resources` 15 bölümle `Setter` nesneleri. İçinde **CssCatalogItemsPage.xaml** iki düşürüldü dosya, `Style` yalnızca dört tanımlarla `Setter` nesneleri. Bu stiller CSS stil sayfası Xamarin.Forms CSS stil özelliği şu anda işleyemiyor özellikleri için ek:
+Özgün **CatalogItemsPage.xaml** dosya sahip beş `Style` tanımlarında kendi `Resources` 15 bölümle `Setter` nesneleri. İçinde **CssCatalogItemsPage.xaml** iki düşürüldü dosya, `Style` yalnızca dört tanımlarla `Setter` nesneleri. Bu stiller CSS stil sayfası Xamarin.Forms CSS stil özelliği şu anda desteklemeyen özellikleri için ek:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -734,7 +734,7 @@ button {
 
 Birkaç `FlexLayout` ekli bağlanabilir özellikler burada başvuru. İçinde `label.empty` Seçicisi göreceksiniz `flex-grow` boş bir stiller özniteliği `Label` yukarıdaki bazı boş alanı sağlamak üzere `Button`. `image` Seçici içerdiği bir `order` özniteliğini ve bir `align-self` özniteliği, her ikisi de karşılık `FlexLayout` iliştirilmiş bağlanabilir özellikler.
 
-Doğrudan özellikleri ayarlayabilirsiniz gördünüz `FlexLayout` ve alt öğelerinin ekli bağlanabilir özellikleri ayarlayabilirsiniz bir `FlexLayout`. Ya da dolaylı olarak geleneksel XAML tabanlı stillerini veya CSS stilleri kullanarak bu özellikleri ayarlayabilirsiniz. Önemli şey bilinen olduğu ve bu özellikleri anladığınızdan emin olun. Kılan oldukları `FlexLayout` gerçekten esnek. 
+Doğrudan özellikleri ayarlayabilirsiniz gördünüz `FlexLayout` ve alt öğelerinin ekli bağlanabilir özellikleri ayarlayabilirsiniz bir `FlexLayout`. Ya da dolaylı olarak geleneksel XAML tabanlı stillerini veya CSS stilleri kullanarak bu özellikleri ayarlayabilirsiniz. Bildiğiniz ve bu özellikleri anlamak için önemli olan. Bu özellikler ne yapar: `FlexLayout` gerçekten esnek. 
 
 ## <a name="flexlayout-with-xamarinuniversity"></a>FlexLayout Xamarin.University ile
 

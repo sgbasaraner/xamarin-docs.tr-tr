@@ -1,21 +1,21 @@
 ---
-title: Android SDK öykünücüsü
-description: Bu kılavuz, Visual Studio ile Google Android SDK öykünücüsü kullanmayı açıklar.
+title: Google Android öykünücüsü
+description: Bu kılavuz, Visual Studio ile Google Android öykünücüsü kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 8913bb90-1340-409d-b7bb-71a06914923a
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: bdae9f2189f91a6768419fd930a4ad5ce4b6e0ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aca71284c7d51936ce2addf143edb9980d9536fc
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="android-sdk-emulator"></a>Android SDK öykünücüsü
+# <a name="google-android-emulator"></a>Google Android öykünücüsü
 
-_Bu kılavuz, Visual Studio ile Google Android SDK öykünücüsü kullanmayı açıklar._
+_Bu kılavuz, Visual Studio ile Google Android öykünücüsü kullanmayı açıklar._
 
 
 ## <a name="overview"></a>Genel Bakış
@@ -27,13 +27,13 @@ Google Android SDK'sı Android öykünücüsünde farklı cihaz benzetimini yapm
 
 ### <a name="running-the-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorrunning-the-emulatormd"></a>[Öykünücüyü Çalıştırma](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
 
-Visual Studio'dan Android SDK öykünücüsü başlatmak nasıl.
+Google Android öykünücüsü Visual Studio'dan başlatmak nasıl.
 
 ### <a name="troubleshootingandroiddeploy-testdebuggingandroid-sdk-emulatortroubleshootingmd"></a>[Sorun giderme](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md)
 
-Tanımlamak ve ortak Android SDK öykünücüsü sorunları gidermek nasıl.
+Tanımlamak ve ortak Google Android öykünücüsü sorunları gidermek nasıl.
 
-Yeni sanal cihaz oluşturma ve Android SDK öykünücüsü yapılandırma hakkında daha fazla bilgi için bkz: [Android öykünücüsü Kurulumu](~/android/get-started/installation/android-emulator/index.md).
+Google Android öykünücüsü yapılandırma ve yeni sanal cihaz oluşturma hakkında daha fazla bilgi için bkz: [Android öykünücüsü Kurulumu](~/android/get-started/installation/android-emulator/index.md).
 
 
 

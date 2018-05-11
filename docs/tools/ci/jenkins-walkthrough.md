@@ -3,15 +3,14 @@ title: Jenkins Xamarin ile kullanma
 description: Bu kılavuz, Jenkins sürekli tümleştirme sunucusu olarak ayarlayın ve Xamarin ile oluşturulan mobil uygulamaları derleme otomatikleştirmek göstermektedir. Jenkins OS x'te yüklemek, yapılandırmak ve kaynak kodu yönetimi sistemi değişiklikler uygulandıktan zaman Xamarin.iOS ve Xamarin.Android uygulamaları derlemek için işler ayarlamak nasıl açıklar.
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: f183eb487b49d60c896bef9c90c711cd3da846b7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1052507bfbf06e264f9e9da89be1e0f35fa70ce1
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Jenkins Xamarin ile kullanma
 
@@ -190,7 +189,7 @@ Bu ayarları kaydedilir ve Jenkins yeniden başlatıldıktan sonra güvenlik aç
 
 Unutulan parolayı veya Jenkins genelinde kilitleme olması durumunda, aşağıdaki adımları izleyerek güvenlik devre dışı bırakmak mümkündür:
 
-1. Stop Jenkins. Jenkins.app kullanıyorsanız, yuva Jenkins.App simgesine sağ tıklayarak ve açılır menüsünden Çık seçerek bunu yapabilirsiniz:
+1. Jenkins durdurun. Jenkins.app kullanıyorsanız, yuva Jenkins.App simgesine sağ tıklayarak ve açılır menüsünden Çık seçerek bunu yapabilirsiniz:
 
     ![](jenkins-walkthrough-images/image19.png "Yuva ve açılır menüsünden Çık'ı seçerek uygulama simgesi")
 2. Dosyayı açmak **~/.jenkins/config.xml** bir metin düzenleyicisinde.
@@ -306,7 +305,7 @@ Ekranı aşağı kaydırarak **yapı** bölümü. Tıklatın **Ekle derleme adı
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
-### <a name="building-a-xamarinandroid-project"></a>Building a Xamarin.Android Project
+### <a name="building-a-xamarinandroid-project"></a>Bir Xamarin.Android projesi oluşturma
 
 Bir Xamarin.Android projesi oluşturma bir Xamarin.iOS projesi oluşturmayı çok benzer. Bir APK bir Xamarin.Android projesinde oluşturmak için Jenkins aşağıdaki iki adımdan gerçekleştirecek şekilde yapılandırılması gerekir:
 

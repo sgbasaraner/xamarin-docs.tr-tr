@@ -6,12 +6,12 @@ ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
-ms.date: 04/23/2018
-ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 05/08/2018
+ms.openlocfilehash: 96054505af44c5d3e198c2b9e7e7cb30d39b02b1
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-live-reload"></a>Xamarin dinamik yeniden yükle
 
@@ -27,8 +27,8 @@ Dinamik yeniden yükleme şu anda yalnızca Visual Studio 2017 içinde kullanıl
 
 ## <a name="requirements"></a>Gereksinimler
 
-* [Visual Studio 2017 15.7 Önizleme 4](https://www.visualstudio.com/vs/preview/) veya üstü ile **.NET ile Mobil Geliştirme** iş yükü.
-* [Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3) veya üstü.
+* [Visual Studio 2017 sürüm 15.7 veya yukarıdaki](https://www.visualstudio.com/vs/) veya üstü ile **.NET ile Mobil Geliştirme** iş yükü.
+* [Xamarin.Forms 3.0.0 veya üstü](https://www.nuget.org/packages/Xamarin.Forms/) veya üstü.
 
 ## <a name="getting-started"></a>Başlarken
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Visual Studio marketten Xamarin dinamik yeniden yükleyin
@@ -45,8 +45,13 @@ Alternatif olarak, içinde arayabilirsiniz **çevrimiçi** sekmesinde **Uzantıl
 
 Dinamik yeniden varolan mobil uygulamalara ekleme, üç adımda yapılabilir:
 
-1. Tüm projeleri kullanacak şekilde güncelleştirilir olun [Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3) veya üstü.
-2. Yükleme **Xamarin.LiveReload** NuGet .NET standart 2.0 kitaplığa. Bu platform projelerinizde yüklü olması gerekmez. Emin **paket kaynağı** ayarlanır **tüm**.
+1. Tüm projeleri kullanacak şekilde güncelleştirilir olun [Xamarin.Forms 3.0.0 veya üstü](https://www.nuget.org/packages/Xamarin.Forms/) veya üstü.
+
+2. Ekleme **Xamarin.LiveReload** NuGet paketi:
+
+    a. **.NET standart** – yükleme **Xamarin.LiveReload** NuGet .NET standart 2.0 kitaplığa. Bu platform projelerinizde yüklü olması gerekmez. Emin **paket kaynağı** ayarlanır **tüm**.
+    
+    b. **Paylaşılan projeleri** – yükleme **Xamarin.LiveReload** NuGet tüm platform projelerine (Android gibi iOS, UWP, vb.). Emin **paket kaynağı** ayarlanır **tüm**.
 
 ![Xamarin dinamik yeniden NuGet ile NuGet Paket Yöneticisi ekleme](images/addlivereloadnuget.png)
 
@@ -85,7 +90,7 @@ Uygulamanızı derlendiğinden Prizma ve üçüncü taraf denetimi kitaplıklar�
 
 ### <a name="what-changes-does-live-reload-redeploy"></a>Hangi değişiklikleri Canlı yeniden dağıtmanız? 
 
-Dinamik yeniden yalnızca XAML için yapılan değişiklikleri uygular. Bir C# dosyasına değişiklik yaparsanız, yeniden derlemeye gerekli olacaktır. C# yeniden desteği için gelecekteki bir sürüm planlanmaktadır.
+Dinamik yeniden yalnızca XAML ya da CSS yapılan değişiklikleri uygular. Bir C# dosyasına değişiklik yaparsanız, yeniden derlemeye gerekli olacaktır. C# yeniden desteği için gelecekteki bir sürüm planlanmaktadır.
 
 ### <a name="what-platforms-are-supported"></a>Hangi platformlar desteklenir? 
 
@@ -111,8 +116,6 @@ Hayır. Aslında, hatta tüm desteklenen uygulama hedeflerinizi (Android, iOS ve
 ## <a name="known-issues"></a>Bilinen Sorunlar
 
 * Yalnızca Visual Studio'da desteklenir.
-* Yalnızca .NET standart kitaplıkları ile çalışır. Bu, sonraki Önizleme sürümünde düzeltilecektir.
-* CSS stil sayfaları desteklenmez. Bu, sonraki Önizleme sürümünde düzeltilecektir.
 * Uygulama genelinde kaynakları yeniden (yani **App.xaml** veya kaynak sözlüklerindeki paylaşılan), uygulama gezinti sıfırlanır. Bu, sonraki Önizleme sürümünde düzeltilecektir.
 * UWP hata ayıklama çalışma zamanı çökmeyle neden olabilir ancak XAML düzenleme. Geçici çözüm: Kullanmak **başlatın (Ctrl + F5) hata ayıklama olmadan** yerine **hata ayıklama (F5) Başlangıç**.
 
@@ -131,8 +134,6 @@ Hayır. Aslında, hatta tüm desteklenen uygulama hedeflerinizi (Android, iOS ve
 * **XLR003**: *Canlı yeniden nuget paketi gerektirir Xamarin Canlı yeniden Visual Studio uzantısı yükleme.*
 
   Dinamik yeniden nuget paketi başvuran bir projeyi derleme denedi ancak Visual uzantısı yüklü değil.  
-
-
 
 ### <a name="app-doesnt-connect"></a>Uygulama bağlanmıyor
 

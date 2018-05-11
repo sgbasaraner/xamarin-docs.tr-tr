@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: cf1b586c8e30b2922251104461d9ca7100b8e74e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3dda1445815f747f484458388cd856c2f9705603
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Bir öykünücü üzerinde Android yıpranması hata ayıklama
 
@@ -21,9 +21,9 @@ _Bu makaleler, bir Xamarin.Android yıpranması uygulaması bir öykünücü üz
 
 Android takmak uygulamaları geliştirme uygulama ya da fiziksel donanım üzerinde çalışan veya bir öykünücü veya benzetici kullanarak gerektirir. Donanım kullanarak en iyi yaklaşımı, ancak her zaman en kullanışlı değildir. Çoğu durumda, daha basit ve daha düşük maliyetli bir öykünücü aşağıda açıklandığı gibi kullanarak Android takmak donanım benzetimini/benzetmek için olabilir. Yerel Yönetici değilseniz henüz Android takmak uygulamaları dağıtma ve çalıştırma işlemi bilmiyorsanız bkz [Merhaba, takmak](~/android/wear/get-started/hello-wear.md).
 
-## <a name="configure-the-android-sdk-emulator"></a>Android SDK öykünücüsü yapılandırın
+## <a name="configure-the-google-android-emulator"></a>Google Android öykünücüsü yapılandırın
 
-Bir öykünücü üzerinde yıpranması uygulamanızı çalıştırmak için Android SDK'sı Android öykünücüsü yükleyip Android takmak için yapılandırmanız gerekir. Genel Android SDK öykünücüsü yükleme ve yapılandırma bilgileri için bkz: [Android SDK öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Bir öykünücü üzerinde yıpranması uygulamanızı çalıştırmak için Android SDK'sı Android öykünücüsü yükleyip Android takmak için yapılandırmanız gerekir. Genel Android SDK öykünücüsü yükleme ve yapılandırma bilgileri için bkz: [Google Android öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Yıpranması sanal cihazı oluşturduğunuzda, bir Android takmak cihaz profilini seçin (gibi **Android yıpranması kare**). Geliştirilmiş performans için yıpranması kullanmak **x86** CPU/ABI Bu örnekte görüldüğü gibi:
 
@@ -47,4 +47,4 @@ Bu görürseniz şaşırmayın (veya başka bir Interstitial ekran) ilk. Gözcü
  
 ## <a name="summary"></a>Özet
  
-Bu kılavuz, Android SDK öykünücüsü yıpranması geliştirme için yapılandırmak ve hata ayıklama için yıpranması sanal cihazı başlatma anlatılmıştır.
+Bu kılavuz, Google Android öykünücüsü yıpranması geliştirme için yapılandırmak ve hata ayıklama için yıpranması sanal cihazı başlatma anlatılmıştır.

@@ -1,37 +1,82 @@
 ---
 title: Android öykünücüsünde donanım hızlandırma
-description: Bilgisayarınızı maksimum Android SDK öykünücüsü performans için hazırlama
+description: Bilgisayarınızı maksimum Google Android öykünücüsü performans için hazırlama
 ms.prod: xamarin
 ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/04/2018
-ms.openlocfilehash: d5921c549c299197bdc442c9b883b49064655f76
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
-ms.translationtype: MT
+ms.date: 05/07/2018
+ms.openlocfilehash: 2d903df97da2e8d6ae0c5df3b1ba09dd3015e404
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android öykünücüsünde donanım hızlandırma
 
-Android SDK öykünücüsü donanım hızlandırmasını, Intel's şekilde basımı karşılamayacak kadar yavaş olduğu için HAXM (donanım hızlandırılmış yürütme Yöneticisi) Android SDK öykünücüsü performansını önemli ölçüde artırmak için önerilen yöntem olduğu.
+Google Android öykünücüsü donanım hızlandırmasını şekilde basımı karşılamayacak kadar yavaş olur. Google Android öykünücüsü'ı özel öykünücüsü lunlar görüntüleri, hedef x86 donanım ve iki sanallaştırma teknolojilerini birini kullanarak performansını önemli ölçüde artırmak mümkündür:
 
+1. **Microsoft Hyper-V ve hiper yönetici platformuna kullanıcının** &ndash; Hyper-V fiziksel ana bilgisayar üzerinde çalışan sanallaştırılmış bilgisayar sistemleri sağlayan Windows 10 kullanılabilir olan bir bileşenidir sanallaştırma. Hızlandırılmış Google Android öykünücüsü görüntüleri için önerilen sanallaştırma teknolojisi budur. Hyper-V hakkında daha fazla bilgi için lütfen bakın [Windows 10 kılavuzu üzerinde Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/).
+2. **Intel'in donanım hızlandırılmış yürütme Yöneticisi'ni (HAXM)** &ndash; Bu, Intel CPU çalıştıran bilgisayarlar için sanallaştırma altyapısıdır. Bu işlev, Hyper-V kullanamıyorsunuz geliştiriciler için önerilen sanallaştırma altyapısıdır.
+
+Android SDK Yöneticisi'ni otomatik olarak yapmak kullanılabilir olduğunda donanım hızlandırma kullanımı için özellikle öykünücüsü görüntü çalıştığı bir **x86**-sanal aygıt tabanlı (açıklandığı gibi [yapılandırma ve kullanma ](~/android/deploy-test/debugging/android-sdk-emulator/index.md)).
+
+## <a name="hyper-v-overview"></a>Hyper-V'ye Genel Bakış
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+![](~/media/shared/preview.png)
+
+> [!NOTE]
+> Hyper-V desteği şu anda önizlemede değil.
+
+Windows 10 kullanan geliştiriciler (Nisan 2018 güncelleştirmesi) Microsoft'un Hyper-V kullanmanız önemle önerilir. Xamarin için Visual Studio Araçları sınamak ve bir Android cihaz kullanılamıyor veya pratik olduğu durumlar Xamarin.Android uygulamalarında hata ayıklama geliştiriciler için kolay hale getirir.
+
+Hyper-V ve Google Android öykünücüsü kullanmaya başlamak için:
+
+1. **Windows 10 Nisan 2018 güncelleştirmeye güncelleştirme (yapı 1803)** &ndash; hangi Windows sürümünü çalıştıran doğrulamak için Cortana arama çubuğu türü içinde tıklatın ve **hakkında**. Seçin **bilgisayarınız hakkında** arama sonuçlarında. İçinde aşağı kaydırarak **hakkında** iletişim, **Windows belirtimleri** bölümü. **Sürüm** en az 1803 olmalıdır:
+
+    [![Windows özellikleri](hardware-acceleration-images/win/12-about-windows.w10-sml.png)](hardware-acceleration-images/win/12-about-windows.w10.png#lightbox)
+
+1. **Hyper-V ve Windows hiper yönetici platformunu etkinleştir** &ndash; Cortana arama çubuğunda, türü **kapatma Windows özelliklerini aç veya Kapat**. İçinde aşağı kaydırın **Windows özelliklerini** iletişim kutusunda ve emin **Windows hiper yönetici platformu** etkinleştirilir.
+
+    [![Hyper-V ve Windows hiper yönetici platformu etkin](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
+
+    Windows Hyper-V ve Windows hiper yönetici platformu etkinleştirdikten sonra bilgisayarınızı yeniden başlatmanız gerekebilir.
+
+1. **Yükleme [Visual Studio 15,8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; Visual Studio'nun bu sürümü, Google Android öykünücüsü Hyper-V desteği ile başlatmak için IDE desteği sağlar.
+
+1. **Google Android öykünücüsü Paketi 27.2.7 yüklemek ya da daha yüksek** &ndash; bu paketi yüklemek için gidin **Araçlar > Android > Android SDK Manager** Visual Studio. Seçin **Araçları** sekmesini tıklatın ve Android öykünücüsü bileşen en az olduğundan emin olun 27.2.7 sürümü.
+
+    [![Android SDK'lar ve Araçlar iletişim](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
+
+### <a name="known-issues"></a>Bilinen Sorunlar
+
+* Performans, belirli Intel ve AMD tabanlı işlemciler kullanırken azaltılabilir.
+* Android uygulaması olağan dışı bir dağıtımda yüklemek için zaman miktarı sürebilir.
+* OLMASI erişim hatası, zaman zaman Android öykünücüsünü önyükleme engel olabilir. Öykünücü yeniden bu çözümlenmelidir.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+
+Hyper-V desteği, Windows 10 gerektirir. Lütfen bakın [Hyper-V gereksinimleri](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#check-requirements) daha fazla ayrıntı için.
+
+-----
 
 ## <a name="haxm-overview"></a>HAXM genel bakış
 
 HAXM bir konak makinesi üzerinde Android uygulaması öykünme hızlandırmak için Intel Sanallaştırma Teknolojisi (VT) kullanan bir donanım destekli sanallaştırma (hiper yönetici) altyapısıdır. Android x86 birlikte Intel ve resmi Android SDK Yöneticisi tarafından HAXM VT etkin sistemlerde daha hızlı Android öykünmesi için izin veren koşuluyla öykünücü görüntüler. 
 
-VT yetenekleri olan bir Intel CPU bir makinesinde geliştiriyorsanız, büyük ölçüde Android SDK öykünücüsü hızlandırmak için HAXM yararlanabilir (, CPU VT destekleyip desteklemediğini emin değilseniz bkz [belirlemek, bilgisayarınızı işlemci destekleyen Intel Sanallaştırma Teknolojisi](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
+VT yetenekleri olan bir Intel CPU bir makinesinde geliştiriyorsanız, büyük ölçüde Google Android öykünücüsü hızlandırmak için HAXM yararlanabilir (, CPU VT destekleyip desteklemediğini emin değilseniz bkz [belirlemek, bilgisayarınızı işlemci destekleyen Intel Sanallaştırma Teknolojisi](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
 
 > [!NOTE]
 > Bir VM hızlandırılmış öykünücüsü VirtualBox, VMWare veya Docker tarafından barındırılan bir VM'nin gibi başka bir VM içinde çalıştırılamaz. Google Android öykünücüsü çalıştırmalısınız [sistem donanımınız üzerinde doğrudan](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
-Android SDK öykünücüsü otomatik olarak kullanılabilir olduğunda HAXM kullanır. Seçtiğinizde, bir **x86**-sanal aygıt dayalı (açıklandığı gibi [yapılandırma ve kullanım](~/android/deploy-test/debugging/android-sdk-emulator/index.md)), sanal cihazın donanım hızlandırmasını HAXM kullanır. Android SDK öykünücüsü ilk kez kullanmadan önce HAXM yüklenir ve Android SDK öykünücüsü kullanılabilir olduğunu doğrulamak için iyi bir fikirdir.
+Google Android öykünücüsü ilk kez kullanmadan önce HAXM yüklenir ve Google Android öykünücüsü kullanılabilir olduğunu doğrulamak için iyi bir fikirdir.
 
-## <a name="verifying-haxm-installation"></a>HAXM yüklemesini doğrulama
+### <a name="verifying-haxm-installation"></a>HAXM yüklemesini doğrulama
 
-HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz **başlangıç Android öykünücüsü** öykünücü başlatılırken penceresi. Android SDK öykünücüsü başlatmak için aşağıdakileri yapın:
+HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz **başlangıç Android öykünücüsü** öykünücü başlatılırken penceresi. Google Android öykünücüsü başlatmak için aşağıdakileri yapın:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -47,7 +92,7 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
 3. Seçin bir **x86** görüntü (örneğin, **Visual Studio\_android 23\_x86\_telefon**), tıklatın **Başlat**, 'ıtıklatın **Başlatma**:
 
-    ![Bir varsayılan sanal aygıt görüntüsüyle Android SDK öykünücüsü başlatılıyor](hardware-acceleration-images/win/02-start-default-avd.png)
+    ![Google Android öykünücüsü bir varsayılan sanal aygıt görüntüsüyle başlatılıyor](hardware-acceleration-images/win/02-start-default-avd.png)
 
 4. İzlemesi **başlangıç Android öykünücüsü** öykünücü başlatılırken iletişim penceresi. HAXM yüklediyseniz iletisini görür **HAX çalıştığından ve öykünücüsü hızlı Sanal Küp Str modunda çalıştırır** bu ekran görüntüsünde gösterildiği gibi:
 
@@ -73,7 +118,7 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
 3. Seçin **x86** görüntü (örneğin, **Android\_hızlandırılmış\_x86**), tıklatın **Başlat**, ardından **başlatma**:
 
-    [![Bir varsayılan sanal aygıt görüntüsüyle Android SDK öykünücüsü başlatılıyor](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
+    [![Google Android öykünücüsü bir varsayılan sanal aygıt görüntüsüyle başlatılıyor](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
 
 3. İzlemesi **başlangıç Android öykünücüsü** öykünücü başlatılırken iletişim penceresi. HAXM yüklediyseniz iletisini görür **HAX çalıştığından ve öykünücüsü hızlı Sanal Küp Str modunda çalıştırır** bu ekran görüntüsünde gösterildiği gibi:
 
@@ -86,7 +131,7 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
 <a name="install-haxm" />
 
-## <a name="installing-haxm"></a>HAXM yükleme
+### <a name="installing-haxm"></a>HAXM yükleme
 
 Öykünücü başlamazsa HAXM el ile yüklenmesi gerekebilir. Hem Windows hem de macOS edinilebilir için HAXM yükleme paketleri [Intel donanım hızlandırılmış yürütme Yöneticisi](https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager) sayfası. İndirip HAXM el ile yüklemek için aşağıdaki adımları kullanın:
 
@@ -104,84 +149,6 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
    ![Intel donanım hızlandırılmış yürütme Yöneticisi Kurulum penceresi](hardware-acceleration-images/win/05-haxm-installer.png)
 
-Aşağıdaki hata iletişim kutusu görürseniz (_bu bilgisayar Intel Sanallaştırma Teknolojisi'ni (VT-x) desteklemez veya özel olarak Hyper-V tarafından kullanılan_), HAXM yükleyebilmek için önce Hyper-V devre dışı gerekir:
-
-![Hyper-V çakışma nedeniyle HAXM yüklenemez.](hardware-acceleration-images/win/06-cant-install-haxm.png)
-
-Sonraki bölümde, Hyper-V devre dışı bırakılmasını açıklar.
-
-<a name="disable-hyperv" />
-
-## <a name="disabling-hyper-v"></a>Hyper-V devre dışı bırakma
-
-Windows Hyper-V etkin ile kullanıyorsanız, devre dışı bırakın ve yükleyip HAXM kullanabilmeniz için bilgisayarınızı yeniden başlatın. Aşağıdaki adımları izleyerek Hyper-V Denetim Masası'ndan devre dışı bırakabilirsiniz:
-
-1. Windows Arama kutusuna **programları ve** ardından **programlar ve Özellikler** arama sonucu.
-
-2. Denetim Masası'nda **programlar ve Özellikler** iletişim kutusunda, tıklatın **kapatma Windows özelliklerini aç veya Kapat**:
-
-    ![Windows özelliklerini aç veya kapat.](hardware-acceleration-images/win/07-turn-windows-features.png)
-
-3. İşaretini **Hyper-V** ve bilgisayarı yeniden başlatın:
-
-    ![Hyper-V Windows özellikleri iletişim kutusunda devre dışı bırakma](hardware-acceleration-images/win/08-uncheck-hyper-v.png)
-
-Alternatif olarak, Hyper-V: devre dışı bırakmak için aşağıdaki Powershell cmdlet'ini kullanabilirsiniz
-
-`Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
-
-Intel HAXM ve Microsoft Hyper-V her ikisi de aynı anda etkin olamaz. Ne yazık ki, şu anda arasında Hyper-V arasında HAXM, bilgisayarı yeniden başlatmadan geçiş yapmak için bir yolu yoktur. Kullanmak istiyorsanız, [Android için Visual Studio öykünücüsü](~/android/deploy-test/debugging/visual-studio-android-emulator.md) (bağlı olan Hyper-V), Android SDK öykünücüsü başlatmadan kullanmak mümkün olmayacaktır. Hyper-V ve HAXM kullanmanın tek yolu olan bir çoklu önyükleme kurulumu açıklandığı gibi oluşturmak için [herhangi bir hiper yönetici önyükleme girişi oluşturma](https://blogs.msdn.microsoft.com/virtual_pc_guy/2008/04/14/creating-a-no-hypervisor-boot-entry/).
-
-Bazı durumlarda, yukarıdaki adımları kullanarak Hyper-V Device Guard ve kimlik bilgisi koruma etkinse, devre dışı bırakılırken başarısız olur. Hyper-V devre dışı bırakmak oluşturulamıyor (veya devre dışı görünüyor ancak HAXM yükleme yine başarısız olursa), Device Guard ve kimlik bilgisi koruma devre dışı bırakmak için sonraki bölümde adımları kullanın.
-
-<a name="disable-devguard" />
-
-## <a name="disabling-device-guard"></a>Cihaz koruyucusu devre dışı bırakma
-
-Cihaz koruyucusu ve kimlik bilgisi koruma Hyper-V Windows makinelerde devre dışı engelleyebilirsiniz. Bu genellikle bir yapılandırılan ve sahibi olan bir kuruluş tarafından denetlenen etki alanına katılan makineler için sorunudur.
-Windows 10'olmadığını görmek için aşağıdaki adımları kullanın. **Device Guard** çalışıyor:
-
-1. İçinde **Windows Search**, türü **sistem bilgisi** başlatmak için **sistem bilgisi** uygulama.
-
-2. İçinde **Sistem Özeti**, olmadığını görmek için Görünüm **cihaz koruyucusu sanallaştırma tabanlı güvenlik** bulunduğundan ve yer **çalıştıran** durumu:
-
-   [![Cihaz koruyucusu mevcut ve çalışıyor](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png#lightbox)
-
-Cihaz koruyucusu etkinse, devre dışı bırakmak için aşağıdaki adımları kullanın:
-
-1. Emin **Hyper-V** devre dışı bırakıldı (altında **Windows özelliklerini aç veya Kapat**) önceki bölümde açıklandığı gibi.
-
-2. Windows Arama kutusuna yazın **gpedit** seçip **Grup İlkesi düzenleme** arama sonucu. Bu başlatır **yerel Grup İlkesi Düzenleyicisi'ni**.
-
-3. İçinde **yerel Grup İlkesi Düzenleyicisi**, gitmek **bilgisayar yapılandırması > Yönetim Şablonları > Sistem > Device Guard**:
-
-   [![Cihaz koruyucusu yerel Grup İlkesi Düzenleyicisi'nde](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png#lightbox)
-
-4. Değişiklik **kapatma üzerinde sanallaştırma tabanlı güvenlik** için **devre dışı** (yukarıda gösterildiği gibi) ve çıkış **yerel Grup İlkesi Düzenleyicisi'ni**.
-
-5. Windows Arama kutusuna yazın **cmd**. Zaman **komut istemi** görünür arama sonuçlarında sağ **komut istemi** seçip **yönetici olarak çalıştır**.
-
-6. Aşağıdaki komutlar bir komut istemi penceresine yapıştırın (durumunda sürücü **Z:** olduğu kullanın, bunun yerine kullanmak için kullanılmayan bir sürücü harfi seçin):
-
-        mountvol Z: /s
-        copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
-        bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
-        bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
-        mountvol Z: /d
-
-7. Bilgisayarınızı yeniden başlatın. Önyükleme ekranında, aşağıdakine benzer bir istem görmeniz gerekir:
-
-   **Kimlik bilgisi koruma devre dışı bırakmak istiyor musunuz?**
-
-   Kimlik bilgisi koruma istendiğinde devre dışı bırakmak için belirtilen tuşuna basın.
-
-8. Bilgisayar yeniden başlatıldıktan sonra Hyper-V (önceki adımlarda açıklandığı gibi) devre dışı bırakıldığından emin olmak için yeniden denetleyin.
-
-Hyper-V hala devre dışı değil ise, etki alanına katılmış bilgisayarınızın ilkeleri cihaz koruyucusu veya kimlik bilgisi koruma devre dışı engelleyebilir. Bu durumda, etki alanı yöneticiniz, kimlik bilgisi koruma dışında opt olanak sağlamak için bir muafiyet isteyebilir. Alternatif olarak, olmayan HAXM kullanmak için etki alanına katılmış bir bilgisayarı kullanabilirsiniz.
-
 ## <a name="hardware-acceleration-and-amd-cpus"></a>Donanım hızlandırma ve AMD CPU'lar
 
 Google Android öykünücüsü şu anda AMD donanım hızlandırmasını desteklediğinden [yalnızca Linux üzerinde](https://developer.android.com/studio/run/emulator-acceleration.html#dependencies), donanım hızlandırmasını Windows çalıştıran AMD tabanlı bilgisayarlar için kullanılabilir değil.
@@ -196,3 +163,8 @@ Google Android öykünücüsü şu anda AMD donanım hızlandırmasını destekl
    [![Intel donanım hızlandırılmış yürütme Yöneticisi Kurulum penceresi](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png#lightbox)
 
 -----
+
+
+## <a name="related-links"></a>İlgili bağlantılar
+
+* [Uygulamaların Android öykünücüsünde çalıştırın](https://developer.android.com/studio/run/emulator)

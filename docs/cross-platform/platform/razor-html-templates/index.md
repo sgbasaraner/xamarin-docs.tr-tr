@@ -3,15 +3,14 @@ title: Razor şablonları kullanarak yapı HTML görünümleri
 description: " HTML oluşturmak için bir tam ekran Web sayfasını kullanarak karmaşık bir platformlar arası şekilde biçimlendirme özellikle HTML, Javascript ve CSS bir Web sitesi projeden zaten varsa işlemek için basit ve etkili bir yol olabilir."
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: fa361e48f8f7e236a3295deda2d80a02ef06b34d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 48d7778bf3225401f2819909ae6be320cfa881e3
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>Razor şablonları kullanarak yapı HTML görünümleri
 
@@ -373,7 +372,7 @@ Bu bölümde, Mac için Visual Studio'da Çözüm şablonları kullanarak kendi 
 
 - **Android > Uygulama > Android WebView uygulama**
 - **iOS > Uygulama > WebView uygulama**
-- **ASP.NET MVC Project**
+- **ASP.NET MVC proje**
 
 
 
@@ -483,7 +482,7 @@ HTML prototip oluşturma için harika olabilir ve tür şeyler görüntüleme we
 
 Şablon web görünümleri kolayca platforma özgü denetimleriyle – yalnızca düzenleme Genişletilebilir **MainStoryboard.storyboard** iOS Tasarımcısı'nda veya **Resources/layout/Main.axml** android'de.
 
-### <a name="razortodo-sample"></a>RazorTodo Sample
+### <a name="razortodo-sample"></a>RazorTodo örnek
 
 [RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo) depo tamamen HTML tabanlı bir uygulama ve yerel denetimleriyle HTML birleştiren bir uygulama arasındaki farklar göstermek için iki ayrı çözümleri içerir:
 
@@ -519,6 +518,6 @@ Son olarak, yerel kullanıcı arabirimleri ve API ile web görünümü birleşti
 
 ### <a name="related-links"></a>İlgili bağlantılar
 
-- [RazorTodo Sample](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
+- [RazorTodo örnek](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
 - [MVC 3 - Razor görüntüleme altyapısı (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
 - [Razor sözdizimini (Microsoft) kullanarak ASP.NET Web programlamaya giriş](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)
