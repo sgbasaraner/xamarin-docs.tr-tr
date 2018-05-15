@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c93681c3bfd8de8d813cbe98a7ac28b3ee8b74fc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-an-entry"></a>Bir giriş özelleştirme
 
@@ -43,13 +43,13 @@ public class MyEntry : Entry
 }
 ```
 
-`MyEntry` Denetim taşınabilir sınıf kitaplığı (PCL) projesinde oluşturulan ve sadece bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetim. Denetimin özelleştirme gerçekleştirilmesini özel işleyicide ek uygulaması gereken şekilde `MyEntry` denetim.
+`MyEntry` Denetim .NET standart kitaplığı projesinde oluşturulan ve sadece bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetim. Denetimin özelleştirme gerçekleştirilmesini özel işleyicide ek uygulaması gereken şekilde `MyEntry` denetim.
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Özel denetim kullanma
 
-`MyEntry` Denetim başvurulabilir XAML'de PCL projesinde konumu için bir ad alanı bildirme ve denetim öğede ad alanı öneki kullanarak. Aşağıdaki örnekte gösterildiği kod nasıl `MyEntry` denetim XAML sayfası tarafından tüketilen:
+`MyEntry` Denetim başvurulabilir XAML'de .NET standart kitaplığı projesinde konumu için bir ad alanı bildirme ve denetim öğede ad alanı öneki kullanarak. Aşağıdaki örnekte gösterildiği kod nasıl `MyEntry` denetim XAML sayfası tarafından tüketilen:
 
 ```xaml
 <ContentPage ...

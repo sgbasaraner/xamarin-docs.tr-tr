@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 353575bad91c9bade0207a0aa271d9de7ec50240
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 04d3d99a5d85dd77c93e9b926e8952cc3d8a771e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-map-pin"></a>Bir harita PIN özelleştirme
 
@@ -47,7 +47,7 @@ public class CustomMap : Map
 }
 ```
 
-`CustomMap` Denetimi taşınabilir sınıf kitaplığı (PCL) projesinde oluşturulur ve özel eşleme için API tanımlar. Özel Harita sunan `CustomPins` koleksiyonunu temsil eden özellik `CustomPin` her platformda Yerel Harita denetiminin tarafından işlenen nesneleri. `CustomPin` Sınıfı, aşağıdaki kod örneğinde gösterilir:
+`CustomMap` Denetimi .NET standart kitaplığı projesinde oluşturulur ve özel eşleme için API tanımlar. Özel Harita sunan `CustomPins` koleksiyonunu temsil eden özellik `CustomPin` her platformda Yerel Harita denetiminin tarafından işlenen nesneleri. `CustomPin` Sınıfı, aşağıdaki kod örneğinde gösterilir:
 
 ```csharp
 public class CustomPin : Pin
@@ -62,7 +62,7 @@ Bu sınıfı tanımlayan bir `CustomPin` özelliklerini devralma olarak [ `Pin` 
 
 ## <a name="consuming-the-custom-map"></a>Özel Harita kullanma
 
-`CustomMap` Denetim başvurulabilir XAML'de PCL projesinde konumu için bir ad alanı bildirme ve özel Harita denetimi ad alanı öneki kullanarak. Aşağıdaki örnekte gösterildiği kod nasıl `CustomMap` denetim XAML sayfası tarafından tüketilen:
+`CustomMap` Denetim başvurulabilir XAML'de .NET standart kitaplığı projesinde konumu için bir ad alanı bildirme ve özel Harita denetimi ad alanı öneki kullanarak. Aşağıdaki örnekte gösterildiği kod nasıl `CustomMap` denetim XAML sayfası tarafından tüketilen:
 
 ```xaml
 <ContentPage ...
@@ -322,7 +322,7 @@ void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEve
 }
 ```
 
-Bu yöntem, bir web tarayıcısı açar ve depolanan adresine gider `CustomMKAnnotationView.Url` özelliği. Adres oluştururken tanımlandığına Not `CustomPin` PCL projesinde koleksiyonu.
+Bu yöntem, bir web tarayıcısı açar ve depolanan adresine gider `CustomMKAnnotationView.Url` özelliği. Adres oluştururken tanımlandığına Not `CustomPin` .NET standart kitaplığı projesi koleksiyonu.
 
 <a name="Deselecting_the_Annotation" />
 
@@ -499,7 +499,7 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 }
 ```
 
-Bu yöntem, bir web tarayıcısı açar ve depolanan adresine gider `Url` özelliğini `CustomPin` örnek `Marker`. Adres oluştururken tanımlandığına Not `CustomPin` PCL projesinde koleksiyonu.
+Bu yöntem, bir web tarayıcısı açar ve depolanan adresine gider `Url` özelliğini `CustomPin` örnek `Marker`. Adres oluştururken tanımlandığına Not `CustomPin` .NET standart kitaplığı projesi koleksiyonu.
 
 Özelleştirme hakkında daha fazla bilgi için bir `MapView` örnek için bkz: [haritalar API'si](~/android/platform/maps-and-location/maps/maps-api.md).
 
@@ -645,7 +645,7 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-Bu yöntem, bir web tarayıcısı açar ve depolanan adresine gider `Url` özelliği `CustomPin` örneği. Adres oluştururken tanımlandığına Not `CustomPin` PCL projesinde koleksiyonu.
+Bu yöntem, bir web tarayıcısı açar ve depolanan adresine gider `Url` özelliği `CustomPin` örneği. Adres oluştururken tanımlandığına Not `CustomPin` .NET standart kitaplığı projesi koleksiyonu.
 
 Özelleştirme hakkında daha fazla bilgi için bir `MapControl` örnek için bkz: [harita ve konum genel bakış](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) konusuna bakın.
 

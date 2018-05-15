@@ -1,93 +1,66 @@
 ---
-title: Düğümlerde iOS simülatörü (Windows)
-description: Windows Visual Studio içinde tamamen test ve hata ayıklama iOS uygulamaları
+title: Windows için Uzak iOS Simülatörü
+description: Düğümlerde iOS simülatörü Windows için Windows Visual Studio 2017 yanında görüntülenen bir iOS simülatörü, uygulamaları test etmenizi sağlar.
 ms.prod: xamarin
 ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: topgenorth
 ms.author: toopge
-ms.date: 04/07/2017
-ms.openlocfilehash: 5a1408f6595bd1e2371cd1d0421f81a3a16a5cc3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/11/2018
+ms.openlocfilehash: b07cc24e63f4aa3ce4451e3bdb5819f1df1058c6
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
-# <a name="remoted-ios-simulator-for-windows"></a>Düğümlerde iOS simülatörü (Windows)
+# <a name="remoted-ios-simulator-for-windows"></a>Windows için Uzak iOS Simülatörü
 
-_Windows Visual Studio içinde tamamen test ve hata ayıklama iOS uygulamaları_
+Düğümlerde iOS simülatörü Windows için Windows Visual Studio 2017 yanında görüntülenen bir iOS simülatörü, uygulamaları test etmenizi sağlar.
 
 [![](ios-simulator-images/hero-sml.png "iOS simülatörü Windows üzerinde çalışan")](ios-simulator-images/hero.png#lightbox)
 
-## <a name="download-and-install"></a>İndirme ve yükleme
-
-Karşıdan [yükleyici](https://dl.xamarin.com/xamarin-simulator/Xamarin.Simulator.Installer.msi) ve Windows bilgisayarınıza yükleyin. Xamarin için Visual Studio Araçları önceden yüklenmiş olması gerekir.
-
-> [!NOTE]
-> Visual Studio uzaktan iOS simülatörü'nü kullanarak yüklü Xamarin ile ağa bağlı bir Mac gerektirir.
-
 ## <a name="getting-started"></a>Başlarken
 
-Uzak iOS simülatörü kullanmak için:
+Düğümlerde iOS simülatörü Windows için Visual Studio 2017 Xamarin bir parçası olarak otomatik olarak yüklenir. Kullanmak için şu adımları izleyin:
 
-1. Visual Studio uzaktan iOS simülatörü en az bir kez başlatmadan önce Mac bağlı emin olun.
-2. Bir iOS veya tvOS uygulama olduğundan emin olun **başlangıç projesi** ve hata ayıklamayı Başlat.
+1. [Bir Mac yapı konağı Visual 2017 eşleştirin](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Visual Studio 2017 içinde iOS veya tvOS projesinde hata ayıklamayı Başlat. Windows için düğümlerde iOS simülatörü Windows makinenizde görünür.
 
-Gelen uzak iOS simülatörü devre dışı bırakabilirsiniz **Araçlar > Seçenekler > Xamarin > iOS ayarları** kutusunu kaldırarak **Windows Uzak Simulator** burada gösterilen:
+## <a name="simulator-window"></a>Simulator penceresi
 
-[![](ios-simulator-images/options-sml.png "Simulator kullanmak için onay kutusu")](ios-simulator-images/options.png#lightbox)
+Benzetici 's pencerenin üstündeki araç çubuğunda yararlı düğmelerini içerir:
 
-İOS simülatörü bağlı Mac bilgisayarda sonra açılır. Uzak iOS simülatörü yeniden açmak için bu seçeneği işaretleyin.
-
-## <a name="features"></a>Özellikler
-
-Uzak iOS simülatörü sınamak ve tamamen Visual Studio'dan Windows simulator iOS uygulamaları hatalarını ayıklamak için bir yol sağlar.
-
-### <a name="simulator-window"></a>Simulator penceresi
-
-Pencere araç çubuğu düğmeleri simulator ile etkileşim kurmak için çeşitli içerir:
-
-- **Ev** – cihazın giriş düğmesini benzetimini yapar.
-- **Kilit** – (sizin doğru çekin kilidini açmak için) simulator kilitler.
-- **Ekran** – bir ekran görüntüsünü simulator diske kaydeder.
-- [**Ayarları** ](#settings) – klavye ve yerini yapılandırın.
-- Diğer [ **seçenekleri** ](#options) – çeşitli simulator seçenekleri döndürme, sallama gibi kullanılabilir veya benzetici diğer durumlarda çağırma. Bazı seçenekler yapılabileceği, araç çubuğunda veya penceresinde sağ tıklanarak görüntülenen üç nokta simgesinden erişilebilir.
+- **Ev** – iOS cihazında giriş düğmesini taklit eder
+- **Kilit** – simulator (kilidini açmak için sağdan) kilitler
+- **Ekran** – bir ekran görüntüsünü simulator kaydeder
+- [**Ayarları** ](#settings) – klavye, konum ve diğer ayarları görüntüler
+- [**Diğer Seçenekler** ](#other-options) – döndürme ve sallama hareketleri gibi çeşitli simulator seçeneklerini getirir
 
     [![](ios-simulator-images/maps-app-sml.png "Örnek iOS simülatörü eşlemeleri")](ios-simulator-images/maps-app.png#lightbox)
 
+## <a name="settings"></a>Ayarlar
 
-### <a name="settings"></a>Ayarlar
-
-"Dişli" simgesi açar **ayarları** penceresi:
+Araç çubuğunun dişli simgesine tıklayarak açılır **ayarları** penceresi:
 
 [![](ios-simulator-images/settings-sml.png "iOS simülatörü ayarları")](ios-simulator-images/settings.png#lightbox)
 
-Bu, simulator donanım klavyede etkinleştirmek ve hangi konumu (bir statik konumu ya da diğer taşıma konumu seçenekleri dahil) cihaza bildirilen seçin olanak sağlar.
+Bu ayarlar, donanım klavye etkinleştirmek için aygıt gereken bir konum seçin sağlar (statik ve taşıma konumlar desteklenir) rapor Touch ID'yi etkinleştirmek ve içerik ve ayarların simulator için sıfırlayın.
 
+## <a name="other-options"></a>Diğer seçenekleri
 
-
-### <a name="other-options"></a>Diğer seçenekleri
-
-Sallama hareketi tetikleme ve simulator yeniden döndürme gibi simulator kullanılabilir tüm seçenekleri görüntülemek için simulator penceresinde herhangi bir yere sağ tıklatın:
+Araç çubuğunun üç nokta düğmesini döndürme, sallama hareketleri ve yeniden başlatma gibi diğer seçenekleri ortaya çıkarır. Bu aynı seçenekler benzetici 's penceresinde herhangi bir yere sağ tıklayarak bir liste olarak görüntülenebilir:
 
 [![](ios-simulator-images/more-sml.png "iOS simülatörü ek ayarlar")](ios-simulator-images/more.png#lightbox)
 
-### <a name="touchscreen-support"></a>Dokunmatik desteği
+## <a name="touchscreen-support"></a>Dokunmatik desteği
 
-Çoğu modern Windows bilgisayarları dokunmatik ekranlar vardır ve uzak iOS simülatörü kullanıcı etkileşimleri iOS uygulamanızı test etmek için simulator penceresi touch olanak tanır.
+Çoğu modern Windows bilgisayarları dokunmatik ekranlar vardır. Düğümlerde iOS simülatörü for Windows Dokunma etkileşimleri desteklediğinden, aynı tutarak, geçirme ve fiziksel iOS cihazlarla kullanım çok parmak dokunma hareketleri ile uygulamanızı test edebilirsiniz.
 
-Bu çimdik, geçirme ve birden çok parmak dokunma hareketleri - daha önce yalnızca kolayca fiziksel cihazları test edilmesi şeyleri içerir.
+Benzer şekilde, düğümlerde iOS simülatörü Windows için Windows kalem giriş Apple kalem girdi olarak işler.
 
-Windows'ta kalem desteği, aynı zamanda Apple kalem giriş benzetici, çevrilir.
+## <a name="disabling-the-remoted-ios-simulator-for-windows"></a>Düğümlerde iOS simülatörü Windows için devre dışı bırakma
 
-<!--
-<a name="knownissues" />
+Düğümlerde iOS simülatörü Windows için devre dışı bırakmak için gidin **Araçlar > Seçenekler > Xamarin > iOS ayarları** ve onay kutusunu temizleyin **Windows Uzak Simulator**.
 
-# Known Issues
+[![](ios-simulator-images/options-sml.png "Simulator kullanmak için onay kutusu")](ios-simulator-images/options.png#lightbox)
 
- - Apple Watch devices may show in the Visual Studio device list, but are not yet supported.
- - Launching in **Release** mode may also start Apple’s simulator on the networked Mac.
- - Closing the remote iOS Simulator on Windows will not immediately stop debugging in Visual Studio. Stop debugging manually from the menu or the red button.
- - Opening too many different simulators simultaneously will produce unexpected results.
- - Exception of type `Foundation.NSErrorException` may be thrown while launching Simulators. Workaround is to kill csproxy (server process) on the Mac host and re-deploy to the simulator.
- - Performance may be slower when using Xcode 8
--->
+Açılır hata ayıklama devre dışı bırakıldıysa, bu seçenek ile ana bilgisayar bağlı Mac Simulator'da iOS derleyin.

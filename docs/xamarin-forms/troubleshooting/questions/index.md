@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: c0c8a6f4736bdcbb028425296f2e05dd500294d9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5a36c6ab14fdc7bfc5916456670be9c8fe4476ff
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="frequently-asked-questions"></a>Sıkça Sorulan Sorular
 
 
 ## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[Xamarin.Forms varsayılan şablonunu daha yeni bir NuGet paketine güncelleştirebilir miyim?](update-forms-template.md)
-Bu kılavuz Xamarin.Forms PCL şablon örnek olarak kullanılmıştır, ancak aynı genel yöntem Xamarin.Forms paylaşılan proje şablonu için de çalışır. 
+Bu kılavuz Xamarin.Forms .NET standart kitaplığı şablonu örnek olarak kullanılmıştır, ancak aynı genel yöntem Xamarin.Forms paylaşılan proje şablonu için de çalışır. 
 
 ## <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-filesforms-xaml-designermd"></a>[Visual Studio XAML tasarımcısı neden Xamarin.Forms XAML dosyaları için çalışmıyor?](forms-xaml-designer.md)
 Xamarin.Forms XAML dosyaları için şu anda görsel tasarımcılar desteklemiyor.

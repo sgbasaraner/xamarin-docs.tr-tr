@@ -5,12 +5,12 @@ ms.assetid: E281F89B-4142-4BD8-8882-FB65508BF69E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/02/2018
-ms.openlocfilehash: ae4d5b0b8cd384a11d130bc9258894e1cf4cfa36
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/09/2018
+ms.openlocfilehash: 625ba800ce498f80c0344c67e26bd79360de4002
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="walkthrough---using-touch-in-android"></a>İzlenecek yol - Android dokunma kullanma
 
@@ -38,7 +38,7 @@ Touch örnek, ilk etkinliğin görünümleri dokunmak için olay işleyicileri k
     private void TouchMeImageViewOnTouch(object sender, View.TouchEventArgs touchEventArgs)
     {
         string message;
-        switch (touchEventArgs.Event.Action & MotionEventArgs.Mask)
+        switch (touchEventArgs.Event.Action & MotionEventActions.Mask)
         {
             case MotionEventActions.Down:
             case MotionEventActions.Move:
@@ -344,13 +344,11 @@ Bu kılavuzda amaçları doğrultusunda, hareketleri kitaplığı zaten hareketi
 
     Şimdi bir onay işareti ekranda çizme ve görüntülenmesini bit eşlemi, sonraki ekran görüntülerinde gösterildiği gibi görünmelidir:
 
-    [![Çizilen onay işareti](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
-    [![Recognized onay işareti](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
+    [![Çizilen onay, onay işaretine tanınmıyor](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
 
     Son olarak, bir karalama ekranda çizin. Bu ekran görüntülerinde gösterildiği gibi onay kutusunu özgün görüntüye değiştirmeniz gerekir:
 
-    [![Karalama ekranda](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png#lightbox)
-    [![özgün görüntüsüne görüntülenir](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png#lightbox)
+    [![Karalama ekranında, özgün resim görüntülenir](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
 Artık bir anlayış dokunma ve hareket uygulamada Xamarin.Android kullanarak Android tümleştirme vardır.
 

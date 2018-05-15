@@ -5,17 +5,17 @@ ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2fcb97eafda15a73e2b7e5441f1d6c94f75af0ce
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b2c9ed50c48aee6343a20ddb28c49e1bd05d2153
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials okuma
 
 ![Yayın öncesi NuGet](~/media/shared/pre-release.png)
 
-**TextToSpeech** sınıfı etkinleştirir uygulama kullanan yerleşik geri metin aygıttan ve ayrıca altyapısı destekleyebilir sorgu kullanılabilir diller konuşma metin okuma altyapılarındaki.
+**TextToSpeech** sınıfı geri metin aygıttan ve ayrıca altyapısı destekleyebilir sorgu kullanılabilir diller konuşma metin okuma altyapılarındaki yerleşik kullanmak bir uygulama sağlar.
 
 ## <a name="using-text-to-speech"></a>Metin okuma kullanma
 
@@ -45,7 +45,7 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-Bu yöntem isteğe bağlı bir CancellationToken utterance bir başlar durdurmak için alır. 
+Bu yöntem isteğe bağlı bir CancellationToken başladıktan sonra utterance durdurmak için alır. 
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -115,7 +115,7 @@ Bu parametreler için desteklenen değerler şunlardır:
 
 ### <a name="speech-locales"></a>Konuşma yerel ayarlar
 
-Her platform geri metinde birden çok dil ve Vurgu ile iletişim kurması için yerel ayarlar sağlar. Her platform farklı bir sahip kodları ve olmasının nedeni, belirtmenin yolları bir platformlar Essentials sağlar `Locale` sınıfı ve bunlarla sorgulamak için bir yol `GetLocalesAsync`.
+Her platform geri metinde birden çok dil ve Vurgu ile iletişim kurması için yerel ayarlar sağlar. Her platform farklı kodları ve olmasının nedeni, belirtmenin yolları sahip bir platformlar Essentials sağlar `Locale` sınıfı ve bunlarla sorgulamak için bir yol `GetLocalesAsync`.
 
 ```csharp
 public async Task SpeakNow()
@@ -143,5 +143,5 @@ public async Task SpeakNow()
 
 ## <a name="api"></a>API
 
-- [TextToSpeech kaynak kodu](https://github.com/xamarin/Essentials/tree/master/Essentials/TextToSpeech)
+- [TextToSpeech kaynak kodu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
 - [TextToSpeech API belgeleri](xref:Xamarin.Essentials.TextToSpeech)

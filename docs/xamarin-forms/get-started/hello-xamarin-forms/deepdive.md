@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: ae4f2198e42ab404cabe148108a24ef2219bcf6b
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 9bb368ca72909489ca267794035a4c4d0883f109
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms derin Dalış
 
@@ -54,7 +54,7 @@ Mac için Visual Studio aşağıdaki koda düzenleme Visual Studio uygulama *ç�
 
 Projeleri şunlardır:
 
-- Phoneword – Bu, tüm paylaşılan kod ve paylaşılan UI tutan taşınabilir sınıf kitaplığı (PCL) projesi projesidir.
+- Phoneword – Bu, tüm paylaşılan kod ve paylaşılan UI tutan .NET standart kitaplığı proje projesidir.
 - Phoneword.Droid – bu proje Android özel kod tutar ve Android uygulamaları için giriş noktasıdır.
 - Phoneword.iOS – bu proje iOS özel kod tutar ve iOS uygulamaları için giriş noktasıdır.
 
@@ -94,7 +94,7 @@ Xamarin.Forms uygulaması için geleneksel bir platformlar arası uygulama aynı
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Xamarin.Forms uygulaması için geleneksel bir platformlar arası uygulama aynı şekilde geliştirilmiştir. Paylaşılan kod genellikle bir taşınabilir sınıf kitaplığı (PCL) olarak yerleştirilir ve platforma özgü uygulamaları paylaşılan kod kullanma. Aşağıdaki diyagramda bu ilişki Phoneword uygulama için genel bir bakış gösterilir:
+Xamarin.Forms uygulaması için geleneksel bir platformlar arası uygulama aynı şekilde geliştirilmiştir. Paylaşılan kod genellikle bir .NET standart kitaplığında yerleştirilir ve platforma özgü uygulamaları paylaşılan kod kullanma. Aşağıdaki diyagramda bu ilişki Phoneword uygulama için genel bir bakış gösterilir:
 
 ![](deepdive-images/xs/architecture.png "Phoneword mimarisi")
 

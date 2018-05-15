@@ -1,25 +1,27 @@
 ---
 title: 1. bölüm. XAML ile çalışmaya başlama
-description: Bir Xamarin.Forms uygulaması XAML genellikle bir sayfanın visual içeriği tanımlamak için kullanılır. XAML dosyası her zaman için biçimlendirme kodu destek sağlayan bir C# kod dosyası ile ilişkilidir. Birlikte, bu iki dosya alt görünümleri ve özellik başlatma içeren yeni bir sınıf tanımına katkıda. XAML dosyası içinde sınıfları ve özellikleri XML öğeleri ve öznitelikleri ile başvurulan ve biçimlendirme ve kodun arasında bağlantı kurulur.
+description: Bir Xamarin.Forms uygulaması XAML çoğunlukla bir sayfa ve bir arka plan kod dosyası birlikte çalışır visual içeriğini tanımlamak için kullanılır.
 ms.prod: xamarin
 ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 04/10/2018
-ms.openlocfilehash: bc535160816ad186baaa5e802eceb6ae40347d75
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/10/2018
+ms.openlocfilehash: 5883564841a4ef0e19518dd3b12ee00fe35ed778
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>1. bölüm. XAML ile çalışmaya başlama
 
-_Bir Xamarin.Forms uygulaması XAML genellikle bir sayfanın visual içeriği tanımlamak için kullanılır. XAML dosyası her zaman için biçimlendirme kodu destek sağlayan bir C# kod dosyası ile ilişkilidir. Birlikte, bu iki dosya alt görünümleri ve özellik başlatma içeren yeni bir sınıf tanımına katkıda. XAML dosyası içinde sınıfları ve özellikleri XML öğeleri ve öznitelikleri ile başvurulan ve biçimlendirme ve kodun arasında bağlantı kurulur._
+_Bir Xamarin.Forms uygulaması XAML çoğunlukla bir sayfa ve C# arka plan kod dosyasına birlikte çalışır visual içeriğini tanımlamak için kullanılır._
+
+Arka plan kodu dosya için biçimlendirme kodu desteği sağlar. Birlikte, bu iki dosya alt görünümleri ve özellik başlatma içeren yeni bir sınıf tanımına katkıda. XAML dosyası içinde sınıfları ve özellikleri XML öğeleri ve öznitelikleri ile başvurulan ve biçimlendirme ve kodun arasında bağlantı kurulur.
 
 ## <a name="creating-the-solution"></a>Çözüm oluşturma
 
-İlk XAML dosyanızı düzenlemeye başlamak için yeni bir Xamarin.Forms çözüm oluşturmak için Visual Studio veya Mac için Visual Studio'ı kullanın. (Ortamınıza karşılık gelen bu sayfanın üstündeki sekmesini seçin.)
+İlk XAML dosyanızı düzenlemeye başlamak için yeni bir Xamarin.Forms çözüm oluşturmak için Visual Studio veya Mac için Visual Studio'ı kullanın. (Ortamınıza karşılık gelen aşağıda sekmesini seçin.)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -29,13 +31,13 @@ Windows, Visual Studio seçmek için kullanın. **Dosya > Yeni > Proje** menüs�
 
 Çözüm için bir konum seçin, bir ad verin **XamlSamples** (veya ne olursa olsun, tercih ettiğiniz) ve basın **Tamam**.
 
-Sonraki ekranda, seçin **boş uygulama** şablon **Xamarin.Forms** UI teknoloji ve **taşınabilir sınıf kitaplığı (PCL)** kod paylaşımını stratejisi:
+Sonraki ekranda, seçin **boş uygulama** şablonu ve **.NET standart** kod paylaşımını stratejisi:
 
 ![](get-started-with-xaml-images/win/newcrossplatformapp.png "Yeni uygulama iletişim kutusu")
 
 Press **OK**. 
 
-Dört projeleri çözümde oluşturulur: **XamlSamples** taşınabilir sınıf kitaplığı (PCL) **XamlSamples.Android**, **XamlSamples.iOS**ve evrensel Windows Platform çözümünü **XamlSamples.UWP**.
+Dört projeleri çözümde oluşturulur: **XamlSamples** .NET standart kitaplığı, **XamlSamples.Android**, **XamlSamples.iOS**ve evrensel Windows platformu Çözüm, **XamlSamples.UWP**.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -45,7 +47,7 @@ Mac için Visual Studio'da seçin **Dosya > Yeni bir çözüm** menüsünde. İ�
 
 Tuşuna **sonraki**.
 
-Sonraki iletişim kutusunda projenin adını verin **XamlSamples** (veya ne olursa olsun, tercih ettiğiniz). Olduğundan emin olun **kullanım taşınabilir sınıf kitaplığı** radyo düğmesi seçilirse ve **kullanım XAML kullanıcı arabirimi dosyaları için** denetlenir:
+Sonraki iletişim kutusunda projenin adını verin **XamlSamples** (veya ne olursa olsun, tercih ettiğiniz). Olduğundan emin olun **kullanım .NET standart** radyo düğmesinin seçili:
 
 ![](get-started-with-xaml-images/mac/newprojectdialog2.png "Yeni Proje iletişim kutusu 2")
 
@@ -57,17 +59,17 @@ Aşağıdaki iletişim kutusunda, proje için bir konum seçebilirsiniz:
 
 Tuşuna **oluşturma**
 
-Üç projenin çözümde oluşturulur: **XamlSamples** taşınabilir sınıf kitaplığı (PCL) **XamlSamples.Android**, ve **XamlSamples.iOS**. 
+Üç projenin çözümde oluşturulur: **XamlSamples** .NET standart kitaplığı, **XamlSamples.Android**, ve **XamlSamples.iOS**. 
 
 -----
 
 Oluşturduktan sonra **XamlSamples** çözümü, çözüm başlangıç projesi olarak çeşitli platform projeleri seçerek geliştirme ortamınızı test etmek isteyebilirsiniz ve tarafından oluşturulan oluşturma ve basit uygulama dağıtma Proje şablonu telefon Öykünücüler ya da gerçek aygıtlar.
 
-Paylaşılan platforma özgü kod yazmaya gerekmedikçe **XamlSamples** PCL projedir Burada, neredeyse tüm programlama zamanınızı harcama. Bu makaleler dışında bu proje girmemeyi.
+Paylaşılan platforma özgü kod yazmaya gerekmedikçe **XamlSamples** .NET standart kitaplığı projedir Burada, neredeyse tüm programlama zamanınızı harcama. Bu makaleler dışında bu proje girmemeyi.
 
 ### <a name="anatomy-of-a-xaml-file"></a>XAML dosyası anatomisi
 
-İçinde **XamlSamples** taşınabilir sınıf kitaplığı aşağıdaki adlara sahip dosyaların çifti şunlardır:
+İçinde **XamlSamples** .NET standart kitaplığı aşağıdaki adlara sahip dosyaların çifti şunlardır:
 
 - **App.XAML**, XAML dosyası; ve
 - **App.xaml.cs**, C# *arka plan kodu* XAML dosyayla ilişkili dosya.
@@ -76,12 +78,10 @@ Yanındaki oka tıklayın gerekir **App.xaml** için arka plan kod dosyasına ba
 
 Her ikisi de **App.xaml** ve **App.xaml.cs** adlı bir sınıf katkıda `App` , türetilen `Application`. Çoğu XAML dosyaları sınıflarıyla türeyen bir sınıf katkıda `ContentPage`; tüm sayfanın visual içeriği tanımlamak için XAML dosyaları kullanın. Bu dosyaların diğer iki geçerlidir **XamlSamples** proje:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 - **MainPage.xaml**, XAML dosyası; ve
 - **MainPage.xaml.cs**, C# arka plan kod dosyasına.
 
-**MainPage.xaml** dosya şu şekilde görünür:
+**MainPage.xaml** dosya şu şekilde görünür (biçimlendirme biraz farklı olabilir, ancak):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,56 +89,27 @@ Her ikisi de **App.xaml** ve **App.xaml.cs** adlı bir sınıf katkıda `App` , 
              xmlns:local="clr-namespace:XamlSamples"
              x:Class="XamlSamples.MainPage">
 
-    <Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin Forms!" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+    </StackLayout>
 
 </ContentPage>
 ```
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-- **XamlSamplesPage.xaml**, XAML dosyası; ve
-- **XamlSamplesPage.xaml.cs**, C# arka plan kod dosyasına.
-
-**XamlSamplesPage.xaml** dosya şu şekilde görünür:
-
-```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:XamlSamples" 
-             x:Class="XamlSamples.XamlSamplesPage">
-
-    <Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
-</ContentPage>
-```
-
------
 
 İki XML ad alanı ( `xmlns`) bildirimleri URI, Xamarin'ın web sitesinde gibi görünen ilk ve ikinci Microsoft'un bakın. Hangi bu URI noktasına denetimi rahatsız yok. Var. hiçbir şey yoktur. Yalnızca Xamarin ve Microsoft tarafından sahip olunan URI'ler oldukları ve bunlar temel sürümü tanımlayıcıları işlev.
 
 Önek ile XAML dosyası içinde tanımlanan etiketleri sınıflara Xamarin.Forms, örneğin başvurmadığından ilk XML ad alanı bildirimi anlamına gelir `ContentPage`. İkinci ad alanı bildiriminin öneki tanımlar `x`. Bu kullanılan çeşitli öğeleri ve XAML için iç öznitelikleri kendisi ve hangi diğer XAML uygulamaları tarafından desteklenir. Ancak, bu öğeleri ve özniteliklerinin URI'de katıştırılmış yıl bağlı olarak biraz farklılık gösterir. Xamarin.Forms 2009 XAML belirtimi, ancak bunu tüm destekler.
 
-`local` Ad alanı bildiriminin PCL projeden diğer sınıflara erişiminizi sağlar.
+`local` Ad alanı bildiriminin diğer sınıflar .NET standart kitaplığı projeden erişmenize olanak sağlar.
 
 İlk metnimizi sonunda `x` öneki adlı bir özniteliği için kullanılan `Class`. Çünkü bu kullanımını `x` önektir XAML ad uzayı için XAML öznitelikleri neredeyse Evrensel gibi `Class` neredeyse her zaman denir `x:Class`.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 `x:Class` Özniteliği, tam bir .NET sınıfı adı belirtir: `MainPage` sınıfını `XamlSamples` ad alanı. Bu XAML dosyası adlı yeni bir sınıf tanımlar yani `MainPage` içinde `XamlSamples` türetilen ad alanı `ContentPage`— etiketinde `x:Class` özniteliği görüntülenir.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-`x:Class` Özniteliği, tam bir .NET sınıfı adı belirtir: `XamlSamplesPage` sınıfını `XamlSamples` ad alanı. Bu XAML dosyası adlı yeni bir sınıf tanımlar yani `XamlSamplesPage` içinde `XamlSamples` türetilen ad alanı `ContentPage`— etiketinde `x:Class` özniteliği görüntülenir.
-
------
-
 `x:Class` Özniteliği yalnızca türetilmiş bir C# sınıf tanımlamak için bir XAML dosyasının kök öğesinin görünür. Bu XAML dosyasında tanımlanmış yalnızca yeni bir sınıftır. XAML dosyasında göründüğü herşeyi bunun yerine yalnızca varolan sınıflardan örneği ve başlatıldı.
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 **MainPage.xaml.cs** dosya şu şekilde görünür (kullanılmayan yanı sıra `using` yönergeleri):
 
@@ -161,34 +132,7 @@ namespace XamlSamples
 
 Visual Studio proje oluşturduğunda, bir C# kod dosyası oluşturmak için XAML dosyası ayrıştırır. Bakarsanız **XamlSamples\XamlSamples\obj\Debug** dizin adlı bir dosya bulabilirsiniz **XamlSamples.MainPage.xaml.g.cs**. 'g' oluşturulan için anlamına gelir. Bu diğer parçalı sınıf tanımıdır `MainPage` tanımını içeren `InitializeComponent` yöntemi çağrılır `MainPage` Oluşturucusu. Bu iki kısmi `MainPage` sınıf tanımları sonra derlenmesi birlikte. XAML dosyası ya da bir ikili biçimindeki XAML dosyasının mı XAML veya derlenir bağlı olarak, yürütülebilir dosya katıştırılır.
 
-Çalışma zamanında belirli platform proje çağrılarında kod bir `LoadApplication` için yeni bir örneğini geçirerek yöntemini `App` PCL sınıfta. `App` Sınıfı oluşturucusu başlatır `MainPage`. Bu sınıf çağırır `InitializeComponent`, ardından çağıran `LoadFromXaml` XAML dosyası (ya da kendi derlenmiş ikili) PCL ayıklar yöntemi. `LoadFromXaml` XAML dosyası içinde tanımlanan tüm nesnelerini başlatır, bunları birlikte tüm üst-alt ilişkilerinde bağlandığında, XAML dosyasında ayarlanan olayları kodda tanımlanan olay işleyicileri ekler ve nesnelerin sonuç ağaç sayfasının içeriği ayarlar.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-**XamlSamplesPage.xaml.cs** dosya şu şekilde görünür:
-
-```csharp
-using Xamarin.Forms;
-
-namespace XamlSamples
-{
-    public partial class XamlSamplesPage : ContentPage
-    {
-        public XamlSamplesPage()
-        {
-            InitializeComponent();
-        }
-    }
-}
-```
-
-`XamlSamplesPage` Sınıfı türer `ContentPage`, ancak fark `partial` sınıf tanımının. Başka bir C# dosyası için başka bir parçalı sınıf tanımıyla olmalıdır var. öneren `XamlSamplesPage`, ancak olduğu? Ve ne `InitializeComponent` yöntemi?
-
-Mac için Visual Studio proje oluşturduğunda, bir C# kod dosyası oluşturmak için XAML dosyası ayrıştırır. Bakarsanız **XamlSamples\XamlSamples\obj\Debug** dizin adlı bir dosya bulabilirsiniz **XamlSamples.XamlSamplesPage.xaml.g.cs**. 'g' oluşturulan için anlamına gelir. Bu diğer parçalı sınıf tanımıdır `XamlSamplesPage` tanımını içeren `InitializeComponent` yöntemi çağrılır `XamlSamplesPage` Oluşturucusu.  Bu iki kısmi `XamlSamplesPage` sınıf tanımları sonra derlenmesi birlikte. XAML dosyası ya da bir ikili biçimindeki XAML dosyasının mı XAML veya derlenir bağlı olarak, yürütülebilir dosya katıştırılır.
-
-Çalışma zamanında belirli platform proje çağrılarında kod bir `LoadApplication` için yeni bir örneğini geçirerek yöntemini `App` PCL sınıfta. `App` Sınıfı oluşturucusu başlatır `XamlSamplesPage`. Bu sınıf çağırır `InitializeComponent`, ardından çağıran `LoadFromXaml` XAML dosyası (ya da kendi derlenmiş ikili) PCL ayıklar yöntemi. `LoadFromXaml` XAML dosyası içinde tanımlanan tüm nesnelerini başlatır, bunları birlikte tüm üst-alt ilişkilerinde bağlandığında, XAML dosyasında ayarlanan olayları kodda tanımlanan olay işleyicileri ekler ve nesnelerin sonuç ağaç sayfasının içeriği ayarlar.
-
------
+Çalışma zamanında belirli platform proje çağrılarında kod bir `LoadApplication` için yeni bir örneğini geçirerek yöntemini `App` .NET standart Kitaplığı'nda sınıfı. `App` Sınıfı oluşturucusu başlatır `MainPage`. Bu sınıf çağırır `InitializeComponent`, ardından çağıran `LoadFromXaml` XAML dosyası (ya da kendi derlenmiş ikili) .NET standart Kitaplığı'ndan ayıklar yöntemi. `LoadFromXaml` XAML dosyası içinde tanımlanan tüm nesnelerini başlatır, bunları birlikte tüm üst-alt ilişkilerinde bağlandığında, XAML dosyasında ayarlanan olayları kodda tanımlanan olay işleyicileri ekler ve nesnelerin sonuç ağaç sayfasının içeriği ayarlar.
 
 Normal olarak oluşturulan kod dosyalarıyla kadar zaman harcamanız gerekmez ancak bunlarla bilgi sahibi olmanız gerekir böylece bazen çalışma zamanı özel durumları oluşturulan dosyalar kodunda üzerinde oluşturulur.
 
@@ -198,39 +142,17 @@ Derleme ve bu program çalıştırıldığında `Label` öğe XAML da anlaşıla
 
 Daha ilginç görseller için ihtiyacınız olan tek şey daha fazla XAML ilginç.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-## <a name="preliminaries"></a>Başlangıç kuralları
-
-Dosya adları Visual Studio'da Mac için Windows altında çalışan Visual Studio tarafından oluşturulan dosyalar ile tutarlı yapmak için yeniden adlandırma **XamlSamplesPage.xaml** için **MainPage.xaml**, ve  **XamlSamplesPage.xaml.cs** için **MainPage.xaml.cs**. İçinde **XamlSamplesPage.xaml** dosya, değişiklik `XamlSamplesPage` için `MainPage`. İçinde **XamlSamplesPage.xaml.cs** dosya, iki oluşumları değiştirmek `XamlSamplesPage` için `MainPage`. İçinde **App.xaml.cs** dosya, deyimi değiştirin
-
-```csharp
-MainPage = new XamlSamplesPage();
-```
-
-Yeni değer:
-
-```csharp
-MainPage = new MainPage();
-```
-
------
-
-Program hala derler ve devam etmeden önce dağıtır sınayın.
-
 ## <a name="adding-new-xaml-pages"></a>Yeni XAML sayfaları ekleme
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-XAML tabanlı diğer eklemek için `ContentPage` , projeniz sınıflarını seçin **XamlSamples** PCL proje ve çağırma **Proje > Yeni Öğe Ekle** menü öğesi. Sol tarafındaki **Yeni Öğe Ekle** iletişim kutusunda **Visual C#** ve **Xamarin.Forms**. Listeden seçin **içerik sayfasını** (değil **içerik sayfası (C#)**, yalnızca kod sayfası oluşturur veya **içerik görünümü**, bir sayfa değil). Örneğin, sayfa, bir ad verin **HelloXamlPage.xaml**:
+XAML tabanlı diğer eklemek için `ContentPage` , projeniz sınıflarını seçin **XamlSamples** .NET standart kitaplığı proje ve çağırma **Proje > Yeni Öğe Ekle** menü öğesi. Sol tarafındaki **Yeni Öğe Ekle** iletişim kutusunda **Visual C#** ve **Xamarin.Forms**. Listeden seçin **içerik sayfasını** (değil **içerik sayfası (C#)**, yalnızca kod sayfası oluşturur veya **içerik görünümü**, bir sayfa değil). Örneğin, sayfa, bir ad verin **HelloXamlPage.xaml**:
 
 ![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "Yeni öğe iletişim ekleyin")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-XAML tabanlı diğer eklemek için `ContentPage` , projeniz sınıflarını seçin **XamlSamples** PCL proje ve çağırma **Dosya > yeni dosya** menü öğesi. Sol tarafındaki **yeni dosya** iletişim kutusunda **Forms** soldaki ve **Forms ContentPage Xaml** (değil **Forms ContentPage**, hangi yalnızca kod sayfası oluşturur veya **içerik görünümü**, bir sayfa değil). Örneğin, sayfa, bir ad verin **HelloXamlPage**:
+XAML tabanlı diğer eklemek için `ContentPage` , projeniz sınıflarını seçin **XamlSamples** .NET standart kitaplığı proje ve çağırma **Dosya > yeni dosya** menü öğesi. Sol tarafındaki **yeni dosya** iletişim kutusunda **Forms** soldaki ve **Forms ContentPage Xaml** (değil **Forms ContentPage**, hangi yalnızca kod sayfası oluşturur veya **içerik görünümü**, bir sayfa değil). Örneğin, sayfa, bir ad verin **HelloXamlPage**:
 
 ![](get-started-with-xaml-images/mac/newfiledialog.png "Yeni dosya iletişim kutusu")
 

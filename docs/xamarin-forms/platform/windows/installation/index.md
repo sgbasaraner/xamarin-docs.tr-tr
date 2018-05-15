@@ -7,39 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: b6ea988aa8c058fe5a92a17e9b72f81e0ccb12db
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: aed240dd403957e5935666d4179a6d642c411b86
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="setup-windows-projects"></a>Kurulum Windows projeleri
 
 _Varolan bir Xamarin.Forms çözümü yeni Windows projelerine ekleme_
 
 Eski Xamarin.Forms çözümleri (veya üzerinde macOS oluşturulanlar) Evrensel Windows Platformu (UWP) uygulaması projeleri sahip olmaz. Bu nedenle, bir Windows 10 (UWP) uygulaması oluşturmak için bir UWP projesi el ile eklemeniz gerekir.
-
-<a name="pcl" />
-
-## <a name="update-the-pcl-profile"></a>PCL profilini güncelleştir
-
-Varolan Xamarin.Forms uygulamanızı taşınabilir sınıf kitaplığı (PCL) şablonu kullandıysanız, kendi profili güncelleştirmeniz gerekir.
-
-1. **sağ tıklayın > Özellikler** (varolan ayarlarınızı farklı olabilir)
-
-  ![](images/targets.png "PCL hedefleri")
-
-2. Tıklayın **Değiştir...**  düğmesi
-
-3. Olun **Windows 8** ve **Windows Phone 8.1** seçenekleri seçilidir (ve **Windows Phone Silveright** olan *XML'deki seçili*):
-
-  ![](images/pcl.png "PCL hedef seçenekleri")
-
-4. Tuşuna **Tamam** ve değişiklikleri kaydedin.
-
-Bu karşılık gelir **profil 111** açılan listeyi kullanarak Mac için Visual Studio'da, PCL yapılandırıyorsanız.
-
-  ![](images/pcl-xs.png "PCL profili 111")
 
 ## <a name="add-a-universal-windows-platform-app"></a>Evrensel Windows eklemek Platform uygulama
 
@@ -65,7 +43,7 @@ Windows 10 telefonlar, tabletler ve masaüstü bilgisayarlar üzerinde çalışa
 
   [![](universal-images/configuration-sml.png "Yapılandırma Yöneticisi penceresi")](universal-images/configuration.png#lightbox "Yapılandırma Yöneticisi penceresi")
 
- 5. Sağ tıklatın ve proje **Ekle > başvuru** ve bir başvuru (PCL, .NET Standard veya paylaşılan Proje) Xamarin.Forms uygulaması projesi oluşturun.
+ 5. Sağ tıklatın ve proje **Ekle > başvuru** ve bir başvuru (.NET standart veya paylaşılan Proje) Xamarin.Forms uygulaması projesi oluşturun.
 
   ![](universal-images/addref-sml.png "Başvuru Yöneticisi iletişim kutusu")
 

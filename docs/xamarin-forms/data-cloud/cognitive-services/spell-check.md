@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 41bd79b22aa193dd5303847997bc07e8e8d12e58
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 259be743a706c9316e2e275ff305a0fe5ad97906
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Bing yazım denetimi API kullanarak yazım denetimi
 
@@ -90,7 +90,7 @@ async Task<string> SendRequestAsync(string url)
 }
 ```
 
-API anahtar değeri olarak ekleyerek bu yöntem GET isteğini derlemeler `Ocp-Apim-Subscription-Key` üstbilgi. GET isteğini sonra gönderilir `SpellCheck` çevrilecek belirten metin istek URL'si ve yazım denetimi modu ile API. Yanıt ardından okuma ve çağıran yönteme döndürdü.
+Bu yöntem, GET isteği gönderir `SpellCheck` çevrilecek belirten metin istek URL'si ve yazım denetimi modu ile API. Yanıt ardından okuma ve çağıran yönteme döndürdü.
 
 `SpellCheck` API istek başarılı olduğunu belirten, isteğin geçerli olduğunu ve istenen bilgileri yanıtta sağlanan yanıt, HTTP durum kodu 200 (Tamam) gönderir. Yanıt nesneleri listesi için bkz: [yanıt nesneleri](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects).
 

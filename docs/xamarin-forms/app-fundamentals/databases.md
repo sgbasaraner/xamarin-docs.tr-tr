@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: 95c5f482e1bf3e55fa4c6fef18b1dbe6274f33e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d1f11ed1b52354dedbdb8893a96e0ae7589d5389
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="local-databases"></a>Yerel veritabanı
 
@@ -19,7 +19,7 @@ _Xamarin.Forms veritabanı güdümlü uygulamaları yüklemek ve paylaşılan ko
 
 ## <a name="overview"></a>Genel Bakış
 
-Xamarin.Forms uygulamalar kullanabilir [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) veritabanı işlemlere eklemenizi paket başvurarak kod paylaşılan `SQLite` NuGet sevk sınıfları. Veritabanı işlemleri veritabanı depolanacağı için bir yol döndürme platforma özgü projeleri Xamarin.Forms çözümün taşınabilir sınıf kitaplığı (PCL) projesiyle tanımlanabilir.
+Xamarin.Forms uygulamalar kullanabilir [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) veritabanı işlemlere eklemenizi paket başvurarak kod paylaşılan `SQLite` NuGet sevk sınıfları. Xamarin.Forms çözümünü .NET standart kitaplığı projesinde Veritabanı depolanacağı için bir yol döndürme platforma özgü projeleri ile veritabanı işlemleri tanımlanabilir.
 
 Eşlik eden [örnek uygulama](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) basit bir Yapılacaklar listesi uygulamasıdır. Aşağıdaki ekran görüntüleri örnek her platformda nasıl göründüğünü gösterir:
 
@@ -126,7 +126,7 @@ Tüm veri erişim kodu tüm platformlarda paylaşılması için PCL projede yaz�
 
 <a name="PCL_iOS" />
 
-### <a name="ios-project"></a>iOS Project
+### <a name="ios-project"></a>iOS projesi
 
 İOS uygulama yapılandırmak için iOS kullanarak projesi aynı NuGet paketi ekleme *NuGet* penceresi:
 
@@ -160,7 +160,7 @@ Kod içeren Not `assembly:Dependency` bu uygulama tarafından bulunabilmesini b�
 
 <a name="PCL_Android" />
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Android projesi
 
 Android uygulaması yapılandırmak için aynı NuGet paketi kullanarak Android projesi ekleme *NuGet* penceresi:
 

@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d06c3f95f55edb4870279bfc7d5326be4af4b3bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5774d91dad7b733a03219dcce1434798f70d4564
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="getting-started-with-datapages"></a>DataPages ile çalışmaya başlama
 
@@ -26,7 +26,7 @@ Basit veri sürücüsü sayfasını DataPages Önizleme kullanarak oluşturmaya 
 
 ## <a name="1-add-nuget-packages"></a>1. NuGet paketleri ekleme
 
-Xamarin.Forms PCL ve uygulama projeleri için bu Nuget paketleri ekleyin:
+Bu Nuget paketleri Xamarin.Forms .NET standart kitaplığı ve uygulama projelerinizi ekleyin:
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base
@@ -135,7 +135,7 @@ Yukarıdaki adımları çalışma veri sayfasındaki neden:
 
 [![](get-started-images/demo-sml.png "DataPages örnek uygulama")](get-started-images/demo.png#lightbox "DataPages örnek uygulama")
 
-Bu çalışır çünkü önceden derlenmiş stili **"Olayları"** açık tema Nuget paketi varsa ve veri kaynağı (ör. aynı tanımlanan stiller "title", "image", "presenter").
+Bu çalışır çünkü önceden derlenmiş stili **"Olayları"** açık tema Nuget paketi varsa ve veri kaynağı (ör. aynı tanımlanan stiller "title", "Görüntü", "Sunucu").
 
 "Olayları" `StyleClass` görüntülemek için yerleşik `ListDataPage` özel bir denetimle `CardView` kontrol tanımlıysa Xamarin.Forms.Pages. `CardView` Denetimi üç özellik vardır: `ImageSource`, `Text`, ve `Detail`. Temanın sabit kodlanmış görüntülenmesi için bu özellikleri (JSON dosyasından) alanları üç veri bağlamaktır.
 

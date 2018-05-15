@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 6945d64e37bc7e0de930093d8a3f71590026182d
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: e552a0bf76572d50eb0d4618af69fc1179979f97
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Resim Kitaplığı'ndan bir fotoğraf çekme
 
@@ -27,7 +27,7 @@ Bu makalede kullanıcıya, telefonunuzun Resim Kitaplığı'ndan bir fotoğraf �
 
 ## <a name="creating-the-interface"></a>Arabirimi oluşturma
 
-İlk olarak, bir arabirim istenen işlevselliği ifade paylaşılan kod içinde oluşturun. Fotoğraf çekme uygulama söz konusu olduğunda, yalnızca bir yöntem gereklidir. Bu tanımlanan [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) arabirimi örnek kod taşınabilir Sınıf Kitaplığı'nda:
+İlk olarak, bir arabirim istenen işlevselliği ifade paylaşılan kod içinde oluşturun. Fotoğraf çekme uygulama söz konusu olduğunda, yalnızca bir yöntem gereklidir. Bu tanımlanan [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) örnek kod, .NET standart kitaplığı arabiriminde:
 
 ```csharp
 namespace DependencyServiceSample
@@ -261,7 +261,7 @@ namespace DependencyServiceSample.UWP
 
 ## <a name="implementing-in-shared-code"></a>Paylaşılan kod içinde uygulama
 
-Her platform için arabirimi uygulanmıştır, ortak taşınabilir Sınıf Kitaplığı'nda uygulama bunu yararlanabilir.
+Her platform için arabirimi uygulanmıştır, .NET standart kitaplığı uygulamada bunu yararlanabilir.
 
 [ `App` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/DependencyServiceSample.cs) Sınıfı oluşturur bir `Button` fotoğraf seçmek için:
 

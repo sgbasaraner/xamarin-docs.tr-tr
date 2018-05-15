@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 5fcc3405780e0c5e8a0e8d32caf35abf59808c8e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7ce541134e6db9a26699f96ab3114ced2ad22244
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Xamarin.Forms içinde CocosSharp kullanma
 
@@ -53,13 +53,13 @@ Daha ayrıntılı bilgiler bulunabilir [CocosSharp bölüm](~/graphics-games/coc
 ## <a name="adding-the-cocossharp-nuget-packages"></a>CocosSharp Nuget paketleri ekleme
 
 CocosSharp kullanmadan önce geliştiricilerin kendi Xamarin.Forms proje birkaç eklemeler yapmanız gerekir.
-Bu kılavuz bir iOS, Android ve PCL Xamarin.Forms projeyle varsayar projesi.
-Tüm kod PCL projesinde yazılır; Ancak, kitaplıklar iOS ve Android projeleri eklenmesi gerekir.
+Bu kılavuz bir iOS, Android ve .NET standart Xamarin.Forms projeyle varsayar kitaplığı projesi.
+Tüm kod .NET standart kitaplığı projesinde yazılır; Ancak, kitaplıklar iOS ve Android projeleri eklenmesi gerekir.
 
 CocosSharp Nuget paketi tüm CocosSharp nesneleri oluşturmak için gereken nesneleri içerir.
 CocosSharp.Forms nuget paketini içeren `CocosSharpView` Xamarin.Forms CocosSharp barındırmak için kullanılan sınıf.
 Ekleme **CocosSharp.Forms** NuGet ve **CocosSharp** de otomatik olarak eklenir.
-Bunu yapmak için PCL üzerinde 's sağ <span class="UIItem">paketleri</span> klasörü ve select <span class="UIItem">paketleri Ekle... </span>. Arama terimi girin <span class="UIItem">CocosSharp.Forms</span>seçin <span class="UIItem">Xamarin.Forms CocosSharp</span>, ardından <span class="UIItem">Paketi Ekle</span>.
+Bunu yapmak için sağ <span class="UIItem">paketleri</span> seçin ve .NET standart kitaplığı proje klasöründe <span class="UIItem">paketleri Ekle... </span>. Arama terimi girin <span class="UIItem">CocosSharp.Forms</span>seçin <span class="UIItem">Xamarin.Forms CocosSharp</span>, ardından <span class="UIItem">Paketi Ekle</span>.
 
 ![](cocossharp-images/image1.png "Paketleri iletişim ekleyin")
 
@@ -198,7 +198,7 @@ Aşağıdaki grafikte, tipik bir CocosSharp hiyerarşi görselleştirmenize yard
 
 Yalnızca bir `CCScene` aynı anda etkin olabilir. Çoğu birden çok kullanabilmesi `CCLayer` sıralama içeriği ancak uygulamamız örneklerine tek kullanır. Benzer şekilde, birden çok görsel nesneler çoğu oyunlar kullanır, ancak biz yalnızca uygulamamıza birinde sahip olacaksınız. Daha ayrıntılı bir tartışma visual hiyerarşi bulunabilir CocosSharp hakkında [BouncingGame izlenecek](~/graphics-games/cocossharp/bouncing-game.md).
 
-Başlangıçta `GameScene` sınıfı neredeyse boş olacaktır – yalnızca başvurusunda karşılamak için oluşturacağız `HomePage`. Adlı, PCL yeni bir sınıf ekleyin `GameScene`. Gelen alması gerektiğini `CCScene` gibi sınıfı:
+Başlangıçta `GameScene` sınıfı neredeyse boş olacaktır – yalnızca başvurusunda karşılamak için oluşturacağız `HomePage`. Yeni bir sınıf adlı .NET standart kitaplığını projenize eklemek `GameScene`. Gelen alması gerektiğini `CCScene` gibi sınıfı:
 
 
 ```csharp
@@ -222,7 +222,7 @@ GameScene gameScene;
 
 Biz artık Projemizin derleyebilir ve çalışan CocosSharp görmek için çalıştırın. Biz için herhangi bir şey eklemediniz bizim `GameScene,` sayfamızı'nin üst yarısı siyah – CocosSharp Sahne varsayılan rengini gelir:
 
-![](cocossharp-images/image5.png "Blank GameScene")
+![](cocossharp-images/image5.png "Boş GameScene")
 
 <a name="4" />
 

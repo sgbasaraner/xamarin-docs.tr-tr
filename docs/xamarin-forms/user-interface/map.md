@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: e296ca79ee03e7fc61532758219b65946a8d4381
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 6063732e08680974b8d4a2358bfd85b176b36aec
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="map"></a>eşleme
 
@@ -62,7 +62,7 @@ Bu çağrı her platform için aşağıdaki dosyaları ekleyin:
 -  **Android** -MainActivity.cs dosya `OnCreate` yöntemi.
 -  **UWP** -MainPage.xaml.cs dosyasında `MainPage` Oluşturucusu.
 
-NuGet paketi eklendi ve başlatma yöntemi her applcation içinde bir kez `Xamarin.Forms.Maps` API'leri ortak PCL ya da paylaşılan proje kod içinde kullanılabilir.
+NuGet paketi eklendi ve başlatma yöntemi her applcation içinde bir kez `Xamarin.Forms.Maps` API'leri .NET standart ortak kitaplığı proje veya paylaşılan proje kodunu kullanılabilir.
 
 <a name="Platform_Configuration" />
 

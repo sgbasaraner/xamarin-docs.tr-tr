@@ -7,15 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 6aea0faa65944f33783940178a1d2ce3ef65df1a
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: fc479b4b0651e3312b855673730be21c2076d833
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>Xamarin.Forms varsayılan şablonu için daha yeni bir NuGet paketi güncelleştirebilir miyim?
 
-Bu kılavuz Xamarin.Forms PCL şablon örnek olarak kullanılmıştır, ancak aynı genel yöntem Xamarin.Forms paylaşılan proje şablonu için de çalışır. Bu kılavuzu için 1.5.1.6471 2.1.0.6529 Xamarin.Forms güncelleştirme örneği ile yazılmıştır, ancak aynı adımları diğer sürümler yerine varsayılan olarak ayarlamak mümkündür.
+Bu kılavuz Xamarin.Forms .NET standart kitaplığı şablonu örnek olarak kullanılmıştır, ancak aynı genel yöntem Xamarin.Forms paylaşılan proje şablonu için de çalışır. Bu kılavuzu için 1.5.1.6471 2.1.0.6529 Xamarin.Forms güncelleştirme örneği ile yazılmıştır, ancak aynı adımları diğer sürümler yerine varsayılan olarak ayarlamak mümkündür.
 
 1.  Özgün şablon kopyalama `.zip` gelen:
 

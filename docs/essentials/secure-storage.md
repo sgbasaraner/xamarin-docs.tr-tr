@@ -5,17 +5,39 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: 24d1e29ba0203aaafc3e21533478f6c505cc09b3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: e64160a5579bffa8e9e9820db1a3ba39bdf7304e
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials güvenli depolama
 
 ![Yayın öncesi NuGet](~/media/shared/pre-release.png)
 
 **SecureStorage** sınıfı yardımcı olan basit bir anahtar/değer çiftleri güvenli bir şekilde saklayın.
+
+## <a name="getting-started"></a>Başlarken
+
+Erişim için **SecureStorage** işlevselliği, aşağıdaki platforma özgü Kurulum gereklidir:
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Ek kurulumu gerekmez.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+İOS simulator'da geliştirirken, etkinleştirme **Anahtarlık** yetkilendirme ve uygulamanın paket tanımlayıcısı için bir Anahtarlık erişim grubu ekleyin.
+
+Açık **Entitlements.plist** iOS projesi ve Bul **Anahtarlık** yetkilendirme ve etkinleştirin. Bu uygulamanın tanımlayıcı bir grup olarak otomatik olarak ekler.
+
+Proje Özellikleri'nde altında **iOS paket imzalama** ayarlamak **özel yetkilendirmeler** için **Entitlements.plist**.
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+Ek kurulumu gerekmez.
+
+-----
 
 ## <a name="using-secure-storage"></a>Güvenli Depolama kullanma
 
@@ -75,5 +97,5 @@ Bu API, küçük miktarda metin depolamak için tasarlanmıştır.  Büyük mikt
 
 ## <a name="api"></a>API
 
-- [SecureStorage kaynak kodu](https://github.com/xamarin/Essentials/tree/master/Essentials/SecureStorage)
+- [SecureStorage kaynak kodu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
 - [SecureStorage API belgeleri](xref:Xamarin.Essentials.SecureStorage)

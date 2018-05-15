@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ffb013c355db34ef7456404d6f9dcaec75743420
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: af0dbef84d8ceb178fe5c1ac6fc7194c178141dc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Bir HybridWebView uygulama
 
@@ -74,7 +74,7 @@ public class HybridWebView : View
 }
 ```
 
-`HybridWebView` Özel denetim taşınabilir sınıf kitaplığı (PCL) projesinde oluşturulur ve denetim için aşağıdaki API tanımlar:
+`HybridWebView` Özel denetim .NET standart kitaplığı projesinde oluşturulur ve denetim için aşağıdaki API tanımlar:
 
 - A `Uri` yüklenmesi web sayfasının adresini belirten özellik.
 - A `RegisterAction` kaydeder yöntemi bir `Action` denetimi ile. JavaScript aracılığıyla başvurulan HTML dosyası içinde yer alan gelen kayıtlı eylem çağrılacak `Uri` özelliği.
@@ -85,7 +85,7 @@ public class HybridWebView : View
 
 ## <a name="consuming-the-hybridwebview"></a>HybridWebView kullanma
 
-`HybridWebView` Özel denetim başvurulabilir XAML'de PCL projesinde konumu için bir ad alanı bildirme ve özel denetimi ad alanı öneki kullanarak. Aşağıdaki örnekte gösterildiği kod nasıl `HybridWebView` özel denetim XAML sayfası tarafından tüketilen:
+`HybridWebView` Özel denetim başvurulabilir XAML'de .NET standart kitaplığı projesinde konumu için bir ad alanı bildirme ve özel denetimi ad alanı öneki kullanarak. Aşağıdaki örnekte gösterildiği kod nasıl `HybridWebView` özel denetim XAML sayfası tarafından tüketilen:
 
 ```xaml
 <ContentPage ...

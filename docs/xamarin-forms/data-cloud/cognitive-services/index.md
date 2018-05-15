@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 2600b52b6e044ca9a3a8387bcf719dd1632c406d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 86253e42db7da2da6eb8b03e2d4a4b3c943b7e17
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Bilişsel hizmetler zekasıyla ekleme
 
@@ -70,9 +70,7 @@ PCL proje ayrıca bazı önemli dosyaları içerir:
 
 Örnek uygulama aşağıdaki NuGet paketlerini kullanır:
 
-- `Microsoft.Net.Http` – sağlar `HttpClient` isteği HTTP üzerinden sağlama sınıfı.
 - `Newtonsoft.Json` – .NET için bir JSON çerçeve sağlar.
-- `Microsoft.ProjectOxford.Face` – Yüz API'ye erişmek için bir istemci kitaplığı.
 - `PCLStorage` – platformlar arası yerel dosya g/ç API'leri kümesi sağlar.
 - `sqlite-net-pcl` – SQLite veritabanı depolama sağlar.
 - `Xam.Plugin.Media` – platformlar arası fotoğraf alma ve API çekme sağlar.

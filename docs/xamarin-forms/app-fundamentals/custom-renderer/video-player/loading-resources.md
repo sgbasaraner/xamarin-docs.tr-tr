@@ -6,15 +6,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a9dbf77b85fe7f39c152d4dfb33bdd44c72dca40
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 89c424ee80a4ebf6363a836e752b72ee9bc5cd5a
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="loading-application-resource-videos"></a>Uygulama kaynak videoları yükleniyor
 
-Özel oluşturucu için `VideoPlayer` görünümü uygulama kaynakları olarak tek tek platform projelerinde katıştırılmış video dosyaları çalma yeteneğine sahiptir. Ancak, geçerli sürümü `VideoPlayer` taşınabilir Sınıf Kitaplığı'nda katıştırılmış kaynaklarına erişemez.
+Özel oluşturucu için `VideoPlayer` görünümü uygulama kaynakları olarak tek tek platform projelerinde katıştırılmış video dosyaları çalma yeteneğine sahiptir. Ancak, geçerli sürümü `VideoPlayer` .NET standart kitaplığında katıştırılmış kaynaklarına erişemez.
 
 Bu kaynakları yüklemek için bir örneğini oluşturmak `ResourceVideoSource` ayarlayarak `Path` dosya adını (veya klasör ve dosya adı) kaynak özelliği. Alternatif olarak, statik çağırabilirsiniz `VideoSource.FromResource` referans yöntemi. Ardından, `ResourceVideoSource` nesnesini `Source` özelliği `VideoPlayer`. 
 

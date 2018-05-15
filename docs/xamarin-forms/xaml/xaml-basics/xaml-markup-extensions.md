@@ -7,11 +7,11 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: 104a3adb5d59bc7feafa3c993290247b749ce312
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Bölüm 3. XAML işaretleme uzantıları
 
@@ -386,13 +386,13 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-Diğer sınıflara erişmek için ek XML ad alanı bildirimleri gerekir. Her ek XML ad alanı bildirimi yeni bir önek tanımlar. Paylaşılan uygulama PCL, yerel sınıflara gibi erişmek için `AppConstants`, sık kullandığınız öneki XAML programcıları `local`. Ad alanı bildirimi CLR (ortak dil çalışma zamanı) ad alanı adı, bir C# dilinde görünen adı olarak da bilinen .NET ad alanı adı belirtmeniz gerekir `namespace` tanımı veya bir `using` yönergesi:
+Diğer sınıflara erişmek için ek XML ad alanı bildirimleri gerekir. Her ek XML ad alanı bildirimi yeni bir önek tanımlar. Paylaşılan uygulama .NET standart kitaplığına yerel sınıflara gibi erişmek için `AppConstants`, sık kullandığınız öneki XAML programcıları `local`. Ad alanı bildirimi CLR (ortak dil çalışma zamanı) ad alanı adı, bir C# dilinde görünen adı olarak da bilinen .NET ad alanı adı belirtmeniz gerekir `namespace` tanımı veya bir `using` yönergesi:
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-Bu gibi durumlarda, .NET ad alanları için XML ad alanı bildirimleri de PCL başvuran hiçbir derleme tanımlayabilirsiniz. Örneğin, bir `sys` standart .NET için önek `System` içinde ad alanı **mscorlib** kez "Microsoft ortak nesne çalışma zamanı kitaplığı için" stood, ancak şimdi "çoklu dil standart anlamına gelir, derleme Genel nesne çalışma zamanı kitaplığı." Bu başka bir derleme olduğundan, ayrıca derleme adı, bu durumda belirtmeniz gerekir **mscorlib**:
+.NET standart kitaplığı başvuran hiçbir derleme .NET ad alanları için XML ad alanı bildirimleri de tanımlayabilirsiniz. Örneğin, bir `sys` standart .NET için önek `System` içinde ad alanı **mscorlib** kez "Microsoft ortak nesne çalışma zamanı kitaplığı için" stood, ancak şimdi "çoklu dil standart anlamına gelir, derleme Genel nesne çalışma zamanı kitaplığı." Bu başka bir derleme olduğundan, ayrıca derleme adı, bu durumda belirtmeniz gerekir **mscorlib**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"

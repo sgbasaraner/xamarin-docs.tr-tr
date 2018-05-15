@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 7b859dd58551675c121c5600ba9c691e4280a03b
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-effects"></a>Giriş etkileri
 
@@ -21,7 +21,7 @@ Xamarin.Forms [sayfalar, Düzen ve denetimlerin](~/xamarin-forms/user-interface/
 
 Geliştiriciler kendi özel uygulayabilirsiniz `Renderer` görünümünü ve/veya Denetim davranışını özelleştirmek için sınıflar. Ancak, bir basit denetim özelleştirme gerçekleştirmek için özel Oluşturucu sınıfı uygulama ağır yanıt görülür. Efektler daha kolay özelleştirilmek üzere her platformda yerel denetimlere izin vererek, bu işlemi basitleştirir.
 
-Etkileri platforma özgü projelerinde sınıflara tarafından oluşturulan `PlatformEffect` denetim ve etkileri tüketilen Xamarin.Forms taşınabilir sınıf kitaplığı (PCL) veya paylaşılan kitaplığı projesindeki uygun bir denetim için ekleyerek.
+Etkileri platforma özgü projelerinde sınıflara tarafından oluşturulan `PlatformEffect` denetim ve etkileri tüketilen Xamarin.Forms .NET standart kitaplığı veya paylaşılan kitaplığı projesi uygun bir denetim için ekleyerek.
 
 ## <a name="why-use-an-effect-over-a-custom-renderer"></a>Neden bir efekt özel Oluşturucu kullanılsın mı?
 

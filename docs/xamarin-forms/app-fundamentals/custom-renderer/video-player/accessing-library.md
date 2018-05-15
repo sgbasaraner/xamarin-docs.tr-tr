@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: eb3d66630613225c9b2becaa20f73a82f409ce7e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0f58a4a53d41c23e993f8b8b89b3fca44e0733d
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="accessing-the-devices-video-library"></a>Cihazın video kitaplığı erişimi
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 04/04/2018
 
 Her üç platformları, kullanıcının bir fotoğraf veya video cihazın Resim Kitaplığı'ndan seçmesine olanak veren bir olanağı içerir. Cihazın Resim Kitaplığı'ndan bir video oynatma ilk adımı, her platformda Resmi Seçici çağıran bir bağımlılık hizmeti oluşturuyor. Aşağıda açıklanan bağımlılık hizmeti bir tanımlanmış çok benzer [ **Resim Kitaplığı'ndan bir fotoğraf çekme** ](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md) video seçici bir yerinebirdosyaadıverirancakbumakale`Stream`nesnesi.
 
-PCL proje adlı bir arabirim tanımlar `IVideoPicker` bağımlılık hizmeti için:
+.NET standart kitaplığı proje adlı bir arabirim tanımlar `IVideoPicker` bağımlılık hizmeti için:
 
 ```csharp
 namespace FormsVideoLibrary

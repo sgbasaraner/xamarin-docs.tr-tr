@@ -81,8 +81,6 @@
 #### [GridLayout](user-interface/layouts/grid-layout.md)
 #### [Sekmeli Düzenler](user-interface/layouts/tab-layout/index.md)
 ##### [Eylem Çubuğu ile Gezinti Sekmeleri](user-interface/layouts/tab-layout/with-action-bar.md)
-##### [TabHost’a Genel Bakış](user-interface/layouts/tab-layout/tab-host.md)
-##### [TabHost ile sekmeli kullanıcı arabirimi oluşturma](user-interface/layouts/tab-layout/creating-a-tabbed-ui.md)
 ### [Denetimler](user-interface/controls/index.md)
 #### [Eylem Çubuğu](user-interface/controls/action-bar.md)
 #### [Otomatik Tamamla](user-interface/controls/auto-complete.md)

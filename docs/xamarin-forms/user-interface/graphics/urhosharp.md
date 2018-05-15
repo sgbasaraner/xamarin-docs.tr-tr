@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: 8421355e0630a637589cb4f08c2fec4ea9cdab24
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1a982078f7a3fb2ba462cd7d6f1420b1d27618f7
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Xamarin.Forms içinde UrhoSharp kullanma
 
@@ -27,10 +27,10 @@ Bu [örnek](https://github.com/xamarin/urho-samples/tree/master/FormsSample) nas
 
 ## <a name="adding-the-urhosharp-nuget-packages"></a>UrhoSharp Nuget paketleri ekleme
 
-UrhoSharp kullanmadan önce geliştiricilerin kendi çözüme UrhoSharp Nuget paketini eklemeniz gerekir. Bu kılavuz bir iOS, Android ve PCL Xamarin.Forms projeyle varsayar projesi. Tüm kod PCL projesinde yazılır; ancak UrhoSharp Nuget iOS ve Android projeleri çok eklenmesi gerekir.
+UrhoSharp kullanmadan önce geliştiricilerin kendi çözüme UrhoSharp Nuget paketini eklemeniz gerekir. Bu kılavuz bir iOS, Android ve .NET standart Xamarin.Forms projeyle varsayar kitaplığı projesi. Tüm kod .NET standart kitaplığı projesinde yazılır; ancak UrhoSharp Nuget iOS ve Android projeleri çok eklenmesi gerekir.
 
 UrhoSharp.Forms Nuget paketi tüm UrhoSharp nesneleri oluşturmak için gereken nesneleri içerir. UrhoSharp.Forms nuget paketini içeren `UrhoSurface` Xamarin.Forms UrhoSharp barındırmak için kullanılan sınıf.
-Başlamak için PCL üzerinde 's sağ **paketleri** klasörü ve select **paketleri Ekle...** . Arama terimi girin **UrhoSharp.Forms**seçin **Xamarin.Forms UrhoSharp**, ardından **Paketi Ekle**.
+Başlamak için sağ **paketleri** seçin ve .NET standart kitaplığı proje klasöründe **paketleri Ekle...** . Arama terimi girin **UrhoSharp.Forms**seçin **Xamarin.Forms UrhoSharp**, ardından **Paketi Ekle**.
 
 [![](urhosharp-images/add-package-sml.png "Paketleri iletişim ekleyin")](urhosharp-images/add-package.png#lightbox "paketleri iletişim ekleyin")
 

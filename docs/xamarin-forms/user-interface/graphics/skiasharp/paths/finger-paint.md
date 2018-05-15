@@ -7,11 +7,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 95c023d702d165b7a8a0ba392b2f87af58bfae07
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 6180eb61e7850b7739c5514461796fb0aacbc4ff
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="finger-painting"></a>Parmak boyama
 
@@ -23,7 +23,7 @@ Bir `SKPath` nesne sürekli olarak güncelleştirilebilir ve görüntülenir. Bu
 
 Xamarin.Forms dokunma desteği Xamarin.Forms dokunma izleme etkili ek dokunma desteği sağlamak için geliştirilen için tek tek parmakları ekranda izleme izin vermiyor. Bu makalede açıklanan [ **çağırma olayları etkileri**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Örnek program [ **dokunma izleme etkisi gösterileri** ](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) finger-painting programı da dahil olmak üzere SkiaSharp kullanan iki sayfa içerir.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) çözümü bu dokunma izleme olayı içerir. Taşınabilir sınıf kitaplığı proje içeriyor `TouchEffect` sınıfı, `TouchActionType` numaralandırma, `TouchActionEventHandler` temsilci ve `TouchActionEventArgs` sınıfı. Her platform projeleri içeren bir `TouchEffect` sınıfı, platform için; iOS projesi de içerir bir `TouchRecognizer` sınıfı.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) çözümü bu dokunma izleme olayı içerir. .NET standart kitaplığı proje içeriyor `TouchEffect` sınıfı, `TouchActionType` numaralandırma, `TouchActionEventHandler` temsilci ve `TouchActionEventArgs` sınıfı. Her platform projeleri içeren bir `TouchEffect` sınıfı, platform için; iOS projesi de içerir bir `TouchRecognizer` sınıfı.
 
 **Parmak boyama** sayfasındaki **SkiaSharpFormsDemos** parmak boyama basitleştirilmiş bir uygulamasıdır. Bırakmaz renk seçimine izin ver veya genişliği vuruş yapmak, tuvalin temizlemek için hiçbir yolu yoktur ve Elbette resminiz kaydedemezsiniz.
 

@@ -1,5 +1,5 @@
 ---
-title: Mac Platform Setup
+title: Mac Platform Kurulumu
 description: Xamarin.Forms artık Mac platform Önizleme desteği vardır
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
@@ -8,13 +8,13 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: de08e686fc07595b75016b9266f57b12831e9822
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0985fb533969a331ceee62f490bae600de9f189c
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="mac-platform-setup"></a>Mac Platform Setup
+# <a name="mac-platform-setup"></a>Mac Platform Kurulumu
 
 ![Önizleme](~/media/shared/preview.png)
 
@@ -41,7 +41,7 @@ MacOS üzerinde Sierra ve Mac OS X El Capitan çalışacak bir Mac uygulaması e
 
 5. Mac projeye sağ tıklayın **paketleri > paketleri Ekle...**  eklemek için [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet. Ayrıca diğer projeleri bu sürüme güncelleştirmeniz gerekir.
 
-6. Mac projeye sağ tıklayın **başvuruları** ve (Paylaşılan proje veya PCL) Xamarin.Forms projesine bir başvuru ekleyin.
+6. Mac projeye sağ tıklayın **başvuruları** ve (Proje paylaşılan veya standart .NET kitaplığı Proje) Xamarin.Forms projesine bir başvuru ekleyin.
 
   ![Xamarin.Forms paylaşılan kod projesine bir başvuru ekleyin](mac-images/references-sml.png)
 

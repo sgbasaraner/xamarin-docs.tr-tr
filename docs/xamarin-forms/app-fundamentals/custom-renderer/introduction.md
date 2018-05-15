@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: b394c64fe6e2bfb9e5e7ee0e00d8c0366d6bd93e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Özel oluşturucu giriş
 
@@ -51,7 +51,7 @@ public class MyEntry : Entry
 `local` Ad alanı öneki herhangi bir şey olabilir. Ancak, `namespace` ve `assembly` değerlerin özel denetim ayrıntılarını eşleşmesi gerekir. Ad alanı bildirildiğinde öneki özel denetim başvurmak için kullanılır.
 
 > [!NOTE]
-> Tanımlama `xmlns` paylaşılan projeleri PCLs içinde çok daha kolaydır. Belirlemek kolay olacak şekilde bir PCL bütünleştirilmiş koda derlenmemiş `assembly=CustomRenderer` değeri olmalıdır. Paylaşılan projeleri kullanırken (XAML dahil) tüm paylaşılan varlıklar her olması durumunda iOS, Android ve UWP anlamına gelir başvuran projeler derlenen projeleri sahip kendi *derleme adları* yazmak için için mümkün değildir `xmlns` bildirimi değeri her uygulama için farklı olması gerektiğinden. Paylaşılan projeleri için XAML içinde özel denetimler her uygulama projesi aynı derleme adı ile yapılandırılmasını gerektirir.
+> Tanımlama `xmlns` paylaşılan projeleri .NET standart Kitaplığı projelerinde çok daha kolaydır. Belirlemek kolaydır .NET standart kitaplığı bütünleştirilmiş koda derlenmemiş `assembly=CustomRenderer` değeri olmalıdır. Paylaşılan projeleri kullanırken (XAML dahil) tüm paylaşılan varlıklar her olması durumunda iOS, Android ve UWP anlamına gelir başvuran projeler derlenen projeleri sahip kendi *derleme adları* yazmak için için mümkün değildir `xmlns` bildirimi değeri her uygulama için farklı olması gerektiğinden. Paylaşılan projeleri için XAML içinde özel denetimler her uygulama projesi aynı derleme adı ile yapılandırılmasını gerektirir.
 
 `MyEntry` Özel denetim sonra işlenen her platformda gri bir arka planda aşağıdaki ekran görüntülerinde gösterildiği gibi:
 
@@ -74,7 +74,7 @@ Bu bölümdeki konular gösterileri ve farklı Xamarin.Forms öğeler için bu i
 
 ## <a name="troubleshooting"></a>Sorun giderme
 
-Özel denetimi (Mac/Visual Studio Xamarin.Forms uygulaması proje şablonu için Visual Studio tarafından oluşturulan yani değil PCL) çözümüne eklenmiş bir PCL projesinde içeriyorsa, iOS özel denetim erişilmeye çalışılırken bir özel durum oluşabilir. Bunu çözülmüş özel denetimden başvuru oluşturarak bu sorun ortaya çıkarsa `AppDelegate` sınıfı:
+Özel bir denetim bulunan bir özel durumu (Mac/Visual Studio Xamarin.Forms uygulaması proje şablonu için Visual Studio tarafından oluşturulan yani .NET standart kitaplıkta değil), çözüme eklendi .NET standart bir kitaplığı proje iOS oluşabilir olduğunda özel denetim erişmeye çalışıyor. Bunu çözülmüş özel denetimden başvuru oluşturarak bu sorun ortaya çıkarsa `AppDelegate` sınıfı:
 
 ```csharp
 var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere

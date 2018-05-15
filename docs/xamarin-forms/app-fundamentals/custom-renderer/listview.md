@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 0d1afc2c14b19bbd03244affed494405776a3c99
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-listview"></a>ListView özelleştirme
 
@@ -59,13 +59,13 @@ public class NativeListView : ListView
 }
 ```
 
-`NativeListView` Taşınabilir sınıf kitaplığı (PCL) projesinde oluşturulur ve özel denetim için API tanımlar. Bu denetim kullanıma sunan bir `Items` doldurmak için kullanılan özellik `ListView` veri ve olabilen amaçları için bağlı verileri görüntülemek. Ayrıca kullanıma sunan bir `ItemSelected` bir platforma özgü yerel liste denetiminde bir öğe seçildiğinde, tetiklenmez olay. Veri bağlama hakkında daha fazla bilgi için bkz: [veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+`NativeListView` .NET standart kitaplığı projesinde oluşturulur ve özel denetim için API tanımlar. Bu denetim kullanıma sunan bir `Items` doldurmak için kullanılan özellik `ListView` veri ve olabilen amaçları için bağlı verileri görüntülemek. Ayrıca kullanıma sunan bir `ItemSelected` bir platforma özgü yerel liste denetiminde bir öğe seçildiğinde, tetiklenmez olay. Veri bağlama hakkında daha fazla bilgi için bkz: [veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Özel denetim kullanma
 
-`NativeListView` Özel denetim başvurulabilir XAML'de PCL projesinde konumu için bir ad alanı bildirme ve denetimi ad alanı öneki kullanarak. Aşağıdaki örnekte gösterildiği kod nasıl `NativeListView` özel denetim XAML sayfası tarafından tüketilen:
+`NativeListView` Özel denetim başvurulabilir XAML'de .NET standart kitaplığı projesinde konumu için bir ad alanı bildirme ve denetimi ad alanı öneki kullanarak. Aşağıdaki örnekte gösterildiği kod nasıl `NativeListView` özel denetim XAML sayfası tarafından tüketilen:
 
 ```xaml
 <ContentPage ...

@@ -6,12 +6,12 @@ ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/07/2018
-ms.openlocfilehash: 2d903df97da2e8d6ae0c5df3b1ba09dd3015e404
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
-ms.translationtype: HT
+ms.date: 05/10/2018
+ms.openlocfilehash: b5c20eb9f40bb4c4981d6b60b9fd4bc75fd29336
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android öykünücüsünde donanım hızlandırma
 
@@ -39,23 +39,37 @@ Hyper-V ve Google Android öykünücüsü kullanmaya başlamak için:
 
     [![Windows özellikleri](hardware-acceleration-images/win/12-about-windows.w10-sml.png)](hardware-acceleration-images/win/12-about-windows.w10.png#lightbox)
 
-1. **Hyper-V ve Windows hiper yönetici platformunu etkinleştir** &ndash; Cortana arama çubuğunda, türü **kapatma Windows özelliklerini aç veya Kapat**. İçinde aşağı kaydırın **Windows özelliklerini** iletişim kutusunda ve emin **Windows hiper yönetici platformu** etkinleştirilir.
+2. **Hyper-V ve Windows hiper yönetici platformunu etkinleştir** &ndash; Cortana arama çubuğunda, türü **kapatma Windows özelliklerini aç veya Kapat**.
+   İçinde aşağı kaydırın **Windows özelliklerini** iletişim kutusunda ve emin **Windows hiper yönetici platformu** etkinleştirilir.
 
     [![Hyper-V ve Windows hiper yönetici platformu etkin](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
 
     Windows Hyper-V ve Windows hiper yönetici platformu etkinleştirdikten sonra bilgisayarınızı yeniden başlatmanız gerekebilir.
 
-1. **Yükleme [Visual Studio 15,8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; Visual Studio'nun bu sürümü, Google Android öykünücüsü Hyper-V desteği ile başlatmak için IDE desteği sağlar.
+3. **Yükleme [Visual Studio 15,8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; Visual Studio'nun bu sürümü, Google Android öykünücüsü Hyper-V desteği ile başlatmak için IDE desteği sağlar.
 
-1. **Google Android öykünücüsü Paketi 27.2.7 yüklemek ya da daha yüksek** &ndash; bu paketi yüklemek için gidin **Araçlar > Android > Android SDK Manager** Visual Studio. Seçin **Araçları** sekmesini tıklatın ve Android öykünücüsü bileşen en az olduğundan emin olun 27.2.7 sürümü.
+4. **Google Android öykünücüsü Paketi 27.2.7 yüklemek ya da daha yüksek** &ndash; bu paketi yüklemek için gidin **Araçlar > Android > Android SDK Manager** Visual Studio. Seçin **Araçları** sekmesini tıklatın ve Android öykünücüsü bileşen en az olduğundan emin olun 27.2.7 sürümü.
 
     [![Android SDK'lar ve Araçlar iletişim](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
 
+5. Android öykünücüsünde sürümü 27.3.1'den az ise Uygula açıklandığı ek geçici çözüm adımı **bilinen sorunlar** (İleri).
+
+
 ### <a name="known-issues"></a>Bilinen Sorunlar
 
-* Performans, belirli Intel ve AMD tabanlı işlemciler kullanırken azaltılabilir.
-* Android uygulaması olağan dışı bir dağıtımda yüklemek için zaman miktarı sürebilir.
-* OLMASI erişim hatası, zaman zaman Android öykünücüsünü önyükleme engel olabilir. Öykünücü yeniden bu çözümlenmelidir.
+-   Hyper-V: kullanmak için aşağıdaki geçici çözüm öykünücüsü sürümü en az 27.2.7 değerinden 27.3.1 ancak ise gereklidir
+    1.  İçinde **C:\\kullanıcılar\\_kullanıcıadı_\\.android** klasörünü adlı bir dosya oluşturun **advancedFeatures.ini** içermiyorsa zaten mevcut.
+    2.  Aşağıdaki satırı ekleyin **advancedFeatures.ini**:
+        ```
+        WindowsHypervisorPlatform = on
+        ```
+
+-   Performans, belirli Intel ve AMD tabanlı işlemciler kullanırken azaltılabilir.
+
+-   Android uygulaması olağan dışı bir dağıtımda yüklemek için zaman miktarı sürebilir.
+
+-   OLMASI erişim hatası, zaman zaman Android öykünücüsünü önyükleme engel olabilir. Öykünücü yeniden bu çözümlenmelidir.
+
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 

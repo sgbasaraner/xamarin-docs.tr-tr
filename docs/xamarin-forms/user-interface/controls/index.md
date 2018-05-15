@@ -7,23 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: a9fb90794ec74c46019fd2b4f41d90a2635909cd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fb6620e160af4c2c844fa694649c95abdac123f9
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="controls-reference"></a>Denetimleri başvurusu
 
 _Xamarin.Forms uygulaması oluşturmak için kullanılan tüm görsel öğeleri açıklaması._
 
-Xamarin.Forms uygulaması visual arabirimi, her hedef platformu yerel denetimlere eşleme nesnelerin oluşturulur. Bu iOS, Android ve evrensel Windows platformu için platforma özel uygulamaların içerdiği Xamarin.Forms kodu kullanmasını sağlar bir [taşınabilir sınıf kitaplığı](~/cross-platform/app-fundamentals/pcl.md), [.NET standart Kitaplığı](~/cross-platform/app-fundamentals/net-standard.md), veya bir [ Proje paylaşılan](~/cross-platform/app-fundamentals/shared-projects.md).
+Xamarin.Forms uygulaması visual arabirimi, her hedef platformu yerel denetimlere eşleme nesnelerin oluşturulur. Bu iOS, Android ve evrensel Windows platformu için platforma özel uygulamaların içerdiği Xamarin.Forms kodu kullanmasını sağlar bir [.NET standart Kitaplığı](~/cross-platform/app-fundamentals/net-standard.md) veya [paylaşılan proje](~/cross-platform/app-fundamentals/shared-projects.md).
 
 Kullanıcı arabirimi, bir Xamarin.Forms uygulaması oluşturmak için kullanılan dört ana denetim grupları şu dört makalelerinde gösterilmektedir:
 
 - [**Sayfaları**](pages.md)
 - [**Düzenleri**](layouts.md)
-- [**Views**](views.md)
+- [**Görünümler**](views.md)
 - [**Hücreleri**](cells.md)
 
 Xamarin.Forms sayfa genellikle tüm ekranı kaplar. Sayfa genellikle görünümleri ve büyük olasılıkla diğer düzenleri içeren bir düzen içeriyor. Birlikte kullanılan özel bileşenler dışında hücreler [ `TableView` ](views.md#tableView) ve [ `ListView` ](views.md#listView).

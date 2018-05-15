@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: a601e74cc274fd57bb2be9af3562b3a7290d7047
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 275ec851a2fd8e96adecfeca5daf6a66add7bd92
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="gtk-platform-setup"></a>GTK # Platform Kurulumu
 
@@ -34,7 +34,7 @@ Windows masaüstünde çalışacak GTK # uygulama eklemek için aşağıdaki yö
 
 1. Visual Studio 2017 ' çözüm adına sağ tıklayın **Çözüm Gezgini** ve **Ekle > Yeni proje...** .
 
-2. İçinde **yeni proje** penceresinde, soldaki seçin **Visual C#** ve **Windows Klasik Masaüstü**. Proje türleri listesinden seçip **sınıf kitaplığı (.NET Framework)**ve emin **Framework** açılır, .NET Framework 4.7 en az olarak ayarlanır.
+2. İçinde **yeni proje** penceresinde, soldaki seçin **Visual C#** ve **Windows Klasik Masaüstü**. Proje türleri listesinden seçip **sınıf kitaplığı (.NET Framework)** ve emin **Framework** açılır, .NET Framework 4.7 en az olarak ayarlanır.
 
 3. Proje ile için bir ad yazın bir **GTK** uzantısı, örneğin **GameOfLife.GTK**. ' I tıklatın **Gözat** düğmesini tıklatın, diğer platform içeren klasörü seçin projeleri ve tuşuna **Klasör Seç**. Bu çözümdeki diğer projeler ile aynı dizinde GTK proje sokar.
 
@@ -56,7 +56,7 @@ Windows masaüstünde çalışacak GTK # uygulama eklemek için aşağıdaki yö
 
 6. İçinde **Çözüm Gezgini**, çözüm adına sağ tıklayın ve seçin **çözüm için NuGet paketlerini Yönet**. Seçin **güncelleştirme** sekmesi ve **Xamarin.Forms** paket. Tüm projeleri seçin ve bunları GTK projesi tarafından kullanılan aynı Xamarin.Forms sürüme güncelleştirin.
 
-7. İçinde **Çözüm Gezgini**, sağ tıklayın **başvuruları** GTK projesinde. İçinde **başvuru Yöneticisi** iletişim kutusunda **projeleri** sola ve onay .NET standart, PCL veya paylaşılan projeye bitişik onay kutusu:
+7. İçinde **Çözüm Gezgini**, sağ tıklayın **başvuruları** GTK projesinde. İçinde **başvuru Yöneticisi** iletişim kutusunda **projeleri** sola ve onay .NET standart ya da paylaşılan projeye bitişik onay kutusu:
 
     ![Paylaşılan bir proje başvurusu](gtk-images/win/reference-shared-project.png "paylaşılan proje başvurusu")
 
@@ -129,7 +129,7 @@ Mac masaüstünde çalışacak GTK # uygulama eklemek için aşağıdaki yönerg
 
 6. Diğer platform projeleri GTK projesi tarafından kullanılan aynı Xamarin.Forms sürümünü kullanacak şekilde güncelleştirin.
 
-7. İçinde **çözüm paneli**, sağ tıklayın **başvuruları > başvurular Düzenle...**  GTK için proje ve (.NET standart, PCL veya paylaşılan Proje) Xamarin.Forms projesine bir başvuru ekleyin.
+7. İçinde **çözüm paneli**, sağ tıklayın **başvuruları > başvurular Düzenle...**  GTK için proje ve (.NET standart ya da paylaşılan Proje) Xamarin.Forms projesine bir başvuru ekleyin.
 
     ![Paylaşılan bir proje başvurusu](gtk-images/mac/reference-shared-project.png "paylaşılan proje başvurusu")
 

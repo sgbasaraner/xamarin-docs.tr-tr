@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: eb4ed3df4ea1f9e6aacf1c875eab17908d73cb7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e363cae4dd72a25e4768395410d4e56a8db30eba
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="invoking-events-from-effects"></a>Olayları etkileri çağırma
 
@@ -49,7 +49,7 @@ Bu nedenle, bu makalede açıklanan dokunma izleme etkisi UWP yaklaşım uygular
 
 ## <a name="the-touch-tracking-effect-api"></a>Dokunma izleme etkisi API
 
-[ **İzleme etkisi gösterileri Touch** ](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) örnek sınıflar (ve numaralandırma) alt düzey dokunma izleme uygulayan içerir. Bu tür ad alanına ait `TouchTracking` ve sözcüğüyle başlayan `Touch`. **TouchTrackingEffectDemos** taşınabilir sınıf kitaplığı proje içeriyor `TouchActionType` numaralandırma dokunma olayların türünü için:
+[ **İzleme etkisi gösterileri Touch** ](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) örnek sınıflar (ve numaralandırma) alt düzey dokunma izleme uygulayan içerir. Bu tür ad alanına ait `TouchTracking` ve sözcüğüyle başlayan `Touch`. **TouchTrackingEffectDemos** .NET standart kitaplığı proje içerir `TouchActionType` numaralandırma dokunma olayların türünü için:
 
 ```csharp
 public enum TouchActionType
@@ -65,7 +65,7 @@ public enum TouchActionType
 
 Tüm platformlar dokunma olay iptal edildi belirten bir olay da içerir.
 
-`TouchEffect` PCL sınıfında türer `RoutingEffect` ve adlı bir olay tanımlar `TouchAction` ve adlı bir yöntem `OnTouchAction` , çağırır `TouchAction` olay:
+`TouchEffect` .NET standart kitaplığı sınıfında türer `RoutingEffect` ve adlı bir olay tanımlar `TouchAction` ve adlı bir yöntem `OnTouchAction` , çağırır `TouchAction` olay:
 
 ```csharp
 public class TouchEffect : RoutingEffect
@@ -87,7 +87,7 @@ public class TouchEffect : RoutingEffect
 
 Ayrıca fark `Capture` özelliği. Dokunma olaylarını yakalamak için bir uygulama bu özellik ayarlamalısınız `true` öncesinde bir `Pressed` olay. Aksi takdirde, dokunma olaylarına Evrensel Windows platformu de gibi davranır.
 
-`TouchActionEventArgs` PCL sınıfında her olay eşlik tüm bilgileri içerir:
+`TouchActionEventArgs` .NET standart kitaplığı sınıfında her olay eşlik tüm bilgileri içerir:
 
 ```csharp
 public class TouchActionEventArgs : EventArgs
@@ -112,7 +112,7 @@ public class TouchActionEventArgs : EventArgs
 
 Bir uygulamanın kullanabileceği `Id` tek tek parmakları izleme özelliği. Bildirim `IsInContact` özelliği. Bu özellik her zaman olduğu `true` için `Pressed` olayları ve `false` için `Released` olaylar. Ayrıca her zaman olduğu `true` için `Moved` olayları iOS ve Android. `IsInContact` Özellik olabilir `false` için `Moved` program masaüstünde çalışan ve fare işaretçisi bir düğme hareket Evrensel Windows platformu olaylarına basılı.
 
-Kullanabileceğiniz `TouchEffect` kendi uygulamalarınızı çözümün PCL projesinde dosyası dahil ve örneğine ekleyerek sınıfında `Effects` herhangi bir Xamarin.Forms öğe koleksiyonu. Bir işleyici ekleme `TouchAction` olay dokunma olaylarına elde edilir.
+Kullanabileceğiniz `TouchEffect` kendi uygulamalarınızı çözümün .NET standart kitaplığı projesinde dosyası dahil ve örneğine ekleyerek sınıfında `Effects` herhangi bir Xamarin.Forms öğe koleksiyonu. Bir işleyici ekleme `TouchAction` olay dokunma olaylarına elde edilir.
 
 Kullanılacak `TouchEffect` , kendi uygulamanızda dahil platform uygulamaları da gerekir **TouchTrackingEffectDemos** çözümü.
 
@@ -151,7 +151,7 @@ public class TouchEffect : PlatformEffect
         // Get the Windows FrameworkElement corresponding to the Element that the effect is attached to
         frameworkElement = Control == null ? Container : Control;
 
-        // Get access to the TouchEffect class in the PCL
+        // Get access to the TouchEffect class in the .NET Standard library
         effect = (TouchTracking.TouchEffect)Element.Effects.
                     FirstOrDefault(e => e is TouchTracking.TouchEffect);
 
@@ -203,7 +203,7 @@ public class TouchEffect : PlatformEffect
 }
 ```
 
-`OnPointerPressed` Ayrıca denetler `Capture` çağrıları ve PCL etkisi sınıfta bir özellik `CapturePointer` , `true`.
+`OnPointerPressed` Ayrıca denetler `Capture` çağrıları ve .NET standart kitaplığı etkisi sınıfta bir özellik `CapturePointer` , `true`.
 
  Bir UWP olay işleyicileri bile basittir:
 
@@ -267,7 +267,7 @@ void OnTouch(object sender, Android.Views.View.TouchEventArgs args)
 
             idToEffectDictionary.Add(id, this);
 
-            capture = pclTouchEffect.Capture;
+            capture = libTouchEffect.Capture;
             break;
 
 ```
@@ -278,7 +278,7 @@ void OnTouch(object sender, Android.Views.View.TouchEventArgs args)
 void FireEvent(TouchEffect touchEffect, int id, TouchActionType actionType, Point pointerLocation, bool isInContact)
 {
     // Get the method to call for firing events
-    Action<Element, TouchActionEventArgs> onTouchAction = touchEffect.pclTouchEffect.OnTouchAction;
+    Action<Element, TouchActionEventArgs> onTouchAction = touchEffect.libTouchEffect.OnTouchAction;
 
     // Get the location of the pointer within the view
     touchEffect.view.GetLocationOnScreen(twoIntArray);

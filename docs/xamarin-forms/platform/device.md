@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 1fc3fb17ec97ce9028abbf63cdedbfc5fec12204
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 520982491803fa0a909008ee60730a4149a75296
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="device-class"></a>Aygıt sınıfı
 
@@ -155,7 +155,7 @@ Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
-`Device` Sınıfı ayrıca sahip bir `StartTimer` Xamarin.Forms ortak kodun (PCLs dahil) içinde çalıştığı zamana bağımlı görevler tetiklemek için basit bir yol sağlayan yöntemi. Geçirmek bir `TimeSpan` aralığını ayarlayın ve dönmek için `true` süreölçer tutmak için veya `false` sonra geçerli çağırma durdurmak için.
+`Device` Sınıfı ayrıca sahip bir `StartTimer` .NET standart kitaplığı dahil olmak üzere Xamarin.Forms ortak kod içinde çalıştığı zamana bağımlı görevler tetiklemek için basit bir yol sağlayan yöntemi. Geçirmek bir `TimeSpan` aralığını ayarlayın ve dönmek için `true` süreölçer tutmak için veya `false` sonra geçerli çağırma durdurmak için.
 
 ```csharp
 Device.StartTimer (new TimeSpan (0, 0, 60), () => {
@@ -184,7 +184,7 @@ Not Bu yöntemlerini kullanarak `async/await` kullanmasına gerek kalmamasını 
 
 ## <a name="summary"></a>Özet
 
-Xamarin.Forms `Device` sınıfı platformu başına temelinde işlevselliği ve düzenleri üzerinde ayrıntılı denetim sağlar - ortak kodu (PCL veya paylaşılan projeleri) bile.
+Xamarin.Forms `Device` sınıfı platformu başına temelinde işlevselliği ve düzenleri üzerinde ayrıntılı denetim sağlar - ortak kodu (.NET standart kitaplık projeleri veya paylaşılan projeleri) bile.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 6dbad7352a089f482fa3a396505507da58771cef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 24e7f29e42607d4a2c957cf85dad15f659d3618e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-xaml"></a>XAML'de yerel görünümleri
 
@@ -74,7 +74,7 @@ Bağlanabilir özellikleri ve ekli bağlanabilir özellikleri de ayarlanabilir y
 Android pencere öğesi oluşturucular genellikle Android gerektirir `Context` nesne bir bağımsız değişken ve bu bir statik özellik aracılığıyla kullanılabilir hale getirilebilir olarak `MainActivity` sınıfı. Bu nedenle, bir Android pencere öğesi XAML'de oluştururken `Context` nesne gerekir genellikle bayraklarıdır pencere öğesi'nin oluşturucuya kullanarak `x:Arguments` ile öznitelik bir `x:Static` biçimlendirme uzantısı. Daha fazla bilgi için bkz: [bağımsız değişkenleri geçirme yerel görünümlere](#passing_arguments).
 
 > [!NOTE]
-> Bu yerel bir görünümle adlandırma Not `x:Name` taşınabilir sınıf kitaplığı (PCL) proje veya bir paylaşılan varlık proje (SAP) mümkün değildir. Bunun yapılması bir derleme hatası neden olacak yerel türünde bir değişken oluşturur. Ancak, yerel görünümler içinde sarmalamak `ContentView` örnekleri ve SAP kullanılan koşuluyla arka plan kod dosyasına alınır. Daha fazla bilgi için bkz: [koddan yerel bir görünüme başvuran](#native_view_code).
+> Bu yerel bir görünümle adlandırma Not `x:Name` .NET standart kitaplığı proje veya bir paylaşılan varlık proje (SAP) mümkün değildir. Bunun yapılması bir derleme hatası neden olacak yerel türünde bir değişken oluşturur. Ancak, yerel görünümler içinde sarmalamak `ContentView` örnekleri ve SAP kullanılan koşuluyla arka plan kod dosyasına alınır. Daha fazla bilgi için bkz: [koddan yerel bir görünüme başvuran](#native_view_code).
 
 <a name="native_bindings" />
 
@@ -285,7 +285,7 @@ public partial class NativeViewInsideContentViewPage : ContentPage
 
 ## <a name="subclassing-native-views"></a>Yerel görünümler alt sınıf yapma
 
-Birçok iOS ve Android yerel görünümleri denetimini Ayarla için özellikleri yerine yöntemleri kullanmak için XAML'de oluşturmak için uygun değildir. Bu sorun için bir alt kümesi yerel denetimi kurulumu için özelliklerini kullanır ve platformdan bağımsız olayları kullanan bir daha fazla bir XAML kolay API tanımlamak sarmalayıcıları görünümlerde için çözümüdür. Sarmalanan yerel görünümleri daha sonra bir paylaşılan varlık proje (SAP içinde) yerleştirilir ve koşullu derleme yönergeleri ile çevrelenmiş veya platforma özgü projelerinde yerleştirilir ve taşınabilir sınıf kitaplığı (PCL) projede XAML başvurulan.
+Birçok iOS ve Android yerel görünümleri denetimini Ayarla için özellikleri yerine yöntemleri kullanmak için XAML'de oluşturmak için uygun değildir. Bu sorun için bir alt kümesi yerel denetimi kurulumu için özelliklerini kullanır ve platformdan bağımsız olayları kullanan bir daha fazla bir XAML kolay API tanımlamak sarmalayıcıları görünümlerde için çözümüdür. Sarmalanan yerel görünümleri sonra bir paylaşılan varlık proje (SAP içinde) yerleştirilir ve koşullu derleme yönergeleri ile çevrelenmiş veya platforma özgü projelerinde yerleştirilen ve XAML bir .NET standart kitaplığı projesinde başvurulan.
 
 Aşağıdaki kod örneğinde, yerel görünümler kullanan bir Xamarin.Forms sayfası sınıflandırma gösterilmektedir:
 
@@ -490,6 +490,6 @@ Bu makalede Xamarin.Forms XAML dosyaları yerel görünümleri kullanma gösteri
 - [NativeSwitch (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
 - [Forms2Native (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Forms2Native/)
 - [NativeViewInsideContentView (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeViewInsideContentView/)
-- [SubclassedNativeControls (sample)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/SubclassedNativeControls/)
+- [SubclassedNativeControls (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/SubclassedNativeControls/)
 - [Yerel Formlar](~/xamarin-forms/platform/native-forms.md)
 - [XAML'de bağımsız değişkenleri geçirme](~/xamarin-forms/xaml/passing-arguments.md)

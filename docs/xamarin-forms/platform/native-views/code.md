@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 46284fd1b0863f904e9f24f125aef75fe3eb8caa
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-c"></a>C# yerel görünümleri
 
@@ -19,7 +19,7 @@ _İOS, Android ve UWP yerel görünümleri doğrudan C# kullanarak oluşturulan 
 
 ## <a name="overview"></a>Genel Bakış
 
-Veren herhangi bir Xamarin.Forms denetimi `Content` çok ayarlamak için veya bir `Children` koleksiyonu, platforma özgü görünümler ekleyebilir. Örneğin, bir iOS `UILabel` doğrudan eklenebilir [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) özelliği veya [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) koleksiyonu. Ancak, bu işlev kullanımı gerektirdiğini unutmayın `#if` Xamarin.Forms paylaşılan proje çözümleri tanımlar ve Xamarin.Forms taşınabilir sınıf kitaplığı (PCL) çözümlerinden kullanılamaz.
+Veren herhangi bir Xamarin.Forms denetimi `Content` çok ayarlamak için veya bir `Children` koleksiyonu, platforma özgü görünümler ekleyebilir. Örneğin, bir iOS `UILabel` doğrudan eklenebilir [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) özelliği veya [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) koleksiyonu. Ancak, bu işlev kullanımı gerektirdiğini unutmayın `#if` Xamarin.Forms paylaşılan proje çözümleri tanımlar ve Xamarin.Forms .NET standart kitaplığı çözümlerinden kullanılamaz.
 
 Aşağıdaki ekran görüntüleri platforma özgü görünümler Xamarin.Forms için eklenene göstermek [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
 

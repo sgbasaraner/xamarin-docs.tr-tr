@@ -6,12 +6,12 @@ ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: a8ab35b3ec13c76e1e00da6e3265e3e337e37b7e
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 05/10/2018
+ms.openlocfilehash: 757cd9c0b3b8414b5a8c01af0cf4ffc9b9b8afc4
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="implementing-a-view"></a>Bir görünümü uygulama
 
@@ -268,45 +268,50 @@ Koşuluyla `Control` özelliği `null`, `SetNativeControl` yöntemi yeni bir ör
 Aşağıdaki kod örneğinde UWP için özel Oluşturucu gösterir:
 
 ```csharp
-[assembly: ExportRenderer (typeof(CameraPreview), typeof(CameraPreviewRenderer))]
+[assembly: ExportRenderer(typeof(CameraPreview), typeof(CameraPreviewRenderer))]
 namespace CustomRenderer.UWP
 {
     public class CameraPreviewRenderer : ViewRenderer<CameraPreview, Windows.UI.Xaml.Controls.CaptureElement>
     {
-        MediaCapture mediaCapture;
-        CaptureElement captureElement;
-        CameraOptions cameraOptions;
-        Application app;
-        bool isPreviewing = false;
+        ...
+        CaptureElement _captureElement;
+        bool _isPreviewing;
 
-        protected override void OnElementChanged (ElementChangedEventArgs<CameraPreview> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<CameraPreview> e)
         {
-            base.OnElementChanged (e);
+            base.OnElementChanged(e);
 
-            if (Control == null) {
+            if (Control == null)
+            {
                 ...
-                captureElement = new CaptureElement ();
-                captureElement.Stretch = Stretch.UniformToFill;
+                _captureElement = new CaptureElement();
+                _captureElement.Stretch = Stretch.UniformToFill;
 
-                InitializeAsync ();
-                SetNativeControl (captureElement);
+                SetupCamera();
+                SetNativeControl(_captureElement);
             }
-            if (e.OldElement != null) {
+            if (e.OldElement != null)
+            {
                 // Unsubscribe
                 Tapped -= OnCameraPreviewTapped;
+                ...
             }
-            if (e.NewElement != null) {
+            if (e.NewElement != null)
+            {
                 // Subscribe
                 Tapped += OnCameraPreviewTapped;
             }
         }
 
-        async void OnCameraPreviewTapped (object sender, TappedRoutedEventArgs e)
+        async void OnCameraPreviewTapped(object sender, TappedRoutedEventArgs e)
         {
-            if (isPreviewing) {
-                await StopPreviewAsync ();
-            } else {
-                await StartPreviewAsync ();
+            if (_isPreviewing)
+            {
+                await StopPreviewAsync();
+            }
+            else
+            {
+                await StartPreviewAsync();
             }
         }
         ...
@@ -314,7 +319,7 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Koşuluyla `Control` özelliği `null`, yeni bir `CaptureElement` örneği ve `InitializeAsync` yöntemi çağrıldığında, kullanan `MediaCapture` kameradan Önizleme akışı sağlamak için API. `SetNativeControl` Yöntemi bir başvuru atamak için çağrıldıktan sonra `CaptureElement` için örnek `Control` özelliği. `CaptureElement` Kontrol çıkarır bir `Tapped` tarafından işlenen olay `OnCameraPreviewTapped` durdurmanız ve onu dokunduğunuz video önizlemesi başlattığınızda yöntemi. `Tapped` Olay abone için özel Oluşturucu yeni bir Xamarin.Forms öğesi bağlı ve yalnızca zaman Oluşturucu öğesi değişiklikleri bağlı gelen iptal.
+Koşuluyla `Control` özelliği `null`, yeni bir `CaptureElement` örneği ve `SetupCamera` yöntemi çağrıldığında, kullanan `MediaCapture` kameradan Önizleme akışı sağlamak için API. `SetNativeControl` Yöntemi bir başvuru atamak için çağrıldıktan sonra `CaptureElement` için örnek `Control` özelliği. `CaptureElement` Kontrol çıkarır bir `Tapped` tarafından işlenen olay `OnCameraPreviewTapped` durdurmanız ve onu dokunduğunuz video önizlemesi başlattığınızda yöntemi. `Tapped` Olay abone için özel Oluşturucu yeni bir Xamarin.Forms öğesi bağlı ve yalnızca zaman Oluşturucu öğesi değişiklikleri bağlı gelen iptal.
 
 > [!NOTE]
 > Durdur ve bir UWP uygulaması kameraya erişebilmesi nesnelerin silmek önemlidir. Bunun Sağlanamaması cihazın kamera erişmeye çalışan diğer uygulamalarla etkileyebilir. Daha fazla bilgi için bkz: [kamera önizlemesini görüntülemek](/windows/uwp/audio-video-camera/simple-camera-preview-access/).

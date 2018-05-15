@@ -6,12 +6,12 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: f34a3ee44b604bf0b82faf77769f3c2844e6460f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-ms.translationtype: MT
+ms.date: 05/11/2018
+ms.openlocfilehash: 431cc359f4191ab2b247b3cacf0f54c3ba44cd57
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="splash-screen"></a>Giriş ekranı
 
@@ -152,6 +152,74 @@ public class MainActivity : AppCompatActivity
     // Code omitted for brevity
 }
 ```
+
+## <a name="landscape-mode"></a>Yatay modu
+
+Önceki adımlarda uygulanan giriş ekranı dikey ve yatay modunda doğru görüntüler. Ancak, bazı durumlarda (örneğin, giriş görüntüsü tam ekran ise) dikey ve yatay modları için ayrı başlangıç ekranında olması gerekir.
+
+Yatay modu için bir giriş ekranı eklemek için aşağıdaki adımları kullanın:
+
+1. İçinde **kaynakları/drawable** klasörü, kullanmak istediğiniz giriş ekranı görüntüsü yatay sürümü ekleyin. Bu örnekte, **splash_logo_land.png** (kullandığı siyah harflerinin mavi yerine) Yukarıdaki örneklerde kullanılan logosu yatay sürümüdür.
+
+2. İçinde **kaynakları/drawable** klasörü, yatay sürümünü Oluştur `layer-list` drawable, önceden tanımlanmış (örneğin, **splash_screen_land.xml**). Bu dosyada, bit eşlem yolu giriş ekranı görüntüsü yatay sürümüne ayarlayın. Aşağıdaki örnekte, **splash_screen_land.xml** kullanan **splash_logo_land.png**:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+      <item>
+        <color android:color="@color/splash_background"/>
+      </item>
+      <item>
+        <bitmap
+            android:src="@drawable/splash_logo_land"
+            android:tileMode="disabled"
+            android:gravity="center"/>
+      </item>
+    </layer-list>
+
+    ```
+
+3.  Oluşturma **değerleri/kaynakları-kara** zaten yoksa klasörü.
+
+4.  Dosya ekleme **colors.xml** ve **style.xml** için **değerleri kara** (bunlar kopyalanabilir ve mevcut değişiklik **values/colors.xml**ve **values/style.xml** dosyaları).
+
+5.  Değiştirme **değerleri-kara/style.xml** drawable için yatay sürümünü kullanmasını sağlamak amacıyla `windowBackground`. Bu örnekte, **splash_screen_land.xml** kullanılır:
+
+    ```xml
+    <resources>
+      <style name="MyTheme.Base" parent="Theme.AppCompat.Light">
+      </style>
+        <style name="MyTheme" parent="MyTheme.Base">
+      </style>
+      <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen_land</item>
+        <item name="android:windowNoTitle">true</item>  
+        <item name="android:windowFullscreen">true</item>  
+        <item name="android:windowContentOverlay">@null</item>  
+        <item name="android:windowActionBar">true</item>  
+      </style>
+    </resources>
+    ```
+
+6.  Değiştirme **değerleri-kara/colors.xml** giriş ekranı yatay sürümü için kullanmak istediğiniz renklerini yapılandırmak için. Bu örnekte, sarı yatay modu için giriş arka plan rengi değişir:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+      <color name="primary">#2196F3</color>
+      <color name="primaryDark">#1976D2</color>
+      <color name="accent">#FFC107</color>
+      <color name="window_background">#F5F5F5</color>
+      <color name="splash_background">#FFFF00</color>
+    </resources>
+    ```
+
+7.  Derleme ve uygulamayı yeniden çalıştırın. Cihaz ekranı hala görüntülenirken modu yatay olarak döndürür. Giriş ekranı yatay sürüme değiştirir:
+
+    [![Yatay modu için giriş ekranı döndürme](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+
+
+Yatay modu ekranı kullanımını her zaman sorunsuz bir deneyim sağlamaz unutmayın. Varsayılan olarak, Android uygulama dikey modunda başlatılır ve aygıt zaten yatay modunda olsa bile modu yatay olarak geçer. Sonuç olarak, aygıt yatay modundayken uygulama başlatılırsa, cihaz kısaca dikey giriş ekranı sunar ve yatay giriş ekranı için dikey döndürme canlandırır. Ne yazık ki, bu ilk dikey ve yatay geçiş gerçekleşir bile `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` giriş etkinliğin bayrakları belirtilir. Bu sınırlamaya geçici bir çözüm için en iyi yolu işleyen bir tek giriş ekranı görüntüsü doğru dikey ve yatay modlarında oluşturmaktır.
 
 
 ## <a name="summary"></a>Özet

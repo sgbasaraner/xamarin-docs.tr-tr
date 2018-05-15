@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: b690b4aed315a78d95d9e0e7444257f0fc2c4a78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b370c27a212f876231764851c894bf683ae460c3
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms görünümleri
 
@@ -53,7 +53,7 @@ Etiketler, düğmeler ve yaygın olarak da bilinir kaydırıcılar gibi kullanı
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) OpenGL grafikler, iOS ve Android projeleri görüntüler. Evrensel Windows platformu için desteği yoktur. İOS ve Android projelerine başvuru gerektiren **OpenTK 1.0** derleme veya **OpenTK** sürüm 1.0.0.0 derleme. `OpenGLView` Paylaşılan bir projede kullanmak daha kolay olur; bir PCL ya da .NET standart kitaplığında kullandıysanız, ardından bir bağımlılık hizmeti de (örnek kodda gösterildiği gibi) gerekir.<br /><br />Bu Xamarin.Forms yerleşik yalnızca grafik tesis olmakla birlikte, bir Xamarin.Forms uygulaması, ayrıca grafikleri kullanma işleyebilen [ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md), [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md), veya [ `UrhoSharp` ](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![OpenGLView örnek](views-images/OpenGLView.png "OpenGLView örnek")](views-images/OpenGLView-Large.png#lightbox "OpenGLView örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) ile [arka plan kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
+| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) OpenGL grafikler, iOS ve Android projeleri görüntüler. Evrensel Windows platformu için desteği yoktur. İOS ve Android projelerine başvuru gerektiren **OpenTK 1.0** derleme veya **OpenTK** sürüm 1.0.0.0 derleme. `OpenGLView` Paylaşılan bir projede kullanmak daha kolay olur; bir .NET standart kitaplığında kullandıysanız, ardından bir bağımlılık hizmeti de (örnek kodda gösterildiği gibi) gerekir.<br /><br />Bu Xamarin.Forms yerleşik yalnızca grafik tesis olmakla birlikte, bir Xamarin.Forms uygulaması, ayrıca grafikleri kullanma işleyebilen [ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md), [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md), veya [ `UrhoSharp` ](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![OpenGLView örnek](views-images/OpenGLView.png "OpenGLView örnek")](views-images/OpenGLView-Large.png#lightbox "OpenGLView örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) ile [arka plan kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="map"></a>eşleme
@@ -160,7 +160,7 @@ Bu iki sınıf türetin [ `InputView` ](https://developer.xamarin.com/api/type/X
 
 ## <a name="views-that-display-collections"></a>Koleksiyonları görüntüleyen veri görünümleri
 
-### <a name="picker"></a>Picker
+### <a name="picker"></a>Seçici
 
 |     |     |
 | --- | --- |

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 7cb2a79fffda40f09ee75a12d6287b162566741d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b16d146c5ad1097f38c41763a3ae111e7439256f
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xaml-standard-preview"></a>XAML standart (Önizleme)
 
@@ -22,7 +22,7 @@ XAML standart Xamarin.Forms, denemeniz için şu adımları izleyin:
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Karşıdan [NuGet paketini buradan Önizleme](https://aka.ms/xf-xamlstandard-nuget).
-2. Ekleme **Xamarin.Forms.Alias** Xamarin.Forms PCL, .NET standart ve platform projeleriniz için NuGet paketi.
+2. Ekleme **Xamarin.Forms.Alias** Xamarin.Forms .NET standart ve platform projeleriniz için NuGet paketi.
 3. Paketiyle başlatma `Alias.Init()`
 4. Ekleme bir `xmlns:a` başvurusu `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
 5. XAML'de türlerini kullanın - bkz [denetimleri başvuru](controls.md) daha fazla bilgi için.
@@ -30,7 +30,7 @@ XAML standart Xamarin.Forms, denemeniz için şu adımları izleyin:
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 1. Karşıdan [NuGet paketini buradan Önizleme](https://aka.ms/xf-xamlstandard-nuget).
-2. Ekleme **Xamarin.Forms.Alias** Xamarin.Forms PCL, .NET standart ve platform projeleriniz için NuGet paketi.
+2. Ekleme **Xamarin.Forms.Alias** Xamarin.Forms .NET standart ve platform projeleriniz için NuGet paketi.
 3. Paketiyle başlatma `Alias.Init()`
 4. Ekleme bir `xmlns:a` başvurusu `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
 5. XAML'de türlerini kullanın - bkz [denetimleri başvuru](controls.md) daha fazla bilgi için.

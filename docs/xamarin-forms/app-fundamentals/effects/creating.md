@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 12b8906dd4562e58dede181e773e4046b8434214
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-an-effect"></a>Efekt oluşturma
 
@@ -188,7 +188,7 @@ namespace EffectsDemo.UWP
 
 ## <a name="consuming-the-effect"></a>Etkisi kullanma
 
-Xamarin.Forms taşınabilir sınıf kitaplığı (PCL) veya paylaşılan kitaplığı projesinden efekt tüketimi için işlem aşağıdaki gibidir:
+Xamarin.Forms .NET standart kitaplığı veya paylaşılan kitaplığı projesinden efekt tüketimi için işlem aşağıdaki gibidir:
 
 1. Efekti özelleştirilmiş bir denetimi bildirin.
 1. Denetimin ekleyerek etkisi denetimine ekleme [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) koleksiyonu.
@@ -209,7 +209,7 @@ Aşağıdaki XAML kodu örnekte gösterildiği bir [ `Entry` ](https://developer
 </Entry>
 ```
 
-`FocusEffect` PCL sınıfında etkisi tüketim XAML'de destekler ve aşağıdaki kod örneğinde gösterildiği:
+`FocusEffect` .NET standart kitaplığı sınıfında etkisi tüketim XAML'de destekler ve aşağıdaki kod örneğinde gösterildiği:
 
 ```csharp
 public class FocusEffect : RoutingEffect

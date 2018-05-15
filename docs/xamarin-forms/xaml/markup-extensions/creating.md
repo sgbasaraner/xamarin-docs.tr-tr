@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: d4ae3b42c5c926749310da6e36b6f4e9754d398c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3807ac6a91d3bf650922a01d9111dc34513d62b3
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>XAML biçimlendirme uzantıları oluşturma
 
@@ -151,7 +151,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` Taşınabilir sınıf kitaplığı proje katıştırılmış bir kaynağı olarak saklanan bir görüntü dosyasına erişmek XAML dosyası ihtiyacı olduğunda yararlıdır. Kullandığı `Source` statik çağırmak için özellik `ImageSource.FromResource` yöntemi. Bu yöntem, derleme adı, klasör adı ve noktalarla ayrılmış filename oluşan bir tam nitelikli kaynak adı gerektirir. `ImageResourceExtension` Yansıma kullanarak derleme adını alır ve kendisine başına çünkü derleme bölümü adı olmayan `Source` özelliği. Ne olursa olsun, `ImageSource.FromResource` görüntüleri de bu kitaplıkta olmadığı sürece bu XAML kaynak uzantısı harici bir kitaplığı parçası olması anlamına gelir bit eşlem'i içeren derlemenin çağrılmalıdır. (Bkz [ **katıştırılmış görüntüler** ](~/xamarin-forms/user-interface/images.md#embedded_images) katıştırılmış kaynaklar olarak depolanan bit eşlemler erişme hakkında daha fazla bilgi için makalenin.) 
+`ImageResourceExtension` XAML dosyası .NET standart kitaplığı projesinde katıştırılmış bir kaynağı olarak saklanan bir görüntü dosyasına erişmek gerektiğinde yararlı olur. Kullandığı `Source` statik çağırmak için özellik `ImageSource.FromResource` yöntemi. Bu yöntem, derleme adı, klasör adı ve noktalarla ayrılmış filename oluşan bir tam nitelikli kaynak adı gerektirir. `ImageResourceExtension` Yansıma kullanarak derleme adını alır ve kendisine başına çünkü derleme bölümü adı olmayan `Source` özelliği. Ne olursa olsun, `ImageSource.FromResource` görüntüleri de bu kitaplıkta olmadığı sürece bu XAML kaynak uzantısı harici bir kitaplığı parçası olması anlamına gelir bit eşlem'i içeren derlemenin çağrılmalıdır. (Bkz [ **katıştırılmış görüntüler** ](~/xamarin-forms/user-interface/images.md#embedded_images) katıştırılmış kaynaklar olarak depolanan bit eşlemler erişme hakkında daha fazla bilgi için makalenin.) 
 
 Ancak `ImageResourceExtension` gerektirir `Source` ayarlanacak, özelliği `Source` özelliği bir öznitelikte sınıfın içerik özelliği belirtilir. Bunun anlamı `Source=` süslü ayraçlar ifade parçası etmeyebilirsiniz. İçinde **görüntü kaynak Demo** sayfasında `Image` öğeleri fetch klasör adı ve noktalarla ayrılmış dosya adını kullanarak iki görüntü:
 
