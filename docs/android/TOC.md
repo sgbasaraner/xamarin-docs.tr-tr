@@ -220,7 +220,7 @@
 #### [ABI’ye Özgü APK’ları Derleme](deploy-test/building-apps/abi-specific-apks.md)
 ### [Komut Satırı Öykünücüsü](deploy-test/command-line-emulator.md)
 ### [Hata Ayıklama](deploy-test/debugging/index.md)
-#### [Android SDK Emulator](deploy-test/debugging/android-sdk-emulator/index.md)
+#### [Google Android Emulator](deploy-test/debugging/android-sdk-emulator/index.md)
 ##### [Öykünücüyü Çalıştırma](deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
 ##### [Sorun giderme](deploy-test/debugging/android-sdk-emulator/troubleshooting.md)
 #### [Visual Studio Android Emulator](deploy-test/debugging/visual-studio-android-emulator.md)
