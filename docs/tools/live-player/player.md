@@ -5,34 +5,16 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
-ms.date: 05/10/2017
-ms.openlocfilehash: 2e2a3e80c121688f9a8bfff0afe4184f19fc6619
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/14/2017
+ms.openlocfilehash: 3d4d34c6945387f5878ea708faf630d2545a750e
+ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Canlı oynatıcı uygulaması
 
 ![Önizleme özelliği](~/media/shared/preview.png)
-
-## <a name="get-the-app"></a>Uygulamayı Al
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-Google Play'de Android için Xamarin Canlı Player kullanılabilir:
-
-[![Google play'de kullanılabilir](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
-
-Google Play gerek kalmadan Android cihazlar için Xamarin Canlı Player aracılığıyla kullanılabilir [HockeyApp](https://aka.ms/xlp-hockeyapp) dağıtım. Android için seçim tarafından doğrudan Google Play'den yüklenebilir için erken Önizleme ek olarak, derlemeler [açık beta programı](https://play.google.com/apps/testing/com.xamarin.live)
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-Katılmak için kullanıcıların öneririz [Xamarin Canlı Player uygulama _iOS Önizleme_ ](https://aka.ms/liveplayeralpha) keyfini TestFlight üzerinden yapılan en son geliştirmeleri hızlı erişim için.
-
------
-
-## <a name="using-the-app"></a>Uygulamasını kullanarak
 
 Telefonunuzda uygulama yüklendiğinde izleyin [kurulum yönergeleri](~/tools/live-player/install.md) bilgisayarınıza bağlanmak için. Aşağıdakilerden birini deneyin [örnek uygulamaları](~/tools/live-player/samples.md) bunu çalıştırmak için.
 

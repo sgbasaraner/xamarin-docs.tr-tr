@@ -7,22 +7,26 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 020a5a2182458e759626b9bdbf45b62b6e13d71a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 31660ff1255878dbae15bda601da8e628aabd459
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>NuGet bileşen başvurularını güncelleştirme
 
-> [!NOTE]
+> [!IMPORTANT]
+> Bileşen deposu 15 Mayıs 2018 itibariyle yarıda kesildi (Bu Kapatılmak üzere ilk yüklendiği [duyurdu](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) Kasım 2017 içinde).
+>
 > Xamarin bileşenleri Visual Studio artık desteklenmemektedir ve NuGet paketleri tarafından değiştirilmelidir. Bileşen başvuruları, projelerden el ile kaldırmak için aşağıdaki yönergeleri izleyin.
 
 NuGet paketlerini eklemek için bu yönergeleri başvurmak [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) veya [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
+Popüler Xamarin listesini [eklentileri ve kitaplıklarını](https://github.com/xamarin/XamarinComponents/blob/master/README.md) NuGet pacakges kullanılabilir olan bileşenleri alternatifleri bulmak kullanılabilir.
+
 ## <a name="manually-removing-component-references"></a>Bileşen başvuruları el ile kaldırma
 
-Kasım 2017 ' olduğu [Duyuruldu](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) , Xamarin bileşen Deposu'nda dönüştürülmesine. Bileşenleri sunsetting ile ilerlemek için bir çaba içinde 15.6 Visual Studio sürümü ve Visual Studio 7.4 sürümünü Mac için artık bileşen projenizdeki destekler. 
+Artık 15.6 Visual Studio sürümü ve Visual Studio 7.4 sürümünü Mac için bileşen projenizde destekler. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -199,6 +203,6 @@ Birçok bileşen satıcıları için NuGet geçirme hala çalışmaktadır ve di
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
-
+- [Popüler Xamarin eklenti ve kitaplıkları listesi](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [Yükleme ve bir NuGet paketi (Windows) kullanma](https://docs.microsoft.com/nuget/quickstart/use-a-package)
 - [Bir NuGet paketi (Mac) dahil olmak üzere](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: cf0e7cab0c879f8fb286c87b2aaadab2dc1453f8
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: eaa57e90ef71f13a53737aa6540e5b5bd9126ad2
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="localization"></a>Yerelleştirme
 
@@ -32,7 +32,7 @@ Bu belgeyle ilişkilendirilen iki örnekleri şunlardır:
 
 TodoLocalized örnek içeren bir [paylaşılan proje demo](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/) yapı sistem sınırlamaları nedeniyle kaynak dosyaları alınamadı ancak bir **. designer.cs** erişim olanağı kıran oluşturulan dosya çevrilen dizeleri kesin türü belirtilmiş-kod.
 
-Bu belgenin geri kalanında Xamarin.Forms PCL şablonu kullanarak projeleri için ilişkilendirir.
+Bu belgenin geri kalanında Xamarin.Forms .NET standart kitaplığı şablonu kullanarak projeleri için ilişkilendirir.
 
 ## <a name="globalizing-xamarinforms-code"></a>Xamarin.Forms kod Genelleştirme
 
@@ -46,7 +46,7 @@ Bu belgede biz RESX dosyaları Bu dizelerin depolamak ve bunlara kullanıcı ter
 
 ### <a name="adding-resources"></a>Kaynakları ekleme
 
-Xamarin.Forms PCL uygulama Genelleştirme ilk adımı, uygulamada kullanılan tüm metni depolamak için kullanılacak RESX kaynak dosyaları eklemektir. Varsayılan metin içeren bir RESX dosyası ekleyin ve ardından desteklemek için istediğimiz her dil için ek RESX dosyaları eklemek gerekir.
+Xamarin.Forms .NET standart bir kitaplık uygulaması Genelleştirme ilk adımı, uygulamada kullanılan tüm metni depolamak için kullanılacak RESX kaynak dosyaları eklemektir. Varsayılan metin içeren bir RESX dosyası ekleyin ve ardından desteklemek için istediğimiz her dil için ek RESX dosyaları eklemek gerekir.
 
 #### <a name="base-language-resource"></a>Temel dil kaynak
 
@@ -98,7 +98,7 @@ Kesin türü belirtilmiş dize özellikleri yapmak için `public`, yapılandırm
 
 -----
 
-Bu değişiklik isteğe bağlıdır ve yalnızca yerelleştirilmiş dizeleri (örneğin, RESX dosyaları farklı bir derlemede kodunuzu yerleştirdiğiniz varsa) farklı derlemeler başvuru isteyip istemediğinizi gerekli. Bu konu için örnek dizeleri bırakır `internal` bunlar burada kullanılır Xamarin.Forms PCL derlemede tanımlandığından.
+Bu değişiklik isteğe bağlıdır ve yalnızca yerelleştirilmiş dizeleri (örneğin, RESX dosyaları farklı bir derlemede kodunuzu yerleştirdiğiniz varsa) farklı derlemeler başvuru isteyip istemediğinizi gerekli. Bu konu için örnek dizeleri bırakır `internal` bunlar burada kullanılır aynı Xamarin.Forms .NET standart kitaplığı derlemede tanımlandığından.
 
 Yalnızca yukarıda gösterildiği gibi temel RESX dosyasında özel araç ayarlamanız yeterlidir; Ayarlanacak gerekmez *herhangi* oluşturma aracını aşağıdaki bölümlerde ele dile özgü RESX dosyaları.
 
@@ -559,7 +559,7 @@ Evrensel Windows Platformu (UWP) projeleri bağımlılık hizmeti gerektirmez. B
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
-Taşınabilir sınıf kitaplığı (PCL) proje özellikleri düğümünü genişletin ve çift **AssemblyInfo.cs** dosya. Dilden bağımsız kaynak assembly dili İngilizce'ye ayarlamak için dosyasında aşağıdaki satırı ekleyin:
+.NET standart kitaplığı proje özellikleri düğümünü genişletin ve çift **AssemblyInfo.cs** dosya. Dilden bağımsız kaynak assembly dili İngilizce'ye ayarlamak için dosyasında aşağıdaki satırı ekleyin:
 
 ```csharp
 [assembly: NeutralResourcesLanguage("en")]
