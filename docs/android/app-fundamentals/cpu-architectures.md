@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: dea5aaa16891893f649d5ec56f3e6b1ee9a18683
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: abfe22683de024f056d7798dc3ac2de13ebd953e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="cpu-architectures"></a>CPU mimarisi
 
@@ -29,7 +29,7 @@ Bunun nasıl çalıştığı hakkında daha fazla bilgi için bkz: [çok çekird
 
 Genellikle açıkça bir mimari (veya mimarileri) belirlediğiniz için uygulamanızı yapılandırıldığında **sürüm**. İçin uygulamanızı yapılandırıldığında **hata ayıklama**, **kullanım çalışma zamanı paylaşılan** ve **kullanım hızlı dağıtım** seçenekleri etkinleştirilmişse, açık mimari seçimi devre dışı bırakın.
 
-Visual Studio'da çift **özellikleri** projenizde altında **Çözüm Gezgini** seçip **Android seçenekleri** sayfası. Tıklatın **paketleme** sekmesinde ve doğrulayın **kullanım çalışma zamanı paylaşılan** devre dışı bırakıldı (Bu ayarın kapatılması açıkça desteklemek için hangi ABIs seçin izin verir). Tıklatın **Gelişmiş** sekmesi ve altında **Gelişmiş Özellikler**, desteklemek istediğiniz mimarileri denetleyin:
+Visual Studio'da altında projenize sağ tıklayın **Çözüm Gezgini** seçip **özellikleri**. Altında **Android seçenekleri** sayfasında onay **paketleme özelliklerini** bölümünde ve doğrulayın **kullanım çalışma zamanı paylaşılan** devre dışı bırakıldı (Bu ayarın kapatılması olanak tanır açıkça desteklemek için hangi ABIs seçin). Tıklatın **Gelişmiş** düğmesi ve altında **desteklenen mimariler**, desteklemek istediğiniz mimarileri denetleyin:
 
 [![Pushservice ve pushservice-v7a seçme](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 

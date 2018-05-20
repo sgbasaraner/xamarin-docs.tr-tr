@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: dfc46b5caa14c1c02d1c2afaffecc701fea59e2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8aa17c868ce1d0343eab6758c03aaf042c27130e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-platform-specifics"></a>Android platformu özellikleri
 
@@ -135,7 +135,7 @@ Bu manyetik disk belleği tarafından görüntülenen sayfaları aracılığıyl
 
 ## <a name="controlling-the-elevation-of-visual-elements"></a>Görsel öğeleri ayrıcalıkların denetleme
 
-Bu platforma özgü büyük veya yükseltme veya Z-sıralamasını, uygulamaların görsel öğeleri hedefleyen API 21 denetlemek için kullanılır. Bir görsel öğe ayrıcalıkların alt Z değerleri olan görsel öğeleri occluding daha yüksek Z değerleri olan görsel öğeleri ile kendi çizim sırası belirler. XAML'de ayarlayarak tüketiliyor `Elevation.Elevation` özelliğine bağlı bir `boolean` değeri:
+Bu platforma özgü büyük veya yükseltme veya Z-sıralamasını, uygulamaların görsel öğeleri hedefleyen API 21 denetlemek için kullanılır. Bir görsel öğe ayrıcalıkların alt Z değerleri olan görsel öğeleri occluding daha yüksek Z değerleri olan görsel öğeleri ile kendi çizim sırası belirler. XAML'de ayarlayarak tüketiliyor `VisualElement.Elevation` özelliğine bağlı bir `boolean` değeri:
 
 ```xaml
 <ContentPage ...
@@ -147,7 +147,7 @@ Bu platforma özgü büyük veya yükseltme veya Z-sıralamasını, uygulamalar�
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>        
         <Grid Margin="0,20,0,0">
-            <Button Text="Button Above BoxView - Click Me" android:Elevation.Elevation="10"/>
+            <Button Text="Button Above BoxView - Click Me" android:VisualElement.Elevation="10"/>
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>
     </StackLayout>
@@ -196,7 +196,7 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>` Yöntemi belirtir. bu platforma özgü yalnızca Android üzerinde çalışır. `Elevation.SetElevation` Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) ad alanı, ayrıcalıkların yükseltilmesi görsel öğe için bir boş değer atanabilir ayarlamak için kullanılan `float`. Ayrıca, `Elevation.GetElevation` yöntemi, bir görsel öğe ayrıcalık değerini almak için kullanılabilir.
+`Button.On<Android>` Yöntemi belirtir. bu platforma özgü yalnızca Android üzerinde çalışır. `VisualElement.SetElevation` Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) ad alanı, ayrıcalıkların yükseltilmesi görsel öğe için bir boş değer atanabilir ayarlamak için kullanılan `float`. Ayrıca, `VisualElement.GetElevation` yöntemi, bir görsel öğe ayrıcalık değerini almak için kullanılabilir.
 
 Böylece daha yüksek Z değerleri olan görsel öğeleri alt Z değerleri olan görsel öğeleri occlude görsel öğeleri ayrıcalıkların denetlenebilir sonucudur. Bu nedenle, bu örnekte ikinci [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) yukarıda çizilir [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) daha yüksek bir ayrıcalık değerine sahip olduğundan:
 

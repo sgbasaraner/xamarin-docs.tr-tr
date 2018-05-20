@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/10/2018
-ms.openlocfilehash: b5c20eb9f40bb4c4981d6b60b9fd4bc75fd29336
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 2f0bb6f1371b9ce1b925b876851d58f3c4d01419
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Android öykünücüsünde donanım hızlandırma
 
@@ -46,9 +46,9 @@ Hyper-V ve Google Android öykünücüsü kullanmaya başlamak için:
 
     Windows Hyper-V ve Windows hiper yönetici platformu etkinleştirdikten sonra bilgisayarınızı yeniden başlatmanız gerekebilir.
 
-3. **Yükleme [Visual Studio 15,8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; Visual Studio'nun bu sürümü, Google Android öykünücüsü Hyper-V desteği ile başlatmak için IDE desteği sağlar.
+3. **Yükleme [Visual Studio 15,8 Preview 1 veya sonrası](https://www.visualstudio.com/vs/preview/)**  &ndash; Visual Studio'nun bu sürümü, Google Android öykünücüsü Hyper-V desteği ile başlatmak için IDE desteği sağlar.
 
-4. **Google Android öykünücüsü Paketi 27.2.7 yüklemek ya da daha yüksek** &ndash; bu paketi yüklemek için gidin **Araçlar > Android > Android SDK Manager** Visual Studio. Seçin **Araçları** sekmesini tıklatın ve Android öykünücüsü bileşen en az olduğundan emin olun 27.2.7 sürümü.
+4. **Google Android öykünücüsü Paketi 27.2.7 yüklemek ya da daha sonra** &ndash; bu paketi yüklemek için gidin **Araçlar > Android > Android SDK Manager** Visual Studio. Seçin **Araçları** sekmesini tıklatın ve Android öykünücüsü bileşen en az olduğundan emin olun 27.2.7 sürümü.
 
     [![Android SDK'lar ve Araçlar iletişim](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
 

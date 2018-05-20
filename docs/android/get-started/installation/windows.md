@@ -6,12 +6,12 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/04/2018
-ms.openlocfilehash: b1cf87ed8c5614a113a03232547a6753da26bc2d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/17/2018
+ms.openlocfilehash: ca88159e8bcbcd4665e29b4ad8df9ffe00cfec67
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="windows-installation"></a>Windows yükleme
 
@@ -85,7 +85,8 @@ Bir bilgisayarı bir Android cihazında öykünen aşağıdaki bileşenleri içe
 Hyper-V ve HAXM, Google Android öykünücüsü hakkında daha fazla bilgi için lütfen bkz [Android öykünücüsü donanım hızlandırmasını](~/android/get-started/installation/android-emulator/hardware-acceleration.md) Kılavuzu.
 
 > [!NOTE]
-> Önceki Windows sürümlerinde HAXM Hyper-V ile uyumlu değil. Bu senaryoda ya da gerekli [Hyper-V devre dışı](/xamarin/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md?tabs=vswin#disabling-hyper-v) veya x86 olmayan yavaş öykünücüsü görüntüleri kullanmak için en iyi duruma getirme.
+> Önceki Windows sürümlerinde HAXM Hyper-V ile uyumlu değil. Bu senaryoda ya da gerekli [Hyper-V devre dışı](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#disabling-hyper-v) veya x86 olmayan yavaş öykünücüsü görüntüleri kullanmak için en iyi duruma getirme.
+
 
 <a name="device" />
 
@@ -120,6 +121,6 @@ Sonraki adım göz atın yapmaktır [Hello, Android](~/android/get-started/hello
 - [Xamarin için Visual Studio araçlarını yükleme](~/cross-platform/get-started/installation/windows.md)
 - [Sistem Gereksinimleri](~/cross-platform/get-started/requirements.md)
 - [Android SDK Kurulumu](~/android/get-started/installation/android-sdk.md)
-- [Google Android öykünücüsü](~/android/get-started/installation/android-emulator/index.md)
+- [Google Android Emulator](~/android/get-started/installation/android-emulator/index.md)
 - [Aygıtı geliştirme için ayarlama](~/android/get-started/installation/set-up-device-for-development.md)
 - [Uygulamaların Android öykünücüsünde çalıştırın](https://developer.android.com/studio/run/emulator#Requirements)

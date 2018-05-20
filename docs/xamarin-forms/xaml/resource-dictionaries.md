@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: bfdfeda5821b020d7948e583a63bf9ec7e8ee324
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: 47cca2f726b0af396ea1eb287cfa4e1f1bf19724
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="resource-dictionaries"></a>Kaynak sözlükleri
 
@@ -35,7 +35,7 @@ Kaynakları tanımlanmış bir [ `ResourceDictionary` ](xref:Xamarin.Forms.Resou
 Öğesinden türetilen yalnızca bir sınıf bir Xamarin.Forms programı içeren `Application` ancak genellikle kullanır öğesinden türetilen birçok sınıfları `VisualElement`sayfalar, Düzen ve denetimleri dahil olmak üzere. Bu nesnelerin herhangi biri olabilir, `Resources` özellik kümesine bir `ResourceDictionary`. Belirli bir nereye koyacağınızı seçmek `ResourceDictionary` kaynakların nerede kullanılabilir etkiler:
 
 - Kaynakları bir `ResourceDictionary` , bağlı bir görünüme gibi `Button` veya `Label` bu çok kullanışlı değildir, belirli bir nesneye yalnızca uygulanabilir.
-- Kaynakları bir `ResourceDictionary` bir düzen gibi bağlı `StackLayout` veya `Grid` düzenini ve tüm alt öğeleri düzenini uygulanabilir. 
+- Kaynakları bir `ResourceDictionary` bir düzen gibi bağlı `StackLayout` veya `Grid` düzenini ve tüm alt öğeleri düzenini uygulanabilir.
 - Kaynakları bir `ResourceDictionary` tanımlanan sayfa ve tüm alt düzey sayfanın uygulanabilir.
 - Kaynakları bir `ResourceDictionary` tanımlanan uygulamayı düzeyi uygulama genelinde uygulanabilir.
 
@@ -187,7 +187,7 @@ Bu `ResourceDictionary` türünde bir nesne olan tek bir kaynak içeriyor `DataT
         <local:MyResourceDictionary />
     </ContentPage.Resources>
     ...
-</ContentPage>  
+</ContentPage>
 ```
 
 Örneği `MyResourceDictionary` ayarlanır `Resources` özelliği `ContentPage` nesnesi.
@@ -258,7 +258,7 @@ Birleştirilmiş zaman [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDicti
 
 ## <a name="merging-dictionaries-in-xamarinforms-30"></a>Xamarin.Forms 3.0 sözlükte birleştirme
 
-Birleştirme işlemi Xamarin.Forms 3.0 ile başlayan `ResourceDictionaries` biraz daha kolay ve daha esnek hale geldi. `MergedDictionaries` Özellik öğesi etiketleri gerekli artık. Bunun yerine, kaynak sözlüğe başka eklediğiniz `ResourceDictionary` yeni etiket [ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source) kaynaklar ile XAML dosyasının dosya adı olarak ayarlanan özelliği:
+Birleştirme işlemi Xamarin.Forms 3.0 ile başlayan [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) örnekleri duruma biraz daha kolay ve daha esnektir. `MergedDictionaries` Özellik öğesi etiketleri gerekli artık. Bunun yerine, kaynak sözlüğe başka eklediğiniz `ResourceDictionary` yeni etiket [ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source) kaynaklar ile XAML dosyasının dosya adı olarak ayarlanan özelliği:
 
 ```xaml
 <ContentPage ...>
@@ -294,7 +294,7 @@ Xamarin.Forms 3.0 otomatik olarak başlatır çünkü `ResourceDictionary`, bu i
 </ContentPage>
 ```
 
-Bu yeni söz diziminin mu _değil_ örneği `MyResourceDictionary` sınıfı. Bunun yerine, XAML dosyasına başvurur. Arka plan kod dosyasına nedenden dolayı (**MyResourceDictionary.xaml.cs**) artık gerekli değildir. Ayrıca kaldırabilirsiniz `x:Class` kök etiket özniteliğinden **MyResourceDictionary.xaml** dosya. 
+Bu yeni söz diziminin mu _değil_ örneği `MyResourceDictionary` sınıfı. Bunun yerine, XAML dosyasına başvurur. Arka plan kod dosyasına nedenden dolayı (**MyResourceDictionary.xaml.cs**) artık gerekli değildir. Ayrıca kaldırabilirsiniz `x:Class` kök etiket özniteliğinden **MyResourceDictionary.xaml** dosya.
 
 ## <a name="summary"></a>Özet
 
