@@ -6,11 +6,11 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 7e28e2513b74faa884fb7bc3d7194f1b02844734
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 81c6a5682fc91b49a0f7495f06e7f7b6d3f76330
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -24,33 +24,12 @@ Profil oluşturma için kullanılabilir Instruments sayısı Xamarin profil olu�
 
 Bu kılavuz genel profil oluşturma senaryoları inceler ve profil oluşturucu çözümlemek ve iOS ve Android uygulamaları en iyi duruma getirmek için bir araç olarak tanıtır.
 
-## <a name="contents"></a>İçindekiler
-
-- [İndirme ve yükleme](#Download_and_Install)
-- [Profil oluşturucular ve profil oluşturma](#Profilers_and_Profiling)
-- [Xamarin Profiler](#Xamarin_Profiler)
-- [Profil Oluşturucu desteği](#Profiler_Support)
-- [Profil Oluşturucu temelleri](#Profiler_Basics)
-    - [Uygulamanızda profil izin verme](#Allowing_Profiling_in_your_App)
-    - [Profil oluşturucu başlatma](#Launching_the_Profiler)
-        - [Visual Studio'dan Mac için başlatma](#Launching_from_Xamarin_Studio)
-        - [Visual Studio'dan başlatma](#Launching_from_Visual_Studio)
-        - [Kaydetme ve profil oluşturucu oturumları yükleme](#Saving_and_Loading_Profiler_Sessions)
-        - [Profil Oluşturucu özellikleri ve araçları](#Profiler_Features)
-    - [Ayırma](#Allocations)
-    - [Zaman profil oluşturucu](#Time_Profiler)
-    - [Döngüler](#Cycles)
-- [Profil oluşturma uygulamaları](#Profiling_Applications)
-- [Özet](#Summary)
-
 ## <a name="download-and-install"></a>İndirme ve yükleme
 
 > [!NOTE]
-> **Not:** olması gerekir bir [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) abone bir Mac bilgisayar üzerinde Mac için bu özelliği Windows ya da Visual Studio Enterprise ya da Visual Studio kilidini açmak için
+> Olması gerekir bir [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) abone bir Mac bilgisayar üzerinde Mac için bu özelliği Windows ya da Visual Studio Enterprise ya da Visual Studio kilidini açmak için
 
 Xamarin profil oluşturucu bir tek başına uygulamadır ve gelen IDE içinde profil oluşturmayı etkinleştirmek için Mac için Visual Studio ve Visual Studio ile tümleşiktir.
-
-### <a name="download"></a>İndir
 
 Platformunuza ilişkin yükleme paketini indirin:
 
@@ -58,7 +37,6 @@ Platformunuza ilişkin yükleme paketini indirin:
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 Yüklendikten sonra sisteminize Xamarin profil oluşturucu ekleme için yükleyiciyi başlatın.
-
 
 ## <a name="profilers-and-profiling"></a>Profil oluşturucular ve profil oluşturma
 
@@ -199,7 +177,6 @@ Yükünü *.mlpd* tek başına uygulama açarak profil oluşturucu dosyalarıyla
 
 Daha fazla bilgi için bkz: [.mlpd dosyalar oluşturma ](~/tools/profiler/troubleshooting.md#gen_mlpd).
 
-
 ## <a name="profiler-features"></a>Profil Oluşturucu özellikleri
 
 Xamarin profil oluşturucu aşağıda gösterildiği gibi beş bölümlerden oluşur:
@@ -298,7 +275,6 @@ Grafiği aşağıdaki ekran görüntüsünde gösterildiği gibi çalışan uygu
 
 -----
 
-
 - **Çağrı ağacı** – gösterir harcanan zaman her bir yöntemin:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
@@ -340,24 +316,7 @@ Bir uygulama ile başka bir yapılandırma profili varsa, aşağıdaki ileti ile
 
 -----
 
-
 Seçin **güncelleştirme** devam etmek için.
-
-<!---
-## Profiling Android Applications
-
-
-Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
-
-You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
-
-
-## Profiling iOS Applications
-
-### Profiling tvOS
-
-## Profiling Mac Applications
--->
 
 ### <a name="sgen-garbage-collector-and-profiling"></a>SGen atık toplayıcısını ve profil oluşturma
 
@@ -374,7 +333,6 @@ Bellek yönetimi hakkında daha fazla bilgi için başvurmak [bellek ve performa
 ## <a name="summary"></a>Özet
 
 Bu kılavuzda hangi profil oluşturma ve nasıl geliştiriciler için yararlı olur inceledik. Biz sonra bazı geçmişi ve nasıl çalıştığı içine bilgi sağlama Xamarin profil oluşturucu kullanıma sunuldu. Son olarak biz Xamarin profil oluşturucu özelliklerini toured ve ayırma ve zaman profil oluşturucu Araçlar incelediniz.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

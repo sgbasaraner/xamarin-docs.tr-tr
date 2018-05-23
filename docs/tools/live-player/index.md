@@ -6,11 +6,11 @@ ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: b5301e499a3b85087f19449f8a25b107b8ec1e4b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: dd179fb1d1ce3ca57cdf6e27bb86a12e2f9ef03f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin.Forms için Xamarin Canlı Player
 
@@ -22,7 +22,7 @@ Bir korumalı alan bir aygıtta hızla görselleştirilen kendi fikir almak geli
 
 [![Xamarin Canlı Player: Kod, tarama, Test](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-1. Akan tarafından uygulamayı indirmek [Xamarin Canlı Player Kurulum](install.md) yönergeler.
+1. İzleyerek uygulamayı indirmek [Xamarin Canlı Player Kurulum](install.md) yönergeler.
 2. Etkinleştirme *Xamarin Canlı Player* içinde **Tercihler**, Cihazınızı seçin **aygıtları** listesi.
 2. Visual Studio için Cihazınızı kullanmak üzere bir QR kodu taramak için Canlı Player aygıtları yönetme.
 3. Uygulamayı sağ telefon veya Tabletinizi üzerinde çalışır.

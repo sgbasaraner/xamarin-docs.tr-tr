@@ -4,11 +4,11 @@ title: 'WPF vs. Xamarin.Forms: Benzerlikler & farkları'
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 21ffca65ee72308d1340a1db43471228b2adbe91
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ac30a29a2b4982b2f995c9f717cf1893ca5d8b8a
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF vs. Xamarin.Forms: Benzerlikler & farkları
 
@@ -33,7 +33,7 @@ XAML bildirim temelli işaretleme dili olarak WPF ve Xamarin.Forms için kullan�
 
 - Xamarin.Forms destekleyen [XAML 2009 belirtimi](/dotnet/framework/xaml-services/xaml-2009-language-features/); bu verileri gibi tanımlamak kolaylaştırır `string`s, `int`s, vs. de olarak tanımlayan genel türler ve oluşturucuları için bağımsız değişkenleri geçirme.
 
-- Şu anda bir yolu yoktur dyanmically yük XAML WPF ile gibi `XamlReader`. Aynı temel işlevselliğe sahip alabileceğiniz bir [NuGet paketi](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/) rağmen.
+- Şu anda WPF ile gibi XAML dinamik olarak yükleme yolu yoktur `XamlReader`. Aynı temel işlevselliğe sahip alabileceğiniz bir [NuGet paketi](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/) rağmen.
 
 ### <a name="markup-extensions"></a>İşaretleme uzantıları
 

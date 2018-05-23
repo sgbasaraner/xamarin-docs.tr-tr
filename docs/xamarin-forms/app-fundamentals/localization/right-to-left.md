@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: ff9814291d5a28ec9e0bbb3c2a6fc6cce5d8ee25
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 92ca58374292c829df4098274abae870b355a7b0
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="right-to-left-localization"></a>Sağdan sola yerelleştirme
 
@@ -24,7 +24,7 @@ _Sağdan sola yerelleştirme Xamarin.Forms uygulamalarına sağdan sola akış y
 Akış yönü kullanıcı Arabirimi öğeleri sayfada göz tarafından taranır yönüdür. Arapça ve İbranice gibi bazı diller kullanıcı Arabirimi öğeleri bir sağdan sola akış yönü düzenlenmiştir olmasını gerektirir. Bu ayarlanarak sağlanabilir [ `VisualElement.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliği. Bu özellik alır veya kendi düzeni denetleyen ve birine ayarlamalıdır herhangi bir üst öğesi içinde hangi kullanıcı Arabirimi öğeleri akış yönünü ayarlar [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) numaralandırma değerlerinin:
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 Ayarı [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) özelliğine [ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft) öğe üzerinde hizalama genellikle sağa, sağdan sola okuma sırası ve denetim düzenini gelen akış için ayarlar Sağdan sola:

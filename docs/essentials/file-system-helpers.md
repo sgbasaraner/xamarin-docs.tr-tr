@@ -5,11 +5,11 @@ ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 871d164df982d1d170e8ba5bffd3bd6600a4cdda
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 14aabc319fefdbad86f29a9d27ce39b59da35e3e
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials dosya sistemi Yardımcıları
 
@@ -31,7 +31,7 @@ Depolamak için uygulamanın dizinine almak için **veriyi önbelleğe**. Önbel
 var cacheDir = FileSystem.CacheDirectory;
 ```
 
-Uygulamanın en üst düzey diredctory kullanıcı veri dosyaları için tüm dosyaları almak için. Bu dosyalar framework eşitleniyor işletim sistemi ile yedeklenir. Platform uygulaması özellikleri aşağıdaki bakın.
+Uygulamanın en üst düzey dizinine kullanıcı veri dosyaları için tüm dosyaları almak için. Bu dosyalar framework eşitleniyor işletim sistemi ile yedeklenir. Platform uygulaması özellikleri aşağıdaki bakın.
 
 ```csharp
 var mainDir = FileSystem.AppDataDirectory;
@@ -54,7 +54,7 @@ Uygulama paketinin paketlenmiş bir dosyayı açmak için:
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 - **CacheDirectory** – döndürür [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir) geçerli bağlamın.
-- **AppDataDirectory** – döndürür [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) olan ve geçerli bağlamı yedeklenen kullanarak [Autu yedekleme](https://developer.android.com/guide/topics/data/autobackup.html) API 23 ve üzeri sürümlerde başlatılıyor.
+- **AppDataDirectory** – döndürür [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) olan ve geçerli bağlamı yedeklenen kullanarak [otomatik yedekleme](https://developer.android.com/guide/topics/data/autobackup.html) API 23 ve üzeri sürümlerde başlatılıyor.
 
 Her dosya içine ekleme **varlıklar** Android klasöründe proje ve yapı eylem olarak işaretlemek **AndroidAsset** ile kullanmak için `OpenAppPackageFileAsync`.
 

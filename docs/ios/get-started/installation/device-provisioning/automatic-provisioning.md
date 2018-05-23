@@ -6,12 +6,12 @@ ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 05/06/2018
-ms.openlocfilehash: 0e2ce758da2951efa0508e76cdf4eaac5384fa6b
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/22/2018
+ms.openlocfilehash: d324e469ba392b14c635990d607bf04c949ad5db
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="automatic-provisioning"></a>Otomatik sağlama
 
@@ -37,6 +37,14 @@ Ayrıca aşağıdaki olduğu bir Mac yapı konak eşleştirilmelidir:
 ## <a name="enabling-automatic-signing"></a>Otomatik imzalama etkinleştirme
 
 Otomatik imzalama işlemi başlamadan önce Visual Studio'da eklenen bir Apple kimliği açıklandığı gibi sahip olduğundan emin olun [Apple hesap yönetimi](~/cross-platform/macios/apple-account-management.md) Kılavuzu. Bir Apple kimliği ekledikten sonra varsa ilişkili kullanabilirsiniz _takım_. Bu sertifikalar, profilleri ve diğer kimlikleri karşı takım yapılacak sağlar. Kimliği oluşturmak için kullanılan aynı zamanda takım bir sağlama profiliyle eklenecek bir uygulama kimliği öneki. Bu kim olduğunuzu olduğunu doğrulamak Apple sağlar.
+
+> [!IMPORTANT]
+> Başlamadan önce ya da oturum açmak emin olun [iTunes Bağlan](https://itunesconnect.apple.com/) veya [appleid.apple.com](https://appleid.apple.com) son Apple hesap ilkeleri kabul eden denetlemek için. İstenirse, yeni hesap anlaşmaları Apple kabul etmek için adımları tamamlayın. Gizlilik Sözleşmesi'nden May 2018 kabul etmezseniz, Cihazınızı sağlayacak çalışırken aşağıdaki uyarı alırsınız:
+> ```
+> Unexpected authentication failure. Reason: {
+> "authType" : "sa"
+>}
+>```
 
 Uygulamanız bir iOS cihazında dağıtım için otomatik olarak imzalamak için aşağıdakileri yapın:
 

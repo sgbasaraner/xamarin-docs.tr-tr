@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 9f7c9d1b410d9d1d699644148903fdc6cfeec4fd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c2e37de65cf7be461543704b67249dfa9833dba8
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms giriş
 
@@ -21,7 +21,7 @@ _Xamarin.Forms bir platformlar arası geliştiricilerin kolayca Android, iOS, Wi
 
 ## <a name="overview"></a>Genel Bakış
 
-Xamarin.Forms geliştiricilerin hızla platformlar arası kullanıcı arabirimleri oluşturmalarına olanak sağlayan bir çerçevedir. Bu, iOS, Android veya evrensel Windows Platformu (UWP) yerel denetimlerini kullanarak işlenen kullanıcı arabirimi için kendi soyutlama sağlar. Bu uygulamaları kendi kullanıcı arabirimi kodu büyük bir kısmı paylaşabilir ve hala hedef platformu yerel Görünüm ve yapısını korur anlamına gelir.
+Xamarin.Forms geliştiricilerin hızla platformlar arası kullanıcı arabirimleri oluşturmalarına olanak sağlayan bir çerçevedir. İOS, Android veya evrensel Windows Platformu (UWP) yerel denetimlerini kullanarak işlenen kullanıcı arabirimi için kendi soyutlama sağlar. Bu uygulamaları kendi kullanıcı arabirimi kodu büyük bir kısmı paylaşabilir ve hala hedef platformu yerel Görünüm ve yapısını korur anlamına gelir.
 
 Xamarin.Forms karmaşık uygulamalar için zamanla gelişmesi uygulamaların hızlı prototipi oluşturulurken sağlar. Xamarin.Forms uygulamaları yerel uygulamalardır çünkü bunlar tarayıcı korumalı alan, sınırlı API'leri veya düşük performans gibi diğer araç takımları sınırlamaları yok. Xamarin.Forms kullanılarak yazılmış uygulamalar için herhangi bir verecek API'nin veya temel platform özelliklerini gibi (ancak bunlarla sınırlı olmamak üzere) CoreMotion, PassKit ve StoreKit iOS; NFC ve Google Play hizmetlerini android'de; ve Windows döşeme. Ayrıca, yerel kullanıcı Arabirimi Araç Seti kullanarak diğer bölümleri oluşturulduğu sırada Xamarin.Forms ile oluşturulan kendi kullanıcı arabirimi bölümlerini sahip uygulamalar oluşturmak mümkündür.
 

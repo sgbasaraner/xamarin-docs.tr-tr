@@ -6,12 +6,12 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 05/07/2018
-ms.openlocfilehash: 47cca2f726b0af396ea1eb287cfa4e1f1bf19724
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/21/2018
+ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="resource-dictionaries"></a>Kaynak sözlükleri
 
@@ -30,7 +30,7 @@ XAML'de depolanmış kaynakları bir `ResourceDictionary` sonra alınabilir ve k
 Kaynakları tanımlanmış bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) diğer bir deyişle sonra kümesine aşağıdakilerden birini `Resources` özellikleri:
 
 - [ `Resources` ](xref:Xamarin.Forms.Application.Resources) Türetilen herhangi bir sınıf özelliği [`Application`](xref:Xamarin.Forms.Application)
-- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Türetilen herhangi bir sınıf özelliği ['VisualElement'](xref:Xamarin.Forms.Application)
+- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Türetilen herhangi bir sınıf özelliği [`VisualElement`](xref:Xamarin.Forms.Application)
 
 Öğesinden türetilen yalnızca bir sınıf bir Xamarin.Forms programı içeren `Application` ancak genellikle kullanır öğesinden türetilen birçok sınıfları `VisualElement`sayfalar, Düzen ve denetimleri dahil olmak üzere. Bu nesnelerin herhangi biri olabilir, `Resources` özellik kümesine bir `ResourceDictionary`. Belirli bir nereye koyacağınızı seçmek `ResourceDictionary` kaynakların nerede kullanılabilir etkiler:
 

@@ -5,13 +5,13 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ead498113f432e766fbd77ae2f01bc67c2273b60
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: bf0fa7d2caf7c8857bc1272f4471def04100383f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials coğrafi kodlama
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials coğrafi konum
 
 ![Yayın öncesi NuGet](~/media/shared/pre-release.png)
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 05/12/2018
 
 ## <a name="getting-started"></a>Başlarken
 
-Erişim için **coğrafi konuma** işlevselliği aşağıdaki platform özel kurulum gereklidir.
+Erişim için **coğrafi konuma** işlevselliği, aşağıdaki platforma özgü Kurulum gereklidir:
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -35,9 +35,9 @@ Açık **AssemblyInfo.cs** altında dosya **özellikleri** klasör ekleyin:
 [assembly: UsesFeature("android.hardware.location.network", Required = false)]
 ```
 
-YA da güncelleştirme Android bildirim:
+Veya güncelleştirme Android derleme bildirimi:
 
-Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve aşağıdaki içine ekleyin **bildirim** düğümü.
+Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve aşağıdaki içine ekleyin **bildirim** düğümü:
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -47,15 +47,15 @@ Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve aşa
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-Veya Anroid projeye sağ tıklayın ve projenin özelliklerini açın. Altında **Android derleme bildirimi** Bul **gerekli izinler:** alan ve onay **ACCESS_COARSE_LOCATION** ve **ACCESS_FINE_LOCATION**izinleri. Bu otomatik olarak güncelleştirilecek **AndroidManifest.xml** dosya.
+Veya üzerinde Android projesine sağ tıklayın ve projenin özelliklerini açın. Altında **Android derleme bildirimi** Bul **gerekli izinler:** alan ve onay **ACCESS_COARSE_LOCATION** ve **ACCESS_FINE_LOCATION**izinleri. Bu otomatik olarak güncelleştirilecek **AndroidManifest.xml** dosya.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Uygulamanızı anahtarlara sahip için gereklidir, **Info.plist** NSLocationWhenInUseUsageDescription cihazın konum erişebilmek için.
+Uygulamanızın **Info.plist** içermelidir `NSLocationWhenInUseUsageDescription` cihazın konuma erişmek için anahtar.
 
 Plist Düzenleyicisi'ni açın ve eklemek **gizlilik - konum zaman içinde kullanım kullanım açıklaması** özelliğini ve kullanıcı görüntülemek için bir değer doldurun.
 
-VEYA el ile dosyasını düzenleyin ve aşağıdakileri ekleyin:
+Veya el ile dosyasını düzenleyin ve aşağıdakileri ekleyin:
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
@@ -64,7 +64,7 @@ VEYA el ile dosyasını düzenleyin ve aşağıdakileri ekleyin:
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Ayarlamalısınız `Location` uygulama izni. Bu tarafından açın yapılabilir **Package.appxmanifest** ve selecing **yetenekleri** sekmesi ve denetleme **konumu**.
+Ayarlamalısınız `Location` uygulama izni. Bu açarak yapılabilir **Package.appxmanifest** ve selecing **yetenekleri** sekmesi ve denetleme **konumu**.
 
 -----
 
@@ -104,7 +104,7 @@ catch (Exception ex)
 }
 ```
 
-Geçerli cihazın sorgulamak için [konumu](xref:Xamarin.Essentials.Location) koordinatları `GetLocationAsync` kullanılabilir. Tam olarak geçirmek için önerilen `GeolocationRequest` ve `CancellationToken` bu yana cihazın konumunu almak için biraz zaman alabilir.
+Geçerli cihazın sorgulamak için [konumu](xref:Xamarin.Essentials.Location) koordinatları `GetLocationAsync` kullanılabilir. Tam olarak geçirmek en iyisidir `GeolocationRequest` ve `CancellationToken` bu yana cihazın konumunu almak için biraz zaman alabilir.
 
 ```csharp
 try
@@ -133,7 +133,7 @@ catch (Exception ex)
 
 ## <a name="geolocation-accuracy"></a>Coğrafi konuma doğruluğu
 
-Aşağıdaki tabloda her platform doğruluğu özetlenmektedir
+Aşağıdaki tabloda, her platform doğruluğu özetlenmektedir:
 
 ### <a name="lowest"></a>En düşük
 
