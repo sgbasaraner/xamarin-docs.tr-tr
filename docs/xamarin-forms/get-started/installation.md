@@ -6,12 +6,12 @@ ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/19/2018
-ms.openlocfilehash: ce3f2bcf6acc36239fc431bb7f5edece15d2e139
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 05/23/2018
+ms.openlocfilehash: 75e6d25f95a0a3f18c83fe73f67ad4a7797f0924
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms gereksinimleri
 
@@ -19,19 +19,31 @@ _Xamarin.Forms Platform ve geliştirme sistem gereksinimleri._
 
 Başvurmak [yükleme](~/cross-platform/get-started/installation/index.md) platformlarında uygulama yükleme ve Kurulum yöntemler genel bir bakış için makale.
 
-## <a name="target-platforms"></a>Hedef Platformlar
+## <a name="target-platforms"></a>Hedef platformlar
 
 Xamarin.Forms uygulamaları aşağıdaki işletim sistemleri için yazılabilir:
 
--  iOS 8 veya sonraki sürümler
--  Android 4.0.3 (API 15) veya üzeri ([daha fazla ayrıntı](#android))
--  Windows 10 Evrensel Windows Platformu ([daha fazla ayrıntı](#windows10))
--  *Windows 8.1 / Windows Phone 8.1 WinRT (kullanım dışı)*
--  *Windows Phone 8 Silverlight (kullanım dışı)*
+- iOS 8 veya sonraki sürümler
+- Android 4.0.3 (API 15) veya üzeri ([daha fazla ayrıntı](#android))
+- Windows 10 Evrensel Windows Platformu ([daha fazla ayrıntı](#windows10))
 
-Geliştiriciler alışkanlığına sahip olduğunuz varsayılır [taşınabilir sınıf kitaplıkları](~/cross-platform/app-fundamentals/pcl.md) ve [paylaşılan projeleri](~/cross-platform/app-fundamentals/shared-projects.md).
+Geliştiriciler alışkanlığına sahip olduğunuz varsayılır [.NET standart](~/cross-platform/app-fundamentals/net-standard.md) ve [paylaşılan projeleri](~/cross-platform/app-fundamentals/shared-projects.md).
 
-<a name="android" />
+### <a name="additional-platform-support"></a>Ek platform desteği
+
+Bu platformlar durumunu kullanılabilir [Xamarin.Forms GitHub](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support):
+
+- Samsung Tizen
+- MacOS
+- GTK#
+- WPF
+
+### <a name="platforms-from-earlier-versions"></a>Önceki sürümlerinden platformları
+
+Bu platformlar Xamarin.Forms 3.0 kullanılırken desteklenmez:
+
+- *Windows 8.1 / Windows Phone 8.1 WinRT*
+- *Windows Phone 8 Silverlight*
 
 ### <a name="android"></a>Android
 
@@ -57,12 +69,6 @@ Ayrıca, Android projeleri için hedef/derleme sürümü **gerekir** ayarlanabil
 
 -----
 
-<a name="windows10" />
-
-### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
-
-Bir çözüm üzerinde macOS oluşturulduğunda, Windows 10 UWP projeleri eklenmez. Varolan bir çözümü bu projelerine ekleme hakkında daha fazla yönerge için bkz: [kurulum Windows projeleri](~/xamarin-forms/platform/windows/installation/index.md).
-
 ## <a name="development-system-requirements"></a>Geliştirme sistem gereksinimleri
 
 Xamarin.Forms uygulamaları macOS ve Windows geliştirilebilir. Ancak, Windows ve Visual Studio uygulamasının Windows sürümleri oluşturmak için gereklidir.
@@ -78,15 +84,17 @@ Xamarin.Forms uygulamaları OS X El Capitan'üzerinde (10.11 sürümünü) geli�
 
 Xamarin.Forms uygulamalar iOS ve Android için Xamarin geliştirmesini destekleyen herhangi bir Windows yüklemesinde oluşturulabilir. Bu, Visual Studio 2017 ya da daha yeni çalışan Windows 7 veya üstü gerektirir. Ağa bağlı bir Mac, iOS geliştirme için gereklidir.
 
+<a name="windows10" />
+
 ### <a name="universal-windows-platform-uwp"></a>Evrensel Windows Platformu (UWP)
 
 Xamarin.Forms uygulamalar için UWP geliştirme gerektirir:
 
-* Windows 10 (sonbaharda oluşturucuları güncelleştirme önerilir)
+- Windows 10 (sonbaharda oluşturucuları güncelleştirme önerilir)
 
-* Visual Studio 2017
+- Visual Studio 2017
 
-* [Windows 10 SDK'sı](https://dev.windows.com/downloads/windows-10-sdk)
+- [Windows 10 SDK'sı](https://dev.windows.com/downloads/windows-10-sdk)
 
-UWP projeleri, Visual Studio 2015 ve Visual Studio 2017'de oluşturulan Xamarin.Forms çözümlerinde dahil edilir.
-Ayrıca [bir evrensel Windows Platformu (UWP) uygulamasını eklemek](~/xamarin-forms/platform/windows/installation/index.md) varolan Xamarin.Forms çözümünü için.
+UWP projeleri Visual Studio 2017 oluşturulan Xamarin.Forms çözümlerin ancak Mac için Visual Studio'da oluşturulan çözümleri içinde yer alan
+Yapabilecekleriniz [bir evrensel Windows Platformu (UWP) uygulamasını eklemek](~/xamarin-forms/platform/windows/installation/index.md) herhangi bir anda bir Xamarin.Forms çözüme.
