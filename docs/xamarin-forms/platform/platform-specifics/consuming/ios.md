@@ -1,19 +1,19 @@
 ---
-title: iOS Platform-Specifics
+title: iOS platformu özellikleri
 description: Platform özellikleri yalnızca özel oluşturucu veya efektleri uygulamadan belirli bir platformda kullanılabilir olan işlevsellik kullanmasına olanak sağlar. Bu makalede, iOS platformu-Xamarin.Forms yerleşik özellikleri kullanmak gösterilmiştir.
 ms.prod: xamarin
 ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/16/2017
-ms.openlocfilehash: 7826962cd3bf9595a63841e3f2d9fb377d1a0574
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/23/2018
+ms.openlocfilehash: cc6cb282565e08f7ce4401e5317fba518a74a8f3
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
 ---
-# <a name="ios-platform-specifics"></a>iOS Platform-Specifics
+# <a name="ios-platform-specifics"></a>iOS platformu özellikleri
 
 _Platform özellikleri yalnızca özel oluşturucu veya efektleri uygulamadan belirli bir platformda kullanılabilir olan işlevsellik kullanmasına olanak sağlar. Bu makalede, iOS platformu-Xamarin.Forms yerleşik özellikleri kullanmak gösterilmiştir._
 
@@ -28,6 +28,7 @@ _Platform özellikleri yalnızca özel oluşturucu veya efektleri uygulamadan be
 - Öğe seçimi içinde oluştuğunda denetleme bir [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/). Daha fazla bilgi için bkz: [denetleme Seçici öğe seçimi](#picker_update_mode).
 - Durum çubuğu görünürlük ayarını bir [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Daha fazla bilgi için bkz: [bir sayfada durum çubuğu görünürlük ayarlama](#set_status_bar_visibility).
 - Denetleme olup bir [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) dokunma hareketi işleyen veya içeriğine geçirir. Daha fazla bilgi için bkz: [geciktirme içerik rötuşları bir ScrollView içinde](#delay_content_touches).
+- Ayırıcı Stili ayarlanıyor bir [ `ListView` ](xref:Xamarin.Forms.ListView). Daha fazla bilgi için bkz: [üzerinde ListView ayırıcı stili ayarlanıyor](#listview-separatorstyle).
 
 <a name="blur" />
 
@@ -302,7 +303,6 @@ Durum çubuğu metin rengini sonucu olan bir [ `NavigationPage` ](https://develo
 Bu platforma özgü yazı tipi boyutunu ölçeklendirmek için kullanılan bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) girilen metin denetiminde sığmasını sağlamak için. XAML'de ayarlayarak tüketiliyor [ `Entry.AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty/) özelliğine bağlı bir `boolean` değeri:
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     <StackLayout Margin="20">
@@ -393,7 +393,6 @@ Sonucu belirtilen olan `UpdateMode` uygulanan [ `Picker` ](https://developer.xam
 Bu platforma özgü durum çubuğunun görünürlüğünü ayarlamak için kullanılan bir [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), ve durum çubuğu girer veya bırakır nasıl denetleme olanağı içerir `Page`. XAML'de ayarlayarak tüketiliyor `Page.PrefersStatusBarHidden` özellik değerine bağlı `StatusBarHiddenMode` numaralandırma ve isteğe bağlı olarak `Page.PreferredStatusBarUpdateAnimation` özellik değerine bağlı `UIStatusBarAnimation` numaralandırma:
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.PrefersStatusBarHidden="True"
@@ -468,6 +467,45 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 Sonuç bir [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) içerik rötuşları, bu nedenle alma geciktirme devre dışı bırakabilirsiniz, bu senaryoda [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) hareketi alır yerine [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) sayfasında [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
 
 [![](ios-images/scrollview-delay-content-touches.png "Platforma özgü ScrollView gecikme içerik dokunur")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
+
+<a name="listview-separatorstyle" />
+
+## <a name="setting-the-separator-style-on-a-listview"></a>ListView üzerinde ayırıcı stili ayarlanıyor
+
+Bu platforma özgü arasındaki ayırıcı olarak hücreleri olup olmadığını denetleyen bir [ `ListView` ](xref:Xamarin.Forms.ListView) tam genişliğini kullanan `ListView`. XAML'de ayarlayarak tüketiliyor [ `ListView.SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty) özellik değerine bağlı [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) numaralandırma:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+        <ListView ... ios:ListView.SeparatorStyle="FullWidth">
+            ...
+        </ListView>
+    </StackLayout>
+</ContentPage>
+```
+
+Alternatif olarak, bu fluent API kullanarak C# tüketilebilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
+```
+
+`ListView.On<iOS>` Yöntemi belirtir. bu platforma özgü yalnızca İos'ta çalıştırma. [ `ListView.SetSeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SetSeparatorStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.ListView},Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) ad alanı, içinde arasındaki ayırıcı hücreleri olup olmadığını denetlemek için kullanılan [ `ListView` ](xref:Xamarin.Forms.ListView) tam kullanır genişliğini `ListView`, ile [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) numaralandırma sağlayan iki olası değerler:
+
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.Default) – Varsayılan iOS ayırıcı davranış gösterir. Xamarin.Forms varsayılan davranış budur.
+- [`FullWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.FullWidth) – ayırıcılar bir kenarından çizilmiş gösterir `ListView` diğer.
+
+Sonuç belirtilen olan [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) değeri uygulanan [ `ListView` ](xref:Xamarin.Forms.ListView), ayırıcı hücreler arasında genişliğini denetler:
+
+![](ios-images/listview-separatorstyle.png "ListView SeparatorStyle platforma özgü")
+
+> [!NOTE]
+> Ayırıcı Stili ayarlamak bir kez `FullWidth`, geri değiştirilemez `Default` çalışma zamanında.
 
 ## <a name="summary"></a>Özet
 

@@ -1,26 +1,27 @@
 ---
-title: Windows Platform-Specifics
+title: Windows platformu-özellikleri
 description: Platform özellikleri yalnızca özel oluşturucu veya efektleri uygulamadan belirli bir platformda kullanılabilir olan işlevsellik kullanmasına olanak sağlar. Bu makalede Windows platform-Xamarin.Forms yerleşik özellikleri kullanma gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2017
-ms.openlocfilehash: d1610e4c9e6a8799362ff955061953962dd755ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/23/2018
+ms.openlocfilehash: d4ddb662bf167a0c80561cce097104a7f5fc8096
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
 ---
-# <a name="windows-platform-specifics"></a>Windows Platform-Specifics
+# <a name="windows-platform-specifics"></a>Windows platformu-özellikleri
 
 _Platform özellikleri yalnızca özel oluşturucu veya efektleri uygulamadan belirli bir platformda kullanılabilir olan işlevsellik kullanmasına olanak sağlar. Bu makalede Windows platform-Xamarin.Forms yerleşik özellikleri kullanma gösterilmektedir._
 
 Evrensel Windows Platformu (UWP üzerinde), Xamarin.Forms aşağıdaki platform özellikleri içerir:
 
-- Araç çubuğu yerleştirme seçenekleri. Daha fazla bilgi için bkz: [araç çubuğu yerleştirme değiştirme](#toolbar_placement).
-- Kısmen daraltılabilir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) gezinti çubuğu. Daha fazla bilgi için bkz: [MasterDetailPage gezinti çubuğu daraltma](#collapsable_navigation_bar).
+- Araç çubuğu yerleştirme seçeneklerini ayarlama. Daha fazla bilgi için bkz: [araç çubuğu yerleştirme değiştirme](#toolbar_placement).
+- Daraltma [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) gezinti çubuğu. Daha fazla bilgi için bkz: [MasterDetailPage gezinti çubuğu daraltma](#collapsable_navigation_bar).
+- Etkinleştirme bir [ `WebView` ](xref:Xamarin.Forms.WebView) bir UWP iletisi iletişim kutusunda JavaScript uyarıları görüntülemek için. Daha fazla bilgi için bkz: [JavaScript uyarıları görüntüleme](#webview-javascript-alert).
 
 <a name="toolbar_placement" />
 
@@ -34,7 +35,6 @@ Bu platforma özgü bir araç çubuğu yerleşimini değiştirmek için kullanı
             windows:Page.ToolbarPlacement="Bottom">
   ...
 </TabbedPage>
-
 ```
 
 Alternatif olarak, bu fluent API kullanarak C# tüketilebilir:
@@ -85,10 +85,52 @@ Sonuç belirtilen olan [ `CollapseStyle` ](https://developer.xamarin.com/api/typ
 
 [![](windows-images/collapsed-navigation-bar.png "Gezinti çubuğu platforma özgü daraltılmış")](windows-images/collapsed-navigation-bar-large.png#lightbox "gezinti çubuğu platforma özgü daraltılmış")
 
+<a name="webview-javascript-alert" />
+
+## <a name="displaying-javascript-alerts"></a>JavaScript uyarıları görüntüleme
+
+Bu platforma özgü sağlayan bir [ `WebView` ](xref:Xamarin.Forms.WebView) bir UWP iletisi iletişim kutusunda JavaScript uyarıları görüntülemek için. XAML'de ayarlayarak tüketiliyor [ `WebView.IsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabledProperty) özelliğine bağlı bir `boolean` değeri:
+
+```xaml
+<ContentPage ...
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        <WebView ... windows:WebView.IsJavaScriptAlertEnabled="true" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternatif olarak, bu fluent API kullanarak C# tüketilebilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+var webView = new Xamarin.Forms.WebView
+{
+  Source = new HtmlWebViewSource
+  {
+    Html = @"<html><body><button onclick=""window.alert('Hello World from JavaScript');"">Click Me</button></body></html>"
+  }
+};
+webView.On<Windows>().SetIsJavaScriptAlertEnabled(true);
+```
+
+`WebView.On<Windows>` Yöntemi belirtir. bu platforma özgü yalnızca evrensel Windows platformu üzerinde çalışır. [ `WebView.SetIsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.SetIsJavaScriptAlertEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.WebView},System.Boolean)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) ad alanı, JavaScript uyarıları etkin olup olmadığını denetlemek için kullanılır. Ayrıca, `WebView.SetIsJavaScriptAlertEnabled` yöntemi çağrılarak JavaScript uyarıları geçiş yapmak için kullanılabilir [ `IsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabled*) bunlar etkinleştirilip etkinleştirilmediğini döndürülecek yöntemi:
+
+```csharp
+_webView.On<Windows>().SetIsJavaScriptAlertEnabled(!_webView.On<Windows>().IsJavaScriptAlertEnabled());
+```
+
+Bir UWP iletisi iletişim kutusunda JavaScript uyarıları görüntülenebilir oluşur:
+
+![Web görünümü JavaScript uyarı platforma özgü](windows-images/webview-javascript-alert.png "WebView JavaScript uyarı platforma özgü")
+
 ## <a name="summary"></a>Özet
 
 Bu makalede Windows platform-Xamarin.Forms yerleşik özellikleri kullanma gösterilmektedir. Platform özellikleri yalnızca özel oluşturucu veya efektleri uygulamadan belirli bir platformda kullanılabilir olan işlevsellik kullanmasına olanak sağlar.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

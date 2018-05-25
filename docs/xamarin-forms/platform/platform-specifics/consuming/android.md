@@ -6,12 +6,12 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/17/2017
-ms.openlocfilehash: 8aa17c868ce1d0343eab6758c03aaf042c27130e
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/23/2018
+ms.openlocfilehash: 8d7ec3f2f64fdb8be903fd13bd72bcf545265a3d
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="android-platform-specifics"></a>Android platformu özellikleri
 
@@ -24,6 +24,8 @@ Android, Xamarin.Forms aşağıdaki platform özellikleri içerir:
 - Sayfaları arasında geçirmeyi etkinleştirme bir [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Daha fazla bilgi için bkz: [etkinleştirme geçirmeyi arasında sayfalarında bir TabbedPage](#enable_swipe_paging).
 - Z-çizim sırayı belirlemek için görsel öğelerin sırasını denetleme. Daha fazla bilgi için bkz: [ayrıcalık biri görsel öğeleri denetleme](#elevation).
 - Devre dışı bırakma [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) ve [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) sayfasında Duraklat yaşam döngüsü olayları ve sırasıyla uygulama kullanan uygulamalar için Sürdür. Daha fazla bilgi için bkz: [Disappearing ve sayfa yaşam döngüsü olayları görüntülenmesini devre dışı bırakma](#disable_lifecycle_events).
+- Denetleme olup bir [ `WebView` ](xref:Xamarin.Forms.WebView) karışık içerik görüntüleyebilirsiniz. Daha fazla bilgi için bkz: [etkinleştirme karışık içerik bir Web görünümü](#webview-mixed-content).
+- Giriş Yöntemi Düzenleyicisi için yazılım klavye için ayar seçenekleri bir [ `Entry` ](xref:Xamarin.Forms.Entry). Daha fazla bilgi için bkz: [ayarı Giriş Giriş Yöntemi Düzenleyicisi Seçenekleri](#entry-imeoptions).
 
 <a name="soft_input_mode" />
 
@@ -245,10 +247,88 @@ Sonuç [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.
 
 [![](android-images/keyboard-on-resume.png "Yaşam döngüsü olayları platforma özgü")](android-images/keyboard-on-resume-large.png#lightbox "yaşam döngüsü olayları platforma özgü")
 
+<a name="webview-mixed-content" />
+
+## <a name="enabling-mixed-content-in-a-webview"></a>Bir Web görünümü karışık içeriği etkinleştirme
+
+Bu platforma özgü denetimleri olup bir [ `WebView` ](xref:Xamarin.Forms.WebView) görüntü karışık içerik uygulamalarında hedefleyen API 21 veya daha büyük. Karışık içerik, başlangıçta bir HTTPS bağlantısı üzerinden yüklendi, ancak bir HTTP bağlantısı üzerinden kaynakları (örneğin, görüntüler, ses, video, stil sayfaları, komut dosyaları) yükleyen içeriktir. XAML'de ayarlayarak tüketiliyor [ `WebView.MixedContentMode` ](x:ref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty) özellik değerine bağlı [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) numaralandırma:
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <WebView ... android:WebView.MixedContentMode="AlwaysAllow" />
+</ContentPage>
+```
+
+Alternatif olarak, bu fluent API kullanarak C# tüketilebilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
+```
+
+`WebView.On<Android>` Yöntemi belirtir. bu platforma özgü yalnızca Android üzerinde çalışır. [ `WebView.SetMixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.SetMixedContentMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.WebView},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ad alanı, karışık içerik görüntülenmesini olup olmadığını denetlemek için kullanılan ile [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) numaralandırması üç olası değerler sağlama:
+
+- [`AlwaysAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.AlwaysAllow) – belirten [ `WebView` ](xref:Xamarin.Forms.WebView) bir HTTP kaynaktan içerik yüklemek için bir HTTPS kaynağa izin verir.
+- [`NeverAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.NeverAllow) – belirten [ `WebView` ](xref:Xamarin.Forms.WebView) bir HTTP kaynaktan içerik yüklemek için bir HTTPS kaynağa izin vermez.
+- [`CompatibilityMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.CompatibilityMode) – belirten [ `WebView` ](xref:Xamarin.Forms.WebView) son cihazın web tarayıcısının yaklaşım ile uyumlu olacak şekilde çalışacaktır. Bazı HTTP İçerik HTTPS kaynağa göre yüklenmesi için izin verilmiyor olabilir ve diğer içerik türlerine engellenir. İzin verilen veya engellenen içerik türlerini her işletim sistemi sürümüyle değiştirebilirsiniz.
+
+Sonuç belirtilen olan [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) değeri uygulanan [ `WebView` ](xref:Xamarin.Forms.WebView), karışık içerik görüntülenmesini olup olmadığını kontrol eder:
+
+[![Web görünümü karışık içerik işleme platforma özgü](android-images/webview-mixedcontent.png "WebView karışık içerik işleme platforma özgü")](android-images/webview-mixedcontent-large.png#lightbox "WebView karışık içerik işleme platforma özgü")
+
+<a name="entry-imeoptions" />
+
+## <a name="setting-entry-input-method-editor-options"></a>Ayar girişi Giriş Yöntemi Düzenleyicisi Seçenekleri
+
+Bu platforma özgü Giriş Yöntemi Düzenleyicisi (IME) seçenekleri için yazılım klavye için ayarlar bir [ `Entry` ](xref:Xamarin.Forms.Entry). Bu yazılım klavye ile etkileşim ve alt köşedeki kullanıcı eylem düğmesi ayarı içerir `Entry`. XAML'de ayarlayarak tüketiliyor [ `Entry.ImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty) özellik değerine bağlı [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) numaralandırma:
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout ...>
+        <Entry ... android:Entry.ImeOptions="Send" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternatif olarak, bu fluent API kullanarak C# tüketilebilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+entry.On<Android>().SetImeOptions(ImeFlags.Send);
+```
+
+`Entry.On<Android>` Yöntemi belirtir. bu platforma özgü yalnızca Android üzerinde çalışır. [ `Entry.SetImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.SetImeOptions(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Entry},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) yumuşak klavye için giriş yöntemi eylem seçeneğini ayarlamak için kullanılan ad alanı, [ `Entry` ](xref:Xamarin.Forms.Entry), ile [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) aşağıdaki değerleri sağlayarak numaralandırma:
+
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – belirli bir eylemi anahtar gereklidir ve temel denetim kendiliğinden üretecektir olabilir gösterir.
+- [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None) – hiçbir eylem anahtarı kullanımına sunulacak olduğunu gösterir.
+- [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go) – Eylem anahtarı "Git" işlemi gerçekleştirir, hedef metninin kullanıcıya alma, yazılan gösterir.
+- [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search) – Eylem anahtarı "Ara" işlemi gerçekleştirir, metin arama sonuçlarını kullanıcıya alma bunlar yazmış gösterir.
+- [`Send`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Send) – Eylem anahtarı hedefte metni sunan bir "gönderme" işlemi gerçekleştireceğini belirtir.
+- [`Next`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Next) – Eylem anahtarı kullanıcı metin kabul eder sonraki alan için ayırdığınız bir "İleri" işlemi gerçekleştireceğini belirtir.
+- [`Done`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Done) – Eylem anahtarı yumuşak klavye kapatmayı "tamamlandı" bir işlem gerçekleştireceğini belirtir.
+- [`Previous`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Previous) – Eylem anahtarı kullanıcı metin kabul eder önceki alan için ayırdığınız "önceki" bir işlem gerçekleştireceğini belirtir.
+- [`ImeMaskAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.ImeMaskAction) – maskesi eylem seçenekleri seçin.
+- [`NoPersonalizedLearning`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoPersonalizedLearning) – Yazım denetleyicisi ne kullanıcıdan bilgi ne ne kullanıcının daha önce girdiği üzerinde temel düzeltmeleri önermek gösterir.
+- [`NoFullscreen`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoFullscreen) – UI tam ekran geçmeyecek gösterir.
+- [`NoExtractUi`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoExtractUi) – Kullanıcı Arabirimi için ayıklanan metin gösterilecek gösterir.
+- [`NoAccessoryAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoAccessoryAction) – Özel Eylemler için kullanıcı Arabirimi görüntülenir gösterir.
+
+Sonuç belirtilen olan [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) değer yumuşak klavye için uygulanan [ `Entry` ](xref:Xamarin.Forms.Entry), Düzenleyici Seçenekleri giriş yönteminin ayarlar:
+
+[![Giriş Yöntemi Düzenleyicisi platforma özgü giriş](android-images/entry-imeoptions.png "Giriş Giriş Yöntemi Düzenleyicisi platforma özgü")](android-images/entry-imeoptions-large.png#lightbox "Giriş Yöntemi Düzenleyicisi platforma özgü giriş")
+
 ## <a name="summary"></a>Özet
 
 Bu makalede, Android platformu-Xamarin.Forms yerleşik özellikleri kullanma gösterilmektedir. Platform özellikleri yalnızca özel oluşturucu veya efektleri uygulamadan belirli bir platformda kullanılabilir olan işlevsellik kullanmasına olanak sağlar.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

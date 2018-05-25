@@ -6,12 +6,12 @@ ms.assetid: 0008682B-6CEF-0C1D-3200-56ECF58F5D3C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 366c75db49a7e0f4f559b13c0871071dee2f08e3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/22/2018
+ms.openlocfilehash: b509f6892b27afa053a6ee913826d913d7ad54a8
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="location-services"></a>Konum Hizmetleri
 
@@ -83,9 +83,15 @@ Sigortalı konumu sağlayıcısı pil verimli bir şekilde en iyi konum bilgiler
  
 Konum Sigortalı sağlayıcısı API çeşitli bölge sınırlaması ve etkinlik izleme de dahil olmak üzere konum algılayan uygulamaları güçlendirmeniz diğer araçları sağlar. Bu bölümde, biz odağı ayarlama temelleri üzerinde kalacaklarını `LocationClient`sağlayıcılar oluşturma ve kullanıcının konumunu alma.
 
-Konum Sigortalı sağlayıcısı parçası olan [Google Play Hizmetleri](http://developer.android.com/google/play-services/index.html). Google Play Hizmetleri paketi yüklenmiş ve düzgün çalışması için uygulamada Sigortalı konumu sağlayıcısı API için yapılandırılmış ve aygıtın yüklü Google Play Hizmetleri APK olmalıdır.
+Konum Sigortalı sağlayıcısı parçası olan [Google Play Hizmetleri](http://developer.android.com/google/play-services/index.html).
+Google Play Hizmetleri paketi yüklenmiş ve düzgün çalışması için uygulamada Sigortalı konumu sağlayıcısı API için yapılandırılmış ve aygıtın yüklü Google Play Hizmetleri APK olmalıdır.
 
-Önce bir Xamarin.Android uygulaması Sigortalı konumu sağlayıcıyı kullanabilir bunu eklemeniz gerekir **Xamarin.GooglePlayServices.Maps** projeye.
+Önce bir Xamarin.Android uygulaması Sigortalı konumu sağlayıcıyı kullanabilir bunu eklemeniz gerekir **Xamarin.GooglePlayServices.Maps** projeye paket. Buna ek olarak, aşağıdaki `using` deyimleri aşağıda açıklanan sınıfları başvuru tüm kaynak dosyaları için eklenmesi:
+
+```csharp
+using Android.Gms.Common;
+using Android.Gms.Location;
+```
 
 ### <a name="checking-if-google-play-services-is-installed"></a>Google Play Hizmetleri'nin yüklü olup olmadığını denetleme
 

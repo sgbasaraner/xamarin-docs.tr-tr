@@ -6,12 +6,12 @@ ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/12/2016
-ms.openlocfilehash: e9a4a661e694b5a885f202a36f9a2916c6c339fd
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.date: 05/21/2018
+ms.openlocfilehash: ca48ad6fb7d5aae53f972f6e3b5257919d140a8d
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms düzenleri
 
@@ -19,7 +19,7 @@ _Xamarin.Forms düzenleri visual yapılara kullanıcı arabirimi denetimlerini o
 
 [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Ve [ `Layout<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) Xamarin.Forms sınıflarda olan görünümleri ve diğer düzenleri için kapsayıcı olarak hareket görünümlerinin özelleştirilmiş subtypes. `Layout` Sınıfının kendisi türer [ `View` ](views.md). A `Layout` türevi genellikle alt öğelerinin boyutunu ve konumunu Xamarin.Forms uygulamalarda ayarlamak için mantık içerir.
 
- [ ![](layouts-images/layouts-sml.png "Xamarin.Forms yerleşim türleri")](layouts-images/layouts.png#lightbox "Xamarin.Forms yerleşim türleri")
+[![Xamarin.Forms yerleşim türleri](layouts-images/layouts-sml.png "Xamarin.Forms yerleşim türleri")](layouts-images/layouts.png#lightbox "Xamarin.Forms yerleşim türleri")
 
 Öğesinden türetilen sınıflar `Layout` iki kategoriye ayrılabilir:
 
@@ -101,7 +101,14 @@ Bu sınıf türetin [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xa
 
 |     |     |
 | --- | --- |
-| [`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) alt öğelerine göreli konumlandırır `RelativeLayout` kendisini veya kendi eşdüzey. Çocuk konumu kullanarak belirtilen [ekli özellikler](~/xamarin-forms/xaml/attached-properties.md) türündeki nesnelere ayarlamak [ `Constraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/) ve [ `BoundsConstraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/).<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/)/ [Kılavuzu](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![RelativeLayout örnek](layouts-images/RelativeLayout.png "RelativeLayout örnek")](layouts-images/RelativeLayout-Large.png#lightbox "RelativeLayout örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
+| [`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) alt öğelerine göreli konumlandırır `RelativeLayout` kendisini veya kendi eşdüzey. Çocuk konumu kullanarak belirtilen [ekli özellikler](~/xamarin-forms/xaml/attached-properties.md) türündeki nesnelere ayarlamak [ `Constraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/) ve [ `BoundsConstraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/).<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) / [Kılavuzu](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![RelativeLayout örnek](layouts-images/RelativeLayout.png "RelativeLayout örnek")](layouts-images/RelativeLayout-Large.png#lightbox "RelativeLayout örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
+|     |     |
+
+### <a name="flexlayout"></a>FlexLayout
+
+|     |     |
+| --- | --- |
+| [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) CSS tabanlı [Esnek kutusunu düzeni Modülü](http://www.w3.org/TR/css-flexbox-1/), yaygın olarak bilinen _düzeni esnek_ veya _esnek kutu_. `FlexLayout` altı bağlanabilir özellikleri ve Yığılmış veya birçok hizalama ve yönlendirme seçenekleriyle Sarmalanan alt öğelere izin beş ekli bağlanabilir özellikleri tanımlar.<br /><br />[API belgelerine](xref:Xamarin.Forms.FlexLayout) / [Kılavuzu](~/xamarin-forms/user-interface/layouts/flex-layout.md) / [örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/) | [![FlexLayout örnek](layouts-images/FlexLayout.png "FlexLayout örnek")](layouts-images/FlexLayout-Large.png#lightbox "FlexLayout örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
 |     |     |
 
 ## <a name="related-links"></a>İlgili bağlantılar
