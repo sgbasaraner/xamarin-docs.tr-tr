@@ -232,6 +232,7 @@
 ### [Özel Bağlayıcı Ayarları](deploy-test/linker.md)
 ### [Çok Çekirdekli Cihazlar](deploy-test/multicore-devices.md)
 ### [Performans](deploy-test/performance.md)
+### [Profil Oluşturma](deploy-test/profiling.md)
 ### [Yayına Hazırlanma](deploy-test/release-prep/index.md)
 #### [ProGuard](deploy-test/release-prep/proguard.md)
 ### [APK’yı İmzalama](deploy-test/signing/index.md)
