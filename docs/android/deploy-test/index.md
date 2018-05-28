@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 5b3061f30f6f120cf8edb41ccf5e70ae853aeb9e
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: ce86590b2d05f3b9141d1a5ba42df9274544f9ae
+ms.sourcegitcommit: 8f14a067528067a34521452297080c98b4c1d1af
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="deployment-and-testing"></a>Dağıtım ve Test Etme
 
@@ -57,6 +57,11 @@ Bu makalede, uygulamanın son boyutunu azaltmak için Xamarin.Android tarafında
 ## <a name="xamarinandroid-performanceandroiddeploy-testperformancemd"></a>[Xamarin.Android performans](~/android/deploy-test/performance.md)
 
 Xamarin.Android ile oluşturulan uygulamaların performansını artırmak için birçok tekniği vardır. Topluca bu teknikler bir CPU ve bir uygulama tarafından kullanılan bellek miktarına tarafından gerçekleştirilen çalışma miktarını önemli ölçüde azaltabilir.
+
+## <a name="profiling-android-appsandroiddeploy-testprofilingmd"></a>[Android uygulamaları profil oluşturma](~/android/deploy-test/profiling.md)
+
+Bu kılavuz, profil oluşturucu araçlar performans ve Android uygulaması bellek kullanımını incelemek için nasıl kullanılacağını açıklar.
+
 
 ## <a name="preparing-an-application-for-releaseandroiddeploy-testrelease-prepindexmd"></a>[Bir uygulama sürüm için hazırlama](~/android/deploy-test/release-prep/index.md)
 
