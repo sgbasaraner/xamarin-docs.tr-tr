@@ -6,11 +6,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 78783089303eba09b0ee36534b0078b82674a1c6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ed90a9c4ddcd398d834cb8c91553a57e7bd5ad8
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689547"
 ---
 # <a name="touch-in-ios"></a>İOS dokunma
 
@@ -76,7 +77,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-## <a name="multi-touch"></a>Multi-Touch
+## <a name="multi-touch"></a>Çok dokunma
 
 Çok dokunma denetimlerinde varsayılan olarak etkin değil. Çok dokunma iOS tasarımcısı tarafından aşağıdaki ekran görüntüsünde gösterildiği gibi etkinleştirilebilir:
 
@@ -117,7 +118,7 @@ Hareketi tanıyıcıları büyük ölçüde basitleştirebilir ve dokunma uygula
 
 Xamarin.iOS sınıfı sağlar `UIGestureRecognizer` aşağıdaki yerleşik hareketi tanıyıcıları için temel sınıf olarak:
 
--  *UITapGesturesRecognizer* – için bir veya daha fazla Tap budur.
+-  *UITapGestureRecognizer* – için bir veya daha fazla Tap budur.
 -  *UIPinchGestureRecognizer* – Pinching ve birbirinden parmakları yayılmak.
 -  *UIPanGestureRecognizer* – kaydırma veya sürükleme.
 -  *UISwipeGestureRecognizer* – herhangi bir yönde geçirme.

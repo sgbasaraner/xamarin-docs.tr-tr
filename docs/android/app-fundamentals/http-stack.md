@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: bedcf0603fffc9886155881f91972203104ba155
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 765c51346ac63a00838fec52bde87b38091e2dd9
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689480"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient yığını ve Android için SSL/TLS uygulama Seçici
 
@@ -89,9 +90,9 @@ Arasında seçim `AndroidClientHandler` ve `HttpClientHandler` sonra uygulamanı
 
 Xamarin.Android 8.3 ile başlayan `HttpClientHandler` Boring SSL varsayılanlara (`btls`) temel alınan TLS sağlayıcısı. SSL TLS Boring sağlayıcısı aşağıdaki avantajları sunar:
 
--   TLS 1.2 destekler.
+-   TLS 1.2 + destekler.
 -   Tüm Android sürümlerini destekler.
--   Her ikisi için TLS 1.2 desteği sağlar `HttpClient` ve `WebClient`.
+-   TLS 1.2 + her ikisi için destek sağlar `HttpClient` ve `WebClient`.
 
 Alt TLS sağlayıcı Boring SSL kullanmanın olumsuz yanı (yaklaşık 1 MB desteklenen ABI başına ek APK boyut ekler) sonuçta elde edilen APK boyutunu artırabilirsiniz ' dir.
 

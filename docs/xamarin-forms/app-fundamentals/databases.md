@@ -6,12 +6,13 @@ ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/23/2017
-ms.openlocfilehash: d1f11ed1b52354dedbdb8893a96e0ae7589d5389
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.date: 05/31/2018
+ms.openlocfilehash: d97fc792e2eb14f7e432d377811d1318c99b9602
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689454"
 ---
 # <a name="local-databases"></a>Yerel veritabanı
 
@@ -33,17 +34,20 @@ Bu bölümde SQLite.Net NuGet paketleri bir Xamarin.Forms çözüme eklemek içi
 
 <a name="XamarinForms_PCL_Project" />
 
-### <a name="xamarinsforms-pcl-project"></a>Xamarins.Forms PCL proje
+### <a name="xamarinsforms-net-standard-or-pcl-project"></a>Xamarins.Forms .NET Standard veya PCL proje
 
-Xamarin.Forms PCL projeye SQLite desteği eklemek için bulmak için NuGet arama işlevini kullanın **sqlite net pcl** paketini ve yükleyin:
+Xamarin.Forms projeye SQLite desteği eklemek için bulmak için NuGet arama işlevini kullanın **sqlite net pcl** paketini ve yükleyin:
 
-![](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
+![NuGet SQLite.NET PCL paket ekleme](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
 
 NuGet paketlerini benzer adlara sahip bir dizi vardır, doğru paket bu özniteliklere sahiptir:
 
 - **Tarafından oluşturulan:** Frank A. Krueger
 - **Kimliği:** sqlite net pcl
 - **NuGet bağlantı:** [sqlite net pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+
+> [!TIP]
+> Kullanım **sqlite net pcl** bile .NET standart projelerinde NuGet.
 
 Başvuru eklendikten sonra veritabanı dosyasının konumunu belirlemektir platforma özgü işlevselliği soyut bir arabirim yazma. Aşağıdaki örnekte kullanılan arabirimi tek bir yöntem tanımlar:
 
@@ -130,7 +134,7 @@ Tüm veri erişim kodu tüm platformlarda paylaşılması için PCL projede yaz�
 
 İOS uygulama yapılandırmak için iOS kullanarak projesi aynı NuGet paketi ekleme *NuGet* penceresi:
 
-![](databases-images/vsmac-sqlite-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
+![NuGet SQLite.NET PCL paket ekleme](databases-images/vsmac-sqlite-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
 
 Gerekli yalnızca kodu `IFileHelper` uygulamasında, veri dosyası yolu belirler. Aşağıdaki kod SQLite veritabanı dosyasına yerleştirir **kitaplık/veritabanları** uygulamanın Korumalı alan klasördeki. Bkz: [iOS dosya sistemi ile çalışma](~/ios/app-fundamentals/file-system.md) depolaması için kullanılabilecek farklı dizinleri hakkında daha fazla bilgi için.
 
@@ -138,21 +142,21 @@ Gerekli yalnızca kodu `IFileHelper` uygulamasında, veri dosyası yolu belirler
 [assembly: Dependency(typeof(FileHelper))]
 namespace Todo.iOS
 {
-    public class FileHelper : IFileHelper
+  public class FileHelper : IFileHelper
+  {
+    public string GetLocalFilePath(string filename)
     {
-        public string GetLocalFilePath(string filename)
-        {
-            string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string libFolder = Path.Combine(docFolder, "..", "Library", "Databases");
+      string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+      string libFolder = Path.Combine(docFolder, "..", "Library", "Databases");
 
-            if (!Directory.Exists(libFolder))
-            {
-                Directory.CreateDirectory(libFolder);
-            }
+      if (!Directory.Exists(libFolder))
+      {
+        Directory.CreateDirectory(libFolder);
+      }
 
-            return Path.Combine(libFolder, filename);
-        }
+      return Path.Combine(libFolder, filename);
     }
+  }
 }
 ```
 
@@ -172,14 +176,14 @@ Bu başvuru eklendikten sonra gerekli yalnızca kodudur `IFileHelper` uygulamas�
 [assembly: Dependency(typeof(FileHelper))]
 namespace Todo.Droid
 {
-    public class FileHelper : IFileHelper
+  public class FileHelper : IFileHelper
+  {
+    public string GetLocalFilePath(string filename)
     {
-        public string GetLocalFilePath(string filename)
-        {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            return Path.Combine(path, filename);
-        }
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        return Path.Combine(path, filename);
     }
+  }
 }
 ```
 
@@ -189,7 +193,7 @@ namespace Todo.Droid
 
 UWP uygulaması yapılandırmak için UWP projesi kullanarak aynı NuGet paketi ekleme *NuGet* penceresi:
 
-![](databases-images/vs2017-sqlite-uwp-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
+![NuGet SQLite.NET PCL paket ekleme](databases-images/vs2017-sqlite-uwp-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
 
 Başvuru eklendikten sonra uygulama `IFileHelper` arabirimi platforma özgü kullanılarak `Windows.Storage` veri dosya yolu belirlemek için API.
 
@@ -200,23 +204,21 @@ using Windows.Storage;
 [assembly: Dependency(typeof(FileHelper))]
 namespace Todo.UWP
 {
-    public class FileHelper : IFileHelper
+  public class FileHelper : IFileHelper
+  {
+    public string GetLocalFilePath(string filename)
     {
-        public string GetLocalFilePath(string filename)
-        {
-            return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
-        }
+      return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
     }
+  }
 }
-
 ```
 
 ## <a name="summary"></a>Özet
 
 Xamarin.Forms veritabanı güdümlü uygulamaları yüklemek ve paylaşılan kodda nesneleri kaydetmek mümkün kılar SQLite veritabanı altyapısı kullanılarak destekler.
 
-Bu makalede odaklanan **erişme** Xamarin.Forms kullanarak bir SQLite veritabanı. SQLite.Net kendisi ile çalışma hakkında daha fazla bilgi için başvurmak [veri erişimi: kullanarak SQLite.NET](~/cross-platform/app-fundamentals/index.md) belgeleri. Çoğu SQLite.Net kodu tüm platformlar arasında paylaşılabilir.; yalnızca SQLite veritabanı dosyasının konumu yapılandırma platforma özgü işlevselliği gerektirir.
-
+Bu makalede odaklanan **erişme** Xamarin.Forms kullanarak bir SQLite veritabanı. SQLite.Net kendisi ile çalışma hakkında daha fazla bilgi için başvurmak [android'de SQLite.NET](~/android/data-cloud/data-access/using-sqlite-orm.md) veya [iOS SQLite.NET](~/ios/data-cloud/data/using-sqlite-orm.md) belgeleri. Çoğu SQLite.Net kodu tüm platformlar arasında paylaşılabilir.; yalnızca SQLite veritabanı dosyasının konumu yapılandırma platforma özgü işlevselliği gerektirir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
