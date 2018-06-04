@@ -115,6 +115,7 @@
 #### [Hızlandırma İşlevleri](user-interface/animation/easing.md)
 #### [Özel Animasyonlar](user-interface/animation/custom.md)
 ### [BoxView](user-interface/boxview.md)
+### [Düğme](user-interface/button.md)
 ### [Renkler](user-interface/colors.md)
 ### [Denetimler Başvurusu](user-interface/controls/index.md)
 #### [Sayfalar](user-interface/controls/pages.md)

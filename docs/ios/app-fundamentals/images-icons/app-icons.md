@@ -7,11 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 3bf9286fe641d836f0877bfe2e17263bf9d7356e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9a6f69598d137ac05fae5aaed7c16b0cf05284e6
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34562896"
 ---
 # <a name="application-icons"></a>Uygulama simgeleri
 
@@ -43,13 +44,13 @@ Aşağıdaki görüntü varlık boyutları ve çözümlemeleri tüm iOS 9 (veya 
 
 ### <a name="iphone-icon-sizes"></a>iPhone simgesi boyutları
 
-- **iPhone: iOS 9 & 10 (iPhone 6 & 7 Plus)**
+- **iPhone: iOS 9 ve 10 (iPhone 6 ve 7 artı)**
 
-    ||3x|
+    ||3 x|
     |---|---|
     |Uygulama simgesi|180x180|
     |Spotlight|120x120|
-    |Ayarlar|87x87|
+    |Ayarlar|87 x 87|
 
 - **iPhone: iOS 7 ve 8**
 
@@ -69,15 +70,15 @@ Aşağıdaki görüntü varlık boyutları ve çözümlemeleri tüm iOS 9 (veya 
 
 ### <a name="ipad-icon-sizes"></a>iPad simgesi boyutları
 
-- **iPad: iOS 9 & 10**
+- **iPad: iOS 9 ve 10**
 
-    ||2x (iPad Pro)|
+    ||2 x (iPad Pro)|
     |---|---|
     |Uygulama simgesi|167x167<sup>6</sup>|
     |Spotlight|120x120<sup>6</sup>|
     |Ayarlar|58x58<sup>5</sup>|
 
-- **iPad: iOS 7 & 8**
+- **iPad: iOS 7 ve 8**
 
     ||1x|2x|
     |---|---|---|
@@ -85,7 +86,7 @@ Aşağıdaki görüntü varlık boyutları ve çözümlemeleri tüm iOS 9 (veya 
     |Spotlight|40x40|80x80|
     |Ayarlar|-|-|
 
-- **iPad: iOS 5 & 6**
+- **iPad: iOS 5 ve 6**
 
     ||1x|2x|
     |---|---|---|
@@ -114,7 +115,7 @@ Bir varlık Kataloğu'nu kullanmak için aşağıdakileri yapın:
 
 1. Çift `Info.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın.
 2. Ekranı aşağı kaydırarak **uygulama simgeleri** bölümü.
-3. Gelen **kaynak** açılır listesinde, olun **AppIcons** seçilir: 
+3. Gelen **kaynak** açılır listesinde, olun **AppIcon** seçilir: 
 
     ![](app-icons-images/migrate01.png "AppIcons seçili olduğundan emin olun")
 4. Gelen **Çözüm Gezgini**, çift `Assets.xcassets` dosyayı düzenlemek için açın: 
@@ -172,7 +173,7 @@ Aşağıdakileri yapın:
 1. Çift `Info.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın.
 2. İPhone üzerinde simgeler bölümüne tıklayın: 
 
-    ![](app-icons-images/image007.png "Rhe iPhone Icons editor")
+    ![](app-icons-images/image007.png "Rhe iPhone simgeler Düzenleyicisi")
 3. Ekranı aşağı kaydırarak **simgeleri** bölümü.
 4. Gelen **varlık Kataloğu** açılır listesinden, **kullanım varlık kataloglar**.
 5. Var olan tüm simgeler tanımlanan `Info.plist` dosyası için geçirilecek bir `Images` eklenen kümesi `Assets.xcassets`.
@@ -212,5 +213,5 @@ Resmin iTunes belirtmek için aşağıdakileri yapın:
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Görüntüleri (örnek) ile çalışma](https://developer.xamarin.com/samples/WorkingWithImages/)
-- [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
+- [Merhaba, iPhone](~/ios/get-started/hello-ios/index.md)
 - [Özel bir simge ve görüntü oluşturma yönergeleri](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))

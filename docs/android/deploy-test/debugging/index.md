@@ -6,22 +6,23 @@ ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: a4ce36e28bd5b6dcf78d248b1f2ba951cad9b286
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: e1c2a591450d8a5fd0aebe2bceb1d914a711512e
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732225"
 ---
 # <a name="debugging"></a>Hata Ayıklama
 
 Bu bölümde, bir Xamarin.Android uygulaması veya Öykünücüler cihazlarda hata ayıklamak nasıl anlatılmaktadır.
+
 ## <a name="debugging-overview"></a>Hata Ayıklamaya Genel Bakış
 
 Android uygulamaları geliştirme uygulama ya da fiziksel donanım üzerinde çalışan veya bir öykünücü kullanarak gerektirir. Donanım kullanarak en iyi yaklaşımı, ancak her zaman en kullanışlı değildir. Çoğu durumda, daha basit ve daha düşük maliyetli aşağıda açıklanan Öykünücüler birini kullanarak Android donanım benzetimini/benzetmek için olabilir.
 
-
-### <a name="google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Google Android öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+### <a name="debugging-with-the-google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Google Android öykünücüsü ile hata ayıklama](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
 
 Bu makaleler, Android SDK'sı ile sağlanan varsayılan öykünücü kullanacak şekilde açıklanmaktadır. Bu öykünücüsü Windows için Visual Studio ve Mac için Visual Studio için kullanılabilir
 

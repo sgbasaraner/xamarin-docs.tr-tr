@@ -6,12 +6,13 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 8f284fefd260764c6f09d78d2518bfd115782cd2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/01/2018
+ms.openlocfilehash: b942bb1be3441b1fb1a8bd65016914b3ecddbb26
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732326"
 ---
 # <a name="understanding-android-api-levels"></a>Android API düzeylerini anlama
 
@@ -29,6 +30,10 @@ Xamarin.Android üç Android API düzey proje ayarları sunar:
 -   [Hedef Android sürümü](#target) &ndash; uygulamanızın Android sürümü hedeflenen çalıştırılacağını belirtir. Bu API düzeyi sırasında kullanılan *çalıştırmak* Android tarafından zaman.
 
 Projeniz için bir API düzeyi yapılandırmadan önce bu API düzeyi için SDK platform bileşenleri yüklemeniz gerekir. Karşıdan yükleme ve Android SDK bileşenlerini yükleme hakkında daha fazla bilgi için bkz: [Android SDK Kurulum](~/android/get-started/installation/android-sdk.md).
+
+> [!NOTE]
+> Ağustos 2018 başlayarak, Google Play konsol yeni uygulamalar API düzeyi (Android 8.0) 26 hedef gerektirir ya da daha yüksek.
+Var olan uygulamaları API düzeyi 26 ya da daha yüksek Kasım 2018'den itibaren hedef gerekecektir. Daha fazla bilgi için bkz: [uygulama güvenliği ve performansı gelmesini Google play'de yıllık geliştirme](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -94,9 +99,9 @@ Ayrıca, Xamarin.Android tanımlar *sürüm kodlarını yapı* şu anda bilinen 
 
 -   **API 23 (Android 6.0)** &ndash; _Marshmallow_, Ağustos 2015 serbest bırakıldı. Sürüm kodu derleme `Android.OS.BuildVersionCodes.M`
 
--   **API 22 (Android 5.1)** &ndash; _Lollipop_, released March 2015. Sürüm kodu derleme `Android.OS.BuildVersionCodes.LollipopMr1`
+-   **API 22 (Android 5.1)** &ndash; _Lolipop_, Mart 2015 serbest bırakıldı. Sürüm kodu derleme `Android.OS.BuildVersionCodes.LollipopMr1`
 
--   **API 21 (Android 5.0)** &ndash; _Lollipop_, released November 2014. Sürüm kodu derleme `Android.OS.BuildVersionCodes.Lollipop`
+-   **API 21 (Android 5.0)** &ndash; _Lolipop_, Kasım 2014 serbest bırakıldı. Sürüm kodu derleme `Android.OS.BuildVersionCodes.Lollipop`
 
 -   **API 20 (Android 4.4W)** &ndash; _Kitkat izleme_, Haziran 2014 serbest bırakıldı. Sürüm kodu derleme `Android.OS.BuildVersionCodes.KitKatWatch`
 
@@ -173,10 +178,6 @@ Xamarin.Android içinde bir hedef veya en az API düzeyi seçmeden önce bu API 
 Uygulamanızı karşı bağlı olduğu hangi kitaplık sürümleri hedef Framework'ü tanımlayan &ndash; bu uygulamanızda kullanabileceğiniz hangi API'leri belirler. Kullanmak istiyorsanız, örneğin, [NotificationBuilder.SetCategory](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetCategory/p/System.String/) Android 5.0 Lolipop içinde tanıtılan yöntemi hedef Framework'ü ayarlamalısınız **API düzeyi 21 (Lolipop)** veya sonraki bir sürümü. Projenizin hedef çerçevesini API'ye gibi düzeyi ayarlarsanız, **API düzeyi 19 (KitKat)** ve çağırırsanız `SetCategory` kodunuzu yönteminde, bir derleme hatası alırsınız.
 
 Her zaman ile derleme olmasını öneririz *son* kullanılabilir hedef Framework sürümü. Bunun yapılması kodunuz tarafından çağrılan tüm kullanım dışı API'leri ile yararlı uyarı iletilerini sağlar. En son hedef Framework sürümünü kullanarak önemlidir özellikle en son destek kitaplığı Çıkanlar kullandığınızda &ndash; her kitaplık uygulamanızı destek kitaplığın en düşük API düzeyinde derlenmiş veya büyük bir değer bekler. 
-
-> [!NOTE]
-> Ağustos 2018 başlayarak, Google Play konsol yeni uygulamalar API düzeyi (Android 8.0) 26 hedef gerektirir ya da daha yüksek.
-Var olan uygulamaları API düzeyi 26 ya da daha yüksek Kasım 2018'den itibaren hedef gerekecektir. Daha fazla bilgi için bkz: [uygulama güvenliği ve performansı gelmesini Google play'de yıllık geliştirme](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -333,6 +334,6 @@ Bu kılavuz, Android API düzeylerini Android farklı sürümleri arasında uygu
 
 - [Android SDK Kurulumu](~/android/get-started/installation/android-sdk.md)
 - [SDK CLI araç değiştirir](~/android/troubleshooting/sdk-cli-tooling-changes.md)
-- [Picking your compileSdkVersion, minSdkVersion, and targetSdkVersion](https://medium.com/google-developers/picking-your-compilesdkversion-minsdkversion-targetsdkversion-a098a0341ebd)
+- [CompileSdkVersion, minSdkVersion ve targetSdkVersion çekme](https://medium.com/google-developers/picking-your-compilesdkversion-minsdkversion-targetsdkversion-a098a0341ebd)
 - [API düzeyi nedir?](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels)
 - [Codenames, etiketler ve yapı numaraları](https://source.android.com/source/build-numbers)

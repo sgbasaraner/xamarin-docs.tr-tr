@@ -6,12 +6,13 @@ ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 04/16/2018
-ms.openlocfilehash: e2f9b23bb298b0bb01f7e5491963daed4521ac9c
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 05/29/2018
+ms.openlocfilehash: 4be29dabfd98c84876b65cd1655dcc4a6d444eeb
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34562847"
 ---
 # <a name="pair-to-mac"></a>Mac çifti
 
@@ -38,6 +39,7 @@ Mac çifti aşağıdaki geliştirme iş akışını sağlar:
 - İOS uygulamaları oluşturmak için Windows komut satırı kullanmak da mümkündür.
 
 > [!NOTE]
+> 
 > Bu kılavuzdaki yönergeleri izlemeden önce aşağıdaki adımları tamamlayın: 
 > 
 > - Bir Windows makinesinde [Visual Studio 2017 yükleyin](~/cross-platform/get-started/installation/windows.md)
@@ -161,6 +163,7 @@ Listelenen belirli bir Mac görmüyorsanız **Mac çiftine** iletişim kutusunda
 > [!IMPORTANT]
 > - Mac çiftine Xcode yükleyemezsiniz; Ayrıca Mac yapı konakta onu el ile yüklemeniz gerekir. Xamarin.iOS geliştirme için gereklidir.
 > - Mac otomatik sağlamayı uzaktan oturum açma Mac üzerinde etkinleştirildiğinden ve Mac ağ üzerinden erişilebilen Windows makine gerektirir. Bkz: [etkinleştirme uzaktan oturum açma Mac](#enable-remote-login-on-the-mac) daha fazla ayrıntı için.
+> - Mac otomatik sağlamayı 3 GB boş alan Xamarin.iOS yüklemek için Mac üzerinde gerektirir.
 
 Visual Studio 2017 olduğunda Mac çiftine gerçekleştirir gerekli yazılım yüklemeleri/güncelleştirmeleri [Mac bilgisayara bağlayarak](#connect-to-the-mac-from-visual-studio-2017).
 

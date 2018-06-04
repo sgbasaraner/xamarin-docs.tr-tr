@@ -6,12 +6,13 @@ ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: fe544f8ac677987f8921ccb1c11b8930811b9553
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/02/2018
+ms.openlocfilehash: 15698767ae71b68a26138169771f7f397bddd95a
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732524"
 ---
 # <a name="nougat-features"></a>Nougat özellikleri
 
@@ -46,7 +47,7 @@ Bu makalede, yeni özellikleri denemek ve yeni Android Nougat platformu hedeflem
 
 Aşağıdaki Xamarin tabanlı uygulamalarda yeni Android Nougat özellikleri kullanmak için gereklidir:
 
--   **Visual Studio veya Mac için Visual Studio** &ndash; Visual Studio, sürüm 4.2.0.628 kullanıyorsanız veya Visual Studio için Xamarin sonraki gereklidir. Mac için Visual Studio for Mac, sürüm 6.1.0 veya daha sonra Visual Studio kullanıyorsanız.
+-   **Visual Studio veya Mac için Visual Studio** &ndash; Visual Studio, sürüm 4.2.0.628 kullanıyorsanız veya Xamarin için Visual Studio Araçları'nın sonraki gereklidir. Mac için Visual Studio for Mac, sürüm 6.1.0 veya daha sonra Visual Studio kullanıyorsanız.
 
 -   **Xamarin.Android** &ndash; Xamarin.Android 7.0 veya üstü yüklü ve Mac için Visual Studio veya Visual Studio ile yapılandırılmış
 
@@ -106,7 +107,7 @@ Xamarin Android 7.0 ile bir proje oluşturmak için önce Android SDK Yöneticis
 
 
 
-### <a name="start-a-xamarinandroid-project"></a>Start a Xamarin.Android Project
+### <a name="start-a-xamarinandroid-project"></a>Bir Xamarin.Android projesi Başlat
 
 Yeni bir Xamarin.Android projesi oluşturun. Xamarin Android geliştirme yeniyseniz, bkz: [Hello, Android](~/android/get-started/hello-android/index.md) Xamarin.Android projeleri oluşturma hakkında bilgi edinmek için.
 
@@ -122,7 +123,7 @@ Bir Android projesi oluşturduğunuzda, hedef Android 7.0 veya üzeri sürüm ay
 
 Bir öykünücü kullanıyorsanız, Android AVD Yöneticisi'ni başlatın ve aşağıdaki ayarları kullanarak yeni bir cihaz oluşturma:
 
--   Device: Nexus 5X, Nexus 6, Nexus 6P, Nexus Player, Nexus 9, or Pixel C.
+-   Aygıt: Nexus 5 X, Nexus Nexus 6P, Nexus Player Nexus 9 veya piksel C. 6
 -   Hedef: Android 7.0 - API düzeyi 24
 -   ABI: x86 veya x86\_64
 

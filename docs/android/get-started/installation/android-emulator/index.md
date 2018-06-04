@@ -1,44 +1,53 @@
 ---
-title: Android öykünücüsünde Kurulumu
-description: Bu bölümde, Google Android öykünücüsü uygulamanızı test etmek için hazırlamak üzere açıklar. En yüksek performans için öykünücüsü hızlandırmak nasıl açıklar ve bir öykünücü yöneticisini oluşturmak ve sanal aygıtların özelleştirmek için nasıl kullanılacağını gösterir.
+title: Google Android öykünücüsü Kurulumu
+description: Google Android öykünücüsü farklı cihaz benzetimini yapmak için yapılandırmaları çeşitli çalıştırabilirsiniz. Bu kılavuz, uygulamanızı test etmek için Android öykünücüsünde hazırlamak nasıl açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 889963B7-F4DA-41D9-9B8D-B733BB71A329
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/25/2018
-ms.openlocfilehash: 215e298068b7a3a23b2e469e923f172c8303bbcb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/01/2018
+ms.openlocfilehash: e5ba2cc23ea9751ca60644d3eb5b7e3f31bbb6bb
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732537"
 ---
-# <a name="android-emulator-setup"></a>Android öykünücüsünde Kurulumu
+# <a name="google-android-emulator-setup"></a>Google Android öykünücüsü Kurulumu
 
-_Bu bölümde, Google Android öykünücüsü uygulamanızı test etmek için hazırlamak üzere açıklar. En yüksek performans için öykünücüsü hızlandırmak nasıl açıklar ve bir öykünücü yöneticisini oluşturmak ve sanal aygıtların özelleştirmek için nasıl kullanılacağını gösterir._
+_Bu kılavuz, Google Android öykünücüsü uygulamanızı test etmek için hazırlamak nasıl açıklanmaktadır._
 
 
 ## <a name="overview"></a>Genel Bakış
 
-Google Android SDK öykünücüsü farklı cihaz benzetimini yapmak için yapılandırmaları çeşitli çalıştırabilirsiniz. Bu yapılandırmalar her biri olarak oluşturulan bir _sanal aygıt_. Bu kılavuzda daha iyi performans için Android öykünücüsü hızlandırmak ve Xamarin Android öykünücü yöneticisini veya eski Google öykünücü yöneticisini sanal cihaz oluşturmak için nasıl kullanılacağını öğreneceksiniz.
+Google Android öykünücüsü farklı cihaz benzetimini yapmak için yapılandırmaları çeşitli çalıştırabilirsiniz. Her yapılandırma adlı bir _sanal aygıt_. Dağıtma ve uygulamanızı öykünücü üzerinde test Nexus veya piksel telefonu gibi fiziksel bir Android cihazı benzetim önceden yapılandırılmış veya özel sanal cihazı seçin.
 
-
-> [!NOTE]
-> Android SDK Araçları sürüm itibariyle **26.0.1** ve daha sonra Google lehinde kaldıran yeni (komut satırı arabirimi) CLI araçlarını varolan AVD/SDK yöneticileri için destek kaldırdı. Bu kullanımdan değişikliği nedeniyle Xamarin SDK/cihaz yöneticileri artık Google SDK/öykünücü yöneticileri yerine Android araçları 26.0.1 için kullanılır ve daha sonra. (Xamarin SDK Yöneticisi hakkında daha fazla bilgi için bkz: [Android SDK Kurulum](~/android/get-started/installation/android-sdk.md)).
-
+Aşağıda listelenen bölümleri en yüksek performans için Google Android öykünücüsü hızlandırmak nasıl, Android Aygıt Yöneticisi'ni oluşturmak ve sanal aygıtların özelleştirmek için nasıl kullanılacağı ve bir sanal cihaz profil özelliklerini özelleştirmek nasıl açıklanmaktadır. Ayrıca, bir sorun giderme bölümü, ortak kurulum sorunlarını ve geçici çözümler açıklanmaktadır.
 
 ## <a name="sections"></a>Bölümler
 
-### <a name="hardware-accelerationandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[Donanım Hızlandırma](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
+### <a name="hardware-acceleration-for-emulator-performanceandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[Donanım hızlandırma öykünücüsü performansı](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
 
-En yüksek Google Android öykünücüsü performansı için bilgisayarınız hazırlamak nasıl. Google Android öykünücüsü donanım hızlandırmasını şekilde basımı karşılamayacak kadar yavaş olabileceğinden, Google Android öykünücüsü kullanmadan önce bilgisayarınızda donanım hızlandırmasını etkinleştirmenizi öneririz.
+En yüksek Android öykünücüsü performansı için bilgisayarınız hazırlamak nasıl.
+Google Android öykünücüsü donanım hızlandırmasını şekilde basımı karşılamayacak kadar yavaş olabileceğinden, bu öykünücüsü kullanmadan önce bilgisayarınızda donanım hızlandırmasını etkinleştirmenizi öneririz.
 
-### <a name="xamarin-android-device-managerandroidget-startedinstallationandroid-emulatorxamarin-device-managermd"></a>[Xamarin Android cihaz Yöneticisi](~/android/get-started/installation/android-emulator/xamarin-device-manager.md)
+### <a name="managing-virtual-devices-with-the-android-device-managerandroidget-startedinstallationandroid-emulatordevice-managermd"></a>[Sanal cihaz Android cihaz Yöneticisi ile yönetme](~/android/get-started/installation/android-emulator/device-manager.md)
 
-Xamarin Android Aygıt Yöneticisi'ni oluşturmak ve Google Android öykünücüsü sanal cihazlar özelleştirmek için nasıl kullanılacağını. **Xamarin Android Aygıt Yöneticisi'ni**, şu anda Önizleme'de, eski Google öykünücü yöneticisini değiştirmek için tasarlanmıştır. Android Oreo 8.0 veya üstünü hedefliyorsanız, Google öykünücü yöneticisini yerine Xamarin Android Aygıt Yöneticisi'ni kullanmanız gerekir.
+Android Aygıt Yöneticisi'ni oluşturmak ve sanal aygıtların özelleştirmek için nasıl kullanılacağını.
 
-### <a name="google-emulator-managerandroidget-startedinstallationandroid-emulatorgoogle-emulator-managermd"></a>[Google Öykünücü Yöneticisi](~/android/get-started/installation/android-emulator/google-emulator-manager.md)
+### <a name="editing-android-virtual-device-propertiesandroidget-startedinstallationandroid-emulatordevice-propertiesmd"></a>[Android sanal cihazı özelliklerini düzenleme](~/android/get-started/installation/android-emulator/device-properties.md)
 
-Eski Google öykünücü yöneticisini oluşturmak ve Google Android öykünücüsü sanal cihazlar özelleştirmek için nasıl kullanılacağını. Google Android öykünücüsü Android SDK Araçları sürüm 25.2.5 kalan tarafından özgün Google Öykünücüsü Yöneticisi'ni ile çalıştırmak veya alt devam edebilirsiniz.
+Bir Android sanal cihazı profil özelliklerini düzenlemek için Android Aygıt Yöneticisi'ni kullanma
 
-Android SDK öykünücüsü yapılandırdıktan sonra bkz: [Google Android öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md) öykünücü başlatma ve test ve hata ayıklama, uygulamanız için kullanma hakkında bilgi için.
+### <a name="troubleshooting-emulator-setup-problemsandroidget-startedinstallationandroid-emulatortroubleshootingmd"></a>[Öykünücü kurulum sorunlarını giderme](~/android/get-started/installation/android-emulator/troubleshooting.md)
+
+Android öykünücüsünde ayarlarken oluşabilir Android Aygıt Yöneticisi'ni sorunlarını tanılamak ve düzeltmek nasıl.
+
+
+Android öykünücüsünde yapılandırdıktan sonra bkz: [Google Android öykünücüsü ile hata ayıklama](~/android/deploy-test/debugging/android-sdk-emulator/index.md) öykünücü başlatma ve test ve hata ayıklama, uygulamanız için kullanma hakkında bilgi için.
+
+
+> [!NOTE]
+> Android SDK Araçları sürüm itibariyle **26.0.1** ve daha sonra Google lehinde kaldıran yeni (komut satırı arabirimi) CLI araçlarını varolan AVD/SDK yöneticileri için destek kaldırdı. Bu kullanımdan değişikliği nedeniyle Xamarin SDK/cihaz yöneticileri artık Google SDK/cihaz yöneticileri yerine Android araçları 26.0.1 için kullanılır ve daha sonra. Xamarin SDK Yöneticisi hakkında daha fazla bilgi için bkz: [Android SDK Kurulum](~/android/get-started/installation/android-sdk.md).
+

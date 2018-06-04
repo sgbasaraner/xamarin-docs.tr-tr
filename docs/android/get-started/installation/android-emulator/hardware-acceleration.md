@@ -1,28 +1,43 @@
 ---
-title: Android öykünücüsünde donanım hızlandırma
-description: Bilgisayarınızı maksimum Google Android öykünücüsü performans için hazırlama
+title: Donanım hızlandırma öykünücüsü performansı
+description: Bu makalede, bilgisayarınızın donanım hızlandırma özelliklerinden Google Android öykünücüsü performansını en üst düzeye çıkarmak için nasıl kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/10/2018
-ms.openlocfilehash: 2f0bb6f1371b9ce1b925b876851d58f3c4d01419
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/30/2018
+ms.openlocfilehash: cf75d070dfff97f48bab2210f72af747bc53099c
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732950"
 ---
-# <a name="android-emulator-hardware-acceleration"></a>Android öykünücüsünde donanım hızlandırma
+# <a name="hardware-acceleration-for-emulator-performance"></a>Donanım hızlandırma öykünücüsü performansı
 
-Google Android öykünücüsü donanım hızlandırmasını şekilde basımı karşılamayacak kadar yavaş olur. Google Android öykünücüsü'ı özel öykünücüsü lunlar görüntüleri, hedef x86 donanım ve iki sanallaştırma teknolojilerini birini kullanarak performansını önemli ölçüde artırmak mümkündür:
+_Bu makalede, bilgisayarınızın donanım hızlandırma özelliklerinden Google Android öykünücüsü performansını en üst düzeye çıkarmak için nasıl kullanılacağı açıklanmaktadır._
 
-1. **Microsoft Hyper-V ve hiper yönetici platformuna kullanıcının** &ndash; Hyper-V fiziksel ana bilgisayar üzerinde çalışan sanallaştırılmış bilgisayar sistemleri sağlayan Windows 10 kullanılabilir olan bir bileşenidir sanallaştırma. Hızlandırılmış Google Android öykünücüsü görüntüleri için önerilen sanallaştırma teknolojisi budur. Hyper-V hakkında daha fazla bilgi için lütfen bakın [Windows 10 kılavuzu üzerinde Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/).
-2. **Intel'in donanım hızlandırılmış yürütme Yöneticisi'ni (HAXM)** &ndash; Bu, Intel CPU çalıştıran bilgisayarlar için sanallaştırma altyapısıdır. Bu işlev, Hyper-V kullanamıyorsunuz geliştiriciler için önerilen sanallaştırma altyapısıdır.
+## <a name="overview"></a>Genel Bakış
 
-Android SDK Yöneticisi'ni otomatik olarak yapmak kullanılabilir olduğunda donanım hızlandırma kullanımı için özellikle öykünücüsü görüntü çalıştığı bir **x86**-sanal aygıt tabanlı (açıklandığı gibi [yapılandırma ve kullanma ](~/android/deploy-test/debugging/android-sdk-emulator/index.md)).
+Visual Studio test ve Xamarin.Android uygulamalarına bir Android cihaz kullanılamıyor veya pratik olduğu durumlarda Google Android öykünücüsü kullanarak hata ayıklama geliştiricilere kolaylaştırır.
+Donanım hızlandırma çalıştırılan bilgisayarda kullanılabilir değilse, ancak çok yavaş Android öykünücüsünde çalışır. İki sanallaştırma teknolojilerini biri ile birlikte bu hedef x86 donanım özel sanal cihaz görüntüleri kullanarak Android öykünücüsünde performansını önemli ölçüde artırabilir:
 
-## <a name="hyper-v-overview"></a>Hyper-V'ye Genel Bakış
+1. **Microsoft'un Hyper-V ve hiper yönetici platformuna**. Hyper-V sanallaştırılmış bilgisayar sistemleri bir fiziksel ana bilgisayarda çalıştırmak mümkün kılan Windows sanallaştırma özelliğidir. Google Android öykünücüsü hızlandırmaya için kullanılacak önerilen sanallaştırma teknolojisi budur. Hyper-V hakkında daha fazla bilgi için bkz: [Hyper-V Windows 10](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/).
+
+2. **Intel'in donanım hızlandırılmış yürütme Yöneticisi'ni (HAXM)**. 
+   HAXM Intel CPU çalıştıran bilgisayarlar için sanallaştırma altyapısıdır.
+   Bu işlev, Hyper-V çalıştırılamıyor olan bilgisayarlar için önerilen sanallaştırma altyapısıdır.
+
+Google Android öykünücüsü otomatik hale getirir, aşağıdaki ölçütler karşılanıyorsa donanım hızlandırmasını kullanın:
+
+-   Donanım hızlandırma kullanılabilir ve geliştirme bilgisayarındaki etkin.
+
+-   Öykünücü için özel olarak oluşturulmuş bir öykünücü görüntünüzün çalıştıran bir **x86**-sanal aygıt bağlı.
+
+Başlatma ve Android öykünücü ile hata ayıklama hakkında daha fazla bilgi için bkz: [Google Android öykünücüsü ile hata ayıklama](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+
+## <a name="hyper-v"></a>Hyper-V
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -31,38 +46,39 @@ Android SDK Yöneticisi'ni otomatik olarak yapmak kullanılabilir olduğunda don
 > [!NOTE]
 > Hyper-V desteği şu anda önizlemede değil.
 
-Windows 10 kullanan geliştiriciler (Nisan 2018 güncelleştirmesi) Microsoft'un Hyper-V kullanmanız önemle önerilir. Xamarin için Visual Studio Araçları sınamak ve bir Android cihaz kullanılamıyor veya pratik olduğu durumlar Xamarin.Android uygulamalarında hata ayıklama geliştiriciler için kolay hale getirir.
+Windows 10 kullanan geliştiriciler (Nisan 2018 güncelleştirmek veya sonrası) Google Android öykünücüsü hızlandırmak için Microsoft'un Hyper-V kullanmayı önemle önerilir. Google Android öykünücüsü Hyper-V: ile kullanmak için
 
-Hyper-V ve Google Android öykünücüsü kullanmaya başlamak için:
-
-1. **Windows 10 Nisan 2018 güncelleştirmeye güncelleştirme (yapı 1803)** &ndash; hangi Windows sürümünü çalıştıran doğrulamak için Cortana arama çubuğu türü içinde tıklatın ve **hakkında**. Seçin **bilgisayarınız hakkında** arama sonuçlarında. İçinde aşağı kaydırarak **hakkında** iletişim, **Windows belirtimleri** bölümü. **Sürüm** en az 1803 olmalıdır:
+1. **Windows 10 Nisan 2018 güncelleştirmeye güncelleştirme (yapı 1803) veya daha sonra**.
+   Hangi Windows sürümünü çalıştıran doğrulamak için Cortana arama çubuğu ve türünü tıklatın **hakkında**. Seçin **bilgisayarınız hakkında** arama sonuçlarında. İçinde aşağı kaydırarak **hakkında** iletişim kutusuna **Windows belirtimleri** bölümü. **Sürüm** en az 1803 olmalıdır:
 
     [![Windows özellikleri](hardware-acceleration-images/win/12-about-windows.w10-sml.png)](hardware-acceleration-images/win/12-about-windows.w10.png#lightbox)
 
-2. **Hyper-V ve Windows hiper yönetici platformunu etkinleştir** &ndash; Cortana arama çubuğunda, türü **kapatma Windows özelliklerini aç veya Kapat**.
-   İçinde aşağı kaydırın **Windows özelliklerini** iletişim kutusunda ve emin **Windows hiper yönetici platformu** etkinleştirilir.
+2. **Windows hiper yönetici platformunu etkinleştirin**.
+   Cortana Arama çubuğuna **kapatma Windows özelliklerini aç veya Kapat**.
+   İçinde aşağı kaydırarak **Windows özelliklerini** iletişim ve emin olun **Windows hiper yönetici platformu** etkinleştirilir:
 
-    [![Hyper-V ve Windows hiper yönetici platformu etkin](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
+    [![Windows hiper yönetici platformu etkin](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
 
-    Windows Hyper-V ve Windows hiper yönetici platformu etkinleştirdikten sonra bilgisayarınızı yeniden başlatmanız gerekebilir.
+   Etkinleştirme **Windows hiper yönetici platformu** otomatik olarak Hyper-V sağlar. Bu değişikliği yaptıktan sonra Windows'u yeniden başlatmak için iyi bir fikirdir.
 
-3. **Yükleme [Visual Studio 15,8 Preview 1 veya sonrası](https://www.visualstudio.com/vs/preview/)**  &ndash; Visual Studio'nun bu sürümü, Google Android öykünücüsü Hyper-V desteği ile başlatmak için IDE desteği sağlar.
-
-4. **Google Android öykünücüsü Paketi 27.2.7 yüklemek ya da daha sonra** &ndash; bu paketi yüklemek için gidin **Araçlar > Android > Android SDK Manager** Visual Studio. Seçin **Araçları** sekmesini tıklatın ve Android öykünücüsü bileşen en az olduğundan emin olun 27.2.7 sürümü.
+3. **Yükleme [Visual Studio 15,8 Preview 1 veya sonrası](https://www.visualstudio.com/vs/preview/)**.
+   Visual Studio'nun bu sürümü, Google Android öykünücüsü Hyper-V ile çalıştırmak için IDE desteği sağlar.
+ 
+4. **Google Android öykünücüsü Paketi 27.2.7 yüklemek ya da daha sonra**. Bu paketi yüklemek için gidin **Araçlar > Android > Android SDK Manager** Visual Studio. Seçin **Araçları** sekmesinde ve Android öykünücüsü sürümünün en az 27.2.7 olduğundan emin olun. Ayrıca Android SDK Araçları sürüm 26.1.1 olduğundan emin olun ya da daha sonra:
 
     [![Android SDK'lar ve Araçlar iletişim](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
 
-5. Android öykünücüsünde sürümü 27.3.1'den az ise Uygula açıklandığı ek geçici çözüm adımı **bilinen sorunlar** (İleri).
+5. Hyper-V: kullanmak için aşağıdaki geçici çözüm öykünücüsü sürümü en az 27.2.7 değerinden 27.3.1 ancak ise gereklidir
 
+    1.  İçinde **C:\\kullanıcılar\\_kullanıcıadı_\\.android** klasörünü adlı bir dosya oluşturun **advancedFeatures.ini** (yoktur, zaten var).
 
-### <a name="known-issues"></a>Bilinen Sorunlar
-
--   Hyper-V: kullanmak için aşağıdaki geçici çözüm öykünücüsü sürümü en az 27.2.7 değerinden 27.3.1 ancak ise gereklidir
-    1.  İçinde **C:\\kullanıcılar\\_kullanıcıadı_\\.android** klasörünü adlı bir dosya oluşturun **advancedFeatures.ini** içermiyorsa zaten mevcut.
     2.  Aşağıdaki satırı ekleyin **advancedFeatures.ini**:
         ```
         WindowsHypervisorPlatform = on
         ```
+
+
+### <a name="known-issues"></a>Bilinen Sorunlar
 
 -   Performans, belirli Intel ve AMD tabanlı işlemciler kullanırken azaltılabilir.
 
@@ -77,16 +93,16 @@ Hyper-V desteği, Windows 10 gerektirir. Lütfen bakın [Hyper-V gereksinimleri]
 
 -----
 
-## <a name="haxm-overview"></a>HAXM genel bakış
+## <a name="haxm"></a>HAXM
 
-HAXM bir konak makinesi üzerinde Android uygulaması öykünme hızlandırmak için Intel Sanallaştırma Teknolojisi (VT) kullanan bir donanım destekli sanallaştırma (hiper yönetici) altyapısıdır. Android x86 birlikte Intel ve resmi Android SDK Yöneticisi tarafından HAXM VT etkin sistemlerde daha hızlı Android öykünmesi için izin veren koşuluyla öykünücü görüntüler. 
+HAXM bir konak makinesi üzerinde Android uygulaması öykünme hızlandırmak için Intel Sanallaştırma Teknolojisi (VT) kullanan bir donanım destekli sanallaştırma (hiper yönetici) altyapısıdır. Android x86 birlikte HAXM kullanarak Intel tarafından sağlanan öykünücüsü görüntüleri sağlar VT etkin sistemlerde daha hızlı Android öykünmesi için.
 
-VT yetenekleri olan bir Intel CPU bir makinesinde geliştiriyorsanız, büyük ölçüde Google Android öykünücüsü hızlandırmak için HAXM yararlanabilir (, CPU VT destekleyip desteklemediğini emin değilseniz bkz [belirlemek, bilgisayarınızı işlemci destekleyen Intel Sanallaştırma Teknolojisi](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
+VT yetenekleri olan bir Intel CPU bir makinesinde geliştiriyorsanız, büyük ölçüde Google Android öykünücüsü hızlandırmak için HAXM yararlanabilir (, CPU VT destekleyip desteklemediğini emin değilseniz bkz [My işlemci destekleyen Intel mu Sanallaştırma teknolojisi nedir? ](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
 
 > [!NOTE]
 > Bir VM hızlandırılmış öykünücüsü VirtualBox, VMWare veya Docker tarafından barındırılan bir VM'nin gibi başka bir VM içinde çalıştırılamaz. Google Android öykünücüsü çalıştırmalısınız [sistem donanımınız üzerinde doğrudan](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
-Google Android öykünücüsü ilk kez kullanmadan önce HAXM yüklenir ve Google Android öykünücüsü kullanılabilir olduğunu doğrulamak için iyi bir fikirdir.
+Google Android öykünücüsü ilk kez kullanmadan önce HAXM yüklenir ve kullanmak Google Android öykünücüsü kullanılabilir olduğunu doğrulamak için bir fikirdir.
 
 ### <a name="verifying-haxm-installation"></a>HAXM yüklemesini doğrulama
 
@@ -94,9 +110,9 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Tıklayarak Android öykünücüsü yöneticisini başlatmak **Araçlar > Android > Android Emulator Manager**:
+1. Android Aygıt Yöneticisi'ni tıklatarak başlatma **Araçlar > Android > Android Aygıt Yöneticisi'ni**:
 
-    [![Android Emulator Manager menü öğesi konumu](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png#lightbox)
+    [![Android cihaz Yöneticisi menü öğesi konumu](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png#lightbox)
 
 2. Görürseniz bir **Performans Uyarısı** iletişim HAXM henüz yüklenmemiş veya bilgisayarınızda düzgün yapılandırılmamış sonra aşağıdakine benzer:
 
@@ -104,7 +120,7 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
    Varsa bir **Performans Uyarısı** iletişim şöyle gösterilir, bkz: [performans uyarıları](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#perfwarn) sorunun kaynağını belirlemek ve arka plandaki sorunu çözmek için.
 
-3. Seçin bir **x86** görüntü (örneğin, **Visual Studio\_android 23\_x86\_telefon**), tıklatın **Başlat**, 'ıtıklatın **Başlatma**:
+3. Seçin bir **x86** görüntü (örneğin, **Visual Studio\_android 23\_x86\_telefon**) tıklatıp **Başlat**:
 
     ![Google Android öykünücüsü bir varsayılan sanal aygıt görüntüsüyle başlatılıyor](hardware-acceleration-images/win/02-start-default-avd.png)
 
@@ -120,9 +136,9 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-1. Tıklayarak Android öykünücüsü yöneticisini başlatmak **Araçlar > Google öykünücü yöneticisini**:
+1. Android Aygıt Yöneticisi'ni tıklatarak başlatma **Araçlar > Aygıt Yöneticisi'ni**:
 
-    [![Android Emulator Manager menü öğesi konumu](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png#lightbox)
+    [![Android cihaz Yöneticisi menü öğesi konumu](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png#lightbox)
 
 2. Görürseniz bir **Performans Uyarısı** iletişim HAXM henüz yüklenmemiş veya bilgisayarınızda düzgün yapılandırılmamış sonra aşağıdakine benzer:
 
@@ -130,7 +146,7 @@ HAXM görüntüleyerek kullanılabilir olup olmadığını kontrol edebilirsiniz
 
    Varsa bir **Performans Uyarısı** iletişim şöyle gösterilir, bkz: [performans uyarıları](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#perfwarn) sorunun kaynağını belirlemek ve arka plandaki sorunu çözmek için.
 
-3. Seçin **x86** görüntü (örneğin, **Android\_hızlandırılmış\_x86**), tıklatın **Başlat**, ardından **başlatma**:
+3. Seçin **x86** görüntü (örneğin, **Android\_hızlandırılmış\_x86**) tıklatıp **Yürüt**:
 
     [![Google Android öykünücüsü bir varsayılan sanal aygıt görüntüsüyle başlatılıyor](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
 

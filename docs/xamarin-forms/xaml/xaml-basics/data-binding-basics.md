@@ -7,11 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 4e3e090d826aa46d503f8c612250fd5122bc703e
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733041"
 ---
 # <a name="part-4-data-binding-basics"></a>Bölüm 4. Veri bağlama temelleri
 
@@ -388,7 +389,7 @@ Sonuç şöyledir:
 
 [![](data-binding-basics-images/listview3.png "Bir DataTemplate ve dönüştürücüleri koleksiyonuyla bağlama")](data-binding-basics-images/listview3-large.png#lightbox "DataTemplate ve dönüştürücüleri koleksiyonuyla bağlama")
 
-`ListView` Dinamik olarak temel oluşabilir ve bu değişiklikleri işleme oldukça karmaşık olan veri, ancak yalnızca belirli adımları gerçekleştirin. Öğeleri koleksiyonu için atanmışsa `ItemsSource` özelliği `ListView` değişiklikleri çalışma zamanı sırasında — öğeleri eklenebilir, ise veya koleksiyondan kaldırıldı — kullanmak bir `ObservableCollection` bu öğeler için sınıf. `ObservableCollection` uygulayan `INotifyCollectionChanged` arabirimi ve `ListView` için bir işleyici yükleyecek `CollectionChanged` olay.
+`ListView` Belirli adımları izlerseniz, ancak yalnızca temel alınan veri dinamik olarak ortaya çıkabilecek değişiklikleri işleme oldukça karmaşık değil. Öğeleri koleksiyonu için atanmışsa `ItemsSource` özelliği `ListView` değişiklikleri çalışma zamanı sırasında — öğeleri eklenebilir, ise veya koleksiyondan kaldırıldı — kullanmak bir `ObservableCollection` bu öğeler için sınıf. `ObservableCollection` uygulayan `INotifyCollectionChanged` arabirimi ve `ListView` için bir işleyici yükleyecek `CollectionChanged` olay.
 
 Öğelerin özelliklerini değiştirin çalışma zamanı sırasında ardından koleksiyondaki öğelerin uygulamalıdır `INotifyPropertyChanged` arabirimi ve sinyal değişiklikleri özellik değerlerini kullanarak `PropertyChanged` olay. Bu, bu makalenin sonraki bölümünde gösterilen [bölümü 5. MVVM için bağlama verilerden](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 

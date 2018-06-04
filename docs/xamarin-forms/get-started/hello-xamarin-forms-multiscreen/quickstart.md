@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 066f084187a486ca2f88882890b5e9ad277b8cff
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 0a56996d37bcdd2922b53b414fb1afb9d33974bd
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732846"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Xamarin.Forms Multiscreen hızlı başlangıç
 
@@ -57,7 +58,7 @@ Phoneword uygulamayı şu şekilde genişletir:
 
     Değişiklikleri kaydetmek **CallHistoryPage.xaml** basarak **CTRL + S**ve dosyayı kapatın.
 
-5. İçinde **Çözüm Gezgini**, çift **App.xaml.cs** açmak için:
+5. İçinde **Çözüm Gezgini**, çift **App.xaml.cs** paylaşılan dosyasında **Phoneword** açmak için projesini:
 
     ![](quickstart-images/vs/open-app-class.png "App.xaml.cs açın")
 
@@ -88,7 +89,7 @@ Phoneword uygulamayı şu şekilde genişletir:
 
     Değişiklikleri kaydetmek **App.xaml.cs** basarak **CTRL + S**ve dosyayı kapatın.
 
-7. İçinde **Çözüm Gezgini**, çift **MainPage.xaml** açmak için:
+7. İçinde **Çözüm Gezgini**, çift **MainPage.xaml** paylaşılan dosyasında **Phoneword** açmak için projesini:
 
     ![](quickstart-images/vs/open-mainpage-xaml.png "MainPage.xaml açın")
 

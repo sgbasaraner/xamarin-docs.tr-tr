@@ -6,12 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: 8d7ec3f2f64fdb8be903fd13bd72bcf545265a3d
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.date: 05/30/2018
+ms.openlocfilehash: 05f1fc6158e9a20892ab4a4b49b33e4eac6bc5e5
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733067"
 ---
 # <a name="android-platform-specifics"></a>Android platformu özellikleri
 
@@ -26,6 +27,8 @@ Android, Xamarin.Forms aşağıdaki platform özellikleri içerir:
 - Devre dışı bırakma [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) ve [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) sayfasında Duraklat yaşam döngüsü olayları ve sırasıyla uygulama kullanan uygulamalar için Sürdür. Daha fazla bilgi için bkz: [Disappearing ve sayfa yaşam döngüsü olayları görüntülenmesini devre dışı bırakma](#disable_lifecycle_events).
 - Denetleme olup bir [ `WebView` ](xref:Xamarin.Forms.WebView) karışık içerik görüntüleyebilirsiniz. Daha fazla bilgi için bkz: [etkinleştirme karışık içerik bir Web görünümü](#webview-mixed-content).
 - Giriş Yöntemi Düzenleyicisi için yazılım klavye için ayar seçenekleri bir [ `Entry` ](xref:Xamarin.Forms.Entry). Daha fazla bilgi için bkz: [ayarı Giriş Giriş Yöntemi Düzenleyicisi Seçenekleri](#entry-imeoptions).
+- Desteklenen bir eski renk modunu devre dışı bırakma [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Daha fazla bilgi için bkz: [eski renk modu devre dışı bırakma](#legacy-color-mode).
+- Varsayılan doldurma ve gölge değerleri Android düğmelerini kullanma. Daha fazla bilgi için bkz: [kullanarak Android düğmeleri](#button-padding-shadow).
 
 <a name="soft_input_mode" />
 
@@ -308,7 +311,7 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 
 `Entry.On<Android>` Yöntemi belirtir. bu platforma özgü yalnızca Android üzerinde çalışır. [ `Entry.SetImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.SetImeOptions(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Entry},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) yumuşak klavye için giriş yöntemi eylem seçeneğini ayarlamak için kullanılan ad alanı, [ `Entry` ](xref:Xamarin.Forms.Entry), ile [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) aşağıdaki değerleri sağlayarak numaralandırma:
 
-- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – belirli bir eylemi anahtar gereklidir ve temel denetim kendiliğinden üretecektir olabilir gösterir.
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – belirli bir eylemi anahtar gereklidir ve temel denetim kendiliğinden üretecektir olabilir gösterir. Bu da olacaktır `Next` veya `Done`.
 - [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None) – hiçbir eylem anahtarı kullanımına sunulacak olduğunu gösterir.
 - [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go) – Eylem anahtarı "Git" işlemi gerçekleştirir, hedef metninin kullanıcıya alma, yazılan gösterir.
 - [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search) – Eylem anahtarı "Ara" işlemi gerçekleştirir, metin arama sonuçlarını kullanıcıya alma bunlar yazmış gösterir.
@@ -325,6 +328,83 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 Sonuç belirtilen olan [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) değer yumuşak klavye için uygulanan [ `Entry` ](xref:Xamarin.Forms.Entry), Düzenleyici Seçenekleri giriş yönteminin ayarlar:
 
 [![Giriş Yöntemi Düzenleyicisi platforma özgü giriş](android-images/entry-imeoptions.png "Giriş Giriş Yöntemi Düzenleyicisi platforma özgü")](android-images/entry-imeoptions-large.png#lightbox "Giriş Yöntemi Düzenleyicisi platforma özgü giriş")
+
+<a name="legacy-color-mode" />
+
+## <a name="disabling-legacy-color-mode"></a>Eski renk modunu devre dışı bırakma
+
+Xamarin.Forms görünümlerinden bazılarını eski renk modu özelliği. Bu modda olduğunda [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) görünümünün özelliği ayarlanmış `false`, görünümü devre dışı durumunu için varsayılan yerel renkleri ile kullanıcı tarafından ayarlanan renkleri geçersiz kılar. Geriye dönük uyumluluk, bu eski renk modu desteklenen görünümler için varsayılan davranış kalır için.
+
+Görünüm devre dışı olsa bir görünüm üzerinde kullanıcı tarafından ayarlanan renkleri kalmaması bu platforma özgü bu eski renk modu devre dışı bırakır. XAML'de ayarlayarak tüketiliyor [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.IsLegacyColorModeEnabledProperty) özelliğine bağlı `false`:
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button Text="Button"
+                TextColor="Blue"
+                BackgroundColor="Bisque"
+                android:VisualElement.IsLegacyColorModeEnabled="False" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternatif olarak, bu fluent API kullanarak C# tüketilebilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+_legacyColorModeDisabledButton.On<Android>().SetIsLegacyColorModeEnabled(false);
+```
+
+`VisualElement.On<Android>` Yöntemi belirtir. bu platforma özgü yalnızca Android üzerinde çalışır. [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.VisualElement},System.Boolean)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ad alanı, eski renk modunu devre dışı olup olmadığını denetlemek için kullanılır. Ayrıca, [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.VisualElement})) yöntemi, eski renk modunu devre dışı bırakılıp bırakılmadığını döndürmek için kullanılabilir.
+
+Böylece bir görünüm üzerinde kullanıcı tarafından ayarlanan renkleri görünümü devre dışı bırakıldığında bile kalır eski renk modunu devre dışı bırakılabilir olduğunu, oluşur:
+
+![](android-images/legacy-color-mode-disabled.png "Eski renk modu devre dışı")
+
+> [!NOTE]
+> Ayarlarken bir [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) bir görünüm üzerinde eski renk modunu tamamen göz ardı edilir. Görsel durumları hakkında daha fazla bilgi için bkz: [Xamarin.Forms görsel durum Yöneticisi](~/xamarin-forms/user-interface/visual-state-manager.md).
+
+<a name="button-padding-shadow" />
+
+## <a name="using-android-buttons"></a>Android düğmelerini kullanma
+
+Bu platforma özgü Xamarin.Forms düğmeleri varsayılan doldurma ve Android düğmelerinin gölge değerleri kullanıp kullanmadığını denetler. XAML'de ayarlayarak tüketiliyor [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty) ve [ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty) özelliklerine bağlı `boolean` değerler:
+
+```xaml
+<ContentPage ...
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button ...
+                android:Button.UseDefaultPadding="true"
+                android:Button.UseDefaultShadow="true" />         
+    </StackLayout>
+</ContentPage>
+```
+
+Alternatif olarak, bu fluent API kullanarak C# tüketilebilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+button.On<Android>().SetUseDefaultPadding(true).SetUseDefaultShadow(true);
+```
+
+`Button.On<Android>` Yöntemi belirtir. bu platforma özgü yalnızca Android üzerinde çalışır. [ `Button.SetUseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean)) Ve[ `Button.SetUseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean)) yöntemleri, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ad alanı, varsayılan Xamarin.Forms düğmelerini olup olmadığını denetlemek için kullanılır doldurma ve Android düğmelerinin gölge değerleri. Ayrıca, [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button})) ve [ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button})) yöntemleri, bir düğmeyi ve varsayılan gölge değerleri sırasıyla doldurma varsayılan kullanıp kullanmadığını döndürmek için kullanılabilir.
+
+Xamarin.Forms düğmeleri varsayılan doldurma ve Android düğmelerinin gölge değerleri kullanabilirsiniz oluşur:
+
+![](android-images/button-padding-and-shadow.png "Eski renk modu devre dışı")
+
+Her yukarıdaki ekran görüntüsü unutmayın [ `Button` ](xref:Xamarin.Forms.Button) hariç aynı tanımlarına sahip sağ `Button` varsayılan doldurma ve Android düğmelerinin gölge değerleri kullanır.
 
 ## <a name="summary"></a>Özet
 

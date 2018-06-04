@@ -7,12 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732768"
 ---
 # <a name="oreo-features"></a>Oreo özellikleri
 
@@ -133,8 +134,8 @@ Android SDK Araçları 26.0 yükledikten sonra varsayılan Google GUI tabanlı A
 
 Google artık değişikliğine API 26,0 ve sonraki sürümleri destekler GUI AVD Yöneticisi sağladığından bu ileti görüntülenir. Android 8.0 Oreo için Xamarin Android Öykünücüsü Yöneticisi'ni veya komut satırı kullanmalıdır `avdmanager` sanal cihazlar için Android Oreo oluşturmak için aracı.
 
-Oluşturmak ve sanal cihazları yönetmek için Xamarin Android Aygıt Yöneticisi'ni kullanmak için bkz: [Xamarin Android Aygıt Yöneticisi'ni](~/android/get-started/installation/android-emulator/xamarin-device-manager.md).
-Sanal cihazlar olmadan Xamarin Android Emulator Manager oluşturmak için sonraki bölümde yer alan adımları izleyin.
+Oluşturmak ve sanal cihazları yönetmek için Android Aygıt Yöneticisi'ni kullanmak için bkz: [yönetme sanal cihazlar ile Android Aygıt Yöneticisi'ni](~/android/get-started/installation/android-emulator/device-manager.md).
+Sanal cihazlar olmadan Android Aygıt Yöneticisi'ni oluşturmak için sonraki bölümde yer alan adımları izleyin.
 
 
 #### <a name="creating-virtual-devices-using-avdmanager"></a>Sanal cihazlar kullanarak avdmanager oluşturma
@@ -190,7 +191,7 @@ Kullandıktan sonra **avdmanager** , sanal cihazı oluşturmak için aygıt aşa
 
 -----
 
-Android öykünücüsünde test ve hata ayıklama için yapılandırma hakkında daha fazla bilgi için bkz: [Google Android öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Android öykünücüsünde test ve hata ayıklama için yapılandırma hakkında daha fazla bilgi için bkz: [Google Android öykünücüsü ile hata ayıklama](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Bir Nexus veya piksel gibi fiziksel bir aygıtı kullanıyorsanız, ya da Cihazınızı otomatik hava (OTA) Güncelleştirmeler üzerinden güncelleştirebilir veya bir sistem görüntüsünü karşıdan yüklemek ve Cihazınızı doğrudan flash. Android Oreo Cihazınızı el ile güncelleştirme hakkında daha fazla bilgi için bkz: [Nexus ve piksel cihazlar Fabrika görüntülerinin](https://developers.google.com/android/images).
 

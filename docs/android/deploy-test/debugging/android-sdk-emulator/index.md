@@ -1,51 +1,50 @@
 ---
-title: Google Android öykünücüsü
-description: Bu kılavuz, Visual Studio ile Google Android öykünücüsü kullanmayı açıklar.
+title: Google Android öykünücüsü ile hata ayıklama
+description: Bu kılavuz, başlatma ve Google Android öykünücüsü kullanarak Visual Studio uygulamalarında hata ayıklama açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 8913bb90-1340-409d-b7bb-71a06914923a
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: aca71284c7d51936ce2addf143edb9980d9536fc
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 887620a2d8dc76154b4b9ed14400efb30bd70b1c
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732196"
 ---
-# <a name="google-android-emulator"></a>Google Android öykünücüsü
+# <a name="debugging-with-the-google-android-emulator"></a>Google Android öykünücüsü ile hata ayıklama
 
-_Bu kılavuz, Visual Studio ile Google Android öykünücüsü kullanmayı açıklar._
+_Bu kılavuz, başlatma ve Google Android öykünücüsü kullanarak Visual Studio uygulamalarında hata ayıklama açıklanmaktadır._
 
 
 ## <a name="overview"></a>Genel Bakış
 
-Google Android SDK'sı Android öykünücüsünde farklı cihaz benzetimini yapmak için yapılandırmaları çeşitli çalıştırabilirsiniz. Bu yapılandırmalar her biri olarak oluşturulan bir _sanal aygıt_. Bu kılavuzda, Visual Studio'dan öykünücü başlatma ve sık karşılaşılan sorunları giderme öğreneceksiniz.
+Google Android (Android SDK'ın dahil) öykünücüsü, çeşitli farklı Android cihazlar benzetimini yapmak için yapılandırmaları çalıştırılabilir.
+Bu yapılandırmalar her biri olarak oluşturulan bir _sanal aygıt_. Bu kılavuzda, Visual Studio'dan öykünücü başlatma, bir sanal cihaz uygulamanızı çalıştırın ve sık karşılaşılan sorunları giderme öğreneceksiniz. Google Android öykünücüsü yapılandırma ve yeni sanal cihaz oluşturma hakkında daha fazla bilgi için bkz: [Google Android öykünücüsü Kurulumu](~/android/get-started/installation/android-emulator/index.md).
 
 
 ## <a name="sections"></a>Bölümler
 
-### <a name="running-the-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorrunning-the-emulatormd"></a>[Öykünücüyü Çalıştırma](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
+### <a name="running-the-google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorrunning-the-emulatormd"></a>[Google Android öykünücüsü çalıştırma](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
 
-Google Android öykünücüsü Visual Studio'dan başlatmak nasıl.
+Visual Studio ve uygulamanızı sanal cihazı başlatma Google Android öykünücüsü başlatmak nasıl.
 
-### <a name="troubleshootingandroiddeploy-testdebuggingandroid-sdk-emulatortroubleshootingmd"></a>[Sorun giderme](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md)
 
-Tanımlamak ve ortak Google Android öykünücüsü sorunları gidermek nasıl.
+### <a name="google-android-emulator-troubleshootingandroiddeploy-testdebuggingandroid-sdk-emulatortroubleshootingmd"></a>[Google Android öykünücüsü sorunlarını giderme](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md)
 
-Google Android öykünücüsü yapılandırma ve yeni sanal cihaz oluşturma hakkında daha fazla bilgi için bkz: [Android öykünücüsü Kurulumu](~/android/get-started/installation/android-emulator/index.md).
-
+Nasıl tanımlamak ve Google Android öykünücüsü çalışırken oluşabilecek yaygın sorunları çözün.
 
 
 ## <a name="summary"></a>Özet
 
-Bu kılavuz, çalıştırmak ve Xamarin.Android uygulamaları test etmek için Google Android SDK öykünücüsü yapılandırma işlemi açıklanmıştır. Önceden yapılandırılmış sanal cihazların dahil edilmesinden, nasıl özel Android sanal cihaz (AVDs) oluşturulacağı açıklanmıştır ve Visual Studio öykünücüsü bir uygulamayı dağıtmak için adımları sağlanan. Ayrıca, bir sorun giderme kılavuzu en yaygın sorunlar ve çözümleri gösterilen.
-
+Bu kılavuz, çalıştırmak ve Xamarin.Android uygulamaları test etmek için Google Android öykünücüsü yapılandırma işlemi açıklanmıştır. Visual Studio öykünücüsü bir uygulamayı dağıtmak için adımları sağlanan ve önceden yapılandırılmış sanal aygıtları'nı kullanarak öykünücü başlatma adımları açıklanmaktadır. Ayrıca, sorun giderme kılavuzu Android öykünücüsünde çalışırken oluşabilecek en yaygın sorunları gösterilen.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
+- [Google Android öykünücüsü Kurulum](~/android/get-started/installation/android-emulator/index.md).
 - [Ekranda gezinme](https://developer.android.com/studio/run/emulator.html#navigate)
 - [Öykünücüde temel görevleri gerçekleştirme](https://developer.android.com/studio/run/emulator.html#tasks))
 - [Genişletilmiş denetimler, ayarları ve Yardım ile çalışma](https://developer.android.com/studio/run/emulator.html#extended)
-- [Yürütme Yöneticisi Intel donanım hızlandırılmış](https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager)

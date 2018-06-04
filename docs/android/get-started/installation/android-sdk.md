@@ -6,12 +6,13 @@ ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 5c2259ad32f341094f6cdc440edb2053987374b1
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 06/02/2018
+ms.openlocfilehash: 0af0ef56630103498041ad61f7c5ce900358b055
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732859"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Xamarin.Android için Android SDK'sı ayarlama
 
@@ -44,9 +45,9 @@ Neden yerine SDK'sı Android SDK ile birlikte gelen Yöneticisi Xamarin Android 
 
 Xamarin Android SDK Yöneticisi'ni kullanmak için aşağıdakiler gerekir:
 
-- Visual Studio 2017 community sürümü veya daha yüksek. Visual Studio 2017 15,5 veya sonraki bir sürümü gereklidir.
+- Visual Studio 2017 (Community, Professional veya Enterprise edition). Visual Studio 2017 15,5 veya sonraki bir sürümü gereklidir.
 
-- Visual Studio sürüm 4.5.0 için Xamarin veya sonraki bir sürümü. 
+- Xamarin sürüm 4.5.0 için Visual Studio Araçları veya sonraki bir sürümü. 
 
 Xamarin Android SDK Manager Visual Studio ile uyumlu değil
 2015. Visual Studio 2015 kullanıcılarının Google Android SDK tarafından sağlanan SDK Yöneticisi Araçları kullanmanız gerekir.

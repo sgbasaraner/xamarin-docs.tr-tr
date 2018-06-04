@@ -6,16 +6,17 @@ ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 0e290b24c0d7a98b1abaf647fe76e56867042645
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 0f4a8dc2ad581dac71f76d8dd1de09534b63abaa
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732313"
 ---
 # <a name="running-the-google-android-emulator"></a>Google Android öykünücüsü çalıştırma
 
-Bu kılavuzda, hata ayıklama ve uygulamanızı test etme için Google Android öykünücüsü sanal bir aygıt başlatmak öğreneceksiniz.
+_Bu kılavuzda, bir hata ayıklama ve uygulamanızı test etmek için Google Android öykünücüsü sanal cihazı başlatma öğreneceksiniz._
 
 ## <a name="using-a-pre-configured-virtual-device"></a>Önceden yapılandırılmış bir sanal cihaz kullanımıyla
 
@@ -35,11 +36,12 @@ Visual Studio görünür önceden yapılandırılmış sanal cihazlar cihaz aç�
 
 Genellikle, seçeceğiniz **Visual Studio\_android 23\_x86\_telefon** sınamak ve telefon uygulama hatalarını ayıklamak için sanal cihazı. Bu önceden yapılandırılmış sanal cihazlar birini gereksinimlerinizi karşılayıp karşılamadığını (yani, uygulamanızın hedefine API düzeyi eşleşir) geçin [öykünücü başlatma](#launching) uygulamanızı öykünücüde çalıştırmaya başlamak için. (Android API düzeyleriyle hakkında bilgi sahibi değilseniz, bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md).)
 
-Xamarin.Android projenizi kullanılabilir sanal cihazlar ile uyumsuz bir hedef çerçeve düzeyi kullanıyorsanız, aşağı açılan menüden altında kullanılamaz sanal cihazlar listesinde **desteklenmeyen aygıtları**. Örneğin, aşağıdaki proje ayarlamak bir hedef Framework sahip **Android 7.1 Nougat (API 25)**, ile uyumsuz olduğu **Android 6.0** varsayılan olarak sağlanan sanal aygıtlar:
+Xamarin.Android projenizi kullanılabilir sanal cihazlar ile uyumsuz bir hedef çerçeve düzeyi kullanıyorsanız, aşağı açılan menüsünün altında kullanılamaz sanal aygıtlarını listeler **desteklenmeyen aygıtları**. Örneğin, aşağıdaki proje ayarlamak bir hedef Framework sahip **Android 7.1 Nougat (API 25)**, ile uyumsuz olduğu **Android 6.0** Bu örnekte listelenen sanal aygıtlar:
 
 [![Uyumsuz sanal cihaz](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png#lightbox)
 
-Tıklayabilirsiniz **Minimum Android hedef değiştirmek** proje değiştirmek için kullanıcının Minimum Android sürümü böylece kullanılabilir sanal cihazlar API düzeyini eşleşir. Alternatif olarak, kullanabileceğiniz **Android Emulator Manager** API hedef destekleyen yeni sanal cihazları daha sonra açıklandığı gibi düzeyi oluşturmak için [sanal aygıtları yapılandırma](#virtualdevice). Sanal cihazlar için yeni bir API düzeyi yapılandırmadan önce bu API düzeyi için karşılık gelen sistem görüntüleri önce yüklemelisiniz &ndash; bu sonraki bölümde anlatılmıştır.
+Tıklayabilirsiniz **Minimum Android hedef değiştirmek** proje değiştirmek için kullanıcının Minimum Android sürümü böylece kullanılabilir sanal cihazlar API düzeyini eşleşir. Alternatif olarak, kullanabileceğiniz [Android Aygıt Yöneticisi'ni](~/android/get-started/installation/android-emulator/device-manager.md) API hedef destekleyen yeni sanal aygıtlar düzeyi oluşturmak için.
+Sanal cihazlar için yeni bir API düzeyi yapılandırmadan önce bu API düzeyi için karşılık gelen sistem görüntüleri önce yüklemeniz gerekir (bkz [Xamarin.Android için Android SDK'sı ayarı](~/android/get-started/installation/android-sdk.md)).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -55,20 +57,16 @@ Genellikle, seçeceğiniz **Android\_hızlandırılmış\_x86** sınamak ve tele
 
 -----
 
-## <a name="creating-custom-virtual-devices"></a>Özel sanal cihaz oluşturma
+## <a name="editing-virtual-devices"></a>Sanal cihazlar düzenleme
 
-Özel sanal cihaz oluşturmak için Xamarin Android Aygıt Yöneticisi'ni veya eski Google öykünücüsü Android SDK'ın bir parçası olan Yöneticisi'ni kullanmanız gerekir. Oluşturma ve sanal aygıtların özelleştirme hakkında daha fazla bilgi için bkz: [Xamarin Android Aygıt Yöneticisi'ni](~/android/get-started/installation/android-emulator/xamarin-device-manager.md).
-Eski Google öykünücü yöneticisini kullanmayı tercih ederseniz, bkz: [Google öykünücü yöneticisini](~/android/get-started/installation/android-emulator/google-emulator-manager.md).
+Sanal cihazlar değiştirin (veya yenilerini oluşturun), kullanmalısınız [Android Aygıt Yöneticisi'ni](~/android/get-started/installation/android-emulator/device-manager.md).
 
-İçin Android 8.0 Oreo geliştiriyorsanız, Xamarin Android Aygıt Yöneticisi'ni kullanmanız gerektiğini unutmayın.
 
 <a name="launching" />
 
 ## <a name="launching-the-emulator"></a>Öykünücü başlatma
 
-IDE üstüne seçmek için kullanılan bir açılır menü olduğundan **hata ayıklama** veya **sürüm** modu. Seçme **hata ayıklama** öykünücüsü içinde çalışan uygulama işlemi için hata ayıklayıcı ekler. 
-
-Aygıt açılır menüsünden sanal cihazı seçtikten sonra şunlardan birini seçin **hata ayıklama** veya **sürüm** modu, ardından **yürütmek** uygulamayı çalıştırmak için düğmesi:
+Visual Studio üstüne seçmek için kullanılan bir açılır menü olduğundan **hata ayıklama** veya **sürüm** modu. Seçme **hata ayıklama** uygulama başladıktan sonra öykünücüsü içinde çalışan uygulama işlemi eklemek hata ayıklayıcı neden olur. Seçme **sürüm** modunu (ancak hala çalıştırabilirsiniz hata ayıklama için uygulama ve kullanım günlük deyimleri) hata ayıklayıcı devre dışı bırakır. Aygıt açılır menüsünden sanal cihazı seçtikten sonra seçin **hata ayıklama** veya **sürüm** modu, ardından uygulamayı çalıştırmak için Oynat düğmesini tıklatın:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -80,11 +78,33 @@ Aygıt açılır menüsünden sanal cihazı seçtikten sonra şunlardan birini s
 
 -----
 
-Android öykünücüsünde başladıktan sonra Xamarin.Android öykünücüsünü uygulamayı dağıtın. Öykünücü ile yapılandırılmış sanal cihaz görüntüsü uygulamayı çalıştırır. Google Android öykünücüsü, örnek bir ekran görüntüsü aşağıda gösterilen (öykünücü adlı boş bir uygulamayı çalıştıran **Uygulamam**):
+Öykünücü başladıktan sonra Xamarin.Android öykünücüsünü uygulamayı dağıtın. Öykünücü ile yapılandırılmış sanal cihaz görüntüsü uygulamayı çalıştırır. Google Android öykünücüsü, örnek bir ekran görüntüsü aşağıda görüntülenmektedir. Bu örnekte, öykünücü adlı boş bir uygulamayı çalıştıran **Uygulamam**:
 
 ![Boş bir uygulaması çalıştıran öykünücüsü](running-the-emulator-images/emulator-running.png)
 
-Öykünücü çalıştıran kalmış olabilir; kapatmak ve uygulama her çalıştırıldığında yeniden başlatmak gerekli değildir. Bir Xamarin.Android uygulaması öykünücüsünde ilk çalıştırıldığında uygulama tarafından izlenen targetted API düzeyi için paylaşılan Xamarin.Android çalışma zamanı yüklendi. Çalışma zamanı yükleme birkaç dakika sürebilir, bu nedenle lütfen bekleyin. Yalnızca ilk Xamarin.Android uygulaması öykünücüsünü dağıtıldığında çalışma zamanı yükleme kurulur &ndash; yalnızca uygulama öykünücüsünü kopyaladığınızdan sonraki dağıtımları daha hızlı.
+Öykünücü çalıştıran kalabilir: kapatmak için gerekli değildir ve bekleme süresi, uygulama her zaman yeniden başlatıldığında. Bir Xamarin.Android uygulaması öykünücüsünde ilk çalıştırıldığında uygulama tarafından izlenen targetted API düzeyi için paylaşılan Xamarin.Android çalışma zamanı yüklendi. Çalışma zamanı yükleme birkaç dakika sürebilir, bu nedenle lütfen bekleyin. Yalnızca ilk Xamarin.Android uygulaması öykünücüsünü dağıtıldığında çalışma zamanı yükleme kurulur &ndash; yalnızca uygulama öykünücüsünü kopyaladığınızdan sonraki dağıtımları daha hızlı.
+
+## <a name="quick-boot"></a>Hızlı önyükleme
+
+Google Android öykünücüsü daha yeni sürümleri dahildir adlı bir özelliği _hızlı önyükleme_ , yalnızca birkaç saniye içinde öykünücü başlatır. Öykünücü kapattığınızda, böylece yeniden başlatıldığında, hızlı bir şekilde bu durumundan geri yüklenebilir sanal cihaz durumunun bir anlık görüntüsünü alır.
+Bu özelliğe erişmek için aşağıdakiler gerekir:
+
+-   Android öykünücüsünde sürüm 27.0.2 veya daha yenisi
+-   Android SDK Araçları sürüm 26.1.1 veya daha yenisi
+
+SDK Araçları ve öykünücüsü yukarıda listelenen sürümleri yüklendiğinde, hızlı önyükleme özelliği varsayılan olarak etkindir. 
+
+Bir anlık görüntüsü henüz oluşturulmamış olduğundan sanal cihazın ilk soğuk önyükleme hızlı geliştirme olmadan gerçekleşir:
+
+![Soğuk önyükleme ekran görüntüsü](running-the-emulator-images/cold-boot.png)
+
+Öykünücü dışına çıktığınızda hızlı önyükleme anlık görüntüde öykünücü durumunu kaydeder:
+
+![Kapatma işlemi durumu kaydediyor](running-the-emulator-images/saving-state.png)
+
+Öykünücü yalnızca öykünücü kapalı durumu geri yüklemesi nedeniyle sonraki sanal cihaz başlatılır çok daha hızlıdır.
+
+![Yeniden başlatma durumuna yükleniyor](running-the-emulator-images/loading-state.png)
 
 Google Android öykünücüsü kullanma hakkında daha fazla bilgi için aşağıdaki Android Geliştirici konulara bakın:
 
@@ -93,4 +113,6 @@ Google Android öykünücüsü kullanma hakkında daha fazla bilgi için aşağ�
 -   [Öykünücüde temel görevleri gerçekleştirme](https://developer.android.com/studio/run/emulator.html#tasks)
 
 -   [Genişletilmiş denetimler, ayarları ve Yardım ile çalışma](https://developer.android.com/studio/run/emulator.html#extended)
+
+-   [Öykünücü ile hızlı önyükleme çalıştırın](https://developer.android.com/studio/run/emulator#quickboot)
 

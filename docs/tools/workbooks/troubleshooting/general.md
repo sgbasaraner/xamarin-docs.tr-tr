@@ -4,11 +4,12 @@ ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 186faf3fc4f93d1c9a4af9e3e9f72afd569fed8b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a424b37840bd944302235221f2e0c6a478d4bab3
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732966"
 ---
 # <a name="known-issues--workarounds"></a>Bilinen sorunlar ve geçici çözümler
 
@@ -56,7 +57,7 @@ Var olan bir [Monaco düzenleyicisine hatada] [ monaco-bug] Safari/Mac çalışm
 
 ## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>Çalışma kitapları 1.3 SkiaSharp oluşturucu yok
 
-Çalışma kitapları 1.3 başlayarak, biz sevk SkiaSharp Oluşturucu Oluşturucu kendisini sağlamak, bizim [SDK] kullanarak SkiaSharp lehinde 0.99.0, çalışma kitaplarındaki kaldırdık [/ kılavuzları/cross-platform/çalışma kitaplarını/sdk /].
+Çalışma kitapları 1.3 başlayarak, biz sevk SkiaSharp Oluşturucu Oluşturucu kendisini sağlamak, kullanarak SkiaSharp lehinde 0.99.0, çalışma kitaplarındaki kaldırdık bizim [SDK](~/tools/workbooks/sdk/index.md).
 
 ### <a name="workaround"></a>Geçici Çözüm
 

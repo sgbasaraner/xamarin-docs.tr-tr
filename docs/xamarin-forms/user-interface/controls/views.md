@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: b370c27a212f876231764851c894bf683ae460c3
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: aafad29a30130c9ec088121e03a986034f002e1c
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733093"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms görünümleri
 
@@ -69,7 +70,7 @@ Etiketler, düğmeler ve yaygın olarak da bilinir kaydırıcılar gibi kullanı
 
 |     |     |
 | --- | --- |
-| [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) metin, görüntüler dikdörtgen bir nesnedir ve hangi ateşlenir bir [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/) tuşuna bastığınızda, olay.<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) | [![Düğme örnek](views-images/Button.png "düğmesini örnek")](views-images/Button-Large.png#lightbox "düğmesi örneği")<br /> [Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml) ile [arka plan kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
+| [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) metin, görüntüler dikdörtgen bir nesnedir ve hangi ateşlenir bir [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/) tuşuna bastığınızda, olay.<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) / [Kılavuzu](~/xamarin-forms/user-interface/button.md) / [örnek](https://developer.xamarin.com/samples/UserInterface/ButtonDemos/) | [![Düğme örnek](views-images/Button.png "düğmesini örnek")](views-images/Button-Large.png#lightbox "düğmesi örneği")<br /> [Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ButtonDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml) ile [arka plan kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ButtonDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="searchbar"></a>SearchBar

@@ -6,12 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: cc6cb282565e08f7ce4401e5317fba518a74a8f3
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.date: 05/30/2018
+ms.openlocfilehash: 762a604186cf8657ce2f3732081cd82612b1b7ef
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733002"
 ---
 # <a name="ios-platform-specifics"></a>iOS platformu özellikleri
 
@@ -29,6 +30,7 @@ _Platform özellikleri yalnızca özel oluşturucu veya efektleri uygulamadan be
 - Durum çubuğu görünürlük ayarını bir [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Daha fazla bilgi için bkz: [bir sayfada durum çubuğu görünürlük ayarlama](#set_status_bar_visibility).
 - Denetleme olup bir [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) dokunma hareketi işleyen veya içeriğine geçirir. Daha fazla bilgi için bkz: [geciktirme içerik rötuşları bir ScrollView içinde](#delay_content_touches).
 - Ayırıcı Stili ayarlanıyor bir [ `ListView` ](xref:Xamarin.Forms.ListView). Daha fazla bilgi için bkz: [üzerinde ListView ayırıcı stili ayarlanıyor](#listview-separatorstyle).
+- Desteklenen bir eski renk modunu devre dışı bırakma [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Daha fazla bilgi için bkz: [eski renk modu devre dışı bırakma](#legacy-color-mode).
 
 <a name="blur" />
 
@@ -506,6 +508,47 @@ Sonuç belirtilen olan [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfigura
 
 > [!NOTE]
 > Ayırıcı Stili ayarlamak bir kez `FullWidth`, geri değiştirilemez `Default` çalışma zamanında.
+
+<a name="legacy-color-mode" />
+
+## <a name="disabling-legacy-color-mode"></a>Eski renk modunu devre dışı bırakma
+
+Xamarin.Forms görünümlerinden bazılarını eski renk modu özelliği. Bu modda olduğunda [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) görünümünün özelliği ayarlanmış `false`, görünümü devre dışı durumunu için varsayılan yerel renkleri ile kullanıcı tarafından ayarlanan renkleri geçersiz kılar. Geriye dönük uyumluluk, bu eski renk modu desteklenen görünümler için varsayılan davranış kalır için.
+
+Görünüm devre dışı olsa bir görünüm üzerinde kullanıcı tarafından ayarlanan renkleri kalmaması bu platforma özgü bu eski renk modu devre dışı bırakır. XAML'de ayarlayarak tüketiliyor [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsLegacyColorModeEnabledProperty) özelliğine bağlı `false`:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button Text="Button"
+                TextColor="Blue"
+                BackgroundColor="Bisque"
+                ios:VisualElement.IsLegacyColorModeEnabled="False" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternatif olarak, bu fluent API kullanarak C# tüketilebilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+_legacyColorModeDisabledButton.On<iOS>().SetIsLegacyColorModeEnabled(false);
+```
+
+`VisualElement.On<iOS>` Yöntemi belirtir. bu platforma özgü yalnızca İos'ta çalıştırma. [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) ad alanı, eski renk modunu devre dışı olup olmadığını denetlemek için kullanılır. Ayrıca, [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})) yöntemi, eski renk modunu devre dışı bırakılıp bırakılmadığını döndürmek için kullanılabilir.
+
+Böylece bir görünüm üzerinde kullanıcı tarafından ayarlanan renkleri görünümü devre dışı bırakıldığında bile kalır eski renk modunu devre dışı bırakılabilir olduğunu, oluşur:
+
+![](ios-images/legacy-color-mode-disabled.png "Eski renk modu devre dışı")
+
+> [!NOTE]
+> Ayarlarken bir [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) bir görünüm üzerinde eski renk modunu tamamen göz ardı edilir. Görsel durumları hakkında daha fazla bilgi için bkz: [Xamarin.Forms görsel durum Yöneticisi](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="summary"></a>Özet
 

@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 38805c09136405a7a241cfaeb8fa8cb6fb1a5d5f
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732729"
 ---
 # <a name="introduction-to-effects"></a>Giriş etkileri
 
@@ -53,7 +54,7 @@ Kapsayıcı, denetim veya herhangi bir öğeye bağlı olduğundan bağlandıkla
 
 Her platforma özgü `PlatformEffect` sınıfı geçersiz kılınmalıdır efekt uygulamak için aşağıdaki yöntemleri sunar:
 
-- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – bir etkileyen bir Xamarin.Forms denetimine bağlı olduğunda çağrılır. Her platform özgü etkisi sınıfındaki bu yöntemi geçersiz kılınmış bir sürümünü etkisi belirtilen Xamarin.Forms denetimine uygulanamaz durumda özel durum işleme ile birlikte bu denetimin özelleştirme gerçekleştirmek için yerdir.
+- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – bir efekt Xamarin.Forms denetime bağlı olduğunda çağrılır. Her platform özgü etkisi sınıfındaki bu yöntemi geçersiz kılınmış bir sürümünü etkisi belirtilen Xamarin.Forms denetimine uygulanamaz durumda özel durum işleme ile birlikte bu denetimin özelleştirme gerçekleştirmek için yerdir.
 - [`OnDetached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnDetached()/) – bir efekt Xamarin.Forms denetimden ayrılmış olduğunda çağrılır. Her platforma özgü etkisi sınıfındaki bu yöntemi geçersiz kılınmış bir sürümünü hiçbir etkisi temizlenmesini olay işleyicisi XML'deki kaydetme gibi yerdir.
 
 Ayrıca, `PlatformEffect` sunan [ `OnElementPropertyChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E.OnElementPropertyChanged/p/System.ComponentModel.PropertyChangedEventArgs/) de kılınabilir yöntemi. Öğesinin bir özelliği değiştirildiğinde bu yöntem çağrılır. Her platforma özgü etkisi sınıfındaki bu yöntemi geçersiz kılınmış bir sürümünü Xamarin.Forms denetimindeki bağlanabilirse özellik değişikliklerine yanıt verme yerdir. Bu geçersiz kılma birçok kez çağrılabilir olarak değiştirildiğinde bir özellik için bir onay her zaman yapılmalıdır.
