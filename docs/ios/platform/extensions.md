@@ -1,6 +1,6 @@
 ---
-title: iOS uzantıları
-description: İOS 8 sunulan, iOS standart bağlamlarda gibi bildirim merkezi kullanıcı özel klavye istediğinde veya fotoğraf olduklarında sunulmuştur pencere öğeleri uzantıları düzenleme. Tüm uzantıları bir kapsayıcı uygulama ile birlikte yüklenir ve bir ana bilgisayar uygulamasında belirli bir uzantı noktasından etkinleştirilir.
+title: iOS Xamarin.iOS uzantıları
+description: Bu belgede iOS gibi standart bağlamı içinde bildirim Merkezi tarafından sunulan pencere öğeleri olan uzantıları açıklanmaktadır. Uzantı oluşturmak ve üst uygulamadan ile iletişim nasıl açıklanır.
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
@@ -8,15 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: af52db5f1add040af025f2134f0e9a7b3936f4f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c26f951ddaff34cf23662f701395e636e1258b7d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786736"
 ---
-# <a name="ios-extensions"></a>iOS uzantıları
-
-_İOS 8 sunulan, iOS standart bağlamlarda gibi bildirim merkezi kullanıcı özel klavye istediğinde veya fotoğraf olduklarında sunulmuştur pencere öğeleri uzantıları düzenleme. Tüm uzantıları bir kapsayıcı uygulama ile birlikte yüklenir ve bir ana bilgisayar uygulamasında belirli bir uzantı noktasından etkinleştirilir._
+# <a name="ios-extensions-in-xamarinios"></a>iOS Xamarin.iOS uzantıları
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 

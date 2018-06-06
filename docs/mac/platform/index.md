@@ -1,22 +1,22 @@
 ---
-title: Platform Özellikleri
-description: MacOS Platform anahtarı bileşenleri
+title: macOS Platform özellikleri
+description: 'Bu belge önemli macOS ve Xamarin.Mac platform özellikleri açıklamak kılavuzlara bağlantılar: OpenTK, film şeritleri, uzantıları ve daha fazlası.'
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 2bebc42cd3b5db7dba20066e90f294e621b1e4ac
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e82db1c0f38d35c23a6cd0667bef49315ff86be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792232"
 ---
-# <a name="platform-features"></a>Platform Özellikleri
+# <a name="macos-platform-features"></a>macOS Platform özellikleri
 
 Bu bölümdeki belgeler Xamarin.Mac uygulamasında macOS anahtar, platforma özgü özellikleri ile çalışma kapsar.
-
 
 ## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[macOS Sierra’ya Giriş](~/mac/platform/introduction-to-macos-sierra/index.md)
 

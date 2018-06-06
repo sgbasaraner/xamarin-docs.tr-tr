@@ -1,24 +1,23 @@
 ---
-title: Apple Pay
+title: Xamarin.iOS Apple ödeme
 description: Bu kılavuz yemek, eğlence ve uygulamanızı aracılığıyla üyelikleri gibi fiziksel mal için ödeme yapmak için Apple Pay ile kullanılmak üzere Xamarin.iOS ortamını ayarlama araştırır. Gerekli tanımlayıcıları, sertifikalar ve yetkilendirmeler hakkında bilgi içerir.
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: fc7c247e5edcdc25d53c34c922801a5497b8c367
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7033373cddb2503e5912eb17b1e72ece759cc3ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786697"
 ---
-# <a name="apple-pay"></a>Apple Pay
+# <a name="apple-pay-in-xamarinios"></a>Xamarin.iOS Apple ödeme
 
 _Bu kılavuz yemek, eğlence ve uygulamanızı aracılığıyla üyelikleri gibi fiziksel mal için ödeme yapmak için Apple Pay ile kullanılmak üzere Xamarin.iOS ortamını ayarlama araştırır. Gerekli tanımlayıcıları, sertifikalar ve yetkilendirmeler hakkında bilgi içerir._
 
-
 Apple Pay, 8, iOS yemek, eğlence ve iOS cihazlarını aracılığıyla üyelikleri gibi fiziksel mal ödeme bağlanmalarını sağlayarak sunulmuştur. İPhone 6 ve iPhone 6 kullanılabilir artı ve ayrıca mağaza satın alma işlemleri için Apple Watch ile eşleştirilmek. İPhone üzerinde kullanıldığında, Touch ID onaylayın ve bir kullanıcının kredi veya ATM kartı işlemleri yetkilendirmek için bir yol olarak kullanır.
-
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -41,7 +40,6 @@ Kullanılan çerçeveler ayrıca en önemli fark, [PassKit](https://developer.ap
 
 Apple Pay, Apple ile [durumları](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf) , "kullanıcılar, tüccarların veya geliştiricilerin Apple Pay ödemeler için kullanmak üzere uyguladığınız değil". Buna karşılık, her işlem için bir % 30 ücret IAP sahiptir. Ayrıca, Apple Pay ile işlem Apple hiç geçmez, bunun yerine, bir ödeme platform gider.
 
-
 ## <a name="using-a-payment-processor-platform"></a>Ödeme İşlemci platformu kullanma
 
 Apple Pay temel bölümlerini ödemeler işlenmesini biridir. Bunu yapmak mümkün olsa da, şifreleme önemli bilgi gerektirir
@@ -53,7 +51,6 @@ Apple Pay temel bölümlerini ödemeler işlenmesini biridir. Bunu yapmak mümk�
 - **Şerit** -oturum açın [Stripe.com](https://stripe.com/) bunların API'lerine erişmek için.
 
 - **JudoPay** -kullanıma kendi [Xamarin örnek kodu github'da](https://github.com/Judopay/Xamarin-Sample-App)ve adresindeki kayıt [JudoPay.com](https://www.judopay.com/).
-
 
 ## <a name="provisioning-for-apple-pay"></a>Apple Pay için sağlama
 
@@ -70,13 +67,11 @@ Apple Pay kullanmak için bir uygulama yapılandırma Kurulum Apple Geliştirici
 5. Apple Pay yetkilendirmeler ekleyin:
     - Apple pay yetkilendirme ayrıntılı olarak seçin [burada](~/ios/deploy-test/provisioning/entitlements.md), dosyadan el ile anahtar/değer çifti ekleyin veya [burada](~/ios/deploy-test/provisioning/entitlements.md)
 
-
 ## <a name="working-with-apple-pay"></a>Apple Pay ile çalışma
 
 Apple bazı geliştirmeler Apple Pay için güvenli Web sitelerinde ve Siri ve Haritalar ile etkileşimi aracılığıyla ödemelerini kullanıcıya izin 10 iOS içinde kullanıma sunmuştur.
 
 İOS 10 birkaç yeni API hem iOS hem de dinamik ödeme ağlar ve yeni bir korumalı alan test ortamı desteklemek için watchOS birlikte çalışan eklendi.
-
 
 ### <a name="apple-pay-website-integration"></a>Apple Pay Web tümleştirme
 
@@ -122,7 +117,6 @@ Yeni test ortamını etkinleştirmek için aşağıdakileri yapın:
 ## <a name="summary"></a>Özet
 
 Bu makalede, Apple Pay uygulamanızda kullanmak için gereken farklı öğeler incelediniz. Satıcı Kimliği oluşturma ve içinde nasıl kullanıldığı inceledik **Entitlements.plist**, el ile değiştirilmesi gerekir.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

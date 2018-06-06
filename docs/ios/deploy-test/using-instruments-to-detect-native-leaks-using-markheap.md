@@ -1,21 +1,20 @@
 ---
 title: Profil oluşturma araçları ile Xamarin.iOS uygulamaları
-description: Bir aygıt veya benzetici bir Xamarin.iOS uygulaması üzerinde Gereçleri kullanma
+description: Bu belgede bir aygıt veya bir simulator yüklü bir Xamarin.iOS uygulaması profil için Apple'nın Instruments uygulama kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a5c44531a8f05529b169390f25b2946133411098
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785618"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Profil oluşturma araçları ile Xamarin.iOS uygulamaları
-
-_Bir aygıt veya benzetici bir Xamarin.iOS uygulaması üzerinde Gereçleri kullanma_
 
 Xcode **Instruments** çok Xamarin.iOS uygulamaları bir aygıt veya benzetici profil için kullanılan bir araçtır. Mono kullanır, sadece zaman kodu ve araçları derlemek için model değil yorumlama bu tür verilerin de Instruments kullanan simulator tabanlı uygulamaları çıktısını çalışmak zor olabilir.
 Bu sorun nedeniyle, bu kılavuz, bu belgedeki Instruments çıktısını yorumlamak için geliştirici uygulama kullanımı hakkında odaklanacaktır.

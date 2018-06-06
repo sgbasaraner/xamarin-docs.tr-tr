@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials sürüm izleme
-description: Uygulamaları sürümünü denetlemek VersionTracking sınıfı sağlar ve yapı numaraları ilk ise gibi gibi ek bilgileri görmesini yanı sıra her zamankinden başlatılan uygulama zaman veya geçerli sürümü için önceki yapı bilgileri ve daha fazla bilgi alın.
+title: 'Xamarin.Essentials: Sürüm izleme'
+description: Uygulamaları sürümünü denetlemek Xamarin.Essentials VersionTracking sınıfında sağlar ve yapı numaraları ilk ise gibi gibi ek bilgileri görmesini yanı sıra herhangi bir zamanda başlatılan uygulama zaman veya geçerli sürümü için önceki derleme alma bilgi ve daha fazlası.
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f6ab63c44307fca860ccb73744b35c006f25a9ed
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 2c092d6767045f0af956c5dab74801077dadb51f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783008"
 ---
-# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials sürüm izleme
+# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Sürüm izleme
 
 ![Yayın öncesi NuGet](~/media/shared/pre-release.png)
 

@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials jiroskop
-description: Jiroskop sınıfı cihazın üç birincil eksen etrafında döndürme olan cihazın jiroskop algılayıcı izlemenize olanak sağlar.
+title: 'Xamarin.Essentials: jiroskop'
+description: Xamarin.Essentials jiroskop sınıfında cihazın üç birincil eksen etrafında döndürme ölçer cihazın jiroskop algılayıcı izlemenize izin verir.
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a987978882a928ad50578d3a0031bce07e60fb6e
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 2f2961c6cb78293891e186e7e0f749a7aa2fb8fc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783021"
 ---
-# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials jiroskop
+# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: jiroskop
 
 ![Yayın öncesi NuGet](~/media/shared/pre-release.png)
 

@@ -1,15 +1,17 @@
 ---
 title: Neden Jenkins Xamarin desteklenmez?
+description: Bu belgede yüksek bir düzeyde Jenkins CI sistem Xamarin'ın etkileşim açıklanmıştır. Jenkins ile çalışırken gündeme bazı yaygın sorunlar ele alınmaktadır.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 37fc134f7e97af74f5bb019f3262972273f0c4cf
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cf1a59d3084f178187209fdf3999af10efe6203a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782456"
 ---
 # <a name="why-isnt-jenkins-supported-by-xamarin"></a>Neden Jenkins Xamarin desteklenmez?
 
@@ -24,6 +26,7 @@ Bunun özel durumu Xamarin'ın Araçları'nda belirli hataları için yalıtılm
 Yukarıda da belirtildiği gibi Jenkins sorunları ekibimiz tarafından doğrudan desteklenmeyen sırada; [kullanarak Jenkins xamarin'le](~/tools/ci/jenkins-walkthrough.md) Kılavuzu, Xamarin ile tümleşik bir Jenkins CI sunucusu kurmak için kullanılabilir. 
 
 ## <a name="fixes-for-common-issues"></a>Yaygın sorunların çözümleri
+
 ### <a name="jenkins-is-unable-to-find-the-android-sdk"></a>Jenkins Android SDK bulamıyor
 
 Bu sorun için hata iletisi şuna şudur:

@@ -1,6 +1,6 @@
 ---
-title: İOS ile çalışmaya başlama
-description: Merhaba dünyasına Hello uygulama Mağazası
+title: Xamarin.iOS ile çalışmaya başlama
+description: Bu belge bağlantılar kılavuzlara Xamarin.iOS nasıl kurulur ve ilk uygulamasının nasıl oluşturulacağını açıklayan ve Objective-C geliştiricileri için Xamarin hakkında bilgi sağlar.
 ms.prod: xamarin
 ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/23/2016
-ms.openlocfilehash: be25d976cc58d6c1dd0154cbdc06aab7039c544e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 237480c91a40e6ee08481664ce3981af10f97599
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785607"
 ---
-# <a name="getting-started-with-ios"></a>İOS ile çalışmaya başlama
+# <a name="getting-started-with-xamarinios"></a>Xamarin.iOS ile çalışmaya başlama
 
 Xamarin.iOS sağlayan Objective-C ve Xcode, kullanılabilir aynı kullanıcı Arabirimi denetimlerini kullanarak yerel iOS uygulamaları oluşturmak geliştiriciler esneklik ve modern bir dili (C#) .NET temel sınıf kitaplığı (BCL) ve iki gücünü şıklık dışında ilk sınıf IDE - Mac ve Visual Studio için Visual Studio. Bu seri Kurulum ve Xamarin.iOS yükleme nasıl tanıtır ve Xamarin.iOS geliştirme temelleri giderir.
 

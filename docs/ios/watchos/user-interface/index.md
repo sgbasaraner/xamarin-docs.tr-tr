@@ -1,18 +1,20 @@
 ---
-title: watchOS kullanıcı arabirimi
+title: watchOS Xamarin kullanıcı arabirimi denetimleri
+description: Bu belge watchOS kullanıcı arabirimleri için kullanılabilir olan çeşitli denetimleri açıklar. Etiketler, düğmeleri, anahtarları, kaydırıcılar, görüntüler, ayırıcılar, maps ve daha fazla açıklamasını sağlar.
 ms.prod: xamarin
 ms.assetid: EDFAD203-02EA-4A74-9CE2-7B8513BC90E1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 73099768d876cad08571c3d0bf8340535eb1307b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b56cfed8f045d824996a004539533b27d66c8cb1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791416"
 ---
-# <a name="watchos-user-interface"></a>watchOS kullanıcı arabirimi
+# <a name="watchos-user-interface-controls-in-xamarin"></a>watchOS Xamarin kullanıcı arabirimi denetimleri
 
 [ **WatchKitCatalog** ](https://github.com/xamarin/monotouch-samples/tree/master/watchOS/WatchKitCatalog) örneği, çeşitli watchOS denetimleri gösterir. Uygulamanın film şeridi (yakınlaştırma için tıklatın) aşağıda gösterilmiştir:
 
@@ -36,7 +38,7 @@ Tüm denetimler programlı adlarını önekiyle `WKInterface` (ör.) `WKInterfac
 |[Menü](~/ios/watchos/user-interface/menu.md)|Film şeridi zorla tuşuna menü tanımlayın ve her düğme için eylemleri koda uygulanması.<br />[Menü denetim (zorla Touch) belgeleri](~/ios/watchos/user-interface/menu.md)<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ControllerDetailController.cs)|![](Images/controller.png)|
 |Metin girişi|Kullanım `PresentTextInputController` ve `WKTextInputMode` numaralandırması.<br />[Metin girişi belgeleri](~/ios/watchos/user-interface/text-input.md)<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/TextInputController.cs)|![](Images/textinput.png)|
 |Dijital Dama yapma|Bir seçici sürücü için dijital Dama yapma kullanılabilir veya kendi dönüş kodu izlenebilir.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/CrownDetailController.cs)|![](Images/digital-crown.png)|
-|Hareketleri|Bir Sahne eklenebilir hareketi tanıma dört tür vardır: dokunun, geçirme, Pan ve LongPress.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
+|Hareketler|Bir Sahne eklenebilir hareketi tanıma dört tür vardır: dokunun, geçirme, Pan ve LongPress.<br />[Katalog kodu](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

@@ -1,5 +1,5 @@
 ---
-title: Veritabanları
+title: Xamarin.Mac veritabanlarında
 description: Bu makalede, anahtar-değer kodlama ve anahtar-değer SQLite veritabanları ve Xcode'nın arabirimi Oluşturucu kullanıcı Arabirimi öğeleri arasında veri bağlamayı izin vermek üzere Gözlemleme kullanmayı ele alır. Ayrıca, SQLite veri erişim sağlamak için SQLite.NET ORM kullanmayı ele alır.
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 33c1ab7092669bb1dbd4e7bfae628b58a0bf3726
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3bc40824396aba78b2645bf9701e8e0e659c8b0a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791998"
 ---
-# <a name="databases"></a>Veritabanları
+# <a name="databases-in-xamarinmac"></a>Xamarin.Mac veritabanlarında
 
 _Bu makalede, anahtar-değer kodlama ve anahtar-değer SQLite veritabanları ve Xcode'nın arabirimi Oluşturucu kullanıcı Arabirimi öğeleri arasında veri bağlamayı izin vermek üzere Gözlemleme kullanmayı ele alır. Ayrıca, SQLite veri erişim sağlamak için SQLite.NET ORM kullanmayı ele alır._
 
@@ -1914,7 +1915,7 @@ SQLite.Net Web sitesi göre _"SQLite olduğu müstakil sunucusuz, sıfır yapıl
 
 Aşağıdaki bölümlerde, SQLite.Net için bir tablo görünümü verilerini sağlamak için nasıl kullanılacağını göstereceğiz.
 
-### <a name="including-the-sqlitenet-nuget"></a>Including the SQLite.net NuGet
+### <a name="including-the-sqlitenet-nuget"></a>SQLite.net NuGet dahil olmak üzere
 
 SQLite.NET uygulamanıza dahil bir NuGet paketi olarak sunulur. Veritabanı desteği SQLite.NET kullanarak ekleyebilmeniz için önce bu pakete dahil gerekir.
 

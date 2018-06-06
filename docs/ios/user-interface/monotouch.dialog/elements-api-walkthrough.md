@@ -1,18 +1,19 @@
 ---
-title: İzlenecek yol - öğeleri API kullanarak bir uygulama oluşturma
+title: Öğeleri API kullanarak bir Xamarin.iOS uygulaması oluşturma
 description: Bu makalede giriş MonoTouch iletişim makale için sunulan bilgiler temel oluşturur. MonoTouch.Dialog (yüksekliğindeki kullanmayı gösterir bir kılavuz gösterir D) hızlı bir şekilde yüksekliğindeki sahip bir uygulama oluşturmaya başlamak için öğeleri API D.
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e4fbf744c6f967d09e0033212024c2e2398fb768
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 64f407288da72dbf51fb3388ddf36caea377f09c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790438"
 ---
-# <a name="walkthrough---creating-an-application-using-the-elements-api"></a>İzlenecek yol - öğeleri API kullanarak bir uygulama oluşturma
+# <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Öğeleri API kullanarak bir Xamarin.iOS uygulaması oluşturma
 
 _Bu makalede giriş MonoTouch iletişim makale için sunulan bilgiler temel oluşturur. MonoTouch.Dialog (yüksekliğindeki kullanmayı gösterir bir kılavuz gösterir D) hızlı bir şekilde yüksekliğindeki sahip bir uygulama oluşturmaya başlamak için öğeleri API D._
 
@@ -172,6 +173,6 @@ Bu makalede MonoTouch.Dialog öğeleri API kullanma gösterdi bir kılavuz sunul
 - [Yansıma API gözden geçirme](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [JSON öğesini gözden geçirme](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
 - [Github'da MonoTouch iletişim](https://github.com/migueldeicaza/MonoTouch.Dialog)
-- [TweetStation Application](https://github.com/migueldeicaza/TweetStation)
+- [TweetStation uygulama](https://github.com/migueldeicaza/TweetStation)
 - [UITableViewController sınıf başvurusu](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
 - [UINavigationController sınıf başvurusu](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

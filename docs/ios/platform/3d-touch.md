@@ -1,19 +1,20 @@
 ---
-title: 3B dokunmatik giriş
-description: Bu makale yeni kullanarak kapsamaktadır iPhone 6s ve iPhone 6s Plus 3B Touch uygulamanızda hareketleri.
+title: Xamarin.iOS 3B iletişim giriş
+description: Bu makalede iPhone 6s ve iPhone 6s ile sunulan 3B dokunma hareketleri kullanmayı açıklar ve. Bu hareketleri baskısı duyarlılık, gözlem ve pop etkinleştir ve hızlı eylemler.
 ms.prod: xamarin
 ms.assetid: 806D051E-3791-40F7-9776-4E4D3E56F7F3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a0d89315b82f4931538cdabe64aade7986b2a42e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6eb71409317661cdd571c708db062e06e63ff55
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786589"
 ---
-# <a name="introduction-to-3d-touch"></a>3B dokunmatik giriş
+# <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin.iOS 3B iletişim giriş
 
 _Bu makale yeni kullanarak kapsamaktadır iPhone 6s ve iPhone 6s Plus 3B Touch uygulamanızda hareketleri._
 
@@ -450,7 +451,7 @@ Bu makalede yeni 3B Touch iOS 9 iPhone 6s ve iPhone 6s için kullanılabilir hal
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [iOS 9 ViewControllerPreview Sample](https://developer.xamarin.com/samples/monotouch/ios9/ViewControllerPreview/)
+- [iOS 9 ViewControllerPreview örnek](https://developer.xamarin.com/samples/monotouch/ios9/ViewControllerPreview/)
 - [iOS 9 ApplicationShortcuts örnek](https://developer.xamarin.com/samples/monotouch/ios9/ApplicationShortcuts/)
 - [iOS 9 geliştiricileri için](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

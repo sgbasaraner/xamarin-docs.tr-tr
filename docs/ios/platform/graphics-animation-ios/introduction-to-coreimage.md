@@ -1,23 +1,24 @@
 ---
-title: CoreImage
-description: CoreImage, iOS ve video geliştirme işlevselliği dinamik görüntü işleme sağlamak üzere 5 ile sunulan yeni bir çerçevedir. Bu makalede Xamarin.iOS örnekleri ile bu özellikleri sunar.
+title: Xamarin.iOS çekirdek görüntüde
+description: Çekirdek görüntü, iOS ve video geliştirme işlevselliği dinamik görüntü işleme sağlamak üzere 5 ile sunulan yeni bir çerçevedir. Bu makalede Xamarin.iOS örnekleri ile bu özellikleri sunar.
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0bb2c3b8b563da53e432ad16e6518ada67a4655e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6032554a0ddbda26ff5de94f6035bc4f8c15a22a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786638"
 ---
-# <a name="coreimage"></a>CoreImage
+# <a name="core-image-in-xamarinios"></a>Xamarin.iOS çekirdek görüntüde
 
-_CoreImage, iOS ve video geliştirme işlevselliği dinamik görüntü işleme sağlamak üzere 5 ile sunulan yeni bir çerçevedir. Bu makalede Xamarin.iOS örnekleri ile bu özellikleri sunar._
+_Çekirdek görüntü, iOS ve video geliştirme işlevselliği dinamik görüntü işleme sağlamak üzere 5 ile sunulan yeni bir çerçevedir. Bu makalede Xamarin.iOS örnekleri ile bu özellikleri sunar._
 
-CoreImage bir dizi yerleşik filtreler ve görüntüleri ve video yüz algılama dahil olmak üzere, uygulama etkileri sağlayan bir iOS 5'de sunulan yeni bir çerçevedir.
+Çekirdek görüntüsü, bir dizi yerleşik filtreler ve görüntüleri ve video yüz algılama dahil olmak üzere, uygulama etkileri sağlayan bir iOS 5'de sunulan yeni bir çerçevedir.
 
 Bu belge basit örnekleri içerir:
 
@@ -26,7 +27,7 @@ Bu belge basit örnekleri içerir:
 -  Kullanılabilir filtreleri listeleniyor.
 
 
-Bu örnekler Xamarin.iOS uygulamalarınıza CoreImage özellikleri başlamanıza yardımcı olması.
+Bu örnekler Xamarin.iOS uygulamalarınıza çekirdek görüntü özelliklerini başlamanıza yardımcı olması.
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -34,7 +35,7 @@ Xcode en son sürümünü kullanmanız gerekir.
 
 ## <a name="face-detection"></a>Yüz algılama
 
-Yalnızca ne yazacaktır CoreImage yüz algılama özelliğini mu – bir fotoğraf yüzeyleri tanımlamaya çalışır ve tanıdığı yüzeyleri koordinatlarını döndürür. Bu bilgiler görüntüdeki kişiler sayısı, Göstergeler görüntüde (ör. çizmek için kullanılabilir 'kişiler bir fotoğraf etiketleme için'), ya da, düşünme başka bir şey.
+Yalnızca ne yazacaktır çekirdek görüntü yüz algılama özelliğini mu – bir fotoğraf yüzeyleri tanımlamaya çalışır ve tanıdığı yüzeyleri koordinatlarını döndürür. Bu bilgiler görüntüdeki kişiler sayısı, Göstergeler görüntüde (ör. çizmek için kullanılabilir 'kişiler bir fotoğraf etiketleme için'), ya da, düşünme başka bir şey.
 
 Bu koddan CoreImage\SampleCode.cs oluşturmak ve katıştırılmış görüntüde yüz algılama kullanmak nasıl gösterir:
 
@@ -219,11 +220,11 @@ Derleme tarayıcı veya Mac için Visual Studio veya Visual Studio'da otomatik t
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, bazı yüz algılama ve görüntüye filtre uygulayarak gibi yeni iOS 5 CoreImage framework Özellikleri'nin nasıl kullanıldığını göstermiştir. Farklı bir resim filtreleri düzinelerce Framework'te kullanmanız için kullanılabilir.
+Bu makalede, bazı yüz algılama ve görüntüye filtre uygulayarak gibi yeni iOS 5 çekirdek görüntü framework Özellikleri'nin nasıl kullanıldığını göstermiştir. Farklı bir resim filtreleri düzinelerce Framework'te kullanmanız için kullanılabilir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Çekirdek görüntü (örnek)](https://developer.xamarin.com/samples/CoreImage/)
 - [Sözleşme ve bir görüntü tarif parlaklığını ayarla](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
-- [CoreImage filtrelerini kullanma](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
+- [Çekirdek resim filtreleri kullanma](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [CIFilter sınıf başvurusu](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

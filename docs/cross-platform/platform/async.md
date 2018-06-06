@@ -1,20 +1,21 @@
 ---
-title: Zaman uyumsuz genel bakış
-description: 'Zaman uyumsuz işlemleri ifade etmek için iki yeni anahtar sözcüklerin – sürüm 5 – C# dili en son sürümünü sunulan: async ve await. Bu anahtar sözcükler, başka bir iş parçacığında (örneğin, ağ erişimi) uzun süre çalışan işlemlerini yürütmek için görev paralel kitaplığı kullanan basit kod yazmak ve kolayca tamamlama sonuçlarına erişme olanak tanır. Xamarin.iOS ve Xamarin.Android en son sürümlerini zaman uyumsuz desteği ve await - bu belge, açıklamalar ve Xamarin ile yeni sözdizimini kullanarak bir örnek sağlar.'
+title: Zaman uyumsuz desteğine genel bakış
+description: Bu belge ile zaman uyumsuz programlama açıklar ve bekleme, C# zaman uyumsuz kod yazmayı kolaylaştırmak için 5'te sunulan kavramlar.
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 5d6bb9581a4429502d9a70385b3ee2ff056f30ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 22878695d93ae79bbbfe1b99961587ff0bf957be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782014"
 ---
 # <a name="async-support-overview"></a>Zaman uyumsuz desteğine genel bakış
 
-_Zaman uyumsuz işlemleri ifade etmek için iki yeni anahtar sözcüklerin – sürüm 5 – C# dili en son sürümünü sunulan: async ve await. Bu anahtar sözcükler, başka bir iş parçacığında (örneğin, ağ erişimi) uzun süre çalışan işlemlerini yürütmek için görev paralel kitaplığı kullanan basit kod yazmak ve kolayca tamamlama sonuçlarına erişme olanak tanır. Xamarin.iOS ve Xamarin.Android en son sürümlerini zaman uyumsuz desteği ve await - bu belge, açıklamalar ve Xamarin ile yeni sözdizimini kullanarak bir örnek sağlar._
+_C# 5 sunulan zaman uyumsuz programing basitleştirmek için iki anahtar sözcükler: async ve await. Bu anahtar sözcükler, başka bir iş parçacığında (örneğin, ağ erişimi) uzun süre çalışan işlemlerini yürütmek için görev paralel kitaplığı kullanan basit kod yazmak ve kolayca tamamlama sonuçlarına erişme olanak tanır. Xamarin.iOS ve Xamarin.Android en son sürümlerini zaman uyumsuz desteği ve await - bu belge, açıklamalar ve Xamarin ile yeni sözdizimini kullanarak bir örnek sağlar._
 
 Xamarin'in zaman uyumsuz destek Mono 3.0 temeli üzerinde oluşturulmuştur ve .NET 4.5 mobil dostu sürümünde Silverlight mobil dostu bir sürümü olmaktan API profili yükseltir.
 

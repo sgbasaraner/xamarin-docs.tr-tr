@@ -1,5 +1,5 @@
 ---
-title: CallKit
+title: Xamarin.iOS CallKit
 description: Bu makalede yeni CallKit API, Apple iOS 10 ve Xamarin.iOS VoIP uygulamalarda uygulama yayımlanan yer almaktadır.
 ms.prod: xamarin
 ms.assetid: 738A142D-FFD2-4738-B3ED-57C273179848
@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 67c761aa6656b571f16632dd1a076ff11737a424
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c674802eac9105d60471b6b130615e1b7efc1b28
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787207"
 ---
-# <a name="callkit"></a>CallKit
+# <a name="callkit-in-xamarinios"></a>Xamarin.iOS CallKit
 
 _Bu makalede yeni CallKit API, Apple iOS 10 ve Xamarin.iOS VoIP uygulamalarda uygulama yayımlanan yer almaktadır._
-
 
 Yeni iOS 10 CallKit API VoIP uygulamaların UI iPhone ile tümleştirme, bilinen bir arayüz sağlar ve son kullanıcı deneyimi bir yol sağlar. Bu API ile kullanıcılar görebilir ve iOS cihaz kilit ekranı VoIP çağrılarından etkileşim ve telefon uygulamanın kullanarak kişileri Yönet **Sık Kullanılanlar** ve **Recents** görünümleri.
 

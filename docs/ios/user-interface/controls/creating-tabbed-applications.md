@@ -1,21 +1,20 @@
 ---
-title: Sekme çubukları ve sekme Çubuğu denetleyicileri
-description: Sekme Gezinti kullanıcı arabirimini kullanarak iOS uygulamaları UITabBarController sınıfı kullanılarak oluşturulur. Bu makalede biz birkaç denetleyicileri ve görünümleri içeren bir sekmeli uygulama ayarlama konusunda size rehberlik. Biz, ardından kök denetleyicisi gibi bir oturum açma ekranı sonra olmadığında bir UITabBarController yükleme inceleyeceğiz.
+title: Sekme çubukları ve Xamarin.iOS sekme Çubuğu denetleyicileri
+description: Bu belgede iOS sekmesini Çubuğu denetleyicileri ve bunların Xamarin.iOS ile nasıl kullanılacağını açıklar. UITabBarController ayarlamak, görüntülerle çalışma rozet değerleri, olayları birlikte çalışır ve daha fazlasını ayarlamak nasıl gösterir.
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c3c57cceed7271ebbe707172db892a246003426b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d8b096774e60ec0e0b69e109fa5da53c25e66d25
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789764"
 ---
-# <a name="tab-bars-and-tab-bar-controllers"></a>Sekme çubukları ve sekme Çubuğu denetleyicileri
-
-_Sekme Gezinti kullanıcı arabirimini kullanarak iOS uygulamaları UITabBarController sınıfı kullanılarak oluşturulur. Bu makalede biz birkaç denetleyicileri ve görünümleri içeren bir sekmeli uygulama ayarlama konusunda size rehberlik. Biz, ardından kök denetleyicisi gibi bir oturum açma ekranı sonra olmadığında bir UITabBarController yükleme inceleyeceğiz._
+# <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Sekme çubukları ve Xamarin.iOS sekme Çubuğu denetleyicileri
 
 Sekmeli uygulamalar, iOS, belirli bir sırada birden çok ekranlar burada erişilip kullanıcı arabirimleri desteklemek için kullanılır. Aracılığıyla `UITabBarController` sınıfı, uygulamaları kolayca gibi çok ekran senaryolar için destek içerir. `UITabBarController` Her ekran ayrıntılara odaklanmak uygulama geliştiricisi izin vererek çok ekran yönetim ilgilenir.
 

@@ -1,21 +1,21 @@
 ---
 title: Inspector yükleme ve gereksinimler
-description: İndirme, yükleme ve Xamarin denetçisi kullanmak nasıl.
+description: Bu belge, Xamarin denetçisi yüklemeyi açıklar ve desteklenen işletim sistemi, IDE ve uygulama platformları açıklanır.
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 5bbd5c64f53e191d5ac629e20df87c2b7ca4ec00
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793814"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspector yükleme ve gereksinimler
 
 ## <a name="download-and-installation"></a>İndirme ve yükleme
-
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -55,7 +55,6 @@ Dinamik uygulama İnceleme Kurumsal müşteriler için kullanılabilir.
 |iOS (Birleşik)|Desteklenen XS ve Visual Studio|İOS uygulamalarını Windows inceleniyor Mac yapı konakta da yüklenmesi denetçisinin aynı sürümünü gerektirir.|
 |Android|Desteklenen XS ve Visual Studio|Android hedeflemelidir > ile 4.0.3, = **fastdev** etkin.<br />Google, Visual Studio veya Xamarin Android öykünücüsünü kullanmanız gerekir. Android 7 öykünücüsünü denetleme şu anda izin vermeyebilir.|
 |WPF|Yalnızca Windows Visual Studio'da desteklenir|
-
 
 <a name="reporting-bugs" />
 
@@ -167,6 +166,5 @@ Eski sürümleri için el ile aşağıdaki kaldırmanız gerekir:
 
 1. Çalışma kitapları uygulamaya Sil `"/Applications/Xamarin Workbooks.app"`
 2. Inspector uygulamaya Sil `"Applications/Xamarin Inspector.app"`
-2. Eklentileri silin: `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` ve `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-3. Inspector silin ve destek dosyaları burada: `/Library/Frameworks/Xamarin.Interactive.framework` ve `/Library/Frameworks/Xamarin.Inspector.framework`
-
+3. Eklentileri silin: `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` ve `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
+4. Inspector silin ve destek dosyaları burada: `/Library/Frameworks/Xamarin.Interactive.framework` ve `/Library/Frameworks/Xamarin.Inspector.framework`

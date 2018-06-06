@@ -1,5 +1,5 @@
 ---
-title: Uygulama temelleri
+title: Xamarin.Mac uygulama temelleri
 description: Bu belge bağlantılar kılavuzlara Xamarin.Mac uygulamaları geliştirirken anlamanız için gereken çeşitli kavramlarını açıklar.
 ms.prod: xamarin
 ms.assetid: 5A36B3A7-F197-4AC3-A40D-B2C49362FF06
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/17/2015
-ms.openlocfilehash: 807cf0e16cafc00483cecfc578367bc110657672
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1c807e97d5218e93c4eb991a9bd80219c9745c2b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791507"
 ---
-# <a name="application-fundamentals"></a>Uygulama temelleri
+# <a name="xamarinmac-application-fundamentals"></a>Xamarin.Mac uygulama temelleri
 
 ## <a name="common-patterns-and-idiomsmacapp-fundamentalspatternsmd"></a>[Ortak desenleri ve deyimleri](~/mac/app-fundamentals/patterns.md)
 

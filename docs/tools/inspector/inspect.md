@@ -1,29 +1,26 @@
 ---
 title: Canlı uygulamaları inceleniyor
-description: Görselleştirme ve canlı uygulamanızın hatalarını ayıklama
+description: Bu belge, uygulamaları incelemek için Xamarin denetçisi kullanmayı açıklar. Ayrıca, Xamarin denetçisi aracı sınırlamaları anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 8bcdc5ac50a0f03086ad9e9c3265e3ce86b06704
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 16a0474c7fc9a496409e2133714b6d4374691dbc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793485"
 ---
 # <a name="inspecting-live-applications"></a>Canlı uygulamaları inceleniyor
 
 Dinamik uygulama İnceleme Kurumsal müşteriler için kullanılabilir.
 
-
 1. [Xamarin çalışma kitaplarını & Denetçisi yükleyin.](~/tools/inspector/install.md)
-
 1. Tüm açık [uygulama projesi desteklenen](~/tools/inspector/install.md#supported-platforms) Mac veya Visual Studio için Visual Studio.
 1. Uygulamanızı hata ayıklama modunda çalıştırın.
 1. Tıklatın **incele** IDE araç çubuğu düğmesini (Visual Studio'da **geçerli uygulamayı inceleyin...**  menü öğesi edinilebilir de **Araçları** veya **hata ayıklama** menüsü).
-
-
 
 [![](inspect-images/mac-heres-the-button.png "IDE araç çubuğunda denetle düğmesine tıklayın")](inspect-images/mac-heres-the-button.png#lightbox)
 

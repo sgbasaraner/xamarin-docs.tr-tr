@@ -1,31 +1,30 @@
 ---
-title: Sorun giderme
-description: Bu makalede Xamarin.tvOS uygulamalarda tvOS 10 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir.
+title: Uygulamaları Xamarin ile oluşturulan tvOS 10 sorunlarını giderme
+description: Bu makalede, Xamarin uygulamalarda tvOS 10 ile çalışmak için birkaç sorun giderme ipuçları sağlar. Uygulama mağazası, ikili uyumluluğu, CFNetwork HttpProtocol, CloudKit, çekirdek görüntü, NSUserActivity ve Uıkit ilgili sorunları açıklar.
 ms.prod: xamarin
 ms.assetid: EA5564BB-C415-49A2-B70C-3DBF5E0F3FAB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8875e658ead17820655a2401079627875c14958b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4332caca2804da52bb565fe382932af691c39dab
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788816"
 ---
-# <a name="troubleshooting"></a>Sorun giderme
+# <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>Uygulamaları Xamarin ile oluşturulan tvOS 10 sorunlarını giderme
 
-_Bu makalede Xamarin.tvOS uygulamalarda tvOS 10 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir._
-
-Aşağıdaki bölümlerde tvOS 10 Xamarin.tvOS ve bu sorunların çözümü ile kullanıldığında oluşabilir bazı bilinen sorunlar listelenmektedir:
+Aşağıdaki bölümlerde tvOS 10 Xamarin ve bu sorunların çözümü kullanılırken oluşabilir bazı bilinen sorunlar listelenmektedir:
 
 - [App Store](#App-Store)
 - [İkili uyumluluğu](#Binary-Compatibility)
 - [CFNetwork HTTP Protokolü](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [CoreImage](#CoreImage)
+- [Çekirdek görüntüsü](#CoreImage)
 - [NSUserActivity](#NSUserActivity)
-- [UIKit](#UIKit)
+- [Uıkit](#UIKit)
 
 <a name="App-Store" />
 
@@ -62,7 +61,7 @@ Uzun süreli işlemler döndürecektir bir _", dosyayı kaydetmek için izniniz 
 
 <a name="CoreImage" />
 
-## <a name="coreimage"></a>CoreImage
+## <a name="core-image"></a>Çekirdek görüntüsü
 
 `CIImageProcessor` API artık bir rastgele giriş görüntü sayısı destekler. `CIImageProcessor` TvOS 10 beta 1 eklenmiştir API kaldırılır.
 
@@ -84,10 +83,6 @@ Bilinen Sorunlar:
  - tvOS 10 gerektirir çağırmak Geliştirici `base.AwakeFromNib` sınıflara ayırırken `UIViewController` ve geçersiz kılma `AwakeFromNib` yöntemi.
  - Özel uygulamalarla `UIView` geçersiz kılma alt sınıfların `LayoutSubviews` ve düzenini çağırmadan önce kirli `base.LayoutSubviews` tvOS 10 sonsuz düzeni döngüde tetikleyebilir.
  - Yön özgü veya flippable görüntü varlıklar olan hiçbir atanan zaman çevirme `UIButton` nesneleri.
-
-
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

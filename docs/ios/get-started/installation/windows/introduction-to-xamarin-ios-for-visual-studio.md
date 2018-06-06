@@ -1,21 +1,20 @@
 ---
 title: Visual Studio Xamarin.iOS için giriş
-description: Bu makalede, yapı ve Visual Studio kullanarak Xamarin iOS uygulamaları test gösterilmektedir. Visual Studio yeni iOS projeleri oluşturmak, bir iOS uygulaması oluşturma ve ardından derleme, test ve ana bilgisayar Apple'nın derleyici ve simulator ve Xamarin'ın derleme araç zinciri ağa bağlı bir Mac kullanarak hata ayıklama için nasıl kullanılacağını anlatılmıştır.
+description: Bu belge, yapı ve Visual Studio kullanarak Xamarin.iOS uygulamaları test açıklar. Proje oluşturma açıklanır, ana bilgisayardan Windows çalıştıran ve bir uygulama hata ayıklama ve bir Mac bilgisayara bağlayarak yapı.
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2018
-ms.openlocfilehash: fbd48deb0b18dcd3ac0d40e379e21d5967f81e0d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: e07119bee6478a503ca6c586fa3348206ccd16f7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786206"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Visual Studio Xamarin.iOS için giriş
-
-_Bu makalede, yapı ve Visual Studio kullanarak Xamarin iOS uygulamaları test gösterilmektedir. Visual Studio yeni iOS projeleri oluşturmak, bir iOS uygulaması oluşturma ve ardından derleme, test ve ana bilgisayar Apple'nın derleyici ve simulator ve Xamarin'ın derleme araç zinciri ağa bağlı bir Mac kullanarak hata ayıklama için nasıl kullanılacağını anlatılmıştır._
 
 Windows için Xamarin iOS uygulamalarının yazılmış ve derleme ve dağıtım hizmeti sağlayan ağa bağlı bir Mac ile Visual Studio'dan Test olanak sağlar.
 
@@ -27,7 +26,6 @@ Visual Studio içinde iOS için geliştirmeye çok sayıda fayda sağlar:
 -  Sık kullandığınız Visual Studio araçları kullanarak (gibi **Resharper** ve **Team Foundation Server**) iOS kaynak kodu da dahil olmak üzere tüm platformlar arası projeleri için.
 -  Tüm Apple'nın API'leri Xamarin.iOS bağlamaları yararlanarak sırasında bilinen bir IDE ile çalışır.
 
-
 <a name="Requirements_and_Installation" />
 
 ## <a name="requirements-and-installation"></a>Gereksinimleri ve yükleme
@@ -38,7 +36,6 @@ Birkaç yapılandırma seçeneği kullanılabilir olduğundan, geliştirme gerek
 
 -  Mac ana geliştirme makinenizi kullanın ve Visual Studio yüklüyse Windows sanal makine çalıştırın. VM yazılım gibi kullanmanızı öneririz [Parallels](http://www.parallels.com/products/desktop/) veya [VMWare](http://www.vmware.com/products/fusion/) .
 -  Mac yalnızca bir yapı konağı olarak kullanın. Bu senaryoda, bir Windows makineyle aynı ağa bağlı olurdu [gerekli](~/cross-platform/get-started/installation/windows.md#installation) araçları yüklü.
-
 
 Her iki durumda da, aşağıdaki adımları izlemelisiniz:
 
@@ -64,7 +61,6 @@ Xamarin iOS geliştirme için ilgili denetimleri kırmızı daire içine alını
 -  **Çözüm yapılandırmaları** – kullanmak üzere yapılandırma seçmenize olanak tanır (örn., hata ayıklama, yayın).
 -  **Çözüm platformları** -iPhone veya dağıtım için iPhoneSimulator seçmenize olanak sağlar.
 
-
 ### <a name="ios-toolbar"></a>iOS araç çubuğu
 
 Visual Studio'da araç iOS her Visual Studio sürümünde benzer. Bunlar tüm aşağıda verilmiştir:
@@ -77,10 +73,7 @@ Her öğe aşağıda açıklanmıştır:
 -  **İOS simülatörü Göster** – iOS simülatörü penceresi Mac üzerinde öne getirir
 -  **Derleme sunucusundaki IPA dosyasını Göster** – açılır Bulucu konumu uygulamanın IPA'sı olarak Mac üzerinde çıktı dosyası.
 
-
-
 ## <a name="ios-output-options"></a>iOS çıkış seçenekleri
-
 
 ### <a name="output-window"></a>Çıktı Penceresi
 
@@ -108,29 +101,23 @@ Hata ayıklama ve yapı gibi diğer varsayılan Visual Studio çıkış bölmele
 
     [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild çıktı")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
-
 ## <a name="ios-project-properties"></a>iOS proje özellikleri
 
 Visual Studio'nun proje özellikleri erişilebilir proje adına sağ tıklayıp seçerek *özellikleri* bağlam menüsünde. Bu, iOS Uygulamanızı yapılandırmak aşağıdaki ekran görüntüsünde gösterildiği gibi sağlar:
-
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Bir iOS uygulaması yapılandırma")
 
 -  *iOS paket imzalama* – kod imzalama kimlikleri doldurmak için Mac bilgisayara bağlanır ve sağlama profilleri:
 
-
  ![](introduction-to-xamarin-ios-for-visual-studio-images/bundlesigning.png "Kod kimlikleri imzalama ve sağlama profilleri doldurma")
 
 -  *iOS IPA seçenekleri* – IPA dosya Mac'ın dosya sisteminde kaydedilecek:
-
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/ipaoptions.png "iOS IPA seçenekleri")
 
 -  *iOS Çalıştırma Seçenekleri* – ek parametreleri yapılandır:
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/iosrunoptions.png "iOS Çalıştırma Seçenekleri")
-
-
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>İOS uygulamaları için yeni bir proje oluşturma
 
@@ -156,7 +143,6 @@ Görünümünüze nesneleri eklemek için kullanın **araç** öğeleri, tasarı
 
  İOS Tasarımcısı'nı kullanarak daha fazla bilgi için başvurmak [Tasarımcısı](~/ios/user-interface/designer/index.md) kılavuzları.
 
-
 ## <a name="running--debugging-ios-applications"></a>Çalışan & iOS uygulamaları hata ayıklama
 
 ### <a name="device-logging"></a>Cihaz günlüğe kaydetme
@@ -175,7 +161,6 @@ Combobox içinde görünmesi cihazlar için sırayla bir iOS projesi yüklenmesi
 
 Bu araç penceresi sağlar: günlük girişlerini, cihaz seçimi için açılır listesinde, günlük girişlerini, arama kutusuna ve Dur/Yürüt/Duraklat düğmeleri temizlemek için bir yol tablosu.
 
-
 ### <a name="set-debugging-stops"></a>Hata ayıklama durakları ayarlama
 
 Kesme noktaları programın yürütülmesi geçici olarak durdurmak için hata ayıklayıcı için sinyal için uygulamanızda herhangi bir noktada ayarlayabilirsiniz. Visual Studio'da bir kesme noktası ayarlamak için kesme istediğiniz kod satırı sayısını yanındaki düzenleyicinizi kenar boşluğu alanını tıklatın:
@@ -185,7 +170,6 @@ Kesme noktaları programın yürütülmesi geçici olarak durdurmak için hata a
 Hata Ayıklamayı Başlat ve benzeticisi veya aygıt bir kesme noktası uygulamanıza gitmek için kullanın. Bir kesme noktası isabet, satır vurgulanır ve Visual Studio'nun normal hata ayıklama davranışı etkin olacaktır:, tekrar adımla veya kodun dışına yerel değişkenler inceleyin veya komut penceresi kullanın.
 
 Bu ekran OS X: Parallels kullanarak iOS simülatörü çalışan Visual Studio yanındaki gösterir.
-
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/image19.png "Bu ekran OS x'te Parallels kullanarak iOS simülatörü çalışan Visual Studio yanındaki gösterir.")
 

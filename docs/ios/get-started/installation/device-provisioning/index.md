@@ -1,21 +1,20 @@
 ---
-title: Cihaz sağlama
-description: Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlamaya yöneliktir. Bu kılavuz, geliştirme sertifikalar istemek ve profilleri, uygulama hizmetleri ile çalışma ve cihaza bir uygulama dağıtmak inceleyeceksiniz.
+title: Cihaz Xamarin.iOS için hazırlama
+description: Bu belge, böylece bir uygulamayı test etmek için kullanılabilir bir cihaz hazırlayın açıklar. Ayrıca, anında iletme bildirimleri gibi özelliklerini kullanabilmesi için bir uygulama yapılandırma anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 9721cc40319f0b4d6f0869eabccb84256122fb02
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785794"
 ---
-# <a name="device-provisioning"></a>Cihaz sağlama
-
-_Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlamaya yöneliktir. Bu kılavuz, geliştirme sertifikalar istemek ve profilleri, uygulama hizmetleri ile çalışma ve cihaza bir uygulama dağıtmak inceleyeceksiniz._
+# <a name="device-provisioning-for-xamarinios"></a>Cihaz Xamarin.iOS için hazırlama
 
 Bir Xamarin.iOS uygulaması geliştirme sırasında fiziksel bir aygıtı uygulamaya ayrıca simulator dağıtarak test etmek için gereklidir. Yalnızca aygıt hataları ve performans sorunlarını bellek ya da ağ bağlantısı gibi donanım sınırları nedeniyle bir cihazda çalıştırıldığında, gerçekleşen. Fiziksel cihaz üzerindeki test etmek için cihaz olmalıdır *sağlanan*, ve Apple gerekir haberdar cihaz test etmek için kullanılacaktır.
 

@@ -1,20 +1,19 @@
 ---
 title: Xamarin ile oyun geliştirme giriş
-description: Oyun geliştirme yapısını diğer tür uygulamaları geliştirme araçlarındaki önemli ölçüde farklı olabilir. Bu makalede Xamarin.iOS ve Xamarin.Android kullanılan teknoloji özellikleri oyun geliştirmeye giriş ' dir. Oyunlar nasıl yapılacağını, üst düzey bir tartışma ve teknolojilerinin kullanılabilir örnekleme Xamarin.iOS ve Xamarin.Android ile sağlar.
+description: Bu belge, oyunlar nasıl yapılacağını ve teknolojilerden Xamarin.iOS ve Xamarin.Android ile kullanmak için örnekleme açıklayan Xamarin, oyun geliştirmeye üst düzey bir genel bakış sağlar.
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 543d3e2d4e53d1b88213ac82689073a9fb925820
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b1bd6d011cdc10352ce3b9258da7e16c2899d2d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783922"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Xamarin ile oyun geliştirme giriş
-
-_Oyun geliştirme yapısını diğer tür uygulamaları geliştirme araçlarındaki önemli ölçüde farklı olabilir. Bu makalede Xamarin.iOS ve Xamarin.Android kullanılan teknoloji özellikleri oyun geliştirmeye giriş ' dir. Oyunlar nasıl yapılacağını, üst düzey bir tartışma ve teknolojilerinin kullanılabilir örnekleme Xamarin.iOS ve Xamarin.Android ile sağlar._
 
 Oyunlar geliştirme özellikle ne kadar kolay çalışmanızı mobil platformlarda yayımlama olabilir verilen çok heyecan verici olabilir. Bu makalede kavramları açıklar ve yüksek kaliteli AAA oyun ya da yalnızca için eğlenceli programı oluşturmak için amacınız olup olmadığını yardımcı olacak oyun geliştirme ilgili teknolojileri oyunlar, oluşturun.
 

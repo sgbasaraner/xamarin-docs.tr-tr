@@ -1,45 +1,40 @@
 ---
 title: Birleşik API genel bakış
-description: Yeni stil API zamankinden kod Mac ve iOS yanı sıra aynı 32 ve 64 bit uygulamalarını desteklemek ikili sağlayarak arasında paylaşmak için kolaylaştırır.
+description: Xamarin'ın birleşik API kod Mac ve iOS ve Destek 32 ve 64-bit uygulamalarla aynı ikili arasında paylaşılmasını olanaklı kılar.
 ms.prod: xamarin
 ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 0bdbf4a41ad5737603fccc7e78bc588a2f3acee3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d54d31019f04dc28b9b85a13a0a93f85abc0be75
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782001"
 ---
 # <a name="unified-api-overview"></a>Birleşik API genel bakış
 
-_Yeni stil API zamankinden kod Mac ve iOS yanı sıra aynı 32 ve 64 bit uygulamalarını desteklemek ikili sağlayarak arasında paylaşmak için kolaylaştırır._
-
-İOS ve Mac arasında paylaşımı kodu geliştirmek ve 32 ve 64 bit üzerinde çalışan tek bir kod temel sağlamak, geliştiricilerin için erken 2015 Xamarin.Mac ve Xamarin.iOS ürünlerinde Unified API adlı yeni bir API gösterdiğimizi.
+Xamarin'ın birleşik API kod Mac ve iOS ve Destek 32 ve 64-bit uygulamalarla aynı ikili arasında paylaşılmasını olanaklı kılar. Birleşik API varsayılan olarak yeni Xamarin.iOS ve Xamarin.Mac projelerinde kullanılır.
 
 > [!IMPORTANT]
-> **Klasik profili kullanımdan:** yeni platformlar Xamarin.iOS içinde eklendikçe biz kademeli olarak Klasik profilinden (monotouch.dll) özellikleri alanı onaylanamadı başladılar. Örneğin, NRC olmayan (yeni ref-sayısı) seçeneği kaldırıldı. NRC tüm birleştirilmiş uygulamalar için her zaman etkinleştirildi (hiçbir zaman bir seçenek, yani olmayan NRC) ve bilinen bir sorun vardır. Gelecek sürümlerde Boehm atık toplayıcı kullanma seçeneğini kaldırır. Ayrıca, bu birleşik uygulamalara hiçbir zaman kullanılabilen bir seçenektir. Tam temizleme Klasik destek Xamarin.iOS 10.0 sürümü ile sonraki sonbaharda için zamanlandı.
+> Xamarin Klasik hangi Unified API öncesinde, API, kullanım dışı bırakıldı. 
+> - Klasik API (monotouch.dll) desteklemek için Xamarin.iOS son sürümü Xamarin.iOS 9.10 oluştu.
+> - Xamarin.Mac hala Klasik API destekler, ancak artık güncelleştirilir. Kullanım dışı bırakılmıştır olduğundan, geliştiriciler uygulamalarını Unified API taşımanız gerekir.
 
-## <a name="ios"></a>iOS
+## <a name="updating-classic-api-based-apps"></a>Klasik API tabanlı uygulamaları güncelleştirme
 
-`Xamarin.iOS.dll` Xamarin.iOS 8.6 ile birlikte gelen derleme bizim **ilk kararlı ve desteklenen sürüm** iOS için birleşik API.
-Birleşik API önceki Önizleme sürümleri Kapat ancak tamamen uyumlu değil.
+Platformunuz için ilgili yönergeleri izleyin:
 
-## <a name="mac"></a>Mac
+- [Mevcut Uygulamaları Güncelleştirme](updating-apps.md)
+- [Mevcut iOS Uygulamalarını Güncelleştirme](updating-ios-apps.md)
+- [Mevcut Mac Uygulamalarını Güncelleştirme](updating-mac-apps.md)
+- [Mevcut Xamarin.Forms Uygulamalarını Güncelleştirme](updating-xamarin-forms-apps.md)
+- [Bir Bağlamayı Unified API’ye Geçirme](update-binding.md)
 
-`Xamarin.Mac.dll` , Kararlı kanal Xamarin.Mac derleme bizim **ilk kararlı ve desteklenen sürüm** Mac için birleşik API
-Birleşik API önceki Önizleme sürümleri Kapat ancak tamamen uyumlu değil.
+## <a name="tips-for-updating-code-to-the-unified-apiupdating-tipsmd"></a>[Kodu Unified API’ye Güncelleştirmeye İlişkin İpuçları](updating-tips.md)
 
-## <a name="runtime-defaults"></a>Çalışma zamanı Varsayılanları
-
-Varsayılan kullanımlar tarafından Unified API **SGen** atık toplayıcısını ve [yeni başvuru sayımı](~/ios/internals/newrefcount.md) sistemi nesnenin sahipliğini izleme için. Aynı özellik Xamarin.Mac için bağlantı noktalı.
-
-Bu, geliştiricilerin eski sistemiyle karşılaştığı ve ayrıca kolaylaştırır sorunlardan bazıları çözdü [bellek yönetimi](~/cross-platform/deploy-test/memory-perf-best-practices.md).
-
-Yeni Refcount etkinleştirmek için bile Klasik API mümkündür, ancak varsayılan koruyucu ve kullanıcıların herhangi bir değişiklik gerektirmez unutmayın. Birleşik API ile biz varsayılan değiştirme Fırsatı sürdü ve geliştiricilerin tüm geliştirmeleri aynı anda verin yeniden düzenlemeniz ve kendi kodlarını yeniden sınayın.
-
-<a name="namespace-changes" />
+Hangi uygulamaların bağımsız olarak geçirdiğiniz, kullanıma [bu ipuçlarını](updating-tips.md) başarıyla birleşik API'sine güncelleştirmenize yardımcı olması için.
 
 ## <a name="library-split"></a>Kitaplık Böl
 
@@ -50,7 +45,9 @@ Bu noktadan itibaren bizim API'leri iki yolla kullanıma sunulur:
 
 Başka bir deyişle, kuruluş için yeni API'ları biz bunları sonsuza kadar veya koruma tutmak şekilde mevcut Klasik API'lerini kullanmaya devam edebilirsiniz geliştiriciler (değil atamak uygulama mağazası), yükseltme yapabilirsiniz.
 
-### <a name="namespace-changes"></a>Namespace değişiklikleri
+<a name="namespace-changes" />
+
+## <a name="namespace-changes"></a>Namespace değişiklikleri
 
 Kod Mac ve iOS Ürünlerimiz arasında paylaşmak için uyuşmazlık azaltmak için biz ad alanları API'leri ürünler için değiştiriyorsunuz.
 
@@ -61,7 +58,15 @@ Bu kod koşullu derleme yeniden ayırma olmadan Mac ve iOS platformlarında aras
 -  **Klasik API:** ad alanları kullanmak `MonoTouch.` veya `MonoMac.` öneki.
 -  **Birleşik API:** herhangi bir ad alanı öneki
 
-### <a name="api-changes"></a>API değişiklikleri
+## <a name="runtime-defaults"></a>Çalışma zamanı Varsayılanları
+
+Varsayılan kullanımlar tarafından Unified API **SGen** atık toplayıcısını ve [yeni başvuru sayımı](~/ios/internals/newrefcount.md) sistemi nesnenin sahipliğini izleme için. Aynı özellik Xamarin.Mac için bağlantı noktalı.
+
+Bu, geliştiricilerin eski sistemiyle karşılaştığı ve ayrıca kolaylaştırır sorunlardan bazıları çözdü [bellek yönetimi](~/cross-platform/deploy-test/memory-perf-best-practices.md).
+
+Yeni Refcount etkinleştirmek için bile Klasik API mümkündür, ancak varsayılan koruyucu ve kullanıcıların herhangi bir değişiklik gerektirmez unutmayın. Birleşik API ile biz varsayılan değiştirme Fırsatı sürdü ve geliştiricilerin tüm geliştirmeleri aynı anda verin yeniden düzenlemeniz ve kendi kodlarını yeniden sınayın.
+
+## <a name="api-changes"></a>API değişiklikleri
 
 Kullanım dışı yöntemler Unified API kaldırır ve birkaç örneği vardır vardı burada yazım hatalarını API adlarında özgün MonoTouch ve MonoMac ad alanlarına Klasik API'lerde bağlanmış olduğunda. Bu örnekler, yeni birleşik API'lerinde düzeltildi ve ve bileşen, iOS ve Mac uygulamalarınızda güncelleştirilmesi gerekir. İçine çalışabilir en yaygın olanları listesi aşağıdadır:
 
@@ -76,7 +81,7 @@ Kullanım dışı yöntemler Unified API kaldırır ve birkaç örneği vardır 
 
 Birleşik API'sine Klasikten geçiş yaparken değişiklikleri tam bir listesi için lütfen bkz bizim [Klasik (monotouch.dll) vs Unified (Xamarin.iOS.dll) API farklılıkları](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) belgeleri.
 
-### <a name="updating-to-unified"></a>Çok birleşik güncelleştiriliyor
+## <a name="updating-to-unified"></a>Çok birleşik güncelleştiriliyor
 
 Bazı eski/bozuk/kullanım API **Klasik** kullanılamayan **Unified** API. Düzeltmek daha kolay olabilir `CS0616` , (el ile veya otomatik) başlatmadan önce uyarıları yükseltme sahip olacaksınız beri `[Obsolete]` sağ API için kılavuzluk etmesi için ileti (uyarı parçası) özniteliği.
 
@@ -84,17 +89,6 @@ Biz yayımlama Not bir [ *fark* ](https://developer.xamarin.com/releases/ios/api
 
 Bu yönergeleri izleyin [var olan iOS uygulamaları güncelleştirme](~/cross-platform/macios/unified/updating-ios-apps.md), veya [Mac uygulamaları](~/cross-platform/macios/unified/updating-mac-apps.md) Unified API.
 Bu sayfanın kalanını gözden geçirin ve [bu ipuçlarını](~/cross-platform/macios/unified/updating-tips.md) kodunuzu geçirme hakkında ek bilgi için.
-
-## <a name="components-and-nuget"></a>Bileşenleri ve NuGet
-
-Çoğu varolan bileşenleri ve NuGet paketleri Unified API destekleyecek şekilde güncelleştirilmesi gerekir.
-Klasik API karşı yerleşik bileşenleri bir birleşik API projesinde başvurulamaz.
-
-Tüm başvuruları sahip olmaması var olan bileşenlerin `monotouch.dll` (veya `XamMac.dll`) güncelleştirmeleri gerekmez.
-
-### <a name="components"></a>Bileşenler
-
-iOS bileşenlerinde [Xamarin bileşen Deposu'nda](https://components.xamarin.com/) Unified API projelerle çalışmak için güncelleştirilmesi gerekir. Xamarin yayımlamak ve aynı işlemi gerçekleştirmek için diğer yazarlar teşvik bileşenleri güncelleştirmeye çalışıyor.
 
 ### <a name="nuget"></a>NuGet
 
@@ -105,9 +99,39 @@ Birleşik API uyumlu paketler için-yeni bir platform tanımlayıcısı tanıtı
 > [!IMPORTANT]
 > Formda bir hata varsa _"hatası 3 'monotouch.dll' ve 'Xamarin.iOS.dll' aynı Xamarin.iOS projede içeremez - 'Xamarin.iOS.dll' 'monotouch.dll' tarafından başvurulan sırada açıkça başvurulmaktadır ' xxx, sürüm 0.0.000, = Culture = neutral, PublicKeyToken = null'"_ Unified API uygulamanıza dönüştürdükten sonra genellikle bir bileşen veya NuGet paketi birleşik API'sine güncelleştirilmemiş projesinde sahip nedeniyle istenir. Varolan bileşeni/NuGet kaldırmak, birleşik API'lerini destekleyen bir sürüme güncelleştirmek ve temiz bir yapı yapmanız gerekir.
 
+### <a name="the-road-to-64-bits"></a>64 bit yol
+
+32 ve 64 bit uygulamalar ve çerçeveler hakkında bilgi destekleme hakkında arka plan için bkz: [32 ve 64 bit Platform konuları](~/cross-platform/macios/32-and-64/index.md).
+
+ <a name="new-data-types" />
+
+#### <a name="new-data-types"></a>Yeni veri türleri
+
+Fark özünde Mac ve iOS API'leri her zaman 32 bit platformlarda ve 64 bit 64 bit platformlarda 32 bit bir mimariye özgü veri türlerini kullanın.
+
+Örneğin, Objective-C eşlemeleri `NSInteger` veri türü için `int32_t` 32 bit sistemler ve çok `int64_t` 64 bit sistemler üzerinde.
+
+Bu davranış, bizim Unified API eşleşecek şekilde biz önceki kullanımlarını değiştirdiğiniz `int` (.NET içinde tanımlanan her zaman olduğu `System.Int32`) için yeni bir veri türü: `System.nint`.  Yerel tamsayı platformunun türü için "n" / anlamı "yerel" düşünebilirsiniz.
+
+Sunuyoruz `nint`, `nuint` ve `nfloat` de veri türleri sağlayan yerleşik bunların üstüne gerektiğinde.
+
+Bu veri türü değişiklikleri hakkında daha fazla bilgi için bkz: [yerel türler](~/cross-platform/macios/nativetypes.md) belge.
+
+### <a name="how-to-detect-the-architecture-of-ios-apps"></a>İOS uygulamalarını mimarisini algılamaya nasıl
+
+Uygulamanızın nerede 32 bit veya 64 bit iOS sistemi üzerinde çalışan olmadığını bilmek ister durumlar olabilir. Aşağıdaki kod, mimarisi denetlemek için kullanılabilir:
+
+```csharp
+if (IntPtr.Size == 4) {
+    Console.WriteLine ("32-bit App");
+} else if (IntPtr.Size == 8) {
+    Console.WriteLine ("64-bit App");
+}
+```
+
 <a name="deprecated-apis" />
 
-## <a name="arrays-and-systemcollectionsgeneric"></a>Diziler ve System.Collections.Generic
+### <a name="arrays-and-systemcollectionsgeneric"></a>Diziler ve System.Collections.Generic
 
 C# dizin oluşturucular türü beklediğiniz çünkü `int`, açıkça cast gerekecek `nint` değerler `int` bir koleksiyon ya da dizi öğeleri erişmek için. Örneğin:
 
@@ -123,7 +147,7 @@ public string GetName(nint index) {
 
 Bu beklenen bir davranış çünkü dönüştürme `int` için `nint` olan kayıplı 64-bit üzerinde örtük bir dönüştürme yok yapılır.
 
-## <a name="converting-datetime-to-nsdate"></a>DateTime için NSDate dönüştürme
+### <a name="converting-datetime-to-nsdate"></a>DateTime için NSDate dönüştürme
 
 Örtük dönüştürme birleşik API'leri kullanırken `DateTime` için `NSDate` değerleri artık gerçekleştirilir. Bu değerleri bir türden diğerine açıkça dönüştürülmesi gerekir. Bu işlemi otomatikleştirmek için aşağıdaki genişletme yöntemleri kullanılabilir:
 
@@ -149,7 +173,9 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 ```
 
-## <a name="deprecated-apis-and-typos"></a>Kullanım dışı API'ları ve yazım hatalarını
+<a name="deprecated-typos" />
+
+### <a name="deprecated-apis-and-typos"></a>Kullanım dışı API'ları ve yazım hatalarını
 
 İç Xamarin.iOS Klasik API (monotouch.dll) `[Obsolete]` özniteliği, iki farklı şekilde kullanıldı:
 
@@ -161,7 +187,7 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 <a name="NSObject_ctor" />
 
-## <a name="nsobject-subclasses-ctorintptr"></a>NSObject alt sınıfların .ctor(IntPtr)
+### <a name="nsobject-subclasses-ctorintptr"></a>NSObject alt sınıfların .ctor(IntPtr)
 
 Her `NSObject` alt kabul eden bir oluşturucuya sahip bir `IntPtr`. Biz yerel ObjC işleyici yeni bir yönetilen örneğinden nasıl örneği budur.
 
@@ -177,7 +203,7 @@ Unutmayın `.ctor(NSObjectFlag)` de sunulmuştur `protected` ancak bunun dışı
 
 <a name="NSAction" />
 
-## <a name="nsaction-replaced-with-action"></a>NSAction eylemiyle değiştirildi
+### <a name="nsaction-replaced-with-action"></a>NSAction eylemiyle değiştirildi
 
 Birleşik API'leri ile `NSAction` lehinde standart .NET kaldırıldı `Action`. Bunun nedeni büyük bir geliştirme, `Action` ise ortak bir .NET türü olan `NSAction` Xamarin.iOS için belirli oluştu. Her ikisi de tam olarak aynı işlevi görür, ancak farklı ve uyumlu türleri olan ve aynı sonucu elde etmek üzere yazılmış gerek kalmadan daha koda sonuçlandı.
 
@@ -196,7 +222,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 Daha önce olacaktır derleyici hatası nedeniyle bir `Action` atanamaz `NSAction`, ancak `UITapGestureRecognizer` şimdi geçen bir `Action` yerine bir `NSAction` birleşik API'lerinde geçerli değil.
 
-## <a name="custom-delegates-replaced-with-actiont"></a>Eylemiyle değiştirilen özel temsilciler<T>
+### <a name="custom-delegates-replaced-with-actiont"></a>Eylemiyle değiştirilen özel temsilciler<T>
 
 İçinde **birleştirilmiş** bazı basit (örn. bir parametre) .net temsilciler yerine `Action<T>`. Örneğin
 
@@ -204,13 +230,13 @@ Daha önce olacaktır derleyici hatası nedeniyle bir `Action` atanamaz `NSActio
 
 artık olarak kullanılabilir bir `Action<NSNotification>`. Bu yükseltme kodu yeniden ve Xamarin.iOS ve kendi uygulamalarınız içinde kod yinelemesinden azaltır.
 
-## <a name="taskbool-replaced-with-taskbooleannserror"></a>Görev<bool> < Boole, NSError >> Görev ile değiştirilir
+### <a name="taskbool-replaced-with-taskbooleannserror"></a>Görev<bool> < Boole, NSError >> Görev ile değiştirilir
 
 İçinde **Klasik** bazı zaman uyumsuz API'leri vardı döndürme `Task<bool>`. Ancak bazı bunların nerede kullanılacak olan bir `NSError` yani imza parçası olan `bool` zaten `true` ve almak için bir özel durum catch gerekiyordu `NSError`.
 
 Bazı yaygın hatalardır ve dönüş değeri yararlı değildi olduğundan bu deseni olarak değiştirildi **birleştirilmiş** döndürmek için bir `Task<Tuple<Boolean,NSError>>`. Bu, hem başarılı hem de zaman uyumsuz çağrı sırasında olmuş olabilir herhangi bir hata denetlemenizi sağlar.
 
-## <a name="nsstring-vs-string"></a>NSString vs dize
+### <a name="nsstring-vs-string"></a>NSString vs dize
 
 Bazı durumlarda bazı sabitleri değiştirildiği gerekiyordu `string` için `NSString`, örn. `UITableViewCell`
 
@@ -226,7 +252,7 @@ Genel biz .NET tercih `System.String` türü. Ancak, Apple yönergelerini rağme
 
  <a name="protocols" />
 
-## <a name="objective-c-protocols"></a>Objective-C protokolleri
+### <a name="objective-c-protocols"></a>Objective-C protokolleri
 
 Özgün MonoTouch tam destek ObjC protokolleri ve bazı, en iyi olmayan sahip değil, API eklendi en yaygın senaryoyu desteklemek için. Bu sınırlama artık yok ancak geriye dönük uyumluluk için geçici API'leri tutulur içinde `monotouch.dll` ve `XamMac.dll`.
 
@@ -254,7 +280,7 @@ Ayrıca, bazı API daha kesin ve kullanımı kolay, örneğin olmasını izin:
 
 Bu API artık bize için daha kolay belgelerine başvuruyor olmadan, ve IDE kod tamamlama protokolü/arabirimi esas alan daha kullanışlı önerileri sağlayacaktır.
 
-### <a name="nscoding-protocol"></a>NSCoding Protokolü
+#### <a name="nscoding-protocol"></a>NSCoding Protokolü
 
 Bunu desteklemediği olsa bile bir .ctor(NSCoder) her türünün - bizim özgün bağlama dahil `NSCoding` protokolü.  Tek bir `Encode(NSCoder)` yöntemi mevcut `NSObject` nesne kodlamak için.
 Ancak bu yöntem yalnızca örnek NSCoding protokolü için uygun hale varsa çalışır.
@@ -275,10 +301,10 @@ Mac için şu örnekleri hem de denetleniyor [mac-samples](https://github.com/xa
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [İOS uygulamaları güncelleştirme](~/cross-platform/macios/unified/updating-ios-apps.md)
-- [Mac uygulamaları güncelleştirme](~/cross-platform/macios/unified/updating-mac-apps.md)
-- [Xamarin.Forms uygulamaları güncelleştirme](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
-- [Güncelleştirme bağlamaları](~/cross-platform/macios/unified/update-binding.md)
-- [Platformlar Arası Uygulamalarda Yerel Türlerle Çalışma](~/cross-platform/macios/native-types-cross-platform.md)
-- [İpuçları güncelleştiriliyor](~/cross-platform/macios/unified/updating-tips.md)
+- [İOS uygulamaları güncelleştirme](updating-ios-apps.md)
+- [Mac uygulamaları güncelleştirme](updating-mac-apps.md)
+- [Xamarin.Forms uygulamaları güncelleştirme](updating-xamarin-forms-apps.md)
+- [Güncelleştirme bağlamaları](update-binding.md)
+- [İpuçları güncelleştiriliyor](updating-tips.md)
 - [Klasik vs Unified API farklılıkları](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Platformlar Arası Uygulamalarda Yerel Türlerle Çalışma](~/cross-platform/macios/native-types-cross-platform.md)

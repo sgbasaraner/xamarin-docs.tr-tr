@@ -1,5 +1,5 @@
 ---
-title: Yeni kullanıcı arabirimi stilleri
+title: Xamarin stillerde tvOS kullanıcı arabirimi
 description: Bu makalede, açık yer almaktadır ve koyu UI temalar, Apple tvOS için 10 ve nasıl Xamarin.tvOS uygulamada uygulanacağı ekledi.
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: da75a99e842b13d42251cdd1c5195ec66ff4a513
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43bfac29acb8b465fd1f3cdfd53c7664adeae18f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789177"
 ---
-# <a name="new-user-interface-styles"></a>Yeni kullanıcı arabirimi stilleri
+# <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin stillerde tvOS kullanıcı arabirimi
 
 _Bu makalede, açık yer almaktadır ve koyu UI temalar, Apple tvOS için 10 ve nasıl Xamarin.tvOS uygulamada uygulanacağı ekledi._
 
 tvOS tüm yapı içinde Uıkit denetler otomatik olarak koyu hem ışık kullanıcı arabirimi tema destekler uyarlamak için artık 10 kullanıcının tercihlerini temel. Ayrıca, geliştirici kullanıcının seçtiği temasını temel alan kullanıcı Arabirimi öğeleri el ile ayarlayabilirsiniz ve belirli bir tema geçersiz kılabilirsiniz.
-
 
 <a name="About-the-New-User-Interface-Styles" />
 

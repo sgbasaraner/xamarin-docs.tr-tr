@@ -1,21 +1,21 @@
 ---
-title: 'İzlenecek yol: bir JSON öğesini kullanarak bir kullanıcı arabirimi oluşturmak için'
+title: Xamarin.iOS içinde bir kullanıcı arabirimi oluşturmak için JSON kullanma
 description: MonoTouch.Dialog (yüksekliğindeki D) JSON verilerini aracılığıyla dinamik kullanıcı Arabirimi oluşturma için destek içerir. Bu öğreticide, biz bir JSONElement ya da bir uygulamayla birlikte gelen veya uzak bir URL'den yüklenen JSON öğesinden bir kullanıcı arabirimi oluşturmak için nasıl kullanılacağını size rehberlik.
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 322857295383d17da03507bdd5ac78753f8c0619
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f9ba2cce1650260aa889e8282c091012ef8bbddc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790659"
 ---
-# <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>İzlenecek yol: bir JSON öğesini kullanarak bir kullanıcı arabirimi oluşturmak için
+# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Xamarin.iOS içinde bir kullanıcı arabirimi oluşturmak için JSON kullanma
 
 _MonoTouch.Dialog (yüksekliğindeki D) JSON verilerini aracılığıyla dinamik kullanıcı Arabirimi oluşturma için destek içerir. Bu öğreticide, biz bir JSONElement ya da bir uygulamayla birlikte gelen veya uzak bir URL'den yüklenen JSON öğesinden bir kullanıcı arabirimi oluşturmak için nasıl kullanılacağını size rehberlik._
-
 
 YÜKSEKLİĞİNDEKİ D JSON içinde bildirilen oluşturma kullanıcı arabirimini destekler. JSON, yüksekliğindeki kullanarak öğeleri bildirilen olduğunda D ilişkilendirilen öğeleri sizin için otomatik olarak oluşturur. JSON bir ayrıştırılmış bir yerel dosyadan ya da yüklenebilir `JsonObject` örneği veya uzak bir Url.
 
@@ -184,6 +184,6 @@ Bu makalede gösterilen kullanarak bir oluşturma yüksekliğindeki arabirimi JS
 - [Öğeleri API gözden geçirme](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [Yansıma API gözden geçirme](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Github'da MonoTouch iletişim](https://github.com/migueldeicaza/MonoTouch.Dialog)
-- [TweetStation Application](https://github.com/migueldeicaza/TweetStation)
+- [TweetStation uygulama](https://github.com/migueldeicaza/TweetStation)
 - [UITableViewController sınıf başvurusu](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
 - [UINavigationController sınıf başvurusu](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

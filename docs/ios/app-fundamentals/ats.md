@@ -1,5 +1,5 @@
 ---
-title: Uygulama taşıma güvenliği
+title: Xamarin.iOS uygulaması Aktarım güvenlik
 description: Uygulama taşıma güvenliği (ATS) Internet kaynakların (örneğin, uygulamanızın arka uç sunucusu) ve uygulamanız arasındaki güvenli bağlantılar zorlar.
 ms.prod: xamarin
 ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 7e3a191def7e0c06365f334b4a7708e5927eadf8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71632da89c6a276b427b36f91eb343ab0a5c515b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784328"
 ---
-# <a name="app-transport-security"></a>Uygulama taşıma güvenliği
+# <a name="app-transport-security-in-xamarinios"></a>Xamarin.iOS uygulaması Aktarım güvenlik
 
 _Uygulama taşıma güvenliği (ATS) Internet kaynakların (örneğin, uygulamanızın arka uç sunucusu) ve uygulamanız arasındaki güvenli bağlantılar zorlar._
 
@@ -172,7 +173,7 @@ Her anahtar aşağıdaki türü ve anlamı vardır:
 
 - **NSAppTransportSecurity** (`Dictionary`) - tüm ayar anahtarlarını içerir ve değerleri için ATS.
 - **NSAllowsArbitraryLoads** (`Boolean`) - `YES` ATS devre dışı bırakılacak için herhangi bir etki alanı **değil** listelenen `NSExceptionDomains`. Listelenen etki alanları için belirlediğiniz güvenlik ayarları kullanılır.
-- **NSAllowsArbitraryLoadsInWebContent** (`Boolean`) - If `YES` will allow web pages to load correctly while Apple Transport Security (ATS) protection is still enabled for the rest of the app.
+- **NSAllowsArbitraryLoadsInWebContent** (`Boolean`) - `YES` Apple Aktarım güvenlik (ATS) koruma uygulama geri kalanı için hala etkin durumdayken doğru bir şekilde yüklemek için web sayfaları izin verir.
 - **NSExceptionDomains** (`Dictionary`)-etki alanı topluluğu ve ATS belirli bir etki alanı için kullanması gereken güvenlik ayarları.
 - **< Domain-name-for-exception-as-string >** (`Dictionary`)-belirli bir etki alanının (ör özel durum koleksiyonu. `www.xamarin.com`).
 - **NSExceptionMinimumTLSVersion** (`String`)-en az TLS sürümü olarak ya da `TLSv1.0`, `TLSv1.1` veya `TLSv1.2` (varsayılan olmayan).
@@ -181,8 +182,8 @@ Her anahtar aşağıdaki türü ve anlamı vardır:
 - **NSRequiresCertificateTransparency** (`Boolean`) - `YES` geçerli saydamlık veri etki alanının Güvenli Yuva Katmanı (SSL) içermelidir. Varsayılan değer `NO` şeklindedir.
 - **NSIncludesSubdomains** (`Boolean`) - `YES` bu etki alanının tüm alt etki alanları bu ayarları geçersiz kılar. Varsayılan değer `NO` şeklindedir.
 - **NSThirdPartyExceptionMinimumTLSVersion** (`String`)-TLS sürümü etki alanı 3 taraf hizmeti Geliştirici denetimi dışında olduğunda kullanılır.
-- **NSThirdPartyExceptionRequiresForwardSecrecy** (`Boolean`) - If `YES` a 3rd party domain requires forward secrecy.
-- **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `YES` the ATS will allow non-secure communication with 3rd party domains.
+- **NSThirdPartyExceptionRequiresForwardSecrecy** (`Boolean`) - `YES` iletme gizliliği 3 bir taraf etki alanı gerekir.
+- **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`) - `YES` ATS 3 taraf etki alanlarıyla iletişimi güvenli olmayan izin verir.
 
 <a name="optout" />
 

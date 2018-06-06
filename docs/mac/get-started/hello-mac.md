@@ -1,6 +1,6 @@
 ---
-title: Hello, Mac
-description: Bu kılavuz, ilk Xamarin.Mac uygulama oluşturma adımları ve Mac, Xcode ve arabirim Oluşturucu için Visual Studio gibi geliştirme zincirinin işleminde sunmaktadır. Çıkışlar ve kod için UI denetimleri kullanıma, Eylemler, aynı zamanda sunar ve son olarak, oluşturmak, çalıştırmak ve Xamarin.Mac uygulamayı test etme göstermektedir.
+title: Merhaba, Mac – izlenecek yol
+description: Bu belge Xamarin.Mac uygulamasının nasıl oluşturulacağını gösterir ve Visual Studio Mac, Xcode ve arabirim Oluşturucusu'nu tanıtır. Çıkışlar ve eylemleri aracılığıyla koda sunan UI denetimleri açıklar ve oluşturmak, çalıştırmak ve Xamarin.Mac uygulamayı test etme göstermektedir.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
@@ -8,13 +8,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: e5d87d42765480c97da392cf07b6599108895321
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438bb8141818ccdb1aaf2fa604707d2fb7601cd5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792791"
 ---
-# <a name="hello-mac"></a>Hello, Mac
+# <a name="hello-mac--walkthrough"></a>Merhaba, Mac – izlenecek yol
 
 Xamarin.Mac sağlayan tam olarak yerel Mac uygulamalar C# ve aynı OS X kitaplıkları ve geliştirme sırasında kullanılır arabirimi denetimlerini kullanarak .NET geliştirme *Objective-C* ve *Xcode*. Xamarin.Mac Xcode ile doğrudan tümleşir olduğundan, geliştirici Xcode'nın kullanabilir _arabirimi Oluşturucu_ bir uygulamanın kullanıcı arabirimleri (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için).
 

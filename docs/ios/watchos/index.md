@@ -1,21 +1,20 @@
 ---
-title: watchOS
-description: Xamarin ile Apple Watch için uygulamalar oluşturma
+title: WatchOS xamarin'le uygulamalar oluşturma
+description: Bu belge bağlantılar çeşitli kılavuzlara xamarin'le watchOS uygulamalar oluşturma açıklanmaktadır. Bağlantılı kılavuzları Başlarken, watchOS kullanıcı arabirimi denetimlerini, watchOS özellikleri, dağıtım ve test etme ve sorun giderme tartışın
 ms.prod: xamarin
 ms.assetid: 14EAE85E-460A-4145-8C8D-869D176D5C3F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 5634306836b5fe0255a5d4cdf49013441206dd5f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 407c1648bef6e1ca84922a8186fbcfbc76c2c7a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791403"
 ---
-# <a name="watchos"></a>watchOS
-
-_Xamarin ile Apple Watch için uygulamalar oluşturma_
+# <a name="building-watchos-apps-with-xamarin"></a>WatchOS xamarin'le uygulamalar oluşturma
 
 ![Apple Watch Seçici arabirimi](images/watch1.png) ![Apple Watch düğmeleri](images/watch2.png) ![Apple Watch harita arabirimi](images/watch3.png)
 

@@ -1,18 +1,19 @@
 ---
-title: Öznitelikleri doğrulayın
+title: Amaç Sharpie öznitelikleri doğrulayın
+description: Bu belgenin amacı Sharpie tarafından oluşturulan [doğrulayın] özniteliğini açıklar. [Doğrulayın] özniteliği burada bunlar el ile hedefi Sharpie'nın çıkış doğrulamalısınız geliştiricilerine vurgular.
 ms.prod: xamarin
 ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: b9409b4351ed9233db0edf8e2dd9f516b9727fe0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 96e5bafc14c2d3aba03ccc137151a83ee8afeef9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780717"
 ---
-# <a name="verify-attributes"></a>Öznitelikleri doğrulayın
-
+# <a name="objective-sharpie-verify-attributes"></a>Amaç Sharpie öznitelikleri doğrulayın
 
 Hedefi Sharpie tarafından üretilen bağlamaları ile Açıklama, genellikle bulacaksınız `[Verify]` özniteliği. Bu öznitelikler, gerektiğini belirtmek _doğrulayın_ hedefi Sharpie (, ilişkili bildiriminin üstüne bir yorum sağlanacak) özgün C/Objective-C bildirimine bağlamayla karşılaştırarak doğru olanı vermedi.
 
@@ -27,7 +28,7 @@ Bağlama olduğunu doğruladıktan sonra düzeltin veya bu doğru olması için 
 
 Öznitelik sağlanan ipucu bağımsız değişkeni aşağıdaki belgeleriyle başvurulan çapraz olabilir. Belge herhangi üretilen `[Verify]` öznitelikleri bağlama tamamlandıktan sonra konsolda sağlanacaktır.
 
-|İpucu doğrulayın|Açıklama|
+|`[Verify]` İpucu|Açıklama|
 |---|---|
 |InferredFromPreceedingTypedef|Bu bildirim adını ortak convention öğesinden tarafından çıkarımı yapılan hemen önce gelen `typedef` özgün yerel kaynak kodunda. Çıkarsanan adı bu kuralı belirsiz olduğu gibi doğru olduğundan emin olun.|
 |ConstantsInterfaceAssociation|Hangi Objective-C arabirimiyle extern değişken bildirimi ilişkilendirilebilir belirlemek için kanıtı yolu yoktur. Bu örnekleri bağlı olarak `[Field]` büyük olasılıkla 'Sabitleri' ortadan daha sezgisel bir API üretmek için somut arabirimi yakın-tarafından kısmi bir arabirimine özelliklerinde arabirimi tamamen.|

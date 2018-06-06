@@ -1,15 +1,17 @@
 ---
 title: MonoTouch.Dialog Json biçimlendirme
+description: Bu belge MonoTouch.Dialog kullanarak bir Xamarin.iOS kullanıcı arabirimi oluşturmak için kullanılan JSON söz dizimi açıklanmıştır.
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 02c95f06571a3c242481769846d7cab51450f2ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dc3f4ea87bbd381a4a1767fb9179fb1bcf0c56d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790763"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json biçimlendirme
 
@@ -123,7 +125,7 @@ Ayarlama, bu kök öğesi için groupname ayarlar varsa. Grup adları öğesi i�
  <a name="title" />
 
 
-### <a name="title"></a>title
+### <a name="title"></a>Başlık
 
 Varsa, RootElement için kullanılan başlık olacaktır
 
@@ -534,7 +536,7 @@ Ayrıca, için bir değer ayarlarsanız `"group"` özellik, bu radyo düğmesi b
  <a name="Html/Web_Element" />
 
 
-## <a name="htmlweb-element"></a>Html/Web Element
+## <a name="htmlweb-element"></a>HTML/Web öğesi
 
 Dokunduğunuz zaman, bir hücre oluşturabilirsiniz belirtilen bir URL'nin içeriğini işleyen bir UIWebView katıştırır yerel veya uzak kullanarak `"html"` türü. Bu öğe için yalnızca iki özellik `"caption"` ve `"url"`:
 

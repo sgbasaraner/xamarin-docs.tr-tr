@@ -1,20 +1,19 @@
 ---
 title: 'F # ile programlama UrhoSharp'
-description: 'F # Mac için Visual Studio kullanarak basit bir UrhoSharp uygulaması oluşturma'
+description: 'Bu belge, F # Mac için Visual Studio kullanarak basit Merhaba Dünya UrhoSharp uygulaması oluşturmak açıklar'
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: d2b21204d1d328831419308827e1a2de2b6aef1c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 64d69de70d6bc6f23b9907b498622b00c42b6f50
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783278"
 ---
 # <a name="programming-urhosharp-with-f"></a>F # ile programlama UrhoSharp
-
-_F # Mac için Visual Studio kullanarak basit bir UrhoSharp uygulaması oluşturma_
 
 F # aynı kitaplıkları ve C# programcıları tarafından kullanılan kavramları kullanarak ile UrhoSharp programlanabilir. [Kullanarak UrhoSharp](~/graphics-games/urhosharp/using.md) makale UrhoSharp altyapısı genel bir bakış sunar ve bu makalede önce okumanız gerekir.
 

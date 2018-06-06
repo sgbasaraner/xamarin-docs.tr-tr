@@ -1,19 +1,20 @@
 ---
-title: Dağıtım ve Test Etme
-description: Aygıtlarda test etme ve uygulama mağazasında karşıya yükleme
+title: Dağıtma ve Xamarin ile watchOS uygulamalarını test etme
+description: Bu belge, dağıtma ve Xamarin ile oluşturulan watchOS uygulamaları sınama açıklar. Dağıtım denetim listesi sağlar, açık açıklanır ve joker uygulama kimlikleri ve bir uygulama grupları inceler.
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 47c63a01d435626fd1637b6ed5f5bb1755c717af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 778583456e74bb7ed3a85dce96bcdbc487aef57a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790948"
 ---
-# <a name="deployment-and-testing"></a>Dağıtım ve Test Etme
+# <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Dağıtma ve Xamarin ile watchOS uygulamalarını test etme
 
 ## <a name="deployment-checklist"></a>Dağıtım denetim listesi
 
@@ -41,7 +42,7 @@ Bir test izleme dağıtımı veya uygulama mağazasında karşıya olup olmadı�
 
 ' Da anlatıldığı gibi [kurulum yönergeleri](~/ios/watchos/get-started/installation.md), üç projenin izleme uygulama paketi kimliklerini gibi ilgili:
 
-- Xamarin.iOS Unified project - `com.xamarin.WatchKitCatalog`
+- Xamarin.iOS birleşik proje- `com.xamarin.WatchKitCatalog`
 - WatchKit uzantı projesi- `com.xamarin.WatchKitCatalog.watchkitextension`
 - İzleme uygulaması proje- `com.xamarin.WatchKitCatalog.watchkitapp`
 

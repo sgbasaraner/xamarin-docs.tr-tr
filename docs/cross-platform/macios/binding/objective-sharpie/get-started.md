@@ -1,17 +1,19 @@
 ---
-title: Başlarken
+title: Amaç Sharpie ile çalışmaya başlama
+description: Bu belgenin amacı Sharpie, C# Objective-C kodunu bağlamalar oluşturulmasını otomatik hale getirmek için kullanılan araçtır üst düzey bir genel bakış sağlar.
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 5f61d0794e1f5a38370f0d840504720043f69590
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a0431f8952055a55be24ae5f85381a4295206a40
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781822"
 ---
-# <a name="getting-started"></a>Başlarken
+# <a name="getting-started-with-objective-sharpie"></a>Amaç Sharpie ile çalışmaya başlama
 
 > [!IMPORTANT]
 > Amaç Sharpie Gelişmiş bilgi Objective-C (ve uzantılarının, C) ile deneyimli Xamarin geliştiriciler için bir araçtır. Objective-C Kitaplığı bağlamak denemeden önce yerel kitaplığı komut satırı (ve yerel kitaplığı nasıl çalıştığını iyi anlamış) oluşturmak düz bilgiye sahip olmalıdır.

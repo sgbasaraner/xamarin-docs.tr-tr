@@ -1,17 +1,19 @@
 ---
-title: Ortam
+title: Xamarin.iOS uygulamaları için yürütme ortamı
+description: Bu belge, bir Xamarin.iOS uygulaması için geçici ve kalıcı ortam değişkenlerini ayarlama açıklar. Değişkenleri, bir projenin özelliklerinde veya mtouch paketleme aracı ek bağımsız değişken olarak belirtilebilir.
 ms.prod: xamarin
 ms.assetid: 9801644A-89BB-4491-AD28-7F3B97D2CD62
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bc06ce3f3a26842340ce6e19741a8a7dfe8f086d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 246c65729f9327dd1ccf549603b4c2b1feb023e8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784972"
 ---
-# <a name="environment"></a>Ortam
+# <a name="execution-environment-for-xamarinios-apps"></a>Xamarin.iOS uygulamaları için yürütme ortamı
 
 *Yürütme ortamı* program yürütme etkileyen ortam değişkenleri kümesidir. Ortam değişkenleri geçici olarak Proje Özellikleri'nde veya kalıcı olarak mtouch paketleme aracı için ek bağımsız değişkenler belirterek ayarlayabilirsiniz.
 

@@ -1,16 +1,17 @@
 ---
 title: Xamarin Canlı Player örnekleri
-description: Xamarin Player Canlı denemek için bazı örnekleri aşağıda verilmiştir.
+description: Örnek uygulamalar Xamarin Canlı Player sınarken kullanmak için bu belge bağlantılar. Temel hesaplayıcı ve hata sweeper oyun bağlantılı örnekleri içerir.
 ms.prod: xamarin
 ms.assetid: C71D34AD-747B-4826-838D-5138F5DCD7EF
 author: topgenorth
 ms.author: toopge
 ms.date: 06/20/2017
-ms.openlocfilehash: 67c734a76e78973aa1acf8eb2b5dec720701d3d7
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 090b52f4ebf9ec6f46426b4364f8b57b67a79324
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793735"
 ---
 # <a name="xamarin-live-player-samples"></a>Xamarin Canlı Player örnekleri
 
@@ -31,8 +32,6 @@ Bu Xamarin.Forms uygulaması, Android veya iOS Cihazınızda kullanabileceğiniz
 Bu yeni bir sürpriz sunan, bilindik bir oyundur. 9x9 kutucuktan oluşan bir kılavuzda on böcek gizlenmiştir. Kazanmak için bu on böceğin hepsini bulup işaretlemeniz gerekir.
 
 ![Android'de BugSweeper uygulama](samples-images/bugsweeper-sml.png)
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

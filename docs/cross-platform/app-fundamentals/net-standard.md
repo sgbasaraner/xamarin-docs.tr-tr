@@ -1,19 +1,21 @@
 ---
-title: .NET standart
+title: Kod paylaşmak için .NET standart kitaplıkları kullanma
+description: Bu belgede .NET standart kitaplıkları kod paylaşmak için nasıl kullanılacağı açıklanmaktadır. .NET standart kitaplığı oluşturma, ayarlarını düzenleme ve bir uygulama kullanarak açıklanır.
 ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: c70a1cb1aa05426ba6d54d8af3787f014883bfa1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 448bbc0630388f6bf45056c90cc75586996d0623
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781039"
 ---
-# <a name="net-standard"></a>.NET standart
+# <a name="using-net-standard-libraries-to-share-code"></a>Kod paylaşmak için .NET standart kitaplıkları kullanma
 
-## <a name="using-net-standard-library-projects-to-share-code"></a>Kod paylaşmak için .NET standart Kitaplığı projelerinde kullanma
+## <a name="net-standard"></a>.NET standart
 
 .NET standart kitaplığı, tüm .NET çalışma zamanları üzerinde kullanılabilir olması için hedeflenen .NET API'leri resmi bir özelliğidir. Standart Kitaplığı arkasında motivasyon büyük bütünlüğünü .NET ekosistemi saptamaktır.
 [ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) .NET çalışma zamanı davranışı benzerliği kurmaya devam eder ancak hiçbir benzer spec .NET kitaplığı uygulamaları için .NET temel sınıf kitaplıkları (BCL) için.

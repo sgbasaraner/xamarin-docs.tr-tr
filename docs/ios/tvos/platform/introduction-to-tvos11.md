@@ -1,17 +1,18 @@
 ---
 title: TvOS 11 giriş
-description: Xamarin tvOS 11 kullanan geliştiriciler için kullanılabilen yeni özellikleri
+description: Bu belge tvOS 11 ve bağlantıları Apple'nın sürüm notları için Xamarin geliştiricilerin yeni özelliklerin kısa bir genel bakış sağlar.
 ms.prod: xamarin
 ms.assetid: 5258F7A1-3388-4482-978C-DC33AAAEFBE6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/08/2018
-ms.openlocfilehash: 735b2a113256b61d4e93c52707411e43fed2eca2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 83251cfa50dde4fb2089057aaaa2771956a4a3b0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788920"
 ---
 # <a name="introduction-to-tvos-11"></a>TvOS 11 giriş
 
@@ -36,8 +37,6 @@ Xamarin.tvOS uygulamalardaki yeni tvOS 11 özelliklere erişim:
 - Metal 2
 
 Değişiklikleri tvOS 11 sunulan Apple tam bir listesi için bkz: [tvOS yenilikler](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html) belge.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

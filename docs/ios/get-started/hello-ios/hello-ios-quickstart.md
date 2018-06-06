@@ -1,6 +1,6 @@
 ---
-title: Merhaba, iOS hızlı başlangıç
-description: Bu iki parçalı kılavuz Mac veya Visual Studio için Visual Studio kullanarak temel bir Xamarin.iOS uygulaması oluşturma ve Xamarin ile iOS uygulaması geliştirme ile ilgili temel bilgileri bir anlayış geliştirmek nasıl açıklar. Araçlar, kavramlar ve oluşturmak ve bir Xamarin.iOS uygulaması dağıtmak için gerekli adımları tanıtılacaktır.
+title: Merhaba, iOS – hızlı başlangıç
+description: Bu kılavuzda Hello, iOS adlı basit bir Xamarin.iOS uygulamasının nasıl oluşturulacağını gösterir. Bunu yaparken, temel Araçlar ve Xamarin.iOS uygulamaları geliştirmek için anlaşılmalıdır kavramları tanıtır.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: c82343b3ec36512a8cfd7ba3b96862eac14bfafd
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: d9f5894f03bbfaa2145aec462dbd0ede7774354a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785992"
 ---
-# <a name="helloios-quickstart"></a>Hello.iOS hızlı başlangıç
+# <a name="hello-ios--quickstart"></a>Merhaba, iOS – hızlı başlangıç
 
 Bu kılavuz bir sayısal telefon numarası kullanıcı tarafından girilen bir alfasayısal telefon numarasını çevirir bir uygulama oluşturmayı açıklar ve bu numarayı çağırır. Son uygulama şöyle görünür:
 

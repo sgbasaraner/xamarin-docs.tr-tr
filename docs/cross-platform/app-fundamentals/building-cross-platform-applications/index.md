@@ -1,24 +1,23 @@
 ---
-title: Platform uygulamaları oluşturma
+title: Platformlar arası uygulamalar oluşturma
 description: Bu bölüm, özeti artı altı bölümleri mobil uygulamalar tasarlama ve test etme ve çeşitli uygulama mağazaları dağıtma için Xamarin nasıl çalıştığını anlamak gelen Xamarin geliştirme platformu – kullanarak uygulamalarının nasıl oluşturulacağını anlatır.
 ms.prod: xamarin
 ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: fba13ab921949cd2361e78535d5ffc96952a1336
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3966b731531d617f105583210334a23071a6802b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780180"
 ---
-# <a name="sharing-code-options"></a>Paylaşım kodu seçenekleri
+# <a name="building-cross-platform-applications"></a>Platformlar arası uygulamalar oluşturma
 
 Platformlar arası mobil uygulamalar arasında kod paylaşmak için iki seçenek vardır: paylaşılan varlık projeleri ve taşınabilir sınıf kitaplıkları. Bu seçenekler [burada tartışılan](~/cross-platform/app-fundamentals/code-sharing.md); hakkında daha fazla bilgi [taşınabilir sınıf kitaplıkları](~/cross-platform/app-fundamentals/pcl.md) ve [paylaşılan projeleri](~/cross-platform/app-fundamentals/shared-projects.md) da kullanılabilir.
 
 <a name="Sections" />
-
-## <a name="building-cross-platform-mobile-apps"></a>Platformlar arası mobil uygulamaları oluşturma
 
  [Genel bakış](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
@@ -36,13 +35,11 @@ Platformlar arası mobil uygulamalar arasında kod paylaşmak için iki seçenek
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 
-
 ## <a name="case-studies"></a>Örnek olay incelemeleri
 
 Bu belgede özetlenen ilkeleri örnek uygulama uygulamada içine konur *Tasky*, yanı [uygulamaları önceden oluşturulmuş](https://xamarin.com/prebuilt) gibi [Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm).
 
  <a name="Tasky" />
-
 
 ### <a name="tasky"></a>Tasky
 
@@ -53,7 +50,6 @@ Xamarin ile platformlar arası uygulaması oluşturma temellerini gösterir ve y
 
 Okuma [Tasky örnek olay incelemesi](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 
-
 ## <a name="summary"></a>Özet
 
 Bu bölümde, Xamarin'ın uygulama geliştirme araçları sunar ve hedef birden çok mobil Platform uygulamalarının nasıl oluşturulacağını açıklar.
@@ -63,8 +59,6 @@ Katmanlı mimari bu yapıları kodu yeniden kullanım için birden çok platform
 Örnekler (gibi dosya ve ağ işlemlerini) ortak uygulama işlevleri ve nasıl platformlar arası şekilde oluşturulabilir verilir.
 
 Son olarak, bunu kısaca sınaması açıklanır ve bu ilkeler eyleme yerleştirir bir vaka başvuru sağlar.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

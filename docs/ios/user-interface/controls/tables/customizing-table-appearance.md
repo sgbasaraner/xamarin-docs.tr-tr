@@ -1,18 +1,20 @@
 ---
-title: Bir tablonun görünümünü özelleştirme
+title: Xamarin.iOS bir tablonun görünümünü özelleştirme
+description: Bu belge, Xamarin.iOS bir tablonun görünümünü özelleştirmek açıklar. Hücre stilleri, Donatılar, hücre ayırıcılar ve özel hücre düzenleri anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: 8A83DE38-0028-CB61-66F9-0FB9DE552286
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: a447c59e7384ce7da168efdd018bc23c2abb25c2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 03383c69afb6afa9282d44751475d74fdcd92d4a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789960"
 ---
-# <a name="customizing-a-tables-appearance"></a>Bir tablonun görünümünü özelleştirme
+# <a name="customizing-a-tables-appearance-in-xamarinios"></a>Xamarin.iOS bir tablonun görünümünü özelleştirme
 
 Bir tablonun görünümünü değiştirmek için en basit yolu, farklı hücre stili kullanmaktır. Hangi hücre stili her hücre oluşturulurken kullanılan değiştirebilirsiniz `UITableViewSource`'s `GetCell` yöntemi.
 

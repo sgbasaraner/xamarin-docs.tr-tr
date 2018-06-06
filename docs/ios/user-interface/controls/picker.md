@@ -1,19 +1,20 @@
 ---
-title: Picker
-description: Bu kılavuz, tasarlama ve bir Xamarin.iOS uygulaması ile seçiciler çalışma kapsar.
+title: Xamarin.iOS Seçici denetiminde
+description: Bu belge, tasarım ve bir Xamarin.iOS uygulaması seçici denetimlerinde çalışmak açıklar. Nasıl kodu ve Designer iOS bir seçici uygulanacağını anlatır.
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: e213124e870f1cca96a6078fd26bc7eeb1af55a1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7f46d354af86027d1e2656171c6595562d3555a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789918"
 ---
-# <a name="picker"></a>Picker
+# <a name="picker-control-in-xamarinios"></a>Xamarin.iOS Seçici denetiminde
 
 Seçici denetim kaydırılabilir vurgulanmış seçili değerine sahip bir değer listesi içeren 'tekerleği benzeri' denetimi görüntüler. Kullanıcıların istedikleri seçeneğini tekerleği döndürün.
 
@@ -23,7 +24,7 @@ Uygulama ve kullanarak makaleyi kapsar [Seçici](#picker) ve [tarih seçici](#da
 
 <a name="picker" />
 
-## <a name="picker"></a>Picker
+## <a name="picker"></a>Seçici
 
 ### <a name="implementing-a-picker"></a>Bir seçici uygulama
 

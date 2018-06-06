@@ -1,19 +1,20 @@
 ---
-title: Touch ID
-description: Touch ID Apple'nın Biyometrik parmak izi kimlik doğrulama teknolojisidir.
+title: Xamarin.iOS dokunma kimliği
+description: Bu belge, Xamarin.iOS uygulamaları Touch ID, Apple'nın Biyometrik parmak izi kimlik doğrulama teknolojisi kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: b5db80d280d7ad3c43a438d5caae57fbd1928896
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788595"
 ---
-# <a name="touch-id"></a>Touch ID
+# <a name="touch-id-in-xamarinios"></a>Xamarin.iOS dokunma kimliği
 
 Touch ID iOS 7 kullanıcı - bir geçiş kodu benzer kimlik doğrulaması için bir araç olarak sunulmuştur. Ancak, cihazın kilidini, uygulama mağazası kullanarak, kullanarak iTunes ve iCloud anahtarlık yalnızca kimlik doğrulaması sınırlıdır.
 

@@ -1,5 +1,5 @@
 ---
-title: Sosyal Framework
+title: Xamarin.iOS sosyal Framework
 description: Sosyal Framework Çin'de kullanıcıları için SinaWeibo yanı sıra Twitter ve Facebook dahil olmak üzere sosyal ağlar ile etkileşmek için birleştirilmiş bir API sağlar.
 ms.prod: xamarin
 ms.assetid: A1C28E66-AA20-1C13-23AF-5A8712E6C752
@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 334e05ad653d766b48f7f6028a1e98b0a0548c0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b7269282b18adc46f53b708a0af4934a1621d23
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788201"
 ---
-# <a name="social-framework"></a>Sosyal Framework
+# <a name="social-framework-in-xamarinios"></a>Xamarin.iOS sosyal Framework
 
 _Sosyal Framework Çin'de kullanıcıları için SinaWeibo yanı sıra Twitter ve Facebook dahil olmak üzere sosyal ağlar ile etkileşmek için birleştirilmiş bir API sağlar._
-
 
 Sosyal Framework kullanarak uygulamaların tek API'sinden sosyal ağlarla kimlik doğrulamasını yönetmek zorunda kalmadan etkileşime izin verir. Görünüm denetleyicisini gönderileri yanı sıra her sosyal ağ API HTTP üzerinden tüketen izin veren bir Özet oluşturma için sağlanan bir sistem içerir.
 

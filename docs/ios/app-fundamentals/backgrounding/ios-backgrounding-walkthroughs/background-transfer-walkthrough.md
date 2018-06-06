@@ -1,21 +1,20 @@
 ---
-title: İzlenecek yol - arka plan Aktarım Hizmeti ve NSURLSession kullanma
-description: Bu kılavuzda, arka plan Aktarım Hizmeti ve NSURLSession API uygulama arka planda olduğunda yüklemeye devam büyük bir görüntü indirmeyi Kapat kazandırın için kullanırız.
+title: Arka plan aktarım ve Xamarin.iOS NSURLSession
+description: Bu belge, arka plan aktarım ve NSUrlSession büyük bir görüntü yükleme devre dışı kazandırın ve uygulama arka planda yerleştirildiğinde, yükleme devam etmek için nasıl kullanılacağını gösteren bir kılavuz sağlar.
 ms.prod: xamarin
 ms.assetid: 6960E025-3D5C-457A-B893-25B734F8626D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 51e1ae0a4314d0b23ec9e3236656321bd3dcb4e4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 08a0ba1337c0d28d1f0d60d04394ccaf4a9ccfc7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783745"
 ---
-# <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>İzlenecek yol - arka plan Aktarım Hizmeti ve NSURLSession kullanma
-
-_Bu kılavuzda, arka plan Aktarım Hizmeti ve NSURLSession API uygulama arka planda olduğunda yüklemeye devam büyük bir görüntü indirmeyi Kapat kazandırın için kullanırız._
+# <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Arka plan aktarım ve Xamarin.iOS NSURLSession
 
 Arka plan yapılandırarak arka plan aktarım başlatılan `NSURLSession` ve karşıya yükleme veya indirme görevleri nedeniyle. Uygulama backgrounded, askıya alındı veya sonlandırıldı sırada görevleri tamamlamak, iOS uygulamanın uygulamanın içinde tamamlama işleyici çağırarak bildirir *AppDelegate*. Aşağıdaki diyagramda bu eylemde gösterir:
 

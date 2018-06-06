@@ -1,18 +1,20 @@
 ---
-title: Ayarlarıyla çalışma
+title: WatchOS Xamarin ayarları ile çalışma
+description: Bu belge Xamarin watchOS ayarlarında ile nasıl çalışılacağını açıklar. İPhone üzerinde uygulama ve Apple Watch uygulama bu ayarları kullanarak ekleme ayarlarını izleme uygulama çözümü açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 4B2EB192-F0A2-4010-B141-0431520594C0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6de70eae1eb1c498336a62b4d7be5e2805de11f9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6cfbcf3b4383588819490838c2a54cdb4faf9403
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790883"
 ---
-# <a name="working-with-settings"></a>Ayarlarıyla çalışma
+# <a name="working-with-watchos-settings-in-xamarin"></a>WatchOS Xamarin ayarları ile çalışma
 
 Apple Watch uygulamaları iOS uygulamaları olarak aynı ayarları işlevselliği kullanabileceğini - ayarları kullanıcı arabirimi görüntülenir **Apple Watch** iPhone uygulama ancak değerleri hem iPhone uygulamanızı ve izleme uzantısı da erişilebilir.
 

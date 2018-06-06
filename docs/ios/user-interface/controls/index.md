@@ -1,23 +1,22 @@
 ---
-title: Denetimler
-description: Xamarin.iOS Apple'nın sağladığı tüm yerel kullanıcı arabirimi nesneleri gösterir. Xamarin.iOS uygulamaları için iOS Tasarımcısı, Xcode'nın arabirimi oluşturucu kullanılarak kolayca eklenir veya program aracılığıyla. Seçtiğiniz yöntem bağımsız olarak, tüm kullanıcı arabirimi nesne özellikleri ve yöntemleri C# Xamarin.iOS kullanıma sunar.
+title: Kullanıcı arabirimi Xamarin.iOS denetimlerinde
+description: Bu belge bağlantılar çeşitli iOS kullanıcı arabirimi denetimlerini Xamarin.iOS geliştiricilerinin kullanabileceği açıklamak kılavuzlara. Uyarılar, düğmeleri, koleksiyon görünümlerini, görüntüler, el ile kamera denetimleri, haritalar, etiketleri, seçiciler, tarih seçiciler ve daha fazla bağlantılı içeriği açıklanır.
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 82b2998319d4e78ee4f58a6d024032a509724537
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 477cb4e479224b9e795f3460e0f59e0aa2038630
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790048"
 ---
-# <a name="controls"></a>Denetimler
+# <a name="user-interface-controls-in-xamarinios"></a>Kullanıcı arabirimi Xamarin.iOS denetimlerinde
 
-_Xamarin.iOS Apple'nın sağladığı tüm yerel kullanıcı arabirimi nesneleri gösterir. Xamarin.iOS uygulamaları için iOS Tasarımcısı, Xcode'nın arabirimi oluşturucu kullanılarak kolayca eklenir veya program aracılığıyla. Seçtiğiniz yöntem bağımsız olarak, tüm kullanıcı arabirimi nesne özellikleri ve yöntemleri C# Xamarin.iOS kullanıma sunar._
-
-Bu belge, bazı yaygın iOS kullanıcı arabirimi denetimlerini ve bunları nasıl kullanacağınızı tanıtılacaktır.
+Bu belge, bazı yaygın iOS kullanıcı arabirimi denetimlerini ve bunları nasıl kullanacağınızı tanıtır.
 
 ## <a name="alertsalertsmd"></a>[Uyarılar](alerts.md)
 

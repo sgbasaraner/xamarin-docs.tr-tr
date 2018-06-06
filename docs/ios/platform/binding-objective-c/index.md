@@ -1,6 +1,6 @@
 ---
 title: İOS kitaplıkları bağlama
-description: İOS yerel kitaplıkları (ve CocoaPods) nasıl Xamarin uygulamaları erişilebilir.
+description: Bu belge, Objective-C kodunu yerel kitaplıkları ve CocoaPods bir Xamarin.iOS uygulaması tüketen edinerek C# bağlamalar oluşturmayı açıklar.
 ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
@@ -8,15 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 268900c7ab7b317b0b20f4c1ead2360fd6f9bbf0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b054595568a34616a01f2c3f3c7d85f968c3f1fa
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787180"
 ---
 # <a name="binding-ios-libraries"></a>İOS kitaplıkları bağlama
-
-_İOS yerel kitaplıkları (ve CocoaPods) nasıl Xamarin uygulamaları erişilebilir._
 
 Objective-C kitaplıkları ve CocoaPods Xamarin.iOS ve Xamarin.Mac için bağlama hakkında bilgi için bu bağlantıları izleyin:
 
@@ -48,4 +47,4 @@ Amaç Sharpie bağlama işleminde yardımcı olmak için kullanılır.
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Objective-C’yi Bağlama](~/cross-platform/macios/binding/index.md)
-- [Mac Binding](~/mac/platform/binding.md)
+- [Mac bağlama](~/mac/platform/binding.md)

@@ -1,15 +1,17 @@
 ---
 title: NuGet için Yeni platforma özgü kitaplık projeleri oluşturma
+description: Bu belge, birden çok platform için platforma özgü kodu içeren tek bir NuGet paketi oluşturmayı açıklar.
 ms.prod: xamarin
 ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 901dbe032d62047668f265e8c7f79593b3fbfcce
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 00a02973d6016ad63e4317279515acc2b4e2e81b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780649"
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>NuGet için Yeni platforma özgü kitaplık projeleri oluşturma
 
@@ -17,7 +19,7 @@ ms.lasthandoff: 05/10/2018
 
 NuGet, hem iOS ve Android özel kod yanı sıra .NET kodu ortak içerebilir.
 
-Birden çok derleme oluşturulur ve tek bir NuGet paket oluşturulmuş. NuGet standartları paket Xamarin iOS ve Android projeleri gibi tüm desteklenen proje türleri için eklenebilir emin olun.
+Birden çok derleme oluşturulur ve tek bir NuGet paket oluşturulmuş. NuGet standartları paket Xamarin.iOS ve Android projeleri gibi tüm desteklenen proje türleri için eklenebilir emin olun.
 
 ## <a name="steps-to-create-a-cross-platform-library-nuget"></a>Platformlar arası kitaplığı NuGet oluşturma adımları
 

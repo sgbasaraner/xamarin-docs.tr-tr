@@ -1,18 +1,20 @@
 ---
-title: NSUserActivity ile arama
+title: Xamarin.iOS NSUserActivity ile arama
+description: Bu belge, aranabilir Spotlight ve Safari kolaylaştırarak bir NSUserActivity dizin açıklar. Arama sonuçlarında bir NSUserActivity seçimini yanıt verecek şekilde nasıl açıklanır.
 ms.prod: xamarin
 ms.assetid: 0B28B284-C7C9-4C0D-A782-D471FBBC4CAE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 803fcce359bbe27ea19901afa766f5b7f4692e0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b053f66e9b6b7715cbe52c4e43d9db32db48f4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788214"
 ---
-# <a name="search-with-nsuseractivity"></a>NSUserActivity ile arama
+# <a name="search-with-nsuseractivity-in-xamarinios"></a>Xamarin.iOS NSUserActivity ile arama
 
 `NSUserActivity` iOS 8 sunulmuştur ve iletimi için veri sağlamak için kullanılır.
 Ardından uygulamanızı farklı iOS cihaz üzerinde çalışan başka bir örneğine geçirilebilir, uygulamanızın belirli bölümlerinde etkinlikleri oluşturmanızı sağlar. Alıcı aygıt önceki cihazda kullanıcı burada bıraktığınız yukarı sola çekme başlatılan etkinliği sonra devam edebilirsiniz. İletim kullanma hakkında daha fazla bilgi için lütfen bkz bizim [iletimi giriş](~/ios/platform/handoff.md) belgeleri.

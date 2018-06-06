@@ -1,21 +1,20 @@
 ---
-title: Olaylar, protokolleri ve temsilciler
-description: Bu makalede geri aramalar almak ve kullanıcı arabirimi denetimlerini veri ile doldurmak için kullanılan anahtar iOS teknolojiler sunar. Bu, olaylar, protokolleri ve temsilciler teknolojilerdir. Bu makalede ne açıklanmaktadır her birini ve nasıl her kullanılan C# ' dan. İOS denetimleri Xamarin.iOS Xamarin.iOS Objective-C Kavramları protokolleri ve temsilciler gibi için destek sağlar. nasıl tanıdık .NET olayları da kullanıma sunmak için nasıl kullanır gösterir (Objective-C temsilciler olmamalıdır C# ile temsilciler kafası). Bu makalede ayrıca nasıl protokolleri – hem Objective-C Temsilciler ve temsilci olmayan senaryolarda temel olarak kullanıldığını gösteren örnekler sağlar.
+title: Olaylar, protokolleri ve Xamarin.iOS temsilciler
+description: Bu belge, protokoller, olayları ile çalışmak açıklar ve Xamarin.iOS atar. Bu temel kavramlar Xamarin.iOS geliştirme bulunabilen.
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0e4c23bffe689c9218da2f43b97d98f348513ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784016"
 ---
-# <a name="events-protocols-and-delegates"></a>Olaylar, protokolleri ve temsilciler
-
-_Bu makalede geri aramalar almak ve kullanıcı arabirimi denetimlerini veri ile doldurmak için kullanılan anahtar iOS teknolojiler sunar. Bu, olaylar, protokolleri ve temsilciler teknolojilerdir. Bu makalede ne açıklanmaktadır her birini ve nasıl her kullanılan C# ' dan. İOS denetimleri Xamarin.iOS Xamarin.iOS Objective-C Kavramları protokolleri ve temsilciler gibi için destek sağlar. nasıl tanıdık .NET olayları da kullanıma sunmak için nasıl kullanır gösterir (Objective-C temsilciler olmamalıdır C# ile temsilciler kafası). Bu makalede ayrıca nasıl protokolleri – hem Objective-C Temsilciler ve temsilci olmayan senaryolarda temel olarak kullanıldığını gösteren örnekler sağlar._
+# <a name="events-protocols-and-delegates-in-xamarinios"></a>Olaylar, protokolleri ve Xamarin.iOS temsilciler
 
 Xamarin.iOS denetimlerini çoğu kullanıcı etkileşimleri olaylar oluşturmak için kullanır.
 Geleneksel .NET uygulamaları gibi Xamarin.iOS uygulamaları kadar aynı şekilde bu olayları kullanabilir. Örneğin, Xamarin.iOS UIButton sınıfı TouchUpInside adlı bir olay vardır ve bu olay yalnızca bu sınıf ve olay, bir .NET uygulamasında değilmiş gibi kullanır.
@@ -28,15 +27,13 @@ Bu konular hakkında öğreneceksiniz bu makalede, sağlam bir temel Xamarin.iOS
 -  **Protokolleri** – ne öğrenme protokolleri olan ve bunların nasıl kullanıldığı ve örneği oluşturma, harita ek bilgi için veri sağlar.
 -  **Temsilciler** – hakkında ek açıklama içeren bir kullanıcı etkileşimi işlemek için harita örnek genişletme ardından güçlü ve zayıf Temsilciler ve bunların her birini kullanmak ne zaman arasındaki farkı öğrenme Objective-C temsilciler öğrenme.
 
-
 Protokoller ve temsilciler göstermek için biz aşağıda gösterildiği gibi ek açıklamanın Haritası ekler bir basit harita uygulaması derlemeyi:
 
  [![](delegates-protocols-and-events-images/01-map.png "Ek açıklamanın Haritası ekler basit harita uygulaması örneği") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "bir eşlemesine eklenen bir örnek ek açıklaması")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Bu uygulama tackling önce .NET olayları Uıkit altında bakarak başlayalım.
 
- <a name=".NET_Events_with_UIKit" />
-
+<a name=".NET_Events_with_UIKit" />
 
 ## <a name="net-events-with-uikit"></a>Uıkit .NET olayları
 
@@ -47,7 +44,6 @@ aButton.TouchUpInside += (o,s) => {
     Console.WriteLine("button touched");
 };
 ```
-
 Ayrıca bu yöntemle bir C# 2.0 stili anonim bunun gibi uygulamanız:
 
 ```csharp

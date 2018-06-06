@@ -1,21 +1,20 @@
 ---
 title: İOS için Xamarin Tasarımcısı ile otomatik Düzenle
-description: Bu kılavuz, iOS otomatik düzeni ve yeni kısıtlamaları iş akışı iOS için Xamarin Tasarımcısı'nda kullanılabilir tanıtır.
+description: Bu kılavuz, iOS Otomatik Yerleşim tanıtır ve oluşturmak ve kısıtlamaları kullanarak düzenleri düzenlemek için iOS için Xamarin Tasarımcısı'nı kullanmayı açıklar. Ayrıca, kısıtlama değişiklikleri ve daha fazlasını animasyon kodda değiştirme kısıtlamaları anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: CAC7A715-55BB-45E2-BB6D-2168D36D428F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2023483f817c365d2cfad6945b281d630317693b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 876bf3de19d2bcce7d951facc92d5b05a928cd38
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790207"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>İOS için Xamarin Tasarımcısı ile otomatik Düzenle
-
-_Bu kılavuz, iOS otomatik düzeni ve yeni kısıtlamaları iş akışı iOS için Xamarin Tasarımcısı'nda kullanılabilir tanıtır._
 
 Otomatik Düzen ("Uyarlamalı düzeni" olarak da bilinir) bir esnek tasarım yaklaşımdır. Her öğenin konumu olduğu sabit kodlanmış bir noktasına ekranında, geçici düzeni sisteminden farklı olarak, Otomatik Yerleşim hakkındadır *ilişkileri* -öğe diğer öğeleri tasarım yüzeyine göreli konumlarını. Otomatik düzeni Kalp kısıtlamaları veya diğer öğeleri ekranında bağlamında, bir öğenin yerleştirme veya öğelerin tanımlayan kurallar olur. Öğeleri ekranında belirli bir konuma bağlı olmak zorunda değildir çünkü kısıtlamalar farklı ekran boyutlarına ve cihaz yönler iyi görünür Uyarlamalı bir düzen oluşturmak yardımcı olur.
 

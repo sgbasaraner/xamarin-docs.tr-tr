@@ -1,23 +1,21 @@
 ---
 title: Xamarin ile sürekli tümleştirme giriş
-description: Sürekli Tümleştirme otomatik derleme derler ve isteğe bağlı olarak kod eklendiğinde veya projenin sürüm denetimi deponuza geliştiriciler tarafından değiştirilen bir uygulama testleri bir yazılım mühendislik uygulamadır. Bu makalede, sürekli tümleştirme genel kavramlar ve bazı seçenekleri sürekli tümleştirme için Xamarin projelerle ele alınacaktır.
+description: Xamarin ile sürekli tümleştirme açıklamak kılavuzları bu belge bağlantılar. Bağlantılı içerik sürekli tümleştirme genel bir bakış sağlar ve merkezi uygulaması oluşturma, TeamCity ve Jenkins anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
 author: topgenorth
 ms.author: toopge
 ms.date: 05/04/2017
-ms.openlocfilehash: 34838a1527cb3661e8e5ed51b5950f26026e9433
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1a38160b4f1536c0e0e393cb9ec3482624a40681
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793750"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin ile sürekli tümleştirme giriş
 
-_Sürekli Tümleştirme otomatik derleme derler ve isteğe bağlı olarak kod eklendiğinde veya projenin sürüm denetimi deponuza geliştiriciler tarafından değiştirilen bir uygulama testleri bir yazılım mühendislik uygulamadır. Bu makalede, sürekli tümleştirme genel kavramlar ve bazı seçenekleri sürekli tümleştirme için Xamarin projelerle ele alınacaktır._
-
 > [!Video https://youtube.com/embed/wXgnh2Q7Uv8]
-
 
 ##  <a name="introduction-to-continuous-integrationtoolsciintro-to-cimd"></a>[Sürekli Tümleştirme giriş](~/tools/ci/intro-to-ci.md)
 
@@ -26,7 +24,6 @@ Bu bölüm, sürekli tümleştirme ve bunların ilişkileri ile ilgili farklı b
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
 ## <a name="working-with-continuous-integration-environments"></a>Sürekli Tümleştirme ortamları ile çalışma
-
 
 ### <a name="using-app-center-build-with-xamarinappcenterbuildxamarin"></a>[Xamarin ile Uygulama Merkezi Derlemesini Kullanma](/appcenter/build/xamarin/)
 

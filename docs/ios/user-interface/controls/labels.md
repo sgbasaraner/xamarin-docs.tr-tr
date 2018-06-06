@@ -1,18 +1,20 @@
 ---
-title: Etiketler
+title: Xamarin.iOS etiketler
+description: Bu belge içinde Xamarin.iOS etiketleri kullanmayı açıklar. Etiketleri program aracılığıyla ve iOS Tasarımcısı ile nasıl oluşturulacağını açıklar.
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 8a5b2c12cfbca18280a8044d3d8c599d848de91d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 653c6cf8e7d0d3499402ec4f0d62cdd118707176
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789895"
 ---
-# <a name="labels"></a>Etiketler
+# <a name="labels-in-xamarinios"></a>Xamarin.iOS etiketler
 
 `UILabel` Okuma yalnızca metin denetimi, tek veya çok satırlı görüntülemek için kullanılır. 
 

@@ -1,20 +1,20 @@
 ---
-title: Mac çifti
-description: Bu kılavuz, Visual Studio 2017 Mac yapı ana bilgisayara bağlanmak için Mac çiftine kullanmayı açıklar.
+title: Xamarin.iOS geliştirme için Mac çifti
+description: Bu kılavuz, Visual Studio 2017 Mac yapı ana bilgisayara bağlanmak için Mac çiftine kullanmayı açıklar. Mac Uzak oturum açma etkinleştirmek için Visual Studio 2017 ' mac'e bağlanma nasıl ele Mac yapı ana bilgisayar Windows makinesine ve daha fazlasını el ile ekleyin.
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/29/2018
-ms.openlocfilehash: 4be29dabfd98c84876b65cd1655dcc4a6d444eeb
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: c4e28c1f3e058977d6f9072b70f17717a2b27585
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34562847"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786083"
 ---
-# <a name="pair-to-mac"></a>Mac çifti
+# <a name="pair-to-mac-for-xamarinios-development"></a>Xamarin.iOS geliştirme için Mac çifti
 
 _Bu kılavuz, Visual Studio 2017 Mac yapı ana bilgisayara bağlanmak için Mac çiftine kullanmayı açıklar._
 

@@ -1,15 +1,17 @@
 ---
 title: TinyRenderer çalışma kitapları
+description: Bu belgede OpenGL ile çalışır TinyRenderer çalışma kitaplarını açıklanmaktadır. Hem Windows hem de Mac üzerinde çalışan bu çalışma kitapları
 ms.prod: xamarin
 ms.assetid: E4E17836-94C2-436F-ADD8-104AC574D22B
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: fc0716fc3babd0b2ee835b839ae816f2cb815b0f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 10704044042ea38dd3a5297c46371f9f9c27936c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794143"
 ---
 # <a name="tinyrenderer-workbooks"></a>TinyRenderer çalışma kitapları
 
@@ -31,7 +33,6 @@ Bir dizi nasıl OpenGL çalıştığını, Windows ve Mac üzerinde çalıştı�
 [![](tinyrenderer-images/tinyrenderer-sml.png "Tel Çerçeve işleme örneği")](tinyrenderer-images/tinyrenderer.png#lightbox)
 
 C# kodunda bu çalışma kitaplarını bu açık kaynak tabanlı [C++ kodu](https://github.com/ssloy/tinyrenderer) ve buradan metindir [wiki](https://github.com/ssloy/tinyrenderer/wiki/). Özgün iş bize çalışma kitaplarını kümesine açmak izin verilen bir lisansı altında kullanılabilir olan veriyoruz.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

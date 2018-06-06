@@ -1,18 +1,20 @@
 ---
-title: ADO.NET ile iOS kullanarak
+title: ADO.NET Xamarin.iOS ile kullanma
+description: Bu belge, SQLite bir Xamarin.iOS uygulamasına erişmek için bir yöntem olarak ADO.NET kullanmayı açıklar. Derleme başvuruları, Mono.Data.Sqlite ve BasicDataAccess örnek açıklanır.
 ms.prod: xamarin
 ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7d8478c363da1e4362a8a837dafba7f9cf85872e
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 8240e3052b4deb4bfdf0ec94e67fbd6827a34dab
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784835"
 ---
-# <a name="using-adonet-with-ios"></a>ADO.NET ile iOS kullanarak
+# <a name="using-adonet-with-xamarinios"></a>ADO.NET Xamarin.iOS ile kullanma
 
 Xamarin iOS tanıdık ADO.NET benzeri bir sözdizimi kullanılarak kullanıma sunulan, kullanılabilir SQLite veritabanı için yerleşik desteğe sahiptir. Bu API'leri kullanarak, gerektirir SQLite tarafından gibi işlenir SQL deyimleri yazmanıza `CREATE TABLE`, `INSERT` ve `SELECT` deyimleri.
 

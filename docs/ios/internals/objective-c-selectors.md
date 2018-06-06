@@ -1,17 +1,19 @@
 ---
-title: Objective-C seçiciler
+title: Xamarin.iOS içinde objective-C seçiciler
+description: Bu belge Objective-C seçiciler gelen C# ile etkileşim kurmak nasıl açıklanır. Seçici ve bunu yaparken göz önünde bulundurulması gereken teknik konular çağırmak nasıl açıklar.
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 60f107bda29b351c119f5702b0ca797d7d16b0b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25276851879ba828361d3236cbf7896cf748588c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787048"
 ---
-# <a name="objective-c-selectors"></a>Objective-C seçiciler
+# <a name="objective-c-selectors-in-xamarinios"></a>Xamarin.iOS içinde objective-C seçiciler
 
 Objective-C dil temel aldığı *seçiciler*. Bir seçici bir nesneye gönderilen iletisidir veya *sınıfı*. [Xamarin.iOS](~/ios/internals/api-design/index.md) eşlemeleri örneği seçiciler örneği yöntemlere ve sınıf seçici statik yöntemler için.
 

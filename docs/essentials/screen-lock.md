@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials ekran kilidi
-description: ScreenLock sınıfı uygulama çalışırken, uyku dönmeden gelen ekran tutmak isteyebilirsiniz.
+title: 'Xamarin.Essentials: Ekran kilidi'
+description: Bu belgede uygulama çalışırken, uyku dönmeden gelen ekran tutmak için isteyebilir Xamarin.Essentials ScreenLock sınıfında açıklanmaktadır.
 ms.assetid: 6B67C114-315E-4199-AA72-3F90E85A4909
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 96abdb379ad44ebb01228e9efde64fb3d0aa8cbb
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 3c8110b7abc86fe1d12485579f134997718540e6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732898"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782914"
 ---
-# <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials ekran kilidi
+# <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials: Ekran kilidi
 
 ![Yayın öncesi NuGet](~/media/shared/pre-release.png)
 

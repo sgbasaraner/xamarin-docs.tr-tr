@@ -1,5 +1,5 @@
 ---
-title: Apple Pay watchOS üzerinde
+title: Apple Pay Xamarin watchOS üzerinde
 description: Bu makalede yenilikleri kapsayan Apple yaptı Apple Pay watchOS 3 ve bunların içinde Xamarin.iOS için Apple Watch nasıl uygulanacağını.
 ms.prod: xamarin
 ms.assetid: 32FF5D21-C252-485D-83AC-A7E592237962
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: b46a0e57ea9abc5c4ec4fc2aba1e6940249b64fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 75d660ad0699b6fac3b1ae43046f322f380872b3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791081"
 ---
-# <a name="apple-pay-on-watchos"></a>Apple Pay watchOS üzerinde
+# <a name="apple-pay-on-watchos-in-xamarin"></a>Apple Pay Xamarin watchOS üzerinde
 
 Apple bazı geliştirmeler Apple Pay için uygulama ödemeler için destek ekler 3 watchOS içinde kullanıma sunmuştur. Bu kullanıcının güvenli bir şekilde ödeme sağlar ve fiziksel mal ve hizmetler için doğrudan Apple Watch ödeme bilgilere başvurun olanak sağlar.
 

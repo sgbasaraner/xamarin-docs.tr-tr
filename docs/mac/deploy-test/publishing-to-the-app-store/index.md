@@ -1,21 +1,20 @@
 ---
-title: Uygulama mağazası yayımlama
-description: Bu kılavuzda, Mac için Visual Studio kullanarak bir Xamarin.Mac uygulaması dağıtma aracılığıyla anlatılmaktadır. Bir Mac Geliştirici hesabı ayarlamanız açıklanmaktadır, kod imzalama sertifikaları oluşturma işleminde size yol göstermektedir ve bunları doğrudan veya Mac uygulama mağazası üzerinden dağıtılabilir Mac uygulamalar oluşturmak için nasıl kullanılacağını gösterir.
+title: Mac App Store Xamarin.Mac uygulamaları yayımlama
+description: Bu belge, Mac için Visual Studio Xamarin.Mac uygulamayla dağıtmayı açıklar Bir Mac Geliştirici hesabı ayarlamak nasıl, kod imzalama için sertifikaların nasıl oluşturulacağı ve bunların doğrudan veya Mac uygulama mağazası üzerinden dağıtılabilir Mac uygulamalar oluşturmak için nasıl kullanılacağını açıklar.
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b21dd0adfd96e1190660aa97b2850f968b5473f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eba359dac70e31325235f6145fe06902e25df7af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791972"
 ---
-# <a name="publishing-to-the-app-store"></a>Uygulama mağazası yayımlama
-
-_Bu kılavuzda, Mac için Visual Studio kullanarak bir Xamarin.Mac uygulaması dağıtma aracılığıyla anlatılmaktadır. Bir Mac Geliştirici hesabı ayarlamanız açıklanmaktadır, kod imzalama sertifikaları oluşturma işleminde size yol göstermektedir ve bunları doğrudan veya Mac uygulama mağazası üzerinden dağıtılabilir Mac uygulamalar oluşturmak için nasıl kullanılacağını gösterir._
+# <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Mac App Store Xamarin.Mac uygulamaları yayımlama
 
 ## <a name="overview"></a>Genel Bakış
 

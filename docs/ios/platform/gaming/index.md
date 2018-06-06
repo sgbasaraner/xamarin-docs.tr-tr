@@ -1,5 +1,5 @@
 ---
-title: iOS oyun API'leri
+title: iOS Xamarin.iOS oyun API'leri
 description: Bu makalede, Xamarin.iOS oyunun grafik ve ses özellikleri geliştirmek için kullanılan iOS tarafından 9 sağlanan yeni oyun geliştirmelerini ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 34d3d6980819510a3390e2c30069818d6dfd721f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 263c325816867e9eee32c92edf97f703b39bda7c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786866"
 ---
-# <a name="ios-gaming-apis"></a>iOS oyun API'leri
+# <a name="ios-gaming-apis-in-xamarinios"></a>iOS Xamarin.iOS oyun API'leri
 
 _Bu makalede, Xamarin.iOS oyunun grafik ve ses özellikleri geliştirmek için kullanılan iOS tarafından 9 sağlanan yeni oyun geliştirmelerini ele alınmaktadır._
 
@@ -452,7 +453,7 @@ Hareketli grafik Seti, 2B oyun framework Apple, iOS 8 ve OS X Yosemite ilginç b
 
 Daha fazla bilgi için lütfen bkz bizim [SpriteKit](~/ios/platform/gaming/spritekit.md) belgeleri.
 
-### <a name="spritekit-changes"></a>SpriteKit Changes
+### <a name="spritekit-changes"></a>SpriteKit değişiklikleri
 
 Apple, iOS 9 SpriteKit için aşağıdaki yeni özellikleri ekledi:
 

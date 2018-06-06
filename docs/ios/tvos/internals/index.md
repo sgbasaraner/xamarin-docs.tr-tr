@@ -1,22 +1,20 @@
 ---
-title: tvOS dahili bileşenleri
-description: Biz iOS Ürünümüz ürettiğini Gelişmiş belgeleri tvOS Ürünümüz neredeyse aynı şekilde Xamarin.tvOS Xamarin.iOS Ürünümüz olarak aynı DNA paylaşır.
+title: Xamarin – iç tvOS
+description: Xamarin.iOS üzerinde temel Xamarin üzerinde Internet'in iç tvOS açıklayan belgeleri. Bağlantı içerik derlemeler, hedef çerçeveyi açıklanır ve iOS kavramları ilgili.
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 83b8d5b6dc4e73f05160960f0e2547284de57799
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0132eac4edd4ecb9f693828bd58288dfbcb1c008
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789151"
 ---
-# <a name="tvos-internals"></a>tvOS dahili bileşenleri
-
-_Biz iOS Ürünümüz ürettiğini Gelişmiş belgeleri tvOS Ürünümüz neredeyse aynı şekilde Xamarin.tvOS Xamarin.iOS Ürünümüz olarak aynı DNA paylaşır._
-
+# <a name="tvos-in-xamarin--internals"></a>Xamarin – iç tvOS 
 
 ##  <a name="assembliesiostvosinternalsassembliesmd"></a>[Bütünleştirilmiş kodlar](~/ios/tvos/internals/assemblies.md)
 
@@ -73,8 +71,6 @@ Xamarin.iOS uygulamaları iş parçacığı kullanma notları.
 ###  <a name="xib-code-generationiosinternalsxib-code-generationmd"></a>[XIB Kodu Oluşturma](~/ios/internals/xib-code-generation.md)
 
 Nasıl Mac için Visual Studio tasarım UI arabirimini Oluşturucusu'nu kullanmak için izin vermek için Xcode'nın arabirimi Oluşturucu ile tümleştirir.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

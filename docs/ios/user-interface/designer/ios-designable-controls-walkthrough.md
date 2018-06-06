@@ -1,21 +1,20 @@
 ---
-title: İzlenecek yol - özel denetimleri, iOS için Xamarin Tasarımcısı ile kullanma
-description: Bu makale, özel bir denetim oluşturmak ve iOS için Xamarin Tasarımcısı'nda kullanmak üzere nasıl gösteren bir adım adım kılavuz sağlar. Sürükle / bir görünümü yoksaymış böylece bir denetim tasarımcının araç kullanılabilmesini kullanmayı gösterir. Ayrıca, tasarım zamanı ve çalışma zamanı sırasında düzgün işler için bir denetim uygulamak nasıl yanı sıra tasarım zamanında ayarlanabilir özelliklerin nasıl oluşturulacağı gösterilmektedir.
+title: Özel denetimler iOS Tasarımcısı ile kullanma
+description: Bu belge, özel bir denetim oluşturmak ve iOS için Xamarin Tasarımcısı ile kullanmak üzere açıklar. Denetim iOS tasarımcının araç kullanılabilmesini, böylece düzgün işler denetimi uygulamak ve tasarım zamanı ve daha fazla bilgi nasıl gösterir.
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 4a7fb6cba82b52f2a3506df7a36b4813a88ff583
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dae675d65cb2be93ac828a1aebe560354630ab54
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790171"
 ---
-# <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>İzlenecek yol - özel denetimleri, iOS için Xamarin Tasarımcısı ile kullanma
-
-_Bu makale, özel bir denetim oluşturmak ve iOS için Xamarin Tasarımcısı'nda kullanmak üzere nasıl gösteren bir adım adım kılavuz sağlar. Sürükle / bir görünümü yoksaymış böylece bir denetim tasarımcının araç kullanılabilmesini kullanmayı gösterir. Ayrıca, tasarım zamanı ve çalışma zamanı sırasında düzgün işler için bir denetim uygulamak nasıl yanı sıra tasarım zamanında ayarlanabilir özelliklerin nasıl oluşturulacağı gösterilmektedir._
+# <a name="using-custom-controls-with-the-ios-designer"></a>Özel denetimler iOS Tasarımcısı ile kullanma
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -173,7 +172,7 @@ Bu kılavuzda ele içeriği bilindiğini varsayar [Başlarken kılavuzları](~/i
 
 1. Seçin **resim görünümü** değiştirip kendi **görüntü** özelliğine `Monkey.png`.
 
-    [![](ios-designable-controls-walkthrough-images/05new.png "Setting Image View Image property to Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
+    [! [] (ios-designable-denetimleri-izlenecek-görüntüleri/05new.png "ayarı görüntü görünüm görüntü özelliği Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
 1. Boyutu sınıfları kullanıyoruz gibi Biz bu görüntü görünüm sınırlamak gerekir. Görüntünün iki kez kısıtlaması moduna almak için tıklayın. Şimdi sınırlamak onu merkezine merkezi sabitleme tanıtıcı tıklayarak ve dikey ve yatay olarak hizala:

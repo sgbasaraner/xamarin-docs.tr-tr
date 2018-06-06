@@ -1,19 +1,20 @@
 ---
-title: Uygulama Temelleri
-description: Uygulama kavramları
+title: Xamarin.iOS uygulaması temelleri
+description: Bu, olaylar, backgrounding ve iş parçacığı oluşturma uygulama taşıma güvenliği gibi Xamarin.iOS geliştirme için temel kavramları tanımlayan çeşitli kılavuzları belge bağlanır.
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: d8dc1e25de527357fe6ad3ad1328a930e0e4dc70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdace50d851b2c99f9241b869f248e58d5b93377
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784503"
 ---
-# <a name="application-fundamentals"></a>Uygulama Temelleri
+# <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS uygulaması temelleri
 
 Bu bölümde bazı daha yaygın şeyler görevler veya geliştiricilerin Xamarin.iOS (önceki adıyla MonoTouch) uygulamaları geliştirirken farkında olması gereken kavramlar bir kılavuz sağlar.
 

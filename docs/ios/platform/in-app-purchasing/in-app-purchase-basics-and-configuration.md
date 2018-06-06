@@ -1,18 +1,20 @@
 ---
-title: Uygulama içi satın alma temelleri ve yapılandırma
+title: Uygulama içi satın alma temel kavramları ve Xamarin.iOS yapılandırma
+description: Bu belge kuralları, yapılandırma ve iTunes Bağlan hakkında bilgileri ele Xamarin.iOS, uygulama içi satın alımlar açıklar.
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c08d27ce2f5d41b7de1d08ea73232e92f9fa8144
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ded160ad4b31346c400e63d739a3dc21f6304d3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787249"
 ---
-# <a name="in-app-purchase-basics-and-configuration"></a>Uygulama içi satın alma temelleri ve yapılandırma
+# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Uygulama içi satın alma temel kavramları ve Xamarin.iOS yapılandırma
 
 Uygulama içi satın almalara uygulama cihazda StoreKit API faydalanmak için uygulama gerektirir. StoreKit ürün bilgilerini almak ve işlemleri gerçekleştirmek için Apple'nın iTunes sunucularıyla tüm iletişimi yönetir. Sağlama profili, uygulama içi satın alma için yapılandırılmalıdır ve ürün bilgileri iTunes Bağlan girilmesi gerekir.
 
@@ -95,7 +97,7 @@ Unutmayın **uygulama içi satın alma** Hizmetler listesinde otomatik olarak et
 
 Normalde seçme gibi uygulama içi satın alma için ayarladığınız uygulama kimliği geliştirme ve üretim sağlama profilleri oluşturun. Başvurmak [iOS cihaz sağlamayı](~/ios/get-started/installation/device-provisioning/index.md) ve [uygulama mağazasında yayımlama](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) kılavuzları daha fazla bilgi için.
 
-## <a name="itunes-connect"></a>iTunes Connect
+## <a name="itunes-connect"></a>iTunes Bağlan
 
 Tıklatın **My uygulamaları** iTunes oluşturmak veya bir iOS uygulaması girişi düzenlemek için Bağlan içinde. Uygulama genel bakış sayfası aşağıda gösterilmiştir:
 

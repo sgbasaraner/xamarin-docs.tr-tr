@@ -1,18 +1,20 @@
 ---
-title: İos'ta bağlama
+title: Xamarin.iOS uygulamaları bağlama
+description: Bu belgede bir Xamarin.iOS uygulaması kullanılmayan koddan ortadan kaldırmak için boyutunu azaltmak için kullanılan Xamarin.iOS bağlayıcı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/24/2017
-ms.openlocfilehash: 1d83a152c0949abe0221f6eb6dfb42f4e79eaf38
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f80faa961fe4bef45df33c411d914ba80e605c75
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785586"
 ---
-# <a name="linking-on-ios"></a>İos'ta bağlama
+# <a name="linking-xamarinios-apps"></a>Xamarin.iOS uygulamaları bağlama
 
 Uygulamanızı oluştururken, Mac veya Visual Studio için Visual Studio adı verilen bir aracı çağırır **mtouch** , yönetilen kod için bir bağlayıcı içerir. Sınıf kitaplıklarından uygulama kullanmıyorsa özellikleri kaldırmak için kullanılır. Yalnızca gerekli bitle sevk uygulama boyutunu azaltmak için belirtilir.
 

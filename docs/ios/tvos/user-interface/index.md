@@ -1,5 +1,5 @@
 ---
-title: Kullanıcı Arabirimi
+title: TvOS kullanıcı arabirimleri Xamarin ile oluşturma
 description: Kullanıcı Arabirimi (UI) denetimler de dahil olmak üzere genel kullanıcı deneyimini (UX) kapsamı kullanmak Xcode'nın arabirimi oluşturucusu ve UX tasarım ilkeleri Xamarin.tvOS ile çalışırken.
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
@@ -7,17 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: a30bd02a9545717175daf1381730afce6b72218d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc29510b90a3651f7547f38c234b6e2904016f83
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789073"
 ---
-# <a name="user-interface"></a>Kullanıcı Arabirimi
+# <a name="building-tvos-user-interfaces-with-xamarin"></a>TvOS kullanıcı arabirimleri Xamarin ile oluşturma
 
 _Kullanıcı Arabirimi (UI) denetimler de dahil olmak üzere genel kullanıcı deneyimini (UX) kapsamı kullanmak Xcode'nın arabirimi oluşturucusu ve UX tasarım ilkeleri Xamarin.tvOS ile çalışırken._
 
-C# ve .NET ile Xamarin.tvOS uygulamada çalışırken, Objective-C veya Swift ve Xcode çalışmak bir geliştirici mu aynı kullanıcı arabirimi denetimlerini erişiminiz vardır. Xamarin.tvOS doğrudan Xcode ile tümleşir nedeniyle, Xcode'nın arabirimi oluşturucu ve kullanıcı arabirimleri korumak (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için) kullanabilirsiniz.
+C# ve .NET ile Xamarin tabanlı tvOS içinde çalışırken, Objective-C veya Swift ve Xcode çalışmak bir geliştirici mu aynı kullanıcı arabirimi denetimlerini erişiminiz vardır. Xcode'nın arabirimi oluşturucu ve kullanıcı arabirimleri korumak (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için) kullanılabilir.
 
 Aşağıda listelenen kılavuzları Xamarin.tvOS uygulamasında tvOS kullanıcı Arabirimi öğeleri ile çalışma hakkında ayrıntılı bilgi verin. Aracılığıyla iş önerilen [Hello, tvOS Hızlı Başlangıç Kılavuzu](~/ios/tvos/get-started/hello-tvos.md) önce gibi temel kavramları ve biz her makalede kullanmaya başlayacağınız teknikleri kapsar.
 

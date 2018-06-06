@@ -1,18 +1,20 @@
 ---
-title: SiriKit
+title: İOS 11 SiriKit güncelleştirmeleri
+description: Bu belge, iOS 11 SiriKit ile çalışmak açıklar. Özellikle, görevler ve notları ile nasıl çalışılacağı ve bir uygulama için diğer adlar sağlamak nasıl inceler.
 ms.prod: xamarin
 ms.assetid: 8F75300B-B591-42ED-9D17-001992A5C381
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/07/2017
-ms.openlocfilehash: a712f7da0d57e81872d7f779cf0eb52c30ee3bc2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28160b40c97b8cc62fae95d3643801f1c4cc5e93
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787591"
 ---
-# <a name="sirikit"></a>SiriKit
+# <a name="sirikit-updates-in-ios-11"></a>İOS 11 SiriKit güncelleştirmeleri
 
 SiriKit iOS 10, hizmet etki alanları (egzersizleriniz, kayıt ve çağrıları yapma kılma dahil) bir dizi sunulmuştur. Başvurmak [SiriKit bölüm](~/ios/platform/sirikit/index.md) SiriKit kavramları ve uygulamanızda SiriKit gerçekleştirme.
 

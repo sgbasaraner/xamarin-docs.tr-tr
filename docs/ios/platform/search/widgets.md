@@ -1,22 +1,22 @@
 ---
-title: Arama ve giriş ekranı pencere öğesi geliştirmeleri
-description: Bu makalede, Apple iOS 10 pencere öğesi sistemde yapılan geliştirmeler yer almaktadır.
+title: Arama ve giriş ekranı pencere öğesi geliştirmeleri iOS 10
+description: Bu belgede, Apple iOS 10, arama ve giriş ekranı pencere öğeleri için güncelleştirmeleri de dahil olmak üzere, pencere öğeleri yapılan geliştirmeler açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e7a64738f29ab2b5c62659d721beb50db7c9adb5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8383f167f8c85459e996b83368281fa243317948
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788117"
 ---
-# <a name="search-and-home-screen-widget-enhancements"></a>Arama ve giriş ekranı pencere öğesi geliştirmeleri
+# <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Arama ve giriş ekranı pencere öğesi geliştirmeleri iOS 10
 
 _Bu makalede, Apple iOS 10 pencere öğesi sistemde yapılan geliştirmeler yer almaktadır._
-
 
 Apple pencere öğeleri 10 kilit ekranı üzerinde yeni iOS mevcut herhangi bir arka plan üzerine harika göründüğünden emin olmak için pencere sistemin bazı geliştirmeler anlatılmıştır. Ayrıca, pencere öğeleri artık içeren bir [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) ne kadar içerik kullanılabilir açıklamak Geliştirici sağlar ve içeriği genişletme ve daraltma kullanıcıya izin veren özellik.
 

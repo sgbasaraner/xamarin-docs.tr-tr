@@ -1,21 +1,20 @@
 ---
 title: İOS anında iletme bildirimleri
-description: Bu bölümde, iOS anında iletme bildirimlerini ele alınacaktır. Apple anında iletme bildirimleri ağ geçidi hizmeti ve iOS uygulamalarını yayımlama bildirimleri oynadığı rolü tanıtır. Güvenlik sertifikaları anında iletme bildirimlerini etkinleştirin ve tartışmak için gerekli oluşturma anlatılmıştır. Son olarak bu bölümde, uygulama sunucuları istemci mobil cihazları izlemek için gerçekleştirmeniz gerekir temizlik görevlerden bazılarını ele alınacaktır.
+description: Bu belge, anında iletme bildirimlerini iOS 9 ve önceki çalışma açıklar. Sertifika, Apple anında iletme bildirimleri Ağ Geçidi Hizmeti (APNS) ve daha fazla ile kaydediliyor açıklanır.
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7bb2a250b9d3cc0c8df02f432330f9fe1dc58f94
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788673"
 ---
 # <a name="push-notifications-in-ios"></a>İOS anında iletme bildirimleri
-
-_Bu bölümde, iOS anında iletme bildirimlerini ele alınacaktır. Apple anında iletme bildirimleri ağ geçidi hizmeti ve iOS uygulamalarını yayımlama bildirimleri oynadığı rolü tanıtır. Güvenlik sertifikaları anında iletme bildirimlerini etkinleştirin ve tartışmak için gerekli oluşturma anlatılmıştır. Son olarak bu bölümde, uygulama sunucuları istemci mobil cihazları izlemek için gerçekleştirmeniz gerekir temizlik görevlerden bazılarını ele alınacaktır._
 
 > [!IMPORTANT]
 > Bu bölümdeki bilgiler, iOS 9 ilgilidir ve önceki, bunu burada daha önceki iOS sürümlerini desteklemek için bırakıldı. 10 ve üzeri iOS için lütfen bkz. [Kullanıcı bildirim Framework Kılavuzu](~/ios/platform/user-notifications/index.md) hem yerel hem de uzak bildirim iOS cihazında desteklemek için.

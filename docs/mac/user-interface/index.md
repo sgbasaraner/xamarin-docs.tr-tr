@@ -1,19 +1,20 @@
 ---
-title: macOS kullanıcı arabirimi
-description: Bu makale bağlantılar çeşitli macOS açıklamak kılavuzlara UI denetler.
+title: macOS kullanıcı arabirimi Xamarin.Mac denetimlerinde
+description: Bu belge bağlantılar çeşitli kullanıcı arabirimi denetimlerini Xamarin.Mac geliştiricilerinin kullanabileceği açıklamak kılavuzlara. Bağlantılı içeriği bir windows iletişim kutuları, uyarılar, menüler, araç çubukları, tablosu görünümleri, anahat görünümleri ve daha fazla inceler.
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: d40faa29f2fe278377bf4eae42a032f3dc9086ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 231d3a935cf251d0b2a1a3e6947abcb1c2133b90
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792960"
 ---
-# <a name="macos-user-interface"></a>macOS kullanıcı arabirimi
+# <a name="macos-user-interface-controls-in-xamarinmac"></a>macOS kullanıcı arabirimi Xamarin.Mac denetimlerinde
 
 _Bu makale bağlantılar çeşitli macOS açıklamak kılavuzlara UI denetler._
 

@@ -11,7 +11,7 @@
 ### [Mobil Geliştirmeye Giriş](get-started/introduction-to-mobile-development.md)
 ### [Mobile SDLC’ye Giriş](get-started/introduction-to-mobile-sdlc.md)
 
-### [Platformlar Arası Uygulamalar Oluşturma](app-fundamentals/building-cross-platform-applications/index.md)
+### [Platformlar arası uygulamalar oluşturma](app-fundamentals/building-cross-platform-applications/index.md)
 #### [Genel bakış](app-fundamentals/building-cross-platform-applications/overview.md)
 #### [Bölüm 1 - Xamarin Mobil Platformunu Anlama](app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 #### [Bölüm 2 - Mimari](app-fundamentals/building-cross-platform-applications/architecture.md)

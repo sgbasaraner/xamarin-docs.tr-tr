@@ -1,21 +1,20 @@
 ---
-title: Simgeler ve görüntüleri ile çalışma
-description: Bu makalede tasarlama ve simgeler ve Xamarin.tvOS uygulama içinde görüntülerle çalışma kapsar.
+title: Simgeler ve Xamarin görüntüler tvOS ile çalışma
+description: Bu belge, simgeler ve Xamarin ile oluşturulan bir tvOS uygulamasında görüntülerle çalışma açıklar. Başlatma görüntüleri, katmanlı görüntüleri, uygulama simgesini ve daha fazlasını açıklanır.
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c888ecf3d7e0f21734f2b89176eed56bf778dbf9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 59cbc53acf3ab7da12826b9d3cffb821631a0500
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788803"
 ---
-# <a name="working-with-icons-and-images"></a>Simgeler ve görüntüleri ile çalışma
-
-_Bu makalede tasarlama ve simgeler ve Xamarin.tvOS uygulama içinde görüntülerle çalışma kapsar._
+# <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Simgeler ve Xamarin görüntüler tvOS ile çalışma
 
 Büyüleyici oluşturma simgeler ve görüntülerin olan Apple TV uygulamalarınız için derinlikli kullanıcı deneyimini geliştirmek için önemli bir bölümüdür. Bu kılavuz oluşturmak ve Xamarin.tvOS uygulamalarınız için gerekli grafik varlıkları eklemek için gerekli olan adımları kapsar:
 
@@ -238,7 +237,7 @@ Bu dinamik üst raf içerik türü, kaydırma, odaklanabilir isteğe bağlı ola
 
 Aşağıdaki içerik boyutları gerekli olacaktır:
 
-||Poster (2:3)|Kare (1:1)|HDTV (16:9)|
+||Posteri (2:3)|Kare (1:1)|HDTV (16:9)|
 |---|---|---|---|
 |Gerçek Boyut|404x608px|608x608px|908x512px|
 |Güvenli bölge boyutu|380x570px|570x570px|852x479px|

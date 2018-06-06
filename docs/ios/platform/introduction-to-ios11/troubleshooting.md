@@ -1,21 +1,20 @@
 ---
-title: Sorun giderme
-description: Bu makalede Xamarin.iOS uygulamaları iOS 11 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir.
+title: Uygulamaları ile Xamarin.iOS yerleşik iOS 11 sorunlarını giderme
+description: Bu makalede, Xamarin.iOS uygulamaları geliştirirken sorun giderme için kullanılan kaynaklar açıklanır. Hata raporlama, anlatılmaktadır sürüm notları, Xamarin sürümleri blog ve Destek Seçenekleri.
 ms.prod: xamarin
 ms.assetid: A90493BF-5298-4A5D-A5D5-8A8FCD078FF7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/31/2017
-ms.openlocfilehash: 181f0a1c66d05e0adf2b682f2df971f5d7d67dfb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ace24cae139c97a8735558c82e22143adbc9c064
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787552"
 ---
-# <a name="troubleshooting"></a>Sorun giderme
-
-_Bu makalede Xamarin.iOS uygulamaları iOS 11 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir._
+# <a name="troubleshooting-ios-11-apps-built-with-xamarinios"></a>Uygulamaları ile Xamarin.iOS yerleşik iOS 11 sorunlarını giderme
 
 Aşağıdaki bölümlerde iOS 11 Xamarin.iOS ile kullanırken ve kullanılabilir olduğunda, ortaya çıkabilecek bazı bilinen sorunlar listelenmektedir bu sorunların çözümü:
 

@@ -1,5 +1,5 @@
 ---
-title: Bağlantı sorunlarını giderme
+title: Bağlantı için bir Xamarin.iOS yapı konak sorunlarını giderme
 description: Bu kılavuz, bağlantı ve SSH sorunlar da dahil olmak üzere Yeni Bağlantı Yöneticisi'ni kullanarak karşılaşılabilir sorunlarıyla ilgili sorun giderme adımları sağlar.
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8aac58546e51525ae22c09218f90addef911669a
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: e371b4aecdd7b40c33e4596fec3c3ca7691bb42c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786193"
 ---
-# <a name="connection-troubleshooting"></a>Bağlantı sorunlarını giderme
+# <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Bağlantı için bir Xamarin.iOS yapı konak sorunlarını giderme
 
 _Bu kılavuz, bağlantı ve SSH sorunlar da dahil olmak üzere Yeni Bağlantı Yöneticisi'ni kullanarak karşılaşılabilir sorunlarıyla ilgili sorun giderme adımları sağlar._
 
@@ -375,5 +376,5 @@ Bir yapı sorun giderme ve davranış Mac üzerinde depolanan geçici derleme do
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Mac çifti](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+- [Mac ile eşleştirme](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
 - [Xamarin Mac yapı aracısını - Xamarin Üniversitesi Şimşek Ders](https://www.youtube.com/watch?v=MBAPBtxkjFQ)

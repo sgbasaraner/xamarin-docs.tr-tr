@@ -1,22 +1,20 @@
 ---
-title: Bölümlenmiş denetimleri ile çalışma
-description: Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde bölümlenmiş denetimleriyle çalışma kapsar.
+title: Xamarin tvOS segmentli denetimleri ile çalışma
+description: Bu belge, Xamarin ile oluşturulan bir uygulamanın segmentli denetimlerinde tvOS ile çalışmak açıklar. Bu kesim simgeleri ve metin, denetimin görünümünü ve daha fazlasını değiştirme olayları açıklanır.
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4eac932c7fad628a0a65127bceb641f34ea5d79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8980f9fbf6996217dbcaec869e4c81598ac36552
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789245"
 ---
-# <a name="working-with-segmented-controls"></a>Bölümlenmiş denetimleri ile çalışma
-
-_Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde bölümlenmiş denetimleriyle çalışma kapsar._
-
+# <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Xamarin tvOS segmentli denetimleri ile çalışma
 
 Bölümlenmiş bir denetim her biri bir simge veya metin içerebilir ve kullanıcı için ilgili bir seçenek kümesi sağlamak için kullanılan doğrusal öğeleri kümesi sağlar.
 

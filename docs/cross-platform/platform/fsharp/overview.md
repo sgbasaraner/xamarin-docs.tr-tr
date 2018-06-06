@@ -1,16 +1,17 @@
 ---
 title: 'F # kullanmaya Başlarken'
-description: 'F # .NET üzerinde çalışması için tasarlanmış bir kesin türü belirtilmiş işlevsel programlama dilidir'
+description: 'Bu belge, bilgi F # ve Visual Studio 2017 ve Visual Studio Mac için Xamarin uygulamaları oluşturmak için kullanmak üzere açıklar'
 ms.prod: xamarin
 ms.assetid: 1A0E627D-A4C1-4F95-BAED-76A0E40B9054
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 07082ed68e1257679b6296470d276b61a9f39f00
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fb11feb2d3af537e1b21470a4cc10ec16f49bf77
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781783"
 ---
 # <a name="getting-started-with-f35"></a>F ile çalışmaya başlama&#35;
 

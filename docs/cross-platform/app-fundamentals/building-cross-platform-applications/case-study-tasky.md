@@ -1,20 +1,19 @@
 ---
-title: 'Örnek olay incelemesi: Tasky'
-description: Bu belgede, platformlar arası uygulamalar oluşturma ilkeleri Tasky taşınabilir örnek uygulama nasıl uygulanmış olan açıklanmaktadır. Ortak kod yeniden kullanım için yazma ve hedef iOS, Android ve Windows Phone platformlarının platforma özgü projeleri uygulama mobil uygulama tasarımı üzerinde dokunur.
+title: 'Platformlar arası uygulama örnek olay incelemesi: Tasky'
+description: Bu belge Tasky taşınabilir örnek uygulama tasarlanmış ve platformlar arası mobil uygulama yerleşik olarak nasıl açıklanmaktadır. Uygulamanın gereksinimleri, arabirim, veri modeli, çekirdek işlevselliğini, uygulama ve daha fazla açıklanır.
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 1f8325bbc6b3f8aa40a08ca2c57605544ab0bc85
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 48650445d06ad3bc7ca6d4da84c9b8837f8a0f88
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782241"
 ---
-# <a name="case-study-tasky"></a>Örnek olay incelemesi: Tasky
-
-_Bu belgede, platformlar arası uygulamalar oluşturma ilkeleri Tasky taşınabilir örnek uygulama nasıl uygulanmış olan açıklanmaktadır. Ortak kod yeniden kullanım için yazma ve hedef iOS, Android ve Windows Phone platformlarının platforma özgü projeleri uygulama mobil uygulama tasarımı üzerinde dokunur._
+# <a name="cross-platform-app-case-study-tasky"></a>Platformlar arası uygulama örnek olay incelemesi: Tasky
 
 *Tasky* *taşınabilir* basit bir Yapılacaklar listesi uygulamasıdır. Bu belgenin nasıl tasarlandığı ve, yönergeleri yerleşik anlatılmaktadır [platformlar arası uygulamalar oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) belge. Tartışma aşağıdaki alanları kapsamaktadır:
 

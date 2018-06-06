@@ -1,19 +1,20 @@
 ---
 title: Mac App Store için paketleme
-description: Bu kılavuzda, Mac App Store yayını için bir Xamarin.Mac Uygulama paketleme aracılığıyla anlatılmaktadır.
+description: Bu belge, Mac App Store yayını için bir Xamarin.Mac uygulama paketini açıklar. Kod imzalama seçenekleri ve oluşturmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 88d813331dfce437f3668ada8f008bbbd5fdc3de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3aeda97fa4a5a63d51623335c0721026b2394d2f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792066"
 ---
-# <a name="bundle-for-mac-app-store"></a>Mac App Store için paket
+# <a name="bundling-for-the-mac-app-store"></a>Mac App Store için paketleme
 
 Bu bölümde Mac uygulama Mağazası'nin Mac için Visual Studio kullanarak sürümde için uygulama oluşturma temelleri açıklanır Ek özellikleri (örneğin, iCloud erişim ve anında iletme bildirimleri) bağlı olarak, daha fazla Kurulum gerekli olabilir, bu makalenin kapsamı beyon gider.
 

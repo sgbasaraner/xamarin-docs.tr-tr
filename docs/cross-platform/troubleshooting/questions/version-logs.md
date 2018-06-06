@@ -1,16 +1,18 @@
 ---
 title: My sürüm bilgileri ve günlükleri nereden bulabilirim?
+description: Bu belge nerede Xamarin sürüm bilgileri ve günlükleri bulmak için aranacağını açıklar. Bu bilgi gönderme veya destek alma sorunları tanılamada yararlıdır.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 9234ee0553b2cc9376c0e4e39ffc0700deaacda1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 0164c5b5cad972b2d8854aefd4403e287a50a6e0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782056"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>My sürüm bilgileri ve günlükleri nereden bulabilirim?
 

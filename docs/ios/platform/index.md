@@ -1,34 +1,32 @@
 ---
-title: Platform Özellikleri
-description: Bu bölümdeki belgeler için iOS özel özellikleri kapsar.
+title: iOS Platform Özellikleri
+description: Bu belge bağlantılar çeşitli kılavuzlara çeşitli iOS sürümlerinde sunulan özellikler ve diğer iOS platformu özellikleri açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/15/2017
-ms.openlocfilehash: 0a76ed52f52de144bb3da1e7be6e215ce0dfe0ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 95053faa4bab0a65660772aeea39405e4a80a042
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787093"
 ---
-# <a name="platform-features"></a>Platform Özellikleri
+# <a name="ios-platform-features"></a>iOS Platform Özellikleri
 
 ##  <a name="introduction-to-ios-11iosplatformintroduction-to-ios11indexmd"></a>[iOS 11’e Giriş](~/ios/platform/introduction-to-ios11/index.md)
 
 Yükleme ve Xcode 9 beta ve Xamarin'ın iOS 11 desteği önizlemesini kullanmaya başlama hakkında.
 
-
 ##  <a name="introduction-to-ios-10iosplatformintroduction-to-ios10indexmd"></a>[iOS 10’a Giriş](~/ios/platform/introduction-to-ios10/index.md)
 
 Apple iOS 10 birkaç yeni API'ler ve yeni özellikler ve işlevsellik ile uygulamalar geliştirmenize olanak tanıyan hizmetlerini içerir. İOS 10 uygulamaların eşlemeleri, iletileri, telefon ve Siri genişletme gibi yeni özellikler vardır. Bu bölümde, bir Xamarin.iOS uygulaması bu özelliklerden yararlanmak hows gösterir.
 
-
 ##  <a name="introduction-to-ios-9iosplatformintroduction-to-ios9indexmd"></a>[iOS 9’a Giriş](~/ios/platform/introduction-to-ios9/index.md)
 
 Bu bölüm iOS 9 iOS 8 ve bir Xamarin.iOS uygulaması bu özellikleri kullanmak nasıl yükseltme sırasında yapılan değişiklikleri tanımlar.
-
 
 ##  <a name="introduction-to-ios-8iosplatformintroduction-to-ios8md"></a>[iOS 8’e Giriş](~/ios/platform/introduction-to-ios8.md)
 
@@ -147,8 +145,6 @@ Yeni ios'a 10, kullanıcı bildirimi teslimi ve yerel ve uzak bildirimler işlem
 ##  <a name="wide-coloriosplatformwide-colormd"></a>[Geniş Renk](~/ios/platform/wide-color.md)
 
 iOS 10 ve macOS Sierra genişletilmiş aralığı piksel biçimleri ve çekirdek grafikleri, çekirdek görüntü, Metal ve AVFoundation gibi çerçeveleri dahil olmak üzere Sistem genelindeki wide gam renk alanları desteği geliştirir. Geniş renk görüntüler ile cihazları için destek Bu davranış tüm grafik yığını boyunca sağlayarak daha fazla hızının.
-
-
 
 ##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[Objective-C’yi Bağlama](binding-objective-c/index.md)
 

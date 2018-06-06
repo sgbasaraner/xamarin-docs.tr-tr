@@ -1,6 +1,6 @@
 ---
-title: Merhaba, iOS Multiscreen
-description: Bu iki parçalı kılavuzdaki biz Hello oluşturduğumuz Phoneword uygulama genişletin, ikinci bir ekran işlemek için iOS Kılavuzu. Model-View-Controller tasarım deseni neden şekilde, boyunca ilk bizim iOS Gezinti uygulamak ve iOS uygulama yapısı ve işlevleri daha derin bir anlayış geliştirin.
+title: Merhaba, iOS Multiscreen – derinlemesine bakış
+description: Bu belgede daha derinlikli bir bakış genişletilmiş Phoneword uygulama, diğer model-view-controller dikkate alarak, iOS gezinti ve diğer iOS geliştirme kavramları alır.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 6f3c02bf3e5def0ad4acdb82e4c8a2606159846a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cdeea6d78ec1262a0b5b613b4f483012c9df2c19
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785664"
 ---
-# <a name="hello-ios-multiscreen-deep-dive"></a>Merhaba, iOS Multiscreen derinlemesine bakış
+# <a name="hello-ios-multiscreen--deep-dive"></a>Merhaba, iOS Multiscreen – derinlemesine bakış
 
 Hızlı Başlangıç Kılavuzu içinde oluşturulan ve ilk çok ekran Xamarin.iOS uygulamamız çalıştırılmıştır. Artık iOS gezinti ve mimari daha derin bir anlayış geliştirmek için zaman yapılır.
 

@@ -1,21 +1,20 @@
 ---
-title: Eşlemeleri
-description: iOS uygulama eklemek kolaylaştırır framework eşlemeleri MapKit içerir. Harita Seti kullanarak, iOS uygulamaları kaydırma ve yakınlaştırma, kullanıcı konumu ve katmanlama zengin grafik bir haritada gösteren gibi özellikleri desteklemek etkileşimli eşlemeleri ekleyebilirsiniz. Bu makalede birkaç bir uygulamaya coğrafi özellikleri oluşturmak için bunları yararlanmak nasıl gösteren harita Seti'nın özelliklerinin içine ilgili alır
+title: Xamarin.iOS eşlemeleri
+description: Bu belgede iOS MapKit framework ve Xamarin.iOS ile nasıl kullanıldığı açıklanmaktadır. Bir harita, kaydırma ve yakınlaştırma, kullanıcı konumu ile çalışma, ek açıklama ekleyin, belirtme ve yer paylaşımları ile çalışır ve yerel arama yapmak stili ekleme açıklanır.
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 0249da1754083231fa4426ae4f42ce4ad73c3f51
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3649c8eb9c8c1a82940b8e2eece7d2bfd005d024
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790236"
 ---
-# <a name="maps"></a>Eşlemeleri
-
-_iOS uygulama eklemek kolaylaştırır framework eşlemeleri MapKit içerir. Harita Seti kullanarak, iOS uygulamaları kaydırma ve yakınlaştırma, kullanıcı konumu ve katmanlama zengin grafik bir haritada gösteren gibi özellikleri desteklemek etkileşimli eşlemeleri ekleyebilirsiniz. Bu makalede birkaç bir uygulamaya coğrafi özellikleri oluşturmak için bunları yararlanmak nasıl gösteren harita Seti'nın özelliklerinin içine ilgili alır_
+# <a name="maps-in-xamarinios"></a>Xamarin.iOS eşlemeleri
 
 MAPS, modern mobil işletim sistemlerinin tümünde ortak bir özelliktir. iOS harita Seti çerçevesi aracılığıyla yerel olarak eşleme destek sunar. Harita Seti ile uygulamaları kolayca zengin ve etkileşimli eşlemeleri ekleyebilirsiniz. Bu eşlemeler, bir harita konumları işaretlemek için ek açıklamaları ekleme ve rastgele şekil grafik üst üste getirme gibi yollarla, çeşitli özelleştirilebilir. Harita Seti bile bir aygıt geçerli konumunu göstermek için yerleşik desteğe sahiptir.
 

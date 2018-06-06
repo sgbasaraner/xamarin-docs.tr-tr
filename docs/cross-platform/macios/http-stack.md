@@ -1,18 +1,19 @@
 ---
-title: HttpClient yığını ve iOS/macOS için SSL/TLS uygulama Seçici
-description: SSL/TLS uygulama Seçici ve HttpClient yığını, Xamarin iOS, tvOS veya macOS uygulamanız tarafından kullanılan HttpClient ve SSL/TLS uygulaması belirler.
+title: HttpClient ve iOS/macOS için SSL/TLS uygulama Seçici
+description: SSL/TLS ve HttpClient yığın uygulama Seçici, Xamarin iOS, tvOS veya macOS uygulamanız tarafından kullanılan HttpClient ve SSL/TLS uygulaması belirler.
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: dcbdb4d20bca9764731b08e551a4d3b8a26a2ab4
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9de2c97933bd33111a751be51e06dffe09794f15
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782274"
 ---
-# <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient yığını ve iOS/macOS için SSL/TLS uygulama Seçici
+# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient ve iOS/macOS için SSL/TLS uygulama Seçici
 
 **HttpClient uygulama Seçici** Xamarin.iOS için Xamarin.tvOS ve Xamarin.Mac denetimleri, `HttpClient` uygulaması kullanın. İOS, tvOS veya macOS yerel taşımaları kullanan bir uygulama için geçiş yapabilirsiniz (`NSUrlSession` veya `CFNetwork`, işletim sistemine bağlı olarak). Baş TLS 1.2 desteği, daha küçük ikili olduğu ve daha hızlı indirmeler; dezavantajı yürütülecek zaman uyumsuz işlemleri için çalışıyor olması için olay döngüsünü gerektirmesidir.
 

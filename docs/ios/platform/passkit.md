@@ -1,5 +1,5 @@
 ---
-title: PassKit
+title: Xamarin.iOS PassKit
 description: Cüzdan depolayan ve barkodları ve müşteri hareketleri telefonlarını 'gerçek dünya' ile bağlamak için diğer bilgileri görüntüleyen bir sistem iOS uygulamasıdır.
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: f1c8ac92c5ff7eed5116587ed13755ddee74a877
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0a4fd39e312cf96ac59eae97b1212f001c4ef799
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788354"
 ---
-# <a name="passkit"></a>PassKit
+# <a name="passkit-in-xamarinios"></a>Xamarin.iOS PassKit
 
 _Cüzdan depolayan ve barkodları ve müşteri hareketleri telefonlarını 'gerçek dünya' ile bağlamak için diğer bilgileri görüntüleyen bir sistem iOS uygulamasıdır._
 
@@ -92,7 +93,7 @@ Beş geçişi türleri bu ekran görüntüsünde gösterilen (sırayla: kupon, g
 Gerçekte ZIP arşivini ile geçişi dosyasıdır bir **.pkpass** (gerekli) bazı belirli JSON dosyaları, görüntü çeşitli içeren uzantısı dosyaları (isteğe bağlı) yanı sıra yerelleştirilmiş dizeleri (Ayrıca isteğe bağlı).
 
 -   **Pass.JSON** – gerekli. Geçişi için tüm bilgileri içerir.
--   **manifest.json** – required. Her dosya imza dosyası dışında geçişindeki ve bu dosyayı (manifest.json) SHA1 karma değerlerini içerir.
+-   **manifest.JSON** – gerekli. Her dosya imza dosyası dışında geçişindeki ve bu dosyayı (manifest.json) SHA1 karma değerlerini içerir.
 -   **İmza** – gerekli. İmzalama tarafından oluşturulan `manifest.json` iOS sağlama portalı oluşturulan sertifika dosyasıyla.
 -  **Logo.PNG** – isteğe bağlıdır.
 -  **Background.PNG** – isteğe bağlıdır.
@@ -104,7 +105,7 @@ Geçişi dosyasının dizin yapısını aşağıda gösterilen (ZIP arşivini i�
 
  [![](passkit-images/image4.png "Geçişi dosyasının dizin yapısını burada gösterilen")](passkit-images/image4.png#lightbox)
 
-### <a name="passjson"></a>pass.json
+### <a name="passjson"></a>Pass.JSON
 
 JSON biçimi geçişleri genellikle bir sunucu üzerinde oluşturulduğundan – oluşturma koduna platform belirsiz olduğu anlamına gelir sunucusunda. Üç temel bilgiler her geçişinde şunlardır:
 
@@ -339,7 +340,7 @@ Normal olarak bu işlem ancak el ile geçişi oluşturma yalnızca bir arka uç 
 
  <a name="Wallet" />
 
-## <a name="wallet"></a>Wallet
+## <a name="wallet"></a>Cüzdan
 
 Cüzdan geçirmek Seti ekosistemi merkezi bir parçasıdır. Bu ekran, boş Cüzdan ve geçişi listesi ve tek tek geçişleri nasıl göründüğünü gösterir:
 

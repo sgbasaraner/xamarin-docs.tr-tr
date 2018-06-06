@@ -1,17 +1,18 @@
 ---
 title: Mac App Store için karşıya yükleme
-description: Bu kılavuzda, Xamarin.Mac uygulama yayının Mac App Store karşıya aracılığıyla anlatılmaktadır.
+description: Bu belge, Mac App Store Xamarin.Mac uygulamayı yüklemeye iTunes Bağlan kullanmayı açıklar. Connect iTunes tarafından işlemini tamamlamak için gereken bilgileri açıklar.
 ms.prod: xamarin
 ms.assetid: 30cd0e47-1b2e-47ef-93f6-4bed20b15c03
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 4ddbbdc32ecb2de4f9dcb89162bc38803fa7159e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e51171f0f5153f48237ebe76e393c2077453bbd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792170"
 ---
 # <a name="upload-to-mac-app-store"></a>Mac App Store için karşıya yükleme
 
@@ -21,7 +22,7 @@ Uygulamaları Mac App Store onaya gönderildiğinde [iTunes Bağlan](http://itun
 
 1. Seçin bir **macOS uygulama** oluşturmak için: 
 
-    [![](uploading-images/image65.png "iTunes Connect")](uploading-images/image65.png#lightbox)
+    [![](uploading-images/image65.png "iTunes Bağlan")](uploading-images/image65.png#lightbox)
 
 2. Uygulamanın adını ve başka ayrıntılar girin. Geliştirici, yalnızca mevcut bir seçebilirsiniz **paket kimliği** , oluşturuldu daha önce: 
 

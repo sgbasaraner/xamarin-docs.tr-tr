@@ -1,16 +1,17 @@
 ---
 title: Xamarin Canlı oynatıcı uygulaması
-description: Düzenle ve iOS veya Android cihazında gerçek zamanlı uygulamaları test etme
+description: Bu belgede Xamarin Canlı Önizleme kod değişiklikleri için kullanılan uygulama Canlı aygıtta Player açıklanmaktadır. Bu kurulum, örnekleri, günlükleri, aygıtları ve daha fazla yönetme ayarları açıklanır.
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
 ms.date: 05/14/2017
-ms.openlocfilehash: 3d4d34c6945387f5878ea708faf630d2545a750e
-ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
+ms.openlocfilehash: 88f7f62650484007c221aa7baaa684f872e0a8e9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794156"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Canlı oynatıcı uygulaması
 

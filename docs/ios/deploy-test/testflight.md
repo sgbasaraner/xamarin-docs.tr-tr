@@ -1,5 +1,5 @@
 ---
-title: TestFlight kullanma
+title: Xamarin.iOS uygulamaları dağıtmak için TestFlight kullanma
 description: TestFlight artık Apple'nın ait ve beta Xamarin.iOS uygulamalarınızı test etmek için birincil yoludur. Bu makalede iTunes Connect ile çalışmaya, uygulamanızı karşıya TestFlight işleminin – tüm adımlarda size yol gösterir.
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5a6e90aab3aae408d4daace81875e44f075818bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: efb0a59ac43ca3e0c4959caa8478a51512e29a3a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785693"
 ---
-# <a name="using-testflight"></a>TestFlight kullanma
+# <a name="using-testflight-to-distribute-xamarinios-apps"></a>Xamarin.iOS uygulamaları dağıtmak için TestFlight kullanma
 
 _TestFlight artık Apple'nın ait ve beta Xamarin.iOS uygulamalarınızı test etmek için birincil yoludur. Bu makalede iTunes Connect ile çalışmaya, uygulamanızı karşıya TestFlight işleminin – tüm adımlarda size yol gösterir._
 
@@ -159,7 +160,7 @@ TestFlight'ı kullanmaya başlamak için Gözat **yayın öncesi** , uygulamanı
 
 Meta veri uygulamanıza eklemek için yapı numarası TestFlight sonra'ni tıklatın:
 
-[![](testflight-images/metadata.png "Add Metadata")](testflight-images/metadata.png#lightbox)
+[![](testflight-images/metadata.png "Meta verileri ekleme")](testflight-images/metadata.png#lightbox)
 
 Altında **Test bilgileri**, örneği için uygulamanız ile ilgili önemli bilgiler ile sınayıcılar sağlayabilir:
 

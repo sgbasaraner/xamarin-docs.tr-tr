@@ -1,18 +1,20 @@
 ---
-title: .xib kod oluşturma
+title: Xamarin.iOS .xib kod oluşturma
+description: 'Bu belgede nasıl Xamarin.iOS .xib dosyalarını C visual denetimlerini programlı olarak erişilebilir hale getirme #, eşlemek için kod oluşturur açıklanmaktadır.'
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b887dbf09693452f62f744669ad9713927020cea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 064e17393747a36cd761cb2464e3239cfc17141c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786154"
 ---
-# <a name="xib-code-generation"></a>.xib kod oluşturma
+# <a name="xib-code-generation-in-xamarinios"></a>Xamarin.iOS .xib kod oluşturma
 
 > [!IMPORTANT]
 >  Bu belgede yalnızca Xcode'nın arabirimi Oluşturucu ile Mac'ın tümleştirme için Visual Studio açıklanmaktadır gibi eylemleri ve çıkışlar Xamarin Tasarımcısı'nda iOS için kullanılmaz. İOS Tasarımcısı hakkında daha fazla bilgi için lütfen gözden [iOS Tasarımcısı](~/ios/user-interface/designer/index.md) belge.
@@ -31,7 +33,7 @@ Varolan türlerinden Cocoa Touch kullanarak yanı sıra, bu özel türleri tanı
 
 ## <a name="generating-code"></a>Kod Üretme
 
-Herhangi **{0} .xib** bir yapı eylemi dosyasıyla *sayfa*, bir **{0}.xib.designer.cs** projede mevcut da dosya, Mac için Visual Studio, kısmi sınıflarda üretir Tüm içinde bulabilir kullanıcı sınıfları için tasarımcı dosya **.xib** çıkışlar için özellikler ve tüm eylemler için kısmi yöntemleri ile dosya. Kod oluşturma, yalnızca bu dosyanın varlığını tarafından etkinleştirilir.
+Herhangi  **{0}.xib** bir yapı eylemi dosyasıyla *sayfa*, bir  **{0}. xib.designer.cs** dosya mevcut Mac için Visual Studio Proje da Kısmi sınıflar içinde bulabilirsiniz Tasarımcı dosyada tüm kullanıcı sınıfları oluşturur **.xib** çıkışlar için özellikler ve tüm eylemler için kısmi yöntemleri ile dosya. Kod oluşturma, yalnızca bu dosyanın varlığını tarafından etkinleştirilir.
 
 Tasarımcı otomatik olarak dosyasıdır ne zaman güncelleştirilmiş **.xib** dosya değişiklikleri ve Visual Studio Mac odak yeniden kazanabilmesi için. Değişikliklerin üzerine gelecek sefer Visual Studio Mac güncelleştirmeler için dosya olarak Tasarımcısı dosyasına el ile değiştirilmemelidir.
 
@@ -45,11 +47,11 @@ Birden çok içinde sınıfları tanımlanamaz **.xib**, veya çakışan.
 
 ## <a name="non-designer-class-parts"></a>Tasarımcı olmayan sınıf bölümleri
 
-Tasarımcı kısmi sınıflar amaçlanmayan olarak kullanılması-değil. Çıkışlar özeldir ve hiçbir temel sınıf belirtilir. Her sınıfın temel sınıf ayarlar, kullanır veya çıkışlar gösterir ve yerel kod sınıfından yüklenirkenörneğioluşturmakiçingereklioluşturuculartanımlarbaşkabirdosyasındakarşılıkgelenbir"designerolmayan"sınıfbölümüvarsabeklenir**.xib**. Varsayılan **.xib** şablonları bunu ancak olarak tanımlamak için ek özel sınıfları bir **.xib**, Tasarımcısı olmayan bölümü el ile eklemeniz gerekir.
+Tasarımcı kısmi sınıflar amaçlanmayan olarak kullanılması-değil. Çıkışlar özeldir ve hiçbir temel sınıf belirtilir. Her sınıfın temel sınıf ayarlar, kullanır veya çıkışlar gösterir ve yerel kod sınıfından yüklenirkenörneğioluşturmakiçingereklioluşturuculartanımlarbaşkabirdosyasındakarşılıkgelenbir"designerolmayan"sınıfbölümüvarsabeklenir **.xib**. Varsayılan **.xib** şablonları bunu ancak olarak tanımlamak için ek özel sınıfları bir **.xib**, Tasarımcısı olmayan bölümü el ile eklemeniz gerekir.
 
 Bunun nedeni, esneklik için gerekiyor. Örneğin, birden çok arkasındaki koda sınıfları ortak bir Özet sınıf, hangi alt sınıflar tarafından IB sınıflandırma için sınıf yönetilen bir alt kümesi olabilir.
 
-Bunlar yerleştirmek için geleneksel bir **{0}.xib.cs** yanındaki dosya **{0}.xib.designer.cs** Tasarımcı dosya.
+Bunlar yerleştirmek için geleneksel bir  **{0}. xib.cs** yanındaki dosya  **{0}. xib.designer.cs** Tasarımcı dosya.
 
 <a name="generated" />
 

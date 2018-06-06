@@ -1,21 +1,20 @@
 ---
-title: Mimari değişiklikleri
-description: İOS 11'ın yeni özellikleri keşfetmek
+title: İOS 11 mimarisi değişiklikleri
+description: Bu belgede iOS 11 32-bit uygulamaları kullanımdan açıklanmaktadır. Hedef 64-bit mimariyi uygulamaları güncelleştirmek nasıl açıklanır.
 ms.prod: xamarin
 ms.assetid: 55F62F3F-8570-402B-B7D9-2875F76CB946
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 6dd874fd803d2b3de21b0b604cbc2bafa5bf1aec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09d528ceb0654debd7c0ac8818f19c622775eac2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787441"
 ---
-# <a name="architecture-changes"></a>Mimari değişiklikleri
-
-_İOS 11'ın yeni özellikleri keşfetmek_
+# <a name="architecture-changes-in-ios-11"></a>İOS 11 mimarisi değişiklikleri
 
 İOS 11 bilincinde olmanız gereken büyük değişiklikleri biri ayrıntılı biçimde açıklandığı gibi uygulamalar için 32-bit desteğini kullanımdan [Apple'nın](https://developer.apple.com/news/?id=06282017b) basın açıklaması. Tüm yeni uygulamaları ve güncelleştirmeleri olan mevcut uygulamalar için 64-bit desteklemesi gerekir. 32-bit uygulamaları **başlatılmaz** iOS 11 içinde.
 

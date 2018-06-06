@@ -1,17 +1,18 @@
 ---
 title: Ek watchOS 3 çerçeveleri değişiklikleri
-description: Bu makalede, ek, küçük değişiklikler veya watchOS 3 varolan çerçeveyi geliştirmeler kapsar.
+description: Bu belgede watchOS 3 ve Xamarin bunlarla çalışmak nasıl ile sunulan çeşitli framework değişiklikler açıklanmaktadır. Çekirdek veri, çekirdek hareket, Foundation, HealthKit, HomeKit, PassKit ve Uıkit ele alınmıştır.
 ms.prod: xamarin
 ms.assetid: FE93796E-F699-4B14-B37D-D39F9D48E81E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 572aaff9d010ec1ec1f48db2878859e445e2fb20
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: af44096928c5e543ac99df3faec9f2e9215f666d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791521"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>Ek watchOS 3 çerçeveleri değişiklikleri
 

@@ -1,5 +1,5 @@
 ---
-title: Geçici dağıtım
+title: Xamarin.iOS uygulamaları için geçici dağıtım
 description: Bu belge, öncelikle kişilerin geniş bir grupla bir Xamarin.iOS uygulamaları test etmek için kullanılan geçici dağıtım teknikleri genel bir bakış sağlar.
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 9b862a39d8fb8fe079b83b8842281fad5ec903e4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0907c3bcca9e0955e5ad9f8ed48adac03202cbaa
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784809"
 ---
-# <a name="ad-hoc-distribution"></a>Geçici dağıtım
+# <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS uygulamaları için geçici dağıtım
 
 _Bu belge, öncelikle kişilerin geniş bir grupla bir Xamarin.iOS uygulamaları test etmek için kullanılan geçici dağıtım teknikleri genel bir bakış sağlar._
 
@@ -83,7 +84,7 @@ Olarak herhangi diğer sağlama oluşturduğunuz profil ile bir uygulama kimliğ
 1. İçinde [Apple Geliştirici Merkezi](https://developer.apple.com/account/overview.action) göz *sertifika, tanımlayıcılarını ve profiller* bölümü. Seçin **uygulama kimlikleri** altında **tanımlayıcıları**.
 2. Tıklatın **+** düğmesine tıklayın ve sağlayan bir **adı** hangi tanımlar ve bu Portalı'nda.
 3. Uygulama önek takım Kimliğiniz ayarlanması gerekir ve değiştirilemez. Explicit veya joker uygulama kimliği seçin ve bir paket kimliği gibi geriye doğru DNS biçimde girin:
-    - **Explicit**: `com.[DomainName].[AppName]`
+    - **Açık**: `com.[DomainName].[AppName]`
     - **Joker karakter**: `com.[DomainName].*`
 4. Seçin [uygulama hizmetleri](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) , uygulamanızı gerektirir.
 5. Tıklatın **devam** düğmesine tıklayın ve yeni bir uygulama kimliği oluşturmak için açık ekran yönergelerini izleyin

@@ -1,21 +1,20 @@
 ---
-title: Dosya sistemi ile çalışma
-description: Xamarin.iOS aynı System.IO sınıfları dosyaları ve dizinleri herhangi bir .NET uygulamasında kullanacağınız iOS içinde çalışmak için kullanabilirsiniz. Ancak, bilinen sınıflar ve yöntemler rağmen iOS oluşturulan veya erişilen dosyalar üzerinde bazı kısıtlamalar uygular ve ayrıca özel özellikleri dizinleri belirli sağlar. Bu makalede, bu sınırlamaları ve özellikler açıklanmaktadır ve dosya erişimi bir Xamarin.iOS uygulaması nasıl çalıştığını gösterir.
+title: Xamarin.iOS dosya sisteminde ile çalışma
+description: Bu belge Xamarin.iOS dosya sisteminde ile nasıl çalışılacağını açıklar. Dizinleri, dosyaları, XML ve JSON seri hale getirme, dosyalar iTunes ve daha fazla ile paylaşımı uygulaması korumalı alan okuma açıklanır.
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5bcfac7911ac589e08cd6c5db8c8ea15a3497eca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784247"
 ---
-# <a name="working-with-the-file-system"></a>Dosya sistemi ile çalışma
-
-_Xamarin.iOS aynı System.IO sınıfları dosyaları ve dizinleri herhangi bir .NET uygulamasında kullanacağınız iOS içinde çalışmak için kullanabilirsiniz. Ancak, bilinen sınıflar ve yöntemler rağmen iOS oluşturulan veya erişilen dosyalar üzerinde bazı kısıtlamalar uygular ve ayrıca özel özellikleri dizinleri belirli sağlar. Bu makalede, bu sınırlamaları ve özellikler açıklanmaktadır ve dosya erişimi bir Xamarin.iOS uygulaması nasıl çalıştığını gösterir._
+# <a name="working-with-the-file-system-in-xamarinios"></a>Xamarin.iOS dosya sisteminde ile çalışma
 
 Xamarin.iOS kullanabilirsiniz ve `System.IO` sınıfları *.NET temel sınıf kitaplığı (BCL)* iOS dosya sistemi erişmek için. `File` Sınıfı, oluşturma, silme ve dosyaları okumasına olanak sağlar ve `Directory` sınıfı oluşturamaz, silemez veya dizinleri içeriğini listeleme olanak tanır. Aynı zamanda `Stream` alt sınıfların bir büyük ölçüde dosya işlemleri (örneğin, bir dosya içinde sıkıştırma veya konumu arama) üzerinde denetim sağlar.
 
@@ -29,15 +28,13 @@ Bu makalede özellik ve iOS kısıtlamalarını ayrıntılı olarak dosya sistem
 
  <a name="General_File_Access" />
 
-
 ## <a name="general-file-access"></a>Genel dosya erişimi
 
 Xamarin.iOS .NET kullanmanıza olanak verir `System.IO` iOS dosya sistemi işlemleri için sınıflar.
 
 Aşağıdaki kod parçacıkları bazı ortak işlemleri göstermektedir. Bulabilirsiniz tüm aşağıda bunları `SampleCode.cs` dosyasında bu makalede örnek uygulama.
 
- <a name="Working_with_directories" />
-
+<a name="Working_with_directories" />
 
 ### <a name="working-with-directories"></a>Dizinleri ile çalışma
 

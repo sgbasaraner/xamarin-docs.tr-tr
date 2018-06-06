@@ -1,18 +1,19 @@
 ---
-title: 2B çizim
-description: Çapraz Platform SkiaSharp ile 2B çizim
+title: SkiaSharp ile 2B çizim
+description: Bu belge, SkiaSharp ile çizim platformlar arası 2B genel bir bakış sağlar. SkiaSharp açıklayan çeşitli kılavuzları ve çeşitli API'lerini bağlar.
 ms.prod: xamarin
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: f1a40b48ecfb7244aae77cf1b4110ae53490d98c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 962fe657f25976f9b5069f2d434e92f816d249ca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783299"
 ---
-# <a name="2d-drawing"></a>2B çizim
+# <a name="2d-drawing-with-skiasharp"></a>SkiaSharp ile 2B çizim
 
 SkiaSharp 2B grafik yapmak için güçlü bir C# API sağlar. Tarafından sağlanmıştır [Google Skia Kitaplığı](http://skia.org), Google Chrome, Firefox ve Android'ın grafik yığınları'nın temelini oluşturan aynı kitaplığı.
 

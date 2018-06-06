@@ -1,19 +1,20 @@
 ---
-title: Film şeritleri hızlı başlangıç
-description: Film şeritleri ile kullanıcı arabirimleri başlatılan yapı macOS alınıyor.
+title: Film şeritleri içinde Xamarin.Mac – hızlı başlangıç
+description: Bu belge, kullanıcı arabirimleri Xamarin.Mac içinde film şeritleri ile macOS oluşturmak için bir hızlı başlangıç tanıtılmaktadır. Bir segue oluşturmak ve tercihleri penceresini oluşturmak nasıl açıklar.
 ms.prod: xamarin
 ms.assetid: 20719B5D-8147-4E8A-A23C-8D575C7ACCEE
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 0c366de844b119736763f7d419d6bc9bb3fbfc0a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2bf91a51a55583e2ba8ca1fc09eb3dcd0d9986cf
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792578"
 ---
-# <a name="starting-a-new-storyboard-based-project"></a>Proje dayalı yeni bir film şeridi başlatılıyor
+# <a name="storyboards-in-xamarinmac--quick-start"></a>Film şeritleri içinde Xamarin.Mac – hızlı başlangıç
 
 Film şeritleri Xamarin.Mac uygulamanın kullanıcı arabirimi tanımlamak için kullanmak için bir giriş, yeni bir Xamarin.Mac projesi başlayalım. Seçin **Mac** > **uygulama** > **Cocoa uygulama** tıklatıp **sonraki** düğmesi:
 

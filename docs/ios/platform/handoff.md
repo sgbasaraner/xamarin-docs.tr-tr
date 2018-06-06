@@ -1,18 +1,19 @@
 ---
-title: İletimi
+title: Xamarin.iOS iletimi
 description: Bu makalede aktarmak için bir Xamarin.iOS uygulaması ile iletim çalışma kapsar kullanıcı üzerinde çalışan uygulamalar arasında kullanıcı etkinlikleri kullanıcının diğer aygıtlar.
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bb665c7ffd4241fac14be13ebd8f113d11afd417
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ec324e8fb8327b622424311b89567608311a6a19
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787526"
 ---
-# <a name="handoff"></a>İletimi
+# <a name="handoff-in-xamarinios"></a>Xamarin.iOS iletimi
 
 _Bu makalede aktarmak için bir Xamarin.iOS uygulaması ile iletim çalışma kapsar kullanıcı üzerinde çalışan uygulamalar arasında kullanıcı etkinlikleri kullanıcının diğer aygıtlar._
 
@@ -592,7 +593,7 @@ Devamlılık akış nerede gerekli durumlarda bile olmamalıdır en az bir geri 
 
 Daha fazla bilgi için Apple'nın bkz [kullanma devamlılık akışları](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/Handoff/AdoptingHandoff/AdoptingHandoff.html#//apple_ref/doc/uid/TP40014338-CH2-SW13) belgeleri.
 
-## <a name="handoff-best-practices"></a>Handoff Best Practices
+## <a name="handoff-best-practices"></a>İletim en iyi uygulamalar
 
 Başarılı, bir kullanıcı etkinliği iletimi aracılığıyla sorunsuz devamlılık dikkatli tasarım tüm çeşitli bileşenleri nedeniyle söz konusu gerektirir. Apple iletimi etkinleştirilmiş uygulamalarınız için izleme en iyi yöntemlerini kullanma önerir:
 

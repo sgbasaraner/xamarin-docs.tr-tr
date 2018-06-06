@@ -1,26 +1,25 @@
 ---
-title: Kullanım dışı bildirim teknolojileri
+title: Xamarin.iOS kullanım dışı bildirim teknolojileri
+description: Bu belgede iOS 10 sunulan kullanıcı bildirimleri framework lehinde kullanım iOS bildirim teknolojiler açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 20C4F6E5-56DF-4A85-BBF0-E38C88586307
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2016
-ms.openlocfilehash: eff1d999e705aa493d0481e34ead3b9b81d434f9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4becc5e296fb6e2496d9ffd863f7137419480262
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788559"
 ---
-# <a name="deprecated-notification-technologies"></a>Kullanım dışı bildirim teknolojileri
+# <a name="deprecated-notification-technologies-in-xamarinios"></a>Xamarin.iOS kullanım dışı bildirim teknolojileri
 
 Bu bölümde, yerel uygulamak ve Xamarin.iOS içinde anında iletme bildirimleri gösterilmektedir. Bu bir iOS bildirim çeşitli kullanıcı Arabirimi öğelerini açıklar ve API ele oluşturma ve bir bildirim görüntüleme ile söz konusu.
 
 > [!IMPORTANT]
 > Bu bölümdeki bilgiler, iOS 9 ilgilidir ve önceki, bunu burada daha önceki iOS sürümlerini desteklemek için bırakıldı. 10 ve üzeri iOS için lütfen bkz. [Kullanıcı bildirim Framework Kılavuzu](~/ios/platform/user-notifications/index.md) hem yerel hem de uzak bildirim iOS cihazında desteklemek için.
-
-
-
 
 ## <a name="sections"></a>Bölümler
 

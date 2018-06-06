@@ -1,24 +1,26 @@
 ---
-title: SceneKit
+title: Xamarin.iOS SceneKit
+description: Bu belgede SceneKit, 3B grafik çalışmak yerine OpenGL karmaşıklığını özetleyen tarafından basitleştirir 3B Sahne grafik API'si açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 7c00a3f6aed442eec402f34a5cea4b1895bb3685
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fb72e194e14f903061e1bd2dc6d04ef88ab429d4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786791"
 ---
-# <a name="scenekit"></a>SceneKit
+# <a name="scenekit-in-xamarinios"></a>Xamarin.iOS SceneKit
 
-Sahne, 3B Sahne grafik 3B grafik çalışmak basitleştirir API'si setidir. OS X 10.8 ilk sunulmuştur ve iOS 8 şimdi geldi. Sahne Seti'nde derinlikli 3B Görselleştirme ve sıradan 3B oyunlar oluşturma OpenGL uzmanlık gerektirmez. Ortak Sahne grafik kavramlar oluşturma, Sahne Seti hemen OpenGL ve çok 3B eklemek bir uygulama için içerik kolaylaşır OpenGL ES karmaşıklığını soyutlar. Ancak, OpenGL uzmanı varsa, Sahne Seti doğrudan OpenGL ile de bağlamadan harika desteğe sahiptir. Ayrıca fizik gibi 3B grafik tamamlayan çeşitli özellikler içerir ve çok iyi çekirdek animasyon, çekirdek görüntü ve hareketli grafik Seti gibi diğer Apple çerçeveleri ile tümleşir.
+SceneKit bir 3B Sahne grafik 3B grafik çalışmak basitleştirir API ' dir. OS X 10.8 ilk sunulmuştur ve iOS 8 şimdi geldi. İle SceneKit derinlikli 3B Görselleştirme ve sıradan 3B oyunlar oluşturma OpenGL uzmanlık gerektirmez. Ortak Sahne grafik kavramlar oluşturma, SceneKit hemen OpenGL ve çok 3B eklemek bir uygulama için içerik kolaylaşır OpenGL ES karmaşıklığını soyutlar. Ancak, OpenGL uzmanı varsa, SceneKit doğrudan OpenGL ile de bağlamadan harika desteğe sahiptir. Ayrıca fizik gibi 3B grafik tamamlayan çeşitli özellikler içerir ve çok iyi çekirdek animasyon, çekirdek görüntü ve hareketli grafik Seti gibi diğer Apple çerçeveleri ile tümleşir.
 
-Sahne Seti çalışmak son derece kolaydır. Mvc'deki çizmeye bildirim temelli bir API'dir. Yalnızca Sahne ayarlayın, özellikleri ve Sahne Seti tanıtıcıları için Sahne işleme ekleyin.
+SceneKit çalışmak son derece kolaydır. Mvc'deki çizmeye bildirim temelli bir API'dir. Yalnızca bir Sahne ayarlayın, özellikleri ve SceneKit tanıtıcıları için Sahne işleme ekleyin.
 
-Sahne Kit ile çalışmak için Sahne grafiğini kullanarak oluşturduğunuz `SCNScene` sınıfı. Bir hiyerarşi düğümlerinin örneği tarafından temsil edilen bir Sahne içeren `SCNNode`, 3B alanda konumları tanımlama. Her düğüm, aşağıdaki şekilde gösterildiği gibi geometri, aydınlatma ve hizmetin görünümünü etkileyen malzemeleri gibi özelliklere sahiptir:
+SceneKit ile çalışmak için Sahne grafiğini kullanarak oluşturduğunuz `SCNScene` sınıfı. Bir hiyerarşi düğümlerinin örneği tarafından temsil edilen bir Sahne içeren `SCNNode`, 3B alanda konumları tanımlama. Her düğüm, aşağıdaki şekilde gösterildiği gibi geometri, aydınlatma ve hizmetin görünümünü etkileyen malzemeleri gibi özelliklere sahiptir:
 
 ![](scenekit-images/image7.png "SceneKit hiyerarşisi") 
 
@@ -43,7 +45,7 @@ scene.RootNode.AddChildNode (sphereNode);
 
 ## <a name="adding-light"></a>Açık ekleme
 
-Bu noktada Sahne hiçbir açık olduğundan küre herhangi bir şey görüntülenmez. Ekleme `SCNLight` düğümleri örneklerine Sahne Seti'nde ışık oluşturur. Tek yönlü ışık çeşitli formlardan ortam aydınlatma arasında değişen ışık çeşitli türleri vardır. Örneğin aşağıdaki kod bir mikrofonsa ışık küre yan tarafında oluşturur:
+Bu noktada Sahne hiçbir açık olduğundan küre herhangi bir şey görüntülenmez. Ekleme `SCNLight` düğümleri örneklerine ışık SceneKit içinde oluşturur. Tek yönlü ışık çeşitli formlardan ortam aydınlatma arasında değişen ışık çeşitli türleri vardır. Örneğin aşağıdaki kod bir mikrofonsa ışık küre yan tarafında oluşturur:
 
 ```csharp
 // omnidirectional light
@@ -89,7 +91,7 @@ cameraNode = new SCNNode {
 scene.RootNode.AddChildNode (cameraNode);
 ```
 
-Yukarıdaki kod, Sahne oluşturucuları kullanarak nesneleri oluşturulabilir Seti veya Create fabrika yöntemi görebileceğiniz gibi. C# Başlatıcısı sözdizimi kullanılarak eski izin verir, ancak hangisinin kullanılacağını sağlasa da, büyük ölçüde tercih konusudur.
+Oluşturucular kullanma nesneleri oluşturulabilir SceneKit yukarıdaki kodu veya Create fabrika yöntemi görebileceğiniz gibi. C# Başlatıcısı sözdizimi kullanılarak eski izin verir, ancak hangisinin kullanılacağını sağlasa da, büyük ölçüde tercih konusudur.
 
 Yerinde kamera ile tüm küre kullanıcıya görünür:
 
@@ -129,7 +131,7 @@ material.Reflective.Contents = UIImage.FromFile ("monkey.png");
 
 ### <a name="animation"></a>Animasyon
 
-Sahne Seti iyi animasyon ile çalışmak üzere tasarlanmıştır. Örtük veya açık animasyonları oluşturabilirsiniz ve çekirdek animasyon katman ağacından Sahne bile hale getirebilir. Örtük bir animasyon oluştururken, kendi geçiş sınıfı Sahne Seti sağlar `SCNTransaction`.
+SceneKit iyi animasyon ile çalışmak üzere tasarlanmıştır. Örtük veya açık animasyonları oluşturabilirsiniz ve çekirdek animasyon katman ağacından Sahne bile hale getirebilir. Örtük bir animasyon oluştururken, SceneKit kendi geçiş sınıfı sağlar `SCNTransaction`.
 
 Küre döndüren örnek aşağıda verilmiştir:
 
@@ -140,7 +142,7 @@ sphereNode.Rotation = new SCNVector4 (0, 1, 0, (float)Math.PI * 4);
 SCNTransaction.Commit ();
 ```
 
-Çok daha fazlasını döndürme ancak animasyon ekleyebilirsiniz. Birçok Sahne Seti canlandırılabilir özellikleridir. Örneğin, aşağıdaki kodu malzemenin canlandırır `Shininess` aynasal yansıma artırmak için.
+Çok daha fazlasını döndürme ancak animasyon ekleyebilirsiniz. Birçok SceneKit canlandırılabilir özellikleridir. Örneğin, aşağıdaki kodu malzemenin canlandırır `Shininess` aynasal yansıma artırmak için.
 
 ```csharp
 SCNTransaction.Begin ();
@@ -149,4 +151,4 @@ material.Shininess = 0.1f;
 SCNTransaction.Commit ();
 ```
 
-Sahne Seti kullanmak oldukça basittir. Bol miktarda kısıtlamaları, fizik, bildirim temelli Eylemler, 3B metin, alan desteği, hareketli grafik Seti tümleştirme ve birkaç adlandırmak için çekirdek görüntü tümleştirme derinliği de dahil olmak üzere ek özellikler sunar.
+SceneKit kullanmak oldukça basittir. Bol miktarda kısıtlamaları, fizik, bildirim temelli Eylemler, 3B metin, alan desteği, hareketli grafik Seti tümleştirme ve birkaç adlandırmak için çekirdek görüntü tümleştirme derinliği de dahil olmak üzere ek özellikler sunar.

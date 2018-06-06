@@ -1,19 +1,20 @@
 ---
-title: Sorun giderme
-description: Bu makalede, Xamarin.iOS uygulamaları iOS 9 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir.
+title: Xamarin.iOS 9 – sorun giderme
+description: Bu makalede, iOS 9 Xamarin.iOS ile çalışmak için çeşitli sorun giderme ipuçları verilmektedir. XML ayrıştırma, benzeticilerini, düzeni kısıtlamaları, ağ sorunları ve diğer birçok konu ipuçları kapsar.
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 1b335fc6b19d87a46059511baf866433691b1b4d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c44d737efcf5092eb4b27d5311271005de65318b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787669"
 ---
-# <a name="troubleshooting"></a>Sorun giderme
+# <a name="xamarinios-9--troubleshooting"></a>Xamarin.iOS 9 – sorun giderme
 
 _Bu makalede, Xamarin.iOS uygulamaları iOS 9 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir._
 
@@ -87,7 +88,7 @@ Bkz: bizim [iOS 9 uyumluluk bilgileri](~/ios/platform/introduction-to-ios9/ios9.
 
 <a name="UICollectionViewCell.ContentView-is-null-in-constructors" />
 
-## <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell.ContentView is Null in Constructors
+## <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell.ContentView Yapıcılardaki Null.
 
 **Neden:** iOS 9 içinde `initWithFrame:` Oluşturucusu olan artık iOS 9 davranış değişiklikleri nedeniyle gerekli [UICollectionView belgelerine durumları](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath). Belirtilen tanımlayıcı için bir sınıf kayıtlı ve yeni bir hücreye oluşturulmalıdır, hücre şimdi çağrılarak başlatılır, `initWithFrame:` yöntemi.
 
@@ -190,8 +191,6 @@ Bu sorun için en az iki olası geçici çözümler vardır:
 Xamarin.iOS ile bir şey yönetilen koda sunulan ancak iOS tasarım keser olarak adlandırılan oluşturucular içinde görünüm veya Görünüm denetleyicisini başlatma yapmak mümkündür.
 
 Genel olarak, her şeyi emin olamayacağından Objective-C kodunu oluşturucudan geri çağırabilirsiniz başlatmalıdır değil zaman çağrılır. Ayrıca anlamına daha iyi bir yerde (diğer .ctor) yok ya da (Objective-C hiçbir olay olduğu gibi) geçersiz kılmak için çağrıları burada bu başlatma yapılması.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

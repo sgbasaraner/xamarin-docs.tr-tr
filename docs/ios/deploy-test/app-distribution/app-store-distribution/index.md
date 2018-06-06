@@ -1,21 +1,20 @@
 ---
 title: Uygulama mağazası dağıtım
-description: Bu belge için Apple App Store dağıtım için gereksinimleri kapsar.
+description: Bu belge, bir Xamarin.iOS uygulaması App Store'dan dağıtmayı açıklar. Dağıtım sertifikasının nasıl oluşturulacağı ve sağlama profili dağıtımı oluşturmak nasıl iTunes Bağlan yapılandırmak ve uygulamayı göndermek nasıl açıklanır.
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 7a38c77dde7a66f2db194cd8888a2c32a3529a9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 42d287285fc9b8842dfb0c86b627d1d5c84189e1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784822"
 ---
 # <a name="app-store-distribution"></a>Uygulama mağazası dağıtım
-
-_Bu belge için Apple App Store dağıtım için gereksinimleri kapsar._
 
 Bir Xamarin.iOS uygulaması geliştirmiştir sonra yazılım geliştirme yaşam döngüsü sonraki adımda iTunes App Store'da kullanarak kullanıcıların uygulamayı dağıtmaktır. Uygulamaları dağıtma en yaygın yolu budur. Apple App Store'dan bir uygulama yayımlayarak, tüketicilere dünya çapında kullanılabilir.
 

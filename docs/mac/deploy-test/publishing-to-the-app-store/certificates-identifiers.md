@@ -1,5 +1,5 @@
 ---
-title: Sertifikalar ve tanımlayıcıları
+title: Sertifikalar ve Xamarin.Mac tanımlayıcıları
 description: Bu kılavuz gerekli sertifikaları ve Xamarin.Mac uygulama yayımlamak için gereken tanımlayıcıları oluşturmada size yol gösterir.
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d94819be2c014aec5edfae19959ce949ee8dcd4b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b86f731009380db7e9e8980114272ddd38d2f0da
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792881"
 ---
-# <a name="certificates-and-identifiers"></a>Sertifikalar ve tanımlayıcıları
+# <a name="certificates-and-identifiers-in-xamarinmac"></a>Sertifikalar ve Xamarin.Mac tanımlayıcıları
 
 _Bu kılavuz gerekli sertifikaları ve bir Xamarin.Mac uygulamayı yayımlamak için gerekli olacak tanımlayıcıları oluşturmada size yol gösterir._
 

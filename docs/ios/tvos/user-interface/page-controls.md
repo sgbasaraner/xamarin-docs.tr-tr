@@ -1,21 +1,20 @@
 ---
-title: Sayfa denetimiyle çalışma
-description: Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde sayfa denetimiyle çalışma kapsar.
+title: TvOS Xamarin sayfa denetimleri ile çalışma
+description: Bu belge Xamarin ile oluşturulan bir uygulamada tvOS sayfa denetimleri ile nasıl çalışılacağını açıklar. Sayfa denetimleri üst düzey bir açıklamasını sağlar, film şeritleri ayarlamak nasıl açıklanır ve nasıl sayfa değişiklik olaylarını yanıt inceler.
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 1cb07c050aeb2ee72e34048baab991df2d5775d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bf020f230afc2eb2a09d863424bd4eb56ea1bde6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789164"
 ---
-# <a name="working-with-page-control"></a>Sayfa denetimiyle çalışma
-
-_Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde sayfa denetimiyle çalışma kapsar._
+# <a name="working-with-tvos-page-controls-in-xamarin"></a>TvOS Xamarin sayfa denetimleri ile çalışma
 
 Bazen sayfaları veya görüntüleri bir dizi Xamarin.tvOS uygulamanızda görüntülenecek gerekebilir. Sayfası denetimi, bir kullanıcı üzerinde en fazla sayfa sayısını dışında hangi sayfasını açıkça göstermek için tasarlanmıştır. Bir sayfa denetimi bir dizi arka plan şeklinde bir koyu, oval karşı nokta görüntüler. Geçerli sayfa dolu nokta görüntülenir, diğer tüm sayfalar boş noktalar göster. Varsa, arka plan alanında sığması için çok fazla sayfa denetimini dış çoğu nokta küçük.
 
@@ -72,9 +71,6 @@ Xamarin.tvOS uygulamada sayfa denetimleri ile çalışmak için en kolay yolu, o
 
 > [!IMPORTANT]
 > Olayları gibi atamak mümkün olmakla birlikte `TouchUpInside` Apple TV ekranında veya dokunma olaylarını destekleyen bir touch sahip olmadığından bir kullanıcı Arabirimi öğesine (örneğin, bir UIButton) iOS Tasarımcısı'nda, hiçbir zaman çağrılır. Her zaman kullanmalısınız `Primary Action` olay işleyicileri tvOS için kullanıcı arabirimi öğeleri oluştururken olay.
-
-
-
 
 Görünüm denetleyicinizi Düzenle (örneğin `ViewController.cs`) dosya ve değiştirilmekte sayfalarını işlemek için kodu ekleyin. Örneğin:
 

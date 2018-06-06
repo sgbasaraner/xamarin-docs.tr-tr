@@ -1,16 +1,17 @@
 ---
 title: NuGet paketleri için Xamarin el ile oluşturma
-description: Bu sayfa Xamarin platformunu hedeflemeniz NuGet paketleri oluşturmanıza yardımcı olacak bazı ipuçları içerir.
+description: Bu belge Xamarin platformunu hedeflemeniz NuGet paketleri oluşturmanıza yardımcı olmak için ipuçları içermektedir. NuGet paket Xamarin profilleri, PCL NuGets platform bağımlılıkları açıklar ve çeşitli açık kaynak örneklerine bağlar.
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 510c27cb54b91c837ca6f6b7a93f944f13097f0c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cc39ade2ccc1192461bcfa19c98b7f9925b667a0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781429"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>NuGet paketleri için Xamarin el ile oluşturma
 
@@ -58,7 +59,6 @@ Açıklamak için:
 - **Xamarin.iOS10** 1.0 ve daha yeni bir Xamarin.iOS eşleşir
 - **Xamarin.iOS1.0** ayrıca 1.0 ve daha yeni bir Xamarin.iOS eşleşir
 
-
 ## <a name="pcl-nugets-with-platform-dependencies"></a>PCL NuGets Platform bağımlılıkları
 
 PCL profilleri hangi .NET framework erişebilecekleri API'leri sınırlıdır ve platforma özgü kodu kesinlikle erişemiyor. Bu 3. taraf bağlantıları Xamarin ve diğer platformlar için uyumluluk sağlamak üzere PCL ve yerel API'lerini kullanan NuGet paketleri oluşturmak için farklı yaklaşımlara ele alınmıştır:
@@ -76,7 +76,6 @@ Başvurabilirsiniz bazı açık kaynak örnekler:
 - [**ModernHttpClient** ](https://www.nuget.org/packages/modernhttpclient/) – System.Net.Http kullanarak uygulamanızı yazma, ancak bu kitaplığı bırak ve önemli ölçüde daha hızlı geçer (Görünüm [kaynak](https://github.com/paulcbetts/ModernHttpClient)).
 - [**Splat** ](https://www.nuget.org/packages/Splat/) – olması gereken şeyleri platformlar arası yapmak için bir kitaplık (Görünüm [kaynak](https://github.com/paulcbetts/Splat)).
 - [**NGraphics** ](https://www.nuget.org/packages/NGraphics/) -.NET vektör grafikleri işlemek için platformlar arası kitaplığı (Görünüm [kaynak](https://github.com/praeclarum/NGraphics/blob/master/NGraphics.nuspec)).
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

@@ -1,21 +1,20 @@
 ---
-title: İle AVAudioPlayer ses çalma
-description: Bu makalede, bir yardımcı sınıfı bir AVAudioPlayer ses kullanımının kayıttan yürütmeyi denetlemek için nasıl kullanılacağı gösterilmektedir.
+title: İçinde Xamarin.Mac ile AVAudioPlayer ses çalma
+description: Bu belge, bir Xamarin.Mac uygulaması ile AVAudioPlayer ses çalınmaya açıklar. Bir üst düzey ve daha tam olarak ele diğer belgelere yönelik bağlantılar AVAudioPlayer açıklanır.
 ms.prod: xamarin
 ms.assetid: 4A683A94-F75D-4EAF-8497-E9443653250B
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 25e3285a1da1b6a112629001d5412fdd0788c705
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e5b9ec43189999f8a0aee29eb50221b494e2133
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791861"
 ---
-# <a name="playing-sound-with-avaudioplayer"></a>İle AVAudioPlayer ses çalma
-
-_Bu makalede, bir yardımcı sınıfı bir AVAudioPlayer ses kullanımının kayıttan yürütmeyi denetlemek için nasıl kullanılacağı gösterilmektedir._
+# <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>İçinde Xamarin.Mac ile AVAudioPlayer ses çalma
 
 ## <a name="about-the-avaudioplayer"></a>AVAudioPlayer hakkında
 
@@ -34,8 +33,6 @@ Kullanabileceğiniz `AVAudioPlayer` sınıfı aşağıdakileri yapın:
 ## <a name="playing-sounds-in-macos"></a>MacOS içinde ses çalma
 
 MacOS aynı ses araç sınıfları iOS olarak desteklediğinden, bizim iOS bakın [AVAudioPlayer oyun sesle](https://developer.xamarin.com/recipes/ios/media/sound/avaudioplayer/) Xamarin.Mac uygulama yürütmeyi ses tam ayrıntıları için belgeleri.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

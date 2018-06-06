@@ -1,23 +1,22 @@
 ---
-title: SiriKit uygulama
-description: Bu makalede bir Xamarin.iOS uygulamaları SiriKit destek uygulamak için gerekli adımlar kapsanmaktadır.
+title: Xamarin.iOS içinde SiriKit uygulama
+description: Bu belgede bir Xamarin.iOS uygulamaları SiriKit destek uygulamak için gereken adımları açıklar. Hedefleri uzantıları ve hedefleri UI uzantıları açıklanır.
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: f0e5e05828305bd3656d70105b6e2ad06f9fdc81
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788855"
 ---
-# <a name="implementing-sirikit"></a>SiriKit uygulama
+# <a name="implementing-sirikit-in-xamarinios"></a>Xamarin.iOS içinde SiriKit uygulama
 
 _Bu makalede bir Xamarin.iOS uygulamaları SiriKit destek uygulamak için gerekli adımlar kapsanmaktadır._
-
-
 
 Yeni iOS 10, SiriKit Siri ve haritalar uygulama iOS cihazında kullanarak kullanıcı tarafından erişilebilir hizmetleri sağlamak bir Xamarin.iOS uygulaması sağlar. Bu makalede gerekli hedefleri uzantılar, hedefleri UI uzantıları ve sözlük ekleyerek Xamarin.iOS uygulamalar SiriKit destek uygulamak için gerekli adımlar kapsanmaktadır.
 

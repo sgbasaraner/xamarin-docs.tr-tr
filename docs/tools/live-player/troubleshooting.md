@@ -1,23 +1,23 @@
 ---
-title: Sorun giderme
-description: Xamarin Canlı Player ve bunları gidermek nasıl bilinen sorunlar.
+title: Xamarin Canlı Player sorunlarını giderme
+description: Bu belgede Xamarin Canlı Player ve olası düzeltmeleri ile ilgili bilinen sorunlar açıklanmaktadır. Bağlantı sorunları, yapılandırma sorunları ve daha fazlasını açıklanır.
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
-ms.openlocfilehash: 147ce43d3fe764f71f27dce46b699142dfb99872
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3db14db2c64e024ef1c04275661f610f9407dfb7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793761"
 ---
-# <a name="troubleshooting"></a>Sorun giderme
+# <a name="troubleshooting-xamarin-live-player"></a>Xamarin Canlı Player sorunlarını giderme
 
 ![Önizleme özelliği](~/media/shared/preview.png)
 
 Bu makalede, bazı yaygın sorunlar açıklanmıştır ve bunları düzeltmek için adımları sağlar.
-
 
 ## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>Mobil cihaz tarama barkod (veya girme kod) sonra bağlanamıyor
 
@@ -27,7 +27,6 @@ Xamarin Canlı Player çalıştıran mobil cihaz IDE çalıştıran bilgisayarı
   - Bilgisayar da kablolu bir ağa bağlıysa, kablolu bağlantı yönlendiriciyi deneyin.
 - Ağ sıkı bir şekilde (bazı şirket ağları gibi), güvenli Xamarin Canlı oynatıcısının gerekli bağlantı noktalarının engellenmesi.
 - Xamarin Canlı Player uygulamayı kapatıp yeniden başlatın.
-
 
 ## <a name="error-while-trying-to-deploy-message-in-ide"></a>IDE içinde "dağıtmak çalışılırken hata oluştu" iletisi
 
@@ -67,7 +66,6 @@ Xamarin Canlı Player dokunun içinde **çifti** veya **yeniden çifti**, tuşun
 
 Gidin: https://www.guidgenerator.com/online-guid-generator.aspx ve yeni bir GUID oluşturur ve büyük harf olduğundan emin olun.
 
-
 **5. adım: cihaz yapılandırma**
 
 Açık **PlayerDeviceList.xml** yukarı Visual Studio veya Visual Studio Code gibi bir düzenleyicide. Cihazınız bu dosyada el ile yapılandırmanız gerekir. Varsayılan olarak, aşağıdaki boş dosya içermelidir `Devices` XML öğesi:
@@ -98,7 +96,6 @@ Açık **PlayerDeviceList.xml** yukarı Visual Studio veya Visual Studio Code gi
 </PlayerDevice>
 ```
 
-
 **Android cihaz ekleyin:**
 
 ```xml
@@ -118,7 +115,6 @@ Açık **PlayerDeviceList.xml** yukarı Visual Studio veya Visual Studio Code gi
 ```
 
 **Kapatın ve Visual Studio'yu yeniden açın.** Cihazınızı listede göstermelidir.
-
 
 ## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>IDE içinde "türü veya ad alanı bulunamadı" iletisi
 
@@ -141,9 +137,7 @@ AXML dosyaları Xamarin Canlı Player şu anda desteklenmemektedir.
 
 Xamarin.Forms Android projeleri "Toolbar.axml" ve "Tabbar.axml" ilgili düzeni dosyaların adlarını kullanmanız gerekir. Varsayılan şablonu bu adları kullanır; onları yeniden adlandırmayı işleme sorunları neden olur.
 
-
 Lütfen ek sorunları hakkında rapor [bugzilla](https://aka.ms/live-player-report-issue).
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

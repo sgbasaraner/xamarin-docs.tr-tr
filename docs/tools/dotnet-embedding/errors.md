@@ -1,17 +1,19 @@
 ---
 title: .NET katıştırma hataları
+description: Bu belgede .NET katıştırma tarafından oluşturulan hatalar açıklanır. Hata koduna göre listelenen ve sorun gidermenize yardımcı olacak bir açıklama verilir.
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 author: topgenorth
 ms.author: toopge
 ms.date: 04/11/2018
-ms.openlocfilehash: fcfeaa2d98a28723f95a9bf417e4bed81fe0dec3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 5aa95379b18fb9412e7888c79a2cd19997f7258f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793726"
 ---
-# <a name="net-embedding-errors"></a>.NET hataları katıştırma
+# <a name="net-embedding-errors"></a>.NET katıştırma hataları
 
 ## <a name="em0xxx-binding-error-messages"></a>EM0xxx: hata iletileri bağlama
 

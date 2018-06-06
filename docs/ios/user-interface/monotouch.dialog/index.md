@@ -1,21 +1,19 @@
 ---
-title: MonoTouch.Dialog giriş
-description: (Yüksekliğindeki MonoTouch.Dialog D) araç seti, hızlı uygulama geliştirme Xamarin.iOS UI için vazgeçilmez bir çerçevedir. YÜKSEKLİĞİNDEKİ D, hızlı ve kolay karmaşık uygulama gezinti denetleyicileri, tablolar vb. birçoğunu yerine bildirim temelli bir yaklaşım kullanarak kullanıcı Arabirimi tanımlamanızı sağlar. Ayrıca, yüksekliğindeki D esnek bir tam denetim veya çekme yenileme, arka plan görüntüsü yükleme gibi ek özellikler yanı sıra yaklaşım ellerini ile geliştiriciler sağlayabilir, destek ve JSON verilerini aracılığıyla dinamik kullanıcı Arabirimi oluşturma arama API kümesi vardır. Bu kılavuz yüksekliğindeki ile çalışmak için kullanılabilecek çeşitli yöntemler sunar D ve ardından ayrıntılı Gelişmiş kullanım çekecek.
+title: Xamarin.iOS için MonoTouch.Dialog giriş
+description: Bu belgede, MonoTouch.Dialog (yüksekliğindeki açıklanmaktadır. D), Xamarin.iOS ile hızlı, bildirim temelli kullanıcı Arabirimi geliştirme için bir çerçeve. MonoTouch.Dialog API'ları kodu veya JSON bir arabirim oluşturmak ve çekme yenileme, arama, arka plan görüntü yükleme ve daha fazlasını gibi özellikleri kullanmak için nasıl kullanılacağını açıklar.
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be979b35ffdd597dae74f1f661a381ae44433b10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6511d8deed1800a8ae655f749feccd249bf4a8c0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790844"
 ---
-# <a name="introduction-to-monotouchdialog"></a>MonoTouch.Dialog giriş
-
-_(Yüksekliğindeki MonoTouch.Dialog D) araç seti, hızlı uygulama geliştirme Xamarin.iOS UI için vazgeçilmez bir çerçevedir. YÜKSEKLİĞİNDEKİ D, hızlı ve kolay karmaşık uygulama gezinti denetleyicileri, tablolar vb. birçoğunu yerine bildirim temelli bir yaklaşım kullanarak kullanıcı Arabirimi tanımlamanızı sağlar. Ayrıca, yüksekliğindeki D esnek bir tam denetim veya çekme yenileme, arka plan görüntüsü yükleme gibi ek özellikler yanı sıra yaklaşım ellerini ile geliştiriciler sağlayabilir, destek ve JSON verilerini aracılığıyla dinamik kullanıcı Arabirimi oluşturma arama API kümesi vardır. Bu kılavuz yüksekliğindeki ile çalışmak için kullanılabilecek çeşitli yöntemler sunar D ve ardından ayrıntılı Gelişmiş kullanım çekecek._
-
+# <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Xamarin.iOS için MonoTouch.Dialog giriş
 
 Yüksekliğindeki başvurulan MonoTouch.Dialog D kısaca, geliştiricilerin uygulama ekranlar ve oluşturma görünümü denetleyicileri, tablolar vb. birçoğunu yerine bilgileri kullanarak gezinti oluşturmasına olanak veren bir hızlı UI geliştirme araç seti olur. Bu nedenle, kullanıcı Arabirimi geliştirme ve kod azaltma önemli bir alma sağlar. Örneğin, aşağıdaki ekran görüntüsünde göz önünde bulundurun:
 
@@ -271,7 +269,7 @@ Ayrıca `KeyboardType` özelliği, klavye türü veri girişi için istenen stil
 
 ### <a name="checkbox-element"></a>Onay kutusu öğesi
 
- [![](images/image13.png "Checkbox Element")](images/image13.png#lightbox)
+ [![](images/image13.png "Onay kutusu öğesi")](images/image13.png#lightbox)
 
 ### <a name="radio-element"></a>Radyo öğesi
 
@@ -383,7 +381,7 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
  }
 ```
 
-### <a name="json-element"></a>JSON Element
+### <a name="json-element"></a>JSON öğesi
 
 `JsonElement` Sınıfıdır `RootElement` genişleten bir `RootElement` yerel veya uzak bir URL'den iç içe alt içeriğini yüklemek için.
 

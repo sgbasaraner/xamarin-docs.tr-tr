@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: e2e3843506061cc79ad911404468477bf49dfe56
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c3c278666c5d57d00b4038ae6d3f2d7925e88537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789030"
 ---
 # <a name="introduction-to-tvos-9"></a>TvOS 9 giriş
 
 _Bu makalede Xamarin.tvOS geliştiriciler için tüm yeni ve değiştirilen API'ler ve tvOS 9 kullanılabilir özellikler sunar._
-
 
 Apple yeniden tasarlanan, Dokunmatik özellikli uzak bir özelliğe sahip olan, yeni tvOS işletim sistemi (iOS 9 bağlı olarak) çalıştıran Apple TV donanım 4 nesil yayımladı.
 
@@ -34,7 +34,7 @@ Apple TV çalıştıran tvOS uygulamaları aşağıdaki yetenekleri ve özellikl
 
  - Uygulama grupları
  - Arka plan modları
- - Veri koruma
+ - Veri Koruma
  - Oyun Merkezi
  - Oyun denetleyicileri
  - iCloud
@@ -45,14 +45,14 @@ Aşağıdaki özellikler ve yetenekler desteklenmez:
 
  - Apple Pay
  - Uygulama korumalı alan
- - İlişkili etki alanları
+ - İlişkili Etki Alanları
  - HealthKit
  - HomeKit
  - Uygulamalar Arası Ses
  - Eşlemeleri
  - Kişisel VPN
  - Anında iletme bildirimleri
- - Wallet
+ - Cüzdan
  - Kablosuz Aksesuar Yapılandırması
 
 Lütfen bakın bizim [desteklenen derlemeleri](~/ios/tvos/internals/assemblies.md) ve [desteklenen çerçeveler](~/ios/tvos/internals/frameworks.md) daha fazla bilgi için.
@@ -66,7 +66,7 @@ Yeni Apple TV aşağıdaki donanım belirtimlere sahiptir:
  - 64-bit A8 işlemci
  - 32GB ya da 64GB depolama alanı
  - 2GB RAM
- - 10/100Mbps Ethernet
+ - 10/100 MB/sn Ethernet
  - WiFi 802.11a/b/g/n/ac
  - 1080p çözümleme
  - HDMI

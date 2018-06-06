@@ -1,20 +1,19 @@
 ---
 title: UrhoSharp iOS ve tvOS desteği
-description: iOS ve tvOS özel kurulum ve UrhoSharp özellikleri.
+description: Bu belgede iOS açıklanır ve UrhoSharp için tvOS desteği. Proje oluşturma, yapılandırma ve Urho başlatın ve Urho, özel bir embed gerçekleştirmek nasıl açıklar.
 ms.prod: xamarin
 ms.assetid: 7B06567E-E789-4EA1-A2A9-F3B2212EDD23
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 322297e7782a06a2d900b12cd5afc5f469009f69
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7e8975b6885f6c902634e05aafca0b8ee60a981c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783981"
 ---
 # <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp iOS ve tvOS desteği
-
-_iOS ve tvOS özel kurulum ve özellikleri_
 
 Taşınabilir sınıf kitaplığı Urho olan ve çeşitli platform oyun mantığınızı için kullanılmak üzere aynı API sağlar, hala Urho platform belirli sürücünüzü ve bazı durumlarda başlatmak için gerekir, platform belirli özelliklerden yararlanmak istersiniz .
 

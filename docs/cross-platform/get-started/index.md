@@ -1,21 +1,20 @@
 ---
-title: Başlarken
-description: Bu ayrıntılı Kılavuzlar ile dağıtıma sıfırdan mobil uygulamalar geliştirmeyi öğrenin.
+title: Xamarin ile çalışmaya başlama
+description: Bu belge bağlantılar çeşitli kılavuzlara Xamarin geliştirmeye başlamak açıklar. Bağlantılı içerik ilk uygulamasının nasıl oluşturulacağını açıklar, mobil geliştirme genel bir giriş sağlar ve bir eğitim Xamarin University ile inceler.
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: de5b1499f95e6703e0c11adb1f76e1717a494e33
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3873236c64f1288a896c40d468f06b60f532a431
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780802"
 ---
-# <a name="getting-started"></a>Başlarken
-
-_Bu ayrıntılı Kılavuzlar ile dağıtıma sıfırdan mobil uygulamalar geliştirmeyi öğrenin._
+# <a name="getting-started-with-xamarin"></a>Xamarin ile çalışmaya başlama
 
 Başlamadan önce kullanıma [sistem gereksinimleri](requirements.md) ve [yükleme yönergeleri](installation/index.md) her şeyi davranmaya hazır olduğundan emin olmak için.
 

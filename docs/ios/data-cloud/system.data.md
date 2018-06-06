@@ -1,17 +1,19 @@
 ---
-title: System.Data
+title: Xamarin.iOS System.Data
+description: Bu belge, bir Xamarin.iOS uygulaması SQLite verilerine erişmek için System.Data ve Mono.Data.Sqlite.dll kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b141dfac49e2cfa2dc80b7c0e4ca3a93968590a6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f20bdbdb9fe0d25e1ba545633e271af912aab3ba
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784722"
 ---
-# <a name="systemdata"></a>System.Data
+# <a name="systemdata-in-xamarinios"></a>Xamarin.iOS System.Data
 
 Xamarin.iOS 8.10 için destek ekler [System.Data](https://developer.xamarin.com/api/namespace/System.Data/)dahil `Mono.Data.Sqlite.dll` ADO.NET sağlayıcısı. Desteği içeren aşağıdaki eklenmesi [derlemeleri](~/cross-platform/internals/available-assemblies.md):
 
@@ -20,7 +22,6 @@ Xamarin.iOS 8.10 için destek ekler [System.Data](https://developer.xamarin.com/
 -  `System.Transactions.dll`
 -  `Mono.Data.Tds.dll`
 -  `Mono.Data.Sqlite.dll`
-
 
 <a name="Example" />
 
@@ -142,7 +143,7 @@ Her ikisi de **System.Data** ve **Mono.Data.Sqlite** bazı işlevler eksik.
 
 -  Herhangi bir şey gerektiren [System.CodeDom](https://developer.xamarin.com/api/namespace/System.CodeDom/) (örn.  [System.Data.TypedDataSetGenerator](https://developer.xamarin.com/api/type/System.Data.TypedDataSetGenerator/) )
 -  XML yapılandırma dosyası desteği (örn.  [System.Data.Common.DbProviderConfigurationHandler](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderConfigurationHandler/) )
--   [System.Data.Common.DbProviderFactories](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderFactories/) (depends on XML config file support)
+-   [System.Data.Common.DbProviderFactories](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderFactories/) (XML yapılandırma dosyası desteğine bağlıdır)
 -   [System.Data.OleDb](https://developer.xamarin.com/api/namespace/System.Data.OleDb/)
 -   [System.Data.Odbc](https://developer.xamarin.com/api/namespace/System.Data.Odbc/)
 -  `System.EnterpriseServices.dll` Bağımlılık belirtildi *kaldırılan* gelen `System.Data.dll` , kaldırılmasını sonuçta elde edilen [SqlConnection.EnlistDistributedTransaction(ITransaction)](https://developer.xamarin.com/api/member/System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction/(System.EnterpriseServices.ITransaction)) yöntemi.

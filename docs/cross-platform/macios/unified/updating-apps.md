@@ -1,23 +1,24 @@
 ---
 title: Birleşik API için var olan uygulamaları güncelleştirme
+description: Bu belge bağlantılar çeşitli kılavuzlara Unified API Xamarin uygulamaları güncelleştirmek açıklar. Xamarin.iOS uygulamaları, Xamarin.Mac uygulamalar açıklanmaktadır. Xamarin.Forms uygulamalar, platformlar arası uygulamalar ve bağlama projeleri içindeki yerel türler.
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 588c01ef9f9ee014592c9d8dc72f2b8be20dfee3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 2d09be7b85980e5c5a8eb209dc1b4ff3136c34b3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781637"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Birleşik API için var olan uygulamaları güncelleştirme
 
 > [!IMPORTANT]
-> **Klasik profili kullanımdan:** yeni platformlar Xamarin.iOS içinde eklendikçe biz kademeli olarak Klasik profilinden (monotouch.dll) özellikleri alanı onaylanamadı başladılar. Örneğin, NRC olmayan (yeni ref-sayısı) seçeneği kaldırıldı. NRC tüm birleştirilmiş uygulamalar için her zaman etkinleştirildi (hiçbir zaman bir seçenek, yani olmayan NRC) ve bilinen bir sorun vardır. Gelecek sürümlerde Boehm atık toplayıcı kullanma seçeneğini kaldırır. Ayrıca, bu birleşik uygulamalara hiçbir zaman kullanılabilen bir seçenektir. Tam temizleme Klasik destek Xamarin.iOS 10.0 sürümü ile sonraki sonbaharda için zamanlandı.
-
-
-
+> Xamarin Klasik hangi Unified API öncesinde, API, kullanım dışı bırakıldı. 
+> - Klasik API (monotouch.dll) desteklemek için Xamarin.iOS son sürümü Xamarin.iOS 9.10 oluştu.
+> - Xamarin.Mac hala Klasik API destekler, ancak artık güncelleştirilir. Kullanım dışı bırakılmıştır olduğundan, geliştiriciler uygulamalarını Unified API taşımanız gerekir.
 
 ## <a name="how-to-update-your-apps"></a>Uygulamaları güncelleştirme
 
@@ -31,7 +32,7 @@ Uygulamalarınızı güncelleştirmek için üç adım vardır:
 
 2. Proje dosyaları ve ad alanlarını güncelleştirmek için Mac için Visual Studio içinde yerleşik geçiş aracını kullanın.
 
-3. Yeni ilgili derleyici hataları kalan düzeltme [64 türleri](~/cross-platform/macios/nativetypes.md) ve [diğer API'leri](~/cross-platform/macios/unified/index.md#deprecated-typos) , değişti. Kullanıma [bu ipuçlarını](~/cross-platform/macios/unified/updating-tips.md) gerekebilecek el ile güncelleştirme hakkında daha fazla bilgi için.
+3. Yeni ilgili derleyici hataları kalan düzeltme [64 türleri](~/cross-platform/macios/nativetypes.md) ve [diğer API'leri](~/cross-platform/macios/unified/overview.md#deprecated-typos) , değişti. Kullanıma [bu ipuçlarını](~/cross-platform/macios/unified/updating-tips.md) gerekebilecek el ile güncelleştirme hakkında daha fazla bilgi için.
 
 64-bit desteği ve birleşik API uygulamalarınızı güncelleştirmenize yardımcı olması her ürün için kullanılabilen belirli kılavuzları vardır:
 
@@ -55,9 +56,6 @@ Bu makalede, Android veya Windows Phone işletim sistemleri gibi iOS olmayan cih
 
 Objective-C kitaplıklarına bağlamaları oluşturmuş müşteriler (burada bazı türleri şimdi 64-bit olacaktır) temel alınan API değişiklikleri yansıtmak üzere bağlama proje güncelleştirmeniz gerekecektir.
 Bu yönergeleri izleyin [varolan bağlama Unified API desteklemek için projesini güncelleştirme](~/cross-platform/macios/unified/update-binding.md).
-
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

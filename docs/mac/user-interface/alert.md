@@ -1,5 +1,5 @@
 ---
-title: Uyarılar
+title: Xamarin.Mac uyarıları
 description: Bu makalede Xamarin.Mac uygulamasında uyarılarla çalışma kapsar. Oluşturma ve C# kodundan uyarıları görüntüleme ve Kullanıcı etkileşimlerine yanıt açıklar.
 ms.prod: xamarin
 ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a451d0a5535915d9e52f687ae07ea028c0ccd5ef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1eb781fe02213de6a994f56e321316b93a128b60
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792648"
 ---
-# <a name="alerts"></a>Uyarılar
+# <a name="alerts-in-xamarinmac"></a>Xamarin.Mac uyarıları
 
 _Bu makalede Xamarin.Mac uygulamasında uyarılarla çalışma kapsar. Oluşturma ve C# kodundan uyarıları görüntüleme ve Kullanıcı etkileşimlerine yanıt açıklar._
 

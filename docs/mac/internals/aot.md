@@ -1,17 +1,18 @@
 ---
 title: Xamarin.Mac zamanında derleme öncesinde
-description: Şimdi saati (Uygulama Nesne AĞACI) derleme dengelerin ve ilgili önemli noktalar
+description: Xamarin.Mac zamanında derleme öncesinde bu belgede açıklanır. JIT derleme için uygulama nesne AĞACI derleme karşılaştırır, uygulama nesne AĞACI etkinleştirmeyi açıklar ve bir karma uygulama nesne AĞACI inceler.
 ms.prod: xamarin
 ms.assetid: 38B8A017-5A58-429C-A6E9-9860A1DCEF63
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: d6be1d6e4a3cccef827862fb1fd54b202b0ce5fd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ec8474293fbb7372529e0f850e2d16db7ebf17be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792245"
 ---
 # <a name="xamarinmac-ahead-of-time-compilation"></a>Xamarin.Mac zamanında derleme öncesinde
 

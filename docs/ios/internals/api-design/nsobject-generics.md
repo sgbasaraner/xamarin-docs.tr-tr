@@ -1,18 +1,20 @@
 ---
-title: NSObject Genel alt sınıfları
+title: Xamarin.iOS NSObject Genel alt sınıfları
+description: Bu belge nasıl oluşturulacağını açıklar NSObject Genel alt sınıflarının oluşturun. Ne yapabilirsiniz ve yapılamaz, statik kayıt açıklanır ve bir performans inceler inceler.
 ms.prod: xamarin
 ms.assetid: BB99EBD7-308A-C865-1829-4DFFDB1BBCA4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 89df751d74b9b54ae8138d2e1b24c61d82c3cac8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9caad9d4990225a0468be8ee4987eaa9fea0c118
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786489"
 ---
-# <a name="generic-subclasses-of-nsobject"></a>NSObject Genel alt sınıfları
+# <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Xamarin.iOS NSObject Genel alt sınıfları
 
 ## <a name="using-generics-with-nsobjects"></a>Genel türler NSObjects ile kullanma
 

@@ -1,20 +1,19 @@
 ---
-title: Belge Seçici
-description: Belge Seçici görünüm denetleyicisini uygulamanın sandbox dışındaki dosyalara kullanıcıların erişim verir. Uygulamalar arasında belgeleri paylaşmak için basit bir mekanizmadır. Kullanıcılar, birden çok uygulama ile tek bir belgenin düzenleyebilir çünkü ayrıca daha karmaşık iş akışları sağlar. Bu makalede bir Xamarin.iOS uygulaması belge seçicisini kullanarak bir giriş sağlar ve iCloud belgelerdeki değişiklikleri desteklemek için gereklidir.
+title: Xamarin.iOS belge seçicide
+description: Bu belge, belge Seçici iOS açıklar ve nasıl Xamarin.iOS içinde kullanılacağı açıklanır. İCloud, belgeler, ortak kurulum kodu, belge sağlayıcısı uzantıları ve daha fazlasını göz alır.
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: d9b98611c7d269e590ce6fe2ce0270ef71dacf1e
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: efa1b589ad4afe26d8b87c3db1777660b3e27be6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786892"
 ---
-# <a name="document-picker"></a>Belge Seçici
-
-_Belge Seçici görünüm denetleyicisini uygulamanın sandbox dışındaki dosyalara kullanıcıların erişim verir. Uygulamalar arasında belgeleri paylaşmak için basit bir mekanizmadır. Kullanıcılar, birden çok uygulama ile tek bir belgenin düzenleyebilir çünkü ayrıca daha karmaşık iş akışları sağlar. Bu makalede bir Xamarin.iOS uygulaması belge seçicisini kullanarak bir giriş sağlar ve iCloud belgelerdeki değişiklikleri desteklemek için gereklidir._
+# <a name="document-picker-in-xamarinios"></a>Xamarin.iOS belge seçicide
 
 Belge Seçici belgelerinin uygulamalar arasında paylaşılmasına olanak tanır. Bu belgeler, iCloud veya farklı bir uygulamanın dizinde depolanabilir. Belgeleri kümesi paylaşılan [belge sağlayıcısı uzantıları](~/ios/platform/extensions.md) kullanıcı cihazlarında yükledi. 
 

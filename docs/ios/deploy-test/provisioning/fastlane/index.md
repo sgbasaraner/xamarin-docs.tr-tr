@@ -1,21 +1,20 @@
 ---
 title: İOS için fastlane giriş
-description: Bu kılavuz imza iOS uygulamalarını kodlamak için kullanılabilecek çeşitli fastlane araçları sunar
+description: Bu kılavuz imza iOS uygulamalarını kodlamak için kullanılabilecek çeşitli fastlane araçları sunar. Bu güncelleştirme, yükleme ve fastlane araçlarını kullanma açıklar.
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 68c252edecc4ebffb764c0de328ab605975471c4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ffb7e0a088bcd227f45b97229f089ef59d4d6608
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785495"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>İOS için fastlane giriş
-
-_Bu kılavuz imza iOS uygulamalarını kodlamak için kullanılabilecek çeşitli fastlane araçları sunar_
 
 fastlane iOS ve Android uygulamalarını yayınlama karmaşık ve genellikle sıkıcı işlemini basitleştirmek için oluşturulan bir açık kaynak projesidir. Her uygulama sürümü, belirli bir durum gibi ele birkaç yardımcı oluşur:
 

@@ -1,18 +1,20 @@
 ---
-title: İlerleme durumu ve etkinliği göstergeleri
+title: İlerleme durumu ve Xamarin.iOS etkinlik göstergeleri
+description: Bu belge içinde Xamarin.iOS ilerleme durumu ve etkinliği göstergeleri kullanmayı açıklar. Bunların programlı ve film şeridi ile nasıl kullanılacağını açıklar.
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 58a492bed81a1d96a482c1396718da1c5e4af589
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 27ee788ec40bfd158dbc0d9926245b166e2954a9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790061"
 ---
-# <a name="progress-and-activity-indicators"></a>İlerleme durumu ve etkinliği göstergeleri
+# <a name="progress-and-activity-indicators-in-xamarinios"></a>İlerleme durumu ve Xamarin.iOS etkinlik göstergeleri
 
 Uygulamanızı uzun taşımak gerekecek olasıdır yüklenirken veya veri ve UI güncelleştirme bu gecikme bir gecikmeye neden olabileceğini işleme gibi görevleri çalıştırma. Bu süre boyunca sistem çalışarak meşgul olduğunu kullanıcı reassure için bir İlerleme göstergesi her zaman kullanmalısınız. Bu uygulama için kendi giriş, beklenmiyor kendi istek üzerinde çalışan kullanıcı denetimi sağlar ve bunlar beklemek zorunda tam olarak ne kadar ayrıntılı bir araç sağlar.
 

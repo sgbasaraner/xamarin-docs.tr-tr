@@ -1,30 +1,31 @@
 ---
-title: PhotoKit
-description: Fotoğraf Seti sistem resim kitaplığı sorgulamak ve görüntülemek ve içeriğini değiştirmek için özel kullanıcı Arabirimi oluşturmak uygulamaları sağlar.
+title: Xamarin.iOS PhotoKit
+description: Kendi model nesneleri ele PhotoKit, bu belgede açıklanan nasıl sorgu model verileri için ve Fotoğraf Kitaplığı değişiklikler kaydediliyor.
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: c721064f62f8e2255de2b4ea2d0438e3ed630d39
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4aeeec5b96e24c654407ad672930c0cb78592450
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787903"
 ---
-# <a name="photokit"></a>PhotoKit
+# <a name="photokit-in-xamarinios"></a>Xamarin.iOS PhotoKit
 
-_Fotoğraf Seti sistem resim kitaplığı sorgulamak ve görüntülemek ve içeriğini değiştirmek için özel kullanıcı Arabirimi oluşturmak uygulamaları sağlar._
-
-Fotoğraf Seti sistem resim kitaplığı sorgulamak ve görüntülemek ve içeriğini değiştirmek için özel kullanıcı arabirimleri oluşturmak için uygulamalarına izin veren yeni bir çerçevedir. Birkaç görüntü ve video varlıklar yanı sıra, Albümler ve klasörler gibi varlıklar koleksiyonu temsil eden sınıfları içerir.
+PhotoKit sistem resim kitaplığı sorgulamak ve görüntülemek ve içeriğini değiştirmek için özel kullanıcı arabirimleri oluşturmak için uygulamalarına izin veren yeni bir çerçevedir. Birkaç görüntü ve video varlıklar yanı sıra, Albümler ve klasörler gibi varlıklar koleksiyonu temsil eden sınıfları içerir.
 
 ## <a name="model-objects"></a>Model nesneleri
-Fotoğraf Seti ne model nesneleri çağırır içinde bu varlıkları temsil eder. Fotoğraflarınıza ve videolarınıza kendilerini temsil model nesneleri türlerinin `PHAsset`. A `PHAsset` varlığın medya türü ve oluşturma tarihi gibi meta veriler içeriyor.
+
+PhotoKit ne model nesneleri çağırır içinde bu varlıkları temsil eder. Fotoğraflarınıza ve videolarınıza kendilerini temsil model nesneleri türlerinin `PHAsset`. A `PHAsset` varlığın medya türü ve oluşturma tarihi gibi meta veriler içeriyor.
 Benzer şekilde, `PHAssetCollection` ve `PHCollectionList` sınıfları varlık koleksiyonları ve koleksiyon listeleri hakkındaki meta verileri sırasıyla içerir. Varlık koleksiyonlar tüm fotoğraf ve videoları verilen yıl gibi varlıklar gruplarıdır. Benzer şekilde, koleksiyon listeleri fotoğraflarınıza ve videolarınıza yıla göre gruplandırılan gibi varlık koleksiyonlar gruplarıdır.
 
 ## <a name="querying-model-data"></a>Model verileri Sorgulama
-Fotoğraf Seti sorgu model verileri çeşitli fetch yöntemler kolaylaştırır. Örneğin, tüm görüntüleri almak için çağırırdı `PFAsset.Fetch`, geçen `PHAssetMediaType.Image` medya türü.
+
+PhotoKit sorgu model verileri çeşitli fetch yöntemler kolaylaştırır. Örneğin, tüm görüntüleri almak için çağırırdı `PFAsset.Fetch`, geçen `PHAssetMediaType.Image` medya türü.
 
     PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 

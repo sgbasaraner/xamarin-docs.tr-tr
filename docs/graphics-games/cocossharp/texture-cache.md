@@ -1,16 +1,17 @@
 ---
-title: CCTextureCache kullanarak doku önbelleğe alma
+title: Doku CCTextureCache kullanarak önbelleğe alma
 description: CocosSharp'ın CCTextureCache sınıfı, önbellek, düzenlemek ve içeriği kaldırma için standart bir yol sağlar. Gruplandırma ve dokuları atma işlemi basitleştirme tamamen RAM uygun değildir büyük oyunlar özellikle yararlıdır.
 ms.prod: xamarin
 ms.assetid: 1B5F3F85-9E68-42A7-B516-E90E54BA7102
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: bb75efea0914827f1d59a8e0943584597f91803a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c217d8a935ae971aab472b05968c0251366362b2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783694"
 ---
 # <a name="texture-caching-using-cctexturecache"></a>Doku CCTextureCache kullanarak önbelleğe alma
 

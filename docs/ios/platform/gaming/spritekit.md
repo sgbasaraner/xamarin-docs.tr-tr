@@ -1,33 +1,35 @@
 ---
-title: SpriteKit
+title: Xamarin.iOS SpriteKit
+description: Bu belgede SpriteKit, SceneKit ile tümleştirilir, fizik ve animasyon içerir, aydınlatma ve gölgelendirme ve daha fazla bilgi için destek içerir Apple'nın 2B grafik framework açıklanmaktadır. SpriteKit 2B oyun oluşturmak için kullanılabilir.
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 967fd5b25213478c89d1ab849b6c0b7ac66d0e20
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b74b5a722aab240b55ed96bea2a33b162d7817eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786775"
 ---
-# <a name="spritekit"></a>SpriteKit
+# <a name="spritekit-in-xamarinios"></a>Xamarin.iOS SpriteKit
 
-Hareketli grafik Seti, 2B oyun framework Apple, iOS 8 ve OS X Yosemite ilginç bazı yeni özellikler vardır. Bunlar Sahne Seti, gölgelendirici desteği, aydınlatma, gölge, kısıtlamalar, normal eşlem oluşturma ve fizik geliştirmeleri ile tümleştirme içerir. Özellikle, yeni fizik özellikleri çok oyun için gerçekçi efektler eklemek kolaylaştırır.
+SpriteKit, 2B grafik framework Apple, iOS 8 ve OS X Yosemite ilginç bazı yeni özellikler vardır. Bunlar SceneKit, gölgelendirici desteği, aydınlatma, gölge, kısıtlamalar, normal eşlem oluşturma ve fizik geliştirmeleri ile tümleştirme içerir. Özellikle, yeni fizik özellikleri çok oyun için gerçekçi efektler eklemek kolaylaştırır.
 
 ## <a name="physics-bodies"></a>Fizik gövdeleri
 
-Hareketli grafik Seti 2B, katı gövde fizik API içerir. Bir ilişkili fizik gövdesi her hareketli grafik sahiptir (`SKPhysicsBody`), fizik dünyada yığın ve uyuşmazlık yanı sıra, gövde geometri gibi fizik özelliklerini tanımlar.
+SpriteKit 2B, katı gövde fizik API içerir. Bir ilişkili fizik gövdesi her hareketli grafik sahiptir (`SKPhysicsBody`), fizik dünyada yığın ve uyuşmazlık yanı sıra, gövde geometri gibi fizik özelliklerini tanımlar.
 
 ## <a name="creating-a-physics-body-from-a-texture"></a>Bir doku fizik gövde oluşturma
-Hareketli grafik Seti artık bir hareketli grafik fizik gövdesi, doku türetme destekler. Bu, daha doğal Ara çakışmaları uygulamak kolaylaştırır.
+SpriteKit artık bir hareketli grafik fizik gövdesi, doku türetme destekler. Bu, daha doğal Ara çakışmaları uygulamak kolaylaştırır.
 
 Örneğin, aşağıdaki çakışma nasıl neredeyse her görüntü yüzeyini Muz ve monkey birbiriyle çakışır dikkat edin:
  
 ![](spritekit-images/image13.png "Muz ve monkey neredeyse her görüntü yüzeyini birbiriyle çakışır")
 
-Bu tür bir fizik gövde oluşturma hareketli grafik Seti tek satırlık bir kod ile mümkün kılar. Basit Arama `SKPhysicsBody.Create` doku ve boyutuna sahip: hareketli grafik. PhysicsBody = SKPhysicsBody.Create (hareketli grafik. Doku, hareketli grafik. Boyut);
+Bu tür bir fizik gövde oluşturma SpriteKit tek satırlık bir kod ile mümkün kılar. Basit Arama `SKPhysicsBody.Create` doku ve boyutuna sahip: hareketli grafik. PhysicsBody = SKPhysicsBody.Create (hareketli grafik. Doku, hareketli grafik. Boyut);
 
 ## <a name="alpha-threshold"></a>Alfa eşiği
 
@@ -45,7 +47,7 @@ sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
  
 ## <a name="physics-fields"></a>Fizik alanları
 
-Başka bir harika hareketli grafik Seti için yeni fizik alan Destek ektir. Bunlar, vortex alanları gibi şeyler eklemenize izin Radyal yer çekimi ve birkaç adlandırmak için yay alanları.
+Başka bir harika SpriteKit için yeni fizik alan Destek ektir. Bunlar, vortex alanları gibi şeyler eklemenize izin Radyal yer çekimi ve birkaç adlandırmak için yay alanları.
 
 Fizik alanları gibi diğer Sahne eklenir SKFieldNode sınıfı kullanılarak oluşturulur `SKNode`. Çeşitli Fabrika yöntemler vardır `SKFieldNode` farklı fizik alanları oluşturmak için. Çağırarak yay alanı oluşturabilirsiniz `SKFieldNode.CreateSpringField()`, çağırarak Radyal yer çekimi alan `SKFieldNode.CreateRadialGravityField()`ve benzeri.
 
@@ -85,7 +87,7 @@ Bu alan düğümü geçici yay gibi oscillate muzlar neden olur:
 
 ![](spritekit-images/image15.png "Alan düğümü geçici yay gibi muzlar oscillate")
  
-## <a name="radial-gravity-field"></a>Radial Gravity Field
+## <a name="radial-gravity-field"></a>Radyal yer çekimi alan
 
 Farklı bir alan ekleyerek benzer. Örneğin, aşağıdaki kod bir Radyal yer çekimi alan oluşturur:
 

@@ -1,22 +1,22 @@
 ---
-title: Dil Desteği
-description: Platformlar arası uygulama özelliklerinin ve kavramlarının.
+title: Xamarin'daki dil desteği programlama
+description: 'Bu belgede Xamarin tarafından desteklenen çeşitli programlama dillerini açıklanmaktadır. C#, F #, taşınabilir Visual Basic.NET ve Razor şablonları açıklanır.'
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 18d7e93d686f369dec4a98b5b5f6c77679119091
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 715f63a0be54ba3342bd63c1c76d89656313359a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781682"
 ---
-# <a name="language-support"></a>Dil Desteği
-
-Bu bölümde bazı daha gelişmiş platformlar arası uygulama özelliklerinin ve kavramlarının açıklayan belgelerini içerir.
+# <a name="programming-language-support-in-xamarin"></a>Xamarin'daki dil desteği programlama
 
 ## <a name="c"></a>C# 
+
 ###  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[Zaman Uyumsuz Desteğe Genel Bakış](~/cross-platform/platform/async.md)
 
 Zaman uyumsuz işlemleri ifade etmek için iki yeni anahtar sözcüklerle sürüm 5 C# sunulan: async ve await. Bu anahtar sözcükler, başka bir iş parçacığında (örneğin, ağ erişimi) uzun süre çalışan işlemlerini yürütmek için görev paralel kitaplığı kullanan basit kod yazmak ve kolayca tamamlama sonuçlarına erişme olanak tanır. Xamarin.iOS ve Xamarin.Android en son sürümlerini zaman uyumsuz desteği ve await - bu belge, açıklamalar ve Xamarin ile yeni sözdizimini kullanarak bir örnek sağlar.

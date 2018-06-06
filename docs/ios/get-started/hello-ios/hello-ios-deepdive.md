@@ -1,6 +1,6 @@
 ---
-title: 'Merhaba, iOS: derinlemesine bakış'
-description: Bu iki parçalı Kılavuzu, Mac veya Visual Studio için Visual Studio kullanarak temel bir Xamarin.iOS uygulaması oluşturma ve Xamarin ile iOS uygulaması geliştirme ile ilgili temel bilgileri bir anlayış geliştirmek açıklar. Araçlar, kavramlar ve oluşturmak ve bir Xamarin.iOS uygulaması dağıtmak için gerekli adımları tanıtılacaktır.
+title: Merhaba, iOS – derinlemesine bakış
+description: Bu belgede bir daha derin Hello inceler, iOS örnek uygulama mimarisi, kullanıcı arabirimi, içerik görünümü hiyerarşisi, test, dağıtım ve daha fazla dikkate alarak.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 71bfccdcab73b651f458dd8d9c5396bffd55004b
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f7869f572bfd6f6c8a0bc710c6e28671c22ad7eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786406"
 ---
-# <a name="hello-ios-deep-dive"></a>Merhaba, iOS derinlemesine bakış
+# <a name="hello-ios--deep-dive"></a>Merhaba, iOS – derinlemesine bakış
 
 Hızlı Başlangıç Kılavuzu oluşturma ve temel bir Xamarin.iOS uygulaması çalıştırma kullanıma sunuldu. Şimdi daha karmaşık programları oluşturabilmeniz iOS uygulamaların nasıl çalıştığı, daha derin bir anlayış geliştirmek için zaman yapılır. Bu kılavuz adımları gözden geçirir, Hello, iOS uygulama geliştirme temel kavramlarını anlama etkinleştirmek için iOS gözden geçirme.
 
 Aşağıdaki konular bu makalede ele alınan dizelerle:
-
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 

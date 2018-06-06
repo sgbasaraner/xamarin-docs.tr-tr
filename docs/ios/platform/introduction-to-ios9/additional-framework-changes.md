@@ -1,16 +1,17 @@
 ---
 title: Ek iOS 9 çerçeveleri değişiklikleri
-description: Bu makalede, ek, küçük değişiklikler veya iOS 9 varolan çerçeveyi geliştirmeler kapsar.
+description: Bu belgede iOS 9 sunulan ek framework değişiklikler açıklanmaktadır. AVFoundation, AVKit ve CloudKit açıklanır.
 ms.prod: xamarin
 ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0ae286ddbc61f48cbdd257dc453a2d9680bba703
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 15c9364cf3bdcb8c797882cc9ac76219959de439
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787714"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Ek iOS 9 çerçeveleri değişiklikleri
 
@@ -20,9 +21,9 @@ _Bu makalede, ek, küçük değişiklikler veya iOS 9 varolan çerçeveyi geliş
 
 İOS için önemli değişiklikler yanı sıra Apple iOS 9 değişikliklerini ve birkaç varolan çerçeveleri geliştirmeleri yaptı.
 
-## <a name="av-foundation-framework-additions"></a>AV Foundation Framework eklemeler
+## <a name="avfoundation-framework-additions"></a>AVFoundation Framework eklemeler
 
-AV Foundation Framework'teki [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/) sınıfı şimdi bir sesli dil yanı sıra tanımlayıcısıyla belirtmenize olanak verir.
+AVFoundation Framework [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/) sınıfı şimdi bir sesli dil yanı sıra tanımlayıcısıyla belirtmenize olanak verir.
 
 Örneğin, aşağıdaki kod, tüm kullanılabilir seslerini listesini alır:
 

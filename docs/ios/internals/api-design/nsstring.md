@@ -1,27 +1,28 @@
 ---
-title: NSString
+title: Xamarin.iOS ve Xamarin.Mac NSString
+description: Bu belgede, bu gerçekleşmez nasıl Xamarin.iOS saydam NSString nesneleri C# dize nesnelere, dönüştürür açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 785744B3-42E2-4590-8F41-435325E609B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 4b084c2f1066c5cfad90911d845aa7555c669130
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: baf36700ab4d608296a9a67e234ce613da9ca077
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786096"
 ---
-# <a name="nsstring"></a>NSString
+# <a name="nsstring-in-xamarinios-and-xamarinmac"></a>Xamarin.iOS ve Xamarin.Mac NSString
 
 Xamarin.iOS ve Xamarin.Mac tasarımına yerel .NET dize türünde kullanıma sunmak için kullanım API çağrılarının `string`, dize düzenlemesi C# ve diğer .NET programlama dilleri için ve dize yerineAPI'sitarafındankullanımasunulanveritürüolarakkullanımasunmakiçin`NSString` veri türü.
-
 
 Bu geliştiriciler Xamarin.iOS & Xamarin.Mac API (Birleşik) içine çağırmak için kullanılması hedeflenen dizeleri tutmak olmamalıdır özel bir tür anlamına gelir (`Foundation.NSString`), bunlar Mono'nın kullanmaya devam edebileceğiniz `System.String` tüm işlemler için ve her bir dizeyi bir API Xamarin.iOS veya Xamarin.Mac gerektirir, bizim API bağlama mvc'deki bilgileri hazırlama.
 
 Örneğin, Objective-C "metin" özelliği bir `UILabel` türü `NSString`, şöyle bildirilmiş:
 
-```csharp
+```objc
 @property(nonatomic, copy) NSString *text
 ```
 
@@ -39,14 +40,11 @@ Değil tüketen üçüncü taraf Objective-C API'lerini sayıda vardır bir `NSS
 
  <a name="Exceptions_to_the_Rule" />
 
-
 ## <a name="exceptions-to-the-rule"></a>Kural için özel durumlar
 
 Xamarin.iOS hem Xamarin.Mac Biz bu kural için bir özel yapıldı. Ne zaman biz kullanıma arasında karar `string`s, ve ne zaman vermiyoruz bir dışındaki ve kullanıma `NSString`s, varsa yapılan `NSString` yöntemi bir işaretçi karşılaştırması içerik karşılaştırma yerine yapılması.
 
-
 Objective C API'lerini genel kullandığında oluşabilir `NSString` sabit dize gerçek içeriğini karşılaştırma yerine bazı eylemleri temsil eden bir belirteci olarak.
-
 
 Bu durumlarda, `NSString` API'leri sunulur ve bu API'ları nadiren vardır. Ayrıca bazı sınıflarda NSString özellikleri sunulan fark edeceksiniz. Bu `NSString` özellikleri bildirimleri gibi öğeleri için sunulur. Bu özellikleri genellikle şuna şunlardır:
 
@@ -55,7 +53,6 @@ class Foo {
      public NSString FooNotification { get; }
 }
 ```
-
 Bildirimler için kullanılan anahtarları olan `NSNotification` sınıfı çalışma zamanı tarafından yayınlandığı belirli bir olay kaydetmek istediğinizde.
 
 Anahtarlar genellikle aşağıdaki gibi görünmelidir:

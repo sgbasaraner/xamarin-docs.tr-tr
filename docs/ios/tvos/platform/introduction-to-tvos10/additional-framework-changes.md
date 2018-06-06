@@ -1,28 +1,26 @@
 ---
 title: Ek tvOS 10 çerçeveleri değişiklikleri
-description: Bu makalede, ek, küçük değişiklikler veya tvOS 10 varolan çerçeveyi geliştirmeler kapsar.
+description: Bu belgede, küçük değişiklikler ve iOS 10 içinde varolan çerçeve yapılan geliştirmeler açıklanmaktadır. Güncelleştirmeleri AVFoundation, AVKit, çekirdek veri, çekirdek grafikleri, Foundation, GameKit, GameplayKit ve daha fazlasını açıklanır.
 ms.prod: xamarin
 ms.assetid: F771640A-F92E-4954-82D5-2D720434971E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c53726b91a0cd3e79041b9b1d51e9f7fbb1c79bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 326fb6a23048ba3d3e1d33f42c8da2fff8544c25
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788881"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Ek tvOS 10 çerçeveleri değişiklikleri
-
-_Bu makalede, ek, küçük değişiklikler veya tvOS 10 varolan çerçeveyi geliştirmeler kapsar._
-
 
 TvOS önemli değişiklikler yanı sıra, Apple değişikliklerini ve birkaç varolan çerçeveleri geliştirmeleri tvOS 10 yaptı.
 
 <a name="AV-Foundation-Framework" />
 
-## <a name="av-foundation-framework-additions"></a>AV Foundation Framework eklemeler
+## <a name="avfoundation-framework-additions"></a>AVFoundation Framework eklemeler
 
 AVFoundation framework aşağıdaki geliştirmeleri içerir:
 

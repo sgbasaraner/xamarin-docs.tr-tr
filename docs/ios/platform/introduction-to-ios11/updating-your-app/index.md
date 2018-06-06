@@ -1,21 +1,20 @@
 ---
 title: İOS 11 uygulamanızı güncelleştirme
-description: İOS 11'ın yeni özellikleri keşfetmek
+description: Bu belge bağlantılar çeşitli kılavuzlara Xamarin.iOS geliştiricilere iOS 11 sürümü ile kullanılabilen yeni özellikleri açıklar. Örneğin, uygulama mağazası görsel tasarım güncelleştirmeleri değiştirir ve uygulama simgesini güncelleştirir.
 ms.prod: xamarin
 ms.assetid: EC809504-9CF6-4949-B6EE-36384297E744
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2581f729d85787021763f50f005e84d6bbb5db01
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea57acbd6165f7b1abd8b9bd69873670c179f411
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787578"
 ---
 # <a name="updating-your-app-to-ios-11"></a>İOS 11 uygulamanızı güncelleştirme
-
-_İOS 11'ın yeni özellikleri keşfetmek_
 
 İOS 11, Apple mimarisi güncelleştirmeleri, yeni görsel değişiklikler ve güncelleştirilmiş iTunes bağlanma işlemi anlatılmıştır. Bu kılavuzda bu değişiklikler, her 11 iOS için güncelleştirilmiş Xamarin.iOS uygulamanızı alma yardımcı araştırır.
 

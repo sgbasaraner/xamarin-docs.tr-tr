@@ -1,5 +1,5 @@
 ---
-title: SiriKit
+title: Xamarin.iOS SiriKit
 description: Bu makalede SiriKit bir Xamarin.iOS uygulaması bir iOS cihazında Siri kullanarak kullanıcı tarafından erişilebilir hizmetleri sağlamak için nasıl kullanılacağı gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 84E5681A-F557-4967-AA99-F831169157AA
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: ac68f249361fd5bee8af102a1418c9d5f1d2c0ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 584b694c83d6c66d6e79e1030b2e682cefb64e6a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788058"
 ---
-# <a name="sirikit"></a>SiriKit
+# <a name="sirikit-in-xamarinios"></a>Xamarin.iOS SiriKit
 
 _Bu makalede SiriKit bir Xamarin.iOS uygulaması bir iOS cihazında Siri kullanarak kullanıcı tarafından erişilebilir hizmetleri sağlamak için nasıl kullanılacağı gösterilmektedir._
 
@@ -44,7 +45,7 @@ Bu makalede bir Xamarin.iOS uygulamaları SiriKit destek uygulamak için gerekli
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [ElizaChat Sample](https://developer.xamarin.com/samples/monotouch/ios10/ElizaChat/)
+- [ElizaChat örnek](https://developer.xamarin.com/samples/monotouch/ios10/ElizaChat/)
 - [SiriKit Programlama Kılavuzu](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
 - [Hedefleri Framework başvurusu](https://developer.apple.com/reference/intents)
 - [Hedefleri UI Framework başvurusu](https://developer.apple.com/reference/intentsui)

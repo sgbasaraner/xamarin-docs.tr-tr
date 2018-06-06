@@ -1,18 +1,20 @@
 ---
-title: ARKit UrhoSharp ile kullanma
+title: Xamarin.iOS UrhoSharp ARKit kullanarak
+description: Bu belge Xamarin.iOS ARKit uygulamada ayarlama açıklar ve ardından nasıl çerçeveleri, kamera ayarlamak nasıl işlendiğini adresindeki arar nasıl algılanacağını düzeyi, aydınlatma ve daha fazla ile nasıl çalışılacağı. Ayrıca UrhoSharp ve HoloLens için kod yazma anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/01/2016
-ms.openlocfilehash: 95c9c602d0bfe1b77fda453a137dfdfc12a975c9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0d70b1f751d5aa6b6c8fa578f53ba1ac8260cfa1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787109"
 ---
-# <a name="using-arkit-with-urhosharp"></a>ARKit UrhoSharp ile kullanma
+# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Xamarin.iOS UrhoSharp ARKit kullanarak
 
 Girişiyle [ARKit](https://developer.apple.com/arkit/), Apple yaptı, geliştiricilerin genişletilmiş gerçekte uygulamaları oluşturmak için basit. ARKit Cihazınızı tam konumunu izleyebilir ve dünya üzerindeki çeşitli yüzeyleri algılamak ve sonra kodunuza dışında ARKit gelen veriler blend Geliştirici kadar olur.
 

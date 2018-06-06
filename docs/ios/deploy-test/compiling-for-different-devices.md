@@ -1,18 +1,20 @@
 ---
-title: Farklı aygıtlar için derleme
+title: Xamarin.iOS farklı aygıtlar için derleme
+description: Bu belgede bir Xamarin.iOS yapı farklı aygıtlar için özelleştirmek için kullanılan çeşitli yapı yapılandırma seçenekleri açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 3B259248-887E-3E4F-E09C-7AD28C2A8CEE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 039e0a931613ec79ccd6f2b13bc18ae6b80f5195
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b1bfab36646256eee706316c70004aef8399994
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784851"
 ---
-# <a name="compiling-for-different-devices"></a>Farklı aygıtlar için derleme
+# <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS farklı aygıtlar için derleme
 
 Yürütülebilir dosyanın derleme özelliklerini projenin yapılandırılabilir **iOS yapı** proje adına sağ tıklayıp için gözatma bulunan özellikler sayfası **Seçenekleri > iOS yapı** içinde Mac için Visual Studio ve **özellikleri** Visual Studio'da:
 
@@ -77,7 +79,7 @@ Bu iOS Mac veya Visual Studio için Visual Studio'da derleme seçenekleri etkinl
 
 ### <a name="armv6-xamarinios-discontinued-support-for-armv6-with-v810"></a>ARMv6 (Xamarin.iOS dönüştürülmesine ARMv6 desteği v8.10 ile)
 
-- iPhone (original), 3G
+- iPhone (özgün), 3G
 - iPod 1, 2. nesil
 
 ### <a name="armv7"></a>ARMv7
@@ -96,15 +98,15 @@ Yalnızca ARMv7s işlemci hedefliyorsanız, oluşturulan kodu biraz daha hızlı
 
 ### <a name="arm64-xamarinios-started-supporting-arm64-in-v86"></a>ARM64 (Xamarin.iOS başlatılan ARM64 içinde v8.6 destekleme)
 
-- iPhone 5s
-- iPhone SE
+- iPhone 5s'dir
+- iPhone kullan
 - iPhone 6, 6 Plus
 - iPhone 6s, 6s Plus
-- iPhone 7, 7 Plus
-- iPhone 8, 8 Plus
+- iPhone 7, 7 artı
+- iPhone 8, 8 artı
 - iPhone X
-- iPad Air
-- iPad Air 2
+- iPad hava
+- iPad hava 2
 - iPad Mini 2, 3, 4
 - iPad Pro (Tümü)
 

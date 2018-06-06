@@ -1,19 +1,20 @@
 ---
-title: Web biçimlendirme ile arama
-description: Uygulamanızı yeniden bağlayabilirsiniz web tabanlı arama sonuçları ekleniyor.
+title: Web biçimlendirme Xamarin.iOS içinde arama
+description: Bu belge, bir Xamarin.iOS uygulamasına bağlantı web tabanlı arama sonuçları oluşturmayı açıklar. Dizin oluşturma, uygulamanızın Web sitesi bulunabilir, akıllı uygulama başlıkları, Evrensel bağlantılar ve daha fazlasını kullanarak olmasını web içeriği etkinleştirmek nasıl açıklanır.
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: bc3446419ef0e469f7184d60fe8876cd2e5da520
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438a65de3eb78f849493e3478bce5522a325d0cd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788000"
 ---
-# <a name="search-with-web-markup"></a>Web biçimlendirme ile arama
+# <a name="search-with-web-markup-in-xamarinios"></a>Web biçimlendirme Xamarin.iOS içinde arama
 
 Bir web sitesi aracılığıyla kendi içeriğine erişim sağlayan uygulamalar için (değil yalnızca uygulama içinde), web içeriği işaretlenir, Apple tarafından gezinme ve, uygulama kullanıcının iOS 9 cihazında derin bağlama sağlayan özel bağlantılarla.
 

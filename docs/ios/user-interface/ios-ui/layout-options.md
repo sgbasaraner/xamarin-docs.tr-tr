@@ -1,24 +1,25 @@
 ---
-title: Düzen Seçenekleri
+title: Xamarin.iOS düzeni seçenekleri
+description: Bu belgede Xamarin.iOS kullanıcı arabirimleri yerleştirme için farklı yollar açıklanmaktadır. Otomatik boyutlandırma ve otomatik yerleşimi açıklanır.
 ms.prod: xamarin
 ms.assetid: D8180FEC-F300-42C0-B029-66803E0C1A5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 8f197bbffeabb708769c48f0130aa27a86b14386
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bad29eae308c8ca9f7228a1cbdfd69940894cf34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790122"
 ---
-# <a name="layout-options"></a>Düzen Seçenekleri
+# <a name="layout-options-in-xamarinios"></a>Xamarin.iOS düzeni seçenekleri
 
 Bir görünümü yeniden boyutlandırılmış veya Döndürülmüş düzenini denetlemek için iki farklı mekanizmalar vardır:
 
 -  **Otomatik boyutlandırma** – Tasarımcısı'nda Otomatik boyutlandırma denetçisi ayarlamak için bir yöntem sunar `AutoresizingMask` özellikleri. Bu, kullanıcıların kapsayıcı kenarlarına bağlantılı ve/veya bunların boyutu düzeltme denetim sağlayacaktır. Otomatik boyutlandırma iOS tüm sürümlerinde çalışır. Bu aşağıdaki daha ayrıntılı olarak açıklanır
--  **Otomatik Düzen** – UI denetimlerinin ilişkileri üzerinde ayrıntılı denetim sağlar iOS6 sunulan bir özellik. Öğe diğer öğeleri göreli konumlarını Denetim tasarım yüzeyine izin verir. Bu konuda daha ayrıntılı olarak ele alınmıştır [Xamarin iOS Tasarımcısı otomatik düzeniyle](~/ios/user-interface/designer/designer-auto-layout.md) Kılavuzu.
-
+-  **Düzen otomatik** – UI denetimlerinin ilişkileri üzerinde ayrıntılı denetim iOS 6'de sunulan, bir özellik. Öğe diğer öğeleri göreli konumlarını Denetim tasarım yüzeyine izin verir. Bu konuda daha ayrıntılı olarak ele alınmıştır [Xamarin iOS Tasarımcısı otomatik düzeniyle](~/ios/user-interface/designer/designer-auto-layout.md) Kılavuzu.
 
 ## <a name="autosizing"></a>Otomatik boyutlandırma
 

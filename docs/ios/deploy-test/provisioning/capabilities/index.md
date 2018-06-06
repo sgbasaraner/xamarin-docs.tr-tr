@@ -1,5 +1,5 @@
 ---
-title: Özellikleri ile çalışma
+title: Xamarin.iOS özellikleri ile çalışma
 description: Bir uygulama genelde yetenekleri ekleme sağlama ek kurulum gerektirir. Bu kılavuz, tüm özellikler için gereken kurulum açıklar.
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: e6fc3d38fef7c7c3204d1413911ddfa9a486c67c
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: c897b1f5fbdf950e6858d7b73ebed60049f60e8e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785563"
 ---
-# <a name="working-with-capabilities"></a>Özellikleri ile çalışma
+# <a name="working-with-capabilities-in-xamarinios"></a>Xamarin.iOS özellikleri ile çalışma
 
 _Bir uygulama genelde yetenekleri ekleme sağlama ek kurulum gerektirir. Bu kılavuz, tüm özellikler için gereken kurulum açıklar._
 
@@ -21,8 +22,8 @@ Apple sağlar geliştiricilere _yetenekleri_, çoğunlukla bilinen _uygulama hiz
 Bu özellikler Xamarin.iOS projeleri ile kullanılabilir. Hizmetlerin tam listesini aşağıda belirtilmiştir:
 
 * Uygulama grupları
-* İlişkili etki alanları
-* Veri koruma
+* İlişkili Etki Alanları
+* Veri Koruma
 * Oyun Merkezi
 * HealthKit
 * HomeKit

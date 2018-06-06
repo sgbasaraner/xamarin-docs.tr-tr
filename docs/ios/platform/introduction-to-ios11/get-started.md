@@ -1,17 +1,18 @@
 ---
 title: İOS 11 ile çalışmaya başlama
-description: Xcode 9 yükleyip
+description: Bu belgede iOS 11 uygulamalarını geliştirmeye başlamak için tamamlanması gereken adımları açıklar. Xcode indirin ve Visual Studio 2017 güncelleştirmek nasıl açıklanır.
 ms.prod: xamarin
 ms.assetid: 794EA2C4-884B-42AC-B8C4-8C8E5474B660
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 2982e8acd27207452b74320cb3ea17d2ffc7375e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 494ffa4ffef09eedf2ce38f33e2e2b216a9417bb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786918"
 ---
 # <a name="getting-started-with-ios-11"></a>İOS 11 ile çalışmaya başlama
 

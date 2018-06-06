@@ -1,18 +1,20 @@
 ---
-title: Düzen ile çalışma
+title: WatchOS Xamarin düzende ile çalışma
+description: Bu belge, Xamarin kullanarak watchOS düzen oluşturmayı açıklar. Arabirim denetleyicilerini, gruplar, ayırıcılar ve içerik denetimleri anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: BEDB62A1-2249-4459-986F-413A41E63DF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 38e26544a907ffcafdec38e3e2758d9bdac7b977
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 11ff5ec2fc8fe99a780a3d728d3d84af59794cea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790620"
 ---
-# <a name="working-with-layout"></a>Düzen ile çalışma
+# <a name="working-with-watchos-layout-in-xamarin"></a>WatchOS Xamarin düzende ile çalışma
 
 Düzenleri için Apple Watch tasarlama [ekran boyutları](~/ios/watchos/app-fundamentals/screen-sizes.md) benzersiz zorluklar gösterir.
 

@@ -1,18 +1,20 @@
 ---
-title: Yerel kitaplıkları başvurma
+title: Xamarin.iOS yerel kitaplıklarında başvurma
+description: Bu belgeyi yerel C kitaplıkları bir Xamarin.iOS uygulamasına bağlamak nasıl açıklanır. Evrensel yerel kitaplıkları ve erişilirken C yöntemlerini C# ' dan nasıl oluşturulacağını açıklar.
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/28/2016
-ms.openlocfilehash: 4d58e869dc1357faef71ea88ed6b5ea30aaf960d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb27ba8b2d9c1b66448f22b7f80f17ba2e483544
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787733"
 ---
-# <a name="referencing-native-libraries"></a>Yerel kitaplıkları başvurma
+# <a name="referencing-native-libraries-in-xamarinios"></a>Xamarin.iOS yerel kitaplıklarında başvurma
 
 Xamarin.iOS yerel C kitaplıkları ve Objective-C kitaplıkları ile bağlama destekler. Bu belgeyi yerel C Kitaplıklarınızı Xamarin.iOS projenizle bağlanma açıklanır. Objective-C kitaplıkları için aynı yapılması hakkında daha fazla bilgi için bkz: bizim [bağlama Objective-C türleri](~/ios/platform/binding-objective-c/index.md) belge.
 

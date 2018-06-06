@@ -1,18 +1,20 @@
 ---
-title: İzlenecek yol - arka plan konumu kullanma
+title: İzlenecek yol - Xamarin.iOS arka plan konumu
+description: Bu belge backgrounded bir Xamarin.iOS uygulaması'nda konum bilgilerini kullanmak nasıl bir kılavuz sağlar. Gerekli Kurulum, kullanıcı arabirimi ve uygulama durumlarını açıklar.
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e6c74d9ffba4f63682a905d6ebc06d02be81abf4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aef39ef435bbbad6f643b2376832d8f8132d6a4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784100"
 ---
-# <a name="walkthrough---using-background-location"></a>İzlenecek yol - arka plan konumu kullanma
+# <a name="walkthrough---background-location-in-xamarinios"></a>İzlenecek yol - Xamarin.iOS arka plan konumu
 
 Bu örnekte, biz iOS bizim geçerli konumu hakkında bilgi yazdırır konumu uygulama oluşturmak için kalacaklarını: Enlem ve boylam ekranına diğer parametreleri. Bu uygulamayı uygulama etkin veya Backgrounded durumdayken düzgün konumu güncelleştirmelerinin nasıl yapılacağı gösterilmektedir.
 

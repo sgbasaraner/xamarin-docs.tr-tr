@@ -1,18 +1,20 @@
 ---
-title: Desteklenen ve desteklenmeyen çerçeveler
+title: TvOS içinde desteklenen ve desteklenmeyen çerçeve
+description: 'TvOS uygulamalar için de kullanılabilir özellikleri açıklamak yardımcı olmak için bu belge, Apple çerçeveleri iki listesi sağlar: tvOS tarafından desteklenenler ve bu tvOS tarafından desteklenmiyor.'
 ms.prod: xamarin
 ms.assetid: 28EF1337-3D0E-47AB-8A13-1B333A964FB6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 4b368a8e4d449d8fa8d0d29dab19d227bb6eee4c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8ba33d028263385eca50f8174124bbe629e3f951
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789128"
 ---
-# <a name="supported-and-unsupported-frameworks"></a>Desteklenen ve desteklenmeyen çerçeveler
+# <a name="supported-and-unsupported-frameworks-in-tvos"></a>TvOS içinde desteklenen ve desteklenmeyen çerçeve
 
 <a name="Supported-Frameworks" />
 
@@ -28,7 +30,7 @@ Bu, Xamarin.tvOS uygulamalarınızı kullanmak için Apple'nın sağladığı ç
 * CFNetwork
 * CloudKit
 * CoreBluetooth
-* CoreData
+* Öğesinde CoreData
 * CoreFoundation
 * CoreGraphics
 * CoreImage
@@ -41,7 +43,7 @@ Bu, Xamarin.tvOS uygulamalarınızı kullanmak için Apple'nın sağladığı ç
 * Foundation
 * Oyun denetleyicisi
 * GameKit
-* GamePlay
+* Oyunlar
 * GLKit
 * ImageIO
 * MachO

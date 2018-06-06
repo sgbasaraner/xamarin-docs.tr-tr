@@ -1,6 +1,6 @@
 ---
-title: Merhaba, iOS Multiscreen
-description: Bu iki parçalı kılavuzdaki biz Hello oluşturduğumuz Phoneword uygulama genişletin, ikinci bir ekran işlemek için iOS Kılavuzu. Model-View-Controller tasarım deseni neden şekilde, boyunca ilk bizim iOS Gezinti uygulamak ve iOS uygulama yapısı ve işlevleri daha derin bir anlayış geliştirin.
+title: Merhaba, iOS Multiscreen – hızlı başlangıç
+description: Bu belge, model-view-controller, iOS gezinti ve diğer temel iOS geliştirme kavramlar yol açıklayan bir ikinci ekran eklemek için Phoneword örnek uygulama genişletmek gösterilmiştir.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d72e6230-c9ee-4bee-90ec-877d256821aa
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 3b59b942b3c256418d60436a1c4ba8b4aea14aa4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 469032dc7caa46c6a89b350dc37bc9a93366066a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785677"
 ---
-# <a name="helloios-multiscreen-quickstart"></a>Hello.iOS Multiscreen hızlı başlangıç
+# <a name="hello-ios-multiscreen--quickstart"></a>Merhaba, iOS Multiscreen – hızlı başlangıç
 
 Kılavuzun bu bölümü uygulamayla adı veriliyordu telefon numaralarını geçmişini görüntüler Phoneword uygulama ikinci ekranı ekleyeceksiniz. Son uygulama çağrısı geçmişini görüntüler ikinci bir ekran tarafından aşağıdaki ekran görüntüsünde gösterildiği gibi olacaktır:
 

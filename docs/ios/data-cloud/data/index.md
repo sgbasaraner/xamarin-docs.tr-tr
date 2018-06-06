@@ -1,21 +1,20 @@
 ---
-title: iOS veri erişimi
-description: Çoğu uygulama verileri cihaz üzerinde yerel olarak kaydetmek için bazı gereksinim vardır. Veri miktarını trivially küçük olmadığı sürece, bu genellikle bir veritabanı ve veri katmanı veritabanı erişimi yönetmek üzere uygulamada gerektirir. iOS "yerleşik" SQLite veritabanı altyapısı vardır ve depolamak ve veri almak için erişim Xamarin'ın platform tarafından basitleştirilmiştir. Bu belge, bir SQLite veritabanına erişmek gösterilmiştir.
+title: Xamarin.iOS veri erişimi
+description: Bu belge bağlantılar kılavuzlara Xamarin.iOS uygulamasının yerel veritabanlarıyla çalışmayı açıklar. Bağlantılı içeriği SQLite.NET, ADO.NET ve daha fazlasını açıklanır.
 ms.prod: xamarin
 ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 47f2567d81f61568aad639330dc5133856e31936
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a986ea9931f62497e5a6863c84bd4041983d66d9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784582"
 ---
-# <a name="ios-data-access"></a>iOS veri erişimi
-
-_Çoğu uygulama verileri cihaz üzerinde yerel olarak kaydetmek için bazı gereksinim vardır. Veri miktarını trivially küçük olmadığı sürece, bu genellikle bir veritabanı ve veri katmanı veritabanı erişimi yönetmek üzere uygulamada gerektirir. iOS "yerleşik" SQLite veritabanı altyapısı vardır ve depolamak ve veri almak için erişim Xamarin'ın platform tarafından basitleştirilmiştir. Bu belge, bir SQLite veritabanına erişmek gösterilmiştir._
+# <a name="xamarinios-data-access"></a>Xamarin.iOS veri erişimi
 
 Xamarin.iOS veritabanı erişimi API'leri gibi destekler:
 
@@ -40,7 +39,6 @@ Xamarin.Forms uygulamalar için okuma [veritabanlarıyla çalışma](~/xamarin-f
 -  [SQLite.NET ORM Kullanma](using-sqlite-orm.md)
 -  [ADO.NET Kullanma](using-adonet.md)
 -  [Bir Uygulamadaki Verileri Kullanma](using-data-in-an-app.md)
-
 
 ## <a name="summary"></a>Özet
 

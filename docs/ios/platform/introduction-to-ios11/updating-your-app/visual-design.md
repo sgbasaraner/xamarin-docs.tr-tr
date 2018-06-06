@@ -1,21 +1,20 @@
 ---
-title: Görsel tasarım güncelleştirmeleri
-description: İOS 11'ın yeni özellikleri keşfetmek
+title: İOS 11 Visual tasarım güncelleştirmeleri
+description: Bu belgede iOS 11 güncelleştirmeleri sunulan görsel tasarım açıklanmaktadır. Gezinti çubukları, arama denetleyicileri, kenar boşlukları, tam ekran içeriği ve tablo görünümleri değişiklikler açıklanır.
 ms.prod: xamarin
 ms.assetid: 7C300B94-0FAF-492E-A326-877419A1824B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 50858592ec6246fe825e80a3039f3640ebf708a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bc29e021e30910c7fcc4c3b451d0a4dfe187d05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787857"
 ---
-# <a name="visual-design-updates"></a>Görsel tasarım güncelleştirmeleri
-
-_İOS 11'ın yeni özellikleri keşfetmek_
+# <a name="visual-design-updates-in-ios-11"></a>İOS 11 Visual tasarım güncelleştirmeleri
 
 İOS 11'da, gezinti çubuğunda, arama çubuğunda ve tablo görünümleri güncelleştirmeleri de dahil olmak üzere yeni görsel değişiklikler Apple kullanıma sunuldu. Ayrıca kenar boşluklarını ve tam ekran içerik üzerinde daha fazla esneklik sağlamak amacıyla iyileştirmeler yapılmıştır. Bu değişiklikler, bu kılavuzda ele alınmıştır.
 

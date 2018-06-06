@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials Accelerometer
-description: Accelerometer sınıfı üç boyutlu alanı aygıtı ivmesini gösteren cihazın accelerometer algılayıcı izlemenize olanak sağlar.
+title: 'Xamarin.Essentials: Accelerometer'
+description: Xamarin.Essentials Accelerometer sınıfında üç boyutlu alanı aygıtı ivmesini gösterir ve cihazın accelerometer algılayıcı izlemenize izin verir.
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: bb62ad438c2db906af112322174656bc62740cbc
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 99529f08348254dff7577b7e82da739fabd63a14
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781871"
 ---
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials Accelerometer
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: Accelerometer
 
 ![Yayın öncesi NuGet](~/media/shared/pre-release.png)
 

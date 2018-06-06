@@ -1,32 +1,32 @@
 ---
-title: TextKit
-description: Metin Seti API güçlü metin Xamarin.iOS düzeni ve işleme özelliklerini sunar.
+title: Xamarin.iOS TextKit
+description: Bu belge, içinde Xamarin.iOS TextKit kullanmayı açıklar. TextKit güçlü metin düzeni ve işleme özelliklerini sağlar.
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 78ca0d9505c9f56dc6476bd04dab560a70b2c4b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac80d1d07f5649d377dd6fdefcb4911ba9ec2dcb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788341"
 ---
-# <a name="text-kit"></a>Metin Seti
+# <a name="textkit-in-xamarinios"></a>Xamarin.iOS TextKit
 
-Metin, güçlü metin düzeni ve işleme özellikleri sunan yeni bir API setidir. Düşük düzey çekirdek metin çerçevesi üzerine inşa ancak çekirdek metin kullanmak çok daha kolaydır.
+TextKit güçlü metin düzeni ve işleme özellikleri sunan yeni bir API'dir. Alt düzey çekirdek metin çerçevesi üzerine inşa ancak çekirdek metin kullanmak çok daha kolaydır.
 
-Metin Seti özelliklerini standart denetimleri kullanılabilir hale getirmek için birkaç iOS metin denetimleri de dahil olmak üzere metin Seti kullanacak şekilde yeniden uygulanan:
+TextKit özelliklerini standart denetimleri kullanılabilir hale getirmek için birkaç iOS metin denetimleri TextKit, kullanacak şekilde yeniden uygulanan silinmiş dahil olmak üzere:
 
 -  UITextView
 -  UITextField
 -  UILabel
 
-
 ## <a name="architecture"></a>Mimari
 
-Metin Seti metin depolama düzeni ve aşağıdaki sınıflar gibi görünen ayıran katmanlı bir mimari sağlar:
+TextKit metin depolama düzeni ve aşağıdaki sınıflar gibi görünen ayıran katmanlı bir mimari sağlar:
 
 -  `NSTextContainer` – Yerleşim metni için kullanılan geometri ve koordinat sistemi sağlar.
 -  `NSLayoutManager` – Metni karakterlerin metin kapatarak yerleştirir. 
@@ -37,7 +37,7 @@ Bu üç sınıfları metin işleyen bir görünüme uygulanır. Yerleşik metin 
 
 Aşağıdaki şekilde bu mimari gösterilmektedir:
 
- ![](textkit-images/textkitarch.png "Bu şekilde metin Seti mimarisi gösterilmektedir")
+ ![](textkit-images/textkitarch.png "Bu şekilde TextKit mimarisi gösterilmektedir")
 
 ## <a name="text-storage-and-attributes"></a>Metin depolama ve öznitelikleri
 
@@ -56,7 +56,7 @@ Sonra `EndEditing` olduğu olarak adlandırılan, tüm gerekli düzeni ve işlem
 
 ## <a name="layout-with-exclusion-path"></a>Dışarıda tutma yolu düzeniyle
 
-Metin Seti ayrıca düzenini destekler ve birden çok sütun metin ve belirtilen yollar etrafında akan metin olarak adlandırılan gibi karmaşık senaryolar için verir *dışlama yolları*. Dışlama yolları metnin belirtilen yollar akmasını neden metin düzenini geometri değiştirir metin kapsayıcı uygulanır.
+TextKit de düzeni destekler ve birden çok sütun metin ve belirtilen yollar etrafında akan metin olarak adlandırılan gibi karmaşık senaryolar için verir *dışlama yolları*. Dışlama yolları metnin belirtilen yollar akmasını neden metin düzenini geometri değiştirir metin kapsayıcı uygulanır.
 
 Dışarıda tutma yolu ekleme ayarlanması gerekir `ExclusionPaths` Düzen Yöneticisi özelliği. Bu özelliği ayarlamak metin düzeni geçersiz kılmak ve dışarıda tutma yolu çevresine metin akış düzeni Yöneticisi neden olur.
 
@@ -139,10 +139,10 @@ public class ExclusionPathView : UITextView
 }
 ```
 
-Bu kod çekirdek grafikleri kullanarak metin görünümde çizim için destek ekler. Bu yana `UITextView` sınıfı, metin işleme ve düzeni için metin Seti kullanmak için yerleşik şimdi, metin dışlama yollarını ayarlama gibi Seti tüm özelliklerini kullanabilirsiniz.
+Bu kod çekirdek grafikleri kullanarak metin görünümde çizim için destek ekler. Bu yana `UITextView` sınıfı, metin işleme ve düzeni için TextKit kullanmak için yerleşik şimdi, dışlama yollarını ayarlama gibi TextKit tüm özelliklerini kullanabilirsiniz.
 
 > [!IMPORTANT]
-> Bu örnek alt sınıfların `UITextView` destek çizim dokunma eklemek için. Sınıflara `UITextView` metin Seti özelliklerini almak gerekli değildir.
+> Bu örnek alt sınıfların `UITextView` destek çizim dokunma eklemek için. Sınıflara `UITextView` TextKit özelliklerini almak gerekli değildir.
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: Uygulama simgesi
+title: Xamarin.Mac uygulamalar için uygulama simgesi
 description: Bu makalede, görüntüleri .icns dosyasına paketleme ve Xamarin.Mac projesinde simgesi dahil olmak üzere bir Xamarin.Mac uygulamanın simgesi için gerekli görüntü oluşturulması ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3603e43b4b98d1387c718d0a6010d38aa01440c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 685a29eea4b03361b185e25ae0e146be7b5e69b6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792042"
 ---
-# <a name="application-icon"></a>Uygulama simgesi
+# <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac uygulamalar için uygulama simgesi
 
 _Bu makalede, görüntüleri .icns dosyasına paketleme ve Xamarin.Mac projesinde simgesi dahil olmak üzere bir Xamarin.Mac uygulamanın simgesi için gerekli görüntü oluşturulması ele alınmaktadır._
 

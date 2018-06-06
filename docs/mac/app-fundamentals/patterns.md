@@ -1,19 +1,20 @@
 ---
-title: Ortak desenleri ve deyimleri
-description: Bu belgede, model-view-controller düzeni, veri kaynağı ve temsilci desenleri ve iletişim kuralları açıklanır.
+title: Ortak desenleri ve Xamarin.Mac deyimleri
+description: Bu belge Xamarin.Mac uygulamaları oluştururken kullanılan ortak tasarım desenleri açıklar. Model-view-controller düzeni, veri kaynağı ve temsilci desenleri ve iletişim kuralları açıklanır.
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/17/2016
-ms.openlocfilehash: cf499c555ddbefbdb5a7fae3ae8929a17e0d0cd7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6bba5575edf2dcbddbd354b590e03f9fed06291
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791543"
 ---
-# <a name="common-patterns-and-idioms"></a>Ortak desenleri ve deyimleri
+# <a name="common-patterns-and-idioms-in-xamarinmac"></a>Ortak desenleri ve Xamarin.Mac deyimleri
 
 C# kullanıma sunulan Apple API'leri belirli deyimleri ve desenler tekrar tekrar gündeme. Xamarin.iOS ile programlama deneyimi varsa, bunlar hakkında bilgi görünebilir. Bunları düz bir anlayış sahip bulduğunuz belgelerin anlamlı yardımcı olacak şekilde belgeleri genellikle bu desenleri ve deyimleri tekrar tekrar başvurur.
 

@@ -1,5 +1,5 @@
 ---
-title: IPA desteği
+title: Xamarin.iOS IPA desteği
 description: Bu makalede geçici dağıtım, test ya da şirket içi dağıtım dahili uygulama kullanarak bir uygulamayı dağıtmak için kullanılan bir IPA dosyasının nasıl oluşturulacağı yer almaktadır.
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d63624ed486079f44e9756ee84612863e6176d7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 288ac813f23f281a1bbed375cadf5faa9d4ff9d0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784884"
 ---
-# <a name="ipa-support"></a>IPA desteği
+# <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS IPA desteği
 
 _Bu makalede geçici dağıtım, test ya da şirket içi dağıtım dahili uygulama kullanarak bir uygulamayı dağıtmak için kullanılan bir IPA dosyasının nasıl oluşturulacağı yer almaktadır._
 

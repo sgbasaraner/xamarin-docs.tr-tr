@@ -1,19 +1,20 @@
 ---
-title: Diğer uygulama simgeleri
-description: Bu makalede, alternatif uygulama simgeleri Xamarin.iOS kullanarak yer almaktadır.
+title: Xamarin.iOS diğer uygulama simgeleri
+description: Bu belge, diğer uygulama simgeleri Xamarin.iOS kullanın açıklar. Bir Xamarin.iOS projesi için bu simgeleri ekleme, Info.plist dosyasının nasıl değiştirileceğini ve uygulamanın simgesi programlı olarak yönetmek nasıl açıklanır.
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 8d9f27d58a881878aabeda4326805eec726c247c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1d37a29982454367c35bfdfad205abce0eb025af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784116"
 ---
-# <a name="alternate-app-icons"></a>Diğer uygulama simgeleri
+# <a name="alternate-app-icons-in-xamarinios"></a>Xamarin.iOS diğer uygulama simgeleri
 
 _Bu makalede, alternatif uygulama simgeleri Xamarin.iOS kullanarak yer almaktadır._
 

@@ -1,16 +1,17 @@
 ---
 title: Var olan Xamarin.Forms uygulamaları güncelleştirme
-description: Birleşik API kullanın ve 1.3.1 sürüme güncelleştirmek için varolan bir Xamarin.Forms uygulaması güncelleştirmek için aşağıdaki adımları izleyin
+description: Bu belge Klasik API'sinden Xamarin.Forms uygulaması Unified API güncelleştirmek için izlenmesi gereken adımları açıklar.
 ms.prod: xamarin
 ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 7b69ecb5d62a30cf6259aae1884971ad13babede
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d5c16b034b07d3e9875412f041c16b293557438a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781845"
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Var olan Xamarin.Forms uygulamaları güncelleştirme
 

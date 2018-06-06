@@ -1,5 +1,5 @@
 ---
-title: Sağlama profilleri
+title: Xamarin.Mac uygulamaları için sağlama profilleri
 description: Bu kılavuz gerekli sağlama Xamarin.Mac uygulamayı yayımlamak için gerekli profilleri oluşturmada size yol gösterir.
 ms.prod: xamarin
 ms.assetid: bdff6c32-f7e3-4a97-a093-dbda48be8227
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/12/2017
-ms.openlocfilehash: 4f3120c45de5022dca1e522be251f453f9f5b4c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9660d5373cc5213f648b145ef38ddbf25c7633ce
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792157"
 ---
-# <a name="provisioning-profiles"></a>Sağlama profilleri
+# <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac uygulamaları için sağlama profilleri
 
 Sağlama profilleri bir geliştirici Xamarin.Mac uygulamalarını birkaç (eski adıyla Mac OS X) macOS belirli özellikleri (örneğin, iCloud ve anında iletme bildirimleri) eklemenizi sağlar. Bunlar gerekir oluşturmak, indirin ve bu özellikleri kullanan geliştirmekte olduğunuz her uygulama için bir Mac sağlama profili yükleyin.
 

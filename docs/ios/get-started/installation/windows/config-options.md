@@ -1,17 +1,18 @@
 ---
 title: Visual Studio 2017 yapılandırma
-description: Bu makalede, Visual Studio 2017 için çeşitli Xamarin.iOS yapılandırma seçenekleri açıklanmaktadır.
+description: Bu makalede, Xamarin.iOS geliştirme için Visual Studio 2017 yapılandırılacağını açıklar. Özellikle, nasıl Xamarin.iOS, iOS araç ve çözüm platformları açılır menü'nın yüklü sürümü yapılandırılacağı açıklanır.
 ms.prod: xamarin
 ms.assetid: 22D82244-890D-4325-B3CC-C0AC49130BCA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/16/2018
-ms.openlocfilehash: ee08cf7d68bd9d10026f1c15d4438077349fe367
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.openlocfilehash: 70633877fb07f52ce4e7a399668be6268942b137
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785960"
 ---
 # <a name="configuring-visual-studio-2017"></a>Visual Studio 2017 yapılandırma
 

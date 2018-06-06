@@ -1,5 +1,5 @@
 ---
-title: Görüntüleri ve simgeler
+title: Görüntüleri ve Xamarin.iOS simgeleri
 description: Bu bölümde simgelerle kullanarak gibi bir Xamarin.iOS uygulaması görüntülerle çalışma kapak, ekranlar başlatma makalelerin veya bunları dahil olmak üzere çeşitli denetimleri ve özel belge türleri için simgeleri sağlama içerir.
 ms.prod: xamarin
 ms.assetid: 0AB8CC07-11E4-0D75-4119-AED1A1252424
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: fd191c898d5bb015d2d394d42db1049bb0128fb7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 444e3cbd88dfd3ff50153d858367ecd0310d240a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784058"
 ---
-# <a name="images-and-icons"></a>Görüntüleri ve simgeler
+# <a name="images-and-icons-in-xamarinios"></a>Görüntüleri ve Xamarin.iOS simgeleri
 
 _Bu bölümde simgelerle kullanarak gibi bir Xamarin.iOS uygulaması görüntülerle çalışma kapak, ekranlar başlatma makalelerin veya bunları dahil olmak üzere çeşitli denetimleri ve özel belge türleri için simgeleri sağlama içerir._
 
@@ -64,5 +65,5 @@ Bu makale, bir özel belge türü simgesi olarak kullanılacak bir görüntü va
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Görüntüleri (örnek) ile çalışma](https://developer.xamarin.com/samples/WorkingWithImages/)
-- [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
+- [Merhaba, iPhone](~/ios/get-started/hello-ios/index.md)
 - [Özel bir simge ve görüntü oluşturma yönergeleri](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

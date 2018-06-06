@@ -1,22 +1,20 @@
 ---
-title: Düğmeleri ile çalışma
-description: Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde düğmeleri ile çalışma kapsar.
+title: Xamarin tvOS düğmeleri ile çalışma
+description: Bu belge Xamarin ile oluşturulan bir tvOS uygulaması düğmeleri ile nasıl çalışılacağını açıklar. Kod ve film şeritleri düğmeler ile nasıl çalışılacağını açıklar ve nasıl bir düğme stilini belirlemek inceler.
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: e915e96690fe67f0e704ec558313427f01753438
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3de732e9eee696ce21ffc5526afd44f29695a313
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789391"
 ---
-# <a name="working-with-buttons"></a>Düğmeleri ile çalışma
-
-_Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde düğmeleri ile çalışma kapsar._
-
+# <a name="working-with-tvos-buttons-in-xamarin"></a>Xamarin tvOS düğmeleri ile çalışma
 
 Bir örneğini kullanması `UIButton` tvOS penceresinde odaklanabilir, seçilebilir düğme oluşturmak için sınıfı. Kullanıcı bir düğmesini seçtiğinde, hedef nesnesi için bir eylem iletisi gönderir, Xamarin.tvOS uygulama yanıt kullanıcı girdisini izin verin.
 

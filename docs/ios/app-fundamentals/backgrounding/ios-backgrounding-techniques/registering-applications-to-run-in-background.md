@@ -1,18 +1,20 @@
 ---
-title: Arka planda çalışan uygulamaları kaydetme
+title: Arka planda çalışmaya Xamarin.iOS uygulamaları kaydetme
+description: Bu belge, bir Xamarin.iOS uygulaması arka planda çalışmaya kaydetmek açıklar. Ses uygulamalar, VoIP uygulamaları, dış Donatılar ve bluetooth ve daha fazla açıklanır.
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 58ee68f765372094d68c3cf30ed6a631a67fe313
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f4774f6b4f5412c44dc985bd40129a178b1e813c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783681"
 ---
-# <a name="registering-applications-to-run-in-the-background"></a>Arka planda çalışan uygulamaları kaydetme
+# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Arka planda çalışmaya Xamarin.iOS uygulamaları kaydetme
 
 Bazı uygulamalar, ancak uygulamanın sürekli bağlı GPS aracılığıyla kullanıcı için yol tarifi alma gibi önemli, uzun süre çalışan görevleri gerçekleştirmek için çağrıldıysa olanlar için arka plan ayrıcalıkları çalışır için tek tek görevler kaydediliyor? Bunlar gibi uygulamaları bilinen arka plan gerekli uygulamaları yerine kaydedilmesi gerekir.
 

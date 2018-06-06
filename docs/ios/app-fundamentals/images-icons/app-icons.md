@@ -1,22 +1,20 @@
 ---
-title: Uygulama simgeleri
-description: Bu makale, bir uygulama simgesi olarak kullanılacak bir görüntü varlığı bir Xamarin.iOS uygulaması yönetme ve dahil kapsar.
+title: Xamarin.iOS uygulaması simgeleri
+description: 'Bu belge, çeşitli uygulama simgeleri Xamarin.iOS çalışmak açıklar: uygulama simgesi, Spotlight simgeler, ayarları simgeleri ve iTunes resmi.'
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 9a6f69598d137ac05fae5aaed7c16b0cf05284e6
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 3c07f2573aa8ac6e28b2cd6bff56a773e6206aea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34562896"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784003"
 ---
-# <a name="application-icons"></a>Uygulama simgeleri
-
-_Bu makale, bir uygulama simgesi olarak kullanılacak bir görüntü varlığı bir Xamarin.iOS uygulaması yönetme ve dahil kapsar._
+# <a name="application-icons-in-xamarinios"></a>Xamarin.iOS uygulaması simgeleri
 
 Aşağıdaki konularda ayrıntılı olarak ele alınacaktır:
 

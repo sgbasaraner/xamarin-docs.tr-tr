@@ -1,5 +1,5 @@
 ---
-title: OpenTK giriş
+title: Xamarin.Mac OpenTK giriş
 description: Bu makalede Xamarin.Mac uygulama içinde OpenTK ile çalışmak için bir giriş sağlar. Oluşturma ve bir oyun penceresi bakımı, basit bir nesne oluşturma ve kullanıcıya nesne görüntüleme kapsar.
 ms.prod: xamarin
 ms.assetid: BDE05645-7273-49D3-809B-8642347678D2
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d5f19dac8dc362e1ac4a36cbe5cf5db3e31ae363
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 448b8bdba8ccedbb732a73a265d0ce76bb589190
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792612"
 ---
-# <a name="introduction-to-opentk"></a>OpenTK giriş
+# <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin.Mac OpenTK giriş
 
 OpenTK (açık araç takımı), OpenGL ve OpenCL OpenAL ile çalışmayı kolaylaştırır bir Gelişmiş, alt düzey C# kitaplıktır. OpenTK kullanılabilir oyunlar, bilimsel uygulamaları veya diğer 3B grafik gerektiren projeleri, ses veya hesaplama işlevselliği için. Bu makalede OpenTK Xamarin.Mac kullanmayla kısa bir giriş sağlar.
 
@@ -73,7 +74,7 @@ Tarafından işaretleyin `OpenTK` tıklatıp **Tamam** düğmesi:
 
 <a name="Using_OpenTK" />
 
-### <a name="using-opentk"></a>Using OpenTK
+### <a name="using-opentk"></a>OpenTK kullanma
 
 Oluşturulan yeni proje ile çift `MainWindow.cs` dosyasını **Çözüm Gezgini** düzenlemek için açın. Olun `MainWindow` sınıfı görünüm aşağıdaki gibi:
 

@@ -1,21 +1,20 @@
 ---
-title: Başlık altında
-description: Bir bilgi çalışmalar Xamarin.Mac
+title: Xamarin.Mac başlık altında
+description: Bu belge bağlantılar çeşitli kılavuzlara çalışmalar Xamarin.Mac açıklanmaktadır. Bağlantılı belgeleri zamanında derleme, Xamarin.Mac mimarisi ve Xamarin.Mac kayıt öncesinde tartışın.
 ms.prod: xamarin
 ms.assetid: 84974D75-0CCE-4455-AA38-00DE68AE33B6
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: 74721e880bb0d3ada3f3940a4074d06f55601c0e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c940252a675c38247d2c5bb374b9c30237222bda
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792495"
 ---
-# <a name="under-the-hood"></a>Başlık altında
-
-_Bir bilgi çalışmalar Xamarin.Mac_
+# <a name="under-the-hood-in-xamarinmac"></a>Xamarin.Mac başlık altında
 
 ## <a name="ahead-of-time-compilation-aotaotmd"></a>[Şimdi zaman derlenmesini (Uygulama Nesne AĞACI)](aot.md)
 
@@ -25,6 +24,6 @@ _Bir bilgi çalışmalar Xamarin.Mac_
 
 Objective-C, derleme, seçiciler, kaydedicilerin, uygulama başlatma ve oluşturucunun gibi kavramları dahil olmak üzere Xamarin.Mac'in ilişki.
 
-## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac registrar](registrar.md)
+## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac kayıt](registrar.md)
 
 Xamarin.Mac arasında köprü yönetilen world ve Cocoa'nın çalışma zamanı, yönetilmeyen Objective-C sınıflar çağırın ve olaylar gerçekleştiğinde geri çağrılması yönetilen sınıflar izin vererek arasındaki boşluk. Bu "Sihirli" işlemini gerçekleştirmek için gereken iş kaydedici tarafından ele alınır, ancak "başlık altında" neler olduğunu anlama bazı durumlarda yararlı olabilir.

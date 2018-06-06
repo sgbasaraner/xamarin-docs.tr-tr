@@ -1,21 +1,20 @@
 ---
-title: Uygulama mağazası değişiklikleri
-description: İOS 11'ın yeni özellikleri keşfetmek
+title: İOS 11 App Store değişiklikleri
+description: Bu belge değişiklikleri 11 iOS App Store'da için inceler. Bir uygulamanın deposu simgesini, yükseltilen uygulama içi satın almalara, yeniden tasarlanan ürün sayfası, müşteri iletişimi ve aşamalı sürümleri anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 9c9355c047d2e7083ca787f473515163d8e6f5f1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 59f5d2c0c05ec2950ae7cc74e4f5aaa2565020f0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787396"
 ---
-# <a name="app-store-changes"></a>Uygulama mağazası değişiklikleri
-
-_İOS 11'ın yeni özellikleri keşfetmek_
+# <a name="app-store-changes-in-ios-11"></a>İOS 11 App Store değişiklikleri
 
 İOS App Store'da yalnızca kullanıcıların verimli bir şekilde mağazaya gidin izin verir, ancak Ayrıca, uygulamanızı kullanıcılara yükseltmek için bir geliştirici olarak tanır tam bir tasarlanması oluşturdu. Bu promosyon uygulama içi satın almalara güncelleştirmeleri ve ürün sayfası için güncelleştirmeleri içerir. iOS 11 kullanıcılarla iletişim kurma, uygulama simge ekleme ve ortak uygulamanıza serbest bırakma ilgili güncelleştirmeleri de ekler.
 

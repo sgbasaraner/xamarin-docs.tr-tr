@@ -1,5 +1,5 @@
 ---
-title: Yetkilendirmeler ile çalışma
+title: Xamarin.iOS yetkilendirmeler ile çalışma
 description: Yetkilendirmeler özel uygulama özellikleri ve onları kullanmak üzere doğru şekilde yapılandırılmış uygulamalar için güvenlik izinler ' dir.
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f158ab7e51eb7610566ed052b326fecf016add8a
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 7e5ace306b580ba76986e89367de84e5bfd9cc40
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785310"
 ---
-# <a name="working-with-entitlements"></a>Yetkilendirmeler ile çalışma
+# <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS yetkilendirmeler ile çalışma
 
 _Yetkilendirmeler özel uygulama özellikleri ve onları kullanmak üzere doğru şekilde yapılandırılmış uygulamalar için güvenlik izinler ' dir._
 
@@ -173,13 +174,13 @@ Yetkilendirme anahtarları Entitlements.plist Düzenleyicisi'ni kaynağı paneli
     - **Anahtar**: arası-app-ses
     - **Boolean**: Evet
 
-### <a name="associated-domains"></a>İlişkili etki alanları
+### <a name="associated-domains"></a>İlişkili Etki Alanları
 
 - **Açıklama**: Evrensel bağlantıları bu yetkilendirme ile iletilmesi gereken şekilde, işlenmesi gereken etki alanları ilişkili. Evrensel bağlantılar, uygulama ve Web sitesi arasında bağlama derin izin vermek için uygulanabilir. Uygulama destekler ve her bir girdi ile başlaması gereken her etki alanı için bir girdi sağlanması `applinks:`
     - **Anahtar**: com.apple.developer.associated etki alanları
     - **Dize**: webcredentials:example.com
 
-### <a name="data-protection"></a>Veri koruma
+### <a name="data-protection"></a>Veri Koruma
 
 - **Açıklama**: veri korumayı etkinleştirmek yerleşik şifreleme donanımını şifrelenmiş biçimde uygulamanızda kullanılan hassas verileri depolamak için kullanır. Varsayılan olarak, koruma düzeyini (cihaz kilitli değil sonra dosyaları yalnızca erişilebilir olduğunda) koruma tamamlamak için ayarlanır.
     - **Anahtar**: com.apple.developer.default veri koruması

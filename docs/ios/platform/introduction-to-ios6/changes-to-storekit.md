@@ -1,5 +1,5 @@
 ---
-title: StoreKit yapılan değişiklikler
+title: İOS 6 StoreKit için değişiklikler
 description: "iOS 6 deposu Seti API'sine iki değişiklikler içermektedir: iTunes (ve uygulama mağazası/iBookstore) görüntüleme yeteneğini ürünlerinden uygulamanızı ve bir yeni uygulama içinde nerede Apple gerçekleştirecektir indirilebilir dosyalarınızı seçeneği satın alın. Bu belgede, bu özellikleri Xamarin.iOS ile uygulamak açıklanmaktadır."
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8a7a70c3f84518141cf44d630fb4137051d0c866
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ff717d1e4ea7da947d5534f1ce790b58d84fdfd4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787698"
 ---
-# <a name="changes-to-storekit"></a>StoreKit yapılan değişiklikler
+# <a name="changes-to-storekit-in-ios-6"></a>İOS 6 StoreKit için değişiklikler
 
 _iOS 6 deposu Seti API'sine iki değişiklikler içermektedir: iTunes (ve uygulama mağazası/iBookstore) görüntüleme yeteneğini ürünlerinden uygulamanızı ve bir yeni uygulama içinde nerede Apple gerçekleştirecektir indirilebilir dosyalarınızı seçeneği satın alın. Bu belgede, bu özellikleri Xamarin.iOS ile uygulamak açıklanmaktadır._
 
@@ -142,8 +143,8 @@ Sonuçları görüntüleme bilgileri ve ürün uygulamanızda işlemek için kul
 
 Bazı örnekler şunlardır:
 
--   **iBooks uygulama*- [http://itunes.apple.com/search?term=ibooks&amp;varlık yazılım =&amp;ülke = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
--   **Nokta ve Kangaroo iBook*- [http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;varlık ebook =&amp;ülke = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us) 
+-   **iBooks uygulama*- [http://itunes.apple.com/search?term=ibooks&amp; varlık yazılım =&amp;ülke = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
+-   **Nokta ve Kangaroo iBook*- [http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; varlık ebook =&amp;ülke = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us) 
 
 
 ### <a name="enterprise-partner-feed"></a>Kurumsal iş ortağı besleme
@@ -216,7 +217,7 @@ Uygulama, öncesinde, sırasında ve sonrasında bir satın alma şöyle görün
 
 Resim ve metin dosyası indirilir ve uygulamanın belgeler dizinine kopyalanır. Bkz: [dosya sistemi belgeleriyle çalışma](~/ios/app-fundamentals/file-system.md) uygulama depolaması için kullanılabilecek farklı dizinleri hakkında daha fazla bilgi için.
 
-## <a name="itunes-connect"></a>iTunes Connect
+## <a name="itunes-connect"></a>iTunes Bağlan
 
 Apple kullanacağı yeni ürünler oluşturma içeriğinin zaman barındırma seçtiğinizden emin **olmayan tüketilebilir** ürün türü. Diğer ürün türleri, içerik barındırma desteklemez. Ayrıca, sizin için içerik barındıran etkinleştirmemelisiniz *varolan* satmak; yalnızca yeni ürünler için içerik barındırma kapatma ürünler.
 

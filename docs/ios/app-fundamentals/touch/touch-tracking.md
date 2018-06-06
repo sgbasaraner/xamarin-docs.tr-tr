@@ -1,19 +1,20 @@
 ---
-title: Çok dokunma parmak izleme
-description: Bu belge, birden çok parmakları dokunma olayları izlemek gösterilmiştir
+title: Çok dokunma parmak Xamarin.iOS içinde izleme
+description: Bu belge, bir Xamarin.iOS uygulaması çok dokunma hareketleri içinde tek tek parmakları izlemek açıklar. Finger-painting uygulama örneği toplanır.
 ms.prod: xamarin
 ms.assetid: 48E8B20D-0833-43D2-976A-0605DDB386E3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 178bd0a68166f033293b2d807fea449355c1c584
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 85dbd3c158408026f4ecef5fb2b01c265747140e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784409"
 ---
-# <a name="multi-touch-finger-tracking"></a>Çok dokunma parmak izleme
+# <a name="multi-touch-finger-tracking-in-xamarinios"></a>Çok dokunma parmak Xamarin.iOS içinde izleme
 
 _Bu belge, birden çok parmakları dokunma olayları izlemek gösterilmiştir_
 

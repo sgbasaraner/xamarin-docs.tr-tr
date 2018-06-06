@@ -1,18 +1,20 @@
 ---
-title: Metin girişi ile çalışma
+title: WatchOS Xamarin metin girişi ile çalışma
+description: Bu belgede Xamarin watchOS metin girişi açıklanmaktadır. PresentTextInputController yöntemi, karalama, düz metin, emojis ve dikte açıklanır.
 ms.prod: xamarin
 ms.assetid: E9CDF1DE-4233-4C39-99A9-C0AA643D314D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9dec6f754590abf6db8829f555376b423b7a7da7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da668333b3549c92264af7d4da4941ac6b5bf865
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791390"
 ---
-# <a name="working-with-text-input"></a>Metin girişi ile çalışma
+# <a name="working-with-watchos-text-input-in-xamarin"></a>WatchOS Xamarin metin girişi ile çalışma
 
 Ancak, bazı izleme kolay alternatifleri desteklemiyor Apple Watch kullanıcıların metin, Giriş bir klavye sağlamaz:
 

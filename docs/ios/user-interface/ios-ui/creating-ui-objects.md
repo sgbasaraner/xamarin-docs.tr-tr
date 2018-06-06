@@ -1,18 +1,20 @@
 ---
-title: Kullanıcı arabirimi nesneleri oluşturma
+title: Xamarin.iOS içinde kullanıcı arabirimi nesneleri oluşturma
+description: Bu belge Xamarin.iOS içinde bir kullanıcı arabirimi oluşturmak nasıl bir bakış sağlar. İOS Tasarımcısı, Xcode arabirimi Oluşturucu, C# ve film şeritleri açıklanır.
 ms.prod: xamarin
 ms.assetid: 4D6B136C-744A-4936-8655-A77E62BA7A60
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 5229beb7a882049daf58d3a3e62da6fed25a1f48
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c688dcdf7498b0a2860d1878d893beae4f5cf8fc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790158"
 ---
-# <a name="creating-user-interface-objects"></a>Kullanıcı arabirimi nesneleri oluşturma
+# <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin.iOS içinde kullanıcı arabirimi nesneleri oluşturma
 
 Apple grupları "hangi Xamarin.iOS ad alanlarına eşitlemek çerçeveleri" işlevsellik parçalarını ilgili. `UIKit` iOS için tüm kullanıcı arabirimi denetimlerini içeren ad alanıdır.
 
@@ -21,7 +23,6 @@ Apple grupları "hangi Xamarin.iOS ad alanlarına eşitlemek çerçeveleri" işl
 ```csharp
 using UIKit;
 ```
-
 
 Bu bölümde açıklanan tüm denetimleri Uıkit ad alanında bulunur ve her bir kullanıcı denetimi sınıf adı sahip `UI` öneki.
 
@@ -41,7 +42,7 @@ Kullandığınız, hangi yöntemi denetim özelliklerini ve olayları yine C# il
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
- [![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png#lightbox)
+ [![](creating-ui-objects-images/image2b.png "Araç kutusu paneli")](creating-ui-objects-images/image2b.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

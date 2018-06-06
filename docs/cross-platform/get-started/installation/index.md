@@ -1,18 +1,19 @@
 ---
-title: Yükleme
+title: Xamarin yükleme
 description: Bu bölümde, Visual Studio üzerinde xamarin'le ayarlamak için kullanılan yükleme ve Kurulum yöntemler genel bir bakış sağlar.
 ms.prod: xamarin
 ms.assetid: 0f813a14-2f0c-415d-8667-4563f3dc06e8
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: 9c5483579f08793da8fff3fc65e1c5e7ad3b94e4
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 71d5f743a5c1e2bd159a7267ddecfdc611eb2db8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780423"
 ---
-# <a name="installation"></a>Yükleme
+# <a name="installing-xamarin"></a>Xamarin yükleme
 
 _Bu bölümde, Visual Studio üzerinde xamarin'le ayarlamak için kullanılan yükleme ve Kurulum yöntemler genel bir bakış sağlar._
 

@@ -1,21 +1,21 @@
 ---
 title: (El ile) gerçek örnek Gelişmiş
+description: Bu belge, başlık altında hedefi Sharpie yaptığı içine Insight sağlar hedefi Sharpie girdisi olarak xcodebuild çıktısını kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 82bca525433e5c8fea3a29250afb83962f2e64fc
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7af9700a9b661280c2ee32a1f65cdc01234cbe37
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781262"
 ---
 # <a name="advanced-manual-real-world-example"></a>(El ile) gerçek örnek Gelişmiş
 
-
 **Bu örnekte [Facebook POP kitaplığından](https://github.com/facebook/pop).**
-
 
 Bu bölüm, burada kullanacağız Apple'nın bağlama, daha gelişmiş bir yaklaşım kapsar `xcodebuild` ilk POP Projeyi derlemek için aracı ve giriş hedefi Sharpie için el ile türetme. Bu, aslında hedefi Sharpie önceki bölümdeki başlık altında yaptıklarını kapsar.
 

@@ -1,17 +1,19 @@
 ---
-title: Simgeler ile çalışma
+title: WatchOS Xamarin simgeleri ile çalışma
+description: Bu belgede watchOS uygulama ve bu simgeleri eklemek için bir çözümü ayarlama nasıl için gereken çeşitli simgeleri açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a7cdecaa2ba6a8c9f28ef8598fec31506eee6852
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 150cca754de26edffcf97bb5d39b26166662c75b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790672"
 ---
-# <a name="working-with-icons"></a>Simgeler ile çalışma
+# <a name="working-with-watchos-icons-in-xamarin"></a>WatchOS Xamarin simgeleri ile çalışma
 
 Apple Watch çözümleri iki simgeleri gerektirir:
 
@@ -31,7 +33,7 @@ Apple Watch çözümleri iki simgeleri gerektirir:
 
 İOS uygulamanızı ve izleme uygulama adının doğru ve simgesini göster emin olmak için her proje için bu yönergeleri izleyin:
 
-### <a name="ios-app"></a>iOS App
+### <a name="ios-app"></a>iOS uygulaması
 
 Başvurmak [iOS uygulama simgeleri Kılavuzu](~/ios/app-fundamentals/images-icons/app-icons.md) , iOS uygulamanızın simgeleri doğru şekilde yapılandırıldığından emin olmak için.
 

@@ -1,5 +1,5 @@
 ---
-title: Programsal düzeni kısıtlamaları
+title: Xamarin.iOS programlı düzeni kısıtlamalar
 description: Bu kılavuz iOS çalışmak iOS Tasarımcısı oluşturmak yerine C# kodunda Otomatik Yerleşim kısıtlamaları gösterir.
 ms.prod: xamarin
 ms.assetid: 119C8365-B470-4CD4-85F7-086F0A46DCBB
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 093101d09f5ffff637b034b3b4794aa6e785a0df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a40a3c66369902d2d6f8dbee5a6a7e9bad8a9e05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790607"
 ---
-# <a name="programmatic-layout-constraints"></a>Programsal düzeni kısıtlamaları
+# <a name="programmatic-layout-constraints-in-xamarinios"></a>Xamarin.iOS programlı düzeni kısıtlamalar
 
 _Bu kılavuz iOS çalışmak iOS Tasarımcısı oluşturmak yerine C# kodunda Otomatik Yerleşim kısıtlamaları gösterir._
 

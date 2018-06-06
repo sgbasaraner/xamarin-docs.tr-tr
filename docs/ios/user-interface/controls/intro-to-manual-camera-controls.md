@@ -1,21 +1,20 @@
 ---
-title: El ile kamera denetimleri
-description: AVFoundation Framework el ile kamera denetimleri için izin vererek harika fotoğrafları çekin kullanıcıların her zamankinden daha kolay hale getirir. Bu çerçeve kullanarak, bir uygulama kamera odak, beyaz dengesi ve Etkilenme ayarları üzerinde doğrudan denetim gerçekleşebilir. Bir uygulama, köşeli parantez içindeki Etkilenme yakalamaları otomatik olarak farklı Etkilenme ayarlarla görüntülerini yakalamak için de kullanabilirsiniz. Bu makalede, bir basit iOS 8 mobil uygulama el ile kamera denetimleri kullanarak hızlı bir bakış sürer.
+title: Xamarin.iOS el ile kamera denetimleri
+description: Bu belgede nasıl iOS AVFoundation framework ile Xamarin.iOS el ile kamera denetimleri etkinleştirmek için kullanılabileceği açıklanır. El ile kamera denetimler denetim odağı, beyaz dengesi ve Etkilenme ayarları kullanıcıya izin verir.
 ms.prod: xamarin
 ms.assetid: 56340225-5F3C-4BFC-9A79-61496D7FE5B5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 8545dce1b9232e396c4c9e71ad5f20649eef2417
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a0f605a38117df87a03801c3b9d86b0b7361c232
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790831"
 ---
-# <a name="manual-camera-controls"></a>El ile kamera denetimleri
-
-_AVFoundation Framework el ile kamera denetimleri için izin vererek harika fotoğrafları çekin kullanıcıların her zamankinden daha kolay hale getirir. Bu çerçeve kullanarak, bir uygulama kamera odak, beyaz dengesi ve Etkilenme ayarları üzerinde doğrudan denetim gerçekleşebilir. Bir uygulama, köşeli parantez içindeki Etkilenme yakalamaları otomatik olarak farklı Etkilenme ayarlarla görüntülerini yakalamak için de kullanabilirsiniz. Bu makalede, bir basit iOS 8 mobil uygulama el ile kamera denetimleri kullanarak hızlı bir bakış sürer._
+# <a name="manual-camera-controls-in-xamarinios"></a>Xamarin.iOS el ile kamera denetimleri
 
 Tarafından sağlanan el ile kamera denetimleri `AVFoundation Framework` iOS 8'de, bir iOS cihazın kamera üzerinde tam denetim olabilmesi bir mobil uygulama izin verin. Bu hassas denetim düzeyini profesyonel düzeyi kamera uygulamalar oluşturmak ve hala bir resim veya video önünde bulundurularak kamera parametrelerinin uyguladıkça tarafından sanatçı kompozisyonlarınıza sağlamak için kullanılabilir.
 
@@ -279,7 +278,7 @@ Odağı denetimlerin doğrudan olabilmesi son kullanıcı izin vererek, bir uygu
 
 Örneğin, profesyonel fotoğrafı çeken bir görüntüsünü elde etmek için odak yumuşatma bir [Bokeh etkisi](http://en.wikipedia.org/wiki/Bokeh):
 
-[![](intro-to-manual-camera-controls-images/image2.png "A Bokeh Effect")](intro-to-manual-camera-controls-images/image2.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image2.png "Bokeh etkisi")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
 Ya da oluşturma bir [odak çekme etkisi](http://www.mediacollege.com/video/camera/focus/pull.html), gibi:
 
@@ -329,7 +328,7 @@ Ayrıca, aralık kısıtlama tarafından sağlanan `AutoFocusRangeRestriction` �
 
 Son olarak yoktur `SmoothAutoFocus` otomatik odak algoritması yavaşlatır ve video kaydederken yapıları taşınmasını engellemek için daha küçük artışlarla adımları özelliği.
 
-### <a name="new-focus-controls-in-ios-8"></a>New Focus Controls in iOS 8
+### <a name="new-focus-controls-in-ios-8"></a>İOS 8 yeni odak denetimlerinde
 
 İOS 7 ve üstünde zaten sağlanan özelliklerine ek olarak, aşağıdaki özellikleri artık iOS 8 odakta denetlemek kullanılabilir:
 

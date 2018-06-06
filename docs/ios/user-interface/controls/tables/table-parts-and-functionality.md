@@ -1,24 +1,26 @@
 ---
-title: Tablo bölümleri ve İşlevler
+title: Tablo bölümleri ve Xamarin.iOS işlevleri
+description: Bu belgede iOS içinde UITableView çeşitli parçaları açıklanmaktadır. Bölüm üstbilgileri, hücreler, bölüm altbilgiler, dizin ve düzenleme modunu açıklanır.
 ms.prod: xamarin
 ms.assetid: B4139C8B-28F2-4C0F-297F-BF5432C5A915
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: be8ad21847aed3d8ad9bda7ac45b070e5ad868bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c7c9f810798c3d02078b48e17a2ab951cb36aa12
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789882"
 ---
-# <a name="table-parts-and-functionality"></a>Tablo bölümleri ve İşlevler
+# <a name="table-parts-and-functionality-in-xamarinios"></a>Tablo bölümleri ve Xamarin.iOS işlevleri
 
 Bir UITableView 'gruplandırılmış' veya 'düz' stil olabilir ve aşağıdaki bölümlerden oluşur:
 
 -  [Bölüm başlığı](#Section_Header)
 -  [Hücreleri](#Cells) (veya tercih ederseniz satırlar)
--  [Section Footer](#Section_Footer)
+-  [Bölüm altbilgi](#Section_Footer)
 -  [Index](#Index)
 -  [Düzenleme modunda](#Edit_Features) ('Sil a doğru çekin' içerir ve satır sırasını değiştirmek için tanıtıcıları sürükleyin) 
 

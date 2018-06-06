@@ -1,21 +1,20 @@
 ---
-title: Koleksiyon görünümleri ile çalışma
-description: Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde koleksiyonu görünümlerle çalışma kapsar.
+title: TvOS Xamarin koleksiyonu görünümleri ile çalışma
+description: Bu belge Xamarin ile oluşturulan bir tvOS uygulamasında koleksiyon görünümleri ile nasıl çalışılacağını açıklar. Koleksiyon görünümü düzenleri hücreleri ve kullanıcı olayları ve daha fazla bilgi için yanıt tamamlayıcı görünümler oluşturuluyor, kapsar.
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7fa38aa81e5929bdc88ceebd153d86cfcd92f20e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b411ac6bb8d1492511f9e5d2234731ae64c3a82
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789284"
 ---
-# <a name="working-with-collection-views"></a>Koleksiyon görünümleri ile çalışma
-
-_Bu makalede tasarlama ve Xamarin.tvOS uygulama içinde koleksiyonu görünümlerle çalışma kapsar._
+# <a name="working-with-tvos-collection-views-in-xamarin"></a>TvOS Xamarin koleksiyonu görünümleri ile çalışma
 
 Koleksiyon görünümlerini içerik için bir grubu rasgele düzenleri kullanarak görüntülenmesine izin verir. Yerleşik destek kullanarak, bunlar için kolay oluşturma kılavuz benzeri ya da doğrusal düzenleri, ayrıca özel düzenler desteklerken izin verin.
 

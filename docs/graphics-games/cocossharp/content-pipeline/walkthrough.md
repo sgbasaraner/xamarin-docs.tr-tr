@@ -1,20 +1,21 @@
 ---
-title: MonoGame PipelineTool kullanma
-description: MonoGame ardışık düzen aracı MonoGame içerik proje oluşturmak ve yönetmek için kullanılır. İçerik projeleri dosyalarında Monogame ardışık düzen aracı tarafından işlenir ve CocosSharp ve MonoGame uygulamalarda kullanmak için .xnb dosyaları olarak yüzdelik.
+title: MonoGame ardışık düzen Aracı'nı kullanma
+description: MonoGame ardışık düzen aracı MonoGame içerik proje oluşturmak ve yönetmek için kullanılır. İçerik projeleri dosyalarında MonoGame ardışık düzen aracı tarafından işlenir ve CocosSharp ve MonoGame uygulamalarda kullanmak için .xnb dosyaları olarak yüzdelik.
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 50e6c611e285cde9184eed242353ad08b2a941ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 347cb7e9d417f97cb6e8d78e67b1c76a378cd188
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783305"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>MonoGame ardışık düzen Aracı'nı kullanma
 
-_MonoGame ardışık düzen aracı MonoGame içerik proje oluşturmak ve yönetmek için kullanılır. İçerik projeleri dosyalarında Monogame ardışık düzen aracı tarafından işlenir ve CocosSharp ve MonoGame uygulamalarda kullanmak için .xnb dosyaları olarak yüzdelik._
+_MonoGame ardışık düzen aracı MonoGame içerik proje oluşturmak ve yönetmek için kullanılır. İçerik projeleri dosyalarında MonoGame ardışık düzen aracı tarafından işlenir ve CocosSharp ve MonoGame uygulamalarda kullanmak için .xnb dosyaları olarak yüzdelik._
 
 İçerik dosyalarına dönüştürmek için bir kolay kullanımlı ortam MonoGame ardışık düzen aracı sağlar **.xnb** CocosSharp ve MonoGame uygulamalarda kullanmak için dosyaları. İçerik ardışık düzen ve neden oyun geliştirme yararlı hakkında daha fazla bilgi için bkz: [içerik ardışık düzen üzerinde bu giriş](~/graphics-games/cocossharp/content-pipeline/introduction.md)
 

@@ -1,22 +1,20 @@
 ---
-title: Dokunma
-description: Dokunmatik ekranlar bugünün aygıtların çoğu üzerinde kullanıcıların hızlı ve verimli şekilde doğal ve sezgisel şekilde cihazlarla etkileşime girmesine izin. Bu etkileşimi yalnızca basit dokunma algılama sınırlı değildir – hareketleri de kullanmak da mümkündür. Örneğin, tutarak yakınlaştırma hareketi kullanıcı yakınlaştırmak veya uzaklaştırmak iki parmakları ekran parçası çimdik tarafından bu – çok yaygın bir örneği bulunmaktadır. Bu kılavuz, dokunma ve iOS hareketleri inceler.
+title: Xamarin.iOS uygulamaları dokunma işleme
+description: Bu belge bağlantılar kılavuzlara dokunma, çok dokunma, hareketleri ve Xamarin.iOS uygulama 3B dokunma ile çalışmayı açıklar.
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/23/2017
-ms.openlocfilehash: f34b502e3c0d67f33d41bc489f7ec1d93356af99
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eb8dce8b13345c13a6f95ae7784bd135e7d1f1f5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784168"
 ---
-# <a name="touch"></a>Dokunma
-
-_Dokunmatik ekranlar bugünün aygıtların çoğu üzerinde kullanıcıların hızlı ve verimli şekilde doğal ve sezgisel şekilde cihazlarla etkileşime girmesine izin. Bu etkileşimi yalnızca basit dokunma algılama sınırlı değildir – hareketleri de kullanmak da mümkündür. Örneğin, tutarak yakınlaştırma hareketi kullanıcı yakınlaştırmak veya uzaklaştırmak iki parmakları ekran parçası çimdik tarafından bu – çok yaygın bir örneği bulunmaktadır. Bu kılavuz, dokunma ve iOS hareketleri inceler._
-
+# <a name="handling-touch-in-xamarinios-apps"></a>Xamarin.iOS uygulamaları dokunma işleme
 
 Diğer mobil platformları gibi iOS bir touch işlemek için çeşitli yöntemler vardır. Çok dokunma destekleyebilir — ekranında iletişim birçok noktaları — ve karmaşık hareketleri. Bu kılavuz, bazı kavramlar ve dokunma ve hareket iOS uygulama particularities tanıtır.
 
@@ -38,8 +36,6 @@ Bu kılavuz, dokunmatik giriş iOS içinde görevi görür. 3B dokunma ve Haptic
 
 * [3D Touch](~/ios/platform/3d-touch.md)
 * [Dokunmatik Geri Bildirim Sağlama](~/ios/user-interface/ios-ui/haptic-feedback.md)
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

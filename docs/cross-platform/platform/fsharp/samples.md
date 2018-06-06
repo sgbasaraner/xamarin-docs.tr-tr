@@ -1,17 +1,19 @@
 ---
-title: 'F # örnekleri'
+title: 'Xamarin F # örnekleri'
+description: 'F # Xamarin uygulamaları oluşturmak için kullanılabilir. Bu belge bağlantılarını çeşitli iOS, Mac ve Xamarin.Forms Xamarin uygulaması projeleri F # ile yazılmış örnek.'
 ms.prod: xamarin
 ms.assetid: 8A355636-DE60-45BC-B988-1967755FDD28
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 30b27a68e8b69c2e431b172ffa4e7e5bbcc942e0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 316ec2d6991adbb187b7158f9bf9e0c1426e3c7d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781026"
 ---
-# <a name="f-samples"></a>F # örnekleri
+# <a name="f-samples-for-xamarin"></a>Xamarin F # örnekleri
 
 Xamarin kullanarak bazı F # örnekleri bu sayfa bağlantılar.
 

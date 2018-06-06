@@ -1,5 +1,5 @@
 ---
-title: Hedef çerçevesi
+title: Hedef Çerçeve Xamarin.Mac için
 description: Bu makalede, bir hedef çerçeveyi (temel sınıf kitaplıkları) Xamarin.Mac için kullanılabilir ve Xamarin.Mac projenizde kullanarak etkilerini kapsar.
 ms.prod: xamarin
 ms.assetid: AF21BE16-3F92-4121-AB4C-D51AC863D92D
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: 053cdd2dbfc7741257e6630e5b11b77b1055428e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28d312ae10ce736a1720384fe76714910c3ff8f5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792508"
 ---
-# <a name="target-framework"></a>Hedef çerçevesi
+# <a name="target-framework-for-xamarinmac"></a>Hedef Çerçeve Xamarin.Mac için
 
 _Bu makalede, bir hedef çerçeveyi (temel sınıf kitaplıkları) Xamarin.Mac için kullanılabilir ve Xamarin.Mac projenizde kullanarak etkilerini kapsar._
 

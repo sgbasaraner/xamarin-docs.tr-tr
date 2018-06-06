@@ -1,20 +1,19 @@
 ---
 title: Objective-C geliştiriciler için Xamarin
-description: Bir Objective-C geliştiriciyseniz yararlanarak için iyi yolunuzu üzerinde olan becerileri ve kod yararlanın sırasında Xamarin platformunda varolan Objective-C kodunu yararları C# yeniden. Bu bölümde Xamarin.iOS için giriş noktası olarak hizmet verir ve noktalarını bol mevcut Objective-C koddan C# kullanma hakkında bilgi için.
+description: Bu belge, Objective-C geliştiriciler için Xamarin.iOS açıklamasını sağlar. C# Objective-C geçiş yapma, C# kullanmak için bir Objective-C Kitaplığı bağlamak nasıl ve platformlar arası mobil uygulamasının nasıl oluşturulacağını açıklayan kılavuzlara bağlar.
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e29762fb258f7d796878c85bfe6f7aaa93207c5e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 027ef8cabc55ace41bcf201b8355aab8ca6ec625
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786057"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Objective-C geliştiriciler için Xamarin
-
-_Bir Objective-C geliştiriciyseniz yararlanarak için iyi yolunuzu üzerinde olan becerileri ve kod yararlanın sırasında Xamarin platformunda varolan Objective-C kodunu yararları C# yeniden. Bu bölümde Xamarin.iOS için giriş noktası olarak hizmet verir ve noktalarını bol mevcut Objective-C koddan C# kullanma hakkında bilgi için._
 
 Kendi kullanıcı olmayan arabirimi taşımak için iOS hedefleyen geliştiriciler için bir yol, böylece kullanılabilmesi için platform belirsiz için C# kod Xamarin teklifler herhangi bir yere C# Xamarin.Android aracılığıyla Android ve Windows çeşitli özellikleri dahil olmak üzere kullanılabilir. Ancak, yalnızca, C# Xamarin ile kullanmak için var olan becerileri ve Objective-C kodunu yararlanamaz anlamına gelmez. Xamarin tüm yerel iOS ve OS X platformunu tanıyor ve ona Uıkit, çekirdek animasyon, çekirdek Foundation ve çekirdek grafikleri gibi birkaçıdır memnuniyet API'leri gösterir çünkü aslında, Objective-C bilerek, daha iyi bir Xamarin.iOS Geliştirici hale getirir. Aynı anda LINQ ve genel türler yanı sıra, zengin .NET sınıf kitaplıkları yerel uygulamalarınızda kullanmak için temel gibi özellikler içeren C# dili gücünü alın.
 

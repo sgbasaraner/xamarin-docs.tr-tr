@@ -1,6 +1,6 @@
 ---
 title: watchOS sorun giderme
-description: Bilinen sorunlar ve watchOS geliştirme sorunlara yönelik geçici çözümler.
+description: Bu belge, bilinen sorunlar ve Xamarin ile watchOS geliştirme için geçici çözümler açıklanmaktadır. Gözcü uygulamadan komut satırı, başlatma arabirimi denetleyicisi dosyalarını el ile ekleme sorunları ve daha fazlasını görüntülerle açıklar.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
@@ -8,11 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4e84028336669738c40da9e37cd22f32ba11dfc1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791771"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS sorun giderme
 
@@ -96,7 +97,7 @@ Mac OS X kullanma alfa kanal kaldırmak daha kolaydır **Önizleme** uygulama:
 
 2. Yeni bir sürükleyin `InterfaceController` film şeridi üzerine:
 
-    ![](troubleshooting-images/add-1.png "A InterfaceController")
+    ![](troubleshooting-images/add-1.png "Bir InterfaceController")
 
 3. Şimdi denetimler arabirimi denetleyicide (ör. sürükleyebilirsiniz etiketleri ve düğmeleri) ancak olduğundan çıkışlar veya Eylemler henüz oluşturamazsınız hiçbir **.h** üstbilgi dosyası. Aşağıdaki adımlar gerekli neden olacak **.h** üstbilgi dosyası oluşturulacak.
 
@@ -267,7 +268,7 @@ Gerekli. Xcode (6.2 veya üstü) yolunu belirtir.
  --sdkroot /Applications/Xcode.app/Contents/Developer/
 ```
 
-### <a name="--device"></a>--device
+### <a name="--device"></a>--cihaz
 
 Yürütülecek simulator aygıt. Bu, belirli bir aygıt udid kullanarak veya bir çalışma zamanı ve cihaz türü kullanan iki yolla belirtilebilir.
 

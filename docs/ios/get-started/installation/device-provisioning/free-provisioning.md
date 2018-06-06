@@ -1,21 +1,22 @@
 ---
-title: Ücretsiz sağlama
-description: Xcode 7 Apple'nın sürümü ile tüm iOS ve Mac geliştiriciler – serbest sağlama için önemli bir değişiklik geldi.
+title: Ücretsiz Xamarin.iOS uygulamaları için sağlama
+description: Bu belgede, Apple'nın Ücretli Geliştirici programına kaydolun gerek kalmadan Xamarin.iOS geliştiriciler fiziksel cihazda kendi uygulama nasıl sınayabilirsiniz açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 03/19/2017
-ms.openlocfilehash: 09244ebaefedb991289e5a1f67b59491ee84ed28
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 623f79f482170c6b1d8ecdb642afb2fc7acf061d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786028"
 ---
-# <a name="free-provisioning"></a>Ücretsiz sağlama
+# <a name="free-provisioning-for-xamarinios-apps"></a>Ücretsiz Xamarin.iOS uygulamaları için sağlama
 
-_Xcode 7 Apple'nın sürümü ile tüm iOS ve Mac geliştiriciler – serbest sağlama için önemli bir değişiklik geldi._
+_Tüm iOS ve Mac geliştiricileri için önemli bir değişiklik Xcode 7 Apple'nın sürümü ile gelen: sağlama boş._
 
 Ücretsiz sağlanmasına olanak tanır geliştiriciler için iOS cihazına Xamarin.iOS uygulamasına dağıtmak **olmadan** herhangi bir parçası olan **Apple Developer Program**. Bu geliştiriciler için oldukça avantajlıdır bir aygıtta test olarak birçok faydaları sağlar, ancak bunlarla sınırlı olmamak bellek, depolama, ağ bağlantısı diğerlerinin yanı sıra dahil olmak üzere simulator sınama üzerinden.
 

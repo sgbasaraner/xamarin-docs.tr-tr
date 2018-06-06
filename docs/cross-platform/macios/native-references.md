@@ -1,29 +1,26 @@
 ---
-title: Yerel başvuruları
-description: Yerel başvuruları yerel Framework bir Xamarin.iOS veya Xamarin.Mac veya bağlama projesi ekleme olanağı sağlar.
+title: Yerel başvurular iOS, Mac ve bağlamaları projeleri
+description: Yerel başvuruları yerel framework bir Xamarin.iOS, Xamarin.Mac ya da bağlama proje ekleme olanağı sağlar.
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c56e392420debb21998363cfffa288aec51691ea
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3a497d0bb4674014b8063cb1fbc91eec6e7ae5ea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781724"
 ---
-# <a name="native-references"></a>Yerel başvuruları
+# <a name="native-references-in-ios-mac-and-bindings-projects"></a>İOS, Mac ve bağlamaları projeleri yerel başvuruları
 
-_Yerel başvuruları yerel Framework bir Xamarin.iOS veya Xamarin.Mac veya bağlama projesi ekleme olanağı sağlar._
-
+_Yerel başvuruları yerel framework bir Xamarin.iOS veya Xamarin.Mac veya bağlama projesi ekleme olanağı sağlar._
 
 İOS 8.0 bu yana uygulama uzantıları xcode'da ana uygulama arasında kod paylaşmak için katıştırılmış bir çerçeve oluşturmak mümkün olmuştur. Yerel başvurusu özelliğini kullanarak (Xcode ile oluşturulan) Bu katıştırılmış çerçeveler Xamarin.iOS kullanmak mümkün olacaktır.
  
 > [!IMPORTANT]
 > Herhangi bir Xamarin.iOS ya da Xamarin.Mac projeleri türünden katıştırılmış çerçeveler oluşturmak mümkün olmaz, yerel başvuruları yalnızca var olan yerel (Objective-C) çerçeveleri tüketimi için izin verir.
-
-
-
 
 <a name="Terminology" />
 

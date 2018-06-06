@@ -1,29 +1,31 @@
 ---
-title: Yerel türler
+title: İOS ve macOS için yerel türler
+description: Bu belgede nasıl Xamarin'ın birleşik API .NET türleri 32-bit ve 64-bit yerel türler, gerektiği gibi eşlendiği derleme hedef mimarisine bağlı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 4d11d053cf4471a98cbba0f7c97be3bef39276fb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fc2b91a9265fcf09e4f58d5de27a1fdef9350b2d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781110"
 ---
-# <a name="native-types"></a>Yerel türler
+# <a name="native-types-for-ios-and-macos"></a>İOS ve macOS için yerel türler
 
-Fark özünde Mac ve iOS API'leri her zaman 32 bit platformlarda ve 64 bit 64 bit platformlarda 32 bit bir mimariye özgü veri türlerini kullanın.
+Mac ve iOS API'leri her zaman 32 bit 32-bit platformlarda ve 64 bit platformlarda 64 bit mimari özgü veri türlerini kullanın.
 
 Örneğin, Objective-C eşlemeleri `NSInteger` veri türü için `int32_t` 32 bit sistemler ve çok `int64_t` 64 bit sistemler üzerinde.
 
-Bu davranış, birleştirilmiş API'mize eşleşecek şekilde biz önceki kullanımlarını değiştirdiğiniz `int` (.NET içinde tanımlanan her zaman olduğu `System.Int32`) için yeni bir veri türü: `System.nint`.  Yerel tamsayı platformunun türü için "n" / anlamı "yerel" düşünebilirsiniz.
+Bu davranış, birleştirilmiş API'mize eşleşecek şekilde biz önceki kullanımlarını değiştirdiğiniz `int` (.NET içinde tanımlanan her zaman olduğu `System.Int32`) için yeni bir veri türü: `System.nint`. Yerel tamsayı platformunun türü için "n" / anlamı "yerel" düşünebilirsiniz.
 
-Bu yeni veri türleri ile aynı kaynak kodu, 32 bit, 32 bit ve 64 bit veya 64 bit, Derleme bayrakları bağlı olarak derlenir.
+Bu yeni veri türleri ile aynı kaynak kodu derleme bayrakları bağlı olarak 32-bit ve 64 bit mimari derlenir.
 
 ## <a name="new-data-types"></a>Yeni veri türleri
 
-Aşağıdaki tabloda, bu yeni 32/64 bit world eşleşecek şekilde bizim veri türleri değişiklikleri gösterir:
+Aşağıdaki tabloda, bu yeni bir 64/32-bit dünya eşleşecek şekilde bizim veri türleri değişiklikleri gösterir:
 
 |Yerel tür|32-bit yedekleme türü|64-bit yedekleme türü|
 |--- |--- |--- |
@@ -35,7 +37,7 @@ Fazla veya az bugün görünür şekilde aramak, C# kodu izin vermek için bu ad
 
 ### <a name="implicit-and-explicit-conversions"></a>Örtük ve Açık Dönüştürmeler
 
-Yeni veri türlerinin tasarım 32 veya 64 bit depolama konak platorm ve derleme ayarları bağlı olarak doğal olarak kullanılacak tek bir C# kaynak dosyası sağlamak için tasarlanmıştır.
+Yeni veri türlerinin tasarım 32 veya 64 bit depolama ana bilgisayar platformu ve derleme ayarları bağlı olarak doğal olarak kullanılacak tek bir C# kaynak dosyası sağlamak için tasarlanmıştır.
 
 Bu, bize .NET Entegral ve kayan nokta veri türleri için örtük ve açık dönüştürmeler için ve platforma özgü veri türlerini kümesi tasarlamak gerekli.
 

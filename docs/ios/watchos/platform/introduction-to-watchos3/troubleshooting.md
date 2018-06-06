@@ -1,17 +1,18 @@
 ---
 title: watchOS 3 sorun giderme
-description: Bu makalede, Xamarin Apple Watch uygulamalarda watchOS 3 ile çalışmak için birkaç sorun giderme ipuçları verilmektedir.
+description: Bu belge, Xamarin içinde watchOS 3 ile çalışırken yararlı birkaç sorun giderme ipuçları sağlar. Etkinlikler, Apple Pay, arka plan yenilemesi, NSURLConnection, gizlilik ve daha fazla bilgi için ipuçları ilgilidir.
 ms.prod: xamarin
 ms.assetid: 5911D898-0E23-40CC-9F3C-5F61B4D50ADC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 159c6a6dadcaa325abc7fd747abc9b2ba2f26a9c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0aca2c96533e17e4aeb2f57d38a87d39f700fb45
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791034"
 ---
 # <a name="watchos-3-troubleshooting"></a>watchOS 3 sorun giderme
 
@@ -29,7 +30,6 @@ Bilinen Sorunlar:
 - Bir etkinlik paylaşımı bildirimi iletisiyle birlikte yanıtlarken başarısız olabilir.
 - Bir etkinlik paylaşımı bildirim iletisi yukarıda bağlamsal metin yanlış olur.
 
-
 ## <a name="apple-pay"></a>Apple Pay
 
 Bilinen Sorunlar:
@@ -37,13 +37,9 @@ Bilinen Sorunlar:
 - FA kodu veya bir yanlış sona erme tarihi Apple Pay içinde yeni bir ödeme dikkat için basarsa zaman girilirse **sonraki** çalışan işlemi kilitleniyor.
 - Bir PIN numarası gerektiren uygulama Apple Pay satın alma işlemleri kilitlenebilir.
 
-
-
 ## <a name="auto-mac-unlock"></a>Otomatik Mac kilidini aç
 
 İki öğeli kimlik doğrulama kullanıcının iCloud hesabıyla üzerinde etkinleştirilirse watchOS 3 beta 2 (veya daha büyük) ve macOS Sierra beta 2 (veya daha büyük) kullanarak kendi Apple Watch otomatik olarak kullanabileceklerini kendi MAC kilidini aç
-
-
 
 ## <a name="background-refresh"></a>Arka plan yenilemesi
 
@@ -53,12 +49,9 @@ Sistem kaynakları ihlal watchOS 3 uygulama kilitlenmesi aşağıdaki özel duru
 - **0xc51bad02** -uygulama tüketilen çok fazla duvar saati.
 - **0xc51bad03** -uygulama geçerli görevi tamamlamak için yeterli çalışma zamanı sahip değil.
 
-
-
 ## <a name="clock"></a>Saat
 
 Yeni yüklenen Apple Watch uygulamalardan zorluklar boş gösterebilir. Bu sorunu gidermek için Apple Watch yeniden başlatın.
-
 
 ## <a name="connectivity"></a>Bağlantı
 
@@ -67,11 +60,9 @@ Bilinen Sorunlar:
 - watchOS, Apple Watch korumalı kullanıcı verilerine erişim izni kullanıcıdan değil. Veri izleme uygulamada kullanmadan önce bir iPhone uygulamada erişim izni ver.
 - Apple Watch burada tüm WatchConnectivity iletimler başarısız bir durumda girebilirsiniz düzeltmek için Apple Watch yeniden başlatın.
 
-
 ## <a name="notifications"></a>Bildirimler
 
 Bir ortam eki çok büyük ise, kullanıcının iPhone ancak bunların Apple Watch sunulur.
-
 
 ## <a name="nsurlconnection"></a>NSURLConnection
 
@@ -79,11 +70,9 @@ Tüm `NSURLConnection` eski TLS protokolleri kullanarak bağlantı başarısız 
 
 3 watchOS sürümünden itibaren SSL/TLS bağlantılar güvenlik kesinlikle Apple tarafından zorlanan. Etkilenen hizmetler ve uygulamalar web sunucularını en son TLS protokol sürümleri kullanmak üzere güncelleştirilmiş.
 
-
 ## <a name="nsurlsession"></a>NSURLSession
 
 WatchOS 3 ' ten itibaren `HTTPBodyStream` özelliği `NSMutableURLRequest` sınıfı ayarlayın, bu yana açılmamış bir akışa `NSURLConnection` ve `NSURLSession` şimdi bu gereksinim kesinlikle zorla.
-
 
 ## <a name="privacy"></a>Gizlilik
 
@@ -97,16 +86,13 @@ Bilinen Sorunlar:
 
 3 watchOS sürümünden itibaren SSL/TLS bağlantılar güvenlik kesinlikle Apple tarafından zorlanan. Etkilenen hizmetler ve uygulamalar web sunucularını en son TLS protokol sürümleri kullanmak üzere güncelleştirilmiş. Bkz: [NSURLConnection](#NSURLConnection) üzerinde daha fazla bilgi için.
 
-
 ## <a name="snapshots"></a>Anlık görüntüler
 
 Yeni benimseyen değil WatchKit uygulamalar `HandelBackgroundTask` API düzenli güncelleştirmeler artık watchOS 3 alırsınız. 
 
-
 ## <a name="watchkit"></a>WatchKit
 
 Bir uygulama watchOS yerleştirme arka girdiğinde SpriteKit ve SceneKit planda duraklatılır.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

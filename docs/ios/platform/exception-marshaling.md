@@ -1,19 +1,20 @@
 ---
-title: Özel durum hazırlama
-description: Xamarin.iOS özellikle yerel kodda özel durumlara yanıt vermek için yeni olayları içerir.
+title: Özel durum Xamarin.iOS içinde hazırlama
+description: Bu belgede bir Xamarin.iOS uygulaması yerel ve yönetilen özel durumları ile nasıl çalışılacağını açıklar. Oluşabilen sorunlar ve bu sorunları için bir çözüm anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/05/2017
-ms.openlocfilehash: bb9c16985d958772193093434350435ce477956a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dcf1074aacb6d139d107dac01fa86f459831d5f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786749"
 ---
-# <a name="exception-marshaling"></a>Özel durum hazırlama
+# <a name="exception-marshaling-in-xamarinios"></a>Özel durum Xamarin.iOS içinde hazırlama
 
 _Xamarin.iOS özellikle yerel kodda özel durumlara yanıt vermek için yeni olayları içerir._
 
@@ -108,7 +109,7 @@ Burada, yalnızca yönetilen çerçevelerini çerçeveler 8-10, ancak bu 0 çer�
 
 Kod örneği:
 
-``` objective-c
+```objc
 -(id) setObject: (id) object forKey: (id) key
 {
     @try {
@@ -124,7 +125,7 @@ Ve `@finally` bu çerçeve unwinds Mono çalışma zamanı hakkında bilmediğin
 
 Bu bir çeşitlemesi yönetilen kod ve almak için yerel çerçeveler geriye doğru izleme yönetilen bir özel durum oluşturmaktır ilk yönetilen `catch` yan tümcesi:
 
-``` csharp
+```csharp
 class AppDelegate : UIApplicationDelegate {
     public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
     {

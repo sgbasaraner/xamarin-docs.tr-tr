@@ -1,18 +1,20 @@
 ---
-title: Uyarıları görüntüleme
+title: Xamarin.iOS içinde uyarıları görüntüleme
+description: Bu belge, iOS 8 sunulan API'leri UIAlertController kullanarak Xamarin.iOS içinde uyarıları görüntülemek açıklar.
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b15afa55f170ce86fd66e17209c6db172b1db740
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88233cb1ac31b2669fdc38bbc9b0835a45c6b0ce
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789602"
 ---
-# <a name="displaying-alerts"></a>Uyarıları görüntüleme
+# <a name="displaying-alerts-in-xamarinios"></a>Xamarin.iOS içinde uyarıları görüntüleme
 
 İOS 8 ile başlayarak, UIAlertController tamamlanmış değiştirilen UIActionSheet sahiptir ve UIAlertView hem de artık kullanım.
 
@@ -28,7 +30,7 @@ Kullanım `UIAlertControllerStyle` görüntülemek için uyarı türünü belirt
 Bir uyarı denetleyicisi oluştururken almak için gereken üç adım vardır:
 
 - Oluşturma ve uyarı şununla yapılandırma
-    * title
+    * Başlık
     * iletisi
     * preferredStyle
     

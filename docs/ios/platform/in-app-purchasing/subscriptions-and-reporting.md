@@ -1,26 +1,26 @@
 ---
-title: Abonelikler ve Raporlama
+title: Abonelikler ve Xamarin.iOS içinde raporlama
+description: Bu belge, yenileme olmayan abonelikler, ücretsiz abonelikler, otomatik yenilenebilir abonelikleri ve iTunes Bağlan bu öğeler ile ilgili rapor kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7ba47e8f0ec114845c14269e81bb7f078a5d4936
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e0873107a60b48e5ebfd8e159f3bf3b85d02867
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787037"
 ---
-# <a name="subscriptions-and-reporting"></a>Abonelikler ve Raporlama
+# <a name="subscriptions-and-reporting-in-xamarinios"></a>Abonelikler ve Xamarin.iOS içinde raporlama
 
 ## <a name="about-non-renewing-subscriptions"></a>Yenileme dışı abonelikler hakkında
 
 Abonelikleri olmayan yenileme (gezinti uygulaması bir haftanın erişimi) veya bir veri arşivine süre sınırlı erişim gibi zaman kısıtlaması hizmetiyle satış gösteren ürünleri için tasarlanmıştır.   
    
-   
-   
- Yenileme olmayan abonelikleri ve diğer ürün türleri arasındaki farklar'yi tıklatın:
+Yenileme olmayan abonelikleri ve diğer ürün türleri arasındaki farklar'yi tıklatın:
 
 -  İTunes Bağlan ürün tanımında terimi içermez. Uygulama kodu ürün kimliği geçerlilik döneminden Infer mümkün olması gerekir 
 -  Birden çok kez (bir tüketilebilir ürün gibi) alınabilir. Uygulamaları abonelik terim/süre sonu ve yenileme yönetmek ve çakışan bir abonelik satın alma kullanıcının engellemek için gereklidir. 

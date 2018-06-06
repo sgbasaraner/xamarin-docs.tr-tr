@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials Pano
-description: Pano sınıfı metnini sistem panoya uygulamalar arasında kopyalama ve yapıştırma olanak sağlar.
+title: 'Xamarin.Essentials: Pano'
+description: Bu belgede metnini sistem panoya uygulamalar arasında kopyalama ve yapıştırma imkan tanıyan Xamarin.Essentials Pano sınıfında açıklanmaktadır.
 ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 10100d1c65946780b77dbb022822bdd73f45a84a
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 41b15b480fa23bd49667b68e904043e4f1a95732
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732703"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782365"
 ---
-# <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials Pano
+# <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials: Pano
 
 ![Yayın öncesi NuGet](~/media/shared/pre-release.png)
 

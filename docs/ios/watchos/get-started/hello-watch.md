@@ -1,19 +1,20 @@
 ---
-title: Merhaba, izleme
-description: Xamarin ve watchOS ile çalışmaya başlama
+title: Merhaba, watchOS – izlenecek yol
+description: Bu belge, Xamarin kullanarak basit watchOS uygulaması oluşturmanın bir kılavuz sağlar. Mac için Visual Studio ve Visual Studio çalışma, film şeritleri ile çalışma ve kod olaylara yanıt konuları açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/14/2016
-ms.openlocfilehash: 2281fa801d32e8d8934767ae090503ca523d7eff
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00d6080429450dce2c0491fa385cf4f179befba6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791003"
 ---
-# <a name="hello-watch"></a>Merhaba, izleme
+# <a name="hello-watchos--walkthrough"></a>Merhaba, watchOS – izlenecek yol
 
 Bir çözüm adımlarını izleyerek oluşturduktan sonra [Kurulum ve yükleme](~/ios/watchos/get-started/installation.md), 3 proje gerekir:
 
@@ -130,13 +131,11 @@ partial class InterfaceController
 
 ```csharp
 int clickCount = 0;
-
 partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 {
   var msg = String.Format("Clicked {0} times", ++clickCount);
   myLabel.SetText(msg);
 }
-
 ```
 
 Bu kodu oldukça saydam olmalıdır: örnek değişkeni `clickCount` olduğu işlevi her zaman artar `OnButtonPress` olarak adlandırılır. Metnin `myLabel` bu sayı; yansıtacak şekilde değiştirildi `myLabel`, doğal olarak, Xcode'da oluşturduğunuz çıkışlar birini adıdır. `partial` İşlevi, belirtilen eylem adı ile ilişkili işlevi uygulamasıdır.

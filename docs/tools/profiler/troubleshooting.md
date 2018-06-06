@@ -1,20 +1,19 @@
 ---
 title: Xamarin sorun giderme Profil Oluşturucu
-description: Xamarin profil oluşturucu sorunlarını giderme
+description: Bu belge için Xamarin Profil Oluşturucu ile ilgili sorun giderme bilgileri sağlar. Günlüğe kaydetme ve Tanılama, IDE ve diğer konular ilgili sorunlar açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 9e2f9a35f37513ce0cb785f2bd922aeccf42dd8e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 247a18cf7f645ea90d100cb3f4900f30ac7754cc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793863"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin sorun giderme Profil Oluşturucu
-
-_Xamarin profil oluşturucu sorunlarını giderme_
 
 ## <a name="logging-and-diagnostics"></a>Günlüğe kaydetme ve tanılama
 
@@ -25,6 +24,7 @@ Xamarin takım bize bilgilerle sağlarsanız, sorunları izlemenize yardımcı o
 - **.Mlpd** profil oluşturma oturumu (aşağıya bakın) oluşturuluyor.
 
 ### <a name="getting-log-outputs"></a>Günlük çıkışları alma
+
 Mac için günlükleri kaydedilir `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`.
 
 Windows bu kaydedilir `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` bir sorun gönderme her Lütfen en son günlük ekleyin.
@@ -49,7 +49,6 @@ Bir **.mlpd** mono çalışma zamanı profil oluşturucu çıktısı sıkıştı
 
 ![](troubleshooting-images/image17-vs.png "Visual Studio'da .mlpd dosyası kaydediliyor")
 
-
 Bu dikkate almak önemlidir **.mlpd** çok sayıda bilgi içerir ve dosya boyutu büyük olacaktır.
 
 ## <a name="troubleshooting"></a>Sorun giderme
@@ -70,7 +69,6 @@ Bu sorunu çözmek için aşağıdaki ayarları kontrol edin:
 - Oturum kimliği doğrulanmış olarak ve doğru emin olun.
 - [Visual Studio] Kullanıyor olmanız gerekir [Visual Studio Enterprise](https://www.visualstudio.com/vs/enterprise/) ve geçerli bir Enterprise lisansınız.
 
-
 #### <a name="i-get-an-error-when-i-try-to-launch-the-profiler"></a>Profil Oluşturucu başlatmaya çalışırken bir hata alıyorsunuz
 
 Visual Studio profil oluşturucu kullanırken, bu hata kutusuna çalıştırırsanız:
@@ -83,14 +81,11 @@ Normalde Simulator başlatamıyor olması nedeniyle olur / öykünücüsü. Dene
 
 Özellikle izlemek istediğiniz bir iş parçacığı varsa, get almak bir çok kendi oluşturulmasını başlayarak, iş parçacığı adı ideal olacaktır `ThreadName` yerine `0x0`. Örneğin, kullanıcı Arabirimi iş parçacığı adı ayarlama için aşağıdaki kodu kullanabilirsiniz:
 
-
 ```csharp
 RunOnUiThread (() => {
   Thread.CurrentThread.Name  = "UI";
 });
 ```
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

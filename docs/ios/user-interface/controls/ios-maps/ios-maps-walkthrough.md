@@ -1,5 +1,5 @@
 ---
-title: Ek açıklamalar ve yer paylaşımları
+title: Ek açıklamalar ve Xamarin.iOS içindeki yer paylaşımları
 description: Bu makalede harita Seti ek açıklama ve katmana özellikleriyle birlikte çalışmak üzere nasıl gösteren bir adım adım kılavuz sunar. Bir ek açıklama ve katmana Xamarin gelişmesi 2013 konferans konumda görüntüleyen bir uygulama için bir harita ekleme gösterir.
 ms.prod: xamarin
 ms.assetid: 1BC4F7FC-AE3C-46D7-A4D3-18E142F55B8E
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 9defbade6fafefb26d87e88665c491b3a559c1ae
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d224f034afc9b841bbf82b2b15b92db2d7820c7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789586"
 ---
-# <a name="annotations-and-overlays--walkthrough"></a>Ek açıklamalar ve yer paylaşımları – izlenecek yol
+# <a name="annotations-and-overlays-in-xamarinios"></a>Ek açıklamalar ve Xamarin.iOS içindeki yer paylaşımları
 
 Bu kılavuzda yapı oluşturacağız uygulama aşağıda gösterilmiştir:
 

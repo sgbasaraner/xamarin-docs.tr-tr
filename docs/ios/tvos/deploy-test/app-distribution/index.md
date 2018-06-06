@@ -1,5 +1,5 @@
 ---
-title: Uygulama dağıtım genel bakış
+title: tvOS uygulama dağıtım genel bakış
 description: Bu belge Xamarin.tvOS uygulaması için kullanılabilen dağıtım teknikleri genel bir bakış sağlar ve konusunda daha ayrıntılı belgeler için bir işaretçi olarak görev yapar.
 ms.prod: xamarin
 ms.assetid: D5E0F446-C083-4E21-9788-FC84D32D00C4
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: e5be0bef158c87fe06516d9a58e34c741e6e14b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 440d980c39434165ba9a59ccf67850977c8f75c3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788751"
 ---
-# <a name="app-distribution-overview"></a>Uygulama dağıtım genel bakış
+# <a name="tvos-app-distribution-overview"></a>tvOS uygulama dağıtım genel bakış
 
 _Bu belge Xamarin.tvOS uygulaması için kullanılabilen dağıtım teknikleri genel bir bakış sağlar ve konusunda daha ayrıntılı belgeler için bir işaretçi olarak görev yapar._
 
@@ -28,7 +29,7 @@ Apple Xamarin.tvOS tarafından desteklenmeyen bir tvOS uygulama dağıtmak için
 
 1. [**Uygulama Mağazası**](#Apple-TV-App-Store-Distribution)
 2. [**Şirket içi (Kurumsal)**](#In-House-Distribution) 
-2. [**Ad Hoc**](#Ad_Hoc_Distribution) 
+2. [**Geçici**](#Ad_Hoc_Distribution) 
 
 Bu senaryolar uygulamaları olmasını gerektirir uygun kullanılarak sağlanan *sağlama profili*. Sağlama profilleri kod imzalama uygulama ve hedeflenen dağıtım mekanizması kimliğini yanı sıra bilgiler içeren dosyalardır. Uygulama mağazası dağıtım için bunlar Ayrıca uygulama dağıtılabilir hangi aygıtlar hakkında bilgiler içerir.
 

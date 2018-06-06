@@ -1,19 +1,20 @@
 ---
-title: Sorun giderme
-description: İpuçları ve püf noktaları kesintisiz dağıtımı oluşturmak için
+title: Xamarin.iOS test ve dağıtım - sorun giderme
+description: Bu belge, kod imzalama ile ilgili sorun giderme ipuçları sağlar ve Windows Mac yapı ana bilgisayardan sağlama, TestFlight ve iOS uygulaması kopyalama paket.
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: fe7425bbf6440317cc856d2c727874298f66bc33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 056b9ba5c1625093cd7fdd2914fa5df919a2f426
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785391"
 ---
-# <a name="troubleshooting"></a>Sorun giderme
+# <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS test ve dağıtım - sorun giderme
 
 ## <a name="code-signing--provisioning"></a>Kod imzalama & sağlama
 
@@ -32,7 +33,6 @@ Kod imzalama & iOS hazırlama oldukça garip olabilir ve bu nedenle kod imzalama
 * Tüm gerekli sertifikaları ve ilgili özel anahtarları kullanılabilir olduğundan emin olun. Her ekip için bir geliştirici sertifikası (kendi cihazda uygulama yüklemek için) ve (diğer cihazlara yüklemek için) bir dağıtım sertifika gerekir
 
 * Yeni bir sağlama profili veya sertifika yüklendiğinde, Xcode ve Visual Studio for Mac / Visual Studio yeniden başlatın.
-
 
 ## <a name="testflight"></a>TestFlight
 

@@ -1,5 +1,5 @@
 ---
-title: Stil Xamarin.Forms basamaklı stil sayfalarını kullanarak uygulamaları
+title: Stil Xamarin.Forms geçişli stil sayfaları (CSS) kullanan uygulamalar
 description: Xamarin.Forms geçişli stil sayfaları (CSS) kullanarak stil görsel öğeleri destekler.
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 811abacff330bf7b6e6240691cb6a15ebbd9d242
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: 76ca67f7ac8a8e27e5f502455d48874c775fc172
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794091"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets"></a>Geçişli stil sayfaları kullanarak stil Xamarin.Forms uygulamaları
+# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Geçişli stil sayfaları (CSS) kullanarak stil Xamarin.Forms uygulamaları
 
 _Xamarin.Forms geçişli stil sayfaları (CSS) kullanarak stil görsel öğeleri destekler._
 
@@ -372,7 +373,7 @@ Aşağıdaki CSS özelliklerini Xamarin.Forms tarafından desteklenen (içinde *
 |`color`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`|_Renk_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Dize_ \| `initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_çift_ \| _namedsize_  \| `initial` |`font-size: 12;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_çift_ \| _namedsize_ \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_Çift_ \| `initial` |`min-height: 250;`|
 |`margin`|`View`|_Kalınlığı_ \| `initial` |`margin: 6 12;`|
@@ -447,4 +448,4 @@ Her tam anlamını `namedsize` değerdir platforma bağımlı ve görünüm bağ
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MonkeyAppCSS (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
-- [Stil Xamarin.Forms XAML stilleri kullanan uygulamalar](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [XAML Stilleri Kullanarak Xamarin.Forms Uygulamalarında Stil Oluşturma](~/xamarin-forms/user-interface/styles/xaml/index.md)

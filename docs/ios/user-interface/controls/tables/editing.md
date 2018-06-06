@@ -1,18 +1,20 @@
 ---
-title: Düzenleme
+title: Xamarin.iOS tablolarla düzenleme
+description: Bu belge Xamarin.iOS tablolarda düzenlemeyi açıklar. Silmek için modu ve satır ekleme Düzenle geçirme açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: EC197F25-E865-AFA3-E5CF-B33FAB7744A0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 161de0209217dde671b976afad90eaad18d8c7b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28ebf1157a1bfc9f7bd910fd11365b29cecb9529
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789996"
 ---
-# <a name="editing"></a>Düzenleme
+# <a name="editing-tables-with-xamarinios"></a>Xamarin.iOS tablolarla düzenleme
 
 Tablo düzenleme özellikleri yöntemleri geçersiz kılarak etkin bir `UITableViewSource` bir alt kümesi. En basit düzenleme tek yöntemi geçersiz kılma ile uygulanabilir manyetik Silme hareketi davranıştır.
 Daha karmaşık (dahil olmak üzere taşıma satırlar) düzenleme düzenleme modunda tabloyla yapılabilir.

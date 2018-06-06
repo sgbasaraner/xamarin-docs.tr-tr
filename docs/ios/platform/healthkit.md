@@ -1,21 +1,20 @@
 ---
-title: HealthKit
-description: HealthKit Merkezi, Eşgüdümlü ve güvenli bir veri deposu için sistem durumu ile ilgili bilgiler sağlar iOS 8'de sunulan bir çerçevedir. İşletim sistemi, gizlilik ve güvenlik durumu bilgisi ve sistem durumu uygulama, kullanıcı için bir Pano sağlar. Kullanıcının izni olan uygulamalar okuma ve çok çeşitli sistem durumu bilgisi yazma.
+title: Xamarin.iOS HealthKit
+description: Bu belgede HealthKit, sistem durumu ile ilgili bilgiler için merkezi, Eşgüdümlü ve güvenli bir veri deposu sağlayan iOS 8'de sunulan bir çerçeve açıklanmaktadır. HealthKit uygulama sağlama ve HealthKit çerçevesi kullanır kodunun nasıl yazılacağını açıklar.
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a569bcff3ac33d008788bb0b946bd027fa5c0ea8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 06c0231bbb9aa7b82b92e0a8c2157b8be9c8b05b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787539"
 ---
-# <a name="healthkit"></a>HealthKit
-
-_HealthKit Merkezi, Eşgüdümlü ve güvenli bir veri deposu için sistem durumu ile ilgili bilgiler sağlar iOS 8'de sunulan bir çerçevedir. İşletim sistemi, gizlilik ve güvenlik durumu bilgisi ve sistem durumu uygulama, kullanıcı için bir Pano sağlar. Kullanıcının izni olan uygulamalar okuma ve çok çeşitli sistem durumu bilgisi yazma._
+# <a name="healthkit-in-xamarinios"></a>Xamarin.iOS HealthKit
 
 Sistem durumu Seti güvenli bir veri deposu için kullanıcının durumuyla ilgili bilgileri sağlar. Sistem durumu Seti uygulamalar kullanıcının açık izne okuma ve bu veri deposuna yazma ve ilgili verileri eklendiğinde bildirimleri almak. Uygulamalar verileri sunabilir veya kullanıcının Apple'nın sağlanan sistem durumu uygulamayı bir Pano tüm verilerini görüntülemek için kullanabilirsiniz.
 

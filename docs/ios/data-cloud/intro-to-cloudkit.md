@@ -1,21 +1,20 @@
 ---
-title: CloudKit
-description: iCloud API'leri bir kullanıcı hesabı otomatik eşitleme için desteğiyle iCloud verilerini depolamak iOS 8 uygulamaları etkinleştirir. CloudKit kullanarak kullanıcıların iCloud etkinleştirildiği aygıtlar arasında tutarlı ve sorunsuz bir deneyim sağlar. Bu makalede kolaylık API'sini kullanarak, iOS 8 uygulama CloudKit etkinleştirme kapsar.
+title: Xamarin.iOS CloudKit
+description: Bu belge Xamarin.iOS CloudKit ile nasıl çalışılacağını açıklar. CloudKit genel bir bakış sağlar ve bunu, CloudKit kolaylık API, ölçeklenebilirlik, kullanıcı hesapları ve geliştirme ve üretim ortamları etkinleştirme anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: 66B207F2-FAA0-4551-B43B-3DB9F620C397
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 4765b91bdc1f64be7e2ea67622db7af8634f1347
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 941d39510d05c95ff06ffd3d55685c002bd4d4e5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785063"
 ---
-# <a name="cloudkit"></a>CloudKit
-
-_iCloud API'leri bir kullanıcı hesabı otomatik eşitleme için desteğiyle iCloud verilerini depolamak iOS 8 uygulamaları etkinleştirir. CloudKit kullanarak kullanıcıların iCloud etkinleştirildiği aygıtlar arasında tutarlı ve sorunsuz bir deneyim sağlar. Bu makalede kolaylık API'sini kullanarak, iOS 8 uygulama CloudKit etkinleştirme kapsar._
+# <a name="cloudkit-in-xamarinios"></a>Xamarin.iOS CloudKit
 
 CloudKit framework bu erişim iCloud uygulamaların geliştirilmesini kolaylaştırır. Bu, uygulama verilerini ve varlık hakları yanı sıra uygulama bilgilerini güvenli bir şekilde erişebildiklerinden alınmasını içerir. Bu paketi kişisel bilgi paylaşımı olmadan kullanıcıların iCloud kimlikleri ile uygulamalara erişim sağlayarak kullanıcılara anonim bir katman sağlar.
 

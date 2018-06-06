@@ -1,21 +1,20 @@
 ---
-title: Uygulama mağazası simgesi
-description: Bu makale, bir uygulama mağazası simgesi olarak kullanılacak bir görüntü varlığı bir Xamarin.iOS uygulaması yönetme ve dahil kapsar.
+title: Xamarin.iOS uygulama mağazası simgeleri
+description: Bu belge, bir Xamarin.iOS uygulaması için bir uygulama mağazası simge yönetmek için varlık kataloglar kullanmayı açıklar. Daha önce uygulama mağazası simgeler Bağlan iTunes ile yönetiliyordu.
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/26/2017
-ms.openlocfilehash: f8d993ccb23817e237b9cef8074b881f3ea4b3a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 749dbf01af382a54fe24652706f6a605ac7b20b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783616"
 ---
-# <a name="app-store-icon"></a>Uygulama mağazası simgesi
-
-_Bu makale, bir uygulama mağazası simgesi olarak kullanılacak bir görüntü varlığı bir Xamarin.iOS uygulaması yönetme ve dahil kapsar._
+# <a name="app-store-icons-in-xamarinios"></a>Xamarin.iOS uygulama mağazası simgeleri
 
 Xcode 9 önce tüm App Store simgeleri Bağlan iTunes eklendi. Ancak, bu artık bir durumdur. Uygulama mağazası simgeler şimdi gerekir proje paketin bir parçası olarak dahil edilen ve bir varlık Kataloğu içinde eklendi. Uygulama mağazası simge içermeyen uygulamalar Apple tarafından reddedilir.
 

@@ -1,20 +1,21 @@
 ---
-title: Yeni arama API'leri
+title: Xamarin.iOS arama API'leri
 description: Bu makalede, bilgi ve Xamarin.iOS uygulamalarınızı içinde özellikleri arayın yapmalarına izin vermek için yeni uygulama arama iOS 9 tarafından sağlanan API'leri kullanarak kapsar.
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5dcd3d9665befaa82fd0f5677a4a662f633ed45b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc62ad34af0b9b98f0475599a08946122badd21e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788182"
 ---
-# <a name="new-search-apis"></a>Yeni arama API'leri
+# <a name="search-apis-in-xamarinios"></a>Xamarin.iOS arama API'leri
 
-_Bu makalede, bilgi ve Xamarin.iOS uygulamalarınızı içinde özellikleri arayın yapmalarına izin vermek için yeni uygulama arama iOS 9 tarafından sağlanan API'leri kullanarak kapsar._
+_Bu makalede, bilgi ve Xamarin.iOS uygulamalarınızı içinde özellikleri arayın yapmalarına izin vermek için uygulama arama iOS 9 tarafından sağlanan API'lerini kullanarak kapsar._
 
 Arama iOS 9 bilgilere ve bir Xamarin.iOS uygulaması içindeki özelliklere erişmek için yeni yollar sağlamak için genişletilmiştir. Yeni uygulama arama API'lerini kullanarak, uygulama içeriğini Spotlight ve Safari arama sonuçları iletim ve Siri anımsatıcıları ve öneriler aranabilir yapılır. Bu etkinlikler ve uygulamanızda ayrıntılı bilgileri hızlı bir şekilde erişmesine olanak tanır.
 

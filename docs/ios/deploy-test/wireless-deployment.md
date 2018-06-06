@@ -1,19 +1,20 @@
 ---
-title: Kablosuz dağıtma
-description: Bu özellik iOS veya Apple TV cihazlara dağıtım için bir ağ bağlantısı üzerinden sağlar.
+title: Xamarin.iOS ve tvOS uygulamalar için kablosuz dağıtma
+description: Bu belge kablosuz olarak bir Xamarin.iOS uygulaması iOS cihazına ya da Visual Studio'dan sekmelerin yerine Mac veya Visual Studio 2017 dağıtmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: b331ea61915b4f202aa971658a5a54d1a8038d64
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ade7eb7ff26fec8df616401801585e499ddf4206
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785524"
 ---
-# <a name="wireless-deployment"></a>Kablosuz dağıtma
+# <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Xamarin.iOS ve tvOS uygulamalar için kablosuz dağıtma
 
 Geliştirici iş akışı önemli bir kısmını bir aygıta dağıtıyor. Xcode 9 dağıtmak ve uygulamanızın hatalarını ayıklama istediğiniz her zaman için donanım aygıtlarınızın sahip olmak yerine bir iOS cihazı veya Apple TV için bir ağ üzerinden dağıtma seçeneği sunulmuştur. Bu özellik Visual Studio'da Mac 7.4 ve Visual Studio 15,6 sürüm için sunulmuştur.
 

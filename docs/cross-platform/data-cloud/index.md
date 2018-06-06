@@ -1,20 +1,19 @@
 ---
-title: Microsoft Azure
-description: Belgeler ve örnek kod için Azure indirir.
+title: Microsoft Azure ve Xamarin
+description: Visual Studio'da bağlı hizmetler ile ilgili belgelere Mac, Azure Mobile Apps, Active Directory kimlik doğrulaması ve Webapı için bu belge bağlantıları.
 ms.prod: xamarin
 ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: asb3993
 ms.author: amburns
 ms.date: 10/09/2017
-ms.openlocfilehash: 5a7c2e4e1bc8beff40984e66760a332e8b00f87d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 25eec247a0cb664897541a0e6e818a77018fda43
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781084"
 ---
-# <a name="microsoft-azure"></a>Microsoft Azure
-
-_Belgeler ve örnek kod için Azure indirir._
+# <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure ve Xamarin
 
 [ ![](images/evolve-mikej-azure-sml.png "Azure App Services özellikleri eklemek bulut veri depolama ve platformlar arası anında iletme bildirimleri de dahil olmak üzere Xamarin uygulamaları için kolaydır")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
@@ -23,7 +22,6 @@ _Belgeler ve örnek kod için Azure indirir._
 ## <a name="connected-services-in-visual-studio-for-mac"></a>Mac için Visual Studio'da Hizmetleri bağlı
 
 Yeni [bağlantılı Hizmetler](connected-services.md) özelliği Mac için Visual Studio, geliştiricilerin hızla ve kolayca mobil uygulamalarından IDE içinden Azure işlevsellik eklemek için yardımcı olur. Şu anda alfa kanal test etmek için kullanılabilir.
-
 
 ## <a name="azure-app-services"></a>Azure uygulama hizmetleri
 

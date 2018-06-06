@@ -1,24 +1,24 @@
 ---
-title: Kullanıcı Arabirimi
-description: Denetimleri, Tasarımcısı ve UX tasarım ilkeleri de dahil olmak üzere genel kullanıcı deneyimini (UX) kapsamı.
+title: Kullanıcı arabirimleri Xamarin.iOS ile oluşturma
+description: Bu belge, bir Xamarin.iOS uygulaması kullanıcı arabiriminde yapı açıklar. Bu arabirim denetimleri kılavuzları iOS Tasarımcısı, film şeritleri, genel iOS arabirimi kavramları ve iOS kullanıcı hakkında bağlantılar sağlar.
 ms.prod: xamarin
 ms.assetid: 2B3E45FA-C30F-D708-0E8F-3EE02BD1A867
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/21/2017
-ms.openlocfilehash: a3d88c2698ebd290929ceca842c28b3a43aed6e0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d1ea39fcc29752337d89c4a0e4a1869f0a3948f1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790275"
 ---
-# <a name="user-interface"></a>Kullanıcı Arabirimi
+# <a name="building-user-interfaces-with-xamarinios"></a>Kullanıcı arabirimleri Xamarin.iOS ile oluşturma
 
 ## <a name="ios-designeriosuser-interfacedesignerindexmd"></a>[iOS Designer](~/ios/user-interface/designer/index.md)
 
 Visual Studio'ya Mac için tam olarak tümleşiktir iOS film şeridi biçiminde bir tasarımcı oluşturduğumuz Böylece dosyaları Xcode veya Visual Studio'da Mac için düzenlenebilir iOS Tasarımcısı film şeridi biçimi ile tam uyumluluk korur. Ayrıca, düzenleyici Düzenleyicisi'nde tasarım zamanında işleme özel denetimler gibi gelişmiş özellikleri destekler.
-
 
 ## <a name="introduction-to-storyboardsiosuser-interfacestoryboardsindexmd"></a>[Görsel Taslaklara Giriş](~/ios/user-interface/storyboards/index.md)
 
@@ -31,5 +31,3 @@ Bir Xamarin.iOS uygulaması dahil olmak üzere, iOS kullanıcı arabirimi ile ç
 ## <a name="user-interface-controlsiosuser-interfacecontrolsindexmd"></a>[Kullanıcı arabirimi denetimleri](~/ios/user-interface/controls/index.md)
 
 Xamarin.iOS Apple'nın sağladığı tüm yerel kullanıcı arabirimi nesneleri gösterir. Xamarin.iOS uygulamaları iOS Tasarımcısı, Xcode'nın arabirimi oluşturucu kullanılarak kolayca eklenir veya program aracılığıyla. Seçtiğiniz yöntem bağımsız olarak, tüm kullanıcı arabirimi nesne özellikleri ve yöntemleri C# Xamarin.iOS kullanıma sunar.
-
-

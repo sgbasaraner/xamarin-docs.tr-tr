@@ -1,21 +1,19 @@
 ---
-title: Uygulama içi satın alma
-description: iOS uygulamaları, dijital ürün ve hizmetlerini deposu Seti API'lerini kullanarak satmak. Ürünler oluşturulur ve iTunes Bağlan Portal'da yönetilir. Apple işlem yönetir ve bunların satmak önce tüm ürünleri onaylar ve her bir işleme (şu anda % 30) için bir ücret ister. Apple uygulamanızda dijital satış için uygulama içi satın kullanır, ancak fiziksel mal ve sayısal olmayan hizmetleri satışlarının kullanamazsınız gerektirir. Dijital Ürün ve Hizmetleri için alternatif ödeme seçenekleri sunan reddedilmesi büyük olasılıkla uygulamalardır. Bu belge, uygulamanızı mağaza Seti kullanacak şekilde yapılandırılmasını açıklamaktadır ve en yaygın uygulama içi satın alma senaryoları Xamarin.iOS örnekler sağlar.
+title: Uygulama içinde Xamarin.iOS satın alma
+description: Bu belge, dijital ürün ve hizmetlerini StoreKit API'lerini kullanarak satmak açıklar. Yapılandırma, kaynaklarda ürünleri, Tüketilemezi ürünleri, işlemler, abonelikleri ve daha fazla ele kılavuzlara bağlar.
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7a8dec6051caeba55c45df29c085ecfcddd160d2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8a41ed44a331c91a333b95c1d62136244a6945dd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787347"
 ---
-# <a name="in-app-purchasing"></a>Uygulama içi satın alma
-
-_iOS uygulamaları, dijital ürün ve hizmetlerini deposu Seti API'lerini kullanarak satmak. Ürünler oluşturulur ve iTunes Bağlan Portal'da yönetilir. Apple işlem yönetir ve bunların satmak önce tüm ürünleri onaylar ve her bir işleme (şu anda % 30) için bir ücret ister. Apple uygulamanızda dijital satış için uygulama içi satın kullanır, ancak fiziksel mal ve sayısal olmayan hizmetleri satışlarının kullanamazsınız gerektirir. Dijital Ürün ve Hizmetleri için alternatif ödeme seçenekleri sunan reddedilmesi büyük olasılıkla uygulamalardır. Bu belge, uygulamanızı mağaza Seti kullanacak şekilde yapılandırılmasını açıklamaktadır ve en yaygın uygulama içi satın alma senaryoları Xamarin.iOS örnekler sağlar._
-
+# <a name="in-app-purchasing-in-xamarinios"></a>Uygulama içinde Xamarin.iOS satın alma
 
 iOS uygulamaları dijital ürünleri veya hizmetleri StoreKit – Apple sunucuları ile iletişim kuran iOS tarafından sağlanan API'leri aracılığıyla kendi Apple kimliği kullanıcıyla Finansal işlemler gerçekleştirmek için bir dizi kullanarak satabilir miyim StoreKit API'ları ürün bilgilerini ve alma işlemleri gerçekleştirme ile öncelikle ilgilenen – hiç kullanıcı arabirimi bileşeni yoktur. Uygulama içi satın alma kullanan uygulamalar, kendi kullanıcı arabirimi oluşturma ve kullanıcı için gerekli ürünleri veya hizmetleri sağlamak için özel kod ile satın alınan öğeleri izleme gerekir.
 
@@ -27,9 +25,7 @@ Uygulama içi satın alma işlevsellik sağlayan bir dizi adımı gerektirir:
 -  **Kullanıcı arabirimi ve ürünleri kendileri derleme** – her satın alma izlemek ve yedekleme/bunları uygunsa, geri yükleme için mekanizmaları dahil olmak üzere ürünler uygulanmalıdır.
 -  **Satış izleme ve fon alma** – satış eğilimlerini izlemek ve, geliri izlemek için Bağlan iTunes tarafından sağlanan bilgileri kullanın.
 
-
 Bu belge, Xamarin.iOS kullanarak uygulama içi satın alımlar sağlamak için tüm bu adımları tamamlamak açıklanmaktadır.
-
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -39,7 +35,7 @@ Uygulama içi satın alma desteklemek için Xcode 7 ve üstünde 5.0 veya daha y
 
  * [Temel Uygulama İçi Satın Alma Bilgileri ve Yapılandırması](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
- * [Mağaza Paketine Genel Bakış ve Ürün Bilgilerini Alma](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+ * [StoreKit genel bakış ve ürün bilgileri alınırken](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
 
  * [Tüketilebilir Ürünler Satın Alma](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
 
@@ -48,7 +44,6 @@ Uygulama içi satın alma desteklemek için Xcode 7 ve üstünde 5.0 veya daha y
  * [İşlemler ve Doğrulama](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
 
  * [Abonelikler ve Raporlama](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
-
 
 ## <a name="summary"></a>Özet
 

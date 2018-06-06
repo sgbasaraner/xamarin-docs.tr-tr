@@ -1,15 +1,17 @@
 ---
-title: .NET Objective-C için en iyi yöntemler katıştırma
+title: Objective-C için en iyi uygulamaları .NET katıştırma
+description: Bu belgede .NET katıştırma Objective-c ile kullanmak için çeşitli en iyi uygulamalar açıklanmaktadır Yönetilen kod kümesini gösterme, chunkier API gösterme, adlandırma ve daha fazla açıklanır.
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: e592a76e428d23881f1fe2dc5c7254999bece517
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b4b0df6f1c7c1d5931c0c18a1508747a7c570bea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793503"
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>Objective-C için en iyi uygulamaları .NET katıştırma
 

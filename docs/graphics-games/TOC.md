@@ -2,7 +2,7 @@
 ## [Oyun Geliştirme](game-development/index.md)
 ## [SkiaSharp](skiasharp/index.md)
 ### [Giriş](skiasharp/introduction.md)
-### [Platforma Özgü Notlar](skiasharp/platform.md)
+### [Platforma özgü notları](skiasharp/platform.md)
 
 
 

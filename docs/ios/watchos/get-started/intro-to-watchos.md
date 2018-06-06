@@ -1,17 +1,18 @@
 ---
 title: WatchOS giriş
-description: WatchOS çözüm yapısını ve kısıtlamaları'na genel bakış
+description: Bu belge, uygulama yaşam döngüsü, kullanıcı arabirimi türleri, ekran boyutlarına, sınırlamalar ve daha fazla açıklayan watchOS, genel bir bakış sağlar.
 ms.prod: xamarin
 ms.assetid: 99c316d6-6707-40f6-bec9-801d05888759
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 0a0adbab54fc134eaf2e69cc8088713e54b15d3b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 87edc24daab3239626cb904357bd2d45ce868970
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791315"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS giriş
 

@@ -1,22 +1,22 @@
 ---
-title: Uyarılarla çalışma
-description: Bu makalede kullanıcı Xamarin.tvOS için bir uyarı iletisi görüntülenecek UIAlertController çalışmak kapsar.
+title: Xamarin tvOS uyarıları ile çalışma
+description: Bu belge Xamarin tvOS uyarıları ile nasıl çalışılacağını açıklar. Metin alanları ve bir yardımcı sınıfı ekleme, bir uyarı görüntüleme ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: F969BB28-FF2C-4A7D-88CA-F8076AD48538
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: da4d2d952687c7e39276ca76af413b83c4519eea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b5125f150a4d57ed27041da2944f4c161434cf93
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789089"
 ---
-# <a name="working-with-alerts"></a>Uyarılarla çalışma
+# <a name="working-with-tvos-alerts-in-xamarin"></a>Xamarin tvOS uyarıları ile çalışma
 
 _Bu makalede kullanıcı Xamarin.tvOS için bir uyarı iletisi görüntülenecek UIAlertController çalışmak kapsar._
-
 
 TvOS kullanıcı dikkatini veya (örneğin, bir dosyayı silmek) zararlı bir eylemi gerçekleştirmek için izni isteyin gerekiyorsa, kullanarak bir uyarı iletisi sunabilir `UIAlertViewController`:
 

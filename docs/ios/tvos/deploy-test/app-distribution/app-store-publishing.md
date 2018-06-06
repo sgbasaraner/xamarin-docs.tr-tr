@@ -1,21 +1,20 @@
 ---
 title: Apple TV uygulama mağazası yayımlama
-description: Bu makalede, yapılandırma, yapı ve dağıtım Apple TV App Store aracılığıyla Xamarin.tvOS uygulama yayımlama gösterilmektedir. Uygulamanızı dağıtım için hazırlamak üzere nasıl, Apple'nın araçları gözden geçirme için uygulamanızı göndermek için nasıl kullanılacağı ve, son olarak, uygulamanızı Apple TV uygulama Mağazası'na yayımlamak nasıl kapsayan bir adım adım kılavuz içerir.
+description: Bu belge, Apple TV App Store için bir uygulamayı yayımlamak açıklar. Yapılandırma, sağlamak, yapı ve Xamarin ile oluşturulan bir tvOS uygulaması göndermek nasıl açıklanır.
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac905caaf0bdefe7f0c5502be0bd63102ca5a813
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789310"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV uygulama mağazası yayımlama
-
-_Bu makalede, yapılandırma, yapı ve dağıtım Apple TV App Store aracılığıyla Xamarin.tvOS uygulama yayımlama gösterilmektedir. Uygulamanızı dağıtım için hazırlamak üzere nasıl, Apple'nın araçları gözden geçirme için uygulamanızı göndermek için nasıl kullanılacağı ve, son olarak, uygulamanızı Apple TV uygulama Mağazası'na yayımlamak nasıl kapsayan bir adım adım kılavuz içerir._
 
 Tüm Apple TV cihazlara uygulamaları sırayla dağıtmak, Apple gerektirir üzerinden yayımlanan uygulamalar *Apple TV App Store*, bir Dur alışveriş konumunu tvOS uygulamalar için uygulama mağazası yaparak. Uygulamaları birçok türdeki geliştiriciler bu tek bir dağıtım noktasını yoğun başarı büyük harfe. Apple TV uygulama hazır bir çözüm uygulama geliştiriciler dağıtım ve ödeme sistemleri sunumu deposudur.
 

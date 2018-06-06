@@ -1,19 +1,20 @@
 ---
-title: Platform Özellikleri
-description: WatchOS uygulamalarında dahil etmek için Apple Watch özgü özellikler.
+title: watchOS Platform özellikleri
+description: Bu belge bağlantılar çeşitli kılavuzlara Apple Pay, bildirimler, zorluklar, öngörülü öneriler, etkinlik uygulamalar ve daha fazla gibi watchOS platform özellikleri açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 9b90c799f2635221a2c19bda426c501737600f88
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8ad4dc52c3bca0f54adb64bb97acaa23aeb1e590
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791299"
 ---
-# <a name="platform-features"></a>Platform Özellikleri
+# <a name="watchos-platform-features"></a>watchOS Platform özellikleri
 
 _WatchOS uygulamalarında dahil etmek için Apple Watch özgü özellikler._
 

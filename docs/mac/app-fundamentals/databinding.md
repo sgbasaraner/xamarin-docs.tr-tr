@@ -1,5 +1,5 @@
 ---
-title: Veri bağlama ve anahtar-değer kodlama
+title: Veri bağlama ve anahtar-değer Xamarin.Mac içinde kodlama
 description: Bu makalede, anahtar-değer kodlama ve anahtar-değer veri bağlama Xcode'nın arabirimi Oluşturucu kullanıcı Arabirimi öğelerine izin vermek üzere Gözlemleme kullanmayı ele alır.
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 48ee5d4e4a0a53de49fbba46d79424e03af6fe5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88567e47f488a94fcf7334584a678c9689b83306
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792144"
 ---
-# <a name="data-binding-and-key-value-coding"></a>Veri bağlama ve anahtar-değer kodlama
+# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Veri bağlama ve anahtar-değer Xamarin.Mac içinde kodlama
 
 _Bu makalede, anahtar-değer kodlama ve anahtar-değer veri bağlama Xcode'nın arabirimi Oluşturucu kullanıcı Arabirimi öğelerine izin vermek üzere Gözlemleme kullanmayı ele alır._
 

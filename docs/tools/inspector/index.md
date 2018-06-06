@@ -1,19 +1,19 @@
 ---
 title: Xamarin Inspector
-description: Görselleştirme ve canlı uygulamanızın hatalarını ayıklama
+description: Bu belge bağlantılar kılavuzlara yükleyin ve Xamarin denetçisi araştırmak ve uygulamalarda hata ayıklama için kullanacağınız anlatmaktadır.
 ms.prod: xamarin
 ms.assetid: A5CCD63C-18E5-4D19-AFEA-301FE4F8538A
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 87e78cb7a7b2d310bc77c1fd638a1cf32dad75a0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 8f33f61cd3c38dbce16f9a7afa103836aa454a0c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793093"
 ---
 # <a name="xamarin-inspector"></a>Xamarin Inspector
-
 
 Xamarin çalışma kitaplarını & Denetçisi bir etkileşimli C# Konsolu araçları ile kullanıcılara duruma getirin. Inspector ile hata ayıklama veya tanılama Yardımı olarak hizmet veren çalışan uygulamanızı incelerken, IDE, iş akışı hata ayıklama uygulama tümleştirir.
 

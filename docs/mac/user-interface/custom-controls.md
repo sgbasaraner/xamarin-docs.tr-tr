@@ -1,21 +1,20 @@
 ---
-title: Özel denetimler oluşturma
-description: Bu makalede, özel denetimler oluşturma ve bunlarla arabirim Oluşturucusu'nda çalışma açıklar.
+title: Xamarin.Mac içinde özel denetimler oluşturma
+description: Bu belge, Xamarin.Mac özel denetimlerinde yapı açıklar. Özel denetim oluşturmak, durumunu izlemek, onun arabirim çizin, kullanıcı girişine yanıt verir ve bir uygulamada denetimi kullanmak nasıl gösterir.
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e1ab3977df96e241fa2a5a80f6cabd74d7d775f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e4c2b2c9ee7bae3d6489fec6b22881653ec53043
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792684"
 ---
-# <a name="creating-custom-controls"></a>Özel denetimler oluşturma
-
-_Bu makalede, özel denetimler oluşturma ve bunlarla arabirim Oluşturucusu'nda çalışma açıklar._
+# <a name="creating-custom-controls-in-xamarinmac"></a>Xamarin.Mac içinde özel denetimler oluşturma
 
 C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı erişiminiz kullanıcı denetimleri, içinde çalışan bir geliştirici *Objective-C*, *Swift* ve *Xcode* yapar . Xamarin.Mac Xcode ile doğrudan tümleşir nedeniyle, Xcode'nın kullanabilirsiniz _arabirimi Oluşturucu_ ve kullanıcı denetimleri korumak (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için).
 

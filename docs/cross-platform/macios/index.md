@@ -1,20 +1,19 @@
 ---
 title: Apple Platform (iOS ve Mac)
-description: Bu bölümdeki kod Xamarin.iOS ve Xamarin.Mac projeleriniz arasında paylaşmak için stratejileri kapsar.
+description: 'Bu belgede Xamarin.iOS ve Xamarin.Mac geliştirme ilgili çeşitli konuları açıklanmaktadır: paylaşımı, Unified API, Objective-C kitaplıkları, yerel başvuruları, yerel türler ve daha fazla bağlama kodu.'
 ms.prod: xamarin
 ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 3c01ff4af699dd0374729b638470d1ef34aa7022
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b40758fa562e57415cd3c0818763ef0a7ce5dcca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781539"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple Platform (iOS ve Mac)
-
-_Bu bölümdeki kod Xamarin.iOS ve Xamarin.Mac projeleriniz arasında paylaşmak için stratejileri kapsar._
 
 ## <a name="code-sharing"></a>Kod paylaşımını
 
@@ -48,8 +47,6 @@ Xamarin yerel kitaplıkları uygulamalarınızla bağlamalarla getirmenize olana
 
 ## <a name="native-referencesnative-referencesmd"></a>[Yerel Başvurular](native-references.md)
 
-
-
 ##  <a name="macios-native-typesnativetypesmd"></a>[Mac/iOS yerel türler](nativetypes.md)
 
 32 ve 64 bit kodundan saydam C# ve F # desteklemek için yeni veri türleri sunuyoruz.   Buradan bilgi edinebilirsiniz.
@@ -62,7 +59,6 @@ Xamarin yerel kitaplıkları uygulamalarınızla bağlamalarla getirmenize olana
 
 Bu makalede, yeni iOS Unified API yerel türler kullanma yer almaktadır (`nint`, `nuint`, `nfloat`) burada kod paylaşılan Android veya Windows Phone işletim sistemleri gibi iOS olmayan aygıtlarla platformlar arası uygulamasında.
 Yerel türler ne zaman kullanılmalı içine bilgiler sağlar ve yeni türü platformlar arası koduyla burada kullanılmalıdır durumlarda birkaç olası çözümleri sağlar.
-
 
 ## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[HttpClient Yığını ve SSL/TLS Uygulama Seçicisi](http-stack.md)
 

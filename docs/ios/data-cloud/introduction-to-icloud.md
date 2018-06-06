@@ -1,21 +1,20 @@
 ---
-title: iCloud
-description: Apple iOS 5 iCloud Apple'nın sunucularındaki verileri depolamak ve (aracılığıyla kendi Apple kimliği) aynı kişi tarafından kullanılan tüm cihazlar arasında eşitlenmesini sağlamak uygulamalara izin vermek üzere bir hizmet olarak kullanıma sunuldu. Burada, cihazlardaki verileri için Apple'nın sunucularından yedeklenen bir yedek bileşeni da sahiptir. Bu belge, bazı API sağlanan iCloud Apple tarafından depolamak ve bunların sunucularıyla C# örnekleri küçük anahtar-değer çiftlerini depolamak için ve belgeleri depolamak için verileri almak için kullanmayı açıklar. Ayrıca, nasıl İcloud'a yedekleme uygulamanızın tasarımınu etkileyebilir anlatılmaktadır.
+title: İCloud Xamarin.iOS ile kullanma
+description: Bu belge iCloud ve Xamarin.iOS uygulamaları kullanımını açıklar. Anahtar-değer depolama, belge depolama ve İcloud'a yedekleme açıklanır.
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: a62d4621a8f3ace64401d64e35c806317a591c03
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 032d5f01ae63e5aececa14390300c28623c4f371
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785550"
 ---
-# <a name="icloud"></a>iCloud
-
-_Apple iOS 5 iCloud Apple'nın sunucularındaki verileri depolamak ve (aracılığıyla kendi Apple kimliği) aynı kişi tarafından kullanılan tüm cihazlar arasında eşitlenmesini sağlamak uygulamalara izin vermek üzere bir hizmet olarak kullanıma sunuldu. Burada, cihazlardaki verileri için Apple'nın sunucularından yedeklenen bir yedek bileşeni da sahiptir. Bu belge, bazı API sağlanan iCloud Apple tarafından depolamak ve bunların sunucularıyla C# örnekleri küçük anahtar-değer çiftlerini depolamak için ve belgeleri depolamak için verileri almak için kullanmayı açıklar. Ayrıca, nasıl İcloud'a yedekleme uygulamanızın tasarımınu etkileyebilir anlatılmaktadır._
+# <a name="using-icloud-with-xamarinios"></a>İCloud Xamarin.iOS ile kullanma
 
 İOS 5 iCloud depoda API uygulamalarının kullanıcı belgeleri ve uygulamaya özgü verileri merkezi bir konuma kaydedebilir ve kullanıcının tüm cihazlardan bu öğelere erişmesine olanak sağlar.
 

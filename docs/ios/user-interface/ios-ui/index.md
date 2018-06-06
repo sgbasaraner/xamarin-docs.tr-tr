@@ -1,19 +1,20 @@
 ---
-title: İOS kullanıcı arabirimi
-description: Bir Xamarin.iOS uygulaması iOS kullanıcı arabirimi ile çalışma kapsar.
+title: İOS kullanıcı arabirimleri
+description: Bu belge bağlantılar kılavuzlara kullanıcı arabirimleri Xamarin.iOS uygulaması oluşturma açıklanmaktadır. Bağlantılı kılavuzları görünümü oluşturma kullanıcı arabirimi nesneleri, Düzen Seçenekleri ve daha fazlası API kapsar.
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: dd07ba6853901c93ad26b371ea88b7d39c37d3f7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a51d3f57106a282ed72b45dedf356739244e247f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790373"
 ---
-# <a name="user-interface-in-ios"></a>İOS kullanıcı arabirimi
+# <a name="user-interfaces-in-ios"></a>İOS kullanıcı arabirimleri
 
 ## <a name="appearance-apiintroduction-to-the-appearance-apimd"></a>[Görünüm API’si](introduction-to-the-appearance-api.md)
 

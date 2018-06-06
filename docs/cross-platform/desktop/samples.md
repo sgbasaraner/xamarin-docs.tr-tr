@@ -1,15 +1,16 @@
 ---
 ms.assetid: 77F12838-DBB1-48AC-ACF8-B934998B6EC8
 title: Platformlar arası Masaüstü örnekleri
-description: Masaüstü uygulamaları platformlar arası mobil uygulamalar için bağlantı noktası kurulmuş.
+description: Xamarin ile platformlar arası uygulamalar çalıştırmak için bağlantı noktası kurulmuş çeşitli örnek uygulamalar bu belge bağlantılar.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 19f05ccc3d15e42ffa5471ba6d85f56dd4d189b8
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 4f77353345c6ed1ce1cde8190a347f3deb1c0348
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34779937"
 ---
 # <a name="cross-platform-desktop-samples"></a>Platformlar arası Masaüstü örnekleri
 

@@ -1,22 +1,22 @@
 ---
-title: Dağıtım ve Test Etme
-description: Sabitlemeyi ve dağıtım kılavuzları
+title: Dağıtma ve Xamarin.iOS uygulamalarını test etme
+description: Bu belge bağlantılar çeşitli kılavuzlara bir Xamarin.iOS uygulaması test etme ve dağıtma ile ilgili konuları açıklanmaktadır. Örneğin, uygulama dağıtımı, .ipa dosyaları, sağlama, kablosuz dağıtımı, TestFlight ve hata ayıklama.
 ms.prod: xamarin
 ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 515ea8e63f8309c46a7d802af1daafcb0c483762
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a96eeefa631eb4055d8bd0af5b89160ab0899907
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785190"
 ---
-# <a name="deployment-and-testing"></a>Dağıtım ve Test Etme
+# <a name="deploying-and-testing-xamarinios-apps"></a>Dağıtma ve Xamarin.iOS uygulamalarını test etme
 
 Bu bölümde yanı sıra bir uygulama dağıtmak için test etmek için kullanılan konuları kapsar. Burada konuların hata ayıklama, sınayıcılar ve uygulama mağazası bir uygulamanın nasıl yayımlanacağını dağıtım için kullanılan araçları gibi nesnelerdir.
-
 
 ##  <a name="app-distributioniosdeploy-testapp-distributionindexmd"></a>[Uygulama Dağıtımı](~/ios/deploy-test/app-distribution/index.md)
 
@@ -46,19 +46,14 @@ TestFlight artık Apple'nın ait ve beta Xamarin.iOS uygulamalarınızı test et
 
 Visual Studio ve Visual Studio Mac IDE için hem iOS simülatörü ve iOS aygıtlarında Xamarin.iOS uygulamalarında hata ayıklama desteğini içerir. Bu makalede, hata ayıklayıcıyı kullanma ve bunun yanı sıra desteklediği çeşitli seçeneklerinin nasıl yapılandırılacağı gösterilmektedir.
 
-
 ##  <a name="touchunitiosdeploy-testtouchunitmd"></a>[Touch.Unit](~/ios/deploy-test/touch.unit.md)
 
 Bu belge, Xamarin.iOS projelerinizi için birim testleri oluşturmak açıklar.
 Birim testi Xamarin.iOS ile yapılır, hem iOS içeren Touch.Unit framework kullanarak test Çalıştırıcısı yanı sıra değiştirilmiş bir sürümünü [NUnitLite](http://www.nunitlite.com/) birim testleri yazma için tanıdık bir API kümesi sağlayan.
 
-
-
 ##  <a name="using-instruments-to-detect-native-leaks-using-markheapiosdeploy-testusing-instruments-to-detect-native-leaks-using-markheapmd"></a>[Yerel MarkHeap kullanarak sızıntıları algılama gereçlerine kullanma](~/ios/deploy-test/using-instruments-to-detect-native-leaks-using-markheap.md)
 
 Bu makalede Instruments herhangi bir iOS aygıtı ve herhangi bir Xamarin.iOS uygulaması üzerinde nasıl kullanılacağı açıklanmaktadır. Ayrıca simulator profili uygulamalarda nasıl bakar.
-
-
 
 ##  <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[İzlenecek Yol - Apple’ın İşaretleme Aracını Kullanma](~/ios/deploy-test/walkthrough-apples-instrument.md)
 
@@ -68,7 +63,7 @@ Bu makalede Apple'nın Instruments aracının Xamarin ile oluşturulan bir iOS u
 
 Bağlayıcı ayarlarını ve kullanım değiştirmek için nasıl erişileceği en küçük olası uygulama paketi sağlamak için nasıl çalıştığını açıklar.
 
-##  <a name="xamarinios-performanceperformancemd"></a>[Xamarin.iOS Performance](performance.md)
+##  <a name="xamarinios-performanceperformancemd"></a>[Xamarin.iOS performans](performance.md)
 
 Xamarin.iOS ile oluşturulan uygulamaların performansını artırmak için birçok tekniği vardır. Topluca bu teknikler bir CPU ve bir uygulama tarafından kullanılan bellek miktarına tarafından gerçekleştirilen çalışma miktarını önemli ölçüde azaltabilir.
 

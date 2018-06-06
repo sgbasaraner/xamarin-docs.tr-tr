@@ -1,15 +1,17 @@
 ---
 title: Platform uygulamaları genel bakış oluşturma
+description: Bu belge, platformlar arası uygulamalar oluşturma bir üst düzey genel bakış sağlar. C#, MVC/MVVM ve yerel Uı'lar gibi tasarım desenleri değerini açıklanır.
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e6e2b4f9d5a482a3c8c24dc5b059db2457b0f301
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1eb308e0095c29d8ab0d0bdf1f74b807fd2ab97f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780789"
 ---
 # <a name="building-cross-platform-applications-overview"></a>Platform uygulamaları genel bakış oluşturma
 

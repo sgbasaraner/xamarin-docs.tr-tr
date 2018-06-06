@@ -1,5 +1,5 @@
 ---
-title: Özel belge simgeler
+title: Xamarin.iOS özel belge simgeleri
 description: Bu makale, bir özel belge türü simgesi olarak kullanılacak bir görüntü varlığı bir Xamarin.iOS uygulaması yönetme ve dahil kapsar.
 ms.prod: xamarin
 ms.assetid: 7A3F3C94-2578-4F53-9B8E-25714F48BDD6
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/23/2017
-ms.openlocfilehash: b369667bd728f7c8b6e8bcfed9cf5bca2916bf69
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 415500050e4e957ca635c4b18004716dd44a162d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784157"
 ---
-# <a name="custom-document-icons"></a>Özel belge simgeler
+# <a name="custom-document-icons-in-xamarinios"></a>Xamarin.iOS özel belge simgeleri
 
 _Bu makale, bir özel belge türü simgesi olarak kullanılacak bir görüntü varlığı bir Xamarin.iOS uygulaması yönetme ve dahil kapsar._
 
@@ -49,5 +50,5 @@ Apple'nın belge türleri hakkında daha fazla bilgi için bkz: [Tekdüzen tür 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Görüntüleri (örnek) ile çalışma](https://developer.xamarin.com/samples/WorkingWithImages/)
-- [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
+- [Merhaba, iPhone](~/ios/get-started/hello-ios/index.md)
 - [Özel bir simge ve görüntü oluşturma yönergeleri](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

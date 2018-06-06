@@ -1,21 +1,20 @@
 ---
-title: Gezinti denetleyicileri ile çalışma
-description: Bu makalede tasarlama ve gezinti çubukları Xamarin.tvOS uygulama içinde çalışma kapsar.
+title: TvOS Xamarin gezinti çubukları ile çalışma
+description: Bu belge, Xamarin ile oluşturulan bir tvOS uygulamasında Gezinti çubukları çalışmak açıklar. Film şeridi gezinti çubukları ayarlama ve bu düğmelerden olaylarına yanıt açıklanır.
 ms.prod: xamarin
 ms.assetid: 74E396B7-87F0-46F7-BC6C-827DB8884C97
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8a9a1c852137a2bcc0d46615e69eef0a245a9768
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b6c8ff8551c91578b9399b88e90e94c6af12ac68
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789297"
 ---
-# <a name="working-with-navigation-controllers"></a>Gezinti denetleyicileri ile çalışma
-
-_Bu makalede tasarlama ve gezinti çubukları Xamarin.tvOS uygulama içinde çalışma kapsar._
+# <a name="working-with-tvos-navigation-bars-in-xamarin"></a>TvOS Xamarin gezinti çubukları ile çalışma
 
 Gezinti çubukları bir başlık ve isteğe bağlı gezinti çubuğu düğmelerinin görüntülenecek görünüm dön eklenebilir. Kullanıcı bir tablo görünümü, koleksiyon veya seçili öğenin ayrıntılarını gösteren bir alt Görünüm menüsüne gibi bir ana sayfa gezinen olduğunda genellikle bunlar kullanılır.
 
@@ -26,9 +25,6 @@ Ayrıca (Center'da görüntülenir) başlığı için bir veya daha fazla gezint
 > [!IMPORTANT]
 > Gezinti çubukları varsayılan olarak tamamen saydamdır. Gezinti çubuğu içeriğini altındaki içerik üzerinde okunabilir kalmasını sağlamak için dikkatli olunmalıdır. Örneğin, ne zaman bir tablo görünümü ya da koleksiyonu içeriği altında kayar.
 
-
-
-
 <a name="Navigation-Bars-and-Storyboards" />
 
 ## <a name="navigation-bars-and-storyboards"></a>Gezinti çubukları ve film şeritleri
@@ -36,7 +32,6 @@ Ayrıca (Center'da görüntülenir) başlığı için bir veya daha fazla gezint
 Xamarin.tvOS uygulamasında Gezinti çubukları ile çalışmak için en kolay yolu, onları iOS Tasarımcısı kullanarak uygulamanın UI eklemektir.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
 
 1. İçinde **çözüm paneli**, çift `Main.storyboard` dosya ve düzenlemek için açın.
 1. Sürükleme bir **gezinti çubuğu** gelen **araç** ve ekranın üst kısımdaki görünümü bırakın: 
@@ -77,9 +72,6 @@ Xamarin.tvOS uygulamasında Gezinti çubukları ile çalışmak için en kolay y
 
 > [!IMPORTANT]
 > Olayları gibi atamak mümkün olmakla birlikte `TouchUpInside` Apple TV ekranında veya dokunma olaylarını destekleyen bir touch sahip olmadığından bir kullanıcı Arabirimi öğesine (örneğin, bir UIButton) iOS Tasarımcısı'nda, hiçbir zaman çağrılır. Her zaman kullanmalısınız `Primary Action` olay işleyicileri tvOS için kullanıcı arabirimi öğeleri oluştururken olay.
-
-
-
 
 Aşağıdaki kodu olay işleyicilerini örneği üzerinde üç farklı BarButtonItems verir: `ShowFirstHotel`, `ShowSecondHotel`, ve `ShowThirdHotel`. Her bir öğe tıklandığında, arka plan görüntüsü `HotelImage` değiştirilir. Bu görünüm denetleyiciye düzenlenmesi (örneğin `ViewController.cs`) dosyası:
 

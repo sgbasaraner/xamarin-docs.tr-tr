@@ -1,21 +1,20 @@
 ---
-title: Üst uygulama ile çalışma
-description: WatchOS 1 iOS ve izleme uygulamada arasında veri paylaşımı
+title: Xamarin üst uygulamada watchOS ile çalışma
+description: Bu belge, bir Xamarin watchOS üst uygulamasında çalışmak açıklar. WatchKit uygulama uzantıları, iOS uygulamalarını, paylaşılan depolama alanı ve daha fazla anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 769847cccb3e21fea4d8f45d8e5d0c0fb59bdd43
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3af2cce0d84e3934eeb89917990f111d29aadef1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790698"
 ---
-# <a name="working-with-the-parent-application"></a>Üst uygulama ile çalışma
-
-_WatchOS 1 iOS ve izleme uygulamada arasında veri paylaşımı_
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Xamarin üst uygulamada watchOS ile çalışma
 
 > [!IMPORTANT]
 > Aşağıdaki örnekler yalnızca kullanarak üst uygulamaya erişmeyi watchOS 1 izleme uygulamalar üzerinde çalışır.
@@ -59,7 +58,7 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 ```
 
 
-### <a name="ios-app"></a>iOS App
+### <a name="ios-app"></a>iOS uygulaması
 
 İzleme uygulaması uzantısının gelen tüm çağrıları iPhone uygulamanın yönlendirilir `HandleWatchKitExtensionRequest` yöntemi.
 Gözcü uygulamada farklı istekleri yapan sonra bu yöntem sorgu gerekecek `userInfo` isteğini işlemek nasıl belirlemek için Sözlük.

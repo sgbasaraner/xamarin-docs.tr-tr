@@ -1,19 +1,20 @@
 ---
-title: Gözcü cihazlarda test etme
-description: Apple Watch test etmek için uygulamaları dağıtma
+title: Apple Watch cihazlarda test etme
+description: Bu belgede üzerinde gerçek bir Apple Watch test etmek için Xamarin ile oluşturulan bir watchOS uygulamasının nasıl dağıtılacağını açıklar. Sağlama profilleri, test, aygıtlar, açıklar ve bazı sorun giderme ipuçları sağlar.
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: d1d00a4d561551435e7d2333520dc614a79dcad3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a960d81d41ff127fa3316e6190dfbf4881305c02
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790867"
 ---
-# <a name="testing-on-watch-devices"></a>Gözcü cihazlarda test etme
+# <a name="testing-on-apple-watch-devices"></a>Apple Watch cihazlarda test etme
 
 İzledikten sonra [dağıtım adımları](~/ios/watchos/deploy-test/index.md) (gerekliyse) uygulama kimlikleri ve uygulama grupları oluşturmak için bu sayfadaki yönergeleri kullanın:
 

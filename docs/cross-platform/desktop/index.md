@@ -1,19 +1,20 @@
 ---
 ms.assetid: 65F6A634-9CB0-4BB8-A013-7CA0334F6100
 title: Platformlar arası Masaüstü geliştiricileri için
-description: Xamarin uygulamaları Windows, Android, iOS ve Mac kullanarak Windows Forms veya WPF becerilerinizi oluşturmanıza olanak sağlar.
+description: WPF ve Windows Forms geliştiriciler için Xamarin.Forms tanımlayan çeşitli kılavuzları bu belge bağlantılar. Bağlantılı içerik uygulama yaşam döngüsü, yönergeler ve örnekler bağlantı noktası oluşturma, kullanıcı Arabirimi denetimlerini araştırır.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 0794d931dd57971efcbd0ea5b42159e3524ea6b0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 21c74b8c0ccaffb2b3b8205a3bdda9101b99f072
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34779960"
 ---
 # <a name="cross-platform-for-desktop-developers"></a>Platformlar arası Masaüstü geliştiricileri için
 
-Bu bölüm mevcut bilgilerini çapraz tarafından xamarin'le, mobil uygulama geliştirmeyi öğrenin ve mobil deyimleri için deneyimi için WPF ve Windows.Forms geliştiricilere yardımcı olmak için bilgiler içerir ve Masaüstü uygulamaları için mobile taşıma örnekleri sağlama.
+Bu bölüm, WPF ve Windows Forms geliştiriciler mevcut bilgilerini çapraz tarafından mobil uygulama geliştirme, xamarin'le öğrenmek için Yardım ve mobil deyimleri ve Masaüstü uygulamaları mobil taşıma sağlayan örnekleri deneyimi için bilgiler içerir.
 
 ## <a name="app-lifecycle-comparisonlifecyclemd"></a>[Uygulama yaşam döngüsü karşılaştırma](lifecycle.md)
 

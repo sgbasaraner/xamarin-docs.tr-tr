@@ -1,19 +1,20 @@
 ---
-title: Web görünümleri
-description: Belirsizliği iOS web görünümü seçenekleri
+title: Xamarin.iOS Web görünümleri
+description: Bu belgede bir Xamarin.iOS uygulaması web içeriğini görüntülemek çeşitli yollar açıklanmaktadır. UIWebView, WKWebView, SFSafariViewController, Safari ve uygulama taşıma güvenliği anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 787b5594476b3a1b5b3f6a0e8151a98c97443d00
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f720eae68415ab9efe021e53c9da4875209cd221
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790502"
 ---
-# <a name="web-views"></a>Web görünümleri
+# <a name="web-views-in-xamarinios"></a>Xamarin.iOS Web görünümleri
 
 İOS ömrü boyunca çeşitli yollarla uygulamalarını web görünümü işlevlerini içerecek şekilde uygulama geliştiricileri için Apple yayımladı. Kullanıcıların çoğunun iOS cihazlarında yerleşik Safari web tarayıcısı kullanan ve bu nedenle diğer uygulamalardan web görünümü işlevi bu deneyim ile tutarlı olmasını bekler. Bunlar aynı hareketleri çalışmak için nominal ve işlevselliği aynı olması için performans bekler.
 

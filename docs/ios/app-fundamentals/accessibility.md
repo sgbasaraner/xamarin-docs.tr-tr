@@ -1,16 +1,18 @@
 ---
 title: İOS erişilebilirlik
+description: Bu belgede iOS, çeşitli özellikler ve uygulamanızı kullanılabilir hale getirmek için mümkün olduğu kadar kullanıcılar tarafından kullanılabilir özellikler ele erişilebilirlik açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 88D59B36-05A3-4356-AE29-EC2B69CE7162
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/18/2016
-ms.openlocfilehash: af28d0866337c769d1d6102317fc186c49ec259e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fa85459870211ff26c3bfdd3cc25f722a635952c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783577"
 ---
 # <a name="accessibility-on-ios"></a>İOS erişilebilirlik
 

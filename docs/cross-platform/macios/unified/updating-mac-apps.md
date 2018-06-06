@@ -1,20 +1,19 @@
 ---
 title: Mevcut Mac uygulamaları güncelleştirme
-description: Birleşik API kullanmak için mevcut bir Xamarin.Mac uygulamayı güncelleştirmek için aşağıdaki adımları izleyin.
+description: Bu belge Unified API Klasik API'sinden Xamarin.Mac bir uygulamayı güncelleştirmek için izlenmesi gereken adımları açıklar.
 ms.prod: xamarin
 ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a2e3df4db13ccbf8001b762bf29a3eb53cacd35a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 5e6034b079bba5e884872e4f2096d677fd3641d0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782417"
 ---
 # <a name="updating-existing-mac-apps"></a>Mevcut Mac uygulamaları güncelleştirme
-
-_Birleşik API kullanmak için mevcut bir Xamarin.Mac uygulamayı güncelleştirmek için aşağıdaki adımları izleyin._
 
 Birleşik API kullanmak için mevcut bir uygulamayı güncelleştirme proje dosyasının kendisini de ad alanları ve uygulama kodunda kullanılan API'leri değişiklikleri gerektirir.
 

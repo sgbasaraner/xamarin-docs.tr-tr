@@ -1,15 +1,17 @@
 ---
 title: .NET katıştırma yükleme
+description: Bu belge, .NET katıştırma yüklemeyi açıklar. Araç el ile çalıştırmak nasıl ele bağlamaları oluşturmak nasıl özel MSBuild hedefleri ve gerekli oluşturma sonrası adımları otomatik olarak nasıl kullanılacağı.
 ms.prod: xamarin
 ms.assetid: 47106AF3-AC6E-4A0E-B30B-9F73C116DDB3
 author: chamons
 ms.author: chhamo
 ms.date: 4/18/2018
-ms.openlocfilehash: 1675889dceb1d364abe74461b32aa4c895a144a0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 057a1f3f662b2dbe2f8aee277505e1d6e8798084
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793801"
 ---
 # <a name="installing-net-embedding"></a>.NET katıştırma yükleme
 

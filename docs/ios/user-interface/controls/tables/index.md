@@ -1,20 +1,20 @@
 ---
-title: Tabloları ve hücreleri ile çalışma
-description: Xamarin.iOS ile UITableView kullanarak verileri görüntüleme
+title: Tabloları ve Xamarin.iOS hücrelerde ile çalışma
+description: Bu belge bağlantılar çeşitli kılavuzlara verilerinin UITableView denetimi ile bir Xamarin.iOS uygulaması nasıl görüntüleneceğini açıklar.
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/06/2016
-ms.openlocfilehash: a1cda3632a75c7e462e763a34fdb5b586237b670
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ebdad2cc8e3083bee5acc127660b5641f42c731f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790022"
 ---
-# <a name="working-with-tables-and-cells"></a>Tabloları ve hücreleri ile çalışma
-
+# <a name="working-with-tables-and-cells-in-xamarinios"></a>Tabloları ve Xamarin.iOS hücrelerde ile çalışma
 
 Bu bölümde oluşturmak ve tabloları görüntülemek için kullanılan sınıflar tanıtır sonra Xamarin.iOS içinde kullanma örnekleri sağlar. Düzenleme ve bir tablo görsel olarak tasarlamak için Xamarin iOS Tasarımcısını kullanarak uygulama düzeni özelleştirme tablolar için varsayılan görünümü kullanılarak kapsar. Bazen görüntü açıkça bir satır (örneğin, müzik uygulama) ve (kişiler uygulama ya da Messages uygulamasının konuşmada düzenleme gibi) tablo denetim tanıması zordur bazen listesidir.
 
@@ -26,7 +26,6 @@ Bu makaleler de dahil olmak üzere sekmelerle çalışma kapsamlı bir göz atal
 -   **Veri tablolarında görüntüleme** – oluşturmak ve bir tabloyu doldurmak nasıl gösteren, farklı tablo ve hücre stilleri kullanın ve hücre nesneleri dönüştürerek bellek sorunlarından kaçınmak. 
 -   **Kullanım Gelişmiş** – özel hücreleri oluşturma ve düzenleme UITableView sınıf özelliklerini kullanarak. 
 -   **Tablo görsel olarak oluşturma** – film şeridi tablo tabanlı bir arabirim oluşturmak için iOS için Xamarin Tasarımcısı'nı kullanarak. 
-
 
 ## <a name="contents"></a>İçindekiler
 
@@ -43,7 +42,6 @@ Bu makaleler de dahil olmak üzere sekmelerle çalışma kapsamlı bir göz atal
  [Bir film şeridi tabloları oluşturma](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
  
  [Satır Yüksekliğini Otomatik Boyutlandırma](~/ios/user-interface/controls/tables/autosizing-row-height.md)
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

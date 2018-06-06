@@ -1,19 +1,20 @@
 ---
-title: Proje başvuruları
-description: İOS uygulaması, izleme uygulama ve izleme uzantısı arasındaki ilişki açıklaması.
+title: watchOS Xamarin proje başvuruları
+description: Bu belge, bir iOS uygulaması, bir izleme uygulaması ve bir izleme uygulama uzantısı arasındaki ilişkiyi açıklar. Proje başvuruları ve paket anlatılmaktadır tanımlayıcıları.
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: f3573e8b578ca567ea9d7360eb132aead4c24f37
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1bd950d0929beae7133b0eb8ef6b2a69bc116f50
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791494"
 ---
-# <a name="project-references"></a>Proje başvuruları
+# <a name="watchos-project-references-in-xamarin"></a>watchOS Xamarin proje başvuruları
 
 _İOS uygulaması, izleme uygulama ve izleme uzantısı arasındaki ilişki açıklaması._
 
@@ -43,7 +44,7 @@ Başvuruları her proje için başvurular düğümlerde çift tıklayarak görü
 Emin olmanız gerekir, **paket tanımlayıcı** doğrudur.
 Üç projenin olmalıdır *aynı* uzantılarını önceden tanımlanmış iki izleme projelerle tanımlayıcı öneki `watchkitextension` ve `watchkitapp`aşağıdaki gibi (için **WatchKitCatalog** Örnek):
 
- - Xamarin.iOS Unified project - `com.xamarin.WatchKitCatalog`
+ - Xamarin.iOS birleşik proje- `com.xamarin.WatchKitCatalog`
 
  - WatchKit uzantı projesi- `com.xamarin.WatchKitCatalog.watchkitextension`
 

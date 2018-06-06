@@ -1,20 +1,19 @@
 ---
 title: Grafik API'si erişme
-description: Xamarin kullanarak grafik API'si sorgulamak için Active Directory'yi kullanma
+description: Bu belge, Xamarin ile oluşturulan bir mobil uygulama için Azure Active Directory kimlik doğrulaması eklemeyi açıklar.
 ms.prod: xamarin
 ms.assetid: F94A9FF4-068E-4B71-81FE-46920745380D
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e177ac680a100a2723732c2ee7252ea0c16ea972
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: c43dfa79831f22e55490b27c3c360602ae717627
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781136"
 ---
 # <a name="accessing-the-graph-api"></a>Grafik API'si erişme
-
-_Xamarin kullanarak grafik API'si sorgulamak için Active Directory'yi kullanma_
 
 Xamarin uygulamanızda grafik API'SİNDEN kullanmak için aşağıdaki adımları izleyin:
 

@@ -1,18 +1,19 @@
 ---
-title: Sınırlamalar
-description: Xamarin Canlı Player bazı sınırlamaları
+title: Xamarin Canlı Player sınırlamaları
+description: Bu belgede Canlı Xamarin Player sınırlamaları açıklanmaktadır. Cihaz gereksinimleri açıklanır, proje türleri ve çeşitli diğer konular ile works özellikleri.
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: a3aea31f32e3bf6227cce2e3340e3d04828472a0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ea71391382f9e1ecb80cbf5f2d5bf127e0d6d1be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793681"
 ---
-# <a name="limitations"></a>Sınırlamalar
+# <a name="limitations-of-xamarin-live-player"></a>Xamarin Canlı Player sınırlamaları
 
 ![Önizleme özelliği](~/media/shared/preview.png)
 
@@ -36,6 +37,7 @@ Xamarin Canlı oynatıcı uygulaması aşağıdaki cihazları destekler:
 Aşağıdaki öğeler de dahil olmak üzere Xamarin Canlı Player çalıştırabilirsiniz şeyler bazı sınırlamalar vardır:
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
+
 - Özel oluşturucu desteklenmez.
 - Efektleri desteklenmez.
 - Özel denetimler özel bağlanabilir özellikleri ile desteklenmez.
@@ -44,9 +46,11 @@ Aşağıdaki öğeler de dahil olmak üzere Xamarin Canlı Player çalıştırab
 - İOS varlık kataloglar desteklenmez.
 
 ### <a name="other-project-types"></a>Diğer proje türleri
+
 - Canlı Player yerel Android veya (kullanan Android XML veya film şeritleri için kullanıcı arabirimi) iOS projeler için tasarlanmamıştır.
 
 ### <a name="misc"></a>Çeşitli
+
 - Sınırlı yansıma desteği (şu anda SQLite ve Json.NET gibi bazı yaygın NuGets etkiler). Diğer NuGets hala desteklenmiyor olabilir.
 - Bazı sistem sınıfları kılınamaz (örneğin, bir alt sınıfı uygulayamaz).
 - Sağlama gerektiren bazı platform özellikleri (ancak bu Fotoğraf Galerisi erişim gibi ortak işlemleri için yapılandırılmış) Xamarin Canlı Player uygulamasında çalışamaz.
@@ -55,7 +59,6 @@ Aşağıdaki öğeler de dahil olmak üzere Xamarin Canlı Player çalıştırab
 - Özel genel sınıfları ve arabirimleri ile Gelişmiş senaryolar desteklenmiyor.
 
 Lütfen ek sorunları hakkında rapor [bugzilla](https://aka.ms/live-player-report-issue).
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

@@ -1,19 +1,20 @@
 ---
-title: Film şeritleri ile çalışma
-description: MacOS Xcode kullanarak film şeritleri ile kullanıcı arabirimleri oluşturma.
+title: Film şeritleri Xamarin.Mac içinde ile çalışma
+description: Bu belge, bunları kodu, görünüm denetleyicisini yaşam döngüsü, Yanıtlayıcı zinciri nasıl yükleneceğini inceleniyor Xamarin.Mac içinde film şeritleri ile nasıl çalışılacağını açıklar, segues, pencere denetleyicileri, hareketi tanıyıcıları ve daha fazla.
 ms.prod: xamarin
 ms.assetid: DF4DF7C2-DDD7-4A32-B375-5C5446301EC5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b72affd9b101b0a139301fec9f2bed343310507
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 72986ed4247c3b6f66f6f1813d74bf0a95d0de53
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792846"
 ---
-# <a name="storyboards"></a>Görsel Taslaklar
+# <a name="working-with-storyboards-in-xamarinmac"></a>Film şeritleri Xamarin.Mac içinde ile çalışma
 
 Film şeridi tüm görünüm denetleyicilerinin işlevsel olarak genel bakış ayrıntılarıyla belirli bir uygulamanın kullanıcı Arabirimi tanımlar. Xcode'nın arabirimi Oluşturucu'da, bu denetleyicilerinden her birinin kendi Sahne yaşar.
 

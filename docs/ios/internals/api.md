@@ -1,17 +1,19 @@
 ---
-title: API
+title: Xamarin.iOS API genel bakış
+description: Xamarin API başvuru belgeleri Xamarin.iOS API tasarım ve Xamarin geliştirme kullanılabilir bir derleme listesi açıklayan bir kılavuz bu belge bağlantılar.
 ms.prod: xamarin
 ms.assetid: 4C1669A4-C12B-9C49-4A39-9046576D10DC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2ce97ecc75dd59c0851db22431529ef819f37ea7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 81c30af4d7c95960344015ed6dcfd868deda06af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786141"
 ---
-# <a name="api"></a>API
+# <a name="xamarinios-api-overview"></a>Xamarin.iOS API genel bakış
 
 Xamarin.iOS kullanıma sunan bir C# / CIL CocoaTouch API için bağlama ve ECMA CIL API'ları ve diğer çeşitli .NET API'lerini de erişim sağlar.
 

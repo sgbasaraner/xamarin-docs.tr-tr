@@ -195,7 +195,7 @@
 ##### [Stil Devralımı](user-interface/styles/xaml/inheritance.md)
 ##### [Dinamik Stiller](user-interface/styles/xaml/dynamic.md)
 ##### [Cihaz Stilleri](user-interface/styles/xaml/device.md)
-#### [Geçişli Stil Sayfaları Kullanarak Xamarin.Forms Uygulamalarında Stil Oluşturma](user-interface/styles/css/index.md)
+#### [Stil Xamarin.Forms geçişli stil sayfaları (CSS) kullanan uygulamalar](user-interface/styles/css/index.md)
 ### [TableView](user-interface/tableview.md)
 ### [Metin](user-interface/text/index.md)
 #### [Etiket](user-interface/text/label.md)

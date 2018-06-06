@@ -1,19 +1,20 @@
 ---
-title: Yerel bir kilitlenme hata ayıklama
-description: Bu kılavuz, Objective-C çalışma zamanı'nda kaynaklanan özel durumları hata ayıklama açıklar.
+title: Yerel bir kilitlenme Xamarin.Mac uygulamasında hata ayıklama
+description: Bu belge, Objective-C çalışma zamanı'nda kaynaklanan özel durumları hata ayıklama açıklar. Onaylama işlemi hataları ele alınmıştır, geri çağrılar, özel durum tırmanmasını ve daha fazla ile sorunları.
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 211f85c32fae3ed947e01890916e0a646981a51b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 66ef76c4305e572d5cc45c142f38d89d6f17eeb0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792131"
 ---
-# <a name="debugging-a-native-crash"></a>Yerel bir kilitlenme hata ayıklama
+# <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Yerel bir kilitlenme Xamarin.Mac uygulamasında hata ayıklama
 
 ## <a name="overview"></a>Genel Bakış
 

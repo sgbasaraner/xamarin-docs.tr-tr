@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 32a7a7dd50edcc3eefe76429ddb1e5581447993e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 03a3c411c7031ece32a8987b480f96ad39909201
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793963"
 ---
 # <a name="mvvm"></a>MVVM
 
@@ -175,7 +176,7 @@ Bu yaklaşım, bir uygulama modelleri görüntüle ve görünümlere kendi bağl
 
 Tüm görünüm modeli ve bir görünüme erişilebilir modeli sınıfları uygulamalıdır `INotifyPropertyChanged` arabirimi. Bir görünüm modeli veya model sınıfı bu arabirimi uygulayan temel özellik değeri değiştiğinde görünümdeki tüm verilere bağlı denetimler için değişiklik bildirimleri sağlamak için sınıf sağlar.
 
-Uygulamanın aşağıdaki gereksinimleri karşılayarak özellik değişikliği bildirimi doğru kullanımı için tasarlanmış:
+Uygulamaları aşağıdaki gereksinimleri karşılayarak özellik değişikliği bildirimi doğru kullanımı için tasarlanmış:
 
 -   Her zaman gerçekleştiren bir `PropertyChanged` ortak bir özelliğin değerini değişirse olay. Bu yükseltme varsayın değil `PropertyChanged` olay XAML bağlama nasıl gerçekleştiğini bilgisi nedeniyle yoksayıldı.
 -   Her zaman gerçekleştiren bir `PropertyChanged` olayı için herhangi bir hesaplanan değerleri görünümünde diğer özellikleri tarafından kullanılan özellikler modeli veya modeli.

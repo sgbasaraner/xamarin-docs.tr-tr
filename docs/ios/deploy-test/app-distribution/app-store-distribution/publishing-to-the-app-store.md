@@ -1,21 +1,20 @@
 ---
-title: Uygulama mağazası yayımlama
-description: Bu makalede, yapılandırma, yapı ve dağıtım App Store aracılığıyla bir Xamarin.iOS uygulaması yayımlama gösterilmektedir. Uygulama dağıtım için hazırlama, Apple'nın araçları gözden geçirme için uygulamanıza göndermek için nasıl kullanılacağı ve, son olarak, uygulama mağazası uygulamanızı yayımlamak nasıl kapsayan bir adım adım kılavuz içerir.
+title: Xamarin.iOS uygulamaları için uygulama mağazası yayımlama
+description: Bu belge, yapılandırma, yapı ve dağıtım için bir Xamarin.iOS uygulaması App Store'da yayımlama açıklar.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 5d78cb81f27ce7478719ff9f11f4eb38fddc3981
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785706"
 ---
-# <a name="publishing-to-the-app-store"></a>Uygulama mağazası yayımlama
-
-_Bu makalede, yapılandırma, yapı ve dağıtım App Store aracılığıyla bir Xamarin.iOS uygulaması yayımlama gösterilmektedir. Uygulama dağıtım için hazırlama, Apple'nın araçları gözden geçirme için uygulamanıza göndermek için nasıl kullanılacağı ve, son olarak, uygulama mağazası uygulamanızı yayımlamak nasıl kapsayan bir adım adım kılavuz içerir._
+# <a name="publishing-xamarinios-apps-to-the-app-store"></a>Xamarin.iOS uygulamaları için uygulama mağazası yayımlama
 
 Tüm iOS cihazları için uygulamaları sırayla dağıtmak, Apple gerektirir üzerinden yayımlanan uygulamalar *App Store*, uygulama mağazası iOS uygulamaları için tek adrestir alışveriş konum yapma. Deposundaki 500. 000'den uygulamalarıyla, bu tek bir dağıtım noktasını yoğun başarı birçok türdeki uygulamayı geliştiricileri büyük harfe. Uygulama geliştiriciler dağıtım ve ödeme sistemleri sunumu hazır bir çözüm uygulama Mağazası ' dir.
 

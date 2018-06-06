@@ -1,16 +1,17 @@
 ---
 title: MonoGame oyun yüzeyi başvurusu
-description: Oyun yüzeyi MonoGame giriş cihazları erişmek için standart, platformlar arası bir sınıftır.
+description: Bu belgede oyun yüzeyi, MonoGame giriş cihazları erişmek için platformlar arası sınıfı açıklanmaktadır. Oyun yüzeyi giriş okumak nasıl açıklanır ve örnek kod sağlar.
 ms.prod: xamarin
 ms.assetid: 1F71F3E8-2397-4C6A-8163-6731ECFB7E03
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0746cc0153e9e00309b7227ff3e8a683cdc46835
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: f8a833dbab2b8a69f328cd26cb69db84f3083222
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783330"
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame oyun yüzeyi başvurusu
 

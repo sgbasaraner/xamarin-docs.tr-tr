@@ -1,5 +1,5 @@
 ---
-title: Uygulama dağıtım genel bakış
+title: Xamarin.iOS uygulaması dağıtımı genel bakış
 description: Bu belge Xamarin.iOS uygulamaları için kullanılabilir dağıtım teknikleri genel bir bakış sağlar ve konusunda daha ayrıntılı belgeler için bir işaretçi olarak görev yapar.
 ms.prod: xamarin
 ms.assetid: 341D36DB-BB07-FA94-BCC9-5F8C0B18C179
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 76de5b46559676e36b9d1f9b71575323beec414e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 83c58fa430a0cf21e8b86e56b9dea04b3cad6d82
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784774"
 ---
-# <a name="app-distribution-overview"></a>Uygulama dağıtım genel bakış
+# <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS uygulaması dağıtımı genel bakış
 
 _Bu belge Xamarin.iOS uygulamaları için kullanılabilir dağıtım teknikleri genel bir bakış sağlar ve konusunda daha ayrıntılı belgeler için bir işaretçi olarak görev yapar._
 
@@ -27,7 +28,7 @@ Apple Xamarin.iOS tarafından desteklenmeyen bir iOS uygulamasını dağıtmak i
 
 1. [**Uygulama Mağazası**](#App_Store_Distribution)
 2. [**Şirket içi (Kurumsal)**](#In-House_Distribution)
-2. [**Ad Hoc**](#Ad_Hoc_Distribution)
+2. [**Geçici**](#Ad_Hoc_Distribution)
 
 Bu senaryolar uygulamaları olmasını gerektirir uygun kullanılarak sağlanan *sağlama profili*. Sağlama profilleri kod imzalama uygulama ve hedeflenen dağıtım mekanizması kimliğini yanı sıra bilgiler içeren dosyalardır. Uygulama mağazası dağıtım için bunlar Ayrıca uygulama dağıtılabilir hangi aygıtlar hakkında bilgiler içerir.
 

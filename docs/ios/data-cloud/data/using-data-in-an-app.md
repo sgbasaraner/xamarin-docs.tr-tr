@@ -1,20 +1,22 @@
 ---
 title: Verileri bir iOS uygulamasını kullanma
+description: Kullanıcı girişi toplamak ve gerçekleştirmek nasıl gösteren örnek oluşturma DataAccess_Adv bu belgede açıklanan, okuma, güncelleştirme ve silme (CRUD) bir Xamarin.iOS uygulaması işlemlerinde veritabanı.
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: eded0918c6994481cdc82fe7662a985ea243b24d
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 5c9eab9316539ecf5988c8768bef9ef2cd61513e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784546"
 ---
 # <a name="using-data-in-an-ios-app"></a>Verileri bir iOS uygulamasını kullanma
 
-**DataAccess_Adv** örnek kullanıcı girişini sağlar ve çalışan bir uygulama gösterir ve *CRUD* (oluşturma, okuma, güncelleştirme ve silme) veritabanı işlevselliği. İki ekranda uygulama oluşur: bir listesi ve veri girişi formu. Tüm veri erişim kodu değişiklik yapılmadan iOS ve Android yeniden kullanılabilir.
+**DataAccess_Adv** örnek kullanıcı girişi sağlar ve çalışan bir uygulama gösterir ve *CRUD* (oluşturma, okuma, güncelleştirme ve silme) veritabanı işlevselliği. İki ekranda uygulama oluşur: bir listesi ve veri girişi formu. Tüm veri erişim kodu değişiklik yapılmadan iOS ve Android yeniden kullanılabilir.
 
 Bazı veriler ekledikten sonra uygulama ekranlar İos'ta şöyle:
 

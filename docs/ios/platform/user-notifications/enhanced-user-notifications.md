@@ -1,21 +1,20 @@
 ---
-title: Gelişmiş Kullanıcı bildirimleri
-description: Bu makalede tüm kullanıcılara bildirim iOS 10 ve bunları bir Xamarin.iOS uygulaması nasıl kullanacağınızı tarafından geliştirilmiştir yoldan yer almaktadır.
+title: Xamarin.iOS Gelişmiş Kullanıcı bildirimleri
+description: Bu makalede iOS 10 sunulan kullanıcı bildirimleri framework açıklanmaktadır. Yerel bildirimler, uzak bildirimler, bildirim yönetimi, bildirim eylemlerini ve daha fazla açıklanır.
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: b27d415240f3b8cd25c4bc54f6d176c50e42a250
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 29c529d57d35b0ab2b7bf2e80f8d295a8d059c5e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788660"
 ---
-# <a name="enhanced-user-notifications"></a>Gelişmiş Kullanıcı bildirimleri
-
-_Bu makalede tüm kullanıcılara bildirim iOS 10 ve bunları bir Xamarin.iOS uygulaması nasıl kullanacağınızı tarafından geliştirilmiştir yoldan yer almaktadır._
+# <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin.iOS Gelişmiş Kullanıcı bildirimleri
 
 Yeni ios'a 10, kullanıcı bildirimi teslimi ve yerel ve uzak bildirimler işleme framework olanak sağlar. Bu çerçeve kullanarak, bir uygulama ya da uygulama uzantısı yerel bildirimler teslimini konum gibi koşulları veya günün saatini belirterek zamanlayabilirsiniz.
 

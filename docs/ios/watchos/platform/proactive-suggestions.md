@@ -1,5 +1,5 @@
 ---
-title: Öngörülü önerileri
+title: watchOS Xamarin öngörülü öneri
 description: Bu makalede öngörülü önerileri watchOS 3 uygulama sürücü katılım için proaktif olarak yararlı bilgiler kullanıcıya otomatik olarak sunmak üzere sistem vererek nasıl kullanılacağı gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
@@ -7,18 +7,19 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: f22be43f814865c3c14e12aa2aec3a8dbce09b7a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33dccd00e07062e040c2707826ef62b764e11a0e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791292"
 ---
-# <a name="proactive-suggestions"></a>Öngörülü önerileri
+# <a name="watchos-proactive-suggestions-in-xamarin"></a>watchOS Xamarin öngörülü öneri
 
 _Bu makalede öngörülü önerileri watchOS 3 uygulama sürücü katılım için proaktif olarak yararlı bilgiler kullanıcıya otomatik olarak sunmak üzere sistem vererek nasıl kullanılacağı gösterilmektedir._
 
 
-WatchOS 3, öngörülü önerileri mevcut haber yolları otomatik olarak kullanıcı için önceden mevcut yararlı bilgiler uygun zamanlarda tarafından Xamarin.iOS uygulaması ile etkileşim kullanıcılar için yeni.
+WatchOS 3, öngörülü önerileri mevcut haber yolları otomatik olarak kullanıcı için önceden mevcut yararlı bilgiler uygun zamanlarda tarafından bir Xamarin.iOS uygulaması ile etkileşim kullanıcılar için yeni.
 
 
 ## <a name="about-proactive-suggestions"></a>Öngörülü öneriler hakkında

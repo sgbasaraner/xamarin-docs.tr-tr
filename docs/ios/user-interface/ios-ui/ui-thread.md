@@ -1,18 +1,20 @@
 ---
-title: Kullanıcı Arabirimi iş parçacığı ile çalışma
+title: Xamarin.iOS UI iş parçacığı ile çalışma
+description: Bu belge, kullanıcı Arabirimi iş parçacığı Xamarin.iOS içinde çalışmak üzere açıklar. Kullanıcı Arabirimi iş parçacığı yürütmesi açıklar, bir arka plan iş parçacığı örnek sağlar ve zaman uyumsuz ve bekleme inceler.
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 72f161001509519fb02a652f23eaa7805a55f7ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4328b84625aff4c92d6e97029ced7dde747d4fc4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790415"
 ---
-# <a name="working-with-the-ui-thread"></a>Kullanıcı Arabirimi iş parçacığı ile çalışma
+# <a name="working-with-the-ui-thread-in-xamarinios"></a>Xamarin.iOS UI iş parçacığı ile çalışma
 
 Uygulama kullanıcı arabirimleri, her zaman tek daha çok iş parçacıklı cihazları iş parçacıklı, – ekran yalnızca bir gösterimini yoktur ve görüntülenenleri yapılan herhangi bir değişiklik tek 'erişim noktası' koordine olmanız gerekir. Bu, birden çok iş parçacığı aynı piksel (örneğin) aynı anda güncelleştirme girişiminde bulunmasını engeller.
 

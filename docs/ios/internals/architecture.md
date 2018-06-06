@@ -1,19 +1,20 @@
 ---
-title: iOS mimarisi
-description: En düşük düzeyde Xamarin.iOS keşfetme
+title: iOS uygulama mimarisi
+description: Bu belgede, düşük düzey, tartışma nasıl yerel ve yönetilen kod etkileşim sırasında uygulama nesne AĞACI derleme, seçiciler, kaydedicilerin, uygulama başlatma ve oluşturucunun Xamarin.iOS açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: F40F2275-17DA-4B4D-9678-618FF25C6803
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 85dc675a9b18b974f21532298e4d3028bdecd0b7
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 89b4e8bde43b34c50c1cba54a4c7d8d4ff183c66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786128"
 ---
-# <a name="ios-architecture"></a>iOS mimarisi
+# <a name="ios-app-architecture"></a>iOS uygulama mimarisi
 
 Xamarin.iOS uygulamaları Mono yürütme ortamında çalıştırın ve ARM assembler dili için C# kodu derlemek için tam şimdi, zaman Tıkların derleme kullanın. Bu yan yana çalışır ile [Objective-C çalışma zamanı](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/). Her iki çalışma zamanı ortamları UNIX benzeri çekirdek üstünde özellikle çalıştırmak [XNU](https://en.wikipedia.org/wiki/XNU)ve arka plandaki yerel veya yönetilen sisteme erişmek geliştiricilere izin vererek kullanıcı kodu için çeşitli API'leri.
 
@@ -26,7 +27,6 @@ Aşağıdaki diyagramda Bu mimarinin temel bir bakış gösterilir:
 İçin Xamarin geliştirirken koşulları *yerel ve yönetilen* kodu genellikle kullanılır. [Yönetilen kod](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) tarafından yönetilen yürütülmesinin sahip kodu [.NET Framework ortak dil çalışma zamanı](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx), veya Xamarin'ın büyük-küçük harf: Mono çalışma zamanı. Bir ara dile veririz budur.
 
 Yerel kod yerel olarak (örneğin, Objective-C veya bir KOL yonga üzerinde bile uygulama nesne AĞACI derlenmiş kod) belirli platformda çalışacak kodudur. Bu kılavuz nasıl uygulama nesne AĞACI, yönetilen kodu yerel koda derlenen inceler ve bir Xamarin.iOS uygulaması nasıl çalışır, erişimi de sahip sırasında tam kullanımını bağlamaları kullanımı ile Apple'nın iOS API yapmadan açıklanmaktadır. NET'in BCL ve Gelişmiş dil C# gibi.
-
 
 ## <a name="aot"></a>UYGULAMA NESNE AĞACI
 
@@ -62,10 +62,10 @@ Aşağıdaki sözde kod bunun nasıl yapıldığına dair bir örnek göstermekt
 
 ```csharp
  class MyViewController : UIViewController{
-    [Export ("myFunc")]
-    public void MyFunc ()
-    {
-    }
+     [Export ("myFunc")]
+     public void MyFunc ()
+     {
+     }
  }
 ```
 

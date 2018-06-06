@@ -1,18 +1,20 @@
 ---
-title: Kaynaklarda ürünleri satın alma
+title: Xamarin.iOS tüketilebilir ürünlerinde satın alma
+description: Bu belgede Xamarin.iOS tüketilebilir ürünlerinde açıklanmaktadır. Kaynaklarda ürünleri tek kullanımlık oyun currency gibi işlevsellik parçalarıdır.
 ms.prod: xamarin
 ms.assetid: E0CB4A0F-C3FA-3933-58A7-13246971D677
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c2c84c044ff41cced2c97e414502faff45341ec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9c53af1055736512c42f83a58011b7b3a42bcd5b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786983"
 ---
-# <a name="purchasing-consumable-products"></a>Kaynaklarda ürünleri satın alma
+# <a name="purchasing-consumable-products-in-xamarinios"></a>Xamarin.iOS tüketilebilir ürünlerinde satın alma
 
 Kaynaklarda ürün basit 'geri' bir gereksinim olduğundan uygulamak değil. Bunlar, oyun para birimi veya tek kullanımlık bir işlevsellik gibi ürünler için kullanışlıdır. Kullanıcıların tüketilebilir ürünleri üzerinden-ve-üzerinden yeniden yeniden satın alabilirsiniz.
 
@@ -23,8 +25,6 @@ Bu belge ile birlikte gelen örnek kod, yerleşik ürünleri göstermektedir –
 [![Satın alma işlemi Görselleştirme](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  Temel iş akışı şöyledir:   
-   
-   
    
  1. Uygulama ekler bir `SKPayment` kuyruğa. Kullanıcı kendi Apple kimliği istenir ve ödeme onaylaması istenir gerekiyorsa.   
    
@@ -105,7 +105,7 @@ failedObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseMa
 
 Görünüm denetleyicisini bu yöntemlere ek olarak, bir tüketilebilir ürün satın alma işlemi ayrıca kod gerektiriyorsa `SKProductsRequestDelegate` ve `SKPaymentTransactionObserver`.
 
-### <a name="inapppurchasemanager-methods"></a>InAppPurchaseManager Methods
+### <a name="inapppurchasemanager-methods"></a>InAppPurchaseManager yöntemleri
 
 Örnek kod uygulayan bir dizi satın InAppPurchaseManager sınıfında ilgili yöntemleri de dahil olmak üzere `PurchaseProduct` oluşturan yöntemi bir `SKPayment` örneği ve işleme için kuyruğa ekler:
 

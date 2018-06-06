@@ -1,18 +1,20 @@
 ---
-title: Uygulama grupları ile çalışma
+title: WatchOS Xamarin uygulama grupları ile çalışma
+description: Bu belgede, uygulama grupları ve kullanımlarını watchOS uygulamasında açıklanmaktadır. Sağlama gereksinimleri, Entitlements.plist ilgili önemli noktalar ve dağıtımı bir uygulama grubunun nasıl yapılandırılacağına ilişkin açıklanır.
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 341f6b4f5049a39817f2923901472f35b254bead
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5736b25af3993e2da794422a1a6f040461532497
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790685"
 ---
-# <a name="working-with-app-groups"></a>Uygulama grupları ile çalışma
+# <a name="working-with-watchos-app-groups-in-xamarin"></a>WatchOS Xamarin uygulama grupları ile çalışma
 
 
 Bir uygulama grubu farklı uygulamaları (veya bir uygulama ve uzantılarını) paylaşılan dosya depolama konumuna erişim sağlar. Uygulama grupları gibi verileri için kullanılabilir:

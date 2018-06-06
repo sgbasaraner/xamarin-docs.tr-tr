@@ -1,23 +1,20 @@
 ---
-title: Metin ve arama alanları ile çalışma
-description: Bu makalede tasarlama ve metin ve arama alanlarını Xamarin.tvOS uygulama içinde çalışma kapsar.
+title: TvOS metin ve Xamarin arama alanları ile çalışma
+description: Bu belge Xamarin ile oluşturulan bir tvOS uygulamasında metin ve arama alanları ile nasıl çalışılacağını açıklar. Metin ve arama alanları üst düzey bir genel bakış sağlar ve klavyeler, film şeridi tümleştirme, arama veri modelleri ve daha fazlasını açıklanır.
 ms.prod: xamarin
 ms.assetid: 9EE63CA6-2F31-4EE0-AAE5-82E18CFAC06C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 220c6e3d1c6f358c67a2f596c977f4d2132298a8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4bf71df62bd6ffd88f42d31809444cd7b3350b66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789728"
 ---
-# <a name="working-with-text-and-search-fields"></a>Metin ve arama alanları ile çalışma
-
-_Bu makalede tasarlama ve metin ve arama alanlarını Xamarin.tvOS uygulama içinde çalışma kapsar._
-
-
+# <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>TvOS metin ve Xamarin arama alanları ile çalışma
 
 Gerekli olduğunda Xamarin.tvOS uygulamanızı küçük metin parçaları (örneğin, kullanıcı kimliklerini ve parolaları) kullanıcıdan isteyebilir bir metin alanı kullanarak ve ekran klavyesi:
 

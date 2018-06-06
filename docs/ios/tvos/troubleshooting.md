@@ -1,6 +1,6 @@
 ---
-title: Sorun giderme
-description: Bu makalede kapsar Xamarin'ın tvOS desteği ile çalışırken karşılaşabileceğiniz sorunları bildirin.
+title: Xamarin ile oluşturulan tvOS uygulamaları sorunlarını giderme
+description: Bu makalede, Xamarin ile oluşturulan bir tvOS uygulama geliştirme sırasında gidermenize yardımcı olması için çeşitli ipuçları verilmektedir. Bilinen bir sorun ve belirli hataları açıklar.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 124E4953-4DFA-42B0-BCFC-3227508FE4A6
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 86106fa5ca53e93ccffb4dd141914c01ab65a506
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e69157cf9c8a9b9405e31edb2906754328653ccb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789209"
 ---
-# <a name="troubleshooting"></a>Sorun giderme
+# <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Xamarin ile oluşturulan tvOS uygulamaları sorunlarını giderme
 
 _Bu makalede kapsar Xamarin'ın tvOS desteği ile çalışırken karşılaşabileceğiniz sorunları bildirin._
 
@@ -128,7 +129,7 @@ Uygulamanız için yayın derlenir ve iTunes Bağlan yeniden gönderin.
 
 Ayrıca içermelidir `--bitcode=asmonly` içinde **ek dokunma bağımsız değişkenleri**, bağlayıcı seçeneklerini belirlemek **bağlantı tüm** ve temiz bir derleme yapın.
 
-### <a name="itms-90471-error-the-large-icon-is-missing"></a>ITMS-90471 error. Büyük simge eksik.
+### <a name="itms-90471-error-the-large-icon-is-missing"></a>ITMS 90471 hata oluştu. Büyük simge eksik.
 
 "ITMS 90471 hata. biçiminde bir ileti alırsanız Büyük simge Xamarin.tvOS uygulama sürümü için Apple TV uygulama mağazası göndermeye çalışırken eksik"Lütfen denetleyin aşağıdaki:
 

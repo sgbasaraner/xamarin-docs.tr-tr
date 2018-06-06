@@ -1,21 +1,20 @@
 ---
-title: Film şeritleri giriş
-description: Film şeridi görsel görünümünü ve uygulamanızın akış ' dir. Xamarin uygulaması ekranınızı görsel olarak tasarlamak ve görünümlere erişim film şeritleri, yararlanmak Xamarin.iOS uygulamaları izin vermek için bir tasarımcı kullanıma sunulan denetleyicileri ve C# ile daha fazla denetim için segues.
+title: Film şeritleri Xamarin.iOS içinde giriş
+description: Bu belge film şeritleri Xamarin.iOS içindeki bir giriş sağlar. Bir kullanıcı arabirimi tanımlamak için bir film şeridi nasıl kullanıldığını açıklar, segues ve iOS Tasarımcısı film şeridi dosyalarını düzenlemek için kullanma.
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 647bd7d339dc56978752f7ab29de30cf8acb7e07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3366da2f5dc869c7b075bf32be238a1ebd3145d7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790974"
 ---
-# <a name="introduction-to-storyboards"></a>Film şeritleri giriş
-
-_Film şeridi görsel görünümünü ve uygulamanızın akış ' dir. Xamarin uygulaması ekranınızı görsel olarak tasarlamak ve görünümlere erişim film şeritleri, yararlanmak Xamarin.iOS uygulamaları izin vermek için bir tasarımcı kullanıma sunulan denetleyicileri ve C# ile daha fazla denetim için segues._
+# <a name="introduction-to-storyboards-in-xamarinios"></a>Film şeritleri Xamarin.iOS içinde giriş
 
 Bu kılavuz size hangi film şeridi anlatılmıştır olduğu ve bazı – Segues gibi anahtar bileşenlerini inceleyin. Biz nasıl film şeritleri oluşturulabilir ve kullanılan, en göreceğiz ve avantajları sahip oldukları için bir geliştirici.
 

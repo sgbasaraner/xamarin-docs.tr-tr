@@ -1,19 +1,20 @@
 ---
-title: WatchOS ile çalışmaya başlama
-description: Giriş watchOS ve izleme uygulamalar oluşturma
+title: Xamarin watchOS ile çalışmaya başlama
+description: Bu belge bağlantılar çeşitli kılavuzlara Xamarin kullanarak watchOS geliştirme ile çalışmaya başlama açıklar. Bağlantılı içerik watchOS tanıtılmaktadır, nasıl Xamarin watchOS desteği yükleneceğini de açıklar ve bir başlangıç uygulamasının nasıl oluşturulacağını gösterir.
 ms.prod: xamarin
 ms.assetid: BB938008-C013-4A1D-8229-FEEE94F83BBD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 7eabcb9a9ea300eccf34737e634168defe2948e7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 66482d72bebabbc6fd5c4f4a252ac81d1b73dd05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790899"
 ---
-# <a name="getting-started-with-watchos"></a>WatchOS ile çalışmaya başlama
+# <a name="getting-started-with-watchos-in-xamarin"></a>Xamarin watchOS ile çalışmaya başlama
 
 _Giriş watchOS ve izleme uygulamalar oluşturma_
 

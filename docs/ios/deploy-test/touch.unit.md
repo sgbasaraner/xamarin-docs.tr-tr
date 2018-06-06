@@ -1,18 +1,20 @@
 ---
-title: Birim testi
+title: Birim testi Xamarin.iOS uygulamaları
+description: Bu belge nasıl birim testi bir Xamarin.iOS uygulaması için bir genel bakış sağlar. Testleri yazma ve testleri çalıştırma bir birim testi projesi oluşturma açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3129302cbb2fbe9e2757986317da0ec30601b492
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ce2b452d50222ac3561dab5b76915b7ae634934b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785469"
 ---
-# <a name="unit-testing"></a>Birim testi
+# <a name="unit-testing-xamarinios-apps"></a>Birim testi Xamarin.iOS uygulamaları
 
 Bu belge, Xamarin.iOS projelerinizi için birim testleri oluşturmak açıklar.
 Birim testi Xamarin.iOS ile yapılır hem iOS içeren Touch.Unit framework kullanarak test Çalıştırıcısı yanı sıra NUnit değiştirilmiş bir sürümünü adlı [Touch.Unit](https://github.com/xamarin/Touch.Unit) birim testleri yazma için tanıdık bir API kümesi sağlar.

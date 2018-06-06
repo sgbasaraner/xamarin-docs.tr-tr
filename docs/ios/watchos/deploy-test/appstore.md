@@ -1,19 +1,20 @@
 ---
-title: Uygulama deposuna dağıtma
-description: Uygulama mağazası uygulamalarının dağıtımını izleme
+title: Uygulama deposuna watchOS uygulamaları dağıtma
+description: Bu belge, uygulama mağazası Xamarin ile oluşturulan watchOS uygulamaları dağıtmayı açıklar. Dağıtım sağlama profilleri ve iTunes Bağlan göz alır ve ayrıca bazı sorun giderme ipuçları sağlar.
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a3c68a0720fbe18f35731cf1a19248c00f748877
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 70613c79c2ec0c81f1dbdc218b747f809f859767
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790990"
 ---
-# <a name="deploying-to-the-app-store"></a>Uygulama deposuna dağıtma
+# <a name="deploying-watchos-apps-to-the-app-store"></a>Uygulama deposuna watchOS uygulamaları dağıtma
 
 > [!IMPORTANT]
 > Gözden geçirmeyi unutmayın [Apple'nın izleme Seti gönderme Kılavuzu](https://developer.apple.com/app-store/watch/)ve [sorun giderme](#Troubleshooting) olabilecek sorunlar için bölüm.
@@ -64,7 +65,7 @@ Sağlama profilinde doğrulayabilirsiniz **proje seçenekleri** seçerek **Yapı
 
 <a name="iTunes_Connect"/>
 
-## <a name="itunes-connect"></a>iTunes Connect
+## <a name="itunes-connect"></a>iTunes Bağlan
 
 İzleyin [uygulama dağıtım genel bakış](~/ios/deploy-test/app-distribution/index.md), özellikle:
 
@@ -147,7 +148,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 İzleyin [alfa kanal kaldırma yönergeleri](~/ios/watchos/troubleshooting.md) simgelerini gelen.
 
-### <a name="cfbundleversion-mismatch"></a>CFBundleVersion Mismatch
+### <a name="cfbundleversion-mismatch"></a>CFBundleVersion uyuşmazlığı
 
 ```csharp
 CFBundleVersion Mismatch. The CFBundleVersion value '1' of watch application

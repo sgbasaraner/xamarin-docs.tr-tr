@@ -1,17 +1,18 @@
 ---
 title: iOS güvenlik ve gizlilik özellikleri
-description: Bu makalede, güvenlik ve gizlilik iOS ve bir Xamarin.iOS uygulaması nasıl etkilediklerini ile çalışma yer almaktadır.
+description: Bu belge, güvenlik ve gizlilik iOS özelliklerini açıklar ve bunların Xamarin.iOS ile nasıl kullanılacağını açıklar. İOS 10 ve özel kullanıcı verilere nasıl erişileceğini yapılan güncelleştirmeler göz alır.
 ms.prod: xamarin
 ms.assetid: 718C8721-C359-4650-878A-D68E159A3F53
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2ce6dadf2236c326fcbc2021509795182329010e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd50e42536aabe16de3e44146d28950970dd801d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784422"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS güvenlik ve gizlilik özellikleri
 

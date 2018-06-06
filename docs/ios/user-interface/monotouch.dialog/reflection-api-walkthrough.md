@@ -1,21 +1,19 @@
 ---
-title: 'İzlenecek yol: yansıma API kullanarak bir uygulama oluşturma'
-description: Öğeleri API yanı sıra, MonoTouch.Dialog (yüksekliğindeki D) bir öznitelik tabanlı yansıma API de içerir. Yansıma API yüksekliğindeki oluşturma ekranlar yapar D öznitelikleri sınıflarıyla dekorasyon olarak kadar kolay. Bu makale yansıma API'yi kullanarak bir uygulama oluşturmak nasıl gösteren aracılığıyla ilerlemesi sağlar.
+title: Yansıma API kullanarak bir Xamarin.iOS uygulaması oluşturma
+description: Bu belgede MonoTouch.Dialog öznitelik tabanlı yansıma öznitelikleri ile donatılmış sınıflar temel UI oluşturan API açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e56eaeccb2e09d9f1ad84245bf41e2a4bf1b56f1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c60d2a8ca58fe807dc340125d0db21b6f9ddff9f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790516"
 ---
-# <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>İzlenecek yol: yansıma API kullanarak bir uygulama oluşturma
-
-_Öğeleri API yanı sıra, MonoTouch.Dialog (yüksekliğindeki D) bir öznitelik tabanlı yansıma API de içerir. Yansıma API yüksekliğindeki oluşturma ekranlar yapar D öznitelikleri sınıflarıyla dekorasyon olarak kadar kolay. Bu makale yansıma API'yi kullanarak bir uygulama oluşturmak nasıl gösteren aracılığıyla ilerlemesi sağlar._
-
+# <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Yansıma API kullanarak bir Xamarin.iOS uygulaması oluşturma
 
 Yüksekliğindeki D yansıma API sınıfları olmasını sağlar, yüksekliğindeki öznitelikleri ile donatılmış Ekranlar otomatik olarak oluşturmak için D kullanır. API yansıma bir bağlama bu sınıflar arasındaki ekranda görüntülenen sağlar. Bu API, API öğeleri mu hassas bir denetim sağlamaz rağmen sınıf decoration üzerinde temel öğesi hiyerarşi çıkışı otomatik olarak oluşturarak karmaşıklığını azaltır.
 
@@ -36,7 +34,6 @@ Yansıma API kullanmayı göstermek için bir örneğe bakalım. Bu örnekte, bi
  [![](reflection-api-walkthrough-images/01-expense-entry.png "Bu örnekte, biz basit veri girdi ekranını aşağıda gösterildiği gibi yapı")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
-
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>Bir sınıf yüksekliğindeki ile oluşturma D öznitelikleri
 
@@ -164,6 +161,6 @@ Bu makalede bir kılavuz yansıma API sunulmuştur. Biz görüntülenenleri dene
 - [Öğeleri API gözden geçirme](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [JSON öğesini gözden geçirme](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
 - [Github'da MonoTouch iletişim](https://github.com/migueldeicaza/MonoTouch.Dialog)
-- [TweetStation Application](https://github.com/migueldeicaza/TweetStation)
+- [TweetStation uygulama](https://github.com/migueldeicaza/TweetStation)
 - [UITableViewController sınıf başvurusu](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
 - [UINavigationController sınıf başvurusu](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

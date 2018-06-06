@@ -1,16 +1,17 @@
 ---
 title: Geometri CCDrawNode ile çizme
-description: CCDrawNode satırları, daire ve üçgen gibi temel çizim nesneler için yöntemleri sağlar.
+description: Bu belgede satırları, daire ve üçgen gibi temel çizim nesneler için yöntemler sağlar CCDrawNode açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 46A3C3CE-74CC-4A3A-AB05-B694AE182ADB
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 83d973ed013d1448915ee553069c1366922d28b6
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 00ccf089e88d726aff09605aa88076139399a7dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782891"
 ---
 # <a name="drawing-geometry-with-ccdrawnode"></a>Geometri CCDrawNode ile çizme
 

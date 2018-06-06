@@ -1,23 +1,23 @@
 ---
-title: mtouch
+title: Paket Xamarin.iOS uygulamaları için mtouch kullanma
+description: Bu belgede mtouch, birçok adımları bir paket Xamarin.iOS uygulamasına etkinleştirmek için gereken sürücüleri benzeticisinde başlatın ve fiziksel bir aygıta dağıtmak bir aracı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 933ad24a8778ffbee3a1b6089c6ebcf33d26bf84
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9aaa79f929898f6765b97ab0a0c4a30a271d945a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784959"
 ---
-# <a name="mtouch"></a>mtouch
-
+# <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Paket Xamarin.iOS uygulamaları için mtouch kullanma
 
 iPhone uygulamalar, uygulama paketleri gönderilir. Dizinleri uzantılı bunlar `.app` kodunuzu, veriler, yapılandırma dosyalarını ve iPhone uygulamanız hakkında bilgi edinmek için kullandığı bir bildirimi içerir.
 
 Bir uygulamaya bir .NET yürütülebilir dosyayı açma işlemi çoğunlukla tarafından yönlendirilen `mtouch` komutu, birçok bir paket uygulamaya açmak için gerekli adımları tümleştirir bir araç. Bu araç, uygulamanızı simulator başlatın ve gerçek iPhone veya iPod Touch cihazına yazılım dağıtmak için de kullanılır.
-
 
 ## <a name="detailed-instructions"></a>Ayrıntılı yönergeler
 
@@ -27,7 +27,7 @@ Denetleme bizim [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) tüm 
 
 Mac'te `mtouch` Xamarin.iOS paketlenebilir. Şu dizinde bulunabilir:
 
-**/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin**
+**/Library/Frameworks/Xamarin.iOS.Framework/Versions/Current/bin**
 
 Yapmak için `mtouch` kullanmak, kendi ana dizini, sisteminizin eklemek uygun `PATH` ortam değişkeni.  
 

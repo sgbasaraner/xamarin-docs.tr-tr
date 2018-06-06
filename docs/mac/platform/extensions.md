@@ -1,17 +1,18 @@
 ---
 title: Xamarin.Mac uzantısı desteği
-description: Bu makalede uzantısı desteği Xamarin.Mac sürüm 2.10 (ve büyük) içinde yer almaktadır.
+description: Bu belgede Bulucu, paylaşımı ve bugün uzantıları için Xamarin.Mac'ın desteği açıklanmaktadır. Sınırlamalar ve bilinen sorunlar, gözden geçirme ve örnek uygulama bağlantılar inceler ve uzantıları ile çalışmak için ipuçları verilmektedir.
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 03936c75d31bfd01e741ad2c09096c925dc9dbfc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4cef6e89b89ef41a0c93b687c9df11a8aa971ed5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792384"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac uzantısı desteği
 
