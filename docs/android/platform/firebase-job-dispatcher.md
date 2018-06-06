@@ -6,18 +6,18 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 05/08/2018
-ms.openlocfilehash: a714ac55c3a49b91cb21e3ba1793b9bccd7d1be2
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/05/2018
+ms.openlocfilehash: 0d512342f1c978c84341d20c298a9fa750800d84
+ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34806809"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase iş dağıtıcı
 
 _Bu kılavuz, Google Firebase iş dağıtıcı kitaplığından kullanarak arka plan iş zamanlama açıklanır._
 
-![Firebase iş dağıtıcı Önizleme](~/media/shared/preview.png)
 
 ## <a name="overview"></a>Genel Bakış
 
@@ -65,9 +65,6 @@ Firebase iş dağıtıcı Android API düzeyi 9 veya üstü gerektirir. Google P
 Firebase iş dağıtıcı ile çalışmaya başlamak için öncelikle eklemek [Xamarin.Firebase.JobDispatcher NuGet paketi](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher) Xamarin.Android projesi. NuGet Paket Yöneticisi için arama **Xamarin.Firebase.JobDispatcher** (Bu ön sürümde hala) paketi.
 
 Firebase iş dağıtıcı kitaplığı eklendikten sonra oluşturma bir `JobService` sınıfı ve örneği ile çalıştırmak için zamanlama `FirebaseJobDispatcher`.
-
-> [!NOTE]
-> Geçerli bağlama Firebase iş dağıtıcı için kitaplık eski bir sürümü hedefler. Olan bir [bilinen hata [(https://bugzilla.xamarin.com/show_bug.cgi?id=59046)] Firebase iş dağıtıcı daha yeni bir sürümünü hedefleyecek şekilde güncelleştirilmesini bağlama engeller.
 
 
 ### <a name="creating-a-jobservice"></a>Bir JobService oluşturma
@@ -293,7 +290,6 @@ Bu kılavuz Firebase iş dağıtıcı iş akıllıca arka planda gerçekleştirm
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bağlamaları Oluşturucu hata önemli İŞLENMEYEN özel durumla başarısız: System.ArgumentNullException: değer null olamaz.](https://bugzilla.xamarin.com/show_bug.cgi?id=59046)
 - [NuGet üzerinde Xamarin.Firebase.JobDispatcher](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
 - [İş firebase dağıtıcısı github'da](https://github.com/firebase/firebase-jobdispatcher-android)
 - [Xamarin.Firebase.JobDispatcher bağlama](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)
