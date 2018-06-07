@@ -1,14 +1,16 @@
 ---
 title: Birleşik API için kod güncelleştirmek için ipuçları
+description: Bu belge, Xamarin'ın birleşik API kullanmak için bir uygulama güncelleştirilirken yaygın hatalar ve çeşitli ipuçları yararlı açıklanır.
 ms.prod: xamarin
 ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 640f95e0083c73288cc8e1f183b06bd28a7b4e07
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cab27d5dc38eeab65728f242c6f11fd445601a88
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782124"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>Birleşik API için kod güncelleştirmek için ipuçları
 
@@ -20,7 +22,6 @@ Var olan bir [hata](https://bugzilla.xamarin.com/show_bug.cgi?id=25569) Visual S
 
 ```console
 Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not find a storyboard named 'xxx' in bundle NSBundle...
-
 ```
 
 Bu sorunu çözmek için aşağıdaki yapı hedef dosyasını bulun aşağıdakileri yapabilirsiniz:
@@ -82,9 +83,9 @@ El ile düzeltilmesi gereken bazı noktalar şunlardır:
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
- * NSObject `.ctor(IntPtr)` Oluşturucusu değiştirildi ortak gelen korumalı ([hatalı kullanımı önlemek için](~/cross-platform/macios/unified/index.md#NSObject_ctor)).
+ * NSObject `.ctor(IntPtr)` Oluşturucusu değiştirildi ortak gelen korumalı ([hatalı kullanımı önlemek için](~/cross-platform/macios/unified/overview.md#NSObject_ctor)).
 
- * `NSAction` bırakıldı [yerini](~/cross-platform/macios/unified/index.md#NSAction) starndard .NET ile `Action`. Bazı basit (tek bir parametre) temsilciler de değiştirilmiştir `Action<T>`.
+ * `NSAction` bırakıldı [yerini](~/cross-platform/macios/unified/overview.md#NSAction) starndard .NET ile `Action`. Bazı basit (tek bir parametre) temsilciler de değiştirilmiştir `Action<T>`.
 
 Son olarak, başvurmak [Klasik v Unified API farklılıkları](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) API'leri değişiklikleri kodunuzda aramak için. Arama [bu sayfayı](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) Klasik API'ları ve ne için güncelleştirilmiş bulmaya yardımcı.
 

@@ -1,21 +1,20 @@
 ---
-title: EventKit
-description: Bu kılavuz, erişmek ve EventKit gösterilen Takvim veritabanında depolanan takvimleri, CalendarEvents ve anımsatıcıları verilerle çalışma hakkında genel bir bakış sağlar. Ana sınıflar ve onların rol EventKit framework ile ilişkili ortak görevleri bir dizi yanı sıra EventKit programlama'kapsar.
+title: Xamarin.iOS EventKit
+description: Bu belgede EventKit ve Xamarin.iOS içinde kullanma açıklanmaktadır. Takvim, takvim olayları ve anımsatıcıları bakar EventKit ve daha fazla ile programlama yaygın olarak kullanılan sınıflar, açıklanır.
 ms.prod: xamarin
 ms.assetid: 00E88629-357D-1FCD-4FCE-1330D5D9D32C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a8439586ac92f8139cf9341611125352c85706e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3522870d3e063d1e12660094a311e9850bcefa13
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786720"
 ---
-# <a name="eventkit"></a>EventKit
-
-_Bu kılavuz, erişmek ve EventKit gösterilen Takvim veritabanında depolanan takvimleri, CalendarEvents ve anımsatıcıları verilerle çalışma hakkında genel bir bakış sağlar. Ana sınıflar ve onların rol EventKit framework ile ilişkili ortak görevleri bir dizi yanı sıra EventKit programlama'kapsar._
+# <a name="eventkit-in-xamarinios"></a>Xamarin.iOS EventKit
 
 iOS sahip iki Takvim ilgili uygulamalar yerleşik: Takvim uygulama ve anımsatıcıları uygulama. Takvim uygulama Takvim verileri nasıl yönettiğini anlamanıza basit ancak anımsatıcıları uygulama daha az açıktır. Anımsatıcıları gerçekte ne zaman tamamladıkları vadesi geçmiş, olduğunuzda açısından, kendileriyle ilişkili tarihleri sahip vs. Bu nedenle, iOS takvim olayları veya anımsatıcı olarak adlandırılan, tek bir konumda olması gerekmediğini tüm takvim verilerini depolar *Takvim veritabanını*.
 

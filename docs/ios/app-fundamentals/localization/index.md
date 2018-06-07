@@ -1,19 +1,20 @@
 ---
-title: iOS yerelleştirme
-description: Bu belgede iOS SDK'ın yerelleştirme özelliklerini ve Xamarin ile erişmek nasıl kapsar.
+title: Xamarin.iOS yerelleştirme
+description: Bu belgede iOS yerelleştirme özellikleri ve Xamarin.iOS uygulamalarında bu özellikleri kullanmayı açıklar. Dil, yerel ayar, dizeleri dosyaları, başlatma görüntüler ve daha fazlasını açıklanır.
 ms.prod: xamarin
 ms.assetid: DFD9EB4A-E536-18E4-C8FD-679BA9C836D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 5ee04614a500618846ad3acf2a38f279351d6e9d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 06758fd8fac62a63c309b173738a8ee889716143
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785272"
 ---
-# <a name="ios-localization"></a>iOS yerelleştirme
+# <a name="localization-in-xamarinios"></a>Xamarin.iOS yerelleştirme
 
 _Bu belgede iOS SDK'ın yerelleştirme özelliklerini ve Xamarin ile erişmek nasıl kapsar._
 

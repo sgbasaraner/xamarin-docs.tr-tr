@@ -1,21 +1,20 @@
 ---
-title: Birleşik film şeritleri
-description: Birleşik film şeritleri iOS cihazı ekran boyutlarına genişleyen aralığını kapsamak amacıyla birden çok film şeritleri yerine tek bir film şeridi ile kullanıcı arabirimini oluşturmak Geliştirici izin verir. Bu makalede, birleştirilmiş film şeridi Xamarin.iOS içinde işlemde daha derin bir genel bakış verecek şekilde tasarlanmıştır.
+title: Xamarin.iOS içinde birleşik film şeritleri
+description: Bu belgede birleşik film şeritleri Xamarin.iOS de açıklanmaktadır. Birleşik film şeritleri tek bir arabirim tanımı ile birden çok ekran boyutlarına desteklemek geliştiricilerin olanak sağlar.
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6d3324a6485f2d240ec339f6ce7f03aafe51c80c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792027"
 ---
-# <a name="unified-storyboards"></a>Birleşik film şeritleri
-
-_Birleşik film şeritleri iOS cihazı ekran boyutlarına genişleyen aralığını kapsamak amacıyla birden çok film şeritleri yerine tek bir film şeridi ile kullanıcı arabirimini oluşturmak Geliştirici izin verir. Bu makalede, birleştirilmiş film şeridi Xamarin.iOS içinde işlemde daha derin bir genel bakış verecek şekilde tasarlanmıştır._
+# <a name="unified-storyboards-in-xamarinios"></a>Xamarin.iOS içinde birleşik film şeritleri
 
 iOS 8 kullanıcı arabirimini oluşturmak için yeni, kullanımı kolay bir mekanizma içerir — birleşik film şeridi. Farklı donanım ekran boyutlarına tümünün karşılamak üzere tek film şeridi, hızlı ve esnek görünümleri oluşturulabilir bir "tasarım-once, kullanım çok" stili.
 
@@ -679,7 +678,7 @@ Ve uygulamayı iPhone benzeticisi üzerinde çalıştırdığınızda öğesi ek
 
  [![](unified-storyboards-images/exclude05.png "Öğesinin ne zaman eksik iPhone benzeticisi çalışan uygulamaya")](unified-storyboards-images/exclude05.png#lightbox)
 
-Bir dışlama durumu bir öğeyi kaldırmak için öğeyi seçmeniz yeterlidir **tasarım yüzeyi**, listenin sonuna kaydırın **özelliği Explorer** tıklatıp **-**kaldırmak için durum yanındaki düğmesini.
+Bir dışlama durumu bir öğeyi kaldırmak için öğeyi seçmeniz yeterlidir **tasarım yüzeyi**, listenin sonuna kaydırın **özelliği Explorer** tıklatıp **-** kaldırmak için durum yanındaki düğmesini.
 
 Film şeritleri birleşik uygulaması görmek için bakmak `UnifiedStoryboard` örnek Xamarin iOS 8 uygulama bu belgeye eklenmiş.
 

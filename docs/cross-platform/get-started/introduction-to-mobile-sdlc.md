@@ -1,20 +1,19 @@
 ---
 title: Mobil yazılım geliştirme yaşam döngüsü giriş
-description: Bu makalede, mobil uygulamalar göre yazılım geliştirme yaşam döngüsü açıklar ve bazı mobil projeleri oluştururken gerekli konuları ele alır. Yalnızca sağ ve oluşturmaya başlayın atlamak isteyen geliştiriciler için bu kılavuzda atlandı ve daha sonra daha eksiksiz bir mobil geliştirme anlamak için okuyun.
+description: Bu belgede UX tasarım, kullanıcı Arabirimi tasarımı, geliştirme, sabitlemeyi, dağıtım ve daha fazla göz alma mobil yazılım geliştirme yaşam döngüsü, açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: c93a063c9c933e1b9f397d172115471473cf8f35
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 8a95f89ad41ab793d8c26631f1a967180b4c1779
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782339"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Mobil yazılım geliştirme yaşam döngüsü giriş
-
-_Bu makalede, mobil uygulamalar göre yazılım geliştirme yaşam döngüsü açıklar ve bazı mobil projeleri oluştururken gerekli konuları ele alır. Yalnızca sağ ve oluşturmaya başlayın atlamak isteyen geliştiriciler için bu kılavuzda atlandı ve daha sonra daha eksiksiz bir mobil geliştirme anlamak için okuyun._
 
 Mobil uygulamaları oluşturmak IDE'yi açma, bir şey birlikte atma, sınama ve bir uygulama mağazasının – tüm bir öğleden sonra yapılan gönderme hızlı bir bit yapılması kadar kolay olabilir. Veya ayrıntılı eylemli tasarım, kullanılabilirlik, cihazları, bir tam beta yaşam döngüsü ve ardından dağıtım binlerce üzerinde birkaç farklı yolla sınama QA sınamaları içerir son derece katılan bir işlem olabilir.
 

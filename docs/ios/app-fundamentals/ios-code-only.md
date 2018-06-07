@@ -1,21 +1,20 @@
 ---
-title: Kodda iOS kullanıcı arabirimleri oluşturma
-description: Xamarin.iOS bir kullanıcı arabirimi, uygulamanız için – kodda veya iOS için Xamarin Tasarımcısı ile oluşturma için iki yöntem sunar. Bu makalede iOS tamamen kod içinde kullanıcı arabirimleri oluşturma inceler. Bir uygulama ekran bir denetleyicide Uıkit görünümleri hiyerarşisini oluşturarak oluşturmak için bir proje şablonu başlangıç kullanmayı gösterir. Ardından, bir denetleyicisine yüklenebilir özel görünümleri oluşturma açıklanmaktadır.
+title: İOS kullanıcı arabirimleri Xamarin.iOS kod oluşturma
+description: Bu belge, bir Xamarin.iOS uygulaması için kullanıcı arabirimi oluşturmak için kodu kullanmayı açıklar. Görünüm denetleyicileri, döndürmeyi ve daha fazla işleme bir görünüm hiyerarşisi oluşturmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 5e8abc2cea2e2ca8abfada8bc85379d93d183768
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784640"
 ---
-# <a name="creating-ios-user-interfaces-in-code"></a>Kodda iOS kullanıcı arabirimleri oluşturma
-
-_Xamarin.iOS bir kullanıcı arabirimi, uygulamanız için – kodda veya iOS için Xamarin Tasarımcısı ile oluşturma için iki yöntem sunar. Bu makalede iOS tamamen kod içinde kullanıcı arabirimleri oluşturma inceler. Bir uygulama ekran bir denetleyicide Uıkit görünümleri hiyerarşisini oluşturarak oluşturmak için bir proje şablonu başlangıç kullanmayı gösterir. Ardından, bir denetleyicisine yüklenebilir özel görünümleri oluşturma açıklanmaktadır._
+# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>İOS kullanıcı arabirimleri Xamarin.iOS kod oluşturma
 
 Kullanıcı bir iOS uygulaması gibi bir mağaza arabirimdir – uygulama genellikle bir pencere alır, ancak bu pencereyi ile birçok nesnede gerekir ve nesneleri ve düzenlemeleri ne uygulamayı görüntülemek istediği bağlı olarak değiştirilebilir dolabilir. Bu senaryoda - kullanıcının gördüğü şeyler - nesneleri görünümleri denir. Bir uygulamadaki tek bir ekran oluşturmak için görünümleri diğer en üstünde bir içerik görünümü hiyerarşide yığılma ve hiyerarşisini tek bir görünüm denetleyici tarafından yönetilir. Birden çok ekran uygulamaları birden çok içerik görünümü hiyerarşi, her biri kendi görünüm denetleyicisi sahip ve kullanıcı açıktır, farklı içerik Görünümü ekranında dayalı bir hiyerarşide oluşturmak için penceresinde görünümleri uygulama yerleştirir.
 
