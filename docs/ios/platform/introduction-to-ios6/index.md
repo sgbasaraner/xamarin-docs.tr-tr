@@ -1,17 +1,18 @@
 ---
 title: İOS 6 giriş
-description: iOS 6 çeşitli Xamarin.iOS 6 C# geliştiricileri için getirir uygulamaları geliştirmek için yeni teknolojiler içerir.
+description: Bu belge bağlantılar kılavuzlara iOS 6 sunulan özellikler açıklanmaktadır. Koleksiyon görünümleri, PassKit, sosyal Framework ve StoreKit yapılan değişiklikler tüm ele alınmıştır.
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8f3be80ffb8156c24c96b03fda8eac3907ca88bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cf623c7788137106ddbb2c23c69465f205a5a400
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787621"
 ---
 # <a name="introduction-to-ios-6"></a>İOS 6 giriş
 
@@ -28,12 +29,12 @@ Bu belgede bazı kullanılabilir daha heyecan verici yeni özellikler ve her kon
 Koleksiyon görünümlerini rasgele düzenleri kullanarak görüntülenecek içerik izin verin. Özel düzenler desteklerken kılavuz benzeri düzeni kutudan çıktığında, kolayca oluşturma sağlarlar. Daha fazla bilgi için [koleksiyon görünümlerini giriş](~/ios/user-interface/controls/uicollectionview.md) [](~/ios/user-interface/controls/uicollectionview.md)Kılavuzu.
 
 
-## <a name="introduction-to-pass-kitiosplatformpasskitmd"></a>[Giriş paketi geçirmek için](~/ios/platform/passkit.md)
+## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[PassKit giriş](~/ios/platform/passkit.md)
 
-Geçirmek Seti framework uygulamalarının Passbook uygulamasında yönetilen dijital geçişleri etkileşime olanak sağlar. Daha fazla bilgi için [geçirmek Seti Kılavuzu giriş](~/ios/platform/passkit.md).
+PassKit framework uygulamaların Passbook uygulamasında yönetilen dijital geçişleri ile etkileşim kurmasına izin verir. Daha fazla bilgi için [geçirmek Seti Kılavuzu giriş](~/ios/platform/passkit.md).
 
 
-##  <a name="introduction-to-event-kitiosplatformeventkitmd"></a>[Olay Seti Giriş](~/ios/platform/eventkit.md)
+##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit giriş](~/ios/platform/eventkit.md)
 
 EventKit framework takvimleri, takvim olayları ve Takvim veritabanını depolayan anımsatıcıları verilere erişmek için bir yol sağlar. Erişim takvimler ve takvim olayları süredir kullanılabilir 4 iOS itibaren ancak iOS 6 şimdi anımsatıcıları verilere erişim sunar. Daha fazla bilgi için bkz: [ı](~/ios/platform/eventkit.md) [EventKit ntroduction](~/ios/platform/eventkit.md) Kılavuzu.
 
@@ -43,7 +44,7 @@ EventKit framework takvimleri, takvim olayları ve Takvim veritabanını depolay
 Sosyal Framework Çin'de kullanıcıları için SinaWeibo yanı sıra Twitter ve Facebook dahil olmak üzere sosyal ağlar ile etkileşmek için birleştirilmiş bir API sağlar. Daha fazla bilgi için [sosyal Framework Giriş](~/ios/platform/social-framework.md) Kılavuzu.
 
 
-##  <a name="changes-to-store-kitchanges-to-storekitmd"></a>[Kit depolamak için değişiklikler](changes-to-storekit.md)
+##  <a name="changes-to-storekitchanges-to-storekitmd"></a>[StoreKit Üzerindeki Değişiklikler](changes-to-storekit.md)
 
 Apple mağazası Seti'ndeki iki yeni özellikler kullanıma sunulan: satın alma ve iTunes veya uygulamanızın uygulama mağazası içeriği indirme ve uygulama içi satın alımlar için içerik dosyalarınızı barındırma!. Daha fazla bilgi için [değişiklikleri deposu pakete](changes-to-storekit.md) Kılavuzu.
 

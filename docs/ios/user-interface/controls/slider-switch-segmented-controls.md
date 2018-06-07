@@ -1,21 +1,22 @@
 ---
-title: Kaydırıcılar, anahtarlar ve bölümlenmiş denetimleri
+title: Kaydırıcılar, anahtarlar ve Xamarin.iOS bölümlenmiş denetimlerinde
+description: Bu belge, slayt, anahtarlar ve bunlarla Tasarımcısı iOS hem programlı olarak çalışmak nasıl açıklayan Xamarin.iOS bölümlenmiş denetimlerinde açıklanır.
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3c98ea19b3f925e71f72b09d5356286d676a9f71
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09a5d9e76c41eba4e16cab041daa67d3a5d8a584
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790035"
 ---
-# <a name="sliders-switches-and-segmented-controls"></a>Kaydırıcılar, anahtarlar ve bölümlenmiş denetimleri
+# <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Kaydırıcılar, anahtarlar ve Xamarin.iOS bölümlenmiş denetimlerinde
 
 <a name="Sliders" />
-
 
 ## <a name="sliders"></a>Kaydırıcılar
 
