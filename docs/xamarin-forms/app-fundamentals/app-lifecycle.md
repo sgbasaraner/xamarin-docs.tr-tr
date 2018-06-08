@@ -6,25 +6,27 @@ ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/19/2016
-ms.openlocfilehash: 511591482a0e7512be34f6a210c6f44a1826be24
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/31/2018
+ms.openlocfilehash: a22ad8f3f272212f5c7f088ba2112f2771ff4a7f
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846350"
 ---
 # <a name="app-lifecycle"></a>Uygulama yaşam döngüsü
 
-`Application` Temel sınıf aşağıdaki özellikleri sunmaktadır:
+[ `Application` ](xref:Xamarin.Forms.Application) Temel sınıf aşağıdaki özellikleri sunmaktadır:
 
 * [Yaşam döngüsü yöntemleri](#Lifecycle_Methods) `OnStart`, `OnSleep`, ve `OnResume`.
+* [Sayfa gezinti olaylarını](#page) [ `PageAppearing` ](xref:Xamarin.Forms.Application.PageAppearing), [ `PageDisappearing` ](xref:Xamarin.Forms.Application.PageDisappearing).
 * [Kalıcı gezinti olaylarını](#modal) `ModalPushing`, `ModalPushed`, `ModalPopping`, ve `ModalPopped`.
 
 <a name="Lifecycle_Methods" />
 
 ## <a name="lifecycle-methods"></a>Yaşam döngüsü yöntemleri
 
-`Application` Sınıfı yaşam döngüsü yöntemlerini işlemek için geçersiz kılınabilir üç sanal yöntemlerini içerir:
+[ `Application` ](xref:Xamarin.Forms.Application) Sınıfı yaşam döngüsü yöntemlerini işlemek için geçersiz kılınabilir üç sanal yöntemlerini içerir:
 
 * **OnStart** -uygulama başladığında çağrılır.
 
@@ -54,18 +56,30 @@ protected override void OnResume()
 
 Güncelleştirirken *eski* Xamarin.Forms uygulamalar (ör.) Xamarin.Forms 1.3 veya eski oluşturma), Android ana etkinlik içerdiğinden emin olmak `ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation` içinde `[Activity()]` özniteliği. Mevcut değilse gözlemlemek `OnStart` döndürme üzerinde yanı sıra uygulama ilk başladığında yönteminizin çağrıldığından. Bu öznitelik geçerli Xamarin.Forms uygulaması şablonlarında otomatik olarak eklenir.
 
+<a name="page" />
+
+## <a name="page-navigation-events"></a>Sayfa gezintisi olayları
+
+İki olay vardır [ `Application` ](xref:Xamarin.Forms.Application) görünmesini ve kayboluyor sayfaların bildirim sağlamak sınıfı:
+
+- [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing) -bir sayfa hakkında ekranda görüntülenen olduğunda oluşturulur.
+- [`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing) -bir sayfa hakkında ekranından kayboluyor olduğunda oluşturulur.
+
+Bu olaylar, ekranda görüntülenen özelliklerdir gibi sayfaları izlemek istediğiniz senaryolarda kullanılabilir.
+
+> [!NOTE]
+> [ `PageAppearing` ](xref:Xamarin.Forms.Application.PageAppearing) Ve [ `PageDisappearing` ](xref:Xamarin.Forms.Application.PageDisappearing) olayları yükseltilmiş [ `Page` ](xref:Xamarin.Forms.Page) temel sınıfı hemen sonra [ `Page.Appearing` ](xref:Xamarin.Forms.Page.Appearing) ve [ `Page.Disappearing` ](xref:Xamarin.Forms.Page.Disappearing) olayları, sırasıyla.
+
 <a name="modal" />
 
 ## <a name="modal-navigation-events"></a>Kalıcı Gezinti olayları
 
-Dört yeni olaylar vardır `Application` Xamarin.Forms 1.4, her biri kendi olay bağımsız sınıfında:
+Dört olayları vardır [ `Application` ](xref:Xamarin.Forms.Application) sınıfı, her olanak tanıyan kendi olay bağımsız değişkenlerle yanıt gösterilen ve kapatıldığında kalıcı sayfalara:
 
 * **ModalPushing** - `ModalPushingEventArgs`
 * **ModalPushed** - `ModalPushedEventArgs`
 * **ModalPopping** - `ModalPoppingEventArgs` sınıfı içeren bir `Cancel` özelliği. Zaman `Cancel` ayarlanır `true` kalıcı pop iptal edildi.
 * **ModalPopped** - `ModalPoppedEventArgs`
-
-Bu olaylar, uygulama yaşam döngüsü daha iyi yönetmenize yardımcı olur, gösterilen ve kapatıldığında kalıcı sayfalara yanıt vererek.
 
 > [!NOTE]
 > Uygulama yaşam döngüsü yöntemleri ve kalıcı Gezinti olayları, tüm ön uygulamak için`Application` Xamarin.Forms uygulaması oluşturma yöntemleri (IE. statik kullanan sürüm 1.2 veya eski yazılan uygulamaları `GetMainPage` yöntemi) oluşturmak için güncelleştirilmiş bir Varsayılan `Application` üst öğesi olarak ayarlanmış `MainPage`.

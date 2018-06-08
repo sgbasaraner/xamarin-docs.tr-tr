@@ -6,24 +6,25 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: 2e40effa7bc54b7b7cf73edaa882256fed521a95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/31/2018
+ms.openlocfilehash: a45a4edb93920cfe1d0289da44ee664e41c25cf1
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847854"
 ---
 # <a name="entry"></a>Giriş
 
 _Tek satırlı metin veya parola giriş_
 
-Xamarin.Forms `Entry` tek satırlı metin girişi için kullanılır. `Entry`, düzenleyici görünümü gibi birden çok klavye türlerini destekler. Ayrıca, `Entry` parola alanı kullanılabilir.
+Xamarin.Forms `Entry` tek satırlı metin girişi için kullanılır. `Entry`Gibi `Editor` görüntülemek için birden çok klavye türlerini destekler. Ayrıca, `Entry` parola alanı kullanılabilir.
 
 ## <a name="display-customization"></a>Görüntü özelleştirme
 
 ### <a name="setting-and-reading-text"></a>Ve ayarlama ve metin okuma
 
-Diğer metin sunan görünümleri gibi giriş sunar `Text` özelliği. `Text` ayarlama ve tarafından sunulan metin okumak için kullanılan `Entry`. Aşağıdaki örnek XAML'de metin ayarlanmasını gösterir:
+`Entry`, Diğer metin sunan görünümleri gibi sunan `Text` özelliği. Bu özelliği ayarlamak ve tarafından sunulan metin okumak için kullanılan `Entry`. Aşağıdaki örnek, ayarı gösterir `Text` XAML özelliğinde:
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -44,6 +45,20 @@ var text = MyEntry.Text;
 > [!NOTE]
 > Genişliğini bir `Entry` ayarlayarak tanımlanabilir kendi `WidthRequest` özelliği. Genişliğini bağlı olmayan bir `Entry` tanımlanmakta değeri temel alarak kendi `Text` özelliği.
 
+### <a name="limiting-input-length"></a>Giriş sınırlandırma
+
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Özelliği için izin verilen giriş uzunluğunu sınırlamak için kullanılabilir [ `Entry` ](xref:Xamarin.Forms.Entry). Bu özellik, pozitif bir tamsayı olarak ayarlamanız gerekir:
+
+```xaml
+<Entry ... MaxLength="10" />
+```
+
+```csharp
+var entry = new Entry { ... MaxLength = 10 };
+```
+
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) özelliği değerinin 0 gösterir herhangi bir giriş izin verilmeyeceğini ve değeri `int.MaxValue`, varsayılan değeri olduğu bir [ `Entry` ](xref:Xamarin.Forms.Entry), olduğunu gösterir yok etkili girilebilir karakter sayısı sınırı.
+
 ### <a name="keyboards"></a>Klavyeler
 
 Kullanıcıların etkileşimli olarak yükleyen sunulan klavye bir `Entry` aracılığıyla programlı olarak ayarlanabilir `Keyboard` özelliği.
@@ -58,6 +73,23 @@ Klavye türü için Seçenekler şunlardır:
 - **URL** &ndash; dosya yolları ve web adresleri girmek için kullanılan
 
 Var olan bir [her klavye örneği](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) bizim tarif bölümünde.
+
+### <a name="enabling-and-disabling-spell-checking"></a>Etkinleştirme ve yazım denetimi devre dışı bırakma
+
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Özellik denetimleri olup yazım etkin olmadığı denetleniyor. Varsayılan olarak, özellik kümesine `true`. Metin kullanıcının girdiği gibi yazım hatalarını belirtilir.
+
+Ancak, bir kullanıcı adı girerek gibi bazı metin girişi senaryolar için yazım denetimi negatif bir deneyim ve bunu devre dışı bırakılmalıdır ayarlayarak sağlar [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliğine `false`:
+
+```xaml
+<Entry ... IsSpellCheckEnabled="false" />
+```
+
+```csharp
+var entry = new Entry { ... IsSpellCheckEnabled = false };
+```
+
+> [!NOTE]
+> Zaman [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliği ayarlanmış `false`ve özel bir klavye kullanılmadığından, yerel yazım denetimi devre dışı bırakılacak. Ancak, bir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sahip olan yazım devre dışı bırakır kümesi denetlemesi gibi [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` özelliği yoksayılır. Bu nedenle, özellik için yazım denetimi etkinleştirmek için kullanılamaz bir `Keyboard` , açıkça onu devre dışı bırakır.
 
 ### <a name="placeholders"></a>Yer tutucuları
 

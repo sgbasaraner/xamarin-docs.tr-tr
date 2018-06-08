@@ -6,12 +6,13 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: 035365a22c487039ff811756d91ca0a8d392d628
-ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
+ms.date: 05/31/2018
+ms.openlocfilehash: 317d4f140daeccc525c4267fca43e6164a8f7827
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848323"
 ---
 # <a name="editor"></a>Düzenleyici
 
@@ -26,7 +27,7 @@ _Çok satırlı metin girişi_
 
 ### <a name="setting-and-reading-text"></a>Ve ayarlama ve metin okuma
 
-Diğer metin sunan görünümleri gibi Düzenleyicisi'ni kullanıma sunan `Text` özelliği. `Text` ayarlama ve tarafından sunulan metin okumak için kullanılan `Editor`. Aşağıdaki örnek XAML'de ayarı metin gösterir:
+`Editor`, Diğer metin sunan görünümleri gibi sunan `Text` özelliği. Bu özelliği ayarlamak ve tarafından sunulan metin okumak için kullanılan `Editor`. Aşağıdaki örnek, ayarı gösterir `Text` XAML özelliğinde:
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -44,6 +45,20 @@ Metin okuma erişimi `Text` özelliği, C#:
 var text = MyEditor.Text;
 ```
 
+### <a name="limiting-input-length"></a>Giriş sınırlandırma
+
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Özelliği için izin verilen giriş uzunluğunu sınırlamak için kullanılabilir [ `Editor` ](xref:Xamarin.Forms.Editor). Bu özellik, pozitif bir tamsayı olarak ayarlamanız gerekir:
+
+```xaml
+<Editor ... MaxLength="10" />
+```
+
+```csharp
+var editor = new Editor { ... MaxLength = 10 };
+```
+
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) özelliği değerinin 0 gösterir herhangi bir giriş izin verilmeyeceğini ve değeri `int.MaxValue`, varsayılan değeri olduğu bir [ `Editor` ](xref:Xamarin.Forms.Editor), olduğunu gösterir yok etkili girilebilir karakter sayısı sınırı.
+
 ### <a name="keyboards"></a>Klavyeler
 
 Kullanıcıların etkileşimli olarak yükleyen sunulan klavye bir `Editor` aracılığıyla programlı olarak ayarlanabilir [ ``Keyboard`` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/) özelliği.
@@ -58,6 +73,23 @@ Klavye türü için Seçenekler şunlardır:
 - **URL** &ndash; dosya yolları & web adresleri girmek için kullanılan
 
 Var olan bir [her klavye örneği](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) bizim tarif bölümünde.
+
+### <a name="enabling-and-disabling-spell-checking"></a>Etkinleştirme ve yazım denetimi devre dışı bırakma
+
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Özellik denetimleri olup yazım etkin olmadığı denetleniyor. Varsayılan olarak, özellik kümesine `true`. Metin kullanıcının girdiği gibi yazım hatalarını belirtilir.
+
+Ancak, bir kullanıcı adı girerek gibi bazı metin girişi senaryolar için yazım denetimi negatif bir deneyim ve bunu devre dışı bırakılmalıdır ayarlayarak sağlar [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliğine `false`:
+
+```xaml
+<Editor ... IsSpellCheckEnabled="false" />
+```
+
+```csharp
+var editor = new Editor { ... IsSpellCheckEnabled = false };
+```
+
+> [!NOTE]
+> Zaman [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliği ayarlanmış `false`ve özel bir klavye kullanılmadığından, yerel yazım denetimi devre dışı bırakılacak. Ancak, bir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sahip olan yazım devre dışı bırakır kümesi denetlemesi gibi [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` özelliği yoksayılır. Bu nedenle, özellik için yazım denetimi etkinleştirmek için kullanılamaz bir `Keyboard` , açıkça onu devre dışı bırakır.
 
 ### <a name="colors"></a>Renkleri
 

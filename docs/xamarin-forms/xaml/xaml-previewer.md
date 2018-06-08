@@ -6,12 +6,13 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 02/24/2017
-ms.openlocfilehash: d23f89ed8ad7956f7a366280a14ccc12ba3dac0c
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.date: 05/31/2018
+ms.openlocfilehash: 9b87145773bf16b15c391c5c5d6d136b7aa76e39
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848362"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin.Forms için XAML Önizleyicisi
 
@@ -55,6 +56,17 @@ Kullanım **Görünüm > Diğer Pencereler > Xamarin.Forms Önizleyicisi** Öniz
 Bazı düzenleri için kullanıcı arabirimi denetimlerini bağlı herhangi bir veri olmadan görselleştirmek zor olabilir. Önizleme daha kullanışlı hale getirmek için bazı statik verileri denetimlere bir bağlama bağlamı (ya da arka plan kodu veya XAML kullanılarak) cmdlet'e kod atayın.
 
 Ahmet Montemagno için 's başvuran [tasarım zamanı veri ekleme blog gönderisi](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) statik ViewModel XAML'de bağlamak nasıl görmek için.
+
+## <a name="detecting-design-mode"></a>Tasarım modunu algılama
+
+Statik [ `DesignMode.IsDesignModeEnabled` ](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled) özelliği incelenmesi uygulama önizlemesinde çalışıp çalışmadığını belirlemek için. Bu uygulama önizlemesinde çalışırken yalnızca yürütülür kodu belirtmenize olanak tanır:
+
+```csharp
+if (DesignMode.IsDesignModeEnabled)
+{
+  // Previewer only code  
+}
+```
 
 ## <a name="troubleshooting"></a>Sorun giderme
 

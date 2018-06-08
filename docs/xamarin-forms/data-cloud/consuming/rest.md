@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 48b81c5beb1643501c69e5de1ea4f4197d587001
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7857f3d4c76fe7d8589c25e4f7fb079f06e136e7
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846625"
 ---
 # <a name="consuming-a-restful-web-service"></a>Bir RESTful Web hizmetini kullanma
 
@@ -50,10 +51,10 @@ REST hizmeti ASP.NET Core kullanarak yazılır ve aşağıdaki işlemleri sağla
 
 |Çalışma|HTTP yöntemi|Göreli URI|Parametreler|
 |--- |--- |--- |--- |
-|Yapılacaklar öğelerini bir listesini alma|AL|/api/todoitems/|
-|Yeni bir Yapılacaklar öğesi oluşturma|YAYINLA|/api/todoitems/|Todoıtem JSON biçimli|
-|Güncelleştirme Yapılacaklar öğesi|PUT|/api/todoitems/|Todoıtem JSON biçimli|
-|Yapılacaklar öğesi silme|DELETE|/api/todoitems/{id}|
+|Yapılacaklar öğelerini bir listesini alma|AL|/api/todoıtems /|
+|Yeni bir Yapılacaklar öğesi oluşturma|YAYINLA|/api/todoıtems /|Todoıtem JSON biçimli|
+|Güncelleştirme Yapılacaklar öğesi|PUT|/api/todoıtems /|Todoıtem JSON biçimli|
+|Yapılacaklar öğesi silme|DELETE|/api/todoıtems / {id}|
 
 URI'ler çoğunluğu dahil `TodoItem` yolunda kimliği. Örneğin, silmek için `TodoItem` özelliği kimliği `6bb8a868-dba1-4f1a-93b7-24ebce87e243`, istemci bir silme isteği gönderir `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`. Örnek uygulama kullanılan veri modeli hakkında daha fazla bilgi için bkz: [modelleme verileri](~/xamarin-forms/data-cloud/walkthrough.md).
 
@@ -149,7 +150,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
   ...
 
   if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"             TodoItem successfully saved.");
+    Debug.WriteLine (@"                TodoItem successfully saved.");
 
   }
   ...
@@ -196,7 +197,7 @@ public async Task DeleteTodoItemAsync (string id)
   ...
   var response = await client.DeleteAsync (uri);
   if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"             TodoItem successfully deleted.");
+    Debug.WriteLine (@"                TodoItem successfully deleted.");
   }
   ...
 }

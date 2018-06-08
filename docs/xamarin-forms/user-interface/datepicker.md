@@ -6,24 +6,28 @@ ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 03/12/2018
-ms.openlocfilehash: 0ab9d3c83b849e5ab5aac8bce9c581abd0312237
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/04/2018
+ms.openlocfilehash: 09b0bd788d9ac436e0270b447556ad2b0a848f99
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848570"
 ---
 # <a name="using-datepicker"></a>DatePicker kullanma
 
 _Kullanıcının bir tarih seçmesine olanak veren bir Xamarin.Forms görünümü_
 
-Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) platformun tarih seçici denetim çağırır ve bir tarih seçin olanak tanır. `DatePicker` beş özelliklerini tanımlar:
+Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) platformun tarih seçici denetim çağırır ve bir tarih seçin olanak tanır. `DatePicker` sekiz özelliklerini tanımlar:
 
 - [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) tür [ `DateTime` ](https://developer.xamarin.com/api/type/System.DateTime/), 1900 yılın ilk günü için varsayılan olarak.
 - [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) tür `DateTime`, hangi varsayılanlara 2100 yılın son günü.
 - [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) tür `DateTime`, değeri varsayılan olarak seçilen tarihten [ `DateTime.Today` ](https://developer.xamarin.com/api/property/System.DateTime.Today/).
 - [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) tür `string`, [standart](/dotnet/standard/base-types/standard-date-and-time-format-strings/) veya [özel](/dotnet/standard/base-types/custom-date-and-time-format-strings/) "D" varsayılan olarak, dize biçimlendirme .NET uzun tarih düzeni.
 - [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.TextColor/) tür [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/), varsayılan olarak seçilen tarihini görüntülemek için kullanılan renk [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
+- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) tür [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), varsayılan olarak [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
+- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) tür `string`, varsayılan olarak `null`.
+- [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) tür `double`, -1.0 için varsayılan olarak.
 
 `DatePicker` Ateşlenir bir [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) kullanıcı bir tarih seçtiğinde olay.
 
@@ -32,7 +36,7 @@ Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Fo
 
 Dahili olarak, `DatePicker` sağlar `Date` arasında `MinimumDate` ve `MaximumDate`(dahil). Varsa `MinimumDate` veya `MaximumDate` ayarlanmış şekilde `Date` bunlar arasında değil `DatePicker` değerini ayarlar `Date`.
 
-Tüm beş özellikleri tarafından yedeklenen [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) nesneleri bunlar biçimlendirilebilir ve özellikler veri bağlamaların hedefleri olabilir anlamına gelir. `Date` Özelliğine sahip bir varsayılan bağlama modu [ `BindingMode.TwoWay` ](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/), kullanan bir uygulama içinde veri bağlama hedefi olabileceği anlamına gelir [Model View ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) Mimari.
+Tüm sekiz özellikleri tarafından yedeklenen [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) nesneleri bunlar biçimlendirilebilir ve özellikler veri bağlamaların hedefleri olabilir anlamına gelir. `Date` Özelliğine sahip bir varsayılan bağlama modu [ `BindingMode.TwoWay` ](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/), kullanan bir uygulama içinde veri bağlama hedefi olabileceği anlamına gelir [Model View ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) Mimari.
 
 ## <a name="initializing-the-datetime-properties"></a>DateTime özellikleri başlatma
 
@@ -67,13 +71,15 @@ Bu örnekte, tüm üç özellik ViewModel karşılık gelen özelliklerinde baş
 
 Varsa `DatePicker` üzerinde bir bağlama içermiyor kendi `Date` özelliği, bir uygulama eklemek için bir işleyici `DateSelected` olması için olay bilgi sahibi kullanıcı yeni bir tarih seçtiğinde.
 
+Yazı tipi özelliklerini ayarlama hakkında daha fazla bilgi için bkz: [yazı tiplerini](~/xamarin-forms/user-interface/text/fonts.md).
+
 ## <a name="datepicker-and-layout"></a>DatePicker ve düzeni
 
 Kısıtlanmamış yatay düzen seçeneği gibi kullanmak da mümkündür `Center`, `Start`, veya `End` ile `DatePicker`:
 
 ```xaml
-<DatePicker ··· 
-            HorizontalOptions="Center" 
+<DatePicker ···
+            HorizontalOptions="Center"
             ··· />
 ```
 
@@ -138,7 +144,7 @@ XAML dosyası şöyledir:
 </ContentPage>
 ```
 
-Her `DatePicker` atanmış bir `Format` "D" özelliği için uzun tarih biçimi. Ayrıca dikkat `endDatePicker` nesne sahip hedefleyen bir bağlama kendi `MinimumDate` özelliği. Bağlama kaynağıdır seçili `Date` özelliği `startDatePicker` nesnesi. Bu, son tarihi daha sonra her zaman başlangıç tarihine eşit veya sağlar. İki ek olarak `DatePicker` nesneleri, bir `Switch` "her iki gün toplama eklemek" olarak etiketlenir. 
+Her `DatePicker` atanmış bir `Format` "D" özelliği için uzun tarih biçimi. Ayrıca dikkat `endDatePicker` nesne sahip hedefleyen bir bağlama kendi `MinimumDate` özelliği. Bağlama kaynağıdır seçili `Date` özelliği `startDatePicker` nesnesi. Bu, son tarihi daha sonra her zaman başlangıç tarihine eşit veya sağlar. İki ek olarak `DatePicker` nesneleri, bir `Switch` "her iki gün toplama eklemek" olarak etiketlenir.
 
 İki `DatePicker` görünümleri sahip ilişik işleyiciler `DateSelected` olayı ve `Switch` için bir işleyici eklenmiş kendi `Toggled` olay. Bu olay işleyicileri ve iki tarih arasındaki gün yeni bir hesaplaması tetiklemek arka plan kod dosyasına verilmiştir:
 

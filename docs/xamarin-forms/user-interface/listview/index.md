@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: ddd779fc7eb1a10e74c68504367083ff0efcdfcd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7beb9e66a6e6bc29de36fcd605c5daa0098e75a2
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848544"
 ---
 # <a name="listview"></a>ListView
 
@@ -41,8 +42,8 @@ ListView bileşenleri her platform için yerel işlevselliği kullanmak kullanı
 
 - **[Hücreleri](customizing-cell-appearance.md)**  &ndash; ListView içindeki veri hücrelerinde sunulur. Her bir hücre veri satırına karşılık gelir. Aralarından seçim yapabileceğiniz yerleşik hücreleri vardır veya kendi özel hücre tanımlayabilirsiniz. Yerleşik ve özel hücreleri kullanılan/XAML veya kod tanımlanmış olabilir.
   - **[Yerleşik](customizing-cell-appearance.md#Built_in_Cells)**  &ndash; her platformda yerel denetimlere karşılık gelen beri hücrelerde, özellikle TextCell ve ImageCell, yerleşik performans için harika olabilir.
-    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; ayrıntı metni isteğe bağlı olarak bir metin dizesi görüntüler. Ayrıntı metin Aksan rengi ile daha küçük bir yazı tipi ikinci satır olarak işlenir.
-    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; metinle birlikte bir resim görüntüler. Sol taraftaki görüntüsü olan bir TextCell olarak görünür.
+       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; ayrıntı metni isteğe bağlı olarak bir metin dizesi görüntüler. Ayrıntı metin Aksan rengi ile daha küçük bir yazı tipi ikinci satır olarak işlenir.
+       - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; metinle birlikte bir resim görüntüler. Sol taraftaki görüntüsü olan bir TextCell olarak görünür.
   - **[Özel hücreleri](customizing-cell-appearance.md#customcells)**  &ndash; karmaşık veri sunmak gerektiğinde özel hücreleri harika. Örneğin, özel bir görünüm albüm ve sanatçı dahil olmak üzere şarkıya listesini sunmak için kullanılabilir:
 
 ![](images/image-cell-default.png "ListView ImageCells ile")

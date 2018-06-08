@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 2e942d1085822fee935ae0f23f2253f23d49a43d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 92eabbec31b654f1aefcffb99ec2ed14062e8681
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847383"
 ---
 # <a name="creating-android-services"></a>Android hizmetleri oluşturma
 
@@ -21,11 +22,11 @@ _Bu kılavuz bir etkin kullanıcı arabirimi olmadan yapılacak işleri izin And
 
 Mobil uygulamalar gibi Masaüstü uygulamaları değildir. Ekran Gayrimenkul, bellek, depolama alanı ve bağlı güç kaynağı gibi kaynakları copious miktarda masaüstleri olması, mobil aygıtlar yapın. Bu kısıtlamaların farklı şekilde davranmasına mobil uygulamaları zorlar. Örneğin, bir mobil cihazda küçük ekran genellikle, yalnızca bir uygulama (yani etkinliği) aynı anda görünür olduğu anlamına gelir. Diğer etkinlikler arka plana taşınır ve herhangi bir iş yeri gerçekleştiremezsiniz askıya alınmış bir duruma gönderilir. Yalnızca bir Android uygulaması olduğundan ancak arka planda çalışmaya devam etmek için uygulama mümkün değildir anlamına gelmez. 
 
-Android uygulamaları yapılma en az biri aşağıdaki dört birincil bileşenleri: _etkinlikleri_, _yayın alıcıları_, _içerik sağlayıcıları_ve _Hizmetleri_. Uygulama ile etkileşim kurmak bir kullanıcının kullanıcı arabirimini sağladıkları için etkinlikler birçok mükemmel Android uygulamaları taşlarıdır. Eşzamanlı gerçekleştirme veya arka plan çalışması için geldiğinde, ancak etkinlikler her zaman en iyi seçenek değildir.
+Android uygulamaları yapılma en az biri aşağıdaki dört birincil bileşenlerinin: _etkinlikleri_, _yayın alıcıları_, _içerik sağlayıcıları_ve _Hizmetleri_. Uygulama ile etkileşim kurmak bir kullanıcının kullanıcı arabirimini sağladıkları için etkinlikler birçok mükemmel Android uygulamaları taşlarıdır. Eşzamanlı gerçekleştirme veya arka plan çalışması için geldiğinde, ancak etkinlikler her zaman en iyi seçenek değildir.
  
 Android arka plan çalışması için birincil mekanizma _hizmet_. Bir Android hizmeti kullanıcı arabirimi olmadan bazı iş yapmak için tasarlanmış bir bileşendir. Bir hizmet, dosya indirme, müzik veya görüntünün bir filtre uygulayın. Hizmetleri işlemler arası iletişim için de kullanılabilir (_IPC_) Android uygulamalar arasında. Örneğin, bir Android uygulaması başka bir uygulamadan müzik çalar hizmetini kullanabilir veya bir uygulamanın diğer uygulamalara bir hizmeti aracılığıyla (örneğin, bir kişinin iletişim bilgilerini) veri doğurabilir. 
 
-Hizmetler ve arka plan iş gerçekleştirmek için kendi yeteneği kesintisiz ve sıvı kullanıcı arabirimi sağlamak için önemli. Tüm Android uygulamalarını sahip bir _ana iş parçacığı_ (olarak da bilinen bir _kullanıcı Arabirimi iş parçacığı_) etkinlikleri çalıştırdığınız üzerinde. Aygıt yanıt verebilir durumda tutmak için Android saniyede 60 çerçeve hızında kullanıcı arabirimi güncelleştirmek mümkün olması gerekir. Android uygulaması kadar iş ana iş parçacığı üzerinde gerçekleştirir sonra Android kısıtlamayı bıraktırır çerçeveler, sırayla neden olan düzensiz görünmesi UI (bazen de denir _janky_). Başka bir deyişle kullanıcı Arabirimi iş parçacığı üzerinde gerçekleştirilen herhangi bir iş iki çerçeve, yaklaşık 16 milisaniye (60 her çerçeve 1 saniye) arasındaki zaman aralığı içinde tamamlanmalıdır. 
+Hizmetler ve arka plan iş gerçekleştirmek için kendi yeteneği kesintisiz ve sıvı kullanıcı arabirimi sağlamak için önemli. Tüm Android uygulamalarını sahip bir _ana iş parçacığı_ (olarak da bilinen bir _kullanıcı Arabirimi iş parçacığı_) etkinlikleri çalıştırdığınız üzerinde. Aygıt yanıt verebilir durumda tutmak için Android saniyede 60 çerçeve hızında kullanıcı arabirimi güncelleştirmek mümkün olması gerekir. Android uygulaması ana iş parçacığı üzerinde çok fazla iş gerçekleştirir sonra Android kısıtlamayı bıraktırır çerçeveler, sırayla neden olan düzensiz görünmesi UI (bazen de denir _janky_). Başka bir deyişle kullanıcı Arabirimi iş parçacığı üzerinde gerçekleştirilen herhangi bir iş iki çerçeve, yaklaşık 16 milisaniye (60 her çerçeve 1 saniye) arasındaki zaman aralığı içinde tamamlanmalıdır. 
 
 Bu sorunu çözmenin bir geliştirici iş parçacığı bir etkinlikte UI engelleyebilecek bazı işlerini yapmak için kullanabilir. Ancak, bu sorunlara neden olabilir. Android silin ve etkinliğin birden çok örneğini yeniden çok mümkündür. Ancak, Android otomatik olarak bellek sızıntıları sonuçlanabilir iş parçacığı yok etmez. Bu prime örneği olduğunda [aygıt Döndürülmüş](~/android/app-fundamentals/handling-rotation.md) &ndash; Android deneyecek etkinlik örneğini silin ve yenisini oluşturun:
 

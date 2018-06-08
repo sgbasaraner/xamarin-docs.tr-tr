@@ -6,12 +6,13 @@ ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/20/2017
-ms.openlocfilehash: be131bdbfeceabd72494708cdfe9a263da9bbbd8
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/06/2018
+ms.openlocfilehash: 0609d15248f1827b892ae02a877382ca0ffbed18
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847637"
 ---
 # <a name="platform-features"></a>Platform Özellikleri
 
@@ -41,10 +42,6 @@ Xamarin.Forms GTK # uygulamaları için Önizleme destek artık sahiptir.
 
 Xamarin.Forms artık macOS uygulamaları için Önizleme destek sahiptir.
 
-## <a name="wpfwpfmd"></a>[WPF](wpf.md)
-
-Xamarin.Forms artık Windows Presentation Foundation (WPF) uygulamaları için Önizleme destek sahiptir.
-
 ## <a name="native-formsnative-formsmd"></a>[Yerel Formlar](native-forms.md)
 
 Yerel Forms izin Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-yerel Xamarin.iOS, Xamarin.Android ve evrensel Windows Platformu (UWP) projeler tarafından tüketilen sayfalarına türetilmiş.
@@ -61,6 +58,14 @@ Platform özellikleri yalnızca özel oluşturucu veya efektler gerektirmeden be
 
 Çok çeşitli açık kaynak eklentileri Github, Nuget ve Xamarin bileşen Deposu'nda Xamarin.Forms uygulamaları uzatmaya yardımcı olmak için kullanılabilir.
 
+## <a name="tizentizenmd"></a>[tizen](tizen.md)
+
+Tizen .NET Xamarin.Forms ve Tizen .NET framework ile .NET uygulamaları oluşturmanıza olanak sağlar.
+
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
 Xamarin.Forms destek Evrensel Windows Platformu (UWP) için Windows 10 sahiptir. Bu makalede nasıl ekleneceğini açıklar bir var olan bir Xamarin.Forms çözüme UWP projesi.
+
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+
+Xamarin.Forms artık Windows Presentation Foundation (WPF) uygulamaları için Önizleme destek sahiptir.

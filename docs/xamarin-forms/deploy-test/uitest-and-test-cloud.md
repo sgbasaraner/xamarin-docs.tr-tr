@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/31/2016
-ms.openlocfilehash: f671f31dcc0aaf339a7c9f3d6465f4777a8f7f7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71084aaaaf335473a425bc988c2bb17437cfbb70
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847361"
 ---
 # <a name="automate-xamarinforms-testing-with-xamarinuitest-and-app-center"></a>Xamarin.Forms Xamarin.UITest ve uygulama Center ile testi otomatik hale getirme
 
@@ -143,7 +144,7 @@ Visual Studio varolan Xamarin.Forms çözümünü Xamarin.UITest projesi eklemek
 
     Bu yeni bir proje ile ekler **NUnit**, **Xamarin.UITest**, ve **NUnitTestAdapter** çözüm için NuGet paketleri:
 
-    ![](uitest-and-test-cloud-images/09-new-uitest-project-xs.png "NuGet Package Manager")
+    ![](uitest-and-test-cloud-images/09-new-uitest-project-xs.png "NuGet Paket Yöneticisi")
 
     **NUnitTestAdapter** Visual Studio'dan NUnit testleri çalıştırmak Visual Studio sağlayan bir üçüncü taraf test Çalıştırıcısı değil.
 
