@@ -1,22 +1,24 @@
 ---
 title: Uygulama kaynak videoları yükleniyor
+description: Bu makalede, uygulama kaynak Xamarin.Forms kullanarak bir video oynatıcı uygulaması olarak videolara yük açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 89c424ee80a4ebf6363a836e752b72ee9bc5cd5a
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: f28b0dc8e25cb2e498f4101175005f05a5c5a6ef
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241038"
 ---
 # <a name="loading-application-resource-videos"></a>Uygulama kaynak videoları yükleniyor
 
 Özel oluşturucu için `VideoPlayer` görünümü uygulama kaynakları olarak tek tek platform projelerinde katıştırılmış video dosyaları çalma yeteneğine sahiptir. Ancak, geçerli sürümü `VideoPlayer` .NET standart kitaplığında katıştırılmış kaynaklarına erişemez.
 
-Bu kaynakları yüklemek için bir örneğini oluşturmak `ResourceVideoSource` ayarlayarak `Path` dosya adını (veya klasör ve dosya adı) kaynak özelliği. Alternatif olarak, statik çağırabilirsiniz `VideoSource.FromResource` referans yöntemi. Ardından, `ResourceVideoSource` nesnesini `Source` özelliği `VideoPlayer`. 
+Bu kaynakları yüklemek için bir örneğini oluşturmak `ResourceVideoSource` ayarlayarak `Path` dosya adını (veya klasör ve dosya adı) kaynak özelliği. Alternatif olarak, statik çağırabilirsiniz `VideoSource.FromResource` referans yöntemi. Ardından, `ResourceVideoSource` nesnesini `Source` özelliği `VideoPlayer`.
 
 ## <a name="storing-the-video-files"></a>Video dosyaların depolanması
 
@@ -30,13 +32,13 @@ Bir iOS projesi bir video depolayabilir **kaynakları** klasörü veya alt **kay
 
 ### <a name="android-video-resources"></a>Android video kaynakları
 
-Android projesinde, bir alt klasöründe videolar depolanmalıdır **kaynakları** adlı **ham**. **Ham** klasör, alt klasörler içeremez. Video dosyası vermek bir `Build Action` , `AndroidResource`. Ayarlama `Path` özelliği `ResourceVideoSource` bu gibi bir durumda dosya için **MyFile.mp4**. 
+Android projesinde, bir alt klasöründe videolar depolanmalıdır **kaynakları** adlı **ham**. **Ham** klasör, alt klasörler içeremez. Video dosyası vermek bir `Build Action` , `AndroidResource`. Ayarlama `Path` özelliği `ResourceVideoSource` bu gibi bir durumda dosya için **MyFile.mp4**.
 
-**VideoPlayerDemos.Android** projeyi içeren bir alt klasörü **kaynakları** adlı **ham**, adlı bir dosyayı içeren **AndroidApiVideo.mp4**. 
+**VideoPlayerDemos.Android** projeyi içeren bir alt klasörü **kaynakları** adlı **ham**, adlı bir dosyayı içeren **AndroidApiVideo.mp4**.
 
 ### <a name="uwp-video-resources"></a>UWP video kaynakları
 
-Bir evrensel Windows platformu projesinde Proje herhangi bir klasörde videoları depolayabilirsiniz. Dosyaya verin bir `Build Action` , `Content`. Ayarlama `Path` özelliği `ResourceVideoSource` klasör ve dosya adı, örneğin, **MyFolder/MyVideo.mp4**. 
+Bir evrensel Windows platformu projesinde Proje herhangi bir klasörde videoları depolayabilirsiniz. Dosyaya verin bir `Build Action` , `Content`. Ayarlama `Path` özelliği `ResourceVideoSource` klasör ve dosya adı, örneğin, **MyFolder/MyVideo.mp4**.
 
 **VideoPlayerDemos.UWP** projeyi içeren adlı bir klasör **videolar** dosyayla **UWPApiVideo.mp4**.
 
@@ -169,7 +171,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-İOS kaynak depolanıyorsa **kaynakları** klasörünü ve UWP kaynak projenin kök klasöründe depolanıyorsa, üç platformlar için aynı adı kullanabilirsiniz. Böyle sonra bu adı doğrudan ayarlayabilirsiniz `Source` özelliği `VideoPlayer`. 
+İOS kaynak depolanıyorsa **kaynakları** klasörünü ve UWP kaynak projenin kök klasöründe depolanıyorsa, üç platformlar için aynı adı kullanabilirsiniz. Böyle sonra bu adı doğrudan ayarlayabilirsiniz `Source` özelliği `VideoPlayer`.
 
 Bu sayfa üç platformlarda çalışan şöyledir:
 

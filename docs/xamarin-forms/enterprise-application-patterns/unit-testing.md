@@ -1,18 +1,20 @@
 ---
-title: Birim testi
+title: Birim testi Kurumsal uygulamaları
+description: Bu bölümde, birim testi eShopOnContainers mobil uygulamaya nasıl gerçekleştirileceğini açıklar.
 ms.prod: xamarin
 ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 57201a32f5ffc0ae962f6db851a25a737e1cb17d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 06cd89e0b0871eac723e8580340173f77821e4ed
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242537"
 ---
-# <a name="unit-testing"></a>Birim testi
+# <a name="unit-testing-enterprise-apps"></a>Birim testi Kurumsal uygulamaları
 
 Mobil uygulamaları, masaüstü ve web tabanlı uygulamalar hakkında endişelenmeniz gerekmez benzersiz sorunları vardır. Mobil kullanıcılar, ağ bağlantısı tarafından hizmetlerin kullanılabilirliğini ve diğer etkenlere bağlı bir dizi tarafından kullanırlar aygıtları göre farklılık gösterir. Bu nedenle, kendi kalitesini, güvenilirliğini ve performansını artırmak için gerçek dünyada bunlar kullanılacak gibi mobil uygulamaları test. Birim testi, tümleştirme testine ve kullanıcı arabirimi, birim sınama en yaygın form olan testi ile test de dahil olmak üzere, bir uygulama üzerinde gerçekleştirilmesi gereken sınama birçok türü vardır.
 

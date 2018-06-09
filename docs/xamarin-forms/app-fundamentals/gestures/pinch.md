@@ -1,18 +1,18 @@
 ---
 title: Tutarak hareketi tanıyıcı ekleme
-description: Tutarak hareketi etkileşimli yakınlaştırma gerçekleştirmek için kullanılır ve PinchGestureRecognizer sınıfı uygulanır. Tutarak hareketi için yaygın bir senaryo tutarak konumda görüntünün etkileşimli yakınlaştırma gerçekleştirmektir. Bu görünüm penceresinin içeriğini ölçeklendirme tarafından gerçekleştirilir ve bu makalede gösterilmiştir.
+description: Bu makalede tutarak hareketi tutarak konumda görüntünün etkileşimli yakınlaştırma gerçekleştirmek için nasıl kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: b2348a1f0dfacc4a7a0e37f5c9041a07217ff802
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 3600a8bf059bf29429cce35a233cc6618daa4d79
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846119"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241783"
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>Tutarak hareketi tanıyıcı ekleme
 

@@ -1,20 +1,20 @@
 ---
-title: Kılavuz
-description: Kılavuzlarda görünümler sunar.
+title: Xamarin.Forms kılavuz
+description: Bu makalede Xamarin.Forms kılavuz sınıfı görünümleri satırları ve sütunları sahip kılavuzlarda sunmak için nasıl kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 6ff36f511c5194017afd34601fc9ea2f89b1e2d4
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848115"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245159"
 ---
-# <a name="grid"></a>Kılavuz
+# <a name="xamarinforms-grid"></a>Xamarin.Forms kılavuz
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) görünümleri satırlar ve sütunlar halinde düzenleme destekler. Satırları ve sütunları orantılı boyutları veya mutlak boyutları için ayarlanabilir. `Grid` Düzeni geleneksel tabloları ile karıştırılmamalıdır ve tablo verileri sunmak için tasarlanmamıştır. `Grid` Satır, sütun veya hücre biçimlendirme kavramı yoktur. HTML tabloları aksine `Grid` tamamen içerik yerleştirmek için tasarlanmıştır.
 

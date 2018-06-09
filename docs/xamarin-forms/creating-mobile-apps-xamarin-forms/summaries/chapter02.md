@@ -1,16 +1,18 @@
 ---
 title: Bölüm 2 özeti. Bir uygulama anatomisi
+description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 2 özeti. Bir uygulama anatomisi'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 81bcc8e2f8627264820a859123e1be1a9f960a92
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 208cf28341ceaa43d1c56b4f5086dc98febee6be
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242753"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Bölüm 2 özeti. Bir uygulama anatomisi
 
@@ -142,11 +144,11 @@ Xamarin.Forms defteri için kullanılan sürümünde bir `Padding` kullanarak iO
 
 `Device.OnPlatform` Yöntemleri `Device.OS` özelliği ve `TargetPlatform` numaralandırma kullanım dışı şimdi tüm. Bunun yerine, kullanın [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) özelliği ve karşılaştırma `string` dönüş değeri şu statik alanlara sahip:
 
-- [`iOS`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), "iOS" dizesi 
+- [`iOS`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), "iOS" dizesi
 - [`Android`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Android/), "Android" dizesi
 - [`UWP`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), "Windows çalışma zamanı platformuna başvuran UWP" dizesi
 - [`Windows`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Windows/), Windows çalışma zamanı (Windows 8.1 ve Windows Phone 8.1) "Windows" dizesi
-- [`WinPhone`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/), Windows Phone 8.0 için "WinPhone" dizesi 
+- [`WinPhone`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/), Windows Phone 8.0 için "WinPhone" dizesi
 
 [ `Device.Idiom` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.Idiom/) Statik salt okunur özelliği ile ilgili. Bu üye döndürür [ `TargetIdiom` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetIdiom/), bu üyeler vardır:
 

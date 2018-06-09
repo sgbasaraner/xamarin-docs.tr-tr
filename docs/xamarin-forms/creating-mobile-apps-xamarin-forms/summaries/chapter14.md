@@ -1,16 +1,18 @@
 ---
 title: Bölüm 14 özeti. Mutlak düzeni
+description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 14 özeti. Mutlak düzeni'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 87feb17f79dadb0eb8da271f7c072e4a9753381c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b8fe8f8bb0ba3204a312f3d91bc59b8fa3f7c03a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241409"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Bölüm 14 özeti. Mutlak düzeni
 
@@ -83,7 +85,7 @@ XAML'de bir sınıf adı, bir nokta ve bir özellik adı oluşan bir özniteliğ
 
 ## <a name="overlays"></a>Yer paylaşımları
 
-Kullanabileceğiniz `AbsoluteLayout` oluşturmak için bir *katmana*, hangi kapsayan diğer denetimleri sayfasıyla belki de kullanıcı sayfasında normal denetimleri ile etkileşim korumak için. 
+Kullanabileceğiniz `AbsoluteLayout` oluşturmak için bir *katmana*, hangi kapsayan diğer denetimleri sayfasıyla belki de kullanıcı sayfasında normal denetimleri ile etkileşim korumak için.
 
 [ **SimpleOverlay** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/SimpleOverlay) örnek bu tekniği gösterir ve ayrıca gösterir [ `ProgressBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/), bir program tamamlandı ölçüde görüntüleyen bir Görev.
 

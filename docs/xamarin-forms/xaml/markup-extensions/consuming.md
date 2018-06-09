@@ -1,17 +1,18 @@
 ---
 title: XAML biçimlendirme uzantıları kullanma
-description: XAML biçimlendirme uzantıları Xamarin.Forms içinde kullanılabilir kullanın
+description: Bu makalede Xamarin.Forms XAML işaretleme uzantılarına çeşitli kaynaklardan ayarlanacak öğesi özniteliklerini sağlayarak güç ve XAML esnekliğini artırmak için nasıl kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 25eada483e8bd2ce95cb3101dfe873ea38b283ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 278677d45f997ac446c2a20967dc3501179bf8da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245943"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML biçimlendirme uzantıları kullanma
 
@@ -180,7 +181,7 @@ Aşağıda, tüm üç platformlarda çalışan örnek verilmiştir:
 
 Her ikisi de `x:Reference` ifadeleri kullanma kısaltılmış `ReferenceExtension` sınıfı adı ve ortadan `Name=` ifade parçası. İlk örnekteki `x:Reference` biçimlendirme uzantısı katıştırılmış `Binding` biçimlendirme uzantısı. Dikkat `Source` ve `StringFormat` ayarları virgülle ayrılır. Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
 
-[![x:Reference Demo](consuming-images/referencedemo-small.png "x:Reference Demo")](consuming-images/referencedemo-large.png#lightbox "x:Reference Demo")
+[![x: Reference Demo](consuming-images/referencedemo-small.png "x: Reference Demo")](consuming-images/referencedemo-large.png#lightbox "x: Reference Tanıtımı")
 
 <a name="type" />
 
@@ -318,7 +319,7 @@ public partial class TypeDemoPage : ContentPage
 
 Yöntemi yürütülmesi bir `Button` basıldığında bağımsız değişkeni yeni bir örneğini oluşturur, ayarlar, `VerticalOptions` özelliği ve ona ekler `StackLayout`. Üç `Button` öğeleri dinamik olarak oluşturulan görünümlerle sonra sayfanın paylaşımı:
 
-[![x:Type Demo](consuming-images/typedemo-small.png "x:Type Demo")](consuming-images/typedemo-large.png#lightbox "x:Type Demo")
+[![x: Type Demo](consuming-images/typedemo-small.png "x: Type Demo")](consuming-images/typedemo-large.png#lightbox "x: Type Tanıtımı")
 
 <a name="array" />
 

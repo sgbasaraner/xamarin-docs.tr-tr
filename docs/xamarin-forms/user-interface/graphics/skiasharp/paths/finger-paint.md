@@ -1,19 +1,20 @@
 ---
-title: Parmak boyama
-description: Tuvalde boyamak için parmakları kullanın.
+title: SkiaSharp içindeki parmak boyama
+description: Bu makalede, parmakları bir Xamarin.Forms uygulaması SkiaSharp tuvalde boyamak için nasıl kullanılacağını açıklar ve bu örnek kodu ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 6180eb61e7850b7739c5514461796fb0aacbc4ff
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: f4c3d2ef2f6d1253f58b95559ef83af291f87b03
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243785"
 ---
-# <a name="finger-painting"></a>Parmak boyama
+# <a name="finger-painting-in-skiasharp"></a>SkiaSharp içindeki parmak boyama
 
 _Tuvalde boyamak için parmakları kullanın._
 

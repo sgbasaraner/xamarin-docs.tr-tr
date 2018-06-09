@@ -1,5 +1,5 @@
 ---
-title: Giriş
+title: Xamarin.Forms veri şablonları giriş
 description: Xamarin.Forms veri şablonları, desteklenen denetimlere veri sunumu tanımlama yeteneği sağlar. Bu makalede veri şablonları, gerekli neden inceleniyor tanıtılmaktadır.
 ms.prod: xamarin
 ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: beb1633919a1d4d5bc2f5a8b0452b535a5cc8f3f
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: e54c7d3ea01c59a20561b69c6e790747567d92f0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847123"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240183"
 ---
-# <a name="introduction"></a>Giriş
+# <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms veri şablonları giriş
 
 _Xamarin.Forms veri şablonları, desteklenen denetimlere veri sunumu tanımlama yeteneği sağlar. Bu makalede veri şablonları, gerekli neden inceleniyor tanıtılmaktadır._
 

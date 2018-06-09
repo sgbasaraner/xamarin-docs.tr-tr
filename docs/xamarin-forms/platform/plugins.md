@@ -1,19 +1,20 @@
 ---
-title: Eklentileri
-description: Xamarin.Forms uygulamalarına yerel işlevselliği ekleyin
+title: Xamarin.Forms eklentileri oluşturma ve kullanma
+description: Bu makalede, kullanmasına ve Xamarin.Forms eklentileri oluşturma açıklanmaktadır. Eklentileri genellikle kolayca yerel platform özellikleri göstermek için kullanılır.
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2016
-ms.openlocfilehash: 5770d13c46998872752820b7a0cbb222a04c3ff8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dff9fad0da30475a0fb91c0af76a25ea50d34439
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242563"
 ---
-# <a name="plugins"></a>Eklentileri
+# <a name="consuming-and-creating-xamarinforms-plugins"></a>Xamarin.Forms eklentileri oluşturma ve kullanma
 
 Tüm platformlarda mevcut birçok yerel platform özellikleri vardır, ancak biraz farklı API'leri sahip. Geliştiriciler de başkalarıyla paylaşabilir bu özellikleri için bir Özet platformlar arası arabirimi oluşturmak üzere eklenti yazma.
 

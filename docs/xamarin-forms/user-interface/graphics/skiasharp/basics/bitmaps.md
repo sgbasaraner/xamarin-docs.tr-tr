@@ -1,19 +1,20 @@
 ---
-title: Bit eşlem temelleri
-description: Bit eşlemler çeşitli kaynaklardan yüklemek ve bunları görüntüler.
+title: SkiaSharp de bit eşlem temelleri
+description: Bu makalede, çeşitli kaynaklardan SkiaSharp, bit eşlemler yüklemek ve bunları Xamarin.Forms uygulamaları görüntülemek nasıl açıklar ve bu örnek kodu ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: 688c6218f9ac66e3dfd6cd157e43f9b639e124c6
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 291f08afb95c70e9f9fccc02e1fd7353cf107213
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244392"
 ---
-# <a name="bitmap-basics"></a>Bit eşlem temelleri
+# <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp de bit eşlem temelleri
 
 _Bit eşlemler çeşitli kaynaklardan yüklemek ve bunları görüntüler._
 

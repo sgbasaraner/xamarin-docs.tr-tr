@@ -1,5 +1,5 @@
 ---
-title: Karusel sayfası
+title: Xamarin.Forms Karusel sayfası
 description: Xamarin.Forms CarouselPage bir galeri gibi içerik sayfaları arasında gezinmek için kullanıcıların yan yana doğru çekin bir sayfadır. Bu makalede bir CarouselPage sayfaları toplulukta gezinmek için nasıl kullanılacağı gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 9259e2a85a7375106891eaae5fe22d6babfa2fcf
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: daf19dbed2e98429280758125a19efce2d7fd9a1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846464"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241757"
 ---
-# <a name="carousel-page"></a>Karusel sayfası
+# <a name="xamarinforms-carousel-page"></a>Xamarin.Forms Karusel sayfası
 
 _Xamarin.Forms CarouselPage bir galeri gibi içerik sayfaları arasında gezinmek için kullanıcıların yan yana doğru çekin bir sayfadır. Bu makalede bir CarouselPage sayfaları toplulukta gezinmek için nasıl kullanılacağı gösterilmektedir._
 
@@ -46,7 +46,7 @@ Sağdan sola taşır için ikinci sayfasında, aşağıdaki ekran görüntüleri
 - [Doldurmak](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage` alt koleksiyonuyla [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örnekleri.
 - [Ata](#Populating_a_CarouselPage_with_a_Template) bir koleksiyona [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) özelliği ve ata bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) için [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) döndürüleceközelliği[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) koleksiyonundaki nesneleri için örnek.
 
-Her iki yaklaşımın ile `CarouselPage` sonra görünen her sayfada görüntülenecek sonraki sayfaya taşıma manyetik etkileşim sırayla olur. 
+Her iki yaklaşımın ile `CarouselPage` sonra görünen her sayfada görüntülenecek sonraki sayfaya taşıma manyetik etkileşim sırayla olur.
 
 > [!NOTE]
 > A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) yalnızca ile doldurulabilir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örnekleri veya `ContentPage` türevleri.

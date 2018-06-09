@@ -1,6 +1,6 @@
 ---
 title: Mac Platform Kurulumu
-description: Xamarin.Forms artık Mac platform Önizleme desteği vardır
+description: Bu makalede, bir Mac projesi macOS Sierra ve macOS El Capitan çalıştırabilen bir uygulama oluşturacak bir Xamarin.Forms projeye eklemek açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: c3a2c36463b2934254c54f3f2250ee253d57798b
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: ae0fbfc7862a0d2147b2c3bbdbae7dd53dfce78f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848245"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242602"
 ---
 # <a name="mac-platform-setup"></a>Mac Platform Kurulumu
 
@@ -28,7 +28,7 @@ Yalnızca Mac için Visual Studio kullanarak Mac uygulamaları ekleyebilirsiniz.
 
 ## <a name="adding-a-mac-app"></a>Mac uygulama ekleme
 
-MacOS üzerinde Sierra ve Mac OS X El Capitan çalışacak bir Mac uygulaması eklemek için aşağıdaki yönergeleri izleyin:
+MacOS Sierra ve macOS El Capitan üzerinde çalışacak bir Mac uygulaması eklemek için aşağıdaki yönergeleri izleyin:
 
 1. Mac için Visual Studio, varolan Xamarin.Forms çözüm üzerinde sağ tıklatın ve seçin **Ekle > Yeni Proje Ekle...**
 

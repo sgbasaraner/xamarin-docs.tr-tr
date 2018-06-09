@@ -1,19 +1,20 @@
 ---
-title: Matris dönüşümleri
-description: Çok yönlü dönüştürme matrisi ile SkiaSharp dönüşümler içine daha derin Dalış
+title: SkiaSharp içindeki matris dönüşümler
+description: Bu makalede çok yönlü dönüştürme matrisi ile SkiaSharp dönüşümler içine daha derin çekecek ve bu örnek kodu ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 90fadf0081f86e7739d75c0710caeaf1775c423e
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 816a5f47a4a4f5c01a1fb20b5c8e7a2fc83a64b0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244883"
 ---
-# <a name="matrix-transforms"></a>Matris dönüşümleri
+# <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp içindeki matris dönüşümler
 
 _Çok yönlü dönüştürme matrisi ile SkiaSharp dönüşümler içine daha derin Dalış_
 
@@ -63,7 +64,7 @@ Standart matris çarpım kullanarak, dönüştürülmüş noktaları aşağıdak
 
 x' = x
 
-y' = y
+y' y =
 
 z' = 1
 
@@ -89,7 +90,7 @@ Dönüştürme formüller şunlardır:
 
 x' = x + tx
 
-y' = y + ty
+y' y + ty =
 
 Ölçekleme faktörü 1 varsayılan bir değer olamaz. Çağırdığınızda `Scale` yöntemi yeni bir `SKCanvas` nesne içeren sonuç dönüştürme matrisi `sx` ve `sy` çapraz hücreler bağımsız değişkenler:
 
@@ -103,7 +104,7 @@ Dönüştürme formüller aşağıdaki gibidir:
 
 x' = sx · x
 
-y' = sy · y
+y' sy · = y
 
 Çağırdıktan sonra dönüştürme matrisi `Skew` ölçeklendirme etkenleri bitişik Matris hücrelerindeki iki bağımsız değişken içeriyor:
 
@@ -268,7 +269,7 @@ SKMatrix.PostConcat(ref A, ref B);
 
 Bu çağrı, aşağıdaki işlemi gerçekleştirin:
 
-A = A × B
+A = × B
 
 İki `PreConcat` yöntemleri benzerdir:
 

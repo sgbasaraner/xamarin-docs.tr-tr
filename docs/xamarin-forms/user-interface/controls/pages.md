@@ -1,17 +1,18 @@
 ---
 title: Xamarin.Forms sayfaları
-description: Xamarin.Forms sayfaları platformlar arası mobil uygulama ekranlar temsil eder.
+description: Xamarin.Forms sayfaları platformlar arası mobil uygulama ekranlar temsil eder. Bu makalede Xamarin.Forms içinde yer alan sayfaları listelenmektedir.
 ms.prod: xamarin
 ms.assetid: 9C8C710F-E312-420B-9324-A7A20CEDB7EC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: bc1345bfaaf02464e2cf1ea0b3aceb28eb91e1d4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f4b8d895c6c9c7f47b8af8e56ad60a5a453e2d56
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243164"
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms sayfaları
 
@@ -29,43 +30,43 @@ Xamarin.Forms aşağıdaki sayfa türlerini destekler:
 
 ### <a name="contentpage"></a>ContentPage
 
-|     |     | 
-| --- | --- | 
+|     |     |
+| --- | --- |
 | [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) en basit ve en yaygın sayfası türüdür. Ayarlama [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentPage.Content/) tek bir özelliğe [ `View` ](views.md) genellikle nesnesi bir [ `Layout` ](layouts.md) gibi [ `StackLayout` ](layouts.md#stackLayout), [ `Grid` ](layouts.md#grid), veya [ `ScrollView` ](layouts.md#scrollView).<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) | [![ContentPage örnek](pages-images/ContentPage.png "ContentPage örnek")](pages-images/ContentPage-Large.png#lightbox "ContentPage örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentPageDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentPageDemoPage.xaml) |
 |     |     |
 
 ### <a name="masterdetailpage"></a>MasterDetailPage
 
-|     |     | 
-| --- | --- | 
+|     |     |
+| --- | --- |
 | A [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) bilgilerinin iki bölme yönetir. Ayarlama [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) genellikle bir liste veya menü gösteren bir sayfaya özelliği. Ayarlama [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) ana sayfasında seçilen bir öğeyi gösteren bir sayfaya özelliği. [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/) Özelliğini ana veya ayrıntı sayfası görünür olup olmadığını yönetir.<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) / [Kılavuzu](~/xamarin-forms/app-fundamentals/navigation/master-detail-page.md) / [örnek](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/) | [![MasterDetailPage örnek](pages-images/MasterDetailPage.png "MasterDetailPage örnek")](pages-images/MasterDetailPage-Large.png#lightbox "MasterDetailPage örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MasterDetailPageDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MasterDetailPageDemoPage.xaml) ile [arka plan kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MasterDetailPageDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="navigationpage"></a>NavigationPage
 
-|     |     | 
-| --- | --- | 
+|     |     |
+| --- | --- |
 | [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) Yığın tabanlı bir mimari kullanarak diğer sayfaları arasında gezinmeyi yönetir. Sayfa gezintisi, uygulamanızda kullanılırken, giriş sayfası örneği oluşturucusuna iletilmesi gereken bir `NavigationPage` nesnesi.<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) / [Kılavuzu](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md) / [örnek 1](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/), [2](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/), ve [3](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)  | [![NavigationPage örnek](pages-images/NavigationPage.png "NavigationPage örnek")](pages-images/NavigationPage-Large.png#lightbox "NavigationPage örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/NavigationPageDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/NavigationPageDemoPage.xaml) ile [kod arkasında =](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/NavigationPageDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="tabbedpage"></a>TabbedPage
 
-|     |     | 
-| --- | --- | 
+|     |     |
+| --- | --- |
 | [`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) Özet türetilen [ `MultiPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MultiPage%3CT%3E/) sınıfı ve alt arasında gezinmeyi sekmeleri kullanarak sayfaları sağlar. Ayarlama [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.Children/) özellik sayfaları veya kümesi koleksiyonuna [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemsSource/) veri nesneleri koleksiyonu özelliğine ve [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemTemplate/) özelliği için bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) açıklayan nasıl her görsel olarak gösterilemeyecek kadar nesnesidir.<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) / [Kılavuzu](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md) / [örnek 1](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPage/) ve [2](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPageWithNavigationPage) | [![TabbedPage örnek](pages-images/TabbedPage.png "TabbedPage örnek")](pages-images/TabbedPage-Large.png#lightbox "TabbedPage örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TabbedPageDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TabbedPageDemoPage.xaml) |
 |     |     |
 
 ### <a name="carouselpage"></a>CarouselPage
 
-|     |     | 
-| --- | --- | 
+|     |     |
+| --- | --- |
 | [`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Özet türetilen [ `MultiPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MultiPage%3CT%3E/) sınıfı ve alt arasında gezinmeyi parmak geçirmeyi aracılığıyla sayfaları sağlar. Ayarlama [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.Children/) koleksiyonu özelliğine [ `ContentPage` ](#contentPage) nesneleri veya kümesi [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemsSource/) veri nesneleri koleksiyonu özelliğine ve [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemTemplate/) özelliğine bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) açıklayan nasıl her görsel olarak gösterilemeyecek kadar nesnesidir.<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) / [Kılavuzu](~/xamarin-forms/app-fundamentals/navigation/carousel-page.md) / [örnek 1](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPage/) ve [2](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPageTemplate/) | [![CarouselPage örnek](pages-images/CarouselPage.png "CarouselPage örnek")](pages-images/CarouselPage-Large.png#lightbox "CarouselPage örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CarouselPageDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CarouselPageDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedpage"></a>TemplatedPage
 
-|     |     | 
-| --- | --- | 
+|     |     |
+| --- | --- |
 | [`TemplatedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/) tam ekran içeriğini bir denetim şablonuyla görüntüler ve temel sınıfı olan [ `ContentPage` ](#contentPage).<br /><br />[API belgelerine](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/) / [Kılavuzu](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md) | [![TemplatedPage örnek](pages-images/TemplatedPage.png "TemplatedPage örnek")](pages-images/TemplatedPage.png "TemplatedPage örneği") |
 |     |     |
 

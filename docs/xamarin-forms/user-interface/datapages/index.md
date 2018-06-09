@@ -1,18 +1,20 @@
 ---
-title: DataPages
+title: Xamarin.Forms DataPages
+description: Bu makalede bir API için hızlı bir şekilde sağlamak ve bir veri kaynağı için önceden oluşturulmuş görünümler kolayca bağlamak Xamarin.Forms DataPages tanıtılır.
 ms.prod: xamarin
 ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e83efcd71eb9427f0b63749e8885a991a206febe
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2a74b636a41a72b26776157a774f0a33ef45a075
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243336"
 ---
-# <a name="datapages"></a>DataPages
+# <a name="xamarinforms-datapages"></a>Xamarin.Forms DataPages
 
 ![](~/media/shared/preview.png "Bu API şu anda önizlemede değil")
 
@@ -72,4 +74,3 @@ Xamarin.Forms altyapısı aracılığıyla aşağıdaki özellikleri veri kayna�
 
 İki yöntem vardır `MaskKey` ve `UnmaskKey` (örn veri öğesi özellikleri (göstermek veya gizlemek için) kullanılabilir. bunları çizilmesini engeller).
 Anahtar karşılık gelen veri öğesi nesnesi adlı bir özellik.
-

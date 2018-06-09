@@ -1,17 +1,18 @@
 ---
 title: Kullanıcıların bir Azure Cosmos DB belge veritabanı ile kimlik doğrulaması
-description: Birden çok sunucu ve bölümler, sınırsız depolama ve işleme desteklerken yayılabilir bölümlenmiş koleksiyonlar Azure Cosmos DB belge veritabanlarını destekler. Bu makalede, bir kullanıcı yalnızca kendi belgeleri bir Xamarin.Forms uygulaması erişebilmesi için erişim denetimi bölümlenmiş koleksiyonlar ile birleştirme açıklanmaktadır.
+description: Bir kullanıcı yalnızca kendi belgeleri bir Xamarin.Forms uygulaması erişebilmesi için bu makalede Azure Cosmos bölümlenmiş DB koleksiyonlarla erişim denetimi birleştirmek açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 0132f849a066976896295da8b8b67ed8bf3c3e8d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 031a48e5e10100b2c57ac067a0dda916c93d20da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241617"
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Kullanıcıların bir Azure Cosmos DB belge veritabanı ile kimlik doğrulaması
 
@@ -94,7 +95,7 @@ Kimlik doğrulaması gerçekleştirmek üzere Facebook uygulaması oluşturmak i
 1. Facebook oturum açma ürün uygulamaya ekleyin. Daha fazla bilgi için bkz: [uygulamanızı veya Web sitesi için Facebook oturum açma ekleme](https://developers.facebook.com/docs/facebook-login) Facebook Geliştirici Merkezi'ndeki.
 1. Facebook oturum açma gibi yapılandırın:
   - İstemci OAuth oturum açmayı etkinleştirme.
-  - Enable Web OAuth Login.
+  - Web OAuth oturum açmayı etkinleştirme.
   - Geçerli OAuth yeniden yönlendirme URI'si App Service web uygulaması URI'sine kümesiyle `/.auth/login/facebook/callback` eklenir.
 
   Aşağıdaki ekran görüntüsünde, bu yapılandırma gösterilmektedir:

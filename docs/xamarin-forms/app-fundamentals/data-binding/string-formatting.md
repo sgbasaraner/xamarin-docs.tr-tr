@@ -1,19 +1,20 @@
 ---
-title: Biçimlendirme dizesi
-description: Biçimlendirmek ve dize olarak nesneleri görüntülemek için veri bağlamaları kullanın
+title: Xamarin.Forms biçimlendirme dizesi
+description: Bu makalede Xamarin.FOrms veri bağlamaları biçimlendirmek ve dize olarak nesneleri görüntülemek için nasıl kullanılacağı açıklanmaktadır. Bu, standart bir .NET biçimlendirme dize bir yer tutucu bağlama StringFormat ayarlanarak sağlanır.
 ms.prod: xamarin
 ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 4e143f650c3cde7577def1a95e53b207608a088a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bdac74e4ec14797ec373f86b8a94c7af4d480951
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240307"
 ---
-# <a name="string-formatting"></a>Biçimlendirme dizesi
+# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms biçimlendirme dizesi
 
 Bazen bir nesneye veya değeri dize gösterimini görüntülemek üzere veri bağlamaları kullanmak uygundur. Örneğin, kullanmak istediğiniz bir `Label` geçerli değerini görüntülemek için bir `Slider`. Bu veri bağlamada `Slider` kaynak ve hedef `Text` özelliği `Label`.
 

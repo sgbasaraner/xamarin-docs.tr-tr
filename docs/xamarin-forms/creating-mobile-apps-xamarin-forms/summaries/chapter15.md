@@ -1,16 +1,18 @@
 ---
 title: Bölüm 15 özeti. Etkileşimli arabirimi
+description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 15 özeti. Etkileşimli arabirimi'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c5b2bc00c4337969322193966f26ce0e151f426e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aac49c9e74dd22642396ea8daf5ee3abd85de7bf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241903"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Bölüm 15 özeti. Etkileşimli arabirimi
 
@@ -23,8 +25,8 @@ Xamarin.Forms öğesinden türetilen 20 instantiable sınıfları içerir `View`
 - `Label`: [ **Bölüm 2. Bir uygulama anatomisi**](chapter02.md)
 - `BoxView`: [ **Bölüm 3. Yığın kaydırma**](chapter03.md)
 - `Button`: [ **Bölüm 6. Düğme tıklama**](chapter06.md)
-- `Image`: [ **Bölüm 13. Bitmaps**](chapter13.md)
-- `ActivityIndicator`: [ **Bölüm 13. Bitmaps**](chapter13.md)
+- `Image`: [ **Bölüm 13. Bit eşlemler**](chapter13.md)
+- `ActivityIndicator`: [ **Bölüm 13. Bit eşlemler**](chapter13.md)
 - `ProgressBar`: [ **Bölüm 14. AbsoluteLayout**](chapter14.md)
 
 Bu bölümde sekiz görünümleri etkin temel .NET veri türleri ile etkileşim kurmak kullanıcı izin ver:

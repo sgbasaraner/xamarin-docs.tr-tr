@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Forms görünümleri
-description: Xamarin.Forms görünümleri platformlar arası mobil kullanıcı arabirimleri yapı taşlarıdır.
+description: Xamarin.Forms görünümleri platformlar arası mobil kullanıcı arabirimleri yapı taşlarıdır. Xamarin.Forms içinde bulunan görünümler bu makalede listelenmektedir.
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: aafad29a30130c9ec088121e03a986034f002e1c
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 414df933716c7ce5d9422e8a2b9be89ba7eff3a9
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733093"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243524"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms görünümleri
 
@@ -80,7 +80,7 @@ Etiketler, düğmeler ve yaygın olarak da bilinir kaydırıcılar gibi kullanı
 | [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) bir alan için bir arama yapmak için uygulama sinyalleri türü bir metin dizesi ve bir düğme (veya bir klavye anahtarı) kullanıcıya görüntüler. [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.Text/) Özellik metin erişim sağlar ve [ `SearchButtonPressed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.SearchButtonPressed/) olayı, düğmesine basıldığında olduğunu gösterir.<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) | [![SearchBar örnek](views-images/SearchBar.png "SearchBar örnek")](views-images/SearchBar-Large.png#lightbox "SearchBar örneği")<br /> [Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml) ile [arka plan kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) |
 |     |     |
 
-## <a name="views-for-setting-values"></a>Ayar değerleri için görünümleri 
+## <a name="views-for-setting-values"></a>Ayar değerleri için görünümleri
 
 ### <a name="slider"></a>Kaydırıcı
 
@@ -96,7 +96,7 @@ Etiketler, düğmeler ve yaygın olarak da bilinir kaydırıcılar gibi kullanı
 | [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) Kullanıcının seçmesine olanak sağlayan bir `double` ile belirtilen artımlı değerleri aralığı değerinden [ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Minimum/), [ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Maximum/), ve [ `Increment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) özellikleri.<br /><br />[API belgeleri](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) | [![Adımlayıcı örnek](views-images/Stepper.png "Adımlayıcı örnek")](views-images/Stepper-Large.png#lightbox "Adımlayıcı örneği")<br />[Bu sayfa için C# kodu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML sayfası](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
-### <a name="switch"></a>Anahtar 
+### <a name="switch"></a>Anahtar
 
 |     |     |
 | --- | --- |

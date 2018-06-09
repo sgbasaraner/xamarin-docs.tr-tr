@@ -1,18 +1,18 @@
 ---
 title: Bölüm 4. Veri bağlama temelleri
-description: Veri bağlamaları bir değişiklik diğer birinde bir değişiklik neden bağlanması iki nesnelerin özelliklerini sağlar. Bu çok değerli bir araç ve veri bağlamaları tamamen kod içinde tanımlanabilir olsa da, XAML kısayolları ve kolaylık sağlar. Sonuç olarak, bir Xamarin.Forms en önemli biçimlendirme uzantılarında bağlama.
+description: Veri bağlamaları bir değişiklik diğer birinde bir değişiklik neden bağlanması iki nesnelerin özelliklerini sağlar.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 117ddd033faedda871c33ba10c246739309e2e86
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733041"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245956"
 ---
 # <a name="part-4-data-binding-basics"></a>Bölüm 4. Veri bağlama temelleri
 
@@ -86,7 +86,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 Özellikleri tüm tek bir satırda olabilir veya birden çok satıra ayrılmış:
 
 ```csharp
-Text="{Binding Value, 
+Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
 
@@ -102,13 +102,13 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 [![](data-binding-basics-images/sliderbinding.png "Görünümü görünümü bağlamaları")](data-binding-basics-images/sliderbinding-large.png#lightbox "görünümü görünümü bağlamaları ")
 
-## <a name="the-binding-mode"></a>Bağlama modu 
+## <a name="the-binding-mode"></a>Bağlama modu
 
 Tek bir görünüm veri bağlamaları birkaç özelliklerini olabilir. Bununla birlikte, her görünüm yalnızca bir bulunabilir `BindingContext`, tüm bu görünümde birden çok veri bağlaması gerekir böylece aynı nesne özelliklerini başvuru.
 
 Bu ve diğer sorunları çözüme içerir `Mode` üyesi için ayarlama özelliği `BindingMode` numaralandırma:
 
-- `Default` 
+- `Default`
 - `OneWay` — değerleri, hedef kaynak sunucudan aktarılır
 - `OneWayToSource` — değerleri, hedef kaynak aktarılır
 - `TwoWay` — değerleri, her iki yönde aktarılır, kaynak ve hedef arasında
@@ -324,7 +324,7 @@ Daha iyi. Artık gerekli olan tek şey daha fazla bilgi ve gerçek rengi öğesi
 </ContentPage>
 ```
 
-Kullanımına dikkat edin `OnPlatform` boyutunu tanımlamak için bir `BoxView` ve yüksekliğini `ListView` satır. Tüm üç platformlar için değerleri aynı olsa da, biçimlendirme kolayca görünen ince ayar yapmak diğer değerler için uyarlanmış olabilir. 
+Kullanımına dikkat edin `OnPlatform` boyutunu tanımlamak için bir `BoxView` ve yüksekliğini `ListView` satır. Tüm üç platformlar için değerleri aynı olsa da, biçimlendirme kolayca görünen ince ayar yapmak diğer değerler için uyarlanmış olabilir.
 
 ## <a name="binding-value-converters"></a>Bağlama değer dönüştürücüler
 
@@ -366,7 +366,7 @@ namespace XamlSamples
 }
 ```
 
-`ConvertBack` Yöntemi yürütmek bir rolü bu programda bağlamaları yalnızca kaynaktan hedefe tek yönlü olduğundan. 
+`ConvertBack` Yöntemi yürütmek bir rolü bu programda bağlamaları yalnızca kaynaktan hedefe tek yönlü olduğundan.
 
 Bir bağlama dönüştürücü ile bağlama başvuran `Converter` özelliği. Bir bağlama dönüştürücü ile belirtilen bir parametre kabul edebilir `ConverterParameter` özelliği. Bazı çok yönlülük için nasıl çarpanı belirtilen budur. Bağlama dönüştürücü için geçerli bir dönüştürücü parametresi denetler `double` değeri.
 

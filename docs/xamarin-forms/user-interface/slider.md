@@ -1,23 +1,24 @@
 ---
-title: Kaydırıcı kullanma
-description: Bir kaydırıcının sürekli değerleri arasında bir aralık seçmek için kullanın.
+title: Xamarin.Forms kaydırıcı
+description: Xamarin.Forms kaydırıcıyı double değeri arasında sürekli bir aralık seçmek için kullanıcı tarafından yönetilebilir yatay bir çubuk olur. Bu makalede bir değer sürekli değerleri arasında bir aralık seçmek için kaydırıcıyı sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/16/2018
-ms.openlocfilehash: 99109f6377037ffb9f622b7ddb237b42d241e505
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33c26abe2de017b6d8070053baf917cdd7a0dfc6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245813"
 ---
-# <a name="using-slider"></a>Kaydırıcı kullanma
+# <a name="xamarinforms-slider"></a>Xamarin.Forms kaydırıcı
 
 _Bir kaydırıcının sürekli değerleri arasında bir aralık seçmek için kullanın._
 
-Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) seçmek için kullanıcı tarafından yönetilebilir yatay bir çubuğu bir `double` sürekli bir aralıktan değeri. 
+Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) seçmek için kullanıcı tarafından yönetilebilir yatay bir çubuğu bir `double` sürekli bir aralıktan değeri.
 
 `Slider` Türünün üç özelliklerini tanımlayan `double`:
 
@@ -25,14 +26,14 @@ Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.
 - [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) Varsayılan değer olan 1 ile aralığının en fazla olabilir.
 - [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) arasında değişebilir kaydırıcının değer `Minimum` ve `Maximum` ve varsayılan değer 0 olarak kullanılır.
 
-Tüm üç özellik desteğiyle `BindableProperty` nesneleri. `Value` Özelliğine sahip bir varsayılan bağlama modu `BindingMode.TwoWay`, yani bir bağlama kaynağı kullanan bir uygulama olarak uygun olduğunu [Model View ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) mimarisi. 
+Tüm üç özellik desteğiyle `BindableProperty` nesneleri. `Value` Özelliğine sahip bir varsayılan bağlama modu `BindingMode.TwoWay`, yani bir bağlama kaynağı kullanan bir uygulama olarak uygun olduğunu [Model View ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) mimarisi.
 
 > [!WARNING]
 > Dahili olarak, `Slider` sağlar `Minimum` olan değerinden `Maximum`. Varsa `Minimum` veya `Maximum` hiç ayarlanır böylece `Minimum` olan küçük değildir `Maximum`, özel durum oluşturuldu. Bkz: [ **önlemleri** ](#precautions) ayarı hakkında daha fazla bilgi için bölüm aşağıda `Minimum` ve `Maximum` özellikleri.
 
-`Slider` Olacak şekilde zorlar `Value` onun arasında olacak şekilde özelliği `Minimum` ve `Maximum`(dahil). Varsa `Minimum` özelliği ayarlanmış bir değere büyük `Value` özelliği, `Slider` ayarlar `Value` özelliğine `Minimum`. Benzer şekilde, varsa `Maximum` bir değere ayarlanmış değerinden `Value`, ardından `Slider` ayarlar `Value` özelliğine `Maximum`. 
+`Slider` Olacak şekilde zorlar `Value` onun arasında olacak şekilde özelliği `Minimum` ve `Maximum`(dahil). Varsa `Minimum` özelliği ayarlanmış bir değere büyük `Value` özelliği, `Slider` ayarlar `Value` özelliğine `Minimum`. Benzer şekilde, varsa `Maximum` bir değere ayarlanmış değerinden `Value`, ardından `Slider` ayarlar `Value` özelliğine `Maximum`.
 
-`Slider` tanımlayan bir [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) durumlarda tetiklenir olay `Value` değişiklikler, kullanıcı işlenmesini yoluyla `Slider` veya programın ne zaman ayarlar `Value` doğrudan özelliği. A `ValueChanged` olay ayrıca şu ne zaman `Value` özelliği önceki paragrafta açıklanan yüklenen. 
+`Slider` tanımlayan bir [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) durumlarda tetiklenir olay `Value` değişiklikler, kullanıcı işlenmesini yoluyla `Slider` veya programın ne zaman ayarlar `Value` doğrudan özelliği. A `ValueChanged` olay ayrıca şu ne zaman `Value` özelliği önceki paragrafta açıklanan yüklenen.
 
 [ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) Eşlik nesne `ValueChanged` olay sahip iki özellik türü her ikisi de `double`: [ `OldValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.OldValue/) ve [ `NewValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.NewValue/). Aynı anda olay şu, değeri `NewValue` aynı `Value` özelliği `Slider` nesnesi.
 
@@ -92,7 +93,7 @@ public class BasicSliderCodePage : ContentPage
 }
 ```
 
-`Slider` Sağlamak için başlatılan bir `Maximum` 360 özelliği. `ValueChanged` İşleyicisi `Slider` kullanır `Value` özelliği `slider` ayarlamak için nesne `Rotation` özelliği ilk `Label` ve kullandığı `String.Format` yöntemiyle `NewValue` özelliği ayarlamak için olay bağımsız `Text` ikinci özelliği `Label`. Geçerli değeri elde etmek için bu iki yaklaşım `Slider` birbirinin yerine kullanılabilir. 
+`Slider` Sağlamak için başlatılan bir `Maximum` 360 özelliği. `ValueChanged` İşleyicisi `Slider` kullanır `Value` özelliği `slider` ayarlamak için nesne `Rotation` özelliği ilk `Label` ve kullandığı `String.Format` yöntemiyle `NewValue` özelliği ayarlamak için olay bağımsız `Text` ikinci özelliği `Label`. Geçerli değeri elde etmek için bu iki yaklaşım `Slider` birbirinin yerine kullanılabilir.
 
 İOS, Android ve evrensel Windows Platformu (UWP) aygıtları çalıştıran program şöyledir:
 
@@ -111,7 +112,7 @@ public class BasicSliderCodePage : ContentPage
              Title="Basic Slider XAML"
              Padding="10, 0">
     <StackLayout>
-        <Label x:Name="rotatingLabel" 
+        <Label x:Name="rotatingLabel"
                Text="ROTATING TEXT"
                FontSize="Large"
                HorizontalOptions="Center"
@@ -171,7 +172,7 @@ double value = slider.Value;
              Padding="10, 0">
     <StackLayout>
         <Label Text="ROTATING TEXT"
-               Rotation="{Binding Source={x:Reference slider}, 
+               Rotation="{Binding Source={x:Reference slider},
                                   Path=Value}"
                FontSize="Large"
                HorizontalOptions="Center"
@@ -181,8 +182,8 @@ double value = slider.Value;
                 Maximum="360" />
 
         <Label x:Name="displayLabel"
-               Text="{Binding Source={x:Reference slider}, 
-                              Path=Value, 
+               Text="{Binding Source={x:Reference slider},
+                              Path=Value,
                               StringFormat='The Slider value is {0:F0}'}"
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand" />
@@ -244,7 +245,7 @@ Slider slider = new Slider
 
 Bunun yerine, `Value` için özellik yüklenen `Maximum` 1 değeri.
 
-Yukarıda gösterilen bir kod parçacığı aşağıda verilmiştir: 
+Yukarıda gösterilen bir kod parçacığı aşağıda verilmiştir:
 
 ```csharp
 Slider slider = new Slider
@@ -254,9 +255,9 @@ Slider slider = new Slider
 };
 ```
 
-Zaman `Minimum` 10'a, sonra ayarlanır `Value` da 10 olarak ayarlandı. 
+Zaman `Minimum` 10'a, sonra ayarlanır `Value` da 10 olarak ayarlandı.
 
-Varsa bir `ValueChanged` olay işleyicisi, aynı anda bağlı, `Value` özelliği yüklenen varsayılan değerini 0 dışında bir şey için sonra bir `ValueChanged` olay tetiklenir. XAML parçacığı aşağıda verilmiştir: 
+Varsa bir `ValueChanged` olay işleyicisi, aynı anda bağlı, `Value` özelliği yüklenen varsayılan değerini 0 dışında bir şey için sonra bir `ValueChanged` olay tetiklenir. XAML parçacığı aşağıda verilmiştir:
 
 ```xaml
 <Slider ValueChanged="OnSliderValueChanged"
@@ -272,15 +273,15 @@ Zaman `Minimum` 10'a ayarlanır `Value` de 10'a ayarlayın ve `ValueChanged` ola
 
 Daha önce gösterilen ekran görüntüleri görüntüleme `Slider` ondalık basamak, farklı bir değere sahip. Bu nasıl ilişkili olduğu `Slider` Android ve UWP platformlar üzerinde uygulanır.
 
-### <a name="the-android-implementation"></a>Android uygulaması 
+### <a name="the-android-implementation"></a>Android uygulaması
 
-Android uygulaması `Slider` Android tabanlı [ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) ve her zaman ayarlar [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) 1000 özelliğine. Bunun anlamı `Slider` Android yalnızca 1,001 ayrık değerler içeriyor. Ayarlarsanız `Slider` sağlamak için bir `Minimum` 0 ve `Maximum` 5000, sonra da olarak `Slider` yönetilebilir, `Value` özelliğinin değerleri 0, 5, 10, 15 ve benzeri. 
+Android uygulaması `Slider` Android tabanlı [ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) ve her zaman ayarlar [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) 1000 özelliğine. Bunun anlamı `Slider` Android yalnızca 1,001 ayrık değerler içeriyor. Ayarlarsanız `Slider` sağlamak için bir `Minimum` 0 ve `Maximum` 5000, sonra da olarak `Slider` yönetilebilir, `Value` özelliğinin değerleri 0, 5, 10, 15 ve benzeri.
 
 ### <a name="the-uwp-implementation"></a>UWP uygulaması
 
-UWP uygulaması `Slider` UWP üzerinde temel [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) denetim. `StepFrequency` UWP özelliğinin `Slider` fark için ayarlanmış `Maximum` ve `Minimum` özellikleri bölünmüş 10, ancak 1'den büyük. 
+UWP uygulaması `Slider` UWP üzerinde temel [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) denetim. `StepFrequency` UWP özelliğinin `Slider` fark için ayarlanmış `Maximum` ve `Minimum` özellikleri bölünmüş 10, ancak 1'den büyük.
 
-Örneğin, varsayılan aralığı 0'dan 1, `StepFrequency` özelliği 0,1 için ayarlanır. Olarak `Slider` yönetilebilir, `Value` özelliği 0, 0.1, 0.2, 0.3, 0.4, 0,5, 0,6, 0,7, 0,8, 0.9 ve 1.0 için kısıtlanmış. (Bu son sayfasında açıktır [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek.) Zaman arasındaki farkı `Maximum` ve `Minimum` özellikleri 10 ya da daha sonra `StepFrequency` 1 olarak ayarlayın ve `Value` tam sayı değerleri özelliğine sahiptir. 
+Örneğin, varsayılan aralığı 0'dan 1, `StepFrequency` özelliği 0,1 için ayarlanır. Olarak `Slider` yönetilebilir, `Value` özelliği 0, 0.1, 0.2, 0.3, 0.4, 0,5, 0,6, 0,7, 0,8, 0.9 ve 1.0 için kısıtlanmış. (Bu son sayfasında açıktır [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek.) Zaman arasındaki farkı `Maximum` ve `Minimum` özellikleri 10 ya da daha sonra `StepFrequency` 1 olarak ayarlayın ve `Value` tam sayı değerleri özelliğine sahiptir.
 
 ### <a name="the-stepslider-solution"></a>StepSlider çözümü
 
@@ -288,9 +289,9 @@ Daha ayrıntılı `StepSlider` içinde ele alınmıştır [Bölüm 27. Özel olu
 
 ## <a name="sliders-for-color-selection"></a>Renk seçimi için kaydırıcılar
 
-Son iki içinde sayfa [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek her ikisini de kullanmanız üç `Slider` renk seçimi için örnek. Veri bağlama ile ViewModel kullanma gösterirken, sihirbazın ikinci sayfasında ilk sayfa arka plan kod dosyasına tüm etkileşimleri işler. 
+Son iki içinde sayfa [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek her ikisini de kullanmanız üç `Slider` renk seçimi için örnek. Veri bağlama ile ViewModel kullanma gösterirken, sihirbazın ikinci sayfasında ilk sayfa arka plan kod dosyasına tüm etkileşimleri işler.
 
-### <a name="handling-sliders-in-the-code-behind-file"></a>Arka plan kod dosyasına işleme kaydırıcılar 
+### <a name="handling-sliders-in-the-code-behind-file"></a>Arka plan kod dosyasına işleme kaydırıcılar
 
 **RGB renk kaydırıcılar** sayfa başlatır bir `BoxView` bir renk görüntülemek için üç `Slider` rengi ve üç kırmızı, yeşil ve mavi bileşenleri seçmek için örnekleri `Label` bu renk görüntüleme için öğeleri değerler:
 
@@ -304,7 +305,7 @@ Son iki içinde sayfa [ **SliderDemos** ](https://developer.xamarin.com/samples/
             <Style TargetType="Slider">
                 <Setter Property="Maximum" Value="255" />
             </Style>
-            
+
             <Style TargetType="Label">
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
@@ -321,12 +322,12 @@ Son iki içinde sayfa [ **SliderDemos** ](https://developer.xamarin.com/samples/
 
         <Label x:Name="redLabel" />
 
-        <Slider x:Name="greenSlider" 
+        <Slider x:Name="greenSlider"
                 ValueChanged="OnSliderValueChanged" />
 
         <Label x:Name="greenLabel" />
 
-        <Slider x:Name="blueSlider" 
+        <Slider x:Name="blueSlider"
                 ValueChanged="OnSliderValueChanged" />
 
         <Label x:Name="blueLabel" />
@@ -390,7 +391,7 @@ public class HslColorViewModel : INotifyPropertyChanged
                 Color = Color.FromHsla(value, color.Saturation, color.Luminosity);
             }
         }
-        get 
+        get
         {
             return color.Hue;
         }
@@ -483,7 +484,7 @@ ViewModels ve `INotifyPropertyChanged` arabirimi makalesinde açıklanan [veri b
         <Slider Value="{Binding Luminosity}" />
         <Label Text="{Binding Luminosity, StringFormat='Luminosity = {0:F2}'}" />
     </StackLayout>
-</ContentPage> 
+</ContentPage>
 ```
 
 Olarak `Slider` öğeleri yönetilebilir, `BoxView` ve `Label` öğeleri ViewModel güncelleştirildi:

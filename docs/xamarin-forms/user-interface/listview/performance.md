@@ -1,28 +1,24 @@
 ---
 title: ListView performansı
-description: ListView tabanlı uygulamanız ile harika performans emin olun.
+description: ListView verileri görüntüleme için güçlü bir görünüm olsa da, bazı sınırlamalar vardır. Bu makalede, bir uygulamada Xamarin.Forms ListView ile harika performans sağlamak açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dcd4881e2ad7f1bb4af5455805da1dd2cade3605
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4803a612e2b06e458f2859dbbbd30b970f0fc8ea
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244909"
 ---
 # <a name="listview-performance"></a>ListView performansı
 
 Mobil uygulamaları yazarken, performans önemlidir. Kullanıcılar, yumuşak kaydırma ve hızlı yükleme süreleri beklenir geldi. Kullanıcılarınızın beklentilerini karşılamak başarısız olan, uygulama Mağazası'nda derecelendirmeleri maliyet veya iş kolu satır uygulama söz konusu olduğunda, kuruluşunuzun zaman ve para maliyet.
 
 Ancak [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) güçlü bir görünüm verileri görüntülemek için bazı sınırlamalar vardır. Performans kaydırma özellikle bunlar iç içe görünüm Hiyerarşiler içeriyor veya çok sayıda ölçüm gerektiren belirli düzenleri kullandığınızda özel hücreleri kullanırken olumsuz etkilenebilir. Neyse ki, düşük performans önlemek için kullanabileceğiniz teknikler vardır.
-
-Aşağıdaki konular bu makalede ele alınmaktadır:
-
-- **[Önbelleğe alma stratejisi](#cachingstrategy)**
-- **[ListView performansı iyileştirme](#improving-performance)**
 
 <a name="cachingstrategy" />
 

@@ -1,19 +1,20 @@
 ---
-title: 3B Döndürme
-description: Afin olmayan dönüşümler 2B nesnelere 3D alanda döndürmek için kullanın.
+title: SkiaSharp içinde 3B Döndürme
+description: Bu makalede afin olmayan dönüşümler 3B uzaydaki 2B nesneleri döndürmek için nasıl kullanılacağını açıklar ve bu örnek kodu ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: ad4bce6eff7df65185fc3bd754c747fd0db0c9f1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244305"
 ---
-# <a name="3d-rotations"></a>3B Döndürme
+# <a name="3d-rotations-in-skiasharp"></a>SkiaSharp içinde 3B Döndürme
 
 _Afin olmayan dönüşümler 2B nesnelere 3D alanda döndürmek için kullanın._
 
@@ -66,19 +67,19 @@ y' = M12·x + M22·y + M32·z + M42
 
 z' = M13·x + M23·y + M33·z + M43
 
-w' = M14·x + M24·y + M34·z + M44
+w' M14·x + M24·y + M34·z + M44 =
 
 Dönüştürme formüller açıktır, hücreleri `M11`, `M22`, `M33` Etkenler X, Y ve Z yönde ölçekleme ve `M41`, `M42`, ve `M43` çeviri faktör X, Y ve Z yönergeleri.
 
 Burada W eşittir 1, x geri 3B uzaydaki için bu koordinatları dönüştürmek için ', y', ve z 'koordinatları tüm w ayrılır':
 
-x" = x' / w'
+x"= x' / w'
 
-y" = y' / w'
+y"y =' / w'
 
-z" = z' / w'
+z"z =' / w'
 
-w" = w' / w' = 1
+w"w =' / w' = 1
 
 Bu bölme w' perspektif 3B uzaydaki sağlar. Varsa w' 1'e eşittir ve hiçbir perspektif oluşur.
 
@@ -166,13 +167,13 @@ y' = M12·x + M22·y + M42
 
 z' = M13·x + M23·y + M43
 
-w' = M14·x + M24·y + M44
+w' M14·x, M24·y + M44 =
 
 Ayrıca, z' koordinat ilgisiz burada da. 3B bir nesneyi bir 2B grafik sisteminde görüntülendiğinde, iki boyutlu bir nesneye Z koordinat değerleri yoksayılıyor tarafından daraltılmıştır. Dönüştürme formüller aslında bu iki şunlardır:
 
-x" = x' / w'
+x"= x' / w'
 
-y" = y' / w'
+y"y =' / w'
 
 Üçüncü satır buna *ve* 4 x 4 matrisi üçüncü sütun yoksayıldı.
 
@@ -205,9 +206,9 @@ Artık bir 2B noktası dönüştürmek için kullanılabilir:
 
 Dönüştürme formüller şunlardır:
 
-x' = cos(α)·x
+x' cos = (α) ·x
 
-y' = y
+y' y =
 
 z' = (sin (α) / derinliği) ·x + 1
 

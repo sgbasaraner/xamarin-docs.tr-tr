@@ -1,5 +1,5 @@
 ---
-title: Davranışlar
+title: Xamarin.Forms davranışları
 description: Davranışları alt kümesi için bunlara gerek kalmadan kullanıcı arabirimi denetimlerini işlevselliği eklemenize olanak sağlar. Davranışları kod içinde yazılmış ve XAML veya kod denetimlerinde eklenir.
 ms.prod: xamarin
 ms.assetid: 42E32AD7-8E3B-48B3-B402-E75B758DA913
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: e5eef459c340764d9d373b42ac594f78c042a4de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: edb8929a4e5ffcff74714f65154cd78795bb9568
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239816"
 ---
-# <a name="behaviors"></a>Davranışlar
+# <a name="xamarinforms-behaviors"></a>Xamarin.Forms davranışları
 
 _Davranışları alt kümesi için bunlara gerek kalmadan kullanıcı arabirimi denetimlerini işlevselliği eklemenize olanak sağlar. Davranışları kod içinde yazılmış ve XAML veya kod denetimlerinde eklenir._
 
@@ -32,4 +33,3 @@ Xamarin.Forms davranışları türetme tarafından oluşturulan [ `Behavior` ](h
 ## <a name="reusable-behaviorsreusableindexmd"></a>[Yeniden Kullanılabilir Davranışlar](reusable/index.md)
 
 Davranışları birden çok uygulama arasında yeniden kullanılabilir. Bu makaleler, yaygın olarak kullanılan işlevleri gerçekleştirmek için yararlı davranışları oluşturmak açıklanmaktadır.
-

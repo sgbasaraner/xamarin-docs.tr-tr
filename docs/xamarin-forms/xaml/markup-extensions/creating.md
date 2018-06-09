@@ -1,22 +1,22 @@
 ---
 title: XAML biçimlendirme uzantıları oluşturma
-description: Kendi özel XAML biçimlendirme uzantıları tanımlayın
+description: Bu makale, kendi özel Xamarin.Forms XAML biçimlendirme uzantıları tanımlamak açıklanmaktadır. XAML biçimlendirme uzantısı IMarkupExtension IMarkupExtension arabirimini uygulayan bir sınıftır.
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 1a484aa4a19473c5a4f60b3d7bab78af7a20eecd
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b185ea3b7260ff2be8a4dec5dc713f24dc6e6095
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848258"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245709"
 ---
 # <a name="creating-xaml-markup-extensions"></a>XAML biçimlendirme uzantıları oluşturma
 
-Programsal düzeyi, XAML biçimlendirme uzantısı uygulayan sınıftır [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) veya [ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/) arabirimi. Aşağıda açıklanan standart biçimlendirme uzantıları kaynak kodunu keşfedebilirsiniz [ **MarkupExtensions** directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) Xamarin.Forms GitHub depo. 
+Programsal düzeyi, XAML biçimlendirme uzantısı uygulayan sınıftır [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) veya [ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/) arabirimi. Aşağıda açıklanan standart biçimlendirme uzantıları kaynak kodunu keşfedebilirsiniz [ **MarkupExtensions** directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) Xamarin.Forms GitHub depo.
 
 Türetme tarafından kendi özel XAML biçimlendirme uzantıları tanımlamak mümkündür `IMarkupExtension` veya `IMarkupExtension<T>`. Belirli bir tür değeri biçimlendirme uzantısı elde ederse genel formu kullanın. Bu, birkaç Xamarin.Forms biçimlendirme uzantıları ile durumdur:
 
@@ -26,7 +26,7 @@ Türetme tarafından kendi özel XAML biçimlendirme uzantıları tanımlamak m�
 - `BindingExtension` türetilen `IMarkupExtension<BindingBase>`
 - `ConstraintExpression` türetilen `IMarkupExtension<Constraint>`
 
-İki `IMarkupExtension` arabirimleri her, yalnızca bir yöntemi tanımlamak adlı `ProvideValue`: 
+İki `IMarkupExtension` arabirimleri her, yalnızca bir yöntemi tanımlamak adlı `ProvideValue`:
 
 ```csharp
 public interface IMarkupExtension
@@ -92,7 +92,7 @@ public class HslColorExtension : IMarkupExtension<Color>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout>
         <BoxView>
             <BoxView.Color>
@@ -121,7 +121,7 @@ Fark olduğunda `HslColorExtension` bir XML etiket, dört özellikleri özniteli
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>Bit eşlemler erişmek için biçimlendirme uzantısı
 
-Bağımsız değişkeni `ProvideValue` uygulayan bir nesne [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) .NET içinde tanımlanan arabirimi `System` ad alanı. Bu arabirim bir üye, adlandırılmış bir yöntem sahip `GetService` ile bir `Type` bağımsız değişkeni. 
+Bağımsız değişkeni `ProvideValue` uygulayan bir nesne [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) .NET içinde tanımlanan arabirimi `System` ad alanı. Bu arabirim bir üye, adlandırılmış bir yöntem sahip `GetService` ile bir `Type` bağımsız değişkeni.
 
 `ImageResourceExtension` Aşağıda gösterilen sınıfı gösterir bir olası kullanımını `IServiceProvider` ve `GetService` elde etmek için bir `IXmlLineInfoProvider` burada belirli bir hata algılandı gösteren satır ve karakter bilgiler sağlayabilir nesne. Bu durumda, özel durum oluşturuldu olduğunda `Source` özelliği ayarlanmamış:
 
@@ -152,7 +152,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` XAML dosyası .NET standart kitaplığı projesinde katıştırılmış bir kaynağı olarak saklanan bir görüntü dosyasına erişmek gerektiğinde yararlı olur. Kullandığı `Source` statik çağırmak için özellik `ImageSource.FromResource` yöntemi. Bu yöntem, derleme adı, klasör adı ve noktalarla ayrılmış filename oluşan bir tam nitelikli kaynak adı gerektirir. `ImageResourceExtension` Yansıma kullanarak derleme adını alır ve kendisine başına çünkü derleme bölümü adı olmayan `Source` özelliği. Ne olursa olsun, `ImageSource.FromResource` görüntüleri de bu kitaplıkta olmadığı sürece bu XAML kaynak uzantısı harici bir kitaplığı parçası olması anlamına gelir bit eşlem'i içeren derlemenin çağrılmalıdır. (Bkz [ **katıştırılmış görüntüler** ](~/xamarin-forms/user-interface/images.md#embedded_images) katıştırılmış kaynaklar olarak depolanan bit eşlemler erişme hakkında daha fazla bilgi için makalenin.) 
+`ImageResourceExtension` XAML dosyası .NET standart kitaplığı projesinde katıştırılmış bir kaynağı olarak saklanan bir görüntü dosyasına erişmek gerektiğinde yararlı olur. Kullandığı `Source` statik çağırmak için özellik `ImageSource.FromResource` yöntemi. Bu yöntem, derleme adı, klasör adı ve noktalarla ayrılmış filename oluşan bir tam nitelikli kaynak adı gerektirir. `ImageResourceExtension` Yansıma kullanarak derleme adını alır ve kendisine başına çünkü derleme bölümü adı olmayan `Source` özelliği. Ne olursa olsun, `ImageSource.FromResource` görüntüleri de bu kitaplıkta olmadığı sürece bu XAML kaynak uzantısı harici bir kitaplığı parçası olması anlamına gelir bit eşlem'i içeren derlemenin çağrılmalıdır. (Bkz [ **katıştırılmış görüntüler** ](~/xamarin-forms/user-interface/images.md#embedded_images) katıştırılmış kaynaklar olarak depolanan bit eşlemler erişme hakkında daha fazla bilgi için makalenin.)
 
 Ancak `ImageResourceExtension` gerektirir `Source` ayarlanacak, özelliği `Source` özelliği bir öznitelikte sınıfın içerik özelliği belirtilir. Bunun anlamı `Source=` süslü ayraçlar ifade parçası etmeyebilirsiniz. İçinde **görüntü kaynak Demo** sayfasında `Image` öğeleri fetch klasör adı ve noktalarla ayrılmış dosya adını kullanarak iki görüntü:
 
@@ -167,7 +167,7 @@ Ancak `ImageResourceExtension` gerektirir `Source` ayarlanacak, özelliği `Sour
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Image Source="{local:ImageResource Images.SeatedMonkey.jpg}"
                Grid.Row="0" />
 
@@ -198,7 +198,7 @@ Kullanarak `IServiceProvider` bağımsız değişkeni `ProvideValue`, XAML işar
 
 ## <a name="conclusion"></a>Sonuç
 
-XAML işaretleme uzantılarına, çeşitli kaynaklardan özniteliklerini ayarlama özelliği genişleterek, XAML'de önemli bir rol oynar. Varolan XAML biçimlendirme uzantıları tam olarak gerekenler sağlamazsanız, ayrıca, ayrıca kendi yazabilirsiniz. 
+XAML işaretleme uzantılarına, çeşitli kaynaklardan özniteliklerini ayarlama özelliği genişleterek, XAML'de önemli bir rol oynar. Varolan XAML biçimlendirme uzantıları tam olarak gerekenler sağlamazsanız, ayrıca, ayrıca kendi yazabilirsiniz.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

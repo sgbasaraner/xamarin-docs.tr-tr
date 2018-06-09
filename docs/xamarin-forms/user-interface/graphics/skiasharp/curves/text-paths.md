@@ -1,25 +1,26 @@
 ---
-title: Yollar ve metin
-description: Yollar ve metin kesişimi keşfedin
+title: Yolları ve SkiaSharp metni
+description: Bu makalede SkiaSharp yolları ve metin kesişimi inceler ve bu örnek kodu ile gösterir.
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 9b3f906a23ed0d51237a244f3944104acc76e259
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243911"
 ---
-# <a name="paths-and-text"></a>Yollar ve metin
+# <a name="paths-and-text-in-skiasharp"></a>Yolları ve SkiaSharp metni
 
 _Yollar ve metin kesişimi keşfedin_
 
-Modern grafik sistemlerinde metin yazı tipi karakter anahatları, genelde ikinci derece Bézier eğrileri tarafından tanımlanan bir koleksiyonlarıdır. Sonuç olarak, birçok modern grafik sistemi bir grafik yola metin karakterlerinin dönüştürmek için bir özellik içerir. 
+Modern grafik sistemlerinde metin yazı tipi karakter anahatları, genelde ikinci derece Bézier eğrileri tarafından tanımlanan bir koleksiyonlarıdır. Sonuç olarak, birçok modern grafik sistemi bir grafik yola metin karakterlerinin dönüştürmek için bir özellik içerir.
 
-Metin karakterlerinin anahatları vuruş yanı sıra, onları doldurmak gördünüz. Bu sayede açıklandığı gibi bu karakter anahatları belirli vuruşun genişliğini ve yol etkisi görüntülenecek [ **yolu etkileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) makale. Ancak bir karakter dizesine dönüştürmek mümkündür bir `SKPath` nesnesi. Bu metin anahatları bölümünde açıklanan teknikleri ile kırpma için kullanılabileceği anlamına gelir [ **yolları ve bölgeler kırpma** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) makalesi. 
+Metin karakterlerinin anahatları vuruş yanı sıra, onları doldurmak gördünüz. Bu sayede açıklandığı gibi bu karakter anahatları belirli vuruşun genişliğini ve yol etkisi görüntülenecek [ **yolu etkileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) makale. Ancak bir karakter dizesine dönüştürmek mümkündür bir `SKPath` nesnesi. Bu metin anahatları bölümünde açıklanan teknikleri ile kırpma için kullanılabileceği anlamına gelir [ **yolları ve bölgeler kırpma** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) makalesi.
 
 Karakter ana hattını vuruş yapmak için bir yol efekti kullanarak yanı sıra yollarına bağlı etkileri karakter dizeleri türetilen yol oluşturabilirsiniz ve iki etkileri bile birleştirebilirsiniz:
 
@@ -37,7 +38,7 @@ Son olarak, bu makalede yolları ve metin başka bir kesişimi gösterilmektedir
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-`x` Ve `y` bağımsız değişkenleri metnin sol tarafındaki temel başlangıç noktası belirtin. Aynı role burada olarak yürütmek `DrawText` yöntemi `SKCanvas`. Yol içinde metnin sol tarafındaki temel koordinatları (x, y) sahip olacaktır. 
+`x` Ve `y` bağımsız değişkenleri metnin sol tarafındaki temel başlangıç noktası belirtin. Aynı role burada olarak yürütmek `DrawText` yöntemi `SKCanvas`. Yol içinde metnin sol tarafındaki temel koordinatları (x, y) sahip olacaktır.
 
 `GetTextPath` Yöntemdir gereğinden fazla yalnızca doldurun veya sonuç yolu vuruş yapmak istiyorsanız. Normal `DrawText` yöntemi, yapmanıza olanak sağlar. `GetTextPath` Yöntemdir yollarını içeren diğer görevler için daha kullanışlı.
 
@@ -114,7 +115,7 @@ public class ClippingTextPage : ContentPage
 
         // Display bitmap to fill window but maintain aspect ratio
         SKRect rect = new SKRect(0, 0, info.Width, info.Height);
-        canvas.DrawBitmap(bitmap, 
+        canvas.DrawBitmap(bitmap,
             rect.AspectFill(new SKSize(bitmap.Width, bitmap.Height)));
     }
 }
@@ -141,7 +142,7 @@ public class TextPathEffectPage : ContentPage
         TextSize = littleSize
     };
 
-    SKPaint textPaint = new SKPaint 
+    SKPaint textPaint = new SKPaint
     {
         Style = SKPaintStyle.Stroke,
         Color = SKColors.Black
@@ -160,7 +161,7 @@ public class TextPathEffectPage : ContentPage
         textPathPaint.MeasureText(character, ref textPathPaintBounds);
 
         // Create textPath centered around (0, 0)
-        SKPath textPath = textPathPaint.GetTextPath(character, 
+        SKPath textPath = textPathPaint.GetTextPath(character,
                                                     -textPathPaintBounds.MidX,
                                                     -textPathPaintBounds.MidY);
         // Create the path effect
@@ -324,7 +325,7 @@ public class CircularTextPage : ContentPage
 
 [![](text-paths-images/circulartext-small.png "Üçlü sayfasının ekran görüntüsü döngüsel metin")](text-paths-images/circulartext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü döngüsel metin")
 
-Metnin kendisi de biraz döngüsel olarak seçildi: "daire" tümcenin konu hem edat tümcecik nesnesinin sözcüğüdür. 
+Metnin kendisi de biraz döngüsel olarak seçildi: "daire" tümcenin konu hem edat tümcecik nesnesinin sözcüğüdür.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

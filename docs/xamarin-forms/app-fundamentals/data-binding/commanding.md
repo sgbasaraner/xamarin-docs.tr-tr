@@ -1,21 +1,22 @@
 ---
-title: Komut arabirimi
-description: Uygulama `Command` veri bağlantılarına sahip özellik
+title: Xamarin.Forms komut arabirimi
+description: Bu makalede, Xamarin.Forms veri bağlamalarla komut özelliği uygulamak açıklanmaktadır. Komut verme arabirimi çok MVVM mimarisi için daha uygun olan komutları uygulamak için alternatif bir yaklaşım sağlar.
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 7f8b40624b9434347f69a473eed3bdff5c1d3d33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 37fe5bbcfa3dbc6aa5483c89b49c1698a00ecbb6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241318"
 ---
-# <a name="the-command-interface"></a>Komut arabirimi
+# <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms komut arabirimi
 
-Model-View-ViewModel (MVVM) mimarisinde, genellikle türeyen bir sınıf olan ViewModel özelliklerinde arasında veri bağlamaları tanımlanan `INotifyPropertyChanged`ve Özellikler görünümünde, genellikle XAML dosyasıdır. Bazen bir uygulama şeyin ViewModel etkileyen komutları başlatan kullanıcının gerektiren tarafından bu özellik bağlamaları gidin gereksinimlerine sahiptir. Bu komutlar genellikle düğme tıklamaları tarafından işaret veya finger dokunma ve arka plan kod dosyası için bir işleyici içinde geleneksel olarak işlenen `Clicked` olayı `Button` veya `Tapped` olayı bir `TapGestureRecognizer`. 
+Model-View-ViewModel (MVVM) mimarisinde, genellikle türeyen bir sınıf olan ViewModel özelliklerinde arasında veri bağlamaları tanımlanan `INotifyPropertyChanged`ve Özellikler görünümünde, genellikle XAML dosyasıdır. Bazen bir uygulama şeyin ViewModel etkileyen komutları başlatan kullanıcının gerektiren tarafından bu özellik bağlamaları gidin gereksinimlerine sahiptir. Bu komutlar genellikle düğme tıklamaları tarafından işaret veya finger dokunma ve arka plan kod dosyası için bir işleyici içinde geleneksel olarak işlenen `Clicked` olayı `Button` veya `Tapped` olayı bir `TapGestureRecognizer`.
 
 Komut verme arabirimi çok MVVM mimarisi için daha uygun olan komutları uygulamak için alternatif bir yaklaşım sağlar. ViewModel görünümünde belirli bir etkinliğe olarak yürütülür yöntemleri komutlar içerebilirler bir `Button` ' ı tıklatın. Veri bağlama, bu komutları arasında tanımlanır ve `Button`.
 
@@ -32,11 +33,11 @@ Komut arabirimi kullanmak için hedefleyen bir veri bağlama tanımlamanız `Com
 - [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) Bu nedenle, [ `ImageCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/), den türetilen `TextCell`
 - [`TapGestureRecognizer`](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
 
-[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) tanımlayan bir [ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/) türündeki özelliği `ICommand` ve [ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/) özelliği. [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/) Özelliği [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) de türünde `ICommand`. 
+[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) tanımlayan bir [ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/) türündeki özelliği `ICommand` ve [ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/) özelliği. [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/) Özelliği [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) de türünde `ICommand`.
 
 Bu komutlar, içinde bir ViewModel görünümünde belirli kullanıcı arabirimi nesnesi bağlı olmayan bir şekilde işlenebilir.
 
-## <a name="the-icommand-interface"></a>The ICommand Interface
+## <a name="the-icommand-interface"></a>ICommand arabirimi
 
 <xref:System.Windows.Input.ICommand> Arabirimi Xamarin.Forms parçası değil. Bunun yerine içinde tanımlandı [System.Windows.Input](xref:System.Windows.Input) ad alanı ve iki yöntem ve bir olay oluşur:
 
@@ -57,7 +58,7 @@ Komut arabirimi kullanmak için ViewModel türünün özelliklerini içeren `ICo
 public ICommand MyCommand { private set; get; }
 ```
 
-ViewModel de uygulayan bir sınıf başvurmalıdır `ICommand` arabirimi. Bu sınıf kısa süre içinde açıklanacaktır. Görünümünde `Command` özelliği bir `Button` bu özelliğe bağlıdır: 
+ViewModel de uygulayan bir sınıf başvurmalıdır `ICommand` arabirimi. Bu sınıf kısa süre içinde açıklanacaktır. Görünümünde `Command` özelliği bir `Button` bu özelliğe bağlıdır:
 
 ```xaml
 <Button Text="Execute command"
@@ -136,7 +137,7 @@ public class PersonViewModel : INotifyPropertyChanged
 }
 ```
 
-`PersonCollectionViewModel` Gösterilen aşağıda türünde yeni nesneler oluşturur `PersonViewModel` ve veri dolduran olanak tanır. Bu amaç için sınıf özelliklerini tanımlar `IsEditing` türü `bool` ve `PersonEdit` türü `PersonViewModel`. Ayrıca, sınıf türü üç özelliklerini tanımlar `ICommand` ve adlı bir özellik `Persons` türü `IList<PersonViewModel>`: 
+`PersonCollectionViewModel` Gösterilen aşağıda türünde yeni nesneler oluşturur `PersonViewModel` ve veri dolduran olanak tanır. Bu amaç için sınıf özelliklerini tanımlar `IsEditing` türü `bool` ve `PersonEdit` türü `PersonViewModel`. Ayrıca, sınıf türü üç özelliklerini tanımlar `ICommand` ve adlı bir özellik `Persons` türü `IList<PersonViewModel>`:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -199,7 +200,7 @@ Oluşturucusunun inceleniyor önce `PersonCollectionViewModel` sınıfı, XAML d
         <Grid.BindingContext>
             <local:PersonCollectionViewModel />
         </Grid.BindingContext>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -216,7 +217,7 @@ Oluşturucusunun inceleniyor önce `PersonCollectionViewModel` sınıfı, XAML d
         <!-- Entry Form -->
         <Grid Grid.Row="1"
               IsEnabled="{Binding IsEditing}">
-            
+
             <Grid BindingContext="{Binding PersonEdit}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -230,11 +231,11 @@ Oluşturucusunun inceleniyor önce `PersonCollectionViewModel` sınıfı, XAML d
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Name: " Grid.Row="0" Grid.Column="0" />
-                <Entry Text="{Binding Name}" 
+                <Entry Text="{Binding Name}"
                        Grid.Row="0" Grid.Column="1" />
 
                 <Label Text="Age: " Grid.Row="1" Grid.Column="0" />
-                <StackLayout Orientation="Horizontal" 
+                <StackLayout Orientation="Horizontal"
                              Grid.Row="1" Grid.Column="1">
                     <Stepper Value="{Binding Age}"
                              Maximum="100" />
@@ -315,7 +316,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
     {
         (SubmitCommand as Command).ChangeCanExecute();
     }
-    
+
     void RefreshCanExecutes()
     {
         (NewCommand as Command).ChangeCanExecute();
@@ -359,9 +360,9 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
             },
             canExecute: () =>
             {
-                return PersonEdit != null && 
-                       PersonEdit.Name != null && 
-                       PersonEdit.Name.Length > 1 && 
+                return PersonEdit != null &&
+                       PersonEdit.Name != null &&
+                       PersonEdit.Name.Length > 1 &&
                        PersonEdit.Age > 0;
             });
 
@@ -373,7 +374,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-`canExecute` İçin işlev `SubmitCommand` olduğundan her zaman içinde değiştirilen bir özellik olarak adlandırılır `PersonViewModel` düzenlenmekte olan nesne. Döndürdüğü `true` yalnızca `Name` en az bir karakter uzunluğunda bir özelliktir ve `Age` 0'dan büyük. Bu sırada, **gönderme** düğmesi etkin hale gelir. 
+`canExecute` İçin işlev `SubmitCommand` olduğundan her zaman içinde değiştirilen bir özellik olarak adlandırılır `PersonViewModel` düzenlenmekte olan nesne. Döndürdüğü `true` yalnızca `Name` en az bir karakter uzunluğunda bir özelliktir ve `Age` 0'dan büyük. Bu sırada, **gönderme** düğmesi etkin hale gelir.
 
 `execute` İçin işlev **gönderme** özelliği değiştirildi işleyicisinden kaldırır `PersonViewModel`, nesneye ekler `Persons` koleksiyonu ve her şeyi ilk koşullar döndürür.
 
@@ -401,7 +402,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
             canExecute: () =>
             {
                 return IsEditing;
-            }); 
+            });
     }
 
     ···
@@ -417,7 +418,7 @@ Tanımlamak gerekli değildir `execute` ve `canExecute` lambda işlevler olarak 
 
 ## <a name="using-command-parameters"></a>Komut parametreleri kullanma
 
-Bazen bir veya daha fazla düğme (veya diğer kullanıcı arabirimi nesneleri için) aynı paylaşmak uygun olan `ICommand` ViewModel özelliği. Bu durumda, kullandığınız `CommandParameter` düğmeleri arasında ayrım yapmak için özellik. 
+Bazen bir veya daha fazla düğme (veya diğer kullanıcı arabirimi nesneleri için) aynı paylaşmak uygun olan `ICommand` ViewModel özelliği. Bu durumda, kullandığınız `CommandParameter` düğmeleri arasında ayrım yapmak için özellik.
 
 Kullanmaya devam edebilirsiniz `Command` bu paylaşılan için sınıf `ICommand` özellikleri. Sınıfı tanımlayan bir [alternatif Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action%7BSystem.Object%7D/System.Func%7BSystem.Object,System.Boolean%7D/) kabul eden `execute` ve `canExecute` türünde parametre yöntemleriyle `Object`. Bunun nasıl `CommandParameter` bu yöntemlere iletilen.
 
@@ -442,7 +443,7 @@ Ancak, kullanırken `CommandParameter`, genel kullanmak en kolayıdır [ `Comman
         <Grid.BindingContext>
             <local:DecimalKeypadViewModel />
         </Grid.BindingContext>
-        
+
         <Grid.Resources>
             <ResourceDictionary>
                 <Style TargetType="Button">
@@ -465,51 +466,51 @@ Ancak, kullanırken `CommandParameter`, genel kullanmak en kolayıdır [ `Comman
                 Command="{Binding ClearCommand}" />
 
         <Button Text="&#x21E6;"
-                Grid.Row="1" Grid.Column="2" 
+                Grid.Row="1" Grid.Column="2"
                 Command="{Binding BackspaceCommand}" />
 
         <Button Text="7"
-                Grid.Row="2" Grid.Column="0" 
+                Grid.Row="2" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="7" />
 
         <Button Text="8"
-                Grid.Row="2" Grid.Column="1" 
+                Grid.Row="2" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="8" />
-        
+
         <Button Text="9"
-                Grid.Row="2" Grid.Column="2" 
+                Grid.Row="2" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="9" />
 
         <Button Text="4"
-                Grid.Row="3" Grid.Column="0" 
+                Grid.Row="3" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="4" />
 
         <Button Text="5"
-                Grid.Row="3" Grid.Column="1" 
+                Grid.Row="3" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="5" />
 
         <Button Text="6"
-                Grid.Row="3" Grid.Column="2" 
+                Grid.Row="3" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="6" />
 
         <Button Text="1"
-                Grid.Row="4" Grid.Column="0" 
+                Grid.Row="4" Grid.Column="0"
                 Command="{Binding DigitCommand}"
                 CommandParameter="1" />
 
         <Button Text="2"
-                Grid.Row="4" Grid.Column="1" 
+                Grid.Row="4" Grid.Column="1"
                 Command="{Binding DigitCommand}"
                 CommandParameter="2" />
 
         <Button Text="3"
-                Grid.Row="4" Grid.Column="2" 
+                Grid.Row="4" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="3" />
 
@@ -519,7 +520,7 @@ Ancak, kullanırken `CommandParameter`, genel kullanmak en kolayıdır [ `Comman
                 CommandParameter="0" />
 
         <Button Text="&#x00B7;"
-                Grid.Row="5" Grid.Column="2" 
+                Grid.Row="5" Grid.Column="2"
                 Command="{Binding DigitCommand}"
                 CommandParameter="." />
     </Grid>
@@ -532,7 +533,7 @@ Eylem program şöyledir:
 
 [![Ondalık klavye](commanding-images/decimalkeyboard-small.png "ondalık klavye")](commanding-images/decimalkeyboard-large.png#lightbox "ondalık klavye")
 
-Girilen sayı ondalık içerdiğinden tüm üç ekran görüntüleri ondalık noktasının düğmesi devre dışıdır dikkat edin. 
+Girilen sayı ondalık içerdiğinden tüm üç ekran görüntüleri ondalık noktasının düğmesi devre dışıdır dikkat edin.
 
 `DecimalKeypadViewModel` Tanımlayan bir `Entry` türündeki özelliği `string` (tetikler tek özellik olduğu bir `PropertyChanged` olay) ve üç özellik türü `ICommand`:
 
@@ -587,7 +588,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
             });
 
         ···
-    
+
     }
 
     void RefreshCanExecutes()
@@ -597,7 +598,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
@@ -638,7 +639,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
@@ -674,13 +675,13 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
     }
 
     ···
-    
+
 }
 ```
 
 `execute` Yöntemi ekler dize bağımsız değişkeni `Entry` özelliği. Sıfır (ancak değil sıfır ile ondalık) sonucu başlıyorsa, ancak, ardından bu ilk sıfır kullanarak kaldırılmalıdır `Substring` işlevi.
 
-`canExecute` Yöntemi döndürür `false` yalnızca bağımsız değişken ondalık (Ondalık ayırıcının basılı olduğunu gösteren) ise ve `Entry` ondalık zaten içeriyor. 
+`canExecute` Yöntemi döndürür `false` yalnızca bağımsız değişken ondalık (Ondalık ayırıcının basılı olduğunu gösteren) ise ve `Entry` ondalık zaten içeriyor.
 
 Tüm `execute` yöntem çağrısı `RefreshCanExecutes`, ardından çağıran `ChangeCanExecute` her ikisi için de `DigitCommand` ve `ClearCommand`. Bu ondalık ayırıcıdan ve geri düğmeleri etkin veya devre dışı girilen rakamları geçerli dizisi üzerinde temel sağlar.
 
@@ -753,13 +754,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Oluşturucu kümeleri `NavigateCommand` özelliğine bir `execute` başlatır yöntemi `System.Type` parametre ve kendisine gider. Çünkü `PushAsync` çağrısı gerektirir bir `await` işleci, `execute` yöntemi gerekir işaretlenen zaman uyumsuz olarak. Bu ile gerçekleştirilir `async` anahtar sözcüğü önce parametre listesi. 
+Oluşturucu kümeleri `NavigateCommand` özelliğine bir `execute` başlatır yöntemi `System.Type` parametre ve kendisine gider. Çünkü `PushAsync` çağrısı gerektirir bir `await` işleci, `execute` yöntemi gerekir işaretlenen zaman uyumsuz olarak. Bu ile gerçekleştirilir `async` anahtar sözcüğü önce parametre listesi.
 
 Ayrıca Oluşturucusu ayarlar `BindingContext` kendisine sayfasının bağlamaları başvuru böylece `NavigateCommand` bu sınıftaki.
 
 Bu oluşturucu kodda sırasını bir fark etmez: `InitializeComponent` çağrısı ayrıştırılması XAML neden olur, ancak o anda bir özelliği için bağlama adlı `NavigateCommand` çünkü çözümlenemiyor `BindingContext` ayarlanır `null`. Varsa `BindingContext` oluşturucuda ayarlamak *önce* `NavigateCommand` ayarlanır, bağlama ne zaman çözümlenebilir sonra `BindingContext` ayarlanır, ancak o zaman `NavigateCommand` hala `null`. Ayarı `NavigateCommand` sonra `BindingContext` çünkü bağlama üzerinde hiçbir etkisi olmaz bir değişiklik `NavigateCommand` yangın olmayan bir `PropertyChanged` olay ve bağlama değil biliyorsanız, `NavigateCommand` artık geçerli değil.
 
-Her ikisi de ayarı `NavigateCommand` ve `BindingContext` (, herhangi bir sırada) çağrısından önce `InitializeComponent` XAML ayrıştırıcısı bağlama tanımı karşılaştığında hem bileşenleri bağlamanın ayarlandığından çalışır. 
+Her ikisi de ayarı `NavigateCommand` ve `BindingContext` (, herhangi bir sırada) çağrısından önce `InitializeComponent` XAML ayrıştırıcısı bağlama tanımı karşılaştığında hem bileşenleri bağlamanın ayarlandığından çalışır.
 
 Veri bağlamaları bazen zor olabilir, ancak bu makaleler dizide gördüğünüz gibi bunlar güçlü ve çok yönlü ve büyük ölçüde kullanıcı arabiriminden temel mantığını ayırarak kodunuzu düzenlemek için Yardım.
 

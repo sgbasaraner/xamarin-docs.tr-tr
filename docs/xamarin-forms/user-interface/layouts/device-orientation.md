@@ -1,28 +1,22 @@
 ---
 title: Cihaz yönlendirmesini
-description: Dikey ve yatay yönler görünümlü uygulamaları yerleştirme anlayın.
+description: Bu makalede açıklanır dikey ve yatay yönler görünümlü düzeni Xamarin.Forms uygulamaları nasıl.
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 95049e2d44b369bfa879226e17d2bad20b7b5408
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 9245a17423d97887d2032856b10427685b25c29b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848141"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244357"
 ---
 # <a name="device-orientation"></a>Cihaz yönlendirmesini
 
 Uygulamanızı nasıl kullanılacağını ve kullanıcı deneyimini geliştirmek için yatay yönlendirme nasıl birleştirilebilir dikkate almak önemlidir. Tek tek düzenleri birden çok yönler uyum sağlamak için tasarlanmış ve en iyi kullanılabilir alanı kullanın. Uygulama düzeyinde döndürme devre dışı veya etkinleştirilebilir.
-
-Bu makalede, cihaz yönlendirmesini özelliklerden yararlanmak uygulamaları oluşturmada size yol gösterir ve aşağıdaki bölümleri içerir:
-
-- **[Yönlendirme denetleme](#Controlling_Orientation)**  &ndash; uygulama düzeyinde yönlendirme her bir platformda denetlemek anlayın.
-- **[Yönlendirme değişikliklere tepki](#Reacting_to_Changes_in_Orientation)**  &ndash; bildirilmesini ve tepki öğrenin, yönde değiştirir.
-- **[Esnek düzeni](#Responsive_Layout)**  &ndash; yatay ve dikey yönler arasında otomatik olarak iş düzenleri oluşturma hakkında bilgi edinin.
 
 <a name="Controlling_Orientation" />
 

@@ -1,18 +1,18 @@
 ---
 title: Hiyerarşik gezinme
-description: NavigationPage sınıfı kullanıcının iletir ve geriye doğru istediğiniz gibi sayfalar arasında gezinme mümkün olduğu bir hiyerarşik gezinme deneyimi sağlar. Sınıf Gezinti son giren ilk çıkar (LIFO) yığınını sayfa nesneleri olarak uygular. Bu makalede NavigationPage sınıfı bir sayfa yığınını Gezinti gerçekleştirmek için nasıl kullanılacağı gösterilmektedir.
+description: Bu makalede NavigationPage sınıfı Gezinti son giren ilk çıkar (LIFO) sayfaları yığında gerçekleştirmek için nasıl kullanılacağı gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 49be5b812c5ef66907e7ebf74906c25bfbb076b6
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 20dfb6e935d08c35da73a81fb401a613aa6c9bac
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847169"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242462"
 ---
 # <a name="hierarchical-navigation"></a>Hiyerarşik gezinme
 
@@ -48,7 +48,7 @@ Düzenini bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamari
 
 - İos'ta, gezinti çubuğunda bir başlık görüntüler ve sahip sayfanın en üstünde bulunduğundan bir *geri* önceki sayfaya döner düğmesi.
 - Android, gezinti çubuğunda bir simge, bir başlığı görüntüler sayfanın en üstünde bulunduğundan ve bir *geri* önceki sayfaya döner düğmesi. Simge tanımlanan `[Activity]` süsler özniteliği `MainActivity` Android platforma özgü projesinde sınıfı.
-- Evrensel Windows platformu üzerinde bir gezinti çubuğu bir başlık görüntüleyen sayfanın en üstünde mevcuttur. 
+- Evrensel Windows platformu üzerinde bir gezinti çubuğu bir başlık görüntüleyen sayfanın en üstünde mevcuttur.
 
 Tüm platformlarda değerini [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) özellik sayfası başlık olarak görüntülenir.
 

@@ -1,20 +1,20 @@
 ---
-title: Tetikleyiciler
-description: XAML kullanıcı arabirimi değişikliklerle yanıtlama
+title: Xamarin.Forms Tetikleyicileri
+description: Bu makalede Xamarin.Forms Tetikleyicileri XAML kullanıcı arabirimi değişikliklerle yanıt vermesi için nasıl kullanılacağı açıklanmaktadır. Tetikleyiciler, olayları veya özellik değişikliklerini göre denetimlerin görünümünü değiştirme eylemleri bildirimli olarak XAML'de express olanak tanır.
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: af5912736e2a2bd7d3347d4aa199faa3fdfe41c7
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b28ebb8845b7eae0d818e1279b4d6eaef4ad5b8b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846451"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241441"
 ---
-# <a name="triggers"></a>Tetikleyiciler
+# <a name="xamarinforms-triggers"></a>Xamarin.Forms Tetikleyicileri
 
 Tetikleyiciler, olayları veya özellik değişikliklerini göre denetimlerin görünümünü değiştirme eylemleri bildirimli olarak XAML'de express olanak tanır.
 

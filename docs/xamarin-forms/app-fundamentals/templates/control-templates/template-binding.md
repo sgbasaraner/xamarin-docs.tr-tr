@@ -1,5 +1,5 @@
 ---
-title: Bağlamanın ControlTemplate dışında
+title: Xamarin.Forms ControlTemplate bağlamasını
 description: Ortak özellikler için bir denetim şablonu verilere denetimler bağlama şablonu bağlamaları kolayca değiştirilecek denetim şablonu denetimlerinde özellik değerlerini etkinleştirme izin verin. Bu makalede, veri bağlama denetimi şablonundan gerçekleştirmek için şablonu bağlamalar kullanılarak gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 6b2904d06d0982fb30e9a989f03f22b726b9772e
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 99d798ce2c74da0cf7fa0d497128db628a12ead5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847182"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241587"
 ---
-# <a name="binding-from-a-controltemplate"></a>Bağlamanın ControlTemplate dışında
+# <a name="binding-from-a-xamarinforms-controltemplate"></a>Xamarin.Forms ControlTemplate bağlamasını
 
 _Ortak özellikler için bir denetim şablonu verilere denetimler bağlama şablonu bağlamaları kolayca değiştirilecek denetim şablonu denetimlerinde özellik değerlerini etkinleştirme izin verin. Bu makalede, veri bağlama denetimi şablonundan gerçekleştirmek için şablonu bağlamalar kullanılarak gösterilmektedir._
 

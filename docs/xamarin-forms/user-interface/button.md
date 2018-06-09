@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/01/2018
-ms.openlocfilehash: 1fed439ecb4bd79bd84974ea1397ca0ed1336b62
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d74e0b2aa5be6e8eee2ce5cb54572dd4113d4d7d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847959"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244922"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms düğmesi
 
-_Düğme belirli bir görevi gerçekleştirmek için bir uygulama yönlendirir tıklayın veya dokunun yanıt verir._ 
+_Düğme belirli bir görevi gerçekleştirmek için bir uygulama yönlendirir tıklayın veya dokunun yanıt verir._
 
 [ `Button` ](xref:Xamarin.Forms.Button) Xamarin.Forms tümünde en temel etkileşimli denetimdir. `Button` Bir komutu, ancak belirten kısa bir metin dizesi için de görüntüler. bir bit eşlem resim veya bir birleşimini metin ve görüntü genellikle görüntüler. Kullanıcı basarsa `Button` bir parmak ile veya komut başlatmak için fareyle tıklar.
 
@@ -24,7 +24,7 @@ Aşağıda ele alınan konuların çoğu karşılık sayfalarında [ **ButtonDem
 
 ## <a name="handling-button-clicks"></a>Düğmesini işleme tıklar
 
-`Button` tanımlayan bir [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) kullanıcı dokunur zaman tetikleyen olayı `Button` parmak veya fare işaretçisi ile. Parmak veya fare düğmesini yüzeyden yayımlandığında, bu olay tetiklenir `Button`. `Button` Olmalıdır, [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) özelliğini `true` onun için dokunma yanıt vermesi için. 
+`Button` tanımlayan bir [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) kullanıcı dokunur zaman tetikleyen olayı `Button` parmak veya fare işaretçisi ile. Parmak veya fare düğmesini yüzeyden yayımlandığında, bu olay tetiklenir `Button`. `Button` Olmalıdır, [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) özelliğini `true` onun için dokunma yanıt vermesi için.
 
 **Temel düğmesini tıklatın** sayfasındaki [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) örnek gösterilmektedir örneği oluşturmak nasıl bir `Button` XAML ve tanıtıcı kendi `Clicked` olay. **BasicButtonClickPage.xaml** dosyasını içeren bir `StackLayout` hem bir `Label` ve `Button`:
 
@@ -34,18 +34,18 @@ Aşağıda ele alınan konuların çoğu karşılık sayfalarında [ **ButtonDem
              x:Class="ButtonDemos.BasicButtonClickPage"
              Title="Basic Button Click">
     <StackLayout>
-        
+
         <Label x:Name="label"
                Text="Click the Button below"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Click to Rotate Text!"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
                 Clicked="OnButtonClicked" />
-     
+
     </StackLayout>
 </ContentPage>
 ```
@@ -136,7 +136,8 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>Düğme devre dışı bırakma
 
-Bazen bir uygulamanın belirli bir yerde belirli bir durumda olduğundan `Button` tıklatın geçerli bir işlem değil. Bu durumlarda, `Button` ayarlayarak devre dışı bırakılmalıdır kendi `IsEnabled` özelliğine `false`. Klasik örnek bir `Entry` denetimi tarafından bir dosyanın açılması eşlik bir dosya adı için `Button`: `Button` yalnızca belirli bir metin halinde yazılan ise etkinleştirilmelidir `Entry`. Kullanabileceğiniz bir `DataTrigger` gösterildiği gibi bu görev için [ **veri Tetikleyicileri** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers) makalesi.
+Bazen bir uygulamanın belirli bir yerde belirli bir durumda olduğundan `Button` tıklatın geçerli bir işlem değil. Bu durumlarda, `Button` ayarlayarak devre dışı bırakılmalıdır kendi `IsEnabled` özelliğine `false`. Klasik örnek bir `Entry` denetimi tarafından bir dosyanın açılması eşlik bir dosya adı için `Button`: `Button` yalnızca belirli bir metin halinde yazılan ise etkinleştirilmelidir `Entry`.
+Kullanabileceğiniz bir `DataTrigger` gösterildiği gibi bu görev için [ **veri Tetikleyicileri** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers) makalesi.
 
 ## <a name="using-the-command-interface"></a>Komut arabirimi kullanma
 
@@ -199,15 +200,15 @@ class CommandDemoViewModel : INotifyPropertyChanged
              xmlns:local="clr-namespace:ButtonDemos"
              x:Class="ButtonDemos.BasicButtonCommandPage"
              Title="Basic Button Command">
-    
+
     <ContentPage.BindingContext>
         <local:CommandDemoViewModel />
     </ContentPage.BindingContext>
-    
+
     <StackLayout>
         <Label Text="{Binding Number, StringFormat='Value is now {0}'}"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Multiply by 2"
@@ -355,7 +356,7 @@ Yanında `Clicked` olayı `Button` ayrıca tanımlar [ `Pressed` ](xref:Xamarin.
         <Label x:Name="label"
                Text="Press and hold the Button below"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Press to Rotate Text!"
@@ -406,7 +407,7 @@ Sonuç `Label` bağlantılı bir parmak iken yalnızca döndüğü `Button`ve pa
 
 [![Düğmesini basıp](button-images/PressAndReleaseButton.png "tuşuna basın ve düğmesini bırakın")](button-images/PressAndReleaseButton-Large.png)
 
-Uygulamaları oyunlar için bu tür bir davranışı vardır: tutulan bir parmak bir `Button` belirli bir yönde taşımak üzerinde bir ekran nesnesi neden olabilir. 
+Uygulamaları oyunlar için bu tür bir davranışı vardır: tutulan bir parmak bir `Button` belirli bir yönde taşımak üzerinde bir ekran nesnesi neden olabilir.
 
 <a name="button-appearance" />
 
@@ -420,7 +421,7 @@ Uygulamaları oyunlar için bu tür bir davranışı vardır: tutulan bir parmak
 - [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily) yazı tipi ailesinin metni için kullanılır
 - [`FontSize`](xref:Xamarin.Forms.Button.FontSize) metin boyutu
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) metni italik veya kalın olup olmadığını gösterir
-- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) Kenarlık genişliği 
+- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) Kenarlık genişliği
 - [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) Köşeleri yuvarlar
 
 Bu özelliklerin altı etkilerini (hariç `FontFamily` ve `FontAttributes`) örneklerde gösterildiği **düğme görünümünü** sayfası. Başka bir özellik [ `Image` ](xref:Xamarin.Forms.Button.Image), bölümünde anlatılan [ **bit eşlemler düğmesini kullanarak**](#image-button).
@@ -447,7 +448,7 @@ Tüm görünümler ve verilerin bağlamalar **düğme görünümünü** sayfa XA
 
         <StackLayout BindingContext="{x:Reference button}"
                      Padding="10">
-            
+
             <Slider x:Name="fontSizeSlider"
                     Maximum="48"
                     Minimum="1"
@@ -462,8 +463,8 @@ Tüm görünümler ve verilerin bağlamalar **düğme görünümünü** sayfa XA
                     Minimum="-1"
                     Maximum="12"
                     Value="{Binding BorderWidth}" />
-            
-            <Label Text="{Binding Source={x:Reference borderWidthSlider}, 
+
+            <Label Text="{Binding Source={x:Reference borderWidthSlider},
                                   Path=Value,
                                   StringFormat='BorderWidth = {0:F0}'}"
                    HorizontalTextAlignment="Center" />
@@ -473,7 +474,7 @@ Tüm görünümler ve verilerin bağlamalar **düğme görünümünü** sayfa XA
                     Maximum="24"
                     Value="{Binding CornerRadius}" />
 
-            <Label Text="{Binding Source={x:Reference cornerRadiusSlider}, 
+            <Label Text="{Binding Source={x:Reference cornerRadiusSlider},
                                   Path=Value,
                                   StringFormat='CornerRadius = {0:F0}'}"
                    HorizontalTextAlignment="Center" />
@@ -484,7 +485,7 @@ Tüm görünümler ve verilerin bağlamalar **düğme görünümünü** sayfa XA
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -586,13 +587,13 @@ class ToggleButton : Button
 }
 ```
 
-`ToggleButton` Oluşturucusu bağlayan bir işleyiciye `Clicked` onun değerini değiştirebilmeniz için olay `IsToggled` özelliği. `OnIsToggledChanged` Yöntemi ateşlenir `Toggled` olay. 
+`ToggleButton` Oluşturucusu bağlayan bir işleyiciye `Clicked` onun değerini değiştirebilmeniz için olay `IsToggled` özelliği. `OnIsToggledChanged` Yöntemi ateşlenir `Toggled` olay.
 
-Son satırının `OnIsToggledChanged` yöntemini çağırır statik `VisualStateManager.GoToState` iki metin yöntemiyle dizeleri "ToggledOn" ve "ToggledOff". Okuyabilirsiniz bu yöntem ve uygulamanızı makalede visual durumları nasıl yanıtlayabilir hakkında [ **Xamarin.Forms görsel durum Yöneticisi**](~/xamarin-forms/user-interface/visual-state-manager.md). 
+Son satırının `OnIsToggledChanged` yöntemini çağırır statik `VisualStateManager.GoToState` iki metin yöntemiyle dizeleri "ToggledOn" ve "ToggledOff". Okuyabilirsiniz bu yöntem ve uygulamanızı makalede visual durumları nasıl yanıtlayabilir hakkında [ **Xamarin.Forms görsel durum Yöneticisi**](~/xamarin-forms/user-interface/visual-state-manager.md).
 
-Çünkü `ToggleButton` çağrıda `VisualStateManager.GoToState`, sınıf temel düğmenin görünümünü değiştirmek için tüm ek özellikler içerir gerekmez, `IsToggled` durumu. Diğer bir deyişle barındıran XAML sorumluluk `ToggleButton`. 
+Çünkü `ToggleButton` çağrıda `VisualStateManager.GoToState`, sınıf temel düğmenin görünümünü değiştirmek için tüm ek özellikler içerir gerekmez, `IsToggled` durumu. Diğer bir deyişle barındıran XAML sorumluluk `ToggleButton`.
 
-**İki durumlu düğme Demo** sayfasını içeren iki örneğini `ToggleButton`, ayarlar görsel durum Yöneticisi biçimlendirme dahil olmak üzere `Text`, `BackgroundColor`, ve `TextColor` düğmenin görsel durumuna göre: 
+**İki durumlu düğme Demo** sayfasını içeren iki örneğini `ToggleButton`, ayarlar görsel durum Yöneticisi biçimlendirme dahil olmak üzere `Text`, `BackgroundColor`, ve `TextColor` düğmenin görsel durumuna göre:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -601,7 +602,7 @@ Son satırının `OnIsToggledChanged` yöntemini çağırır statik `VisualState
              xmlns:local="clr-namespace:ButtonDemos"
              x:Class="ButtonDemos.ToggleButtonDemoPage"
              Title="Toggle Button Demo">
-    
+
     <ContentPage.Resources>
         <Style TargetType="local:ToggleButton">
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
@@ -620,7 +621,7 @@ Son satırının `OnIsToggledChanged` yöntemini çağırır statik `VisualState
                             <Setter Property="TextColor" Value="Black" />
                         </VisualState.Setters>
                     </VisualState>
-                    
+
                     <VisualState Name="ToggledOn">
                         <VisualState.Setters>
                             <Setter Property="Text" Value=" Italic On " />
@@ -642,7 +643,7 @@ Son satırının `OnIsToggledChanged` yöntemini çağırır statik `VisualState
                             <Setter Property="TextColor" Value="Black" />
                         </VisualState.Setters>
                     </VisualState>
-                    
+
                     <VisualState Name="ToggledOn">
                         <VisualState.Setters>
                             <Setter Property="Text" Value=" Bold On " />
@@ -710,9 +711,9 @@ public partial class ToggleButtonDemoPage : ContentPage
 
 `Button` Sınıfı tanımlayan bir [ `Image` ](xref:Xamarin.Forms.Button.Image) bir bit eşlem resim görüntülemek izin veren özellik `Button`, tek başına veya birlikte metinle. Metin ve resim nasıl düzenlenir de belirtebilirsiniz.
 
-`Image` Özelliği türüdür [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource), bit eşlemler kaynaklarını tek tek platform projelerinde ve .NET standart kitaplığı proje içinde değil olarak depolanması gereken anlamına gelir. 
+`Image` Özelliği türüdür [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource), bit eşlemler kaynaklarını tek tek platform projelerinde ve .NET standart kitaplığı proje içinde değil olarak depolanması gereken anlamına gelir.
 
-Xamarin.Forms tarafından desteklenen her platform uygulaması çalışabilir çeşitli cihazların farklı piksel çözünürlüğü için çeşitli boyutlarda depolanması görüntüleri sağlar. Bu Çoklu bit eşlemler adlı veya aygıt video için işletim sistemini en iyi eşleşmeyi seçebilirsiniz şekilde depolanan ekran çözünürlüğü. 
+Xamarin.Forms tarafından desteklenen her platform uygulaması çalışabilir çeşitli cihazların farklı piksel çözünürlüğü için çeşitli boyutlarda depolanması görüntüleri sağlar. Bu Çoklu bit eşlemler adlı veya aygıt video için işletim sistemini en iyi eşleşmeyi seçebilirsiniz şekilde depolanan ekran çözünürlüğü.
 
 Bir bit eşlem'i için bir `Button`en iyi boyutu genellikle 32 ve 64 CİHAZDAN bağımsız birimler arasında büyüklüğüne bağlı olarak, olmasını istiyorsanız. Bu örnekte kullanılan görüntüleri 48 CİHAZDAN bağımsız birimler boyutuna dayanır.
 
@@ -801,7 +802,7 @@ UWP bit eşlemler proje kök dizininde depolanır, bu biçimlendirme oldukça ba
     <FlexLayout Direction="Column"
                 JustifyContent="SpaceEvenly"
                 AlignItems="Center">
-        
+
         <FlexLayout.Resources>
             <Style TargetType="Button">
                 <Setter Property="Image">
@@ -833,7 +834,7 @@ UWP bit eşlemler proje kök dizininde depolanır, bu biçimlendirme oldukça ba
         <Button Text="Right - 20"
                 ContentLayout="Right, 20" />
 
-        <Button Text="Bottom - 20" 
+        <Button Text="Bottom - 20"
                 ContentLayout="Bottom, 20" />
     </FlexLayout>
 </ContentPage>

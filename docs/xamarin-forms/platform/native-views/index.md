@@ -1,19 +1,20 @@
 ---
-title: Yerel görünümleri
-description: İOS, Android ve evrensel Windows Platformu (UWP) yerel görünümleri doğrudan Xamarin.Forms başvurulabilir. Xamarin.Forms görünümleri ile etkileşim kurabilir ve özellikleri ve olay işleyicileri yerel görünümler üzerinde ayarlanabilir.
+title: Xamarin.Forms yerel görünümleri
+description: İOS, Android ve evrensel Windows Platformu (UWP) yerel görünümleri doğrudan Xamarin.Forms başvurulabilir ve Xamarin.Forms görünümlerle etkileşim kurabilirsiniz.
 ms.prod: xamarin
 ms.assetid: 2294a023-d763-41de-a9da-c2bfc239a132
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 06459b9b44ac6991cacc8d9fdfccbf2ecabfcac0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b2ce371767b5f22af421ab99cdb291b2dbcf1143
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244334"
 ---
-# <a name="native-views"></a>Yerel görünümleri
+# <a name="native-views-in-xamarinforms"></a>Xamarin.Forms yerel görünümleri
 
 _İOS, Android ve evrensel Windows Platformu (UWP) yerel görünümleri doğrudan Xamarin.Forms başvurulabilir. Xamarin.Forms görünümleri ile etkileşim kurabilir ve özellikleri ve olay işleyicileri yerel görünümler üzerinde ayarlanabilir._
 

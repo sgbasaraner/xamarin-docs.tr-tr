@@ -1,16 +1,18 @@
 ---
 title: Bölüm 13 özeti. Bit eşlemler
+description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 13 özeti. Bit eşlemler'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 76551057abc1abdd150591c0a1be39e9f68c4278
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d95e801f6a239e894c1f6baa68015659af9eba35
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241561"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Bölüm 13 özeti. Bit eşlemler
 
@@ -143,7 +145,7 @@ Android için bit eşlemler çeşitli alt klasörlerinde depolanan **kaynakları
 
 Bir kare inç işlenmesine yönelik bir bit eşlem için bit eşlem'in çeşitli sürümlerine aynı adlı ancak farklı bir boyutu vardır ve bu klasörlerde depolanan:
 
-- drawable-ldpi/MyImage.jpg at 120 pixels square
+- drawable-ldpi/Görüntüm.jpg, kare 120 piksel
 - drawable-mdpi/Görüntüm.jpg, 160 piksel kare
 - drawable-hdpi/Görüntüm.jpg, kare 240 piksel
 - drawable-xhdpi/Görüntüm.jpg, 320 piksel kare
@@ -156,7 +158,7 @@ Windows çalışma zamanı projeleri, CİHAZDAN bağımsız birim başına pikse
 
 - MyImage.scale-200.jpg, 320 piksel kare
 
-Yalnızca bazı yüzdeleri geçerlidir. Bu kitap örnek programlar yalnızca görüntülerle dahil **ölçek-200** sonekleri ancak dahil geçerli Xamarin.Forms çözümünü şablonları **ölçek 100**, **ölçek 125**, **ölçek 150**, ve **ölçek 400**. 
+Yalnızca bazı yüzdeleri geçerlidir. Bu kitap örnek programlar yalnızca görüntülerle dahil **ölçek-200** sonekleri ancak dahil geçerli Xamarin.Forms çözümünü şablonları **ölçek 100**, **ölçek 125**, **ölçek 150**, ve **ölçek 400**.
 
 Bit eşlemler platform projelerine eklerken **yapı eylemi** olmalıdır:
 

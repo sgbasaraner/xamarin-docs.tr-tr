@@ -1,17 +1,18 @@
 ---
 title: Azure arama ile veri arama
-description: Azure Search dizin oluşturma ve karşıya yüklenen veriler için özellikleri sorgulama sağlayan bir bulut hizmetidir. Bu, geleneksel bir uygulamada arama işlevini uygulama ile ilişkili arama algoritması karmaşıklık ve altyapı gereksinimleri kaldırır. Bu makalede, Microsoft Azure arama kitaplığı bir Xamarin.Forms uygulamasına Azure Search tümleştirmek için nasıl kullanılacağı gösterilmektedir.
+description: Bu makalede, Microsoft Azure arama kitaplığı bir Xamarin.Forms uygulamasına Azure Search tümleştirmek için nasıl kullanılacağı gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: b0542b330e54a41a0cbe6ffe364def78ab6386b8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb1ebec25d747f1188f39e9c9032145bcdc3cb97
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242134"
 ---
 # <a name="searching-data-with-azure-search"></a>Azure arama ile veri arama
 
@@ -278,4 +279,4 @@ Bu makalede, Microsoft Azure arama kitaplığı bir Xamarin.Forms uygulamasına 
 
 - [Azure arama (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureSearch/)
 - [Azure Search belgeleri](/azure/search/)
-- [Microsoft Azure Search Library](https://www.nuget.org/packages/Microsoft.Azure.Search/)
+- [Microsoft Azure arama kitaplığı](https://www.nuget.org/packages/Microsoft.Azure.Search/)

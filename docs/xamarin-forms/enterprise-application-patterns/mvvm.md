@@ -1,19 +1,20 @@
 ---
-title: MVVM
+title: Model-View-ViewModel düzeni
+description: Bu bölümde MVVM düzeni eShopOnContainers mobil uygulama düzgün bir şekilde uygulama kullanıcı arabirimi iş ve sunu mantığını ayırmak için nasıl kullandığını açıklar.
 ms.prod: xamarin
 ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 03a3c411c7031ece32a8987b480f96ad39909201
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fe2cace6a0fc3a1d901f55556eed09380f8f2006
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793963"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245438"
 ---
-# <a name="mvvm"></a>MVVM
+# <a name="the-model-view-viewmodel-pattern"></a>Model-View-ViewModel düzeni
 
 Xamarin.Forms geliştirme deneyimi genellikle bir kullanıcı arabirimi XAML'de oluşturma ve kullanıcı arabiriminde işleyen arka plan kod ekleme içerir. Uygulamaları değiştirilir ve boyut ve kapsam büyümesine gibi karmaşık bakım sorunları ortaya çıkabilir. Bu sorunları UI denetimleri ve UI değişiklikleri ve birim testi kodun zorluk hale maliyetini artırır iş mantığı arasında sıkı bağ içerir.
 

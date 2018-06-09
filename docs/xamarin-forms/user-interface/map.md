@@ -1,19 +1,20 @@
 ---
-title: eşleme
-description: Xamarin.Forms her platformda yerel eşlemesi API'lerini kullanır.
+title: Xamarin.Forms eşleme
+description: Bu makalede Xamarin.Forms harita sınıfının bir bilinen kullanıcılar için deneyimi eşlemeleri sağlamak için her platformda Yerel Harita API'leri kullanmak üzere nasıl kullanılacağını açıklar.
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6063732e08680974b8d4a2358bfd85b176b36aec
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 9bd4c810db0397d84803be7c38f625b9b047c3da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245481"
 ---
-# <a name="map"></a>eşleme
+# <a name="xamarinforms-map"></a>Xamarin.Forms eşleme
 
 _Xamarin.Forms her platformda yerel eşlemesi API'lerini kullanır._
 
@@ -80,7 +81,7 @@ Konum Hizmetleri iOS erişmek için aşağıdaki anahtarları ayarlamanız gerek
 - iOS 10 ve önceki
     - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – uygulama kullanımda olduğunda konum hizmetleri kullanmak için
     - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – her zaman konum Hizmetleri kullanma    
-    
+
 İOS 11 ve önceki desteklemek için tüm üç anahtarları içerebilir: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, ve `NSLocationAlwaysUsageDescription`.
 
 Bu anahtarları için XML gösterimi **Info.plist** aşağıda gösterilmiştir. Güncelleştirmeniz gerekir `string` uygulamanızı konum bilgileri nasıl kullanarak yansıtmak için değerler:

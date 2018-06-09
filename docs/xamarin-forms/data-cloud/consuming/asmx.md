@@ -1,17 +1,18 @@
 ---
 title: Bir ASP.NET Web hizmeti (ASMX) kullanma
-description: ASMX Basit Nesne Erişim Protokolü (SOAP) kullanarak iletileri gönder web hizmetleri oluşturma yeteneği sağlar. SOAP oluşturmak ve web hizmetlerine erişme platformdan bağımsız ve dilden bağımsız bir protokoldür. ASMX hizmet tüketicileri herhangi bir şey platform, nesne modeli ya da hizmet uygulamak için kullanılan programlama dili hakkında bilmeniz gerek yoktur. Bunlar yalnızca SOAP ileti gönderme ve alma nasıl anlamanız gerekir. Bu makalede, bir Xamarin.Forms uygulaması ASMX SOAP hizmetinden kullanma gösterilmektedir.
+description: Bu makalede, bir Xamarin.Forms uygulaması ASMX SOAP hizmetinden kullanma gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: c45f0de039abc3f98b7c269f183e2883a495910b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6ec8168a8da64dbf3dfeb805856a4d91c9ec78ca
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242069"
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>Bir ASP.NET Web hizmeti (ASMX) kullanma
 

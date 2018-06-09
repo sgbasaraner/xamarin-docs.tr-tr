@@ -1,19 +1,20 @@
 ---
-title: Özel oluşturucu
-description: Xamarin.Forms kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir. Özel oluşturucu görünümünü ve davranışını her platformda Xamarin.Forms denetimlerin özelleştirmek için bu işlemi geçersiz kılma geliştiriciler olanak tanır.
+title: Xamarin.Forms özel Oluşturucu
+description: Özel oluşturucu yerel denetimlerin görünümünü ve Xamarin.Forms denetimleri davranışını özelleştirmek için her platformda işleme geçersiz kılma geliştiriciler olanak tanır.
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 6a2ee4b09426e6b4ff6dac7e1fd5221fc5b6d750
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a88462052906e68fd85a07161e8b5bb63a61e69d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239896"
 ---
-# <a name="custom-renderers"></a>Özel oluşturucu
+# <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms özel Oluşturucu
 
 _Xamarin.Forms kullanıcı arabirimleri, her platform için uygun görünüm ve kullanımında korumak Xamarin.Forms uygulamaların izin verecek şekilde hedef platformu yerel denetimleri kullanarak işlenir. Özel oluşturucu görünümünü ve davranışını her platformda Xamarin.Forms denetimlerin özelleştirmek için bu işlemi geçersiz kılma geliştiriciler olanak tanır._
 
@@ -55,7 +56,7 @@ Bu makale için özel Oluşturucu Oluşturma gösteren bir `HybridWebView` çağ
 
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[Bir video oynatıcı uygulama](video-player/index.md)
 
-Bu makalede özel bir uygulama Oluşturucu yazma gösterilmektedir `VideoPlayer` videolar web, uygulama kaynakları katıştırılmış videolar ya da, kullanıcının cihaz üzerindeki video kitaplığında depolanan videoları yürütebilirsiniz denetim. Yöntemleri ve salt okunur bağlanabilir özelliklerini uygulama da dahil olmak üzere çeşitli teknikler gösterilmiştir. 
+Bu makalede özel bir uygulama Oluşturucu yazma gösterilmektedir `VideoPlayer` videolar web, uygulama kaynakları katıştırılmış videolar ya da, kullanıcının cihaz üzerindeki video kitaplığında depolanan videoları yürütebilirsiniz denetim. Yöntemleri ve salt okunur bağlanabilir özelliklerini uygulama da dahil olmak üzere çeşitli teknikler gösterilmiştir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

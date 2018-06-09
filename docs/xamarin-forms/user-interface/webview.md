@@ -1,20 +1,20 @@
 ---
-title: Web görünümü
-description: Yerel veya ağ web içerik ve belgeleri sunar.
+title: Xamarin.Forms Web görünümü
+description: Bu makalede, kullanıcılara Xamarin.Forms WebView sınıfı yerel sunmak için nasıl kullanılacağı veya ağ web içerik ve belgeleri açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 7ce48e48e41c3554094a12a220ae197cc4ec3fff
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: df004bd2a580e48137162d28ca3974521266ae7a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847998"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245650"
 ---
-# <a name="webview"></a>Web görünümü
+# <a name="xamarinforms-webview"></a>Xamarin.Forms Web görünümü
 
 [Web görünümü](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) web ve HTML görüntüleme için uygulamanızda içerik görülmektedir. Farklı `OpenUri`, cihazda web tarayıcısı için kullanıcının aldığı `WebView` uygulamanızı HTML içeriğini görüntüler.
 

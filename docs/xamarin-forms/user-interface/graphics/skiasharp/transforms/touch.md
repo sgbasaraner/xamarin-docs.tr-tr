@@ -1,17 +1,18 @@
 ---
 title: Dokunma işlemeleri
-description: Dokunma sürükleyerek, çimdik ve döndürme uygulamak için kullanım matris dönüşümleri
+description: Bu makalede, matris dönüşümleri dokunma sürükleyerek, çimdik ve döndürme uygulamak için nasıl kullanılacağını açıklar ve bu örnek kodu ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2018
-ms.openlocfilehash: e8e5cc7b1a00f9822c4cbb4859a02b7546102ca0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a53fe287e74070adb22c2a7c67d4b7cc10b35d3e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244292"
 ---
 # <a name="touch-manipulations"></a>Dokunma işlemeleri
 
@@ -753,9 +754,9 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-Bu `SKMatrix` aşağıda gösterilen dokunma mantığı tarafından nesne değiştirdi. 
+Bu `SKMatrix` aşağıda gösterilen dokunma mantığı tarafından nesne değiştirdi.
 
-Arka plan kod dosyasının kalan `TouchEffect` olay işleyicisi. Parmak geçerli konumunu dönüştürerek başlayan bir `SKPoint` değeri. İçin `Pressed` eylem türü işleyici denetler başka bir parmak ekran değecek ve parmak bit eşlem sınırları içinde olduğunu. 
+Arka plan kod dosyasının kalan `TouchEffect` olay işleyicisi. Parmak geçerli konumunu dönüştürerek başlayan bir `SKPoint` değeri. İçin `Pressed` eylem türü işleyici denetler başka bir parmak ekran değecek ve parmak bit eşlem sınırları içinde olduğunu.
 
 Kodun önemli bir parçası olan bir `if` iki çağrıları içeren deyimi `Math.Pow` yöntemi. Bu matematik parmak konumun bit eşlem doldurur elips dışında olup olmadığını denetler. Bu nedenle, bir ölçeklendirme işlemi ise. Parmak bit eşlem köşelerinde biridir ve bir pivot noktası karşı köşe olan belirlenir. Parmak bu elips içinde ise, normal bir kaydırma işlemi.:
 

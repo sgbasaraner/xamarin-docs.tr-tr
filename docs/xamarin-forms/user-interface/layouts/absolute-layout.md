@@ -1,20 +1,20 @@
 ---
-title: AbsoluteLayout
-description: AbsoluteLayout piksel mükemmel Uı'lar oluşturmak için kullanın.
+title: Xamarin.Forms AbsoluteLayout
+description: Bu makalede Xamarin.Forms AbsoluteLayout sınıfı piksel mükemmel Uı'lar oluşturmak için nasıl kullanılacağı açıklanmaktadır. Bu sınıf yerleştirir ve alt öğelerini kendi boyutunu ve konumunu veya mutlak değerler orantılı boyutları.
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 506a9a4916cf2cf9105d59f56648e339d664a3d2
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f36334bca9e7401f35d4b6181b47c0f64923f652
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848401"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244463"
 ---
-# <a name="absolutelayout"></a>AbsoluteLayout
+# <a name="xamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
 [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) yerleştirir ve alt öğelerini kendi boyutunu ve konumunu veya mutlak değerler orantılı boyutları. Alt görünümleri konumlandırılmış ve boyutlu orantılı değerleri veya statik değerleri kullanarak ve orantılı olabilir ve statik değerler karışabilir.
 

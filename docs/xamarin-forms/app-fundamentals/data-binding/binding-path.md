@@ -1,19 +1,20 @@
 ---
-title: Bağlama yolu
-description: Veri bağlamaları erişim alt özellikleri ve koleksiyon üyelerine kullanın
+title: Xamarin.Forms bağlama yolu
+description: Bu makalede Xamarin.Forms veri bağlamaları alt özellikleri ve bağlama sınıfın yolu özelliği koleksiyon üyeleriyle erişmek için nasıl kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: f75cfcf4bfd5ffa71699f62b30145b732421d964
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d7c3b1ba991380451b4a82c389c4d46e950bc914
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240479"
 ---
-# <a name="binding-path"></a>Bağlama yolu
+# <a name="xamarinforms-binding-path"></a>Xamarin.Forms bağlama yolu
 
 Tüm önceki örneklerde veri bağlama, [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) özelliği `Binding` sınıfı (veya [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Path/) özelliği `Binding` biçimlendirme uzantısı) ayarlandı tek bir özelliğe. Ayarlamak gerçekten mümkündür `Path` için bir *alt özellik* (bir özelliği bir özellik), veya bir koleksiyonun üyesi.
 
@@ -29,7 +30,7 @@ Tüm önceki örneklerde veri bağlama, [ `Path` ](https://developer.xamarin.com
 {Binding Source={x:Reference timePicker},
          Path=Time.TotalSeconds}
 ```
-         
+
 `Time` Özelliği türüdür `TimeSpan`, sahip olduğu bir `TotalSeconds` özelliği. `Time` Ve `TotalSeconds` özellikleri simply bir nokta ile bağlı. Öğeleri `Path` dize her zaman başvurun özellikleri ve bu özelliklerin türleri için değil.
 
 Örnek ve diğerleri birçok'nda gösterilen **yolu Çeşitlemeler** sayfa:
@@ -50,7 +51,7 @@ Tüm önceki örneklerde veri bağlama, [ `Path` ](https://developer.xamarin.com
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout Margin="10, 0">
         <TimePicker x:Name="timePicker" />
 
@@ -61,7 +62,7 @@ Tüm önceki örneklerde veri bağlama, [ `Path` ](https://developer.xamarin.com
         <Label Text="{Binding Source={x:Reference page},
                               Path=Content.Children.Count,
                               StringFormat='There are {0} children in this StackLayout'}" />
-        
+
         <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
                               Path=DateTimeFormat.DayNames[3],
                               StringFormat='The middle day of the week is {0}'}" />
@@ -156,7 +157,7 @@ Bağlama kaynak türünü görüntüler veya `DataBindingDemos.PathVariationsPag
 
 Türü `Content` özelliği olarak açığa şimdi `Xamarin.Forms.StackLayout`. Ekleme `Children` özelliğine `Path` ve türü `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`, bir sınıf Xamarin.Forms, ancak bir koleksiyon türü için açıkça iç olduğu. Bir dizin olarak ekleyin ve türü `Xamarin.Forms.Label`. Bu şekilde devam eder.
 
-Xamarin.Forms bağlama yolu işlerken yükleyen bir `PropertyChanged` işleyicisi uygulayan yolda herhangi bir nesne üzerinde `INotifyPropertyChanged` arabirimi. Örneğin, son bağlama değişikliği ilk tepki verdiğini `Label` çünkü `Text` özellik değişikliği. 
+Xamarin.Forms bağlama yolu işlerken yükleyen bir `PropertyChanged` işleyicisi uygulayan yolda herhangi bir nesne üzerinde `INotifyPropertyChanged` arabirimi. Örneğin, son bağlama değişikliği ilk tepki verdiğini `Label` çünkü `Text` özellik değişikliği.
 
 Bağlama yolu özelliğinde uygulamayan varsa `INotifyPropertyChanged`, bu özellik herhangi bir değişiklik yok sayılacak. Yalnızca dize özellikleri ve alt özellikleri hiçbir zaman olduğunda geçersiz Bu teknik kullanması gereken şekilde bazı değişiklikler tamamen bağlama yolu geçersiz.
 

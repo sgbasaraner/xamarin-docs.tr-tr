@@ -1,17 +1,18 @@
 ---
 title: Bilişsel hizmetler zekasıyla ekleme
-description: Bilişsel Hizmetler Microsoft API'leri, SDK'ları ve Hizmetleri yüz tanıma, konuşma tanıma ve dil anlama gibi özellikler ekleyerek uygulamalarını daha akıllı hale geliştiricilerin kullanımına kümesidir. Bu makalede bazı Microsoft Bilişsel hizmet API'leri çağırmak nasıl gösteren bir örnek uygulama için bir giriş sağlar.
+description: Bu makalede bazı Microsoft Bilişsel hizmet API'leri çağırmak nasıl gösteren örnek bir uygulama için bir giriş sağlar.
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 86253e42db7da2da6eb8b03e2d4a4b3c943b7e17
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: c577aaf1991082baaf34248ee31899902f692d0b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241529"
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Bilişsel hizmetler zekasıyla ekleme
 

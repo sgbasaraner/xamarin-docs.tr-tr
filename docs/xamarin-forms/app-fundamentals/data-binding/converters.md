@@ -1,19 +1,20 @@
 ---
-title: Bağlama değer dönüştürücüler
-description: Cast veya veri bağlama içindeki değerleri Dönüştür
+title: Xamarin.Forms bağlama değer dönüştürücüler
+description: Bu makalede, cast veya (olan olarak da bilinen bir bağlama dönüştürücü ya da bağlama değer dönüştürücüsü) bir değer dönüştürücüsü uygulayarak Xamarin.Forms veri bağlama içindeki değerleri dönüştürme açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 260db2372977202df3d73e32645a358066146b40
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a5bd52d43ef93013537f30c7d5e0c31cbf336d07
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241835"
 ---
-# <a name="binding-value-converters"></a>Bağlama değer dönüştürücüler
+# <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms bağlama değer dönüştürücüler
 
 Veri bağlamaları genellikle veri kaynağı özelliğinden hedef özelliğe ve hedef özelliğinden bazı durumlarda kaynak özelliğine aktarın. Bu aktarma, kaynak ve hedef özellikleri aynı türde olduğunda ya da diğer türüne örtük bir dönüştürme aracılığıyla bir türe dönüştürülüp basittir. Bu durumda olmadığı durumlarda, tür dönüştürme gerçekleşmesi gerekir.
 

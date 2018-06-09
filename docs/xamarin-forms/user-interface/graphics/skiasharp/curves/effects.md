@@ -1,19 +1,20 @@
 ---
-title: Yol etkileri
-description: Yollara vuruş yapması ve doldurmak için kullanılacak izin verecek çeşitli yol etkilerini Bul
+title: SkiaSharp yolu efektleri
+description: Bu makalede vuruş yapması ve doldurmak için kullanılacak yollara izin verecek ve bu örnek kodu ile gösterir çeşitli SkiaSharp yol etkilerini açıklar.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 76192f48bedebb183c64c83e34c3908cc85d591c
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2071a2fb140d0e9c78d4c86d6aa70d3606dc1f98
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244116"
 ---
-# <a name="path-effects"></a>Yol etkileri
+# <a name="path-effects-in-skiasharp"></a>SkiaSharp yolu efektleri
 
 _Yollara vuruş yapması ve doldurmak için kullanılacak izin verecek çeşitli yol etkilerini Bul_
 
@@ -400,7 +401,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 Belirtilen yol `SKPathEffect.Create1DPath` yöntemi her zaman doldurulur. Belirtilen yol `DrawPath` yöntemi, her zaman vuruş `SKPaint` nesnesi kendi `PathEffect` özelliği 1 D yolu etkiyi ayarlanmış. Dikkat `pathPaint` nesne sahip Hayır `Style` normalde için varsayılan olarak `Fill`, ancak yolun bakılmaksızın vuruş.
 
-İçinde kullanılan kutusunu `Translate` 20 piksel kare, bir örnektir ve `advance` bağımsız değişkeni, 24'e ayarlanır. Bu farkı yatay veya dikey çizgi kabaca, ancak kutusunun çapraz 28,3 piksel olduğundan satır çapraz olduğunda kutuları biraz üst üste kutuları arasında bir boşluk neden olur. 
+İçinde kullanılan kutusunu `Translate` 20 piksel kare, bir örnektir ve `advance` bağımsız değişkeni, 24'e ayarlanır. Bu farkı yatay veya dikey çizgi kabaca, ancak kutusunun çapraz 28,3 piksel olduğundan satır çapraz olduğunda kutuları biraz üst üste kutuları arasında bir boşluk neden olur.
 
 Elmas şeklinde `Rotate` örnektir aynı zamanda 20 piksel genişliğinde. `advance` Noktalarının elmas satır eğimi birlikte döndürülmüş olarak touch devam şekilde 20'ye ayarlayın.
 
@@ -585,9 +586,9 @@ public class ConveyorBeltPage : ContentPage
         bucketPath.AddRect(new SKRect(-5, -3, 25, 3));
 
         // Sides
-        bucketPath.AddRoundedRect(new SKRect(25, -19, 27, 18), 10, 10, 
+        bucketPath.AddRoundedRect(new SKRect(25, -19, 27, 18), 10, 10,
                                   SKPathDirection.CounterClockwise);
-        bucketPath.AddRoundedRect(new SKRect(63, -19, 65, 18), 10, 10, 
+        bucketPath.AddRoundedRect(new SKRect(63, -19, 65, 18), 10, 10,
                                   SKPathDirection.CounterClockwise);
 
         // Five slats
@@ -595,20 +596,20 @@ public class ConveyorBeltPage : ContentPage
         {
             bucketPath.MoveTo(25, -19 + 8 * i);
             bucketPath.LineTo(25, -13 + 8 * i);
-            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                              SKPathDirection.CounterClockwise, 65, -13 + 8 * i);
             bucketPath.LineTo(65, -19 + 8 * i);
-            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                              SKPathDirection.Clockwise, 25, -19 + 8 * i);
             bucketPath.Close();
         }
 
         // Arc to suggest the hidden side
         bucketPath.MoveTo(25, -17);
-        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                          SKPathDirection.Clockwise, 65, -17);
         bucketPath.LineTo(65, -19);
-        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                          SKPathDirection.CounterClockwise, 25, -19);
         bucketPath.Close();
 
@@ -619,7 +620,7 @@ public class ConveyorBeltPage : ContentPage
     ...
 ```
 
-Demet oluşturma kodu demet biraz daha büyük ve betiklerdeki kapatma iki dönüşümler ile tamamlar. Bu dönüşümler uygulanırken önceki kod tüm koordinatlarında ayarlama daha kolay. 
+Demet oluşturma kodu demet biraz daha büyük ve betiklerdeki kapatma iki dönüşümler ile tamamlar. Bu dönüşümler uygulanırken önceki kod tüm koordinatlarında ayarlama daha kolay.
 
 `PaintSurface` İşleyici taşıyıcı bandı için bir yol tanımlayarak başlar. Bu, yalnızca satır çifti ve 20 piksel genişliğinde gri koyu satırıyla çizilir noktalı daireler çiftinden oluşur:
 
@@ -642,10 +643,10 @@ public class ConveyorBeltPage : ContentPage
         {
             // Straight verticals capped by semicircles on top and bottom
             conveyerPath.MoveTo(width, verticalMargin);
-            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large, 
+            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large,
                                SKPathDirection.Clockwise, 2 * width, verticalMargin);
             conveyerPath.LineTo(2 * width, info.Height - verticalMargin);
-            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large, 
+            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large,
                                SKPathDirection.Clockwise, width, info.Height - verticalMargin);
             conveyerPath.Close();
 
@@ -665,8 +666,8 @@ public class ConveyorBeltPage : ContentPage
             float phase = -t * spacing;
 
             // Create the buckets PathEffect
-            using (SKPathEffect bucketsPathEffect = 
-                        SKPathEffect.Create1DPath(bucketPath, spacing, phase, 
+            using (SKPathEffect bucketsPathEffect =
+                        SKPathEffect.Create1DPath(bucketPath, spacing, phase,
                                                   SKPath1DPathEffectStyle.Rotate))
             {
                 // Set it to the Paint object and draw the path again
@@ -680,7 +681,7 @@ public class ConveyorBeltPage : ContentPage
 
 Taşıyıcı bandı çizim için mantığı yatay modda çalışmaz.
 
-Demet 200 piksel taşıyıcı bandı birbirinden hakkında aralıklı. Ancak, taşıyıcı bandı uzun olarak anlamına 200 piksel olan büyük olasılıkla `phase` bağımsız değişkeni `SKPathEffect.Create1DPath` olan animasyon demet içine ve dışına varlığı pop. 
+Demet 200 piksel taşıyıcı bandı birbirinden hakkında aralıklı. Ancak, taşıyıcı bandı uzun olarak anlamına 200 piksel olan büyük olasılıkla `phase` bağımsız değişkeni `SKPathEffect.Create1DPath` olan animasyon demet içine ve dışına varlığı pop.
 
 Bu nedenle, program ilk adlı değeri hesaplar `length` diğer bir deyişle taşıyıcı bandı uzunluğu. Düz çizgiler ve noktalı daireler taşıyıcı bandı oluşur, basit bir hesaplama olmasıdır. Ardından, demet sayısı bölünmesiyle hesaplanır `length` 200 tarafından. Bu en yakın tamsayıya yuvarlanır ve sayı ise bölünmüş `length`. Bir tam sayı sayısı için bir aralığı sonucudur. `phase` Olmayan yalnızca bir kısmı, bağımsız değişken.
 
@@ -708,11 +709,11 @@ canvas.DrawPath(newPath, newPaint);
 public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 ```
 
-`width` Bağımsız değişkeni tarama satırları vuruşun genişliğini belirtir. `matrix` Parametresi ölçekleme ve isteğe bağlı döndürme birleşimidir. Ölçeklendirme faktörü Skia tarama satırları boşluk kullanmasını piksel artışı gösterir. Satırları arasında ayrım eksi ölçeklendirme faktördür `width` bağımsız değişkeni. Ölçeklendirme faktörü küçük veya eşit olup olmadığını `width` değeri, tarama satırları boşluk olacaktır ve alan doldurulacak görüntülenir. Yatay ve dikey ölçekleme için aynı değeri belirtin. 
+`width` Bağımsız değişkeni tarama satırları vuruşun genişliğini belirtir. `matrix` Parametresi ölçekleme ve isteğe bağlı döndürme birleşimidir. Ölçeklendirme faktörü Skia tarama satırları boşluk kullanmasını piksel artışı gösterir. Satırları arasında ayrım eksi ölçeklendirme faktördür `width` bağımsız değişkeni. Ölçeklendirme faktörü küçük veya eşit olup olmadığını `width` değeri, tarama satırları boşluk olacaktır ve alan doldurulacak görüntülenir. Yatay ve dikey ölçekleme için aynı değeri belirtin.
 
 Varsayılan olarak, tarama satırları yatay. Varsa `matrix` tarama satırları saat yönünde Döndürülmüş, parametre döndürme içerir.
 
-**Tarama doldurun** sayfa bu yolu etkiyi gösterir. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Sınıfı tanımlayan üç yolu etkileri alanlar olarak, 6 piksel birbirinden olduklarını belirten bir ölçeklendirme faktörü ile 3 piksel genişliği yatay tarama satırıyla ilk aralıklı. Satırları arasında ayrım bu nedenle 3 pikseldir. 6 piksel genişliği dikey tarama satırıyla 24 piksel (Bu nedenle ayrılmasıdır 18 piksel), birbirinden aralıklı için ikinci yol etkili olan ve üçüncü Yatık tarama 12 piksel geniş aralıklı 36 piksel birbirinden satırlar aranır. 
+**Tarama doldurun** sayfa bu yolu etkiyi gösterir. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Sınıfı tanımlayan üç yolu etkileri alanlar olarak, 6 piksel birbirinden olduklarını belirten bir ölçeklendirme faktörü ile 3 piksel genişliği yatay tarama satırıyla ilk aralıklı. Satırları arasında ayrım bu nedenle 3 pikseldir. 6 piksel genişliği dikey tarama satırıyla 24 piksel (Bu nedenle ayrılmasıdır 18 piksel), birbirinden aralıklı için ikinci yol etkili olan ve üçüncü Yatık tarama 12 piksel geniş aralıklı 36 piksel birbirinden satırlar aranır.
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -721,10 +722,10 @@ public class HatchFillPage : ContentPage
 
     SKPathEffect horzLinesPath = SKPathEffect.Create2DLine(3, SKMatrix.MakeScale(6, 6));
 
-    SKPathEffect vertLinesPath = SKPathEffect.Create2DLine(6, 
+    SKPathEffect vertLinesPath = SKPathEffect.Create2DLine(6,
         Multiply(SKMatrix.MakeRotationDegrees(90), SKMatrix.MakeScale(24, 24)));
 
-    SKPathEffect diagLinesPath = SKPathEffect.Create2DLine(12, 
+    SKPathEffect diagLinesPath = SKPathEffect.Create2DLine(12,
         Multiply(SKMatrix.MakeScale(36, 36), SKMatrix.MakeRotationDegrees(45)));
 
     SKPaint strokePaint = new SKPaint
@@ -761,14 +762,14 @@ public class HatchFillPage : ContentPage
 
         using (SKPath roundRectPath = new SKPath())
         {
-            // Create a path 
+            // Create a path
             roundRectPath.AddRoundedRect(
                 new SKRect(50, 50, info.Width - 50, info.Height - 50), 100, 100);
 
             // Horizontal hatch marks
             fillPaint.PathEffect = horzLinesPath;
             fillPaint.Color = SKColors.Red;
-            canvas.DrawPath(roundRectPath, fillPaint); 
+            canvas.DrawPath(roundRectPath, fillPaint);
 
             // Vertical hatch marks
             fillPaint.PathEffect = vertLinesPath;
@@ -808,18 +809,18 @@ Android ekran gerçekten gibi görünmüyor: ekran görüntüsü ölçeklendirme
 public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 ```
 
-`SKMatrix` Ölçeklendirme etkenleri çoğaltılmış yolunun yatay ve dikey boşluğu gösterir. Ancak bu kullanarak yolu döndürülemiyor `matrix` bağımsız değişkeni; Döndürülmüş yolu istiyorsanız yol döndürmek kullanarak `Transform` tarafından tanımlanan yöntemi `SKPath`. 
+`SKMatrix` Ölçeklendirme etkenleri çoğaltılmış yolunun yatay ve dikey boşluğu gösterir. Ancak bu kullanarak yolu döndürülemiyor `matrix` bağımsız değişkeni; Döndürülmüş yolu istiyorsanız yol döndürmek kullanarak `Transform` tarafından tanımlanan yöntemi `SKPath`.
 
 Çoğaltılmış yolu normal olarak doldurulan alanı yerine ekranın sol ve üst kenarlar ile hizalanır. 0 ve yatay ve dikey uzaklık sol ve üst iki tarafından belirtmek için ölçeklendirme etkenleri arasında çeviri Etkenler sağlayarak bu davranışı geçersiz kılabilirsiniz.
 
-**Yolu döşemeyi doldurmak** sayfa bu yolu etkiyi gösterir. Alanı döşeme için kullanılan yolu alanı olarak tanımlanan [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) sınıfı. Bu yol 80 piksel kare olduğu anlamına gelir yatay ve dikey koordinatlarını aralıktan – 40 40 için: 
+**Yolu döşemeyi doldurmak** sayfa bu yolu etkiyi gösterir. Alanı döşeme için kullanılan yolu alanı olarak tanımlanan [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) sınıfı. Bu yol 80 piksel kare olduğu anlamına gelir yatay ve dikey koordinatlarını aralıktan – 40 40 için:
 
 ```csharp
 public class PathTileFillPage : ContentPage
 {
     SKPath tilePath = SKPath.ParseSvgPathData(
-        "M -20 -20 L 2 -20, 2 -40, 18 -40, 18 -20, 40 -20, " + 
-        "40 -12, 20 -12, 20 12, 40 12, 40 40, 22 40, 22 20, " + 
+        "M -20 -20 L 2 -20, 2 -40, 18 -40, 18 -20, 40 -20, " +
+        "40 -12, 20 -12, 20 12, 40 12, 40 40, 22 40, 22 20, " +
         "-2 20, -2 40, -20 40, -20 8, -40 8, -40 -8, -20 -8 Z");
     ...
     void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -840,7 +841,7 @@ public class PathTileFillPage : ContentPage
                 paint.PathEffect = pathEffect;
 
                 canvas.DrawRoundRect(
-                    new SKRect(50, 50, info.Width - 50, info.Height - 50), 
+                    new SKRect(50, 50, info.Width - 50, info.Height - 50),
                     100, 100, paint);
             }
         }
@@ -935,7 +936,7 @@ Bazen bilgisayar grafik kusursuz düz çizgilerden istediğinizi oldukça değil
 public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, UInt32 seedAssist)
 ```
 
-Bu yol etkiyi vuruş yapması veya doldurmak için kullanabilirsiniz. Satırları bağlı parçalara ayrılmış — yaklaşık uzunluğu tarafından belirtilen `segLength` — ve farklı yönlerde genişletebilirsiniz. Özgün satır sapma kapsamını tarafından belirtilen `deviation`. 
+Bu yol etkiyi vuruş yapması veya doldurmak için kullanabilirsiniz. Satırları bağlı parçalara ayrılmış — yaklaşık uzunluğu tarafından belirtilen `segLength` — ve farklı yönlerde genişletebilirsiniz. Özgün satır sapma kapsamını tarafından belirtilen `deviation`.
 
 Son değişken efekt için kullanılan sözde rastgele dizisi oluşturmak için kullanılan çekirdek değeri. Değişim etkisi farklı oluştururken çekirdeği biraz farklı görünecektir. Bağımsız değişken her programı çalıştırdığınızda etkisi aynı olduğu anlamına gelir sıfır varsayılan bir değeri yok. Ekran yeniden çizilmiş her farklı değişim istiyorsanız, çekirdek ayarlayabileceğiniz `Millisecond` özelliği bir `DataTime.Now` (örneğin) değeri.
 
@@ -1016,7 +1017,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
     using (SKPaint paint = new SKPaint())
     {
-        paint.Style = SKPaintStyle.Stroke; 
+        paint.Style = SKPaintStyle.Stroke;
         paint.StrokeWidth = 5;
         paint.Color = SKColors.Blue;
 
@@ -1144,7 +1145,7 @@ public partial class TapToOutlineThePathPage : ContentPage
         using (SKPath circlePath = new SKPath())
         {
             circlePath.AddCircle(info.Width / 2, info.Height / 2,
-                                 Math.Min(info.Width / 2, info.Height / 2) - 
+                                 Math.Min(info.Width / 2, info.Height / 2) -
                                  redThickStroke.StrokeWidth);
 
             if (!outlineThePath)
@@ -1217,9 +1218,9 @@ using (SKPath linkPath = new SKPath())
 }
 ```
 
-`outlinePath` Nesnesidir sonra özetini alıcı `linkPath` zaman onu vuruş belirtilen özelliklerle `strokePaint`. 
+`outlinePath` Nesnesidir sonra özetini alıcı `linkPath` zaman onu vuruş belirtilen özelliklerle `strokePaint`.
 
-Bu teknik kullanılarak başka bir örnek sonraki kullanılan yolu için yukarı gelen bir `SKPathEffect.Create2DPath` yöntemleri. 
+Bu teknik kullanılarak başka bir örnek sonraki kullanılan yolu için yukarı gelen bir `SKPathEffect.Create2DPath` yöntemleri.
 
 ## <a name="combining-path-effects"></a>Yol etkilerini birleştirme
 
@@ -1270,7 +1271,7 @@ public class CatsInFramePage : ContentPage
         StrokeWidth = 5
     };
 
-    SKPath scallopPath = 
+    SKPath scallopPath =
         SKPath.ParseSvgPathData("M 0 0 L 50 0 A 60 60 0 0 1 -50 0 Z");
 
     SKPaint framePaint = new SKPaint
@@ -1316,7 +1317,7 @@ public class CatsInFramePage : ContentPage
             outlinedCatPath);
 
         // Create a 1D path effect from the scallop path
-        SKPathEffect strokeEffect = 
+        SKPathEffect strokeEffect =
             SKPathEffect.Create1DPath(scallopPath, 75, 0, SKPath1DPathEffectStyle.Rotate);
 
         // Set the sum the effects to frame paint
@@ -1358,11 +1359,11 @@ Kullanmak için ortak olan `SKPathEffect.CreateCompose` bazı değişim başka b
 ```csharp
 public class DashedHatchLinesPage : ContentPage
 {
-    static SKPathEffect dashEffect = 
+    static SKPathEffect dashEffect =
         SKPathEffect.CreateDash(new float[] { 30, 30 }, 0);
 
     static SKPathEffect hatchEffect = SKPathEffect.Create2DLine(20,
-        Multiply(SKMatrix.MakeScale(60, 60), 
+        Multiply(SKMatrix.MakeScale(60, 60),
                  SKMatrix.MakeRotationDegrees(45)));
 
     SKPaint paint = new SKPaint()
@@ -1395,8 +1396,8 @@ public class DashedHatchLinesPage : ContentPage
 
         canvas.Clear();
 
-        canvas.DrawOval(info.Width / 2, info.Height / 2, 
-                        0.45f * info.Width, 0.45f * info.Height, 
+        canvas.DrawOval(info.Width / 2, info.Height / 2,
+                        0.45f * info.Width, 0.45f * info.Height,
                         paint);
     }
     ...

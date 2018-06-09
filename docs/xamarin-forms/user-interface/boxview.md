@@ -1,20 +1,20 @@
 ---
-title: BoxView
-description: Renkli bir dikdörtgen decoration, grafik ve etkileşim için kullanın.
+title: Xamarin.Forms BoxView
+description: Bu makalede, düzenleme, grafik ve bir Xamarin.Forms uygulaması etkileşim için renkli bir dikdörtgen kullanımı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 356d0effe55638902b6ee599a0d9fb7e9b8ade2d
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: edb2785362f2cc7377d9adb0c1a89a6fa2b08111
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848414"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244321"
 ---
-# <a name="boxview"></a>BoxView
+# <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
 [`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) belirtilen genişlik, yükseklik ve renk basit bir dikdörtgen işler. Kullanabileceğiniz `BoxView` decoration, ilkel grafik ve dokunma aracılığıyla kullanıcıyla etkileşim için.
 
@@ -45,7 +45,7 @@ Aşağıdaki üç özelliklerini çok sık ayarlarız `BoxView`:
 
 `WidthRequest` Ve `HeightRequest` özellikleri, bir rol yalnızca yürütmek `BoxView` olan *Kısıtlanmamış* düzeni. Düzen kapsayıcı alt kullanıcının boyut, örneğin, ne zaman bilmek gerektiğinde bu durumda `BoxView` otomatik ölçekli bir hücreye alt `Grid` düzeni. A `BoxView` de Kısıtlanmamış olduğunda kendi `HorizontalOptions` ve `VerticalOptions` özellikler ayarlanır değerlere dışında `LayoutOptions.Fill`. Varsa `BoxView` Kısıtlanmamış, olan ancak `WidthRequest` ve `HeightRequest` özellikleri ayarlı değil, sonra genişliği veya yüksekliği 40 birimleri ya da yaklaşık 1/4 inç mobil cihazlarda varsayılan değerlere ayarlanır.
 
-`WidthRequest` Ve `HeightRequest` varsa özelliklerini göz ardı `BoxView` olan *kısıtlı* içinde durumu seçilebilir uygular, kendi boyutu üzerinde düzeninde `BoxView`. 
+`WidthRequest` Ve `HeightRequest` varsa özelliklerini göz ardı `BoxView` olan *kısıtlı* içinde durumu seçilebilir uygular, kendi boyutu üzerinde düzeninde `BoxView`.
 
 A `BoxView` bir boyuttaki kısıtlı ve diğer Kısıtlanmamış. Örneğin, varsa `BoxView` dikey alt `StackLayout`, dikey boyutunu `BoxView` olan Kısıtlanmamış ve yatay boyut genellikle sınırlı değildir. Ancak bu yatay boyut için özel durumlar: varsa `BoxView` sahip kendi `HorizontalOptions` özelliği için bir şeyler dışında ayarlanmış `LayoutOptions.Fill`, yatay boyut da Kısıtlanmamış ise. Ayrıca mümkündür `StackLayout` kendisini bir Kısıtlanmamış yatay boyut; bu durumda olmasını `BoxView` yatay Kısıtlanmamış olacaktır.
 
@@ -60,7 +60,7 @@ A `BoxView` bir boyuttaki kısıtlı ve diğer Kısıtlanmamış. Örneğin, var
     <BoxView Color="CornflowerBlue"
              WidthRequest="160"
              HeightRequest="160"
-             VerticalOptions="Center" 
+             VerticalOptions="Center"
              HorizontalOptions="Center" />
 
 </ContentPage>
@@ -149,7 +149,7 @@ Kullanmak da mümkündür bir `BoxView` bir HTML benzeyecek şekilde `hr` (yatay
 <BoxView HeightRequest="3" />
 ```
 
-Bir paragraf metni tarafında her ikisi de kapsayan bir dikey çizgi son olarak, çizebilirsiniz `BoxView` ve `Label` yatay olarak `StackLayout`. Bu durumda, yüksekliğini `BoxView` yüksekliği ile aynıdır `StackLayout`, yüksekliğini tarafından yönetilen `Label`: 
+Bir paragraf metni tarafında her ikisi de kapsayan bir dikey çizgi son olarak, çizebilirsiniz `BoxView` ve `Label` yatay olarak `StackLayout`. Bu durumda, yüksekliğini `BoxView` yüksekliği ile aynıdır `StackLayout`, yüksekliğini tarafından yönetilen `Label`:
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -242,7 +242,7 @@ public class NamedColor
 }
 ```
 
-Program görselleri XAML dosyası içinde açıklanmıştır. `ItemsSource` Özelliği `ListView` statik olarak ayarlamanız `NamedColor.All` anlamına özelliği `ListView` tüm tek tek görüntüler `NamedColor` nesneler: 
+Program görselleri XAML dosyası içinde açıklanmıştır. `ItemsSource` Özelliği `ListView` statik olarak ayarlamanız `NamedColor.All` anlamına özelliği `ListView` tüm tek tek görüntüler `NamedColor` nesneler:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -290,7 +290,7 @@ Program görselleri XAML dosyası içinde açıklanmıştır. `ItemsSource` Öze
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-</ContentPage> 
+</ContentPage>
 ```
 
 `NamedColor` Tarafından biçimlendirilmiş nesneleri `ViewCell` veri şablonu olarak ayarlanmış nesne `ListView`. Bu şablonu içeren bir `BoxView` , `Color` özelliği bağlı `Color` özelliği `NamedColor` nesne.
@@ -388,15 +388,15 @@ public partial class MainPage : ContentPage
     static readonly int[, ,] numberPatterns = new int[10, 7, 5]
     {
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 1, 1}, { 1, 0, 1, 0, 1}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 1, 1}, { 1, 0, 1, 0, 1},
             { 1, 1, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 0, 1, 0, 0}, { 0, 1, 1, 0, 0}, { 0, 0, 1, 0, 0}, { 0, 0, 1, 0, 0}, 
+            { 0, 0, 1, 0, 0}, { 0, 1, 1, 0, 0}, { 0, 0, 1, 0, 0}, { 0, 0, 1, 0, 0},
             { 0, 0, 1, 0, 0}, { 0, 0, 1, 0, 0}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0},
             { 0, 0, 1, 0, 0}, { 0, 1, 0, 0, 0}, { 1, 1, 1, 1, 1}
         },
         {
@@ -404,27 +404,27 @@ public partial class MainPage : ContentPage
             { 0, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 0, 0, 1, 0}, { 0, 0, 1, 1, 0}, { 0, 1, 0, 1, 0}, { 1, 0, 0, 1, 0}, 
+            { 0, 0, 0, 1, 0}, { 0, 0, 1, 1, 0}, { 0, 1, 0, 1, 0}, { 1, 0, 0, 1, 0},
             { 1, 1, 1, 1, 1}, { 0, 0, 0, 1, 0}, { 0, 0, 0, 1, 0}
         },
         {
-            { 1, 1, 1, 1, 1}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0}, { 0, 0, 0, 0, 1}, 
+            { 1, 1, 1, 1, 1}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0}, { 0, 0, 0, 0, 1},
             { 0, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 0, 1, 1, 0}, { 0, 1, 0, 0, 0}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0}, 
+            { 0, 0, 1, 1, 0}, { 0, 1, 0, 0, 0}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0},
             { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 1, 1, 1, 1, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, { 0, 0, 1, 0, 0}, 
+            { 1, 1, 1, 1, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, { 0, 0, 1, 0, 0},
             { 0, 1, 0, 0, 0}, { 0, 1, 0, 0, 0}, { 0, 1, 0, 0, 0}
         },
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0},
             { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 1}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 1},
             { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, { 0, 1, 1, 0, 0}
         },
     };
@@ -528,24 +528,24 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Bu program göreli konumlandırma ve boyutlandırma özelliğini kullanan `AbsoluteLayout`. Genişlik ve yükseklik her `BoxView` yatay ve dikey noktalar numarasına göre bölünmüş %1 85'özellikle kesirli değerlerine ayarlayın. Konumlar aynı zamanda kesirli değerlere ayarlanır. 
+Bu program göreli konumlandırma ve boyutlandırma özelliğini kullanan `AbsoluteLayout`. Genişlik ve yükseklik her `BoxView` yatay ve dikey noktalar numarasına göre bölünmüş %1 85'özellikle kesirli değerlerine ayarlayın. Konumlar aynı zamanda kesirli değerlere ayarlanır.
 
 Tüm boyutları ve konumları göre toplam boyutu olduğundan `AbsoluteLayout`, `SizeChanged` sayfası için işleyici gerektiğini yalnızca ayarlamak bir `HeightRequest` , `AbsoluteLayout`:
 
 ```csharp
 public partial class MainPage : ContentPage
 {
-    
+
     ···
-    
+
     void OnPageSizeChanged(object sender, EventArgs args)
     {
         // No chance a display will have an aspect ratio > 41:7
         absoluteLayout.HeightRequest = vertDots * Width / horzDots;
     }
-    
+
     ···
-    
+
 }
 ```
 
@@ -556,9 +556,9 @@ Son kodda `MainPage` sınıfı Zamanlayıcı geri işler ve her basamak nokta re
 ```csharp
 public partial class MainPage : ContentPage
 {
-   
+
     ···
- 
+
     bool OnTimer()
     {
         DateTime dateTime = DateTime.Now;
@@ -596,7 +596,7 @@ public partial class MainPage : ContentPage
 
 [![BoxView saat](boxview-images/boxviewclock-small.png "BoxView saati")](boxview-images/boxviewclock-large.png#lightbox "BoxView saati")
 
-Tüm Görsellere [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) program alt öğeleri olan bir `AbsoluteLayout`. Bu öğeleri kullanarak boyuta sahip `LayoutBounds` özelliği eklenmiş ve kullanılarak döndürülen `Rotation` özelliği. 
+Tüm Görsellere [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) program alt öğeleri olan bir `AbsoluteLayout`. Bu öğeleri kullanarak boyuta sahip `LayoutBounds` özelliği eklenmiş ve kullanılarak döndürülen `Rotation` özelliği.
 
 Üç `BoxView` saatin ellerini için öğeleri XAML dosyasında örneği ancak konumlandırılmış veya boyuta sahip:
 
@@ -613,13 +613,13 @@ Tüm Görsellere [ **BoxViewClock** ](https://developer.xamarin.com/samples/xama
 
     <AbsoluteLayout x:Name="absoluteLayout"
                     SizeChanged="OnAbsoluteLayoutSizeChanged">
-        
+
         <BoxView x:Name="hourHand"
                  Color="Black" />
-        
+
         <BoxView x:Name="minuteHand"
                  Color="Black" />
-        
+
         <BoxView x:Name="secondHand"
                  Color="Black" />
     </AbsoluteLayout>
@@ -631,9 +631,9 @@ Arka plan kodu dosyanın oluşturucusu 60 başlatır `BoxView` çizgilerinin çe
 ```csharp
 public partial class MainPage : ContentPage
 {
-      
+
     ···
- 
+
     BoxView[] tickMarks = new BoxView[60];
 
     public MainPage()
@@ -649,9 +649,9 @@ public partial class MainPage : ContentPage
 
         Device.StartTimer(TimeSpan.FromSeconds(1.0 / 60), OnTimerTick);
     }
-  
+
     ···
- 
+
 }
 ```
 
@@ -678,9 +678,9 @@ public partial class MainPage : ContentPage
     static readonly HandParams secondParams = new HandParams(0.02, 1.1, 0.85);
     static readonly HandParams minuteParams = new HandParams(0.05, 0.8, 0.9);
     static readonly HandParams hourParams = new HandParams(0.125, 0.65, 0.9);
- 
+
     ···
- 
+
  }
 ```
 
@@ -689,9 +689,9 @@ public partial class MainPage : ContentPage
 ```csharp
 public partial class MainPage : ContentPage
 {
- 
+
     ···
- 
+
     void OnAbsoluteLayoutSizeChanged(object sender, EventArgs args)
     {
         // Get the center and radius of the AbsoluteLayout.
@@ -729,9 +729,9 @@ public partial class MainPage : ContentPage
         // Set the AnchorY property for rotations.
         boxView.AnchorY = handParams.Offset;
     }
- 
+
     ···
- 
+
 }
 ```
 
@@ -742,9 +742,9 @@ Ellerini Zamanlayıcı geri çağırma işlevi döndürülür:
 ```csharp
 public partial class MainPage : ContentPage
 {
- 
+
     ···
-     
+
     bool OnTimerTick()
     {
         // Set rotation angles for hour and minute hands.

@@ -1,5 +1,5 @@
 ---
-title: Kalıcı sayfaları
+title: Xamarin.Forms kalıcı sayfaları
 description: Xamarin.Forms kalıcı sayfalar için destek sağlar. Kalıcı bir sayfa, görev tamamlandı veya iptal kadar uzağa erişilemeyeceğini kendi içinde bulunan bir görevi tamamlamak için kullanıcıların önerir. Bu makalede, kalıcı sayfalara gösterilmiştir.
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 30d0371e0eaa31673561ae12c7a46b7a7819a647
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 4540ac006993a46cb0ead9346c1cb960ac631926
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847425"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240144"
 ---
-# <a name="modal-pages"></a>Kalıcı sayfaları
+# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms kalıcı sayfaları
 
 _Xamarin.Forms kalıcı sayfalar için destek sağlar. Kalıcı bir sayfa, görev tamamlandı veya iptal kadar uzağa erişilemeyeceğini kendi içinde bulunan bir görevi tamamlamak için kullanıcıların önerir. Bu makalede, kalıcı sayfalara gösterilmiştir._
 

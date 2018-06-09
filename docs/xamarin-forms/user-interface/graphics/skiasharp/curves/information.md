@@ -1,17 +1,18 @@
 ---
 title: Yol bilgisi ve numaralandırması
-description: Yollar hakkında bilgi almak ve içeriği listeleme
+description: Bu makalede SkiaSharp yollar hakkında bilgi almak ve içeriklerini numaralandıramıyor açıklanmaktadır ve bu örnek kodu ile gösterir.
 ms.prod: xamarin
 ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 82ac4ea49462c7520219e1a621ea3946297b1b45
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 53d1fce20a0e3bc75ba34ab84b2549211567e222
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243798"
 ---
 # <a name="path-information-and-enumeration"></a>Yol bilgisi ve numaralandırması
 
@@ -27,7 +28,7 @@ Ayrıca bazen çizim işlemleri ve bir yolu noktalar elde etmek yararlıdır. İ
 
 ## <a name="getting-the-path-length"></a>Yol uzunluğu alma
 
-Makalede [ **yolları ve metin** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) nasıl kullanılacağını gördünüz [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) , temel bir yolu seyri izleyen bir metin dizesi çizmek için yöntem. Ancak, tam yolunu uygun şekilde metin boyutlandırmak isterseniz? Dairenin çevresi hesaplamak basit bir daire metin çizme için kolay olmasıdır. Ancak elips çevresi veya bir Bézier eğrisi uzunluğunu kadar basit değildir. 
+Makalede [ **yolları ve metin** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) nasıl kullanılacağını gördünüz [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) , temel bir yolu seyri izleyen bir metin dizesi çizmek için yöntem. Ancak, tam yolunu uygun şekilde metin boyutlandırmak isterseniz? Dairenin çevresi hesaplamak basit bir daire metin çizme için kolay olmasıdır. Ancak elips çevresi veya bir Bézier eğrisi uzunluğunu kadar basit değildir.
 
 [ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Sınıfı yardımcı olabilir. [Oluşturucusu](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) kabul eden bir `SKPath` bağımsız değişkeni ve [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) özelliği uzunluğunu gösterir.
 
@@ -151,7 +152,7 @@ public class UnicycleHalfPipePage : ContentPage
     };
 
     SKPath unicyclePath = SKPath.ParseSvgPathData(
-        "M 0 0" + 
+        "M 0 0" +
         "A 25 25 0 0 0 0 -50" +
         "A 25 25 0 0 0 0 0 Z" +
         "M 0 -25 L 0 -100" +
@@ -179,7 +180,7 @@ public class UnicycleHalfPipePage : ContentPage
         using (SKPath pipePath = new SKPath())
         {
             pipePath.MoveTo(50, 50);
-            pipePath.CubicTo(0, 1.25f * info.Height, 
+            pipePath.CubicTo(0, 1.25f * info.Height,
                              info.Width - 0, 1.25f * info.Height,
                              info.Width - 50, 50);
 
@@ -197,7 +198,7 @@ public class UnicycleHalfPipePage : ContentPage
                 t = (float)((1 - Math.Cos(t * 2 * Math.PI)) / 2);
 
                 SKMatrix matrix;
-                pathMeasure.GetMatrix(t * length, out matrix, 
+                pathMeasure.GetMatrix(t * length, out matrix,
                                       SKPathMeasureMatrixFlags.GetPositionAndTangent);
 
                 canvas.SetMatrix(matrix);
@@ -426,7 +427,7 @@ Yöntem adlı değişken her dağılımını ilk noktasını korur bildirim `fir
 
 [![](information-images/globulartext-small.png "Üçlü sayfasının ekran görüntüsü Globular metin")](information-images/globulartext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Globular metin")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Sınıfı oluşturucusu bu dönüşüm gerçekleştirir. Oluşturduğu bir `SKPaint` nesnesi için metin ve ardından edinir bir `SKPath` nesnesinin `GetTextPath` yöntemi. Bu geçirilen yoludur `CloneWithTransform` genişletme yöntemi bir dönüşüm işlevi ile birlikte: 
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Sınıfı oluşturucusu bu dönüşüm gerçekleştirir. Oluşturduğu bir `SKPaint` nesnesi için metin ve ardından edinir bir `SKPath` nesnesinin `GetTextPath` yöntemi. Bu geçirilen yoludur `CloneWithTransform` genişletme yöntemi bir dönüşüm işlevi ile birlikte:
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -453,9 +454,9 @@ public class GlobularTextPage : ContentPage
 
                 globePath = textPath.CloneWithTransform((SKPoint pt) =>
                 {
-                    double longitude = (Math.PI / textPathBounds.Width) * 
+                    double longitude = (Math.PI / textPathBounds.Width) *
                                             (pt.X - textPathBounds.Left) - Math.PI / 2;
-                    double latitude = (Math.PI / textPathBounds.Height) * 
+                    double latitude = (Math.PI / textPathBounds.Height) *
                                             (pt.Y - textPathBounds.Top) - Math.PI / 2;
 
                     longitude *= 0.75;

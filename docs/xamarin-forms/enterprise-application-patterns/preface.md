@@ -1,18 +1,20 @@
 ---
-title: Önsöz
+title: Önsöz Kurumsal uygulama geliştirme
+description: Bu bölümde, Xamarin.Forms kullanarak kurumsal uygulama düzenleri için bir önsöz sağlar.
 ms.prod: xamarin
 ms.assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: e9dd5f663fc98ac1e869721517e9a3d0fb2033bb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd085d2fb12e82233f6d3be2e2773a84539f837b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242374"
 ---
-# <a name="preface"></a>Önsöz
+# <a name="preface-to-enterprise-app-development"></a>Önsöz Kurumsal uygulama geliştirme
 
 Bu e-kitap Xamarin.Forms kullanarak platformlar arası Kurumsal uygulamaları oluşturma yönergeler sağlanmaktadır. Xamarin.Forms geliştiricilerin yerel kullanıcı iOS, Android ve evrensel Windows Platformu (UWP) dahil olmak üzere platformları arasında paylaşılabilir arabirimi düzenleri kolayca oluşturmanıza olanak tanır bir platformlar arası UI araç takımıdır. Çalışan (B2E) işletmeler için işletmeye (B2B) ve Tüketici (B2C) uygulamaları için kod tüm hedef platformlar arasında paylaşma olanağı sağlar ve daha düşük sahip olma maliyeti (TCO) yardımcı iş için kapsamlı bir çözüm sağlar.
 

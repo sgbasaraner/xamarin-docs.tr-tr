@@ -1,17 +1,18 @@
 ---
 title: XAML işaretleme uzantıları
-description: Hangi XAML özniteliklerini ayarla kaynakları aralığını genişletin
+description: Makaleyi Xamarin.Forms XAML işaretleme uzantılarına gücü ve esnekliği XAML metin dizelerini dışındaki kaynaklardan ayarlanacak öğesi özniteliklerini vererek genişletmek için nasıl kullanılacağını açıklar.
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: b81bc4b31edd1d8b8f5f43f97885c38e889dd32c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c6f1853c5864eed8484e7746755c6fa80a28a49b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245891"
 ---
 # <a name="xaml-markup-extensions"></a>XAML işaretleme uzantıları
 
@@ -33,7 +34,7 @@ Her iki durumda da metin dizesini ayarlamak `Color` özniteliği için dönüşt
 
 Ayarlamak bunun yerine tercih edebilirsiniz `Color` özniteliği bir kaynak sözlüğü depolanan bir değer veya oluşturduğunuz bir sınıfın statik bir özelliğin değerini veya türünde bir özellik `Color` sayfasında başka öğesinin veya oluşturulan gelen ton, Doygunluk ve parlaklığını değerleri ayırın.
 
-XAML biçimlendirme uzantıları kullanarak tüm bu seçenekler mümkündür. Ancak tümcecik izin vermeyin "biçimlendirme uzantıları" korkutmak: XAML biçimlendirme uzantıları *değil* XML uzantıları. XAML biçimlendirme uzantıları ile bile, XAML her zaman yasal XML'dir. 
+XAML biçimlendirme uzantıları kullanarak tüm bu seçenekler mümkündür. Ancak tümcecik izin vermeyin "biçimlendirme uzantıları" korkutmak: XAML biçimlendirme uzantıları *değil* XML uzantıları. XAML biçimlendirme uzantıları ile bile, XAML her zaman yasal XML'dir.
 
 Biçimlendirme uzantısı bir öznitelik, bir öğenin express aslında bir farklı yoludur. XAML işaretleme uzantılarına süslü ayraç içine bir öznitelik ayarı tarafından genellikle tanımlanabilir:
 
@@ -49,7 +50,7 @@ Bu makalede iki bölüme ayrılır:
 
 XAML biçimlendirme uzantıları Xamarin.Forms içinde tanımlı kullanın.
 
-## <a name="creating-xaml-markup-extensionscreatingmd"></a>[XAML Biçimlendirme Uzantıları Oluşturma](creating.md) 
+## <a name="creating-xaml-markup-extensionscreatingmd"></a>[XAML Biçimlendirme Uzantıları Oluşturma](creating.md)
 
 Kendi özel XAML biçimlendirme uzantıları yazma.
 

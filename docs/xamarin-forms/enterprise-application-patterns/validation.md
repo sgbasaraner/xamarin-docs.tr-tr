@@ -1,19 +1,20 @@
 ---
-title: Doğrulama
+title: Kurumsal uygulamaları doğrulama
+description: Bu bölümde, kullanıcı girişi doğrulanması eShopOnContainers mobil uygulamayı nasıl gerçekleştireceğini açıklar. Bu doğrulama kurallarını belirtme, doğrulama tetikleme ve doğrulama hataları görüntüleme içerir.
 ms.prod: xamarin
 ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 484f3b3d45e41d0dd0406681250ac90943a1cdde
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 6a7f244b78d5b48dd219f59f1191993d62663bbf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847595"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243183"
 ---
-# <a name="validation"></a>Doğrulama
+# <a name="validation-in-enterprise-apps"></a>Kurumsal uygulamaları doğrulama
 
 Kullanıcı girişi kabul eden herhangi bir uygulama girişi geçerli olduğundan emin olmanız gerekir. Örneğin, bir uygulama için belirli bir aralıkta yalnızca karakterler içeriyor, belirli bir süre veya belirli bir biçimde eşleşen giriş denetleyebilirsiniz. Doğrulama olmadan bir kullanıcı uygulama başarısız olmasına neden olan veri sağlayabilir. Doğrulama iş kurallarını uygular ve bir saldırgan kötü amaçlı veriler injecting önler.
 

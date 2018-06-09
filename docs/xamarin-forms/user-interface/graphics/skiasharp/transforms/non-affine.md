@@ -1,17 +1,18 @@
 ---
 title: Afin olmayan dönüşümler
-description: Perspektif ve Konik etkileri dönüştürme matrisi üçüncü sütun ile oluşturma
+description: Bu makalede Perspektif ve Konik etkileri dönüştürme matrisi üçüncü sütun ile nasıl oluşturulacağını açıklar ve bu örnek kodu ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 8c3d39038fbaf5ed6601102a0aa16860c7a5a7a6
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 03c5b0dcbb7870e38991d7e0f4c7ac4feebfcf4e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244239"
 ---
 # <a name="non-affine-transforms"></a>Afin olmayan dönüşümler
 
@@ -39,15 +40,15 @@ x' ScaleX·x, SkewX·y + TransX =
 
 y' SkewY·x, ScaleY·y + TransY =
 
-z` = Persp0·x + Persp1·y + Persp2
+z' Persp0·x, Persp1·y + Persp2 =
 
 İki boyutlu dönüşümler için 3 ile 3 matris kullanmanın temel her şeyi üzerinde düzlemi burada Z eşittir 1 kalır kuralıdır. Sürece `Persp0` ve `Persp1` 0, ve `Persp2` eşittir 1, dönüştürme, Düzlemi kapalı Z koordinatları taşınmıştır.
 
 Bu iki boyutlu bir dönüştürme geri yüklemek için koordinatları bu düzlemi geri taşınması gerekir. Başka bir adım gereklidir. X', y', ve z 'değerleri z tarafından ayrılmalıdır':
 
-x" = x' / z'
+x"= x' / z'
 
-y" = y' / z'
+y"y =' / z'
 
 z" = z' / z' = 1
 
@@ -59,7 +60,7 @@ Ancak, grafik görüntülerken, sonsuz değerlerine dönüştürün koordinatlar
 
 Bu denklemi z değerini istemediğiniz ' sıfır olma:
 
-z` = Persp0·x + Persp1·y + Persp2
+z' Persp0·x, Persp1·y + Persp2 =
 
 `Persp2` Hücre sıfır veya sıfır değil ya da olabilir. Varsa `Persp2` sıfır z olduğundan ' sıfır (0, 0) noktası için ve bu genellikle tercih o noktadan iki boyutlu grafik yaygın olduğundan değil. Varsa `Persp2` var. varsa sayılanların genel kaybı olmaksızın sıfır olarak eşit değil `Persp2` 1 sabit. Örneğin, karar verirseniz `Persp2` , yalnızca matris tüm hücreleri 5 tarafından kılan ayırabilirsiniz sonra 5, olmalıdır `Persp2` 1'e eşit ve sonucu aynı olacaktır.
 
@@ -77,7 +78,7 @@ Dönüştürme formüller şunlardır:
 
 x' = x / (0.01·x + 1)
 
-y' = y / (0.01·x + 1)
+y' y = / (0.01·x + 1)
 
 Şimdi bu dönüşüm sırasında kaynak konumlandırılmış 100 piksel kare kutu işlemek için kullanın. İşte dört köşe nasıl dönüştürülür:
 
@@ -230,7 +231,7 @@ Bazı örnek görüntüleri şunlardır:
 
 Kaydırıcılar ile denerken değerleri 0.0066 ötesinde veya –0.0066 altında görüntünün aniden fractured ve tutarsız hale gelmesine neden bulabilirsiniz. Dönüştürülmekte olan bit eşlem 300 piksel kare olur. Bit eşlem koordinatları –150 150 için aralığı için kendi merkezi göre dönüştürülür. Sözcüğünün z değeri ' olan:
 
-z` = Persp0·x + Persp1·y + 1
+z' = Persp0·x + Persp1·y + 1
 
 Varsa `Persp0` veya `Persp1` 0.0066 büyük ya da –0.0066 sonra her zaman bir z sonuçları bit eşlem bazı koordinatı ' sıfır değeri. Sıfıra bölme neden ve işleme bir karmaşa haline gelir. Afin olmayan dönüşümler kullanırken, sıfıra bölme neden koordinatları ile herhangi bir şey işleme önlemek istiyor.
 

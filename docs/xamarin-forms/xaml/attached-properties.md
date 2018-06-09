@@ -1,17 +1,18 @@
 ---
 title: Ekli Özellikler
-description: Ekli özellik bir sınıf tarafından tanımlanan diğer nesnelere bağlı bağlanabilirse özelliği, ancak, özel bir tür ve bir sınıfı içeren bir öznitelik olarak XAML'de tanınabilir ve bir noktayla bir özellik adı ayrılmış. Bu makalede, ekli özellikler bir giriş sağlar ve oluşturmak ve bunları kullanmak gösterilmiştir.
+description: Bu makalede, ekli özellikler bir giriş sağlar ve oluşturmak ve bunları kullanmak gösterilmiştir.
 ms.prod: xamarin
 ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: 5c903a39e5569c7ffedfff8eb8e6b0bd4071be9d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e0ecff37eaf615321c7fcdce35e334db89ae631a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245904"
 ---
 # <a name="attached-properties"></a>Ekli Özellikler
 

@@ -1,18 +1,20 @@
 ---
-title: Gezinme
+title: Kurumsal uygulama gezinme
+description: Bu bölümde eShopOnContainers mobil uygulama görünüm modeli ilk Gezinti görünümü modellerinden nasıl gerçekleştireceğini açıklar.
 ms.prod: xamarin
 ms.assetid: 4cad57b5-7fe4-4527-a988-d9b60c9620b4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: aa2e2858e3bb8e435ec3f38bb3d5b249eaa6cba4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ac9f3200440001752c07ad45fdaaf2b1d9ba6a5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243687"
 ---
-# <a name="navigation"></a>Gezinme
+# <a name="enterprise-app-navigation"></a>Kurumsal uygulama gezinme
 
 Xamarin.Forms genellikle kullanıcı Arabirimi ile kullanıcı etkileşimi veya uygulamanın kendi iç mantığı temelli durumu yapılan değişiklikler sonucunda sonuçları sayfa gezintisi için destek içerir. Ancak, gezinti aşağıdaki sorunları karşılanması gereken Model View ViewModel (MVVM) desenini kullanan uygulamalarda uygulama karmaşık olabilir:
 

@@ -7,16 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: b893fe5e56cc2d43a71870ffbbd20f0b8c6cfd18
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8b489fd1a1bcce474decf6881e8eb6620c2ee2e3
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787504"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240742"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin.iOS CoreML giriş
-
-_Makine 11 ios'ta mobil uygulamaları için öğrenme_
 
 İOS için makine öğrenme CoreML getirir – uygulamaları görüntü tanıma için sorun giderme, her türlü görevleri gerçekleştirmek için eğitilmiş makine öğrenimi modellerini avantajından yararlanabilirsiniz.
 
@@ -33,28 +31,19 @@ Bu adımları bir iOS projesi CoreML nasıl eklendiği açıklanmaktadır. Başv
 
 ![MARS Habitat fiyat tahmini örnek ekran görüntüsü](coreml-images/marspricer-heading.png)
 
-### <a name="1-add-the-model-to-the-project"></a>1. Model projeye ekleyin
+### <a name="1-add-the-coreml-model-to-the-project"></a>1. Projeye CoreML modeli ekleme
 
-Derlenmiş model ekleme (sahip bir dizin **.modelc** uzantı) için **kaynakları** projenin dizin. Dizinin içeriğini tüm bir yapı eylemi olmalıdır **BundleResource**:
+CoreML model ekleme (bir dosyayla **.mlmodel** uzantı) için **kaynakları** projenin dizin. 
 
-![Kaynaklar klasörünü derlenmiş model içermelidir](coreml-images/resources-modelc.png)
-
-[Örnekleri](https://developer.xamarin.com/samples/monotouch/ios11/) Xcode 9'derlenmiş veya aşağıdaki terminal komutu kullanılarak el ile modelleri kullanın:
-
-```csharp
-xcrun coremlcompiler compile {model.mlmodel} {outputFolder}
-```
-
-> [!NOTE]
-> **.model** dosyaları _gerekir_ derlenmesi için **.modelc** kullanılan önce tarafından CoreML
+Model dosyanın özelliklerinde, kendi **yapı eylemi** ayarlanır **CoreMLModel**. Bu, içine derlenecek anlamına gelir. bir **.mlmodelc** dosya uygulama yapılandırıldığında.
 
 ### <a name="2-load-the-model"></a>2. Model yüklenemiyor
 
-Bir model kullanmadan önce kullanarak yük `MLModel.FromUrl` statik yöntemi:
+Modeli kullanarak yük `MLModel.Create` statik yöntemi:
 
 ```csharp
 var assetPath = NSBundle.MainBundle.GetUrlForResource("NameOfModel", "mlmodelc");
-model = MLModel.FromUrl(assetPath, out NSError error1);
+model = MLModel.Create(assetPath, out NSError error1);
 ```
 
 ### <a name="3-set-the-parameters"></a>3. Parametreler Ayarla
@@ -113,13 +102,15 @@ CoreML modeli _MNISTClassifier_ yüklenir ve ardından sarmalanmış bir `VNCore
 
 ```csharp
 // Load the ML model
-var assetPath = NSBundle.MainBundle.GetUrlForResource("MNISTClassifier", "mlmodelc");
-var mlModel = MLModel.FromUrl(assetPath, out NSError mlErr);
-var vModel = VNCoreMLModel.FromMLModel(mlModel, out NSError vnErr);
+var bundle = NSBundle.MainBundle;
+var assetPath = bundle.GetUrlForResource("MNISTClassifier", "mlmodelc");
+NSError mlErr, vnErr;
+var mlModel = MLModel.Create(assetPath, out mlErr);
+var model = VNCoreMLModel.FromMLModel(mlModel, out vnErr);
 
 // Initialize Vision requests
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
-ClassificationRequest = new VNCoreMLRequest(vModel, HandleClassification);
+ClassificationRequest = new VNCoreMLRequest(model, HandleClassification);
 ```
 
 Sınıf halen uygulamak gereken `HandleRectangles` ve `HandleClassification` adım 3 ve 4 aşağıda gösterilen görme istekleri için yöntemleri.
@@ -153,7 +144,7 @@ void HandleRectangles(VNRequest request, NSError error) {
   // Run the Core ML MNIST classifier -- results in handleClassification method
   var handler = new VNImageRequestHandler(correctedImage, new VNImageOptions());
   DispatchQueue.DefaultGlobalQueue.DispatchAsync(() => {
-    handler.Perform(new VNRequest[] { ClassificationRequest }, out NSError err);
+    handler.Perform(new VNRequest[] {ClassificationRequest}, out NSError err);
   });
 }
 ```
@@ -167,7 +158,7 @@ void HandleRectangles(VNRequest request, NSError error) {
 ```csharp
 void HandleClassification(VNRequest request, NSError error){
   var observations = request.GetResults<VNClassificationObservation>();
-  ... omitted error handling ...
+  // ... omitted error handling ...
   var best = observations[0]; // first/best classification result
   // render in UI
   DispatchQueue.MainQueue.DispatchAsync(()=>{
@@ -175,8 +166,6 @@ void HandleClassification(VNRequest request, NSError error){
   });
 }
 ```
-
-
 
 ## <a name="samples"></a>Örnekler
 
@@ -187,7 +176,6 @@ Denemek için üç CoreML örnekleri şunlardır:
 * [Görme & CoreML örnek](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/) bir görüntü parametresini kabul edip görme framework tek basamak tanıdığı bir CoreML modeline iletilen kare görüntü bölgeleri tanımlamak için kullanır.
 
 * Son olarak, [CoreML görüntü tanıma örnek](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/) CoreML fotoğraf özelliklerini tanımlamak için kullanır. Varsayılan olarak küçük kullanır **SqueezeNet** modeli (5MB), ancak yazılmış indirin ve büyük dahil **VGG16** modeli (553 MB). Daha fazla bilgi için bkz: [örnek'ın Benioku dosyası](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md).
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

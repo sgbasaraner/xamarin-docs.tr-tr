@@ -1,5 +1,5 @@
 ---
-title: Animasyon
+title: Xamarin.Forms animasyonda
 description: Xamarin.Forms da karmaşık animasyon oluşturmak için yönlü devam ederken basit bir animasyon oluşturmak için basittir kendi animasyon altyapısını içerir.
 ms.prod: xamarin
 ms.assetid: AC0B4127-ECA3-44DA-8A24-A2B10A275083
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 7cff122e7ecc24f5ad93bd863ee422981871f857
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bc04f638168a10266c20e278481fc0c513afe48
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245032"
 ---
-# <a name="animation"></a>Animasyon
+# <a name="animation-in-xamarinforms"></a>Xamarin.Forms animasyonda
 
 _Xamarin.Forms da karmaşık animasyon oluşturmak için yönlü devam ederken basit bir animasyon oluşturmak için basittir kendi animasyon altyapısını içerir._
 
@@ -30,4 +31,3 @@ Xamarin.Forms içeren bir [ `Easing` ](https://developer.xamarin.com/api/type/Xa
 ## <a name="custom-animationscustommd"></a>[Özel Animasyonlar](custom.md)
 
 [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) Sınıf, yapı taşı genişletme yöntemleri ile tüm Xamarin.Forms animasyonların [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) bir veya daha fazla oluşturma sınıfı `Animation` nesneleri. Bu makalede nasıl kullanılacağı gösterilmektedir `Animation` oluşturmak ve animasyonları iptal, birden çok animasyon eşitlemek ve varolan animasyon yöntemlerle animasyonlu değildir özelliklerine animasyon özel animasyon oluşturmak için sınıfı.
-

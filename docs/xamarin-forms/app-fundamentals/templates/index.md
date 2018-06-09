@@ -1,19 +1,20 @@
 ---
-title: Şablonlar
-description: Xamarin.Forms tarafından sağlanan şablon desteği kullanma
+title: Xamarin.Forms şablonları
+description: Bu kılavuz, Xamarin.Forms tarafından sağlanan şablon desteği kullanımı açıklanmaktadır. Bu çalışma zamanında kolayca tema ve yeniden tema sayfaları için kullanılabilir, denetim şablonları ve desteklenen denetimlere veri sunumu tanımlamak veri şablonları içerir.
 ms.prod: xamarin
 ms.assetid: 4453C209-C068-47D5-A49B-0ECC95C0FB3B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/05/2016
-ms.openlocfilehash: a37a82e008093d90dcf18bc46abada0d406b3815
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bcc65685ecc69964f792dc699e12215015d7b840
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240424"
 ---
-# <a name="templates"></a>Şablonlar
+# <a name="xamarinforms-templates"></a>Xamarin.Forms şablonları
 
 ## <a name="control-templatescontrol-templatesindexmd"></a>[Denetim Şablonları](control-templates/index.md)
 

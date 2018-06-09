@@ -1,19 +1,20 @@
 ---
-title: Bağlama modu
-description: Kaynak ve hedef arasındaki bilgi akışını denetleme
+title: Xamarin.Forms bağlama modu
+description: Bu makalede, kaynak ve hedef BindingMode numaralandırma üyesi ile belirtilen bir bağlama modu kullanılarak arasındaki bilgi akışını denetlemek açıklanmaktadır. Her bağlanabilirse özelliği bu özellik veri bağlama hedef olduğunda gösteren modu geçerli bir varsayılan bağlama modu vardır.
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/01/2018
-ms.openlocfilehash: 1aa612d8b855158f09bc0aeaad1520a44b3d9637
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 12e6416eee989b0d36a7b9fe0ca4dcd9b18b0ade
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241822"
 ---
-# <a name="binding-mode"></a>Bağlama modu
+# <a name="xamarinforms-binding-mode"></a>Xamarin.Forms bağlama modu
 
 İçinde [önceki makalede](basic-bindings.md), **alternatif kod bağlama** ve **alternatif XAML bağlama** öne çıkan sayfaları bir `Label` ile kendi `Scale` özelliği bağlı `Value` özelliği bir `Slider`. Çünkü `Slider` ilk değeri 0 ise, bunun nedeni `Scale` özelliği `Label` 1 yerine 0 olarak ayarlanması için ve `Label` kayboldu.
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 05/07/2018
              Title="Reverse Binding">
     <StackLayout Padding="10, 0">
 
-        <Label x:Name="label" 
+        <Label x:Name="label"
                Text="TEXT"
                FontSize="80"
                HorizontalOptions="Center"
@@ -52,9 +53,9 @@ Arasındaki farkı **ters bağlama** örnek ve önceki örnekleri içerir *bağl
 
 ## <a name="the-default-binding-mode"></a>Varsayılan bağlama modu
 
-Bağlama modu üyesi ile belirtilen [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/) numaralandırma: 
+Bağlama modu üyesi ile belirtilen [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/) numaralandırma:
 
-- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/) 
+- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/)
 - [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; Kaynak ve hedef arasında çift yönlü veri gider
 - [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; veri kaynağından hedefe gider.
 - [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; veri kaynağına hedeften gider
@@ -78,11 +79,11 @@ En bağlanabilirse özelliklere sahip bir varsayılan bağlama modu `OneWay` anc
 - `SelectedItem` özelliği `MultiPage`
 - `SelectedIndex` ve `SelectedItem` özellikleri `Picker`
 - `Value` özelliği `Slider` ve `Stepper`
-- `IsToggled` özelliği `Switch` 
+- `IsToggled` özelliği `Switch`
 - `On` özelliği `SwitchCell`
 - `Time` özelliği `TimePicker`
 
-Bu belirli özellikleri olarak tanımlanan `TwoWay` çok iyi bir nedenle: 
+Bu belirli özellikleri olarak tanımlanan `TwoWay` çok iyi bir nedenle:
 
 Veri bağlamaları Model View ViewModel (MVVM) uygulama mimarisi ile kullanıldığında, ViewModel bağlama veri kaynağı ve görünümler gibi oluşuyorsa görünümü sınıftır `Slider`, veri bağlama hedeflerine. MVVM bağlamaları benzer **ters bağlama** örnek önceki örnekte bağlamaları'den fazla. Her görünüm ViewModel karşılık gelen özellik değeriyle başlatılması için sayfadaki istiyor, ancak görünümünde değişiklikleri de ViewModel özelliği etkiler olasılığı yüksektir.
 
@@ -117,7 +118,7 @@ ViewModel veri bağlama kaynağıdır. ViewModel mu *değil* bağlanabilir özel
 public class HslColorViewModel : INotifyPropertyChanged
 {
     Color color;
-    string name; 
+    string name;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -130,7 +131,7 @@ public class HslColorViewModel : INotifyPropertyChanged
                 Color = Color.FromHsla(value, color.Saturation, color.Luminosity);
             }
         }
-        get 
+        get
         {
             return color.Hue;
         }
@@ -209,7 +210,7 @@ Zaman `Color` özelliği değişiklikleri, statik `GetNearestColorName` yöntemi
 
 Bir ViewModel bağlama kaynağı olarak ayarlandığında, bir işleyici bağlama altyapısı iliştirir `PropertyChanged` olay. Bu şekilde bağlama özelliklerine yapılan değişiklikler, bildirim ve ardından hedef özelliklerini değiştirilen değerleri ayarlayabilirsiniz.
 
-Ancak, bir hedef özellik olduğunda (veya `Binding` bir hedef özellik tanımını) sahip bir `BindingMode` , `OneTime`, üzerinde bir işleyici eklemek bağlama altyapısı için gerekli değildir `PropertyChanged` olay. Target özelliği güncelleştirilmiş yalnızca `BindingContext` değişiklikleri ve kaynak özelliği değiştiğinde değil. 
+Ancak, bir hedef özellik olduğunda (veya `Binding` bir hedef özellik tanımını) sahip bir `BindingMode` , `OneTime`, üzerinde bir işleyici eklemek bağlama altyapısı için gerekli değildir `PropertyChanged` olay. Target özelliği güncelleştirilmiş yalnızca `BindingContext` değişiklikleri ve kaynak özelliği değiştiğinde değil.
 
 **Basit Renk Seçici** XAML dosyası başlatır `HslColorViewModel` sayfanın kaynak sözlüğü ve başlatır `Color` özelliği. `BindingContext` Özelliği `Grid` ayarlanmış bir `StaticResource` bu kaynağa başvuran uzantısı bağlama:
 
@@ -221,7 +222,7 @@ Ancak, bir hedef özellik olduğunda (veya `Binding` bir hedef özellik tanımı
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:HslColorViewModel x:Key="viewModel" 
+            <local:HslColorViewModel x:Key="viewModel"
                                      Color="MediumTurquoise" />
 
             <Style TargetType="Slider">
@@ -229,7 +230,7 @@ Ancak, bir hedef özellik olduğunda (veya `Binding` bir hedef özellik tanımı
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-        
+
     <Grid BindingContext="{StaticResource viewModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -246,7 +247,7 @@ Ancak, bir hedef özellik olduğunda (veya `Binding` bir hedef özellik tanımı
                    HorizontalTextAlignment="Center" />
 
             <Slider Value="{Binding Hue}" />
-    
+
             <Slider Value="{Binding Saturation}" />
 
             <Slider Value="{Binding Luminosity}" />
@@ -257,7 +258,7 @@ Ancak, bir hedef özellik olduğunda (veya `Binding` bir hedef özellik tanımı
 
 `BoxView`, `Label`Ve üç `Slider` görünümleri devral bağlama bağlamı `Grid`. Bu kaynak ViewModel özelliklerinde başvuru tüm bağlama hedefleri görünümlerdir. İçin `Color` özelliği `BoxView`ve `Text` özelliği `Label`, veri bağlamaları olan `OneWay`: özellikler görünümünde ViewModel özelliklerinden ayarlanır.
 
-`Value` Özelliği `Slider`, ancak `TwoWay`. Her böylece `Slider` ViewModel ve ayrıca her birinden ayarlanacak ViewModel için ayarlanacak `Slider`. 
+`Value` Özelliği `Slider`, ancak `TwoWay`. Her böylece `Slider` ViewModel ve ayrıca her birinden ayarlanacak ViewModel için ayarlanacak `Slider`.
 
 Programı ilk kez çalıştırdığınızda, `BoxView`, `Label`ve üç `Slider` öğeleridir ilk dayalı ViewModel tüm kümesinden `Color` özelliği ViewModel örneğinin başlatılmasından ayarlanır. Bu, iOS ekran görüntüsü soldaki gösterilir:
 
@@ -272,7 +273,7 @@ Kaynak sözlüğünde ViewModel başlatmasını bir ortak bir yaklaşımdır. Ö
     <Grid.BindingContext>
         <local:HslColorViewModel Color="MediumTurquoise" />
     </Grid.BindingContext>
-        
+
     ···
 
 </Grid>
@@ -408,9 +409,9 @@ public class SampleSettingsViewModel : INotifyPropertyChanged
 }
 ```
 
-Her uygulama ayarı adlı bir yöntem Xamarin.Forms özellikleri sözlükte için kaydedilmiş bir özelliktir `SaveState` ve oluşturucusunda bu sözlükten yüklendi. Sınıf altında ViewModels kolaylaştırmak ve hata potansiyeli daha az olun yardımcı iki yöntem vardır. `OnPropertyChanged` Yöntemi altındaki arama özelliği ayarlanmış isteğe bağlı bir parametre vardır. Bu özelliğin adı bir dize olarak belirtirken yazım hatalarını önler. 
+Her uygulama ayarı adlı bir yöntem Xamarin.Forms özellikleri sözlükte için kaydedilmiş bir özelliktir `SaveState` ve oluşturucusunda bu sözlükten yüklendi. Sınıf altında ViewModels kolaylaştırmak ve hata potansiyeli daha az olun yardımcı iki yöntem vardır. `OnPropertyChanged` Yöntemi altındaki arama özelliği ayarlanmış isteğe bağlı bir parametre vardır. Bu özelliğin adı bir dize olarak belirtirken yazım hatalarını önler.
 
-`SetProperty` Sınıfında yöntemi daha da yapar: özelliğine bir alan olarak depolanan değerle ayarlanır değeri karşılaştırır ve yalnızca çağırır `OnPropertyChanged` zaman iki değer olmayan eşit. 
+`SetProperty` Sınıfında yöntemi daha da yapar: özelliğine bir alan olarak depolanan değerle ayarlanır değeri karşılaştırır ve yalnızca çağırır `OnPropertyChanged` zaman iki değer olmayan eşit.
 
 `SampleSettingsViewModel` Sınıfı tanımlayan iki özellik için arka plan rengi: `BackgroundNamedColor` özelliği türüdür `NamedColor`, hangi bir sınıf de dahil **DataBindingDemos** çözüm. `BackgroundColor` Özelliği türüdür `Color`ve gelen elde `Color` özelliği `NamedColor` nesnesi.
 
@@ -649,7 +650,7 @@ Sayfanın tüm alt öğeleri bağlama bağlamını devralır. Bu sayfadaki diğe
 SelectedItem="{Binding BackgroundNamedColor, Mode=TwoWay}"
 ```
 
-Varsayılan bağlama modunu `SelectedItem` olan `OneWayToSource`, seçili öğesini ViewModel özelliğini ayarlar. `TwoWay` Modu sağlar `SelectedItem` ViewModel başlatılacak. 
+Varsayılan bağlama modunu `SelectedItem` olan `OneWayToSource`, seçili öğesini ViewModel özelliğini ayarlar. `TwoWay` Modu sağlar `SelectedItem` ViewModel başlatılacak.
 
 Ancak, ne zaman `SelectedItem` bu şekilde ayarlanması `ListView` otomatik olarak seçilen öğeyi göstermek için Kaymaz. Arka plan kod dosyasına biraz kod gereklidir:
 
@@ -662,13 +663,13 @@ public partial class SampleSettingsPage : ContentPage
 
         if (colorListView.SelectedItem != null)
         {
-            colorListView.ScrollTo(colorListView.SelectedItem, 
-                                   ScrollToPosition.MakeVisible, 
+            colorListView.ScrollTo(colorListView.SelectedItem,
+                                   ScrollToPosition.MakeVisible,
                                    false);
         }
     }
 }
-``` 
+```
 
 İlk kez çalıştırdığınızda soldaki iOS ekran program gösterir. Oluşturucuda `SampleSettingsViewModel` başlatır arka plan rengi beyaz ve içinde seçili olan `ListView`:
 

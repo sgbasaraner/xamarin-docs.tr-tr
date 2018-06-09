@@ -1,18 +1,18 @@
 ---
 title: Bir görünümü uygulama
-description: Xamarin.Forms özel kullanıcı arabirimi denetimlerini düzenleri ve denetimleri ekranında yerleştirmek için kullanılan görünüm sınıfından türetilmelidir. Bu makalede Önizleme video akışına cihazın kameradan görüntülemek için kullanılan bir Xamarin.Forms özel denetim için özel Oluşturucu Oluşturma gösterilir.
+description: Bu makalede Önizleme video akışına cihazın kameradan görüntülemek için kullanılan bir Xamarin.Forms özel denetim için özel Oluşturucu oluşturma açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: d270a23fb2fee67e5e3dd415771c975aeb682854
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: eb0bc199bfd31ac631ca9d131796b606960d76aa
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848492"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240492"
 ---
 # <a name="implementing-a-view"></a>Bir görünümü uygulama
 

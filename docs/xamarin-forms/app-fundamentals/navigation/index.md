@@ -1,19 +1,20 @@
 ---
-title: Gezinme
-description: Xamarin.Forms farklı sayfa gezinti deneyimleri, kullanılan sayfa türüne bağlı olarak bir dizi sağlar.
+title: Xamarin.Forms gezinme
+description: Bu kılavuz Xamarin.Forms uygulamalarında Gezinti gerçekleştirme açıklar. Xamarin.Forms farklı sayfa gezinti deneyimleri, kullanılan sayfa türüne bağlı olarak bir dizi sağlar.
 ms.prod: xamarin
 ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1a184e1ebfd9d87ba82642ebdfc30a8d3f92cce1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 90aedee42af7ed1788110e832fb3b435d870ee77
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241962"
 ---
-# <a name="navigation"></a>Gezinme
+# <a name="xamarinforms-navigation"></a>Xamarin.Forms gezinme
 
 _Xamarin.Forms farklı sayfa gezinti deneyimleri, kullanılan sayfa türüne bağlı olarak bir dizi sağlar._
 
@@ -42,4 +43,3 @@ Xamarin.Forms kalıcı sayfalar için de destek sağlar. Kalıcı bir sayfa, gö
 ## <a name="displaying-pop-upspop-upsmd"></a>[Açılır Pencereleri Görüntüleme](pop-ups.md)
 
 Xamarin.Forms iki pop up benzeri kullanıcı arabirimi öğeleri sağlar: bir uyarı ve bir eylem sayfası. Bu arabirim öğeleri kullanıcılar basit sorular sormak için ve görevleri kullanıcılara kılavuzluk için kullanılabilir.
-

@@ -1,19 +1,20 @@
 ---
-title: Yerel formlar
-description: Yerel Forms yerel Xamarin.iOS, Xamarin.Android ve evrensel Windows Platformu (UWP) projeler tarafından tüketilmesi sayfaları Xamarin.Forms ContentPage türetilmiş olanak verir. Yerel projeleri projeye veya .NET standart kitaplığı, .NET standart kitaplığı ya da paylaşılan proje doğrudan eklenen ContentPage türetilmiş sayfaları kullanabilir. Bu makalede, yerel projelerine doğrudan eklenen ContentPage türetilmiş sayfaları kullanma ve bunlar arasında gezinmek nasıl açıklanmaktadır.
+title: Xamarin yerel projelerinde Xamarin.Forms
+description: Bu makalede, Xamarin yerel projelerine doğrudan eklenen ContentPage türetilmiş sayfaları kullanma ve bunlar arasında gezinmek nasıl açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: a103d360221650ee4f679ee285dbedd65e62f947
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: ca62b9fec3223e8da62d8e4cc6e1f69a58f335a0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243281"
 ---
-# <a name="native-forms"></a>Yerel formlar
+# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin yerel projelerinde Xamarin.Forms
 
 _Yerel Forms yerel Xamarin.iOS, Xamarin.Android ve evrensel Windows Platformu (UWP) projeler tarafından tüketilmesi sayfaları Xamarin.Forms ContentPage türetilmiş olanak verir. Yerel projeleri projeye veya .NET standart kitaplığı, .NET standart kitaplığı ya da paylaşılan proje doğrudan eklenen ContentPage türetilmiş sayfaları kullanabilir. Bu makalede, yerel projelerine doğrudan eklenen ContentPage türetilmiş sayfaları kullanma ve bunlar arasında gezinmek nasıl açıklanmaktadır._
 

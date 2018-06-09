@@ -1,22 +1,24 @@
 ---
 title: Bölüm 1 özeti. Xamarin.Forms nasıl sığmayan?
+description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 1 özeti. Xamarin.Forms nasıl sığmayan?'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 534c36a16acdc10ffb6f6b6703296a672875286e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2897229b0749b1a6ead805d6ad063603a77f8f0d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240466"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Bölüm 1 özeti. Xamarin.Forms nasıl sığmayan?
 
 Özellikle, platform farklı bir programlama dilinde içeriyorsa programlamada en kötü işlerden biri diğerine platformdan diğerine temel bir kod taşımaktır. Yapıldığında bir buradaki eðilim de yeniden düzenlemeniz için kod bağlantı noktası oluşturma, ancak her iki platform paralel olarak korunmalıdır, ardından iki kod temelleri arasındaki farklar gelecek bakım daha zor hale getirir.
 
-## <a name="cross-platform-mobile-development"></a>Platformlar arası Mobil Geliştirme
+## <a name="cross-platform-mobile-development"></a>Platformlar arası mobil geliştirme
 
 Bu sorun, mobil platformu hedeflerken yaygındır. Şu anda iki önemli mobil platformlar, iPhone ve iOS işletim sistemi ve, çeşitli telefonlar ve tabletler üzerinde çalışan Android işletim sistemi çalıştıran iPad cihazları Apple ailesi var. Başka bir önemli Microsoft'un Evrensel Windows Platformu (Windows 10 ve Windows 10 Mobile hedeflemek tek bir program sağlayan UWP), bir platformdur.
 

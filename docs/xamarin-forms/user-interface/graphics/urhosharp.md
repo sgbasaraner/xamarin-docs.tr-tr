@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Forms içinde UrhoSharp kullanma
-description: UrhoSharp Gelişmiş görselleştirme için uygulama 3B grafik eklemek için kullanılabilir
+description: Bu makalede UrhoSharp Gelişmiş görselleştirmenin Xamarin.Forms uygulama 3B grafik eklemek için nasıl kullanılabileceği açıklanır.
 ms.prod: xamarin
 ms.assetid: 0646B98E-CC04-4537-9715-9F82338FD7FF
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: fbe07b81c8818378c3f6c12e09ae74bca2d89543
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 3ada1f45532797d77d52968343a7d7b3ab8f7948
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847491"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244525"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Xamarin.Forms içinde UrhoSharp kullanma
 

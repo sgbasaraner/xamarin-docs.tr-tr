@@ -1,33 +1,25 @@
 ---
-title: Stilleri
-description: Xamarin.Forms stili metin
+title: Xamarin.Forms metin stilleri
+description: Bu makalede açıklanır stil metin Xamarin.Forms uygulamalarında nasıl. Stilleri kez tanımlanmış ve çok sayıda görünümleri tarafından kullanılan, ancak bir stil yalnızca bir tür görünümlerle kullanılabilir.
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 42d5da5c4171347de8c4befc773e498803fd9f36
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b8cc6493c3574180e7938050075c5a70ecebeebf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848453"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245328"
 ---
-# <a name="styles"></a>Stilleri
+# <a name="xamarinforms-text-styles"></a>Xamarin.Forms metin stilleri
 
-_Xamarin.Forms stili metin_
-
+_Xamarin.Forms stil metni_
 
 Stilleri etiketleri, girişleri ve düzenleyiciler görünümünü ayarlamak için kullanılabilir. Stilleri kez tanımlanmış ve çok sayıda görünümleri tarafından kullanılan, ancak bir stil yalnızca bir tür görünümlerle kullanılabilir.
 Stilleri verilebilir bir `Key` ve seçmeli olarak belirli bir denetimin kullanılarak uygulanan `Style` özelliği.
-
-Bu makalede aşağıdaki konuları içerir:
-
-- **[Yerleşik stilleri](#Built-In_Styles)**  &ndash; stili metin tabanlı görünümlere uygulamanızı boyunca yerleşik stilleri kullanın.
-- **[Özel stiller](#Custom_Styles)**  &ndash; yerleşik seçenekleri yeterli olmadığı durumlarda özel stiller tanımlayın.
-- **[Stilleri uygulama](#Applying_Styles)**  &ndash; görünümlerinize özel ve yerleşik stilleri uygulayın.
-- **[Erişilebilirlik](#Accessibility)**  &ndash; metin erişilebilirlik ayarlarını dikkate alır emin olun.
 
 <a name="Built-In_Styles" />
 

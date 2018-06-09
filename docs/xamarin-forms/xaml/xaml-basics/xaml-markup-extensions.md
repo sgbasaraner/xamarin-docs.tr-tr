@@ -1,17 +1,18 @@
 ---
 title: Bölüm 3. XAML işaretleme uzantıları
-description: XAML işaretleme uzantılarına XAML'de nesneleri veya diğer kaynaklardan dolaylı olarak başvurulan değerleri ayarlamak özellikler sağlayan bir önemli özellik oluşturur. XAML işaretleme uzantılarına nesneleri paylaşımı ve bir uygulama genelinde kullanılan sabitleri başvuran için özellikle önemlidir, ancak bunların en büyük yardımcı programı veri bağlamaları buldukları.
+description: XAML işaretleme uzantılarına XAML'de nesneleri veya diğer kaynaklardan dolaylı olarak başvurulan değerleri ayarlamak özellikler sağlayan bir önemli özellik oluşturur.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245917"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Bölüm 3. XAML işaretleme uzantıları
 
@@ -321,8 +322,8 @@ Adlarını benzerlikler rağmen `x:Static` ve `StaticResource` çok farklıdır.
 
 - public static alanı
 - Genel statik özelliği
-- Genel sabit alan 
-- bir numaralandırma üyesi. 
+- Genel sabit alan
+- bir numaralandırma üyesi.
 
 `StaticResource` Biçimlendirme uzantısı bir kaynak sözlüğü tanımlayan XAML uygulamaları tarafından desteklenen sırada `x:Static` bir iç XAML olarak parçasıdır `x` önek ortaya çıkarır.
 
@@ -366,7 +367,7 @@ namespace XamlSamples
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(40, FontAttributes.Bold);
                     break;
-                    
+
                 case Device.UWP:
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(50, FontAttributes.Bold);

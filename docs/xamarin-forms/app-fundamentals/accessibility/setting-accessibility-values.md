@@ -1,17 +1,18 @@
 ---
 title: Kullanıcı arabirimi öğeleri erişilebilirlik değerleri ayarlama
-description: Xamarin.Forms içinde kümesi yerel erişilebilirlik değerleri kapatma ekli özellikler AutomationProperties sınıfından kullanarak kullanıcı arabirimi öğeleri ayarlanacak erişilebilirlik değerlere izin verir. Bu makalede, böylece bir ekran okuyucusu sayfada öğeleri hakkında konuşurken AutomationProperties sınıfının nasıl kullanılacağı açıklanmaktadır.
+description: Bu makalede, böylece bir ekran okuyucusu sayfada öğeleri hakkında konuşurken AutomationProperties sınıfının nasıl kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: cf9071684061b584e1cb75cfd50b33212f42bf79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ad7b1c41f34c14a81910d5be30fd6484919e8d39
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241890"
 ---
 # <a name="setting-accessibility-values-on-user-interface-elements"></a>Kullanıcı arabirimi öğeleri erişilebilirlik değerleri ayarlama
 

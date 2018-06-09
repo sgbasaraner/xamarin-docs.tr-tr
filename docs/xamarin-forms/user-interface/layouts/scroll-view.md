@@ -1,20 +1,20 @@
 ---
-title: ScrollView
-description: Yalnızca bir ekrana sığar ve içerik yer açmak için klavye düzenleri sunmak için ScrollView kullanın.
+title: Xamarin.Forms ScrollView
+description: Bu makalede Xamarin.Forms ScrollView sınıfı tek ekranda sığamıyorsa ve yer açmak için klavyeyi içeriği olan düzenleri sunmak için nasıl kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2016
-ms.openlocfilehash: 708fb39aa2e56861a8c9fc47ab30bd20ed20188e
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 72897013842d464ff9d46825e2b111efbaeb79b8
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847543"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245240"
 ---
-# <a name="scrollview"></a>ScrollView
+# <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
 [`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) düzenleri içerir ve kaydırma ekran dışında sağlar. `ScrollView` klavye gösterilirken ekranda görünen dilimini otomatik olarak taşımak görünümleri izin vermek için de kullanılır.
 
