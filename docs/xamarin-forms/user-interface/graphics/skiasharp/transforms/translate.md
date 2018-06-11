@@ -1,17 +1,18 @@
 ---
 title: Çevir Dönüştür
-description: SkiaSharp grafik kaydırılacak Çevir Dönüştür kullanmayı öğrenin
+description: Bu examiens Çevir Dönüştür SkiaSharp grafik Xamarin.Forms uygulamalarında kaydırma için nasıl kullanılacağını makalesi ve bu örnek kodu ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 98bf81df3eed951893c6bb717d933cfb61e029d3
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: dbc7ffe5c3828876579ba72a387c86d8221c1641
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244828"
 ---
 # <a name="the-translate-transform"></a>Çevir Dönüştür
 
@@ -74,7 +75,7 @@ Birikmiş çeviri Etkenler varsa `dx` ve `dy`, çizim işlevinde belirtin noktas
 
 x' = x + dx
 
-y' = y + dy
+y' y + GN =
 
 Bunlar olarak bilinir *dönüştürme formüller* çeviri için. Varsayılan değerleri `dx` ve `dy` için yeni bir `SKCanvas` 0.
 
