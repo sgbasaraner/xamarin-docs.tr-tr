@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 71f526f87a2536110a6d2292cd66a0f4d81c0bfc
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 49a7ecdad53c7820594f7ebc047ae6fbc5a9bc56
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240343"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209420"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
@@ -30,7 +30,7 @@ Xamarin.Forms `MessagingCenter` görünüm modelleri ve diğer bileşenleri birb
 
 İki bölümü vardır `MessagingCenter`:
 
--  **Abone** - belirli bir imza ile iletiler için dinleme ve alındığında bazı eylemler gerçekleştirme. Birden çok aboneleri için aynı iletiyi dinleniyor olması.
+-  **Abone** - belirli bir imza ile iletiler için dinleme ve alındığında bazı eylemler gerçekleştirme. Birden çok aboneye aynı ileti için dinleniyor olması.
 -  **Gönderme** -görev alacak dinleyiciler için ileti yayımlama. Hiçbir dinleyicileri aboneliğiniz varsa iletiyi göz ardı edilir.
 
 

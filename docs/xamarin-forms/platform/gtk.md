@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 275ec851a2fd8e96adecfeca5daf6a66add7bd92
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 7f68b7c8affc11b50bdb4a2fc9589f8dcbfb45ec
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209196"
 ---
 # <a name="gtk-platform-setup"></a>GTK # Platform Kurulumu
 
@@ -42,7 +43,7 @@ Windows masaüstünde çalışacak GTK # uygulama eklemek için aşağıdaki yö
 
     Tuşuna **Tamam** projesi oluşturmak için düğmesi.
 
-4. İçinde **Çözüm Gezgini**yeni GTK projeye sağ tıklayın ve seçin **NuGet paketlerini Yönet**. Seçin **Gözat** sekmesini tıklatın, **INCLUDE yayın öncesi** onay kutusunu arayın ve **Xamarin.Forms** 3.0 veya daha büyük.
+4. İçinde **Çözüm Gezgini**yeni GTK projeye sağ tıklayın ve seçin **NuGet paketlerini Yönet**. Seçin **Gözat** arayın ve sekmesinde **Xamarin.Forms** 3.0 veya daha büyük.
 
     ![Xamarin.Forms NuGet paketini seçin](gtk-images/win/select-forms-nuget-package.png "Xamarin.Forms NuGet paketi seçin")
 

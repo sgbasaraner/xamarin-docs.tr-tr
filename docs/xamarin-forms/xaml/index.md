@@ -6,12 +6,13 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 10/24/2016
-ms.openlocfilehash: bb3b4c4f80171f676e8b5f9a7464f4da890a4643
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/18/2018
+ms.openlocfilehash: c040c12829708418d0a705b8e9f930989900c678
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209433"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>Genişletilebilir uygulama biçimlendirme dili (XAML)
 
@@ -45,6 +46,10 @@ XAML kullanan `xmlns` ad alanı bildirimleri için XML özniteliği. Bu makalede
 ## <a name="xaml-markup-extensionsmarkup-extensionsindexmd"></a>[XAML Biçimlendirme Uzantıları](markup-extensions/index.md)
 
 XAML biçimlendirme uzantıları değerleri veya basit dizelerle ifade edilebilir ötesinde nesnelere öznitelikleri ayarlamak için içerir. Bunlar, sabitleri, statik özellikleri ve alanları, kaynak sözlüklerindeki ve veri bağlamaları başvuran içerir.
+
+## <a name="field-modifiersfield-modifiersmd"></a>[Alan değiştiricileri](field-modifiers.md)
+
+`x:FieldModifier` Ad özniteliği, adlandırılmış XAML öğeleri için oluşturulan alanlara erişim düzeyini belirtir.
 
 ## <a name="passing-argumentspassing-argumentsmd"></a>[Bağımsız Değişkenleri Geçirme](passing-arguments.md)
 

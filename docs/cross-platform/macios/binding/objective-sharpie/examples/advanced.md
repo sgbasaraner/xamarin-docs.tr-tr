@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 7af9700a9b661280c2ee32a1f65cdc01234cbe37
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 811b783d33a20e23a7e807861e19355a1c372b84
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781262"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209407"
 ---
 # <a name="advanced-manual-real-world-example"></a>(El ile) gerçek örnek Gelişmiş
 
@@ -19,7 +19,7 @@ ms.locfileid: "34781262"
 
 Bu bölüm, burada kullanacağız Apple'nın bağlama, daha gelişmiş bir yaklaşım kapsar `xcodebuild` ilk POP Projeyi derlemek için aracı ve giriş hedefi Sharpie için el ile türetme. Bu, aslında hedefi Sharpie önceki bölümdeki başlık altında yaptıklarını kapsar.
 
-```csharp
+```
  $ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
    _(more git clone output)_
@@ -29,7 +29,7 @@ $ cd pop
 
 POP kitaplığı bir Xcode projesi olduğundan (`pop.xcodeproj`), biz yalnızca kullanabilirsiniz `xcodebuild` POP oluşturmak için. Bu işlem, sırayla hedefi Sharpie ayrıştırma gerekebilir üstbilgi dosyaları oluşturabilir. Bu bağlama önemlidir önce derleme neden olur. Aracılığıyla oluştururken `xcodebuild` geçirdiğiniz aynı SDK tanımlayıcısı ve mimari, emin olun, hedefi Sharpie geçirin (ve hedefi Sharpie 3.0 genellikle bunu sizin için unutmayın!) istediğiniz:
 
-```csharp
+```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
 
 Build settings from command line:
@@ -54,7 +54,7 @@ Bir parçası olarak yapı bilgileri çıkışını konsolunda çok olacaktır `
 
 Biz şimdi POP bağlamak hazır olursunuz. SDK'sı için yapı istediğimizi biliyoruz `iphoneos8.1` ile `arm64` mimarisi ve biz çok önem verdiğiniz üstbilgi dosyaları olduğundan `build/Headers` POP git checkout altında. Biz bakarsanız `build/Headers` dizin, biz üstbilgi dosyaları sayısı göreceksiniz:
 
-```csharp
+```
 $ ls build/Headers/POP/
 POP.h                    POPAnimationTracer.h     POPDefines.h
 POPAnimatableProperty.h  POPAnimator.h            POPGeometry.h
@@ -66,7 +66,7 @@ POPAnimationPrivate.h    POPDecayAnimation.h
 
 Biz bakarsanız `POP.h`, olan kitaplığın ana en üst düzey üstbilgi dosyası görebiliriz `#import`s diğer dosyalar. Bu nedenle, yalnızca geçirmek ihtiyacımız `POP.h` hedefi Sharpie için ve clang arka planda rest yeterlidir:
 
-```csharp
+```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
     -scope build/Headers build/Headers/POP/POP.h \
     -c -Ibuild/Headers -arch arm64

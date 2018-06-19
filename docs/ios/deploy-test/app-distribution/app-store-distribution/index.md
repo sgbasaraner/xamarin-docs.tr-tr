@@ -7,21 +7,24 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 42d287285fc9b8842dfb0c86b627d1d5c84189e1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784822"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209265"
 ---
 # <a name="app-store-distribution"></a>Uygulama mağazası dağıtım
 
 Bir Xamarin.iOS uygulaması geliştirmiştir sonra yazılım geliştirme yaşam döngüsü sonraki adımda iTunes App Store'da kullanarak kullanıcıların uygulamayı dağıtmaktır. Uygulamaları dağıtma en yaygın yolu budur. Apple App Store'dan bir uygulama yayımlayarak, tüketicilere dünya çapında kullanılabilir.
 
 > [!IMPORTANT]
-> Bu **önemli** iTunes Bağlan kullanın ve bu nedenle bir uygulamanın uygulama Mağazası'na yayımlamak için not etmek için **gerekir** bireysel veya kurumsal bir Apple Developer Program ya da bir parçası olarak. Apple Geliştirici üye olması durumunda bu sayfada adımları mümkün olmaz **Kurumsal** Program.
+> Apple [belirtti](https://developer.apple.com/news/?id=05072018a) Temmuz 2018 başlayarak, tüm uygulamaları ve güncelleştirmeleri uygulama mağazasında gönderilen iOS 11 SDK oluşturulmuş gerekir olduğunu ve [iPhone X görüntülenmesini desteklemek](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
 Uygulama – yalnızca ile bir uygulama gibi geliştirme – dağıtma uygulamaları olmasını gerektirir uygun kullanılarak sağlanan *sağlama profili*. Sağlama profilleri kod imzalama uygulama ve hedeflenen dağıtım mekanizması kimliğini yanı sıra bilgiler içeren dosyalardır. Ayrıca uygulama dağıtılabilir hangi cihazların uygulama mağazası dağıtım hakkında bilgi içerir.
+
+> [!IMPORTANT]
+> Bu **önemli** iTunes Bağlan kullanın ve bu nedenle bir uygulamanın uygulama Mağazası'na yayımlamak için not etmek için **gerekir** bireysel veya kurumsal bir Apple Developer Program ya da bir parçası olarak. Apple Geliştirici üye olması durumunda bu sayfada adımları mümkün olmaz **Kurumsal** Program.
 
 <a name="provisioning" />
 

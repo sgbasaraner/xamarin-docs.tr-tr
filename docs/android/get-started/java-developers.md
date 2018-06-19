@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 29fc698e6ed1cfe02ce329813342916d5e7a1651
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 92bcfc888c52f9f74c8484295666da8f5ef7a14c
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209342"
 ---
 # <a name="xamarin-for-java-developers"></a>Java geliştiricileri için Xamarin
 
@@ -50,7 +51,7 @@ Ancak, Java ve C# arasındaki çok sayıda fark vardır. Örneğin:
 
 -   Java gibi önişlemci yönergeleri desteklemediği `#define`.
 
--   Java C imzasız tamsayı türleri gibi sağlarken işaretsiz tamsayı türlerini desteklemediğini `ulong`, `uint`, `ushort` ve `byte`.
+-   C# imzasız tamsayı türleri gibi sağlarken Java işaretsiz tamsayı türlerini desteklemediğini `ulong`, `uint`, `ushort` ve `byte`.
 
 -   Java İşleç aşırı yüklemesi desteklemiyor; C# işleçleri ve dönüşümleri aşırı yüklenebilir.
 
@@ -458,7 +459,7 @@ Ayrıca, C# için benzersiz ve Java hiçbir karşılık gelen birçok anahtar va
 |[delegate](https://msdn.microsoft.com/en-us/library/900fyy8e.aspx)|Bir yöntemi veya anonim yöntemi kapsüllemek için kullanılır.|
 |[enum](https://msdn.microsoft.com/en-us/library/sbbt4032.aspx)|Bir numaralandırma adlandırılmış sabitler kümesini bildirir.|
 |[event](https://msdn.microsoft.com/en-us/library/8627sbea.aspx)|Bir yayımcı sınıf olayda bildirir.|
-|[fixed](https://msdn.microsoft.com/en-us/library/f58wzh21.aspx)|Bir değişken taşınmasını engeller.|
+|[Sabit](https://msdn.microsoft.com/en-us/library/f58wzh21.aspx)|Bir değişken taşınmasını engeller.|
 |`get`|Bir özelliğin değerini alan bir erişimci yöntemi tanımlar.|
 |[in](https://msdn.microsoft.com/en-us/library/dd469484.aspx)|Daha az türetilmiş bir tür genel arabiriminde kabul etmek bir parametre sağlar.|
 |[object](https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx)|.NET Framework nesne türü için bir diğer ad.|

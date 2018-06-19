@@ -6,13 +6,13 @@ ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 91df4d36dd8d98712063a30773f927a82676b18e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/18/2018
+ms.openlocfilehash: 123e65f1efe31935167ca8684e89e7c0b4505443
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243616"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209225"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms yerel veritabanları
 
@@ -36,7 +36,7 @@ Bu bölümde SQLite.Net NuGet paketleri bir Xamarin.Forms çözüme eklemek içi
 
 ### <a name="xamarinsforms-net-standard-or-pcl-project"></a>Xamarins.Forms .NET Standard veya PCL proje
 
-Xamarin.Forms projeye SQLite desteği eklemek için bulmak için NuGet arama işlevini kullanın **sqlite net pcl** paketini ve yükleyin:
+Xamarin.Forms projeye SQLite desteği eklemek için bulmak için NuGet arama işlevini kullanın **sqlite net pcl** ve en son paketini yükleyin:
 
 ![NuGet SQLite.NET PCL paket ekleme](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
 
@@ -47,7 +47,7 @@ NuGet paketlerini benzer adlara sahip bir dizi vardır, doğru paket bu öznitel
 - **NuGet bağlantı:** [sqlite net pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!TIP]
-> Kullanım **sqlite net pcl** bile .NET standart projelerinde NuGet.
+> Kullanım **sqlite net pcl** bile .NET standart projelerinde NuGet paketi.
 
 Başvuru eklendikten sonra veritabanı dosyasının konumunu belirlemektir platforma özgü işlevselliği soyut bir arabirim yazma. Aşağıdaki örnekte kullanılan arabirimi tek bir yöntem tanımlar:
 
@@ -126,15 +126,11 @@ public Task<int> DeleteItemAsync(TodoItem item)
 > [!NOTE]
 > Zaman uyumsuz SQLite.Net API kullanmanın avantajı, işlemleri arka plan iş parçacıkları taşınır bu veritabanıdır. Ayrıca, ek eşzamanlılık API bunu mvc'deki çünkü kod işleme yazmaya gerek yoktur.
 
-Tüm veri erişim kodu tüm platformlarda paylaşılması için PCL projede yazılır. Yalnızca veritabanı için bir yerel dosya yolu alma platforma özgü kod, aşağıdaki bölümlerde özetlenen gerektirir.
+Tüm veri erişim kodu projedeki tüm platformlarda paylaşılmak üzere .NET standart kitaplığı yazılır. Yalnızca veritabanı için bir yerel dosya yolu alma platforma özgü kod, aşağıdaki bölümlerde özetlenen gerektirir.
 
 <a name="PCL_iOS" />
 
 ### <a name="ios-project"></a>iOS projesi
-
-İOS uygulama yapılandırmak için iOS kullanarak projesi aynı NuGet paketi ekleme *NuGet* penceresi:
-
-![NuGet SQLite.NET PCL paket ekleme](databases-images/vsmac-sqlite-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
 
 Gerekli yalnızca kodu `IFileHelper` uygulamasında, veri dosyası yolu belirler. Aşağıdaki kod SQLite veritabanı dosyasına yerleştirir **kitaplık/veritabanları** uygulamanın Korumalı alan klasördeki. Bkz: [iOS dosya sistemi ile çalışma](~/ios/app-fundamentals/file-system.md) depolaması için kullanılabilecek farklı dizinleri hakkında daha fazla bilgi için.
 
@@ -166,11 +162,7 @@ Kod içeren Not `assembly:Dependency` bu uygulama tarafından bulunabilmesini b�
 
 ### <a name="android-project"></a>Android projesi
 
-Android uygulaması yapılandırmak için aynı NuGet paketi kullanarak Android projesi ekleme *NuGet* penceresi:
-
-![](databases-images/vsmac-sqlite-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
-
-Bu başvuru eklendikten sonra gerekli yalnızca kodudur `IFileHelper` uygulamasında, veri dosyası yolu belirler.
+Gerekli yalnızca kodu `IFileHelper` uygulamasında, veri dosyası yolu belirler:
 
 ```csharp
 [assembly: Dependency(typeof(FileHelper))]
@@ -191,11 +183,7 @@ namespace Todo.Droid
 
 ### <a name="windows-10-universal-windows-platform-uwp"></a>Windows 10 Evrensel Windows Platformu (UWP)
 
-UWP uygulaması yapılandırmak için UWP projesi kullanarak aynı NuGet paketi ekleme *NuGet* penceresi:
-
-![NuGet SQLite.NET PCL paket ekleme](databases-images/vs2017-sqlite-uwp-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
-
-Başvuru eklendikten sonra uygulama `IFileHelper` arabirimi platforma özgü kullanılarak `Windows.Storage` veri dosya yolu belirlemek için API.
+Uygulama `IFileHelper` arabirimi platforma özgü kullanılarak `Windows.Storage` API veri dosya yolu belirlemek için:
 
 ```csharp
 using Windows.Storage;

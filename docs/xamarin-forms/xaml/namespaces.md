@@ -6,13 +6,13 @@ ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 07/10/2017
-ms.openlocfilehash: faa4998869b918caaf5bc4252dc81a5745199c93
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/18/2018
+ms.openlocfilehash: 25299bc3b56c2fbb748db202e43e75be183cce66
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245839"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209303"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>Xamarin.Forms XAML ad alanları
 
@@ -43,11 +43,12 @@ Aşağıdaki tabloda ana hatlarını `x` Xamarin.Forms tarafından desteklenen a
 |`x:Arguments`|Varsayılan olmayan bir oluşturucu ya da bir fabrika yöntemi nesne bildirimi oluşturucu bağımsız değişkenlerini belirtir.|
 |`x:Class`|XAML içinde tanımlanan bir sınıf için ad alanı ve sınıf adını belirtir. Sınıf adı arka plan kod dosyasının sınıf adı eşleşmelidir. Bu yapıyı bir XAML dosyasının kök öğesinin yalnızca görünebileceğini unutmayın.|
 |`x:FactoryMethod`|Nesneyi başlatmak için kullanılan Üreteç yöntemi belirtir.|
+|`x:FieldModifier`|Adlandırılmış XAML öğeleri için oluşturulan alanlara erişim düzeyini belirtir.|
 |`x:Key`|Her kaynak için benzersiz bir kullanıcı tanımlı anahtar belirten bir `ResourceDictionary`. Anahtarın değerini XAML kaynağı almak için kullanılır ve genellikle için bağımsız değişken olarak kullanılan `StaticResource` biçimlendirme uzantısı.|
 |`x:Name`|XAML öğesi için bir çalışma zamanı nesne adı belirtir. Ayarı `x:Name` kod bir değişkende bildirmek için benzer.|
 |`x:TypeArguments`|Genel tür bağımsız değişkenleri genel bir tür oluşturucuya belirtir.|
 
-Hakkında daha fazla bilgi için `x:Arguments`, `x:FactoryMethod`, ve `x:TypeArguments` öznitelikleri, [bağımsız değişkenleri geçirme XAML'de](~/xamarin-forms/xaml/passing-arguments.md).
+Hakkında daha fazla bilgi için `x:FieldModifier` özniteliği için bkz: [alan değiştiricileri](~/xamarin-forms/xaml/field-modifiers.md). Hakkında daha fazla bilgi için `x:Arguments`, `x:FactoryMethod`, ve `x:TypeArguments` öznitelikleri, [bağımsız değişkenleri geçirme XAML'de](~/xamarin-forms/xaml/passing-arguments.md).
 
 XAML ad alanı bildirimleri alt öğesi üst öğeden devralır. Bu nedenle, bir ad alanı bir XAML dosyasının kök öğesinin tanımlarken, bu dosyanın içindeki tüm öğeler ad alanı bildirimi devralır.
 

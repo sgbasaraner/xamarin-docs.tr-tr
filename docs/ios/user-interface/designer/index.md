@@ -7,22 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/31/2018
-ms.openlocfilehash: eadc2147a44d6077436e394a4757d367ce42e5fa
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a931373a6abba3084af3c7aefcdddc903ad1b577
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790009"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209238"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>İOS Tasarımcısı ile oluşturma kullanıcı arabirimleri
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-=======
-# <a name="ios-designer"></a>iOS Tasarımcısı
-
 _İOS için Xamarin Tasarımcısı Mac ve Visual Studio için Visual Studio ile tamamen tümleşiktir iOS film şeridi ve arabirim Oluşturucu biçimleri için görsel tasarımcı olur. Böylece dosyaları Mac için Visual Studio veya Visual Studio Xcode'nın arabirimi Oluşturucu yanı sıra düzenlenebilir Tasarımcısı iOS film şeridi ve .xib biçimleri ile tam uyumluluk tutar. Ayrıca, iOS için Xamarin Tasarımcısı Düzenleyicisi'nde tasarım zamanında işleme özel denetimler gibi gelişmiş özellikleri destekler._
->>>>>>> master
 
 # <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 

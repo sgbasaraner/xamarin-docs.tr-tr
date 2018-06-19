@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: bcc265c4d8410bb1aa2305f8a137c96a63c60fae
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 37d99add473203d90cb1b420536827e34e834a2b
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847725"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209329"
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms performans
 
@@ -314,7 +314,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-Yeni bir yerel denetim yalnızca bir kez örneğinin oluşturulması, ne zaman `Control` özelliği `null`. Denetimi yalnızca yapılandırılmalıdır ve olay işleyicileri özel Oluşturucu yeni bir Xamarin.Forms öğesi eklendiğinde abone. Oluşturucu öğesi değişiklikleri iliştirildiğinde benzer şekilde, abone tüm olay işleyicileri yalnızca gelen aboneliği olmalıdır. Bu yaklaşım benimsenmesi bellek sızıntılarını yaşar olmayan bir verimli bir şekilde gerçekleştirme özel Oluşturucu oluşturmak için yardımcı olur.
+Yeni bir yerel denetim yalnızca bir kez örneğinin oluşturulması, ne zaman `Control` özelliği `null`. Denetimi yalnızca yapılandırılmalıdır ve olay işleyicileri özel Oluşturucu yeni bir Xamarin.Forms öğesi eklendiğinde abone. Öğe Oluşturucu değişiklikler iliştirildiğinde benzer şekilde, abone tüm olay işleyicileri yalnızca gelen aboneliği olmalıdır. Bu yaklaşım benimsenmesi bellek sızıntılarını yaşar olmayan bir verimli bir şekilde gerçekleştirme özel Oluşturucu oluşturmak için yardımcı olur.
 
 Özel oluşturucu hakkında daha fazla bilgi için bkz: [özelleştirme denetimleri her platformda](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 

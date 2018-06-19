@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 83c58fa430a0cf21e8b86e56b9dea04b3cad6d82
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 815277e9a4f9384d92bf17376f426cacd40dbc9f
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784774"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209446"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS uygulaması dağıtımı genel bakış
 
@@ -35,6 +35,9 @@ Bu senaryolar uygulamaları olmasını gerektirir uygun kullanılarak sağlanan 
 <a name="App_Store_Distribution"/>
 
 ## <a name="app-store-distribution"></a>Uygulama mağazası dağıtım
+
+> [!IMPORTANT]
+> Apple [belirtti](https://developer.apple.com/news/?id=05072018a) Temmuz 2018 başlayarak, tüm uygulamaları ve güncelleştirmeleri uygulama mağazasında gönderilen iOS 11 SDK oluşturulmuş gerekir olduğunu ve [iPhone X görüntülenmesini desteklemek](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
 Bu, iOS uygulamaları iOS cihazlarda tüketicileri dağıtılan ana yoludur. Uygulama mağazasında gönderilen tüm uygulamalar, Apple tarafından onay gerektirir.
 
