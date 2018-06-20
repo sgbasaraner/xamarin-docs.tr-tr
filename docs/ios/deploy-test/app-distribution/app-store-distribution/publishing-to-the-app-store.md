@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 489d9fa569b083f5cb655dc503ab4fa551810b6d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785706"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209492"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Xamarin.iOS uygulamaları için uygulama mağazası yayımlama
+
+> [!IMPORTANT]
+> Apple [belirtti](https://developer.apple.com/news/?id=05072018a) Temmuz 2018 başlayarak, tüm uygulamaları ve güncelleştirmeleri uygulama mağazasında gönderilen iOS 11 SDK oluşturulmuş gerekir olduğunu ve [iPhone X görüntülenmesini desteklemek](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
 Tüm iOS cihazları için uygulamaları sırayla dağıtmak, Apple gerektirir üzerinden yayımlanan uygulamalar *App Store*, uygulama mağazası iOS uygulamaları için tek adrestir alışveriş konum yapma. Deposundaki 500. 000'den uygulamalarıyla, bu tek bir dağıtım noktasını yoğun başarı birçok türdeki uygulamayı geliştiricileri büyük harfe. Uygulama geliştiriciler dağıtım ve ödeme sistemleri sunumu hazır bir çözüm uygulama Mağazası ' dir.
 
@@ -231,7 +234,7 @@ Visual Studio için Xamarin eklentisi şu anda arşivleme iş akışı uygulama 
 1. Seçin **iOS paket imzalama** ve sağlama profili sağlama profili bir uygulama mağazasının değiştirin:
 
     ![](publishing-to-the-app-store-images/ipa01.png "İOS paket imzalama seçin ve sağlama profili sağlama profili bir uygulama mağazasının değiştirin")
-1. Seçin **iOS IPA seçenekleri** seçip **geçici** gelen **yapılandırma** açılır listeden (varsa geçici görünmez, seçin **sürüm** Bunun yerine):
+1. Seçin **iOS IPA Seçenekleri > yapılandırma > geçici** (varsa **geçici** select bir seçenek değil **sürüm** yerine) ve bir IPA dosyası oluşturmak için onay kutusunu işaretleyin:
 
     ![](publishing-to-the-app-store-images/imagevs02.png "Geçici yapılandırma açılır listeden seçin")
 
