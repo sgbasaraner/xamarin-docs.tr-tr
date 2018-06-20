@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b5e94a9b0bc3b9e9f141ad9fd262d29e01eb8a10
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: a35038a948a89889bbf067a453b7465c1a6a7b49
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793827"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268998"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Çalışma kitapları yükleme ve gereksinimler
 
@@ -43,8 +44,8 @@ ms.locfileid: "34793827"
 
 |Uygulama platformu|İşletim sistemi desteği|Notlar|
 |--- |--- |--- |
-|Mac (Birleşik)|Yalnızca Mac üzerinde desteklenir|
-|iOS (Birleşik)|Mac ve Windows desteklenen|Xamarin.iOS 11.0 ve Xcode 9.0 veya büyük Mac üzerinde yüklü olmalıdır Yukarıdakilerin tümü, çalıştıran bir Mac yapı konak iOS çalışma kitaplarını Windows üzerinde çalışan gerektirir ve [düğümlerde iOS simülatörü](~/tools/ios-simulator.md) Windows üzerinde yüklü.|
+|Mac|Yalnızca Mac üzerinde desteklenir|
+|iOS|Mac ve Windows desteklenen|Xamarin.iOS 11.0 ve Xcode 9.0 veya büyük Mac üzerinde yüklü olmalıdır Yukarıdakilerin tümü, çalıştıran bir Mac yapı konak iOS çalışma kitaplarını Windows üzerinde çalışan gerektirir ve [düğümlerde iOS simülatörü](~/tools/ios-simulator.md) Windows üzerinde yüklü.|
 |Android|Mac ve Windows desteklenen|Google, Visual Studio veya Xamarin Android öykünücüsü, bir sanal aygıtla kullanmalısınız > 5.0 =|
 |WPF|Yalnızca Windows üzerinde desteklenir|
 |Konsol (.NET Framework)|Mac ve Windows desteklenen|
@@ -114,7 +115,7 @@ Ekleme ya da bağlantı **.workbooks** hatayı daha hızlı çözmenize yardımc
 
 ### <a name="windows"></a>Windows
 
-Nasıl çalışma kitaplarını & Denetçisi aldığınız bağlı olarak, iki kaldırma yordamları gerçekleştirmeniz gerekebilir. Bu yazılımı tamamen kaldırmak için hem de gözden geçirin.
+Çalışma kitapları nasıl aldığınız bağlı olarak iki kaldırma yordamları gerçekleştirmeniz gerekebilir. Bu yazılımı tamamen kaldırmak için hem de gözden geçirin.
 
 #### <a name="visual-studio-installer"></a>Visual Studio Yükleyicisi
 
@@ -122,19 +123,19 @@ Visual Studio 2017 varsa, açık **Visual Studio yükleyicisi**ve konum **bileş
 
 #### <a name="system-uninstall"></a>Sistem Kaldır
 
-Çalışma kitapları & Denetçisi kendiniz ile indirilen yükleyiciyi yüklediyseniz, üzerinden mi kaldırılması gerekir **uygulamalar ve Özellikler** sistem ayarları sayfası Windows 10 veya aracılığıyla **Program Ekle/Kaldır**önceki sürümlerinde Windows Denetim Masası'nda.
+Çalışma kitapları kendiniz ile indirilen yükleyiciyi yüklediyseniz, üzerinden mi kaldırılması gerekir **uygulamalar ve Özellikler** sistem ayarları sayfası Windows 10 veya aracılığıyla **Program Ekle/Kaldır** denetimi Windows'un eski sürümlerini panelde.
 
 > **Başlat > Ayarlar > Sistem > uygulamalar ve Özellikler**
 
-![](install-images/windows-remove.png "Xamarin çalışma kitaplarını ve içinde listelenen denetçisi &quot;uygulamaları &amp; özellikleri&quot;")
+![](install-images/windows-remove.png "Xamarin içinde listelenen çalışma kitaplarını &quot;uygulamaları &amp; özellikleri&quot;")
 
-**Hala yordamı çalışma kitaplarını emin olmak Visual Studio Yükleyicisi için izlemeniz gereken & Denetçisi bilginiz dışında yeniden değil.**
+**Hala çalışma kitaplarını doğrulandığı bilginiz dışında emin olmak Visual Studio yükleyicisi yordamı da.**
 
 <a name="uninstall-macos" />
 
 ### <a name="macos"></a>MacOS
 
-İle başlayarak [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), Xamarin çalışma kitaplarını & Denetçisi kaldırılması terminal durumundan çalıştırarak:
+İle başlayarak [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), Xamarin çalışma kitapları kaldırılması terminal durumundan çalıştırarak:
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
@@ -153,7 +154,7 @@ Eski sürümleri için el ile aşağıdaki kaldırmanız gerekir:
 
 ## <a name="downgrading"></a>Önceki sürüme indirme
 
-Paket tanımlayıcısı **uygulamalar/Xamarin Workbooks.app** değiştirildi `com.xamarin.Inspector` için `com.xamarin.Workbooks` gelecekteki Xamarin çalışma kitaplarını & Denetçisi yükleyicileri bölme kolaylaştırmak için 1.4 sürümde.
+Paket tanımlayıcısı **uygulamalar/Xamarin Workbooks.app** değiştirildi `com.xamarin.Inspector` için `com.xamarin.Workbooks` 1.4 sürümde çalışma kitaplarını ve denetçisi artık tam olarak bölme.
 
 Eski yükleyicileri bir hata nedeniyle 1.3.2 veya eski yükleyicileri kullanarak 1.4 ya da daha yeni sürümleri düşürmek mümkün değil.
 

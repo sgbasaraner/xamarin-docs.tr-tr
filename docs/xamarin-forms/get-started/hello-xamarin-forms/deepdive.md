@@ -7,13 +7,13 @@ ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/10/2018
-ms.openlocfilehash: 011ec94aca4e5110c704b83cb24cf6260338dfbd
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/13/2018
+ms.openlocfilehash: 7c8eee5fc7075f23221c06dab29b83b1d5e01ffc
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35243632"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269096"
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms derin Dalış
 
@@ -62,15 +62,11 @@ Projeleri şunlardır:
 
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms uygulaması anatomisi
 
-Aşağıdaki ekran görüntüsünde, Mac için Visual Studio'da Phoneword PCL proje içeriğini gösterir:
+Aşağıdaki ekran görüntüsünde, Mac için Visual Studio'da Phoneword .NET standart kitaplığı proje içeriğini gösterir:
 
-![](deepdive-images/xs/pcl-project.png "Phoneword PCL proje içeriği")
+![](deepdive-images/xs/library-project.png "Phoneword .NET standart kitaplığı proje içeriği")
 
-Proje üç klasörleri oluşur:
-
-- **Başvuruları** – oluşturmak ve uygulamayı çalıştırmak için gerekli olan derlemeleri içerir. .NET taşınabilir alt klasörünü genişleterek ortaya çıkarır .NET derlemelerini başvurular gibi [sistem](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx), System.Core, ve [System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx). Genişletme **gelen paketler** klasörü Xamarin.Forms derlemelerine başvurular ortaya çıkarır.
-- **Paketleri** – paketleri dizin evleri [NuGet](https://www.nuget.org) uygulamanızda üçüncü taraf kitaplıklar kullanılarak işlemini basitleştirmek paketler. Bu paketleri en son sürümleri için klasörü sağ tıklatın ve açılır menüde güncelleştirme seçeneğini seçerek güncelleştirilebilir.
-- **Özellikler** – içerir **AssemblyInfo.cs**, bir .NET derlemesi meta veri dosyası. Bu dosya, uygulamanız hakkında bazı temel bilgileri doldurmak için iyi bir uygulamadır. Bu dosya hakkında daha fazla bilgi için bkz: [AssemblyInfo sınıfı](http://msdn.microsoft.com/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx) konusuna bakın.
+Proje içeren bir **bağımlılıkları** içeren düğümü **NuGet** ve **SDK** düğümleri. **NuGet** düğümü projeye eklenen Xamarin.Forms NuGet paketi içerir ve **SDK** düğüm içerir `NETStandard.Library` tamamını NuGet paketlerini başvuruyor metapackage .NET standart tanımlayın.
 
 -----
 
@@ -81,7 +77,6 @@ Proje dosyaları sayısı da oluşur:
 - **IDialer.cs** – `IDialer` belirleyen arabirimi `Dial` yöntemi tüm sınıflar tarafından sağlanmalıdır.
 - **MainPage.xaml** – için XAML biçimlendirme `MainPage` tanımlar uygulaması başlatıldığında gösterilen sayfanın UI sınıfı.
 - **MainPage.xaml.cs** – arka plan koduna `MainPage` sayfasıyla kullanıcı etkileşim kurduğunda çalıştırılan iş mantığı içeren sınıf.
-- **Packages.config** – proje tarafından gerekli paketler ve ilgili sürümlerine izlemek için kullanılan NuGet paketleri hakkında bilgi içeren (yalnızca Mac için Visual Studio) bir XML dosyası. Mac için Visual Studio ve Visual Studio, otomatik olarak tüm eksik NuGet paketlerini kaynak kodunu diğer kullanıcılarla paylaşımını geri yüklemek üzere yapılandırılabilir. Bu dosyanın içeriğini NuGet Paket Yöneticisi tarafından denetlenir ve el ile düzenlenmemelidir.
 - **PhoneTranslator.cs** – gelen çağrılan bir telefon numarasına bir telefon sözcük dönüştürmek için sorumlu olduğu iş mantığı **MainPage.xaml.cs**.
 
 Bir Xamarin.iOS uygulaması anatomisi hakkında daha fazla bilgi için bkz: [bir Xamarin.iOS uygulaması anatomisi](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Bir Xamarin.Android uygulaması anatomisi hakkında daha fazla bilgi için bkz: [bir Xamarin.Android uygulaması anatomisi](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
@@ -99,8 +94,6 @@ Xamarin.Forms uygulaması için geleneksel bir platformlar arası uygulama aynı
 Xamarin.Forms uygulaması için geleneksel bir platformlar arası uygulama aynı şekilde geliştirilmiştir. Paylaşılan kod genellikle bir .NET standart kitaplığında yerleştirilir ve platforma özgü uygulamaları paylaşılan kod kullanma. Aşağıdaki diyagramda bu ilişki Phoneword uygulama için genel bir bakış gösterilir:
 
 ![](deepdive-images/xs/architecture.png "Phoneword mimarisi")
-
-PCLs hakkında daha fazla bilgi için bkz: [taşınabilir sınıf kitaplıkları giriş](~/cross-platform/app-fundamentals/pcl.md).
 
 -----
 
@@ -153,23 +146,26 @@ namespace Phoneword.iOS
 
 ### <a name="android"></a>Android
 
-Android ilk Xamarin.Forms sayfasında başlatmak için Phoneword.Droid proje oluşturan kod içerir bir `Activity` ile `MainLauncher` özniteliğiyle içinden devralma etkinlik `FormsApplicationActivity` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
+Android ilk Xamarin.Forms sayfasında başlatmak için Phoneword.Droid proje oluşturan kod içerir bir `Activity` ile `MainLauncher` özniteliğiyle içinden devralma etkinlik `FormsAppCompatActivity` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
 
 ```csharp
 namespace Phoneword.Droid
 {
-    [Activity(Label = "Phoneword",
-              Icon = "@drawable/icon",
+    [Activity(Label = "Phoneword", 
+              Icon = "@mipmap/icon", 
+              Theme = "@style/MainTheme", 
               MainLauncher = true,
               ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         internal static MainActivity Instance { get; private set; }
 
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
+            base.OnCreate(bundle);
             Instance = this;
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());

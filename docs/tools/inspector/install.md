@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: f7c5217a9c2d3881ca29094c3186e448975db6a3
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793814"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268975"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspector yükleme ve gereksinimler
 
@@ -19,13 +19,15 @@ ms.locfileid: "34793814"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. İndirme ve yükleme [Xamarin çalışma kitaplarını & Denetçisi for Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
-2. [Kendi uygulamanızı inceleyin!](~/tools/inspector/inspect.md)
+1. İndirme ve yükleme [Visual Studio Enterprise](https://www.visualstudio.com/vs/) seçip **.NET ile Mobil Geliştirme** iş yükü.
+1. [Oturum](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) Kurumsal aboneliğinizi etkinleştirmek için.
+1. [İnceleme](~/tools/inspector/inspect.md) kendi uygulamanızı!
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. İndirme ve yükleme [Xamarin çalışma kitaplarını & Denetçisi Mac için](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
-2. [Kendi uygulamanızı inceleyin!](~/tools/inspector/inspect.md)
+1. İndirme ve yükleme [Mac için Visual Studio](https://www.visualstudio.com/vs/mac/).
+1. [Oturum](https://docs.microsoft.com/visualstudio/mac/activation) Kurumsal aboneliğinizi etkinleştirmek için.
+1. [İnceleme](~/tools/inspector/inspect.md) kendi uygulamanızı!
 
 -----
 
@@ -38,10 +40,8 @@ ms.locfileid: "34793814"
 
 ### <a name="supported-ides"></a>Desteklenen IDE
 
-- Xamarin Studio 6.2 veya büyük
-- Visual Studio Mac Önizleme 4 veya daha büyük
-- Xamarin ile Visual Studio 2015 4.3.x veya daha büyük
-- Xamarin iş yükü ile Visual Studio 2017
+- Mac için Visual Studio
+- Visual Studio 2017 ile **.NET ile Mobil Geliştirme** iş yükü
 
 Dinamik uygulama İnceleme Kurumsal müşteriler için kullanılabilir.
 
@@ -51,10 +51,10 @@ Dinamik uygulama İnceleme Kurumsal müşteriler için kullanılabilir.
 
 |Uygulama platformu|IDE desteği|Notlar|
 |--- |--- |--- |
-|Mac (Birleşik)|Yalnızca Mac üzerinde desteklenir|
-|iOS (Birleşik)|Desteklenen XS ve Visual Studio|İOS uygulamalarını Windows inceleniyor Mac yapı konakta da yüklenmesi denetçisinin aynı sürümünü gerektirir.|
-|Android|Desteklenen XS ve Visual Studio|Android hedeflemelidir > ile 4.0.3, = **fastdev** etkin.<br />Google, Visual Studio veya Xamarin Android öykünücüsünü kullanmanız gerekir. Android 7 öykünücüsünü denetleme şu anda izin vermeyebilir.|
-|WPF|Yalnızca Windows Visual Studio'da desteklenir|
+|Mac|Yalnızca Mac için Visual Studio'da desteklenir|
+|iOS|Visual Studio 2017 ve Visual Studio Mac için desteklenen| |
+|Android|Visual Studio 2017 ve Visual Studio Mac için desteklenen|Android hedeflemelidir > ile 4.0.3, = **fastdev** etkin.<br />Google, Visual Studio veya Xamarin Android öykünücüsünü kullanmanız gerekir. Android 7 öykünücüsünü denetleme şu anda izin vermeyebilir.|
+|WPF|Yalnızca Visual Studio 2017 içinde desteklenir|
 
 <a name="reporting-bugs" />
 
@@ -73,11 +73,6 @@ Bu bilgiler önemlidir.
 Mac için Visual Studio
 
 - **Visual Studio > Visual Studio hakkında > Ayrıntıları Göster > kopyalama bilgileri**
-- Hata raporu yapıştırın
-
-Xamarin Studio
-
-- **Xamarin Studio > Xamarin Studio hakkında > Ayrıntıları Göster > kopyalama bilgileri**
 - Hata raporu yapıştırın
 
 Visual Studio
@@ -102,10 +97,6 @@ Mac için Visual Studio
 
 - `~/Library/Logs/VisualStudio/7.0/Ide.log`
 
-Xamarin Studio
-
-- `~/Library/Logs/XamarinStudio-6.0/Ide.log`
-
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
@@ -129,42 +120,3 @@ Android ve iOS için incelemek istediğinizde üzerinde ayıkladığınız hangi
 - Aygıt, ağ bağlantısı (denetimi web tarayıcısı aracılığıyla) var mı?
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new
-
-## <a name="uninstall"></a>Kaldır
-
-### <a name="windows"></a>Windows
-
-Nasıl çalışma kitaplarını & Denetçisi aldığınız bağlı olarak, iki kaldırma yordamları gerçekleştirmeniz gerekebilir. Bu yazılımı tamamen kaldırmak için hem de gözden geçirin.
-
-#### <a name="visual-studio-installer"></a>Visual Studio Yükleyicisi
-
-Visual Studio 2017 varsa, açık **Visual Studio yükleyicisi**ve konum **bileşenleri tek tek** için **Xamarin çalışma kitaplarını**. İşaretlenirse, onay işaretini kaldırın ve sonra kaldırmak için "Değiştir"'i tıklatın.
-
-#### <a name="system-uninstall"></a>Sistem Kaldır
-
-Çalışma kitapları & Denetçisi kendiniz ile indirilen yükleyiciyi yüklediyseniz, üzerinden mi kaldırılması gerekir **uygulamalar ve Özellikler** sistem ayarları sayfası Windows 10 veya aracılığıyla **Program Ekle/Kaldır**önceki sürümlerinde Windows Denetim Masası'nda.
-
-> **Başlat > Ayarlar > Sistem > uygulamalar ve Özellikler**
-
-![](install-images/windows-remove.png "Xamarin çalışma kitaplarını ve 'Uygulamalar ve Özellikler' listelendiği gibi denetçisi")
-
-**Hala yordamı çalışma kitaplarını emin olmak Visual Studio Yükleyicisi için izlemeniz gereken & Denetçisi bilginiz dışında yeniden değil.**
-
-### <a name="macos"></a>MacOS
-
-İle başlayarak [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), Xamarin çalışma kitaplarını & Denetçisi kaldırılması terminal durumundan çalıştırarak:
-
-```bash
-sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
-```
-
-Kaldırıcı dosyaları ve dizinleri, kaldırmak ve devam etmeden önce onay isteyin ayrıntılarını kaydeder.
-
-Geçirmek `-help` bağımsız değişkeni `uninstall` daha Gelişmiş senaryolar için komut dosyası.
-
-Eski sürümleri için el ile aşağıdaki kaldırmanız gerekir:
-
-1. Çalışma kitapları uygulamaya Sil `"/Applications/Xamarin Workbooks.app"`
-2. Inspector uygulamaya Sil `"Applications/Xamarin Inspector.app"`
-3. Eklentileri silin: `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` ve `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-4. Inspector silin ve destek dosyaları burada: `/Library/Frameworks/Xamarin.Interactive.framework` ve `/Library/Frameworks/Xamarin.Inspector.framework`

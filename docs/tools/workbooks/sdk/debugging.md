@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 author: topgenorth
 ms.author: toopge
-ms.date: 03/30/2017
-ms.openlocfilehash: fa8806345a364a70535a91b2ba99e3bfee8d47bc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 6e37b1ac3d0fb78b5737ebe97b5a28ab40adb648
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794026"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269063"
 ---
 # <a name="debugging-integrations"></a>Hata ayıklama tümleştirmeler
 
@@ -23,8 +23,8 @@ MacOS üzerinde günlük iletilerini her iki günlük Görüntüleyici menüsün
 
 MacOS ve Windows üzerinde aşağıdaki konumlarda istemci günlüğü şöyledir:
 
-- Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 Dikkat edilmesi gereken tek şey olduğundan, bu, normal aracılığıyla tümleştirmeler yüklenirken `#r` mekanizması geliştirme sırasında tümleştirme derleme toplanmış olarak bir _bağımlılık_ çalışma kitabının ve mutlak bir yol ise ile paketlenen kullanılmıyor. Bu değişiklikleri yaymak değil için tümleştirme yeniden hiçbir şey gibi olmanızın görünmesi neden olabilir.
 
@@ -39,7 +39,7 @@ Dikkat edilmesi gereken tek şey olduğundan, bu, normal aracılığıyla tümle
 Mac Xamarin çalışma kitapları için Geliştirici Araçları etkinleştirmek için terminal aşağıdaki komutu çalıştırın:
 
 ```shell
-defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
+defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 ```
 
 ve Xamarin çalışma kitaplarını yeniden başlatın. Bunu yaptıktan sonra görmeniz gerekir **incelemek öğesi** sağ tıklatma bağlam menüsünde hem de yeni bir görünür **Geliştirici** bölmesinde çalışma kitaplarını tercihlerinde kullanılabilir olacak. Bu seçenek, başlangıçta açılan geliştirici araçları isteyip istemediğinizi seçmenizi sağlar:

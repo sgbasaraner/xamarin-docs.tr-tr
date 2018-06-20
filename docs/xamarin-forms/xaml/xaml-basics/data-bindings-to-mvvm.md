@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: e9f38377299e8094162dd2d2d73174e6f2b40369
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e83f8a585c4badc31bffaea53bb2f183e7b11fc9
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245777"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268868"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Bölüm 5. Veri bağlamaları MVVM için
 
@@ -290,7 +290,7 @@ Aşağıdaki XAML dosyasını içeren bir `BoxView` , `Color` özelliği bağlı
 </ContentPage>
 ```
 
-Her bağlama `Label` varsayılan `OneWay`. Değerini görüntülemek yalnızca gerekir. Ancak her bağlama `Slider` olan `TwoWay`. Böylece `Slider` ViewModel başlatılacak. Dikkat `Color` özelliği ayarlanmış `Blue` ViewModel örneği olduğunda. Ancak bir değişiklik `Slider` yeni bir renk hesaplar ViewModel içinde özelliği için yeni bir değer ayarlamak de gerekir.
+Her bağlama `Label` varsayılan `OneWay`. Değerini görüntülemek yalnızca gerekir. Ancak her bağlama `Slider` olan `TwoWay`. Böylece `Slider` ViewModel başlatılacak. Dikkat `Color` özelliği ayarlanmış `Aqua` ViewModel örneği olduğunda. Ancak bir değişiklik `Slider` yeni bir renk hesaplar ViewModel içinde özelliği için yeni bir değer ayarlamak de gerekir.
 
 [![](data-bindings-to-mvvm-images/hslcolorscroll.png "İki yönlü veri bağlamalar kullanılarak MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "iki yönlü veri bağlamalar kullanılarak MVVM")
 

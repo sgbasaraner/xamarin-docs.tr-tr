@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Android ve JDK 9
+title: Xamarin.Android ve Java Geliştirme Seti 9
 description: Bu makalede Xamarin.Android içinde Java Geliştirme Seti (JDK) 9 hataların nasıl çözüleceği açıklanmaktadır.
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -7,14 +7,15 @@ ms.assetid: 7DCF0985-F77D-4A68-AC54-10C9846E189A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 8857823884447f22b7bc5535f43369671d3285bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/18/2018
+ms.openlocfilehash: 529062f820cd682dc6a9c22f706dbceecef1c836
+ms.sourcegitcommit: 57f9a9ba2f199697cb75e7be67f1a372c35a861b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36269679"
 ---
-# <a name="xamarinandroid-and-jdk-9"></a>Xamarin.Android ve JDK 9
+# <a name="xamarinandroid-and-java-development-kit-9"></a>Xamarin.Android ve Java Geliştirme Seti 9
 
 _Bu makalede Xamarin.Android içinde Java Geliştirme Seti (JDK) 9 hataların nasıl çözüleceği açıklanmaktadır._
 
@@ -52,10 +53,12 @@ Java HotSpot(TM) 64-Bit Server VM (build 9.0.4+11, mixed mode)
 
 JDK 9 yüklüyse, Java JDK 8 (1.8) yüklemeniz gerekir. JDK 8 yükleme hakkında daha fazla bilgi için bkz: [Java Geliştirme Seti (JDK) sürüm nasıl güncelleştirebilirim?](~/android/troubleshooting/questions/update-jdk.md)
 
+JDK 9 kaldırmak olmadığını unutmayın; Ancak, Xamarin JDK 9 yerine JDK 8 kullanıyor olmanız gerekir. Visual Studio'da sırasıyla **Araçlar > Seçenekler > Xamarin > Android ayarları**. Varsa **Java Geliştirme Seti konumu** JDK 8 konuma ayarlı değil (gibi **C:\\Program Files\\Java\\jdk1.8.0_111**), tıklatın **Değiştir**  ve JDK 8 yüklendiği konumun ayarlayın. Mac için Visual Studio'da gidin **Tercihler > projeleri > SDK konumları > Android > Java SDK'sı (JDK)** tıklatıp **Gözat** bu yolu güncelleştirmek için.
+
 ## <a name="known-issues-with-jdk-9"></a>JDK 9 ile ilgili bilinen sorunlar
 
 ### <a name="apksigner"></a>apksigner
 
 Bir bilinen sorun olmadığından apksigner ve JDK 9, `apksigner.bat` dosyasını çağırır `apksigner.jar` ile `-Djava.ext.dirs` yerine `-classpath` JDK 9 bekleyen. JDK 8 (1.8) kullanmanız önerilir. JDK 8 yükleme hakkında daha fazla bilgi için bkz: [Java Geliştirme Seti (JDK) sürüm nasıl güncelleştirebilirim?](~/android/troubleshooting/questions/update-jdk.md)
 
-JDK 9 kaldırıldıktan sonra aşağıdaki yolu üzerinde ayarlanmadı emin olun, `PATH` ortam değişkeni olarak hala JDK 9'a işaret: `C:\ProgramData\Oracle\Java\javapath`. Bu, kaldırdıktan sonra `java -version` bir komut satırında JDK 8 göstermesi gerekir.
+JDK 9 yüklediyseniz, aşağıdaki yolu üzerinde ayarlanmadı emin olun, `PATH` ortam değişkeni olarak hala JDK 9'a işaret: `C:\ProgramData\Oracle\Java\javapath`. Bu, kaldırdıktan sonra `java-version` bir komut satırında JDK 8 göstermesi gerekir.
