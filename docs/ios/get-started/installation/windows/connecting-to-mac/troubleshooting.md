@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e371b4aecdd7b40c33e4596fec3c3ca7691bb42c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 575e6705679539af6d3e5fae3ffc5721d9f79ba6
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786193"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291054"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Bağlantı için bir Xamarin.iOS yapı konak sorunlarını giderme
 
@@ -91,7 +91,7 @@ Xamarin derleme Konaktan Xamarin.iOS eski sürümleri artık gerekli değildir. 
     ssh amyb@10.1.8.95 'ls'
     ```
     
-    Bu giriş dizininize Mac üzerinde içeriğini listele Varsa `ls` komutu doğru çalışır ancak Visual Studio bağlantı hala, kontrol edebilirsiniz başarısız [bilinen sorunlar ve sınırlamalar](#knownissues) için Xamarin belirli zorluklar ilgili bölümü. Bu hiçbiri sorununuzu eşleşirse, lütfen [yeni bir hata raporu dosya](https://bugzilla.xamarin.com/newbug) ve altında açıklanan günlükleri attach [ayrıntılı günlük dosyalarını denetleyin](#verboselogs).
+    Bu giriş dizininize Mac üzerinde içeriğini listele Varsa `ls` komutu doğru çalışır ancak Visual Studio bağlantı hala, kontrol edebilirsiniz başarısız [bilinen sorunlar ve sınırlamalar](#knownissues) için Xamarin belirli zorluklar ilgili bölümü. Hiçbiri bu sorununuzu eşleşirse, lütfen Geliştirici topluluğu üzerinde yeni bir hata raporu giderek dosya **Yardım > geri bildirim gönder > bir sorun bildirmek** Visual Studio ve altında açıklanan günlükleri ekleme [ayrıntılı günlüğü'nü denetleyin Dosyaları](#verboselogs).
 
 10. Varsa **8 başarısız adım**, terminale Mac SSH sunucusu kabul etmiş olup olmadığını görmek için aşağıdaki komutu çalıştırabilirsiniz _herhangi_ bağlantıları:
 

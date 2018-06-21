@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 3a1da095559b4030332f4b7cc74b4f8f94fb1c61
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 6cef2f5e8b92341a83f9e791f268f8ad324f1da5
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268881"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291370"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms hızlı başlangıç
 
@@ -33,9 +33,12 @@ Phoneword uygulama gibi oluşturun:
 
     ![](quickstart-images/vs/new-solution.png "Yeni Proje")
 
-3. İçinde **yeni proje** iletişim kutusunda, tıklatın **platformlar arası**seçin **mobil uygulama (Xamarin.Forms)** şablon kümesi adı ve çözüm adı `Phoneword`, seçin bir ' a tıklayın ve proje için uygun konumu **Tamam** düğmesi:
+3. İçinde **yeni proje** iletişim kutusunda, tıklatın **platformlar arası**seçin **mobil uygulama (Xamarin.Forms)** şablon kümesi adı **Phoneword**, proje için uygun bir konum seçin ve tıklatın **Tamam** düğmesi:
 
     ![](quickstart-images/vs/new-project.w157.png "Platformlar arası proje şablonları")
+
+    > [!NOTE]
+    > Çözüm adı başarısız **Phoneword** çok sayıda yapı hatalarına neden.
 
 4. İçinde **yeni Çapraz Platform uygulaması** iletişim kutusunda, tıklatın **boş uygulama**seçin **.NET standart** kod paylaşımı stratejisi ve tıklatın olarak **Tamam** düğmesi:
 
@@ -454,13 +457,16 @@ Phoneword uygulama gibi oluşturun:
 
     ![](quickstart-images/xs/choose-template.png "Bir şablon seçin")
 
-3. İçinde **boş formları uygulamanızı yapılandırma** iletişim kutusunda, yeni uygulama adı `Phoneword`, emin **kullanım .NET standart** radyo düğmesi seçilir ve'ı tıklatın **sonraki** düğmesi:
+3. İçinde **boş formları Uygulamanızı yapılandırmak** iletişim kutusunda, yeni uygulama adı **Phoneword**, emin **kullanım .NET standart** radyo düğmesi seçilir ve tıklatın**Sonraki** düğmesi:
 
     ![](quickstart-images/xs/configure-app.png "Forms uygulamayı yapılandırma")
 
-4. İçinde **yeni boş formları uygulamanızı yapılandırma** iletişim, çözüm ve proje adları kümesine bırakın `Phoneword`, proje için uygun bir konum seçin ve'ı tıklatın **oluşturma** düğmesi oluşturmak için Proje:
+4. İçinde **yeni boş formları Uygulamanızı yapılandırmak** iletişim, çözüm ve proje adları kümesine bırakın **Phoneword**, proje için uygun bir konum seçin ve tıklatın **oluşturma**düğmesi projesi oluşturmak için:
 
     ![](quickstart-images/xs/configure-project.png "Forms projesi yapılandırın")
+
+    > [!NOTE]
+    > Çözüm ve proje adı başarısız **Phoneword** çok sayıda yapı hatalarına neden.
 
 5. İçinde **çözüm paneli**, çift **MainPage.xaml** açmak için:
 

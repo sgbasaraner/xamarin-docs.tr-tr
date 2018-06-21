@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 6d3e5e61069723b0910b092da6631d5dc4ad8629
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b0fd644f1f3b49a949a3a9ba9aca4c0770f17013
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244551"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291357"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms görüntülerde
 
@@ -153,8 +153,11 @@ Projenizi içinde klasörler halinde katıştırılmış görüntüler yerleşti
 Katıştırılmış bir resim yüklemek için kodu yalnızca geçirir **kaynak kimliği** için [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) aşağıda gösterildiği gibi yöntemi:
 
 ```csharp
-var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg") };
+var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
 ```
+
+> [!NOTE]
+> Evrensel Windows platformu üzerinde yayın modunda katıştırılmış görüntüleri görüntüleme desteklemek için bunu kullanın gereklidir `ImageSource.FromResource` içinde görüntüsü için arama yapmak istediğiniz kaynak derleme belirtir.
 
 Şu anda kaynak tanımlayıcılar için örtük dönüştürme yok. Bunun yerine, kullanmanız gereken [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) veya `new ResourceImageSource()` katıştırılmış görüntüler yüklenemiyor.
 
@@ -182,12 +185,15 @@ public class ImageResourceExtension : IMarkupExtension
    }
 
    // Do your translation lookup here, using whatever method you require
-   var imageSource = ImageSource.FromResource(Source);
+   var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
    return imageSource;
  }
 }
 ```
+
+> [!NOTE]
+> Evrensel Windows platformu üzerinde yayın modunda katıştırılmış görüntüleri görüntüleme desteklemek için bunu kullanın gereklidir `ImageSource.FromResource` içinde görüntüsü için arama yapmak istediğiniz kaynak derleme belirtir.
 
 Bu uzantıyı kullanmak için özel bir ekleyin `xmlns` XAML için proje için doğru ad alanını ve derleme değerleri kullanarak. Görüntü kaynağı sonra Bu sözdizimi kullanılarak ayarlanabilir: `{local:ImageResource WorkingWithImages.beach.jpg}`. Tam bir XAML örnek aşağıda verilmiştir:
 
@@ -224,9 +230,15 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-#### <a name="images-embedded-in-other-projects-dont-appear"></a>Diğer projelerinde katıştırılmış resimleri görünmüyor
+#### <a name="images-embedded-in-other-projects"></a>Diğer projelerinde katıştırılmış görüntüler
 
-`Image.FromResource` yalnızca aynı bütünleştirilmiş kod arama görüntülerinde arar `FromResource`. Yukarıdaki hata ayıklama kodu kullanarak belirleyebilir değiştirerek belirli bir kaynak hangi derlemelerin içeren `typeof()` ifadesine bir `Type` her derlemede olduğu bilinen.
+Varsayılan olarak, `ImageSource.FromResource` yöntemi yalnızca arar aynı bütünleştirilmiş kod arama görüntülerinde `ImageSource.FromResource` yöntemi. Yukarıdaki hata ayıklama kodu kullanarak belirleyebilir değiştirerek belirli bir kaynak hangi derlemelerin içeren `typeof()` ifadesine bir `Type` her derlemede olduğu bilinen.
+
+Ancak, katıştırılmış resmi Aranmakta kaynak assembly bağımsız değişken olarak belirtilebilir `ImageSource.FromResource` yöntemi:
+
+```csharp
+var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
+```
 
 <a name="Downloading_Images" />
 
@@ -316,7 +328,6 @@ Yalnızca iOS ve UWP uygulamaları (başlangıç ekranından veya varsayılan g�
 Xamarin.Forms birkaç platformda kullanılmak üzere aynı görüntü için veya platforma özgü görüntüleri için belirtilmesine izin bir uygulamada platformlar arası, görüntüleri dahil etmek için farklı yolla sunar. İndirilen resmi da otomatik olarak önbelleğe alınan genel bir kodlama senaryoyu otomatikleştirme.
 
 Uygulama simgesi ve KarşılamaEkranı görüntüleri ayarı olan ve Xamarin.Forms olmayan uygulamalar için olduğu gibi - yapılandırılmış platforma özgü uygulamaları için kullanılan aynı yönergeleri izleyin.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

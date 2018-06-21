@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/21/2018
-ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: c2e6a5624baba251061bcd324fcb849e3d95ebfd
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291041"
 ---
 # <a name="resource-dictionaries"></a>Kaynak sözlükleri
 
@@ -251,7 +252,7 @@ Birleştirilmiş zaman [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDicti
 
 1. Kaynak sözlüğe yerel kaynaklar.
 1. Birleştirilmiş kaynak sözlükte bulunan kaynaklar kullanım dışı aracılığıyla [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) özelliği.
-1. Aracılığıyla birleştirilen kaynak sözlüklerindeki içerdiği kaynaklar `MergedDictionaries` koleksiyon, bunlar içinde listelenen sırayla `MergedDictionaries` özelliği.
+1. Aracılığıyla birleştirilen kaynak sözlüklerindeki içerdiği kaynaklar `MergedDictionaries` koleksiyon, içinde listelenmiştir ters sırada `MergedDictionaries` özelliği.
 
 > [!NOTE]
 > Kaynak sözlüklerindeki arama olabilir bir pkı'ya yoğun görevi birden çok, bir uygulama içeriyorsa, büyük kaynak sözlük. Bu nedenle, gereksiz arama önlemek için her bir uygulama sayfasını yalnızca sayfasına uygun kaynak sözlüklerindeki kullandığından emin olun.
