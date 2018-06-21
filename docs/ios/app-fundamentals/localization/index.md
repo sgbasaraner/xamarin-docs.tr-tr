@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 06758fd8fac62a63c309b173738a8ee889716143
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7f05243196a9b916ac5c7b73df957262604ccb11
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785272"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268816"
 ---
 # <a name="localization-in-xamarinios"></a>Xamarin.iOS yerelleştirme
 
@@ -55,6 +55,16 @@ Geçerli yerel iki yöntemden birini sorgulanabilir:
 - `NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier`
 
 İlk değeri işletim sistemi tarafından önbelleğe alınabilir ve böylece her zaman kullanıcının şu anda seçili yerel gösterebilir değil. Seçili yerel edinmek için ikinci değeri kullanın.
+
+> [!NOTE]
+> Mono (Xamarin.iOS temel .NET çalışma zamanı) ve Apple iOS API dil/bölge kombinasyon aynı kümeleri desteklemez.
+> Bu nedenle, bir dil/bölge birleşimi iOS seçmek olası **ayarları** Mono geçerli bir değer eşlenmiyor uygulama. Örneğin, İspanya için İngilizce iPhone's dil ve kendi bölge ayarı farklı değerler elde etmek üzere aşağıdaki API'leri neden olur:
+> 
+> - `CurrentThead.CurrentCulture`: en-US (Mono API)
+> - `CurrentThread.CurrentUICulture`: en-US (Mono API)
+> - `NSLocale.CurrentLocale.LocaleIdentifier`: en_ES (Apple API)
+>
+> Mono kullandığından `CurrentThread.CurrentUICulture` kaynakları seçmek için ve `CurrentThread.CurrentCulture` tarih ve para birimlerinin biçimlendirmek için Mono tabanlı yerelleştirme (örneğin, ile .resx dosyaları) bu dil/bölge birleşimler için beklenen sonuçları getirilmesine değil. Bu durumlarda, gerektiğinde yerelleştirme için Apple'nın API'lerini kullanır.
 
 ### <a name="nscurrentlocaledidchangenotification"></a>NSCurrentLocaleDidChangeNotification
 
