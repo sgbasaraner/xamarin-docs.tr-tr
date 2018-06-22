@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30774414"
 ---
 # <a name="apk-expansion-files"></a>APK genişletme dosyaları
 
@@ -72,7 +73,7 @@ Bir uygulama Google Play'den yüklendiğinde genişletme dosyaları indirilip AP
 
 [![APK genişletme akış çizelgesi](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
-Bir uygulama başlatıldığında uygun genişletme dosyaları geçerli aygıtta olup olmadığını görmek için kontrol etmeniz gerekir. Yeterli değillerse sonra uygulama Google Play'den ait bir istek olmalısınız [uygulama lisans](http://developer.android.com/google/play/licensing/index.html). Bu onay kullanılarak yapılan *lisans doğrulama kitaplığı (LVL)*ve ücretsiz ve lisanslı uygulamalar için yapılması gerekir. LVL öncelikle lisans kısıtlamaları zorlamak için ücretli uygulamalar tarafından kullanılır. Ancak, böylece de genişletme kitaplıklarıyla kullanılabilir Google LVL genişletmiştir. Ücretsiz uygulamalar LVL denetimi gerçekleştirmek sahip, ancak lisans kısıtlamaları göz ardı edebilirsiniz. LVL isteği uygulama gerektiriyor genişletme dosyalar hakkında aşağıdaki bilgileri sağlamaktan sorumludur: 
+Bir uygulama başlatıldığında uygun genişletme dosyaları geçerli aygıtta olup olmadığını görmek için kontrol etmeniz gerekir. Yeterli değillerse sonra uygulama Google Play'den ait bir istek olmalısınız [uygulama lisans](http://developer.android.com/google/play/licensing/index.html). Bu onay kullanılarak yapılan *lisans doğrulama kitaplığı (LVL)* ve ücretsiz ve lisanslı uygulamalar için yapılması gerekir. LVL öncelikle lisans kısıtlamaları zorlamak için ücretli uygulamalar tarafından kullanılır. Ancak, böylece de genişletme kitaplıklarıyla kullanılabilir Google LVL genişletmiştir. Ücretsiz uygulamalar LVL denetimi gerçekleştirmek sahip, ancak lisans kısıtlamaları göz ardı edebilirsiniz. LVL isteği uygulama gerektiriyor genişletme dosyalar hakkında aşağıdaki bilgileri sağlamaktan sorumludur: 
 
 -   **Dosya boyutu** &ndash; genişletme dosyaların dosya boyutları doğru genişletme dosyalarının zaten indirilip indirilmediğini olup olmadığını belirler onay bir parçası olarak kullanılır.
 -   **Dosya adları** &ndash; genişletme paketleri hangi kaydedilmelidir için dosya adı (geçerli cihazda) budur.
