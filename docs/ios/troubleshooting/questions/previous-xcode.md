@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30775617"
 ---
 # <a name="how-can-i-download-a-previous-version-of-xcode"></a>Xcode önceki bir sürümünü nasıl karşıdan yükleyebilir?
 

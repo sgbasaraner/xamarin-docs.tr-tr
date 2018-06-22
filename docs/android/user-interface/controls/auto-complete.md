@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30764456"
 ---
 # <a name="auto-complete"></a>Otomatik Tamamlama
 
@@ -192,4 +193,4 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 *Bu sayfayı bölümlerini olan oluşturulan ve Android açık kaynak projesi tarafından paylaşılan ve açıklanan terimleri göre kullanılan iş göre değişiklikler* 
  [ *Creative Commons 2.5 Attribution lisans* ](http://creativecommons.org/licenses/by/2.5/) *. Bu öğretici dayanır* 
  [ *Android otomatik tamamlama öğretici*](http://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
-*.*
+ *.*

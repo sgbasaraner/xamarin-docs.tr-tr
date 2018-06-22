@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33918532"
 ---
 # <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-package"></a>PCL örnek olay incelemesi: nasıl ı çözümleyebildiğinden System.Diagnostics.Tracing için Microsoft TPL veri akışı NuGet paketi için ilgili sorunları?
 

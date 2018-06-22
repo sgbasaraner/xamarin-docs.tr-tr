@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33917674"
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>Ne ı gerçekleştirmek kapsamlı bir Visual Studio için Xamarin kaldırma?
 

@@ -1,6 +1,6 @@
 ---
 title: Android Job Scheduler
-description: "Bu kılavuz Android iş Zamanlayıcı API'yi kullanarak arka plan çalışması zamanlamak nasıl açıklanır."
+description: Bu kılavuz Android iş Zamanlayıcı API'yi kullanarak arka plan çalışması zamanlamak nasıl açıklanır.
 ms.prod: xamarin
 ms.assetid: 673BB8C3-C5CC-43EC-BA8F-758F15D986C9
 ms.technology: xamarin-android
@@ -12,6 +12,7 @@ ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 03/21/2018
+ms.locfileid: "30005665"
 ---
 # <a name="android-job-scheduler"></a>Android Job Scheduler
 

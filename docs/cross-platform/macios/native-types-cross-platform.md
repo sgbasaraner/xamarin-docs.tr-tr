@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33918164"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>Platformlar arası uygulamalar içindeki yerel türler ile çalışma
 

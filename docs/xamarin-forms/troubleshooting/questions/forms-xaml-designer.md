@@ -12,6 +12,7 @@ ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34546157"
 ---
 # <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-files"></a>Neden Visual Studio XAML Tasarımcısı için Xamarin.Forms XAML dosyaları çalışmıyor?
 

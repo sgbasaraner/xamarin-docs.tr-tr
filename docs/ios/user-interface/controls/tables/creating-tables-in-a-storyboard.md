@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30780729"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>İOS Tasarımcısı sekmelerle çalışma
 
@@ -45,7 +46,7 @@ Kullanıcı arabirimi ile film şeridi oluşturulacak ve her iki ekranlar bir UI
 
 ## <a name="walkthrough"></a>İzlenecek yol
 
-Visual Studio kullanarak yeni bir çözüm oluşturun **(Oluştur) yeni proje... > tek görünüm App(C#)**ve bunu _StoryboardTables_.
+Visual Studio kullanarak yeni bir çözüm oluşturun **(Oluştur) yeni proje... > tek görünüm App(C#)** ve bunu _StoryboardTables_.
 
  [![Yeni Proje iletişim kutusu oluşturma](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 

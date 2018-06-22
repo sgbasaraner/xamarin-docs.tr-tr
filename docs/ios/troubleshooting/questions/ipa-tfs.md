@@ -12,6 +12,7 @@ ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31883715"
 ---
 # <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>Nasıl ı TFS bırakma klasörüne IPA çıktı dosyalarını kopyalayabilirsiniz?
 

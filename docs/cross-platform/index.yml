@@ -12,6 +12,7 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: tr-TR
   ms.lasthandoff: 05/03/2018
+  ms.locfileid: "32436391"
 abstract:
   description: Xamarin, mobil uygulamalar ile tablet ve masaüstü uygulamaları için platformlar arası geliştirme çözümü sağlar. Bu bölümde, hedeflenen tüm platformlarda geçerli olan ayrıntılar ele alınır.
   menu:

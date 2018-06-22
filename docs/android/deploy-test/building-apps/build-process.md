@@ -11,6 +11,7 @@ ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/27/2018
+ms.locfileid: "32019717"
 ---
 # <a name="build-process"></a>Derleme işlemi
 

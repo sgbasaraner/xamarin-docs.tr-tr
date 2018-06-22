@@ -10,6 +10,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33917388"
 ---
 # <a name="missing-packages-error-after-updating-nuget-packages"></a>Nuget paketlerini güncelleştirdikten sonra eksik paketleri hatası
 
