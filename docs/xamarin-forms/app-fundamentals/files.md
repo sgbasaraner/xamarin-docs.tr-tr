@@ -1,42 +1,68 @@
 ---
 title: Xamarin.Forms içinde dosya işleme
-description: Katıştırılmış kaynakları kullanarak veya yerel dosya sistemi API'leri karşı yazma dosya Xamarin.Forms ile işleme yapılabilir.
+description: Dosya Xamarin.Forms ile işleme kod kullanarak bir .NET standart kitaplığında veya katıştırılmış kaynakları kullanarak elde edilebilir.
 ms.prod: xamarin
 ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/22/2017
-ms.openlocfilehash: 80fdedd6c5df15272e36e6ac9c1414a4f731123a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/21/2018
+ms.openlocfilehash: 0be441a7be9777698212e690aca95fdd75e5050f
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241939"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36310159"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms içinde dosya işleme
 
-_Katıştırılmış kaynakları kullanarak veya yerel dosya sistemi API'leri karşı yazma dosya Xamarin.Forms ile işleme yapılabilir._
+_Dosya Xamarin.Forms ile işleme kod kullanarak bir .NET standart kitaplığında veya katıştırılmış kaynakları kullanarak elde edilebilir._
 
 ## <a name="overview"></a>Genel Bakış
 
-Xamarin.Forms kodu her biri kendi dosya sistemine sahip birden çok platformda - çalışır. Bu dosyaları okuma ve yazma çoğu olduğu anlamına gelir kolayca yapılan her platformda yerel dosya API kullanarak. Alternatif olarak, ekli veri dosyalarıyla bir uygulama dağıtmak için daha basit bir çözüm kaynaklardır.
-
-Bu belge aşağıdaki ortak dosya senaryoları işlemeyi kapsar:
-
--  [ **Gömülü kaynaklar olarak dosyalar** ](#Loading_Files_Embedded_as_Resources) -dosyaları bir uygulama ve yüklenen yansıma API kullanarak bir parçası olarak sevk.
--  [ **Kaydetme ve dosyaları yükleme** ](#Loading_and_Saving_Files) -kullanıcı yazılabilir-depolama olabilir yerel olarak uygulanır ve kullanılarak erişilir `DependencyService` .
-
-
-Bir üçüncü taraf bileşen çağrı **PCLStorage** okumak ve dosyaları PCL koddan kullanıcı-erişilebilir-depolama alanına yazmak için de kullanılabilir.
+Xamarin.Forms kodu her biri kendi dosya sistemine sahip birden çok platformda - çalışır. Daha önce bu dosyaları okuma ve yazma en kolay olduğunu her platformda yerel dosyanın API'leri kullanılarak gerçekleştirilen anlamına gelir. Alternatif olarak, ekli veri dosyalarıyla bir uygulama dağıtmak için daha basit bir çözüm kaynaklardır. Ancak, standart .NET 2.0 ile dosya erişim kodu .NET standart kitaplıklarında paylaşmak mümkündür.
 
 Görüntü dosyaları işleme hakkında daha fazla bilgi için bkz [görüntülerle çalışma](~/xamarin-forms/user-interface/images.md) sayfa.
+
+<a name="Loading_and_Saving_Files" />
+
+## <a name="saving-and-loading-files"></a>Kaydetme ve dosyaları yükleme
+
+`System.IO` Sınıfları, her platformda dosya sistemine erişmek için kullanılabilir. `File` Sınıfı, oluşturma, silme ve dosyaları okumasına olanak sağlar ve `Directory` sınıfı oluşturamaz, silemez veya dizinleri içeriğini listeleme olanak tanır. Aynı zamanda `Stream` alt sınıfların bir büyük ölçüde dosya işlemleri (örneğin, bir dosya içinde sıkıştırma veya konumu arama) üzerinde denetim sağlar.
+
+Bir metin dosyası kullanarak yazılabilir `File.WriteAllText` yöntemi:
+
+```csharp
+File.WriteAllText(fileName, text);
+```
+
+Bir metin dosyası kullanarak okunabilir `File.ReadAllText` yöntemi:
+
+```csharp
+string text = File.ReadAllText(fileName);
+```
+
+Ayrıca, `File.Exists` yöntemi, belirtilen dosya var olup olmadığını belirler:
+
+```csharp
+bool doesExist = File.Exists(fileName);
+```
+
+Her platformda dosyasının yolunu değerini kullanarak bir .NET standart Kitaplığı'ndan belirlenebilir [ `Environment.SpecialFolder` ](xref:System.Environment.SpecialFolder) numaralandırması için ilk bağımsız değişken olarak `Environment.GetFolderPath` yöntemi. Bunun ardından bir dosya adı ile birleştirilebilir `Path.Combine` yöntemi:
+
+```csharp
+string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "temp.txt");
+```
+
+Bu işlemler kaydeder ve metin yükleyen bir sayfa içerir örnek uygulaması gösterilmiştir:
+
+[![Kaydetme ve metin yükleme](files-images/saveandload-sml.png "kaydetme ve uygulama yükleme dosyalarında")](files-images/saveandload.png#lightbox "kaydetme ve uygulama yükleme dosyaları")
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
 ## <a name="loading-files-embedded-as-resources"></a>Kaynaklar olarak ekli dosyaları yükleniyor
 
-Bir dosyaya katıştırmak için bir **PCL** derlemesi oluşturun veya bir dosya eklemek ve emin **yapı eylemi: EmbeddedResource**.
+Bir dosyaya katıştırmak için bir **.NET standart** derlemesi oluşturun veya bir dosya eklemek ve emin **yapı eylemi: EmbeddedResource**.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -112,7 +138,7 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="organizing-resources"></a>Kaynakları düzenleme
 
-Yukarıdaki örneklerde, dosya durumda kaynak kimliği biçiminde olduğu PCL proje kök dizininde katıştırılır varsayılmaktadır **Namespace.Filename.Extension**, gibi `WorkingWithFiles.PCLTextResource.txt` ve `WorkingWithFiles.iOS.SharedTextResource.txt`.
+Yukarıdaki örneklerde, dosyanın durumda kaynak kimliği biçiminde olduğu .NET standart kitaplığı proje kök dizininde katıştırılır varsayılmaktadır **Namespace.Filename.Extension**, gibi `WorkingWithFiles.PCLTextResource.txt` ve `WorkingWithFiles.iOS.SharedTextResource.txt`.
 
 Katıştırılmış kaynakları klasörlerde düzenlemek mümkündür. Katıştırılmış bir kaynağı bir klasörde yerleştirildiğinde, kaynak kimliği biçimi hale klasör adı kaynak kimliği (noktalarla ayrılmış olarak), bir parçası olur **Namespace.Folder.Filename.Extension**. Bir klasöre örnek uygulamasında kullanılan dosyaları yerleştirme **Klasörüm'ün** karşılık gelen kaynak kimlikleri yapacağı `WorkingWithFiles.MyFolder.PCLTextResource.txt` ve `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`.
 
@@ -132,119 +158,13 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 }
 ```
 
-<a name="Loading_and_Saving_Files" />
-
-## <a name="saving-and-loading-files"></a>Kaydetme ve dosyaları yükleme
-
-Xamarin.Forms her biri kendi dosya sistemine sahip birden çok platformdaki çalıştığından yükleme ve kullanıcı tarafından oluşturulan dosyaları kaydetme için tek bir yaklaşım yoktur. Tamamlanmış ekran kaydetmek ve kaydeder ve bazı kullanıcı girişi - yükler ekran örnek uygulamasını içeren metin dosyalarını yüklemek nasıl göstermek için aşağıda gösterilmiştir:
-
- [![Kaydetme ve metin yükleme](files-images/saveandload-sml.png "kaydetme ve uygulama yükleme dosyalarında")](files-images/saveandload.png#lightbox "kaydetme ve uygulama yükleme dosyaları")
-
-Her platformun biraz farklı dizin yapısını ve farklı dosya sistemi özellikleri vardır - örneğin çoğu Xamarin.iOS ve Xamarin.Android desteği `System.IO` işlevselliği Evrensel Windows platformu yalnızca destekler, ancak [ `Windows.Storage` ](/uwp/api/windows.storage/) API'leri.
-
-Bu sorunla karşılaşmamak için örnek uygulama yüklemek ve dosyaları kaydetmek için Xamarin.Forms PCL bir arabirim tanımlar. Bu aygıtta yüklemek ve metin dosyaları kaydetmek için basit bir API depolanacağı sağlar.
-
-```csharp
-public interface ISaveAndLoad {
-    void SaveText (string filename, string text);
-    string LoadText (string filename);
-}
-```
-
-PCL kod sonra [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) arabirimi yerel bir uygulama için bir başvuru elde edilir. Bu dosyaların her platforma özgü projeleri yazılmış sınıfına kaydetme ve yükleme temsilci için taşınabilir kodu sağlar. Örnekte, **kaydetmek** ve **yük** düğmeleri gösterildiği gibi yazılır:
-
-```csharp
-var saveButton = new Button {Text = "Save"};
-saveButton.Clicked += (sender, e) => {
-    DependencyService.Get<ISaveAndLoad>().SaveText("temp.txt", input.Text);
-};
-var loadButton = new Button {Text = "Load"};
-loadButton.Clicked += (sender, e) => {
-    output.Text = DependencyService.Get<ISaveAndLoad>().LoadText("temp.txt");
-};
-```
-
-Ardından bir uygulama dosyalarını gerçekten kaydedilmiş ve yüklenen kullanılmadan önce her platforma özgü projeleri eklenmesi gerekir.
-
-### <a name="ios-and-android"></a>iOS ve Android
-
-Xamarin.iOS ve Xamarin.Android projeleri için arabiriminin uygulamasını aynı olabilir. Kod, dahil olmak üzere aşağıda verilmiştir `[assembly: Dependency (typeof (SaveAndLoad))]` için gerekli olan öznitelik `DependencyService` çalışmak için.
-
-```csharp
-[assembly: Dependency (typeof (SaveAndLoad))]
-namespace WorkingWithFiles {
-    public class SaveAndLoad : ISaveAndLoad {
-        public void SaveText (string filename, string text) {
-            var documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
-            var filePath = Path.Combine (documentsPath, filename);
-            System.IO.File.WriteAllText (filePath, text);
-        }
-        public string LoadText (string filename) {
-            var documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
-            var filePath = Path.Combine (documentsPath, filename);
-            return System.IO.File.ReadAllText (filePath);
-        }
-    }
-}
-```
-
-### <a name="universal-windows-platform-uwp"></a>Evrensel Windows Platformu (UWP)
-
-Farklı bir dosya sistemi API – UWP sahip [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) – yani kaydetmek ve dosyaları yüklemek için kullanılır.
-`ISaveAndLoad` Arabirimi, aşağıda gösterildiği gibi uygulanabilir:
-
-```csharp
-using System;
-using System.Threading.Tasks;
-using Windows.Storage;
-using WinApp;
-using WorkingWithFiles;
-using Xamarin.Forms;
-
-[assembly: Dependency(typeof(SaveAndLoad_WinApp))]
-
-namespace WindowsApp
-{
-    // https://msdn.microsoft.com/library/windows/apps/xaml/hh758325.aspx
-    public class SaveAndLoad_WinApp : ISaveAndLoad
-    {
-        public async Task SaveTextAsync(string filename, string text)
-        {
-            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-            StorageFile sampleFile = await localFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
-            await FileIO.WriteTextAsync(sampleFile, text);
-        }
-        public async Task<string> LoadTextAsync(string filename)
-        {
-            StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
-            StorageFile sampleFile = await storageFolder.GetFileAsync(filename);
-            string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
-            return text;
-        }
-    }
-}
-```
-
-<a name="Saving_and_Loading_in_Shared_Projects" />
-
-### <a name="saving-and-loading-in-shared-projects"></a>Kaydetme ve paylaşılan projelerinde yükleme
-
-Paylaşılan projeleri derleyici yönergeleri desteklediğinden, tek bir sınıf dosyası paylaşılan proje içindeki tüm platforma özgü kodu dahil mümkündür (kullanmadan `DependencyService`).
-Tek bir `SaveAndLoad` sınıfı gibi derleyici yönergeleri kullanarak başvuru projelerine seçmeli olarak derlenmiş yukarıdaki her iki uygulamaları içeren yazılmaya `#if WINDOWS_PHONE`, `#if __IOS__`, ve `#if __ANDROID__`.
-
-## <a name="additional-information"></a>Ek Bilgiler
-
-Xamarin.Forms projeleri PCL tabanlı ayrıca yararlanabilir [PCLStorage NuGet](http://www.nuget.org/packages/pclstorage) ([kod &amp; belgelerine](https://pclstorage.codeplex.com/)) dosya işlemleri platformlar arası şekilde uygulamak yardımcı olmak için.
-
-
 ## <a name="summary"></a>Özet
 
-Bu belge katıştırılmış kaynakları yükleme ve kaydetme ve cihazın metin yükleme için bazı basit dosya işlemleri göstermiştir. Geliştiriciler kendi yerel dosya API'lerini kullanarak uygulayabilirsiniz `DependencyService`, kendi dosya işleme gereksinimlerini karşılamak için gerektiği kadar karmaşık hale getirme.
-
+Bu makalede, bazı basit dosya işlemleri kaydetme ve cihazın metin yükleme ve katıştırılmış kaynaklar yükleniyor göstermiştir. .NET standart 2.0 ile dosya erişim kodu .NET standart kitaplıklarında paylaşmak da mümkündür.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [FilesSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
-- [Oluştur, yazma ve bir dosya (UWP) okuma](/windows/uwp/files/quickstart-reading-and-writing-files/)
 - [Xamarin.Forms Örnekleri](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.iOS dosya sisteminde ile çalışma](~/ios/app-fundamentals/file-system.md)
 - [Dosyalar çalışma kitabı](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/files/files.workbook)

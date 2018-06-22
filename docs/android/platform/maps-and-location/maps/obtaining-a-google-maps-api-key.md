@@ -5,12 +5,13 @@ ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: c37fce491b2e6f5e0211fcc6aa7906643a1bac2a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/20/2018
+ms.openlocfilehash: 5a162ba15bbb6d6dcdf7debe01fb12b3b08a843e
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309796"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>API anahtarı Google alma eşlemeleri
 
@@ -36,7 +37,7 @@ Hata ayıklama sürümleri bir Xamarin.Android uygulaması olabilir imzalamak i�
 
 Bir anahtar deposu hakkında bilgi elde edilir çalıştırarak `keytool` JDK komutunu. Bu araç genellikle Java bin dizininde bulunur:
 
-**C:\\Program Files (x86)\\Java\\jdk[VERSION]\\bin\\keytool.exe**
+**C:\\Program Files (x86)\\Java\\jdk [sürüm]\\bin\\keytool.exe**
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -46,7 +47,7 @@ Hata ayıklama sürümleri bir Xamarin.Android uygulaması olabilir imzalamak i�
 
 Bir anahtar deposu hakkında bilgi elde edilir çalıştırarak `keytool` JDK komutunu. Bu araç genellikle Java bin dizininde bulunur:
 
-**/System/Library/Java/JavaVirtualMachines/[VERSION].jdk/Contents/Home/bin/keytool**
+**/System/library/Java/JavaVirtualMachines/[VERSION].JDK/Contents/Home/bin/keytool**
 
 -----
 
@@ -104,45 +105,41 @@ Certificate fingerprints:
 
 SHA-1 parmak izi kullanır (sonra listelenen **SHA1**) Bu kılavuzda daha sonra.
 
-
 ## <a name="creating-an-api-project"></a>Bir API projesi oluşturma
 
 İmzalama anahtar deposu, SHA-1 parmak izi aldıktan sonra Google API'leri konsolda yeni bir proje oluşturduğunuzda (veya var olan bir projeye Google haritalar Android API v2 hizmeti eklemek) gereklidir.
 
-1. Bir tarayıcıda gidin [Google geliştiriciler konsol](https://console.developers.google.com/): tıklatıp **proje oluştur**:
+1. Bir tarayıcıda gidin [Google geliştiriciler konsol API & Hizmetleri Pano](https://console.developers.google.com/apis/dashboard/) tıklatıp **bir proje seçin**. Bir proje adı'ı tıklatın veya tıklatarak yeni bir tane oluşturun **yeni proje**:
 
    [![Google Developer konsolunda proje oluştur düğmesi](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
-2. İçinde **yeni proje** görünür, iletişim proje adı girin.
-   İletişim kutusu, bu örnekte gösterildiği gibi proje adına göre bir benzersiz proje kimliği üretirler:
+2. Yeni bir proje oluşturduysanız, proje adı girin **yeni proje** görüntülenen iletişim. Bu iletişim kutusu, proje adına göre bir benzersiz proje kimliği üretirler. Bundan sonra öğesini **oluşturma** düğmesini Bu örnekte gösterildiği gibi:
 
    [![Yeni Proje XamarinMapsDemo adlı](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
-3. Tıklatın **oluşturma** düğmesi. Bir dakika veya bunu sonra Proje oluşturulur ve gittiğiniz **API Yöneticisi** sayfası. İçinde **Kitaplığı** 'yi tıklatın **Google haritalar Android API'si**:
+3. Bir dakika veya bunu sonra Proje oluşturulur ve gittiğiniz **Pano** projenin sayfası. Buradan, tıklatın **API'leri ve HİZMETLERİ'ni etkinleştir**:
 
    [![Google haritalar Android API'si kitaplık bölümünde tıklatarak](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
-4. Üstündeki **Google haritalar Android API'si** sayfasında, **etkinleştirmek** bu proje için etkinleştirmek için:
+4. Gelen **API Kitaplığı** sayfasında, **Android için Maps SDK**. Sonraki sayfada tıklatın **etkinleştirmek** bu proje için etkinleştirmek için:
 
    [![Pano bölümünde Etkinleştir düğmesini tıklatın](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
-
-Bu noktada API proje oluşturulup oluşturulmadığını ve Google haritalar Android API v2 eklendi. Ancak, kimlik bilgileri için oluşturduğunuz kadar bu API projenizde kullanamazsınız. Ardından bu anahtarı kullanmak için yetkili bir API anahtarı ve beyaz liste bir Xamarin.Android uygulaması oluşturmak üzere nasıl tümleştirildiği incelenmektedir.
-
+Bu noktada API proje oluşturulup oluşturulmadığını ve Google haritalar Android API v2 eklendi. Ancak, kimlik bilgileri için oluşturduğunuz kadar bu API projenizde kullanamazsınız. Sonraki bölümde, bu anahtarı kullanmak için yetkili bir API anahtarı ve beyaz liste bir Xamarin.Android uygulaması oluşturun, böylece açıklanmaktadır.
 
 ## <a name="obtaining-the-api-key"></a>API anahtarı edinme
 
 Sonra **Google Developer konsolunda** API projesi süredir oluşturulan, onu bir Android API anahtarı oluşturmak gereklidir. Xamarin.Android uygulamaları, Android harita API v2 erişim verilmeden önce bir API anahtarı olması gerekir.
 
-1. İçinde **Google haritalar Android API'si** görüntülenen sayfa (tıkladıktan sonra **etkinleştirmek** önceki adımda), tıklatın **kimlik bilgilerine Git** düğmesi:
+1. İçinde **Android için Maps SDK** görüntülenen sayfa (tıkladıktan sonra **etkinleştirmek** önceki adımda) gidin **kimlik bilgileri** sekmesinde **oluştur kimlik bilgileri** düğmesi:
 
-   [![Bu API etkin iletisi](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [![SDK'sı için Android kimlik bilgilerini ileti eşlemeleri](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
-2. İçinde **kimlik bilgileri** sayfasında, **kimlik bilgileri ne yapmalıyım?** düğmesi:
+2. Tıklatın **API anahtarı**:
 
    [![Proje iletişim için kimlik bilgilerini ekleyin](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
 
-3. Bu düğmeye tıklandığında sonra API anahtarı oluşturulur. Ardından bu anahtar yalnızca uygulamanız bu anahtarla API'leri çağırmak şekilde kısıtlamak gereklidir. Tıklatın **kısıtlama anahtarı**:
+3. Bu düğmeye tıklandığında sonra API anahtarı oluşturulur. Ardından bu anahtar yalnızca uygulamanız bu anahtarla API'leri çağırmak şekilde kısıtlamak gereklidir. Tıklatın **KISITLAMA anahtarı**:
 
    [![Kimlik bilgileri sayfasında tıklatmak kısıtlama anahtarı](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
 
@@ -166,7 +163,17 @@ Sonra **Google Developer konsolunda** API projesi süredir oluşturulan, onu bir
 
    [![XamarinMapsDemoKey API anahtarları listesinde gösterilir](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
+## <a name="connect-the-project-to-a-billable-account"></a>Proje Faturalanabilir bir hesabına bağlanma
 
+(Hizmet için mobil uygulamalar hala boş olsa bile) proje Faturalanabilir bir hesabı bağlı değilse Haziran, 11 2018, başlayan API anahtarını çalışmaz.
+
+1. Hamburger menü düğmesini tıklatın ve seçin **faturalama** sayfa:
+
+   [![Hamburger menü fatura bölüm seçme](obtaining-a-google-maps-api-key-images/13-goto-billing-vs-sml.png)](obtaining-a-google-maps-api-key-images/13-goto-billing-vs.png#lightbox)
+
+2. Proje için bir faturalama hesabı bağlantısını tıklatarak **bir faturalama hesabı bağlamak** arkasından **FATURALAMA hesabı oluştur** görüntülenen açılan (bir hesabınız yoksa, yeni bir tane oluşturmak için yönlendirilecektir):
+
+   [![Faturalama hesabı projeye bağlantı](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
 
 ## <a name="adding-the-key-to-your-project"></a>Anahtar projenize ekleme
 
@@ -177,15 +184,13 @@ Son olarak, bu API anahtarı eklemek **AndroidManifest.XML** Xamarin.Android uyg
     android:versionName="4.10" package="com.xamarin.docs.android.mapsandlocationdemo"
     android:versionCode="10">
 ...
-
   <application android:label="@string/app_name">
     <!-- Put your Google Maps V2 API Key here. -->
-    <meta-data android:name="com.google.android.geo.API_KEY" android:value="YOUR_API_KEY" />
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
   </application>
 </manifest>
 ```
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

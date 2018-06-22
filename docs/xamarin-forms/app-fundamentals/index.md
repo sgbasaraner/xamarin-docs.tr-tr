@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f843f4b1c20daba2a504bd0e70ae51f4d0405c06
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d75cac7a21b2c74a6627845cdda8e4c04e72bddc
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240252"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309781"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms uygulaması temelleri
 
@@ -47,6 +47,10 @@ Veri bağlama değişiklikleri otomatik olarak başka bir özellik yansıtılmas
 ## <a name="effectseffectsindexmd"></a>[Etkiler](effects/index.md)
 
 Efektler izin yerel denetimlere özelleştirilmek üzere her platformda ve genellikle küçük stil değişiklikler için kullanılır.
+
+## <a name="filesfilesmd"></a>[Dosyalar](files.md)
+
+Dosya Xamarin.Forms ile işleme kod kullanarak bir .NET standart kitaplığında veya katıştırılmış kaynakları kullanarak elde edilebilir.
 
 ## <a name="gesturesgesturesindexmd"></a>[Hareketler](gestures/index.md)
 

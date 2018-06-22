@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 4803a612e2b06e458f2859dbbbd30b970f0fc8ea
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f1707a6b2a1dc03ae1346520bf29ff83f0fe74fb
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244909"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309817"
 ---
 # <a name="listview-performance"></a>ListView performansı
 
@@ -171,9 +171,9 @@ Performansını artırmak için birçok tekniği vardır bir `ListView`:
 -  İç içe düzeni hiyerarşileri kullanmamaya özen gösterin. Kullanım `AbsoluteLayout` veya `Grid` iç içe geçme azaltmaya yardımcı olmak için.
 -  Belirli kaçının `LayoutOptions` dışında `Fill` (Fill olduğundan cheapest hesaplamak için).
 -  Yerleştirmez bir `ListView` içinde bir `ScrollView` aşağıdaki nedenlerle:
-  - `ListView` Kendi kaydırma uygular.
-  - `ListView` Üst tarafından işlenecek gibi tüm hareketleri almaz `ScrollView`.
-  - `ListView` Özelleştirilmiş üstbilgi ve kayar altbilgi olası işlevselliği teklifini listenin öğelerle sunabilir `ScrollView` için kullanıldı. Daha fazla bilgi için bkz: [üstbilgiler ve altbilgiler](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
+    - `ListView` Kendi kaydırma uygular.
+    - `ListView` Üst tarafından işlenecek gibi tüm hareketleri almaz `ScrollView`.
+    - `ListView` Özelleştirilmiş üstbilgi ve kayar altbilgi olası işlevselliği teklifini listenin öğelerle sunabilir `ScrollView` için kullanıldı. Daha fazla bilgi için bkz: [üstbilgiler ve altbilgiler](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
 -  Hücrelerde sunulan belirli ve karmaşık bir tasarım ihtiyacınız varsa özel Oluşturucu göz önünde bulundurun.
 
 `AbsoluteLayout` tek bir ölçü çağrı olmadan düzenleri gerçekleştirmek için olasılığı vardır. Bu çok güçlü bir performans sağlar. Varsa `AbsoluteLayout` olamaz kullanıldığında, göz önünde bulundurun [ `RelativeLayout` ](http://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/). Kullanıyorsanız `RelativeLayout`, kısıtlamalar doğrudan geçirme API ifade kullanmaktan daha önemli ölçüde daha hızlı olacaktır. JIT API ifade kullanır, ve İos'ta ağaç yorumlanması daha yavaş olduğu olduğundan olmasıdır. Burada, yalnızca ilk düzen ve döndürme gerekli, ancak içinde API ifade sayfa düzenleri için uygun olan `ListView`, sürekli kaydırma sırasında çalıştırılan burada performans hurts.
