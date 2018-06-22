@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 7171142951a2893233233bb8a1c44c5a84c57b5c
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 47ea437be8a1570517f37cc59aab17431c5af7f0
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848206"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291331"
 ---
 # <a name="localization"></a>Yerelleştirme
 
@@ -44,6 +44,9 @@ Bir uygulama Genelleştirme anahtar parçalarından derleme kullanıcı arabirim
 Bu belgede biz RESX dosyaları Bu dizelerin depolamak ve bunlara kullanıcı tercihi bağlı olarak görüntülenmek almak için nasıl kullanılacağı anlatılmaktadır.
 
 Örnekler, İngilizce, Fransızca, İspanyolca, Almanca, Çince, Japonca, Rusça ve Portekizce (Brezilya) dilleri hedefleyin. Uygulamaları gerektiği gibi birkaç veya sayıda dillere çevrilebilir.
+
+> [!NOTE]
+> Evrensel Windows platformu üzerinde RESW dosyaları RESX dosyaları yerine anında iletme bildirimi yerelleştirme için kullanılmalıdır. Daha fazla bilgi için bkz: [UWP yerelleştirme](/windows/uwp/design/globalizing/globalizing-portal/).
 
 ### <a name="adding-resources"></a>Kaynakları ekleme
 
@@ -458,6 +461,8 @@ Bağımlılık hizmeti uygulanması ve güncelleştirilmiş sonra **Info.plist**
 > Gelen [kendi belgeleri](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2): _"olarak Portekiz içinde kullanılan Brezilya ve pt-PT dil kimliği için Portekizce kullanıldığı gibi pt dil kimliği için Portekizce kullan"_.
 > Bu zaman anlamına gelir Portekizce dil, geri dönüş dil olacaktır Portekizce (Brezilya), iOS bu davranışı değiştirmek için kod yazılmış sürece standart olmayan bir yerel ayarda seçilidir (gibi `ToDotnetFallbackLanguage` yukarıda).
 
+İOS yerelleştirme hakkında daha fazla bilgi için bkz: [iOS yerelleştirme](~/ios/app-fundamentals/localization/index.md).
+
 #### <a name="android-application-project"></a>Android uygulama projesi
 
 Android sunan aracılığıyla seçili yerel `Java.Util.Locale.Default`ve ayrıca (kendisi tarafından aşağıdaki kodu yerine) bir tire yerine bir alt çizgi ayırıcı kullanır. Bu bağımlılık hizmet uygulaması Android uygulaması projesine ekleyin:
@@ -548,11 +553,12 @@ namespace UsingResxLocalization.Android
 >
 > Geliştiriciler değiştirme `iOSToDotnetLanguage` ve `ToDotnetFallbackLanguage` kendi desteklenen diller için gerekli özel durumları işlemek için yöntemleri.
 
-
 Bu kod Android uygulaması projesine eklendikten sonra otomatik olarak çevrilen dizeleri görüntüleme kuramaz.
 
 > [!NOTE]
 >️ **Uyarı:** çevrilen dizelerin yayın Android derlemeleriniz ancak değil hata ayıklama sırasında çalışıyorsanız, sağ tıklayın **Android projesi** seçip **Seçenekleri > Yapı > Android Yapı** ve emin **hızlı derleme dağıtım** değil ticked. Bu seçenek kaynakları yükleme ile ilgili sorunlara neden olur ve yerelleştirilmiş uygulamaları sınıyorsanız kullanılmamalıdır.
+
+Android yerelleştirme hakkında daha fazla bilgi için bkz: [Android yerelleştirme](~/android/app-fundamentals/localization.md).
 
 #### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
@@ -573,6 +579,8 @@ Bu nedenle dil belirsiz RESX dosyasında tanımlanan dizeler sağlanarak Kaynak 
 Yukarıdaki platforma özgü projeleri gösterildiği gibi güncelleştirme ve uygulama ile çevrilmiş RESX dosyaları yeniden derlenmesi sonra her uygulamada güncelleştirilmiş çevirileri kullanılabilir. Basitleştirilmiş Çince çevrilen örnek kod bir ekran görüntüsü aşağıda verilmiştir:
 
 ![](text-images/simple-example-hans.png "Basitleştirilmiş Çince-çevrilen platformlar arası Uı'lar")
+
+UWP yerelleştirme hakkında daha fazla bilgi için bkz: [UWP yerelleştirme](/windows/uwp/design/globalizing/globalizing-portal/).
 
 ## <a name="localizing-xaml"></a>XAML yerelleştirme
 
@@ -713,7 +721,7 @@ Aşağıda açıklandığı proje yapılarını uygulanan sürece tüm platforml
 
 ### <a name="ios-application-project"></a>iOS uygulama projesi
 
-iOS yerelleştirme projeleri adlı bir adlandırma standardı kullanır veya **.lproj** görüntü ve dize kaynaklarını içeren dizinleri. Bu dizinleri uygulamada kullanılan görüntüleri yerelleştirilmiş sürümleri içerebilir ve ayrıca **InfoPlist.strings** uygulama adı yerelleştirme için kullanılan dosya.
+iOS yerelleştirme projeleri adlı bir adlandırma standardı kullanır veya **.lproj** görüntü ve dize kaynaklarını içeren dizinleri. Bu dizinleri uygulamada kullanılan görüntüleri yerelleştirilmiş sürümleri içerebilir ve ayrıca **InfoPlist.strings** uygulama adı yerelleştirme için kullanılan dosya. İOS yerelleştirme hakkında daha fazla bilgi için bkz: [iOS yerelleştirme](~/ios/app-fundamentals/localization/index.md).
 
 #### <a name="images"></a>Görüntüler
 
@@ -737,7 +745,7 @@ Uygulamayı çalıştırdığınızda, hem uygulama adı ve görüntü yerelleş
 
 ### <a name="android-application-project"></a>Android uygulama projesi
 
-Android izleyen farklı kullanarak yerelleştirilmiş görüntüleri depolamak için farklı bir düzeni **drawable** ve **dizeleri** dizinleri dil kodu soneki. Dört harfli yerel ayar kodu (zh-TW veya pt-BR gibi) gerekli olduğunda, Android ek gerektirir **r** çizgi/önceki aşağıdaki yerel ayar kod (ör.) zh-rTW veya pt rBR).
+Android izleyen farklı kullanarak yerelleştirilmiş görüntüleri depolamak için farklı bir düzeni **drawable** ve **dizeleri** dizinleri dil kodu soneki. Dört harfli yerel ayar kodu (zh-TW veya pt-BR gibi) gerekli olduğunda, Android ek gerektirir **r** çizgi/önceki aşağıdaki yerel ayar kod (ör.) zh-rTW veya pt rBR). Android yerelleştirme hakkında daha fazla bilgi için bkz: [Android yerelleştirme](~/android/app-fundamentals/localization.md).
 
 #### <a name="images"></a>Görüntüler
 
@@ -773,7 +781,7 @@ Uygulamayı şimdi uygulama adı ve görüntü yerelletirilmesi. Bir ekran gör�
 
 ### <a name="universal-windows-platform-application-projects"></a>Evrensel Windows Platform uygulaması projeleri
 
-Evrensel Windows platformu yerelleştirilmesi resimler ve uygulama adı basitleştiren bir kaynak altyapısı sahiptir.
+Evrensel Windows platformu yerelleştirilmesi resimler ve uygulama adı basitleştiren bir kaynak altyapısı sahiptir. UWP yerelleştirme hakkında daha fazla bilgi için bkz: [UWP yerelleştirme](/windows/uwp/design/globalizing/globalizing-portal/).
 
 #### <a name="images"></a>Görüntüler
 
@@ -796,5 +804,6 @@ Görüntüleri genellikle hem iOS hem de Android sağlanan çok çözünürlük 
 - [Platformlar arası yerelleştirme](~/cross-platform/app-fundamentals/localization.md)
 - [iOS yerelleştirme](~/ios/app-fundamentals/localization/index.md)
 - [Android yerelleştirme](~/android/app-fundamentals/localization.md)
+- [UWP yerelleştirme](/windows/uwp/design/globalizing/globalizing-portal/)
 - [CultureInfo sınıfı (MSDN) kullanma](http://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
 - [Bulma ve kaynakların belirli bir kültür için (MSDN) kullanma](http://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
