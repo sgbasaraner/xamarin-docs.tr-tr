@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: d9fd5b5fd0d4dc29f4d2531521370618f97e3846
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4909cb3b874b1397fad10c92d8d655fadcbe8d85
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783164"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321346"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Güvenli Depolama
 
@@ -78,13 +78,13 @@ Tüm şifrelenmiş değerler uygulama aygıttan kaldırıldığında kaldırıl�
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[Anahtarlık](https://developer.xamarin.com/api/type/Android.Security.KeyChain/) değerleri iOS cihazlarda güvenli bir şekilde depolamak için kullanılır.  `SecRecord` Değeri depolamak için kullanılan sahip bir `Service` değerine **[YOUR-APP-paket-ID] .xamarinessentials**.
+[Anahtarlık](https://developer.xamarin.com/api/type/Security.SecKeyChain/) değerleri iOS cihazlarda güvenli bir şekilde depolamak için kullanılır.  `SecRecord` Değeri depolamak için kullanılan sahip bir `Service` değerine **[YOUR-APP-paket-ID] .xamarinessentials**.
 
 Bazı durumlarda Anahtarlık veri iCloud ile eşitlenir ve uygulama kaldırma güvenli değerleri iCloud ve kullanıcının diğer cihazlardan kaldıramazsınız.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/en-us/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) UWP aygıtlarda güvenli bir şekilde encryped değerleri için kullanılır.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) UWP aygıtlarda güvenli bir şekilde encryped değerleri için kullanılır.
 
 Encryped değerleri depolanır `ApplicationData.Current.LocalSettings`, adıyla bir kapsayıcı içinde **[YOUR uygulama kimliği] .xamarinessentials**.
 

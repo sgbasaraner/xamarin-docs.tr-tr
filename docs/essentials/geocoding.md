@@ -5,12 +5,12 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 0b6cbf9ee5621466285656a5efee68ccc2c85211
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 001cca2524e495d64c6781d8a2fc5cb58e771e6e
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783034"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321450"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: coğrafi kodlama
 
@@ -32,7 +32,7 @@ Ek kurulumu gerekmez.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Bing Haritalar API'si anahtarı coğrafi kodlama funcationality kullanmak için gereklidir. Kaydolmak için ücretsiz bir [Bing Haritalar](https://www.bingmapsportal.com/) hesabı. Altında **Hesabımı > My anahtarları** yeni bir anahtar oluşturun ve uygulama türüne göre bilgileri doldurun.
+Bing Haritalar API'si anahtarı coğrafi kodlama funcationality kullanmak için gereklidir. Kaydolmak için ücretsiz bir [Bing Haritalar](https://www.bingmapsportal.com/) hesabı. Altında **Hesabımı > My anahtarları** yeni bir anahtar oluşturun ve uygulama türüne göre bilgileri doldurun (olacağı **ortak Windows uygulaması (UWP, 8.x ve önceki sürümler)** UWP uygulamalar için).
 
 Önceden herhangi çağırmadan önce uygulamanızın yaşam içinde **coğrafi kodlama** yöntemlerini API anahtarını ayarlayın:
 

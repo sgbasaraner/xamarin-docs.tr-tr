@@ -1,27 +1,27 @@
 ---
 title: ProGuard
-description: ProGuard Java sınıfı dosya shrinker, en iyi hale getirme, obfuscator ve öncesi Doğrulayıcı ' dir. Bunu algılar ve kullanılmayan kodunu kaldırır, analiz eder ve bayt en iyi duruma getirir ve sınıflar ve sınıf üyeleri bilgisayardan farklı gösterir. Bu kılavuz, ProGuard nasıl çalıştığını, projenizde etkinleştirme ve nasıl yapılandırılacağı açıklanmaktadır. Ayrıca, ProGuard yapılandırmaları bazı örnekleri sağlar.
+description: Xamarin.Android ProGuard Java sınıfı dosya shrinker, en iyi hale getirme ve öncesi Doğrulayıcı ' dir. Bunu algılar ve kullanılmayan kodunu kaldırır, analiz eder ve bayt en iyi duruma getirir. Bu kılavuz, ProGuard nasıl çalıştığını, projenizde etkinleştirme ve nasıl yapılandırılacağı açıklanmaktadır. Ayrıca, ProGuard yapılandırmaları bazı örnekleri sağlar.
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: e65c78633ae91318bd8e9cce949bac9cc12675c0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: efb9c73eb9bddb2b22b84fb6f3388281f32a82ab
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30771450"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321382"
 ---
 # <a name="proguard"></a>ProGuard
 
-_ProGuard Java sınıfı dosya shrinker, en iyi hale getirme, obfuscator ve öncesi Doğrulayıcı ' dir. Bunu algılar ve kullanılmayan kodunu kaldırır, analiz eder ve bayt en iyi duruma getirir ve sınıflar ve sınıf üyeleri bilgisayardan farklı gösterir. Bu kılavuz, ProGuard nasıl çalıştığını, projenizde etkinleştirme ve nasıl yapılandırılacağı açıklanmaktadır. Ayrıca, ProGuard yapılandırmaları bazı örnekleri sağlar._
+_Xamarin.Android ProGuard Java sınıfı dosya shrinker, en iyi hale getirme ve öncesi Doğrulayıcı ' dir. Bunu algılar ve kullanılmayan kodunu kaldırır, analiz eder ve bayt en iyi duruma getirir. Bu kılavuz, ProGuard nasıl çalıştığını, projenizde etkinleştirme ve nasıl yapılandırılacağı açıklanmaktadır. Ayrıca, ProGuard yapılandırmaları bazı örnekleri sağlar._
 
 
 ## <a name="overview"></a>Genel Bakış
 
-ProGuard algılar ve paketlenmiş uygulama içinden kullanılmayan sınıfları, alanları, yöntemleri ve öznitelikleri kaldırır. Bile aynı başvurulan kitaplıkları için bunu yapabilirsiniz (Bu, 64 k başvuru sınırı önlemenize yardımcı olabilir). Android SDK ProGuard aracından ayrıca bayt en iyi duruma getirme, kullanılmayan kod yönergeleri kaldırın ve kalan sınıfları, alanları ve daha kısa adlar yöntemleriyle belirsizleştirirseniz. ProGuard okuma **giriş Kavanoz** ve ardından küçültür, en iyi duruma getirir, bilgisayardan farklı gösterir ve bunları; önceden doğrular bir veya daha fazla sonuçları Yazar **çıkış Kavanoz**. 
+ProGuard algılar ve paketlenmiş uygulama içinden kullanılmayan sınıfları, alanları, yöntemleri ve öznitelikleri kaldırır. Bile aynı başvurulan kitaplıkları için bunu yapabilirsiniz (Bu, 64 k başvuru sınırı önlemenize yardımcı olabilir). Android SDK ProGuard aracından ayrıca bayt en iyi duruma getirme ve kullanılmayan kod yönergeleri kaldırın. ProGuard okuma **giriş Kavanoz** ve ardından küçültür, en iyi duruma getirir ve bunları; önceden doğrular bir veya daha fazla sonuçları Yazar **çıkış Kavanoz**. 
 
 APK'ın aşağıdaki adımları kullanarak proGuard işlemleri giriş: 
 
@@ -30,7 +30,7 @@ APK'ın aşağıdaki adımları kullanarak proGuard işlemleri giriş:
 2.  **En iyi duruma getirme adım** &ndash; ProGuard daha fazla kod iyileştirir. 
     Diğer en iyi duruma getirme, sınıflar ve giriş noktaları özel, statik ya da son yapılan olmayan yöntemler arasında kullanılmayan parametreleri kaldırılabilir ve bazı yöntemler içermesinden olabilir. 
 
-3.  **Gizleme adım** &ndash; ProGuard sınıflar ve giriş noktaları sınıf üyeleri yeniden adlandırır. Giriş noktaları korur, bunlar hala özgün adlarıyla erişilip erişilemediğini sağlar. 
+3.  **Gizleme adım** &ndash; yerel Android geliştirme, sınıflar ve giriş noktaları sınıf üyeleri ProGuard yeniden adlandırır. Giriş noktaları korur, bunlar hala özgün adlarıyla erişilip erişilemediğini sağlar. Ancak, bu adım, uygulama ara dile (IL aşağıya doğru) derlendiğinden, Xamarin.Android tarafından desteklenmiyor.
 
 4.  **Preverification adım** &ndash; Java bytecodes çalışma zamanı öncesinde üzerinde denetimleri gerçekleştirir ve sınıf dosyaları Java VM yararlanması açıklama ekler. Giriş noktaları bilmek zorunda değil tek adım budur. 
 
@@ -46,7 +46,7 @@ Xamarin.Android ProGuard yapılandırma APK belirsizleştirirseniz değil. Aslı
 
 ProGuard kullanarak içinde nasıl çalışır önce önceden bilmek önemli bir öğe `Xamarin.Android` derleme işlemi. Bu işlem iki ayrı adımları kullanır: 
 
-1.  Xamarin Android Linker
+1.  Xamarin Android bağlayıcı
 
 2.  ProGuard
 

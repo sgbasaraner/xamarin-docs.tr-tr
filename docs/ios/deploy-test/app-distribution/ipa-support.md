@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 288ac813f23f281a1bbed375cadf5faa9d4ff9d0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4fd64a1ebf05dd149304f49d8282ee1b38bfcf03
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784884"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321369"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS IPA desteği
 
@@ -132,10 +132,10 @@ Bazı durumlarda, gibi bir CI ortamında, bu, IPA komut satırı oluşturmak ger
 
      ![](ipa-support-images/imagexs03.png "İTunesMetadata.plist listeden seçin")
 
-1. Çağrı **xbuild** (veya **mdtool** Klasik API'si) doğrudan ve bu özellik komut satırında geçirin:
+1. Çağrı **msbuild** doğrudan ve bu özellik komut satırında geçirin:
 
     ```bash
-    /Library/Frameworks/Mono.framework/Commands/xbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
+    /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -178,7 +178,7 @@ Yeni bir **MSBuild** özelliği `IpaPackageDir` özelleştirmek kolaylaştırmak
 
 Yeni özellik kullanmak için olası birkaç yolu vardır:
 
-Örneğin, çıktı için **.ipa** dosya eski varsayılan dizinine (Xamarin.iOS 9.6 olduğu gibi ve daha düşük), ayarladığınız `IpaPackageDir` özelliğine `$(OutputPath)` aşağıdaki yaklaşımlardan birini kullanarak. Her iki yaklaşımın yanı sıra kullanan komut satırı derlemeleri IDE yapılar dahil olmak üzere tüm birleşik API Xamarin.iOS derlemeleri ile uyumlu **xbuild**, **msbuild**, veya **mdtool**:
+Örneğin, çıktı için **.ipa** dosya eski varsayılan dizinine (Xamarin.iOS 9.6 olduğu gibi ve daha düşük), ayarladığınız `IpaPackageDir` özelliğine `$(OutputPath)` aşağıdaki yaklaşımlardan birini kullanarak. Her iki yaklaşımın kullanan komut satırı derlemeleri yanı sıra IDE derlemeleri de dahil olmak üzere tüm birleşik API Xamarin.iOS derlemeleri ile uyumlu **msbuild**, **xbuild**, veya **mdtool**:
 
 - İlk seçenek ayarlamaktır `IpaPackageDir` özelliği içinde bir `<PropertyGroup>` öğesinde bir **MSBuild** dosya. Örneğin, aşağıdaki ekleyebilirsiniz `<PropertyGroup>` iOS uygulaması projesi altına **.csproj** dosyası (yalnızca kapatmadan önce `</Project>` etiketi):
 
@@ -212,19 +212,17 @@ Yeni özellik kullanmak için olası birkaç yolu vardır:
     </PropertyGroup>
     ```
 
-İçin alternatif bir tekniği **msbuild** veya **xbuild** komut satırı derlemeleri olduğu eklemek için bir `/p:` ayarlamak için komut satırı bağımsız değişkeni `IpaPackageDir` özelliği. Bu durumda unutmayın **msbuild** genişletme `$()` ifadeleri geçirilen komut satırında kullanmak mümkün değildir `$(OutputPath)` sözdizimi. Bunun yerine bir tam yol adı sağlamanız gerekir. Mono'nın **xbuild** Genişlet komutu `$()` ifadeler, ancak bir tam yol adı olduğundan kullanmak için hala tercih **xbuild** sonunda şunun için kullanım dışı kalacaktır [ platformlar arası sürümü **msbuild** ](http://www.mono-project.com/docs/about-mono/releases/4.4.0/#msbuild-preview-for-os-x) gelecekte serbest bırakır.
+İçin alternatif bir tekniği **msbuild** veya **xbuild** komut satırı derlemeleri olduğu eklemek için bir `/p:` ayarlamak için bağımsız değişken `IpaPackageDir` özelliği. Bu durumda unutmayın **msbuild** genişletme `$()` ifadeleri geçirilen komut satırında kullanmak mümkün değildir `$(OutputPath)` sözdizimi. Bunun yerine bir tam yol adı sağlamanız gerekir. Mono'nın **xbuild** Genişlet komutu `$()` ifadeler, ancak bir tam yol adı olduğundan kullanmak için hala tercih **xbuild** şunun için kullanım [platformlar arası sürümü **msbuild**](https://www.mono-project.com/docs/about-mono/releases/5.0.0/#msbuild).
 
 Bu yaklaşımı kullanır tam bir örnek Windows'da şuna benzer şekilde görünebilir:
-
 
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln
 ```
-
 Veya aşağıdaki Mac üzerinde:
 
 ```bash
-xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
+msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
 <a name="installipa" />
