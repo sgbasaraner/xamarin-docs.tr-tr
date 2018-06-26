@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: F42526FF-2B0D-4A9D-B129-CECF680ED0DE
 author: conceptdev
 ms.author: crdun
-ms.date: 06/19/2017
-ms.openlocfilehash: 8f52c6783335bd7bc26bc9886dee670489ffba09
-ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
+ms.date: 06/25/2018
+ms.openlocfilehash: 4a3045b6f35930b61598f7038974722801c38c2e
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291766"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935522"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>Sertifikalı mobil çözümler sunmak için danışmanlık iş ortakları
 
@@ -56,7 +56,6 @@ _Birincil konuma göre listelenen, birçok iş ortakları sınırlar arasında h
 |[Ciber ABD](http://www.ciber.com/)|Greenwood Village, ABD|Bulut ilk dijital Dönüştürme Hizmetleri, benzersiz hızlandırıcıları ve odaklanmış yeteneğiniz Hizmetleri, gelecekteki olası vermiyoruz.|
 |[CIE dijital Laboratuvarları](http://www.ciedigital.com/)|Los Angeles, ABD'de; Irvine, ABD|CIE dijital Labs iş bizim ortakları yüz sınar anlama ve measureable Kurumsal değer Getir yeni yazılım çözümleri innovating hakkında tutkulu|
 |[Netlik girişimlerinize](https://www.clarity-ventures.com)|Ankara'da, TX|Daha anlaşılır olması iyi yuvarlak, professional, işinizin tüm hizmeti uzantı olur. Herhangi bir şeyin iş kimliğinizi ekranına tarafından ekran tasarlama yaratıcı ekibinden...|
-|[Kod Değirmen teknolojileri](https://codemilltech.com/)|Madison, ABD|Kod Değirmen Butik danışmanlık ve eğitim kesin Microsoft ve Xamarin MVP Matt Soucoup tarafından kurulan ' dir. Xamarin ve Azure geliştirme uzmanlaşmış |
 |[Emin teknoloji çözümleri](http://www.cognizant.com)|Buenos Aires, Arjantin; Auckland, Yeni Zelanda; Melbourne, Avustralya; Sidney, Avustralya; Brisbane, Avustralya; Brüksel, Belçika; SAN Paulo, Brezilya; Toronto, Kanada; Şangay, Çin; Heredia, Kosta Rika; Bölgesi Şehir, NJ, ABD'de; San Francisco, CA, ABD'de; Teaneck, NJ, ABD|İstemci memnuniyet, teknoloji yenilik, derin endüstri ve iş işlemi uzmanlığı ve gelecekteki iş içerir genel, işbirliği işgücü tutkularını emin birleştirir|
 |[Tutarlı çözümleri, Inc.](http://www.coherentsolutions.com)|New York, NY; Boston, MA; Minsk, Beyaz Rusya|Tutarlı çözümleri olduğu danışmanlık ve genel uzmanlık, yenilik ve yaratıcılık araya getirerek müşteri iş sorunlarını çözer şirket dış kaynak bir yazılım geliştirme|
 |[Cruxlab](https://cruxlab.com/)|Los Angeles, ABD|Son kullanıcılar ve işletmeler için özel dijital ürünleri start-ups ve kurumlara için oluşturma|
@@ -65,10 +64,10 @@ _Birincil konuma göre listelenen, birçok iş ortakları sınırlar arasında h
 |[DERECE](http://www.degdigital.com)|Overland Park, ABD|Kuruluşların kendi rekabet avantajı artırmasına ve bunların hedeflerine ulaşmasına güç kazandırma akıllı dijital pazarlama, ticaret ve işbirliği stratejiler derece oluşturur|
 |[DevRabbit](http://www.devrabbit.com)|SAN Ramon, ABD|DevRabbit dayalı bir ABD olduğu kesin, danışmanlık teknik Enterprise Mobility, Web uygulaması geliştirme ve bulut danışmanlık durumu resim çözümler sağlar.|
 |[Digineer](http://www.digineer.com)|Plymouth, MN|Kurumsal Proje yönetimi, İş analizi, uygulama geliştirme ve business Intelligence ve Hizmetleri personel Digineer sağlar|
-|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|Boston, MA; Avrupa; Asya Pasific;  Orta Doğu; Afrika|Dijital dünyanın gidin şirketler yardımcı olan bir Uluslararası iletişimleri kurumu DigitasLBi olan|
+|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|Boston, MA; Avrupa; Asya Pasifik;  Orta Doğu; Afrika|Dijital dünyanın gidin şirketler yardımcı olan bir Uluslararası iletişimleri kurumu DigitasLBi olan|
 |[DMI](https://dminc.com/)|Bethesda, MD|Kendileri için bağlı world reinvent kuruluşlara yardımcı olmak için oluşturulan benzersiz bir harmanlama özellikleri ve yakıt yenilik için tasarlanan yeni bir bakış sunuyoruz.|
 |[DOOR3](http://door3.com/)|New York, ABD|Büyük danışmanlık kuruluşları ve özel uygulama dükkanları yaratıcı kurumları dünyasında farklı duyuyoruz. Biz bizim iş hakkında önemli, ancak biz müşterilerimizin hakkında daha fazla dikkat edin.|
-|[DreamTeam Mobile](http://dreamteam-mobile.com)|Washington D.C., ABD|DreamTeam Moible yerel iOS, Xamarin, Swift kullanarak Android, Windows ve Mac uygulamaları ve tepki yerel oluşturun. Biz yerel uygulamalar birden çok platform için yapı paylaşılan olarak kullanılabilecek kod temeli|
+|[DreamTeam Mobile](http://dreamteam-mobile.com)|Washington D.C., ABD|DreamTeam mobil yerel iOS, Xamarin, Swift kullanarak Android, Windows ve Mac uygulamaları ve tepki yerel oluşturun. Biz yerel uygulamalar birden çok platform için yapı paylaşılan olarak kullanılabilecek kod temeli|
 |[Durwella](http://www.durwella.com)|Houston, ABD|Bilimsel ve mühendislik projelerde odaklanan bir yazılım çözümleri şirket Durwella olması|
 |[EastBanc teknolojileri](http://www.eastbanctech.com)|Washington D.C., ABD|Esnek teknoloji çözümlerine bir platform belirsiz tam yaşam döngüsü yazılım geliştirme şirketi EastBanc teknolojileri olduğu|
 |[Edge Webware, Inc.](https://edgewebware.com)|Miamisburg İnanamıyorum|Web ve mobil uygulama tasarım ve/veya geliştirme Hizmetleri ile kenar Webware, Inc. sağlar|
@@ -79,7 +78,7 @@ _Birincil konuma göre listelenen, birçok iş ortakları sınırlar arasında h
 |[Çalışmaya neden yazılım Technologies Inc.](http://www.techendeavour.com)|Ankara'da, TX|Çalışmaya neden 's danışmanlar Kurumsal mobil olgunluk değerlendirmek ve tüm düzeylerde kuruluşunuzun stratejik mobility gereksinimlerini adresleme Yardım|
 |[Gelişmiş sistemlerle danışmanlık](http://www.enhancedsystems.com)|Johnson Şehir, TN|Geliştirilmiş Systems Danışma hizmeti, Inc. yeni iş uygulamaları veya var olanları oluşturmak isteyen şirketler için uzman tasarımı, geliştirme ve tümleştirme hizmetleri sağlar|
 |[Envoc](http://envoc.com/)|Baton Rouge, LA|Biz yaratıcılığınızı ve mükemmel deneyimleri ve yenilik sunmak üzere teknolojisi kesişimi var|
-|[EPAM sistemleri](https://www.epam.com)|Newtown, PA|Önde gelen genel ürün geliştirme ve dijital platform mühendislik Hizmetleri şirket EPAM Systems, Inc. olduğu|
+|[EPAM sistemleri](https://www.epam.com)|Newtown, PA; New York şehrinde; Philadelphia; Chicago; San Francisco; Los Angeles; Londra; Minsk; St. Petersburg; Budapeşte|Önde gelen genel ürün geliştirme ve dijital platform mühendislik Hizmetleri şirket EPAM Systems, Inc. olduğu|
 |[Experis Ciber B.V.](http://www.ciber.com)|Troya, mı |Kuzey Amerika ve Hindistan arasında bir genel BT danışmanlık şirket üzerinde 2,900 çalışanlar ve ofisleri Ciber olması|
 |[İleri Sarma LLC](http://www.fastforward.sh/)|Salem, MA|İleri Sarma tüm önemli yerel işletim sistemleri arasında tüm cihaz türlerine uygulamalar geliştiriyor ve nesnelerin interneti çalışma yapın|
 |[Fincons grubu](http://www.finconsgroup.com)|Los Angeles, CA; New York, NY; Londra, İngiltere|Fincoins Grup Hizmetleri ve çözümleri büyük hesapları ve ihtiyaç duydukları yenilik güvence altına almak SME, hem teknolojileri ve işlemler için gerçek ihtiyaçlarını somut yanıtlarını sağlar.|
@@ -88,7 +87,7 @@ _Birincil konuma göre listelenen, birçok iş ortakları sınırlar arasında h
 |[FusionComputing, Inc.](http://www.fusioncomputing.com)|Douglasville, Georgia|Biz, müşterilerinizin herhangi bir cihazda ulaşabilmeniz için platformlar arası yerel uygulamalar geliştirin.|
 |[Griffin çözümleri grubu](http://griffinsolutionsgroup.com)|Alpharetta, GA|Biz iş sorunlarını çözmek için bir tutku olduğundan Griffin çözümleri Grup kurulmuştur. Biz sektörlerde doğru teknolojiyi kararları vermekte yol müşterilerimizin yardımcı olması için çok sayıda deneyim Uygula|
 |[Hizmetleri, Inc. Harman bağlı](http://www.harman.com)|Sıradağlar görünümü, CA; Hartford, u; Seattle, WA; Newark, NJ; Londra, İngiltere; Berlin, Almanya; Moskova, Rusya|Ürünleri ve çözümleri automakers, tüketiciler ve kuruluşların bağlı otomobil, ses ve görsel ürünleri, Kurumsal Otomasyon çözümleri de dahil olmak üzere tüm dünyadaki bağlı Harman tasarımları ve mühendisleri; ve bağlantılı hizmetler|
-|[HCL teknolojileri](https://www.hcltech.com/)|Noida, Uttar Pradesh, Hindistan; Mississauga, ON, Kanada; New York, NY, ABD'de; SAN Paulo, Brezilya; Meksika Şehir, CDMX, Meksika; Londra, İngiltere; Sidney, Avustralya|HCL teknolojileri kuruluşların dijital yaşını işlerini reimagine yardımcı olan bir yeni nesil genel teknolojisi şirkettir|
+|[HCL teknolojileri](https://www.hcltech.com/)|Noida, Uttar Pradesh, Hindistan; Mississauga, ON, Kanada; New York, NY, ABD'de; SAN Paulo, Brezilya; Meksika Şehir, CDMX, Meksika; Londra, İngiltere; Sidney, Avustralya|HCL teknolojileri kuruluşların dijital yaşını işlerini yeniden düşünün yardımcı olan bir yeni nesil genel teknolojisi şirkettir|
 |[Hexaware teknolojileri Ltd](http://hexaware.com/)|Iselin, hatay|Hexaware olan genel sağlayıcısının BT, BPO ve danışmanlık hizmetleri |
 |[Yüksek teknoloji grubu, LLC](http://hightg.com)|Kansas Şehir, Kansas|Özel yazılım geliştirme şirketi|
 |[Hitcents](http://hitcents.com)|Bowling yeşil, Anahtarınıza; Los Angeles, CA, ABD'de; San Francisco, CA, ABD'de; Şangay, Şangay, Çin|Hitcents, yalnızca uygulamalar oluşturma değil; Bunlar yalnızca bir platform gider bir DENEYİM oluşturmak. Bunlar ayrıca herhangi bir kullanıcı herhangi bir yere, uygulamanızı erişebilmesi için 7/24, uygulama destekler.|
@@ -239,7 +238,7 @@ _Birincil konuma göre listelenen, birçok iş ortakları sınırlar arasında h
 |[Akış pilotlar CVBA](http://www.flowpilots.com)|ANTWERP, Belçika|Pilotlar tasarımları akış, oluşturur, dağıtır ve gelirlerini artırın, maliyetleri azaltmak veya özgürlüğü ve esnekliği çalışanlara Getir müşterilerine Yardım dijital araçları yönetir.|
 |[KENZE](http://www.kenze.be)|Mechelen, Belçika|Microsoft .NET projecten tr gerelateerde technologieën.  De drie belangrijkste pijlers binnen de organisatie zijn mensen, kennis tr mensenkennis zij vormen de temel voor kwalitatieve, succesvolle projecten tr tevreden klanten istiyor. |
 |[Levelapp](http://www.levelapp.be)|Hoeilaart, Belçika|Levelapp tam mobil Teşkilatı duyuyoruz. Biz, yazılım geliştiricilerin hareket eder. Uygun ve stratejik VİZYONUNUZU propel platformlar arası uygulamalar oluşturuyoruz. değer, müşteriler, iş ortakları ve çalışanlar sunar. |
-|[Realdolmen](http://www.realdolmen.com/)|Huizingen, Belçika; Kontich, Belçika; Lummen, Belçika; Ghent, Belçika; Harelbeke, Belçika; Namur, Belçika; Mons, Belçika|Mobil için yeni bir standarttır. Neredeyse tüm şirketlerin mobil hizmetler veya uygulamaların rekabet korumanız gerekir. Ancak, bir mobil stratejisi kendi başına yeterli değildir; her şeyi bulut, güvenlik, ERP vb. de dahil olmak üzere genel ICT altyapınızda, tam olarak tümleşiktir gerekir. Realdolmen bu bağlı bir iş diyoruz. <link>|
+|[Realdolmen](http://www.realdolmen.com/)|Huizingen, Belçika; Kontich, Belçika; Lummen, Belçika; Ghent, Belçika; Harelbeke, Belçika; Namur, Belçika; Mons, Belçika|Mobil için yeni bir standarttır. Neredeyse tüm şirketlerin mobil hizmetler veya uygulamaların rekabet korumanız gerekir. Ancak, bir mobil stratejisi kendi başına yeterli değildir; her şeyi bulut, güvenlik, ERP vb. de dahil olmak üzere genel ICT altyapınızda, tam olarak tümleşiktir gerekir. Realdolmen bu bağlı bir iş diyoruz.|
 
 
 ## <a name="brazil"></a>Brezilya
@@ -574,7 +573,7 @@ _Birincil konuma göre listelenen, birçok iş ortakları sınırlar arasında h
 |[Billennium](http://billennium.pl/)|Varşova, Polonya |Billennium yıllardır yenilikçi iş araçları ve çözümleri geliştirme deneyimine sahiptir.|
 |[Sınır bir çözümleri SP'yi z o.o.](http://www.edge1s.com)|Varşova, Polonya |Yüksek oranda tam BT danışmanları deneyimi ve yetenekleri sunuyoruz. İstemcinin gereksinimlerini ve beklentilerini için esnek bir yaklaşım garanti bizim Portföyünde her hizmet içinde ediyoruz|
 |[NETBULLS SP'yi z o.o.](http://www.netbulls.io)|Bialystok, Polonya|Fikirlerinizi skilfully pazara alın. Harcanan £$ €, gün veya excuses. |
-|[SII](http://www.sii.pl/en)|Varşova, Polonya; Paris, Fransa; Madrid, İspanya; Berlin, Almanya; Amsterdam, Hollanda; Brüksel, Belçika; Lüksemburg Şehir, Lüksemburg; Geneva, İsviçre; Marrakesh, Fas; Prag, Czechia; Bükreş, Romanya; Toronto, ON, Kanada; Santiago, Santiago metropol bölge, Şili; Buenos Aires, otonom Buenos Aires Şehir, Arjantin; Bogot√ °, Bogota, Kolombiya; Delhi, Hindistan|SII başarıyla teslim ve üzerine sayısal dönüşüm programlar kendi tasarlayıcılarla destekleyen başında BT Hizmetleri şirkette Polonya ' dir. Cihaz iletişimi, büyük veri işleme ve çevrimdışı ilk etkinleştirme Kurumsal ve tüketici uygulamalarını teslim içinde uzmanlık sunuyoruz.|
+|[SII](http://www.sii.pl/en)|Varşova, Polonya; Paris, Fransa; Madrid, İspanya; Berlin, Almanya; Amsterdam, Hollanda; Brüksel, Belçika; Lüksemburg Şehir, Lüksemburg; Geneva, İsviçre; Marrakesh, Fas; Prag, Czechia; Bükreş, Romanya; Toronto, ON, Kanada; Santiago, Santiago metropol bölge, Şili; Buenos Aires, otonom Buenos Aires Şehir, Arjantin; Bogota, Bogota, Kolombiya; Delhi, Hindistan|SII başarıyla teslim ve üzerine sayısal dönüşüm programlar kendi tasarlayıcılarla destekleyen başında BT Hizmetleri şirkette Polonya ' dir. Cihaz iletişimi, büyük veri işleme ve çevrimdışı ilk etkinleştirme Kurumsal ve tüketici uygulamalarını teslim içinde uzmanlık sunuyoruz.|
 
 
 ## <a name="portugal"></a>Portekiz

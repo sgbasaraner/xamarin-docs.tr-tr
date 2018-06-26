@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: 9c17641312384634983c2cbb34fa923a9416c9f7
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 6b2e316eaf67e51801be4fcd670e80ec81c8ff08
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31646709"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935405"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin.Android alıcılar yayını
 
@@ -25,7 +25,7 @@ A _yayın alıcı_ bir uygulamanın iletileri yanıtlayın izin veren bir Androi
 Android yayınları iki tür tanımlar:
 
 * **Açık yayın** &ndash; belirli bir uygulama bu tür yayınlar hedefleyin. Açık bir yayın en yaygın kullanımı bir etkinlik başlatmaktır. Bir telefon numarasını aramak bir uygulamanın ihtiyacı olduğunda açık bir yayın örneği; Android ve telefon numarası boyunca geçişi çevrilecek telefon uygulaması hedefleyen amacına gönderir. Android, ardından telefon uygulama amacı yönlendirir.
-* **Örtük broadcase** &ndash; bu yayınları cihazdaki tüm uygulamalar için gönderilir. Örtük bir yayın örneğidir `ACTION_POWER_CONNECTED` hedefi. Bu amacı, Android cihazın pil şarj olduğunu algılar her zaman yayımlanır. Android, bu amacı, bu olay için kayıtlı tüm uygulamalar için yönlendirir.
+* **Örtük yayın** &ndash; bu yayınları cihazdaki tüm uygulamalar için gönderilir. Örtük bir yayın örneğidir `ACTION_POWER_CONNECTED` hedefi. Bu amacı, Android cihazın pil şarj olduğunu algılar her zaman yayımlanır. Android, bu amacı, bu olay için kayıtlı tüm uygulamalar için yönlendirir.
 
 Öğesinin bir alt yayın alıcıdır `BroadcastReceiver` türü ve onu geçersiz kılması gerekir [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) yöntemi. Android yürütülecek `OnReceive` ana iş parçacığında, bu nedenle bu yöntem tasarlanmış hızlı bir şekilde çalıştırmak için. İş parçacığı içinde olduğunda dikkat'in alınması gereken `OnReceive` yöntemi tamamlandığında Android işlemi sonlandırabilir olduğundan. Bir yayın alıcı uzun süre çalışan iş gerçekleştirmelisiniz sonra zamanlamak için önerilen bir _iş_ kullanarak `JobScheduler` veya _Firebase iş dağıtıcı_. Bir iş ile çalışma zamanlaması ayrı bir Kılavuzu'nda incelenecektir.
 

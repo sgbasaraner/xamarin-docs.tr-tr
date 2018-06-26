@@ -1,17 +1,18 @@
 ---
 title: Android hata ayıklama günlüğü
+description: Hata ayıklama günlüğü Xamarin.Android uygulamalarda hata ayıklama için nasıl kullanılacağını.
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/04/2018
-ms.openlocfilehash: e0e22fe35dc5042a7b3c895a250803e936611629
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.date: 06/22/2018
+ms.openlocfilehash: 442606f456e6f42ee178cd93253883a1d9de52c4
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30822888"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935223"
 ---
 # <a name="android-debug-log"></a>Android hata ayıklama günlüğü
 
@@ -22,7 +23,7 @@ Kendi uygulamalarında hata ayıklama için yaygın eli geliştiriciler kullanı
 **Hata ayıklama günlüğünü** aracı Visual Studio aracılığıyla uygulama hata ayıklama sırasında günlük çıkışı görüntülemek için bir yol sağlar. Hata ayıklama günlüğü aşağıdaki cihazları destekler:
 
 -   Fiziksel Android telefonlar, tabletler ve wearables.
--   Google Android öykünücüsü üzerinde çalışan bir Android sanal cihazı. 
+-   Android öykünücüsünde çalışır bir Android sanal cihazı. 
 
 > [!NOTE]
 > **Hata ayıklama günlüğünü** aracı Xamarin Canlı Player ile çalışmaz.

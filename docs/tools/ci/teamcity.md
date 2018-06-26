@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 32338bc89df2ef7ee4426482b1967861f0c0e058
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: e7279c03c730e95f211b555e5b832942c19ea8aa
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33921956"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935421"
 ---
 # <a name="using-team-city-with-xamarin"></a>Takım Şehir Xamarin ile kullanma
 
@@ -142,7 +142,7 @@ test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <de
 
 Testi çalıştırdığınızda, test sonuçlarını adlı bir NUnit stili XML dosyası biçiminde döndüreceği **report.xml**. TeamCity derleme günlüğünde bilgileri görüntüler.
 
-Test buluta UITests gönderme hakkında daha fazla bilgi için üzerinde Xamarin'ın kılavuzuna başvurun [gönderme testleri Test buluta](https://developer.xamarin.com/guides/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/).
+Üzerinde Test buluta UITests gönderme hakkında daha fazla bilgi için bu kılavuzuna başvurun [karşıya yükleme için hazırlanma Xamarin.UITests](/appcenter/test-cloud/preparing-for-upload/uitest/).
 
 #### <a name="submitting-calabash-tests-to-test-cloud"></a>Bulut Test etmek için Calabash testleri gönderiliyor
 
@@ -207,6 +207,5 @@ Ardından bir geliştirici kodu uygulayan her zaman bir yapıyı sıraya ve derl
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Xamarin Test Cloud (UITest) testleri gönderiliyor](https://developer.xamarin.com~/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/)
-- [Xamarin Test Cloud (Calabash) testleri gönderiliyor](https://developer.xamarin.com~/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/)
+- [Hazırlama Xamarin.UITests fpr karşıya yükleme](/appcenter/test-cloud/preparing-for-upload/uitest/)
 - [Yükleme ve TeamCity yapılandırma](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

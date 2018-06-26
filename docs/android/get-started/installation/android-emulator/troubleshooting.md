@@ -1,113 +1,243 @@
 ---
-title: Öykünücü kurulum sorunlarını giderme
-description: Bu makalede, tanılama ve Android Aygıt Yöneticisi'ni kullanırken ortaya çıkabilecek sorunlar üzerinde çalışmayı açıklanmaktadır.
+title: Sorun giderme android öykünücüsü
+description: Bu makalede, tanılama ve Android öykünücüsünü kullanarak ortaya çıkabilecek sorunlar üzerinde çalışmayı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 4F053CC9-9378-47CB-8002-978A6558C4D0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/01/2018
-ms.openlocfilehash: 4cbd7d7626d114856d6c68fe7bc9feb7c2a5abc2
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: 241f38cbfe013776b2e36b8102ae4b90cf610d80
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734056"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935288"
 ---
-# <a name="troubleshooting-emulator-setup-problems"></a>Öykünücü kurulum sorunlarını giderme
+# <a name="android-emulator-troubleshooting"></a>Sorun giderme android öykünücüsü
 
-_Bu makalede, tanılama ve Android öykünücüsünde yapılandırmak için Android Aygıt Yöneticisi'ni kullanırken, ortaya çıkabilecek sorunlar üzerinde çalışmayı açıklanmaktadır. Android öykünücüsünde çalıştırılırken sorunlarını giderme hakkında daha fazla bilgi için bkz: [Google Android öykünücüsü sorun giderme](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md)._
+_Bu makalede, yapılandırma ve Android öykünücüsünde çalıştırma sırasında oluşabilecek sorunları ve en yaygın uyarı iletilerini, geçici çözümler ve ipuçları ile birlikte açıklanmaktadır._
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+<a name="perfwarn" />
 
-## <a name="android-sdk-in-non-standard-location"></a>Standart olmayan konumda, Android SDK'sı
-
-Genellikle, Android SDK'sı şu konumda yüklenir:
-
-**C:\\Program Files (x86)\\Android\\android-SDK'sı**
-
-SDK bu konumda yüklü değilse, Android Aygıt Yöneticisi'ni başlattığınızda bu hatayı alabilirsiniz:
-
-![Android SDK'sı örneği hata](troubleshooting-images/win/01-sdk-error.png)
-
-Bu sorunu geçici olarak çözmek için aşağıdakileri yapın:
-
-1. Windows masaüstünden gidin **C:\\kullanıcılar\\*kullanıcıadı*\\AppData\\gezici\\XamarinDeviceManager**:
-
-    ![Android cihaz Yöneticisi günlük dosyası konumu](troubleshooting-images/win/02-log-files.png)
-
-2. Günlük dosyalarından birini açın ve bulmak için çift **yapılandırma dosyası yolu**. Örneğin:
-
-    [![Günlük dosyasında yapılandırma dosyası yolu](troubleshooting-images/win/03-config-file-path-sml.png)](troubleshooting-images/win/03-config-file-path.png#lightbox)
-
-3. Bu konum ve çift **user.config** açın. 
-
-4. İçinde **user.config**, bulun **&lt;ayarlarını&gt;** öğesi ekleyin bir **AndroidSdkPath** özniteliği için. Bu öznitelik, Android SDK'sı, bilgisayarınızda yüklü olduğu yola ayarlayın ve dosyayı kaydedin. Örneğin, **&lt;ayarlarını&gt;** Android SDK adresindeki yüklenmişse, aşağıdaki gibi görünür **C:\\programları\\Android\\SDK**:
-        
-    ```xml
-    <UserSettings SdkLibLastWriteTimeUtcTicks="636409365200000000" AndroidSdkPath="C:\Programs\Android\SDK" />
-    ```
-
-Bu değişikliği yaptıktan sonra **user.config**, Android Aygıt Yöneticisi'ni başlatma gerekir.
-
-## <a name="snapshot-disables-wifi-on-android-oreo"></a>Anlık görüntü WiFi Android Oreo üzerinde devre dışı bırakır.
-
-Bir anlık görüntü Wi-Fi erişimi devre dışı duruma neden olabilecek sonra AVD yeniden başlatmak için Android Oreo benzetimli Wi-Fi erişim ile yapılandırılmış bir AVD varsa.
-
-Bu sorunu geçici olarak çözmek için
-
-1. AVD Android Aygıt Yöneticisi'nde seçin.
-
-2. Ek seçenekler menüden **Explorer'da ortaya**.
-
-3. Gidin **anlık görüntüleri > default_boot**.
-
-4. Silme **snapshot.pb** dosyası:
-
-    ![Snapshot.pb dosyasının konumu](troubleshooting-images/win/05-delete-snapshot.png)
-
-5. AVD yeniden başlatın. 
-
-Bu değişiklikler yapıldıktan sonra AVD yeniden çalışmak Wi-Fi izin veren bir durumda yeniden başlatılır.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-## <a name="snapshot-disables-wifi-on-android-oreo"></a>Anlık görüntü WiFi Android Oreo üzerinde devre dışı bırakır.
-
-Bir anlık görüntü Wi-Fi erişimi devre dışı duruma neden olabilecek sonra AVD yeniden başlatmak için Android Oreo benzetimli Wi-Fi erişim ile yapılandırılmış bir AVD varsa.
-
-Bu sorunu geçici olarak çözmek için
-
-1. AVD Android Aygıt Yöneticisi'nde seçin.
-
-2. Ek seçenekler menüden **Finder ortaya**.
-
-3. Gidin **anlık görüntüleri > default_boot**.
-
-4. Silme **snapshot.pb** dosyası:
-
-    [![Snapshot.pb dosyasının konumu](troubleshooting-images/mac/02-delete-snapshot-sml.png)](troubleshooting-images/mac/02-delete-snapshot.png#lightbox)
-
-5. AVD yeniden başlatın. 
-
-Bu değişiklikler yapıldıktan sonra AVD yeniden çalışmak Wi-Fi izin veren bir durumda yeniden başlatılır.
-
-
------
-
-## <a name="generating-a-bug-report"></a>Bir hata raporu oluşturma
+## <a name="performance-warnings"></a>Performans Uyarıları
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Android cihaz yukarıdaki sorun giderme ipuçları kullanarak çözümlenemeyen Yöneticisi ile ilgili bir sorun bulursanız, Lütfen bir hata raporu başlık çubuğunu sağ tıklatıp seçerek dosya **hata raporu oluşturmak**:
+Uygulamanızı Android öykünücüsü ilk kez dağıttığınızda Visual Studio 2017 sürüm 15.4 başlayarak, bir performans Uyarısı iletişim kutusu görüntülenebilir. Bu uyarı iletişim kutuları, aşağıda açıklanmıştır.
 
-[![Bir hata raporu dosyalama için menü öğesi konumu](troubleshooting-images/win/04-bug-report-sml.png)](troubleshooting-images/win/04-bug-report.png#lightbox)
+### <a name="computer-does-not-contain-an-intel-procesor"></a>Bilgisayar bir Intel Procesor içermiyor
+
+![Bilgisayar bir Intel işlemci içermiyor](troubleshooting-images/01-no-intel-processor.png)
+
+Bu iletişim kutusu görüntülendiğinde, bilgisayarınızı Android SDK öykünücüsü hızlandırması için gerekli olduğu bir Intel işlemci yok. Bilgisayarınızı bir Intel işlemci yoksa, fiziksel bir Android cihaz geliştirme için kullanmanızı öneririz.
+
+### <a name="hyper-v-is-installed-or-active"></a>Hyper-V yüklü veya etkin değil
+
+![Hyper-V yüklü veya etkin değil](troubleshooting-images/02-hyper-v-active.png)
+
+Bu iletişim kutusu görüntülendiğinde, Hyper-V yüklü veya etkin ve devre dışı bırakılması gerekir. [Hyper-V devre dışı bırakma](#disable-hyperv) bu sorunun nasıl çözüleceği açıklanmaktadır.
+
+### <a name="haxm-is-not-installed"></a>HAXM yüklü değil
+
+![HAXM yüklü değil](troubleshooting-images/03-haxm-not-installed.png)
+
+Bilgisayarınızda Intel işlemci varsa, Hyper-V devre dışı ancak HAXM yüklenmemiş bu iletişim kutusunu gösterir.
+[HAXM yükleme](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm) HAXM yüklemek için gereken adımları açıklar.
+
+### <a name="haxm-process-not-running"></a>HAXM işlemi çalışmıyor
+
+![HAXM işlemi çalışmıyor](troubleshooting-images/04-haxm-process-not-running.png)
+
+Bilgisayarınızda Intel işlemci varsa, Hyper-V devre dışıdır, Intel HAXM yüklü, ancak HAXM işlemi çalışmıyor bu iletişim kutusu görüntülenir. Bu sorunu çözmek için bir komut istemi penceresi açın ve aşağıdaki komutu girin:
+
+```cmd
+sc query intelhaxm
+```
+
+HAXM işlem çalışıyorsa, aşağıdakine benzer bir çıktı görmeniz gerekir:
+
+```cmd
+SERVICE_NAME: intelhaxm
+    TYPE               : 1  KERNEL_DRIVER
+    STATE              : 4  RUNNING
+                            (STOPPABLE, NOT_PAUSABLE, IGNORES_SHUTDOWN)
+    WIN32_EXIT_CODE    : 0  (0x0)
+    SERVICE_EXIT_CODE  : 0  (0x0)
+    CHECKPOINT         : 0x0
+    WAIT_HINT          : 0x0
+```
+
+Varsa `STATE` ayarlanmazsa `RUNNING`, bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmaya nasıl](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) sorunu gidermek için.
+
+
+### <a name="other-failures"></a>Diğer hatalar
+
+![Diğer hatalar](troubleshooting-images/05-other-failure.png)
+
+Bilgisayarınızda Intel işlemci varsa, Hyper-V devre dışıdır, Intel HAXM yüklü, HAXM işlemin çalıştığı ancak bilinmeyen bir nedenden dolayı başlatmak öykünücü başarısız olursa bu iletişim kutusu görüntülenir.
+Bu hatayı gidermek için bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmaya nasıl](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator).
+
+### <a name="disabling-performance-warnings"></a>Performans uyarıları devre dışı bırakma
+
+Bunun yerine performans uyarıları görmek istemiyorsanız, bunları devre dışı bırakabilirsiniz. Visual Studio'da'ı tıklatın **Araçlar > Seçenekler > Xamarin > Android ayarları** ve devre dışı **AVD hızlandırma değilse uyar (HAXM) desteklenen** seçeneği:
+
+[![AVD hızlandırma uyarılarını devre dışı bırakma](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Android cihaz yukarıdaki sorun giderme ipuçları kullanarak çözümlenemeyen Yöneticisi ile ilgili bir sorun bulursanız, Lütfen bir hata raporu tıklayarak dosya **Yardım > hata raporu oluşturmak**:
+Uygulamanızı Android öykünücüsü ilk kez dağıttığınızda Mac yapı (559 yapı) 7.2 Visual Studio ile başlayarak, bir performans Uyarısı iletişim kutusu görüntülenebilir. Bu uyarı iletişim kutuları, aşağıda açıklanmıştır.
 
-[![Bir hata raporu dosyalama için menü öğesi konumu](troubleshooting-images/mac/01-bug-report-sml.png)](troubleshooting-images/mac/01-bug-report.png#lightbox)
+### <a name="haxm-is-not-installed"></a>HAXM yüklü değil
+
+![HAXM yüklü değil](troubleshooting-images/03-haxm-not-installed.png)
+
+Bu iletişim kutusunu HAXM yüklü olmadığını gösterir.
+[HAXM yükleme](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm) HAXM yüklemek için gereken adımları açıklar.
+
+### <a name="haxm-process-not-running"></a>HAXM işlemi çalışmıyor
+
+![HAXM işlemi çalışmıyor](troubleshooting-images/04-haxm-process-not-running.png)
+
+HAXM işlem çalışmıyorsa, bu iletişim kutusu görüntülenir. Bu sorunu gidermenize yardımcı olmak ayrıntılı bilgi için bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmaya nasıl](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) sorunu gidermek için.
+
+### <a name="other-failures"></a>Diğer hatalar
+
+![Diğer hatalar](troubleshooting-images/05-other-failure.png)
+
+Öykünücü bilinmeyen bir nedenden dolayı başlayamazsa bu iletişim kutusu görüntülenir. Bu hatayı gidermek için bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmaya nasıl](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) sorunu gidermek için.
 
 -----
+
+## <a name="deployment-issues"></a>Dağıtım sorunları
+
+APK öykünücüsü üzerinde yükleme hatası veya Android hata ayıklama köprüsü çalıştırma hatası hakkında bir hata alırsanız (**adb**), Android SDK'sı, öykünücüsünü bağlanabildiğini doğrulayın. Bunu yapmak için aşağıdaki adımları kullanın:
+
+1. Öykünücüsünden başlatma **Android Aygıt Yöneticisi'ni** (sanal Cihazınızı seçin ve tıklatın **Başlat**).
+
+2. Bir komut istemi açın ve klasöre gidin nerede **adb** yüklenir. Örneğin, Windows, bu en olabilir: **C:\\Program Files (x86)\\Android\\android sdk\\platformu Araçları\\adb.exe**.
+
+3. Şu komutu yazın:
+
+   ```shell
+   adb devices
+   ```
+
+4. Android SDK öykünücüsü erişilebilen, öykünücü bağlı aygıtlar listesinde görünmesi gerekir. Örneğin:
+
+   ```shell
+   List of devices attached
+   emulator-5554   device
+   ```
+
+5. Öykünücü bu listede görünmüyorsa, başlangıç **Android SDK Manager**, tüm güncelleştirmeleri uygulamanızı ve ardından öykünücü yeniden başlatmayı deneyin.
+
+
+## <a name="haxm-issues"></a>HAXM sorunları
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Android öykünücüsünde düzgün başlamazsa, bu genellikle HAXM sorunları kaynaklanır. HAXM sorunları genellikle diğer sanallaştırma teknolojilerini, ayarları yanlış veya eski bir HAXM sürücü çakışıyor sonucudur.
+
+<a name="virt-conflicts" />
+
+### <a name="haxm-virtualization-conflicts"></a>HAXM sanallaştırma çakışmaları
+
+Hyper-V, Windows cihaz koruyucusu ve bazı virüsten koruma yazılımı gibi sanallaştırma kullanan diğer teknolojilerle HAXM çakışabilir:
+
+- **Hyper-V** &ndash; önce Windows sürümünü kullanıyorsanız, **Windows 10 Nisan 2018 Güncelleştirmesi (yapı 1803)** ve Hyper-V etkin olduğunda, adımları [devre dışı bırakma Hyper-V](#disable-hyperv).
+
+- **Cihaz koruyucusu** &ndash; Device Guard ve kimlik bilgisi koruma engelleyebilir Hyper-V Windows makinelerde devre dışı. Cihaz koruyucusu ve kimlik bilgisi koruma devre dışı bırakmak için bkz: [devre dışı bırakma Device Guard](#disable-devguard).
+
+- **Virüsten koruma yazılımı** &ndash; donanım destekli sanallaştırma (örneğin, Avast) kullanan virüsten koruma yazılımı çalıştırıyorsanız, devre dışı bırakın veya bu yazılım, yeniden başlatma ve yeniden deneme Android SDK öykünücüsü kaldırın.
+
+
+### <a name="incorrect-bios-settings"></a>Yanlış BIOS ayarları
+
+Bir Windows Bilgisayarına HAXM kullanıyorsanız, sanallaştırma teknolojisi (Intel VT-x) BIOS'ta etkin değilse HAXM çalışmaz. VT-x devre dışıysa, Android öykünücüsünde başlatın açmaya çalıştığında, hata aşağıdakine benzer alırsınız:
+
+**Bu bilgisayar HAXM gereksinimlerini karşılayan ancak Intel Sanallaştırma Teknolojisi'ni (VT-x) açık değil.**
+
+Bu hatayı düzeltmek için bilgisayarın BIOS içinde önyükleme, VT-x ve SLAT (ikinci düzey adres çevirisi) etkinleştirmek ve geri Windows bilgisayarı yeniden başlatın.
+
+<a name="disable-hyperv" />
+
+### <a name="disabling-hyper-v"></a>Hyper-V devre dışı bırakma
+
+Daha önce Windows sürümünü kullanıyorsanız, **Windows 10 Nisan 2018 güncelleştirme (yapı 1803)** ve Hyper-V etkinleştirildiğinde, Hyper-V devre dışı bırakın ve yükleyip HAXM kullanabilmeniz için bilgisayarınızı yeniden başlatın. Kullanıyorsanız **Windows 10 Nisan 2018 güncelleştirme (yapı 1803)** veya sonraki, Android öykünücüsü sürümü 27.2.7 veya daha sonra Hyper-V devre dışı bırakmak gerekli değildir (yerine HAXM) Hyper-V donanım hızlandırmasını kullanabilirsiniz.
+
+Aşağıdaki adımları izleyerek Hyper-V Denetim Masası'ndan devre dışı bırakabilirsiniz:
+
+1. Windows Arama kutusuna **programları ve** ardından **programlar ve Özellikler** arama sonucu.
+
+2. Denetim Masası'nda **programlar ve Özellikler** iletişim kutusunda, tıklatın **kapatma Windows özelliklerini aç veya Kapat**:
+
+    ![Windows özelliklerini aç veya kapat.](troubleshooting-images/win/07-turn-windows-features.png)
+
+3. İşaretini **Hyper-V** ve bilgisayarı yeniden başlatın:
+
+    ![Hyper-V Windows özellikleri iletişim kutusunda devre dışı bırakma](troubleshooting-images/win/08-uncheck-hyper-v.png)
+
+Alternatif olarak, Hyper-V: devre dışı bırakmak için aşağıdaki Powershell cmdlet'ini kullanabilirsiniz
+
+`Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
+
+Intel HAXM ve Microsoft Hyper-V her ikisi de aynı anda etkin olamaz. Ne yazık ki, arasında Hyper-V arasında HAXM, bilgisayarı yeniden başlatmadan geçiş yapmak için bir yolu yoktur. 
+
+Bazı durumlarda, yukarıdaki adımları kullanarak Hyper-V Device Guard ve kimlik bilgisi koruma etkinse, devre dışı bırakılırken başarısız olur. Hyper-V devre dışı bırakmak oluşturulamıyor (veya devre dışı görünüyor ancak HAXM yükleme yine başarısız olursa), Device Guard ve kimlik bilgisi koruma devre dışı bırakmak için sonraki bölümde adımları kullanın.
+
+<a name="disable-devguard" />
+
+### <a name="disabling-device-guard"></a>Cihaz koruyucusu devre dışı bırakma
+
+Cihaz koruyucusu ve kimlik bilgisi koruma Hyper-V Windows makinelerde devre dışı engelleyebilirsiniz. Bu genellikle bir yapılandırılan ve sahibi olan bir kuruluş tarafından denetlenen etki alanına katılan makineler için sorunudur.
+Windows 10'olmadığını görmek için aşağıdaki adımları kullanın. **Device Guard** çalışıyor:
+
+1. İçinde **Windows Search**, türü **sistem bilgisi** başlatmak için **sistem bilgisi** uygulama.
+
+2. İçinde **Sistem Özeti**, olmadığını görmek için Görünüm **cihaz koruyucusu sanallaştırma tabanlı güvenlik** bulunduğundan ve yer **çalıştıran** durumu:
+
+   [![Cihaz koruyucusu mevcut ve çalışıyor](troubleshooting-images/win/09-device-guard-sml.png)](troubleshooting-images/win/09-device-guard.png#lightbox)
+
+Cihaz koruyucusu etkinse, devre dışı bırakmak için aşağıdaki adımları kullanın:
+
+1. Emin **Hyper-V** devre dışı bırakıldı (altında **Windows özelliklerini aç veya Kapat**) önceki bölümde açıklandığı gibi.
+
+2. Windows Arama kutusuna yazın **gpedit** seçip **Grup İlkesi düzenleme** arama sonucu. Bu başlatır **yerel Grup İlkesi Düzenleyicisi'ni**.
+
+3. İçinde **yerel Grup İlkesi Düzenleyicisi**, gitmek **bilgisayar yapılandırması > Yönetim Şablonları > Sistem > Device Guard**:
+
+   [![Cihaz koruyucusu yerel Grup İlkesi Düzenleyicisi'nde](troubleshooting-images/win/10-group-policy-editor-sml.png)](troubleshooting-images/win/10-group-policy-editor.png#lightbox)
+
+4. Değişiklik **kapatma üzerinde sanallaştırma tabanlı güvenlik** için **devre dışı** (yukarıda gösterildiği gibi) ve çıkış **yerel Grup İlkesi Düzenleyicisi'ni**.
+
+5. Windows Arama kutusuna yazın **cmd**. Zaman **komut istemi** görünür arama sonuçlarında sağ **komut istemi** seçip **yönetici olarak çalıştır**.
+
+6. Aşağıdaki komutlar bir komut istemi penceresine yapıştırın (durumunda sürücü **Z:** olduğu kullanın, bunun yerine kullanmak için kullanılmayan bir sürücü harfi seçin):
+
+        mountvol Z: /s
+        copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
+        bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
+        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
+        bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
+        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
+        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
+        mountvol Z: /d
+
+7. Bilgisayarınızı yeniden başlatın. Önyükleme ekranında, aşağıdakine benzer bir istem görmeniz gerekir:
+
+   **Kimlik bilgisi koruma devre dışı bırakmak istiyor musunuz?**
+
+   Kimlik bilgisi koruma istendiğinde devre dışı bırakmak için belirtilen tuşuna basın.
+
+8. Bilgisayar yeniden başlatıldıktan sonra Hyper-V (önceki adımlarda açıklandığı gibi) devre dışı bırakıldığından emin olmak için yeniden denetleyin.
+
+Hyper-V hala devre dışı değil ise, etki alanına katılmış bilgisayarınızın ilkeleri cihaz koruyucusu veya kimlik bilgisi koruma devre dışı engelleyebilir. Bu durumda, etki alanı yöneticiniz, kimlik bilgisi koruma dışında opt olanak sağlamak için bir muafiyet isteyebilir. Alternatif olarak, olmayan HAXM kullanmak için etki alanına katılmış bir bilgisayarı kullanabilirsiniz.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+
+Android öykünücüsünde düzgün başlamazsa, bu genellikle HAXM sorunları kaynaklanır. HAXM sorunları genellikle diğer sanallaştırma teknolojilerini, ayarları yanlış veya eski bir HAXM sürücü çakışıyor sonucudur. Ayrıntılı adımları kullanarak HAXM sürücüsünü yeniden yüklemeyi deneyin [yükleme HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm).
+
+-----
+

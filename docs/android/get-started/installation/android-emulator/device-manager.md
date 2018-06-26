@@ -6,13 +6,13 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: 888f126d3e58b0300ba7ce3ad1cb5a8001fc545a
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: a7c1aeafd94d7e2639617cda13312ee8a09e2c94
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734029"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935334"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Sanal cihaz Android cihaz Yöneticisi ile yönetme
 
@@ -28,7 +28,7 @@ Bu makalede Android Aygıt Yöneticisi'ni oluşturma, çoğaltma, özelleştirme
 
 [![Aygıtlar sekmesindeki Android Aygıt Yöneticisi'nin ekran görüntüsü](device-manager-images/win/01-devices-dialog-sml.png)](device-manager-images/win/01-devices-dialog.png#lightbox)
 
-Android Aygıt Yöneticisi'ni oluşturmak ve yapılandırmak için kullandığınız _Android sanal cihaz_ (AVDs) çalıştırın [Google Android öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Android Aygıt Yöneticisi'ni oluşturmak ve yapılandırmak için kullandığınız _Android sanal cihaz_ (AVDs) çalıştırın [Android öykünücüsü](~/android/deploy-test/debugging/debug-on-emulator.md).
 Her AVD, fiziksel bir Android cihazı taklit eden bir öykünücü yapılandırmadır. Çalıştırın ve farklı fiziksel Android cihazları benzetimini yapılandırmaları çeşitli uygulamanızı test etmek mümkün kılar.
 
 ## <a name="requirements"></a>Gereksinimler
@@ -48,7 +48,7 @@ Android Aygıt Yöneticisi'nden başlatın **Araçları** menüsünde tıklayara
 
 [![Araçlar menüsünden başlatma](device-manager-images/win/04-tools-menu-sml.png)](device-manager-images/win/04-tools-menu.png#lightbox)
 
-Başlatılırken şu hata iletişim kutusu görürseniz, bkz: [öykünücüsü kurulum sorunlarını giderme](~/android/get-started/installation/android-emulator/troubleshooting.md) yönergeleri geçici çözüm:
+Başlatılırken şu hata iletişim kutusu görürseniz, bkz: [Android öykünücüsü sorun giderme](~/android/get-started/installation/android-emulator/troubleshooting.md) yönergeleri geçici çözüm:
 
 ![Android SDK'sı örneği hata](device-manager-images/win/32-sdk-error.png)
 
@@ -165,7 +165,7 @@ Ek Seçenekler menüsünü aşağıdaki öğeleri içerir:
 
     [![Tıklama sonuçları Gezgininde ortaya](device-manager-images/win/24-reveal-in-explorer-sml.png)](device-manager-images/win/24-reveal-in-explorer.png#lightbox)
 
--   **Fabrika sıfırlaması** &ndash; Seçilen aygıt çalıştırılırken cihaz iç durumuna kullanıcı değişiklikleri silme kendi varsayılan ayarlara sıfırlar (Bu da geçerli sildiği [hızlı önyükleme](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md#quick-boot) anlık görüntü Eğer varsa). Bu değişiklik, sanal cihaz oluşturma ve düzenleme sırasında yaptığınız değişiklikler değiştirmez. Bu sıfırlama alınamaz anımsatıcı ile bir iletişim kutusu görünür. Tıklatın **kullanıcı verilerini temizleme** sıfırlama onaylamak için.
+-   **Fabrika sıfırlaması** &ndash; Seçilen aygıt çalıştırılırken cihaz iç durumuna kullanıcı değişiklikleri silme kendi varsayılan ayarlara sıfırlar (Bu da geçerli sildiği [hızlı önyükleme](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot) anlık görüntü Eğer varsa). Bu değişiklik, sanal cihaz oluşturma ve düzenleme sırasında yaptığınız değişiklikler değiştirmez. Bu sıfırlama alınamaz anımsatıcı ile bir iletişim kutusu görünür. Tıklatın **kullanıcı verilerini temizleme** sıfırlama onaylamak için.
 
 -   **Silme** &ndash; seçili sanal aygıt kalıcı olarak siler.
     Bir iletişim kutusu, bir cihazın silinmesi geri alınamaz anımsatıcısı görüntülenir. Tıklatın **silmek** cihazı silmek istediğiniz emin olması durumunda.
@@ -181,7 +181,7 @@ Bu makalede Android Aygıt Yöneticisi'ni oluşturma, çoğaltma, özelleştirme
 > Bu kılavuz yalnızca Visual Studio Mac için geçerlidir.
 Xamarin Studio ile Android Aygıt Yöneticisi'ni uyumlu değil.
 
-Android Aygıt Yöneticisi'ni oluşturmak ve yapılandırmak için kullandığınız *Android sanal cihaz* (AVDs) çalıştırın [Google Android öykünücüsü](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Android Aygıt Yöneticisi'ni oluşturmak ve yapılandırmak için kullandığınız *Android sanal cihaz* (AVDs) çalıştırın [Android öykünücüsü](~/android/deploy-test/debugging/debug-on-emulator.md).
 Her AVD, fiziksel bir Android cihazı taklit eden bir öykünücü yapılandırmadır. Çalıştırın ve farklı fiziksel Android cihazları benzetimini yapılandırmaları çeşitli uygulamanızı test etmek mümkün kılar.
 
 ## <a name="requirements"></a>Gereksinimler
@@ -320,15 +320,113 @@ Ek Seçenekler menüsünü aşağıdaki öğeleri içerir:
 
 -----
 
+## <a name="troubleshooting"></a>Sorun giderme
+
+Aşağıdaki bölümlerde, tanılamak ve sanal cihazları yapılandırmak için Android Aygıt Yöneticisi'ni kullanırken, ortaya çıkabilecek sorunlar üzerinde çalışmayı açıklamaktadır.
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+### <a name="android-sdk-in-non-standard-location"></a>Standart olmayan konumda, Android SDK'sı
+
+Genellikle, Android SDK'sı şu konumda yüklenir:
+
+**C:\\Program Files (x86)\\Android\\android-SDK'sı**
+
+SDK bu konumda yüklü değilse, Android Aygıt Yöneticisi'ni başlattığınızda bu hatayı alabilirsiniz:
+
+![Android SDK'sı örneği hata](troubleshooting-images/win/01-sdk-error.png)
+
+Bu sorunu geçici olarak çözmek için aşağıdakileri yapın:
+
+1. Windows masaüstünden gidin **C:\\kullanıcılar\\*kullanıcıadı*\\AppData\\gezici\\XamarinDeviceManager**:
+
+    ![Android cihaz Yöneticisi günlük dosyası konumu](troubleshooting-images/win/02-log-files.png)
+
+2. Günlük dosyalarından birini açın ve bulmak için çift **yapılandırma dosyası yolu**. Örneğin:
+
+    [![Günlük dosyasında yapılandırma dosyası yolu](troubleshooting-images/win/03-config-file-path-sml.png)](troubleshooting-images/win/03-config-file-path.png#lightbox)
+
+3. Bu konum ve çift **user.config** açın. 
+
+4. İçinde **user.config**, bulun **&lt;ayarlarını&gt;** öğesi ekleyin bir **AndroidSdkPath** özniteliği için. Bu öznitelik, Android SDK'sı, bilgisayarınızda yüklü olduğu yola ayarlayın ve dosyayı kaydedin. Örneğin, **&lt;ayarlarını&gt;** Android SDK adresindeki yüklenmişse, aşağıdaki gibi görünür **C:\\programları\\Android\\SDK**:
+        
+    ```xml
+    <UserSettings SdkLibLastWriteTimeUtcTicks="636409365200000000" AndroidSdkPath="C:\Programs\Android\SDK" />
+    ```
+
+Bu değişikliği yaptıktan sonra **user.config**, Android Aygıt Yöneticisi'ni başlatma gerekir.
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Anlık görüntü WiFi Android Oreo üzerinde devre dışı bırakır.
+
+Bir anlık görüntü Wi-Fi erişimi devre dışı duruma neden olabilecek sonra AVD yeniden başlatmak için Android Oreo benzetimli Wi-Fi erişim ile yapılandırılmış bir AVD varsa.
+
+Bu sorunu geçici olarak çözmek için
+
+1. AVD Android Aygıt Yöneticisi'nde seçin.
+
+2. Ek seçenekler menüden **Explorer'da ortaya**.
+
+3. Gidin **anlık görüntüleri > default_boot**.
+
+4. Silme **snapshot.pb** dosyası:
+
+    ![Snapshot.pb dosyasının konumu](troubleshooting-images/win/05-delete-snapshot.png)
+
+5. AVD yeniden başlatın. 
+
+Bu değişiklikler yapıldıktan sonra AVD yeniden çalışmak Wi-Fi izin veren bir durumda yeniden başlatılır.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Anlık görüntü WiFi Android Oreo üzerinde devre dışı bırakır.
+
+Bir anlık görüntü Wi-Fi erişimi devre dışı duruma neden olabilecek sonra AVD yeniden başlatmak için Android Oreo benzetimli Wi-Fi erişim ile yapılandırılmış bir AVD varsa.
+
+Bu sorunu geçici olarak çözmek için
+
+1. AVD Android Aygıt Yöneticisi'nde seçin.
+
+2. Ek seçenekler menüden **Finder ortaya**.
+
+3. Gidin **anlık görüntüleri > default_boot**.
+
+4. Silme **snapshot.pb** dosyası:
+
+    [![Snapshot.pb dosyasının konumu](troubleshooting-images/mac/02-delete-snapshot-sml.png)](troubleshooting-images/mac/02-delete-snapshot.png#lightbox)
+
+5. AVD yeniden başlatın. 
+
+Bu değişiklikler yapıldıktan sonra AVD yeniden çalışmak Wi-Fi izin veren bir durumda yeniden başlatılır.
+
+-----
+
+### <a name="generating-a-bug-report"></a>Bir hata raporu oluşturma
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Android cihaz yukarıdaki sorun giderme ipuçları kullanarak çözümlenemeyen Yöneticisi ile ilgili bir sorun bulursanız, Lütfen bir hata raporu başlık çubuğunu sağ tıklatıp seçerek dosya **hata raporu oluşturmak**:
+
+[![Bir hata raporu dosyalama için menü öğesi konumu](troubleshooting-images/win/04-bug-report-sml.png)](troubleshooting-images/win/04-bug-report.png#lightbox)
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+
+Android cihaz yukarıdaki sorun giderme ipuçları kullanarak çözümlenemeyen Yöneticisi ile ilgili bir sorun bulursanız, Lütfen bir hata raporu tıklayarak dosya **Yardım > hata raporu oluşturmak**:
+
+[![Bir hata raporu dosyalama için menü öğesi konumu](troubleshooting-images/mac/01-bug-report-sml.png)](troubleshooting-images/mac/01-bug-report.png#lightbox)
+
+
+-----
+
 ## <a name="summary"></a>Özet
 
-Bu kılavuz Visual Studio'da kullanılabilir Android cihaz Yöneticisi için Xamarin Mac ve Visual Studio Araçları için kullanıma sunuldu. Başlatma ve durdurma Android öykünücüsünde çalıştırmak için bir Android sanal cihazı (AVD) seçme gibi temel özellikleri yeni sanal cihazlar ve sanal cihazı düzenleme oluşturma açıklanmıştır. Ayrıca, daha fazla özelleştirme profili donanım özelliklerini düzenlemek nasıl açıklanmıştır.
+Bu kılavuz Visual Studio'da kullanılabilir Android cihaz Yöneticisi için Xamarin Mac ve Visual Studio Araçları için kullanıma sunuldu. Başlatma ve durdurma Android öykünücüsünde çalıştırmak için bir Android sanal cihazı (AVD) seçme gibi temel özellikleri yeni sanal cihazlar ve sanal cihazı düzenleme oluşturma açıklanmıştır. Sorun giderme ipuçları için genel sorunlar sağlanan ve daha fazla özelleştirme profili donanım özelliklerini düzenlemek nasıl açıklanmıştır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Android SDK Aracı Üzerindeki Değişiklikler](~/android/troubleshooting/sdk-cli-tooling-changes.md)
-- [Android SDK öykünücüsü ile hata ayıklama](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+- [Android öykünücüsünde hata ayıklama](~/android/deploy-test/debugging/debug-on-emulator.md)
 - [Sürüm Notları (Google) SDK Araçları](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)

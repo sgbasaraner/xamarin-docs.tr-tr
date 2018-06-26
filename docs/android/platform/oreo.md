@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: a23072427a74119bfa339fea8a695cd13b775685
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732768"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935109"
 ---
 # <a name="oreo-features"></a>Oreo özellikleri
 
@@ -191,7 +191,7 @@ Kullandıktan sonra **avdmanager** , sanal cihazı oluşturmak için aygıt aşa
 
 -----
 
-Android öykünücüsünde test ve hata ayıklama için yapılandırma hakkında daha fazla bilgi için bkz: [Google Android öykünücüsü ile hata ayıklama](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Android öykünücüsünde test ve hata ayıklama için yapılandırma hakkında daha fazla bilgi için bkz: [Android öykünücüsünde hata ayıklama](~/android/deploy-test/debugging/debug-on-emulator.md).
 
 Bir Nexus veya piksel gibi fiziksel bir aygıtı kullanıyorsanız, ya da Cihazınızı otomatik hava (OTA) Güncelleştirmeler üzerinden güncelleştirebilir veya bir sistem görüntüsünü karşıdan yüklemek ve Cihazınızı doğrudan flash. Android Oreo Cihazınızı el ile güncelleştirme hakkında daha fazla bilgi için bkz: [Nexus ve piksel cihazlar Fabrika görüntülerinin](https://developers.google.com/android/images).
 

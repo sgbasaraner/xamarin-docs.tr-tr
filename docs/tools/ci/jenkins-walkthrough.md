@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 7e9069c698f82e9ec9c5009286c2a36b6722b7a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8094f1ab78252e6d6bd8f5991bcb567b36ed1e9b
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793958"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935352"
 ---
 # <a name="using-jenkins-with-xamarin"></a>Jenkins Xamarin ile kullanma
 
@@ -385,7 +385,7 @@ Tüm yapı eylemleri yerinde olduktan sonra her şeyin çalıştığını doğru
 
 ### <a name="submitting-tests-to-test-cloud"></a>Testleri Test buluta gönderiliyor
 
-Otomatikleştirilmiş testler için Test Kabuk komutları kullanarak bulut gönderilebilir. Bir Test çalışmasında Xamarin Test Cloud ayarlama hakkında daha fazla bilgi için Kılavuzlar kullanmak için sahip olduğumuz [Xamarin.UITest](https://developer.xamarin.com/guides/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/) veya [Calabash](https://developer.xamarin.com/guides/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/).
+Otomatikleştirilmiş testler için Test Kabuk komutları kullanarak bulut gönderilebilir. Bir Test çalışmasında Xamarin Test Cloud ayarlama hakkında daha fazla bilgi için bu kılavuz için bkz [Xamarin.UITest](/appcenter/test-cloud/preparing-for-upload/uitest/).
 
 
 ## <a name="summary"></a>Özet

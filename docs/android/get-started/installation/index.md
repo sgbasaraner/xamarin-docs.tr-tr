@@ -1,17 +1,18 @@
 ---
 title: Yükleme ve Xamarin.Android ayarlama
+description: Nasıl yükleyin ve Visual Studio ile çalışmaya Xamarin.Android yapılandırın.
 ms.prod: xamarin
 ms.assetid: 4BE549B8-5696-2BA7-DA32-8C0EE90A879D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: b2f83c8f8ab6ab730a586b30394454f6bf6f6ba9
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/22/2018
+ms.openlocfilehash: 5991c907b85188581db105a8db9d17460954f56f
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33947514"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935496"
 ---
 # <a name="setup-and-installation"></a>Kurulum ve yükleme
 
@@ -32,7 +33,7 @@ Visual Studio Google'nın tek başına Android SDK Manager değiştiren bir Andr
 
 ## <a name="android-emulator-setupandroidget-startedinstallationandroid-emulatorindexmd"></a>[Android Emulator Kurulumu](~/android/get-started/installation/android-emulator/index.md)
 
-Bu makaleler, test ve hata ayıklama Xamarin.Android uygulamaları için Google Android öykünücüsü Kurulum açıklanmaktadır.
+Bu makaleler, test ve hata ayıklama Xamarin.Android uygulamaları için Android öykünücüsü Kurulum açıklanmaktadır.
 
 ## <a name="android-device-setupandroidget-startedinstallationset-up-device-for-developmentmd"></a>[Android Cihaz Kurulumu](~/android/get-started/installation/set-up-device-for-development.md)
 

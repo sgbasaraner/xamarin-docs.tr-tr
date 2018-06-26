@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 756f0570ce792450cfcaf6b1c5161a95a6cb80c8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848310"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935434"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin dinamik yeniden yükle
 
@@ -119,6 +119,7 @@ Hayır. Aslında, hatta tüm desteklenen uygulama hedeflerinizi (Android, iOS ve
 ## <a name="known-issues"></a>Bilinen Sorunlar
 
 * Yalnızca Visual Studio'da desteklenir.
+* Bağlama ayarlanmalıdır **olmayan bağlantı** veya **bağlantı Framework SDK'ları yalnızca** 
 * Uygulama genelinde kaynakları yeniden (yani **App.xaml** veya kaynak sözlüklerindeki paylaşılan), uygulama gezinti sıfırlanır. Bu, sonraki Önizleme sürümünde düzeltilecektir.
 * UWP hata ayıklama çalışma zamanı çökmeyle neden olabilir ancak XAML düzenleme. Geçici çözüm: Kullanmak **başlatın (Ctrl + F5) hata ayıklama olmadan** yerine **hata ayıklama (F5) Başlangıç**.
 

@@ -6,17 +6,17 @@ ms.assetid: 7B6752BB-8E4C-4690-B275-7E425A051F45
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 4afe2b9fab8eeebb3f0451379b8e3937cc8d8f55
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.date: 06/21/2018
+ms.openlocfilehash: f94c0966dd67940fc201df84a311db422d77b542
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30823070"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935207"
 ---
 # <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Android öykünücüsünü bağlanmak mümkün, Windows sanal makineden bir Mac üzerinde çalışıyor mu?
 
-Google Android Mac üzerinde çalışan bir Windows sanal makineden öykünücüsü bağlanmak için aşağıdaki adımları kullanın:
+Bir Windows sanal makineden bir Mac üzerinde çalışan Android öykünücüsü bağlanmak için aşağıdaki adımları kullanın:
 
 1.  Öykünücü Mac üzerinde Başlat
 

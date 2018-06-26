@@ -1,19 +1,20 @@
 ---
-title: Haritalar API'si
+title: Uygulamanızdaki Google haritalar API'si kullanılarak
+description: Google haritalar API'si v2 Özellikleri Xamarin.Android uygulamanıza gerçekleştirme.
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: fc16178a4068b2dcf22fc19047e0ef403e83633f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a0e010a8300eb4b4452737e34d2f55a35ab95428
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30773530"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935145"
 ---
-# <a name="maps-api"></a>Haritalar API'si
+# <a name="using-the-google-maps-api-in-your-application"></a>Uygulamanızdaki Google haritalar API'si kullanma
 
 Maps uygulamayı kullanarak harikadır, ancak bazen, doğrudan uygulamanızda eşlemeleri dahil etmek istediğiniz. Google sunduğu yanı sıra yerleşik uygulama, eşleyen bir [Android için yerel eşleme API](https://developers.google.com/maps/documentation/android/).
 Maps API eşleme deneyimi üzerinde daha fazla denetim sağlamak istediğiniz durumlar için uygundur. Maps API ile mümkündür noktalar şunlardır:
@@ -54,7 +55,7 @@ Bir Xamarin.Android uygulaması haritalar API'si kullanmadan önce Google Play H
 > Google Play hizmetlerini APK tüm aygıtlarda bulunmayabilir lisanslı bir üründür. Yüklenmemişse, Google haritalar cihazda çalışmaz.
 
 
-#### <a name="binding-google-play-services"></a>Binding Google Play Services
+#### <a name="binding-google-play-services"></a>Bağlama Google Play Hizmetleri
 
 Google Play Hizmetleri istemci kitaplığı yüklendikten sonra bir Xamarin.Android Java bağlama kitaplığı tarafından bağlı olması gerekir. Bunu yapmanın iki yolu vardır:
 
@@ -315,7 +316,7 @@ Android haritalar API'si görüş değiştirmek, işaretleyicileri ekleyin, öze
 
 Düz düzlem olarak, ekranda Mercator izdüşümünü temel Maps modelled. Harita görünümünü budur bir *kamera* bu düzlemi üzerinde doğrudan aşağı görünümlü. Kamera konumunu değiştirme konum, yakınlaştırma, eğim ve şifrelemeyle tarafından denetlenebilir. [CameraUpdate](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdate) sınıfı kamera konumunu değiştirmek için kullanılır. `CameraUpdate` nesnelerine ait değil doğrudan örneklerin, bunun yerine haritalar API'si sağlar [CameraUpdateFactory](http://developer.android.com/reference/com/google/android/gms/maps/CameraUpdateFactory.html) sınıfı.
 
-Bir kez bir `CameraUpdate` nesnesi oluşturulamadı, ya da bir parametre geçirilir [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera(com.google.maps.CameraUpdate)) veya [GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.maps.CameraUpdate)) yöntemleri. `MoveCamera` Yöntemi güncelleştirmeleri anında hatayla harita `AnimateCamera` yöntemi bir kesintisiz, animasyonlu geçiş sağlar.
+Bir kez bir `CameraUpdate` nesnesi oluşturulamadı, ya da bir parametre geçirilir [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera%28com.google.maps.CameraUpdate%29) veya [GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera%28com.google.maps.CameraUpdate%29) yöntemleri. `MoveCamera` Yöntemi güncelleştirmeleri anında hatayla harita `AnimateCamera` yöntemi bir kesintisiz, animasyonlu geçiş sağlar.
 
 Bu kod parçacığını nasıl kullanılacağını basit örneğidir `CameraUpdateFactory` oluşturmak için bir `CameraUpdate` , Artır harita yakınlaştırma düzeyini tarafından:
 
@@ -328,7 +329,7 @@ if (_map != null) {
 }
 ```
 
-Maps API sağlayan bir [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) hangi toplama tüm kamera konumu için olası değerler. Bu sınıfın bir örneği için sağlanan [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition(com.google.android.gms.maps.model.CameraPosition)) döndürülecek yöntemi bir `CameraUpdate` nesnesi. Maps API de içeren [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) oluşturmak için bir fluent API sağlayan sınıf `CameraPosition` nesneleri.
+Maps API sağlayan bir [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) hangi toplama tüm kamera konumu için olası değerler. Bu sınıfın bir örneği için sağlanan [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29) döndürülecek yöntemi bir `CameraUpdate` nesnesi. Maps API de içeren [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) oluşturmak için bir fluent API sağlayan sınıf `CameraPosition` nesneleri.
 Aşağıdaki kod parçacığını oluşturmanın bir örneği gösterir bir `CameraUpdate` gelen bir `CameraPosition` ve kamera konumunu değiştirmek için kullandığı bir `GoogleMap`:
 
 ```csharp
@@ -372,7 +373,7 @@ Maps API sağlayan bir [işaret](https://developers.google.com/maps/documentatio
 
 ##### <a name="adding-a-marker"></a>Bir işaretçi ekleme
 
-Bir işaretçi bir eşlemesine eklemek için ise gerekli yeni bir [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) nesnesi ve ardından arama [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker(com.google.android.gms.maps.model.MarkerOptions)) yöntemi bir `GoogleMap` örneği. Bu yöntem döndürülecek bir [işaret](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) nesnesi.
+Bir işaretçi bir eşlemesine eklemek için ise gerekli yeni bir [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) nesnesi ve ardından arama [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29) yöntemi bir `GoogleMap` örneği. Bu yöntem döndürülecek bir [işaret](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) nesnesi.
 
 ```csharp
 MapFragment mapFrag = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.my_mapfragment_container);
@@ -382,7 +383,7 @@ if (_map != null) {
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -402,7 +403,7 @@ Bu yöntem alır bir [BitmapDescriptor](http://developer.android.com/reference/c
 
 -   `FromBitmap(Bitmap image)` &ndash; Belirtilen bit eşlem simgesi olarak kullanın.
 
--   `FromFile(string fileName` &ndash; Özel simge dosyanın belirtilen yolda oluşturun.
+-   `FromFile(string fileName)` &ndash; Özel simge dosyanın belirtilen yolda oluşturun.
 
 -   `FromResource(int resourceId)` &ndash; Özel bir simge belirtilen kaynak oluşturun.
 
@@ -417,7 +418,7 @@ if (_map != null)
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
     markerOpt1.InvokeIcon(BitmapDescriptorFactory.DefaultMarker (BitmapDescriptorFactory.HueCyan));
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -515,7 +516,7 @@ Aşağıdaki kod parçacığını bir daire çizmek nasıl gösterir:
 CircleOptions circleOptions = new CircleOptions ();
 circleOptions.InvokeCenter (new LatLng(37.4, -122.1));
 circleOptions.InvokeRadius (1000);
-_map.AddCircle (CircleOptions);
+_map.AddCircle (circleOptions);
 ```
 
 
@@ -614,4 +615,3 @@ Bir bilgi penceresi statik olduğunu geri çağırma `View` harita üzerinde bir
 - [Google Android API v2 eşlemeleri](https://developers.google.com/maps/documentation/android/)
 - [APK Google Play Hizmetleri](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
 - [Bir Google haritalar API'si anahtarı edinme](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Sorunu 57880: AVD güncelleştirilmemiş Google Play hizmetlerini](https://code.google.com/p/android/issues/detail?id=57880)

@@ -6,13 +6,13 @@ ms.assetid: 9116A3AA-EA00-56AF-AE70-BAEEC045EF11
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2017
-ms.openlocfilehash: 16716db67067f07166fa35df7e539cdf3ed1de5e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/22/2018
+ms.openlocfilehash: 838e0df80334d6865466b189a65a3f7c590bb590
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30768288"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935366"
 ---
 # <a name="set-up-device-for-development"></a>Aygıtı geliştirme için ayarlama
 
@@ -112,7 +112,7 @@ Windows 7'de sürücüleri yüklemek için:
 
 6.  Seçin **sürücü yazılımı için bilgisayarıma Gözat** tıklatıp **sonraki** .
 
-7.  Tıklatın **Gözat** ve USB sürücü klasörünü bulun (Google USB sürücüsü bulunan **[Android SDK yükleme yolu] \extras\google\usb_driver**.
+7.  Tıklatın **Gözat** ve USB sürücü klasörünü bulun (Google USB sürücüsü bulunan **[Android SDK yükleme yolu] \extras\google\usb_driver**).
 
 8.  Tıklatın **sonraki** sürücüyü yüklemek için.
 
@@ -188,5 +188,5 @@ Bu makalede ele alınan cihazda hata ayıklama sağlayarak bir Android cihaz gel
 - [Donanım aygıtlarını kullanma](http://developer.android.com/tools/device.html)
 - [Samsung sürücü yüklemeleri](http://www.samsung.com/us/support/downloads/)
 - [OEM USB sürücüleri](http://developer.android.com/tools/extras/oem-usb.html#Drivers)
-- [Google USB Driver](http://developer.android.com/sdk/win-usb.html)
+- [Google USB sürücüsü](http://developer.android.com/sdk/win-usb.html)
 - [XDA geliştiricileri: Windows 8 - ADB/karşılayamamasına sürücü sorun çözüldü](http://forum.xda-developers.com/showthread.php?t=1583801)

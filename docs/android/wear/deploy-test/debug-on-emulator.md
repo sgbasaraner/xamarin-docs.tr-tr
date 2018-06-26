@@ -6,13 +6,13 @@ ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 9be9b91a0ed7e7607469bf8d74087b6f93677559
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: baa8df87caf2c05d7b6202d5160c930e51656e10
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732989"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36934986"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Bir öykünücü üzerinde Android yıpranması hata ayıklama
 
@@ -22,7 +22,7 @@ _Bu makaleler, bir Xamarin.Android yıpranması uygulaması bir öykünücü üz
 
 Android takmak uygulamaları geliştirme uygulama ya da fiziksel donanım üzerinde çalışan veya bir öykünücü veya benzetici kullanarak gerektirir. Donanım kullanarak en iyi yaklaşımı, ancak her zaman en kullanışlı değildir. Çoğu durumda, daha basit ve daha düşük maliyetli bir öykünücü aşağıda açıklandığı gibi kullanarak Android takmak donanım benzetimini/benzetmek için olabilir. Yerel Yönetici değilseniz henüz Android takmak uygulamaları dağıtma ve çalıştırma işlemi bilmiyorsanız bkz [Merhaba, takmak](~/android/wear/get-started/hello-wear.md).
 
-## <a name="configure-the-google-android-emulator"></a>Google Android öykünücüsü yapılandırın
+## <a name="configure-the-android-emulator"></a>Android öykünücüsünde yapılandırın
 
 Bir öykünücü üzerinde yıpranması uygulamanızı çalıştırmak için Android SDK'sı Android öykünücüsü yükleyip Android takmak için yapılandırmanız gerekir. Genel Android SDK öykünücüsü yükleme ve yapılandırma bilgileri için bkz: [Android öykünücüsü Kurulumu](~/android/get-started/installation/android-emulator/index.md).
 
@@ -48,4 +48,4 @@ Bu görürseniz şaşırmayın (veya başka bir Interstitial ekran) ilk. Gözcü
  
 ## <a name="summary"></a>Özet
  
-Bu kılavuz, Google Android öykünücüsü yıpranması geliştirme için yapılandırmak ve hata ayıklama için yıpranması sanal cihazı başlatma anlatılmıştır.
+Bu kılavuz, Android öykünücüsü yıpranması geliştirme için yapılandırmak ve hata ayıklama için yıpranması sanal cihazı başlatma anlatılmıştır.
