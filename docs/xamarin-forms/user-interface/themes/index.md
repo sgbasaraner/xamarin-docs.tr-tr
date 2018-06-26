@@ -49,7 +49,7 @@ Bu ekran görüntüleri bu denetimlerle göster:
 * Açık tema (tema yok sahip olmak için yalnızca küçük farklılıklar)
 * Koyu tema
 
-![](images/standard-none-sml.png "Tema olmadan denetimler") ![ ] (images/standard-light-sml.png "açık tema denetimleriyle") ![ ] (images/standard-dark-sml.png "koyu tema denetimleriyle")
+![](images/standard-none-sml.png "Tema olmadan denetimler") ![](images/standard-light-sml.png "açık tema denetimleriyle") ![](images/standard-dark-sml.png "koyu tema denetimleriyle")
 
 <a name="styleclass" />
 
@@ -69,7 +69,7 @@ Bu ekran görüntüleri bu denetimlerle göster:
 
 Bu açık ve koyu aşağıdaki gibi işler:
 
-![](images/boxview-light-sml.png "Açık tema StyleClass ile BoxView") ![ ] (images/boxview-dark-sml.png "BoxView koyu tema StyleClass ile")
+![](images/boxview-light-sml.png "Açık tema StyleClass ile BoxView") ![](images/boxview-dark-sml.png "BoxView koyu tema StyleClass ile")
 
 <a name="builtin" />
 
