@@ -6,13 +6,13 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 545636bc38240bc17837a661416702ec259caf45
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: 6577b80c6ec71d7e038338d6c8a3e28dbbd75590
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732612"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935187"
 ---
 # <a name="windows-installation"></a>Windows yükleme
 
@@ -68,9 +68,9 @@ Android SDK Araçları Paketi sürümü 25.2.3 kadar sürümlerini yüklemek iç
 
 Xamarin Android SDK Yöneticisi'ni kullanma hakkında daha fazla bilgi için bkz: [Android SDK Kurulum](~/android/get-started/installation/android-sdk.md).
 
-### <a name="google-android-emulator"></a>Google Android öykünücüsü
+### <a name="android-emulator"></a>Android öykünücüsü
 
-[Google Android öykünücüsü](https://developer.android.com/studio/run/emulator) geliştirmek ve bir Xamarin.Android uygulaması sınamak için yararlı aracı olabilir. Örneğin, tablet gibi bir fiziksel aygıt geliştirilmesi sırasında kullanıma hazır olmayabilir ya da bir geliştirici kodu kaydetmeden önce bilgisayarlarında bazı tümleştirme testleri çalıştırmak isteyebilirsiniz.
+[Android öykünücüsü](https://developer.android.com/studio/run/emulator) geliştirmek ve bir Xamarin.Android uygulaması sınamak için yararlı aracı olabilir. Örneğin, tablet gibi bir fiziksel aygıt geliştirilmesi sırasında kullanıma hazır olmayabilir ya da bir geliştirici kodu kaydetmeden önce bilgisayarlarında bazı tümleştirme testleri çalıştırmak isteyebilirsiniz.
 
 Bir bilgisayarı bir Android cihazında öykünen aşağıdaki bileşenleri içerir:
 
@@ -83,10 +83,10 @@ Bir bilgisayarı bir Android cihazında öykünen aşağıdaki bileşenleri içe
 1. Microsoft'un Hyper-V &ndash; Windows 10 Nisan güncelleştirme çalıştıran bilgisayarlarda kullanılabilir.
 2. Intel'in donanım hızlandırılmış yürütme Yöneticisi'ni (HAXM) &ndash; x86 üzerinde kullanılabilir OS X, macOS veya Windows eski sürümünü çalıştıran bilgisayarlar.
 
-Hyper-V ve HAXM, Google Android öykünücüsü hakkında daha fazla bilgi için lütfen bkz [öykünücüsü performans donanım hızlandırmasını](~/android/get-started/installation/android-emulator/hardware-acceleration.md) Kılavuzu.
+Hyper-V ve HAXM, Android öykünücüsünde hakkında daha fazla bilgi için lütfen bkz [öykünücüsü performans donanım hızlandırmasını](~/android/get-started/installation/android-emulator/hardware-acceleration.md) Kılavuzu.
 
 > [!NOTE]
-> Önceki Windows sürümlerinde HAXM Hyper-V ile uyumlu değil. Bu senaryoda ya da gerekli [Hyper-V devre dışı](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#disabling-hyper-v) veya x86 olmayan yavaş öykünücüsü görüntüleri kullanmak için en iyi duruma getirme.
+> Önceki Windows sürümlerinde HAXM Hyper-V ile uyumlu değil. Bu senaryoda ya da gerekli [Hyper-V devre dışı](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv) veya x86 olmayan yavaş öykünücüsü görüntüleri kullanmak için en iyi duruma getirme.
 
 
 <a name="device" />
