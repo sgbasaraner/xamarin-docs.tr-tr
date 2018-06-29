@@ -5,12 +5,12 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 001cca2524e495d64c6781d8a2fc5cb58e771e6e
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.openlocfilehash: 063adba82d96e7fcc64d7ec49a0c0133e1cef8ef
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321450"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080332"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: coğrafi kodlama
 
@@ -61,7 +61,7 @@ try
     var location = locations?.FirstOrDefault();
     if (location != null)
     {
-        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
+        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
     }
 }
 catch (FeatureNotSupportedException fnsEx)
@@ -73,6 +73,8 @@ catch (Exception ex)
     // Handle exception that may have occured in geocoding
 }
 ```
+
+Yükseklik her zaman kullanılabilir değildir. Kullanılabilir değilse, `Altitude` özellik olabilir `null` veya değerin sıfır olması. Yükseklik kullanılabilir durumdaysa, ölçümler Deniz düzeyinde yukarıda içinde değerdir. 
 
 Alma [placemarks](xref:Xamarin.Essentials.Placemark) koordinatları var olan bir dizi için:
 
@@ -111,6 +113,10 @@ catch (Exception ex)
     // Handle exception that may have occurred in geocoding
 }
 ```
+
+## <a name="distance-between-two-locations"></a>İki konum arasındaki uzaklığı
+
+[ `Location` ](xref:Xamarin.Essentials.Location) Ve [ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions) sınıfları iki konum arasındaki uzaklığı hesaplamak için yöntemleri tanımlar. Makalesine bakın [ **Xamarin.Essentials: coğrafi konuma** ](geolocation.md#calculate-distance) bir örnek.
 
 ## <a name="api"></a>API
 

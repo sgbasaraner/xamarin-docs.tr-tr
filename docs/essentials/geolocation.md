@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: d5dfdcb11754b1e08e7768a17003a14117e795ea
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 11749107403fc99e1d49b63ee3b50ff105abaa57
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783197"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080293"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: coğrafi konum
 
@@ -88,7 +88,7 @@ try
 
     if (location != null)
     {
-        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
+        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
     }
 }
 catch (FeatureNotSupportedException fnsEx)
@@ -105,6 +105,8 @@ catch (Exception ex)
 }
 ```
 
+Yükseklik her zaman kullanılabilir değildir. Kullanılabilir değilse, `Altitude` özellik olabilir `null` veya değerin sıfır olması. Yükseklik kullanılabilir durumdaysa, ölçümler Deniz düzeyinde yukarıda içinde değerdir. 
+
 Geçerli cihazın sorgulamak için [konumu](xref:Xamarin.Essentials.Location) koordinatları `GetLocationAsync` kullanılabilir. Tam olarak geçirmek en iyisidir `GeolocationRequest` ve `CancellationToken` bu yana cihazın konumunu almak için biraz zaman alabilir.
 
 ```csharp
@@ -115,7 +117,7 @@ try
 
     if (location != null)
     {
-        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
+        Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
     }
 }
 catch (FeatureNotSupportedException fnsEx)
@@ -175,6 +177,22 @@ Aşağıdaki tabloda, her platform doğruluğu özetlenmektedir:
 | Android | 0 - 100 |
 | iOS | ~0 |
 | UWP | < = 10 |
+
+<a name="calculate-distance" />
+
+## <a name="distance-between-two-locations"></a>İki konum arasındaki uzaklığı
+
+[ `Location` ](xref:Xamarin.Essentials.Location) Ve [ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions) sınıflarını tanımla `CalculateDistance` iki coğrafi konumlar arasındaki uzaklığı hesaplamak izin yöntemleri. Bu uzaklık yollar veya diğer yollarla dikkate almaz ve yalnızca en kısa uzaklığı Earth yüzey boyunca iki noktaları arasındaki da denir hesaplanan _harika bir daire uzaklığı_ veya mikroişlemciye, uzaklık "crow uçarak."
+
+Örnek buradadır:
+
+```csharp
+Location boston = new Location(42.358056, -71.063611);
+Location sanFrancisco = new Location(37.783333, -122.416667);
+double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Miles);
+```
+
+`Location` Oluşturucusu bu sırayla enlem ve boylam bağımsız değişkeni vardır. Pozitif enlem değerleri north of ekvatora, ve pozitif boylam değerleri Meridyeninden doğuya doğru. Son bağımsız değişkeni kullanmak `CalculateDistance` mil veya kilometre belirtmek için. `Location` Sınıfı ayrıca tanımlayan `KilometersToMiles` ve `MilesToKilometers` iki birimleri arasında dönüştürme yöntemleri.
 
 ## <a name="api"></a>API
 
