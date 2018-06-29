@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: f7ba0620a4639ff62e2d75d7cf8f02fcc01faac5
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: 2cb2167f534251e15455e11b6a2c85f53fb48b8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33113479"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067007"
 ---
 # <a name="publishing-independently"></a>Bağımsız olarak yayımlama
 
@@ -28,7 +28,7 @@ Dört lisansları, geliştirme, dağıtımı ve Xamarin.Android uygulamaları da
 
 -   **Visual Studio Enterprise** &ndash; oluşan ekiplere yönelik herhangi bir boyuta (yalnızca Windows). Bu lisans Kurumsal özellikler içerir standart ya da bulut aboneliği.
 
-Ziyaret [visualstudio.com](https://www.visualstudio.com/xamarin/) Community Edition karşıdan yüklemeniz veya Professional ve Enterprise sürümleri satın alma hakkında daha fazla bilgi edinin.
+Ziyaret [visualstudio.com](https://visualstudio.microsoft.com/xamarin/) Community Edition karşıdan yüklemeniz veya Professional ve Enterprise sürümleri satın alma hakkında daha fazla bilgi edinin.
 
 
 ## <a name="allow-installation-from-unknown-sources"></a>Bilinmeyen kaynaklardan yüklemesine izin ver
@@ -62,7 +62,7 @@ Bir web sunucusu tarafından bir uygulama dağıtmak mümkündür. Bu, web sunuc
 El ile yükleme, uygulamaları yüklemek için üçüncü bir seçenektir. Bir uygulamanın el ile yüklenmesini etkilemek için:
 
 1.   **APK kullanıcı için bir kopyasını dağıtmak** &ndash; bu kopyayı bir CD veya USB flash sürücü gibi dağıtılmış.
-1.   **(Kullanıcı) bir Android cihazında uygulamayı yükleyen** &ndash; komut satırı kullanmak *Android hata ayıklama köprüsü* (**adb**) aracı. **adb** bir öykünücü örneğinde veya bir Android destekli aygıt ile iletişimi sağlayan çok yönlü bir komut satırı aracıdır. Android SDK'sı içerir **adb**; dizinde bulunan  **<sdk>/platform-tools /**.
+1.   **(Kullanıcı) bir Android cihazında uygulamayı yükleyen** &ndash; komut satırı kullanmak *Android hata ayıklama köprüsü* (**adb**) aracı.   **adb** bir öykünücü örneğinde veya bir Android destekli aygıt ile iletişimi sağlayan çok yönlü bir komut satırı aracıdır. Android SDK'sı içerir **adb**; dizinde bulunan  **<sdk>/platform-tools /**.
 
 Android cihazı bir USB kablosuyla bilgisayarınıza bağlanması gerekir.
 Windows bilgisayarları tarafından kabul edilecek telefon satıcıdan ek USB sürücüler de gerekebilir **adb**. Yükleme yönergeleri için bu ek USB sürücüleri olduğundan bu belgenin kapsamı dışındadır.

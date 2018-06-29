@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 444559672f25b13b7d3a769d6de4bd6384174965
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 265833c3b1453dfb21064860a747651d45c2c4a0
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268894"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066474"
 ---
 # <a name="uninstalling-xamarin"></a>Xamarin kaldırma
 
@@ -269,7 +269,7 @@ Visual Studio 2017 tamamen kaldırmak için seçin **kaldırma** üç çubuğund
 
 ### <a name="visual-studio-2015-and-earlier"></a>Visual Studio 2015 ve önceki
 
-Visual Studio 2015 tamamen kaldırmak için kullanın [VisualStudio.com destek yanıt](https://www.visualstudio.com/vs/support/vs2015/uninstall-visual-studio-2015/).
+Visual Studio 2015 tamamen kaldırmak için kullanın [VisualStudio.com destek yanıt](https://visualstudio.microsoft.com/vs/support/vs2015/uninstall-visual-studio-2015/).
 
 Xamarin ile bir Windows makineden kaldırılması **Denetim Masası**. Gidin **programlar ve Özellikler** veya **Programlar > Program Kaldır** aşağıda gösterildiği gibi:
 

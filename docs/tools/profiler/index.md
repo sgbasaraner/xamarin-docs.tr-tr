@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
 ms.date: 06/03/2018
-ms.openlocfilehash: 42a8a2e3751d111f6ba8ccbea32e0446460f9a29
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8882cb9cd84940e12865a730f75e36ecbaf9b6f0
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793881"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066682"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -28,7 +28,7 @@ Bu kılavuz genel profil oluşturma senaryoları inceler ve profil oluşturucu �
 ## <a name="download-and-install"></a>İndirme ve yükleme
 
 > [!NOTE]
-> Olması gerekir bir [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) abone bir Mac bilgisayar üzerinde Mac için bu özelliği Windows ya da Visual Studio Enterprise ya da Visual Studio kilidini açmak için
+> Olması gerekir bir [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/) abone bir Mac bilgisayar üzerinde Mac için bu özelliği Windows ya da Visual Studio Enterprise ya da Visual Studio kilidini açmak için
 
 Xamarin profil oluşturucu bir tek başına uygulamadır ve gelen IDE içinde profil oluşturmayı etkinleştirmek için Mac için Visual Studio ve Visual Studio ile tümleşiktir.
 

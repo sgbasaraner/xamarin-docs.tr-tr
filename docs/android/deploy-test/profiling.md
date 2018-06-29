@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/03/2018
-ms.openlocfilehash: e62ac290423db1c18e7e50d55b2b3550f99d1533
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: fd9ebc7922428d2779e6985379c3118274a46aff
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34549279"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066669"
 ---
 # <a name="profiling-android-apps"></a>Android uygulamaları profil oluşturma
 
@@ -30,7 +30,7 @@ Bu kılavuz, Xamarin profil oluşturucu tanıtır ve Android Profiler kullanarak
 Xamarin profil oluşturucu Visual Studio ve Visual Studio ile Mac için Xamarin uygulamaları IDE içinden profil oluşturma için tümleştirilmiş başına bir uygulamadır. Xamarin profil oluşturucu kullanma hakkında daha fazla bilgi için bkz: [Xamarin profil oluşturucu](~/tools/profiler/index.md).
 
 > [!NOTE]
-> Olması gereken bir [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) abone Mac için Xamarin profil oluşturucu özellik ya da Visual Studio Enterprise Windows ya da Visual Studio kilidini açmak için
+> Olması gereken bir [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/) abone Mac için Xamarin profil oluşturucu özellik ya da Visual Studio Enterprise Windows ya da Visual Studio kilidini açmak için
  
 ## <a name="android-studio-profiler"></a>Android Studio Profil Oluşturucu
 

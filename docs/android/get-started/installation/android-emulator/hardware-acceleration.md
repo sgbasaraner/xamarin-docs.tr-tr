@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 0490a9b011d49d728dde74f4a50cb955d12cfcbe
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: c2bef2c614d4cc0655deb9732ccefec223a8318a
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935178"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066500"
 ---
 # <a name="hardware-acceleration-for-emulator-performance"></a>Donanım hızlandırma öykünücüsü performansı
 
@@ -61,7 +61,7 @@ Windows 10 kullanan geliştiriciler (Nisan 2018 güncelleştirmek veya sonrası)
 
    Etkinleştirme **Windows hiper yönetici platformu** otomatik olarak Hyper-V sağlar. Bu değişikliği yaptıktan sonra Windows'u yeniden başlatmak için iyi bir fikirdir.
 
-3. **Yükleme [Visual Studio 15,8 Preview 1 veya sonrası](https://www.visualstudio.com/vs/preview/)**.
+3. **Yükleme [Visual Studio 15,8 Preview 1 veya sonrası](https://visualstudio.microsoft.com/vs/preview/)**.
    Visual Studio'nun bu sürümü, Hyper-V ile Android öykünücüsünde çalıştırmak için IDE desteği sağlar.
  
 4. **Android öykünücüsünde Paketi 27.2.7 yüklemek ya da daha sonra**. Bu paketi yüklemek için gidin **Araçlar > Android > Android SDK Manager** Visual Studio. Seçin **Araçları** sekmesinde ve Android öykünücüsü sürümünün en az 27.2.7 olduğundan emin olun. Ayrıca Android SDK Araçları sürüm 26.1.1 olduğundan emin olun ya da daha sonra:

@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
 ms.date: 06/19/2018
-ms.openlocfilehash: f7c5217a9c2d3881ca29094c3186e448975db6a3
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 690329aa1577c66b3aa2794342a8e367477d3a74
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268975"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066929"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspector yükleme ve gereksinimler
 
@@ -19,13 +19,13 @@ ms.locfileid: "36268975"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. İndirme ve yükleme [Visual Studio Enterprise](https://www.visualstudio.com/vs/) seçip **.NET ile Mobil Geliştirme** iş yükü.
+1. İndirme ve yükleme [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) seçip **.NET ile Mobil Geliştirme** iş yükü.
 1. [Oturum](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) Kurumsal aboneliğinizi etkinleştirmek için.
 1. [İnceleme](~/tools/inspector/inspect.md) kendi uygulamanızı!
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. İndirme ve yükleme [Mac için Visual Studio](https://www.visualstudio.com/vs/mac/).
+1. İndirme ve yükleme [Mac için Visual Studio](https://visualstudio.microsoft.com/vs/mac/).
 1. [Oturum](https://docs.microsoft.com/visualstudio/mac/activation) Kurumsal aboneliğinizi etkinleştirmek için.
 1. [İnceleme](~/tools/inspector/inspect.md) kendi uygulamanızı!
 

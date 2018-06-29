@@ -6,12 +6,12 @@ ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
-ms.openlocfilehash: 17deacf115042a2fcd6bad9e22a630eadb432d44
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 12a661a7cb0e92046e56c5c2ece6e8504252ca10
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269024"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066864"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Windows'ta Xamarin Önizleme yükleme
 
@@ -21,7 +21,7 @@ Visual Studio 2017 alfa, beta ve kararlı kanalları önceki sürümlerinde ayn�
 - **Önizleme** – eşdeğer _alfa_ ve _Beta_ Mac için Visual Studio kanalları
 
 > [!TIP] 
-> Yayın öncesi özellikleri denemek için size gereken [Visual Studio 2017 Preview yükleyici indirmek](https://www.visualstudio.com/vs/preview/), yükleme seçeneğini sunacaktır **Önizleme** Visual Studio yan yana kararlı (ile sürümleri Sürüm) sürüm. Visual Studio 2017 yenilikler hakkında daha fazla bilgi bulunabilir [sürüm notları](/visualstudio/releasenotes/vs2017-preview-relnotes).
+> Yayın öncesi özellikleri denemek için size gereken [Visual Studio 2017 Preview yükleyici indirmek](https://visualstudio.microsoft.com/vs/preview/), yükleme seçeneğini sunacaktır **Önizleme** Visual Studio yan yana kararlı (ile sürümleri Sürüm) sürüm. Visual Studio 2017 yenilikler hakkında daha fazla bilgi bulunabilir [sürüm notları](/visualstudio/releasenotes/vs2017-preview-relnotes).
 
 Visual Studio önizleme sürümünü Xamarin işlevi, karşılık gelen Önizleme sürümleri içerebilir dahil olmak üzere:
 

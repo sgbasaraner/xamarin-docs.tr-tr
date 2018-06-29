@@ -7,18 +7,21 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: a278a4715ffbcd4b1457f846be6bdf8394143cb4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9168b84b169d2f7919acaf88597919a48cd6710c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788988"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066851"
 ---
 # <a name="installing-tvos-support-in-xamarin"></a>Yükleme tvOS Xamarin desteği
 
+> [!TIP]
+> İOS 12 ve tvOS 12 desteği Xamarin'in önizlemesini denemek başlatmak için okuma [iOS 12 başlangıç kılavuzuna](~/ios/platform/introduction-to-ios12/get-started.md).
+
 Apple, Apple TV 4 K ve tvOS 11 yayımladı. Apple TV platform, geliştiriciler, zengin, modern uygulamalar oluşturma ve Apple TV's yerleşik uygulama mağazası yayın vermeden açıktır.
 
-Xamarin.iOS 11 ve sonraki 11 tvOS desteği gönderilen SDK'sı ile Apple'nın Xcode 9. 
+Xamarin.iOS 11 ve sonraki 11 tvOS desteği gönderilen SDK'sı ile Apple'nın Xcode 9.
 
 - [Xamarin.iOS için sürüm notları](https://developer.xamarin.com/releases/ios/)
 - [Xcode sürüm notları](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876)

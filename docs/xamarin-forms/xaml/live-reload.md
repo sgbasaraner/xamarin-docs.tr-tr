@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935434"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066656"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin dinamik yeniden yükle
 
@@ -28,7 +28,7 @@ Dinamik yeniden yükleme şu anda yalnızca Visual Studio 2017 içinde kullanıl
 
 ## <a name="requirements"></a>Gereksinimler
 
-* [Visual Studio 2017 sürüm 15.7 veya yukarıdaki](https://www.visualstudio.com/vs/) veya üstü ile **.NET ile Mobil Geliştirme** iş yükü.
+* [Visual Studio 2017 sürüm 15.7 veya yukarıdaki](https://visualstudio.microsoft.com/vs/) veya üstü ile **.NET ile Mobil Geliştirme** iş yükü.
 * [Xamarin.Forms 3.0.0 veya üstü](https://www.nuget.org/packages/Xamarin.Forms/) veya üstü.
 
 ## <a name="getting-started"></a>Başlarken

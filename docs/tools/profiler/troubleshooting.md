@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 247a18cf7f645ea90d100cb3f4900f30ac7754cc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 71faf79ef9b783480dbb6ff4674859a9148abca3
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793863"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066916"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin sorun giderme Profil Oluşturucu
 
@@ -67,7 +67,7 @@ Bu sorunu çözmek için aşağıdaki ayarları kontrol edin:
 - Platform olun [desteklenen](~/tools/profiler/index.md#Profiler_Support).
 - Doğru lisans olduğundan emin olun.
 - Oturum kimliği doğrulanmış olarak ve doğru emin olun.
-- [Visual Studio] Kullanıyor olmanız gerekir [Visual Studio Enterprise](https://www.visualstudio.com/vs/enterprise/) ve geçerli bir Enterprise lisansınız.
+- [Visual Studio] Kullanıyor olmanız gerekir [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/enterprise/) ve geçerli bir Enterprise lisansınız.
 
 #### <a name="i-get-an-error-when-i-try-to-launch-the-profiler"></a>Profil Oluşturucu başlatmaya çalışırken bir hata alıyorsunuz
 

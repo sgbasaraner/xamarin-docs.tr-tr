@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 333e672b054c38370847338e9a4ffad94c90bb5d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 67fc32fc9f79d54274642fbab2d0c2f8afd14d8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793668"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066513"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin ile sürekli tümleştirme giriş
 
@@ -48,14 +48,14 @@ Ticari ve açık kaynaklı araçları CI desteklemek için tasarlanmış kapsaml
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services ve Team Foundation Server
 
-[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) ve [Team Foundation Server](http://msdn.microsoft.com/vstudio/ff637362.aspx) (TFS) olan derleme Microsoft'un işbirliği araçları sürekli tümleştirme hizmetleri, izleme görev, Çevik planlama ve raporlama araçlarını ve sürüm Denetim. Sürüm denetimi ile VSTS ve TFS (Team Foundation sürüm denetimi veya TFVC'yi) kendi sistem veya GitHub üzerinde barındırılan projeleri ile çalışabilir.
+[Visual Studio Team Services](https://visualstudio.microsoft.com/team-services/) (VSTS) ve [Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) olan derleme Microsoft'un işbirliği araçları sürekli tümleştirme hizmetleri, izleme görev, Çevik planlama ve raporlama araçlarını ve sürüm Denetim. Sürüm denetimi ile VSTS ve TFS (Team Foundation sürüm denetimi veya TFVC'yi) kendi sistem veya GitHub üzerinde barındırılan projeleri ile çalışabilir.
 
  - Visual Studio Team Services aracılığıyla bulut hizmetleri sağlar. Herhangi bir ayrılmış donanım veya altyapı gerektirir ve herhangi bir yere Visual Studio, coğrafi olarak olan takımlar için cazip hale getirme gibi popüler geliştirme araçları ve web tarayıcıları aracılığıyla erişilebilen, birincil avantajı olmasıdır Dağıtılmış. Beş geliştirici ekipleri için boş ya da daha az, büyüyen bir takım uyum sağlamak için hangi ek lisanslar satın sonra.
  - TFS şirket içi Windows sunucuları için tasarlanmış ve yerel ağ veya bu ağa bir VPN bağlantısı üzerinden erişilebilir. Birincil avantajı, tam olarak yapı sunucularının yapılandırmasını denetlemek ve herhangi bir ek yazılım veya hizmetleri gerekli yükleyebilirsiniz ' dir. TFS küçük ekipleri için ücretsiz giriş seviyesi Express sürümü vardır.
 
 TFS ve VSTS Visual Studio ile sıkı bir şekilde tümleştirilmiştir ve birçok sürüm denetimi ve tek bir IDE rahatlık CI görevleri gerçekleştirmek geliştiricilerin olanak sağlar. Takım Gezgini her yerde eklentisi Eclipse (aşağıya bakın) için de kullanılabilir. Mac için Visual Studio TFS veya VSTS için herhangi bir destek sağlamaz.
 
-Visual Studio Team hizmetin yapı sistem (Android, iOS ve Windows) hedef istediğiniz her platform için bir yapı tanımı içinde oluşturduğunuz Xamarin projeleri için doğrudan desteğe sahiptir. Uygun Xamarin lisans her derleme tanımı için gereklidir. Yerel bağlanmak mümkündür, bu amaç için Visual Studio Team Services sunucusuna Xamarin özellikli TFS derlemesi. Bu kurulum ile VSTS sıraya alınan derlemeleri yerel sunucuya verilmiş. Ayrıntılar için başvurmak [dağıtma ve bir yapı sunucusunu yapılandırmak](https://msdn.microsoft.com/library/ms181712.aspx). Alternatif olarak, Jenkins veya takım şehir gibi başka bir yapı aracını kullanabilirsiniz.
+Visual Studio Team hizmetin yapı sistem (Android, iOS ve Windows) hedef istediğiniz her platform için bir yapı tanımı içinde oluşturduğunuz Xamarin projeleri için doğrudan desteğe sahiptir. Uygun Xamarin lisans her derleme tanımı için gereklidir. Yerel bağlanmak mümkündür, bu amaç için Visual Studio Team Services sunucusuna Xamarin özellikli TFS derlemesi. Bu kurulum ile VSTS sıraya alınan derlemeleri yerel sunucuya verilmiş. Ayrıntılar için başvurmak [dağıtma ve bir yapı sunucusunu yapılandırmak](https://docs.microsoft.com/vsts/pipelines/agents/agents?view=vsts). Alternatif olarak, Jenkins veya takım şehir gibi başka bir yapı aracını kullanabilirsiniz.
 
 Visual Studio, Visual Studio Team Services ve Team Foundation Server, bkz: tüm uygulama yaşam döngüsü yönetimi (ALM) özelliklerini tam özeti [Xamarin uygulamalarıyla uygulama yaşam döngüsü yönetimi](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx) konusuna bakın.
 
@@ -107,7 +107,7 @@ VSTS derlemeleri yerel sunucuya verilmiş bir Visual Studio Team Services projes
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services ve Jenkins
 
-Uygulamalarınızı oluşturmak için Jenkins kullanırsanız, Visual Studio Team Services veya Team Foundation Server kodunuzu depolamak ve Jenkins CI derlemeleriniz için kullanılacak devam edebilirsiniz. Takım projenizin Git deposu veya kod TFVC'yi için ne zaman iade kodu bastığınızda Jenkins yapı tetikleyebilir. Ayrıntılar için bkz [Jenkins Visual Studio Team Services ile](https://www.visualstudio.com/docs/marketplace/integrate/service-hooks/services/jenkins).
+Uygulamalarınızı oluşturmak için Jenkins kullanırsanız, Visual Studio Team Services veya Team Foundation Server kodunuzu depolamak ve Jenkins CI derlemeleriniz için kullanılacak devam edebilirsiniz. Takım projenizin Git deposu veya kod TFVC'yi için ne zaman iade kodu bastığınızda Jenkins yapı tetikleyebilir. Ayrıntılar için bkz [Jenkins Visual Studio Team Services ile](https://docs.microsoft.com/en-us/vsts/service-hooks/services/jenkins?view=vsts).
 
 [![](intro-to-ci-images/intro04-small.png "Uygulamalarınızı oluşturmak için Jenkins kullanırsanız, Visual Studio Team Services veya Team Foundation Server kodunuzu depolamak ve Jenkins CI derlemeleriniz için kullanmaya devam")](intro-to-ci-images/intro04.png#lightbox)
 

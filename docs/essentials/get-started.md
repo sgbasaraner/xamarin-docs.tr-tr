@@ -5,12 +5,12 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f0f6eebbd12041a7be2d8e2dc00a9146b40d675f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a42086f70eb81a761358655b3effb9f8f934c8d4
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783080"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067191"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials ile çalışmaya başlama
 
@@ -63,6 +63,10 @@ Xamarin.Essentials, Visual Studio kullanarak tüm mevcut veya yeni projeye eklen
 5. Xamarin.Essentials platforma özgü Kurulum gerektirir:
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
+
+    Xamarin.Essentials 19, API düzeyine karşılık gelen 4.4 minimum Android sürümü destekler ancak derleme için hedef Android sürümü 8.1 olmalıdır 27 API düzeyine karşılık gelen. (Visual Studio'da bu iki sürüm Android bildirim sekmesinde Android projesi için Proje Özellikleri iletişim kutusunda ayarlanır. Mac için Visual Studio'da, bunlar proje Seçenekleri iletişim kutusunda Android uygulaması sekmesinde Android projesi için hazırsınız.) 
+    
+    Xamarin.Essentials gerektirdiği Xamarin.Android.Support kitaplıkları 27.0.2 sürümünü yükler. Uygulamanızın gerektirdiği herhangi bir Xamarin.Android.Support kitaplıkları da NuGet Paket Yöneticisi'ni kullanarak 27.0.2 sürüme güncelleştirilmesi gerekir. Uygulamanız tarafından kullanılan tüm Xamarin.Android.Support kitaplıkları aynı olmalıdır ve en az sürüm 27.0.2. Başvurmak [sorun giderme sayfası](troubleshooting.md) Xamarin.Essentials NuGet eklemek veya NuGets çözümünüzde sorunlarınız varsa.
 
     Android projenin `MainLauncher` veya tüm `Activity` diğer bir deyişle başlatılan Xamarin.Essentials başlatıldı, içinde `OnCreate` yöntemi:
 

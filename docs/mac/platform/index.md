@@ -7,16 +7,27 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 9e82db1c0f38d35c23a6cd0667bef49315ff86be
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 539ec976e3ea28aa2e017318022bd102f2c03ae5
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792232"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066890"
 ---
 # <a name="macos-platform-features"></a>macOS Platform özellikleri
 
 Bu bölümdeki belgeler Xamarin.Mac uygulamasında macOS anahtar, platforma özgü özellikleri ile çalışma kapsar.
+
+## <a name="introduction-to-macos-mojavemacplatformintroduction-to-macos-mojaveindexmd"></a>[MacOS Mojave giriş](~/mac/platform/introduction-to-macos-mojave/index.md)
+
+> [!WARNING]
+> Xamarin'ın macOS Mojave desteği şu anda bu hatalar içerebilir, özelliği tamamlamak değil ve değişebilir anlamına gelir önizlemede değil. Yalnızca deneme için kullanın.
+
+Bu belge macOS Xamarin.Mac uygulamaları oluştururken kullanılabilir Mojave yeni ve güncelleştirilmiş özelliklerin üst düzey bir genel bakış sağlar.
+
+## <a name="introduction-to-macos-high-sierramacplatformintroduction-to-macos-high-sierraindexmd"></a>[MacOS yüksek Sierra giriş](~/mac/platform/introduction-to-macos-high-sierra/index.md)
+
+Bu belgede macOS yüksek Sierra'deki yeni ve gelişmiş özellikler açıklanmaktadır.
 
 ## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[macOS Sierra’ya Giriş](~/mac/platform/introduction-to-macos-sierra/index.md)
 
@@ -30,7 +41,6 @@ Başvurmak [sorun giderme sayfa](~/cross-platform/macios/binding/troubleshooting
 ## <a name="introduction-to-opentkmacplatformopentkmd"></a>[OpenTK’ya Giriş](~/mac/platform/opentk.md)
 
 OpenTK (açık araç takımı), OpenGL ve OpenCL OpenAL ile çalışmayı kolaylaştırır bir Gelişmiş, alt düzey C# kitaplıktır. OpenTK kullanılabilir oyunlar, bilimsel uygulamaları veya diğer 3B grafik gerektiren projeleri, ses veya hesaplama işlevselliği için. Bu makalede OpenTK Xamarin.Mac kullanmayla kısa bir giriş sağlar.
-
 
 ## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[Görsel Taslaklara Giriş](~/mac/platform/storyboards/index.md)
 

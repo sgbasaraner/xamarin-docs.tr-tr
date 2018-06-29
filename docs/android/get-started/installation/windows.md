@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 6577b80c6ec71d7e038338d6c8a3e28dbbd75590
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 1eb8d4ec9ad60f0f9e81676920df4d950a875088
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935187"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066448"
 ---
 # <a name="windows-installation"></a>Windows yükleme
 
@@ -118,7 +118,7 @@ Sonraki adım göz atın yapmaktır [Hello, Android](~/android/get-started/hello
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Visual Studio indirme](https://www.visualstudio.com/vs/)
+- [Visual Studio indirme](https://visualstudio.microsoft.com/vs/)
 - [Xamarin için Visual Studio araçlarını yükleme](~/cross-platform/get-started/installation/windows.md)
 - [Sistem Gereksinimleri](~/cross-platform/get-started/requirements.md)
 - [Android SDK Kurulumu](~/android/get-started/installation/android-sdk.md)
