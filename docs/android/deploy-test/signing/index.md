@@ -1,36 +1,34 @@
 ---
 title: Android uygulama paketi imzalama
+description: Android uygulama paketi (APK) yayını için oturum açma
 ms.prod: xamarin
 ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/21/2018
-ms.openlocfilehash: 6a4164ea4a56ee7c1b3c1abd05f7b1bb95aede4f
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 07/02/2018
+ms.openlocfilehash: 4afcf42750cd9366bfd9fa5855fe1e7c0f114162
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34458807"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403318"
 ---
 # <a name="signing-the-android-application-package"></a>Android uygulama paketi imzalama
 
+İçinde [uygulama yayına hazırlanma](~/android/deploy-test/release-prep/index.md) **arşiv Yöneticisi** uygulama oluşturmak ve imzalamak ve yayımlamak için bir arşiv yerleştirin için kullanıldı. Bu bölümde, bir Android imzalama kimliği oluşturmak için Android uygulamaları için yeni bir imzalama sertifikası oluşturup arşivlenmiş uygulama yayımlama açıklanmaktadır *geçici* diske. Sonuçta elde edilen APK bir uygulama mağazasına giderek olmadan Android cihazlar olarak dışarıdan yüklenebilir.
+
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Bu bölümde, Visual Studio tarafından sağlanan APK imzalamak için tümleşik yayımlama iş akışı açıklanır. İçinde [sürüm için bir uygulama hazırlama](~/android/deploy-test/release-prep/index.md) **arşiv Yöneticisi** uygulamanızı oluşturmak ve imzalamak ve yayımlamak için bir arşivde yerleştirmek için kullanılır. Bu bölümde kimlik imzalama Android oluşturmak, Android uygulamaları için yeni bir imzalama sertifikası oluşturma ve arşivlenmiş uygulama yayımlama açıklanmaktadır *geçici* diske.
-Sonuçta elde edilen APK bir uygulama mağazasına giderek olmadan Android cihazları içine dışarıdan yüklenebilir.
-
-İçinde [yayımlama arşiv](~/android/deploy-test/release-prep/index.md#archive), **dağıtım kanal** iletişim dağıtım için iki seçenek sunulur. Seçin **geçici**:
+İçinde [yayımlama için arşiv](~/android/deploy-test/release-prep/index.md#archive), **dağıtım kanalı** iletişim dağıtım için iki seçenek sunulur. Seçin **geçici**:
 
 [![Dağıtım Kanalı iletişim](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Bu bölümde, APK imzalamak için Visual Studio Mac'ın tümleşik yayımlama iş akışı için kullanacağız. İçinde [sürüm için bir uygulama hazırlama](~/android/deploy-test/release-prep/index.md), kullandık **arşiv Yöneticisi** uygulamanızı oluşturmak ve imzalamak ve yayımlamak için bir arşiv yerleştirin. Bu bölümde, biz kimlik imzalama Android oluşturmak, Android uygulamaları için yeni bir imzalama sertifikası oluşturma ve arşivlenmiş uygulama yayımlama öğreneceksiniz *geçici* diske. Sonuçta elde edilen APK bir uygulama mağazasına giderek olmadan Android cihazları içine dışarıdan yüklenebilir.
+İçinde [yayımlama için arşiv](~/android/deploy-test/release-prep/index.md#archive), **imzala ve Dağıt...**  iletişim dağıtım için iki seçenek bize sunulur. Seçin **geçici** tıklatıp **sonraki**:
 
-İçinde [yayımlama arşiv](~/android/deploy-test/release-prep/index.md#archive), **oturum ve Dağıt...**  iletişim dağıtım için iki seçenek bize sunulur. Seçin **geçici** tıklatıp **sonraki**:
-
-[![Oturum ve Dağıt iletişim kutusu](images/xs/01-select-ad-hoc-sml.png)](images/xs/01-select-ad-hoc.png#lightbox)
+[![İmzala ve Dağıt iletişim kutusu](images/xs/01-select-ad-hoc-sml.png)](images/xs/01-select-ad-hoc.png#lightbox)
 
 -----
 
@@ -42,116 +40,116 @@ Bu bölümde, APK imzalamak için Visual Studio Mac'ın tümleşik yayımlama i�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Sonra **geçici** seçildiğinde, Visual Studio açılır olan **imzalama kimlik** sonraki ekran görüntüsünde gösterildiği gibi iletişim sayfası. Yayımlanacak. APK, (sertifikası olarak da bilinir) bir imzalama anahtarı ile ilk imzalanmalıdır.
+Sonra **geçici** seçildiğinde, Visual Studio açılır olan **imzalama kimliği** sonraki ekran görüntüsünde gösterildiği gibi iletişim kutusunun sayfasında. Yayımlanacak. APK, bir imzalama anahtarı (sertifikası olarak da bilinir) ile ilk imzalanmalıdır.
 
-Varolan bir sertifikayı tıklayarak kullanılabilir **alma** düğmesine ve ardından devam etmek [APK oturum](#signapkvs). Aksi takdirde ' ı **+** düğmesi yeni bir sertifika oluşturmak için:
+Mevcut bir sertifikayı tıklayarak kullanılabilir **alma** düğmesine ve ardından devam etmek [APK oturum](#signapkvs). Aksi takdirde ' ı **+** yeni bir sertifika oluşturmak için:
 
 [![Geçici imzalama kimliği](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
-**Oluşturma Android anahtar deposu** iletişim kutusu gösterilir; Android uygulamaları imzalamak için kullanabileceğiniz yeni bir imzalama sertifikası oluşturmak için bu iletişim kutusunu kullanın. Bu iletişim kutusunda gösterildiği gibi (kırmızı renkle) gerekli bilgileri girin:
+**Oluştur Android anahtarı Store** iletişim kutusu görüntülenir; Android uygulamaları imzalamak için kullanabileceğiniz yeni bir imzalama sertifikası oluşturmak için bu iletişim kutusunu kullanın. Bu iletişim kutusunda gösterildiği gibi (kırmızı renkle) gerekli bilgileri girin:
 
-[![Android anahtar Deposu iletişim kutusunda Oluştur](images/vs/03-create-android-key-store-vs-sml.png)](images/vs/03-create-android-key-store-vs.png#lightbox)
+[![Android anahtar Store iletişim kutusu oluşturma](images/vs/03-create-android-key-store-vs-sml.png)](images/vs/03-create-android-key-store-vs.png#lightbox)
 
-Aşağıdaki örnek sağlanmalıdır bilgi türünü gösterir. Tıklatın **oluşturma** yeni bir sertifika oluşturmak için:
+Aşağıdaki örnek sağlanmalıdır bilgi türünü gösterir. Tıklayın **Oluştur** yeni bir sertifika oluşturmak için:
 
 [![Yeni bir sertifika oluşturma](images/vs/04-key-store-example-vs-sml.png)](images/vs/04-key-store-example-vs.png#lightbox)
 
-Sonuçta elde edilen anahtar şu konumda bulunur:
+Sonuçta elde edilen anahtar deposu şu konumda bulunur:
 
-**C:\\kullanıcılar\\*kullanıcıadı*\\AppData\\yerel\\Xamarin\\Android Mono\\diğer\\alias.keystore**
+**C:\\kullanıcılar\\*kullanıcıadı*\\AppData\\yerel\\Xamarin\\Android için Mono\\Keystore\\ *Diğer*\\*diğer*.keystore**
 
-Örneğin, yukarıdaki adımları aşağıdaki konumda yeni bir imzalama anahtarı oluşturabilirsiniz:
+Örneğin, kullanarak **chimp** diğer ad olarak yukarıdaki adımları şu konumda yeni bir imzalama anahtarı oluşturursunuz:
 
-**C:\\kullanıcılar\\*kullanıcıadı*\\AppData\\yerel\\Xamarin\\Android Mono\\chimp\\chimp.keystore**
+**C:\\kullanıcılar\\*kullanıcıadı*\\AppData\\yerel\\Xamarin\\Android için Mono\\Keystore\\chimp\\chimp.keystore**
 
 > [!NOTE]
-> Sonuçta elde edilen anahtar dosyasını güvenli bir yerde yedeklemek mutlaka &ndash; çözümde bulunmaz. Kaybetmeniz durumunda, bir anahtar dosya (örneğin, başka bir bilgisayara taşınmış veya Windows'u yeniden nedeniyle), uygulamanızı önceki sürümler ile aynı sertifika ile oturum kuramayacaktır.
+> Sonuçta elde edilen anahtar deposu dosyasının ve parolayı güvenli bir yere yedekleyin mutlaka &ndash; çözüme dahil değildir. Kaybederseniz, anahtar deposu dosya (örneğin, başka bir bilgisayara veya Windows yeniden nedeniyle), uygulamanızı önceki sürümleri aynı sertifika ile imzalamak mümkün olmayacaktır.
 
-Anahtar deposunun hakkında daha fazla bilgi için bkz: [Keystore'nın MD5 veya SHA1 imza bulma](~/android/deploy-test/signing/keystore-signature.md).
+Anahtar deposu hakkında daha fazla bilgi için bkz: [deponuzu'nın MD5 veya SHA1 imza bulma](~/android/deploy-test/signing/keystore-signature.md).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-' I tıklattıktan sonra **geçici**, Visual Studio için Mac açılır **Android imzalama kimlik** sonraki ekran görüntüsünde gösterildiği gibi iletişim. Yayımlanacak. APK, ilk olmalıdır (sertifikası olarak da bilinir) bir imzalama anahtarı ile imzalanmış. Bir sertifika zaten varsa, tıklatın **mevcut bir anahtarı içe** alıp için devam düğmesine [APK oturum](#signapkxs) yoksa,'i tıklatın **yeni bir anahtar oluşturun** düğmesi Yeni bir sertifika oluşturun: 
+' I tıklattıktan sonra **geçici**, açılır Mac için Visual Studio **Android imzalama kimliği** sonraki ekran görüntüsünde gösterildiği gibi iletişim. Yayımlanacak. APK, ilk olmalıdır (sertifikası olarak da bilinir) bir imzalama anahtarı ile imzalanmış. Bir sertifika zaten varsa, tıklayın **mevcut bir anahtarı içeri aktarma** içe aktarın ve ardından devam düğmesine [APK oturum](#signapkxs) 'a tıklayıp **yeni anahtar oluştur** düğmesi Yeni bir sertifika oluşturun: 
 
-[![Android imzalama kimlik iletişim kutusu](images/xs/02-android-signing-identity-sml.png)](images/xs/02-android-signing-identity.png#lightbox)
+[![Android imzalama kimliği iletişim kutusu](images/xs/02-android-signing-identity-sml.png)](images/xs/02-android-signing-identity.png#lightbox)
 
-**Yeni sertifika oluştur** iletişim Android uygulamaları imzalamak için kullanılan yeni bir imzalama sertifikası oluşturmak için kullanılır. Tıklatın **Tamam** gerekli bilgileri girdikten sonra:
+**Yeni sertifika oluştur** iletişim Android uygulamaları imzalamak için kullanılabilecek yeni bir imzalama sertifikası oluşturmak için kullanılır. Tıklayın **Tamam** gerekli bilgileri girdikten sonra:
 
 [![Yeni sertifika iletişim kutusu oluşturma](images/xs/03-create-new-certificate-sml.png)](images/xs/03-create-new-certificate.png#lightbox)
 
-Sonuçta elde edilen anahtar şu konumda bulunur:
+Sonuçta elde edilen anahtar deposu şu konumda bulunur:
 
 **~/Library/Developer/Xamarin/KeyStore/Alias/Alias.KeyStore**
 
-Örneğin, yukarıdaki adımları aşağıdaki konumda yeni bir imzalama anahtarı oluşturabilirsiniz:
+Örneğin, yukarıdaki adımları şu konumda yeni bir imzalama anahtarı oluşturabilirsiniz:
 
 **~/Library/Developer/Xamarin/KeyStore/chimp/chimp.KeyStore**
 
 
 > [!NOTE]
-> Sonuçta elde edilen anahtar dosyasını güvenli bir yerde yedeklemek mutlaka &ndash; çözümde bulunmaz. Kaybetmeniz durumunda, bir anahtar dosya (örneğin, başka bir bilgisayara taşınmış veya Mac yeniden nedeniyle), uygulamanızı önceki sürümler ile aynı sertifika ile oturum kuramayacaktır.
+> Sonuçta elde edilen anahtar deposu dosyasının ve parolayı güvenli bir yere yedekleyin mutlaka &ndash; çözüme dahil değildir. Kaybederseniz, anahtar deposu dosya (örneğin, başka bir bilgisayara veya macOS yeniden nedeniyle), uygulamanızı önceki sürümleri aynı sertifika ile imzalamak mümkün olmayacaktır.
 
-Anahtar deposunun hakkında daha fazla bilgi için bkz: [Keystore'nın MD5 veya SHA1 imza bulma](~/android/deploy-test/signing/keystore-signature.md).
+Anahtar deposu hakkında daha fazla bilgi için bkz: [deponuzu'nın MD5 veya SHA1 imza bulma](~/android/deploy-test/signing/keystore-signature.md).
 
 -----
 
 <a name="signapkvs" />
 
-## <a name="sign-the-apk"></a>APK oturum
+## <a name="sign-the-apk"></a>Apk'yı imzalama
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Zaman **oluşturma** tıklandığında, yeni bir anahtar (içeren yeni bir sertifika) depo kaydedilir ve altında listelenen **imzalama kimlik** sonraki ekran görüntüsünde gösterildiği gibi. Google play'de bir uygulamayı yayımlamak için tıklatın **iptal** ve Git [Google Play yayımlama](~/android/deploy-test/publishing/publishing-to-google-play/index.md).
-Yayımlamak için *geçici*, tıklatıp imzalama için kullanan imza kimliği seçin **Kaydet** bağımsız dağıtım için uygulama yayımlamak için. Örneğin, **chimp** (daha önce oluşturduğunuz) kimlik imzalama bu ekran görüntüsünde seçili:
+Zaman **Oluştur** tıklandığında yeni bir anahtar deposu (içeren yeni bir sertifika) kaydedilir ve altında listelenen **imzalama kimliği** sonraki ekran görüntüsünde gösterildiği gibi. Google play'de bir uygulamayı yayımlamak için tıklatın **iptal** gidin [Google Play'e yayımlama](~/android/deploy-test/publishing/publishing-to-google-play/index.md).
+Yayımlanacak *geçici*, tıklayın ve imzalama için kullanan imza kimliği seçin **Kaydet** bağımsız dağıtım için uygulama yayımlama. Örneğin, **chimp** imzalama kimliği (daha önce oluşturduğunuz) bu ekran görüntüsünde seçili:
 
-[![İmzalama kimlik örneği](images/vs/05-save-as-vs-sml.png)](images/vs/05-save-as-vs.png#lightbox)
+[![İmzalama kimliği örneği](images/vs/05-save-as-vs-sml.png)](images/vs/05-save-as-vs.png#lightbox)
 
-Ardından, **arşiv Yöneticisi** yayımlama ilerleme durumunu görüntüler. Yayımlama işlemi tamamlandığında **Kaydet** iletişim kutusunu açar için bir konum sormak için burada oluşturulan. APK depolanması için dosyadır:
+Ardından, **arşiv Yöneticisi** yayımlama ilerleme durumunu görüntüler. Yayımlama işlemi tamamlandığında **Kaydet** iletişim kutusu açılır istemek için bir konum için burada oluşturulan. Depolanacak APK dosyası şudur:
 
 [![Farklı Kaydet iletişim kutusu](images/vs/06-save-as-dialog-vs-sml.png)](images/vs/06-save-as-dialog-vs.png#lightbox)
 
-İstediğiniz konuma gidin ve tıklayın **kaydetmek**. Anahtar parolası bilinmiyorsa **imzalama parola** iletişim kutusu, seçili sertifika için parola iste görünecektir:
+İstenilen konuma gelin ve tıklayın **Kaydet**. Anahtar parolasını bilinmiyorsa **imzalama parola** Seçili sertifika için parola iste için iletişim kutusu görüntülenir:
 
-[![Parola iletişim imzalama](images/vs/07-signing-password-vs-sml.png)](images/vs/07-signing-password-vs.png#lightbox)
+[![İmzalama parolası iletişim kutusu](images/vs/07-signing-password-vs-sml.png)](images/vs/07-signing-password-vs.png#lightbox)
 
-İmzalama işlemi tamamlandıktan sonra **açık dağıtım**:
+İmzalama işlemi tamamlandıktan sonra tıklayın **açık dağıtım**:
 
-[![Açık dağıtım düğmesi](images/vs/08-open-distribution-sml.png)](images/vs/08-open-distribution.png#lightbox)
+[![Dağıtım düğmesini açın](images/vs/08-open-distribution-sml.png)](images/vs/08-open-distribution.png#lightbox)
 
-Bu, oluşturulan APK dosyasını içeren klasörü açmak için Windows Gezgini'ni neden olur. Bu noktada, Visual Studio dağıtım için hazır bir APK Xamarin.Android uygulamasına derlenmiş.
-Aşağıdaki ekran görüntüsünde yayımlama hazır uygulama örneği görüntüler **MyApp.MyApp.apk**:
+Bu, oluşturulan bir APK dosyasını içeren klasörü açmak Windows Explorer neden olur. Bu noktada, Visual Studio dağıtım için hazır bir APK bir Xamarin.Android uygulamasına derlenmiş.
+Yayımlama hazır uygulamasını bir örneğini aşağıdaki ekran görüntüsünde görüntüler **MyApp.MyApp.apk**:
 
-[![Windows Explorer'da gösterilen APK](images/vs/09-generated-app-vs-sml.png)](images/vs/09-generated-app-vs.png#lightbox)
+[![Windows Gezgini'nde gösterilen APK](images/vs/09-generated-app-vs-sml.png)](images/vs/09-generated-app-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 
-Burada görüldüğü gibi yeni bir sertifika anahtar deposuna eklendi. Google play'de bir uygulamayı yayımlamak için tıklatın **iptal** ve Git [Google Play yayımlama](~/android/deploy-test/publishing/publishing-to-google-play/index.md).
-Aksi takdirde tıklatın **sonraki** uygulamayı yayımlamak için *geçici* (dağıtılmak bağımsız) Bu örnekte gösterildiği gibi:
+Burada görüldüğü gibi yeni bir sertifika anahtar deposuna eklendi. Google play'de bir uygulamayı yayımlamak için tıklatın **iptal** gidin [Google Play'e yayımlama](~/android/deploy-test/publishing/publishing-to-google-play/index.md).
+Aksi takdirde **sonraki** uygulamayı ıntune'a yayımlamak *geçici* (bağımsız dağıtım için) Bu örnekte gösterildiği gibi:
 
-[![Oturum ve Dağıt iletişim kutusu](images/xs/04-select-identity-sml.png)](images/xs/04-select-identity.png#lightbox)
+[![İmzala ve Dağıt iletişim kutusu](images/xs/04-select-identity-sml.png)](images/xs/04-select-identity.png#lightbox)
 
-**Olarak geçici yayımlama** iletişim kutusu, yayımlanmadan önce imzalı uygulama özetini sağlar. Bu bilgi doğruysa **Yayımla**.
+**Geçici olarak Yayımla** iletişim kutusu, yayımlanmadan önce imzalanmış uygulamasını özetini sağlar. Bu bilgi doğruysa tıklayın **Yayımla**.
 
-[![Geçici iletişim kutusu olarak Yayımla](images/xs/05-publish-ad-hoc-sml.png)](images/xs/05-publish-ad-hoc.png#lightbox)
+[![Geçici iletişim kutusu olarak yayımlama](images/xs/05-publish-ad-hoc-sml.png)](images/xs/05-publish-ad-hoc.png#lightbox)
 
-**Çıkış APK dosya** iletişim belirtilen yola APK Kaydet. **Kaydet**'e tıklayın.
+**Çıkış APK dosyası** iletişim APK belirtilen yola kaydetmek. **Kaydet**'e tıklayın.
 
-![Çıktı APK dosya iletişim kutusu](images/xs/06-output-apk-file.png)
+![Çıkış APK dosya iletişim kutusu](images/xs/06-output-apk-file.png)
 
-Ardından, sertifikanın parolasını girin (içinde kullanılan parolayı **yeni sertifika oluştur** iletişim) tıklatıp **Tamam**: 
+Ardından, sertifikanın parolasını girin (kullanıldı parola **yeni sertifika oluştur** iletişim) tıklayıp **Tamam**: 
 
-![Sertifika parolası girin](images/xs/07-signing-certificate.png)
+![Sertifika parolasını girin](images/xs/07-signing-certificate.png)
 
-APK sertifikasıyla imzalanması ve belirtilen konuma kaydedilir. Tıklatın **Finder ortaya**:
+Apk'yı otomatik olarak imzalanan sertifika ile ve belirtilen konuma kaydedilir. Tıklayın **Finder'da Göster**:
 
-[![Yayın başarılı iletişim](images/xs/08-app-is-ready-sml.png)](images/xs/08-app-is-ready.png#lightbox)
+[![Yayımlama başarılı iletişim](images/xs/08-app-is-ready-sml.png)](images/xs/08-app-is-ready.png#lightbox)
 
-Bu, imzalı APK dosyasının konumu için bir Bulucu açar:
+Bu, imzalı APK dosyası konumunu Bulucu açar:
 
-[![Finder gösterilen APK](images/xs/09-show-in-finder-sml.png)](images/xs/09-show-in-finder.png#lightbox)
+[![APK Finder'da gösterilen](images/xs/09-show-in-finder-sml.png)](images/xs/09-show-in-finder.png#lightbox)
 
-APK Bulucu kopyalayın ve son hedefine göndermek hazırdır. APK Android cihazında yükleyip out dağıtımdan önce deneyin iyi bir fikirdir. Bkz: [yayımlama bağımsız olarak](~/android/deploy-test/publishing/publishing-independently.md) yayımlama hakkında daha fazla bilgi için bir *geçici* APK.
+Apk'yı Bulucu kopyalayın ve son hedefine göndermek hazırdır. Bir Android cihazında apk'yı yüklemek ve dışarı dağıtımdan önce denemek için iyi bir fikirdir. Bkz: [yayımlama bağımsız olarak](~/android/deploy-test/publishing/publishing-independently.md) yayımlama hakkında daha fazla bilgi için bir *geçici* APK.
 
 -----
 
@@ -159,4 +157,4 @@ APK Bulucu kopyalayın ve son hedefine göndermek hazırdır. APK Android cihaz�
 
 ## <a name="next-steps"></a>Sonraki Adımlar
 
-Uygulama paketi sürümü için imzalanmış sonra yayımlanmalıdır. Aşağıdaki bölümlerde bir uygulamayı yayımlamak için çeşitli yollar açıklanmaktadır.
+Uygulama paketi için yayın imzalanmış sonra yayımlanması gerekir. Aşağıdaki bölümlerde, bir uygulamayı yayımlamak için çeşitli yollar açıklanmaktadır.

@@ -1,27 +1,27 @@
 ---
-title: Bölüm 4 - ile birden çok platform ele alma
-description: Bu belge, platform veya yetenek göre uygulama ıraksamayı nasıl ele alınacağını açıklar. Ekran boyutu, gezinti metaphors, dokunma ve hareket, anında iletme bildirimleri ve arabirimi örneklerinde listeler ve sekmeler gibi anlatılmaktadır.
+title: Bölüm 4 - birden fazla platformla ilgilenme
+description: Bu belge, platform veya özellik tabanlı uygulama Geçitler nasıl ele alınacağını açıklar. Ekran boyutu, gezinti metaphors, dokunma ve hareket, anında iletme bildirimleri ve arabirimi paradigmalarını listeler ve sekmeler gibi ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: c00519ecc4c8a8d85e993a6002d131f227eb9764
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4a60c99cbc9819f07b77bfe9abe046ea92a550a5
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781614"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403331"
 ---
-# <a name="part-4---dealing-with-multiple-platforms"></a>Bölüm 4 - ile birden çok platform ele alma
+# <a name="part-4---dealing-with-multiple-platforms"></a>Bölüm 4 - birden fazla platformla ilgilenme
 
 ## <a name="handling-platform-divergence-amp-features"></a>Platform Geçitler işleme &amp; özellikleri
 
-Geçitler yalnızca bir 'platformlar arası' sorun değildir; 'aynı' platformu cihazlarda farklı özellikleri (özellikle çeşitli kullanılabilir olan Android cihazlar) sahip. En bariz ve temel ekran boyutu, ancak diğer cihaz öznitelikleri değişir ve belirli yeteneklerini denetleyin ve bunların varlığı (veya yokluğuna) farklı şekilde göre hareket etmesi için bir uygulama gerektirir.
+Geçitler yalnızca bir 'platformlar arası' sorun değildir; 'aynı' platform cihazlarda farklı özellikleri (özellikle birçok çeşit kullanılabilir olan Android cihazlar) sahip. En belirgin ve temel ekran boyutu, ancak diğer cihaz özniteliklerine değişir ve belirli özellikleri kontrol edin ve farklı kendi varlığı (veya var olmayan) göre davranır uygulamaya gerektirir.
 
-Bu, tüm uygulamaların işlevselliği normal düşüşü ile ilgilidir, aksi takdirde bir paragrafta, yaygın payda düşük özellik kümesi sunmak gereken anlamına gelir. Xamarin'ın her platform için yerel SDK'ları ile derin tümleştirme uygulamaların bu özellikleri kullanmak için uygulamalar tasarlamak için bir anlam şekilde, platforma özgü işlevselliğinden yararlanmasına olanak sağlar.
+Başka bir deyişle, tüm uygulamaları işlevselliği normal performansında Dağıt, aksi takdirde paragrafta, ortak paydası en düşük özellik sunabilirler gerekir. Xamarin'in her platform için yerel SDK'ları ile kapsamlı tümleştirme, bu özellikleri kullanmak için uygulamaları tasarlamak için mantıklı şekilde platforma özgü işlevsellikten yararlanmak için uygulamaları sağlar.
 
-Platformları işlevindeki nasıl farklılık gösterir, genel bir bakış Platform özelliklerini belgelerine bakın.
+Platformları işlevselliği farkı, genel bir bakış Platform özelliklerinden belgelerine bakın.
 
  <a name="Examples_of_Platform_Divergence" />
 
@@ -31,57 +31,57 @@ Platformları işlevindeki nasıl farklılık gösterir, genel bir bakış Platf
  <a name="Fundamental_elements_that_exist_across_platforms" />
 
 
-#### <a name="fundamental-elements-that-exist-across-platforms"></a>Platformlar arası mevcut temel öğeler
+#### <a name="fundamental-elements-that-exist-across-platforms"></a>Platformlar arasında mevcut temel öğeleri
 
-Evrensel mobil uygulamaların bazı özellikleri vardır.
-Tüm aygıtların genellikle true ve bu nedenle, uygulamanızın tasarım temelini üst düzey kavramları şunlardır:
+Evrensel mobil uygulamalarının bazı özellikleri vardır.
+Genellikle tüm cihazları doğru ve uygulamanızın tasarımına temelini bu nedenle üst düzey kavramları şunlardır:
 
--  Sekme veya menüleri aracılığıyla özellik seçimi
+-  Özellik Seçimi sekmeler veya menüleri aracılığıyla
 -  Veri ve kaydırma listesi
 -  Tek veri görünümleri
--  Tek veri görünümlerini düzenleme
+-  Tek veri görünümleri düzenleme
 -  Geri dönme
 
 
-Üst düzey ekran akışınız tasarlarken ortak bir kullanıcı deneyimi bu kavramları hakkında temel alabilir.
+Üst düzey ekran akışınızı tasarlarken Bu kavramlar hakkında genel bir kullanıcı deneyimi temel alabilir.
 
  <a name="platform-specific_attributes" />
 
 
-#### <a name="platform-specific-attributes"></a>platforma özel öznitelikler
+#### <a name="platform-specific-attributes"></a>Platforma özel öznitelikler
 
-Tüm platformlarda mevcut temel öğeleri yanı sıra, adres anahtar platform tasarımınızı farklılıkları gerekecektir. Bu farklılıklar göz önünde bulundurun (ve özel olarak işlemek için kod yazma) gerekebilir:
+Tüm platformlarda mevcut temel öğelere ek olarak, anahtar platform farklılıklarına tasarımınızı gerekecektir. Bu farklılıkları göz önünde bulundurun (ve özel olarak işlemek için kod yazmak) gerekir:
 
--   **Ekran boyutları** – bazı platformlar (örneğin, iOS ve Windows Phone sürümlerde) hedeflemek görece basit ekran boyutlarına standartlaşmış. Android aygıtların uygulamanızda desteklemek için daha fazla çaba gerektirir ekran boyutları çeşitliliğini vardır.
--   **Gezinti metaphors** – farklı platformlarda (ör.) Donanım 'geri' düğmesini, Panorama UI denetimi) ve platformlar (Android 2 ve 4, iPhone vs iPad) içinde.
--   **Klavyeler** – bazı Android cihazları, diğerleri yalnızca yazılım klavye varken fiziksel klavyeler sahip. Yumuşak klavye ekran parçası anlaşılması güç yükleyen algılar kod bu farklılıklar duyarlı olması gerekir.
--   **Dokunma ve hareket** – işletim sistemi desteği hareketi tanıma değişir, özellikle eski her işletim sistemi sürümlerinde. Android, önceki sürümlerde çok sınırlı eski cihaz destekleyen ayrı kod gerektirebilir anlamı dokunma işlemleri için destek
--   **Anında iletme bildirimleri** – (ör her platformda farklı özellikleri/uygulamaları vardır. Döşeme Windows live).
+-   **Ekran boyutları** – hedeflemek görece basit ekran boyutları standartlaşmış bazı platformlarda (örneğin, iOS ve Windows Phone sürümlerde). Android cihazları uygulamanızda desteklemek için daha fazla çaba gerektirir ekran boyutları, çok çeşitli var.
+-   **Gezinti metaphors** – farklı platformlarda (örn.) Panorama UI denetimi 'geri' donanım düğme) ve platformları (Android 2 ve 4, iPhone ve iPad) içinde.
+-   **Klavye** – bazı Android cihazlar, diğerleri yalnızca bir yazılım klavye varken fiziksel klavyeler sahip. Geçici klavye ekran parçası anlaşılması güç algılar kodu Bu farklılıklar duyarlı olması gerekir.
+-   **Dokunma ve hareket** – işletim sistemi desteği tanıma hareketi değişir, özellikle her işletim sisteminin daha eski sürümlerinde. Android önceki sürümlerde çok sınırlı eski cihazları destekleyen ayrı kod gerektirebilir, yani, dokunma işlemleri için desteği
+-   **Anında iletme bildirimleri** – (örn her platformda farklı özellikleri/uygulamaları vardır. Kutucuklar üzerinde Windows live).
 
 
  <a name="Device-specific_features" />
 
 
-#### <a name="device-specific-features"></a>Aygıta özgü özellikleri
+#### <a name="device-specific-features"></a>Cihaza özgü özellikleri
 
-Hangi uygulama için gerekli minimum özellikleri çalıştırılması gerektiğini belirler; veya ne zaman her platformda yararlanmak için hangi ek özellikler karar verin. Kod özellikleri algılamak ve işlevini devre dışı bırakmak veya alternatifleri (ör.) sunmak için gerekli coğrafi konum için bir alternatif bir konum yazın ya da bir eşlemesinden seçin kullanıcı izin verecek şekilde olabilir):
+Hangi uygulama için gerekli en düşük özellikleri çalıştırılması gerektiğini belirler; veya karar verdiğinizde her platformda yararlanmak için hangi ek özellikler. Kod özellikleri Algıla ve işlevini devre dışı bırakın veya alternatifleri (örn. sunmak için gerekli "coğrafi konum için alternatif bir konum yazın ya da bir eşlemden seçin izin vermek için olabilir):
 
--   **Kamera** – işlevselliği cihazlar arasında farklılık gösterir: bazı cihazların kamera yoksa, diğerleri hem ön ve arka yönelik kameralar sahip. Bazı kameralar video kaydını özelliğine sahiptir.
--   **Coğrafi konum & eşlemeleri** – GPS veya Wi-Fi konumu desteği tüm cihazlarda mevcut değil. Uygulamalar her yöntemi tarafından desteklenen doğruluğu değişen düzeylerde karşılamak amacıyla da gerekir.
--   **Accelerometer, jiroskop ve pusula** – uygulamaları neredeyse her zaman donanım desteklenmiyor olduğunda bir geri dönüş sağlamanız gerekir böylece bu özellikleri genellikle yalnızca her platform cihazlarda seçimi bulunur.
--   **Twitter ve Facebook** – yalnızca 'yerleşik' iOS5 ve iOS6 sırasıyla. Önceki sürümler ve diğer platformlar üzerinde kendi kimlik doğrulama işlevleri sağlayan ve doğrudan her arabirim gerekir hizmetlerin API.
--   **Yakın alan iletişimi (NFC)** – yalnızca (bazı) üzerinde Android telefonlar (yazıldığı sırada).
+-   **Kamera** – işlevselliği cihazlar arasında farklılık gösterir: bazı cihazlar bir kamera yoksa, diğerleri hem ön ve arka yönelik kameralar sahip. Bazı kameralar video kaydını özelliğine sahiptir.
+-   **Coğrafi konum ve haritalar** – GPS veya Wi-Fi konumu için desteği tüm cihazlarda mevcut değil. Her yöntem tarafından desteklenen doğruluğu değişen düzeylerde için gereksinimini karşılamak uygulamaları da gerekir.
+-   **İvme ölçer, jiroskop ve compass** – uygulamaları neredeyse her zaman donanım sunulmaması halinde bir geri dönüş sağlamanız gerekir bu özellikler genellikle yalnızca bir seçim cihazların her platformda bulunur.
+-   **Twitter ve Facebook** – yalnızca 'yerleşik' iOS5 ve iOS6 sırasıyla. Önceki sürümlerini ve diğer platformlar üzerinde kendi kimlik doğrulama işlevleri sağlayan ve doğrudan her arabirim ihtiyacınız olacak Hizmetler'in API.
+-   **Yakın alan iletişimi (NFC)** – yalnızca (bazıları) üzerinde Android telefonları (makalenin yazıldığı sırada).
 
 
  <a name="Dealing_with_Platform_Divergence" />
 
 
-### <a name="dealing-with-platform-divergence"></a>Platform Geçitler postalarla
+### <a name="dealing-with-platform-divergence"></a>Platform Geçitler uğraşmanızı
 
-Aynı kod tabanlı, her avantajları ve dezavantajları kendi kümesiyle gelen birden çok platformu destekleme için iki farklı yaklaşım vardır.
+Aynı kod tabanından-, her biri kendi avantaj ve dezavantajları kümesini birden çok platformu destekleme için iki farklı yaklaşım vardır.
 
--   **Platform soyutlama** – iş cephesi düzeni, platformlar arası bir birleşik erişim sağlar ve tek, birleşik bir API uygulamasına belirli platform uygulamaları soyutlar.
--   **Divergent uygulama** – belirli platform çağırma özellikleri arabirimleri ve devralma veya koşullu derleme gibi Mimari Araçları aracılığıyla divergent uygulamaları aracılığıyla.
+-   **Platform soyutlama** – iş cephe deseni platformlar arasında birleştirilmiş bir erişim sağlar ve belirli bir platform uygulamalarını tek, birleştirilmiş bir API uygulamasına soyutlar.
+-   **Uygulama kaliteleri** – belirli bir platform çağırma özellikleri arabirimleri ve devralma veya koşullu derleme gibi Mimari Araçları aracılığıyla kaliteleri uygulamaları aracılığıyla.
 
 
  <a name="Platform_Abstraction" />
@@ -94,35 +94,35 @@ Aynı kod tabanlı, her avantajları ve dezavantajları kendi kümesiyle gelen b
 
 ### <a name="class-abstraction"></a>Sınıfı Özet
 
-Arabirimleri veya temel sınıflar kullanılarak paylaşılan kod içinde tanımlanan uygulanan ve platforma özgü projelerinde genişletilmiş. Çünkü bunlar kullanabilecekleri framework sınırlı bir alt kümesinde sahip ve platforma özgü kodu dalları desteklemek için derleyici yönergeleri içeremez yazma ve sınıf soyutlamalar paylaşılan koduyla genişletme özellikle de taşınabilir sınıf kitaplıkları için uygundur.
+Arabirimleri veya temel sınıfları kullanarak paylaşılan kod içinde tanımlanan uygulanan ve platforma özgü projelerinde genişletilmiş. Özellikle kullanabilecekleri framework sınırlı bir alt kümesine sahip ve platforma özgü kod dalları desteklemek için derleyici yönergeleri içeremez çünkü yazma ve paylaşılan kodu sınıf soyutlama ile genişletme taşınabilir sınıf kitaplıkları için uygundur.
 
  <a name="Interfaces" />
 
 
 #### <a name="interfaces"></a>Arabirimler
 
-Arabirimleri kullanarak, ortak kodun yararlanmak için paylaşılan kitaplıklara hala geçirilebilir platforma özgü sınıflar uygulamak sağlar.
+Arabirimleri kullanarak, ortak kodun yararlanmak için paylaşılan kitaplıklara yine de geçirilebilir platforma özgü sınıflar olanak tanır.
 
-Arabirim paylaşılan kod içinde tanımlanan ve paylaşılan Kitaplığı'na bir parametre veya özellik geçirildi.
+Arabirimi, paylaşılan kod içinde tanımlanan ve paylaşılan kitaplığa bir parametre veya özellik geçirildi.
 
-Platforma özgü uygulamalar arabirimini uygulayan ve hala ', işlem için ' paylaşılan kod yararlanın.
+Platforma özel uygulamalar, ardından arabirim uygular ve hala 'işlem sırasında ' paylaşılan kod yararlanın.
 
  **Avantajlar**
 
-Uygulama, platforma özgü kodu içeren ve hatta platforma özgü dış kitaplıklarına.
+Uygulama, platforma özgü kod içeren ve hatta dış platforma özgü kitaplıklar başvuru.
 
  **Dezavantajlar**
 
-Oluşturma ve uygulamaları paylaşılan koda geçirmek zorunda. Arabirimi içinde ayrıntılı paylaşılan kodu kullandıysanız sonra onu olan yukarı birden çok yöntem parametreleri gözden geçirilen veya aksi halde çağrı zincirine gönderilen sona erer. Paylaşılan kod farklı arabirimleri çok kullanıyorsa sonra bunlar tüm oluşturulmalı ve herhangi bir yerde paylaşılan kod içinde ayarlayın.
+Oluşturma ve Paylaşılan koda uygulamaları geçirmek zorunda. Arabirimi içinde derin paylaşılan kod kullanılıyorsa, ardından bunu olan yukarı birden çok yöntem parametresi geçirilen veya aksi halde çağrı zincirini gönderilen sona erer. Farklı arabirimler çok sayıda paylaşılan kod kullanıyorsa, ardından bunların tüm oluşturulmalı ve herhangi bir yerde paylaşılan kod içinde ayarlayabilirsiniz.
 
  <a name="Inheritance" />
 
 
 #### <a name="inheritance"></a>Devralma
 
-Paylaşılan kod Genişletilebilir soyut ya da sanal sınıf bir veya daha fazla platforma özgü projelerinde uygulamanız. Bu, benzer arabirimleri kullanarak ancak zaten uygulanmış bazı davranışı. Arabirimler veya devralma olup üzerinde daha iyi bir tasarım seçiminin farklı görüşlerini şunlardır: özellikle C# yalnızca tek devralma izin verdiğinden, Apı'lerinizi tasarlanmış ileride şekilde okuyabilirsiniz. Devralma dikkatli kullanın.
+Paylaşılan kodun bir veya daha fazla platforma özgü projelerinde Genişletilebilir soyut ya da sanal sınıflar uygulayabilirsiniz. Bu benzer arabirimleri kullanarak ancak bazı davranışı zaten uygulandı. Mı yoksa arabirimleri devralma mı daha iyi bir tasarım seçiminin farklı bakış açılarını şunlardır: özellikle C# yalnızca tek devralma izin verdiğinden, Apı'lerinizi tasarlanmış ileriye dönük şekilde okuyabilirsiniz. Devralma kullanırken dikkatli olun.
 
-Olumlu ve olumsuz arabirimlerinin kalıtım bazı uygulama kodu (isteğe bağlı olarak genişletilebilen belki de tüm platform belirsiz uygulaması) temel sınıfı içeren ek avantajı için eşit olarak uygulanır.
+Avantajlar ve dezavantajlar arabirimlerin kalıtım bazı uygulama kodu (isteğe bağlı olarak genişletilebilen belki de tüm platformu belirsiz uygulaması) taban sınıfı içeren ek avantajı için eşit olarak uygulanır.
 
 <a name="Xamarin.Forms" />
 
@@ -131,38 +131,38 @@ Olumlu ve olumsuz arabirimlerinin kalıtım bazı uygulama kodu (isteğe bağlı
 Bkz: [Xamarin.Forms](~/xamarin-forms/get-started/index.md) belgeleri.
 
 
-### <a name="plug-in-cross-platform-functionality"></a>Eklenti platformlar arası işlevi
+### <a name="plug-in-cross-platform-functionality"></a>Eklenti platformlar arası işlevsellik
 
-Bu gibi durumlarda, platformlar arası uygulamalar da eklentileri kullanarak tutarlı bir şekilde genişletebilirsiniz.
+Ayrıca, tutarlı bir şekilde eklentilerini kullanarak platformlar arası uygulamaları genişletebilirsiniz.
 
-Bağlanılan bizim [eklentileri github](https://github.com/xamarin/plugins), açık kaynaklı çoğu eklentileri yardımcı (genellikle Nuget aracılığıyla yükleme için kullanılabilir) projeleri uygulamak pil durumu platforma özgü işlevinden ayarlarla için çeşitli bir Xamarin Platform ve Xamarin.Forms uygulamaları tüketmek kolay ortak API.
+Gelen bağlı bizim [eklentileri github](https://github.com/xamarin/plugins), açık kaynaklı çoğu artırmasını yardımcı (Nuget aracılığıyla yükleme için kullanılabilir genellikle) projeler stav baterie işlevinden platforma özgü ayarları ile çeşitli uygulama bir Xamarin platformu ve Xamarin.Forms uygulamalarında kolayca ortak API.
 
 
 <a name="Other_Cross-Platform_Libraries" />
 
-### <a name="other-cross-platform-libraries"></a>Diğer platformlar arası kitaplıkları
+### <a name="other-cross-platform-libraries"></a>Diğer platformlar arası kitaplıklar
 
-Platformlar arası işlevselliği sağlayan kullanılabilir 3 taraf kitaplıklar vardır:
+Platformlar arası işlevsellik sağlayan kullanılabilir 3 şahıs kitaplıklardaki vardır:
 
 -   **MvvmCross** -  [https://github.com/slodge/MvvmCross/](https://github.com/slodge/MvvmCross/)
 -   **Yerel dil** (yerelleştirme için) -  [https://github.com/rdio/vernacular/](https://github.com/rdio/vernacular/)
--   **MonoGame** (için XNA oyunlar) -  [http://monogame.codeplex.com/](http://monogame.codeplex.com/)
+-   **MonoGame** (için XNA oyunlar) -  [http://www.monogame.net](http://www.monogame.net)
 -   **NGraphics** - [NGraphics](https://github.com/praeclarum/NGraphics) ve kendi precursor [https://github.com/praeclarum/CrossGraphics](https://github.com/praeclarum/CrossGraphics)
 
 
  <a name="Divergent_Implementation" />
 
 
-### <a name="divergent-implementation"></a>Divergent uygulama
+### <a name="divergent-implementation"></a>Kaliteleri uygulama
 
  <a name="Conditional_Compilation" />
 
 
 #### <a name="conditional-compilation"></a>Koşullu Derleme
 
-Burada paylaşılan kodunuzu hala farklı büyük olasılıkla sınıfları veya farklı şekilde davranan özellikleri erişen her platformda çalışmanız gerekir bazı durumlar vardır. Koşullu derleme paylaşılan varlık burada tanımlanan farklı simgeleri sahip birden çok proje aynı kaynak dosyaya başvuruluyor projeleri ile en iyi şekilde çalışır.
+Burada paylaşılan kodunuza yine de farklı sınıflar veya farklı davranır özellikleri muhtemelen erişme, her bir platformda çalışması gerekir bazı durumlar vardır. Koşullu derleme, aynı kaynak dosyasında farklı sembollere sahip birden çok proje nerede başvurulan paylaşılan varlık projeleri ile en iyi şekilde çalışır.
 
-Xamarin projeleri her zaman tanımlayın `__MOBILE__` iOS ve Android uygulaması projeleri (Not çift-alt çizgi öncesi ve sonrası düzeltme bu simgeleri) için doğru olduğu.
+Xamarin projeleri her zaman tanımlayın `__MOBILE__` olduğu true hem iOS hem de Android uygulaması projeleri (çift alt öncesi ve sonrası düzeltme bu sembolleri unutmayın).
 
 ```csharp
 #if __MOBILE__
@@ -174,7 +174,7 @@ Xamarin projeleri her zaman tanımlayın `__MOBILE__` iOS ve Android uygulaması
 
 ##### <a name="ios"></a>iOS
 
-Xamarin.iOS tanımlar `__IOS__` , iOS cihazları algılamak için kullanabilirsiniz.
+Xamarin.iOS tanımlar `__IOS__` olduğu iOS cihazları algılamak için kullanabilirsiniz.
 
 ```csharp
 #if __IOS__
@@ -182,7 +182,7 @@ Xamarin.iOS tanımlar `__IOS__` , iOS cihazları algılamak için kullanabilirsi
 #endif
 ```
 
-İzleme ve TV özel simgeleri vardır:
+İzleme ve TV özel simge vardır:
 
 ```csharp
 #if __TVOS__
@@ -198,7 +198,7 @@ Xamarin.iOS tanımlar `__IOS__` , iOS cihazları algılamak için kullanabilirsi
 
 ##### <a name="android"></a>Android
 
-Xamarin.Android uygulamaları yalnızca derlenmiş kod aşağıdaki kullanabilirsiniz
+Xamarin.Android uygulamalarına yalnızca derlenmiş kod aşağıdaki kullanabilirsiniz.
 
 ```csharp
 #if __ANDROID__
@@ -206,7 +206,7 @@ Xamarin.Android uygulamaları yalnızca derlenmiş kod aşağıdaki kullanabilir
 #endif
 ```
 
-Her API sürümü yeni bir derleme yönergesi de tanımlar, aşağıdakine benzer bir kod sağlayacak şekilde yeni API'ler hedeflenen varsa özellikleri ekleyin. Her API düzey tüm 'alt' düzeyi simgeleri içerir. Bu özellik birden çok platform desteklemek için gerçekten kullanışlı değildir; genellikle `__ANDROID__` sembol yeterli olacaktır.
+Her bir API sürümü ayrıca yeni bir derleyici yönergesi tanımlar, aşağıdakine benzer bir kod izin verecek şekilde yeni API'ler hedeflenmişse özellikleri ekleyin. Her API düzeyi tüm 'alt' düzeyi sembolleri içerir. Bu özellik, birden çok platformu desteklemek için gerçekten kullanışlı değildir; genellikle `__ANDROID__` sembol yeterli olacaktır.
 
 ```csharp
 #if __ANDROID_11__
@@ -216,7 +216,7 @@ Her API sürümü yeni bir derleme yönergesi de tanımlar, aşağıdakine benze
 
 ##### <a name="mac"></a>Mac
 
-Yok. şu anda Xamarin.Mac için yerleşik bir simge, ancak kendi Mac uygulaması projesi eklemek **Seçenekleri > Yapı > derleyici** içinde **tanımlamak simgeleri** kutusu veya düzenleme **.csproj**  dosya ve orada ekleyin (örneğin `__MAC__`)
+Yok şu anda Xamarin.Mac için yerleşik bir simge, ancak kendi Mac uygulaması projesi ekleyebilirsiniz **Seçenekleri > derleme > derleyici** içinde **sembolleri tanımlama** kutusu veya düzenleme **.csproj**  dosya ve orada ekleyin (örneğin `__MAC__`)
 
 ```xml
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
@@ -226,21 +226,21 @@ Yok. şu anda Xamarin.Mac için yerleşik bir simge, ancak kendi Mac uygulaması
 
 ##### <a name="windows-phone"></a>Windows Phone
 
-Windows Phone uygulamaları tanımlar iki simge – `WINDOWS_PHONE` ve `SILVERLIGHT` – platform kodu hedeflemek için kullanılabilir. Bunlar yapmak gibi Xamarin platform simgeleri çevreleyen alt çizgi yok.
+Windows Phone uygulamaları tanımlayan iki simge – `WINDOWS_PHONE` ve `SILVERLIGHT` : platform kodu hedeflemek için kullanılabilir. Bunlar yapmak bunları Xamarin platformu simgeler gibi çevreleyen alt çizgi yoktur.
 
 
 <a name="Using_Conditional_Compilation" />
 
 ##### <a name="using-conditional-compilation"></a>Koşullu derleme kullanma
 
-Koşullu derleme basit bir örnek olay incelemesi örneği SQLite veritabanı dosyası için dosya konumu ayarlıyor. Üç platformları dosya konumunu belirtmek için biraz farklı gereksinimleri vardır:
+Koşullu derleme basit bir örnek olay incelemesi örneği SQLite veritabanı dosyası için dosya konumu ayarlıyor. Üç platformda dosya konumu belirtmek için biraz daha farklı gereksinimlere sahiptir:
 
--   **iOS** – Apple belirli bir konuma (kitaplık dizini) yerleştirilecek kullanıcı olmayan veri tercih eder, ancak bu dizin için hiçbir sistem sabiti yok. Platforma özgü kodu, doğru yolu oluşturmak için gereklidir.
--   **Android** – tarafından döndürülen sistem yolu `Environment.SpecialFolder.Personal` veritabanı dosyasını depolamak için kabul edilebilir bir konumdur.
--   **Windows Phone** – yalıtılmış depolama mekanizmasını belirtilmesi bir tam yol izin verme yalnızca bir göreli yol ve dosya adı.
+-   **iOS** – Apple kullanıcıya özgü verileri, belirli bir konumda (kitaplık dizinini) yerleştirilecek tercih eder, ancak bu dizin için hiçbir sistem sabiti yoktur. Platforma özgü kod doğru yolu oluşturmak için gereklidir.
+-   **Android** – tarafından döndürülen sistem yoluna `Environment.SpecialFolder.Personal` veritabanı dosyasını depolamak için kabul edilebilir bir konumdur.
+-   **Windows Phone** – yalıtılmış depolama mekanizması belirtilmesi bir tam yol izin vermiyor yalnızca bir göreli yol ve dosya adı.
 -   **Evrensel Windows platformu** – kullanan `Windows.Storage` API'leri.
 
-Aşağıdaki kod emin olmak için koşullu derleme kullanır `DatabaseFilePath` her platform için doğrudur:
+Aşağıdaki kod koşullu derleme emin olmak için kullanır. `DatabaseFilePath` her platform için doğrudur:
 
 ```csharp
 public static string DatabaseFilePath {
@@ -270,5 +270,5 @@ public static string DatabaseFilePath {
 }
 ```
 
-Sonuç yerleşik ve SQLite veritabanı dosyası her platformda farklı bir konuma yerleştirerek tüm platformlarda kullanılan bir sınıftır.
+Sonuç oluşturduğu ve tüm platformlarda SQLite veritabanı dosyası her platformda farklı bir konum yerleştirerek kullanılan bir sınıftır.
 

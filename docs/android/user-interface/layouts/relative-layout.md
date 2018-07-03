@@ -1,23 +1,24 @@
 ---
-title: Xamarin.Android içinde RelativeLayout kullanma
+title: Xamarin.Android RelativeLayout kullanma
+description: Bir Xamarin.Android uygulamasına RelativeLayout kullanma
 ms.prod: xamarin
 ms.assetid: AFD9C849-02C3-E728-BC78-77A563612BC5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: cd2d7537036978e30c97b5776155e429178b6dac
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 06/29/2018
+ms.openlocfilehash: af8d37775a798fc6019106a66df75843a951c108
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32436004"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403422"
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
-[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) olan bir [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/) alt görüntüleyen [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) göreli konumları öğeler. Konumunu bir [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) Eşdüzey öğeleri olarak (örneğin sol biri için veya belirli bir öğenin altında) göre belirtilen veya içinde için göreli konumlandırır [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) alanı (örn Orta Sol alta hizalı:).
+[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) olan bir [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/) alt görüntüleyen [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) göreli konumlarını öğeleri. Konumu bir [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) göre Eşdüzey öğeleri olarak (örneğin seçeceğine sol, ya da belirli bir öğeyi altında) belirtilen veya içinde göre konumlandırır [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) alanı (örn Orta sol altına aligned).
 
-A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) ortadan kaldırabilirsiniz çünkü bir kullanıcı arabirimi tasarlama iç içe geçmiş için çok güçlü bir yardımcı programdır [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s. Kendinizi bulursanız birkaç kullanarak iç içe geçmiş [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) grupları olabilir tek bir tıklatmayla değiştirebilir [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/).
+A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) ortadan kaldırabilir çünkü bir kullanıcı arabirimi tasarlama iç içe geçmiş çok güçlü bir aracıdır [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s. Kendiniz görürseniz, birkaç kullanarak iç içe [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) grupları olabilir bunları tek bir değiştirebilirsiniz [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/).
 
 Adlı yeni bir proje başlatın **HelloRelativeLayout**.
 
@@ -26,16 +27,16 @@ Açık **Resources/Layout/Main.axml** dosya ve aşağıdakileri ekleyin:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
         android:id="@+id/label"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Type here:"/>
     <EditText
         android:id="@+id/entry"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:drawable/editbox_background"
         android:layout_below="@id/label"/>
@@ -57,11 +58,11 @@ Açık **Resources/Layout/Main.axml** dosya ve aşağıdakileri ekleyin:
 ```
 
 Her bir fark `android:layout_*` gibi öznitelikleri `layout_below`, `layout_alignParentRight`, ve `layout_toLeftOf`.
-Kullanırken bir [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/), bu öznitelikler her yerleştirmek istediğiniz nasıl tanımlamak için kullanabileceğiniz [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/). Bu özniteliklerin her biri farklı türde bir göreli konumunu tanımlayın. Bazı öznitelikler bir eşdüzeyi kaynak Kimliğini kullanan [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) göreli konumunu tanımlamak için. Örneğin, son [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) sol- ve hizalı-ile--üst-için kalan için tanımlanan [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) Kimliğiyle tanımlanan `ok` (önceki olduğu[`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)).
+Kullanırken bir [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/), bu öznitelikleri her yerleştirmek istediğiniz nasıl tanımlamak için kullanabileceğiniz [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/). Bu özniteliklerin her biri farklı türde bir göreli konumunu tanımlayın. Bazı öznitelikler bir eş kaynak Kimliğini kullanın [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) göreli konumunu tanımlamak için. Örneğin, son [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) sol-of ve hizalanmış-ile--top-of yattığı tanımlanan [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) kimliğiyle `ok` (önceki olduğu[`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)).
 
-Tüm kullanılabilir düzeni özniteliklerini tanımlanan [ `RelativeLayout.LayoutParams` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout+LayoutParams/).
+Tüm kullanılabilir Düzen özniteliklerini tanımlanan [ `RelativeLayout.LayoutParams` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout+LayoutParams/).
 
-Bu düzende yük emin olun [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) yöntemi:
+Bu düzende yük emin [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) yöntemi:
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)
@@ -71,11 +72,11 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/p/System.Int32/) Yöntemi yükler için Düzen dosyasını [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/), belirtilen kaynak Koduna göre &mdash; `Resource.Layout.Main` başvurduğu **kaynakları/Düzen / Main.AXML** Düzen dosyası.
+[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/p/System.Int32/) Yöntemi için yerleşim dosyası yükler [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/), kaynak kimliği tarafından belirtilen &mdash; `Resource.Layout.Main` başvurduğu **kaynakları/Düzen / Main.AXML** Düzen dosyası.
 
 Uygulamayı çalıştırın. Aşağıdaki Düzen görmeniz gerekir:
 
-[![Bir kutusu TextView, EDITTEXT ve iki düğme göreli bir düzen ekran görüntüsü](relative-layout-images/helloviews2.png)](relative-layout-images/helloviews2.png#lightbox)
+[![Bir TextView EDITTEXT ve iki düğme ile göreli bir düzeni görüntüsü](relative-layout-images/helloviews2.png)](relative-layout-images/helloviews2.png#lightbox)
 
 
 ## <a name="resources"></a>Kaynaklar
@@ -87,5 +88,5 @@ Uygulamayı çalıştırın. Aşağıdaki Düzen görmeniz gerekir:
 -   [`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)
 
 
-*Bu sayfayı bölümlerini olan oluşturulan ve Android açık kaynak projesi tarafından paylaşılan ve açıklanan terimleri göre kullanılan iş göre değişiklikler*
-[*Creative Commons 2.5 Attribution lisans* ](http://creativecommons.org/licenses/by/2.5/).
+*Bu sayfanın bölümleri olan oluşturulan Android açık kaynak projesi tarafından paylaşılan ve açıklanan terimleri göre kullanılan iş tabanlı değişiklikleri*
+[*Creative Commons 2.5 Attribution License* ](http://creativecommons.org/licenses/by/2.5/).

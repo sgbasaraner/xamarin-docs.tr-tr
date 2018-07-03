@@ -1,42 +1,43 @@
 ---
 title: Anahtar
+description: Bir Xamarin.Android uygulamasına anahtar pencere kullanma
 ms.prod: xamarin
 ms.assetid: 6E1F3324-EC41-454A-AEC0-0208813C7E50
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 0f4bfc3646f1ccd956ee8151468b3de20f6e1e2b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/29/2018
+ms.openlocfilehash: e3bcce48a675a9ba3d1d41f93babc7fcb26448c8
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762665"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403282"
 ---
 # <a name="switch"></a>Anahtar
 
-`Switch` Pencere öğesi (aşağıda gösterilen) iki durumlu arasında böyle bir birimi geçiş veya kapalı kullanıcıya izin verir. `Switch` Varsayılan değerdir kapalı. Pencere öğesi varsayılan olarak, her iki kendi açık ve kapalı durumda aşağıda gösterilmiştir:
+`Switch` (Aşağıda gösterilen) pencere öğesi iki durum arasında böyle bir şekilde geçiş veya kapalı olanak tanır. `Switch` Varsayılan değer: kapalı. Pencere öğesi içinde her iki bir, açık ve kapalı durumlarını aşağıda gösterilmiştir:
 
 [![Bir anahtar pencere öğesinde KAPATIP durumları ekran görüntüleri](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
 
 ## <a name="creating-a-switch"></a>Bir anahtar oluşturma
 
-Bir anahtar oluşturmak için yalnızca bildirme bir `Switch` XML öğesinde şekilde:
+Bir anahtar oluşturmak için yalnızca bildirin bir `Switch` XML öğesinde aşağıdaki gibi:
 
 ```xml
 <Switch android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 ```
 
-Aşağıda gösterildiği gibi temel bir anahtar oluşturur:
+Bu, aşağıda gösterildiği gibi temel bir anahtar oluşturur:
 
-[![Bir anahtarı OFF durumda görüntüleme demo uygulamasının ekran görüntüsü](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
+[![Bir anahtarı OFF durumda görüntüleme tanıtım uygulamasının ekran görüntüsü](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
 
-## <a name="changing-default-values"></a>Varsayılan değerlerini değiştirme
+## <a name="changing-default-values"></a>Varsayılan değerleri değiştirme
 
-AÇIK ve kapalı durumları için denetimi görüntülenen metni ve varsayılan değeri yapılandırılabilir. Örneğin, varsayılan ON ve kapalı/ON yerine Hayır/Evet okuyun geçiş yapmak için biz ayarlayabilirsiniz `checked`, `textOn`, ve `textOff` aşağıdaki XML öznitelikleri.
+AÇIK ve kapalı durumlarını için Denetim görüntülenen metni hem varsayılan değer yapılandırılabilir özelliktedir. Örneğin, varsayılan şirket için ve Hayır/Evet kapalı/ON yerine okuma geçiş yapmak için biz ayarlayabilirsiniz `checked`, `textOn`, ve `textOff` aşağıdaki XML öznitelikleri.
 
 ```xml
 <Switch android:layout_width="wrap_content"
@@ -48,7 +49,7 @@ AÇIK ve kapalı durumları için denetimi görüntülenen metni ve varsayılan 
 
 
 
-## <a name="providing-a-title"></a>Başlık sağlama
+## <a name="providing-a-title"></a>Bir başlık sağlama
 
 `Switch` Pencere öğesi de destekler ayarlayarak bir metin etiketi de dahil olmak üzere `text` özniteliğini aşağıdaki gibi:
 
@@ -61,12 +62,12 @@ AÇIK ve kapalı durumları için denetimi görüntülenen metni ve varsayılan 
         android:textOff="NO" />
 ```
 
-Bu biçimlendirme, aşağıdaki ekran görüntüsünde çalışma zamanında üretir:
+Aşağıdaki ekran görüntüsünde, çalışma zamanında bu biçimlendirme oluşturur:
 
-[![Yatay anahtar pencere öğesi önceki metinle demo uygulamasının ekran görüntüsü](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
+[![Yatay olarak anahtar pencere önceki metinle tanıtım uygulamasının ekran görüntüsü](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
-Zaman bir `Switch`ait değer değişiklikleri yükseltir bir `CheckedChange` olay.
-Örneğin, aşağıdaki kodda Biz bu olayı yakalamak ve mevcut bir `Toast` pencere öğesi bir iletiyle dayalı olarak `isChecked` değerini `Switch`, hangi geçirilen olay işleyicisine bir parçası olarak `CompoundButton.CheckedChangeEventArg` bağımsız değişkeni.
+Olduğunda bir `Switch`'s bilmemektedir değeri değiştiğinde bir `CheckedChange` olay.
+Örneğin, aşağıdaki kodda Biz bu olayı yakalamak ve mevcut bir `Toast` pencere öğesi ile bir ileti dayalı `isChecked` değerini `Switch`, hangi geçirilen olay işleyicisine bir parçası olarak `CompoundButton.CheckedChangeEventArg` bağımsız değişken.
 
 ```csharp
 Switch s = FindViewById<Switch> (Resource.Id.monitored_switch);
@@ -81,7 +82,5 @@ s.CheckedChange += delegate(object sender, CompoundButton.CheckedChangeEventArgs
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SwitchDemo (örnek)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ICS_Samples/SwitchDemo/)
+- [SwitchDemo (örnek)](https://developer.xamarin.com/samples/monodroid/SwitchDemo/)
 - [Sekme düzeni Öğreticisi](~/android/user-interface/layouts/tab-layout/index.md)
-- [Dondurma Sandwich Tanıtımı](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 platformu](http://developer.android.com/sdk/android-4.0.html)

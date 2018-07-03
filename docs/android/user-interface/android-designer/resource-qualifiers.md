@@ -1,30 +1,30 @@
 ---
 title: Kaynak niteleyicileri ve görselleştirme seçenekleri
-description: Bu konuda, yalnızca bazı niteleyicisi değerler karşılandığında, kullanılacak kaynakları tanımlamak açıklanmaktadır. Basit bir örnek, bir dil tam dize kaynaktır. Bir dize kaynağı, varsayılan olarak, ek diller için kullanılacak tanımlı alternatif kaynaklar ile tanımlanabilir. Tüm kaynak türleri, Düzen dahil olmak üzere nitelendirilmesi.
+description: Bu konu, yalnızca bazı niteleyici değeri eşleştiğinde, kullanılacak kaynakları tanımlayan açıklanmaktadır. Basit bir örnek, bir dil tam dize kaynaktır. Bir dize kaynağı, varsayılan, ek diller için kullanılacak tanımlanan diğer alternatif kaynaklar ile tanımlanabilir. Düzen dahil olmak üzere tüm kaynak türleri nitelendirilmesi.
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: bc9eb145b6d9ed7bd441d625f533c5cbbd87fccd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7bc8c1066e557085c1bf34f77765edbb2259ba7a
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30771898"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403305"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Kaynak niteleyicileri ve görselleştirme seçenekleri
 
-_Bu konuda, yalnızca bazı niteleyicisi değerler karşılandığında, kullanılacak kaynakları tanımlamak açıklanmaktadır. Basit bir örnek, bir dil tam dize kaynaktır. Bir dize kaynağı, varsayılan olarak, ek diller için kullanılacak tanımlı alternatif kaynaklar ile tanımlanabilir. Tüm kaynak türleri, Düzen dahil olmak üzere nitelendirilmesi._
+_Bu konu, yalnızca bazı niteleyici değeri eşleştiğinde, kullanılacak kaynakları tanımlayan açıklanmaktadır. Basit bir örnek, bir dil tam dize kaynaktır. Bir dize kaynağı, varsayılan, ek diller için kullanılacak tanımlanan diğer alternatif kaynaklar ile tanımlanabilir. Düzen dahil olmak üzere tüm kaynak türleri nitelendirilmesi._
 
 
-## <a name="custom-device-configurations"></a>Özel aygıt yapılandırmaları
+## <a name="custom-device-configurations"></a>Özel cihaz yapılandırmaları
 
-Android aygıtlar ve ekran çözünürlükleri sayısız üzerinde kullanılabilir.
-Birçok cihaz hedef tasarım kullanıcı arabirimleri yardımcı olmak için yerleşik cihaz yapılandırmalarını çeşitli tasarımcı birlikte gelir. Ayrıca, ek cihaz yapılandırmalarını ekleme destekler; Bu yapılandırmalar dayalı *niteleyicileri* bir aygıt yapılandırması diğerinden ayırt etmek için belirtin. Farklı türlerde niteleyicileri vardır. Bu kaynak türleri hakkında daha fazla bilgi için bkz: [Android kaynakları](~/android/app-fundamentals/resources-in-android/index.md).
+Android cihazlar ve ekran çözünürlükleri deseninizi oluşturmayı üzerinde kullanılabilir.
+Birçok cihaz hedefleyen tasarım kullanıcı arabirimleri yardımcı olmak için tasarımcı çeşitli yerleşik cihaz yapılandırmaları ile birlikte gelir. Ek cihaz yapılandırmaları eklemeyi de destekler; Bu yapılandırmalar dayalı *niteleyicileri* bir cihaz yapılandırma diğerinden ayırt etmek için belirtin. Farklı türlerde niteleyicileri vardır. Bu kaynak türleri hakkında daha fazla bilgi için bkz. [Android kaynakları](~/android/app-fundamentals/resources-in-android/index.md).
 
-Menü aygıt Seçici kısımda olduğu bir **Özelleştir** seçeneği aşağıda gösterildiği gibi:
+Cihaz Seçici alt kısmındaki menü olduğu bir **Özelleştir** seçeneğini aşağıda gösterildiği gibi:
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -38,7 +38,7 @@ Menü aygıt Seçici kısımda olduğu bir **Özelleştir** seçeneği aşağıd
 -----
 
 
-Seçme **Özelleştir** bir iletişim kutusu görüntüler, kullanılabilir cihaz yapılandırmalarını tarama için kullanabilirsiniz. Tıkladığınızda **aygıt tanımları** sekmesinde tüm bilinen cihaz tanımları listesi sunulur:
+Seçme **Özelleştir** bir iletişim kutusunu görüntüler, kullanılabilir cihaz yapılandırmaları göz atmak için kullanabilirsiniz. Tıkladığınızda **cihaz tanımları** sekmesinde, tüm bilinen cihaz tanımlarının bir listesi sunulur:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -51,34 +51,34 @@ Seçme **Özelleştir** bir iletişim kutusu görüntüler, kullanılabilir ciha
 -----
 
 
-Tasarımcıda önceden yapılandırılmış aygıtları değiştirilemez. Ancak, tıklayabilirsiniz **cihaz oluştur...**  özel cihaz tanımını tanımlamak için. Alternatif olarak, varolan bir tanımını seçin ve tıklatın **kopya...**  yeni tanımı için başlangıç noktası olarak kullanmak için.
-Örneğin, seçme **Nexus 5** tanımı ve tıklayarak **kopya...**  aşağıdaki iletişim kutusunu gösterir:
+Önceden yapılandırılmış Tasarımcısı'nda cihazlar değiştirilemez. Ancak, tıklayabilirsiniz **cihaz oluştur...**  özel cihaz tanımını belirlemek için. Alternatif olarak, mevcut bir tanımı'nı seçin ve tıklayın **Kopyala...**  yeni bir tanımı için başlangıç noktası olarak kullanmak için.
+Örneğin, seçme **Nexus 5** tanımı ve tıklayarak **Kopyala...**  aşağıdaki iletişim kutusu sunar:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Kopya cihaz](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png#lightbox)
+[![Cihaz kopyalama](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Kopya cihaz](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png#lightbox)
+[![Cihaz kopyalama](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png#lightbox)
 
 -----
 
 
-Sonraki ekran görüntüsünde, ad olarak değiştirilmesini **Nexus 5 özel** ve yeni bir özel cihaz tanımı oluşturmak için aygıt parametrelerini değiştirilebilir. Bu örnekte, **dikey** cihaz tanımı yalnızca yatay böylece devre dışı bırakılır:
+Sonraki ekran görüntüsünde, adı değiştirildi **Nexus 5 özel** ve yeni bir özel cihaz tanımı oluşturmak için cihaz parametreleri değiştirilir. Bu örnekte, **dikey** böylece cihaz tanımı yalnızca yatay devre dışı bırakıldı:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Özel aygıt](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png#lightbox)
+[![Özel cihaz](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Özel aygıt](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png#lightbox)
+[![Özel cihaz](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png#lightbox)
 
 -----
 
 
-Tıklatarak **kopya aygıt** artık yeni bir cihaz tanımı oluşturur **aygıt tanımları** listesi:
+Tıklayarak **kopya cihaz** artık yeni bir cihaz tanımı oluşturur **cihaz tanımları** listesi:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -91,28 +91,28 @@ Tıklatarak **kopya aygıt** artık yeni bir cihaz tanımı oluşturur **aygıt 
 -----
 
 
-Her bir kullanıcı tarafından oluşturulan cihaz tanımı yeşil bir simge ile yukarıda gösterildiği gibi görüntülendiğine dikkat edin. Ne zaman döndürmek için **aygıt** Seçici menüsünde Yeni özel aygıt tanımı sunulur listesinin en üstteki bölümünde (, listesinde, IDE yeniden başlatmayı deneyin özel cihaz yapılandırmanızda bu görmüyorsanız):
+Her kullanıcı tarafından oluşturulmuş bir cihaz tanımı yukarıda da gösterildiği gibi yeşil bir simge ile görüntülendiğine dikkat edin. İçin döndüğünüzde **cihaz** Seçici menüsü, yeni özel cihaz tanımı sunulur listesinin en üst bölümünde (, liste, IDE yeniden başlatmayı deneyin, özel cihaz yapılandırma bu görmüyorsanız):
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Özel aygıt aygıt listesinde görüntülenir](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png#lightbox)
+[![Özel cihaz cihaz listesinde görünür.](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Özel aygıt aygıt listesinde görüntülenir](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png#lightbox)
+[![Özel cihaz cihaz listesinde görünür.](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png#lightbox)
 
 -----
 
 
-Bu aygıt yapılandırması seçerek daha önce (Bu durumda, yalnızca yatay modda) oluşturulan özelleştirmeleri uygun olması için Düzen değiştirir:
+Bu cihaz yapılandırması seçerek daha önce (Bu durumda, yalnızca yatay modda) oluşturulan özelleştirmeleri uygun düzenini değiştirir:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Özel Aygıt kullanımda](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png#lightbox)
+[![Özel cihaz kullanımda](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Özel Aygıt kullanımda](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png#lightbox)
+[![Özel cihaz kullanımda](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png#lightbox)
 
 -----
 
@@ -120,7 +120,7 @@ Bu aygıt yapılandırması seçerek daha önce (Bu durumda, yalnızca yatay mod
 
 ## <a name="resource-qualifier-options"></a>Kaynak niteleyicisi seçenekleri
 
-**Kaynak niteleyicisi seçenekleri** sağındaki aşağı üçgen simgesini tıklatarak erişilebilir **aygıt yapılandırması** seçenekleri:
+**Kaynak niteleyicisi seçenekleri** sağ tarafındaki üç noktaya tıklayarak erişilebilir **cihaz Yapılandırması** seçenekleri:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -133,32 +133,32 @@ Bu aygıt yapılandırması seçerek daha önce (Bu durumda, yalnızca yatay mod
 -----
 
 
-Bu iletişim kutusunu aşağıdaki kaynak niteleyicileri için aşağı açılır menüler sunar:
+Bu iletişim kutusunda, aşağıdaki kaynak niteleyicilerini için aşağı açılır menüler sunar:
 
--   **Dil** &ndash; görüntüler kullanılabilir dil kaynakları ve yeni dil/bölge kaynakları eklemek için bir seçenek sunar.
+-   **Dil** &ndash; kullanılabilir dil kaynakları görüntüler ve yeni dil/bölge kaynakları eklemek için bir seçenek sunar.
 
--   **UI modu** &ndash; listeleri görüntüleme modları (gibi **araba yerleştirme** ve **Masası yerleştirme**) düzeni yönergeleri yanı sıra.
+-   **UI modu** &ndash; listelerini görüntülemek modları (gibi **araç içi yerleştirme** ve **Masaüstü yerleştirme**) düzeni yönergeleri yanı sıra.
 
-Bu aşağı açılır menüler her burada seçin ve kaynak niteleyicileri (sonraki açıklandığı gibi) yapılandırmak yeni iletişim kutuları açılır.
+Her biri bu aşağı açılır menüler, seçin ve kaynak niteleyicilerini (sonraki açıklandığı gibi) yapılandırabileceğiniz yeni iletişim kutuları açılır.
 
 
 
 ### <a name="language"></a>Dil
 
-**Dil** açılır menü tanımlanan kaynaklara sahip dilleri listeler (veya **tüm diller**, varsayılan). Ancak, yoktur ayrıca bir **dil/bölge Ekle...**  listesine yeni bir dil eklemek izin veren seçeneği:
+**Dil** açılır menüsünden tanımlanan kaynaklara sahip dilleri listeler (veya **tüm diller**, varsayılan değerdir). Ancak, de mevcuttur bir **dil/bölge Ekle...**  listeye yeni dil eklemenizi sağlayan seçeneği:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Dil/bölge ekleme](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
+[![Dil/bölge Ekle](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Dil/bölge ekleme](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png#lightbox)
+[![Dil/bölge Ekle](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png#lightbox)
 
 -----
 
 
-Tıkladığınızda **dil/bölge Ekle...** , **Dil Seç** iletişim kutusunu açar kullanılabilir diller ve bölgeler açılır listesini görüntülemek için:
+Tıkladığınızda **dil/bölge Ekle...** , **dili seç** kullanılabilir diller ve bölgeler açılır listesini görüntülemek için iletişim kutusu açılır:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -171,11 +171,11 @@ Tıkladığınızda **dil/bölge Ekle...** , **Dil Seç** iletişim kutusunu aç
 -----
 
 
-Bu örnekte, biz seçtiniz **fr (Fransızca)** dil ve **BE** (Belçika) Fransızca bölgesel dialect için. Unutmayın **bölge** alan olduğundan isteğe bağlı birçok dilde belirli bölgeler için bakmadan belirtilebilir. Zaman **dil** açılır menü yeniden açıldığında, yeni eklenen dil/bölge kaynak görüntüler:
+Bu örnekte, seçtik **fr (Fransızca)** dil ve **BE** (Belçika) bölgesel diyalekti Fransızca için. Unutmayın **bölge** birçok dil özel bölgeler için bakmadan belirtildiği için alan isteğe bağlıdır. Zaman **dil** açılır menüsünden yeniden açıldığında, yeni eklenen dil/bölge kaynağı görüntüler:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Dil ve seçilen bölge](resource-qualifiers-images/vs/11-language-region-added.png "dil ve bölge seçilen")
+![Dil ve bölge seçilen](resource-qualifiers-images/vs/11-language-region-added.png "seçilen dil ve bölge")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -184,34 +184,34 @@ Bu örnekte, biz seçtiniz **fr (Fransızca)** dil ve **BE** (Belçika) Fransız
 -----
 
 
-Yeni bir dil eklemek, ancak bu, eklenen bir dili artık sonraki açışınızda gösterilecek için yeni kaynaklar oluşturmayın projeyi açın unutmayın.
+Yeni bir dil Ekle, ancak yeni kaynaklar için eklenen dil artık sonraki gösterilecek oluşturmayın projeyi açın unutmayın.
 
 
 
 ### <a name="ui-mode"></a>UI modu
 
-Tıkladığınızda **UI modu** aşağı açılır menüsünde, modlarının bir listesi görüntülenir, gibi **Normal**, **araba yerleştirme**, **Masası yerleştirme**, **Televizyon**, **Gereci**, ve **izleme**:
+Tıkladığınızda **UI modu** aşağı açılır menüsünde, modlarının bir listesi görüntülenir, gibi **Normal**, **araç içi yerleştirme**, **Masaüstü yerleştirme**, **Televizyon**, **Gereci**, ve **Watch**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 [![UI modu menüsü](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
-Bu listede gece modları olan **değil gece** ve **gece**, Düzen yönergeleri izleyen **soldan sağa** ve **sağdan sola** (için hakkında bilgi **soldan sağa** ve **sağdan sola** seçenekleri bkz [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
-Son öğeleri **kaynak niteleyicisi seçenekleri** iletişim olan **ekranlar yuvarlak** (kullanmak için Android takmak ile) veya **değil yuvarlamak ekranları** (hepsini hakkında bilgi için ve gidiş olmayan ekranlarına bakın [düzenleri](https://developer.android.com/training/wearables/ui/layouts.html)).
-Android UI modları hakkında daha fazla bilgi için bkz: [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
+Bu liste gece modlarıdır **değil gece** ve **gece**Düzen yönergeleri çizgidir **soldan sağa** ve **sağdan sola** (için hakkında bilgi **soldan sağa** ve **sağdan sola** seçeneklerini görmek [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
+Son öğeler **kaynak niteleyicisi seçenekleri** iletişim kutusu **ekran yuvarlak** (için Android Wear ile kullanın) veya **değil yuvarlak ekranları** (hepsini hakkında bilgi için ve gidiş ekranlarına bakın [düzenleri](https://developer.android.com/training/wearables/ui/layouts.html)).
+Android kullanıcı Arabirimi modları hakkında daha fazla bilgi için bkz. [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 [![UI modu menüsü](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png#lightbox)
 
-Bu listede gece modları olan **değil gece** ve **gece**, Düzen yönergeleri izleyen **soldan sağa** ve **sağdan sola**. Android UI modları hakkında daha fazla bilgi için bkz: [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
-Hakkında bilgi için **soldan sağa** ve **sağdan sola** seçenekleri bkz [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
+Bu liste gece modlarıdır **değil gece** ve **gece**Düzen yönergeleri çizgidir **soldan sağa** ve **sağdan sola**. Android kullanıcı Arabirimi modları hakkında daha fazla bilgi için bkz. [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
+Hakkında bilgi için **soldan sağa** ve **sağdan sola** seçeneklerini görmek [LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
 
-### <a name="round-screen"></a>Yuvarlak ekranı
+### <a name="round-screen"></a>Yuvarlak ekran
 
-Son öğenin **kaynak niteleyicisi seçenekleri** iletişim **ekran Round** menüsü. Bu menü ya da seçmenize izin verir **yuvarlamak ekranlar** (kullanmak için Android takmak ile) veya **dikdörtgen ekranlar**:
+Son öğenin **kaynak niteleyicisi seçenekleri** iletişim **ekran yuvarlak** menüsü. Bu menü ya da seçmenizi sağlar **Round ekranlarda** (için Android Wear ile kullanın) veya **dikdörtgen ekranların**:
 
-[![Yuvarlak ekranı menüsü](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png#lightbox)
+[![Yuvarlak ekran menüsü](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png#lightbox)
 
 -----
 
@@ -219,7 +219,7 @@ Son öğenin **kaynak niteleyicisi seçenekleri** iletişim **ekran Round** men�
 
 ## <a name="action-bar-settings"></a>Eylem çubuğu ayarları
 
-**Eylem çubuğu ayarları** simgedir Fırçası (Tema Düzenleyicisi) simgesinin solunda kullanılabilir:
+**Eylem çubuğu ayarları** simgesi (Tema Düzenleyicisi) Fırçası simgesini solundaki kullanılabilir:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -234,62 +234,62 @@ Son öğenin **kaynak niteleyicisi seçenekleri** iletişim **ekran Round** men�
 
 Bu simge, üç Eylem çubuğu modlarından birini seçmek için bir yol sağlayan bir iletişim popover açar:
 
--   **Standart** &ndash; ya da bir logo veya simgesini ve başlık metni ile isteğe bağlı bir alt başlık oluşur.
+-   **Standart** &ndash; ya da bir logo veya simgeyi ve Başlık metin ile isteğe bağlı bir alt başlık oluşur.
 
--   **Liste** &ndash; listesi Gezinti modu. Statik başlık metni yerine bu mod, gezinti etkinlik için bir liste menü sunar (yani, kullanıcıya bir açılır liste olarak sunulabilir).
+-   **Liste** &ndash; liste Gezinti modu. Statik başlık metnini yerine bu mod, bir etkinlik içinde gezinme için liste menüsü sunar (diğer bir deyişle, bu kullanıcıya bir açılan listedeki olarak sunulabilir).
 
--   **Sekmeleri** &ndash; sekmesini Gezinti modu. Statik başlık metni yerine bu mod, bir dizi etkinlik içinde gezinme için sekme sunar.
+-   **Sekmeleri** &ndash; sekme gezinme modu. Statik başlık metnini yerine bu mod, bir dizi etkinliği içinde gezinme sekmeleri sunar.
 
 
 
 ## <a name="themes"></a>Temalar
 
-**Tema** açılır menü proje tanımlanan Temalar tümünün görüntüler. Seçme **daha Temalar** aşağıda gösterildiği gibi yüklü Android SDK, kullanılabilir tüm temalar listesini içeren bir iletişim kutusunu açar:
+**Tema** temaları projede tanımlanan tüm açılan menü görüntüler. Seçme **daha Temalar** aşağıda gösterildiği gibi yüklü Android SDK'sından, kullanılabilir tüm temalar listesini içeren bir iletişim kutusu açılır:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Daha fazla Temalar listesi](resource-qualifiers-images/vs/15-theme-menu-sml.png "daha Temalar listesi")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
+[![Daha fazla tema listesi](resource-qualifiers-images/vs/15-theme-menu-sml.png "daha Temalar listesi")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Daha fazla Temalar listesi](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png#lightbox)
+[![Daha fazla tema listesi](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png#lightbox)
 
 -----
 
 
-Bir tema seçildiğinde, yeni temayı etkisini göstermek için tasarım yüzeyine güncelleştirilir. Bu değişiklik kalıcı yapıldığını unutmayın yalnızca **Tamam** düğmesine tıklandığında **tema** iletişim. Bir tema seçildikten sonra onu dahil edilecek **tema** aşağı açılan menüsünde aşağıda gösterildiği gibi:
+Bir tema seçili olduğunda, tasarım yüzeyine yeni temayı etkisini göstermek için güncelleştirilir. Bu değişiklik kalıcı yapıldığını unutmayın yalnızca **Tamam** düğmesine tıklandığında **tema** iletişim. Bir tema seçildikten sonra dahil edilecek **tema** aşağı açılan menüsünde aşağıda gösterildiği gibi:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Açık tema yayımlamıştır](resource-qualifiers-images/vs/16-light-theme.png "açık tema yayımlamıştır")
+![Açık tema kullanıma sunuldu](resource-qualifiers-images/vs/16-light-theme.png "açık tema kullanıma sunuldu")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Açık tema artık kullanılabilir](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png#lightbox)
+[![Açık tema kullanıma sunuldu](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png#lightbox)
 
 -----
 
 
 
-## <a name="android-version"></a>Android sürüm
+## <a name="android-version"></a>Android sürümü
 
-Android **sürüm** Seçici Tasarımcısı'nda düzeni işlemek için kullanılan Android sürümü ayarlar. Seçici projenin hedef framework sürümü ile uyumlu olan tüm sürümleri görüntüler:
+Android **sürüm** ayarlar Tasarımcısı'nda düzenini işlemek için kullanılan Android sürümü Seçici. Seçici proje hedef framework sürümü ile uyumlu olan tüm sürümlerini görüntüler:
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ![Android sürümlerinin listesi](resource-qualifiers-images/vs/17-android-version.png "Android listesi sürümleri")
 
-Hedef framework sürümü projenin ayarları altında ayarlanabilir **Özellikler > Uygulama > Android sürümüyle derleme**. Hedef framework sürümü hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md).
+Hedef framework sürümü proje ayarlarında ayarlanabilir **özellikleri > Uygulama > Android sürümünü kullanarak derle**. Hedef framework sürümü hakkında daha fazla bilgi için bkz: [anlama Android API düzeyleri](~/android/app-fundamentals/android-api-levels.md).
 
-Araç kutusunda kullanılabilir pencere öğeleri kümesi projenin hedef framework sürümü tarafından belirlenir. Bu, aynı zamanda kullanılabilir özellikleri için geçerlidir **Özellikler penceresini**. Pencere öğeleri kullanılabilir listesi *değil* seçili değer tarafından belirlenen **sürüm** araç çubuğunun Seçici. Örneğin, Android 4.4 projenin hedef sürümü ayarlarsanız, proje gibi Android 6. 0'göründüğünü görmek için araç sürüm Seçici içinde Android 6.0 seçebilirsiniz ancak Android 6.0 belirli pencere öğeleri eklemek açamazsınız &ndash;  yine Android 4.4 kullanılabilir pencere öğeleri için sınırlı olacaktır.
+Araç kutusunda kullanılabilir pencere öğeleri kümesi proje hedef framework sürümü tarafından belirlenir. Bu da kullanılabilir özellikleri için geçerlidir **Özellikler penceresi**. Kullanılabilir pencere öğeleri listesi *değil* seçilen değeri tarafından belirlendiği **sürüm** araç çubuğunun Seçici. Örneğin, projenin hedef sürümü için Android 4.4 ayarlarsanız, projeyi Android 6. 0'nasıl göründüğünü görmek için araç sürümü Seçici içinde Android 6.0 seçebilirsiniz ancak Android 6.0 sürümüne özgü pencere öğeleri eklemek mümkün olmayacaktır &ndash;  Android 4.4 içinde kullanılabilir olan bir pencere öğeleri sınırlıdır.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 [![Android sürümlerinin listesi](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png#lightbox)
 
-Hedef framework sürümü projenin ayarları altında ayarlanabilir **proje Seçenekleri > Yapı > Genel** bölümü. Hedef framework sürümü hakkında daha fazla bilgi için bkz: [anlama Android API düzeylerini](~/android/app-fundamentals/android-api-levels.md).
+Hedef framework sürümü proje ayarlarında ayarlanabilir **proje Seçenekleri > derleme > Genel** bölümü. Hedef framework sürümü hakkında daha fazla bilgi için bkz: [anlama Android API düzeyleri](~/android/app-fundamentals/android-api-levels.md).
 
-Araç kutusunda kullanılabilir pencere öğeleri kümesi projenin hedef framework sürümü tarafından belirlenir. Bu, aynı zamanda kullanılabilir özellikleri için geçerlidir **özelliği paneli**. Pencere öğeleri kullanılabilir listesi *değil* seçili değer tarafından belirlenen **sürüm** araç çubuğunun Seçici. Örneğin, Android 4.4 projenin hedef sürümü ayarlarsanız, proje gibi Android 6. 0'göründüğünü görmek için araç sürüm Seçici içinde Android 6.0 seçebilirsiniz ancak Android 6.0 belirli pencere öğeleri eklemek açamazsınız &ndash;  yine Android 4.4 kullanılabilir pencere öğeleri için sınırlı olacaktır.
+Araç kutusunda kullanılabilir pencere öğeleri kümesi proje hedef framework sürümü tarafından belirlenir. Bu da kullanılabilir özellikleri için geçerlidir **özellik paneli**. Kullanılabilir pencere öğeleri listesi *değil* seçilen değeri tarafından belirlendiği **sürüm** araç çubuğunun Seçici. Örneğin, projenin hedef sürümü için Android 4.4 ayarlarsanız, projeyi Android 6. 0'nasıl göründüğünü görmek için araç sürümü Seçici içinde Android 6.0 seçebilirsiniz ancak Android 6.0 sürümüne özgü pencere öğeleri eklemek mümkün olmayacaktır &ndash;  Android 4.4 içinde kullanılabilir olan bir pencere öğeleri sınırlıdır.
 
 -----

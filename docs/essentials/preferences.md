@@ -1,24 +1,24 @@
 ---
 title: 'Xamarin.Essentials: tercihleri'
-description: Bu belgede bir anahtar/değer deposuna uygulama tercihlerini kaydeder Xamarin.Essentials Tercihler sınıfında açıklanmaktadır. Sınıf ve depolanabilen veri türlerini nasıl kullanılacağını açıklar.
+description: Bu belgede, uygulama tercihleri bir anahtar/değer deposuna kaydeder Xamarin.Essentials tercihleri sınıfında açıklanmaktadır. Bu sınıf ve depolanabilen veri türlerini nasıl kullanılacağını açıklar.
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: e453c04a953e60be2508670723d175bde3dc7c42
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: ca6d4f1ec60a80b483c79dd75267144e67d80c0b
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782857"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403480"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: tercihleri
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**Tercihler** uygulama Tercihler anahtar/değer deposunu sınıfı yardımcı olur.
+**Tercihleri** sınıfı bir anahtar/değer deposuna uygulama tercihleri yardımcı olur.
 
-## <a name="using-secure-storage"></a>Güvenli Depolama kullanma
+## <a name="using-preferences"></a>Tercihler kullanma
 
 Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 
@@ -26,19 +26,19 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-İçin bir değer kaydetmek için bir verilen _anahtar_ tercihlerinde:
+Kaydetmek için bir değer için bir verilen _anahtar_ tercihler:
 
 ```csharp
 Preferences.Set("my_key", "my_value");
 ```
 
-Bir değeri tercihleri veya varsayılan değilse almak için ayarlayın:
+Aksi takdirde bir değer tercihleri ya da varsayılan almak için aşağıdakileri ayarlayın:
 
 ```csharp
 var myValue = Preferences.Get("my_key", "default_value");
 ```
 
-Kaldırmak için _anahtar_ tercihlerden:
+Kaldırılacak _anahtar_ gelen tercihleri:
 
 ```csharp
 Preferences.Remove("my_key");
@@ -50,11 +50,11 @@ Tüm tercihleri kaldırmak için:
 Preferences.Clear();
 ```
 
-Ek olarak bu yöntemlerden her bir isteğe bağlı olarak ele `sharedName` tercih için ek kapsayıcılar oluşturmak için kullanılabilir. Aşağıdaki platform uygulama ayrıntıları okuyun.
+Bu yöntemlerin yanı sıra her bir isteğe bağlı olarak ele `sharedName` tercih için ek bir kapsayıcı oluşturmak için kullanılabilir. Aşağıdaki platform uygulaması ayrıntıları okuyun.
 
 ## <a name="supported-data-types"></a>Desteklenen veri türleri
 
-Aşağıdaki veri türlerini desteklenen **Tercihler**:
+Aşağıdaki veri türleri desteklenir **tercihleri**:
 
 - **bool**
 - **double**
@@ -62,26 +62,31 @@ Aşağıdaki veri türlerini desteklenen **Tercihler**:
 - **float**
 - **long**
 - **string**
+- **Tarih/saat**
 
-## <a name="platform-implementation-specifics"></a>Platform uygulama özellikleri
+## <a name="implementation-details"></a>Uygulama Ayrıntıları
+
+Değerleri `DateTime` tarafından tanımlanan iki yöntemi kullanarak (büyük tamsayı) 64 bit ikili biçimde depolanmış `DateTime` sınıfı: [ `ToBinary` ](xref:System.DateTime.ToBinary) kodlamak için kullanılan yöntemi `DateTime` değeri ve [ `FromBinary` ](xref:System.DateTime.FromBinary(System.Int64)) yöntemi değerin kodunu çözer. Değerleri bu yöntemleri için kodu çözülmüş yapılan ayarlamaları için belgelere bakın bir `DateTime` olduğu diğer bir deyişle Eşgüdümlü Evrensel Saat (UTC) değeri depolanır.
+
+## <a name="platform-implementation-specifics"></a>Platform uygulaması özellikleri
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-İçine depolanan tüm verileri [paylaşılan tercihleri](https://developer.android.com/training/data-storage/shared-preferences.html). Öyle değilse `sharedName` belirtilen varsayılan paylaşılan tercihleri kullanılır, adı almak için kullanılan başka bir **özel** Tercihler belirtilen ada sahip paylaşılan.
+İçinde depolanan tüm verileri [paylaşılan tercihleri](https://developer.android.com/training/data-storage/shared-preferences.html). Hayır ise `sharedName` belirtilen varsayılan paylaşılan tercihleri kullanılır, adı almak için kullanılan başka bir **özel** tercihleri belirtilen ada sahip paylaşılan.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[NSUserDefaults](https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/user-defaults) iOS cihazlarda değerlerini depolamak için kullanılır. Öyle değilse `sharedName` belirtilen `StandardUserDefaults` olan kullanıldığında, başka adlı yeni bir oluşturmak için kullanılan `NSUserDefaults` için kullanılan belirtilen ada sahip `NSUserDefaultsType.SuiteName`.
+[NSUserDefaults](https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/user-defaults) iOS cihazlarında değerleri depolamak için kullanılır. Hayır ise `sharedName` belirtilen `StandardUserDefaults` olan kullanıldığında, aksi takdirde adı yeni oluşturmak için kullanılan `NSUserDefaults` için kullanılan belirtilen ada sahip `NSUserDefaultsType.SuiteName`.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) cihazda değerlerini depolamak için kullanılır. Öyle değilse `sharedName` belirtilen `LocalSettings` olan kullanıldığında, başka ad içinde yeni bir kapsayıcı oluşturmak için kullanılan `LocalSettings`.
+[ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) cihazda değerleri depolamak için kullanılır. Hayır ise `sharedName` belirtilen `LocalSettings` olan kullanıldığında, başka ad içinde yeni bir kapsayıcı oluşturmak için kullanılan `LocalSettings`.
 
 --------------
 
 ## <a name="limitations"></a>Sınırlamalar
 
-Bir dize depolarken, bu API küçük miktarda metin depolamak için tasarlanmıştır.  Performans metni büyük miktarlarda depolamak için kullanmayı denerseniz subpar olabilir.
+Bir dize depolarken, bu API küçük miktarlarda metini depolamak için tasarlanmıştır.  Performans, çok miktarda metin depolamak için kullanmayı denerseniz subpar olabilir.
 
 ## <a name="api"></a>API
 
