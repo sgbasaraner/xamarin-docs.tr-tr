@@ -11,7 +11,7 @@
 ### [Mobil Geliştirmeye Giriş](get-started/introduction-to-mobile-development.md)
 ### [Mobile SDLC’ye Giriş](get-started/introduction-to-mobile-sdlc.md)
 
-### [Platformlar arası uygulamalar oluşturma](app-fundamentals/building-cross-platform-applications/index.md)
+### [Platformlar Arası Uygulamalar Oluşturma](app-fundamentals/building-cross-platform-applications/index.md)
 #### [Genel bakış](app-fundamentals/building-cross-platform-applications/overview.md)
 #### [Bölüm 1 - Xamarin Mobil Platformunu Anlama](app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 #### [Bölüm 2 - Mimari](app-fundamentals/building-cross-platform-applications/architecture.md)
@@ -89,5 +89,4 @@
 #### [Visual Studio neden başvurulan kitaplık projemi derlememe dahil etmiyor?](troubleshooting/questions/vs-config-manager.md)
 
 ### [Bileşen Başvurularını NuGet’e Güncelleştirme](troubleshooting/component-nuget.md)
-### [Destek Seçenekleri](troubleshooting/support-options.md)
 ## [Örnekler](samples/index.yml)
