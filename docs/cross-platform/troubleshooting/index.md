@@ -1,18 +1,18 @@
 ---
 title: Xamarin sorunlarını giderme
-description: Bu belge bağlantılar içeriğe Xamarin geliştirme hakkında sık sorulan sorular yanıtlar açıklayan NuGet, bileşen başvuruları güncelleştirmek nasıl destek seçenekleri açıklar ve ürüne özgü sorular yanıtlanmaktadır.
+description: Bu belge bağlantıları Xamarin geliştirme hakkında sık sorulan sorular yanıtlar bileşen başvurularını Nuget'e, güncelleştirme açıklayan içeriğe destek seçenekleri açıklanır ve ürüne özel sorular yanıtlanmaktadır.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 4513D391-9850-4CDC-BE9B-7FF4B14FEFFC
 author: asb3993
 ms.author: amburns
-ms.date: 02/18/2018
-ms.openlocfilehash: 7a10a20290872005233bfffd5ec861f7372be4a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 05/10/2018
+ms.openlocfilehash: fe2cfacaa8658357a1c6629b1c1e8676efebd452
+ms.sourcegitcommit: 90be517ed7a1dbd221da5be5d1a7228d36f164d0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782069"
+ms.lasthandoff: 07/04/2018
+ms.locfileid: "37792559"
 ---
 # <a name="xamarin-troubleshooting"></a>Xamarin sorunlarını giderme
 
@@ -20,15 +20,11 @@ ms.locfileid: "34782069"
 
 ### <a name="frequently-asked-questionsquestionsindexmd"></a>[Sık Sorulan Sorular](questions/index.md)
 
-Hakkında sık sorulan sorular Xamarin Platform ve Visual Studio yanıtlar özel.
+Sık sorulan soruları yanıtlar belirli Visual Studio ve Xamarin platformunu hakkında.
 
 ### <a name="updating-component-references-to-nugetcomponent-nugetmd"></a>[Bileşen Başvurularını NuGet’e Güncelleştirme](component-nuget.md)
 
-Bileşen değiştirmek için varolan Xamarin çözümleri güncelleştirmek nasıl NuGet paketlerine başvuruyor.
-
-### <a name="support-optionssupport-optionsmd"></a>[Destek Seçenekleri](support-options.md)
-
-Xamarin ürünler için destek seçenekleri.
+Bileşen başvurularını NuGet paketlerini değiştirmek için mevcut Xamarin çözümlerini güncelleştirme yapma.
 
 ## <a name="product-specific-questions"></a>Ürüne özgü soruları
 

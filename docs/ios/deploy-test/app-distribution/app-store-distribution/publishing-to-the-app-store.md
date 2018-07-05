@@ -1,295 +1,332 @@
 ---
-title: Xamarin.iOS uygulamaları için uygulama mağazası yayımlama
-description: Bu belge, yapılandırma, yapı ve dağıtım için bir Xamarin.iOS uygulaması App Store'da yayımlama açıklar.
+title: App Store için xamarin iOS uygulamaları yayımlama
+description: Bu belge, yapılandırma, derleme ve dağıtım için bir Xamarin.iOS uygulaması App Store yayımlama açıklar.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/23/2017
-ms.openlocfilehash: 489d9fa569b083f5cb655dc503ab4fa551810b6d
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.date: 06/25/2018
+ms.openlocfilehash: 60aa177ccb14c443f1599b4ce42c07faa695baed
+ms.sourcegitcommit: 7d766f8a080ee6999e47c873a9f2ccec8fa5dd5a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209492"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439180"
 ---
-# <a name="publishing-xamarinios-apps-to-the-app-store"></a>Xamarin.iOS uygulamaları için uygulama mağazası yayımlama
+# <a name="publishing-xamarinios-apps-to-the-app-store"></a>App Store için xamarin iOS uygulamaları yayımlama
+
+Uygulama için Yayımlama [App Store](https://www.apple.com/ios/app-store/), uygulama geliştiricisi önce onu – ekran görüntüleri, açıklama, simgeler ve diğer bilgileri – gözden geçirme için Apple birlikte göndermeniz gerekir. Uygulama onaylandıktan sonra Apple, burada kullanıcıları satın alma ve iOS cihazlarından doğrudan yükleme App Store, yerleştirir.
+
+Bu kılavuzda, bir uygulamayı App Store için hazırlama ve Apple'a gözden geçirme için göndermek için izlemeniz gereken adımlar açıklanmaktadır. Özellikle, açıklanmaktadır:
+
+> [!div class="checklist"]
+> - App Store gözden geçirme yönergeleri izleyerek
+> - Uygulama kimliği ve yetkilendirmelerini ayarlama
+> - App Store simgesi ve uygulama simgeleri
+> - Bir uygulama sağlama profili Store ayarlama
+> - Güncelleştirme **yayın** derleme yapılandırması
+> - İTunes CONNECT'te uygulamanızı yapılandırma
+> - Uygulamanızı oluşturmaya ve Apple'a gönderme
 
 > [!IMPORTANT]
-> Apple [belirtti](https://developer.apple.com/news/?id=05072018a) Temmuz 2018 başlayarak, tüm uygulamaları ve güncelleştirmeleri uygulama mağazasında gönderilen iOS 11 SDK oluşturulmuş gerekir olduğunu ve [iPhone X görüntülenmesini desteklemek](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
+> Apple [belirtti](https://developer.apple.com/news/?id=05072018a) Temmuz 2018'den itibaren tüm uygulamaları ve App Store için gönderilen güncelleştirmelerini iOS 11 SDK oluşturulduğundan gerekir emin ve [iPhone X görünen desteklemelidir](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
-Tüm iOS cihazları için uygulamaları sırayla dağıtmak, Apple gerektirir üzerinden yayımlanan uygulamalar *App Store*, uygulama mağazası iOS uygulamaları için tek adrestir alışveriş konum yapma. Deposundaki 500. 000'den uygulamalarıyla, bu tek bir dağıtım noktasını yoğun başarı birçok türdeki uygulamayı geliştiricileri büyük harfe. Uygulama geliştiriciler dağıtım ve ödeme sistemleri sunumu hazır bir çözüm uygulama Mağazası ' dir.
+## <a name="app-store-guidelines"></a>App Store yönergeleri
 
-Uygulamanın uygulama mağazası gönderme işleminin içerir:
+Bir uygulama yayımlama App Store için göndermeden önce Apple tarafından tanımlanan standartları karşılar emin olun [App Store gözden geçirme yönergeleri](https://developer.apple.com/appstore/resources/approval/guidelines.html).
+Apple, App Store için uygulama gönderdiğinizde bu gereksinimleri karşıladığından emin olmak için inceler. Kullanmıyorsa, Apple içerdiği reddeder ve alıntı sorunları giderin ve yeniden gönderin gerekecektir.
+Bu nedenle, bunu öğrenmek için iyi bir fikirdir geliştirme sürecinde mümkün olduğunca erken yönergeleri.
 
-1. Oluşturma bir **uygulama kimliği** ve seçerek **yetkilendirmeler**.
-2. Oluşturma bir **sağlama profili dağıtım**.
-3. Uygulamanızı yapılandırmak için bu profili kullanarak.
-4. Uygulamanız aracılığıyla gönderme **iTunes Bağlan**.
+Bir uygulama gönderirken dikkat edilmesi gereken birkaç şey:
 
+1. Uygulamanın açıklaması işlevselliğini eşleştiğinden emin olun.
+2. Uygulama kilitlenme olmayan test normal kullanım altında. Bu, desteklediği her bir iOS cihazında kullanım içerir.
 
-Bu makalede sağlamak, geliştirmek ve uygulama mağazası dağıtım için uygulama göndermek için gereken tüm adımları yer almaktadır.
+Ayrıca göz atın [App Store ilgili kaynaklara](https://developer.apple.com/app-store/resources/) , Apple sağlar.
 
-## <a name="before-you-submit-an-application"></a>Bir uygulama göndermeden önce
+## <a name="set-up-an-app-id-and-entitlements"></a>Uygulama kimliği ve yetkilendirmelerini ayarlama
 
-Bir uygulama için uygulama mağazası yayına gönderdikten sonra kalite ve içerik için Apple'nın yönergeleri karşıladığını güvence altına almaya Apple tarafından gözden geçirme sürecinde gider. Uygulamanız bu kılavuzları karşılamak başarısız olursa, Apple, Apple tarafından bildirdi uyumsuzluk adres ve daha sonra yeniden gönderin gerekir aynı zamanda reddeder.
-Bu nedenle, Apple aracılığıyla kendiniz bu yönergelere hakkında bilgi edinme ve bunları uygulamanıza uyum çalışılırken gözden kolaylaştırarak en iyi ihtimalini bildirimde. Apple yönergeler şurada bulunabilir: [App Store gözden geçirme yönergeleri](https://developer.apple.com/appstore/resources/approval/guidelines.html).
+Uygulama Hizmetleri ilişkilendirilmiş bir dizi olan benzersiz uygulama kimliği, her bir iOS uygulamasına sahip adlı *yetkilendirmeler*. Yetkilendirmeler izin çeşitli şeyler uygulamalar gibi anında iletme bildirimi, aldığınız HealthKit ve daha fazlası gibi iOS özelliklerine erişin.
 
-Birkaç uygulama gönderirken dikkat edilmesi gerekenler şunlardır:
+Uygulama kimliği oluşturun ve seçin için yetkilendirmeler gerekli, ziyaret [Apple Developer Portal'a](https://developer.apple.com/account/) ve aşağıdaki adımları izleyin:
 
-1. Uygulamanın açıklaması uygulamada işlevselliğin eşleştiğinden emin olun.
-2. Uygulama kilitlenme değil test normal kullanım altında. Bu kullanım desteklediğiniz her iOS cihazında içerir.
+1. İçinde **sertifikalar, kimlikler ve profiller** bölümünden **tanımlayıcıları > Uygulama kimlikleri**.
+2. Tıklayın **+** düğmesine tıklayın ve sağlayan bir **adı** ve **paket kimliği** yeni uygulama için.
+3. Ekranın altına kaydırın ve herhangi **uygulama hizmetleri** Xamarin.iOS uygulamanızı gerekecektir. Uygulama Hizmetleri bölümünde daha ayrıntılı açıklanmıştır [Xamarin.iOS özelliklerinde çalışma](~/ios/deploy-test/provisioning/capabilities/index.md) Kılavuzu.
+4. Tıklayın **devam** izleyin ekrandaki yönergeleri yeni uygulama kimliğini oluşturmak için
 
+Seçme ve gerekli uygulama hizmetleri, uygulama Kimliğiniz tanımlarken yapılandırma yanı sıra, uygulama kimliği ve yetkilendirmeler Xamarin.iOS projenizi düzenleyerek yapılandırmanız gerekir **Info.plist** ve  **Entitlements.plist** dosyaları. Daha fazla bilgi için göz atın [Xamarin.iOS yetkilendirmeleri çalışma](~/ios/deploy-test/provisioning/entitlements.md) nasıl oluşturulacağını açıklayan kılavuz bir **Entitlements.plist** dosya ve çeşitli yetkilendirme ayarlarını anlamı Bu içerir.
 
-Ayrıca, Apple App Store gönderimi ipuçları listesini tutar. Bunlara okuyabilirsiniz [App Store'da dağıtma](https://developer.apple.com/appstore/resources/submission/tips.html).
+## <a name="include-an-app-store-icon"></a>App Store simgesi
 
-## <a name="configuring-your-application-in-itunes-connect"></a>İTunes Bağlan uygulamanızı yapılandırma
+Apple uygulama gönderdiğinizde, App Store simgesi içeren bir varlık Kataloğu içerdiğinden emin olun. Bunu öğrenmek için göz atın [Xamarin.iOS App Store simgeleri](~/ios/app-fundamentals/images-icons/app-store-icon.md) Kılavuzu.
 
-[iTunes Bağlan](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa) başka şeylerin App Store'dan iOS uygulamalarınızı yönetmek için web tabanlı araçları paketidir. Xamarin.iOS uygulamanızı düzgün Kurulum olması gerekir ve Apple için gözden geçirilmesi için gönderilebilir ve sonuç olarak, satış veya uygulama mağazasında bulunan ücretsiz bir uygulama olarak serbest bırakılacak önce iTunes Bağlan yapılandırılır.
+## <a name="set-the-apps-icons-and-launch-screens"></a>Uygulama simgeleri ayarlayın ve başlatma ekranları
 
-Aşağıdakileri yapın:
+Bir iOS uygulamasını App Store üzerinde kullanılabilir yapmak için Apple, uygun simgeleri ve başlatma ekranları tüm iOS cihazları için bunu çalıştırabilir olmalıdır. Uygulama simgeleri ve başlatma ekranları ayarlama hakkında daha fazla bilgi için aşağıdaki kılavuzlara okuyun:
 
-1. Uygun anlaşmaları yerinde ve içinde güncel olduğundan emin olun **anlaşmaları, vergi ve bankacılık** iTunes satış veya ücretsiz bir iOS uygulaması yayımlamayı Connect Bölümü.
-2. Yeni bir **iTunes Connect kaydı** uygulama için ve belirtin, **görünen adı** (uygulama Mağazası'nda görüldüğü gibi).
-3. Seçin bir **satış fiyatı** veya uygulama ücretsiz yayımlanması belirtin.
-5. Bir düz sağlamak kısa **açıklama** uygulamasının özelliklerini de dahil olmak üzere ve son kullanıcıya yararlanabilirsiniz.
-6. Sağlamak **kategorileri**, **alt kategorileri**, ve **anahtar sözcükleri** kullanıcı uygulamanızı uygulama Mağazası'nda Bul yardımcı olacak.
-7. Sağlamak **kişi** ve **Destek** Apple tarafından gerekli Web sitesine URL'lerini.
-8. Uygulamanızın ayarlamak **derecelendirme**, ebeveyn denetimleri uygulama Mağazası'tarafından kullanılıyor.
-9. İsteğe bağlı uygulama mağazası teknolojileri gibi yapılandırmadan **Game Center** ve **uygulama içi satın alma**.
+- [Xamarin.iOS uygulama simgeleri](~/ios/app-fundamentals/images-icons/app-icons.md)
+- [Başlatma ekranları Xamarin.iOS uygulamaları için](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
-Daha fazla ayrıntı için lütfen bkz. bizim [uygulama iTunes Connect yapılandırma](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) belgeleri.
+## <a name="create-and-install-an-app-store-provisioning-profile"></a>Oluşturma ve sağlama profili bir App Store yükleme
 
-## <a name="preparing-for-app-store-distribution"></a>Uygulama mağazası dağıtım için hazırlama
+iOS kullanan *sağlama profilleri* nasıl belirli bir uygulama derleme dağıtılacağını denetlemek için. Bunlar uygulama kimliği, bir uygulamayı imzalamak için kullanılan sertifika bilgilerini içeren ve uygulamanın yüklenebileceği dosyalardır. Sağlama profili, ayrıca geliştirme ve geçici dağıtım için uygulama dağıtabileceğiniz izin verilen cihaz listesini içerir. Yalnızca genel dağıtım mekanizması App Store olduğundan ancak App Store dağıtımı için yalnızca sertifikası ve uygulama kimliği bilgileri dahil edilir.
 
-Uygulama mağazası uygulama yayımlamak için ilk birçok adımdan dağıtım için oluşturmanız gerekir. Aşağıdaki bölümlerde oluşturulabilir ve uygulama mağazası gözden geçirme ve sürüm göndermek için bir Xamarin.iOS uygulaması yayını için hazırlamak üzere gerekli her şeyi içerir.
+Oluşturma ve sağlama profili bir App Store yüklemek için aşağıdaki adımları izleyin:
 
-### <a name="provisioning-for-application-services"></a>Uygulama hizmetleri için sağlama
+1. Oturum [Apple Developer Portal'a](https://developer.apple.com/account/).
+2. İçinde **sertifikalar, kimlikler ve profiller**seçin **sağlama profilleri > Dağıtım**.
+3. Tıklayın **+** düğmesini seçme **App Store**, tıklatıp **devam**.
+4. Uygulamanızın seçin **uygulama kimliği** listesi ve **devam**.
+5. Bir imzalama sertifikasını seçin ve tıklayın **devam**.
+6. Girin bir **profil adı** tıklatıp **devam** profili oluşturulacak.
+7. Xamarin'in kullanın [Apple hesap yönetimi](~/cross-platform/macios/apple-account-management.md) profil Mac'iniz için yeni oluşturulan sağlama indirmek için Araçlar Mac bilgisayarlarda kullanıyorsanız, sağlama profili doğrudan Apple Geliştirici Portalı'ndan indirin ve yüklemek için çift tıklayın.
 
-Apple özel uygulama hizmetleri için benzersiz bir kimlik oluşturduğunuzda, iOS uygulamanız için etkin hale getirilebilir yetkilendirmeler olarak da adlandırılan, seçimi sağlar. Veya özel yetkilendirmeler kullanıp kullanmadığınızı hala App Store'da yayımlanabilmesi Xamarin.iOS uygulamanızı için benzersiz bir kimliği oluşturmanız gerekir.
+Ayrıntılı yönergeler için bkz. [dağıtım profili oluşturma](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile) ve [dağıtım profil seçme içinde bir Xamarin.iOS projesi](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile).
 
-Bir uygulama kimliği oluşturma ve isteğe bağlı olarak yetkilendirmeler seçerek Apple'nın web tabanlı iOS sağlama portalı kullanarak aşağıdaki adımları içerir:
+## <a name="update-the-release-build-configuration"></a>Yayın derleme yapılandırmasını güncelleştirme
 
-1. İçinde **tanımlayıcıları & profilleri, sertifikaları** bölümünde seçin **tanımlayıcıları** > **uygulama kimliği**.
-2. Tıklatın **+** düğmesine tıklayın ve sağlayan bir **adı** ve **paket kimliği** yeni uygulama için.
-3. Ekranın alt kısmına kaydırın ve seçin **uygulama hizmetleri** , gerekir Xamarin.iOS uygulamanız tarafından.
-4. Tıklatın **devam** düğmesi ve aşağıdaki ekran yeni bir uygulama kimliği oluşturma yönergeleri
-
-Seçme ve uygulama Kimliğiniz tanımlarken, gerekli uygulama hizmetlerini yapılandırma ek olarak, ayrıca uygulama kimliği ve yetkilendirmeler Xamarin.iOS projenizde her ikisi de düzenleyerek yapılandırmanız gereken `Info.plist` ve `Entitlements.plist` dosyaları.
-
-Aşağıdakileri yapın:
-
-1. İçinde **Çözüm Gezgini**, çift `Info.plist` dosyayı düzenlemek için açın.
-2. İçinde **iOS uygulaması hedefi** bölümünde, uygulamanız için bir ad girin ve girin **paket tanımlayıcı** bir uygulama kimliği tanımlandığında, oluşturduğunuz
-3. Değişiklikleri kaydetmek `Info.plist` dosya.
-4. İçinde **Çözüm Gezgini**, çift `Entitlements.plist` dosyayı düzenlemek için açın.
-5. Seçin ve bunlar üzerinde gerçekleştirilen bir uygulama kimliği tanımlandığında Kurulum eşleşmesi sizin için Xamarin.iOS uygulaması gereken yetkilendirmeler yapılandırın
-6. Değişiklikleri kaydetmek `Entitlements.plist` dosya.
-
-Ayrıntılı yönergeler için lütfen bkz bizim [için uygulama hizmetleri sağlama](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) belgeleri.
-
-### <a name="setting-the-store-icons"></a>Mağaza simgeler ayarlama
-
-Uygulama mağazasına simgeleri şimdi bir varlık Kataloğu tarafından teslim. Uygulama mağazası simge eklemek için önce bulun **AppIcon** görüntü kümesinde **Assets.xcassets** projenizin dosya.
-
-Varlık kataloğunda gerekli simgesi adlı **App Store** ve olmalıdır **1024 x 1024** boyutu. Apple varlık kataloğunda uygulama mağazası simgesini saydam olamaz veya bir alfa kanal içeren belirtilmiş.
-
-Depolama simgesi ayarlama hakkında bilgi için bkz [uygulama depolamak simgesini](~/ios/app-fundamentals/images-icons/app-store-icon.md) Kılavuzu.
-
-### <a name="setting-the-apps-icons-and-launch-screens"></a>Uygulama simgeleri ve başlatma ekranlar ayarlama
-
-Apple'nın App Store eklenmesi için kabul edilmesi bir iOS uygulaması için başlatma tüm iOS için üzerinde çalışacağı aygıtları ekranları ve uygun simgeleri gerektirir. Uygulama simgeleri eklenir projelerinizi bir varlık kataloğunda aracılığıyla bir **AppIcon** görüntü kümesinde **Assets.xcassets** dosya. Başlatma ekranlar film şeridi eklenir.
-
-Uygulama simgeleri ve başlatma ekranlar oluşturma hakkında ayrıntılı yönergeler için bkz: [uygulama simgesi](~/ios/app-fundamentals/images-icons/app-icons.md) ve [başlatma ekranlar](~/ios/app-fundamentals/images-icons/launch-screens.md) kılavuzları.
-
-### <a name="creating-and-installing-a-distribution-profile"></a>Oluşturma ve dağıtım profili yükleme
-
-iOS kullanan *sağlama profilleri* belirli uygulama yapı nasıl dağıtılabilir denetlemek için. Bunlar, bir uygulamayı imzalamak için kullanılan sertifika ile ilgili bilgiler içeren dosyalardır *uygulama kimliği*, ve burada uygulama yüklenebilir. Geliştirme ve geçici dağıtım için sağlama profili uygulamayı dağıtabilirsiniz izin verilen cihazların listesini de içerir. Ancak, uygulama mağazası dağıtım için yalnızca sertifika ve uygulama kimlik bilgileri dahil, genel dağıtım için yalnızca mekanizması uygulama mağazası olduğundan.
-
-Hazırlama Apple'nın web tabanlı iOS sağlama portalı kullanarak aşağıdaki adımları içerir:
-
-1.  Seçin **sağlama** > **dağıtım**.
-2.  Tıklatın **+** düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **App Store**.
-3.  Seçin **uygulama kimliği** için dağıtım profili oluşturmak istediğiniz aşağı açılan listeden.
-4.  Uygulamayı imzalamak için geçerli bir üretim (dağıtım) sertifika seçin.
-5.  Girin bir **adı** yeni **dağıtım profili** ve profil oluşturur.
-6.  Mac için Xcode açın ve gidin **Tercihler > [Apple Kimliğinizi seçin] > ayrıntıları görüntüle...** . Tüm kullanılabilir profiller Mac üzerinde xcode'da indirin
-7.  IDE ve altına dönüş **iOS paket imzalama** seçeneklerini seçmek için doğru dağıtım sağlama profili _yapı yapılandırması_ (Bu da olacaktır **App Store**veya **sürüm**).
-
-Ayrıntılı yönergeler için lütfen bkz [dağıtım profili oluşturma](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile) ve [bir Xamarin.iOS projesi dağıtım profil seçme](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile).
-
-## <a name="setting-the-build-configuration-for-your-application"></a>Uygulamanız için yapı yapılandırması
+Yeni Xamarin.iOS projeleri otomatik olarak ayarlamak **hata ayıklama** ve **yayın** _derleme yapılandırmaları_. Düzgün şekilde yapılandırmak için **yayın** oluşturun, aşağıdaki adımları izleyin:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Aşağıdakileri yapın:
+1. Gelen **çözüm bölmesi**açın **Info.plist**. Seçin **el ile sağlama**. Dosyayı kaydedin ve kapatın.
+2. Sağ **proje adı** içinde **çözüm bölmesi**seçin **seçenekleri**gidin **iOS derleme** sekmesi.
+3. Ayarlama **yapılandırma** için **yayın** ve **Platform** için **iPhone**.
+4. Belirli bir iOS SDK'sı ile oluşturmak için seçim **SDK sürümü** listesi. Aksi takdirde bu değerde bırakın **varsayılan**.
+5. Bağlama, kullanılmayan kodu şeridi oluşturma tarafından uygulamanın toplam boyutunu azaltır. Çoğu durumda **bağlayıcı davranışı** varsayılan değerine ayarlanmalıdır **bağlantı Framework SDK'ları yalnızca**. Bazı durumlarda, bazı üçüncü taraf kitaplıklar kullanırken, bu değeri ayarlamak için gerekli olabilir gibi **bağlama** gerekli kodu değil kaldırıldığından emin olmak için. Daha fazla bilgi için [bağlama Xamarin.iOS uygulamaları](~/ios/deploy-test/linker.md) Kılavuzu.
+6. Denetleme **en iyi duruma getirme PNG görüntülerini** daha uygulamanızın boyutunu azaltmak için.
+7. Hata ayıklama gereken _değil_ etkin olması, yapı gereksiz derecede büyük hale getirecek şekilde.
+8. İOS 11 destekleyen cihaz mimarileri birini **ARM64**. 64-bit iOS cihazları için oluşturma hakkında daha fazla bilgi için lütfen bkz **xamarin iOS uygulamaları, etkinleştirme 64-Bit derlemeler** bölümünü [32/64 bit platformla ilgili dikkat edilecekler](~/cross-platform/macios/32-and-64/index.md) belgeleri.
+9. Kullanmak istediğiniz **LLVM** daha küçük ve daha hızlı kod oluşturmak için derleyici. Ancak, bu seçenek, derleme sürelerini artırır.
+10. Uygulamanızın ihtiyaçlarına göre ayrıca türünü ayarlamak isteyebilirsiniz **çöp toplama** kullanılan ve için ayarlanmış **uluslararası duruma getirme**.
 
-1. Sağ tıklayın **proje adı** içinde **çözüm paneli** ve seçim **seçeneği** düzenlemek için açın.
-2. Seçin **iOS yapı** seçip **yayın | iPhone** gelen **yapılandırma** açılır:
+    Yukarıda açıklanan seçenekler ayarladıktan sonra yapı ayarlarınızı şuna benzer görünmelidir:
 
-    ![](publishing-to-the-app-store-images/configurevs01.png "AppStore yapılandırma aşağı açılır listeden seçin")
+    ![iOS derleme ayarlarını](publishing-to-the-app-store-images/build-m157.png "iOS derleme ayarları")
 
-3. Hedeflediğiniz belirli iOS sürüm varsa, buradan seçebilirsiniz **SDK sürümü** açılır listesinde, başka bu değer varsayılan ayarını bırakın.
-4. Bağlama küçültür genel uygulamanızın dağıtılabilir kullanılmayan yöntemler, özellikler, sınıflar çıkarma tarafından vs. ve çoğu durumda varsayılan değer bırakılmalıdır **bağlantı SDK derlemeleri yalnızca**. Ne zaman gibi bazı durumlarda, bazı özel kullanarak 3. taraf kitaplıklar, bu değer ayarlanırsa zorlanabilir **bağlantı** kaldırılmakta olan gerekli öğeleri tutmak için. Daha fazla bilgi için bkz [iOS derleme mekanizması](~/ios/deploy-test/ios-build-mechanics.md) Kılavuzu.
-5. **İOS için en iyi duruma getirme PNG görüntü dosyalarını** bu başka düşüş uygulamanızın teslim edilebilir boyutu yardımcı olacak şekilde, onay kutusu işaretlenmelidir.
-6. Hata ayıklama gereken _değil_ yapı düşükse yapacak şekilde etkinleştirilmiş olmalıdır.
-8. İOS 11 destekleyen aygıt mimarileri birini seçmeniz gerekir **ARM64**. 64 bit iOS cihazları için oluşturma hakkında daha fazla bilgi için lütfen bkz **etkinleştirme 64 Bit oluşturur, Xamarin.iOS uygulamaları** bölümünü [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64/index.md) belgeleri.
-9. İsteğe bağlı olarak kullanmak isteyebilirsiniz **LLVM** derleyici derlemek için daha uzun sürer ancak, daha küçük ve daha hızlı kod oluşturur.
-10. Uygulamanızın gereksinimlerine göre size ayrıca türünü ayarlamak isteyebilirsiniz **çöp toplama** kullanılmakta ve kurulum için **uluslararası hale getirme**.
-11. Yaptığınız değişiklikleri derleme yapılandırmasını kaydedin.
+    Ayrıca bu göz atın [iOS derleme mekaniği](~/ios/deploy-test/ios-build-mechanics.md) Kılavuzu, daha fazla derleme ayarlarını açıklar.
+
+11. Gidin **iOS paket grubu imzalama** sekmesi. Seçenekler burada düzenlenebilir değil, emin **el ile sağlama** seçili **Info.plist** dosya.
+12. Emin olun **yapılandırma** ayarlanır **yayın** ve **Platform** ayarlanır **iPhone**.
+13. Ayarlama **imzalama kimliği** için **dağıtım (otomatik)**.
+14. İçin **sağlama profili**, sağlama profili App Store seçin [yukarıda oluşturulan](#create-and-install-an-app-store-provisioning-profile).
+
+    Proje paket grubu imzalama seçenekleri artık şuna benzer görünmelidir:
+
+    ![iOS paket grubu imzalama](publishing-to-the-app-store-images/bundleSigning-m157.png "iOS paket grubu imzalama")
+
+15. Tıklayın **Tamam** değişiklikleri kaydetmek için proje özellikleri.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Visual Studio'da yeni bir Xamarin.iOS uygulaması oluşturduğunuzda varsayılan olarak, _yapı yapılandırmaları_ her ikisi için otomatik olarak oluşturulan **geçici** ve **App Store** dağıtımı. Son yapı, gönderme, uygulamanızın Apple'a yapmadan önce temel yapılandırma yapmanız gerekecektir birkaç değişiklik vardır.
+1. Gelen **Çözüm Gezgini**açın **Info.plist**. Seçin **el ile sağlama**. Dosyayı kaydedin ve kapatın.
+2. Visual Studio 2017 aktarıldığından emin emin [eşleştirilmiş bir Mac derleme konağı](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+3. Sağ **proje adı** içinde **Çözüm Gezgini**seçin **özellikleri**gidin **iOS derleme** sekmesi.
+4. Ayarlama **yapılandırma** için **yayın** ve **Platform** için **iPhone**.
+5. Belirli bir iOS SDK'sı ile oluşturmak için seçim **SDK sürümü** listesi. Aksi takdirde bu değerde bırakın **varsayılan**.
+6. Bağlama, kullanılmayan kodu şeridi oluşturma tarafından uygulamanın toplam boyutunu azaltır. Çoğu durumda **bağlayıcı davranışı** varsayılan değerine ayarlanmalıdır **bağlantı Framework SDK'ları yalnızca**. Bazı durumlarda, bazı üçüncü taraf kitaplıklar kullanırken, bu değeri ayarlamak için gerekli olabilir gibi **bağlama** gerekli kodu değil kaldırıldığından emin olmak için. Daha fazla bilgi için [bağlama Xamarin.iOS uygulamaları](~/ios/deploy-test/linker.md) Kılavuzu.
+7. Denetleme **en iyi duruma getirme PNG görüntülerini** daha uygulamanızın boyutunu azaltmak için.
+8. Derleme gereksiz derecede büyük hale getirecek şekilde hata ayıklama, etkinleştirilmemelidir.
+9. İOS 11 destekleyen cihaz mimarileri birini **ARM64**. 64-bit iOS cihazları için oluşturma hakkında daha fazla bilgi için lütfen bkz **xamarin iOS uygulamaları, etkinleştirme 64-Bit derlemeler** bölümünü [32/64 bit platformla ilgili dikkat edilecekler](~/cross-platform/macios/32-and-64/index.md) belgeleri.
+10. Kullanmak istediğiniz **LLVM** daha küçük ve daha hızlı kod oluşturmak için derleyici. Ancak, bu seçenek, derleme sürelerini artırır.
+11. Uygulamanızın ihtiyaçlarına göre ayrıca türünü ayarlamak isteyebilirsiniz **çöp toplama** kullanılan ve için ayarlanmış **uluslararası duruma getirme**.
 
-Aşağıdakileri yapın:
+    Yukarıda açıklanan seçenekler ayarladıktan sonra yapı ayarlarınızı şuna benzer görünmelidir:
 
-1. Sağ tıklayın **proje adı** içinde **Çözüm Gezgini** ve seçim **özellikleri** düzenlemek için açın.
-2. Seçin **iOS yapı** ve **AppStore** (veya **sürüm** AppStore kullanılamıyorsa) gelen **yapılandırma** açılır:
+    ![iOS derleme ayarlarını](publishing-to-the-app-store-images/build-w157.png "iOS derleme ayarları")
 
-    ![](publishing-to-the-app-store-images/configurevs01.png "AppStore yapılandırma aşağı açılır listeden seçin")
+    Ayrıca bu göz atın [iOS derleme mekaniği](~/ios/deploy-test/ios-build-mechanics.md) Kılavuzu, daha fazla derleme ayarlarını açıklar.
 
-3. Hedeflediğiniz belirli iOS sürüm varsa, buradan seçebilirsiniz **SDK sürümü** açılır listesinde, başka bu değer varsayılan ayarını bırakın.
-4. Bağlama küçültür genel uygulamanızın dağıtılabilir kullanılmayan yöntemler, özellikler, sınıflar çıkarma tarafından vs. ve çoğu durumda varsayılan değer bırakılmalıdır **bağlantı SDK derlemeleri yalnızca**. Ne zaman gibi bazı durumlarda, bazı özel kullanarak 3. taraf kitaplıklar, bu değer ayarlanırsa zorlanabilir **bağlantı** kaldırılmakta olan gerekli öğeleri tutmak için. Daha fazla bilgi için bkz [iOS derleme mekanizması](~/ios/deploy-test/ios-build-mechanics.md) Kılavuzu.
-5. **İOS için en iyi duruma getirme PNG görüntü dosyalarını** bu başka düşüş uygulamanızın teslim edilebilir boyutu yardımcı olacak şekilde, onay kutusu işaretlenmelidir.
-6. Hata ayıklama gereken _değil_ yapı düşükse yapacak şekilde etkinleştirilmiş olmalıdır.
-7. Tıklayın **Gelişmiş** sekmesi:
+12. Gidin **iOS paket grubu imzalama** sekmesi. Seçenekler burada düzenlenebilir değil, emin **el ile sağlama** seçili **Info.plist** dosya.
+13. Emin olun **yapılandırma** ayarlanır **yayın** ve **Platform** ayarlanır **iPhone**.
+14. Ayarlama **imzalama kimliği** için **dağıtım (otomatik)**.
+15. İçin **sağlama profili**, sağlama profili App Store seçin [yukarıda oluşturulan](#create-and-install-an-app-store-provisioning-profile).
 
-    ![](publishing-to-the-app-store-images/configurevs02.png "Gelişmiş sekmesi")
+    Proje paket grubu imzalama seçenekleri artık şuna benzer görünmelidir:
 
-8. Xamarin.iOS uygulamanızı iOS 8 ve 64 bit iOS cihazlara hedefliyorsa, desteklediği cihaz mimarileri birini seçmeniz gerekir **ARM64**. 64 bit iOS cihazları için oluşturma hakkında daha fazla bilgi için lütfen bkz **etkinleştirme 64 Bit oluşturur, Xamarin.iOS uygulamaları** bölümünü [32/64 bit Platform konuları](~/cross-platform/macios/32-and-64/index.md) belgeleri.
-9. İsteğe bağlı olarak kullanmak isteyebilirsiniz **LLVM** derleyici derlemek için daha uzun sürer ancak, daha küçük ve daha hızlı kod oluşturur.
-10. Uygulamanızın gereksinimlerine göre size ayrıca türünü ayarlamak isteyebilirsiniz **çöp toplama** kullanılmakta ve kurulum için **uluslararası hale getirme**.
-11. Yaptığınız değişiklikleri derleme yapılandırmasını kaydedin.
+    ![iOS paket grubu imzalama ayarlarını](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS paket grubu imzalama ayarlarını")
+
+16. Gidin **iOS IPA seçenekleri** sekmesi.
+17. Emin olun **yapılandırma** ayarlanır **yayın** ve **Platform** ayarlanır **iPhone**.
+18. Denetleme **iTunes paket Arşivi (IPA) Oluştur** onay kutusu. Bu ayar her neden olacak **yayın** .ipa dosyası oluşturmak için (, seçili yapılandırma olduğundan) oluşturun. Bu dosya için Apple App Store yayına yönelik gönderilebilir.
+
+    > [!NOTE]
+    > **iTunes meta verileri** ve **iTunesArtwork** App Store sürümleri için gerekli değildir. Daha fazla bilgi için göz atın [Xamarin.iOS uygulamalarında iTunesMetadata.plist dosyası](~/ios/deploy-test/app-distribution/itunesmetadata.md) ve [iTunes resmi](~/ios/app-fundamentals/images-icons/app-icons.md#itunes-artwork).
+
+19. Xamarin.iOS projesi adından farklı bir .ipa dosya adı belirtmek için bu alana giriş **paket adı** alan.
+
+    ![iOS paket grubu imzalama ayarlarını](publishing-to-the-app-store-images/ipaOptions-w157.png "iOS paket grubu imzalama ayarlarını")
+
+20. Derleme yapılandırmasını kaydedin ve kapatın.
 
 -----
 
-## <a name="building-and-submitting-the-distributable"></a>Derleme ve dağıtılabilir gönderiliyor
+## <a name="configure-your-app-in-itunes-connect"></a>İTunes CONNECT'te uygulamanızı yapılandırma
 
-Düzgün şekilde yapılandırılıp yapılandırılmadığını Xamarin.iOS uygulamanızı ile artık, gönderme son dağıtım yapı için Apple gözden geçirme ve yayın yapmak hazırsınız.
+[iTunes Connect](https://itunesconnect.apple.com) App Store, iOS uygulamaları yönetmek için web tabanlı araçları paketidir. Apple'a gözden geçirmeniz için gönderildi ve App Store üzerinde yayımlanan önce Xamarin.iOS uygulamanızı iTunes CONNECT'te düzgün şekilde yapılandırılmalıdır.
+
+Bunun nasıl yapılacağını öğrenmek için [uygulama iTunes CONNECT'te yapılandırma](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) Kılavuzu.
+
+## <a name="build-and-submit-your-app"></a>Derleme ve uygulamanızı gönderin
+
+Derleme ayarları düzgün yapılandırıldığını ve iTunes Connect gönderiminiz bekleyen ile artık uygulamanızı oluşturun ve Apple'a gönderme.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-### <a name="build-your-archive"></a>Arşiviniz derleme
+1. Mac için Visual Studio'da **yayın** yapılandırma ve oluşturmak istediğiniz bir cihaz (simülatörü değil) oluşturun.
 
-1. Seçin **yayın | Aygıt** Mac için Visual Studio yapılandırması:
+    ![Yapılandırma ve platform seçimi derleme](publishing-to-the-app-store-images/chooseConfig-m157.png "yapı yapılandırma ve platform seçimi")
 
-    ![](publishing-to-the-app-store-images/buildxs01new.png "Yayın Seç | Aygıt Yapılandırması")
-1. Gelen **yapı** menüsünde, select **yayımlama arşiv**:
+2. Gelen **derleme** menüsünde **yayımlama için arşiv**.
+3. Arşiv oluşturulduktan sonra **arşivleri** görünümü görüntülenir:
 
-    ![](publishing-to-the-app-store-images/buildxs02new.png "Yayımlama Arşivi'ni seçin")
+    ![Arşivleri görüntüle](publishing-to-the-app-store-images/archives-m157.png "arşivleri görüntüle")
 
-1. Arşiv oluşturulduktan sonra **arşivler** görünüm görüntülenecek:
+    > [!NOTE]
+    > Varsayılan olarak **arşivleri** görünüm yalnızca açık çözüm için arşivleri gösterir. Arşivleri olan tüm çözümleri görmek için **tüm arşivleri Göster** onay kutusu. Hata ayıklama bilgileri içerirler gerekirse kilitlenme raporlarının sembollerini oluşturmak için kullanılabilir, böylece eski arşivleri tutmak için iyi bir fikirdir.
 
-    ![](publishing-to-the-app-store-images/buildxs03new.png "Arşivler görünümü görüntülenir")
+4. Tıklayın **imzala ve Dağıt...**  Yayımlama Sihirbazı'nı açın.
+5. Seçin **App Store** dağıtım kanalı. **İleri**'ye tıklayın.
 
+    ![Dağıtım Kanalı seçimi](publishing-to-the-app-store-images/distChannel-m157.png "dağıtım kanal seçimi")
+
+6. İçinde **sağlama profili** penceresinde, imzalama kimliği, uygulama ve sağlama profili seçin. **İleri**'ye tıklayın.
+
+    ![Sağlama profili seçimi](publishing-to-the-app-store-images/provProfileSelect-m157.png "sağlama profili seçimi")
+
+7. Kullanımınızın Paket ayrıntılarını doğrulayın ve tıklayın **Yayımla** uygulamanız için bir .ipa dosyasını kaydetmek için:
+
+    ![Uygulama ayrıntısı doğrulama](publishing-to-the-app-store-images/publish-m157.png "uygulama ayrıntısı doğrulama")
+
+8. .İpa kaydedildikten sonra uygulamanızı iTunes CONNECT'te yüklenmek hazırdır.
+
+    ![Gönderim için hazır](publishing-to-the-app-store-images/readyToGo-m157.png "gönderimi için hazır")
+
+9. Tıklayın **açık uygulama yükleyicisi** ve oturum açın (yapmanız gerektiğini unutmayın [bir uygulamaya özgü parolası oluşturmanız](https://support.apple.com/ht204397) Apple Kimliğinizi için).
+
+    > [!NOTE]
+    > Aracı hakkında daha fazla bilgi için göz atın [uygulama yükleyicisi Apple'nın dilimden](https://help.apple.com/itc/apploader/#/apdS673accdb).
+
+10. Seçin **uygulamanızı teslim** tıklatıp **Seç** düğmesi:
+
+    ![Select teslim uygulamanızı](publishing-to-the-app-store-images/publishvs01.png "teslim uygulamanızı seçin")
+
+11. Yukarıda oluşturduğunuz .ipa dosyasını seçin ve tıklayın **Tamam** düğmesi.
+12. Uygulama Yükleyicisi dosya doğrular:
+
+    ![Doğrulama ekranı](publishing-to-the-app-store-images/publishvs02.png "doğrulama ekranı")
+
+13. Tıklayın **sonraki** düğmesi ve uygulamayı doğrulanmış karşı App Store:
+
+    ![App Store karşı doğrulama](publishing-to-the-app-store-images/publishvs03.png "App Store karşı doğrulama")
+
+14. Tıklayın **Gönder** Apple uygulamayı gözden geçirme için göndermek için düğme.
+15. Uygulama Yükleyicisi zaman dosyası başarıyla karşıya yüklendi bilgilendirecektir.
+
+    > [!NOTE]
+    > Apple uygulamalarla Reddet **iTunesMetadata.plist** aşağıdaki gibi bir hata výsledek .ipa dosyasına dahil:
+    >
+    > `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`
+    >
+    > Bu hata için bir geçici çözüm için göz atın [yazıya Xamarin forumlarında](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1).
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 > [!NOTE]
-> While eski _App Store_ ve _geçici_ yapılandırmaları şimdi kaldırılmış tüm Mac şablon projeleri için Visual Studio, eski projeleri hala Bu yapılandırmalar içerdiğini fark edebilirsiniz. Bu durumda, kullanmaya devam edebilirsiniz **App Store | Aygıt** listenin yukarıdaki 1. adımda yapılandırma.
+> Visual Studio 2017 şu anda desteklemiyor **yayımlama için arşiv** iş akışı, Mac için Visual Studio içinde bulunamadı
 
-### <a name="sign-and-distribute-your-app"></a>Oturum ve uygulamanızı dağıtın
+1. Visual Studio 2017 aktarıldığından emin emin [eşleştirilmiş bir Mac derleme konağı](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Seçin **yayın** Visual Studio 2017'den **çözüm yapılandırmaları** açılır listesinde, ve **iPhone** gelen **çözüm platformları** açılır.
 
- Arşiv, uygulamanızın derleme her seferinde onu otomatik olarak açılır **arşivler Görünüm**, tüm görüntüleme projeleri arşivlenmiş; çözümü tarafından gruplandırılır. Varsayılan olarak bu görünüm yalnızca geçerli, açık çözüm gösterir. Arşivler sahip tüm çözümleri görmek için tıklayın **tüm arşivler Göster** seçeneği.
+    ![Yapılandırma ve platform seçimi derleme](publishing-to-the-app-store-images/chooseConfig-w157.png "yapı yapılandırma ve platform seçimi")
 
- Böylece oluşturulan tüm hata ayıklama bilgileri daha sonraki bir tarihte görüntülenir (App Store veya Kurumsal dağıtımlar) müşterilere dağıtılan arşivler kalmasını önerilir.
+3. Projeyi oluşturun. Bu, bir .ipa dosyası oluşturur.
 
- Uygulamanızı imzalamak ve dağıtım için hazırlamak için:
+    > [!NOTE]
+    > [Yayın derleme yapılandırmasını güncelleştirme](#update-the-release-build-configuration) bölümünde bu belge, uygulamanın derleme ayarlarını her biri için bir .ipa dosyası oluşturmak için yapılandırılan **yayın** oluşturun.
 
+4. Windows makinesinde .ipa dosyasını bulmak için Visual Studio 2017'de Xamarin.iOS proje adının üzerine sağ tıklayın **Çözüm Gezgini** ve **klasörü dosya Gezgini'nde Aç**. Ardından, tam olarak açılmış Windows **dosya Gezgini**, gitmek **iPhone/bin/yayın** alt. Sahip olduğunuz sürece [.ipa dosyasını çıkış konumunu özelleştirilmiş](#customize-the-ipa-location), bu dizinde olması gerekir.
+5. Bunun yerine Mac derleme konağı .ipa dosyasını görüntülemek için Visual Studio 2017'de Xamarin.iOS proje adına sağ tıklayın **Çözüm Gezgini** (Windows üzerinde) seçip **derleme sunucusunda IPA dosyasını Göster**. Bunu bir **Bulucu** seçili .ipa dosyası ile Mac derleme konağı üzerindeki pencere.
+6. Mac derleme konağı üzerinde açın **uygulama Başlatıcısı**. Xcode içindeki seçin **Xcode > açık bir geliştirme aracı > Uygulama Başlatıcısı**.
 
-1. Seçin **oturum ve Dağıt...** , aşağıda Resimli:
+    > [!NOTE]
+    > Aracı hakkında daha fazla bilgi için göz atın [uygulama yükleyicisi Apple'nın dilimden](https://help.apple.com/itc/apploader/#/apdS673accdb).
 
-    ![](publishing-to-the-app-store-images/buildxs04new.png "Oturum seçin ve Dağıt...")
+7. Uygulama Başlatıcısı için oturum açın (yapmanız gerektiğini Not [bir uygulamaya özgü parolası oluşturmanız](https://support.apple.com/ht204397) Apple Kimliğinizi için).
+8. Seçin **uygulamanızı teslim** tıklatıp **Seç** düğmesi:
 
-1. Bu, Yayımlama Sihirbazı'nı açar. Seçin **App Store** dağıtım kanal bir paket oluşturmak ve uygulama yükleyicisi açmak için:
+    ![Select teslim uygulamanızı ] (publishing-to-the-app-store-images/publishvs01.png "teslim uygulamanızı seçin")
 
-    ![](publishing-to-the-app-store-images/distribute01.png "Açık uygulama yükleyicisi")
+9. Yukarıda oluşturulan .ipa dosyasını seçin ve tıklayın **Tamam**.
+10. Uygulama Yükleyicisi dosya doğrular:
 
-1. Sağlama profili ekranında, kimlik imzalama ve sağlama profili karşılık gelen seçin veya başka bir kimlikle yeniden oturum açın:
+    ![Doğrulama ekranı](publishing-to-the-app-store-images/publishvs02.png "doğrulama ekranı")
 
-    ![](publishing-to-the-app-store-images/distribute02.png "Kimlik imzalama ve sağlama profili karşılık gelen seçin")
+11. Tıklayın **sonraki** düğmesi ve uygulamayı doğrulanmış karşı App Store:
 
-1. Paketinizi ayrıntılarını doğrulayın ve tıklatın **Yayımla** kaydetmek için `.ipa` paketi:
+    ![App Store karşı doğrulama](publishing-to-the-app-store-images/publishvs03.png "App Store karşı doğrulama")
 
-    ![](publishing-to-the-app-store-images/distribute03.png "Paket ayrıntılarını doğrulayın")
+12. Tıklayın **Gönder** Apple uygulamayı gözden geçirme için göndermek için düğme.
+13. Uygulama Yükleyicisi zaman dosyası başarıyla karşıya yüklendi bilgilendirecektir.
 
-1. Bir kez, `.ipa` bırakıldı kaydedildi, uygulamanızı iTunes Connect uygulama yükleyicisi üzerinden yüklenecek hazırdır:
-
-    ![](publishing-to-the-app-store-images/distribute04.png "Yayın başarılı ekranı")
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Visual Studio için Xamarin eklentisi şu anda arşivleme iş akışı uygulama mağazası yayımlama iOS uygulamaları için desteklemiyor. Sonuç olarak, bir IPA oluşturulan aracılığıyla karşıya yükleme sahip **yapı geçici IPA** aşağıda açıklanan komutu.
-
-
-## <a name="build-an-ipa"></a>Bir IPA derleme
-
- Bu bölümde, geçici kullanırken, iş akışı veya kurumsal dağıtım için benzer bir IPA oluşturma açıklanmaktadır. Ancak, uygulama Mağazası'nın sağlama yukarıda oluşturduğunuz profili kullanarak imzalanacaktır.
-
- Aşağıdakileri yapın:
-
-1. İçinde **Çözüm Gezgini**, Xamarin.iOS proje adına sağ tıklayın ve seçin **özellikleri** düzenlemek üzere açmak için:
-
-    ![](publishing-to-the-app-store-images/imagevs01.png "Özellikler'i seçin")
-1. Seçin **iOS paket imzalama** ve sağlama profili sağlama profili bir uygulama mağazasının değiştirin:
-
-    ![](publishing-to-the-app-store-images/ipa01.png "İOS paket imzalama seçin ve sağlama profili sağlama profili bir uygulama mağazasının değiştirin")
-1. Seçin **iOS IPA Seçenekleri > yapılandırma > geçici** (varsa **geçici** select bir seçenek değil **sürüm** yerine) ve bir IPA dosyası oluşturmak için onay kutusunu işaretleyin:
-
-    ![](publishing-to-the-app-store-images/imagevs02.png "Geçici yapılandırma açılır listeden seçin")
-
-1. İsteğe bağlı olarak belirleyebileceğiniz bir **paket adı** Xamarin.iOS projesi aynı ada sahip belirtilmezse IPA için.
-1. Proje Özellikleri yaptığınız değişiklikleri kaydedin.
-1. Seçin **geçici** Mac için Visual Studio'dan **yapı yapılandırması** açılır:
-
-    ![](publishing-to-the-app-store-images/imagevs05.png "Geçici yapı yapılandırması aşağı açılır listeden seçin")
-1. IPA paketi oluşturmak için projeyi oluşturun.
-1. IPA oluşturulacak `Bin`  >  _iOS aygıtı_  >  `Ad Hoc` klasörü:
-
-    ![](publishing-to-the-app-store-images/imagevs06.png "Dosya Gezgini'nde gösterilen IPA'sı")
+    > [!NOTE]
+    > Apple uygulamalarla Reddet **iTunesMetadata.plist** aşağıdaki gibi bir hata výsledek .ipa dosyasına dahil:
+    >
+    > `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`
+    >
+    > Bu hata için bir geçici çözüm için göz atın [yazıya Xamarin forumlarında](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1).
 
 -----
 
+## <a name="itunes-connect-status"></a>iTunes Connect durumu
 
-## <a name="customizing-the-ipa-location"></a>IPA konumu özelleştirme
+Uygulama gönderiminiz durumunu görmek için iTunes CONNECT'te oturum açın ve uygulamanızı seçin. Başlangıç durumu olmalıdır **İnceleme için bekleyen**, geçici okuma ancak **karşıya alınan** bunu işlenirken.
 
-Yeni bir **MSBuild** özelliği `IpaPackageDir` özelleştirmek kolaylaştırmak için eklenene `.ipa` çıkış dosyası konumu. Varsa `IpaPackageDir` özel bir konuma ayarlı `.ipa` dosya, varsayılan zaman damgalı alt yerine o konumda yerleştirilecek. Otomatik oluşturma sürekli tümleştirme (CI) derlemeler için kullanılanlar gibi doğru çalışması için bir özel dizin yolu Bel oluşturduğunda bu yararlı olabilir.
+![Gözden geçirme için bekleyen](publishing-to-the-app-store-images/image21.png "gözden geçirmeniz için bekleniyor")
 
-Yeni özellik kullanmak için olası birkaç yolu vardır:
+## <a name="tips-and-tricks"></a>İpuçları ve püf noktaları
 
-Örneğin, çıktı için `.ipa` dosya eski varsayılan dizinine (Xamarin.iOS 9.6 olduğu gibi ve daha düşük), ayarladığınız `IpaPackageDir` özelliğine `$(OutputPath)` aşağıdaki yaklaşımlardan birini kullanarak. Her iki yaklaşımın yanı sıra kullanan komut satırı derlemeleri IDE yapılar dahil olmak üzere tüm birleşik API Xamarin.iOS derlemeleri ile uyumlu `xbuild`, `msbuild`, veya `mdtool`:
+### <a name="customize-the-ipa-location"></a>.İpa konumunu özelleştirin
 
-  - İlk seçenek ayarlamaktır `IpaPackageDir` özelliği içinde bir `<PropertyGroup>` öğesinde bir **MSBuild** dosya. Örneğin, aşağıdaki ekleyebilirsiniz `<PropertyGroup>` iOS uygulaması projesi altına `.csproj` dosyası (yalnızca kapatmadan önce `</Project>` etiketi):
+Bir **MSBuild** özelliği `IpaPackageDir`, .ipa dosyasını çıkış konumunu özelleştirmek mümkün kılar. Varsa `IpaPackageDir` ayarlanmış varsayılan zaman damgalı alt dizini yerine o konumda .ipa dosyası özel bir konuma yerleştirilir. Sürekli Tümleştirme (CI) derlemeleri için kullanılanlar gibi düzgün çalışması için bir özel dizin yolu dayanan derlemeleri otomatik oluşturma kullanılırken bu yararlı olabilir.
 
-      ```xml
-        <PropertyGroup>
-            <IpaPackageDir>$(OutputPath)</IpaPackageDir>
-        </PropertyGroup>
-      ```
-  - Daha iyi bir yaklaşım eklemektir bir `<IpaPackageDir>` var olan alt öğeye `<PropertyGroup>` oluşturmak için kullanılan yapılandırma karşılık gelen `.ipa` dosyası. Bu proje iOS IPA seçeneklerini proje özellikleri sayfasında planlı bir ayar ile gelecekte uyumluluk hazırlayacağı iyidir. Şu anda kullanırsanız `Release|iPhone` oluşturmak için yapılandırma `.ipa` dosyası tam güncelleştirilmiş özellik grubu görünebilir aşağıdakine benzer:
+Yeni özelliği kullanmak için olası birkaç yolu vardır. Örneğin, eski varsayılan dizini (Xamarin.iOS 9.6 olduğu gibi ve daha düşük) .ipa dosyasına çıkarmak için ayarlayabileceğiniz `IpaPackageDir` özelliğini `$(OutputPath)` aşağıdaki yaklaşımlardan birini kullanarak. Her iki yaklaşım kullanan komut satırı derlemeleri yanı sıra, IDE yapılar da dahil olmak üzere tüm API Xamarin.iOS birleşik derlemeler ile uyumlu olan **msbuild** veya **mdtool**:
 
-      ```xml
-      <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' )
-        <Optimize>true</Optimize>
-        <OutputPath>bin\iPhone\Release</OutputPath>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <ConsolePause>false</ConsolePause>
-        <CodesignKey>iPhone Developer</CodesignKey>
-        <MtouchUseSGen>true</MtouchUseSGen>
-        <MtouchUseRefCounting>true</MtouchUseRefCounting>
-        <MtouchFloat32>true</MtouchFloat32>
-        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-        <MtouchLink>SdkOnly</MtouchLink>
-        <MtouchArch>;ARMv7, ARM64</MtouchArch>
-        <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-        <MtouchTlsProvider>Default</MtouchTlsProvider>
-        <PlatformTarget>x86&</PlatformTarget>
-        <BuildIpa>true</BuildIpa>
-        <IpaPackageDir>$(OutputPath</IpaPackageDir>
-      </PropertyGroup>
-      ```
-İçin alternatif bir tekniği `msbuild` veya `xbuild` komut satırı derlemeleri olduğu eklemek için bir `/p:` ayarlamak için komut satırı bağımsız değişkeni `IpaPackageDir` özelliği. Bu durumda unutmayın `msbuild` genişletme `$()` ifadeleri geçirilen komut satırında kullanmak mümkün değildir `$(OutputPath)` sözdizimi. Bunun yerine bir tam yol adı sağlamanız gerekir. Mono'nın `xbuild` Genişlet komutu `$()` ifadeler, ancak bir tam yol adı olduğundan kullanmak için hala tercih `xbuild` sonunda şunun için kullanım dışı kalacaktır [platformlar arası sürümü `msbuild` ](http://www.mono-project.com/docs/about-mono/releases/4.4.0/#msbuild-preview-for-os-x)gelecekte serbest bırakır. Bu yaklaşımı kullanır tam bir örnek Windows'da şuna benzer şekilde görünebilir:
+- İlk seçenek ayarlamaktır `IpaPackageDir` özelliği içinde bir `<PropertyGroup>` öğesinde bir **MSBuild** dosya. Örneğin, aşağıdaki ekleyebilirsiniz `<PropertyGroup>` iOS uygulaması proje .csproj dosyasının alt kısmına (yalnızca kapatmadan önce `</Project>` etiketi):
+
+    ```xml
+    <PropertyGroup>
+      <IpaPackageDir>$(OutputPath)</IpaPackageDir>
+    </PropertyGroup>
+    ```
+
+- Daha iyi bir yaklaşım eklemektir bir `<IpaPackageDir>` varolan alt öğeye `<PropertyGroup>` .ipa dosyası oluşturmak için kullanılan yapılandırma karşılık gelir. İOS IPA seçenekleri proje özellikleri sayfasında bir planlı ayarıyla ileriye dönük uyumluluk için proje hazırlayacak daha iyi olmasıdır. Şu anda kullanıyorsanız `Release|iPhone` yapılandırma tam güncelleştirilmiş özellik grubunu .ipa dosyasını oluşturmak için aşağıdaki gibi görünebilir:
+
+    ```xml
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone'">
+       <Optimize>true</Optimize>
+       <OutputPath>bin\iPhone\Release</OutputPath>
+       <ErrorReport>prompt</ErrorReport>
+       <WarningLevel>4</WarningLevel>
+       <ConsolePause>false</ConsolePause>
+       <CodesignKey>iPhone Developer</CodesignKey>
+       <MtouchUseSGen>true</MtouchUseSGen>
+       <MtouchUseRefCounting>true</MtouchUseRefCounting>
+       <MtouchFloat32>true</MtouchFloat32>
+       <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+       <MtouchLink>SdkOnly</MtouchLink>
+       <MtouchArch>;ARMv7, ARM64</MtouchArch>
+       <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+       <MtouchTlsProvider>Default</MtouchTlsProvider>
+       <PlatformTarget>x86&</PlatformTarget>
+       <BuildIpa>true</BuildIpa>
+       <IpaPackageDir>$(OutputPath</IpaPackageDir>
+    </PropertyGroup>
+    ```
+
+Alternatif bir yöntem için **msbuild** olan komut satırı derlemeleri eklemek için bir `/p:` ayarlamak için komut satırı bağımsız değişkeni `IpaPackageDir` özelliği. Bu durumda aklınızda bulundurun **msbuild** genişletme `$()` ifadeleri geçirilen komut satırında kullanmak mümkün değildir `$(OutputPath)` söz dizimi. Bunun yerine, bir tam yol adı belirtmeniz gerekir.
 
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln
@@ -298,88 +335,24 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.16
 Veya aşağıdaki Mac üzerinde:
 
 ```bash
-xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
+msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
-Dağıtımınız ile derleme oluşturulur ve arşivleneceğini, artık iTunes Bağlan uygulamanıza göndermek hazırsınız.
-
-### <a name="automatically-copy-app-bundles-back-to-windows"></a>Windows geri .app paketleri otomatik olarak kopyalama
-
-[!include[](~/ios/includes/copy-app-bundle-to-windows.md)]
-
-## <a name="submitting-your-app-to-apple"></a>Uygulamanızı apple'a gönderiliyor
-
-> [!NOTE]
-> Apple iOS uygulamaları için doğrulama işlemi son zamanlarda değişti ve uygulamalarla reddedebilir `iTunesMetadata.plist` IPA dahil. Hatayla karşılaşırsanız `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`açıklanan geçici çözüm [burada](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) sorun gidermeniz gerekir.
-
-Dağıtım yapı tamamlandı, iOS uygulamanız gözden geçirme için Apple göndermek ve App Store'da sürüm hazır olursunuz.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
- Aşağıdakileri yapın:
-
-1. Başlat **Xcode**.
-2. Gelen **penceresi** menüsünü seçin **düzenleyici**.
-3. Tıklayın **arşivler** sekmesinde ve yukarıda oluşturulan Arşivi'ni seçin:
-
-    ![](publishing-to-the-app-store-images/publishxs01.png "Göndermek için Arşivi'ni seçin")
-4. Tıklayın **doğrula...**  düğmesi.
-5. Karşı doğrulayın ve tıklatın için hesabı seçin **Seç** düğmesi:
-
-    ![](publishing-to-the-app-store-images/publishxs02.png "Karşı doğrulamak için bir hesap seçin")
-6. Tıklatın **doğrulama** düğmesi:
-
-    ![](publishing-to-the-app-store-images/publishxs03.png "Dosya Özeti iletişim kutusu")
-7. Paket herhangi bir sorun varsa, bunlar görüntülenir.
-8. Tüm sorunları düzeltin ve Visual Studio'da arşiv Mac için yeniden oluşturma
-9. Tıklayın **gönderme...**  düğmesi.
-10. Karşı doğrulayın ve tıklatın için hesabı seçin **Seç** düğmesi:
-
-    ![](publishing-to-the-app-store-images/publishxs04.png "Karşı doğrulamak için bir hesap seçin")
-11. Tıklatın **gönderme** düğmesi:
-
-    ![](publishing-to-the-app-store-images/publishxs05.png "Dosya Özeti iletişim kutusu")
-12. Xcode bildirin, ne zaman tamamlandı iTunes Bağlan dosyası karşıya yükleniyor.
-
-
-Kaydettikten sonra arşiv iş akışı Mac için Visual Studio içinde uygulama yükleyicisi otomatik olarak açılır _.ipa_:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Apple uygulamanıza gözden geçirme için gönderme uygulama yükleyicisi uygulama kullanılarak yapılır. Bu adımları Mac yapı ana bilgisayarda yapılması gerekir. Uygulama Yükleyicisi ' bir kopyasını yükleyebilirsiniz [burada](https://itunesconnect.apple.com/apploader/ApplicationLoader_3.0.dmg).
-
------
-
-1. Seçin *uygulamanızı teslim* tıklatıp *Seç* düğmesi:
-
-    [![](publishing-to-the-app-store-images/publishvs01.png "Uygulamanızı seçin teslim")](publishing-to-the-app-store-images/publishvs01.png#lightbox)
-
-2. Zip ya da yukarıda oluşturduğunuz IPA dosyasını seçin ve'ı tıklatın **Tamam** düğmesi.
-
-3. Uygulama Yükleyicisi dosya doğrular:
-
-    [![](publishing-to-the-app-store-images/publishvs02.png "Doğrulama ekranı")](publishing-to-the-app-store-images/publishvs02.png#lightbox)
-4. Tıklatın *sonraki* düğmesi ve uygulamayı doğrulanmış karşı App Store:
-
-    [![](publishing-to-the-app-store-images/publishvs03.png "Uygulama mağazası karşı doğrulama")](publishing-to-the-app-store-images/publishvs03.png#lightbox)
-5. Tıklatın **Gönder** Apple uygulamaya gözden geçirme için Gönder düğmesi.
-6. Uygulama Yükleyicisi zaman dosyası başarıyla karşıya yüklendi size bildirir.
-
-## <a name="itunes-connect-status"></a>iTunes bağlantı durumu
-
-Oturum iTunes geri Bağlan ve uygulamanızı kullanılabilir uygulamaları listesinden seçin, iTunes Bağlan durum şimdi bu olduğunu göstermelidir **gözden geçirilmek üzere bekleyen** (geçici olarak okuyabilirsiniz **alınanKarşıyaYükle** işlenirken):
-
-[![](publishing-to-the-app-store-images/image21.png "İTunes durum Connect artık gözden geçirilmek üzere beklediğini gösterilmesi gerekir")](publishing-to-the-app-store-images/image21.png#lightbox)
+Dağıtımınız ile yapı oluşturulan ve arşivlenmiş, artık uygulamanızı iTunes Connect göndermek hazır olursunuz.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, yapılandırma, oluşturma ve uygulamanın uygulama mağazası yayının göndermek için adım adım kılavuz sunulmuştur. İlk olarak, oluşturmak ve sağlama profili bir dağıtım yüklemek için gerekli olan adımları ele. Ardından, Visual Studio ve Mac için Visual Studio dağıtım yapı oluşturmak için nasıl kullanılacağı aracılığıyla gitti. Son olarak, iTunes Bağlan ve aracı uygulamanın uygulama mağazası göndermek için nasıl kullanılacağı gösterilmiştir.
-
+Bu makalede yapılandırma, oluşturma ve bir iOS App Store yayına yönelik gönderme açıklanmıştır.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Görüntülerle Çalışma](~/ios/app-fundamentals/images-icons/index.md)
-- [iOS uygulama geliştirme iş akışı Kılavuzu: uygulamaları dağıtma](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
-- [Uygulama mağazası gönderimi ipuçları](https://developer.apple.com/appstore/resources/submission/tips.html)
-- [Ortak uygulama reddi](https://developer.apple.com/app-store/review/rejections/)
-- [App Store gözden geçirme yönergeleri](https://developer.apple.com/appstore/resources/approval/guidelines.html)
+- [Apple Geliştirici Portalı'nı (Apple)](https://developer.apple.com/account/)
+- [iTunes Connect (Apple)](https://itunesconnect.apple.com)
+- [App Store gözden geçirme yönergeleri (Apple)](https://developer.apple.com/appstore/resources/approval/guidelines.html)
+- [Ortak uygulama redleri (Apple)](https://developer.apple.com/app-store/review/rejections/)
+- [Xamarin.iOS'teki özellikler ile çalışma](~/ios/deploy-test/provisioning/capabilities/index.md)
+- [Xamarin.iOS yetkilendirmeleri ile çalışma](~/ios/deploy-test/provisioning/entitlements.md)
+- [Uygulama iTunes CONNECT'te yapılandırma](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
+- [Xamarin.iOS uygulama simgeleri](~/ios/app-fundamentals/images-icons/app-icons.md)
+- [Başlatma ekranları Xamarin.iOS uygulamaları için](~/ios/app-fundamentals/images-icons/launch-screens.md)
+- [Uygulama Yükleyicisi belgeleri (Apple)](https://help.apple.com/itc/apploader/#/apdS673accdb)

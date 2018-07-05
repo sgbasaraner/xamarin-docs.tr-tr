@@ -1,30 +1,30 @@
 ---
-title: 'Xamarin.Essentials: Titreşimi'
-description: Bu belgede, istenen bir süre için vibrate işlevselliği durdurup başlatın sağlar Xamarin.Essentials titreşimi sınıfında açıklanmaktadır.
+title: 'Xamarin.Essentials: Titreşim'
+description: Bu belgede vibrate işlevselliğini istenen bir zaman miktarı için başlatıp olanak sağlayan Xamarin.Essentials Titreşim sınıfında açıklanmaktadır.
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2a2902ca4eac8b889f6875580d7cb4ea352803a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1de464d289bc684015e5fb8489683e3134535b70
+ms.sourcegitcommit: cb69bdb469db0b3118e365d71114091c6febb027
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782927"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37406777"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: Titreşimi
+# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: Titreşim
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**Titreşimi** sınıfı, istenen bir süre için vibrate işlevselliği durdurup başlatın olanak sağlar.
+**Titreşim** sınıfı, vibrate işlevselliğini istenen bir zaman miktarı için başlatıp olanak tanır.
 
 ## <a name="getting-started"></a>Başlarken
 
-Erişim için **titreşimi** işlevselliği aşağıdaki platform özel kurulum gereklidir.
+Erişim için **Titreşim** işlevselliğini aşağıdaki platforma özgü Kurulum gereklidir.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Vibrate izni gereklidir ve Android projesinde yapılandırılması gerekir. Bu, aşağıdaki yollarla eklenebilir:
+Vibrate izni gereklidir ve Android projede yapılandırılması gerekir. Bu, aşağıdaki yollarla eklenebilir:
 
 Açık **AssemblyInfo.cs** altında dosya **özellikleri** klasör ekleyin:
 
@@ -32,23 +32,23 @@ Açık **AssemblyInfo.cs** altında dosya **özellikleri** klasör ekleyin:
 [assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
 ```
 
-YA da güncelleştirme Android bildirim:
+YA da Android bildirimini güncelleştir:
 
-Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve aşağıdaki içine ekleyin **bildirim** düğümü.
+Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve içine aşağıdaki **bildirim** düğümü.
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-Veya Anroid projeye sağ tıklayın ve projenin özelliklerini açın. Altında **Android derleme bildirimi** Bul **gerekli izinler:** alan ve onay **VIBRATE** izni. Bu otomatik olarak güncelleştirilecek **AndroidManifest.xml** dosya.
+Anroid projeye sağ tıklayın ve proje özelliklerini açın. Altında **Android bildirim** Bul **gerekli izinler:** alan ve onay **VIBRATE** izni. Bu otomatik olarak güncelleştirecektir **AndroidManifest.xml** dosya.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Ek kurulumu gerekmez.
+Ek kurulum gerekli.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Ek kurulumu gerekmez.
+Ek kurulum gerekli.
 
 -----
 
@@ -60,7 +60,7 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-Titreşim işlevselliği süreyi kümesi veya varsayılan değer 500 milisaniye istenebilir.
+Titreşim işlevselliği, belirli bir zaman veya aralığını 500 milisaniyenin varsayılan istenebilir.
 
 ```csharp
 try
@@ -82,7 +82,7 @@ catch (Exception ex)
 }
 ```
 
-Cihaz titreşimi iptali ile istenebilir `Cancel` yöntemi:
+Cihaz Titreşim iptali ile istenebilir `Cancel` yöntemi:
 
 ```csharp
 try
@@ -99,11 +99,12 @@ catch (Exception ex)
 }
 ```
 
-## <a name="platform-differences"></a>Platform farklar
+## <a name="platform-differences"></a>Platform farklılıklarını
 
 | Platform | Fark |
 | --- | --- |
-| iOS | Her zaman için 500 milisaniye Titreşim çıkardığı. |
+| iOS | Cihaz "Ring üzerinde Vibrate" olarak ayarlandığında yalnızca Titreşim çıkardığı. |
+| iOS | Her zaman aralığını 500 milisaniyenin için Titreşim çıkardığı. |
 | iOS | Titreşim iptal etmek mümkün değildir. |
 
 ## <a name="api"></a>API
