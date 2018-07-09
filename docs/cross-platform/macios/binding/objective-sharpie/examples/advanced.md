@@ -1,23 +1,23 @@
 ---
-title: (El ile) gerçek örnek Gelişmiş
-description: Bu belge, başlık altında hedefi Sharpie yaptığı içine Insight sağlar hedefi Sharpie girdisi olarak xcodebuild çıktısını kullanmayı açıklar.
+title: Gelişmiş (el ile) gerçek örneği
+description: Bu belge, başlık altında hedefi Sharpie yaptığı konusunda fikir sağlar hedefi Sharpie girdisi olarak xcodebuild çıktısını kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 811b783d33a20e23a7e807861e19355a1c372b84
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: c4f7f1e9702fb2ee0f5525343a52e3aacd85d68c
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209407"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855266"
 ---
-# <a name="advanced-manual-real-world-example"></a>(El ile) gerçek örnek Gelişmiş
+# <a name="advanced-manual-real-world-example"></a>Gelişmiş (el ile) gerçek örneği
 
 **Bu örnekte [Facebook POP kitaplığından](https://github.com/facebook/pop).**
 
-Bu bölüm, burada kullanacağız Apple'nın bağlama, daha gelişmiş bir yaklaşım kapsar `xcodebuild` ilk POP Projeyi derlemek için aracı ve giriş hedefi Sharpie için el ile türetme. Bu, aslında hedefi Sharpie önceki bölümdeki başlık altında yaptıklarını kapsar.
+Bu bölümde, burada kullanacağız Apple'nın bağlama, daha gelişmiş bir yaklaşım ele alınmaktadır `xcodebuild` ilk POP'ye projesi oluşturmak için aracı ve giriş hedefi Sharpie için el ile türetme. Bu temelde, hedefi Sharpie önceki bölümde başlık altında yapıyor da kapsar.
 
 ```
  $ git clone https://github.com/facebook/pop.git
@@ -27,7 +27,7 @@ Cloning into 'pop'...
 $ cd pop
 ```
 
-POP kitaplığı bir Xcode projesi olduğundan (`pop.xcodeproj`), biz yalnızca kullanabilirsiniz `xcodebuild` POP oluşturmak için. Bu işlem, sırayla hedefi Sharpie ayrıştırma gerekebilir üstbilgi dosyaları oluşturabilir. Bu bağlama önemlidir önce derleme neden olur. Aracılığıyla oluştururken `xcodebuild` geçirdiğiniz aynı SDK tanımlayıcısı ve mimari, emin olun, hedefi Sharpie geçirin (ve hedefi Sharpie 3.0 genellikle bunu sizin için unutmayın!) istediğiniz:
+Bir Xcode projesini POP kitaplığı sahip olduğundan (`pop.xcodeproj`), yalnızca kullanabiliriz `xcodebuild` POP oluşturulacak. Bu işlem, sırayla hedefi Sharpie ayrıştırmak gerekebilir üst bilgi dosyaları oluşturabilir. Bu bağlama önemli hale gelmeden önce oluşturmaya neden olur. İle derlerken `xcodebuild` geçirdiğiniz aynı SDK'sı tanımlayıcısı ve mimarisi olan emin olmak için hedefi Sharpie geçirin (ve hedefi Sharpie 3.0 genellikle bunu yapabilirsiniz, unutmayın!) istediğinize:
 
 ```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
@@ -50,9 +50,9 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 ** BUILD SUCCEEDED **
 ```
 
-Bir parçası olarak yapı bilgileri çıkışını konsolunda çok olacaktır `xcodebuild`. Yukarıda gösterildiği bir "CpHeader" hedef çalıştırıldığı görebiliriz üstbilgi dosyaları bir yapı çıktı dizinine; burada görüntülerle kopyalandı. Bu genellikle bir durumdur ve bağlama kolaylaştırır: yerel kitaplığın derleme bir parçası olarak, üst bilgi dosyaları çoğunlukla kolaylaştırmak için bağlama ayrıştırma oluşturan kaynaklarda bir "Genel" konuma kopyalanır. Bu durumda, POP'in başlık dosyalarının içinde olduğunu biliyoruz `build/Headers` dizin.
+Bir parçası olarak çok sayıda derleme bilgileri çıkış konsolunda olacaktır `xcodebuild`. Yukarıda gösterilen şekilde bir "CpHeader" hedef çalıştırıldığı görebiliriz üst bilgi dosyaları derleme çıktı dizinine burada görüntülerle kopyalandı. Bu durum genellikle ve bağlamayı kolaylaştırır: yerel kitaplığın yapı işleminin bir parçası olarak, üst bilgi dosyaları genellikle daha kolay bağını ayrıştırma oluşturan tüketilebilir bir "Genel" konuma kopyalanır. Bu durumda, POP'ın üst bilgi dosyaları olduğunu biliyoruz `build/Headers` dizin.
 
-Biz şimdi POP bağlamak hazır olursunuz. SDK'sı için yapı istediğimizi biliyoruz `iphoneos8.1` ile `arm64` mimarisi ve biz çok önem verdiğiniz üstbilgi dosyaları olduğundan `build/Headers` POP git checkout altında. Biz bakarsanız `build/Headers` dizin, biz üstbilgi dosyaları sayısı göreceksiniz:
+Artık POP bağlamak hazırız. Derlemek için SDK'sı istiyoruz biliyoruz `iphoneos8.1` ile `arm64` mimarisi ve biz önem verdiğiniz üst bilgi dosyaları olduğunu `build/Headers` POP git checkout altında. Biz bakarsanız `build/Headers` dizin, biz üst bilgi dosyaları sayısını göreceksiniz:
 
 ```
 $ ls build/Headers/POP/
@@ -64,7 +64,7 @@ POPAnimationExtras.h     POPCustomAnimation.h     POPSpringAnimation.h
 POPAnimationPrivate.h    POPDecayAnimation.h
 ```
 
-Biz bakarsanız `POP.h`, olan kitaplığın ana en üst düzey üstbilgi dosyası görebiliriz `#import`s diğer dosyalar. Bu nedenle, yalnızca geçirmek ihtiyacımız `POP.h` hedefi Sharpie için ve clang arka planda rest yeterlidir:
+Baktığımızda `POP.h`, kitaplığın ana üst düzey üst bilgi dosyası olduğu görebiliriz `#import`s diğer dosyalar. Bu nedenle, yalnızca geçirilecek ihtiyacımız `POP.h` hedefi Sharpie için ve clang gerisinde kalan yeterlidir:
 
 ```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
@@ -122,19 +122,23 @@ Submitting usage data to Xamarin...
 Done.
 ```
 
-Biz geçirilen fark edeceksiniz bir `-scope build/Headers` hedefi Sharpie bağımsız değişkeni. C ve Objective-C kitaplıkları gerekir çünkü `#import` veya `#include` kitaplığı ve bağlamak istediğiniz API uygulaması ayrıntılarını diğer üstbilgi dosyaları `-scope` bağımsız değişkeni hedefi tanımlı değil herhangi bir API'yi yoksaymak için Sharpie söyleyen bir içinde herhangi bir yerde dosya `-scope` dizin.
+Biz geçirilen görürsünüz bir `-scope build/Headers` hedefi Sharpie bağımsız değişkeni. C ve Objective-C kitaplıklarını gerekir çünkü `#import` veya `#include` bağlamak istediğiniz API'si ve kitaplık uygulama ayrıntıları diğer üst bilgi dosyaları `-scope` bağımsız değişken hedefi tanımlı değil herhangi bir API'yi yok saymak için Sharpie söyleyen bir içinde herhangi bir dosya `-scope` dizin.
 
-Size `-scope` bağımsız değişkeni genellikle düzgün bir şekilde uygulanan kitaplıkları için isteğe bağlı, ancak orada açıkça sağlama içinde hiçbir zarar.
+Size `-scope` bağımsız değişkeni genellikle indrebilirsiniz uygulanan kitaplıkları için isteğe bağlı, ancak açıkça sağlama içinde hiçbir zarar yoktur.
 
-Ayrıca, biz belirtilen `-c -Ibuild/headers`. İlk olarak, `-c` bağımsız değişkeni söyler hedefi komut satırı bağımsız değişkenleri yorumlama durdurmak ve sonraki tüm bağımsız değişkenler geçirmek için Sharpie _clang derleyici için doğrudan_. Bu nedenle, `-Ibuild/Headers` clang aramak için bir clang derleyici bağımsız değişkeni içeren altında `build/Headers`, burada POP üstbilgileri Canlı olduğu. Bu bağımsız değişken dosyaları bulmak nereye clang bilmez, `POP.h` olan `#import`lık. _Ne yaptığını clang geçirilecek anlamak için "hedefi Sharpie kullanılırken neredeyse tüm sorunlar" boil_.
+Ayrıca, belirlemiş `-c -Ibuild/headers`. İlk olarak, `-c` bağımsız değişken belirten komut satırı bağımsız değişkenleri yorumlama durdurmak ve sonraki tüm bağımsız değişkenler geçirmek için hedef Sharpie _clang derleyici için doğrudan_. Bu nedenle, `-Ibuild/Headers` aranacak clang yönlendiren bir clang derleyici bağımsız değişken içeren altında `build/Headers`, burada POP üstbilgileri Canlı olduğu. Bu bağımsız değişken dosyalarını bulmak nereye clang bilmez, `POP.h` olduğu `#import`ing. _Clang geçirmek ne yaptığını anlamak için "hedefi Sharpie kullanarak neredeyse tüm sorunlar" boil_.
 
 ### <a name="completing-the-binding"></a>Bağlama Tamamlanıyor
 
-Amaç Sharpie şimdi oluşturursa `Binding/ApiDefinitions.cs` ve `Binding/StructsAndEnums.cs` dosyaları.
+Amaç Sharpie artık oluşturulan `Binding/ApiDefinitions.cs` ve `Binding/StructsAndEnums.cs` dosyaları.
 
-Bunlar hedefi Sharpie'nın temel ilk geçişi sırasında bağlama ve bazı durumlarda tek ihtiyacınız olabilir. Ancak yukarıda belirtildiği gibi geliştirici genellikle hedefi Sharpie sona erdikten sonra oluşturulan dosyaları el ile değiştirmeniz gerekecek [sorunları giderin](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) , değil otomatik olarak işlenecek aracı tarafından.
+Hedefi Sharpie'nın temel ilk geçişinde bağlama sırasında bunlar ve bazı durumlarda ihtiyacınız olabilir. Ancak yukarıda belirtildiği gibi geliştirici genellikle oluşturulan dosyalar için hedefi Sharpie tamamlandıktan sonra el ile değiştirmeniz gerekir [sorunları giderin](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) , değil otomatik olarak işlenecek araç tarafından.
 
-Güncelleştirmeler tamamlandıktan sonra bu iki dosyayı şimdi Visual Studio'da bir bağlama projesi için Mac eklenebilir veya doğrudan geçirilen `btouch` veya `bmac` son bağlama oluşturmak için Araçlar.
+Güncelleştirme tamamlandıktan sonra bu iki dosyayı artık Visual Studio'da bir bağlama projesi için Mac eklenebilir veya doğrudan geçirilen `btouch` veya `bmac` son bağlamayı oluşturmak için Araçlar.
 
-Bağlama işlemi eksiksiz bir açıklaması için lütfen bkz bizim [izlenecek tam yol yönergeleri](~/ios/platform/binding-objective-c/walkthrough.md).
+Bağlama işlemi eksiksiz bir açıklaması için lütfen bkz. bizim [izlenecek tam yol yönergeleri](~/ios/platform/binding-objective-c/walkthrough.md).
 
+## <a name="related-links"></a>İlgili bağlantılar
+
+- [Xamarin University Ders: bir Objective-C bağlama kitaplığı oluşturma](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University Ders: derleme hedefi Sharpie ile bir Objective-C bağlama kitaplığı](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

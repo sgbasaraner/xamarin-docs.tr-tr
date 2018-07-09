@@ -1,30 +1,30 @@
 ---
 title: 'Xamarin.Essentials: pil'
-description: Bu belgede, cihazın pil bilgi denetleyip yapılan değişiklikleri izleyin sağlar Xamarin.Essentials pil sınıfında açıklanmaktadır.
+description: Bu belgede cihazın pil bilgileri ve değişiklikleri izleyin kontrol etmenizi sağlayan Xamarin.Essentials pil sınıfında açıklanmaktadır.
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 35764b4c2270359a7c010e1186f882e236e17fd5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782092"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855061"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: pil
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**Pil** sınıfı cihazın pil bilgi yapılan değişiklikleri izleyin denetleyip olanak sağlar.
+**Pil** sınıfı cihazın pil bilgileri ve değişiklikleri izleyin olanak tanır.
 
 ## <a name="getting-started"></a>Başlarken
 
-Erişim için **pil** işlevselliği aşağıdaki platform özel kurulum gereklidir.
+Erişim için **pil** işlevselliğini aşağıdaki platforma özgü Kurulum gereklidir.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`Battery` İzni gereklidir ve Android projesinde yapılandırılması gerekir. Bu, aşağıdaki yollarla eklenebilir:
+`Battery` İzni gereklidir ve Android projede yapılandırılması gerekir. Bu, aşağıdaki yollarla eklenebilir:
 
 Açık **AssemblyInfo.cs** altında dosya **özellikleri** klasör ekleyin:
 
@@ -32,23 +32,23 @@ Açık **AssemblyInfo.cs** altında dosya **özellikleri** klasör ekleyin:
 [assembly: UsesPermission(Android.Manifest.Permission.Battery)]
 ```
 
-YA da güncelleştirme Android bildirim:
+YA da Android bildirimini güncelleştir:
 
-Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve aşağıdaki içine ekleyin **bildirim** düğümü.
+Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve içine aşağıdaki **bildirim** düğümü.
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY" />
 ```
 
-Veya Anroid projeye sağ tıklayın ve projenin özelliklerini açın. Altında **Android derleme bildirimi** Bul **gerekli izinler:** alan ve onay **pil** izni. Bu otomatik olarak güncelleştirilecek **AndroidManifest.xml** dosya.
+Anroid projeye sağ tıklayın ve proje özelliklerini açın. Altında **Android bildirim** Bul **gerekli izinler:** alan ve onay **pil** izni. Bu otomatik olarak güncelleştirecektir **AndroidManifest.xml** dosya.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Ek kurulumu gerekmez.
+Ek kurulum gerekli.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Ek kurulumu gerekmez.
+Ek kurulum gerekli.
 
 -----
 
@@ -108,7 +108,7 @@ switch (source)
 }
 ```
 
-Bir olay pil 's özelliklerinden herhangi birini değiştirmek tetiklenir:
+Pilin özelliklerinden herhangi birini değiştirdiğinizde, bir olay tetiklenir:
 
 ```csharp
 public class BatteryTest
@@ -129,13 +129,23 @@ public class BatteryTest
 }
 ```
 
-## <a name="platform-differences"></a>Platform farklar
+## <a name="platform-differences"></a>Platform farklılıklarını
 
-| Platform | Fark |
-| --- | --- |
-| iOS | Cihaz, API'ları sınamak için kullanılmalıdır. |
-| iOS | Yalnızca Ac veya pil için PowerSource döndürür. |
-| UWP | Yalnızca Ac veya pil için PowerSource döndürür. |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Hiçbir platform farklılıklarını.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* Cihaz API'leri test etmek için kullanılmalıdır. 
+* Yalnızca döndürür `Ac` veya `Battery` için `PowerSource`. 
+* Titreşim iptal etmek mümkün değildir.
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+* Yalnızca döndürür `Ac` veya `Battery` için `PowerSource`. 
+
+-----
 
 ## <a name="api"></a>API
 

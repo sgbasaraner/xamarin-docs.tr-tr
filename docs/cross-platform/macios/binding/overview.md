@@ -1,42 +1,42 @@
 ---
 title: Objective-C bağlamaları genel bakış
-description: Bu belge, C# Objective-C kodunu, komut satırı bağlamalar ve bağlama projeleri hedefi Sharpie çeşitli bağlantılarında oluşturmanın farklı yollarını genel bir bakış sağlar. Ayrıca, bağlama nasıl çalıştığını açıklanır.
+description: Bu belge, C# bağlamaları için komut satırı bağlamalar ve bağlama projeleri hedefi Sharpie dahil olmak üzere, Objective-C kodunu oluşturmak için farklı yollarına genel bakış sağlar. Bağlamanın nasıl çalıştığı açıklanır.
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: f9f981a9024ad9b1f780efbadeeb7e1f1636a8ae
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 97d0c5b9f61d4dafe144d2b2f22df6d465cbbccb
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781750"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855279"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Objective-C bağlamaları genel bakış
 
-_Bağlama işleminin nasıl çalıştığı ayrıntıları_
+_Bağlama işleminin nasıl çalıştığına ilişkin ayrıntıları_
 
-Xamarin ile kullanmak için bir Objective-C Kitaplığı bağlama üç adımdan alır:
+Xamarin ile kullanmak için bir Objective-C kitaplığını bağlama üç adımdan alır:
 
-1. Bir C# "API tanımı" yazma açıklamak için nasıl yerel API gösterilir .NET ve nasıl temel Objective-c eşlemeleri Bu gerçekleştirilir gibi standart C# kullanarak yapıları `interface` ve çeşitli bağlama **öznitelikleri** (Bu bkz [basit bir örnek](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
+1. Bir C# "API tanımı" yazma açıklamak için nasıl yerel API sunulmuştur .NET ve temel alınan Objective-c eşlemelerini nasıl Bu işlem gerçekleştirilir gibi standart C# kullanarak oluşturur `interface` ve çeşitli bağlama **öznitelikleri** (bkz. Bu [basit örnek](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
 
-2. Bir kez "API tanımı" C# ' ta "bağlama" derlemesi üretmek derleme yazdığınız. Bu, üzerinde yapılabilir [ **komut satırı** ](#commandline) veya kullanarak bir [ **bağlama proje** ](#bindingproject) Mac veya Visual Studio için Visual Studio.
+2. Bir kez "API tanımı" C# ' ta, derlemeniz "bağlama" derlemesi üretmek için yazdığınız. Bu, üzerinde yapılabilir [ **komut satırı** ](#commandline) veya kullanarak bir [ **bağlama projesi** ](#bindingproject) Visual Studio veya Mac için Visual Studio'da.
 
-3. Tanımladığınız API'si kullanılarak yerel işlevselliği erişebilmesi için bu "bağlama" derleme daha sonra Xamarin uygulaması projenize eklenir.
-  Uygulama projelerden tamamen ayrı bağlama projesidir.
+3. Tanımladığınız API'sini kullanarak yerel bir işlev erişebilmesi için bu "bağlama" derleme sonra Xamarin uygulaması projenize eklenir.
+  Bağlama projesi uygulama projelerinizden tamamen ayrıdır.
 
-**Not:** 1. adım otomatik hale getirilebilir Yardımı ile [ **hedefi Sharpie**](#objectivesharpie). Objective-C API inceler ve önerilen bir C# "API tanımı." oluşturur Hedefi Sharpie tarafından oluşturulan dosyalar özelleştirebilir ve bağlama projesinde (veya komut satırı) kullanmak, bağlama derlemenizi oluşturmak için. Amaç Sharpie tek başına bağlamaları oluşturmaz, yalnızca bir isteğe bağlı işleminin bir parçası daha büyük.
+**Not:** 1. adım otomatik hale getirilebilir Yardımı ile [ **hedefi Sharpie**](#objectivesharpie). Objective-C API inceler ve önerilen bir C# "API tanımı" oluşturur Hedefi Sharpie tarafından oluşturulan dosyaları özelleştirmenizi ve bağlama projesi (veya komut satırında) kullanın, bağlama derlemesi oluşturmak için. Amaç Sharpie kendisi tarafından bağlamaları oluşturmaz, daha büyük işlem yalnızca isteğe bağlı bir parçasıdır.
 
-Ayrıca, daha fazla teknik ayrıntıları okuyabilirsiniz [nasıl çalışır](#howitworks), hangi yardımcı olur, bağlamaları yazmanızı sağlar.
+Daha fazla teknik ayrıntılarını ayrıca okuyabilirsiniz [nasıl çalıştığını](#howitworks), hangi yardımcı olacak bağlamalarınızı yazılacak.
 
 <a name="Command_Line_Bindings" /><a name="commandline" />
 
 ## <a name="command-line-bindings"></a>Komut satırı bağlamaları
 
-Kullanabileceğiniz `btouch-native` Xamarin.iOS için (veya `bmac-native` Xamarin.Mac kullanıyorsanız) bağlamaları doğrudan oluşturmak için. El ile oluşturduğunuz C# API tanımlarını geçirerek çalışır (veya hedefi Sharpie kullanarak) komut satırı aracını (`btouch-native` iOS için veya `bmac-native` Mac için).
+Kullanabileceğiniz `btouch-native` Xamarin.iOS için (veya `bmac-native` Xamarin.Mac kullanıyorsanız) doğrudan bağlamalarını derlemesine. El ile oluşturduğunuz bir C# API tanımlarını geçirerek çalışır (veya hedefi Sharpie kullanarak) komut satırı aracı (`btouch-native` iOS için veya `bmac-native` Mac için).
 
 
-Bu araçları çalıştırma genel sözdizimi şöyledir:
+Bu araçlar çağırmak için genel sözdizimi aşağıdaki gibidir:
 
 ```csharp
 # Use this for Xamarin.iOS:
@@ -48,34 +48,34 @@ bash$ /Developer/MonoTouch/usr/bin/btouch-native -e cocos2d.cs -s:enums.cs -x:ex
 bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
-Yukarıdaki komut dosyası oluşturur `cocos2d.dll` geçerli dizinin ve projenizde kullanabileceğiniz tam olarak bağlanmış kitaplık içerecektir. Bu bağlama proje kullanırsanız, bağlamaları oluşturmak için Visual Studio Mac için kullandığı araçtır (açıklanan [aşağıda](#bindingproject)).
+Yukarıdaki komut dosyası oluşturur `cocos2d.dll` geçerli dizindeki ve projenizde kullanabileceğiniz tam olarak ilişkili kitaplık içerecektir. Bu bağlama projesi kullanıyorsanız bağlamalarınızı oluşturmak için Mac için Visual Studio kullanan aracıdır (açıklanan [aşağıda](#bindingproject)).
 
 
 <a name="bindingproject" />
 
-## <a name="binding-project"></a>Proje bağlama
+## <a name="binding-project"></a>Bağlama projesi
 
-Bir bağlama proje Mac veya (Visual Studio iOS bağlamaları yalnızca destekler) Visual Studio için Visual Studio'da oluşturulabilir ve düzenleyebilir ve yapı (karşı komut satırını kullanarak) bağlama için API tanımlarını kolaylaştırır.
+Bağlama projesi (yalnızca Visual Studio iOS bağlamaları'destekler) Visual Studio veya Mac için Visual Studio'da oluşturulabilir ve düzenleyin ve derleme bağlama (karşı komut satırını kullanarak) için API tanımları kolaylaştırır.
 
-Bu izleyin [Başlangıç Kılavuzu](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started) oluşturma ve bir bağlama üretmek için bir bağlama proje kullanma hakkında bilgi için.
+İzleyin [Başlangıç Kılavuzu](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started) oluşturma ve bağlama oluşturmak için bir bağlama projesi kullanma hakkında bilgi için.
 
 <a name="objectivesharpie" />
 
 ## <a name="objective-sharpie"></a>Amaç Sharpie
 
-Amaç Sharpie bağlama oluşturma ilk aşamaları yardımcı olan ayrı komut satırı aracıdır. Bu bağlama tek başına oluşturmaz; bunun yerine hedef yerel kitaplığı için bir API tanımı oluşturmanın ilk adımı otomatikleştirir.
+Amaç Sharpie bir bağlama oluşturma ile ilk aşamalarında yardımcı olan başka ve ayrı bir komut satırı aracıdır. Bu bağlama kendisi tarafından oluşturmaz, bunun yerine, hedef yerel kitaplık için bir API tanımı oluşturmanın ilk adımı otomatikleştirir.
 
-Okuma [hedefi Sharpie belgeleri](~/cross-platform/macios/binding/objective-sharpie/index.md) bağlamaları yerleşik API defintions içine yerel kitaplıkları, yerel çerçeveler ve CocoaPods ayrıştırma öğrenmek için.
+Okuma [hedefi Sharpie docs](~/cross-platform/macios/binding/objective-sharpie/index.md) bağlamaları oluşturulan API tanımlarını içine yerel kitaplıklar, yerel çerçeveler ve CocoaPods ayrıştırılacak öğrenin.
 
 <a name="howitworks" />
 
-## <a name="how-binding-works"></a>Bağlama nasıl çalışır
+## <a name="how-binding-works"></a>Bağlama nasıl çalışır?
 
-Kullanmak da mümkündür [[Kaydet]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) özniteliği [[verme]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) özniteliği ve [el ile Objective-C Seçici çağırma](~/ios/internals/objective-c-selectors.md) birlikte el ile yeni (daha önce bağlamak için İlişkisiz) Objective-C türleri.
+Kullanmak mümkün mü [[kaydetme]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) özniteliği [[dışarı]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) özniteliği ve [el ile Objective-C Seçici çağırma](~/ios/internals/objective-c-selectors.md) birlikte el ile yeni (daha önce bağlamak için Objective-C tür ilişkisiz).
 
-İlk olarak bağlamak istediğiniz bir türünü bulun. Tartışma amacıyla (ve Basitlik), biz bağlamak [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) türü (hangi zaten bağımlı [Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); aşağıdaki yalnızca örnek amaçlıdır uygulamasıdır).
+İlk olarak bağlamak istediğiniz bir türü bulunamadı. Tartışma amacıyla (ve Basitlik için), biz bağlamak [NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) türü (hangi zaten bağımlı [Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); aşağıdaki uygulama yalnızca bir örneğin amacıyla kullanılır).
 
-İkinci olarak, biz C# türü oluşturmanız gerekir. Biz büyük olasılıkla bu ad alanına yerleştirmek istersiniz; Objective-C ad alanlarını desteklemez olduğundan, biz kullanmanız gerekecektir `[Register]` Xamarin.iOS Objective-C çalışma zamanı ile kaydedilecek tür adını değiştirmek için öznitelik. C# türü de öğesinden devralmalıdır [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
+İkinci olarak, C# türünü oluşturmak ihtiyacımız var. Biz bu ad alanına yerleştirmek büyük olasılıkla istersiniz; Objective-C ad alanları desteklemediğinden, kullanılacak gerekir `[Register]` Xamarin.iOS Objective-C çalışma zamanı ile kaydolacak türü adını değiştirmek için özniteliği. C# türü de devralmalıdır [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
 
 ```csharp
 namespace Example.Binding {
@@ -87,7 +87,7 @@ namespace Example.Binding {
 }
 ```
 
-Üçüncü Objective-C belgelerini gözden geçirin ve oluşturma [ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/) örnekleri için kullanmak istediğiniz her Seçici. Bu sınıf gövdesi içinde koyun:
+Üçüncü olarak, Objective-C belgelerini gözden geçirin ve oluşturma [ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/) örnekleri için kullanmak istediğiniz her Seçici. Bu sınıfın gövdesi içinde yerleştirin:
 
 ```csharp
 static Selector selInit       = new Selector("init");
@@ -95,7 +95,7 @@ static Selector selAllObjects = new Selector("allObjects");
 static Selector selNextObject = new Selector("nextObject");
 ```
 
-Dördüncü türünüz oluşturucular sağlamanız gerekir. *Gerekir* temel sınıf oluşturucuya, oluşturucu çağrı zincirine bağlı. `[Export]` Öznitelikleri Objective-C kodunu belirtilen Seçici adla oluşturucular çağırmak için izin ver:
+Dördüncü türünüz oluşturucular sağlamanız gerekir. *Gerekir* temel sınıf oluşturucusuna, oluşturucu çağrı zinciri. `[Export]` Öznitelikleri izin Objective-C kodunu belirtilen Seçici adıyla oluşturucuları çağırmak için:
 
 ```csharp
 [Export("init")]
@@ -115,7 +115,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-Beşinci, adım 3'te her Seçici yöntemleri bildirilen sağlar. Bunlar kullanacağı `objc_msgSend()` Seçici yerel nesne üzerinde çağırmak için. Kullanımına dikkat edin [Runtime.GetNSObject()](https://developer.xamarin.com/api/member/ObjCRuntime.Runtime.GetNSObject/(System.IntPtr)) dönüştürmek için bir `IntPtr` uygun şekilde yazılan içine `NSObject` (alt) türü. Yöntemin Objective-C kodunu, üye aranabilir olmasını istiyorsanız *gerekir* olması **sanal**.
+Beşinci, adım 3'te yöntemleri her Seçici için bildirilen sağlar. Bunlar kullanacağı `objc_msgSend()` Seçici yerel nesnesi üzerinde çağırmak için. Kullanımına dikkat edin [Runtime.GetNSObject()](https://developer.xamarin.com/api/member/ObjCRuntime.Runtime.GetNSObject/(System.IntPtr)) dönüştürmek için bir `IntPtr` uygun şekilde yazılmış halinde `NSObject` (sub) türü. Yöntemin Objective-C koddan üyesi çağrılabilir olmasını istiyorsanız *gerekir* olması **sanal**.
 
 ```csharp
 [Export("nextObject")]
@@ -137,7 +137,7 @@ public virtual NSArray AllObjects {
 }
 ```
 
-Tüm bir araya getirilmesi:
+Hepsi bir araya getirildiğinde:
 
 ```csharp
 using System;
@@ -186,3 +186,7 @@ namespace Example.Binding {
 }
 ```
 
+## <a name="related-links"></a>İlgili bağlantılar
+
+- [Xamarin University Ders: bir Objective-C bağlama kitaplığı oluşturma](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University Ders: derleme hedefi Sharpie ile bir Objective-C bağlama kitaplığı](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
