@@ -1,54 +1,54 @@
 ---
-title: 'İzlenecek yol: bir iOS Objective-C Kitaplığı bağlama'
-description: Bu makale varolan Objective-C Kitaplığı, InfColorPicker için bir Xamarin.iOS bağlama oluşturma uygulamalı bir kılavuz sağlar. Statik Objective-C Kitaplık derleme, onu bağlayarak ve bir Xamarin.iOS uygulaması'nda bağlama kullanma gibi konuları kapsar.
+title: 'İzlenecek yol: bir iOS Objective-C kitaplığını bağlama'
+description: Bu makalede, bir Xamarin.iOS bağlaması için mevcut bir Objective-C kitaplığını InfColorPicker oluşturmayla ilgili uygulamalı bir kılavuz sağlar. Bu, statik bir Objective-C kitaplığını derleme, bağlama ve bir Xamarin.iOS uygulaması'nda bağlama kullanma gibi konular ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 15e1f53d053046b4a51666647ac846366d3c858b
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 8285a82920f0d95a88855c5257535048c6de41d5
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34335222"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854863"
 ---
-# <a name="walkthrough-binding-an-ios-objective-c-library"></a>İzlenecek yol: bir iOS Objective-C Kitaplığı bağlama
+# <a name="walkthrough-binding-an-ios-objective-c-library"></a>İzlenecek yol: bir iOS Objective-C kitaplığını bağlama
 
-_Bu makale varolan Objective-C Kitaplığı, InfColorPicker için bir Xamarin.iOS bağlama oluşturma uygulamalı bir kılavuz sağlar. Statik Objective-C Kitaplık derleme, onu bağlayarak ve bir Xamarin.iOS uygulaması'nda bağlama kullanma gibi konuları kapsar._
+_Bu makalede, bir Xamarin.iOS bağlaması için mevcut bir Objective-C kitaplığını InfColorPicker oluşturmayla ilgili uygulamalı bir kılavuz sağlar. Bu, statik bir Objective-C kitaplığını derleme, bağlama ve bir Xamarin.iOS uygulaması'nda bağlama kullanma gibi konular ele alınmaktadır._
 
-İOS üzerinde çalışırken, bir üçüncü taraf Objective-C Kitaplığı kullanmak istediğiniz durumlarda karşılaşabilirsiniz. Bu durumlarda, bir Xamarin.iOS kullanabilirsiniz _bağlama proje_ oluşturmak için bir [C# bağlama](~/cross-platform/macios/binding/overview.md) , etmenizi sağlar Xamarin.iOS uygulamalarınızda bir kitaplığı kullanacak.
+İOS üzerinde çalışırken, bir üçüncü taraf Objective-C kitaplığını kullanmak istediğiniz durumlarda karşılaşabilirsiniz. Bu durumlarda, bir Xamarin.iOS kullanabileceğiniz _bağlama projesi_ oluşturmak için bir [C# bağlama](~/cross-platform/macios/binding/overview.md) eklemenize olanak tanıyan, Xamarin.iOS uygulamalarınızda kitaplığı kullanmak.
 
-Genellikle iOS ekosistemi içinde 3 özellikleri kitaplıkları bulabilirsiniz:
+Genellikle iOS ekosisteminde 3 model olarak sağlanır kitaplıkları bulabilirsiniz:
 
-* İle önceden derlenmiş statik kitaplık dosyası olarak `.a` kendi üstbilgi (.h dosyaları) ile birlikte uzantısı. Örneğin, [Google Analytics kitaplığı](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
-* Önceden derlenmiş bir çerçeve. Yalnızca statik kitaplık, üstbilgiler ve bazen ek kaynaklar ile içeren bir klasör budur `.framework` uzantısı. Örneğin, [Google AdMob Kitaplığı](https://developers.google.com/admob/ios/download).
+* İle önceden derlenmiş bir statik kitaplık dosyası olarak `.a` uzantısı birlikte kendi üstbilgi (.h dosyaları). Örneğin, [Google Analytics kitaplığı](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
+* Önceden derlenmiş bir çerçeve. Statik kitaplık, üst bilgileri ve bazen ek kaynaklarını içeren bir klasör budur `.framework` uzantısı. Örneğin, [Google'nın AdMob Kitaplığı](https://developers.google.com/admob/ios/download).
 * Kaynak kodu dosyaları yeterlidir. Örneğin, yalnızca içeren bir kitaplık `.m` ve `.h` Objective C dosyaları.
 
-Birinci ve İkinci senaryoda zaten olacaktır önceden derlenmiş CocoaTouch statik kitaplık bu makalede biz üçüncü senaryo odaklanacaktır şekilde. Başlamadan önce bir bağlama oluşturun, her zaman bu bağlamak boş olduğundan emin olmak için kitaplığı ile sağlanan lisans denetleyin unutmayın.
+Birinci ve İkinci senaryoda zaten olacaktır önceden derlenmiş CocoaTouch statik kitaplık için bu makaledeki biz üçüncü senaryoya odaklanır. Unutmayın, başlamadan önce farklı bir bağlama oluşturun, her zaman bu bağlamak boş olduğundan emin olmak için şu kitaplıkla sağlanan lisans denetleyin.
 
-Bu makalede açık kaynak kullanarak bir bağlama proje oluşturma bir adım adım kılavuz sağlar [InfColorPicker](https://github.com/InfinitApps/InfColorPicker) Objective-C proje örnek olarak, bu kılavuzdaki tüm bilgiler ile kullanım için uyarlanabilir ancak üçüncü taraf Objective-C Kitaplığı. InfColorPicker kitaplığı renk seçim yaparak daha kullanıcı dostu kendi HSB gösterimi üzerinde bağlı bir renk seçmek kullanıcının sağlayan bir yeniden kullanılabilir görünüm denetleyicisi sağlar.
+Bu makalede, açık kaynak kullanarak bir bağlama projesi oluşturma adım adım kılavuz sağlanır [InfColorPicker](https://github.com/InfinitApps/InfColorPicker) Objective-C, bu kılavuzdaki tüm bilgileri ile kullanılmak üzere uyarlanabilir ancak örnek olarak, proje üçüncü taraf Objective-C kitaplığını. Renk seçim daha kullanıcı dostu yaparak HSB gösterimine alarak bir rengi seçmesini sağlayan bir yeniden kullanılabilir görünüm denetleyicisi InfColorPicker kitaplık sağlar.
 
-[![](walkthrough-images/run01.png "İOS çalıştıran InfColorPicker kitaplığı örneği")](walkthrough-images/run01.png#lightbox)
+[![](walkthrough-images/run01.png "İos'ta çalışan InfColorPicker kitaplık örneği")](walkthrough-images/run01.png#lightbox)
 
-Bu belirli Xamarin.iOS Objective-C API kullanmak için gereken tüm adımları şu konulara değineceğiz:
+Biz bu belirli Xamarin.iOS Objective-C API'yi kullanmak için gerekli tüm adımları ele alacağız:
 
-- İlk olarak, Xcode kullanarak bir Objective-C statik kitaplık oluşturacağız.
-- Sonra biz Xamarin.iOS statik bu kitaplıkla bağlamanız.
-- Ardından, bazı (ancak tümünü değil) otomatik olarak oluşturarak hedefi Sharpie iş yükünü nasıl azaltabilir Göster Xamarin.iOS bağlama tarafından gerekli gerekli API tanımlarını.
-- Son olarak, biz bağlama kullanan bir Xamarin.iOS uygulaması oluşturacaksınız.
+- İlk olarak, Xcode kullanarak Objective-C statik kitaplık oluşturacağız.
+- Ardından, biz bu statik kitaplık Xamarin.iOS ile bağlamak.
+- Ardından, bazı (ancak hepsini değil) otomatik olarak oluşturarak hedefi Sharpie iş yükünü nasıl azaltabilir Göster Xamarin.iOS bağlama tarafından gerekli gerekli API tanımlarını.
+- Son olarak, bağlama kullanan bir Xamarin.iOS uygulaması oluşturacağız.
 
-Örnek uygulama InfColorPicker API bizim C# kodu arasında iletişim için güçlü bir temsilci kullanma gösterilmektedir. Güçlü bir temsilci kullanma gördük sonra biz zayıf temsilciler aynı görevleri gerçekleştirmek için nasıl kullanılacağını ele alacağız.
+Örnek uygulamayı InfColorPicker API ile C# kodumuz arasındaki iletişim için güçlü bir temsilci kullanmayı gösterilecektir. Güçlü bir temsilci kullanmayı gördük sonra biz zayıf temsilciler aynı görevleri gerçekleştirmek için nasıl kullanılacağı ele alacağız.
 
 ## <a name="requirements"></a>Gereksinimler
 
-Bu makalede Xcode ve Objective-C dil aşina sahip ve okuduğunuz varsayılır bizim [bağlama Objective-C](~/cross-platform/macios/binding/index.md) belgeleri. Ayrıca, sunulan adımları tamamlamak için gerekli verilmiştir:
+Bu makalede, Xcode ve Objective-C dili bazı konusunda varsa ve okuduğunuz varsayılır bizim [Objective-C bağlama](~/cross-platform/macios/binding/index.md) belgeleri. Ayrıca, sunulan adımları tamamlamak için gerekli verilmiştir:
 
--  **Xcode ve iOS SDK'sı** -Apple'nın Xcode ve en son iOS API gereken yüklenmeli ve geliştirici bilgisayarda yapılandırılmış.
--  **[Xcode komut satırı araçları](#Installing_the_Xcode_Command_Line_Tools)**  -Xcode komut satırı araçlarını, Xcode (Yükleme ayrıntıları için aşağıya bakın) şu anda yüklü olan sürüm için yüklenmesi gerekir.
--  **Mac veya Visual Studio için Visual Studio** -Mac veya Visual Studio için Visual Studio en son sürümünü yüklenmeli ve geliştirme bilgisayarınızda yapılandırılmalıdır. Bir Apple Mac, bir Xamarin.iOS uygulaması geliştirmek için gereklidir ve Visual Studio kullanırken bağlanmanız gerekir [bir Xamarin.iOS yapı konağı](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
--  **En son sürümünü hedefi Sharpie** -hedefi Sharpie aracının geçerli bir kopyasını indirilen [burada](~/cross-platform/macios/binding/objective-sharpie/get-started.md). Hedefi yüklü Sharpie zaten varsa, en son sürüme kullanarak güncelleştirebilirsiniz `sharpie update`
+-  **Xcode ve iOS SDK'sı** -Apple'nın Xcode ve en son iOS API gereken yüklenmeli ve geliştiricinin bilgisayarında yapılandırılmalıdır.
+-  **[Xcode komut satırı araçları](#Installing_the_Xcode_Command_Line_Tools)**  -Xcode komut satırı araçları, Xcode (Yükleme ayrıntıları için aşağıya bakın) şu anda yüklü sürümü yüklenmelidir.
+-  **Visual Studio veya Mac için Visual Studio** -Visual Studio veya Mac için Visual Studio'nun en son sürümü yüklenmeli ve geliştirme bilgisayarında yapılandırılmış. Bir Apple Mac, bir Xamarin.iOS uygulaması geliştirmek için gereklidir ve Visual Studio kullanarak bağlanmanız gerekir [bir Xamarin.iOS yapı konağı](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+-  **En son sürümünü hedefi Sharpie** -hedefi Sharpie aracının geçerli bir kopyasını indirilen [burada](~/cross-platform/macios/binding/objective-sharpie/get-started.md). Hedefi yüklü Sharpie zaten varsa, bu en son sürüme kullanarak güncelleştirebilirsiniz `sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"/>
 
@@ -57,134 +57,134 @@ Bu makalede Xcode ve Objective-C dil aşina sahip ve okuduğunuz varsayılır bi
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 
-Yukarıda belirtildiği gibi biz Xcode komut satırı araçlarını kullanarak (özellikle `make` ve `lipo`) Bu kılavuzda. `make` Komutu yürütülebilir programları ve kitaplıklarını derlenmesini kullanarak otomatikleştirmek çok yaygın bir UNIX yardımcı olan bir _derleme görevleri dosyası_ program nasıl oluşturulması belirtir. `lipo` Komutu çok mimarisi dosyaları oluşturmak için bir OS X komut satırı yardımcı programı; birden çok birleştirir `.a` tüm donanım mimarileri tarafından kullanılan bir dosya dosyalarıyla.
+Yukarıda belirtildiği gibi Xcode komut satırı araçları kullanacağız (özellikle `make` ve `lipo`) Bu izlenecek yolda. `make` Komutu yürütülebilir programlar ve kitaplıkları derlemesi kullanarak otomatikleştirmek çok yaygın bir UNIX yardımcı olan bir _derleme görevleri dosyası_ programın nasıl oluşturulması gerektiğini belirtir. `lipo` Çok mimari dosyaları oluşturmak için bir OS X komut satırı yardımcı programı bir komuttur; birden çok birleştirecek `.a` dosyalarıyla tüm donanım mimarileri tarafından kullanılan bir dosya.
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-Yukarıda belirtildiği gibi biz Xcode komut satırı araçları üzerinde kullanmaya başlayacağınız **Mac yapı konağı** (özellikle `make` ve `lipo`) Bu kılavuzda. `make` Komutu yürütülebilir programları ve kitaplıklarını derlenmesini kullanarak otomatikleştirmek çok yaygın bir UNIX yardımcı olan bir _derleme görevleri dosyası_ belirtir için program oluşturma. `lipo` Komutu çok mimarisi dosyaları oluşturmak için bir OS X komut satırı yardımcı programı; birden çok birleştirir `.a` tüm donanım mimarileri tarafından kullanılan bir dosya dosyalarıyla.
+Yukarıda belirtildiği gibi Xcode komut satırı araçları hakkında kullanacağız **Mac derleme konağı** (özellikle `make` ve `lipo`) Bu izlenecek yolda. `make` Komutu yürütülebilir programlar ve kitaplıkları derlemesi kullanarak otomatikleştirmek çok yaygın bir UNIX yardımcı olan bir _derleme görevleri dosyası_ sonlanması için program oluşturmayı da öğrenin. `lipo` Çok mimari dosyaları oluşturmak için bir OS X komut satırı yardımcı programı bir komuttur; birden çok birleştirecek `.a` dosyalarıyla tüm donanım mimarileri tarafından kullanılan bir dosya.
 
 
 -----
 
-Apple'nın göre [Xcode SSS ile komut satırından derleme](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) belgeleri, OS X 10.9 ve daha büyük, **indirmeleri** bölmesi, Xcode **Tercihler** iletişim değil artık yükleme komut satırı araçları destekler.
+Apple'nın göre [Xcode SSS ile komut satırından derleme](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) belgeleri, OS X 10.9 ve üzeri, **indirir** Xcode bölmesinde **tercihleri** iletişim yok Artık, yükleme komut satırı araçlarını destekler.
 
-Araçlarını yüklemek için aşağıdaki yöntemlerden birini kullanmanız gerekir:
+Araçları yüklemek için aşağıdaki yöntemlerden birini kullanmanız gerekir:
 
-- **Xcode yükleme** - Xcode, yüklediğinizde sahip tüm komut satırı araçları ile birlikte gelen gelir. OS X 10.9 dolgular (yüklü `/usr/bin`), dahil herhangi bir aracı eşleyebilirsiniz `/usr/bin` Xcode içinde karşılık gelen aracına. Örneğin, `xcrun` bulunamadı veya Xcode içinde herhangi bir aracı komut satırından çalıştırma olanak tanıyan komutu.
-- **Terminal uygulama** -Terminal uygulamadan komut satırı araçlarını çalıştırarak yükleyebilirsiniz `xcode-select --install` komutu:
-    - Terminal uygulamayı başlatın.
-    - Tür `xcode-select --install` ve basın **Enter**, örneğin:
+- **Xcode'u yüklemeyi** - Xcode yüklediğinizde bu, komut satırı araçlarıyla birlikte sunulur. OS X 10.9 içinde shims (yüklü `/usr/bin`), dahil herhangi bir aracı eşleyebilirsiniz `/usr/bin` Xcode içinde karşılık gelen aracı. Örneğin, `xcrun` komutu bulun veya komut satırından Xcode içinde herhangi bir aracı çalıştırmanızı sağlar.
+- **Terminal uygulama** -Terminal uygulamayı, komut satırı araçlarını çalıştırarak yükleyebilirsiniz `xcode-select --install` komutu:
+    - Terminal uygulamasını başlatın.
+    - Tür `xcode-select --install` basın **Enter**, örneğin:
 
     ```bash
     Europa:~ kmullins$ xcode-select --install
     ```
 
-    - İstenir, komut satırı araçlarını Yükle'yi tıklatın **yükleme** düğmesi: [ ![ ] (walkthrough-images/xcode01.png "komut satırı araçlarını yükleme")](walkthrough-images/xcode01.png#lightbox)
+    - Açmanız istenir komut satırı araçları yüklemek için **yükleme** düğmesi: [ ![ ] (walkthrough-images/xcode01.png "komut satırı araçlarını yükleme")](walkthrough-images/xcode01.png#lightbox)
 
-    - Araçlar karşıdan yüklenir ve Apple'nın sunucularından kurulur: [ ![ ] (walkthrough-images/xcode02.png "araçları yükleme")](walkthrough-images/xcode02.png#lightbox)
+    - Araçlar indirilir ve Apple'nın sunucularından yüklü: [ ![ ] (walkthrough-images/xcode02.png "araçları indirme")](walkthrough-images/xcode02.png#lightbox)
 
-- **Apple geliştiriciler için indirmeleri** -komut satırı araçları paketini kullanılabilir [Apple geliştiriciler için indirmeleri]() web sayfası. Oturum, Apple Kimliğiyle oturum sonra aramak ve komut satırı araçlarını indirmek: [ ![ ] (walkthrough-images/xcode03.png "komut satırı araçlarını bulma")](walkthrough-images/xcode03.png#lightbox)
+- **Apple geliştiriciler için indirmeleri** -komut satırı araçları paketi kullanılabilir [Apple geliştiriciler için indirmeleri]() web sayfası. Oturum, Apple ID ile oturum ardından aramak ve komut satırı araçları indirin: [ ![ ] (walkthrough-images/xcode03.png "komut satırı araçlarını bulma")](walkthrough-images/xcode03.png#lightbox)
 
-Komut satırı araçları yüklü, biz Kılavuzu ile çalışmaya devam etmek hazırsınız.
+Yüklü olan komut satırı araçları ile adım adım kılavuza devam hazırız.
 
 ## <a name="walkthrough"></a>İzlenecek yol
 
 Bu kılavuzda, aşağıdaki adımları şu konulara değineceğiz:
 
-- **[Bir statik kitaplık oluşturma](#Creating_A_Static_Library)**  -bir statik kitaplık oluşturma bu adımı içerir **InfColorPicker** Objective-C kodunu. Statik kitaplık olacaktır `.a` dosya uzantısı ve kitaplığı proje .NET derlemesi halinde katıştırılır.
-- **[Xamarin.iOS bağlama proje oluşturma](#Create_a_Xamarin.iOS_Binding_Project)**  -statik kitaplık biz oluşturduktan sonra bir Xamarin.iOS bağlama projesi oluşturmak için kullanacağız. Meta veri Objective-C API nasıl kullanılabileceği açıklanır C# kodu biçiminde ve yeni oluşturduğumuz statik kitaplık, bağlama proje oluşur. Bu meta verileri, genellikle API tanımları da adlandırılır. Kullanacağız **[hedefi Sharpie](#Using_Objective_Sharpie)** API tanımları oluşturma bizimle yardımcı olmak için.
-- **[API tanımlarını normalleştirin](#Normalize_the_API_Definitions)**  - hedefi Sharpie bize yardımcı olan bir harika iş yapar, ancak her şeyi yapamazsınız. Biz kullanılabilmesi için önce API tanımlarını yapmak için ihtiyacımız bazı değişiklikler ele alacağız.
-- **[Bağlama kitaplığı kullanarak](#Using_the_Binding)**  -son olarak, yeni oluşturulan bağlama Projemizin kullanmayı göstermek için bir Xamarin.iOS uygulaması oluşturacağız.
+- **[Statik kitaplık oluşturma](#Creating_A_Static_Library)**  -Bu adım, bir statik kitaplık oluşturma içerir **InfColorPicker** Objective-C kodu. Statik kitaplık olacaktır `.a` dosya uzantısı ve kitaplık projesinin .NET bütünleştirilmiş kod içine katıştırılır.
+- **[Bir Xamarin.iOS bağlaması projesi oluşturma](#Create_a_Xamarin.iOS_Binding_Project)**  -biz bir statik kitaplık aldıktan sonra bir Xamarin.iOS bağlaması projesi oluşturmak için kullanacağız. Objective-C API nasıl kullanılabileceğini açıklayan C# kodu biçiminde meta veriler ve oluşturduğumuz statik kitaplık bağlama projesi oluşur. Bu meta veriler, genellikle API tanımlarını da adlandırılır. Kullanacağız **[hedefi Sharpie](#Using_Objective_Sharpie)** API tanımlarını oluşturma bize yardımcı olacak.
+- **[API tanımlarını Normalleştir](#Normalize_the_API_Definitions)**  - hedefi Sharpie bize yardımcı olmak için harika bir iş yapar, ancak her şey yapamaz. API tanımlarını kullanılabilmesi için önce yapmanız gereken bazı değişiklikler açıklayacağız.
+- **[Bağlama kitaplığı kullanan](#Using_the_Binding)**  -son olarak, yeni oluşturulan bağlama Projemizin kullanmayı göstermek için bir Xamarin.iOS uygulaması oluşturacağız.
 
-Hangi adımların oynayan anladığınıza göre şimdi Kılavuzu geri kalanı için geçin.
+Hangi adımla daha uğraşmanız gerekir anlamak, gözden geçirme geri kalanı için geçelim.
 
 <a name="Creating_A_Static_Library"/>
 
-## <a name="creating-a-static-library"></a>Bir statik kitaplık oluşturma
+## <a name="creating-a-static-library"></a>Statik kitaplık oluşturma
 
-Biz InfColorPicker github için kodu incelemek ise:
+Github'da InfColorPicker için kod İnceleme Biz ise:
 
-[![](walkthrough-images/image02.png "Github'da InfColorPicker için kodu inceleyin.")](walkthrough-images/image02.png#lightbox)
+[![](walkthrough-images/image02.png "Github'da InfColorPicker için kod İnceleme")](walkthrough-images/image02.png#lightbox)
 
-Proje şu üç dizinlerde görebiliriz:
+Aşağıdaki üç dizin projedeki görebiliriz:
 
 - **InfColorPicker** -bu dizin proje Objective-C kodunu içerir.
-- **PickerSamplePad** -bu dizin örnek iPad proje içerir.
-- **PickerSamplePhone** -bu dizin örnek iPhone proje içerir.
+- **PickerSamplePad** -örnek bir iPad projesi bu dizini içerir.
+- **PickerSamplePhone** -örnek bir iPhone projesi bu dizini içerir.
 
-Şimdi InfColorPicker projesinden indirmeniz [GitHub](https://github.com/InfinitApps/InfColorPicker/archive/master.zip) ve bizim seçme dizininde sıkıştırmasını açın. Xcode hedef açma `PickerSamplePhone` proje, biz Xcode Gezgini aşağıdaki proje yapısında bakın:
+Şimdi InfColorPicker projesinden indirmeniz [GitHub](https://github.com/InfinitApps/InfColorPicker/archive/master.zip) ve bizim seçme dizinde sıkıştırmasını açın. Xcode hedefi açmayı `PickerSamplePhone` proje, aşağıdaki proje yapısını Xcode Gezgin görürüz:
 
-[![](walkthrough-images/image03.png "Xcode Gezgininde Proje yapısı")](walkthrough-images/image03.png#lightbox)
+[![](walkthrough-images/image03.png "Xcode Gezgini içindeki Proje yapısı")](walkthrough-images/image03.png#lightbox)
 
-Bu proje InfColorPicker kaynak kodunda (kırmızı kutu) her örnek projesine doğrudan ekleyerek kodu yeniden kullanma erişir. Örnek proje kodunu içinde mavi kutusudur. Bu belirli projeye bize bir statik kitaplık ile sağlamadığından, için gerekli olan bize statik kitaplık derlemek için bir Xcode projesi oluşturun.
+Bu proje, her bir örnek projeye doğrudan InfColorPicker kaynak kodunda (kırmızı kutu) ekleyerek kod yeniden kullanımını elde eder. Örnek Proje mavi bir kutu içinde kodudur. Bu belirli proje bize statik bir kitaplıkla sağlanmadığı için gerekli bize statik kitaplık derlemek için bir Xcode projesi oluşturun.
 
-İlk adım, bize InfoColorPicker kaynak kodu statik kitaplığa eklemek içindir. Şimdi bunun için aşağıdakileri yapın:
+İlk adım, bize InfoColorPicker kaynak kodu statik kitaplığa eklemek içindir. Şimdi bunun için şunları yapın:
 
 1. Xcode başlatın.
 2. Gelen **dosya** menüsünü seçin **yeni** > **proje...** :
 
-    [![](walkthrough-images/image04.png "Yeni bir proje başlangıç")](walkthrough-images/image04.png#lightbox)
+    [![](walkthrough-images/image04.png "Yeni bir projeye Başlarken")](walkthrough-images/image04.png#lightbox)
 3. Seçin **Framework & Kitaplığı**, **Cocoa Touch statik kitaplık** şablonu ve tıklatın **sonraki** düğmesi:
 
-    [![](walkthrough-images/image05.png "Cocoa Touch statik kitaplık şablonu seçin")](walkthrough-images/image05.png#lightbox)
+    [![](walkthrough-images/image05.png "Cocoa Touch statik kitaplığı şablonu seçin")](walkthrough-images/image05.png#lightbox)
 
 4. Girin `InfColorPicker` için **proje adı** tıklatıp **sonraki** düğmesi:
 
-    [![](walkthrough-images/image06.png "InfColorPicker proje adı girin")](walkthrough-images/image06.png#lightbox)
-5. Projeyi kaydedin ve tıklayın için bir konum seçin **Tamam** düğmesi.
-6. Şimdi biz statik kitaplık Projemizin InfColorPicker projeden kaynak eklemeniz gerekir. Çünkü **InfColorPicker.h** dosyası (varsayılan) bizim statik Kitaplığı'nda zaten, Xcode izin vermez bize üzerine yazmak. Gelen **Bulucu**, biz Github'dan sıkıştırması açılmış özgün projesini InfColorPicker kaynak kodunda gidin, tüm InfColorPicker dosyalarını kopyalayın ve yeni statik kitaplık Projemizin yapıştırın:
+    [![](walkthrough-images/image06.png "InfColorPicker proje adını girin")](walkthrough-images/image06.png#lightbox)
+5. Tıklayın ve projeyi kaydetmek için bir konum seçin **Tamam** düğmesi.
+6. Şimdi biz kaynak InfColorPicker projeden bizim statik kitaplığı projesine eklemeniz gerekir. Çünkü **InfColorPicker.h** dosyası (varsayılan) statik kitaplığımızda zaten, Xcode izin bize üzerine. Gelen **Bulucu**, biz Github'dan sıkıştırması açılan özgün projede InfColorPicker kaynak koduna gidin, tüm InfColorPicker dosyaları kopyalayın ve bizim yeni bir statik kitaplık projesi yapıştırın:
 
-    [![](walkthrough-images/image12.png "Tüm InfColorPicker dosyalarını kopyalayın")](walkthrough-images/image12.png#lightbox)
+    [![](walkthrough-images/image12.png "Tüm InfColorPicker dosyaları Kopyala")](walkthrough-images/image12.png#lightbox)
 
-7. Dönmek için Xcode, sağ tıklayın **InfColorPicker** klasörü ve select **"InfColorPicker..." dosyaları ekleme**:
+7. Sağ tıklayın, döndürmek için Xcode **InfColorPicker** klasörü ve select **"InfColorPicker..." için dosyaları Ekle**:
 
     [![](walkthrough-images/image08.png "Dosya ekleme")](walkthrough-images/image08.png#lightbox)
 
-8. Biz yalnızca kopyaladığınız InfColorPicker kaynak kodu dosyaları için dosyaları Ekle iletişim kutusundan gidin, tümünü seçin ve tıklayın **Ekle** düğmesi:
+8. Az önce kopyaladığınız InfColorPicker kaynak kodu dosyaları için dosyaları Ekle iletişim kutusundan gidin, tümünü seçin ve tıklayın **Ekle** düğmesi:
 
-    [![](walkthrough-images/image09.png "Tümünü seçin ve Ekle düğmesini tıklatın")](walkthrough-images/image09.png#lightbox)
+    [![](walkthrough-images/image09.png "Tümünü seçin ve Ekle düğmesine tıklayın")](walkthrough-images/image09.png#lightbox)
 
-9. Kaynak kodu bizim projeye kopyalanacak:
+9. Kaynak kodu, bizim projesine kopyalanır:
 
-    [![](walkthrough-images/image10.png "Kaynak kodu projeye kopyalanacak")](walkthrough-images/image10.png#lightbox)
+    [![](walkthrough-images/image10.png "Kaynak kod projesine kopyalanır.")](walkthrough-images/image10.png#lightbox)
 
-10. Xcode Proje Gezgini seçin **InfColorPicker.m** (Bu kitaplığı yazıldı, bu dosyayı kullanılmaz biçimini nedeniyle) son iki satırı açıklamadan çıkarın ve dosya:
+10. Xcode Proje Gezgini ' seçin **InfColorPicker.m** dosya ve son iki satırları açıklama (Bu kitaplık yazıldı, bu dosya kullanılmaz şekli nedeniyle):
 
-    [![](walkthrough-images/image14.png "InfColorPicker.m dosya düzenleme")](walkthrough-images/image14.png#lightbox)
+    [![](walkthrough-images/image14.png "InfColorPicker.m dosyasını düzenleme")](walkthrough-images/image14.png#lightbox)
 
-11. Şimdi kitaplığı tarafından gerekli herhangi bir çerçeve olup olmadığını denetlemek ihtiyacımız. Benioku veya sağlanan örnek projelerinden birini açarak bu bilgileri bulabilirsiniz. Bu örnekte `Foundation.framework`, `UIKit.framework`, ve `CoreGraphics.framework` böylece bunları ekleyelim.
+11. Artık gerekli kitaplık için tüm çerçeveleri olup olmadığını denetlemek ihtiyacımız var. Bu bilgiler Benioku dosyasını veya sağlanan örnek projelerinden birini açarak bulabilirsiniz. Bu örnekte `Foundation.framework`, `UIKit.framework`, ve `CoreGraphics.framework` şimdi ekleyin.
 
-12. Seçin **InfColorPicker hedef > derleme aşamaları** ve genişletin **bağlantı ikiliyi kitaplıklara** bölümü:
+12. Seçin **InfColorPicker hedef > derleme aşamaları** genişletin **bağlantı Binary With Libraries** bölümü:
 
-    [![](walkthrough-images/image16b.png "Bağlantı ikiliyi kitaplıklara bölümü genişletin")](walkthrough-images/image16b.png#lightbox)
+    [![](walkthrough-images/image16b.png "Bağlantı Binary With Libraries bölümü genişletin")](walkthrough-images/image16b.png#lightbox)
 
-13. Kullanım **+** düğmesi gerekli çerçeveleri çerçeveleri yukarıda listelenen eklemenize olanak sağlayan iletişim kutusunu açmak için:
+13. Kullanım **+** düğmesi, yukarıda listelenen gerekli çerçeveler çerçeveleri eklemenize olanak sağlayan bir iletişim kutusunu açmak için:
 
-    [![](walkthrough-images/image16c.png "Yukarıda listelenen gerekli çerçeveleri çerçeveleri ekleyin")](walkthrough-images/image16c.png#lightbox)
+    [![](walkthrough-images/image16c.png "Gerekli çerçeveler çerçeveleri, yukarıda listelenen Ekle")](walkthrough-images/image16c.png#lightbox)
 
-14. **Bağlantı ikiliyi kitaplıklara** bölümü artık aşağıdaki görüntü gibi görünmelidir:
+14. **Bağlantı Binary With Libraries** bölümü artık aşağıdaki resimdeki gibi görünmelidir:
 
-    [![](walkthrough-images/image16d.png "Bağlantı ikiliyi kitaplıklara bölümü")](walkthrough-images/image16d.png#lightbox)
+    [![](walkthrough-images/image16d.png "Bağlantı Binary With Libraries bölümü")](walkthrough-images/image16d.png#lightbox)
 
-Bu noktada Kapat çalışıyoruz, ancak henüz tam bitmek. Statik kitaplık oluşturuldu, ancak bir Fat ikili tüm gerekli mimari iOS cihazı ve iOS simülatörü için içeren oluşturmak üzere oluşturmamız gereken.
+Bu noktada Kapat çalışıyoruz, ancak henüz tamamlandı. Statik kitaplık oluşturuldu, ancak bir Fat ikili tüm iOS cihaz hem de iOS simülatörü için gerekli olan mimari içeren oluşturmak için oluşturmamız gereken.
 
-### <a name="creating-a-fat-binary"></a>Fat ikili dosya oluşturma
+### <a name="creating-a-fat-binary"></a>Fat ikili oluşturma
 
-Tüm iOS cihazları, zaman içinde geliştirilmiş ARM mimarisi tarafından desteklenen işlemci yok. Her yeni bir mimari hala geriye dönük uyumluluk koruyarak yeni yönergeleri ve diğer geliştirmeler eklendi. İOS cihazlarda armv6, armv7, armv7s, arm64 yönerge kümelerini – rağmen sahibiz [artık armv6 kullanırız](~/ios/deploy-test/compiling-for-different-devices.md). İOS simülatörü ARM tarafından açık değildir ve istead bir x86 ve güç x86_64 simulator. Bize anlamına gelir ki olduğu biz kitaplıkları her yönerge sağlamanız gereken ayarlar.
+Tüm iOS cihazları, zaman içinde geliştirdik ARM mimarisi tarafından desteklenen işlemcilere sahip. Her yeni bir mimari, yine de geriye dönük uyumluluğu koruyarak yeni yönergeleri ve diğer geliştirmeler eklendi. İOS cihazlarında armv6, armv7, armv7s, arm64 yönerge kümesi – olsa da sahibiz [artık armv6 kullandığımız](~/ios/deploy-test/compiling-for-different-devices.md). İOS simülatörü, ARM tarafından desteklenen değil ve bir x86 ve desteklenen x86_64 benzetici istead olur. Bizim için anlamına gelir ki olduğunu size her yönerge kitaplıkları sağlamalısınız ayarlar.
 
-Fat bir kitaplık `.a` tüm desteklenen mimariler içeren dosya.
+Fat Kitaplığı `.a` desteklenen tüm mimariler içeren dosya.
 
-Bir fat ikili oluşturma üç adım bir işlemdir:
+Bir fat ikili oluşturma üç adımlı bir işlemdir:
 
-- Bir statik kitaplık ARM 7 & ARM64 sürümü derleyin.
-- Bir statik kitaplık x86 ve x84_64 sürümü derleyin.
-- Kullanım `lipo` iki statik kitaplıklar bir nesnede birleştirme komut satırı aracı.
+- Bir 7 ARM ve ARM64 sürümünü statik kitaplığı derleyin.
+- Bir statik kitaplık x86 ve x84_64 sürümünü derleyin.
+- Kullanım `lipo` iki statik kitaplıklar tek birleştirmek için komut satırı aracı.
 
-Tutarak bu üç adımı yerine basittir ve gelecekte Objective-C Kitaplığı güncelleştirmeler aldığında veya biz hata düzeltmeleri gerekiyorsa tekrarlamanız gerekebilir. Bu adımları otomatikleştirmek karar verirseniz, gelecek Bakım ve Destek iOS bağlama projesinin basitleştirir.
+Bu üç adımı çok basittir ve gelecekte Objective-C kitaplığını güncelleştirmeler aldığında veya hata düzeltmeleri kılarız tekrarlamanız gerekebilir olsa da. Adımları otomatikleştirmek karar verirseniz, gelecek Bakım ve Destek iOS bağlama projenin basitleştirecektir.
 
-Birçok aracı gibi görevler - bir kabuk betiği otomatik hale getirmek kullanılabilir vardır [rake](http://rake.rubyforge.org/), [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/), ve [olun](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Biz Xcode komut satırı araçlarını, biz de olun, bu nedenle diğer bir deyişle bu kılavuz için kullanılacak yapı sistemi yüklenirken. Burada bir **derleme görevleri dosyası** , bir iOS aygıtı ve herhangi bir kitaplığı simülatörü çalışması çok mimarisi paylaşılan kitaplığı oluşturmak için kullanabilirsiniz:
+-Bir kabuk betiği gibi görevleri otomatik hale getirmek birçok araç vardır [rake](http://rake.rubyforge.org/), [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/), ve [olun](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Xcode komut satırı araçlarını yüklediğimiz, biz de olun, bu nedenle diğer bir deyişle bu kılavuz için kullanılacak yapı sistemi yüklü. İşte bir **derleme görevleri dosyası** , bir iOS cihazı ve herhangi bir kitaplığı için simülatör üzerinde çalışacak bir çok mimari paylaşılan kitaplık oluşturmak için kullanabilirsiniz:
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -213,60 +213,60 @@ clean:
     -rm -f *.a *.dll
 ```
 
-Girin **derleme görevleri dosyası** seçtiğiniz, düz metin düzenleyicisinde komutları ve bölümlerle güncelleştirme **YOUR proje adı** projenizin adına sahip. Emin olmak önemlidir biz yönergeleri içinde sekmeler korunur, yukarıda verilen yönergeleri yapıştırın.
+Girin **derleme görevleri dosyası** seçtiğiniz, düz metin düzenleyicisi komutları ve bölümleri güncelleştirme **YOUR proje adı** projenizin adına sahip. Emin olmak önemlidir biz yönergeleri sekmelerde korunmuş yönergeler yukarıda yapıştırın.
 
-Dosya adıyla kaydedin **derleme görevleri dosyası** InfColorPicker Xcode statik yukarıda oluşturduğumuz kitaplığı olarak aynı konuma:
+Dosya adıyla kaydedin **derleme görevleri dosyası** aynı konuma InfColorPicker Xcode statik yukarıda oluşturduğumuz kitaplığı:
 
-[![](walkthrough-images/lib00.png "Derleme görevleri dosyası adla dosyayı Kaydet")](walkthrough-images/lib00.png#lightbox)
+[![](walkthrough-images/lib00.png "Dosyanın derleme görevleri dosyası adıyla kaydedin")](walkthrough-images/lib00.png#lightbox)
 
-Mac Terminal uygulamasını açın ve, derleme görevleri dosyası konumuna gidin. Tür `make` terminale basın **Enter** ve **derleme görevleri dosyası** yürütülecek:
+Mac bilgisayarınızda Terminal uygulamasını açın ve, derleme görevleri dosyasının konumuna gidin. Tür `make` terminale basın **Enter** ve **derleme görevleri dosyası** yürütülecek:
 
 [![](walkthrough-images/lib01.png "Örnek derleme görevleri dosyası çıktısı")](walkthrough-images/lib01.png#lightbox)
 
-Yapma çalıştırdığınızda, çok fazla tarafından kaydırma metni görürsünüz. Her şeyin doğru şekilde çalışan, sözcükleri görürsünüz **yapı başarılı** ve `libInfColorPicker-armv7.a`, `libInfColorPicker-i386.a` ve `libInfColorPickerSDK.a` dosyaları, aynı konuma kopyalanacak **derleme görevleri dosyası**:
+Yapma çalıştırdığınızda, çok miktarda metin tarafından kaydırma görürsünüz. Her şeyin düzgün çalıştığı, sözcükleri göreceğiniz **derleme başarılı** ve `libInfColorPicker-armv7.a`, `libInfColorPicker-i386.a` ve `libInfColorPickerSDK.a` dosyalarını aynı konuma kopyalanır **derleme görevleri dosyası**:
 
-[![](walkthrough-images/lib02.png "Derleme görevleri dosyası tarafından oluşturulan libInfColorPicker armv7.a, libInfColorPicker i386.a ve libInfColorPickerSDK.a dosyaları")](walkthrough-images/lib02.png#lightbox)
+[![](walkthrough-images/lib02.png "Derleme görevleri dosyası tarafından oluşturulan libInfColorPicker armv7.a ve libInfColorPicker i386.a libInfColorPickerSDK.a dosyaları")](walkthrough-images/lib02.png#lightbox)
 
-Aşağıdaki komutu kullanarak Fat ikili dosyanız mimarileri doğrulayabilirsiniz:
+Mimariler, Fat ikili dosyanız içinde aşağıdaki komutu kullanarak doğrulayabilirsiniz:
 
 ```bash
 xcrun -sdk iphoneos lipo -info libInfColorPicker.a
 ```
 
-Bu, aşağıdaki görüntülenmelidir:
+Aşağıdaki görüntülenmelidir:
 
 ```bash
 Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 ```
 
-Bu noktada, biz Xcode ve Xcode komut satırı araçlarını kullanarak bir statik kitaplık oluşturarak bizim iOS bağlama ilk adımı tamamlayana `make` ve `lipo`. Şimdi sonraki adımına geçmek ve kullanmak **hedefi Sharpie** bize için API bağlamaları oluşturulmasını otomatik hale getirmek için.
+Bu noktada, biz Xcode ve Xcode komut satırı araçlarını kullanarak bir statik kitaplık oluşturarak bizim iOS bağlama ilk adımı tamamladınız `make` ve `lipo`. Şimdi, sonraki adıma geçin ve kullanmak **hedefi Sharpie** ABD API'si bağlamalarını oluşturulmasını otomatik hale getirmek için.
 
 <a name="Create_a_Xamarin.iOS_Binding_Project"/>
 
 ## <a name="create-a-xamarinios-binding-project"></a>Bir Xamarin.iOS projesi bağlama oluşturma
 
-Biz kullanmadan önce **hedefi Sharpie** bağlama işlemini otomatikleştirmek için API tanımlarını barındırmak için bir Xamarin.iOS bağlama projesi oluşturmak ihtiyacımız (biz kullanan **hedefi Sharpie** bize yardımcı olmak için Yapı) ve bize için C# bağlama oluşturun.
+Kullanabilmeniz için önce **hedefi Sharpie** bağlama işlemi otomatikleştirmek için API tanımlarını barındırmak için bir Xamarin.iOS bağlaması projesi oluşturmak ihtiyacımız (kullanacağız, **hedefi Sharpie** yardımcı olmak için derleme) ve bizim için C# bağlaması oluşturun.
 
 Şimdi aşağıdakileri yapın:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 1. Mac için Visual Studio'yu başlatın
-1. Gelen **dosya** menüsünde, select **yeni** > **çözüm...** :
+1. Gelen **dosya** menüsünde **yeni** > **çözüm...** :
 
     ![](walkthrough-images/bind01.png "Yeni bir çözüm başlatılıyor")
 
-1. Yeni bir çözüm iletişim kutusundan **Kitaplığı** > **iOS projesi bağlama**:
+1. Yeni çözüm iletişim kutusundan **Kitaplığı** > **iOS projesi bağlama**:
 
-    ![](walkthrough-images/bind02.png "İOS Binding projesini seçin")
+    ![](walkthrough-images/bind02.png "İOS bağlama projesi seçin")
 
-1. Tıklatın **sonraki** düğmesi.
+1. Tıklayın **sonraki** düğmesi.
 
-1. "InfColorPickerBinding" olarak girin **proje adı** tıklatıp **oluşturma** düğmesi çözümü oluşturmak için:
+1. "InfColorPickerBinding" olarak girin **proje adı** tıklatıp **Oluştur** çözümü oluşturmak için:
 
-    ![](walkthrough-images/bind02a.png "Proje adı olarak InfColorPickerBinding girin")
+    ![](walkthrough-images/bind02a.png "InfColorPickerBinding proje adı girin")
 
-Çözüm oluşturulur ve iki varsayılan dosyalar dahil edilir:
+Çözümü oluşturulur ve iki varsayılan dosyaları dahil edilir:
 
 ![](walkthrough-images/bind03.png "Çözüm Gezgini'nde Çözüm yapısı")
 
@@ -276,55 +276,55 @@ Biz kullanmadan önce **hedefi Sharpie** bağlama işlemini otomatikleştirmek i
 
 1. Visual Studio'yu başlatın.
 
-1. Gelen **dosya** menüsünde, select **yeni** > **proje...** :
+1. Gelen **dosya** menüsünde **yeni** > **proje...** :
 
-    ![Yeni bir proje başlangıç](walkthrough-images/bind01vs.png "yeni bir proje başlangıç")
+    ![Yeni bir projeye Başlarken](walkthrough-images/bind01vs.png "yeni bir projeye Başlarken")
 
 1. Yeni Proje iletişim kutusundan **Visual C# > iPhone & iPad > iOS bağlamaları kitaplığı (Xamarin)**:
 
     [![İOS bağlamaları kitaplığı seçin](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
-1. "InfColorPickerBinding" olarak girin **adı** tıklatıp **Tamam** çözümü oluşturmak için düğmesi.
+1. "InfColorPickerBinding" olarak girin **adı** tıklatıp **Tamam** çözümü oluşturmak için.
 
-Çözüm oluşturulur ve iki varsayılan dosyalar dahil edilir:
+Çözümü oluşturulur ve iki varsayılan dosyaları dahil edilir:
 
 ![](walkthrough-images/bind03vs.png "Çözüm Gezgini'nde Çözüm yapısı")
 
 -----
 
-- **ApiDefinition.cs** -bu dosya nasıl Objective-C API'nin C# ' ta sarılır tanımlamak sözleşmeleri içerir.
-- **Structs.cs** - bu dosyanın tüm yapıları tutacak veya numaralandırma değerlerinden oluşan arabirimleri ve temsilciler tarafından gereklidir.
+- **ApiDefinition.cs** -bu dosya nasıl Objective-C API'nin C# içinde sarmalanır tanımlayan sözleşme içerir.
+- **Structs.cs** - bu dosya yapılar tutacak veya numaralandırma değerlerinden oluşan arabirimlerde ve temsilcilerde tarafından gereklidir.
 
-Biz bu kılavuzda daha sonra iki dosyalarıyla çalışma. İlk olarak, biz bağlama projeye InfColorPicker kitaplığı eklemeniz gerekir.
+Biz bu iki dosyayı daha sonra bu kılavuzdaki ile çalışma. İlk olarak biz InfColorPicker kitaplığı bağlama projeye eklemeniz gerekir.
 
 ### <a name="including-the-static-library-in-the-binding-project"></a>Statik kitaplık bağlama projeye dahil
 
-Temel bağlama Projemizin hazır sahibiz artık oluşturduğumuz yukarıda için Fat ikili Kitaplığı eklemek ihtiyacımız **InfColorPicker** kitaplığı.
+Temel bağlama Projemizin hazır sahibiz artık yukarıda oluşturduğumuz için Fat ikili Kitaplığı eklemek ihtiyacımız **InfColorPicker** kitaplığı.
 
 Kitaplığı eklemek için aşağıdaki adımları izleyin:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-1. Sağ **yerel başvuruları** seçin ve çözüm paneli klasöründe **yerel başvuru Ekle**:
+1. Sağ **yerel başvurular** seçin ve çözüm bölmesi klasöründe **yerel başvurular ekleme**:
 
-    ![](walkthrough-images/bind04a.png "Yerel başvurular ekleyin")
+    ![](walkthrough-images/bind04a.png "Yerel başvurular ekleme")
 
-1. Fat biz yapılan önceki ikili için gidin (`libInfColorPickerSDK.a`) ve basın **açık** düğmesi:
+1. Fat daha önce yaptığımız ikili dosyasını gidin (`libInfColorPickerSDK.a`) tuşuna basın **açık** düğmesi:
 
     ![](walkthrough-images/bind05.png "LibInfColorPickerSDK.a dosyasını seçin")
-1. Dosyanın projede eklenecek:
+1. Dosya projeye eklenecek:
 
-    ![](walkthrough-images/bind04.png "Bir dosya da dahil olmak üzere")
+    ![](walkthrough-images/bind04.png "Bir dosya dahil olmak üzere")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Kopya `libInfColorPickerSDK.a` gelen, **Mac yapı konağı** bağlama projenize yapıştırın.
+1. Kopyalama `libInfColorPickerSDK.a` gelen, **Mac derleme konağı** bağlama projenize kopyalayıp yapıştırın.
 
-1. Projeye sağ tıklayın ve seçin **Ekle > varolan öğeyi...** :
+1. Projeye sağ tıklayın ve seçin **Ekle > mevcut öğe...** :
 
-    ![](walkthrough-images/bind04vs.png "Varolan bir dosya ekleme")
+    ![](walkthrough-images/bind04vs.png "Var olan bir dosya ekleme")
 
-1. Gidin `libInfColorPickerSDK.a` ve basın **Ekle** düğmesi:
+1. Gidin `libInfColorPickerSDK.a` basın **Ekle** düğmesi:
 
     ![](walkthrough-images/bind05vs.png "LibInfColorPickerSDK.a ekleme")
 
@@ -332,10 +332,10 @@ Kitaplığı eklemek için aşağıdaki adımları izleyin:
 
 -----
 
-Zaman **bir** Xamarin.iOS otomatik olarak ayarlayacak dosyası projeye eklenir **yapı eylemi** dosyasını **ObjcBindingNativeLibrary**ve özel bir dosya oluşturun adlı `libInfColorPickerSDK.linkwith.cs`.
+Zaman **.a** dosya projeye Xamarin.iOS otomatik olarak ayarlayacak eklenir **derleme eylemi** dosyanın **ObjcBindingNativeLibrary**, özel bir dosya oluşturun adlı `libInfColorPickerSDK.linkwith.cs`.
 
 
-Bu dosyayı içeren `LinkWith` nasıl tanıtıcı biz yalnızca statik kitaplığa eklenen Xamarin.iOS söyler özniteliği. Bu dosyanın içeriğini aşağıdaki kod parçacığında gösterilmektedir:
+Bu dosyayı içeren `LinkWith` Xamarin.iOS nasıl tanıtıcı biz yalnızca statik kitaplığa eklenen belirten özniteliği. Bu dosyanın içeriğini aşağıdaki kod parçacığında gösterilir:
 
 ```csharp
 using ObjCRuntime;
@@ -343,10 +343,10 @@ using ObjCRuntime;
 [assembly: LinkWith ("libInfColorPickerSDK.a", SmartLink = true, ForceLoad = true)]
 ```
 
-`LinkWith` Özniteliği proje ve bazı önemli bir bağlayıcı bayrağı için statik kitaplık tanımlar.
+`LinkWith` Öznitelik statik kitaplık projesi ve bazı önemli bağlayıcı bayrakları için tanımlar.
 
 
-Yapmamız gereken sonraki InfColorPicker proje için API tanımları oluşturmak üzere şeydir. Bu kılavuzda amaçları doğrultusunda, biz hedefi Sharpie dosya oluşturmak için kullanacağı **ApiDefinition.cs**.
+Yapmamız gereken bir sonraki şey, API tanımlarını InfColorPicker projesi oluşturmaktır. Bu izlenecek yolda amacı doğrultusunda, hedefi Sharpie dosyası oluşturmak için kullanacağız **ApiDefinition.cs**.
 
 <a name="Using_Objective_Sharpie"/>
 
@@ -355,26 +355,26 @@ Yapmamız gereken sonraki InfColorPicker proje için API tanımları oluşturmak
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 
-Amaç Sharpie olan bir komut satırı (Xamarin tarafından sağlanan) aracı, 3 taraf Objective-C Kitaplık C# bağlamak için gereken tanımları oluşturmanıza yardımcı. Bu bölümde, hedefi Sharpie ilk oluşturmak için kullanacağız **ApiDefinition.cs** InfColorPicker projesi için.
+Amaç Sharpie olan bir komut satırı (Xamarin tarafından sağlanan) aracı, C# 3 bir taraf Objective-C kitaplığını bağlama için gereken tanımları oluşturmak size yardımcı olabilir. Bu bölümde, hedefi Sharpie ilk oluşturmak için kullanacağız **ApiDefinition.cs** InfColorPicker projesi için.
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-Amaç Sharpie olan bir komut satırı (Xamarin tarafından sağlanan) aracı, 3 taraf Objective-C Kitaplık C# bağlamak için gereken tanımları oluşturmanıza yardımcı. Bu bölümde, hedefi Sharpie üzerinde kullanacağız bizim **Mac yapı konağı** ilk oluşturmak için **ApiDefinition.cs** InfColorPicker projesi için.
+Amaç Sharpie olan bir komut satırı (Xamarin tarafından sağlanan) aracı, C# 3 bir taraf Objective-C kitaplığını bağlama için gereken tanımları oluşturmak size yardımcı olabilir. Bu bölümde, hedefi Sharpie üzerinde kullanacağız bizim **Mac derleme konağı** ilk oluşturmak için **ApiDefinition.cs** InfColorPicker projesi için.
 
 
 -----
 
-Başlamak için şimdi bu ayrıntılı olarak hedefi Sharpie yükleyici dosyasını indirin [Kılavuzu](~/cross-platform/macios/binding/objective-sharpie/get-started.md#installing). Yükleyiciyi çalıştırın ve ekrandaki yönergeleri tümünün hedefi Sharpie bizim geliştirme bilgisayara yüklemek için Yükleme Sihirbazı'ndan izleyin.
+Başlamak için şimdi bu ayrıntılı olarak hedefi Sharpie yükleyicisini indirin [Kılavuzu](~/cross-platform/macios/binding/objective-sharpie/get-started.md#installing). Yükleyiciyi çalıştırın ve ekrandaki istemleri hepsini bizim geliştirme bilgisayarında hedefi Sharpie yüklemek için yükleme sihirbazını izleyin.
 
-Biz hedefi Sharpie başarıyla oluşturduktan sonra yüklü, şimdi Terminal uygulamayı başlatın ve tüm bağlamasında yardımcı olmak için sağladığı araçları hakkında Yardım almak için aşağıdaki komutu girin:
+Biz hedefi Sharpie başarıyla oluşturduktan sonra yüklü şimdi Terminal uygulamasını başlatın ve tüm bağlamasında yardımcı olmak için sağladığı araçları hakkında Yardım almak için aşağıdaki komutu girin:
 
 ```bash
 sharpie -help
 ```
 
-Biz yukarıdaki komutu çalıştırırsanız, aşağıdaki çıkış oluşturulur:
+Biz yukarıdaki komutu çalıştırırsanız, aşağıdaki çıktı oluşturulur:
 
 ```bash
 Europa:Resources kmullins$ sharpie -help
@@ -392,12 +392,12 @@ Available Tools:
 Europa:Resources kmullins$
 ```
 
-Bu izlenecek amacıyla, biz aşağıdaki hedefi Sharpie araçları kullanacaktır:
+Bu gözden geçirme amacıyla biz aşağıdaki hedefi Sharpie araçları kullanarak:
 
-- **xcode** - bu araçları bize geçerli bizim Xcode yükleme ve iOS ve Mac API'leri, biz yüklü sürümleri hakkında bilgi sağlar. Biz bizim bağlamaları oluşturduğunuzda biz daha sonra bu bilgileri kullanarak.
-- **Bağlama** -bu aracı ayrıştırmak için kullanacağız **.h** ilk InfColorPicker projeye dosyalarında **ApiDefinition.cs** ve **StructsAndEnums.cs** dosyaları.
+- **xcode** - bu araçları bize bizim geçerli bir Xcode yüklemesi ve iOS ve Mac yüklü olan API'leri sürümleri hakkında bilgi sağlar. Size sunduğumuz bağlamaları oluşturduğunuzda size daha sonra bu bilgileri kullanacaklardır.
+- **Bağlama** -ayrıştırmak için bu aracı kullanacağız **.h** ilk InfColorPicker projeye dosyalarında **ApiDefinition.cs** ve **StructsAndEnums.cs** dosyaları.
 
-Belirli bir amaç Sharpie aracını kullanarak Yardım almak için aracın adını girin ve `-help` seçeneği. Örneğin, `sharpie xcode -help` aşağıdaki çıktıyı döndürür:
+Belirli bir amaç Sharpie aracı hakkında Yardım almak için aracının adını girin ve `-help` seçeneği. Örneğin, `sharpie xcode -help` aşağıdaki çıktı döndürür:
 
 ```bash
 Europa:Resources kmullins$ sharpie xcode -help
@@ -411,7 +411,7 @@ Options:
 Europa:Resources kmullins$
 ```
 
-Bağlama işlemi başlayabilmeniz için önce terminale aşağıdaki komutu girerek bizim geçerli yüklü SDK'ları hakkında bilgi almak ihtiyacımız `sharpie xcode -sdks`:
+Bağlama işlemi başlatmadan önce terminale aşağıdaki komutu girerek geçerli yüklü Larımız hakkında bilgi almak ihtiyacımız `sharpie xcode -sdks`:
 
 ```bash
 amyb:Desktop amyb$ sharpie xcode -sdks
@@ -421,17 +421,17 @@ sdk: macosx10.11     arch: x86_64  i386
 sdk: watchos2.2      arch: armv7
 ```
 
-Yukarıdaki biz olduğunu görebiliriz `iphoneos9.3` SDK bizim makinede yüklü. Yerinde bu bilgilerle biz InfColorPicker proje ayrıştırmak hazır `.h` ilk dosyalarıyla **ApiDefinition.cs** ve `StructsAndEnums.cs` InfColorPicker projesi için.
+Yukarıdakilerden, biz olduğunu görebiliriz `iphoneos9.3` SDK bizim makinede yüklü. Bu bilgileri bir yerde InfColorPicker proje ayrıştırılacak hazırız `.h` ilk dosyalarına **ApiDefinition.cs** ve `StructsAndEnums.cs` InfColorPicker projesi için.
 
-Aşağıdaki komutu girin Terminal uygulama:
+Aşağıdaki komutu girin Terminal uygulamasını:
 
 ```bash
 sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
 ```
 
-Burada `[full-path-to-project]` dizinin tam yolu burada **InfColorPicker** Xcode proje dosyası, bilgisayarda bulunan ve [iphone-os] olan iOS biz yüklediyseniz, SDK'sı tarafından belirtildiği gibi `sharpie xcode -sdks` komutu. Bu örnekte, biz başarıyla geçmenizin Not  **\*.h** bir parametresi olarak içeren *tüm* bu dizinde - başlık dosyaları normalde, bunu yapmak, ancak bunun yerine dikkatle okuyun üst düzey bulmak için üstbilgi dosyaları **.h** tüm diğer ilgili dosyaları başvuran ve hedefi Sharpie geçirmeniz yeterlidir, dosya.
+Burada `[full-path-to-project]` dizinine tam yolu burada **InfColorPicker** Xcode proje dosyası, bizim bilgisayarda bulunur ve iphone-os olduğu yüklediğimiz, SDK'sı iOS tarafından belirtildiği gibi `sharpie xcode -sdks` komutu. Bu örnekte biz geçirilen Not  **\*.h** içeren bir parametre olarak *tüm* üstbilgi dosyalarını bu dizinde - normalde, bunu değil, ancak bunun yerine dikkatle okuyun üst düzey bulmak için üst bilgi dosyaları **.h** başvuran tüm diğer ilgili dosyaları ve hedefi Sharpie için geçirmeniz yeterlidir, dosya.
 
-Aşağıdaki [çıkış](walkthrough-images/os05.png) terminale oluşturulur:
+Aşağıdaki [çıkış](walkthrough-images/os05.png) terminalde oluşturulur:
 
 ```bash
 Europa:Resources kmullins$ sharpie bind -output InfColorPicker -namespace InfColorPicker -sdk iphoneos8.1 /Users/kmullins/Projects/InfColorPicker/InfColorPicker/InfColorPicker.h -unified
@@ -458,14 +458,14 @@ In file included from /Users/kmullins/Projects/InfColorPicker/InfColorPicker/Inf
 Europa:Resources kmullins$
 ```
 
-Ve **InfColorPicker.enums.cs** ve **InfColorPicker.cs** dosyaları müşterilerimize Directory'de oluşturulur:
+Ve **InfColorPicker.enums.cs** ve **InfColorPicker.cs** bizim dizinde dosya oluşturulur:
 
 [![](walkthrough-images/os06.png "InfColorPicker.enums.cs ve InfColorPicker.cs dosyaları")](walkthrough-images/os06.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 
-Bu dosyaların her ikisini de yukarıda oluşturduğumuz bağlama projeyi açın. İçeriğini kopyalayın **InfColorPicker.cs** dosya ve yapıştırın **ApiDefinition.cs** dosyası, mevcut değiştirme `namespace ...` kod bloğu içeriğini  **InfColorPicker.cs** dosyası (bırakarak `using` deyimleri olduğu gibi):
+Bu dosyaların her ikisini de, yukarıda oluşturduğumuz bağlama projesi açın. İçeriğini kopyalayın **InfColorPicker.cs** yapıştırın ve dosya **ApiDefinition.cs** dosya, var olan değiştirerek `namespace ...` kod bloğu içeriğiyle  **InfColorPicker.cs** dosyası (bırakarak `using` deyimleri bozulmamış):
 
 ![](walkthrough-images/os07.png "InfColorPickerControllerDelegate dosyası")
 
@@ -473,7 +473,7 @@ Bu dosyaların her ikisini de yukarıda oluşturduğumuz bağlama projeyi açın
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-Bu dosyaların her ikisini de yukarıda oluşturduğumuz bağlama projeyi açın. İçeriğini kopyalayın **InfColorPicker.cs** dosyası (gelen **Mac yapı konağı**) ve yapıştırın **ApiDefinition.cs** dosyası, mevcut değiştirme `namespace ...` kod bloğu içeriğini **InfColorPicker.cs** dosyası (bırakarak `using` deyimleri olduğu gibi).
+Bu dosyaların her ikisini de, yukarıda oluşturduğumuz bağlama projesi açın. İçeriğini kopyalayın **InfColorPicker.cs** dosyası (gelen **Mac derleme konağı**) yapıştırın **ApiDefinition.cs** dosya, var olan değiştirerek `namespace ...` kod bloğu içeriğiyle **InfColorPicker.cs** dosyası (bırakarak `using` deyimleri olduğu gibi).
 
 
 -----
@@ -482,7 +482,7 @@ Bu dosyaların her ikisini de yukarıda oluşturduğumuz bağlama projeyi açın
 
 ## <a name="normalize-the-api-definitions"></a>API tanımlarını normalleştirin
 
-Amaç Sharpie bazen olan bir sorunu çevirme `Delegates`, tanımını değiştirmek ihtiyacımız şekilde `InfColorPickerControllerDelegate` arabirim ve değiştirme `[Protocol, Model]` aşağıdaki satırla:
+Hedefi Sharpie bazen olan bir sorunu çevirme `Delegates`, biz tanımını değiştirmeniz gerekecektir `InfColorPickerControllerDelegate` Değiştir ve arabirimi `[Protocol, Model]` aşağıdaki satırı:
 
 ```csharp
 [BaseType(typeof(NSObject))]
@@ -492,24 +492,24 @@ Böylece tanımı aşağıdaki gibi görünür:
 
 [![](walkthrough-images/os11.png "Tanımı")](walkthrough-images/os11.png#lightbox)
 
-Ardından, biz içeriğini aynı işlevi görür `InfColorPicker.enums.cs` dosya kopyalama ve yapıştırma bunları `StructsAndEnums.cs` bırakarak dosya `using` deyimleri kalır:
+Ardından, içeriği aynı işlemi yaptığımız `InfColorPicker.enums.cs` kopyalama ve yapıştırma bunları dosya `StructsAndEnums.cs` bırakarak dosya `using` deyimleri sorunsuz:
 
 [![](walkthrough-images/os09.png "İçeriği StructsAndEnums.cs dosyası ")](walkthrough-images/os09.png#lightbox)
 
-Hedefi Sharpie bağlamayla ek açıklama bulabilirsiniz `[Verify]` öznitelikleri. Bu öznitelikler hedefi Sharpie (, ilişkili bildiriminin üstüne bir yorum sağlanacak) özgün C/Objective-C bildirimine bağlamayla karşılaştırarak doğru olanı vermedi doğrulamalısınız gösterir. Bağlamaları doğruladıktan sonra doğrulama özniteliği kaldırmanız gerekir. Daha fazla bilgi için bkz [doğrula](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md) Kılavuzu.
+Hedefi Sharpie bağlamayla ek açıklamalı bulabilirsiniz `[Verify]` öznitelikleri. Bu öznitelikler, hedefi Sharpie bağlama (Bu bir yorum ilişkili bildiriminin üstüne sağlanacaktır) özgün C/Objective-C bildirimi ile karşılaştırarak en doğru şey olmadı doğrulamalıdır gösterir. Bağlamaları doğruladıktan sonra doğrulama özniteliği kaldırmanız gerekir. Daha fazla bilgi için [doğrulama](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md) Kılavuzu.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 
-Bu noktada, bağlama Projemizin, tam ve oluşturmak için hazır olması gerekir. Şimdi bizim bağlama projeyi oluşturun ve şu hata ile sona emin olun:
+Bu noktada, bağlama Projemizin eksiksiz ve oluşturmak için hazır olması gerekir. Diyelim ki bizim bağlama projeyi oluşturun ve size herhangi bir hata ile sona emin olun:
 
-[Bağlama projeyi oluşturun ve hiçbir hata bulunmadığından emin olun](walkthrough-images/os12.png)
+[Bağlama projeyi oluşturun ve hiçbir hata olmadığından emin olun](walkthrough-images/os12.png)
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-Bu noktada, bağlama Projemizin, tam ve oluşturmak için hazır olması gerekir. Şimdi bizim bağlama projeyi oluşturun ve şu hata ile sona emin olun.
+Bu noktada, bağlama Projemizin eksiksiz ve oluşturmak için hazır olması gerekir. Diyelim ki bizim bağlama projeyi derleyin ve size herhangi bir hata ile sona emin olun.
 
 
 -----
@@ -518,57 +518,57 @@ Bu noktada, bağlama Projemizin, tam ve oluşturmak için hazır olması gerekir
 
 ## <a name="using-the-binding"></a>Bağlama işlemini kullanma
 
-Bağlama kitaplığı yukarıda oluşturduğunuz iOS kullanmak için bir örnek iPhone uygulaması oluşturmak için aşağıdaki adımları izleyin:
+Bağlama kitaplığı yukarıda oluşturduğunuz iOS kullanarak bir örnek iPhone uygulaması oluşturmak için aşağıdaki adımları izleyin:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-1. **Xamarin.iOS projesi oluşturma** -adlı yeni bir Xamarin.iOS projesi eklemek **InfColorPickerSample** aşağıdaki ekran görüntülerinde gösterildiği gibi çözüme:
+1. **Xamarin.iOS projesi oluşturma** -adlı yeni bir Xamarin.iOS projesi Ekle **InfColorPickerSample** aşağıdaki ekran görüntülerinde gösterildiği gibi çözüm için:
 
-    ![](walkthrough-images/use01.png "Bir tek görünüm uygulaması ekleme")
+    ![](walkthrough-images/use01.png "Tek görünüm uygulaması ekleme")
 
     ![](walkthrough-images/use01a.png "Tanımlayıcı ayarlama")
 
-1. **Bağlama projesine başvuru ekleyin** -güncelleştirme **InfColorPickerSample** bir başvuru içeriyor böylece proje **InfColorPickerBinding** proje:
+1. **Bağlama projeye başvuru ekleyin** -güncelleştirme **InfColorPickerSample** başvuru sahip olacak şekilde proje **InfColorPickerBinding** proje:
 
-    ![](walkthrough-images/use02.png "Bağlama projesine başvuru ekleme")
+    ![](walkthrough-images/use02.png "Bağlama projeye başvuru ekleme")
 
-1. **İPhone kullanıcı arabirimi oluşturma** -çift tıklatın **MainStoryboard.storyboard** dosyasını **InfColorPickerSample** iOS Tasarımcısı düzenlemek için proje. Ekleme bir **düğmesini** görüntülemek ve çağrısından `ChangeColorButton`aşağıda gösterildiği gibi:
+1. **İPhone kullanıcı arabirimi oluşturma** -çift tıklayın **MainStoryboard.storyboard** dosyası **InfColorPickerSample** iOS Designer'daki düzenlemek için proje. Ekleme bir **düğmesi** görüntülemek ve onu çağırmak `ChangeColorButton`aşağıda gösterildiği gibi:
 
-    ![](walkthrough-images/use03.png "Görünüme düğme ekleme")
+    ![](walkthrough-images/use03.png "Görünüm için bir düğme ekleme")
 
-1. **InfColorPickerView.xib ekleme** -InfColorPicker Objective-C Kitaplığı içeren bir **.xib** dosya. Xamarin.iOS değil içereceği bu **.xib** bağlama projesinde bizim örnek uygulama çalışma zamanı hataları neden olacak. Geçici çözüm bu eklemektir **.xib** Xamarin.iOS Projemizin dosyasına. Xamarin.iOS projesi, sağ tıklatın ve seçin seçin **Ekle > dosyaları Ekle**ve ekleme **.xib** dosya aşağıdaki ekran görüntüsünde gösterildiği gibi:
+1. **InfColorPickerView.xib ekleme** -InfColorPicker Objective-C kitaplığını içeren bir **.xib** dosya. Xamarin.iOS bu içermeyecek **.xib** bağlama projesinde örnek uygulamamızdaki çalışma zamanı hatalarına neden olacak. Geçici çözüm bu eklemektir **.xib** Xamarin.iOS Projemizin dosyasına. Xamarin.iOS projesi, sütuna sağ tıklayıp seçin **Ekle > Add Files**ve ekleme **.xib** aşağıdaki ekran görüntüsünde gösterildiği gibi dosya:
 
-    ![](walkthrough-images/use04.png "InfColorPickerView.xib Ekle")
+    ![](walkthrough-images/use04.png "InfColorPickerView.xib ekleyin")
 
-1. Sorulduğunda, kopyalama **.xib** proje dosyasına.
+1. İstendiğinde, kopyalama **.xib** dosyayı projeye.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. **Xamarin.iOS projesi oluşturma** -adlı yeni bir Xamarin.iOS projesi eklemek **InfColorPickerSample** kullanarak **Single View uygulaması** şablonu:
+1. **Xamarin.iOS projesi oluşturma** -adlı yeni bir Xamarin.iOS projesi eklemek **InfColorPickerSample** kullanarak **tek görünüm uygulaması** şablonu:
 
     [![iOS uygulaması (Xamarin) projesi](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
 
     [![Şablonu seçin](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
 
-1. **Bağlama projesine başvuru ekleyin** -güncelleştirme **InfColorPickerSample** bir başvuru içeriyor böylece proje **InfColorPickerBinding** proje:
+1. **Bağlama projeye başvuru ekleyin** -güncelleştirme **InfColorPickerSample** başvuru sahip olacak şekilde proje **InfColorPickerBinding** proje:
 
-    ![](walkthrough-images/use02vs.png "Bağlama projesine başvuru ekleyin")
+    ![](walkthrough-images/use02vs.png "Bağlama projeye başvuru ekleyin")
 
-1. **İPhone kullanıcı arabirimi oluşturma** -çift tıklatın **MainStoryboard.storyboard** dosyasını **InfColorPickerSample** iOS Tasarımcısı düzenlemek için proje. Ekleme bir **düğmesini** görüntülemek ve çağrısından `ChangeColorButton`aşağıda gösterildiği gibi:
+1. **İPhone kullanıcı arabirimi oluşturma** -çift tıklayın **MainStoryboard.storyboard** dosyası **InfColorPickerSample** iOS Designer'daki düzenlemek için proje. Ekleme bir **düğmesi** görüntülemek ve onu çağırmak `ChangeColorButton`aşağıda gösterildiği gibi:
 
     ![](walkthrough-images/use03vs.png "İPhone kullanıcı arabirimi oluşturma")
 
-1. **InfColorPickerView.xib ekleme** -InfColorPicker Objective-C Kitaplığı içeren bir **.xib** dosya. Xamarin.iOS değil içereceği bu **.xib** bağlama projesinde bizim örnek uygulama çalışma zamanı hataları neden olacak. Geçici çözüm bu eklemektir **.xib** bizim Xamarin.iOS projeden dosyasına bizim **Mac yapı konağı**. Xamarin.iOS projesi, sağ tıklatın ve seçin seçin **Ekle** > **varolan öğeyi...** ve ekleme **.xib** dosya.
+1. **InfColorPickerView.xib ekleme** -InfColorPicker Objective-C kitaplığını içeren bir **.xib** dosya. Xamarin.iOS bu içermeyecek **.xib** bağlama projesinde örnek uygulamamızdaki çalışma zamanı hatalarına neden olacak. Geçici çözüm bu eklemektir **.xib** Xamarin.iOS Projemizin dosyasına bizim **Mac derleme konağı**. Xamarin.iOS projesi, sütuna sağ tıklayıp seçin **Ekle** > **mevcut öğe...** ve ekleme **.xib** dosya.
 
 -----
 
-Ardından, Objective-C ve nasıl bunları bağlama ve C# kodu işleme protokollerin hızlı bir göz atalım.
+Ardından, Objective-C ve nasıl bunları bağlama ve C# kodu işleme protokolleri hızlı bir göz atalım.
 
 ### <a name="protocols-and-xamarinios"></a>Protokoller ve Xamarin.iOS
 
-Objective-C, yöntemler (veya iletileri) bir protokol tanımlayan belirli durumlarda kullanılabilir. Kavramsal olarak, bunlar C# arabirimleri için çok benzer. Objective-C protokolü ve C# arabirimi arasındaki temel farklardan biri protokolleri isteğe bağlı yöntemler - uygulamak için bir sınıf yok yöntemleri sahip olabilmeleridir. Objective-C kullanan @optional anahtar sözcüğü hangi yöntemlerin isteğe bağlı olduğunu belirtmek için kullanılır. Protokolleri hakkında daha fazla bilgi için bkz: [olaylar, protokolleri ve Temsilciler](~/ios/app-fundamentals/delegates-protocols-and-events.md).
+Objective-C, bir protokol, yöntemler (veya iletileri) tanımlar. Bazı durumlarda kullanılabilir. Kavramsal olarak, bunlar C# ' ta arabirimler çok benzer. Objective-C protokolü ve C# arabirimi arasındaki temel farklardan biri protokolleri isteğe bağlı yöntemler - bir sınıf uygulamak için sahip olmayan yöntemleri sahip olabilmeleridir. Objective-C kullanan @optional anahtar sözcüğü, hangi yöntemlerin isteğe bağlı olarak belirtmek için kullanılır. Protokolleri hakkında daha fazla bilgi için bkz. [olaylar, protokoller ve Temsilciler](~/ios/app-fundamentals/delegates-protocols-and-events.md).
 
-**InfColorPickerController** aşağıdaki kod parçacığında gösterildiği bir tür protokolü, sahiptir:
+**InfColorPickerController** aşağıdaki kod parçacığında gösterilen bir tür Protokolü vardır:
 
 ```csharp
 @protocol InfColorPickerControllerDelegate
@@ -583,7 +583,7 @@ Objective-C, yöntemler (veya iletileri) bir protokol tanımlayan belirli duruml
 @end
 ```
 
-Bu protokolü tarafından kullanılan **InfColorPickerController** kullanıcı yeni bir renk ve, seçmiş olan istemcileri bildirmek için **InfColorPickerController** tamamlandı. Amaç Sharpie, aşağıdaki kod parçacığında gösterildiği gibi bu protokolü eşlenmiş:
+Bu protokolü tarafından kullanılan **InfColorPickerController** kullanıcı yeni bir renk ve, çekilen istemciler bildirmek için **InfColorPickerController** tamamlandı. Amaç Sharpie, aşağıdaki kod parçacığında gösterildiği gibi bu protokolü eşlenmiş:
 
 ```csharp
 [BaseType(typeof(NSObject))]
@@ -599,22 +599,22 @@ public partial interface InfColorPickerControllerDelegate {
 
 ```
 
-Bağlama kitaplığı derlendiğinde Xamarin.iOS adlı Özet temel sınıf oluşturacak `InfColorPickerControllerDelegate`, sanal yöntemleriyle bu arabirimi uygular.
+Bağlama kitaplığı derlendiğinde Xamarin.iOS adlı bir soyut temel sınıf oluşturacak `InfColorPickerControllerDelegate`, sanal yöntemleri ile bu arabirimi uygular.
 
-Biz bu arabirimi bir Xamarin.iOS uygulaması uygulayabilirsiniz iki yolu vardır:
+Biz bu arabirim bir Xamarin.iOS uygulamasına uygulayabilirsiniz iki yolu vardır:
 
-- **Güçlü temsilci** -güçlü bir temsilci kullanarak içerir o alt sınıfların bir C# sınıfı oluşturma `InfColorPickerControllerDelegate` ve uygun yöntemlerini geçersiz kılar. **InfColorPickerController** bu sınıfının bir örneği, istemcilerle iletişim kurmak için kullanır.
-- **Zayıf temsilci** -zayıf bir temsilci genel yöntem üzerinde bazı sınıf oluşturursunuz biraz farklı bir tekniktir (gibi `InfColorPickerSampleViewController`) ve bu yönteme gösterme `InfColorPickerDelegate` aracılığıyla protokolü bir `Export` özniteliği.
+- **Güçlü temsilci** -güçlü bir temsilci kullanılmasına alt sınıflara ayıran bir C# sınıfı oluşturma `InfColorPickerControllerDelegate` ve uygun yöntemleri geçersiz kılar. **InfColorPickerController** bu sınıfın bir örneği, istemcilerle iletişim kurmak için kullanır.
+- **Zayıf temsilci** -zayıf bir temsilci bazı sınıfı genel bir yöntem kapsamında biraz daha farklı bir tekniktir (gibi `InfColorPickerSampleViewController`) ve ardından bu yönteme gösterme `InfColorPickerDelegate` protokolü aracılığıyla bir `Export` özniteliği.
 
-Güçlü temsilciler IntelliSense, tür güvenliği ve daha iyi kapsülleme sağlar. Bu nedenlerle, zayıf bir temsilci yerine yapabilmenizi güçlü temsilciler kullanmanız gerekir.
+Güçlü Temsilciler, IntelliSense, tür güvenliği ve daha iyi kapsülleme sağlayın. Bu nedenlerle, zayıf bir temsilci yerine gerçekleştirebileceğiniz güçlü temsilciler kullanmanız gerekir.
 
-Bu kılavuzda iki tekniği aşağıdakiler ele alınacaktır: ilk güçlü bir temsilci uygulama ve zayıf bir temsilci uygulamak nasıl açıklayan.
+Bu kılavuzda hem tekniklerini ele alınacaktır: ilk güçlü bir temsilci uygulamak ve ardından zayıf bir temsilci uygulamak nasıl açıklayan.
 
 ### <a name="implementing-a-strong-delegate"></a>Güçlü bir temsilci uygulama
 
-Xamarin.iOS uygulaması yanıtlamak için güçlü bir temsilci kullanarak son `colorPickerControllerDidFinish:` ileti:
+Xamarin.iOS uygulama yanıt vermek için güçlü bir temsilci kullanarak son `colorPickerControllerDidFinish:` ileti:
 
-**Bir alt InfColorPickerControllerDelegate** -adlı projeye yeni bir sınıf ekleyin `ColorSelectedDelegate`. Sınıfı, aşağıdaki kodu olacak biçimde düzenleyin:
+**Alt InfColorPickerControllerDelegate** -adlı projeye yeni bir sınıf ekleyin `ColorSelectedDelegate`. Sınıfı, aşağıdaki kod sahip olacak şekilde düzenleyin:
 
 ```csharp
 using InfColorPickerBinding;
@@ -640,15 +640,15 @@ namespace InfColorPickerSample
 }
 ```
 
-Xamarin.iOS bağlamak Objective-C temsilci olarak adlandırılan bir soyut taban sınıfı oluşturarak `InfColorPickerControllerDelegate`. Bir alt kümesi bu türe ve geçersiz kılma `ColorPickerControllerDidFinish` değerini erişmek için yöntemi `ResultColor` özelliği `InfColorPickerController`.
+Xamarin.iOS bağlama Objective-C temsilci olarak adlandırılan bir soyut temel sınıf oluşturarak `InfColorPickerControllerDelegate`. Öğesinin alt sınıfı bu tür ve geçersiz kılma `ColorPickerControllerDidFinish` değerini erişmeye yöntemi `ResultColor` özelliği `InfColorPickerController`.
 
-**ColorSelectedDelegate bir örneğini oluşturmak** -bizim olay işleyicisi örneği gerekir `ColorSelectedDelegate` önceki adımda oluşturduğumuz türü. Sınıf Düzenle `InfColorPickerSampleViewController` ve sınıfına aşağıdaki örnek değişkeni ekleyin:
+**ColorSelectedDelegate örneğini oluşturmak** -bizim olay işleyicisi örneği gerekir `ColorSelectedDelegate` önceki adımda oluşturduğumuz türü. Sınıf Düzenle `InfColorPickerSampleViewController` ve sınıfa aşağıdaki örnek değişkeni ekleyin:
 
 ```csharp
 ColorSelectedDelegate selector;
 ```
 
-**ColorSelectedDelegate değişkeni başlatmak** - emin olmak için `selector` geçerli bir örneği, güncelleştirme yöntemi `ViewDidLoad` içinde `ViewController` aşağıdaki kod parçacığında eşleştirmek için:
+**ColorSelectedDelegate değişkeni başlatmak** - emin olmak için `selector` geçerli bir örneği, güncelleştirme yöntemi `ViewDidLoad` içinde `ViewController` aşağıdaki kod parçacığı eşleştirmek için:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -658,7 +658,7 @@ public override void ViewDidLoad ()
     selector = new ColorSelectedDelegate (this);
 }
 ```
-**HandleTouchUpInsideWithStrongDelegate yöntemi uygulaması** -sonraki zaman kullanıcı dokunur için olay işleyicisini uygulamak **ColorChangeButton**. Düzen `ViewController`ve aşağıdaki yöntemi ekleyin:
+**HandleTouchUpInsideWithStrongDelegate yöntemi uygulamak** -sonraki kullanıcı ne zaman dokunduğu için olay işleyicisini uygulayın **ColorChangeButton**. Düzen `ViewController`, aşağıdaki yöntemi ekleyin:
 
 ```csharp
 using InfColorPicker;
@@ -673,19 +673,19 @@ private void HandleTouchUpInsideWithStrongDelegate (object sender, EventArgs e)
 
 ```
 
-Biz öncelikle bir örneği elde `InfColorPickerController` bir statik yöntem ve güçlü bizim temsilci özelliği aracılığıyla farkında örnek yap aracılığıyla `InfColorPickerController.Delegate`. Bu özellik otomatik olarak bize hedefi Sharpie tarafından oluşturuldu. Son olarak diyoruz `PresentModallyOverViewController` görünüm gösterileceğini `InfColorPickerSampleViewController.xib` böylece kullanıcı bir renk seçebilirsiniz.
+Biz öncelikle örneği elde `InfColorPickerController` bir statik yöntem ve örnek özelliği aracılığıyla güçlü bizim temsilci farkında olun aracılığıyla `InfColorPickerController.Delegate`. Bu özellik otomatik olarak bizim için hedefi Sharpie tarafından oluşturuldu. Son olarak diyoruz `PresentModallyOverViewController` görünümüne geçmek için `InfColorPickerSampleViewController.xib` böylece kullanıcı, bir renk seçebilirsiniz.
 
-**Uygulamayı çalıştırmak** - biz tamamladıktan tüm kodumuza bu noktada. Uygulama çalıştırırsanız, arka plan rengini değiştirin yapabiliyor olmanız gerekir `InfColorColorPickerSampleView` aşağıdaki ekran görüntülerinde gösterildiği gibi:
+**Uygulamayı çalıştırmak** - uyguladığımız tüm kodumuz bu noktada. Uygulamayı çalıştırdığınızda, arka plan rengini değiştirmek erişebileceğinizi `InfColorColorPickerSampleView` aşağıdaki ekran görüntülerinde gösterildiği gibi:
 
 [![](walkthrough-images/run01.png "Uygulamayı çalıştırma")](walkthrough-images/run01.png#lightbox)
 
-Tebrikler! Bu noktada artık başarıyla oluşturuldu ve bir Xamarin.iOS uygulaması kullanmak için bir Objective-C Kitaplığı bağlı. Ardından, şimdi zayıf temsilcileri kullanma hakkında bilgi edinin.
+Tebrikler! Bu noktada başarıyla oluşturduğunuz ve bir Objective-C kitaplığını kullanılmak üzere bir Xamarin.iOS uygulaması bağlı. Ardından, şimdi zayıf temsilcileri kullanma hakkında bilgi edinin.
 
 ### <a name="implementing-a-weak-delegate"></a>Zayıf bir temsilci uygulama
 
-Bir sınıf için belirli bir temsilci Objective-C protokole bağlı sınıflara yerine Xamarin.iOS Ayrıca, Protokolü yöntemleri türetilen herhangi bir sınıf uygulama olanak tanır `NSObject`, yöntemlerinizi ile dekorasyon `ExportAttribute`ve ardından uygun seçiciler sağlama. Bu yaklaşımı seçtiğinizde sınıfı örneği atamak `WeakDelegate` özelliği için yerine `Delegate` özelliği. Zayıf bir temsilci temsilci sınıfınız farklı bir devralma hiyerarşisi aşağı olabilmesi için esneklik sunar. Uygulama ve Xamarin.iOS uygulamamız zayıf bir temsilci kullanma görelim.
+Bir sınıf için belirli bir temsilci Objective-C protokolüne bağlı sınıflara yerine Xamarin.iOS ayrıca türetilen herhangi bir sınıf, protokol yöntemleri uygulamak sağlar `NSObject`, yöntemlerinizi ile dekorasyon `ExportAttribute`ve ardından uygun Seçici sağlama. Bu yaklaşımı benimsemeniz, sınıfı bir örneğini atadığınız `WeakDelegate` özelliği için yerine `Delegate` özelliği. Zayıf bir temsilci temsilcinin sınıfınıza farklı devralma hiyerarşisinde aşağı esnekliğine sunar. Bakalım nasıl uygulanacağını ve Xamarin.iOS uygulamamız zayıf bir temsilci kullanın.
 
-**Olay işleyicisi için TouchUpInside oluşturma** -için yeni bir olay işleyicisi oluşturalım `TouchUpInside` arka plan rengini Değiştir düğmesinin olayı. Bu işleyici olarak aynı rol doldurur `HandleTouchUpInsideWithStrongDelegate` size önceki bölümde oluşturduğunuz ancak zayıf bir temsilci yerine güçlü bir temsilci kullanacağı işleyici. Sınıf Düzenle `ViewController`ve aşağıdaki yöntemi ekleyin:
+**Olay işleyicisi oluşturmak için TouchUpInside** -için yeni bir olay işleyici oluşturalım `TouchUpInside` olay düğmenin arka plan rengini değiştirebilirsiniz. Bu işleyici, aynı rol olarak dolduracağı `HandleTouchUpInsideWithStrongDelegate` size önceki bölümde oluşturduğunuz ancak zayıf bir temsilci güçlü bir temsilci yerine kullanacağınız işleyici. Sınıf Düzenle `ViewController`, aşağıdaki yöntemi ekleyin:
 
 ```csharp
 private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
@@ -696,7 +696,7 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
     picker.PresentModallyOverViewController (this);
 }
 ```
-**ViewDidLoad güncelleştirme** -değiştirmeniz gerekir `ViewDidLoad` böylece yeni oluşturduğumuz olay işleyicisi kullanır. Düzen `ViewController` değiştirip `ViewDidLoad` aşağıdaki kod parçacığını benzeyecek şekilde:
+**ViewDidLoad güncelleştirme** -ki değiştirmeli `ViewDidLoad` böylece oluşturduğumuz olay işleyicisi kullanır. Düzen `ViewController` değiştirip `ViewDidLoad` aşağıdaki kod parçacığı benzeyecek şekilde:
 
 
 ```csharp
@@ -708,7 +708,7 @@ public override void ViewDidLoad ()
 
 ```
 
-**ColorPickerControllerDidFinish işlemek: ileti** - `ViewController` olan tamamlandı, iOS mesajı göndereceğiz `colorPickerControllerDidFinish:` için `WeakDelegate`. Biz bu iletiyi işleyen bir C# yöntemi oluşturmanız gerekir. Bunu yapmak için bir C# yöntem oluşturma ve onunla ekleyin `ExportAttribute`. Düzen `ViewController`ve sınıfına aşağıdaki yöntemi ekleyin:
+**ColorPickerControllerDidFinish işlemek: ileti** - `ViewController` olan bittiğinde, iOS mesajı göndereceğiz `colorPickerControllerDidFinish:` için `WeakDelegate`. Bu iletiyi işleyebilen bir C# yöntemi için oluşturmamız gerekir. Bunu yapmak için size bir C# yöntemi oluşturma ve onunla adorn `ExportAttribute`. Düzen `ViewController`, sınıfına aşağıdaki yöntemi ekleyin:
 
 ```csharp
 [Export("colorPickerControllerDidFinish:")]
@@ -720,17 +720,19 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 ```
 
-Uygulamayı çalıştırın. Artık tam olarak önceden olduğu, ancak yerine güçlü temsilci zayıf bir temsilci kullanıyor gibi davranması. Bu noktada, bu kılavuzda başarıyla tamamladınız. Şimdi oluşturmak ve bir Xamarin.iOS bağlama proje kullanmak nasıl bir anlamış olmanız gerekir.
+Uygulamayı çalıştırın. Artık tam olarak daha önceki işlevlerini sürdürmektedir, ancak güçlü temsilci yerine zayıf bir temsilci kullanıyor çalışacaktır. Bu noktada Bu izlenecek yolda başarıyla tamamladınız. Artık, bir Xamarin.iOS bağlaması projesi oluşturup nasıl bir anlayışa sahipsiniz.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede oluşturma ve Xamarin.iOS bağlama proje kullanma sürecinde gitti. Önce bir statik kitaplık içine var olan bir Objective-C Kitaplık derlemek nasıl ele. Ardından bir Xamarin.iOS bağlama projesinin nasıl oluşturulacağı ve hedefi Sharpie Objective-C Kitaplığı için API tanımları oluşturmak nasıl ele. Biz güncelleştirin ve bunları ortak tüketimi için uygun hale getirmek için oluşturulan API tanımlarını ince ayar açıklanır. Xamarin.iOS bağlama proje tamamlandıktan sonra Biz bu bağlama bir Xamarin.iOS uygulaması, güçlü Temsilciler ve zayıf temsilciler kullanarak odaklanmayı tüketen için taşındı.
+Bu makalede, oluşturma ve bir Xamarin.iOS bağlaması projesi kullanma işleminde size öğrendiniz. İlk statik bir kitaplıkta mevcut bir Objective-C kitaplığını derlemeye nasıl ele almıştık. Ardından bir Xamarin.iOS bağlaması projenin nasıl oluşturulacağını ve hedefi Sharpie Objective-C Kitaplığı için API tanımları oluşturmak için nasıl kullanılacağı ele. Ortak tüketim için uygun hale getirmek için oluşturulan API tanımlarını ince ve güncelleştirmek nasıl ele almıştık. Xamarin.iOS bağlaması proje bittikten sonra tüketen bir Xamarin.iOS uygulaması, temsilciler güçlü ve zayıf temsilcileri kullanma odaklanmasına Bu bağlama için geçtiğimizi.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Bağlama örneği (örnek)](https://developer.xamarin.com/samples/monotouch/InfColorPicker/)
 - [Objective-C Kitaplıklarını Bağlama](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [Bağlama Ayrıntıları](~/cross-platform/macios/binding/overview.md)
-- [Bağlama türü Başvuru Kılavuzu](~/cross-platform/macios/binding/binding-types-reference.md)
-- [Objective-C geliştiriciler için Xamarin](~/ios/get-started/objective-c-developers/index.md)
+- [Bağlama türleri Başvuru Kılavuzu](~/cross-platform/macios/binding/binding-types-reference.md)
+- [Objective-C geliştiricileri için Xamarin](~/ios/get-started/objective-c-developers/index.md)
 - [Çerçeve Tasarım Yönergeleri](http://msdn.microsoft.com/library/ms229042.aspx)
+- [Xamarin University Ders: bir Objective-C bağlama kitaplığı oluşturma](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University Ders: derleme hedefi Sharpie ile bir Objective-C bağlama kitaplığı](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

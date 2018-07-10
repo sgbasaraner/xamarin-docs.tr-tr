@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Essentials ile çalışmaya başlama
-description: Xamarin.Essentials tüm iOS, Android veya UWP çalışır bir tek platformlar arası API sağlar erişilebilen uygulama paylaşılan kullanıcı arabirimini nasıl oluşturulduğunu olsun kodu.
+description: Xamarin.Essentials sağlar, tüm iOS, Android veya UWP çalışır bir tek platformlar arası API erişilebilir uygulama paylaşılan kullanıcı arabirimi nasıl oluşturulduğunu fark etmeksizin kodu.
 ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a42086f70eb81a761358655b3effb9f8f934c8d4
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 7e371a6125d223d354b75ce7e09dcc28efb3dffa
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37067191"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855240"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials ile çalışmaya başlama
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-Xamarin.Essentials tüm iOS, Android veya UWP çalışır bir tek platformlar arası API sağlar erişilebilen uygulama paylaşılan kullanıcı arabirimini nasıl oluşturulduğunu olsun kodu.
+Xamarin.Essentials sağlar, tüm iOS, Android veya UWP çalışır bir tek platformlar arası API erişilebilir uygulama paylaşılan kullanıcı arabirimi nasıl oluşturulduğunu fark etmeksizin kodu.
 
 ## <a name="platform-support"></a>Platform Desteği
 
@@ -30,51 +30,51 @@ Xamarin.Essentials aşağıdaki platformları ve işletim sistemlerini destekler
 
 ## <a name="installation"></a>Yükleme
 
-Xamarin.Essentials, Visual Studio kullanarak tüm mevcut veya yeni projeye eklenen bir NuGet paketi olarak kullanılabilir.
+Xamarin.Essentials, Visual Studio kullanarak tüm mevcut veya yeni bir projeye eklenen bir NuGet paketi olarak kullanılabilir.
 
 1. İndirme ve yükleme [Visual Studio](http://visualstudio.com) ile [Xamarin için Visual Studio Araçları](~/cross-platform/get-started/installation/index.md).
 
-2. Varolan projeyi açın veya altında boş uygulama şablonu kullanarak yeni bir proje oluşturun **Visual Studio C#** (Android, iPhone ve iPad veya platformlar arası). **Önemli**: UWP projeye ekleme derleme 16299 ya da daha yüksek Proje Özellikleri'nde ayarlanır emin olmak değilse.
+2. Varolan bir projeyi açın ya da altında boş uygulama şablonunu kullanarak yeni bir proje oluşturma **Visual Studio C#** (Android, iPhone ve iPad veya platformlar arası). **Önemli**: UWP projesine ekleme derleme 16299 veya üzeri, proje özelliklerinde ayarlandığından emin olun.
 
 3. Ekleme **Xamarin.Essentials** her proje için NuGet paketi:
 
     # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    Çözüm Gezgini panelinde çözüm adına sağ tıklayın ve seçin **NuGet paketlerini Yönet**. Arama **Xamarin.Essentials** pakete yükleyip **tüm** Android, iOS, UWP ve .NET standart kitaplıkları da dahil olmak üzere projeleri.
+    Çözüm Gezgini panelinde çözüm adına sağ tıklayın ve seçin **NuGet paketlerini Yönet**. Arama **Xamarin.Essentials** pakete yükleyip **tüm** Android, iOS, UWP ve .NET standart kitaplıkları dahil olmak üzere projeleri.
 
     > [!TIP]
     > Denetleme **INCLUDE yayın öncesi** kutusunu [ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials) Önizleme aşamasındadır.
 
     # <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
-    Çözüm Gezgini panelinde proje adına sağ tıklayın ve seçin **Ekle > NuGet paketleri Ekle...** . Arama **Xamarin.Essentials** pakete yükleyip **tüm** Android, iOS ve .NET standart kitaplıkları da dahil olmak üzere projeleri.
+    Çözüm Gezgini panelinde proje adına sağ tıklayın ve seçin **Ekle > NuGet paketleri Ekle...** . Arama **Xamarin.Essentials** pakete yükleyip **tüm** Android, iOS ve .NET standart kitaplıkları dahil olmak üzere projeleri.
 
     > [!TIP]
-    > Denetleme **Göster ön sürüm paketlerini** kutusunu [ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials) Önizleme aşamasındadır.
+    > Denetleme **ön sürüm paketleri Göster** kutusunu [ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials) Önizleme aşamasındadır.
 
     -----
 
-4. Xamarin.Essentials başvuru API'leri başvurmak için hiçbir C# sınıfta ekleyin.
+4. API'leri başvurmak için bir C# sınıfında Xamarin.Essentials bir başvuru ekleyin.
 
     ```csharp
     using Xamarin.Essentials;
     ```
 
-5. Xamarin.Essentials platforma özgü Kurulum gerektirir:
+5. Platforma özgü Kurulum Xamarin.Essentials gerektirir:
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-    Xamarin.Essentials 19, API düzeyine karşılık gelen 4.4 minimum Android sürümü destekler ancak derleme için hedef Android sürümü 8.1 olmalıdır 27 API düzeyine karşılık gelen. (Visual Studio'da bu iki sürüm Android bildirim sekmesinde Android projesi için Proje Özellikleri iletişim kutusunda ayarlanır. Mac için Visual Studio'da, bunlar proje Seçenekleri iletişim kutusunda Android uygulaması sekmesinde Android projesi için hazırsınız.) 
+    Xamarin.Essentials 4.4, API düzey 19 için karşılık gelen en düşük Android sürümü destekler ancak derleme için hedef Android sürümü 8.1 olmalıdır API düzeyi 27 karşılık gelen. (Visual Studio'da bu iki sürümü Android bildirim sekmesindeki Android projesi için Proje Özellikleri iletişim kutusunda ayarlanır. Mac için Visual Studio, proje Seçenekleri iletişim kutusunda, Android uygulama sekmesinde Android projesi için hazırsınız.) 
     
-    Xamarin.Essentials gerektirdiği Xamarin.Android.Support kitaplıkları 27.0.2 sürümünü yükler. Uygulamanızın gerektirdiği herhangi bir Xamarin.Android.Support kitaplıkları da NuGet Paket Yöneticisi'ni kullanarak 27.0.2 sürüme güncelleştirilmesi gerekir. Uygulamanız tarafından kullanılan tüm Xamarin.Android.Support kitaplıkları aynı olmalıdır ve en az sürüm 27.0.2. Başvurmak [sorun giderme sayfası](troubleshooting.md) Xamarin.Essentials NuGet eklemek veya NuGets çözümünüzde sorunlarınız varsa.
+    Xamarin.Essentials gerektiren Xamarin.Android.Support kitaplıkları 27.0.2.1 sürümünü yükler. Uygulamanızın gerektirdiği diğer Xamarin.Android.Support kitaplıkları da NuGet Paket Yöneticisi'ni kullanarak 27.0.2.1 sürümüne güncelleştirilmesi gerekir. Uygulamanız tarafından kullanılan tüm Xamarin.Android.Support kitaplıkları aynı olmalıdır ve en az olmalıdır 27.0.2.1 sürümü. Başvurmak [sorun giderme sayfası](troubleshooting.md) Xamarin.Essentials NuGet ekleme veya çözümünüzdeki Nuget'i güncelleştirilirken bir sorun yaşarsanız.
 
-    Android projenin `MainLauncher` veya tüm `Activity` diğer bir deyişle başlatılan Xamarin.Essentials başlatıldı, içinde `OnCreate` yöntemi:
+    Android projenin `MainLauncher` veya tüm `Activity` diğer bir deyişle başlatılan Xamarin.Essentials başlatılmalı `OnCreate` yöntemi:
 
     ```csharp
     Xamarin.Essentials.Platform.Init(this, bundle);
     ```
 
-    Android çalışma zamanı izinlerini işlemek için Xamarin.Essentials herhangi almalıdır `OnRequestPermissionsResult`. Tümü için aşağıdaki kodu ekleyin `Activity` sınıfları:
+    Android çalışma zamanı izinlerini işlemek için Xamarin.Essentials herhangi almalıdır `OnRequestPermissionsResult`. Tüm aşağıdaki kodu ekleyin `Activity` sınıflar:
 
     ```csharp
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -87,11 +87,11 @@ Xamarin.Essentials, Visual Studio kullanarak tüm mevcut veya yeni projeye eklen
 
     # <a name="iostabios"></a>[iOS](#tab/ios)
 
-    Ek kurulumu gerekmez.
+    Ek kurulum gerekli.
 
     # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-    Ek kurulumu gerekmez.
+    Ek kurulum gerekli.
 
     -----
 
@@ -99,8 +99,8 @@ Xamarin.Essentials, Visual Studio kullanarak tüm mevcut veya yeni projeye eklen
 
 ## <a name="other-resources"></a>Diğer Kaynaklar
 
-Geliştiriciler için Xamarin ziyaret yeni öneririz [Xamarin geliştirme ile çalışmaya başlama](~/cross-platform/getting-started/index.md).
+Geliştiricilerin Xamarin ziyaret yeni öneririz [Xamarin geliştirme ile çalışmaya başlama](~/cross-platform/getting-started/index.md).
 
-Ziyaret [Xamarin.Essentials GitHub depo](http://github.com/xamarin/Essentials) depo kapatın ve kaynak kod örnekleri, çalıştırmak İleri, yakında, geçerli görmek için. Topluluk Katkıları Hoş Geldiniz!
+Ziyaret [Xamarin.Essentials GitHub deposu](http://github.com/xamarin/Essentials) depo kapatın ve kaynak kod örnekleri, çalıştırma, yakında çıkacak, geçerli görmek için. Topluluk Katkıları Hoş Geldiniz!
 
-Göz atarak [API belgelerine](xref:Xamarin.Essentials) Xamarin.Essentials, her özellik için.
+Göz atarak [API belgeleri](xref:Xamarin.Essentials) Xamarin.Essentials her özelliği için.

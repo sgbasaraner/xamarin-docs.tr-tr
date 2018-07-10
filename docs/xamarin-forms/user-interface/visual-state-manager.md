@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms görsel durum Yöneticisi
-description: XAML öğeleri koddan ayarlanan visual durumlara göre değişiklik yapmak için görsel durum Yöneticisi'ni kullanın.
+description: XAML öğeleri koddan ayarlamak görsel durumlar göre değişiklik yapmak için görsel durum Yöneticisi'ni kullanın.
 ms.prod: xamarin
 ms.assetid: 17296F14-640D-484B-A24C-A4E9B7013E4F
 ms.technology: xamarin-forms
@@ -8,51 +8,51 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: 3c0330d8d6d07112350db007d0500d57c236dc24
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 0fdcbd6467547647089b436a894b1bc490ba5ee1
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848030"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854824"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms görsel durum Yöneticisi
 
-_XAML öğeleri koddan ayarlanan visual durumlara göre değişiklik yapmak için görsel durum Yöneticisi'ni kullanın._
+_XAML öğeleri koddan ayarlamak görsel durumlar göre değişiklik yapmak için görsel durum Yöneticisi'ni kullanın._
 
-Görsel durum Yöneticisi'ni (VSM) Xamarin.Forms 3. 0'yeni bir özelliktir. VSM visual için kullanıcı arabirimi koddan değişiklik için yapılandırılmış bir yol sağlar. Çoğu durumda, uygulamanın kullanıcı arabirimi XAML içinde tanımlanır ve bu XAML işaretleme görsel durum Yöneticisi kullanıcı arabirimi görselleri etkilemesi açıklayan içerir.
+Görsel durum Yöneticisi'ni (VSM) Xamarin.Forms 3. 0'da yenidir. VSM görsel değişiklikler için kullanıcı arabirimi koddan yapmak için yapılandırılmış bir yol sağlar. Çoğu durumda, uygulamanın kullanıcı arabirimi XAML içinde tanımlanır ve bu XAML görsel durum Yöneticisi kullanıcı arabirimi görsellerin nasıl etkilediğini açıklayan biçimlendirme içerir.
 
-VSM kavramını sunmaktadır _görsel durumlarını_. Xamarin.Forms görünümü gibi bir `Button` temel durumuna bağlı olarak birkaç farklı görsel görünümler olabilir &mdash; olup devre dışı bırakıldı veya basılı veya odak giriş. Bu düğmenin durumlarıdır.
+VSM kavramını sunar _görsel durumlar_. Bir Xamarin.Forms görünümü gibi bir `Button` temel alınan durumuna bağlı olarak birkaç farklı görsel görünümlerini olabilir &mdash; olup devre dışı bırakıldı veya basılı veya odak giriş. Bu düğmenin durumlarıdır.
 
-Görsel durumlarını toplanır _visual durumu grupları_. Bir görsel durumuna grubundaki tüm görsel durumlarını karşılıklı olarak birbirini dışlar. Görsel durumlarını ve görsel durumuna grupları basit metin dizelerini tarafından tanımlanır.
+Görsel durumlar toplanır _görsel durum grupları_. Bir görsel durum grubundaki tüm görsel durumları karşılıklı olarak birbirini dışlar. Görsel durumları ve görsel durum grupları hem basit metin dizelerini tarafından tanımlanır.
 
-Xamarin.Forms Visual durum Yöneticisi ile üç görsel durumlarını "CommonStates" adlı bir visual durum grubu tanımlar:
+Xamarin.Forms görsel durum Yöneticisi ile üç görsel durumlar "CommonStates" adlı bir görsel durum grubu tanımlar:
 
 - "Normal"
 - "Devre dışı"
-- "Odaklanmış"
+- "Odaklı"
 
-Bu görsel durum grubu öğesinden türetilen tüm sınıflar için desteklenen [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), için temel sınıfı olan [ `View` ](xref:Xamarin.Forms.View) ve [ `Page` ](xref:Xamarin.Forms.Page). 
+Bu görsel durum grubu, türetilen tüm sınıflar için desteklenen [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), temel sınıf için [ `View` ](xref:Xamarin.Forms.View) ve [ `Page` ](xref:Xamarin.Forms.Page). 
 
-Ayrıca kendi görsel durumuna grupları tanımlayabileceğiniz ve görsel durumlarını, bu makale olarak gösterilmektedir.
+Görsel durum grupları da tanımlayabilirsiniz ve görsel durumlar, bu makale olarak gösterilecektir.
 
 > [!NOTE]
-> Xamarin.Forms geliştiricilerinin aşina [Tetikleyicileri](~/xamarin-forms/app-fundamentals/triggers.md) Tetikleyicileri de bir görünümün özellikler veya olaylarını tetikleme değişikliklere göre kullanıcı arabiriminde görselleri değişiklik yapabilir, farkında. Ancak, bu değişiklikleri çeşitli bileşimleri dağıtılacak Tetikleyicileri kullanarak oldukça karmaşık olabilir. Tarihsel olarak, Visual durum Yöneticisi Windows XAML tabanlı ortamları görsel durumlarını birleşimleri arasından kaynaklanan karışıklığı hafifletmek için sunulmuştur. VSM ile görsel durumlarını visual durum grubu içindeki her zaman karşılıklı olarak birbirini dışlar. Herhangi bir zamanda geçerli durumu her grubu yalnızca bir durumda değil.
+> Xamarin.Forms geliştiricileri aşina [Tetikleyicileri](~/xamarin-forms/app-fundamentals/triggers.md) Tetikleyicileri de bir görünümün özellikleri veya olayları eşleştirilebilir değişikliklere dayalı kullanıcı arabirimi görsellerde değişiklik yapabilir, farkındayız. Ancak, bu değişiklikleri çeşitli birleşimlerini uğraşmak için Tetikleyiciler kullanma oldukça karmaşık olabilir. Tarihsel olarak, görsel durum Yöneticisi görsel durumlar birleşimlerini kaynaklanan karmaşıklığı hafifletmek için Windows XAML tabanlı ortamlarda kullanılmaya başlandı. VSM ile görsel durum grubu içinde görsel durumları her zaman birbirini dışlar. Herhangi bir zamanda, geçerli durumu her grubu yalnızca bir durumda değil.
 
 ## <a name="the-common-states"></a>Ortak durumları
 
-Görsel durum Yöneticisi bölümleri görünümü normal veya devre dışı bırakıldı veya giriş odağını varsa, bir görünüm görsel görünümünü değiştirebilirsiniz XAML dosyanıza dahil sağlar. Bunlar olarak bilinir _ortak durumları_.
+Görsel durum Yöneticisi görünümü, normal veya devre dışı bırakıldı veya giriş odağı olan bir görünümü görsel görünümünü değiştirebilirsiniz, XAML dosyasında bölümler dahil etmenize imkan sağlar. Bunlar olarak bilinen _ortak durumları_.
 
-Örneğin, sahip olduğunuz varsayalım bir `Entry` , sayfa görünümü ve görsel görünümünü istediğiniz `Entry` aşağıdaki yollarla değiştirmek için:
+Örneğin, sahip olduğunuz varsayalım. bir `Entry` sayfanızdaki görünümü ve görsel görünümünü istiyorsanız `Entry` aşağıdaki yollarla değiştirmek için:
 
-- `Entry` Bir pembe olmalıdır ne zaman arka plan `Entry` devre dışı bırakılır.
-- `Entry` Açık yeşil arka plan normalde olması gerekir.
-- `Entry` Odak giriş olduğunda normal yüksekliğini iki kez genişletmeniz gerekir.
+- `Entry` Bir pembe olmalıdır ne zaman arka planda `Entry` devre dışı bırakıldı.
+- `Entry` Küf arka plan normalde olması gerekir.
+- `Entry` Odak giriş olduğunda normal yüksekliğinin iki katı genişletmeniz gerekir.
 
-Birden çok görünüm için geçerliyse stilde tanımlayabilirsiniz veya ayrı bir görünümüne VSM biçimlendirme ekleyebilirsiniz. Sonraki iki bölümde Bu yaklaşımlar açıklanmaktadır.
+Tek bir görünüm VSM biçimlendirme ekleyebilir veya birden çok görünüm için geçerliyse bir stilde tanımlayabilirsiniz. Sonraki iki bölümde Bu yaklaşımları açıklanmaktadır.
 
 ### <a name="vsm-markup-on-a-view"></a>Bir görünümde VSM biçimlendirme
 
-VSM biçimlendirme eklemek için bir `Entry` görüntülemek için önce ayrı `Entry` başlangıç ve bitiş etiketleri içine:
+VSM biçimlendirme eklemek için bir `Entry` görüntülemek için önce ayrı `Entry` başlangıç ve bitiş etiketleri içinde:
 
 ```xaml
 <Entry FontSize="18">
@@ -60,9 +60,9 @@ VSM biçimlendirme eklemek için bir `Entry` görüntülemek için önce ayrı `
 </Entry>
 ```
 
-Durumlardan birini kullanacağından açık yazı tipi boyutunu verdiği `FontSize` metin boyutunu iki katına çıkarma özelliğini `Entry`.
+Kullanacağınızdan bu durumlardan biriyle açık yazı tipi boyutu verdiği `FontSize` metin boyutunu çift özellik `Entry`.
 
-Ardından, INSERT `VisualStateManager.VisualStateGroups` bu etiketlerin arasındaki etiketler:
+Ardından, ekleme `VisualStateManager.VisualStateGroups` bu etiketleri arasında etiketleri:
 
 ```xaml
 <Entry FontSize="18">
@@ -72,9 +72,9 @@ Ardından, INSERT `VisualStateManager.VisualStateGroups` bu etiketlerin arasınd
 </Entry>
 ```
 
-[`VisualStateGroups`](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) tarafından tanımlanan bir ekli bağlanabilirse özellik [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager) sınıfı. (Ekli bağlanabilir özellikler hakkında daha fazla bilgi için bkz: [ekli özellikler](~/xamarin-forms/xaml/attached-properties.md).) Bunun nasıl `VisualStateGroups` özelliği eklendiği `Entry` nesnesi.
+[`VisualStateGroups`](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) bir ekli bağlanabilir özelliği tarafından tanımlanan [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager) sınıfı. (Eklenen bağlanabilir özellikler hakkında daha fazla bilgi için bkz [iliştirilmiş özellikler](~/xamarin-forms/xaml/attached-properties.md).) Bu, nasıl `VisualStateGroups` özelliği eklendiği `Entry` nesne.
 
-`VisualStateGroups` Özelliği türüdür [ `VisualStateGroupList` ](xref:Xamarin.Forms.VisualStateGroupList), koleksiyonu olduğu [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) nesneleri. İçinde `VisualStateManager.VisualStateGroups` etiketler, bir çift ekleyin `VisualStateGroup` görsel durumlarını eklemek istediğiniz her grup için etiketler:
+`VisualStateGroups` Özelliği türüdür [ `VisualStateGroupList` ](xref:Xamarin.Forms.VisualStateGroupList), koleksiyonu olduğu [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) nesneleri. İçinde `VisualStateManager.VisualStateGroups` etiketler, bir çift Ekle `VisualStateGroup` görsel durumlar dahil etmek istediğiniz her grup için etiketler:
 
 ```xaml
 <Entry FontSize="18">
@@ -86,17 +86,17 @@ Ardından, INSERT `VisualStateManager.VisualStateGroups` bu etiketlerin arasınd
 </Entry>
 ```
 
-Dikkat `VisualStateGroup` etikete sahip bir `x:Name` grubunun adını belirten özniteliği. `VisualStateGroup` Sınıfı tanımlayan bir `Name` yerine kullanabileceğiniz özelliği:
+Dikkat `VisualStateGroup` etiketine sahip bir `x:Name` grubunun adını belirten özniteliği. `VisualStateGroup` Sınıfı tanımlayan bir `Name` bunların yerine kullanabileceğiniz özelliği:
 
 ```xaml
 <VisualStateGroup Name="CommonStates">
 ```
 
-Kullanabilirsiniz `x:Name` veya `Name` ancak ikisini aynı öğede.
+Kullanabilirsiniz `x:Name` veya `Name` ancak her ikisini birden aynı öğe.
 
-`VisualStateGroup` Sınıfı tanımlayan adlı bir özellik [ `States` ](xref:Xamarin.Forms.VisualStateGroup.States), koleksiyonu olduğu [ `VisualState` ](xref:Xamarin.Forms.VisualState) nesneleri. `States` olan _içerik özelliği_ , `VisualStateGroups` dahil edebileceğiniz şekilde `VisualState` doğrudan arasında etiketler `VisualStateGroup` etiketler. (İçerik özellikleri makalesinde açıklanan [temel XAML sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md#content-properties).)
+`VisualStateGroup` Sınıfı tanımlar adlı bir özellik [ `States` ](xref:Xamarin.Forms.VisualStateGroup.States), koleksiyonu olduğu [ `VisualState` ](xref:Xamarin.Forms.VisualState) nesneleri. `States` olan _içerik özelliği_ , `VisualStateGroups` ekleyebilirsiniz, böylece `VisualState` doğrudan arasında etiketleri `VisualStateGroup` etiketler. (İçerik özellikleri makalesinde açıklanan [temel XAML sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md#content-properties).)
 
-Sonraki adım, o grupta visual her durum için etiketler çifti eklemektir. Bunlar ayrıca kullanılarak tanımlanabilir `x:Name` veya `Name`:
+Sonraki adım, gruptaki her görsel durum etiketlerini çifti eklemektir. Bunlar ayrıca kullanılarak tanımlanabilir `x:Name` veya `Name`:
 
 ```xaml
 <Entry FontSize="18">
@@ -118,9 +118,9 @@ Sonraki adım, o grupta visual her durum için etiketler çifti eklemektir. Bunl
 </Entry>
 ```
 
-`VisualState` adlı bir özelliğini tanımlar [ `Setters` ](xref:Xamarin.Forms.VisualState.Setters), koleksiyonu olduğu [ `Setter` ](xref:Xamarin.Forms.Setter) nesneleri. Aynı bunlar `Setter` kullandığınız nesneleri bir [ `Style` ](xref:Xamarin.Forms.Style) nesnesi.
+`VisualState` adlı bir özellik [ `Setters` ](xref:Xamarin.Forms.VisualState.Setters), koleksiyonu olduğu [ `Setter` ](xref:Xamarin.Forms.Setter) nesneleri. Bunlar aynı `Setter` kullandığınız nesneleri bir [ `Style` ](xref:Xamarin.Forms.Style) nesne.
 
-`Setters` olan _değil_ içerik özelliği `VisualState`, özellik öğesi etiketleri dahil etmek gerekli olmayacak biçimde `Setters` özelliği:
+`Setters` olan _değil_ içerik özelliğinin `VisualState`, özellik öğesi etiketleri dahil etmek gerekli olacak şekilde `Setters` özelliği:
 
 ```xaml
 <Entry FontSize="18">
@@ -148,7 +148,7 @@ Sonraki adım, o grupta visual her durum için etiketler çifti eklemektir. Bunl
 </Entry>
 ```
 
-Bir veya daha fazla artık ekleyebilirsiniz `Setter` her çifti arasında nesneleri `Setters` etiketler. Bunlar `Setter` daha önce açıklanan görsel durumlarını tanımlamak nesneler:
+Artık bir veya daha fazla yerleştirebilirsiniz `Setter` her çifti arasında nesneleri `Setters` etiketler. Bunlar `Setter` daha önce açıklanan görsel durumlar tanımlama nesneler:
 
 ```xaml
 <Entry FontSize="18">
@@ -176,9 +176,9 @@ Bir veya daha fazla artık ekleyebilirsiniz `Setter` her çifti arasında nesnel
 </Entry>
 ```
 
-Her `Setter` etiketi, bu durum geçerli olduğunda belirli bir özellik değerini gösterir. Tarafından başvurulan herhangi bir özelliği bir `Setter` bağlanabilir özelliği tarafından nesne yedeklenir.
+Her `Setter` etiket, bu durum geçerli olduğunda belirli bir özellik değerini belirtir. Tarafından başvurulan herhangi bir özelliği bir `Setter` bağlanabilir bir özelliğe göre nesne desteklenir.
 
-Biçimlendirme şuna benzer olduğunu temeli **görünümündeki VSM** sayfasındaki **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** örnek program. Sayfa üç içerir `Entry` görünümleri ancak yalnızca ikinci bir bağlı VSM biçimlendirme sahiptir:
+Biçimlendirme benzer olan temel **görünümünde VSM** sayfasını **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** örnek program. Sayfanın üç içerir `Entry` görünümleri, ancak yalnızca ikinci bir bağlı VSM biçimlendirme vardır:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -249,23 +249,23 @@ Biçimlendirme şuna benzer olduğunu temeli **görünümündeki VSM** sayfasın
 </ContentPage>
 ```
 
-Dikkat ikinci `Entry` de sahip bir `DataTrigger` parçası olarak kendi `Trigger` koleksiyonu. Bu neden `Entry` bir şey üçüncü yazılan kadar devre dışı bırakılması `Entry`. İOS, Android ve evrensel Windows Platformu (UWP) çalıştıran başlangıçta sayfa şöyledir:
+Dikkat ikinci `Entry` de sahip bir `DataTrigger` parçası olarak kendi `Trigger` koleksiyonu. Bu neden `Entry` üçüncü bir şey yazılana kadar devre dışı bırakılması `Entry`. İOS, Android ve evrensel Windows Platformu (UWP) çalışan başlangıçta sayfa şöyledir:
 
-[![Görünüm VSM: devre dışı](vsm-images/VsmOnViewDisabled.png "VSM görünüm - devre dışı")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
+[![Görünüm VSM: devre dışı](vsm-images/VsmOnViewDisabled.png "VSM görünümünde - devre dışı")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
-Geçerli visual durumu "devre dışı" böylece ikinci arka planı `Entry` iOS ve Android ekranlar pembe değil. UWP uygulaması `Entry` arka plan ayarlama izin verme ne zaman renk `Entry` devre dışı bırakılır. 
+Geçerli görsel durumu "devre dışı bırakıldı" Bu nedenle ikinci arka planını `Entry` iOS ve Android ekranlar pembe olduğu. UWP uygulaması `Entry` arka planını ayarlamaya izin vermiyor ne zaman renk `Entry` devre dışı bırakıldı. 
 
-Bazı metinleri üçüncü girdiğinizde `Entry`, ikinci `Entry` "Normal" durumu ve arka plan anahtarıdır şimdi açık yeşil:
+Üçüncü metin girdiğinizde `Entry`, ikinci `Entry` anahtarları "Normal" durumu ve arka plan, artık Küf:
 
-[![Görünüm VSM: Normal](vsm-images/VsmOnViewNormal.png "VSM görünüm - normal")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
+[![Görünüm VSM: Normal](vsm-images/VsmOnViewNormal.png "görünümünde - normal VSM")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
 
-Touch zaman ikinci `Entry`, giriş odağını alır. "Focused" durumuna geçer ve yüksekliği için iki kez genişletir:
+Touch ne zaman ikinci `Entry`, giriş odağı alır. "Focused" durumuna geçer ve yüksekliğinin iki katı genişletir:
 
-[![Görünüm VSM: odaklanmış](vsm-images/VsmOnViewFocused.png "VSM odaklanmış Görünüm -")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
+[![Görünüm VSM: odaklanmış](vsm-images/VsmOnViewFocused.png "odaklı görünümü - VSM")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
 
-Dikkat `Entry` giriş odağını aldığında açık yeşil arka plan sürdürmez. Görsel durum Yöneticisi visual durumlar arasında geçişler gibi özellikleri önceki durumuna göre ayarlanmış ayarlanmamış. Görsel durumlarını karşılıklı olarak birbirini dışlar göz önünde bulundurun. "Normal" durum yalnızca, gelmez `Entry` etkinleştirilir. Bu anlamına gelir `Entry` etkin ve giriş odağını yok. 
+Dikkat `Entry` giriş odağını aldığında Küf arka plan sürdürmez. Görsel durum Yöneticisi görsel durumları arasında geçiş gibi önceki durumuna göre özellikleri ayarlama. Görsel durumlar karşılıklı olarak birbirini dışlar göz önünde bulundurun. Yalnızca, "Normal" duruma gelmez `Entry` etkinleştirilir. Anlamına `Entry` etkinleştirilir ve giriş odağını sahip değil. 
 
-İsterseniz `Entry` açık yeşil arka plan "Focused" durumda olmasını başka eklemek `Setter` bu görsel durumuna:
+İsterseniz `Entry` "Focused" durumda Küf arka plan için başka bir ekleme `Setter` , görsel durum:
 
 ```xaml
 <VisualState x:Name="Focused">
@@ -276,17 +276,17 @@ Dikkat `Entry` giriş odağını aldığında açık yeşil arka plan sürdürme
 </VisualState>
 ```
 
-Bu sırada `Setter` düzgün çalışması için nesneleri bir `VisualStateGroup` içermelidir `VisualState` o gruptaki tüm durumlarıyla nesneleri. İçermediği görsel bir durum ise `Setter` nesneleri, boş bir etiket olarak yine de dahil etme:
+Bu sırada `Setter` düzgün bir şekilde çalışması için nesneler bir `VisualStateGroup` içermelidir `VisualState` nesneler için o gruptaki tüm durumları. Yok görsel bir durum ise `Setter` nesneler dahil boş bir etiket olarak yine de:
 
 ```xaml
 <VisualState x:Name="Normal" />
 ``` 
 
-### <a name="visual-state-manager-markup-in-a-style"></a>Stil görsel durum Yöneticisi biçimlendirme
+### <a name="visual-state-manager-markup-in-a-style"></a>Görsel durum Yöneticisi biçimlendirme stil
 
-Genellikle, aynı Visual durum Yöneticisi biçimlendirme iki veya daha fazla görünümler arasında paylaşmak gereklidir. Bu durumda, biçimlendirme koymak istersiniz bir `Style` tanımı.
+Genellikle, aynı görsel durum Yöneticisi biçimlendirme iki veya daha fazla görünüm arasında paylaşmak gereklidir. Bu durumda, biçimlendirme koymak isteyebilirsiniz bir `Style` tanımı.
 
-İşte varolan örtük `Style` için `Entry` öğelerinde **VSM üzerinde Görünüm** sayfa:
+İşte var olan örtük `Style` için `Entry` öğelerinde **VSM üzerinde görünümü** sayfası:
 
 ```xaml
 <Style TargetType="Entry">
@@ -295,7 +295,7 @@ Genellikle, aynı Visual durum Yöneticisi biçimlendirme iki veya daha fazla g�
 </Style> 
 ```
 
-Ekleme `Setter` için etiketler `VisualStateManager.VisualStateGroups` bağlanabilirse özelliği eklenmiş:
+Ekleme `Setter` için etiketler `VisualStateManager.VisualStateGroups` bağlanılabilir özellik bağlı:
 
 ```xaml
 <Style TargetType="Entry">
@@ -307,7 +307,7 @@ Ekleme `Setter` için etiketler `VisualStateManager.VisualStateGroups` bağlanab
 </Style> 
 ```
 
-İçerik özelliği için `Setter` olan `Value`, bu nedenle değerini `Value` özelliği doğrudan içindeki etiketleri belirtilebilir. Özellik türü olduğunu `VisualStateGroupList`:
+İçerik özelliği için `Setter` olduğu `Value`, bu nedenle değerini `Value` özelliği doğrudan bu etiketleri içinde belirtilebilir. Özelliğin türü olduğunu `VisualStateGroupList`:
 
 ```xaml
 <Style TargetType="Entry">
@@ -321,7 +321,7 @@ Ekleme `Setter` için etiketler `VisualStateManager.VisualStateGroups` bağlanab
 </Style> 
 ```
 
-Aşağıdakilerden biri veya birkaçı dahil içinde bu etiketlerin `VisualStateGroup` nesneler:
+Bu etiketleri içinde bir veya daha fazla dahil edebileceğiniz `VisualStateGroup` nesneler:
 
 ```xaml
 <Style TargetType="Entry">
@@ -337,9 +337,9 @@ Aşağıdakilerden biri veya birkaçı dahil içinde bu etiketlerin `VisualState
 </Style> 
 ```
 
-VSM biçimlendirme kalanı önce aynıdır.
+VSM biçimlendirme geri kalanında önce aynıdır.
 
-Burada **VSM stilde** tam VSM Biçimlendirme gösteren sayfa:
+İşte **stilde VSM** tam VSM Biçimlendirme gösteren sayfa:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -410,25 +410,25 @@ Burada **VSM stilde** tam VSM Biçimlendirme gösteren sayfa:
 </ContentPage>
 ```
 
-Şimdi tüm `Entry` görünümler bu sayfadaki görsel durumlarını aynı şekilde yanıt. Ayrıca "Focused" durumu şimdi saniyenin içerdiğine dikkat edin `Setter` her gösteren `Entry` bir açık yeşil arka plan da odak zaman giriş:
+Artık tüm `Entry` görünümler bu sayfadaki görsel durumlarını aynı şekilde yanıt verin. Ayrıca "Focused" durumu Şimdi ikinci içerdiğini fark `Setter` her gösteren `Entry` ne zaman, odak Giriş bir Küf Ayrıca arka:
 
-[![Stilde VSM](vsm-images/VsmInStyle.png "VSM stilde")](vsm-images/VsmInStyle-Large.png#lightbox)
+[![VSM stilde](vsm-images/VsmInStyle.png "VSM stili")](vsm-images/VsmInStyle-Large.png#lightbox)
 
-## <a name="defining-your-own-visual-states"></a>Görsel kendi durumlarını tanımlama
+## <a name="defining-your-own-visual-states"></a>Kendi görsel durumlar tanımlama
 
-Öğesinden türetilen her sınıf `VisualElement` üç ortak durumları "Normal", "Odaklanmış" ve "Devre dışı" destekler. Dahili olarak, [ `VisualElement` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) sınıfı, etkin veya devre dışı veya odaklanmış veya Odaksız olma ve statik çağırır algılar [ `VisualStateManager.GoToState` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualStateManager.GoToState/p/Xamarin.Forms.VisualElement/System.String/) yöntemi:
+Öğesinden türetilen her sınıf `VisualElement` üç yaygın durum "Normal", "Odaklı" ve "Devre dışı" destekler. Dahili olarak [ `VisualElement` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) sınıfı, etkin veya devre dışı veya odaklanmış veya plana odaklanmadan gelmektedir ve statik çağırır olduğunda algılar [ `VisualStateManager.GoToState` ](xref:Xamarin.Forms.VisualStateManager.GoToState(Xamarin.Forms.VisualElement,System.String)) yöntemi:
 
 ```csharp
 VisualStateManager.GoToState(this, "Focused");
 ```
 
-Bu, bulabilirsiniz yalnızca Visual durum Yöneticisi koddur `VisualElement` sınıfı. Çünkü `GoToState` türetilen her sınıfın temel her nesne için çağrılır `VisualElement`, tüm görsel durum Yöneticisi'ni kullanabilirsiniz `VisualElement` yapılan bu değişiklikleri yanıt nesnesi.
+İçinde bulabileceğiniz tek bir görsel durum Yöneticisi kod budur `VisualElement` sınıfı. Çünkü `GoToState` türetilen her bir sınıfın temel her nesneye ilişkin çağrılır `VisualElement`, görsel durum Yöneticisi ile kullanabilirsiniz `VisualElement` nesne bu değişikliklerine yanıt verme.
 
-İlginçtir ki, "CommonStates" visual durumu grubunun adı açıkça başvuru yok `VisualElement`. Grup adı görsel durum Yöneticisi API'si bir parçası değil. Şu ana kadar gösterilen iki örnek program biri içinde başka bir şey için "CommonStates" grubundan adını değiştirebilirsiniz ve program çalışmaya devam edecektir. Grup durumları bu gruptaki yalnızca genel bir açıklamasını adıdır. Örtük olarak herhangi bir grup içindeki görsel durum karşılıklı olarak birbirini dışlar anlaşılır: durum ve yalnızca bir herhangi bir zamanda geçerli durumudur.
+İlginçtir ki, görsel durum grubu "CommonStates" adı açıkça içinde başvurulmuyor `VisualElement`. Grup adı API görsel durum Yöneticisi için bir parçası değil. Şu ana kadar gösterilen iki örnek program biri, "CommonStates" gruptan başka bir şeye adını değiştirebilir ve program çalışmaya devam eder. Grup durumları o gruptaki yalnızca genel bir açıklamasını adıdır. Görsel durumlar herhangi bir grup içindeki karşılıklı olarak birbirini dışlar örtük olarak anlaşılır: bir durum ve yalnızca bir herhangi bir zamanda geçerli durumudur.
 
-Görsel kendi durumlarını uygulamak istiyorsanız, çağrı gerekir `VisualStateManager.GoToState` kodundan. Genellikle bu çağrı, sayfa sınıfının arka plan kodu dosyasından hale getireceğiz.
+Kendi görsel durumlar uygulamak istiyorsanız, çağrı gerekecektir `VisualStateManager.GoToState` koddan. Genellikle bu arama sayfası sınıfınızın arka plan kod dosyasından yapacağız.
 
-**VSM doğrulama** sayfasındaki **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** örnek Visual durum Yöneticisi giriş doğrulaması bağlantılı olarak kullanmayı gösterir. İki XAML dosyası oluşur `Label` öğeleri, bir `Entry`, ve `Button`:
+**VSM doğrulama** sayfasını **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** örnek, giriş doğrulaması bağlantılı olarak görsel durum Yöneticisi'ni kullanmayı gösterir. XAML dosyası iki oluşur `Label` öğeleri bir `Entry`, ve `Button`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -486,17 +486,17 @@ Görsel kendi durumlarını uygulamak istiyorsanız, çağrı gerekir `VisualSta
 </ContentPage>
 ```
 
-VSM biçimlendirme ikinci bağlı `Label` (adlı `helpLabel`) ve `Button` (adlı `submitButton`). "Geçerli" ve "Geçersiz" adlı iki birbirini dışlayan durumlar vardır. Her iki "ValidationState" gruplarının içerdiğine dikkat edin `VisualState` etiketler "hem geçerli" ve "Geçersiz" için bunlardan birini her durumda boş olmasına rağmen. 
+VSM biçimlendirme ikinci bağlı `Label` (adlı `helpLabel`) ve `Button` (adlı `submitButton`). "Geçerli" ve "Geçersiz" adlı iki birbirini dışlayan durumlar vardır. Her iki "ValidationState" gruplarının içerdiğine dikkat edin `VisualState` etiketleri "hem geçerli" ve "Geçersiz" için bunlardan birinin her durumda boş olmasına rağmen. 
 
-Varsa `Entry` geçerli bir telefon numarası, geçerli durum "geçersiz" sonra ve böylece içermiyor ikinci `Label` görünür ve `Button` devre dışı bırakılır:
+Varsa `Entry` geçerli bir telefon numarası, geçerli durum "Geçersiz" ise ve bu nedenle içermiyor ikinci `Label` görünür ve `Button` devre dışı bırakıldı:
 
 [![VSM doğrulaması: Geçersiz durumu](vsm-images/VsmValidationInvalid.png "VSM doğrulama - geçersiz")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
 
-Geçerli bir telefon numarası girildiğinde, geçerli durumu olur "Geçerli". İkinci `Entry` kaybolur ve `Button` şimdi etkinleştirildi:
+Geçerli bir telefon numarası girildiğinde, geçerli durum haline gelir "Geçerli". İkinci `Entry` kaybolur ve `Button` şimdi etkinleştirildi:
 
-[![VSM doğrulaması: Geçerli durumunu](vsm-images/VsmValidationValid.png "VSM doğrulama - geçerli")](vsm-images/VsmValidationValid-Large.png#lightbox)
+[![VSM doğrulama: Geçerli durumu](vsm-images/VsmValidationValid.png "VSM doğrulama - geçerli")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
-Arka plan kodu dosyadır işleme reponsible `TextChanged` olayından `Entry`. İşleyici, giriş dizesi geçerli olup olmadığını belirlemek için normal bir ifade kullanır. Adlı arka plan kod dosyasına yöntemi `GoToState` statik çağırır `VisualStateManager.GoToState` yöntemi her ikisi için de `helpLabel` ve `submitButton`:
+Reponsible işlemek için arka plan kod dosyasıdır `TextChanged` olaydan `Entry`. İşleyici, Giriş dizesinin geçerli olup olmadığını belirlemek için normal bir ifade kullanır. Adlı arka plan kod dosyasında yöntemi `GoToState` statik çağırır `VisualStateManager.GoToState` yöntemi hem de `helpLabel` ve `submitButton`:
 
 ```csharp
 public partial class VsmValidationPage : ContentPage
@@ -523,35 +523,35 @@ public partial class VsmValidationPage : ContentPage
 }
 ```
 
-Ayrıca, fark `GoToState` yöntemi durumu başlatmak için oluşturucusundan çağrılır. Her zaman geçerli bir durumda olmalıdır. Ancak "ValidationStates" netlik biri amacıyla XAML'de başvuruluyor ancak hiçbir yerde kodda görsel durumuna grubunun adı için herhangi bir referans yoktur. 
+Ayrıca dikkat `GoToState` durumu başlatmak için oluşturucudan yöntemi çağrılır. Her zaman geçerli bir durum olmalıdır. Ancak "ValidationStates" anlaşılabilir olması adına, amaçlar için XAML içinde başvuruluyor ancak hiçbir yerde kodda herhangi bir görsel durum grubu adını başvuru. 
 
-Bu görsel durumlarını ve çağırmak için arka plan kod dosyasına her nesne hesap etkilenir sayfasında yapmaları gereken işlemi fark `VisualStateManager.GoToState` bu nesnelerin her biri için. İsteğe bağlı olarak bu örnekte, yalnızca iki nesne olan ( `Label` ve `Button`), ancak çeşitli olabilir daha fazla.
+Bu görsel durumları ve aramak için arka plan kod dosyasında her nesnenin bir hesabı etkilenen sayfasında gerçekleştirmeleri gerektiğini fark `VisualStateManager.GoToState` bu nesnelerin her biri için. İsteğe bağlı olarak bu örnekte, yalnızca iki nesneleri, ( `Label` ve `Button`), çeşitli olabilir, ancak daha fazla.
 
-Merak ediyor: arka plan kod dosyasına her nesne bu görsel durumlarını tarafından etkilenen sayfasında başvurmalıdır, neden arka plan kodu dosyanın yalnızca erişemiyor nesneleri doğrudan? Kötülerinden verebilir. Ancak nasıl görsel öğeleri denetleyebilirsiniz VSM kullanmanın avantajı olduğu tamamen XAML, tüm kullanıcı Arabirimi tasarımı tek bir konumda saklar farklı durumda tepki. Bu ayar görsel görünümünü doğrudan arka plan kod görsel öğeleri erişerek önler.
+Merak ediyor: Bu görsel durumlar tarafından etkilenen her nesne arka plan kod dosyasına başvurmalıdır, neden arka plan kod dosyası yalnızca erişemiyor nesneleri doğrudan? Elbette olabilir. Ancak, nasıl görsel öğeleri denetleyebilirsiniz VSM kullanmanın avantajı olan tamamen XAML, tüm kullanıcı Arabirimi tasarımı tek bir konumda saklar farklı durumda tepki verin. Bu ayar görsel görünümünü doğrudan arka plan kod görsel öğeleri erişerek önler.
 
-Öğesinden bir sınıf türetme dikkate alınması gereken tempting olabilir `Entry` ve belki de bir dış doğrulama işlevi için ayarlayabileceğiniz bir özellik tanımlama. Öğesinden türetilen sınıf `Entry` sonra çağırabilirsiniz `VisualStateManager.GoToState` yöntemi. Bu düzen ince, ancak yalnızca çalışır `Entry` farklı görsel durumlarını tarafından etkilenen yalnızca nesne yoktu. Bu örnekte, bir `Label` ve `Button` de olması etkilenir. Bir yolu yoktur VSM biçimlendirme bağlı için bir `Entry` VSM biçimlendirme bunlar için başka bir nesneden visual durumundaki bir değişikliği başvurmak için diğer nesnelerin bağlı için sayfa ve hiçbir şekilde diğer nesnelerin denetlemek için.
+Bir sınıftan türetme dikkate alınması gereken daha cazip olabilir `Entry` ve belki de bir dış doğrulama işlevi için ayarlayabileceğiniz özellik tanımlama. Öğesinden türetilen sınıf `Entry` sonra çağırabilirsiniz `VisualStateManager.GoToState` yöntemi. Bu düzen ince, ancak yalnızca işe yarar `Entry` farklı görsel durumlar tarafından etkilenen yalnızca nesneymiş. Bu örnekte, bir `Label` ve `Button` de olması etkilenir. Bir yolu yoktur VSM biçimlendirme bağlı için bir `Entry` VSM biçimlendirme bu diğer nesneleri başka bir nesneden visual durumundaki bir değişikliği başvurmak için eklenen için diğer nesneler üzerinde sayfa ve hiçbir şekilde denetlemek için.
 
 <a name="adaptive-layout" />
 
-## <a name="using-the-visual-state-manager-for-adaptive-layout"></a>Uyarlamalı düzeni için görsel durum Yöneticisi'ni kullanma
+## <a name="using-the-visual-state-manager-for-adaptive-layout"></a>Görsel durum Yöneticisi için Uyarlamalı düzenini kullanma
 
-Telefonda çalışma uygulama genellikle bir dikey veya yatay en boy oranını ve masaüstünde çalışan bir Xamarin.Forms program görüntülenebilir Xamarin.Forms birçok farklı boyutlarda ve en boy oranlarına varsayılır yeniden boyutlandırılabileceği. İyi tasarlanmış bir uygulama içeriğini bu çeşitli sayfa veya pencere form faktörleri için farklı şekilde görüntülenebilir. 
+Bir Xamarin.Forms uygulaması bir telefonda çalışan genellikle bir dikey veya yatay en boy oranı ve masaüstünde çalışan bir Xamarin.Forms program görüntülenebilir, birçok farklı boyut ve en boy oranlarına varsaymak boyutlandırılabilir. İyi tasarlanmış bir uygulama bu çeşitli sayfası veya pencere form faktörleri için farklı içeriğini görüntüleyebilir. 
 
-Bu teknik bazen olarak bilinen _Uyarlamalı düzeni_. Uyarlamalı düzeni bir programın görselleri yalnızca içerdiğinden görsel durum Yöneticisi'nin ideal bir uygulama bulunur.
+Bu teknik bazen olarak bilinen _Uyarlamalı Düzen_. Uyarlamalı düzeni yalnızca bir programın görseller içerir, görsel durum Yöneticisi, ideal bir uygulama olmasıdır.
 
-Basit bir örnek uygulama içeriğinin etkileyen düğmeleri küçük koleksiyonunu görüntüleyen bir uygulamadır. Dikey modda yatay bir satırda sayfanın üst kısmında bu düğmeleri görüntülenebilir:
+Basit bir örnek uygulama içeriğinin etkileyen düğmelerini küçük bir koleksiyonunu görüntüleyen bir uygulamadır. Dikey modda bu düğmeler yatay bir satırda sayfanın üstündeki görüntülenebilir:
 
 [![VSM Uyarlamalı Düzen: Dikey](vsm-images/VsmAdaptiveLayoutPortrait.png "VSM Uyarlamalı Düzen - dikey")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
 
-Yatay modunda düğmeler dizisi bir tarafa doğru taşınır ve bir sütunda görüntülenir:
+Yatay modda düğmeler dizisi bir tarafa taşınmasına ve bir sütunda görüntülenir:
 
 [![VSM Uyarlamalı Düzen: Yatay](vsm-images/VsmAdaptiveLayoutLandscape.png "VSM Uyarlamalı Düzen - yatay")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
 
-Üstten alta, programın Evrensel Windows platformu, Android ve iOS üzerinde çalışıyor.
+Üstten alta program Evrensel Windows platformu, Android ve iOS üzerinde çalışıyor.
 
-**VSM Uyarlamalı düzeni** sayfasındaki [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/) örnek "" ve "Dikey" adlı iki visual durumlarıyla "OrientationStates" adlı bir grup tanımlar. (Daha karmaşık bir yaklaşım birkaç farklı sayfa veya pencere genişlikleri dayalı olabilir.) 
+**VSM Uyarlamalı Düzen** sayfasını [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/) örnek "Dikey" ve "Yatay" adlı iki görsel durumları ile "OrientationStates" adlı bir grubu tanımlar. (Daha karmaşık bir yaklaşım birkaç farklı sayfası veya pencere genişliklerini uyarlanabilir.) 
 
-XAML dosyasındaki dört basamak VSM biçimlendirme gerçekleşir. `StackLayout` Adlı `mainStack` menü ve olan içeriği içeren bir `Image` öğesi. Bu `StackLayout` dikey moda dikey yönde ve yatay modu yatay yönde olması gerekir:
+XAML dosyasında dört basamak VSM biçimlendirme oluşuyor. `StackLayout` Adlı `mainStack` menü hem olan içeriği içeren bir `Image` öğesi. Bu `StackLayout` dikey modda dikey durumuna ve yatay modda bir yatay yönde olması gerekir:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -664,11 +664,11 @@ XAML dosyasındaki dört basamak VSM biçimlendirme gerçekleşir. `StackLayout`
 </ContentPage>
 ```
 
-İç `ScrollView` adlı `menuScroll` ve `StackLayout` adlı `menuStack` düğmeleri menüsünü uygulamak. Bu düzenleri yönünü ters, `mainStack`. Menü dikey modunda yatay ve dikey yatay modunda olmalıdır.
+İç `ScrollView` adlı `menuScroll` ve `StackLayout` adlı `menuStack` menüsü düğmesi uygular. Bu düzenleri yönünü ters, `mainStack`. Menü dikey modda yatay ve dikey, yatay modda olmalıdır.
 
-Dördüncü VSM biçimlendirme düğmeleri kendileri için örtük bir stilde bölümüdür. Bu biçimlendirme ayarlar `VerticalOptions`, `HorizontalOptions`, ve `Margin` portait ve yatay yönler özgü özellikleri.
+Dördüncü VSM biçimlendirme düğmeler için örtük bir stilde bölümüdür. Bu işaretleme ayarlar `VerticalOptions`, `HorizontalOptions`, ve `Margin` portait ve yatay yönleri için belirli özellikleri.
 
-Arka plan kodu dosya kümeleri `BindingContext` özelliği `menuStack` uygulamak için `Button` kumanda ve ayrıca bir işleyici iliştirir `SizeChanged` sayfasının olay:
+Arka plan kod dosyası kümeleri `BindingContext` özelliği `menuStack` uygulamak için `Button` komut vermeye genel ve ayrıca bir işleyici ekler `SizeChanged` sayfanın olay:
 
 ```csharp
 public partial class VsmAdaptiveLayoutPage : ContentPage
@@ -702,15 +702,15 @@ public partial class VsmAdaptiveLayoutPage : ContentPage
 }
 ```
 
-`SizeChanged` İşleyicisi çağrılarını `VisualStateManager.GoToState` iki için `StackLayout` ve `ScrollView` öğeleri ve alt aracılığıyla sonra döngüler `menuStack` çağırmak için `VisualStateManager.GoToState` için `Button` öğeleri.
+`SizeChanged` İşleyicisi çağrılarını `VisualStateManager.GoToState` iki `StackLayout` ve `ScrollView` öğeleri ve ardından döner alt `menuStack` çağrılacak `VisualStateManager.GoToState` için `Button` öğeleri.
 
-Arka plan kodu dosyayı XAML dosyasında öğelerin özellikleri ayarlayarak daha doğrudan yönlendirme değişiklikleri işleyebilir ancak Visual durumu kesinlikle daha yapılandırılmış bir yaklaşım yöneticisidir gibi görünebilir. Tüm görsel burada incelemek daha kolay olduklarında, XAML dosyalarında saklanacağını Bakım ve değişiklik.
+Arka plan kod dosyasına yönlendirme değişikliklerinden daha doğrudan bir XAML dosyasında öğelerin özelliklerini ayarlayarak kullanabilirsiniz, ancak görsel durum Yöneticisi daha yapılandırılmış bir yaklaşım kesinlikle olduğu gibi görünebilir. Tüm görsellerin nerede bunlar incelemek daha kolay hale, XAML dosyasında tutulur, Bakım ve değişiklik.
 
-## <a name="visual-state-manager-with-xamarinuniversity"></a>Görsel durum Yöneticisi Xamarin.University ile
+## <a name="visual-state-manager-with-xamarinuniversity"></a>Xamarin.University ile görsel durum Yöneticisi
 
 > [!VIDEO https://youtube.com/embed/qhUHbVP5mIQ]
 
-**Xamarin.Forms 3.0 görsel durum Yöneticisi, göre [Xamarin Üniversitesi](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 görsel durum Yöneticisi tarafından [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

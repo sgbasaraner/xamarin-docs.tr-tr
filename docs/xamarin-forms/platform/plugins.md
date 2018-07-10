@@ -1,67 +1,70 @@
 ---
 title: Xamarin.Forms eklentileri oluşturma ve kullanma
-description: Bu makalede, kullanmasına ve Xamarin.Forms eklentileri oluşturma açıklanmaktadır. Eklentileri genellikle kolayca yerel platform özellikleri göstermek için kullanılır.
+description: Bu makalede, kullanma ve Xamarin.Forms eklentileri oluşturma açıklanmaktadır. Eklentileri, genellikle kolayca yerel platform özellikleri göstermek için kullanılır.
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/07/2016
-ms.openlocfilehash: dff9fad0da30475a0fb91c0af76a25ea50d34439
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 07/05/2018
+ms.openlocfilehash: 4d121c2dfcca380e1735da1a4ca47c42d1957b8a
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242563"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854746"
 ---
 # <a name="consuming-and-creating-xamarinforms-plugins"></a>Xamarin.Forms eklentileri oluşturma ve kullanma
 
-Tüm platformlarda mevcut birçok yerel platform özellikleri vardır, ancak biraz farklı API'leri sahip. Geliştiriciler de başkalarıyla paylaşabilir bu özellikleri için bir Özet platformlar arası arabirimi oluşturmak üzere eklenti yazma.
+Tüm platformlarda mevcut birçok yerel platform özellikleri vardır, ancak biraz farklı bir API'ye sahiptir. Soyut bir platformlar arası arabirim oluşturarak ve ardından bu arabirimi çeşitli platformlarda uygulama bu özellikleri kullanmak için geliştiricilere bir yol olduğu. Xamarin.Forms uygulama daha sonra bu platform uygulamalarını kullanarak erişir [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
-Bu özellikler şunlardır: pil durumu, pusula, hareket algılayıcılar, coğrafi konuma, okuma ve çok daha fazlasını. Eklentileri bu özellikler Xamarin.Forms uygulamaları tarafından kolayca erişilmesini sağlar.
+Geliştiriciler, yazarak bu çalışmayı paylaşabilirsiniz bir _eklentisi_ ve NuGet için yayımlama.
 
-## <a name="finding-and-adding-plugins"></a>Bulma ve eklenti ekleme
+> [!NOTE]
+> Yalnızca eklentileri ile önceden kullanılabilen birçok platformlar arası özellik artık açık kaynaklı bir parçası olan **[Xamarin.Essentials](~/essentials/index.md)** kitaplığı. Bu özellikler şunları içerir: stav baterie, compass, hareket algılayıcılar, coğrafi konum, metin okuma ve çok daha fazlası. Gelecekte **Xamarin.Essentials** Xamarin.Forms uygulamaları için platformlar arası özellikleriyle birincil kaynağı olacaktır. Geliştiriciler, yine de oluşturabilir ve eklentileri yayımlama olsa da, katkıda bulunan göz önünde bulundurun **Xamarin.Essentials**.
 
-Xamarin topluluk birçok platformlar arası eklentileri Xamarin.Forms - uyumlu oluşturdu büyük bir koleksiyon yolda bulunabilir:
+## <a name="finding-and-adding-plugins"></a>Bulma ve eklentiler ekleme
 
-[**Xamarin eklentileri**](https://github.com/xamarin/plugins)
+Xamarin topluluk birçok platformlar arası eklenti Xamarin.Forms ile uyumlu oluşturdu. En büyük koleksiyon bulunabilir:
 
-NuGet paketlerini projenize eklemek için bir kılavuz için bizim izlenecek bakın [NuGet paketini projenize dahil olmak üzere](/visualstudio/mac/nuget-walkthrough/).
+[**Xamarin eklentileri**](https://github.com/xamarin/XamarinComponents)
 
+Bizim izlenecek yol kılavuzu için NuGet paketlerini projenize ekleme, bakın [NuGet paketini projenize dahil olmak üzere](/visualstudio/mac/nuget-walkthrough/).
 
 ## <a name="creating-plugins"></a>Eklentiler oluşturma
 
-Oluşturma ve Nuget paketleri (ve Xamarin bileşenleri) kendi eklentileri yayımlama mümkündür. Birçok mevcut eklentileri açık kaynaklı olduğundan, writtern nasıl kaldıktan anlamak için bunların kodu gözden geçirebilirsiniz.
+Oluşturma ve Nuget paketleri (ve Xamarin bileşenleri) kendi eklentileri yayımlama mümkündür. Birçok mevcut eklentiler açık kaynaklı olduğundan nasıl writtern silinmiş anlamak için kodu gözden geçirebilirsiniz.
 
-Örneğin, aşağıdaki eklenti listesi olan tüm açık kaynaklı ve örnekleri için karşılık gelen [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) bölümü:
+Örneğin, aşağıdaki eklentiler listesi olan tüm açık kaynak ve bazı örnekleri için karşılık gelen [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) bölümü:
 
-- **Metin okuma** Ahmet Montemagno tarafından &ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech) ve [NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
-- **Pil durumu** Ahmet Montemagno tarafından &ndash; [GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery) ve [NuGet](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech/)
+- **Metin okuma** James Montemagno tarafından &ndash; [GitHub](https://github.com/jamesmontemagno/TextToSpeechPlugin) ve [NuGet  ](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech)
+- **Stav Baterie** James Montemagno tarafından &ndash; [GitHub](https://github.com/jamesmontemagno/BatteryPlugin) ve [NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
 
-Bu yönergeler için yaptığınız gibi bu Github projeleri iyi bir başlangıç noktası kendi platformlar arası eklenti oluşturmak için sağlayabilir [bir eklenti için Xamarin oluşturma](https://github.com/xamarin/plugins#create-a-plugin-for-xamarin).
+Bu yönergeler için olduğu gibi bu Github projeleri iyi bir başlangıç noktası kendi platformlar arası eklenti oluşturmak için sağlayabilir [bir eklenti oluşturmak için Xamarin](https://github.com/xamarin/XamarinComponents#create-a-plugin-for-xamarin).
 
-### <a name="structuring-cross-platform-plugin-projects"></a>Platformlar arası eklentisi projeleri yapılandırma
+### <a name="structuring-cross-platform-plugin-projects"></a>Platformlar arası eklenti projeleri yapılandırma
 
-Bir NuGet paketi tasarlamak için belirli bir gereksinimi olsa da, platformlar arası uygulamalar için paket oluşturmak için bazı kurallar vardır.
+Bir NuGet paketi tasarlamak için belirli bir gereksinimi yoktur olsa da, platformlar arası uygulamalar için paket oluşturmaya yönelik bazı yönergeler vardır.
 
-Platformlar arası eklentisi genellikle aşağıdaki bileşenlerden oluşur:
+Geçmişte, platformlar arası eklenti genellikle aşağıdaki bileşenlerden almıştır:
 
 - PCL Eklentisi için API temsil eden bir arabirim ile
-- iOS, Android ve Windows arabirimini uygulaması kitaplıklarıyla sınıfı.
+- iOS, Android ve evrensel Windows Platformu (UWP) arabiriminin kitaplıklarıyla sınıfı.
 
-Okuma Ahmet Montemagno'nın [blog gönderisi](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/) eklentileri için Xamarin oluşturma işlemi açıklayan.
+Okuma James Montemagno'nın [blog gönderisi](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms/) açıklayan eklentileri için Xamarin oluşturma işlemi.
 
-Bir tercih Xamarin.Forms doğrudan bir eklentiden başvuran önlemek için edilir.
-Diğer geliştiriciler eklenti kullanmaya çalıştığınızda bu sürüm çakışması sorunlar oluşturabilir. Böylece herhangi bir Xamarin ya da .NET uygulama tarafından kullanılan API tasarlamak bunun yerine deneyin.
+Daha yakın bir tarihte eklentileri olması oluşturulabilir ile tek bir çoklu hedeflenen platform. Bu yaklaşım, James Montemagno kişinin açıklanan [blog gönderisi](https://montemagno.com/converting-xamarin-libraries-to-sdk-style-multi-targeted-projects/). Bu yaklaşım, yukarıda bağlantı James Montemagno'nın Eklentileri kullanılır ve biçimini de kullanılır **Xamarin.Essentials**.
+
+Bu, doğrudan bir eklentiyi Xamarin.Forms başvuran önlemek için bir tercih edilir.
+Diğer geliştiricilerin eklentisini kullanmaya çalıştığınızda, bu sürüm çakışması sorunlar oluşturabilir. Bunun yerine API herhangi bir Xamarin veya .NET uygulama tarafından kullanılabilir olacağı şekilde tasarlayın deneyin.
 
 ### <a name="publishing-nuget-packages"></a>NuGet paketleri yayımlama
 
-NuGet paketlerini sahip bir **nuspec** projenizi hangi kısımlarının pakette yayımlanan tanımlayan bir xml dosyasıdır dosya. **Nuspec** dosyası, ayrıca paket kimliği, başlık ve yazarlar gibi ilgili bilgileri içerir.
+NuGet paketlerini sahip bir **nuspec** dosyasını projenize hangi parçalarının pakette yayımlanan tanımlayan bir xml dosyasıdır. **Nuspec** dosya kimliği, başlık ve yazarlar gibi paketi hakkında bilgileri de içerir.
 
-Bkz: [NuGet belgelerine](http://docs.nuget.org/create/creating-and-publishing-a-package) oluşturma ve NuGet paketleri yayımlama hakkında daha fazla bilgi için.
-
+Bkz: [NuGet belgeleri](/nuget/create-packages/creating-a-package.md) oluşturma ve NuGet paketleri yayımlama hakkında daha fazla bilgi için.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Xamarin.Forms için yeniden kullanılabilir eklentileri oluşturma](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms)
-- [Geliştirme & kullanarak eklentileri xamarin (video)](https://university.xamarin.com/guestlectures/using-developing-plugins-for-xamarin)
+- [Xamarin.Forms için yeniden kullanılabilir eklentiler oluşturma](https://blog.xamarin.com/creating-reusable-plugins-for-xamarin-forms)
+- [Xamarin (video) için kullanma ve geliştirme eklentileri](https://university.xamarin.com/guestlectures/using-developing-plugins-for-xamarin)
