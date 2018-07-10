@@ -1,84 +1,84 @@
 ---
-title: Bağlanabilir özellikleri
-description: Bu makalede bağlanabilirse özelliklerine bir giriş sağlar ve oluşturmak ve bunları kullanmak gösterilmiştir.
+title: Bağlanabilir Özellikler
+description: Bu makalede bağlanabilir özellikler tanıtır ve oluşturmak ve bunları kullanma işlemi gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: 5e39e8eb3d7ffb3ed33ea2a585d8d367302e9baa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 115fff5f80eb531780aa208fde677b26b69e9294
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245982"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935634"
 ---
-# <a name="bindable-properties"></a>Bağlanabilir özellikleri
+# <a name="bindable-properties"></a>Bağlanabilir Özellikler
 
-_Xamarin.Forms içinde ortak dil çalışma zamanı (CLR) özellikleri işlevselliğini bağlanabilir özellikleri tarafından genişletilir. Bir bağlanabilirse özel türde bir özellik, özelliğin değerini Xamarin.Forms özellik sistemi tarafından nerede izlenen özelliğidir. Bu makalede bağlanabilirse özelliklerine bir giriş sağlar ve oluşturmak ve bunları kullanmak gösterilmiştir._
+_Xamarin.Forms içinde bağlanabilir özellikler tarafından ortak dil çalışma zamanı (CLR) özellikleri işlevselliği genişletilir. Bağlanılabilir özellik bir özel özellik, özelliğin değerini Xamarin.Forms özellik sistemi tarafından izlenen burada türüdür. Bu makalede bağlanabilir özellikler tanıtır ve oluşturmak ve bunları kullanma işlemi gösterilmektedir._
 
 ## <a name="overview"></a>Genel Bakış
 
-Bağlanabilir özellikleri sahip bir özellik yedekleyerek CLR özellik işlevselliğini genişletmek bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) bir alana sahip bir özellik yedekleme yerine türü. Amacı bağlanabilir özellikleri, veri bağlama, stiller, şablonları destekleyen bir özellik sistemi sağlamaktır ve üst-alt ilişkisi değerlerini ayarlayın. Ayrıca, bağlanabilir özellikler varsayılan değerleri, özellik değerlerinin özellik değişikliklerini izlemek geri aramalar ve doğrulama sağlayabilir.
+Bağlanabilir özellikler özelliği ile yedekleyerek CLR özellik işlevselliğini genişleten bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) yedekleme alanı olan bir özelliği yerine türü. Bağlanabilir özellikler amacı, veri bağlama, stilleri ve şablonları destekleyen bir özellik sistemi sağlamaktır ve üst-alt ilişkileri değerlerini ayarlayın. Ayrıca, bağlanabilir özellikler varsayılan değerleri, özellik değerlerini özellik değişikliklerini izleme geri aramaları ve doğrulama sağlar.
 
-Bir veya daha fazla aşağıdaki özellikleri desteklemek için bağlanabilir özellikleri olarak özellikleri uygulanması gerekir:
+Bir veya daha fazla aşağıdaki özellikleri desteklemek için bağlanabilir özellikler uygulanan özellikler:
 
-- Geçerli bir işlev gören *hedef* veri bağlama için özelliği.
-- Özelliği üzerinden ayarını bir [stili](~/xamarin-forms/user-interface/styles/index.md).
-- Özelliğin türü için varsayılandan farklı bir varsayılan özellik değeri sağlama.
+- Geçerli davranan *hedef* veri bağlama için özelliği.
+- Özelliği aracılığıyla bir [stil](~/xamarin-forms/user-interface/styles/index.md).
+- Özelliğin türü için varsayılan farklı bir varsayılan özellik değeri sağlayarak.
 - Özelliğinin değeri doğrulanıyor.
 - Özellik değişiklikleri izleme.
 
-Xamarin.Forms bağlanabilir özellikleri örneklerindendir [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/), [ `Button.BorderRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/), ve [ `StackLayout.Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/). Karşılık gelen bir bağlanabilirse her bir özellik vardır `public static readonly` türündeki özelliği [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) aynı sınıf içinde gösterilir ve bağlanabilirse özelliği tanıtıcısı olmasıdır. Örneğin, karşılık gelen bağlanabilirse özellik tanımlayıcısı için `Label.Text` özelliği [ `Label.TextProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Label.TextProperty/).
+Xamarin.Forms bağlanabilir özellikler örnekler [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/), [ `Button.BorderRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/), ve [ `StackLayout.Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/). Karşılık gelen her bağlanılabilir özellik sahip `public static readonly` türünün özelliği [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) aynı sınıf kullanıma sunulan ve bağlanılabilir özellik tanımlayıcısı. Örneğin, karşılık gelen bağlanılabilir özellik tanımlayıcısı `Label.Text` özelliği [ `Label.TextProperty` ](xref:Xamarin.Forms.Label.TextProperty).
 
 <a name="consuming-bindable-property" />
 
-## <a name="creating-and-consuming-a-bindable-property"></a>Oluşturma ve bağlanabilirse özelliğini kullanma
+## <a name="creating-and-consuming-a-bindable-property"></a>Oluşturma ve bağlanabilir özelliği kullanma
 
-Bağlanabilir özelliği oluşturma işlemi aşağıdaki gibidir:
+Bağlanılabilir özellik oluşturma işlemi aşağıdaki gibidir:
 
-1. Oluşturma bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) birini örneğiyle [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi aşırı.
-1. Özellik erişimcisi için tanımlamak [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) örneği.
+1. Oluşturma bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) örneği biriyle [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi aşırı yüklemeleri.
+1. İçin özellik erişimcileri tanımlayın [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) örneği.
 
-Unutmayın tüm [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) örnekleri kullanıcı Arabirimi iş parçacığı üzerinde oluşturulmalıdır. Başka bir deyişle, yalnızca kullanıcı Arabirimi iş parçacığı üzerinde çalışan bir kod almak veya bağlanabilir özelliğinin değerini ayarlayın. Ancak, `BindableProperty` örnekleri erişilebilir diğer iş parçacıklarından kullanıcı Arabirimi iş parçacığı ile hazırlama tarafından [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) yöntemi.
+Unutmayın tüm [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) örnekleri UI iş parçacığı üzerinde oluşturulmalıdır. Başka bir deyişle, kullanıcı Arabirimi iş parçacığında çalıştırılan kod alın veya bağlanılabilir özellik değerini ayarlayın. Ancak, `BindableProperty` örnekleri erişilebilir diğer iş parçacıklarından ile UI iş parçacığına düzenlemesi [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) yöntemi.
 
 ### <a name="creating-a-property"></a>Bir özelliği oluşturma
 
-Oluşturmak için bir `BindableProperty` örneği içeren sınıf öğesinden türetilmelidir [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) sınıfı. Ancak, `BindableObject` sınıfı olduğundan sınıf hiyerarşisi yüksek sınıfların çoğu kullanıcı arabirimi işlevselliği desteği bağlanabilir özellikleri için kullanılır.
+Oluşturmak için bir `BindableProperty` örneğini içeren sınıfın türetilmesi gereken [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) sınıfı. Ancak, `BindableObject` sınıflarının çoğu kullanıcı arabirimi işlevleri destek bağlanabilir özellikler için kullanılan bu nedenle sınıf sınıf hiyerarşisini, yüksek.
 
-Bağlanabilir özelliği bildirerek oluşturulabilmesi için bir `public static readonly` türündeki özelliği [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/). Bağlanabilir özelliği birinin döndürülen değerine ayarlanmalıdır [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi aşırı. Bildirim gövdesi içinde olmalıdır [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) türetilmiş sınıf, ancak hiçbir üye tanımları dışında.
+Bağlanılabilir özellik bildirerek oluşturulabilir. bir `public static readonly` türünün özelliği [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/). Döndürülen değeri şunlardan biri olarak bağlanılabilir özellik ayarlanmalıdır [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi aşırı yüklemeleri. Bildirimi gövdesi içinde olmalıdır [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) türetilmiş sınıf, ancak herhangi bir üye tanımı dışında.
 
-En azından bir tanımlayıcı oluştururken belirtilmelidir bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/), aşağıdaki parametreleri birlikte:
+En az bir tanımlayıcı oluştururken belirtilmelidir bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/), aşağıdaki parametreleri birlikte:
 
 - Adını [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/).
 - Özelliğin türü.
-- Sahibi olan nesnenin türü.
-- Özelliğin varsayılan değeri. Bu özellik belirli varsayılan bir değer ayarlanmamış olduğunda ve özelliğin türü için varsayılan değer farklı olabilir her zaman döndürdüğünü sağlar. Varsayılan değer olacaktır geri [ `ClearValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.ClearValue/p/Xamarin.Forms.BindableProperty/) yöntemi bağlanabilirse özelliği çağrılır.
+- Sahip olan nesnenin türü.
+- Bir özellik için varsayılan değeri. Bu özellik belirli bir varsayılan değer ayarlama ve özellik türü için varsayılan değerden farklı olabilir her zaman döndürdüğünü sağlar. Varsayılan değer olacaktır geri [ `ClearValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.ClearValue/p/Xamarin.Forms.BindableProperty/) bağlanabilir özelliği yöntemi çağrılır.
 
-Aşağıdaki kod örneği bir tanımlayıcı ve dört gerekli parametrelerin değerlerini bağlanabilir bir özelliğin gösterir:
+Aşağıdaki kod örneği bir tanımlayıcı ve dört gerekli parametrelerin değerleri bir bağlanılabilir özellik gösterir:
 
 ```csharp
 public static readonly BindableProperty EventNameProperty =
   BindableProperty.Create ("EventName", typeof(string), typeof(EventToCommandBehavior), null);
 ```
 
-Bu oluşturur bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) adlı örneği `EventName`, türü `string`. Özelliği tarafından sahip olunan `EventToCommandBehavior` sınıfı ve varsayılan değerine sahip `null`. Bağlanabilir özellik tanımlayıcı olarak belirtilen özellik adı eşleşmelidir bağlanabilir özellikleri için adlandırma kuralı olan `Create` yöntemiyle "eklenmiş özellik". Bu nedenle, yukarıdaki örnekte bağlanabilirse özelliği tanımlayıcısıdır `EventNameProperty`.
+Bu, oluşturur bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) adlı örnek `EventName`, türü `string`. Özelliği tarafından sahip olunan `EventToCommandBehavior` sınıfı ve varsayılan değeri olan `null`. Bağlanabilir özellikler için adlandırma kuralı bağlanılabilir özellik tanımlayıcısı olarak belirtilen özellik adı kullanılmasıdır `Create` yöntemiyle eklenmiş "özelliği". Bu nedenle, yukarıdaki örnekte bağlanılabilir özellik tanımlayıcısıdır `EventNameProperty`.
 
-İsteğe bağlı olarak, oluşturma sırasında bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) örneği, aşağıdaki parametreleri belirtilebilir:
+İsteğe bağlı olarak, oluştururken bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) örnek, aşağıdaki parametreleri belirtilebilir:
 
-- Bağlama modu. Bu özellik değeri değişiklikleri yaymak yönünü belirtmek için kullanılır. Varsayılan bağlama modunda gelen değişiklikler yayılır *kaynak* için *hedef*.
-- Özellik değeri ayarladığınızda çağrılacak bir doğrulama temsilcisi. Daha fazla bilgi için bkz: [doğrulamalarının](#validation).
-- Özellik değeri değiştiğinde çağrılan temsilci bir özelliği değiştirildi. Daha fazla bilgi için bkz: [algılama özelliği değişiklikleri](#propertychanges).
-- Özellik değeri değiştirdiğinizde, çağrılacak temsilci değiştirme özelliği. Bu temsilci özellik değişti temsilci olarak aynı imzaya sahip.
-- Özellik değeri değiştiğinde çağrılan bir coerce değeri temsilcisi. Daha fazla bilgi için bkz: [Coerce değeri geri çağırmaları](#coerce).
-- A `Func` varsayılan özellik değeri başlatmak için kullanılır. Daha fazla bilgi için bkz: [varsayılan bir değeri ile bir Func oluşturma](#defaultfunc).
+- Bağlama modu. Bu, özellik değeri değiştiğinde yayılır yönünü belirtmek için kullanılır. Varsayılan bağlama modunda değişiklikleri gelen yayan *kaynak* için *hedef*.
+- Özellik değeri ayarlandığında çağrılacak bir doğrulama temsilcisi. Daha fazla bilgi için [doğrulama geri çağırmaları](#validation).
+- Özellik değeri değiştiğinde çağrılacak temsilci bir özelliği değiştirildi. Daha fazla bilgi için [özellik değişiklikleri algılama](#propertychanges).
+- Bir özellik özellik değeri değiştiğinde çağrılacak temsilci değiştirme. Bu temsilci, değiştirilen özellik temsilci aynı imzaya sahiptir.
+- Özellik değeri değiştiğinde çağrılacak bir coerce değeri temsilcisi. Daha fazla bilgi için [Coerce değeri geri aramaları](#coerce).
+- A `Func` varsayılan özellik değeri başlatmak için kullanılır. Daha fazla bilgi için [varsayılan bir değer ile bir işlev oluşturma](#defaultfunc).
 
 ### <a name="creating-accessors"></a>Erişimciler oluşturma
 
-Özellik erişimcisi bağlanabilir bir özelliğe erişmek için özellik sözdizimi kullanması gerekir. `Get` Erişimci karşılık gelen bağlanabilirse özelliğinde bulunan değer döndürmelidir. Bu çağırarak sağlanabilir [ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/) bağlanabilirse özellik tanımlayıcısı değeri almak istediğiniz geçirme ve gerekli tür sonucu atama yöntemi. `Set` Erişimci karşılık gelen bağlanabilirse özelliğinin değeri ayarlanmış olmalıdır. Bu çağırarak sağlanabilir [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) yöntemi, değer ve değeri ayarlamak için ayarlanacak üzerinde bağlanabilirse özelliği tanımlayıcısını geçirme.
+Özellik erişimcisi bağlanabilir bir özelliğe erişmek için özelliği sözdizimini kullanmak için gereklidir. `Get` Erişimci karşılık gelen bağlanılabilir özellik içinde yer alan değeri döndürmelidir. Bu çağrı yaparak da gerçekleştirilebilir [ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/) bağlanılabilir özellik tanımlayıcı değeri almak istediğiniz geçirme ve ardından sonucu gerekli türüne atama yöntemi. `Set` Erişimci karşılık gelen bağlanılabilir özellik değeri ayarlanmalıdır. Bu çağrı yaparak da gerçekleştirilebilir [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) yöntemi, değer ve ayarlanacak değer ayarlanacağı bağlanılabilir özellik tanımlayıcı geçirme.
 
-Aşağıdaki kod örneğinde erişimcileri gösterir `EventName` bağlanabilirse özelliği:
+Aşağıdaki kod örneği için erişimciler gösterir `EventName` bağlanılabilir özellik:
 
 ```csharp
 public string EventName {
@@ -87,11 +87,11 @@ public string EventName {
 }
 ```
 
-### <a name="consuming-a-bindable-property"></a>Bağlanabilir özelliğini kullanma
+### <a name="consuming-a-bindable-property"></a>Bağlanılabilir özellik kullanma
 
-Bağlanabilir özelliği oluşturulduktan sonra XAML veya kod tüketilebilir. XAML'de ve ad alanı bildiriminin CLR ad ve isteğe bağlı olarak, bir derleme adı gösteren bir ad alanı öneki, bildirerek sağlanır. Daha fazla bilgi için bkz: [XAML ad uzayları](~/xamarin-forms/xaml/namespaces.md).
+Bağlanılabilir özellik oluşturulduktan sonra XAML ya da kod tüketilebilir. XAML içinde bir ad alanı öneki, CLR ad alanı adı ve isteğe bağlı olarak, bir derleme adı belirten ad alanı bildirimi ile bildirerek sağlanır. Daha fazla bilgi için [XAML ad alanları](~/xamarin-forms/xaml/namespaces.md).
 
-Aşağıdaki kod örneğinde özel türüne başvuran uygulama kodu aynı bütünleştirilmiş içinde tanımlanan bir bağlanabilirse özelliği içeren özel bir tür için XAML ad uzayı gösterilmektedir:
+Aşağıdaki kod örneği, özel türe başvuran uygulama kodu ile aynı bütünleştirilmiş kod içinde tanımlanan bir bağlanılabilir özellik içeren özel bir tür için XAML ad alanı gösterilmektedir:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:EventToCommandBehavior" ...>
@@ -99,7 +99,7 @@ Aşağıdaki kod örneğinde özel türüne başvuran uygulama kodu aynı bütü
 </ContentPage>
 ```
 
-Ad alanı bildirimi ayarlarken kullanılan `EventName` aşağıdaki XAML kod örneğinde kanıtlanabilir olarak bağlanabilir özelliği:
+Ad alanı bildirimi ayarlanırken kullanılan `EventName` aşağıdaki XAML kod örneğinde kanıtlanabilir olarak bağlanılabilir özellik:
 
 ```xaml
 <ListView ...>
@@ -109,7 +109,7 @@ Ad alanı bildirimi ayarlarken kullanılan `EventName` aşağıdaki XAML kod ör
 </ListView>
 ```
 
-Eşdeğer C# kodu aşağıdaki kod örneğinde gösterilir:
+Eşdeğer C# kodu aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 var listView = new ListView ();
@@ -123,15 +123,15 @@ listView.Behaviors.Add (new EventToCommandBehavior {
 
 ## <a name="advanced-scenarios"></a>Gelişmiş senaryolar
 
-Oluştururken bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) Bu örnek, bir dizi Gelişmiş bağlanabilirse özellik senaryoları etkinleştirmek için ayarlanabilen isteğe bağlı parametre vardır. Bu bölümde bu senaryoları araştırır.
+Oluştururken bir [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) örnek, bir dizi Gelişmiş bağlanılabilir özellik senaryoları etkinleştirmek için ayarlayabileceğiniz isteğe bağlı parametre vardır. Bu bölümde, bu senaryolar keşfediyor.
 
 <a name="propertychanges" />
 
 ### <a name="detecting-property-changes"></a>Özellik değişiklikleri algılama
 
-A `static` özelliği değiştirildi geri çağırma yöntemi kaydedilebilir bağlanabilirse özelliğiyle belirterek `propertyChanged` parametresi için [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi. Bağlanabilir özelliğinin değeri değiştiğinde belirtilen geri çağırma yöntemi çağrılır.
+A `static` özelliği değiştirilmiş bir geri çağırma yöntemi kaydedilebilir bağlanabilir özelliğiyle belirterek `propertyChanged` parametresi için [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi. Belirtilen geri çağırma yöntemi bağlanılabilir özellik değeri değiştiğinde çağrılır.
 
-Aşağıdaki örnekte gösterildiği kod nasıl `EventName` bağlanabilirse özelliği yazmaçlar `OnEventNameChanged` yöntemi bir özelliği değiştirildi geri çağırma yöntemi olarak:
+Aşağıdaki kod örnekte gösterildiği nasıl `EventName` bağlanılabilir özellik kayıtları `OnEventNameChanged` özelliği değiştirilmiş bir geri çağırma yöntemi olarak yöntemi:
 
 ```csharp
 public static readonly BindableProperty EventNameProperty =
@@ -145,15 +145,15 @@ static void OnEventNameChanged (BindableObject bindable, object oldValue, object
 }
 ```
 
-Özellik değişti geri çağırma yöntemi [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) parametresi hangi sahip olan sınıfın örneğini bir değişiklik ve iki değerlerini bildirdi belirtmek için kullanılır `object` parametreleri eski ve yeni değerlerini temsil eder bağlanabilir özelliği.
+Özellik değişti geri çağırma yöntemi [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) parametresi hangi sahip olan sınıfın örneğini bir değişikliği ve değerleri iki bildirdi belirtmek için kullanılır `object` parametrelerini eski ve yeni değerlerini temsil eder bağlanılabilir özellik.
 
 <a name="validation" />
 
-### <a name="validation-callbacks"></a>Doğrulamalarının
+### <a name="validation-callbacks"></a>Doğrulama geri çağırmaları
 
-A `static` doğrulama geri çağırma yöntemi kaydedilebilir bağlanabilirse özelliğiyle belirterek `validateValue` parametresi için [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi. Bağlanabilir özelliğinin değeri olarak ayarlandığında belirtilen geri çağırma yöntemi çağrılır.
+A `static` doğrulama geri çağırma yöntemi kaydedilebilir bağlanabilir özelliğiyle belirterek `validateValue` parametresi için [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi. Bağlanılabilir özellik değeri ayarlandığında belirtilen geri çağırma yöntemi çağrılır.
 
-Aşağıdaki örnekte gösterildiği kod nasıl `Angle` bağlanabilirse özelliği yazmaçlar `IsValidValue` yöntemi bir doğrulama geri çağırma yöntemi olarak:
+Aşağıdaki kod örnekte gösterildiği nasıl `Angle` bağlanılabilir özellik kayıtları `IsValidValue` yöntemi bir doğrulama geri çağırma yöntemi olarak:
 
 ```csharp
 public static readonly BindableProperty AngleProperty =
@@ -168,17 +168,17 @@ static bool IsValidValue (BindableObject view, object value)
 }
 ```
 
-Doğrulama geri çağırmaları bir değerle sağlanır ve döndürmelidir `true` değer özelliği için geçerli değilse `false`. Doğrulama geri çağırma döndürürse, özel durum oluşturuldu `false`, hangi işlenecek geliştirici tarafından. Bağlanabilir özelliği ayarlı olduğunda doğrulama geri çağırma yöntemi, tipik kullanımını tamsayı veya double değerlerini kısıtlamadır. Örneğin, `IsValidValue` yöntemi özellik değeri olup olmadığını denetler bir `double` 0-360 aralığında.
+Doğrulama geri çağırmaları bir değerle sağlanır ve döndürmelidir `true` değerin Aksi takdirde özellik için geçerli olup olmadığını `false`. Doğrulama geri çağırma döndürürse, bir özel durum `false`, hangi işlenecek geliştirici tarafından. Bağlanabilir özelliği ayarlandığında tipik bir kullanımı doğrulama geri çağırma yöntemi, tamsayı veya double değerleri sınırlama. Örneğin, `IsValidValue` yöntem, özellik değeri olup olmadığını denetler bir `double` 0-360 aralığında.
 
 <a name="coerce" />
 
-### <a name="coerce-value-callbacks"></a>Coerce değeri geri çağrıları
+### <a name="coerce-value-callbacks"></a>Coerce değeri geri aramaları
 
-A `static` coerce değeri geri çağırma yöntemi kaydedilebilir bağlanabilirse özelliğiyle belirterek `coerceValue` parametresi için [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi. Bağlanabilir özelliğinin değeri değiştiğinde belirtilen geri çağırma yöntemi çağrılır.
+A `static` coerce değeri geri çağırma yöntemi kaydedilebilir bağlanabilir özelliğiyle belirterek `coerceValue` parametresi için [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi. Belirtilen geri çağırma yöntemi bağlanılabilir özellik değeri değiştiğinde çağrılır.
 
-Coerce değeri geri aramalar özelliğinin değeri değiştiğinde yeniden değerlendirme bağlanabilirse özelliğinin zorlamak için kullanılır. Örneğin, bir coerce değeri geri bir bağlanabilirse özelliğinin değeri başka bir bağlanabilirse özellik değerinden büyük olmadığından emin olun için kullanılabilir.
+Coerce değeri geri aramaları özelliğinin değeri değiştiğinde bir yeniden değerlendirme bağlanabilir bir özelliğin zorlamak için kullanılır. Örneğin, bir coerce değeri geri araması bir bağlanılabilir özellik değerini başka bir bağlanılabilir özellik değerinden büyük olmadığından emin olmak için kullanılabilir.
 
-Aşağıdaki örnekte gösterildiği kod nasıl `Angle` bağlanabilirse özelliği yazmaçlar `CoerceAngle` yöntemi coerce değeri geri çağırma metodu olarak:
+Aşağıdaki kod örnekte gösterildiği nasıl `Angle` bağlanılabilir özellik kayıtları `CoerceAngle` coerce değeri geri çağırma yöntemi olarak yöntemi:
 
 ```csharp
 public static readonly BindableProperty AngleProperty = BindableProperty.Create (
@@ -200,13 +200,13 @@ static object CoerceAngle (BindableObject bindable, object value)
 }
 ```
 
-`CoerceAngle` Yöntemi denetler değerini `MaximumAngle` özelliği ve `Angle` özellik değeri, büyük olduğundan, değer olacak şekilde zorlar `MaximumAngle` özellik değeri.
+`CoerceAngle` Yöntemi değerini denetler `MaximumAngle` özelliği ve `Angle` özellik değeri, büyük, değeri olacak şekilde zorlar `MaximumAngle` özellik değeri.
 
 <a name="defaultfunc" />
 
-### <a name="creating-a-default-value-with-a-func"></a>Varsayılan değer Func ile oluşturma
+### <a name="creating-a-default-value-with-a-func"></a>Varsayılan değer bir işlev oluşturma
 
-A `Func` bağlanabilirse özelliğinin varsayılan değeri başlatmak için aşağıdaki kod örneğinde gösterildiği gibi kullanılabilir:
+A `Func` bağlanabilir bir özelliğin varsayılan değeri başlatmak için aşağıdaki kod örneğinde gösterildiği gibi kullanılabilir:
 
 ```csharp
 public static readonly BindableProperty SizeProperty =
@@ -214,11 +214,11 @@ public static readonly BindableProperty SizeProperty =
   defaultValueCreator: bindable => Device.GetNamedSize (NamedSize.Large, (Label)bindable));
 ```
 
-`defaultValueCreator` Parametre olarak ayarlanmış bir `Func` , çağırır [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) döndürülecek yöntemi bir `double` üzerinde kullanılan yazı tipi için adlandırılmış boyutu temsil eden bir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) yerel platformunda.
+`defaultValueCreator` Parametrenin ayarlanmış bir `Func` , çağıran [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) döndürülecek yöntemi bir `double` adlandırılmış kullanılan yazı tipi boyutunu temsil eden bir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) yerel platformunda.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede bağlanabilir özellikleri giriş sağlanan ve oluşturmak ve bunları kullanmak nasıl gösterilmektedir. Bir bağlanabilirse özel türde bir özellik, özelliğin değerini Xamarin.Forms özellik sistemi tarafından nerede izlenen özelliğidir.
+Bu makalede sağlanan bağlanabilir özellikler giriş ve oluşturma ve bunları tüketme gösterilmiştir. Bağlanılabilir özellik bir özel özellik, özelliğin değerini Xamarin.Forms özellik sistemi tarafından izlenen burada türüdür.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

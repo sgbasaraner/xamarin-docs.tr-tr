@@ -1,39 +1,39 @@
 ---
-title: İzlenecek yol - Android dokunma kullanma
+title: İzlenecek yol - Android'de dokunma kullanma
 ms.prod: xamarin
 ms.assetid: E281F89B-4142-4BD8-8882-FB65508BF69E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/09/2018
-ms.openlocfilehash: 625ba800ce498f80c0344c67e26bd79360de4002
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: d379630e3b7fa2b42bd9530e1dccd75e9634dd2f
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34050565"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935533"
 ---
-# <a name="walkthrough---using-touch-in-android"></a>İzlenecek yol - Android dokunma kullanma
+# <a name="walkthrough---using-touch-in-android"></a>İzlenecek yol - Android'de dokunma kullanma
 
-Bize kavramları çalışan bir uygulama önceki bölümde kullanmak bkz. Dört etkinlikleri ile bir uygulama oluşturacağız. İlk etkinlik menü veya çeşitli API'ler göstermek için diğer etkinlikleri başlatacak bir denetim panosu olacaktır. Aşağıdaki ekran görüntüsü ana etkinlik gösterir:
+Bize kavram çalışan bir uygulama önceki bölümde kullanmak konusuna bakın. Dört etkinliği ile bir uygulama oluşturacağız. İlk etkinlik, bir menü veya bir geçiş çeşitli API'leri göstermek için diğer etkinlikleri başlatacak Panosu olacaktır. Ana etkinlik aşağıdaki ekran görüntüsünde gösterilmektedir:
 
 [![Örnek ekran Touch bana düğmesi](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
-Touch örnek, ilk etkinliğin görünümleri dokunmak için olay işleyicileri kullanmayı gösterir. Hareketi tanıyıcı etkinlik gösteren alt nasıl `Android.View.Views` ve olayları işleme yanı sıra tutarak hareketleri nasıl ele alınacağını gösterir. Üçüncü ve son etkinlik **özel hareketi**, Göster nasıl özel hareketler kullanır. İzleyin ve almak işleri kolaylaştırmak için Biz bu kılavuzda etkinliklerden birini odaklanan her bölüm içeren bölümlere ayırmak.
+Touch örnek, ilk etkinliğin görünümleri temas için olay işleyicileri kullanmayı gösterir. Hareket tanıyıcı etkinlik gösterilecektir nasıl alt Sınıflama `Android.View.Views` ve olaylarını işleme yanı sıra nasıl işleyeceğinizi tabletinizde hareketlerini gösterir. Üçüncü ve son etkinlik **özel hareket**, show nasıl özel hareketler kullanır. İşleri izleyin ve etkisini azaltmak kolaylaştırmak için Biz bu izlenecek yol etkinliklerden birini odaklanarak her bölüm içeren bölümlere ayırmak.
 
-## <a name="touch-sample-activity"></a>Touch örnek etkinlik
+## <a name="touch-sample-activity"></a>Örnek etkinlik dokunma
 
--   Projeyi açın **TouchWalkthrough\_Başlat**. **MainActivity** gitmek için tüm kümesi &ndash; bize dokunma davranışa etkinliğin uygulamak için en fazla olduğu. Uygulamayı çalıştırın ve'ı tıklatırsanız **Touch örnek**, aşağıdaki etkinlik başlamanız gerekir:
+-   Projeyi açmak **TouchWalkthrough\_Başlat**. **MainActivity** gitmek için tüm kümesi &ndash; bize etkinliğinde touch davranışı uygulamak için en fazla olan. Uygulamayı çalıştırmak ve'ı tıklatırsanız **Touch örnek**, aşağıdaki etkinlik başlamanız gerekir:
 
-    [![Ekran görüntüsü etkinlik Touch görüntülenen başlar](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
+    [![Ekran görüntüsü etkinlik Touch görüntülenip başlar](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
--   Biz, etkinlik başlar onayladıktan, dosyayı açma **TouchActivity.cs** ve için bir işleyici ekleyin `Touch` olayı `ImageView`:
+-   Biz, etkinlik başlar onayladıktan sonra dosyayı açmak **TouchActivity.cs** ve eklemek için bir işleyici `Touch` olayı `ImageView`:
 
     ```csharp
     _touchMeImageView.Touch += TouchMeImageViewOnTouch;
     ```
 
--   Sonra aşağıdaki yöntemi ekleyin **TouchActivity.cs**:
+-   Ardından, aşağıdaki yöntemi ekleyin **TouchActivity.cs**:
 
     ```csharp
     private void TouchMeImageViewOnTouch(object sender, View.TouchEventArgs touchEventArgs)
@@ -59,23 +59,23 @@ Touch örnek, ilk etkinliğin görünümleri dokunmak için olay işleyicileri k
     }
     ```
 
-Yukarıdaki kod biz kabul dikkat edin `Move` ve `Down` eylem olarak aynı. Rağmen kullanıcı kendi parmak Yükselt değil olmasıdır `ImageView`, onu dolaşmak veya kullanıcı tarafından exerted baskısı değişebilir. Bu tip değişiklikler oluşturacak bir `Move` eylem.
+Yukarıdaki kodda fark kabul ediyoruz `Move` ve `Down` eylem olarak aynı. Olsa bile kullanıcı kendi parmağınızı kaldırın değil olmasıdır `ImageView`, onu yerleri veya tarafından kullanıcı sarf baskısı değişebilir. Bu tür değişiklikleri oluşturacak bir `Move` eylem.
 
-Her zaman kullanıcı rötuşları `ImageView`, `Touch` olay harekete geçirilen ve bizim işleyici iletisini görüntüler **Touch başlar** aşağıdaki ekran görüntüsünde gösterildiği gibi ekranında:
+Her zaman kullanıcı dokunmalar `ImageView`, `Touch` olay yükseltilir ve bizim işleyici iletisini görüntüler **Touch başlar** ekranında, aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
 [![Ekran görüntüsü etkinlik Touch başlar](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
-Kullanıcı temas sürece `ImageView`, **Touch başlar** görüntülenmesi `TextView`. Ne zaman kullanıcı artık temas `ImageView`, ileti **Touch sona erer** görüntülenmesi `TextView`, aşağıdaki ekran görüntüsünde gösterildiği gibi:
+Kullanıcı temas sürece `ImageView`, **Touch başlar** görüntülenmesi `TextView`. Ne zaman kullanıcı artık dokunma `ImageView`, ileti **Touch sona erer** görüntülenmesi `TextView`aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
 [![Ekran görüntüsü etkinlik Touch sona erer](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
-## <a name="gesture-recognizer-activity"></a>Hareketi tanıyıcı etkinliği
+## <a name="gesture-recognizer-activity"></a>Hareket tanıyıcı etkinliği
 
-Şimdi hareketi tanıyıcı etkinlik uygulayan olanak sağlar. Bu etkinliğin nasıl ekran geçici bir görünüm sürükleyin ve tutarak yakınlaştırma uygulamak için bir yol göstermeye gösterilmektedir.
+Artık hareket tanıyıcı etkinlik uygulayan olanak tanır. Bu etkinlik ekranın etrafında bir görünüm sürükleyin ve tabletinizde sıkıştırarak yakınlaştırma hareketini kullanarak uygulamak için bir şekilde açıklamak nasıl sürdürebileceğiniz gösterilecek.
 
--   Adlı uygulama yeni bir etkinlik eklemek `GestureRecognizer`.
-    Bu etkinlik için kod, aşağıdaki kodu benzer şekilde düzenleyin:
+-   Yeni bir etkinlik olarak adlandırılan uygulamaya ekleme `GestureRecognizer`.
+    Bu etkinlik için kod, aşağıdaki koda benzer şekilde düzenleyin:
 
     ```csharp
     public class GestureRecognizerActivity : Activity
@@ -89,7 +89,7 @@ Kullanıcı temas sürece `ImageView`, **Touch başlar** görüntülenmesi `Text
     }
     ```
 
--   Yeni bir Android eklemek projeye görüntülemek ve adlandırın `GestureRecognizerView`. Bu sınıf için aşağıdaki değişkenleri ekleyin:
+-   Yeni bir Android ekleme görüntülemek için projeyi ve adlandırın `GestureRecognizerView`. Bu sınıfa aşağıdaki değişkenleri ekleyin:
 
     ```csharp
     private static readonly int InvalidPointerId = -1;
@@ -105,7 +105,7 @@ Kullanıcı temas sürece `ImageView`, **Touch başlar** görüntülenmesi `Text
     private float _scaleFactor = 1.0f;
     ```
 
--   Aşağıdaki oluşturucuyu ekleyin `GestureRecognizerView`. Bu oluşturucu ekleyecek bir `ImageView` bizim etkinlik. Bu noktada kodu hala derlenmez &ndash; sınıfı oluşturmak ihtiyacımız `MyScaleListener` yeniden boyutlandırma ile yardımcı olacak `ImageView` zaman kullanıcı pinches onu:
+-   Aşağıdaki oluşturucuyu ekleyin `GestureRecognizerView`. Bu oluşturucu ekleyecek bir `ImageView` bizim etkinlik. Bu noktada kod hala derlenmez &ndash; sınıfı oluşturmak ihtiyacımız `MyScaleListener` yeniden boyutlandırma ile yardımcı olacak `ImageView` zaman kullanıcı pinches onu:
 
     ```csharp
     public GestureRecognizerView(Context context): base(context, null, 0)
@@ -116,7 +116,7 @@ Kullanıcı temas sürece `ImageView`, **Touch başlar** görüntülenmesi `Text
     }
     ```
 
--   Bizim faaliyete resim çizmek için geçersiz kılmak ihtiyacımız `OnDraw` yöntemi aşağıdaki kod parçacığında gösterildiği gibi görünüm sınıfı. Bu kodu taşır `ImageView` tarafından belirtilen konuma `_posX` ve `_posY` resize görüntünün ölçekleme faktörü göre:
+-   Resim bizim faaliyete çizmek için geçersiz kılmak ihtiyacımız `OnDraw` yöntemini aşağıdaki kod parçacığında gösterildiği gibi görünüm sınıfı. Bu kod taşınır `ImageView` tarafından belirtilen konuma `_posX` ve `_posY` yeniden görüntü göre Ölçeklendirme çarpanı:
 
     ```csharp
     protected override void OnDraw(Canvas canvas)
@@ -130,8 +130,8 @@ Kullanıcı temas sürece `ImageView`, **Touch başlar** görüntülenmesi `Text
     }
     ```
 
--   Sonraki örnek değişkeni güncelleştirmek ihtiyacımız `_scaleFactor` kullanıcı olarak pinches `ImageView`. Adlı bir sınıf ekleyeceğiz `MyScaleListener`. Bu sınıf, kullanıcı pinches zaman Android tarafından gerçekleştirilecektir ölçek olaylarını dinler `ImageView`.
-    Aşağıdaki iç sınıfına ekleyin `GestureRecognizerView`. Bu sınıf, bir `ScaleGesture.SimpleOnScaleGestureListener`. Bu sınıf hareketleri bir kısmı ilgilendiğiniz zaman dinleyicileri bir alt kümesi için kolaylık sınıftır:
+-   Sonraki örnek değişkeni güncelleştirmek ihtiyacımız `_scaleFactor` kullanıcı olarak pinches `ImageView`. Adlı bir sınıf ekleyeceğiz `MyScaleListener`. Bu sınıf kullanıcı pinches zaman Android tarafından gerçekleştirilecektir ölçek olayları dinleyecek `ImageView`.
+    Aşağıdaki iç sınıfa eklemek `GestureRecognizerView`. Bu sınıf, bir `ScaleGesture.SimpleOnScaleGestureListener`. Bu sınıf hareket alt kümesinde ilgilendiğiniz zaman dinleyicileri öğesinin alt sınıfı için bir kolaylık sınıfı şöyledir:
 
     ```csharp
     private class MyScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener
@@ -157,19 +157,19 @@ Kullanıcı temas sürece `ImageView`, **Touch başlar** görüntülenmesi `Text
                 _view._scaleFactor = 0.1f;
             }
 
-            _iconview.Invalidate();
+            _view.Invalidate();
             return true;
         }
     }
     ```
 
--   İhtiyacımız içinde geçersiz kılmak için sonraki yöntemi `GestureRecognizerView` olan `OnTouchEvent`. Aşağıdaki kod, bu yöntem tam uygulamasını listeler. Çok fazla kod yoktur Burada, bu nedenle bir dakikanızı ayırın ve burada neler bakın sağlar. Gerekirse simgesi ölçeklendirmek bu yöntem yapacağı ilk şey olduğunu &ndash; bu çağırarak işlenir `_scaleDetector.OnTouchEvent`. Sonraki Biz bu yöntem ne çağrılan şekil deneyin:
+-   Sonraki yöntem, geçersiz kılmak için ihtiyacımız `GestureRecognizerView` olduğu `OnTouchEvent`. Aşağıdaki kodu tam uygulamayı bu yöntemin listeler. Birçok kod burada, bu nedenle bir dakikanızı ayırın ve burada neler olduğuna bakın sağlar. Bu yöntem yapacağı ilk şey simgesi gerekirse ölçeği olan &ndash; bu çağırarak işlenir `_scaleDetector.OnTouchEvent`. Sonraki Biz bu yöntemin hangi eylemin çekilerek şekil deneyin:
 
-    - Kullanıcı ekranla işlemdeki, X ve Y konumlarını ve ekran işlemdeki ilk işaretçi Kimliğini kaydeder.
+    - Kullanıcı ekranı dokunulan, X ve Y konumları ve ekran dokunulan ilk işaretçi Kimliğini kaydedin.
 
-    - Ardından kullanıcının ekranda kendi dokunma taşındıysa, kullanıcı işaretçiyi ne kadar taşınmış şekil.
+    - Daha sonra kullanıcı, dokunmatik ekranda taşıdıysanız, kullanıcı işaretçiyi taşınmış ne kadar şekil.
 
-    - Kullanıcı kendi parmak ekranın kaldırılmış değilse, ardından biz hareketleri izlemeyi durdurur.
+    - Kullanıcının kendi parmak ekranın yükseltilmiş, ardından biz hareketlerini izlemeyi durdurur.
 
     ```csharp
     public override bool OnTouchEvent(MotionEvent ev)
@@ -231,24 +231,24 @@ Kullanıcı temas sürece `ImageView`, **Touch başlar** görüntülenmesi `Text
     }
     ```
 
--   Şimdi uygulamayı çalıştırın ve hareketi tanıyıcı etkinliği başlatın.
+-   Şimdi uygulamayı çalıştırın ve hareket tanıyıcı etkinliği başlatın.
     Başladığında Ekran aşağıdaki ekran görüntüsüne benzer görünmelidir:
 
-    [![Hareketi tanıyıcı ekran Android simgesiyle başlangıç](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
+    [![Hareket tanıyıcı başlangıç ekranı ile Android simgesi](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
--   Şimdi simgesi dokunma ve ekran sürükleyin. Tutarak yakınlaştırma hareketi deneyin. Belirli bir noktada ekranınızda aşağıdaki ekran şöyle görünebilir:
+-   Artık dokunma simgesi ve ekranın istediğiniz yere sürükleyin. Tabletinizde sıkıştırarak yakınlaştırma hareketini deneyin. Belirli bir noktada ekranınız aşağıdaki ekran görüntüsünde, şuna benzer:
 
     [![Ekran hareketlerini taşıma simgesi](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
-Bu noktada, kendinize bir pat arkasında vermeniz gerekir: bir Android uygulamasını tutarak yakınlaştırma yalnızca uygulanmadı! Bir hızlı sonu alabilir ve bu kılavuzda üçüncü ve son etkinlik taşıma sağlar &ndash; özel hareketler kullanma.
+Bu noktada, kendinize bir pat arkasında vermeniz gerekir: bir Android uygulamasında yalnızca tabletinizde sıkıştırarak yakınlaştırma hareketini kullanarak uyguladıysanız! Hızlı sonu olması ve bu kılavuzda yer alan üçüncü ve son etkinliğe geçin sağlar &ndash; özel hareketler kullanarak.
 
-## <a name="custom-gesture-activity"></a>Özel hareketi etkinliği
+## <a name="custom-gesture-activity"></a>Özel hareket etkinliği
 
-Bu kılavuzda son ekran özel hareketler kullanır.
+Bu kılavuzdaki son ekran özel hareketler kullanır.
 
-Bu kılavuzda amaçları doğrultusunda, hareketleri kitaplığı zaten hareketi aracını kullanarak oluşturulduğundan ve dosyayı'nde projeye eklenen **kaynakları/ham/hareketleri**. İzlenecek yol son etkinlik almak göz önünden housekeeping bu bit ile sağlar.
+Bu izlenecek yolda amacı doğrultusunda, hareketlerini kitaplığı zaten hareket aracını kullanarak oluşturulduğundan ve proje dosyasına ekleneceği **kaynakları/ham/hareketlerini**. Son gözden geçirme etkinlik alma göz önünden housekeeping bu bit ile sağlar.
 
--   Adlı bir düzen dosya eklemek **özel\_hareketi\_layout.axml** projesine aşağıdaki içeriğe sahip. Proje tüm görüntüleri zaten **kaynakları** klasörü:
+-   Adlı bir düzen dosyası ekleme **özel\_hareket\_layout.axml** projeye aşağıdaki içeriğe sahip. Proje zaten tüm görüntüleri sahip **kaynakları** klasörü:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -274,15 +274,15 @@ Bu kılavuzda amaçları doğrultusunda, hareketleri kitaplığı zaten hareketi
     </LinearLayout>
     ```
 
--   Sonraki projeye yeni bir etkinlik ekleyin ve adını `CustomGestureRecognizerActivity.cs`. İki örneği değişken sınıfına aşağıdaki iki kod satırı gösteren olarak ekleyin:
+-   Ardından, projeye yeni bir etkinlik ekleyin ve adlandırın `CustomGestureRecognizerActivity.cs`. İki örnek değişkenleri sınıfına aşağıdaki iki kod satırlarını gösterildiği gibi ekleyin:
 
     ```csharp
     private GestureLibrary _gestureLibrary;
     private ImageView _imageView;
     ```
 
--   Düzen `OnCreate` bu yöntemi aşağıdaki kod, BT'nin benzer şekilde etkinliği. Bu kodda neler olduğunu açıklamak için bir dakikanızı ayırın olanak sağlar. Bunu yapmadan ilk örneği şeydir bir `GestureOverlayView` ve etkinlik kök görünümü olarak ayarlayın.
-    Biz de bir olay işleyicisi atamak `GesturePerformed` olayı `GestureOverlayView`. Sonraki biz daha önce oluşturulan düzeni dosyasını Şişir ve bir alt görünüm olarak eklemek `GestureOverlayView`. Değişkeni başlatmak için son adımdır `_gestureLibrary` hareketleri dosyasını ve uygulama kaynaklarından yükleyin. Hareketleri dosyanın herhangi bir nedenden dolayı yüklenemezse yok çok bu etkinliği yapabilirsiniz, kapatma gelir:
+-   Düzen `OnCreate` yöntemi bu onun aşağıdaki koda benzer şekilde etkinlik. Bu kodda neler olduğunu açıklamak için bir dakikanızı ayırın olanak tanır. Yapmamız gereken ilk şey örneği olan bir `GestureOverlayView` ve etkinliğin kök görünümü olarak ayarlayın.
+    Biz de bir olay işleyicisi atama `GesturePerformed` olayı `GestureOverlayView`. Sonraki biz Şişir daha önce oluşturulan Düzen dosyası ve bir alt görünüm olarak eklemek `GestureOverlayView`. Değişkeni başlatmak için son adımdır `_gestureLibrary` hareketlerini dosyasını ve uygulama kaynaklarından yükleyin. Hareketlerini dosyası herhangi bir nedenden dolayı yüklenemiyor, yok çok bu etkinlik yapabilirsiniz, kapatma, bu nedenle:
 
     ```csharp
     protected override void OnCreate(Bundle bundle)
@@ -306,9 +306,9 @@ Bu kılavuzda amaçları doğrultusunda, hareketleri kitaplığı zaten hareketi
     }
     ```
 
--   İhtiyacımız yöntemi uygulamak için en son şey `GestureOverlayViewOnGesturePerformed` aşağıdaki kod parçacığında gösterildiği gibi. Zaman `GestureOverlayView` bir hareketi algılar geri için bu yöntemi çağırır. Sizi çalışırız almak için ilk şey bir `IList<Prediction>` çağırarak hareketi eşleşen nesneleri `_gestureLibrary.Recognize()`. Bir bit LINQ almak için kullanırız `Prediction` hareketi yüksek puanını sahip.
+-   Yöntemi uygulamak için ihtiyacımız olan son bir şey `GestureOverlayViewOnGesturePerformed` aşağıdaki kod parçacığında gösterildiği gibi. Zaman `GestureOverlayView` bir hareketi algılar geri bu yöntemi çağırır. Çalıştığımızda almak için ilk şey bir `IList<Prediction>` hareket çağırarak eşleşen nesneleri `_gestureLibrary.Recognize()`. LINQ biraz almak için kullandığımız `Prediction` hareketi için en yüksek puanı sahip.
 
-    Eşleşme varsa yeterli puan ile yüksek hareket sonra herhangi bir şey yapmadan olay işleyicisi çıkar. Aksi durumda biz tahmin adını denetleyin ve görüntülenen görüntünün hareketi adına göre değiştirin:
+    Eşleşme varsa yeterli puanı ile yüksek hareket ve olay işleyicisi, hiçbir şey yapmadan çıkar. Aksi takdirde biz tahmin adını kontrol edin ve hareket adını temel alarak görüntülenen resmi değiştirmek:
 
     ```csharp
     private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayView.GesturePerformedEventArgs gesturePerformedEventArgs)
@@ -339,22 +339,22 @@ Bu kılavuzda amaçları doğrultusunda, hareketleri kitaplığı zaten hareketi
     }
     ```
 
--   Uygulamayı çalıştırın ve özel hareketi tanıyıcı faaliyeti başlatın. Aşağıdaki ekran görüntüsüne benzer görünmelidir:
+-   Uygulamayı çalıştırmak ve özel hareket tanıyıcı faaliyeti başlatın. Aşağıdaki ekran görüntüsü gibi görünmelidir:
 
     [![Ekran bana görüntü denetleyin](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
-    Şimdi bir onay işareti ekranda çizme ve görüntülenmesini bit eşlemi, sonraki ekran görüntülerinde gösterildiği gibi görünmelidir:
+    Artık bir onay işareti ekranda çizim ve görüntülenmesini bit eşlemi, sonraki ekran görüntülerinde gösterildiği gibi görünmelidir:
 
-    [![Çizilen onay, onay işaretine tanınmıyor](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+    [![Çizilen onay işareti, onay işareti değerlendirilmiştir](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
 
     Son olarak, bir karalama ekranda çizin. Bu ekran görüntülerinde gösterildiği gibi onay kutusunu özgün görüntüye değiştirmeniz gerekir:
 
-    [![Karalama ekranında, özgün resim görüntülenir](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
+    [![Ekranında, özgün resmin karalama görüntülenir](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
-Artık bir anlayış dokunma ve hareket uygulamada Xamarin.Android kullanarak Android tümleştirme vardır.
+Artık dokunma ve Xamarin.Android kullanarak bir Android uygulaması hareketleri tümleştirmek nasıl bir anlayışa sahipsiniz.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Android Touch başlatın (örnek)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
+- [Android Touch Başlat (örnek)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
 - [Android Touch son (örnek)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)

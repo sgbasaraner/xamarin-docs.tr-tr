@@ -1,57 +1,57 @@
 ---
-title: Bölüm 4 özeti. Yığın kaydırma
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 4 özeti. Yığın kaydırma'
+title: Bölüm 4 özeti. Yığını kaydırma
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: Bölüm 4 özeti. Yığını kaydırma'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1af3632d226ce894c1d856f665d6482f45d61f16
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7860df998fbfe580362aff0f4f01374a4ae1f923
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241148"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935559"
 ---
-# <a name="summary-of-chapter-4-scrolling-the-stack"></a>Bölüm 4 özeti. Yığın kaydırma
+# <a name="summary-of-chapter-4-scrolling-the-stack"></a>Bölüm 4 özeti. Yığını kaydırma
 
-Bu bölümde kavramı tanıtımı için öncelikle ayrılan *düzeni*, birden çok görünüm sayfasında görsel görünümünü düzenlemek için Xamarin.Forms kullanır teknikleri ve sınıfları için genel terim olduğu.
+Bu bölümde, öncelikli olarak kavramını tanıtımı için ayrılmıştır *Düzen*, sınıflar ve Xamarin.Forms birden çok görünüm sayfasında görünümünü düzenlemek için kullanılır teknikler için genel terim olduğu.
 
-Düzen öğesinden türetilen birden fazla sınıf içerir [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) ve [ `Layout<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/). Bu bölümde odaklanır [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/).
+Düzen öğesinden türetilen birkaç sınıfları içerir [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) ve [ `Layout<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/). Bu bölümde odaklanır [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/).
 
 Ayrıca bu bölümde sunulan olan [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/), [ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/), ve [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) sınıfları.
 
-## <a name="stacks-of-views"></a>Görünüm yığınları
+## <a name="stacks-of-views"></a>Yığınlar görünümü
 
-[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) türetilen `Layout<View>` ve devralan bir [ `Children` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) türündeki özelliği `IList<View>`. Bu koleksiyona, birden çok görünüm öğe ekleyin ve `StackLayout` yatay veya dikey yığında görüntüler.
+[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) öğesinden türetilen `Layout<View>` ve devralan bir [ `Children` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) türünün özelliği `IList<View>`. Bu koleksiyona, birden çok görünüm öğeleri eklemek ve `StackLayout` bunları bir yatay veya dikey yığın içinde görüntüler.
 
-Ayarlama [ `Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/) özelliği `StackLayout` üyesi için [ `StackOrientation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackOrientation/) numaralandırma, ya da [ `Vertical` ](https://developer.xamarin.com/api/field/Xamarin.Forms.StackOrientation.Vertical/) veya [ `Horizontal`](https://developer.xamarin.com/api/field/Xamarin.Forms.StackOrientation.Horizontal/). Varsayılan, `Vertical` değeridir.
+Ayarlama [ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation) özelliği `StackLayout` üyesinin [ `StackOrientation` ](xref:Xamarin.Forms.StackOrientation) numaralandırma ya da [ `Vertical` ](xref:Xamarin.Forms.StackOrientation.Vertical) veya [ `Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal). Varsayılan, `Vertical` değeridir.
 
 Ayarlama [ `Spacing` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Spacing/) özelliği `StackLayout` için bir `double` alt aralığını belirtmek için değer. Varsayılan değer 6'dır.
 
-Kod içinde öğeleri ekleyebilirsiniz `Children` koleksiyonunu `StackLayout` içinde bir `for` veya `foreach` döngü örnekte gösterildiği şekilde [ **ColorLoop** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop) örnek veya başlatma `Children` tek bir görünüm içindeki kanıtlanabilir olarak listesiyle koleksiyonunu [ **ColorList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList). Alt öğesinden türetilmelidir `View` ancak diğer içerebilir `StackLayout` nesneleri.
+Kod içinde öğeleri ekleyebilirsiniz `Children` koleksiyonunu `StackLayout` içinde bir `for` veya `foreach` döngü gösterildiği şekilde [ **ColorLoop** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop) veya örnek Başlat `Children` tek bir görünüm olarak içinde kanıtlanabilir bir liste koleksiyonunu [ **ColorList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList). Alt öğesinden türetilmelidir `View` ancak diğer içerebilir `StackLayout` nesneleri.
 
 ## <a name="scrolling-content"></a>İçerik kaydırma
 
-Varsa bir `StackLayout` bir sayfasında görüntülenecek çok fazla sayıda alt öğeler içerdiğinden, koyabilirsiniz `StackLayout` içinde bir [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) kaydırma izin vermek için.
+Varsa bir `StackLayout` bir sayfasında görüntülenecek çok fazla alt koyabilirsiniz `StackLayout` içinde bir [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) kaydırma izin vermek için.
 
-Ayarlama [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ScrollView.Content/) özelliği `ScrollView` kaydırma istediğiniz görünümü için. Bu genellikle olur bir `StackLayout`, ancak herhangi bir görünüm olabilir.
+Ayarlama [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ScrollView.Content/) özelliği `ScrollView` kaydırma istediğiniz görünümü. Bu genellikle, bir `StackLayout`, ancak herhangi bir görünüm olabilir.
 
-Ayarlama [ `Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ScrollView.Orientation/) özelliği `ScrollView` üyesi için [ `ScrollOrientation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollOrientation/) özelliği, [ `Vertical` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ScrollOrientation.Vertical/), [ `Horizontal` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ScrollOrientation.Horizontal/), veya [ `Both` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ScrollOrientation.Both/). Varsayılan, `Vertical` değeridir. Varsa içeriğini bir `ScrollView` olan bir `StackLayout`, iki yönler tutarlı olmalıdır.
+Ayarlama [ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation) özelliği `ScrollView` üyesinin [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation) özelliği [ `Vertical` ](xref:Xamarin.Forms.ScrollOrientation.Vertical), [ `Horizontal` ](xref:Xamarin.Forms.ScrollOrientation.Horizontal), veya [ `Both` ](xref:Xamarin.Forms.ScrollOrientation.Both). Varsayılan, `Vertical` değeridir. İçeriği bir `ScrollView` olduğu bir `StackLayout`, iki yönler tutarlı olmalıdır.
 
-[ **ReflectedColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ReflectedColors) kullanımını gösteren örnek `ScrollView` ve `StackLayout` kullanılabilen renkleri görüntülemek için. Örnek ayrıca .NET yansıma tüm ortak statik özellikleri ve alanları almak için nasıl kullanılacağını gösterir `Color` açıkça bunları listesinde gerek kalmadan yapısı.
+[ **ReflectedColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ReflectedColors) örnek, kullanımını gösterir `ScrollView` ve `StackLayout` kullanılabilir renklerin görüntülenecek. Örnek ayrıca tüm ortak statik özellikler ve alanları almak için .NET, yansıtma kullanmayı gösteren `Color` doğrudan belirterek listelemek zorunda kalmadan yapısı.
 
 ## <a name="the-expands-option"></a>Genişler seçeneği
 
-Zaman bir `StackLayout` yığınları, alt öğelerini, her alt toplam yüksekliği içinde belirli bir yuva kapladığı `StackLayout` çocuğun boyutu ve ayarlarına bağlıdır, `HorizontalOptions` ve `VerticalOptions` özellikleri. Bu özellikleri türü değerleri atanan [ `LayoutOptions` ](http://developer.xamstage.com/api/type/Xamarin.Forms.LayoutOptions/).
+Olduğunda bir `StackLayout` yığınları alt öğelerinde harcanan, her alt toplam yüksekliği içinde belirli bir yuva kapladığı `StackLayout` çocuğun boyutunu ve ayarlarını bağlıdır, `HorizontalOptions` ve `VerticalOptions` özellikleri. Bu özellikler türündeki değerler atanır [ `LayoutOptions` ](http://developer.xamstage.com/api/type/Xamarin.Forms.LayoutOptions/).
 
-`LayoutOptions` Yapısı iki özellik tanımlar:
+`LayoutOptions` Yapısını tanımlayan iki özellikleri:
 
-- [`Alignment`](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Alignment/) Numaralandırma türünün [ `LayoutAlignment` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutAlignment/) dört üyeleriyle [ `Start` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.Start/), [ `Center` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.Center/), [ `End` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.End/), ve [`Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.Fill/)
-- [`Expands`](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/) türü `bool`
+- [`Alignment`](xref:Xamarin.Forms.LayoutOptions.Alignment) numaralandırma türü [ `LayoutAlignment` ](xref:Xamarin.Forms.LayoutAlignment) dört üyeleriyle [ `Start` ](xref:Xamarin.Forms.LayoutAlignment.Start), [ `Center` ](xref:Xamarin.Forms.LayoutAlignment.Center), [ `End` ](xref:Xamarin.Forms.LayoutAlignment.End), ve [`Fill`](xref:Xamarin.Forms.LayoutAlignment.Fill)
+- [`Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) türü `bool`
 
-Size kolaylık sağlamak için `LayoutOptions` yapısı ayrıca türünde sekiz statik salt okunur alanlar tanımlar `LayoutOptions` tüm bileşimleri iki örnek özelliklerini kapsar:
+Size kolaylık sağlamak için `LayoutOptions` yapı türünde sekiz statik salt okunur alanlar da tanımlar `LayoutOptions` kombinasyonların tümünde iki örnek özelliklerini kapsar:
 
 - [`LayoutOptions.Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/)
 - [`LayoutOptions.Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/)
@@ -62,49 +62,49 @@ Size kolaylık sağlamak için `LayoutOptions` yapısı ayrıca türünde sekiz 
 - [`LayoutOptions.EndAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.EndAndExpand/)
 - [`LayoutOptions.FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/)
 
-Aşağıdaki tartışma içerir bir `StackLayout` varsayılan dikey yönlendirme ile. Yatay `StackLayout` benzerdir.
+Aşağıdaki tartışma içeren bir `StackLayout` varsayılan dikey yönlendirme kullanıldığında. Yatay `StackLayout` benzerdir.
 
-Dikey için `StackLayout`, `HorizontalOptions` ayarı, bir alt genişliğini içinde yatay olarak nasıl konumlandırılacağını belirler `StackLayout`. Bir `Alignment` ayarıyla `Start`, `Center`, veya `End` alt yatay Kısıtlanmamış olması neden olur. Alt kendi genişliğini belirler ve sola, merkezi veya sağına yerleştirilir `StackLayout`. `Fill` Seçeneği yatay kısıtlı alt neden olur ve genişliğini doldurur `StackLayout`.
+Dikey için `StackLayout`, `HorizontalOptions` ayarı, bir alt içinde genişliğini yatay olarak nasıl konumlandırılacağını belirler `StackLayout`. Bir `Alignment` ayarıyla `Start`, `Center`, veya `End` alt yatay sınırlandırılmamış olması neden olur. Alt kendi genişliğini belirler ve sol, Orta veya sağ tarafında konumlandırılan `StackLayout`. `Fill` Seçeneği yatay kısıtlı alt neden olur ve genişliğini kaplayacak şekilde `StackLayout`.
 
-Dikey için `StackLayout`, her alt dikey Kısıtlanmamış ve alır dikey yuva çocuğun yükseklik bağlı olarak, bu durumda `VerticalOptions` ayardır ilgisiz.
+Dikey için `StackLayout`, her alt dikey sınırlandırılmamış ve alır dikey bir yuva alt öğenin yükseklik bağlı olarak, bu durumda `VerticalOptions` ayarı bizim konumuzla ilgili değildir.
 
-Varsa dikey `StackLayout` kendisini Kısıtlanmamış&mdash;diğer bir deyişle, kendi `VerticalOptions` ayar `Start`, `Center`, veya `End`, ardından yüksekliğini `StackLayout` alt toplam yüksekliği.
+Varsa dikey `StackLayout` kendisini sınırlandırılmamış&mdash;diğer bir deyişle, kendi `VerticalOptions` ayardır `Start`, `Center`, veya `End`, ardından yüksekliğini `StackLayout` alt toplam yüksekliği.
 
-Ancak, dikey `StackLayout` dikey kısıtlı&mdash;, kendi `VerticalOptions` ayardır `Fill` &mdash;sonra yüksekliğini `StackLayout` toplam büyük olabilir, kapsayıcı yüksekliğini olacaktır alt yüksekliği. Bu durumda ve en az bir alt öğe varsa bir `VerticalOptions` ayarı bir `Expands` işareti `true`, ardından ek alanı `StackLayout` ile bu alt öğeleri arasında eşit olarak ayrılan bir `Expands` işareti `true`. Alt toplam yüksekliği yüksekliğini sonra eşit `StackLayout`ve `Alignment` parçası `VerticalOptions` ayarı, alt kendi yuvasında dikey olarak nasıl konumlandırılacağını belirler.
+Ancak, dikey `StackLayout` dikey kısıtlı&mdash;varsa kendi `VerticalOptions` ayardır `Fill` &mdash;ardından yüksekliğini `StackLayout` toplam daha büyük olabilir, kapsayıcı yüksekliği olur alt yüksekliği. Bu durumda ve en az bir alt varsa bir `VerticalOptions` ayarı bir `Expands` , bayrak `true`, sonra ek alana `StackLayout` ile tüm alt arasında eşit olarak ayrılan bir `Expands` , bayrak `true`. Alt toplam yüksekliği ardından yüksekliği eşit olacaktır `StackLayout`ve `Alignment` parçası `VerticalOptions` ayarı, alt kendi yuvasında dikey olarak nasıl konumlandırılacağını belirler.
 
-Bu, gösterilmiştir [ **VerticalOptionsDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo) örnek.
+Bu gösterilmiştir [ **VerticalOptionsDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo) örnek.
 
 ## <a name="frame-and-boxview"></a>Çerçeve ve BoxView
 
 Bu iki dikdörtgen görünümleri genellikle sunu amaçlar için kullanılır.
 
-[ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/) Görüntüleyen bir düzen gibi olabilir başka bir görünüm etrafında dikdörtgen kare `StackLayout`. `Frame` devralınan bir [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) özelliğinden [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) içinde görüntülenecek görünüm ayarlanan `Frame`. `Frame` Varsayılan olarak saydamdır. Çerçevenin görünümünü özelleştirmek için aşağıdaki üç özellikleri ayarlayın:
+[ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/) Görünümü gibi bir düzen olabilir başka bir görünüme etrafında dikdörtgen bir çerçeve görüntüler `StackLayout`. `Frame` devralınan bir [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) özelliğinden [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) içinde görüntülenecek görünüm ayarladığınız `Frame`. `Frame` Varsayılan saydamdır. Çerçeve görünümünü özelleştirmek için aşağıdaki üç özellikleri ayarlayın:
 
-- [ `OutlineColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.OutlineColor/) Görünür hale getirmek için özellik. Ayarlamak için ortak olan `OutlineColor` için `Color.Accent` zaman bilmediğiniz temel renk düzenini.
-- [ `HasShadow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.HasShadow/) Özelliği ayarlanabilir `true` siyah gölge iOS cihazlarda görüntülenecek.
-- Ayarlama [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) özelliğine bir `Thickness` çerçeve ve çerçeve arasında boşluk bırakmak için değer içerik. Varsayılan değer 20 tüm yüze birimidir.
+- [ `OutlineColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.OutlineColor/) Görünür yapmak için özellik. Ayarlanacak yaygındır `OutlineColor` için `Color.Accent` zaman bilmediğiniz temel renk şeması.
+- [ `HasShadow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.HasShadow/) Özelliği ayarlanabilir `true` siyah bir gölge iOS cihazlarda görüntülenecek.
+- Ayarlama [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) özelliğini bir `Thickness` çerçeve ve çerçeve arasında bir boşluk bırakmayı değeri içerik. Varsayılan değer 20 tüm yüze birimidir.
 
-`Frame` Varsayılan `HorizontalOptions` ve `VerticalOptions` değerlerini `LayoutOptions.Fill`, anlamına `Frame` kapsayıcısı doldurur. Diğer ayarlarla boyutunu `Frame` içeriğini boyutuna göre.
+`Frame` Varsayılan `HorizontalOptions` ve `VerticalOptions` değerlerini `LayoutOptions.Fill`, anlamına `Frame` kapsayıcısı doldurur. Diğer ayarlarla boyutunu `Frame` içeriği boyutu temel alınır.
 
-`Frame` Örneklerde gösterildiği [ **FramedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FramedText) örnek.
+`Frame` Gösterilmiştir [ **FramedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FramedText) örnek.
 
-[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) Dikdörtgen tarafından belirtilen renk görüntüler kendi [ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) özelliği.
+[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) Tarafından belirtilen renkli bir dikdörtgen alan görüntüler, [ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) özelliği.
 
-Varsa `BoxView` sınırlı değildir (kendi `HorizontalOptions` ve `VerticalOptions` özelliklerine sahip kullanıcıların varsayılan ayarlarını `LayoutOptions.Fill`), `BoxView` kullanılabilir alanı için doldurur. Varsa `BoxView` Kısıtlanmamış olduğundan (ile `HorizontalOptions` ve `LayoutOptions` ayarlarını `Start`, `Center`, veya `End`), bir varsayılan boyut 40 birimleri kare sahiptir. A `BoxView` bir boyuttaki kısıtlı ve diğer Kısıtlanmamış.
+Varsa `BoxView` sınırlıdır (kendi `HorizontalOptions` ve `VerticalOptions` özelliklere sahip, varsayılan ayarlarına `LayoutOptions.Fill`), `BoxView` için mevcut olan alanı doldurur. Varsa `BoxView` sınırlandırılmamış olduğu (ile `HorizontalOptions` ve `LayoutOptions` ayarlarını `Start`, `Center`, veya `End`), varsayılan boyut 40 birimleri karenin sahiptir. A `BoxView` kısıtlı bir boyut ve diğerinde sınırlandırılmamış.
 
-Genellikle, ayarlarız [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) ve [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) özelliklerini `BoxView` belirli bir boyuta vermek için. Bu tarafından gösterilmiştir [ **SizedBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView) örnek.
+Genellikle, belirleyeceğim [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) ve [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) özelliklerini `BoxView` belirli bir boyutu vermek için. Bu gösterilmiştir [ **SizedBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView) örnek.
 
-Birden çok örneği kullanabilirsiniz `StackLayout` birleştirmek için bir `BoxView` ve birkaç `Label` içinde örnekler bir `Frame` belirli bir renk görüntülemek ve bu görünümlerin her biri yerleştirmek için bir `StackLayout` içinde bir `ScrollView` çekici oluşturmak için gösterilen renk listesi [ **ColorBlocks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks) örnek:
+Birden fazla örneğini kullanabilirsiniz `StackLayout` birleştirmek için bir `BoxView` ve birkaç `Label` içinde örnekler bir `Frame` belirli bir renk görüntülemek ve her biri bu görünümlerde koymak için bir `StackLayout` içinde bir `ScrollView` çekici oluşturmak için gösterilen renklerin listesi [ **ColorBlocks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks) örnek:
 
-[![Üçlü ekran rengi bloklarının](images/ch04fg11-small.png "listesi, renkler")](images/ch04fg11-large.png#lightbox "listesi, renkler")
+[![Üç ekran rengi bloğu](images/ch04fg11-small.png "liste, renkleri")](images/ch04fg11-large.png#lightbox "liste, renkleri")
 
-## <a name="a-scrollview-in-a-stacklayout"></a>Bir StackLayout içinde ScrollView?
+## <a name="a-scrollview-in-a-stacklayout"></a>Bir StackLayout içinde bir ScrollView?
 
-Koyma bir `StackLayout` içinde bir `ScrollView` ortak ancak koyma bir `ScrollView` içinde bir `StackLayout` ayrıca bazı durumlarda kullanışlıdır. Teorik olarak bu mümkün olmaması gerekir çünkü dikey alt `StackLayout` dikey Kısıtlanmamış şunlardır. Ancak bir `ScrollView` dikey olarak kısıtlanmalıdır. Kaydırma için kendi alt boyutunu sonra belirleyebilmesi belirli bir yükseklikte verilmelidir.
+Yerleştirme bir `StackLayout` içinde bir `ScrollView` ortak ancak koyarak bir `ScrollView` içinde bir `StackLayout` da bazen kullanışlıdır. Teorik olarak bu mümkün olmaması gerekir çünkü dikey alt `StackLayout` dikey sınırlandırılmamış olan. Ancak bir `ScrollView` dikey olarak kısıtlanmalıdır. Kaydırma için kendi alt boyutu ardından belirleyebilirsiniz belirli bir yükseklikte verilmelidir.
 
-Eli vermektir `ScrollView` alt `StackLayout` bir `VerticalOptions` ayarıyla `FillAndExpand`. Bu, gösterilmiştir [ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) örnek.
+Hile vermektir `ScrollView` alt `StackLayout` bir `VerticalOptions` ayarıyla `FillAndExpand`. Bu gösterilmiştir [ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) örnek.
 
-**BlackCat** örnek ayrıca tanımlayın ve taşınabilir sınıf kitaplığı (PCL) katıştırılmış program kaynaklara erişmek nasıl gösterir. Bu da paylaşılan varlık projeleriyle (SAP) elde ancak işlem olarak biraz daha [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) örnek gösterilmektedir.
+**BlackCat** örnek nasıl tanımlanacağını ve taşınabilir sınıf kitaplığı (PCL) katıştırılmış program kaynaklara erişim de gösterir. Bu paylaşılan varlık projeleriyle (SAP) gerçekleştirilebilir ancak olarak biraz zor bir işlemdir [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) örnek gösterir.
 
 
 

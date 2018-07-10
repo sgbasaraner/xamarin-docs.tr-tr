@@ -1,46 +1,46 @@
 ---
 title: Xamarin.Forms DatePicker
-description: DatePicker tarih seçmek kullanıcının sağlayan Xamarin.Forms görünümüdür. Bu makalede, bir Xamarin.Forms uygulamasında DatePicker kullanma açıklanmaktadır.
+description: DatePicker kullanıcının bir tarih seçmesine izin veren bir Xamarin.Forms görünümdür. Bu makalede, bir Xamarin.Forms uygulamasındaki bir DatePicker kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 9cbc87637df088a4989d3602a7d1d126adf86385
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 31422f1067473ccb49a681098bd0809c451e7369
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243651"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935364"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
-_Kullanıcının bir tarih seçmesine olanak veren bir Xamarin.Forms görünümü_
+_Kullanıcının bir tarih seçmesine izin veren bir Xamarin.Forms görünümü_
 
-Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) platformun tarih seçici denetim çağırır ve bir tarih seçin olanak tanır. `DatePicker` sekiz özelliklerini tanımlar:
+Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) platformun tarih seçici denetimi çağırır ve kullanıcının bir tarih seçmesine olanak sağlar. `DatePicker` sekiz özelliklerini tanımlar:
 
 - [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) tür [ `DateTime` ](https://developer.xamarin.com/api/type/System.DateTime/), 1900 yılın ilk günü için varsayılan olarak.
 - [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) tür `DateTime`, hangi varsayılanlara 2100 yılın son günü.
 - [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) tür `DateTime`, değeri varsayılan olarak seçilen tarihten [ `DateTime.Today` ](https://developer.xamarin.com/api/property/System.DateTime.Today/).
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) tür `string`, [standart](/dotnet/standard/base-types/standard-date-and-time-format-strings/) veya [özel](/dotnet/standard/base-types/custom-date-and-time-format-strings/) "D" varsayılan olarak, dize biçimlendirme .NET uzun tarih düzeni.
-- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.TextColor/) tür [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/), varsayılan olarak seçilen tarihini görüntülemek için kullanılan renk [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
-- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) tür [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), varsayılan olarak [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
-- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) tür `string`, varsayılan olarak `null`.
+- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) tür `string`, [standart](/dotnet/standard/base-types/standard-date-and-time-format-strings/) veya [özel](/dotnet/standard/base-types/custom-date-and-time-format-strings/) .NET biçimlendirme dizesi, "D" varsayılan olarak, uzun tarih deseni.
+- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.TextColor/) tür [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/), varsayılan olarak seçili tarihini görüntülemek için kullanılan rengi [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
+- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) tür [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), bunun varsayılan [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
+- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) tür `string`, bunun varsayılan `null`.
 - [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) tür `double`, -1.0 için varsayılan olarak.
 
-`DatePicker` Ateşlenir bir [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) kullanıcı bir tarih seçtiğinde olay.
+`DatePicker` Ateşlenir bir [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) kullanıcının bir tarih seçtiğinde olay.
 
 > [!WARNING]
-> Ayarlarken `MinimumDate` ve `MaximumDate`, olduğundan emin olun `MinimumDate` her zaman küçük veya buna eşit olduğundan `MaximumDate`. Aksi takdirde, `DatePicker` bir özel durum oluşturacak.
+> Ayarlarken `MinimumDate` ve `MaximumDate`, emin `MinimumDate` her zaman eşit veya küçük `MaximumDate`. Aksi takdirde, `DatePicker` bir özel durum oluşturacak.
 
-Dahili olarak, `DatePicker` sağlar `Date` arasında `MinimumDate` ve `MaximumDate`(dahil). Varsa `MinimumDate` veya `MaximumDate` ayarlanmış şekilde `Date` bunlar arasında değil `DatePicker` değerini ayarlar `Date`.
+Dahili olarak `DatePicker` sağlar `Date` arasında `MinimumDate` ve `MaximumDate`(dahil). Varsa `MinimumDate` veya `MaximumDate` ayarlanır böylece `Date` bunlar arasında değil `DatePicker` değerini ayarlar `Date`.
 
-Tüm sekiz özellikleri tarafından yedeklenen [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) nesneleri bunlar biçimlendirilebilir ve özellikler veri bağlamaların hedefleri olabilir anlamına gelir. `Date` Özelliğine sahip bir varsayılan bağlama modu [ `BindingMode.TwoWay` ](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/), kullanan bir uygulama içinde veri bağlama hedefi olabileceği anlamına gelir [Model View ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) Mimari.
+Tüm sekiz özellikleri tarafından yedeklenen [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) nesneleri, bunlar biçimlendirilebilir ve veri bağlama hedefleri özellikler olabilir. `Date` Özelliğine sahip bir varsayılan bağlama modu [ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay), kullanan bir uygulama bir veri bağlama hedefi olabileceği anlamına gelir [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) Mimari.
 
 ## <a name="initializing-the-datetime-properties"></a>DateTime özellikleri başlatma
 
-Kodda, başlatabilir `MinimumDate`, `MaximumDate`, ve `Date` türü değerleri özelliklerine `DateTime`:
+Kodda, başlatabilirsiniz `MinimumDate`, `MaximumDate`, ve `Date` türü değerlerinin özelliklerine `DateTime`:
 
 ```csharp
 DatePicker datePicker = new DatePicker
@@ -51,7 +51,7 @@ DatePicker datePicker = new DatePicker
 };
 ```
 
-Zaman bir `DateTime` değeri belirtilen XAML'de XAML ayrıştırıcısı kullanan `DateTime.Parse` yöntemi ile bir `CultureInfo.InvariantCulture` dizeye dönüştürmek için bağımsız değişken bir `DateTime` değeri. Tarihleri kesin bir biçimde belirtilmesi gerekir: iki basamaklı ay, iki basamaklı gün ve eğik çizgiyle ayrılmış dört rakamlı yıl:
+Olduğunda bir `DateTime` değeri, XAML ayrıştırıcı kullanan XAML içinde belirtilirse `DateTime.Parse` yöntemi ile bir `CultureInfo.InvariantCulture` dizeye dönüştürmek için bağımsız değişken bir `DateTime` değeri. Kesin bir biçimde tarihleri belirtilmelidir: dört rakamlı yıl eğik çizgiyle ayrılmış iki haneli ay ve iki basamaklı gün:
 
 ```xaml
 <DatePicker MinimumDate="01/01/2018"
@@ -59,7 +59,7 @@ Zaman bir `DateTime` değeri belirtilen XAML'de XAML ayrıştırıcısı kullana
             Date="06/21/2018" />
 ```
 
-Varsa `BindingContext` özelliği `DatePicker` türünün özelliklerini içeren bir ViewModel örneğine ayarlanmış `DateTime` adlı `MinDate`, `MaxDate`, ve `SelectedDate` (örneğin), örneği `DatePicker` şöyle :
+Varsa `BindingContext` özelliği `DatePicker` türünün özelliklerini içeren bir ViewModel örneğine ayarlanır `DateTime` adlı `MinDate`, `MaxDate`, ve `SelectedDate` (örneğin), oluşturabileceğiniz `DatePicker` şöyle :
 
 ```xaml
 <DatePicker MinimumDate="{Binding MinDate}"
@@ -67,15 +67,15 @@ Varsa `BindingContext` özelliği `DatePicker` türünün özelliklerini içeren
             Date="{Binding SelectedDate}" />
 ```
 
-Bu örnekte, tüm üç özellik ViewModel karşılık gelen özelliklerinde başlatılır. Çünkü `Date` özelliğine sahip bir bağlama modu `TwoWay`, kullanıcı seçer ViewModel otomatik olarak yansıtılır herhangi bir yeni tarihi.
+Bu örnekte, tüm üç özellik ViewModel karşılık gelen özelliklerinde başlatılır. Çünkü `Date` özelliğine sahip bir bağlama modu `TwoWay`, kullanıcı seçer ViewModel içinde otomatik olarak yansıtılan herhangi bir yeni tarihi.
 
-Varsa `DatePicker` üzerinde bir bağlama içermiyor kendi `Date` özelliği, bir uygulama eklemek için bir işleyici `DateSelected` olması için olay bilgi sahibi kullanıcı yeni bir tarih seçtiğinde.
+Varsa `DatePicker` üzerinde bir bağlama içermiyor, `Date` özelliği, uygulama eklemek için bir işleyici `DateSelected` olmasını olay haberdar kullanıcı yeni bir tarih seçtiğinde.
 
-Yazı tipi özelliklerini ayarlama hakkında daha fazla bilgi için bkz: [yazı tiplerini](~/xamarin-forms/user-interface/text/fonts.md).
+Yazı tipi özelliklerini ayarlama hakkında daha fazla bilgi için bkz. [yazı tipleri](~/xamarin-forms/user-interface/text/fonts.md).
 
 ## <a name="datepicker-and-layout"></a>DatePicker ve düzeni
 
-Kısıtlanmamış yatay düzen seçeneği gibi kullanmak da mümkündür `Center`, `Start`, veya `End` ile `DatePicker`:
+Sınırlandırılmamış yatay düzeni seçeneği gibi kullanmak da mümkündür `Center`, `Start`, veya `End` ile `DatePicker`:
 
 ```xaml
 <DatePicker ···
@@ -83,16 +83,16 @@ Kısıtlanmamış yatay düzen seçeneği gibi kullanmak da mümkündür `Center
             ··· />
 ```
 
-Ancak, bu önerilmez. Ayarını bağlı olarak `Format` özelliği, Seçili tarihleri farklı görüntü genişliği gerekebilir. Örneğin, "D" biçim dizesi neden `DateTime` uzun bir biçimde ve "Çarşamba, 12 Eylül 2018" tarihleri görüntülemek için "Cuma, May 4, 2018" daha büyük görüntü genişliğini gerektirir. Platforma bağlı olarak bu fark neden olabilecek `DateTime` genişliğini düzeninde ya da kesilecek görüntülenmek değiştirmek için görünümü.
+Ancak, bu önerilmez. Ayarına bağlı olarak `Format` seçili özelliği, tarihler, farklı ekran genişliği gerektirebilir. Örneğin, "D" biçim dizesi neden `DateTime` tarihleri uzun biçimi ve "Çarşamba, Eylül 12 2018" görüntülemek için "Friday, Mayıs 4 2018" daha büyük bir görüntü genişliğini gerektirir. Platforma bağlı olarak, bu fark neden olabilecek `DateTime` düzeni veya kesilecek görüntü genişliğini değiştirmek için görünümü.
 
 > [!TIP]
-> Varsayılan kullanmak en iyisidir `HorizontalOptions` ayarıyla `Fill` ile `DatePicker`ve genişliği kullanmamayı `Auto` koyma zaman `DatePicker` içinde bir `Grid` hücre.
+> Varsayılan kullanmak en iyisidir `HorizontalOptions` ayarıyla `Fill` ile `DatePicker`ve genişliği kullanmayı `Auto` koyarak olduğunda `DatePicker` içinde bir `Grid` hücre.
 
-## <a name="datepicker-in-an-application"></a>Bir uygulamada DatePicker
+## <a name="datepicker-in-an-application"></a>Bir uygulamada tarih seçici
 
-[ **DaysBetweenDates** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker) örnek içeren iki `DatePicker` , sayfa görünümleri. Bu iki tarih seçmek için kullanılabilir ve bu tarihler arasındaki gün sayısını program hesaplar. Program ayarlarını değiştirmez `MinimumDate` ve `MaximumDate` özellikleri, iki tarih 1900 ile 2100 arasında olması gerekir.
+[ **DaysBetweenDates** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker) örnek içeren iki `DatePicker` , sayfa görünümleri. Bu iki tarihleri seçmesini kullanılabilir ve programın bu tarih arasındaki gün sayısını hesaplar. Program ayarlarını değiştirmez `MinimumDate` ve `MaximumDate` özellikleri, iki tarih 1900 ile 2100 arasında olması gerekir.
 
-XAML dosyası şöyledir:
+XAML dosyası aşağıda verilmiştir:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -144,9 +144,9 @@ XAML dosyası şöyledir:
 </ContentPage>
 ```
 
-Her `DatePicker` atanmış bir `Format` "D" özelliği için uzun tarih biçimi. Ayrıca dikkat `endDatePicker` nesne sahip hedefleyen bir bağlama kendi `MinimumDate` özelliği. Bağlama kaynağıdır seçili `Date` özelliği `startDatePicker` nesnesi. Bu, son tarihi daha sonra her zaman başlangıç tarihine eşit veya sağlar. İki ek olarak `DatePicker` nesneleri, bir `Switch` "her iki gün toplama eklemek" olarak etiketlenir.
+Her `DatePicker` atanmış bir `Format` "D" özelliği için bir uzun tarih biçimi. Ayrıca dikkat `endDatePicker` nenesindeki hedefleyen bir bağlama kendi `MinimumDate` özelliği. Bağlama kaynağı seçili olduğu `Date` özelliği `startDatePicker` nesne. Bu, bitiş tarihi daha sonra her zaman başlangıç tarihine eşit veya sağlar. İki ek olarak `DatePicker` nesneleri bir `Switch` "her iki gün toplam ekleme" olarak etiketlenir.
 
-İki `DatePicker` görünümleri sahip ilişik işleyiciler `DateSelected` olayı ve `Switch` için bir işleyici eklenmiş kendi `Toggled` olay. Bu olay işleyicileri ve iki tarih arasındaki gün yeni bir hesaplaması tetiklemek arka plan kod dosyasına verilmiştir:
+İki `DatePicker` görünümleri sahip bağlı işleyicileri `DateSelected` olay ve `Switch` için bir işleyici eklenmiş kendi `Toggled` olay. Bu olay işleyicileri, arka plan kod dosyasında olan ve yeni bir hesaplama iki tarih arasındaki gün tetikleyin:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -177,15 +177,15 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Örnek ilk çalıştırıldığında, her ikisi de `DatePicker` görünümleri bugüne başlatılır. Aşağıdaki ekran görüntüsünde, iOS, Android ve evrensel Windows platformu üzerinde çalışan program gösterir:
+Örnek ilk kez çalıştırdığınızda, her ikisi de `DatePicker` görünümleri, bugünün tarihine başlatılır. Aşağıdaki ekran görüntüsünde, iOS, Android ve evrensel Windows platformu üzerinde çalışan bir program gösterilmektedir:
 
 [![Tarih arasındaki gün başlangıç](datepicker-images/DaysBetweenDatesStart.png "tarih arasındaki gün başlangıç")](datepicker-images/DaysBetweenDatesStart-Large.png#lightbox "tarih arasındaki gün Başlat")
 
-Aşağıdakilerden birini dokunarak `DatePicker` görüntüler platform tarih seçici çağırır. Üç platformları bu tarih seçici çok farklı şekillerde uygulamak, ancak her bir yaklaşım, platform kullanıcılara alışkın olduğu:
+Aşağıdakilerden birini dokunarak `DatePicker` görüntüler platform tarih seçici çağırır. Üç platformda bu tarih seçicinin çok farklı yollarla uygulayın, ancak her platform kullanıcılara tanıdık bir yaklaşımdır:
 
 [![Tarih arasındaki gün seçin](datepicker-images/DaysBetweenDatesSelect.png "tarih arasındaki gün seçin")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "tarih arasındaki gün seçin")
 
-İki tarih seçtikten sonra uygulama bu tarihlerin arasındaki gün sayısını görüntüler:
+İki tarih seçtikten sonra uygulama bu tarih arasındaki gün sayısını görüntüler:
 
 [![Tarihleri sonuç arasındaki gün](datepicker-images/DaysBetweenDatesResult.png "tarihleri sonuç arasındaki gün")](datepicker-images/DaysBetweenDatesResult-Large.png#lightbox "tarihleri sonuç arasındaki gün")
 

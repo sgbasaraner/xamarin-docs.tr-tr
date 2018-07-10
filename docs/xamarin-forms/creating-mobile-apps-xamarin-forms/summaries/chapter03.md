@@ -1,70 +1,70 @@
 ---
-title: Bölüm 3 özeti. Daha derin bir metne
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 3 özeti. Daha derin bir metne'
+title: Bölüm 3 özeti. Metnin ayrıntılı incelemesi
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: Bölüm 3 özeti. Metnin ayrıntılı incelemesi'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: f0e6063b6ce6038a6f6def67c27347ca024e72f6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 5843147b82837f1a8677d8be48a8e1ca92db1a75
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241493"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935422"
 ---
-# <a name="summary-of-chapter-3-deeper-into-text"></a>Bölüm 3 özeti. Daha derin bir metne
+# <a name="summary-of-chapter-3-deeper-into-text"></a>Bölüm 3 özeti. Metnin ayrıntılı incelemesi
 
-Bu bölümde ele [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) biçimlendirme ve renk, yazı tipleri dahil olmak üzere daha fazla ayrıntılı görünümü.
+Bu bölümde ele [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) biçimlendirme ve renk, yazı tiplerini dahil olmak üzere daha ayrıntılı görünümde.
 
 ## <a name="wrapping-paragraphs"></a>Paragrafları sarmalama
 
-Zaman [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) özelliği `Label` uzun metin içeren `Label` otomatik olarak birden çok satıra tarafından gösterildiği gibi sarmalar [ **Baskervilles** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles) örnek. Tire veya 'yeni bir satır sonu \r' gibi karakterler C# '\u2014' gibi Unicode kodlarını eklenebilir.
+Zaman [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) özelliği `Label` uzun metin içeriyor `Label` otomatik olarak birden çok satıra tarafından gösterildiği şekilde sarmalar [ **Baskervilles** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles) örnek. Tire veya yeni bir satıra ayırmak için '\r' gibi karakterler C# '\u2014' gibi Unicode kodlar ekleyebilirsiniz.
 
-Zaman [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) ve [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) özelliklerini bir `Label` ayarlanır `LayoutOptions.Fill`, genel boyutu `Label` alanı tarafından yönetilen, kapsayıcısı kullanılabilir hale getirir. `Label` Olarak kabul edilir *kısıtlı*. Boyutunu `Label` kapsayıcısı boyutudur.
+Zaman [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) ve [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) özelliklerini bir `Label` ayarlandığından `LayoutOptions.Fill`, genel boyutu `Label` boşluk ile yönetilir, kapsayıcısı kullanılabilir hale getirir. `Label` Olduğu söylenir *kısıtlı*. Boyutu `Label` kapsayıcısı boyutudur.
 
-Zaman `HorizontalOptions` ve `VerticalOptions` özellikler ayarlanır değerlere dışında `LayoutOptions.Fill`, boyutu `Label` kapsayıcısı için kullanılabilir hale getirir boyutu kadar metni işlemek için gereken alanı tabidir `Label`. `Label` Olarak kabul edilir *Kısıtlanmamış* ve kendi boyutunu belirler.
+Zaman `HorizontalOptions` ve `VerticalOptions` özellikleri ayarlanır değerlere dışında `LayoutOptions.Fill`, boyutu `Label` kapsayıcısı için kullanılabilmesini yuvarlanarak metin işlemek için gereken alanı tabidir `Label`. `Label` Olduğu söylenir *sınırlandırılmamış* ve kendi boyutunu belirler.
 
-(Not: koşulları *kısıtlı* ve *Kısıtlanmamış* Kısıtlanmamış görünüm genellikle kısıtlanmış bir görünümü küçük olduğundan counter-intuitive, olabilir. Ayrıca, bu koşulları tutarlı bir şekilde kitap erken bölümlerde kullanılmaz.)
+(Not: koşulları *kısıtlı* ve *sınırlandırılmamış* sınırlandırılmamış bir görünüm kısıtlı bir görünüm genellikle daha küçük olduğundan counter-intuitive, olabilir. Ayrıca, bu kullanım koşullarını tutarlı bir şekilde kitabın erken olarak bölümlerde kullanılmaz.)
 
-Bir görünümü gibi bir `Label` bir boyuttaki kısıtlı ve diğer Kısıtlanmamış. A `Label` yatay kısıtlı yalnızca metin birden çok satırda kaydırılır.
+Bir görünümü gibi bir `Label` kısıtlı bir boyut ve diğerinde sınırlandırılmamış. A `Label` yatay kısıtlı yalnızca metin birden çok satırda kaydırılır.
 
-Varsa bir `Label` olan kısıtlı, bu metin için gereken daha önemli ölçüde daha fazla alan kaplar. Metnin genel alanını yerleştirilebilir `Label`. Ayarlama [ `HorizontalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.HorizontalTextAlignment/) üyesi özelliğine [ `TextAlignment` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextAlignment/) numaralandırması ([`Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.TextAlignment.Start/), [ `Center` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TextAlignment.Center/), veya [ `End` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TextAlignment.Center/)) paragrafın tüm satırları hizalamasını denetlemek için. Varsayılan değer `Start` ve metni sola hizalar.
+Varsa bir `Label` olan kısıtlanmış, bu metin için gerekenden çok daha fazla alan kaplar. Metin genel alanını konumlandırılmalıdır `Label`. Ayarlama [ `HorizontalTextAlignment` ](xref:Xamarin.Forms.Label.HorizontalTextAlignment) üyesi özelliğini [ `TextAlignment` ](xref:Xamarin.Forms.TextAlignment) numaralandırması ([`Start`](xref:Xamarin.Forms.TextAlignment.Start), [ `Center` ](xref:Xamarin.Forms.TextAlignment.Center), veya [ `End` ](xref:Xamarin.Forms.TextAlignment.Center)) tüm satırlar Paragraf hizalamasını denetlemek için. Varsayılan `Start` ve metni sola hizalar.
 
-Ayarlama [ `VerticalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) üyesi özelliğine `TextAlignment` üstünde, merkezi veya tarafından kapladığı alanı altındaki metni konumlandırmak için numaralandırma `Label`.
+Ayarlama [ `VerticalTextAlignment` ](xref:Xamarin.Forms.Label.VerticalTextAlignment) üyesi özelliğini `TextAlignment` üstünde, Orta veya tarafından kapladığı alan alt kısmındaki metni konumlandırmak için numaralandırma `Label`.
 
-Ayarlama [ `LineBreakMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.LineBreakMode/) üyesi özelliğine [ `LineBreakMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LineBreakMode/) numaralandırması ([`WordWrap`](https://developer.xamarin.com/api/field/Xamarin.Forms.LineBreakMode.WordWrap/), [ `CharacterWrap` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LineBreakMode.CharacterWrap/), [ `NoWrap` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LineBreakMode.NoWrap/), [ `HeadTruncation` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LineBreakMode.HeadTruncation/), [ `MiddleTruncation` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LineBreakMode.MiddleTruncation/), veya [ `TailTruncation` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LineBreakMode.TailTruncation/)) için birden fazla paragraf aranın satırları veya kesiliyor nasıl denetim.
+Ayarlama [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode) üyesi özelliğini [ `LineBreakMode` ](xref:Xamarin.Forms.LineBreakMode) numaralandırması ([`WordWrap`](xref:Xamarin.Forms.LineBreakMode.WordWrap), [ `CharacterWrap` ](xref:Xamarin.Forms.LineBreakMode.CharacterWrap), [ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode.NoWrap), [ `HeadTruncation` ](xref:Xamarin.Forms.LineBreakMode.HeadTruncation), [ `MiddleTruncation` ](xref:Xamarin.Forms.LineBreakMode.MiddleTruncation), veya [ `TailTruncation` ](xref:Xamarin.Forms.LineBreakMode.TailTruncation)) için Denetim nasıl birden çok bir paragraf aranın satırları veya kesilir.
 
 ## <a name="text-and-background-colors"></a>Metin ve arka plan renkleri
 
 Ayarlama [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) ve [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) özelliklerini `Label` için [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) metin ve arka plan rengini denetlemek için değerler.
 
-`BackgroundColor` Tarafından kullanılan tüm alanı arka planının uygulandığı `Label`. Bağlı olarak `HorizontalOptions` ve `VerticalOptions` özellikleri, boyutu metni görüntülemek için gereken alandan daha büyük olabilir. Renk çeşitli değerleriyle denemek için kullanabileceğiniz `HorizontalOptions`, `VerticalOptions`, `HorizontalExeAlignment`, ve `VerticalTextAlignment` boyutunu ve konumunu nasıl etkilediklerini görmek için `Label`, boyutu ve içindeki metnin konumunu `Label`.
+`BackgroundColor` Tarafından kullanılan tüm alan arka planını uygulandığı `Label`. Yapılandırmanıza bağlı olarak `HorizontalOptions` ve `VerticalOptions` özellikleri, boyutu metni görüntülemek için gerekli alandan daha önemli ölçüde daha büyük olabilir. Renk çeşitli değerleriyle denemek için kullanabileceğiniz `HorizontalOptions`, `VerticalOptions`, `HorizontalExeAlignment`, ve `VerticalTextAlignment` boyutunu ve konumunu nasıl etkilediklerini görmek için `Label`, boyutu ve içindeki metnin konumunu `Label`.
 
 ## <a name="the-color-structure"></a>Renk yapısı
 
-[ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Yapısı kırmızı yeşil mavi (RGB) değerler veya Ton Doygunluk parlaklığını (HSL) değerler olarak ya da bir renk adıyla renkleri belirtmenize olanak sağlar. Alfa kanal saydamlık belirtmek de kullanılabilir.
+[ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Yapısı renkleri kırmızı yeşil mavi (RGB) değerleri veya Hue doygunluk parlaklık (HSL) değerleri olarak veya bir renk adı belirtmenize olanak sağlar. Alfa kanalı saydamlık belirtmek de kullanılabilir.
 
-Kullanım bir `Color` Oluşturucusu belirtin:
+Kullanım bir `Color` Oluşturucusu belirtmek için:
 
-- bir [gri gölge](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/)
+- bir [gri tonu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/)
 - bir [RGB değeri](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/System.Double/System.Double/)
-- bir [saydamlık RGB değerle](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/System.Double/System.Double/System.Double/)
+- bir [saydamlık RGB değeri](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/System.Double/System.Double/System.Double/)
 
-Bağımsız değişkenler `double` 0 ile 1 arasında değişen değerler.
+Bağımsız değişkenler `double` değerleri 0 ile 1 arasında.
 
-Oluşturmak için çeşitli statik yöntemler kullanabilirsiniz `Color` değerler:
+Oluşturmak için çeşitli statik yöntemler kullanabilirsiniz `Color` değerleri:
 
-- [`Color.FromRgb`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgb/p/System.Double/System.Double/System.Double/) için `double` RGB değerleri 0 ile 1
-- [`Color.FromRgb`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgb/p/System.Int32/System.Int32/System.Int32/) tamsayı RGB değerleri 0 ile 255
-- [`Color.FromRgba`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Double/System.Double/System.Double/System.Double/) için `double` saydamlık RGB değerleri
+- [`Color.FromRgb`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgb/p/System.Double/System.Double/System.Double/) için `double` RGB değerleri 0'dan 1
+- [`Color.FromRgb`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgb/p/System.Int32/System.Int32/System.Int32/) RGB için tamsayı değerleri 0 ile 255
+- [`Color.FromRgba`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Double/System.Double/System.Double/System.Double/) için `double` saydamlığına RGB değerleri
 - [`Color.FromRgba`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) saydam olarak tamsayı RGB değerleri
-- [`Color.FromHsla`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) için `double` saydamlık HSL değerleri
-- [`Color.FromUint`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromUint/p/System.UInt32/) için bir `uint` değerinin hesaplanması olarak (B + 256 * (G + 256 * (R + 256 * A)))
-- [`Color.FromHex`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) için bir `string` biçiminde onaltılık basamak biçiminin "#AARRGGBB" veya "#RRGGBB" veya "#ARGB" veya "#RGB", burada her harfi karşılık gelen bir onaltılık basamak alfa, kırmızı, için yeşil ve mavi kanallar. Bu yöntem anlatıldığı gibi XAML renk dönüştürmeleri için kullanılan birincil [Bölüm 7, kod ve XAML](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md).
+- [`Color.FromHsla`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) için `double` saydamlığına HSL değerleri
+- [`Color.FromUint`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromUint/p/System.UInt32/) için bir `uint` olarak hesaplanan değer (B + 256 * (G + 256 * (R + 256 * Y)))
+- [`Color.FromHex`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) için bir `string` biçiminde bir onaltılık basamak biçiminin "#AARRGGBB" veya "#RRGGBB" veya "#ARGB" veya "#RGB", burada her harfe karşılık gelen bir onaltılık basamak alfa, kırmızı, yeşil ve mavi kanal. Bu bölümünde açıklandığı gibi XAML renk dönüştürmeler için kullanılan birincil yöntemdir [Bölüm 7, XAML ve kod karşılaştırması](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md).
 
-Bir kez oluşturulduktan sonra bir `Color` değer değişmez. Renk özelliklerini aşağıdaki özelliklerinden edinilebilir:
+Oluşturulduktan sonra bir `Color` değer değişmez. Renk özelliklerini aşağıdaki özelliklerinden elde edilebilir:
 
 - [`R`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.R/)
 - [`G`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.G/)
@@ -74,13 +74,13 @@ Bir kez oluşturulduktan sonra bir `Color` değer değişmez. Renk özelliklerin
 - [`Saturation`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Saturation/)
 - [`Luminosity`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Luminosity/)
 
-Tüm bunlar `double` 0 ile 1 arasında değişen değerler.
+Tüm bunlar `double` değerleri 0 ile 1 arasında.
 
-`Color` Ayrıca 240 ortak statik salt okunur alanlar için ortak renkleri tanımlar. Kitap yazıldı aynı anda yalnızca 17 ortak renkleri kullanılabilir.
+`Color` Ayrıca 240 ortak statik salt okunur alanları genel renklerin tanımlar. Kitap yazıldığı sırada, 17'yalnızca genel renklerin kullanılabilir.
 
-Başka bir genel statik salt okunur alan, sıfır olarak ayarlanması tüm renk kanallar ile bir renk tanımlar:
+Başka bir ortak statik salt okunur alan, tüm renk kanallarını sıfır ile bir renk tanımlar:
 
-- [`Color.Transparent`](https://developer.xamarin.com/api/field/Xamarin.Forms.Color.Transparent/)
+- [`Color.Transparent`](xref:Xamarin.Forms.Color.Transparent)
 
 Birkaç örnek yöntemleri, yeni bir renk oluşturmak için varolan bir rengi değiştirme izin ver:
 
@@ -92,48 +92,48 @@ Birkaç örnek yöntemleri, yeni bir renk oluşturmak için varolan bir rengi de
 
 Son olarak, iki statik salt okunur özellikler özel renk değeri tanımlayın:
 
-- [`Color.Default`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/), tüm kanalları kümesine &ndash;1
+- [`Color.Default`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/), tüm kanallar kümesine &ndash;1
 - [`Color.Accent`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Accent/)
 
-`Color.Default` platformun renk düzenini zorlamak için tasarlanmıştır ve sonuç olarak farklı platformlarda farklı bağlamlarda farklı bir anlamı yoktur. Varsayılan olarak, platform renk düzenleri şunlardır:
+`Color.Default` platformun renk düzenini uygulamak için tasarlanmıştır ve sonuç olarak farklı platformlarda farklı bağlamlarda farklı bir anlama sahiptir. Varsayılan olarak, platform renk düzenleri şunlardır:
 
 - iOS: açık bir arka plan üzerinde koyu metin
-- Android: Açık metin (kitaptaki) koyu arka plan üzerinde veya açık bir arka plan üzerinde koyu metin (malzeme tasarım uygulama aracılığıyla **ana** örnek kod deponun dalı)
-- UWP: Açık bir arka plan koyu metin
-- Windows 8.1: Koyu arka plan üzerinde açık metin
-- Windows Phone 8.1: Koyu arka plan üzerinde açık metin
+- Android: Açık metin (kitaptaki) koyu renkli arka plan üzerinde ya da açık bir arka plan üzerinde koyu metin (AppCompat içinde aracılığıyla malzeme tasarımı için **ana** örnek kodu deponun dalı)
+- UWP: Açık arka plan koyu metin
+- Windows 8.1: Koyu renkli arka plan üzerinde açık metin
+- Windows Phone 8.1: Koyu renkli arka plan üzerinde açık metin
 
-`Color.Accent` Değeri ya da bir koyu veya açık arka plan üzerinde görünürdür platforma özgü (ve bazen kullanıcı tarafından seçilebilen) renk sonuçlanır.
+`Color.Accent` Değeri ya da bir koyu ya da açık arka plan üzerinde görünür bir platforma özgü (ve bazı durumlarda kullanıcı tarafından seçilebilen) renk sonuçlanır.
 
 ## <a name="changing-the-application-color-scheme"></a>Uygulama renk düzenini değiştirme
 
-Çeşitli platformlar yukarıdaki listede gösterildiği gibi bir varsayılan renk düzenini vardır.
+Çeşitli platformları, yukarıdaki listede gösterildiği gibi bir varsayılan renk şeması vardır.
 
-Android hedeflerken Android.Manifest.xml dosyasında veya tarafından açık bir tema belirterek bir açık üzerinde koyu düzenine geçmek olası [uygulama ekleme ve malzeme tasarım](~/xamarin-forms/platform/android/appcompat.md).
+Android'i hedefleyen, hafif bir tema Android.Manifest.xml dosyasında ya da tarafından belirterek bir ışık üzerinde koyu düzenine geçmek olası [AppCompat ekleme ve malzeme tasarımı](~/xamarin-forms/platform/android/appcompat.md).
 
-Windows platformları için renk temasını normalde kullanıcı tarafından seçilir, ancak ekleyebileceğiniz bir `RequestedTheme` özniteliğini ayarlamak için iki `Light` veya `Dark` platformun App.xaml dosyasında. Varsayılan olarak, UWP projesini App.xaml dosyasında içeren bir `RequestedTheme` özniteliği kümesine `Light`.
+Windows platformları için renk teması genellikle kullanıcı tarafından seçilir, ancak ekleyebileceğiniz bir `RequestedTheme` özniteliğini ayarlayın ya da çok `Light` veya `Dark` platformun App.xaml dosyasında. Varsayılan olarak App.xaml dosyasında UWP projesi içeren bir `RequestedTheme` özniteliğini `Light`.
 
-## <a name="font-sizes-and-attributes"></a>Yazı tipi boyutlarını ve öznitelikleri
+## <a name="font-sizes-and-attributes"></a>Yazı tipi boyutu ve öznitelikler
 
-Ayarlama [ `FontFamily` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FontFamily/) özelliği `Label` "Kez bir yazı tipi ailesi seçmek için Latin" gibi bir dizeye. Ancak, belirli platformda desteklenen bir yazı tipi ailesi belirtmeniz gerekir ve platformları bu bağlamda tutarsız.
+Ayarlama [ `FontFamily` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FontFamily/) özelliği `Label` "Times yazı tipi ailesi seçilecek Roman" gibi bir dize. Ancak, belirli bir platformda desteklenen bir yazı tipi ailesi belirtmeniz gerekir ve bu bağlamda platformları tutarsız.
 
-Ayarlama [ `FontSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FontSize/) özelliği `Label` için bir `double` yazı tipi yaklaşık yüksekliğini belirtmek için. Bkz: [boyutlarıyla ilgilenme bölüm 5](chapter05.md), yazı tipi boyutlarını akıllıca seçme hakkında daha fazla bilgi.
+Ayarlama [ `FontSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FontSize/) özelliği `Label` için bir `double` yazı yaklaşık yüksekliğini belirtmek için. Bkz: [boyutlarla ilgilenme bölüm 5](chapter05.md), yazı tipi boyutlarını akıllıca seçme hakkında daha fazla ayrıntı için.
 
-Alternatif olarak birkaç hazır platforma bağımlı yazı tipi boyutlarını birini elde edebilirsiniz. Statik [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) yöntemi ve [aşırı](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/Xamarin.Forms.Element/) ikisi de bir `double` yazı tipi boyutu değeri platforma uygun dayalı üyelerinde [ `NamedSize` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NamedSize/)numaralandırması ([`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.NamedSize.Default/), [ `Micro` ](https://developer.xamarin.com/api/field/Xamarin.Forms.NamedSize.Micro/), [ `Small` ](https://developer.xamarin.com/api/field/Xamarin.Forms.NamedSize.Small/), [ `Medium` ](https://developer.xamarin.com/api/field/Xamarin.Forms.NamedSize.Medium/),  ve [ `Large` ](https://developer.xamarin.com/api/field/Xamarin.Forms.NamedSize.Large/)). Döndürülen değerin `Medium` üyesi olmayan mutlaka aynı `Default`. [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) örnek boyutları adlı bunlarla metin görüntüler.
+Alternatif olarak birkaç hazır platforma bağımlı yazı tipi boyutlarını birini elde edebilirsiniz. Statik [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) yöntemi ve [aşırı](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/Xamarin.Forms.Element/) ikisi de bir `double` yazı tipi boyutu değeri platforma uygun tabanlı üyelerinde [ `NamedSize` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NamedSize/)numaralandırması ([`Default`](xref:Xamarin.Forms.NamedSize.Default), [ `Micro` ](xref:Xamarin.Forms.NamedSize.Micro), [ `Small` ](xref:Xamarin.Forms.NamedSize.Small), [ `Medium` ](xref:Xamarin.Forms.NamedSize.Medium),  ve [ `Large` ](xref:Xamarin.Forms.NamedSize.Large)). Döndürülen değer `Medium` üyesi değildir aynı `Default`. [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) örnek boyutları adlı bu metni görüntüler.
 
-Ayarlama [ `FontAttributes` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FontAttributes/) özelliği `Label` bu üye için [ `FontAttributes` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FontAttributes/) numaralandırma, [ `Bold` ](https://developer.xamarin.com/api/field/Xamarin.Forms.FontAttributes.Bold/), [ `Italic` ](https://developer.xamarin.com/api/field/Xamarin.Forms.FontAttributes.Italic/), veya [ `None` ](https://developer.xamarin.com/api/field/Xamarin.Forms.FontAttributes.None/). Birleştirebilirsiniz `Bold` ve `Italic` C# bit düzeyinde OR işleci üyeleriyle.
+Ayarlama [ `FontAttributes` ](xref:Xamarin.Forms.Label.FontAttributes) özelliği `Label` bu üye için [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes) numaralandırma [ `Bold` ](xref:Xamarin.Forms.FontAttributes.Bold), [ `Italic` ](xref:Xamarin.Forms.FontAttributes.Italic), veya [ `None` ](xref:Xamarin.Forms.FontAttributes.None). Birleştirebilirsiniz `Bold` ve `Italic` üyeleri ile C# bit düzeyinde OR işleci.
 
 ## <a name="formatted-text"></a>Biçimlendirilmiş metin
 
-Tüm örnekler kadarki tüm metin tarafından görüntülenen `Label` aynı şekilde biçimlendirilmiş. Bir metin dizesi içinde biçimlendirme değiştirecek şekilde ayarlamazsanız `Text` özelliği `Label`. Bunun yerine, ayarlamak [ `FormattedText` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FormattedText/) türünde bir nesne için özellik [ `FormattedString` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FormattedString/).
+Tüm örnekler kadarki tüm metin görüntülenen `Label` aynı şekilde biçimlendirilmiş. Bir metin dizesi içinde biçimlendirme değiştirmek için ayarlamamanız `Text` özelliği `Label`. Bunun yerine, [ `FormattedText` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FormattedText/) türünde bir nesne özelliğini [ `FormattedString` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FormattedString/).
 
-`FormattedString` sahip bir [ `Spans` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FormattedString.Spans/) koleksiyonudur özelliği [ `Span` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Span/) nesneleri. Her `Span` nesne sahip kendi [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.Text/), [ `FontFamily` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.FontFamily/), [ `FontSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.FontSize/), [ `FontAttributes` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.FontAttributes/), [ `ForegroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.ForegroundColor/), ve [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.BackgroundColor/) özellikleri.
+`FormattedString` sahip bir [ `Spans` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FormattedString.Spans/) koleksiyonudur özelliği [ `Span` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Span/) nesneleri. Her `Span` nenesindeki kendi [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.Text/), [ `FontFamily` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.FontFamily/), [ `FontSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.FontSize/), [ `FontAttributes` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.FontAttributes/), [ `ForegroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.ForegroundColor/), ve [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.BackgroundColor/) özellikleri.
 
-[ **VariableFormattedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormText) örnek gösterilmektedir kullanarak `FormattedText` tek satırlık metin, özellik ve [ **VariableFormattedParagraph** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormPara) tekniği tüm paragrafı için aşağıda gösterildiği gibi gösterir:
+[ **VariableFormattedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormText) örnek gösterir kullanarak `FormattedText` tek satırlık bir metin özelliği ve [ **VariableFormattedParagraph** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormPara) burada gösterildiği gibi tüm bir paragraf teknik gösterilmektedir:
 
-[![Üçlü ekran değişkenin biçimlendirilmiş paragraf](images/ch03fg06-small.png "değişkeni biçimlendirilmiş etiket metnini")](images/ch03fg06-large.png#lightbox "değişkeni biçimlendirilmiş etiket metni")
+[![Üç ekran değişkeninin biçimlendirilmiş paragraf](images/ch03fg06-small.png "değişkeni biçimlendirilmiş etiket metni")](images/ch03fg06-large.png#lightbox "değişkeni biçimlendirilmiş etiket metni")
 
-[ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) program kullanan tek bir `Label` ve `FormattedString` her platform için adlandırılmış yazı tipi boyutlarını görüntülenecek nesne.
+[ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) program kullanan tek bir `Label` ve `FormattedString` tüm her platform için adlandırılmış yazı tipi boyutunu görüntülemek için nesne.
 
 
 
@@ -141,6 +141,6 @@ Tüm örnekler kadarki tüm metin tarafından görüntülenen `Label` aynı şek
 
 - [Bölüm 3 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)
 - [Bölüm 3 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
-- [Bölüm 3 F # örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
+- [Bölüm 3'de F # örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
 - [Etiket](~/xamarin-forms/user-interface/text/label.md)
 - [Renklerle çalışma](~/xamarin-forms/user-interface/colors.md)

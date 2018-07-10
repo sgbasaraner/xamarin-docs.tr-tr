@@ -1,34 +1,34 @@
 ---
-title: Xamarin.Forms aygıt sınıfı
-description: Bu makalede Xamarin.Forms aygıt sınıfı için işlevselliği ve düzenleri üzerinde ayrıntılı denetim platform başına temelinde nasıl kullanıldığını açıklar.
+title: Xamarin.Forms cihaz sınıfı
+description: Bu makalede, işlevsellik ve düzenleri üzerinde ayrıntılı denetim platformu başına temelinde Xamarin.Forms cihazı sınıfını kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: cdcd4bb08b9dac84d264f7c0c41e16d68380e1d0
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ff707cdf73665ae07881d2d17ec837a4cfacaca0
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242550"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935377"
 ---
-# <a name="xamarinforms-device-class"></a>Xamarin.Forms aygıt sınıfı
+# <a name="xamarinforms-device-class"></a>Xamarin.Forms cihaz sınıfı
 
-[ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) Sınıfı, özellikleri ve yöntemleri düzeni ve platform başına temelinde işlevselliği özelleştirme geliştiricilere yardımcı olmak için çeşitli içerir.
+[ `Device` ](xref:Xamarin.Forms.Device) Sınıfı bir sayı düzeninde ve işlevlerinde platform başına temelinde özelleştirme geliştiricilere yardımcı olmak için yöntemleri ve özellikleri içerir.
 
-Yöntemleri ve belirli donanım türleri ve boyutları, hedef kodu özelliklerine ek olarak `Device` sınıfı içerir [BeginInvokeOnMainThread](#Device_BeginInvokeOnMainThread) gelen kullanıcı Arabirimi ile etkileşim denetimleri bağlandığınızda kullanılmalıdır yöntemi arka plan iş parçacıkları.
+Yöntemleri ve belirli donanım türleri ve boyutları, hedef kodun özelliklerine ek olarak `Device` sınıfı içeren [BeginInvokeOnMainThread](#Device_BeginInvokeOnMainThread) denetimler kullanıcı Arabirimi ile etkileşim kurduğunuzda kullanılmalıdır yöntemi arka plan iş parçacıkları.
 
 <a name="providing-platform-values" />
 
-## <a name="providing-platform-specific-values"></a>Platforma özgü değerler sağlama
+## <a name="providing-platform-specific-values"></a>Platforma özgü değerlerini sağlama
 
-Xamarin.Forms 2.3.4 önce uygulama üzerinde çalışıyordu platform inceleyerek elde edilemedi [ `Device.OS` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.OS/) özelliği ve kendisine karşılaştırma [ `TargetPlatform.iOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.iOS/), [ `TargetPlatform.Android` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Android/), [ `TargetPlatform.WinPhone` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.WinPhone/), ve [ `TargetPlatform.Windows` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Windows/) numaralandırma değerleri. Benzer şekilde, aşağıdakilerden birini [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) aşırı bir denetime platforma özgü değerlerini sağlamak için kullanılabilir.
+Xamarin.Forms 2.3.4 önce üzerinde uygulamayı çalıştırdığınız olan platform inceleyerek elde edilemedi [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) özelliği ve onu [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), ve [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) sabit listesi değerleri. Benzer şekilde, aşağıdakilerden birini [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) aşırı yüklemeler, platforma özgü değerler için bir denetim sağlamak için kullanılabilir.
 
-Ancak, 2.3.4 Xamarin.Forms itibaren bu API'leri kullanım dışı değiştirildi ve. [ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) Sınıfı şimdi platformları – tanımlamak ortak dize sabitleri içerir [ `Device.iOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), [ `Device.Android` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Android/), [ `Device.WinPhone` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/) (kullanım dışı), [ `Device.WinRT` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinRT/) (kullanım dışı), [ `Device.UWP` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), ve [ `Device.macOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.macOS/). Benzer şekilde, [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) aşırı değiştirilir ile [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) ve [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) API'leri.
+Ancak, 2.3.4 Xamarin.Forms beri bu API'leri kullanım dışı değiştirildi ve. [ `Device` ](xref:Xamarin.Forms.Device) Sınıfı artık platformları – tanımlayan genel dize sabitleri içerir [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() kullanım dışı) `Device.WinRT` (kullanım dışı), [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), ve [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Benzer şekilde, [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) aşırı yüklemeleri ile değiştirildi [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) ve [ `On` ](xref:Xamarin.Forms.On) API'leri.
 
-C# ' ta platforma özgü değerleri oluşturarak sağlanabilir bir `switch` on deyimi [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) özelliği ve ardından sağlama `case` deyimleri gerekli platformlar için:
+C# içinde platforma özgü değerleri oluşturarak sağlanabilir bir `switch` açıklamamızı [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) özellik ve daha sonra sağlama `case` deyimleri gerekli platformlar için:
 
 ```csharp
 double top;
@@ -46,7 +46,7 @@ switch (Device.RuntimePlatform)
 layout.Margin = new Thickness(5, top, 5, 0);
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Ve [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) sınıfları XAML'de aynı işlevselliği sağlar:
+[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Ve [ `On` ](xref:Xamarin.Forms.On) sınıfları XAML aynı işlevleri sağlar:
 
 ```xaml
 <StackLayout>
@@ -60,26 +60,26 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Sınıfı genel bir sınıftır ve ile böylece örneğinin oluşturulması gerekir bir `x:TypeArguments` hedef türüyle eşleşen özniteliği. İçinde [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) sınıfı, [ `Platform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.On.Platform/) özniteliği tek bir kabul edebileceği `string` değeri veya virgülle ayrılmış birden çok `string` değerleri.
+[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Sınıfı bir genel sınıftır ve böylece ile örneği oluşturulmalıdır bir `x:TypeArguments` hedef türüyle eşleşen öznitelik. İçinde [ `On` ](xref:Xamarin.Forms.On) sınıfı [ `Platform` ](xref:Xamarin.Forms.On.Platform) özniteliği tek bir kabul edebilir `string` değeri veya virgülle ayrılmış birden çok `string` değerleri.
 
 > [!IMPORTANT]
-> Yanlış bir sağlama `Platform` öznitelik değerinde `On` sınıfı bir hata neden. Bunun yerine, kod uygulanmakta platforma özgü değeri olmadan çalıştırır.
+> Yanlış bir sağlama `Platform` öznitelik değeri `On` sınıf bir hata değil neden olur. Bunun yerine, kodu uygulanmakta platforma özgü değer olmadan yürütülür.
 
 <a name="Device_Idiom" />
 
 ## <a name="deviceidiom"></a>Device.Idiom
 
-`Device.Idiom` Düzenleri veya işlevselliği üzerinde uygulamayı çalıştırdığınız aygıt bağlı olarak değiştirmek için kullanılabilir. [ `TargetIdiom` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetIdiom/) Numaralandırma aşağıdaki değerleri içerir:
+`Device.Idiom` Düzenleri veya işlevler üzerinde uygulamayı çalıştırdığınız cihaz bağlı olarak değiştirmek için kullanılabilir. [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom) Numaralandırma aşağıdaki değerleri içerir:
 
--  **Telefon** – iPhone, iPod touch ve Android cihazları 600 dıps dar ^
--  **Tablet** – iPad, Windows cihazları ve Android cihazları 600 dıps geniş ^
--  **Masaüstü** – döndürdü yalnızca [UWP uygulamaları](~/xamarin-forms/platform/windows/installation/index.md) Windows 10 masaüstü bilgisayarlara (döndürür `Phone` Continuum senaryolarda dahil olmak üzere mobil cihazlarda Windows,)
+-  **Telefon** – iPhone, iPod touch ve Android cihazlarda 600 dıps dar ^
+-  **Tablet** – iPad, Windows cihazları ve Android cihazlarda 600 dıps geniş ^
+-  **Masaüstü** – döndürülen yalnızca [UWP uygulamaları](~/xamarin-forms/platform/windows/installation/index.md) Windows 10 masaüstü bilgisayarlarda (döndürür `Phone` Continuum senaryolarda da dahil olmak üzere mobil Windows cihazlarda)
 -  **TV** – Tizen TV cihazları
 -  **Desteklenmeyen** – kullanılmayan
 
 *^ dıps değildir fiziksel piksel sayısı*
 
-`Idiom` Bu gibi daha büyük ekranlar yararlanmak düzenler oluşturmak için özellikle yararlı olur:
+`Idiom` Bu gibi daha büyük ekranlar yararlanan düzenleri oluşturmak için özellikle yararlı olur:
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone) {
@@ -91,19 +91,19 @@ if (Device.Idiom == TargetIdiom.Phone) {
 
 ## <a name="deviceflowdirection"></a>Device.FlowDirection
 
-[ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) Değerini alır bir [ `FlowDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlowDirection/) aygıt tarafından kullanılan geçerli akış yönünü temsil eden numaralandırma değeri. Akış yönü kullanıcı Arabirimi öğeleri sayfada göz tarafından taranır yönüdür. Numaralandırma değerleri şunlardır:
+[ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Değerini alır bir [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) cihaz tarafından kullanılan geçerli akış yönü temsil eden bir numaralandırma değeri. Akış yönü sayfasında kullanıcı Arabirimi öğeleri gözle taranır yönüdür. Sabit listesi değerleri şunlardır:
 
-- [`LeftToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.LeftToRight/)
-- [`RightToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.RightToLeft/)
-- [`MatchParent`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.MatchParent/)
+- [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
+- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
-XAML'de [ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) değeri kullanılarak alınabilir `x:Static` biçimlendirme uzantısı:
+XAML içinde [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) değeri kullanılarak alınabilir `x:Static` işaretleme uzantısı:
 
 ```xaml
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
 ```
 
-C# eşdeğer kodu verilmiştir:
+C# ' de eşdeğer kodu verilmiştir:
 
 ```csharp
 this.FlowDirection = Device.FlowDirection;
@@ -115,7 +115,7 @@ Akış yönü hakkında daha fazla bilgi için bkz: [sağdan sola yerelleştirme
 
 ## <a name="devicestyles"></a>Device.Styles
 
-[ `Styles` Özelliği](~/xamarin-forms/user-interface/styles/index.md) bazı denetimler için uygulanabilir yerleşik stil tanımlarını içeren (gibi `Label`) `Style` özelliği. Kullanılabilir stiller şunlardır:
+[ `Styles` Özelliği](~/xamarin-forms/user-interface/styles/index.md) bazı denetimler için uygulanabilir yerleşik stil tanımları içerir (gibi `Label`) `Style` özelliği. Kullanılabilir stiller şunlardır:
 
 * BodyStyle
 * CaptionStyle
@@ -128,7 +128,7 @@ Akış yönü hakkında daha fazla bilgi için bkz: [sağdan sola yerelleştirme
 
 ## <a name="devicegetnamedsize"></a>Device.GetNamedSize
 
-`GetNamedSize` ayarlarken kullanılan [ `FontSize` ](~/xamarin-forms/user-interface/text/fonts.md) C# kod:
+`GetNamedSize` ayarlarken kullanılabilir [ `FontSize` ](~/xamarin-forms/user-interface/text/fonts.md) C# kodunda:
 
 ```csharp
 myLabel.FontSize = Device.GetNamedSize (NamedSize.Small, myLabel);
@@ -143,21 +143,21 @@ someLabel.FontSize = Device.OnPlatform (
 
 ## <a name="deviceopenuri"></a>Device.OpenUri
 
-`OpenUri` Yöntemi, bir URL yerel web tarayıcısında Aç gibi temel bir platform üzerinde işlemler tetiklemek için kullanılabilir (**Safari** iOS veya **Internet** android'de).
+`OpenUri` Yöntemi, temel alınan platformda yerel web tarayıcısında açık bir URL gibi işlemleri tetiklemek için kullanılabilir (**Safari** ios'ta veya **Internet** Android).
 
 ```csharp
 Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 ```
 
-[WebView örnek](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithWebview/WorkingWithWebview/WebAppPage.cs) kullanarak bir örnek içeren `OpenUri` URL'leri açmasına ve ayrıca telefon aramaları tetikler.
+[WebView örnek](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithWebview/WorkingWithWebview/WebAppPage.cs) kullanmaya bir örnek içeren `OpenUri` URL'leri açmasına ve ayrıca aramaları tetiklersiniz.
 
-[Haritalar örneği](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/MapAppPage.cs) de kullanır `Device.OpenUri` eşlemeleri ve yerel kullanma yönergeleri görüntülemek için **eşlemeleri** iOS ve Android uygulamalar.
+[Haritalar örnek](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/MapAppPage.cs) de kullanır `Device.OpenUri` eşlemeleri ve yerel kullanma yönergeleri görüntülemek için **eşler** iOS ve Android uygulamaları.
 
 <a name="Device_StartTimer" />
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
-`Device` Sınıfı ayrıca sahip bir `StartTimer` .NET standart kitaplığı dahil olmak üzere Xamarin.Forms ortak kod içinde çalıştığı zamana bağımlı görevler tetiklemek için basit bir yol sağlayan yöntemi. Geçirmek bir `TimeSpan` aralığını ayarlayın ve dönmek için `true` süreölçer tutmak için veya `false` sonra geçerli çağırma durdurmak için.
+`Device` Sınıfı de sahip bir `StartTimer` .NET Standard kitaplığı dahil olmak üzere Xamarin.Forms ortak kod içinde çalıştığı zamana bağımlı görevler tetiklemek için basit bir yol sağlayan bir yöntem. Başarılı bir `TimeSpan` aralığını ayarlama ve döndürme için `true` süreölçer tutmak veya `false` sonra mevcut çağırma durdurmak için.
 
 ```csharp
 Device.StartTimer (new TimeSpan (0, 0, 60), () => {
@@ -166,13 +166,13 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 });
 ```
 
-Zamanlayıcı içinde kod kullanıcı arabirimiyle etkileşim varsa (metnini ayarlama gibi bir `Label` veya bir uyarı görüntüleme) içinde yapılmalıdır bir `BeginInvokeOnMainThread` ifade (aşağıya bakın).
+Zamanlayıcı içindeki kod kullanıcı arabirimiyle etkileşim varsa (metnini ayarlamak gibi bir `Label` veya bir uyarı görüntüleme) içinde yapılmalıdır bir `BeginInvokeOnMainThread` ifade (aşağıya bakın).
 
 <a name="Device_BeginInvokeOnMainThread" />
 
 ## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
 
-Kullanıcı arabirimi öğeleri, bir süreölçer ya da web istekleri gibi zaman uyumsuz işlemleri tamamlama işleyicisi çalışan kodu gibi arka plan iş parçacıkları tarafından hiçbir zaman erişilmelidir. Kullanıcı arabirimini güncelleştirmek için gereken herhangi bir arka plan kod içine alınmalı [ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/). Bu eşdeğerdir `InvokeOnMainThread` iOS, `RunOnUiThread` android'de ve `Dispatcher.RunAsync` Evrensel Windows platformu üzerinde.
+Kullanıcı arabirimi öğeleri hiçbir zaman bir zamanlayıcı ya da web istekleri gibi zaman uyumsuz işlemleri tamamlama işleyicisi çalışan kod gibi arka plan iş parçacığı tarafından erişilmelidir. Kullanıcı arabirimini güncelleştirmek için gereken herhangi bir arka plan kod içine alınmalı [ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/). Bu eşdeğerdir `InvokeOnMainThread` ios'ta `RunOnUiThread` , Android ve `Dispatcher.RunAsync` Evrensel Windows platformu üzerinde.
 
 Xamarin.Forms kodu verilmiştir:
 
@@ -182,15 +182,15 @@ Device.BeginInvokeOnMainThread ( () => {
 });
 ```
 
-Not Bu yöntemlerini kullanarak `async/await` kullanmasına gerek kalmamasını `BeginInvokeOnMainThread` ana kullanıcı Arabirimi iş parçacığından çalıştırıyorsanız.
+Not Bu yöntemleri kullanarak `async/await` kullanmanıza gerek yoktur `BeginInvokeOnMainThread` ana UI iş parçacığından çalıştırıyorsanız.
 
 ## <a name="summary"></a>Özet
 
-Xamarin.Forms `Device` sınıfı platformu başına temelinde işlevselliği ve düzenleri üzerinde ayrıntılı denetim sağlar - ortak kodu (.NET standart kitaplık projeleri veya paylaşılan projeleri) bile.
+Xamarin.Forms `Device` ortak kodu (.NET Standard kitaplığı projeleri veya paylaşılan projeler) bile - sınıfı platformu başına temelinde işlevselliği ve düzenleri üzerinde ayrıntılı denetim sağlar.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Aygıt örneği](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
+- [Cihaz örneği](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
 - [Örnek stilleri](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [Cihazı](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/)
+- [Cihaz](xref:Xamarin.Forms.Device)

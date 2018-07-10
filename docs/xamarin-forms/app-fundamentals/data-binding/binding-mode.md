@@ -1,24 +1,24 @@
 ---
 title: Xamarin.Forms bağlama modu
-description: Bu makalede, kaynak ve hedef BindingMode numaralandırma üyesi ile belirtilen bir bağlama modu kullanılarak arasındaki bilgi akışını denetlemek açıklanmaktadır. Her bağlanabilirse özelliği bu özellik veri bağlama hedef olduğunda gösteren modu geçerli bir varsayılan bağlama modu vardır.
+description: Bu makalede, kaynak ve hedef BindingMode numaralandırma üyesi ile belirtilen bir bağlama modu kullanılarak arasındaki bilgi akışını denetlemek nasıl açıklar. Bu özellik bir veri bağlama hedeflendiğinde gösteren modu geçerli bir varsayılan bağlama modu her bağlanılabilir özellik vardır.
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/01/2018
-ms.openlocfilehash: 12e6416eee989b0d36a7b9fe0ca4dcd9b18b0ade
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: a6eaf08d17f70c43f451361e27555a09c39f26a9
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241822"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935673"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms bağlama modu
 
-İçinde [önceki makalede](basic-bindings.md), **alternatif kod bağlama** ve **alternatif XAML bağlama** öne çıkan sayfaları bir `Label` ile kendi `Scale` özelliği bağlı `Value` özelliği bir `Slider`. Çünkü `Slider` ilk değeri 0 ise, bunun nedeni `Scale` özelliği `Label` 1 yerine 0 olarak ayarlanması için ve `Label` kayboldu.
+İçinde [önceki makalede](basic-bindings.md), **alternatif bağlama kodunu** ve **XAML alternatif bağlama** öne çıkan sayfalar bir `Label` ile kendi `Scale` özelliği bağlı `Value` özelliği bir `Slider`. Çünkü `Slider` ilk değer 0 ise, bunun nedeni `Scale` özelliği `Label` 1 yerine 0 olarak ayarlanması ve `Label` kayboldu.
 
-İçinde [ **DataBindingDemos** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) örnek, **ters bağlama** sayfa benzer programlar önceki makalede, veri bağlama üzerinde tanımlandıancakbu`Slider` yerine `Label`:
+İçinde [ **DataBindingDemos** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) örneği **ters bağlama** sayfa benzer programlar önceki makalede dışında veri bağlama üzerinde tanımlanır`Slider` yerine `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -41,37 +41,37 @@ ms.locfileid: "35241822"
 </ContentPage>
 ```
 
-İlk başta, bu geriye doğru görünebilir: artık `Label` veri bağlama kaynağı ve `Slider` hedefidir. Bağlama başvuruları `Opacity` özelliği `Label`, 1 varsayılan değerine sahip.
+İlk başta, bu geriye doğru görünebilir: artık `Label` veri bağlama kaynağı ve `Slider` hedefidir. Bağlama başvurularının `Opacity` özelliği `Label`, 1 varsayılan değerine sahip.
 
-Beklediğiniz gibi `Slider` 1 değerine Başlangıç Aşamasında durumundan başlatılmadan `Opacity` değerini `Label`. Bu, iOS ekran görüntüsü soldaki gösterilir:
+Bekleyebileceğiniz gibi `Slider` değeri 1 ilk başlatılır `Opacity` değerini `Label`. Bu, sol taraftaki iOS ekran görüntüsünde gösterilmiştir:
 
 [![Bağlama ters](binding-mode-images/reversebinding-small.png "bağlama ters")](binding-mode-images/reversebinding-large.png#lightbox "bağlama ters çevir")
 
-Ancak, olabilir, surprised `Slider` Android ve UWP ekran görüntüleri göstermek gibi çalışmaya devam eder. Bu veri bağlama daha iyi ne zaman çalıştığını önermek görünüyor `Slider` bağlama hedefi yerine `Label` bekliyoruz gibi başlatma çalıştığından.
+Ancak, olabilir, surprised `Slider` Android ve UWP ekran görüntüleri göz atarak çalışmaya devam eder. Veri bağlama daha iyi ne zaman çalıştığını önermek için gibi görünüyor `Slider` bağlama hedefi yerine `Label` beklediğimiz gibi başlatma çalıştığından.
 
-Arasındaki farkı **ters bağlama** örnek ve önceki örnekleri içerir *bağlama modu*.
+Arasındaki fark **ters bağlama** örnek ve önceki örnekleri içerir *bağlama modu*.
 
 ## <a name="the-default-binding-mode"></a>Varsayılan bağlama modu
 
-Bağlama modu üyesi ile belirtilen [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/) numaralandırma:
+Bağlama modu üyesi ile belirtilen [ `BindingMode` ](xref:Xamarin.Forms.BindingMode) sabit listesi:
 
-- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/)
-- [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; Kaynak ve hedef arasında çift yönlü veri gider
-- [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; veri kaynağından hedefe gider.
-- [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; veri kaynağına hedeften gider
-- [`OneTime`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; veri kaynağından hedef ancak yalnızca giden `BindingContext` değişiklikleri (Xamarin.Forms 3.0 ile yeni)
+- [`Default`](xref:Xamarin.Forms.BindingMode.Default)
+- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) &ndash; Kaynak ve hedef arasında iki yönlü olarak veri gelişir
+- [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay) &ndash; verileri kaynaktan hedefe gider.
+- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; veri kaynağına hedefinden gider.
+- [`OneTime`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; veri kaynağından hedef, ancak yalnızca giden `BindingContext` değişiklikleri (Xamarin.Forms 3.0 ile yeni)
 
-Her bağlanabilirse bağlanabilir özelliği oluşturulduğunda ayarlanır modu bağlama varsayılan ve kullanılabilir olduğu özelliğinin [ `DefaultBindingMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableProperty.DefaultBindingMode/) özelliği `BindableProperty` nesnesi. Bu özellik veri bağlama hedef olduğunda bu varsayılan bağlama modu modu etkin gösterir.
+Varsayılan bağlanılabilir özellik oluşturulduğunda ayarlanır modu bağlama ve kullanılabilir olduğu her bağlanılabilir özellik sahip [ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) özelliği `BindableProperty` nesne. Bu özellik bir veri bağlama hedefi olduğunda bu varsayılan bağlama modu modu etkin gösterir.
 
-Çoğu özellikleri gibi varsayılan bağlama modunu `Rotation`, `Scale`, ve `Opacity` olan `OneWay`. Bu özellikler veri bağlama hedefleri olduğunda, hedef özelliği kaynaktan ayarlanır.
+Varsayılan bağlama modu gibi özelliklerin çoğu için `Rotation`, `Scale`, ve `Opacity` olduğu `OneWay`. Bu özelliklere veri bağlama hedefleri olduğunda hedef özelliği kaynak ayarlayın.
 
-Ancak, varsayılan bağlama modunu `Value` özelliği `Slider` olan `TwoWay`. Yani `Value` özellik, bir veri bağlama hedef sonra hedef kaynak (her zamanki gibi) ayarlanır ancak kaynak hedef de ayarlayın. Nelere izin budur `Slider` Başlangıç Aşamasında durumundan ayarlanacak `Opacity` değeri.
+Bununla birlikte, varsayılan bağlama modu `Value` özelliği `Slider` olduğu `TwoWay`. Yani `Value` özelliği olan bir veri bağlama hedefi sonra hedef kaynaktan (her zaman olduğu gibi) ayarlanır ancak kaynak de hedeften ayarlanır. Bu ne sağlar, `Slider` ilk ayarlanacak `Opacity` değeri.
 
-Bu iki yönlü bağlama sonsuz bir döngüde oluşturmak için görünebilir, ancak bu gerçekleşmez. Özellik gerçekte değiştirilmediği sürece bağlanabilir özellikleri özellik değişikliği sinyal. Bu, sonsuz bir döngüde engeller.
+Sonsuz bir döngü oluşturmak için bu iki yönlü bir bağlama görünebilir, ancak bu gerçekleşmez. Bağlanabilir özellikler özelliği gerçekten değiştirilmediği sürece, bir özellik değişiminin sinyal. Bu, sonsuz bir döngüye engeller.
 
 ### <a name="two-way-bindings"></a>İki yönlü bağlamaları
 
-En bağlanabilirse özelliklere sahip bir varsayılan bağlama modu `OneWay` ancak varsayılan bağlama modu aşağıdaki özelliklere sahip `TwoWay`:
+En bağlanabilir özelliklere sahip bir varsayılan bağlama modu `OneWay` ancak varsayılan bağlama modu şu özelliklere sahip `TwoWay`:
 
 - `Date` özelliği `DatePicker`
 - `Text` özelliği `Editor`, `Entry`, `SearchBar`, ve `EntryCell`
@@ -83,36 +83,36 @@ En bağlanabilirse özelliklere sahip bir varsayılan bağlama modu `OneWay` anc
 - `On` özelliği `SwitchCell`
 - `Time` özelliği `TimePicker`
 
-Bu belirli özellikleri olarak tanımlanan `TwoWay` çok iyi bir nedenle:
+Bu belirli özellikleri olarak tanımlanan `TwoWay` çok iyi nedeni:
 
-Veri bağlamaları Model View ViewModel (MVVM) uygulama mimarisi ile kullanıldığında, ViewModel bağlama veri kaynağı ve görünümler gibi oluşuyorsa görünümü sınıftır `Slider`, veri bağlama hedeflerine. MVVM bağlamaları benzer **ters bağlama** örnek önceki örnekte bağlamaları'den fazla. Her görünüm ViewModel karşılık gelen özellik değeriyle başlatılması için sayfadaki istiyor, ancak görünümünde değişiklikleri de ViewModel özelliği etkiler olasılığı yüksektir.
+Veri bağlamaları ile Model-View-ViewModel (MVVM) uygulama mimarisi kullanıldığında, veri bağlama kaynağı ve görünümler gibi oluşan görünümü ViewModel sınıfı olan `Slider`, veri bağlama hedeflerdir. MVVM bağlamaları benzer **ters bağlama** önceki örneklerdeki bağlamaları'den daha fazla örnek. Büyük olasılıkla her görünümü ViewModel içinde karşılık gelen özellik değeriyle başlatılması için sayfasında istediğiniz, ancak değişiklikler görünümünde da ViewModel özelliğini etkiler.
 
 Varsayılan bağlama modları özelliklerle `TwoWay` MVVM senaryolarda kullanılması büyük olasılıkla bu özellikleri.
 
-### <a name="one-way-to-source-bindings"></a>Bir-Way için-kaynak bağlamaları
+### <a name="one-way-to-source-bindings"></a>Bir-Way-için-Source bağlamaları
 
-Salt okunur bağlanabilirse özelliklere sahip bir varsayılan bağlama modu `OneWayToSource`. Bir varsayılan bağlama modu olan yalnızca bir okuma/yazma bağlanabilirse özelliği `OneWayToSource`:
+Salt okunur bağlanabilir özelliklere sahip bir varsayılan bağlama modu `OneWayToSource`. Varsayılan bağlama modu içeren tek bir okuma/yazma bağlanabilir özelliği `OneWayToSource`:
 
 - `SelectedItem` özelliği `ListView`
 
-Bağlamada olan stratejinin `SelectedItem` özelliği bağlama kaynağı ayarı neden. Bu makalenin sonraki bölümlerinde örnek bu davranışı geçersiz kılar.
+Üzerindeki bir bağlamaya olan stratejinin `SelectedItem` özelliği bağlama kaynağı ayarı neden. Bu makaledeki örnek bu davranışı geçersiz kılar.
 
 ### <a name="one-time-bindings"></a>Tek seferlik bağlamaları
 
-Bir varsayılan bağlama modu çeşitli özellikleri olan `OneTime`. Bunlar:
+Varsayılan bağlama modu çeşitli özelliklere sahip `OneTime`. Bunlar:
 
 - `IsTextPredictionEnabled` özelliği `Entry`
 - `Text`, `BackgroundColor`, ve `Style` özelliklerini `Span`.
 
-Hedef bir bağlama modu özelliklerle `OneTime` bağlama bağlamı değiştiğinde güncelleştirilir. Kaynak Özellikleri'nde değişiklikleri izlemek gerekli olmadığından bu hedef özellikler hakkında daha fazla bağlamaları için bu bağlama altyapısı basitleştirir.
+Hedef bir bağlama modu özelliklerle `OneTime` bağlama bağlamı değiştiğinde güncelleştirilir. Kaynak Özellikleri'nde değişiklikleri izlemek gerekli olduğundan bu hedef özellikleri bağlamalarda Bu bağlama altyapısı kolaylaştırır.
 
-## <a name="viewmodels-and-property-change-notifications"></a>ViewModels ve özellik değişikliği bildirimleri
+## <a name="viewmodels-and-property-change-notifications"></a>Viewmodel'lar ve özellik değişikliği bildirimleri
 
-**Basit Renk Seçici** sayfa basit ViewModel kullanımını gösterir. Veri bağlamaları kullanıcının üç kullanarak bir renk seçmesine izin ver `Slider` ton, Doygunluk ve parlaklığını için öğeleri.
+**Basit Renk Seçici** sayfa basit ViewModel kullanımını gösterir. Veri bağlamaları sonrasında kullanıcı üç kullanarak bir renk seçin `Slider` ton, Doygunluk ve parlaklık için öğeleri.
 
-ViewModel veri bağlama kaynağıdır. ViewModel mu *değil* bağlanabilir özelliklerini tanımlamak, ancak bir özellik değeri değiştiğinde bildirim almak bağlama altyapısı izin veren bir bildirim mekanizması uygulayın. Bu bildirim mekanizmasıdır [ `INotifyPropertyChanged` ](https://developer.xamarin.com/api/type/System.ComponentModel.INotifyPropertyChanged/) adlı tek bir özelliğini tanımlar arabirimi [ `PropertyChanged` ](https://developer.xamarin.com/api/event/System.ComponentModel.INotifyPropertyChanged.PropertyChanged/). Genellikle bu arabirimi uygulayan bir sınıf ortak özelliklerinden biri değeri değiştiğinde olay gönderir. Olay özellik hiçbir zaman değişirse harekete gerekmez. ( `INotifyPropertyChanged` Arabirimi tarafından uygulanan de `BindableObject` ve `PropertyChanged` bağlanabilir bir özellik değeri değiştiğinde olay tetiklenir.)
+ViewModel veri bağlama kaynağıdır. ViewModel mu *değil* bağlanabilir özellikler tanımlayın, ancak bir özelliğinin değeri değiştiğinde bildirim almak bağlama altyapısı sağlayan bir bildirim mekanizması uygulayın. Bu bildirim mekanizması [ `INotifyPropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged) adlı tek bir özellik tanımlayan arabirimi [ `PropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged). Genellikle bu arabirimi uygulayan bir sınıf, ortak özelliklerinden birini değeri değiştiğinde bir olayı tetikler. Olay özellik hiçbir zaman değişirse harekete gerekmez. ( `INotifyPropertyChanged` Arabirim tarafından uygulandığında da `BindableObject` ve `PropertyChanged` bağlanılabilir özellik değeri değiştiğinde olay harekete geçirilir.)
 
-`HslColorViewModel` Sınıfı tanımlayan beş özellikleri: `Hue`, `Saturation`, `Luminosity`, ve `Color` özellikleri ilişkilidir. Değişiklikleri değeri bileşenleri üç herhangi biri renk zaman `Color` özelliği yeniden hesaplanması, ve `PropertyChanged` olaylar için tüm dört özellikleri:
+`HslColorViewModel` Sınıfı beş özellikleri tanımlar: `Hue`, `Saturation`, `Luminosity`, ve `Color` özellikleri ilişkilidir. Değişiklikleri değeri bileşenleri üç herhangi biri renk olduğunda `Color` özelliği yeniden hesaplanır ve `PropertyChanged` olaylar için tüm dört özellik:
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -206,13 +206,13 @@ public class HslColorViewModel : INotifyPropertyChanged
 }
 ```
 
-Zaman `Color` özelliği değişiklikleri, statik `GetNearestColorName` yönteminde `NamedColor` sınıfı (de dahil **DataBindingDemos** çözüm) en yakın adlandırılmış rengi alır ve ayarlar `Name` özelliği. Bu `Name` özelliğine sahip bir özel `set` sınıfın dışından ndan ayarlanamıyor şekilde erişimcisi.
+Zaman `Color` özellik değişiklikleri, statik `GetNearestColorName` yönteminde `NamedColor` sınıfı (de dahil **DataBindingDemos** çözüm) en yakın adlandırılmış rengi alır ve ayarlar `Name` özelliği. Bu `Name` özelliğine sahip bir özel `set` sınıfın dışından gelen ayarlanamıyor şekilde erişimcisi.
 
-Bir ViewModel bağlama kaynağı olarak ayarlandığında, bir işleyici bağlama altyapısı iliştirir `PropertyChanged` olay. Bu şekilde bağlama özelliklerine yapılan değişiklikler, bildirim ve ardından hedef özelliklerini değiştirilen değerleri ayarlayabilirsiniz.
+Bir ViewModel bağlama kaynağı olarak ayarlandığında, bağlama altyapısı için bir işleyici ekler `PropertyChanged` olay. Bu şekilde, bağlama özelliklerde yapılan değişiklikler, bildirim ve ardından hedef özelliklerini değiştirilmiş değerleri ayarlayabilirsiniz.
 
-Ancak, bir hedef özellik olduğunda (veya `Binding` bir hedef özellik tanımını) sahip bir `BindingMode` , `OneTime`, üzerinde bir işleyici eklemek bağlama altyapısı için gerekli değildir `PropertyChanged` olay. Target özelliği güncelleştirilmiş yalnızca `BindingContext` değişiklikleri ve kaynak özelliği değiştiğinde değil.
+Ancak, bir hedef özellik (veya `Binding` bir hedef özellik tanımını) sahip bir `BindingMode` , `OneTime`, üzerinde bir işleyici eklemek bağlama altyapısı için gerekli değildir `PropertyChanged` olay. Hedef özelliği güncelleştirildiğinde yalnızca `BindingContext` değişiklikleri ve kaynak özelliği değiştiğinde değil.
 
-**Basit Renk Seçici** XAML dosyası başlatır `HslColorViewModel` sayfanın kaynak sözlüğü ve başlatır `Color` özelliği. `BindingContext` Özelliği `Grid` ayarlanmış bir `StaticResource` bu kaynağa başvuran uzantısı bağlama:
+**Basit Renk Seçici** XAML dosyası başlatır `HslColorViewModel` sayfanın kaynak sözlüğü ve başlatır `Color` özelliği. `BindingContext` Özelliği `Grid` ayarlanmış bir `StaticResource` uzantısı, kaynak başvurmak için bağlama:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -256,17 +256,17 @@ Ancak, bir hedef özellik olduğunda (veya `Binding` bir hedef özellik tanımı
 </ContentPage>
 ```
 
-`BoxView`, `Label`Ve üç `Slider` görünümleri devral bağlama bağlamı `Grid`. Bu kaynak ViewModel özelliklerinde başvuru tüm bağlama hedefleri görünümlerdir. İçin `Color` özelliği `BoxView`ve `Text` özelliği `Label`, veri bağlamaları olan `OneWay`: özellikler görünümünde ViewModel özelliklerinden ayarlanır.
+`BoxView`, `Label`Ve üç `Slider` görünümleri devral bağlama bağlamdan `Grid`. Bu kaynak özelliklerinde ViewModel başvuran tüm bağlama hedefleri görünümleridir. İçin `Color` özelliği `BoxView`ve `Text` özelliği `Label`, veri bağlamaları `OneWay`: ViewModel Özellikleri'nden görünümünde özelliklerini ayarlayın.
 
-`Value` Özelliği `Slider`, ancak `TwoWay`. Her böylece `Slider` ViewModel ve ayrıca her birinden ayarlanacak ViewModel için ayarlanacak `Slider`.
+`Value` Özelliği `Slider`, ancak `TwoWay`. Böylece her `Slider` ViewModel ve ayrıca her birinden ayarlanacak ViewModel için ayarlanacak `Slider`.
 
-Programı ilk kez çalıştırdığınızda, `BoxView`, `Label`ve üç `Slider` öğeleridir ilk dayalı ViewModel tüm kümesinden `Color` özelliği ViewModel örneğinin başlatılmasından ayarlanır. Bu, iOS ekran görüntüsü soldaki gösterilir:
+Programı ilk kez çalıştırdığınızda, `BoxView`, `Label`ve üç `Slider` öğeleridir ilk temel ViewModel tüm kümesinden `Color` ViewModel oluşturulduğunda özelliği. Bu, sol iOS ekran görüntüsünde gösterilmiştir:
 
-[![Basit Renk Seçici](binding-mode-images/simplecolorselector-small.png "basit Renk Seçici")](binding-mode-images/simplecolorselector-large.png#lightbox "basit Renk Seçici")
+[![Basit bir renk seçici](binding-mode-images/simplecolorselector-small.png "basit bir renk seçici")](binding-mode-images/simplecolorselector-large.png#lightbox "basit bir renk seçici")
 
-Kaydırıcılar işlemek gibi `BoxView` ve `Label` Android ve UWP ekran görüntüleri ile gösterildiği gibi buna göre güncelleştirilir.
+Kaydırıcıları düzenleme gibi `BoxView` ve `Label` Android ve UWP ekran görüntüleri ile gösterildiği gibi buna göre güncelleştirilir.
 
-Kaynak sözlüğünde ViewModel başlatmasını bir ortak bir yaklaşımdır. Özellik öğesi etiketleri içindeki ViewModel örneği oluşturmak mümkündür `BindingContext` özelliği. İçinde **basit Renk Seçici** XAML dosyası, kaldırmayı deneyin `HslColorViewModel` kaynak sözlüğünden ve ayarlamak `BindingContext` özelliği `Grid` şöyle:
+Kaynak sözlüğünde ViewModel örnekleme bir yaygın bir yaklaşımdır. Özellik öğesi etiketleri içinde ViewModel örneklemek mümkündür `BindingContext` özelliği. İçinde **basit Renk Seçici** XAML dosya, uygulamadan yetkilendirmeleri `HslColorViewModel` kaynak sözlüğünden ve `BindingContext` özelliği `Grid` şöyle:
 
 ```xaml
 <Grid>
@@ -279,13 +279,13 @@ Kaynak sözlüğünde ViewModel başlatmasını bir ortak bir yaklaşımdır. Ö
 </Grid>
 ```
 
-Bağlama bağlamı çeşitli şekillerde ayarlayabilirsiniz. Bazı durumlarda, arka plan kod dosyasına ViewModel oluşturur ve ayarlar `BindingContext` sayfasının özelliği. Tüm geçerli yaklaşımlar bunlar.
+Bağlama bağlamı, çeşitli şekillerde ayarlayabilirsiniz. Bazı durumlarda, arka plan kod dosyası ViewModel örneğini oluşturur ve ayarlar `BindingContext` sayfasının özelliği. Bu, tüm geçerli yaklaşımları vardır.
 
 ## <a name="overriding-the-binding-mode"></a>Bağlama modu geçersiz kılma
 
-Target özelliği varsayılan bağlama modunu belirli veri bağlama için uygun değilse, ayarlayarak geçersiz kılmanıza olanak [ `Mode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.Mode/) özelliği `Binding` (veya [ `Mode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Mode/) özelliği `Binding` biçimlendirme uzantısı) üyelerini birine `BindingMode` numaralandırması.
+Hedef özelliği varsayılan bağlama modunu belirli veri bağlama için uygun değilse, ayarlayarak geçersiz kılmak olası [ `Mode` ](xref:Xamarin.Forms.BindingBase.Mode) özelliği `Binding` (veya [ `Mode` ](xref:Xamarin.Forms.Xaml.BindingExtension.Mode) özelliği `Binding` işaretleme uzantısı) üyelerinin birine `BindingMode` sabit listesi.
 
-Ancak, ayarı `Mode` özelliğine `TwoWay` beklediğiniz gibi her zaman çalışmıyor. Örneğin, değiştirmeyi deneyin **alternatif XAML bağlama** XAML dosyasını içerecek şekilde `TwoWay` bağlama tanımında:
+Ancak, ayarı `Mode` özelliğini `TwoWay` bekleyebileceğiniz gibi her zaman çalışmaz. Örneğin, değiştirmeyi deneyin **alternatif XAML bağlama** XAML dosyasını içerecek şekilde `TwoWay` bağlama tanımı:
 
 ```xaml
 <Label Text="TEXT"
@@ -297,7 +297,7 @@ Ancak, ayarı `Mode` özelliğine `TwoWay` beklediğiniz gibi her zaman çalış
                        Mode=TwoWay}" />
 ```
 
-Beklenen, `Slider` ilk değerine başlatılmış `Scale` 1 olduğu, ancak değil gerçekleşen özelliği. Zaman bir `TwoWay` bağlama başlatılır, hedef kaynak önce; yani ayarlanır `Scale` özelliği ayarlanmış `Slider` varsayılan değer 0. Zaman `TwoWay` bağlama ayarlanmış `Slider`, sonra `Slider` başlangıçta kaynak ayarlanır.
+Beklenen, `Slider` ilk değeri olarak başlatılan `Scale` 1 olduğu, ancak değil gerçekleşen özelliği. Olduğunda bir `TwoWay` bağlama başlatılan, hedef kaynak sunucudan ilk olarak, yani ayarlanır `Scale` özelliği `Slider` varsayılan değer 0. Zaman `TwoWay` bağlama ayarlanır `Slider`, ardından `Slider` başlangıçta kaynak ayarlanır.
 
 Bağlama modu ayarlamak `OneWayToSource` içinde **alternatif XAML bağlama** örnek:
 
@@ -311,11 +311,11 @@ Bağlama modu ayarlamak `OneWayToSource` içinde **alternatif XAML bağlama** ö
                        Mode=OneWayToSource}" />
 ```
 
-Şimdi `Slider` 1 olarak başlatıldı (varsayılan değeri `Scale`) ancak bulmada `Slider` etkilemez `Scale` özelliği, bu çok kullanışlı değildir.
+Artık `Slider` 1 olarak başlatılır (varsayılan değeri `Scale`) ancak çağırmanın `Slider` etkilemez `Scale` özelliği, bu nedenle bu çok yararlı değildir.
 
-Varsayılan bağlama moduyla geçersiz kılma, çok kullanışlı bir uygulama `TwoWay` içerir `SelectedItem` özelliği `ListView`. Varsayılan bağlama modu `OneWayToSource`. Üzerinde veri bağlama ayarlandığında `SelectedItem` bir ViewModel kaynağı özelliğinde bu kaynak özelliğini ayarlayın daha sonra başvurmak için özellik `ListView` seçim. Ancak, bazı durumlarda, ayrıca isteyebilirsiniz `ListView` ViewModel başlatılacak.
+Varsayılan bağlama moduyla geçersiz kılma, faydalı bir uygulama `TwoWay` içerir `SelectedItem` özelliği `ListView`. Varsayılan bağlama mod `OneWayToSource`. Üzerinde veri bağlama ayarlandığında `SelectedItem` bir ViewModel kaynağı özelliğinde, kaynak özelliğini ayarlayın daha sonra başvurmak için özellik `ListView` seçimi. Ancak, bazı durumlarda da isteyebilirsiniz `ListView` ViewModel başlatılacak.
 
-**Örnek ayarlarını** sayfası bu tekniği gösterir. Bu sayfa bu gibi bir ViewModel çok sık tanımlanan uygulama ayarları, basit bir uygulamasını temsil eder `SampleSettingsViewModel` dosyası:
+**Örnek ayarlarını** sayfası, bu teknik gösterir. Bu sayfa çok sık bunun gibi bir ViewModel tanımlanan uygulama ayarları, basit bir uygulamasını temsil eder `SampleSettingsViewModel` dosyası:
 
 ```csharp
 public class SampleSettingsViewModel : INotifyPropertyChanged
@@ -409,13 +409,13 @@ public class SampleSettingsViewModel : INotifyPropertyChanged
 }
 ```
 
-Her uygulama ayarı adlı bir yöntem Xamarin.Forms özellikleri sözlükte için kaydedilmiş bir özelliktir `SaveState` ve oluşturucusunda bu sözlükten yüklendi. Sınıf altında ViewModels kolaylaştırmak ve hata potansiyeli daha az olun yardımcı iki yöntem vardır. `OnPropertyChanged` Yöntemi altındaki arama özelliği ayarlanmış isteğe bağlı bir parametre vardır. Bu özelliğin adı bir dize olarak belirtirken yazım hatalarını önler.
+Her uygulama ayarı Xamarin.Forms özellikleri sözlüğüne adlı bir yöntem olarak kaydedilmiş bir özelliktir `SaveState` oluşturucusunda bu sözlüğünden yüklenip yüklenmediğini. Sınıfının altında Viewmodel'lar kolaylaştırmaya ve hata potansiyeli daha az yapmanız yardımcı iki yöntem vardır. `OnPropertyChanged` Yöntemi altındaki arama özelliği için isteğe bağlı bir parametre vardır. Bu özelliğin adını bir dize olarak belirlerken yazım hatalarını ortadan kaldırır.
 
-`SetProperty` Sınıfında yöntemi daha da yapar: özelliğine bir alan olarak depolanan değerle ayarlanır değeri karşılaştırır ve yalnızca çağırır `OnPropertyChanged` zaman iki değer olmayan eşit.
+`SetProperty` Sınıfında yöntemi bile daha fazlasını yapar: özellik için bir alan olarak depolanan değeri ile ayarlanan değeri karşılaştırır ve yalnızca çağıran `OnPropertyChanged` zaman iki değer eşit olup.
 
-`SampleSettingsViewModel` Sınıfı tanımlayan iki özellik için arka plan rengi: `BackgroundNamedColor` özelliği türüdür `NamedColor`, hangi bir sınıf de dahil **DataBindingDemos** çözüm. `BackgroundColor` Özelliği türüdür `Color`ve gelen elde `Color` özelliği `NamedColor` nesnesi.
+`SampleSettingsViewModel` Sınıfı tanımlayan iki özellik için arka plan rengi: `BackgroundNamedColor` özelliği türüdür `NamedColor`, hangi bir sınıf da dahil **DataBindingDemos** çözüm. `BackgroundColor` Özelliği türüdür `Color`ve öğesinden alınan `Color` özelliği `NamedColor` nesne.
 
-`NamedColor` Sınıfı, tüm statik genel alanlarında Xamarin.Forms numaralandırılacak .NET yansıma kullanan `Color` yapısını ve statik erişilebilir bir koleksiyondaki adları ile depolamaya `All` özelliği:
+`NamedColor` Sınıfı, tüm statik ortak alanları Xamarin.Forms numaralandırmak için .NET yansıtma kullanır `Color` yapısını ve statik erişilebilir bir koleksiyondaki adları ile depolamaya `All` özelliği:
 
 ```csharp
 public class NamedColor : IEquatable<NamedColor>, IComparable<NamedColor>
@@ -523,7 +523,7 @@ public class NamedColor : IEquatable<NamedColor>, IComparable<NamedColor>
 }
 ```
 
-`App` Sınıfını **DataBindingDemos** proje tanımlar adlı bir özellik `Settings` türü `SampleSettingsViewModel`. Bu özellik başlatılan zaman `App` sınıf örneği ve `SaveState` yöntemi çağrılır `OnSleep` yöntemi çağrılır:
+`App` Sınıfını **DataBindingDemos** proje tanımlar adlı bir özellik `Settings` türü `SampleSettingsViewModel`. Bu özellik başlatılır, `App` sınıfı oluşturulana ve `SaveState` yöntemi çağrılır `OnSleep` yöntemi çağrılır:
 
 ```csharp
 public partial class App : Application
@@ -557,9 +557,9 @@ public partial class App : Application
 }
 ```
 
-Uygulama yaşam döngüsü yöntemleri hakkında daha fazla bilgi için bkz: [ **uygulama yaşam döngüsü**](~/xamarin-forms/app-fundamentals/app-lifecycle.md).
+Uygulama yaşam döngüsü yöntemleri hakkında daha fazla bilgi için bkz [ **uygulama yaşam döngüsü**](~/xamarin-forms/app-fundamentals/app-lifecycle.md).
 
-Neredeyse her şeyi başka içinde işlenir **SampleSettingsPage.xaml** dosya. `BindingContext` Sayfasında kullanılarak ayarlanan bir `Binding` biçimlendirme uzantısı: statik bağlama kaynağıdır `Application.Current` örnek özelliği, `App` projesinde, sınıf ve `Path` ayarlanır `Settings` olan özelliği, `SampleSettingsViewModel` nesnesi:
+Neredeyse her şey ele alınır **SampleSettingsPage.xaml** dosya. `BindingContext` Sayfanın kullanılarak ayarlanan bir `Binding` işaretleme uzantısı: statik bağlama kaynağı olan `Application.Current` örneği olan özelliği, `App` sınıfı projesinde ve `Path` ayarlanır `Settings` özelliğinin `SampleSettingsViewModel` nesnesi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -640,19 +640,19 @@ Neredeyse her şeyi başka içinde işlenir **SampleSettingsPage.xaml** dosya. `
 </ContentPage>
 ```
 
-Sayfanın tüm alt öğeleri bağlama bağlamını devralır. Bu sayfadaki diğer bağlamaları çoğu özelliklerinde için `SampleSettingsViewModel`. `BackgroundColor` Özelliği ayarlamak için kullanılan `BackgroundColor` özelliği `StackLayout`ve `Entry`, `DatePicker`, `Switch`, ve `Stepper` özellikleri tüm bağlı ViewModel diğer özellikleri.
+Sayfanın tüm alt öğeleri, bağlama bağlamı devralır. Bu sayfadaki diğer bağlamalar çoğu özelliklere `SampleSettingsViewModel`. `BackgroundColor` Özelliği ayarlamak için kullanılan `BackgroundColor` özelliği `StackLayout`ve `Entry`, `DatePicker`, `Switch`, ve `Stepper` özellikleri tüm bağlı ViewModel diğer özellikleri.
 
-`ItemsSource` Özelliği `ListView` statik olarak ayarlamanız `NamedColor.All` özelliği. Bu doldurur `ListView` tüm `NamedColor` örnekleri. Her öğe için `ListView`, bağlama bağlamı öğesi için ayarlanmış bir `NamedColor` nesnesi. `BoxView` Ve `Label` içinde `ViewCell` özelliklerinde bağlı `NamedColor`.
+`ItemsSource` Özelliği `ListView` statik olarak ayarlamanız `NamedColor.All` özelliği. Bunu girer `ListView` tüm `NamedColor` örnekleri. Her öğe için `ListView`, bağlama bağlamı öğe için ayarlanmış bir `NamedColor` nesne. `BoxView` Ve `Label` içinde `ViewCell` özelliklerinde bağlı `NamedColor`.
 
-`SelectedItem` Özelliği `ListView` türü `NamedColor`ve bağlı `BackgroundNamedColor` özelliği `SampleSettingsViewModel`:
+`SelectedItem` Özelliği `ListView` türünde `NamedColor`ve bağlı `BackgroundNamedColor` özelliği `SampleSettingsViewModel`:
 
 ```xaml
 SelectedItem="{Binding BackgroundNamedColor, Mode=TwoWay}"
 ```
 
-Varsayılan bağlama modunu `SelectedItem` olan `OneWayToSource`, seçili öğesini ViewModel özelliğini ayarlar. `TwoWay` Modu sağlar `SelectedItem` ViewModel başlatılacak.
+Varsayılan bağlama modu `SelectedItem` olduğu `OneWayToSource`, seçili öğesini ViewModel özelliği ayarlar. `TwoWay` Modu sağlar `SelectedItem` ViewModel başlatılacak.
 
-Ancak, ne zaman `SelectedItem` bu şekilde ayarlanması `ListView` otomatik olarak seçilen öğeyi göstermek için Kaymaz. Arka plan kod dosyasına biraz kod gereklidir:
+Ancak, `SelectedItem` bu şekilde ayarlanmış `ListView` seçili öğe gösterecek şekilde otomatik olarak yapışıktır. Arka plan kod dosyasında biraz kod gereklidir:
 
 ```csharp
 public partial class SampleSettingsPage : ContentPage
@@ -671,16 +671,16 @@ public partial class SampleSettingsPage : ContentPage
 }
 ```
 
-İlk kez çalıştırdığınızda soldaki iOS ekran program gösterir. Oluşturucuda `SampleSettingsViewModel` başlatır arka plan rengi beyaz ve içinde seçili olan `ListView`:
+İlk kez çalıştırdığınızda soldaki iOS ekran program gösterir. Oluşturucuda `SampleSettingsViewModel` başlatır arka plan rengini beyaz olarak ve ne seçili olursa `ListView`:
 
 [![Örnek ayarlar](binding-mode-images/samplesettings-small.png "örnek ayarlar")](binding-mode-images/samplesettings-large.png#lightbox "örnek ayarlar")
 
-Diğer iki ekran görüntüleri değiştirilmiş ayarlarını göster. Bu sayfayla denemeler yaparken programın uyku veya aygıt ya da çalıştırıldığı öykünücüsü sonlandırmak için put unutmayın. Visual Studio hata ayıklayıcısı programdan sonlandırma değil neden olacak `OnSleep` geçersiz kılması `App` çağrılacak sınıfı.
+Diğer iki ekran görüntüleri, değiştirilen ayarlarını göster. Bu sayfa ile denemeler yaparken uyku ya da cihaz veya çalışan bir öykünücü üzerinde sonlandırmak için program koymayı unutmayın. Visual Studio hata ayıklayıcı programın sonlandırılması değil neden olacak `OnSleep` içinde geçersiz kılma `App` çağrılacak sınıfı.
 
-Sonraki makalede nasıl belirleneceğini görürsünüz [ **biçimlendirme dizesi** ](string-formatting.md) ayarlandığı veri bağlamalarının `Text` özelliği `Label`.
+Sonraki makalede nasıl belirtileceğini göreceğiniz [ **biçimlendirme dizesi** ](string-formatting.md) ayarlandığı veri bağlamalarının `Text` özelliği `Label`.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Veri bağlama gösterileri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Veri bağlama bölüm Xamarin.Forms defterinden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Veri bağlama tanıtımları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Veri bağlama bölümden Xamarin.Forms kitabı](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

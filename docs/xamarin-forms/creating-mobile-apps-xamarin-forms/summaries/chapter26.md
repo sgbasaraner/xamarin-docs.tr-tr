@@ -1,43 +1,43 @@
 ---
 title: Bölüm 26 özeti. Özel düzenler
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: bölüm 26 özeti. Özel düzenler'
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: bölüm 26 özeti. Özel düzenler'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1c8fec34c0bc7f38d360f76122d851ae653ce15e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b6ef23364cac0dd1459681aa92c7a7db58bc81f0
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241177"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935647"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>Bölüm 26 özeti. Özel düzenler
 
-Xamarin.Forms türetilen birden fazla sınıf içerir [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/):
+Xamarin.Forms ile türetilmiş birkaç sınıflarını içerir [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/):
 
 * `StackLayout`,
 * `Grid`,
 * `AbsoluteLayout`, ve
 * `RelativeLayout`.
 
-Bu bölümde öğesinden türetilen kendi sınıflarınızı oluşturmayı açıklar `Layout<View>`.
+Bu bölümde, türetilen kendi sınıflarınızı nasıl oluşturabileceğiniz açıklanmaktadır `Layout<View>`.
 
 ## <a name="an-overview-of-layout"></a>Düzen genel bakış
 
-Xamarin.Forms Düzen işleme hiçbir merkezi sistemi yoktur. Her öğe, ne kendi boyutu olmalıdır ve kendisini içinde belirli bir alandaki işlemesini nasıl belirlemek için sorumludur.
+Xamarin.Forms düzenini işleyen merkezi sistemi yoktur. Her öğe, kendi boyutu ne olmalı ve kendisi içinde belirli bir alandaki işlemek nasıl belirlemekten sorumludur.
 
-### <a name="parents-and-children"></a>Üst ve alt öğeleri
+### <a name="parents-and-children"></a>Üst ve alt
 
-Alt öğesi yok her öğe, bu Çocuklar kendi içinde konumlandırma için sorumludur. Sonuçta ne alt boyutunu belirleyen üst bağlı olduğundan boyutuna kullanılabilir varsa ve boyutu alt olmak ister.
+Alt öğelere sahip her öğe için kendi içinde alt konumlandırma sorumludur. Sonuçta ne alt boyutunu belirler. üst dayalı olan boyutu kullanılabilir vardır ve alt boyut olmak istemez.
 
 ### <a name="sizing-and-positioning"></a>Boyutlandırma ve konumlandırma
 
-Düzen sayfası görsel ağaç üstündeki başlar ve tüm dalları devam eder. En önemli ortak yerleşim yöntemidir [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) tarafından tanımlanan `VisualElement`. Bir üst öğe diğer öğeleri çağrıları için her öğenin `Layout` her boyut ve kendisini göreli bir konum biçiminde alt vermek için alt öğelerinin bir [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/) değeri. Bunlar `Layout` çağrıları aracılığıyla görsel ağacın yayılması.
+Düzen sayfa görsel ağacın üstüne başlar ve tüm dalları devam eder. En önemli genel yöntem düzeninde [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) tarafından tanımlanan `VisualElement`. Bir üst öğe diğer öğeleri çağrıları için her öğenin `Layout` her alt öğelerinin boyutunu ve kendisine göre konumunun biçiminde alt vermek için bir [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/) değeri. Bunlar `Layout` çağrıları yaymak görsel ağaç.
 
-Çağrı `Layout` ekranda görüntülenen bir öğe için gereklidir ve ayarlanması aşağıdaki salt okunur özellikler neden olur. İle tutarlı `Rectangle` yönteme geçirilen:
+Bir çağrı `Layout` ekranında görüntülenecek bir öğe için gereklidir ve ayarlamak aşağıdaki salt okunur özellikler neden olur. Bunlar tutarlı `Rectangle` yönteme:
 
 - [`Bounds`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Bounds/) türü `Rectangle`
 - [`X`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.X/) türü `double`
@@ -47,57 +47,57 @@ Düzen sayfası görsel ağaç üstündeki başlar ve tüm dalları devam eder. 
 
 Öncesinde `Layout` çağrısı, `Height` ve `Width` sahte değerleri &ndash;1.
 
-Çağrı `Layout` ayrıca aşağıdaki korumalı yöntemler çağrıları tetikler:
+Bir çağrı `Layout` aşağıdaki korumalı yöntemlere yapılan çağrılar da tetikleyen:
 
 - [`SizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.SizeAllocated/p/System.Double/System.Double/), hangi çağrıları
-- [`OnSizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeAllocated/p/System.Double/System.Double/), hangi geçersiz kılındı.
+- [`OnSizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeAllocated/p/System.Double/System.Double/), hangi geçersiz kılınabilir.
 
-Son olarak, aşağıdaki olay tetiklenir:
+Son olarak, aşağıdaki olay harekete geçirilir:
 
 - [`SizeChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/)
 
-`OnSizeAllocated` Yöntemi geçersiz kılındı `Page` ve `Layout`, yalnızca iki alt bulunabilir Xamarin.Forms sınıflarda olduğu. Geçersiz kılınan yöntem çağrıları
+`OnSizeAllocated` Yöntemi tarafından geçersiz kılınmıştır `Page` ve `Layout`, yalnızca iki alt öğeleri olan Xamarin.Forms sınıflardaki olduğu. Geçersiz kılınan yöntem çağrıları
 
-- [`UpdateChildrenLayout`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.UpdateChildrenLayout()/) için `Page` türevleri ve [ `UpdateChildrenLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.UpdateChildrenLayout()/) için `Layout` çağırır türevleri
+- [`UpdateChildrenLayout`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.UpdateChildrenLayout()/) için `Page` türevleri ve [ `UpdateChildrenLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.UpdateChildrenLayout()/) için `Layout` form veya türevleri çağırır
 - [`LayoutChildren`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) için `Page` türevleri ve [ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) için `Layout` türevleri.
 
-`LayoutChildren` Daha sonra çağırır `Layout` her öğenin alt öğelerinin. En az bir alt yeni varsa `Bounds` ayarı aşağıdaki olay tetiklenir sonra:
+`LayoutChildren` Daha sonra çağırır `Layout` her öğenin alt öğeleri. Bir yeni en az bir alt varsa `Bounds` ayarlama sonra aşağıdaki olay harekete geçirilir:
 
 - [`LayoutChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.LayoutChanged/) için `Page` türevleri ve [ `LayoutChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Layout.LayoutChanged/) için `Layout` türevleri
 
-### <a name="constraints-and-size-requests"></a>Kısıtlamalar ve boyutu istekleri
+### <a name="constraints-and-size-requests"></a>Sınırlamalar ve boyutu istekleri
 
-İçin `LayoutChildren` akıllıca çağırmak için `Layout` tüm alt öğelerini hakkında bilmeniz gerekir bir *tercih edilen* veya *istenen* çocuklar için boyut. Bu nedenle çağrıları `Layout` her alt genellikle yapılan çağrılar tarafından öncesinde olur
+İçin `LayoutChildren` akıllıca çağrılacak `Layout` alt öğeleri üzerinde bilmeniz gerekir bir *tercih edilen* veya *istenen* alt öğe boyutu. Bu nedenle çağrıları `Layout` her alt öğeleri için genellikle yapılan çağrılar tarafından öncelenen
 
 - [`GetSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/)
 
-Kitap yayımladıktan sonra `GetSizeRequest` yöntemi kullanım ve değiştirilecek
+Kitap yayımlanan sonra `GetSizeRequest` metodu kullanım dışı ve yerini şu alacak
 
 - [`Measure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/)
 
-`Measure` Yöntemi düzenler [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) özelliği ve türünde bir bağımsız değişken içeriyor [ `MeasureFlag` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MeasureFlags/), iki üye vardır:
+`Measure` Yöntemi karşılar [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) özelliği ve türünde bir bağımsız değişken içeren [ `MeasureFlag` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MeasureFlags/), iki üyesi olan:
 
-- [`IncludeMargins`](https://developer.xamarin.com/api/field/Xamarin.Forms.MeasureFlags.IncludeMargins/)
-- [`None`](https://developer.xamarin.com/api/field/Xamarin.Forms.MeasureFlags.None/) Kenar boşlukları içermeyecek şekilde
+- [`IncludeMargins`](xref:Xamarin.Forms.MeasureFlags.IncludeMargins)
+- [`None`](xref:Xamarin.Forms.MeasureFlags.None) Kenar boşlukları içermeyecek şekilde
 
-Birçok öğelerin `GetSizeRequest` veya `Measure` kendi Oluşturucu öğe yerel boyutunu alır. Her iki yöntem genişlik ve yükseklik parametrelere sahip *kısıtlamaları*. Örneğin, bir `Label` genişliği kısıtlaması birkaç satırlık metin kaydırma nasıl kullanılacağını belirlemek için kullanır.
+Birçok öğe için `GetSizeRequest` veya `Measure` kendi işleyicisi bağlantısı yerel öğenin boyutunu alır. Parametreleri genişliği ve yüksekliği için iki yöntem de sahip *kısıtlamaları*. Örneğin, bir `Label` genişlik birden çok metin satırı sarmalamak nasıl kullanılacağını belirlemek için kullanır.
 
-Her ikisi de `GetSizeRequest`ve `Measure` türünde bir değer döndürmesi [ `SizeRequest` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SizeRequest/), iki özellik vardır:
+Her ikisi de `GetSizeRequest`ve `Measure` türünde bir değer döndürmesi [ `SizeRequest` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SizeRequest/), iki özelliği vardır:
 
 - [`Request`](https://developer.xamarin.com/api/property/Xamarin.Forms.SizeRequest.Request/) türü `Size`
 - [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.SizeRequest.Minimum/) türü `Size`
 
-Çok sık bu iki değer aynıdır ve `Minimum` değeri genellikle yoksayıldı.
+Bu iki değerleri aynıysa, çok sık ve `Minimum` değeri genellikle dikkate.
 
-`VisualElement` Ayrıca benzer bir korumalı yöntemi tanımlar `GetSizeRequest` gelen adlı `GetSizeRequest`:
+`VisualElement` aynı zamanda benzeyen bir korumalı yöntem tanımlar `GetSizeRequest` gelen adlı `GetSizeRequest`:
 
-- [`OnSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeRequest/p/System.Double/System.Double/) döndüren bir `SizeRequest` değeri
+- [`OnSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeRequest/p/System.Double/System.Double/) döndürür bir `SizeRequest` değeri
 
-Bu yöntem artık kullanım dışı ve değiştirilecek:
+Bu yöntem artık kullanım dışı ve yerini şu alacak:
 
 - [`OnMeasure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/)
 
-Öğesinden türetilen her sınıf `Layout` veya `Layout<T>` geçersiz kılmanız gerekir `OnSizeRequest` veya `OnMeasure`. Burada bir düzen sınıf genellikle çağırarak alır, alt öğelerini boyutuna göre kendi boyutunu belirler budur `GetSizeRequest` veya `Measure` alt üzerinde. Önce ve sonra arama `OnSizeRequest` veya `OnMeasure`, `GetSizeRequest` veya `Measure` aşağıdaki özelliklerine bağlı düzeltmeleri yapar:
+Öğesinden türetilen her sınıf `Layout` veya `Layout<T>` kılmalı `OnSizeRequest` veya `OnMeasure`. Burada bir düzen sınıf genellikle çağırarak alır alt öğelerinin boyutunu temel aldığı kendi boyutunu belirler. Bu, `GetSizeRequest` veya `Measure` alt öğeleri üzerinde. Önce ve sonra arama `OnSizeRequest` veya `OnMeasure`, `GetSizeRequest` veya `Measure` aşağıdaki özelliğe göre ayarlamalar yapar:
 
 - [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)tür `double`, etkiler `Request` özelliği `SizeRequest`
 - [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) tür `double`, etkiler `Request` özelliği `SizeRequest`
@@ -108,85 +108,85 @@ Bu yöntem artık kullanım dışı ve değiştirilecek:
 
 Kısıtlama bağımsız değişkenlerini geçirilen `GetSizeRequest` (veya `Measure`) ve `OnSizeRequest` (veya `OnMeasure`) sonsuz olabilir (yani, değerleri `Double.PositiveInfinity`). Ancak, `SizeRequest` bunlardan döndürülen yöntemleri sonsuz boyutları içeremez.
 
-İstenen boyuta öğenin doğal boyutu yansıtmalıdır sonsuz kısıtlamaları gösteriyor. Dikey `StackLayout` çağrıları `GetSizeRequest` (veya `Measure`) alt sonsuz yükseklik sınırlamalı üzerinde. Yatay yığın düzeni çağırır `GetSizeRequest` (veya `Measure`) alt sonsuz genişliği sınırlamalı üzerinde. Bir `AbsoluteLayout` çağrıları `GetSizeRequest` (veya `Measure`) alt sonsuz genişlik ve yükseklik kısıtlamalarına sahip üzerinde.
+İstenen boyut öğenin doğal boyutu yansıtmalıdır sonsuz kısıtlamaları gösteriyor. Dikey `StackLayout` çağrıları `GetSizeRequest` (veya `Measure`) ile bir sonsuz yükseklik alt üzerinde. Yatay yığın düzeni çağırır `GetSizeRequest` (veya `Measure`) ile sonsuz bir genişlik alt üzerinde. Bir `AbsoluteLayout` çağrıları `GetSizeRequest` (veya `Measure`) sonsuz kısıtlamalarıyla genişlik ve yükseklik alt öğeleri üzerinde.
 
 ### <a name="peeking-inside-the-process"></a>İçindeki işlemi gözatma
 
-[ **ExploreChildSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes) bilgi basit bir düzen için istek görüntüler kısıtlama ve boyutu.
+[ **ExploreChildSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes) bilgi basit düzen için istek görüntüler kısıtlaması ve boyutu.
 
-## <a name="deriving-from-layoutview"></a>Düzeninden türetme<View>
+## <a name="deriving-from-layoutview"></a>Düzenden türetme<View>
 
-Bir özel düzen sınıfın türetildiği `Layout<View>`. İki sorumlulukları vardır:
+Özel düzen sınıfın türetildiği `Layout<View>`. Bu iki sorumluluklara sahiptir:
 
-- Geçersiz kılma `OnMeasure` çağırmak için `Measure` düzeni ait alt üzerinde. İstenen boyuta düzeni için Döndür
-- Geçersiz kılma `LayoutChildren` çağırmak için `Layout` düzeni ait alt öğeleri hakkında
+- Geçersiz kılma `OnMeasure` çağrılacak `Measure` Düzen ait alt öğeleri üzerinde. Düzeni için istenen bir boyutunu döndürür
+- Geçersiz kılma `LayoutChildren` çağrılacak `Layout` Düzen ait alt öğeleri üzerinde
 
-`for` Veya `foreach` bu geçersiz kılmaları döngüde tüm alt Atla, `IsVisible` özelliği ayarlanmış `false`.
+`for` Veya `foreach` bu geçersiz kılmaları döngüde tüm alt atlayın, `IsVisible` özelliği `false`.
 
-Çağrı `OnMeasure` garanti edilmez. `OnMeasure` Düzen üst düzeni 's boyutu (örneğin, bir sayfayı dolduran bir düzen) yöneten varsa çağrılmaz. Bu nedenle, `LayoutChildren` sırasında elde edilen alt boyutları Bel olamaz `OnMeasure` çağırın. Çok sık `LayoutChildren` kendisini çağırmalısınız `Measure` düzeni ait alt üzerinde veya bir tür (daha sonra ele alınması için) mantığını önbellek boyutu uygulayabilirsiniz.
+Bir çağrı `OnMeasure` garanti edilmez. `OnMeasure` düzeninin üst Düzen'ın boyutu (örneğin, bir sayfayı dolduran bir düzen) imkanına sahiptiniz olursa çağrılacak değil. Bu nedenle, `LayoutChildren` sırasında elde edilen alt boyutları güvenemezsiniz `OnMeasure` çağırın. Çok sık, `LayoutChildren` kendisini çağırmalıdır `Measure` düzeni'nın alt üzerinde veya mantığı (ileride tartışılmayı) önbellek boyutu tür uygulayabilirsiniz.
 
-### <a name="an-easy-example"></a>Kolay örneği
+### <a name="an-easy-example"></a>Bir kolayca örnek
 
-[ **VerticalStackDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/VerticalStackDemo) örnek içeren basitleştirilmiş bir [ `VerticalStack` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter26/VerticalStackDemo/VerticalStackDemo/VerticalStackDemo/VerticalStack.cs) sınıfı ve kullanımını Tanıtımı.
+[ **VerticalStackDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/VerticalStackDemo) örnek içeren bir Basitleştirilmiş [ `VerticalStack` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter26/VerticalStackDemo/VerticalStackDemo/VerticalStackDemo/VerticalStack.cs) sınıfı ve kullanımını Tanıtımı.
 
-### <a name="vertical-and-horizontal-positioning-simplified"></a>Basitleştirilmiş yatay ve dikey konumlandırma
+### <a name="vertical-and-horizontal-positioning-simplified"></a>Dikey ve yatay Basitleştirilmiş konumlandırma
 
-İşlerden biri, `VerticalStack` gerçekleştirmelisiniz sırasında ortaya çıkan `LayoutChildren` geçersiz kılar. Yöntemi çocuk kullanır `HorizontalOptions` nasıl kendi yuvasında içinde alt konumunu belirlemek için özellik `VerticalStack`. Bunun yerine statik yöntemini çağırabilir [ `Layout.LayoutChildIntoBoundingRect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion/p/Xamarin.Forms.VisualElement/Xamarin.Forms.Rectangle/). Bu yöntemi çağırır `Measure` kullanır ve alt kendi `HorizontalOptions` ve `VerticalOptions` belirtilen dikdörtgenin içindeki alt konumlandırmak için özellikler.
+İşlerden biri, `VerticalStack` gerçekleştirmelidir sistemdeki `LayoutChildren` geçersiz kılar. Çocuğun kullanmaktadır `HorizontalOptions` kendi yuvasında içinde alt konumlandırmak nasıl belirlemek için özellik `VerticalStack`. Bunun yerine statik yöntem çağırabilirsiniz [ `Layout.LayoutChildIntoBoundingRect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion/p/Xamarin.Forms.VisualElement/Xamarin.Forms.Rectangle/). Bu yöntemin çağırdığı `Measure` kullanır ve alt kendi `HorizontalOptions` ve `VerticalOptions` belirtilen dikdörtgenin içindeki alt konumlandırmak için özellikleri.
 
 ### <a name="invalidation"></a>Geçersiz kılma
 
-Genellikle bir öğenin özellik değişikliği o öğeye düzeninde nasıl göründüğünü etkiler. Düzen yeni bir düzen tetiklemek için geçersiz kılınan olması gerekir.
+Genellikle bir öğenin özellik değişikliği o öğenin düzeninde nasıl göründüğünü etkiler. Düzen yeni bir düzen tetiklemek için geçersiz olması gerekir.
 
-`VisualElement` korumalı yöntem tanımlar [ `InvalidateMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.InvalidateMeasure()/), genellikle herhangi bir bağlanabilirse özelliği özelliği değiştirildi işleyici tarafından değişiklik çağırıldığı öğenin boyutunu etkiler. `InvalidateMeasure` Yöntemi ateşlenir bir [ `MeasureInvalidated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.MeasureInvalidated/) olay.
+`VisualElement` korumalı bir yöntem tanımlar [ `InvalidateMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.InvalidateMeasure()/), öğenin boyutunu etkiler, genellikle değişikliğin tüm bağlanılabilir özellik özellik değişti işleyici tarafından çağrılır. `InvalidateMeasure` Yöntemi ateşlenir bir [ `MeasureInvalidated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.MeasureInvalidated/) olay.
 
-`Layout` Sınıfı tanımlayan adlı benzer bir korumalı yöntem [ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/), hangi bir `Layout` türevi nasıl yerleştirir ve alt boyutları etkileyen herhangi bir değişiklik için çağrı.
+`Layout` Sınıf adlı benzer korumalı bir yöntem tanımlar [ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/), bir `Layout` Türev nasıl yerleştirir ve alt öğelerindeki boyutları etkileyen herhangi bir değişiklik için çağırmalıdır.
 
-### <a name="some-rules-for-coding-layouts"></a>Düzenleri kodlamak için bazı kurallar
+### <a name="some-rules-for-coding-layouts"></a>Bazı düzenleri kodlama kuralları
 
-1. Tarafından tanımlanan özellikler `Layout<T>` türevleri bağlanabilir özellikleri tarafından yedeklenen ve özelliği değiştirildi işleyicileri çağırmalıdır `InvalidateLayout`.
+1. Tarafından tanımlanan özellikler `Layout<T>` türevleri bağlanabilir özellikler tarafından desteklenen ve özellik değişti işleyicileri çağırmalıdır `InvalidateLayout`.
 
-2. A `Layout<T>` ekli bağlanabilir özelliklerini tanımlar türevi geçersiz kılma [ `OnAdded` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnAdded/p/T/) bir özelliği değiştirildi işleyici, alt öğelerini eklemek için ve [ `OnRemoved` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnRemoved/p/T/) , kaldırmak için işleyici. İşleyici bu değişiklikleri ekli bağlanabilir özelliklerini kontrol edin ve çağırarak yanıt `InvalidateLayout`.
+2. A `Layout<T>` ekli bağlanabilir özellikler tanımlar Türev geçersiz kılmalıdır [ `OnAdded` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnAdded/p/T/) alt özelliği değiştirilmiş bir işleyici eklemek ve [ `OnRemoved` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnRemoved/p/T/) , kaldırmak için işleyici. İşleyici bağlanabilir özellikler bu değişiklikleri bağlı olup olmadığını denetleyin ve çağırarak yanıt `InvalidateLayout`.
 
-3. A `Layout<T>` alt boyutları önbelleği uygulayan türevi geçersiz kılma `InvalidateLayout` ve [ `OnChildMeasureInvalidated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.OnChildMeasureInvalidated()/) ve bu yöntemler çağrıldığında Önbelleği Temizle.
+3. A `Layout<T>` alt boyutları önbelleğini uygulayan Türev geçersiz kılmalıdır `InvalidateLayout` ve [ `OnChildMeasureInvalidated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.OnChildMeasureInvalidated()/) ve bu yöntemler çağrıldığında önbelleğini temizleyin.
 
-### <a name="a-layout-with-properties"></a>Bir düzen özellikleri
+### <a name="a-layout-with-properties"></a>Özelliklere sahip bir düzen
 
-[ `WrapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs) Sınıfını [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) tüm alt gruplar aynı boyut ve alt öğeleri için bir satır (veya sütun) sarmalar olduğunu varsayar sonraki. Bunu tanımlayan bir `Orientation` gibi özelliği `StackLayout`, ve `ColumnSpacing` ve `RowSpacing` gibi özellikleri `Grid`, ve alt boyutları önbelleğe alır.
+[ `WrapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs) Sınıfını [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) tüm alt öğelerini aynı boyut ve alt öğeleri için bir satır (veya sütun) sarmalar olduğunu varsayar sonraki. Tanımladığı bir `Orientation` özelliği gibi `StackLayout`, ve `ColumnSpacing` ve `RowSpacing` gibi özellikleri `Grid`, ve alt boyutları önbelleğe alır.
 
-[ **PhotoWrap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap) örnek yerleştiren bir `WrapLayout` içinde bir `ScrollView` stok fotoğraf görüntüleme.
+[ **PhotoWrap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap) örnek yerleştiren bir `WrapLayout` içinde bir `ScrollView` stok fotoğrafları görüntülemek için.
 
-### <a name="no-unconstrained-dimensions-allowed"></a>Kısıtlanmamış boyutları izin!
+### <a name="no-unconstrained-dimensions-allowed"></a>Sınırlandırılmamış boyutlara izin!
 
-[ `UniformGridLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs) İçinde [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığı, kendi içinde tüm alt öğelerini görüntülemek için tasarlanmıştır. Bu nedenle, Kısıtlanmamış boyutlarda Dağıt olamaz ve bir karşılaşılırsa, bir özel durum oluşturur.
+[ `UniformGridLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs) İçinde [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığı, kendi içindeki tüm alt öğelerini görüntülemek için tasarlanmıştır. Bu nedenle, sınırlandırılmamış boyutlarla ilgili olamaz ve bir karşılaşılırsa özel durum harekete.
 
-[ **PhotoGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) örnek gösterilmektedir `UniformGridLayout`:
+[ **PhotoGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) örnek gösterir `UniformGridLayout`:
 
-[![Fotoğraf kılavuzunun Üçlü ekran](images/ch26fg08-small.png "Tekdüzen Kılavuz düzeni")](images/ch26fg08-large.png#lightbox "Tekdüzen Kılavuz düzeni")
+[![Fotoğraf kılavuzunun üç ekran](images/ch26fg08-small.png "tek düzen Kılavuz düzeni")](images/ch26fg08-large.png#lightbox "tek düzen Kılavuz düzeni")
 
 ### <a name="overlapping-children"></a>Çakışan alt öğeleri
 
-A `Layout<T>` türevi alt çakışıyor. Ancak, alt kendi sırada işlenir `Children` toplama ve sırasını değil, kendi `Layout` yöntemleri çağrılmadan.
+A `Layout<T>` Türev alt çakışma. Ancak, alt, sırayla işlenir `Children` toplama ve sırasını değil, kendi `Layout` yöntemleri çağrıldığında.
 
-`Layout` Sınıfı koleksiyonun içindeki bir alt taşımanızı sağlayan iki yöntem tanımlar:
+`Layout` Sınıfı, koleksiyon içindeki bir alt taşımanıza olanak sağlayan iki yöntem tanımlar:
 
 - [`LowerChild`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LowerChild/p/Xamarin.Forms.View/) alt koleksiyon başına taşımak için
 - [`RaiseChild`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.RaiseChild/p/Xamarin.Forms.View/) alt koleksiyonun sonuna taşımak için
 
-Çakışan çocuklar için alt topluluğun sonunda koleksiyonunun başına alt öğeler üzerinde görsel olarak görünür.
+Çakışan alt öğeleri için koleksiyon başına alt öğeleri üzerinde alt koleksiyonun sonuna görsel olarak görünür.
 
-[ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) Sınıfını [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığı işleme sırayı gösterir ve bu nedenle biri izin vermek için iliştirilmiş bir özellik tanımlar, Başkalarının üstünde görüntülenecek alt öğeleri. [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) örnek bu gösterilmektedir:
+[ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) Sınıfını [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığı işleme sırayı gösterir ve bu nedenle biri izin vermek için ekli özelliği tanımlar, Başkalarının en üstünde görüntülenecek alt öğeleri. [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) örnek bunu gösterir:
 
-[![Üçlü ekran Öğrenci kartı dosya kılavuzunun](images/ch26fg10-small.png "çakışan düzeni alt")](images/ch26fg10-large.png#lightbox "çakışan düzeni alt")
+[![Öğrenci kart dosya kılavuzunun üç ekran](images/ch26fg10-small.png "çakışan Düzen alt")](images/ch26fg10-large.png#lightbox "çakışan Düzen alt öğeleri")
 
-### <a name="more-attached-bindable-properties"></a>Daha fazla iliştirilmiş bağlanabilir Özellikler
+### <a name="more-attached-bindable-properties"></a>Daha fazla ekli bağlanabilir Özellikler
 
-[ `CartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs) Sınıfını [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığı tanımlayan iki belirtmek için iliştirilmiş bağlanabilir Özellikler `Point` değerleri ve bir kalınlığı değeri ve yöneten `BoxView` satırları benzeyecek şekilde öğeleri.
+[ `CartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs) Sınıfını [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığı tanımlayan iki belirtmek için ekli bağlanabilir Özellikler `Point` değerleri ve kalınlığı değeri ve yöneten `BoxView` satırları benzeyecek şekilde öğeleri.
 
-[ **UnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/UnitCube) örnek bir 3B küp çizmek için kullanır.
+[ **UnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/UnitCube) örnek 3D küp çizmek için bu kullanır.
 
 ### <a name="layout-and-layoutto"></a>Düzen ve LayoutTo
 
-A `Layout<T>` türevi çağırabilir `LayoutTo` yerine `Layout` düzeni animasyon uygulamak için. [ `AnimatedCartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnimatedCartesianLayout.cs) Sınıfı bunu yapar ve [ **AnimatedUnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/AnimatedUnitCube) örnek gösterilmektedir.
+A `Layout<T>` Türev çağırabilir `LayoutTo` yerine `Layout` düzenini animasyon uygulamak için. [ `AnimatedCartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnimatedCartesianLayout.cs) Sınıfı bunu, yapar ve [ **AnimatedUnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/AnimatedUnitCube) örnek gösterir.
 
 
 
@@ -194,4 +194,4 @@ A `Layout<T>` türevi çağırabilir `LayoutTo` yerine `Layout` düzeni animasyo
 
 - [Bölüm 26 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch26-Apr2016.pdf)
 - [Bölüm 26 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
-- [Özel düzenler oluşturma](~/xamarin-forms/user-interface/layouts/custom.md)
+- [Özel düzenleri oluşturma](~/xamarin-forms/user-interface/layouts/custom.md)

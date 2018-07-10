@@ -1,42 +1,42 @@
 ---
-title: Bir ViewCell özelleştirme
-description: Xamarin.Forms ViewCell ListView ya da bir geliştirici tarafından tanımlanan görünüm içeren tablo görünümü eklenebilir bir hücre olduğunda. Bu makalede, bir Xamarin.Forms ListView denetimi içinde barındırılan bir ViewCell için özel Oluşturucu Oluşturma gösterilir.
+title: Bir Viewcell'i özelleştirme
+description: Xamarin.Forms Viewcell'i ListView ya da bir geliştirici tarafından tanımlanan görünüm içeren tablo görünümü eklenebilir bir hücre ' dir. Bu makalede, bir Xamarin.Forms ListView denetimi içinde barındırılan bir Viewcell'i için özel Oluşturucu oluşturma işlemini gösterir.
 ms.prod: xamarin
 ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 2011049180aa47b7be68486d4f30bd356e2ba813
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3cb4d7f152e0f9540275f12f0ade568cd0552784
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241809"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935582"
 ---
-# <a name="customizing-a-viewcell"></a>Bir ViewCell özelleştirme
+# <a name="customizing-a-viewcell"></a>Bir Viewcell'i özelleştirme
 
-_Xamarin.Forms ViewCell ListView ya da bir geliştirici tarafından tanımlanan görünüm içeren tablo görünümü eklenebilir bir hücre olduğunda. Bu makalede, bir Xamarin.Forms ListView denetimi içinde barındırılan bir ViewCell için özel Oluşturucu Oluşturma gösterilir. Bu, engeller Xamarin.Forms düzeni hesaplamalar ListView kaydırma sırasında sürekli adlı durdurur._
+_Xamarin.Forms Viewcell'i ListView ya da bir geliştirici tarafından tanımlanan görünüm içeren tablo görünümü eklenebilir bir hücre ' dir. Bu makalede, bir Xamarin.Forms ListView denetimi içinde barındırılan bir Viewcell'i için özel Oluşturucu oluşturma işlemini gösterir. ListView kaydırma sırasında sürekli olarak adlandırılan bu engeller Xamarin.Forms Düzen hesaplamalar durdurur._
 
-Her Xamarin.Forms hücrenin yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu yok. Zaman bir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) iOS içinde bir Xamarin.Forms uygulaması tarafından işlenen `ViewCellRenderer` sınıf örneği, hangi sırayla yerel başlatır `UITableViewCell` denetim. Android platformunda `ViewCellRenderer` sınıfı başlatır yerel `View` denetim. Üzerinde Evrensel Windows Platformu (UWP), `ViewCellRenderer` sınıfı başlatır yerel `DataTemplate`. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Tüm Xamarin.Forms hücrenin yerel bir denetimin bir örneği oluşturan her platform için eşlik eden bir işleyici yok. Olduğunda bir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) bir Xamarin.Forms uygulaması iOS tarafından işlenen `ViewCellRenderer` sınıf örneği, hangi sırayla yerel bir örneğini oluşturur `UITableViewCell` denetimi. Android platformunda `ViewCellRenderer` sınıfın örneğini oluşturur, bir yerel `View` denetimi. Üzerindeki Evrensel Windows Platformu (UWP), `ViewCellRenderer` sınıfın örneğini oluşturur, bir yerel `DataTemplate`. Oluşturucu ve Xamarin.Forms denetimleri eşleyen yerel denetim sınıfları hakkında daha fazla bilgi için bkz. [oluşturucu temel sınıfları ve yerel denetimleri](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Aşağıdaki diyagram arasındaki ilişkiyi gösterir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) ve uyguladıktan karşılık gelen yerel denetimlere:
+Aşağıdaki diyagramda arasındaki ilişkiyi gösterir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) ve onu uygulayan karşılık gelen yerel denetimler:
 
-![](viewcell-images/viewcell-classes.png "ViewCell ve uygulama yerel denetimi arasındaki ilişki")
+![](viewcell-images/viewcell-classes.png "Viewcell'i ve uygulama yerel denetimi arasındaki ilişki")
 
-Oluşturma işlemi için özel Oluşturucu oluşturarak platforma özgü özelleştirmeler uygulamak için avantajlarından alınabilir bir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) her platformda. Bunu yapmak için işlem aşağıdaki gibidir:
+İşleme sürecini avantajlarından platforma özgü özelleştirmeler için özel Oluşturucu oluşturarak uygulamak için gerçekleştirilebilecek bir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) her platformda. Bunu yapmak için işlem aşağıdaki gibidir:
 
 1. [Oluşturma](#Creating_the_Custom_Cell) Xamarin.Forms özel hücre.
 1. [Tüketen](#Consuming_the_Custom_Cell) Xamarin.Forms özel hücreden.
-1. [Oluşturma](#Creating_the_Custom_Renderer_on_each_Platform) hücrede her platform için özel Oluşturucu.
+1. [Oluşturma](#Creating_the_Custom_Renderer_on_each_Platform) her platformda hücre için özel Oluşturucu.
 
-Her öğe artık sırasıyla uygulamak için incelenecektir bir `NativeCell` Xamarin.Forms içinde barındırılan her bir hücre platforma özgü düzeni yararlanan Oluşturucu [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) denetim. Bu art arda sırasında çağrılan gelen Xamarin.Forms düzeni hesaplamalar durdurur `ListView` kaydırma.
+Her öğe artık sırayla uygulanacağı açıklanmıştır bir `NativeCell` bir Xamarin.Forms içinde barındırılan her hücre için bir platforma özel düzen yararlanır Oluşturucu [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) denetimi. Bu Xamarin.Forms Düzen hesaplama sırasında sürekli çağrılmasını durdurur `ListView` kaydırma.
 
 <a name="Creating_the_Custom_Cell" />
 
-## <a name="creating-the-custom-cell"></a>Özel hücre oluşturma
+## <a name="creating-the-custom-cell"></a>Özel hücresi oluşturmak
 
-Bir özel hücre denetimi sınıflara tarafından oluşturulabilir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
+Sınıflara göre özel hücre denetimi oluşturulabilir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
 
 ```csharp
 public class NativeCell : ViewCell
@@ -66,13 +66,13 @@ public class NativeCell : ViewCell
   }
 }
 ```
-`NativeCell` Sınıfı .NET standart kitaplığı projesinde oluşturulur ve özel hücre API'si tanımlar. Özel hücre sunan `Name`, `Category`, ve `ImageFilename` veri bağlama aracılığıyla görüntülenebilir özellikleri. Veri bağlama hakkında daha fazla bilgi için bkz: [veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+`NativeCell` Sınıfı .NET Standard kitaplığı projesinde oluşturulur ve API'si için özel hücre tanımlar. Özel hücresi `Name`, `Category`, ve `ImageFilename` özellikleri, veri bağlama aracılığıyla görüntülenebilir. Veri bağlama hakkında daha fazla bilgi için bkz. [temel veri bağlama bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 <a name="Consuming_the_Custom_Cell" />
 
 ## <a name="consuming-the-custom-cell"></a>Özel hücre kullanma
 
-`NativeCell` Özel hücre başvurulabilir XAML'de .NET standart kitaplığı projesinde konumu için bir ad alanı bildirme ve özel hücre öğede ad alanı öneki kullanarak. Aşağıdaki örnekte gösterildiği kod nasıl `NativeCell` özel hücre XAML sayfası tarafından tüketilen:
+`NativeCell` Özel hücre başvurulabilir Xaml içinde .NET Standard kitaplığı projesinde konumu için bir ad alanı bildirmek ve özel hücre öğesinde ad alanı öneki kullanarak. Aşağıdaki kod örnekte gösterildiği nasıl `NativeCell` özel hücre bir XAML sayfası tarafından kullanılabilir:
 
 ```xaml
 <ContentPage ...
@@ -94,9 +94,9 @@ public class NativeCell : ViewCell
 </ContentPage>
 ```
 
-`local` Ad alanı öneki adlı bir şey. Ancak, `clr-namespace` ve `assembly` değerlerin özel denetim ayrıntılarını eşleşmesi gerekir. Ad alanı bildirildiğinde öneki özel hücre başvurusu için kullanılır.
+`local` Ad alanı ön eki adı herhangi bir şey. Ancak, `clr-namespace` ve `assembly` değerleri, özel denetimin ayrıntılarını eşleşmesi gerekir. Ad alanı bildirildiğinde, ön ek özel hücre başvurusu için kullanılır.
 
-Aşağıdaki örnekte gösterildiği kod nasıl `NativeCell` özel hücre bir C# sayfası tarafından tüketilen:
+Aşağıdaki kod örnekte gösterildiği nasıl `NativeCell` özel hücre bir C# sayfası tarafından kullanılabilir:
 
 ```csharp
 public class NativeCellPageCS : ContentPage
@@ -143,11 +143,11 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Bir Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) denetim aracılığıyla doldurulmuş veri listesini görüntülemek için kullanılan [ `ItemSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemsSource/) özelliği. [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) Stratejisi önbelleğe alma denemesi en aza indirmek `ListView` bellek alanını ve yürütme hızını liste hücreleri geri dönüştürülüyor. Daha fazla bilgi için bkz: [önbelleğe alma stratejisi](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
+Bir Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) denetimi ile doldurulmuş veri listesini görüntülemek için kullanılan [ `ItemSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemsSource/) özelliği. [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) En aza indirmek önbelleğe alma stratejisi çalışır `ListView` bellek Ayak izi ve yürütme hızını liste hücreleri dönüştürerek. Daha fazla bilgi için [önbelleğe alma stratejisi](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
 
-Listedeki her bir satır veri – bir ad, kategori ve resim dosya adı üç öğeleri içerir. Listedeki her satırın düzenini tarafından tanımlanan `DataTemplate` aracılığıyla başvurulan [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemTemplate/) bağlanabilirse özelliği. `DataTemplate` Her listesinde veri satırının olacağını tanımlayan bir `NativeCell` görüntüleyen kendi `Name`, `Category`, ve `ImageFilename` veri bağlama aracılığıyla özellikleri. Hakkında daha fazla bilgi için `ListView` denetlemek için bkz: [ListView](~/xamarin-forms/user-interface/listview/index.md).
+Listedeki her bir satır veri – bir ad, kategori ve bir görüntü dosya adı üç öğelerini içerir. Listedeki her bir satırın düzenini tanımlayan `DataTemplate` aracılığıyla başvurulan [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemTemplate/) bağlanılabilir özellik. `DataTemplate` Listesinde veri satırlarının olacağını tanımlayan bir `NativeCell` görüntüleyen kendi `Name`, `Category`, ve `ImageFilename` veri bağlama aracılığıyla özellikleri. Hakkında daha fazla bilgi için `ListView` denetlemek için bkz: [ListView](~/xamarin-forms/user-interface/listview/index.md).
 
-Özel oluşturucu artık her hücre için platforma özel yerleşim özelleştirmek için her uygulama projesi eklenebilir.
+Özel oluşturucu, artık her hücre için platforma özel düzeni özelleştirildiği her bir uygulama projesine eklenebilir.
 
 <a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
@@ -155,30 +155,30 @@ Listedeki her bir satır veri – bir ad, kategori ve resim dosya adı üç öğ
 
 Özel oluşturucu sınıfı oluşturma işlemi aşağıdaki gibidir:
 
-1. Öğesinin bir alt kümesi oluşturmak `ViewCellRenderer` özel hücre işler sınıfı.
-1. Özel hücre işleyen platforma özgü yöntemi geçersiz kılın ve özelleştirmek için mantığı yazma.
-1. Ekleme bir `ExportRenderer` özniteliği, Xamarin.Forms özel hücre işlemek için kullanılacak belirtmek için özel Oluşturucu sınıfı. Bu öznitelik, özel Oluşturucu Xamarin.Forms ile kaydetmek için kullanılır.
+1. Oluşturma bir öğesinin `ViewCellRenderer` özel hücre işleyen sınıfı.
+1. Özel hücre işleyen platforma özgü yöntemi geçersiz kılın ve özelleştirmek için mantıksal yazma.
+1. Ekleme bir `ExportRenderer` bunu Xamarin.Forms özel hücre işlemek için kullanılacak belirtmek için özel Oluşturucu sınıfı özniteliği. Bu öznitelik, özel Oluşturucu Xamarin.Forms ile kaydetmek için kullanılır.
 
 > [!NOTE]
-> Çoğu Xamarin.Forms öğeleri için her platform projesinde özel Oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse, varsayılan oluşturucu denetimin taban sınıfı için kullanılır. Ancak, özel Oluşturucu her platform projesinde işlenirken gereken bir [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) öğesi.
+> Xamarin.Forms öğelerin çoğu, her platform projesinde özel bir oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse denetimin taban sınıfı için varsayılan oluşturucu kullanılır. Ancak, özel Oluşturucu her platform projesinde işlenirken gereken bir [Viewcell'i](xref:Xamarin.Forms.ViewCell) öğesi.
 
-Aşağıdaki diyagram, her proje örnek uygulamasında, aralarındaki ilişkilerin birlikte sorumlulukları gösterir:
+Örnek uygulamada, onlar arasındaki ilişkileri yanı sıra her bir proje sorumluluklarını Aşağıdaki diyagramda gösterilmektedir:
 
 ![](viewcell-images/solution-structure.png "NativeCell özel Oluşturucu Proje Sorumlulukları")
 
-`NativeCell` Öğesinden türetilen tüm hangi platforma özgü Oluşturucu sınıflar tarafından işlenen özel hücre `ViewCellRenderer` her platform için sınıf. Bu her sonuçları `NativeCell` platforma özgü düzeniyle aşağıdaki ekran görüntülerinde gösterildiği gibi işlenen özel hücre:
+`NativeCell` Öğesinden türetilen tüm hangi platforma özel Oluşturucu sınıflar tarafından işlenen özel hücre `ViewCellRenderer` her platform için sınıf. Bu her sonuçları `NativeCell` platforma özel düzeni kullanarak, aşağıdaki ekran görüntülerinde gösterildiği işlenen özel hücre:
 
 ![](viewcell-images/screenshots.png "Her platformda NativeCell")
 
-`ViewCellRenderer` Sınıfı özel hücre işlemek için platforma özel yöntemler sunar. Bu `GetCell` iOS platformunda yöntemi `GetCellCore` Android platformunda yöntemi ve `GetTemplate` UWP yöntemi.
+`ViewCellRenderer` Sınıfı özel hücre işlemek için platforma özgü yöntemleri gösterir. Bu `GetCell` yöntemi iOS platformunda `GetCellCore` Android platformunda yöntemi ve `GetTemplate` UWP yöntemi.
 
-Her özel Oluşturucu sınıfı ile donatılmış bir `ExportRenderer` Xamarin.Forms ile oluşturucuyu kaydeder özniteliği. Öznitelik iki parametre – işlenen Xamarin.Forms hücre tür adını ve özel Oluşturucu Tür adını alır. `assembly` Özniteliğine öneki belirtir. öznitelik tüm derlemesi için geçerlidir.
+Her özel Oluşturucu sınıfı ile donatılmış bir `ExportRenderer` özniteliği işleyici Xamarin.Forms ile kaydeder. Öznitelik, iki parametre – işlenen Xamarin.Forms hücrenin tür adı ve özel Oluşturucu türü adını alır. `assembly` Özniteliğiyle önek öznitelik tüm derleme için geçerli olduğunu belirtir.
 
-Aşağıdaki bölümlerde her platforma özgü özel Oluşturucu sınıfı uyarlamasını açıklanmaktadır.
+Aşağıdaki bölümlerde her platforma özgü özel Oluşturucu sınıfın uygulaması açıklanmaktadır.
 
 ### <a name="creating-the-custom-renderer-on-ios"></a>İOS özel Oluşturucu Oluşturma
 
-Aşağıdaki kod örneğinde iOS platformu için özel Oluşturucu gösterir:
+Aşağıdaki kod örneği, iOS platformu için özel Oluşturucu gösterir:
 
 ```csharp
 [assembly: ExportRenderer(typeof(NativeCell), typeof(NativeiOSCellRenderer))]
@@ -207,21 +207,21 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`GetCell` Yöntemi görüntülenecek her bir hücre oluşturmak için çağrılır. Her hücre bir `NativeiOSCell` hücre ve verilerini düzenini tanımlayan örnek. İşlemi `GetCell` yöntemdir bağımlı [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) stratejisi önbelleğe alma:
+`GetCell` Yöntemi, her bir hücresinde görüntülenecek oluşturmak için çağrılır. Her hücre bir `NativeiOSCell` örneği hücre ve verilerini düzenini tanımlar. İşlemi `GetCell` yöntemdir bağımlı [ `ListView` ](xref:Xamarin.Forms.ListView) önbelleğe alma stratejisi:
 
-- Zaman [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) stratejisi önbelleğe alma [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/), `GetCell` yöntemi her hücrenin çağrıldıktan. A `NativeiOSCell` örneği her biri için oluşturulacak `NativeCell` ilk ekranda görüntülenen örneği. Kullanıcı aracılığıyla kayarken `ListView`, `NativeiOSCell` örnekleri yeniden kullanılan olacaktır. İOS hücre yeniden kullanma hakkında daha fazla bilgi için bkz: [hücre yeniden](~/ios/user-interface/controls/tables/populating-a-table-with-data.md).
-
-  > [!NOTE]
-  > Bu özel Oluşturucu kodu bazı hücre yeniden kullanımını gerçekleştirecek bile [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) hücreleri korumak için ayarlanır.
-
-  Her tarafından görüntülenen verileri `NativeiOSCell` örneği yeni oluşturulmuş ya da yeniden kullanılan güncelleştirilmeyecek her verilerle `NativeCell` tarafından örnek `UpdateCell` yöntemi.
+- Zaman [ `ListView` ](xref:Xamarin.Forms.ListView) önbelleğe alma stratejisi [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement), `GetCell` yöntemi her hücre için çağrılacak. A `NativeiOSCell` örneği her biri için oluşturulacak `NativeCell` ilk ekranda görüntülenen örnek. Aracılığıyla kullanıcı kaydırma yaparken `ListView`, `NativeiOSCell` örnekleri yeniden kullanılan olacaktır. İOS hücre yeniden kullanma hakkında daha fazla bilgi için bkz: [hücre yeniden](~/ios/user-interface/controls/tables/populating-a-table-with-data.md).
 
   > [!NOTE]
-  > `OnNativeCellPropertyChanged` Yöntemi hiçbir zaman olacaktır olduğunda çağrılan [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) stratejisi önbelleğe alma hücreleri korumak için ayarlanır.
+  > Bu özel Oluşturucu kodu bazı hücre yeniden kullanımı gerçekleştirecek bile [ `ListView` ](xref:Xamarin.Forms.ListView) hücreleri saklanacak şekilde ayarlanmıştır.
 
-- Zaman [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) stratejisi önbelleğe alma [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/), `GetCell` yöntemi ilk ekranda görüntülenen her hücre için çağrılabilir. A `NativeiOSCell` örneği her biri için oluşturulacak `NativeCell` ilk ekranda görüntülenen örneği. Her tarafından görüntülenen verileri `NativeiOSCell` örnek verilerle güncelleştirilir `NativeCell` tarafından örnek `UpdateCell` yöntemi. Ancak, `GetCell` yöntemi kullanıcı kayarken olarak çağrılacak olmaz `ListView`. Bunun yerine, `NativeiOSCell` örnekleri yeniden kullanılan olacaktır. `PropertyChanged` olayları yükseltilmiş üzerinde `NativeCell` örnek verileri değiştiğinde ve `OnNativeCellPropertyChanged` olay işleyicisi verilerin güncelleştirilmesine neden olacak her yeniden kullanılan `NativeiOSCell` örneği.
+  Her tarafından görüntülenen verileri `NativeiOSCell` örneği yeni oluşturulmuş ya da yeniden kullanılır, güncelleştirilecek her verilerle `NativeCell` tarafından örnek `UpdateCell` yöntemi.
 
-Aşağıdaki örnekte gösterildiği kod `OnNativeCellPropertyChanged` ne zaman çağrılmış yöntemi bir `PropertyChanged` olayı oluşturulur:
+  > [!NOTE]
+  > `OnNativeCellPropertyChanged` Yöntemi hiçbir zaman olur olduğunda çağrılan [ `ListView` ](xref:Xamarin.Forms.ListView) önbelleğe alma stratejisi hücreleri korumak için ayarlanır.
+
+- Zaman [ `ListView` ](xref:Xamarin.Forms.ListView) önbelleğe alma stratejisi [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement), `GetCell` yöntemi, ilk ekranda görüntülenen her hücre için çağrılacak. A `NativeiOSCell` örneği her biri için oluşturulacak `NativeCell` ilk ekranda görüntülenen örnek. Her tarafından görüntülenen verileri `NativeiOSCell` örnek verilerle güncelleştirilir `NativeCell` tarafından örnek `UpdateCell` yöntemi. Ancak, `GetCell` yöntemi ve kullanıcı sonuçlarda gezinirken olarak çağrılacak olmaz `ListView`. Bunun yerine, `NativeiOSCell` örnekleri yeniden kullanılan olacaktır. `PropertyChanged` olayları yükseltilir `NativeCell` örnek verilerini değiştiğinde ve `OnNativeCellPropertyChanged` olay işleyicisi, her yeniden kullanılan verileri güncelleştirir `NativeiOSCell` örneği.
+
+Aşağıdaki örnekte gösterildiği kod `OnNativeCellPropertyChanged` ne zaman çağrılan yöntemi bir `PropertyChanged` olayı oluşturulur:
 
 ```csharp
 namespace CustomRenderer.iOS
@@ -250,7 +250,7 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Bu yöntem güncelleştirmeleri tarafından görüntülenen verileri yeniden kullanılan `NativeiOSCell` örnekleri. Birden çok kez yöntemi çağrılabilir olarak değiştirilir özelliği için bir denetimi yapılır.
+Bu yöntem güncelleştirmeleri tarafından görüntülenen verileri yeniden kullanılan `NativeiOSCell` örnekleri. Yöntemi, birden çok kez çağrılabilir olarak değişen bir özellik için bir onay yapılır.
 
 `NativeiOSCell` Sınıfı her hücre düzenini tanımlar ve aşağıdaki kod örneğinde gösterilir:
 
@@ -315,15 +315,15 @@ internal class NativeiOSCell : UITableViewCell, INativeElementView
 }
 ```
 
-Bu sınıf hücrenin içeriğinin ve bunların düzeni işlemek için kullanılan denetimleri tanımlar. Sınıf uygulayan [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/) gerekli olduğunda arabirimi [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kullanan [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) stratejisi önbelleğe alma. Bu arabirim sınıfı uygulamalıdır belirtir [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/) geri dönüştürüldüğünde hücreler için özel hücre veri döndürmelidir özelliği.
+Bu sınıf, hücrenin içeriğini ve düzenini işlemek için kullanılan denetimleri tanımlar. Sınıfının Implements [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/) gerekli olduğunda arabirimi [ `ListView` ](xref:Xamarin.Forms.ListView) kullanan [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) önbelleğe alma stratejisi. Bu arabirim, sınıf uygulamalıdır belirtir [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/) geri hücreler için özel hücre veri döndürmesi gereken özelliği.
 
-`NativeiOSCell` Oluşturucu görünümünü başlatır `HeadingLabel`, `SubheadingLabel`, ve `CellImageView` özellikleri. Bu özellikleri depolanan verileri görüntülemek için kullanılan `NativeCell` örneği ile `UpdateCell` her bir özellik değerini ayarlamak için çağrılan yöntem. Ayrıca, [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kullanan [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) stratejisi, tarafından görüntülenen verileri önbelleğe alma `HeadingLabel`, `SubheadingLabel`, ve `CellImageView` özellikleri olabilir güncelleyen `OnNativeCellPropertyChanged` özel Oluşturucu yöntemi.
+`NativeiOSCell` Oluşturucu başlatır görünümünü `HeadingLabel`, `SubheadingLabel`, ve `CellImageView` özellikleri. Bu özellikler, depolanan verileri görüntülemek için kullanılan `NativeCell` örneği ile `UpdateCell` her bir özellik değerini ayarlamak için çağrılan yöntem. Buna ek olarak, [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kullanan [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) stratejisi, tarafından görüntülenen verileri önbelleğe alma `HeadingLabel`, `SubheadingLabel`, ve `CellImageView` özellikleri olabilir güncelleştiren `OnNativeCellPropertyChanged` özel Oluşturucu yöntemi.
 
-Hücre düzeni tarafından gerçekleştirilir `LayoutSubviews` geçersiz kılmak, hangi koordinatlarını ayarlar `HeadingLabel`, `SubheadingLabel`, ve `CellImageView` hücre içinde.
+Hücre düzenini tarafından gerçekleştirilir `LayoutSubviews` koordinatlarını ayarlar geçersiz kılma `HeadingLabel`, `SubheadingLabel`, ve `CellImageView` hücresi içinde.
 
-### <a name="creating-the-custom-renderer-on-android"></a>Android özel Oluşturucu Oluşturma
+### <a name="creating-the-custom-renderer-on-android"></a>Android'de özel Oluşturucu Oluşturma
 
-Aşağıdaki kod örneğinde, Android platformu için özel Oluşturucu gösterir:
+Aşağıdaki kod örneği, Android platformu için özel Oluşturucu gösterir:
 
 ```csharp
 [assembly: ExportRenderer(typeof(NativeCell), typeof(NativeAndroidCellRenderer))]
@@ -358,21 +358,21 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`GetCellCore` Yöntemi görüntülenecek her bir hücre oluşturmak için çağrılır. Her hücre bir `NativeAndroidCell` hücre ve verilerini düzenini tanımlayan örnek. İşlemi `GetCellCore` yöntemdir bağımlı [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) stratejisi önbelleğe alma:
+`GetCellCore` Yöntemi, her bir hücresinde görüntülenecek oluşturmak için çağrılır. Her hücre bir `NativeAndroidCell` örneği hücre ve verilerini düzenini tanımlar. İşlemi `GetCellCore` yöntemdir bağımlı [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) önbelleğe alma stratejisi:
 
-- Zaman [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) stratejisi önbelleğe alma [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/), `GetCellCore` yöntemi her hücrenin çağrıldıktan. A `NativeAndroidCell` her biri için oluşturulan `NativeCell` ilk ekranda görüntülenen örneği. Kullanıcı aracılığıyla kayarken `ListView`, `NativeAndroidCell` örnekleri yeniden kullanılan olacaktır. Android hücre yeniden kullanma hakkında daha fazla bilgi için bkz: [satır görünümü yeniden kullanma](~/android/user-interface/layouts/list-view/populating.md).
-
-  > [!NOTE]
-  > Bu özel Oluşturucu kodu bazı hücre yeniden kullanımını gerçekleştirecek Not bile [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) hücreleri korumak için ayarlanır.
-
-  Her tarafından görüntülenen verileri `NativeAndroidCell` örneği yeni oluşturulmuş ya da yeniden kullanılan güncelleştirilmeyecek her verilerle `NativeCell` tarafından örnek `UpdateCell` yöntemi.
+- Zaman [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) önbelleğe alma stratejisi [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement), `GetCellCore` yöntemi her hücre için çağrılacak. A `NativeAndroidCell` her biri için oluşturulacak `NativeCell` ilk ekranda görüntülenen örnek. Aracılığıyla kullanıcı kaydırma yaparken `ListView`, `NativeAndroidCell` örnekleri yeniden kullanılan olacaktır. Android hücre yeniden kullanma hakkında daha fazla bilgi için bkz. [satır görünümü yeniden kullanma](~/android/user-interface/layouts/list-view/populating.md).
 
   > [!NOTE]
-  > Not Bu süre `OnNativeCellPropertyChanged` yöntemi olacaktır olduğunda çağrılan [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) olan değil güncelleştirmek hücreleri korumak için ayarlamak, `NativeAndroidCell` özellik değerleri.
+  > Bu özel Oluşturucu kodu bazı hücre yeniden kullanımı gerçekleştireceğini Not bile [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) hücreleri saklanacak şekilde ayarlanmıştır.
 
-- Zaman [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) stratejisi önbelleğe alma [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/), `GetCellCore` yöntemi ilk ekranda görüntülenen her hücre için çağrılabilir. A `NativeAndroidCell` örneği her biri için oluşturulacak `NativeCell` ilk ekranda görüntülenen örneği. Her tarafından görüntülenen verileri `NativeAndroidCell` örnek verilerle güncelleştirilir `NativeCell` tarafından örnek `UpdateCell` yöntemi. Ancak, `GetCellCore` yöntemi kullanıcı kayarken olarak çağrılacak olmaz `ListView`. Bunun yerine, `NativeAndroidCell` örnekleri yeniden kullanılan olacaktır.  `PropertyChanged` olayları yükseltilmiş üzerinde `NativeCell` örnek verileri değiştiğinde ve `OnNativeCellPropertyChanged` olay işleyicisi verilerin güncelleştirilmesine neden olacak her yeniden kullanılan `NativeAndroidCell` örneği.
+  Her tarafından görüntülenen verileri `NativeAndroidCell` örneği yeni oluşturulmuş ya da yeniden kullanılır, güncelleştirilecek her verilerle `NativeCell` tarafından örnek `UpdateCell` yöntemi.
 
-Aşağıdaki örnekte gösterildiği kod `OnNativeCellPropertyChanged` ne zaman çağrılmış yöntemi bir `PropertyChanged` olayı oluşturulur:
+  > [!NOTE]
+  > Not da `OnNativeCellPropertyChanged` yöntemi olacaktır ne zaman çağrılır [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) olan hücreleri korumak için bu seçeneği ayarlanırsa, bunu değil güncelleştirir `NativeAndroidCell` özellik değerleri.
+
+- Zaman [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) önbelleğe alma stratejisi [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement), `GetCellCore` yöntemi, ilk ekranda görüntülenen her hücre için çağrılacak. A `NativeAndroidCell` örneği her biri için oluşturulacak `NativeCell` ilk ekranda görüntülenen örnek. Her tarafından görüntülenen verileri `NativeAndroidCell` örnek verilerle güncelleştirilir `NativeCell` tarafından örnek `UpdateCell` yöntemi. Ancak, `GetCellCore` yöntemi ve kullanıcı sonuçlarda gezinirken olarak çağrılacak olmaz `ListView`. Bunun yerine, `NativeAndroidCell` örnekleri yeniden kullanılan olacaktır.  `PropertyChanged` olayları yükseltilir `NativeCell` örnek verilerini değiştiğinde ve `OnNativeCellPropertyChanged` olay işleyicisi, her yeniden kullanılan verileri güncelleştirir `NativeAndroidCell` örneği.
+
+Aşağıdaki örnekte gösterildiği kod `OnNativeCellPropertyChanged` ne zaman çağrılan yöntemi bir `PropertyChanged` olayı oluşturulur:
 
 ```csharp
 namespace CustomRenderer.Droid
@@ -401,7 +401,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Bu yöntem güncelleştirmeleri tarafından görüntülenen verileri yeniden kullanılan `NativeAndroidCell` örnekleri. Birden çok kez yöntemi çağrılabilir olarak değiştirilir özelliği için bir denetimi yapılır.
+Bu yöntem güncelleştirmeleri tarafından görüntülenen verileri yeniden kullanılan `NativeAndroidCell` örnekleri. Yöntemi, birden çok kez çağrılabilir olarak değişen bir özellik için bir onay yapılır.
 
 `NativeAndroidCell` Sınıfı her hücre düzenini tanımlar ve aşağıdaki kod örneğinde gösterilir:
 
@@ -474,11 +474,11 @@ internal class NativeAndroidCell : LinearLayout, INativeElementView
 }
 ```
 
-Bu sınıf hücrenin içeriğinin ve bunların düzeni işlemek için kullanılan denetimleri tanımlar. Sınıf uygulayan [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/) gerekli olduğunda arabirimi [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kullanan [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) stratejisi önbelleğe alma. Bu arabirim sınıfı uygulamalıdır belirtir [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/) geri dönüştürüldüğünde hücreler için özel hücre veri döndürmelidir özelliği.
+Bu sınıf, hücrenin içeriğini ve düzenini işlemek için kullanılan denetimleri tanımlar. Sınıfının Implements [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/) gerekli olduğunda arabirimi [ `ListView` ](xref:Xamarin.Forms.ListView) kullanan [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) önbelleğe alma stratejisi. Bu arabirim, sınıf uygulamalıdır belirtir [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/) geri hücreler için özel hücre veri döndürmesi gereken özelliği.
 
-`NativeAndroidCell` Oluşturucusu Şişir `NativeAndroidCell` düzeni ve başlatır `HeadingTextView`, `SubheadingTextView`, ve `ImageView` inflated Düzen denetimlerinde özellikleri. Bu özellikleri depolanan verileri görüntülemek için kullanılan `NativeCell` örneği ile `UpdateCell` her bir özellik değerini ayarlamak için çağrılan yöntem. Ayrıca, [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) kullanan [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) stratejisi, tarafından görüntülenen verileri önbelleğe alma `HeadingTextView`, `SubheadingTextView`, ve `ImageView` özellikleri olabilir güncelleyen `OnNativeCellPropertyChanged` özel Oluşturucu yöntemi.
+`NativeAndroidCell` Oluşturucusu Şişir `NativeAndroidCell` düzeni ve başlatır `HeadingTextView`, `SubheadingTextView`, ve `ImageView` denetimlere inflated düzen özellikleri. Bu özellikler, depolanan verileri görüntülemek için kullanılan `NativeCell` örneği ile `UpdateCell` her bir özellik değerini ayarlamak için çağrılan yöntem. Buna ek olarak, [ `ListView` ](xref:Xamarin.Forms.ListView) kullanan [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) stratejisi, tarafından görüntülenen verileri önbelleğe alma `HeadingTextView`, `SubheadingTextView`, ve `ImageView` özellikleri olabilir güncelleştiren `OnNativeCellPropertyChanged` özel Oluşturucu yöntemi.
 
-Aşağıdaki kod örneğinde düzeni tanımını gösterir `NativeAndroidCell.axml` Düzen dosyası:
+Düzen tanımını aşağıdaki kod örneği gösterir `NativeAndroidCell.axml` Düzen dosyası:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -518,11 +518,11 @@ Aşağıdaki kod örneğinde düzeni tanımını gösterir `NativeAndroidCell.ax
 </RelativeLayout>
 ```
 
-Bu iki bu düzeni belirtir `TextView` kontrol eder ve bir `ImageView` denetim hücrenin içeriği görüntülemek için kullanılır. İki `TextView` denetimleri içinde dikey yönelimli bir `LinearLayout` denetimiyle içinde bulunan tüm denetimler bir `RelativeLayout`.
+Bu düzen, iki belirtir `TextView` denetimleri ve `ImageView` denetim hücrenin içeriğini görüntülemek için kullanılır. İki `TextView` denetimleri içinde dikey yönlendirilmiş bir `LinearLayout` denetimiyle içinde bulunan tüm denetimlerin bir `RelativeLayout`.
 
 ### <a name="creating-the-custom-renderer-on-uwp"></a>UWP üzerinde özel Oluşturucu Oluşturma
 
-Aşağıdaki kod örneğinde UWP için özel Oluşturucu gösterir:
+Aşağıdaki kod örneği, UWP için özel Oluşturucu gösterir:
 
 ```csharp
 [assembly: ExportRenderer(typeof(NativeCell), typeof(NativeUWPCellRenderer))]
@@ -538,9 +538,9 @@ namespace CustomRenderer.UWP
 }
 ```
 
-`GetTemplate` Yöntemi listesindeki verileri her satır için işlenmek üzere hücre geri dönmek için çağrılır. Oluşturduğu bir `DataTemplate` her `NativeCell` ekranda ile görüntülenen örnek `DataTemplate` hücre içeriğini ve görünümü tanımlama.
+`GetTemplate` Veri listesindeki her satır için işlenecek hücrenin döndürülecek yöntemi çağrılır. Oluşturur bir `DataTemplate` her `NativeCell` ile ekranda görüntülenecek örneği `DataTemplate` görünümünü ve hücrenin içeriğini tanımlama.
 
-`DataTemplate` Uygulama düzeyi kaynak sözlükte depolanır ve aşağıdaki kod örneğinde gösterilir:
+`DataTemplate` Uygulama düzeyinde kaynak sözlüğünde depolanır ve aşağıdaki kod örneğinde gösterilir:
 
 ```xaml
 <DataTemplate x:Key="ListViewItemTemplate">
@@ -565,14 +565,14 @@ namespace CustomRenderer.UWP
 </DataTemplate>
 ```
 
-`DataTemplate` Hücre ve düzeni ve görünüm içeriğini görüntülemek için kullanılan denetimleri belirtir. İki `TextBlock` kontrol eder ve bir `Image` denetimi, veri bağlama aracılığıyla hücrenin içeriği görüntülemek için kullanılır. Ayrıca, bir örneğini `ConcatImageExtensionConverter` birleştirmek için kullanılan `.jpg` dosya her görüntü dosya adı uzantısı. Bu sağlar `Image` denetim yüklemek ve olduğunda görüntü işleme `Source` özelliği ayarlanmış.
+`DataTemplate` Hücre ve düzeninin ve görünümünün içeriklerini görüntülemek için kullanılan denetimleri belirtir. İki `TextBlock` denetimleri ve `Image` denetimine veri bağlama aracılığıyla hücrenin içeriğini görüntülemek için kullanılır. Ayrıca, bir örneğini `ConcatImageExtensionConverter` birleştirmek için kullanılan `.jpg` dosya her görüntü dosya adı uzantısı. Bu, sağlar `Image` denetimi, yüklemek ve olduğunda görüntüsünü işlemek `Source` özelliği ayarlanmış.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede için özel Oluşturucu Oluşturma gösterilmiştir bir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) Xamarin.Forms içinde barındırılan [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) denetim. Bu art arda sırasında çağrılan gelen Xamarin.Forms düzeni hesaplamalar durdurur `ListView` kaydırma.
+Bu makalede için özel Oluşturucu Oluşturma gösterilmiştir bir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) bir Xamarin.Forms içinde barındırılan [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) denetimi. Bu Xamarin.Forms Düzen hesaplama sırasında sürekli çağrılmasını durdurur `ListView` kaydırma.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [ListView performansı](~/xamarin-forms/user-interface/listview/performance.md)
+- [ListView performans](~/xamarin-forms/user-interface/listview/performance.md)
 - [CustomRendererViewCell (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)

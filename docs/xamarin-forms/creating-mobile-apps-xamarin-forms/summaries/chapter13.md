@@ -1,197 +1,197 @@
 ---
-title: Bölüm 13 özeti. Bit eşlemler
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 13 özeti. Bit eşlemler'
+title: 13. Bölüm özeti. Bit eşlemler
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: 13. Bölüm özeti. Bit eşlemler'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: d95e801f6a239e894c1f6baa68015659af9eba35
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0f9b9e27afd5dbbf52f3653995470136e794f17b
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241561"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935205"
 ---
-# <a name="summary-of-chapter-13-bitmaps"></a>Bölüm 13 özeti. Bit eşlemler
+# <a name="summary-of-chapter-13-bitmaps"></a>13. Bölüm özeti. Bit eşlemler
 
-Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) öğesi bir bit eşlem görüntüler. Tüm Xamarin.Forms platformlar JPEG, PNG, GIF ve BMP dosya biçimleri için destek.
+Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) öğesi bir bit eşlem görüntüler. Tüm Xamarin.Forms platformlar JPEG, PNG, GIF ve BMP dosyası biçimleri için destek.
 
-Bit eşlemler Xamarin.Forms içinde dört yerlerden getirir:
+Bit eşlemler Xamarin.Forms içinde dört yerlerden gelir:
 
 - Web üzerinden bir URL tarafından belirtilen
-- Katıştırılmış bir kaynak olarak ortak taşınabilir sınıf kitaplığı
-- Katıştırılmış bir kaynak olarak platform uygulama projeleri
-- Bir .NET tarafından başvurulan bir yerden `Stream` dahil olmak üzere, nesne `MemoryStream`
+- Katıştırılmış kaynak olarak ortak taşınabilir sınıf kitaplığı
+- Platform uygulaması projelerinde kaynak olarak gömülü
+- .NET tarafından başvurulabilen bir yerden `Stream` dahil olmak üzere, nesne `MemoryStream`
 
-Bit eşlem kaynakları platform projelerinde platforma özgü işlenirken PCL bit eşlem kaynaklarında platformdan bağımsız.
+Platforma özgü olsa da bit eşlem kaynakları platformu projelerinde platformdan bağımsız, PCL bit eşlem kaynakları.
 
-Bit eşlem ayarlayarak belirtilen [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) özelliği `Image` türünde bir nesneye [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/), bir Özet sınıf üç türevleri:
+Bit eşlem ayarlanarak belirtilir [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) özelliği `Image` türünde bir nesne için [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/), üç türevleri bir Özet sınıf:
 
-- [`UriImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) bir bit eşlem temel web üzerinden erişmek için bir `Uri` nesne kümesine kendi [ `Uri` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.Uri/) özelliği
-- [`FileImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/) bir platform uygulama projesinde depolanan bir bit eşlem erişmek için temel ayarlamak bir klasör ve dosya yolu, [ `File` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FileImageSource.File/) özelliği
-- [`StreamImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.StreamImageSource/) bir .NET kullanarak bir bit eşlem yüklenmesi için `Stream` döndürerek belirtilen nesne bir `Stream` gelen bir `Func` ayarlamak kendi [ `Stream` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StreamImageSource.Stream/) özelliği
+- [`UriImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) temel web üzerinde bir bit eşlem erişmek için bir `Uri` küme nesnesi kendi [ `Uri` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.Uri/) özelliği
+- [`FileImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/) ayarlamak bir klasör ve dosya yolunda dayalı bir platform uygulama projesinde depolanan bir bit eşlem erişmek için kendi [ `File` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FileImageSource.File/) özelliği
+- [`StreamImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.StreamImageSource/) .NET kullanarak bir bit eşlem yükleme `Stream` döndürerek belirtilen nesne bir `Stream` gelen bir `Func` ayarlayın, [ `Stream` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StreamImageSource.Stream/) özelliği
 
-Alternatif olarak (ve daha sık) aşağıdaki statik yöntemlerini kullanabilirsiniz `ImageSource` sınıfı, tüm hangi geri dönüş `ImageSource` nesneler:
+Alternatif olarak (ve daha sık) aşağıdaki statik yöntemlerini kullanabilirsiniz `ImageSource` sınıfı, tüm hangi iade `ImageSource` nesneler:
 
-- [`ImageSource.FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) bir bit eşlem temel web üzerinden erişmek için bir `Uri` nesnesi
-- [`ImageSource.FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) PCL, uygulama içinde katıştırılmış bir kaynağı olarak depolanan bir bit eşlem erişmek veya [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Type/) veya [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Reflection.Assembly/) bir bit eşlem başka bir kaynak derlemede erişmek için
-- [`ImageSource.FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) bir platform uygulama projesinde bir bit eşlem erişmek için
-- [`ImageSource.FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) temel bir bit eşlem yüklenmesi için bir `Stream` nesnesi
+- [`ImageSource.FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) temel web üzerinde bir bit eşlem erişmek için bir `Uri` nesnesi
+- [`ImageSource.FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) PCL, uygulamada bir gömülü kaynak olarak depolanan bir bit eşlem erişmek veya [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Type/) veya [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/System.Reflection.Assembly/) başka bir kaynak derlemedeki bir bit eşlem erişmek için
+- [`ImageSource.FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) bir platform uygulama projesinden bir bit eşlem erişmek için
+- [`ImageSource.FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) temel bir bit eşlem yüklemeye yönelik bir `Stream` nesnesi
 
-Hiçbir sınıfı eşdeğeri yoktur `Image.FromResource` yöntemleri. `UriImageSource` Sınıfı, önbelleğe alınmasını denetleyen gerekiyorsa yararlıdır. `FileImageSource` Sınıfı XAML'de yararlıdır. `StreamImageSource` zaman uyumsuz yüklenmesi için yararlıdır `Stream` , ancak nesneleri `ImageSource.FromStream` uyumludur.
+Hiçbir sınıf eşdeğeri yoktur `Image.FromResource` yöntemleri. `UriImageSource` Sınıfı, önbelleğe almayı denetlemek istiyorsanız kullanışlıdır. `FileImageSource` Sınıfı, XAML içinde kullanışlıdır. `StreamImageSource` zaman uyumsuz yüklenmesi için yararlıdır `Stream` nesneleri, oysa `ImageSource.FromStream` uyumludur.
 
 ## <a name="platform-independent-bitmaps"></a>Platformdan bağımsız bit eşlemler
 
-[ **WebBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode) proje yükleyen bir bit eşlem kullanarak web üzerinden `ImageSource.FromUri`. `Image` Ayarlanır `Content` özelliği `ContentPage`, sayfa boyutu için sınırlı değildir. Bit eşlem'ın boyutu, kısıtlı bir bağımsız olarak `Image` öğe kapsayıcısı boyutunu uzatılabilir ve bit eşlem en büyük boyutuna içinde görüntülenir `Image` bit eşlem'ın en boy oranını koruyarak öğesi. Alanlarının `Image` bit eşlem renkli ile ötesine [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/).
+[ **WebBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode) projesi kullanarak web üzerinde bir bit eşlem yükler `ImageSource.FromUri`. `Image` Ayarlanır `Content` özelliği `ContentPage`, sayfa boyutunu sınırlıdır. Kısıtlanmış bir bit eşleşmemin boyutundan bağımsız olarak `Image` öğe kapsayıcısı boyutunu uzatılabilir ve bit eşlem en büyük boyutuna görüntülenen `Image` eşleşmemin en boy oranını koruyarak öğesi. Alanları `Image` bit eşlem renkli ile ötesinde [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/).
 
-[ **WebBitmapXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml) örnek benzer ancak yalnızca ayarlar `Source` URL'ye özelliği. Dönüştürme tarafından işlenen [ `ImageSourceConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSourceConverter/) sınıfı.
+[ **WebBitmapXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml) örnek benzer, ancak yalnızca ayarlar `Source` URL'si özelliği. Dönüştürme tarafından işlenen [ `ImageSourceConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSourceConverter/) sınıfı.
 
-### <a name="fit-and-fill"></a>Uyum ve doldurma
+### <a name="fit-and-fill"></a>Uygun ve dolgu
 
-Bit eşlem ayarlayarak nasıl uzatılmış denetleyebilirsiniz [ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) özelliği `Image` aşağıdaki üyeleri birine [ `Aspect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Aspect/) numaralandırma:
+Ayarlayarak bit eşlemin nasıl uzatılacağını denetleyebilirsiniz [ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) özelliği `Image` aşağıdaki üyeleri birine [ `Aspect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Aspect/) sabit listesi:
 
-- [`AspectFit`](https://developer.xamarin.com/api/field/Xamarin.Forms.Aspect.AspectFit/): en boy oranı (varsayılan) dikkate alır
-- [`Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.Aspect.Fill/): alan doldurur, en boy oranını uymaz
-- [`AspectFill`](https://developer.xamarin.com/api/type/Xamarin.Forms.Aspect.AspectFill/): alan doldurur, ancak en boy oranı, bit eşlem parçası kırpma tarafından gerçekleştirilen dikkate alır
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit): en boy oranı (varsayılan) uyar
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill): alanı doldurur, en boy oranını kabul etmez
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill): alanı doldurur, ancak en boy oranı, bit eşlem parçası kırparak elde uyar
 
 ### <a name="embedded-resources"></a>Gömülü kaynaklar
 
-Bir bit eşlem dosyası bir PCL veya PCL klasöründe ekleyebilirsiniz. Şablona bir **yapı eylemi** , **EmbeddedResource**. [ **ResourceBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ResourceBitmapCode) örnek nasıl kullanılacağını gösteren `ImageSource.FromResource` dosyası yüklenemiyor. Derleme adı ve ardından isteğe bağlı klasör adı bir nokta ve dosya adı tarafından izlenen bir nokta sonrasında, yönteme geçirilen kaynak adı oluşur.
+Bir PCL veya PCL bir klasörde bir bit eşlem dosyası ekleyebilirsiniz. Ona bir **derleme eylemi** , **EmbeddedResource**. [ **ResourceBitmapCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ResourceBitmapCode) örnek nasıl kullanılacağını gösterir `ImageSource.FromResource` dosyası yüklenemiyor. Derleme adı ve isteğe bağlı klasör adından önce gelen bir nokta ve dosya adı tarafından izlenen bir nokta, sonrasında yönteme geçirilen kaynak adı oluşur.
 
-Program kümeleri `VerticalOptions` ve `HorizontalOptions` özelliklerini `Image` için `LayoutOptions.Center`, hangi yapar `Image` Kısıtlanmamış öğesi. `Image` Ve bit eşlem aynı boyutu:
+Program kümeleri `VerticalOptions` ve `HorizontalOptions` özelliklerini `Image` için `LayoutOptions.Center`, getiren `Image` sınırlandırılmamış öğesi. `Image` Ve bit eşlem aynı boyutta:
 
-- İOS ve Android, `Image` bit eşlem piksel boyutudur. Bit eşlem ve ekran pikseller arasında bire bir eşleme yoktur.
-- Windows çalışma zamanı platformlarda `Image` bit eşlem CİHAZDAN bağımsız birimler piksel boyutudur. Çoğu aygıtlarda birden fazla ekran piksel her bit eşlem piksel kaplar.
+- İOS ve Android üzerinde `Image` bit eşlemin piksel boyutudur. Bit eşlem piksel ve ekran piksel arasında bire bir eşleme yoktur.
+- Windows çalışma zamanı platformları üzerinde `Image` CİHAZDAN bağımsız birimler bit eşlemin piksel boyutudur. Çoğu cihazlarda, her bir bit eşlem piksel birden çok ekran piksel kaplar.
 
-[ **StackedBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap) örnek yerleştiren bir `Image` dikey olarak `StackLayout` XAML'de. Adlı bir işaretleme uzantısı [ `ImageResourceExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs) XAML katıştırılmış kaynağa başvurması için yardımcı olur. Bu sınıf, kaynakları hangi bu derlemesinden yalnızca yükler kitaplığa yerleştirilemez şekilde, makinenin bulunduğu.
+[ **StackedBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap) örnek yerleştiren bir `Image` dikey olarak `StackLayout` XAML içinde. Adlı bir işaretleme uzantısı [ `ImageResourceExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs) XAML katıştırılmış kaynağa başvurması için yardımcı olur. Bu sınıf, BT derlemesinde kaynaklar yalnızca yükleyen bir kitaplıkta yerleştirilemez şekilde, makinenin bulunduğu.
 
 ### <a name="more-on-sizing"></a>Boyutlandırma hakkında daha fazla bilgi
 
 Genellikle, tüm platformlar arasında tutarlı bir şekilde boyutu bit eşlemler için tercih edilir.
-İle denemeler **StackedBitmap**, ayarlayabileceğiniz bir `WidthRequest` üzerinde `Image` dikey öğesinde `StackLayout` boyutu platformları, ancak arasında tutarlı hale getirmek için yalnızca bu teknik kullanılarak boyutunu azaltabilirsiniz.
+Denemeler yapmaya **StackedBitmap**, ayarlayabileceğiniz bir `WidthRequest` üzerinde `Image` dikey öğesinde `StackLayout` boyutu platformları, ancak arasında tutarlı hale getirmek için yalnızca bu tekniği kullanarak boyutunu azaltabilirsiniz.
 
-Ayrıca ayarlayabilirsiniz `HeightRequest` görüntüyü platformlarda tutarlı boyutları, ancak bu teknik yönlülük bit eşlem kısıtlanmış genişliğini sınırlar. Dikey bir görüntüde için `StackLayout`, `HeightRequest` kaçınılmalıdır.
+Ayrıca `HeightRequest` görüntüyü platformlarda tutarlı boyutları, ancak bu tekniği çeşitlikleri kısıtlanmış bit eşlem genişliği sınırlar. İçinde bir yatay görüntü `StackLayout`, `HeightRequest` kaçınılmalıdır.
 
-CİHAZDAN bağımsız birimler telefon genişliği daha geniş bir bit eşlem ile başlamalı ve ayarlamak için en iyi yaklaşımdır `WidthRequest` istenen genişliğe CİHAZDAN bağımsız birimler. Bu, gösterilmiştir [ **DeviceIndBitmapSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DeviceIndBitmapSize) örnek.
+CİHAZDAN bağımsız birimler telefon genişliği daha geniş bir bit eşlem ile başlayan ve ayarlamak için en iyi yaklaşımdır `WidthRequest` istenen genişliğe CİHAZDAN bağımsız birimler. Bu gösterilmiştir [ **DeviceIndBitmapSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DeviceIndBitmapSize) örnek.
 
-[ **MadTeaParty** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/MadTeaParty) Gamze Carroll'ın, Bölüm 7 görüntüler *Wonderland Alice'in Serüvenleri* John Tenniel tarafından özgün çizimler ile:
+[ **MadTeaParty** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/MadTeaParty) Lewis Carroll'ın, Bölüm 7 görüntüler *Wonderland Alice'in Serüvenleri* John Tenniel tarafından özgün çizimler ile:
 
-[![Mad Çay taraf Üçlü ekran](images/ch13fg16-small.png "Mad Hatters Çay taraf kitap metin")](images/ch13fg16-large.png#lightbox "Mad Hatters Çay taraf kitap metin")
+[![Üç ekran görüntüsü mad Çay taraf](images/ch13fg16-small.png "Mad Hatters Çay taraf kitap metin")](images/ch13fg16-large.png#lightbox "Mad Hatters Çay taraf kitap metin")
 
 ### <a name="browsing-and-waiting"></a>Göz atma ve bekleniyor
 
-[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) örnek Xamarin web sitesinde depolanan stok görüntüleri göz atmak kullanıcı izin verir. .NET kullanan `WebRequest` bit eşlemler listesini içeren bir JSON dosyası indirmek için sınıf.
+[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) örnek Xamarin web sitesinde depolanan stok görüntüleri göz atmak kullanıcının sağlar. .NET kullanan `WebRequest` bit eşlemler listesini içeren bir JSON dosyası indirmeniz sınıfı.
 
-Program kullanan bir [ `ActivityIndicator` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/) bir şey olacağına olduğunu belirtmek için. Gibi her bit eşlem'i yüklerken, salt okunur [ `IsLoading` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.IsLoading/) özelliği `Image` olan `true`. `IsLoading` Özelliği yedeklendiği bağlanabilir bir özelliğe göre bu nedenle bir `PropertyChanged` bu özelliği değiştiğinde olay tetiklenir. Program bu olay için bir işleyici ekler ve geçerli ayarını kullanır `IsLoaded` ayarlamak için [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) özelliği `ActivityIndicator`.
+Programın kullandığı bir [ `ActivityIndicator` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/) sorun olup bittiğini olduğunu belirtmek için. Gibi her bir bit eşlem yükleniyor, salt okunur [ `IsLoading` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.IsLoading/) özelliği `Image` olduğu `true`. `IsLoading` Yedeklendiği bağlanabilir bir özelliğe göre bu nedenle bir `PropertyChanged` bu özellik değiştiğinde olay harekete geçirilir. Program bu olaya bir işleyici ekler ve geçerli ayarını kullanan `IsLoaded` ayarlanacak [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) özelliği `ActivityIndicator`.
 
 ## <a name="streaming-bitmaps"></a>Bit eşlemler akış
 
-`ImageSource.FromStream` Yöntemi oluşturur bir `ImageSource` bir .NET tabanlı `Stream`. Yöntemine geçirilen bir `Func` döndürür nesnesi bir `Stream` nesnesi.
+`ImageSource.FromStream` Yöntemi oluşturur bir `ImageSource` bir .NET tabanlı `Stream`. Yönteme geçirilen bir `Func` nesnesi döndüren bir `Stream` nesne.
 
-### <a name="accessing-the-streams"></a>Akışlar erişme
+### <a name="accessing-the-streams"></a>Akışları olarak erişme
 
-[ **BitmapStreams** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/BitmapStreams) örnek nasıl kullanılacağını gösteren `ImaageSource.FromStream` yöntemi katıştırılmış bir kaynağı depolanan bir bit eşlem yük ve web üzerinden bir bit eşlem'i yüklemek için.
+[ **BitmapStreams** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/BitmapStreams) örnek nasıl kullanılacağını gösterir `ImaageSource.FromStream` yöntemi bir gömülü kaynak depolanan bir bit eşlem yük ve web üzerinde bir bit eşlem yüklenemiyor.
 
-### <a name="generating-bitmaps-at-run-time"></a>Bit eşlemler çalışma zamanında oluşturma
+### <a name="generating-bitmaps-at-run-time"></a>Çalışma zamanında bit eşlem oluşturma
 
-Kodda oluşturmak ve ardından depolamak kolay sıkıştırılmamış BMP dosyası biçiminde tüm Xamarin.Forms platformlarını destekleyen bir `MemoryStream`. Bu teknik algorithmically çalışma zamanında bit eşlemler oluşturma uygulanan gibi verir [ `BmpMaker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs) sınıfını **Xamrin.FormsBook.Toolkit** kitaplığı.
+Kod oluşturun ve ardından depolamak kolayca sıkıştırılmamış BMP dosyası biçimi tüm Xamarin.Forms platformları destekleyecek bir `MemoryStream`. Bu teknik algorithmically çalışma zamanında bit eşlemler oluşturma uygulanan gibi sağlar [ `BmpMaker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs) sınıfını **Xamrin.FormsBook.Toolkit** kitaplığı.
 
-"Kendin" [ **DiyGradientBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DiyGradientBitmap) kullanımını gösteren örnek `BmpMaker` bir bit eşlem gradyan bir görüntü oluşturmak için.
+"Kendin" [ **DiyGradientBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DiyGradientBitmap) örnek, kullanımını gösterir `BmpMaker` gradyan bir görüntü ile bir bit eşlem oluşturmak için.
 
-## <a name="platform-specific-bitmaps"></a>Platforma özgü bit eşlemler
+## <a name="platform-specific-bitmaps"></a>Platforma özel bit eşlemler
 
-Tüm Xamarin.Forms platformlar, bit eşlemler platform uygulama derlemelerde depolamaya izin ver. Xamarin.Forms uygulaması tarafından alınan, bu platform bit eşlemler türlerinin [ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/). Bunlar için kullanın:
+Tüm Xamarin.Forms platformlar, bit eşlemler platform uygulaması derlemelerde depolamaya izin ver. Xamarin.Forms uygulaması tarafından alınan, bu platform bit eşlemler türlerinin [ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/). Bunlar için kullanın:
 
 - [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) özelliği [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/)
 - [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) özelliği [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
 - [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) özelliği `Button`
 
-Platform derlemesi zaten simgeler ve başlangıç ekranında için bit eşlemler içerir:
+Platform derlemeleri, simgeler ve Karşılama ekranları için bit eşlemler zaten içerir:
 
-- İOS projesinde içinde **kaynakları** klasörü
+- İOS projesi içerisinde de **kaynakları** klasörü
 - Android projede alt **kaynakları** klasörü
-- Windows projelerinde içinde **varlıklar** klasörü (Windows platformları bit eşlemler klasöre kısıtlamaz rağmen)
+- Windows projelerinde de **varlıklar** klasörü (Windows platformları bit eşlemler klasöre kısıtlamaz rağmen)
 
-[ **PlatformBitmaps** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/PlatformBitmaps) örnek kod platform uygulama projelerden simge görüntülemek için kullanır.
+[ **PlatformBitmaps** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/PlatformBitmaps) örnek platform uygulama projelerinden bir simge görüntülemek için kod kullanır.
 
 ### <a name="bitmap-resolutions"></a>Bit eşlem çözümleri
 
-Tüm platformlar farklı cihaz çözünürlükleri için görüntüleri bit eşlem birden fazla sürümünü depolamaya izin ver. Çalışma zamanında uygun sürüm ekranın aygıt çözünürlüğü göre yüklenir.
+Tüm platformlar, bit eşlem resimleri farklı cihaz çözünürlüğü için birden çok sürümünü saklama izin verir. Çalışma zamanında doğru sürüm ekranın cihaz çözünürlüğü göre yüklenir.
 
-İos'ta, bu bit eşlemler filename ekini tarafından ayrılır:
+İos'ta bu bit eşlemler, dosya adının sonuna bir son ek olarak ayrılır:
 
-- Sonek 160 DPI cihazlar (CİHAZDAN bağımsız birim 1 piksel)
-- '@2x' soneki 320 DPI cihazlar (DIU 2 piksel)
-- '@3x' soneki 480 DPI cihazlar (DIU 3 piksel)
+- 160 DPI cihazlar (CİHAZDAN bağımsız birim 1 piksel) için bir sonek yok
+- '@2x' soneki 320 DPI cihazlar (DIU için 2 piksel cinsinden)
+- '@3x' soneki 480 DPI cihazlar (DIU için 3 piksel cinsinden)
 
-Bir inç kare olarak görüntülenecek hedeflenen bir bit eşlem üç sürümlerde var:
+Bir inç kare olarak gösterilmesi hedeflenen bir bit eşlem üç sürümde var:
 
 - Görüntüm.jpg, 160 piksel kare
-- MyImage@2x.jpg kare 320 piksel
-- MyImage@3x.jpg kare 480 piksel
+- MyImage@2x.jpg 320 piksel kare
+- MyImage@3x.jpg 480 piksel kare
 
-Program bu bitmap Görüntüm.jpg olarak bakın, ancak uygun sürüm çalışma zamanında ekran çözünürlüğü üzerinde temel alınır. Kısıtlanmamış, bit eşlem her zaman 160 CİHAZDAN bağımsız birimler işlemez.
+Program bu bit eşlem Görüntüm.jpg olarak başvurmak ancak doğru sürümünün çalışma zamanında ekran çözünürlüğüne göre alınır. Sınırlandırılmamış, bit eşlem 160 CİHAZDAN bağımsız birimler her zaman işlenir.
 
-Android için bit eşlemler çeşitli alt klasörlerinde depolanan **kaynakları** klasörü:
+Android için bit eşlemler çeşitli alt klasörler içinde depolanan **kaynakları** klasörü:
 
-- drawable-ldpi (düşük DPI) 120 DPI cihazlar (DIU; 0,75 piksel)
+- drawable-ldpi (düşük DPI) 120 DPI cihazlar (DIU 0.75 piksel)
 - drawable-mdpi (Orta) 160 DPI cihazlar (DIU 1 piksel)
-- drawable-hdpi (yüksek) 240 DPI cihazlar (DIU için 1,5 piksel cinsinden)
-- drawable-xhdpi (çok yüksek) 320 DPI cihazlar (DIU 2 piksel)
-- drawable-xxhdpi (fazladan çok yüksek) 480 DPI cihazlar (DIU 3 piksel)
-- drawable-xxxhdpi (üç ek highs) 640 DPI cihazlar (DIU 4 piksel)
+- drawable-hdpı (yüksek) 240 DPI cihazlar (DIU için 1,5 piksel cinsinden)
+- drawable-xhdpi (çok yüksek) 320 DPI cihazlar (DIU için 2 piksel cinsinden)
+- drawable-xxhdpi (çok çok yüksek) 480 DPI cihazlar (DIU için 3 piksel cinsinden)
+- drawable-xxxhdpi (üç ek verildiği üzere Yükseliş) 640 DPI cihazlar (DIU için 4 piksel cinsinden)
 
-Bir kare inç işlenmesine yönelik bir bit eşlem için bit eşlem'in çeşitli sürümlerine aynı adlı ancak farklı bir boyutu vardır ve bu klasörlerde depolanan:
+Bir kare inç işlenmesine yönelik bir bit eşlem bit eşlem çeşitli sürümlerini aynı ada ancak farklı bir boyuta sahip olur ve bu klasörlerde depolanır:
 
-- drawable-ldpi/Görüntüm.jpg, kare 120 piksel
+- drawable-ldpi/Görüntüm.jpg, 120 piksel kare
 - drawable-mdpi/Görüntüm.jpg, 160 piksel kare
-- drawable-hdpi/Görüntüm.jpg, kare 240 piksel
+- drawable-hdpı/Görüntüm.jpg, kare 240 piksel
 - drawable-xhdpi/Görüntüm.jpg, 320 piksel kare
-- drawable-xxhdpi/Görüntüm.jpg, kare 480 piksel
-- drawable-xxxhdpi/Görüntüm.jpg, kare 640 piksel
+- drawable-xxhdpi/Görüntüm.jpg, 480 piksel kare
+- drawable-xxxhdpi/Görüntüm.jpg, 640 piksel kare
 
-Bit eşlem her zaman 160 CİHAZDAN bağımsız birimler işlemez. (Standart Xamarin.Forms çözüm şablonu yalnızca hdpi, xhdpi ve xxhdpi klasörleri içerir.)
+Bit eşlem 160 CİHAZDAN bağımsız birimler her zaman işlenir. (Standart Xamarin.Forms çözüm şablonu yalnızca hdpı xhdpi ve xxhdpi klasörleri içerir.)
 
-Windows çalışma zamanı projeleri, CİHAZDAN bağımsız birim başına piksel cinsinden ölçekleme oranı yüzde olarak örneğin oluşan şema adlandırma bir bit eşlem destekler:
+Windows çalışma zamanı projeleri bir bit eşlem adlandırma oluşan bir Ölçeklendirme çarpanı piksel CİHAZDAN bağımsız birim başına yüzde olarak örneğin düzenini destekler:
 
-- MyImage.scale-200.jpg, 320 piksel kare
+- MyImage.scale 200.jpg, 320 piksel kare
 
-Yalnızca bazı yüzdeleri geçerlidir. Bu kitap örnek programlar yalnızca görüntülerle dahil **ölçek-200** sonekleri ancak dahil geçerli Xamarin.Forms çözümünü şablonları **ölçek 100**, **ölçek 125**, **ölçek 150**, ve **ölçek 400**.
+Yalnızca bazı yüzdeleri geçerlidir. Bu kitap için örnek programlardan ile görüntüleri dahil **ölçek 200** sonekleri, ancak geçerli Xamarin.Forms çözüm şablonları dahil **ölçek 100**, **ölçek 125**, **ölçek-150**, ve **ölçek 400**.
 
-Bit eşlemler platform projelerine eklerken **yapı eylemi** olmalıdır:
+Bit eşlemler platform projelere eklerken **derleme eylemi** olmalıdır:
 
 - iOS: **BundleResource**
 - Android: **AndroidResource**
-- Windows çalışma zamanı: **içeriği**
+- Windows çalışma zamanı: **içerik**
 
-[ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap) örnek oluşan iki düğmesi gibi nesneler oluşturur `Image` öğeleriyle bir `TapGestureRecognizer` yüklü. Nesnelerin tek inç kare olması amaçlanmıştır. `Source` Özelliği `Image` kullanılarak ayarlanan `OnPlatform` ve `On` farklı dosya adları platformlarda başvurmak için nesneleri. Bit eşlem görüntüleri hangi boyutu bit eşlem alınır ve işlenen görebilmeleri piksel boyutlarını gösteren numaralarını içerir.
+[ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap) örnek oluşan iki düğme benzeri nesneleri oluşturur `Image` öğeleri ile bir `TapGestureRecognizer` yüklü. Nesneleri bir inç kare olması amaçlanmıştır. `Source` Özelliği `Image` kullanılarak ayarlanan `OnPlatform` ve `On` platformlarda farklı olabilecek dosya adlarını başvurmak için nesne. Bit eşlem resimleri hangi boyutu bit eşlem alınır ve işlenen görebilmeniz için bunların piksel boyutunu belirten bir sayı içerir.
 
 ### <a name="toolbars-and-their-icons"></a>Araç çubukları ve bunların simgeleri
 
-Platforma özgü bit eşlemler birincil kullanımlarını biri ekleyerek oluşturulan Xamarin.Forms araç [ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) nesneleri [ `ToolbarItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.ToolbarItems/) tarafındantanımlanankoleksiyonu`Page`. `ToobarItem` türetilen [ `MenuItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/) aldığı bazı özellikleri devralır.
+Platforma özgü bit eşlem birincil kullanımlarından biridir ekleyerek oluşturulur Xamarin.Forms araç [ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) nesneleri için [ `ToolbarItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.ToolbarItems/) tarafındantanımlanankoleksiyonu`Page`. `ToobarItem` öğesinden türetilen [ `MenuItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/) aldığı bazı özellikleri devralır.
 
-En önemli `ToolbarItem` özellikleri şunlardır:
+En önemli `ToolbarItem` özellikleri:
 
 - [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Text/) platforma bağlı olarak görünebilir metin ve `Order`
-- [`Icon`](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) tür `FileImageSource` platformuna bağlı olarak görünebilir görüntüsünün ve `Order`
-- [`Order`](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Order/) tür [ `ToolbarItemOrder` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItemOrder/), numaralandırması üç üyeleriyle bir [ `Default` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ToolbarItemOrder.Default/), [ `Primary` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ToolbarItemOrder.Primary/), ve [ `Secondary` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ToolbarItemOrder.Secondary/).
+- [`Icon`](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) tür `FileImageSource` platforma bağlı olarak görünebilir görüntüsü ve `Order`
+- [`Order`](xref:Xamarin.Forms.ToolbarItem.Order) tür [ `ToolbarItemOrder` ](xref:Xamarin.Forms.ToolbarItemOrder), numaralandırması üç üyesiyle bir [ `Default` ](xref:Xamarin.Forms.ToolbarItemOrder.Default), [ `Primary` ](xref:Xamarin.Forms.ToolbarItemOrder.Primary), ve [ `Secondary` ](xref:Xamarin.Forms.ToolbarItemOrder.Secondary).
 
-Sayısı `Primary` öğeleri üç veya dört ile sınırlı. Eklemeniz bir `Text` tüm öğeler için ayarlama. Çoğu platformda, yalnızca için `Primary` öğeleri gerektiren bir `Icon` ancak Windows 8.1 gerektirir bir `Icon` tüm öğeler için. Simgeler kare 32 CİHAZDAN bağımsız birimler olmalıdır. `FileImageSource` Platforma özgü türünü belirtir.
+Sayısını `Primary` öğeleri üç veya dört sınırlı olmalıdır. Eklemeniz bir `Text` tüm öğeler için ayarlama. Çoğu platformda, yalnızca `Primary` öğelerini gerektirmek bir `Icon` Windows 8.1 gerektirir, ancak bir `Icon` tüm öğeler için. Simgeleri 32 CİHAZDAN bağımsız birimler kare olmalıdır. `FileImageSource` Türü, platforma özgü olduğunu gösterir.
 
-`ToolbarItem` Ateşlenir bir [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) dokunduğunuz, benzer olay bir `Button`. `ToolbarItem` Ayrıca destekler [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Command/) ve [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.CommandParameter/) özellikleri genellikle MVVM bağlantılı olarak kullanılır. (Bkz [Bölüm 18, MVVM](chapter18.md)).
+`ToolbarItem` Ateşlenir bir [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) dokunduğunuzda, benzer olay bir `Button`. `ToolbarItem` Ayrıca destekler [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Command/) ve [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.CommandParameter/) özellikleri genellikle MVVM bağlantılı olarak kullanılır. (Bkz [Bölüm 18, MVVM](chapter18.md)).
 
-İOS ve Android gerektiren bir araç çubuğu görüntüleyen bir sayfa olmasını bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) veya tarafından gittiğinizde sayfası bir `NavigationPage`. [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) program kümeleri `MainPage` özelliği, `App` sınıfının [ `NavigationPage` Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.NavigationPage.NavigationPage/p/Xamarin.Forms.Page/) ile bir `ContentPage` bağımsız değişken, bir araç çubuğu oluşturma ve olay işleyicisi gösterir.
+Hem iOS hem de Android araç çubuğunu görüntüleyen bir sayfa olmasını gerektiren bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) veya bir sayfa tarafından gittiğinizde bir `NavigationPage`. [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) program kümeleri `MainPage` özelliği, `App` sınıfının [ `NavigationPage` Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.NavigationPage.NavigationPage/p/Xamarin.Forms.Page/) ile bir `ContentPage` bağımsız değişken, bir araç çubuğu oluşturma ve olay işleyicisini gösterir.
 
-### <a name="button-images"></a>Düğme resimlerini
+### <a name="button-images"></a>Düğme görüntüleri
 
-Ayrıca platforma özgü bit eşlemler ayarlamak için kullanabileceğiniz [ `Image` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Image/) özelliği `Button` 32 CİHAZDAN bağımsız birimler kare tarafından gösterildiği gibi bir bit eşlem için [ **ButtonImage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) örnek.
+Ayarlamak için platforma özel bit eşlemler kullanabilirsiniz [ `Image` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Image/) özelliği `Button` 32 CİHAZDAN bağımsız birimler karenin tarafından gösterildiği gibi bir bit eşlemi [ **ButtonImage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) örnek.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bölüm 13 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
-- [Bölüm 13 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
+- [13. Bölüm tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
+- [13. Bölüm örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 - [Görüntülerle Çalışma](~/xamarin-forms/user-interface/images.md)

@@ -1,101 +1,101 @@
 ---
-title: Bölüm 14 özeti. Mutlak düzeni
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 14 özeti. Mutlak düzeni'
+title: Bölüm 14 özeti. Mutlak Düzen
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: Bölüm 14 özeti. Mutlak Düzen'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b8fe8f8bb0ba3204a312f3d91bc59b8fa3f7c03a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 2dd94d5fb8eecc5cf4a3e376bc67c2cb6afb153b
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241409"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935445"
 ---
-# <a name="summary-of-chapter-14-absolute-layout"></a>Bölüm 14 özeti. Mutlak düzeni
+# <a name="summary-of-chapter-14-absolute-layout"></a>Bölüm 14 özeti. Mutlak Düzen
 
-Gibi `StackLayout`, [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) türetilen `Layout<View>` ve devralan bir `Children` özelliği. `AbsoluteLayout` alt öğelerini ve isteğe bağlı olarak boyutlarına konumlarını belirtmek Programcı gerektiren bir Düzen sistemine uygular. Konumu alt sol üst köşesindeki göre sol üst köşesindeki tarafından belirtilen `AbsoluteLayout` CİHAZDAN bağımsız birimler. `AbsoluteLayout` Ayrıca bir orantılı konumlandırma ve boyutlandırma özelliğini uygular.
+Gibi `StackLayout`, [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) türetildiği `Layout<View>` ve devralan bir `Children` özelliği. `AbsoluteLayout` alt öğeleri ve isteğe bağlı olarak, bunların boyutu konumlarını belirtmek Programcı gerektiren bir düzen sistemi uygular. Konumu alt sol üst köşesine göre sol üst köşesinin tarafından belirtilen `AbsoluteLayout` CİHAZDAN bağımsız birimler. `AbsoluteLayout` Ayrıca bir orantılı konumlandırma ve boyutlandırma özelliği uygular.
 
-`AbsoluteLayout` Programcı alt boyutuna yalnızca uygulayabilir yapılırken kullanılacak özel amaçlı düzen sistemi olarak düşünülmelidir (örneğin, `BoxView` öğeleri) veya ne zaman öğenin boyutunu etkilemez diğer alt öğeleri konumlandırma. `HorizontalOptions` Ve `VerticalOptions` özelliklerine sahip alt üzerinde hiçbir etkisi bir `AbsoluteLayout`.
+`AbsoluteLayout` yalnızca Programcı alt öğeleri üzerinde bir boyut düşüşüne neden olabilir durumlarda kullanılacak bir özel amaçlı düzen sistemi olarak düşünülmelidir (örneğin, `BoxView` öğeleri) veya ne zaman öğenin boyutunu etkilemez diğer alt öğelerini konumlandırma. `HorizontalOptions` Ve `VerticalOptions` özelliklerine sahip alt öğeleri üzerinde hiçbir etkisi bir `AbsoluteLayout`.
 
-Bu bölümde Ayrıca, önemli özelliklerinden tanıtır *iliştirilmiş bağlanabilir Özellikler* bir sınıf tarafından tanımlanan özellikler izin ver (Bu durumda `AbsoluteLayout`) başka bir sınıfa bağlı olması için (bir alt `AbsoluteLayout`).
+Bu bölümde, önemli bir özelliği de tanıtır *bağlanabilir özellikler bağlı* izin veren bir sınıf içinde tanımlanan özellikler (Bu durumda `AbsoluteLayout`) için başka bir sınıf eklenmesi (alt `AbsoluteLayout`).
 
 ## <a name="absolutelayout-in-code"></a>Kodda AbsoluteLayout
 
-Alt öğesi olarak ekleyebileceğiniz `Children` koleksiyonu bir `AbsoluteLayout` standart kullanarak [ `Add` ](https://developer.xamarin.com/api/member/System.Collections.Generic.ICollection%3CT%3E.Add/p/T/) yöntemi, ancak `AbsoluteLayout` ayrıca genişletilmiş sağlar [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/) belirtmenize olanak tanır yöntemi bir [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/). Başka bir [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/) gerektirdiğine yalnızca bir [ `Point` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Point/), bu durumda alt Kısıtlanmamış ve kendisini boyutları.
+Alt öğesi olarak ekleyebileceğiniz `Children` koleksiyonunu bir `AbsoluteLayout` standardını kullanarak [ `Add` ](https://developer.xamarin.com/api/member/System.Collections.Generic.ICollection%3CT%3E.Add/p/T/) yöntemi, ancak `AbsoluteLayout` ayrıca genişletilmiş sağlar [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/) belirtmenize izin veren bir yönteme bir [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/). Başka bir [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/) gerektirdiğine yalnızca bir [ `Point` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Point/), bu durumda alt sınırlandırılmamış ve kendisini boyutları.
 
-Oluşturabileceğiniz bir `Rectangle` değerini bir [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) dört değer gerektiren &mdash; üst göre alt sol üst köşesindeki konumunu belirten ilk iki ve belirten ikinci iki Çocuğunuzun boyutu. Veya kullanabileceğiniz bir [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/) gerektiren bir `Point` ve [ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/) değeri.
+Oluşturabileceğiniz bir `Rectangle` değerini bir [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) dört değer gerektiren &mdash; üst öğesiyle ilişkili alt öğenin sol üst köşesinin konumunu gösteren ilk iki ve gösteren ikinci iki çocuk boyutu. Ya da bir [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/) gerektiren bir `Point` ve [ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/) değeri.
 
-Bunlar `Add` yöntemleri gösterilen içinde [ **AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo), hangi konumları `BoxView` kullanarak öğeleri `Rectangle` değerleri ve bir `Label` yalnızca bir kullanaraköğe`Point` değeri.
+Bu `Add` yöntemleri gösterilen içinde [ **AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo), hangi konumları `BoxView` kullanarak öğeleri `Rectangle` değerleri ve `Label` bir kullanaraköğe`Point` değeri.
 
-[ **ChessboardFixed** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardFixed) örnek kullanan 32 `BoxView` chessboard düzeni oluşturmak için öğeleri. Program sunar `BoxView` 35 birimleri kare öğeleri bir sabit kodlanmış boyutu. `AbsoluteLayout` Sahip kendi `HorizontalOptions` ve `VerticalOptions` kümesine `LayoutOptions.Center`, hangi nedenler `AbsoluteLayout` 280 birimleri kare toplam boyutunu sağlamak için.
+[ **ChessboardFixed** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardFixed) örnek kullanımları 32 `BoxView` chessboard düzeni oluşturmak için öğeleri. Program sunar `BoxView` 35 birimleri kare öğeleri sabit olarak kodlanmış boyutu. `AbsoluteLayout` Sahip kendi `HorizontalOptions` ve `VerticalOptions` kümesine `LayoutOptions.Center`, hangi nedenleri `AbsoluteLayout` 280 birimleri kare toplam boyutu için.
 
 ## <a name="attached-bindable-properties"></a>Ekli bağlanabilir Özellikler
 
-Konum ve isteğe bağlı olarak, bir alt öğesi boyutunu ayarlamak mümkündür bir `AbsoluteLayout` için eklendikten sonra `Children` statik yöntemini kullanarak koleksiyonu [ `AbsoluteLayout.SetLayoutBounds` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.SetLayoutBounds/p/Xamarin.Forms.BindableObject/Xamarin.Forms.Rectangle/). İlk bağımsız değişken alt olan; İkinci bir `Rectangle` nesnesi. Alt kendisini yatay ve/veya dikey genişlik ve yükseklik değerleri ayarlayarak boyutları olduğunu belirtebilirsiniz [ `AbsoluteLayout.AutoSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/) sabit.
+Konum ve isteğe bağlı olarak bir alt öğesi boyutunu ayarlamak da mümkündür bir `AbsoluteLayout` için eklendikten sonra `Children` statik yöntemini kullanarak koleksiyon [ `AbsoluteLayout.SetLayoutBounds` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.SetLayoutBounds/p/Xamarin.Forms.BindableObject/Xamarin.Forms.Rectangle/). Alt ilk bağımsız değişken olan; İkinci bir `Rectangle` nesne. Alt kendisi yatay olarak ve/veya dikey olarak genişlik ve yükseklik değerleri ayarlayarak boyutları gerektiğini belirtebileceğiniz [ `AbsoluteLayout.AutoSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/) sabit.
 
-[ **ChessboardDynamic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardDynamic) örnek yerleştirmelerin `AbsoluteLayout` içinde bir `ContentView` ile bir `SizeChanged` çağrılacak işleyici `AbsoluteLayout.SetLayoutBounds` mümkün olduğu kadar büyük olmak üzere tüm alt öğeleri üzerinde.  
+[ **ChessboardDynamic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardDynamic) örnek puts `AbsoluteLayout` içinde bir `ContentView` ile bir `SizeChanged` çağrılacak işleyici `AbsoluteLayout.SetLayoutBounds` olabildiğince büyük olacak şekilde tüm alt öğeleri üzerinde.  
 
-Ekli bağlanabilirse özellik, `AbsoluteLayout` tanımlayan statik salt okunur alan türü `BindableProperty` adlı [ `AbsoluteLayout.LayoutBoundsProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty/). Statik `AbsoluteLayout.SetLayoutBounds` yöntemi çağrılarak uygulanır `SetValue` ile alt `AbsoluteLayout.LayoutBoundsProperty`. Alt iliştirilmiş bağlanabilirse özelliği ve değerini depolandığı bir sözlük içerir. Yerleşim sırasında `AbsoluteLayout` çağırarak bu değeri elde edebileceğiniz [ `AbsoluteLayout.GetLayoutBounds` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.GetLayoutBounds/p/Xamarin.Forms.BindableObject/), ile uygulanan bir `GetValue` çağırın.
+Ekli bağlanılabilir özellik, `AbsoluteLayout` tanımlar statik salt okunur alan türü `BindableProperty` adlı [ `AbsoluteLayout.LayoutBoundsProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty/). Statik `AbsoluteLayout.SetLayoutBounds` yöntemi çağrılarak gerçekleştirilir `SetValue` ile alt `AbsoluteLayout.LayoutBoundsProperty`. Alt ekli bağlanılabilir özellik ve değerinin depolandığı bir sözlük içerir. Yerleşim sırasında `AbsoluteLayout` değeri çağırarak elde edebileceğiniz [ `AbsoluteLayout.GetLayoutBounds` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.GetLayoutBounds/p/Xamarin.Forms.BindableObject/), ile uygulanan bir `GetValue` çağırın.
 
 ## <a name="proportional-sizing-and-positioning"></a>Orantılı boyutlandırma ve konumlandırma
 
-`AbsoluteLayout` orantılı boyutlandırma ve özellik yerleştirme uygular. Sınıf bir ikinci iliştirilmiş bağlanabilirse özelliği tanımlayan [ `LayoutFlagsProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty/), ilgili statik yöntemleriyle [ `AbsoluteLayout.SetLayoutFlags` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.SetLayoutFlags/p/Xamarin.Forms.BindableObject/Xamarin.Forms.AbsoluteLayoutFlags/) ve [ `AbsoluteLayout.GetLayoutFlags` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.GetLayoutFlags/p/Xamarin.Forms.BindableObject/).
+`AbsoluteLayout` orantılı boyutlandırma ve konumlandırma özelliğini uygular. Sınıfı bir ikinci iliştirilmiş bağlanabilir özelliği tanımlayan [ `LayoutFlagsProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty/), ilgili statik yöntemleriyle [ `AbsoluteLayout.SetLayoutFlags` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.SetLayoutFlags/p/Xamarin.Forms.BindableObject/Xamarin.Forms.AbsoluteLayoutFlags/) ve [ `AbsoluteLayout.GetLayoutFlags` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.GetLayoutFlags/p/Xamarin.Forms.BindableObject/).
 
-Bağımsız değişkeni `AbsoluteLayout.SetLayoutFlags` ve dönüş değerini `AbsoluteLayout.GetLayoutFlags` türünde bir değer [ `AbsoluteLayoutFlags` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayoutFlags/), aşağıdaki üyeleri olan bir numaralandırma:
+Bağımsız değişkeni `AbsoluteLayout.SetLayoutFlags` ve dönüş değeri `AbsoluteLayout.GetLayoutFlags` türü değeri [ `AbsoluteLayoutFlags` ](xref:Xamarin.Forms.AbsoluteLayoutFlags), aşağıdaki üyeleri olan bir sabit listesi:
 
-- [`None`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.None/) (0 değerine eşit)
-- [`XProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.XProportional/) (1)
-- [`YProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.YProportional/) (2)
-- [`PositionProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.PositionProportional/) (3)
-- [`WidthProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.WidthProportional/) (4)
-- [`HeightProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.HeightProportional/) (8)
-- [`SizeProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.SizeProportional/) (12)
-- [`All`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.All/) (\xFFFFFFFF)
+- [`None`](xref:Xamarin.Forms.AbsoluteLayoutFlags.None) (0 eşit)
+- [`XProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.XProportional) (1)
+- [`YProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.YProportional) (2)
+- [`PositionProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.PositionProportional) (3)
+- [`WidthProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.WidthProportional) (4)
+- [`HeightProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.HeightProportional) (8)
+- [`SizeProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.SizeProportional) (12)
+- [`All`](xref:Xamarin.Forms.AbsoluteLayoutFlags.All) (\xFFFFFFFF)
 
-C# bit düzeyinde OR işleci bunlarla birleştirebilirsiniz.
+C# bit düzeyinde OR işleci ile birleştirebilirsiniz.
 
-Bu bayrak kümesi belirli özelliklerini `Rectangle` konumu ve alt boyutu için kullanılan düzeni sınırları yapısı orantılı olarak yorumlanır.
+Bu bayrakları ayarlanmış belirli özellikleri `Rectangle` getirin ve alt boyut için kullanılan Düzen sınırları yapısı orantılı olarak yorumlanır.
 
-Zaman `WidthProportional` bayrağı ayarlandığında, bir `Width` alt aynı genişlikte 1 anlamına gelir değerini `AbsoluteLayout`. Benzer bir yaklaşım yüksekliği için kullanılır.
+Zaman `WidthProportional` bayrağı ayarlandığında, bir `Width` değeri aynı genişlikte alt olan 1 anlamına gelir `AbsoluteLayout`. Yüksekliğini benzer bir yaklaşım kullanılır.
 
-Orantılı konumlandırma ve boyutunu dikkate alır. Zaman `XProportional` bayrağı ayarlandığında, `X` özelliği `Rectangle` düzeni sınırları doğru orantılıdır. Bir alt kenarı sol 0 değeri anlamına gelir sol kenarı konumlandırılmış `AbsoluteLayout`, ancak bir konum 1 anlamına gelir çocuk sağ kenarı sağ kenarına konumlandırıldı `AbsoluteLayout`, sağ kenarının ötesine değil `AbsoluteLayout` expec olabileceği gibi t. Bir `X` 0,5 özelliğinin merkezleri yatay içinde alt `AbsoluteLayout`.
+Orantılı konumlandırma boyutu dikkate alır. Zaman `XProportional` bayrağı ayarlandığında, `X` özelliği `Rectangle` Düzen sınırları orantılı. Bir alt kenarı sola 0 değeri anlamına gelir sol ucuna konumlandırılmış `AbsoluteLayout`, ancak 1 anlamına gelir alt öğenin sağ kenarı sağ ucuna konumlandırılmış bir konuma `AbsoluteLayout`, sağ kenarının ötesine değil `AbsoluteLayout` expec olabileceği gibi t. Bir `X` 0,5 özelliği merkezleri yatay içinde alt `AbsoluteLayout`.
 
 [ **ChessboardProportional** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardProportional) örnek orantılı boyutlandırma ve konumlama kullanımını gösterir.
 
 ## <a name="working-with-proportional-coordinates"></a>Orantılı koordinatları ile çalışma
 
-Bazı durumlarda, farklı bir şekilde nasıl şu uygulanan orantılı konumlandırma düşünmek daha kolay `AbsoluteLayout`. Orantılı koordinatları ile çalışmayı tercih burada bir `X` özelliği 1'in sağ köşesine karşı çocuğun sol kenarı (sağ kenarı yerine) konumlandırır `AbsoluteLayout`.
+Bazı durumlarda, farklı bir şekilde nasıl öğesinde uygulanır orantılı konumlandırma düşünme daha kolay bir şekilde `AbsoluteLayout`. Orantılı koordinatları ile çalışmak tercih edebilirsiniz burada bir `X` 1 özelliğini alt öğenin sol kenarı (sağ kenarı yerine) karşı sağ kenarında konumlandırır `AbsoluteLayout`.
 
-Bu alternatif konumlandırma düzeni "kesirli alt koordinatları." çağrılabilir Kesirli alt koordinatları için gerekli düzeni sınırları dönüştürebilir `AbsoluteLayout` aşağıdaki formülü kullanarak:
+Bu alternatif konumlandırma Düzen "kesirli alt koordinat." çağrılabilir Gerekli yerleşimi sınırları kesirli alt koordinatlarından dönüştürebilirsiniz `AbsoluteLayout` aşağıdaki formülü kullanarak:
 
 layoutBounds.X = (fractionalChildCoordinate.X / (1 - layoutBounds.Width))
 
 layoutBounds.Y = (fractionalChildCoordinate.Y / (1 - layoutBounds.Height))
 
-[ **ProportionalCoordinateCalc** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/PropCoordCalc) örnek bu gösterir.
+[ **ProportionalCoordinateCalc** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/PropCoordCalc) örnek bunu gösterir.
 
 ## <a name="absolutelayout-and-xaml"></a>AbsoluteLayout ve XAML
 
-Kullanabileceğiniz bir `AbsoluteLayout` XAML'de ekli bağlanabilir özelliklerini ve alt öğelerinin bir `AbsoluteLayout` öznitelik değerleri kullanılarak `AbsoluteLayout.LayoutBounds` ve `AbsoluteLayout.LayoutFlags`. Bu, gösterilmiştir [ **AbsoluteXamlDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteXamlDemo) ve [ **ChessboardXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardXaml) örnekleri. İkinci programı 32 içeren `BoxView` öğeleri ancak kullanan bir örtük `Style` içeren `AbsoluteLayout.LayoutFlags` aşağıya doğru en az biçimlendirme tutmak için özellik.
+Kullanabileceğiniz bir `AbsoluteLayout` XAML içinde ve ekli bağlanabilir özellikler üzerinde alt bir `AbsoluteLayout` öznitelik değerleri kullanarak `AbsoluteLayout.LayoutBounds` ve `AbsoluteLayout.LayoutFlags`. Bu gösterilmiştir [ **AbsoluteXamlDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteXamlDemo) ve [ **ChessboardXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardXaml) örnekleri. İkinci program 32 içeren `BoxView` öğeleri ancak kullanan örtük `Style` içeren `AbsoluteLayout.LayoutFlags` en az aşağı biçimlendirme tutmak özelliği.
 
-XAML'de bir sınıf adı, bir nokta ve bir özellik adı oluşan bir özniteliği olan *her zaman* iliştirilmiş bağlanabilirse özellik.
+Bir öznitelik, bir sınıf adı, bir nokta ve özellik adı oluşur XAML *her zaman* ekli bağlanabilir özelliği.
 
 ## <a name="overlays"></a>Yer paylaşımları
 
-Kullanabileceğiniz `AbsoluteLayout` oluşturmak için bir *katmana*, hangi kapsayan diğer denetimleri sayfasıyla belki de kullanıcı sayfasında normal denetimleri ile etkileşim korumak için.
+Kullanabileceğiniz `AbsoluteLayout` oluşturmak için bir *katmana*, kapsayan sayfanın diğer denetimlerle belki de kullanıcı sayfasında normal denetimler ile etkileşim korumaya.
 
-[ **SimpleOverlay** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/SimpleOverlay) örnek bu tekniği gösterir ve ayrıca gösterir [ `ProgressBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/), bir program tamamlandı ölçüde görüntüleyen bir Görev.
+[ **SimpleOverlay** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/SimpleOverlay) örnek bu tekniği gösterir ve ayrıca [ `ProgressBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/), bir program tamamlandı ölçüde görüntüleyen bir Görev.
 
-## <a name="some-fun"></a>Bazı eğlenceli
+## <a name="some-fun"></a>Bazı eğlence
 
-[ **DotMatrixClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/DotMatrixClock) örnek benzetimli 5 x 7 iğneli ekranıyla geçerli saati görüntüler. Her nokta bir `BoxView` (bunların 228 vardır) boyutlandırılmış ve üzerinde konumlandırılmış `AbsoluteLayout`.
+[ **DotMatrixClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/DotMatrixClock) örnek sanal 5 7 nokta vuruşlu ekranıyla geçerli zamanı görüntüler. Her nokta olan bir `BoxView` (bunların 228 yoktur) boyutlandırıldığından ve konumlandırılıp `AbsoluteLayout`.
 
-[![Üçlü ekran iğneli saatinin](images/ch14fg08-small.png "iğneli saati")](images/ch14fg08-large.png#lightbox "iğneli saati")
+[![Üç nokta vuruşlu saat görüntüsü](images/ch14fg08-small.png "nokta vuruşlu saat")](images/ch14fg08-large.png#lightbox "nokta vuruşlu saati")
 
-[ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText) program iki canlandırır `Label` yatay ve dikey olarak ekranda Sıçrama nesnelere.
+[ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText) program iki canlandırır `Label` Yatayda ve Dikeyde ekranda gelmesine nesneleri.
 
 
 

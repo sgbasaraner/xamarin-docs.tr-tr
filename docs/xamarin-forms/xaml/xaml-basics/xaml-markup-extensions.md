@@ -1,6 +1,6 @@
 ---
-title: Bölüm 3. XAML işaretleme uzantıları
-description: XAML işaretleme uzantılarına XAML'de nesneleri veya diğer kaynaklardan dolaylı olarak başvurulan değerleri ayarlamak özellikler sağlayan bir önemli özellik oluşturur.
+title: 3. bölümü. XAML biçimlendirme uzantıları
+description: XAML biçimlendirme uzantıları nesneleri veya diğer kaynaklardan dolaylı olarak başvurulan değerleri ayarlamak özellikler sağlayan XAML içinde önemli bir özellik oluşturur.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
@@ -8,29 +8,29 @@ author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
 ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245917"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935623"
 ---
-# <a name="part-3-xaml-markup-extensions"></a>Bölüm 3. XAML işaretleme uzantıları
+# <a name="part-3-xaml-markup-extensions"></a>3. bölümü. XAML biçimlendirme uzantıları
 
-_XAML işaretleme uzantılarına XAML'de nesneleri veya diğer kaynaklardan dolaylı olarak başvurulan değerleri ayarlamak özellikler sağlayan bir önemli özellik oluşturur. XAML işaretleme uzantılarına nesneleri paylaşımı ve bir uygulama genelinde kullanılan sabitleri başvuran için özellikle önemlidir, ancak bunların en büyük yardımcı programı veri bağlamaları buldukları._
+_XAML biçimlendirme uzantıları nesneleri veya diğer kaynaklardan dolaylı olarak başvurulan değerleri ayarlamak özellikler sağlayan XAML içinde önemli bir özellik oluşturur. XAML biçimlendirme uzantıları nesneleri paylaşma ve bir uygulamanın tamamında kullanılan sabit başvuran özellikle önemlidir, ancak bunlar veri bağlamalara kendi büyük yardımcı programını bulun._
 
-## <a name="xaml-markup-extensions"></a>XAML işaretleme uzantıları
+## <a name="xaml-markup-extensions"></a>XAML biçimlendirme uzantıları
 
-Genel olarak, bir dizeyi bir sayı, bir numaralandırma üyesine veya arka planda bir değere dönüştürülmüş bir dize gibi açık değerler için bir nesne özelliklerini ayarlamak için XAML kullanın.
+Genel olarak, XAML, bir dize, sayı, bir numaralandırma üyesine veya arka planda bir değere dönüştürülmüş bir dize gibi açık değerler için bir nesnenin özelliklerini ayarlamak için kullanın.
 
-Bazı durumlarda, ancak özellikleri yerine başka bir yerde tanımlanmış değer başvurmalıdır veya çalışma zamanında kodu tarafından az miktarda işleme gerektiren. XAML amaçlar için *biçimlendirme uzantıları* kullanılabilir.
+Bazı durumlarda, ancak, özellikleri, bunun yerine başka bir yerde tanımlanmış değer başvurmalıdır veya az miktarda işleme, çalışma zamanında kodu tarafından gerektirebilir. Bu amaçla, XAML *biçimlendirme uzantıları* kullanılabilir.
 
-Bu XAML biçimlendirme uzantıları XML uzantıları değildir. XAML tamamen yasal XML'dir. Kod içinde uygulayan sınıflar tarafından yedeklenen olduğundan "uzantılarla" adlandırılırlar `IMarkupExtension`. Kendi özel biçimlendirme uzantıları yazabilirsiniz.
+Bu XAML biçimlendirme uzantıları XML uzantıları değildir. XAML tamamen yasal XML'dir. Uygulayan sınıflar içindeki kod tarafından desteklenen olduğundan "uzantıları" adlandırılırlar `IMarkupExtension`. Kendi özel biçimlendirme uzantıları yazabilirsiniz.
 
-Öznitelik ayarlarını küme ayraçları ayrılmış olarak göründüğünden çoğu durumda, XAML işaretleme uzantılarına XAML dosyaları hemen tanınabilir: {ve}, ancak bazen biçimlendirme uzantıları biçimlendirmede geleneksel öğeleri olarak görünür.
+Küme ayraçları ayrılmış özniteliği ayarları olarak göründüğünden çoğu durumda, XAML biçimlendirme uzantıları XAML dosyalarında anında tanınmıyor: {ve}, ancak bazen biçimlendirme uzantıları işaretlemede geleneksel öğeleri olarak görünür.
 
 ## <a name="shared-resources"></a>Paylaşılan kaynaklar
 
-Bazı XAML sayfaları özellikleri aynı değerlere ayarlanmış olan çeşitli görünümler içerir. Örneğin, çoğu bu özellik ayarları `Button` nesneleri aynıdır:
+Bazı XAML sayfaları birkaç görünüm ile aynı özellikleri içerir. Örneğin, birçok özellik ayarlarının bu `Button` nesneleri aynıdır:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -67,11 +67,11 @@ Bazı XAML sayfaları özellikleri aynı değerlere ayarlanmış olan çeşitli 
 </ContentPage>
 ```
 
-Bu özelliklerden birini değiştirilmesi gerekiyorsa, üç kez yerine yalnızca bir kez değişiklik yapmak tercih edebilirsiniz. Bu kod olsaydı, büyük olasılıkla sabitleri ve statik salt okunur nesneler tutarlı ve kolayca değiştirmek bu değerleri tutmak için kullanırlar.
+Bu özelliklerden birini değiştirilmesi gerekiyorsa, üç kez yerine yalnızca bir kez değişiklik yapmak tercih edebilirsiniz. Bu kod mevcutsa, büyük olasılıkla sabitleri ve statik salt okunur nesneler tutarlı ve kolayca değiştirmek bu değerleri tutmak için kullanırlar.
 
-XAML'de bir popüler çözüm böyle değerlerini depolamak için veya nesneler bir *kaynak sözlüğü*. `VisualElement` Sınıfı tanımlayan adlı bir özellik `Resources` türü `ResourceDictionary`, anahtarları türü ile bir sözlük olduğu `string` ve türü değerleri `object`. Bu sözlükteki nesneleri yerleştirin ve biçimlendirmeden tüm XAML'de başvuru.
+XAML, popüler çözümlerden biri, bu değerleri depolamak için veya nesneler bir *kaynak sözlüğü*. `VisualElement` Sınıfı tanımlar adlı bir özellik `Resources` türü `ResourceDictionary`, anahtarları türü ile bir sözlük olduğu `string` ve türü değerlerinin `object`. Bu sözlük içine nesneleri yerleştirin ve tüm XAML biçimlendirme bunları başvuru.
 
-Bir sayfa üzerinde bir kaynak sözlüğü kullanmak için bir çift ekleyin `Resources` özellik öğesi etiketleri. Bu sayfanın en üstündeki koymak en kullanışlıdır:
+Bir sayfada bir kaynak sözlüğü kullanma için bir çift ekleyin. `Resources` özellik öğesi etiketleri. Bu sayfanın üst kısmındaki koymak oldukça kullanışlıdır:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -86,7 +86,7 @@ Bir sayfa üzerinde bir kaynak sözlüğü kullanmak için bir çift ekleyin `Re
 </ContentPage>
 ```
 
-Açık içerecek şekilde gereklidir `ResourceDictionary` etiketler:
+Açıkça içerecek şekilde gereklidir `ResourceDictionary` etiketler:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -103,7 +103,7 @@ Açık içerecek şekilde gereklidir `ResourceDictionary` etiketler:
 </ContentPage>
 ```
 
-Şimdi nesneleri ve çeşitli türlerde değerler için kaynak sözlük eklenebilir. Bu tür instantiable olması gerekir. Soyut sınıflar, örneğin olamazlar. Bu tür ayrıca genel bir parametresiz oluşturucuya sahip olmalıdır. Her bir öğe ile belirtilen bir sözlük anahtarı gerektirir `x:Key` özniteliği. Örneğin:
+Şimdi nesneleri ve çeşitli türlerde değerler için kaynak sözlük eklenebilir. Bu tür instantiable olması gerekir. Örneğin, soyut sınıflar olamazlar. Bu türler de genel parametresiz oluşturucusu olmalıdır. Her bir öğe ile belirtilen bir sözlük anahtarı gerektirir `x:Key` özniteliği. Örneğin:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -125,9 +125,9 @@ Açık içerecek şekilde gereklidir `ResourceDictionary` etiketler:
 </ContentPage>
 ```
 
-Bu iki öğeyi yapısı türü değerleri `LayoutOptions`, her bir benzersiz anahtar ve bir sahip ve iki özellikleri ayarlayın. Kod ve biçimlendirme, statik alanlarını kullanmak için çok daha yaygın bir sorundur `LayoutOptions`, ancak burada özelliklerini ayarlamak daha uygun değil.
+Bu iki öğe yapı türü değerleri `LayoutOptions`ve her bir benzersiz anahtar ve bir sahip veya bu iki özelliği ayarlayın. Kod ve biçimlendirme, statik alanları kullanmak için çok daha yaygındır `LayoutOptions`, ancak burada özelliklerini ayarlamak daha uygun olan.
 
-Ayarlamak gerekli şimdi `HorizontalOptions` ve `VerticalOptions` bu kaynaklar bu düğmelere özelliklerini ve ile yapılır `StaticResource` XAML biçimlendirme uzantısı:
+Ayarlamak gerekli olan artık `HorizontalOptions` ve `VerticalOptions` bu kaynaklara bu düğmeler özelliklerini ve ile yapılır `StaticResource` XAML işaretleme uzantısı:
 
 ```xaml
 <Button Text="Do this!"
@@ -139,11 +139,11 @@ Ayarlamak gerekli şimdi `HorizontalOptions` ve `VerticalOptions` bu kaynaklar b
         FontSize="24" />
 ```
 
-`StaticResource` Biçimlendirme uzantısı ile süslü ayraçlar her zaman ayrılmış ve sözlük anahtarı içerir.
+`StaticResource` İşaretleme uzantısı her zaman küme ayracı ile sınırlandırılır ve sözlük anahtarı içerir.
 
-Adı `StaticResource` buradan ayırt `DynamicResource`, hangi Xamarin.Forms de destekler. `DynamicResource` çalışma zamanı sırasında değişebilir değerleri ile ilişkili sözlük anahtarları ilgili olduğu sırada `StaticResource` yalnızca öğeleri sayfada ne zaman oluşturulur sonra öğeleri sözlükten erişir.
+Adı `StaticResource` ondan ayıran `DynamicResource`, hangi Xamarin.Forms da destekler. `DynamicResource` çalışma zamanı sırasında değişebilir değerler ile ilişkili sözlük anahtarları için sırada `StaticResource` yalnızca zaman öğeleri sayfada oluşturulduktan sonra öğeleri sözlükten erişir.
 
-İçin `BorderWidth` özelliği, bir çift sözlükte depolamak için gereken. XAML rahat etiketler gibi ortak veri türleri için tanımlar `x:Double` ve `x:Int32`:
+İçin `BorderWidth` özelliği olduğu bir çift sözlükte depolamak gerekli. XAML rahatça etiketler gibi ortak veri türleri için tanımlar `x:Double` ve `x:Int32`:
 
 ```xaml
 <ContentPage.Resources>
@@ -162,7 +162,7 @@ Adı `StaticResource` buradan ayırt `DynamicResource`, hangi Xamarin.Forms de d
 </ContentPage.Resources>
 ```
 
-Üç satırlarında put gerek yoktur. Bu sözlük girdisi bu döndürme açısı için yalnızca bir satır yukarı alır:
+Üç satırlara yerleştirmek gerek yoktur. Bu sözlük girişi bu döndürme açısı için yalnızca bir satırlık yer kaplar:
 
 ```xaml
 <ContentPage.Resources>
@@ -183,7 +183,7 @@ Adı `StaticResource` buradan ayırt `DynamicResource`, hangi Xamarin.Forms de d
 </ContentPage.Resources>
 ```
 
-Bu iki kaynak aynı şekilde başvurulabilir `LayoutOptions` değerler:
+Bu iki kaynak aynı şekilde başvurulabilir `LayoutOptions` değerleri:
 
 ```xaml
 <Button Text="Do this!"
@@ -195,19 +195,19 @@ Bu iki kaynak aynı şekilde başvurulabilir `LayoutOptions` değerler:
         FontSize="24" />
 ```
 
-Türündeki kaynaklar için `Color`, doğrudan bu tür özniteliklerini atarken kullandığınız aynı dize Beyanları kullanabilirsiniz. Tür dönüştürücüleri kaynak oluşturulduğunda çağrılır. Bir kaynak türü işte `Color`:
+Kaynak türü için `Color`, doğrudan bu tür öznitelikleri atarken kullandığınız aynı dize gösterimleri kullanabilirsiniz. Tür dönüştürücüleri kaynak oluşturulduğunda çağrılır. Bir kaynak türü şu şekildedir `Color`:
 
 ```xaml
 <Color x:Key="textColor">Red</Color>
 ```
 
-Genellikle, kümesi'ni programları bir `FontSize` üyesi özelliğine `NamedSize` numaralandırma gibi `Large`. `FontSizeConverter` Sınıfı kullanarak bir platforma bağımlı değer dönüştürmek için planda çalışır `Device.GetNamedSized` yöntemi. Ancak, bir yazı tipi boyutunu kaynak tanımlarken gösterilen sayısal bir değer kullanmak için daha fazla mantıklıdır burada olarak bir `x:Double` türü:
+Genellikle, kümesi programlar bir `FontSize` üyesi özelliğini `NamedSize` numaralandırma gibi `Large`. `FontSizeConverter` Sınıfını kullanarak bir platforma bağımlı değerini dönüştürmek için arka planda çalışır `Device.GetNamedSized` yöntemi. Ancak, bir yazı tipi boyutu kaynak tanımlarken, gösterilen bir sayısal değer kullanmak için daha fazla mantıklıdır olarak burada bir `x:Double` türü:
 
 ```xaml
 <x:Double x:Key="fontSize">24</x:Double>
 ```
 
-Şimdi dışındaki tüm özelliklerini `Text` kaynak ayarları tarafından tanımlanır:
+Artık tüm özellikleri dışında `Text` kaynak ayarları tarafından tanımlanır:
 
 ```xaml
 <Button Text="Do this!"
@@ -219,7 +219,7 @@ Genellikle, kümesi'ni programları bir `FontSize` üyesi özelliğine `NamedSiz
         FontSize="{StaticResource fontSize}" />
 ```
 
-Kullanmak da mümkündür `OnPlatform` platformları için farklı değerler tanımlamak için kaynak sözlüğü içinde. İşte nasıl bir `OnPlatform` nesne farklı bir metin renkler için kaynak sözlüğü parçası olabilir:
+Kullanmak da mümkündür `OnPlatform` platformları için farklı değerler tanımlamak üzere kaynak sözlüğünün içinde. İşte nasıl bir `OnPlatform` nesne kaynak sözlüğü farklı metin rengi için bir parçası olabilir:
 
 ```xaml
 <OnPlatform x:Key="textColor"
@@ -230,9 +230,9 @@ Kullanmak da mümkündür `OnPlatform` platformları için farklı değerler tan
 </OnPlatform>
 ```
 
-Dikkat `OnPlatform` her ikisi de alır bir `x:Key` sözlüğe bir nesne olduğundan özniteliğini ve bir `x:TypeArguments` genel bir sınıf olduğundan özniteliği. `iOS`, `Android`, Ve `UWP` öznitelikleri dönüştürülür `Color` nesne başlatıldığında değerleri.
+Dikkat `OnPlatform` hem alır bir `x:Key` sözlüğe bir nesne olduğundan özniteliğini ve bir `x:TypeArguments` genel bir sınıf olmadığından öznitelik. `iOS`, `Android`, Ve `UWP` öznitelikleri dönüştürülür `Color` nesne başlatıldığında değerleri.
 
-Altı paylaşılan değerleri erişme üç düğme ile son tam XAML dosyası şöyledir:
+Üç düğme altı paylaşılan değerlerine erişim ile son tam XAML dosyası aşağıda verilmiştir:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -293,11 +293,11 @@ Altı paylaşılan değerleri erişme üç düğme ile son tam XAML dosyası ş�
 </ContentPage>
 ```
 
-Ekran görüntüleri tutarlı stil ve platforma bağımlı stil doğrulayın:
+Ekran görüntüleri, tutarlı bir stil ve platforma bağımlı stil doğrulayın:
 
-[![](xaml-markup-extensions-images/sharedresources.png "Stilde denetimler")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "stilde denetimler")
+[![](xaml-markup-extensions-images/sharedresources.png "Denetimler")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "denetimler")
 
-Tanımlamak için yaygın olsa da `Resources` koleksiyonu sayfanın üstündeki göz önünde bulundurun, `Resources` özelliği tarafından tanımlanır `VisualElement`, ve bulundurabilirsiniz `Resources` diğer öğeleri sayfada koleksiyonlarında. Örneğin, bir tane için eklemeyi deneyin `StackLayout` Bu örnekte:
+Tanımlamak için yaygın olsa da `Resources` koleksiyonu sayfanın üst kısmındaki aklınızda tutun, `Resources` özelliği tarafından tanımlanan `VisualElement`, ve sahip olduğunuz `Resources` sayfadaki diğer öğeleri koleksiyonlarda. Örneğin, bir ekleme deneyin `StackLayout` Bu örnekte:
 
 ```xaml
 <StackLayout>
@@ -310,24 +310,24 @@ Tanımlamak için yaygın olsa da `Resources` koleksiyonu sayfanın üstündeki 
 </StackLayout>
 ```
 
-Düğmeleri metin rengi mavi olduğunu öğreneceksiniz. Temel olarak, her XAML ayrıştırıcısı karşılaştığı bir `StaticResource` biçimlendirme uzantısı görsel ağacı arar ve ilk kullanır `ResourceDictionary` bu anahtarı içeren karşılaşır.
+Düğmeleri metin rengini Mavi olduğunu keşfedeceksiniz. Temelde, XAML ayrıştırıcı olduğunda karşılaştığında bir `StaticResource` işaretleme uzantısı görsel ağacı arar ve ilk kullanır `ResourceDictionary` bu anahtarı içeren karşılaşır.
 
-En sık karşılaşılan kaynak sözlükte depolanan nesneler biri Xamarin.Forms `Style`, özellik ayarları koleksiyonunu tanımlar. Stilleri makalesinde açıklanan [stilleri](~/xamarin-forms/user-interface/styles/index.md).
+En sık karşılaşılan kaynak sözlükleri içinde depolanan nesneleri biri Xamarin.Forms `Style`, özelliği bir ayarlar koleksiyonu tanımlar. Stilleri makalesinde açıklanan [stilleri](~/xamarin-forms/user-interface/styles/index.md).
 
-Bazen, bir görsel öğe gibi koyabilirsiniz, geliştiriciler için XAML yeni merak ediyor `Label` veya `Button` içinde bir `ResourceDictionary`. Kötülerinden mümkün olsa da, kadar doesn't make Sense. Amacı `ResourceDictionary` nesneleri paylaşılmasıdır. Bir görsel öğe paylaşılamaz. Aynı örneği iki kez tek bir sayfada yer alamaz.
+Bazen, bir görsel öğe gibi koyabilirsiniz, geliştiriciler için XAML yeni merak ediyor `Label` veya `Button` içinde bir `ResourceDictionary`. Elbette mümkün olsa da, bu çok mantıklı değildir. Amacı `ResourceDictionary` nesneleri paylaşmaktır. Bir görsel öğe paylaşılamaz. Aynı örneği, iki kez tek bir sayfada yer alamaz.
 
 ## <a name="the-xstatic-markup-extension"></a>X: Static işaretleme uzantısı
 
-Adlarını benzerlikler rağmen `x:Static` ve `StaticResource` çok farklıdır. `StaticResource` bir kaynak sözlüğü sırasında bir nesne döndürür `x:Static` aşağıdakilerden birini erişen:
+Adlarını benzerlikler rağmen `x:Static` ve `StaticResource` çok farklıdır. `StaticResource` bir kaynak sözlüğü sırasında bir nesne döndürür `x:Static` aşağıdakilerden birini erişir:
 
-- public static alanı
-- Genel statik özelliği
-- Genel sabit alan
-- bir numaralandırma üyesi.
+- Genel statik alan
+- bir ortak statik özelliği
+- Genel bir sabit alanı
+- bir numaralandırma üyesine.
 
-`StaticResource` Biçimlendirme uzantısı bir kaynak sözlüğü tanımlayan XAML uygulamaları tarafından desteklenen sırada `x:Static` bir iç XAML olarak parçasıdır `x` önek ortaya çıkarır.
+`StaticResource` İşaretleme uzantısı, bir kaynak sözlüğü tanımlayan XAML uygulamaları tarafından desteklenir ancak `x:Static` XAML, iç bir parçası olarak olduğu `x` önek ortaya çıkarır.
 
-İşte gösteren birkaç örnek nasıl `x:Static` statik alanları ve numaralandırma üyeleri açıkça başvurabilir:
+Gösteren bazı örnekler şunlardır nasıl `x:Static` statik alanları ve numaralandırma üyelerini açıkça başvurabilirsiniz:
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -336,7 +336,7 @@ Adlarını benzerlikler rağmen `x:Static` ve `StaticResource` çok farklıdır.
        TextColor="{x:Static Color.Aqua}" />
 ```
 
-Şu ana kadar bu çok etkileyici değil. Ancak `x:Static` biçimlendirme uzantısı de başvuru statik alanları veya özellikleri kendi koddan. Örneğin, bir `AppConstants` bir uygulama boyunca birden çok sayfaya kullanmak isteyebilirsiniz bazı statik alanları içeren sınıf:
+Şu ana kadar bu çok etkileyici değildir. Ancak `x:Static` işaretleme uzantısı de başvurabilir statik alanlar ve Özellikler kendi kodunuza. Örneğin, bir `AppConstants` uygulamanın tamamında birden çok sayfa kullanmak isteyebileceğiniz bazı statik alanlar içeren sınıf:
 
 ```csharp
 using System;
@@ -378,32 +378,32 @@ namespace XamlSamples
 }
 ```
 
-XAML dosyasındaki bu sınıfın statik alanları başvurmak için bu dosyanın bulunduğu XAML dosyası içinde göstermek için bazı yol gerekir. Bu bir XML ad alanı bildirimi ile yapın.
+XAML dosyasında bu sınıfın statik alanları başvurmak için bu dosyasının bulunduğu bir XAML dosyasında belirtmek için bir yönteme gerekir. XML ad alanı bildirimi ile bunu yapabilirsiniz.
 
-Standart Xamarin.Forms XAML şablonunun parçası olarak oluşturulan XAML dosyaları iki XML ad alanı bildirimleri içeren geri çağırma: bir Xamarin.Forms sınıfları ve etiketleri ve öznitelikleri için XAML iç başvuran için başka bir erişmek için:
+Standart Xamarin.Forms XAML şablonunun bir parçası oluşturulan XAML dosyaları iki XML ad alanı bildirimi içeren hatırlıyorsunuzdur: bir Xamarin.Forms sınıfları, diğeri için etiketleri ve öznitelikleri için XAML iç başvuran erişmek için:
 
 ```csharp
 xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-Diğer sınıflara erişmek için ek XML ad alanı bildirimleri gerekir. Her ek XML ad alanı bildirimi yeni bir önek tanımlar. Paylaşılan uygulama .NET standart kitaplığına yerel sınıflara gibi erişmek için `AppConstants`, sık kullandığınız öneki XAML programcıları `local`. Ad alanı bildirimi CLR (ortak dil çalışma zamanı) ad alanı adı, bir C# dilinde görünen adı olarak da bilinen .NET ad alanı adı belirtmeniz gerekir `namespace` tanımı veya bir `using` yönergesi:
+Diğer sınıflara erişmek için ek XML ad alanı bildirimi gerekir. Her ek XML ad alanı bildirimi, yeni bir önek tanımlar. Paylaşılan uygulama .NET Standard kitaplığı için yerel sınıflar gibi erişmeye `AppConstants`, sık kullandığınız önek XAML programcılar `local`. Ad alanı bildirimi CLR (ortak dil çalışma zamanı) ad alanı adı, bir C# içinde görünen adı olarak da bilinen .NET ad alanı adı belirtmeniz gerekir `namespace` tanımı veya bir `using` yönergesi:
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-.NET standart kitaplığı başvuran hiçbir derleme .NET ad alanları için XML ad alanı bildirimleri de tanımlayabilirsiniz. Örneğin, bir `sys` standart .NET için önek `System` içinde ad alanı **mscorlib** kez "Microsoft ortak nesne çalışma zamanı kitaplığı için" stood, ancak şimdi "çoklu dil standart anlamına gelir, derleme Genel nesne çalışma zamanı kitaplığı." Bu başka bir derleme olduğundan, ayrıca derleme adı, bu durumda belirtmeniz gerekir **mscorlib**:
+Bu gibi durumlarda, .NET ad alanları için XML ad alanı bildirimi ayrıca .NET Standard kitaplığı başvuran herhangi bir derleme tanımlayabilirsiniz. Örneğin, bir `sys` standart .NET için önek `System` bulunduğu ad alanı **mscorlib** bir kez "Ortak nesne çalışma zamanı için Microsoft kitaplığı" komutla, ancak artık "çok dilli standart anlamına gelir, derleme Genel nesne çalışma zamanı kitaplığı." Bu başka bir derleme olduğundan, ayrıca derleme adı, bu durumda belirtmelisiniz **mscorlib**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```
 
-Dikkat anahtar sözcüğü `clr-namespace` bir iki nokta üst üste ve ardından anahtar sözcüğü bir noktalı virgül ekleyin .NET ad alanı adı tarafından izlenen `assembly`, eşittir işareti ve derleme adı.
+Dikkat anahtar sözcüğü `clr-namespace` bir iki nokta üst üste ve ardından .NET ad alanı adı anahtar sözcüğü bir noktalı virgül ekleyin, ardından `assembly`, eşittir işareti ve derleme adı.
 
-Evet, izleyen iki nokta `clr-namespace` ancak eşittir işaretinden `assembly`. Sözdizimi bu şekilde kasıtlı olarak tanımlandı: en XML ad alanı bildirimleri başvuru URI düzeni adı gibi başlayan bir URI `http`, hangi her zaman ardından iki nokta ile. `clr-namespace` Bu dize bir parçası, bu kuralı taklit etmek üzere tasarlanmıştır.
+Evet, bir iki nokta üst üste izleyen `clr-namespace` ancak eşittir işaretinden `assembly`. Söz dizimi bu şekilde kasıtlı olarak tanımlandı: en XML ad alanı bildirimi bir URI düzeni adı gibi başlayan bir URI başvuru `http`, hangi her zaman ardından bir iki nokta üst üste. `clr-namespace` Bu dize bir parçası, bu kuralı taklit etmek üzere tasarlanmıştır.
 
-Bu iki ad alanı bildirimleri içinde yer alan **StaticConstantsPage** örnek. Dikkat `BoxView` boyutları ayarlandığında `Math.PI` ve `Math.E`, ancak ölçeklendirilmiş 100 faktörüyle:
+Bu iki ad alanı bildirimi dahil **StaticConstantsPage** örnek. Dikkat `BoxView` boyutları ayarlandığında `Math.PI` ve `Math.E`, 100 faktörüyle ancak Ölçeklendirildi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -431,24 +431,24 @@ Bu iki ad alanı bildirimleri içinde yer alan **StaticConstantsPage** örnek. D
 </ContentPage>
 ```
 
-Sonuç boyutunu `BoxView` platforma bağımlı ekrandır göre:
+Sonuç boyutunu `BoxView` kutusunun ekrana göreli platform bağlıdır:
 
  [![](xaml-markup-extensions-images/staticconstants.png "X: Static işaretleme uzantısı kullanarak denetimleri")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "x: Static işaretleme uzantısı kullanarak denetimleri")
 
 ## <a name="other-standard-markup-extensions"></a>Diğer standart biçimlendirme uzantıları
 
-Birçok biçimlendirme uzantıları için XAML iç ve Xamarin.Forms XAML dosyaları desteklenir. Bunlardan bazıları, çok sık kullanılmayan ancak gereksinim duyduğunuzda gereklidir:
+Çeşitli biçimlendirme uzantıları için XAML iç ve Xamarin.Forms XAML dosyaları desteklenir. Bunlardan bazıları, çok sık kullanılmayan ancak ihtiyaç duyduğunuzda gereklidir:
 
--  Bir özellik olmayan bir varsa `null` varsayılan ancak değeriyle istediğiniz ayarlamak için `null`, ayarlamak `{x:Null}` biçimlendirme uzantısı.
--  Bir özellik türü ise `Type`, kendisine atadığınız bir `Type` biçimlendirme uzantısı kullanılarak nesne `{x:Type someClass}`.
--  XAML kullanarak dizileri tanımlayabilirsiniz `x:Array` biçimlendirme uzantısı. Bu biçimlendirme uzantısı adlı gerekli bir özniteliği var `Type` dizideki öğeler türünü gösterir.
-- `Binding` Biçimlendirme uzantısı ele alınmıştır [bölümü 4. Veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+-  Bir özelliği olmayan bir varsa `null` ayarlamak istediğiniz değere göre varsayılan ancak `null`, ayarlayın `{x:Null}` işaretleme uzantısı.
+-  Özellik türü ise `Type`, kendisine atayabilirsiniz bir `Type` işaretleme uzantısı kullanarak nesne `{x:Type someClass}`.
+-  XAML kullanarak dizileri tanımlayabilirsiniz `x:Array` işaretleme uzantısı. Bu işaretleme uzantısı adlı gerekli bir özniteliği olan `Type` dizideki öğelerin türünü gösterir.
+- `Binding` İşaretleme uzantısı ele alınmıştır [bölüm 4. Veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
-## <a name="the-constraintexpression-markup-extension"></a>ConstraintExpression biçimlendirme uzantısı
+## <a name="the-constraintexpression-markup-extension"></a>ConstraintExpression işaretleme uzantısı
 
-Biçimlendirme uzantıları özelliklere sahip olabilir, ancak XML öznitelikleri gibi ayarlı değil. İşaretleme uzantısı özellik ayarları virgülle ayrılır ve kaşlı ayraçlar içinde tırnak işareti görünür.
+Biçimlendirme uzantıları özelliklere sahip olabilir, ancak XML öznitelikleri gibi ayarlı değil. Bir işaretleme uzantısı özellik ayarları virgülle ayrılır ve küme ayraçlarının içinde tırnak işareti görünür.
 
-Bu adlı Xamarin.Forms biçimlendirme uzantısı ile gösterilebilir `ConstraintExpression`, ile kullanılan `RelativeLayout` sınıfı. Bir sabit olarak veya bir üst veya diğer adlandırılmış bir görünümü göreli konum veya alt görünüm boyutunu belirtebilirsiniz. Söz dizimi `ConstraintExpression` konum veya görünümü kullanarak boyutunu ayarladığınız sağlayan bir `Factor` başka bir görünüm özelliğinin bir artı bir kez `Constant`. Daha karmaşık bir şey kodu gerektirir.
+Bu adlı Xamarin.Forms işaretleme uzantısı ile gösterilebilir `ConstraintExpression`, birlikte kullanılan `RelativeLayout` sınıfı. Bir sabit olarak veya bir üst ya da diğer adlandırılmış görünüm göreli konum veya alt görünümün boyutunu belirtebilirsiniz. Söz dizimi `ConstraintExpression` konumunu veya bir görünümünü kullanarak boyutu ayarlamanız sağlayan bir `Factor` bir özellik başka bir görünümünün yanı sıra bir kez `Constant`. Daha fazla karmaşık bir şey kod gerektirir.
 
 Örnek aşağıda verilmiştir:
 
@@ -545,15 +545,15 @@ Bu adlı Xamarin.Forms biçimlendirme uzantısı ile gösterilebilir `Constraint
 </ContentPage>
 ```
 
-Belki de bu örnekten aldığınız en önemli Ders biçimlendirme uzantısı sözdizimi şöyledir: tırnak işareti biçimlendirme uzantısı süslü ayraçlar içinde görünmesi gerekir. İşaretleme uzantısı bir XAML dosyasına yazarken özelliklerin değerlerine tırnak işaretleri içine alın isteyebilirsiniz. Buradaki eðilim kaçının!
+Belki de bu örnekten aldığınız en önemli Ders biçimlendirme uzantısı sözdizimi şöyledir: tırnak işareti bir işaretleme uzantısı kaşlı ayraçlar içinde yer almalıdır. İşaretleme uzantısı bir XAML dosyasında yazarken özelliklerin değerleri tırnak içine alın istediğiniz doğaldır. Dürtüsüne karşı dayanıklılık!
 
-Çalışan program şöyledir:
+Çalışan bir program şöyledir:
 
-[![](xaml-markup-extensions-images/relativelayout.png "Kısıtlamaları kullanarak göreli Düzen")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "göreli kısıtlamaları kullanarak Düzen")
+[![](xaml-markup-extensions-images/relativelayout.png "Göreli düzeni kısıtlamaları kullanılarak")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "göreli kısıtlamaları kullanılarak düzeni")
 
 ## <a name="summary"></a>Özet
 
-Burada gösterilen XAML biçimlendirme uzantıları için XAML dosyaları önemli destek sağlar. Ancak belki de en değerli XAML biçimlendirme uzantısı `Binding`, bu serinin sonraki bölümünde ele [bölümü 4. Veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+XAML biçimlendirme uzantıları burada gösterilen önemli, XAML dosyaları için desteği. Ancak belki de en değerli XAML işaretleme uzantısı `Binding`, bu serisinin sonraki bölümünde ele [bölüm 4. Veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 
 
@@ -563,4 +563,4 @@ Burada gösterilen XAML biçimlendirme uzantıları için XAML dosyaları öneml
 - [Bölüm 1. XAML Kullanmaya Başlarken](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Bölüm 2. Temel XAML Sözdizimi](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Bölüm 4. Temel Veri Bağlama Bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [Bölüm 5. Verileri için MVVM bağlama](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [Bölüm 5. Verileri bağlama için MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
