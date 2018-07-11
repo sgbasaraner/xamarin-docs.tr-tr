@@ -1,74 +1,74 @@
 ---
-title: Xamarin Canlı Player sorunlarını giderme
-description: Bu belgede Xamarin Canlı Player ve olası düzeltmeleri ile ilgili bilinen sorunlar açıklanmaktadır. Bağlantı sorunları, yapılandırma sorunları ve daha fazlasını açıklanır.
+title: Xamarin Live Player sorunlarını giderme
+description: Bu belgede, olası düzeltmeleri ve Xamarin Live Player ile ilgili bilinen sorunlar açıklanmaktadır. Bağlantı sorunları, yapılandırma sorunlarını ve diğer ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
 ms.openlocfilehash: 3db14db2c64e024ef1c04275661f610f9407dfb7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793761"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831338"
 ---
-# <a name="troubleshooting-xamarin-live-player"></a>Xamarin Canlı Player sorunlarını giderme
+# <a name="troubleshooting-xamarin-live-player"></a>Xamarin Live Player sorunlarını giderme
 
 ![Önizleme özelliği](~/media/shared/preview.png)
 
-Bu makalede, bazı yaygın sorunlar açıklanmıştır ve bunları düzeltmek için adımları sağlar.
+Bu makalede, bazı yaygın sorunlar açıklanır ve bunları düzeltmeye yönelik adımları sağlar.
 
-## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>Mobil cihaz tarama barkod (veya girme kod) sonra bağlanamıyor
+## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>Mobil cihaz barkod tarama (veya girme kod) sonra bağlanamıyor
 
-Xamarin Canlı Player çalıştıran mobil cihaz IDE çalıştıran bilgisayarın aynı ağ üzerinde olmadığında oluşur. Aşağıdakileri denetleyin:
+Xamarin Live Player'ı çalıştıran mobil cihaz IDE'ı çalıştıran bilgisayarın aynı ağ üzerinde olmadığında gerçekleşir. Aşağıdakileri denetleyin:
 
-- Cihaz ve bilgisayar üzerinde aynı Wi-Fi ağı olduğundan emin olun.
-  - Bilgisayar da kablolu bir ağa bağlıysa, kablolu bağlantı yönlendiriciyi deneyin.
-- Ağ sıkı bir şekilde (bazı şirket ağları gibi), güvenli Xamarin Canlı oynatıcısının gerekli bağlantı noktalarının engellenmesi.
-- Xamarin Canlı Player uygulamayı kapatıp yeniden başlatın.
+- Aynı Wi-Fi ağında cihaz ve bilgisayar olduğunu onaylayın.
+  - Bilgisayarın ayrıca kablolu bir ağa bağlıysa, kablolu bağlantı modemi çıkarmayı deneyin.
+- Ağ (bazı şirket ağları gibi), sıkı bir şekilde korunması Xamarin Live Player'ın gerekli bağlantı noktalarını engelleme.
+- Xamarin Live Player uygulamasını kapatıp yeniden başlatın.
 
-## <a name="error-while-trying-to-deploy-message-in-ide"></a>IDE içinde "dağıtmak çalışılırken hata oluştu" iletisi
+## <a name="error-while-trying-to-deploy-message-in-ide"></a>IDE'de "dağıtılmaya çalışılırken hatayla" iletisi
 
-**"Ioexception: aktarım bağlantısından veri okunamıyor: engellemeyen yuva işlemi engelle"**
+**"Ioexception: taşıma bağlantısından veriler okunamıyor: yuvada engelleyici olmayan işlem engellendi"**
 
-Xamarin Canlı Player çalıştıran mobil cihaz Visual Studio çalıştıran bilgisayarın aynı ağ üzerinde olmadığında bu hata genellikle karşılaştı; Bu durum genellikle daha önce başarıyla eşleştirilmiş bir aygıta bağlanırken oluşur.
+Xamarin Live Player'ı çalıştıran mobil cihaz olarak Visual Studio çalıştıran bilgisayarın aynı ağ üzerinde olmadığında bu hata genellikle karşılaştı; Bu, genellikle daha önce başarıyla eşleştirilmiş bir cihaza bağlanırken gerçekleşir.
 
-* Cihaz ve bilgisayar üzerinde aynı Wi-Fi ağı olduğundan emin olun.
-* Ağ sıkı bir şekilde (bazı şirket ağları gibi), güvenli Xamarin Canlı oynatıcısının gerekli bağlantı noktalarının engellenmesi. Aşağıdaki bağlantı noktaları için Xamarin Canlı Player gereklidir:
+* Hem cihaz hem de bilgisayar aynı Wi-Fi ağında olup olmadığını denetleyin.
+* Ağ (bazı şirket ağları gibi), sıkı bir şekilde korunması Xamarin Live Player'ın gerekli bağlantı noktalarını engelleme. Aşağıdaki bağlantı noktaları için Xamarin Live Player gereklidir:
   * 37847 – iç ağ erişimi 
   * 8090 – dış ağ erişimi
 
 ## <a name="manually-configure-device"></a>Cihaz el ile yapılandırma
 
-Cihazınız için Wi-Fi bağlayabilirsiniz değil, el ile yapılandırma dosyası aracılığıyla Cihazınızı aşağıdaki adımlarla yapılandırın deneyebilirsiniz:
+Cihazınıza Wi-Fi bağlanabilirsiniz değil, Cihazınızı yapılandırma dosyası aracılığıyla aşağıdaki adımlarla el ile yapılandırmak deneyebilirsiniz:
 
 **1. adım: yapılandırma dosyasını açın**
 
-Uygulama verileri klasörüne head:
+Uygulama veri klasörüne gidin:
 
 * Windows: **%userprofile%\AppData\Roaming**
 * macOS: **~/Users/$USER/.config**
 
-Bu klasörde, bulacaksınız **PlayerDeviceList.xml** henüz yoksa bir oluşturmanız gerekir.
+Bu klasörde bulursunuz **PlayerDeviceList.xml** henüz yoksa bir oluşturmanız gerekir.
 
-**2. adım: IP adresi al**
+**2. adım: IP adresi alın**
 
-Xamarin Canlı Player uygulamada Git **hakkında > bağlantı testi > bağlantı Testi Başlat**.
+Xamarin Live Player uygulamasında Git **hakkında > Bağlantı sınama > bağlantı Testi Başlat**.
 
-Not IP adresi, Cihazınızı yapılandırırken listelenen IP adresi gerekir.
+Not, IP adresi listelenir Cihazınızı yapılandırdığınız IP adresi gerekir.
 
 **3. adım: kodu eşleştirme Al**
 
-Xamarin Canlı Player dokunun içinde **çifti** veya **yeniden çifti**, tuşuna basarak **el ile girin**. Sayısal bir kod, yapılandırma dosyasını güncelleştirmek ihtiyaç duyacağı görüntülenir.
+Xamarin Live Player dokunun içinde **çifti** veya **çifti yeniden**, tuşuna **el ile girin**. Sayısal bir kod, yapılandırma dosyasını güncelleştirmek gereken görüntülenir.
 
-**4. adım: GUID oluşturun**
+**4. adım: GUID oluştur**
 
-Gidin: https://www.guidgenerator.com/online-guid-generator.aspx ve yeni bir GUID oluşturur ve büyük harf olduğundan emin olun.
+Git: https://www.guidgenerator.com/online-guid-generator.aspx yeni bir GUID oluşturun ve büyük harf olduğundan emin olun.
 
 **5. adım: cihaz yapılandırma**
 
-Açık **PlayerDeviceList.xml** yukarı Visual Studio veya Visual Studio Code gibi bir düzenleyicide. Cihazınız bu dosyada el ile yapılandırmanız gerekir. Varsayılan olarak, aşağıdaki boş dosya içermelidir `Devices` XML öğesi:
+Açık yukarı **PlayerDeviceList.xml** yukarı Visual Studio veya Visual Studio Code gibi bir düzenleyicide. Cihazınızı bu dosyayı el ile yapılandırmanız gerekiyor. Varsayılan olarak, aşağıdaki boş dosya içermelidir `Devices` XML öğesi:
 
 ```xml
 <DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -78,7 +78,7 @@ Açık **PlayerDeviceList.xml** yukarı Visual Studio veya Visual Studio Code gi
 </DeviceList>
 ```
 
-**İOS aygıtı ekleme:**
+**İOS cihazını ekleyin:**
 
 ```xml
 <PlayerDevice>
@@ -114,30 +114,30 @@ Açık **PlayerDeviceList.xml** yukarı Visual Studio veya Visual Studio Code gi
 </PlayerDevice>
 ```
 
-**Kapatın ve Visual Studio'yu yeniden açın.** Cihazınızı listede göstermelidir.
+**Kapatın ve Visual Studio'da yeniden açın.** Cihazınızı listede gösterilmesi gerekir.
 
-## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>IDE içinde "türü veya ad alanı bulunamadı" iletisi
+## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>IDE'de "tür veya ad alanı bulunamadı" iletisi
 
-Seçtiğiniz onay bir **başlangıç projesi** (iOS veya Android), cihaz türünüz ile eşleşen ve yapılandırma (ör. Bu cihaz türüyle eşleşen **Hata ayıklama | iPhone benzeticisi** iOS için).
+Seçtiğiniz onay bir **başlangıç projesi** , cihaz türü (iOS veya Android) ile eşleşen ve yapılandırma, cihaz türü (örn.) ile eşleşir **Hata ayıklama | iPhone simülatörü** iOS için).
 
-## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>Player "Oluşturucusu türündeki 'InterpretedXamarin.Forms.Button' bulunamadı" iletisi
+## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>Player'da "Konstruktor typu nebyl nalezen ' InterpretedXamarin.Forms.Button'" iletisini
 
-Bazı sistem sınıfları, örneğin değiştirilemiyor:
+Bazı sistem sınıfları, örneğin geçersiz kılınamaz:
 
 ```csharp
 public class SomeCustomButton : Xamarin.Forms.Button { ... }
 ```
 
-## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs: 'Resource.Layout', 'Ana' için tanım içermiyor"
+## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs: 'Resource.Layout' bir 'Main' tanımı içermiyor"
 
 Bu hata, AXML dosyalarında tanımlanan kullanıcı arabirimleri ile Android projeleri için oluşur.
-AXML dosyaları Xamarin Canlı Player şu anda desteklenmemektedir.
+Xamarin Live Player'da AXML dosyaları şu anda desteklenmemektedir.
 
-### <a name="android-toolbar-and-tabs-render-incorrectly-using-xamarinforms"></a>Xamarin.Forms yanlış kullanılması Android araç çubuğu ve sekmeleri işleme
+### <a name="android-toolbar-and-tabs-render-incorrectly-using-xamarinforms"></a>Android araç ve sekmeler yanlış Xamarin.Forms kullanarak oluşturma
 
-Xamarin.Forms Android projeleri "Toolbar.axml" ve "Tabbar.axml" ilgili düzeni dosyaların adlarını kullanmanız gerekir. Varsayılan şablonu bu adları kullanır; onları yeniden adlandırmayı işleme sorunları neden olur.
+Xamarin.Forms Android projeleri "Toolbar.axml" ve "Tabbar.axml" ilgili Düzen dosyaların adlarını kullanmanız gerekir. Varsayılan şablonu bu adları kullanır; adlandırarak oluşturma sorunlarına neden olur.
 
-Lütfen ek sorunları hakkında rapor [bugzilla](https://aka.ms/live-player-report-issue).
+Ek sorunları raporlamak lütfen [bugzilla](https://aka.ms/live-player-report-issue).
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

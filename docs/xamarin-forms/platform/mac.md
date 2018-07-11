@@ -1,6 +1,6 @@
 ---
 title: Mac Platform Kurulumu
-description: Bu makalede, bir Mac projesi macOS Sierra ve macOS El Capitan çalıştırabilen bir uygulama oluşturacak bir Xamarin.Forms projeye eklemek açıklanmaktadır.
+description: Bu makalede, macOS Sierra ve Macos'ta El Capitan çalıştırabilen bir uygulama oluşturacak bir Xamarin.Forms projesi Mac proje ekleme açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
@@ -9,40 +9,40 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
 ms.openlocfilehash: ae0fbfc7862a0d2147b2c3bbdbae7dd53dfce78f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242602"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831695"
 ---
 # <a name="mac-platform-setup"></a>Mac Platform Kurulumu
 
 ![Önizleme](~/media/shared/preview.png)
 
-Başlamadan önce oluşturun (veya var olan kullanın) Xamarin.Forms projesi.
-Yalnızca Mac için Visual Studio kullanarak Mac uygulamaları ekleyebilirsiniz.
+Başlamadan önce oluşturun (veya mevcut bir kullanın) Xamarin.Forms projesi.
+Mac için Visual Studio kullanarak Mac uygulamaları yalnızca ekleyebilirsiniz
 
 > [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
 
-**MacOS proje Xamarin.Forms için ekleyerek [Xamarin Üniversitesi](https://university.xamarin.com/)**
+**Bir macOS proje için Xamarin.Forms, ekleyerek [Xamarin University](https://university.xamarin.com/)**
 
-## <a name="adding-a-mac-app"></a>Mac uygulama ekleme
+## <a name="adding-a-mac-app"></a>Bir Mac uygulaması ekleme
 
-MacOS Sierra ve macOS El Capitan üzerinde çalışacak bir Mac uygulaması eklemek için aşağıdaki yönergeleri izleyin:
+MacOS Sierra macOS El Capitan üzerinde çalışacak bir Mac uygulaması eklemek için aşağıdaki yönergeleri izleyin:
 
-1. Mac için Visual Studio, varolan Xamarin.Forms çözüm üzerinde sağ tıklatın ve seçin **Ekle > Yeni Proje Ekle...**
+1. Mac için Visual Studio, mevcut Xamarin.Forms çözümü sağ tıklatın ve seçin **Ekle > Yeni Proje Ekle...**
 
-2. İçinde **yeni proje** penceresi seçin **Mac > Uygulama > Cocoa uygulama** ve basın **sonraki**.
+2. İçinde **yeni proje** pencere **Mac > Uygulama > Cocoa uygulaması** basın **sonraki**.
 
-3. Tür bir **App Name** (ve isteğe bağlı olarak yerleştirme öğesi için farklı bir ad seçin), tuşuna basarak **sonraki**.
+3. Türü bir **uygulama adı** (ve isteğe bağlı olarak Dock öğesi için farklı bir ad seçin) tuşuna **sonraki**.
 
-4. Tuşuna basın ve yapılandırmasını gözden **oluşturma**. Bu adımları aşağıda gösterilmektedir:
+4. Tuşuna basın ve yapılandırmayı gözden **Oluştur**. Bu adımlar aşağıda gösterilir:
 
-  ![Cocoa uygulama eklemek nasıl gösteren animasyonlu yönergeleri](mac-images/add-macos-proj.gif)
+  ![Animasyonlu yönergeleri gösteren bir Cocoa uygulaması ekleme](mac-images/add-macos-proj.gif)
 
-5. Mac projeye sağ tıklayın **paketleri > paketleri Ekle...**  eklemek için [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet. Ayrıca diğer projeleri bu sürüme güncelleştirmeniz gerekir.
+5. Mac projesinde sağ **paketleri > paketleri Ekle...**  eklemek için [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet. Ayrıca diğer projeleri bu sürüme güncelleştirmeniz gerekir.
 
-6. Mac projeye sağ tıklayın **başvuruları** ve (Proje paylaşılan veya standart .NET kitaplığı Proje) Xamarin.Forms projesine bir başvuru ekleyin.
+6. Mac projesinde sağ **başvuruları** (Paylaşılan proje veya .NET Standard kitaplığı projesi) Xamarin.Forms projeye bir başvuru ekleyin.
 
   ![Xamarin.Forms paylaşılan kod projesine bir başvuru ekleyin](mac-images/references-sml.png)
 
@@ -60,7 +60,7 @@ MacOS Sierra ve macOS El Capitan üzerinde çalışacak bir Mac uygulaması ekle
     }
     ```
 
-8. Güncelleştirme `AppDelegate` Xamarin.Forms başlatmak için bir pencere oluşturma ve Xamarin.Forms uygulaması yükleme (uygun bir ayarlamak hatırlamak `Title`). _Başlatılması için gereken başka bir bağımlılık varsa, burada da geçerli._
+8. Güncelleştirme `AppDelegate` Xamarin.Forms başlatmak için bir pencere oluşturmak ve Xamarin.Forms uygulama yükleme (uygun bir ayarlanacak hatırlamak `Title`). _Başlatılması için gereken diğer bağımlılıkları varsa, burada da bunu._
 
     ```csharp
     using Xamarin.Forms;
@@ -95,21 +95,21 @@ MacOS Sierra ve macOS El Capitan üzerinde çalışacak bir Mac uygulaması ekle
     }
     ```
 
-9. Çift **Main.storyboard** Xcode'da düzenlemek için. Seçin **penceresi** ve _işaretini_ **ilk denetleyicisinin** (Bu, yukarıdaki kod bir pencere oluşturduğundan) onay kutusu:
+9. Çift **Main.storyboard** Xcode'da düzenlemek için. Seçin **penceresi** ve _işaretini kaldırın_ **ilk denetleyicisinin** onay kutusunu (Bu, yukarıdaki kod, bir pencere oluşturur çünkü):
 
   [![Xcode'da ilk denetleyicisinin onay kutusunun işaretini kaldırın](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
-  İstenmeyen öğeleri kaldırmak için film şeridi menü sisteminde düzenleyebilirsiniz.
+  İstenmeyen öğeleri kaldırmak için görsel taslak menü sisteminde düzenleyebilirsiniz.
 
-10. Son olarak, tüm yerel kaynakları (ör. Ekle görüntü dosyaları) gerekli varolan platform projelerden.
+10. Son olarak, yerel kaynakları (örn. ekleyin görüntü dosyaları) gerekli olan mevcut platform projelerindeki.
 
-11. Mac proje Xamarin.Forms kodunuzu macOS üzerinde çalışmalıdır!
+11. Mac projesi Macos'ta Xamarin.Forms kodunuzu Şimdi Çalıştır!
 
 ## <a name="next-steps"></a>Sonraki Adımlar
 
 ### <a name="styling"></a>Stil oluşturma
 
-Yapılan son değişikliklerle `OnPlatform` platformları herhangi bir sayıda şimdi hedefleyebilirsiniz. MacOS dahildir.
+Yapılan son değişikliklerle `OnPlatform` artık herhangi bir sayıda platformları hedefleyebilir. MacOS dahildir.
 
 ```xml
 <Button.TextColor>
@@ -121,11 +121,11 @@ Yapılan son değişikliklerle `OnPlatform` platformları herhangi bir sayıda �
 </Button.TextColor>
 ```
 
-Da çift şöyle platformlarda dikkat edin: `<On Platform="iOS, macOS" ...>`.
+Unutmayın, ayrıca çift bu gibi platformlarda: `<On Platform="iOS, macOS" ...>`.
 
-### <a name="window-size-and-position"></a>Pencere boyutunu ve konumunu
+### <a name="window-size-and-position"></a>Pencere boyutu ve konumu
 
-İlk boyutunu ve pencere konumunu ayarlayın `AppDelegate`:
+Pencerede konumunu ve ilk boyutu ayarlayabileceğiniz `AppDelegate`:
 
 ```csharp
 var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, height
@@ -133,19 +133,19 @@ var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, heigh
 
 ## <a name="known-issues"></a>Bilinen Sorunlar
 
-Her şeyin üretim hazır olduğunu beklemelisiniz şekilde bu bir önizleme sürümü. Aşağıda projelerinize macOS ekledikçe karşılaşabileceğiniz bazı noktalar şunlardır:
+Her şey üretime hazır olduğunu beklemelisiniz. Bu bir önizleme olduğundan. Aşağıda projelerinize macOS ekledikçe, karşılaşabileceğiniz bazı noktalar şunlardır:
 
-### <a name="not-all-nugets-are-ready-for-macos"></a>Tüm NuGets macOS için hazır
+### <a name="not-all-nugets-are-ready-for-macos"></a>Tüm Nuget'i macOS için hazır
 
-Paketleri macOS projede çalışmak üzere "xamarinmac20" hedeflemesi gerekir. Kullandığınız kitaplıkları bazıları henüz macOS desteklemediğini bulabilirsiniz.
+Paketleri "xamarinmac20" bir macOS projedeki iş hedeflemesi gerekir. Kullandığınız kitaplıklar bazıları henüz macOS desteklemediğini bulabilirsiniz.
 
-Bu durumda, bir istek göndermesini eklemek için projenin Bakımcı gerekir. Destek sahip oldukları kadar alternatifleri için aramanız gerekebilir.
+Bu durumda, eklemek için projenin Bakımcı bir istek göndermek gerekir. Destek sahip oldukları kadar Alternatiflere bakın gerekebilir.
 
-### <a name="missing-xamarinforms-features"></a>Xamarin.Forms özellikler eksik
+### <a name="missing-xamarinforms-features"></a>Xamarin.Forms özellikleri eksik
 
-Xamarin.Forms özelliklerinin tamamı bu Önizleme'de tam; Bazı henüz uygulanmadı işlevlerini listesi aşağıdadır:
+Tüm Xamarin.Forms özellikler, bu Önizleme sürümünde getirildiğinden; henüz uygulanmadı işlevlerinden bazıları listesi aşağıda verilmiştir:
 
-* Altbilgi
+* Alt bilgi
 * Görüntü – boyut
 * ListView – ScrollTo, UnevenRows desteği, SeparatorVisibility SeparatorColor, yenileme
 * MasterDetailPage – BackgroundColor
@@ -154,8 +154,8 @@ Xamarin.Forms özelliklerinin tamamı bu Önizleme'de tam; Bazı henüz uygulanm
 * Seçici – Bindable/Observable uygulama
 * TabbedPage – BarBackgroundColor, BarTextColor
 * Tablo görünümü – UnevenRows
-* ViewCell – IsEnabled, ForceUpdateSize
-* Web görünümü – çoğu WebNavigationEvents
+* Viewcell'i – IsEnabled, ForceUpdateSize
+* WebView – çoğu WebNavigationEvents
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

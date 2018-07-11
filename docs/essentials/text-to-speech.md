@@ -1,24 +1,24 @@
 ---
 title: 'Xamarin.Essentials: metin okuma'
-description: Bir uygulamayı kullanmasına yerleşik geri metin aygıttan ve ayrıca altyapısı destekleyebilir sorgu kullanılabilir diller konuşma metin okuma altyapılarındaki Xamarin.Essentials etkinleştirir TextToSpeech sınıfta.
+description: Bir uygulamayı kullanan yerleşik cihaz hem de altyapısını destekleyen bir sorgu kullanılabilir diller için geri metni konuşmaya, metin okuma altyapılarındaki Xamarin.Essentials etkinleştirir TextToSpeech sınıfı.
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 9383411074bc43af1034138aadbb6ac5494c2c01
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782807"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815667"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: metin okuma
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**TextToSpeech** sınıfı geri metin aygıttan ve ayrıca altyapısı destekleyebilir sorgu kullanılabilir diller konuşma metin okuma altyapılarındaki yerleşik kullanmak bir uygulama sağlar.
+**TextToSpeech** sınıfı CİHAZDAN ve altyapısını destekleyen bir sorgu kullanılabilir diller için geri metni konuşmaya, metin okuma altyapılarındaki yerleşik kullanmak bir uygulama sağlar.
 
-## <a name="using-text-to-speech"></a>Metin okuma kullanma
+## <a name="using-text-to-speech"></a>Metinden konuşmaya özelliğini kullanma
 
 Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 
@@ -26,7 +26,7 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-Metin okuma işlevselliği çalışır çağırarak `SpeakAsync` yöntemiyle metin ve isteğe bağlı parametreler ve utterance tamamlandıktan sonra döndürür. 
+Metinden konuşmaya işlevini çağırarak çalışır `SpeakAsync` yöntemi metin ve isteğe bağlı parametreler utterance tamamlandıktan sonra döndürür. 
 
 ```csharp
 public async Task SpeakNowDefaultSettings()
@@ -46,7 +46,7 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-Bu yöntem isteğe bağlı bir CancellationToken başladıktan sonra utterance durdurmak için alır. 
+Bu yöntem, başladıktan sonra utterance durdurmak için isteğe bağlı bir CancellationToken alır. 
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -66,7 +66,7 @@ public void CancelSpeech()
 }
 ```
 
-Metin okuma, iş parçacığı konuşma isteklerinden otomatik olarak sıraya koyar. 
+Metin okuma, aynı iş parçacığından sesli istekleri otomatik olarak kuyruğa ekler. 
 
 ```csharp
 bool isBusy = false;
@@ -92,7 +92,7 @@ public void SpeakMultiple()
 
 ### <a name="speech-settings"></a>Konuşma ayarları
 
-Ses nasıl konuşulan üzerinde daha fazla denetim için yedekleme ile `SpeakSettings` izin veren birim, aralık ve yerel ayar ayarlama.
+Daha fazla denetime nasıl ses konuşmalar için yedekleme ile `SpeakSettings` sağlayan hacim, aralık ve yerel ayarı.
 
 ```csharp
 public async Task SpeakNow()
@@ -111,12 +111,12 @@ Bu parametreler için desteklenen değerler şunlardır:
 
 | Parametre | Minimum | Maksimum |
 | --- | :---: | :---: |
-| Sıklık | 0 | 2,0 |
+| Aralık | 0 | 2,0 |
 | Birim | 0 | 1.0 |
 
 ### <a name="speech-locales"></a>Konuşma yerel ayarlar
 
-Her platform geri metinde birden çok dil ve Vurgu ile iletişim kurması için yerel ayarlar sağlar. Her platform farklı kodları ve olmasının nedeni, belirtmenin yolları sahip bir platformlar Essentials sağlar `Locale` sınıfı ve bunlarla sorgulamak için bir yol `GetLocalesAsync`.
+Birden çok dil ve aksan geri metni konuşmaya yerel ayarlar her bir platform sunar. Her platform farklı kodlar ve olmasının nedeni, bu yoldan sahip Essentials, platformlar arası sağlar `Locale` sınıfı ve bunları sorgulamak için bir yol `GetLocalesAsync`.
 
 ```csharp
 public async Task SpeakNow()
@@ -139,7 +139,7 @@ public async Task SpeakNow()
 
 ## <a name="limitations"></a>Sınırlamalar
 
-- Çoklu iş parçacıkları arasında çağrıldıklarında utterance sıra garanti edilmez.
+- Birden çok iş parçacığı üzerinde çağrılırsa utterance kuyruk garanti edilmez.
 - Ses çalma arka plan resmi olarak desteklenmez.
 
 ## <a name="api"></a>API

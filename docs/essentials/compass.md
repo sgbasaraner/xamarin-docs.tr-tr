@@ -1,24 +1,24 @@
 ---
-title: 'Xamarin.Essentials: pusula'
-description: Bu belgede cihazın manyetik Kuzey başlık izlemenize izin verir Xamarin.Essentials pusula sınıfında açıklanmaktadır.
+title: 'Xamarin.Essentials: Compass'
+description: Bu belgede cihazın manyetik Kuzey başlık izlemenize imkan tanıyan Xamarin.Essentials Compass sınıfında açıklanmaktadır.
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 63818014a9b3bdbef479055cbbcfbf8d348080fc
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: cf41948c55c742140896bfb48d9bb4abf25c8d68
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080406"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947419"
 ---
-# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: pusula
+# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Compass
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**Pusula** sınıfı cihazın manyetik Kuzey başlık izlemenize olanak sağlar.
+**Compass** sınıfı, cihazın manyetik Kuzey başlık izlemenize olanak tanır.
 
-## <a name="using-compass"></a>Pusula kullanma
+## <a name="using-compass"></a>Compass kullanma
 
 Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 
@@ -26,7 +26,7 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-Pusula işlevselliği çalışır çağırarak `Start` ve `Stop` pusula değişiklikleri dinlemek için yöntemleri. Tüm değişiklikler geri aracılığıyla gönderilen `ReadingChanged` olay. Aşağıda bir örnek verilmiştir:
+Compass işlevselliği çalışır çağırarak `Start` ve `Stop` compass değişiklikleri dinlemek için yöntemleri. Tüm değişiklikler geri aracılığıyla gönderilen `ReadingChanged` olay. Aşağıda bir örnek verilmiştir:
 
 ```csharp
 public class CompassTest
@@ -68,28 +68,21 @@ public class CompassTest
 }
 ```
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[Algılayıcı hızı](xref:Xamarin.Essentials.SensorSpeed)
+[!include[](~/essentials/includes/sensor-speed.md)]
 
-- **Hızlı** – algılayıcı verilerini (kullanıcı Arabirimi iş parçacığı üzerinde döndürülecek garantili) mümkün olduğunca hızlı alın.
-- **Oyun** – (kullanıcı Arabirimi iş parçacığı üzerinde döndürülecek garantili) oyunlar için uygun oranı.
-- **Normal** – varsayılan hızı ekran yönünü değişiklikleri için uygun.
-- **UI** – genel kullanıcı arabirimi için uygun oranı.
-
-Olay işleyicisi UI iş parçacığında çalıştırmak ve kullanıcı arabirimi öğeleri, olay işleyicisi erişmesi gerekirse kullanmak için kesin değildir, [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) UI iş parçacığında bu kodu çalıştırmak için yöntem.
-
-## <a name="platform-implementation-specifics"></a>Platform uygulama özellikleri
+## <a name="platform-implementation-specifics"></a>Platform uygulaması özellikleri
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Android, pusula başlık almak için bir API sağlamaz. Biz accelerometer ve Google tarafından önerildiği manyetik Kuzey başlık hesaplamak için magnetometer kullanın. 
+Android, pusula almak için bir API sağlamaz. Biz, ivme ölçer ve magnetometer Google tarafından önerildiği manyetik Kuzey başlığı hesaplamak için kullanır. 
 
-Algılayıcılar ayarlanması gerekir çünkü nadir durumlarda, belki de tutarsız sonuçlar, aygıtınızı bir Şekil 8 hareket taşınmasını içerir görürsünüz. Google haritalar açmak, konumunuz nokta'a dokunun ve seçmek için budur en iyi yolu biri **Ayarla pusula**.
+Algılayıcılar ayarlanması gerektiği için ender durumlarda, belki de tutarsız sonuçlar Cihazınızı bir Şekil 8 hızda taşımak kapsamaktadır görürsünüz. Google haritalar'ı açın, konumunuz için nokta dokunun ve budur en iyi yolu **Ayarla compass**.
 
-Birden çok algılayıcılar uygulamanızdan aynı anda çalışan algılayıcı hızını ayarlayabilirsiniz unutmayın.
+Uygulamanızdan aynı anda birden çok sensörlerden çalıştıran algılayıcı hızını ayarlayabilirsiniz dikkat edin.
 
 --------------
 
 ## <a name="api"></a>API
 
-- [Kaynak kodu pusula](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
+- [Kaynak kodu compass](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
 - [Pusula API belgeleri](xref:Xamarin.Essentials.Compass)

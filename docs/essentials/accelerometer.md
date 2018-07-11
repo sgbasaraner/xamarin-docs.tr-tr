@@ -1,24 +1,24 @@
 ---
-title: 'Xamarin.Essentials: Accelerometer'
-description: Xamarin.Essentials Accelerometer sınıfında üç boyutlu alanı aygıtı ivmesini gösterir ve cihazın accelerometer algılayıcı izlemenize izin verir.
+title: 'Xamarin.Essentials: ivme ölçer'
+description: İvme ölçer sınıfını Xamarin.Essentials içinde gösteren üç boyutlu boşluk cihazın ivmesini cihazın ivme ölçer algılayıcı izlemenize izin verir.
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 8229a372659e7918457a9d2f358b871e1a3f5978
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: 15e2cb69806f281e88e226b7bcd87a20e149d508
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080404"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947315"
 ---
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: Accelerometer
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: ivme ölçer
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**Accelerometer** sınıfı üç boyutlu alanı aygıtı ivmesini gösteren cihazın accelerometer algılayıcı izlemenize olanak sağlar.
+**İvme ölçer** sınıfı gösteren üç boyutlu boşluk cihazın ivmesini cihazın ivme ölçer algılayıcı izlemenize olanak tanır.
 
-## <a name="using-accelerometer"></a>Accelerometer kullanma
+## <a name="using-accelerometer"></a>İvme ölçer kullanma
 
 Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 
@@ -26,7 +26,7 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-Accelerometer işlevselliği çalışır çağırarak `Start` ve `Stop` hızlandırma değişiklikleri dinlemek için yöntemleri. Tüm değişiklikler geri aracılığıyla gönderilen `ReadingChanged` olay. Örnek Kullanım şöyledir:
+İşlevselliği ivme ölçer çalışır çağırarak `Start` ve `Stop` hızlandırma değişiklikleri dinlemek için yöntemleri. Tüm değişiklikler geri aracılığıyla gönderilen `ReadingChanged` olay. Örnek Kullanım şu şekildedir:
 
 ```csharp
 
@@ -69,30 +69,23 @@ public class AccelerometerTest
 }
 ```
 
-Accelerometer okumalar geri G. içinde bildirilen Bir G Yerçekimi birimi zorla dünya gravitational alana göre exerted eşit olduğu (9.81 m/s ^ 2).
+İvme ölçer okumalar geri G. içinde bildirilen Bir G Yerçekimi birimi zorla dünya gravitational alana göre sarf eşit olduğu (9.81 m/sn ^ 2).
 
-Koordinat sistemi varsayılan yönünü telefon ekran göre tanımlanır. Cihazın ekran yönünü değiştiğinde eksenleri takas değil.
+Koordinat sistemi varsayılan yönünü telefon ekranın göre tanımlanır. Cihazın ekran yönüne değiştiğinde eksenleri takas değil.
 
-X ekseni yatay ve nokta sağdaki Y ekseni dikeydir ve yukarıyı ve Z ekseni ekranın ön yüz dışına doğru işaret eder. Bu sistemde negatif Z değerleri ekran arkasında koordinatlara sahip.
+X ekseni yatay ve noktaları sağındaki Y ekseni dikey olan ve yukarı bakan ve Z ekseni ön nominal ekranın dışına işaret eder. Bu sistemde koordinatlarını ekran arkasında negatif Z değerleri vardır.
 
 Örnekler:
 
-* Cihaz düz tablo üzerinde arasındadır ve sağa doğru sol taraftaki gönderilen x hızlandırma değeri pozitif olur.
+* Cihaz, düz bir tabloda bulunan ve sağa doğru sol taraftaki gönderdiniz x hızlandırma değeri pozitif olur.
 
-* Aygıt bir tablo üzerinde düz gerektiği zaman hızlandırmasını +1.00 G değerdir veya (+ 9.81 m/s ^ 2), cihaz ivmesini karşılık gelen (0 m/s ^ 2) yer çekimi zorla eksi (-9.81 m/s ^ 2) ve G. olduğu gibi normalleştirilmiş
+* Cihaz düz bir tabloda gerektiği zaman hızlandırma +1.00 G değerdir veya (+ 9.81 m/sn ^ 2), cihazın ivmesini için karşılık gelen (0 m/sn ^ 2) yer çekimi kuvveti eksi (-9.81 m/sn ^ 2) ve normalleştirilmiş G. olduğu gibi
 
-* Ne zaman cihaz düz tablo üzerinde arasındadır ve bir ivmesini m/s ile sky doğru gönderilen ^ 2 hızlandırma değeri olan aygıt ivmesini karşılık gelen bir + 9.81 eşit (+ m/s ^ 2) yer çekimi zorla eksi (-9.81 m/s ^ 2) ve G. normalleştirilmiş 
+* Ne zaman cihaz düz bir tabloda bulunan ve m/sn'lik bir hızlandırmalı sky doğru gönderilir ^ 2 hızlandırma değeri olan cihazın ivmesini için karşılık gelen bir + 9.81 eşittir (+ m/sn ^ 2) yer çekimi kuvveti eksi (-9.81 m/sn ^ 2) ve normalleştirilmiş G. içinde 
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[Algılayıcı hızı](xref:Xamarin.Essentials.SensorSpeed)
-
-- **Hızlı** – algılayıcı verilerini (kullanıcı Arabirimi iş parçacığı üzerinde döndürülecek garantili) mümkün olduğunca hızlı alın.
-- **Oyun** – (kullanıcı Arabirimi iş parçacığı üzerinde döndürülecek garantili) oyunlar için uygun oranı.
-- **Normal** – varsayılan hızı ekran yönünü değişiklikleri için uygun.
-- **UI** – genel kullanıcı arabirimi için uygun oranı.
-
-Olay işleyicisi UI iş parçacığında çalıştırmak ve kullanıcı arabirimi öğeleri, olay işleyicisi erişmesi gerekirse kullanmak için kesin değildir, [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) UI iş parçacığında bu kodu çalıştırmak için yöntem.
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>API
 
-- [Accelerometer kaynak kodu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
-- [Accelerometer API belgeleri](xref:Xamarin.Essentials.Accelerometer)
+- [İvme ölçer kaynak kodu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [İvme ölçer API belgeleri](xref:Xamarin.Essentials.Accelerometer)

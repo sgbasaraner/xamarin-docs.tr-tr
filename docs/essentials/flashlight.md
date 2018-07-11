@@ -1,30 +1,30 @@
 ---
-title: 'Xamarin.Essentials: el feneri'
-description: Bu belge açma veya cihazın kamera işaret feneri açmak için flash kapatma olanağı vardır Xamarin.Essentials el feneri sınıfında açıklar.
+title: 'Xamarin.Essentials: Fener yeri'
+description: Bu belge açma veya cihazın kamerasını bir Fener yeri açmak için flash kapatma olanağı vardır Xamarin.Essentials, Fener yeri sınıfında açıklar.
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782430"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831417"
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: el feneri
+# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Fener yeri
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**El feneri** sınıfı üzerinde veya cihazın kamera işaret feneri açmak için flash kapatma olanağı vardır.
+**Fener yeri** sınıfı üzerinde veya cihazın kamerasını bir Fener yeri açmak için flash kapatma olanağı vardır.
 
 ## <a name="getting-started"></a>Başlarken
 
-Erişim için **el feneri** işlevselliği aşağıdaki platform özel kurulum gereklidir.
+Erişim için **Fener yeri** işlevselliğini aşağıdaki platforma özgü Kurulum gereklidir.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-El feneri ve kamera izinler gereklidir ve Android projesinde yapılandırılması gerekir. Bu, aşağıdaki yollarla eklenebilir:
+Fener yeri ve kamera izinler gereklidir ve Android projede yapılandırılması gerekir. Bu, aşağıdaki yollarla eklenebilir:
 
 Açık **AssemblyInfo.cs** altında dosya **özellikleri** klasör ekleyin:
 
@@ -33,18 +33,18 @@ Açık **AssemblyInfo.cs** altında dosya **özellikleri** klasör ekleyin:
 [assembly: UsesPermission(Android.Manifest.Permission.Camera)]
 ```
 
-YA da güncelleştirme Android bildirim:
+YA da Android bildirimini güncelleştir:
 
-Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve aşağıdaki içine ekleyin **bildirim** düğümü.
+Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve içine aşağıdaki **bildirim** düğümü.
 
 ```xml
 <uses-permission android:name="android.permission.FLASHLIGHT" />
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-Veya Anroid projeye sağ tıklayın ve projenin özelliklerini açın. Altında **Android derleme bildirimi** Bul **gerekli izinler:** alan ve onay **el FENERİ** ve **kamera** izinleri. Bu otomatik olarak güncelleştirilecek **AndroidManifest.xml** dosya.
+Anroid projeye sağ tıklayın ve proje özelliklerini açın. Altında **Android bildirim** Bul **gerekli izinler:** alan ve onay **Fener yeri** ve **kamera** izinleri. Bu otomatik olarak güncelleştirecektir **AndroidManifest.xml** dosya.
 
-Bu izinler ekleyerek [Google Play otomatik olarak aygıtları filtre](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features) belirli donanım olmadan. Bu sorunu Android projenizin AssemblyInfo.cs dosyanızda aşağıdaki ekleyerek alabilirsiniz:
+Bu izinleri ekleyerek [Google Play otomatik olarak cihazlarıyla dışarıdan filtre](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features) belirli donanım olmadan. Bu sorunu, uygulamanızı AssemblyInfo.cs dosyası Android projenize aşağıdaki ekleyerek alabilirsiniz:
 
 ```csharp
 [assembly: UsesFeature("android.hardware.camera", Required = false)]
@@ -53,15 +53,15 @@ Bu izinler ekleyerek [Google Play otomatik olarak aygıtları filtre](http://dev
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Ek kurulumu gerekmez.
+Ek kurulum gerekli.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Ek kurulumu gerekmez.
+Ek kurulum gerekli.
 
 -----
 
-## <a name="using-flashlight"></a>El feneri kullanma
+## <a name="using-flashlight"></a>Fener yeri kullanma
 
 Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 
@@ -69,7 +69,7 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-El feneri aracılığıyla açma ve kapatma açılabilir `TurnOnAsync` ve `TurnOffAsync` yöntemleri:
+Fener yeri aracılığıyla açılıp kapatılabilir `TurnOnAsync` ve `TurnOffAsync` yöntemleri:
 
 ```csharp
 try
@@ -94,31 +94,31 @@ catch (Exception ex)
 }
 ```
 
-## <a name="platform-implementation-specifics"></a>Platform uygulama özellikleri
+## <a name="platform-implementation-specifics"></a>Platform uygulaması özellikleri
 
 ### <a name="androidtabandroid-specifics"></a>[Android](#tab/android-specifics)
 
-Cihazın işletim sistemi temelinde optmized el feneri sınıfı olmuştur.
+Cihazın işletim sistemi temelinde optmized Fener yeri sınıfı olmuştur.
 
 #### <a name="api-level-23-and-higher"></a>API düzeyi 23 ve üzeri
 
-Yeni API düzeyde [Torch modu](https://developer.android.com/reference/android/hardware/camera2/CameraManager.html#setTorchMode) açmak veya kapatmak cihaz flash ölçü için kullanılacak.
+Yeni API düzeyleri [Torch modu](https://developer.android.com/reference/android/hardware/camera2/CameraManager.html#setTorchMode) cihazın flash birim açıp kapatması için kullanılacak.
 
 #### <a name="api-level-22-and-lower"></a>API düzeyi 22 ve daha düşük
 
-Kamera yüzey dokusunu açmak veya kapatmak için oluşturduğunuz `FlashMode` kamera birimi. 
+Kamera yüzey doku etkinleştirmek veya devre dışı bırakmak için oluşturulan `FlashMode` kamera birimi. 
 
 ### <a name="iostabios-specifics"></a>[iOS](#tab/ios-specifics)
 
-[AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) üzerinde ve Torch ve aygıtın Flash modunu devre dışı bırakma için kullanılır.
+[AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) açma ve kapatma Torch ve cihazın Flash modu için kullanılır.
 
 ### <a name="uwptabuwp-specifics"></a>[UWP](#tab/uwp-specifics)
 
-[Ampul](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) açmak veya kapatmak için aygıtın arkasında ilk ampul algılamak için kullanılır.
+[Lamp](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) arkasındaki etkinleştirmek veya devre dışı bırakmak için cihazın ilk lamp algılamak için kullanılır.
 
 -----
 
 ## <a name="api"></a>API
 
-- [El feneri kaynak kodu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
-- [El feneri API belgeleri](xref:Xamarin.Essentials.Flashlight)
+- [Fener yeri kaynak kodu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
+- [Fener yeri API belgeleri](xref:Xamarin.Essentials.Flashlight)

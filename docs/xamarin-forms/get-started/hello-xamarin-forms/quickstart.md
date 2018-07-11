@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms hızlı başlangıç
-description: Bu makalede, bir sayısal telefon numarası kullanıcı tarafından girilen bir alfasayısal telefon numarasını çeviren ve numarası çağıran bir uygulama oluşturmak açıklanmaktadır.
+description: Bu makalede, kullanıcı tarafından girilen bir sayısal telefon numarası bir alfasayısal telefon numarası çeviren ve sayı çağrılarının bir uygulamanın nasıl oluşturulacağını açıklar.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
@@ -9,19 +9,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
 ms.openlocfilehash: 5b5f8c80e49d66ed3bd8b008c975d1cfeda93ed4
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321411"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38832390"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms hızlı başlangıç
 
-Bu kılavuz, bir sayısal telefon numarası kullanıcı tarafından girilen bir alfasayısal telefon numarasını çeviren ve numarası çağıran bir uygulama oluşturmak gösterilmiştir. Son uygulama aşağıda gösterilmiştir:
+Bu izlenecek yol, kullanıcı tarafından girilen bir sayısal telefon numarası bir alfasayısal telefon numarası çeviren ve sayı çağrılarının bir uygulamanın nasıl oluşturulacağını gösterir. Son uygulama aşağıda gösterilmiştir:
 
 [![](quickstart-images/intro-app-examples-sml.png "Phoneword uygulama")](quickstart-images/intro-app-examples.png#lightbox "Phoneword uygulama")
 
-Phoneword uygulama gibi oluşturun:
+Phoneword uygulamayı şu şekilde oluşturun:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -29,26 +29,26 @@ Phoneword uygulama gibi oluşturun:
 
     ![](quickstart-images/vs/start-page.png "Visual Studio")
 
-2. Visual Studio'da sırasıyla **yeni proje oluştur...**  yeni bir proje oluşturmak için:
+2. Visual Studio'da **yeni proje oluştur...**  yeni bir proje oluşturmak için:
 
     ![](quickstart-images/vs/new-solution.png "Yeni Proje")
 
-3. İçinde **yeni proje** iletişim kutusunda, tıklatın **platformlar arası**seçin **mobil uygulama (Xamarin.Forms)** şablon kümesi adı **Phoneword**, proje için uygun bir konum seçin ve tıklatın **Tamam** düğmesi:
+3. İçinde **yeni proje** iletişim kutusunda, tıklayın **platformlar arası**seçin **mobil uygulama (Xamarin.Forms)** şablon kümesi adı **Phoneword**, proje için uygun bir konum seçin ve tıklayın **Tamam** düğmesi:
 
     ![](quickstart-images/vs/new-project.w157.png "Platformlar arası proje şablonları")
 
     > [!NOTE]
-    > Çözüm adı başarısız **Phoneword** çok sayıda yapı hatalarına neden.
+    > Ad çözüm başarısız **Phoneword** çok sayıda derleme hatalarına neden.
 
-4. İçinde **yeni Çapraz Platform uygulaması** iletişim kutusunda, tıklatın **boş uygulama**seçin **.NET standart** kod paylaşımı stratejisi ve tıklatın olarak **Tamam** düğmesi:
+4. İçinde **yeni Çapraz Platform uygulaması** iletişim kutusunda, tıklayın **boş uygulama**seçin **.NET Standard** tıklatın ve kod paylaşımı stratejisi olarak **Tamam** Düğme:
 
-    ![](quickstart-images/vs/new-app.png "Yeni platformlar arası uygulaması")
+    ![](quickstart-images/vs/new-app.png "Yeni bir Çoklu Platform uygulaması")
 
-5. İçinde **Çözüm Gezgini**, **Phoneword** projesi, çift **MainPage.xaml** açmak için:
+5. İçinde **Çözüm Gezgini**, **Phoneword** proje, çift **MainPage.xaml** açmak için:
 
-    ![](quickstart-images/vs/open-mainpage-xaml.png "MainPage.xaml açın")
+    ![](quickstart-images/vs/open-mainpage-xaml.png "Mainpage.XAML dosyasını açın")
 
-6. İçinde **MainPage.xaml**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod sayfası için kullanıcı arabirimi bildirimli olarak tanımlar:
+6. İçinde **MainPage.xaml**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kod sayfası için kullanıcı arabirimi bildirimli olarak tanımlar:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -70,13 +70,13 @@ Phoneword uygulama gibi oluşturun:
     </ContentPage>
     ```
 
-    Değişiklikleri kaydetmek **MainPage.xaml** basarak **CTRL + S**ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **MainPage.xaml** tuşuna basarak **CTRL + S**ve dosyayı kapatın.
 
-7. İçinde **Çözüm Gezgini**, genişletin **MainPage.xaml** çift tıklayın ve **MainPage.xaml.cs** açmak için:
+7. İçinde **Çözüm Gezgini**, genişletme **MainPage.xaml** ve çift **MainPage.xaml.cs** açmak için:
 
     ![](quickstart-images/vs/open-mainpage-codebehind.png "MainPage.xaml.cs açın")
 
-8. İçinde **MainPage.xaml.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. `OnTranslate` Ve `OnCall` yöntemleri, yanıt olarak yürütülür **çevir** ve **çağrısı** kullanıcı arabiriminde, sırasıyla tıklattınız düğmeleri:
+8. İçinde **MainPage.xaml.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. `OnTranslate` Ve `OnCall` yöntemleri, yanıt olarak yürütülecek **çevir** ve **çağrı** düğmeler kullanıcı arabiriminde sırasıyla tıklanan:
 
     ```csharp
     using System;
@@ -122,11 +122,11 @@ Phoneword uygulama gibi oluşturun:
     ```
 
     > [!NOTE]
-    > Bu noktada uygulamayı oluşturmaya çalışırken, daha sonra düzeltilecektir hatalarına neden.
+    > Bu noktada uygulamayı oluşturmaya çalışırken, daha sonra düzeltilecek hatalara neden olabilecek.
 
-    Değişiklikleri kaydetmek **MainPage.xaml.cs** basarak **CTRL + S**ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **MainPage.xaml.cs** tuşuna basarak **CTRL + S**ve dosyayı kapatın.
 
-9. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword** proje ve seçin **Ekle > Yeni öğe...** :
+9. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword** seçin ve proje **Ekle > Yeni öğe...** :
 
     ![](quickstart-images/vs/add-new-item.png "Yeni Öğe Ekle")
 
@@ -134,7 +134,7 @@ Phoneword uygulama gibi oluşturun:
 
     ![](quickstart-images/vs/add-translator-class.w157.png "Yeni sınıf ekleyin")
 
-11. İçinde **PhoneTranslator.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod, bir telefon numarasına bir telefon sözcük çevirir:
+11. İçinde **PhoneTranslator.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kod, bir telefon numarasına bir telefon sözcük çevirir:
 
     ```csharp
     using System.Text;
@@ -190,17 +190,17 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **PhoneTranslator.cs** basarak **CTRL + S**ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **PhoneTranslator.cs** tuşuna basarak **CTRL + S**ve dosyayı kapatın.
 
-12. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword** proje ve seçin **Ekle > Yeni öğe...** :
+12. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword** seçin ve proje **Ekle > Yeni öğe...** :
 
     ![](quickstart-images/vs/add-new-item.png "Yeni Öğe Ekle")
 
 13. İçinde **Yeni Öğe Ekle** iletişim kutusunda **Visual C# > kod > arabirimi**, yeni dosya adı **IDialer**, tıklatıp **Ekle** düğmesi:
 
-    ![](quickstart-images/vs/add-idialer-interface.w157.png "Yeni arabirimi Ekle")
+    ![](quickstart-images/vs/add-idialer-interface.w157.png "Yeni arabirim ekleme")
 
-14. İçinde **IDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kodu tanımlayan bir `Dial` çevrilmiş telefon numarasını aramak için her platformda uygulanmalı yöntemi:
+14. İçinde **IDialer.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kodu tanımlayan bir `Dial` her platformda çevrilmiş telefon numarası çevirmek için uygulanması gereken yöntemini:
 
     ```csharp
     namespace Phoneword
@@ -212,12 +212,12 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **IDialer.cs** basarak **CTRL + S**ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **IDialer.cs** tuşuna basarak **CTRL + S**ve dosyayı kapatın.
 
     > [!NOTE]
-    > Uygulama için ortak kodun tamamlanmıştır. Platforma özgü Telefon Çeviricisi kodu şimdi olarak gerçekleştirilen bir [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+    > Uygulama için ortak kodun tamamlanmıştır. Platforma özgü telefon çevirici kodu artık uygulanmasını olarak bir [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
-15. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword.iOS** proje ve seçin **Ekle > Yeni öğe...** :
+15. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword.iOS** seçin ve proje **Ekle > Yeni öğe...** :
 
     ![](quickstart-images/vs/add-new-item-ios.png "Yeni Öğe Ekle")
 
@@ -225,7 +225,7 @@ Phoneword uygulama gibi oluşturun:
 
     ![](quickstart-images/vs/new-phone-dialer-ios.w157.png "Yeni sınıf ekleyin")
 
-17. İçinde **PhoneDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod oluşturur <code>Dial</code> iOS platformunda çevrilmiş telefon numarasını aramak için kullanılan yöntem:
+17. İçinde **PhoneDialer.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kod oluşturur <code>Dial</code> iOS platformunda çevrilmiş telefon numarası çevirmek için kullanılacak yöntemi:
 
     ```csharp
     using Foundation;
@@ -247,9 +247,9 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **PhoneDialer.cs** basarak **CTRL + S**ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **PhoneDialer.cs** tuşuna basarak **CTRL + S**ve dosyayı kapatın.
 
-18. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword.Android** proje ve seçin **Ekle > Yeni öğe...** :
+18. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword.Android** seçin ve proje **Ekle > Yeni öğe...** :
 
     ![](quickstart-images/vs/add-new-item-android.png "Yeni Öğe Ekle")
 
@@ -257,7 +257,7 @@ Phoneword uygulama gibi oluşturun:
 
     ![](quickstart-images/vs/new-phone-dialer-android.w157.png "Yeni sınıf ekleyin")
 
-20. İçinde **PhoneDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod oluşturur `Dial` Android platformunda çevrilmiş telefon numarasını aramak için kullanılan yöntem:
+20. İçinde **PhoneDialer.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kod oluşturur `Dial` Android platformunda çevrilmiş telefon numarası çevirmek için kullanılacak yöntemi:
 
     ```csharp
     using Android.Content;
@@ -306,9 +306,9 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **PhoneDialer.cs** basarak **CTRL + S**ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **PhoneDialer.cs** tuşuna basarak **CTRL + S**ve dosyayı kapatın.
 
-21. İçinde **Çözüm Gezgini**, **Phoneword.Android** projesi, çift **MainActivity.cs** açmak için tüm şablonu kodu kaldırın ve ile değiştirin Aşağıdaki kod:
+21. İçinde **Çözüm Gezgini**, **Phoneword.Android** proje, çift **MainActivity.cs** açmak için tüm şablon kodunu kaldırın ve değiştirin Aşağıdaki kodu:
 
     ```csharp
     using Android.App;
@@ -337,19 +337,19 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **MainActivity.cs** basarak **CTRL + S**ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **MainActivity.cs** tuşuna basarak **CTRL + S**ve dosyayı kapatın.
 
-22. İçinde **Çözüm Gezgini**, **Phoneword.Android** projesi, çift **özellikleri** seçip **Android derleme bildirimi** sekmesi:
+22. İçinde **Çözüm Gezgini**, **Phoneword.Android** proje, çift **özellikleri** seçip **Android bildirim** sekmesinde:
 
-    ![](quickstart-images/vs/android-manifest.png "Açık Android derleme bildirimi")
+    ![](quickstart-images/vs/android-manifest.png "Açık Android bildirimi")
 
-23. İçinde **gerekli izinleri** bölümünde, etkinleştirme **CALL_PHONE** izni. Bu, bir telefon araması yerleştirmek için uygulama izin verir:
+23. İçinde **gerekli izinler** bölümünde, etkinleştirme **CALL_PHONE** izni. Bu, bir telefon araması yerleştirmek için uygulamaya izin verir:
 
-    ![](quickstart-images/vs/android-manifest-changed.png "CallPhone izni etkinleştir")
+    ![](quickstart-images/vs/android-manifest-changed.png "CallPhone iznini etkinleştirme")
 
     Tuşlarına basarak bildirime değişiklikleri kaydetmek **CTRL + S**ve dosyayı kapatın.
 
-24. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword.UWP** proje ve seçin **Ekle > Yeni öğe...** :
+24. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword.UWP** seçin ve proje **Ekle > Yeni öğe...** :
 
     ![](quickstart-images/vs/add-new-item-uwp.png "Yeni Öğe Ekle")
 
@@ -357,7 +357,7 @@ Phoneword uygulama gibi oluşturun:
 
     ![](quickstart-images/vs/new-phone-dialer-uwp.w157.png "Yeni sınıf ekleyin")
 
-26. İçinde **PhoneDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod oluşturur `Dial` yöntemi ve evrensel Windows platformu üzerinde bir çevrilmiş telefon numarasını aramak için kullanılan yardımcı yöntemler:
+26. İçinde **PhoneDialer.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kod oluşturur `Dial` yöntemi ve evrensel Windows platformu üzerinde çevrilmiş telefon numarası çevirmek için kullanılan yardımcı yöntemler:
 
     ```csharp
     using Phoneword.UWP;
@@ -406,7 +406,7 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **PhoneDialer.cs** basarak **CTRL + S**ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **PhoneDialer.cs** tuşuna basarak **CTRL + S**ve dosyayı kapatın.
 
 27. İçinde **Çözüm Gezgini**, **Phoneword.UWP** projesinde **başvuruları**seçip **Başvuru Ekle...** :
 
@@ -414,65 +414,65 @@ Phoneword uygulama gibi oluşturun:
 
 28. İçinde **başvuru Yöneticisi** iletişim kutusunda **Evrensel Windows > uzantılar > UWP için Windows Mobile uzantıları**, tıklatıp **Tamam** düğmesi:
 
-    ![](quickstart-images/vs/uwp-add-reference-extensions.png "UWP için Windows Mobile uzantıları ekleme")
+    ![](quickstart-images/vs/uwp-add-reference-extensions.png "UWP için Windows mobil uzantıları ekleme")
 
-29. İçinde **Çözüm Gezgini**, **Phoneword.UWP** projesi, çift **Package.appxmanifest**:
+29. İçinde **Çözüm Gezgini**, **Phoneword.UWP** proje, çift **Package.appxmanifest**:
 
     ![](quickstart-images/vs/uwp-manifest.png "UWP bildirimini açın")
 
-30. İçinde **yetenekleri** sayfasında, etkinleştirme **telefon araması** yeteneği. Bu, bir telefon araması yerleştirmek için uygulama izin verir:
+30. İçinde **özellikleri** sayfasında, etkinleştirmek **telefon araması** yeteneği. Bu, bir telefon araması yerleştirmek için uygulamaya izin verir:
 
-    ![](quickstart-images/vs/uwp-manifest-changed.png "Telefon araması özelliği etkinleştir")
+    ![](quickstart-images/vs/uwp-manifest-changed.png "Telefon araması özelliğini etkinleştir")
 
     Tuşlarına basarak bildirime değişiklikleri kaydetmek **CTRL + S**ve dosyayı kapatın.
 
-31. Visual Studio'da seçin **Yapı > Yapı çözümü** menü öğesi (veya basın **CTRL + SHIFT + B**). Uygulamayı oluşturacaksınız ve Visual Studio durum çubuğunda bir başarı iletisi görüntülenir:
+31. Visual Studio'da **Yapı > Çözümü Derle** menü öğesi (veya basın **CTRL + SHIFT + B**). Uygulamayı derler ve Visual Studio durum çubuğunda bir başarı iletisi görüntülenir:
 
-    ![](quickstart-images/vs/build-successful.png "Yapı başarılı")
+    ![](quickstart-images/vs/build-successful.png "Derleme başarılı oldu")
 
-    Hatalar varsa, önceki adımı yineleyin ve uygulama başarıyla derlemeler kadar hataları düzeltin.
+    Hatalar varsa, önceki adımları tekrarlayın ve uygulama başarıyla oluşturulursa kadar hataları düzeltin.
 
-32. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword.UWP** proje ve seçin **başlangıç projesi olarak ayarla**:
+32. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword.UWP** seçin ve proje **başlangıç projesi olarak ayarla**:
 
     ![](quickstart-images/vs/uwp-set-as-startup-project.png "Başlangıç projesi olarak ayarla")
 
-33. Visual Studio araç çubuğunda tuşlarına basarak **Başlat** düğmesini (Oynat düğmesini benzer üçgen düğmesi) uygulamayı başlatmak için:
+33. Visual Studio araç çubuğunda tuşlarına basarak **Başlat** düğmesine (Oynat düğmesine benzeyen üçgen düğme) uygulamayı başlatmak için:
 
     ![](quickstart-images/vs/start.png "Visual Studio araç")
     ![](quickstart-images/vs/phone-result-uwp.png "Phoneword uygulama UWP")
 
-34. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword.Android** proje ve seçin **başlangıç projesi olarak ayarla**.
-35. Visual Studio araç çubuğunda tuşlarına basarak **Başlat** düğmesini (Oynat düğmesini benzer üçgen düğmesi) Android öykünücüsünde içinde uygulamayı başlatmak için.
-36. Bir iOS aygıtı varsa ve Xamarin.Forms geliştirme için Mac sistem gereksinimlerini karşılayan, iOS cihazını uygulama dağıtmak için benzer bir teknik kullanın. Alternatif olarak, uygulamayı dağıtmak [iOS uzak simulator](~/tools/ios-simulator.md).
+34. İçinde **Çözüm Gezgini**, sağ tıklayın **Phoneword.Android** seçin ve proje **başlangıç projesi olarak ayarla**.
+35. Visual Studio araç çubuğunda tuşlarına basarak **Başlat** düğmesine (Oynat düğmesine benzeyen üçgen düğme) içinde Android öykünücüsünde uygulamayı başlatmak için.
+36. Bir iOS cihazını ve Xamarin.Forms geliştirme Mac sistem gereksinimlerini, uygulamayı iOS cihazına dağıtmak için benzer bir teknik kullanın. Alternatif olarak, uygulamaya dağıtma [uzak iOS simülatörü](~/tools/ios-simulator.md).
 
-    Not: telefon aramaları tüm benzeticileri desteklenmez.
+    Not: üzerinde tüm simülatörleri telefon aramaları desteklenmez.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-1. Visual Studio Başlangıç sayfası ve Mac için Başlat'ı tıklatın **yeni proje...**  yeni bir proje oluşturmak için:
+1. Visual Studio Başlangıç sayfasında ve Mac için Başlat'a tıklayın **yeni proje...**  yeni bir proje oluşturmak için:
 
-    ![](quickstart-images/xs/new-solution.png "Yeni çözümü")
+    ![](quickstart-images/xs/new-solution.png "Yeni çözüm")
 
-2. İçinde **yeni projeniz için bir şablon seçin** iletişim kutusunda, tıklatın **Multiplatform > Uygulama**seçin **boş Forms uygulaması** şablonu ve tıklatın **İleri** düğmesi:
+2. İçinde **yeni projeniz için bir şablon seçin** iletişim kutusunda, tıklayın **çok platformlu > Uygulama**seçin **boş Forms uygulaması** şablon seçeneğine tıklayıp **sonraki** düğmesi:
 
     ![](quickstart-images/xs/choose-template.png "Bir şablon seçin")
 
-3. İçinde **boş formları Uygulamanızı yapılandırmak** iletişim kutusunda, yeni uygulama adı **Phoneword**, emin **kullanım .NET standart** radyo düğmesi seçilir ve tıklatın**Sonraki** düğmesi:
+3. İçinde **boş Forms yapılandırmanız** iletişim kutusunda, yeni uygulama adı **Phoneword**, emin **kullanım .NET Standard** radyo düğmesi seçilir ve tıklayın**Sonraki** düğmesi:
 
-    ![](quickstart-images/xs/configure-app.png "Forms uygulamayı yapılandırma")
+    ![](quickstart-images/xs/configure-app.png "Forms uygulaması yapılandırma")
 
-4. İçinde **yeni boş formları Uygulamanızı yapılandırmak** iletişim, çözüm ve proje adları kümesine bırakın **Phoneword**, proje için uygun bir konum seçin ve tıklatın **oluşturma**düğmesi projesi oluşturmak için:
+4. İçinde **yeni boş Forms yapılandırmanız** iletişim kutusunda, çözüm ve proje adları kümesine bırakın **Phoneword**, proje için uygun bir konum seçin ve tıklayın **Oluştur**projeyi oluşturmak için:
 
-    ![](quickstart-images/xs/configure-project.png "Forms projesi yapılandırın")
+    ![](quickstart-images/xs/configure-project.png "Forms projesi yapılandırma")
 
     > [!NOTE]
-    > Çözüm ve proje adı başarısız **Phoneword** çok sayıda yapı hatalarına neden.
+    > Çözüm ve proje adı başarısız **Phoneword** çok sayıda derleme hatalarına neden.
 
-5. İçinde **çözüm paneli**, çift **MainPage.xaml** açmak için:
+5. İçinde **çözüm bölmesi**, çift **MainPage.xaml** açmak için:
 
-    ![](quickstart-images/xs/open-mainpage-xaml.png "MainPage.xaml açın")
+    ![](quickstart-images/xs/open-mainpage-xaml.png "Mainpage.XAML dosyasını açın")
 
-6. İçinde **MainPage.xaml**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod sayfası için kullanıcı arabirimi bildirimli olarak tanımlar:
+6. İçinde **MainPage.xaml**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kod sayfası için kullanıcı arabirimi bildirimli olarak tanımlar:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -494,13 +494,13 @@ Phoneword uygulama gibi oluşturun:
     </ContentPage>
     ```
 
-    Değişiklikleri kaydetmek **MainPage.xaml** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **MainPage.xaml** seçerek **Dosya > Kaydet** (veya basarak  **&#8984; + S**) ve dosyayı kapatın.
 
-7. İçinde **çözüm paneli**, çift **MainPage.xaml.cs** açmak için:
+7. İçinde **çözüm bölmesi**, çift **MainPage.xaml.cs** açmak için:
 
     ![](quickstart-images/xs/open-mainpage-codebehind.png "MainPage.xaml.cs açın")
 
-8. İçinde **MainPage.xaml.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. `OnTranslate` Ve `OnCall` yöntemleri, yanıt olarak yürütülür **çevir** ve **çağrısı** kullanıcı arabiriminde sırasıyla tıklattınız düğmeleri:
+8. İçinde **MainPage.xaml.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. `OnTranslate` Ve `OnCall` yöntemleri, yanıt olarak yürütülecek **çevir** ve **çağrı** kullanıcı arabiriminde sırasıyla tıklanan düğmeler:
 
     ```csharp
     using System;
@@ -546,19 +546,19 @@ Phoneword uygulama gibi oluşturun:
     ```
 
     > [!NOTE]
-    > Bu noktada uygulamayı oluşturmaya çalışırken, daha sonra düzeltilecektir hatalarına neden.
+    > Bu noktada uygulamayı oluşturmaya çalışırken, daha sonra düzeltilecek hatalara neden olabilecek.
 
-    Değişiklikleri kaydetmek **MainPage.xaml.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **MainPage.xaml.cs** seçerek **Dosya > Kaydet** (veya basarak  **&#8984; + S**) ve dosyayı kapatın.
 
-9. İçinde **çözüm paneli**seçin **Phoneword** proje, sağ tıklatın ve seçin **Ekle > yeni dosya...** :
+9. İçinde **çözüm bölmesi**seçin **Phoneword** proje için sağ tıklatın ve seçin **Ekle > yeni dosya...** :
 
-    ![](quickstart-images/xs/add-new-translator-file.png "Yeni dosya ekleme")
+    ![](quickstart-images/xs/add-new-translator-file.png "Yeni bir dosya ekleyin")
 
-10. İçinde **yeni dosya** iletişim kutusunda **genel > boş sınıfı**, yeni dosya adı **PhoneTranslator**, tıklatıp **yeni** düğmesi:
+10. İçinde **yeni dosya** iletişim kutusunda **genel > boş sınıf**, yeni dosya adı **PhoneTranslator**, tıklatıp **yeni** düğmesi:
 
     ![](quickstart-images/xs/add-translator-class.png "Yeni sınıf ekleyin")
 
-11. İçinde **PhoneTranslator.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod, bir telefon numarasına bir telefon sözcük çevirir:
+11. İçinde **PhoneTranslator.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kod, bir telefon numarasına bir telefon sözcük çevirir:
 
     ```csharp
     using System.Text;
@@ -614,17 +614,17 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **PhoneTranslator.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **PhoneTranslator.cs** seçerek **Dosya > Kaydet** (veya basarak  **&#8984; + S**) ve dosyayı kapatın.
 
-12. İçinde **çözüm paneli**seçin **Phoneword** proje, sağ tıklatın ve seçin **Ekle > yeni dosya...** :
+12. İçinde **çözüm bölmesi**seçin **Phoneword** proje için sağ tıklatın ve seçin **Ekle > yeni dosya...** :
 
-    ![](quickstart-images/xs/add-new-interface.png "Yeni dosya ekleme")
+    ![](quickstart-images/xs/add-new-interface.png "Yeni bir dosya ekleyin")
 
-13. İçinde **yeni dosya** iletişim kutusunda **genel > boş arabirimi**, yeni dosya adı **IDialer**, tıklatıp **yeni** düğmesi:
+13. İçinde **yeni dosya** iletişim kutusunda **genel > boş arabirim**, yeni dosya adı **IDialer**, tıklatıp **yeni** düğmesi:
 
-    ![](quickstart-images/xs/add-idialer-interface.png "Yeni arabirimi Ekle")
+    ![](quickstart-images/xs/add-idialer-interface.png "Yeni arabirim ekleme")
 
-14. İçinde **IDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kodu tanımlayan bir `Dial` çevrilmiş telefon numarasını aramak için her platformda uygulanmalı yöntemi:
+14. İçinde **IDialer.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kodu tanımlayan bir `Dial` her platformda çevrilmiş telefon numarası çevirmek için uygulanması gereken yöntemini:
 
     ```csharp
     namespace Phoneword
@@ -635,20 +635,20 @@ Phoneword uygulama gibi oluşturun:
         }
     }
     ```
-    Değişiklikleri kaydetmek **IDialer.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **IDialer.cs** seçerek **Dosya > Kaydet** (veya basarak  **&#8984; + S**) ve dosyayı kapatın.
 
     > [!NOTE]
-    > Uygulama için ortak kodun tamamlanmıştır. Platforma özgü Telefon Çeviricisi kodu şimdi olarak gerçekleştirilen bir [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+    > Uygulama için ortak kodun tamamlanmıştır. Platforma özgü telefon çevirici kodu artık uygulanmasını olarak bir [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
-15. İçinde **çözüm paneli**seçin **Phoneword.iOS** proje, sağ tıklatın ve seçin **Ekle > yeni dosya...** :
+15. İçinde **çözüm bölmesi**seçin **Phoneword.iOS** proje için sağ tıklatın ve seçin **Ekle > yeni dosya...** :
 
-    ![](quickstart-images/xs/add-new-file-ios.png "Yeni dosya ekleme")
+    ![](quickstart-images/xs/add-new-file-ios.png "Yeni bir dosya ekleyin")
 
-16. İçinde **yeni dosya** iletişim kutusunda **genel > boş sınıfı**, yeni dosya adı **Telefon Çeviricisi**, tıklatıp **yeni** düğmesi:
+16. İçinde **yeni dosya** iletişim kutusunda **genel > boş sınıf**, yeni dosya adı **Telefon Çeviricisi**, tıklatıp **yeni** düğmesi:
 
     ![](quickstart-images/xs/new-phonedialer-ios.png "Yeni sınıf ekleyin")
 
-17. İçinde **PhoneDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod oluşturur `Dial` iOS platformunda çevrilmiş telefon numarasını aramak için kullanılan yöntem:
+17. İçinde **PhoneDialer.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kod oluşturur `Dial` iOS platformunda çevrilmiş telefon numarası çevirmek için kullanılacak yöntemi:
 
     ```csharp
     using Foundation;
@@ -670,17 +670,17 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **PhoneDialer.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **PhoneDialer.cs** seçerek **Dosya > Kaydet** (veya basarak  **&#8984; + S**) ve dosyayı kapatın.
 
-18. İçinde **çözüm paneli**seçin **Phoneword.Droid** proje, sağ tıklatın ve seçin **Ekle > yeni dosya...** :
+18. İçinde **çözüm bölmesi**seçin **Phoneword.Droid** proje için sağ tıklatın ve seçin **Ekle > yeni dosya...** :
 
-    ![](quickstart-images/xs/add-new-file-android.png "Yeni dosya ekleme")
+    ![](quickstart-images/xs/add-new-file-android.png "Yeni bir dosya ekleyin")
 
-19. İçinde **yeni dosya** iletişim kutusunda **genel > boş sınıfı**, yeni dosya adı **Telefon Çeviricisi**, tıklatıp **yeni** düğmesi:
+19. İçinde **yeni dosya** iletişim kutusunda **genel > boş sınıf**, yeni dosya adı **Telefon Çeviricisi**, tıklatıp **yeni** düğmesi:
 
     ![](quickstart-images/xs/new-phonedialer-android.png "Yeni sınıf ekleyin")
 
-20. İçinde **PhoneDialer.cs**, tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin. Bu kod oluşturur `Dial` Android platformunda çevrilmiş telefon numarasını aramak için kullanılan yöntem:
+20. İçinde **PhoneDialer.cs**, tüm şablon kodunu kaldırın ve aşağıdaki kodla değiştirin. Bu kod oluşturur `Dial` Android platformunda çevrilmiş telefon numarası çevirmek için kullanılacak yöntemi:
 
     ```csharp
     using Android.Content;
@@ -729,9 +729,9 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **PhoneDialer.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **PhoneDialer.cs** seçerek **Dosya > Kaydet** (veya basarak  **&#8984; + S**) ve dosyayı kapatın.
 
-21. İçinde **çözüm paneli**, **Phoneword.Droid** projesi, çift tıklatın **MainActivity.cs** açmak için tüm şablonu kodu kaldırın ve aşağıdaki kod ile değiştirin :
+21. İçinde **çözüm bölmesi**, **Phoneword.Droid** çift tıklayın, proje **MainActivity.cs** açmak için tüm şablon kodunu kaldırın ve aşağıdaki kod ile değiştirin :
 
     ```csharp
     using Android.App;
@@ -760,46 +760,46 @@ Phoneword uygulama gibi oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **MainActivity.cs** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **MainActivity.cs** seçerek **Dosya > Kaydet** (veya basarak  **&#8984; + S**) ve dosyayı kapatın.
 
-22. İçinde **çözüm paneli**, genişletin **özellikleri** klasörü ve çift **AndroidManifest.xml** dosyası:
+22. İçinde **çözüm bölmesi**, genişletme **özellikleri** klasörü ve çift **AndroidManifest.xml** dosyası:
 
-    ![](quickstart-images/xs/android-manifest.png "Açık Android derleme bildirimi")
+    ![](quickstart-images/xs/android-manifest.png "Açık Android bildirimi")
 
-23. İçinde **gerekli izinleri** bölümünde, etkinleştirme **CallPhone** izni. Bu, bir telefon araması yerleştirmek için uygulama izin verir:
+23. İçinde **gerekli izinler** bölümünde, etkinleştirme **CallPhone** izni. Bu, bir telefon araması yerleştirmek için uygulamaya izin verir:
 
-    ![](quickstart-images/xs/android-manifest-changed.png "CallPhone izni etkinleştir")
+    ![](quickstart-images/xs/android-manifest-changed.png "CallPhone iznini etkinleştirme")
 
-    Değişiklikleri kaydetmek **AndroidManifest.xml** seçerek **Dosya > Kaydet** (veya tuşlarına basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Değişiklikleri kaydetmek **AndroidManifest.xml** seçerek **Dosya > Kaydet** (veya basarak  **&#8984; + S**) ve dosyayı kapatın.
 
-24. Mac için Visual Studio'da seçin **Yapı > Yapı tüm** menü öğesi (veya basın  **&#8984; + B**). Uygulamayı oluşturacaksınız ve Visual Studio Mac araç için bir başarı iletisi görünür.
+24. Mac için Visual Studio'da **Yapı > derleme tüm** menü öğesi (veya basın  **&#8984; + B**). Uygulamayı derler ve araç Mac için Visual Studio bir başarı iletisi görünür.
 
-    ![](quickstart-images/xs/build-successful.png "Yapı başarılı")
+    ![](quickstart-images/xs/build-successful.png "Derleme başarılı oldu")
 
-25. Hatalar varsa, önceki adımı yineleyin ve uygulama başarıyla derlemeler kadar hataları düzeltin.
-26. Mac araç için Visual Studio basın **Başlat** düğmesini (Oynat düğmesini benzer üçgen düğmesi) iOS simülatörü'nü içinde uygulamayı başlatmak için:
+25. Hatalar varsa, önceki adımları tekrarlayın ve uygulama başarıyla oluşturulursa kadar hataları düzeltin.
+26. Araç Mac için Visual Studio'da basın **Başlat** düğmesine (Oynat düğmesine benzeyen üçgen düğme) iOS simülatörü içinde uygulamayı başlatmak için:
 
-    ![](quickstart-images/xs/start.png "Visual Studio için Mac araç")
+    ![](quickstart-images/xs/start.png "Araç Mac için Visual Studio")
     ![](quickstart-images/xs/phoneword-result-ios.png "iOS simülatörü")
 
-    Not: telefon aramaları iOS Simulator'da desteklenmez.
+    Not: iOS simülatörü telefon aramaları desteklenmez.
 
-27. İçinde **çözüm paneli**seçin **Phoneword.Droid** proje, sağ tıklatın ve seçin **başlangıç projesi olarak ayarla**:
+27. İçinde **çözüm bölmesi**seçin **Phoneword.Droid** proje için sağ tıklatın ve seçin **başlangıç projesi olarak ayarla**:
 
     ![](quickstart-images/xs/set-startup-project.png "Başlangıç projesi olarak ayarla")
 
-28. Mac araç için Visual Studio basın **Başlat** düğmesini (Oynat düğmesini benzer üçgen düğmesi) Android öykünücüsünde içinde uygulamayı başlatmak için:
+28. Araç Mac için Visual Studio'da basın **Başlat** düğmesine (Oynat düğmesine benzeyen üçgen düğme) içinde Android öykünücüsünde uygulamayı başlatmak için:
 
     ![](quickstart-images/xs/phoneword-result-android.png "Android öykünücüsü")
 
-    Not: telefon aramaları Android öykünücüsünü içinde desteklenmez.
+    Not: Android öykünücüleri telefon aramaları desteklenmez.
 
 -----
 
-Xamarin.Forms uygulaması Tamamlanıyor tebrikler. [Sonraki konuyu](~/xamarin-forms/get-started/hello-xamarin-forms/deepdive.md) bu kılavuzda, bu kılavuzda Xamarin.Forms kullanarak uygulama geliştirme ile ilgili temel bilgileri anlamak için gerçekleştirilen adımları gözden geçirir.
+Xamarin.Forms uygulaması tamamlamada Tebrik ederiz. [Bir sonraki konu](~/xamarin-forms/get-started/hello-xamarin-forms/deepdive.md) bu kılavuzda, bir Xamarin.Forms kullanarak uygulama geliştirme temelleri anlamak için bu kılavuzda alınan adımları gözden geçirir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [DependencyService aracılığıyla yerel özelliklerine erişme](~/xamarin-forms/app-fundamentals/dependency-service/index.md)
+- [Yerel özellikler DependencyService aracılığıyla erişme](~/xamarin-forms/app-fundamentals/dependency-service/index.md)
 - [Phoneword (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Phoneword/)

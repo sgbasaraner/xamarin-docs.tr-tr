@@ -1,24 +1,24 @@
 ---
 title: 'Xamarin.Essentials: e-posta'
-description: Xamarin.Essentials e-posta sınıfında varsayılan e-posta uygulamasının konu ve gövde alıcılar (Kime, bilgi, gizli) dahil olmak üzere belirtilen bilgilerle açmak bir uygulama sağlar.
+description: E-posta sınıfı Xamarin.Essentials, konu ve gövde alıcılar (Kime, bilgi, gizli) dahil olmak üzere belirtilen bilgilerle varsayılan e-posta uygulamasını açmak için bir uygulama sağlar.
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: aea2f429126180ae3d98bc665bed5574f416ea53
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782443"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38848552"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials: e-posta
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**E-posta** sınıfı varsayılan e-posta uygulamasının konu ve gövde alıcı (Kime, bilgi, gizli) dahil olmak üzere belirtilen bilgilerle açmak bir uygulama sağlar.
+**E-posta** sınıfı konu ve gövde alıcı (Kime, bilgi, gizli) dahil olmak üzere belirtilen bilgilerle varsayılan e-posta uygulamasını açmak için bir uygulama sağlar.
 
-## <a name="using-email"></a>E-posta kullanarak
+## <a name="using-email"></a>E-posta kullanma
 
 Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 
@@ -26,7 +26,7 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-E-posta işlevselliği çalışır çağırarak `ComposeAsync` yöntemi bir `EmailMessage` e-posta hakkında bilgi içerir:
+E-posta işlevselliği çalışır çağırarak `ComposeAsync` yöntemi bir `EmailMessage` , e-posta hakkında bilgiler içerir:
 
 ```csharp
 public class EmailTest

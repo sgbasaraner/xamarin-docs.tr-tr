@@ -1,6 +1,6 @@
 ---
 title: DataPages denetimleri başvurusu
-description: Bu makalede Xamarin.Forms DataPages NuGet paketi kullanılabilir olan denetimleri tanıtılır.
+description: Bu makalede Xamarin.Forms DataPages NuGet paketinin kullanılabilir denetimler sunar.
 ms.prod: xamarin
 ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
 ms.technology: xamarin-forms
@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: c907d55f09d334e167c831a19f9d0edc4c97732f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243135"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38866528"
 ---
 # <a name="datapages-controls-reference"></a>DataPages denetimleri başvurusu
 
-![](~/media/shared/preview.png "Bu API şu anda önizlemede değil")
+![](~/media/shared/preview.png "Bu API, şu anda Önizleme aşamasındadır")
 
 > [!IMPORTANT]
 > DataPages gerektiren bir [Xamarin.Forms tema](~/xamarin-forms/user-interface/themes/index.md) işlemek için başvuru.
 
 
-Xamarin.Forms DataPages Nuget veri kaynağına bağlama yararlanabilir denetimleri sayısını içerir.
+Xamarin.Forms DataPages Nuget birkaç veri kaynağına bağlama yararlanabilirsiniz denetimleri içerir.
 
-XAML'de bu denetimleri kullanmak için ad alanı dahil açıldı emin olun, örneğin `xmlns:pages` aşağıdaki bildirimi:
+XAML içinde bu denetimleri kullanmak için ad alanına dahil olun, örneğin `xmlns:pages` aşağıdaki bildirimi:
 
 ```xaml
 <ContentPage
@@ -34,9 +34,9 @@ XAML'de bu denetimleri kullanmak için ad alanı dahil açıldı emin olun, örn
     x:Class="DataPagesDemo.Detail">
 ```
 
-Aşağıdaki örnekler `DynamicResource` çalışmaya projenin kaynakları sözlüğünde gereken başvuruları. Ayrıca oluşturmak nasıl bir örneği olan bir [özel denetimi](#custom)
+Aşağıdaki örnekler `DynamicResource` çalışmak için projenin kaynak sözlüğünde gerekecektir başvuruları. Derleme ilişkin bir örnek bulunmaktadır bir [özel denetim](#custom)
 
-## <a name="built-in-controls"></a>Yerleşik denetimleri
+## <a name="built-in-controls"></a>Yerleşik denetimler
 
 * [HeroImage](#heroimage)
 * [ListItem](#listitem)
@@ -45,7 +45,7 @@ Aşağıdaki örnekler `DynamicResource` çalışmaya projenin kaynakları sözl
 
 ### <a name="heroimage"></a>HeroImage
 
-`HeroImage` Denetimi dört özellikleri vardır:
+`HeroImage` Denetim dört özelliklere sahiptir:
 
 * Metin
 * Ayrıntısı
@@ -62,20 +62,20 @@ Aşağıdaki örnekler `DynamicResource` çalışmaya projenin kaynakları sözl
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Android HeroImage denetiminde") ![ ] (controls-images/heroimage-dark-android.png "Android HeroImage denetimi")
+![](controls-images/heroimage-light-android.png "Android'de HeroImage denetimi") ![ ] (controls-images/heroimage-dark-android.png "Android HeroImage denetimi")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "İOS HeroImage denetim") ![ ] (controls-images/heroimage-dark-ios.png "iOS HeroImage denetimi")
+![](controls-images/heroimage-light-ios.png "İos'ta HeroImage denetimi") ![ ] (controls-images/heroimage-dark-ios.png "ios'ta HeroImage denetimi")
 
 
 <a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
-`ListItem` Denetimin düzeni yerel iOS benzer ve Android listesi veya tablo satırları, ancak bu aynı zamanda normal bir görünüm olarak kullanılabilir. Örnekte, aşağıdaki kod içinde barındırılan gösterildiği bir `StackLayout`, ancak aynı zamanda veri bağlama scolling liste denetimlerinde kullanılabilir.
+`ListItem` Denetimin düzenini yerel iOS benzer ve Android liste veya tablo satırları, ancak bunu ayrıca normal bir görünüm olarak kullanılabilir. Örnekte aşağıdaki kod içinde barındırılan gösterilen bir `StackLayout`, ancak bu verilere bağlı scolling liste denetimlerinde kullanılabilir.
 
-Beş özellikleri şunlardır:
+Beş özellik vardır:
 
 * Başlık
 * Ayrıntısı
@@ -93,28 +93,28 @@ Beş özellikleri şunlardır:
     />
 ```
 
-Bu ekran görüntüleri Göster `ListItem` iOS ve Android platformları açık ve koyu tema kullanma:
+Bu ekran görüntüleri Göster `ListItem` iOS ve Android platformlarında açık ve koyu tema kullanma:
 
 **Android**
 
-![](controls-images/listitem-light-android.png "ListItem denetim android'de") ![ ] (controls-images/listitem-dark-android.png "android'de ListItem denetim")
+![](controls-images/listitem-light-android.png "Android'de ListItem denetimi") ![ ] (controls-images/listitem-dark-android.png "Android ListItem denetimi")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "ListItem denetim iOS") ![ ] (controls-images/listitem-dark-ios.png "ListItem denetim iOS")
+![](controls-images/listitem-light-ios.png "İos'ta ListItem denetimi") ![ ] (controls-images/listitem-dark-ios.png "ios'ta ListItem denetimi")
 
 
 ## <a name="custom-control-example"></a>Özel denetim örneği
 
-Bu özel amacı `CardView` denetimidir yerel Android kart görünümü benzeyecek şekilde.
+Bu özel amacı `CardView` yerel Android CardView benzeyecek şekilde denetimidir.
 
-Bu üç özellikleri içerir:
+Bu üç özellik içerir:
 
 * Metin
 * Ayrıntısı
 * ImageSource
 
-Aşağıdaki kod gibi görüneceğini özel bir denetim hedeftir (unutmayın özel bir `xmlns:local` gereklidir geçerli derlemeye başvuran):
+Aşağıdaki kod gibi görünür bir özel denetim hedefidir (unutmayın özel `xmlns:local` gereklidir geçerli derlemeyi başvuran):
 
 ```xaml
 <local:CardView
@@ -124,15 +124,15 @@ Aşağıdaki kod gibi görüneceğini özel bir denetim hedeftir (unutmayın öz
 />
 ```
 
-Karşılık gelen yerleşik açık ve koyu Tema renkleri kullanarak aşağıdaki ekran görüntüleri gibi görünmelidir:
+Ekran görüntüleri, karşılık gelen yerleşik açık ve koyu Tema renkleri kullanarak aşağıdaki gibi görünmelidir:
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Android kart görünümü özel denetiminde") ![ ] (controls-images/cardview-dark-android.png "Android kart görünümü özel denetimi")
+![](controls-images/cardview-light-android.png "Android'de CardView özel denetim") ![ ] (controls-images/cardview-dark-android.png "Android CardView özel denetim")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "Kart görünümü özel denetimi iOS") ![ ] (controls-images/cardview-dark-ios.png "iOS kart görünümü özel denetimi")
+![](controls-images/cardview-light-ios.png "İOS özel denetimde CardView") ![ ] (controls-images/cardview-dark-ios.png "ios'ta CardView özel denetim")
 
 <a name="custom" />
 
@@ -141,16 +141,16 @@ Karşılık gelen yerleşik açık ve koyu Tema renkleri kullanarak aşağıdaki
 1. [DataView alt sınıfı](#1)
 2. [Yazı tipi, Düzen ve kenar boşlukları tanımlayın](#2)
 3. [Denetimin çocuklar için stil oluşturma](#3)
-4. [Denetim düzeni şablonu oluşturma](#4)
-5. [Özel tema kaynakları ekleyin](#5)
-6. [Kart görünümü sınıfı ControlTemplate ayarlayın](#6)
+4. [Denetim şablonu düzen oluşturma](#4)
+5. [Temaya özgü kaynak Ekle](#5)
+6. [ControlTemplate CardView sınıfı için ayarlayın](#6)
 7. [Bir sayfasına denetim ekleme](#7)
 
 <a name="1" />
 
 #### <a name="1-dataview-subclass"></a>1. DataView alt sınıfı
 
-C# sınıfıdır `DataView` denetiminin bağlanabilir özelliklerini tanımlar.
+C# öğesinin `DataView` bağlanabilir denetimin özelliklerini tanımlar.
 
 ```csharp
 public class CardView : DataView
@@ -192,9 +192,9 @@ public class CardView : DataView
 
 #### <a name="2-define-font-layout-and-margins"></a>2. Yazı tipi, Düzen ve kenar boşlukları tanımlayın
 
-Denetim Tasarımcısı özel denetim için kullanıcı arabirimi tasarımının bir parçası olarak bu değerlere şekil. Platforma özgü belirtimleri gerekli olduğu `OnPlatform` öğe kullanılır.
+Denetim Tasarımcısı kullanıcı arabirimi tasarımı özel denetim için bir parçası olarak bu değerleri şekil. Platforma özgü özellikleri gerekli olduğu `OnPlatform` öğe kullanılır.
 
-Bazı değerler başvurmak Not `StaticResource`s – Bu değerinde tanımlanması [5. adım](#5).
+Bazı değerler başvuran Not `StaticResource`s – bunlar içinde tanımlanabilir [5. adım](#5).
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -250,7 +250,7 @@ Bazı değerler başvurmak Not `StaticResource`s – Bu değerinde tanımlanmas�
 
 #### <a name="3-create-styles-for-the-controls-children"></a>3. Denetimin çocuklar için stil oluşturma
 
-Özel denetim içinde kullanılacak alt öğelerini oluşturmak üzere tanımlanan tüm öğeleri başvurusu:
+Özel denetim içinde kullanılacak alt oluşturmak üzere tanımlanan tüm öğeleri başvurusu:
 
 ```xml
 <!-- EXPLICIT STYLES (will be Classes) -->
@@ -280,9 +280,9 @@ Bazı değerler başvurmak Not `StaticResource`s – Bu değerinde tanımlanmas�
 
 <a name="4" />
 
-#### <a name="4-create-the-control-layout-template"></a>4. Denetim düzeni şablonu oluşturma
+#### <a name="4-create-the-control-layout-template"></a>4. Denetim şablonu düzen oluşturma
 
-Özel denetimin görsel tasarım yukarıda tanımlanan olan kaynakları kullanarak denetim şablonda açıkça açıklanmaktadır:
+Özel denetimin görsel tasarım yukarıda tanımlanan kaynakları kullanarak, Denetim şablonunda açıkça bildirilir:
 
 ```xml
 <!--- CARDVIEW -->
@@ -324,9 +324,9 @@ Bazı değerler başvurmak Not `StaticResource`s – Bu değerinde tanımlanmas�
 
 <a name="5" />
 
-#### <a name="5-add-the-theme-specific-resources"></a>5. Özel tema kaynakları ekleyin
+#### <a name="5-add-the-theme-specific-resources"></a>5. Temaya özgü kaynak Ekle
 
-Bu özel bir denetim olduğundan, kaynak sözlüğü kullanarak tema eşleşen kaynak ekleyin:
+Bu, özel bir denetim olduğu için kaynak sözlüğü'nu kullanarak tema eşleşen kaynak ekleyin:
 
 ##### <a name="light-theme-colors"></a>Açık Tema renkleri
 
@@ -357,9 +357,9 @@ Bu özel bir denetim olduğundan, kaynak sözlüğü kullanarak tema eşleşen k
 
 <a name="6" />
 
-#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. Kart görünümü sınıfı ControlTemplate ayarlayın
+#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. ControlTemplate CardView sınıfı için ayarlayın
 
-Son olarak, oluşturduğunuz C# sınıfı olun [1. adım](#1) tanımlanan denetim şablonu kullanan [4. adım](#4) kullanarak bir `Style` `Setter` öğesi
+Son olarak, oluşturulan C# sınıfı olun [1. adım](#1) tanımlı denetim şablonu kullanan [4. adım](#4) kullanarak bir `Style` `Setter` öğesi
 
 ```xml
 <Style TargetType="local:CardView">
@@ -373,7 +373,7 @@ Son olarak, oluşturduğunuz C# sınıfı olun [1. adım](#1) tanımlanan deneti
 
 #### <a name="7-add-the-control-to-a-page"></a>7. Bir sayfasına denetim ekleme
 
-`CardView` Denetim bir sayfaya şimdi eklenebilir. Aşağıdaki örnek, içinde barındırılan gösteren bir `StackLayout`:
+`CardView` Denetimi bir sayfaya artık eklenebilir. Aşağıdaki örnek, barındırılan gösterir bir `StackLayout`:
 
 ```xaml
 <StackLayout Spacing="0">

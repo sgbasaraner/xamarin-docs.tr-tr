@@ -1,28 +1,28 @@
 ---
 title: 'Xamarin.Essentials: Güç enerji tasarrufu durumu'
-description: Güç sınıfı cihaz düşük güç modunda çalışıp çalışmadığını belirlemek için enerji tasarrufu durumu elde etmek için bir program sağlar.
+description: Cihaz düşük güç modunda çalışıp çalışmadığını belirlemek için enerji tasarrufu durumunu almak bir program Power class sağlar.
 ms.assetid: C176D177-8B77-4A9C-9F3B-27852A8DCD5F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/27/2018
 ms.openlocfilehash: 6d8ccb5be69eb1ea7ea63d3f5c373d9284089679
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080414"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831526"
 ---
 # <a name="xamarinessentials-power-energy-saver-status"></a>Xamarin.Essentials: Güç enerji tasarrufu durumu
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**Güç** sınıfı cihazı düşük güç modunda çalışıp çalışmadığını gösteren cihazın enerji tasarrufu durumu hakkında bilgi sağlar. Cihazın enerji tasarrufu durumu açıksa uygulamaları arka plan işleme kaçınmalısınız.
+**Güç** sınıfı cihaz düşük güç modunda çalışıp çalışmadığını gösteren cihazın enerji tasarrufu durumu hakkında bilgi sağlar. Uygulamalar, cihazın enerji tasarrufu durumu üzerinde ise arka plan işlemesi kaçınmanız gerekir.
 
 ## <a name="background"></a>Arka Plan
 
-Pille çalıştıran cihazlar düşük güç enerji tasarrufu moduna. Pil % 20 kapasite düştüğünde bazen aygıtlar bu moduna otomatik olarak, örneğin, geçiş. İşletim sistemi, pil deplete eğilimindedir etkinlikleri düşürerek enerji tasarrufu moduna yanıt verir. Uygulamalar, arka plan işleme veya diğer güçlü etkinlikler enerji tasarrufu modu açık olduğunda kaçınarak yardımcı olabilir.
+Pille çalıştıran cihazlara bir enerji koruyucu düşük güç moduna koyabilirsiniz. Pil % 20 kapasitenin altında düştüğünde bazen cihazlar bu moduna otomatik olarak, örneğin, etkinleştirildi. İşletim sistemi, pil deplete eğilimindedir etkinlikleri düşürerek enerji tasarrufu modu için yanıt verir. Uygulamalar, arka plan işlemesi veya diğer güçlü etkinlikleri enerji tasarrufu modu açık olduğunda önleyerek yardımcı olabilir.
 
-Android cihazlar için **güç** sınıfı anlamlı bilgiler yalnızca Android sürüm 5.0 (Lolipop) ve yukarıdaki döndürür.
+Android cihazları için **güç** sınıfı anlamlı bilgiler yalnızca Android sürüm 5.0 (Lollipop) ve üzeri döndürür.
 
 ## <a name="using-the-power-class"></a>Güç sınıfını kullanma
 
@@ -32,16 +32,16 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-Statik kullanarak cihazı geçerli enerji tasarrufu durumunu elde `Power.EnergySaverStatus` özelliği:
+' Using static cihaz enerji tasarrufu geçerli durumunu elde `Power.EnergySaverStatus` özelliği:
 
 ```csharp
 // Get energy saver status
 var status = Power.EnergySaverStatus;
 ```
 
-Bu özellik bir üyesini döndürür `EnergySaverStatus` da numaralandırma `On`, `Off`, veya `Unknown`. Özelliği döndürürse `On`, uygulama arka plan işleme veya çok fazla güç tüketebilir diğer etkinlikler kaçınmalısınız.
+Bu özellik bir üyesini döndürür `EnergySaverStatus` ya da sabit listesi `On`, `Off`, veya `Unknown`. Özellik döndürürse `On`, uygulama arka plan işlemesi veya çok fazla gücü tüketebilir diğer etkinlikleri kaçınmanız gerekir.
 
-Uygulama olay işleyicisi de yüklemeniz gerekir. **Güç** sınıfı enerji tasarrufu durumu değiştiğinde tetikleyen bir olay sunar:
+Uygulama, bir olay işleyicisi de yüklemeniz gerekir. **Güç** sınıfı enerji tasarrufu durumu değiştiğinde tetikleyen bir olay gösterir:
 
 ```csharp
 public class EnergySaverTest
@@ -60,7 +60,7 @@ public class EnergySaverTest
 }
 ```
 
-Enerji tasarrufu durumu geçerse `On`, uygulama arka plan işlemi gerçekleştirme durdurmanız gerekir. Durum geçerse `Unknown` veya `Off`, uygulama arka plan işleme devam edebilirsiniz.
+Enerji tasarrufu durumu değişirse `On`, uygulama arka plan işlemleri gerçekleştirme durdurmanız gerekir. Durumu değişirse `Unknown` veya `Off`, uygulama arka plan işleme devam edebilirsiniz.
 
 ## <a name="api"></a>API
 

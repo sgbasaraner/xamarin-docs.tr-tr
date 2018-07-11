@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms koyu tema
-description: Bu makalede bir uygulamada Xamarin.Forms koyu tema kullanma açıklanmaktadır.
+description: Bu makalede, bir uygulamada Xamarin.Forms koyu tema kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 43A3798D-6F05-4734-AF5E-97235B46D9B9
 ms.technology: xamarin-forms
@@ -8,30 +8,30 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 1fc329f506afde04b0dc59dc637d999865aafbe1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245930"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38853251"
 ---
 # <a name="xamarinforms-dark-theme"></a>Xamarin.Forms koyu tema
 
-![](~/media/shared/preview.png "Bu API şu anda önizlemede değil")
+![](~/media/shared/preview.png "Bu API, şu anda Önizleme aşamasındadır")
 
 > [!NOTE]
-> Temalar Xamarin.Forms 2.3 Önizleme sürümü gerektirir. Denetleme [sorun giderme ipuçları](~/xamarin-forms/user-interface/themes/index.md) hatalar oluşursa.
+> Temalar Xamarin.Forms 2.3 önizleme sürümünü gerektirir. Denetleme [sorun giderme ipuçları](~/xamarin-forms/user-interface/themes/index.md) hatalar oluşursa.
 
 Koyu Tema kullanmak için:
 
-## <a name="1-add-nuget-packages"></a>1. Nuget paketleri ekleme
+## <a name="1-add-nuget-packages"></a>1. Nuget paketleri Ekle
 
 * Xamarin.Forms.Theme.Base
 * Xamarin.Forms.Theme.Dark
 
-## <a name="2-add-to-the-resource-dictionary"></a>2. Kaynak sözlük ekleme
+## <a name="2-add-to-the-resource-dictionary"></a>2. İçin kaynak sözlüğü Ekle
 
-İçinde **App.xaml** dosyası ekleme yeni bir özel `xmlns` tema ve ardından temanın kaynakları uygulamanın kaynak sözlüğü ile birleştirilmiş emin olun.
-XAML dosyası örneği aşağıda verilmiştir:
+İçinde **App.xaml** dosyası özel bir ekleme `xmlns` temanın ve ardından temanın kaynakları uygulamanın kaynak sözlüğü ile birleştirilmiş emin olun.
+Örnek bir XAML dosyası aşağıda gösterilmiştir:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8"?>
@@ -45,13 +45,13 @@ XAML dosyası örneği aşağıda verilmiştir:
 
 ## <a name="3-load-theme-classes"></a>3. Yük tema sınıfları
 
-Bu izleyin [adım sorun giderme](~/xamarin-forms/user-interface/themes/index.md) iOS ve Android uygulaması projeleri ve gerekli kodu ekleyin.
+İzleyin [adım sorun giderme](~/xamarin-forms/user-interface/themes/index.md) ve iOS ve Android uygulaması projelerinde gerekli kodu ekleyin.
 
 ## <a name="4-use-styleclass"></a>4. StyleClass kullanın
 
-Düğmeler ve etiketler bunları üreten biçimlendirme birlikte koyu tema bir örneği burada verilmiştir.
+Düğmeler ve etiketler, onları oluşturan işaretleme birlikte koyu tema örneği aşağıda verilmiştir.
 
-[![](dark-images/dark-theme-sml.png "Düğmeler ve etiketler koyu tema")](dark-images/dark-theme.png#lightbox "düğmeler ve etiketler koyu tema")
+[![](dark-images/dark-theme-sml.png "Düğmeler ve etiketler koyu temada")](dark-images/dark-theme.png#lightbox "düğmeler ve etiketler koyu tema")
 
 ```xaml
 <StackLayout Padding="20">

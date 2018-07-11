@@ -1,22 +1,22 @@
 ---
 title: 'Xamarin.Essentials: jiroskop'
-description: Xamarin.Essentials jiroskop sınıfında cihazın üç birincil eksen etrafında döndürme ölçer cihazın jiroskop algılayıcı izlemenize izin verir.
+description: Xamarin.Essentials jiroskop sınıfında cihazın üç birincil ekseni etrafında döndürme ölçer cihazın jiroskop algılayıcı izlemenize izin verir.
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 6b2df3b6c5061464a06730ad09cbbbfdbceeb247
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: 3c83b3a9d8a7801e531006f50f8db2e1ad23e48c
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080415"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947221"
 ---
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: jiroskop
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**Jiroskop** sınıfı cihazın üç birincil eksen etrafında döndürme olan cihazın jiroskop algılayıcı izlemenize olanak sağlar.
+**Jiroskop** sınıfı, cihazın üç birincil ekseni etrafında döndürme olan cihazın jiroskop algılayıcı izlemenize olanak tanır.
 
 ## <a name="using-gyroscope"></a>Jiroskop kullanma
 
@@ -26,7 +26,7 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-Jiroskop işlevselliği çalışır çağırarak `Start` ve `Stop` jiroskop değişiklikleri dinlemek için yöntemleri. Tüm değişiklikler geri aracılığıyla gönderilen `ReadingChanged` olay. Örnek Kullanım şöyledir:
+Jiroskop işlevselliği çalışır çağırarak `Start` ve `Stop` ilgili jiroskop değişiklikleri dinlemek için yöntemleri. Tüm değişiklikler geri aracılığıyla gönderilen `ReadingChanged` olay. Örnek Kullanım şu şekildedir:
 
 ```csharp
 
@@ -69,14 +69,7 @@ public class GyroscopeTest
 }
 ```
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[Algılayıcı hızı](xref:Xamarin.Essentials.SensorSpeed)
-
-- **Hızlı** – algılayıcı verilerini (kullanıcı Arabirimi iş parçacığı üzerinde döndürülecek garantili) mümkün olduğunca hızlı alın.
-- **Oyun** – (kullanıcı Arabirimi iş parçacığı üzerinde döndürülecek garantili) oyunlar için uygun oranı.
-- **Normal** – varsayılan hızı ekran yönünü değişiklikleri için uygun.
-- **UI** – genel kullanıcı arabirimi için uygun oranı.
-
-Olay işleyicisi UI iş parçacığında çalıştırmak ve kullanıcı arabirimi öğeleri, olay işleyicisi erişmesi gerekirse kullanmak için kesin değildir, [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) UI iş parçacığında bu kodu çalıştırmak için yöntem.
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>API
 

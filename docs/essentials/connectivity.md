@@ -1,30 +1,30 @@
 ---
 title: 'Xamarin.Essentials: bağlantı'
-description: Xamarin.Essentials bağlantı sınıfında, cihazın ağ koşulları değişiklikleri izlemek, geçerli ağ erişimi nasıl, şu anda bağlı olduğu denetleyip sağlar.
+description: Xamarin.Essentials bağlantı sınıfında, cihazın ağ koşulları değişiklikler için izleme, geçerli ağ erişimi ve bu şu anda nasıl bağlandığını denetimi sağlar.
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 54c165e15e725caaecb1573b74cfe295170db141
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782872"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38848615"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: bağlantı
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**Bağlantı** cihazın ağ koşulları değişiklikleri izlemek sınıfı sağlar, geçerli ağ erişimi ve nasıl, şu anda bağlı olduğu denetleyin.
+**Bağlantı** cihazın ağ koşulları, değişiklikler için izleme sınıfı sağlar, geçerli ağ erişimi ve bu şu anda nasıl bağlandığını denetleyin.
 
 ## <a name="getting-started"></a>Başlarken
 
-Erişim için **bağlantı** işlevselliği aşağıdaki platform özel kurulum gereklidir.
+Erişim için **bağlantı** işlevselliğini aşağıdaki platforma özgü Kurulum gereklidir.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`AccessNetworkState` İzni gereklidir ve Android projesinde yapılandırılması gerekir. Bu, aşağıdaki yollarla eklenebilir:
+`AccessNetworkState` İzni gereklidir ve Android projede yapılandırılması gerekir. Bu, aşağıdaki yollarla eklenebilir:
 
 Açık **AssemblyInfo.cs** altında dosya **özellikleri** klasör ekleyin:
 
@@ -32,23 +32,23 @@ Açık **AssemblyInfo.cs** altında dosya **özellikleri** klasör ekleyin:
 [assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
 ```
 
-YA da güncelleştirme Android bildirim:
+YA da Android bildirimini güncelleştir:
 
-Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve aşağıdaki içine ekleyin **bildirim** düğümü.
+Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve içine aşağıdaki **bildirim** düğümü.
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-Veya Anroid projeye sağ tıklayın ve projenin özelliklerini açın. Altında **Android derleme bildirimi** Bul **gerekli izinler:** alan ve onay **erişimi ağ durumu** izni. Bu otomatik olarak güncelleştirilecek **AndroidManifest.xml** dosya.
+Anroid projeye sağ tıklayın ve proje özelliklerini açın. Altında **Android bildirim** Bul **gerekli izinler:** alan ve onay **erişim ağ durumu** izni. Bu otomatik olarak güncelleştirecektir **AndroidManifest.xml** dosya.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Ek kurulumu gerekmez.
+Ek kurulum gerekli.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Ek kurulumu gerekmez.
+Ek kurulum gerekli.
 
 -----
 
@@ -60,7 +60,7 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-Geçerli ağ erişimini denetle:
+Geçerli ağ erişim denetimi:
 
 ```csharp
 var current = Connectivity.NetworkAccess;
@@ -74,12 +74,12 @@ if (current == NetworkAccess.Internet)
 [Ağ erişimi](xref:Xamarin.Essentials.NetworkAccess) Aşağıdaki kategorilerde döner:
 
 * **Internet** – yerel ve internet erişimi.
-* **ConstrainedInternet** – Internet erişimi sınırlı. Burada web portalına yerel erişim sağlanır, ancak belirli kimlik bilgileri bir portal üzerinden sağlanan Internet erişimi gerektirir captive portal bağlantısı gösterir.
+* **ConstrainedInternet** – sınırlı internet erişimi. Burada bir web portalını yerel erişim sağlanır, ancak belirli kimlik bilgilerini Portalı aracılığıyla sağlanan Internet erişimi gerektirir captive portal bağlantı gösterir.
 * **Yerel** – yerel ağ erişimi yalnızca.
-* **Hiçbiri** – hiç bağlantı yok.
+* **Hiçbiri** – bağlantısı olmadığında kullanılabilir.
 * **Bilinmeyen** – internet bağlantısı belirlenemiyor.
 
-Ne tür denetleyebilirsiniz [bağlantı profili](xref:Xamarin.Essentials.ConnectionProfile) aygıt etkin olarak kullanan:
+Ne tür denetleyebilirsiniz [bağlantı profili](xref:Xamarin.Essentials.ConnectionProfile) cihaz etkin olarak kullanan:
 
 ```csharp
 var profiles = Connectivity.Profiles;
@@ -89,7 +89,7 @@ if (profiles.Contains(ConnectionProfile.WiFi))
 }
 ```
 
-Bağlantı profili veya ağ erişim değiştiğinde tetiklendiğinde olay alabilirsiniz:
+Bağlantı profili veya ağ erişimi değiştiğinde tetikleyen bir olay alabilirsiniz:
 
 ```csharp
 public class ConnectivityTest
@@ -110,7 +110,7 @@ public class ConnectivityTest
 
 ## <a name="limitations"></a>Sınırlamalar
 
-Olası olduğunu dikkate almak önemlidir, `Internet` tarafından bildirilen `NetworkAccess` ancak web tam erişim kullanılabilir değil. Bağlantı her platformda nasıl çalıştığını nedeniyle, yalnızca bir bağlantının kullanılabilir olması garanti edebilir. Aygıt bir Wi-Fi ağına örneği için bağlı ancak internet'ten yönlendirici bağlantısı kesildi. Bu örnekte Internet bildirilebilir ancak etkin bir bağlantı yok.
+Olası olduğuna dikkat edin önemlidir, `Internet` tarafından bildirilen `NetworkAccess` ancak tam web erişim kullanılabilir değil. Her platformda bağlantı nasıl çalıştığını nedeniyle, yalnızca bir bağlantı kullanılabilir olduğunu garanti edebilir. Cihaz bir Wi-Fi ağına örneği için bağlı, ancak internet'ten yönlendirici bağlantısı kesildi. Bu örnekte, Internet bildirilebilir, ancak etkin bir bağlantı kullanılamıyor.
 
 ## <a name="api"></a>API
 

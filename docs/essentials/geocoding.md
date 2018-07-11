@@ -1,40 +1,40 @@
 ---
 title: 'Xamarin.Essentials: coğrafi kodlama'
-description: Xamarin.Essentials coğrafi kodlama sınıfında API'ler hem geocode placemark konumsal koordinatlarına sağlar ve bir placemark ters geocode koordinatları.
+description: Xamarin.Essentials coğrafi kodlama sınıfında API'ler için her iki geocode konumsal koordinatlara bir placemark sağlar ve bir placemark için coğrafi koordinatları ters.
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 063adba82d96e7fcc64d7ec49a0c0133e1cef8ef
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080332"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831454"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: coğrafi kodlama
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**Coğrafi kodlama** sınıfı placemark konumsal koordinatlarına geocode için API'ler sağlar ve bir placemark geocode coordincates ters.
+**Coğrafi kodlama** sınıfı bir placemark konumsal koordinatlara geocode için API'ler sağlar ve bir placemark için geocode coordincates ters.
 
 ## <a name="getting-started"></a>Başlarken
 
-Erişim için **coğrafi kodlama** işlevselliği aşağıdaki platform özel kurulum gereklidir.
+Erişim için **coğrafi kodlama** işlevselliğini aşağıdaki platforma özgü Kurulum gereklidir.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Ek kurulumu gerekmez.
+Ek kurulum gerekli.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Ek kurulumu gerekmez.
+Ek kurulum gerekli.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Bing Haritalar API'si anahtarı coğrafi kodlama funcationality kullanmak için gereklidir. Kaydolmak için ücretsiz bir [Bing Haritalar](https://www.bingmapsportal.com/) hesabı. Altında **Hesabımı > My anahtarları** yeni bir anahtar oluşturun ve uygulama türüne göre bilgileri doldurun (olacağı **ortak Windows uygulaması (UWP, 8.x ve önceki sürümler)** UWP uygulamalar için).
+Bing Haritalar API'si anahtarı, coğrafi kodlama funcationality kullanmak için gereklidir. Kaydolmak için ücretsiz [Bing Haritalar](https://www.bingmapsportal.com/) hesabı. Altında **Hesabımı > anahtarlarımı** yeni bir anahtar oluşturun ve uygulama türüne göre bilgileri doldurun (olacağı **genel Windows uygulama (UWP, 8.x ve önceki sürümler)** UWP uygulamaları için).
 
-Önceden herhangi çağırmadan önce uygulamanızın yaşam içinde **coğrafi kodlama** yöntemlerini API anahtarını ayarlayın:
+İçinde erkenden herhangi çağırmadan önce uygulamanızın yaşam **coğrafi kodlama** yöntemleri API anahtarını ayarlayın:
 
 ```csharp
 Geocoding.MapKey = "YOUR-KEY-HERE";
@@ -50,7 +50,7 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-Alma [konumu](xref:Xamarin.Essentials.Location) koordinatları adresi:
+Başlama [konumu](xref:Xamarin.Essentials.Location) koordinatları adresi:
 
 ```csharp
 try
@@ -74,9 +74,9 @@ catch (Exception ex)
 }
 ```
 
-Yükseklik her zaman kullanılabilir değildir. Kullanılabilir değilse, `Altitude` özellik olabilir `null` veya değerin sıfır olması. Yükseklik kullanılabilir durumdaysa, ölçümler Deniz düzeyinde yukarıda içinde değerdir. 
+Yükseklik her zaman büyük/küçük harf kullanılamaz. Kullanılabilir değilse, `Altitude` özelliği olabilir `null` veya değerin sıfır olması. Yükseklik varsa, metre Deniz olarak değerdir. 
 
-Alma [placemarks](xref:Xamarin.Essentials.Placemark) koordinatları var olan bir dizi için:
+Başlama [placemarks](xref:Xamarin.Essentials.Placemark) koordinatları var olan bir dizi için:
 
 ```csharp
 try
@@ -116,9 +116,9 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>İki konum arasındaki uzaklığı
 
-[ `Location` ](xref:Xamarin.Essentials.Location) Ve [ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions) sınıfları iki konum arasındaki uzaklığı hesaplamak için yöntemleri tanımlar. Makalesine bakın [ **Xamarin.Essentials: coğrafi konuma** ](geolocation.md#calculate-distance) bir örnek.
+[ `Location` ](xref:Xamarin.Essentials.Location) Ve [ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions) sınıfları iki konum arasındaki mesafeyi hesaplamak için gereken yöntemleri tanımlar. Makaleye göz atın [ **Xamarin.Essentials: coğrafi konum** ](geolocation.md#calculate-distance) örneği.
 
 ## <a name="api"></a>API
 
 - [Coğrafi kodlama kaynak kodu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
-- [Coğrafi kodlama API belgeleri](xref:Xamarin.Essentials.Geocoding)
+- [Coğrafi kodlama API'si belgeleri](xref:Xamarin.Essentials.Geocoding)

@@ -1,51 +1,51 @@
 ---
 title: Xamarin.Forms eşleme
-description: Bu makalede Xamarin.Forms harita sınıfının bir bilinen kullanıcılar için deneyimi eşlemeleri sağlamak için her platformda Yerel Harita API'leri kullanmak üzere nasıl kullanılacağını açıklar.
+description: Bu makalede, bir aşina kullanıcılar için deneyimi eşlemeleri sağlamak için her platformda yerel eşleme API'leri kullanmak için Xamarin.Forms eşlem sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 9bd4c810db0397d84803be7c38f625b9b047c3da
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d74ad52a2926fb30a528aeba29156259390c3edf
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245481"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947250"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms eşleme
 
-_Xamarin.Forms her platformda yerel eşlemesi API'lerini kullanır._
+_Xamarin.Forms her platformda yerel eşleme API'leri kullanır._
 
-Xamarin.Forms.Maps her platformda yerel eşlemesi API'lerini kullanır. Bu kullanıcılar için hızlı ve tanıdık eşlemeleri deneyimi sağlar, ancak her platformları belirli API gereksinimlerine uyacak şekilde bazı yapılandırma adımları gereklidir anlamına gelir.
-Bir kez yapılandırılmış `Map` kontrol ortak kodun başka herhangi bir Xamarin.Forms öğenin gibi çalışır.
+Xamarin.Forms.Maps her platformda yerel eşleme API'leri kullanır. Bu, kullanıcılar için bir hızlı, tanıdık haritalar deneyimi sağlar, ancak her platformları belirli API gereksinimlerine uyacak şekilde bazı yapılandırma adımları gerekli olup olmadığını gösterir.
+Yapılandırıldıktan sonra `Map` denetim herhangi bir Xamarin.Forms öğe ortak kod gibi çalışır.
 
-* [Eşlemeleri başlatma](#Maps_Initialization) - kullanarak `Map` başlangıçta ek başlatma kodu gerektirir.
-* [Platform Yapılandırması](#Platform_Configuration) -her platform çalışmaya eşlemeleri için bazı yapılandırma gerektirir.
-* [MAPS C# kullanarak](#Using_Maps) -eşler ve C# kullanarak sabitler görüntüleme.
-* [XAML'de haritalar kullanılarak](#Using_Xaml) -bir eşleme XAML ile görüntüleme.
+* [Haritalar başlatma](#Maps_Initialization) - kullanarak `Map` başlangıçta ek başlatma kodu gerektirir.
+* [Platform yapılandırmasını](#Platform_Configuration) -maps çalışmaya yönelik bazı yapılandırmaların her platform gerektirir.
+* [Haritalar C# kullanarak](#Using_Maps) -eşler ve C# kullanarak sabitler görüntüleme.
+* [XAML içinde haritalar'ı kullanarak](#Using_Xaml) -XAML sahip bir eşleme görüntüleme.
 
-Harita denetiminin içinde kullanılan [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) aşağıda gösterilen örnek.
+Harita denetiminin içinde kullanılan [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) ve aşağıda da gösterilen örnek.
 
- [![MAPS MobileCRM örnekteki](map-images/maps-zoom-sml.png "Harita Denetim örnek")](map-images/maps-zoom.png#lightbox "Harita Denetim örneği")
+ [![Maps'a MobileCRM örnek](map-images/maps-zoom-sml.png "harita denetimi örnek")](map-images/maps-zoom.png#lightbox "harita denetimi örneği")
 
-Harita daha gelişmiş işlevlere oluşturarak bir [özel Oluşturucu eşleme](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
+Haritası işlevini daha gelişmiş oluşturarak bir [özel Oluşturucu harita](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
 <a name="Maps_Initialization" />
 
-## <a name="maps-initialization"></a>MAPS başlatma
+## <a name="maps-initialization"></a>Haritalar başlatma
 
-MAPS bir Xamarin.Forms uygulaması eklerken **Xamarin.Forms.Maps** olan bir çözümdeki her projeye eklemelisiniz ayrı bir NuGet paketi.
-Android, bu da Xamarin.Forms.Maps eklediğinizde, otomatik olarak karşıdan GooglePlayServices üzerinde (başka bir NuGet) bir bağımlılığa sahiptir.
+Eşlemeleri bir Xamarin.Forms uygulaması eklerken **Xamarin.Forms.Maps** olan bir çözümde her proje için eklemeniz gereken ayrı bir NuGet paketi.
+Android, bu da Xamarin.Forms.Maps eklediğinizde, otomatik olarak indirilen GooglePlayServices üzerinde (başka bir NuGet) bağımlılığı vardır.
 
-NuGet paketini yükledikten sonra bazı başlatma kod her uygulama projesi gereklidir *sonra* `Xamarin.Forms.Forms.Init` yöntem çağrısı. İOS için aşağıdaki kodu kullanın:
+NuGet paketini yükledikten sonra bazı başlatma kodu her uygulama projesinde gerekli *sonra* `Xamarin.Forms.Forms.Init` yöntem çağrısı. İOS için aşağıdaki kodu kullanın:
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-Android aynı parametreleri geçmelidir `Forms.Init`:
+Android'de aynı parametreleri geçmelidir `Forms.Init`:
 
 ```csharp
 Xamarin.FormsMaps.Init(this, bundle);
@@ -63,28 +63,28 @@ Bu çağrı her platform için aşağıdaki dosyaları ekleyin:
 -  **Android** -MainActivity.cs dosya `OnCreate` yöntemi.
 -  **UWP** -MainPage.xaml.cs dosyasında `MainPage` Oluşturucusu.
 
-NuGet paketi eklendi ve başlatma yöntemi her applcation içinde bir kez `Xamarin.Forms.Maps` API'leri .NET standart ortak kitaplığı proje veya paylaşılan proje kodunu kullanılabilir.
+NuGet paketi eklenmiştir ve başlatma yöntemi her applcation içinde bir kez `Xamarin.Forms.Maps` ortak .NET Standard kitaplığı projesi ya da paylaşılan proje kodunu API'leri kullanılabilir.
 
 <a name="Platform_Configuration" />
 
-## <a name="platform-configuration"></a>Platform yapılandırması
+## <a name="platform-configuration"></a>Platform yapılandırma
 
-Harita görüntüler önce bazı platformlarda ek yapılandırma adımları gereklidir.
+Harita görüntülenmeden önce bazı platformlarda ek yapılandırma adımları gereklidir.
 
 ### <a name="ios"></a>iOS
 
-Konum Hizmetleri iOS erişmek için aşağıdaki anahtarları ayarlamanız gerekir **Info.plist**:
+İos'ta konumu hizmetlerine erişmek için aşağıdaki anahtarları ayarlamanız gerekir **Info.plist**:
 
 - iOS 11
-    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – uygulama kullanımda olduğunda konum hizmetleri kullanmak için
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – uygulama kullanımda olduğunda için konum hizmetlerini kullanma
     - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) – her zaman konum Hizmetleri kullanma
-- iOS 10 ve önceki
-    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – uygulama kullanımda olduğunda konum hizmetleri kullanmak için
+- iOS 10 ve daha önceki
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – uygulama kullanımda olduğunda için konum hizmetlerini kullanma
     - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – her zaman konum Hizmetleri kullanma    
 
 İOS 11 ve önceki desteklemek için tüm üç anahtarları içerebilir: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, ve `NSLocationAlwaysUsageDescription`.
 
-Bu anahtarları için XML gösterimi **Info.plist** aşağıda gösterilmiştir. Güncelleştirmeniz gerekir `string` uygulamanızı konum bilgileri nasıl kullanarak yansıtmak için değerler:
+Bu anahtarlar için XML gösterimi **Info.plist** aşağıda gösterilmiştir. Güncelleştirmeniz gerekir `string` konum bilgileri uygulamanızı nasıl kullandığını yansıtacak şekilde değerleri:
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
@@ -95,29 +95,29 @@ Bu anahtarları için XML gösterimi **Info.plist** aşağıda gösterilmiştir.
 <string>Can we use your location at all times?</string>
 ```
 
-**Info.plist** girişleri da eklenebilir **kaynak** düzenlerken Görünüm **Info.plist** dosyası:
+**Info.plist** girişleri eklenebilir **kaynak** düzenlerken görünümü **Info.plist** dosyası:
 
 ![İOS 8 için Info.plist](map-images/ios8-map-permissions.png "iOS 8 gerekli Info.plist girişleri")
 
 
 ### <a name="android"></a>Android
 
-Kullanılacak [Google haritalar API'si v2](https://developers.google.com/maps/documentation/android/) Android bir API anahtarı oluşturmak ve bunu Android projenize eklemeniz gerekir.
-Xamarin belge'ndaki yönergeleri izleyin [Google haritalar API'si v2 anahtarı alma](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
-Bu yönergeleri uyguladıktan sonra API anahtarını yapıştırın **Properties/AndroidManifest.xml** dosyası (kaynağı görüntüle ve Bul/güncelleştirme aşağıdaki öğeyi):
+Kullanılacak [Google haritalar API v2](https://developers.google.com/maps/documentation/android/) Android'de bir API anahtarı oluşturmanız ve Android projenize ekleyin.
+Xamarin doc'ndaki yönergeleri takip edin [Google haritalar API v2 anahtarı edinme](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
+Bu yönergeleri uyguladıktan sonra API anahtarı yapıştırın **Properties/AndroidManifest.xml** dosyası (kaynağı görüntüle ve Bul/update öğesi):
 
 ```xml
-<meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="YOUR_API_KEY"/>
+<application ...>
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
+</application>
 ```
 
-Geçerli bir API anahtarı eşlemeleri denetim Android üzerinde gri bir kutu olarak görüntüler.
+Geçerli bir API anahtarı haritalar denetim android'de gri bir kutu olarak görüntüler.
 
 > [!NOTE]
-> Karşıya yüklenen herhangi bir uygulama sürümünü imzalamak için kullanılan anahtar deposu dosyasının kullanarak başka bir anahtar oluşturmak unutmayın Google Play mağazası. Anahtarı geliştirme için oluşturmak ve hata ayıklama çalışmaz ve Google Play'den yüklenen uygulamasını harita görünümü bozuk. Ayrıca uygulamanın anahtar Eğer yeniden oluşturulması unutmayın **paket adı** değişiklikler.
+> Google haritalar erişmek, APK için sırada SHA-1 parmak izlerini eklemek ve gerekir, APK imzalamak için kullandığınız her keystore (hata ayıklama ve yayın) adlarını paketini, unutmayın. Hata ayıklama ve yayın APK oluşturmak için başka bir bilgisayar için bir bilgisayar kullanıyorsanız, örneğin, hata ayıklama keystore ilk bilgisayarın'den SHA-1 sertifika parmak izi ve yayın anahtar deposu ' den SHA-1 sertifika parmak izini içermelidir İkinci bilgisayar. Ayrıca, anahtar kimlik bilgilerini düzenlemek unutmayın uygulamanın **paket adı** değişiklikler. Bkz: [Google haritalar API v2 anahtarı edinme](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
-Ayrıca uygun izinleri Android projeye sağ tıklayıp seçerek etkinleştirmeniz gerekir **Seçenekleri > Yapı > Android uygulaması** ve aşağıdaki ticking:
+Android proje üzerinde sağ tıklatıp seçerek uygun izinleri etkinleştirmeniz gerekecektir **Seçenekleri > derleme > Android uygulaması** ve aşağıdaki yolunda:
 
 * `AccessCoarseLocation`
 * `AccessFineLocation`
@@ -127,23 +127,23 @@ Ayrıca uygun izinleri Android projeye sağ tıklayıp seçerek etkinleştirmeni
 * `AccessWifiState`
 * `Internet`
 
-Bunlardan bazıları aşağıdaki ekran gösterilir:
+Bunlardan bazıları, aşağıdaki ekran görüntüsünde gösterilmiştir:
 
-![Android için gerekli izinlere](map-images/android-map-permissions.png "Android için gereken izinler")
+![Android için gerekli izinler](map-images/android-map-permissions.png "Android için gereken izinler")
 
-Son iki gerekli olduğu uygulamalar harita verilerini indirmek için bir ağ bağlantısı gerektirir. Android hakkında okuyun [izinleri](http://developer.android.com/reference/android/Manifest.permission.html) daha fazla bilgi için.
+Uygulamaları eşleme verileri indirmek için bir ağ bağlantısı gerektirdiğinden, son iki gereklidir. Android hakkında okuyun [izinleri](http://developer.android.com/reference/android/Manifest.permission.html) daha fazla bilgi için.
 
 ### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
-Evrensel Windows platformu üzerinde eşlemeleri kullanmak için bir yetkilendirme belirteci oluşturmanız gerekir. Daha fazla bilgi için bkz: [eşlemeleri kimlik doğrulama anahtarı isteği](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx) MSDN'de.
+Haritalar Evrensel Windows platformu üzerinde kullanılacak yetkilendirme belirteci oluşturmanız gerekir. Daha fazla bilgi için [haritalar kimlik doğrulama anahtarı istek](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx) MSDN'de.
 
-Kimlik doğrulama belirteci sonra belirtilmelidir `FormsMaps.Init("AUTHORIZATION_TOKEN")` Bing Haritalar ile uygulama kimliğini doğrulamak için yöntem çağrısı.
+Kimlik doğrulama belirteci ardından belirtilmelidir `FormsMaps.Init("AUTHORIZATION_TOKEN")` Bing Haritalar ile uygulama kimliğini doğrulamak için yöntem çağrısı.
 
 <a name="Using_Maps" />
 
-## <a name="using-maps"></a>Eşlemelerini kullanma
+## <a name="using-maps"></a>MAPS'ı kullanma
 
-Bkz: [MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) MobileCRM örnek kodda harita denetiminin nasıl kullanılabileceği bir örnek için. Basit bir `MapPage` sınıfı bu - bildirimin gibi görünebilir, yeni bir `MapSpan` haritanın görünüm konumlandırmak için oluşturulur:
+Bkz: [MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) MobileCRM örneğinde harita denetiminin kodda nasıl kullanılabileceğini örneği için. Basit bir `MapPage` sınıfı bu - bildirim gibi görünebilir, yeni bir `MapSpan` haritanın görünümü konumlandırmak için oluşturulur:
 
 ```csharp
 public class MapPage : ContentPage {
@@ -165,7 +165,7 @@ public class MapPage : ContentPage {
 
 ### <a name="map-type"></a>Eşleme Türü
 
-Harita içeriğinin ayarlayarak da değiştirilebilir `MapType` normal sokak haritası (varsayılan), uydu görüntüler veya her ikisinin birleşimini göstermek için özellik.
+Harita içeriğinin ayarlayarak da değiştirilebilir `MapType` özelliği, normal bir sokak harita (varsayılan), uydu görüntüleri veya her ikisinin bir birleşiminde göstermek için.
 
 ```csharp
 map.MapType == MapType.Street;
@@ -180,13 +180,13 @@ Geçerli `MapType` değerler şunlardır:
 
 ### <a name="map-region-and-mapspan"></a>Harita bölge ve MapSpan
 
-Yukarıdaki kod parçacığında gösterildiği gibi sağladığı bir `MapSpan` map Oluşturucusu örneğine ayarlar ilk görünümü (noktası merkezi ve yakınlaştırma düzeyi) yüklendiğinde harita. `MoveToRegion` Eşleme sınıf yöntemi kullanılabilecek eşleme konumu ya da Yakınlaştırma düzeyini değiştirme hedefi. Yeni bir oluşturmanın iki yolu vardır `MapSpan` örneği:
+Yukarıdaki kod parçacığında gösterildiği gibi sağladığı bir `MapSpan` harita Oluşturucusu örneğine ayarlar başlangıç görünümü (noktası merkezi ve yakınlaştırma düzeyi) yüklendiğinde harita. `MoveToRegion` Eşlem sınıfı yöntemi harita konumu veya yakınlaştırma düzeyi değiştirildi için kullanılabilecek. Yeni bir oluşturmanın iki yolu vardır `MapSpan` örneği:
 
--  **MapSpan.FromCenterAndRadius()** -bir aralık oluşturmak için statik yöntemi bir `Position` ve belirterek bir `Distance` .
--  **Yeni MapSpan ()** -kullanan Oluşturucusu bir `Position` ve enlem ve boylam görüntülenecek Santigrat.
+-  **MapSpan.FromCenterAndRadius()** -bir aralık oluşturmak için statik yöntem bir `Position` belirterek bir `Distance` .
+-  **Yeni MapSpan ()** -kullanan Oluşturucusu bir `Position` ve Santigrat enlem ve boylamdan görüntülenecek.
 
 
-Konumun değiştirmeden harita yakınlaştırma düzeyini değiştirmek için yeni bir oluşturma `MapSpan` geçerli konumundan kullanarak `VisibleRegion.Center` harita denetiminin özelliği. A `Slider` (doğrudan eşleme denetiminde yakınlaştırma şu anda kaydırıcıyı değeri güncelleştirilemiyor ancak) harita yakınlaştırma şöyle denetlemek için kullanılabilir:
+Konumun değiştirmeden harita yakınlaştırma düzeyini değiştirmek için yeni bir oluşturma `MapSpan` geçerli konumdan kullanarak `VisibleRegion.Center` harita denetiminin özelliği. A `Slider` şöyle harita yakınlaştırma (harita denetimi doğrudan yakınlaştırma şu anda kaydırıcı değeri güncelleştirilemiyor ancak) denetlemek için kullanılabilir:
 
 ```csharp
 var slider = new Slider (1, 18, 1);
@@ -197,11 +197,11 @@ slider.ValueChanged += (sender, e) => {
 };
 ```
 
- [![Yakınlaştırma Eşlemleriyle](map-images/maps-zoom-sml.png "harita yakınlaştırma denetimi")](map-images/maps-zoom.png#lightbox "harita yakınlaştırma denetimi")
+ [![Yakınlaştırma eşlemeleriyle](map-images/maps-zoom-sml.png "harita yakınlaştırma denetimi")](map-images/maps-zoom.png#lightbox "harita yakınlaştırma denetimi")
 
 ### <a name="map-pins"></a>PIN eşleme
 
-Konumları işaretlenir ile harita üzerinde `Pin` nesneleri.
+Konumlar ile harita üzerinde işaretlenebilir `Pin` nesneleri.
 
 ```csharp
 var position = new Position(37,-122); // Latitude, Longitude
@@ -214,7 +214,7 @@ var pin = new Pin {
 map.Pins.Add(pin);
 ```
 
- `PinType` PIN kodunda (platformuna bağlı olarak) çizilir şekilde etkileyebilir aşağıdaki değerlerden birini ayarlanabilir:
+ `PinType` PIN kodunda (platforma bağlı olarak) işlenen biçimini etkiler aşağıdaki değerlerden birine ayarlanabilir:
 
 -  Genel
 -  Yerleştir
@@ -224,9 +224,9 @@ map.Pins.Add(pin);
 
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>XAML kullanma
+## <a name="using-xaml"></a>XAML kullanarak
 
-MAPS bu parçacığında gösterildiği gibi Xaml düzenleri de yerleştirilebilir.
+MAPS Bu kod parçacığında gösterildiği gibi Xaml düzenleri da yerleştirilebilir.
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -244,7 +244,7 @@ MAPS bu parçacığında gösterildiği gibi Xaml düzenleri de yerleştirilebil
 </ContentPage>
 ```
 
-`MapRegion` Ve `Pins` kodu kullanılarak ayarlanabilir `MyMap` başvurusu (veya her eşleme olarak adlandırılır). Unutmayın ek bir `xmlns` ad alanı tanımını Xamarin.Forms.Maps denetimlerine başvuruda için gereklidir.
+`MapRegion` Ve `Pins` kod kullanılarak ayarlanabilir `MyMap` başvurusu (veya her şeyi harita olarak adlandırılır). Unutmayın, ek bir `xmlns` ad alanı tanımını Xamarin.Forms.Maps denetimlerine başvuruda için gereklidir.
 
 ```csharp
 MyMap.MoveToRegion(
@@ -256,9 +256,9 @@ MyMap.MoveToRegion(
 
 ## <a name="summary"></a>Özet
 
-Xamarin.Forms.Maps Xamarin.Forms çözümdeki her projeye eklenmelidir ayrı bir NuGet ' dir. Ek başlatma kodu, iOS, Android ve UWP için de bazı yapılandırma adımlarını olarak gereklidir.
+Xamarin.Forms.Maps Xamarin.Forms çözümü'nde her projeye eklenmelidir ayrı bir NuGet olur. Ek başlatma kodu, iOS, Android ve UWP için de bazı yapılandırma adımları olarak gereklidir.
 
-Bir kez yapılandırılan eşlemeleri API, yalnızca birkaç kodunun PIN işaretli eşlemeleri işlemek için kullanılabilir. Eşlemeleri daha gelişmiş ile bir [özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
+Bir kez yapılandırılmış Maps API, yalnızca birkaç satır kod PIN işaretli eşlemeleri oluşturmak için kullanılabilir. Haritalar daha gelişmiş ile bir [özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

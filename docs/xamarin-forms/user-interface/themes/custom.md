@@ -1,6 +1,6 @@
 ---
-title: Özel Xamarin.Forms Tema oluşturma
-description: Bu makalede bir uygulamada başvurmak için özel bir Xamarin.Forms Tema oluşturma açıklanmaktadır.
+title: Xamarin.Forms özel tema oluşturma
+description: Bu makalede, bir uygulamada başvurmak için özel bir Xamarin.Forms Tema oluşturma açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 4FE08ADC-093F-47FA-B33C-20CF08B5D7E0
 ms.technology: xamarin-forms
@@ -8,25 +8,25 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 018193cf0b198fd87f0f09cbfeba52e9d2a0f68b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245585"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38838176"
 ---
-# <a name="creating-a-custom-xamarinforms-theme"></a>Özel Xamarin.Forms Tema oluşturma
+# <a name="creating-a-custom-xamarinforms-theme"></a>Xamarin.Forms özel tema oluşturma
 
-![](~/media/shared/preview.png "Bu API şu anda önizlemede değil")
+![](~/media/shared/preview.png "Bu API, şu anda Önizleme aşamasındadır")
 
-Bir tema bir Nuget paketi ekleme yanı sıra (gibi [açık](~/xamarin-forms/user-interface/themes/light.md) ve [koyu](~/xamarin-forms/user-interface/themes/dark.md) Temalar), kendi kaynak uygulamanızda başvurulabilir sözlük Temalar oluşturabilirsiniz.
+Bir tema, bir Nuget paketi ekleme yanı sıra (gibi [ışık](~/xamarin-forms/user-interface/themes/light.md) ve [koyu](~/xamarin-forms/user-interface/themes/dark.md) temaları), kendi kaynak uygulamanızda başvurulabilir sözlük Temalar oluşturabilirsiniz.
 
 ## <a name="example"></a>Örnek
 
-Üç `BoxView`gösterilen s [Temalar sayfa](~/xamarin-forms/user-interface/themes/index.md) iki karşıdan yüklenebilir tema içinde tanımlanan üç sınıflara göre biçimlendirilmiş.
+Üç `BoxView`gösterilen s [Temalar sayfa](~/xamarin-forms/user-interface/themes/index.md) iki karşıdan yüklenebilir tema tanımlanan üç sınıflara göre biçimlendirilmiş.
 
-Bunlar nasıl çalıştığını anlamak için aşağıdaki biçimlendirme doğrudan ekleyebilirsiniz eşdeğer bir stil oluşturur, **App.xaml**.
+Bu nasıl çalıştığını anlamak için aşağıdaki biçimlendirme doğrudan ekleyebilirsiniz eşdeğer bir stil oluşturur, **App.xaml**.
 
-Not `Class` için öznitelik `Style` (tersine [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) özniteliği Xamarin.Forms önceki sürümlerinde kullanılabilir).
+Not `Class` özniteliğini `Style` (başlangıcı yerine sonundan [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) özniteliği Xamarin.Forms önceki sürümlerinde kullanılabilir).
 
 ```xml
 <ResourceDictionary>
@@ -63,17 +63,17 @@ Not `Class` için öznitelik `Style` (tersine [ `x:Key` ](~/xamarin-forms/user-i
 </ResourceDictionary>
 ```
 
-Olduğunu fark edeceksiniz `Rounded` sınıfı için özel bir etkisi başvuruyor `CornerRadius`.
-Özel bir doğru şekilde başvurmak için aşağıda - Bu etkiyi kodunu verilen `xmlns` eklenmeli **App.xaml**ait kök öğe:
+Olduğunu fark edeceksiniz `Rounded` sınıfı başvuran bir özel efekt `CornerRadius`.
+Bu etkiyi kodunu doğru özel başvurmak için aşağıda - verilmiştir `xmlns` eklenmelidir **App.xaml**ait kök öğe:
 
 ```csharp
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>C# kodunda .NET standart kitaplığı veya paylaşılan projesi
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>C# kodu .NET Standard kitaplığı projesi ya da paylaşılan proje
 
-Gidiş köşe oluşturma kodunu `BoxView` kullanan [efektler](~/xamarin-forms/app-fundamentals/effects/index.md).
-Köşe yarıçapını kullanılarak uygulanan bir `BindableProperty` ve uygulama tarafından uygulanan bir [etkisi](~/xamarin-forms/app-fundamentals/effects/index.md). Etkisi platforma özgü kodu gerektirir [iOS](#ios) ve [Android](#android) projeleri (aşağıda gösterilen.)
+Hepsini köşe oluşturmak için kod `BoxView` kullanan [etkileri](~/xamarin-forms/app-fundamentals/effects/index.md).
+Köşe yarıçapı kullanılarak uygulanan bir `BindableProperty` ve uygulama tarafından uygulanan bir [etkisi](~/xamarin-forms/app-fundamentals/effects/index.md). Etkisi platforma özgü kod gerektirir [iOS](#ios) ve [Android](#android) projeleri (aşağıda gösterilmiştir.)
 
 ```csharp
 namespace ThemesDemo
@@ -128,7 +128,7 @@ namespace ThemesDemo
 
 <a name="ios" />
 
-### <a name="c-code-in-the-ios-project"></a>İOS projesindeki C# kodu
+### <a name="c-code-in-the-ios-project"></a>C# kodu iOS projesi
 
 ```csharp
 using System;
@@ -184,7 +184,7 @@ namespace ThemesDemo.iOS
 
 <a name="android" />
 
-### <a name="c-code-in-the-android-project"></a>Android projesindeki C# kodu
+### <a name="c-code-in-the-android-project"></a>C# kodu Android projesi
 
 ```csharp
 using System;
@@ -257,8 +257,8 @@ namespace ThemesDemo.Droid
 
 ## <a name="summary"></a>Özet
 
-Özel bir tema özel görünüm gerektiren her denetimi için stiller tanımlayarak oluşturulabilir. Bir denetim için birden çok stiller farklı ayırt `Class` öznitelikleri kaynak sözlükte ve ayarlayarak uygulanan `StyleClass` denetim özniteliği.
+Özel bir tema özel görünüşünü gerektiren her denetimi için stiller tanımlayarak oluşturulabilir. Bir denetimi için birden çok stiller farklı ayırt `Class` kaynak sözlüğünde öznitelikleri ve ardından ayarlayarak uygulanan `StyleClass` denetim özniteliği.
 
-Stil de kullanabilir [etkileri](~/xamarin-forms/app-fundamentals/effects/index.md) daha fazla denetiminin görünümünü özelleştirmek için.
+Bir stil de kullanabilir [etkileri](~/xamarin-forms/app-fundamentals/effects/index.md) daha fazla denetimin görünümünü özelleştirme.
 
-[Örtülü stiller](~/xamarin-forms/user-interface/styles/implicit.md) (ya da olmadan bir `x:Key` veya `Style` öznitelik) ile eşleşen tüm denetimler için uygulanmaya devam `TargetType`.
+[Örtük stiller](~/xamarin-forms/user-interface/styles/implicit.md) (ya da olmadan bir `x:Key` veya `Style` özniteliği) eşleşen tüm denetimlere uygulanmaya devam `TargetType`.

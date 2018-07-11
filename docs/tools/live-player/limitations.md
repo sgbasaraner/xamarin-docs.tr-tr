@@ -1,64 +1,64 @@
 ---
-title: Xamarin Canlı Player sınırlamaları
-description: Bu belgede Canlı Xamarin Player sınırlamaları açıklanmaktadır. Cihaz gereksinimleri açıklanır, proje türleri ve çeşitli diğer konular ile works özellikleri.
+title: Xamarin Live Player sınırlamaları
+description: Bu belgede, Xamarin Live Player sınırlamaları açıklanmaktadır. Bu cihaz gereksinimleri açıklanır, proje türleri ve diğer çeşitli konuların ile çalışır özellikleri.
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
 ms.openlocfilehash: ea71391382f9e1ecb80cbf5f2d5bf127e0d6d1be
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793681"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815288"
 ---
-# <a name="limitations-of-xamarin-live-player"></a>Xamarin Canlı Player sınırlamaları
+# <a name="limitations-of-xamarin-live-player"></a>Xamarin Live Player sınırlamaları
 
 ![Önizleme özelliği](~/media/shared/preview.png)
 
 ## <a name="device-requirements"></a>Cihaz gereksinimleri
-Xamarin Canlı oynatıcı uygulaması aşağıdaki cihazları destekler:
+Xamarin Live Player uygulamasını aşağıdaki cihazları destekler:
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 - Android 4.2 veya üzeri.
-- ARM-v7a, ARM v8a, ARM64-v8a, x 86 veya x86_64 işlemci.
+- ARM-v7a, v8a ARM, ARM64 v8a, x 86 veya x86_64 işlemci.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-- iOS 9.0 veya üzeri.
+- iOS 9.0 veya üstünde.
 - ARM64 işlemci.
 
 -----
 
 ## <a name="limitations"></a>Sınırlamalar
 
-Aşağıdaki öğeler de dahil olmak üzere Xamarin Canlı Player çalıştırabilirsiniz şeyler bazı sınırlamalar vardır:
+Aşağıdaki öğeler de dahil olmak üzere, Xamarin Live Player çalıştırabilirsiniz şeyler bazı sınırlamalar vardır:
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
 
-- Özel oluşturucu desteklenmez.
+- Özel oluşturucular desteklenmez.
 - Efektleri desteklenmez.
-- Özel denetimler özel bağlanabilir özellikleri ile desteklenmez.
-- Katıştırılmış kaynakları desteklenmez (IE. görüntüleri veya başka kaynaklara bir PCL katıştırma).
-- Üçüncü taraf MVVM çerçeveler (örn. desteklenmez Prizma, Mvvm arası, Mvvm hafif, vb.).
-- İOS varlık kataloglar desteklenmez.
+- Özel denetimler ile özel bağlanabilir özellikler desteklenmez.
+- Gömülü kaynaklar desteklenmez (IE. görüntüleri veya başka kaynaklara bir PCL'de ekleme).
+- Üçüncü taraf MVVM çerçeveleri (örn. desteklenmez Prism, Mvvm arası, Mvvm Light, vb.).
+- Varlık katalogları ios'ta desteklenmez.
 
 ### <a name="other-project-types"></a>Diğer proje türleri
 
-- Canlı Player yerel Android veya (kullanan Android XML veya film şeritleri için kullanıcı arabirimi) iOS projeler için tasarlanmamıştır.
+- Live Player, yerel Android veya (Android XML veya film şeritleri için kullanıcı arabirimi kullanan) iOS projeleri için tasarlanmamıştır.
 
 ### <a name="misc"></a>Çeşitli
 
-- Sınırlı yansıma desteği (şu anda SQLite ve Json.NET gibi bazı yaygın NuGets etkiler). Diğer NuGets hala desteklenmiyor olabilir.
-- Bazı sistem sınıfları kılınamaz (örneğin, bir alt sınıfı uygulayamaz).
-- Sağlama gerektiren bazı platform özellikleri (ancak bu Fotoğraf Galerisi erişim gibi ortak işlemleri için yapılandırılmış) Xamarin Canlı Player uygulamasında çalışamaz.
-- Derleme adımları ve özel hedefleri göz ardı edilir. Örneğin, Fody, Refit, AutoFac ve AutoMapper gibi araçlar dahil edilemez.
-- F # projeleri Android desteklenmiyor ve sınırlı destek iOS
-- Özel genel sınıfları ve arabirimleri ile Gelişmiş senaryolar desteklenmiyor.
+- Sınırlı yansıma için destek (şu anda SQLite ve Json.NET gibi bazı popüler Nuget'i etkiler). Diğer Nuget'i hala desteklenmiyor olabilir.
+- Bazı sistem sınıfları geçersiz kılınamaz (örneğin, bir alt uygulayamaz).
+- Sağlama gerektiren bazı platform özellikleri (ancak bu Fotoğraf Galerisi erişim gibi yaygın işlemleri için yapılandırılmış) Xamarin Live Player uygulamasında çalışmaz.
+- Özel hedefler ve derleme adımları göz ardı edilir. Örneğin, Fody, Refit AutoFac ve AutoMapper gibi araçları dahil edilemez.
+- F # projeleri, Android'de desteklenmez ve sınırlı iOS desteği
+- Özel genel sınıfları ve arabirimleri ile Gelişmiş senaryolar desteklenmiyor olabilir.
 
-Lütfen ek sorunları hakkında rapor [bugzilla](https://aka.ms/live-player-report-issue).
+Ek sorunları raporlamak lütfen [bugzilla](https://aka.ms/live-player-report-issue).
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

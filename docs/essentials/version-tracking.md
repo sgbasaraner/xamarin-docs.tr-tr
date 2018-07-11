@@ -1,22 +1,22 @@
 ---
 title: 'Xamarin.Essentials: Sürüm izleme'
-description: Uygulamaları sürümünü denetlemek Xamarin.Essentials VersionTracking sınıfında sağlar ve yapı numaraları ilk ise gibi gibi ek bilgileri görmesini yanı sıra herhangi bir zamanda başlatılan uygulama zaman veya geçerli sürümü için önceki derleme alma bilgi ve daha fazlası.
+description: Uygulama sürümü denetlemek Xamarin.Essentials VersionTracking sınıfında sağlar ve ilk grubundaymış gibi gibi ek bilgileri görmeye yanı sıra derleme numaraları hiç olmadığı kadar başlatılan uygulama zaman veya geçerli sürümü için önceki derlemeyi Al bilgi ve daha fazlası.
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 2c092d6767045f0af956c5dab74801077dadb51f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783008"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815654"
 ---
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Sürüm izleme
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**VersionTracking** sınıfı uygulamaları sürümünü denetlemek olanak sağlar ve yapı numaraları ilk ise gibi gibi ek bilgileri görmesini yanı sıra herhangi bir zamanda başlatılan uygulama zaman veya geçerli sürümü için önceki Al bilgi ve daha fazlasını oluşturun.
+**VersionTracking** sınıfı uygulama sürümünü denetleme olanak sağlar ve ilk grubundaymış gibi gibi ek bilgileri görmeye yanı sıra derleme numaraları hiç olmadığı kadar başlatılan uygulama zaman ya da geçerli sürümü için önceki Al bilgi ve daha fazlasını oluşturun.
 
 ## <a name="using-version-tracking"></a>Sürüm izleme kullanma
 
@@ -26,13 +26,13 @@ Sınıfınızda Xamarin.Essentials bir başvuru ekleyin:
 using Xamarin.Essentials;
 ```
 
-İlk kullanışınızda **VersionTracking** sınıfı, geçerli sürümü izleme başlayacak. Çağırmalısınız `Track` erken yalnızca, uygulamanızda yüklenen geçerli sürüm bilgilerini izlenir emin olmak için her zaman:
+İlk kullanışınızda **VersionTracking** sınıfı, geçerli sürümü izleme başlayacak. Çağırmalısınız `Track` uygulamanızın yüklü geçerli sürüm bilgilerini izlenir emin olmak için her zaman yalnızca erkenden:
 
 ```csharp
 VersionTracking.Track();
 ```
 
-İlk sonra `Track` çağrılır sürüm bilgileri okuyabilir:
+İlk sonra `Track` çağrılır sürüm bilgilerini okuyabilir:
 
 ```csharp
 
@@ -70,11 +70,11 @@ var versionHistory = VersionTracking.VersionHistory;
 var buildHistory = VersionTracking.BuildHistory;
 ```
 
-## <a name="platform-implementation-specifics"></a>Platform uygulama özellikleri
+## <a name="platform-implementation-specifics"></a>Platform uygulaması özellikleri
 
-Tüm sürüm bilgileri kullanılarak depolandığını [Tercihler](preferences.md) Xamarin.Essentials API ve bir dosya adı ile depolanan **[YOUR-APP-paket-ID] .xamarinessentials**.
+Tüm sürüm bilgilerini kullanarak depolanan [tercihleri](preferences.md) Xamarin.Essentials API'SİNDE ve dosya adını ile depolanan **[YOUR-APP-PAKETİNİ-ID] .xamarinessentials**.
 
-Uygulama kaldırma neden olacak _LocalSettings_ve tüm sürüm izleme bilgilerini kaldırılacak.
+Uygulama kaldırma neden _LocalSettings_ve tüm sürüm izleme bilgileri kaldırılacak.
 
 ## <a name="api"></a>API
 

@@ -1,6 +1,6 @@
 ---
-title: Dinamik yeniden yükle
-description: XAML değişikliklerin Canlı, başka bir derleme gerektirmeden yansımasını bakın ve dağıtın.
+title: Canlı yeniden yükleme
+description: Başka bir derleme gerek kalmadan canlı, XAML değişiklikler yansıtılır bakın ve dağıtın.
 ms.prod: xamarin
 ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
@@ -8,55 +8,55 @@ author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
 ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37066656"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38860673"
 ---
-# <a name="xamarin-live-reload"></a>Xamarin dinamik yeniden yükle
+# <a name="xamarin-live-reload"></a>Xamarin Canlı yeniden yükleme
 
 ![Önizleme](~/media/shared/preview.png)
 
-Xamarin Canlı yeniden olanak tanır **XAML için değişiklik ve canlı, başka bir derleme gerektirmeden yansıtılan görebileceği ve dağıtma**. XAML için yapılan tüm değişiklikler imzalanmasını kaydetme ve dağıtma hedefte yansıtılır.
+Xamarin Live yeniden olanak tanır **değişiklik yapmak için XAML ve bunları başka bir derleme gerek kalmadan canlı, yansıtılan görebilir ve dağıtma**. XAML için yapılan değişiklikler yeniden kaydedin ve dağıtım hedefinizin yansıtılır.
 
-Uygulamanızın Canlı yeniden kullanırken derlendiğinden tüm kitaplıkları ve üçüncü taraf denetimleri ile çalışır. Xamarin.Forms destekler, Android, iOS ve UWP, dahil ve benzeticileri, Öykünücüler ve fiziksel cihazları dahil olmak üzere tüm geçerli dağıtım hedefleri üzerinde çalışan tüm platformlarda yeniden works dinamik.
+Uygulamanızı Canlı yeniden yükleme kullanırken derlendiğinden tüm kitaplıkları ve üçüncü taraf denetimleri ile çalışır. Xamarin.Forms destekler, Android, iOS ve UWP, dahil ve simülatörleri, Öykünücüler ve fiziksel cihazlar da dahil olmak üzere tüm geçerli dağıtım hedefleri üzerinde çalışan tüm platformlarda yeniden works Canlı.
 
 > [!Video https://www.youtube.com/embed/-5WJZpeXlC8]
 
-Dinamik yeniden yükleme şu anda yalnızca Visual Studio 2017 içinde kullanılabilir.
+Canlı yeniden yükleme şu anda yalnızca Visual Studio 2017'de kullanılabilir.
 
 ## <a name="requirements"></a>Gereksinimler
 
-* [Visual Studio 2017 sürüm 15.7 veya yukarıdaki](https://visualstudio.microsoft.com/vs/) veya üstü ile **.NET ile Mobil Geliştirme** iş yükü.
-* [Xamarin.Forms 3.0.0 veya üstü](https://www.nuget.org/packages/Xamarin.Forms/) veya üstü.
+* [Visual Studio 2017 sürüm 15.7 veya üzeri](https://visualstudio.microsoft.com/vs/) veya üstü ile **.NET ile Mobil Geliştirme** iş yükü.
+* [Xamarin.Forms 3.0.0 veya yukarıdaki](https://www.nuget.org/packages/Xamarin.Forms/) veya üzeri.
 
 ## <a name="getting-started"></a>Başlarken
-### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Visual Studio marketten Xamarin dinamik yeniden yükleyin
+### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Visual Studio Market'ten Xamarin Canlı yeniden yükleme
 
-Xamarin Canlı yeniden Visual Studio Market'te dağıtılır. Uzantıyı yüklemek için ziyaret [Visual Studio Market'te Xamarin Canlı yeniden sayfasında](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload) Web sitesi ve tıklatın **karşıdan**.
+Xamarin Live yeniden Visual Studio Market aracılığıyla dağıtılır. Uzantıyı yüklemek için şurayı ziyaret edin [Visual Studio Market Xamarin Canlı yeniden yükleme sayfasında](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload) tıklayın ve Web **indirme**.
 
-İndirilir ve .vsix açmak **yükleme**.
+İndirilir ve .vsix açın **yükleme**.
 
-![Visual Studio yükleyicisi Xamarin Canlı yükle onay](images/LiveReloadVSIXInstall.png)
+![Visual Studio yükleyicisi Xamarin Canlı yeniden yükleme onayı](images/LiveReloadVSIXInstall.png)
 
-Alternatif olarak, içinde arayabilirsiniz **çevrimiçi** sekmesinde **Uzantılar ve güncelleştirmeler** Visual Studio içinde iletişim.
+Alternatif olarak, içinde arama yapabilirsiniz **çevrimiçi** sekmesinde **Uzantılar ve güncelleştirmeler** Visual Studio içinde iletişim.
 
-### <a name="2-configure-your-app-to-use-live-reload"></a>2. Dinamik yeniden kullanmak için uygulamanızı yapılandırma
+### <a name="2-configure-your-app-to-use-live-reload"></a>2. Canlı yeniden yükleme kullanmak için uygulamanızı yapılandırın
 
-Dinamik yeniden varolan mobil uygulamalara ekleme, üç adımda yapılabilir:
+Canlı yeniden yükleme ekleme için var olan mobil uygulamaları üç adımda yapılabilir:
 
-1. Tüm projeleri kullanacak şekilde güncelleştirilir olun [Xamarin.Forms 3.0.0 veya üstü](https://www.nuget.org/packages/Xamarin.Forms/) veya üstü.
+1. Tüm projeler, kullanılacak güncelleştirilir sağlamak [Xamarin.Forms 3.0.0 veya yukarıdaki](https://www.nuget.org/packages/Xamarin.Forms/) veya üzeri.
 
 2. Ekleme **Xamarin.LiveReload** NuGet paketi:
 
-    a. **.NET standart** – yükleme **Xamarin.LiveReload** NuGet .NET standart 2.0 kitaplığa. Bu platform projelerinizde yüklü olması gerekmez. Emin **paket kaynağı** ayarlanır **tüm**.
+    a. **.NET standard** – yükleme **Xamarin.LiveReload** NuGet, .NET Standard 2.0 kitaplığa. Bu platform projelerinizde yüklü olması gerekmez. Emin **paket kaynağı** ayarlanır **tüm**.
     
-    b. **Paylaşılan projeleri** – yükleme **Xamarin.LiveReload** NuGet tüm platform projelerine (Android gibi iOS, UWP, vb.). Emin **paket kaynağı** ayarlanır **tüm**.
+    b. **Paylaşılan projeleri** – yükleme **Xamarin.LiveReload** tüm platform proje içinde NuGet (Android gibi iOS, UWP, vb.). Emin **paket kaynağı** ayarlanır **tüm**.
 
-    [![Xamarin dinamik yeniden NuGet ile NuGet Paket Yöneticisi ekleme](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
+    [![Xamarin Canlı yeniden yükleme NuGet ile NuGet Paket Yöneticisi Ekle](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
 
-3. Ekleme `LiveReload.Init();` oluşturucuda için `Application` aşağıdaki kod parçacığında gösterildiği gibi sınıfı:
+3. Ekleme `LiveReload.Init();` içinde oluşturucuya `Application` aşağıdaki kod parçacığında gösterildiği gibi sınıfı:
 
 ```csharp
 public partial class App : Application
@@ -74,116 +74,116 @@ public partial class App : Application
 }
 ```
 
-### <a name="3-start-live-reloading"></a>3. Dinamik yeniden Başlat
+### <a name="3-start-live-reloading"></a>3. Canlı yeniden Başlat
 
-Derleme ve uygulamanızı dağıtın. Uygulama dağıtılmış olduğunda, XAML dosyasını açın, bazı değişiklikler yapın ve dosyayı kaydedin. Değişikliklerinizi dağıtım hedef imzalanmasını.
+Derleme ve uygulamanızın dağıtabilirsiniz. Dağıtılan uygulama başladıktan sonra bir XAML dosyasını açın, bazı değişiklikler yapmanız ve dosyayı kaydedin. Dağıtım hedefi için değişikliklerinizi yeniden.
 
 > [!Video https://www.youtube.com/embed/-5WJZpeXlC8]
 
-Dinamik herhangi XAML dosyası yapılan değişikliklerle yeniden yüklemeye çalışır. C# veya NuGet paketleri ekleme/kaldırma değişiklikler yeni bir yapı gerektirir ve etkili olması için dağıtın.
+Canlı. herhangi bir XAML dosyasını değişikliklerle yeniden çalışır. C# veya NuGet paketlerini ekleme/kaldırma değişiklikler yeni bir derleme gerektirir ve etkili olması için dağıtın.
 
 ## <a name="frequently-asked-questions"></a>Sıkça Sorulan Sorular 
-### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>Xamarin Canlı yeniden Mac için Visual Studio var mı? 
+### <a name="is-xamarin-live-reload-available-on-visual-studio-for-mac"></a>Xamarin Live yeniden Mac için Visual Studio kullanılabilir? 
 
-Xamarin Canlı yeniden ilk önizleme sürümü, yalnızca Visual Studio 2017 için kullanılabilir. Mac için Visual Studio desteği için gelecekteki bir sürüm planlanmaktadır.
+Xamarin Live yeniden ilk önizleme sürümü yalnızca Visual Studio 2017 için kullanılabilir. Mac için Visual Studio için destek gelecekteki sürümlerde sunulması planlanmaktadır.
 
-### <a name="does-this-work-with-all-libraries-such-as-prism"></a>Bu Prizma gibi tüm kitaplıkları ile çalışır mı? 
+### <a name="does-this-work-with-all-libraries-such-as-prism"></a>Bu, Prism gibi tüm kitaplıkları ile çalışır mı? 
 
-Uygulamanızı derlendiğinden Prizma ve üçüncü taraf denetimi kitaplıkları gibi Telerik, Infragistics, Syncfusion, ArcGIS, GrapeCity ve diğer denetim satıcıları gibi tüm kitaplıkları ile canlı yeniden yüklemeye çalışır.
+Uygulamanızı derlendiğinden, Canlı yeniden yükleme Prism ve üçüncü taraf denetimi kitaplıkları gibi Telerik, Infragistics, Syncfusion, Arcgıs, GrapeCity ve diğer denetim satıcıları gibi tüm kitaplıkları ile çalışır.
 
-### <a name="what-changes-does-live-reload-redeploy"></a>Hangi değişiklikleri Canlı yeniden dağıtmanız? 
+### <a name="what-changes-does-live-reload-redeploy"></a>Canlı yeniden yükleme değişiklikleri yeniden? 
 
-Dinamik yeniden yalnızca XAML ya da CSS yapılan değişiklikleri uygular. Bir C# dosyasına değişiklik yaparsanız, yeniden derlemeye gerekli olacaktır. C# yeniden desteği için gelecekteki bir sürüm planlanmaktadır.
+Canlı yeniden yükleme, yalnızca XAML ya da CSS yapılan değişiklikleri uygular. Bir C# dosyasına değişiklik yaparsanız çalışabilmeleri gerekli olacaktır. C# yeniden yükleme desteği, gelecekteki sürümlerde sunulması planlanmaktadır.
 
 ### <a name="what-platforms-are-supported"></a>Hangi platformlar desteklenir? 
 
-Android, iOS ve UWP dahil Xamarin.Forms tarafından desteklenen herhangi bir platformda dinamik yeniden yüklemeye çalışır.
+Canlı yeniden yükleme, Android, iOS ve UWP gibi Xamarin.Forms tarafından desteklenen tüm platformlarda çalışır.
 
-### <a name="does-this-work-on-emulators-simulators-and-physical-devices"></a>Bu Öykünücüler, benzeticileri ve fiziksel cihazlar üzerinde çalışıyor mu? 
+### <a name="does-this-work-on-emulators-simulators-and-physical-devices"></a>Bu, Öykünücüler, simülatör ve fiziksel cihazlarda çalışır mı? 
 
-Evet, Canlı yeniden Android öykünücüsünü, iOS benzeticileri ve fiziksel cihazları dahil olmak üzere tüm geçerli dağıtım hedefleri ile çalışır. Bir aygıt için dağıtım bilgisayar ve aygıt aynı Wi-Fi ağ üzerinde olmalıdır.
+Evet, Canlı yeniden yükleme Android öykünücüleri ve iOS simülatörleri fiziksel cihazlar da dahil olmak üzere tüm geçerli dağıtım hedefleri ile çalışır. Dağıtım için bir cihaz, cihaz ve bilgisayar aynı Wi-Fi ağında olmasını gerektirir.
 
-### <a name="does-this-work-with-corporate-networks"></a>Bu, şirket ağlarına ile çalışır mı?
+### <a name="does-this-work-with-corporate-networks"></a>Bu, Kurumsal ağlar ile çalışır mı?
 
-Bir Android öykünücü veya iOS simülatörü ayıkladığınız, Canlı yeniden localhost iletişim kurmak için kullanır. Bir aygıta dağıtmak istiyorsanız, bilgisayar ve aygıt aynı Wi-Fi ağ üzerinde olması gerekir. Bu olduğu olası senaryolarda yapabilecekleriniz [kendi Canlı yeniden sunucunuzu yapılandırmak](#live-reload-server), hangi etkinleştirir, Canlı yeniden yükleme için ağ bağlantı ayarlarını bağımsız olarak.
+Bir Android öykünücüsü veya iOS simülatörü ayıklıyorsanız, Canlı yeniden yükleme localhost iletişim kurmak için kullanır. Bir aygıta dağıtmak istiyorsanız, cihaz ve bilgisayar aynı Wi-Fi ağında olması gerekir. Bu olduğu olası senaryolarda yapabilecekleriniz [kendi Canlı yeniden yükleme sunucu yapılandırma](#live-reload-server), hangi etkinleştirir, Canlı yeniden yükleme için ağ bağlantısı ayarlarına bakılmaksızın.
 
-### <a name="does-it-require-debugging-the-app"></a>Uygulama hata ayıklama gerektiriyor mu? 
+### <a name="does-it-require-debugging-the-app"></a>Uygulamayı hata ayıklama gerektiriyor mu? 
 
-Hayır. Aslında, hatta tüm desteklenen uygulama hedeflerinizi (Android, iOS ve UWP) herhangi bir sayıda cihaz veya benzeticileri/Öykünücüler üzerinde başlatabilir ve bunların tümünü tek seferde güncelleştirme görmek. 
+Hayır. Aslında, hatta tüm desteklenen uygulama hedeflerinizi (Android, iOS ve UWP) herhangi bir sayıda cihaz veya simülatör/Öykünücüler üzerinde başlatabilir ve tümünü tek seferde güncelleştirme konusuna bakın. 
 
 ## <a name="limitations"></a>Sınırlamalar
 
 * Yalnızca XAML yeniden yüklenmesi desteklenir.
-* Kullanıcı Arabirimi durumu yeniden dağıtır arasında MVVM kullanmadığınız sürece korunmasını değil.
+* UI durumu yeniden dağıtır arasında MVVM kullanmadığınız sürece yönetilebilir değil.
 
 ## <a name="known-issues"></a>Bilinen Sorunlar
 
-* Yalnızca Visual Studio'da desteklenir.
-* Bağlama ayarlanmalıdır **olmayan bağlantı** veya **bağlantı Framework SDK'ları yalnızca** 
-* Uygulama genelinde kaynakları yeniden (yani **App.xaml** veya kaynak sözlüklerindeki paylaşılan), uygulama gezinti sıfırlanır. Bu, sonraki Önizleme sürümünde düzeltilecektir.
-* UWP hata ayıklama çalışma zamanı çökmeyle neden olabilir ancak XAML düzenleme. Geçici çözüm: Kullanmak **başlatın (Ctrl + F5) hata ayıklama olmadan** yerine **hata ayıklama (F5) Başlangıç**.
+* Yalnızca Visual Studio içinde desteklenir.
+* Bağlama ayarlanmalıdır **bağlama** veya **yalnızca bağlantı Framework SDK'ları** 
+* Uygulama genelinde kaynakları yeniden (yani **App.xaml** veya paylaşılan kaynak sözlükleri), gezintisini sıfırlanır. Bu, sonraki Önizleme sürümünde düzeltilecektir.
+* UWP hata ayıklama çalışma zamanı Çökmeye neden, ancak XAML düzenleme. Geçici çözüm: Kullanın **Başlat (Ctrl + F5) hata ayıklama olmadan** yerine **Start Debugging (F5)**.
 
 ## <a name="troubleshooting"></a>Sorun giderme
 
 ### <a name="error-codes"></a>Hata kodları
 
-* **XLR001**: *geçerli projeye başvuruda bulunan 'Xamarin.LiveReload' NuGet Paket sürümü [VERSION] ancak Xamarin Canlı yeniden uzantısı sürümü [VERSION] gerektirir.*
+* **XLR001**: *geçerli projenin 'Xamarin.LiveReload' NuGet paketi sürüm [sürüm] öğesine başvuruyor, ancak Xamarin Live yeniden uzantısı sürüm [sürüm] gerektirir.*
 
-  Hızlı yineleme ve canlı yeniden yükle özelliği evrimi izin vermek üzere nuget paketi ve Visual Studio uzantısı tam olarak eşleşmelidir. Nuget paketi yüklediğiniz uzantısı aynı sürüme güncelleştirin.
+  Hızlı yineleme ve canlı yeniden yükleme özelliği evrimi izin vermek üzere nuget paketi ve Visual Studio uzantısı tam olarak eşleşmelidir. Nuget paketiniz, uzantının yüklü olduğu aynı sürüme güncelleştirin.
 
-* **XLR002**: *Canlı yeniden en azından 'MqttHostname' özelliği komut satırından derlerken. Alternatif olarak, 'EnableLiveReload', 'özelliği devre dışı bırakmak için false' olarak ayarlayın.*
+* **XLR002**: *Canlı yeniden yükleme en azından 'MqttHostname' özelliği komut satırından derlerken. Alternatif olarak, 'EnableLiveReload', 'özelliği devre dışı bırakmak için false' olarak ayarlayın.*
 
-  Dinamik yeniden tarafından gerekli özelliklerinin ne zaman kullanılabilir değil komut satırından (veya sürekli tümleştirme) oluşturma ve açıkça sağlanmalıdır. 
+  Canlı yeniden yükleme tarafından gereken özellikleri ne zaman kullanılabilir değildir komut satırından (veya sürekli tümleştirme) oluşturma ve bu nedenle açıkça belirtilmelidir. 
 
-* **XLR003**: *Canlı yeniden nuget paketi gerektirir Xamarin Canlı yeniden Visual Studio uzantısı yükleme.*
+* **XLR003**: *Canlı yeniden yükleme nuget paketini gerektirir Xamarin Live yeniden Visual Studio uzantısı yükleniyor.*
 
-  Dinamik yeniden nuget paketi başvuran bir projeyi derleme denedi ancak Visual uzantısı yüklü değil.  
+  Canlı yeniden yükleme nuget paketini başvuran bir projeyi derleme çalışıldı, ancak Visual uzantısı yüklü değil.  
 
-* *Derlemeleri yüklenirken özel durum: System.IO.FileNotFoundException: Derleme yüklenemedi ' Xamarin.Live.Reload, sürüm 0.3.27.0, Culture = neutral, PublicKeyToken = ='.*
+* *Derlemeler yüklenirken özel durum oluştu: System.IO.FileNotFoundException: derleme yüklenemiyor ' Xamarin.Live.Reload, sürüm 0.3.27.0, Culture = neutral, PublicKeyToken = ='.*
 
-  Konak projesi kullanarak `PackageReference` yerine `packages.config`
+  Ana proje kullanarak `PackageReference` yerine `packages.config`
 
 ### <a name="app-doesnt-connect"></a>Uygulama bağlanmıyor
 
-Zaman uygulaması oluşturulur, bilgileri **Araçlar > Seçenekler > Xamarin > dinamik yeniden** (ana bilgisayar adı, bağlantı noktası ve şifreleme anahtarları) katıştırılmış uygulamada, bu nedenle olduğunda `LiveReload.Init()` çalıştığında, hiçbir eşleştirme veya yapılandırma olduğu bağlantının başarılı olması gereklidir.
+Zaman uygulama oluşturulduğuna göre bilgileri **Araçlar > Seçenekler > Xamarin > Canlı yeniden yükleme** (ana bilgisayar adını, bağlantı noktası ve şifreleme anahtarları) katıştırıldığı uygulamada, bu nedenle olduğunda `LiveReload.Init()` çalıştığında, hiç eşleştirme veya yapılandırma olan bağlantının başarılı olması gereklidir.
 
-Normal ağ sorunları dışında (Güvenlik Duvarı, farklı bir ağ aygıtı), uygulamanın başarıyla IDE bağlanılamayabilir ana nedeni çünkü yapılandırmasıyla Visual Studio'da bir farklılık gösterir. Bu durumlarda ortaya çıkabilir:
+Normal ağ sorunları dışında (Güvenlik Duvarı, farklı bir ağ aygıtı) uygulama başarıyla IDE bağlanılamayabilir temel nedeni çünkü Visual Studio'da bir yapılandırmasını farklıdır. Bu durum oluşabilir:
 
-* Uygulama farklı bir makineye derlendi.
-* Uygulama derlenmiş ve farklı bir Visual Studio oturumunda dağıtılan ve **şifreleme anahtarları otomatik oluştur** olan (varsayılan) iade **araçları > Seçenekler > Xamarin > Canlı yeniden**.
-* Visual Studio ayarları (yani, ana bilgisayar adı, bağlantı noktası veya şifreleme anahtarları) değişti ancak uygulama yerleşik değil ve yeniden dağıtılabilir.
+* Farklı bir makineye uygulama derlendi.
+* Uygulama derlendi ve farklı bir Visual Studio oturumunda dağıtılan ve **şifreleme anahtarları otomatik olarak oluşturmak** olduğunu (varsayılan) iade **Araçlar > Seçenekler > Xamarin > Canlı yeniden yükleme**.
+* Visual Studio ayarları (yani, ana bilgisayar adı, bağlantı noktası veya şifreleme anahtarları) değiştirilmiş ancak uygulama yerleşik değil ve yeniden dağıtılabilir.
 
-Bu durumların tüm oluşturma ve uygulama yeniden dağıtma çözülür.
+Bu gibi durumlarda tüm oluşturmak ve uygulamayı yeniden dağıtma çözülür.
 
-### <a name="uninstalling-preview-1"></a>Önizleme 1 kaldırma
+### <a name="uninstalling-preview-1"></a>Kaldırma Önizleme 1
 
 Eski bir önizleme varsa ve kaldırmayı sorunlar yaşıyorsanız, aşağıdaki adımları izleyin:
 
-1. Klasörünü silmek **C:\Program Files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** (Not: "Kurumsal" yüklü sürümünüz ile değiştirin ve "ile"2017"ise, Önizleme" kararlı bir VS yüklenir)
+1. Klasör Sil **C:\Program Files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** (Not: "Kurumsal", yüklü olan sürümü ile değiştirin ve "ile"2017"ise, Preview" kararlı bir VS yüklü)
 2. Açık bir **Geliştirici komut istemi** , Visual Studio ve çalıştırma için `devenv /updateconfiguration`. 
 
 ## <a name="tips--tricks"></a>İpuçları ve püf noktaları
 
-* Dinamik yeniden yükleme ayarlarını değiştirmeyin sürece (şifreleme anahtarları dahil olmak üzere gelmesi gibi dışı **otomatik oluşturma şifreleme anahtarları**) ve aynı makineden derleme, derleme ve sonra ilk uygulama dağıtma gerekmez kod veya bağımlılıkları değiştirmediğiniz sürece dağıtın. Yalnızca önceden dağıtılmış bir uygulamayı yeniden başlatabilirsiniz ve son kullanılan ana bilgisayarı bağlanır.
+* Canlı yeniden yükleme ayarlarını değiştirme sürece (şifreleme anahtarı dahil olmak üzere, IF gibi devre dışı **şifreleme anahtarları otomatik olarak oluşturmak**) ve aynı makine oluşturun, sonra ilk uygulaması derleyecek ve gerekmez kodu veya bağımlılıkları değiştirmediğiniz sürece dağıtın. Yalnızca daha önce Dağıtılmış bir uygulamayı yeniden başlatabilir ve son kullanılan konak bağlanır.
 
-* Aynı Visual Studio oturuma bağlanabilirsiniz kaç cihazlarda herhangi bir kısıtlama yoktur. Dağıtma ve dinamik reloading çalışma hepsinde aynı anda görmek için gereken sayıda aygıtları/benzeticileri uygulamayı başlatın.
+* Aynı Visual Studio oturumuna bağlanabilir kaç cihazlarda bir sınırlama yoktur. Dağıtım ve canlı yeniden yükleme çalışma hepsinde aynı anda görmek için gerektiği kadar cihazları/simülatörleri uygulamayı başlatın.
 
-* Dinamik yeniden yalnızca uygulamanızı kullanıcı arabirimi bölümünü yeniden ancak bunu yapar *değil* sayfalarınızı yeniden oluştururken, görünüm modeli (veya bağlama içeriği), değiştirin. Yani *tüm* uygulama durumu eklenen bağımlılıklar dahil olmak üzere yeniden yükler arasında her zaman korunur.
+* Canlı yeniden yükleme yalnızca uygulamanızın kullanıcı arabirimi bölümünü yeniden, ancak mevcut *değil* sayfalarınızı yeniden oluşturma, görünüm model (veya bağlama bağlamı) diğerinden değiştirin. Başka bir deyişle *tüm* uygulama durumunu, eklenen bağımlılıklar dahil olmak üzere yeniden yükler arasında her zaman korunur.
 
-## <a name="live-reload-server"></a>Dinamik yeniden sunucu
+## <a name="live-reload-server"></a>Canlı yeniden yükleme sunucu
 
-Senaryolarda bağlantı burada çalışan uygulamalardan makinenize (kullanarak gösterilen `localhost` veya `127.0.0.1` içinde **araçları > Seçenekler > Xamarin > Canlı yeniden**) mümkün değildir (yani güvenlik duvarları, farklı ağlarda) Uzak bir sunucusu bunun yerine, hangi IDE ve uygulama yapılandırabileceğiniz conect için.
+Senaryolarda bağlantı burada çalışan bir uygulamadan makinenize (kullanarak sunulduğu şekilde `localhost` veya `127.0.0.1` içinde **Araçlar > Seçenekler > Xamarin > Canlı yeniden yükleme**) mümkün değildir (yani güvenlik duvarları, farklı ağlarda) Uzak bir sunucuya bunun yerine, IDE ve uygulama hem yapılandırabileceğiniz conect için.
 
-Dinamik yeniden kullanan standart [MQTT Protokolü](http://mqtt.org/) için exchange iletileri ve bu nedenle ile iletişim kurabildiğini [üçüncü taraf sunucular](https://github.com/mqtt/mqtt.github.io/wiki/servers). Var olan bile [ortak sunucuları](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (olarak da bilinen *aracıların*) kullanılabilir, kullanabilirsiniz. Dinamik yeniden test edilmiştir ile `broker.hivemq.com` ve `iot.eclipse.org` tarafından sağlanan hizmetlerin yanı sıra ana bilgisayar adlarını [www.cloudmqtt.com](https://www.cloudmqtt.com) ve [www.cloudamqp.com](https://www.cloudamqp.com). Bulutta, kendi MQTT sunucusu gibi dağıtabilirsiniz [azure'da HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
+Canlı yeniden yükleme kullanan standart [MQTT protokolünü](http://mqtt.org/) için mesaj alışverişi ve bu nedenle ile iletişim kurabildiğini [üçüncü taraf sunucuya](https://github.com/mqtt/mqtt.github.io/wiki/servers). Var olan bile [ortak sunucuları](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (olarak da bilinir *aracıları*) kullanılabilir, kullanabilirsiniz. Canlı yeniden yükleme ile edilmiştir `broker.hivemq.com` ve `iot.eclipse.org` tarafından sağlanan hizmetlerin yanı sıra, ana bilgisayar adları [www.cloudmqtt.com](https://www.cloudmqtt.com) ve [www.cloudamqp.com](https://www.cloudamqp.com). Bulutta kendi MQTT server gibi dağıtabilirsiniz [azure'da HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
 
-Herhangi bir bağlantı yapılandırabilirsiniz, ancak uzak sunucular için varsayılan 1883 bağlantı noktası kullanmak için yaygın bir durumdur. Uzak sunuculara bağlanmak güvenli olması için dinamik yeniden iletileri güçlü uçtan uca AES simetrik şifreleme kullanır. Varsayılan olarak, şifreleme anahtarını ve başlatma vektörü (IV) her Visual Studio oturumunda yeniden oluşturulur.
+Herhangi bir bağlantı yapılandırabilirsiniz, ancak uzak sunucular için varsayılan 1883 bağlantı noktası kullanımı yaygındır. Uzak sunuculara bağlanmak güvenli bir şekilde güçlü uçtan uca AES simetrik şifreleme, Canlı yeniden yükleme iletileri kullanın. Varsayılan olarak, hem şifreleme anahtarı hem de başlatma vektörü (IV) üzerinde her Visual Studio oturumu yeniden oluşturulur.
 
-Büyük olasılıkla en kolay yolu yüklemektir [mosquitto](https://mosquitto.org) azure'da boş bir Ubuntu VM Server'da:
+Büyük olasılıkla yüklemek için en kolay yolu olan [mosquitto](https://mosquitto.org) azure'da boş bir Ubuntu sanal makinesi sunucusu:
 
-1. Azure Portalı'nda yeni bir Ubuntu Server VM oluşturma
-2. Ağ sekmesinde 1883 (varsayılan MQTT bağlantı noktası) için yeni bir gelen bağlantı noktası kuralı ekleme
-3. Açık [bulut Kabuk](https://docs.microsoft.com/azure/cloud-shell/overview) (modu bash)
-4. Yazın `ssh [USERNAME]@[PUBLIC_IP]` 1'de seçtiğiniz kullanıcı adı kullanarak) ve VM genel bakış sayfanıza gösterilen genel IP
-5. Çalıştırma `sudo apt-get install mosquitto`, 1'de seçtiğiniz parola girme)
+1. Azure portalında yeni bir Ubuntu Server VM oluşturma
+2. Ağ sekmesinde 1883 (varsayılan MQTT bağlantı noktası) için yeni bir gelen bağlantı noktası kuralı Ekle
+3. Açık [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) (bash modu)
+4. Türü `ssh [USERNAME]@[PUBLIC_IP]` 1'de seçtiğiniz kullanıcı adı kullanarak) ve VM genel bakış sayfasında gösterilen ortak IP
+5. Çalıştırma `sudo apt-get install mosquitto`, 1'de seçtiğiniz parola girerek)
 
 Artık kendi MQTT sunucusuna bağlanmak için bu IP kullanabilirsiniz.

@@ -1,6 +1,6 @@
 ---
 title: DataPages ile çalışmaya başlama
-description: Bu makalede, Xamarin.Forms DataPages kullanarak basit bir veri güdümlü sayfası oluşturmaya başlamak açıklanmaktadır.
+description: Bu makalede, Xamarin.Forms DataPages kullanarak basit bir veri odaklı sayfası oluşturmaya başlamak açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
 ms.technology: xamarin-forms
@@ -8,35 +8,35 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 1fb8a06111271d453c578cd3d2db97ec8689c995
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243083"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38828217"
 ---
 # <a name="getting-started-with-datapages"></a>DataPages ile çalışmaya başlama
 
-![](~/media/shared/preview.png "Bu API şu anda önizlemede değil")
+![](~/media/shared/preview.png "Bu API, şu anda Önizleme aşamasındadır")
 
 > [!IMPORTANT]
 > DataPages gerektiren bir [Xamarin.Forms tema](~/xamarin-forms/user-interface/themes/index.md) işlemek için başvuru.
 
 
-DataPages Önizleme kullanarak basit bir veri güdümlü sayfası oluşturmaya başlamak için aşağıdaki adımları izleyin. Yalnızca Önizleme'de kodlanmış stili ("olay") derlemeler bu demo kullanır çalışır kodu belirli JSON biçiminde ile.
+DataPages Önizleme kullanarak basit bir veri odaklı sayfası oluşturmaya başlamak için aşağıdaki adımları izleyin. Bu Tanıtım kullanır ("olaylar") Önizleme'de bir sabit kodlanmış stili yapılar yalnızca çalışır kodda belirli JSON biçimine sahip.
 
-[![](get-started-images/demo-sml.png "DataPages örnek uygulama")](get-started-images/demo.png#lightbox "DataPages örnek uygulama")
+[![](get-started-images/demo-sml.png "DataPages örnek uygulama")](get-started-images/demo.png#lightbox "DataPages örnek uygulaması")
 
-## <a name="1-add-nuget-packages"></a>1. NuGet paketleri ekleme
+## <a name="1-add-nuget-packages"></a>1. NuGet paketleri Ekle
 
-Bu Nuget paketleri Xamarin.Forms .NET standart kitaplığı ve uygulama projelerinizi ekleyin:
+Bu Nuget paketlerini Xamarin.Forms .NET Standard kitaplığı ve uygulama projelerinizi ekleyin:
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base
-* Bir tema uygulaması Nuget (ör.) Xamarin.Forms.Themes.Light)
+* Bir tema uygulaması Nuget (örn.) Xamarin.Forms.Themes.Light)
 
-## <a name="2-add-theme-reference"></a>2. Tema başvuru ekleme
+## <a name="2-add-theme-reference"></a>2. Tema Başvurusu Ekle
 
-İçinde **App.xaml** dosya, özel bir ekleme `xmlns:mytheme` temanın ve tema uygulamanın kaynak sözlükteki birleştirilmiş emin olun:
+İçinde **App.xaml** dosya, özel bir ekleme `xmlns:mytheme` temanın ve temayı uygulamanın kaynak sözlüğüne birleştirilmiş emin olun:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -49,12 +49,12 @@ Bu Nuget paketleri Xamarin.Forms .NET standart kitaplığı ve uygulama projeler
 </Application>
 ```
 
-**Önemli:** adımları izlemeniz gereken [tema derlemeler (aşağıda) yükleme](#loadtheme) iOS bazı Demirbaş kod ekleyerek `AppDelegate` ve Android `MainActivity`. Bu, gelecekteki Önizleme sürümünde geliştirilmiş.
+**Önemli:** adımlarını izleyin [tema derlemeleri (aşağıda) yükleme](#loadtheme) iOS bazı ortak kod ekleyerek `AppDelegate` ve Android `MainActivity`. Bu, gelecekteki Önizleme sürümünde geliştirilecektir.
 
 
-## <a name="3-add-a-xaml-page"></a>3. XAML sayfası Ekle
+## <a name="3-add-a-xaml-page"></a>3. XAML sayfa ekleme
 
-Xamarin.Forms uygulaması için yeni bir XAML sayfa ekleyin ve *temel sınıfını değiştirme* gelen `ContentPage` için `Xamarin.Forms.Pages.ListDataPage`. Bu, hem C# ve XAML yapılması gerekir:
+Xamarin.Forms uygulaması için yeni bir XAML sayfası ekleyin ve *temel sınıfını değiştirmek* gelen `ContentPage` için `Xamarin.Forms.Pages.ListDataPage`. Bu, hem C# ve XAML içinde yapılması gerekir:
 
 **C# dosyası**
 
@@ -70,7 +70,7 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 
 **XAML dosyası**
 
-Kök öğesi için değiştirme yanı sıra `<p:ListDataPage>` özel ad alanı için `xmlns:p` de eklenmesi gerekir:
+Kök öğesi için değiştirme yanı sıra `<p:ListDataPage>` özel ad alanı için `xmlns:p` ayrıca eklenmesi gerekir:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -84,19 +84,19 @@ Kök öğesi için değiştirme yanı sıra `<p:ListDataPage>` özel ad alanı i
 </p:ListDataPage>
 ```
 
-**Uygulama alt sınıfı**
+**Uygulama öğesinin alt sınıfı**
 
-Değişiklik `App` sınıfı oluşturucusu böylece `MainPage` ayarlanmış bir `NavigationPage` içeren yeni `SessionDataPage`. Gezinti sayfasında *gerekir* kullanılabilir.
+Değişiklik `App` sınıf oluşturucusu böylece `MainPage` ayarlanmış bir `NavigationPage` içeren yeni `SessionDataPage`. Bir gezinti sayfası *gerekir* kullanılır.
 
 ```csharp
 MainPage = new NavigationPage (new SessionDataPage ());
 ```
 
-## <a name="3-add-the-datasource"></a>3. Veri kaynağı ekleme
+## <a name="3-add-the-datasource"></a>3. Veri Kaynağı Ekle
 
-Silme `Content` öğesi ve bunların yerine bir `p:ListDataPage.DataSource` sayfanın verilerle doldurmak için. Uzak bir Json aşağıdaki örnekte veri dosyası bir URL'den yükleniyor.
+Silme `Content` öğesi değiştirin bir `p:ListDataPage.DataSource` sayfanın verilerle doldurmak için. Uzak bir Json aşağıdaki örnekte bir URL'den veri dosyasının yüklendiği.
 
-**Not:** Önizleme *gerektirir* bir `StyleClass` işleme ipuçları için veri kaynağı sağlamak üzere özniteliği. `StyleClass="Events"` Önizlemede önceden tanımlanmış ve stilleri içeren bir düzene başvuruyor *sabit kodlanmış* kullanılan JSON veri kaynağı eşleşecek şekilde.
+**Not:** Önizleme *gerektirir* bir `StyleClass` işleme ipuçları için veri kaynağı sağlamak için özniteliği. `StyleClass="Events"` Önizlemede önceden tanımlanmış ve stilleri içeren bir düzene başvuruyor *sabit kodlanmış* kullanılan JSON veri kaynağı eşleştirilecek.
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,9 +113,9 @@ Silme `Content` öğesi ve bunların yerine bir `p:ListDataPage.DataSource` sayf
 </p:ListDataPage>
 ```
 
-**JSON veri**
+**JSON verileri**
 
-JSON verileri örneği [demo kaynak](http://demo3143189.mockable.io/sessions) aşağıda gösterilmiştir:
+Örnek JSON verileri [tanıtım kaynak](http://demo3143189.mockable.io/sessions) aşağıda gösterilmiştir:
 
 ```json
 [{
@@ -133,17 +133,17 @@ JSON verileri örneği [demo kaynak](http://demo3143189.mockable.io/sessions) a�
 
 ## <a name="4-run"></a>4. Çalıştırın!
 
-Yukarıdaki adımları çalışma veri sayfasındaki neden:
+Yukarıdaki adımları çalışma veri sayfasındaki sağlamalıdır:
 
-[![](get-started-images/demo-sml.png "DataPages örnek uygulama")](get-started-images/demo.png#lightbox "DataPages örnek uygulama")
+[![](get-started-images/demo-sml.png "DataPages örnek uygulama")](get-started-images/demo.png#lightbox "DataPages örnek uygulaması")
 
-Bu çalışır çünkü önceden derlenmiş stili **"Olayları"** açık tema Nuget paketi varsa ve veri kaynağı (ör. aynı tanımlanan stiller "title", "Görüntü", "Sunucu").
+Bunun çalışmasının nedeni önceden oluşturulmuş stili **"Olaylar"** açık tema Nuget paketinin varsa ve (örn. veri kaynağı ile aynı tanımlanan stiller "title", "image", "Sunucu").
 
-"Olayları" `StyleClass` görüntülemek için yerleşik `ListDataPage` özel bir denetimle `CardView` kontrol tanımlıysa Xamarin.Forms.Pages. `CardView` Denetimi üç özellik vardır: `ImageSource`, `Text`, ve `Detail`. Temanın sabit kodlanmış görüntülenmesi için bu özellikleri (JSON dosyasından) alanları üç veri bağlamaktır.
+"Olaylar" `StyleClass` görüntülemek üzere tasarlanmış `ListDataPage` özel bir denetimle `CardView` denetiminin tanımlandığı Xamarin.Forms.Pages. `CardView` Denetim, üç özelliklere sahiptir: `ImageSource`, `Text`, ve `Detail`. Tema sabit kodlanmış veri kaynağının bu özellikleri görüntülemek için (JSON dosyasından) üç alan bağlamaktır.
 
 ## <a name="5-customize"></a>5. Özelleştir
 
-Devralınan stili şablon belirtme ve veri kaynağı bağlamalar kullanılarak geçersiz kılınabilir. Özel bir şablon kullanarak yeni her satır için XAML bildirir `ListItemControl` ve `{p:DataSourceBinding}` dahil sözdizimi **Xamarin.Forms.Pages** Nuget:
+Devralınan stili bir şablon belirtme ve veri kaynağı bağlamalar kullanılarak geçersiz kılınabilir. Özel bir şablon kullanarak yeni her satır için aşağıdaki XAML bildirir `ListItemControl` ve `{p:DataSourceBinding}` dahil edilen sözdizimi **Xamarin.Forms.Pages** Nuget:
 
 ```xaml
 <p:ListDataPage.DefaultItemTemplate>
@@ -162,27 +162,27 @@ Devralınan stili şablon belirtme ve veri kaynağı bağlamalar kullanılarak g
 </p:ListDataPage.DefaultItemTemplate>
 ```
 
-Sağlayarak bir `DataTemplate` bu kodu geçersiz kılmaları `StyleClass` ve bunun yerine varsayılan düzeni kullanan bir `ListItemControl`.
+Sağlayarak bir `DataTemplate` bu kodu geçersiz kılmalar `StyleClass` ve bunun yerine varsayılan düzenini kullanan bir `ListItemControl`.
 
-[![](get-started-images/custom-sml.png "DataPages örnek uygulama")](get-started-images/custom.png#lightbox "DataPages örnek uygulama")
+[![](get-started-images/custom-sml.png "DataPages örnek uygulama")](get-started-images/custom.png#lightbox "DataPages örnek uygulaması")
 
-C# XAML için veri oluşturabilirsiniz tercih geliştiricilerin kaynak bağlamaları çok (dahil etmeyi unutmayın bir `using Xamarin.Forms.Pages;` deyimi):
+C# için XAML veri oluşturabilir tercih geliştiriciler kaynak bağlamaları çok (dahil etmeyi unutmayın bir `using Xamarin.Forms.Pages;` deyimi):
 
 ```csharp
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
 ```
 
 
-Temalar sıfırdan oluşturmak için biraz daha fazla iş olduğu (bkz [Temalar Kılavuzu](~/xamarin-forms/user-interface/themes/index.md)) ancak gelecekteki preview sürümlerinde yapacak Bunu yapmak daha kolay.
+Temalar sıfırdan oluşturmak için biraz daha fazla iş olduğunu (bkz [temalara Kılavuzu](~/xamarin-forms/user-interface/themes/index.md)) ancak gelecekteki Önizleme sürümleri yapacak Bunu yapmak daha kolay.
 
 
 ## <a name="troubleshooting"></a>Sorun giderme
 
 <a name="loadtheme" />
 
-## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Dosya veya derleme 'Xamarin.Forms.Theme.Light' ya da bağımlılıklarından biri yüklenemedi
+## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Dosya veya derleme 'Xamarin.Forms.Theme.Light' veya bağımlılıklarından biri yüklenemedi
 
-Önizleme sürümünde Temalar çalışma zamanında yük mümkün olmayabilir. İlgili projelere bu hatayı düzeltmek için aşağıdaki kodu ekleyin.
+Önizleme sürümünde, temalar çalışma zamanında yüklemek mümkün olmayabilir. Aşağıda bu hatayı düzeltmek için ilgili projeleri içinde gösterilen kodu ekleyin.
 
 **iOS**
 

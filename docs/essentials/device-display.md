@@ -1,22 +1,22 @@
 ---
 title: 'Xamarin.Essentials: Cihaz bilgilerini görüntüle'
-description: Bu belgede, uygulamanın çalıştığı cihaz için ekran ölçümleri sağlar Xamarin.Essentials DeviceDisplay sınıfında açıklanmaktadır.
+description: Bu belgede uygulamanın çalıştığı cihazın ekran ölçümler sağlayan Xamarin.Essentials DeviceDisplay sınıfında açıklanmaktadır.
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 3060d56e14fb0d3801a96ec0fe6e24c9efda4dac
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080319"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38816522"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: Cihaz bilgilerini görüntüle
 
-![Yayın öncesi NuGet](~/media/shared/pre-release.png)
+![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**DeviceDisplay** sınıfı üzerinde uygulamayı çalıştırdığınız cihazın ekran ölçümleri hakkında bilgi sağlar.
+**DeviceDisplay** sınıfı üzerinde uygulamayı çalıştırdığınız cihazın ekran ölçümler hakkında bilgi sağlar.
 
 ## <a name="using-devicedisplay"></a>DeviceDisplay kullanma
 
@@ -28,7 +28,7 @@ using Xamarin.Essentials;
 
 ## <a name="screen-metrics"></a>Ekran ölçümleri
 
-Temel aygıt bilgilerine ek olarak **DeviceDisplay** sınıfı cihazın ekran ve yönlendirme hakkında bilgiler içerir.
+Temel cihaz bilgilerine ek olarak **DeviceDisplay** sınıfı cihazın ekran ve yönlendirme hakkında bilgi içerir.
 
 ```csharp
 // Get Metrics
@@ -50,7 +50,7 @@ var height = metrics.Height;
 var density = metrics.Density;
 ```
 
-**DeviceDisplay** sınıfı ayrıca herhangi bir ölçüm değişiklikleri ekran olduğunda tetiklenen için abone bir olay sunar:
+**DeviceDisplay** sınıfı da herhangi bir ölçüm değişiklikleri ekran olduğunda tetiklenen abone bir olay gösterir:
 
 ```csharp
 public class ScreenMetricsTest
