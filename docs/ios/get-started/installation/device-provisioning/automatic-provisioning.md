@@ -1,22 +1,22 @@
 ---
-title: Otomatik Xamarin.iOS için sağlama
-description: Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlamaya yöneliktir. Otomatik imzalama geliştirme sertifika istemek ve profilleri kullanarak bu kılavuzda araştırır.
+title: Xamarin.iOS için sağlama otomatik
+description: Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlama sağlamaktır. Bu kılavuz, geliştirme sertifika ve profilleri otomatik imzalaması kullanarak keşfediyor.
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/22/2018
-ms.openlocfilehash: 323174b4a37a12828a32acb398fef63cd9b849e3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a0c3179dc8e349c23d5521230e0957d1be9384ec
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785823"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986193"
 ---
-# <a name="automatic-provisioning-for-xamarinios"></a>Otomatik Xamarin.iOS için sağlama
+# <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS için sağlama otomatik
 
-_Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlamaya yöneliktir. Otomatik imzalama geliştirme sertifika istemek ve profilleri kullanarak bu kılavuzda araştırır._
+_Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS Cihazınızı sağlama sağlamaktır. Bu kılavuz, geliştirme sertifika ve profilleri otomatik imzalaması kullanarak keşfediyor._
 
 ## <a name="requirements"></a>Gereksinimler
 
@@ -27,9 +27,9 @@ _Xamarin.iOS başarıyla yüklendikten sonra sonraki adımda iOS geliştirme iOS
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-- Visual Studio 2017 sürüm 15.7 (veya üzeri)
+- Visual Studio 2017 sürüm 15.7 (veya üstü)
 
-Ayrıca aşağıdaki olduğu bir Mac yapı konak eşleştirilmelidir:
+Ayrıca aşağıdakileri içeren bir Mac derleme konağı eşleştirilmelidir:
 
 - Xcode 9 veya üzeri
 
@@ -37,65 +37,65 @@ Ayrıca aşağıdaki olduğu bir Mac yapı konak eşleştirilmelidir:
 
 ## <a name="enabling-automatic-signing"></a>Otomatik imzalama etkinleştirme
 
-Otomatik imzalama işlemi başlamadan önce Visual Studio'da eklenen bir Apple kimliği açıklandığı gibi sahip olduğundan emin olun [Apple hesap yönetimi](~/cross-platform/macios/apple-account-management.md) Kılavuzu. Bir Apple kimliği ekledikten sonra varsa ilişkili kullanabilirsiniz _takım_. Bu sertifikalar, profilleri ve diğer kimlikleri karşı takım yapılacak sağlar. Kimliği oluşturmak için kullanılan aynı zamanda takım bir sağlama profiliyle eklenecek bir uygulama kimliği öneki. Bu kim olduğunuzu olduğunu doğrulamak Apple sağlar.
+Otomatik imzalama işlemi başlamadan önce açıklandığı gibi Visual Studio'da eklenen bir Apple kimliği olduğundan emin olun [Apple hesap yönetimi](~/cross-platform/macios/apple-account-management.md) Kılavuzu. Bir Apple kimliği ekledikten sonra varsa ilişkili kullanabilirsiniz _takım_. Bu sertifikalar, profilleri ve diğer kimlikleri team karşı yapılacak sağlar. Takım Kimliği oluşturmak için kullanılan aynı zamanda bir sağlama profiliyle dahil edilecek uygulama kimliği öneki. Bu, kim olduğunuzu doğrulamak Apple sağlar.
 
 > [!IMPORTANT]
-> Başlamadan önce ya da oturum açmak emin olun [iTunes Bağlan](https://itunesconnect.apple.com/) veya [appleid.apple.com](https://appleid.apple.com) son Apple hesap ilkeleri kabul eden denetlemek için. İstenirse, yeni hesap anlaşmaları Apple kabul etmek için adımları tamamlayın. Gizlilik Sözleşmesi'nden May 2018 kabul etmezseniz, Cihazınızı sağlayacak çalışırken aşağıdaki uyarı alırsınız:
+> Başlamadan önce ya da oturum açtığınızdan emin olun [iTunes Connect](https://itunesconnect.apple.com/) veya [appleid.apple.com](https://appleid.apple.com) son Apple hesap ilkeleri kabul denetlemek için. İstenirse, yeni hesap anlaşmaları Apple kabul etmek için adımları tamamlayın. Mayıs 2018'den Gizlilik Sözleşmesi kabul etmediğiniz takdirde Cihazınızı sağlamak çalışırken aşağıdaki uyarıyı alırsınız:
 > ```
 > Unexpected authentication failure. Reason: {
 > "authType" : "sa"
 >}
 >```
 
-Uygulamanız bir iOS cihazında dağıtım için otomatik olarak imzalamak için aşağıdakileri yapın:
+Uygulamanız bir iOS cihazında dağıtım için otomatik olarak oturum açmak için aşağıdakileri yapın:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-1. Bir iOS projesi Mac için Visual Studio'da açın
+1. Bir iOS projesi Mac için Visual Studio'da açın.
 
 2. Açık **Info.plist** dosya.
 
-3. İçinde **imzalama** bölümünde, seçin seçin **otomatik sağlamayı**:
+3. İçinde **imzalama** bölümünde, select seçin **otomatik sağlama**:
 
-    ![Takım Seçici açılan kutusu](automatic-provisioning-images/image2.png)
+    ![Takım Seçici açılan](automatic-provisioning-images/image2.png)
 
-4. Ekibinden seçin **takım** açılır.
+4. Takımınız seçin **takım** açılır.
 
 6. Birkaç saniye sonra bir imzalama sertifikası ve sağlama profili oluşturulur:
 
     ![Sertifika ve profili başarıyla oluşturuldu](automatic-provisioning-images/image5.png)
 
-    Otomatik imzalama başarısız olursa **otomatik imzalama paneli** hatanın nedenini görüntüler.
+    Otomatik imzalama başarısız olursa **otomatik imzalama paneli** hatanın nedenini gösterir.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Bölümünde açıklandığı gibi bir Mac için Visual Studio 2017 eşleştirin [Mac çiftine](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Kılavuzu.
+1. Bölümünde anlatıldığı gibi bir Mac için Visual Studio 2017 pair [Mac ile eşleştirme](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Kılavuzu.
 
-2. Hazırlama Seçenekleri'ni seçerek açmak **Proje > sağlama özellikleri...**
+2. İçinde **Çözüm Gezgini**, proje adını sağ tıklatın ve seçin **özellikleri**. Ardından, gidin **iOS paket grubu imzalama** sekmesi.
 
-3. Seçin **otomatik olarak sağlama** şeması:
+3. Seçin **otomatik sağlama** düzeni:
 
-    ![Otomatik düzeninin seçimi](automatic-provisioning-images/prov4.png)
+    ![Otomatik düzen seçimi](automatic-provisioning-images/prov4.png)
 
-4. Ekibinden seçin **takım** otomatik imzalama işlemini başlatmak için birleşik giriş kutusu.
+4. Takımınız seçin **takım** otomatik imzalama işlemini başlatmak için birleşik giriş kutusu.
 
-    ![Takım seçimi](automatic-provisioning-images/prov3.png)
+    ![Ekibin seçimi](automatic-provisioning-images/prov3.png)
 
-4. Bu otomatik imzalama işlemini başlatır. Bu yapıtların imzalama için kullanılacak bir uygulama kimliği, sağlama profili ve bir imza kimliği oluşturmak Visual Studio sonra çalışır. Derleme çıktı oluşturma işleminde görebilirsiniz:
+4. Bu, otomatik imzalama işlemi başlatır. Visual Studio bu yapıtları imzalama için kullanılacak bir uygulama kimliği, sağlama profili ve imzalama kimliği oluşturmak daha sonra çalışır. Derleme çıktısında oluşturma işleminde görebilirsiniz:
 
-    ![Çıktı gösteren nesil yapılarının derleme](automatic-provisioning-images/prov5.png)
+    ![Derleme yapıtları çıkış gösteren oluşturma](automatic-provisioning-images/prov5.png)
 
 -----
 
 ## <a name="triggering-automatic-provisioning"></a>Otomatik sağlama tetikleme
 
-Otomatik oturum etkin olduğunda, Mac için Visual Studio gerekiyorsa, aşağıdakilerden birini gerçekleştiğinde güncelleştirecek bu yapıtların:
+Otomatik imzalama etkinleştirildiğinde, herhangi aşağıdaki şeylerden biri meydana geldiğinde Mac için Visual Studio bu yapıtları gerekirse güncelleştireceği konum:
 
-* Bir iOS aygıtı Mac takılı
-    - Bu Apple Developer portalında cihazın kayıtlı olup olmadığını görmek için otomatik olarak denetler. Değilse, onu ekleyin ve onu içeren yeni bir sağlama profili oluşturun.
-* Paket kimliği, uygulamanızın değiştirilir
-    - Bu uygulama kimliği güncelleştirir Bu uygulama Kimliğini içeren yeni bir sağlama profili oluşturulur.
-* Desteklenen bir yetenek Entitlements.plist dosyasında etkindir.
+* Bir iOS cihazı Mac'inizde prize takılı
+    - Bu otomatik olarak Apple Geliştirici Portalı'nda cihazın kayıtlı olup olmadığını denetler. Aksi takdirde, eklemek ve içerdiği yeni bir sağlama profili oluşturun.
+* Uygulama paket kimliği değiştirildiğinde
+    - Bu uygulama kimliğini güncelleştirir Bu uygulama Kimliğini içeren yeni bir sağlama profili oluşturulur.
+* Desteklenen bir özellik Entitlements.plist dosyasında etkinleştirilir.
     - Bu özellik, uygulama kimliği ve güncelleştirilmiş uygulama kimliği oluşturulan yeni bir sağlama profiliyle eklenir.
     - Tüm özellikleri şu anda desteklenmiyor. Desteklenen sürücüler hakkında daha fazla bilgi için kullanıma [özellikleriyle çalışma](~/ios/deploy-test/provisioning/capabilities/index.md) Kılavuzu.
 

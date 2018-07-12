@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: ff707cdf73665ae07881d2d17ec837a4cfacaca0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.openlocfilehash: 652c9cc51f68bee8229b8c5a7684ea872ab6f404
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935377"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986076"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms cihaz sınıfı
 
@@ -75,6 +75,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 -  **Tablet** – iPad, Windows cihazları ve Android cihazlarda 600 dıps geniş ^
 -  **Masaüstü** – döndürülen yalnızca [UWP uygulamaları](~/xamarin-forms/platform/windows/installation/index.md) Windows 10 masaüstü bilgisayarlarda (döndürür `Phone` Continuum senaryolarda da dahil olmak üzere mobil Windows cihazlarda)
 -  **TV** – Tizen TV cihazları
+-  **İzleme** – Tizen watch cihazları
 -  **Desteklenmeyen** – kullanılmayan
 
 *^ dıps değildir fiziksel piksel sayısı*
@@ -193,4 +194,4 @@ Xamarin.Forms `Device` ortak kodu (.NET Standard kitaplığı projeleri veya pay
 
 - [Cihaz örneği](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
 - [Örnek stilleri](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [Cihaz](xref:Xamarin.Forms.Device)
+- [cihaz](xref:Xamarin.Forms.Device)

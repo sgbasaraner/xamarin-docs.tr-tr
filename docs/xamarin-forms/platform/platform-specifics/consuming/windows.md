@@ -6,13 +6,13 @@ ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: 52895564ef327845940d687a58b007fb1502e62b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.date: 07/10/2018
+ms.openlocfilehash: c423c6f6f6bae829781fb13b405ad0d5bcf7128e
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935139"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986115"
 ---
 # <a name="windows-platform-specifics"></a>Windows Platform özellikleri
 
@@ -20,17 +20,19 @@ _Platform özellikleri, özel oluşturucu veya efekt uygulama olmadan yalnızca 
 
 Xamarin.Forms, Evrensel Windows Platformu (UWP üzerinde), aşağıdaki platform özellikleri içerir:
 
-- Araç çubuğu yerleştirme seçeneklerini ayarlama. Daha fazla bilgi için [araç çubuğu yerleştirme değiştirme](#toolbar_placement).
+- Araç çubuğu yerleştirme seçeneklerini ayarlama. Daha fazla bilgi için [sayfası araç çubuğu yerleştirme değiştirme](#toolbar_placement).
 - Daraltma [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) gezinti çubuğu. Daha fazla bilgi için [MasterDetailPage gezinti çubuğu daraltma](#collapsable_navigation_bar).
 - Etkinleştirme bir [ `WebView` ](xref:Xamarin.Forms.WebView) UWP iletisi iletişim kutusunda JavaScript uyarıları görüntülemek için. Daha fazla bilgi için [JavaScript uyarıları görüntüleme](#webview-javascript-alert).
 - Etkinleştirme bir [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) yazım denetimi altyapısıyla etkileşim kurmak için. Daha fazla bilgi için [etkinleştirmek SearchBar yazım denetimi](#searchbar-spellcheck).
 - Metin içeriğini okuma düzenini algılama [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), ve [ `Label` ](xref:Xamarin.Forms.Label) örnekleri. Daha fazla bilgi için [algılama okuma düzeni içeriğinden](#inputview-readingorder).
 - Desteklenen bir eski renk modunu devre dışı bırakma [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Daha fazla bilgi için [eski renk modunu devre dışı bırakma](#legacy-color-mode).
 - Dokunma hareketi desteğini etkinleştirme bir [ `ListView` ](xref:Xamarin.Forms.ListView). Daha fazla bilgi için [etkinleştirme dokunun hareket desteği bir ListView](#listview-selectionmode).
+- Görüntülenecek sayfası simgeler etkinleştirme bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) araç çubuğu. Daha fazla bilgi için [simgeleri bir TabbedPage etkinleştirme](#tabbedpage-icons).
+- İçin bir erişim anahtarı ayarı bir [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Daha fazla bilgi için [ayarı VisualElement erişim anahtarlarını](#visualelement-accesskeys).
 
 <a name="toolbar_placement" />
 
-## <a name="changing-the-toolbar-placement"></a>Araç çubuğu yerleştirme değiştirme
+## <a name="changing-the-page-toolbar-placement"></a>Sayfa araç çubuğu yerleştirme değiştirme
 
 Bu platforma özel bir araç çubuğu yerleşimini değiştirmek için kullanılan bir [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)ve XAML içinde ayarlayarak tüketilen [ `Page.ToolbarPlacement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty/) ekli özellik değerine [ `ToolbarPlacement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) sabit listesi:
 
@@ -292,6 +294,153 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 Ayrıca, [ `GetSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.GetSelectionMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.ListView})) yöntemi, geçerli döndürmek için kullanılabilir [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode).
 
 Sonuç belirtilen olan [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) uygulanan [ `ListView` ](xref:Xamarin.Forms.ListView), hangi denetimlerin olmadığını öğeler `ListView` hareketler, dokunma yanıt verebilir ve bu nedenle olup olmadığını yerel `ListView` ateşlenir `ItemClick` veya `Tapped` olay.
+
+<a name="tabbedpage-icons" />
+
+## <a name="enabling-icons-on-a-tabbedpage"></a>Simgeleri bir TabbedPage etkinleştirme
+
+Bu platforma özgü görüntülenecek sayfası simgeler sağlar bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) araç ve isteğe bağlı olarak simge boyutunu belirtme olanağı sağlar. XAML içinde ayarlayarak tüketilir [ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) özelliğine bağlı `true`ve isteğe bağlı olarak ayarlayarak [ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) özelliğine bağlı bir [ `Size` ](xref:Xamarin.Forms.Size) değeri:
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+            windows:TabbedPage.HeaderIconsEnabled="true">
+    <windows:TabbedPage.HeaderIconsSize>
+        <Size>
+            <x:Arguments>
+                <x:Double>24</x:Double>
+                <x:Double>24</x:Double>
+            </x:Arguments>
+        </Size>
+    </windows:TabbedPage.HeaderIconsSize>
+    <ContentPage Title="Todo" Icon="todo.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Reminders" Icon="reminders.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Contacts" Icon="contacts.png">
+        ...
+    </ContentPage>
+</TabbedPage>
+```
+
+Alternatif olarak, bu fluent API'sini kullanarak C# tarafından kullanılabilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
+{
+  public WindowsTabbedPageIconsCS()
+    {
+    On<Windows>().SetHeaderIconsEnabled(true);
+    On<Windows>().SetHeaderIconsSize(new Size(24, 24));
+
+    Children.Add(new ContentPage { Title = "Todo", Icon = "todo.png" });
+    Children.Add(new ContentPage { Title = "Reminders", Icon = "reminders.png" });
+    Children.Add(new ContentPage { Title = "Contacts", Icon = "contacts.png" });
+  }
+}
+```
+
+`TabbedPage.On<Windows>` Yöntemi bu platforma özgü yalnızca evrensel Windows platformu üzerinde çalışmasını belirtir. [ `TabbedPage.SetHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},System.Boolean)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) ad alanı, üstbilgi simgelerini açıp kapatmak için kullanılır. [ `TabbedPage.SetHeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsSize(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},Xamarin.Forms.Size)) Yöntemi üst bilgisi simgesi boyutu ile isteğe bağlı olarak belirtir bir [ `Size` ](xref:Xamarin.Forms.Size) değeri.
+
+Ayrıca, `TabbedPage` sınıfını `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` aynı zamanda ad alanına sahip bir [ `EnableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*) yönteminin üst bilgi simgeleri tanıyan bir [ `DisableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*) üstbilgi simgeler, devre dışı bırakan yöntemi ve bir [ `IsHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*) döndüren yöntem bir `boolean` üst bilgi simgeleri etkin olup olmadığını gösteren değer.
+
+Simgeler görüntülenebilir sayfa sonucu olacak bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) araç çubuğu için istenen boyuta isteğe bağlı olarak ayarlanıyor simgesi boyutu:
+
+![TabbedPage simgeleri etkin platforma özgü](windows-images/tabbedpage-icons.png "TabbedPage simgeler etkin platforma özgü")
+
+<a name="visualelement-accesskeys" />
+
+## <a name="setting-visualelement-access-keys"></a>Ayar VisualElement erişim anahtarları
+
+Erişim anahtarları olan klavye kısayolları, uygulamanın görünür kullanıcı Arabirimi yerine bir klavye touch aracılığıyla aracılığıyla hızla gidin ve etkileşim kullanımı kolay bir yol sağlayarak kullanılabilirliğini ve erişilebilirliğini Evrensel Windows platformu uygulamaları geliştirmek veya Fare. Bunlar, Alt tuşunu ve genellikle sırasıyla basılan bir veya daha fazla alfasayısal anahtarlarınızı birleşimleridir. Klavye kısayolları, tek bir alfasayısal karakter kullanmak için erişim anahtarlarını otomatik olarak desteklenir.
+
+Erişim anahtarı ipuçları, erişim anahtarlarını içeren denetimleri yanında görüntülenen rozetleri kayan. Her erişim anahtar ipucu ilişkili denetim etkinleştirme alfasayısal anahtarlarını içerir. Bir kullanıcı Alt tuşuna bastığında erişim anahtar ipuçları görüntülenir.
+
+Bu platforma özgü bir erişim anahtarı belirtmek için kullanılan bir [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). XAML içinde ayarlayarak tüketilir [ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty) alfasayısal bir değer ve isteğe bağlı olarak ayarlayarak ekli özellik [ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty) değerineekliözellik[ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement) numaralandırma [ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty) özelliğine bağlı bir `double`ve [ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty) bir içinekliözellik`double`:
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <ContentPage Title="Page 1"
+                 windows:VisualElement.AccessKey="1">
+        <StackLayout Margin="20">
+            ...
+            <Switch windows:VisualElement.AccessKey="A" />
+            <Entry Placeholder="Enter text here"
+                   windows:VisualElement.AccessKey="B" />
+            ...
+            <Button Text="Access key F, placement top with offsets"
+                    Margin="20"
+                    Clicked="OnButtonClicked"
+                    windows:VisualElement.AccessKey="F"
+                    windows:VisualElement.AccessKeyPlacement="Top"
+                    windows:VisualElement.AccessKeyHorizontalOffset="20"
+                    windows:VisualElement.AccessKeyVerticalOffset="20" />
+            ...
+        </StackLayout>
+    </ContentPage>
+    ...
+</TabbedPage>
+```
+
+Alternatif olarak, bu fluent API'sini kullanarak C# tarafından kullanılabilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+var page = new ContentPage { Title = "Page 1" };
+page.On<Windows>().SetAccessKey("1");
+
+var switchView = new Switch();
+switchView.On<Windows>().SetAccessKey("A");
+var entry = new Entry { Placeholder = "Enter text here" };
+entry.On<Windows>().SetAccessKey("B");
+...
+
+var button4 = new Button { Text = "Access key F, placement top with offsets", Margin = new Thickness(20) };
+button4.Clicked += OnButtonClicked;
+button4.On<Windows>()
+    .SetAccessKey("F")
+    .SetAccessKeyPlacement(AccessKeyPlacement.Top)
+    .SetAccessKeyHorizontalOffset(20)
+    .SetAccessKeyVerticalOffset(20);
+...
+```
+
+`VisualElement.On<Windows>` Yöntemi bu platforma özgü yalnızca evrensel Windows platformu üzerinde çalışmasını belirtir. [ `VisualElement.SetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.String)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) erişim için anahtar değeri ayarlamak için kullanılan ad alanı, `VisualElement`. [ `VisualElement.SetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},Xamarin.Forms.AccessKeyPlacement)) Yöntemi, isteğe bağlı olarak erişim anahtar İpucu ile görüntülemek için kullanılacak konumu belirtir [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement) aşağıdaki olası değerler sağlayan bir sabit listesi:
+
+- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) – erişim anahtar ipucu yerleştirme işletim sistemi tarafından belirlenir gösterir.
+- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top) – erişim anahtar ipucu üst kenarı görüntüleneceğini belirtir `VisualElement`.
+- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom) – erişim anahtar ipucu alt kenarı görüntüleneceğini belirtir `VisualElement`.
+- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right) – erişim anahtar ipucu öğenin sağ kenarı sağa görüntüleneceğini belirtir `VisualElement`.
+- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left) – erişim anahtar ipucu sol kenarı sola görüntüleneceğini belirtir `VisualElement`.
+- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center) – erişim anahtar ipucu merkezinin Kaplanmış görüntüleneceğini belirtir `VisualElement`.
+
+> [!NOTE]
+> Genellikle, [ `Auto` ](xref:Xamarin.Forms.AccessKeyPlacement.Auto) anahtar ipucu yerleştirme yeterli, Uyarlamalı kullanıcı arabirimleri için destek içerir.
+
+[ `VisualElement.SetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double)) Ve [ `VisualElement.SetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double)) yöntemleri erişim anahtar ipucu konumun daha ayrıntılı bir denetim için kullanılabilir. Bağımsız değişkeni `SetAccessKeyHorizontalOffset` yöntemi gösterir nasıl erişim anahtar ipucu sol ucundaki taşımak ya da sağ ve bağımsız değişkeni `SetAccessKeyVerticalOffset` yöntemi uzak erişim anahtar ipucu yukarı veya aşağı taşımak nasıl gösterir.
+
+>[!NOTE]
+> Erişim anahtarı yerleştirme ayarlandığında erişim anahtar ipucu uzaklıkları ayarlanamaz `Auto`.
+
+Ayrıca, [ `GetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), [ `GetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), [ `GetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), ve [ `GetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})) yöntemleri kullanılabilir bir erişim almak için anahtar değeri ya da onun konumu.
+
+Erişim anahtarı ipuçları herhangi yanındaki görüntülenebilir, sonucudur [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) tanımlayan örneklere erişim anahtarları, Alt tuşuna basarak:
+
+![Platforma özgü VisualElement erişim tuşları](windows-images/visualelement-accesskeys.png "platforma özgü VisualElement erişim anahtarları")
+
+Bir kullanıcı tarafından erişim ardından Alt tuşuna basarak bir erişim anahtarı etkinleştirirken anahtar, için varsayılan eylem `VisualElement` yürütülür. Örneğin, ne zaman bir kullanıcı etkinleştirir erişim anahtarı üzerinde bir [ `Switch` ](xref:Xamarin.Forms.Switch), `Switch` yükseğe. Ne zaman bir kullanıcı etkinleştirir erişim anahtarı üzerinde bir [ `Entry` ](xref:Xamarin.Forms.Entry), `Entry` odak kazanır. Ne zaman bir kullanıcı etkinleştirir erişim anahtarı üzerinde bir [ `Button` ](xref:Xamarin.Forms.Button), için olay işleyicisi [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) olay yürütülür.
+
+Erişim anahtarları hakkında daha fazla bilgi için bkz. [erişim anahtarları](/windows/uwp/design/input/access-keys#key-tip-positioning).
 
 ## <a name="summary"></a>Özet
 

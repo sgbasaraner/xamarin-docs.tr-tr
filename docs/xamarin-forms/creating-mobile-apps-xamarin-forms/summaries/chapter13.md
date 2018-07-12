@@ -7,12 +7,12 @@ ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0f9b9e27afd5dbbf52f3653995470136e794f17b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.openlocfilehash: 6de1959b57dbd1e14a1aff86dfc985e579b3da0f
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935205"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986141"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>13. Bölüm özeti. Bit eşlemler
 
@@ -105,7 +105,7 @@ Kod oluşturun ve ardından depolamak kolayca sıkıştırılmamış BMP dosyas�
 Tüm Xamarin.Forms platformlar, bit eşlemler platform uygulaması derlemelerde depolamaya izin ver. Xamarin.Forms uygulaması tarafından alınan, bu platform bit eşlemler türlerinin [ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/). Bunlar için kullanın:
 
 - [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) özelliği [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/)
-- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) özelliği [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
+- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) özelliği [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
 - [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) özelliği `Button`
 
 Platform derlemeleri, simgeler ve Karşılama ekranları için bit eşlemler zaten içerir:
@@ -180,7 +180,7 @@ En önemli `ToolbarItem` özellikleri:
 
 Sayısını `Primary` öğeleri üç veya dört sınırlı olmalıdır. Eklemeniz bir `Text` tüm öğeler için ayarlama. Çoğu platformda, yalnızca `Primary` öğelerini gerektirmek bir `Icon` Windows 8.1 gerektirir, ancak bir `Icon` tüm öğeler için. Simgeleri 32 CİHAZDAN bağımsız birimler kare olmalıdır. `FileImageSource` Türü, platforma özgü olduğunu gösterir.
 
-`ToolbarItem` Ateşlenir bir [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) dokunduğunuzda, benzer olay bir `Button`. `ToolbarItem` Ayrıca destekler [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Command/) ve [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.CommandParameter/) özellikleri genellikle MVVM bağlantılı olarak kullanılır. (Bkz [Bölüm 18, MVVM](chapter18.md)).
+`ToolbarItem` Ateşlenir bir [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) dokunduğunuzda, benzer olay bir `Button`. `ToolbarItem` Ayrıca destekler [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Command/) ve [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.CommandParameter/) özellikleri genellikle MVVM bağlantılı olarak kullanılır. (Bkz [Bölüm 18, MVVM](chapter18.md)).
 
 Hem iOS hem de Android araç çubuğunu görüntüleyen bir sayfa olmasını gerektiren bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) veya bir sayfa tarafından gittiğinizde bir `NavigationPage`. [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) program kümeleri `MainPage` özelliği, `App` sınıfının [ `NavigationPage` Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.NavigationPage.NavigationPage/p/Xamarin.Forms.Page/) ile bir `ContentPage` bağımsız değişken, bir araç çubuğu oluşturma ve olay işleyicisini gösterir.
 

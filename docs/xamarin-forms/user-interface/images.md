@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: ea7ec0d297e144966f8ff7545e6b12160f66c9b0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.openlocfilehash: f55a7878be898cbae5681d628d07cbe8598c9509
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935546"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986128"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms görüntüleri
 
@@ -114,7 +114,7 @@ Bazı denetimler gibi bir resim görüntüleyen özelliklere sahiptir:
   > [!IMPORTANT]
   > İos'ta [ `Page.Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) özelliği, bir görüntüden bir varlık Kataloğu görüntü kümesi doldurulamaz. Simge görüntüleri için bunun yerine, yük `Page.Icon` özelliğinden **kaynakları** iOS projesi klasöründe.
 
-- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) -Sahip bir [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) yerel dosya başvurusu ayarlanabilir özelliği.
+- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) -Sahip bir [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) yerel dosya başvurusu ayarlanabilir özelliği.
 - [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) -Sahip bir [ `ImageSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ImageCell.ImageSource/) görüntüye ayarlanabilir özelliği alınan yerel bir dosyaya, bir gömülü kaynak ya da bir URI.
 
 <a name="embedded_images" />

@@ -1,52 +1,62 @@
 ---
 title: Xamarin.Forms kaydırıcı
-description: Xamarin.Forms kaydırıcıyı double değeri arasında sürekli bir aralık seçmek için kullanıcı tarafından yönetilebilir yatay bir çubuk olur. Bu makalede bir değer sürekli değerleri arasında bir aralık seçmek için kaydırıcıyı sınıfı kullanmayı açıklar.
+description: Xamarin.Forms kaydırıcıyı sürekli aralığından bir çift değer seçmek için kullanıcı tarafından işlenebilir yatay bir çubuk olan. Bu makalede, sürekli değer aralığını bir değer seçmek için kaydırıcı sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 03/16/2018
-ms.openlocfilehash: 33c26abe2de017b6d8070053baf917cdd7a0dfc6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.date: 07/10/2018
+ms.openlocfilehash: 2ba4ffa1bcaee5f95fbd963cd48e694569ec7850
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245813"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986102"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms kaydırıcı
 
-_Bir kaydırıcının sürekli değerleri arasında bir aralık seçmek için kullanın._
+_Bir aralıktaki sürekli değerleri seçmek için kaydırıcıyı kullanın._
 
-Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) seçmek için kullanıcı tarafından yönetilebilir yatay bir çubuğu bir `double` sürekli bir aralıktan değeri.
+Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) seçmek için kullanıcı tarafından işlenebilir yatay bir çubuk olan bir `double` sürekli bir aralıktan değeri.
 
-`Slider` Türünün üç özelliklerini tanımlayan `double`:
+`Slider` Üç tür özelliklerini tanımlar `double`:
 
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) Varsayılan değer 0 ile aralığının en düşük gereksinimdir.
-- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) Varsayılan değer olan 1 ile aralığının en fazla olabilir.
-- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) arasında değişebilir kaydırıcının değer `Minimum` ve `Maximum` ve varsayılan değer 0 olarak kullanılır.
+- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) Varsayılan değer olan 0 ile aralığının en düşük gereksinimdir.
+- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) en büyük aralık, bu varsayılan değeri 1 ' dir.
+- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) Kaydırıcının değeri, arasında değişebilir `Minimum` ve `Maximum` ve 0 varsayılan değerine sahiptir.
 
-Tüm üç özellik desteğiyle `BindableProperty` nesneleri. `Value` Özelliğine sahip bir varsayılan bağlama modu `BindingMode.TwoWay`, yani bir bağlama kaynağı kullanan bir uygulama olarak uygun olduğunu [Model View ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) mimarisi.
-
-> [!WARNING]
-> Dahili olarak, `Slider` sağlar `Minimum` olan değerinden `Maximum`. Varsa `Minimum` veya `Maximum` hiç ayarlanır böylece `Minimum` olan küçük değildir `Maximum`, özel durum oluşturuldu. Bkz: [ **önlemleri** ](#precautions) ayarı hakkında daha fazla bilgi için bölüm aşağıda `Minimum` ve `Maximum` özellikleri.
-
-`Slider` Olacak şekilde zorlar `Value` onun arasında olacak şekilde özelliği `Minimum` ve `Maximum`(dahil). Varsa `Minimum` özelliği ayarlanmış bir değere büyük `Value` özelliği, `Slider` ayarlar `Value` özelliğine `Minimum`. Benzer şekilde, varsa `Maximum` bir değere ayarlanmış değerinden `Value`, ardından `Slider` ayarlar `Value` özelliğine `Maximum`.
-
-`Slider` tanımlayan bir [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) durumlarda tetiklenir olay `Value` değişiklikler, kullanıcı işlenmesini yoluyla `Slider` veya programın ne zaman ayarlar `Value` doğrudan özelliği. A `ValueChanged` olay ayrıca şu ne zaman `Value` özelliği önceki paragrafta açıklanan yüklenen.
-
-[ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) Eşlik nesne `ValueChanged` olay sahip iki özellik türü her ikisi de `double`: [ `OldValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.OldValue/) ve [ `NewValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.NewValue/). Aynı anda olay şu, değeri `NewValue` aynı `Value` özelliği `Slider` nesnesi.
+Tarafından desteklenen tüm üç özellik `BindableProperty` nesneleri. `Value` Özelliğine sahip bir varsayılan bağlama modu `BindingMode.TwoWay`, yani bir bağlama kaynağı kullanan bir uygulama olarak uygun olduğunu [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) mimarisi.
 
 > [!WARNING]
-> Kısıtlanmamış yatay düzen seçeneklerini kullanmayın `Center`, `Start`, veya `End` ile `Slider`. Android ve UWP `Slider` sıfır uzunluğunda ve iOS, çubuğu çubuğuna daraltır çok kısa. Varsayılan tutmak `HorizontalOptions` ayarıyla `Fill`ve genişliği kullanmayan `Auto` koyma zaman `Slider` içinde bir `Grid` düzeni.
+> Dahili olarak `Slider` sağlar `Minimum` olduğu küçüktür `Maximum`. Varsa `Minimum` veya `Maximum` hiç olmadığı kadar ayarlanır böylece `Minimum` olan değerinden küçük olamaz `Maximum`, bir özel durum oluşturulur. Bkz: [ **önlemler** ](#precautions) bölümünde aşağıdaki ayarı hakkında daha fazla bilgi için `Minimum` ve `Maximum` özellikleri.
+
+`Slider` Olacak şekilde zorlar `Value` arasında olduğundan özelliğini `Minimum` ve `Maximum`(dahil). Varsa `Minimum` özelliği ayarlanmış bir değer için büyük `Value` özelliği `Slider` ayarlar `Value` özelliğini `Minimum`. Benzer şekilde, varsa `Maximum` bir değere ayarlanmış küçüktür `Value`, ardından `Slider` ayarlar `Value` özelliğini `Maximum`.
+
+`Slider` tanımlayan bir [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) olduğunda harekete geçirilen olay `Value` değişiklikler, kullanıcı işlenmesini aracılığıyla `Slider` veya programın ne zaman ayarlar `Value` özelliği doğrudan. A `ValueChanged` da harekete ne zaman `Value` özelliği'nın durumunda bırakılması önceki paragrafta açıklandığı gibi.
+
+[ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) Eşlik eden bir nesne `ValueChanged` olay sahip iki özellik türü her ikisi de `double`: [ `OldValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.OldValue/) ve [ `NewValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.NewValue/). Zaman olay tetiklenir, değerini `NewValue` aynı `Value` özelliği `Slider` nesne.
+
+> [!WARNING]
+> Sınırlandırılmamış yatay düzen seçeneklerini kullanmayın `Center`, `Start`, veya `End` ile `Slider`. Android ve UWP `Slider` daraltır sıfır uzunluklu ve ios'ta çubuğu çubuğuna çok kısa. Varsayılan tutun `HorizontalOptions` ayarıyla `Fill`ve genişliği kullanmayın `Auto` koyarak olduğunda `Slider` içinde bir `Grid` düzeni.
+
+`Slider` Da görünümünü etkileyen çeşitli özellikleri tanımlar:
+
+- [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) çubuğu renk sol tarafında kalan kısmıdır.
+- [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) çubuğu renk sağ tarafında kalan kısmıdır.
+- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) thumb renktir. Bu özellik, Evrensel Windows platformu üzerinde desteklenmiyor.
+- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) görüntü türü küçük resim için kullanılacak [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource). Bu özellik, Evrensel Windows platformu üzerinde desteklenmiyor.
+
+> [!NOTE]
+> `ThumbColor` Ve `ThumbImage` özelliklerini karşılıklı olarak birbirini dışlar. Her iki özellik ayarlandıysa `ThumbImage` özelliği öncelik alır.
 
 ## <a name="basic-slider-code-and-markup"></a>Temel kaydırıcı kod ve biçimlendirme
 
-[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek işlevsel olarak aynıdır, ancak farklı şekillerde uygulanan üç sayfaları şununla başlar. Yalnızca C# kod ilk sayfa kullanır, ikinci kodundaki olay işleyici ile XAML kullanır ve üçüncü XAML dosyası içinde veri bağlama kullanarak olay işleyicisi kaçınabilirsiniz.
+[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) işlevsel olarak aynıdır, ancak farklı şekillerde uygulanan üç sayfalarıyla örnek başlar. İlk sayfa yalnızca C# kodu kullanır, ikinci olay işleyicisinde kodu ile XAML kullanan ve üçüncü olay işleyicisi XAML dosyasında veri bağlama kullanarak önlemek kullanabilirsiniz.
 
 ### <a name="creating-a-slider-in-code"></a>Kodda bir kaydırıcı oluşturma
 
-**Temel kaydırıcı kod** sayfasındaki [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek oluşturmak için Göster gösterir bir `Slider` ve iki `Label` koddaki nesneler:
+**Temel kaydırıcı kod** sayfasını [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek oluşturmak için Göster gösterir bir `Slider` ve iki `Label` koddaki nesneler:
 
 ```csharp
 public class BasicSliderCodePage : ContentPage
@@ -93,17 +103,17 @@ public class BasicSliderCodePage : ContentPage
 }
 ```
 
-`Slider` Sağlamak için başlatılan bir `Maximum` 360 özelliği. `ValueChanged` İşleyicisi `Slider` kullanır `Value` özelliği `slider` ayarlamak için nesne `Rotation` özelliği ilk `Label` ve kullandığı `String.Format` yöntemiyle `NewValue` özelliği ayarlamak için olay bağımsız `Text` ikinci özelliği `Label`. Geçerli değeri elde etmek için bu iki yaklaşım `Slider` birbirinin yerine kullanılabilir.
+`Slider` İçin başlatılan bir `Maximum` 360 özelliğidir. `ValueChanged` İşleyicisi `Slider` kullanır `Value` özelliği `slider` nesne ayarlayın `Rotation` özelliği ilk `Label` ve kullandığı `String.Format` yöntemiyle `NewValue` özelliği ayarlamak için olay bağımsız değişkenleri `Text` ikinci özelliği `Label`. Geçerli değerini almak için bu iki yaklaşımı `Slider` birbirinin yerine kullanılabilir.
 
-İOS, Android ve evrensel Windows Platformu (UWP) aygıtları çalıştıran program şöyledir:
+Cihazlar iOS, Android ve evrensel Windows Platformu (UWP) üzerinde çalışan bir program şöyledir:
 
-[![Temel kaydırıcı kod](slider-images/BasicSliderCode.png "temel kaydırıcı kodu")](slider-images/BasicSliderCode-Large.png#lightbox)
+[![Temel kaydırıcı kod](slider-images/BasicSliderCode.png "temel kaydırıcı kod")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-İkinci `Label` kadar "(başlatılmadı)" metnini görüntüler `Slider` yönetilebilir, ilk durumlarda `ValueChanged` olay harekete. Görüntülenen ondalık basamak sayısını üç platformları için farklı olduğuna dikkat edin. Bu farklılıklar, platform uygulamalarını ilişkili `Slider` ve bölümünde bu makalenin sonraki bölümlerinde açıklanan [Platform uygulama farklılıkları](#implementations).
+İkinci `Label` kadar "(başlatılmamış)" metni görüntüler `Slider` yönetilebilir, ilk durumlarda `ValueChanged` olay başlatılmasına izin. Görüntülenecek ondalık basamak sayısı üç platformları için farklı olduğuna dikkat edin. Bu farklılıklar, platform uygulamaları için ilişkili `Slider` ve bölümünde bu makalenin sonraki bölümlerinde ele alınmıştır [Platform uygulaması farklılıklarını](#implementations).
 
-### <a name="creating-a-slider-in-xaml"></a>XAML'de kaydırıcıyı oluşturma
+### <a name="creating-a-slider-in-xaml"></a>Bir kaydırıcı XAML içinde oluşturma
 
-**Temel kaydırıcı XAML** sayfasıdır işlevsel olarak aynı **temel kaydırıcı kod** çoğunlukla XAML'de ancak uygulanan:
+**Temel kaydırıcı XAML** sayfa, işlevsel olarak aynı **temel kaydırıcı kod** çoğunlukla XAML içinde uygulanan ancak:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -129,7 +139,7 @@ public class BasicSliderCodePage : ContentPage
 </ContentPage>
 ```
 
-Arka plan kodu dosya işleyicisi içeren `ValueChanged` olay:
+Arka plan kod dosyası işleyicisini içeren `ValueChanged` olay:
 
 ```csharp
 public partial class BasicSliderXamlPage : ContentPage
@@ -148,21 +158,21 @@ public partial class BasicSliderXamlPage : ContentPage
 }
 ```
 
-Da edinilir için olay işleyicisini daha mümkündür `Slider` üzerinden olay tetikleme `sender` bağımsız değişkeni. `Value` Özelliği geçerli değeri içerir:
+Olay işleyicisi edinme olanağı da sağlar `Slider` aracılığıyla olay tetikleme `sender` bağımsız değişken. `Value` Özelliğini içeren geçerli değer:
 
 ```csharp
 double value = ((Slider)sender).Value;
 ```
 
-Varsa `Slider` nesnesi ile XAML dosyasında bir adı verilen bir `x:Name` özniteliği (örneğin, "kaydırıcı"), sonra olay işleyicisi başvuru söz konusu nesne doğrudan:
+Varsa `Slider` nesnesi bir ad ile XAML dosyasında verilen bir `x:Name` özniteliği (örneğin, "kaydırıcı") ve ardından olay işleyicisi başvuru söz konusu nesne doğrudan:
 
 ```csharp
 double value = slider.Value;
 ```
 
-### <a name="data-binding-the-slider"></a>Veri kaydırıcıyı bağlama
+### <a name="data-binding-the-slider"></a>Veri bağlama kaydırıcı
 
-**Temel kaydırıcı bağlamaları** sayfası nasıl ortadan neredeyse eşdeğer bir program yazılacağını gösterir `Value` kullanarak olay işleyicisi [veri bağlama](~/xamarin-forms/app-fundamentals/data-binding/index.md):
+**Temel kaydırıcı bağlamaları** sayfası gösterir, ortadan kaldıran neredeyse eşdeğer bir program yazma `Value` kullanarak olay işleyicisi [veri bağlama](~/xamarin-forms/app-fundamentals/data-binding/index.md):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -191,13 +201,13 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation` Özelliği ilk `Label` bağlı `Value` özelliği `Slider`, olduğu gibi `Text` ikinci özelliğinin `Label` ile bir `StringFormat` belirtimi. **Temel kaydırıcı bağlamaları** sayfa işlevlerini biraz farklı iki önceki sayfaları: sayfa ilk görüntülendiğinde, ikinci `Label` değerle metin dizesini görüntüler. Veri bağlama kullanmanın bir avantajı budur. Veri bağlama olmadan metni görüntülemek için özellikle başlatmak gerekir `Text` özelliği `Label` veya, bir tetikleme benzetimi `ValueChanged` sınıf oluşturucudan olay işleyicisi çağırarak olay.
+`Rotation` Özelliği ilk `Label` bağlı `Value` özelliği `Slider`, olduğu gibi `Text` ikinci özelliği `Label` ile bir `StringFormat` belirtimi. **Temel kaydırıcı bağlamaları** sayfa işlevlerini biraz farklı iki önceki sayfalarından: sayfa ilk kez görüntülendiğinde, ikinci `Label` değerle metin dizesini görüntüler. Veri bağlama kullanmanın bir avantajı budur. Veri bağlama olmadan metni görüntülemek için özellikle başlatmak gerekecektir `Text` özelliği `Label` veya bir Açmadığınızda, benzetimi `ValueChanged` sınıf oluşturucusunda olay işleyicisini çağırarak olay.
 
 <a name="precautions" />
 
-## <a name="precautions"></a>Önlemler
+## <a name="precautions"></a>Uyarıları
 
-Değeri `Minimum` özelliği her zaman olmalıdır değerinden `Maximum` özelliği. Aşağıdaki kod parçacığını nedenler `Slider` bir özel durum yükseltmek için:
+Değerini `Minimum` özelliği her zaman küçük olmalıdır değerini `Maximum` özelliği. Aşağıdaki kod parçacığı nedenleri `Slider` bir özel durum:
 
 ```csharp
 // Throws an exception!
@@ -208,7 +218,7 @@ Slider slider = new Slider
 };
 ```
 
-C# Derleyici dizisinde, bu iki özellik ayarlar kodunu oluşturur ve ne zaman `Minimum` özelliği, 10 olarak ayarlanmışsa, varsayılandan daha büyük olan `Maximum` 1 değeri. Ayarlayarak, bu durumda bir özel durum önleyebilirsiniz `Maximum` özelliği ilk:
+C# Derleyici dizisinde, bu iki özellik ayarlayan kodu oluşturur ve ne zaman `Minimum` özelliği 10 olarak ayarlanmışsa, varsayılandan daha büyükse `Maximum` 1 değeri. Ayarlayarak, bu durumda bir özel durumu önleyebilirsiniz `Maximum` özelliği ilk:
 
 ```csharp
 Slider slider = new Slider
@@ -218,23 +228,23 @@ Slider slider = new Slider
 };
 ```
 
-Ayarı `Maximum` varsayılandan daha büyük olduğu için 20'ye bir sorun teşkil etmez `Minimum` 0 ayarlanması. Zaman `Minimum` , değer ayarlanmadı küçük `Maximum` 20 değeri.
+Ayarı `Maximum` varsayılandan daha büyük olduğu için 20'ye bir sorun değildir `Minimum` 0 / ayarlama. Zaman `Minimum` , değer ayarlanmış küçüktür `Maximum` değeri 20.
 
-XAML'de aynı sorunu var. Özellikler sağlar bir sırayla ayarlanmalıdır `Maximum` her zaman değerinden daha büyük `Minimum`:
+XAML içinde aynı sorunu var. Özellikler, sağlayan bir sırayı ayarlamak `Maximum` her zaman büyük olup `Minimum`:
 
 ```xaml
 <Slider Maximum="20"
         Minimum="10" ... />
 ```
 
-Ayarlayabileceğiniz `Minimum` ve `Maximum` değerleri negatif sayılar, ancak yalnızca bir sırayla burada `Minimum` olduğu her zaman değerinden `Maximum`:
+Ayarlayabileceğiniz `Minimum` ve `Maximum` değerleri negatif sayılar, ancak yalnızca bir sırayla burada `Minimum` olduğundan her zaman küçüktür `Maximum`:
 
 ```xaml
 <Slider Minimum="-20"
         Maximum="-10" ... />
 ```
 
-`Value` Özelliği her zaman sıfırdan büyük veya eşit `Minimum` değeri ve küçük veya eşit `Maximum`. Varsa `Value` ayarlanmış bu aralığın dışında bir değer için değer aralık içinde olacak şekilde yüklenen, ancak hiçbir özel durum oluşturuldu. Örneğin, bu kod size *değil* bir özel durum:
+`Value` Özelliği her zaman büyük veya eşittir `Minimum` değeri ve daha az veya buna eşit `Maximum`. Varsa `Value` ayarlanır bu aralığın dışında bir değere değer aralığında olacak şekilde durumunda bırakılması, ancak hiçbir özel durum oluşturulur. Örneğin, bu kod size *değil* özel durum:
 
 ```csharp
 Slider slider = new Slider
@@ -243,7 +253,7 @@ Slider slider = new Slider
 };
 ```
 
-Bunun yerine, `Value` için özellik yüklenen `Maximum` 1 değeri.
+Bunun yerine, `Value` özelliği durumunda bırakılması `Maximum` 1 değeri.
 
 Yukarıda gösterilen bir kod parçacığı aşağıda verilmiştir:
 
@@ -255,9 +265,9 @@ Slider slider = new Slider
 };
 ```
 
-Zaman `Minimum` 10'a, sonra ayarlanır `Value` da 10 olarak ayarlandı.
+Zaman `Minimum` 10'a, sonra ayarlanır `Value` de 10'a ayarlanır.
 
-Varsa bir `ValueChanged` olay işleyicisi, aynı anda bağlı, `Value` özelliği yüklenen varsayılan değerini 0 dışında bir şey için sonra bir `ValueChanged` olay tetiklenir. XAML parçacığı aşağıda verilmiştir:
+Varsa bir `ValueChanged` olay işleyicisi, anda bağlı, `Value` özelliği 0 varsayılan değerinin dışında bir şey durumunda bırakılması bir `ValueChanged` olay tetiklenir. XAML bir parçacığı aşağıda verilmiştir:
 
 ```xaml
 <Slider ValueChanged="OnSliderValueChanged"
@@ -265,35 +275,37 @@ Varsa bir `ValueChanged` olay işleyicisi, aynı anda bağlı, `Value` özelliğ
         Minimum="10" />
 ```
 
-Zaman `Minimum` 10'a ayarlanır `Value` de 10'a ayarlayın ve `ValueChanged` olay tetiklenir. Bu sayfaya geri kalanı oluşturulur ve henüz oluşturulmamış diğer öğeleri sayfada başvurmak işleyici deneyebilir önce ortaya çıkabilir. Bazı kodlar eklemek isteyebilirsiniz `ValueChanged` denetler işleyici `null` sayfadaki diğer öğelerin değerleri. Veya ayarlayabilirsiniz `ValueChanged` sonra olay işleyicisi `Slider` değerleri başlatıldı.
+Zaman `Minimum` 10'a ayarlanmış `Value` de 10'a ayarlanır ve `ValueChanged` olay tetiklenir. Sayfanın geri kalanını oluşturulur ve henüz oluşturulmamış diğer öğeleri sayfada başvurmak işleyici deneyebilir önce bu durum ortaya çıkabilir. İçin bazı kod eklemek isteyebilirsiniz `ValueChanged` denetler işleyici `null` sayfadaki diğer öğelerin değerleri. Veya ayarlayabilirsiniz `ValueChanged` sonra olay işleyicisi `Slider` değerleri başlatıldı.
 
 <a name="implementations" />
 
-## <a name="platform-implementation-differences"></a>Platform uygulama farklılıkları
+## <a name="platform-implementation-differences"></a>Platform uygulaması farkları
 
-Daha önce gösterilen ekran görüntüleri görüntüleme `Slider` ondalık basamak, farklı bir değere sahip. Bu nasıl ilişkili olduğu `Slider` Android ve UWP platformlar üzerinde uygulanır.
+Daha önce gösterilen ekran görüntüleri görüntüleme `Slider` ile farklı bir ondalık basamak sayısı. Bu nasıl ilişkili olduğu `Slider` Android ve UWP platformları üzerinde uygulanır.
 
 ### <a name="the-android-implementation"></a>Android uygulaması
 
-Android uygulaması `Slider` Android tabanlı [ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) ve her zaman ayarlar [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) 1000 özelliğine. Bunun anlamı `Slider` Android yalnızca 1,001 ayrık değerler içeriyor. Ayarlarsanız `Slider` sağlamak için bir `Minimum` 0 ve `Maximum` 5000, sonra da olarak `Slider` yönetilebilir, `Value` özelliğinin değerleri 0, 5, 10, 15 ve benzeri.
+Android uygulaması `Slider` Android tabanlı [ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) ve her zaman ayarlar [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) 1000 özelliği. Diğer bir deyişle `Slider` Android'de yalnızca 1,001 ayrık değerler vardır. Ayarlarsanız `Slider` sağlamak için bir `Minimum` 0 ve `Maximum` 5000'a ve ardından olarak `Slider` yönetilebilir, `Value` değerleri 0, 5, 10, 15 ve benzeri özelliğine sahiptir.
 
 ### <a name="the-uwp-implementation"></a>UWP uygulaması
 
-UWP uygulaması `Slider` UWP üzerinde temel [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) denetim. `StepFrequency` UWP özelliğinin `Slider` fark için ayarlanmış `Maximum` ve `Minimum` özellikleri bölünmüş 10, ancak 1'den büyük.
+UWP uygulaması `Slider` UWP tabanlı [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) denetimi. `StepFrequency` UWP özelliği `Slider` fark için ayarlanmış `Maximum` ve `Minimum` özellikleri bölünmüş 10, ancak 1'den büyük.
 
-Örneğin, varsayılan aralığı 0'dan 1, `StepFrequency` özelliği 0,1 için ayarlanır. Olarak `Slider` yönetilebilir, `Value` özelliği 0, 0.1, 0.2, 0.3, 0.4, 0,5, 0,6, 0,7, 0,8, 0.9 ve 1.0 için kısıtlanmış. (Bu son sayfasında açıktır [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek.) Zaman arasındaki farkı `Maximum` ve `Minimum` özellikleri 10 ya da daha sonra `StepFrequency` 1 olarak ayarlayın ve `Value` tam sayı değerleri özelliğine sahiptir.
+Örneğin, varsayılan aralık 0-1 için `StepFrequency` özelliği ayarlanmış 0,1 aralığındadır. Olarak `Slider` yönetilebilir, `Value` özelliği 0, 0.1, 0.2, 0.3, 0.4, 0,5, 0,6, 0,7, 0,8, 0.9 ve 1.0 için Yasak. (Bu son sayfasında dikkati çekiyor [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek.) Zaman arasındaki farkı `Maximum` ve `Minimum` özellikleri 10 ya da daha sonra `StepFrequency` 1 olarak ayarlanır ve `Value` tamsayı değerlerini özelliğine sahiptir.
+
+Ayrıca, [ `ThumbColor` ](xref:Xamarin.Forms.Slider.ThumbColorProperty) ve [ `ThumbImage` ](xref:Xamarin.Forms.Slider.ThumbImageProperty) özellikler UWP üzerinde desteklenmiyor.
 
 ### <a name="the-stepslider-solution"></a>StepSlider çözümü
 
-Daha ayrıntılı `StepSlider` içinde ele alınmıştır [Bölüm 27. Özel oluşturucu](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) defterinin *Xamarin.Forms ile Mobile Apps oluşturma*. `StepSlider` Benzer `Slider` ancak ekler bir `Steps` arasındaki değerleri sayısını belirtmek için özellik `Minimum` ve `Maximum`.
+Daha ayrıntılı `StepSlider` içinde ele alınmıştır [Bölüm 27. Özel oluşturucular](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) kitabın *Xamarin.Forms ile Mobile Apps oluşturma*. `StepSlider` Benzer `Slider` ekler, ancak bir `Steps` özellik değerleri arasında sayısını belirtmek için `Minimum` ve `Maximum`.
 
-## <a name="sliders-for-color-selection"></a>Renk seçimi için kaydırıcılar
+## <a name="sliders-for-color-selection"></a>Renk seçimi için kaydırıcıları
 
-Son iki içinde sayfa [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek her ikisini de kullanmanız üç `Slider` renk seçimi için örnek. Veri bağlama ile ViewModel kullanma gösterirken, sihirbazın ikinci sayfasında ilk sayfa arka plan kod dosyasına tüm etkileşimleri işler.
+Son iki içinde sayfa [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) her ikisini de kullanmanız üç örnek `Slider` örnekleri için renk seçimi. İkinci sayfada bir ViewModel ile veri bağlama işlemi gösterilmektedir ancak arka plan kod dosyasında, tüm etkileşimleri ilk sayfasını işler.
 
-### <a name="handling-sliders-in-the-code-behind-file"></a>Arka plan kod dosyasına işleme kaydırıcılar
+### <a name="handling-sliders-in-the-code-behind-file"></a>Arka plan kod dosyasında kaydırıcıları işleme
 
-**RGB renk kaydırıcılar** sayfa başlatır bir `BoxView` bir renk görüntülemek için üç `Slider` rengi ve üç kırmızı, yeşil ve mavi bileşenleri seçmek için örnekleri `Label` bu renk görüntüleme için öğeleri değerler:
+**RGB renk kaydırıcıları** sayfa başlatır bir `BoxView` bir renk görüntülemek için üç `Slider` rengi ve üç kırmızı, yeşil ve mavi bileşenlerinin seçmek için örnekleri `Label` öğeleri bu renk görüntülemek için değerler:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -335,7 +347,7 @@ Son iki içinde sayfa [ **SliderDemos** ](https://developer.xamarin.com/samples/
 </ContentPage>
 ```
 
-A `Style` üçü verir `Slider` 0-255 dizi bir öğe. `Slider` Öğeleri aynı paylaşmak `ValueChanged` arka plan kod dosyasına uygulanan işleyici:
+A `Style` üç verir `Slider` aralığı 0 ile 255 arasında bir öğe. `Slider` Öğe paylaştırmak aynı `ValueChanged` arka plan kod dosyasında uygulanan işleyicisi:
 
 ```csharp
 public partial class RgbColorSlidersPage : ContentPage
@@ -367,13 +379,13 @@ public partial class RgbColorSlidersPage : ContentPage
 }
 ```
 
-İlk bölüm kümeleri `Text` birinin özelliği `Label` değerini belirten kısa bir metin dizesi örneklerine `Slider` onaltılık. Ardından, tüm üç `Slider` örnekleri oluşturmak için erişilebilir bir `Color` RGB bileşenlerinden değeri:
+İlk bölüm kümeleri `Text` özelliği birinin `Label` değerini belirten bir kısa metin dizesi örneklerine `Slider` onaltılık. Ardından, tüm üç `Slider` örnekleri oluşturmak için erişilebilir bir `Color` RGB bileşenleri değerden:
 
-[![RGB renk kaydırıcılar](slider-images/RgbColorSliders.png "RGB renk kaydırıcılar")](slider-images/RgbColorSliders-Large.png#lightbox)
+[![RGB renk kaydırıcıları](slider-images/RgbColorSliders.png "RGB renk kaydırıcılar")](slider-images/RgbColorSliders-Large.png#lightbox)
 
-### <a name="binding-the-slider-to-a-viewmodel"></a>Kaydırıcı bir ViewModel bağlama
+### <a name="binding-the-slider-to-a-viewmodel"></a>Kaydırıcı için bir ViewModel bağlama
 
-**HSL renk kaydırıcılar** sayfası bir ViewModel oluşturmak için kullanılan hesaplamalar için nasıl kullanılacağını gösterir bir `Color` ton, Doygunluk ve parlaklığını değerlerinden değeri. Gibi tüm ViewModels `HSLColorViewModel` uygulayan sınıf `INotifyPropertyChanged` arabirimi ve ateşlenir bir `PropertyChanged` özelliklerinden biri değiştiğinde olay:
+**HSL renk kaydırıcıları** sayfası bir ViewModel oluşturmak için kullanılan hesaplamalar gerçekleştirmek için nasıl kullanılacağını gösterir bir `Color` ton, Doygunluk ve parlaklık değerlerden değeri. Gibi tüm Viewmodel'lar `HSLColorViewModel` sınıfının Implements `INotifyPropertyChanged` arabirimi ve ateşlenir bir `PropertyChanged` özelliklerden biri değiştiğinde olay:
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -448,9 +460,9 @@ public class HslColorViewModel : INotifyPropertyChanged
 }
 ```
 
-ViewModels ve `INotifyPropertyChanged` arabirimi makalesinde açıklanan [veri bağlama](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+Viewmodel'lar ve `INotifyPropertyChanged` arabirimi makalesinde açıklanan [veri bağlama](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
-**HslColorSlidersPage.xaml** dosya başlatır `HslColorViewModel` ve sayfanın ayarlar `BindingContext` özelliği. Bu ViewModel özelliklerinde bağlamak için XAML dosyasındaki tüm öğeleri sağlar:
+**HslColorSlidersPage.xaml** dosya başlatır `HslColorViewModel` ve sayfanın ayarlar `BindingContext` özelliği. Bu, ViewModel özelliklerinde bağlamak için XAML dosyasındaki tüm öğeleri sağlar:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -487,13 +499,13 @@ ViewModels ve `INotifyPropertyChanged` arabirimi makalesinde açıklanan [veri b
 </ContentPage>
 ```
 
-Olarak `Slider` öğeleri yönetilebilir, `BoxView` ve `Label` öğeleri ViewModel güncelleştirildi:
+Olarak `Slider` öğeler değiştirilebilir, `BoxView` ve `Label` öğeleri ViewModel güncelleştirildi:
 
-[![HSL renk kaydırıcılar](slider-images/HslColorSliders.png "HSL renk kaydırıcılar")](slider-images/HslColorSliders-Large.png#lightbox)
+[![HSL renk kaydırıcıları](slider-images/HslColorSliders.png "HSL renk kaydırıcılar")](slider-images/HslColorSliders-Large.png#lightbox)
 
-`StringFormat` Bileşenini `Binding` biçimlendirme uzantısı iki ondalık basamak görüntülemek için bir "F2" biçimi için ayarlanır. (Veri bağlamaları biçimlendirme dizesi makalesinde açıklanan [biçimlendirme dizesi](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md).) Ancak, program UWP sürümü 0, 0.1, 0.2 değerleri sınırlıdır... 0.9 ve 1.0. Bu bir UWP uygulaması doğrudan sonucudur `Slider` yukarıdaki bölümde açıklandığı gibi [Platform uygulama farklılıkları](#implementations).
+`StringFormat` Bileşeninin `Binding` işaretleme uzantısı iki onlu basamak görüntülemek için bir "F2" biçimi için ayarlanır. (Veri bağlamalara biçimlendirme dizesi makalesinde açıklanan [biçimlendirme dizesi](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md).) Ancak, program uygulamanın UWP sürümündeki 0, 0.1, 0.2 değerleri sınırlıdır... 0.9 ve 1.0. Bu bir UWP uygulaması doğrudan sonucudur `Slider` yukarıdaki bölümde açıklandığı gibi [Platform uygulaması farklılıklarını](#implementations).
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Kaydırıcı gösterileri örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
+- [Kaydırıcı tanıtımları örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
 - [Kaydırıcı API](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)

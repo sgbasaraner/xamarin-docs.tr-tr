@@ -1,43 +1,43 @@
 ---
 title: Xamarin.Forms ScrollView
-description: Bu makalede Xamarin.Forms ScrollView sınıfı tek ekranda sığamıyorsa ve yer açmak için klavyeyi içeriği olan düzenleri sunmak için nasıl kullanılacağı açıklanmaktadır.
+description: Bu makalede, yalnızca tek bir ekrana Sığdır kullanılamaz ve içerik klavye yer olan düzenleri sunmak için Xamarin.Forms ScrollView sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/22/2016
-ms.openlocfilehash: 72897013842d464ff9d46825e2b111efbaeb79b8
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.date: 07/10/2018
+ms.openlocfilehash: 814b74ce04269d18b9a280ada74204c1c86621e1
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245240"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38985984"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
-[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) düzenleri içerir ve kaydırma ekran dışında sağlar. `ScrollView` klavye gösterilirken ekranda görünen dilimini otomatik olarak taşımak görünümleri izin vermek için de kullanılır.
+[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) düzenleri içerir ve kaydırma ekran dışında etkinleştirir. `ScrollView` klavye göstermek için ekran görünür bölümünün otomatik olarak taşımak görünümler izin vermek için de kullanılır.
 
 [![](scroll-view-images/layouts-sml.png "Xamarin.Forms düzenleri")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms düzenleri")
 
-Bu makalede yer almaktadır:
+Bu makalede ele alınmıştır:
 
-- **[Amaç](#Purpose)**  &ndash; amaçla `ScrollView` ve ne zaman kullanılır.
+- **[Amaç](#Purpose)**  &ndash; amaçla `ScrollView` ve bunu ne zaman kullanılır.
 - **[Kullanım](#Usage)**  &ndash; nasıl kullanılacağını `ScrollView` uygulamada.
-- **[Özellikler](#Properties)**  &ndash; okuyup değiştiren ortak özellikler.
-- **[Yöntemleri](#Methods)**  &ndash; görünümü kaydırma için çağrılan genel yöntemler.
+- **[Özellikleri](#Properties)**  &ndash; okuyup değiştiren ortak özellikleri.
+- **[Yöntemleri](#Methods)**  &ndash; görünümü kaydırma için çağrılabilen genel yöntemleri.
 - **[Olayları](#Events)**  &ndash; görünümün durumları değişiklikleri dinlemek için kullanılan olayları.
 
 ## <a name="purpose"></a>Amaç
 
-`ScrollView` daha büyük görünümleri de küçük telefonlarda görünmesini sağlamak için kullanılabilir. Örneğin, bir iPhone 6s üzerinde çalıştığı bir düzen iPhone 4s kırpılmış. Kullanarak bir `ScrollView` küçük ekranda görüntülenecek düzeni kırpılmış bölümlerini olanak tanır.
+`ScrollView` daha büyük görünümleri de küçük telefonlarda görünmesini sağlamak için kullanılabilir. Örneğin, bir iPhone 6s çalışır bir düzen İphone'da 4s kırpılarak. Kullanarak bir `ScrollView` daha küçük ekranda görüntülenecek düzenini kırpılmış bölümlerini çalıştırmasına olanak tanır.
 
 ## <a name="usage"></a>Kullanım
 
 > [!NOTE]
-> `ScrollView`s iç içe değil. Ayrıca, `ScrollView`s değil iç içe geçirilemez sağlayan kaydırma gibi başka denetimlerle birlikte `ListView` ve `WebView`.
+> `ScrollView`s yuvalanmış değil. Ayrıca, `ScrollView`s iç içe Geçirilemeyen sağlayan kaydırma gibi diğer denetimlerle `ListView` ve `WebView`.
 
-`ScrollView` kullanıma sunan bir `Content` bir tek bir görünüm veya düzeni ayarlayabileceğiniz özelliği. Bu örnek tarafından izlenen bir çok büyük boxView bir düzen olarak göz önünde bulundurun bir `Entry`:
+`ScrollView` kullanıma sunan bir `Content` bir tek bir görünüm veya düzeni ayarlanabilir özelliği. Ardından, çok büyük bir boxView düzeniyle bu örneğini düşünün bir `Entry`:
 
 ```xaml
 <ContentPage.Content>
@@ -50,7 +50,7 @@ Bu makalede yer almaktadır:
 </ContentPage.Content>
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var scroll = new ScrollView();
@@ -60,29 +60,30 @@ stack.Children.Add(new BoxView { BackgroundColor = Color.Red,    HeightRequest =
 stack.Children.Add(new Entry());
 ```
 
-Kullanıcı yalnızca aşağı kaydırdığında önce `BoxView` görünür:
+Kullanıcı yalnızca aşağı kaydırma önce `BoxView` görülebilir:
 
-![](scroll-view-images/scroll-start.png "ScrollView BoxView")
+![](scroll-view-images/scroll-start.png "ScrollView içinde BoxView")
 
-Kullanıcı metni girmek başladığında dikkat `Entry`, ekranda görünsün için görünümü kayar:
+Kullanıcının metin girmesini başladığında dikkat `Entry`, görünüm ekranında görünür tutmak için kaydırma:
 
 ![](scroll-view-images/scroll-end.png "ScrollView giriş")
 
 ## <a name="properties"></a>Özellikler
 
-ScrollView aşağıdaki özelliklere sahiptir:
+`ScrollView` Aşağıdaki özellikleri tanımlar:
 
-- **İçerik** &ndash; alır veya ayarlar görüntülemek için görünümü `ScrollView`.
-- **[ContentSize](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/)**  &ndash; salt okunur bir genişlik ve yükseklik bileşen içeriğin boyutunu alır. Bu bağlanabilir bir özelliktir
-- **[Yönlendirme](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollOrientation/)**  &ndash; bu bir [ `ScrollOrientation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollOrientation/), ayarlanabilir bir numaralandırma olduğu `Horizontal`, `Vertical`, veya `Both`.
-- **ScrollX** &ndash; salt okunur X boyutundaki geçerli kaydırma konumunu alır.
-- **ScrollY** &ndash; salt okunur Y boyutundaki geçerli kaydırma konumunu alır.
+- [`ContentSize`](xref:Xamarin.Forms.ScrollView.ContentSizeProperty) alır bir [ `Size` ](xref:Xamarin.Forms.Size) içeriğin boyutunu gösteren bir değer.
+- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) alır veya ayarlar bir [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation) kaydırma yönünü temsil eden bir numaralandırma değeri `ScrollView`.
+- [`ScrollX`](xref:Xamarin.Forms.ScrollView.ScrollXProperty) alır bir `double` geçerli X kaydırma konumu temsil eden.
+- [`ScrollY`](xref:Xamarin.Forms.ScrollView.ScrollYProperty) alır bir `double` geçerli Y kaydırma konumunu temsil eden.
+- [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibilityProperty) alır veya ayarlar bir [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) yatay kaydırma çubuğunun görünür olduğunda gösteren bir değer.
+- [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.VerticalScrollBarVisibilityProperty) alır veya ayarlar bir [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) dikey kaydırma çubuğu görünür olduğunda gösteren bir değer.
 
 ## <a name="methods"></a>Yöntemler
 
-`ScrollView` sağlayan bir `ScrollToAsync` görünümü kaydırmak için kullanılan yöntem koordinatları kullanarak ya da görünür yapılması gereken belirli bir görünüm belirterek.
+`ScrollView` sağlar bir `ScrollToAsync` kaydırmak için kullanılan yöntem koordinatları kullanarak veya görünür yapılması gereken belirli bir görünüm belirterek.
 
-Koordinatları kullanırken belirtin `x` ve `y` kaydırma animasyon gerekmediğini gösteren bir Boole değeri birlikte koordinatları:
+Koordinatları kullanırken belirtin `x` ve `y` koordinatları, kaydırma animasyonu gerekmediğini gösteren bir Boole değeri birlikte:
 
 ```csharp
 scroll.ScrollToAsync(0, 150, true); //scrolls so that the position at 150px from the top is visible
@@ -90,18 +91,18 @@ scroll.ScrollToAsync(0, 150, true); //scrolls so that the position at 150px from
 scroll.ScrollToAsync(label, ScrollToPosition.Start, true); //scrolls so that the label is at the start of the list
 ```
 
-Belirli bir öğeye kaydırma sırasında `ScrollToPosition` numaralandırma Server'a burada görünümünde öğesi görünür:
+Belirli bir öğeye kaydırdığınızda `ScrollToPosition` numaralandırma Server'a burada görünüm öğesi görünür:
 
-- **Merkezi** &ndash; görünümünün görünür merkezi öğesine kaydırır.
-- **Son** &ndash; görünümünün görünür sonuna öğesine kaydırır.
-- **MakeVisible** &ndash; böylece görünümde görünür öğe birlikte kayar.
-- **Başlat** &ndash; görünümünün görünür başlangıcı öğesine kaydırır.
+- **Merkezi** &ndash; görünümünün görünür merkezini öğesine kaydırır.
+- **Son** &ndash; öğeye görünümünün görünür sonuna kadar ilerler.
+- **MakeVisible** &ndash; öğesi görünümü içinde görünür olması kaydırır.
+- **Başlangıç** &ndash; görünümünün görünür başlangıcını öğesine kaydırır.
 
-`IsAnimated` Özelliği, görünüm kaydırılan nasıl belirtir. Ne zaman içerik görünümüne anında taşıma yerine true, kesintisiz bir animasyon olarak ayarlandığında kullanılır.
+`IsAnimated` Özelliği, görünüm kaydırılan nasıl belirtir. Ne zaman içerik görünümüne anında taşımak yerine true, düz bir animasyon olarak kullanılır.
 
 ## <a name="events"></a>Olaylar
 
-`ScrollView` yalnızca bir olayı sunar `Scrolled`. `Scrolled` Görünüm kaydırma tamamladığında tetiklenir. Olay işleyicisi `Scrolled` geçen `ScrolledEventArgs`, sahip olduğu `ScrollX` ve `ScrollY` özellikleri. Nasıl bir etiket ile geçerli kaydırma konumunu güncelleştirmek aşağıdaki gösteren bir `ScrollView`:
+`ScrollView` yalnızca bir olayı tanımlar `Scrolled`. `Scrolled` Görünüm, kaydırma tamamladıktan sonra ortaya çıkar. Olay işleyicisi `Scrolled` alır `ScrolledEventArgs`, sahip olduğu `ScrollX` ve `ScrollY` özellikleri. Aşağıdaki etiketi ile geçerli kaydırma konumunu güncelleştirme yapmayı gösteren bir `ScrollView`:
 
 ```csharp
 Label label = new Label { Text = "Position: " };
@@ -111,7 +112,7 @@ scroll.Scrolled += (object sender, ScrolledEventArgs e) => {
 };
 ```
 
-Kaydırma konumlar negatif bir listesinin sonuna kaydırma sırasında Sıçrama etkisi nedeniyle olabileceğine dikkat edin.
+Kaydırma konumları negatif bir listesinin sonunda kaydırdığınızda Sıçrama efekti nedeniyle olabileceğine dikkat edin.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 3088fa4b5cfa21ac57533ef331ffcc15414e14b4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 47e1eda2f701b654f81f664050847677fba8bcc5
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763754"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986040"
 ---
 # <a name="foreground-services"></a>Ön plan Hizmetleri
 
-Bağımlı bir hizmet veya başlatılan hizmet özel türde bir ön plan hizmetidir. Bazen Hizmetleri kullanıcılar etkin şekilde farkında olması gereken görevleri gerçekleştirir, bu hizmetler olarak da bilinir _ön plan Hizmetleri_. Ön plan hizmet kullanıcı ile yönergeleri yürüten veya taramasını sağlayan bir uygulama örneğidir. Uygulama arka planda olsa bile, yine hizmet düzgün çalışması için yeterli kaynaklara sahip olduğunu ve kullanıcının uygulamaya erişmek için hızlı ve kullanışlı bir yol önemlidir. Bir Android uygulaması için bu bir ön plan hizmeti "Normal" hizmet daha yüksek önceliği almanız gerekir ve bir ön plan hizmet sağlamalısınız anlamına gelir bir `Notification` çalıştığı sürece, Android görüntülenir.
+Bağlı hizmet veya başlangıç hizmeti özel bir tür bir ön plan hizmetidir. Bazen Hizmetleri kullanıcıların etkin bir şekilde farkında olması gereken görevler gerçekleştirir, bu hizmetler olarak da bilinir _ön plan Hizmetleri_. Kullanıcı yönergeleri ile sürüş veya yürüyen sağlayan bir uygulama bir ön plan hizmet örneğidir. Uygulama arka planda olsa bile, yine de hizmet düzgün çalışması için yeterli kaynaklara sahip olduğunu ve kullanıcının uygulamaya erişmek için hızlı ve kullanışlı bir yol olduğunu önemlidir. Bir Android uygulaması için bir ön plan hizmeti "Normal" hizmet daha yüksek önceliğe alması gereken ve ön plan hizmetini sağlamalıdır başka bir deyişle bir `Notification` hizmeti çalışıyor olduğu sürece, Android görüntülenir.
  
-Ön plan hizmetini başlatmak için uygulama hizmetini başlatmak için Android bildiren amacına gönderme gerekir. Ardından hizmetin kendisini Android ön plan hizmetiyle olarak kaydetmeniz gerekir. Android 8.0 (veya sonrası) çalıştıran uygulamaları kullanması gereken `Context.StartForegroundService` Android daha eski bir sürümü ile cihazlarda çalıştırılan uygulamalar kullanırken hizmetini başlatmak için yöntemi `Context.StartService`
+Ön plan hizmetini başlatmak için uygulama hizmeti başlatmak için Android söyleyen bir hedefi gönderme gerekir. Ardından hizmet kendisi Android ön plan hizmet olarak kaydetmeniz gerekir. Android 8.0 (veya üzeri) çalışan uygulamaların kullanması gereken `Context.StartForegroundService` eski Android sürümüne sahip cihazlarda çalışan uygulamaları kullanırken hizmeti başlatmak için yöntemi `Context.StartService`
 
 Bu C# genişletme yöntemi, bir ön plan hizmetinin nasıl başlatılacağı örneğidir. Android 8.0 ve üzeri kullanacağı `StartForegroundService` yöntemi, aksi takdirde eski `StartService` yöntemi kullanılır.  
 
@@ -43,16 +43,16 @@ public static void StartForegroundServiceComapt<T>(this Context context, Bundle 
 
 ## <a name="registering-as-a-foreground-service"></a>Ön plan hizmet olarak kaydetme
 
-Bir ön plan Hizmet başladıktan sonra onu kendisi ile Android çağırarak kaydetmeniz gerekir [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/). Hizmet ile başladıysanız `Service.StartForegroundService` yöntemi ancak Android hizmetini durdurun ve uygulamayı vermeyen olarak bayrak kendisini kaydetmez.
+Ön plan hizmeti başlatıldıktan sonra kendisi ile Android çağırarak kaydetmelisiniz [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/). Hizmet ile başladıysanız `Service.StartForegroundService` yöntemi ancak Android Hizmeti Durdur ve uygulamanın yanıt vermemesine olarak bayrak kendisini kaydetmez.
 
-`StartForeground` her ikisi de zorunlu iki parametreleri alır:
+`StartForeground` ikisi de zorunludur, iki parametre alır:
  
-* Hizmet tanımlamak üzere uygulama içinde benzersiz olan bir tamsayı değeri.
-* A `Notification` çalıştığı sürece, Android için durum çubuğunu görüntüleyecek nesnesi.
+* Hizmetinizi tanımlayabilmek için uygulamada benzersiz bir tamsayı değeri.
+* A `Notification` nesne hizmeti çalışıyor olduğu sürece, Android için durum çubuğunda görüntülenir.
 
-Hizmetin çalıştığını sürece android bildirim için durum çubuğunda görüntüler. En azından, bildirim hizmeti çalıştıran kullanıcının görsel bir ipucu sağlar. İdeal olarak, bildirim, uygulama veya büyük olasılıkla bazı eylem düğmeleri uygulama denetlemek için kısayol kullanıcıyla sağlamalıdır. Bu, müzik çalar örneğidir &ndash; görüntülenen bildirim müzik, önceki şarkıyı geri sarma ya da sonraki şarkıya atlamak için Duraklat/play için düğmeler olabilir. 
+Hizmet çalışıyor sürece android bildirim için durum çubuğunda görüntülenir. En azından, bildirim hizmeti çalıştıran kullanıcı için görsel bir ipucu sağlar. İdeal olarak, kullanıcının uygulamayı ya da büyük olasılıkla bazı komut düğmeleri uygulama denetlemek için bir kısayol bildirim sağlamanız gerekir. Bu, müzik çalar örneğidir &ndash; görüntülenen bildirim düğmelerini duraklatma/play müzik, önceki şarkıyı geri veya İleri şarkıyı atlamak için olabilir. 
 
-Bu kod parçacığını bir hizmeti bir ön plan hizmet olarak kaydetme, bir örnek verilmiştir:   
+Bu kod parçacığı, bir hizmet ön plan hizmet olarak kaydetme, bir örnek verilmiştir:   
 
 ```csharp
 // This is any integer value unique to the application.
@@ -80,29 +80,29 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 
 Önceki bildirim, aşağıdakine benzer bir durum çubuğu uyarısı görüntülenir:
 
-![Durum çubuğunda bildirim gösteren görüntü](foreground-services-images/foreground-services-01.png "durum çubuğunda bildirim gösteren görüntü")
+![Durum çubuğunda bildirim gösteren resim](foreground-services-images/foreground-services-01.png "durum çubuğunda bildirim gösteren resim")
 
-Bu ekran, kullanıcının hizmet denetlemesine izin ver iki eylemleri ile bildirim tepsisinde genişletilmiş bildirim gösterir:
+Bu ekran görüntüsünde genişletilmiş bildirim hizmeti denetlemek kullanıcının olanak tanıyan iki eylemleri olan bildirim tepsisinde gösterilmiştir:
 
-![Genişletilmiş bildirim gösteren görüntü](foreground-services-images/foreground-services-02.png "genişletilmiş bildirim gösteren görüntü.")
+![Genişletilmiş bildirim gösteren resim](foreground-services-images/foreground-services-02.png "genişletilmiş bildirim gösteren görüntü.")
 
-Bildirimleri hakkında daha fazla bilgi bulunur [yerel bildirimler](~/android/app-fundamentals/notifications/local-notifications.md) bölümünü [Android bildirimleri](~/android/app-fundamentals/notifications/index.md) Kılavuzu.
+Bildirimleri hakkında daha fazla bilgi kullanılabilir [yerel bildirimleri](~/android/app-fundamentals/notifications/local-notifications.md) bölümünü [Android bildirimlerini](~/android/app-fundamentals/notifications/index.md) Kılavuzu.
 
 ## <a name="unregistering-as-a-foreground-service"></a>Ön plan hizmet olarak kaydı siliniyor
 
-Bir hizmetin kendisini ön plan hizmet olarak yöntemini çağırarak XML'deki listeleyebilirsiniz `StopForeground`. `StopForeground` hizmetini durdurur, ancak bu hizmet gerekirse kapatılabilir Android sinyalleri ve bildirim simgesini kaldırır.
+Bir hizmet kendi ön plan hizmet olarak yöntemi çağrılarak serbest listeleyebilirsiniz `StopForeground`. `StopForeground` Hizmet durdurur, ancak bu hizmet gerekirse kapatılabilir Android sinyaller ve bildirim simgesini kaldırır.
 
-Görüntülenen durum çubuğu uyarısı geçirerek de kaldırılabilir `true` yöntemi için: 
+Görüntülenen durum çubuğu uyarısı geçirerek de kaldırılabilir `true` yöntemi: 
 
 ```csharp
 StopForeground(true);
 ```
 
-Hizmet çağrısıyla işlemi durduruldu durumunda `StopSelf` veya `StopService`, durum çubuğu uyarısı kaldırılacak.
+Bir çağrı ile hizmet durdurulduysa MFC'yi `StopSelf` veya `StopService`, durum çubuğu uyarısı kaldırılacak.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Android.App.Service](https://developer.xamarin.com/api/type/Android.App.Service/)
-- [Android.App.Service.StartForegrond](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)
+- [Android.App.Service.StartForeground](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)
 - [Yerel Bildirimler](~/android/app-fundamentals/notifications/local-notifications.md)
 - [ForegroundServiceDemo (örnek)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/ForegroundServiceDemo/)

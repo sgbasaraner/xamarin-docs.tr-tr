@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: be378a60a9d9a7b206b64f07ee70edb432cec8e3
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.date: 07/11/2018
+ms.openlocfilehash: 29cb00c100918bf03efe3f078c366750080c0627
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935660"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986154"
 ---
 # <a name="ios-platform-specifics"></a>iOS Platform özellikleri
 
@@ -31,6 +31,8 @@ _Platform özellikleri, özel oluşturucu veya efekt uygulama olmadan yalnızca 
 - Denetleme olup olmadığını bir [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) touch hareket işleme veya içeriğine geçirir. Daha fazla bilgi için [geciktirme içerik dokunmalar bir ScrollView içinde](#delay_content_touches).
 - Ayıraç stili ayarını bir [ `ListView` ](xref:Xamarin.Forms.ListView). Daha fazla bilgi için [ayıraç stili ayarı üzerinde bir ListView](#listview-separatorstyle).
 - Desteklenen bir eski renk modunu devre dışı bırakma [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Daha fazla bilgi için [eski renk modunu devre dışı bırakma](#legacy-color-mode).
+- Gölge etkinleştirme bir [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Daha fazla bilgi için [bir gölge etkinleştirme](#drop-shadow).
+- Etkinleştirme bir [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) kayan bir görünümündeki yakalamak ve kaydırma hareketi kaydırma görünümü ile paylaşmak için. Daha fazla bilgi için [etkinleştirme eşzamanlı kaydırma hareketi tanıma](#simultaneous-pan-gesture).
 
 <a name="blur" />
 
@@ -65,6 +67,9 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 Sonuç belirtilen olan [ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/) uygulanan [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) örneği, hangi Bulanıklaştırma [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) altında katmanlı:
 
 ![](ios-images/blur-effect.png "Etkin platforma özgü bulanıklaştıran")
+
+> [!NOTE]
+> Bulanıklaştırma efekti eklerken bir [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), dokunma olayları hala tarafından alınan `VisualElement`.
 
 <a name="large_title" />
 
@@ -550,10 +555,98 @@ Bir görünüm üzerinde kullanıcı tarafından ayarlanan renkleri görünümü
 > [!NOTE]
 > Ayarlarken bir [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) bir görünüm üzerinde eski renk modunu tamamen yoksayılır. Görsel durumlar hakkında daha fazla bilgi için bkz: [Xamarin.Forms görsel durum Yöneticisi](~/xamarin-forms/user-interface/visual-state-manager.md).
 
+<a name="drop-shadow" />
+
+## <a name="enabling-a-drop-shadow"></a>Gölge etkinleştirme
+
+Bu platforma özgü gölge etkinleştirmek için kullanılan bir [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). XAML içinde ayarlayarak tüketilir [ `VisualElement.IsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) özelliğine bağlı `true`, gölge denetleyen özellikler birkaç ek birlikte isteğe bağlı:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+        <BoxView ...
+                 ios:VisualElement.IsShadowEnabled="true"
+                 ios:VisualElement.ShadowColor="Purple"
+                 ios:VisualElement.ShadowOpacity="0.7"
+                 ios:VisualElement.ShadowRadius="12">
+            <ios:VisualElement.ShadowOffset>
+                <Size>
+                    <x:Arguments>
+                        <x:Double>10</x:Double>
+                        <x:Double>10</x:Double>
+                    </x:Arguments>
+                </Size>
+            </ios:VisualElement.ShadowOffset>
+         </BoxView>
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternatif olarak, bu fluent API'sini kullanarak C# tarafından kullanılabilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+var boxView = new BoxView { Color = Color.Aqua, WidthRequest = 100, HeightRequest = 100 };
+boxView.On<iOS>()
+       .SetIsShadowEnabled(true)
+       .SetShadowColor(Color.Purple)
+       .SetShadowOffset(new Size(10,10))
+       .SetShadowOpacity(0.7)
+       .SetShadowRadius(12);
+```
+
+`VisualElement.On<iOS>` Yöntemi bu platforma özgü yalnızca İos'ta çalıştırma belirtir. [ `VisualElement.SetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) ad alanı, bir gölgenin etkin olup olmadığını denetlemek için kullanılan `VisualElement`. Ayrıca, gölge denetlemek için aşağıdaki yöntemlerden çağrılabilir:
+
+- [`SetShadowColor`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Color)) – gölge rengini ayarlar. Varsayılan renk [ `Color.Default` ](xref:Xamarin.Forms.Color.Default*).
+- [`SetShadowOffset`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Size)) – Gölge uzaklığı ayarlar. Uzaklık gölge türüne dönüştürülür ve belirtilen yönde değişiklikleri bir [ `Size` ](xref:Xamarin.Forms.Size) değeri. `Size` Yapısı değerleri uzaklık (negatif değer) sola veya sağa (pozitif) olan ilk değerini ve yukarıdaki uzaklığı olan ikinci değeri (negatif) ile ya da (pozitif) aşağıda CİHAZDAN bağımsız birimler cinsinden ifade edilir . Bu özelliğin varsayılan değeri (0.0, 0.0), her tarafındaki gölge olduğu sonuçlanır cast `VisualElement`.
+- [`SetShadowOpacity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) – değeriyle 0.0 aralığında (opak) 1.0 (saydam) olan gölge opaklığını ayarlar. Varsayılan opaklık 0,5 değerdir.
+- [`SetShadowRadius`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) – Gölge işlemek için kullanılan Bulanıklaştırma RADIUS ayarlar. Varsayılan RADIUS 10.0 değerdir.
+
+> [!NOTE]
+> Gölge durumunu çağırarak sorgulanabilir [ `GetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowOffset` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowOpacity` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), ve [ `GetShadowRadius` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})) yöntemleri.
+
+Gölge üzerinde etkinleştirilebilir sonucu olan bir [ `VisualElement` ](xref:Xamarin.Forms.VisualElement):
+
+![](ios-images/drop-shadow.png "Etkin gölge")
+
+<a name="simultaneous-pan-gesture" />
+
+## <a name="enabling-simultaneous-pan-gesture-recognition"></a>Eşzamanlı kaydırma hareketi tanıma özelliğini etkinleştirme
+
+Olduğunda bir [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) bir kaydırma görünümü, tüm hareketleri tarafından yakalanır pan görünüme iliştirilmiş `PanGestureRecognizer` ve kaydırma görünüme iletilen değildir. Bu nedenle, kaydırma görünümü artık kayar.
+
+Bu platforma özgü sağlayan bir `PanGestureRecognizer` kayan bir görünümündeki yakalamak ve kaydırma hareketi kaydırma görünümü ile paylaşmak için. XAML içinde ayarlayarak tüketilir [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms) özelliğine bağlı `true`:
+
+```xaml
+<Application ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Application.PanGestureRecognizerShouldRecognizeSimultaneously="true">
+    ...
+</Application>
+```
+
+Alternatif olarak, bu fluent API'sini kullanarak C# tarafından kullanılabilir:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
+```
+
+`Application.On<iOS>` Yöntemi bu platforma özgü yalnızca İos'ta çalıştırma belirtir. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) ad alanı, kayan bir görünümündeki bir yatay kaydırma hareket tanıyıcı kaydırma hareketi yakalamak veya yakalama ve pan paylaşma olup olmadığını denetlemek için kullanılır kaydırma görünümü ile hareket. Ayrıca, [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) yöntemi, kaydırma hareketi içerir kaydırma görünümü ile paylaşılan olmadığını döndürmek için kullanılabilir [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
+
+Bu nedenle, etkin olduğunda bu platforma özel ile bir [ `ListView` ](xref:Xamarin.Forms.ListView) içeren bir [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)hem `ListView` ve `PanGestureRecognizer` kaydırma hareketi alırsınız ve işleyin. Bununla birlikte, ne zaman devre dışı bu platforma özel bir `ListView` içeren bir `PanGestureRecognizer`, `PanGestureRecognizer` ve kaydırma hareketi yakalama, işleme ve `ListView` kaydırma hareketi almazsınız.
+
 ## <a name="summary"></a>Özet
 
 Bu makalede, iOS platform Xamarin.Forms içinde oluşturulmuş özellikleri kullanma gösterilmektedir. Platform özellikleri, özel oluşturucu veya efekt uygulama olmadan yalnızca belirli bir platformda mevcut işlevi kullanmasını sağlar.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

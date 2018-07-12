@@ -1,35 +1,35 @@
 ---
 title: Xamarin.Forms renkleri
-description: Xamarin.Forms bir esnek platformlar arası renk sınıf sağlar. Bu makalede renk sınıfı ve nasıl kullanılacağını tarafından sağlanan işlevleri açıklanmaktadır.
+description: Xamarin.Forms, esnek bir platformlar arası renk sınıf sağlar. Bu makalede, renk sınıfı ve nasıl kullanılacağını tarafından sağlanan işlevselliği açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 45adcb8a0fe25e729211e8b166be51ce2c4d93bd
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1017f108d6808155cac84e98a811a30d09afa134
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243024"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986089"
 ---
 # <a name="colors-in-xamarinforms"></a>Xamarin.Forms renkleri
 
-_Xamarin.Forms bir esnek platformlar arası renk sınıf sağlar._
+_Xamarin.Forms, esnek bir platformlar arası renk sınıf sağlar._
 
-Bu makalede çeşitli şekillerde tanıtılır `Color` sınıfı Xamarin.Forms içinde kullanılabilir.
+Bu makalede çeşitli yollar sunar `Color` sınıfı Xamarin.Forms içinde kullanılabilir.
 
-`Color` Sınıfı, bir renk örneği oluşturma yöntemleri sayısını sağlar
+`Color` Sınıfı bir dizi bir renk örneği oluşturmak için yöntem sağlar
 
--  **Adlandırılmış renkleri** -genel adlı-dahil olmak üzere renklerin koleksiyonu `Red`, `Green`, ve `Blue`.
--  **FromHex** -dize değeri HTML, örneğin "00FF00" kullanılan sözdizimi benzer. Alfa karakterler ("CC00FF00") ilk çifti olarak isteğe bağlı olarak belirtilebilir.
--  **FromHsla** -ton, Doygunluk ve parlaklığını `double` değerlerle isteğe bağlı alfa değeri (0.0-1.0).
--  **FromRgb** -kırmızı, yeşil ve mavi `int` değerleri (0-255).
--  **FromRgba** -kırmızı, yeşil, mavi ve alfa `int` değerleri (0-255).
--  **FromUint** -tek bir ayarla `double` değerini temsil eden **argb**.
+-  **Adlandırılmış renkler** -ortak adlı-renkleri koleksiyonunu `Red`, `Green`, ve `Blue`.
+-  **FromHex** -dize değeriyle benzer şekilde, HTML, örneğin "00FF00" kullanılan sözdizimi. Alfa, isteğe bağlı olarak ilk karakter ("CC00FF00") çifti olarak belirtilebilir.
+-  **FromHsla** -ton, Doygunluk ve parlaklık `double` değerlerle isteğe bağlı bir alfa değeri (0,0-1.0).
+-  **FromRgb** -kırmızı, yeşil ve mavi `int` değerlerini (0-255).
+-  **FromRgba** -kırmızı, yeşil, mavi ve alfa `int` değerlerini (0-255).
+-  **FromUint** -tek bir kümesi `double` değerini temsil eden **argb**.
 
-Atanan bazı örnek renkler, işte `BackgroundColor` farklı varyasyonları izin verilen sözdizimi kullanılarak bazı etiketleri:
+Bazı örnek atanan renkler, işte `BackgroundColor` farklı çeşitleri izin verilen söz dizimi kullanarak bazı etiketler:
 
 ```csharp
 var red    = new Label { Text = "Red",   BackgroundColor = Color.Red };
@@ -45,15 +45,15 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-Bu renkler her platformda gösterilir. Son renk - fark `Accent` -blue-ish renk iOS ve Android; için bu değeri Xamarin.Forms tarafından tanımlanır.
+Bu renklerin her platformda gösterilmektedir. Son rengini - fark `Accent` -iOS ve Android için blue-ish bir renk bu değer Xamarin.Forms tarafından tanımlanır.
 
- [![Renk demo](colors-images/colors-sml.png "renk Demo")](colors-images/colors.png#lightbox "renk Tanıtımı")
+ [![Renk tanıtım](colors-images/colors-sml.png "renk tanıtım")](colors-images/colors.png#lightbox "renk Tanıtımı")
 
 ## <a name="colordefault"></a>Color.Default
 
-Kullanım `Default` bir renk değerini geri platform varsayılan (her platform için her bir özellik, farklı bir temel alınan rengi temsil ettiğini Anlama) ayarlayın (veya yeniden ayarlamak için).
+Kullanım `Default` platform varsayılan (her bir özellik için her platformda farklı bir temel rengin temsil ettiğini Anlama) bir renk değeri ayarlayın (veya yeniden ayarlamak için).
 
-Geliştiriciler ayarlamak için bu değeri kullanabilirsiniz bir `Color` özelliği ancak gereken **değil** (bunlar tüm ayarlamak için -1), bileşen RGB değerleri için bu örnek sorgu.
+Geliştiriciler bu değeri ayarlamak için kullanabilir bir `Color` özelliği ancak gereken **değil** Bu örneği (bunlar tüm ayarlamak için -1), bileşen RGB değerleri için sorgu.
 
 ## <a name="colortransparent"></a>Color.Transparent
 
@@ -61,21 +61,21 @@ Temizlemek için rengini ayarlayın.
 
 ## <a name="coloraccent"></a>Color.Accent
 
-İOS ve Android cihazlarda Bu örnek, varsayılan arka plan üzerinde görünür, ancak varsayılan metin rengi ile aynı değil karşıt bir renk ayarlanır.
+İOS ve Android'de Bu örneği için varsayılan arka plan üzerinde görünür ancak varsayılan metin rengi ile aynı değil renklerden bir renk ayarlanır.
 
 ## <a name="additional-methods"></a>Ek yöntemleri
 
-`Color` örnekleri yeni renkler oluşturmak için kullanılan ek yöntemler şunlardır:
+`Color` örnekler, yeni renkleri oluşturmak için kullanılan ek yöntemler şunlardır:
 
--  **AddLuminosity** -yeni bir renk tarafından sağlanan delta parlaklığını değiştirerek döndürür.
--  **WithHue** -ton sağlanan değer ile değiştirerek yeni bir renk döndürür.
--  **WithLuminosity** -parlaklığını sağlanan değer ile değiştirerek yeni bir renk döndürür.
--  **WithSaturation** -Doygunluk sağlanan değer ile değiştirerek yeni bir renk döndürür.
--  **MultiplyAlpha** -yeni bir renk tarafından sağlanan alfa değeri çarparak alfa değiştirerek döndürür.
+-  **AddLuminosity** -tarafından sağlanan delta parlaklık değiştirerek yeni bir renk döndürür.
+-  **WithHue** -hue sağlanan değer ile değiştirerek yeni bir renk döndürür.
+-  **WithLuminosity** -parlaklık sağlanan değer ile değiştirerek yeni bir renk döndürür.
+-  **WithSaturation** -doygunluğu sağlanan değer ile değiştirerek yeni bir renk döndürür.
+-  **MultiplyAlpha** -sağlanan alfa değeri ile çarparak alfa değiştirerek yeni bir renk döndürür.
 
 ## <a name="implicit-conversions"></a>Örtük dönüşümler
 
-Arasında örtük dönüşüm `Xamarin.Forms.Color` ve `System.Drawing.Color` türleri gerçekleştirilebilir:
+Arasında örtük dönüştürme `Xamarin.Forms.Color` ve `System.Drawing.Color` türleri gerçekleştirilebilir:
 
 ```csharp
 Xamarin.Forms.Color xfColor = Xamarin.Forms.Color.FromRgb(0, 72, 255);
@@ -90,7 +90,7 @@ Xamarin.Forms.Color xfColor2 = sdColor;
 
 ## <a name="deviceruntimeplatform"></a>Device.RuntimePlatform
 
-Bu kod parçacığını kullanan `Device.RuntimePlatform` seçmeli olarak rengini ayarlamak için özellik bir `ActivityIndicator`:
+Bu kod parçacığı kullandığı `Device.RuntimePlatform` seçmeli olarak rengini ayarlamak için özellik bir `ActivityIndicator`:
 
 ```csharp
 ActivityIndicator activityIndicator = new ActivityIndicator
@@ -102,7 +102,7 @@ ActivityIndicator activityIndicator = new ActivityIndicator
 
 ## <a name="using-from-xaml"></a>XAML kullanma
 
-Renkleri de kolayca tanımlanmış renk adları veya burada gösterilen onaltılık Beyanları kullanarak XAML'de başvurulabilir:
+Renkleri, tanımlanmış bir rengi adları veya burada gösterilen onaltılık ifadeleri kullanarak XAML içinde de bir kolayca başvurulabilir:
 
 ```xaml
 <Label Text="Sea color" BackgroundColor="Aqua" />
@@ -112,9 +112,12 @@ Renkleri de kolayca tanımlanmış renk adları veya burada gösterilen onaltıl
 <Label Text="Tiny Alpha plus RGB" BackgroundColor="#C0F0" />
 ```
 
+> [!NOTE]
+> XAML derleme kullanırken, renk adlarını büyük küçük harf ve küçük harflerle yazılabilir. XAML derleme hakkında daha fazla bilgi için bkz: [XAML derleme](~/xamarin-forms/xaml/xamlc.md).
+
 ## <a name="summary"></a>Özet
 
-Xamarin.Forms `Color` sınıfı platformu algılayan renk başvuruları oluşturmak için kullanılır. Paylaşılan kod ve XAML de kullanılabilir.
+Xamarin.Forms `Color` sınıfı platformu algılayan renk başvuru oluşturmak için kullanılır. Paylaşılan kod ve XAML içinde kullanılabilir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

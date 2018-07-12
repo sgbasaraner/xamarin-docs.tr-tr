@@ -1,49 +1,40 @@
 ---
-title: Xamarin.Forms Web görünümü
-description: Bu makalede, kullanıcılara Xamarin.Forms WebView sınıfı yerel sunmak için nasıl kullanılacağı veya ağ web içerik ve belgeleri açıklanmaktadır.
+title: Xamarin.Forms WebView
+description: Bu makalede, kullanıcılara yerel sunmak için Xamarin.Forms WebView sınıfını kullanmayı veya ağ web içeriği ve belgeleri açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/09/2016
-ms.openlocfilehash: df004bd2a580e48137162d28ca3974521266ae7a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.date: 07/10/2018
+ms.openlocfilehash: 55267dfb1439d17f09126f65973ce9e6a0247d80
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245650"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986063"
 ---
-# <a name="xamarinforms-webview"></a>Xamarin.Forms Web görünümü
+# <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
-[Web görünümü](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) web ve HTML görüntüleme için uygulamanızda içerik görülmektedir. Farklı `OpenUri`, cihazda web tarayıcısı için kullanıcının aldığı `WebView` uygulamanızı HTML içeriğini görüntüler.
+[`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) uygulamanızda web ve HTML içeriğini görüntülemek için bir görünüm olduğundan. Farklı `OpenUri`, cihazda bir web tarayıcısına kullanıcının aldığı `WebView` uygulamanızı HTML içeriğini görüntüler.
 
-Bu kılavuz aşağıdaki bölümlerden oluşur:
-
-- **[İçerik](#Content)**  &ndash; WebView katıştırılmış HTML, web sayfaları ve HTML dizeleri dahil olmak üzere çeşitli içerik kaynakları destekler.
-- **[Gezinti](#Navigation)**  &ndash; WebView belirli bir sayfa gezinme ve geri dönerseniz için destek içerir.
-- **[Olayları](#Events)**  &ndash; dinler ve WebView kullanıcı tarafından gerçekleştirilen eylemler yanıt verir.
-- **[Performans](#Performance)**  &ndash; WebView her platformda performans özellikleri hakkında bilgi edinin.
-- **[İzinleri](#Permissions)**  &ndash; WebView uygulamanızda çalışacak şekilde izinleri ayarlayın öğrenin.
-- **[Düzen](#Layout)**  &ndash; WebView nasıl düzenlendiğini için bazı çok belirli gereksinimleri vardır. Web görünümü düzgün görüntülediğinden emin olun öğrenin:
-
-![](webview-images/in-app-browser.png "Uygulamayı tarayıcıda")
+![](webview-images/in-app-browser.png "Uygulama tarayıcıda")
 
 ## <a name="content"></a>İçerik
 
-Web görünümü şu içerik türlerini desteği ile birlikte gelir:
+`WebView` Aşağıdaki içerik türlerini destekler:
 
-- HTML ve CSS Web siteleri &ndash; WebView HTML ve CSS, JavaScript desteği dahil olmak üzere kullanılarak yazılan Web siteleri için tam destek vardır.
-- Belgeleri &ndash; WebView yerel bileşenleri her platformda kullanılarak uygulanır, Web görünümü her platformda görüntülenebilir belgeleri görüntüleyebiliyorsa olmasıdır. PDF dosyalarını iOS ve Android iş anlamına gelir.
-- HTML dizelerini &ndash; WebView bellek HTML dizelerden gösterebilir.
-- Yerel dosya &ndash; WebView türlerinden herhangi birini içerik yukarıdaki uygulamada katıştırılmış sunabileceği.
+- HTML ve CSS Web siteleri &ndash; WebView HTML ve CSS, JavaScript desteği dahil olmak üzere kullanılarak yazılmış Web siteleri için tam desteği vardır.
+- Belgeler &ndash; WebView her platformda yerel bileşenleri kullanılarak uygulandığından WebView her platformda görüntülenebilir belgeler gösterebilme yeteneğine sahiptir. PDF dosyaları iOS ve Android üzerinde çalışmak anlamına gelir.
+- HTML dizelerinde &ndash; WebView, HTML dizelerinde bellekten gösterebilir.
+- Yerel dosyaları &ndash; WebView katıştırılmış uygulamada herhangi bir içerik türü yukarıdaki sunabileceği.
 
 > [!NOTE]
-> `WebView` Internet Explorer'ın bu platformda desteklenir olsa bile Windows Silverlight, Flash veya herhangi bir ActiveX denetimini desteklemiyor.
+> `WebView` Bunlar Internet Explorer tarafından bu platformda desteklenen bile Windows üzerinde Silverlight, Flash veya herhangi bir ActiveX denetimini desteklemez.
 
 ### <a name="websites"></a>Web siteleri
 
-Bir Web sitesi Internet görüntülemek için ayarlanmış `WebView`'s [ `Source` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebViewSource/) özelliği bir dize URL:
+Bir Web sitesi internet'ten görüntülenecek kümesi `WebView`'s [ `Source` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebViewSource/) özelliği bir dize URL:
 
 ```csharp
 var browser = new WebView {
@@ -52,16 +43,16 @@ var browser = new WebView {
 ```
 
 > [!NOTE]
-> URL'leri gerekir tam olarak biçimlendirilmiş belirtilen protokolü ile (örneğin, "http://" veya "https:// kendisine $a" olması gerekir).
+> URL'leri gerekir tam biçimlendirilmiş belirtilen protokolle (yani, "http://" veya "https:// kendisine başına" olması gerekir).
 
 #### <a name="ios-and-ats"></a>iOS ve ATS
 
-Sürüm 9 itibaren iOS yalnızca varsayılan olarak en iyi yöntem güvenlik uygulayan sunucularla iletişim kurmak için uygulamanıza izin verir. Değerleri ayarlama, `Info.plist` güvensiz sunucularıyla iletişim sağlamak için.
+9 sürümünden itibaren iOS yalnızca uygulamanız varsayılan olarak iyi güvenlik uygulamaları sunucuları ile iletişim kurmasına izin verir. Değer ayarlanmalıdır `Info.plist` güvensiz sunucuları ile iletişimi etkinleştirin.
 
 > [!NOTE]
-> Uygulamanız bir bağlantı güvenli olmayan bir Web sitesine gerektiriyorsa, her zaman etki alanı kullanarak özel durum olarak girmelisiniz `NSExceptionDomains` tamamen kullanarak devre dışı ATS kapatma yerine `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` yalnızca aşırı acil durumlarda kullanılmalıdır.
+> Uygulamanıza güvenli bir Web sitesine bağlantı gerekiyorsa, her zaman etki alanı kullanarak özel durum olarak girmelisiniz `NSExceptionDomains` tamamen kullanrak ATS kapatma yerine `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` yalnızca aşırı acil durumlarda kullanılmalıdır.
 
-Aşağıdaki ATS gereksinimlerini atlamak için bir özel etki alanında (Bu örnek xamarin.com) etkinleştirmek gösterilmiştir:
+ATS gereksinimlerinin kullanılmasını atlamak için bir özel etki alanında (Bu durum xamarin.com) etkinleştirme gösterir:
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -81,7 +72,7 @@ Aşağıdaki ATS gereksinimlerini atlamak için bir özel etki alanında (Bu ör
     </dict>
 ```
 
-Yalnızca güvenilen siteler güvenilmeyen etki alanlarındaki ek güvenlik gelen teknolojisinden yararlanan sırasında kullanmanıza olanak sağlayan ATS atlamak bazı etki alanlarını etkinleştirmek için en iyi bir uygulamadır. Aşağıdaki ATS uygulama için devre dışı bırakma daha az güvenli yöntem gösterilmektedir:
+Yalnızca güvenilen siteler güvenilmeyen etki alanlarındaki ek güvenlik gelen yararlanıyor kullanmanıza olanak sağlayan ATS, atlamak bazı etki alanlarına etkinleştirmek için en iyi bir uygulamadır. ATS uygulama için devre dışı bırakma daha az güvenli bir yöntemi gösterir:
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -91,11 +82,11 @@ Yalnızca güvenilen siteler güvenilmeyen etki alanlarındaki ek güvenlik gele
     </dict>
 ```
 
-Bkz: [uygulama taşıma güvenliği](~/ios/app-fundamentals/ats.md) iOS 9'deki bu yeni özellik hakkında daha fazla bilgi.
+Bkz: [uygulama taşıma güvenliği](~/ios/app-fundamentals/ats.md) iOS 9'daki bu yeni özelliği hakkında daha fazla bilgi.
 
 ### <a name="html-strings"></a>HTML dizeleri
 
-HTML kodunda dinamik olarak tanımlanan bir dizi sunmak istiyorsanız, bir örneğini oluşturmanız gerekir [ `HtmlWebViewSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.HtmlWebViewSource/):
+Bir dizenin HTML kod içinde dinamik olarak tanımlanan sunmak istiyorsanız, bir örneğini oluşturmanız gerekir [ `HtmlWebViewSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.HtmlWebViewSource/):
 
 ```csharp
 var browser = new WebView();
@@ -107,13 +98,13 @@ htmlSource.Html = @"<html><body>
 browser.Source = htmlSource;
 ```
 
-![](webview-images/html-string.png "Web görünümü görüntüleme HTML dizesi")
+![](webview-images/html-string.png "WebView görüntüleme HTML dizesi")
 
-Yukarıdaki kod `@` HTML olarak bir dize değişmez değer, tüm olağan kaçış karakterleri yoksayılır anlamı işaretlemek için kullanılır.
+Yukarıdaki kodda, `@` HTML bir dize sabit değeri, yani tüm olağan kaçış karakterleri yok sayılır işaretlemek için kullanılır.
 
 ### <a name="local-html-content"></a>Yerel HTML içeriği
 
-Web görünümü HTML, CSS içeriğini görüntüleyebilir ve Javascript uygulama içinde katıştırılmış. Örneğin:
+WebView HTML, CSS içeriği görüntüleyebilir ve uygulama içinde gömülü Javascript kodları. Örneğin:
 
 ```html
 <html>
@@ -140,38 +131,38 @@ body,p,h1 {
 }
 ```
 
-Her platform aynı yazı tipleri taşıdığından yukarıdaki CSS içinde belirtilen yazı tipi her platform için özelleştirilmiş olması gerektiğine dikkat edin.
+Her platform yazı tiplerine sahip olduğundan yukarıdaki CSS içinde belirtilen yazı tipi her platform için özelleştirilmiş olması gerektiğini unutmayın.
 
-Yerel içerik kullanarak görüntüleme için bir `WebView`, diğer gibi HTML dosyasını açın ve ardından bir dizeye olarak içeriğini yüklemek gerekecektir `Html` özelliği bir `HtmlWebViewSource`. Dosyaları açma hakkında daha fazla bilgi için bkz: [dosyalarıyla çalışma](~/xamarin-forms/app-fundamentals/files.md).
+Ekran içerik kullanarak yerel bir `WebView`, gibi diğer HTML dosyasını açın ve içeriğini bir dizeye olarak yüklemek ihtiyacınız olacak `Html` özelliği bir `HtmlWebViewSource`. Dosyaları açma hakkında daha fazla bilgi için bkz. [dosyalarıyla çalışma](~/xamarin-forms/app-fundamentals/files.md).
 
 Aşağıdaki ekran görüntüleri her platformda yerel içerik görüntüleme sonucu göster:
 
-![](webview-images/local-content.png "Web görünümü yerel içerik görüntüleme")
+![](webview-images/local-content.png "WebView yerel içerik görüntüleme")
 
-İlk sayfa yüklenen rağmen `WebView` HTML nereden geldiğini, hiçbir bilgiye sahip. Yerel kaynaklar başvuru sayfaları ile ilgilenirken, bir sorun oluşturur. Ne zaman bu durum oluşabilir örnekleri yerel sayfaları bağlantı için her diğer bir sayfa yapar kullandığınızda ayrı bir JavaScript dosyası veya bir sayfa için bir CSS stil bağlantılar içerir.  
+İlk sayfa yüklenen olsa da, `WebView` HTML nereden geldiğini, hiçbir bilgiye sahip. Yerel kaynaklara başvuran sayfalar ile işlem yapılırken bir sorun olmasıdır. Örnekler, ne zaman gerçekleşebilir birbirine her, bir sayfa yapar yerel sayfaları bağlantıyı ayrı bir JavaScript dosyasını kullanın ya da CSS stil sayfası için bir sayfa bağlantılar içerir.  
 
-Bunu çözmek için söyleyin gereksinim `WebView` filesystem dosyaları nerede bulacağını. Ayarlayarak bunu `BaseUrl` özelliği `HtmlWebViewSource` tarafından kullanılan `WebView`.
+Söyleyin gerek bunu çözmek için `WebView` filesystem dosyaların nerede bulunur. Ayarlayarak bunu `BaseUrl` özelliği `HtmlWebViewSource` tarafından kullanılan `WebView`.
 
-Dosya sistemi işletim sistemlerinin her birinde farklı olduğundan, belirlemek gereken her platformda bu URL. Xamarin.Forms sunan `DependencyService` her platformda çalışma zamanında bağımlılıkları çözmek için.
+Her bir işletim sistemi dosya sisteminde farklı olduğundan, belirlemek gereken her platformda söz konusu URL. Xamarin.Forms sunan `DependencyService` için çalışma zamanında her platformda bağımlılıkları çözümleniyor.
 
-Kullanılacak `DependencyService`, önce her platformda uygulanabileceği bir arabirim tanımlayın:
+Kullanılacak `DependencyService`, önce her platformda uygulanabilecek bir arabirim tanımlayın:
 
 ```csharp
 public interface IBaseUrl { string Get(); }
 ```
 
-Arabirim her platformda uygulanana kadar uygulama çalışmaz olduğunu unutmayın. Ortak projesinde ayarlamak unutmayın emin olun `BaseUrl` kullanarak `DependencyService`:
+Her platformda arabirimi uygulanana kadar uygulamayı değil çalışacağını unutmayın. Ortak proje ayarlanacağını unutmayın emin `BaseUrl` kullanarak `DependencyService`:
 
 ```csharp
 var source = new HtmlWebViewSource();
 source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 ```
 
-Arabirim her platform için uygulamalarını sonra sağlanmalıdır.
+Her platform için arabirim uygulamaları ardından sağlanmalıdır.
 
 #### <a name="ios"></a>iOS
 
-İos'ta, web içeriği projenin kök dizininde bulunmalıdır veya **kaynakları** yapı eylemiyle dizin *BundleResource*, aşağıda gösterildiği gibi:
+İOS, web içeriği projenin kök dizininde bulunmalıdır veya **kaynakları** derleme eylemi ile dizin *BundleResource*, aşağıda gösterildiği gibi:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -183,7 +174,7 @@ Arabirim her platform için uygulamalarını sonra sağlanmalıdır.
 
 -----
 
-`BaseUrl` Ana paketin yolu için ayarlamanız gerekir:
+`BaseUrl` Ana paket yoluna ayarlanmalıdır:
 
 ```csharp
 [assembly: Dependency (typeof (BaseUrl_iOS))]
@@ -198,7 +189,7 @@ namespace WorkingWithWebview.iOS{
 
 #### <a name="android"></a>Android
 
-Android, HTML, CSS ve görüntüleri yapı eylemine sahip varlıklar klasöre yerleştirin *AndroidAsset* aşağıda gösterildiği gibi:
+Android, HTML, CSS ve görüntüleri derleme eylemi ile varlıkları klasöre yerleştirin *AndroidAsset* aşağıda gösterildiği gibi:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -210,7 +201,7 @@ Android, HTML, CSS ve görüntüleri yapı eylemine sahip varlıklar klasöre ye
 
 -----
 
-Android'de `BaseUrl` ayarlanmalı `"file:///android_asset/"`:
+Android, `BaseUrl` ayarlanmalıdır `"file:///android_asset/"`:
 
 ```csharp
 [assembly: Dependency (typeof(BaseUrl_Android))]
@@ -223,7 +214,7 @@ namespace WorkingWithWebview.Android {
 }
 ```
 
-Android, dosyalar **varlıklar** klasörü de üzerinden erişilebilir tarafından sunulan geçerli Android bağlamı `MainActivity.Instance` özelliği:
+Android, dosyalar **varlıklar** klasör de üzerinden erişilebilir tarafından sunulan geçerli Android bağlam `MainActivity.Instance` özelliği:
 
 ```csharp
 var assetManager = MainActivity.Instance.Assets;
@@ -234,9 +225,9 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
 
 #### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
-Evrensel Windows Platformu (UWP) projelerde HTML, CSS ve görüntüleri proje kök dizininde kümesine yapı eylemiyle yerleştirin *içerik*.
+Evrensel Windows Platformu (UWP) projelerde, HTML, CSS ve görüntü proje kök dizininde ayarlamak yapı eylemi yerleştirin *içerik*.
 
-`BaseUrl` Ayarlanmalı `"ms-appx-web:///"`:
+`BaseUrl` Ayarlanmalıdır `"ms-appx-web:///"`:
 
 ```csharp
 [assembly: Dependency(typeof(BaseUrl))]
@@ -252,22 +243,22 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>Gezinme
+## <a name="navigation"></a>Gezinti
 
-Web görünümü gezinmeyi çeşitli yöntemleri ve kullanılabilir hale getirir özellikleri destekler:
+WebView gezinmeyi çeşitli yöntemleri ve kullanıma sunduğu özellikleri destekler:
 
-- **GoForward()** &ndash; varsa `CanGoForward` çağırma doğrudur `GoForward` İleri ziyaret edilen sonraki sayfasına gider.
-- **GoBack()** &ndash; varsa `CanGoBack` çağırma doğrudur `GoBack` son ziyaret edilen sayfasına gidin.
-- **CanGoBack** &ndash; `true` geri, gitmek için sayfaları varsa `false` tarayıcı başlangıç URL'de ise.
-- **CanGoForward** &ndash; `true` kullanıcı geriye doğru gezinen ve İleri zaten ziyaret bir sayfaya taşıyabilirsiniz.
+- **GoForward()** &ndash; varsa `CanGoForward` çağırma true ise `GoForward` ziyaret edilen sonraki sayfaya ileri gider.
+- **GoBack()** &ndash; varsa `CanGoBack` çağırma true ise `GoBack` son ziyaret edilen sayfasına gider.
+- **CanGoBack** &ndash; `true` , dönün sayfalarına varsa `false` tarayıcı başlangıç URL'SİNDE ise.
+- **CanGoForward** &ndash; `true` kullanıcı geriye gittikten daha önceden ziyaret bir sayfa İleri taşıyabilirsiniz.
 
-Sayfalar içinde `WebView` çok dokunma hareketleri desteklemiyor. Önemli emin olmak için bu içerik mobil iyileştirilmiş ve yakınlaştırma için gerek kalmadan görüntülenir.
+Sayfa içinde `WebView` çok noktalı dokunma hareketlerini desteklemez. Önemli olduğunu emin olmak için bu içeriği mobil için iyileştirilmiş ve yakınlaştırma için gerek kalmadan görünür.
 
-Bir bağlantıyı göstermek üzere uygulamalar için ortak bir `WebView`, cihazın tarayıcı yerine. Bu durumlarda, normal Gezinti izin vermek kullanışlıdır ancak başlangıç bağlantısında olduğunuzda kullanıcı isabet yedeklediğinizde, uygulama normal uygulama görünümüne döndürmelidir.
+Bir bağlantı içinde gösterilecek uygulamalar için ortak bir `WebView`, cihazın tarayıcı yerine. Bu gibi durumlarda normal gezintiden izin vermek yararlıdır, ancak başlangıç bağlantıyı sırasında kullanıcı isabet yedeklediğinizde, uygulama normal uygulama görünümüne döndürmelidir.
 
-Bu senaryoyu etkinleştirmek için yerleşik gezinti yöntemlerini ve özelliklerini kullanın.
+Bu senaryoyu etkinleştirmek için yerleşik gezinti yöntemleri ve özellikleri kullanın.
 
-Tarayıcı görünümünün sayfa oluşturarak başlayın:
+Tarayıcı Görünümü sayfayı oluşturarak başlayın:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -287,7 +278,7 @@ Title="In App Browser">
 </ContentPage>
 ```
 
-Bizim kod arkasında:
+Bizim içinde arka plan kodu:
 
 ```csharp
 public partial class InAppDemo : ContentPage
@@ -321,16 +312,16 @@ public partial class InAppDemo : ContentPage
 
 İşte bu kadar!
 
-![](webview-images/in-app-browser.png "Web görünümü gezinti düğmeleri")
+![](webview-images/in-app-browser.png "WebView gezinti düğmeleri")
 
 ## <a name="events"></a>Olaylar
 
-Web görünümü durumda değişikliklerine yanıt verme yardımcı olmak üzere iki olaylar oluşur:
+WebView durumunda değişikliklerine yanıt verme yardımcı olacak iki olay meydana getirir:
 
-- **Gezinme** &ndash; olay WebView yeni bir sayfa yükleme başladığında gerçekleşti.
-- **Gittiğinizde** &ndash; olay Sayfa yüklendikten ve gezinti durdurdu tetiklenir.
+- **Gezinme** &ndash; WebView yeni bir sayfa yükleme başladığında harekete geçirilen olay.
+- **Geçtiğiniz** &ndash; sayfa yüklenen ve gezinti durdurdu harekete geçirilen olay.
 
-Yüklenmesi uzun zaman Web sayfalarını kullanarak öngörüyorsanız, bir durum göstergesi uygulamak için bu olayları kullanmayı düşünün. Örneğin XAML şöyle görünür:
+Yüklemek için uzun süren Web sayfalarını düşünüyorsanız, bir durum göstergesi uygulamak için bu olayları kullanarak göz önünde bulundurun. Örneğin XAML şöyle görünür:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -353,7 +344,7 @@ x:Class="WebViewDemo.LoadingDemo" Title="Loading Demo">
 </ContentPage>
 ```
 
-İki olay işleyicileri:
+İki olay işleyiciler:
 
 ```csharp
 void webOnNavigating (object sender, WebNavigatingEventArgs e)
@@ -367,35 +358,35 @@ void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
 }
 ```
 
-Bu (yüklenirken) şunlara sebep olur:
+Bu, (yükleniyor) aşağıdaki çıktı olur:
 
-![](webview-images/loading-start.png "Web görünümü gezinme olay örneği")
+![](webview-images/loading-start.png "WebView gezinme Event örneği")
 
 Tamamlanan yükleme:
 
-![](webview-images/loading-end.png "Web görünümü gittiğinizde olay örneği")
+![](webview-images/loading-end.png "WebView taşınabilecek Event örneği")
 
 ## <a name="performance"></a>Performans
 
-En son gelişmeleri her işleme ve JavaScript derleme donanım hızlandırılmış gibi teknolojileri benimsemeye popüler web tarayıcılarının gördünüz. Ne yazık ki, güvenlik kısıtlamaları nedeniyle bu geliştirmeleri çoğunu kullanılabilir değil, iOS equaivalent `WebView`, `UIWebView`. Xamarin.Forms `WebView` kullanan `UIWebView`. Bu bir sorun olursa, kullanan özel Oluşturucu yazma gerekir `WKWebView`, daha hızlı tarama destekler. Unutmayın `WKWebView` yalnızca iOS 8 ve sonraki sürümleri desteklenir.
+Son gelişmelerden en popüler web tarayıcısı gibi donanım hızlandırılmış işleme ve JavaScript derleme teknolojilerini benimsemeye her gördünüz. Ne yazık ki, güvenlik kısıtlamaları nedeniyle bu ilerlemeleri çoğunu kullanılabilir değil, iOS equaivalent `WebView`, `UIWebView`. Xamarin.Forms `WebView` kullanan `UIWebView`. Bir sorun varsa, özel bir oluşturucu kullanan yazma gerekecektir `WKWebView`, daha hızlı gözatma destekler. Unutmayın `WKWebView` yalnızca iOS 8 ve üzeri sürümlerde desteklenir.
 
-Varsayılan olarak android'de WebView yerleşik tarayıcı olarak yaklaşık olarak hızlıdır.
+Varsayılan olarak Android WebView yaklaşık yerleşik tarayıcı olarak hızlı çalışır.
 
-[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) Microsoft Edge işleme altyapısı kullanır. Masaüstü ve tablet aygıtları aynı performans Edge tarayıcı kullanarak olarak görmeniz gerekir.
+[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) Microsoft Edge işleme altyapısı kullanır. Masaüstü ve tablet cihazları olarak Edge tarayıcısı kullanarak aynı performans görmeniz gerekir.
 
 ## <a name="permissions"></a>İzinler
 
-Sırayla `WebView` çalışmak için her platform için izinlerinin ayarlandığından emin olmanız gerekir. Bazı platformlarda unutmayın `WebView` hata ayıklama modunda, ancak sürüm için değil yapılandırıldığında çalışır. Hata ayıklama modunda Mac için Visual Studio tarafından varsayılan olarak android'de internet erişimi için olanlar gibi bazı izinler ayarlanan olmasıdır.
+Sırayla `WebView` çözmek için izinleri her platform için ayarlandığından emin olmanız gerekir. Bazı platformlarda, dikkat `WebView` hata ayıklama modunda, ancak sürüm için yerleşik olmayan olduğunda çalışır. Hata ayıklama modunda Mac için Visual Studio tarafından varsayılan olarak, android'de internet erişimi için olanlar gibi bazı izinler ayarlanmış olmasıdır.
 
-- **UWP** &ndash; ağ içerik görüntülerken, Internet (istemci ve sunucu) özelliği gerektirir.
-- **Android** &ndash; gerektirir `INTERNET` içeriği ağdan görüntülenirken. Yerel içerik özel izinler gerektirir.
-- **iOS** &ndash; özel izinler gerektirir.
+- **UWP** &ndash; ağ içeriği görüntülenirken Internet (istemci ve sunucu) özelliği gerektirir.
+- **Android** &ndash; gerektirir `INTERNET` içerikleri ağdan görüntülenirken. Yerel içeriği özel izin gerektirir.
+- **iOS** &ndash; hiçbir özel izinler gerektirir.
 
 ## <a name="layout"></a>Düzen
 
-Diğer çoğu Xamarin.Forms görünümleri aksine `WebView` gerektiren `HeightRequest` ve `WidthRequest` StackLayout veya RelativeLayout içindeki aktarılırken belirtilir. Bu özellikler belirtmek başarısız olursa `WebView` değil olarak kabul eder.
+Diğer çoğu Xamarin.Forms görünümleri aksine `WebView` gerektiren `HeightRequest` ve `WidthRequest` StackLayout veya RelativeLayout içerdiğinde belirtilir. Bu özellikler belirtmek başarısız olursa `WebView` işlenmez.
 
-Aşağıdaki örnekler, çalışma neden düzenleri göstermek işleme `WebView`: %s
+Aşağıdaki örnekler, çalışma neden düzenlerini göstermek işleme `WebView`: %s
 
 StackLayout WidthRequest & HeightRequest:
 
@@ -436,7 +427,7 @@ AbsoluteLayout *olmadan* WidthRequest & HeightRequest:
 </AbsoluteLayout>
 ```
 
-Kılavuz *olmadan* WidthRequest & HeightRequest. Kılavuz istenen yükseklik ve Genişlik belirtme gerektirmez birkaç düzenleri biridir.:
+Kılavuz *olmadan* WidthRequest & HeightRequest. Kılavuz istenen yükseklik ve Genişlik belirtme gerektirmeyen birkaç düzenleri biridir.:
 
 ```xaml
 <Grid>
@@ -449,8 +440,41 @@ Kılavuz *olmadan* WidthRequest & HeightRequest. Kılavuz istenen yükseklik ve 
 </Grid>
 ```
 
+## <a name="invoking-javascript"></a>JavaScript çağırma
+
+[ `WebView` ](xref:Xamarin.Forms.WebView) C# bir JavaScript işlevi çağırabilir ve arama için C# kodu herhangi bir sonuç özelliğini içerir. Bu ile gerçekleştirilir [ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) aşağıdaki örnekte gösterilen yöntemi [WebView](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView) örnek:
+
+```csharp
+var numberEntry = new Entry { Text = "5" };
+var resultLabel = new Label();
+var webView = new WebView();
+...
+
+int number = int.Parse(numberEntry.Text);
+string result = await webView.EvaluateJavaScriptAsync($"factorial({number})");
+resultLabel.Text = $"Factorial of {number} is {result}.";
+```
+
+[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) Yöntemi bağımsız değişken olarak belirtilir ve herhangi bir sonuç olarak döndüren JavaScript değerlendirir bir `string`. Bu örnekte, `factorial` JavaScript işlev çağrıldığında, çarpımını döndürür `number` sonucunda. Bu JavaScript işlevi yerel HTML dosyasında tanımlanan dosya [ `WebView` ](xref:Xamarin.Forms.WebView) yükler ve aşağıdaki örnekte gösterilmiştir:
+
+```html
+<html>
+<body>
+<script type="text/javascript">
+function factorial(num) {
+        if (num === 0 || num === 1)
+            return 1;
+        for (var i = num - 1; i >= 1; i--) {
+            num *= i;
+        }
+        return num;
+}
+</script>
+</body>
+</html>
+```
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Web görünümü (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
-- [Web görünümü (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)
+- [WebView (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
+- [WebView (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)
