@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: b190498911867d29b63d839f56613fb1b80fe56f
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: bce3a60f3647a537906cfa11fc1dcfcc6f5cf365
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935153"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998620"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms döngüsü sayfası
 
@@ -20,11 +20,11 @@ _Xamarin.Forms CarouselPage galeri gibi içerik sayfalarında gezinmek için kul
 
 ## <a name="overview"></a>Genel Bakış
 
-Aşağıdaki ekran görüntüleri Göster bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) her platformda:
+Aşağıdaki ekran görüntüleri Göster bir [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) her platformda:
 
 ![](carousel-page-images/thirdpage.png "CarouselPage Thid öğesi")
 
-Düzenini bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) her platformda aynıdır. Sayfaları aracılığıyla koleksiyonu üzerinden iletimler gitmek için sağdan sola çekerek ve soldan sağa toplulukta geriye doğru gezinmek için çekerek gezinilebilir. Aşağıdaki ekran görüntüleri ilk sayfasında göster bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) örneği:
+Düzenini bir [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) her platformda aynıdır. Sayfaları aracılığıyla koleksiyonu üzerinden iletimler gitmek için sağdan sola çekerek ve soldan sağa toplulukta geriye doğru gezinmek için çekerek gezinilebilir. Aşağıdaki ekran görüntüleri ilk sayfasında göster bir [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) örneği:
 
 ![](carousel-page-images/firstpage.png "CarouselPage ilk öğe")
 
@@ -36,26 +36,26 @@ Soldan sağa doğru çekerek önceki sayfasına döndürür, sağdan sola tekrar
 
 <!--
 > [!NOTE]
-> The [`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselView/) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
+> The [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](xref:Xamarin.Forms.CarouselView) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
 -->
 
 ## <a name="creating-a-carouselpage"></a>Bir CarouselPage oluşturma
 
-İki yaklaşım oluşturmak için kullanılabilir bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/):
+İki yaklaşım oluşturmak için kullanılabilir bir [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage):
 
-- [Doldurma](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage` alt koleksiyonuyla [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örnekleri.
-- [Ata](#Populating_a_CarouselPage_with_a_Template) bir koleksiyona [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) özelliği ve ata bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) için [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) döndürüleceközelliği[ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) koleksiyonundaki nesneleri için örnekleri.
+- [Doldurma](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage` alt koleksiyonuyla [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) örnekleri.
+- [Ata](#Populating_a_CarouselPage_with_a_Template) bir koleksiyona [ `ItemsSource` ](xref:Xamarin.Forms.MultiPage`1.ItemsSource) özelliği ve ata bir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) için [ `ItemTemplate` ](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) döndürüleceközelliği[ `ContentPage` ](xref:Xamarin.Forms.ContentPage) koleksiyonundaki nesneleri için örnekleri.
 
 Her iki yaklaşım ile `CarouselPage` sonra görünen her sayfanın sırayla görüntülenmesi sonraki sayfaya geçme geçirme etkileşim olur.
 
 > [!NOTE]
-> A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) ile yalnızca doldurulabilir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örnekleri veya `ContentPage` türevleri.
+> A [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) ile yalnızca doldurulabilir [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) örnekleri veya `ContentPage` türevleri.
 
 <a name="Populating_a_CarouselPage_with_a_Page_Collection" />
 
 ### <a name="populating-a-carouselpage-with-a-page-collection"></a>Sayfa koleksiyonu ile bir CarouselPage doldurma
 
-Aşağıdaki XAML kod örnekte gösterildiği bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) üç görüntüleyen [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örnekleri:
+Aşağıdaki XAML kod örnekte gösterildiği bir [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) üç görüntüleyen [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) örnekleri:
 
 ```xaml
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -139,20 +139,20 @@ public class MainPageCS : CarouselPage
 }
 ```
 
-Her [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) görüntüler yalnızca bir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) belirli bir renk ve [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) bu renk.
+Her [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) görüntüler yalnızca bir [ `Label` ](xref:Xamarin.Forms.Label) belirli bir renk ve [ `BoxView` ](xref:Xamarin.Forms.BoxView) bu renk.
 
 > [!NOTE]
-> [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Kullanıcı Arabirimi sanallaştırma desteklemez. Bu nedenle, performans etkilenebilir `CarouselPage` çok fazla alt öğe içeriyor.
+> [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) Kullanıcı Arabirimi sanallaştırma desteklemez. Bu nedenle, performans etkilenebilir `CarouselPage` çok fazla alt öğe içeriyor.
 
-Varsa bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) içine katıştırılmış [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) sayfasının bir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/), [ `MasterDetailPage.IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) özelliği ayarlanmalıdır `false` arasında hareket çakışmalarını önlemek için `CarouselPage` ve `MasterDetailPage`.
+Varsa bir [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) içine katıştırılmış [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) sayfasının bir [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage), [ `MasterDetailPage.IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) özelliği ayarlanmalıdır `false` arasında hareket çakışmalarını önlemek için `CarouselPage` ve `MasterDetailPage`.
 
-Hakkında daha fazla bilgi için [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/), bkz: [bölüm 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) Charles Petzold'ın Xamarin.Forms rehberi.
+Hakkında daha fazla bilgi için [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage), bkz: [bölüm 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) Charles Petzold'ın Xamarin.Forms rehberi.
 
 <a name="Populating_a_CarouselPage_with_a_Template" />
 
 ### <a name="populating-a-carouselpage-with-a-template"></a>Bir şablonu ile bir CarouselPage doldurma
 
-Aşağıdaki XAML kod örnekte gösterildiği bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) atayarak oluşturulmuş bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) için [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) sayfaları için döndürülecek özelliği koleksiyondaki nesneleri:
+Aşağıdaki XAML kod örnekte gösterildiği bir [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) atayarak oluşturulmuş bir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) için [ `ItemTemplate` ](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) sayfaları için döndürülecek özelliği koleksiyondaki nesneleri:
 
 ```xaml
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -176,7 +176,7 @@ Aşağıdaki XAML kod örnekte gösterildiği bir [ `CarouselPage` ](https://dev
 </CarouselPage>
 ```
 
-[ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Ayarlayarak veri ile doldurulan [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) arka plan kod dosyası için oluşturucu özelliği:
+[ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) Ayarlayarak veri ile doldurulan [ `ItemsSource` ](xref:Xamarin.Forms.MultiPage`1.ItemsSource) arka plan kod dosyası için oluşturucu özelliği:
 
 ```csharp
 public MainPage ()
@@ -186,7 +186,7 @@ public MainPage ()
 }
 ```
 
-Aşağıdaki kod örneği, eşdeğer gösterir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) C# içinde oluşturulan:
+Aşağıdaki kod örneği, eşdeğer gösterir [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) C# içinde oluşturulan:
 
 ```csharp
 public class MainPageCS : CarouselPage
@@ -236,18 +236,18 @@ public class MainPageCS : CarouselPage
 }
 ```
 
-Her [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) görüntüler yalnızca bir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) belirli bir renk ve [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) bu renk.
+Her [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) görüntüler yalnızca bir [ `Label` ](xref:Xamarin.Forms.Label) belirli bir renk ve [ `BoxView` ](xref:Xamarin.Forms.BoxView) bu renk.
 
 > [!NOTE]
-> [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Kullanıcı Arabirimi sanallaştırma desteklemez. Bu nedenle, performans etkilenebilir `CarouselPage` çok fazla alt öğe içeriyor.
+> [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) Kullanıcı Arabirimi sanallaştırma desteklemez. Bu nedenle, performans etkilenebilir `CarouselPage` çok fazla alt öğe içeriyor.
 
-Varsa bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) içine katıştırılmış [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) sayfasının bir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/), [ `MasterDetailPage.IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) özelliği ayarlanmalıdır `false` arasında hareket çakışmalarını önlemek için `CarouselPage` ve `MasterDetailPage`.
+Varsa bir [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) içine katıştırılmış [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) sayfasının bir [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage), [ `MasterDetailPage.IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) özelliği ayarlanmalıdır `false` arasında hareket çakışmalarını önlemek için `CarouselPage` ve `MasterDetailPage`.
 
-Hakkında daha fazla bilgi için [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/), bkz: [bölüm 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) Charles Petzold'ın Xamarin.Forms rehberi.
+Hakkında daha fazla bilgi için [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage), bkz: [bölüm 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) Charles Petzold'ın Xamarin.Forms rehberi.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede nasıl kullanılacağı gösterilmiştir bir [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) sayfaların koleksiyonda gidin. `CarouselPage` Galeri gibi çok içerik sayfalarında gezinmek için kullanıcıların yan yana doğru çekin bir sayfadır.
+Bu makalede nasıl kullanılacağı gösterilmiştir bir [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) sayfaların koleksiyonda gidin. `CarouselPage` Galeri gibi çok içerik sayfalarında gezinmek için kullanıcıların yan yana doğru çekin bir sayfadır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
@@ -255,4 +255,4 @@ Bu makalede nasıl kullanılacağı gösterilmiştir bir [ `CarouselPage` ](http
 - [Sayfa çeşitleri](~/xamarin-forms/user-interface/controls/pages.md)
 - [CarouselPage (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPage/)
 - [CarouselPageTemplate (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPageTemplate/)
-- [CarouselPage](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)
+- [CarouselPage](xref:Xamarin.Forms.CarouselPage)

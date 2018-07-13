@@ -1,31 +1,31 @@
 ---
-title: Xamarin.Forms Basic bağlamaları
-description: Bu makalede, biri genellikle bir kullanıcı arabirimi nesnesi olan en az iki nesne arasındaki özellikleri çifti bağlayan bağlama, Xamarin.Forms veri kullanımı açıklanmaktadır. Bu iki nesne, hedef ve kaynak adı verilir.
+title: Xamarin.Forms temel bağlamalar
+description: Bu makalede, biri genellikle bir kullanıcı arabirimi nesnesi olan bir çift özelliğe iki nesne arasındaki en az bağlayan Xamarin.Forms veri bağlaması kullanmayı açıklar. Bu iki nesne, hedef ve kaynak adı verilir.
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: f932b7dfbcccb8f1c6ccb726f5e48c2df6e93c6c
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 16d1970b5e9d8f9c2b7c8be875c81136525c4fb7
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241695"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998078"
 ---
-# <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms Basic bağlamaları
+# <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms temel bağlamalar
 
-Xamarin.Forms veri bağlama özellikleri en az biri genellikle bir kullanıcı arabirimi nesnesi olan iki nesne arasındaki çifti bağlar. Bu iki nesne adında *hedef* ve *kaynak*:
+Xamarin.Forms veri bağlama, bir çift özelliğe en az biri genellikle bir kullanıcı arabirimi nesnesi olan iki nesne arasındaki bağlar. Bu iki nesne adında *hedef* ve *kaynak*:
 
 - *Hedef* nesnesi (ve özellik), veri bağlama üzerinde ayarlanmıştır.
 - *Kaynak* veri bağlama tarafından başvurulan nesne (ve özellik).
 
-Bu ayrım bazen biraz kafa karıştırıcı olabilir: en basit durumda, veri akışları kaynaktan hedefe hedef özelliğinin değeri source özelliği değerinden ayarlandığı anlamına gelir. Ancak, bazı durumlarda, veri alternatif olarak hedef kaynağına veya her iki yönde akabilir. Karışıklığı önlemek için her zaman bu verileri sağlayan yerine bile, veri alma üzerinde veri bağlama ayarlanmış nesne hedefidir aklınızda bulundurun.
+Bu ayrım bazen biraz kafa karıştırıcı olabilir: en basit durumda, veri akışları kaynaktan hedefe hedef özelliğinin değeri kaynak özelliğinin değerinden ayarlandığı anlamına gelir. Ancak, bazı durumlarda, veri alternatif olarak hedeften kaynağa ya da her iki yönde de akabilir. Karışıklığı önlemek için bu verileri sağlayan yerine olsa bile veri almak, veri bağlama ayarlanmış nesnesi hedeflediği her zaman unutmayın.
 
-## <a name="bindings-with-a-binding-context"></a>Bağlama bağlamı bağlamalarla
+## <a name="bindings-with-a-binding-context"></a>Bağlama bağlamı bağlamaları
 
-Veri bağlama genellikle tamamen XAML'de belirtildi ancak veri bağlamaları kodu görmek için eğitici. **Temel kod bağlama** sayfa ile bir XAML dosyası içeren bir `Label` ve `Slider`:
+Veri bağlamaları genellikle tamamen XAML içinde belirtilmiş olsa da, kod veri bağlamaları görmek için öğretici. **Temel bağlama kodunu** sayfası ile bir XAML dosyası içeren bir `Label` ve `Slider`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -46,18 +46,18 @@ Veri bağlama genellikle tamamen XAML'de belirtildi ancak veri bağlamaları kod
 </ContentPage>
 ```
 
-`Slider` 0-360 aralığı için ayarlanır. Döndürmek için bu programı amacı olan `Label` düzenleme tarafından `Slider`.
+`Slider` Aralığı 0-360 için ayarlanır. Döndürmek için bu programı amacı olan `Label` düzenleme tarafından `Slider`.
 
-Veri bağlamaları ayarlamalısınız `ValueChanged` olayı `Slider` erişen bir olay işleyicisi için `Value` özelliği `Slider` ve bu değeri ayarlar `Rotation` özelliği `Label`. Veri bağlama bu iş otomatik hale getirir; olay işleyicisi ve onu içindeki kod artık gerekli değildir.
+Veri bağlamaları ayarlarsınız `ValueChanged` olayı `Slider` erişen bir olay işleyicisine `Value` özelliği `Slider` ve bu değeri ayarlar `Rotation` özelliği `Label`. Veri bağlama, o işin otomatikleştirir; olay işleyicisi ile içerdiği kod artık gerekli değildir.
 
-Türetilen herhangi bir sınıf örneği üzerinde bir bağlama ayarlayabilirsiniz [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/), içeren `Element`, `VisualElement`, `View`, ve `View` türevleri.  Bağlamanın hedef nesnede her zaman ayarlanır. Bağlama kaynak nesnesi başvuruda bulunuyor. Veri bağlama ayarlamak için aşağıdaki iki üyeleri hedef sınıfın kullanın:
+Öğesinden türetilen herhangi bir sınıf örneği üzerinde bir bağlama ayarlayabilirsiniz [ `BindableObject` ](xref:Xamarin.Forms.BindableObject), içeren `Element`, `VisualElement`, `View`, ve `View` türevleri.  Bağlama, her zaman hedef nesne üzerinde ayarlanır. Bağlamanın kaynak nesnesine başvuruyor. Veri bağlamayı belirlemek için aşağıdaki iki üyesi hedef sınıfın kullanın:
 
-- [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Özelliği, kaynak nesne belirtir.
-- [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) Yöntemi hedef özelliği ve kaynak özelliği belirtir.
+- [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Özelliği kaynak nesnesi belirtir.
+- [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) Yöntemi, özelliği kaynak ve hedef özelliği belirtir.
 
-Bu örnekte, `Label` bağlama hedefi ve `Slider` bağlama kaynağıdır. Değişiklikleri `Slider` kaynak etkileyen dönüşünü `Label` hedef. Verileri kaynak sunucudan hedef akar.
+Bu örnekte, `Label` bağlama hedefi ve `Slider` bağlama kaynağı. Değişiklikleri `Slider` kaynağını etkilemez döndürmesini `Label` hedef. Veriler kaynaktan hedefe akar.
 
-`SetBinding` Yöntemi tarafından tanımlanan `BindableObject` türünde bir bağımsız değişken sahip [ `BindingBase` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingBase/) içinden [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/) sınıfı türetilen, ancak diğer vardır `SetBinding` yöntemleri tarafından tanımlanan [ `BindableObjectExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObjectExtensions/) sınıfı. Arka plan kod dosyasına **temel kod bağlama** daha basit bir örnek kullanan [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObjectExtensions.SetBinding/p/Xamarin.Forms.BindableObject/Xamarin.Forms.BindableProperty/System.String/) bu sınıftan genişletme yöntemi.
+`SetBinding` Yöntemi tarafından tanımlanan `BindableObject` türünde bir bağımsız değişken olan [ `BindingBase` ](xref:Xamarin.Forms.BindingBase) içinden [ `Binding` ](xref:Xamarin.Forms.Binding) sınıfı türer, ancak diğer vardır `SetBinding` yöntemleri tarafından tanımlanan [ `BindableObjectExtensions` ](xref:Xamarin.Forms.BindableObjectExtensions) sınıfı. Arka plan kod dosyasında **temel bağlama kodunu** daha basit bir örnek kullanan [ `SetBinding` ](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) genişletme yöntemi bu sınıftaki.
 
 ```csharp
 public partial class BasicCodeBindingPage : ContentPage
@@ -72,31 +72,31 @@ public partial class BasicCodeBindingPage : ContentPage
 }
 ```
 
-`Label` Nesnesi, bu özellik ayarlanır ve bu yöntem çağrılır nesne olan bağlama hedefi olduğundan. `BindingContext` Özelliği olan bağlama kaynağı gösterir `Slider`.
+`Label` Nesne, nesne, bu özelliğin ayarlandığı ve yöntemin çağrıldığı, bu nedenle bağlama hedefi değil. `BindingContext` Özelliği gösterir, bağlama kaynağı `Slider`.
 
-`SetBinding` Yöntemi bağlama hedef olarak adlandırılır, ancak hedef özelliği ve kaynak özelliği belirtir. Target özelliği olarak belirtilen bir `BindableProperty` nesne: `Label.RotationProperty`. Source özelliği bir dize olarak belirtilir ve gösterir `Value` özelliği `Slider`.
+`SetBinding` Yöntem bağlama hedefi üzerinde çağrılır, ancak hedef özelliği hem kaynak özelliği belirtir. Hedef özelliği olarak belirtilen bir `BindableProperty` nesne: `Label.RotationProperty`. Source özelliği bir dize olarak belirtilen ve gösterir `Value` özelliği `Slider`.
 
-`SetBinding` Yöntemi veri bağlamaları en önemli kurallardan biri ortaya çıkarır:
+`SetBinding` Veri bağlamalarının en önemli kurallardan biri yöntemi ortaya çıkarır:
 
-*Target özelliği bağlanabilirse özelliği tarafından yedeklenmelidir.*
+*Hedef özelliği bağlanabilir bir özelliğe göre yedeklenmelidir.*
 
-Bu kural hedef nesnenin türeyen bir sınıf örneği olması anlamına gelir `BindableObject`. Bkz: [ **bağlanabilir özellikleri** ](~/xamarin-forms/xaml/bindable-properties.md) bağlanabilirse nesneleri ve bağlanabilirse özelliklerine genel bir bakış için makale.
+Bu kural hedef nesnenin türetildiği bir sınıf örneği olmalıdır gelir `BindableObject`. Bkz: [ **bağlanabilir Özellikler** ](~/xamarin-forms/xaml/bindable-properties.md) bağlanabilir nesneleri ve bağlanabilir özellikler genel bakış makalesi.
 
-Bir dize olarak belirtilen kaynak özelliği için bu tür bir kuralı yok. Dahili olarak, yansıma gerçek özelliğine erişmek için kullanılır. Bu örnekte, ancak `Value` özelliği de bağlanabilir özelliği tarafından yedeklenir.
+Bir dize olarak belirtilen kaynak özelliği için bu kural yoktur. Dahili olarak, yansıma gerçek bir özelliğe erişmek için kullanılır. Bu örnekte, ancak `Value` özelliği bağlanabilir bir özelliği tarafından da desteklenir.
 
-Kod olabilir biraz Basitleştirilmiş: `RotationProperty` bağlanabilirse özelliği tarafından tanımlanır `VisualElement`ve tarafından devralınan `Label` ve `ContentPage` de, bu nedenle sınıf adı değil gerekli içinde `SetBinding` çağırın:
+Kod biraz Basitleştirilmiş: `RotationProperty` bağlanabilir özelliği tarafından tanımlanır `VisualElement`ve tarafından devralınan `Label` ve `ContentPage` de, bu nedenle sınıf adı değil gerekli içinde `SetBinding` çağırın:
 
 ```csharp
 label.SetBinding(RotationProperty, "Value");
 ```
 
-Ancak, sınıf adı dahil olmak üzere hedef nesnenin iyi bir anımsatıcı değil.
+Ancak, sınıf adı dahil olmak üzere, iyi bir anımsatıcı hedef nesnenin değil.
 
-İşlemek gibi `Slider`, `Label` buna göre döndürür:
+Değişiklik yaptıkça `Slider`, `Label` buna göre döndürür:
 
 [![Basice bağlama kod](basic-bindings-images/basiccodebinding-small.png "temel kod bağlama")](basic-bindings-images/basiccodebinding-large.png#lightbox "temel kod bağlama")
 
-**Temel Xaml bağlama** sayfasıdır aynı **temel kod bağlama** dışında tüm veri bağlama XAML'de tanımlar:
+**Temel Xaml bağlama** sayfasıdır aynı **temel kod bağlama** dışında XAML içinde tüm veri bağlama tanımlar:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -118,24 +118,24 @@ Ancak, sınıf adı dahil olmak üzere hedef nesnenin iyi bir anımsatıcı değ
 </ContentPage>
 ```
 
-Yalnızca kodu olduğu gibi veri bağlamanın hedef nesne üzerinde ayarlanır `Label`. İki XAML biçimlendirme uzantıları ilgilidir. Bu kuşak sınırlayıcılar anında tanımlanabilir:
+Yalnızca kodum olduğu gibi veri bağlaması olan hedef nesne üzerinde ayarlanır `Label`. İki XAML biçimlendirme uzantıları faydalanırsınız. Küme ayracı sınırlayıcılarla anında tanınabilir şunlardır:
 
-- `x:Reference` Biçimlendirme uzantısı olan kaynak nesneye başvurmak için gerekli olduğunu `Slider` adlı `slider`.
-- `Binding` Biçimlendirme uzantısı bağlantıları `Rotation` özelliği `Label` için `Value` özelliği `Slider`.
+- `x:Reference` İşaretleme uzantısı olan kaynak nesneye başvurmak için gerekli `Slider` adlı `slider`.
+- `Binding` İşaretleme uzantısı bağlantıları `Rotation` özelliği `Label` için `Value` özelliği `Slider`.
 
-Makalesine bakın [XAML işaretleme uzantılarına](~/xamarin-forms/xaml/markup-extensions/index.md) XAML biçimlendirme uzantıları hakkında daha fazla bilgi için. `x:Reference` Biçimlendirme uzantısı tarafından desteklenen [ `ReferenceExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/) sınıf; `Binding` tarafından desteklenen [ `BindingExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/) sınıfı. XML olarak ad alanı öneklerini belirtmek, `x:Reference` XAML 2009 belirtiminin bir parçası olduğu sırada `Binding` Xamarin.Forms bir parçasıdır. Tırnak işareti içinde süslü ayraçlar görüntülendiğine dikkat edin.
+Makaleye göz atın [XAML biçimlendirme uzantıları](~/xamarin-forms/xaml/markup-extensions/index.md) XAML biçimlendirme uzantıları hakkında daha fazla bilgi. `x:Reference` İşaretleme uzantısı tarafından desteklenen [ `ReferenceExtension` ](xref:Xamarin.Forms.Xaml.ReferenceExtension) sınıfı; `Binding` tarafından desteklenen [ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension) sınıfı. XML olarak ad alanı öneklerini belirtmek, `x:Reference` XAML 2009 belirtiminin bir parçası olduğu sırada `Binding` Xamarin.Forms bir parçasıdır. Tırnak işareti ve küme ayraçlarının içinde göründüğüne dikkat edin.
 
-Unutursanız kolaydır `x:Reference` ayarlarken biçimlendirme uzantısı `BindingContext`. Yanlışlıkla özelliğini doğrudan şöyle bağlama kaynağının adı ayarlamak için ortaktır:
+Unutmak çok kolaydır `x:Reference` ayarlarken işaretleme uzantısı `BindingContext`. Yanlışlıkla özelliği doğrudan böyle bağlama kaynağı adını ayarlamak için ortaktır:
 
 ```xaml
 BindingContext="slider"
 ```
 
-Ancak, doğru değil. Bu biçimlendirme ayarlar `BindingContext` özelliğine bir `string` karakterine yazım "kaydırıcı" nesne!
+Ancak, doğru değil. Bu işaretleme ayarlar `BindingContext` özelliğini bir `string` karakterine yazım "kaydırıcı" nesne!
 
-Source özelliği ile belirtilen bildirimi [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Path/) özelliği `BindingExtension`, ile karşılık geldiği [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) özelliği [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/) sınıfı.
+Source özelliği ile belirtilen bildirim [ `Path` ](xref:Xamarin.Forms.Xaml.BindingExtension.Path) özelliği `BindingExtension`, karşılık gelen ile [ `Path` ](xref:Xamarin.Forms.Binding.Path) özelliği [ `Binding` ](xref:Xamarin.Forms.Binding) sınıfı.
 
-Gösterilen biçimlendirme **temel XAML bağlama** sayfa Basitleştirilmiş: XAML biçimlendirme uzantıları gibi `x:Reference` ve `Binding` olabilir *içerik özelliği* öznitelik tanımlanmamışsa, XAML için Biçimlendirme uzantıları gelir özellik adı görünür gerekmez. `Name` İçerik özelliği bir özelliktir `x:Reference`ve `Path` içerik özelliği bir özelliktir `Binding`, bunlar gelen ifadeleri kaldırılabilir anlamına gelir:
+Gösterilen biçimlendirme **temel XAML bağlama** sayfası Basitleştirilmiş: XAML biçimlendirme uzantıları gibi `x:Reference` ve `Binding` olabilir *içerik özelliği* öznitelik tanımlanmamışsa, XAML için Biçimlendirme uzantıları, özellik adı görünür gerektirmeyeceği anlamına gelir. `Name` İçerik özelliği bir özelliktir `x:Reference`ve `Path` özelliktir içerik özelliğinin `Binding`, yani bunlar gelen ifadeleri kaldırılabilir:
 
 ```xaml
 <Label Text="TEXT"
@@ -148,9 +148,9 @@ Gösterilen biçimlendirme **temel XAML bağlama** sayfa Basitleştirilmiş: XAM
 
 ## <a name="bindings-without-a-binding-context"></a>Bağlama bağlamı olmadan bağlamaları
 
-`BindingContext` Özellik veri bağlamaları önemli bir bileşenidir, ancak her zaman gerekli değildir. Kaynak nesnesi, bunun yerine belirtilebilir `SetBinding` çağrısı veya `Binding` biçimlendirme uzantısı.
+`BindingContext` Özelliktir veri bağlamaları önemli bir bileşenidir, ancak her zaman gerekli değildir. Kaynak nesne, bunun yerine belirtilebilir `SetBinding` arayın veya `Binding` işaretleme uzantısı.
 
-Bu, gösterilmiştir **alternatif kod bağlama** örnek. XAML dosyası benzer **temel kod bağlama** örnek; tek fark `Slider` denetlemek için tanımlanan `Scale` özelliği `Label`. Bu nedenle, `Slider` için bir aralığı ayarlanmıştır &ndash;2 için 2:
+Bu gösterilmiştir **alternatif bağlama kodunu** örnek. XAML dosyası benzer **temel bağlama kodunu** örnek hariç `Slider` denetlemek için tanımlanan `Scale` özelliği `Label`. Bu nedenle `Slider` aralığı için ayarlanmış &ndash;2 ila 2:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -172,7 +172,7 @@ Bu, gösterilmiştir **alternatif kod bağlama** örnek. XAML dosyası benzer **
 </ContentPage>
 ```
 
-Arka plan kod dosyasına bağlama ile ayarlar [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) tarafından tanımlanan yöntemi `BindableObject`. Bağımsız değişken bir [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Binding.Binding/p/System.String/Xamarin.Forms.BindingMode/Xamarin.Forms.IValueConverter/System.Object/System.String/System.Object/) için [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/) sınıfı:
+Arka plan kod dosyasında olan bağlamanın ayarlar [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) yöntemi tarafından tanımlanan `BindableObject`. Bağımsız değişken bir [Oluşturucusu](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object)) için [ `Binding` ](xref:Xamarin.Forms.Binding) sınıfı:
 
 ```csharp
 public partial class AlternativeCodeBindingPage : ContentPage
@@ -186,19 +186,19 @@ public partial class AlternativeCodeBindingPage : ContentPage
 }
 ```
 
-`Binding` Kurucusunun 6 parametreleri, böylece `source` parametresi, adlandırılmış bir bağımsız değişkeni ile belirtilir. Bağımsız değişken `slider` nesnesi.
+`Binding` Oluşturucusu olan 6 parametreleri, bu nedenle `source` parametresi bir adlandırılmış bağımsız değişkeni ile belirtilen. Bağımsız değişken `slider` nesne.
 
 Bu programı çalıştırmayı biraz şaşırtıcı olabilir:
 
 [![Alternatif kod bağlama](basic-bindings-images/alternativecodebinding-small.png "alternatif kod bağlama")](basic-bindings-images/alternativecodebinding-large.png#lightbox "alternatif kod bağlama")
 
-İOS ekranın sol sayfası belirdiğinde ekran nasıl görüneceği gösterilmektedir. Burada olan `Label`?
+İOS ekranın sol taraftaki sayfası belirdiğinde ekranın nasıl göründüğünü gösterir. Nerede olduğunu `Label`?
 
-Sorun `Slider` 0 ilk bir değere sahip. Bu neden `Scale` özelliği `Label` de, varsayılan değer olan 1 geçersiz kılma 0 olarak ayarlanacak. Bu, sonuçlanır `Label` başlangıçta görünmez bırakılıyor. Android ve evrensel Windows Platformu (UWP) ekran görüntüleri görüldüğü gibi işleyebileceğiniz `Slider` yapmak için `Label` yeniden görünür, ancak ilk disappearance disconcerting.
+Sorun `Slider` başlangıç değerinin 0. Bu neden `Scale` özelliği `Label` Ayrıca, varsayılan değer olan 1'geçersiz kılma 0 olarak ayarlanacak. Sonuçlanır `Label` olan başlangıçta görünmez. Android ve evrensel Windows Platformu (UWP) ekran görüntüleri göz atarak, işleyebileceğiniz `Slider` yapmak `Label` yeniden görünür, ancak ilk, kaybolması disconcerting.
 
-İçinde öğreneceksiniz [sonraki makalede](binding-mode.md) başlatarak bu sorundan kaçınmak nasıl `Slider` varsayılan değerinden `Scale` özelliği.
+İçinde keşfedeceksiniz [sonraki makalede](binding-mode.md) başlatarak bu sorundan kaçınmak nasıl `Slider` varsayılan değerinden `Scale` özelliği.
 
-**Alternatif XAML bağlama** sayfası tamamen XAML'de eşdeğer bağlama gösterir:
+**Alternatif XAML bağlama** sayfası tamamen XAML içinde eşdeğer bağlama gösterir:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -221,21 +221,21 @@ Sorun `Slider` 0 ilk bir değere sahip. Bu neden `Scale` özelliği `Label` de, 
 </ContentPage>
 ```
 
-Şimdi `Binding` biçimlendirme uzantısına sahip iki özellik ayarlanırsa, `Source` ve `Path`, virgülle ayrılmış. Tercih ederseniz bunlar aynı satırda görünebilir:
+Artık `Binding` işaretleme uzantısına sahip iki özellik ayarlanırsa, `Source` ve `Path`bir virgülle ayrılmış. Tercih ederseniz bunların aynı satırda görünebilir:
 
 ```xaml
 Scale="{Binding Source={x:Reference slider}, Path=Value}" />
 ```
 
-`Source` Özelliği ayarlanmış katıştırılmış için `x:Reference` Aksi takdirde aynı sözdizimi ayarı olarak sahip biçimlendirme uzantısı `BindingContext`. Tırnak işareti süslü ayraçlar içinde görünür ve iki özellik virgülle ayrılmalıdır dikkat edin.
+`Source` Özelliği için bir katıştırılmış `x:Reference` aksi ayarı olarak aynı söz dizimine sahiptir işaretleme uzantısı `BindingContext`. Tırnak işareti ve küme ayraçlarının içinde görünür ve iki özelliği virgülle ayrılmalıdır dikkat edin.
 
-İçerik özelliği `Binding` biçimlendirme uzantısı `Path`, ancak `Path=` biçimlendirme uzantısı parçası yalnızca ortadan ifadedeki ilk özellik ise. Ortadan kaldırmak için `Path=` bölümü, iki özellik takas vermeniz gerekir:
+İçerik özelliği `Binding` işaretleme uzantısı `Path`, ancak `Path=` işaretleme uzantısı bir parçası yalnızca ortadan ifadedeki ilk özelliği ise. Ortadan kaldırmak için `Path=` bölümü, gereken iki özelliklerini değiştirmek:
 
 ```xaml
 Scale="{Binding Value, Source={x:Reference slider}}" />
 ```
 
-XAML işaretleme uzantılarına genellikle küme ayraçları ayrılmış olsa da, nesne öğeleri da belirtilebilir:
+XAML biçimlendirme uzantıları küme ayraçları genellikle ayrılmış olsa da, nesne öğeleri olarak da belirtilebilir:
 
 ```xaml
 <Label Text="TEXT"
@@ -249,7 +249,7 @@ XAML işaretleme uzantılarına genellikle küme ayraçları ayrılmış olsa da
 </Label>
 ```
 
-Şimdi `Source` ve `Path` özelliklerdir normal XAML öznitelikleri: değerleri tırnak içine görünür ve öznitelikleri virgülle ayrılmış değil. `x:Reference` Biçimlendirme uzantısı da nesne öğesindeki hale gelir:
+Artık `Source` ve `Path` özelliklerdir normal XAML öznitelikleri: değerleri tırnak içine görünür ve öznitelikleri virgülle ayrılmış değil. `x:Reference` İşaretleme uzantısı ayrıca bir nesne öğesi olur:
 
 ```xaml
 <Label Text="TEXT"
@@ -266,25 +266,25 @@ XAML işaretleme uzantılarına genellikle küme ayraçları ayrılmış olsa da
 </Label>
 ```
 
-Bu sözdiziminin yaygın değildir, ancak karmaşık nesneler söz konusu olduğunda bazen gerekli değil.
+Bu söz dizimi yaygın değildir, ancak karmaşık nesneler söz konusu olduğunda bazen gereklidir.
 
-Şu ana kadar gösterilen örnekler set `BindingContext` özelliği ve `Source` özelliği `Binding` için bir `x:Reference` sayfasında başka bir görünüm başvurmak için işaretleme uzantısı. Bu iki özellik türlerinin `Object`, ve kaynakları bağlama için uygun olan özellikler içeren herhangi bir nesnesi için ayarlanabilir.
+Şu ana kadar gösterilen örneklerden ayarlamak `BindingContext` özelliği ve `Source` özelliği `Binding` için bir `x:Reference` sayfasında başka bir görünüme başvurmak için işaretleme uzantısı. Bu iki özellik türlerinin `Object`, ve kaynakları bağlama için uygun olan özellikleri içeren herhangi bir nesne için ayarlanabilir.
 
-Makalelerinde şimdi, ayarlayabilirsiniz öğreneceksiniz `BindingContext` veya `Source` özelliğine bir `x:Static` bir statik özellik veya alan değerinin başvurmak için işaretleme uzantısı veya `StaticResource` depolanan bir nesneye başvurmak için işaretleme uzantısı bir Kaynak sözlüğü veya doğrudan bir nesneye olan genellikle (ancak her zaman) bir ViewModel örneği.
+Makalelerde devam, ayarlayabilirsiniz keşfedeceksiniz `BindingContext` veya `Source` özelliğini bir `x:Static` statik özelliği veya alanı değerini başvurmak için işaretleme uzantısı veya `StaticResource` depolanan bir nesneye başvurmak için işaretleme uzantısı bir Kaynak sözlüğü veya doğrudan bir nesneye olduğu genel (ama her zaman kullanılmaz) bir ViewModel örneği.
 
-`BindingContext` Özelliği de ayarlanabilir bir `Binding` nesne böylece `Source` ve `Path` özelliklerini `Binding` bağlama bağlamı tanımlayın.
+`BindingContext` Özelliği de ayarlanabilir bir `Binding` nesne böylece `Source` ve `Path` özelliklerini `Binding` bağlama bağlamı tanımlar.
 
 ## <a name="binding-context-inheritance"></a>Bağlama bağlamı devralma
 
-Bu makalede, kaynak nesne kullanarak belirtebilirsiniz gördünüz `BindingContext` özelliği veya `Source` özelliği `Binding` nesnesi. Her ikisi de ayarlanırsa `Source` özelliği `Binding` önceliklidir `BindingContext`.
+Bu makalede, kaynak nesnesini kullanarak belirtebilirsiniz gördünüz `BindingContext` özelliği veya `Source` özelliği `Binding` nesne. Her ikisi de ayarlanırsa `Source` özelliği `Binding` önceliklidir `BindingContext`.
 
-`BindingContext` Özelliği son derece önemli bir özelliği vardır:
+`BindingContext` Özellik son derece önemli bir özellik vardır:
 
 *Ayarını `BindingContext` özelliği aracılığıyla görsel ağacın devralınır.*
 
-Gördüğünüz gibi bu bağlama ifadeleri basitleştirme ve bazı durumlarda çok kullanışlı olabilir &mdash; Model View ViewModel (MVVM) senaryolarında özellikle &mdash; bu gereklidir.
+Gördüğünüz gibi bu bağlama ifadeleri basitleştirmek ve bazı durumlarda çok kullanışlı olabilir &mdash; Model-View-ViewModel (MVVM) senaryolarında özellikle &mdash; da önemlidir.
 
-**Bağlama bağlamı devralma** örnek bağlama bağlamı devralma basit bir örnek verilmiştir:
+**Bağlama bağlamı devralma** örnek devralma bağlama bağlamı, basit bir örnek verilmiştir:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -317,14 +317,14 @@ Gördüğünüz gibi bu bağlama ifadeleri basitleştirme ve bazı durumlarda ç
 </ContentPage>
 ```
 
-`BindingContext` Özelliği `StackLayout` ayarlanır `slider` nesnesi. Bu bağlama bağlamı her ikisi için de devralınan `Label` ve `BoxView`, her iki olan, kendi `Rotation` özelliklerini ayarlamak `Value` özelliği `Slider`:
+`BindingContext` Özelliği `StackLayout` ayarlanır `slider` nesne. Bu bağlama içeriği tarafından devralınır `Label` ve `BoxView`, hem sahip olduğunuz, kendi `Rotation` özelliklerini ayarlamak `Value` özelliği `Slider`:
 
-[![İçerik devralma bağlama](basic-bindings-images/bindingcontextinheritance-small.png "içerik devralma bağlama")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "içerik devralma bağlama")
+[![Bağlama bağlamı devralma](basic-bindings-images/bindingcontextinheritance-small.png "bağlama bağlamı devralma")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "bağlam devralma bağlama")
 
-İçinde [sonraki makalede](binding-mode.md), göreceğiniz nasıl *bağlama modu* hedef ve kaynak nesneler arasındaki veri akışını değiştirebilirsiniz.
+İçinde [sonraki makalede](binding-mode.md), gördüğünüz nasıl *bağlama modu* hedef ve kaynak nesneler arasındaki veri akışını değiştirebilirsiniz.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Veri bağlama gösterileri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Veri bağlama bölüm Xamarin.Forms defterinden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Veri bağlama tanıtımları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Veri bağlama bölümden Xamarin.Forms kitabı](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

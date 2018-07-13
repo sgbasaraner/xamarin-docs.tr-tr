@@ -1,84 +1,84 @@
 ---
-title: Bölüm 5 özeti. Boyutları postalarla
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 5 özeti. Boyutları postalarla'
+title: Bölüm 5 özeti. Boyutlarla ilgilenme
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: Bölüm 5 özeti. Boyutlarla ilgilenme'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0b93942d6623106a5e507d6eef3e7140f9d409bd
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 36d208f2326c7584bc03c351b4a5b05a3f3928c9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241653"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995459"
 ---
-# <a name="summary-of-chapter-5-dealing-with-sizes"></a>Bölüm 5 özeti. Boyutları postalarla
+# <a name="summary-of-chapter-5-dealing-with-sizes"></a>Bölüm 5 özeti. Boyutlarla ilgilenme
 
-Xamarin.Forms çeşitli boyutlarda kadarki karşılaşıldı:
+Xamarin.Forms içinde çeşitli boyutlarda şimdiye karşılaşıldı:
 
-- İOS durum çubuğu yüksekliğini 20'dir
+- İOS durum çubuğunun yüksekliği 20'dir
 - `BoxView` Varsayılan genişlik ve yükseklik 40 sahip
 - Varsayılan `Padding` içinde bir `Frame` 20'dir
-- Varsayılan `Spacing` üzerinde `StackLayout` 6'dır
-- `Device.GetNamedSize` Yöntemi bir sayısal yazı tipi boyutu döndürür
+- Varsayılan `Spacing` üzerinde `StackLayout` 6
+- `Device.GetNamedSize` Yöntemi bir sayısal yazı tipi boyutunu döndürür
 
-Bu boyutlar piksel değildir. Bunun yerine, bunlar bağımsız olarak her platformu tarafından tanınan aygıttan bağımsız birimleridir.
+Bu boyutları piksel değildir. Bunun yerine, bunlar bağımsız olarak her bir platform tarafından tanınan CİHAZDAN bağımsız birimler.
 
-## <a name="pixels-points-dps-dips-and-dius"></a>Piksel, noktaları, dağıtım noktaları, Dıps ve DIUs
+## <a name="pixels-points-dps-dips-and-dius"></a>Piksel, noktaları, dağıtım noktaları, Dıp'lerin ve DIUs
 
-Erken geçmişine Apple Mac ve Microsoft Windows içinde programcıların piksel birimlerinde çalışmıştır. Ancak, daha yüksek çözünürlüklü ekranlar geliştirilirken daha sanallaştırılmış ve soyut bir yaklaşım ekran koordinatları için gereklidir. Mac dünyada programcıları çalışılan, biriminde *noktaları*, kullanılan Windows geliştiricileri çalışırken 1/72 inç geleneksel *CİHAZDAN bağımsız birimler* (DIUs) tabanlı 1/96 inç üzerinde.
+Erken geçmişleri Apple Mac ve Microsoft Windows içinde programcıları piksel birimlerinde çalışmıştır. Ancak, daha yüksek çözünürlükte görüntüler gelişinden ekran koordinatları daha sanallaştırılmış ve soyut bir yaklaşım gerekir. Mac dünyasında, programcılar birimleri cinsinden çalışılan *noktaları*, kullanılan Windows geliştiricileri sırasında 1/72 inç geleneksel *CİHAZDAN bağımsız birimler* (DIUs) tabanlı 1/96 inç üzerinde.
 
-Mobil aygıtlar, ancak genellikle yüze çok daha yakın tutulur ve Masaüstü daha yüksek çözünürlüğe sahip büyük bir piksel yoğunluğu izin gelir ekranlar.
+Mobil cihazlar, ancak genellikle yüz için çok daha yakın tutulan ve bir masaüstü daha yüksek çözünürlüğe sahip ekranlar, büyük bir piksel yoğunluğu izin anlamına gelir.
 
-Apple iPhone ve iPad cihazları hedefleme programcıları, biriminde çalışmaya devam *noktaları*, ancak bu noktalarına inç 160 vardır. Cihaza bağlı olarak olabilir 1, 2 veya 3 piksel noktasına.
+Apple iPhone ve iPad cihazları hedefleyen programcılar birimleri cinsinden çalışmaya devam *noktaları*, vardır, ancak bu noktalarının inç 160. Cihaza bağlı olarak olabilir 1, 2 veya 3 piksel noktasına.
 
-Android benzer. Programcıları iş birimleri içinde *yoğunluğu bağımsız piksel* (dps) ve dağıtım noktaları ve piksel arasındaki ilişkiyi 160 dps inç için temel alır.
+Android benzerdir. Programcıların iş birimleri cinsinden *yoğunluklu bağımsız piksel* yu (dps) ve dağıtım noktaları ve piksel arasında ilişki 160 dps inç için temel alır.
 
-Windows çalışma zamanı da inç 160 CİHAZDAN bağımsız birimler yakın bir şey kapsıyor ölçeklendirme etkenleri oluşturmuştur.
+Windows çalışma zamanı, 160 CİHAZDAN bağımsız birimler inç için yakın bir şeyler gelmez ölçekleme faktörü olarak da kurmuştur.
 
-Özet olarak, tüm ölçü aşağıdaki ölçütü temel alan telefonlar ve tabletler hedefleme Xamarin.Forms Programcı kabul edebilirsiniz:
+Özet olarak, bir Xamarin.Forms Programcı telefonlar ve tabletler hedefleyen tüm ölçü birimi aşağıdaki ölçütü temel alan kabul edilebilir:
 
-- eşdeğer inç 160 birimler
+- 160 birimlerine denktir inç
 - santimetre 64 birimler
 
-Salt okunur [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) ve [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) tarafından tanımlanan özellikler `VisualElement` "değerlerini mock" varsayılan &ndash;1. Yalnızca bir öğe olduğundan boyuta sahip ve düzende içerilen olduğunda bu özellikleri CİHAZDAN bağımsız birimler öğesinde gerçek boyutuna yansıtır. Bu boyut herhangi bir içerip `Padding` öğesinde ayarlanan ama `Margin`.
+Salt okunur [ `Width` ](xref:Xamarin.Forms.VisualElement.Width) ve [ `Height` ](xref:Xamarin.Forms.VisualElement.Height) tarafından tanımlanan özellikler `VisualElement` "değerlerini sahte" varsayılan &ndash;1. Bu özellikler, yalnızca bir öğe olduğundan boyutlandırıldığından ve düzende paylaşabiliyor sırasında CİHAZDAN bağımsız birimler öğesinde gerçek boyutuna ücreti yansıtılır. Bu boyut herhangi içerir `Padding` lze nastavit ama `Margin`.
 
-Bir görsel öğe harekete [ `SizeChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/) olay olduğunda kendi `Width` veya `Height` değişti. [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) örnek programın ekran boyutunu görüntülemek için bu olay kullanır.
+Bir görsel öğe harekete [ `SizeChanged` ](xref:Xamarin.Forms.VisualElement.SizeChanged) olay olduğunda kendi `Width` veya `Height` değişti. [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) örnek, programın ekran boyutunu görüntülemek için bu olay kullanır.
 
 ## <a name="metrical-sizes"></a>Metrical boyutları
 
-[ **MetricalBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/MetricalBoxView) kullanan [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) ve [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) görüntülemek için bir `BoxView` bir inç uzun ve diğeri santimetre geniş.
+[ **MetricalBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/MetricalBoxView) kullanan [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) ve [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) görüntülemek için bir `BoxView` bir inç uzun ve biri santimetre geniş.
 
-## <a name="estimated-font-sizes"></a>Tahmini yazı tipi boyutlarını
+## <a name="estimated-font-sizes"></a>Tahmini yazı tipi boyutu
 
-[ **FontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FontSizes) örnek 160-birimler--inç arası kural noktaları birimlerinde yazı tipi boyutunu belirlemek için nasıl kullanılacağını gösterir. Bu teknik kullanılarak platformları arasında visual tutarlılık daha iyi `Device.GetNamedSize`.
+[ **FontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FontSizes) örnek nasıl noktaları birimlerinde yazı tipi boyutunu belirlemek için 160 birimleri-için--inç kural kullanılacağını göstermektedir. Bu tekniği kullanarak platformlar arasında visual tutarlılık göre daha iyidir `Device.GetNamedSize`.
 
-## <a name="fitting-text-to-available-size"></a>Kullanılabilir boyut metne sığdırma
+## <a name="fitting-text-to-available-size"></a>Metni kullanılabilir boyutuna sığdırma
 
-Hesaplayarak blok belirli dikdörtgenin içindeki metnin sığması olası bir `FontSize` , `Label` şu ölçütleri kullanarak:
+Belirli bir dikdörtgen içindeki metin bloğu hesaplayarak uyacak şekilde mümkündür bir `FontSize` , `Label` aşağıdaki ölçütleri kullanarak:
 
-- Satır aralığını %120 yazı tipi boyutu (%130 Windows platformlarında) olur.
-- Ortalama karakter genişliği yazı tipi boyutunun % 50'dir.
+- Satır aralığı %120 yazı tipi boyutu (% Windows platformları 130) ' dir.
+- Ortalama karakter genişliği yazı tipi boyutunun yüzdesi 50 ' dir.
 
-[ **EstimatedFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EstimatedFontSize) örneği, bu teknik gösterir. Bu programı önce yazıldı [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) onu kullanması için özelliği kullanılabilir bir [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) ile bir [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) benzetimini yapmak için ayarı bir kenar boşluğu.
+[ **EstimatedFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EstimatedFontSize) örnek, bu teknik gösterir. Bu program, önce yazılmış [ `Margin` ](xref:Xamarin.Forms.View.Margin) , kullanması için özelliği kullanılabilir bir [ `ContentView` ](xref:Xamarin.Forms.ContentView) ile bir [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) ayarı benzetimini yapmak için bir kenar boşluğu.
 
-[![Tahmini yazı tipi boyutu Üçlü ekran](images/ch05fg07-small.png "metnin sığması için kullanılabilen boyut")](images/ch05fg07-large.png#lightbox "metnin sığması için kullanılabilen boyut")
+[![Tahmini yazı tipi boyutu üç ekran](images/ch05fg07-small.png "metin sığdırmak için kullanılabilen boyut")](images/ch05fg07-large.png#lightbox "metin sığdırmak için kullanılabilen boyut")
 
 ## <a name="a-fit-to-size-clock"></a>Uygun boyutu saati
 
-[ **FitToSizeClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FitToSizeClock) örnek gösterilmektedir kullanarak [ `Device.StartTimer` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.StartTimer/p/System.TimeSpan/System.Func%7BSystem.Boolean%7D/) saati güncelleştirmek için zamanı geldiğinde bildiren düzenli aralıklarla uygulama süreölçer başlatmak için. Yazı tipi boyutunu görüntü mümkün olduğu kadar büyük yapmak için bir altıncı için sayfa genişliği ayarlanır.
+[ **FitToSizeClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FitToSizeClock) örnek gösterir kullanarak [ `Device.StartTimer` ](xref:Xamarin.Forms.Device.StartTimer(System.TimeSpan,System.Func{System.Boolean})) saati güncelleştirme zamanı olduğunda, düzenli aralıklarla uygulama bildiren bir zamanlayıcıyı başlatmak için. Yazı tipi boyutunu-altıda için sayfa genişliği görünen mümkün olduğu kadar büyük hale getirmek için ayarlanır.
 
 ## <a name="accessibility-issues"></a>Erişilebilirlik sorunları
 
-**EstimatedFontSize** program ve **FitToSizeClock** programı hem zarif bir kusur içerir: kullanıcı Android veya Windows 10 Mobile, programın artık telefonun erişilebilirlik ayarlarını değişip değişmediğini ne kadar büyük işlenen metin yazı tipi boyutuna göre tahmin edebilirsiniz. [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) örneği, bu sorunu gösterir.
+**EstimatedFontSize** program ve **FitToSizeClock** programı hem ince bir kusur içerir: kullanıcı, Android veya Windows 10 Mobile, program artık telefonun erişilebilirlik seçeneklerini değişip değişmediğini ne kadar büyük işlenen metnin yazı tipi boyutunu temel alan tahmin edebilirsiniz. [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) örnek bu sorunu gösterir.
 
-## <a name="empirically-fitting-text"></a>Empirically sığdırma metin
+## <a name="empirically-fitting-text"></a>Türü sığdırma metin
 
-Dikdörtgene metin sığması için başka bir empirically İşlenmiş metin boyutu hesaplamak ve yukarı veya aşağı ayarlamak için yoludur. Kitap çağrıları programa [ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/) öğenin istenen boyuta elde etmek için bir görsel öğe üzerinde. Yöntem kullanım dışı bırakıldı ve programlar yerine çağırın [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/).
+Bir dikdörtgene metin sığdırmak için başka bir türü işlenen metin boyutunu hesaplamak ve yukarı veya aşağı ayarlamak için yoludur. Kitap çağrıları programdaki [ `GetSizeRequest` ](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double)) öğenin istenen boyut almak için bir görsel öğe üzerinde. Yöntem kullanımdan kaldırıldı ve programlar yerine çağırmalıdır [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)).
 
-İçin bir `Label`, ilk bağımsız değişken (kaydırma izin vermek için) kapsayıcının genişliği olmalıdır, ikinci bağımsız değişken ayarlanmalıdır için `Double.PositiveInfinity` Kısıtlanmamış yükseklik yapma. [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) örneği, bu teknik gösterir.
+İçin bir `Label`ilk bağımsız değişken (kaydırma izin vermek için) kapsayıcının genişliği olmalıdır, ikinci bağımsız değişkeni ayarlanması için `Double.PositiveInfinity` sınırlandırılmamış yüksekliğe Getir için. [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) örnek, bu teknik gösterir.
 
 
 

@@ -1,57 +1,57 @@
 ---
 title: Visual Basic.NET kullanarak Xamarin.Forms
-description: Xamarin.Forms PCL proje şablonu, etkili bir şekilde VB.NET kullanarak platformlar arası mobil uygulamalar oluşturmanıza olanak sağlayan ana derleme için Visual Basic kullanmak için değiştirilebilir.
+description: Xamarin.Forms PCL proje şablonu, Visual Basic etkili bir şekilde VB.NET kullanarak platformlar arası mobil uygulamalar oluşturmanıza olanak tanıyan ana derleme için kullanılacak değiştirilebilir.
 ms.prod: xamarin
 ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b858e26de95d2abbc23917b1ed5a1de65105cd8d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 256d5c81475be095c8fa0ab0408cbcf673c6b301
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33917869"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997090"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Visual Basic.NET kullanarak Xamarin.Forms
 
-Xamarin Visual Basic doğrudan desteklemez - C# Xamarin.Forms PCL çözümü oluşturun ve sonra ortak kod PCL projesini Visual Basic ile değiştirmek için bu sayfadaki yönergeleri izleyin.
+Xamarin Visual Basic doğrudan desteklemez,-C# Xamarin.Forms PCL çözümü oluşturun ve sonra ortak kod PCL projesine Visual Basic ile değiştirmek için bu sayfadaki yönergeleri izleyin.
 
-[![](xamarin-forms-images/hero-sml.png "Xamarin.Forms PCL çözümü oluşturun ve sonra ortak kod PCL projesini Visual Basic ile değiştirin")](xamarin-forms-images/hero.png#lightbox)
+[![](xamarin-forms-images/hero-sml.png "Xamarin.Forms PCL çözümü oluşturun ve sonra ortak kod PCL projesine Visual Basic ile değiştirin")](xamarin-forms-images/hero.png#lightbox)
 
 > [!NOTE]
-> Visual Basic ile program için Windows Visual Studio kullanmanız gerekir.
+> Visual Basic ile programa Windows üzerinde Visual Studio kullanmanız gerekir.
 
-## <a name="xamarinforms-with-visual-basic-walkthrough"></a>Visual Basic kılavuza Xamarin.Forms
+## <a name="xamarinforms-with-visual-basic-walkthrough"></a>Xamarin.Forms ile Visual Basic Kılavuzu
 
 Visual Basic kullanan basit bir Xamarin.Forms projesi oluşturmak için aşağıdaki adımları izleyin:
 
-1. Yeni bir *Xamarin.Forms C#* taşınabilir sınıf kitaplıkları (PCL) kullanan çözümü.
-Git **Dosya > Yeni proje** ve **yeni proje** penceresi gidin **yüklü > şablonları > Visual C# > Çapraz Platform** ardından  **Çapraz platform uygulama (Xamarin.Forms veya yerel) > Xamarin.Forms**.
+1. Yeni bir *Xamarin.Forms C#* taşınabilir sınıf kitaplığı (PCL) kullanan bir çözüm.
+Git **Dosya > Yeni proje** ve **yeni proje** penceresi gidin **yüklü > şablonları > Visual C# > Çoklu Platform** ardından  **Çapraz platform uygulaması (Xamarin.Forms veya yerel) > Xamarin.Forms**.
 
-2. Çözüm üzerinde sağ tıklatın ve **Ekle > Yeni proje**.
+2. Çözüme sağ tıklayın ve **Ekle > Yeni proje**.
 
 3. Seçin **Visual Basic > sınıf kitaplığı (taşınabilir)** proje türü:
 
-   [![](xamarin-forms-images/add-vb-2-sml.png "Yeni taşınabilir sınıf kitaplığı proje ekleyin")](xamarin-forms-images/add-vb-2.png#lightbox)
+   [![](xamarin-forms-images/add-vb-2-sml.png "Yeni bir taşınabilir sınıf kitaplığı projesi ekleme")](xamarin-forms-images/add-vb-2.png#lightbox)
 
-4. Doğru PCL profili yapılandırmak için gösterildiği gibi platformları seçin (Xamarin.iOS ve Xamarin.Android eklediğinizden emin olun):
+4. Doğru PCL profilinin yapılandırmak için gösterildiği gibi platformları seçin (Xamarin.iOS ve Xamarin.Android eklediğinizden emin olun):
 
    ![](xamarin-forms-images/add-vb-3-sml.png "Desteklemek için platformları seçin")
 
-5. Visual Basic projeye sağ tıklayın ve seçin **özellikleri**, ardından değiştirme **varsayılan ad alanı** eşleşen varolan C# projeleri:
+5. Visual Basic proje üzerinde sağ tıklatın ve seçin **özellikleri**, ardından değiştirme **varsayılan ad alanı** eşleşen mevcut C# projeleri:
 
-   ![](xamarin-forms-images/add-vb-4s-sml.png "Visual Basic kök ad alanı Xamarin.Forms uygulaması eşleştiğinden emin olun")
+   ![](xamarin-forms-images/add-vb-4s-sml.png "Visual Basic kök ad eşleşen Xamarin.Forms uygulama emin olun.")
 
-6. Yeni Visual Basic projeye sağ tıklayın ve seçin **Nuget paketlerini Yönet**, ardından yükleyin **Xamarin.Forms** ve Paket Yöneticisi penceresini kapatın.
+6. Yeni Visual Basic proje üzerinde sağ tıklatın ve seçin **Nuget paketlerini Yönet**, yüklemeyi **Xamarin.Forms** ve Paket Yöneticisi penceresini kapatın.
 
    [![](xamarin-forms-images/add-vb-4-sml.png "Formlar ve Paket Yöneticisi penceresini kapatın")](xamarin-forms-images/add-vb-4.png#lightbox)
 
-7. Varsayılan yeniden adlandırma **Class1** dosya *ve* sınıfının `App`:
+7. Varsayılan Yeniden Adlandır **Class1** dosya *ve* sınıfının `App`:
 
-   [![](xamarin-forms-images/add-vb-5-sml.png "Varsayılan Class1 dosya ve sınıfı için uygulama yeniden adlandırın")](xamarin-forms-images/add-vb-5.png#lightbox)
+   [![](xamarin-forms-images/add-vb-5-sml.png "Sınıf ve varsayılan Class1 dosyası için uygulamayı yeniden adlandırma")](xamarin-forms-images/add-vb-5.png#lightbox)
 
-8. Aşağıdaki kodu yapıştırın **App.vb** Xamarin.Forms uygulamanızın başlangıç noktası olacak dosya. Dahil etmeyi unutmayın `Imports Xamarin.Forms` ve ekleme `Inherits Application` sınıfı için:
+8. Aşağıdaki kodu yapıştırın **App.vb** dosyasını Xamarin.Forms uygulamanızın başlangıç noktası olur. Dahil etmeyi unutmayın `Imports Xamarin.Forms` ve ekleme `Inherits Application` sınıf:
 
     ```vb 
     Imports Xamarin.Forms
@@ -78,12 +78,12 @@ Git **Dosya > Yeni proje** ve **yeni proje** penceresi gidin **yüklü > şablon
     End Class
     ```
 
-9. Şimdi biz iOS ve Android projeleri yeni Visual Basic projesinde noktası gerekir.
-Sağ **başvuruları** düğümünü iOS ve Android projeleri açmak için **başvuru Yöneticisi**. Kaldırma onay onay VB taşınabilir kitaplığı ve C# taşınabilir kitaplığı (yok unutursanız, hem iOS hem de Android projeleri için bunu).
+9. Artık iOS ve Android projeleri için yeni bir Visual Basic projesi işaret edecek şekilde ihtiyacımız var.
+Sağ **başvuruları** iOS ve Android projeleri açmak için düğümü **başvuru Yöneticisi**. Kaldırma değer çizgisi değer çizgisi VB taşınabilir kitaplık ve C# taşınabilir kitaplığı (yoksa unutursanız, iOS ve Android projeleri için bunu).
 
    [![](xamarin-forms-images/add-vb-8-sml.png "Eski proje başvurusu kaldırmak için Visual Basic Başvurusu Ekle")](xamarin-forms-images/add-vb-8.png#lightbox)
 
-10. C# taşınabilir projeyi silin. Yeni Ekle **.vb** oluşturmak için dosyaları out Xamarin.Forms uygulaması. Yeni bir şablon `ContentPage`s Visual Basic'te aşağıda gösterilmektedir:
+10. C# taşınabilir proje silin. Yeni Ekle **.vb** dosyalarını derlemek için Xamarin.Forms uygulamanızı kullanıma al. Yeni bir şablon `ContentPage`Visual Basic'te s aşağıda gösterilmektedir:
 
     ```vb
     Imports Xamarin.Forms
@@ -106,19 +106,19 @@ Sağ **başvuruları** düğümünü iOS ve Android projeleri açmak için **ba�
     End Class
     ```
 
-## <a name="limitations-of-visual-basic-in-xamarinforms"></a>Xamarin.Forms'de Visual Basic sınırlamaları
+## <a name="limitations-of-visual-basic-in-xamarinforms"></a>Xamarin.Forms içinde Visual Basic sınırlamaları
 
-Üzerinde belirtildiği gibi [taşınabilir Visual Basic.NET sayfa](~/cross-platform/platform/visual-basic/index.md), Xamarin Visual Basic dil desteği yok. Başka bir deyişle, Visual Basic burada kullanabileceğiniz bazı sınırlamalar vardır:
+Belirtilen şekilde [taşınabilir bir Visual Basic.NET sayfa](~/cross-platform/platform/visual-basic/index.md), Xamarin, Visual Basic dili desteklemez. Başka bir deyişle, Visual Basic kullanabileceğiniz bazı sınırlamalar vardır:
 
- - Visual Basic'te özel Oluşturucu yazılamıyorsa, bunlar C# ' ta yerel platform projelerinde yazılmış olmalıdır.
+ - Özel oluşturucular Visual Basic'te yazılamaz, bunlar C# dilinde yerel platform projeleri için yazılmış olmalıdır.
 
- - Bağımlılık hizmet uygulamalarını Visual Basic'te yazılamıyorsa, bunlar C# ' ta yerel platform projelerinde yazılmış olmalıdır.
+ - Bağımlılık hizmet uygulamaları, Visual Basic'te yazılamaz, bunlar C# dilinde yerel platform projeleri için yazılmış olmalıdır.
 
- - Visual Basic projesinde XAML sayfaları eklenemez - arka plan kodu Oluşturucu yalnızca C# oluşturabilirsiniz. XAML ayrı, başvurulan, C# taşınabilir sınıf kitaplığa ve Visual Basic modeller aracılığıyla XAML dosyaları doldurmak için veri bağlamasını kullanmak da mümkündür (Bunun bir örneği yer aldığı [örnek](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB/XamlPages)).
+ - Visual Basic projesinde XAML sayfaları dahil edilemez - arka plan kod Oluşturucu yalnızca C# oluşturabilirsiniz. XAML ayrı, başvurulan, C# taşınabilir sınıf kitaplığa ve Visual Basic modelleri aracılığıyla XAML dosyaları doldurmak için veri bağlamasını kullanmak da mümkündür (buna örnek olarak yer aldığı [örnek](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB/XamlPages)).
 
- - Xamarin Visual Basic.NET dil desteklemez.
+ - Xamarin, Visual Basic.NET dil desteklemez.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [XamarinFormsVB (örnek)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)
-- [.NET Framework (Microsoft) ile platformlar arası geliştirme](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)
+- [.NET Framework ile platformlar arası geliştirme](https://docs.microsoft.com/dotnet/standard/cross-platform/)

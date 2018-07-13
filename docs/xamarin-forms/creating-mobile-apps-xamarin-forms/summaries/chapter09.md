@@ -1,48 +1,48 @@
 ---
 title: Bölüm 9 özeti. Platforma özgü API çağrıları
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 9 özeti. Platforma özgü API çağrıları'
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: Bölüm 9 özeti. Platforma özgü API çağrıları'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 719f075ada576f87d4533697209deedcbb7003c4
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 8a035da3dec468df291a19849ca89964c6707589
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239935"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994763"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>Bölüm 9 özeti. Platforma özgü API çağrıları
 
-Bazen, platforma göre değişir bazı kodlar çalıştırmak gereklidir. Bu bölümde teknikleri inceler.
+Bazen, platforma göre değişen bazı kodlar çalıştırmak gereklidir. Bu bölümde teknikleri inceler.
 
-## <a name="preprocessing-in-the-shared-asset-project"></a>Paylaşılan varlık projesinde ön işleme
+## <a name="preprocessing-in-the-shared-asset-project"></a>Paylaşılan varlık projede ön işleme
 
-Xamarin.Forms paylaşılan varlık proje C# önişlemci yönergeleri kullanarak her platform için farklı bir kod yürütebilir `#if`, `#elif`, ve `endif`. Bu, gösterilmiştir [ **PlatInfoSap1**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap1):
+Xamarin.Forms paylaşılan bir varlık projesine C# önişlemci yönergeleri kullanarak her platform için farklı bir kod yürütebilir `#if`, `#elif`, ve `endif`. Bu gösterilmiştir [ **PlatInfoSap1**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap1):
 
-[![Üçlü ekran değişkenin biçimlendirilmiş paragraf](images/ch09fg01-small.png "cihaz modeli ve işletim sistemi")](images/ch09fg01-large.png#lightbox "cihaz modeli ve işletim sistemi")
+[![Üç ekran değişkeninin biçimlendirilmiş paragraf](images/ch09fg01-small.png "cihaz modeli ve işletim sistemi")](images/ch09fg01-large.png#lightbox "cihaz modeli ve işletim sistemi")
 
 Ancak, sonuç kodu çirkin ve okunması zor olabilir.
 
-## <a name="parallel-classes-in-the-shared-asset-project"></a>Paylaşılan varlık projesinde paralel sınıfları
+## <a name="parallel-classes-in-the-shared-asset-project"></a>Paylaşılan varlık projesine paralel sınıfları
 
-SAP platforma özgü kod yürütmek için daha fazla yapılandırılmış bir yaklaşım örneklerde gösterildiği [ **PlatInfoSap2** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap2) örnek. Platformu projelerin her biri aynı adlı bir sınıf ve yöntemleri içerir, ancak, belirli bir platform için uygulanır. SAP sonra sadece sınıfı başlatır ve yöntemini çağırır.
+SAP'de, platforma özgü kod yürüten daha yapılandırılmış bir yaklaşım gösterilmiştir [ **PlatInfoSap2** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap2) örnek. Platformu projelerin her biri aynı adlı bir sınıf ve yöntemler içeriyor, ancak bu belirli bir platform için uygulanır. SAP sonra yalnızca sınıfın örneğini oluşturur ve yöntemini çağırır.
 
 ## <a name="dependencyservice-and-the-portable-class-library"></a>DependencyService ve taşınabilir sınıf kitaplığı
 
-Bir kitaplık normalde uygulama projeleri sınıflarda erişemiyor. Bu kısıtlama gösterilen teknik önlemek görünüyor **PlatInfoSap2** bir PCL kullanılmasını. Ancak, Xamarin.Forms adlı bir sınıf içeriyor [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) PCL uygulama projesi ortak sınıflarda erişmek için .NET yansıma kullanan.
+Bir kitaplık, normalde uygulama projelerindeki sınıfların erişemez. Bu kısıtlama gösterilen teknik önlemek için gibi görünüyor **PlatInfoSap2** bir PCL'de kullanılmasını. Ancak, Xamarin.Forms adlı bir sınıf içeren [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) uygulama projesinde ortak sınıfların PCL erişim için .NET, yansıtma kullanan.
 
-PCL tanımlamalısınız bir `interface` üyeleriyle platformlarının her birinde kullanmanız gerekir. Ardından, her biri platformları bu arabirim uygulaması içerir. Arabirimini uygulayan sınıf ile tanımlanmalıdır bir [DependencyAttribute](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyAttribute/) derleme düzeyi.
+PCL tanımlamalıdır bir `interface` platformlarının her birinde kullanmak için ihtiyaç duyduğu üyelere sahip. Ardından, her platform bu arabirimi uygulaması içerir. Arabirimini uygulayan sınıf ile tanımlanmalıdır bir [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute) derleme düzeyinde.
 
-PCL sonra genel kullanır [ `Get` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DependencyService.Get{T}/p/Xamarin.Forms.DependencyFetchTarget/) yöntemi `DependencyService` arabirimini uygulayan platform sınıfının bir örneği elde edilir.
+PCL sonra genel kullanır [ `Get` ](xref:Xamarin.Forms.DependencyService.Get*) yöntemi `DependencyService` arabirimi uygulayan platform sınıfının bir örneği elde edilir.
 
-Bu, gösterilmiştir [ **DisplayPlatformInfo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/DisplayPlatformInfo) örnek.
+Bu gösterilmiştir [ **DisplayPlatformInfo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/DisplayPlatformInfo) örnek.
 
-## <a name="platform-specific-sound-generation"></a>Platforma özgü ses oluşturma
+## <a name="platform-specific-sound-generation"></a>Platforma özel ses oluşturma
 
-[ **MonkeyTapWithSound** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound) örnek ekler için bip **MonkeyTap** her platform ses nesil tesislerde erişerek program.
+[ **MonkeyTapWithSound** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound) örnek ekler bip sesi için **MonkeyTap** ses oluşturma özelliklerini her platformdaki erişerek program.
 
 
 
@@ -50,4 +50,4 @@ Bu, gösterilmiştir [ **DisplayPlatformInfo** ](https://github.com/xamarin/xama
 
 - [Bölüm 9 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch09-Apr2016.pdf)
 - [Bölüm 9 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09)
-- [Bağımlılık hizmeti](~/xamarin-forms/app-fundamentals/dependency-service/index.md)
+- [Bağımlı hizmet](~/xamarin-forms/app-fundamentals/dependency-service/index.md)

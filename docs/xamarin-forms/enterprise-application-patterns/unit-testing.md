@@ -1,41 +1,41 @@
 ---
-title: Birim testi Kurumsal uygulamaları
-description: Bu bölümde, birim testi eShopOnContainers mobil uygulamaya nasıl gerçekleştirileceğini açıklar.
+title: Birim testi kurumsal uygulamalar
+description: Bu bölümde, birim testi hizmetine mobil uygulamada nasıl gerçekleştirileceğini açıklar.
 ms.prod: xamarin
 ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 06cd89e0b0871eac723e8580340173f77821e4ed
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 02aeedd5498c47950e2fbc0d218de05bc0bb3204
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242537"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998689"
 ---
-# <a name="unit-testing-enterprise-apps"></a>Birim testi Kurumsal uygulamaları
+# <a name="unit-testing-enterprise-apps"></a>Birim testi kurumsal uygulamalar
 
-Mobil uygulamaları, masaüstü ve web tabanlı uygulamalar hakkında endişelenmeniz gerekmez benzersiz sorunları vardır. Mobil kullanıcılar, ağ bağlantısı tarafından hizmetlerin kullanılabilirliğini ve diğer etkenlere bağlı bir dizi tarafından kullanırlar aygıtları göre farklılık gösterir. Bu nedenle, kendi kalitesini, güvenilirliğini ve performansını artırmak için gerçek dünyada bunlar kullanılacak gibi mobil uygulamaları test. Birim testi, tümleştirme testine ve kullanıcı arabirimi, birim sınama en yaygın form olan testi ile test de dahil olmak üzere, bir uygulama üzerinde gerçekleştirilmesi gereken sınama birçok türü vardır.
+Mobil uygulamaları, masaüstü ve web tabanlı uygulamalar hakkında endişelenmek zorunda olmadığınız benzersiz sorunları vardır. Mobil kullanıcılar, ağ bağlantısı tarafından hizmetlerin kullanılabilirliğini ve bir dizi etkene kullandıkları cihazları göre farklılık gösterir. Gerçek dünyada, kendi kalitesini, güvenilirliğini ve performansını geliştirmek için kullanılacağından, bu nedenle, mobil uygulamalar edilmelidir. Bir uygulamada kullanıcı arabirimi test, test en yaygın formu olan test birimi ile birim testi ve tümleştirme testine dahil olmak üzere gerçekleştirilmesi gereken test birçok türü vardır.
 
-Birim testi uygulama, genellikle bir yöntem küçük birimi alır, kodun geri kalanı yalıtır ve beklendiği gibi davranır olduğunu doğrular. Böylece uygulama boyunca hataları yay yok işlevlerin her birimi beklendiği gibi performans denetlemek için kendi hedeftir. Nerede oluştuğunu bir hata algılama daha verimli bu hatayı dolaylı bir noktada ikincil hata etkisini gözlemleyebilirsiniz.
+Bir birim testini bir yöntem genellikle uygulamanın küçük bir birim alır, kodun geri kalanını yalıtır ve beklendiği gibi çalıştığını doğrular. Böylece uygulama boyunca hataları yay yoksa her bir işlevsellik birimi beklendiği gibi performans denetlemek için hedefi sağlamaktır. Bir hatanın nerede oluştuğunu algılama daha verimli gözleme dolaylı olarak ikincil bir hata noktası konumunda bir hatanın etkisini.
 
-Yazılım geliştirme iş akışı'nın ayrılmaz bir parçası olduğunda birim testi kod kalitesini üzerinde en yüksek etkisi yoktur. Bir yöntem yazılmış olarak birim testleri kodu tarafından yapılan açık veya örtülü varsayımlar yanıt olarak standart, sınır ve giriş verileri hatalı örneklerini yöntemi ve bu onay davranışını doğrulayın yazılması gerekir. Alternatif olarak, geliştirme güdümlü test ile birim testleri kodundan önce yazılır. Bu senaryoda, birim testleri tasarım belgeleri ve işlevsel belirtimler davranır.
+Yazılım geliştirme iş akışını bir parçası olduğunda birim testi kod kalitesini en büyük etkisi. Bir yöntem yazılan hemen sonra birim testlerini kod tarafından yapılan açık veya örtülü varsayımlar yöntemi yanıt olarak standart, sınır ve giriş verisi hatalı durumda ve bu onay davranışını doğrulayın yazılmalıdır. Alternatif olarak, temelli geliştirme testi, birim testlerini kod önce yazılır. Bu senaryoda, birim testleri tasarım belgeleri ve işlevsel özellikleri davranır.
 
 > [!NOTE]
-> Birim testleri regresyon – çalışmak için kullanılan ancak hatalı bir güncelleştirmeyle dağıtılmış işlevselliği karşı çok etkili olur.
+> Birim testleri, regresyon – çalışmak için kullanılan, ancak hatalı bir güncelleştirmeyle dağıtılmış işlevselliği karşı çok etkili olur.
 
-Birim testleri genellikle Yerleştir act assert deseni kullanın:
+Birim testleri genellikle Yerleştir Yasası onaylama deseni kullanır:
 
--   *Düzenleme* birim testi yöntemine bölümünü nesneleri başlatır ve test altındaki yöntemine geçirilen verileri değerini ayarlar.
--   *Hareket* bölüm gerekli bağımsız değişkenleriyle test altındaki yöntemi çağırır.
--   *Assert* bölüm doğrular eylem yönteminin test altındaki beklendiği gibi davranır.
+-   *Düzenleme* birim sınaması metodunda bölümünü nesneleri başlatır ve yöntemi testten geçirilen verileri değerini ayarlar.
+-   *Hareket* bölümünde gerekli bağımsız değişkenleriyle test altındaki yöntemi çağırır.
+-   *Assert* bölümü, test altındaki yöntem eylem beklendiği gibi çalıştığını doğrular.
 
-Bu desen birim testleri okunabilir ve tutarlı olmasını sağlar.
+Bu örneği izlemeniz, birim testleri okunabilir ve tutarlı olmasını sağlar.
 
 ## <a name="dependency-injection-and-unit-testing"></a>Bağımlılık ekleme ve birim testi
 
-Gevşek bağlanmış bir mimari benimsenmesi için sözleri birim testi kolaylaştırır biridir. Autofac ile kayıtlı türlerinden biridir `OrderService` sınıfı. Aşağıdaki kod örneği, bu sınıfın bir özetini gösterir:
+Motivasyonlardan zamanı gevşek bağlanmış bir mimarisini benimsemenin için birim testi kolaylaştırır biridir. Autofac ile kayıtlı türlerinden biridir `OrderService` sınıfı. Aşağıdaki kod örneği, bu sınıfın bir özetini gösterir:
 
 ```csharp
 public class OrderDetailViewModel : ViewModelBase  
@@ -50,34 +50,34 @@ public class OrderDetailViewModel : ViewModelBase
 }
 ```
 
-`OrderDetailViewModel` Sınıfı bir bağımlılığa sahip `IOrderService` yazın, ne zaman başlatır kapsayıcı çözümlenen bir `OrderDetailViewModel` nesnesi. Ancak, oluşturmak yerine bir `OrderService` birim testi nesnesine `OrderDetailViewModel` sınıfı, bunun yerine, yerine `OrderService` mock testler amacıyla nesnesiyle. Şekil 10-1, bu ilişkiyi gösterir.
+`OrderDetailViewModel` Sınıfı bağımlıdır `IOrderService` yazın zaman örneğini oluşturduğunda kapsayıcı gideren bir `OrderDetailViewModel` nesne. Ancak oluşturmak yerine bir `OrderService` birim testi nesnesine `OrderDetailViewModel` sınıfı, bunun yerine, değiştirin `OrderService` testler amacıyla sahte nesne. Şekil 10-1, bu ilişkiyi göstermektedir.
 
-![](unit-testing-images/unittesting.png "IOrderService arabirimini uygulayan sınıflar")
+![](unit-testing-images/unittesting.png "IOrderService arabirimi uygulayan sınıflar")
 
-**Şekil 10-1:** IOrderService arabirimini uygulayan sınıflar
+**Şekil 10-1:** IOrderService arabirimi uygulayan sınıflar
 
-Bu yaklaşım sağlar `OrderService` uygulamasına geçirilecek nesne `OrderDetailViewModel` sınıfının çalışma zamanında ve Test Edilebilirlik, ilgi veren `OrderMockService` uygulamasına geçirilecek sınıfı `OrderDetailViewModel` test zaman sınıfı. Bu yaklaşımın ana avantajı, web hizmetleri veya veritabanları gibi yönetilmeleri kaynaklara gerek kalmadan yürütülmesi için birim testleri etkinleştirir ' dir.
+Bu yaklaşım sağlar `OrderService` uygulamasına geçirilecek nesne `OrderDetailViewModel` sınıfı zamanında ve Test Edilebilirlik, ilgi veren `OrderMockService` uygulamasına geçirilecek sınıfı `OrderDetailViewModel` test zaman sınıfı. Ana avantajı, bu yaklaşım zahmetli kaynakları web hizmetleri veya veritabanları gibi gerek kalmadan yürütülecek birim testleri sunmasıdır.
 
 ## <a name="testing-mvvm-applications"></a>MVVM uygulamalarını test etme
 
-Modelleri ve MVVM uygulamalardan modelleri görüntüle sınama diğer sınıflar sınama için aynıdır ve aynı araçları ve teknikleri – sınama ve mocking, birim gibi kullanılabilir. Ancak, bazı modeline tipik desenleri ve belirli birim sınama teknikleri yararlanabilir görünüm model sınıfları, vardır.
+Test modelleri ve görünüm modelleri MVVM uygulamalardan herhangi diğer sınıfları test aynıdır ve aynı araçları ve teknikleri – test etme ve sahte işlem, birim gibi kullanılabilir. Ancak, bazı model için tipik olan desenleri ve belirli bir birim test teknikleri yararlanabilir görünüm modeli sınıfları, vardır.
 
 > [!TIP]
-> Her birim testi ile bir şeyi sınayın. Bir birimi birden fazla en boy biriminin davranış alıştırma test yapmak için çekinmeyin. Bunun yapılması, okuma ve güncelleştirme zor olan testleri için yol gösterir. Bir hata yorumlanırken Karışıklığı önlemek için de açabilir.
+> Bir şey her bir birim testi ile test edin. Bir birim, birden fazla boyut biriminin davranış alıştırma testi yapmak için çekinmeyin. Bunun yapılması, okumak ve güncellemek zor olan testleri yol açar. Bir hata yorumlarken karışıklığa da açabilir.
 
-EShopOnContainers mobil uygulamanın kullandığı [xUnit](https://xunit.github.io/) birim testleri iki farklı türde destekleyen birim testi, gerçekleştirmek için:
+Hizmetine mobil uygulama kullandığı [xUnit](https://xunit.github.io/) birim testleri iki farklı türde destekleyen birim testi, gerçekleştirmek için:
 
--   Bulguları olan her zaman true, testleri değişmez koşullar test edin.
--   Kuramlarý yalnızca belirli bir veri kümesi için doğru olan testleri ' dir.
+-   Her zaman true, testleri şunlardır sabit koşulların test edin.
+-   Teoriler yalnızca belirli bir veri kümesi için doğru olan testlerdir.
 
-Olgu testleri eShopOnContainers mobil uygulamasına dahil birim testleri olduğunu ve bu nedenle her birim test yöntemi donatılmış ile `[Fact]` özniteliği.
+Hizmetine mobil uygulamasına dahil birim testleri olgu testlerdir işareti ve bu nedenle her birim sınaması metodunda düzenlenmiş ile `[Fact]` özniteliği.
 
 > [!NOTE]
-> xUnit testleri test Çalıştırıcısı tarafından yürütülür. Sınama Çalıştırıcısı yürütmek için gerekli platform eShopOnContainers.TestRunner proje çalıştırın.
+> xUnit testleri bir test Çalıştırıcısı tarafından yürütülür. Test Çalıştırıcısı yürütmek için gerekli bir platform için eShopOnContainers.TestRunner proje çalıştırın.
 
 ### <a name="testing-asynchronous-functionality"></a>Zaman uyumsuz işlevselliğini test etme
 
-MVVM deseni uygularken, görünüm modelleri genellikle hizmetler, işlemler çoğunlukla zaman uyumsuz olarak çağırır. Bu işlem genellikle çağırır kod için testleri mocks değişiklik gerçek hizmetler için kullanın. Aşağıdaki kod örneğinde, sahte bir hizmet bir görünüm modeline geçirerek zaman uyumsuz işlevselliğini test etme gösterilmektedir:
+MVVM düzenini hayata geçirirken, görünüm modelleri genellikle işlem Hizmetleri, genellikle zaman uyumsuz olarak çağırır. Bu işlem genellikle çağıran kod için testleri mocks değişiklik gerçek hizmetler için kullanın. Aşağıdaki kod örneğinde, sahte bir hizmet bir görünüm modeline geçirerek zaman uyumsuz işlevler test gösterilmektedir:
 
 ```csharp
 [Fact]  
@@ -93,15 +93,15 @@ public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()
 }
 ```
 
-Bu birim testi denetleyen `Order` özelliği `OrderDetailViewModel` örneği, sonra bir değer olacaktır `InitializeAsync` yöntemi çağrılır. `InitializeAsync` Yöntemi için Görünüm modelinin karşılık gelen görünüm gittiğinizde olduğunda çağrılır. Gezinme hakkında daha fazla bilgi için bkz: [Gezinti](~/xamarin-forms/enterprise-application-patterns/navigation.md).
+Bu birim testi denetleyen `Order` özelliği `OrderDetailViewModel` örneğine sonraki bir değere sahip `InitializeAsync` yöntemi çağrılır. `InitializeAsync` Yöntemi için karşılık gelen görünüm görünüm modelinin görüntülendiği zaman çağrılır. Gezintisi hakkında daha fazla bilgi için bkz. [Gezinti](~/xamarin-forms/enterprise-application-patterns/navigation.md).
 
-Zaman `OrderDetailViewModel` bekliyor örneği oluşturulduğunda, bir `OrderService` örneği bağımsız değişken olarak belirtilmelidir. Ancak, `OrderService` bir web hizmetinden verileri alır. Bu nedenle, bir `OrderMockService` sahte bir sürümüdür örneği, `OrderService` sınıfı, bağımsız değişkeni olarak belirtilen `OrderDetailViewModel` Oluşturucusu. Sonra Görünüm modelinin `InitializeAsync` yöntemi çağrıldığında, hangi çağırır `IOrderService` işlemleri, sahte veriler alınan yerine bir web hizmeti ile iletişime.
+Zaman `OrderDetailViewModel` bekliyor örneği oluşturulduğunda bir `OrderService` örneği bağımsız değişken olarak belirtilmelidir. Ancak, `OrderService` bir web hizmetinden veri alır. Bu nedenle, bir `OrderMockService` sahte bir sürümüne olan örneği, `OrderService` sınıfı, bağımsız değişkeni olarak belirtilen `OrderDetailViewModel` Oluşturucusu. Sonra Görünüm modelinin `InitializeAsync` yöntemi çağrılır, hangi çağırır `IOrderService` işlemleri sahte veri alınan yerine bir web hizmeti ile iletişim kuran.
 
 ### <a name="testing-inotifypropertychanged-implementations"></a>INotifyPropertyChanged uygulamaları test etme
 
-Uygulama `INotifyPropertyChanged` arabirimi sağlayan görünümünden kaynaklanan değişikliklere tepki görünümleri modelleri ve modeller. Bu değişiklikler denetimlerinde gösterilen veriler bunlarla sınırlı değildir – bunlar da başlatılması animasyonları veya denetimleri devre dışı bırakılmasına neden görünüm model durumlarının gibi görünümü denetlemek için kullanılır.
+Uygulama `INotifyPropertyChanged` görünümleri görünümünden kaynaklanan değişikliklere tepki vermek arabirim sağlar modelleri ve modeller. Bu değişiklikler denetimlerinde gösterilen verileri sınırlı değildir: Bunlar animasyonları başlatılması veya denetimleri devre dışı bırakılmasına neden görünüm model durumlarının gibi görünüm denetimi için de kullanılır.
 
-Doğrudan birim testi tarafından güncelleştirilebilir özellikleri bir olay işleyicisi ekleyerek test edilmiş `PropertyChanged` olay ve olay özelliği için yeni bir değer ayarladıktan sonra tetiklenir olup olmadığı denetleniyor. Aşağıdaki kod örneği, bu tür bir test gösterir:
+Birim testi tarafından doğrudan güncelleştirilebilir özellikleri, bir olay işleyici ekleyerek edilebilirler `PropertyChanged` olay ve olay özelliği için yeni bir değere ayarladıktan sonra oluşturup oluşturmadığını denetleniyor. Aşağıdaki kod örneği, bu tür bir test gösterilir:
 
 ```csharp
 [Fact]  
@@ -123,11 +123,11 @@ public async Task SettingOrderPropertyShouldRaisePropertyChanged()
 }
 ```
 
-Bu birim testi çağırır `InitializeAsync` yöntemi `OrderViewModel` sınıfı, hangi nedenler kendi `Order` güncelleştirilmesi özelliği. Birim testi geçer, aşağıdaki koşullarda `PropertyChanged` olayı için `Order` özelliği.
+Bu birim testi çağırır `InitializeAsync` yöntemi `OrderViewModel` sınıfı, neden olur, `Order` güncelleştirilecek özelliği. Birim testi geçer, aşağıdaki koşullarda `PropertyChanged` olayı için oluşturulur `Order` özelliği.
 
 ### <a name="testing-message-based-communication"></a>İleti tabanlı iletişim test etme
 
-Görünüm modeller kullanan [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) arasında sınıfları birbirine sıkı şekilde bağlı olması birim test aşağıdaki kod örneğinde gösterildiği şekilde abone olarak test kodu tarafından gönderilen iletiyi iletişim kurmak için sınıfı:
+Görünüm modelleri kullanan [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) zamanı gevşek bağlanmış sınıflar arasında birim test edilebilirler aşağıdaki kod örneğinde gösterildiği gibi abone olarak test edilen kod tarafından gönderilen ileti için iletişim kurmak için sınıfı:
 
 ```csharp
 [Fact]  
@@ -148,11 +148,11 @@ public void AddCatalogItemCommandSendsAddProductMessageTest()
 }
 ```
 
-Bu birim testi denetleyen `CatalogViewModel` yayımlar `AddProduct` yanıt iletisinde kendi `AddCatalogItemCommand` yürütülmekte. Çünkü [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) sınıfı, çok noktaya yayın ileti abonelikleri destekler, birim testi için abone olabilirsiniz `AddProduct` iletisi ve bir geri çağırma temsilcisini alırken yanıt yürütün. Lambda ifadesi belirtilen bu geri çağırma temsilcisini ayarlar bir `boolean` tarafından kullanılan alan `Assert` deyimi test davranışını doğrulayın.
+Bu birim testi denetleyen `CatalogViewModel` yayımlar `AddProduct` yanıt iletisinde kendi `AddCatalogItemCommand` yürütülmekte. Çünkü [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) sınıfı, çok noktaya yayın ileti abonelikleri destekler, birim testi için abone olabilirsiniz `AddProduct` iletisi ve alırken yanıt geri çağırma temsilcisini yürütün. Bir lambda ifadesi belirtilen bu geri çağırma temsilcisini ayarlar bir `boolean` tarafından kullanılan alanı `Assert` test davranışını doğrulamak için deyimi.
 
-### <a name="testing-exception-handling"></a>Test özel durum işleme
+### <a name="testing-exception-handling"></a>Test bir özel durum işleme
 
-Birim testleri aşağıdaki kod örneğinde gösterildiği gibi belirli geçersiz eylem veya giriş için özel durumlar bu onay de yazılabilir:
+Birim testleri aşağıdaki kod örneğinde gösterildiği gibi belirli özel durumları için geçersiz eylem veya girişleri, oluşturulan denetlemenin da yazılabilir:
 
 ```csharp
 [Fact]  
@@ -168,15 +168,15 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 }
 ```
 
-Bu birim testi için bir özel durum atar [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) denetim adlı bir olay yok `OnItemTapped`. `Assert.Throws<T>` Yöntemdir genel yöntem nerede `T` beklenen özel durum türü değil. Geçirilen bağımsız değişken `Assert.Throws<T>` özel durum atar bir lambda ifadesi bir yöntemdir. Lambda ifadesi oluşturur koşuluyla, bu nedenle, birim testi geçecek bir `ArgumentException`.
+Bu birim test bir özel durum oluşturmaz, çünkü [ `ListView` ](xref:Xamarin.Forms.ListView) denetim adlı bir olay yok `OnItemTapped`. `Assert.Throws<T>` Yöntemdir genel yöntem burada `T` beklenen özel durum türüdür. Geçirilen bağımsız değişken `Assert.Throws<T>` yöntemi olan bir lambda ifadesi bir özel durum oluşturur. Bu nedenle, lambda ifadesi atar koşuluyla birim testi geçer bir `ArgumentException`.
 
->💡 **İpucu**: özel durum iletisi dizeleri inceleyin birim testleri yazma kaçının. Özel durum iletisi dizeleri zaman içinde değişebilir ve bu nedenle, kendi varlığına güvenir birim testleri hassas kabul edilir.
+>💡 **İpucu**: özel durum iletisi dizeleri inceleyin birim testleri yazma kaçının. Özel durum iletisi dizeleri zaman içinde değişebilir ve bu nedenle, varlıklarını kullanan birim testleri kırılır kabul edilir.
 
-### <a name="testing-validation"></a>Doğrulama testi
+### <a name="testing-validation"></a>Doğrulama sınaması
 
-Doğrulama uygulamadan test gerçekleştirilmesi gereken iki yön vardır: tüm doğrulama kuralları doğru şekilde uygulanan sınama ve sınama `ValidatableObject<T>` sınıfı, beklendiği gibi gerçekleştirir.
+Doğrulama uygulaması test gereken iki unsur vardır: tüm doğrulama kurallarının doğru olarak uygulandığından test ve test `ValidatableObject<T>` beklendiği gibi sınıf gerçekleştirir.
 
-Genellikle, giriş, çıkış bağlıdır kendi içinde yer alan bir işlem olduğundan doğrulama mantığını sınamak, genellikle basit bir işlemdir. Çağırma sonuçları testleri olmalıdır `Validate` en az bir ilişkili doğrulama kuralı, aşağıdaki kod örneğinde gösterildiği şekilde sahip her bir özellik yöntemi:
+Doğrulama mantığını genellikle burada çıkış girişine bağlı kendi içinde bir işlem olduğu için test etmek genellikle basit bir işlemdir. Çağırma sonuçları üzerinde testleri olmalıdır `Validate` yöntemini aşağıdaki kod örneğinde gösterildiği gibi en az bir ilişkili doğrulama kuralı, bulunan her bir özellik:
 
 ```csharp
 [Fact]  
@@ -192,9 +192,9 @@ public void CheckValidationPassesWhenBothPropertiesHaveDataTest()
 }
 ```
 
-Bu birim testi doğrulama ne zaman başarılı denetler iki `ValidatableObject<T>` özelliklerinde `MockViewModel` örneği iki verilere sahip.
+Bu birim testi doğrulama ne zaman başarılı olduğunu denetleyen iki `ValidatableObject<T>` özelliklerinde `MockViewModel` veri örneği her iki sahiptir.
 
-Doğrulama başarılı olduğunu denetleme yanı sıra, doğrulama birim testleri de değerlerini denetlemelisiniz `Value`, `IsValid`, ve `Errors` her özellik `ValidatableObject<T>` sınıfı beklendiği gibi performans doğrulamak için örneği. Aşağıdaki kod örneğinde, bunu yapan birim testi gösterilmektedir:
+Doğrulama başarılı denetlemenin yanı sıra, doğrulama birim testleri de değerini denetlemeniz gerekir `Value`, `IsValid`, ve `Errors` her özellik `ValidatableObject<T>` sınıfı beklendiği gibi performans doğrulamak için örneği. Aşağıdaki kod örneği bunu yapan birim testi gösterir:
 
 ```csharp
 [Fact]  
@@ -215,18 +215,18 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 }
 ```
 
-Doğrulama başarısız olur, bu birim testi denetler `Surname` özelliği `MockViewModel` herhangi bir veri yok ve `Value`, `IsValid`, ve `Errors` her özellik `ValidatableObject<T>` örneği doğru olarak ayarlayın.
+Doğrulama başarısız olur, bu birim testi denetler `Surname` özelliği `MockViewModel` herhangi bir veri yoktur ve `Value`, `IsValid`, ve `Errors` her özellik `ValidatableObject<T>` örneği doğru şekilde ayarlayın.
 
 ## <a name="summary"></a>Özet
 
-Birim testi uygulama, genellikle bir yöntem küçük birimi alır, kodun geri kalanı yalıtır ve beklendiği gibi davranır olduğunu doğrular. Böylece uygulama boyunca hataları yay yok işlevlerin her birimi beklendiği gibi performans denetlemek için kendi hedeftir.
+Bir birim testini bir yöntem genellikle uygulamanın küçük bir birim alır, kodun geri kalanını yalıtır ve beklendiği gibi çalıştığını doğrular. Böylece uygulama boyunca hataları yay yoksa her bir işlevsellik birimi beklendiği gibi performans denetlemek için hedefi sağlamaktır.
 
-Test altındaki bir nesne davranışını bağımlı nesneler bağımlı nesneler davranışını benzetimini sahte nesneler ile değiştirerek yalıtılabilir. Bu web hizmetleri veya veritabanları gibi yönetilmeleri kaynaklara gerek kalmadan yürütülmesi için birim testleri sağlar.
+Bağımlı nesneler bağımlı nesnelerin davranışını benzetmekte sahte nesneler ile değiştirerek test edilen nesnenin davranışını yalıtılabilir. Bu, web hizmetleri ve veritabanları gibi kullanışsız kaynakları gerek kalmadan yürütülecek birim testleri sağlar.
 
-Modelleri ve MVVM uygulamalardan modelleri görüntüle sınama diğer sınıflar sınama için aynıdır ve aynı araçları ve teknikleri kullanılabilir.
+Test modelleri ve görünüm modelleri MVVM uygulamalardan herhangi diğer sınıfları test aynıdır ve aynı araçları ve teknikleri kullanılabilir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [E-kitap (2 Mb PDF) indirin](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (örnek)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [(2 Mb PDF) e-kitabı indir](https://aka.ms/xamarinpatternsebook)
+- [Hizmetine (GitHub) (örnek)](https://github.com/dotnet-architecture/eShopOnContainers)

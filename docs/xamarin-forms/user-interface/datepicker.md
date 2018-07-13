@@ -7,29 +7,29 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 31422f1067473ccb49a681098bd0809c451e7369
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 553957bfa06c7b7a9c5261e426ebee4190de5ebb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935364"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994932"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
 _Kullanıcının bir tarih seçmesine izin veren bir Xamarin.Forms görünümü_
 
-Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) platformun tarih seçici denetimi çağırır ve kullanıcının bir tarih seçmesine olanak sağlar. `DatePicker` sekiz özelliklerini tanımlar:
+Xamarin.Forms [ `DatePicker` ](xref:Xamarin.Forms.DatePicker) platformun tarih seçici denetimi çağırır ve kullanıcının bir tarih seçmesine olanak sağlar. `DatePicker` sekiz özelliklerini tanımlar:
 
-- [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) tür [ `DateTime` ](https://developer.xamarin.com/api/type/System.DateTime/), 1900 yılın ilk günü için varsayılan olarak.
-- [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) tür `DateTime`, hangi varsayılanlara 2100 yılın son günü.
-- [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) tür `DateTime`, değeri varsayılan olarak seçilen tarihten [ `DateTime.Today` ](https://developer.xamarin.com/api/property/System.DateTime.Today/).
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) tür `string`, [standart](/dotnet/standard/base-types/standard-date-and-time-format-strings/) veya [özel](/dotnet/standard/base-types/custom-date-and-time-format-strings/) .NET biçimlendirme dizesi, "D" varsayılan olarak, uzun tarih deseni.
-- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.TextColor/) tür [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/), varsayılan olarak seçili tarihini görüntülemek için kullanılan rengi [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
+- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate) tür [ `DateTime` ](xref:System.DateTime), 1900 yılın ilk günü için varsayılan olarak.
+- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate) tür `DateTime`, hangi varsayılanlara 2100 yılın son günü.
+- [`Date`](xref:Xamarin.Forms.DatePicker.Date) tür `DateTime`, değeri varsayılan olarak seçilen tarihten [ `DateTime.Today` ](xref:System.DateTime.Today).
+- [`Format`](xref:Xamarin.Forms.DatePicker.Format) tür `string`, [standart](/dotnet/standard/base-types/standard-date-and-time-format-strings/) veya [özel](/dotnet/standard/base-types/custom-date-and-time-format-strings/) .NET biçimlendirme dizesi, "D" varsayılan olarak, uzun tarih deseni.
+- [`TextColor`](xref:Xamarin.Forms.DatePicker.TextColor) tür [ `Color` ](xref:Xamarin.Forms.Color), varsayılan olarak seçili tarihini görüntülemek için kullanılan rengi [ `Color.Default` ](xref:Xamarin.Forms.Color.Default).
 - [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) tür [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), bunun varsayılan [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
 - [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) tür `string`, bunun varsayılan `null`.
 - [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) tür `double`, -1.0 için varsayılan olarak.
 
-`DatePicker` Ateşlenir bir [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) kullanıcının bir tarih seçtiğinde olay.
+`DatePicker` Ateşlenir bir [ `DateSelected` ](xref:Xamarin.Forms.DatePicker.DateSelected) kullanıcının bir tarih seçtiğinde olay.
 
 > [!WARNING]
 > Ayarlarken `MinimumDate` ve `MaximumDate`, emin `MinimumDate` her zaman eşit veya küçük `MaximumDate`. Aksi takdirde, `DatePicker` bir özel durum oluşturacak.
@@ -192,4 +192,4 @@ Aşağıdakilerden birini dokunarak `DatePicker` görüntüler platform tarih se
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [DaysBetweenDates örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
-- [DatePicker API](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)
+- [DatePicker API](xref:Xamarin.Forms.DatePicker)

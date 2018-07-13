@@ -1,35 +1,35 @@
 ---
 title: Xamarin.Forms uygulaması sınıfı
-description: Bu makale, uygulama başlangıç sayfasına ayarlamak için özellik içerir, varsayılan uygulamasını sınıf özelliklerini açıklar ve kalıcı bir sözlük deposunda basit değerleri arasında yaşam döngüsü durumu değiştiğinde.
+description: Bu makalede, ilk sayfaya uygulaması için ayarlamak için bir özellik içeren varsayılan App sınıfının özellikleri açıklanmaktadır ve kalıcı bir sözlük basit değerlerden yaşam döngüsü durum değişikliklerini depolayın.
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 15fb866d2cde9409f401d6d021b22b8cb0468795
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6de4380f2ce2d19df4ff912b7c86b75ca9e7821b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240547"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999040"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms uygulaması sınıfı
 
-`Application` Temel sınıf projeleri varsayılan olarak sunulan aşağıdaki özellikleri sunmaktadır `App` bir alt kümesi:
+`Application` Temel sınıf projeleri varsayılan sunulan aşağıdaki özellikleri sunan `App` alt sınıf:
 
-* A `MainPage` uygulama için başlangıç sayfasını Ayarla yerdir özelliği.
-* Kalıcı bir [ `Properties` sözlük](#Properties_Dictionary) yaşam döngüsü durum değişiklikleri basit değerlerini depolamak için.
-* Statik `Current` özelliği geçerli uygulama nesnesi için bir başvuru içeriyor.
+* A `MainPage` nerede uygulama için başlangıç sayfasını ayarlama özelliği.
+* Bir kalıcı [ `Properties` sözlük](#Properties_Dictionary) basit değerlerden yaşam döngüsü durum değişiklikleri depolamak için.
+* Statik `Current` geçerli uygulama nesnesine bir başvuru içeren özelliği.
 
-Ayrıca sunan [yaşam döngüsü yöntemleri](~/xamarin-forms/app-fundamentals/app-lifecycle.md) gibi `OnStart`, `OnSleep`, ve `OnResume` kalıcı gezinti olaylarını yanı sıra.
+Ayrıca kullanıma sunduğu [yaşam döngüsü yöntemleri](~/xamarin-forms/app-fundamentals/app-lifecycle.md) gibi `OnStart`, `OnSleep`, ve `OnResume` kalıcı gezinme olayları yanı sıra.
 
-Seçtiğiniz şablonun bağlı olarak, `App` sınıfı tanımlanması iki yoldan biriyle:
+Seçtiğiniz şablona bağlı, `App` sınıfı iki yoldan biriyle açıklanabilir:
 
 * **C#**, veya
-* **XAML VE C#**
+* **XAML &AMP; C#**
 
-Oluşturmak için bir **uygulama** XAML, varsayılan kullanılarak sınıf **uygulama** XAML ile sınıfı yerini **uygulama** sınıfı ve ilişkili arka plan kod, aşağıdaki kod örneğinde gösterildiği gibi:
+Oluşturmak için bir **uygulama** kullanarak XAML, varsayılan **uygulama** ile bir XAML sınıfı yerine **uygulama** sınıfı ve ilişkili kodunu arka plan, aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Photos.App">
@@ -37,7 +37,7 @@ Oluşturmak için bir **uygulama** XAML, varsayılan kullanılarak sınıf **uyg
 </Application>
 ```
 
-Aşağıdaki kod örneğinde ilişkili arka plan kodu gösterir:
+Aşağıdaki kod örneği, ilişkili arka plan kod gösterir:
 
 ```csharp
 public partial class App : Application
@@ -51,13 +51,13 @@ public partial class App : Application
 }
 ```
 
-Ayar yanı sıra [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) özelliği, arka plan kodu ayrıca çağırmalısınız `InitializeComponent` yöntemi yüklenemedi ve ilişkili XAML ayrıştırılamadı.
+Ayar yanı sıra [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) özelliği, arka plan kod çağırmalıdır ayrıca `InitializeComponent` yöntemi yüklenemedi ve ilişkili XAML ayrıştırılamadı.
 
 ## <a name="mainpage-property"></a>MainPage özelliği
 
-`MainPage` Özellikte `Application` sınıfı uygulama kök sayfasının ayarlar.
+`MainPage` Özelliği `Application` sınıfı, uygulamanın kök sayfasına ayarlar.
 
-Örneğin, mantığı oluşturabilirsiniz, `App` kullanıcının veya oturum açtığı bağlı olarak farklı bir sayfasında görüntülenecek sınıf.
+Örneğin, mantık oluşturabilirsiniz, `App` kullanıcı veya oturum bağlı olarak farklı bir sayfayı görüntülemek için sınıf.
 
 `MainPage` Özelliği ayarlanmalıdır `App` Oluşturucusu
 
@@ -75,17 +75,17 @@ public class App : Xamarin.Forms.Application
 
 ## <a name="properties-dictionary"></a>Özellikler sözlüğü
 
-`Application` Bir alt kümesi olan bir statik `Properties` özellikle verileri depolamak için kullanmak üzere kullanılabilecek sözlük `OnStart`, `OnSleep`, ve `OnResume` yöntemleri. Bu herhangi bir yere Xamarin.Forms kodu kullanarak erişilebilir `Application.Current.Properties`.
+`Application` Öğesinin alt sınıfı olan statik `Properties` özellikle verileri depolamak için kullanılmak üzere kullanılabilecek sözlük `OnStart`, `OnSleep`, ve `OnResume` yöntemleri. Bu herhangi bir Xamarin.Forms kullanarak kodunuzdaki içinde erişilebilir `Application.Current.Properties`.
 
 `Properties` Sözlük kullanan bir `string` anahtar ve depoları bir `object` değeri.
 
-Örneğin, bir persistant ayarlayabilir `"id"` özelliği, kodunuzda herhangi bir yerde (bir öğe seçildiğinde, bir sayfanın içinde `OnDisappearing` yöntemi veya `OnSleep` yöntemi) şöyle:
+Örneğin, bir persistant ayarlayabilirsiniz `"id"` kodunuzdaki herhangi bir özelliği (bir öğe seçildiğinde, bir sayfanın içinde `OnDisappearing` yöntemi veya `OnSleep` yöntemi) şöyle:
 
 ```csharp
 Application.Current.Properties ["id"] = someClass.ID;
 ```
 
-İçinde `OnStart` veya `OnResume` sonra bu değer kullanıcı deneyimini şekilde yeniden oluşturmak için kullanabileceğiniz yöntemleri. `Properties` Sözlük depoları `object`kullanmadan önce değerini dönüştürmek gereken şekilde s.
+İçinde `OnStart` veya `OnResume` sonra bu değer kullanıcının deneyimini şekilde yeniden oluşturmak için kullanabileceğiniz yöntemler. `Properties` Sözlük depoları `object`kullanmadan önce değerine dönüştürün. böylece, s.
 
 ```csharp
 if (Application.Current.Properties.ContainsKey("id"))
@@ -95,7 +95,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 }
 ```
 
-Her zaman anahtar varlığını beklenmeyen hataları önlemek için erişmeden önce denetleyin.
+Her zaman beklenmeyen hataları önlemek için erişmeden önce anahtarın olup olmadığını denetleyin.
 
 > [!NOTE]
 > `Properties` Sözlük yalnızca ilkel türler depolama için seri hale. Diğer türleri depolama girişimi (gibi `List<string>`) sessizce başarısız olabilir.
@@ -104,18 +104,18 @@ Her zaman anahtar varlığını beklenmeyen hataları önlemek için erişmeden 
 
 ### <a name="persistence"></a>Kalıcılığı
 
-`Properties` Sözlük kaydedildi cihaza otomatik olarak.
-Sözlüğe eklenen veriler uygulama arka planından döndürdüğünde veya hatta yeniden başlatıldıktan sonra kullanılabilir.
+`Properties` Sözlük kaydedildiğinde cihaza otomatik olarak.
+Sözlüğe eklenmiş olan veriler, uygulama arka planından döndürdüğünde veya hatta yeniden başlatıldıktan sonra kullanılabilir olacaktır.
 
-Xamarin.Forms 1.4 üzerinde ek bir yöntem sunulan `Application` sınıfı - `SavePropertiesAsync()` -hangi çağrılabilir proaktif olarak devam ettirmek için `Properties` sözlük. Bu özellikler sonra önemli güncelleştirmeleri kaydetmek yerine bunları çıkışı bir kilitlenme veya işletim sistemi tarafından sonlandırıldı nedeniyle seri getirilmemelidir risk izin vermektir.
+Xamarin.Forms 1.4 ek bir yöntem üzerinde sunulan `Application` sınıfı - `SavePropertiesAsync()` -hangi çağrılabilir proaktif olarak kalıcı hale getirmek için `Properties` sözlüğü. Bu, önemli güncelleştirmelerinden sonra özelliklerini kaydetmek yerine, bunları dışarı bir kilitlenme veya işletim sistemi tarafından sonlandırılan nedeniyle seri getirilemedi risk izin vermektir.
 
-Kullanarak başvurular bulabilirsiniz `Properties` sözlükte **Xamarin.Forms ile Mobile Apps oluşturma** kitap bölümlerde [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf), ve [20 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)ve ilişkili [örnekleri](https://github.com/xamarin/xamarin-forms-book-preview-2).
+Kullanarak başvurular bulabilirsiniz `Properties` sözlüğünde **Xamarin.Forms ile Mobile Apps oluşturma** kitap bölümleri [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf), ve [20 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)ve ilişkili [örnekleri](https://github.com/xamarin/xamarin-forms-book-preview-2).
 
 
 
 ## <a name="the-application-class"></a>Uygulama sınıfı
 
-Bir tam `Application` sınıf uygulamasını aşağıda gösterilmektedir başvuru için:
+Eksiksiz bir `Application` sınıf uygulamasını aşağıda gösterilmektedir başvuru için:
 
 ```csharp
 public class App : Xamarin.Forms.Application
@@ -146,17 +146,17 @@ public class App : Xamarin.Forms.Application
 
 ```
 
-Bu sınıf sonra her platforma özgü projesinde örneği ve geçirilen `LoadApplication` yeri olan yöntemini `MainPage` yüklendiğinde ve kullanıcıya gösterilir.
-Her platform için kod aşağıdaki bölümlerde gösterilmiştir. En son Xamarin.Forms çözümünü şablonlar zaten uygulamanız için önceden yapılandırılmış tüm bu kodu içerir.
+Bu sınıf sonra her platforma özgü projede örneği ve geçirilen `LoadApplication` yerdir yöntemi `MainPage` yüklendiğinde ve kullanıcıya gösterilir.
+Aşağıdaki bölümlerde her platform için kod gösterilmektedir. En son Xamarin.Forms çözüm şablonları, uygulamanız için önceden yapılandırılmış tüm bu kodu zaten içerir.
 
 
 ### <a name="ios-project"></a>iOS projesi
 
-İOS `AppDelegate` şimdi sınıfının devraldığı `FormsApplicationDelegate`. Olmalıdır:
+İOS `AppDelegate` sınıfının devraldığı `FormsApplicationDelegate`. Olmalıdır:
 
 * Çağrı `LoadApplication` örneğiyle birlikte `App` sınıfı.
 
-* Her zaman geri `base.FinishedLaunching (app, options);`.
+* Her zaman dönüş `base.FinishedLaunching (app, options);`.
 
 ```csharp
 [Register ("AppDelegate")]
@@ -176,13 +176,12 @@ public partial class AppDelegate :
 
 ### <a name="android-project"></a>Android projesi
 
-Android `MainActivity` şimdi devraldığı `FormsApplicationActivity`. İçinde `OnCreate` geçersiz kılma `LoadApplication` yöntemi örneği ile çağrılır `App` sınıfı.
+Android `MainActivity` devraldığı `FormsAppCompatActivity`. İçinde `OnCreate` geçersiz kılma `LoadApplication` örneği ile yöntemi çağrıldığında `App` sınıfı.
 
 ```csharp
-[Activity (Label = "App Lifecycle Sample", Icon = "@drawable/icon", MainLauncher = true,
+[Activity (Label = "App Lifecycle Sample", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true,
     ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-public class MainActivity :
-    global::Xamarin.Forms.Platform.Android.FormsApplicationActivity // superclass new in 1.3
+public class MainActivity : FormsAppCompatActivity
 {
     protected override void OnCreate (Bundle bundle)
     {
@@ -195,17 +194,11 @@ public class MainActivity :
 }
 ```
 
-> [!NOTE]
-> Var olan daha yeni bir [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) temel Android malzeme tasarım daha iyi desteklemek için kullanılan sınıfı.
-> Bu varsayılan Android şablonu gelecekte olur, ancak izleyebilirsiniz [bu yönergeleri](~/xamarin-forms/platform/android/appcompat.md) mevcut Android uygulamalarınızı güncelleştirmek için.
-
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>Windows 10 için evrensel Windows projesi (UWP)
 
-Bkz: [kurulum Windows projeleri](~/xamarin-forms/platform/windows/installation/index.md) Xamarin.Forms UWP desteği hakkında bilgi için.
+Bkz: [kurulum Windows projeleri](~/xamarin-forms/platform/windows/installation/index.md) Xamarin.Forms UWP desteği hakkında daha fazla bilgi için.
 
-Ana sayfanın UWP projesini alması gerektiğini `WindowsPage`. Bunun anlamı XAML ve C# ' ta `MainPage` başvuru `FormsApplicationPage` sınıfında gösterildiği gibi.
-
-XAML, özel bir ad alanı kullanır, böylece kök öğesi yansıtır `FormsApplicationPage` sınıfı:
+UWP projesi ana sayfada alması gerektiğini `WindowsPage`:
 
 ```xaml
 <forms:WindowsPage
@@ -215,7 +208,7 @@ XAML, özel bir ad alanı kullanır, böylece kök öğesi yansıtır `FormsAppl
 </forms:WindowsPage>
 ```
 
-C# arkasındaki koda 's yapım çağırmalısınız `LoadApplication` , Xamarin.Forms örneği oluşturmak için `App`. Açıkça nitelemek için uygulama ad alanını kullanmak için iyi bir uygulama olduğuna dikkat edin `App` UWP uygulamaları da kendi olduğundan `App` Xamarin.Forms için ilgisiz sınıfı.
+C# codebehind's yapım çağırmalıdır `LoadApplication` bir örneği, bir Xamarin.Forms oluşturmak için `App`. Açıkça nitelemek için uygulama ad alanını kullanacak şekilde iyi olduğuna dikkat edin `App` UWP uygulamaları da kendi olduğundan `App` için Xamarin.Forms ilgisi olmayan sınıf.
 
 ```csharp
 public sealed partial class MainPage
@@ -229,4 +222,4 @@ public sealed partial class MainPage
  }
 ```
 
-Unutmayın `Forms.Init()` çağrılması gerekir **App.xaml.cs** satır 63 geçici.
+Unutmayın `Forms.Init()` çağrılması gerekir **App.xaml.cs** 63 satırına yakın bir yerde.

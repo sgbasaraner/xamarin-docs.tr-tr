@@ -1,97 +1,97 @@
 ---
-title: Bölüm 11 özeti. Bağlanabilir altyapısı
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 11 özeti. Bağlanabilir altyapısı'
+title: Bölüm 11 özeti. Bağlanabilir altyapı
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: Bölüm 11 özeti. Bağlanabilir altyapı'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7a878be4cf43e2168c37fdfd8e6fcdb79feb1602
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 78a0a7d4ce3a3de52f281237429cebb38f3b8e52
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241545"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998787"
 ---
-# <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>Bölüm 11 özeti. Bağlanabilir altyapısı
+# <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>Bölüm 11 özeti. Bağlanabilir altyapı
 
-Her C# Programcı C# ile alışkın olduğu *özellikleri*. Özellikleri içeren bir *ayarlamak* erişimcisi ve/veya bir *almak* erişimcisi. Bunlar genellikle adlandırılır *CLR Özellikleri* ortak dil çalışma zamanı için.
+Her C# Programcı C# kullanmaya alışkın olduğu *özellikleri*. Özellikleri içeren bir *ayarlamak* erişimci ve/veya bir *alma* erişimcisi. Bunlar genellikle adlandırılır *CLR Özellikleri* ortak dil çalışma zamanı.
 
-Xamarin.Forms adlı bir gelişmiş özellik tanımını tanımlayan bir *bağlanabilirse özelliği* yalıtılan [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) sınıfı ve tarafından desteklenen [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)sınıfı. Bu sınıfların ilgili ancak oldukça farklı: `BindableProperty` özelliğinin kendisini; tanımlamak için kullanılır `BindableObject` benzer `object` bağlanabilir özelliklerini tanımlayan sınıflar için temel sınıf olması.
+Xamarin.Forms tanımlar adlı bir Gelişmiş özelliğinin tanımı bir *bağlanılabilir özellik* tarafından Kapsüllenen [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) sınıfı ve tarafından desteklenen [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)sınıfı. Bu sınıfların ilgili ancak oldukça farklı: `BindableProperty` özelliği sunmanın tanımlamak için kullanılır `BindableObject` benzer `object` bağlanabilir özellikler tanımlayan sınıflar için temel bir sınıf olması.
 
 ## <a name="the-xamarinforms-class-hierarchy"></a>Xamarin.Forms sınıf hiyerarşisi
 
-[ **ClassHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/ClassHierarchy) örnek Xamarin.Forms sınıf hiyerarşisi görüntülemek ve oynadığı önemli rol tanıtmak için yansıma kullanan `BindableObject` bu hiyerarşide. `BindableObject` türetilen `Object` ve üst sınıftır [ `Element` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Element/) içinden [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) türetilir. Üst sınıf budur [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) ve [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/), üst sınıf olduğu [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/):
+[ **ClassHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/ClassHierarchy) örnek Xamarin.Forms sınıf hiyerarşisini görüntülemek ve oynadığı önemli rol göstermek için yansıtma kullanır `BindableObject` bu hiyerarşideki. `BindableObject` öğesinden türetilen `Object` ve üst sınıf [ `Element` ](xref:Xamarin.Forms.Element) içinden [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) türetilir. Üst sınıf budur [ `Page` ](xref:Xamarin.Forms.Page) ve [ `View` ](xref:Xamarin.Forms.View), üst sınıf için [ `Layout` ](xref:Xamarin.Forms.Layout):
 
-[![Üçlü ekran paylaşımı sınıf hiyerarşisinin](images/ch11fg01-small.png "sınıf hiyerarşisi paylaşımı")](images/ch11fg01-large.png#lightbox "sınıf hiyerarşisi paylaşımı")
+[![Üç ekran paylaşımı sınıf hiyerarşisinin](images/ch11fg01-small.png "sınıf hiyerarşisi paylaşımı")](images/ch11fg01-large.png#lightbox "sınıf hiyerarşisi paylaşma")
 
-## <a name="a-peek-into-bindableobject-and-bindableproperty"></a>Peek BindableObject ve BindableProperty
+## <a name="a-peek-into-bindableobject-and-bindableproperty"></a>Bir Özet BindableObject ve BindableProperty
 
-Öğesinden türetilen sınıflarda `BindableObject` birçok CLR özelliği "bağlanabilir özellikleri desteklenecek şekilde" denir. Örneğin, [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) özelliği `Label` sınıfı bir CLR özelliği, ancak `Label` sınıfı ayrıca adlı bir public static salt okunur alanı tanımlayan [ `TextProperty` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextProperty/) , türü `BindableProperty`.
+Öğesinden türetilen sınıflarda `BindableObject` birçok CLR özelliği "tarafından bağlanabilir özellikler desteklenecek şekilde" söylenir. Örneğin, [ `Text` ](xref:Xamarin.Forms.Label.Text) özelliği `Label` sınıfı bir CLR özelliği, ancak `Label` sınıfı da tanımlar adlı bir ortak statik salt okunur alan [ `TextProperty` ](xref:Xamarin.Forms.Label.TextProperty) , tür `BindableProperty`.
 
-Bir uygulama ayarlayın veya alın `Text` özelliği `Label` normalde veya uygulama ayarlayabilirsiniz `Text` çağırarak [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) yöntemi tarafından tanımlanan `BindableObject` ile bir `Label.TextProperty` bağımsız değişken. Benzer şekilde, bir uygulama değeri elde edebilirsiniz `Text` çağırarak özelliği [ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/) yöntemi, yeniden ile bir `Label.TextProperty` bağımsız değişkeni. Bu tarafından gösterilen [ **PropertySettings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PropertySettings) örnek.
+Bir uygulama ayarlayın veya alın `Text` özelliği `Label` normalde veya uygulama ayarlayabilirsiniz `Text` çağırarak [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) yöntemi tarafından tanımlanan `BindableObject` ile bir `Label.TextProperty` bağımsız değişken. Benzer şekilde, bir uygulama değerini elde edebilirsiniz `Text` çağırarak [ `GetValue` ](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)) yöntemi ile bir `Label.TextProperty` bağımsız değişken. Bu tarafından gösterilmiştir [ **PropertySettings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PropertySettings) örnek.
 
-Aslında, `Text` CLR özelliği, kullanılarak tamamen gerçekleştirilir `SetValue` ve `GetValue` tarafından tanımlanan yöntemler `BindableObject` birlikte `Label.TextProperty` statik özelliği.
+Aslında, `Text` CLR özelliği, kullanılarak tamamen gerçekleştirilir `SetValue` ve `GetValue` tarafından tanımlanan yöntemleri `BindableObject` birlikte `Label.TextProperty` statik özellik.
 
 `BindableObject` ve `BindableProperty` için destek sağlar:
 
-- Özellikler varsayılan değerleri verir
+- Özellikler varsayılan değerleri vererek
 - Geçerli değerlerini depolama
-- Özellik değerlerini doğrulama mekanizmaları sağlama
-- Tek bir sınıftaki ilgili özellikler arasında tutarlılığı koruma
+- Özellik değerlerini doğrulamak için bir mekanizma sağlar
+- Tek bir sınıftaki ilgili özellikler arasında tutarlılığı sürdürmeye
 - Özellik değişikliklere yanıt verme
-- Bir özellik değiştirilmek veya değişti tetikleme bildirimleri
-- Veri bağlama destekleme
+- Bir özellik değişmek üzere olduğunu veya değişti tetikleme bildirimleri
+- Destekleyici veri bağlama
 - Stilleri destekleme
-- Dinamik kaynaklar destekleme
+- Dinamik kaynak destekleme
 
-Bağlanabilir özelliği değişiklikleri tarafından yedeklenen bir özelliği her `BindableObject` ateşlenir bir [ `PropertyChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.PropertyChanged/) değişti özellik tanımlama olay. Özelliği aynı değere ayarlandığında bu olay tetiklenir değil.
+Her bir bağlanılabilir özellik değişiklikleri tarafından desteklenen bir özellik `BindableObject` ateşlenir bir [ `PropertyChanged` ](xref:Xamarin.Forms.BindableObject.PropertyChanged) değişen özelliği tanımlayan olay. Özelliği aynı değere ayarlandığında bu olay harekete değil.
 
-Bazı özellikler bağlanabilir özellikleri ve bazı Xamarin.Forms sınıfları tarafından yedeklenen değil &mdash; gibi `Span` &mdash; öğesinden türetilen değil `BindableObject`. Türeyen bir sınıf `BindableObject` bağlanabilir özellikleri nedeniyle destekleyebilir `BindableObject` tanımlar `SetValue` ve `GetValue` yöntemleri.
+Bazı özellikler bağlanabilir özellikler ve bazı Xamarin.Forms sınıfları tarafından yedeklenmeyen &mdash; gibi `Span` &mdash; öğesinden türetilen değil `BindableObject`. Türetilen bir sınıf `BindableObject` bağlanabilir özellikler için destek `BindableObject` tanımlar `SetValue` ve `GetValue` yöntemleri.
 
-Çünkü `Span` türünden türemez `BindableObject`, özelliklerini hiçbiri &mdash; gibi `Text` &mdash; bağlanabilirse özelliği tarafından desteklenir. Nedeni budur bir `DynamicResource` ayarı `Text` özelliği `Span` bir özel durumla başlatır [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) önceki bölümde örnek. [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode) örnek kodu kullanarak dinamik kaynaklar ayarlama gösteren [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/) tarafından tanımlanan yöntemi `Element`. İlk bağımsız değişken türünde bir nesnedir `BindableProperty`.
+Çünkü `Span` türünden türemez `BindableObject`, özelliklerini hiçbiri &mdash; gibi `Text` &mdash; bağlanabilir bir özelliği tarafından desteklenir. Bu nedenle, bir `DynamicResource` ayarını `Text` özelliği `Span` içinde özel durum harekete [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) önceki bölümdeki örnek. [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode) örnek kodu kullanarak dinamik kaynaklar ayarlama gösterir [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource(Xamarin.Forms.BindableProperty,System.String)) yöntemi tarafından tanımlanan `Element`. İlk bağımsız değişken türünde bir nesnedir `BindableProperty`.
 
-Benzer şekilde, [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) yöntemi tarafından tanımlanan `BindableObject` ilk bağımsız değişken türü sahip `BindableProperty`.
+Benzer şekilde, [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) yöntemi tarafından tanımlanan `BindableObject` türünde bir ilk bağımsız değişken olan `BindableProperty`.
 
-## <a name="defining-bindable-properties"></a>Bağlanabilir özellikleri tanımlama
+## <a name="defining-bindable-properties"></a>Bağlanabilir özellikler tanımlama
 
-Statik kullanarak kendi bağlanabilir özelliklerini tanımlayabilirsiniz [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) yöntemi veya biraz daha kısa [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/) türü statik salt okunur alanı oluşturmak için aşırı `BindableProperty`.
+' Using static kendi bağlanabilir özellikler tanımlayabilirsiniz [ `BindableProperty.Create` ](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) türünde statik bir salt okunur alan yöntemini `BindableProperty`.
 
-Bu, gösterilmiştir [ `AltLabel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AltLabel.cs) sınıfını [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığı. Sınıfın türetildiği `Label` ve bir yazı tipi boyutu noktaları belirtmenize olanak tanır. Örneklerde gösterildiği [ **PointSizedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PointSizedText) örnek.
+Bu gösterilmiştir [ `AltLabel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AltLabel.cs) sınıfını [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığı. Bu sınıfın türetildiği `Label` ve yazı tipi boyutu noktaları belirtmenize olanak tanır. Örnekte gösterildiği [ **PointSizedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PointSizedText) örnek.
 
-Dört bağımsız `BindableProperty.Create` yöntemi gereklidir:
+Dört bağımsız değişkenleri `BindableProperty.Create` yöntemi gereklidir:
 
-- `propertyName`: metin özelliğinin adı (aynı CLR özellik adı)
-- `returnType`: CLR özellik türü
-- `declaringType`: özelliği bildirme sınıfın türü
+- `propertyName`: özelliğin (aynı CLR özellik adı olarak) metin adı
+- `returnType`: CLR özelliğinin türü
+- `declaringType`: bir özelliği bildirme sınıf türü
 - `defaultValue`: özelliğin varsayılan değeri
 
-Çünkü `defaultValue` türü `object`, derleyici varsayılan değerinin türü belirlemek mümkün olması gerekir. Örneğin, varsa `returnType` olan `double`, `defaultValue` 0.0 yerine yalnızca 0 gibi bir şekilde ayarlamanız gerekir ya da bir özel durum çalışma zamanında tür uyuşmazlığı tetikler.
+Çünkü `defaultValue` türünde `object`, derleyici varsayılan değerin türü belirlemek mümkün olması gerekir. Örneğin, varsa `returnType` olduğu `double`, `defaultValue` 0.0 yerine yalnızca 0 gibi bir şekilde ayarlanması gerekir ya da çalışma zamanında bir özel durum türü uyuşmazlığı tetikler.
 
-Eklenecek bağlanabilirse özelliği için sık görülür:
+Ayrıca, bir bağlanılabilir özellik eklemek çok sık olarak:
 
-- `propertyChanged`: bir statik yöntem, özellik değeri değiştiğinde çağrıldı. İlk bağımsız değişkeni, özelliği değiştirildi sınıfı örneğidir.
+- `propertyChanged`: bir statik yöntem, özellik değeri değiştiğinde çağırılır. İlk bağımsız değişken, özelliği değiştirildi sınıf örneğidir.
 
-İçin başka bir bağımsız değişken `BindableProperty.Create` gibi yaygın değildir:
+Diğer bağımsız değişkenleri `BindableProperty.Create` gibi yaygın değildir:
 
-- `defaultBindingMode`: veri bağlama bağlantılı olarak kullanılan (anlatıldığı gibi [ **Bölüm 16. Veri bağlama**](chapter16.md))
-- `validateValue`: için geçerli bir değer denetlemek için bir geri çağırma
-- `propertyChanging`: özellik değiştirilmek olduğunda belirtmek için bir geri çağırma
-- `coerceValue`: başka bir değer kümesi değerine coerce için bir geri çağırma
-- `defaultValueCreate`: (örneğin, bir koleksiyon) sınıfının örnekleri arasında paylaşılan bir varsayılan değeri oluşturmak için bir geri çağırma
+- `defaultBindingMode`: veri bağlama bağlantılı olarak kullanılan (açıklandığı gibi [ **Bölüm 16. Veri bağlama**](chapter16.md))
+- `validateValue`: denetlemek için geçerli bir değer için bir geri çağırma
+- `propertyChanging`: özellik ne zaman değişmek üzere belirtmek için bir geri çağırma
+- `coerceValue`: başka bir değer kümesi değerine zorlamak için bir geri çağırma
+- `defaultValueCreate`: (örneğin, bir koleksiyon) sınıfın örnekleri arasında paylaşılan bir varsayılan değer oluşturmak için bir geri çağırma
 
-### <a name="the-read-only-bindable-property"></a>Salt okunur bağlanabilirse özelliği
+### <a name="the-read-only-bindable-property"></a>Salt okunur bağlanılabilir özellik
 
-Bağlanabilir özelliği salt okunur olabilir. Salt okunur bir bağlanabilirse özelliği oluşturma gerektiren statik yöntemini çağırma [ `BindableProperty.CreateReadOnly` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.CreateReadOnly/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) veya daha kısa bir [ `BindableProperty.CreateReadOnly` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.CreateReadOnly/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/) özel statik salt okunur türünde bir alan tanımlamak için [ `BindablePropertyKey` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindablePropertyKey/).
+Bağlanılabilir özellik salt okunur olabilir. Salt okunur bağlanılabilir özellik oluşturabilmek statik yöntemi [ `BindableProperty.CreateReadOnly` ](xref:Xamarin.Forms.BindableProperty.CreateReadOnly(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) özel statik salt okunur türünde bir alan tanımlamak için [ `BindablePropertyKey` ](xref:Xamarin.Forms.BindablePropertyKey).
 
-Ardından, CLR özellik tanımlamak `set` olarak accesor `private` çağırmak için bir [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindablePropertyKey/System.Object/) ile aşırı `BindablePropertyKey` nesnesi. Bu özelliği sınıfın dışından ayarlamak engeller.
+Sonra CLR özelliği tanımlayın `set` olarak accesor `private` çağırmak için bir [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindablePropertyKey,System.Object)) aşırı yüklemesine `BindablePropertyKey` nesne. Bu sınıf dışında ayarlama özelliği engeller.
 
-Bu, gösterilmiştir [ `CountedLabel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CountedLabel.cs) kullanılan sınıf [ **BaskervillesCount** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/BaskervillesCount) örnek.
+Bu gösterilmiştir [ `CountedLabel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CountedLabel.cs) kullanılan sınıf [ **BaskervillesCount** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/BaskervillesCount) örnek.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bölüm 11 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch11-Apr2016.pdf)
+- [Tam metin Bölüm 11 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch11-Apr2016.pdf)
 - [Bölüm 11 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)

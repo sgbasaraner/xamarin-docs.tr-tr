@@ -1,22 +1,22 @@
 ---
-title: Bir Web video oynatma
-description: Bu makalede, Xamarin.Forms kullanarak bir video oynatıcı uygulamasında web videoları oynat açıklanmaktadır.
+title: Bir Web videosunu oynatma
+description: Bu makalede, Xamarin.Forms kullanarak bir video oynatıcı uygulamasında web videoları oynatın açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: f9b52398efbd189153ca74ce80433863b25bd578
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 566f056bd616c918ce274b9c7406d94fdc265ea2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240983"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994565"
 ---
-# <a name="playing-a-web-video"></a>Bir Web video oynatma
+# <a name="playing-a-web-video"></a>Bir Web videosunu oynatma
 
-`VideoPlayer` Sınıfı tanımlayan bir `Source` video dosyanın kaynağını belirtmek için kullanılan özellik yanı sıra bir `AutoPlay` özelliği. `AutoPlay` Varsayılan ayarı varsa `true`, yani video otomatik olarak sonra çalma başlayacağını `Source` ayarlandı:
+`VideoPlayer` Sınıfı tanımlayan bir `Source` video dosyası kaynağını belirtmek için kullanılan özellik yanı sıra bir `AutoPlay` özelliği. `AutoPlay` Varsayılan ayarı varsa `true`, yani video otomatik olarak sonra yürütmeyi başlayacağını `Source` ayarlandı:
 
 ```csharp
 using System;
@@ -52,11 +52,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-`Source` Özelliği türüdür `VideoSource`, sonra Xamarin.Forms desenleri [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) soyut sınıf ve üç türevleri [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/), [ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/), ve [ `StreamImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StreamImageSource/). Akış seçeneği kullanılabilir `VideoPlayer` ancak, iOS ve Android akıştan video oynatma desteklemediği için.
+`Source` Özelliği türüdür `VideoSource`, sonra Xamarin.Forms desenli [ `ImageSource` ](xref:Xamarin.Forms.ImageSource) soyut sınıf ve üç türevleri [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource), [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource), ve [ `StreamImageSource` ](xref:Xamarin.Forms.StreamImageSource). Stream seçeneği kullanılabilir `VideoPlayer` ancak, iOS ve Android akıştan video oynatma desteklemediği.
 
 ## <a name="video-sources"></a>Görüntü kaynakları
 
-Özet `VideoSource` sınıf türetin üç sınıf örneği yalnızca üç statik yöntemler oluşur `VideoSource`:
+Özet `VideoSource` sınıf, türetilen üç sınıf örneği yalnızca üç statik yöntemler oluşur `VideoSource`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -82,7 +82,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-`UriVideoSource` Sınıfı bir URI'sı ile indirilebilir bir video dosyası belirtmek için kullanılır. Türü tek bir özelliğini tanımlar `string`:
+`UriVideoSource` Sınıfı bir URI ile indirilebilir bir video dosyası belirtmek için kullanılır. Tek bir özellik türü tanımlayan `string`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -101,9 +101,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-Nesne türü işleme `UriVideoSource` aşağıda açıklanmıştır.
+Türündeki nesneler işleme `UriVideoSource` aşağıda açıklanmıştır.
 
-`ResourceVideoSource` Sınıfı katıştırılmış kaynak ile aynı zamanda belirtilen platform uygulaması olarak depolanan video dosyalara erişmek için kullanılan bir `string` özelliği:
+`ResourceVideoSource` Sınıfı katıştırılmış kaynak ile aynı zamanda belirtilen platform uygulaması olarak depolanan video dosyalarına erişmek için kullanılan bir `string` özelliği:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -122,9 +122,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-Nesne türü işleme `ResourceVideoSource` makalesinde açıklanan [yüklenirken uygulama kaynak videoları](loading-resources.md). `VideoPlayer` Sınıfı bir kaynak .NET standart kitaplığı olarak depolanan bir video dosyasını yüklemek için hiçbir olanak sahiptir.
+Türündeki nesneler işleme `ResourceVideoSource` makalesinde açıklanan [Uygulama kaynağı videolarını yükleme](loading-resources.md). `VideoPlayer` Sınıfında .NET Standard Kitaplığı'nda bir kaynak olarak depolanan bir video dosyası yüklemek için bulunmaz.
 
-`FileVideoSource` Sınıfı cihazın video Kitaplığı'ndan video dosyalara erişmek için kullanılır. Tek bir özellik de türünde `string`:
+`FileVideoSource` Sınıfı cihazın video Kitaplığı'ndan video dosyalarına erişmek için kullanılır. Tek bir özellik de türünde `string`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -143,7 +143,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-Nesne türü işleme `FileVideoSource` makalesinde açıklanan [cihazın Video kitaplığı erişimi](accessing-library.md).
+Türündeki nesneler işleme `FileVideoSource` makalesinde açıklanan [cihazın Video kitaplığına erişme](accessing-library.md).
 
 `VideoSource` Sınıfı içeren bir `TypeConverter` başvuran öznitelik `VideoSourceConverter`:
 
@@ -158,7 +158,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-Bu tür dönüştürücüsünü çağrılan zaman `Source` XAML içindeki bir dizeye özelliğini ayarlayın. Burada `VideoSourceConverter` sınıfı:
+Bu tür dönüştürücüsü çağrılır, `Source` özelliği, XAML içindeki bir dizeye ayarlanır. İşte `VideoSourceConverter` sınıfı:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -180,15 +180,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-`ConvertFromInvariantString` Yöntemi çalışır dizeye dönüştürmek bir `Uri` nesnesi. Bu başarılı ve düzeni değilse `file:`, yöntem döndürür sonra bir `UriVideoSource`. Aksi takdirde, döndürür bir `ResourceVideoSource`.
+`ConvertFromInvariantString` Yöntemi çalışır dizeye dönüştürülecek bir `Uri` nesne. Bu başarılı ve düzeni değilse `file:`, sonra da bu yöntemi döndürür bir `UriVideoSource`. Aksi halde bir `ResourceVideoSource`.
 
 ## <a name="setting-the-video-source"></a>Video kaynağı ayarlama
 
-Video kaynakları içeren diğer mantığı tek tek platform işleyicilerde uygulanır. Aşağıdaki bölümlerde nasıl platform Oluşturucu videoları oynat Göster zaman `Source` özelliği ayarlanmış bir `UriVideoSource` nesnesi.
+Video kaynakları içeren diğer mantıksal ayrı bir platform işleyicilerde uygulanır. Aşağıdaki bölümlerde nasıl platform Oluşturucu videoları oynatın Göster zaman `Source` özelliği bir `UriVideoSource` nesne.
 
 ### <a name="the-ios-video-source"></a>İOS video kaynağı
 
-İki bölümden `VideoPlayerRenderer` video oynatıcı video kaynağının ayarı karmaşıktır. Xamarin.Forms ilk oluşturduğunda türünde bir nesne `VideoPlayer`, `OnElementChanged` yöntemi ile çağrılır `NewElement` bağımsız değişkenleri nesnesinin özelliğini ayarlamak için `VideoPlayer`. `OnElementChanged` Yöntem çağrılarını `SetSource`:
+İki bölümden `VideoPlayerRenderer` video oynatıcı video kaynağı ayarı kullanılır. Xamarin.Forms ilk oluşturduğunda türünde bir nesne `VideoPlayer`, `OnElementChanged` yöntemi çağrıldığında `NewElement` bağımsız değişkenleri nesnesinin özelliğini ayarlamak için `VideoPlayer`. `OnElementChanged` Yöntem çağrılarını `SetSource`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -221,9 +221,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Daha sonra ne zaman hakkında `Source` özelliği değiştirildiğinde, `OnElementPropertyChanged` ile yöntemi çağrıldığında bir `PropertyName` "Kaynak" özelliği ve `SetSource` yeniden adlandırılır.
+Daha sonra üzerinde ne zaman `Source` özelliği değiştirildiğinde `OnElementPropertyChanged` yöntemi çağrıldığında bir `PropertyName` "Kaynak" özelliği ve `SetSource` yeniden adlandırılır.
 
-İOS, türünde bir nesne bir video dosyasını oynatmak için [ `AVAsset` ](https://developer.xamarin.com/api/type/AVFoundation.AVAsset/) ilk video dosyası kapsüllemek için oluşturduğunuz ve oluşturmak için kullanılan bir [ `AVPlayerItem` ](https://developer.xamarin.com/api/type/AVFoundation.AVPlayerItem/), hangi sonra karmalayan kapatmak için `AVPlayer`nesnesi. İşte nasıl `SetSource` yöntemi tanıtıcıları `Source` türü olduğunda özelliği `UriVideoSource`:
+İOS, türünde bir nesne bir video dosyasını oynatmak için [ `AVAsset` ](https://developer.xamarin.com/api/type/AVFoundation.AVAsset/) video dosyası kapsüllemek için ilk oluşturulur ve oluşturmak için kullanılan bir [ `AVPlayerItem` ](https://developer.xamarin.com/api/type/AVFoundation.AVPlayerItem/), hangi ardından devredildiği kapalı için `AVPlayer`nesne. İşte nasıl `SetSource` yöntemi tanıtıcıları `Source` türü olduğunda özellik `UriVideoSource`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -268,9 +268,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-`AutoPlay` Özelliğinin hiçbir analog iOS video sınıfları özelliği sonunda incelenir şekilde `SetSource` çağrılacak yöntem `Play` yöntemi `AVPlayer` nesnesi.
+`AutoPlay` Özelliği özellik sonunda incelenir. Bu nedenle bu yok analog iOS video sınıfları sahip `SetSource` çağrılacak yöntem `Play` metodunda `AVPlayer` nesne.
 
-Bazı durumlarda, videolar sayfasıyla sonra yürütmeye devam `VideoPlayer` giriş sayfasına geri gittiğinizde. Video durdurmak için `ReplaceCurrentItemWithPlayerItem` de ayarlanır `Dispose` geçersiz kıl:
+Bazı durumlarda, videoları sayfası sonra yürütmeyi devam `VideoPlayer` giriş sayfasına gitme. Video durdurmak için `ReplaceCurrentItemWithPlayerItem` de ayarlanır `Dispose` geçersiz kıl:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -294,7 +294,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-video-source"></a>Android video kaynağı
 
-Android `VideoPlayerRenderer` player video kaynağı ayarlamak gereken zaman `VideoPlayer` önce oluşturulan ve üzeri olduğunda `Source` özelliği değişiklikleri:
+Android `VideoPlayerRenderer` video oynatıcı kaynağı için gerekli olduğunda `VideoPlayer` önce oluşturulan ve üzeri olduğunda `Source` özellik değişiklikleri:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -327,7 +327,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`SetSource` Yöntemi işler türündeki nesneleri `UriVideoSource` çağırarak `SetVideoUri` üzerinde `VideoView` bir Android ile `Uri` dize URI oluşturulan nesne. `Uri` Sınıfı tam olarak nitelenmiş burada .NET ayırt etmek için `Uri` sınıfı:
+`SetSource` Yöntemi işler türünden nesnelerin `UriVideoSource` çağırarak `SetVideoUri` üzerinde `VideoView` bir Android `Uri` URI dizeden oluşturulan nesne. `Uri` Sınıfı tam burada. NET'ten ayırmak için `Uri` sınıfı:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -364,13 +364,13 @@ namespace FormsVideoLibrary.Droid
 
 Android `VideoView` karşılık gelen yok `AutoPlay` özelliği, bu nedenle `Start` yeni video ayarlarsanız yöntemi çağrılır.
 
-Varsa davranışını iOS ve Android Oluşturucu arasında bir fark `Source` özelliği `VideoPlayer` ayarlanır `null`, veya `Uri` özelliği `UriVideoSource` ayarlanır `null` ya da boş bir dize. Bir video iOS video oynatıcı yürütülmekte olan varsa ve `Source` ayarlanır `null` (veya bir dize `null` veya boş), `ReplaceCurrentItemWithPlayerItem` çağrılır `null` değeri. Geçerli video değiştirilir ve yürütmeyi durdurur.
+Varsa davranışını iOS ve Android oluşturucular arasında bir fark `Source` özelliği `VideoPlayer` ayarlanır `null`, veya `Uri` özelliği `UriVideoSource` ayarlanır `null` ya da boş bir dize. İOS video oynatıcı şu anda bir video yürütülüyorsa ve `Source` ayarlanır `null` (veya bir dize `null` veya boş), `ReplaceCurrentItemWithPlayerItem` çağrılır `null` değeri. Geçerli görüntü değiştirilir ve yürütmeyi durdurur.
 
-Android benzer bir özelliği desteklemiyor. Varsa `Source` özelliği ayarlanmış `null`, `SetSource` yöntemi yalnızca yok sayıyor onu ve geçerli video çalınmaya devam eder.
+Android benzer bir özelliği desteklemiyor. Varsa `Source` özelliği `null`, `SetSource` yöntemi yalnızca göz ardı eder, ve geçerli video çalınmaya devam eder.
 
 ### <a name="the-uwp-video-source"></a>UWP video kaynağı
 
-UWP `MediaElement` tanımlayan bir `AutoPlay` herhangi bir özellik gibi işleyicide ele özelliği:
+UWP `MediaElement` tanımlayan bir `AutoPlay` özelliği Oluşturucu herhangi bir özellik gibi işlenir:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -407,7 +407,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-`SetSource` Özelliği tanıtıcıları bir `UriVideoSource` ayarlayarak nesne `Source` özelliği `MediaElement` bir .NET için `Uri` değeri veya `null` varsa `Source` özelliği `VideoPlayer` ayarlanır `null`:
+`SetSource` Özelliği tanıtıcıları bir `UriVideoSource` ayarlayarak nesne `Source` özelliği `MediaElement` kullanarak bir .NET `Uri` değeri veya `null` varsa `Source` özelliği `VideoPlayer` ayarlanır `null`:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -447,7 +447,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>Bir URL kaynağı ayarlama
 
-Bu özellikler üç Oluşturucu, uygulama ile bir URL kaynaktan çalmasına mümkündür. **Yürüt Web Video** sayfasındaki [ **VideoPlayDemos** ]( https://developer.xamarin.com/samples/xamarin-forms/customrenderers/videoplayerdemos/index.md) program aşağıdaki XAML dosyası tarafından tanımlanan:
+Bu özellikler, üç Oluşturucu uygulamasıyla bir URL kaynağından bir videoyu oynatmak mümkündür. **Web videosunu Oynat** sayfasını [ **VideoPlayDemos** ]( https://developer.xamarin.com/samples/xamarin-forms/customrenderers/videoplayerdemos/index.md) programı aşağıdaki XAML dosyası tarafından tanımlanır:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -461,31 +461,31 @@ Bu özellikler üç Oluşturucu, uygulama ile bir URL kaynaktan çalmasına müm
 </ContentPage>
 ```
 
-`VideoSourceConverter` Sınıfı dizeye dönüştürür bir `UriVideoSource`. Ne zaman gezinmek için **Web Video Yürüt** sayfası, video başlar yükleme ve yeterli bir miktar veri indirilir ve arabelleğe çalma başlatır. Video yaklaşık 10 dakika uzunluğu şöyledir:
+`VideoSourceConverter` Sınıfı dizeye dönüştürür bir `UriVideoSource`. Ne zaman ulaşmanıza **Web Video oynatın** sayfasında video başlar yükleme ve yeterli veri miktarının indirilir ve arabelleğe yürütmeyi başlatır. Video için yaklaşık 10 dakika uzunluğunda olduğunda:
 
-[![Web çalmasına](web-videos-images/playwebvideo-small.png "Web Video Oynat")](web-videos-images/playwebvideo-large.png#lightbox "Web Video Oynat")
+[![Web çalmasına](web-videos-images/playwebvideo-small.png "Web videosunu Oynat")](web-videos-images/playwebvideo-large.png#lightbox "Web videosunu Oynat")
 
-Kullanılmayan ancak video dokunarak görüntülemek üzere geri her üç platformlar üzerinde bir aktarım denetimlerini Kıs.
+Kullanılmayan ancak video dokunarak görüntülemek üzere geri her üç platformları üzerinde bir Aktarım denetimleri Kıs.
 
-Video ayarlayarak otomatik olarak başlatılmasını engelleyebilirsiniz `AutoPlay` özelliğine `false`:
+Video ayarlayarak otomatik olarak başlatılmasını engelleyebilirsiniz `AutoPlay` özelliğini `false`:
 
 ```xaml
 <video:VideoPlayer Source="https://archive.org/download/BigBuckBunny_328/BigBuckBunny_512kb.mp4"
                    AutoPlay="false" />
 ```
 
-Basın gerekir **Yürüt** video başlamak için Başlat.
+Tuşuna basmanız gerekir **Play** videoyu başlatmak için düğme.
 
-Ayarlayarak aktarım denetimlerini görüntüleme benzer şekilde, gizleyebilirsiniz `AreTransportControlsEnabled` özelliğine `false`:
+Benzer şekilde, ayarlayarak Aktarım denetimleri görüntülenmesini gözardı edebileceğini `AreTransportControlsEnabled` özelliğini `false`:
 
 ```xaml
 <video:VideoPlayer Source="https://archive.org/download/BigBuckBunny_328/BigBuckBunny_512kb.mp4"
                    AreTransportControlsEnabled="False" />
 ```
 
-Her iki özellik kümesine varsa `false`, sonra video yürütmeye başlayın olmaz ve başlatmak için hiçbir şekilde olacak! Çağrı gerek `Play` arka plan kodu dosyasından veya makalesinde açıklandığı gibi kendi Aktarım denetimleri oluşturmak için [özel Video Aktarım denetimleri uygulama](custom-transport.md).
+Her iki özellik ayarlamanız `false`, sonra video yürütmeye başlamak olmaz ve başlatmak için yolu olacak! Çağrısı yapması `Play` arka plan kod dosyasından veya kendi Aktarım denetimleri makalesinde açıklandığı gibi oluşturmak için [özel Video Aktarım denetimleri uygulama](custom-transport.md).
 
-**App.xaml** dosyası, iki ek videoları kaynakları içerir:
+**App.xaml** dosya iki ek video kaynakları içerir:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -509,13 +509,13 @@ Her iki özellik kümesine varsa `false`, sonra video yürütmeye başlayın olm
 </Application>
 ```
 
-Bu diğer filmler biri için başvuru açık URL'de değiştirebilirsiniz **PlayWebVideo.xaml** ile dosya bir `StaticResource` durumda biçimlendirme uzantısı `VideoSourceConverter` oluşturmak için gerekli olmayan `UriVideoSource` nesnesi:
+Bu diğer filmler biri için başvuru açık URL'de değiştirebilirsiniz **PlayWebVideo.xaml** ile dosya bir `StaticResource` durumda işaretleme uzantısı `VideoSourceConverter` oluşturmak için gerekli olmayan `UriVideoSource` nesnesi:
 
 ```xaml
 <video:VideoPlayer Source="{StaticResource ElephantsDream}" />
 ```
 
-Alternatif olarak, ayarlayabileceğiniz `Source` bir video dosyasını özelliğinden bir `ListView`sonraki makalesinde açıklandığı gibi [Video kaynaklarına Player bağlama](source-bindings.md).
+Alternatif olarak, ayarlayabileceğiniz `Source` bir video dosyasını özelliğinden bir `ListView`sonraki makalede açıklandığı gibi [Video Oynatıcı kaynaklarına bağlama](source-bindings.md).
 
 
 
@@ -523,4 +523,4 @@ Alternatif olarak, ayarlayabileceğiniz `Source` bir video dosyasını özelliğ
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Video oynatıcı gösterilerini (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video oynatıcı tanıtımları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

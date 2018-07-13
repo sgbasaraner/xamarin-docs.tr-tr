@@ -1,31 +1,31 @@
 ---
 title: Xamarin.Forms ile tümleştirme
-description: Bu makalede touch yanıt SkiaSharp grafik oluşturma ve Xamarin.Forms öğelerini açıklar ve bu örnek kodu ile gösterir.
+description: Bu makalede dokunmaya yanıt SkiaSharp grafik oluşturma ve Xamarin.Forms öğeleri açıklar ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 9233850686fa6b20f858bf3358fc46393685297f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 35aede1a541d0ff62f6a4a5b57256c389e5a8640
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243511"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997536"
 ---
 # <a name="integrating-with-xamarinforms"></a>Xamarin.Forms ile tümleştirme
 
-_Dokunma ve Xamarin.Forms öğeleri yanıt SkiaSharp grafik oluşturma_
+_Dokunma ve Xamarin.Forms öğeleri yanıt SkiaSharp grafikler oluşturun_
 
-SkiaSharp grafik Xamarin.Forms rest çeşitli şekillerde ile tümleştirebilirsiniz. SkiaSharp tuvale ve Xamarin.Forms öğeler aynı sayfada ve hatta konumu Xamarin.Forms öğeleri SkiaSharp tuval üzerinde birleştirebilirsiniz:
+SkiaSharp grafik Xamarin.Forms geri kalanı farklı şekillerde tümleştirilebilir. SkiaSharp tuval ve Xamarin.Forms aynı sayfa üzerinde ve hatta konumu Xamarin.Forms öğeler SkiaSharp tuval üzerinde birleştirebilirsiniz:
 
-![](integration-images/integrationexample.png "Kaydırıcılar renkle seçme")
+![](integration-images/integrationexample.png "Kaydırıcıları ile bir renk seçme")
 
-Xamarin.Forms içinde etkileşimli SkiaSharp grafik oluşturmak için başka bir touch bir yaklaşımdır.
-İkinci sayfasında [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programdır alınarak **dokunun geçiş doldurmak**. Basit bir daire iki yolla çizer &mdash; dolgu olmadan ve dolgu ile &mdash; yükseğe tarafından dokunun. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Sınıfı gösterir SkiaSharp grafik kullanıcı girişine yanıt nasıl değiştirebilirsiniz.
+Xamarin.Forms içinde SkiaSharp etkileşimli grafik oluşturmak için başka bir yaklaşım touch ' dir.
+İkinci sayfada [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programdır yetkili **dokunun, geçiş dolgu**. Basit bir daire iki şekilde çizer &mdash; dolgu olmadan ve dolgu &mdash; tarafından bir dokunma açılıp. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Sınıfı göstermektedir SkiaSharp grafik kullanıcı girişine yanıt nasıl değiştirebilirsiniz.
 
-Bu sayfa için `SKCanvasView` sınıfı örneği [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) ayrıca bir Xamarin.Forms ayarlar dosyası [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) görünümündeki:
+Bu sayfa için `SKCanvasView` sınıfı örneği [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) ayrıca bir Xamarin.Forms ayarlar dosyasını [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) görünümü:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -44,7 +44,7 @@ Bu sayfa için `SKCanvasView` sınıfı örneği [TapToggleFill.xaml](https://gi
 
 Bildirim `skia` XML ad alanı bildirimi.
 
-`Tapped` İşleyicisi `TapGestureRecognizer` nesne yalnızca bir Boole alanı ve çağrıları değerini değiştirir [ `InvalidateSurface` ](https://developer.xamarin.com/api/member/SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface()/) yöntemi `SKCanvasView`:
+`Tapped` İşleyicisi `TapGestureRecognizer` nesne yalnızca Boole alanı ve aramalar değerini değiştirir [ `InvalidateSurface` ](https://developer.xamarin.com/api/member/SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface()/) yöntemi `SKCanvasView`:
 
 ```csharp
 bool showFill = true;
@@ -56,7 +56,7 @@ void OnCanvasViewTapped(object sender, EventArgs args)
 }
 ```
 
-Çağrısı `InvalidateSurface` etkili bir şekilde bir çağrı oluşturur `PaintSurface` kullanan işleyici `showFill` alanını doldurun veya daireyi dolgu değil:
+Çağrı `InvalidateSurface` etkili bir şekilde bir çağrı oluşturur `PaintSurface` kullanan işleyici `showFill` daire dolgu yok veya doldurmak için alanı:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -84,23 +84,23 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`StrokeWidth` Özelliği fark vurgulamak için 50 olarak ayarlandı. Tüm çizgi genişliği, iç ilk çizim ardından anahattı tarafından de görebilirsiniz. Varsayılan olarak, grafik devamındaki çizilmiş rakamları `PaintSurface` olay işleyicisi soyutlamaması olanlar işleyicisi çizilmiş.
+`StrokeWidth` Özellik farkı vurgulamak için 50 olarak ayarlandı. Ayrıca, ilk önce iç çizim ana hat ardından ve tüm çizgi genişliği görebilirsiniz. Varsayılan olarak, grafik ilerleyen bölümlerinde çizilen rakamları `PaintSurface` olanlar işleyicisinde çizilmiş gizlememeniz olay işleyicisi.
 
-**Renk keşfedin** sayfa nasıl ayrıca SkiaSharp grafik diğer Xamarin.Forms öğelerle tümleştirebilirsiniz gösterir ve ayrıca renkleri SkiaSharp tanımlamak için iki alternatif yöntemler arasındaki farkı gösterir. Statik [ `SKColor.FromHsl` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsl/p/System.Single/System.Single/System.Single/System.Byte/) yöntemi oluşturur bir `SKColor` değerine göre Ton Doygunluk açıklık model üzerinde:
+**Renk keşfedin** sayfası nasıl ayrıca SkiaSharp grafik diğer Xamarin.Forms öğeleri ile tümleştirebilirsiniz gösterir ve ayrıca renkler içinde SkiaSharp tanımlamak için iki alternatif yöntemler arasındaki farkı gösterir. Statik [ `SKColor.FromHsl` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsl/p/System.Single/System.Single/System.Single/System.Byte/) yöntemi oluşturur bir `SKColor` değerine göre Hue doygunluğu açıklık model üzerinde:
 
 ```csharp
 public static SKColor FromHsl (Single h, Single s, Single l, Byte a)
 ```
 
-Statik [ `SKColor.FromHsv` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsv/p/System.Single/System.Single/System.Single/System.Byte/) yöntemi oluşturur bir `SKColor` değerine göre benzer Ton Doygunluk değer modeli:
+Statik [ `SKColor.FromHsv` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsv/p/System.Single/System.Single/System.Single/System.Byte/) yöntemi oluşturur bir `SKColor` değerine göre benzer Hue doygunluğu değer modeli:
 
 ```csharp
 public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 ```
 
-Her iki durumda da `h` 360 0'dan bağımsız değişkeni aralık. `s`, `l`, Ve `v` bağımsız değişkenleri aralık 0 ile 100. `a` (Alfa veya opaklık) bağımsız değişken aralıklarının 0 ile 255.
+Her iki durumda da `h` 360 bağımsız değişkeni aralık 0. `s`, `l`, Ve `v` bağımsız değişken aralık 0 ile 100. `a` (Alfa veya opaklık) bağımsız değişken aralığı 0-255.
 
-[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml) dosyası oluşturur iki `SKCanvasView` nesnelerini bir `StackLayout` yana birimi ile `Slider` ve `Label` kullanıcının HSL seçmesine izin ver görünümleri ve HSV renk değerleri:
+[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml) dosyası oluşturur iki `SKCanvasView` nesneler bir `StackLayout` yan yana ile `Slider` ve `Label` HSL seçmesini sağlayan görünümleri ve HSV renk değerleri:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,9 +180,9 @@ Her iki durumda da `h` 360 0'dan bağımsız değişkeni aralık. `s`, `l`, Ve `
 </ContentPage>
 ```
 
-İki `SKCanvasView` öğeleridir tek bir hücrede `Grid` ile bir `Label` sonuç RGB renk değerini görüntülemek için üstteki durduğunu.
+İki `SKCanvasView` öğeleri olan tek bir hücrede `Grid` ile bir `Label` sonuç RGB renk değeri görüntülemek için üstte yer.
 
-[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs) arka plan kod dosyasına oldukça basittir. Paylaşılan `ValueChanged` üç işleyicisi `Slider` öğeleri yalnızca geçersiz kılar her ikisi de `SKCanvasView` öğeleri. `PaintSurface` İşleyiciler tarafından gösterilen renkle tuvale temizleyin `Slider` öğeleri ve ayrıca `Label` üstünde durduğunu `SKCanvasView` öğeleri:
+[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs) arka plan kod dosyası oldukça basittir. Paylaşılan `ValueChanged` üç işleyicisi `Slider` öğeleri yalnızca geçersiz kılar hem `SKCanvasView` öğeleri. `PaintSurface` İşleyicileri tarafından belirtilen renk ile tuval Temizle `Slider` öğeleri ve ayrıca `Label` üst kısmındaki oturan `SKCanvasView` öğeleri:
 
 ```csharp
 public partial class ColorExplorePage : ContentPage
@@ -227,13 +227,13 @@ public partial class ColorExplorePage : ContentPage
 }
 ```
 
-Renk modellerindeki HSL ve HSV ton değeri 0-360 için aralıkları ve rengi baskın ton gösterir. Şifre geleneksel renklerini şunlardır: kırmızı, turuncu, sarı, yeşil, mavi, Indigo, mor ve kırmızı bir daire içinde geri.
+Renk modellerdeki HSL hem HSV Hue değeri 0-360'aralıkları ve baskın ton rengini belirtir. Rainbow geleneksel renklerini şunlardır: kırmızı, turuncu, sarı, yeşil, mavi, Indigo, violet ve kırmızı bir daire içinde geri.
 
-HSL modelinde açıklık için 0 değeri her zaman siyah ve 100 bir değer her zaman beyaz olur. Doygunluk değerini 0 olduğunda açıklık 0 ile 100 arasında gri değerlerdir. Daha fazla renk doygunluğu artırma ekler. Doygunluk 100'dür ve açıklık 50'dir (RGB değerleri 255, 0 ve üçüncü 0 ile 255 arasında eşit başka eşit bir bileşen ile olan) saf renkleri oluşur.
+HSL modelinde açıklık için 0 değeri her zaman siyah ve 100 değeri her zaman beyaz. Doygunluk değeri 0 olduğunda açıklık 0 ile 100 arasında gri değerlerdir. Artan doygunluğu daha fazla renk ekler. (255, 0 ve üçüncü 0 ile 255 arasında eşit bir diğerine eşit olan bir bileşeni ile RGB değerleri olan) saf renk doygunluğu 100 ve 50 açıklık olduğunda oluşur.
 
-Hem Doygunluk hem de değeri 100 olduğunda HSV modelinde, saf renkleri neden. Değer 0, diğer ayarlarına bakılmaksızın rengi siyah olur. Doygunluk 0 ile 100 aralıklarını 0'dan gri meydana gelir.
+Doygunluk ve değeri 100 olduğunda HSV modelinde, saf renkleri neden. Değer 0, diğer ayarlarından bağımsız olarak olduğunda rengi siyah olur. Gri doygunluğu 0 ile 100 değer aralıklarına 0 olduğunda oluşur.
 
-Ancak iki model için bir fikir almak için en iyi yolu bunlarla kendiniz denemeler yapmak için:
+Ancak bir genel görünüm iki model için en iyi yolu bunları kendiniz denemek için:
 
 [![](integration-images/colorexplore-large.png "Üçlü sayfasının ekran görüntüsü renk keşfedin")](integration-images/colorexplore-small.png#lightbox "Üçlü sayfasının ekran görüntüsü renk keşfedin")
 

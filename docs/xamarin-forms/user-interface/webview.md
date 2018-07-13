@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 55267dfb1439d17f09126f65973ce9e6a0247d80
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: ed7bec4e25628d938218a40d157442debad8f835
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986063"
+ms.locfileid: "38998380"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
-[`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) uygulamanızda web ve HTML içeriğini görüntülemek için bir görünüm olduğundan. Farklı `OpenUri`, cihazda bir web tarayıcısına kullanıcının aldığı `WebView` uygulamanızı HTML içeriğini görüntüler.
+[`WebView`](xref:Xamarin.Forms.WebView) uygulamanızda web ve HTML içeriğini görüntülemek için bir görünüm olduğundan. Farklı `OpenUri`, cihazda bir web tarayıcısına kullanıcının aldığı `WebView` uygulamanızı HTML içeriğini görüntüler.
 
 ![](webview-images/in-app-browser.png "Uygulama tarayıcıda")
 
@@ -34,7 +34,7 @@ ms.locfileid: "38986063"
 
 ### <a name="websites"></a>Web siteleri
 
-Bir Web sitesi internet'ten görüntülenecek kümesi `WebView`'s [ `Source` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebViewSource/) özelliği bir dize URL:
+Bir Web sitesi internet'ten görüntülenecek kümesi `WebView`'s [ `Source` ](xref:Xamarin.Forms.WebViewSource) özelliği bir dize URL:
 
 ```csharp
 var browser = new WebView {
@@ -86,7 +86,7 @@ Bkz: [uygulama taşıma güvenliği](~/ios/app-fundamentals/ats.md) iOS 9'daki b
 
 ### <a name="html-strings"></a>HTML dizeleri
 
-Bir dizenin HTML kod içinde dinamik olarak tanımlanan sunmak istiyorsanız, bir örneğini oluşturmanız gerekir [ `HtmlWebViewSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.HtmlWebViewSource/):
+Bir dizenin HTML kod içinde dinamik olarak tanımlanan sunmak istiyorsanız, bir örneğini oluşturmanız gerekir [ `HtmlWebViewSource` ](xref:Xamarin.Forms.HtmlWebViewSource):
 
 ```csharp
 var browser = new WebView();

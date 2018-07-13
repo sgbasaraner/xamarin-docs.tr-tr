@@ -1,45 +1,45 @@
 ---
-title: Bir harita döngüsel bir alanı vurgulama
-description: Bu makalede, döngüsel bir harita alanı vurgulamak için bir harita için döngüsel bir katmana ekleme açıklanmaktadır. İOS ve Android API döngüsel katmana eşlemeye eklemek için sunarken, UWP üzerinde katmana Çokgen işlenir.
+title: Bir haritadaki dairesel bir alanı vurgulama
+description: Bu makalede, harita dairesel bir alanı vurgulamak için bir eşleme için döngüsel bir katmana ekleme açıklanmaktadır. İOS ve Android API döngüsel katmana haritaya eklemek için sunarken, UWP üzerinde katmana Çokgen işlenir.
 ms.prod: xamarin
 ms.assetid: 6FF8BD15-074E-4E6A-9522-F9E2BE32EF12
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 06ea1e788add0064571f01dc1080147e64bb8397
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3064296d4c78a3342fb27afc971c37a029987e5e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240291"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998563"
 ---
-# <a name="highlighting-a-circular-area-on-a-map"></a>Bir harita döngüsel bir alanı vurgulama
+# <a name="highlighting-a-circular-area-on-a-map"></a>Bir haritadaki dairesel bir alanı vurgulama
 
-_Bu makalede, döngüsel bir harita alanı vurgulamak için bir harita için döngüsel bir katmana ekleme açıklanmaktadır._
+_Bu makalede, harita dairesel bir alanı vurgulamak için bir eşleme için döngüsel bir katmana ekleme açıklanmaktadır._
 
 ## <a name="overview"></a>Genel Bakış
 
-Bir katmana harita üzerinde katmanlı bir grafiktir. Yer paylaşımları Haritası uzaklaştırılacağını gibi ölçeklendirilebilen çizim grafik içeriği destekler. Aşağıdaki ekran görüntüleri için bir harita döngüsel bir katmana ekleme sonucu göster:
+Bir katmana, harita üzerindeki katmanlı bir grafiktir. Katmanları ile eşleme, yakınlaştırılmış olarak ölçeklendirilen çizim grafik içeriği destekler. Aşağıdaki ekran görüntüleri, döngüsel bir katmana haritaya eklemenin sonucunu göstermektedir:
 
 ![](circle-map-overlay-images/screenshots.png)
 
-Zaman bir [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) denetimi, bir Xamarin.Forms uygulaması iOS tarafından işlenir `MapRenderer` sınıf örneği, hangi sırayla yerel başlatır `MKMapView` denetim. Android platformunda `MapRenderer` sınıfı başlatır yerel `MapView` denetim. Üzerinde Evrensel Windows Platformu (UWP), `MapRenderer` sınıfı başlatır yerel `MapControl`. Oluşturma işlemi için özel Oluşturucu oluşturarak platforma özgü harita özelleştirmeler uygulamak için avantajlarından alınabilir bir `Map` her platformda. Bunu yapmak için işlem aşağıdaki gibidir:
+Olduğunda bir [ `Map` ](xref:Xamarin.Forms.Maps.Map) bir Xamarin.Forms uygulaması iOS tarafından işlenen denetim `MapRenderer` sınıf örneği, hangi sırayla yerel bir örneğini oluşturur `MKMapView` denetimi. Android platformunda `MapRenderer` sınıfın örneğini oluşturur, bir yerel `MapView` denetimi. Üzerindeki Evrensel Windows Platformu (UWP), `MapRenderer` sınıfın örneğini oluşturur, bir yerel `MapControl`. İşleme sürecini avantajı için özel Oluşturucu oluşturarak platforma özgü harita özelleştirmeleri uygulamak için uygulanabilecek bir `Map` her platformda. Bunu yapmak için işlem aşağıdaki gibidir:
 
 1. [Oluşturma](#Creating_the_Custom_Map) Xamarin.Forms özel eşleme.
 1. [Tüketen](#Consuming_the_Custom_Map) Xamarin.Forms özel eşleme.
-1. [Özelleştirme](#Customizing_the_Map) özel bir işleyici eşlemesi için her platformda oluşturarak eşleme.
+1. [Özelleştirme](#Customizing_the_Map) eşleme için özel Oluşturucu her platformda oluşturarak eşleme.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/") başlatılmış ve kullanılmadan önce yapılandırılması gerekir. Daha fazla bilgi için bkz: [`Maps Control`](~/xamarin-forms/user-interface/map.md)
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) başlatılır ve yapılandırılmış önce kullanır. Daha fazla bilgi için bkz. [`Maps Control`](~/xamarin-forms/user-interface/map.md)
 
-Özel oluşturucu kullanılarak bir harita özelleştirme hakkında daha fazla bilgi için bkz: [bir harita PIN özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+Özel oluşturucu kullanılarak bir haritayı özelleştirme hakkında daha fazla bilgi için bkz: [bir harita Raptiyesini özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>Özel eşleme oluşturma
+### <a name="creating-the-custom-map"></a>Özel harita oluşturma
 
-Oluşturma bir `CustomCircle` olan sınıfı `Position` ve `Radius` özellikleri:
+Oluşturma bir `CustomCircle` sınıf `Position` ve `Radius` özellikleri:
 
 ```csharp
 public class CustomCircle
@@ -49,7 +49,7 @@ public class CustomCircle
 }
 ```
 
-Ardından, bir alt sınıfı oluşturun [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) türünde bir özellik ekler sınıfı, `CustomCircle`:
+Öğesinin oluşturup [ `Map` ](xref:Xamarin.Forms.Maps.Map) sınıf türünde bir özellik ekler, `CustomCircle`:
 
 ```csharp
 public class CustomMap : Map
@@ -62,7 +62,7 @@ public class CustomMap : Map
 
 ### <a name="consuming-the-custom-map"></a>Özel Harita kullanma
 
-Tüketen `CustomMap` bir örneğini XAML sayfası örneğinde bildirme tarafından denetimi:
+Tüketen `CustomMap` denetimi bir örneğini XAML sayfası örneğinde bildirmek:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -75,7 +75,7 @@ Tüketen `CustomMap` bir örneğini XAML sayfası örneğinde bildirme tarafınd
 </ContentPage>
 ```
 
-Alternatif olarak, tüketen `CustomMap` bir örneğini C# sayfa örneğinde bildirme tarafından denetimi:
+Alternatif olarak, tüketen `CustomMap` denetimi bir örneğini C# sayfa örnekteki bildirmek:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -93,7 +93,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-Initialize `CustomMap` kontrol gerektiği gibi:
+Başlatma `CustomMap` gerektiği gibi denetleyen:
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -120,17 +120,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Bu başlatma ekler [ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/) ve `CustomCircle` örnekler özel Harita ve haritanın görünümüyle konumlandırır [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) konumunu ve yakınlaştırma değişiklikleri yöntemi Harita oluşturarak düzeyini bir [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) gelen bir [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) ve [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Bu başlatma ekler [ `Pin` ](xref:Xamarin.Forms.Maps.Pin) ve `CustomCircle` özel eşleme için örnekler ve haritanın görünüm ile konumlandırır [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) yakınlaştırma ve konumunu değiştiren yöntemi Harita oluşturarak düzeyi bir [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) gelen bir [ `Position` ](xref:Xamarin.Forms.Maps.Position) ve [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
 <a name="Customizing_the_Map" />
 
-### <a name="customizing-the-map"></a>Harita özelleştirme
+### <a name="customizing-the-map"></a>Haritayı özelleştirme
 
-Özel oluşturucu artık döngüsel katmana eşlemesine eklemek için her uygulama projesi eklenmesi gerekir.
+Döngüsel katmana haritaya eklemek için her bir uygulama projesine artık özel Oluşturucu eklenmesi gerekir.
 
 #### <a name="creating-the-custom-renderer-on-ios"></a>İOS özel Oluşturucu Oluşturma
 
-Öğesinin bir alt kümesi oluşturmak `MapRenderer` sınıfı ve geçersiz kılma kendi `OnElementChanged` yöntemi döngüsel katmana eklemek için:
+Oluşturma bir öğesinin `MapRenderer` sınıf ve geçersiz kılma kendi `OnElementChanged` yöntemi döngüsel katmana eklemek için:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -170,13 +170,13 @@ namespace MapOverlay.iOS
 
 ```
 
-Yeni bir Xamarin.Forms öğesi özel Oluşturucu bağlı koşuluyla, bu yöntem aşağıdaki yapılandırma gerçekleştirir:
+Özel oluşturucu, yeni bir Xamarin.Forms öğesine bağlı şartıyla bu yöntem aşağıdaki yapılandırmayı gerçekleştirir:
 
 - `MKMapView.OverlayRenderer` Özelliği için karşılık gelen bir temsilci ayarlayın.
-- Daireye statik ayarlanarak oluşturulur `MKCircle` dairenin merkezi ve dairenin RADIUS metre belirtir nesnesi.
-- Daire harita çağrılarak eklenir `MKMapView.AddOverlay` yöntemi.
+- Statik ayarlayarak daire oluşturulan `MKCircle` nesnesini Orta dairenin ve RADIUS dairenin metre cinsinden belirtir.
+- Daire çağırarak haritaya eklenen `MKMapView.AddOverlay` yöntemi.
 
-Ardından, uygulama `GetOverlayRenderer` katmana çizmeye özelleştirmek için yöntemi:
+Ardından, uygulama `GetOverlayRenderer` katmana işlenmesi özelleştirmek için yöntemi:
 
 ```csharp
 public class CustomMapRenderer : MapRenderer
@@ -198,9 +198,9 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Android özel Oluşturucu Oluşturma
+#### <a name="creating-the-custom-renderer-on-android"></a>Android'de özel Oluşturucu Oluşturma
 
-Öğesinin bir alt kümesi oluşturmak `MapRenderer` sınıfı ve geçersiz kılma kendi `OnElementChanged` ve `OnMapReady` yöntemleri döngüsel katmana eklemek için:
+Oluşturma bir öğesinin `MapRenderer` sınıf ve geçersiz kılma kendi `OnElementChanged` ve `OnMapReady` yöntemleri döngüsel katmana eklemek için:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -248,11 +248,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged` Yöntem çağrılarını `MapView.GetMapAsync` temel alır yöntemi `GoogleMap` , bağlı görünümüne koşuluyla özel Oluşturucu yeni bir Xamarin.Forms öğesine bağlı. Bir kez `GoogleMap` örneği kullanılabilir `OnMapReady` yöntemi çağrılabilir, daire oluşturarak oluşturulduğu bir `CircleOptions` dairenin merkezi ve dairenin RADIUS metre belirtir nesnesi. Daireye sonra eşlemeye çağrılarak eklenir `NativeMap.AddCircle` yöntemi.
+`OnElementChanged` Yöntem çağrılarını `MapView.GetMapAsync` temel alan, yöntem `GoogleMap` , bağlı görünümüne koşuluyla özel Oluşturucu, yeni bir Xamarin.Forms öğesine eklenir. Bir kez `GoogleMap` örneği kullanılabilir `OnMapReady` yöntemi çağrılacak, dairenin örnekleme tarafından oluşturulduğu bir `CircleOptions` nesnesini Orta dairenin ve RADIUS dairenin metre cinsinden belirtir. Daire çağırarak haritaya daha sonra eklenen `NativeMap.AddCircle` yöntemi.
 
 #### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Evrensel Windows platformu üzerinde özel Oluşturucu Oluşturma
 
-Öğesinin bir alt kümesi oluşturmak `MapRenderer` sınıfı ve geçersiz kılma kendi `OnElementChanged` yöntemi döngüsel katmana eklemek için:
+Oluşturma bir öğesinin `MapRenderer` sınıf ve geçersiz kılma kendi `OnElementChanged` yöntemi döngüsel katmana eklemek için:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -296,11 +296,11 @@ namespace MapOverlay.UWP
 }
 ```
 
-Yeni bir Xamarin.Forms öğesi özel Oluşturucu bağlı koşuluyla, bu yöntem aşağıdaki işlemleri gerçekleştirir:
+Özel oluşturucu, yeni bir Xamarin.Forms öğesine bağlı şartıyla bu yöntem aşağıdaki işlemleri gerçekleştirir:
 
-- Daire konumunu ve RADIUS alınır `CustomMap.Circle` özelliği ve geçirilen `GenerateCircleCoordinates` enlem ve boylam oluşturur yöntemi daire çevre koordinatları. Bu yardımcı yöntemi için kod aşağıda verilmiştir.
-- Daire çevre koordinatları dönüştürülen bir `List` , `BasicGeoposition` koordinatları.
-- Daireye örneği tarafından oluşturulan bir `MapPolygon` nesnesi. `MapPolygon` Sınıfı ayarlayarak haritada çok nokta şekli görüntülemek için kullanılır, `Path` özelliğine bir `Geopath` şekli koordinatları içeren nesne.
+- Daire konumunu ve RADIUS alınır `CustomMap.Circle` özelliği ve geçirilen `GenerateCircleCoordinates` enlem ve boylam oluşturan yöntemi daire çevre koordinatları. Bu yardımcı yöntem için kod, aşağıda gösterilmiştir.
+- Daire çevre koordinatları metne dönüştürülecek bir `List` , `BasicGeoposition` koordinatları.
+- Daire örneği tarafından oluşturulan bir `MapPolygon` nesne. `MapPolygon` Sınıfı ayarlayarak bir çok noktası şekli haritada görüntülemek için kullanılır, `Path` özelliğini bir `Geopath` şekli koordinatları içeren nesne.
 - Çokgen harita üzerinde ekleyerek işlenen `MapControl.MapElements` koleksiyonu.
 
 
@@ -328,11 +328,11 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 
 ## <a name="summary"></a>Özet
 
-Bu makalede haritaya döngüsel bir harita alanı vurgulamak için döngüsel bir katmana ekleme konusunda açıklanmıştır.
+Bu makalede bir haritaya harita dairesel bir alanı vurgulamak için döngüsel bir katmana eklemek açıklanmıştır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Döngüsel harita Ovlerlay (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
+- [Daire harita Ovlerlay (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/circle/)
 - [Bir Harita Raptiyesini Özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
-- [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)
+- [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

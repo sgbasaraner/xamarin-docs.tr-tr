@@ -1,26 +1,26 @@
 ---
-title: Dokunun hareketi hareketi tanıyıcı ekleme
-description: Bu makalede, bir Xamarin.Forms uygulaması dokunun algılama dokunun hareketi kullanımı açıklanmaktadır. Dokunun algılama TapGestureRecognizer sınıfı uygulanır.
+title: Bir dokunma hareketi hareket tanıyıcı ekleme
+description: Bu makalede, bir Xamarin.Forms uygulaması dokunun algılama için dokunma hareketi kullanmayı açıklar. Dokunun algılama TapGestureRecognizer sınıfıyla uygulanır.
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: bbe4ca7a1080459b8aeb33640be5158b15e97715
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e602ae1f140640d9a895b65d78feab3d0a3b7861
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240671"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994860"
 ---
-# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Dokunun hareketi hareketi tanıyıcı ekleme
+# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Bir dokunma hareketi hareket tanıyıcı ekleme
 
-_Dokunun hareketi dokunun algılama için kullanılır ve TapGestureRecognizer sınıfı uygulanır._
+_Dokunma hareketi dokunun algılama için kullanılır ve TapGestureRecognizer sınıfıyla uygulanır._
 
 ## <a name="overview"></a>Genel Bakış
 
-Bir kullanıcı arabirimi öğesi tıklanabilir dokunun hareketi sahip olmak için oluşturun bir [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) örneği, işleme [ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/) olay ve yeni hareketi tanıyıcı eklemek [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) kullanıcı arabirimi öğesi koleksiyonu. Aşağıdaki örnekte gösterildiği kod bir `TapGestureRecognizer` bağlı bir [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) öğe:
+Bir kullanıcı arabirimi öğesi tıklanabilir dokunma hareketi sahip olmak için oluşturun bir [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) örneği, işlemek [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) olay ve eklemek için yeni hareket tanıyıcı [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) kullanıcı arabirimi öğesi koleksiyonu. Aşağıdaki kod örnekte gösterildiği bir `TapGestureRecognizer` iliştirilmiş bir [ `Image` ](xref:Xamarin.Forms.Image) öğesi:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -30,19 +30,19 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-Varsayılan olarak, görüntünün tek dokunma yanıt verir. Ayarlama [ `NumberOfTapsRequired` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired/) özelliği çift dokunmayla (veya gerekirse daha fazla Tap) için bekleyin.
+Varsayılan olarak, görüntü için tek bir dokunma yanıt verir. Ayarlama [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) çift dokunun (veya gerekirse daha fazla Tap'ları) için beklenecek özelliği.
 
 ```csharp
 tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
-Zaman [ `NumberOfTapsRequired` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired/) ayarlanmış Tap ayarlanmış bir süre sonunda süresi (Bu dönem değil yapılandırılabilir) oluşursa bir olay işleyicisi yalnızca yürütülür. İkinci (veya sonraki) dokunma belirtilen süre içinde değil oluşursa etkili bir şekilde dikkate alınmaz ve 'dokunun count' yeniden başlatır.
+Zaman [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) ayarlanır (Bu dönem değil yapılandırılabilir) zaman belirli bir süre içinde Tap'ları meydana gelirse birini olay işleyicisi yalnızca yürütülür. Belirtilen süre içinde ikinci (veya sonraki) Tap'ları gerçekleşmez gözardı etkili bir şekilde ve 'dokunun count' yeniden başlatır.
 
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>XAML kullanma
+## <a name="using-xaml"></a>XAML kullanarak
 
-Hareketi tanıyıcı ekli özellikler kullanarak Xaml denetiminde eklenebilir. Eklemek için söz dizimi bir [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) görüntüye aşağıda verilmiştir (Bu durumda tanımlayan bir *çift dokunun* olay):
+Hareket tanıyıcı, ekli özellikler kullanarak Xaml içindeki bir denetime eklenebilir. Eklemek için söz dizimi bir [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) görüntüye aşağıda gösterilen (Bu durumda tanımlayan bir *çift dokunun* olay):
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -54,7 +54,7 @@ Hareketi tanıyıcı ekli özellikler kullanarak Xaml denetiminde eklenebilir. E
 </Image>
 ```
 
-Bir sayaç artırılır ve görüntü rengi siyah olarak değişir (örnekteki) olay işleyicisi için kod &amp; beyaz.
+(Örnek) olay işleyicisi için kod bir sayaç artırılır ve görüntü rengi siyah olarak değiştirir. &amp; beyaz.
 
 ```csharp
 void OnTapGestureRecognizerTapped(object sender, EventArgs args)
@@ -70,9 +70,9 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 }
 ```
 
-## <a name="using-icommand"></a>ICommand kullanma
+## <a name="using-icommand"></a>ICommand'ı kullanma
 
-Genellikle Mvvm desen kullanan uygulamaları kullanmak `ICommand` yerine doğrudan kablolama olay işleyicilerini ayarlama. [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) Kolayca destekleyebilir `ICommand` kodda bağlama ayarlayarak ya da:
+Genellikle Mvvm düzenini kullanan uygulamaları kullanın `ICommand` doğrudan teknik olay işleyicileri'kurmak yerine. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Kolayca destekleyebilir `ICommand` kod içinde bağlama ayarlayarak ya da:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -80,7 +80,7 @@ tapGestureRecognizer.SetBinding (TapGestureRecognizer.CommandProperty, "TapComma
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-ya da Xaml kullanarak:
+veya Xaml kullanarak:
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -92,7 +92,7 @@ ya da Xaml kullanarak:
 </Image>
 ```
 
-Bu görünüm modeli için tam kod örnek bulunabilir. İlgili `Command` uygulama ayrıntıları aşağıda gösterilmektedir:
+Bu görünüm modeli için tam kod örneği bulunabilir. İlgili `Command` uygulama ayrıntıları aşağıda gösterilmektedir:
 
 ```csharp
 public class TapViewModel : INotifyPropertyChanged
@@ -116,11 +116,11 @@ public class TapViewModel : INotifyPropertyChanged
 
 ## <a name="summary"></a>Özet
 
-Dokunun hareketi dokunun algılama için kullanılır ve ile uygulanan [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) sınıfı. Dokunma sayısı, çift dokunmayla tanımak için belirtilebilir (üçlü dokunma ya da daha fazla dokunur) davranışı.
+Dokunma hareketi dokunun algılama için kullanılır ve ile uygulanan [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) sınıfı. Tap'ları sayısı, çift dokunmayla tanımak için belirtilebilir (üçlü dokunun ya da daha fazla dokunduğunda) davranışı.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [TapGesture (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/TapGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [TapGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [TapGestureRecognizer](xref:Xamarin.Forms.TapGestureRecognizer)

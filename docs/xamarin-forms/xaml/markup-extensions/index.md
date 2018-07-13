@@ -1,65 +1,65 @@
 ---
-title: XAML işaretleme uzantıları
-description: Makaleyi Xamarin.Forms XAML işaretleme uzantılarına gücü ve esnekliği XAML metin dizelerini dışındaki kaynaklardan ayarlanacak öğesi özniteliklerini vererek genişletmek için nasıl kullanılacağını açıklar.
+title: XAML biçimlendirme uzantıları
+description: Makale, gücü ve esnekliği XAML öğesi özniteliklerini düz metin dizelerini dışındaki kaynaklardan ayarlanacak vererek genişletmek için Xamarin.Forms XAML biçimlendirme uzantıları kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: c6f1853c5864eed8484e7746755c6fa80a28a49b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d507ff3c74de6bb4ea36c1a7b7dc2cd5dd60823b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245891"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996746"
 ---
-# <a name="xaml-markup-extensions"></a>XAML işaretleme uzantıları
+# <a name="xaml-markup-extensions"></a>XAML biçimlendirme uzantıları
 
-XAML işaretleme uzantılarına gücü ve esnekliği XAML metin dizelerini dışındaki kaynaklardan ayarlanacak öğesi özniteliklerini vererek genişletmek yardımcı olur.
+XAML biçimlendirme uzantıları, gücü ve esnekliği XAML öğesi özniteliklerini düz metin dizelerini dışındaki kaynaklardan ayarlanacak vererek genişletmeye yardımcı.
 
-Örneğin, normal olarak ayarladığınız `Color` özelliği `BoxView` şöyle:
+Örneğin, normalde ayarlamanız `Color` özelliği `BoxView` şöyle:
 
 ```xaml
 <BoxView Color="Blue" />
 ```
 
-Veya, onaltılık RGB renk değerine ayarlayın:
+Veya bir onaltılık RGB renk değeri ayarlayın:
 
 ```xaml
 <BoxView Color="#FF0080" />
 ```
 
-Her iki durumda da metin dizesini ayarlamak `Color` özniteliği için dönüştürülür bir `Color` tarafından değeri [ `ColorTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColorTypeConverter/) sınıfı.
+Metin dizesi her iki durumda da kümesine `Color` özniteliği dönüştürülen bir `Color` tarafından değeri [ `ColorTypeConverter` ](xref:Xamarin.Forms.ColorTypeConverter) sınıfı.
 
-Ayarlamak bunun yerine tercih edebilirsiniz `Color` özniteliği bir kaynak sözlüğü depolanan bir değer veya oluşturduğunuz bir sınıfın statik bir özelliğin değerini veya türünde bir özellik `Color` sayfasında başka öğesinin veya oluşturulan gelen ton, Doygunluk ve parlaklığını değerleri ayırın.
+Ayarlamak bunun yerine tercih edebilirsiniz `Color` özniteliği bir kaynak sözlüğünde depolanan bir değer veya oluşturduğunuz bir sınıfın statik bir özellik değerini veya vlastnost typu `Color` sayfasında başka bir öğe veya gelen oluşturulmuş ton, Doygunluk ve parlaklık değerleri virgülle ayırın.
 
-XAML biçimlendirme uzantıları kullanarak tüm bu seçenekler mümkündür. Ancak tümcecik izin vermeyin "biçimlendirme uzantıları" korkutmak: XAML biçimlendirme uzantıları *değil* XML uzantıları. XAML biçimlendirme uzantıları ile bile, XAML her zaman yasal XML'dir.
+XAML biçimlendirme uzantıları kullanarak tüm bu seçenekler mümkündür. Ancak tümceciği izin vermeyin "biçimlendirme uzantıları" korkutmak: XAML biçimlendirme uzantıları *değil* XML uzantıları. XAML biçimlendirme uzantıları ile bile, XAML, her zaman geçerli XML olur.
 
-Biçimlendirme uzantısı bir öznitelik, bir öğenin express aslında bir farklı yoludur. XAML işaretleme uzantılarına süslü ayraç içine bir öznitelik ayarı tarafından genellikle tanımlanabilir:
+Aslında bir öznitelik bir öğenin ifade etmek için farklı şekilde bir işaretleme uzantısıdır. XAML biçimlendirme uzantıları, küme ayraçları içine alınmış bir özniteliğini adlarıyla genellikle şunlardır:
 
 ```xaml
 <BoxView Color="{StaticResource themeColor}" />
 ```
 
-Süslü ayraçlar hiçbir öznitelik ayardır *her zaman* XAML biçimlendirme uzantısı. Ancak, göreceğiniz gibi XAML işaretleme uzantılarına da süslü ayraçlar kullanmadan başvurulabilir.
+Küme ayracı hiçbir öznitelik ayardır *her zaman* XAML işaretleme uzantısı. Ancak, gördüğünüz gibi XAML biçimlendirme uzantıları da küme ayracı kullanmadan başvurulabilir.
 
 Bu makalede iki bölüme ayrılır:
 
 ## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[XAML Biçimlendirme Uzantılarını Kullanma](consuming.md)  
 
-XAML biçimlendirme uzantıları Xamarin.Forms içinde tanımlı kullanın.
+Xamarin.Forms içinde tanımlanan XAML biçimlendirme uzantıları kullanın.
 
 ## <a name="creating-xaml-markup-extensionscreatingmd"></a>[XAML Biçimlendirme Uzantıları Oluşturma](creating.md)
 
-Kendi özel XAML biçimlendirme uzantıları yazma.
+Kendi özel XAML biçimlendirme Uzantıları'nı yazın.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Biçimlendirme uzantıları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
-- [XAML biçimlendirme uzantıları bölüm Xamarin.Forms defterinden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [XAML biçimlendirme uzantıları Xamarin.Forms kitabı bölümden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Kaynak Sözlükler](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dinamik Stiller](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Veri Bağlama](~/xamarin-forms/app-fundamentals/data-binding/index.md)

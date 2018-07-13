@@ -1,65 +1,65 @@
 ---
-title: Xamarin.Forms ana-ayrıntı sayfası
-description: Xamarin.Forms MasterDetailPage iki ilgili sayfaları – bilgilerinin öğeleri sunan bir ana sayfa ve ana sayfada öğeleri hakkında ayrıntılar sunar ayrıntı sayfası yöneten bir sayfadır. Bu makalede bir MasterDetailPage ve kendi bilgi sayfaları arasında gezinmek nasıl kullanılacağı açıklanmaktadır.
+title: Xamarin.Forms ana öğe-ayrıntı sayfası
+description: Xamarin.Forms MasterDetailPage iki ilgili verinin bilgi sayfaları – öğeleri sunan bir ana sayfa ve ana sayfada öğe ayrıntılarını sunan bir ayrıntı sayfası yöneten bir sayfadır. Bu makalede, bir MasterDetailPage kullanın ve kendi bilgi sayfaları arasında gezinmek açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 46fa32fc8203b32378f4a4fbe07cb8c9f8dbb854
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: a3d0edbd933339ee8b8a0a277a4f2493cc8dc70e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209212"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997471"
 ---
-# <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms ana-ayrıntı sayfası
+# <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms ana öğe-ayrıntı sayfası
 
-_Xamarin.Forms MasterDetailPage iki ilgili sayfaları – bilgilerinin öğeleri sunan bir ana sayfa ve ana sayfada öğeleri hakkında ayrıntılar sunar ayrıntı sayfası yöneten bir sayfadır. Bu makalede bir MasterDetailPage ve kendi bilgi sayfaları arasında gezinmek nasıl kullanılacağı açıklanmaktadır._
+_Xamarin.Forms MasterDetailPage iki ilgili verinin bilgi sayfaları – öğeleri sunan bir ana sayfa ve ana sayfada öğe ayrıntılarını sunan bir ayrıntı sayfası yöneten bir sayfadır. Bu makalede, bir MasterDetailPage kullanın ve kendi bilgi sayfaları arasında gezinmek açıklanmaktadır._
 
 ## <a name="overview"></a>Genel Bakış
 
-Bir ana sayfa, genellikle aşağıdaki ekran görüntülerinde gösterildiği gibi öğeleri listesini görüntüler:
+Ana sayfaya, genellikle aşağıdaki ekran görüntülerinde gösterildiği gibi öğeleri listesini görüntüler:
 
 [![](master-detail-page-images/masterpage-components.png "Ana sayfa bileşenleri")](master-detail-page-images/masterpage-components-large.png#lightbox "ana sayfa bileşenleri")
 
-Öğe listesinin konumunu her platformda aynıdır ve öğelerden birini seçerek karşılık gelen Ayrıntı Sayfası'na gidin. Ayrıca, ana sayfa etkin Ayrıntı Sayfası'na gitmek için kullanılan bir düğmeyi içeren bir gezinti çubuğu özellikleri:
+Her platformda öğelerin listesini konumunu aynıdır ve öğelerden birini seçerek ilgili ayrıntıları sayfasına gider. Ayrıca, ana sayfa aynı zamanda active ayrıntıları sayfasına gitmek için kullanılan bir düğme içeren bir gezinti çubuğu özellikleri:
 
-- İOS, gezinti çubuğunda sayfanın en üstünde bulunduğundan ve ayrıntı sayfasına giden bir düğme vardır. Ayrıca, etkin ayrıntı sayfası için ana sayfa sol geçirilerek gittiğinizde.
-- Android'de, gezinti çubuğunda sayfanın en üstünde bulunduğundan ve bir başlık, simge ve giden bir düğme Ayrıntı Sayfası'na görüntüler. Simge tanımlanan `[Activity]` süsler özniteliği `MainActivity` Android platforma özgü projesinde sınıfı. Ayrıca, etkin ayrıntı sayfası için sol ana sayfaya geçirmeyi tarafından ekranın sağ uçta ayrıntı sayfası dokunarak şirket uygulamalarına ve e dokunabilirsiniz gezinilebilir *geri* ekranın altındaki düğmesini.
-- Üzerinde Evrensel Windows Platformu (UWP), gezinti çubuğunda sayfanın en üstünde bulunduğundan ve ayrıntı sayfasına giden bir düğme vardır.
+- İOS, gezinti çubuğunda, sayfanın en üstünde bulunur ve ayrıntıları sayfasına gider bir düğmeye sahip. Ayrıca, etkin ayrıntı sayfası için ana sayfanın solundaki geçirilerek gezinilebilir.
+- Android, gezinti çubuğunda, sayfanın en üstünde bulunur ve ayrıntıları sayfasına gider bir düğme bir başlık ve bir simge görüntüler. Simgenin tanımlandığı `[Activity]` düzenler özniteliği `MainActivity` Android platforma özgü projede sınıfı. Ayrıca, etkin ayrıntı sayfası için ana sayfanın solundaki çekerek, ekranın sağ uçta ayrıntı sayfası dokunarak ve dokunarak gezinilebilir *geri* ekranın alt kısmındaki düğmesi.
+- Üzerindeki Evrensel Windows Platformu (UWP), gezinti çubuğunda, sayfanın en üstünde bulunur ve ayrıntıları sayfasına gider bir düğmeye sahip.
 
-Öğesine karşılık gelen bir ayrıntı sayfa görüntüler verileri ana sayfa seçili ve ayrıntı sayfası ana bileşenlerini aşağıdaki ekran görüntülerinde gösterilir:
+Öğesine karşılık gelen bir ayrıntı sayfası görüntüler veri ana sayfasında seçili ve aşağıdaki ekran görüntülerinde ayrıntı sayfası ana bileşenleri gösterilmektedir:
 
 ![](master-detail-page-images/detailpage-components.png "Ayrıntı Sayfası bileşenleri")
 
-Ayrıntı Sayfası içeriği platforma bağımlı bir gezinti çubuğu içerir:
+Ayrıntı Sayfası platforma bağımlı olan bir gezinti çubuğu içerir:
 
-- İOS, gezinti çubuğunda sayfanın en üstünde bulunduğundan ve bir başlık görüntüler ve ayrıntı sayfası örneği olarak paketlenir koşuluyla ana sayfaya döndüren bir düğme [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) örneği. Ayrıca, ana sayfa için sağa ayrıntı sayfası geçirilerek döndürülebilir.
-- Android, gezinti çubuğunda sayfanın en üstünde bulunduğundan ve bir başlık, simge ve ana sayfaya döndüren bir düğme görüntüler. Simge tanımlanan `[Activity]` süsler özniteliği `MainActivity` Android platforma özgü projesinde sınıfı.
-- UWP, gezinti çubuğunda sayfanın en üstünde bulunduğundan ve bir başlık görüntüler ve ana sayfaya döndüren bir düğme vardır.
+- İOS, gezinti çubuğunda sayfanın en üstünde mevcut bir başlık görüntüler ve ayrıntı sayfası örneği içine sarmalanır koşuluyla ana sayfaya döndüren bir düğmeye sahip [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) örneği. Ayrıca, ana sayfa için ayrıntı sayfası sağ tarafından çekerek döndürülebilir.
+- Android, gezinti çubuğunda sayfanın en üstünde bulunur ve başlık, simge ve ana sayfaya döndüren bir düğme görüntülenir. Simgenin tanımlandığı `[Activity]` düzenler özniteliği `MainActivity` Android platforma özgü projede sınıfı.
+- UWP, gezinti çubuğunda sayfasının en üstünde mevcut olduğundan ve bir başlık görüntüler ve ana sayfaya döndüren bir düğmeye sahip.
 
-### <a name="navigation-behavior"></a>Gezinti davranışı
+### <a name="navigation-behavior"></a>Gezinti davranışları
 
-Ana ve ayrıntı sayfaları arasında gezinme deneyimi platform bağımlı davranıştır:
+Ana ve ayrıntı sayfaları arasında gezinti deneyimi, davranışı platform bağımlı olur:
 
-- İOS, ayrıntı sayfası *slayt* ana sayfa slayt olarak sağdan sola ve ayrıntı sol bölümü için hala görünür sayfasıdır.
-- Android, ayrıntı ve ana sayfalarıdır *üzerini kaplamış şekilde* birbirlerine.
-- UWP üzerinde ayrıntı ve ana sayfalarıdır *takas*.
+- İOS, ayrıntı sayfası *slaytları* ana sayfa slaytları olarak sağa sola ve sol bölümü ayrıntı sayfası hala görülebilir.
+- Android, ayrıntı ve ana sayfalar olan *yayılan* birbirlerine.
+- UWP üzerinde ayrıntılı ve ana sayfalar olan *takas*.
 
-Daha fazla ayrıntı sayfasının görünür olması için iOS ve Android ana sayfada benzer genişliği dikey modunda, ana sayfa olarak olan benzer davranış yatay modunda izlenir.
+Daha fazla ayrıntı sayfası görünür olacak şekilde ana sayfaya iOS ve Android'de benzer bir genişlik ana sayfa dikey modda olarak olan benzer bir davranış yatay modda izlenir.
 
-Gezinti davranışını denetleme hakkında daha fazla bilgi için bkz: [ayrıntı sayfası görüntü davranışını denetleme](#Controlling_the_Detail_Page_Display_Behavior).
+Gezinme davranışını denetleme hakkında daha fazla bilgi için bkz: [ayrıntı sayfasında görünen davranışını denetleme](#Controlling_the_Detail_Page_Display_Behavior).
 
 ## <a name="creating-a-masterdetailpage"></a>Bir MasterDetailPage oluşturma
 
-A [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) içeren [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) ve [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) türü her ikisi de özellikleri [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), hangi almak ve ana ve ayrıntı sayfaları sırasıyla ayarlamak için kullanılır.
+A [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) içeren [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) ve [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) türü her ikisi de özellikleri [ `Page` ](xref:Xamarin.Forms.Page), almak ve ana ve ayrıntı sayfaları sırasıyla ayarlamak için kullanılır.
 
 > [!IMPORTANT]
-> A [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) kök sayfa olacak şekilde tasarlanmıştır ve bir alt sayfası diğer sayfa türlerinde beklenmeyen ve tutarsız davranışlara neden olarak kullanma. Ayrıca, ana sayfasının önerilir bir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) her zaman olması gereken bir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örneği ve ayrıntı sayfası ile yalnızca doldurulmalıdır [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/), [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/), ve `ContentPage` örnekleri. Bu tüm platformlarda tutarlı bir kullanıcı deneyimi sağlamak için yardımcı olur.
+> A [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) kök sayfa olacak şekilde tasarlanmıştır ve bir alt sayfası diğer sayfa türlerinde beklenmeyen ve tutarsız davranışa neden, kullanarak. Ayrıca, bu ana sayfanın önerilir bir [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) her zaman olmalıdır bir [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) örneği ve ayrıntı sayfası ile yalnızca doldurulmalıdır [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage), ve `ContentPage` örnekleri. Bu, tüm platformlar arasında tutarlı bir kullanıcı deneyimi sağlamaya yardımcı olur.
 
-Aşağıdaki XAML kodu örnekte gösterildiği bir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) ayarlayan [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) ve [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) özellikleri:
+Aşağıdaki XAML kod örnekte gösterildiği bir [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) ayarlayan [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) ve [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) özellikleri:
 
 ```xaml
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -79,7 +79,7 @@ Aşağıdaki XAML kodu örnekte gösterildiği bir [ `MasterDetailPage` ](https:
 </MasterDetailPage>
 ```
 
-Aşağıdaki kod örneğinde eşdeğer gösterir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) C# ' ta oluşturuldu:
+Aşağıdaki kod örneği, eşdeğer gösterir [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) C# içinde oluşturulan:
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -97,11 +97,11 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-[ `MasterDetailPage.Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) Özelliği ayarlanmış bir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örneği. [ `MasterDetailPage.Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) Özelliği ayarlanmış bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) içeren bir `ContentPage` örneği.
+[ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) Özelliği bir [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) örneği. [ `MasterDetailPage.Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) Özelliği bir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) içeren bir `ContentPage` örneği.
 
 ### <a name="creating-the-master-page"></a>Ana sayfa oluşturma
 
-Aşağıdaki XAML kod örneği bildirimi gösterir `MasterPage` aracılığıyla başvurulan nesne [ `MasterDetailPage.Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) özelliği:
+Aşağıdaki XAML kod örneği bildirimi gösterir `MasterPage` aracılığıyla başvurulan nesne [ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) özelliği:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -139,16 +139,16 @@ Aşağıdaki XAML kod örneği bildirimi gösterir `MasterPage` aracılığıyla
 </ContentPage>
 ```
 
-Sayfa oluşan bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) , doldurulur XAML'de verilerle ayarlayarak kendi [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemsSource/) bir dizi özelliğine `MasterPageItem` örnekleri. Her `MasterPageItem` tanımlar `Title`, `IconSource`, ve `TargetType` özellikleri.
+Sayfa oluşan bir [ `ListView` ](xref:Xamarin.Forms.ListView) , doldurulur XAML verilerle ayarlayarak onun [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) bir dizi özelliği `MasterPageItem` örnekleri. Her `MasterPageItem` tanımlar `Title`, `IconSource`, ve `TargetType` özellikleri.
 
-A [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) atandığı [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/) her görüntülenecek özelliği, `MasterPageItem`. `DataTemplate` İçeren bir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) , oluşur bir [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) ve [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/). [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) Görüntüler `IconSource` özellik değeri ve [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) görüntüler `Title` her özellik değerini `MasterPageItem`.
+A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) atandığı [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) her görüntülenecek özelliği `MasterPageItem`. `DataTemplate` İçeren bir [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) , oluşur bir [ `Image` ](xref:Xamarin.Forms.Image) ve [ `Label` ](xref:Xamarin.Forms.Label). [ `Image` ](xref:Xamarin.Forms.Image) Görüntüler `IconSource` özellik değeri ve [ `Label` ](xref:Xamarin.Forms.Label) görüntüler `Title` her özellik değerini `MasterPageItem`.
 
-Sayfanın kendi [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) ve [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) özelliklerini ayarla. Başlık çubuğu ayrıntı sayfası sahip olması koşuluyla simgesi ayrıntı sayfasında görünür. İos'ta bu etkinleştirilmelidir ayrıntı sayfası örneğinde kaydırma tarafından bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) örneği.
+Sayfanın alt [ `Title` ](xref:Xamarin.Forms.Page.Title) ve [ `Icon` ](xref:Xamarin.Forms.Page.Icon) özellikler kümesi. Başlık çubuğu ayrıntı sayfası sahip olması koşuluyla simgesi ayrıntı sayfasında görünür. İos'ta bu etkinleştirilmelidir ayrıntı sayfası örneğinde sarmalama tarafından bir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) örneği.
 
 > [!NOTE]
-> [ `MasterDetailPage.Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) Sayfa olmalıdır, [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) özelliğini ayarlayın ya da bir özel durum meydana gelir.
+> [ `MasterDetailPage.Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) Sayfası olması gerekir, [ `Title` ](xref:Xamarin.Forms.Page.Title) özelliğini ayarlayın ya da bir özel durum oluşur.
 
-Aşağıdaki kod örneği, C# ' de oluşturulan eşdeğer sayfaya gösterir:
+Aşağıdaki kod örneği, oluşturulan C# ' de eşdeğer sayfaya gösterir:
 
 ```csharp
 public class MasterPageCS : ContentPage
@@ -206,13 +206,13 @@ public class MasterPageCS : ContentPage
 }
 ```
 
-Aşağıdaki ekran görüntüleri her platformda ana sayfayı göster:
+Aşağıdaki ekran görüntüleri her platformda ana sayfaya göster:
 
 ![](master-detail-page-images/masterpage.png "Ana sayfası örneği")
 
 ### <a name="creating-and-displaying-the-detail-page"></a>Oluşturma ve ayrıntı sayfası görüntüleme
 
-`MasterPage` Örneğini içeren bir `ListView` gösteren özelliği, [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) örneği böylece `MainPage` [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) örneği kaydolabilir bir İşlenecek Olay işleyicisi [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) olay. Böylece `MainPage` ayarlamak için örnek [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) seçili temsil eden sayfa özelliğine `ListView` öğesi. Aşağıdaki kod örneği olay işleyicisini gösterir:
+`MasterPage` Örneği içeren bir `ListView` kullanıma sunduğu özellik kendi [ `ListView` ](xref:Xamarin.Forms.ListView) örneği böylece `MainPage` [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) örneği kaydedebilir bir İşlenecek Olay işleyicisi [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) olay. Böylece `MainPage` ayarlamak için örnek [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) özelliği seçili temsil eden sayfasına `ListView` öğesi. Aşağıdaki kod örneği, olay işleyicisi gösterir:
 
 ```csharp
 public partial class MainPage : MasterDetailPage
@@ -237,9 +237,9 @@ public partial class MainPage : MasterDetailPage
 
 `OnItemSelected` Yöntemi aşağıdaki eylemleri gerçekleştirir:
 
-- Alır [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/) gelen [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) örneği ve, olmadığını sağlanan `null`, ayrıntı sayfası depolanansayfatürüyenibirörneğiniayarlar`TargetType`özelliği `MasterPageItem`. Sayfa türü içinde kaydırılan bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) aracılığıyla başvurulan simgesi emin olmak için örnek [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) özelliği `MasterPage` iOS ayrıntı sayfalarında gösterilir.
-- Seçilen öğeyi [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ayarlanır `null` hiçbiri emin olmak için `ListView` öğeleri sonraki seçilecektir `MasterPage` sunulur.
-- Ayrıntı Sayfası ayarlayarak kullanıcıya sunulan [ `MasterDetailPage.IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/) özelliğine `false`. Bu özellik, ana veya ayrıntı sayfası sunulan olup olmadığını denetler. Kümesine `true` ana sayfayı görüntülemek için ve `false` ayrıntı sayfasını görüntüleyin.
+- Alır [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) gelen [ `ListView` ](xref:Xamarin.Forms.ListView) örneği ve etkinleştirilmediğini sağlanan `null`, ayrıntı sayfası içindedepolanansayfatürüyenibirörneğiniayarlar`TargetType`özelliğini `MasterPageItem`. Sayfa türü içinde sarmalanmış bir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) aracılığıyla başvurulan simgesi emin olmak için örnek [ `Icon` ](xref:Xamarin.Forms.Page.Icon) özelliği `MasterPage` iOS ayrıntı sayfalarında gösterilir.
+- Seçili öğenin [ `ListView` ](xref:Xamarin.Forms.ListView) ayarlanır `null` hiçbiri emin olmak için `ListView` öğeleri, sonraki açışınızda seçilir `MasterPage` sunulur.
+- Ayrıntı Sayfası ayarlayarak kullanıcıya sunulan [ `MasterDetailPage.IsPresented` ](xref:Xamarin.Forms.MasterDetailPage.IsPresented) özelliğini `false`. Bu özellik, ana veya ayrıntı sayfasında sunulan olup olmadığını denetler. Kümesine `true` ana sayfasını görüntüleyin ve `false` ayrıntı sayfasında görüntülenecek.
 
 Aşağıdaki ekran görüntüleri Göster `ContactPage` ana sayfada seçilen sonra gösterilen Ayrıntı Sayfası:
 
@@ -247,17 +247,17 @@ Aşağıdaki ekran görüntüleri Göster `ContactPage` ana sayfada seçilen son
 
 <a name="Controlling_the_Detail_Page_Display_Behavior" />
 
-### <a name="controlling-the-detail-page-display-behavior"></a>Ayrıntı sayfa görüntüleme davranışını denetleme
+### <a name="controlling-the-detail-page-display-behavior"></a>Ayrıntı sayfasında görünen davranışını denetleme
 
-Nasıl [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) ana ve ayrıntı sayfaları yönetir uygulama çalışıp çalışmadığını bir telefon veya tablet, cihaz yönünü ve değerini üzerinde bağımlı [ `MasterBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) özellik. Bu özellik, ayrıntı sayfası nasıl görüntüleneceğini belirler. Olası değerler şunlardır:
+Nasıl [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) ana ve ayrıntı sayfaları yönetir olup uygulamasını çalıştıran telefon veya tablet, cihaz yönünü ve değerini üzerinde bağlıdır [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) özellik. Bu özellik, ayrıntı sayfası nasıl görüntüleneceğini belirler. Onun olası değerler şunlardır:
 
 - **Varsayılan** – sayfaları platform varsayılan kullanılarak görüntülenir.
-- **Popover** – ayrıntı sayfası kapsayan veya kısmen ana sayfa kapsar.
-- **Bölünmüş** – ana sayfanın sol tarafta görüntülenir ve sağ tarafta ayrıntı sayfasıdır.
-- **SplitOnLandscape** – bölünmüş ekran cihaz yatay yönde olduğunda kullanılır.
-- **SplitOnPortrait** – bölünmüş ekran cihaz dikey yönde olduğunda kullanılır.
+- **Popover** – ayrıntı sayfası kapsayan veya kısmen ana sayfaya kapsar.
+- **Bölünmüş** : sol taraftaki ana sayfa görüntülenir ve sağ tarafta ayrıntıları sayfasıdır.
+- **SplitOnLandscape** – cihaz yatay yönde olduğunda bölünmüş ekran kullanılır.
+- **SplitOnPortrait** – cihaz dikey yöndeyken olduğunda bölünmüş ekran kullanılır.
 
-Aşağıdaki XAML kod örneğinde nasıl ayarlanacağını gösterir [ `MasterBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) özelliği bir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
+Aşağıdaki XAML kod örneğinde nasıl ayarlanacağı gösterilmektedir [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) özelliği bir [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -269,7 +269,7 @@ Aşağıdaki XAML kod örneğinde nasıl ayarlanacağını gösterir [ `MasterBe
 </MasterDetailPage>
 ```
 
-Aşağıdaki kod örneğinde eşdeğer gösterir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) C# ' ta oluşturuldu:
+Aşağıdaki kod örneği, eşdeğer gösterir [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) C# içinde oluşturulan:
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -284,15 +284,15 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-Ancak, değeri [ `MasterBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) özelliği, tabletler veya Masaüstü üzerinde çalışan uygulamalar yalnızca etkiler. Telefonlarda her zaman çalışan uygulamaların olması *Popover* davranışı.
+Ancak, değerini [ `MasterBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) özelliği yalnızca satış noktası tabletleri veya masaüstünde çalışan uygulamaları etkiler. Her zaman telefonlarında çalışan uygulamalar *Popover* davranışı.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede nasıl kullanılacağı gösterilmiştir bir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) ve kendi bilgi sayfaları arasında gidin. Xamarin.Forms `MasterDetailPage` iki sayfayla ilgili bilgileri – öğeleri sunan bir ana sayfa ve ana sayfada öğeleri hakkında ayrıntılar sunar ayrıntı sayfası yöneten bir sayfadır.
+Bu makalede nasıl kullanılacağını gösteren bir [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) ve kendi bilgi sayfaları arasında gezinebilirsiniz. Xamarin.Forms `MasterDetailPage` iki sayfa ilgili bilgilerin – öğeleri sunan bir ana sayfa ve ana sayfada öğe ayrıntılarını sunan bir ayrıntı sayfası yöneten bir sayfadır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Sayfa çeşit](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
+- [Sayfa çeşitleri](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [MasterDetailPage (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/)
-- [MasterDetailPage](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)
+- [MasterDetailPage](xref:Xamarin.Forms.MasterDetailPage)

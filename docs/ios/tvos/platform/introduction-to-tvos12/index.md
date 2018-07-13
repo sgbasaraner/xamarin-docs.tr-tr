@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/25/2018
-ms.openlocfilehash: 03841306ba54e511dbf2f2b86a7c17e9f4669bcd
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: e45d9944a2f4fc392b5a78efb4a7751d19641c73
+ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38847567"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39030671"
 ---
 # <a name="introduction-to-tvos-12"></a>TvOS 12 giriş
 
@@ -23,7 +23,7 @@ ms.locfileid: "38847567"
 
 > [!NOTE]
 > - Gözden geçirme [Başlarken](~/ios/platform/introduction-to-ios12/get-started.md) iOS 12 ve Xamarin ile tvOS 12 uygulamaları oluşturmaya başlayın hakkında yönergeler için kılavuz.
-> - Daha fazla bilgi için okuma [sürüm notları](https://releases.xamarin.com/preview-release-xcode-10-beta/) için Xamarin Önizleme sürümü.
+> - Daha fazla bilgi için Xamarin Önizleme okuma [sürüm blog gönderisini](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
 
 Bu belge, hangi Xamarin'in preview için sürüm şu anda C# bağlamaları sağlar. 12 özellikleri yeni ve güncelleştirilmiş tvOS üst düzey bir genel bakış sağlar.
 
@@ -41,4 +41,4 @@ tvOS 12 nasıl bunlar, odağa altyapısı ile etkileşim kurmak için işlendiğ
 - [tvOS – Apple Developer (Apple)](https://developer.apple.com/tvos/)
 - [TvOS 12 (Apple) (video) yenilikler](https://developer.apple.com/videos/play/wwdc2018/208/)
 - [TV (Apple)](https://www.apple.com/tv/)
-- Xamarin Önizleme [sürüm notları](https://releases.xamarin.com/preview-release-xcode-10-beta/)
+- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)

@@ -1,33 +1,33 @@
 ---
 title: Xamarin.Forms davranışları
-description: Xamarin.Forms davranışları davranışı ya da davranışı türetme tarafından oluşturulan<T> sınıfı. Bu makalede, oluşturmasına ve Xamarin.Forms davranışları kullanmasına gösterilmiştir.
+description: Xamarin.Forms davranışları davranış veya davranışını türetme tarafından oluşturulan<T> sınıfı. Bu makalede, oluşturma ve tüketme Xamarin.Forms davranışları gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 3a86e7713620eff90db995941eb35df7bc393a76
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 7e057567ec0bb72e9bcc016d4a9fef3af78a3ea1
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848297"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998901"
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms davranışları
 
-_Xamarin.Forms davranışları davranışı ya da davranışı türetme tarafından oluşturulan<T> sınıfı. Bu makalede, oluşturmasına ve Xamarin.Forms davranışları kullanmasına gösterilmiştir._
+_Xamarin.Forms davranışları davranış veya davranışını türetme tarafından oluşturulan<T> sınıfı. Bu makalede, oluşturma ve tüketme Xamarin.Forms davranışları gösterilmektedir._
 
 ## <a name="overview"></a>Genel Bakış
 
-Xamarin.Forms davranışı oluşturma işlemi aşağıdaki gibidir:
+Xamarin.Forms davranışları oluşturma işlemi aşağıdaki gibidir:
 
-1. Öğesinden devralınan bir sınıf oluşturun [ `Behavior` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/) veya [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) sınıfı, burada `T` davranışı uygulamalısınız denetim türüdür.
-1. Geçersiz kılma [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) gerekli herhangi bir ayar yapmak için yöntemi.
-1. Geçersiz kılma [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) tüm gerekli temizlenmesini yöntemi.
-1. Davranış çekirdek işlevselliğini uygulayın.
+1. Devralınan bir sınıf oluşturmanız [ `Behavior` ](xref:Xamarin.Forms.Behavior) veya [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) sınıfı burada `T` davranışı uygulanacağını denetim türü.
+1. Geçersiz kılma [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) herhangi bir kurulum yapmak için yöntemi.
+1. Geçersiz kılma [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) gerekli tüm temizleme işlemlerini gerçekleştirmek için yöntemi.
+1. Davranış temel işlevlerini uygular.
 
-Bu, aşağıdaki kod örneğinde gösterildiği yapısı sonuçlanır:
+Aşağıdaki kod örneğinde gösterilen yapı sonuçlanır:
 
 ```csharp
 public class CustomBehavior : Behavior<View>
@@ -48,15 +48,15 @@ public class CustomBehavior : Behavior<View>
 }
 ```
 
-[ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Yöntemi davranışı denetime bağlı hemen sonra tetiklenir. Bu yöntem, bağlı olduğu ve olay işleyicileri kaydetmek veya davranışı işlevleri desteklemek için gerekli olan diğer Kurulumu gerçekleştirmek için kullanılan denetlemek için bir başvuru alır. Örneğin, bir denetim bir olaya abone. Olayı için olay işleyicisinde sonra davranış işlevselliği uygulanması.
+[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Yöntemi davranışı bir denetime hemen eklendikten sonra tetiklenir. Bu yöntem, Denetim, bağlı olduğu ve olay işleyicilerini kaydedin veya davranış işlevselliği desteklemek için gereken diğer Kurulumu gerçekleştirmek için kullanılan bir başvuru alır. Örneğin, denetim üzerinde bir olaya abone. Olayı için olay işleyicisinde sonra davranış işlevselliğini uygulanması.
 
-[ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Yöntemi davranışı denetimden kaldırıldığında tetiklenir. Bu yöntem, bağlı olduğu ve tüm gerekli temizleme gerçekleştirmek için kullanılan denetlemek için bir başvuru alır. Örneğin, bir denetim bellek sızıntılarını önleme olayından aboneliği.
+[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Yöntemi davranışı denetiminden kaldırıldığında tetiklenir. Bu yöntem, Denetim, bağlı olduğu ve gerekli tüm temizleme işlemlerini gerçekleştirmek için kullanılan bir başvuru alır. Örneğin, bellek sızıntılarını önlemek için bir denetim üzerinde bir olay aboneliği.
 
-Davranışı ardından eklemeyi tarafından kullanılabilecek [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) uygun denetim koleksiyonu.
+Davranışı ardından eklemeyi tarafından tüketilebilecek [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) uygun denetim koleksiyonu.
 
 ## <a name="creating-a-xamarinforms-behavior"></a>Xamarin.Forms davranışı oluşturma
 
-Örnek uygulamayı gösteren bir `NumericValidationBehavior`, kullanıcı tarafından girilen değer vurgular bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) değilse kırmızı olarak kontrol bir `double`. Aşağıdaki kod örneğinde davranışı gösterilir:
+Örnek uygulamayı gösterir bir `NumericValidationBehavior`, kullanıcı tarafından girilen değer vurgular bir [ `Entry` ](xref:Xamarin.Forms.Entry) denetim kırmızı renkte değilse bir `double`. Davranışı aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public class NumericValidationBehavior : Behavior<Entry>
@@ -82,14 +82,14 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` Türetilen [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) sınıfı, burada `T` olan bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/). [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Yöntemi için bir olay işleyicisi kaydeder [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) olay ile [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) XML'dekikaydetmeyöntemi`TextChanged`bellek önlemek için olay sızdırıyor. Davranış çekirdek işlevselliğini tarafından sağlanan `OnEntryTextChanged` kullanıcı tarafından girilen değer ayrıştırır yöntemi `Entry`ve ayarlar [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) özelliğini değer değilse kırmızı bir `double`.
+`NumericValidationBehavior` Türetildiği [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) sınıfı burada `T` olduğu bir [ `Entry` ](xref:Xamarin.Forms.Entry). [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Yöntemi için bir olay işleyicisi kaydeder [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) olay ile [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) XML'dekikaydetmeyöntemi`TextChanged`bellek önlemek için olay sızıntıları. Davranış temel işlevlerini tarafından sağlanan `OnEntryTextChanged` kullanıcı tarafından girilen değer ayrıştırır yöntemi `Entry`ve ayarlar [ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor) özellik değeri değilse, kırmızı bir `double`.
 
 > [!NOTE]
-> Xamarin.Forms ayarlı değil `BindingContext` bir davranış çünkü davranışları paylaşılan ve birden çok denetim stilleri aracılığıyla uygulanır.
+> Xamarin.Forms ayarlı değil `BindingContext` bir davranış davranışları paylaşılan ve birden çok denetim stilleri aracılığıyla uygulanır.
 
-## <a name="consuming-a-xamarinforms-behavior"></a>Xamarin.Forms davranışı kullanma
+## <a name="consuming-a-xamarinforms-behavior"></a>Xamarin.Forms davranışları kullanma
 
-Her Xamarin.Forms denetimine sahip bir [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) olduğu bir veya daha fazla davranışları eklenebilir, aşağıdaki XAML kod örneğinde gösterildiği gibi koleksiyon:
+Her bir Xamarin.Forms denetimine sahip bir [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) olduğu bir veya daha fazla davranışları eklenebilir, aşağıdaki XAML kod örneğinde gösterildiği gibi koleksiyon:
 
 ```xaml
 <Entry Placeholder="Enter a System.Double">
@@ -99,29 +99,29 @@ Her Xamarin.Forms denetimine sahip bir [ `Behaviors` ](https://developer.xamarin
 </Entry>
 ```
 
-Eşdeğer [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) C# ' de aşağıdaki kod örneğinde gösterilir:
+Eşdeğer [ `Entry` ](xref:Xamarin.Forms.Entry) C# ' de aşağıdaki kod örneğinde gösterilir:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 entry.Behaviors.Add (new NumericValidationBehavior ());
 ```
 
-Çalışma zamanında göre davranışı uygulama denetimi ile etkileşim için davranış yanıt. Aşağıdaki ekran görüntüleri için geçersiz giriş yanıt davranış gösterir:
+Çalışma zamanında davranış göre davranışını uygulama denetimi ile etkileşim için yanıtlar. Aşağıdaki ekran görüntüleri için geçersiz giriş yanıt davranış gösterir:
 
-[![](creating-images/screenshots-sml.png "Örnek uygulama Xamarin.Forms davranışı")](creating-images/screenshots.png#lightbox "örnek uygulama Xamarin.Forms davranışı")
+[![](creating-images/screenshots-sml.png "Örnek uygulama Xamarin.Forms davranış")](creating-images/screenshots.png#lightbox "örnek uygulama Xamarin.Forms davranışı")
 
 > [!NOTE]
-> Belirli bir denetim türünü (veya birçok denetimlere uygulayabileceğiniz bir üst sınıf) için davranışlar yazılır ve bunlar yalnızca uyumlu bir denetim eklenmesi gerekir. Uyumsuz bir denetim için bir davranış ekleme girişiminde oluşturulan bir özel durum neden olur.
+> Davranışlar, belirli bir denetim türünü (veya birçok denetim için uygulayabileceğiniz bir sınıf) yazılır ve uyumlu bir denetime yalnızca eklenmelidir. Uyumsuz bir denetime bir davranış ekleme girişimi oluşturulan bir özel durum neden olur.
 
-### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Xamarin.Forms davranışı bir stil ile kullanma
+### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Bir Xamarin.Forms davranışı bir stil ile kullanma
 
-Davranışları da açık veya örtülü stili tarafından kullanılabilecek. Ancak, ayarlayan bir stil oluşturma [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) denetimin özelliğini mümkün değildir özelliği salt okunur olduğundan. Ekli özellik ekleme ve kaldırma davranışını denetleyen davranış sınıfı eklemek için çözümüdür. İşlem aşağıdaki gibidir:
+Davranışlar açık veya örtülü stili tarafından tarafından kullanılabilir. Ancak, ayarlayan bir stil oluşturma [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) denetimin bir özelliğine mümkün değildir özelliği salt okunur olduğundan. Çözüm ekleme ve kaldırma davranışını denetleyen davranış sınıfı ekli özelliği eklemektir. İşlemi aşağıdaki gibidir:
 
-1. Ekli özellik ekleme veya kaldırma bağlı olduğu davranışı olacak denetlemek için davranış denetlemek için kullanılacak davranış sınıfına ekleyin. Ekli özelliğe kaydeder olun bir `propertyChanged` özelliğinin değeri değiştiğinde, yürütülecek temsilci.
-1. Oluşturma bir `static` alıcı ve ekli özellik ayarlayıcı.
-1. Uygulama mantığı `propertyChanged` eklemek ve davranışı kaldırmak için temsilci.
+1. İliştirilmiş özellik eklenmesi veya kaldırılmasını davranışına bağlı olduğu davranışı olacak denetim denetlemek için kullanılacak davranış sınıfı ekleyin. Ekli özellik kaydedeceğini olun bir `propertyChanged` özelliğinin değeri değiştiğinde çalıştırılacak temsilci.
+1. Oluşturma bir `static` alıcı ve ayarlayıcı için ekli özellik.
+1. Uygulama mantığı `propertyChanged` ekleme ve kaldırma davranışı için temsilci.
 
-Aşağıdaki kod örneğinde ekleme ve kaldırma denetimleri iliştirilmiş bir özellik gösterir `NumericValidationBehavior`:
+Aşağıdaki kod örneği, ekleme ve kaldırma denetleyen ekli özelliği gösterir `NumericValidationBehavior`:
 
 ```csharp
 public class NumericValidationBehavior : Behavior<Entry>
@@ -160,9 +160,9 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` Sınıfı içeren adlı bir ekli özellik `AttachBehavior` ile bir `static` alıcı ve ekleme veya kaldırma için bunu ekleneceği denetlemek için davranış denetimleri ayarlayıcı. Bu özellik yazmaçlar bağlı `OnAttachBehaviorChanged` özelliğinin değeri değiştiğinde, yürütülecek yöntemi. Bu yöntem ekler veya değerine göre denetlemek için davranış kaldırır `AttachBehavior` özelliği eklenmiş.
+`NumericValidationBehavior` Sınıfı içeren adlı ekli özelliği `AttachBehavior` ile bir `static` alıcı ve ayarlayıcı, ekleme veya kaldırma davranışı bağlı denetim denetleyen. İliştirilmiş özellik kayıtları `OnAttachBehaviorChanged` özelliğinin değeri değiştiğinde, yürütülecek yöntemi. Bu yöntem, ekler veya kaldırır değerine göre denetim, davranıştır `AttachBehavior` ekli özellik.
 
-Aşağıdaki örnekte gösterildiği kod bir *açık* için stil `NumericValidationBehavior` kullanan `AttachBehavior` bağlı özelliği ve hangi uygulanabilir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetimleri:
+Aşağıdaki kod örnekte gösterildiği bir *açık* için stil `NumericValidationBehavior` kullanan `AttachBehavior` ekli özellik ve hangi uygulanabilir [ `Entry` ](xref:Xamarin.Forms.Entry) denetimler:
 
 ```xaml
 <Style x:Key="NumericValidationStyle" TargetType="Entry">
@@ -172,20 +172,20 @@ Aşağıdaki örnekte gösterildiği kod bir *açık* için stil `NumericValidat
 </Style>
 ```
 
-[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) Uygulanabilir bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) ayarlayarak denetim kendi [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) özelliğine `Style` kullanma örneği `StaticResource` biçimlendirme uzantısı, aşağıdaki kod örneğinde gösterildiği gibi:
+[ `Style` ](xref:Xamarin.Forms.Style) Uygulanabilir bir [ `Entry` ](xref:Xamarin.Forms.Entry) ayarlayarak denetim kendi [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) özelliğini `Style` kullanma örneği `StaticResource` işaretleme uzantısı, aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" Style="{StaticResource NumericValidationStyle}">
 ```
 
-Stilleri hakkında daha fazla bilgi için bkz: [stilleri](~/xamarin-forms/user-interface/styles/index.md).
+Stilleri hakkında daha fazla bilgi için bkz. [stilleri](~/xamarin-forms/user-interface/styles/index.md).
 
 > [!NOTE]
-> Bağlanabilir özelliklerini ayarlamak veya, davranışları oluşturursanız, XAML sorgulanan bir davranış durumuna sahip ekleyebilirsiniz ancak bunlar denetimlerinde arasında Paylaşılmaması gereken bir `Style` içinde bir `ResourceDictionary`.
+> Bağlanabilir özellikler ayarlanır veya XAML içinde davranışları oluşturursanız, sorgulanan bir davranış için sahip durum ekleyebilirsiniz ancak bunlar arasında denetimleri Paylaşılmaması gereken bir `Style` içinde bir `ResourceDictionary`.
 
-### <a name="removing-a-behavior-from-a-control"></a>Bir davranış denetimden kaldırma
+### <a name="removing-a-behavior-from-a-control"></a>Bir davranış denetimden kaldırılıyor
 
-[ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Ne zaman bir davranış denetimden kaldırılır ve Bellek sızıntısını önlemek için bir olaydan aboneliği gibi gerekli temizleme işlemini yapmak için kullanılan yöntemi harekete. Ancak, davranışları örtük olarak denetimlerden sürece kaldırılmaz denetimin [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) tarafından koleksiyonu değiştirilmiş bir `Remove` veya `Clear` yöntemi. Aşağıdaki kod örneğinde, belirli bir davranışı bir denetimin kaldırma gösterilmektedir `Behaviors` koleksiyonu:
+[ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Yöntemi bir davranış denetimden kaldırılır ve bir bellek sızıntısı önlemek için bir olay aboneliği gibi gerekli tüm temizleme işlemlerini gerçekleştirmek için kullanılan olduğunda tetiklenir. Ancak, davranışları örtük olarak denetimlerden sürece kaldırılmaz denetimin [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) koleksiyon tarafından değiştirildiğinde bir `Remove` veya `Clear` yöntemi. Aşağıdaki kod örneği, belirli bir davranışı bir denetimin kaldırılıyor gösterir `Behaviors` koleksiyonu:
 
 ```csharp
 var toRemove = entry.Behaviors.FirstOrDefault (b => b is NumericValidationBehavior);
@@ -194,22 +194,22 @@ if (toRemove != null) {
 }
 ```
 
-Alternatif olarak, denetimin [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) koleksiyonu temizlenmiş, aşağıdaki kod örneğinde gösterildiği gibi:
+Alternatif olarak, denetimin [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) koleksiyonu işaretinin kaldırılması, aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 entry.Behaviors.Clear();
 ```
 
-Ayrıca, sayfa gezinti yığınından Sil'i zaman davranışları örtük olarak denetimlerden kaldırılmaz olduğunu unutmayın. Bunun yerine, bunlar açıkça kapsamının dışına giderek sayfaları öncesinde kaldırılmalıdır.
+Ayrıca, sayfa gezinti yığından POP davranışları örtük olarak denetimlerden kaldırılmasını değil unutmayın. Bunun yerine, bunlar açıkça sayfaları kapsam dışına geçmeden önce kaldırılmalıdır.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede nasıl oluşturulacağını ve Xamarin.Forms davranışları tüketen gösterilmektedir. Xamarin.Forms davranışları türetme tarafından oluşturulan [ `Behavior` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/) veya [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) sınıfı.
+Bu makale oluşturma ve Xamarin.Forms davranışları kullanma gösterilmektedir. Xamarin.Forms davranışları türeterek oluşturulur [ `Behavior` ](xref:Xamarin.Forms.Behavior) veya [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) sınıfı.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Xamarin.Forms davranışı (örnek)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
-- [Xamarin.Forms davranışı stille (örnek) uygulanan](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehaviorstyle/)
-- [Davranışı](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
-- [Davranışı<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)
+- [Xamarin.Forms davranışları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehavior/)
+- [Xamarin.Forms davranışları (örnek) sahip bir stil uygulanmış](https://developer.xamarin.com/samples/xamarin-forms/behaviors/numericvalidationbehaviorstyle/)
+- [Davranışı](xref:Xamarin.Forms.Behavior)
+- [Davranışı<T>](xref:Xamarin.Forms.Behavior`1)

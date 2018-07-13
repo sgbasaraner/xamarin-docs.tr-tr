@@ -1,60 +1,60 @@
 ---
 title: Xamarin.Forms Denetim şablonları giriş
-description: Xamarin.Forms Denetim şablonları, çalışma zamanında uygulama sayfaları kolayca tema ve yeniden tema yeteneği sağlar. Bu makalede denetim şablonları tanıtılmaktadır.
+description: Xamarin.Forms Denetim şablonları, çalışma zamanında uygulama sayfaları kolayca teması ve re-theme olanağı sağlar. Bu makalede, denetim şablonları tanıtılmaktadır.
 ms.prod: xamarin
 ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: a8e5c84bfa2525a28e9af5343be0ee156564bdd6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6b7a6c6d9c9c541e1d5e821fc2dac202e98bec62
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242524"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994431"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Xamarin.Forms Denetim şablonları giriş
 
-_Xamarin.Forms Denetim şablonları, çalışma zamanında uygulama sayfaları kolayca tema ve yeniden tema yeteneği sağlar. Bu makalede denetim şablonları tanıtılmaktadır._
+_Xamarin.Forms Denetim şablonları, çalışma zamanında uygulama sayfaları kolayca teması ve re-theme olanağı sağlar. Bu makalede, denetim şablonları tanıtılmaktadır._
 
-Denetimleriniz farklı özellikler gibi `BackgroundColor` ve `TextColor`, denetimin görünümünü yönlerini tanımlayabilirsiniz. Bu özellikleri kullanılarak ayarlanabilir [stilleri](~/xamarin-forms/user-interface/styles/index.md), hangi değiştirilebilir temel tema uygulamak için çalışma zamanında. Ancak, stil sayfasının görünümünü ve içeriği arasındaki temiz bir birbirinden ayırmaya yok ve gibi özellikleri ayarlayarak yapılan değişiklikleri sınırlıdır.
+Denetimleri farklı özellikleri gibi sahip `BackgroundColor` ve `TextColor`, denetimin görünümünü yönlerini tanımlayabilirsiniz. Bu özellikler kullanılarak ayarlanabilir [stilleri](~/xamarin-forms/user-interface/styles/index.md), hangi değiştirilebilir temel Tema oluşturma uygulamak için çalışma zamanında. Ancak, stilleri bir sayfa görünümünü ve içeriğini arasında NET bir ayrım sağlamak yoktur ve gibi özellikleri ayarlayarak yaptığınız değişiklikleri sınırlıdır.
 
-Denetim şablonları, bir sayfa görünümünü ve bu nedenle, kolayca konulu edilebilecek sayfaları oluşturulmasını etkinleştirme içeriğini arasında temiz bir ayrım sağlar. Örneğin, bir uygulama koyu tema ve açık bir tema sağlayan uygulama düzeyi denetim şablonları içerebilir. Her [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) her sayfası tarafından görüntülenmekte olan içeriğin değiştirmeden denetim şablonlarından birini uygulayarak uygulamada konulu olabilir. Buna ek olarak, denetim şablonları tarafından sağlanan temaları denetimlerin özelliklerini değiştirmek için sınırlı değildir. Bunlar temayı uygulamak için kullanılan denetimler de değiştirebilirsiniz.
+Denetim şablonları, bir sayfa görünümünü ve bu nedenle sayfalarına temalı kolayca olabilir oluşturulmasını etkinleştirme içeriğini arasında NET bir ayrım sağlar. Örneğin, bir uygulama, koyu tema ve hafif bir tema sağlayan uygulama düzeyi denetim şablonları içerebilir. Her [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) uygulamada her sayfa tarafından görüntülenen içeriğini değiştirmeden denetim şablonlardan birini uygulayarak temalı olabilir. Ayrıca, denetim şablonları tarafından sağlanmıştır Temalar denetimlerin özelliklerini değiştirme ile sınırlı değildir. Bunlar ayrıca temayı uygulamak için kullanılan denetimler de değiştirebilirsiniz.
 
-## <a name="creating-a-controltemplate"></a>ControlTemplate oluşturma
+## <a name="creating-a-controltemplate"></a>ControlTemplate oluşturarak
 
-A [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) sayfa veya Görünüm görünümünü belirtir ve bir kök düzeni içerir ve düzeni, şablonu uygulayan denetimleri içinde. Genellikle, bir `ControlTemplate` yararlanacak olan bir [ `ContentPresenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) sayfa veya görünüm tarafından görüntülenen içeriğin nerede görüneceğini işaretlenecek. Sayfa veya tüketir Görünüm `ControlTemplate` tarafından görüntülenecek içerik ardından tanımlayacaksınız `ContentPresenter`. Aşağıdaki diyagramda gösterilmektedir bir `ControlTemplate` denetimler de dahil olmak üzere, çeşitli içeren bir sayfa için bir `ContentPresenter` mavi dikdörtgeni tarafından işaretlenen:
+A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) bir sayfa ya da Görünüm görünümünü belirtir ve bir kök Düzen içerir ve düzeni, şablonu uygulayan denetimleri içinde. Genellikle, bir `ControlTemplate` yararlanacaktır bir [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter) görünümü ve sayfa tarafından görüntülenen içeriğin nerede görüneceğini işaretlenecek. Sayfa veya tüketen Görünüm `ControlTemplate` tarafından görüntülenecek içeriği ardından tanımlayacak `ContentPresenter`. Aşağıdaki diyagramda gösterilmektedir bir `ControlTemplate` denetimleri de dahil olmak üzere, bir dizi içeren bir sayfa için bir `ContentPresenter` mavi bir dikdörtgen ile işaretlenmiş:
 
-![](introduction-images/control-template.png "Bir sayfa için denetim şablonu")
+![](introduction-images/control-template.png "Denetim şablonu için bir sayfa")
 
-A [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) ayarlayarak aşağıdaki türlerine uygulanabilir kendi `ControlTemplate` özellikleri:
+A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) ayarlayarak aşağıdaki türlerine uygulanabilir kendi `ControlTemplate` özellikleri:
 
-- [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)
-- [`ContentView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)
-- [`TemplatedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/)
-- [`TemplatedView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/)
+- [`ContentPage`](xref:Xamarin.Forms.ContentPage)
+- [`ContentView`](xref:Xamarin.Forms.ContentView)
+- [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage)
+- [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)
 
-Zaman bir [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) oluşturulan ve atanan bu tür için tanımlanmış görünüm ile varolan bir görünümü değiştirilir `ControlTemplate`. Ayrıca, yanı sıra görünümünü kullanarak ayarlamayı `ControlTemplate` özelliği, şablonları da uygulanabilir daha da fazla stilleri kullanarak denetim tema özelliği'ni genişletin.
+Olduğunda bir [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) oluşturulur ve atanır bu tür için tanımlanmış görünüm ile varolan bir görünümü değiştirilir `ControlTemplate`. Ayrıca, yanı sıra görünümünü kullanarak autorefresh ayarlamayı `ControlTemplate` özelliği, denetim şablonları da uygulanabilir daha da fazla stilleri kullanarak tema özelliğini genişletin.
 
 > [!NOTE]
->  *Hangi `TemplatedPage` ve `TemplatedView` türleri?* `TemplatedPage` temel sınıfı olan `ContentPage`ve Xamarin.Forms tarafından sağlanan en temel sayfa türü. Farklı `ContentPage`, `TemplatedPage` sahip olmayan bir `Content` özelliği. Bu nedenle, içeriği doğrudan eklenemiyor bir `TemplatedPage` örneği. Bunun yerine, içerik için denetim şablonu ayarlayarak eklenir `TemplatedPage` örneği. Benzer şekilde, `TemplatedView` temel sınıfı olan `ContentView`. Farklı `ContentView`, `TemplatedView` sahip olmayan bir `Content` özelliği. Bu nedenle, içeriği doğrudan eklenemiyor bir `TemplatedView` örneği. Bunun yerine, içerik için denetim şablonu ayarlayarak eklenir `TemplatedView` örneği.
+>  *Hangi `TemplatedPage` ve `TemplatedView` türleri?* `TemplatedPage` temel sınıfı olan `ContentPage`ve Xamarin.Forms tarafından sağlanan en temel sayfa türü. Farklı `ContentPage`, `TemplatedPage` sahip olmadığı bir `Content` özelliği. Bu nedenle, içeriği doğrudan eklenemez bir `TemplatedPage` örneği. Bunun yerine, içerik için denetim şablonu ayarlayarak eklenir `TemplatedPage` örneği. Benzer şekilde, `TemplatedView` temel sınıfı olan `ContentView`. Farklı `ContentView`, `TemplatedView` sahip olmadığı bir `Content` özelliği. Bu nedenle, içeriği doğrudan eklenemez bir `TemplatedView` örneği. Bunun yerine, içerik için denetim şablonu ayarlayarak eklenir `TemplatedView` örneği.
 
-Denetim şablonları XAML ve C# ' ta oluşturulabilir:
+Denetim şablonları, XAML ve C# ' ta oluşturulabilir:
 
-- XAML'de oluşturulan denetim şablonları tanımlanmış bir [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) için atanan [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) koleksiyonu sayfasının veya daha fazla genellikle için [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/) uygulama koleksiyonu.
-- C# ' de oluşturulan denetim şablonları genellikle sayfanın sınıf veya genel olarak erişilebilir bir sınıf içinde tanımlanır.
+- Denetim şablonları oluşturulan XAML içinde tanımlanmış bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) için atanan [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) koleksiyonu bir sayfa ya da daha genellikle [ `Resources` ](xref:Xamarin.Forms.Application.Resources) uygulama koleksiyonu.
+- C# içinde oluşturulan denetim şablonları genellikle sayfanın sınıfı ya da genel olarak erişilebilen sınıfı olarak tanımlanır.
 
-Nerede tanımlamalı seçerek bir [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) örneği burada kullanılabilir etkiler:
+Tanımlama yeri seçme bir [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) örneği burada kullanılabileceği etkiler:
 
-- [`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) sayfa düzeyinde tanımlanan örnekleri yalnızca sayfaya uygulanabilir.
-- [`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) uygulama düzeyinde tanımlanan örnek uygulama boyunca sayfalara uygulanabilir.
+- [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) sayfa düzeyinde tanımlanan örnekleri yalnızca sayfaya uygulanabilir.
+- [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) uygulama düzeyinde tanımlanan örnek uygulama boyunca sayfalara uygulanabilir.
 
-Denetim şablonları görünüm hiyerarşinin alt düzeylerindeki yukarı yüksek tanımlanan önceliklidir. Örneğin, bir [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) adlı `DarkTheme` konumunda tanımlanan sayfa düzeyinde uygulama düzeyinde tanımlanan aynı adlı bir şablon önceliğe sahip olur. Bu nedenle, her bir uygulama sayfasını uygulanacak temayı tanımlayan bir denetim şablonu uygulama düzeyinde tanımlanmalıdır.
+Denetim şablonları görünümü hiyerarşide daha düşük yukarı yüksek tanımlanmış önceliklidir. Örneğin, bir [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) adlı `DarkTheme` konumunda tanımlanan sayfa düzeyi uygulama düzeyinde tanımlanan aynı adlı bir şablonu önceliklidir. Bu nedenle, bir uygulamada her sayfa için uygulanacak bir temayı tanımlayan bir denetim şablonu uygulama düzeyinde tanımlanması gerekir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Stiller](~/xamarin-forms/user-interface/styles/index.md)
-- [ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
-- [ContentPresenter](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)
+- [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
+- [ContentPresenter](xref:Xamarin.Forms.ContentPresenter)

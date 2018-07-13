@@ -1,54 +1,54 @@
 ---
 title: İOS için Xamarin Tasarımcısı'nda özel denetimler
-description: İOS için Xamarin Tasarımcısı projenizde oluşturulan veya Xamarin bileşen Deposu'nda gibi dış kaynaklardan başvurulan işleme özel denetimler destekler.
+description: İOS için Xamarin Tasarımcı projenizde oluşturulan veya Xamarin bileşeni Store gibi dış kaynaklardan başvurulan özel denetimler oluşturma destekler.
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 113fab2fd0d1a055d566606885cefbafe3185529
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 05b190f4bfd4058e9e2f6e465e6026fa76dce6f4
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30782190"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995703"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>İOS için Xamarin Tasarımcısı'nda özel denetimler
 
-_İOS için Xamarin Tasarımcısı projenizde oluşturulan veya Xamarin bileşen Deposu'nda gibi dış kaynaklardan başvurulan işleme özel denetimler destekler._
+_İOS için Xamarin Tasarımcı projenizde oluşturulan veya Xamarin bileşeni Store gibi dış kaynaklardan başvurulan özel denetimler oluşturma destekler._
 
-İOS için Xamarin Tasarımcısı bir uygulamanın kullanıcı arabiriminde görselleştirme için güçlü bir araçtır ve WYSIWYG düzenleme çoğu iOS görünümleri ve görünüm denetleyicileri için destek sağlar. Uygulamanızı iOS yerleşik olanlar genişletmek özel denetimler de içerebilir. Bu özel denetimler aklınızda birkaç yönergeleri ile yazılan, iOS daha zengin bir düzenleme deneyimi sağlayan tasarımcısı tarafından da oluşturulabilir. Bu belgede, bu yönergeleri göz alır.
+İOS için Xamarin Tasarımcı, bir uygulamanın kullanıcı arabirimini görselleştirmek için güçlü bir araçtır ve WYSIWYG düzenleme çoğu iOS görünümleri ve görünüm denetleyicileri için destek sağlar. Uygulamanızı iOS yerleşik olanları genişleten özel denetimler de içerebilir. Bu özel denetimler aklınızda birkaç yönergeleri ile yazılan, iOS Designer, daha kapsamlı bir düzenleme deneyimi sağlama çalışmaları tarafından da oluşturulabilir. Bu belge, bu yönergeleri göz alır.
 
 ## <a name="requirements"></a>Gereksinimler
 
-Aşağıdaki gereksinimleri karşılayan bir denetim tasarım yüzeyine oluşturulur:
+Aşağıdaki tüm gereksinimleri karşılayan bir denetimi tasarım yüzeyinde işlenir:
 
-1.  Doğrudan veya dolaylı öğesinin bir alt kümesi olan [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/) veya [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIView/Controller). Diğer [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) alt sınıfların, simge tasarım yüzeyine olarak görünür.
-2.  Bunun bir [RegisterAttribute](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Objective-c kullanıma sunmak için
-3.  Bunun [gerekli IntPtr Oluşturucusu](~/ios/internals/api-design/index.md).
-4.  Ya da uygulayan [IComponent](https://developer.xamarin.com/api/type/System.ComponentModel.IComponent/) arabirim veya sahip bir [DesignTimeVisibleAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.DesignTimeVisibleAttribute/) True olarak ayarlayın.
+1.  Doğrudan veya dolaylı öğesinin olduğu [Uıview](https://developer.xamarin.com/api/type/UIKit.UIView/) veya [Uıviewcontroller](https://developer.xamarin.com/api/type/UIKit.UIView/Controller). Diğer [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) alt sınıflar, tasarım yüzeyinde bir simge olarak görünür.
+2.  Bunun bir [RegisterAttribute](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Objective-c göstermek için
+3.  Sahip [gerekli IntPtr Oluşturucusu](~/ios/internals/api-design/index.md).
+4.  Ya da uygulayan [IComponent](xref:System.ComponentModel.IComponent) arabirim veya sahip bir [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute) True olarak ayarlayın.
 
-Yukarıdaki gereksinimleri karşılamak kod içinde tanımlanan denetimleri simülatörü içeren kendi projesi derlendiğinde Tasarımcısı'nda görünür. Varsayılan olarak, tüm özel denetimlerini görünür **özel bileşenler** bölümünü **araç**. Ancak [CategoryAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.CategoryAttribute/) farklı bir bölümü belirtmek için özel denetimin sınıfa uygulanabilir.
+Yukarıdaki gereksinimleri karşılayan, kod içinde tanımlanan denetimleri, içeren kendi projesi için simülatör derlendiğinde Tasarımcısı'nda görünür. Varsayılan olarak, tüm özel denetimleri içinde görünür **özel bileşenler** bölümünü **araç kutusu**. Ancak [CategoryAttribute](xref:System.ComponentModel.CategoryAttribute) farklı bir bölüme belirtmek için özel denetimin sınıfa uygulanabilir.
 
-Tasarımcı üçüncü taraf Objective-C kitaplıkları yükleme desteklemez.
+Tasarımcı, üçüncü taraf Objective-C kitaplıklarını yükleme desteklemez.
 
 ## <a name="custom-properties"></a>Özel Özellikler
 
-Aşağıdaki koşullar doğruysa özel bir denetim tarafından bildirilen bir özellik özellik panelinde görüntülenir:
+Aşağıdaki koşullar doğruysa özel bir denetim tarafından bildirilen bir özelliği özellik panelinde görüntülenir:
 
-1.  Özellik, ortak bir alıcı ve ayarlayıcıya sahip.
-1.  Özellik sahip bir [ExportAttribute](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) yanı sıra bir [BrowsableAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.BrowsableAttribute/) True olarak ayarlayın.
-1.  Özellik türü olan bir sayısal türü, numaralandırma türü, string, bool, [SizeF](https://developer.xamarin.com/api/type/System.Drawing.SizeF/), [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/), veya [UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/). Bu liste desteklenen türlerinin gelecekte genişletilmiş.
+1.  Genel alıcı ve ayarlayıcı özelliği vardır.
+1.  Özelliğine sahip bir [ExportAttribute](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) yanı [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) True olarak ayarlayın.
+1.  Özellik türü olan bir sayısal tür, numaralandırma türü, string, bool, [SizeF](xref:System.Drawing.SizeF), [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/), veya [UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/). Desteklenen türler'ın bu liste gelecekte genişletilmiş.
 
 
-Özelliği de ile donatılmış bir [DisplayNameAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.DisplayNameAttribute/) için özellik panelinde görüntülenen etiketi belirlemek için.
+Özelliği de ile donatılabilir bir [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute) için özellik panelinde görüntülenen etiketi belirlemek için.
 
 ## <a name="initialization"></a>Başlatma
 
-İçin `UIViewController` alt sınıfların, kullanmanız gereken [ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/) Tasarımcısı'nda oluşturulan görünümleri bağlıdır kod yöntemi.
+İçin `UIViewController` alt sınıflarından kullanmalıdır [ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/) Tasarımcısı'nda, oluşturduğunuz görünümleri bağlı olan kod için yöntemi.
 
-İçin `UIView` ve diğer `NSObject` alt sınıfların, [AwakeFromNib](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/) düzeni dosyasından yüklendikten sonra özel denetimin başlatılmasını gerçekleştirmek için önerilen yer bir yöntemdir. Özellik Masası'nda belirlenen tüm özel özellikler denetimin Oluşturucusu çalıştırın, ancak önce ayarlanır ayarlanmaz olmasıdır `AwakeFromNib` adı verilir:
+İçin `UIView` ve diğer `NSObject` alt sınıflarından [AwakeFromNib](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/) Düzen dosyasından yüklendikten sonra özel denetiminizin başlatma gerçekleştirmek için önerilen yer yöntemidir. Herhangi bir özel özellik Masası'nda belirlenen özelliği denetimin Oluşturucusu çalıştırın, ancak önce ayarlanır ayarlanmaz olmasıdır `AwakeFromNib` çağrılır:
 
 
 ```csharp
@@ -64,7 +64,7 @@ public class CustomView : UIView {
 }
 ```
 
-Denetim ayrıca doğrudan kodunuzdan oluşturulacak tasarlandıysa, bu gibi ortak başlatma koduna sahip bir yöntem oluşturmak isteyebilirsiniz:
+Denetim ayrıca doğrudan koddan oluşturulacak tasarlanmışsa, bunun gibi ortak başlatma kodunu içeren bir yöntem oluşturmak isteyebilirsiniz:
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -93,7 +93,7 @@ public class CustomView : UIView {
 
 ## <a name="property-initialization-and-awakefromnib"></a>Özellik başlatma ve AwakeFromNib
 
-Ne zaman ve nereye designable özelliklerinde Tasarımcısı iOS içinde ayarlanan değerler üzerine için özel bir bileşen başlatılamadı dikkatli olunmalıdır. Örnek olarak, aşağıdaki kodu alın:
+Ne zaman ve nereye iOS Designer içinde ayarlanmış olan değerlerin üzerine değil için farklı bir özel bileşene designable özelliklerinde başlatmak dikkatli olunması. Örneğin, aşağıdaki kodu alın:
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -124,25 +124,25 @@ public class CustomView : UIView {
 }
 ```
 
-`CustomView` Bileşen kullanıma sunan bir `Counter` Tasarımcısı iOS içinde geliştirici tarafından ayarlanan özelliği. Ancak, hangi değer değerini Tasarımcı içinde ayarlanır olsun `Counter` özelliği her zaman sıfır (0) olabilir. Neden şöyledir:
+`CustomView` Bileşeni sunan bir `Counter` iOS Designer içinde geliştirici tarafından ayarlanabilir özelliği. Ancak, hangi değeri değerini Tasarımcı içinde ayarlanmış olsun `Counter` özelliği her zaman sıfır (0) olur. Bunu istememizin nedeni:
 
 -  Örneği `CustomControl` film şeridi dosyasından şişirileceğini.
--  İOS Tasarımcısı'nda değiştiren herhangi bir özellik kümesi (değerini ayarlama gibi `Counter` için iki (2), örneğin).
+-  İOS Tasarımcısı'nda değiştiren herhangi bir özelliği ayarlayın (değerini ayarlamak gibi `Counter` için iki (2), örneğin).
 -  `AwakeFromNib` Yöntemi yürütüldüğünde ve bileşenin bir çağrı yapılır `Initialize` yöntemi.
 -  İçinde `Initialize` değerini `Counter` özelliği sıfırlanır sıfır (0).
 
 
-Yukarıdaki durumu düzeltmek için ya da başlatma `Counter` özelliği başka bir yerde (bileşenin Oluşturucusu olduğu gibi) veya geçersiz kılmaz `AwakeFromNib` yöntemi ve çağrı `Initialize` bileşen ne dışında başka hiçbir başlatma gerektiriyorsa şu anda kendi oluşturucular tarafından işlenen.
+Yukarıdaki durumu düzeltmek için ya da başlatması `Counter` özelliği başka bir yerde (bileşenin Oluşturucu gibi) veya geçersiz kılma `AwakeFromNib` yöntemi ve çağrı `Initialize` bileşeni ne dışında başka hiçbir başlatma gerektirmesi durumunda şu anda, oluşturucular tarafından işlenen.
 
 ## <a name="design-mode"></a>Tasarım modu
 
-Tasarım yüzeyine bir özel denetim için birkaç kısıtlamaları uyması gerekir:
+Tasarım yüzeyinde, bir özel denetim için birkaç kısıtlama uyması gerekir:
 
--  Uygulama paket kaynaklarını Tasarım modunda kullanılamaz. Görüntüleri üzerinden yüklendiğinde kullanılabilir [UIImage yöntemleri](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM) .
--  Web istekleri gibi zaman uyumsuz işlemleri Tasarım modunda gerçekleştirilmemelidir. Tasarım yüzeyine animasyon veya denetimin UI için zaman uyumsuz diğer güncelleştirmeleri desteklemiyor.
+-  Uygulama paket kaynaklarını Tasarım modunda kullanılamaz. Görüntülerin kullanılabilir aracılığıyla yüklendiğinde [UIImage yöntemleri](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM) .
+-  Web istekleri gibi zaman uyumsuz işlemler, Tasarım modunda gerçekleştirilmemelidir. Tasarım yüzeyinde, animasyon veya diğer zaman uyumsuz güncelleştirmeleri denetimin kullanıcı arabirimi desteklemiyor.
 
 
-Özel bir denetim uygulayabilirsiniz [IComponent](https://developer.xamarin.com/api/type/System.ComponentModel.IComponent/) ve [DesignMode](https://developer.xamarin.com/api/property/System.ComponentModel.ISite.DesignMode/) özelliği tasarım yüzeyine olup olmadığını denetleyin. Bu örnekte, etiket "Tasarım modu" tasarım yüzeyi ve "Çalışma zamanı" çalışma zamanında görüntülenir:
+Özel denetim uygulayabilirsiniz [IComponent](xref:System.ComponentModel.IComponent) ve [DesignMode](xref:System.ComponentModel.ISite.DesignMode) tasarım yüzeyinde olup olmadığı denetlenecek özellik. Bu örnekte, etiketin "Tasarım modu" tasarım yüzeyi ve "Çalışma zamanı" çalışma zamanında görüntüler:
 
 ```csharp
 [Register ("DesignerAwareLabel")]
@@ -167,26 +167,26 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-Her zaman denetlemelisiniz `Site` özelliği için `null` üyeleri hiçbirini erişmeyi denemeden önce. Varsa `Site` olan `null`, Denetim Tasarımcısı'nda çalışmıyor varsaymak güvenlidir.
-Tasarım modunda `Site` denetimin Oluşturucusu çalıştırıldıktan sonra ve önce ayarlanacak `AwakeFromNib` olarak adlandırılır.
+Her zaman denetlemelisiniz `Site` özelliği `null` üyelerine erişmek denemeden önce. Varsa `Site` olduğu `null`, bu denetim Tasarımcısı'nda çalışmıyor varsayabiliriz.
+Tasarım modunda `Site` denetimin Oluşturucusu çalıştırdıktan sonra ve önce ayarlanır `AwakeFromNib` çağrılır.
 
 ## <a name="debugging"></a>Hata Ayıklama
 
-Yukarıdaki gereksinimleri karşılayan bir denetim araç kutusunda görüntülenir ve yüzeysel olarak çizilir.
-Bir denetim işlenmez denetimi veya bağımlılıklarından biri hatalar için kontrol edin.
+Yukarıdaki gereksinimleri karşılayan bir denetimi araç kutusunda görüntülenen ve yüzeyine çizilir.
+Bir denetim işlenmez, denetim ya da bağımlılıklarından biri hataları kontrol edin.
 
-Tasarım yüzeyine genellikle diğer denetimlerini işlemeye devam ederken ayrı ayrı denetimler tarafından oluşturulan özel durumları yakalayabilir. Hatalı denetim kırmızı tutucuyla değiştirilir ve özel durum izleme ünlem işareti simgesine tıklayarak görüntüleyebilirsiniz:
+Tasarım yüzeyinde, genellikle diğer denetimlerini işlemeye devam ederken tek denetimleri tarafından oluşturulan özel durumları yakalayabilir. Hatalı bir denetim kırmızı tutucuyla değiştirilir ve özel durum izleme ünlem simgesine tıklayarak görüntüleyebilirsiniz:
 
- ![](ios-designable-controls-overview-images/exception-box.png "Hatalı bir denetim olarak kırmızı yer tutucu ve özel durum ayrıntıları")
+ ![](ios-designable-controls-overview-images/exception-box.png "Hatalı bir denetim kırmızı yer tutucu ve özel durum ayrıntıları")
 
-Hata ayıklama simgeleri denetimi için kullanılabilen, izleme dosya adlarını ve satır numaralarını yüklemeniz gerekir. Çift yığın izlemesi satırda tıklatarak söz konusu hatta kaynak kodundaki atlayacaktır.
+Denetim için hata ayıklama sembolleri kullanamıyorsanız, izleme, dosya adları ve satır numaralarını olacaktır. Kaynak kodunda bu satıra çift tıklayarak yığın izlemesi bir satırda atlayacaktır.
 
-Tasarımcı hatalı denetim ayıramazsınız, tasarım yüzeyine üstünde bir uyarı iletisi görüntülenir:
+Hatalı bir denetim Tasarımcısı ayıramazsınız, tasarım yüzeyinin üst kısmında bir uyarı iletisi görüntülenir:
 
- ![](ios-designable-controls-overview-images/info-bar.png "Tasarım yüzeyine üstünde bir uyarı iletisi")
+ ![](ios-designable-controls-overview-images/info-bar.png "Tasarım yüzeyinde üstünde bir uyarı iletisi")
 
-Hatalı denetim sabit veya tasarım yüzeyden kaldırıldığında tam işleme devam eder.
+Hatalı denetim sabit veya tasarım yüzeyine kaldırıldı tam oluşturma devam edecek.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede oluşturma ve uygulamayı iOS Tasarımcısı'nda özel denetimlerin sunmuştur. İlk denetimleri tasarım yüzeyine oluşturulması ve özellik panelinde özel özellikleri kullanıma sunmak için karşılaması gereken gereksinimleri açıklanmaktadır. Arka plan kod - denetim ve DesignMode özelliği başlatma sırasında daha sonra arama. Son olarak neler açıklanan ne zaman özel durumlar ve bu nasıl çözülür.
+Bu makalede oluşturma ve uygulamayı iOS Tasarımcısı'nda özel denetimlerin sunmuştur. İlk denetimleri tasarım yüzeyinde oluşturulması ve özel özellikler özelliği panelinde ortaya çıkarmak için karşılaması gereken gereksinimleri açıklanmaktadır. Ardından arkasında - denetim ve DesignMode özellik başlatma kodu görünüyordu. Son olarak ne açıklanan olduğunda özel durumlar ve bu sorunun çözümü.

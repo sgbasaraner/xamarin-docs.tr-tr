@@ -1,42 +1,42 @@
 ---
 title: Xamarin.iOS sınırlamaları
-description: Bu belgede ele genel türler, NSObjects, P/Invokes genel nesnelerde ve daha fazlasını Genel alt sınıflarının Xamarin.iOS sınırlamaları açıklanmaktadır.
+description: Bu belgede ele genel türler, Genel alt sınıfları NSObjects, P/Invoke'lar genel nesneleri ve daha fazlası Xamarin.iOS, sınırlamaları açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/09/2018
-ms.openlocfilehash: 8eb2cd5a749beab6f089479f5992fe3fbc16dd0a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e154e4e1688b8a3d03459956934409fa9d5aef35
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786235"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998091"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS sınırlamaları
 
-Xamarin.iOS kullanarak iPhone uygulamaları statik koda derlenmiş olduğundan, kod oluşturma zamanında gerektiren tüm özellikleri kullanmak mümkün değil.
+Xamarin.iOS kullanarak iPhone uygulamaları için statik kod derlenmiş olduğundan, çalışma zamanında kod oluşturma gerektiren tüm özelliklerini kullanabilmeniz mümkün değildir.
 
-Bu Masaüstü Mono karşılaştırıldığında Xamarin.iOS sınırlamalar vardır:
+Mono masaüstüne karşılaştırıldığında Xamarin.iOS kısıtlamaları şunlardır:
 
  <a name="Limited_Generics_Support" />
 
 
 ## <a name="limited-generics-support"></a>Sınırlı genel türler desteği
 
-Geleneksel Mono/.NET, iPhone statik olarak isteğe bağlı bir JIT Derleyici tarafından derlenmiş yerine önceden derlenmiş kod.
+Geleneksel Mono/.NET, isteğe bağlı bir JIT derleyicisi tarafından derlenen yerine önceden statik olarak iPhone kod derlenir.
 
-Mono'nın [tam Uygulama Nesne AĞACI](http://www.mono-project.com/docs/advanced/aot/#full-aot) teknoloji genel türler göre birkaç sınırlamalara sahiptir, bu olası her genel olgu Önden derleme zamanında belirlenebilir nedeni. Her zaman yalnızca zaman derleyicide kullanarak çalışma zamanında derlenmiş kod gibi normal .NET ya da Mono çalışma zamanları için bir sorun değildir. Ancak bu bir statik derleyici Xamarin.iOS gibi için bir sınama oluşturur.
+Mono'nın [tam AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot) teknoloji genel türler ile ilgili birkaç sınırlama vardır, bunlar her olası genel örnek oluşturma, derleme zamanında Önden belirlenebilir nedeni. Kod her zaman tam zaman derleyicide kullanılarak çalışma zamanında derlenmiş gibi normal .NET ya da Mono çalışma zamanı için bir sorun değildir. Ancak bu Xamarin.iOS gibi statik bir derleme için bir sınama oluşturur.
 
-Bazı geliştiriciler, çalışan ortak sorunları şunları içerir:
+Bazı geliştiriciler, çalışan yaygın sorunlar şunlardır:
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
 
 
-### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Genel alt sınıfların NSObjects sınırlıdır
+### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Genel alt sınıfları NSObjects sınırlıdır
 
-Xamarin.iOS şu anda NSObject sınıfının genel yöntemler desteği gibi genel alt sınıflar oluşturmak için destek sınırlıdır. 7.2.1 itibariyle NSObjects Genel alt sınıflarının kullanarak bunu gibi mümkün değildir:
+Xamarin.iOS şu anda sınırlı NSObject sınıfın genel metotlar için desteği yok gibi genel alt sınıfları oluşturmak için desteği içerir. 7.2.1 itibarıyla NSObjects Genel alt sınıfları kullanarak bunu gibi mümkündür:
 
 ```csharp
 class Foo<T> : UIView {
@@ -45,13 +45,13 @@ class Foo<T> : UIView {
 ```
 
 > [!NOTE]
-> NSObjects Genel alt sınıflarının mümkün olsa da, bazı sınırlamalar vardır. Okuma [NSObject Genel alt sınıflarının](~/ios/internals/api-design/nsobject-generics.md) belge daha fazla bilgi için
+> Genel alt sınıfları NSObjects mümkün olsa da, bazı sınırlamalar vardır. Okuma [nsobject'in Genel alt](~/ios/internals/api-design/nsobject-generics.md) belge için daha fazla bilgi
 
 
 
-### <a name="pinvokes-in-generic-types"></a>Genel türlerde P/çağırır
+### <a name="pinvokes-in-generic-types"></a>P/çağırır, genel türler
 
-Genel sınıflar P/Invokes desteklenmez:
+P/Invoke'lar genel sınıflardaki desteklenmez:
 
 ```csharp
 class GenericType<T> {
@@ -65,31 +65,31 @@ class GenericType<T> {
 
 ### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>Boş değer atanabilir bir tür üzerinde Property.SetInfo desteklenmiyor
 
-Yansıma'nın Property.SetInfo üzerinde null atanabilir değer ayarlamak için kullanma&lt;T&gt; şu anda desteklenmiyor.
+Yansıma'nın Property.SetInfo değeri üzerinde bir boş değer ayarlamak için kullanarak&lt;T&gt; şu anda desteklenmiyor.
 
  <a name="Value_types_as_Dictionary_Keys" />
 
 
-### <a name="value-types-as-dictionary-keys"></a>Değer türleri olarak sözlük anahtarları
+### <a name="value-types-as-dictionary-keys"></a>Değer türleri sözlük anahtarları
 
-Değer türü bir sözlük olarak kullanarak&lt;TKey, TValue&gt; anahtarıdır sorunlu, varsayılan olarak Sözlük Oluşturucusu EqualityComparer kullanma girişiminde&lt;TKey&gt;. Varsayılan. EqualityComparer&lt;TKey&gt;. Varsayılan, sırayla çalışır yansıma IEqualityComparer uygulayan yeni bir tür örneklemek için kullanılacak&lt;TKey&gt; arabirimi.
+Bir sözlük olarak bir değer türü kullanarak&lt;TKey, TValue&gt; anahtardır sorunlu, varsayılan olarak Sözlük Oluşturucusu EqualityComparer kullanmayı dener&lt;TKey&gt;. Varsayılan. EqualityComparer&lt;TKey&gt;. Varsayılan, sırayla çalışır yansıma IEqualityComparer uygulayan yeni bir türü örneklemek için kullanılacak&lt;TKey&gt; arabirimi.
 
-Bu başvuru türleri için geçerlidir (yansıma olarak + yeni bir tür adım atlanır), ancak değeri için kilitlenme türleri ve cihazda kullanma girişimi sonra yerine hızlı bir şekilde yakar.
+Bu başvuru türleri için geçerlidir (yansıtma olarak + yeni Oluştur türü adımı atlanır), ancak değeri kilitlenmeleri türleri ve bu cihazda kullanma girişimi sonra yerine hızlı bir şekilde harekete.
 
- **Geçici çözüm**: el ile uygulamak [IEqualityComparer&lt;TKey&gt; ](https://developer.xamarin.com/api/type/System.Collections.Generic.IEqualityComparer%601/) arabirim yeni bir tür ve bu türünün bir örneğini sağlayın [sözlük&lt;TKey, TValue&gt; ](https://developer.xamarin.com/api/type/System.Collections.Generic.Dictionary%3CTKey,TValue%3E/) [(IEqualityComparer&lt;TKey&gt;)](https://developer.xamarin.com/api/type/System.Collections.Generic.IEqualityComparer%601/) Oluşturucusu.
+ **Geçici çözüm**: el ile uygulamak [IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1) arabirim yeni türde ve sağlamak için bu türün bir örneği [sözlük&lt;TKey, TValue&gt; ](xref:System.Collections.Generic.Dictionary`2) [(IEqualityComparer&lt;TKey&gt;)](xref:System.Collections.Generic.IEqualityComparer`1) Oluşturucusu.
 
 
  <a name="No_Dynamic_Code_Generation" />
 
 
-## <a name="no-dynamic-code-generation"></a>Hiçbir dinamik kod oluşturma
+## <a name="no-dynamic-code-generation"></a>Dinamik kod üretme
 
-İPhone ait çekirdek kodu dinamik olarak oluşturma bir uygulamanın engeller beri iPhone Mono herhangi bir dinamik kod oluşturma biçimi desteklemiyor. Bu güncelleştirmeler şunlardır:
+İPhone ait çekirdek dinamik olarak kod oluşturma uygulamanın önlediğinden Mono iphone'daki herhangi bir biçimde dinamik kod oluşturmayı desteklemez. Bu güncelleştirmeler şunlardır:
 
--  System.Reflection.Emit kullanılabilir değil.
--  System.Runtime.Remoting için destek yok.
--  Dinamik olarak türleri oluşturmak için destek yok (hiçbir aktarýldýðý ("MyType ' 1")), mevcut türlerini (aktarýldýðý ("System.String") Örneğin, yalnızca iyi çalışır) arama rağmen. 
--  Geriye doğru geri aramalar derleme zamanında çalışma zamanı ile kayıtlı olması gerekir.
+-  System.Reflection.Emit kullanılamıyor.
+-  System.Runtime.Remoting desteği yok.
+-  Türleri dinamik olarak oluşturmak için destek yok (hiçbir aktarýldýðý ("MyType ' 1")), mevcut türlerini (aktarýldýðý ("System.String") gibi düzgün çalışır) arama rağmen. 
+-  Ters geri çağırmaları derleme zamanında çalışma zamanıyla kaydedilmesi gerekir.
 
 
  
@@ -98,25 +98,25 @@ Bu başvuru türleri için geçerlidir (yansıma olarak + yeni bir tür adım at
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-System.Reflection eksiği. **Yayma** üzerinde çalışma zamanı kodu oluşturma bağımlı olan hiçbir kod çalışacağı anlamına gelir. Bu gibi şeyleri içerir:
+System.Reflection eksiği. **Yayma** üzerinde çalışma zamanı kodu oluşturma bağımlı olan hiçbir kod anlamına gelir. Bu gibi şeyleri içerir:
 
 -  Dinamik dil çalışma zamanı.
--  Dinamik dil çalışma zamanı en üstünde oluşturulmuş tüm diller.
--  Remoting'ın TransparentProxy veya başka bir şey kodu dinamik olarak oluşturmak çalışma zamanı neden olacak. 
+-  Dinamik dil çalışma zamanı üzerinde oluşturulan tüm diller.
+-  Uzaktan iletişimi'nın TransparentProxy veya başka bir şey, çalışma zamanı dinamik olarak kod oluşturmasına neden olur. 
 
 
- **Önemli:** aynı şey **Reflection.Emit** ile **yansıma**. Reflection.Emit kodu dinamik olarak oluşturma hakkında ve bu kodu JITed ve yerel için derlenmiş kod sahip. İPhone (JIT derleme) sınırlamaları nedeniyle bu desteklenmiyor.
+ **Önemli:** karıştırmayın **Reflection.Emit** ile **yansıma**. Reflection.Emit dinamik olarak kod oluşturma hakkında ve bu kodu Jıted ve yerel için derlenmiş kodu. İPhone (JIT derleme) sınırlamaları nedeniyle bu desteklenmez.
 
-Ancak tüm yansıma özellikleri, öznitelikleri ve değerleri getirme listeleniyor yöntemleri, listeleme aktarýldýðý ("someClass") dahil olmak üzere API düzgün çalışır.
+Ancak, öznitelikleri ve değerleri getirilirken özellikleri listeleme yöntemleri listeleme aktarýldýðý ("someClass") dahil olmak üzere tüm yansıma API'si, düzgün çalışır.
 
-### <a name="using-delegates-to-call-native-functions"></a>Yerel işlevleri çağırmak için kullanma
+### <a name="using-delegates-to-call-native-functions"></a>Yerel işlevleri çağırmak için temsilcileri kullanma
 
-Bir C# temsilci aracılığıyla yerel bir işlevi çağırmak için temsilcinin bildirimi aşağıdaki öznitelikler biri ile donatılmış gerekir:
+Bir C# temsilci aracılığıyla yerel bir işlevi çağırmak için temsilcinin bildirimi aşağıdaki özniteliklerden birini ile donatılmış gerekir:
 
-- [UnmanagedFunctionPointerAttribute](https://developer.xamarin.com/api/type/System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute/) (platformlar arası ve .NET standart 1.1 + ile uyumlu olduğundan, tercih edilen)
+- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (platformlar arası ve .NET Standard 1.1 + ile uyumlu olduğundan, tercih edilir)
 - [MonoNativeFunctionWrapperAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
-Bu öznitelikler birini sağlamak başarısız bir çalışma zamanı hatası gibi neden olur:
+Özniteliklerden birini sağlamak başarısız olduğu gibi çalışma zamanı hatasına neden olur:
 
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
@@ -125,20 +125,20 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
  <a name="Reverse_Callbacks" />
 
 
-### <a name="reverse-callbacks"></a>Geri aramalar ters çevir
+### <a name="reverse-callbacks"></a>Ters geri çağırmaları
 
-İçinde standart Mono geçişi C# temsilci örneklerinin bir işlev işaretçisi yerine yönetilmeyen kod için mümkündür. Çalışma zamanı genellikle bu işlev işaretçileri geri yönetilen koda çağrı yönetimsiz kod sağlayan küçük bir dönüştürücü dönüştürmek.
+Standart Mono içinde bir işlev işaretçisi yerine yönetilmeyen kod için C# temsilci örneklerini geçirmek mümkündür. Çalışma zamanı genellikle bu işlev işaretçileri geri yönetilen koda çağrı yapmak yönetilmeyen kod sağlayan küçük bir dönüştürücü dönüştürün.
 
-Mono olarak bu köprüleri sadece zaman tarafından uygulanan derleyici. Ne zaman, saat tamamlanan derleyici kullanarak tarafından iPhone iki önemli sınırlamalar vardır, bu aşamada gerekli:
+Mono'da bu köprüleri Just-ın-Time tarafından uygulanan derleyici. Ne zaman, saat tamamlanan derleyici kullanarak iPhone tarafından iki önemli sınırlamalar vardır, bu aşamada gerekli:
 
--  Tüm geri çağırma yöntemleriyle bayrak [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
--  Yöntem statik yöntemler olması, desteği yoktur örneği için yöntemleri. 
+-  Tüm, geri çağırma yöntemleri ile bayrak [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
+-  Yöntemleri statik yöntemler olması, desteği yoktur örneği için yöntemleri. 
  
 <a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>Hiçbir uzaktan iletişim
 
-Uzaktan iletişim yığını Xamarin.iOS üzerinde kullanılabilir değil.
+Uzaktan iletişim yığını üzerinde Xamarin.iOS kullanılabilir değil.
 
 
  <a name="Runtime_Disabled_Features" />
@@ -152,7 +152,7 @@ Mono'nın iOS çalışma zamanı aşağıdaki özellikler devre dışı bırakı
 -  Reflection.Emit
 -  Reflection.Emit.Save işlevi
 -  COM bağlamaları
--  JIT altyapısı
+-  JIT altyapısına
 -  (Hiçbir JIT olmadığından) meta veri doğrulama
 
 
@@ -161,8 +161,8 @@ Mono'nın iOS çalışma zamanı aşağıdaki özellikler devre dışı bırakı
 
 ## <a name="net-api-limitations"></a>.NET API sınırlamaları
 
-Her şeyin iOS kullanılabilir olduğu gibi kullanıma sunulan .NET API tam framework'ün bir alt kümesidir. İçin SSS Bölümüne bakın bir [şu anda desteklenen bir derleme listesi](~/cross-platform/internals/available-assemblies.md).
+Her şey iOS kullanılabilir olduğu gibi kullanıma sunulan .NET API tam framework'ün bir alt kümesidir. Bkz. SSS bir [şu anda desteklenen derlemelerin listesini](~/cross-platform/internals/available-assemblies.md).
 
 
 
-Özellikle, çalışma zamanı davranışını yapılandırmak için dış XML dosyalarını kullanmak mümkün değildir Xamarin.iOS tarafından kullanılan API profilini System.Configuration, içermez.
+Özellikle, Xamarin.iOS tarafından kullanılan API profilini System.Configuration, içermez, bu dış XML dosyaları çalışma zamanı davranışını yapılandırmak için kullanmak mümkün değildir.

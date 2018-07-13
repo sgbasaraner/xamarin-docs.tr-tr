@@ -1,45 +1,45 @@
 ---
-title: Bir rota bir harita vurgulama
-description: Bu makalede, bir çoklu çizgi katmana bir harita Ekle açıklanmaktadır. Çoklu satır bir katmana, genellikle bir haritada bir yol göstermek veya gerekli olan herhangi bir şekli oluşturmak için kullanılan bağlantılı çizgi parçaları dizisidir.
+title: Bir haritadaki rotayı vurgulama
+description: Bu makalede, bir çoklu çizgi katmana bir haritaya eklemek açıklanmaktadır. Çoklu katman, genellikle bir yol bir haritada gösterme veya gerekli olan herhangi bir şekli oluşturmak için kullanılan bağlı çizgi segmentleri dizisidir.
 ms.prod: xamarin
 ms.assetid: FBFDC715-1654-4188-82A0-FC522548BCFF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 8b80f9569e9377ca76798911cda64d8c0ee28d93
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 786f050495d4682b719178f2723c482929544678
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846649"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998729"
 ---
-# <a name="highlighting-a-route-on-a-map"></a>Bir rota bir harita vurgulama
+# <a name="highlighting-a-route-on-a-map"></a>Bir haritadaki rotayı vurgulama
 
-_Bu makalede, bir çoklu çizgi katmana bir harita Ekle açıklanmaktadır. Çoklu satır bir katmana, genellikle bir haritada bir yol göstermek veya gerekli olan herhangi bir şekli oluşturmak için kullanılan bağlantılı çizgi parçaları dizisidir._
+_Bu makalede, bir çoklu çizgi katmana bir haritaya eklemek açıklanmaktadır. Çoklu katman, genellikle bir yol bir haritada gösterme veya gerekli olan herhangi bir şekli oluşturmak için kullanılan bağlı çizgi segmentleri dizisidir._
 
 ## <a name="overview"></a>Genel Bakış
 
-Bir katmana harita üzerinde katmanlı bir grafiktir. Yer paylaşımları Haritası uzaklaştırılacağını gibi ölçeklendirilebilen çizim grafik içeriği destekler. Aşağıdaki ekran görüntüleri haritaya çoklu çizgi katmana ekleme sonucu göster:
+Bir katmana, harita üzerindeki katmanlı bir grafiktir. Katmanları ile eşleme, yakınlaştırılmış olarak ölçeklendirilen çizim grafik içeriği destekler. Aşağıdaki ekran görüntüleri bir çizgi katmana haritaya eklemenin sonucunu göstermektedir:
 
 ![](polyline-map-overlay-images/screenshots.png)
 
-Zaman bir [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) denetimi, bir Xamarin.Forms uygulaması iOS tarafından işlenir `MapRenderer` sınıf örneği, hangi sırayla yerel başlatır `MKMapView` denetim. Android platformunda `MapRenderer` sınıfı başlatır yerel `MapView` denetim. Üzerinde Evrensel Windows Platformu (UWP), `MapRenderer` sınıfı başlatır yerel `MapControl`. Oluşturma işlemi için özel Oluşturucu oluşturarak platforma özgü harita özelleştirmeler uygulamak için avantajlarından alınabilir bir `Map` her platformda. Bunu yapmak için işlem aşağıdaki gibidir:
+Olduğunda bir [ `Map` ](xref:Xamarin.Forms.Maps.Map) bir Xamarin.Forms uygulaması iOS tarafından işlenen denetim `MapRenderer` sınıf örneği, hangi sırayla yerel bir örneğini oluşturur `MKMapView` denetimi. Android platformunda `MapRenderer` sınıfın örneğini oluşturur, bir yerel `MapView` denetimi. Üzerindeki Evrensel Windows Platformu (UWP), `MapRenderer` sınıfın örneğini oluşturur, bir yerel `MapControl`. İşleme sürecini avantajı için özel Oluşturucu oluşturarak platforma özgü harita özelleştirmeleri uygulamak için uygulanabilecek bir `Map` her platformda. Bunu yapmak için işlem aşağıdaki gibidir:
 
 1. [Oluşturma](#Creating_the_Custom_Map) Xamarin.Forms özel eşleme.
 1. [Tüketen](#Consuming_the_Custom_Map) Xamarin.Forms özel eşleme.
-1. [Özelleştirme](#Customizing_the_Map) özel bir işleyici eşlemesi için her platformda oluşturarak eşleme.
+1. [Özelleştirme](#Customizing_the_Map) eşleme için özel Oluşturucu her platformda oluşturarak eşleme.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) başlatılmış ve kullanılmadan önce yapılandırılması gerekir. Daha fazla bilgi için bkz. [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) başlatılır ve yapılandırılmış önce kullanır. Daha fazla bilgi için bkz. [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
-Özel oluşturucu kullanılarak bir harita özelleştirme hakkında daha fazla bilgi için bkz: [bir harita PIN özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+Özel oluşturucu kullanılarak bir haritayı özelleştirme hakkında daha fazla bilgi için bkz: [bir harita Raptiyesini özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>Özel eşleme oluşturma
+### <a name="creating-the-custom-map"></a>Özel harita oluşturma
 
-Öğesinin bir alt kümesi oluşturmak [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) ekler sınıfı, bir `RouteCoordinates` özelliği:
+Oluşturma bir öğesinin [ `Map` ](xref:Xamarin.Forms.Maps.Map) ekler sınıfı, bir `RouteCoordinates` özelliği:
 
 ```csharp
 public class CustomMap : Map
@@ -53,13 +53,13 @@ public class CustomMap : Map
 }
 ```
 
-`RouteCoordinates` Özelliği vurgulanmasını için rota tanımlama koordinatları koleksiyonu depolar.
+`RouteCoordinates` Özelliği vurgulanmasını rota tanımlayan koordinat koleksiyonunu depolar.
 
 <a name="Consuming_the_Custom_Map" />
 
 ### <a name="consuming-the-custom-map"></a>Özel Harita kullanma
 
-Tüketen `CustomMap` bir örneğini XAML sayfası örneğinde bildirme tarafından denetimi:
+Tüketen `CustomMap` denetimi bir örneğini XAML sayfası örneğinde bildirmek:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -72,7 +72,7 @@ Tüketen `CustomMap` bir örneğini XAML sayfası örneğinde bildirme tarafınd
 </ContentPage>
 ```
 
-Alternatif olarak, tüketen `CustomMap` bir örneğini C# sayfa örneğinde bildirme tarafından denetimi:
+Alternatif olarak, tüketen `CustomMap` denetimi bir örneğini C# sayfa örnekteki bildirmek:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -90,7 +90,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-Initialize `CustomMap` kontrol gerektiği gibi:
+Başlatma `CustomMap` gerektiği gibi denetleyen:
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -108,17 +108,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Bu başlatma rota vurgulanmasını eşlemek tanımlamak için enlem ve boylam koordinatları, bir dizi belirtir. Haritanın görünümüyle sonra konumlandırır [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) konumunu ve harita yakınlaştırma düzeyini oluşturarak yöntemi bir [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) gelen bir [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) ve [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Bu başlatma, bir dizi yol vurgulanmasını haritada tanımlamak için enlem ve boylam koordinatları belirtir. Ardından haritanın görünüm ile konumlandırır [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) oluşturarak konumu ve harita yakınlaştırma düzeyini değiştiren yöntemi bir [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) gelen bir [ `Position` ](xref:Xamarin.Forms.Maps.Position) ve [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
 <a name="Customizing_the_Map" />
 
-### <a name="customizing-the-map"></a>Harita özelleştirme
+### <a name="customizing-the-map"></a>Haritayı özelleştirme
 
-Çoklu satır katmana eşlemesine eklemek için her uygulama projesi için özel Oluşturucu artık eklenmiş olması gerekir.
+Çoklu çizgi katmana haritaya eklemek için her bir uygulama projesine artık özel Oluşturucu eklenmesi gerekir.
 
 #### <a name="creating-the-custom-renderer-on-ios"></a>İOS özel Oluşturucu Oluşturma
 
-Öğesinin bir alt kümesi oluşturmak `MapRenderer` sınıfı ve geçersiz kılma kendi `OnElementChanged` çoklu çizgi katmana ekleme yöntemi:
+Oluşturma bir öğesinin `MapRenderer` sınıf ve geçersiz kılma kendi `OnElementChanged` yöntemi çoklu katman eklemek için:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -164,14 +164,14 @@ namespace MapOverlay.iOS
 
 ```
 
-Yeni bir Xamarin.Forms öğesi özel Oluşturucu bağlı koşuluyla, bu yöntem aşağıdaki yapılandırma gerçekleştirir:
+Özel oluşturucu, yeni bir Xamarin.Forms öğesine bağlı şartıyla bu yöntem aşağıdaki yapılandırmayı gerçekleştirir:
 
 - `MKMapView.OverlayRenderer` Özelliği için karşılık gelen bir temsilci ayarlayın.
-- Enlem ve boylam koordinatları koleksiyonunu öğesinden alınan `CustomMap.RouteCoordinates` özelliği ve bir dizisi olarak depolanan `CLLocationCoordinate2D` örnekleri.
-- Çoklu çizgiyi statik çağrılarak oluşturulan `MKPolyline.FromCoordinates` enlem ve boylam her noktasının belirtir yöntemi.
-- Çoklu çizgiyi eşlemeye çağrılarak eklenir `MKMapView.AddOverlay` yöntemi.
+- Enlem ve boylam koordinatları koleksiyonunu öğesinden alınan `CustomMap.RouteCoordinates` özelliği ve bir dizi olarak depolanan `CLLocationCoordinate2D` örnekleri.
+- Çoklu çizgi statik çağırarak oluşturulan `MKPolyline.FromCoordinates` yöntemi enlem ve boylamını her noktasının belirtir.
+- Çoklu çizgi çağırarak haritaya eklenen `MKMapView.AddOverlay` yöntemi.
 
-Ardından, uygulama `GetOverlayRenderer` katmana çizmeye özelleştirmek için yöntemi:
+Ardından, uygulama `GetOverlayRenderer` katmana işlenmesi özelleştirmek için yöntemi:
 
 ```csharp
 public class CustomMapRenderer : MapRenderer
@@ -195,9 +195,9 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Android özel Oluşturucu Oluşturma
+#### <a name="creating-the-custom-renderer-on-android"></a>Android'de özel Oluşturucu Oluşturma
 
-Öğesinin bir alt kümesi oluşturmak `MapRenderer` sınıfı ve geçersiz kılma kendi `OnElementChanged` ve `OnMapReady` çoklu çizgi katmana eklemek için yöntemleri:
+Oluşturma bir öğesinin `MapRenderer` sınıf ve geçersiz kılma kendi `OnElementChanged` ve `OnMapReady` yöntemler çoklu katman eklemek için:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -246,11 +246,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged` Yöntemi enlem ve boylam koordinatları koleksiyonunu alır `CustomMap.RouteCoordinates` özelliği ve üye değişkeninde depolar. Daha sonra çağırır `MapView.GetMapAsync` temel alır yöntemi `GoogleMap` , bağlı görünümüne koşuluyla özel Oluşturucu yeni bir Xamarin.Forms öğesine bağlı. Bir kez `GoogleMap` örneği kullanılabilir `OnMapReady` yöntemi çağrılabilir, çoklu çizgi oluşturarak oluşturulduğu bir `PolylineOptions` enlem ve boylam her noktasının belirtir nesnesi. Çoklu çizgiyi sonra eşlemeye çağrılarak eklenir `NativeMap.AddPolyline` yöntemi.
+`OnElementChanged` Yöntemi enlem ve boylam koordinatları koleksiyonunu alır `CustomMap.RouteCoordinates` özelliği ve bunları bir üye değişkeni depolar. Ardından `MapView.GetMapAsync` temel alan yöntemi `GoogleMap` , bağlı görünümüne koşuluyla özel Oluşturucu, yeni bir Xamarin.Forms öğesine eklenir. Bir kez `GoogleMap` örneği kullanılabilir `OnMapReady` yöntemi çağrılacak, çoklu çizgi örnekleme tarafından oluşturulduğu bir `PolylineOptions` enlem ve boylamını her noktasının belirten bir nesne. Çoklu çizginin ardından haritaya çağrılarak eklenir `NativeMap.AddPolyline` yöntemi.
 
 #### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Evrensel Windows platformu üzerinde özel Oluşturucu Oluşturma
 
-Öğesinin bir alt kümesi oluşturmak `MapRenderer` sınıfı ve geçersiz kılma kendi `OnElementChanged` çoklu çizgi katmana ekleme yöntemi:
+Oluşturma bir öğesinin `MapRenderer` sınıf ve geçersiz kılma kendi `OnElementChanged` yöntemi çoklu katman eklemek için:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -289,19 +289,19 @@ namespace MapOverlay.UWP
 }
 ```
 
-Yeni bir Xamarin.Forms öğesi özel Oluşturucu bağlı koşuluyla, bu yöntem aşağıdaki işlemleri gerçekleştirir:
+Özel oluşturucu, yeni bir Xamarin.Forms öğesine bağlı şartıyla bu yöntem aşağıdaki işlemleri gerçekleştirir:
 
 - Enlem ve boylam koordinatları koleksiyonunu öğesinden alınan `CustomMap.RouteCoordinates` özelliği ve dönüştürülen içine bir `List` , `BasicGeoposition` koordinatları.
-- Çoklu çizgiyi örneği tarafından oluşturulan bir `MapPolyline` nesnesi. `MapPolygon` Sınıfı, bir satır olarak ayarlayarak haritada görüntülemek için kullanılır, `Path` özelliğine bir `Geopath` çizgi koordinatları içeren nesne.
-- Çoklu çizgi ekleyerek haritada işlenmeden `MapControl.MapElements` koleksiyonu.
+- Çoklu çizgi örnekleme tarafından oluşturulan bir `MapPolyline` nesne. `MapPolygon` Sınıfı, bir satır olarak ayarlayarak haritada görüntülemek için kullanılır, `Path` özelliğini bir `Geopath` çizgi koordinatları içeren nesne.
+- Çoklu çizgi ekleyerek harita üzerinde işlenen `MapControl.MapElements` koleksiyonu.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede bir haritada bir yol göstermek veya gerekli olan herhangi bir şekli form için bir harita için bir çoklu çizgi katmana ekleme açıklanmıştır.
+Bu makalede, bir rota bir haritada gösterme veya gerekli olan herhangi bir şekli oluşturmak için bir harita için çoklu katman eklemek açıklanmıştır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Çoklu çizgi harita Ovlerlay (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
+- [Çoklu çizgi Haritası Ovlerlay (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
 - [Bir Harita Raptiyesini Özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
-- [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)
+- [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

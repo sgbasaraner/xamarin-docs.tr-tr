@@ -1,41 +1,41 @@
 ---
 title: Yeniden kullanılabilir EffectBehavior
-description: Davranışları arka plan kod dosyaları koddan işleme kazan kalıbı etkisi kaldırma bir denetime efekt eklemek için yararlı bir yaklaşım ' dir. Bu makalede, bir denetim için bir efekt eklemek için bir Xamarin.Forms davranışını kullanarak gösterilmektedir.
+description: Davranışlar efekt kazan blondan etkisi işleme kodunu arka plan kod dosyalarını kaldırma, bir denetim eklemek için kullanışlı bir yaklaşım olan. Bu makalede, efekt için bir denetim eklemek için bir Xamarin.Forms davranışı kullanmayı gösterir.
 ms.prod: xamarin
 ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: a1612d1e87f0e05c859babd93fd03ac9a5736b47
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1ce7eda6f556041cbffc3793b00e8e2cba44d3d0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30785061"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995787"
 ---
 # <a name="reusable-effectbehavior"></a>Yeniden kullanılabilir EffectBehavior
 
-_Davranışları arka plan kod dosyaları koddan işleme kazan kalıbı etkisi kaldırma bir denetime efekt eklemek için yararlı bir yaklaşım ' dir. Bu makalede, bir denetim için bir efekt eklemek için bir Xamarin.Forms davranışını kullanarak gösterilmektedir._
+_Davranışlar efekt kazan blondan etkisi işleme kodunu arka plan kod dosyalarını kaldırma, bir denetim eklemek için kullanışlı bir yaklaşım olan. Bu makalede, efekt için bir denetim eklemek için bir Xamarin.Forms davranışı kullanmayı gösterir._
 
 ## <a name="overview"></a>Genel Bakış
 
-`EffectBehavior` Sınıftır ekleyen yeniden kullanılabilir bir özel Xamarin.Forms davranışı bir [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) davranışı denetime bağlı ve kaldırır denetim örneğine `Effect` davranışı olduğunda örneği denetimden ayrıldı.
+`EffectBehavior` Sınıfı ekleyen yeniden kullanılabilir bir özel Xamarin.Forms davranışı, bir [ `Effect` ](xref:Xamarin.Forms.Effect) davranışı denetimine bağlı ve kaldırır denetime örneğine `Effect` davranıştır zaman örneği denetiminden kullanımdan çıkarıldı.
 
-Aşağıdaki davranışı özellikleri davranışı kullanacak şekilde ayarlamanız gerekir:
+Davranışın kullanılabilmesi için aşağıdaki davranış özelliklerini ayarlamanız gerekir:
 
-- **Grup** – değerini [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) etkisi Sınıf özniteliği.
-- **Ad** – değerini [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) etkisi Sınıf özniteliği.
+- **Grup** – değerini [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) etkisi sınıfı özniteliği.
+- **Adı** – değerini [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) etkisi sınıfı özniteliği.
 
-Etkileri hakkında daha fazla bilgi için bkz: [efektler](~/xamarin-forms/app-fundamentals/effects/index.md).
+Etkileri hakkında daha fazla bilgi için bkz: [etkileri](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 ## <a name="creating-the-behavior"></a>Davranışı oluşturma
 
-`EffectBehavior` Sınıfı türer [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) sınıfı, burada `T` olan bir [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/). Bunun anlamı `EffectBehavior` sınıfı için herhangi bir Xamarin.Forms denetimi eklenebilir.
+`EffectBehavior` Sınıf türetilir [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) sınıfı burada `T` olduğu bir [ `View` ](xref:Xamarin.Forms.View). Diğer bir deyişle `EffectBehavior` sınıfı için herhangi bir Xamarin.Forms denetimi eklenebilir.
 
-### <a name="implementing-bindable-properties"></a>Bağlanabilir özelliklerini uygulama
+### <a name="implementing-bindable-properties"></a>Bağlanabilir Özellikler uygulama
 
-`EffectBehavior` Sınıfı tanımlayan iki [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) eklemek için kullanılan örnekler, bir [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) davranışı denetimine bağlı bir denetim için. Bu özellikler, aşağıdaki kod örneğinde gösterilir:
+`EffectBehavior` Sınıfı tanımlayan iki [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) eklemek için kullanılan örnekler, bir [ `Effect` ](xref:Xamarin.Forms.Effect) davranışı denetime eklendiğinde denetim için. Bu özellikler aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -58,11 +58,11 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-Zaman `EffectBehavior` tüketiliyor, `Group` özelliği değerine ayarlanmalıdır [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) etkisi özniteliği. Ayrıca, `Name` özelliği değerine ayarlanmalıdır [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) etkisi Sınıf özniteliği.
+Zaman `EffectBehavior` kullanılır, `Group` özelliğinin değeri olarak ayarlanması [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) efekt için öznitelik. Ayrıca, `Name` özelliğinin değeri olarak ayarlanması [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) etkisi sınıfı özniteliği.
 
 ### <a name="implementing-the-overrides"></a>Geçersiz kılmaları uygulama
 
-`EffectBehavior` Geçersiz kılmaları sınıf [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) ve [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) yöntemlerinin [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) aşağıdaki kodda gösterildiği gibi sınıfı Örnek:
+`EffectBehavior` Sınıf geçersiz kılmalarını [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) ve [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) yöntemlerinin [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) aşağıdaki kodda gösterildiği gibi sınıfı Örnek:
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -83,11 +83,11 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-[ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Yöntemi çağrılarak kurulum gerçekleştirir `AddEffect` yöntemi, ekli denetiminde bir parametre olarak geçirme. [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Yöntemi çağrılarak temizleme gerçekleştirir `RemoveEffect` yöntemi, ekli denetiminde bir parametre olarak geçirme.
+[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Yöntemi çağırarak kurulum gerçekleştirir `AddEffect` ekli denetiminde bir parametre olarak geçirerek yöntemi. [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Yöntemi çağırarak temizleme gerçekleştirir `RemoveEffect` ekli denetiminde bir parametre olarak geçirerek yöntemi.
 
-### <a name="implementing-the-behavior-functionality"></a>Davranış işlevlerini uygulama
+### <a name="implementing-the-behavior-functionality"></a>Davranış işlevselliği uygulama
 
-Davranış amacı eklemektir [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) tanımlanan `Group` ve `Name` davranışı denetime bağlı ve kaldırdığınız durumlarda bir denetim özelliklerine `Effect` davranışı olduğunda denetimden ayrıldı. Çekirdek davranışı işlevselliği, aşağıdaki kod örneğinde gösterilir:
+Davranış amacı eklemektir [ `Effect` ](xref:Xamarin.Forms.Effect) tanımlanan `Group` ve `Name` özellikleri denetime davranışı denetimine bağlı ve kaldırmak için `Effect` davranıştır zaman denetiminden kullanımdan çıkarıldı. Çekirdek davranışı işlevselliği aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -119,13 +119,13 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-`AddEffect` Yanıt olarak yöntemi yürütüldüğünde `EffectBehavior` bir denetim ve bu iliştirilmekte ekli denetim bir parametre olarak alır. Yöntemi, alınan etkisi sonra denetimin ekler. [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) koleksiyonu. `RemoveEffect` Yanıt olarak yöntemi yürütüldüğünde `EffectBehavior` bir denetim ve onu ayrılmakta ekli denetim bir parametre olarak alır. Yöntemi, etkisi sonra denetimin kaldırır. [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) koleksiyonu.
+`AddEffect` Yanıt olarak yöntemi yürütüldüğünde `EffectBehavior` denetim ve bu bağlı eklenen denetimin bir parametre olarak alır. Yöntemi, alınan etkisi ardından denetimin ekler. [ `Effects` ](xref:Xamarin.Forms.Element.Effects) koleksiyonu. `RemoveEffect` Yanıt olarak yöntemi yürütüldüğünde `EffectBehavior` denetim ve onu ayrılmakta ekli denetimi bir parametre olarak alır. Yöntemi, etkisi ardından denetimin kaldırır. [ `Effects` ](xref:Xamarin.Forms.Element.Effects) koleksiyonu.
 
-`GetEffect` Yöntemi kullanan [ `Effect.Resolve` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.Resolve/p/System.String/) almak için yöntemini [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/). Etkili bir birleşimi bulunduğu `Group` ve `Name` özellik değerleri. Bir platformda etkili sağlamıyorsa `Effect.Resolve` yöntemi döndürür olmayan bir`null` değeri.
+`GetEffect` Yöntemi kullanan [ `Effect.Resolve` ](xref:Xamarin.Forms.Effect.Resolve(System.String)) alınacak yöntemi [ `Effect` ](xref:Xamarin.Forms.Effect). Etkili bir birleşimi bulunduğu `Group` ve `Name` özellik değerleri. Bir platformda etkili sağlamıyorsa `Effect.Resolve` yöntemi döndürür olmayan bir`null` değeri.
 
 ## <a name="consuming-the-behavior"></a>Davranış kullanma
 
-`EffectBehavior` Sınıfı için eklenebilir [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) aşağıdaki XAML kod örneğinde gösterildiği gibi bir denetim koleksiyonu:
+`EffectBehavior` Sınıfı için eklenebilir [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) aşağıdaki XAML kod örneğinde gösterildiği gibi bir denetim koleksiyonu:
 
 ```xaml
 <Label Text="Label Shadow Effect" ...>
@@ -135,7 +135,7 @@ public class EffectBehavior : Behavior<View>
 </Label>
 ```
 
-Eşdeğer C# kodu aşağıdaki kod örneğinde gösterilir:
+Eşdeğer C# kodu aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 var label = new Label {
@@ -148,22 +148,22 @@ label.Behaviors.Add (new EffectBehavior {
 });
 ```
 
-`Group` Ve `Name` davranışı özellik değerleri kümesinin [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) ve [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) her platforma özgü etkisi sınıfında öznitelikleri Proje.
+`Group` Ve `Name` davranış özelliklerini değerleri kümesi [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) ve [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) her platforma özel efekt sınıf için öznitelikleri Proje.
 
-Davranış bağlı olduğu çalışma zamanında [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) denetimi `Xamarin.LabelShadowEffect` denetimin eklenecek [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) koleksiyonu. Bu tarafından görüntülenen metni eklenmesini gölge sonuçlanır `Label` denetlemek, aşağıdaki ekran görüntülerinde gösterildiği gibi:
+Davranış bağlı olduğu çalışma zamanında [ `Label` ](xref:Xamarin.Forms.Label) denetimi `Xamarin.LabelShadowEffect` denetimin eklenecek [ `Effects` ](xref:Xamarin.Forms.Element.Effects) koleksiyonu. Tarafından görüntülenen metni eklenen bir gölge sonuçlanır `Label` aşağıdaki ekran görüntülerinde gösterildiği denetimi:
 
-![](effect-behavior-images/screenshots.png "EffectsBehavior örnek uygulaması")
+![](effect-behavior-images/screenshots.png "Örnek uygulama ile EffectsBehavior")
 
-Eklemek ve etkileri denetimlerden kaldırmak için bu davranış kullanmanın avantajı, kazan kalıbı etkisi işleme kodu arka plan kodu dosyalarından kaldırılabilir ' dir.
+Bu davranışı eklemek ve denetimlerini etkiler kaldırmak için kullanmanın avantajı, kazan blondan etkisi işleme kodu arka plan kod dosyaları kaldırılabilir ' dir.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, bir denetime efekt eklemek için bir davranış kullanarak gösterilmektedir. `EffectBehavior` Sınıftır ekleyen yeniden kullanılabilir bir özel Xamarin.Forms davranışı bir [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) davranışı denetime bağlı ve kaldırır denetim örneğine `Effect` davranışı olduğunda örneği denetimden ayrıldı.
+Bu makalede, efekt için bir denetim eklemek için davranış kullanarak gösterdik. `EffectBehavior` Sınıfı ekleyen yeniden kullanılabilir bir özel Xamarin.Forms davranışı, bir [ `Effect` ](xref:Xamarin.Forms.Effect) davranışı denetimine bağlı ve kaldırır denetime örneğine `Effect` davranıştır zaman örneği denetiminden kullanımdan çıkarıldı.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Etkiler](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Etkili davranış (örnek)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
-- [Behavior](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
-- [Davranışı<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)
+- [Etkin davranış (örnek)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+- [Davranışı](xref:Xamarin.Forms.Behavior)
+- [Davranışı<T>](xref:Xamarin.Forms.Behavior`1)

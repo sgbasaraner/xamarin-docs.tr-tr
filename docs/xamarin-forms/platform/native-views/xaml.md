@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4afdf1210a435e4631b1fe43e9415f4f9f599350
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b7ea75c13d84cf9fe74d7a606f6127aaa6bbe3b2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935497"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996340"
 ---
 # <a name="native-views-in-xaml"></a>XAML içindeki yerel görünümler
 
@@ -44,7 +44,7 @@ Yerel bir görünüm bir arka plan kod dosyasından başvurmak için paylaşıla
 
 ## <a name="consuming-native-views"></a>Yerel görünümler kullanma
 
-Aşağıdaki kod örneği, bir Xamarin.Forms için her platform için yerel görünümler kullanan gösterir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/):
+Aşağıdaki kod örneği, bir Xamarin.Forms için her platform için yerel görünümler kullanan gösterir [ `ContentPage` ](xref:Xamarin.Forms.ContentPage):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -63,11 +63,11 @@ Aşağıdaki kod örneği, bir Xamarin.Forms için her platform için yerel gör
 </ContentPage>
 ```
 
-Belirtme yanı sıra `clr-namespace` ve `assembly` yerel görünümü ad alanı için bir `targetPlatform` de belirtilmelidir. Bu değerlerden birine ayarlanmalıdır [ `TargetPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetPlatform/) numaralandırma ve genellikle ayarlanacak `iOS`, `Android`, veya `Windows`. Çalışma zamanında, XAML ayrıştırıcı sahip herhangi bir XML ad alanı öneklerini yoksayacak bir `targetPlatform` uygulamasının çalıştığı platforma eşleşmiyor.
+Belirtme yanı sıra `clr-namespace` ve `assembly` yerel görünümü ad alanı için bir `targetPlatform` de belirtilmelidir. Bu değerlerden birine ayarlanmalıdır [ `TargetPlatform` ](xref:Xamarin.Forms.TargetPlatform) numaralandırma ve genellikle ayarlanacak `iOS`, `Android`, veya `Windows`. Çalışma zamanında, XAML ayrıştırıcı sahip herhangi bir XML ad alanı öneklerini yoksayacak bir `targetPlatform` uygulamasının çalıştığı platforma eşleşmiyor.
 
 Her ad alanı bildirimi, belirtilen ad alanından herhangi bir sınıf veya yapının başvurmak için kullanılabilir. Örneğin, `ios` ad alanı bildirimi, herhangi bir sınıf veya yapının iOS başvurmak için kullanılabilir `UIKit` ad alanı. Yerel görünümün özelliklerini XAML ayarlanabilir, ancak özellik ve nesne türlerinin eşleşmesi gerekir. Örneğin, `UILabel.TextColor` özelliği `UIColor.Red` kullanarak `x:Static` işaretleme uzantısı ve `ios` ad alanı.
 
-Bağlanabilir özellikler ve ekli bağlanabilir özellikler de ayarlanabilir yerel görünümleri kullanarak `Class.BindableProperty="value"` söz dizimi. Platforma özgü yerel görünümler sarmalandıktan `NativeViewWrapper` türetilen örneği [ `Xamarin.Forms.View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) sınıfı. Özellik değeri, ayarı yerel bir görünüm üzerinde bir bağlanılabilir özellik ya da ekli bağlanılabilir özellik için bir sarmalayıcı aktarır. Örneğin, ortalanmış bir yatay düzeni ayarlayarak belirtilebilir `View.HorizontalOptions="Center"` yerel görünümü.
+Bağlanabilir özellikler ve ekli bağlanabilir özellikler de ayarlanabilir yerel görünümleri kullanarak `Class.BindableProperty="value"` söz dizimi. Platforma özgü yerel görünümler sarmalandıktan `NativeViewWrapper` türetilen örneği [ `Xamarin.Forms.View` ](xref:Xamarin.Forms.View) sınıfı. Özellik değeri, ayarı yerel bir görünüm üzerinde bir bağlanılabilir özellik ya da ekli bağlanılabilir özellik için bir sarmalayıcı aktarır. Örneğin, ortalanmış bir yatay düzeni ayarlayarak belirtilebilir `View.HorizontalOptions="Center"` yerel görünümü.
 
 > [!NOTE]
 > Stilleri tarafından desteklenen özellikler yalnızca hedefleyebilir stilleri yerel görünümlerle kullanılamaz dikkat edin çünkü `BindableProperty` nesneleri.
@@ -113,14 +113,14 @@ Yerel görünümler özelliklerini de veri bağlamayı kullanabilirsiniz. Aşağ
 
 ```
 
-Sayfayı içeren bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) olan [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) özelliği bağlanır `NativeSwitchPageViewModel.IsSwitchOn` özelliği. [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Sayfasında yeni bir örneğine ayarlanır `NativeSwitchPageViewModel` ViewModel uygulayan sınıf ile arka plan kod dosyasında, sınıf `INotifyPropertyChanged` arabirimi.
+Sayfayı içeren bir [ `Entry` ](xref:Xamarin.Forms.Entry) olan [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) özelliği bağlanır `NativeSwitchPageViewModel.IsSwitchOn` özelliği. [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Sayfasında yeni bir örneğine ayarlanır `NativeSwitchPageViewModel` ViewModel uygulayan sınıf ile arka plan kod dosyasında, sınıf `INotifyPropertyChanged` arabirimi.
 
 Sayfa aynı zamanda her platform için yerel bir anahtar içeriyor. Her yerel anahtar kullanan bir [ `TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay) değerini güncelleştirmek için bağlama `NativeSwitchPageViewModel.IsSwitchOn` özelliği. Bu nedenle, anahtar olduğunda kapalı `Entry` devre dışı bırakıldı ve anahtar açıkken `Entry` etkinleştirilir. Aşağıdaki ekran görüntüleri, bu işlev her platformda göster:
 
 ![](xaml-images/native-switch-disabled.png "Yerel anahtar devre dışı")
 ![](xaml-images/native-switch-enabled.png "yerel anahtar etkin")
 
-Yerel özelliği uygulayan şartıyla, iki yönlü bağlamaları desteklenen otomatik olarak `INotifyPropertyChanged`, anahtar-değer gözleme (KVO) İos'ta destekler veya gibi bir `DependencyProperty` UWP üzerinde. Ancak, birçok yerel görünümler özellik değişikliği bildirimi desteklemeyen. Bu görünümler için belirttiğiniz bir [ `UpdateSourceEventName` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.UpdateSourceEventName/) bağlama ifadesi bir parçası olarak özellik değeri. Bu özellik bir olay görünümünde hedef özelliği değiştiğinde bildirir yerel adına ayarlanmalıdır. Ardından, yerel anahtar değeri değiştiğinde, `Binding` sınıfı, kullanıcı anahtar değeri değiştirildi bildirilir ve `NativeSwitchPageViewModel.IsSwitchOn` özellik değeri güncelleştirilir.
+Yerel özelliği uygulayan şartıyla, iki yönlü bağlamaları desteklenen otomatik olarak `INotifyPropertyChanged`, anahtar-değer gözleme (KVO) İos'ta destekler veya gibi bir `DependencyProperty` UWP üzerinde. Ancak, birçok yerel görünümler özellik değişikliği bildirimi desteklemeyen. Bu görünümler için belirttiğiniz bir [ `UpdateSourceEventName` ](xref:Xamarin.Forms.Binding.UpdateSourceEventName) bağlama ifadesi bir parçası olarak özellik değeri. Bu özellik bir olay görünümünde hedef özelliği değiştiğinde bildirir yerel adına ayarlanmalıdır. Ardından, yerel anahtar değeri değiştiğinde, `Binding` sınıfı, kullanıcı anahtar değeri değiştirildi bildirilir ve `NativeSwitchPageViewModel.IsSwitchOn` özellik değeri güncelleştirilir.
 
 <a name="passing_arguments" />
 
@@ -199,12 +199,12 @@ XAML bağımsız değişkenleri geçirme hakkında daha fazla bilgi için bkz: [
 
 ## <a name="referring-to-native-views-from-code"></a>Koddan yerel görünümler için başvuru
 
-Yerel bir görünümle ad mümkün olmasa da `x:Name` özniteliği mümkündür yerel görünümün alt öğesi bir olmasışartıyla,arkaplankoddosyasıbirpaylaşılanerişimprojeiçindebirXAMLdosyasındabildirilenbiryerelgörünümüörneğialınacak[ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) belirten bir `x:Name` öznitelik değeri. Ardından, koşullu derleme yönergeleri arka plan kod dosyasında içinde yapmanız gerekir:
+Yerel bir görünümle ad mümkün olmasa da `x:Name` özniteliği mümkündür yerel görünümün alt öğesi bir olmasışartıyla,arkaplankoddosyasıbirpaylaşılanerişimprojeiçindebirXAMLdosyasındabildirilenbiryerelgörünümüörneğialınacak[ `ContentView` ](xref:Xamarin.Forms.ContentView) belirten bir `x:Name` öznitelik değeri. Ardından, koşullu derleme yönergeleri arka plan kod dosyasında içinde yapmanız gerekir:
 
-1. Alma [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) özellik değeri ve platforma özgü cast `NativeViewWrapper` türü.
+1. Alma [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) özellik değeri ve platforma özgü cast `NativeViewWrapper` türü.
 1. Alma `NativeViewWrapper.NativeElement` özelliği ve yerel görünüm türüne.
 
-Yerel API, ardından istenen işlemleri gerçekleştirmek için yerel görünümde çağrılabilir. Ayrıca bu yaklaşım farklı platformlar için birden fazla XAML yerel görünümler aynı alt olabilir avantajını sunar [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/). Aşağıdaki kod örneği, bu tekniği gösterir:
+Yerel API, ardından istenen işlemleri gerçekleştirmek için yerel görünümde çağrılabilir. Ayrıca bu yaklaşım farklı platformlar için birden fazla XAML yerel görünümler aynı alt olabilir avantajını sunar [ `ContentView` ](xref:Xamarin.Forms.ContentView). Aşağıdaki kod örneği, bu tekniği gösterir:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -234,7 +234,7 @@ Yerel API, ardından istenen işlemleri gerçekleştirmek için yerel görünüm
 </ContentPage>
 ```
 
-Yukarıdaki örnekte, her platform için yerel görünümler alt öğeleri olan [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) denetimleri ile `x:Name` almak için kullanılan öznitelik değeri `ContentView` arka plan kod içinde:
+Yukarıdaki örnekte, her platform için yerel görünümler alt öğeleri olan [ `ContentView` ](xref:Xamarin.Forms.ContentView) denetimleri ile `x:Name` almak için kullanılan öznitelik değeri `ContentView` arka plan kod içinde:
 
 ```csharp
 public partial class NativeViewInsideContentViewPage : ContentPage
@@ -276,9 +276,9 @@ public partial class NativeViewInsideContentViewPage : ContentPage
 }
 ```
 
-[ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) Sarmalanan yerel görünüm platforma özgü olarak alınacak özelliğine erişinceye `NativeViewWrapper` örneği. `NativeViewWrapper.NativeElement` Özelliği yerel görünüm doğal türü olarak alınacak erişildiği sonra. Yerel görünümün API, ardından istenen işlemleri gerçekleştirmek için çağrılır.
+[ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) Sarmalanan yerel görünüm platforma özgü olarak alınacak özelliğine erişinceye `NativeViewWrapper` örneği. `NativeViewWrapper.NativeElement` Özelliği yerel görünüm doğal türü olarak alınacak erişildiği sonra. Yerel görünümün API, ardından istenen işlemleri gerçekleştirmek için çağrılır.
 
-İOS ve Android yerel düğmeleri aynı paylaşmak `OnButtonTap` olay işleyicisi, yerel düğmelerin kullandığından bir `EventHandler` temsilci touch olaya yanıt olarak. Ancak, ayrı bir evrensel Windows Platformu (UWP) kullanan `RoutedEventHandler`, hangi sırayla tüketir `OnButtonTap` Bu örnekte olay işleyicisi. Bu nedenle, ne zaman bir yerel düğmesine tıklandığında, `OnButtonTap` olay işleyicisi yürütür, ölçeklendirilebilen ve içinde yer alan yerel denetim döndürür [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) adlı `contentViewTextParent`. Aşağıdaki ekran görüntüleri, bu her platformda oluşma gösterilmektedir:
+İOS ve Android yerel düğmeleri aynı paylaşmak `OnButtonTap` olay işleyicisi, yerel düğmelerin kullandığından bir `EventHandler` temsilci touch olaya yanıt olarak. Ancak, ayrı bir evrensel Windows Platformu (UWP) kullanan `RoutedEventHandler`, hangi sırayla tüketir `OnButtonTap` Bu örnekte olay işleyicisi. Bu nedenle, ne zaman bir yerel düğmesine tıklandığında, `OnButtonTap` olay işleyicisi yürütür, ölçeklendirilebilen ve içinde yer alan yerel denetim döndürür [ `ContentView` ](xref:Xamarin.Forms.ContentView) adlı `contentViewTextParent`. Aşağıdaki ekran görüntüleri, bu her platformda oluşma gösterilmektedir:
 
 ![](xaml-images/contentview.png "Yerel bir denetimi içeren ContentView")
 
@@ -319,7 +319,7 @@ Aşağıdaki kod örneği, yerel görünümler kullanan bir Xamarin.Forms sayfa 
 </ContentPage>
 ```
 
-Sayfayı içeren bir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) yerel denetiminden kullanıcı tarafından seçmiş Meyve görüntüler. `Label` Bağlar `SubclassedNativeControlsPageViewModel.SelectedFruit` özelliği. [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Sayfasında yeni bir örneğine ayarlanır `SubclassedNativeControlsPageViewModel` ViewModel uygulayan sınıf ile arka plan kod dosyasında, sınıf `INotifyPropertyChanged` arabirimi.
+Sayfayı içeren bir [ `Label` ](xref:Xamarin.Forms.Label) yerel denetiminden kullanıcı tarafından seçmiş Meyve görüntüler. `Label` Bağlar `SubclassedNativeControlsPageViewModel.SelectedFruit` özelliği. [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Sayfasında yeni bir örneğine ayarlanır `SubclassedNativeControlsPageViewModel` ViewModel uygulayan sınıf ile arka plan kod dosyasında, sınıf `INotifyPropertyChanged` arabirimi.
 
 Sayfa, her platform için bir yerel Seçici görünümü de içerir. Bağlama tarafından MEYVELERİ koleksiyonunu görüntüleyen yerel her görünüm kendi `ItemSource` özelliğini `SubclassedNativeControlsPageViewModel.Fruits` koleksiyonu. Aşağıdaki ekran görüntülerinde gösterildiği gibi bu kullanıcının bir Meyve sağlar:
 

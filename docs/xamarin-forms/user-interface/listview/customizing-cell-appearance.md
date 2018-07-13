@@ -1,48 +1,48 @@
 ---
-title: ListView hücre görünümünü özelleştirme
-description: Bu makalede ListView denetimi kolaylık yararlanarak sırasında Xamarin.Forms uygulamalarda verileri sunmak için seçenekler ele alınmıştır.
+title: ListView hücresi görünümünü özelleştirme
+description: Bu makalede ListView denetimi kolaylık yararlanarak çalışırken Xamarin.Forms uygulamalarında verileri sunmak için seçenekler ele alınmıştır.
 ms.prod: xamarin
 ms.assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 86447afbabca1384f9e46f5128a9dc00253a798c
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7a0f55b6d8a61f52f4ef137d83c56d86149bc3c9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244762"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996262"
 ---
-# <a name="customizing-listview-cell-appearance"></a>ListView hücre görünümünü özelleştirme
+# <a name="customizing-listview-cell-appearance"></a>ListView hücresi görünümünü özelleştirme
 
-ListView sunar kullanılarak özelleştirilebilir kaydırılabilir listeleri `ViewCell`s. `ViewCells` metin ve resimler görüntülemek, bir doğru/yanlış durumunu gösteren ve kullanıcı girişi almak için kullanılabilir.
+ListView sunan kullanımının özelleştirilebilir kaydırılabilir listeleri `ViewCell`s. `ViewCells` metin ve resim görüntüleme, doğru/yanlış durumunu gösteren ve kullanıcı girişi almak için kullanılabilir.
 
-ListView hücrelerden istediğiniz görünümü almak için iki yaklaşım vardır:
+ListView hücrelerden istediğiniz görüntüyü almak için iki yaklaşım vardır:
 
-- **[Yerleşik hücreleri özelleştirme](#Built_in_Cells)**  &ndash; daha kolay ve daha iyi performans özelleştirilebilirliğini ödün verme pahasına.
-- **[Özel hücreleri oluşturma](#customcells)**  &ndash; daha kontrol Nihai sonuç, ancak doğru uygulanmadı olası performans sorunları varsa.
+- **[Yerleşik hücreleri özelleştirme](#Built_in_Cells)**  &ndash; daha kolay ve daha iyi performans küçültülür konularında kendini gösterir.
+- **[Özel hücreleri oluşturma](#customcells)**  &ndash; daha sonuç üzerinde denetim, ancak doğru uygulanmadı olası performans sorunları vardır.
 
 <a name="Built_in_Cells" />
 
 ## <a name="built-in-cells"></a>Yerleşik hücreleri
-Birçok basit uygulamalar için çalışma yerleşik hücrelerle Xamarin.Forms gelir:
+Xamarin.Forms, pek çok basit uygulamalar için çalışma yerleşik hücre ile birlikte gelir:
 
 - **TextCell** &ndash; metin görüntüleme
-- **ImageCell** &ndash; metinle birlikte bir görüntü görüntüleme.
+- **ImageCell** &ndash; metin içeren bir resim görüntülemek için.
 
-İki ek hücreleri [ `SwitchCell` ](~/xamarin-forms/user-interface/tableview.md#switchcell) ve [ `EntryCell` ](~/xamarin-forms/user-interface/tableview.md#entrycell) bunlar ile yaygın olarak kullanılmayan ancak kullanılabilir `ListView`. Bkz: [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) bu hücreler hakkında daha fazla bilgi.
+İki ek hücre [ `SwitchCell` ](~/xamarin-forms/user-interface/tableview.md#switchcell) ve [ `EntryCell` ](~/xamarin-forms/user-interface/tableview.md#entrycell) bunlar ile yaygın olarak kullanılmayan ancak kullanılabilir `ListView`. Bkz: [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) bu hücreleri hakkında daha fazla bilgi.
 
 <a name="TextCell" />
 
 ### <a name="textcell"></a>TextCell
 
-[`TextCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) İkinci satır ayrıntı metin olarak isteğe bağlı olarak metin görüntüleme için bir hücre olduğunda.
+[`TextCell`](xref:Xamarin.Forms.TextCell) İsteğe bağlı olarak ayrıntılı metin olarak ikinci bir satır içeren bir metin görüntülemek için bir hücre var.
 
-TextCells işlenir yerel denetimlerini çalışma zamanında olarak özel bir kıyasla performans yararlı olacak şekilde `ViewCell`. TextCells ayarlamanıza olanak veren özelleştirilebilir şunlardır:
+TextCells işlenir yerel denetimlerini çalışma zamanında, bir özel kıyasla performans çok iyi, bu nedenle `ViewCell`. TextCells özelleştirilebilir ayarlamanızı izin verme:
 
-- `Text` &ndash; İlk satırdaki büyük yazı tipiyle gösterilen metin.
-- `Detail` &ndash; ilk satırda daha küçük bir yazı tipi altında görüntülenen metin.
+- `Text` &ndash; ilk satırında, büyük yazı tipiyle gösterilen metin.
+- `Detail` &ndash; ilk satırı, küçük bir yazı tipi altında gösterilen metin.
 - `TextColor` &ndash; metin rengi.
 - `DetailColor` &ndash; Ayrıntı metin rengi
 
@@ -54,15 +54,15 @@ TextCells işlenir yerel denetimlerini çalışma zamanında olarak özel bir k�
 
 ### <a name="imagecell"></a>ImageCell
 
-[`ImageCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/), gibi `TextCell`ve ikincil ayrıntı metin görüntülemek için kullanılabilir ve her platformun yerel denetimlerini kullanarak iyi performans sunar. `ImageCell` farklı `TextCell` içeren bir görüntü metni sola görüntüler.
+[`ImageCell`](xref:Xamarin.Forms.ImageCell), gibi `TextCell`ikincil ayrıntı metin görüntülemek için kullanılabilir ve her platformun yerel denetimlerini kullanarak mükemmel performans sunar. `ImageCell` farklıdır `TextCell` , metnin solunda bir resim görüntüler.
 
-`ImageCell` Kişiler veya filmler listesi gibi bir görsel yönü verilerle listesini görüntülemek gerektiğinde kullanışlıdır. ImageCells ayarlamanıza olanak veren özelleştirilebilir şunlardır:
+`ImageCell` verilerle ilgili kişiler veya filmler listesi gibi görsel bir özelliği bir listesini görüntülemek, ihtiyacınız olduğunda yararlıdır. ImageCells özelleştirilebilir ayarlamanızı izin verme:
 
-- `Text` &ndash; İlk satırdaki büyük yazı tipiyle gösterilen metni
-- `Detail` &ndash; ilk satırda daha küçük bir yazı tipi altında görüntülenen metin
+- `Text` &ndash; ilk satırında, büyük yazı tipiyle gösterilen metin
+- `Detail` &ndash; ilk satırı, küçük bir yazı tipi altında gösterilen metin
 - `TextColor` &ndash; metin rengi
 - `DetailColor` &ndash; Ayrıntı metin rengi
-- `ImageSource` &ndash; metnin yanında görüntülenecek resmi
+- `ImageSource` &ndash; metnin yanında gösterilecek resmi
 
 ![](customizing-cell-appearance-images/image-cell-default.png "Varsayılan ImageCell örneği")
 
@@ -70,19 +70,19 @@ TextCells işlenir yerel denetimlerini çalışma zamanında olarak özel bir k�
 
 <a name="customcells" />
 
-## <a name="custom-cells"></a>Özel hücreler
-Yerleşik hücreleri gerekli düzeni sağlamıyorsa, özel hücreleri gerekli düzeni uygulanır. Örneğin, bir hücre eşit ağırlığa sahip iki etiketlerle sunmak isteyebilirsiniz. A `TextCell` yetersiz olabilir çünkü `TextCell` küçük olan bir etiketi yok. Çoğu hücre özelleştirmeleri ek salt okunur verileri (örneğin, ek etiketleri, görüntüleri veya başka görüntü bilgilerini) ekleyin.
+## <a name="custom-cells"></a>Özel hücreleri
+Yerleşik hücreleri gerekli düzeni gerektiğinde, özel hücreleri gerekli düzeni uygulanır. Örneğin, bir hücre eşit ağırlık sahip iki etiket ile sunmak isteyebilirsiniz. A `TextCell` yetersiz olabilir çünkü `TextCell` daha küçük olan bir etiketi vardır. Çoğu hücre özelleştirmeleri ek salt okunur verileri (örneğin, ilave etiketler, görüntüleri veya başka görüntü bilgilerini) ekleyin.
 
-Tüm özel hücreleri öğesinden türetilmelidir [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), tüm yerleşik hücrenin yazdığı kullanım aynı temel sınıfı.
+Tüm özel hücreleri öğesinden türetilmelidir [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), aynı temel sınıf tüm yerleşik hücresi türlerini kullanın.
 
-Xamarin.Forms 2 sunulan yeni bir [önbelleğe alma davranışı](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) üzerinde `ListView` bazı türleri için özel bir hücre kaydırma performansını geliştirmek için ayarlayabileceğiniz denetim.
+Xamarin.Forms 2 tanıtılan yeni bir [önbelleğe alma davranışını](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) üzerinde `ListView` özel hücre bazı türleri için kayma performansını artırma için ayarlanan denetimi.
 
 Bu, özel bir hücre örneğidir:
 
 ![](customizing-cell-appearance-images/custom-cell.png "Özel hücre örneği")
 
 ### <a name="xaml"></a>XAML
-Yukarıdaki düzeni oluşturmak için XAML aşağıdadır:
+Yukarıdaki bir düzen oluşturmak için XAML aşağıda verilmiştir:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,17 +113,17 @@ x:Class="demoListView.ImageCellPage">
 </ContentPage>
 ```
 
-Yukarıdaki XAML çok yapıyor. Şimdi onu Bölünme:
+Yukarıdaki XAML çok yapıyor. Bu konuyu biraz açalım:
 
-- Özel hücre içinde iç içe bir `DataTemplate`, içinde olduğu `ListView.ItemTemplate`. Bu, herhangi bir hücreyi kullanmakla aynı işlemdir.
-- `ViewCell` Özel hücre türüdür. Alt `DataTemplate` öğesi olması veya türden türetilmiş `ViewCell`.
-- Bu iç fark `ViewCell`, düzeni tarafından yönetilen bir `StackLayout`. Bu düzen bize arka plan rengini özelleştirmenizi sağlar. Unutmayın herhangi bir özelliği `StackLayout` diğer bir deyişle bağlanabilirse can bağlı özel bir hücreyi burada gösterilmese de.
+- Özel hücresi içinde iç içe bir `DataTemplate`, içinde olduğu `ListView.ItemTemplate`. Bu, herhangi bir hücreyi kullanmakla aynı işlemdir.
+- `ViewCell` Özel hücre türüdür. Alt `DataTemplate` öğesi olması veya türünden türetilmesi gerekir `ViewCell`.
+- Bu iç fark `ViewCell`, düzen tarafından yönetilen bir `StackLayout`. Bu düzen arka plan rengini özelleştirebilirsiniz olanak sağlıyor. Unutmayın, herhangi bir özelliği `StackLayout` diğer bir deyişle bağlanabilir can bağımlı içinde özel bir hücre, ancak burada gösterilmez.
 
 ### <a name="cnum"></a>C&num;
 
-Özel bir hücre C# ' ta belirtme, XAML eşdeğer biraz daha ayrıntılıdır. Bir göz atalım:
+Özel bir hücre C# dilinde belirtme, XAML eşdeğer biraz daha ayrıntılıdır. Bir göz atalım:
 
-İlk olarak, bir özel hücre sınıf ile tanımlama `ViewCell` temel sınıf olarak:
+İle ilk olarak, bir özel hücre sınıfı tanımlamanız `ViewCell` temel sınıf olarak:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -159,7 +159,7 @@ public class CustomCell : ViewCell
     }
 ```
 
-Sayfa ile birlikte, Oluşturucuda `ListView`, ListView's ayarlamak `ItemTemplate` yeni bir özellik `DataTemplate`:
+Sayfası için bir Oluşturucuda `ListView`, ListView'ın ayarlamak `ItemTemplate` yeni bir özellik `DataTemplate`:
 
 ```csharp
 public partial class ImageCellPage : ContentPage
@@ -178,7 +178,7 @@ Unutmayın Oluşturucusu `DataTemplate` bir türü alır. Typeof işleci için C
 
 ### <a name="binding-context-changes"></a>Bağlam değişiklikleri bağlama
 
-Bir özel hücre türüne ait bağlama sırasında [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) görüntüleme UI denetimleri örneği `BindableProperty` değerleri kullanması gereken [ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.OnBindingContextChanged()/) görüntülenecek veri kümesi için geçersiz kılın Her bir hücre yerine aşağıdaki kod örneğinde gösterildiği gibi hücre oluşturucusu:
+Bir özel hücre türün için bağlama sırasında [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) görüntüleme UI denetimleri örneği `BindableProperty` değerleri kullanması gereken [ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged) görüntülenecek veri kümesi için geçersiz kılma Her bir hücre, aşağıdaki kod örneğinde gösterildiği gibi hücre oluşturucusu yerine:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -221,14 +221,14 @@ public class CustomCell : ViewCell
 }
 ```
 
-[ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.OnBindingContextChanged()/) Geçersiz kılma ne zaman çağrılır [ `BindingContextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.BindingContextChanged/) yanıt değeri olarak olay ateşlenir [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) özelliğini değiştirmek. Bu nedenle, `BindingContext` değişiklikler, kullanıcı Arabirimi denetimlerini görüntüleme [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) değerleri verilerini ayarlanmış olmalıdır. Unutmayın `BindingContext` için denetlenmesi bir `null` Xamarin.Forms tarafından bu sırayla sonuçlanır çöp toplama için ayarlanabilir, değer `OnBindingContextChanged` çağrılan geçersiz kılar.
+[ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged) Geçersiz kılma ne zaman çağrılacağı [ `BindingContextChanged` ](xref:Xamarin.Forms.BindableObject.BindingContextChanged) yanıt değeri olarak olay harekete geçirilir [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) özelliğini değiştirme. Bu nedenle, `BindingContext` değiştirir, UI denetimleri görüntüleme [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) değerleri, kendi veri ayarlamalıdır. Unutmayın `BindingContext` için denetlenmesi bir `null` değer sırayla sonuçlanır çöp toplama için Xamarin.Forms tarafından bu ayarlanabilir gibi `OnBindingContextChanged` çağrılan geçersiz kılar.
 
-Alternatif olarak, kullanıcı Arabirimi denetimlerini bağlayabilirsiniz [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) geçersiz kılmak için gereksinimini ortadan kaldırır değerlerini görüntülemek için örnekler `OnBindingContextChanged` yöntemi.
+Alternatif olarak, kullanıcı Arabirimi denetimleri adlarınıza bağlayabileceğiniz [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) geçersiz kılmak için ihtiyacını ortadan kaldırır, değerleri görüntülemek için örnekleri `OnBindingContextChanged` yöntemi.
 
 > [!NOTE]
-> Geçersiz kılarken `OnBindingContextChanged`, temel sınıfın emin `OnBindingContextChanged` kayıtlı temsilciler alması için bunları yöntemi çağrıldığında `BindingContextChanged` olay.
+> Geçersiz kılarken `OnBindingContextChanged`, temel sınıfın emin `OnBindingContextChanged` kayıtlı temsilcilerin alması için bunları yöntemi çağrıldığında `BindingContextChanged` olay.
 
-XAML içinde veri bağlama özel hücre türü aşağıdaki kod örneğinde gösterildiği gibi elde edilebilir:
+XAML içinde özel hücresi türü için veri bağlama aşağıdaki kod örneğinde gösterildiği gibi gerçekleştirilebilir:
 
 ```xaml
 <ListView x:Name="listView">
@@ -240,9 +240,9 @@ XAML içinde veri bağlama özel hücre türü aşağıdaki kod örneğinde gös
 </ListView>
 ```
 
-Bu bağlar `Name`, `Age`, ve `Location` bağlanabilirse özelliklerinde `CustomCell` örneği, çok `Name`, `Age`, ve `Location` temel koleksiyondaki her nesnenin özelliklerini.
+Bu bağlar `Name`, `Age`, ve `Location` bağlanabilir özelliklerinde `CustomCell` için örnek `Name`, `Age`, ve `Location` temel alınan bir koleksiyondaki her bir nesnenin özellikleri.
 
-C# eşdeğer bağlama aşağıdaki kod örneğinde gösterilir:
+C# ' de eşdeğer bağlama aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 var customCell = new DataTemplate (typeof(CustomCell));
@@ -256,10 +256,10 @@ var listView = new ListView {
 };
 ```
 
-İOS ve Android, varsa [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) öğeleri geri dönüştürme ve özel oluşturucu özel hücre kullanır, özel Oluşturucu doğru özellik değişikliği bildirimi uygulamalıdır. Hücreleri yeniden yapıldığında bağlama bağlamı, kullanılabilir bir hücre ile güncelleştirildiğinde özellik değerlerine değişir `PropertyChanged` gerçekleştirilen olaylarının. Daha fazla bilgi için bkz: [bir ViewCell özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Hücre geri dönüştürme hakkında daha fazla bilgi için bkz: [önbelleğe alma stratejisi](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
+İOS ve Android üzerinde olursa [ `ListView` ](xref:Xamarin.Forms.ListView) öğeleri geri dönüştürme ve özel oluşturucu özel hücre kullanır, özel Oluşturucu, özellik değişikliği bildirimi doğru uygulamalıdır. Hücreleri yeniden yapılırken özellik değerlerine bağlama bağlamı, kullanılabilir bir hücre ile güncelleştirildiğinde değişir `PropertyChanged` gerçekleştirilen olaylarının. Daha fazla bilgi için [bir Viewcell'i özelleştirme](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Hücre geri dönüştürme hakkında daha fazla bilgi için bkz. [önbelleğe alma stratejisi](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Hücreleri (örnek) oluşturulmuş](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
+- [Yerleşik hücreleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
 - [Özel hücreleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
-- [Bağlama bağlam değiştirildi (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BindingContextChanged)
+- [Bağlama bağlamı değiştirildi (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BindingContextChanged)

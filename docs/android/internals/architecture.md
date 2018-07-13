@@ -6,125 +6,125 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 9ce1d790f5dea00ac47d5639ae8424793006445a
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: e6a30247c13deab871bf230aba53b9963981fd02
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/27/2018
-ms.locfileid: "32019301"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997406"
 ---
 # <a name="architecture"></a>Mimari
 
 Xamarin.Android uygulamaları Mono yürütme ortamı içinde çalışır.
-Bu yürütme ortamı çalıştırır yan yana Android çalışma zamanı (resim) sanal makine ile. Her iki çalışma zamanı ortamları üstünde Linux çekirdek çalıştırın ve temel sistem erişmek geliştiricilerin sağlar kullanıcı kodu için çeşitli API'leri. Mono çalışma zamanı C dilinde yazılır.
+Bu yürütme ortamı çalıştırır-yan Android çalışma zamanı (resim) sanal makine ile. Her iki çalışma zamanı ortamlarını Linux çekirdeğinin üzerinde çalıştırın ve sayesinde geliştiriciler, temel alınan sisteme erişmek için kullanıcı kodu için çeşitli API'ler üzerinden kullanıma sunacaksınız. Mono çalışma zamanı, C dilinde yazılır.
 
-, Kullandığınız [sistem](http://msdn.microsoft.com/en-us/library/system.aspx), [System.IO](http://msdn.microsoft.com/en-us/library/system.io.aspx), [System.Net](http://msdn.microsoft.com/en-us/library/system.net.aspx) ve .NET kalan sınıf kitaplıkları temel Linux işletim sistemi özellikleri erişmek için.
+, Kullandığınız [sistem](xref:System), [System.IO](xref:System.IO), [System.Net](xref:System.Net) ve rest, .NET sınıf kitaplıkları, temel alınan Linux işletim sistemi özellikleri erişmek için.
 
-Android, ses, grafik, OpenGL ve telefon gibi sistem tesis çoğunu doğrudan yerel uygulamalar için kullanılabilir değildir, bunlar yalnızca birinde bulunan Android çalışma zamanı Java API'leri aracılığıyla sunulan [Java](https://developer.xamarin.com/api/namespace/Java.Lang/). * ad alanları veya [Android](https://developer.xamarin.com/api/namespace/Android/). * ad alanları. Mimari kabaca gibi şudur:
+Android, ses, grafik, OpenGL ve telefon gibi sistem özelliklerini çoğunu doğrudan yerel uygulamalar için kullanılabilir değil, bunlar yalnızca birinde bulunan Android çalışma zamanı Java API'leri aracılığıyla sunulan [Java](https://developer.xamarin.com/api/namespace/Java.Lang/). * ad alanları veya [Android](https://developer.xamarin.com/api/namespace/Android/). * ad alanları. Mimari kabaca şu şekilde verilmiştir:
 
-[![Mono ve diyagramı resim çekirdek üstüne ve altına .NET/Java + bağlamaları](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
+[![Çekirdek üzerinde ve .NET/Java + bağlamaları altında diyagram Mono ve resimler](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
-Xamarin.Android geliştiriciler işletim sisteminde (düşük düzey erişimi için) .NET API'lerini bildikleri çağırma veya bir köprü tarafından sunulan Java API'ları sağlayan Android ad alanları açığa sınıflarını kullanarak çeşitli özelliklere erişim Android çalışma zamanı.
+Xamarin.Android geliştiricilerine işletim sisteminde .NET API alışık oldukları çağırma (düşük düzey erişimi için) veya bir köprü tarafından kullanıma sunulan Java API'leri sağlayan Android alanlarında ortaya konan sınıflar kullanarak çeşitli özelliklerine erişim Android çalışma zamanı.
 
-Android sınıfları Android çalışma zamanı sınıflarının nasıl iletişim kuracağını hakkında daha fazla bilgi için bkz: [API tasarım](~/android/internals/api-design.md) belge.
+Android sınıf Android çalışma zamanı sınıflar ile nasıl iletişim kuracağını hakkında daha fazla bilgi için bkz. [API tasarımı](~/android/internals/api-design.md) belge.
 
 
 ## <a name="application-packages"></a>Uygulama paketleri
 
-Android uygulama paketleri ile ZIP kapsayıcıları olan bir *.apk* dosya uzantısı. Xamarin.Android uygulama paketleri, aşağıdaki eklemelerle normal Android paketler aynı yapısı ve düzeni vardır:
+Android uygulaması paketlerin ZIP kapsayıcılarla bir *.apk* dosya uzantısı. Xamarin.Android uygulama paketleri, aynı yapıya ve düzeni aşağıdaki eklemelerle normal Android paketler vardır:
 
--   (IL içeren) uygulama derlemeler *depolanan* içinde sıkıştırılmamış *derlemeleri* klasör. Sürümde başlatma işlemi sırasında derlemeler *.apk* olan *mmap()* işlemi ve derlemeler ed bellekten yüklü. Derlemeleri önce yürütme ayıklanacak zorunda değilsiniz gibi bu daha hızlı bir uygulama başlatma izin verir. - *Not:* derleme konumu bilgileri gibi [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/) ve [Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
-    *bağlı dayanıyordu olamaz* sürümdeki oluşturur. Farklı dosya sistemi girişleri olarak yok ve sahip oldukları kullanılabilir konum yok.
-
-
--   Mono çalışma zamanı içeren yerel kitaplıkları içinde mevcut *.apk* . Bir Xamarin.Android uygulaması yerel kitaplıkları istenen/hedeflenen Android mimari, örneğin içermelidir *pushservice* , *pushservice-v7a* , *x86* . Xamarin.Android uygulamaları uygun çalışma zamanı kitaplıkları içermediği sürece bir platformda çalıştırılamıyor.
+-   (IL içeren) uygulama derlemeleri *depolanan* içinde sıkıştırılmamış *derlemeleri* klasör. Sürümündeki başlatma işlemi sırasında oluşturur *.apk* olan *mmap()* ed işlemi ve derlemeleri bellekten yüklendi. Derlemeleri önce yürütme ayıklanmasını gerekmez gibi bu daha hızlı uygulama başlatma izin verir. - *Not:* derleme konumu bilgileri gibi [Assembly.Location](xref:System.Reflection.Assembly.Location) ve [Assembly.CodeBase](xref:System.Reflection.Assembly.CodeBase)
+    *bağlı yararlandı olamaz* sürümde oluşturur. Farklı dosya sistemi girişleri olarak bulunmaz ve sahip oldukları kullanılabilir konum yok.
 
 
-Xamarin.Android uygulamaları da içeren *Android aranabilir sarmalayıcılar* yönetilen koda çağrı Android izin vermek için.
+-   Mono çalışma zamanı içeren yerel kitaplıkları içinde mevcut *.apk* . Bir Xamarin.Android uygulaması yerel kitaplıkları istenen/hedeflenen Android mimariler için örneğin içermelidir *armeabi* , *armeabi v7a* , *x86* . Xamarin.Android uygulamaları, uygun çalışma zamanı kitaplıkları içerdiği sürece bir platformda çalışmaz.
+
+
+Xamarin.Android uygulamaları da içeren *Android çağrılabilir sarmalayıcıları* Android yönetilen koda çağrı yapmak izin vermek için.
 
 
 
-## <a name="android-callable-wrappers"></a>Android aranabilir sarmalayıcılar
+## <a name="android-callable-wrappers"></a>Android çağrılabilir sarmalayıcıları
 
-- **Android aranabilir sarmalayıcılar** olan bir [JNI](http://en.wikipedia.org/wiki/Java_Native_Interface) Android çalışma zamanı gereken yönetilen kod çağırmak için her zaman kullanılan köprüsü. Android aranabilir sarmalayıcılar olan nasıl sanal yöntemleri geçersiz kılınabilir ve Java arabirimleri uygulanabilir. Bkz: [Java tümleştirmesine genel bakış](~/android/platform/java-integration/index.md) daha fazla bilgi için belge.
+- **Android çağrılabilir sarmalayıcıları** olan bir [JNI](http://en.wikipedia.org/wiki/Java_Native_Interface) dilediğiniz zaman Android çalışma zamanı gereken yönetilen kodu çağırmak için kullanılan köprüsü. Android çağrılabilir sarmalayıcıları olan nasıl sanal yöntemleri geçersiz kılınabilir ve Java arabirimleri uygulanabilir. Bkz: [Java tümleştirmesine genel bakış](~/android/platform/java-integration/index.md) doc daha fazla bilgi için.
 
 
 <a name="Managed_Callable_Wrappers" />
 
 ## <a name="managed-callable-wrappers"></a>Yönetilen aranabilir sarmalayıcılar
 
-Yönetilen aranabilir sarmalayıcılar yönetilen kod Android kodu çağırma ve sanal yöntemleri geçersiz kılma ve Java arabirimler uygulama için destek sağlamak için gereken her zaman kullanılan JNI Köprü ' dir. Tüm [Android](https://developer.xamarin.com/api/namespace/Android/). * ve ilgili ad alanlarını aracılığıyla oluşturulan yönetilen aranabilir sarmalayıcılar [.jar bağlama](~/android/platform/binding-java-library/index.md).
-Yönetilen aranabilir sarmalayıcılar yönetilen ve Android türleri arasında dönüştürme ve JNI aracılığıyla temel Android platformu yöntemlerini çağırmaktan sorumlu.
+Yönetilen aranabilir sarmalayıcılarını yönetilen kod Android kodu çağırabilir ve sanal yöntemleri geçersiz kılan ve Java arabirimleri uygulama için destek sağlamak için gereken her zaman kullanılan JNI Köprüsü ' dir. Tüm [Android](https://developer.xamarin.com/api/namespace/Android/). * ve ilgili ad alanları aracılığıyla oluşturulan yönetilen aranabilir sarmalayıcılarını [.jar bağlama](~/android/platform/binding-java-library/index.md).
+Yönetilen aranabilir sarmalayıcılar, yönetilen ve Android türleri arasında dönüştürme ve JNI ile temel alınan Android platformu yöntemlerini çağırmaktan sorumludur.
 
-Her yönetilen aranabilir sarmalayıcısı ayrı tutma aracılığıyla erişilebilen bir Java genel başvurusu oluşturulmuş [Android.Runtime.IJavaObject.Handle](https://developer.xamarin.com/api/property/Android.Runtime.IJavaObject.Handle/) özelliği. Genel başvuru Java örnekleri ve yönetilen örnekleri arasında eşleme sağlamak için kullanılır. Genel başvuru olan sınırlı bir kaynağa: Öykünücüler izin yalnızca 2000 Genel başvurular üzerinde 52,000 genel başvurular bir sırada mevcut çoğu donanım sağlar, ancak aynı anda mevcut.
+Her yönetilen çağrılabilir sarmalayıcı ayrı tutma aracılığıyla erişilebilir bir Java genel başvurusu oluşturulmuş [Android.Runtime.IJavaObject.Handle](https://developer.xamarin.com/api/property/Android.Runtime.IJavaObject.Handle/) özelliği. Genel başvuru Java örnekleri ve yönetilen örnekleri arasındaki eşlemeyi sağlamak için kullanılır. Genel başvurulardır sınırlı kaynak: öykünücüleri izin yalnızca 2000 Genel başvurular üzerinde 52,000 genel başvurular bir sırada mevcut çoğu donanım sağlar, ancak bir zamanda mevcut.
 
-Genel başvuru oluşturduğunuzda ve yok izlemek için ayarlayabileceğiniz [debug.mono.log](~/android/troubleshooting/index.md) sistem özelliğini içerecek şekilde [gref](~/android/troubleshooting/index.md).
+Genel başvuru oluşturulur ve imha ne zaman açtıklarını izlemek için ayarlayabileceğiniz [debug.mono.log](~/android/troubleshooting/index.md) sistem özelliğini içerecek şekilde [gref](~/android/troubleshooting/index.md).
 
-Genel başvuru açıkça serbest çağırarak [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) yönetilen aranabilir sarmalayıcısı üzerinde. Bu Java örneği ve yönetilen örneği arasındaki eşlemeyi kaldırmak ve Java örneği toplanmasına izin verin. Java örneği yönetilen koddan yeniden erişiliyorsa, yeni bir yönetilen aranabilir sarmalayıcısı için oluşturulur.
+Genel başvuru açıkça serbest çağırarak [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) üzerinde yönetilen çağrılabilir sarmalayıcı. Yönetilen örnek ile Java örnek arasındaki eşlemeyi kaldırmak ve toplanacak Java örnek izin. Java örnek yönetilen koddan yeniden erişilirse, yeni bir yönetilen çağrılabilir sarmalayıcı için oluşturulur.
 
-Örnek yanlışlıkla örneği atma olarak iş parçacıkları arasında paylaşılabilir varsa aranabilir sarmalayıcılar yönetilen atma başka bir iş parçacığı başvurularından etkiler dikkatli olunması gerekir. En fazla koruması, yalnızca `Dispose()` aracılığıyla ayrılmış örneklerin `new` *veya* yöntemlerden, *bilmeniz* yeni örnekleri ve olabilen olmayan önbelleğe alınmış örnekleri her zaman ayırın iş parçacıkları arasında paylaşımı yanlışlıkla örneği neden.
+Örnek yanlışlıkla örneği disposing olarak iş parçacıkları arasında paylaşılabilir varsa aranabilir sarmalayıcılar, yönetilen disposing başvurularından diğer iş parçacıklarını etkiler dikkatli olunması gerekir. En yüksek güvenliği, yalnızca `Dispose()` aracılığıyla ayrılmış örneklerin `new` *veya* yöntemlerinden, *bilmeniz* yeni örnekleri ve olabilen önbelleğe alınmış örnekleri her zaman ayırın iş parçacıkları arasında paylaşımı yanlışlıkla örneği neden.
 
 
 
-## <a name="managed-callable-wrapper-subclasses"></a>Aranabilir sarmalayıcısı alt sınıfların yönetilen
+## <a name="managed-callable-wrapper-subclasses"></a>Yönetilen çağrılabilir sarmalayıcı alt sınıfları
 
-Burada "ilginç" uygulamaya özgü mantığı Canlı yönetilen aranabilir sarmalayıcısı alt sınıflarıdır. Özel bunlar [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) alt sınıflar (gibi [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) varsayılan proje şablonu yazın). (Tüm bunlar özellikle *Java.Lang.Object* yapmak alt sınıfların *değil* içeren bir [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/) özel öznitelik veya [ RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/) olan *yanlış*, varsayılan değerdir.)
+Yönetilen çağrılabilir sarmalayıcı alt tüm "ilginç" uygulamaya özgü mantık burada yaşayın sınıflarıdır. Bunlar özel [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) alt sınıfları (gibi [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) varsayılan proje şablonu türü). (Tüm bunlar özellikle *Java.Lang.Object* bunu kılabileceği *değil* içeren bir [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/) özel öznitelik veya [ RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/) olduğu *false*, varsayılan değerdir.)
 
-Yönetilen aranabilir sarmalayıcılar gibi yönetilen aranabilir sarmalayıcısı alt sınıfların Ayrıca, üzerinden erişilebilir genel bir başvuru içeren [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) özelliği. Yalnızca yönetilen aranabilir sarmalayıcılar ile genel başvuruları açıkça çağırarak serbest bırakılabilirler gibi [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
-Yönetilen aranabilir sarmalayıcılar aksine *çok dikkatli* olarak bu tür örnekleri atma önce alınıp alınmayacağını *Dispose()* örneğinin lık Java örneği arasında eşleme bozar (örneği bir Android aranabilir sarmalayıcısı) ve yönetilen örneği.
+Yönetilen aranabilir sarmalayıcılarını gibi yönetilen çağrılabilir sarmalayıcı alt sınıfları Ayrıca, erişilebilir genel bir başvuru içeren [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) özelliği. Yalnızca yönetilen aranabilir sarmalayıcılarını ile genel başvuruları açıkça çağrılarak serbest bırakılabileceğini gibi [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
+Yönetilen aranabilir sarmalayıcılarını aksine *çok dikkatli* olarak böyle örneklerini disposing önce alınması gereken *Dispose()* ing örneğinin Java örneği arasındaki eşlemeyi bozar (örneği bir Android çağrılabilir sarmalayıcısı) ve yönetilen örnek.
 
 
 ### <a name="java-activation"></a>Java etkinleştirme
 
-Zaman bir [Android aranabilir sarmalayıcısı](~/android/platform/java-integration/android-callable-wrappers.md) (ACW) Java'dan oluşturulur, ACW Oluşturucusu çağrılacak karşılık gelen C# Oluşturucusu neden olur. Örneğin, ACW için *MainActivity* çağıracağı bir varsayılan oluşturucu içerecek *MainActivity*ait varsayılan oluşturucu. (Bu yoluyla yapılır *TypeManager.Activate()* çağrısı içinde ACW oluşturucular.)
+Olduğunda bir [Android çağrılabilir sarmalayıcı](~/android/platform/java-integration/android-callable-wrappers.md) (ACW) Java'dan oluşturulur, ACW Oluşturucusu çağrılacak karşılık gelen C# Oluşturucu neden olur. Örneğin, ACW için *MainActivity* hizmetinizde bir varsayılan oluşturucu içerecek *MainActivity*ait varsayılan oluşturucu. (Bu yoluyla yapılır *TypeManager.Activate()* ACW oluşturucular içinde arayın.)
 
-Bir diğer Oluşturucusu imzasını sonuç yok: *(IntPtr, JniHandleOwnership)* Oluşturucusu. *(IntPtr, JniHandleOwnership)* Oluşturucusu çağrılır ne zaman bir Java nesnesi yönetilen koda sunulur ve yönetilen aranabilir sarmalayıcısı JNI tutamacı yönetmek için oluşturulması gerekiyor. Bu genellikle otomatik olarak gerçekleştirilir.
+Sonucu başka bir yapıcı imzası yok: *(IntPtr, JniHandleOwnership)* Oluşturucusu. *(IntPtr, JniHandleOwnership)* Java nesne yönetilen kod için kullanıma sunulmuştur ve yönetilen çağrılabilir sarmalayıcı JNI tanıtıcı yönetmek için oluşturulması gereken her Oluşturucu çağrılır. Bu genellikle otomatik olarak gerçekleştirilir.
 
-İki senaryo vardır *(IntPtr, JniHandleOwnership)* Oluşturucusu bir yönetilen aranabilir sarmalayıcısı alt kümesi üzerinde el ile da sağlanmalıdır:
+Burada iki senaryo vardır *(IntPtr, JniHandleOwnership)* oluşturucu üzerinde yönetilen çağrılabilir sarmalayıcı alt el ile da sağlanmalıdır:
 
 1. [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) alt. *Uygulama* olan özel; varsayılan *uygulama* Oluşturucusu olacak *hiçbir zaman* çağrılabilir ve [(IntPtr, JniHandleOwnership) Oluşturucusu yerine sağlanmalıdır ](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/SanityTests/Hello.cs#L105).
 
-2. Bir temel sınıf oluşturucu çağrısından sanal yöntemi.
+2. Sanal bir yöntem çağrısından bir temel sınıf oluşturucusu.
 
 
-Unutmayın (2) sızıntılı bir soyutlamadır. Olduğu gibi C#, Java sanal yöntemlere yapılan çağrılar bir oluşturucusundan her zaman en çok türetilen yöntem uygulaması çağırır. Örneğin, [kutusu TextView (bağlamı, AttributeSet, int) Oluşturucusu](https://developer.xamarin.com/api/constructor/Android.Widget.TextView.TextView/p/Android.Content.Context/Android.Util.IAttributeSet/System.Int32/) sanal yöntemi çağırır [TextView.getDefaultMovementMethod()](http://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod()), olarak bağlı [ TextView.DefaultMovementMethod özelliği](https://developer.xamarin.com/api/property/Android.Widget.TextView.DefaultMovementMethod/).
-Bu nedenle, bir tür değilse [LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1) olan [alt kutusu TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26), (2) [TextView.DefaultMovementMethod geçersiz kılma](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45)ve (3) [bir örneğine etkinleştir XML aracılığıyla sınıfı](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29) geçersiz kılınan *DefaultMovementMethod* ACW Oluşturucusu yürütme şansınız ve C# Oluşturucusu yürütme şansınız önce oluşacak önce özelliği'nin çağrılacak.
+Unutmayın (2) sızıntılı bir soyutlamadır. Olduğu gibi C#, Java sanal yöntemlere yapılan çağrılar bir oluşturucudan her zaman en türetilen uygulamaya yöntemi çağırın. Örneğin, [TextView (bağlam, AttributeSet, int) Oluşturucusu](https://developer.xamarin.com/api/constructor/Android.Widget.TextView.TextView/p/Android.Content.Context/Android.Util.IAttributeSet/System.Int32/) sanal yöntemi çağırır [TextView.getDefaultMovementMethod()](http://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod()), olarak bağlı [ TextView.DefaultMovementMethod özelliği](https://developer.xamarin.com/api/property/Android.Widget.TextView.DefaultMovementMethod/).
+Bu nedenle, bir tür ederse [LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs) (1) olan [alt TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26), (2) [TextView.DefaultMovementMethod geçersiz kılma](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45)ve (3) [bir örneğine etkinleştir sınıfı, XML aracılığıyla](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29) geçersiz kılınan *DefaultMovementMethod* ACW Oluşturucusu yürütülecek bir şansınız ve C# Oluşturucusu önce yürütülecek bir fırsat ortaya çıkabilecek önce özelliği'nin çağrılacak.
 
-Bu örneği LogTextBox örneği tarafından desteklenen aracılığıyla [LogTextView (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28) ACW LogTextBox örneği ilk girdiğinde Oluşturucusu yönetilen kod ve ardından çağırma [ LogTextBox (bağlamı, IAttributeSet, int)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41) Oluşturucusu *aynı örneğinde* zaman ACW Oluşturucusu yürütür.
+Bu örneği LogTextBox örneği tarafından desteklenen aracılığıyla [LogTextView (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28) ACW LogTextBox örneği ilk girdiğinde Oluşturucu yönetilen kod ve daha sonra çağırma [ (Bağlam, IAttributeSet, int) LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41) Oluşturucusu *aynı örneğinde* ACW Oluşturucu ne zaman yürütür.
 
 Olayların sırası:
 
-1.  Düzen XML içine yüklenir bir [ContentView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41).
+1.  Düzen XML olarak yüklendiği bir [ContentView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41).
 
-2.  Android düzeni Nesne grafiği oluşturur ve bir örneğini başlatır *monodroid.apidemo.LogTextBox* , ACW için *LogTextBox* .
+2.  Android düzeni Nesne grafiği oluşturur ve bir örneğini başlatır *monodroid.apidemo.LogTextBox* , için ACW *LogTextBox* .
 
 3.  *Monodroid.apidemo.LogTextBox* Oluşturucusu yürütülmeden [android.widget.TextView](http://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29) Oluşturucusu.
 
-4.  *Kutusu TextView* Oluşturucusu çağırır *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* .
+4.  *TextView* oluşturucu çağırır *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* .
 
-5.  *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* çağırır *LogTextBox.n_getDefaultMovementMethod()* , hangi çağırır *TextView.n_GetDefaultMovementMethod()* , hangi çağırır [Java.Lang.Object.GetObject&lt;kutusu TextView&gt; (işlemek, JniHandleOwnership.DoNotTransfer)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) .
+5.  *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* çağırır *LogTextBox.n_getDefaultMovementMethod()* , hangi çağırır *TextView.n_GetDefaultMovementMethod()* , hangi çağırır [Java.Lang.Object.GetObject&lt;TextView&gt; (işlemek, JniHandleOwnership.DoNotTransfer)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) .
 
-6.  *Java.Lang.Object.GetObject&lt;kutusu TextView&gt;()* zaten karşılık gelen C# olup olmadığını denetler örneği için *işlemek* . Varsa, döndürülür. Bu senaryoda, hiç, bunu *Object.GetObject&lt;T&gt;()* oluşturmanız gerekir.
+6.  *Java.Lang.Object.GetObject&lt;TextView&gt;()* zaten karşılık gelen C# olup olmadığını kontrol eder örneği için *işlemek* . Varsa, döndürülür. Bu senaryoda, mevcut değildir, bu nedenle *Object.GetObject&lt;T&gt;()* oluşturmanız gerekir.
 
-7.  *Object.GetObject&lt;T&gt;()* arar *LogTextBox (IntPtr, JniHandleOwneship)* oluşturucusu, çağırılır, arasında bir eşleme oluşturur *işlemek* ve oluşturulan örneği ve oluşturulan örneğini döndürür.
+7.  *Object.GetObject&lt;T&gt;()* arar *LogTextBox (IntPtr, JniHandleOwneship)* oluşturucusu, onu çağırır, arasındaki eşlemeyi oluşturur *işlemek* ve oluşturulan örneği ve oluşturulan örneği döndürür.
 
 8.  *TextView.n_GetDefaultMovementMethod()* çağırır *LogTextBox.DefaultMovementMethod* özellik Alıcısı.
 
-9.  Denetim döner *android.widget.TextView* yürütme sona erdikten Oluşturucusu.
+9.  Denetim döner *android.widget.TextView* yürütme sona erdikten Oluşturucu.
 
 10. *Monodroid.apidemo.LogTextBox* Oluşturucusu yürütülmeden, çağırma *TypeManager.Activate()* .
 
-11. *LogTextBox (bağlamı, IAttributeSet, int)* Oluşturucusu yürütülmeden *(7)'de oluşturulan aynı örnek üzerinde* .
+11. *LogTextBox (bağlam, IAttributeSet, int)* Oluşturucusu yürütülmeden *(7)'de oluşturulan aynı örneğinde* .
 
-12. Varsa (IntPtr, JniHandleOwnership) oluşturucusu bulunamadı, ardından bir System.MissingMethodException] (https://developer.xamarin.com/api/type/System.MissingMethodException/) oluşturulur.
+12. Varsa (IntPtr, JniHandleOwnership) Oluşturucu bulunamıyor ardından bir System.MissingMethodException](xref:System.MissingMethodException) oluşturulur.
 
 <a name="Premature_Dispose_Calls" />
 
 ### <a name="premature-dispose-calls"></a>Erken Dispose() çağrıları
 
-JNI tanıtıcısı ve karşılık gelen C# örnek arasında bir eşleme yoktur. Bu eşleme Java.Lang.Object.Dispose() keser. Eşleme bozulmuş sonra JNI tanıtıcı yönetilen kod girerse, Java etkinleştirme gibi görünüyor ve *(IntPtr, JniHandleOwnership)* Oluşturucu denetlediği ve çağrılır. Oluşturucu yoksa, bir özel durum atılır.
+JNI tanıtıcısı ve karşılık gelen C# örneği arasında bir eşleme yoktur. Bu eşleme Java.Lang.Object.Dispose() keser. JNI işleyici eşlemesi bozulmuş sonra yönetilen kod girerse, Java etkinleştirme gibi görünüyor ve *(IntPtr, JniHandleOwnership)* oluşturucusu için işaretli ve çağrılır. Bir oluşturucu yoksa, bir özel durum oluşturulur.
 
-Örneğin, aşağıdaki yönetilen aranabilir Wraper alt verilen:
+Örneğin, aşağıdaki yönetilen çağrılabilir Wraper alt verilen:
 
 ```csharp
 class ManagedValue : Java.Lang.Object {
@@ -143,7 +143,7 @@ class ManagedValue : Java.Lang.Object {
 }
 ```
 
-Örnek, bunu Dispose() oluşturmak ve yönetilen aranabilir yeniden oluşturulması sarmalayıcı neden varsa:
+Dispose() bunu bir örnek oluşturun ve yönetilen çağrılabilir yeniden oluşturulması sarmalayıcı neden olursa:
 
 ```csharp
 var list = new JavaList<IJavaObject>();
@@ -165,20 +165,20 @@ E/mono    ( 2906):   at Java.Lang.Object.GetObject (IntPtr handle, JniHandleOwne
 E/mono    ( 2906):   at Java.Lang.Object._GetObject[IJavaObject] (IntPtr handle, JniHandleOwnership transfer) [0x00000
 ```
 
-Bir alt içeriyorsa, bir *(IntPtr, JniHandleOwnership)* oluşturucusu, sonra bir *yeni* türünün örneği oluşturulur. Sonuç olarak, yeni bir örnek olarak "tüm örnek veri kaybı için" örnek görünür. (Değer null olduğunu unutmayın.)
+Alt içermiyorsa, bir *(IntPtr, JniHandleOwnership)* oluşturucusu, ardından bir *yeni* türünün örneği oluşturulur. Sonuç olarak, yeni bir örneği olduğu gibi "tüm örnek veri kaybetme için" örneği görünür. (Değer null olduğunu unutmayın.)
 
 ```shell
 I/mono-stdout( 2993): [Managed: Value=]
 ```
 
-Yalnızca *Dispose()* , aranabilir sarmalayıcısı alt sınıfların Java nesne artık kullanılmayacak veya bir alt hiçbir örnek verilerini içeren bildiğinizde ve yönetilen *(IntPtr, JniHandleOwnership)* Oluşturucu sağlanmadı.
+Yalnızca *Dispose()* , aranabilir sarmalayıcısı kılabileceği Java nesne artık kullanılmayacak veya alt hiçbir örnek verilerinin bulunduğu bildiğinizde ve yönetilen *(IntPtr, JniHandleOwnership)* Oluşturucu sağlamıştır.
 
 
 
 ## <a name="application-startup"></a>Uygulama başlatma
 
-Bir etkinliği, hizmet, vb., Android ilk denetleyecek zaten etkinlik/service/vb. barındırmak için çalışan bir işlem olup olmadığını için başlatılır. Yeni bir işlem oluşturulacak, böyle bir işlem, varsa [AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/manifest-intro.html) okuma ve belirtilen türü [ /manifest/application/@android:name ](http://developer.android.com/guide/topics/manifest/application-element.html#nm) özniteliği yüklenen ve örneği. Sonraki, tarafından belirtilen tüm türleri [ /manifest/application/provider/@android:name ](http://developer.android.com/guide/topics/manifest/provider-element.html#nm) öznitelik değerleri oluşturulur ve sahip kendi [ContentProvider.attachInfo%28)](https://developer.xamarin.com/api/member/Android.Content.ContentProvider.AttachInfo/p/Android.Content.Context/Android.Content.PM.ProviderInfo/) yöntemi çağrılır. Bu içine Xamarin.Android kancaları ekleyerek bir *mono. MonoRuntimeProvider* *ContentProvider* oluşturma işlemi sırasında AndroidManifest.xml için. *Mono. MonoRuntimeProvider.attachInfo()* yöntemdir işlemine Mono çalışma zamanının yüklenmesini sorumlu.
-Mono önce bu noktası kullanma girişimleri başarısız olur. ( *Not*: nedeni budur hangi alt türleri [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) vermesi gereken bir [(IntPtr, JniHandleOwnership) Oluşturucusu](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103), Uygulama örneğinin olarak Mono başlatılabilir önce oluşturulan.)
+Bir etkinlik, hizmet, vb. Android ilk denetleyecek zaten etkinlik/service/vb. barındırmak için çalışan bir işlem olup olmadığını görmek için başlatılır. Yeni bir işlem oluşturulur ardından, böyle bir işlem varsa, [AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/manifest-intro.html) okuma ve belirtilen türü [ /manifest/application/@android:name ](http://developer.android.com/guide/topics/manifest/application-element.html#nm) özniteliği yüklendi ve örneği. Ardından, tüm türleri tarafından belirtilen [ /manifest/application/provider/@android:name ](http://developer.android.com/guide/topics/manifest/provider-element.html#nm) öznitelik değerleri örneği oluşturulur ve sahip kullanıcıların [ContentProvider.attachInfo%28)](https://developer.xamarin.com/api/member/Android.Content.ContentProvider.AttachInfo/p/Android.Content.Context/Android.Content.PM.ProviderInfo/) yöntemi çağrılır. Xamarin.Android kancaları'ekleyerek bu içine bir *mono. MonoRuntimeProvider* *ContentProvider* AndroidManifest.xml derleme işlemi sırasında için. *Mono. MonoRuntimeProvider.attachInfo()* yöntemi, Mono çalışma zamanını işleme yükleme için sorumludur.
+Mono önceki bu noktaya kullanma girişimleri başarısız olur. ( *Not*: nedeni budur hangi alt türleri [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) sağlamanız gereken bir [(IntPtr, JniHandleOwnership) Oluşturucusu](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103), uygulama örneği olarak Mono başlatılabilir önce oluşturuldu.)
 
-İşlem başlatma tamamlandıktan sonra `AndroidManifest.xml` etkinlik hizmeti başlatmak için vb. sınıf adını bulmak için alınmadığında. Örneğin, [ /manifest/application/activity/@android:name özniteliği](http://developer.android.com/guide/topics/manifest/activity-element.html#nm) yüklemek için bir etkinliğin adını belirlemek için kullanılır. Bu tür etkinlikler için devralmalıdır [android.app.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/).
-Belirtilen tür aracılığıyla yüklenen [Class.forName()](http://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String)) (türü bir Java olmasını gerektirir türü, bu nedenle Android aranabilir sarmalayıcılar), ardından örneği. Bir Android aranabilir sarmalayıcısı örneğinin oluşturulmasını karşılık gelen C# türünün bir örneği oluşturulmasını tetikler. Android sonra çağırılır [Activity.onCreate(Bundle)](http://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) , karşılık gelen neden olacak [Activity.OnCreate(Bundle)](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) çağrılacak, ve diğerleriyle kapalı demektir.
+Başlatma işlemi tamamlandıktan sonra `AndroidManifest.xml` etkinlik/service/başlatmak için vb. sınıf adını bulmak için alınmadığında. Örneğin, [ /manifest/application/activity/@android:name özniteliği](http://developer.android.com/guide/topics/manifest/activity-element.html#nm) yüklemek için bir etkinliğin adını belirlemek için kullanılır. Bu tür etkinlikler için devralmalıdır [android.app.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/).
+Belirtilen tür aracılığıyla yüklenen [Class.forName()](http://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String)) (türün bir Java olmasını gerektirir türü, bu nedenle Android çağrılabilir sarmalayıcıları), ardından örneği. Android çağrılabilir sarmalayıcı örneğinin oluşturulmasını karşılık gelen C# türü bir örneğinin oluşturulmasını tetikler. Android sonra çağırılır [Activity.onCreate(Bundle)](http://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) , karşılık gelen neden olacak [Activity.OnCreate(Bundle)](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) çağrılacak, ve yarışa hazır hale kapalı gelirsiniz.

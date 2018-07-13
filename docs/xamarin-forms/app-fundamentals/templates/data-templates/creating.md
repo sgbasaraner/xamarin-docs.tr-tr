@@ -1,30 +1,30 @@
 ---
-title: Xamarin.Forms DataTemplate oluşturma
-description: Veri şablonları ResourceDictionary veya bir özel tür veya uygun Xamarin.Forms hücre türü satır içi de oluşturulabilir. Bu makalede her teknik araştırır.
+title: Bir Xamarin.Forms DataTemplate'ı oluşturma
+description: Veri şablonları ResourceDictionary veya özel bir tür ya da uygun Xamarin.Forms hücresi türü satır içi olarak oluşturulabilir. Bu makalede her yöntem incelenir.
 ms.prod: xamarin
 ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 8aa0ad693fd1a7f086492f93f18c1e33871dee0e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 63f9bf82bc8e637aced1afa5d5699ac1e8dc3f8c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240518"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994621"
 ---
-# <a name="creating-a-xamarinforms-datatemplate"></a>Xamarin.Forms DataTemplate oluşturma
+# <a name="creating-a-xamarinforms-datatemplate"></a>Bir Xamarin.Forms DataTemplate'ı oluşturma
 
-_Veri şablonları ResourceDictionary veya bir özel tür veya uygun Xamarin.Forms hücre türü satır içi de oluşturulabilir. Bu makalede her teknik araştırır._
+_Veri şablonları ResourceDictionary veya özel bir tür ya da uygun Xamarin.Forms hücresi türü satır içi olarak oluşturulabilir. Bu makalede her yöntem incelenir._
 
-Genel bir kullanım senaryosu bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) nesneleri koleksiyonu verileri görüntüleyen bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Her hücre için verilerin görünümünü [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ayarlanarak yönetilebilir [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) özelliğine bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/). Bunu gerçekleştirmek için kullanılan teknikleri vardır:
+Genel bir kullanım senaryosu bir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) nesnelerin bir koleksiyondaki verileri görüntüleyen bir [ `ListView` ](xref:Xamarin.Forms.ListView). Her hücreye veri görünümünü [ `ListView` ](xref:Xamarin.Forms.ListView) ayarlanarak yönetilebilir [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) özelliğini bir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Bunu gerçekleştirmek için kullanılır teknikler vardır:
 
 - [Satır içi DataTemplate oluşturma](#inline).
-- [Bir türü ile bir DataTemplate oluşturma](#type).
-- [Bir kaynak olarak bir DataTemplate oluşturma](#resource).
+- [DataTemplate ile bir tür oluşturarak](#type).
+- [Bir kaynak olarak bir DataTemplate'ı oluşturma](#resource).
 
-Kullanılan bağımsız olarak, sonuç, her hücre görünümünü tekniktir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) tarafından tanımlanan bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), aşağıdaki ekran görüntülerinde gösterildiği gibi:
+Kullanılan yöntem ne olursa olsun, her bir hücresinde görünümünü sonucudur [ `ListView` ](xref:Xamarin.Forms.ListView) tarafından tanımlanan bir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)aşağıdaki ekran görüntülerinde gösterildiği gibi:
 
 ![](creating-images/data-template-appearance.png "ListView DataTemplate ile")
 
@@ -32,7 +32,7 @@ Kullanılan bağımsız olarak, sonuç, her hücre görünümünü tekniktir [ `
 
 ## <a name="creating-an-inline-datatemplate"></a>Satır içi DataTemplate oluşturma
 
-[ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) Özelliği için bir satır içi ayarlanabilir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/). Başka bir yerde veri şablonu yeniden gerekmiyorsa uygun denetim özelliği doğrudan alt yerleştirilen biridir, bir satır içi şablon kullanılmalıdır. Belirtilen öğe `DataTemplate` her hücre görünümünü aşağıdaki XAML kod örneğinde gösterildiği gibi tanımlayın:
+[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) Özelliği için bir satır içi ayarlanabilir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Veri şablonu başka bir yerde yeniden gerek varsa uygun denetimi özelliği doğrudan alt yerleştirilen biri olan bir satır içi şablonu kullanılmalıdır. Belirtilen öğelerin `DataTemplate` her hücre görünümü aşağıdaki XAML kod örneğinde gösterildiği gibi tanımlayın:
 
 ```xaml
 <ListView Margin="0,20,0,0">
@@ -61,9 +61,9 @@ Kullanılan bağımsız olarak, sonuç, her hücre görünümünü tekniktir [ `
 </ListView>
 ```
 
-Satır içi alt [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) gerekir, olması veya öğesinden türetilen, yazın [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/). Düzen içinde `ViewCell` burada tarafından yönetilen bir [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/). `Grid` Üç içeren [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) örnekler, BIND kendi [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) her uygun özelliklerini özelliklerine `Person` koleksiyon nesnesinde.
+Bir satır içi alt [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) gerekir, olması veya öğesinden türetilen, tip [ `ViewCell` ](xref:Xamarin.Forms.ViewCell). Düzen içinde `ViewCell` burada tarafından yönetilen bir [ `Grid` ](xref:Xamarin.Forms.Grid). `Grid` Üçünü içeren [ `Label` ](xref:Xamarin.Forms.Label) örnekler, BIND kendi [ `Text` ](xref:Xamarin.Forms.Label.Text) her uygun özelliklerini özelliklerine `Person` koleksiyondaki nesne.
 
-Eşdeğer C# kodu aşağıdaki kod örneğinde gösterilir:
+Eşdeğer C# kodu aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public class WithDataTemplatePageCS : ContentPage
@@ -108,13 +108,13 @@ public class WithDataTemplatePageCS : ContentPage
 }
 ```
 
-C#, satır içi [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) belirten bir oluşturucu aşırı kullanılarak oluşturulan bir `Func` bağımsız değişkeni.
+C#, satır içi [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) belirten bir yapıcı yeniden yüklemesi kullanarak oluşturulan bir `Func` bağımsız değişken.
 
 <a name="type" />
 
-## <a name="creating-a-datatemplate-with-a-type"></a>Bir DataTemplate türü ile oluşturma
+## <a name="creating-a-datatemplate-with-a-type"></a>DataTemplate ile bir tür oluşturma
 
-[ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) Özelliği de ayarlanabilir bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) bir hücre türünden oluşturulur. Bu yaklaşımın avantajı, hücre türü tarafından tanımlanan görünüm uygulama boyunca birden çok veri şablonları tarafından kullanılabilme ' dir. Aşağıdaki XAML kodu, bu yaklaşımın bir örnektir:
+[ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) Özelliği de ayarlanabilir bir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) hücre türünden oluşturulur. Bu yaklaşımın avantajı, uygulama boyunca birden çok veri şablonları tarafından hücresi türü tarafından tanımlanan görünüm yeniden kullanılabilen olmasıdır. Bu yaklaşımın bir örneği olarak aşağıdaki XAML kodu gösterir:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,7 +140,7 @@ C#, satır içi [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamari
 </ContentPage>
 ```
 
-Burada, [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) özelliği ayarlanmış bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) hücre görünümünü tanımlayan bir özel tür oluşturulur. Özel tür türünden türetilmelidir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), aşağıdaki kod örneğinde gösterildiği gibi:
+Burada, [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) özelliği bir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) hücre görünümü tanımlayan özel bir türden oluşturulur. Özel tür türünden türetilmesi gerekir [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```xaml
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -159,9 +159,9 @@ Burada, [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamar
 </ViewCell>
 ```
 
-İçinde [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), Düzen yönetilir burada bir [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/). `Grid` Üç içeren [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) örnekler, BIND kendi [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) her uygun özelliklerini özelliklerine `Person` koleksiyon nesnesinde.
+İçinde [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), Düzen yönetilir burada bir [ `Grid` ](xref:Xamarin.Forms.Grid). `Grid` Üçünü içeren [ `Label` ](xref:Xamarin.Forms.Label) örnekler, BIND kendi [ `Text` ](xref:Xamarin.Forms.Label.Text) her uygun özelliklerini özelliklerine `Person` koleksiyondaki nesne.
 
-Eşdeğer C# kod, aşağıdaki örnekte gösterilmiştir:
+Eşdeğer C# kodu, aşağıdaki örnekte gösterilmiştir:
 
 ```csharp
 public class WithDataTemplatePageFromTypeCS : ContentPage
@@ -187,7 +187,7 @@ public class WithDataTemplatePageFromTypeCS : ContentPage
 }
 ```
 
-C# ' ta, [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) bağımsız değişken olarak hücre türünü belirten bir oluşturucu aşırı kullanılarak oluşturulur. Hücre türü türünden türetilmelidir [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), aşağıdaki kod örneğinde gösterildiği gibi:
+C# ' ta, [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) hücresi türü bağımsız değişken olarak belirten bir yapıcı yeniden yüklemesi kullanılarak oluşturulur. Hücresi türü türünden türetilmesi gerekir [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 public class PersonCellCS : ViewCell
@@ -214,13 +214,13 @@ public class PersonCellCS : ViewCell
 ```
 
 > [!NOTE]
-> Xamarin.Forms de basit verileri görüntülemek için kullanılan hücre türleri içerdiğine dikkat [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) hücreleri. Daha fazla bilgi için bkz: [hücre Görünüm](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
+> Xamarin.Forms basit verileri görüntülemek için kullanılan hücresi türlerini içerdiğine dikkat edin [ `ListView` ](xref:Xamarin.Forms.ListView) hücreleri. Daha fazla bilgi için [hücre görünümü](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
 
 <a name="resource" />
 
-## <a name="creating-a-datatemplate-as-a-resource"></a>Bir kaynak olarak bir DataTemplate oluşturma
+## <a name="creating-a-datatemplate-as-a-resource"></a>Bir kaynak olarak bir DataTemplate'ı oluşturma
 
-Veri şablonları da oluşturulabilir yeniden kullanılabilir nesneler olarak bir [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). Her bildirim benzersiz bir vererek elde edilen `x:Key` açıklayıcı bir anahtarla sağlar özniteliği `ResourceDictionary`aşağıdaki XAML kod örneğinde gösterildiği gibi:
+Veri şablonları da oluşturulabilir yeniden kullanılabilir nesneleri olarak bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Bu bildirimi her bir benzersiz sağlayarak gerçekleştirilir `x:Key` açıklayıcı bir anahtarla sağlayan öznitelik `ResourceDictionary`aşağıdaki XAML kod örneğinde gösterildiği gibi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -251,9 +251,9 @@ Veri şablonları da oluşturulabilir yeniden kullanılabilir nesneler olarak bi
 </ContentPage>
 ```
 
-[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) Atandığı [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) kullanarak özellik `StaticResource` biçimlendirme uzantısı. Unutmayın, while `DataTemplate` sayfanın içinde tanımlanan [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), Denetim düzeyinde veya uygulama düzeyinde de tanımlanabilir.
+[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Atandığı [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1) kullanarak özellik `StaticResource` işaretleme uzantısı. Unutmayın, while `DataTemplate` sayfanın içinde tanımlanan [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), denetim düzeyi veya uygulama düzeyinde de tanımlanabilir.
 
-Aşağıdaki kod örneğinde eşdeğer sayfaya C# dilinde gösterir:
+Eşdeğer sayfaya aşağıdaki kod örneği C# dilinde gösterir:
 
 ```csharp
 public class WithDataTemplatePageCS : ContentPage
@@ -281,15 +281,15 @@ public class WithDataTemplatePageCS : ContentPage
 }
 ```
 
-[ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) Eklenen [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) kullanarak [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ResourceDictionary.Add/p/System.String/System.Object/) belirtir yöntemi bir `Key` için kullanılan dize başvuru `DataTemplate` onu alınırken.
+[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) Eklenir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) kullanarak [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) belirten yöntemi bir `Key` için kullanılan dize başvuru `DataTemplate` bunu alınırken.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede veri şablonlarının, satır içi, özel bir tür veya içinde nasıl oluşturulacağı açıklanmıştır bir [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). Başka bir yerde veri şablonu yeniden gerekmiyorsa bir satır içi şablon kullanılmalıdır. Alternatif olarak, veri şablonu özel bir tür olarak ya da denetim düzeyi sayfa düzeyinde veya uygulama düzeyinde kaynak olarak tanımlayarak yeniden kullanılabilir.
+Veri şablonları, satır içi olarak veya özel bir türden oluşturmak nasıl bu makalede açıklanan bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Veri şablonu başka bir yerde yeniden gerek yoksa, bir satır içi şablonu kullanılmalıdır. Alternatif olarak, bir veri şablonu bir denetim düzeyi, sayfa düzeyi veya uygulama düzeyinde kaynak veya özel bir tür olarak tanımlayarak yeniden kullanılabilir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Hücre Görünümü](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
 - [Veri şablonları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
-- [DataTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)
+- [DataTemplate](xref:Xamarin.Forms.DataTemplate)

@@ -1,45 +1,45 @@
 ---
-title: İşlevler içinde Xamarin.Forms kolaylaştırma
-description: Xamarin.Forms nasıl animasyonları hızlandırma veya çalıştırdıkları gibi yavaşlaması denetleyen bir aktarım işlevi belirtmenize olanak tanır bir hareket hızı sınıfı içerir. Bu makalede önceden tanımlanmış hareket hızı işlevlerini kullanma ve nasıl özel hareket hızı işlevler oluşturulacağı gösterilmektedir.
+title: Xamarin.Forms içinde kolaylaştırıcı İşlevler
+description: Xamarin.Forms nasıl animasyonları hızını artırın veya gibi çalıştırdıkları yavaşlamasına denetleyen bir aktarım işlevi belirtmek için sağlayan bir hareket hızı sınıfı içerir. Bu makalede, önceden tanımlanmış kolaylaştırıcı işlevler kullanma ve özel kolaylaştırıcı işlevler oluşturma işlemini gösterir.
 ms.prod: xamarin
 ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 9398a1b9cf4e5f6fd18f2213a7cf55e9cbb93ef0
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1c75771173d94a18c7c1cc5100c64d45bdc32078
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243148"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998127"
 ---
-# <a name="easing-functions-in-xamarinforms"></a>İşlevler içinde Xamarin.Forms kolaylaştırma
+# <a name="easing-functions-in-xamarinforms"></a>Xamarin.Forms içinde kolaylaştırıcı İşlevler
 
-_Xamarin.Forms nasıl animasyonları hızlandırma veya çalıştırdıkları gibi yavaşlaması denetleyen bir aktarım işlevi belirtmenize olanak tanır bir hareket hızı sınıfı içerir. Bu makalede önceden tanımlanmış hareket hızı işlevlerini kullanma ve nasıl özel hareket hızı işlevler oluşturulacağı gösterilmektedir._
+_Xamarin.Forms nasıl animasyonları hızını artırın veya gibi çalıştırdıkları yavaşlamasına denetleyen bir aktarım işlevi belirtmek için sağlayan bir hareket hızı sınıfı içerir. Bu makalede, önceden tanımlanmış kolaylaştırıcı işlevler kullanma ve özel kolaylaştırıcı işlevler oluşturma işlemini gösterir._
 
 
-[ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) Sınıfı animasyonları tarafından kullanılabilecek hareket hızı işlevleri tanımlar:
+[ `Easing` ](xref:Xamarin.Forms.Easing) Sınıfı animasyonları tarafından tüketilebilecek kolaylaştırıcı işlevler bir dizi tanımlar:
 
-- [ `BounceIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.BounceIn/) Geri dönmeler başında animasyon işlevi kolaylaştırma.
-- [ `BounceOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.BounceOut/) Geri dönmeler sonunda animasyon işlevi kolaylaştırma.
-- [ `CubicIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.CubicIn/) İşlevi yavaş kolaylaştırma animasyonun hızlandırır.
-- [ `CubicInOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.CubicInOut/) İşlevi kolaylaştırma başında animasyon hızlandırır ve sonunda animasyon decelerates.
-- [ `CubicOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.CubicOut/) Decelerates animasyon işlevi hızla kolaylaştırma.
-- [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) İşlevi kolaylaştırma sabit hız kullanır ve varsayılan hareket hızı işlevi.
-- [ `SinIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SinIn/) İşlevi sorunsuz kolaylaştırma animasyonun hızlandırır.
-- [ `SinInOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SinInOut/) İşlevi sorunsuz kolaylaştırma başında animasyon hızlandırır ve sorunsuz sonunda animasyon decelerates.
-- [ `SinOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SinOut/) Decelerates animasyon işlevi sorunsuz kolaylaştırma.
-- [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) İşlevi kolaylaştırma çok hızlı bir şekilde doğru son hızlandırmak için animasyon neden olur.
-- [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) İşlevi kolaylaştırma hızlı bir şekilde doğru son hızını düşürün animasyonun neden olur.
+- [ `BounceIn` ](xref:Xamarin.Forms.Easing.BounceIn) Geri dönmeler başında animasyonu hızlandırma işlevi.
+- [ `BounceOut` ](xref:Xamarin.Forms.Easing.BounceOut) Geri dönmeler sonunda animasyonu hızlandırma işlevi.
+- [ `CubicIn` ](xref:Xamarin.Forms.Easing.CubicIn) Hızlandırma işlevi yavaş animasyonu hızlandırır.
+- [ `CubicInOut` ](xref:Xamarin.Forms.Easing.CubicInOut) Hızlandırma işlevi başında animasyonu hızlandırır ve sonunda animasyon decelerates.
+- [ `CubicOut` ](xref:Xamarin.Forms.Easing.CubicOut) Decelerates animasyon hızla hızlandırma işlevi.
+- [ `Linear` ](xref:Xamarin.Forms.Easing.Linear) Hızlandırma işlevi, bir sabit hız kullanır ve olan varsayılan hızlandırma işlevi.
+- [ `SinIn` ](xref:Xamarin.Forms.Easing.SinIn) Hızlandırma işlevi sorunsuz animasyonu hızlandırır.
+- [ `SinInOut` ](xref:Xamarin.Forms.Easing.SinInOut) Hızlandırma işlevi sorunsuz başında animasyonu hızlandırır ve sorunsuzca animasyon sonunda decelerates.
+- [ `SinOut` ](xref:Xamarin.Forms.Easing.SinOut) Decelerates animasyon sorunsuz hızlandırma işlevi.
+- [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) Hızlandırma işlevi çok hızlı bir şekilde sonuna doğru hızlandırmak animasyon neden olur.
+- [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) Neden olan hızla sonuna doğru yavaşlatma animasyonu hızlandırma işlevi.
 
-`In` Ve `Out` sonekleri hareket hızı işlevi tarafından sağlanan geçerlilik bitiş veya her ikisini animasyon başındaki belirgin olup olmadığını gösterir.
+`In` Ve `Out` sonekleri son veya her ikisini animasyon başındaki belirgin kolaylaştırıcı işlevi tarafından sağlanan etkin olup olmadığını gösterir.
 
-Ayrıca, özel hareket hızı işlevler oluşturulabilir. Daha fazla bilgi için bkz: [özel kolaylaştırma işlevleri](#customeasing).
+Ayrıca, özel kolaylaştırıcı işlevler oluşturulabilir. Daha fazla bilgi için [özel kolaylaştırıcı işlevler](#customeasing).
 
-## <a name="consuming-an-easing-function"></a>Hareket hızı işlevi kullanma
+## <a name="consuming-an-easing-function"></a>Kolaylaştırıcı bir işlev kullanma
 
-Animasyon uzantı yöntemleri [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) sınıfı aşağıdaki kod örneğinde gösterildiği gibi son yöntem parametre olarak belirtilen bir hareket hızı işlevi izin ver:
+Animasyon uzantı yöntemleri [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) sınıfı aşağıdaki kod örneğinde gösterildiği gibi son yöntem parametresi olarak belirtilmesi üzere kolaylaştırıcı bir işlev izin ver:
 
 ```csharp
 await image.TranslateTo(0, 200, 2000, Easing.BounceIn);
@@ -49,25 +49,25 @@ await image.ScaleTo(1, 2000, Easing.CubicOut);
 await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 ```
 
-Animasyonun bir hareket hızı işlevi belirterek, animasyon hız doğrusal olmayan haline gelir ve hareket hızı işlevi tarafından sağlanan efekti oluşturur. Bir animasyon oluştururken bir hareket hızı işlevi atlama neden animasyonu varsayılan kullanmak üzere [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) doğrusal hız üreten işlevi kolaylaştırma.
+Bir animasyonun kolaylaştırıcı bir işlev belirterek, animasyon hızı doğrusal olmayan hale gelir ve Hızlandırma işlevini tarafından sağlanan efekti oluşturur. Kolaylaştırıcı bir işlev bir animasyon oluştururken atlama neden olan varsayılan kullanmak animasyon [ `Linear` ](xref:Xamarin.Forms.Easing.Linear) doğrusal hız oluşturan işlevi.
 
-Animasyon uzantı yöntemleri kullanma hakkında daha fazla bilgi için [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) sınıfı için bkz: [basit animasyonları](~/xamarin-forms/user-interface/animation/simple.md). İşlevler kolaylaştırma ayrıca tüketilen tarafından [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) sınıfı. Daha fazla bilgi için bkz: [özel animasyon](~/xamarin-forms/user-interface/animation/custom.md).
+Animasyon uzantı yöntemleri kullanma hakkında daha fazla bilgi için [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) sınıfı [basit animasyonlar](~/xamarin-forms/user-interface/animation/simple.md). Kolaylaştırıcı işlevler ayrıca tarafından kullanılabilir [ `Animation` ](xref:Xamarin.Forms.Animation) sınıfı. Daha fazla bilgi için [özel animasyonlar](~/xamarin-forms/user-interface/animation/custom.md).
 
 <a name="customeasing" />
 
-## <a name="custom-easing-functions"></a>Özel işlevler kolaylaştırma
+## <a name="custom-easing-functions"></a>Kolaylaştırıcı işlevler özel
 
-Özel bir hareket hızı işlev oluşturma için üç ana yaklaşım vardır:
+Özel kolaylaştırıcı bir işlev oluşturma için üç ana yaklaşım vardır:
 
-1. Alan bir yöntem oluşturma bir `double` bağımsız değişkeni ve döndürür bir `double` sonucu.
+1. Alan bir yöntem oluşturma bir `double` döndürür ve bağımsız değişken bir `double` sonucu.
 1. Oluşturma bir `Func<double, double>`.
-1. Bağımsız değişken olarak hareket hızı işlevi belirtin [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) Oluşturucusu.
+1. Bağımsız değişkeni olarak hızlandırma işlevini belirtin [ `Easing` ](xref:Xamarin.Forms.Easing) Oluşturucusu.
 
-Her üç durumda özel hareket hızı işlevin 1 bağımsız değişkeni için 0 ve 1 bağımsız değişken için 0 döndürmelidir. Ancak, bağımsız değişken değeri 0 ile 1 arasında herhangi bir değer döndürülebilir. Her iki yaklaşımın şimdi sırayla incelenecektir.
+Her üç durumda özel hızlandırma işlevini bağımsız değişken 1 için 0 ve 1 bağımsız değişken için 0 döndürmelidir. Bununla birlikte, bağımsız değişken değeri 0 ile 1 arasında herhangi bir değer döndürülebilir. Her bir yaklaşıma artık sırasıyla açıklanmıştır.
 
-### <a name="custom-easing-method"></a>Özel yöntem kolaylaştırma
+### <a name="custom-easing-method"></a>Özel yöntem hızlandırma
 
-Özel bir hareket hızı işlev götüren bir yöntem olarak tanımlanabilir bir `double` bağımsız değişkeni ve döndürür bir `double` , aşağıdaki kod örneğinde gösterildiği şekilde neden:
+Özel bir hızlandırma işlevini alan bir yöntem tanımlanabilir bir `double` döndürür ve bağımsız değişken bir `double` aşağıdaki kod örneğinde gösterildiği gibi sonuç:
 
 ```csharp
 await image.TranslateTo(0, 200, 2000, CustomEase);
@@ -78,38 +78,38 @@ double CustomEase (double t)
 }
 ```
 
-`CustomEase` Yöntemi 0, 0.2, 0.4, 0,6, 0,8 ve 1 değerlerine gelen değeri tamsayıya dönüştürür. Bu nedenle, [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) örneği ayrık atlar içinde yerine sorunsuz çevrilir.
+`CustomEase` Yöntemi gelen değer 0, 0.2, 0.4, 0,6, 0.8 ve 1 değerlerine keser. Bu nedenle, [ `Image` ](xref:Xamarin.Forms.Image) örneği ayrık atlar, yerine sorunsuz çevrilir.
 
-### <a name="custom-easing-func"></a>Özel FUNC kolaylaştırma
+### <a name="custom-easing-func"></a>Özel FUNC hızlandırma
 
-Özel bir hareket hızı işlevi olarak da tanımlanabilir bir `Func<double, double>`, aşağıdaki kod örneğinde gösterildiği gibi:
+Özel kolaylaştırıcı bir işlev olarak da tanımlanabilir bir `Func<double, double>`, aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 Func<double, double> CustomEase = t => 9 * t * t * t - 13.5 * t * t + 5.5 * t;
 await image.TranslateTo(0, 200, 2000, CustomEase));
 ```
 
-`CustomEase` `Func` Başlamanızı bir hareket hızı işlevi hızlı yavaşlar indirmelere geri alır ve ardından tersine çevirir temsil kurs yeniden hızlı bir şekilde doğru son hızlandırmak için. Bu nedenle, genel hareketini while [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) örneğidir aşağı doğru hareket, geçici olarak indirmelere üzerinden animasyon yarısı tersine çevirir.
+`CustomEase` `Func` Başlangıcıdır kolaylaştırıcı bir işlev hızlı yavaşlar kurs tersine çevirir ve ardından tersine temsil kurs yeniden hızla sonuna doğru hızlandırmak için. Bu nedenle, genel hareketini while [ `Image` ](xref:Xamarin.Forms.Image) örneğidir aşağı yönde, kurs animasyon olan sürenin yarısına ulaşıldığında geçici olarak tersine çevirir.
 
-### <a name="custom-easing-constructor"></a>Özel oluşturucu kolaylaştırma
+### <a name="custom-easing-constructor"></a>Özel oluşturucu hızlandırma
 
-Özel bir hareket hızı işlev bağımsız değişkeni olarak da tanımlanabilir [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) aşağıdaki kod örneğinde gösterildiği şekilde Oluşturucusu:
+Özel kolaylaştırıcı bir işlev bağımsız değişkeni olarak da tanımlanabilir [ `Easing` ](xref:Xamarin.Forms.Easing) oluşturucusu, aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.PI * t) * Math.Exp (-5 * t)));
 ```
 
-Özel hareket hızı işlevi bir lambda işlev bağımsız değişkeni olarak belirtilen [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) kullanır ve oluşturucu `Math.Cos` yöntemi tarafından bırakılan bir yavaş açılan efekti oluşturmak için `Math.Exp` yöntemi. Bu nedenle, [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) örneği için son işi olmayan yerine bırakmaya görünmesi çevrilir.
+Özel kolaylaştırıcı işlevi lambda işlevi bağımsız değişkeni olarak belirtilen [ `Easing` ](xref:Xamarin.Forms.Easing) oluşturucusu ve kullanımları `Math.Cos` tarafından bırakılan bir yavaş bırakma etkisi yöntemini `Math.Exp` yöntemi. Bu nedenle, [ `Image` ](xref:Xamarin.Forms.Image) örneği son işi olmayan kullanışlılığını bırakmak görünmesi çevrilir.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede önceden tanımlanmış hareket hızı işlevlerini kullanma ve nasıl özel hareket hızı işlevler oluşturulacağı gösterilmektedir. Xamarin.Forms içeren bir [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) nasıl animasyonları hızlandırma denetleyen aktarımı işlev belirtin veya çalıştırdıkları gibi yavaşlaması sağlayan sınıf.
+Bu makalede, önceden tanımlanmış kolaylaştırıcı işlevler kullanma ve özel kolaylaştırıcı işlevleri nasıl oluşturabileceğinizi gösterdik. Xamarin.Forms içeren bir [ `Easing` ](xref:Xamarin.Forms.Easing) nasıl animasyonları hızlandırma denetleyen bir aktarım işlevi belirtin veya gibi çalıştırdıkları yavaşlamasına sağlar sınıfını.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Zaman Uyumsuz Desteğe Genel Bakış](~/cross-platform/platform/async.md)
-- [İşlevler (örnek) kolaylaştırma](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/easing/)
-- [Kolaylaştırma](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/)
-- [ViewExtensions](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/)
+- [Kolaylaştırıcı işlevler (örnek)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/easing/)
+- [Hızlandırma](xref:Xamarin.Forms.Easing)
+- [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

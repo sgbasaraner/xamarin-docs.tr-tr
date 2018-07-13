@@ -1,32 +1,32 @@
 ---
-title: Pil durumu denetleniyor
-description: Bu makalede Xamarin.Forms DependencyService sınıfı yerel olarak her platform için pil bilgilere erişmek için nasıl kullanılacağı açıklanmaktadır.
+title: Pil durumunu denetleme
+description: Bu makalede, her platform için yerel olarak pil bilgilerine Xamarin.Forms DependencyService sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: CF1C5A73-84ED-407D-BDC5-EB1D83D2D3DB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 74e191cd6a87626e887d45f823e65d57000d7463
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cbb4a01ac2c6d933fe40a0b3c2571d1fe3ce75c0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241090"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998408"
 ---
-# <a name="checking-battery-status"></a>Pil durumu denetleniyor
+# <a name="checking-battery-status"></a>Pil durumunu denetleme
 
-Bu makalede, pil durumu denetleyen bir uygulamayı oluşturulmasını anlatılmaktadır. Bu makale üzerinde pil eklentisi tarafından Ahmet Montemagno temel alır. Daha fazla bilgi için bkz: [GitHub deposuna](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
+Bu makalede, pil durumunu denetleyen bir uygulama oluşturulmasını adım adım göstermektedir. Bu makalede pil eklentisi tarafından James Montemagno temel alır. Daha fazla bilgi için [GitHub deposunu](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
 
-Xamarin.Forms geçerli pil durumunu denetleme işlevselliği içermediğinden bu uygulamayı kullanmaya ihtiyaç duyacaklardır [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) yerel API'leri yararlanmak için.  Bu makalede kullanmak için aşağıdaki adımları kapsar `DependencyService`:
+Xamarin.Forms geçerli pil durumunu denetleme için işlevselliği içermediğinden, bu uygulamayı kullanmanız gerekir [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) yerel API'lerin yararlanmak için.  Bu makalede kullanmak için aşağıdaki adımları kapsar `DependencyService`:
 
-- **[Arabirimi oluşturma](#Creating_the_Interface)**  &ndash; arabirimi paylaşılan kodda nasıl oluşturulduğunu anlayın.
-- **[iOS uygulaması](#iOS_Implementation)**  &ndash; iOS için yerel kodda arabirimini uygulayan öğrenin.
-- **[Android uygulaması](#Android_Implementation)**  &ndash; arabirimini yerel kodda Android için uygulama öğrenin.
-- **[Evrensel Windows Platform uygulaması](#UWPImplementation)**  &ndash; arabirimini yerel kodda Evrensel Windows Platformu (UWP) uygulaması öğrenin.
-- **[Paylaşılan kod içinde uygulama](#Implementing_in_Shared_Code)**  &ndash; nasıl kullanacağınızı öğrenin `DependencyService` paylaşılan koddan yerel uygulama çağırmak için.
+- **[Arabirimi oluşturma](#Creating_the_Interface)**  &ndash; arabirimi paylaşılan kodda nasıl oluşturulduğunu anlamanız.
+- **[iOS uygulaması](#iOS_Implementation)**  &ndash; iOS için yerel kod içinde arabirim uygulamak hakkında bilgi edinin.
+- **[Android uygulaması](#Android_Implementation)**  &ndash; arabirimi, Android için yerel koda uygulanması hakkında bilgi edinin.
+- **[Evrensel Windows platformu uygulaması](#UWPImplementation)**  &ndash; arabirimi, Evrensel Windows Platformu (UWP) için yerel koda uygulanması hakkında bilgi edinin.
+- **[Paylaşılan kod içinde uygulama](#Implementing_in_Shared_Code)**  &ndash; nasıl kullanacağınızı öğrenin `DependencyService` paylaşılan kod yerel uygulamasından çağırmak için.
 
-Tamamlandığında, kullanılarak uygulama `DependencyService` aşağıdaki yapı ayarlanmıştır:
+Tamamlandığında, kullanılarak uygulama `DependencyService` aşağıdaki yapıya sahip:
 
 ![](battery-info-images/battery-diagram.png "DependencyService uygulama yapısı")
 
@@ -34,7 +34,7 @@ Tamamlandığında, kullanılarak uygulama `DependencyService` aşağıdaki yap�
 
 ## <a name="creating-the-interface"></a>Arabirimi oluşturma
 
-İlk olarak, bir arabirim istenen işlevselliği ifade paylaşılan kod içinde oluşturun. Cihaz veya ücretlendirme, cihaz güç nasıl alıyor olup olmadığını ve uygulama denetimi pil söz konusu olduğunda, kalan pil yüzdesi ilgili bilgiler verilmiştir:
+İlk olarak bir arabirim istenen işlevselliği ifade paylaşılan kod içinde oluşturun. Cihaz veya ücretlendirme, cihaz güç nasıl aldığını olup olmadığını ve uygulama denetimi pil söz konusu olduğunda, kalan pil yüzdesi ilgili bilgiler verilmiştir:
 
 ```csharp
 namespace DependencyServiceSample
@@ -66,16 +66,16 @@ namespace DependencyServiceSample
 }
 ```
 
-Bu arabirim paylaşılan kodda karşı kodlama Xamarin.Forms uygulaması her platformda güç yönetimi API'leri erişmesine izin verir.
+Paylaşılan kodun bu arabirimde karşı kodlama her platformda güç yönetimi API'leri erişmek Xamarin.Forms uygulaması izin verir.
 
 > [!NOTE]
-> Arabirimini uygulayan sınıflar çalışmak için parametresiz bir oluşturucusu olmalıdır `DependencyService`. Kurucular arabirimleri tarafından tanımlanamıyor.
+> Arabirimini uygulayan sınıflar, çalışmak için parametresiz bir oluşturucusu olmalıdır `DependencyService`. Oluşturucular arabirimleri tarafından tanımlanamıyor.
 
 <a name="iOS_Implementation" />
 
 ## <a name="ios-implementation"></a>iOS uygulaması
 
-`IBattery` Her platforma özgü uygulama projesinde arabirimi uygulanmadı. İOS uygulama yerel kullanacağı [ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) pil bilgilere erişmek için API'ler. Aşağıdaki sınıf parametresiz bir oluşturucuya sahip Not böylece `DependencyService` yeni örnekleri oluşturabilirsiniz:
+`IBattery` Her platforma özgü uygulama projesinde arabirimi uygulanır. Yerel iOS uygulamasını kullanacağı [ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) pil bilgilere erişmek için API. Aşağıdaki sınıf parametresiz bir oluşturucusu olan Not böylece `DependencyService` yeni örnekleri oluşturabilirsiniz:
 
 ```csharp
 using UIKit;
@@ -138,7 +138,7 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-Son olarak, bu eklemek `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` deyimleri:
+Son olarak, bu ekleme `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış olan tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` ifadeleri:
 
 ```csharp
 using UIKit;
@@ -152,13 +152,13 @@ namespace DependencyServiceSample.iOS
     ...
 ```
 
-Bu öznitelik sınıfı uygulaması kaydeder `IBattery` anlamına arabirimi `DependencyService.Get<IBattery>` paylaşılan kodda bir örneğini oluşturmak için kullanılabilir:
+Bu öznitelik sınıfı uygulaması kaydeder. `IBattery` anlamına arabirimi `DependencyService.Get<IBattery>` paylaşılan kodda bir örneğini oluşturmak için kullanılabilir:
 
 <a name="Android_Implementation" />
 
 ## <a name="android-implementation"></a>Android uygulaması
 
-Android uygulaması kullanan [ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API. Bu uygulama pil izinlerinde eksiklik işlemek için denetimleri gerektiren iOS sürümden daha karmaşık geçerlidir:
+Android uygulaması kullanan [ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) API. Bu uygulama pil izinlerinde eksiklik işlemek için denetimleri gerektiren iOS sürümünden daha karmaşıktır:
 
 ```csharp
 using System;
@@ -295,7 +295,7 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-Bu ekleme `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` deyimleri:
+Bu ekleme `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış olan tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` ifadeleri:
 
 ```csharp
 ...
@@ -309,11 +309,11 @@ namespace DependencyServiceSample.Droid
     ...
 ```
 
-Bu öznitelik sınıfı uygulaması kaydeder `IBattery` anlamına arabirimi `DependencyService.Get<IBattery>` kullanılabilir paylaşılan kod bir örneğini oluşturabilirsiniz.
+Bu öznitelik sınıfı uygulaması kaydeder. `IBattery` anlamına arabirimi `DependencyService.Get<IBattery>` kullanılabilir paylaşılan kodun bir örneğini oluşturabilirsiniz.
 
 <a name="UWPImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>Evrensel Windows Platform uygulaması
+## <a name="universal-windows-platform-implementation"></a>Evrensel Windows platformu uygulaması
 
 UWP uygulaması kullanan `Windows.Devices.Power` API'leri pil durumu hakkında bilgi edinmek için:
 
@@ -409,13 +409,13 @@ namespace DependencyServiceSample.UWP
 }
 ```
 
-`[assembly]` Ad alanı bildiriminin üstüne öznitelik sınıfı uygulaması kaydeder `IBattery` anlamına arabirimi `DependencyService.Get<IBattery>` paylaşılan kodda bir örneğini oluşturmak için kullanılabilir.
+`[assembly]` Öznitelik ad alanı bildiriminin üstüne kaydeder sınıfı uygulaması `IBattery` anlamına arabirimi `DependencyService.Get<IBattery>` paylaşılan kodda bir örneğini oluşturmak için kullanılabilir.
 
 <a name="Implementing_in_Shared_Code" />
 
 ## <a name="implementing-in-shared-code"></a>Paylaşılan kod içinde uygulama
 
-Her platform için arabirimi uygulanmıştır, paylaşılan uygulama onu yararlanmak için yazılabilir. Uygulama oluşacak bir düğmeyi içeren bir sayfa, o zaman güncelleştirmeleri dokunduğunuz geçerli pil durumu ile kendi metin. Kullandığı `DependencyService` örneğini almak için `IBattery` arabirimi. Çalışma zamanında, bu örneği yerel SDK tam erişime sahip platforma özgü uygulaması olacaktır.
+Her platform için arabirim uygulanmıştır, paylaşılan uygulama yararlanmak için yazılabilir. Uygulama tavsiyelerinde bulunacak olduğunda, bir düğme içeren bir sayfa güncelleştirmeleri dokunulduğunda geçerli pil durumu olan metin. Kullandığı `DependencyService` örneğini almak için `IBattery` arabirimi. Çalışma zamanında bu örneği yerel SDK tam erişimi olan platforma özgü uygulama olacak.
 
 ```csharp
 public MainPage ()
@@ -469,7 +469,7 @@ public MainPage ()
 }
 ```
 
-Bu uygulamayı iOS çalıştıran, Android veya UWP ve düğmesine basarak aygıtın geçerli güç durumunu yansıtacak şekilde güncelleştirme düğmesi metni neden olur.
+Bu uygulama, İos'ta çalışan, Android, veya UWP ve düğmesine basarak cihazın geçerli güç durumunu yansıtacak şekilde güncelleştirmek düğme metni neden olur.
 
 ![](battery-info-images/battery.png "Pil durumu örneği")
 

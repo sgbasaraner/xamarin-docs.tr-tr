@@ -1,28 +1,28 @@
 ---
-title: Özel görüntü Aktarım denetimleri
-description: Bu makalede, Xamarin.Forms kullanarak bir video oynatıcı uygulamasında özel taşıma denetimler uygulamak açıklanmaktadır.
+title: Özel video Aktarım denetimleri
+description: Bu makalede, özel Aktarım denetimleri Xamarin.Forms kullanarak bir video oynatıcı uygulamasında uygulamak açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a20c68d5f86dad852a4425206846292c1c6c5838
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 84870de28ffd30b2d29fb5d8fbea815e1fd0d9c4
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241666"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996444"
 ---
-# <a name="custom-video-transport-controls"></a>Özel görüntü Aktarım denetimleri
+# <a name="custom-video-transport-controls"></a>Özel video Aktarım denetimleri
 
-Bir video oynatıcı aktarım denetimlerini işlevleri gerçekleştirmek düğmeleri dahil **Yürüt**, **duraklatma**, ve **durdurmak**. Bu düğmeleri, genellikle metnin yerine tanıdık simgeler ile tanımlanır ve **Yürüt** ve **duraklatma** işlevler tek düğmesinde genellikle birleştirilir.
+Video oynatıcı Aktarım denetimleri işlevleri gerçekleştiren düğmeleri içerir **Play**, **duraklatma**, ve **Durdur**. Bu düğmeler, genellikle metin yerine tanıdık simgeler ile tanımlanır ve **Play** ve **duraklatma** işlevleri genellikle bir düğme birleştirilir.
 
-Varsayılan olarak, `VideoPlayer` görüntüler Aktarım her platformu tarafından desteklenen kontrol eder. Ayarladığınızda `AreTransportControlsEnabled` özelliğine `false`, bu denetimlerin görüntülenmez. Daha sonra denetleyebilir `VideoPlayer` program aracılığıyla veya kendi Aktarım denetimleri sağlayın.
+Varsayılan olarak, `VideoPlayer` Aktarım denetimleri her platformu tarafından desteklenen görüntüler. Ayarladığınızda `AreTransportControlsEnabled` özelliğini `false`, bu denetimlerin görüntülenmez. Daha sonra kontrol edebilirsiniz `VideoPlayer` programlama yoluyla veya kendi Aktarım denetimleri sağlayın.
 
-## <a name="the-play-pause-and-stop-methods"></a>Oynatma, duraklatma ve durdurma yöntemleri
+## <a name="the-play-pause-and-stop-methods"></a>Yürüt, Duraklat ve durdurma yöntemi
 
-`VideoPlayer` Sınıfı tanımlayan üç yöntem adlı `Play`, `Pause`, ve `Stop` olaylarını tetikleme göre uygulanır:
+`VideoPlayer` Sınıf adlı üç yöntemi tanımlar `Play`, `Pause`, ve `Stop` olayları tetikleme tarafından uygulanır:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -54,11 +54,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-Bu olayları için olay işleyicileri tarafından belirlenen `VideoPlayerRenderer` aşağıda gösterildiği gibi her platformda sınıfı:
+Bu olayları için olay işleyicileri ayarlanmış `VideoPlayerRenderer` aşağıda gösterildiği gibi platformlarının her birinde sınıfı:
 
 ### <a name="ios-transport-implementations"></a>iOS uygulamaları taşıma
 
-İOS sürümü `VideoPlayerRenderer` kullanan `OnElementChanged` yöntemi işleyiciler üç bu olayların ayarlamak için zaman `NewElement` özelliği değil `null` ve olay işleyicileri ayırır zaman `OldElement` değil `null`:
+İOS sürümü `VideoPlayerRenderer` kullanır `OnElementChanged` bu üç olayları için işleyiciler ayarlamak için yöntemin zaman `NewElement` özelliği değil `null` ve olay işleyicileri ayırır, `OldElement` değil `null`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -107,11 +107,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Olay işleyicileri yöntemleri çağırma uygulanan `AVPlayer` nesnesi. Yoktur hiçbir `Stop` yöntemi `AVPlayer`, video duraklatma ve konumu başına taşıyarak benzetimli.
+Olay işleyicileri üzerinde yöntemleri çağırarak uygulanan `AVPlayer` nesne. Yok hiçbir `Stop` yöntemi `AVPlayer`, videoyu duraklatma ve konumu başına taşıyarak benzetimi.
 
 ### <a name="android-transport-implementations"></a>Android aktarım uygulamaları
 
-Android uygulaması, iOS uygulamasına benzer. Üç işlevleri için işleyiciler zaman ayarlanır `NewElement` değil `null` ve ne zaman ayrılmış `OldElement` değil `null`:
+Android uygulaması, iOS uygulamasına benzer. Üç işlev işleyicileri zaman ayarlanır `NewElement` değil `null` ve ne zaman ayrılmış `OldElement` değil `null`:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -158,7 +158,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Üç işlevleri tarafından tanımlanan yöntemleri çağırmak `VideoView`.
+Üç işlev tarafından tanımlanan yöntemleri çağırma `VideoView`.
 
 ### <a name="uwp-transport-implementations"></a>UWP aktarım uygulamaları
 
@@ -210,11 +210,11 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="the-video-player-status"></a>Video oynatıcı durumu
 
-Uygulama **Yürüt**, **duraklatma**, ve **durdurmak** işlevleri Aktarım denetimleri desteklemek için yeterli değil. Genellikle **Yürüt** ve **duraklatma** komutları video şu anda yürütülmekte ya da duraklatılmış olup olmadığını belirtmek için görünümünü değiştirir aynı düğmesi ile uygulanır. Video henüz yüklü değilse Ayrıca, düğme bile etkinleştirilmesi gerekir.
+Uygulama **Play**, **duraklatma**, ve **Durdur** işlevleri Aktarım denetimleri desteklemek için yeterli değildir. Genellikle **Play** ve **duraklatma** komutları video şu anda Yürütülüyor ya da duraklatılmış olup olmadığını belirtmek için görünümünü değiştirir düğmeyle uygulanır. Video henüz yüklü değilse Ayrıca, düğme bile etkin olmamalıdır.
 
-Bu gereksinimleri video oynatıcı geçerli durumunu gösteren çalma ise veya duraklatılmış ya da henüz bir videoyu yürütmek hazır değil kullanılabilir duruma getirmek için gerekli olduğunu belirtir. (Üç platformları da video duraklatılıp veya yeni bir konuma taşındı, ancak bunlar desteklenmez böylece bu özellikleri video dosyaları yerine akış video için geçerli olan belirtmek özellikleri destekleyecek `VideoPlayer` burada açıklanan.)
+Bu gereksinimler, video oynatıcı geçerli durumunu gösteren yürütülürken veya duraklatıldı durumunda veya henüz bir videoyu oynatmak hazır değilse kullanılabilir hale getirmek gereken kapsıyor. (Üç platformda da video duraklatılıp veya yeni bir konuma taşınmış, ancak içinde desteklenmeyen için bu özellikleri video dosyaları yerine akış video için geçerli olan belirten özellikleri için destek `VideoPlayer` burada açıklanmıştır.)
 
-**VideoPlayerDemos** proje içeren bir `VideoStatus` numaralandırması üç üyeleriyle:
+**VideoPlayerDemos** proje içeren bir `VideoStatus` numaralandırması üç üyesiyle:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -228,7 +228,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-`VideoPlayer` Sınıfı tanımlayan adlı yalnızca gerçek bir bağlanabilirse özellik `Status` türü `VideoStatus`. Yalnızca platform Oluşturucu ayarlanmalıdır çünkü bu özellik salt okunur olarak tanımlanır:
+`VideoPlayer` Sınıfı tanımlar adlı yalnızca gerçek bir bağlanılabilir özellik `Status` türü `VideoStatus`. Yalnızca platform işleyicisi bağlantısı ayarlanmalıdır, çünkü bu özellik salt okunur tanımlanır:
 
 ```csharp
 using System;
@@ -260,9 +260,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-Genellikle, bir özelliği salt okunur bağlanabilirse özel olurdu `set` erişimcisine `Status` sınıf içinde ayarlanmasına izin vermek için özellik. İçin bir `View` işleyiciler tarafından ancak, desteklenen türevi özelliği ayarlanmalıdır gelen sınıfı dışında ancak yalnızca platform Oluşturucu tarafından.
+Genellikle, bir salt okunur bağlanılabilir özellik özel gerekir `set` erişimcisine `Status` sınıf içinde ayarlanması izin verecek şekilde özelliği. İçin bir `View` oluşturucular tarafından ancak desteklenen Türev özelliği ayarlanmalıdır gelen sınıfın dışında ancak yalnızca platform işleyici tarafından.
 
-Bu nedenle, başka bir özellik adıyla tanımlanan `IVideoPlayerController.Status`. Bu bir açık arabirim uygulaması ve tarafından mümkün hale getirilir `IVideoPlayerController` arabirim `VideoPlayer` sınıfını uygular:
+Bu nedenle, başka bir özellik adıyla tanımlanan `IVideoPlayerController.Status`. Bu açık arabirim uygulaması olduğundan ve olası tarafından yapılan `IVideoPlayerController` arabirim `VideoPlayer` sınıfının uygular:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -276,11 +276,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-Bu için nasıl benzer [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) kontrol kullanır [ `IWebViewController` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IWebViewController/) uygulamak için arabirimi `CanGoBack` ve `CanGoForward` özellikleri. (Kaynak kodu bkz [ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) ve Ayrıntılar için kendi işleyiciler.)
+Bu şekilde nasıl benzer [ `WebView` ](xref:Xamarin.Forms.WebView) denetimi kullanan [ `IWebViewController` ](xref:Xamarin.Forms.IWebViewController) uygulamak için arabirimi `CanGoBack` ve `CanGoForward` özellikleri. (Kaynak kodunu [ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) ve Ayrıntılar için kendi oluşturucular.)
 
-Bu, harici bir sınıf için mümkün kılar `VideoPlayer` ayarlamak için `Status` başvuran özelliğini `IVideoPlayerController` arabirimi. (Kısa süre içinde kodu görürsünüz.) Özellik diğer sınıflardan ayarlanabilir, ancak yanlışlıkla ayarlanması düşüktür. En önemlisi, `Status` veri bağlama aracılığıyla özelliği ayarlanamaz.
+Bu, harici bir sınıf için mümkün kılar `VideoPlayer` ayarlanacak `Status` başvuran özelliğini `IVideoPlayerController` arabirimi. (Kısa bir süre içinde kod görürsünüz.) Özellik diğer sınıflardan ayarlanabilir, ancak yanlışlıkla ayarlanmış olması beklenmez. En önemlisi de `Status` veri bağlama aracılığıyla özelliği ayarlanamaz.
 
-Bu güvenliğini koruma açısından Oluşturucu yardımcı olmak için `Status` özelliği güncelleştirildi, `VideoPlayer` sınıfı tanımlayan bir `UpdateStatus` olan olayı tetikleyen saniyenin her onuncu:
+Oluşturucu içinde tutarak bu yardımcı olmak için `Status` özelliği güncelleştirildi, `VideoPlayer` sınıfı tanımlar bir `UpdateStatus` olay tetiklenen her saniyenin onda biri:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -302,9 +302,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-### <a name="the-ios-status-setting"></a>İOS durumu ayarı
+### <a name="the-ios-status-setting"></a>İOS durum ayarı
 
-İOS `VideoPlayerRenderer` için bir işleyici ayarlar `UpdateStatus` olay (ve bu işleyici ayırır, arka plandaki `VideoPlayer` öğesi yok) ve ayarlamak için işleyici kullanan `Status` özelliği:
+İOS `VideoPlayerRenderer` ayarlar için bir işleyici `UpdateStatus` olay (ve bu işleyici ayırır, arka plandaki `VideoPlayer` öğe yok) ve işleyici ayarlamak için kullanır `Status` özelliği:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -358,11 +358,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-İki özelliklerini `AVPlayer` erişilmelidir: [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) türündeki özelliği `AVPlayerStatus` ve [ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) türündeki özelliği `AVPlayerTimeControlStatus`. Dikkat `Element` özelliği (olduğu `VideoPlayer`) için dönüştürülmelidir `IVideoPlayerController` ayarlamak için `Status` özelliği.
+İki özelliklerini `AVPlayer` erişilmelidir: [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) türünün özelliği `AVPlayerStatus` ve [ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) türünün özelliği `AVPlayerTimeControlStatus`. Dikkat `Element` özelliği (olduğu `VideoPlayer`) e dönüştürmelisiniz `IVideoPlayerController` ayarlanacak `Status` özelliği.
 
-### <a name="the-android-status-setting"></a>Android durumu ayarı
+### <a name="the-android-status-setting"></a>Android durum ayarı
 
-[ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) Android özelliğinin `VideoView` yalnızca video yürütmeyi ya da duraklatılmış olup olmadığını belirten bir Boole değeri değil. Belirlemek için `VideoView` hiçbiri play olabilir ya da video duraklatmak henüz `Prepared` olayı `VideoView` ele alınması gerekir. Bu iki işleyicileri kümesinde `OnElementChanged` yöntemi ve ayrılan sırasında `Dispose` geçersiz kıl:
+[ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) Android özelliğini `VideoView` yalnızca video oynatma ya da duraklatılmış olup olmadığını gösteren bir Boole değeri. Belirlemek için `VideoView` hiçbiri play olabilir veya videoyu Duraklat henüz `Prepared` olayı `VideoView` işlenmelidir. Bu iki işleyici kümesinde `OnElementChanged` yöntemi ve ayrılmış sırasında `Dispose` geçersiz kıl:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -415,7 +415,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`UpdateStatus` İşleyici kullanan `isPrepared` alan (kümesinde `Prepared` işleyici) ve `IsPlaying` ayarlamak için özellik `Status` özelliği:
+`UpdateStatus` İşleyicisi kullanır `isPrepared` alan (kümesinde `Prepared` işleyicisi) ve `IsPlaying` ayarlamak için özellik `Status` özelliği:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -447,9 +447,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="the-uwp-status-setting"></a>UWP durumu ayarı
+### <a name="the-uwp-status-setting"></a>UWP durum ayarı
 
-UWP `VideoPlayerRenderer` kullanır `UpdateStatus` olay, ancak gerekmez, ayarı `Status` özelliği. `MediaElement` Tanımlayan bir [ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) Oluşturucu sağlayan olay ne zaman bildirim almak için [ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) özelliği değişti. Özelliği, ayrılmış `Dispose` geçersiz kıl:
+UWP `VideoPlayerRenderer` kullanır `UpdateStatus` olay, ancak gerekmez, ayarı `Status` özelliği. `MediaElement` Tanımlar bir [ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) Oluşturucu sağlayan bir olay olduğunda bildirim almak [ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) özelliği değişti. Özelliği, ayrılmış `Dispose` geçersiz kıl:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -487,7 +487,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-`CurrentState` Özelliği türüdür [ `MediaElementState` ](/uwp/api/windows.ui.xaml.media.mediaelementstate)ve kolayca içine eşler `VideoStatus`:
+`CurrentState` Özelliği türüdür [ `MediaElementState` ](/uwp/api/windows.ui.xaml.media.mediaelementstate)ve kolayca haritalarınızı `VideoStatus`:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -518,27 +518,27 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="play-pause-and-stop-buttons"></a>Oynat, Duraklat ve düğmeleri Durdur
+## <a name="play-pause-and-stop-buttons"></a>Yürüt, Duraklat ve düğmeler Durdur
 
-Unicode karakterler kullanarak simgesel **Yürüt**, **duraklatma**, ve **durdurmak** görüntüleri sorunlu. [Çeşitli teknik](https://unicode-table.com/en/blocks/miscellaneous-technical/) Unicode standart bölümünü tanımlayan üç sembol karakterlerinin bu amaç için görünen uygun. Bunlar:
+Unicode karakter kullanarak sembolik **Play**, **duraklatma**, ve **Durdur** görüntüleri sorunlu. [Çeşitli teknik](https://unicode-table.com/en/blocks/miscellaneous-technical/) bölümü Unicode standardı, bu amaçla görünüşte uygun üç simge karakterleri tanımlar. Bunlar:
 
-- 0x23F5 (siyah Orta sağı üçgen) veya &#x23F5; için **Yürüt**
-- 0x23F8 (çift dikey çubuk) veya &#x23F8; için **duraklatma**
+- 0x23F5 (siyah Orta sağ üçgen) veya &#x23F5; için **Yürüt**
+- 0x23F8 (çift dikey çubuk) veya &#x23F8; için **Duraklat**
 - 0x23F9 (siyah kare) veya &#x23F9; için **Durdur**
 
-Ne olursa olsun nasıl bu simgeleri tarayıcınızda görüntülenir (ve farklı tarayıcılar işlemek bunları farklı şekillerde), tutarlı bir şekilde Xamarin.Forms tarafından desteklenen platformlarda görüntülendikleri değil. İOS ve UWP cihazlarda **duraklatma** ve **durdurmak** karakter içerebilir mavi 3B arka plan ve ön plan beyaz grafiksel bir görünüm. Android'de, simge yalnızca mavi olduğu durumda değil. Ancak, için 0x23F5 codepoint **Yürüt** UWP ve onu aynı görünüme iOS ve Android bile desteklenir yok.
+Bakılmaksızın nasıl bu sembolleri tarayıcınızda görünür (ve farklı tarayıcılar bunları farklı yollarla işlemek), tutarlı bir şekilde Xamarin.Forms tarafından desteklenen platformlardaki görüntülenmez. İOS ve UWP cihazlarda **duraklatma** ve **Durdur** karakterlerin 3B mavi bir arka plan ve beyaz bir ön plan ile bir grafiksel görünüm vardır. Bu, android, simge yalnızca mavi olduğu durum geçerli değildir. Ancak, 0x23F5 kod noktası için **Play** aynı görünüme ve UWP üzerinde iOS ve Android'de bile desteklenip desteklenmediğini sahip değil.
 
-Bu nedenle, 0x23F5 codepoint kullanılamaz **Yürüt**. İyi bir alternatif aşağıdaki gibidir:
+Bu nedenle, 0x23F5 kod noktası için kullanılamaz **Play**. İyi bir alternatif aşağıdaki gibidir:
 
-- 0x25B6 (siyah sağı üçgen) veya &#x25B6; için **Yürüt**
+- 0x25B6 (siyah üçgen sağı gösteren) veya &#x25B6; için **Yürüt**
 
-3B görünümünü benzemez düz bir siyah üçgen olması dışında bu üç tüm platformlar tarafından desteklenir **duraklatma** ve **durdurmak**. Bunu yapmanın bir değişken koduyla 0x25B6 codepoint izlemektir:
+3B Görünümü benzemez düz bir siyah üçgen olması dışında bu üç tüm platformlar tarafından desteklenir **duraklatma** ve **Durdur**. Bir seçenek, bir değişken kod ile 0x25B6 kod noktası takip etmektir:
 
 - 0x25B6 0xFE0F (değişken 16) tarafından izlenen veya &#x25B6; &#xFE0F; için **Yürüt**
 
-Aşağıda gösterilen biçimlendirmede kullanılan budur. İOS, verir **Yürüt** aynı 3B görünüme sembol **duraklatma** ve **durdurmak** düğmeleri, ancak değişken Android ve UWP üzerinde çalışmıyor.
+Aşağıda gösterilen biçimlendirmede kullanılan budur. İos'ta bu verir **Play** aynı 3B görünüme sembol **duraklatma** ve **Durdur** düğmeleri, ancak değişken Android ve UWP üzerinde çalışmaz.
 
-**Özel aktarım** Ayarlar sayfasında **AreTransportControlsEnabled** özelliğine **false** ve içeren bir `ActivityIndicator` video yüklenirken görüntülenen ve iki düğmeler. `DataTrigger` nesneleri etkinleştirme ve devre dışı bırakmak için kullanılan `ActivityIndicator` ve düğmeleri ve ilk düğme arasında geçiş yapmak için **Yürüt** ve **duraklatma**:
+**Özel aktarım** Ayarlar sayfasında **AreTransportControlsEnabled** özelliğini **false** ve içeren bir `ActivityIndicator` video yüklenirken görüntülenen iki düğmeler. `DataTrigger` nesneleri etkinleştirme ve devre dışı bırakmak için kullanılır `ActivityIndicator` ve düğmeler ve ilk düğmeyi arasında geçiş yapmak için **Play** ve **duraklatma**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -611,9 +611,9 @@ Aşağıda gösterilen biçimlendirmede kullanılan budur. İOS, verir **Yürüt
 </ContentPage>
 ```
 
-Veri tetikleyicileri ayrıntılı makalesinde açıklanmıştır [veri Tetikleyicileri](~/xamarin-forms/app-fundamentals/triggers.md#data).
+Veri tetikleyicileri makalesinde ayrıntılı olarak açıklanmıştır [veri Tetikleyicileri](~/xamarin-forms/app-fundamentals/triggers.md#data).
 
-Arka plan kod dosyasına düğmesi işleyicileri var. `Clicked` olayları:
+Düğme için işleyiciler arka plan kod dosyasına sahip `Clicked` olayları:
 
 ```csharp
 namespace VideoPlayerDemos
@@ -645,17 +645,17 @@ namespace VideoPlayerDemos
 }
 ```
 
-Çünkü `AutoPlay` ayarlanır `false` içinde **CustomTransport.xaml** dosyası basın gerekir **Yürüt** düğmesini video başlamak için etkin hale gelir. Yukarıda açıklanan Unicode karakterler metin eşdeğerlerine tarafından yayımlanır böylece düğmeleri tanımlanır. Video yürütürken düğmelerin her platformda tutarlı bir görünüm vardır:
+Çünkü `AutoPlay` ayarlanır `false` içinde **CustomTransport.xaml** dosyası basın gerekir **Play** düğmesini video başlamak için etkin hale gelir. Yukarıda açıklanan Unicode karakterleri metin eşdeğerleri tarafından yayımlanır böylece düğmeler tanımlanır. Video yürütürken düğmelerin her platformda tutarlı bir görünüm vardır:
 
-[![Özel taşıma çalma](custom-transport-images/customtransportplaying-small.png "özel taşıma çalma")](custom-transport-images/customtransportplaying-large.png#lightbox "özel taşıma çalma")
+[![Özel taşıma yürütmeyi](custom-transport-images/customtransportplaying-small.png "özel taşıma yürütmeyi")](custom-transport-images/customtransportplaying-large.png#lightbox "özel taşıma yürütülüyor")
 
-Ancak Android ve UWP, **Yürüt** video duraklatıldığında düğmesi çok farklı arar:
+Ancak Android ve UWP, **Play** video duraklatıldığında düğmesi çok farklı görünüyor:
 
 [![Özel taşıma duraklatıldı](custom-transport-images/customtransportpaused-small.png "özel taşıma duraklatıldı")](custom-transport-images/customtransportpaused-large.png#lightbox "özel taşıma duraklatıldı")
 
-Bir üretim uygulamasında, büyük olasılıkla visual bütünlüğünü sağlamak için kendi bit eşlem görüntüleri düğmelerinin kullanmak istersiniz.
+Bir üretim uygulamasında, büyük olasılıkla visual gerekmemesi elde etmek için kendi düğmeleri için bit eşlem resimleri kullanmak isteyebilirsiniz.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Video oynatıcı gösterilerini (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Video oynatıcı tanıtımları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

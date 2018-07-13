@@ -1,32 +1,32 @@
 ---
 title: Bölüm 8 özeti. Kod ve XAML uyum içinde
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 8 özeti. Kod ve XAML uyum içinde'
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: Bölüm 8 özeti. Kod ve XAML uyum içinde'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 70c2babef55ee6cb886b0e7da26ee57b086fa558
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b08355db6cc90381b16f51ce7bf23be8e8bd4e14
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241025"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994539"
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>Bölüm 8 özeti. Kod ve XAML uyum içinde
 
-Bu bölümde daha derine XAML inceler ve özellikle kod ve XAML nasıl etkileşime.
+Bu bölümde daha derin bir şekilde XAML keşfediyor ve özellikle kod ve XAML nasıl etkileşim.
 
 ## <a name="passing-arguments"></a>Bağımsız değişkenleri geçirme
 
-Genel durumda XAML'de örneği bir sınıf genel bir parametresiz oluşturucuya sahip olmalıdır; Sonuç nesnesi özellik ayarları'nda başlatılır. Ancak, nesne örneği ve başlatılmış olduğunu iki yol vardır.
+Genel durumda XAML içinde örneklenmiş bir sınıfı genel parametresiz oluşturucusu olmalıdır; Sonuçta elde edilen nesnenin özellik ayarları'nda başlatılır. Ancak, nesne örneği başlatıldı ve iki yol vardır.
 
-Bu genel amaçlı teknikleri olsa da, bunlar çoğunlukla MVVM görünüm modelleri bağlantılı olarak kullanılır.
+Bunlar genel amaçlı teknikleri olsa da, bunlar çoğunlukla MVVM görünüm modelleri bağlantılı olarak kullanılır.
 
-### <a name="constructors-with-arguments"></a>Bağımsız değişkenlerle oluşturucular
+### <a name="constructors-with-arguments"></a>Oluşturucu bağımsız değişken
 
-[ **ParameteredConstructorDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo) örnek nasıl kullanılacağını gösteren `x:Arguments` etiketi oluşturucu bağımsız değişkenleri belirtin. Bu bağımsız değişken türünü gösteren öğesi etiketlere göre ayrılmış gerekir. Temel .NET veri türleri için aşağıdaki etiketlerin kullanılabilir:
+[ **ParameteredConstructorDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo) örnek nasıl kullanılacağını gösterir `x:Arguments` oluşturucu bağımsız değişkenlerini belirtmek için etiket. Bu bağımsız değişken bağımsız değişken türünü gösteren öğesi etiketleri ile sınırlanması gerekir. Temel .NET veri türleri için aşağıdaki etiketleri kullanılabilir:
 
 - `x:Object`
 - `x:Boolean`
@@ -45,33 +45,33 @@ Bu genel amaçlı teknikleri olsa da, bunlar çoğunlukla MVVM görünüm modell
 
 ### <a name="can-i-call-methods-from-xaml"></a>XAML yöntemleri çağırabilir miyim?
 
-[ **FactoryMethodDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo) örnek nasıl kullanılacağını gösteren `x:FactoryMethod` öğesi bir nesne oluşturmak için çağrılan bir Üreteç yöntemi belirtin. Bu tür bir Üreteç yöntemi ortak ve statik olması gerekir ve içinde tanımlandığı türünde bir nesne oluşturmanız gerekir. (Örneğin [ `Color.FromRgb` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgb/p/System.Double/System.Double/System.Double/)) yöntemi niteleyen ortak ve statik olduğundan ve türünde bir değer döndürür `Color`.) İçinde belirtilen Üreteç yöntemi için bağımsız `x:Arguments` etiketler.
+[ **FactoryMethodDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo) örnek nasıl kullanılacağını gösterir `x:FactoryMethod` bir nesne oluşturmak için çağrılan bir Üreteç yöntemi belirtmek için öğesi. Böyle bir Üreteç yöntemi genel ve statik olmalıdır ve içinde tanımlandığı türünde bir nesne oluşturmanız gerekir. (Örneğin [ `Color.FromRgb` ](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double)) yöntemi niteleyen genel ve statik olduğundan ve türünde bir değer döndürür `Color`.) Bağımsız değişkenler için Üreteç yöntemi içinde belirtilen `x:Arguments` etiketler.
 
 ## <a name="the-xname-attribute"></a>X: Name özniteliği
 
-`x:Name` Özniteliği bir ad vermeniz XAML'de örneği nesneyi sağlar. Bu adları için kuralları C# değişken adları ile aynıdır. Dönüşü aşağıdaki `InitializeComponent` oluşturucuda çağrısı, arka plan kod dosyasına karşılık gelen XAML öğesine erişmek için bu adlarını başvurabilir. Adları, oluşturulan sınıfa özel alanlara XAML ayrıştırıcısı tarafından gerçekten dönüştürülür.
+`x:Name` Özniteliği sağlayan bir ad vermeniz için XAML içinde oluşturulan bir nesne. Bu adlar için kuralları, C# değişken adları ile aynıdır. Dönüşü aşağıdaki `InitializeComponent` oluşturucuda LogEvent() çağrısını, arka plan kod dosyasına karşılık gelen XAML öğesine erişmek için bu adlar başvurabilir. Adları oluşturulan kısmi sınıftaki özel alanlara XAML ayrıştırıcı tarafından gerçekten dönüştürülür.
 
-[ **XamlClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock) kullanımını gösteren örnek `x:Name` iki tutmak arka plan kodu dosya izin vermek için `Label` öğesi geçerli tarih ve saati ile güncel XAML'de tanımlandı.
+[ **XamlClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock) örnek, kullanımını gösterir `x:Name` iki korumak arka plan kod dosyasına izin vermek için `Label` geçerli tarih ve saat ile güncelleştirilmiş XAML içinde tanımlanan öğe.
 
-Aynı adlı birden çok öğe aynı sayfada için kullanılamaz. Kullanırsanız, belirli bir sorun olduğunu `OnPlatform` paralel adlı oluşturmak için nesneleri her platform için. [ **PlatformSpecificLabele** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels) örnek daha iyi bir yolu gibi şeyler gösterir.
+Aynı adlı birden çok öğe aynı sayfada için kullanılamaz. Kullanıyorsanız belirli bir sorun olduğunu `OnPlatform` paralel adlı oluşturmak için nesneleri her platform için. [ **PlatformSpecificLabele** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels) örnek gibi bir şey daha iyi bir yolunu gösterir.
 
 ## <a name="custom-xaml-based-views"></a>XAML tabanlı özel görünümler
 
-XAML biçimlendirme yinelenmesinin önlemek için birkaç yolu vardır. Bir ortak tekniktir öğesinden türetilen yeni bir XAML tabanlı sınıf oluşturmak için [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/). Bu teknik örneklerde gösterildiği [ **ColorViewList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList) örnek. `ColorView` Sınıfı türer `ContentView` belirli bir renk ve adını görüntülemek için while `ColorViewListPage` sınıfı türer `ContentPage` her zamanki gibi ve açıkça 17 örneklerini oluşturur `ColorView`.
+XAML, biçimlendirme tekrarından kaçınmanın birkaç yolu vardır. Bir sık kullanılan bir yöntemdir, türetilen yeni XAML tabanlı sınıf oluşturmak için [ `ContentView` ](xref:Xamarin.Forms.ContentView). Bu teknik gösterilmiştir [ **ColorViewList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList) örnek. `ColorView` Sınıf türetilir `ContentView` belirli bir renk ve adını görüntülemek için while `ColorViewListPage` sınıf türetilir `ContentPage` zamanki ve açıkça 17 örneklerini oluşturur `ColorView`.
 
-Erişme `ColorView` XAML sınıfında gerektiren yaygın olarak adlı başka bir XML ad alanı bildirimi `local` aynı bütünleştirilmiş kodda sınıfları için.
+Erişim `ColorView` XAML sınıfında sık adlı başka bir XML ad alanı bildirimi gerektirir `local` aynı derleme içerisindeki sınıflar için.
 
-## <a name="events-and-handlers"></a>Olaylar ve işleyicileri
+## <a name="events-and-handlers"></a>Olayları ve işleyicilerini
 
-Olayları olay işleyicileri XAML'de atanabilir, ancak olay işleyicisi arka plan kod dosyasına uygulanmalıdır. [ **XamlKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad) nasıl XAML'de tuş kullanıcı arabirimi oluşturma ve nasıl uygulandığını gösterilir `Clicked` arka plan kod dosyasına işleyicileri.
+Olayları olay işleyicileri XAML ile atanabilir, ancak arka plan kod dosyasında olay işleyicisi uygulanmalıdır. [ **XamlKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad) XAML tuş kullanıcı arabiriminde oluşturma ve nasıl uygulanacağını gösterir `Clicked` arka plan kod dosyasında işleyicileri.
 
-## <a name="tap-gestures"></a>Hareketleri dokunun
+## <a name="tap-gestures"></a>Hareket dokunun
 
-Tüm `View` nesne dokunmatik giriş elde edilir ve olayları bu girişten oluşturmak. `View` Sınıfı tanımlayan bir [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) öğesinden türetilen sınıfların bir veya daha fazla örneklerini içeren koleksiyon özelliği [ `GestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/).
+Tüm `View` nesne dokunma girişi alabilir ve bu giriş olayları oluşturmak. `View` Sınıfı tanımlayan bir [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) bir veya daha fazla türetilen sınıfların örneklerini içeren bir koleksiyon özelliği [ `GestureRecognizer` ](xref:Xamarin.Forms.GestureRecognizer).
 
-[ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) Oluşturur [ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/) olaylar. [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap) program nasıl ekleneceği gösterilmektedir `TapGestureRecognizer` dört nesnelere `BoxView` taklit bir oyun oluşturmak için öğeleri:
+[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Oluşturur [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) olayları. [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap) program nasıl ekleneceği gösterilmektedir `TapGestureRecognizer` dört nesnelere `BoxView` taklit bir oyun oluşturmak için öğeleri:
 
-[![Üçlü ekran görüntüsü monkey dokunun](images/ch08fg07-small.png "kopya oyun")](images/ch08fg07-large.png#lightbox "kopya oyun")
+[![Üç ekran görüntüsü monkey dokunun](images/ch08fg07-small.png "kopya oyun")](images/ch08fg07-large.png#lightbox "kopya oyunu")
 
 Ancak **MonkeyTap** programın gerçekten ses gerekiyor. (Bkz [sonraki bölümde](chapter09.md).)
 
@@ -81,4 +81,4 @@ Ancak **MonkeyTap** programın gerçekten ses gerekiyor. (Bkz [sonraki bölümde
 
 - [Bölüm 8 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
 - [Bölüm 8 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
-- [Bölüm 8 F # örnek](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
+- [Bölüm 8'de F # örnek](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)

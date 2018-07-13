@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: c423c6f6f6bae829781fb13b405ad0d5bcf7128e
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: 43a681350035c3e965798bd63f49cd39f472ebfd
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986115"
+ms.locfileid: "38998422"
 ---
 # <a name="windows-platform-specifics"></a>Windows Platform özellikleri
 
@@ -21,7 +21,7 @@ _Platform özellikleri, özel oluşturucu veya efekt uygulama olmadan yalnızca 
 Xamarin.Forms, Evrensel Windows Platformu (UWP üzerinde), aşağıdaki platform özellikleri içerir:
 
 - Araç çubuğu yerleştirme seçeneklerini ayarlama. Daha fazla bilgi için [sayfası araç çubuğu yerleştirme değiştirme](#toolbar_placement).
-- Daraltma [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) gezinti çubuğu. Daha fazla bilgi için [MasterDetailPage gezinti çubuğu daraltma](#collapsable_navigation_bar).
+- Daraltma [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) gezinti çubuğu. Daha fazla bilgi için [MasterDetailPage gezinti çubuğu daraltma](#collapsable_navigation_bar).
 - Etkinleştirme bir [ `WebView` ](xref:Xamarin.Forms.WebView) UWP iletisi iletişim kutusunda JavaScript uyarıları görüntülemek için. Daha fazla bilgi için [JavaScript uyarıları görüntüleme](#webview-javascript-alert).
 - Etkinleştirme bir [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) yazım denetimi altyapısıyla etkileşim kurmak için. Daha fazla bilgi için [etkinleştirmek SearchBar yazım denetimi](#searchbar-spellcheck).
 - Metin içeriğini okuma düzenini algılama [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), ve [ `Label` ](xref:Xamarin.Forms.Label) örnekleri. Daha fazla bilgi için [algılama okuma düzeni içeriğinden](#inputview-readingorder).
@@ -34,7 +34,7 @@ Xamarin.Forms, Evrensel Windows Platformu (UWP üzerinde), aşağıdaki platform
 
 ## <a name="changing-the-page-toolbar-placement"></a>Sayfa araç çubuğu yerleştirme değiştirme
 
-Bu platforma özel bir araç çubuğu yerleşimini değiştirmek için kullanılan bir [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)ve XAML içinde ayarlayarak tüketilen [ `Page.ToolbarPlacement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty/) ekli özellik değerine [ `ToolbarPlacement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) sabit listesi:
+Bu platforma özel bir araç çubuğu yerleşimini değiştirmek için kullanılan bir [ `Page` ](xref:Xamarin.Forms.Page)ve XAML içinde ayarlayarak tüketilen [ `Page.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) ekli özellik değerine [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) sabit listesi:
 
 ```xaml
 <TabbedPage ...
@@ -54,9 +54,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 ```
 
-`Page.On<Windows>` Yöntemini belirtir bu platforma özgü yalnızca Windows üzerinde çalışır. [ `Page.SetToolbarPlacement` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) araç çubuğu yerleştirme kümesi için kullanılan ad alanı, [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) numaralandırma sağlama üç değer: [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default), [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top), ve [ `Bottom` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom).
+`Page.On<Windows>` Yöntemini belirtir bu platforma özgü yalnızca Windows üzerinde çalışır. [ `Page.SetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) araç çubuğu yerleştirme kümesi için kullanılan ad alanı, [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) numaralandırma sağlama üç değer: [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default), [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top), ve [ `Bottom` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom).
 
-Belirtilen araç çubuğu yerleştirme uygulandığı sonucudur [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) örneği:
+Belirtilen araç çubuğu yerleştirme uygulandığı sonucudur [ `Page` ](xref:Xamarin.Forms.Page) örneği:
 
 [![](windows-images/toolbar-placement.png "Araç çubuğu yerleştirme platforma özgü")](windows-images/toolbar-placement-large.png#lightbox "araç çubuğu yerleştirme platforma özgü")
 
@@ -64,7 +64,7 @@ Belirtilen araç çubuğu yerleştirme uygulandığı sonucudur [ `Page` ](https
 
 ## <a name="collapsing-a-masterdetailpage-navigation-bar"></a>Daraltma MasterDetailPage gezinti çubuğu
 
-Bu platforma özgü gezinti çubuğunun üzerindeki daraltmak için kullanılan bir [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)ve XAML içinde ayarlayarak tüketilen [ `MasterDetailPage.CollapseStyle` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty/) ve [ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty/)iliştirilmiş özellikler:
+Bu platforma özgü gezinti çubuğunun üzerindeki daraltmak için kullanılan bir [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)ve XAML içinde ayarlayarak tüketilen [ `MasterDetailPage.CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty) ve [ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty)iliştirilmiş özellikler:
 
 ```xaml
 <MasterDetailPage ...
@@ -86,9 +86,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetCollapseStyle(CollapseStyle.Partial).CollapsedPaneWidth(148);
 ```
 
-`MasterDetailPage.On<Windows>` Yöntemini belirtir bu platforma özgü yalnızca Windows üzerinde çalışır. [ `Page.SetCollapseStyle` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/) ad alanı, Daralt stilini belirtmek için kullanılan [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) iki sağlama numaralandırması değerler: [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full) ve [ `Partial` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial). [ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/System.Double/) Yöntemi kısmen daraltılmış gezinti çubuğunun genişliğini belirtmek için kullanılır.
+`MasterDetailPage.On<Windows>` Yöntemini belirtir bu platforma özgü yalnızca Windows üzerinde çalışır. [ `Page.SetCollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) ad alanı, Daralt stilini belirtmek için kullanılan [ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle) iki sağlama numaralandırması değerler: [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full) ve [ `Partial` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial). [ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},System.Double)) Yöntemi kısmen daraltılmış gezinti çubuğunun genişliğini belirtmek için kullanılır.
 
-Sonuç belirtilen olan [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) uygulanan [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) örneğiyle aynı zamanda belirtilen genişlik:
+Sonuç belirtilen olan [ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle) uygulanan [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) örneğiyle aynı zamanda belirtilen genişlik:
 
 [![](windows-images/collapsed-navigation-bar.png "Gezinti çubuğu platforma özgü daraltılmış")](windows-images/collapsed-navigation-bar-large.png#lightbox "daraltılmış gezinti çubuğu platforma özgü")
 
@@ -450,4 +450,4 @@ Bu makalede Windows platform Xamarin.Forms içinde oluşturulmuş özellikleri k
 
 - [Platform Özellikleri Oluşturma](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (örnek)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [WindowsSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)
+- [WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

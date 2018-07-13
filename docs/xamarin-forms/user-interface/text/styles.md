@@ -1,31 +1,31 @@
 ---
 title: Xamarin.Forms metin stilleri
-description: Bu makalede açıklanır stil metin Xamarin.Forms uygulamalarında nasıl. Stilleri kez tanımlanmış ve çok sayıda görünümleri tarafından kullanılan, ancak bir stil yalnızca bir tür görünümlerle kullanılabilir.
+description: Bu makalede açıklanır Xamarin.Forms uygulamalarında stil metin öğreneceksiniz. Stilleri çok kez tanımlanmış ve çok sayıda görünümleri tarafından kullanılan, ancak bir stil yalnızca tek bir görünüm ile kullanılabilir.
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: b8cc6493c3574180e7938050075c5a70ecebeebf
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 73aa3115e92d1e3954f5ae3eb8dcb84abf9d9efb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245328"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998774"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms metin stilleri
 
-_Xamarin.Forms stil metni_
+_Xamarin.Forms içinde stil metin_
 
-Stilleri etiketleri, girişleri ve düzenleyiciler görünümünü ayarlamak için kullanılabilir. Stilleri kez tanımlanmış ve çok sayıda görünümleri tarafından kullanılan, ancak bir stil yalnızca bir tür görünümlerle kullanılabilir.
+Stilleri, etiketler, girdileri ve düzenleyicileri görünümünü ayarlamak için kullanılabilir. Stilleri çok kez tanımlanmış ve çok sayıda görünümleri tarafından kullanılan, ancak bir stil yalnızca tek bir görünüm ile kullanılabilir.
 Stilleri verilebilir bir `Key` ve seçmeli olarak belirli bir denetimin kullanılarak uygulanan `Style` özelliği.
 
 <a name="Built-In_Styles" />
 
 ## <a name="built-in-styles"></a>Yerleşik stilleri
 
-Xamarin.Forms içeren birkaç [yerleşik](http://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/) stilleri ortak senaryolar için:
+Xamarin.Forms içeren birkaç [yerleşik](xref:Xamarin.Forms.Device.Styles) sık karşılaşılan senaryolara yönelik stilleri:
 
 - `BodyStyle`
 - `CaptionStyle`
@@ -34,7 +34,7 @@ Xamarin.Forms içeren birkaç [yerleşik](http://developer.xamarin.com/api/type/
 - `SubtitleStyle`
 - `TitleStyle`
 
-Yerleşik stilleri birini uygulamak için kullanmak `DynamicResource` biçimlendirme uzantısı stilini belirlemek için:
+Yerleşik stil uygulamak için kullanma `DynamicResource` stilini belirtmek için işaretleme uzantısı:
 
 ```xaml
 <Label Text="I'm a Title" Style="{DynamicResource TitleStyle}"/>
@@ -50,11 +50,11 @@ label.Style = Device.Styles.TitleStyle;
 
 <a name="Custom_Styles" />
 
-## <a name="custom-styles"></a>Özel stiller
+## <a name="custom-styles"></a>Özel stilleri
 
-Stilleri ayarlayıcıları oluşur ve özellik değerleri olarak ayarlanır ve ayarlayıcılar özelliklerini oluşur.
+Ayarlayıcıları stilleri oluşur ve ayarlayıcılar özelliklerini oluşur ve özelliklerini değerleri olarak ayarlanır.
 
-C# ' ta boyutu 30 kırmızı metinle bir etiket için özel bir stil şu şekilde tanımlanır:
+C# ' ta boyutu 30 kırmızı metni içeren bir etiket için özel bir stil şu şekilde tanımlanır:
 
 ```csharp
 var LabelStyle = new Style (typeof(Label)) {
@@ -67,7 +67,7 @@ var LabelStyle = new Style (typeof(Label)) {
 var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 ```
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <ContentPage.Resources>
@@ -86,17 +86,17 @@ XAML'de:
 </ContentPage.Content>
 ```
 
-Kaynaklar (tüm stilleri dahil) içinde tanımlanan Not `ContentPage.Resources`, daha tanıdık eşdüzey olduğu `ContentPage.Content` öğesi.
+Kaynakları (tüm stilleri dahil) içinde tanımlandığına dikkat edin `ContentPage.Resources`, daha tanıdık bir eşdüzeyi olduğu `ContentPage.Content` öğesi.
 
-![](styles-images/customstyle.png "Özel stiller örneği")
+![](styles-images/customstyle.png "Özel stilleri örneği")
 
 <a name="Applying_Styles" />
 
 ## <a name="applying-styles"></a>Stil Uygulama
 
-Stil oluşturulduktan sonra tüm görünüm eşleşen uygulanabilir kendi `TargetType`.
+Bir stil oluşturulduktan sonra eşleşen görünüm uygulanabilir kendi `TargetType`.
 
-XAML'de sağlayarak özel stiller görünümlerine uygulanan kendi `Style` özelliği ile bir `StaticResource` gerekli stili başvuran biçimlendirme uzantısı:
+XAML içinde sağlayarak özel stilleri görünümlerine uygulanan kendi `Style` özelliğiyle bir `StaticResource` gerekli stili başvuran işaretleme uzantısı:
 
 ```xaml
 <Label Text="Check out my style." Style="{StaticResource LabelStyle}" />
@@ -108,14 +108,14 @@ C# ' ta stilleri ya da doğrudan bir görünüme uygulanan veya için eklenebili
 var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 ```
 
-Ekleme ve sayfanın almak için `ResourceDictionary`:
+Ekleme ve sayfa almak için `ResourceDictionary`:
 
 ```csharp
 this.Resources.Add ("LabelStyle", LabelStyle);
 label.Style = (Style)Resources["LabelStyle"];
 ```
 
-Erişilebilirlik ayarlarını yanıt gerektiğinden yerleşik stiller farklı uygulanır. XAML yerleşik stilleri uygulamak için `DynamicResource` biçimlendirme uzantısı kullanılır:
+Erişilebilirlik ayarlarını yanıt gerektiği için yerleşik stilleri farklı şekilde uygulanır. XAML, yerleşik stilleri uygulamak için `DynamicResource` işaretleme uzantısı kullanılır:
 
 ```xaml
 <Label Text="I'm a Title" Style="{DynamicResource TitleStyle}"/>
@@ -129,24 +129,24 @@ label.Style = Device.Styles.TitleStyle;
 
 ## <a name="accessibility"></a>Erişilebilirlik
 
-Erişilebilirlik tercihleri saygı kolaylaştırmak için yerleşik stilleri yok. Bir kullanıcı erişilebilirlik tercihlerine uygun şekilde ayarlarsa yerleşik stilleri birini kullanırken, yazı tipi boyutlarını otomatik olarak artacaktır.
+Erişilebilirlik tercihlerini saygı daha kolay hale getirmek için yerleşik stilleri yok. Bir kullanıcı Erişilebilirlik tercihlerini uygun şekilde ayarlaması durumunda yerleşik stilleri birini kullanırken, yazı tipi boyutlarını otomatik olarak artırır.
 
-Aşağıdaki örnek etkin ve devre dışı erişilebilirlik ayarlarla yerleşik stilleri ile biçimlendirilmiş görünümleri aynı sayfasının göz önünde bulundurun:
+Aşağıdaki örnek, aynı sayfa etkin ve devre dışı erişilebilirlik ayarlarla yerleşik stilleri ile biçimlendirilmiş görünümlerinin göz önünde bulundurun:
 
 Devre dışı:
 
-![](styles-images/pre-access.png "Erişilebilirlik devre dışı aygıt stilleri")
+![](styles-images/pre-access.png "Cihaz stilleri ile erişilebilirlik devre dışı bırakıldı")
 
 Etkin:
 
-![](styles-images/post-access.png "Etkin Erişilebilirlik ile cihaz stilleri")
+![](styles-images/post-access.png "Cihaz stilleri Etkin Erişilebilirlik")
 
-Erişilebilirlik emin olmak için uygulamanızın içinde metin ilgili stilleri için yerleşik stilleri temeli olarak kullanılır ve stiller tutarlı bir şekilde kullanıyorsanız emin olun. Bkz: [stilleri](~/xamarin-forms/user-interface/styles/index.md) genişletme ve genel stilleri ile çalışma hakkında daha fazla bilgi.
+Erişilebilirlik için uygulamanızın içinde herhangi bir metin ile ilgili stilleri için yerleşik stilleri temeli olarak kullanılır ve stilleri tutarlı bir şekilde kullanıyorsanız emin olun. Bkz: [stilleri](~/xamarin-forms/user-interface/styles/index.md) genişletme ve genel stilleri ile çalışma hakkında daha fazla bilgi.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bölüm 12 Xamarin.Forms ile mobil uygulamaları oluşturma](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
+- [12. Bölüm Xamarin.Forms ile mobil uygulamalar oluşturma](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [Stiller](~/xamarin-forms/user-interface/styles/index.md)
 - [Metin (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [stili](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
+- [Stil](xref:Xamarin.Forms.Style)

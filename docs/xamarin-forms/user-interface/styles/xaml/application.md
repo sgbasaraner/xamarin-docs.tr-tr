@@ -1,28 +1,28 @@
 ---
-title: Xamarin.Forms genel stilleri
-description: Stilleri genel uygulamanın kaynak sözlüğüne ekleyerek kullanılabilir hale getirilebilir. Bu sayfalar veya denetimleri boyunca stilleri yinelenmesini önlemek için yardımcı olur.
+title: Xamarin.Forms içinde genel stiller
+description: Stilleri genel olarak uygulamanın kaynak sözlüğüne ekleyerek kullanılabilir hale getirilebilir. Bu çoğaltma stil sayfaları veya denetimler arasında kaçınmaya yardımcı olur.
 ms.prod: xamarin
 ms.assetid: BDC65F82-65E0-4C8E-BB91-8E340EB2D15A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: c5ce0f3e4ff906f9bdef06e605e71d4ed64d2a68
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e7b2a37b868ea03ca626ffd2dcddb006a235b0cc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245354"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995407"
 ---
-# <a name="global-styles-in-xamarinforms"></a>Xamarin.Forms genel stilleri
+# <a name="global-styles-in-xamarinforms"></a>Xamarin.Forms içinde genel stiller
 
-_Stilleri genel uygulamanın kaynak sözlüğüne ekleyerek kullanılabilir hale getirilebilir. Bu sayfalar veya denetimleri boyunca stilleri yinelenmesini önlemek için yardımcı olur._
+_Stilleri genel olarak uygulamanın kaynak sözlüğüne ekleyerek kullanılabilir hale getirilebilir. Bu çoğaltma stil sayfaları veya denetimler arasında kaçınmaya yardımcı olur._
 
-## <a name="creating-a-global-style-in-xaml"></a>XAML'de genel bir stil oluşturma
+## <a name="creating-a-global-style-in-xaml"></a>XAML içinde genel bir stil oluşturma
 
-Varsayılan olarak, bir şablondan oluşturulan tüm Xamarin.Forms uygulamaların kullanmak **uygulama** uygulamak için sınıf [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/) bir alt kümesi. Bildirmek için bir [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) uygulama düzeyinde uygulamanın [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) XAML, varsayılan kullanılarak **uygulama** XAML ile sınıfı değiştirildi **Uygulama** sınıfı ve ilişkili arka plan kodu. Daha fazla bilgi için bkz: [uygulama sınıfıyla çalışan](~/xamarin-forms/app-fundamentals/application-class.md).
+Varsayılan olarak, bir şablondan oluşturulan tüm Xamarin.Forms uygulamaları kullanın **uygulama** uygulamak için sınıfı [ `Application` ](xref:Xamarin.Forms.Application) öğesinin alt sınıfı. Bildirmek için bir [ `Style` ](xref:Xamarin.Forms.Style) içinde uygulamanın uygulama düzeyinde [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) kullanarak XAML, varsayılan **uygulama** ile bir XAML sınıf değiştirildi **Uygulama** sınıfı ve ilişkili arka plan kod. Daha fazla bilgi için [uygulama sınıfıyla çalışan](~/xamarin-forms/app-fundamentals/application-class.md).
 
-Aşağıdaki örnekte gösterildiği kod bir [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) uygulama düzeyinde bildirilen:
+Aşağıdaki kod örnekte gösterildiği bir [ `Style` ](xref:Xamarin.Forms.Style) uygulama düzeyinde bildirilen:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.App">
@@ -42,9 +42,9 @@ Aşağıdaki örnekte gösterildiği kod bir [ `Style` ](https://developer.xamar
 </Application>
 ```
 
-Bu [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) tek bir tanımlar *açık* stili `buttonStyle`, hangi görünümünü ayarlamak için kullanılacak [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) örnekleri. Ancak, genel stiller olabilir *açık* veya *örtük*.
+Bu [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) tek bir tanımlar *açık* stili `buttonStyle`, hangi görünümünü ayarlamak için kullanılacak [ `Button` ](xref:Xamarin.Forms.Button) örnekleri. Ancak, genel stiller olabilir *açık* veya *örtük*.
 
-Aşağıdaki kod örneğinde XAML uygulama sayfası gösterilir `buttonStyle` sayfanın için [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) örnekleri:
+Aşağıdaki kod örneği bir XAML sayfası uygulama gösterir `buttonStyle` sayfanın için [ `Button` ](xref:Xamarin.Forms.Button) örnekleri:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" Icon="xaml.png">
@@ -58,15 +58,15 @@ Aşağıdaki kod örneğinde XAML uygulama sayfası gösterilir `buttonStyle` sa
 </ContentPage>
 ```
 
-Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
+Bu, aşağıdaki ekran görüntülerinde gösterilen görünümünü sonuçlanır:
 
 [![](application-images/application-styles-1.png "Genel stiller örnek")](application-images/application-styles-1-large.png#lightbox "genel stiller örneği")
 
-Bir sayfanın içinde stilleri oluşturma hakkında bilgi için [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), bkz: [açık stilleri](~/xamarin-forms/user-interface/styles/explicit.md) ve [örtülü stiller](~/xamarin-forms/user-interface/styles/implicit.md).
+Stilleri bir sayfanın içinde oluşturma hakkında bilgi için [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), bkz: [açık stiller](~/xamarin-forms/user-interface/styles/explicit.md) ve [örtük stilleri](~/xamarin-forms/user-interface/styles/implicit.md).
 
 ### <a name="overriding-styles"></a>Stilleri geçersiz kılma
 
-Stilleri görünüm hiyerarşinin alt düzeylerindeki yukarı yüksek tanımlanan önceliklidir. Örneğin, bir [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) ayarlayan [ `Button.TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.TextColor/) için `Red` uygulamayı düzeyi ayarlar bir sayfa düzeyi stili tarafından geçersiz kılınacaktır `Button.TextColor` için`Green`. Benzer şekilde, sayfa düzeyi stili denetim düzeyi stili tarafından geçersiz kılınacaktır. Ayrıca, varsa `Button.TextColor` doğrudan bir denetim özelliği bu sürer öncelik herhangi stillerin ayarlanmadı. Bu öncelik aşağıdaki kod örneğinde gösterilmiştir:
+Görünüm hiyerarşide daha düşük stilleri ayarlama yüksek tanımlanmış önceliklidir. Örneğin, bir [ `Style` ](xref:Xamarin.Forms.Style) ayarlayan [ `Button.TextColor` ](xref:Xamarin.Forms.Button.TextColor) için `Red` uygulamayı düzeyini ayarlayan bir sayfa düzeyi stil tarafından geçersiz kılınır `Button.TextColor` için`Green`. Benzer şekilde, sayfa düzeyi stili bir denetim düzeyi stili tarafından geçersiz kılınır. Ayrıca, varsa `Button.TextColor` doğrudan bir denetim özelliği, bu götürür öncelik stilleri üzerinde ayarlanmış. Bu öncelik aşağıdaki kod örneğinde gösterilmiştir:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" Icon="xaml.png">
@@ -96,13 +96,13 @@ Stilleri görünüm hiyerarşinin alt düzeylerindeki yukarı yüksek tanımlana
 </ContentPage>
 ```
 
-Özgün `buttonStyle`, uygulama düzeyinde tanımlanan, tarafından geçersiz kılınır `buttonStyle` sayfa düzeyinde tanımlanan örneği. Ayrıca, sayfa düzeyi stili denetim düzeyi tarafından geçersiz kılınmış `buttonStyle`. Bu nedenle, [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) örnekleri aşağıdaki ekran görüntülerinde gösterildiği gibi mavi metinle görüntülenir:
+Özgün `buttonStyle`, uygulama düzeyinde tanımlanan, tarafından geçersiz kılınır `buttonStyle` sayfa düzeyinde tanımlanan örneği. Ayrıca, sayfa düzeyi stili denetim düzeyi tarafından geçersiz kılındı `buttonStyle`. Bu nedenle, [ `Button` ](xref:Xamarin.Forms.Button) örnekleri aşağıdaki ekran görüntülerinde gösterildiği mavi metinle görüntülenir:
 
 [![](application-images/application-styles-2.png "Stilleri örnek geçersiz kılma")](application-images/application-styles-2-large.png#lightbox "stilleri örnek geçersiz kılma")
 
 ## <a name="creating-a-global-style-in-c35"></a>C'de genel bir stil oluşturma&#35;
 
-[`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) örnek uygulamanın eklenebilir [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) yeni oluşturarak koleksiyonu C# [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)ve ardından ekleyerek `Style` için örnekler `ResourceDictionary`, olarak Aşağıdaki kod örneğinde gösterildiği:
+[`Style`](xref:Xamarin.Forms.Style) uygulamanın örnekleri eklenebilir [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) oluşturarak yeni bir C# koleksiyonu [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ve ardından ekleyerek `Style` için örnekler `ResourceDictionary`, olarak Aşağıdaki kod örneğinde gösterilen:
 
 ```csharp
 public class App : Application
@@ -124,9 +124,9 @@ public class App : Application
 }
 ```
 
-Tek bir oluşturucu tanımlar *açık* uygulamak için stil [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) örnek uygulama boyunca. *Açık* [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) örnekleri eklenir [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) kullanarak [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ResourceDictionary.Add/p/System.String/System.Object/) yöntemi, bir belirtme`key`başvurmak için dize `Style` örneği. `Style` Örneği ardından uygulanabilir uygulamadaki doğru türde herhangi bir denetim. Ancak, genel stiller olabilir *açık* veya *örtük*.
+Tek bir oluşturucu tanımlar *açık* stil uygulamak için [ `Button` ](xref:Xamarin.Forms.Button) örnek uygulama boyunca. *Açık* [ `Style` ](xref:Xamarin.Forms.Style) örnekleri eklenir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) kullanarak [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) yöntemi, bir belirtme`key`başvurmak için dize `Style` örneği. `Style` Örneği ardından uygulanabilir uygulamadaki doğru türde herhangi bir denetim. Ancak, genel stiller olabilir *açık* veya *örtük*.
 
-Aşağıdaki kod örneği, bir C# sayfa uygulama gösterir `buttonStyle` sayfanın için [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) örnekleri:
+Aşağıdaki kod örneği, bir C# sayfa uygulama gösterir `buttonStyle` sayfanın için [ `Button` ](xref:Xamarin.Forms.Button) örnekleri:
 
 ```csharp
 public class ApplicationStylesPageCS : ContentPage
@@ -146,19 +146,19 @@ public class ApplicationStylesPageCS : ContentPage
 }
 ```
 
-`buttonStyle` Uygulanan [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) ayarlayarak örnekleri kendi [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) özelliklerini ve görünümünü denetler `Button` örnekleri.
+`buttonStyle` Uygulanan [ `Button` ](xref:Xamarin.Forms.Button) ayarlayarak örnekleri kendi [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) özellikleri ve görünümünü denetler `Button` örnekleri.
 
 ## <a name="summary"></a>Özet
 
-Stilleri kullanılabilir hale getirebilir genel olarak uygulamanın ekleyerek [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). Bu sayfalar veya denetimleri boyunca stilleri yinelenmesini önlemek için yardımcı olur.
+Stilleri kullanılabilir hale genel olarak uygulamanın ekleyerek [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Bu çoğaltma stil sayfaları veya denetimler arasında kaçınmaya yardımcı olur.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Temel stilleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+- [Basit stiller (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Stilleri (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [stili](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Ayarlama](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Stil](xref:Xamarin.Forms.Style)
+- [Ayarlayıcı](xref:Xamarin.Forms.Setter)

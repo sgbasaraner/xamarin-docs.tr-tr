@@ -1,55 +1,55 @@
 ---
 title: Xamarin.Forms BoxView
-description: Bu makalede, düzenleme, grafik ve bir Xamarin.Forms uygulaması etkileşim için renkli bir dikdörtgen kullanımı açıklanmaktadır.
+description: Bu makalede, düzenleme, grafik ve bir Xamarin.Forms uygulaması etkileşiminde renkli bir dikdörtgen kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 0a99845b23ee32a00a6894ef60988e61e361805e
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: 813a913c2c2fb27456c9a489c73b16d5892c4b8d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209251"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997058"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
-[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) belirtilen genişlik, yükseklik ve renk basit bir dikdörtgen işler. Kullanabileceğiniz `BoxView` decoration, ilkel grafik ve dokunma aracılığıyla kullanıcıyla etkileşim için.
+[`BoxView`](xref:Xamarin.Forms.BoxView) belirtilen genişlik, yükseklik ve renk basit bir dikdörtgen çizer. Kullanabileceğiniz `BoxView` düzenleme ilkel grafikler ve dokunma aracılığıyla kullanıcı etkileşimi.
 
-Xamarin.Forms yerleşik vektör grafik sistemi olmadığından `BoxView` dengelemek için yardımcı olur. Bu makale kullanımda açıklanan örnek programların bazıları `BoxView` işleme grafikler için. `BoxView` Belirli genişlik ve kalınlığı kolu benzeyecek şekilde boyutlandırılmış ve tüm Açı kullanarak Döndürülmüş `Rotation` özelliği.
+Xamarin.Forms yerleşik vektör grafik sistemi olmadığından `BoxView` dengelemek için yardımcı olur. Bu makalede kullanımda açıklanan örnek programlardan bazıları `BoxView` için grafik işleme. `BoxView` Belirli genişlik ve kalınlığını satırının benzeyecek şekilde boyutlandırıldığından ve ardından istediğiniz açı kullanarak Döndürülmüş `Rotation` özelliği.
 
-Ancak `BoxView` basit grafik taklit edebilirsiniz, araştırmak isteyebileceğiniz [kullanarak SkiaSharp Xamarin.Forms içinde](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) daha karmaşık grafik gereksinimleri için.
+Ancak `BoxView` basit grafikler taklit, araştırmak isteyebileceğiniz [Xamarin.Forms içinde SkiaSharp kullanma](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) daha karmaşık grafik gereksinimleri.
 
-Bu makalede aşağıdaki konular ele alınmıştır:
+Bu makalede, aşağıdaki konular ele alınmaktadır:
 
 - **[BoxView rengini ve boyutunu ayarlama](#colorandsize)**  &ndash; ayarlamak `BoxView` özellikleri.
-- **[İşleme metin düzenlemelerinin](#textdecorations)**  &ndash; kullanan bir `BoxView` işleme satırlar için.
-- **[BoxView renklerle listeleme](#listingcolors)**  &ndash; tüm sistem renkleri görüntüleme bir `ListView`.
-- **[Oyun yaşam sınıflara BoxView tarafından çalma](#subclassing)**  &ndash; ünlü bir cep telefonu automaton uygulayın.
-- **[Sayısal bir saat oluşturma](#digitalclock)**  &ndash; iğneli görüntü benzetimi.
+- **[Metin süslemeleri işleme](#textdecorations)**  &ndash; kullanan bir `BoxView` işleme satırlar için.
+- **[BoxView renklerle listeleme](#listingcolors)**  &ndash; tüm sistem renkleri görüntülemek bir `ListView`.
+- **[Yaşam sınıflara BoxView tarafından oyun oynama](#subclassing)**  &ndash; ünlü bir hücresel Otomasyon uygulayın.
+- **[Bir Dijital saat oluşturma](#digitalclock)**  &ndash; iğneli görünen benzetimi.
 - **[Bir Analog saati oluşturarak](#analogclock)**  &ndash; dönüştürme ve animasyon `BoxView` öğeleri.
 
 <a name="colorandsize" />
 
-## <a name="setting-boxview-color-and-size"></a>Ayar BoxView renk ve boyutu
+## <a name="setting-boxview-color-and-size"></a>Ayar BoxView rengini ve boyutunu
 
-Aşağıdaki üç özelliklerini çok sık ayarlarız `BoxView`:
+Çok sık aşağıdaki üç özelliklerini ayarlarsınız `BoxView`:
 
-- [`Color`](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) rengini ayarlamak için.
-- [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) genişliğini ayarlamak için `BoxView` CİHAZDAN bağımsız birimler.
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) yüksekliğini ayarlamak için `BoxView`.
+- [`Color`](xref:Xamarin.Forms.BoxView.Color) rengini ayarlamak için.
+- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) genişliğini ayarlamak için `BoxView` CİHAZDAN bağımsız birimler.
+- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) yüksekliğini ayarlanacak `BoxView`.
 
-`Color` Özelliği türüdür `Color`; özelliği için ayarlanabilir `Color` değeri alfabetik olarak arasında değişen renkleri adlı statik 141 salt okunur alanları da dahil olmak üzere `AliceBlue` için `YellowGreen`.
+`Color` Özelliği türüdür `Color`; herhangi bir özellik ayarlanabilir `Color` 141 statik salt okunur alanları dahil olmak üzere adlandırılmış renkler alfabetik olarak arasında değişen değeri, `AliceBlue` için `YellowGreen`.
 
-`WidthRequest` Ve `HeightRequest` özellikleri, bir rol yalnızca yürütmek `BoxView` olan *Kısıtlanmamış* düzeni. Düzen kapsayıcı alt kullanıcının boyut, örneğin, ne zaman bilmek gerektiğinde bu durumda `BoxView` otomatik ölçekli bir hücreye alt `Grid` düzeni. A `BoxView` de Kısıtlanmamış olduğunda kendi `HorizontalOptions` ve `VerticalOptions` özellikler ayarlanır değerlere dışında `LayoutOptions.Fill`. Varsa `BoxView` Kısıtlanmamış, olan ancak `WidthRequest` ve `HeightRequest` özellikleri ayarlı değil, sonra genişliği veya yüksekliği 40 birimleri ya da yaklaşık 1/4 inç mobil cihazlarda varsayılan değerlere ayarlanır.
+`WidthRequest` Ve `HeightRequest` özellikleri, bir rolü yalnızca yürütmek `BoxView` olduğu *sınırlandırılmamış* düzeni. Düzen kapsayıcısının alt kullanıcının boyutu, örneğin, ne zaman bilmek gerektiğinde bu durumda `BoxView` otomatik boyutlu bir hücreye alt `Grid` düzeni. A `BoxView` da sınırlandırılmamış olduğunda kendi `HorizontalOptions` ve `VerticalOptions` özellikleri ayarlanır değerlere dışında `LayoutOptions.Fill`. Varsa `BoxView` sınırlandırılmamış, olan ancak `WidthRequest` ve `HeightRequest` özellikleri ayarlanmadı, ardından genişliği veya yüksekliği 40 birimleri veya yaklaşık 1/4 inç mobil cihazlarda varsayılan değerlere ayarlanır.
 
-`WidthRequest` Ve `HeightRequest` varsa özelliklerini göz ardı `BoxView` olan *kısıtlı* içinde durumu seçilebilir uygular, kendi boyutu üzerinde düzeninde `BoxView`.
+`WidthRequest` Ve `HeightRequest` özellikleri yok sayılır varsa `BoxView` olduğu *kısıtlı* içinde çalışması Düzen kapsayıcısı uygular, kendi boyutu üzerinde düzeninde `BoxView`.
 
-A `BoxView` bir boyuttaki kısıtlı ve diğer Kısıtlanmamış. Örneğin, varsa `BoxView` dikey alt `StackLayout`, dikey boyutunu `BoxView` olan Kısıtlanmamış ve yatay boyut genellikle sınırlı değildir. Ancak bu yatay boyut için özel durumlar: varsa `BoxView` sahip kendi `HorizontalOptions` özelliği için bir şeyler dışında ayarlanmış `LayoutOptions.Fill`, yatay boyut da Kısıtlanmamış ise. Ayrıca mümkündür `StackLayout` kendisini bir Kısıtlanmamış yatay boyut; bu durumda olmasını `BoxView` yatay Kısıtlanmamış olacaktır.
+A `BoxView` kısıtlı bir boyut ve diğerinde sınırlandırılmamış. Örneğin, varsa `BoxView` dikey alt `StackLayout`, dikey boyutunu `BoxView` olduğu sınırlandırılmamış ve yatay, boyutu genellikle kısıtlanmış. Yatay o boyut için özel durumlar vardır, ancak: varsa `BoxView` sahip kendi `HorizontalOptions` özelliği dışında bir şeye ayarlanmış `LayoutOptions.Fill`, yatay boyutun da sınırlandırılmamış kaldırılır. De mümkündür `StackLayout` sınırlandırılmamış yatay boyut, bu durumda sahip kendisine `BoxView` yatay sınırlandırılmamış olacaktır.
 
-[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView) örnek bir tane inç-Kısıtlanmamış kare görüntüler `BoxView` kendi sayfası Center'da:
+[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView) örnek bir tek inç-sınırlandırılmamış kare görüntüler `BoxView` öğelerinden biri:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -66,21 +66,21 @@ A `BoxView` bir boyuttaki kısıtlı ve diğer Kısıtlanmamış. Örneğin, var
 </ContentPage>
 ```
 
-Sonuç şöyledir:
+Sonuç şu şekildedir:
 
 [![Temel BoxView](boxview-images/basicboxview-small.png "temel BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
-Varsa `VerticalOptions` ve `HorizontalOptions` özellikler kaldırılma `BoxView` etiketi veya şekilde ayarlanmış `Fill`, sonra `BoxView` sayfa boyutu tarafından kısıtlı olur ve sayfayı doldurmak için genişletir.
+Varsa `VerticalOptions` ve `HorizontalOptions` özellikler kaldırılma `BoxView` etiketi veya ayarlandığından `Fill`, ardından `BoxView` sayfa boyutu tarafından kısıtlanmış olur ve sayfa dolduracak şekilde genişletilir.
 
-A `BoxView` ayrıca bir alt öğesi olarak bir `AbsoluteLayout`. Bu durumda, konum ve boyutunun `BoxView` kullanılarak ayarlanan `LayoutBounds` bağlanabilirse özelliği eklenmiş. `AbsoluteLayout` Makalesinde açıklanan [ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
+A `BoxView` ayrıca bir alt öğesi olarak bir `AbsoluteLayout`. Bu durumda, konumunu ve boyutunu `BoxView` kullanılarak ayarlanan `LayoutBounds` bağlanılabilir özellik bağlı. `AbsoluteLayout` Makalesinde açıklanan [ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
 
-Tüm bu durumlarda izleyin örnek programlar örnekleri görürsünüz.
+Tüm bu durumlarda izleyen örnek programlardan örnekler göreceksiniz.
 
 <a name="textdecorations" />
 
-## <a name="rendering-text-decorations"></a>Metin düzenlemelerinin işleme
+## <a name="rendering-text-decorations"></a>Metin süslemeleri işleme
 
-Kullanabileceğiniz `BoxView` sayfalarınızda yatay ve dikey çizgileri form üzerinde bazı basit düzenlemelerinin eklemek için. [ **TextDecoration** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration) örnek bu gösterir. Programın görselleri tümünün içinde tanımlanan **MainPage.xaml** birkaç içeren dosya `Label` ve `BoxView` öğelerinde `StackLayout` burada gösterilen:
+Kullanabileceğiniz `BoxView` bazı basit düzenlemelerini yatay ve dikey çizgileri biçiminde sayfalarınıza eklemek için. [ **TextDecoration** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration) örnek bunu gösterir. Tüm programın görsellerin tanımlanan **MainPage.xaml** birkaç içeren dosya `Label` ve `BoxView` öğelerinde `StackLayout` burada gösterilen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -111,11 +111,11 @@ Kullanabileceğiniz `BoxView` sayfalarınızda yatay ve dikey çizgileri form ü
 </ContentPage>
 ```
 
-Aşağıdaki biçimlendirme alt öğelerinin tümü `StackLayout`. Bu biçimlendirme birçok türdeki dekoratif oluşur `BoxView` ile kullanılan öğeleri `Label` öğe:
+Alt öğesi izleyen biçimlendirme tümü `StackLayout`. Bu biçimlendirme dekoratif, çeşitli oluşur `BoxView` ile kullanılan öğeleri `Label` öğesi:
 
-[![Metin dekorasyonu](boxview-images/textdecoration-small.png "dekorasyonu")](boxview-images/textdecoration-large.png#lightbox "dekorasyonu")
+[![Metin süslemesi](boxview-images/textdecoration-small.png "Metin süslemesi")](boxview-images/textdecoration-large.png#lightbox "metin düzenleme")
 
-Sayfanın üstündeki şık üstbilgisi ile elde edilen bir `AbsoluteLayout` dört alt öğeleri olan `BoxView` öğeleri ve `Label`, tüm hangi olan belirli konumları ve boyutları atanan:
+Sayfanın üstündeki şık başlığı ile elde edilen bir `AbsoluteLayout` dört alt öğeleri olan `BoxView` öğeleri ve `Label`, tüm belirli konumları ve boyutları bir işlem olan atanan:
 
 ```xaml
 <AbsoluteLayout>
@@ -129,9 +129,9 @@ Sayfanın üstündeki şık üstbilgisi ile elde edilen bir `AbsoluteLayout` dö
 </AbsoluteLayout>
 ```
 
-XAML dosyasındaki `AbsoluteLayout` tarafından izlenen bir `Label` açıklayan metin biçimlendirilmiş `AbsoluteLayout`.
+XAML dosyasında `AbsoluteLayout` tarafından izlenen bir `Label` açıklayan metin biçimlendirilmiş `AbsoluteLayout`.
 
-Her ikisi de kapsayan bir metin dizesi altını çizebilirsiniz `Label` ve `BoxView` içinde bir `StackLayout` olan kendi `HorizontalOptions` değerini ayarlamak için bir şeyler dışında `Fill`. Genişliğini `StackLayout` sonra genişliğini tarafından yönetilir `Label`, üzerinde daha sonra bu genişliği uygular `BoxView`. `BoxView` Açık bir yükseklik atanır:
+Her ikisi de kapsayan bir metin dizesini alt çizgi `Label` ve `BoxView` içinde bir `StackLayout` olan kendi `HorizontalOptions` değerini ayarlamak için bir şey dışında `Fill`. Genişliği `StackLayout` ardından genişliğini tarafından yönetilir `Label`, daha sonra bu genişliği üzerinde uygular. `BoxView`. `BoxView` Açık bir yükseklik atanır:
 
 ```xaml
 <StackLayout HorizontalOptions="Center">
@@ -141,15 +141,15 @@ Her ikisi de kapsayan bir metin dizesi altını çizebilirsiniz `Label` ve `BoxV
 </StackLayout>
 ```
 
-Bu teknik uzun metin dizelerini veya bir paragraf içinde tek tek sözcükleri altı çizili için kullanamazsınız.
+Bu teknik, uzun metin dizelerini veya bir paragraf içinde kelimeler altını çizmek için kullanamazsınız.
 
-Kullanmak da mümkündür bir `BoxView` bir HTML benzeyecek şekilde `hr` (yatay çizgi) öğesi. Yalnızca genişliğini izin `BoxView` bu durumda kendi üst kapsayıcı tarafından belirlenemedi `StackLayout`:
+Kullanmak da mümkündür bir `BoxView` HTML benzeyecek şekilde `hr` (yatay çizgi) öğesi. Yalnızca genişliğini izin `BoxView` , bu durumda, üst kapsayıcı tarafından belirlenen `StackLayout`:
 
 ```xaml
 <BoxView HeightRequest="3" />
 ```
 
-Bir paragraf metni tarafında her ikisi de kapsayan bir dikey çizgi son olarak, çizebilirsiniz `BoxView` ve `Label` yatay olarak `StackLayout`. Bu durumda, yüksekliğini `BoxView` yüksekliği ile aynıdır `StackLayout`, yüksekliğini tarafından yönetilen `Label`:
+Bir metin paragrafı tarafında her ikisi de kapsayan bir dikey çizgi son olarak, çizebilirsiniz `BoxView` ve `Label` yatay olarak `StackLayout`. Bu durumda, yüksekliğini `BoxView` yüksekliği ile aynıdır `StackLayout`, yüksekliğini tarafından yönetilen `Label`:
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -166,11 +166,11 @@ Bir paragraf metni tarafında her ikisi de kapsayan bir dikey çizgi son olarak,
 
 ## <a name="listing-colors-with-boxview"></a>BoxView renklerle listeleme
 
-`BoxView` Renkleri görüntüleme için uygundur. Bu program kullanan bir `ListView` tüm ortak statik salt okunur alanları Xamarin.Forms listelemek için `Color` yapısı:
+`BoxView` Renkleri görüntülemek için kullanışlıdır. Bu programın kullandığı bir `ListView` tüm ortak statik salt okunur alanları Xamarin.Forms listelemek için `Color` yapısı:
 
 [![ListView renkleri](boxview-images/listviewcolors-small.png "ListView renkleri")](boxview-images/listviewcolors-large.png#lightbox "ListView renkleri")
 
-[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) program içerir adlı bir sınıf `NamedColor`. Statik Oluşturucu tüm alanları erişmek için yansıma kullanan `Color` yapısı ve oluşturma bir `NamedColor` her biri için nesne. Bu statik depolanan `All` özelliği:
+[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) programı adlı bir sınıf içeren `NamedColor`. Statik Oluşturucu tüm alanları erişmek için yansıma kullanır `Color` yapısı ve oluşturma bir `NamedColor` her biri için nesne. Bu statik depolanan `All` özelliği:
 
 ```csharp
 public class NamedColor
@@ -242,7 +242,7 @@ public class NamedColor
 }
 ```
 
-Program görselleri XAML dosyası içinde açıklanmıştır. `ItemsSource` Özelliği `ListView` statik olarak ayarlamanız `NamedColor.All` anlamına özelliği `ListView` tüm tek tek görüntüler `NamedColor` nesneler:
+Program görseller XAML dosyasında açıklanmaktadır. `ItemsSource` Özelliği `ListView` statik olarak ayarlamanız `NamedColor.All` anlamına özelliği `ListView` tüm tek tek görüntüler `NamedColor` nesneler:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -293,15 +293,15 @@ Program görselleri XAML dosyası içinde açıklanmıştır. `ItemsSource` Öze
 </ContentPage>
 ```
 
-`NamedColor` Tarafından biçimlendirilmiş nesneleri `ViewCell` veri şablonu olarak ayarlanmış nesne `ListView`. Bu şablonu içeren bir `BoxView` , `Color` özelliği bağlı `Color` özelliği `NamedColor` nesne.
+`NamedColor` Tarafından biçimlendirilmiş nesneleri `ViewCell` nesnesini veri şablonu olarak ayarlama `ListView`. Bu şablon içeren bir `BoxView` olan `Color` özelliği bağlı `Color` özelliği `NamedColor` nesne.
 
 <a name="subclassing" />
 
 ## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>Oyuna sınıflara BoxView tarafından ömrü
 
-John Conway matematikçi tarafından geliştirilen ve sayfaları, popularized bir cep telefonu automaton, oyun ömrü olduğunu *bilimsel Amerikan* 1970s içinde. İyi bir giriş Wikipedia makaleyi tarafından sağlanan [, Conway'in oyun yaşam](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
+John Melvin matematikçi tarafından oluşturulmuştur ve sayfaları popüler bir hücresel Otomasyon, oyun ömrü olan *bilimsel Amerikan* 1970s içinde. İyi bir giriş Wikipedia makalesi tarafından sağlanan [, Conway'in oyun yaşam](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
-Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/) programı adlı bir sınıf tanımlayan `LifeCell` , türetilen `BoxView`. Bu sınıf, oyun ömrü tek tek bir hücrede mantığı yalıtır:
+Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/) programı adlı bir sınıf tanımlar `LifeCell` türetilen `BoxView`. Bu sınıf, tek bir hücre, oyun yaşamında mantığı kapsülleyen:
 
 ```csharp
 class LifeCell : BoxView
@@ -344,23 +344,23 @@ class LifeCell : BoxView
 }
 ```
 
-`LifeCell` üç daha fazla özelliklerine ekler `BoxView`: `Col` ve `Row` özelliklerini depolamak kılavuz hücrede konumunu ve `IsAlive` özelliği durumunu gösterir. `IsAlive` Özelliği de ayarlar `Color` özelliği `BoxView` hücre etkin değilse, canlı ve beyaz hücreyse siyah.
+`LifeCell` üç daha fazla özellikler ekler `BoxView`: `Col` ve `Row` özelliklerini depolamak hücrenin grid'in içindeki konumunu ve `IsAlive` özelliği durumunu gösterir. `IsAlive` Özelliği de ayarlar `Color` özelliği `BoxView` hücre etkin değilse, etkin tutulan bağlantıyı destekliyorsa ve beyaz hücreyse siyaha.
 
-`LifeCell` aynı zamanda yükler bir `TapGestureRecognizer` bunları dokunarak hücreleri durumunu değiştirme yapmalarına izin vermek için. Sınıf çevirir `Tapped` kendi içine hareketi tanıyıcı olayından `Tapped` olay.
+`LifeCell` Ayrıca yükleyen bir `TapGestureRecognizer` yararlanılmasını sağlayarak hücreleri durumunu değiştirmek izin vermek için. Sınıf çevirir `Tapped` kendi içine hareket tanıyıcı olaydan `Tapped` olay.
 
-**GameOfLife** program de dahil bir `LifeGrid` oyun mantığı çoğunu yalıtır sınıfı ve bir `MainPage` programın görselleri işleme sınıfı. Bunlar oyunun kurallarını açıklayan bir katmana içerir. Birkaç yüz gösteren eylemde program işte `LifeCell` sayfadaki nesneler:
+**GameOfLife** program de dahil bir `LifeGrid` çok oyun mantığı kapsülleyen sınıftır ve `MainPage` programın görselleri işleme sınıfı. Bunlar, oyunun kurallarını tanımlayan bir katmana içerir. Eylem birkaç yüz gösteren program işte `LifeCell` sayfasında nesneler:
 
-[![Yaşam oyunu](boxview-images/gameoflife-small.png "yaşam oyunu")](boxview-images/gameoflife-large.png#lightbox "yaşam oyunu")
+[![Yaşam oyunu](boxview-images/gameoflife-small.png "Game ömrü")](boxview-images/gameoflife-large.png#lightbox "yaşam oyunu")
 
 <a name="digitalclock" />
 
-## <a name="creating-a-digital-clock"></a>Sayısal bir saat oluşturma
+## <a name="creating-a-digital-clock"></a>Bir Dijital saat oluşturma
 
-[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) program oluşturur 210 `BoxView` bir eski moda 5 tarafından 7 iğneli görüntü nokta benzetimini yapmak için öğeleri. Dikey veya yatay modu zamanında okuyabilir, ancak yatay olarak büyük:
+[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) programın oluşturduğu 210 `BoxView` eski moda bir 5 tarafından 7 iğneli görüntü noktaları benzetimini yapmak için öğeleri. Dikey veya yatay modda saati okuyabilir, ancak yatay görünümde büyüktür:
 
-[![İğneli saati](boxview-images/dotmatrixclock-small.png "iğneli saati")](boxview-images/dotmatrixclock-large.png#lightbox "iğneli saati")
+[![Nokta vuruşlu saat](boxview-images/dotmatrixclock-small.png "iğneli saat")](boxview-images/dotmatrixclock-large.png#lightbox "iğneli saati")
 
-XAML dosyası biraz birden fazla örneği `AbsoluteLayout` saati kullanılır:
+XAML dosyası örneği biraz fazla `AbsoluteLayout` saati kullanılır:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -375,7 +375,7 @@ XAML dosyası biraz birden fazla örneği `AbsoluteLayout` saati kullanılır:
 </ContentPage>
 ```
 
-Şey arka plan kod dosyasına oluşur. İğneli görüntü mantığı her iki nokta ile 10 tabanlı rakamlar ve karşılık gelen noktalar açıklamak birkaç diziler tanımı tarafından büyük ölçüde basitleştirilmiş:
+Diğer her şey arka plan kod dosyasında gerçekleşir. Nokta vuruşlu ekran mantığı her 10 rakam ve nokta karşılık gelen nokta tanımlayan çeşitli diziler tanımı tarafından önemli ölçüde basitleştirilmiş:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -447,9 +447,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Bu alanların üç boyutlu bir dizi ile sonuçlandırmak `BoxView` altı basamak nokta desenleri depolamak için öğeleri.
+Bu alanlar, üç boyutlu bir dizi ile sonlandırma `BoxView` altı için nokta desenleri depolamak için öğeleri.
 
-Oluşturucusu tüm oluşturur `BoxView` basamak ve iki nokta üst üste ve ayrıca başlatır için öğeleri `Color` özelliği `BoxView` iki nokta üst üste için öğeleri:
+Oluşturucu tüm oluşturur `BoxView` basamak ve iki nokta üst üste ve ayrıca başlatır için öğeleri `Color` özelliği `BoxView` iki nokta üst üste için öğeleri:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -528,9 +528,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Bu program göreli konumlandırma ve boyutlandırma özelliğini kullanan `AbsoluteLayout`. Genişlik ve yükseklik her `BoxView` yatay ve dikey noktalar numarasına göre bölünmüş %1 85'özellikle kesirli değerlerine ayarlayın. Konumlar aynı zamanda kesirli değerlere ayarlanır.
+Göreli konumlandırma ve boyutlandırma özelliği, bu programın kullandığı `AbsoluteLayout`. Genişlik ve yükseklik her `BoxView` kesirli değer, özellikle %85 1 yatay ve dikey nokta sayısına göre ayrılmış şekilde ayarlanmıştır. Konumları aynı zamanda kesirli değerlere ayarlanır.
 
-Tüm boyutları ve konumları göre toplam boyutu olduğundan `AbsoluteLayout`, `SizeChanged` sayfası için işleyici gerektiğini yalnızca ayarlamak bir `HeightRequest` , `AbsoluteLayout`:
+Tüm boyutları ve pozisyonları göre toplam boyutu olduğundan `AbsoluteLayout`, `SizeChanged` gerektiğini sayfası için işleyici yalnızca ayarlamak bir `HeightRequest` , `AbsoluteLayout`:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -549,9 +549,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Genişliğini `AbsoluteLayout` tam sayfa genişliğine göre uzatır olduğundan otomatik olarak ayarlanır.
+Genişliği `AbsoluteLayout` sayfanın tam genişliğine uzatır olduğundan otomatik olarak ayarlanır.
 
-Son kodda `MainPage` sınıfı Zamanlayıcı geri işler ve her basamak nokta renkleri. Çok boyutlu diziler arka plan kod dosyasının başında tanımını bu mantığı program basit bir parçası olmasına yardımcı olur:
+Son kod `MainPage` sınıfı Zamanlayıcısı geri çağırma işlemleri ve her bir rakam, nokta renkleri. Çok boyutlu diziler arka plan kod dosyasının başında tanımını, bu mantıksal program basit bir parçası olun yardımcı olur:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -592,13 +592,13 @@ public partial class MainPage : ContentPage
 
 ## <a name="creating-an-analog-clock"></a>Bir Analog Saat oluşturma
 
-İğneli saati belirgin bir uygulama olduğu görünebilir `BoxView`, ancak `BoxView` öğeleri özellikli bir analog saat kullanıldıklarını ayrıca:
+Bir nokta vuruşlu saat belirgin bir uygulamayı damgalarıyla görünebilir `BoxView`, ancak `BoxView` öğeleri özellikli bir analog saat fark ayrıca:
 
-[![BoxView saat](boxview-images/boxviewclock-small.png "BoxView saati")](boxview-images/boxviewclock-large.png#lightbox "BoxView saati")
+[![BoxView saat](boxview-images/boxviewclock-small.png "BoxView saat")](boxview-images/boxviewclock-large.png#lightbox "BoxView saati")
 
-Tüm Görsellere [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) program alt öğeleri olan bir `AbsoluteLayout`. Bu öğeleri kullanarak boyuta sahip `LayoutBounds` özelliği eklenmiş ve kullanılarak döndürülen `Rotation` özelliği.
+Tüm görsellerde [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) program alt öğesi olan bir `AbsoluteLayout`. Bu öğeleri kullanarak boyutlandırılır `LayoutBounds` ekli özellik ve kullanılarak döndürülen `Rotation` özelliği.
 
-Üç `BoxView` saatin ellerini için öğeleri XAML dosyasında örneği ancak konumlandırılmış veya boyuta sahip:
+Üç `BoxView` bire bir saat için öğeleri XAML dosyasında örneği ancak konumlandırılmış veya boyutu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -626,7 +626,7 @@ Tüm Görsellere [ **BoxViewClock** ](https://developer.xamarin.com/samples/xama
 </ContentPage>
 ```
 
-Arka plan kodu dosyanın oluşturucusu 60 başlatır `BoxView` çizgilerinin çevresinde saatin çevresi için öğeleri:
+Arka plan kod dosyası oluşturucusunun 60 başlatır `BoxView` çevresinde saatin çevresi değer çizgilerinin öğeleri:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -655,7 +655,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Boyutlandırma ve tüm konumlandırma `BoxView` öğeleri oluşuyor `SizeChanged` işleyicisi `AbsoluteLayout`. Küçük bir yapı sınıfa iç adlı `HandParams` her saat toplam boyutu göre üç ellerini boyutunu açıklar:
+Boyutlandırma ve konumlandırma tüm `BoxView` öğeleri oluşuyor `SizeChanged` işleyicisi `AbsoluteLayout`. Sınıfı iç biraz yapısı adlı `HandParams` her saatin toplam boyutuna göre üç uygulamalı boyutunu açıklar:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -684,7 +684,7 @@ public partial class MainPage : ContentPage
  }
 ```
 
-`SizeChanged` İşleyici merkezi ve yarıçapını belirler `AbsoluteLayout`ve ardından boyutları ve 60 konumlandırır `BoxView` çizgilerinin kullanılan öğeleri. `for` Döngü sonucuna ayarlayarak `Rotation` her birinin özelliğini `BoxView` öğeleri. Sonunda `SizeChanged` işleyicisi `LayoutHand` yöntemi, boyut ve saatin üç ellerini konumlandırmak için çağrılır:
+`SizeChanged` İşleyici merkezi ve yarıçapını belirler `AbsoluteLayout`, 60 yerleştirir ve ardından boyutları `BoxView` çizgisi kullanılan öğeleri. `for` Döngü sonucuna ayarlayarak `Rotation` özelliği her birinin `BoxView` öğeleri. Sonunda `SizeChanged` işleyicisi `LayoutHand` yöntemi, boyut ve üç saat kullanımına konumlandırmak için çağrılır:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -735,9 +735,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`LayoutHand` Yöntemi boyutları ve düz kadar 12:00 konumunu işaret edecek şekilde her elin yerleştirir. Yöntemi, sonunda `AnchorY` saati merkezine karşılık gelen bir konuma özelliğini ayarlayın. Bu Dönüş merkezini belirtir.
+`LayoutHand` Yöntemi boyutları ve doğrudan en fazla 12:00 konumu işaret edecek şekilde düzende yerleştirir. Yönteminin sonuna `AnchorY` saatin merkezine karşılık gelen bir konuma özelliğini ayarlayın. Bu, döndürme merkezini belirtir.
 
-Ellerini Zamanlayıcı geri çağırma işlevi döndürülür:
+Uygulamalı Zamanlayıcısı geri çağırma işlevi döndürülür:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -770,19 +770,19 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Saniyeyi biraz farklı değerlendirilir: işlevi kolaylaştırma animasyon mekanik yerine kesintisiz göründüğü hareket yapmak için uygulanır. Her değer saniyeyi biraz geri çeker ve hedefine overshoots. Bu küçük bit kod çok hareketini daha iyi için ekler.
+Saniyeyi biraz daha farklı olarak kabul edilir: bir animasyonu hızlandırma işlevi görünen taşıma mekanik yerine sorunsuz hale getirmek için uygulanır. Her değer çizgisi saniyeyi biraz geri çeker ve ardından hedefine overshoots. Bu küçük bit kod hareketin gerçekçilik için çok ekler.
 
 ## <a name="conclusion"></a>Sonuç
 
-`BoxView` İlk ancak siz en basit görünebilir görülen, oldukça çok yönlü olabilir ve neredeyse yalnızca normalde olası yeniden oluşturması görselleri vektör grafikleri. Daha karmaşık grafiklerde başvurun [kullanarak SkiaSharp Xamarin.Forms içinde](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
+`BoxView` İlk ancak siz en basit görünebilir görülen, çok yönlü olabilir ve neredeyse yalnızca normalde olası yeniden oluşturma görselleri vektör grafikleri. Daha karmaşık grafik için başvurun [Xamarin.Forms içinde SkiaSharp kullanma](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Temel BoxView (örnek)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)
-- [Metin dekorasyonu (örnek)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)
+- [Metin süslemesi (örnek)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)
 - [Renk ListBox (örnek)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox)
 - [Oyun ömrü (örnek)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)
-- [İğneli saati (örnek)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)
+- [Nokta vuruşlu saati (örnek)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)
 - [BoxView saati (örnek)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock)
-- [BoxView](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)
+- [BoxView](xref:Xamarin.Forms.BoxView)

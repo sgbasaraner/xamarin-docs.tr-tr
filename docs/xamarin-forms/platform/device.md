@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 652c9cc51f68bee8229b8c5a7684ea872ab6f404
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: c706d50962fb707208203a97374d4ae26f141ebf
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986076"
+ms.locfileid: "38998273"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms cihaz sınıfı
 
@@ -24,11 +24,11 @@ Yöntemleri ve belirli donanım türleri ve boyutları, hedef kodun özellikleri
 
 ## <a name="providing-platform-specific-values"></a>Platforma özgü değerlerini sağlama
 
-Xamarin.Forms 2.3.4 önce üzerinde uygulamayı çalıştırdığınız olan platform inceleyerek elde edilemedi [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) özelliği ve onu [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), ve [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) sabit listesi değerleri. Benzer şekilde, aşağıdakilerden birini [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) aşırı yüklemeler, platforma özgü değerler için bir denetim sağlamak için kullanılabilir.
+Xamarin.Forms 2.3.4 önce üzerinde uygulamayı çalıştırdığınız olan platform inceleyerek elde edilemedi [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) özelliği ve onu [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), ve [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) sabit listesi değerleri. Benzer şekilde, aşağıdakilerden birini [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) aşırı yüklemeler, platforma özgü değerler için bir denetim sağlamak için kullanılabilir.
 
-Ancak, 2.3.4 Xamarin.Forms beri bu API'leri kullanım dışı değiştirildi ve. [ `Device` ](xref:Xamarin.Forms.Device) Sınıfı artık platformları – tanımlayan genel dize sabitleri içerir [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() kullanım dışı) `Device.WinRT` (kullanım dışı), [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), ve [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Benzer şekilde, [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) aşırı yüklemeleri ile değiştirildi [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) ve [ `On` ](xref:Xamarin.Forms.On) API'leri.
+Ancak, 2.3.4 Xamarin.Forms beri bu API'leri kullanım dışı değiştirildi ve. [ `Device` ](xref:Xamarin.Forms.Device) Sınıfı artık platformları – tanımlayan genel dize sabitleri içerir [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() kullanım dışı) `Device.WinRT` (kullanım dışı), [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), ve [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Benzer şekilde, [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) aşırı yüklemeleri ile değiştirildi [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) ve [ `On` ](xref:Xamarin.Forms.On) API'leri.
 
-C# içinde platforma özgü değerleri oluşturarak sağlanabilir bir `switch` açıklamamızı [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) özellik ve daha sonra sağlama `case` deyimleri gerekli platformlar için:
+C# içinde platforma özgü değerleri oluşturarak sağlanabilir bir `switch` açıklamamızı [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform) özellik ve daha sonra sağlama `case` deyimleri gerekli platformlar için:
 
 ```csharp
 double top;
@@ -46,7 +46,7 @@ switch (Device.RuntimePlatform)
 layout.Margin = new Thickness(5, top, 5, 0);
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Ve [ `On` ](xref:Xamarin.Forms.On) sınıfları XAML aynı işlevleri sağlar:
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) Ve [ `On` ](xref:Xamarin.Forms.On) sınıfları XAML aynı işlevleri sağlar:
 
 ```xaml
 <StackLayout>
@@ -60,7 +60,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Sınıfı bir genel sınıftır ve böylece ile örneği oluşturulmalıdır bir `x:TypeArguments` hedef türüyle eşleşen öznitelik. İçinde [ `On` ](xref:Xamarin.Forms.On) sınıfı [ `Platform` ](xref:Xamarin.Forms.On.Platform) özniteliği tek bir kabul edebilir `string` değeri veya virgülle ayrılmış birden çok `string` değerleri.
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) Sınıfı bir genel sınıftır ve böylece ile örneği oluşturulmalıdır bir `x:TypeArguments` hedef türüyle eşleşen öznitelik. İçinde [ `On` ](xref:Xamarin.Forms.On) sınıfı [ `Platform` ](xref:Xamarin.Forms.On.Platform) özniteliği tek bir kabul edebilir `string` değeri veya virgülle ayrılmış birden çok `string` değerleri.
 
 > [!IMPORTANT]
 > Yanlış bir sağlama `Platform` öznitelik değeri `On` sınıf bir hata değil neden olur. Bunun yerine, kodu uygulanmakta platforma özgü değer olmadan yürütülür.
@@ -173,7 +173,7 @@ Zamanlayıcı içindeki kod kullanıcı arabirimiyle etkileşim varsa (metnini a
 
 ## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
 
-Kullanıcı arabirimi öğeleri hiçbir zaman bir zamanlayıcı ya da web istekleri gibi zaman uyumsuz işlemleri tamamlama işleyicisi çalışan kod gibi arka plan iş parçacığı tarafından erişilmelidir. Kullanıcı arabirimini güncelleştirmek için gereken herhangi bir arka plan kod içine alınmalı [ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/). Bu eşdeğerdir `InvokeOnMainThread` ios'ta `RunOnUiThread` , Android ve `Dispatcher.RunAsync` Evrensel Windows platformu üzerinde.
+Kullanıcı arabirimi öğeleri hiçbir zaman bir zamanlayıcı ya da web istekleri gibi zaman uyumsuz işlemleri tamamlama işleyicisi çalışan kod gibi arka plan iş parçacığı tarafından erişilmelidir. Kullanıcı arabirimini güncelleştirmek için gereken herhangi bir arka plan kod içine alınmalı [ `BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)). Bu eşdeğerdir `InvokeOnMainThread` ios'ta `RunOnUiThread` , Android ve `Dispatcher.RunAsync` Evrensel Windows platformu üzerinde.
 
 Xamarin.Forms kodu verilmiştir:
 

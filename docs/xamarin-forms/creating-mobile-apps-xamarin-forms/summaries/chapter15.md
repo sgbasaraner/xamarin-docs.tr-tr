@@ -7,12 +7,12 @@ ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 6d26e3b9a82917ec3f70190e5e90c59d274de990
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 6da3753d723ed44ca640d8c80ae07258a03cbbbc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935192"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998673"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Bölüm 15 özeti. Etkileşimli arabirimi
 
@@ -33,10 +33,10 @@ Bu bölümde sekiz görünümlerinde etkili bir şekilde temel .NET veri türler
 
 |Veri türü|Görünümler|
 |--- |--- |
-|`Double`|[`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/), [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)|
-|`Boolean`|[`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)|
-|`String`|[`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/), [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)|
-|`DateTime`|[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/), [`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/)|
+|`Double`|[`Slider`](xref:Xamarin.Forms.Slider), [`Stepper`](xref:Xamarin.Forms.Stepper)|
+|`Boolean`|[`Switch`](xref:Xamarin.Forms.Switch)|
+|`String`|[`Entry`](xref:Xamarin.Forms.Entry), [`Editor`](xref:Xamarin.Forms.Editor), [`SearchBar`](xref:Xamarin.Forms.SearchBar)|
+|`DateTime`|[`DatePicker`](xref:Xamarin.Forms.DatePicker), [`TimePicker`](xref:Xamarin.Forms.TimePicker)|
 
 Bu görünümler temel alınan veri türleri etkileşimli görsel gösterimi düşünebilirsiniz. Bu kavramı daha sonraki bölümde, araştırılan [ **Bölüm 16. Veri bağlama**](chapter16.md).
 
@@ -51,22 +51,22 @@ Kalan altı görünümler, aşağıdaki bölümlerde ele alınmaktadır:
 
 ## <a name="slider-and-stepper"></a>Kaydırıcı ve adımlayıcıdaki
 
-Her ikisi de [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) ve [ `Stepper` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) sayısal bir değer arasından seçim izin verin. `Slider` Sırasında sürekli bir aralık `Stepper` ayrık değerler içerir.
+Her ikisi de [ `Slider` ](xref:Xamarin.Forms.Slider) ve [ `Stepper` ](xref:Xamarin.Forms.Stepper) sayısal bir değer arasından seçim izin verin. `Slider` Sırasında sürekli bir aralık `Stepper` ayrık değerler içerir.
 
 ### <a name="slider-basics"></a>Kaydırıcı temelleri
 
-[ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) En soldaki değer aralığının en sağdaki gösteren çubuk yatay olan. Bu üç ortak özelliklerini tanımlar:
+[ `Slider` ](xref:Xamarin.Forms.Slider) En soldaki değer aralığının en sağdaki gösteren çubuk yatay olan. Bu üç ortak özelliklerini tanımlar:
 
-- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) tür `double`, varsayılan değer 0
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) tür `double`, varsayılan değer 0
-- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) tür `double`, varsayılan değer olan 1
+- [`Value`](xref:Xamarin.Forms.Slider.Value) tür `double`, varsayılan değer 0
+- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum) tür `double`, varsayılan değer 0
+- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum) tür `double`, varsayılan değer olan 1
 
 Bu özellikleri yeniden bağlanabilir özellikler, tutarlı olduğundan emin olun:
 
 - Üç tüm özellikler için [ `coerceValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+CoerceValueDelegate/) bağlanılabilir özellik sağlar için belirtilen yöntemi `Value` arasında `Minimum` ve `Maximum`.
 - [ `validateValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+ValidateValueDelegate/) Metodunda `MinimumProperty` döndürür `false` varsa `Minimum` değerinden büyük veya ona eşit bir değere ayarlayın `Maximum`ve benzer `MaximumProperty`. Döndüren `false` gelen `validateValue` yöntemi neden bir `ArgumentException` oluşturulur.
 
-`Slider` ateşlenir [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) olay ile bir [ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) bağımsız değişken olduğunda `Value` özellik değişiklikleri programlama yoluyla veya ne zaman kullanıcı yöneten `Slider`.
+`Slider` ateşlenir [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) olay ile bir [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) bağımsız değişken olduğunda `Value` özellik değişiklikleri programlama yoluyla veya ne zaman kullanıcı yöneten `Slider`.
 
 [ **SliderDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SliderDemo) örnek basit kullanımını gösterir `Slider`.
 
@@ -88,9 +88,9 @@ Başlatma `Slider` özellikleri neden olabilecek `Value` değiştirmek için öz
 
 ### <a name="the-stepper-difference"></a>Adımlayıcıdaki farkı
 
-[ `Stepper` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) Aynı özellikleri ve olayları olarak tanımlar `Slider` ancak `Maximum` özelliği, 100'e başlatılır ve `Stepper` dördüncü bir özelliğini tanımlar:
+[ `Stepper` ](xref:Xamarin.Forms.Stepper) Aynı özellikleri ve olayları olarak tanımlar `Slider` ancak `Maximum` özelliği, 100'e başlatılır ve `Stepper` dördüncü bir özelliğini tanımlar:
 
-- [`Increment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) tür `double`, 1 başlatıldı
+- [`Increment`](xref:Xamarin.Forms.Stepper.Increment) tür `double`, 1 başlatıldı
 
 Görsel `Stepper` etiketli iki düğmeden oluşur **&ndash;** ve **+**. Tuşuna basarak **&ndash;** azaltır `Value` tarafından `Increment` en az `Minimum`. Tuşuna basarak **+** artırır `Value` tarafından `Increment` maksimum `Maximum`.
 
@@ -98,17 +98,17 @@ Bu tarafından gösterilmiştir [ **StepperDemo** ](https://github.com/xamarin/x
 
 ## <a name="switch-and-checkbox"></a>Anahtar ve onay kutusu
 
-[ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) Bir Boole değeri belirtmesini sağlar.
+[ `Switch` ](xref:Xamarin.Forms.Switch) Bir Boole değeri belirtmesini sağlar.
 
 ### <a name="switch-basics"></a>Anahtar temelleri
 
 Görsel `Switch` açılıp kapatılabilir bir geçiş oluşur. Sınıfı, bir özellik tanımlar:
 
-- [`IsToggled`](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) türü `bool`
+- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) türü `bool`
 
 `Switch` bir olayı tanımlar:
 
-- [`Toggled`](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) eşlik bir [ `ToggledEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToggledEventArgs/) olduğunda harekete geçirilen nesne `IsToggled` özellik değişiklikleri.
+- [`Toggled`](xref:Xamarin.Forms.Switch.Toggled) eşlik bir [ `ToggledEventArgs` ](xref:Xamarin.Forms.ToggledEventArgs) olduğunda harekete geçirilen nesne `IsToggled` özellik değişiklikleri.
 
 [ **SwitchDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SwitchDemo) programı gösterir `Switch`.
 
@@ -122,33 +122,33 @@ Bazı geliştiriciler daha geleneksel tercih `CheckBox` için `Switch`. [ **Xama
 
 Xamarin.Forms ve metin düzenlemesi kullanıcının sağlayan üç görünüm tanımlar:
 
-- [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) tek satırlık bir metin
-- [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) için birden çok metin satırı
-- [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) tek satırlık metin arama amacıyla için.
+- [`Entry`](xref:Xamarin.Forms.Entry) tek satırlık bir metin
+- [`Editor`](xref:Xamarin.Forms.Editor) için birden çok metin satırı
+- [`SearchBar`](xref:Xamarin.Forms.SearchBar) tek satırlık metin arama amacıyla için.
 
-`Entry` ve `Editor` öğesinden türetilen [ `InputView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.InputView/), öğesinden türetildiğini `View`. `SearchBar` doğrudan türetilen `View`.
+`Entry` ve `Editor` öğesinden türetilen [ `InputView` ](xref:Xamarin.Forms.InputView), öğesinden türetildiğini `View`. `SearchBar` doğrudan türetilen `View`.
 
 ### <a name="keyboard-and-focus"></a>Klavye ve odağı
 
-Telefon ve tabletlerden fiziksel klavyeler olmadan `Entry`, `Editor`, ve `SearchBar` öğelerin tümü, kullanıcın dosya hiyerarşisinden bir sanal klavye neden. Bu klavye ekranında varlığını giriş odağı ilgilidir. Bir görünüm sahip olmalıdır, [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) ve [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) özelliklerini ayarlamak `true` giriş odağını almak için.
+Telefon ve tabletlerden fiziksel klavyeler olmadan `Entry`, `Editor`, ve `SearchBar` öğelerin tümü, kullanıcın dosya hiyerarşisinden bir sanal klavye neden. Bu klavye ekranında varlığını giriş odağı ilgilidir. Bir görünüm sahip olmalıdır, [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) ve [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) özelliklerini ayarlamak `true` giriş odağını almak için.
 
 İki yöntem, bir salt okunur özelliği ve iki olay giriş odağını ile ilgilidir. Bu tüm tanımlanır `VisualElement`:
 
-- [ `Focus` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Focus()/) Yöntem giriş odağını bir öğe için ayarlanacak ve döndürür `true` başarılıysa
-- [ `Unfocus` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Unfocus()/) Yöntemi, bir öğeyi Girintiyi kaldırır
-- [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) Salt okunur özelliği, öğe odak giriş varsa gösterir
-- [ `Focused` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.Focused/) Olay gösterir, giriş odağını bir öğeyi alır
-- [ `Unfocused` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.Unfocused/) Olayı, ne zaman bir öğe giriş odağını kaybediyor gösterir
+- [ `Focus` ](xref:Xamarin.Forms.VisualElement.Focus) Yöntem giriş odağını bir öğe için ayarlanacak ve döndürür `true` başarılıysa
+- [ `Unfocus` ](xref:Xamarin.Forms.VisualElement.Unfocus) Yöntemi, bir öğeyi Girintiyi kaldırır
+- [ `IsFocused` ](xref:Xamarin.Forms.VisualElement.IsFocused) Salt okunur özelliği, öğe odak giriş varsa gösterir
+- [ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused) Olay gösterir, giriş odağını bir öğeyi alır
+- [ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused) Olayı, ne zaman bir öğe giriş odağını kaybediyor gösterir
 
 ### <a name="choosing-the-keyboard"></a>Klavye seçme
 
-[ `InputView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.InputView/) Sınıfı `Entry` ve `Editor` türetilen yalnızca bir özelliğini tanımlar:
+[ `InputView` ](xref:Xamarin.Forms.InputView) Sınıfı `Entry` ve `Editor` türetilen yalnızca bir özelliğini tanımlar:
 
-- [`Keyboard`](https://developer.xamarin.com/api/property/Xamarin.Forms.InputView.Keyboard/) türü [`Keyboard`](https://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/)
+- [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) türü [`Keyboard`](xref:Xamarin.Forms.Keyboard)
 
 Bu, görüntülenen klavye türünü belirtir. Bazı klavyeler, URI veya sayılar için iyileştirilmiştir.
 
-`Keyboard` Sınıfı sağlayan statik klavyeyle tanımlama [ `Keyboard.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Keyboard.Create/p/Xamarin.Forms.KeyboardFlags/) türünde bir bağımsız değişken yöntemiyle [ `KeyboardFlags` ](https://developer.xamarin.com/api/type/Xamarin.Forms.KeyboardFlags/), aşağıdaki bit bayrakları olan bir sabit listesi:
+`Keyboard` Sınıfı sağlayan statik klavyeyle tanımlama [ `Keyboard.Create` ](xref:Xamarin.Forms.Keyboard.Create(Xamarin.Forms.KeyboardFlags)) türünde bir bağımsız değişken yöntemiyle [ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags), aşağıdaki bit bayrakları olan bir sabit listesi:
 
 - `None` 0 olarak ayarlayın
 - [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) 1 olarak ayarlayın
@@ -156,71 +156,71 @@ Bu, görüntülenen klavye türünü belirtir. Bazı klavyeler, URI veya sayıla
 - [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) 4'e ayarlayın
 - [`All`](xref:Xamarin.Forms.KeyboardFlags.All) \xFFFFFFFF için ayarlayın
 
-Çok satırlı kullanırken [ `Editor` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) bir paragraf ya da daha fazla metin beklendiğinde çağırma `Keyboard.Create` bir klavye seçimi için iyi bir yaklaşımdır. Tek satırlı için [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), aşağıdaki statik salt okunur özelliklerini `Keyboard` yararlıdır:
+Çok satırlı kullanırken [ `Editor` ](xref:Xamarin.Forms.Editor) bir paragraf ya da daha fazla metin beklendiğinde çağırma `Keyboard.Create` bir klavye seçimi için iyi bir yaklaşımdır. Tek satırlı için [ `Entry` ](xref:Xamarin.Forms.Entry), aşağıdaki statik salt okunur özelliklerini `Keyboard` yararlıdır:
 
-- [`Default`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Default/)
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Text/)
-- [`Chat`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Chat/)
-- [`Url`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Url/)
-- [`Email`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Email/)
-- [`Telephone`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Telephone/)
-- [`Numeric`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Numeric/) içeren veya içermeyen bir ondalık noktası pozitif sayılar için.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default)
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text)
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat)
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url)
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email)
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone)
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) içeren veya içermeyen bir ondalık noktası pozitif sayılar için.
 
-[ `KeyboardTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.KeyboardTypeConverter/) Tarafından gösterildiği gibi XAML içinde bu özellikleri belirtmeye izin verir [ **EntryKeyboards** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/EntryKeyboards) program.
+[ `KeyboardTypeConverter` ](xref:Xamarin.Forms.KeyboardTypeConverter) Tarafından gösterildiği gibi XAML içinde bu özellikleri belirtmeye izin verir [ **EntryKeyboards** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/EntryKeyboards) program.
 
 ### <a name="entry-properties-and-events"></a>Giriş özellikleri ve olayları
 
-Tek satırlı [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) aşağıdaki özellikleri tanımlar:
+Tek satırlı [ `Entry` ](xref:Xamarin.Forms.Entry) aşağıdaki özellikleri tanımlar:
 
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/) tür `string`, görünen metni `Entry`
-- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) türü `Color`
-- [`FontFamily`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.FontFamily/) türü `string`
-- [`FontSize`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.FontSize/) türü `double`
-- [`FontAttributes`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.FontAttributes/) türü `FontAttributes`
-- [`IsPassword`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.IsPassword/) tür `bool`, neden olan karakter maskelenmiş olamaz
-- [`Placeholder`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Placeholder/) tür `string`, görünen dimly renkli metinler için `Entry` herhangi bir şey yazılmadan önce
-- [`PlaceholderColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.PlaceholderColor/) türü `Color`
+- [`Text`](xref:Xamarin.Forms.Entry.Text) tür `string`, görünen metni `Entry`
+- [`TextColor`](xref:Xamarin.Forms.Entry.TextColor) türü `Color`
+- [`FontFamily`](xref:Xamarin.Forms.Entry.FontFamily) türü `string`
+- [`FontSize`](xref:Xamarin.Forms.Entry.FontSize) türü `double`
+- [`FontAttributes`](xref:Xamarin.Forms.Entry.FontAttributes) türü `FontAttributes`
+- [`IsPassword`](xref:Xamarin.Forms.Entry.IsPassword) tür `bool`, neden olan karakter maskelenmiş olamaz
+- [`Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) tür `string`, görünen dimly renkli metinler için `Entry` herhangi bir şey yazılmadan önce
+- [`PlaceholderColor`](xref:Xamarin.Forms.Entry.PlaceholderColor) türü `Color`
 
 `Entry` Ayrıca iki olay tanımlar:
 
-- [`TextChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) ile bir [ `TextChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextChangedEventArgs/) olduğunda harekete geçirilen nesne `Text` özellik değişiklikleri
-- [`Completed`](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.Completed/), kullanıcının tamamlandıktan ve klavye kapatılır harekete geçirilir. Kullanıcı tamamlama bir platforma özgü şekilde gösterir.
+- [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) ile bir [ `TextChangedEventArgs` ](xref:Xamarin.Forms.TextChangedEventArgs) olduğunda harekete geçirilen nesne `Text` özellik değişiklikleri
+- [`Completed`](xref:Xamarin.Forms.Entry.Completed), kullanıcının tamamlandıktan ve klavye kapatılır harekete geçirilir. Kullanıcı tamamlama bir platforma özgü şekilde gösterir.
 
 [ **QuadraticEquations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/QuadaticEquations) örnek, bu iki olayları gösterir.
 
 ### <a name="the-editor-difference"></a>Düzenleyici farkı
 
-Çok satırlı [ `Editor` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) aynı tanımlar `Text` ve `Font` özellikleri olarak `Entry` ancak diğer özellikleri. `Editor` Ayrıca aynı iki özellikleri tanımlar `Entry`.
+Çok satırlı [ `Editor` ](xref:Xamarin.Forms.Editor) aynı tanımlar `Text` ve `Font` özellikleri olarak `Entry` ancak diğer özellikleri. `Editor` Ayrıca aynı iki özellikleri tanımlar `Entry`.
 
 [**JustNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/JustNotes) kaydeder ve içeriğini geri yükleyen bir serbest biçimli notlar alma programı `Editor`.
 
 ### <a name="the-searchbar"></a>SearchBar
 
-[ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Türünden türemez `InputView`, sahip olmadığı bir `Keyboard` özelliği. Ancak, tüm sahip `Text`, `Font`, ve `Placeholder` özellikleri, `Entry` tanımlar. Ayrıca, `SearchBar` üç ek özelliklerini tanımlar:
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar) Türünden türemez `InputView`, sahip olmadığı bir `Keyboard` özelliği. Ancak, tüm sahip `Text`, `Font`, ve `Placeholder` özellikleri, `Entry` tanımlar. Ayrıca, `SearchBar` üç ek özelliklerini tanımlar:
 
-- [`CancelButtonColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.CancelButtonColor/) türü `Color`
-- [`SearchCommand`](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/) tür [ `ICommand` ](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/) veri bağlamaları ve MVVM ile kullanmak için
-- [`SearchCommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/) tür `Object`, ile kullanmak için `SearchCommand`
+- [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor) türü `Color`
+- [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand) tür [ `ICommand` ](xref:System.Windows.Input.ICommand) veri bağlamaları ve MVVM ile kullanmak için
+- [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) tür `Object`, ile kullanmak için `SearchCommand`
 
 Metin platforma özgü iptal düğmesi siler. `SearchBar` Ayrıca bir platforma özgü arama düğmesi bulunur. Bu düğmeler birini tuşuna basarak, başlatır iki olaylardan biri, `SearchBar` tanımlar:
 
-- [`TextChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.TextChanged/) eşlik bir [ `TextChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextChangedEventArgs/) nesnesi
-- [`SearchButtonPressed`](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.SearchButtonPressed/)
+- [`TextChanged`](xref:Xamarin.Forms.SearchBar.TextChanged) eşlik bir [ `TextChangedEventArgs` ](xref:Xamarin.Forms.TextChangedEventArgs) nesnesi
+- [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)
 
 [ **SearchBarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SearchBarDemo) örnek gösterir `SearchBar`.
 
 ## <a name="date-and-time-selection"></a>Tarih ve saat seçimi
 
-[ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) Ve [ `TimePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/) görünümleri kullanıcının bir tarih veya saat belirlemesine olanak tanıyan platforma özgü denetimleri uygulayın.
+[ `DatePicker` ](xref:Xamarin.Forms.DatePicker) Ve [ `TimePicker` ](xref:Xamarin.Forms.TimePicker) görünümleri kullanıcının bir tarih veya saat belirlemesine olanak tanıyan platforma özgü denetimleri uygulayın.
 
 ### <a name="the-datepicker"></a>Tarih Seçici
 
-[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) dört özelliklerini tanımlar:
+[`DatePicker`](xref:Xamarin.Forms.DatePicker) dört özelliklerini tanımlar:
 
-- [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) tür `DateTime`, 1 Ocak 1900 için başlatılamadı
-- [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) tür `DateTime`, 31 Aralık 2100 için başlatılamadı
-- [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) tür `DateTime`, için başlatılamadı `DateTime.Today`
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) tür `string`, bir tarih görüntüleme "7/20/1969" ABD gibi bunun sonucunda "d", kısa tarih deseni başlatılmadı dizesi biçimlendirme .NET.
+- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate) tür `DateTime`, 1 Ocak 1900 için başlatılamadı
+- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate) tür `DateTime`, 31 Aralık 2100 için başlatılamadı
+- [`Date`](xref:Xamarin.Forms.DatePicker.Date) tür `DateTime`, için başlatılamadı `DateTime.Today`
+- [`Format`](xref:Xamarin.Forms.DatePicker.Format) tür `string`, bir tarih görüntüleme "7/20/1969" ABD gibi bunun sonucunda "d", kısa tarih deseni başlatılmadı dizesi biçimlendirme .NET.
 
 Ayarlayabileceğiniz `DateTime` özelliği öğeleri olarak özelliklerini belirtme ve kültür sabit kısa tarih kullanarak XAML özelliklerinde biçimlendirmek ("7/20/1969").   
 
@@ -228,14 +228,14 @@ Ayarlayabileceğiniz `DateTime` özelliği öğeleri olarak özelliklerini belir
 
 ### <a name="the-timepicker-or-is-it-a-timespanpicker"></a>TimePicker (veya bir TimeSpanPicker?)
 
-[`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/) iki özellik ve olay tanımlar:
+[`TimePicker`](xref:Xamarin.Forms.TimePicker) iki özellik ve olay tanımlar:
 
-- [`Time`](https://developer.xamarin.com/api/property/Xamarin.Forms.TimePicker.Time/) tür `TimeSpan` yerine `DateTime`, gece yarısından beri geçen süreyi gösteren
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.TimePicker.Format/) tür `string`, .NET ABD'de biçimlendirme dizesi "t", "1:45 PM" gibi bir saati görüntüleme výsledek kısa bir süre deseni olarak başlatılır.
+- [`Time`](xref:Xamarin.Forms.TimePicker.Time) tür `TimeSpan` yerine `DateTime`, gece yarısından beri geçen süreyi gösteren
+- [`Format`](xref:Xamarin.Forms.TimePicker.Format) tür `string`, .NET ABD'de biçimlendirme dizesi "t", "1:45 PM" gibi bir saati görüntüleme výsledek kısa bir süre deseni olarak başlatılır.
 
 [ **SetTimer** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer) program nasıl kullanılacağını gösteren `TimePicker` Zamanlayıcı için bir zaman belirtmek için. Program, yalnızca ön planda tutarsanız çalışır.
 
-**SetTimer** de kullanmayı gösterir [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/) yöntemi `Page` bir uyarı kutusu görüntülenecek.
+**SetTimer** de kullanmayı gösterir [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) yöntemi `Page` bir uyarı kutusu görüntülenecek.
 
 
 

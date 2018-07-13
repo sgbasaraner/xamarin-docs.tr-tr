@@ -1,66 +1,66 @@
 ---
-title: Xamarin.Forms özel animasyonları
-description: Bu makalede Xamarin.FOrms animasyon sınıfı oluşturun ve animasyonları iptal etme, birden çok animasyon eşitlemek için ve varolan animasyon yöntemlerle animasyonlu değildir özelliklerine animasyon özel animasyon oluşturma nasıl kullanılacağı gösterilmektedir.
+title: Xamarin.Forms içinde özel animasyon
+description: Bu makalede, oluşturmak ve animasyonları iptal, birden çok animasyon eşitlemek için Xamarin.FOrms animasyonu sınıfı kullanın ve var olan bir animasyon yöntemlerle animasyonlu olmayan özelliklerine animasyon özel animasyonlar oluşturma gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 74430f6c158e74569f1b2cbfa0b6a85e8d40fbcf
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 519368031384e72a2d2e0a7c99053be44ea4cffc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242982"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995227"
 ---
-# <a name="custom-animations-in-xamarinforms"></a>Xamarin.Forms özel animasyonları
+# <a name="custom-animations-in-xamarinforms"></a>Xamarin.Forms içinde özel animasyon
 
-_Animasyon sınıfı, bir veya daha fazla animasyon nesneleri oluşturma ViewExtensions sınıfında genişletme yöntemleri ile tüm Xamarin.Forms animasyonların yapı taşıdır. Bu makalede, animasyon sınıfı oluşturun ve animasyonları iptal etme, birden çok animasyon eşitlemek için kullanın ve var olan animasyon yöntemlerle animasyonlu değildir özelliklerine animasyon özel animasyon oluşturma gösterilmektedir._
+_Animasyon sınıfı, bir veya daha fazla animasyon nesneleri oluşturma ViewExtensions sınıfı alanında uzantı yöntemlerini içeren tüm Xamarin.Forms animasyon yapı taşıdır. Bu makalede, oluşturmak ve animasyonları iptal, birden çok animasyon eşitlemek için animasyon sınıfı kullanın ve var olan bir animasyon yöntemlerle animasyonlu olmayan özelliklerine animasyon özel animasyonlar oluşturma gösterilmektedir._
 
 
-Parametre sayısı oluştururken belirtilmelidir bir `Animation` hareketli özelliğinin başlangıç ve bitiş değerleri dahil olmak üzere nesnenin ve özelliğin değerini değiştiren bir geri çağırma. Bir `Animation` nesnesi de çalıştırın ve eşitlenen bir alt animasyon koleksiyonu korumak. Daha fazla bilgi için bkz: [alt animasyonları](#child).
+Bir dizi parametre oluştururken belirtilmelidir bir `Animation` animasyon uygulanan özelliğinin başlangıç ve bitiş değerlerini de dahil olmak üzere, nesne ve özelliğin değerini değiştiren bir geri çağırma. Bir `Animation` nesne de çalıştıran ve eşitlenmiş alt animasyonları koleksiyonunu sağlamak. Daha fazla bilgi için [alt animasyonları](#child).
 
-İle oluşturulmuş bir animasyon çalıştıran [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) olabilir veya alt animasyonları içermeyebilir sınıfını çağırarak elde edilir [ `Commit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Animation.Commit/p/Xamarin.Forms.IAnimatable/System.String/System.UInt32/System.UInt32/Xamarin.Forms.Easing/System.Action{System.Double,System.Boolean}/System.Func{System.Boolean}/) yöntemi. Bu yöntem animasyonun ve diğer öğeleri arasında gösterilip animasyonun yinelenecek denetler bir geri çağırma süresini belirtir.
+İle oluşturulan bir animasyon çalıştıran [ `Animation` ](xref:Xamarin.Forms.Animation) olabilir veya alt animasyonları içermeyebilir sınıfını çağrılarak gerçekleştirilir [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) yöntemi. Bu yöntem, animasyonun ve diğer öğeler arasında animasyonu yineleme sorulmayacağını denetler bir geri çağırma süresi belirtir.
 
 ## <a name="creating-an-animation"></a>Bir animasyon oluşturma
 
-Oluştururken bir [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) tipik olarak, aşağıdaki kod örneğinde gösterildiği gibi üç parametre en az gerekli nesnesi:
+Oluştururken bir [ `Animation` ](xref:Xamarin.Forms.Animation) genellikle, aşağıdaki kod örneğinde gösterildiği gibi en az üç parametre gerekli, nesne:
 
 ```csharp
 var animation = new Animation (v => image.Scale = v, 1, 2);
 ```
 
-Bu kod bir animasyon tanımlar [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) özelliği bir [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) bir değerden 1'örneğinin 2 değeri. Xamarin.Forms tarafından türetilmiş, animasyonlu değer ilk bağımsız değişkeni olarak belirtilen geri dönüş değerini değiştirmek için kullanıldığı geçirilir `Scale` özelliği.
+Bu kod, bir animasyon tanımlar [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) özelliği bir [ `Image` ](xref:Xamarin.Forms.Image) örneğinden bir değer olan 1 2 değerini. Xamarin.Forms ile elde edilir, animasyonlu değeri ilk bağımsız değişkeni belirtilen geri dönüş değerini değiştirmek için kullanıldığı geçirilir `Scale` özelliği.
 
-Animasyonun bir çağrı kullanmaya [ `Commit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Animation.Commit/p/Xamarin.Forms.IAnimatable/System.String/System.UInt32/System.UInt32/Xamarin.Forms.Easing/System.Action{System.Double,System.Boolean}/System.Func{System.Boolean}/) yöntemi, aşağıdaki kod örneğinde gösterildiği gibi:
+Animasyonun bir çağrıyla başlatılır [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) yöntemini aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => image.Scale = 1, () => true);
 ```
 
-Unutmayın [ `Commit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Animation.Commit/p/Xamarin.Forms.IAnimatable/System.String/System.UInt32/System.UInt32/Xamarin.Forms.Easing/System.Action{System.Double,System.Boolean}/System.Func{System.Boolean}/) döndürmemesi bir `Task` nesnesi. Bunun yerine, bildirimler geri arama yöntemleri sağlanır.
+Unutmayın [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) yöntemi bir `Task` nesne. Bunun yerine, bildirimler, geri çağırma yöntemleri ile sağlanır.
 
-Şu bağımsız değişkenleri belirtilen `Commit` yöntemi:
+Şu bağımsız değişkenler belirtilen `Commit` yöntemi:
 
-- İlk bağımsız değişken (*sahibi*) animasyon sahibini tanımlar. Bu, animasyonun uygulandığı bir görsel öğe ya da sayfa gibi başka bir görsel öğe olabilir.
-- İkinci bağımsız değişken (*adı*) bir adla animasyon tanımlar. Ad, animasyonun benzersiz şekilde tanımlamak için sahibiyle birleştirilir. Bu benzersiz tanımlayıcıya sonra animasyonun çalışır durumda olup olmadığını belirlemek için kullanılabilir ([`AnimationIsRunning`](https://developer.xamarin.com/api/member/Xamarin.Forms.AnimationExtensions.AnimationIsRunning/p/Xamarin.Forms.IAnimatable/System.String/)), ya da iptal etmek ([`AbortAnimation`](https://developer.xamarin.com/api/member/Xamarin.Forms.AnimationExtensions.AbortAnimation/p/Xamarin.Forms.IAnimatable/System.String/)).
-- Üçüncü bağımsız değişken (*oranı*) tanımlanan geri çağırma yöntemine yapılan her çağrı arasındaki milisaniye sayısını gösterir. [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) Oluşturucusu
+- İlk bağımsız değişken (*sahibi*) animasyon sahibi tanımlar. Bu, animasyonun uygulandığı bir görsel öğe veya sayfa gibi başka bir görsel öğe olabilir.
+- İkinci bağımsız değişkeni (*adı*) bir ada sahip bir animasyon tanımlar. Ad, animasyonun benzersiz olarak tanımlanabilmesi için sahip birleştirilir. Bu benzersiz tanımlayıcıya sonra animasyon çalışıp çalışmadığını belirlemek için kullanılabilir ([`AnimationIsRunning`](xref:Xamarin.Forms.AnimationExtensions.AnimationIsRunning(Xamarin.Forms.IAnimatable,System.String))), veya iptal etmek için ([`AbortAnimation`](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String))).
+- Üçüncü bağımsız değişken (*oranı*) tanımlı geri çağırma yöntemine yapılan her çağrı arasındaki milisaniye sayısını gösteren [ `Animation` ](xref:Xamarin.Forms.Animation) Oluşturucusu
 - Dördüncü bağımsız değişken (*uzunluğu*) milisaniye cinsinden animasyonun süresini gösterir.
-- Beşinci bağımsız değişken (*kolaylaştırma*) animasyon kullanılacak hareket hızı işlevi tanımlar. Alternatif olarak, hareket hızı işlevi bağımsız değişken olarak belirtilebilir [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) Oluşturucusu. İşlevler kolaylaştırma hakkında daha fazla bilgi için bkz: [kolaylaştırma işlevleri](~/xamarin-forms/user-interface/animation/easing.md).
-- Altıncı bağımsız değişken (*tamamlandı*) animasyon tamamlandıktan sonra yürütülecek bir geri çağırma olduğu. Bu geri çağırma son değeri ve ikinci bağımsız değişkeni olan gösteren ilk bağımsız değişkeni ile iki bağımsız değişken almayan bir `bool` ayarlanmış `true` animasyon iptal edilirse. Alternatif olarak, *tamamlandı* geri çağırma bağımsız değişken olarak belirtilebilir [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) Oluşturucusu. Bununla birlikte, tek bir animasyonu varsa *tamamlandı* geri aramalar hem de belirtilir `Animation` oluşturucusu ve `Commit` yöntemi, yalnızca belirtilen geri çağırma `Commit` yöntemi yürütülür.
-- Yedinci bağımsız değişken (*yineleyin*) animasyonun yinelenmesi verir aramasıdır. Animasyon sonunda çağrılır ve döndürme `true` animasyonun yinelenmesi gerektiğini gösterir.
+- Beşinci bağımsız değişken (*hızlandırma*) animasyon kullanılacak hızlandırma işlevini tanımlar. Alternatif olarak, hızlandırma işlevini bağımsız değişken olarak belirtilebilir [ `Animation` ](xref:Xamarin.Forms.Animation) Oluşturucusu. Kolaylaştırıcı işlevler hakkında daha fazla bilgi için bkz. [kolaylaştırıcı işlevler](~/xamarin-forms/user-interface/animation/easing.md).
+- Altıncı bağımsız değişken (*tamamlandı*) olan animasyon tamamlandığında yürütülecek bir geri çağırma. Bu geri çağırma son değer ve ikinci bağımsız değişkeni olan gösteren ilk bağımsız değişken ile iki bağımsız değişkeni alır bir `bool` ayarlanmış `true` animasyon iptal edildiyse. Alternatif olarak, *tamamlandı* geri çağırma bağımsız değişken olarak belirtilebilir [ `Animation` ](xref:Xamarin.Forms.Animation) Oluşturucusu. Bununla birlikte, tek bir animasyon değilse *tamamlandı* geri çağırmaları her ikisinde de belirtilirse `Animation` oluşturucusu ve `Commit` yöntemi, yalnızca belirtilen geri çağırma `Commit` yöntemi yürütülür.
+- Yedinci bağımsız değişken (*yineleyin*) animasyonun yinelenmesi sağlayan aramasıdır. Animasyon sonunda çağrılır ve döndürerek `true` animasyonun yinelenmesi gösterir.
 
-Genel etki artırır animasyonun oluşturmaktır [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) özelliği bir [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) 1'den 2 ' den 2 kullanarak saniye (2000 milisaniye) [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) işlevi kolaylaştırma. Animasyon tamamlandıktan, her zaman kendi `Scale` özelliği 1 olarak sıfırlar ve animasyonu yineler.
+Genel etki artıran animasyon oluşturmaktır [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) özelliği bir [ `Image` ](xref:Xamarin.Forms.Image) 2 ' den 2 kullanarak saniyeler içinde (2000 milisaniye cinsinden), 1'den [ `Linear` ](xref:Xamarin.Forms.Easing.Linear) hızlandırma işlevi. Animasyon tamamlandıktan, her zaman kendi `Scale` özelliği 1 olarak sıfırlanır ve animasyonu yineler.
 
 > [!NOTE]
-> Diğer bağımsız olarak çalıştırılan eşzamanlı bir animasyon oluşturarak olacak oluşturulan bir `Animation` nesne her animasyonun ve ardından çağırma `Commit` her animasyon yöntemi.
+> Birbirinden çalıştıran eşzamanlı animasyonları oluşturarak değişkenden oluşan bir `Animation` nesne için her bir animasyon ve ardından arama `Commit` her animasyonu yöntemi.
 
 <a name="child" />
 
 ### <a name="child-animations"></a>Alt animasyonları
 
-[ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) Sınıfı ayrıca oluşturulmasını ilgilendirir alt animasyonları destekler bir `Animation` hangi diğer nesneye `Animation` nesneleri eklenir. Bu, bir dizi çalıştırıp eşitlenen animasyonları sağlar. Aşağıdaki kod örneğinde, oluşturma ve alt animasyonları çalıştırma gösterilmektedir:
+[ `Animation` ](xref:Xamarin.Forms.Animation) Sınıfı da oluşturulmasını ilgilendirir alt animasyonları destekler bir `Animation` hangi diğer nesne `Animation` nesneleri eklenir. Bu, bir dizi çalıştırın ve eşitlenmesi animasyonları sağlar. Aşağıdaki kod örneği, oluşturma ve çalıştırma alt animasyonları gösterir:
 
 ```csharp
 var parentAnimation = new Animation ();
@@ -75,7 +75,7 @@ parentAnimation.Add (0.5, 1, scaleDownAnimation);
 parentAnimation.Commit (this, "ChildAnimations", 16, 4000, null, (v, c) => SetIsEnabledButtonState (true, false));
 ```
 
-Alternatif olarak, kod örneği daha özlü biçimde, aşağıdaki kod örneğinde kanıtlanabilir yazılabilir:
+Alternatif olarak, kod örneği daha kısaca, aşağıdaki kod örneğinde kanıtlanabilir olarak yazılabilir:
 
 ```csharp
 new Animation {
@@ -85,31 +85,31 @@ new Animation {
     }.Commit (this, "ChildAnimations", 16, 4000, null, (v, c) => SetIsEnabledButtonState (true, false));
 ```
 
-Her iki kod örnekleri, bir üst içinde [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) nesnesi oluşturulur, ek olduğu `Animation` nesneleri sonra eklenir. İlk iki bağımsız değişken [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Animation.Add/p/System.Double/System.Double/Xamarin.Forms.Animation/) yöntemi başlamak ve alt animasyon bitiş zamanı belirtin. Bağımsız değişken değerleri 0 ile 1 arasında olmalıdır ve belirtilen alt animasyon etkin olacağını üst animasyon göreli döneminde temsil eder. Bu nedenle, bu örnekte `scaleUpAnimation` animasyon ilk yarısı için etkin olur `scaleDownAnimation` animasyon ikinci yarısında için etkin olur ve `rotateAnimation` tüm süresince etkin olacaktır.
+Her iki kod örnekleri, bir üst öğe içinde [ `Animation` ](xref:Xamarin.Forms.Animation) nesne oluşturulur, ek `Animation` nesneleri a eklenir. İlk iki bağımsız değişkenleri [ `Add` ](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation)) yöntemi ne zaman başlar ve son alt animasyon belirtin. Bağımsız değişken değerleri 0 ile 1 arasında olması ve göreli süre içinde belirtilen alt animasyon etkin olacaktır üst animasyon temsil eder. Bu nedenle, bu örnekte `scaleUpAnimation` ilk yarısında, animasyon için etkin olacaktır `scaleDownAnimation` ikinci yarısında animasyon için etkin olacaktır ve `rotateAnimation` sürenin tamamı boyunca etkin olacaktır.
 
-Genel etki animasyonun 4 saniye (4000 milisaniye) gerçekleşir. `scaleUpAnimation` Canlandırır [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) 1 özelliğine 2 ' den 2 saniye. `scaleDownAnimation` Sonra canlandırır `Scale` 2 özelliğine 1 ' den 2 saniye. Her iki ölçek animasyonları yaşanan olsa da, `rotateAnimation` canlandırır [ `Rotation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Rotation/) 0 özelliğinden 360, üzerinde 4 saniye. Ölçeklendirme animasyonları hareket hızı işlevleri kullandığını unutmayın. [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) İşlevi kolaylaştırma neden [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) başlangıçta daha büyük almadan önce daraltmak için ve [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) işlevi kolaylaştırma neden `Image` tam animasyon sonuna gerçek boyutundan daha küçük olacak.
+Genel etki animasyon 4 saniyenin üzerindeki (4000 milisaniye cinsinden) gerçekleşir. `scaleUpAnimation` Canlandırır [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) özelliğini 1'den 2 ' den 2 saniye. `scaleDownAnimation` Ardından canlandırır `Scale` özelliğini 1, 2 saniyenin üzerindeki 2. Her iki ölçeklendirme animasyonları gerçekleşirken, `rotateAnimation` canlandırır [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) 0-360, 4 saniyenin üzerindeki özelliği. Ölçeklendirme animasyonlara kolaylaştırıcı işlevler kullanmanız gerektiğini unutmayın. [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) Hızlandırma işlevi neden [ `Image` ](xref:Xamarin.Forms.Image) başlangıçta daha büyük almadan önce küçültmek ve [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) hızlandırma işlevi neden `Image` tam animasyon sonuna doğru gerçek boyutundan daha küçük olacak.
 
-Bir dizi arasındaki farklar vardır bir [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) alt animasyon kullanır nesne ve değil biri:
+Bir dizi arasındaki farklar vardır bir [ `Animation` ](xref:Xamarin.Forms.Animation) alt animasyonlarını kullanıp bir nesne ve olmayan bir:
 
-- Alt animasyonları kullanırken *tamamlandı* alt animasyon üzerinde geri arama gösterir zaman alt tamamlandı ve *tamamlandı* geri çağırma geçirilen `Commit` yöntemi gösterir Animasyonun tamamını tamamlandı.
-- Alt animasyonları kullanırken, döndürme `true` gelen *yineleyin* üzerinde geri arama `Commit` yöntemi animasyonun yineler değil neden olur, ancak animasyon yeni değerleri çalışmaya devam eder.
-- Bir hareket hızı işlevinde dahil ederken `Commit` yöntemi ve hareket hızı işlevi döndürür değeri 1'den büyük, animasyonun sonlandırılacak. Hareket hızı işlevi 0'dan küçük bir değer döndürürse, değeri 0 olarak clamped. 0'den küçük ya da 1'den büyük bir değer döndüren bir hareket hızı işlevi kullanmak için onu belirtilmesi birinde yerine alt animasyonların `Commit` yöntemi.
+- Alt animasyonları kullanırken *tamamlandı* alt animasyon üzerinde geri arama alt tamamlandığında gösterir ve *tamamlandı* geçirilen geri çağırma `Commit` yöntemi gösterir tüm animasyon tamamlandı.
+- Alt animasyonları kullanırken döndüren `true` gelen *yineleyin* üzerinde geri arama `Commit` yöntemi yinelemek animasyon değil neden olur, ancak animasyon yeni değerler olmadan çalışmaya devam eder.
+- Kolaylaştırıcı bir işlev içinde dahil ederken `Commit` yöntemi hızlandırma işlevini döndürür ve bir değer 1'den büyük, animasyon sonlandırılacak. Hızlandırma işlevini 0'dan küçük bir değer döndürürse, değeri 0 olarak sıkıştırılır. 0'den küçük ya da 1'den büyük bir değer döndüren bir hızlandırma işlevini kullanmak için gereken belirtilen bir alt animasyon yerine `Commit` yöntemi.
 
-[ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) Sınıfı ayrıca içerir [ `WithConcurrent` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Animation.WithConcurrent/p/Xamarin.Forms.Animation/System.Double/System.Double/) alt animasyonları bir üst öğeye eklemek için kullanılan yöntemleri `Animation` nesnesi. Ancak, kendi *başlamak* ve *son* bağımsız değişken değerleri 0 ile 1 sınırlı değildir, ancak yalnızca 0 ve 1 aralığına karşılık gelen alt animasyon kısmı etkin olacaktır. Örneğin, varsa bir `WithConcurrent` yöntem çağrısı hedefleyen bir alt animasyon tanımlayan bir [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) özelliğinden 1-6 ancak ile *başlamak* ve *son* değerleri -2 ve 3 ' ü *başlamak* -2 değerini karşılık gelen bir `Scale` 1 değerini ve *son* değeri 3 karşılık gelen bir `Scale` 6 değeri. Değerler 0 ile 1 aralığının dışında hiçbir bölümü animasyonda, yürütmek için `Scale` özellik yalnızca animasyonlu 3 ile 6 '.
+[ `Animation` ](xref:Xamarin.Forms.Animation) Sınıfı da içeren [ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double)) bir üst öğeye alt animasyon eklemek için kullanılan yöntemleri `Animation` nesne. Ancak, kendi *başlamak* ve *son* bağımsız değişken değerleri 0 ile 1 sınırlı değildir, ancak bu bölümü yalnızca 0 ile 1 aralığına karşılık gelen alt animasyonun etkin olacaktır. Örneğin, bir `WithConcurrent` yöntem çağrısının hedefleyen bir alt animasyon tanımlar bir [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) özelliği 1'den 6 ancak ile *başlamak* ve *son* değerleri -2 ve 3 ' ü *başlamak* -2 değerini karşılık gelen bir `Scale` 1 değerini ve *son* 3 değerini karşılık gelen bir `Scale` 6 değeri. Bir animasyon değerleri 0 ile 1 aralığının dışında hiçbir bölümü aldığından `Scale` özelliği yalnızca animasyonlu 3 ila 6.
 
-## <a name="canceling-an-animation"></a>Bir animasyon iptal etme
+## <a name="canceling-an-animation"></a>Bir animasyon iptal ediliyor
 
-Bir uygulama bir animasyon çağrısıyla iptal edebilirsiniz [ `AbortAnimation` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AnimationExtensions.AbortAnimation/p/Xamarin.Forms.IAnimatable/System.String/) genişletme yöntemi, aşağıdaki kod örneğinde gösterildiği gibi:
+Bir uygulama bir çağrı ile animasyon iptal edebilirsiniz [ `AbortAnimation` ](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String)) genişletme yöntemi, aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 this.AbortAnimation ("SimpleAnimation");
 ```
 
-Animasyon animasyon sahibi ve animasyon adının birleşimiyle benzersiz şekilde tanımlanır unutmayın. Bu nedenle, sahip ve ad, animasyonun çalıştıran animasyonun iptal etmek için belirtilmemiş belirtilmelidir. Bu nedenle, kod örneği hemen adlı animasyon iptal edilecek `SimpleAnimation` sayfa tarafından ait.
+Not animasyonları animasyon sahibi ve animasyon adının bir birleşimi tarafından benzersiz şekilde tanımlanır. Bu nedenle, sahip ve ad, animasyonun çalıştıran animasyon iptal etmek için belirtilmelidir belirtilen. Bu nedenle, kod örneği hemen adlı animasyonu iptal edilecek `SimpleAnimation` sayfa tarafından ait.
 
 ## <a name="creating-a-custom-animation"></a>Özel Animasyon oluşturma
 
-Burada kadarki örneklerde eşit yöntemleri ile elde edilebilir animasyonları göstermiştir [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) sınıfı. Ancak, avantajı [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) sınıftır animasyonlu değeri değiştiğinde yürütülen geri çağırma yöntemi erişimi olan. Bu, istenen tüm animasyon uygulamak geri çağırma sağlar. Örneğin, aşağıdaki kod örneğinde canlandırır [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) ayarlayarak sayfanın özelliğini [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) tarafından oluşturulan değerleri [ `Color.FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/)0 ile 1 arasında değişen ton değerlerle yöntemi:
+Buraya kadar gösterilen örneklerden eşit yöntemleri ile elde edilebilir animasyonları sergilemiştir [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) sınıfı. Ancak avantajı [ `Animation` ](xref:Xamarin.Forms.Animation) sınıfı, erişim animasyonlu değeri değiştiğinde yürütülen geri çağırma yöntemine sahip. Bu, istenen tüm animasyon uygulamak geri çağırma sağlar. Örneğin, aşağıdaki kod örneği canlandırır [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) özelliğini ayarlayarak [ `Color` ](xref:Xamarin.Forms.Color) tarafından oluşturulan değerleri [ `Color.FromHsla` ](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double))yöntemiyle hue değerleri 0 ile 1 arasında:
 
 ```csharp
 new Animation (callback: v => BackgroundColor = Color.FromHsla (v, 1, 0.5),
@@ -117,20 +117,20 @@ new Animation (callback: v => BackgroundColor = Color.FromHsla (v, 1, 0.5),
   end: 1).Commit (this, "Animation", 16, 4000, Easing.Linear, (v, c) => BackgroundColor = Color.Default);
 ```
 
-Sonuçta elde edilen animasyon sayfası arka plan renklerini şifre aracılığıyla ilerledikten görünümünü sağlar.
+Elde edilen animasyon, sayfa arka plan renklerini rainbow aracılığıyla ilerledikten görünümünü sağlar.
 
-Bezier eğrisi animasyon dahil olmak üzere, karmaşık bir animasyon oluşturma daha fazla örnek için bkz: [Bölüm 22](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf) , [Xamarin.Forms ile Mobile Apps oluşturma](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
+Bezier eğrisi animasyon dahil olmak üzere, karmaşık animasyonları oluşturmaya daha fazla örnek için bkz. [Bölüm 22](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf) , [Xamarin.Forms ile Mobile Apps oluşturma](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
 
 ## <a name="creating-a-custom-animation-extension-method"></a>Özel Animasyon genişletme yöntemi oluşturma
 
-Genişletme yöntemleri [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) sınıfı, geçerli değeri bir özellikten belirli bir değere hareketli hale getirmeyi. Bu, oluşturmak, örneğin, zorlaştırır bir `ColorTo` bir değer renkten diğerine animasyon için çünkü kullanılabilir animasyon yöntemi:
+Uzantı yöntemleri [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) sınıfı belirtilen değer geçerli değerinden bir özelliğe animasyon ekleme. Bu, oluşturmak, örneğin, zorlaştırır bir `ColorTo` bir değerden bir renk diğerine animasyon uygulamak için kullanılabilir animasyon yöntemi:
 
-- Yalnızca [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) özelliği tarafından tanımlanan [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) sınıf [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/), hangi değil her zaman istenen `Color` özelliği animasyon uygulamak için.
-- Genellikle geçerli değeri bir [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) özelliği [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/), gerçek bir renk değil ve hangi kullanılamaz ilişkilendirme hesaplamalarda.
+- Yalnızca [ `Color` ](xref:Xamarin.Forms.Color) özelliği tarafından tanımlanan [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) sınıfı [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor), hangi değil her zaman istenen `Color` özelliği animasyon uygulamak için.
+- Genellikle geçerli değerini bir [ `Color` ](xref:Xamarin.Forms.Color) özelliği [ `Color.Default` ](xref:Xamarin.Forms.Color.Default), gerçek bir renk değil ve hangi kullanılamaz ilişkilendirme hesaplamalarda.
 
-Bu sorun için çözüm sahip olmaktır `ColorTo` yöntemi, belirli bir hedef [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) özelliği. Bunun yerine, Ara değerli geçirmeden bir geri çağırma yöntemi yazılabilir `Color` çağırana geri değeri. Ayrıca, yöntemi başlangıç alın ve bitiş `Color` bağımsız değişkenler.
+Bu sorunun çözümü sahip olmaktır `ColorTo` yöntemi belirli bir hedef [ `Color` ](xref:Xamarin.Forms.Color) özelliği. Bunun yerine, bir geri çağırma yöntemi ile ilişkilendirilmiş geçirir yazılabilir `Color` çağırana geri değeri. Ayrıca, yöntemi olacaktır ve son `Color` bağımsız değişkenler.
 
-`ColorTo` Yöntemi kullanan bir genişletme yöntemi uygulanabilir [ `Animate` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AnimationExtensions.Animate{T}/p/Xamarin.Forms.IAnimatable/System.String/System.Func{System.Double,T}/System.Action{T}/System.UInt32/System.UInt32/Xamarin.Forms.Easing/System.Action{T,System.Boolean}/System.Func{System.Boolean}/) yönteminde [ `AnimationExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AnimationExtensions/) işlevselliği sağlamak için sınıf. Bunun nedeni, `Animate` yöntemi türü olmayan hedef özellikleri kullanılabilir `double`, aşağıdaki kod örneğinde gösterildiği gibi:
+`ColorTo` Yöntemi kullanan bir genişletme yöntemi uygulanabilir [ `Animate` ](xref:Xamarin.Forms.AnimationExtensions.Animate*) yönteminde [ `AnimationExtensions` ](xref:Xamarin.Forms.AnimationExtensions) işlevselliği sağlamak için sınıf. Bunun nedeni, `Animate` yöntemi türü olmayan hedef özellikleri kullanılabilir `double`, aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 public static class ViewExtensions
@@ -161,9 +161,9 @@ public static class ViewExtensions
 }
 ```
 
-[ `Animate` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AnimationExtensions.Animate{T}/p/Xamarin.Forms.IAnimatable/System.String/System.Func{System.Double,T}/System.Action{T}/System.UInt32/System.UInt32/Xamarin.Forms.Easing/System.Action{T,System.Boolean}/System.Func{System.Boolean}/) Yöntemi gerektiren bir *dönüştürme* bağımsız değişkeni bir geri çağırma yöntemi. Bu geri çağırma giriş her zaman olduğu bir `double` 0 ile 1 arasında. Bu nedenle, `ColorTo` yöntemi tanımlar kendi dönüştürme `Func` kabul eden bir `double` 0 ile 1 ve bu geri döner arasında değişen bir [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) bu değerine karşılık gelen değer. `Color` Değeri enterpolasyonla tarafından hesaplanır [ `R` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.R/), [ `G` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.G/), [ `B` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.B/), ve [ `A` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.A/) sağlanan iki değerlerini `Color` bağımsız değişkenler. `Color` Değer belirli bir özellik için uygulama için geri çağırma yöntemine geçirilen sonra.
+[ `Animate` ](xref:Xamarin.Forms.AnimationExtensions.Animate*) Yöntemi gerektiren bir *dönüştürme* bir geri çağırma yöntemi bağımsız değişken. Bu geri arama her zaman giriştir bir `double` 0 ile 1 arasında. Bu nedenle, `ColorTo` yöntemi tanımlar, kendi dönüştürme `Func` kabul eden bir `double` 0- 1 döndürür arasında bir [ `Color` ](xref:Xamarin.Forms.Color) bu değerine karşılık gelen bir değer. `Color` Değeri ilişkilendirme ile hesaplanır [ `R` ](xref:Xamarin.Forms.Color.R), [ `G` ](xref:Xamarin.Forms.Color.G), [ `B` ](xref:Xamarin.Forms.Color.B), ve [ `A` ](xref:Xamarin.Forms.Color.A) sağlanan iki değerlerini `Color` bağımsız değişkenler. `Color` Değeri uygulama için belirli bir özellik için geri çağırma yöntemine geçirilen sonra.
 
-Bu yaklaşım sağlar `ColorTo` herhangi bir animasyon yöntemi [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) özelliği, aşağıdaki kod örneğinde gösterildiği gibi:
+Bu yaklaşım sağlar `ColorTo` herhangi animasyon uygulamak için gereken yöntemini [ `Color` ](xref:Xamarin.Forms.Color) aşağıdaki kod örneğinde gösterildiği gibi özelliği:
 
 ```csharp
 await Task.WhenAll(
@@ -173,15 +173,15 @@ await this.ColorTo(Color.FromRgb(0, 0, 0), Color.FromRgb(255, 255, 255), c => Ba
 await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 ```
 
-Bu kod örneğinde, `ColorTo` yöntemi canlandırır [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) ve [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) özelliklerini bir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), `BackgroundColor`bir sayfanın özelliğini ve [ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) özelliği bir [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/).
+Bu kod örneğinde `ColorTo` yöntemi canlandırır [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor) ve [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) özelliklerini bir [ `Label` ](xref:Xamarin.Forms.Label), `BackgroundColor`özelliği bir sayfasının ve [ `Color` ](xref:Xamarin.Forms.BoxView.Color) özelliği bir [ `BoxView` ](xref:Xamarin.Forms.BoxView).
 
 ## <a name="summary"></a>Özet
 
-Bu makalede nasıl kullanılacağı gösterilmiştir [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) oluşturmak ve animasyonları iptal, birden çok animasyon eşitlemek ve varolan animasyonun animasyonlu değildir özelliklerine animasyon özel animasyon oluşturmak için sınıfı yöntemleri. `Animation` Tüm Xamarin.Forms animasyonları Yapı bloğu bir sınıftır.
+Bu makalede nasıl kullanılacağı gösterilmiştir [ `Animation` ](xref:Xamarin.Forms.Animation) sınıfı oluşturmak ve animasyonları iptal, birden çok animasyonlarına eşitleyebilir ve var olan bir animasyon tarafından animasyonlu olmayan özelliklerine animasyon özel animasyon oluşturmak için yöntemleri. `Animation` Sınıfı, tüm Xamarin.Forms animasyon yapı taşı.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Özel Animasyon (örnek)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/custom/)
-- [Animasyon](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/)
-- [AnimationExtensions](https://developer.xamarin.com/api/type/Xamarin.Forms.AnimationExtensions/)
+- [Özel animasyonlara (örnek)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/custom/)
+- [Animasyon](xref:Xamarin.Forms.Animation)
+- [AnimationExtensions](xref:Xamarin.Forms.AnimationExtensions)

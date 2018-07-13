@@ -1,64 +1,64 @@
 ---
 title: Xamarin.Forms kılavuz
-description: Bu makalede Xamarin.Forms kılavuz sınıfı görünümleri satırları ve sütunları sahip kılavuzlarda sunmak için nasıl kullanılacağı açıklanmaktadır.
+description: Bu makalede, satırları ve sütunları sahip kılavuzlarda görünümleri sunmak için Xamarin.Forms kılavuz sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 01dd59d5e94b473316b03f9035d38305fad42880
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245159"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994509"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms kılavuz
 
-[`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) görünümleri satırlar ve sütunlar halinde düzenleme destekler. Satırları ve sütunları orantılı boyutları veya mutlak boyutları için ayarlanabilir. `Grid` Düzeni geleneksel tabloları ile karıştırılmamalıdır ve tablo verileri sunmak için tasarlanmamıştır. `Grid` Satır, sütun veya hücre biçimlendirme kavramı yoktur. HTML tabloları aksine `Grid` tamamen içerik yerleştirmek için tasarlanmıştır.
+[`Grid`](xref:Xamarin.Forms.Grid) görünümler, satırlar ve sütunlar halinde düzenleme destekler. Satırları ve sütunları orantılı boyutları veya mutlak boyutları için ayarlanabilir. `Grid` Düzen geleneksel tablolarla karıştırılmamalıdır ve tablo verileri sunmak için tasarlanmamıştır. `Grid` Satır, sütun veya hücre biçimlendirme kavramı yoktur. HTML tabloları aksine `Grid` tamamen içeriği teslim düzenlemek için tasarlanmıştır.
 
 [![](grid-images/layouts-sml.png "Xamarin.Forms düzenleri")](grid-images/layouts.png#lightbox "Xamarin.Forms düzenleri")
 
 Bu makalede ele alınacaktır:
 
-- **[Amaç](#Purpose)**  &ndash; yaygın kullanımları `Grid`.
+- **[Amaç](#Purpose)**  &ndash; yaygın kullanımları için `Grid`.
 - **[Kullanım](#Usage)**  &ndash; nasıl kullanılacağını `Grid` istenen tasarımınızı elde etmek için.
-  - **[Satırları ve sütunları](#Rows_and_Columns)**  &ndash; satırları ve sütunları belirtin `Grid`.
-  - **[Görünümleri yerleştirme](#Placing_Views)**  &ndash; belirli satırları ve sütunları kılavuza görünümleri ekleyin.
-  - **[Aralık](#Spacing)**  &ndash; satırlar ve sütunlar arasında alanları yapılandırın.
-  - **[Yayılma](#Spans)**  &ndash; birden fazla satır veya sütun span öğeleri yapılandırın.
+  - **[Satırları ve sütunları](#Rows_and_Columns)**  &ndash; satır ve sütun belirtin `Grid`.
+  - **[Görünümleri yerleştirme](#Placing_Views)**  &ndash; görünümleri kılavuz belirli satırlar ve sütunlar ekleyin.
+  - **[Aralık](#Spacing)**  &ndash; satırları ve sütunları arasındaki boşluklar yapılandırın.
+  - **[Yayılma](#Spans)**  &ndash; satırlar veya sütunlar arasında yaymasına izin öğelerini yapılandırın.
 
-![](grid-images/grid.png "Kılavuz araştırması")
+![](grid-images/grid.png "Kılavuz keşfetme")
 
 ## <a name="purpose"></a>Amaç
 
-`Grid` bir kılavuza görünümleri düzenlemek için kullanılabilir. Bu durumlarda sayısında yararlıdır:
+`Grid` bir kılavuza görünümleri düzenlemek için kullanılabilir. Bu durumda bir süre içinde yararlıdır:
 
-- Bir hesap makinesi uygulaması düğmeleri düzenleme
-- İOS veya Android giriş ekranları gibi bir kılavuz içinde düzenleyerek düğmeleri/Seçenekler
-- Böylece bir boyut (like bazı araç çubuğundaki) eşit boyutta oldukları görünümleri düzenleme
+- Hesaplayıcı uygulama düğmeleri düzenleme
+- Kılavuz, iOS veya Android giriş ekranlarını gibi düzenleyerek düğmeleri/seçenekleri
+- Böylece bir boyut (bazı araç çubuklarında benzer) eşit boyutta olmaları görünümleri düzenleme
 
 ## <a name="usage"></a>Kullanım
 
-Geleneksel tabloları aksine `Grid` sayısını ve boyutunu satırları ve sütunları içerikten Infer değil. Bunun yerine, `Grid` sahip `RowDefinitions` ve `ColumnDefinitions` koleksiyonları. Bu, kaç tane satırları ve sütunları düzenleneceğini, tanımları basılı tutun. Görünümleri eklenir `Grid` belirtilen satır ve sütun dizinlerini ile hangi tanımlamak hangi satır ve sütun bir görünüm yerleştirilmelidir.
+Geleneksel tabloları aksine `Grid` sayısını ve boyutunu satırları ve sütunları içeriğinden Infer değil. Bunun yerine, `Grid` sahip `RowDefinitions` ve `ColumnDefinitions` koleksiyonları. Bu, kaç satır ve sütun düzenleneceğini tanımları tutun. Görünümleri eklenir `Grid` belirtilmiş satır ve sütun dizinlerini ile hangi Başkanın hangi satır ve sütun bir görünüm yerleştirilmelidir.
 
 <a name="Rows_and_Columns" />
 
 ### <a name="rows-and-columns"></a>Satırları ve sütunları
 
-Satır ve sütun bilgileri depolanır `Grid`'s `RowDefinitions`  &  `ColumnDefinitions` her koleksiyon özellikleri, [ `RowDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/) ve [ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/)nesneleri, sırasıyla. `RowDefinition` tek bir özelliğe sahip `Height`, ve `ColumnDefinition` tek bir özelliğe sahip `Width`. Yükseklik ve genişlik seçeneklerini aşağıdaki gibidir:
+Satır ve sütun bilgisi depolanan `Grid`'s `RowDefinitions`  &  `ColumnDefinitions` her koleksiyonları özellikleri, [ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition) ve [ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition)nesneleri, sırasıyla. `RowDefinition` tek bir özelliğe sahip `Height`, ve `ColumnDefinition` tek bir özelliğe sahip `Width`. Yükseklik ve genişlik seçeneklerini aşağıdaki gibidir:
 
-- **Otomatik** &ndash; satır veya sütun içeriğin sığması için otomatik olarak boyutları. Olarak belirtilen [ `GridUnitType.Auto` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/) C# veya olarak `Auto` XAML'de.
-- **Proportional(*)** &ndash; kalan alanı bir kısmının satırları ve sütunları boyutları. Bir değer olarak belirtilen ve `GridUnitType.Star` C# ve olarak `#*` XAML'de ile `#` ve istenen değer bırakılıyor. Bir satır/sütun ile belirtme `*` kullanılabilir alanı dolduracak şekilde neden olur.
-- **Mutlak** &ndash; boyutları ve belirli, sabit yükseklik ve genişlik değerleri içeren sütun. Bir değer olarak belirtilen ve `GridUnitType.Absolute` C# ve olarak `#` XAML'de ile `#` ve istenen değer bırakılıyor.
+- **Otomatik** &ndash; satır veya sütun içeriği sığdıracak şekilde otomatik olarak boyutları. Belirtildiği şekilde [ `GridUnitType.Auto` ](xref:Xamarin.Forms.GridUnitType) C# veya olarak `Auto` XAML içinde.
+- **Proportional(*)** &ndash; satırları ve sütunları kalan alanı tabanının oranı boyutlandırır. Bir değer olarak belirtilen ve `GridUnitType.Star` C# ve olarak `#*` , XAML içinde ile `#` istenen değerinizi oluşturuluyor. İçeren bir satır/sütun belirterek `*` kullanılabilir alanı dolduracak şekilde neden olur.
+- **Mutlak** &ndash; belirli, sabit yükseklik ve genişlik değerlere sahip satırları ve sütunları boyutları. Bir değer olarak belirtilen ve `GridUnitType.Absolute` C# ve olarak `#` , XAML içinde ile `#` istenen değerinizi oluşturuluyor.
 
 > [!NOTE]
-> Sütunların genişliğini değerleri olarak ayarlanan ' *'' Xamarin.Forms varsayılan olarak, hangi sağlar sütun kullanılabilir alanı doldurur.
+> Sütun genişliği değerlerini olarak ayarlanan ' *'' Xamarin.Forms varsayılan olarak, hangi sağlar sütun kullanılabilir alanı doldurur.
 
-Üç satır ve iki sütun gereken bir uygulamayı göz önünde bulundurun. Alttaki tam olarak uzun 200px olmalı ve en üst satırda iki kez Orta satır olarak yüksekliğinde olması gerekir. Sol sütunda içeriğin sığması için geniş olması ve kalan alanı dolduracak şekilde sağ sütun gerekiyor.
+Üç satır ve iki sütun gerektiren bir uygulama düşünün. En alttaki tam olarak uzun 200px olması ve en üst satır iki kez Orta satırında yüksekliğinde olması gerekir. Sol sütunda İçeriği sığdırmak için geniş olması gerekir ve kalan alanı dolduracak şekilde sağ sütunda gerekiyor.
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <Grid>
@@ -74,7 +74,7 @@ XAML'de:
 </Grid>
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var grid = new Grid();
@@ -88,15 +88,15 @@ grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) }
 
 ### <a name="placing-views-in-a-grid"></a>Kılavuzda görünümleri yerleştirme
 
-Görünümlerde yerleştirmek için bir `Grid` bunları kılavuzuna alt öğesi olarak ekleyin ve ardından hangi satır ve sütun, ait oldukları belirtin gerekir.
+Görünümlerde yerleştirmek için bir `Grid` bunları kılavuza alt öğesi olarak ekleyin ve ardından hangi satır ve sütun, ait oldukları belirtmeniz gerekir.
 
-XAML'de kullanmak `Grid.Row` ve `Grid.Column` yerleştirme belirtmek için tek tek her görünüm. Unutmayın `Grid.Row` ve `Grid.Column` satır ve sütunların sıfır tabanlı listelerine dayanan konumu belirtin. Bu 4 x 4 kılavuzunda sol üst hücreyi (0,0) ve sağ alt hücre (3,3) olduğunu anlamına gelir.
+XAML içinde kullanmak `Grid.Row` ve `Grid.Column` yerleştirme belirtmek için tek tek her görünüm. Unutmayın `Grid.Row` ve `Grid.Column` sıfır tabanlı satır ve sütun listesini temel alan konumu belirtin. Bu 4 x 4 kılavuzunda, sol üst hücreyi (0,0) ve alt sağ hücresi (3,3) olduğunu anlamına gelir.
 
-`Grid` Gösterilen aşağıdaki dört hücreler içeriyor:
+`Grid` Gösterilen aşağıdaki dört alan içerir:
 
-![](grid-images/label-grid.png "Dört görünümlerle kılavuz")
+![](grid-images/label-grid.png "Dört görünümleri içeren kılavuz")
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <Grid>
@@ -115,7 +115,7 @@ XAML'de:
 </Grid>
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var grid = new Grid();
@@ -136,9 +136,9 @@ grid.Children.Add(bottomLeft, 0, 1);
 grid.Children.Add(bottomRight, 1, 1);
 ```
 
-Yukarıdaki kod kılavuz dört etiketleri, iki sütun ve iki satır ile oluşturur. Her etiket aynı boyutta olur ve satırları tüm kullanılabilir alanı kullanmak için genişletecek unutmayın.
+Yukarıdaki kod, dört etiketleri, iki sütun ve iki satır ile kılavuz oluşturur. Satırları tüm kullanılabilir alanı kullanmak için genişletilir ve her etiket aynı boyuta sahip olacağını unutmayın.
 
-Görünümler eklenir yukarıdaki örnekte, [ `Grid.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.Children/) koleksiyonunu kullanarak [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/) aşırı sol ve üst bağımsız değişkenlerini belirtir. Kullanırken [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) sol belirtir aşırı, sağ, üst ve alt bağımsız değişkenler, while sol ve üst bağımsız her zaman içinde hücrelere başvuruda [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), sağa ve alt bağımsız olarak dışında olan hücrelere başvuracak şekilde görünebilir `Grid`. Sağ bağımsız değişkeni her zaman sol bağımsız değişkeni'den büyük olmalıdır ve alt bağımsız değişken her zaman üst bağımsız değişkenden büyük olması gerektiğinden budur. Aşağıdaki örnek, her ikisini de kullanarak eşdeğer kodu gösterir `Add` aşırı:
+Yukarıdaki örnekte, görünümleri için eklenen [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children) koleksiyonunu kullanarak [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/) sol ve üst bağımsız değişkenleri belirten bir aşırı yükleme. Kullanırken [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) sol belirten bir aşırı yükleme, sağ, üst ve alt bağımsız değişkenler, while sol ve üst bağımsız değişkenler her zaman içinde hücrelere başvurur [ `Grid` ](xref:Xamarin.Forms.Grid), sağa ve alt bağımsız değişkenleri dışında olan hücreleri başvurmak için görünebilir `Grid`. Sağ bağımsız değişkeni her zaman sol bağımsız değişkenden büyük olmalı ve alt bağımsız değişkeni her zaman üst bağımsız değişkenden büyük olmalıdır çünkü budur. Aşağıdaki örnek, her ikisini de kullanarak eşdeğer kod gösterir `Add` aşırı yüklemeler:
 
 ```csharp
 // left, top
@@ -156,12 +156,12 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 
 ### <a name="spacing"></a>Aralığı
 
-`Grid` satırları ve sütunları arasındaki boşluğu denetlemek için özellikleri vardır.  Aşağıdaki özellikleri özelleştirmek için kullanılabilir olan `Grid`:
+`Grid` satırları ve sütunları arasındaki boşluğu denetlemek için özelliklere sahiptir.  Aşağıdaki özellikleri özelleştirmek için kullanabileceğiniz `Grid`:
 
-- **ColumnSpacing** &ndash; sütunlar arasındaki boşluk miktarı.
+- **ColumnSpacing** &ndash; sütun arasındaki boşluk miktarı.
 - **RowSpacing** &ndash; satırları arasındaki boşluk miktarı.
 
-Aşağıdaki XAML belirten bir `Grid` iki sütun, bir satır ve 5 piksel sütunlar arasındaki aralığı:
+Aşağıdaki XAML belirtir bir `Grid` iki sütun, bir satır ve 5 piksel sütunlar arasındaki aralığı:
 
 ```xaml
 <Grid ColumnSpacing="5">
@@ -172,7 +172,7 @@ Aşağıdaki XAML belirten bir `Grid` iki sütun, bir satır ve 5 piksel sütunl
 </Grid>
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var grid = new Grid { ColumnSpacing = 5 };
@@ -186,13 +186,13 @@ Genellikle bir kılavuz ile çalışırken, birden fazla satır veya sütun bulu
 
 ![](grid-images/calculator.png "Calulator uygulama")
 
-0 düğmesi iki sütun gibi her platform için yerleşik hesaplayıcıları üzerinde yer aldığını dikkat edin. Bu kullanılarak gerçekleştirilir `ColumnSpan` bir öğe kaç sütun bulunması gereken belirtir özelliği. Bu düğme için XAML:
+0 düğmesini iki sütun gibi her platform için yerleşik hesaplayıcıları üzerinde yer aldığını unutmayın. Kullanılarak elde edilir `ColumnSpan` özelliği bir öğe kaç sütun kaplayan belirtir. Bu düğme için XAML:
 
 ```xaml
 <Button Text = "0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
 ```
 
-Ve C#:
+C# ve:
 
 ```csharp
 Button zeroButton = new Button { Text = "0" };
@@ -200,9 +200,9 @@ controlGrid.Children.Add (zeroButton, 0, 4);
 Grid.SetColumnSpan (zeroButton, 2);
 ```
 
-Statik yöntemlerini içinde bu kodu Not `Grid` yapılan değişiklikler dahil olmak üzere konumlandırma değişiklikleri gerçekleştirmek için kullanılan sınıfı `ColumnSpan` ve `RowSpan`. Değiştirilmiş olmaları önce de herhangi bir zamanda ayarlanabilir diğer özelliklerin aksine, statik yöntemler kullanılarak ayarlanan özellikleri zaten gerekir, kılavuzda unutmayın.
+İçinde bu kod, statik yöntemlerini Not `Grid` değişiklikler de dahil olmak üzere konumlandırma değişiklikleri gerçekleştirmek için kullanılan sınıf `ColumnSpan` ve `RowSpan`. Bunlar değiştirilmeden önce de herhangi bir zamanda ayarlanabilir diğer özelliklerin aksine, statik yöntemler kullanılarak ayarlanan özellikler zaten gerekir, kılavuz unutmayın.
 
-Yukarıdaki hesaplayıcı uygulama için tam XAML aşağıdaki gibidir:
+Yukarıdaki hesaplayıcısı uygulaması için tam XAML aşağıdaki gibidir:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -294,7 +294,7 @@ BackgroundColor="#404040">
 </ContentPage>
 ```
 
-Izgaranın üst etiket hem sıfır düğmesine bir sütun birden çok occuping dikkat edin. Benzer bir düzeni iç içe geçmiş kılavuzları kullanarak elde edilebilir rağmen `ColumnSpan`  &  `RowSpan` yaklaşım basittir.
+Hem üst kılavuza etiketi ve sıfır düğmesi olan bir sütun birden çok occuping dikkat edin. Benzer bir düzen iç içe geçmiş Kılavuzlar kullanarak elde edilebilir olsa da `ColumnSpan`  &  `RowSpan` yaklaşım basittir.
 
 C# uygulaması:
 
@@ -383,7 +383,7 @@ public CalculatorGridCode ()
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bölüm 17 Xamarin.Forms ile mobil uygulamaları oluşturma](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
-- [Kılavuz](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)
+- [Bölüm 17 Xamarin.Forms ile mobil uygulamalar oluşturma](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
+- [Kılavuz](xref:Xamarin.Forms.Grid)
 - [Düzen (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble örneği (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

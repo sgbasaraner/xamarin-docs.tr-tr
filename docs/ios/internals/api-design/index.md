@@ -1,83 +1,83 @@
 ---
-title: Xamarin.iOS API tasarım
-description: Bu belge Xamarin.iOS API'ları ve bunlar Objective-c ne ilişkili mimari için kullanılan temel ilkeler bazıları açıklanmaktadır
+title: Xamarin.iOS API tasarımı
+description: Bu belgede Xamarin.iOS API'leri ve bunları Objective-c ilişkileri oluşturmak için kullanılan temel ilkeler bazıları açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: a7e508ddd086936a3ffea9d76cde7d896fe4d1f3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 275db96435639a60be89e0e3ddb7fa120a30de1c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787360"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996418"
 ---
-# <a name="xamarinios-api-design"></a>Xamarin.iOS API tasarım
+# <a name="xamarinios-api-design"></a>Xamarin.iOS API tasarımı
 
-Mono, parçası olan bir temel sınıf kitaplıkları çekirdek yanı sıra [Xamarin.iOS](http://www.xamarin.com/iOS) çeşitli iOS Mono ile yerel iOS uygulamaları oluşturmak geliştiriciler izin vermek için API için bağlamaları ile gelir.
+' % S'core, Mono bir parçası olan bir temel sınıf kitaplıkları yanı sıra [Xamarin.iOS](http://www.xamarin.com/iOS) çeşitli iOS API'leri geliştiriciler, Mono ile yerel iOS uygulamaları oluşturmak izin vermek için bağlamaları ile birlikte gelir.
 
-Xamarin.iOS özünde C# dünyayla C tabanlı API'ler CoreGraphics gibi iOS için bağlamaları yanı sıra Objective-C world arasında köprü birlikte çalışma altyapının yoktur ve [OpenGL ES](#OpenGLES).
+Xamarin.iOS setinin için C tabanlı API'ler CoreGraphics gibi iOS bağlamaları yanı sıra Objective-C dünya ile C# dünya arasında köprü görevi gören bir birlikte çalışma altyapısı yoktur ve [OpenGL ES](#OpenGLES).
 
-Objective-C kodunu ile iletişim kurmak için alt düzey çalışma zamanı bulunduğu [MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime). Bu, bağlantılarında üstünde [Foundation](#MonoTouch.Foundation), CoreFoundation, ve [Uıkit](#MonoTouch.UIKit) sağlanır.
+Objective-C kodu ile iletişim kurmak için düşük düzeyli çalışma zamanı bulunduğu [MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime). Bu, bağlamalarda üzerine [Foundation](#MonoTouch.Foundation), CoreFoundation, ve [Uıkit](#MonoTouch.UIKit) sağlanır.
 
 ## <a name="design-principles"></a>Tasarım ilkeleri
 
-(Ayrıca Xamarin.Mac, Objective-C Mono bağlamalarını macOS üzerinde uygulandıkları) bizim tasarım ilkeleri Xamarin.iOS bağlamaları için bazıları şunlardır:
+(Aynı zamanda Xamarin.Mac, macOS üzerinde Objective-C için Mono bağlamaları uygulandıkları) tasarım ilkelerimizde Xamarin.iOS bağlamaları için bazıları şunlardır:
 
-- İzleyin [Framework tasarım yönergeleri](https://docs.microsoft.com/dotnet/standard/design-guidelines)
-- Alt Objective-C sınıfları geliştiricilerine izin ver:
+- İzleyin [çerçeve tasarım yönergeleri](https://docs.microsoft.com/dotnet/standard/design-guidelines)
+- Objective-C alt sınıflara geliştiriciler izin ver:
 
   - Varolan bir sınıftan türetilen
-  - Zincir temel oluşturucuya çağırın
-  - Yöntemleri geçersiz kılma ile geçersiz kılma sistem C# ' ın yapılması gerekir
+  - Zinciri için temel oluşturucu çağrısı
+  - C# ' nin geçersiz kılma sistemiyle yöntemleri geçersiz yapılmalıdır
   - Sınıflara C# Standart yapıları ile çalışması gerekir
 
-- Objective-C seçiciler geliştiricilerine gösterme
-- Rastgele Objective-C kitaplıkları çağırmak için bir mekanizma sağlar
-- Ortak Objective-C görevler kolay ve sabit Objective-C görevleri olası olun
-- C# özellikleri olarak Objective-C özelliklerini ortaya
-- Kesin türü belirtilmiş bir API ortaya çıkarır:
+- Objective-C seçicileri geliştiricilerine açığa çıkarmayın
+- Rastgele Objective-C kitaplıklarını çağırmak için bir mekanizma sağlar
+- Kolay ve sabit Objective-C görevleri olası genel Objective-C görevleri olun
+- Objective-C özellikleri C# özellikleri olarak kullanıma sunma
+- Türü kesin belirlenmiş bir API kullanıma sunar:
 
   - Tür güvenliği artırın
-  - Çalışma zamanı hataları simge durumuna küçült
-  - Dönüş türleri üzerinde IDE IntelliSense Al
+  - Çalışma zamanı hataları en aza indirin
+  - IDE IntelliSense dönüş türlerinde Al
   - IDE açılan belgelerine sağlar
 
-- IDE araştırması API'leri teşvik edin:
+- IDE içinde araştırma API'leri önerilir:
 
-  - Örneğin, bu gibi zayıf yazılmış bir dizi gösterme yerine:
+  - Örneğin, şunun gibi zayıf yazılmış bir dizi gösterme yerine:
     
     ```objc
     NSArray *getViews
     ```
-    Bu gibi güçlü bir tür ortaya çıkarır:
+    Bu gibi güçlü bir tür kullanır:
     
     ```csharp
     NSView [] Views { get; set; }
     ```
     
-    Bu Visual Studio Mac için API göz atarken otomatik tamamlama yapmak olanağı sağlar, tüm yapar `System.Array` döndürülen değeri, kullanılabilir işlemleri ve LINQ katılmayı dönüş değeri sağlar.
+    Visual Studio Mac için API atarken otomatik tamamlama yapabilmenizi sağlar. Bu, tüm yapar `System.Array` döndürülen değeri, kullanılabilir işlemleri ve LINQ to katılmak dönüş değeri sağlar.
 
 - Yerel C# türleri:
 
   - [`NSString` olur `string`](~/ios/internals/api-design/nsstring.md)
-  - Kapatma `int` ve `uint` C# numaralandırmalar ve C# ile numaralandırmalar numaralandırmaları olması gereken parametreleri `[Flags]` öznitelikleri
-  - Tür bağımsız yerine `NSArray` nesneleri, dizileri türü kesin belirlenmiş diziler olarak kullanıma sunar.
-  - Olayları ve bildirimleri için kullanıcılar arasında bir seçim verin:
+  - Kapatma `int` ve `uint` numaralandırmalar C# sabit listeleri ve C# ile numaralandırmalar olmalıydı parametreleri `[Flags]` öznitelikleri
+  - Tür-nötr yerine `NSArray` nesneleri dizileri kesin olarak belirlenmiş diziler olarak kullanıma sunar.
+  - Olayları ve bildirimleri için kullanıcılar arasında seçim olanağı sunun:
 
-    - Varsayılan olarak kesin türü belirtilmiş bir sürüm
-    - Gelişmiş kullanım durumları için zayıf yazılmış bir sürümü
+    - Varsayılan olarak kesin tür belirtilmiş bir sürümü
+    - Gelişmiş kullanım örnekleri için zayıf yazılmış bir sürümü
 
-- Objective-C temsilci düzenini destekler:
+- Objective-C temsilci desenini destekler:
 
     - C# olay sistemi
-    - C# temsilciler kullanıma (Lambda'lar, anonim yöntemler ve `System.Delegate`) blokları olarak Objective-C API'leri
+    - C# temsilciler kullanıma sunma (lambda ifadeleri, anonim yöntemler ve `System.Delegate`) bloklar olarak Objective-C API'leri
 
-### <a name="assemblies"></a>Derlemeler
+### <a name="assemblies"></a>Derlemeleri
 
-Xamarin.iOS oluşturan derlemeler çeşitli içerir *Xamarin.iOS profil*. [Derlemeleri](~/cross-platform/internals/available-assemblies.md) sayfası, daha fazla bilgi içerir.
+Xamarin.iOS oluşturan derlemeleri içeren *Xamarin.iOS profili*. [Derlemeleri](~/cross-platform/internals/available-assemblies.md) sayfası, daha fazla bilgi içerir.
 
 ### <a name="major-namespaces"></a>Birincil ad alanları 
 
@@ -85,46 +85,46 @@ Xamarin.iOS oluşturan derlemeler çeşitli içerir *Xamarin.iOS profil*. [Derle
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
-[ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/) ad alanının C# ve Objective-c arasındaki dünyaları birleştirmesi geliştiriciler sağlar
-Cocoa # ve Gtk # deneyimlerden göre özellikle iOS için tasarlanan yeni bir bağlama budur.
+[ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/) ad alanı, geliştiriciler C# ve Objective-c arasındaki ortamlarınız arasında köprü sağlar
+Cocoa # ve Gtk # deneyiminden göre özel olarak iOS için tasarlanan yeni bir bağlama budur.
 
 <a name="MonoTouch.Foundation" />
 
 #### <a name="foundation"></a>Foundation
 
-[Foundation](https://developer.xamarin.com/api/namespace/Foundation/) ad alanı, temel veri türlerini iOS parçası olan Objective-C Foundation framework ile birlikte çalışmak için tasarlanmış ve nesne yönelimli Objective-c programlama için tabanıdır sağlar
+[Foundation](https://developer.xamarin.com/api/namespace/Foundation/) ad alanı, temel veri türlerini iOS parçası olan Objective-C Foundation framework ile birlikte çalışmak üzere tasarlanan ve nesne yönelimli Objective-c programlama için tabanıdır sağlar
 
-Objective-c sınıflardan hiyerarşisini Xamarin.iOS C# ' ta yansıtır Örneğin, Objective-C temel sınıf [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) C# üzerinden kullanılabilir [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/).
+Xamarin.iOS C# dilinde Objective-c sınıflardan hiyerarşisini yansıtır Örneğin, Objective-C temel sınıf [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) C# kullanılabilir [Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/).
 
-Bazı durumlarda Biz bu ad alanı temel alınan Objective-C Foundation türleri için bağlamaları sağlasa da, temel türleri .NET türlerine eşledikten. Örneğin:
+Birkaç durumda Biz bu ad alanı temel alınan Objective-C Foundation türleri için bağlamaları sağlasa da, temel alınan türler için .NET türlerini eşlediğiniz. Örneğin:
 
-- Postalarla yerine [NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) ve [NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), çalışma zamanı olarak C# sunan [dize](https://developer.xamarin.com/api/type/System.String/)s ve kesin türü belirtilmiş [dizi](https://developer.xamarin.com/api/type/System.Array/)boyunca s API.
+- Uğraşmanızı yerine [NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) ve [NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), çalışma zamanı bu C# olarak sunan [dize](xref:System.String)s ve kesin türü belirtilmiş [dizi](xref:System.Array)boyunca s API.
 
-- Çeşitli Yardımcısı API'leri açığa burada üçüncü taraf Objective-C API'leri, diğer iOS API'leri veya Xamarin.iOS tarafından şu anda bağlı değil API'larını bağlamak geliştiricilere izin vermek için.
+- Çeşitli yardımcı API'leri sunulur burada geliştiriciler üçüncü taraf Objective-C API'leri, diğer iOS API'leri veya Xamarin.iOS tarafından şu anda bağlı değil API'larını bağlamak izin vermek için.
 
-API bağlama ile ilgili daha fazla ayrıntı için bkz: [Xamarin.iOS bağlama Oluşturucu](~/cross-platform/macios/binding/binding-types-reference.md) bölümü.
+API'leri bağlama hakkında ayrıntılı bilgi için bkz: [Xamarin.iOS bağlaması Oluşturucu](~/cross-platform/macios/binding/binding-types-reference.md) bölümü.
 
 
 ##### <a name="nsobject"></a>NSObject
 
-[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) tüm Objective-C bağlamaları için temel türdür. Xamarin.iOS türleri yansıtma CocoaTouch API'leri iOS türlerinden birini iki sınıf: C türleri (genellikle refered için CoreFoundation türü olarak) ve Objective-C türleri (bunlar tüm NSObject sınıfından türetilen).
+[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) Objective-C bağlamaları için temel türdür. Xamarin.iOS türleri yansıtma CocoaTouch API'leri iOS türlerinden iki sınıf: C türleri (genellikle başvurulan CoreFoundation türleri gibi) ve Objective-C türleri (bunların tümü NSObject sınıfından türetilir).
 
-Türlerinin her zaman bir yönetilmeyen tür yansıtan aracılığıyla yerel nesnesini almak mümkün [işlemek](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/) özelliği.
+Nespravovaným typem yansıtır her tür için aracılığıyla yerel nesne elde etmek üzere mümkün olduğu [işlemek](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/) özelliği.
 
-Mono atık toplama, nesnelerin tümü için sağlayacak sırada `Foundation.NSObject` uygulayan [System.IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/) arabirimi. Bu, açıkça belirtilen tüm NSObject kaynakları atık toplayıcı başlangıç beklemek zorunda kalmadan serbest bırakabilirsiniz, anlamına gelir. Ağır NSObjects, örneğin, büyük veri blokları işaretçileri tutabilir UIImages kullanırken, bu önemlidir.
+Çöp toplama, nesnelerin tümü için Mono sağlar ancak `Foundation.NSObject` uygulayan [System.IDisposable](xref:System.IDisposable) arabirimi. Bu, açıkça herhangi belirli nsobject'in kaynakları çöp toplayıcısının clark'i için beklemek zorunda kalmadan serbest bırakabilirsiniz, anlamına gelir. Ağır NSObjects, örneğin, büyük veri blokları için işaretçiler tutabilir UIImages kullanılırken bu önemlidir.
 
-Türünüz sonlandırma gerçekleştirmeniz gerekirse, geçersiz kılma [NSObject.Dispose(bool) yöntemi](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose) Dispose parametresi olan "bool atma", ve ayarlayın, true olarak Dispose yöntemini çünkü çağrıldığından emin anlamına gelir, kullanıcı nesne üzerinde açıkça çağrılan Dispose (). Değeri false ise, bu, (bool atma) Dispose yöntemini sonlandırıcıyı sonlandırıcıyı iş parçacığında çağrıldığından emin anlamına gelir. []()
+Türünüz sonlandırma gerçekleştirmeniz gerekiyorsa, geçersiz kılma [NSObject.Dispose(bool) yöntemi](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose) Dispose parametresi olan "bool disposing", ve kümesi bunu true olarak nedeni kendi Dispose yöntemini çağrılışıysa anlamına gelir, kullanıcı nesne üzerinde açıkça çağrılan Dispose (). Değer false ise, bu, Dispose (bool disposing) yöntemini Sonlandırıcı iş parçacığında Sonlandırıcı çağrılışıysa anlamına gelir. []()
 
 
 ##### <a name="categories"></a>Kategoriler
 
-Xamarin.iOS 8.10 ile başlatmanızı Objective-C kategorileri C# ' dan oluşturmak mümkündür.
+Xamarin.iOS 8.10 ile başlatmayı Objective-C kategorisi C# ' tan oluşturmak mümkündür.
 
-Bu yapılır kullanarak `Category` öznitelik, öznitelik bağımsız değişken olarak genişletmek için türünü belirtme. Aşağıdaki örnek, örneğin NSString uzatır.
+Bu yapılır kullanarak `Category` öznitelik, öznitelik bağımsız değişkeni olarak genişletmek için türünü belirleme. Aşağıdaki örnek, örneğin NSString genişletilir.
 
     [Category (typeof (NSString))]
 
-Her kategori yöntemi yöntemleri Objective-C kullanarak dışarı aktarmak için normal mekanizmasını kullanarak `Export` özniteliği:
+Her kategori yöntemi yöntemleri Objective-C kullanarak dışarı aktarmak için normal bir mekanizma kullanarak `Export` özniteliği:
 
     [Export ("today")]
     public static string Today ()
@@ -132,7 +132,7 @@ Her kategori yöntemi yöntemleri Objective-C kullanarak dışarı aktarmak içi
         return "Today";
     }
 
-Tüm yönetilen genişletme yöntemleri statik olmalıdır, ancak C# genişletme yöntemleri için standart söz dizimini kullanarak Objective-C örnek yöntemleri oluşturmak mümkündür:
+Tüm yönetilen uzantı yöntemleri statik olmalıdır, ancak uzantı yöntemlerini C# için standart sözdizimini kullanarak Objective-C örnek yöntemler oluşturmak mümkündür:
 
     [Export ("toUpper")]
     public static string ToUpper (this NSString self)
@@ -140,9 +140,9 @@ Tüm yönetilen genişletme yöntemleri statik olmalıdır, ancak C# genişletme
         return self.ToString ().ToUpper ();
     }
 
-ve ilk bağımsız değişken genişletme yöntemi üzerinde yöntemi çağrıldı örneği olacaktır.
+ve genişletme yöntemi için ilk bağımsız değişken yöntemi çağrıldı örnek olacaktır.
 
-Tam örnek:
+Tam bir örnek:
 
 ```csharp
 [Category (typeof (NSString))]
@@ -156,7 +156,7 @@ public static class MyStringCategory
 }
 ```
 
-Bu örnek bir yerel toUpper örnek yöntemi hedefi C'den çağrılabilir NSString sınıfı ekler
+Bu örnek yerel toUpper örnek yöntemi Objective-c çağrılabilir NSString sınıfı ekler
 
 ```csharp
 [Category (typeof (UIViewController))]
@@ -170,7 +170,7 @@ public static class MyViewControllerCategory
 }
 ```
 
-Bu olduğu kullanışlı bir senaryo ekleme bir yöntem temelinizde sınıflarda kümesinin tamamını için örneğin, bu tüm yapacağı `UIViewController` örnekleri rapor bunlar döndürebilirsiniz:
+Bunun olduğu kullanışlı bir senaryo için temelinizin sınıflarda kümesinin tamamını bir yöntem eklemektir, örneğin, bu tüm yapacağınız `UIViewController` örnekleri rapor bunlar döndürebilirsiniz:
 
 ```csharp
 [Category (typeof (UINavigationController))]
@@ -186,77 +186,77 @@ class Rotation_IOS6 {
 
 ##### <a name="preserveattribute"></a>PreserveAttribute
 
-PreserveAttribute bir tür ya da bir türünün bir üyesi korumak için – Xamarin.iOS dağıtım aracı – mtouch bildirmek için kullanılan özel uygulama boyutunu azaltmak için ne zaman işlenir aşamasında bir özniteliktir.
+PreserveAttribute bir türü veya bir tür üyesi korumak için – Xamarin.iOS dağıtım aracı – mtouch bildirmek için kullanılan özel bir öznitelik boyutunu küçültmek için uygulamanın ne zaman işlenir aşamasında ' dir.
 
-Uygulama tarafından statik olarak bağlantılı olmayan her üye tabidir kaldırılır. Bu nedenle, bu öznitelik değil, statik olarak başvurulur, ancak, uygulamanız tarafından hala gerekli olduğunu üyeleri işaretlemek için kullanılır.
+Uygulama tarafından statik olarak bağlı olmayan her üye tabi olduğu kaldırılır. Bu nedenle, bu öznitelik değil, statik olarak başvurulur, ancak uygulamanız tarafından hala gerekli olduğunu üyeleri işaretlemek için kullanılır.
 
-Örneği için dinamik olarak türleri örneği varsa, türlerinin varsayılan oluşturucu korumak isteyebilirsiniz. XML serileştirme kullanırsanız, türlerinizi özelliklerini korumak isteyebilirsiniz.
+Örneğin, türleri dinamik olarak oluşturmak, varsayılan oluşturucu, türlerinin korumak isteyebilirsiniz. XML serileştirme kullanırsanız, türlerinizi özelliklerini korumak isteyebilirsiniz.
 
-Bu öznitelik her üye bir türde veya türü uygulayabilirsiniz. Tüm türü korumak istiyorsanız, söz dizimini kullanabilirsiniz [korumak (AllMembers = true)] türünde.
+Bu öznitelik her üyesine bir türün ya da türü uygulayabilirsiniz. Tüm tür korumak istiyorsanız, sözdizimini kullanabilirsiniz. [korumak (AllMembers = true)] türü.
 
 <a name="MonoTouch.UIKit" />
 
 #### <a name="uikit"></a>Uıkit
 
-[Uıkit](https://developer.xamarin.com/api/namespace/UIKit/) ad alanı, bire bir eşleme için C# sınıfları biçiminde CocoaTouch oluşturan UI bileşenlerinin tümünü içerir. API, C# dilinde kullanılan kurallarına uygun şekilde değiştirildi.
+[Uıkit](https://developer.xamarin.com/api/namespace/UIKit/) ad alanı, bire bir eşleme için C# sınıfları biçiminde CocoaTouch oluşturan tüm kullanıcı Arabirimi bileşenleri içerir. API C# dilinde kullanılan kurallara uymayı değiştirildi.
 
-C# temsilciler ortak işlemler için sağlanır. Bkz: [Temsilciler](#Delegates) daha fazla bilgi için bölüm.
+C# temsilciler ortak işlemler için sağlanır. Bkz: [Temsilciler](#Delegates) bölümünde daha fazla bilgi için.
 
 <a name="OpenGLES" />
 
 #### <a name="opengles"></a>OpenGLES
 
-Biz OpenGLES için dağıtmak bir [sürümünde değişiklik](https://developer.xamarin.com/api/namespace/OpenTK/) , [OpenTK](http://www.opentk.com/) API, CoreGraphics veri türleri kullanacak şekilde değiştirilmiş OpenGL nesne yönelimli bir bağlamaya yanı sıra yalnızca gösterme iOS kullanılabilir işlevselliği.
+OpenGLES için biz dağıtmak bir [sürümünde değişiklik](https://developer.xamarin.com/api/namespace/OpenTK/) , [OpenTK](http://www.opentk.com/) API CoreGraphics veri türleri ve yapıları kullanmak için değiştirilmiş olan OpenGL nesne yönelimli bir bağlamaya ek olarak yalnızca gösterme İos'ta kullanılabilir işlevselliği.
 
-Belgelenen ES11.GL türü OpenGLES 1.1 işlevsellik mevcuttur [burada](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES11.GL/) türü.
+OpenGLES 1.1 işlevselliği belgelenen ES11.GL türü aracılığıyla kullanılabilir [burada](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES11.GL/) türü.
 
-OpenGLES 2.0 işlevselliği belgelenen ES20.GL türü kullanılabilir [burada](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES20.GL/) türü.
+OpenGLES 2.0 işlevselliği belgelenen ES20.GL türü aracılığıyla kullanılabilir [burada](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES20.GL/) türü.
 
-OpenGLES 3.0 işlevselliği belgelenen ES30.GL türü kullanılabilir [burada](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/) türü.
+OpenGLES 3.0 işlevselliği belgelenen ES30.GL türü aracılığıyla kullanılabilir [burada](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/) türü.
 
 
 ### <a name="binding-design"></a>Tasarım bağlama
 
-Xamarin.iOS yalnızca bir bağlama temel Objective-C platformu değil. .NET türü ve daha iyi karışım C# ve Objective-c gönderme sistemi genişletir
+Xamarin.iOS, yalnızca temel alınan platforma Objective-C bağlama değil. .NET türü ve daha iyi blend C# ve Objective-c dağıtım sistemi genişletir
 
-Yalnızca P/Invoke Windows ve Linux yerel kitaplıkları çağırmak için yararlı bir araçtır veya Windows COM birlikte çalışma için destek kullanılabilir IJW gibi Xamarin.iOS bağlama C# nesneleri Objective-C nesnelere desteklemek için çalışma zamanı genişletir.
+Yalnızca P/Invoke Windows ve Linux üzerinde yerel kitaplıkları çağırmak için kullanışlı bir araçtır veya IJW desteği üzerinde Windows COM birlikte çalışma için kullanılabilir olarak Xamarin.iOS bağlaması C# nesneleri Objective-C nesnelere desteklemek için çalışma zamanı genişletir.
 
-Birkaç bölümleri Xamarin.iOS uygulamaları oluşturma, geliştiriciler yardımcı olacak kullanıcıları için gerekli değildir sonraki tartışma nasıl şeyler yapılır ve bunları daha karmaşık uygulamaları oluştururken yardımcı olacak anlayın.
+Bazı bölümleri Xamarin.iOS uygulamalarının profilini oluşturma, ancak geliştiricilerin yardımcı olacak kullanıcılar için gerekli değildir sonraki tartışma şeyler nasıl yapılır ve bunları daha karmaşık uygulamalar oluştururken yardımcı olacak anlayın.
 
 
 
 #### <a name="types"></a>Türler
 
-Burada anlamlı yapılan C# türleri C# universe için alt düzey Foundation türleri yerine sunulur.  Bunun anlamı [API NSString yerine C# "dize" türünü kullanır](~/ios/internals/api-design/nsstring.md) ve NSArray gösterme yerine kesin türü belirtilmiş C# diziler kullanır.
+Burada mantıklı yapılan C# türleri, C# evreni için alt düzey Foundation türler yerine sunulur.  Diğer bir deyişle [NSString yerine C# "dize" türü için API kullanan](~/ios/internals/api-design/nsstring.md) ve kesin türü belirtilmiş C# dizilerinin NSArray gösterme yerine kullanır.
 
-Arka plandaki genel olarak, Xamarin.iOS ve Xamarin.Mac tasarımında `NSArray` nesne sunulmaz. Bunun yerine, çalışma zamanı otomatik olarak dönüştürür `NSArray`bazı kesin türü belirtilmiş dizilerine s `NSObject` sınıfı. Bu nedenle, Xamarin.iOS zayıf yazılmış bir yöntem bir NSArray döndürülecek GetViews gibi göstermiyor:
+Temel alınan genel olarak, Xamarin.iOS ve Xamarin.Mac tasarımında, `NSArray` nesne gösterilmez. Bunun yerine, çalışma zamanı otomatik olarak dönüştürür `NSArray`kesin olarak belirlenmiş diziler bazı s `NSObject` sınıfı. Dolayısıyla, Xamarin.iOS bir NSArray döndürülecek GetViews gibi zayıf yazılmış bir yöntemini kullanıma sunmuyor:
 
 ```csharp
 NSArray GetViews ();
 ```
 
-Bunun yerine, bağlama şöyle kesin türü belirtilmiş bir dönüş değeri sunar:
+Bunun yerine, bağlama gibi bu türü kesin belirlenmiş bir dönüş değeri kullanıma sunar:
 
 ```csharp
 UIView [] GetViews ();
 ```
 
-İçinde sunulan yöntemleri bazılarını vardır `NSArray`, burada kullanmak istediğiniz köşe durumlarda bir `NSArray` doğrudan, ancak bunların kullanılması API bağlamasında önerilmez.
+Birkaç içinde kullanıma sunulan yöntemleri `NSArray`, isteyebileceğiniz kullanmak için köşe durumlarda bir `NSArray` doğrudan, ancak API bağlamasında bunların kullanılması önerilmez.
 
-Buna ek olarak **Klasik API** gösterme yerine `CGRect`, `CGPoint` ve `CGSize` CoreGraphics API'SİNDEN biz olanlar yerini `System.Drawing` uygulamaları `RectangleF`, `PointF`ve `SizeF` yardımcı olacak şekilde OpenTK kullanan mevcut OpenGL kod geliştiricilerin korumak. Yeni 64 bit kullanırken **Unified API**, CoreGraphics API'nin kullanılması gerekir.
+Buna ek olarak **Klasik API** gösterme yerine `CGRect`, `CGPoint` ve `CGSize` CoreGraphics API'SİNDEN biz olanlar yerini `System.Drawing` uygulamaları `RectangleF`, `PointF`ve `SizeF` yardımcı olan olarak geliştiriciler OpenTK kullanan var olan OpenGL kod korumak. Yeni 64 bit kullanırken **birleşik API**, CoreGraphics API kullanılmalıdır.
 
 <a name="Inheritance" />
 
 #### <a name="inheritance"></a>Devralma
 
-Xamarin.iOS API tasarım, "temel" C# anahtar sözcüğünü kullanarak temel uygulamayı zincirleme yanı sıra "geçersiz kılma" anahtar sözcüğü türetilmiş bir sınıf kullanarak C#, bir türü genişletmek aynı şekilde yerel Objective-C türleri genişletmek geliştiricilere sağlar.
+Xamarin.iOS API tasarımı, geliştiricilerin "temel" C# anahtar sözcüğünü kullanarak temel uygulama zincirlemeyi yanı sıra bir türetilmiş sınıfta "override" anahtar sözcüğünü kullanarak bir C# türü, genişletmek şekilde yerel Objective-C türleri genişleten olanak tanır.
 
-Tüm Objective-C sistem zaten içinde Xamarin.iOS kitaplıkları Sarmalanan olduğundan bu tasarım geliştiricilerin kendi geliştirme sürecinin bir parçası olarak Objective-C Seçici ile ilgilenen kaçının olanak tanır.
+Objective-C sistemin zaten Xamarin.iOS kitaplıkları içinde sarmalanmış çünkü bu tasarım, geliştiricilerin ilgilenen Objective-C seçicileri ile kendi geliştirme işleminin bir parçası önlemek olanak tanır.
 
 
-#### <a name="types-and-interface-builder"></a>Türleri ve arabirim Oluşturucusu
+#### <a name="types-and-interface-builder"></a>Türleri ve arabirim Oluşturucu
 
-Arabirim Oluşturucu tarafından oluşturulan türleri örnekleridir .NET sınıfları oluşturduğunuzda, tek bir alan bir oluşturucu sağlamanız gereken `IntPtr` parametresi.
+Arabirimi Oluşturucu tarafından oluşturulan tür örnekleri .NET sınıfları oluşturduğunuzda, tek bir alan bir oluşturucu sağlamanız gereken `IntPtr` parametresi.
 Bu, yönetilmeyen nesne içeren yönetilen nesne örneği bağlamak için gereklidir.
 Bu gibi tek bir satır kod oluşur:
 
@@ -272,38 +272,38 @@ public partial class void MyView : UIView {
 
 #### <a name="delegates"></a>Temsilciler
 
-Objective-C ve C# word temsilci için farklı anlamları her dilde sahiptir.
+Objective-C ve C# word temsilci için farklı anlamları her dilde vardır.
 
-Objective-C dünyada ve CocoaTouch hakkında çevrimiçi bulduğunuz belgelerinde temsilci genellikle bir dizi yöntem yanıtlar bir sınıf örneğidir. Yöntem her zaman zorunlu olmayan olmasına, çok benzer bir C# ile arabirim oluşturmak için fark budur.
+Objective-C dünyanın ve CocoaTouch hakkında çevrimiçi bulduğunuz belgeleri, bir temsilci genellikle bir dizi yöntem yanıtlar bir sınıf örneğidir. Yöntem her zaman zorunlu değildir, olmasına çok benzer bir C# ile arabirim oluşturmak için fark budur.
 
-Bu temsilci Uıkit ve diğer CocoaTouch API'ları önemli bir rol oynar. Bunlar, çeşitli görevleri gerçekleştirmek için kullanılır:
+Bu temsilciler Uıkit ve diğer CocoaTouch API'leri önemli bir rol oynar. Bunlar, çeşitli görevleri gerçekleştirmek için kullanılır:
 
--  Kodunuza (C# veya Gtk + olay teslimi benzer) bildirimleri sağlamak için.
--  Modelleri için veri görselleştirme denetimleri uygulamak için.
--  Sürücü için bir denetim davranışını.
+-  Kodunuzda (C# veya Gtk + olay teslimi benzer) bildirimleri sağlamak için.
+-  Veri görselleştirme denetimleri için modeller uygulamak için.
+-  Bir denetimin davranışı oluşturmak için.
 
 
-Programlama modeli, bir denetim için davranışı değiştirmek için türetilen sınıflar oluşturulmasını en aza indirmek için tasarlanmıştır. Bu çözüm ne diğer GUI araç takımları yıllar içinde yaptığınızdan için Ruhu benzer: Gtk ait sinyalleri, Qt yuvaları, Winforms olayları, WPF/Silverlight etkinlikler ve benzeri. Arabirimler (her eylem için bir tane) yüzlerce olması veya değil gereken çok fazla yöntemleri uygulamak geliştiriciler gerektirmeden önlemek için isteğe bağlı yöntemi tanımları Objective-C destekler. Bu, uygulanacak tüm yöntemleri gerektiren C# arabirimleri farklıdır.
+Programlama düzeni, denetimin davranışını değiştirmek için türetilmiş sınıfları oluşturulmasını en aza indirmek için tasarlanmıştır. Bu çözüm Ruhu benzer ne diğer GUI araç Setleri yıllar içinde yaptığınız için: Gtk'ın sinyalleri, Qt yuvaları, olayları Winforms, WPF/Silverlight etkinlikler ve benzeri. Yüzlerce arabirimleri (her eylem için bir tane) sahip veya çok fazla yöntemleri ihtiyaç uygulama geliştiricilerin gerektirmeden önlemek için isteğe bağlı yöntemi tanımları Objective-C destekler. Bu, tüm yönteminin uygulanmasını gerektiren C# arabirimleri farklıdır.
 
-Objective-C sınıflarda bu programlama desenini kullanan sınıflar genellikle adlı bir özellik kullanıma görürsünüz `delegate`, arabiriminin zorunlu bölümleri ve sıfır veya daha fazla isteğe bağlı olarak bölümleri uygulamak için gerekli olduğu.
+Objective-C sınıflarda programlama bu düzeni kullanın sınıflar genellikle adlı bir özelliği kullanıma görürsünüz `delegate`, zorunlu arabirimi bölümlerini ve sıfır veya daha fazla isteğe bağlı, bölümleri uygulamak için gerekli olan.
 
-Xamarin.iOS içinde bu temsilciye bağlamak için üç birbirini dışlayan mekanizmaları sunulur:
+Xamarin.iOS bu temsilcileri bağlamak için üç birbirini dışlayan mekanizmaları sunulur:
 
 1.  [Olayları aracılığıyla](#Via_Events).
 2.  [Aracılığıyla kesin türü belirtilmiş bir `Delegate` özelliği](#StrongDelegate)
-3.  [Gevşek aracılığıyla yazılan bir `WeakDelegate` özelliği](#WeakDelegate)
+3.  [Aracılığıyla gevşek yazılmış bir `WeakDelegate` özelliği](#WeakDelegate)
 
-Örneğin, göz önünde bulundurun [UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html) sınıfı. Bunun için gönderir bir [UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html) atandığı örneği [temsilci](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate) özelliği.
+Örneğin, düşünün [UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html) sınıfı. Bu şekilde dağıtır bir [UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html) öğesine atanan örneği [temsilci](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate) özelliği.
 
 <a name="Via_Events" />
 
-##### <a name="via-events"></a>Üzerinden olayları
+##### <a name="via-events"></a>Olayları
 
-Birçok türü için Xamarin.iOS otomatik olarak iletir uygun bir temsilci oluşturacak `UIWebViewDelegate` C# olayların üzerine çağrıları. İçin `UIWebView`:
+Birçok türü için Xamarin.iOS otomatik olarak yönlendiren uygun bir temsilci oluşturur `UIWebViewDelegate` C# olayları üzerine çağrıları. İçin `UIWebView`:
 
--  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) yöntemi eşleştirilir [UIWebView.LoadStarted](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadStarted/) olay.
--  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) yöntemi eşleştirilir [UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/) olay.
--  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) yöntemi eşleştirilir [UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/) olay.
+-  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) yöntemi eşlenmiş durumda [UIWebView.LoadStarted](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadStarted/) olay.
+-  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) yöntemi eşlenmiş durumda [UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/) olay.
+-  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) yöntemi eşlenmiş durumda [UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/) olay.
 
 Örneğin, bu basit bir program web yüklenirken görüntülediğinizde başlangıç ve bitiş zamanlarını kaydeder:
 
@@ -315,13 +315,13 @@ web.LoadFinished += (o, e) => endTime = DateTime.Now;
 ```
 
 
-##### <a name="via-properties"></a>Özellikleri
+##### <a name="via-properties"></a>Özellikleri aracılığıyla
 
-Olay birden fazla abonelik olabilir, olayların kullanışlıdır. Ayrıca, olayları çalışmalarını sınırlı söz konusu olduğunda koddan dönüş değeri yok.
+Olabilir, bu olayın birden fazla aboneye olayları yararlı olur. Ayrıca, olayları çalışmalarına sınırlıdır koddan dönüş değeri olduğu.
 
-Kod bir değer döndürmek için beklenirken durumlarda, biz yerine özelliklerini seçti. Bu, yalnızca bir yöntem nesne içinde belirli bir zamanda ayarlanabilir anlamına gelir.
+Burada bir değer döndürmek için kod beklendiği durumlarda, biz bunun yerine özellikleri için kabul edildi. Başka bir deyişle, bir nesne belirli bir zamanda yalnızca bir yöntem ayarlanabilir.
 
-Örneğin, işleyicisi ekranda klavyede kapatmak için bu düzenek kullanabilirsiniz bir `UITextField`:
+Örneğin, işleyici için ekranda klavye kapatmak için bu mekanizma kullanabilirsiniz bir `UITextField`:
 
 ```csharp
 void SetupTextField (UITextField tf)
@@ -333,15 +333,15 @@ void SetupTextField (UITextField tf)
 }
 ```
 
-`UITextField`'S `ShouldReturn` özelliği bu durumda TextField basılan dönüş düğmesi ile bir şeyler olup olmadığını belirler ve bir Boole değeri döndüren bir temsilci bağımsız değişken olarak alır. Bizim yönteminde döndürürüz *true* çağırana, ancak biz de klavye ekranından kaldırmak (textfield çağırdığında böyle `ResignFirstResponder`).
+`UITextField`'S `ShouldReturn` özelliği bir Boole değeri döndürür ve TextField basıldığında dönüş düğmeyle şeyler olup olmadığını belirleyen bir temsilci bu durumda bir bağımsız değişken olarak alır. Biz bizim yöntemde dönüş *true* çağırana, ancak biz de klavye ekrandan kaldırmak (textfield çağırdığında böyle `ResignFirstResponder`).
 
 <a name="StrongDelegate"/>
 
-##### <a name="strongly-typed-via-a-delegate-property"></a>Temsilci özelliği aracılığıyla kesin türü belirtilmiş
+##### <a name="strongly-typed-via-a-delegate-property"></a>Bir temsilci özelliği aracılığıyla kesin
 
-Olayları kullanmayı tercih ederseniz, kendi sağlayabilirsiniz [UIWebViewDelegate](https://developer.xamarin.com/api/type/UIKit.UIWebViewDelegate/) alt sınıf ve atayın [UIWebView.Delegate](https://developer.xamarin.com/api/property/UIKit.UIWebView.Delegate/) özelliği. UIWebView.Delegate atandıktan sonra UIWebView olay gönderme mekanizması artık çalışmaz ve ilgili olaylar meydana geldiğinde UIWebViewDelegate yöntemleri çağrılır.
+Olayları kullanmayı tercih ederseniz, kendi sağlayabilirsiniz [UIWebViewDelegate](https://developer.xamarin.com/api/type/UIKit.UIWebViewDelegate/) alt atayabilirsiniz [UIWebView.Delegate](https://developer.xamarin.com/api/property/UIKit.UIWebView.Delegate/) özelliği. UIWebView.Delegate atandıktan sonra UIWebView olay gönderim mekanizması artık çalışmaz ve ilgili olaylar meydana geldiğinde UIWebViewDelegate yöntemi çağrılır.
 
-Örneğin, bu basit tür bir web görünümü yükleme süresini kaydeder:
+Örneğin, basit bu tür bir web görünümü yüklemek için gereken süreyi kaydeder:
 
 ```csharp
 class Notifier : UIWebViewDelegate  {
@@ -359,27 +359,27 @@ class Notifier : UIWebViewDelegate  {
 }
 ```
 
-Yukarıdaki kod bu gibi kullanılır:
+Yukarıdaki kod şöyle kullanılır:
 
 ```csharp
 var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.Delegate = new Notifier ();
 ```
 
-Bir UIWebViewer yukarıdaki oluşturacak ve bu bildirim, iletilere yanıt oluşturduğumuz bir sınıf örneği iletileri göndermek için ister.
+Yukarıdaki bir UIWebViewer oluşturur ve bu bildirim, iletileri cevaplayin oluşturduğumuz bir sınıf örneği iletileri göndermek için yenilemelerini ister.
 
-Bu deseni da örnek durumda UIWebView, bazı denetimler için davranışını denetlemek için kullanılan [UIWebView.ShouldStartLoad](https://developer.xamarin.com/api/property/UIKit.UIWebView.ShouldStartLoad/) özelliği sağlar `UIWebView` denetim örneğine olup olmadığını `UIWebView` yükleyecek bir veya sayfa.
+Bu düzen ayrıca örneğin UIWebView durumda belirli denetimler için davranışını denetlemesini kullanılır [UIWebView.ShouldStartLoad](https://developer.xamarin.com/api/property/UIKit.UIWebView.ShouldStartLoad/) özelliği sağlar `UIWebView` denetim örneği olup olmadığını `UIWebView` yükleyecek bir veya sayfa.
 
-Desen isteğe bağlı olarak birkaç denetimleri için veri sağlamak için de kullanılır. Örneğin, [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/) denetimi güçlü bir tablo işleme denetimi – ve Görünüm ve içeriği bir örneği tarafından yönlendirilen bir [UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
+Desen, isteğe bağlı olarak bazı denetimler için veri sağlamak için de kullanılır. Örneğin, [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/) denetimin güçlü bir tablo oluşturma denetimi – ve Ara hem içeriği örneği tarafından yönlendirilen bir [UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
 
 <a name="WeakDelegate"/>
 
-### <a name="loosely-typed-via-the-weakdelegate-property"></a>Gevşek WeakDelegate özelliği aracılığıyla yazılan
+### <a name="loosely-typed-via-the-weakdelegate-property"></a>WeakDelegate özelliği aracılığıyla gevşek yazılmış
 
-Kesin türü belirtilmiş özelliği yanı sıra, aynı zamanda farklı şeyler bağlamak Geliştirici verir zayıf bir yazılı temsilci yoktur.
-Kesin türü belirtilmiş her yerde `Delegate` özelliği Xamarin.iOS'ın bağlamada, karşılık gelen gösterilir `WeakDelegate` özelliği de gösterilir.
+Kesin türü belirtilmiş özelliği yanı sıra, ayrıca farklı şeyler bağlamak Geliştirici veren zayıf yazılmış temsilci yoktur.
+Türü kesin belirlenmiş her yerde `Delegate` özellik sunulmuştur Xamarin.iOS'ın bağlamada, karşılık gelen `WeakDelegate` özelliği de gösterilir.
 
-Kullanırken `WeakDelegate`, düzgün şekilde sınıfını kullanarak dekorasyon için sorumlu [verme](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) Seçici belirtmek için özniteliği. Örneğin:
+Kullanırken `WeakDelegate`, düzgün bir şekilde sınıfını kullanarak dekorasyon için sorumlu olduğunuz [dışarı](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) Seçici belirtmek için özniteliği. Örneğin:
 
 ```csharp
 class Notifier : NSObject  {
@@ -404,31 +404,31 @@ var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.WeakDelegate = new Notifier ();
 ```
 
-Bu kez Not `WeakDelegate` özelliği atanmış, `Delegate` özellik kullanılmayacak. Ayrıca, [dışarı aktarılacak] istediğiniz devralınan bir taban sınıf içinde yöntemi uygularsanız, genel bir yöntem olmalısınız.
+Bu kez Not `WeakDelegate` özelliği atanmış, `Delegate` özellik kullanılmayacak. Ayrıca, [Excel'e] istediğiniz devralınan bir temel sınıf yöntemi uygularsanız, genel bir yöntem yapmalısınız.
 
 
 ## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>C Objective-C temsilci desen eşleştirme&#35;
 
-Şuna Objective-C örnekleri gördüğünüzde:
+Şuna Objective-C örnekleri görürsünüz:
 
 ```csharp
 foo.delegate = [[SomethingDelegate] alloc] init]
 ```
 
-Bu oluşturmak ve "SomethingDelegate" sınıfının bir örneği oluşturun ve foo değişkeni temsilci özelliği için değer atamak için dil bildirir. Bu mekanizma Xamarin.iOS tarafından desteklenir ve C# sözdizimi:
+Bu, oluşturmak ve "SomethingDelegate" sınıfının bir örneğini oluşturur ve temsilci özelliği foo değişkeni değer atamak için dili bildirir. Bu mekanizma Xamarin.iOS tarafından desteklenir ve C# sözdizimi:
 
 ```csharp
 foo.Delegate = new SomethingDelegate ();
 ```
 
-Objective-C eşleme kesin türü belirtilmiş sınıfları sınıfları temsilci sağlanan Xamarin.iOS sunuyoruz. Bunları kullanmak için olmaları sınıflara ve Xamarin.iOS'ın uygulama tarafından tanımlanan yöntemleri geçersiz kılma. Bölüm "modelleri" aşağıdaki nasıl çalıştığını daha fazla bilgi için bkz.
+Objective-C eşleme türü kesin belirlenmiş sınıfları sınıfları temsilci sağlanan Xamarin.ios'ta sahibiz. Bunları kullanmak için sınıflara ve Xamarin.iOS'ın uygulama tarafından tanımlanan yöntemleri geçersiz. Bölüm "" aşağıdaki modelleri nasıl çalıştığı hakkında daha fazla bilgi için bkz.
 
 
-##### <a name="mapping-delegates-to-c35"></a>C eşleme temsilciler&#35;
+##### <a name="mapping-delegates-to-c35"></a>C için eşleme temsilciler&#35;
 
-Uıkit genel iki biçimde Objective-C temsilcileri kullanır.
+Uıkit Objective-C temsilciler iki biçimde genel kullanır.
 
-İlk form, bir bileşenin modeli için bir arabirim sağlar. Örneğin, bir listesi için veri depolama tesisi gibi isteğe bağlı bir görünüm için veri sağlamak için bir mekanizma görüntüleyin.  Bu durumlarda, her zaman uygun sınıfının bir örneğini oluşturmak ve değişkeni atayın.
+İlk form, bileşen modeli için bir arabirim sağlar. Örneğin, bir liste için veri depolama tesisi gibi bir görünüm için isteğe bağlı veri sağlamak için bir mekanizma görüntüleyin.  Bu durumlarda, her zaman uygun sınıfının bir örneğini oluşturmak ve değişkenine atayın.
 
 Aşağıdaki örnekte, sağladığımız `UIPickerView` dizeleri kullanan bir model için bir uygulama ile:
 
@@ -446,9 +446,9 @@ public class SampleTitleModel : UIPickerViewTitleModel {
 pickerView.Model = new MyPickerModel ();
 ```
 
-İkinci form olayları için bildirim sağlamaktır. Biz yine, yukarıda özetlenen biçimde API kullanıma rağmen bu gibi durumlarda da hızlı işlemleri için daha basit ve anonim Temsilciler ve C# ' deki lambda ifadeleri ile tümleşik olması gereken C# olayları, sunuyoruz.
+İkinci form, olaylar için bildirim sağlamaktır. Yine de kullanıma sunuyoruz, yukarıda özetlenen biçiminde API olsa da bu gibi durumlarda da hızlı işlemleri için daha basit ve anonim Temsilciler ve lambda ifadelerine C# ile tümleşik olması gereken C# olayları, sunuyoruz.
 
-Örneğin, için abone olabilirsiniz `UIAccelerometer` olayları:
+Örneğin, abone olabileceğiniz `UIAccelerometer` olayları:
 
 ```csharp
 UIAccelerometer.SharedAccelerometer.Acceleration += (sender, args) => {
@@ -457,9 +457,9 @@ UIAccelerometer.SharedAccelerometer.Acceleration += (sender, args) => {
 }
 ```
 
-Bunlar anlamlı ancak Programcı olarak birini veya diğerini seçmelisiniz burada iki seçenek kullanılabilir. Kesin türü belirtilmiş bir Yanıtlayıcı/temsilci kendi örneğini oluşturmak ve atamak, C# olayları işlevsel olmayacak. C# olayları kullanırsanız, Yanıtlayıcı/temsilci sınıftaki yöntemlerin hiçbir zaman çağrılır.
+İki seçenek, nerede oldukları anlamlı ancak bir programcısı birini seçmelisiniz. C# olayları, kendi türü kesin belirlenmiş bir Yanıtlayıcı/temsilci örneği oluşturun ve atayın, işlevsel olmayacaktır. C# olayları kullanırsanız, Yanıtlayıcı/temsilci sınıfınızdaki yöntemi asla çağrılmaz.
 
-Kullanılan önceki örnek `UIWebView` C# 3.0 Lambda'lar şöyle kullanılarak yazılabilir:
+Önceki örnekte kullanılan `UIWebView` böyle C# 3.0 lambdaları kullanarak yazılabilir:
 
 ```csharp
 var web = new UIWebView (new CGRect (0, 0, 200, 200));
@@ -468,15 +468,15 @@ web.LoadFinished += () => { endTime = DateTime.Now; }
 ```
 
 
-#### <a name="responding-to-events"></a>Olaylara yanıt verme
+#### <a name="responding-to-events"></a>Olaylarına yanıt verme
 
-Objective-C kodda bazen birden çok denetimleri ve birden çok denetim bilgilerini sağlayıcıları için olay işleyicileri barındırılacağı aynı sınıfta. Sınıfları iletileri yanıtlayın olduğundan ve sınıfları iletileri yanıtlayın sürece bu mümkündür, nesneler birbirine bağlamak mümkündür.
+Objective-C kodunda bazen birden çok denetimleri ve sağlayıcıları birden fazla denetim için daha fazla bilgi için olay işleyicileri barındırılacak aynı sınıfta. Sınıfları iletilere yanıt verir çünkü ve sınıflar iletileri cevaplayin sürece bu mümkündür, nesneler birbirine bağlamak mümkündür.
 
-Daha önce ayrıntılı olarak Xamarin.iOS hem C# olay tabanlı programlama modelini destekler ve yeni bir sınıf, oluşturabileceğiniz Objective-C temsilci düzeni temsilci uygular ve istenen yöntemlerini geçersiz kılar.
+Daha önce ayrıntılı olarak Xamarin.iOS hem C# olay tabanlı programlama modelini destekler ve yeni bir sınıf, oluşturabileceğiniz Objective-C temsilci düzeni temsilci uygulayan ve istenen yöntemlerini geçersiz kılar.
 
-Ayrıca birden çok farklı işlemler için yanıtlayıcılarını tüm sınıfının aynı örneği barındırıldığı Objective-C'ın modeli desteklemek mümkündür. Ancak bunun için alt düzey özellikleri Xamarin.iOS bağlamanın kullanması gerekir.
+Ayrıca birden çok farklı işlemler için Yanıtlayıcılar tüm bir sınıf içinde aynı örneği barındırıldığı Objective-C'ın desenin desteklenmesi mümkündür. Ancak bunun için alt düzey Xamarin.iOS bağlaması özelliklerinin kullanılabilmesi gerekir.
 
-Örneğin, her ikisi de yanıtlamasını sınıfınız istediyseniz `UITextFieldDelegate.textFieldShouldClear`: ileti ve `UIWebViewDelegate.webViewDidStartLoad`: sınıfının aynı örneği [verme] özniteliği bildirimi kullanması gerekir:
+Örneğin, hem de yanıt sınıfınıza istediyseniz `UITextFieldDelegate.textFieldShouldClear`: ileti ve `UIWebViewDelegate.webViewDidStartLoad`: [dışarı aktarma] özniteliği bildirimi kullanılacak olurdu bir sınıfın aynı örneği:
 
 ```csharp
 public class MyCallbacks : NSObject {
@@ -494,28 +494,28 @@ public class MyCallbacks : NSObject {
 }
 ```
 
-C# adları yöntemleri için önemli değildir; önemli olan tüm [dışarı aktarma] özniteliği için geçirilen dizelerdir.
+C# adları yöntemleri için önemli değildir; önemli [dışarı aktarma] özniteliğine geçirilen dizelerdir.
 
-Bu stili programlama kullanırken, C# parametreleri çalışma zamanı altyapısı geçer gerçek türleri eşleştiğinden emin olun.
+Bu stil programlama kullanırken, C# parametreleri çalışma zamanı altyapısı geçer gerçek türler eşleştiğinden emin olun.
 
 <a name="Models" />
 
 #### <a name="models"></a>Modeller
 
-Uıkit Depolama tesisleri veya yardımcı sınıfları kullanılarak uygulanan yanıtlayıcılarını bunlar genellikle temsilci olarak Objective-C kodunu adlandırılır ve protokoller olarak uygulanır.
+Uıkit depolama tesislerdeki veya yardımcı sınıflarını kullanarak uygulanan Yanıtlayıcıları, bunlar genellikle temsilci olarak Objective-C kodu adlandırılır ve protokoller olarak uygulanabilir.
 
-Objective-C protokolleri arabirimlerdir gibi ancak isteğe bağlı yöntemler destekledikleri – başka bir deyişle, tüm yöntemleri Protokolü çalışmak uygulanması gerekir.
+Objective-C protokolleri arabirimdir gibi ancak isteğe bağlı yöntemler destekledikleri: diğer bir deyişle, tüm yöntemleri Protokolü çalışmaya uygulanması gerekiyor.
 
-Bir model kullanmanın iki yolu vardır. El ile uygulamak veya varolan kesin türü belirtilmiş tanımları kullanır.
+Bir model kullanmanın iki yolu vardır. El ile uygulayın veya var olan türü kesin belirlenmiş tanımları kullanır.
 
 
-Xamarin.iOS tarafından bağlı olmayan bir sınıf uygulama çalıştığınızda el ile mekanizması gereklidir. Yapmak çok kolaydır:
+Xamarin.iOS ile ilişkili olmayan bir sınıf uygulamak çalıştığınızda el ile mekanizması gereklidir. Yapmak oldukça kolaydır:
 
--  Sınıfınız kayıt zamanıyla için bayrak
--  Geçersiz kılmak istediğiniz her yöntem gerçek Seçici adla [verme] özniteliğini uygulayın
--  Sınıfının örneği ve onu geçirin.
+-  Sınıfınız için çalışma zamanı ile kayıt bayrağı
+-  Geçersiz kılmak istediğiniz her metodunda gerçek Seçici adıyla [dışarı aktarma] özniteliğini uygulayın
+-  Sınıf örneği oluşturun ve geçirin.
 
-Örneğin, aşağıdaki isteğe bağlı yöntemlerden sadece birini UIApplicationDelegate Protokolü tanımı'nda uygulayın:
+Örneğin, aşağıdaki isteğe bağlı yöntemlerden yalnızca biri UIApplicationDelegate Protokolü tanımında uygulayın:
 
 ```csharp
 public class MyAppController : NSObject {
@@ -527,11 +527,11 @@ public class MyAppController : NSObject {
 }
 ```
 
-Objective-C Seçici adı ("applicationDidFinishLaunching:") verme özniteliğiyle bildirilir ve sınıf kayıtlı `[Register]` özniteliği.
+Objective-C Seçici adına ("applicationDidFinishLaunching:") dışarı aktarma öznitelik ile bildirilmediği ve sınıfa kayıtlı `[Register]` özniteliği.
 
-Xamarin.iOS el ile bağlama gerektirmeyen kesin türü belirtilmiş bildirimleri, kullanıma hazır sağlar. Bu programlama modeli desteklemek için Xamarin.iOS çalışma zamanı [Model] özniteliği bir sınıf bildirimi destekler. Bu yöntemleri olmadığı sürece, bu sınıftaki tüm yöntemleri wire değil çalışma zamanı açıkça gerçekleştirilen bildirir.
+Xamarin.iOS el ile bağlama gerektirmeyen kesin türü belirtilmiş bildirimleri, kullanıma hazır sağlar. Xamarin.iOS çalışma zamanı bu programlama modelini desteklemek için bir sınıf bildiriminde [Model] özniteliğini destekler. Bu yöntemleri olmadığı sürece bu sınıftaki tüm yöntemlerin'kurmak wire değil çalışma zamanının açıkça gerçekleştirilen bildirir.
 
-Uıkit içinde buna, bir iletişim kuralı isteğe bağlı yöntemleriyle temsil eden sınıflar şu şekilde yazılır:
+Uıkit içinde buna, bir protokol olan isteğe bağlı yöntemleri temsil eden sınıfları aşağıdaki gibi yazılır:
 
 ```csharp
 [Model]
@@ -544,9 +544,9 @@ public class SomeViewModel : NSObject {
 }
 ```
 
-Yalnızca bazı yöntemlere uygulayan bir modeli uygulamak istediğinizde, yapmanız gereken tek şey ilgilendiğiniz ve diğer yöntemleri yoksay yöntemleri geçersiz kılmak için. Çalışma zamanı yalnızca değil özgün yöntemleri Objective-C dünyaya üzerine yöntemleri bağlanacağını.
+Yalnızca bazı yöntemlerini uygulayan bir modeli uygulamak istiyorsanız, yapmanız gereken tek şey ilgilendiğiniz ve diğer yöntemleri yoksay yöntemleri geçersiz kılmak için. Çalışma zamanı üzerine yöntemleri, özgün yöntemleri Objective-C dünya çapında değil yalnızca denetime.
 
-Önceki el ile örneğe eşdeğerdir:
+El ile önceki örneğe eşdeğerdir:
 
 ```csharp
 public class AppController : UIApplicationDelegate {
@@ -557,34 +557,34 @@ public class AppController : UIApplicationDelegate {
 }
 ```
 
-Seçici, bağımsız değişken veya C# eşlemeye türlerini bulmak için Objective-C üstbilgi dosyalarına araştırma yapmak için gerek yoktur ve, IntelliSense Visual Studio'dan Mac için güçlü türleriyle birlikte aldığını yararları şunlardır
+Objective-C üstbilgi dosyalarına Seçici, bağımsız değişkenler veya C# eşleme türleri bulmak için incelemek gerek yoktur ve IntelliSense Visual Studio'dan Mac için güçlü türleri ile birlikte alırsınız, avantajı
 
 
 #### <a name="xib-outlets-and-c35"></a>XIB çıkışlar ve C&#35;
 
 > [!IMPORTANT]
-> Bu bölümde, XIB dosyaları kullanırken çıkışlar IDE tümleşme açıklanmaktadır. İOS için Xamarin Tasarımcısı'nı kullanarak, bu tüm bir ad altında girerek değiştirilir **kimliği > adı** aşağıda gösterildiği gibi IDE özellikler bölümünde:
+> Bu bölümde, çıkışlar IDE tümleştirmesiyle XIB dosyaları kullanırken açıklanmaktadır. İOS için Xamarin Tasarımcısı'nı kullanarak, bu tüm altında bir ad girerek değiştirilir **kimlik > adı** aşağıda gösterildiği gibi IDE özellikleri bölümünde:
 >
-> [![](images/designeroutlet.png "Bir öğe adı iOS Tasarımcısı girme")](images/designeroutlet.png#lightbox)
+> [![](images/designeroutlet.png "İOS Designer'daki bir öğe adı girerek")](images/designeroutlet.png#lightbox)
 >
->İOS Tasarımcısı hakkında daha fazla bilgi için lütfen gözden [Tasarımcısı iOS giriş](~/ios/user-interface/designer/introduction.md#how-it-works) belge.
+>İOS Designer hakkında daha fazla bilgi için lütfen inceleyin [iOS Designer giriş](~/ios/user-interface/designer/introduction.md#how-it-works) belge.
 
-Bu alt düzey açıklaması nasıl çıkışlar C# ile tümleştirmek ve Xamarin.iOS İleri düzey kullanıcılar için sağlanır. Ne zaman eşleştirme Mac için Visual Studio kullanarak otomatik olarak kullanarak arka planda gerçekleştirilir uçuş kodu sizin için oluşturulur.
+Bu alt düzey açıklaması çıkışlar C# ile tümleştirmek ve Xamarin.iOS İleri düzey kullanıcılar için sağlanır. Ne zaman eşleştirme Mac için Visual Studio kullanarak otomatik olarak kullanarak arka planda gerçekleştirilir uçuş kod sizin için oluşturulur.
 
-Arabirim Oluşturucu, kullanıcı arabirimiyle tasarlarken, uygulamanın görünümünü tasarlama yalnızca ve bazı varsayılan bağlantı. Program aracılığıyla bilgilerini getirmek, çalışma zamanında denetim davranışını değiştirmek veya denetiminin çalışma zamanında değiştirmek istiyorsanız, bazı denetimler yönetilen kodunuzu bağlamak gereklidir.
+Arabirim Oluşturucu, kullanıcı arabirimiyle tasarlarken, uygulamanın görünümünü tasarlama yalnızca ve bazı varsayılan bağlantı kurar. Program aracılığıyla bilgileri getirmek, çalışma zamanında davranışını değiştirmek veya çalışma zamanında denetim değiştirmek istiyorsanız, bazı denetimleri için yönetilen kodunuzun bağlamak gereklidir.
 
 Bu, birkaç adımda gerçekleştirilir:
 
-1.  Ekleme **çıkışı bildirimi** için **dosyanın sahibi**.
-1.  Denetiminize bağlanmak **dosyanın sahibi**.
-1.  UI artı bağlantıları XIB/NIB dosyasına depolar.
-1.  Çalışma zamanında NIB dosyası yükleyin.
-1.  Çıkış değişken erişin.
+1.  Ekleme **çıkış bildirimi** için **dosya sahibi**.
+1.  Denetiminize bağlanma **dosya sahibi**.
+1.  Kullanıcı arabirimini artı XIB/NIB dosyanızı bağlantıları Store.
+1.  Çalışma zamanında NIB dosya yükleyin.
+1.  Çıkış değişkeni erişin.
 
 
-(3) (1) adımlara arabirimi Oluşturucu arabirimleriyle oluşturmak için Apple belgelerinde ele alınmıştır.
+(3) adımları (1) arabirim Oluşturucu ile arabirim oluşturmak için Apple belgelerinde ele alınmaktadır.
 
-Xamarin.iOS kullanırken, uygulamanızın UIViewController türeyen bir sınıf oluşturmanız gerekir. Şu uygulanan onu şöyle:
+Xamarin.iOS kullanırken, uygulamanızın Uıviewcontroller türeyen bir sınıf oluşturmanız gerekir. Uygulandığı onu şöyle:
 
 ```csharp
 public class MyViewController : UIViewController {
@@ -596,13 +596,13 @@ public class MyViewController : UIViewController {
 }
 ```
 
-Ardından, ViewController NIB dosyadan yüklemek için bunu:
+Ardından, ViewController NIB dosya yüklemek için bunu yapabilirsiniz:
 
 ```csharp
 var controller = new MyViewController ("HelloWorld", NSBundle.MainBundle, this);
 ```
 
-Bu, NIB kullanıcı arabirimini yükler. Şimdi, çıkışlar erişmek için bunlara erişmek için istiyoruz çalışma zamanı hakkında bilgilendirmek gereklidir. Bunu yapmak için `UIViewController` alt sınıf gereken özellikleri bildirme ve bunları [Bağlan] özniteliğiyle ek açıklama eklemek. Böyle:
+Bu kullanıcı arabirimini NIB yükler. Artık, kuruluşlarının erişmek için bunlara erişmek için istediğimiz çalışma zamanı bildirmek gereklidir. Bunu yapmak için `UIViewController` özellikleri bildirme ve bunları [Connect] özniteliğiyle ek açıklama için gereksinim duyduğu alt sınıfı. Böyle:
 
 ```csharp
 [Connect]
@@ -616,21 +616,21 @@ UITextField UserName {
 }
 ```
 
-Özelliği, aslında getirir ve gerçek yerel tür için değer depolayan bir uygulamasıdır.
+Özellik gerçekten getirir ve gerçek yerel türü için değer depolayan bir uygulamasıdır.
 
-Mac ve InterfaceBuilder için Visual Studio kullanarak bu hakkında endişelenmeniz gerekmez. Mac için Visual Studio, projenizin bir parçası olarak derlenmiş bir parçalı sınıf kodu ile bildirilen tüm çıkışlar otomatik olarak yansıtır.
+Visual Studio Mac ve InterfaceBuilder için kullanırken bu konuda endişelenmeniz gerekmez. Mac için Visual Studio, projenizin bir parçası olarak derlenmiş bir kısmi sınıftaki kod ile bildirilen tüm çıkışlar otomatik olarak yansıtır.
 
 #### <a name="selectors"></a>Seçici
 
-Bir çekirdek Objective-C programlama seçiciler kavramdır. Genellikle, bir seçici geçirmeniz veya bir seçici yanıt kodunuzu bekliyor API'leri üzerinden gelecektir.
+Bir çekirdek Objective-C programlama Seçici kavramıdır. Genellikle, bir seçici geçirmek ihtiyaç duyduğunuz veya kodunuz için bir seçici yanıt bekliyor API'leri üzerinden gelir.
 
-Yeni Seçicilerin C# ' ta oluşturma çok kolay – yalnızca yeni bir örneğini oluşturmanız `ObjCRuntime.Selector` sınıfı ve bunu gerektiren API'sindeki herhangi bir yerde sonucu kullanın. Örneğin:
+C# ' de yeni Seçici oluşturma çok kolay – yeni bir örneğini oluşturmanız yeterlidir `ObjCRuntime.Selector` sınıfı ve bunu gerektiren API'sindeki herhangi bir yerde sonucu kullanın. Örneğin:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-Bir C# yöntemi yanıt için bir seçici çağrısına, öğesinden devralmalıdır `NSObject` türü ve C# yöntemi gerekir donatılmış Seçici kullanarak ad `[Export]` özniteliği. Örneğin:
+Bir C# yöntemi yanıt için bir seçici çağrı, öğesinden devralmalıdır `NSObject` türüne ve C# yöntemi gerekir düzenlenmiş seçiciyi kullanarak adı `[Export]` özniteliği. Örneğin:
 
 ```csharp
 public class MyMath : NSObject {
@@ -642,59 +642,59 @@ public class MyMath : NSObject {
 }
 ```
 
-Seçicinin Not adları **gerekir** tüm ara ve izleyen iki nokta üst üste dahil olmak üzere tam olarak eşleşen (":"), varsa.
+Seçicinin Not adları **gerekir** tüm ara ve sondaki iki nokta üst üste dahil olmak üzere tam olarak eşleşen (":"), varsa.
 
 #### <a name="nsobject-constructors"></a>NSObject oluşturucular
 
-Öğesinden türetilen Xamarin.iOS çoğu sınıflarda `NSObject` oluşturucular nesnesinin işlevselliğini belirli açığa çıkarır, ancak hemen göze olmayan çeşitli oluşturucular de açığa çıkarır.
+Öğesinden türetilen Xamarin.iOS çoğu sınıflarda `NSObject` oluşturucular belirli nesne işlevselliğini açığa çıkarır ancak hemen göze olmayan çeşitli oluşturucular de açığa çıkarır.
 
-Oluşturucular aşağıdaki gibi kullanılır:
+Oluşturucular şu şekilde kullanılır:
 
 ```csharp
 public Foo (IntPtr handle)
 ```
 
-Bu oluşturucu, çalışma zamanı yönetilmeyen bir sınıfa sınıfınıza eşleme gerektiğinde, sınıf örneği oluşturmak için kullanılır. Bu, bir XIB/NIB dosya yükleme ortaya çıkar.  Bu noktada, yönetilmeyen dünyada Objective-C çalışma zamanı nesne oluşturmuş olacaksınız ve bu oluşturucuyu yönetilen yan başlatmak için çağrılır.
+Bu oluşturucu, çalışma zamanı yönetilmeyen bir sınıfa sınıfınıza eşleme gerektiğinde, sınıfı örneğini oluşturmak için kullanılır. XIB/NIB dosya yüklediğinizde bu gerçekleşir.  Bu noktada, yönetilmeyen dünyanın Objective-C çalışma zamanı nesne oluşturmuş olacaksınız ve yönetilen yan başlatmak için bu oluşturucu çağrılır.
 
-Genellikle, yapmanız gereken tek şey temel oluşturucuyu işleme parametresi ile gövdesinde çağrısı, gerekli olan sıfırlamaları yapın.
+Genellikle, yapmanız gereken tek şey tutamacını parametreli ve gövdesinde temel oluşturucu çağrısı, gerekli olan herhangi bir başlangıç yapın.
 
 ```csharp
 public Foo ()
 ```
 
-Bu sınıf için varsayılan oluşturucu ve sınıfları sağlanan Xamarin.iOS bu Foundation.NSObject sınıfı ve tüm sınıflar arasında başlatır ve sonunda bu Objective-C zincir `init` sınıfında yöntemi.
+Bu sınıf için varsayılan oluşturucu ve Xamarin.iOS sağlanmıştır, bu Foundation.NSObject sınıfı ve tüm sınıflar arasında başlatır ve sonunda, bu Objective-C zincir `init` sınıfı yöntemi.
 
 ```csharp
 public Foo (NSObjectFlag x)
 ```
 
-Bu oluşturucu örneği başlatmak, ancak sonunda Objective-C "Init" yöntemi çağırma kodu önlemek için kullanılır. Başlatma için zaten kaydettiğiniz zaman, genellikle bu kullanın (kullandığınızda `[Export]` , oluşturucu üzerinde) veya bunu önceden yaptığınızda, başlatma aracılığıyla başka bir ortalaması.
+Bu oluşturucu örneği başlatmak, ancak kod sonunda Objective-C "başlatma" yöntemini çağırmasını engellemek için kullanılır. Başlatma için zaten kayıtlı olduğunda, genellikle bunu kullanın (kullandığınızda `[Export]` , oluşturucuda) veya bunu zaten yaptığınızda, başlatma başka bir mean aracılığıyla.
 
 ```csharp
 public Foo (NSCoder coder)
 ```
 
-Bu oluşturucu, nesne NSCoding örneğinden burada başlatılmış olduğu durumlarda sağlanır. Daha fazla bilgi için bkz. Apple'nın [arşivler ve seri hale getirme programlama kılavuzu.](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)
+Bu oluşturucu, nesne NSCoding örneği burada Başlatılmakta olan durumlar için sağlanır. Daha fazla bilgi için bkz. Apple'nın [arşivler ve Serileştirme programlama kılavuzu.](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)
 
 #### <a name="exceptions"></a>Özel Durumlar
 
-Xamarin.iOS API tasarım, C# özel durumlar olarak Objective-C özel durumları oluşturmaz. Tasarım hiçbir çöp Objective-C dünyasına ilk başta gönderilmesini zorlayan ve geçersiz veri hiç önce üretilmesi gereken özel durumlar bağlama tarafından üretilen Objective-C dünyasına geçirildi.
+Xamarin.iOS API tasarımı, C# özel durumlar olarak Objective-C özel durumları oluşturmaz. Objective-C dünya ilk başta hiçbir çöp gönderilmesini tasarım zorlar ve geçersiz veriler hiç olmadığı kadar önce üretilmesi gereken özel durumları bağlama tarafından üretilen Objective-C dünya geçirildi.
 
 #### <a name="notifications"></a>Bildirimler
 
-İOS ve OS X geliştiriciler temel platform tarafından yayınlanan Bildirimlere abone olabilirsiniz. Bu kullanılarak yapılır `NSNotificationCenter.DefaultCenter.AddObserver` yöntemi. `AddObserver` Yöntemi iki parametre alan bir abone olmak istediğiniz bildirim; diğer bildirim oluştuğunda çağrılacak yöntemidir.
+İOS ve OS X, geliştiriciler tarafından temel platform yayın Bildirimlere abone olabilirsiniz. Bu kullanılarak yapılır `NSNotificationCenter.DefaultCenter.AddObserver` yöntemi. `AddObserver` Yöntem iki parametre alır, abone olmak istediğiniz bildirim biridir; diğer bildirimi oluştuğunda çağrılacak yöntem budur.
 
-Xamarin.iOS hem Xamarin.Mac çeşitli bildirimler tuşları bildirimleri tetikleyen sınıf üzerinde barındırılır. Örneğin, bildirimler yükseltilmiş tarafından `UIMenuController` olarak barındırılan `static NSString` özelliklerinde `UIMenuController` "Bildirim" adıyla bitiş sınıfları.
+Xamarin.iOS ve Xamarin.Mac çeşitli bildirimler için anahtarları bildirimleri tetikleyen sınıf üzerinde barındırılır. Örneğin, bildirimler harekete geçirilen `UIMenuController` olarak barındırılan `static NSString` özelliklerinde `UIMenuController` adı "Bildirim" ile biten sınıfları.
 
 ### <a name="memory-management"></a>Bellek Yönetimi
 
-Xamarin.iOS ele artık kullanımda olduğunda kaynaklar sizin için serbest olarak önemli bir atık toplayıcı vardır. Çöp toplayıcı ek olarak, tüm nesneler, türetilen `NSObject` uygulamak `System.IDisposable` arabirimi.
+Xamarin.iOS ele artık kullanımda olduğunda kaynaklar sizin için serbest ilgilendiğiniz atık Toplayıcıya sahiptir. Çöp toplayıcı ek olarak tüm nesneler, türetilen `NSObject` uygulamak `System.IDisposable` arabirimi.
 
 #### <a name="nsobject-and-idisposable"></a>NSObject ve IDisposable
 
-Gösterme `IDisposable` arabirimidir büyük bellek bloklarını kapsülleyen nesneleri serbest geliştiriciler Yardım için kolay bir yol (örneğin, bir `UIImage` yalnızca zararsız bir işaretçi gibi görünebilir, ancak 2 megabayt görüntüye işaret eden ) ve diğer önemli ve sınırlı kaynakları (örneğin, bir video kod çözme arabellek).
+Gösterme `IDisposable` arabirimidir geliştiriciler, büyük boyutlu bellek bloklarını kapsülleyen nesneleri serbest Yardım için kullanışlı bir yol (örneğin, bir `UIImage` yalnızca zararsız bir işaretçi gibi görünebilir, ancak 2 megabayt görüntüye işaret eden ) ve diğer önemli ve sınırlı kaynaklar (örneğin, bir video kod çözme arabellek).
 
-NSObject IDisposable arabirimini uygulayan ve ayrıca [.NET Dispose düzeni](http://msdn.microsoft.com/library/fs2xkftw.aspx). Bu, o alt sınıfın Dispose davranışını geçersiz kılmak ve isteğe bağlı kendi kaynakları serbest bırakmak için NSObject geliştiriciler sağlar. Örneğin, görüntüleri bir dizi tutar bu görünüm denetleyicisini göz önünde bulundurun:
+NSObject IDisposable arayüzünü uygular ve ayrıca [.NET Dispose deseni](http://msdn.microsoft.com/library/fs2xkftw.aspx). Bu, geliştiricilerin bu alt NSObject Dispose davranışı geçersiz kılabilir ve isteğe bağlı olarak kendi kaynaklarını serbest bırakmak için sağlar. Örneğin, görüntüleri bir sürü tutar bu görünüm denetleyicisi göz önünde bulundurun:
 
 ```csharp
 class MenuViewController : UIViewController {
@@ -712,7 +712,7 @@ class MenuViewController : UIViewController {
 }
 ```
 
-Yönetilen bir nesnenin silindiğinde, artık yararlıdır. Nesneleri başvuru hala olabilir, ancak nesnesi için tüm intents ve purposes bu noktada geçersiz. Bazı .NET API'lerini bırakılmış bir nesne üzerinde herhangi bir yöntem örneğin erişmeye çalıştığınızda bir ObjectDisposedException atma emin olun:
+Artık bir yönetilen nesne silindiğinde, kullanışlıdır. Nesnelere başvuru yine de sahip olabilir, ancak nesne için tüm intents ve purposes bu noktada geçersiz. Bazı .NET API'lerini bırakılmış bir nesne üzerinde herhangi bir yöntem örneğin erişmeyi denerseniz bir ObjectDisposedException atma emin olun:
 
 ```csharp
 var image = UIImage.FromFile ("demo.png");
@@ -720,21 +720,21 @@ image.Dispose ();
 image.XXX = false;  // this at this point is an invalid operation
 ```
 
-"Görüntü" değişkeni erişmeye devam edebilirsiniz olsa bile bu gerçekten geçersiz başvuru ve artık görüntü tutulan Objective-C nesne noktalarına olur.
+' % S'değişkeni "image" erişmeye devam edebilirsiniz bile bu gerçekten geçersiz bir başvuru ve artık görüntü tutulan Objective-C nesnesi noktalarına olur.
 
-Ancak bir nesne C# atma nesne mutlaka yok, anlamına gelmez. Bunu şey C# için nesneniz başvuru bırakın. Cocoa ortamı kendi kullanımı için geçici bir başvuru kalmasını sağlamış mümkündür. Örneğin, bir görüntüye UIImageView'ın resim özelliği ayarlı ve sonra görüntüyü silmek, temel alınan UIImageView kendi başvuru gerçekleştirilecek ve işlemi tamamlanana kadar bu nesneye bir başvurusu tutar kullanıyor.
+Ancak, bir nesne C# disposing nesne mutlaka edileceği anlamına gelmez. Bunu olan C# olan nesneye başvuru bırakın. Cocoa ortamı kendi kullanımı için geçici olarak bir başvuru tutmuş mümkündür. Örneğin, görüntüye UIImageView'ın görüntü özelliğini ayarlama ve görüntü dispose sonra temel alınan UIImageView kendi başvurusunu geçen ve işlemi tamamlanana kadar bu nesneye bir başvuru tutar kullanmadan.
 
 #### <a name="when-to-call-dispose"></a>Dispose çağrısı yapıldığında
 
-Nesnenin RID Mono gerektiğinde Dispose öğesini çağırması gerekir. Mono, NSObject gerçekten bellek ya da bir bilgi havuzu gibi önemli bir kaynak başvuru bulunduran hiçbir bilgi olduğunda olası kullanım durumdur. Bu gibi durumlarda, hemen bir atık toplama döngüsü gerçekleştirmek Mono için beklemek yerine bellek referansı serbest bırakmak için Dispose öğesini çağırması gerekir.
+Mono, nesnenin RID gerektiğinde atmayı çağırmalıdır. Mono, NSObject gerçekten bellek ya da bir bilgi havuzu gibi önemli bir kaynağı bir başvuru tutan bilgisi varsa olası kullanım durumdur. Bu gibi durumlarda, çöp toplama döngüsü gerçekleştirmek Mono için beklemek yerine bellek başvuru hemen yayımlamayı atmayı çağırmalıdır.
 
-Dahili olarak, Mono oluşturduğunda [NSString başvuruyor C# dizelerden](~/ios/internals/api-design/nsstring.md), bunları hemen yapmak için atık toplayıcı sahip iş miktarını azaltmak için dispose. Etrafında, hızlı GC uğraşmanız daha az nesne çalıştırın.
+Dahili olarak, Mono oluşturduğunda [NSString başvuran C# dizelerden](~/ios/internals/api-design/nsstring.md), hemen çöp toplayıcı yapmaları gereken iş miktarını azaltmak için bunları dispose. Yaklaşık hızlı GC uğraşmanız daha az nesne çalışır.
 
-#### <a name="when-to-keep-references-to-objects"></a>Nesnelerin referansları tutmak ne zaman
+#### <a name="when-to-keep-references-to-objects"></a>Nesnelere başvurular tutmak ne zaman
 
-Bir yan-otomatik bellek yönetimi sahip hiçbir başvuru onlara var olduğu sürece GC kullanılmayan nesnelerin kurtulun, etkisidir. Bu bazen şaşırtıcı yan etkileri, örneğin, üst düzey görünümü denetleyicinizi tutmak için yerel bir değişken oluşturun ya da üst düzey pencerenizi ve bu olması, geri kaybolur olabilir.
+Bir yan otomatik bellek yönetimi olan etkisi, bunları başvuru var olduğu sürece GC kullanılmayan nesnelerin kurtulun, ' dir. Bu bazen şaşırtıcı yan etkileri, örneğin, üst düzey görünüm denetleyicinize tutmak için yerel bir değişken oluşturun ya da üst düzey pencerenizin ve bu zorunda arkanızı kaybolur olabilir.
 
-Başvuru, statik veya örnek değişkenleri nesnelerinizi tutma, Mono sonsuza dek Dispose() yöntemi üzerlerinde çağırır ve nesne başvurusunu serbest bırakır. Bu yalnızca bekleyen başvuru olabileceğinden, Objective-C çalışma zamanı sizin için nesne yok.
+Başvuru, statik veya örnek değişkenleri nesnelerinizi tutma, Mono sonsuza dek Dispose() yöntemini üzerlerinde çağırır ve nesnesine başvuru serbest bırakır. Bu yalnızca bekleyen başvuru olabileceğinden, Objective-C çalışma zamanı, nesne silecektir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

@@ -1,39 +1,39 @@
 ---
 title: Xamarin.Forms bağlama yolu
-description: Bu makalede Xamarin.Forms veri bağlamaları alt özellikleri ve bağlama sınıfın yolu özelliği koleksiyon üyeleriyle erişmek için nasıl kullanılacağı açıklanmaktadır.
+description: Bu makalede, alt özellik ve koleksiyon üyelerini bağlama sınıfı Path özelliği ile erişmek için Xamarin.Forms veri bağlamaları kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: d7c3b1ba991380451b4a82c389c4d46e950bc914
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 887a20f1791a190c182e6d179cfabb46c6e0eb48
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240479"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998953"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms bağlama yolu
 
-Tüm önceki örneklerde veri bağlama, [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) özelliği `Binding` sınıfı (veya [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Path/) özelliği `Binding` biçimlendirme uzantısı) ayarlandı tek bir özelliğe. Ayarlamak gerçekten mümkündür `Path` için bir *alt özellik* (bir özelliği bir özellik), veya bir koleksiyonun üyesi.
+Örneklerde tüm önceki veri bağlama, [ `Path` ](xref:Xamarin.Forms.Binding.Path) özelliği `Binding` sınıfı (veya [ `Path` ](xref:Xamarin.Forms.Xaml.BindingExtension.Path) özelliği `Binding` işaretleme uzantısı) ayarlandı tek bir özellik için. Ayarlanacak gerçekten mümkündür `Path` için bir *alt özellik* (bir özelliğin bir özelliği) veya bir koleksiyonun üyesi.
 
-Örneğin, sayfanızın bulunduğunu varsayın bir `TimePicker`:
+Örneğin, sayfanız içeriyor varsayalım. bir `TimePicker`:
 
 ```xaml
 <TimePicker x:Name="timePicker">
 ```
 
-`Time` Özelliği `TimePicker` türü `TimeSpan`, ancak başvuruda bulunan bir veri bağlama oluşturmak istediğiniz belki `TotalSeconds` özelliği, `TimeSpan` değeri. Veri bağlama şöyledir:
+`Time` Özelliği `TimePicker` türünde `TimeSpan`, ancak belki de başvuran bir veri bağlamayı oluşturmak istediğiniz `TotalSeconds` , söz konusu özellik `TimeSpan` değeri. Veri bağlama şu şekildedir:
 
 ```xaml
 {Binding Source={x:Reference timePicker},
          Path=Time.TotalSeconds}
 ```
 
-`Time` Özelliği türüdür `TimeSpan`, sahip olduğu bir `TotalSeconds` özelliği. `Time` Ve `TotalSeconds` özellikleri simply bir nokta ile bağlı. Öğeleri `Path` dize her zaman başvurun özellikleri ve bu özelliklerin türleri için değil.
+`Time` Özelliği türüdür `TimeSpan`, sahip olduğu bir `TotalSeconds` özelliği. `Time` Ve `TotalSeconds` özelliklerdir simply nokta ile bağlı. Öğeleri `Path` dize her zaman başvuran özelliklere ve bu özelliklerin türleri.
 
-Örnek ve diğerleri birçok'nda gösterilen **yolu Çeşitlemeler** sayfa:
+Örnek ve diğer birçok içinde gösterilen **yolu çeşitlemeleri** sayfası:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,11 +89,11 @@ Tüm önceki örneklerde veri bağlama, [ `Path` ](https://developer.xamarin.com
 </ContentPage>
 ```
 
-İkinci `Label`, sayfa bağlama kaynağıdır. `Content` Özelliği türüdür `StackLayout`, sahip olduğu bir `Children` türündeki özelliği `IList<View>`, sahip olduğu bir `Count` alt sayısını gösteren özellik.
+İkinci `Label`, sayfa bağlama kaynağıdır. `Content` Özelliği türüdür `StackLayout`, sahip olduğu bir `Children` türünün özelliği `IList<View>`, sahip olduğu bir `Count` çocukların sayısını gösteren özellik.
 
 ## <a name="paths-with-indexers"></a>Dizin oluşturucular ile yolları
 
-Üçüncü bağlamasında `Label` içinde **yolu Çeşitlemeler** sayfaları başvuruları [ `CultureInfo` ](https://developer.xamarin.com/api/type/System.Globalization.CultureInfo/) sınıfını `System.Globalization` ad alanı:
+Üçüncü bağlamasında `Label` içinde **yolu çeşitlemeleri** sayfaları başvuruları [ `CultureInfo` ](xref:System.Globalization.CultureInfo) sınıfını `System.Globalization` ad alanı:
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
@@ -101,9 +101,9 @@ Tüm önceki örneklerde veri bağlama, [ `Path` ](https://developer.xamarin.com
                       StringFormat='The middle day of the week is {0}'}" />
 ```
 
-Kaynak statik olarak ayarlamanız `CultureInfo.CurrentCulture` türünde bir nesne olan özelliği, `CultureInfo`. Sınıf adlı bir özelliğini tanımlar `DateTimeFormat` türü [ `DateTimeFormatInfo` ](https://developer.xamarin.com/api/type/System.Globalization.DateTimeFormatInfo/) içeren bir `DayNames` koleksiyonu. Dizin dördüncü öğeyi seçer.
+Kaynak statik olarak ayarlanmış `CultureInfo.CurrentCulture` türünde bir nesne özelliğinin `CultureInfo`. Sınıf adlı bir özellik tanımlar `DateTimeFormat` türü [ `DateTimeFormatInfo` ](xref:System.Globalization.DateTimeFormatInfo) içeren bir `DayNames` koleksiyonu. Dizinin dördüncü öğeyi seçer.
 
-Dördüncü `Label` Fransa ile ilişkili ancak kültür için benzer bir şey yapar. `Source` Bağlama özelliği ayarlanmış `CultureInfo` bir oluşturucuya sahip nesne:
+Dördüncü `Label` Fransa ile ilişkilendirilmiş ancak kültür için benzer bir şey yok. `Source` Bağlama özelliği `CultureInfo` bir oluşturucusuna sahip:
 
 ```xaml
 <Label>
@@ -122,9 +122,9 @@ Dördüncü `Label` Fransa ile ilişkili ancak kültür için benzer bir şey ya
 </Label>
 ```
 
-Bkz: [oluşturucu bağımsız değişkenleri geçirme](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) XAML'de oluşturucu bağımsız değişkenleri belirtme hakkında daha fazla ayrıntı için.
+Bkz: [oluşturucu bağımsız değişkenleri geçirme](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) XAML içinde oluşturucu bağımsız değişkenleri belirtme hakkında daha fazla ayrıntı için.
 
-Bir alt öğelerinin başvurduğu son olarak, son örnek ikinci, benzerdir `StackLayout`:
+Bir alt öğelerinin başvurduğu son olarak, Son örnekte ikinci, benzer `StackLayout`:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -132,22 +132,22 @@ Bir alt öğelerinin başvurduğu son olarak, son örnek ikinci, benzerdir `Stac
                       StringFormat='The first Label has {0} characters'}" />
 ```
 
-Bu alt bir `Label`, sahip olduğu bir `Text` türündeki özelliği `String`, sahip olduğu bir `Length` özelliği. İlk `Label` raporları `TimeSpan` kümesinde `TimePicker`, bu nedenle bu metin değiştirdiğinde, en son `Label` de değişir.
+Bu alt bir `Label`, sahip olduğu bir `Text` türünün özelliği `String`, sahip olduğu bir `Length` özelliği. İlk `Label` raporları `TimeSpan` kümesinde `TimePicker`, metni değiştiğinde, bu nedenle en son `Label` de değişir.
 
-Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
+Üç tüm platformlarda çalışan bir program şöyledir:
 
-[![Yol Çeşitlemeler](binding-path-images/pathvariations-small.png "yolu Çeşitlemeler")](binding-path-images/pathvariations-large.png#lightbox "yolu farklılıkları")
+[![Yol çeşitlemeleri](binding-path-images/pathvariations-small.png "yolu çeşitlemeleri")](binding-path-images/pathvariations-large.png#lightbox "yolu farklılıkları")
 
 ## <a name="debugging-complex-paths"></a>Hata ayıklama karmaşık yolları
 
-Karmaşık yolu tanımları oluşturmak zor olabilir: her alt özelliğin türünü veya doğru sonraki alt özellik eklemek için koleksiyondaki öğelerin türünü bilmeniz gerekir, ancak türleri kendilerini yolunda görünmez. Bir yolu artımlı olarak derleme ve Ara sonuçlarına bakın tekniktir. Son örneğin olmadan başlamasının `Path` hiç tanımı:
+Karmaşık yol tanımları oluşturmak zor olabilir: her bir alt özellik türü veya doğru sonraki alt özellik eklemek için koleksiyondaki öğelerin türünü bilmeniz gerekir, ancak türleri yolunda görünmez. Bir yolu artımlı olarak derleme ve Ara sonuçları görme konularında tekniktir. Son örneğin olmadan başlatabilir `Path` hiç tanımı:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
                       StringFormat='{0}'}" />
 ```
 
-Bağlama kaynak türünü görüntüler veya `DataBindingDemos.PathVariationsPage`. Bildiğiniz `PathVariationsPage` türetilen `ContentPage`, bu nedenle bir `Content` özelliği:
+Bağlama kaynağı türü görüntüleyen veya `DataBindingDemos.PathVariationsPage`. Bildiğiniz `PathVariationsPage` türetildiği `ContentPage`var. Bu nedenle bir `Content` özelliği:
 
 ```xaml
 <Label Text="{Binding Source={x:Reference page},
@@ -155,15 +155,15 @@ Bağlama kaynak türünü görüntüler veya `DataBindingDemos.PathVariationsPag
                       StringFormat='{0}'}" />
 ```
 
-Türü `Content` özelliği olarak açığa şimdi `Xamarin.Forms.StackLayout`. Ekleme `Children` özelliğine `Path` ve türü `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`, bir sınıf Xamarin.Forms, ancak bir koleksiyon türü için açıkça iç olduğu. Bir dizin olarak ekleyin ve türü `Xamarin.Forms.Label`. Bu şekilde devam eder.
+Türünü `Content` özelliği olarak açığa artık `Xamarin.Forms.StackLayout`. Ekleme `Children` özelliğini `Path` ve türü `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`, bir Xamarin.Forms, ancak bir koleksiyon türü açıkça iç sınıf. Bir dizin ekleyin ve türü `Xamarin.Forms.Label`. Bu şekilde devam eder.
 
-Xamarin.Forms bağlama yolu işlerken yükleyen bir `PropertyChanged` işleyicisi uygulayan yolda herhangi bir nesne üzerinde `INotifyPropertyChanged` arabirimi. Örneğin, son bağlama değişikliği ilk tepki verdiğini `Label` çünkü `Text` özellik değişikliği.
+Xamarin.Forms bağlama yolu işlerken yükler bir `PropertyChanged` uygulayan yolundaki herhangi bir nesne üzerinde işleyici `INotifyPropertyChanged` arabirimi. Örneğin, son bağlama bir değişikliğe ilk tepki verdiğini `Label` çünkü `Text` özellik değişiklikleri.
 
-Bağlama yolu özelliğinde uygulamayan varsa `INotifyPropertyChanged`, bu özellik herhangi bir değişiklik yok sayılacak. Yalnızca dize özellikleri ve alt özellikleri hiçbir zaman olduğunda geçersiz Bu teknik kullanması gereken şekilde bazı değişiklikler tamamen bağlama yolu geçersiz.
+Bağlama yolu özelliğinde uygulamıyor, `INotifyPropertyChanged`, bu özellik herhangi bir değişiklik yok sayılacak. Yalnızca dize özellikleri ve alt özellikleri hiçbir zaman kaldıklarında geçersiz bu tekniği kullanması gerekir, böylece bazı değişiklikleri tamamen bağlama yolu geçersiz.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Veri bağlama gösterileri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Veri bağlama bölüm Xamarin.Forms defterinden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Veri bağlama tanıtımları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Veri bağlama bölümden Xamarin.Forms kitabı](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

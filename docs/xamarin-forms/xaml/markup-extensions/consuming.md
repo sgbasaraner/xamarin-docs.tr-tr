@@ -1,45 +1,45 @@
 ---
-title: XAML biçimlendirme uzantıları kullanma
-description: Bu makalede Xamarin.Forms XAML işaretleme uzantılarına çeşitli kaynaklardan ayarlanacak öğesi özniteliklerini sağlayarak güç ve XAML esnekliğini artırmak için nasıl kullanılacağı açıklanmaktadır.
+title: XAML biçimlendirme uzantılarını kullanma
+description: Bu makalede, çeşitli kaynaklardan ayarlanacak öğenin öznitelikleri vererek gücü ve esnekliği XAML geliştirmek için Xamarin.Forms XAML biçimlendirme uzantıları kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 278677d45f997ac446c2a20967dc3501179bf8da
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245943"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995988"
 ---
-# <a name="consuming-xaml-markup-extensions"></a>XAML biçimlendirme uzantıları kullanma
+# <a name="consuming-xaml-markup-extensions"></a>XAML biçimlendirme uzantılarını kullanma
 
-XAML işaretleme uzantılarına çeşitli kaynaklardan ayarlanacak öğesi özniteliklerini sağlayarak güç ve XAML esnekliğini artırmak yardımcı olur. Birkaç XAML işaretleme uzantılarına XAML 2009 belirtimi bir parçasıdır. Bunlar her zamanki XAML dosyalarıyla görünür `x` ad alanı öneki ve olan yaygın olarak adlandırılır bu öneki. Bunlar aşağıdaki bölümlerde açıklanmıştır:
+XAML biçimlendirme uzantıları, özel olarak çeşitli kaynaklardan ayarlanacak öğenin öznitelikleri vererek gücü ve esnekliği XAML artırmaya yardımcı olun. Birkaç XAML biçimlendirme uzantıları XAML 2009 belirtiminin bir parçasıdır. Bunlar her zamanki XAML dosyalarıyla görünür `x` çalıştırdığınız ve ad alanı öneki yaygın olarak adlandırılan bu öneki. Bunlar aşağıdaki bölümlerde açıklanmıştır:
 
-- [`x:Static`](#static) &ndash; statik özellikler, alanlar veya numaralandırma üyeleri başvuru.
+- [`x:Static`](#static) &ndash; statik özellikler, alanlar veya numaralandırma üyelerini başvuru.
 - [`x:Reference`](#reference) &ndash; öğeleri sayfada adlı başvuru.
-- [`x:Type`](#type) &ndash; bir öznitelik kümesine bir `System.Type` nesnesi.
-- [`x:Array`](#array) &ndash; belirli bir türdeki nesneleri içeren bir dizi oluşturun.
-- [`x:Null`](#null) &ndash; bir öznitelik kümesine bir `null` değeri.
+- [`x:Type`](#type) &ndash; bir öznitelik ayarlanmış bir `System.Type` nesne.
+- [`x:Array`](#array) &ndash; belirli bir türün nesnelerinin bir dizisini oluşturur.
+- [`x:Null`](#null) &ndash; bir öznitelik ayarlanmış bir `null` değeri.
 
-Diğer üç XAML biçimlendirme uzantıları geçmişte diğer XAML uygulamaları tarafından desteklenen ve Xamarin.Forms tarafından da desteklenir. Bunlar daha eksiksiz diğer makalelerdeki açıklanmıştır:
+Diğer XAML biçimlendirme uzantıları üç geçmişe yönelik olarak diğer XAML uygulamaları tarafından desteklenen ve Xamarin.Forms tarafından da desteklenir. Bu, diğer makalelerden daha ayrıntılı açıklanmıştır:
 
-- `StaticResource` &ndash; makalesinde açıklandığı gibi bir kaynak sözlüğünden başvuru nesneleri [ **kaynak sözlüklerindeki**](~/xamarin-forms/xaml/resource-dictionaries.md).
-- `DynamicResource` &ndash; bir kaynak sözlüğü nesnelerindeki değişiklikler makalesinde açıklandığı şekilde yanıt [ **dinamik stilleri**](~/xamarin-forms/user-interface/styles/dynamic.md).
-- `Binding` &ndash; makalesinde açıklandığı gibi iki nesnelerin özelliklerini arasında bir bağlantı kurarsınız [ **veri bağlama**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; veri bağlama denetimi şablonundan makalesinde ele alındığı gibi gerçekleştirir [**denetim şablondan bağlama**] / kılavuzları/xamarin-forms/uygulama-temelleri/şablonlar/denetimi-şablonları/şablonu-bağlama /)
+- `StaticResource` &ndash; makalesinde açıklandığı gibi nesneleri bir kaynak sözlüğünden başvuru [ **kaynak sözlükleri**](~/xamarin-forms/xaml/resource-dictionaries.md).
+- `DynamicResource` &ndash; makalesinde açıklandığı gibi nesneleri bir kaynak sözlüğünde değişikliklere yanıt [ **dinamik stiller**](~/xamarin-forms/user-interface/styles/dynamic.md).
+- `Binding` &ndash; makalesinde açıklandığı gibi iki nesnelerin özelliklerini arasında bir bağlantı kurmak [ **veri bağlama**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+- `TemplateBinding` &ndash; veri bağlama denetimi şablondan makalesinde açıklandığı gibi gerçekleştirir [**denetim şablondan bağlama**] / kılavuzları/xamarin-forms/uygulama-temelleri/şablonları/denetimi-şablonlar/şablon bağlamayı /)
 
-[ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) Düzen kullanır özel biçimlendirme uzantısı [ `ConstraintExpression` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ConstraintExpression/). Bu biçimlendirme uzantısı makalesinde açıklanan [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
+[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Düzeni kullanır özel biçimlendirme uzantısı [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). Bu işaretleme uzantısı makalesinde açıklanan [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 
 <a name="static" />
 
 ## <a name="xstatic-markup-extension"></a>x:Static İşaretleme Uzantısı
 
-`x:Static` Biçimlendirme uzantısı tarafından desteklenen [ `StaticExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticExtension/) sınıfı. Sınıf adlı tek bir özelliğe sahip [ `Member` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.StaticExtension.Member/) türü `string` ortak sabiti, statik özelliği, statik alan veya numaralandırma üyesi adına ayarlayın.
+`x:Static` İşaretleme uzantısı tarafından desteklenen [ `StaticExtension` ](xref:Xamarin.Forms.Xaml.StaticExtension) sınıfı. Sınıf adlı tek bir özelliğe sahip [ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member) türü `string` genel sabiti, statik özelliği, statik alanı veya numaralandırma üyesi adına ayarlayın.
 
-Kullanmak için ortak bir yolu `x:Static` önce bazı sabitleri veya statik değişkenler sınıfıyla gibi tanımlamaktır bu küçük `AppConstants` sınıfını [ **MarkupExtensions** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/) program:
+Kullanmak için sık kullanılan yöntemlerden birisi `x:Static` ilk gibi bazı sabitleri veya statik değişkenler, bir sınıf tanımlamak için bu küçük `AppConstants` sınıfını [ **Markupextension'lar** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/) programı:
 
 ```csharp
 static class AppConstants
@@ -48,7 +48,7 @@ static class AppConstants
 }
 ```
 
-**X: Static Demo** sayfa kullanmak için birkaç yol gösterir `x:Static` biçimlendirme uzantısı. En ayrıntılı yaklaşım başlatır `StaticExtension` arasında sınıf `Label.FontSize` özellik öğesi etiketleri:
+**X: Static tanıtım** sayfa kullanmanın çeşitli yollarını gösterir `x:Static` işaretleme uzantısı. En ayrıntılı yaklaşım başlatır `StaticExtension` arasında sınıf `Label.FontSize` özellik öğesi etiketleri:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -70,7 +70,7 @@ static class AppConstants
 </ContentPage>
 ```
 
-XAML ayrıştırıcısı de sağlar `StaticExtension` olarak kısaltılır sınıfı `x:Static`:
+XAML ayrıştırıcı de tanır `StaticExtension` sınıfı olarak kısaltılır `x:Static`:
 
 ```xaml
 <Label Text="Label No. 2">
@@ -80,38 +80,38 @@ XAML ayrıştırıcısı de sağlar `StaticExtension` olarak kısaltılır sın�
 </Label>
 ```
 
-Bu daha basit hale getirilebilir, ancak bazı yeni sözdizimi değişikliği sunar: koyma oluşur `StaticExtension` sınıfı ve kaşlı ayraç ayarı üye. Elde edilen ifadesi doğrudan ayarlamak `FontSize` özniteliği:
+Bu daha basit hale getirilebilir, ancak bazı yeni söz dizimini değişikliği içeriyor: yerleştirme oluşur `StaticExtension` sınıf ve üye ayraç içindeki ayarlama. Sonuçta elde edilen ifade doğrudan ayarlanır `FontSize` özniteliği:
 
 ```xaml
 <Label Text="Label No. 3"
        FontSize="{x:StaticExtension Member=local:AppConstants.NormalFontSize}" />
 ```
 
-Olduğuna dikkat edin *hiçbir* tırnak süslü ayraçlar içinde. `Member` Özelliği `StaticExtension` artık bir XML özniteliği değil. Bu, bunun yerine ifade biçimlendirme uzantısı için bir parçasıdır.
+Olduğuna dikkat edin *hiçbir* tırnak küme ayraçları içinde. `Member` Özelliği `StaticExtension` artık bir XML özniteliği değil. Bu, bunun yerine ifade işaretleme uzantısı için bir parçasıdır.
 
-Kısaltma gibi `x:StaticExtension` için `x:Static` bir nesne öğesi olarak kullandığınızda, ayrıca, süslü ayraçlar içinde ifadesinde kısaltma:
+Kısaltabilirsiniz gibi `x:StaticExtension` için `x:Static` bir nesne öğesi olarak kullandığınızda, ayrıca, ayraç ifadesindeki kısaltabilirsiniz:
 
 ```xaml
 <Label Text="Label No. 4"
        FontSize="{x:Static Member=local:AppConstants.NormalFontSize}" />
 ```
 
-`StaticExtension` Sınıfına sahip bir `ContentProperty` özelliğe başvurma özniteliği `Member`, bu özelliği sınıfın varsayılan içerik özelliği olarak işaretler. Süslü ayraçlar ile ifade XAML işaretleme uzantılarına, ortadan kaldırabileceğiniz `Member=` ifade parçası:
+`StaticExtension` Sınıfında bir `ContentProperty` özelliğe başvurma özniteliği `Member`, bu özelliği sınıfın varsayılan içerik özelliği olarak işaretler. Küme ayracı ile ifade edilen XAML biçimlendirme uzantıları için ortadan kaldırabilir `Member=` ifadesinin parçası:
 
 ```xaml
 <Label Text="Label No. 5"
        FontSize="{x:Static local:AppConstants.NormalFontSize}" />
 ```
 
-Bu en yaygın biçimidir `x:Static` biçimlendirme uzantısı.
+Bu en yaygın biçimindedir `x:Static` işaretleme uzantısı.
 
-**Statik Demo** sayfası, diğer iki örnek içerir. .NET için bir XML ad alanı bildirimi XAML dosyasının kök etiketi içeren `System` ad alanı:
+**Statik tanıtım** sayfa iki örnek içerir. XAML dosyasının kök etiketi, .NET için bir XML ad alanı bildirimi içeren `System` ad alanı:
 
 ```xaml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```
 
-Böylece `Label` statik alanın ayarlanacağı yazı tipi boyutu `Math.PI`. Bunun yerine küçük metinde sonuçları böylece `Scale` özelliği ayarlanmış `Math.E`:
+Böylece `Label` statik alanı ayarlamak için yazı tipi boyutu `Math.PI`. Çok küçük metinde sonuçları böylece `Scale` özelliği `Math.E`:
 
 ```xaml
 <Label Text="&#x03C0; &#x00D7; E sized text"
@@ -120,7 +120,7 @@ Böylece `Label` statik alanın ayarlanacağı yazı tipi boyutu `Math.PI`. Bunu
        HorizontalOptions="Center" />
 ```
 
-Son örnek görüntüler `Device.RuntimePlatform` değeri. `Environment.NewLine` Statik özelliğe yeni satır karakteri ikisi arasındaki eklemek için kullanılan `Span` nesneler:
+Son örnek görüntüler `Device.RuntimePlatform` değeri. `Environment.NewLine` Statik özellik bir yeni satır karakteri ikisi arasındaki eklemek için kullanılan `Span` nesneler:
 
 ```xaml
 <Label HorizontalTextAlignment="Center"
@@ -135,19 +135,19 @@ Son örnek görüntüler `Device.RuntimePlatform` değeri. `Environment.NewLine`
 </Label>
 ```
 
-Aşağıda, tüm üç platformlarda çalışan örnek verilmiştir:
+Üç tüm platformlarda çalışan örneği aşağıdadır:
 
-[![x: Static Demo](consuming-images/staticdemo-small.png "x: Static Demo")](consuming-images/staticdemo-large.png#lightbox "x: Static Tanıtımı")
+[![x: Static tanıtım](consuming-images/staticdemo-small.png "x: Static tanıtım")](consuming-images/staticdemo-large.png#lightbox "x: Static Tanıtımı")
 
 <a name="reference" />
 
 ## <a name="xreference-markup-extension"></a>x:Reference İşaretleme Uzantısı
 
-`x:Reference` Biçimlendirme uzantısı tarafından desteklenen [ `ReferenceExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/) sınıfı. Sınıf adlı tek bir özelliğe sahip [ `Name` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.ReferenceExtension.Name/) türü `string` bir adla verilen sayfasında bir öğe adı için ayarladığınız `x:Name`. Bu `Name` içerik özelliği bir özelliktir `ReferenceExtension`, bu nedenle `Name=` ne zaman gerekli değil `x:Reference` süslü ayraçlar içinde görüntülenir.
+`x:Reference` İşaretleme uzantısı tarafından desteklenen [ `ReferenceExtension` ](xref:Xamarin.Forms.Xaml.ReferenceExtension) sınıfı. Sınıf adlı tek bir özelliğe sahip [ `Name` ](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) türü `string` bir ad ile belirtilen sayfadaki bir öğeyi adına ayarlayın `x:Name`. Bu `Name` özelliktir içerik özelliğinin `ReferenceExtension`, bu nedenle `Name=` ne zaman gerekli değildir `x:Reference` kaşlı ayraçlar içinde görünür.
 
-`x:Reference` Biçimlendirme uzantısı makalesinde daha ayrıntılı açıklanan özel olarak veri bağlamaları olarak kullanılan [ **veri bağlama**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+`x:Reference` İşaretleme uzantısı makalesinde daha ayrıntılı anlatılan özel veri bağlamaları ile kullanılan [ **veri bağlama**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
-**X: Reference Demo** sayfası iki kullanımını gösterir `x:Reference` veri bağlamalarla nerede kullanıldığı ayarlamak için ilk `Source` özelliği `Binding` nesne ve burada bunu ayarlamak için kullanılan ikinci `BindingContext` Özellik iki veri bağlamaları için:
+**X: Reference tanıtım** sayfası iki kullanımlarını gösterir `x:Reference` veri bağlamaları ile kullanıldığı ayarlamak için ilk `Source` özelliği `Binding` nesne ve onu kullanıldığı ayarlamak için ikinci `BindingContext` iki veri bağlamaları için özellik:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -179,23 +179,23 @@ Aşağıda, tüm üç platformlarda çalışan örnek verilmiştir:
 </ContentPage>
 ```
 
-Her ikisi de `x:Reference` ifadeleri kullanma kısaltılmış `ReferenceExtension` sınıfı adı ve ortadan `Name=` ifade parçası. İlk örnekteki `x:Reference` biçimlendirme uzantısı katıştırılmış `Binding` biçimlendirme uzantısı. Dikkat `Source` ve `StringFormat` ayarları virgülle ayrılır. Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
+Her ikisi de `x:Reference` ifadeleri kullanma kısaltılmış `ReferenceExtension` sınıf adı ve ortadan `Name=` ifadesinin parçası. İlk örnekte, `x:Reference` işaretleme uzantısı gömüldüğü `Binding` işaretleme uzantısı. Dikkat `Source` ve `StringFormat` ayarları virgülle ayrılır. Üç tüm platformlarda çalışan bir program şöyledir:
 
-[![x: Reference Demo](consuming-images/referencedemo-small.png "x: Reference Demo")](consuming-images/referencedemo-large.png#lightbox "x: Reference Tanıtımı")
+[![x: Reference tanıtım](consuming-images/referencedemo-small.png "x: Reference tanıtım")](consuming-images/referencedemo-large.png#lightbox "x: Reference Tanıtımı")
 
 <a name="type" />
 
 ## <a name="xtype-markup-extension"></a>x:Type İşaretleme Uzantısı
 
-`x:Type` Biçimlendirme uzantısıdır XAML denk C# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) anahtar sözcüğü. Tarafından desteklenen [ `TypeExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TypeExtension/) adlı bir özellik tanımlıyor sınıfı [ `TypeName` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.TypeExtension.TypeName/) türü `string` bir sınıf veya yapı adına ayarlayın. `x:Type` Biçimlendirme uzantısı döndürür [ `System.Type` ](https://developer.xamarin.com/api/type/System.Type/) Bu sınıf veya yapı nesne. `TypeName` içerik özelliği `TypeExtension`, bu nedenle `TypeName=` ne zaman gerekli değil `x:Type` ile süslü ayraçlar görüntülenir.
+`x:Type` İşaretleme uzantısı, C# XAML aynıdır [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) anahtar sözcüğü. Tarafından desteklenen [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension) adlı bir özellik tanımlayan sınıf [ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) türü `string` bir sınıf veya yapı adı ayarlayın. `x:Type` İşaretleme uzantısı döndürür [ `System.Type` ](xref:System.Type) o sınıfın veya yapının nesne. `TypeName` içerik özelliği `TypeExtension`, bu nedenle `TypeName=` ne zaman gerekli değildir `x:Type` küme ayracı ile görünür.
 
-Xamarin.Forms içinde bağımsız değişken türü içeren birkaç özellik vardır `Type`. Örnekler [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) özelliği `Style`ve [x: TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) genel sınıflarda bağımsız değişkenlerini belirtmek için kullanılan öznitelik. Ancak, XAML ayrıştırıcısı gerçekleştirir `typeof` işlemi otomatik olarak ve `x:Type` biçimlendirme uzantısı şu durumlarda kullanılmaz.
+Xamarin.Forms içinde türünde bağımsız değişken içeren birkaç özellik vardır `Type`. Örnekler [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) özelliği `Style`ve [x: TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) genel sınıfları bağımsız değişkenlerini belirtmek için kullanılan öznitelik. Ancak, XAML ayrıştırıcı gerçekleştirir `typeof` işlemi otomatik olarak ve `x:Type` işaretleme uzantısı, şu durumlarda kullanılmaz.
 
-Tek bir yerde nerede `x:Type` *olan* gerekli olan `x:Array` açıklanan biçimlendirme uzantısı [sonraki bölümde](#array).
+Tek bir yerde nerede `x:Type` *olduğu* gerekli olduğu `x:Array` açıklanan işaretleme uzantısı [sonraki bölümde](#array).
 
-`x:Type` Biçimlendirme uzantısı olduğunda da yararlı her bir menü öğesi için belirli bir türdeki bir nesne burada karşılık gelen bir menü oluşturma. İlişkilendirebilirsiniz bir `Type` nesne her Menü öğesiyle ve menü öğesi seçildiğinde nesne örneği.
+`x:Type` İşaretleme uzantısı, ayrıca her bir menü öğesi belli bir türdeki bir nesne için burada karşılık gelen bir menü oluşturma gerektiğinde kullanışlıdır. İlişkilendirebilirsiniz bir `Type` ile her bir menü öğesi nesnesi ve menü öğesi seçildiğinde nesne örneği oluşturun.
 
-Bunun nasıl Gezinti menüsünde `MainPage` içinde **biçimlendirme uzantıları** program çalışır. **MainPage.xaml** dosyasını içeren bir `TableView` her `TextCell` belirli bir programı sayfasında karşılık gelen:
+Bu, nasıl Gezinti menüsünde `MainPage` içinde **biçimlendirme uzantıları** programı çalışır. **MainPage.xaml** dosyasını içeren bir `TableView` her `TextCell` programı belirli bir sayfaya karşılık gelen:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -234,11 +234,11 @@ Bunun nasıl Gezinti menüsünde `MainPage` içinde **biçimlendirme uzantılar�
 </ContentPage>
 ```
 
-Ana sayfası açılıyor işte **biçimlendirme uzantıları**:
+Açılış ana sayfasında işte **biçimlendirme uzantıları**:
 
 [![Ana sayfa](consuming-images/mainpage-small.png "ana sayfa")](consuming-images/mainpage-large.png#lightbox "ana sayfası")
 
-Her `CommandParameter` özelliği ayarlanmış bir `x:Type` diğer sayfalardan birini başvuran biçimlendirme uzantısı. `Command` Özelliği adlı bir özelliğe bağlı `NavigateCommand`. Bu özellik tanımlanan `MainPage` arka plan kod dosyası:
+Her `CommandParameter` özelliği bir `x:Type` diğer sayfalardan biri başvuruda işaretleme uzantısı. `Command` Özelliğe adlı bir özellik `NavigateCommand`. Bu özellik tanımlanan `MainPage` arka plan kod dosyası:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -260,9 +260,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`NavigateCommand` Özelliği bir `Command` türünde bir bağımsız değişken içeren bir yürütme komutu uygulayan nesne `Type` &mdash; değerini `CommandParameter`. Bir yöntem `Activator.CreateInstance` sayfa örneği oluşturmak için ve kendisine gider. Ayarlayarak Oluşturucusu sonucuna `BindingContext` kendisine sayfasının sağlayan `Binding` üzerinde `Command` çalışmak için. Bkz: [ **veri bağlama** ](~/xamarin-forms/app-fundamentals/data-binding/index.md) makale ve özellikle [ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) kod bu tür hakkında daha fazla ayrıntı için makale.
+`NavigateCommand` Özelliği bir `Command` türünde bir bağımsız değişken içeren bir yürütme komutu uygulayan nesne `Type` &mdash; değerini `CommandParameter`. Yöntemini kullanan `Activator.CreateInstance` sayfası oluşturmak için ve kendisine gider. Oluşturucu ayarlayarak sonucuna `BindingContext` sayfanın kendisi sağlayan `Binding` üzerinde `Command` çalışmak için. Bkz: [ **veri bağlama** ](~/xamarin-forms/app-fundamentals/data-binding/index.md) makale ve özellikle [ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) makalede bu tür kod hakkında daha fazla ayrıntı için.
 
-**X: Type Demo** sayfa kullanan benzer bir teknik Xamarin.Forms öğeleri oluşturmak ve bunları eklemek için bir `StackLayout`. XAML dosyası başlangıçta üç oluşur `Button` öğeleriyle kendi `Command` özelliklerini ayarlamak bir `Binding` ve `CommandParameter` üç Xamarin.Forms görünüm türleri için ayarlanan özellikleri:
+**X: Type tanıtım** sayfası Xamarin.Forms öğeleri oluşturmak ve bunları eklemek için benzer bir teknik kullanır bir `StackLayout`. XAML dosyası başlangıçta üç oluşur `Button` öğelerle kendi `Command` özelliklerini ayarlamak bir `Binding` ve `CommandParameter` üç Xamarin.Forms görünüm türleri için ayarlanan özellikler:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -294,7 +294,7 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-Arka plan kodu dosya tanımlar ve başlatır `CreateCommand` özelliği:
+Arka plan kod dosyasını tanımlar ve başlatır `CreateCommand` özelliği:
 
 ```csharp
 public partial class TypeDemoPage : ContentPage
@@ -317,22 +317,22 @@ public partial class TypeDemoPage : ContentPage
 }
 ```
 
-Yöntemi yürütülmesi bir `Button` basıldığında bağımsız değişkeni yeni bir örneğini oluşturur, ayarlar, `VerticalOptions` özelliği ve ona ekler `StackLayout`. Üç `Button` öğeleri dinamik olarak oluşturulan görünümlerle sonra sayfanın paylaşımı:
+Yöntemi zaman yürütülen bir `Button` basıldığında bağımsız değişkeni yeni bir örneğini oluşturur, ayarlar kendi `VerticalOptions` özelliği ve bu gruba ekler `StackLayout`. Üç `Button` öğeleri daha sonra sayfa dinamik olarak oluşturulan görünümleriyle paylaşın:
 
-[![x: Type Demo](consuming-images/typedemo-small.png "x: Type Demo")](consuming-images/typedemo-large.png#lightbox "x: Type Tanıtımı")
+[![x: Type tanıtım](consuming-images/typedemo-small.png "x: Type tanıtım")](consuming-images/typedemo-large.png#lightbox "x: Type Tanıtımı")
 
 <a name="array" />
 
 ## <a name="xarray-markup-extension"></a>x:Array İşaretleme Uzantısı
 
-`x:Array` Biçimlendirme uzantısı bir dizi biçimlendirmede tanımlamanıza izin verir. Tarafından desteklenen [ `ArrayExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ArrayExtension/) iki özelliklerini tanımlar sınıfı:
+`x:Array` İşaretleme uzantısı bir dizi biçimlendirme içinde tanımlamanıza izin verir. Tarafından desteklenen [ `ArrayExtension` ](xref:Xamarin.Forms.Xaml.ArrayExtension) iki özellikleri tanımlayan sınıf:
 
-- `Type` tür `Type`, dizideki öğeler türünü gösterir.
-- `Items` tür `IList`, öğelerinin koleksiyonu. Bu içerik özelliğidir `ArrayExtension`.
+- `Type` tür `Type`, dizideki öğelerin türünü belirtir.
+- `Items` tür `IList`, öğeleri koleksiyonu. Bu içerik özelliğidir `ArrayExtension`.
 
-`x:Array` Biçimlendirme uzantısı kendisini hiçbir zaman süslü ayraçlar içinde görüntülenir. Bunun yerine, `x:Array` başlangıç ve bitiş etiketleri sınırlandırmak öğeleri listesi. Ayarlama `Type` özelliğine bir `x:Type` biçimlendirme uzantısı.
+`x:Array` İşaretleme uzantısı kendisi asla kaşlı ayraçlar içinde görünür. Bunun yerine, `x:Array` başlangıç ve bitiş etiketleri öğe listesi sınırlandırın. Ayarlama `Type` özelliğini bir `x:Type` işaretleme uzantısı.
 
-**X: Array Demo** sayfa nasıl kullanılacağını gösterir `x:Array` öğelerine eklemek için bir `ListView` ayarlayarak `ItemsSource` bir dizi özellik:
+**X: Array tanıtım** sayfasını nasıl kullanılacağını göstermektedir `x:Array` öğelerine eklemek için bir `ListView` ayarlayarak `ItemsSource` bir dizi özelliği:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -374,39 +374,39 @@ Yöntemi yürütülmesi bir `Button` basıldığında bağımsız değişkeni ye
 </ContentPage>        
 ```
 
-`ViewCell` Basit bir oluşturur `BoxView` her renk girişi için:
+`ViewCell` Basit oluşturur `BoxView` her renk girişi için:
 
-[![x: Array Demo](consuming-images/arraydemo-small.png "x: Array Demo")](consuming-images/arraydemo-large.png#lightbox "x: Array Tanıtımı")
+[![x: Array tanıtım](consuming-images/arraydemo-small.png "x: Array tanıtım")](consuming-images/arraydemo-large.png#lightbox "x: Array Tanıtımı")
 
-Tek tek belirtmek için çeşitli yollar vardır `Color` Bu dizideki öğeler. Kullanabileceğiniz bir `x:Static` biçimlendirme uzantısı:
+Tek tek belirtmek için çeşitli yollar vardır `Color` dizideki öğeleri. Kullanabileceğiniz bir `x:Static` işaretleme uzantısı:
 
 ```xaml
 <x:Static Member="Color.Blue" />
 ```
 
-Veya, kullanabileceğiniz `StaticResource` kaynak sözlükten bir renk almak için:
+Veya, kullanabileceğiniz `StaticResource` kaynak sözlüğünden bir renk almak için:
 
 ```xaml
 <StaticResource Key="myColor" />
 ```
 
-Bu makalenin sonundaki ayrıca yeni bir renk değeri oluşturur özel bir XAML biçimlendirme uzantısı görürsünüz:
+Bu makale sonuna doğru ayrıca yeni bir renk değeri oluşturan özel bir XAML işaretleme uzantısı görürsünüz:
 
 ```xaml
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-Dizeyi veya sayı gibi ortak türlerin dizileri tanımlarken, listelenen etiketleri kullanma [ **oluşturucu bağımsız değişkenleri geçirme** ](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) değerleri sınırlandırmak için makale.
+Dize veya sayı gibi ortak bir türleri dizilerini tanımlarken, listelenen etiketler kullanma [ **oluşturucu bağımsız değişkenleri geçirme** ](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) değerleri sınırlandırmak için makale.
 
 <a name="null" />
 
 ## <a name="xnull-markup-extension"></a>x:Null İşaretleme Uzantısı
 
-`x:Null` Biçimlendirme uzantısı tarafından desteklenen [ `NullExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.NullExtension/) sınıfı. Özelliği yok ve yalnızca XAML C# eşdeğerdir [ `null` ](/dotnet/csharp/language-reference/keywords/null/) anahtar sözcüğü.
+`x:Null` İşaretleme uzantısı tarafından desteklenen [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension) sınıfı. Özellikleri yoktur ve yalnızca XAML C# eşdeğerdir [ `null` ](/dotnet/csharp/language-reference/keywords/null/) anahtar sözcüğü.
 
-`x:Null` Biçimlendirme uzantısı nadiren gerekir ve nadiren kullanılır, ancak bir gereksinimini bulursanız, mevcut memnun olacaktır.
+`x:Null` İşaretleme uzantısı nadiren gerekir ve nadiren kullanılır, ancak bir gereksinimini bulursanız, var olan memnun olacaktır.
 
-**X: Null Demo** sayfa bir senaryo gösterilmektedir, `x:Null` kullanışlı olabilir. Örtülü tanımladığınız varsayalım `Style` için `Label` içeren bir `Setter` ayarlayan `FontFamily` özelliği bir platforma bağımlı aile adı:
+**X: Null tanıtım** sayfası bir senaryo gösterilmektedir, `x:Null` kullanışlı olabilir. Örtük tanımladığınız varsayalım `Style` için `Label` içeren bir `Setter` ayarlayan `FontFamily` özelliğini bir platforma bağımlı aile adı:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -445,23 +445,23 @@ Dizeyi veya sayı gibi ortak türlerin dizileri tanımlarken, listelenen etiketl
 </ContentPage>   
 ```
 
-Aşağıdakilerden birini olduğunu fark sonra `Label` öğeleri, tüm özellik ayarlarını örtük istediğiniz `Style` dışında `FontFamily`, varsayılan değeri olması istediğiniz. Başka bir tanımlayabilirsiniz `Style` bu amaçla ancak basit bir yaklaşım için basitçe ayarlamaktır `FontFamily` belirli özellik `Label` için `x:Null`Center'da gösterildiği gibi `Label`.
+Biri için olduğunu fark sonra `Label` öğeleri, örtük olarak tüm özellik ayarları istediğiniz `Style` dışında `FontFamily`, varsayılan değer olmasını istediğiniz. Başka bir tanımlayabilirsiniz `Style` bu amaçla ancak basit bir yaklaşım için ayarlanacak teknolojidir `FontFamily` belirli özellik `Label` için `x:Null`Merkezi'nde gösterilen gibi `Label`.
 
-Üç platformlarda çalışan program şöyledir:
+Üç platformlarda çalışan bir program şöyledir:
 
-[![x: Null Demo](consuming-images/nulldemo-small.png "x: Null Demo")](consuming-images/nulldemo-large.png#lightbox "x: Null Tanıtımı")
+[![x: Null tanıtım](consuming-images/nulldemo-small.png "x: Null tanıtım")](consuming-images/nulldemo-large.png#lightbox "x: Null Tanıtımı")
 
-Duyuru bu dört `Label` öğelerine sahip bir serif yazı tipi Merkezi `Label` varsayılan sans-serif yazı tipi vardır.
+Bildirim, dört `Label` öğelere sahip bir serif yazı tipi, merkezi `Label` varsayılan sans-serif yazı tipi.
 
-## <a name="define-your-own-markup-extensions"></a>Kendi biçimlendirme uzantıları tanımlayın
+## <a name="define-your-own-markup-extensions"></a>Kendi biçimlendirme uzantılarını tanımla
 
-Xamarin.Forms içinde bulunmayan XAML biçimlendirme uzantısı gereksinimini karşılaştıysanız yapabilecekleriniz [kendinizinkini oluşturun](creating.md).
+Xamarin.Forms içinde kullanılamayan bir XAML işaretleme uzantısı gereksinimini karşılaştığınız varsa [kendi uzantınızı oluşturun](creating.md).
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Biçimlendirme uzantıları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
-- [XAML biçimlendirme uzantıları bölüm Xamarin.Forms defterinden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [XAML biçimlendirme uzantıları Xamarin.Forms kitabı bölümden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Kaynak Sözlükler](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dinamik Stiller](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Veri Bağlama](~/xamarin-forms/app-fundamentals/data-binding/index.md)

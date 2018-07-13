@@ -1,87 +1,87 @@
 ---
-title: Kurumsal uygulama Xamarin.Forms eBook kullanarak düzenleri
-description: Bu e-kitap uyarlanabilir, sürdürülebilir ve sınanabilir Xamarin.Forms Kurumsal uygulamaları geliştirmek için Mimari Kılavuzu sağlar.
+title: Xamarin.Forms e-kitap kullanarak kurumsal uygulama desenleri
+description: Bu e-kitap uyarlanabilir, sürdürülebilir ve test edilebilir Xamarin.Forms Kurumsal uygulamaları geliştirmek için Mimari Rehber sağlar.
 ms.prod: xamarin
 ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: c401465d8a57abe1d5a1cfaf9ee2616888332ea3
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ecfe99f66e16eafabc3117036ff065e3a35259c3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242169"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994354"
 ---
-# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Kurumsal uygulama Xamarin.Forms eBook kullanarak düzenleri
+# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Xamarin.Forms e-kitap kullanarak kurumsal uygulama desenleri
 
-_Uyarlanabilir, sürdürülebilir ve sınanabilir Xamarin.Forms Kurumsal uygulamaları geliştirmek için Mimari Kılavuzu_
+_Uyarlanabilir, sürdürülebilir ve test edilebilir Xamarin.Forms Kurumsal uygulamaları geliştirmek için Mimari kılavuzluğu_
 
-![](images/cover-sml.png "Kurumsal uygulama Xamarin.Forms eBook kullanarak düzenleri")
+![](images/cover-sml.png "Xamarin.Forms e-kitap kullanarak kurumsal uygulama desenleri")
 
-Bu e-kitap gevşek bağlantı korurken Model View ViewModel (MVVM) deseni, bağımlılık ekleme, gezinti, doğrulama ve yapılandırma yönetimi, uygulama hakkında yönergeler sağlar. Ayrıca, aynı zamanda bir yönerge yoktur gerçekleştirdiği kimlik doğrulama ve yetkilendirme kapsayıcılı mikro ve birim testi verilere IdentityServer ile.
+Bu e-kitap, gevşek bağ modelini korurken, Model-View-ViewModel (MVVM) desenini, bağımlılık ekleme, gezinti, doğrulama ve yapılandırma yönetimi, uygulama hakkında yönergeler sağlanır. Ayrıca, de mevcuttur kılavuzu üzerinde kimlik doğrulaması ve yetkilendirme ile kapsayıcılı mikro hizmetler ve birim testi verilerine erişme, IdentityServer gerçekleştirme.
 
 ## <a name="prefaceprefacemd"></a>[Önsöz](preface.md)
 
-Bu bölümde, amacını ve kapsamını Kılavuzu ve kimlerin adresindeki hedefler açıklanmaktadır.
+Bu bölümde, amacını ve kapsamını Kılavuzu ve en hedefler açıklanmaktadır.
 
 ## <a name="introductionintroductionmd"></a>[Giriş](introduction.md)
 
-Kurumsal uygulamaları, geliştiricilerin uygulama mimarisi geliştirme sırasında değiştirebilir birkaç güçlüklerle karşılaşır. Bu nedenle, böylece değiştiren veya zamanla genişletilmiş bir uygulama oluşturmak önemlidir. Böyle uyumluluk için tasarlama zor olabilir, ancak genellikle uygulama kolayca birlikte uygulamaya tümleştirilebilir ayrık, geniş eşleşmiş bileşenlere bölümleme ilgilidir.
+Kurumsal uygulama geliştiriciler, geliştirme sırasında uygulama mimarisinden değiştirebilirsiniz birkaç sorunlarla karşılaşıyor. Bu nedenle, değiştiren veya genişletilmiş zaman içinde bir uygulama oluşturmak önemlidir. Bu tür uyumluluk için tasarlama zor olabilir, ancak genellikle bir uygulamayı kolayca birlikte uygulamalarla tümleştirilebilir ayrık, gevşek bileşenlere bölümleme içerir.
 
 ## <a name="mvvmmvvmmd"></a>[MVVM](mvvm.md)
 
-Model-View-ViewModel (MVVM) deseni, uygulamanın kendi kullanıcı arabiriminden (UI) iş ve sunu mantığı düzgün bir şekilde ayırmak için yardımcı olur. Uygulama mantığı ve UI arasında temiz bir ayrım bakımı çok sayıda geliştirme sorunları gidermek için yardımcı olur ve bir uygulama sınamak için korumak ve gelişmesi daha kolay hale getirebilir. Kodu yeniden kullanın fırsatlar büyük ölçüde artırabilir ve geliştiricilerin sağlar ve bunların ilgili bölümleri Uygulama geliştirirken UI tasarımcıları daha kolayca işbirliği.
+Model-View-ViewModel (MVVM) desenini düzgün bir şekilde iş ve bir sunu mantıksal uygulamanın, kullanıcı arabiriminden (UI) ayrı yardımcı olur. Uygulama mantığı ve UI arasında NET bir ayrım koruma çok sayıda geliştirme sorunları gidermeye yardımcı olur ve uygulama sınamak için korumak ve geliştirmek daha kolay hale getirebilirsiniz. Kodu yeniden kullanma fırsatlarını büyük ölçüde geliştirebilir ve geliştiricilerin sağlar ve daha fazla bilgi için kullanıcı Arabirimi tasarımcıları, ilgili bölümleri Uygulama geliştirirken kolayca işbirliği yapın.
 
 ## <a name="dependency-injectiondependency-injectionmd"></a>[Bağımlılık Ekleme](dependency-injection.md)
 
-Bağımlılık ekleme, bu türlerine bağlıdır kodundan somut türleri ayırma sağlar. Genellikle kayıtlar ve arabirimleri ve soyut türler arasındaki eşlemeleri listesi tutan bir kapsayıcı ve uygulama ya da bu tür genişletmek somut türleri kullanır.
+Bağımlılık ekleme, bu türlerine bağlıdır koddan somut tür ayırma sağlar. Genellikle, kayıtlar ve arabirimleri ile soyut türler arasındaki eşlemeleri listesini tutan kapsayıcı ve uygulamak ya da bu türleri genişleten somut türler de kullanır.
 
-Bağımlılık ekleme kapsayıcıları sınıf örneklerini oluşturmak ve kapsayıcı yapılandırmasını temel alarak kendi ömürleri yönetmek için bir olanak sağlayarak nesneleri arasındaki ilişki azaltın. Nesne oluşturma sırasında kapsayıcı nesne gerektiren bağımlılıkları içine yerleştirir. Bu bağımlılıkların henüz oluşturulmadı, kapsayıcıyı oluşturur ve bağımlılıklarını ilk giderir.
+Bağımlılık ekleme kapsayıcıları sınıf örneklerini oluşturmak ve kapsayıcıya yapılandırmasına bağlı olarak kendi ömürlerine yönetmek için bir olanağı sağlayarak nesneler arasında bağ azaltın. Nesne oluşturma sırasında kapsayıcı nesne gerektiren herhangi bir bağımlılığın içine yerleştirir. Bu bağımlılıkların henüz oluşturulmadı, kapsayıcı oluşturur ve ilk bağımlılıklarını çözümler.
 
 ## <a name="communicating-between-loosely-coupled-componentscommunicating-between-loosely-coupled-componentsmd"></a>[Gevşek Bir Şekilde Eşlenen Bileşenler Arasında İletişim](communicating-between-loosely-coupled-components.md)
 
-Xamarin.Forms [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) sınıfı uygulayan Yayımla-abone nesne ve türü başvurularını bağlamak kullanışsız bileşenleri arasındaki iletişim ileti tabanlı olanak deseni. Bu mekanizma Yayımcılar ve aboneleri birbirlerine bağımsız olarak geliştirilen ve test bileşenleri de verirken bileşenleri arasındaki bağımlılıkları azaltmaya yardımcı başvuru gerek kalmadan iletişim kurmasına izin verir.
+Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) sınıfın uyguladığı Yayımla-abone ol modeli, nesne ve tür başvurularını bağlamak uygun olan bileşenleri arasında ileti tabanlı iletişim sağlar. Bu mekanizma, Yayımcılar ve aboneler bir başvuru bağımsız olarak geliştirilen ve test bileşenlerini de verirken bileşenleri arasındaki bağımlılıkları azaltmaya yardımcı olur, birbiriyle olmadan iletişim kurmasına izin verir.
 
 ## <a name="navigationnavigationmd"></a>[Gezinti](navigation.md)
 
-Xamarin.Forms genellikle kullanıcı Arabirimi ile kullanıcı etkileşimi veya uygulama, iç mantık temelli durumu yapılan değişiklikler sonucunda sonuçları sayfa gezintisi için destek içerir. Ancak, gezinti MVVM desenini kullanan uygulamalarda uygulamak için karmaşık olabilir.
+Xamarin.Forms, genellikle kullanıcı Arabirimi ile kullanıcı etkileşimi veya iç mantık temelli durumu yapılan değişiklikler sonucunda uygulama içinden sonucunda sayfa gezintisi için destek içerir. Ancak, gezinti MVVM düzenini kullanan uygulamalarda uygulamak için karmaşık olabilir.
 
-Bu bölümde sunan bir `NavigationService` görünüm modeli ilk Gezinti görünümü modellerinden gerçekleştirmek için kullanılan sınıf. Gezinti mantığı görünümde yerleştirme modeli sınıfları gelir mantık otomatikleştirilmiş testleri denenmesi. Ayrıca, görünüm modeli sonra belirli iş kuralları zorunlu tutulmaz emin olmak için Denetim Gezinti mantığı uygulayabilirsiniz.
+Bu bölümde sunan bir `NavigationService` görünümü modellerinden görünüm model-first Gezinti gerçekleştirmek için kullanılan sınıf. Gezinti mantığı görünümde yerleştirilmesi, model sınıfları anlamına gelir mantık otomatik testler uygulanabilecek. Ayrıca, görünüm modeli ardından belirli iş kuralları uygulanmasını sağlamak için denetimi Gezinti mantığı uygulayabilir.
 
 ## <a name="validationvalidationmd"></a>[Doğrulama](validation.md)
 
-Kullanıcı girişi kabul eden herhangi bir uygulama girişi geçerli olduğundan emin olmanız gerekir. Doğrulama olmadan bir kullanıcı uygulama başarısız olmasına neden olan veri sağlayabilir. Doğrulama iş kurallarını uygular ve bir saldırgan kötü amaçlı veriler injecting önler.
+Kullanıcıların girişi kabul eden herhangi bir uygulama, giriş geçerli olduğundan emin olmanız gerekir. Doğrulama, bir kullanıcı, uygulamanın başarısız olmasına neden olan veri sağlayabilirsiniz. Doğrulama, iş kuralları zorunlu kılar ve bir saldırgan kötü amaçlı veri ekleme öğesinden engeller.
 
-Bağlamında, Model ViewModel modeli (MVVM) deseni, bir görünüm modeli veya model genellikle veri doğrulaması yapmak ve böylece kullanıcı düzeltmenize görüntülemek için herhangi bir doğrulama hatası sinyal gerekecektir.
+Bağlam, Model ViewModel Model (MVVM) deseni, bir görünüm modeli veya model genellikle veri doğrulaması gerçekleştir ve böylece kullanıcı bunları düzeltmek için kullanabileceğiniz tüm doğrulama hatalarını görünümüne sinyal gerekecektir.
 
 ## <a name="configuration-managementconfiguration-managementmd"></a>[Yapılandırma Yönetimi](configuration-management.md)
 
-Ayarlar, uygulama derlenmeden değiştirilecek davranışı izin vererek uygulama kodundan davranışını yapılandırır veri ayrımı sağlar. Uygulama ayarları, bir uygulama oluşturur ve yönetir verileri ve kullanıcı ayarları, uygulamanın davranışı etkiler ve sık sık yeniden ayarlama gerektirmeyen özelleştirilebilir bir uygulamanın ayarlardır.
+Ayarlar, uygulamanın derlenmeden değiştirilecek davranış sağlayan bir kodu uygulamadan davranışını yapılandıran veri ayrımı sağlar. Uygulama ayarları, bir uygulama oluşturur ve yönetir verilerinin ve uygulama davranışını etkiler ve sık sık yeniden ayarlama gerektirmeyen özelleştirilebilir ayarları bir uygulamanın kullanıcı ayarlarıdır.
 
 ## <a name="containerized-microservicescontainerized-microservicesmd"></a>[Kapsayıcılı Mikro Hizmetler](containerized-microservices.md)
 
-Mikro uygulama geliştirme ve modern bulut uygulamaları çeviklik, ölçek ve güvenilirlik gereksinimlerine uygun dağıtım bir yaklaşım sunmaktadır. Ana avantajları mikro, bunlar bağımsız olarak, belirli bir işlevsel alan isteğe bağlı olarak gereksiz yere alanlarının ölçeklendirmeden desteklemek için daha fazla işlem gücü veya ağ bant genişliği gerektiren genişletilebilir, yani ölçeklendirilmiş olabileceğini biridir artan talep etkilenmeyen uygulama.
+Mikro hizmetler, uygulama geliştirme ve modern bulut uygulamaları çeviklik, ölçek ve güvenilirlik gereksinimleri için uygun olan dağıtım için bir yaklaşım sunar. Mikro hizmetlerin başlıca avantajlarından biri, bağımsız olarak, belirli bir işlevsel alan talep alanları gereksiz yere yeniden ölçeklendirmeden desteklemek için daha fazla işleme güç veya ağ bant genişliği gerektiren ölçeklendirilebilir, yani ölçeği genişletilen yardımcı olması açısından önemlidir artan talebi yaşamadığınızdan uygulama.
 
 ## <a name="authentication-and-authorizationauthentication-and-authorizationmd"></a>[Kimlik Doğrulaması ve Yetkilendirme](authentication-and-authorization.md)
 
-Bir ASP.NET MVC web uygulamasıyla iletişim kuran bir Xamarin.Forms uygulamada kimlik doğrulama ve yetkilendirme tümleştirmek için birçok yaklaşım vardır. Burada, kimlik doğrulama ve yetkilendirme IdentityServer 4 kullanan kapsayıcılı kimlik mikro hizmet ile gerçekleştirilir. IdentityServer, taşıyıcı belirteci kimlik doğrulaması gerçekleştirmek için ASP.NET Core kimliği ile tümleşir ASP.NET Core bir açık kaynak Openıd Connect ve OAuth 2.0 çerçevedir.
+Kimlik doğrulama ve yetkilendirme, bir ASP.NET MVC web uygulaması ile iletişim kuran bir Xamarin.Forms uygulamasına tümleştirmek için birçok yaklaşım vardır. Burada, kimlik doğrulama ve yetkilendirme IdentityServer 4 kullanan bir kimlik kapsayıcılı mikro gerçekleştirilir. IdentityServer bir açık kaynak Openıd Connect ve OAuth 2.0 taşıyıcı belirteci kimlik doğrulaması gerçekleştirmek için ASP.NET Core kimliği ile tümleşen bir ASP.NET Core çerçevesidir.
 
 ## <a name="accessing-remote-dataaccessing-remote-datamd"></a>[Uzak Verilere Erişme](accessing-remote-data.md)
 
-Birçok modern web tabanlı çözüm olun işlevselliği için Uzak istemci uygulamaları sağlamak için web sunucuları tarafından barındırılan bir web Hizmetleri kullanın. Bir web hizmeti sunan operations web API'si oluşturur ve istemci uygulamaları verileri veya API sunan işlemlerini nasıl uygulandığını bilmeden web API'si verecek olması gerekir.
+Birçok modern web tabanlı çözümlerine işlevselliği için Uzak istemci uygulamaları sağlamak için web sunucuları tarafından barındırılan web hizmetleri. Bir web API'sini bir web hizmetini gösteren işlemleri oluşturur ve istemci uygulamaları veri veya API kullanıma sunduğu işlemleri nasıl uygulandığını farkında olmadan web API'sini kullanmaya başlayabilirsiniz olmalıdır.
 
 ## <a name="unit-testingunit-testingmd"></a>[Birim Testi](unit-testing.md)
 
-Modelleri ve MVVM uygulamalardan modelleri görüntüle sınama diğer sınıflar sınama için aynıdır ve aynı araçları ve teknikleri kullanılabilir. Ancak, bazı modeline tipik desenleri ve belirli birim sınama teknikleri yararlanabilir görünüm model sınıfları, vardır.
+Test modelleri ve görünüm modelleri MVVM uygulamalardan herhangi diğer sınıfları test aynıdır ve aynı araçları ve teknikleri kullanılabilir. Ancak, bazı model için tipik olan desenleri ve belirli bir birim test teknikleri yararlanabilir görünüm modeli sınıfları, vardır.
 
 ## <a name="feedback"></a>Geribildirim
 
-Bu proje üzerinde sorularınızı ve geri bildirim sağlamak bir topluluk site içeriyor. Topluluk sitesi bulunan [GitHub](https://github.com/dotnet-architecture/eShopOnContainers). Alternatif olarak, e-kitap hakkında geri bildirim için e-posta gönderilip [ dotnet-architecture-ebooks-feedback@service.microsoft.com ](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com).
+Bu proje üzerinde sorularınızı ve geri bildirim sağlayan bir topluluk sitesine sahiptir. Topluluk sitesine bulunan [GitHub](https://github.com/dotnet-architecture/eShopOnContainers). Alternatif olarak, e-kitap hakkında geri bildirim için gönderilebilir [ dotnet-architecture-ebooks-feedback@service.microsoft.com ](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com).
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [E-kitap (2 Mb PDF) indirin](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (örnek)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [(2 Mb PDF) e-kitabı indir](https://aka.ms/xamarinpatternsebook)
+- [Hizmetine (GitHub) (örnek)](https://github.com/dotnet-architecture/eShopOnContainers)

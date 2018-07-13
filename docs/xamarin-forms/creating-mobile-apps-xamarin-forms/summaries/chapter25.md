@@ -7,32 +7,32 @@ ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9c7fd87579d0c35c9efe31edf5c25b8ed8f40658
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 148388b80137bd335bbb977ea230726da1f4a32d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935404"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995891"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Bölüm 25 özeti. Sayfa çeşitleri
 
 Şu ana kadar öğesinden türeyen iki sınıf gördünüz `Page`: `ContentPage` ve `NavigationPage`. Bu bölümde, diğer iki sunar:
 
-- [`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) iki sayfa, bir ana ve bir ayrıntı yönetir
-- [`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) birden çok alt sayfa sekmeleri erişilen yönetir
+- [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) iki sayfa, bir ana ve bir ayrıntı yönetir
+- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) birden çok alt sayfa sekmeleri erişilen yönetir
 
 Bu sayfa türler değerinden daha gelişmiş bir gezinti seçenekleri sağlar `NavagationPage` ele [Bölüm 24. Sayfa Gezinti](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter24.md).
 
 ## <a name="master-and-detail"></a>Ana ve ayrıntıları
 
-[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) İki tür özelliklerini tanımlar `Page`: [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) ve [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/). İçin bu özelliklerden her biri genel olarak ayarlanmış bir `ContentPage`. `MasterDetailPage` Görüntüler ve bu iki sayfalar arasında geçiş yapar.
+[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) İki tür özelliklerini tanımlar `Page`: [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) ve [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail). İçin bu özelliklerden her biri genel olarak ayarlanmış bir `ContentPage`. `MasterDetailPage` Görüntüler ve bu iki sayfalar arasında geçiş yapar.
 
 Bu iki sayfalar arasında geçiş yapmak için iki temel yolu vardır:
 
 - *bölme* ana ve ayrıntı olduğu yan yana
 - *popover* burada ayrıntı sayfası kapsayan veya ana kısmen kapsanan sayfası
 
-Birkaç çeşidi vardır *popover* yaklaşım (*slayt*, *çakışma*, ve *takas*), ancak bunlar genellikle platform bağımlı. Ayarlayabileceğiniz [ `MasterDetailBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) özelliği `MasterDetailPage` üyesinin [ `MasterBehavior` ](xref:Xamarin.Forms.MasterBehavior) sabit listesi:
+Birkaç çeşidi vardır *popover* yaklaşım (*slayt*, *çakışma*, ve *takas*), ancak bunlar genellikle platform bağımlı. Ayarlayabileceğiniz [ `MasterDetailBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) özelliği `MasterDetailPage` üyesinin [ `MasterBehavior` ](xref:Xamarin.Forms.MasterBehavior) sabit listesi:
 
 - [`Default`](xref:Xamarin.Forms.MasterBehavior.Default)
 - [`Split`](xref:Xamarin.Forms.MasterBehavior.Split)
@@ -54,7 +54,7 @@ Bir bit eşlem ayarlanması Windows 8.1 ve Windows Phone 8.1 platformlarını ge
 
 `Master` Ve `Detail` özellikleri visual ağaçlarında tanımlanır [SchoolAndDetailPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml) türetilen dosya `MasterDetailPage`. Bu düzenleme veri bağlamaları ana ve ayrıntı sayfaları arasında ayarlamanızı sağlar.
 
-XAML dosyası ayrıca ayarlar [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/) özelliği `MasterDetailPage` için `True`. Bu ana sayfanın başlangıçta görüntülenecek neden olur; Varsayılan ayrıntı sayfası görüntülenir. [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) dosya kümelerini `IsPresented` için `false` gelen bir öğe seçildiğinde `ListView` ana sayfasında. Ayrıntı Sayfası sonra görüntülenir:
+XAML dosyası ayrıca ayarlar [ `IsPresented` ](xref:Xamarin.Forms.MasterDetailPage.IsPresented) özelliği `MasterDetailPage` için `True`. Bu ana sayfanın başlangıçta görüntülenecek neden olur; Varsayılan ayrıntı sayfası görüntülenir. [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) dosya kümelerini `IsPresented` için `false` gelen bir öğe seçildiğinde `ListView` ana sayfasında. Ayrıntı Sayfası sonra görüntülenir:
 
 [![Okul ve ayrıntı üç ekran](images/ch25fg09-small.png "bir MasterDetailPage ayrıntıları sayfasından")](images/ch25fg09-large.png#lightbox "bir MasterDetailPage sayfasından ayrıntısı")
 
@@ -62,8 +62,8 @@ XAML dosyası ayrıca ayarlar [ `IsPresented` ](https://developer.xamarin.com/ap
 
 Xamarin.Forms ana ve ayrıntılı görünüm arasında geçiş yapmak için bir kullanıcı arabirimi sağlar, ancak kendi sağlayabilirsiniz. Bunu yapmak için:
 
-- Ayarlama [ `IsGestureEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsGestureEnabled/) özelliğini `false` çekerek devre dışı bırakmak için
-- Geçersiz kılma [ `ShouldShowToolbarButton` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton()/) yöntemi ve dönüş `false` Windows 8.1 ve Windows Phone 8. 1 araç çubuğu düğmeleri gizlemek için.
+- Ayarlama [ `IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled) özelliğini `false` çekerek devre dışı bırakmak için
+- Geçersiz kılma [ `ShouldShowToolbarButton` ](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton) yöntemi ve dönüş `false` Windows 8.1 ve Windows Phone 8. 1 araç çubuğu düğmeleri gizlemek için.
 
 Ardından tarafından gösterildiği gibi ana ve ayrıntı sayfalar arasında geçiş yapmak için bir yol sağlamalıdır [ **ColorsDetail** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/ColorsDetails) örnek.
 
@@ -71,28 +71,28 @@ Ardından tarafından gösterildiği gibi ana ve ayrıntı sayfalar arasında ge
 
 ## <a name="tabbedpage"></a>TabbedPage
 
-[ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) Sekmeleri kullanarak arasında geçiş yapabilirsiniz sayfaları oluşan bir koleksiyondur. Öğesinden türetilen `MultiPage<Page>` ve hiçbir genel özelliklerini veya kendi yöntemlerini tanımlar. [`MultiPage<T>`](https://developer.xamarin.com/api/type/Xamarin.Forms.MultiPage%3CT%3E/), ancak bir özellik tanımlayın:
+[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) Sekmeleri kullanarak arasında geçiş yapabilirsiniz sayfaları oluşan bir koleksiyondur. Öğesinden türetilen `MultiPage<Page>` ve hiçbir genel özelliklerini veya kendi yöntemlerini tanımlar. [`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1), ancak bir özellik tanımlayın:
 
-- [`Children`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.Children/) özellik türü `IList<T>`
+- [`Children`](xref:Xamarin.Forms.MultiPage`1.Children) özellik türü `IList<T>`
 
 Bu, doldurmanız `Children` sayfa nesneler ile koleksiyon.
 
 Başka bir yaklaşım tanımlamanıza olanak tanıyan `TabbedPage` alt benzer şekilde bir `ListView` sekmeli sayfalar otomatik olarak oluşturan bu iki özellik kullanarak:
 
-- [`ItemsSource`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemsSource/) türü `IEnumerable`
-- [`ItemTemplate`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemTemplate/) türü `DataTemplate`
+- [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) türü `IEnumerable`
+- [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) türü `DataTemplate`
 
 Ancak, koleksiyon birkaç taneden fazla öğe içerdiğinde bu yaklaşım da İos'ta çalışmaz.
 
 `MultiPage<T>` hangi sayfa şu anda görüntülenen izlemenize olanak sağlayan iki tane daha özellik tanımlar:
 
-- [`CurrentPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.CurrentPage/) tür `T`temsilen sayfası
-- [`SelectedItem`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.SelectedItem/) tür `Object`, nesneye başvuran `ItemsSource` koleksiyonu
+- [`CurrentPage`](xref:Xamarin.Forms.MultiPage`1.CurrentPage) tür `T`temsilen sayfası
+- [`SelectedItem`](xref:Xamarin.Forms.MultiPage`1.SelectedItem) tür `Object`, nesneye başvuran `ItemsSource` koleksiyonu
 
 `MultiPage<T>` Ayrıca, iki olay tanımlar:
 
-- [`PagesChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.MultiPage%3CT%3E.PagesChanged/) zaman `ItemsSource` koleksiyonu değişiklikleri
-- [`CurrentPageChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.MultiPage%3CT%3E.CurrentPageChanged/) Görüntülenen sayfasını değiştirdiğinde
+- [`PagesChanged`](xref:Xamarin.Forms.MultiPage`1.PagesChanged) zaman `ItemsSource` koleksiyonu değişiklikleri
+- [`CurrentPageChanged`](xref:Xamarin.Forms.MultiPage`1.CurrentPageChanged) Görüntülenen sayfasını değiştirdiğinde
 
 ### <a name="discrete-tab-pages"></a>Ayrık sekme sayfaları
 

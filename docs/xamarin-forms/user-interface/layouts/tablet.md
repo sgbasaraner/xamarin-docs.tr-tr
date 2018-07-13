@@ -1,5 +1,5 @@
 ---
-title: Tablet ve Masaüstü uygulamaları için düzeni
+title: Tablet ve Masaüstü uygulamaları için Düzen
 description: Bu makalede Xamarin.Forms uygulaması düzenleri aksine telefonlar, tabletler için en iyi duruma getirme açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: D62F472B-4345-4983-8403-659A538B591F
@@ -7,71 +7,71 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 932b4aa9c865501284b02fc35e12dc8d7e7166fc
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b98d1fcf0917b9e25d774a92d56bf90bdd291978
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244851"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998642"
 ---
-# <a name="layout-for-tablet-and-desktop-apps"></a>Tablet ve Masaüstü uygulamaları için düzeni
+# <a name="layout-for-tablet-and-desktop-apps"></a>Tablet ve Masaüstü uygulamaları için Düzen
 
-Xamarin.Forms desteklenen platformlarda kullanılabilir tüm cihaz türlerini destekler, bu nedenle telefonlarının yanı sıra, uygulamalar üzerinde de çalışabilir:
+Telefonlar ek olarak, uygulamalar üzerinde de çalışabilir için Xamarin.Forms desteklenen platformlarda kullanılabilir olan tüm cihaz türlerini destekler:
 
-* iPad cihazları,
+* iPad,
 * Android tabletler
-* Windows tabletler ve masaüstü bilgisayarlar (Windows 10 çalıştıran).
+* Windows tabletler ve masaüstü bilgisayar (Windows 10 çalıştıran).
 
-Bu sayfa kısaca ele alınmıştır:
+Bu sayfayı kısaca ele alınmaktadır:
 
-* desteklenen [aygıt türleri](#Device_Types), ve
+* desteklenen [cihaz türlerini](#Device_Types), ve
 * nasıl yapılır [en iyi duruma getirme](#optimize) telefonlar ve tabletler için düzenler.
 
 <a name="Device_Types" />
 
-## <a name="device-types"></a>Aygıt türleri
+## <a name="device-types"></a>Cihaz türleri
 
-Büyük ekran aygıtlarının tüm Xamarin.Forms tarafından desteklenen platformlar için kullanılabilir.
+Tüm Xamarin.Forms tarafından desteklenen platformlar için daha büyük ekran cihazları kullanılabilir.
 
-### <a name="ipads-ios"></a>İpad'ler (iOS)
+### <a name="ipads-ios"></a>iPad (iOS)
 
-Otomatik olarak Xamarin.Forms şablon yapılandırarak iPad desteği içerir **Info.plist > aygıtları** ayarını **Evrensel** (yani iPhone ve iPad desteklenir).
+Otomatik olarak Xamarin.Forms şablon yapılandırarak iPad desteği içeren **Info.plist > cihazlar** ayarını **Evrensel** (yani iPhone ve iPad desteklenir).
 
-Bir eğlenceli başlangıç deneyimi sağlar ve tüm aygıtlarda tam ekran çözünürlüğü kullanılan sağlamak için emin olmalısınız bir [iPad özgü başlatma ekranı](~/ios/app-fundamentals/images-icons/launch-screens.md) (film şeridi kullanarak) sağlanır. Bu uygulamayı doğru iPad mini, iPad ve iPad Pro cihazlarda işlenen sağlar.
+Bir eğlenceli başlangıç deneyiminin sunulabilmesi ve tüm cihazlarda tam ekran çözünürlüğü kullanılır emin olmak için olun bir [iPad özgü başlatma ekranı](~/ios/app-fundamentals/images-icons/launch-screens.md) (görsel taslak kullanarak) sağlanır. Bu uygulamayı doğru şekilde iPad mini, iPad ve iPad Pro cihazlarda işlenen sağlar.
 
-Tam ekran cihazda yukarı tüm uygulamaları iOS 9 önce sürdü, ancak bazı İpad'ler şimdi gerçekleştirebilirsiniz [ekran görevli bölme](~/ios/platform/multitasking.md).
-Başka bir deyişle, uygulamanızı yalnızca ince sütun ekran veya tüm ekranı genişliğini % 50'si ekran yan tarafında yukarı ele geçirebilir.
+Cihazda tam ekranı yukarı tüm uygulamaları iOS 9 önce geçen, ancak bazı İpad'ler artık gerçekleştirebilirsiniz [ekran çok görevli bölme](~/ios/platform/multitasking.md).
+Başka bir deyişle, uygulamanızı yalnızca ince bir sütun genişliğini ekran veya ekranın tamamını yüzdesi 50 ekranın kenarındaki ayarlama ele geçirebilir.
 
-[![](tablet-images/ipad-sml.png "iPad bölünmüş ekran örnek")](tablet-images/ipad.png#lightbox "iPad bölünmüş ekran örnek")
+[![](tablet-images/ipad-sml.png "iPad bölünmüş ekran örnek")](tablet-images/ipad.png#lightbox "iPad bölünmüş ekran örneği")
 
-Bölünmüş ekran işlevselliği geniş veya kadar 1366 piksel genişliğinde iyi olduğunca 320 piksel ile çalışmak için uygulamanızı tasarlamanız gerekir anlamına gelir.
+Bölünmüş ekran işlevi uygulamanızı geniş veya olarak 1366 piksel genişliğinde olduğunca 320 piksel ile iyi çalışacak şekilde tasarlamanız gerekir anlamına gelir.
 
 ### <a name="android-tablets"></a>Android tabletler
 
-Android ekosistemi desteklenen ekran boyutlarına, büyük tabletler kadar küçük telefonları çok sayıda sahiptir. Xamarin.Forms tüm ekran boyutlarına destekler, ancak olarak ile diğer platformlar, büyük cihazlar için Kullanıcı Arabiriminizin ayarlamak isteyebilirsiniz.
+Büyük tabletler kadar küçük telefonlardan desteklenen ekran boyutları'nın Android ekosistemi vardır. Xamarin.Forms tüm ekran boyutları destekler, ancak olarak diğer platformlarla büyük cihazlar için kullanıcı arabiriminiz ayarlamak isteyebilirsiniz.
 
-Birçok farklı ekran çözünürlükleri desteklendiğinde, kullanıcı deneyimini iyileştirmek için farklı boyutlarda yerel görüntü kaynaklarınızı sağlayabilirsiniz.
-Gözden geçirme [Android kaynakları](~/android/app-fundamentals/resources-in-android/index.md) belgeleri (ve özellikle [ekran boyutlarına değişen için kaynakları oluşturma](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)) klasörler ve Android uygulamanızı adlarında yapısı hakkında daha fazla bilgi için Uygulamanızı en iyi duruma getirilmiş görüntü kaynakları eklemek için proje.
+Birçok farklı ekran çözünürlükleri desteklerken, yerel görüntü kaynaklarınızı kullanıcı deneyimini iyileştirmek için farklı boyutlarda sağlayabilirsiniz.
+Gözden geçirme [Android kaynakları](~/android/app-fundamentals/resources-in-android/index.md) belgeleri (ve özellikle [çeşitli ekran boyutları için kaynaklar oluşturma](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)) Android uygulamanıza dosya adlarını ve klasörleri yapı hakkında daha fazla bilgi için uygulamanızda en iyi duruma getirilmiş resim kaynakları eklemek için proje.
 
 ### <a name="windows-tablets-and-desktops"></a>Windows tabletler ve masaüstü bilgisayarlar
 
-Tablet ve Windows çalıştıran masaüstü bilgisayarları desteklemek için kullanmanız gerekecektir [Windows UWP Destek](~/xamarin-forms/platform/windows/installation/index.md), Windows 10 çalıştıran Evrensel uygulamaları oluşturur.
+Tablet ve Windows çalıştıran masaüstü bilgisayarları desteklemek için kullanmanız gerekecektir [Windows UWP Destek](~/xamarin-forms/platform/windows/installation/index.md), Windows 10'da çalışan Evrensel uygulamalar oluşturur.
 
-Windows tabletler ve masaüstü bilgisayarlar üzerinde çalışan uygulamalar için rastgele boyutları ayrıca çalışan tam ekran için boyutlandırılabilir.
+Windows tabletler ve masaüstü bilgisayarlar üzerinde çalışan uygulamalar rastgele boyutlarla çalışan tam ekran için ek olarak boyutlandırılabilir.
 
-[![](tablet-images/splitscreen-sml.png "Bölünmüş Pencereler ekran örnek")](tablet-images/splitscreen.png#lightbox "ekran örnek Bölünmüş Pencereler")
+[![](tablet-images/splitscreen-sml.png "Windows bölünmüş ekran örnek")](tablet-images/splitscreen.png#lightbox "Windows bölünmüş ekran örneği")
 
 
 <a name="optimize" />
 
 ## <a name="optimizing-for-tablet-and-desktop"></a>Tablet ve Masaüstü için en iyi duruma getirme
 
-Xamarin.Forms kullanıcı Arabiriminizin bağlı olarak bir telefon olup olmadığını ayarlayabilir veya tablet/Masaüstü cihaz kullanılır. Başka bir deyişle, tabletler ve masaüstü bilgisayarlar gibi büyük ekran cihazlar için kullanıcı deneyimi en iyi duruma getirebilirsiniz.
+Xamarin.Forms kullanıcı Arabiriminizin bağlı olarak telefon olup olmadığını ayarlayabilir veya tablet/Masaüstü cihaz kullanılır. Başka bir deyişle, Tablet ve masaüstü bilgisayarlar gibi büyük ekranlı cihazlarda kullanıcı deneyimini iyileştirebilirsiniz.
 
 
 ### <a name="deviceidiom"></a>Device.Idiom
 
-Kullanabileceğiniz [ `Device` ](~/xamarin-forms/platform/device.md) , uygulama veya kullanıcı arabiriminizi davranışını değiştirmek için sınıf. Kullanarak `Device.Idiom` yapabilecekleriniz numaralandırması
+Kullanabileceğiniz [ `Device` ](~/xamarin-forms/platform/device.md) uygulama ya da Kullanıcı Arabiriminizin davranışını değiştirmek için sınıf. Kullanarak `Device.Idiom` yapabilecekleriniz numaralandırması
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone)
@@ -82,13 +82,13 @@ if (Device.Idiom == TargetIdiom.Phone)
 }
 ```
 
-Bu yaklaşım, tek tek sayfa düzenleri için önemli değişiklikler yapmak veya daha büyük ekranında tamamen farklı sayfaları işlemek için genişletilebilir.
+Bu yaklaşım, tek tek sayfa düzenleri için önemli değişiklik ya da daha büyük ekranlarda tamamen farklı sayfaları işlemek için genişletilebilir.
 
-### <a name="leveraging-masterdetailpage"></a>Yararlanmayı MasterDetailPage
+### <a name="leveraging-masterdetailpage"></a>MasterDetailPage yararlanarak
 
-[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) Daha büyük ekranda, özellikle burada kullanan iPad için idealdir [ `UISplitViewController` ](https://developer.xamarin.com/api/type/UIKit.UISplitViewController/) yerel iOS deneyimi sağlamak için.
+[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) Özellikle nerede kullanan ipad'de büyük ekranlar için ideal olan [ `UISplitViewController` ](https://developer.xamarin.com/api/type/UIKit.UISplitViewController/) yerel iOS deneyimi sağlamak için.
 
-Gözden geçirme [bu Xamarin blog gönderisine](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/) nasıl telefonlar bir düzen kullanır ve büyük ekranlar başka kullanabilir, kullanıcı arabiriminizi uyarlayabilirsiniz görmek için (ile `MasterDetailPage`).
+Gözden geçirme [Xamarin bu blog gönderisini](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/) nasıl telefonlar bir düzen kullanır ve büyük ekranlar başka kullanabilir, kullanıcı arabirimi uyarlayabilirsiniz görmek için (ile `MasterDetailPage`).
 
 
 

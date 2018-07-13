@@ -1,21 +1,21 @@
 ---
-title: Xamarin.iOS System.Data
-description: Bu belge, bir Xamarin.iOS uygulaması SQLite verilerine erişmek için System.Data ve Mono.Data.Sqlite.dll kullanmayı açıklar.
+title: System.Data Xamarin.iOS içinde
+description: Bu belge, bir Xamarin.iOS uygulaması SQLite verilere erişmek için System.Data ve Mono.Data.Sqlite.dll kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f20bdbdb9fe0d25e1ba545633e271af912aab3ba
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 183079c150ad4df05424d4dbf2980a307a889352
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784722"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997204"
 ---
-# <a name="systemdata-in-xamarinios"></a>Xamarin.iOS System.Data
+# <a name="systemdata-in-xamarinios"></a>System.Data Xamarin.iOS içinde
 
-Xamarin.iOS 8.10 için destek ekler [System.Data](https://developer.xamarin.com/api/namespace/System.Data/)dahil `Mono.Data.Sqlite.dll` ADO.NET sağlayıcısı. Desteği içeren aşağıdaki eklenmesi [derlemeleri](~/cross-platform/internals/available-assemblies.md):
+Xamarin.iOS 8.10 için destek ekler [System.Data](xref:System.Data)de dahil olmak üzere `Mono.Data.Sqlite.dll` ADO.NET sağlayıcısı. Desteği içeren aşağıdaki ek [derlemeleri](~/cross-platform/internals/available-assemblies.md):
 
 -  `System.Data.dll`
 -  `System.Data.Service.Client.dll`
@@ -27,17 +27,17 @@ Xamarin.iOS 8.10 için destek ekler [System.Data](https://developer.xamarin.com/
 
 ## <a name="example"></a>Örnek
 
-Bir veritabanında aşağıdaki programı oluşturur `Documents/mydb.db3`, ve veritabanı önceden yoksa, örnek verilerle doldurulur. Veritabanı sonra yazılan çıkış sorgulanır `stderr`.
+Aşağıdaki program bir veritabanında oluşturur `Documents/mydb.db3`, ve veritabanı önceden yoksa, örnek verilerle doldurulur. Veritabanı ardından, yazılan çıktıyla sorgulanır `stderr`.
 
-### <a name="add-references"></a>Başvuruları ekleme
+### <a name="add-references"></a>Başvuruları Ekle
 
-İlk olarak, sağ tıklayın **başvuruları** düğümü seçin **başvuruları Düzenle...**  seçip `System.Data` ve `Mono.Data.Sqlite`:
+İlk olarak, sağ **başvuruları** düğüm ve **başvuruları Düzenle...**  seçip `System.Data` ve `Mono.Data.Sqlite`:
 
 [![](system.data-images/edit-references-sml.png "Yeni başvuru ekleme")](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>Örnek kod
 
-Aşağıdaki kod bir tablo oluşturma ve katıştırılmış SQL komutlarını kullanarak satırlar ekleme basit bir örnek gösterilmektedir:
+Aşağıdaki kod, tablo oluşturma ve katıştırılmış SQL komutlarını kullanarak satır eklemek için basit bir örnek göstermektedir:
 
 ```csharp
 using System;
@@ -107,12 +107,12 @@ class Demo {
 ```
 
 > [!IMPORTANT]
-> Yukarıdaki kod örneğinde belirtildiği gibi kodunuzu karşı savunmasız yaptığından dizeleri SQL komutları katıştırmak için hatalı alıştırma gereklidir [SQL ekleme](http://en.wikipedia.org/wiki/SQL_injection).
+> Yukarıdaki kod örneğinde belirtildiği gibi kodunuzu savunmasız yaptığından dizeleri SQL komutları eklemek için hatalı bir uygulama olduğu [SQL ekleme](http://en.wikipedia.org/wiki/SQL_injection).
 
 
 ### <a name="using-command-parameters"></a>Komut parametreleri kullanma
 
-Aşağıdaki kod komut parametreleri (metin tek kesme işareti gibi özel SQL karakterler içeriyorsa bile) kullanıcı tarafından girilen metin güvenli bir şekilde veritabanına eklemek için nasıl kullanılacağını gösterir:
+Aşağıdaki kodu (metin tek kesme işareti gibi özel SQL karakterler içeriyorsa bile) metin kullanıcı tarafından girilen veritabanına güvenli bir şekilde eklemek için komut parametreleri kullanma işlemini gösterir:
 
 ```csharp
 // user input from Textbox control
@@ -141,32 +141,32 @@ Her ikisi de **System.Data** ve **Mono.Data.Sqlite** bazı işlevler eksik.
 
 İşlevsellik gelen eksik **System.Data.dll** oluşur:
 
--  Herhangi bir şey gerektiren [System.CodeDom](https://developer.xamarin.com/api/namespace/System.CodeDom/) (örn.  [System.Data.TypedDataSetGenerator](https://developer.xamarin.com/api/type/System.Data.TypedDataSetGenerator/) )
--  XML yapılandırma dosyası desteği (örn.  [System.Data.Common.DbProviderConfigurationHandler](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderConfigurationHandler/) )
--   [System.Data.Common.DbProviderFactories](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderFactories/) (XML yapılandırma dosyası desteğine bağlıdır)
--   [System.Data.OleDb](https://developer.xamarin.com/api/namespace/System.Data.OleDb/)
--   [System.Data.Odbc](https://developer.xamarin.com/api/namespace/System.Data.Odbc/)
--  `System.EnterpriseServices.dll` Bağımlılık belirtildi *kaldırılan* gelen `System.Data.dll` , kaldırılmasını sonuçta elde edilen [SqlConnection.EnlistDistributedTransaction(ITransaction)](https://developer.xamarin.com/api/member/System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction/(System.EnterpriseServices.ITransaction)) yöntemi.
+-  Herhangi bir şey gerektiren [System.CodeDom](xref:System.CodeDom) (örn.)  [System.Data.TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
+-  XML yapılandırma dosyası desteği (örn.)  [System.Data.Common.DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
+-   [System.Data.Common.DbProviderFactories](xref:System.Data.Common.DbProviderFactories) (XML yapılandırma dosyası desteğine bağlıdır)
+-   [System.Data.OleDb](xref:System.Data.OleDb)
+-   [System.Data.Odbc](xref:System.Data.Odbc)
+-  `System.EnterpriseServices.dll` Bağımlılığı olan *kaldırıldı* gelen `System.Data.dll` , kaldırılmasını imzalanmayarak [SqlConnection.EnlistDistributedTransaction(ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) yöntemi.
 
 
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono.Data.Sqlite
 
-Bu sırada, **Mono.Data.Sqlite.dll** hiçbir kaynak kod değişiklikleri başlayamıyorsa, ancak bunun yerine bir dizi ana bilgisayar olabilir *çalışma zamanı* bu yana sorunları `Mono.Data.Sqlite.dll` SQLite 3.5 bağlar. iOS 8'de, bu sırada, 3.8.5 SQLite ile birlikte gelir. Açmamayý, çok deyin, bazı şeyleri iki sürümü arasında değiştirilmiştir.
+Bu arada **Mono.Data.Sqlite.dll** kaynak kod değişikliği olmadan çalışmaya başlayamıyorsa, ancak bunun yerine bir dizi konak olabilir *çalışma zamanı* beri sorunları `Mono.Data.Sqlite.dll` SQLite 3.5 bağlar. iOS 8'de, bu arada 3.8.5 SQLite ile birlikte gelir. İki sürümü açmamayý, çok varsayalım, yapılan değişiklikler.
 
-İOS eski sürümünü SQLite aşağıdaki sürümleri ile birlikte:
+Eski iOS sürümü SQLite'nın aşağıdaki sürümleriyle gönderin:
 
-- **iOS 7** -sürüm 3.7.13.
-- **iOS 6** -sürüm 3.7.13.
-- **iOS 5** -sürüm 3.7.7.
-- **iOS 4** -sürüm 3.6.22.
+- **iOS 7** -3.7.13 sürümü.
+- **iOS 6** -3.7.13 sürümü.
+- **iOS 5** -3.7.7 sürümü.
+- **iOS 4** -3.6.22 sürümü.
 
-En yaygın sorunları şema veritabanını sorgulama için ilgili görünmesini örn, sütunlar gibi belirli bir tablo üzerinde mevcut çalışma zamanında belirleme `Mono.Data.Sqlite.SqliteConnection.GetSchema` (geçersiz kılma [DbConnection.GetSchema](https://developer.xamarin.com/api/member/System.Data.Common.DbConnection.GetSchema/)) ve `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` () geçersiz kılma [DbDataReader.GetSchemaTable](https://developer.xamarin.com/api/member/System.Data.Common.DbDataReader.GetSchemaTable/)). Kısacası, diğer herhangi bir şey kullanarak görünüyor [DataTable](https://developer.xamarin.com/api/type/System.Data.DataTable/) çalışmaya düşüktür.
+Yaygın sorunların çoğunu veritabanı şeması için sorgulama, ilgili olabilir görünmesine örn sütunlar gibi belirli bir tablodaki mevcut çalışma zamanında belirleyen `Mono.Data.Sqlite.SqliteConnection.GetSchema` (geçersiz kılma [DbConnection.GetSchema](xref:System.Data.Common.DbConnection.GetSchema) ve `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` (geçersiz kılma [DbDataReader.GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable). Kısacası, başka herhangi bir şey kullanarak görünüyor [DataTable](xref:System.Data.DataTable) çalışacak şekilde düşüktür.
 
 <a name="Data_Binding" />
 
 ## <a name="data-binding"></a>Veri Bağlama
 
-Veri bağlama şu anda desteklenmiyor.
+Veri bağlama, şu anda desteklenmiyor.
 

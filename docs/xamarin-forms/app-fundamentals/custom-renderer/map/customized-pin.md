@@ -1,45 +1,45 @@
 ---
-title: Bir harita PIN özelleştirme
-description: Bu makalede her platformda yerel bir harita özelleştirilmiş bir PIN ve PIN'i veri özelleştirilmiş bir görünümünü görüntüler harita denetiminin özel Oluşturucu Oluşturma gösterilir.
+title: Bir harita Raptiyesini özelleştirme
+description: Bu makalede, özelleştirilmiş bir PIN ve PIN'i verilerin özelleştirilmiş bir görünümü ile yerel bir harita her platformda görüntüler harita denetiminin özel Oluşturucu oluşturma işlemini gösterir.
 ms.prod: xamarin
 ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 029dbf073f61e3a07ec01da4f877bf997af57d98
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 4fee67f08e86c40709aa226c40c0f7721dc26800
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848557"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998324"
 ---
-# <a name="customizing-a-map-pin"></a>Bir harita PIN özelleştirme
+# <a name="customizing-a-map-pin"></a>Bir harita Raptiyesini özelleştirme
 
-_Bu makalede her platformda yerel bir harita özelleştirilmiş bir PIN ve PIN'i veri özelleştirilmiş bir görünümünü görüntüler harita denetiminin özel Oluşturucu Oluşturma gösterilir._
+_Bu makalede, özelleştirilmiş bir PIN ve PIN'i verilerin özelleştirilmiş bir görünümü ile yerel bir harita her platformda görüntüler harita denetiminin özel Oluşturucu oluşturma işlemini gösterir._
 
-Her Xamarin.Forms görünüm yerel bir denetimi bir örneğini oluşturur her platform için eşlik eden bir oluşturucu yok. Zaman bir [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) iOS, bir Xamarin.Forms uygulaması tarafından işlenen `MapRenderer` sınıf örneği, hangi sırayla yerel başlatır `MKMapView` denetim. Android platformunda `MapRenderer` sınıfı başlatır yerel `MapView` denetim. Üzerinde Evrensel Windows Platformu (UWP), `MapRenderer` sınıfı başlatır yerel `MapControl`. Oluşturucu ve Xamarin.Forms denetimleri Eşle yerel denetim sınıfları hakkında daha fazla bilgi için bkz: [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Her bir Xamarin.Forms görünüm yerel bir denetimin bir örneği oluşturan her platform için eşlik eden bir işleyici içerir. Olduğunda bir [ `Map` ](xref:Xamarin.Forms.Maps.Map) iOS, bir Xamarin.Forms uygulaması tarafından işlenen `MapRenderer` sınıf örneği, hangi sırayla yerel bir örneğini oluşturur `MKMapView` denetimi. Android platformunda `MapRenderer` sınıfın örneğini oluşturur, bir yerel `MapView` denetimi. Üzerindeki Evrensel Windows Platformu (UWP), `MapRenderer` sınıfın örneğini oluşturur, bir yerel `MapControl`. Oluşturucu ve Xamarin.Forms denetimleri eşleyen yerel denetim sınıfları hakkında daha fazla bilgi için bkz. [oluşturucu temel sınıfları ve yerel denetimleri](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Aşağıdaki diyagram arasındaki ilişkiyi gösterir [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) ve uyguladıktan karşılık gelen yerel denetimlere:
+Aşağıdaki diyagramda arasındaki ilişkiyi gösterir [ `Map` ](xref:Xamarin.Forms.Maps.Map) ve onu uygulayan karşılık gelen yerel denetimler:
 
-![](customized-pin-images/map-classes.png "Harita denetiminin ve uygulama yerel denetimleri arasındaki ilişki")
+![](customized-pin-images/map-classes.png "Harita denetimi ve uygulama yerel denetimleri arasındaki ilişki")
 
-Oluşturma işlemi için özel Oluşturucu oluşturarak platforma özgü özelleştirmeler uygulamak için kullanılan bir [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) her platformda. Bunu yapmak için işlem aşağıdaki gibidir:
+İşleme için özel Oluşturucu oluşturarak platforma özgü özelleştirmeler uygulamak için kullanılan bir [ `Map` ](xref:Xamarin.Forms.Maps.Map) her platformda. Bunu yapmak için işlem aşağıdaki gibidir:
 
 1. [Oluşturma](#Creating_the_Custom_Map) Xamarin.Forms özel eşleme.
 1. [Tüketen](#Consuming_the_Custom_Map) Xamarin.Forms özel eşleme.
-1. [Oluşturma](#Creating_the_Custom_Renderer_on_each_Platform) her platformda eşlemesi için özel Oluşturucu.
+1. [Oluşturma](#Creating_the_Custom_Renderer_on_each_Platform) harita üzerinde her platform için özel Oluşturucu.
 
-Her öğe artık sırasıyla uygulamak için incelenecektir bir `CustomMap` her platformda yerel bir harita özelleştirilmiş bir PIN ve PIN'i veri özelleştirilmiş bir görünümünü görüntüler Oluşturucu.
+Her öğe artık sırayla uygulanacağı açıklanmıştır bir `CustomMap` özelleştirilmiş bir PIN ve PIN'i verilerin özelleştirilmiş bir görünümü ile yerel bir harita her platformda görüntüler Oluşturucu.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) başlatılmış ve kullanılmadan önce yapılandırılması gerekir. Daha fazla bilgi için bkz. [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) başlatılır ve yapılandırılmış önce kullanır. Daha fazla bilgi için bkz. [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
 <a name="Creating_the_Custom_Map" />
 
-## <a name="creating-the-custom-map"></a>Özel eşleme oluşturma
+## <a name="creating-the-custom-map"></a>Özel harita oluşturma
 
-Özel Harita denetiminin sınıflara tarafından oluşturulabilir [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
+Özel Harita denetimi tarafından sınıflara oluşturulabilir [ `Map` ](xref:Xamarin.Forms.Maps.Map) aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
 
 ```csharp
 public class CustomMap : Map
@@ -48,7 +48,7 @@ public class CustomMap : Map
 }
 ```
 
-`CustomMap` Denetimi .NET standart kitaplığı projesinde oluşturulur ve özel eşleme için API tanımlar. Özel Harita sunan `CustomPins` koleksiyonunu temsil eden özellik `CustomPin` her platformda Yerel Harita denetiminin tarafından işlenen nesneleri. `CustomPin` Sınıfı, aşağıdaki kod örneğinde gösterilir:
+`CustomMap` Denetimi .NET Standard kitaplığı projesinde oluşturulur ve API'si için özel eşleme tanımlar. Özel eşleme sunan `CustomPins` koleksiyonunu temsil eden özellik `CustomPin` nesnelerin her platformda Yerel Harita denetimi tarafından işlenir. `CustomPin` Sınıfı, aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public class CustomPin : Pin
@@ -57,13 +57,13 @@ public class CustomPin : Pin
 }
 ```
 
-Bu sınıfı tanımlayan bir `CustomPin` özelliklerini devralma olarak [ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/) sınıfı ve ekleyerek bir `Url` özelliği.
+Bu sınıfı tanımlayan bir `CustomPin` özelliklerini devralmasını olarak [ `Pin` ](xref:Xamarin.Forms.Maps.Pin) sınıfı ve ekleyerek bir `Url` özelliği.
 
 <a name="Consuming_the_Custom_Map" />
 
 ## <a name="consuming-the-custom-map"></a>Özel Harita kullanma
 
-`CustomMap` Denetim başvurulabilir XAML'de .NET standart kitaplığı projesinde konumu için bir ad alanı bildirme ve özel Harita denetimi ad alanı öneki kullanarak. Aşağıdaki örnekte gösterildiği kod nasıl `CustomMap` denetim XAML sayfası tarafından tüketilen:
+`CustomMap` Denetim başvurulabilir XAML içinde .NET Standard kitaplığı projesinde konumu için bir ad alanı bildirmek ve özel eşleme denetimi ad alanı öneki kullanarak. Aşağıdaki kod örnekte gösterildiği nasıl `CustomMap` denetimi bir XAML sayfası tarafından kullanılabilir:
 
 ```xaml
 <ContentPage ...
@@ -76,9 +76,9 @@ Bu sınıfı tanımlayan bir `CustomPin` özelliklerini devralma olarak [ `Pin` 
 </ContentPage>
 ```
 
-`local` Ad alanı öneki adlı bir şey. Ancak, `clr-namespace` ve `assembly` değerlerin özel eşleme ayrıntılarını eşleşmesi gerekir. Ad alanı bildirildiğinde öneki özel Harita başvurmak için kullanılır.
+`local` Ad alanı ön eki adı herhangi bir şey. Ancak, `clr-namespace` ve `assembly` değerleri özel eşleme ayrıntılarını eşleşmesi gerekir. Ad alanı bildirildiğinde, ön ek özel eşleme başvurmak için kullanılır.
 
-Aşağıdaki örnekte gösterildiği kod nasıl `CustomMap` denetim bir C# sayfası tarafından tüketilen:
+Aşağıdaki kod örnekte gösterildiği nasıl `CustomMap` denetimi bir C# sayfası tarafından kullanılabilir:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -97,9 +97,9 @@ public class MapPageCS : ContentPage
 }
 ```
 
-`CustomMap` Örneği, her platformda yerel eşlemeyi görüntülemek için kullanılır. Bunun [ `MapType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.MapType/) özelliği görüntü stilini ayarlar [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/), içinde tanımlanan olası değerler ile [ `MapType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapType/) numaralandırması. İOS ve Android için genişlik ve yükseklik harita ayarlanmış özellikleri yoluyla `App` platforma özgü projelerinde başlatılmış sınıfı.
+`CustomMap` Örneği, her platformda yerel haritada görüntülemek için kullanılır. Sahip [ `MapType` ](xref:Xamarin.Forms.Maps.Map.MapType) özelliği görünen stilini ayarlar [ `Map` ](xref:Xamarin.Forms.Maps.Map), içinde tanımlanan olası değerler ile [ `MapType` ](xref:Xamarin.Forms.Maps.MapType) sabit listesi. İOS ve Android için genişliği ve yüksekliği harita ayarlanmış özellikleri kullanılarak `App` platforma özgü projelerinde başlatılır sınıfı.
 
-Harita ve PIN konumunu, varsa, aşağıdaki kod örneğinde gösterildiği gibi başlatılır:
+Harita ve PIN'leri konumunu, varsa, aşağıdaki kod örneğinde gösterildiği gibi başlatılır:
 
 ```csharp
 public MapPage ()
@@ -121,9 +121,9 @@ public MapPage ()
 }
 ```
 
-Bu başlatma özel bir PIN ekler ve haritanın görünümüyle konumlandırır [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) konumunu ve harita yakınlaştırma düzeyini oluşturarak yöntemi bir [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) bir gelen[ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) ve [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Bu başlatma özel bir PIN ekler ve haritanın görünüm ile konumlandırır [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) oluşturarak konumu ve harita yakınlaştırma düzeyini değiştiren yöntemi bir [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) bir gelen[ `Position` ](xref:Xamarin.Forms.Maps.Position) ve [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
-Özel oluşturucu artık yerel harita denetimleri özelleştirmek için her uygulama projesi eklenebilir.
+Özel oluşturucu artık yerel eşleme denetimleri özelleştirmek için her uygulama projesine eklenebilir.
 
 <a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
@@ -131,26 +131,26 @@ Bu başlatma özel bir PIN ekler ve haritanın görünümüyle konumlandırır [
 
 Özel oluşturucu sınıfı oluşturma işlemi aşağıdaki gibidir:
 
-1. Öğesinin bir alt kümesi oluşturmak `MapRenderer` özel Harita işler sınıfı.
-1. Geçersiz kılma `OnElementChanged` özelleştirmek için mantığı yazmak ve özel Harita işleyen yöntemi. Karşılık gelen Xamarin.Forms özel Harita oluşturulduğunda, bu yöntem çağrılır.
-1. Ekleme bir `ExportRenderer` özniteliği, Xamarin.Forms özel eşlemesi oluşturmak için kullanılacak belirtmek için özel Oluşturucu sınıfı. Bu öznitelik, özel Oluşturucu Xamarin.Forms ile kaydetmek için kullanılır.
+1. Oluşturma bir öğesinin `MapRenderer` özel Haritası işleyen sınıfı.
+1. Geçersiz kılma `OnElementChanged` özelleştirmek için mantığı yazmak ve özel Haritası işleyen yöntemi. Bu yöntem, karşılık gelen Xamarin.Forms özel eşleme oluşturulduğunda çağrılır.
+1. Ekleme bir `ExportRenderer` bunu Xamarin.Forms özel eşleme oluşturmak için kullanılacak belirtmek için özel Oluşturucu sınıfı özniteliği. Bu öznitelik, özel Oluşturucu Xamarin.Forms ile kaydetmek için kullanılır.
 
 > [!NOTE]
-> Her platform projesinde özel Oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse, varsayılan oluşturucu denetimin taban sınıfı için kullanılır.
+> Her platform projesinde özel bir oluşturucu sağlamak isteğe bağlıdır. Özel oluşturucu kayıtlı değilse denetimin taban sınıfı için varsayılan oluşturucu kullanılır.
 
-Aşağıdaki diyagram, her proje örnek uygulamasında, aralarındaki ilişkilerin birlikte sorumlulukları gösterir:
+Örnek uygulamada, onlar arasındaki ilişkileri yanı sıra her bir proje sorumluluklarını Aşağıdaki diyagramda gösterilmektedir:
 
 ![](customized-pin-images/solution-structure.png "CustomMap özel Oluşturucu Proje Sorumlulukları")
 
-`CustomMap` Öğesinden türetilen platforma özgü Oluşturucu sınıflar tarafından işlenen denetim `MapRenderer` her platform için sınıf. Bu her sonuçları `CustomMap` aşağıdaki ekran görüntülerinde gösterildiği gibi platforma özgü denetimleriyle işlenen denetim:
+`CustomMap` Öğesinden türetilen Oluşturucu platforma özgü sınıflar tarafından işlenen denetim `MapRenderer` her platform için sınıf. Bu her sonuçları `CustomMap` aşağıdaki ekran görüntülerinde gösterildiği gibi platforma özgü denetimleriyle işlenen denetim:
 
 ![](customized-pin-images/screenshots.png "Her platformda CustomMap")
 
-`MapRenderer` Sınıf çıkarır `OnElementChanged` Xamarin.Forms özel Harita karşılık gelen yerel denetimi oluşturmak için oluşturulduğunda çağrılan yöntemi. Bu yöntem alır bir `ElementChangedEventArgs` içeren parametre `OldElement` ve `NewElement` özellikleri. Bu özellikleri Xamarin.Forms öğesini temsil, oluşturucu *olan* eklenmiş ve Xamarin.Forms öğesi, oluşturucu *olan* bağlı olarak, sırasıyla. Örnek uygulamasında `OldElement` özelliği `null` ve `NewElement` özelliği bir başvuru içerecek `CustomMap` örneği.
+`MapRenderer` Sınıfı kullanıma sunan `OnElementChanged` karşılık gelen yerel denetimi oluşturmak için Xamarin.Forms özel eşleme oluşturulurken çağrılan yöntemi. Bu yöntem bir `ElementChangedEventArgs` içeren parametre `OldElement` ve `NewElement` özellikleri. Bu özellikler Xamarin.Forms öğesini temsil, oluşturucu *olduğu* eklenmiş ve Xamarin.Forms öğesi, oluşturucu *olduğu* bağlı olarak, sırasıyla. Örnek uygulamada `OldElement` özelliği `null` ve `NewElement` özelliği, bir başvuru içerecek `CustomMap` örneği.
 
-Geçersiz kılınan bir sürümünü `OnElementChanged` yönteminde her platforma özgü işleyici sınıfı, sistemi, yerel denetim özelleştirme gerçekleştirmek için yerdir. Platformda kullanılan yerel denetlemek için belirlenmiş bir başvuru üzerinden erişilen `Control` özelliği. Ayrıca, işlenen Xamarin.Forms denetlemek için bir başvuru aracılığıyla elde edilebilir `Element` özelliği.
+Geçersiz kılınan bir sürümünü `OnElementChanged` yönteminde her platforma özgü işleyici sınıfı, sistemi, yerel denetim özelleştirme gerçekleştirmek için yerdir. Belirlenmiş bir başvuru platformunda kullanılan yerel denetlemek için erişilebilir `Control` özelliği. Ayrıca, işlenen Xamarin.Forms denetime başvuru aracılığıyla alınabilir `Element` özelliği.
 
-Olay işleyicileri için abone olurken dikkatli'nin alınması gereken `OnElementChanged` aşağıdaki kod örneğinde gösterildiği şekilde yöntemi:
+Olay işleyicileri için abone olurken dikkatli'nin alınması gereken `OnElementChanged` yöntemini aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.ListView> e)
@@ -167,21 +167,21 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-Yerel bir denetimi yapılandırılmalıdır ve olay işleyicileri yalnızca özel Oluşturucu yeni bir Xamarin.Forms öğesi eklendiğinde abone. Benzer şekilde, abone tüm olay işleyicileri yalnızca Oluşturucu bağlı öğesi değiştiğinde alanından aboneliği olmalıdır. Bu yaklaşım benimsenmesi bellek sızıntılarını yaşar olmayan özel bir oluşturucu oluşturmak için yardımcı olur.
+Yerel bir denetimi yapılandırılmalıdır ve yalnızca özel Oluşturucu yeni bir Xamarin.Forms öğe eklendiğinde olay işleyicileri abone. Benzer şekilde, abone tüm olay işleyicileri yalnızca Oluşturucu bağlı olduğu öğe değiştiğinde gelen aboneliği olması gerekir. Bu yaklaşımı benimsemeyi bellek sızıntılardan etkilese değil özel bir oluşturucu oluşturmaya yardımcı olur.
 
-Her özel Oluşturucu sınıfı ile donatılmış bir `ExportRenderer` Xamarin.Forms ile oluşturucuyu kaydeder özniteliği. Öznitelik iki parametre – işlenen Xamarin.Forms özel denetim türü adı ve özel Oluşturucu Tür adını alır. `assembly` Özniteliğine öneki belirtir. öznitelik tüm derlemesi için geçerlidir.
+Her özel Oluşturucu sınıfı ile donatılmış bir `ExportRenderer` özniteliği işleyici Xamarin.Forms ile kaydeder. Öznitelik, iki parametre – işlenen Xamarin.Forms özel denetimin tür adı ve özel Oluşturucu türü adını alır. `assembly` Özniteliğiyle önek öznitelik tüm derleme için geçerli olduğunu belirtir.
 
-Aşağıdaki bölümlerde her platforma özgü özel Oluşturucu sınıfı uyarlamasını açıklanmaktadır.
+Aşağıdaki bölümlerde her platforma özgü özel Oluşturucu sınıfın uygulaması açıklanmaktadır.
 
 ### <a name="creating-the-custom-renderer-on-ios"></a>İOS özel Oluşturucu Oluşturma
 
-Aşağıdaki ekran görüntüleri Haritası öncesinde ve sonrasında özelleştirme göster:
+Aşağıdaki ekran görüntüleri, özelleştirmeden önce ve sonra haritayı göster:
 
-![](customized-pin-images/map-layout-ios.png "Harita denetiminin öncesinde ve sonrasında özelleştirme")
+![](customized-pin-images/map-layout-ios.png "Harita denetiminin özelleştirmeden önce ve sonra")
 
-İOS PIN adlı bir *ek açıklama*, ve özel bir görüntü veya sistem tanımlı bir PIN çeşitli renklerin olabilir. Ek açıklamalar isteğe bağlı olarak gösterilecek bir *belirtme çizgisi*, yanıt ek açıklamanın seçerek kullanıcı olarak görüntülenir. Belirtme çizgisi görüntüler `Label` ve `Address` özelliklerini `Pin` isteğe bağlı sol ve sağ aksesuar görünümlerle örneği. Yukarıdaki ekran görüntüsünde, sol aksesuar bir monkey görüntüsü ile olan sağa aksesuar görünüm görünümdür *bilgi* düğmesi.
+İos'ta PIN olarak adlandırılan bir *ek açıklama*, ve özel bir görüntü veya sistem tarafından tanımlanan bir PIN çeşitli renklerinin olabilir. Ek açıklamalar isteğe bağlı olarak gösterilecek bir *belirtme çizgisi*, yanıt ek açıklama seçerek kullanıcı olarak görüntülenir. Belirtme çizgisi görüntüler `Label` ve `Address` özelliklerini `Pin` isteğe bağlı sol ve sağ aksesuar görünümlerle örneği. Yukarıdaki ekran görüntüsünde sol aksesuar bir monkey görüntüsü olan sağ aksesuar görünümü ile görünümdür *bilgi* düğmesi.
 
-Aşağıdaki kod örneğinde iOS platformu için özel Oluşturucu gösterir:
+Aşağıdaki kod örneği, iOS platformu için özel Oluşturucu gösterir:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -223,21 +223,21 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`OnElementChanged` Yöntemi aşağıdaki yapılandırmasını gerçekleştirir [ `MKMapView` ](https://developer.xamarin.com/api/type/MapKit.MKMapView/) özel Oluşturucu yeni bir Xamarin.Forms öğesi bağlı olması koşuluyla örneği:
+`OnElementChanged` Yöntemi aşağıdaki yapılandırmasını gerçekleştirir [ `MKMapView` ](https://developer.xamarin.com/api/type/MapKit.MKMapView/) koşuluyla yeni bir Xamarin.Forms öğesine bağlı özel oluşturucu örneği:
 
-- [ `GetViewForAnnotation` ](https://developer.xamarin.com/api/property/MapKit.MKMapView.GetViewForAnnotation/) Özelliği ayarlanmış `GetViewForAnnotation` yöntemi. Bu yöntem aldığında çağrılan [ek açıklamanın konumu haritada görünür hale](#Displaying_the_Annotation)ve görüntülemek için ek açıklama önceki özelleştirmek için kullanılır.
-- Olay işleyicileri için `CalloutAccessoryControlTapped`, `DidSelectAnnotationView`, ve `DidDeselectAnnotationView` olayları kayıtlı. Bu olayların ne zaman yangın kullanıcı [belirtme çizgisi sağ aksesuar dokunur](#Tapping_on_the_Right_Callout_Accessory_View), ne zaman ve kullanıcı [seçer](#Selecting_the_Annotation) ve [seçimini kaldırır](#Deselecting_the_Annotation) ek açıklama sırasıyla. Yalnızca Oluşturucu öğesi değişiklikleri iliştirildiğinde gelen aboneliği bir olaylardır.
+- [ `GetViewForAnnotation` ](https://developer.xamarin.com/api/property/MapKit.MKMapView.GetViewForAnnotation/) Özelliği `GetViewForAnnotation` yöntemi. Bu yöntem olduğunda çağrılır [ek açıklamanın konumu haritada görünür duruma](#Displaying_the_Annotation)ve görüntülemek için ek açıklama önceden özelleştirmek için kullanılır.
+- Olay işleyicileri `CalloutAccessoryControlTapped`, `DidSelectAnnotationView`, ve `DidDeselectAnnotationView` olayları kayıtlı. Bu olaylar olduğunda harekete kullanıcı [doğru açıklama balonu aksesuar dokunduğunda](#Tapping_on_the_Right_Callout_Accessory_View)ve ne zaman kullanıcı [seçer](#Selecting_the_Annotation) ve [dilimleyiciye](#Deselecting_the_Annotation) ek açıklama, sırasıyla. Yalnızca ' % s'öğesi işleyici değişiklikleri iliştirildiğinde gelen olayları kaldırdınız.
 
 <a name="Displaying_the_Annotation" />
 
-#### <a name="displaying-the-annotation"></a>Ek açıklamanın görüntüleme
+#### <a name="displaying-the-annotation"></a>Ek açıklama görüntüleme
 
-`GetViewForAnnotation` Yöntemi çağrılır ek açıklamanın konumu haritada görünür hale gelir ve görüntülemek için ek açıklama önceki özelleştirmek için kullanılır. Ek açıklamanın iki bölümden oluşur:
+`GetViewForAnnotation` Ek açıklama konumunu haritada görünür hale gelir ve görüntülemek için ek açıklama önceden özelleştirmek için kullanılan yöntemi çağrılır. Ek açıklamanın iki bölümden oluşur:
 
 - `MkAnnotation` – Başlık, alt başlık ve ek açıklama konumunu içerir.
-- `MkAnnotationView` – ek açıklama ve isteğe bağlı olarak, kullanıcının ek açıklamanın ne zaman dokunur gösterilen bir belirtme çizgisi temsil etmek için görüntü içerir.
+- `MkAnnotationView` – ek açıklama ve isteğe bağlı olarak, ek açıklama kullanıcı dokunduğunda gösterilen belirtme çizgisi temsil etmek için bir görüntü içerir.
 
-`GetViewForAnnotation` Yöntemi kabul eden bir `IMKAnnotation` açıklamanın verileri içeren ve döndürür bir `MKAnnotationView` haritaya görüntülenmek ve aşağıdaki kod örneğinde gösterildiği:
+`GetViewForAnnotation` Yöntemi kabul bir `IMKAnnotation` döndürür ve açıklamanın verileri içeren bir `MKAnnotationView` haritada görüntülemek için ve aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
@@ -268,25 +268,25 @@ MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotatio
 }
 ```
 
-Bu yöntem ek açıklamanın özel görüntü görüntülenir yerine ek açıklamanın dokunduğunuz olduğunda sistem tarafından tanımlanan PIN ve, belirtme çizgisi ek içerik sol ve sağ ek açıklama başlık ve adres içeren görüntülenir sağlar . Bu şekilde gerçekleştirilir:
+Bu yöntem, ek açıklama, özel bir görüntü olarak görüntülenecek yerine, ek açıklama dokunulduğunda sistem tanımlı PIN ve, belirtme çizgisi ek içerik sola ve sağa ek açıklama başlığını ve adresini içeren görüntülenir sağlar . Bu şu şekilde gerçekleştirilir:
 
-1. `GetCustomPin` Yöntemi ek açıklama için özel PIN verileri döndürmek için çağrılır.
-1. Bellek tasarruf etmek için ek açıklamanın görünüm çağrısıyla yeniden kullanım için havuza alınmış [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
-1. `CustomMKAnnotationView` Sınıfını genişleten `MKAnnotationView` ile sınıf `Id` ve `Url` aynı özelliklerinde karşılık özellikleri `CustomPin` örneği. Yeni bir örneğini `CustomMKAnnotationView` oluşturulur, ek açıklamanın koşuluyla `null`:
-  - `CustomMKAnnotationView.Image` Özelliği ayarlanmış görüntüye ek açıklama harita üzerinde temsil eder.
-  - `CustomMKAnnotationView.CalloutOffset` Özelliği ayarlanmış bir `CGPoint` ek açıklama belirtme çizgisi ortalanmış olduğunu belirtir.
-  - `CustomMKAnnotationView.LeftCalloutAccessoryView` Özelliği, ek açıklama başlık ve adres solunda görünecek bir monkey görüntüsünü ayarlanır.
-  - `CustomMKAnnotationView.RightCalloutAccessoryView` Özelliği ayarlanmış bir *bilgi* ek açıklama başlık ve adres sağında görünür düğmesi.
-  - `CustomMKAnnotationView.Id` Özelliği ayarlanmış `CustomPin.Id` özellik tarafından döndürülen `GetCustomPin` yöntemi. Bu, sahip olması tanımlanması ek açıklamanın sağlar [belirtme çizgisi daha fazla özelleştirilebilir](#Selecting_the_Annotation)istenirse.
-  - `CustomMKAnnotationView.Url` Özelliği ayarlanmış `CustomPin.Url` özellik tarafından döndürülen `GetCustomPin` yöntemi. URL ne zaman gidilecek kullanıcı [sağ belirtme çizgisi aksesuar görünümünde görüntülenen düğmeye dokunur](#Tapping_on_the_Right_Callout_Accessory_View).
-1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) Özelliği ayarlanmış `true` böylece ek açıklamanın dokunduğunuz belirtme çizgisi görüntülenir.
-1. Ek açıklamanın görüntülenmek üzere haritada döndürülür.
+1. `GetCustomPin` Özel PIN veri ek açıklama için döndürülecek yöntemi çağrılır.
+1. Bellekten kazanacak şekilde açıklamanın görünümü çağrısı ile yeniden kullanım için bir havuzda toplanır [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
+1. `CustomMKAnnotationView` Sınıfını genişleten `MKAnnotationView` sınıfıyla `Id` ve `Url` aynı özelliklere karşılık gelen özelliklerle `CustomPin` örneği. Yeni bir örneğini `CustomMKAnnotationView` oluşturulur, ek açıklama olması şartıyla `null`:
+  - `CustomMKAnnotationView.Image` Harita üzerindeki ek açıklama temsil edecek görüntüye özelliğini ayarlayın.
+  - `CustomMKAnnotationView.CalloutOffset` Özelliği bir `CGPoint` ek açıklama belirtme çizgisi ortalanacağını belirtir.
+  - `CustomMKAnnotationView.LeftCalloutAccessoryView` Özelliği, açıklama başlığını ve adresini solunda görünecek bir monkey görüntüsü için ayarlanır.
+  - `CustomMKAnnotationView.RightCalloutAccessoryView` Özelliği bir *bilgi* ek açıklama başlığını ve adresini sağında görünen düğme.
+  - `CustomMKAnnotationView.Id` Özelliği `CustomPin.Id` özelliği tarafından döndürülen `GetCustomPin` yöntemi. Bu ek açıklama, sahip olacak şekilde tanımlanmasını sağlar [belirtme çizgisi ek özelleştirilebilir](#Selecting_the_Annotation), isterseniz.
+  - `CustomMKAnnotationView.Url` Özelliği `CustomPin.Url` özelliği tarafından döndürülen `GetCustomPin` yöntemi. URL ne zaman gidilecek kullanıcı [doğru açıklama balonu aksesuar Görünümü'nde görüntülenen düğmeye dokunduğunda](#Tapping_on_the_Right_Callout_Accessory_View).
+1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) Özelliği `true` belirtme çizgisi ek açıklama dokunduğunuzda görüntülenir.
+1. Ek açıklama, görüntüleme için harita üzerinde döndürülür.
 
 <a name="Selecting_the_Annotation" />
 
-#### <a name="selecting-the-annotation"></a>Ek açıklamanın seçme
+#### <a name="selecting-the-annotation"></a>Ek açıklama seçme
 
-Ek açıklamayı, kullanıcı dokunur zaman `DidSelectAnnotationView` sırayla yürütür olay ateşlenir `OnDidSelectAnnotationView` yöntemi:
+Kullanıcı üzerindeki ek açıklama, dokunduğunda `DidSelectAnnotationView` sırayla yürütür olay harekete geçirilir `OnDidSelectAnnotationView` yöntemi:
 
 ```csharp
 void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
@@ -305,13 +305,13 @@ void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 }
 ```
 
-Ekleyerek (yani sol ve sağ aksesuar görünümlerini içerir) mevcut belirtme çizgisi bu yöntemin genişlettiği bir `UIView` Seçili ek açıklama sahip olması koşuluyla Xamarin logo görüntüsü içeren örneği kendisine onun `Id` içinayarlananözelliği`Xamarin`. Bu senaryolar farklı çağrılar için farklı ek açıklamalar burada görüntülenebilir sağlar. `UIView` Örneği, varolan belirtme çizgisi ortalanmış görüntülenir.
+Ekleyerek mevcut belirtme çizgisi (sol ve sağ aksesuar görünümleri içeren) Bu yöntemin genişlettiği bir `UIView` Seçili ek açıklama sahip olması koşuluyla Xamarin logo görüntüsü içeren örneği bunu kendi `Id` özelliği için `Xamarin`. Bu senaryolar için farklı ek açıklamalar farklı çağrılar burada görüntülenebilir sağlar. `UIView` Örneği, mevcut belirtme çizgisi üzerinde ortalanmış görüntülenir.
 
 <a name="Tapping_on_the_Right_Callout_Accessory_View" />
 
-#### <a name="tapping-on-the-right-callout-accessory-view"></a>Sağ belirtme çizgisi donatıyı görünümünde dokunun
+#### <a name="tapping-on-the-right-callout-accessory-view"></a>Doğru açıklama balonu Donatı görünümünde dokunarak
 
-Kullanıcı dokunur üzerinde ne zaman *bilgi* düğmesine sağ belirtme çizgisi aksesuar görünümünde `CalloutAccessoryControlTapped` sırayla yürütür olay ateşlenir `OnCalloutAccessoryControlTapped` yöntemi:
+Kullanıcı ne zaman dokunduğunda üzerinde *bilgi* doğru açıklama balonu aksesuar görünümünde düğme `CalloutAccessoryControlTapped` sırayla yürütür olay harekete geçirilir `OnCalloutAccessoryControlTapped` yöntemi:
 
 ```csharp
 void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEventArgs e)
@@ -323,13 +323,13 @@ void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEve
 }
 ```
 
-Bu yöntem, bir web tarayıcısı açar ve depolanan adresine gider `CustomMKAnnotationView.Url` özelliği. Adres oluştururken tanımlandığına Not `CustomPin` .NET standart kitaplığı projesi koleksiyonu.
+Bu yöntem, bir web tarayıcısı açılır ve depolanan adresine gider `CustomMKAnnotationView.Url` özelliği. Adres oluştururken tanımlandığına dikkat edin `CustomPin` .NET Standard kitaplığı projesi koleksiyonunda.
 
 <a name="Deselecting_the_Annotation" />
 
-#### <a name="deselecting-the-annotation"></a>Ek açıklamanın seçimi kaldırma
+#### <a name="deselecting-the-annotation"></a>Ek açıklama kaldırma
 
-Ek açıklamanın görüntülenir ve kullanıcı dokunur haritada `DidDeselectAnnotationView` sırayla yürütür olay ateşlenir `OnDidDeselectAnnotationView` yöntemi:
+Ek açıklama görüntülenir ve kullanıcının harita üzerinde dokunduğunda `DidDeselectAnnotationView` sırayla yürütür olay harekete geçirilir `OnDidDeselectAnnotationView` yöntemi:
 
 ```csharp
 void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
@@ -342,19 +342,19 @@ void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 }
 ```
 
-Bu yöntem, varolan belirtme çizgisi yok seçildiğinde, görüntülenmesini (Xamarin logo görüntüsü) belirtme çizgisi genişletilmiş parçası de durdurulur ve kaynaklarını serbest bırakılacak sağlar.
+Bu yöntem, mevcut belirtme çizgisi seçilmezse, belirtme çizgisi (Xamarin logo görüntüsü) genişletilmiş bir parçası, ayrıca görüntülenmesini durdurur ve kaynaklarını serbest bırakılacak sağlar.
 
-Özelleştirme hakkında daha fazla bilgi için bir `MKMapView` örnek için bkz: [iOS eşlemeleri](~/ios/user-interface/controls/ios-maps/index.md).
+Özelleştirme hakkında daha fazla bilgi için bir `MKMapView` örneği için bkz. [iOS haritalar](~/ios/user-interface/controls/ios-maps/index.md).
 
-### <a name="creating-the-custom-renderer-on-android"></a>Android özel Oluşturucu Oluşturma
+### <a name="creating-the-custom-renderer-on-android"></a>Android'de özel Oluşturucu Oluşturma
 
-Aşağıdaki ekran görüntüleri Haritası öncesinde ve sonrasında özelleştirme göster:
+Aşağıdaki ekran görüntüleri, özelleştirmeden önce ve sonra haritayı göster:
 
-![](customized-pin-images/map-layout-android.png "Harita denetiminin öncesinde ve sonrasında özelleştirme")
+![](customized-pin-images/map-layout-android.png "Harita denetiminin özelleştirmeden önce ve sonra")
 
-Android PIN adlı bir *işaret*, ve özel bir görüntü veya sistem tanımlı bir işaret çeşitli renklerin ya da olabilir. İşaretçileri gösterebilir bir *bilgi penceresi*, yanıt üzerinde işaret dokunarak kullanıcı olarak görüntülenir. Bilgi penceresinde görüntüler `Label` ve `Address` özelliklerini `Pin` örneği ve diğer içerik eklemek için özelleştirilebilir. Ancak, aynı anda yalnızca bir bilgi penceresi gösterilebilir.
+Android'de PIN olarak adlandırılan bir *işaret*, ve özel bir görüntü veya çeşitli renkler sistem tarafından tanımlanan bir işaretçi ya da olabilir. İşaretçileri gösterebilir bir *bilgi penceresinin*, yanıt işaret üzerinde dokunarak kullanıcı olarak görüntülenir. Bilgi penceresi görüntüler `Label` ve `Address` özelliklerini `Pin` örneği ve diğer içerik eklemek için özelleştirilebilir. Ancak, tek seferde yalnızca bir bilgi penceresi gösterilebilir.
 
-Aşağıdaki kod örneğinde, Android platformu için özel Oluşturucu gösterir:
+Aşağıdaki kod örneği, Android platformu için özel Oluşturucu gösterir:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -397,18 +397,18 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Özel oluşturucu yeni bir Xamarin.Forms öğesine bağlı olduğu koşuluyla `OnElementChanged` yöntem çağrılarını `MapView.GetMapAsync` temel alır yöntemi `GoogleMap` görünüme bağlıdır. Bir kez `GoogleMap` örneği kullanılabilir `OnMapReady` geçersiz kılma çağrılabilir. Bu yöntem için bir olay işleyicisi kaydeder `InfoWindowClick` tetiklenen olay [bilgi penceresi tıklandığında](#Clicking_on_the_Info_Window)ve gelen yalnızca Oluşturucu öğesi değişiklikleri iliştirildiğinde iptal. `OnMapReady` Ayrıca çağrıları geçersiz `SetInfoWindowAdapter` yöntemi belirtmek için `CustomMapRenderer` sınıf örneği bilgi penceresi özelleştirmek için yöntemleri sunar.
+Özel oluşturucu, yeni bir Xamarin.Forms öğesine bağlı olması koşuluyla `OnElementChanged` yöntem çağrılarını `MapView.GetMapAsync` temel alan yöntemi `GoogleMap` görünümüne bağlanır. Bir kez `GoogleMap` örneği kullanılabilir `OnMapReady` geçersiz kılma çağrılacak. Bu yöntem için bir olay işleyicisi kaydeder `InfoWindowClick` başlatılan olay [bilgi penceresinin tıklandığında](#Clicking_on_the_Info_Window)ve yalnızca ' % s'öğesi işleyici değişiklikleri iliştirildiğinde öğesinden kaldırıldı. `OnMapReady` Ayrıca çağrıları geçersiz `SetInfoWindowAdapter` yöntemi belirtmek için `CustomMapRenderer` sınıf örneği bilgi penceresi özelleştirmek için yöntemler sağlar.
 
-`CustomMapRenderer` Uygulayan sınıf `GoogleMap.IInfoWindowAdapter` arabirimini [bilgisi penceresini özelleştirme](#Customizing_the_Info_Window). Bu arabirim, aşağıdaki yöntemlerden uygulanmalı belirtir:
+`CustomMapRenderer` Sınıfının Implements `GoogleMap.IInfoWindowAdapter` arabirimini [bilgi penceresi özelleştirme](#Customizing_the_Info_Window). Bu arabirim, aşağıdaki yöntemlerden uygulanmalıdır olduğunu belirtir:
 
-- `public Android.Views.View GetInfoWindow(Marker marker)` – Bu yöntem, bir işaretçi için özel bilgiler penceresine dönmek için çağrılır. Döndürürse `null`, varsayılan penceresi işleme kullanılır. Döndürürse bir `View`, ardından, `View` bilgisi pencere çerçevesi içinde yer alır.
-- `public Android.Views.View GetInfoContents(Marker marker)` – Döndürülecek bu yöntem çağrılır bir `View` bilgisi penceresinin içeriği içeren ve yalnızca olursa çağrılacak `GetInfoWindow` yöntemi döndürür `null`. Döndürürse `null`, bilgi penceresi içeriğin varsayılan işleme kullanılır.
+- `public Android.Views.View GetInfoWindow(Marker marker)` – Bu yöntem, bir özel bilgi penceresinin bir işaretleyici geri dönmek için çağrılır. Döndürürse `null`, varsayılan penceresi işleme kullanılır. Döndürürse bir `View`, ardından, `View` bilgi pencere çerçevesi içinde yer alır.
+- `public Android.Views.View GetInfoContents(Marker marker)` – Bu yöntem döndürmek için çağrılan bir `View` bilgi penceresinin içeriğini içeren ve yalnızca olursa çağrılacak `GetInfoWindow` yöntemi döndürür `null`. Döndürürse `null`, bilgi pencere içeriğinin varsayılan işleme kullanılır.
 
-Örnek uygulama, yalnızca bilgi penceresi içerik özelleştirildikten ve böylece `GetInfoWindow` yöntemi döndürür `null` bunu etkinleştirmek için.
+Örnek uygulama, yalnızca bilgi penceresi içeriği özelleştirilir ve bu nedenle `GetInfoWindow` yöntemi döndürür `null` bunu etkinleştirmek için.
 
 #### <a name="customizing-the-marker"></a>İşaretin özelleştirme
 
-Bir işaretçi göstermek için kullanılan simge çağırarak özelleştirilebilir `MarkerOptions.SetIcon` yöntemi. Bu geçersiz kılma tarafından gerçekleştirilebilir `CreateMarker` her biri için çağrılan yöntem `Pin` eşlemeye eklenir:
+Bir işaretçi temsil etmek için kullanılan simge çağırarak özelleştirilebilir `MarkerOptions.SetIcon` yöntemi. Bu geçersiz kılma tarafından gerçekleştirilebilir `CreateMarker` her biri için çağrılan yöntem `Pin` eşlemesine eklenir:
 
 ```csharp
 protected override MarkerOptions CreateMarker(Pin pin)
@@ -422,7 +422,7 @@ protected override MarkerOptions CreateMarker(Pin pin)
 }
 ```
 
-Bu yöntem yeni bir oluşturur `MarkerOption` her örneği `Pin` örneği. Konum, etiket ve adres işaretin ayarladıktan sonra simge ile ayarlanır `SetIcon` yöntemi. Bu yöntem alır bir `BitmapDescriptor` ile simgesi işlemek için gerekli verileri içeren bir nesne `BitmapDescriptorFactory` oluşturulmasını basitleştirmeye yardımcı yöntemler sağlayan sınıf `BitmapDescriptor`.
+Bu yöntem yeni bir oluşturur `MarkerOption` her bir örneğin `Pin` örneği. Konum, etiket ve işaretçisinin adresi ayarladıktan sonra simgesi ile ayarlanır `SetIcon` yöntemi. Bu yöntem bir `BitmapDescriptor` simgesi ile işlemek gereken verileri içeren bir nesne `BitmapDescriptorFactory` oluşturulmasını kolaylaştırmak için yardımcı yöntemler sağlayan bir sınıf `BitmapDescriptor`.
 
 Kullanma hakkında daha fazla bilgi için `BitmapDescriptorFactory` bir işaret özelleştirmek için bkz: sınıf [bir işaret özelleştirme](~/android/platform/maps-and-location/maps/maps-api.md).
 
@@ -430,7 +430,7 @@ Kullanma hakkında daha fazla bilgi için `BitmapDescriptorFactory` bir işaret 
 
 #### <a name="customizing-the-info-window"></a>Bilgi penceresini özelleştirme
 
-Bir kullanıcı işaret üzerinde dokunur zaman `GetInfoContents` yöntemi yürütüldüğünde, aşağıdaki koşullarda `GetInfoWindow` yöntemi döndürür `null`. Aşağıdaki örnekte gösterildiği kod `GetInfoContents` yöntemi:
+Kullanıcı işaretçisi üzerinde dokunduğunda `GetInfoContents` yöntemi yürütüldüğünde, aşağıdaki koşullarda `GetInfoWindow` yöntemi döndürür `null`. Aşağıdaki örnekte gösterildiği kod `GetInfoContents` yöntemi:
 
 ```csharp
 public Android.Views.View GetInfoContents (Marker marker)
@@ -466,22 +466,22 @@ public Android.Views.View GetInfoContents (Marker marker)
 }
 ```
 
-Bu yöntem bir `View` bilgi penceresinin içeriğini içeren. Bu şekilde gerçekleştirilir:
+Bu yöntem döndürür bir `View` bilgi penceresinin içeriğini içeren. Bu şu şekilde gerçekleştirilir:
 
-- A `LayoutInflater` örneği alınır. Bu, karşılık gelen bir düzen XML dosyası örneği oluşturmak için kullanılan `View`.
-- `GetCustomPin` Yöntemi bilgi penceresi için özel PIN verileri döndürmek için çağrılır.
-- `XamarinMapInfoWindow` Düzeni, şişirileceğini `CustomPin.Id` özelliği eşittir `Xamarin`. Aksi takdirde `MapInfoWindow` Düzen şişirileceğini. Bu senaryolar için farklı işaretçileri farklı bilgi pencere düzenlerini burada görüntülenebilir sağlar.
-- `InfoWindowTitle` Ve `InfoWindowSubtitle` kaynakları inflated düzeninden alınır ve bunların `Text` özelliklerini ayarlamak için karşılık gelen verileri `Marker` örnek kaynakları doldurulmaz koşuluyla `null`.
-- `View` Örneği haritada görüntülenmek üzere döndürdü.
+- A `LayoutInflater` örneği alınır. Bu, karşılık gelen bir düzen XML dosyası oluşturmak için kullanılan `View`.
+- `GetCustomPin` Yöntemi bilgileri penceresi için özel bir PIN verileri döndürmek için çağrılır.
+- `XamarinMapInfoWindow` Düzeni varsa şişirileceğini `CustomPin.Id` özelliğini eşittir `Xamarin`. Aksi takdirde, `MapInfoWindow` Düzen şişirileceğini. Bu senaryolar için farklı işaretçiler farklı bilgi pencere düzenlerini burada görüntülenebilir sağlar.
+- `InfoWindowTitle` Ve `InfoWindowSubtitle` kaynakları inflated düzeninden alınır ve bunların `Text` özelliklerini ayarlamak için karşılık gelen verilerden `Marker` şartıyla kaynaklara olmayan örnek `null`.
+- `View` Örneği görüntülenmek üzere harita üzerinde döndürülür.
 
 > [!NOTE]
-> Bir bilgi penceresi canlı bir değil `View`. Bunun yerine, Android dönüştürecek `View` bir statik bitmap ve bir görüntü olarak görüntüler. Tıklama olayları bilgi penceresi sırasında click olayı için herhangi bir touch olayları veya hareketleri yanıt veremez ve bilgi penceresinde ayrı ayrı denetimler kendi için yanıt veremez yanıtlayabilir bu anlamına gelir.
+> Bir bilgi penceresi Canlı değil `View`. Bunun yerine, Android dönüştürecek `View` statik bir bit eşlem ve, bir görüntü olarak görüntüleyin. Tıklama olayları bir tıklama olayı için herhangi bir dokunma olayları veya hareketlerini yanıt veremez ve her bir denetim bilgileri penceresinde kendi için yanıt yanıt verebilir, bir bilgi penceresi sırasında anlamına gelir.
 
 <a name="Clicking_on_the_Info_Window" />
 
-#### <a name="clicking-on-the-info-window"></a>Bilgi penceresinde tıklatarak
+#### <a name="clicking-on-the-info-window"></a>Bilgileri penceresinde tıklayarak
 
-Kullanıcı bilgileri penceresinde tıklattığında `InfoWindowClick` sırayla yürütür olay ateşlenir `OnInfoWindowClick` yöntemi:
+Kullanıcı bilgileri penceresinde tıkladığında `InfoWindowClick` sırayla yürütür olay harekete geçirilir `OnInfoWindowClick` yöntemi:
 
 ```csharp
 void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
@@ -500,19 +500,19 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 }
 ```
 
-Bu yöntem, bir web tarayıcısı açar ve depolanan adresine gider `Url` özelliğini `CustomPin` örnek `Marker`. Adres oluştururken tanımlandığına Not `CustomPin` .NET standart kitaplığı projesi koleksiyonu.
+Bu yöntem, bir web tarayıcısı açılır ve depolanan adresine gider `Url` özelliğini `CustomPin` örnek `Marker`. Adres oluştururken tanımlandığına dikkat edin `CustomPin` .NET Standard kitaplığı projesi koleksiyonunda.
 
-Özelleştirme hakkında daha fazla bilgi için bir `MapView` örnek için bkz: [haritalar API'si](~/android/platform/maps-and-location/maps/maps-api.md).
+Özelleştirme hakkında daha fazla bilgi için bir `MapView` örneği için bkz. [haritalar API'si](~/android/platform/maps-and-location/maps/maps-api.md).
 
 ### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Evrensel Windows platformu üzerinde özel Oluşturucu Oluşturma
 
-Aşağıdaki ekran görüntüleri Haritası öncesinde ve sonrasında özelleştirme göster:
+Aşağıdaki ekran görüntüleri, özelleştirmeden önce ve sonra haritayı göster:
 
-![](customized-pin-images/map-layout-uwp.png "Harita denetiminin öncesinde ve sonrasında özelleştirme")
+![](customized-pin-images/map-layout-uwp.png "Harita denetiminin özelleştirmeden önce ve sonra")
 
-UWP üzerinde PIN adlı bir *eşlemi simgesini*, ve özel bir görüntü veya sistem tarafından tanımlanan varsayılan görüntü ya da olabilir. Bir harita simgesi gösterebilir bir `UserControl`, yanıt harita simgesine dokunarak kullanıcı olarak görüntülenir. `UserControl` Herhangi bir içerik görüntüleyebilirsiniz dahil olmak üzere `Label` ve `Address` özelliklerini `Pin` örneği.
+UWP üzerinde PIN çağrılır bir *Haritası simgesi*, ve özel bir görüntü veya sistem tarafından tanımlanan varsayılan görüntü ya da olabilir. Harita simgesini gösterebilirsiniz bir `UserControl`, yanıt harita simgesine dokunarak kullanıcı olarak görüntülenir. `UserControl` Herhangi bir içeriği görüntüleyebilir de dahil olmak üzere `Label` ve `Address` özelliklerini `Pin` örneği.
 
-Aşağıdaki kod örneğinde UWP özel Oluşturucu gösterir:
+Aşağıdaki kod örneği, UWP özel Oluşturucu gösterir:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -566,23 +566,23 @@ namespace CustomRenderer.UWP
 }
 ```
 
-`OnElementChanged` Yöntemi yeni bir Xamarin.Forms öğesi özel Oluşturucu bağlı koşuluyla, aşağıdaki işlemleri gerçekleştirir:
+`OnElementChanged` Yöntemi özel Oluşturucu, yeni bir Xamarin.Forms öğesine bağlı olması koşuluyla aşağıdaki işlemleri gerçekleştirir:
 
-- Temizlenmeden `MapControl.Children` için bir olay işleyicisi kaydetmeden önce var olan kullanıcı arabirimi öğeleri eşlemesinden kaldırmak için koleksiyon `MapElementClick` olay. Bu olay kullanıcı dokunur veya üzerinde tıklattığında ateşlenir bir `MapElement` üzerinde `MapControl`ve gelen yalnızca Oluşturucu öğesi değişiklikleri iliştirildiğinde iptal.
-- Her PIN `customPins` koleksiyonu görüntülenir harita üzerinde doğru coğrafi konumda şu şekilde:
+- Temizlendiğinden `MapControl.Children` bir olay işleyicisi için kaydolmadan önce var olan kullanıcı arabirimi öğeleri eşlemden kaldırmak için koleksiyon `MapElementClick` olay. Kullanıcı dokunduğunda veya tıkladığında bu olay harekete bir `MapElement` üzerinde `MapControl`ve yalnızca ' % s'öğesi işleyici değişiklikleri iliştirildiğinde öğesinden kaldırıldı.
+- Her pın'de `customPins` koleksiyon görüntülenir harita üzerinde doğru coğrafi konumda şu şekilde:
   - PIN için konum olarak oluşturulan bir `Geopoint` örneği.
-  - A `MapIcon` örneği PIN temsil etmek üzere oluşturulur.
-  - Temsil etmek için kullanılan görüntü `MapIcon` ayarlayarak belirtilen `MapIcon.Image` özelliği. Harita üzerinde diğer öğeler tarafından görünmeyebilir gibi ancak harita simgesinin görüntüsü her zaman gösterilecek için kesin değildir. Bu nedenle, harita simgesinin `CollisionBehaviorDesired` özelliği ayarlanmış `MapElementCollisionBehavior.RemainVisible`görünür kalmasını sağlamak için.
-  - Konumunu `MapIcon` ayarlayarak belirtilen `MapIcon.Location` özelliği.
-  - `MapIcon.NormalizedAnchorPoint` Özelliği, resimdeki işaretçi yaklaşık konumunu ayarlanır. Bu özellik, görüntünün sol üst köşesinin temsil eden, varsayılan değer (0,0) korur durumunda harita yakınlaştırma düzeyini değişiklikleri farklı bir konuma işaret eden görüntü sonuçlanabilir.
-  - `MapIcon` Örneği eklenir `MapControl.MapElements` koleksiyonu. Bu üzerinde görüntülenmesini eşlemi simgesini sonuçlanır `MapControl`.
+  - A `MapIcon` örneği PIN temsil etmek için oluşturulur.
+  - Temsil etmek için kullanılan görüntünün `MapIcon` ayarlanarak belirtilir `MapIcon.Image` özelliği. Harita üzerinde diğer öğeleri tarafından görünmeyebilir gibi ancak harita simgesinin görüntüsü her zaman gösterilecek, garanti edilmez. Bu nedenle, harita simgesinin `CollisionBehaviorDesired` özelliği `MapElementCollisionBehavior.RemainVisible`görünür kalmasını sağlamak için.
+  - Konumunu `MapIcon` ayarlanarak belirtilir `MapIcon.Location` özelliği.
+  - `MapIcon.NormalizedAnchorPoint` Resimdeki işaretçi yaklaşık konumunu özelliğini ayarlayın. Bu özellik temsil eden resmin sol üst köşesinde, varsayılan değeri (0,0) korur, harita yakınlaştırma düzeyini değişiklikleri farklı bir konuma işaret eden görüntü neden olabilir.
+  - `MapIcon` Örneği eklenir `MapControl.MapElements` koleksiyonu. Üzerinde görüntülenmesini Haritası simgesi sonuçlanır `MapControl`.
 
 > [!NOTE]
-> Aynı görüntüyü birden çok eşleme simgelerini kullanırken `RandomAccessStreamReference` örneği bildirilen en iyi performans için sayfa veya uygulama düzeyinde.
+> Aynı görüntüyü birden fazla eşleme simgelerini kullanırken `RandomAccessStreamReference` örneği bildirilen en iyi performans için sayfa veya uygulama düzeyinde.
 
 #### <a name="displaying-the-usercontrol"></a>UserControl görüntüleme
 
-Bir kullanıcı eşlemesi simgesinde dokunur zaman `OnMapElementClick` yöntemi yürütüldüğünde. Aşağıdaki kod örneği, bu yöntem gösterilmektedir:
+Bir kullanıcı eşleme simgesinde dokunduğunda `OnMapElementClick` yöntemi yürütülür. Aşağıdaki kod örneği, bu yöntem gösterir:
 
 ```csharp
 private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
@@ -623,21 +623,21 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
 }
 ```
 
-Bu yöntem oluşturur bir `UserControl` PIN hakkındaki bilgileri görüntüler örneği. Bu şekilde gerçekleştirilir:
+Bu yöntem, oluşturur bir `UserControl` örneği PIN hakkındaki bilgileri görüntüler. Bu şu şekilde gerçekleştirilir:
 
 - `MapIcon` Örneği alınır.
-- `GetCustomPin` Yöntemi görüntülenecek özel PIN verileri döndürmek için çağrılır.
+- `GetCustomPin` Yöntemi görüntülenecek özel bir PIN verileri döndürmek için çağrılır.
 - A `XamarinMapOverlay` örneği özel PIN verileri görüntülemek için oluşturulur. Bir kullanıcı denetimi sınıftır.
 - Görüntülenecek coğrafi konumda `XamarinMapOverlay` üzerinde örnek `MapControl` olarak oluşturulan bir `Geopoint` örneği.
-- `XamarinMapOverlay` Örneği eklenir `MapControl.Children` koleksiyonu. Bu koleksiyon haritada görüntülenmelerini XAML kullanıcı arabirimi öğeleri içerir.
-- Coğrafi konumunu `XamarinMapOverlay` harita örneğinde çağırarak ayarlanmış `SetLocation` yöntemi.
-- Göreli konum `XamarinMapOverlay` belirtilen konuma karşılık gelen, örnek olarak ayarlanmış çağırarak `SetNormalizedAnchorPoint` yöntemi. Bu harita sonucunda yakınlaştırma düzeyini seçeneğinde değişiklik sağlar `XamarinMapOverlay` her zaman doğru konumda görüntülenmesini örneği.
+- `XamarinMapOverlay` Örneği eklenir `MapControl.Children` koleksiyonu. Bu koleksiyon, haritada gösterilecek XAML kullanıcı arabirimi öğeleri içerir.
+- Coğrafi konumunu `XamarinMapOverlay` örneği harita üzerinde ayarlanmış çağırarak `SetLocation` yöntemi.
+- Göreli konum `XamarinMapOverlay` belirtilen konuma karşılık gelen, örnek çağırarak ayarlanmış `SetNormalizedAnchorPoint` yöntemi. Bu değişikliklerin harita sonucunda yakınlaştırma düzeyini de sağlar `XamarinMapOverlay` her zaman doğru konumda görüntülenen örnek.
 
-Alternatif olarak, PIN hakkında bilgi haritada zaten görüntülenmektedir kullanıyorsanız harita üzerinde dokunma kaldıran `XamarinMapOverlay` gelen örnek `MapControl.Children` koleksiyonu.
+Alternatif olarak, PIN hakkında bilgi harita üzerinde zaten görüntüleniyor, dokunma harita üzerinde kaldırır `XamarinMapOverlay` gelen örnek `MapControl.Children` koleksiyonu.
 
-#### <a name="tapping-on-the-information-button"></a>Bilgi düğmesine dokunun
+#### <a name="tapping-on-the-information-button"></a>Bilgi düğmesine dokunarak
 
-Kullanıcı dokunur üzerinde ne zaman *bilgi* düğmesini `XamarinMapOverlay` kullanıcı denetimi `Tapped` sırayla yürütür olay ateşlenir `OnInfoButtonTapped` yöntemi:
+Kullanıcı ne zaman dokunduğunda üzerinde *bilgi* düğmesine `XamarinMapOverlay` kullanıcı denetimi `Tapped` sırayla yürütür olay harekete geçirilir `OnInfoButtonTapped` yöntemi:
 
 ```csharp
 private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
@@ -646,18 +646,18 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-Bu yöntem, bir web tarayıcısı açar ve depolanan adresine gider `Url` özelliği `CustomPin` örneği. Adres oluştururken tanımlandığına Not `CustomPin` .NET standart kitaplığı projesi koleksiyonu.
+Bu yöntem, bir web tarayıcısı açılır ve depolanan adresine gider `Url` özelliği `CustomPin` örneği. Adres oluştururken tanımlandığına dikkat edin `CustomPin` .NET Standard kitaplığı projesi koleksiyonunda.
 
-Özelleştirme hakkında daha fazla bilgi için bir `MapControl` örnek için bkz: [harita ve konum genel bakış](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) konusuna bakın.
+Özelleştirme hakkında daha fazla bilgi için bir `MapControl` örneği için bkz. [Haritalar ve konum genel bakış](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) MSDN'de.
 
 ## <a name="summary"></a>Özet
 
-Bu makale için özel Oluşturucu Oluşturma gösterilen `Map` denetim, geliştiricilerin kendi platforma özgü özelleştirme varsayılan yerel işlemeyle geçersiz kılmasına etkinleştirme. Xamarin.Forms.Maps kullanıcılar için hızlı ve bilinen bir eşlemesi sağlamak için API'ler her platformda deneyimi yerel eşlemesi kullanmak eşlemeleri görüntüleme için platformlar arası Özet sağlar.
+Bu makalede gösterilen için özel Oluşturucu Oluşturma `Map` geliştiricilerin kendi platforma özgü özelleştirme varsayılan yerel işleme geçersiz kılmak denetim. Xamarin.Forms.Maps kullanıcılar için deneyimi hızlı ve tanıdık bir eşleme sağlamak için API'ler her platformda yerel eşlemesi kullanmak haritalar görüntülemek için bir çoklu platform soyutlama sağlar.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [MAPS denetimi](~/xamarin-forms/user-interface/map.md)
-- [iOS eşlemeleri](~/ios/user-interface/controls/ios-maps/index.md)
+- [Haritalar denetimi](~/xamarin-forms/user-interface/map.md)
+- [iOS haritalar](~/ios/user-interface/controls/ios-maps/index.md)
 - [Haritalar API’si](~/android/platform/maps-and-location/maps/maps-api.md)
 - [Özelleştirilmiş PIN (örnek)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)

@@ -1,94 +1,94 @@
 ---
 title: Bölüm 20 özeti. Zaman uyumsuz ve dosya g/ç
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 20 özeti. Zaman uyumsuz ve dosya g/ç'
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: Bölüm 20 özeti. Zaman uyumsuz ve dosya g/ç'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: fbcf1c9cfb1cd87ea33f47ae61a8ebe233b89736
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 2ff54b65b1dca9798c91f147da7e8482649e40d2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241874"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996288"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Bölüm 20 özeti. Zaman uyumsuz ve dosya g/ç
 
- Bir grafik kullanıcı arabirimi kullanıcı girişini olaylarına sırayla yanıtlaması gerekir. Bu kullanıcı girişi olayların tüm işleme genellikle olarak adlandırılan bir tek iş parçacığı içinde gerçekleşmelidir gelir *ana iş parçacığı* veya *kullanıcı Arabirimi iş parçacığı*.
+ Bir grafik kullanıcı arabirimi, kullanıcı girişini olayları sıralı olarak yanıt vermelidir. Bu kullanıcı girişi olaylarını tüm işlemler genellikle olarak adlandırılan bir tek iş parçacığı içinde gerçekleşmelidir gelir *ana iş parçacığı* veya *UI iş parçacığı*.
 
-Kullanıcıların grafik kullanıcı arabirimleri esnek olmasını bekler. Başka bir deyişle, bir program kullanıcı girişi olayları hızlı bir şekilde işlemelidir. Bu mümkün değilse, ardından işleme yürütme İkincil iş parçacıklarının sahip olmalıdır.
+Kullanıcılar, hızlı yanıt için grafik kullanıcı arabirimleri bekler. Başka bir deyişle, bir program kullanıcı girişi olayları hızlı bir şekilde işlemesi gerekir. Bu mümkün değilse, ardından işlem yürütme İkincil iş parçacıkları sahip olmalıdır.
 
-Bu kitap birkaç örnek programlarda kullanmış [ `WebRequest` ](https://developer.xamarin.com/api/type/System.Net.WebRequest/) sınıfı. Bu sınıftaki [ `BeginGetReponse` ](https://developer.xamarin.com/api/member/System.Net.WebRequest.BeginGetResponse/p/System.AsyncCallback/System.Object/) yöntemi bu tamamlandığında, bir geri çağırma işlevi çağıran bir çalışan iş parçacığı başlatır. Program çağırmanız gerekir ancak, bu geri çağırma işlevi çalışan iş parçacığı çalışır, böylece [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) kullanıcı arabirimini erişim yöntemi.
+Bu kitap birkaç örnek programlarında kullanmış [ `WebRequest` ](xref:System.Net.WebRequest) sınıfı. Bu sınıftaki [ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) yöntemi tamamladıktan sonra bir geri çağırma işlevini çağırır bir çalışan iş parçacığı başlatılır. Program çağırmanız gerekir ancak bu geri çağırma işlevi çalışan iş parçacığında çalışır, böylece [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) kullanıcı arabirimine yöntemi.
 
-Zaman uyumsuz işleme için daha yeni bir yaklaşım, .NET ve C# içinde kullanılabilir. Bu içerir [ `Task` ](https://developer.xamarin.com/api/type/System.Threading.Tasks.Task/) ve [ `Task<TResult>` ](https://developer.xamarin.com/api/type/System.Threading.Tasks.Task%3CTResult%3E/) sınıfları ve diğer türleri [ `System.Threading` ](https://developer.xamarin.com/api/namespace/System.Threading/) ve [ `System.Threading.Tasks` ](https://developer.xamarin.com/api/namespace/System.Threading.Tasks/) ad alanları, C# 5.0 yanı sıra `async` ve `await` anahtar sözcükler. Bu bölümde odaklanır olmasıdır.
+Zaman uyumsuz işleme için daha modern bir yaklaşımı, .NET ve C# içinde kullanılabilir. Bu içerir [ `Task` ](xref:System.Threading.Tasks.Task) ve [ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1) sınıfları ve diğer türleri [ `System.Threading` ](xref:System.Threading) ve [ `System.Threading.Tasks` ](xref:System.Threading.Tasks) ad alanlarında, C# 5.0 yanı sıra `async` ve `await` anahtar sözcükleri. Bu bölümde odaklanır olmasıdır.
 
-## <a name="from-callbacks-to-await"></a>Await geri çağrıları
+## <a name="from-callbacks-to-await"></a>Await geri çağrılar
 
-`Page` Sınıfının kendisi uyarı kutuları görüntülemek için üç zaman uyumsuz yöntemler içerir:
+`Page` Sınıfın kendisi uyarı kutularını görüntülemek için üç zaman uyumsuz yöntemleri içerir:
 
-- [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/) döndüren bir `Task` nesnesi
-- [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/System.String/) döndüren bir `Task<bool>` nesnesi
-- [`DisplayActionSheet`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet/p/System.String/System.String/System.String/System.String[]/) döndüren bir `Task<string>` nesnesi
+- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) döndürür bir `Task` nesnesi
+- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String,System.String)) döndürür bir `Task<bool>` nesnesi
+- [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) döndürür bir `Task<string>` nesnesi
 
-`Task` Nesneleri belirtmek bu yöntemleri görev tabanlı zaman uyumsuz DOKUNUN bilinen desen uygulamak. Bunlar `Task` nesneleri hızla yönteminden döndürülen. `Task<T>` Değerleri, bir "promise" oluşturan dönmek türde bir değer `TResult` görev tamamlandığında kullanılabilir olur. `Task` Dönüş değeri tamamlandı ancak hiçbir değer ile döndürülen bu işlem zaman uyumsuz bir eylemi gösterir.
+`Task` Nesnelerini bu yöntemler görev tabanlı zaman uyumsuz DOKUNUN bilinen deseni kullandığını gösterir. Bunlar `Task` nesneleri hızla yönteminden döndürülen. `Task<T>` Değerleri, "promise" oluşturur dönüş türünde bir değer `TResult` görev tamamlandığında kullanılabilir olacaktır. `Task` Dönüş değeri, zaman uyumsuz bir eylemi tamamlandı ancak hiçbir değer ile döndürülen olacak gösterir.
 
-Bu durumlarda `Task` kullanıcı uyarı kutusu kapatılır tam durumdur.  
+Tüm bu gibi durumlarda, `Task` kullanıcı uyarı kutusu kapatılana olduğunda tamamlandıktan.  
 
-### <a name="an-alert-with-callbacks"></a>Geri aramalar olan bir uyarı
+### <a name="an-alert-with-callbacks"></a>Geri çağırmaları olan bir uyarı
 
-[ **AlertCallbacks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertCallbacks) örnek nasıl yapılacağını gösteren `Task<bool>` dönüş nesneleri ve `Device.BeginInvokeOnMainThread` geri arama yöntemleri kullanarak aramaları.
+[ **AlertCallbacks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertCallbacks) örnek nasıl işleneceğini gösterir `Task<bool>` dönüş nesneleri ve `Device.BeginInvokeOnMainThread` kullanarak geri çağırma yöntemleri çağırır.
 
-### <a name="an-alert-with-lambdas"></a>Lambda'lar olan bir uyarı
+### <a name="an-alert-with-lambdas"></a>Bir uyarı ile lambda ifadeleri
 
-[ **AlertLambdas** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertLambdas) örnek anonim lambda işlevlerinin işleme için nasıl kullanılacağı gösterilmektedir `Task` ve `Device.BeginInvokeOnMainThread` çağrıları.  
+[ **AlertLambdas** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertLambdas) örnek anonim lambda işlevleri işleme için kullanma gösterilmektedir `Task` ve `Device.BeginInvokeOnMainThread` çağırır.  
 
-### <a name="an-alert-with-await"></a>Bekleme olan bir uyarı
+### <a name="an-alert-with-await"></a>Bir uyarı await ile
 
-Daha basit bir yaklaşım içerir `async` ve `await` C# 5'te tanıtılan anahtar sözcükler. [ **AlertAwait** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertAwait) örnek kullanımlarını gösterir.
+Daha basit bir yaklaşım gerektirir `async` ve `await` C# 5'te sunulan anahtar sözcükleri. [ **AlertAwait** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertAwait) örnek kullanımlarını gösterir.
 
-### <a name="an-alert-with-nothing"></a>Hiçbir şey olan bir uyarı
+### <a name="an-alert-with-nothing"></a>Bir uyarı hiçbir şey
 
-Zaman uyumsuz yöntem döndürürse `Task` yerine `Task<TResult>`, sonra da program zaman uyumsuz görev tamamlandığında öğrenmek gerekli olmayan aşağıdaki tekniklerden birini kullanırsanız gerekmez. [ **NothingAlert** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/NothingAlert) örnek bu gösterir.
+Zaman uyumsuz yöntemin döndürürse `Task` yerine `Task<TResult>`, sonra da programı, zaman uyumsuz görev tamamlandığında bilmeniz gerekmez, aşağıdaki tekniklerden birini kullanmanız gerekmez. [ **NothingAlert** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/NothingAlert) örnek bunu gösterir.
 
-### <a name="saving-program-settings-asynchronously"></a>Program ayarları kaydediliyor zaman uyumsuz olarak
+### <a name="saving-program-settings-asynchronously"></a>Program ayarlarını kaydetme zaman uyumsuz olarak
 
-[ **SaveProgramChanges** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/SaveProgramSettings) kullanımını gösteren örnek [ `SavePropertiesAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.SavePropertiesAsync()/) yöntemi `Application` olmadan değiştikçe program ayarlarını kaydetmek için geçersiz kılma `OnSleep` yöntemi.
+[ **SaveProgramChanges** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/SaveProgramSettings) örnek, kullanımını gösterir [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync) yöntemi `Application` olmadan değiştikçe programı ayarlarını kaydetmek için geçersiz kılma `OnSleep` yöntemi.
 
 ### <a name="a-platform-independent-timer"></a>Platformdan bağımsız Zamanlayıcı
 
-Kullanmak da mümkündür [ `Task.Delay` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task.Delay/p/System.Int32/) platformdan bağımsız süreölçer oluşturmak için. [ **TaskDelayClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TaskDelayClock) örnek bu gösterir.
+Kullanmak mümkün mü [ `Task.Delay` ](xref:System.Threading.Tasks.Task.Delay(System.Int32)) platformdan bağımsız Zamanlayıcı oluşturmak için. [ **TaskDelayClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TaskDelayClock) örnek bunu gösterir.
 
 ## <a name="file-inputoutput"></a>Giriş/Çıkış dosyası
 
-Geleneksel olarak, .NET [ `System.IO` ](https://developer.xamarin.com/api/namespace/System.IO/) ad alanı, dosya g/ç desteği kaynak açıldı. Bu ad alanındaki bazı yöntemleri zaman uyumsuz işlemleri desteklemesine rağmen çoğu yoktur. Ad alanı, Gelişmiş dosya g/ç işlevleri gerçekleştirmek birkaç basit yöntem çağrılarını da destekler.
+Geleneksel olarak, .NET [ `System.IO` ](xref:System.IO) ad alanı, kaynak dosya g/ç desteği geldi. Bu ad alanındaki bazı yöntemler, zaman uyumsuz işlemler desteklese de çoğu yoktur. Ad alanı ayrıca Gelişmiş dosya g/ç işlevleri gerçekleştiren birkaç basit bir yöntem çağrılarını destekler.
 
-### <a name="good-news-and-bad-news"></a>İyi haber ve hatalı Haberleri
+### <a name="good-news-and-bad-news"></a>Güzel bir haberimiz var ve bozuk Haberleri
 
 Xamarin.Forms uygulaması yerel depolamayı destekle tarafından desteklenen tüm platformlar &mdash; uygulamaya özel depolama.
 
-Xamarin.iOS ve Xamarin.Android kitaplıkları Xamarin açıkça bu iki platform için uyarlanabilir .NET sürümünü içerir. Sınıflardan bunlar `System.IO` bu iki platform dosya g/ç uygulama yerel depolama ile gerçekleştirmek için kullanabilirsiniz.
+Xamarin.iOS ve Xamarin.Android kitaplıkları, .NET, Xamarin, açıkça bu iki platform için uyarlanabilir bir sürümünü içerir. Sınıflardan bunlar `System.IO` iki bu platformlarda uygulama yerel depolama ile dosya g/ç gerçekleştirmek için kullanabilirsiniz.
 
-Ancak, bunlar için arama yaparsanız `System.IO` Xamarin.Forms PCL sınıflarında, olmaz bulduğunuz bunları. Windows çalışma zamanı API, tamamen revamped Microsoft dosya g/ç sorunudur. Windows 8.1, Windows Phone 8.1 ve evrensel Windows platformu hedefleyen programlar kullanmayın `System.IO` dosya g/ç için.
+Ancak, bunlar için arama yaparsanız `System.IO` Xamarin.Forms PCL sınıflarda, bulamaz bunları. Bu tamamen modernize Microsoft dosya g/ç için Windows Runtime API sorunudur. Windows 8.1, Windows Phone 8.1 ve evrensel Windows platformu hedefleyen programlar kullanmayın `System.IO` dosya g/ç için.
 
-Bu kullanmanız gerekecektir anlamına gelir [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) (ilk ele [ **Bölüm 9. Platforma özgü API çağrıları** ](chapter09.md) dosya g/ç uygulamak için.
+Kullanmanız gerekir yani [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (ilk ele [ **Bölüm 9. Platforma özgü API çağrıları** ](chapter09.md) dosya g/ç uygulamak için.
 
-### <a name="a-first-shot-at-cross-platform-file-io"></a>Platformlar arası dosya g/ç sırasında ilk görüntüsü
+### <a name="a-first-shot-at-cross-platform-file-io"></a>Platformlar arası dosya g/ç sırasında ilk bir görüntüsü
 
-[ **TextFileTryout** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileTryout) örnek tanımlayan bir [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/TextFileTryout/TextFileTryout/TextFileTryout/IFileHelper.cs) dosya g/ç ve tüm platformlarda bu arabirim uygulamaları için arabirim. Ancak, Windows çalışma zamanı dosya g/ç yöntemleri zaman uyumsuz olduğundan bu arabirim yöntemleri ile Windows çalışma zamanı uygulamaları çalışmıyor.
+[ **TextFileTryout** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileTryout) örnek tanımlayan bir [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/TextFileTryout/TextFileTryout/TextFileTryout/IFileHelper.cs) dosya g/ç ve tüm platformlarda bu arabirimin uygulamaları için arabirim. Ancak, Windows çalışma zamanı dosya g/ç yöntemleri zaman uyumsuz olduğundan bu arabirim yöntemleri ile Windows çalışma zamanı uygulamaları çalışmaz.
 
 ### <a name="accommodating-windows-runtime-file-io"></a>Windows çalışma zamanı dosya g/ç destekleme
 
-Windows çalışma zamanı altında çalışan programları kullanın sınıflarda [ `Windows.Storage` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) ve [ `Windows.Storage.Streams` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.aspx) ad alanları için dosya g/ç, uygulama yerel depolama da dahil olmak üzere. Microsoft, 50'den fazla milisaniye kullanıcı Arabirimi iş parçacığı engelleme önlemek için zaman uyumsuz gerektiren herhangi bir işlem belirlediğinden bu dosya g/ç yöntemler çoğunlukla zaman uyumsuz.
+Windows çalışma zamanı altında çalışan programları kullanın sınıflarda [ `Windows.Storage` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) ve [ `Windows.Storage.Streams` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.aspx) ad alanları için dosya g/ç uygulama yerel depolama da dahil olmak üzere. Microsoft, karar 50'den fazla milisaniye UI iş parçacığı engellenmesini önlemek için zaman uyumsuz gerektiren herhangi bir işlem olduğundan, bu dosya g/ç yöntemler çoğunlukla zaman uyumsuz olması.
 
-Diğer uygulamalar tarafından kullanılır böylece bu yeni bir yaklaşım gösteren kod Kitaplığı'nda olacaktır.
+Böylece diğer uygulamalar tarafından kullanılabilir, bu yeni bir yaklaşım gösteren kod Kitaplığı'nda olacaktır.
 
-## <a name="platform-specific-libraries"></a>Platforma özgü kitaplıkları
+## <a name="platform-specific-libraries"></a>Platforma özgü kitaplıklar
 
-Yeniden kullanılabilir kod kitaplıklarında depolamak için avantajlıdır. Yeniden kullanılabilir kod farklı parçalarını tamamen farklı işletim sistemleri için olduğunda tabii daha zordur.
+Yeniden kullanılabilir kod kitaplıkları depolamak için avantajlıdır. Yeniden kullanılabilir kod farklı parçaları için tamamen farklı işletim sistemleri olduğunda daha da zordur.
 
-[ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) çözüm bir yaklaşım gösterir. Bu çözüm yedi farklı projelere içerir:
+[ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) çözüm, bir yaklaşımı gösterir. Bu çözüm, yedi farklı projeler içeriyor:
 
 - [**Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform), normal bir Xamarin.Forms PCL
 - [**Xamarin.FormsBook.Platform.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS), bir iOS sınıf kitaplığı
@@ -98,65 +98,65 @@ Yeniden kullanılabilir kod kitaplıklarında depolamak için avantajlıdır. Ye
 - [**Xamarin.FormsBook.Platform.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinPhone), a PCL for Windows Phone 8.1
 - [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT), a shared project for code that is common to all the Windows platforms
 
-Tüm Bireysel platform projeleri (dışında **Xamarin.FormsBook.Platform.WinRT**) başvuran **Xamarin.FormsBook.Platform**. Bir başvuru üç Windows projeleri sahip **Xamarin.FormsBook.Platform.WinRT**.
+Tüm Bireysel platformu projelerinde (dışında **Xamarin.FormsBook.Platform.WinRT**) başvuru **Xamarin.FormsBook.Platform**. Üç Windows proje başvuru sahip **Xamarin.FormsBook.Platform.WinRT**.
 
-Tüm projeleri içeren bir statik `Toolkit.Init` Xamarin.Forms uygulaması çözümdeki bir proje ile tarafından doğrudan başvurulduğunda kitaplığı yüklendiğinden emin olmak için yöntem.
+Tüm projeleri içeren bir statik `Toolkit.Init` doğrudan bir Xamarin.Forms uygulaması çözümde bir proje tarafından başvuruluyor, kitaplık yüklendiğinden emin olmak için yöntemi.
 
-**Xamarin.FormsBook.Platform** projeyi içeren yeni [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/IFileHelper.cs) arabirimi. Tüm yöntemleri şimdi adlarıyla sahip `Async` sonekleri ve return `Task` nesneleri.
+**Xamarin.FormsBook.Platform** projesini içeren yeni [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/IFileHelper.cs) arabirimi. Tüm yöntemleri artık ile adlara sahip `Async` sonekleri ve dönüş `Task` nesneleri.
 
-**Xamarin.FormsBook.Platform.WinRT** projeyi içeren [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) Windows çalışma zamanı için sınıf.
+**Xamarin.FormsBook.Platform.WinRT** projesini içeren [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) Windows çalışma zamanı sınıfı.
 
-**Xamarin.FormsBook.Platform.iOS** projeyi içeren [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/FileHelper.cs) iOS için sınıf. Bu yöntemleri şimdi zaman uyumsuz olması gerekir. Yöntemlerin bazıları tanımlanan yöntemleri zaman uyumsuz sürümlerini kullanan `StreamWriter` ve `StreamReader`: [ `WriteAsync` ](https://developer.xamarin.com/api/member/System.IO.StreamWriter.WriteAsync/p/System.String/) ve [ `ReadToEndAsync` ](https://developer.xamarin.com/api/member/System.IO.StreamReader.ReadToEndAsync()/). Diğer bir sonuç dönüştürme bir `Task` kullanarak nesne [ `FromResult` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task.FromResult%7BTResult%7D/p/TResult/) yöntemi.
+**Xamarin.FormsBook.Platform.iOS** projesini içeren [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/FileHelper.cs) iOS için sınıf. Bu yöntemler artık zaman uyumsuz olması gerekir. Bazı yöntemlere içinde tanımlanan yöntemleri zaman uyumsuz sürümlerini kullanan `StreamWriter` ve `StreamReader`: [ `WriteAsync` ](xref:System.IO.StreamWriter.WriteAsync(System.String)) ve [ `ReadToEndAsync` ](xref:System.IO.StreamReader.ReadToEndAsync). Başkaları için bir sonuç dönüştürme bir `Task` kullanarak nesne [ `FromResult` ](xref:System.Threading.Tasks.Task.FromResult*) yöntemi.
 
-**Xamarin.FormsBook.Platform.Android** projeyi içeren bir benzer [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/FileHelper.cs) Android için sınıf.
+**Xamarin.FormsBook.Platform.Android** projesini içeren bir benzer [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/FileHelper.cs) Android için sınıf.
 
-**Xamarin.FormsBook.Platform** projesini de içeren bir [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) kullanımını kolaylaştırır sınıfı `DependencyService` nesnesi.
+**Xamarin.FormsBook.Platform** proje de içeren bir [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) kolaylaştırır sınıfı `DependencyService` nesne.
 
-Bu kitaplıklar kullanmak için uygulama çözümünü tüm projelerde içermelidir **Xamarin.FormsBook.Platform** çözümü ve her uygulama projeleri içinde karşılık gelen kitaplığına bir başvuru olmalıdır  **Xamarin.FormsBook.Platform**.
+Bu kitaplıklar kullanmak için uygulama çözümü, tüm projelerde içermelidir **Xamarin.FormsBook.Platform** çözüm ve her uygulama projelerinden birine karşılık gelen kitaplığına bir başvuru olmalıdır  **Xamarin.FormsBook.Platform**.
 
-[ **TextFileAsync** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) çözümü nasıl kullanılacağını gösteren **Xamarin.FormsBook.Platform** kitaplıkları. Projelerin her biri için bir çağrı sahip `Toolkit.Init`. Uygulama zaman uyumsuz dosya g/ç kullanır işlevleri.
+[ **TextFileAsync** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) çözüm nasıl kullanılacağını gösterir **Xamarin.FormsBook.Platform** kitaplıkları. Projelerin her biri için bir çağrı sahip `Toolkit.Init`. Uygulama zaman uyumsuz dosya g/ç yararlanır işlevleri.
 
 ### <a name="keeping-it-in-the-background"></a>Arka planda tutma
 
-Birden çok zaman uyumsuz yöntemleri çağrı yapmak kitaplıkları yöntemleri &mdash; gibi `WriteFileAsync` ve `ReadFileASync` Windows çalışma zamanı yöntemleri [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) sınıfı &mdash; biraz yapılabilir kullanarak daha verimli [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/) geri kullanıcı arabirimi iş parçacığı geçişi önlemek için yöntem.
+Birden çok zaman uyumsuz yöntem çağrı yapmak kitaplıkları yöntemleri &mdash; gibi `WriteFileAsync` ve `ReadFileASync` Windows çalışma zamanı yöntemleri [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) sınıfı &mdash; biraz yapılabilir kullanarak daha verimli [ `ConfigureAwait` ](xref:System.Threading.Tasks.Task`1.ConfigureAwait(System.Boolean)) geri kullanıcı arabirimi iş parçacığına geçiş önlemek için yöntemi.
 
-### <a name="dont-block-the-ui-thread"></a>Kullanıcı Arabirimi iş parçacığı engelleme!
+### <a name="dont-block-the-ui-thread"></a>UI iş parçacığı engelleme!
 
-Bazen kullanmaktan kaçının tempting `ContinueWith` veya `await` kullanarak [ `Result` ](https://developer.xamarin.com/api/property/System.Threading.Tasks.Task%3CTResult%3E.Result/) yöntemleri özelliği. Kullanıcı Arabirimi iş parçacığı engellemek veya bile uygulamayı kapatmak için bu kaçınılmalıdır.
+Bazen kullanmaktan kaçının daha cazip `ContinueWith` veya `await` kullanarak [ `Result` ](xref:System.Threading.Tasks.Task`1.Result) yöntemleri özelliği. UI iş parçacığını engelleyen veya hatta uygulamayı kapatmak için bu kaçınılmalıdır.
 
-## <a name="your-own-awaitable-methods"></a>Bildirdiğimize yöntemlerinizi
+## <a name="your-own-awaitable-methods"></a>Beklenebilir yöntemlerinizi
 
-Aşağıdakilerden birini geçirerek biraz kod zaman uyumsuz olarak çalıştırabilirsiniz [ `Task.Run` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task.Run/p/System.Action/) yöntemleri. Çağırabilirsiniz `Task.Run` bazı ek yükü işleme bir zaman uyumsuz yöntem içinde.
+Biri olarak geçirerek bazı kod zaman uyumsuz olarak çalıştırabilirsiniz [ `Task.Run` ](xref:System.Threading.Tasks.Task.Run(System.Action)) yöntemleri. Çağırabilirsiniz `Task.Run` bazı ek yükü işler zaman uyumsuz bir yöntem içinde.
 
 Çeşitli `Task.Run` desenleri aşağıda ele alınmıştır.
 
 ### <a name="the-basic-mandelbrot-set"></a>Temel Mandelbrot kümesi
 
-Gerçek zamanlı olarak ayarlamak Mandelbrot çizmek için [ **Xamarin.Forms.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplık sahip bir [ `Complex` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/Complex.cs) yapısı gösterilene benzer `System.Numerics` ad alanı.
+Gerçek zamanlı olarak ayarlanmış Mandelbrot çizmek için [ **Xamarin.Forms.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığın bir [ `Complex` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/Complex.cs) yapısı gösterilene benzer `System.Numerics` ad alanı.
 
-[ **MandelbrotSet** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotSet) örnek sahip bir `CalculateMandeblotAsync` yöntemi temel beyaz Mandelbrot kümesi hesaplar ve kullandığı kendi arka plan kod dosyasına [ `BmpMaker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs)bir bit eşlem'i yerleştirilecek.
+[ **MandelbrotSet** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotSet) örnek sahip bir `CalculateMandeblotAsync` yöntemi temel beyaz Mandelbrot kümesi hesaplar ve kullandığı arka plan kod dosyasındaki [ `BmpMaker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs)üzerinde bir bit eşlem yerleştirmek için.
 
 ### <a name="marking-progress"></a>İlerleme işaretleme
 
-Zaman uyumsuz bir yöntem rapor ilerlemesini için örneği bir [ `Progress<T>` ](https://developer.xamarin.com/api/type/System.Progress%3CT%3E/) sınıfı ve türünde bir bağımsız değişken için zaman uyumsuz yöntem tanımlamak [ `IProgress<T>` ](https://developer.xamarin.com/api/type/System.IProgress%3CT%3E/). Bu, gösterilmiştir [ **MandelbrotProgress** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotProgress) örnek.
+Zaman uyumsuz bir yöntemden alınan ilerleme durumunu raporlamak örneği oluşturabilir bir [ `Progress<T>` ](xref:System.Progress`1) türünde bir bağımsız değişken için zaman uyumsuz bir yöntemi tanımlamak ve sınıf [ `IProgress<T>` ](xref:System.IProgress`1). Bu gösterilmiştir [ **MandelbrotProgress** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotProgress) örnek.
 
 ### <a name="cancelling-the-job"></a>İşi iptal ediliyor
 
-İşlem iptal edilemez olması için zaman uyumsuz bir yöntem de yazabilirsiniz. Adlı bir sınıf ile başlayan [ `CancellationTokenSource` ](https://developer.xamarin.com/api/type/System.Threading.CancellationTokenSource/). [ `Token` ](https://developer.xamarin.com/api/property/System.Threading.CancellationTokenSource.Token/) Özelliktir türünde bir değer [ `CancellationToken` ](https://developer.xamarin.com/api/type/System.Threading.CancellationToken/). Bu zaman uyumsuz işlev geçirilir. Bir programı çağırır [ `Cancel` ](https://developer.xamarin.com/api/member/System.Threading.CancellationTokenSource.Cancel()/) yöntemi `CancellationTokenSource` (genellikle, bir eylem kullanıcı tarafından yanıta) zaman uyumsuz işlev iptal etmek için.
+Zaman uyumsuz bir yöntem edilebilen olmasını da yazabilirsiniz. Adlı bir sınıf ile başlayan [ `CancellationTokenSource` ](xref:System.Threading.CancellationTokenSource). [ `Token` ](xref:System.Threading.CancellationTokenSource.Token) Özelliktir türünde bir değer [ `CancellationToken` ](xref:System.Threading.CancellationToken). Bu zaman uyumsuz bir işleve geçirilir. Bir program [ `Cancel` ](xref:System.Threading.CancellationTokenSource.Cancel) yöntemi `CancellationTokenSource` (genellikle, kullanıcı tarafından bir eyleme yanıt) zaman uyumsuz işlev iptal etmek için.
 
-Zaman uyumsuz yöntem düzenli olarak kontrol edebilirsiniz [ `IsCancellationRequested` ](https://developer.xamarin.com/api/property/System.Threading.CancellationToken.IsCancellationRequested/) özelliği `CancellationToken` ve özellik ise çıkış `true`, veya yalnızca arama [ `ThrowIfCancellationRequested` ](https://developer.xamarin.com/api/member/System.Threading.CancellationToken.ThrowIfCancellationRequested()/) yöntemi, yöntem durumda ile biten bir [ `OperationCancelledException` ](https://developer.xamarin.com/api/type/System.OperationCanceledException/).
+Zaman uyumsuz yöntemin düzenli aralıklarla kontrol edebilirsiniz [ `IsCancellationRequested` ](xref:System.Threading.CancellationToken.IsCancellationRequested) özelliği `CancellationToken` ve özellik ise çıkış `true`, ya da yalnızca çağrı [ `ThrowIfCancellationRequested` ](xref:System.Threading.CancellationToken.ThrowIfCancellationRequested) yöntemi, ile biten yöntem durumda bir [ `OperationCancelledException` ](xref:System.OperationCanceledException).
 
-[ **MandelbrotCancellation** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotCancellation) örnek bir işlem iptal edilemez işlevinin kullanımı gösterilmiştir.
+[ **MandelbrotCancellation** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotCancellation) örnek edilebilen bir işlev kullanımını gösterir.
 
 ### <a name="an-mvvm-mandelbrot"></a>MVVM Mandelbrot
 
-[ **MandelbrotXF** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotXF) örnek daha geniş bir kullanıcı arabirimine sahiptir ve çoğunlukla bağlı olduğu bir [ `MandelbrotModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotModel.cs) ve [ `MandelbrotViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotViewModel.cs)sınıfları:
+[ **MandelbrotXF** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotXF) örnek daha geniş bir kullanıcı arabirimine sahiptir ve çoğunlukla dayanır bir [ `MandelbrotModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotModel.cs) ve [ `MandelbrotViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotViewModel.cs)sınıflar:
 
-[![Üçlü ekran görüntüsü Mandelbrot X F](images/ch20fg13-small.png "MVVM Mandelbrot")](images/ch20fg13-large.png#lightbox "MVVM Mandelbrot")
+[![Üç ekran görüntüsü Mandelbrot X F](images/ch20fg13-small.png "MVVM Mandelbrot")](images/ch20fg13-large.png#lightbox "MVVM Mandelbrot")
 
-## <a name="back-to-the-web"></a>Geri Web'e
+## <a name="back-to-the-web"></a>Web geri
 
-[ `WebRequest` ](https://developer.xamarin.com/api/type/System.Net.WebRequest/) Bazı örnekleri kullanılan sınıfı zaman uyumsuz programlama modeli veya APM adlı eski moda bir zaman uyumsuz protokolünü kullanır. Böyle bir sınıfın birini kullanarak modern DOKUNUN Protokolü dönüştürebilirsiniz `FromAsync` yöntemleri [ `TaskFactory` ](https://developer.xamarin.com/api/type/System.Threading.Tasks.TaskFactory%3CTResult%3E/) sınıfı. [ **ApmToTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/ApmToTap) örnek bu gösterir.
+[ `WebRequest` ](xref:System.Net.WebRequest) Bazı örneklerde kullanılan sınıfı zaman uyumsuz programlama modeli veya APM adlı eski moda bir zaman uyumsuz protokolünü kullanır. Sınıflardan birini kullanarak modern DOKUNUN Protokolü dönüştürebilirsiniz `FromAsync` yöntemleri [ `TaskFactory` ](xref:System.Threading.Tasks.TaskFactory`1) sınıfı. [ **ApmToTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/ApmToTap) örnek bunu gösterir.
 
 
 

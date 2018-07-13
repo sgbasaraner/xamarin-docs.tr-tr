@@ -1,26 +1,26 @@
 ---
-title: Tutarak hareketi tanıyıcı ekleme
-description: Bu makalede tutarak hareketi tutarak konumda görüntünün etkileşimli yakınlaştırma gerçekleştirmek için nasıl kullanılacağı açıklanmaktadır.
+title: Tabletinizde hareket tanıyıcı ekleme
+description: Bu makalede, etkileşimli yakınlaştırma tabletinizde konumda görüntünün gerçekleştirmek için tabletinizde hareket kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 3600a8bf059bf29429cce35a233cc6618daa4d79
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 37befdcd4ccbcd49e3cebda92d55ae6f70da2ad6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241783"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998709"
 ---
-# <a name="adding-a-pinch-gesture-recognizer"></a>Tutarak hareketi tanıyıcı ekleme
+# <a name="adding-a-pinch-gesture-recognizer"></a>Tabletinizde hareket tanıyıcı ekleme
 
-_Tutarak hareketi etkileşimli yakınlaştırma gerçekleştirmek için kullanılır ve PinchGestureRecognizer sınıfı uygulanır. Tutarak hareketi için yaygın bir senaryo tutarak konumda görüntünün etkileşimli yakınlaştırma gerçekleştirmektir. Bu görünüm penceresinin içeriğini ölçeklendirme tarafından gerçekleştirilir ve bu makalede gösterilmiştir._
+_Tabletinizde hareket etkileşimli yakınlaştırma gerçekleştirmek için kullanılır ve PinchGestureRecognizer sınıfıyla uygulanır. Tabletinizde hareket için yaygın bir senaryo, görüntünün tabletinizde konumda etkileşimli yakınlaştırma gerçekleştirmektir. Bu görünüm penceresinin içeriğini ölçeklendirme tarafından gerçekleştirilir ve bu makalede gösterilmiştir._
 
 ## <a name="overview"></a>Genel Bakış
 
-Bir kullanıcı arabirimi öğesi yakınlaştırılabilir tutarak hareketi sahip olmak için oluşturun bir [ `PinchGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/) örneği, işleme [ `PinchUpdated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.PinchGestureRecognizer.PinchUpdated/) olayı ve yeni hareketi tanıyıcı eklemek [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) kullanıcı arabirimi öğesi koleksiyonu. Aşağıdaki örnekte gösterildiği kod bir `PinchGestureRecognizer` bağlı bir [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) öğe:
+Bir kullanıcı arabirimi öğesi yakınlaştırılabilir tabletinizde hareket sahip olmak için oluşturun bir [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) örneği, işlemek [ `PinchUpdated` ](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) olay ve eklemek için yeni hareket tanıyıcı [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) kullanıcı arabirimi öğesi koleksiyonu. Aşağıdaki kod örnekte gösterildiği bir `PinchGestureRecognizer` iliştirilmiş bir [ `Image` ](xref:Xamarin.Forms.Image) öğesi:
 
 ```csharp
 var pinchGesture = new PinchGestureRecognizer();
@@ -30,7 +30,7 @@ pinchGesture.PinchUpdated += (s, e) => {
 image.GestureRecognizers.Add(pinchGesture);
 ```
 
-Bu ayrıca XAML'de, aşağıdaki kod örneğinde gösterildiği gibi elde edilebilir:
+Bu ayrıca XAML içinde aşağıdaki kod örneğinde gösterildiği gibi gerçekleştirilebilir:
 
 ```xaml
 <Image Source="waterfront.jpg">
@@ -40,7 +40,7 @@ Bu ayrıca XAML'de, aşağıdaki kod örneğinde gösterildiği gibi elde edileb
 </Image>
 ```
 
-Kodu `OnPinchUpdated` olay işleyicisi sonra arka plan kod dosyasına eklenir:
+Kodu `OnPinchUpdated` olay işleyicisi ardından arka plan kod dosyasına eklenir:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -49,9 +49,9 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-## <a name="creating-a-pinchtozoom-container"></a>PinchToZoom kapsayıcı oluşturma
+## <a name="creating-a-pinchtozoom-container"></a>PinchToZoom bir kapsayıcı oluşturma
 
-Yakınlaştırma işlemi gerçekleştirmek için tutarak hareketi işleme kullanıcı arabirimini dönüştürmek için bazı matematik gerektirir. Bu bölüm, etkileşimli olarak herhangi bir kullanıcı arabirimi öğesi yakınlaştırma için kullanılan matematik gerçekleştirmek için genelleştirilmiş yardımcı sınıfı içerir. Aşağıdaki örnekte gösterildiği kod `PinchToZoomContainer` sınıfı:
+Yakınlaştırma işlemi gerçekleştirmek için tabletinizde hareket işleme kullanıcı arabirimini dönüştürmek için bazı matematik gerektirir. Bu bölüm, etkileşimli bir kullanıcı arabirimi öğesi yakınlaştırmak için kullanılan matematik gerçekleştirmek için genelleştirilmiş yardımcı bir sınıf içerir. Aşağıdaki örnekte gösterildiği kod `PinchToZoomContainer` sınıfı:
 
 ```csharp
 public class PinchToZoomContainer : ContentView
@@ -72,7 +72,7 @@ public class PinchToZoomContainer : ContentView
 }
 ```
 
-Böylece tutarak hareketi Sarmalanan bir kullanıcı arabirimi öğesi yakınlaşır Bu sınıf bir kullanıcı arabirimi öğesi Sarmalanan. Aşağıdaki XAML kodu örnekteki `PinchToZoomContainer` kaydırma bir [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) öğe:
+Tabletinizde hareket Sarmalanan kullanıcı arabirimi öğesi yakınlaşır. böylece bu sınıf kullanıcı arabirimi öğesi sarmalanabilir. Aşağıdaki XAML kod örnekte gösterildiği `PinchToZoomContainer` sarmalama bir [ `Image` ](xref:Xamarin.Forms.Image) öğesi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,7 +91,7 @@ Böylece tutarak hareketi Sarmalanan bir kullanıcı arabirimi öğesi yakınla�
 </ContentPage>
 ```
 
-Aşağıdaki örnekte gösterildiği kod nasıl `PinchToZoomContainer` saran bir [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) bir C# sayfasındaki öğe:
+Aşağıdaki kod örnekte gösterildiği nasıl `PinchToZoomContainer` saran bir [ `Image` ](xref:Xamarin.Forms.Image) bir C# sayfasındaki öğe:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -110,7 +110,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Zaman [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) öğe, tutarak hareketi alır, görüntülenen görüntünün uzaklaştırılacağını bileşenini veya yetersiz. Yakınlaştırma tarafından gerçekleştirilen `PinchZoomContainer.OnPinchUpdated` aşağıdaki kod örneğinde gösterildiği yöntemi:
+Zaman [ `Image` ](xref:Xamarin.Forms.Image) öğesi tabletinizde hareket alır, görüntülenen görüntünün uzaklaştırılacağını açma veya giden. Yakınlaştırma tarafından gerçekleştirilen `PinchZoomContainer.OnPinchUpdated` aşağıdaki kod örneğinde gösterilen yöntemi:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -160,15 +160,15 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-Bu yöntem, kullanıcının tutarak hareketi üzerinde temel Sarmalanan bir kullanıcı arabirimi öğesi yakınlaştırma düzeyini güncelleştirir. Bu değerleri kullanılarak elde edilir [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale/), [ `ScaleOrigin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin/) ve [ `Status` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.Status/) özelliklerini [ `PinchGestureUpdatedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureUpdatedEventArgs/) tutarak hareketi başlangıcı sırasında uygulanacak ölçek çarpanı hesaplamak için örneği. Sarmalanan kullanıcı öğesi ayarlayarak tutarak hareketi kaynak sonra uzaklaştırılacağını kendi [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/), [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/), ve [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) hesaplanan değerler özellikleri.
+Bu yöntem, kullanıcının üzerinde tabletinizde hareket tabanlı Sarmalanan kullanıcı arabirimi öğesi yakınlaştırma seviyesini güncelleştirir. Bu değerleri kullanılarak elde edilir [ `Scale` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale), [ `ScaleOrigin` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) ve [ `Status` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) özelliklerini [ `PinchGestureUpdatedEventArgs` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) örneği tabletinizde hareket başlangıcı sırasında uygulanması için ölçek faktörünü hesaplayabilirsiniz. Sarmalanan kullanıcı öğesi ayarlayarak tabletinizde hareket kaynağını ardından uzaklaştırılacağını kendi [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX), [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY), ve [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) hesaplanan değerler özellikleri.
 
 ## <a name="summary"></a>Özet
 
-Tutarak hareketi etkileşimli yakınlaştırma gerçekleştirmek için kullanılır ve ile uygulanan [ `PinchGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/) sınıfı.
+Tabletinizde hareket ile birlikte uygulanır ve etkileşimli yakınlaştırma gerçekleştirmek için kullanılan [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) sınıfı.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [PinchGesture (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PinchGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [PinchGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [PinchGestureRecognizer](xref:Xamarin.Forms.PinchGestureRecognizer)

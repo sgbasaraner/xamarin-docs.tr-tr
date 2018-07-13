@@ -1,52 +1,52 @@
 ---
-title: Efekt oluşturma
-description: Bir denetimin özelleştirme etkileri basitleştirin. Bu makalede nasıl odağı denetimi elde edince giriş denetiminin arka plan rengi değişir bir efekt oluşturulacağı gösterilmektedir.
+title: Bir efekti oluşturma
+description: Bir denetimin özelleştirme etkileri basitleştirin. Bu makalede, Denetim odağı aldığında, giriş denetiminin arka plan rengi değişen efekt oluşturma işlemini gösterir.
 ms.prod: xamarin
 ms.assetid: 9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: d308ea4a9d4055c75ef3a4a1283b5d6a5ab24b0a
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b29d83999724a35293882f7b9efc0158171c4fd2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846811"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998166"
 ---
-# <a name="creating-an-effect"></a>Efekt oluşturma
+# <a name="creating-an-effect"></a>Bir efekti oluşturma
 
-_Bir denetimin özelleştirme etkileri basitleştirin. Bu makalede nasıl odağı denetimi elde edince giriş denetiminin arka plan rengi değişir bir efekt oluşturulacağı gösterilmektedir._
+_Bir denetimin özelleştirme etkileri basitleştirin. Bu makalede, Denetim odağı aldığında, giriş denetiminin arka plan rengi değişen efekt oluşturma işlemini gösterir._
 
-Her platforma özgü project üzerinde bir etkisi oluşturma işlemi aşağıdaki gibidir:
+Her platforma özgü projede efekt oluşturma işlemi aşağıdaki gibidir:
 
-1. Öğesinin bir alt kümesi oluşturmak `PlatformEffect` sınıfı.
-1. Geçersiz kılma `OnAttached` denetimi özelleştirmek için yöntem ve yazma mantığı.
-1. Geçersiz kılma `OnDetached` gerekirse denetim özelleştirme temizlemeye yöntemi ve yazma mantığı.
-1. Ekleme bir [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) özniteliği etkisi sınıfı. Bu öznitelik, bir şirket uluslararası ad alanı aynı ada sahip başka etkileri çakışmalarla önleme efektler için ayarlar. Bu öznitelik yalnızca bir kez proje uygulanabilir olduğunu unutmayın.
-1. Ekleme bir [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) özniteliği etkisi sınıfı. Bu öznitelik etkisi Xamarin.Forms tarafından grup adı ile birlikte bir denetime uygulamadan önce etkisi bulmak için kullanılan benzersiz bir kimliği ile kaydeder. Öznitelik iki parametre – etkisi ve denetime uygulamadan önce etkisi bulmak için kullanılan benzersiz bir dize türü adını alır.
+1. Oluşturma bir öğesinin `PlatformEffect` sınıfı.
+1. Geçersiz kılma `OnAttached` denetimi özelleştirmek için yöntemi ve yazma mantığı.
+1. Geçersiz kılma `OnDetached` denetimi özelleştirme gerekirse temizlemek için yöntemi ve yazma mantığı.
+1. Ekleme bir [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) etkisi sınıfı özniteliği. Bu öznitelik, bir şirket geniş ad alanı ile aynı ada sahip başka etkileri çakışmaları önleme etkileri için ayarlar. Bu öznitelik yalnızca bir kez proje uygulanabilir olduğunu unutmayın.
+1. Ekleme bir [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) etkisi sınıfı özniteliği. Bu öznitelik etkisi Xamarin.Forms tarafından grup adının yanı sıra geçerli denetimi uygulamadan önce bulmak için kullanılan benzersiz bir kimliği ile kaydeder. Öznitelik, iki parametre – etkin ve etkin bir denetime uygulamadan önce bulmak için kullanılan benzersiz bir dize türü adını alır.
 
-Etkisi, ardından uygun denetimi ekleyerek tüketilebilir.
+Efekt için uygun denetimi ekleyerek ardından tarafından kullanılabilir.
 
 > [!NOTE]
-> Her platform projesinde efekt sağlamak isteğe bağlıdır. Kayıtlı değilse, bir efekt kullanılmaya çalışılıyor hiçbir şey yapmaz boş olmayan bir değer döndürür.
+> Her platform proje içinde bir efektin sağlamak isteğe bağlıdır. Kayıtlı değilse, efekt kullanılmaya çalışılıyor, hiçbir şey yapmaz ve null olmayan bir değer döndürür.
 
-Örnek uygulamayı gösteren bir `FocusEffect` odak elde edince denetim arka plan rengini değişiklikler. Aşağıdaki diyagram, her proje örnek uygulamasında, aralarındaki ilişkilerin birlikte sorumlulukları gösterir:
+Örnek uygulamayı gösteren bir `FocusEffect` odak edince denetimin arka plan rengi değişiklikler. Örnek uygulamada, onlar arasındaki ilişkileri yanı sıra her bir proje sorumluluklarını Aşağıdaki diyagramda gösterilmektedir:
 
-![](creating-images/focus-effect.png "Odağı etkisi Proje Sorumlulukları")
+![](creating-images/focus-effect.png "Odağı geçerli proje sorumlulukları")
 
-Bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetiminin `HomePage` tarafından özelleştirilmiş `FocusEffect` her platforma özgü projesinde sınıfı. Her `FocusEffect` sınıfı türer `PlatformEffect` her platform için sınıf. Bu, sonuçlanır `Entry` odağı denetimi elde edince Değişeni aşağıdaki ekran görüntülerinde gösterildiği gibi bir platforma özgü arka plan rengi ile işlenen denetim:
+Bir [ `Entry` ](xref:Xamarin.Forms.Entry) denetimi `HomePage` göre özelleştirilmiş `FocusEffect` her platforma özgü projede sınıfı. Her `FocusEffect` sınıf türetilir `PlatformEffect` her platform için sınıf. Sonuçlanır `Entry` denetim odağı aldığında Değişeni aşağıdaki ekran görüntülerinde gösterildiği gibi bir platforma özgü arka plan rengi ile işlenen denetim:
 
-![](creating-images/screenshots-1.png "Odak her platformda etkili")
-![](creating-images/screenshots-2.png "odak her platformun üzerindeki etkisi")
+![](creating-images/screenshots-1.png "Her platformda etkili odaklanmak")
+![](creating-images/screenshots-2.png "her platformda etkili odaklanın")
 
-## <a name="creating-the-effect-on-each-platform"></a>Her platformun üzerindeki etkisi oluşturma
+## <a name="creating-the-effect-on-each-platform"></a>Her platformda efekti oluşturma
 
-Aşağıdaki bölümlerde platforma özgü uygulanması açıklanmaktadır `FocusEffect` sınıfı.
+Aşağıdaki bölümlerde platforma özel uygulanışı `FocusEffect` sınıfı.
 
 ## <a name="ios-project"></a>iOS projesi
 
-Aşağıdaki örnekte gösterildiği kod `FocusEffect` uygulama iOS projesi için:
+Aşağıdaki örnekte gösterildiği kod `FocusEffect` uygulaması iOS projesi için:
 
 ```csharp
 using Xamarin.Forms;
@@ -93,13 +93,13 @@ namespace EffectsDemo.iOS
 }
 ```
 
-`OnAttached` Yöntemi kümeleri `BackgroundColor` özelliği ile açık mor denetiminin `UIColor.FromRGB` yöntemi ve ayrıca bir alanda bu renk depolar. Bu işlev içinde kaydırılan bir `try` / `catch` durumda etkisi eklendiği denetimi yoktur engelleme bir `BackgroundColor` özelliği. Hiçbir uygulama tarafından sağlanan `OnDetached` yöntemi temizleme gerekli olduğundan.
+`OnAttached` Yöntemi kümeleri `BackgroundColor` özelliği ile açık mor denetimin `UIColor.FromRGB` yöntemi ve ayrıca bir alanda bu renk depolar. Bu işlev içinde sarmalanmış bir `try` / `catch` etkisi eklendiği denetim sahip değil durumunda engelleyecek bir `BackgroundColor` özelliği. Hiçbir uygulama tarafından sağlanan `OnDetached` yöntemi temizleme gerekli olduğundan.
 
-`OnElementPropertyChanged` Geçersiz kılma bağlanabilirse özellik değişikliklerini Xamarin.Forms denetimindeki yanıt verir. Zaman [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) özellik değişikliklerini `BackgroundColor` denetiminin özelliği denetimi odağı varsa beyaza değiştirilmiş, aksi takdirde Açık Mor olarak değiştirilir. Bu işlev içinde kaydırılan bir `try` / `catch` durumda etkisi eklendiği denetimi yoktur engelleme bir `BackgroundColor` özelliği.
+`OnElementPropertyChanged` Geçersiz kılma yanıt bağlanılabilir özellik değişiklikleri Xamarin.Forms denetimi. Zaman [ `IsFocused` ](xref:Xamarin.Forms.VisualElement.IsFocused) özellik değişiklikleri `BackgroundColor` denetimi özelliği, beyaz olarak değiştirildiğinde, Denetim odağa sahip değilse, aksi takdirde ışık mor olarak değiştirilir. Bu işlev içinde sarmalanmış bir `try` / `catch` etkisi eklendiği denetim sahip değil durumunda engelleyecek bir `BackgroundColor` özelliği.
 
 ## <a name="android-project"></a>Android projesi
 
-Aşağıdaki örnekte gösterildiği kod `FocusEffect` uygulama Android projesi için:
+Aşağıdaki örnekte gösterildiği kod `FocusEffect` uygulaması Android projesi için:
 
 ```csharp
 using Xamarin.Forms;
@@ -147,11 +147,11 @@ namespace EffectsDemo.Droid
 }
 ```
 
-`OnAttached` Yöntem çağrılarını `SetBackgroundColor` açık denetim arka plan rengini ayarlamak için yöntemin yeşil ve ayrıca bir alanda bu renk depolar. Bu işlev içinde kaydırılan bir `try` / `catch` durumda etkisi eklendiği denetimi yoktur engelleme bir `SetBackgroundColor` özelliği. Hiçbir uygulama tarafından sağlanan `OnDetached` yöntemi temizleme gerekli olduğundan.
+`OnAttached` Yöntem çağrılarını `SetBackgroundColor` yöntemi açık denetimin arka plan rengini ayarlamak için yeşil ve ayrıca bir alanda bu renk depolar. Bu işlev içinde sarmalanmış bir `try` / `catch` etkisi eklendiği denetim sahip değil durumunda engelleyecek bir `SetBackgroundColor` özelliği. Hiçbir uygulama tarafından sağlanan `OnDetached` yöntemi temizleme gerekli olduğundan.
 
-`OnElementPropertyChanged` Geçersiz kılma bağlanabilirse özellik değişikliklerini Xamarin.Forms denetimindeki yanıt verir. Zaman [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) özellik değişikliklerini denetimi odağı varsa denetimin arka plan rengi beyaz değiştirildiğinde, aksi takdirde açık yeşil değiştirilir. Bu işlev içinde kaydırılan bir `try` / `catch` durumda etkisi eklendiği denetimi yoktur engelleme bir `BackgroundColor` özelliği.
+`OnElementPropertyChanged` Geçersiz kılma yanıt bağlanılabilir özellik değişiklikleri Xamarin.Forms denetimi. Zaman [ `IsFocused` ](xref:Xamarin.Forms.VisualElement.IsFocused) özellik değişiklikleri denetim odağa sahip değilse denetimin arka plan rengi beyaza dönüştürülür, aksi takdirde için açık yeşil değiştirilir. Bu işlev içinde sarmalanmış bir `try` / `catch` etkisi eklendiği denetim sahip değil durumunda engelleyecek bir `BackgroundColor` özelliği.
 
-## <a name="universal-windows-platform-projects"></a>Evrensel Windows platformu projeleri
+## <a name="universal-windows-platform-projects"></a>Evrensel Windows platformu projelerinde
 
 Aşağıdaki örnekte gösterildiği kod `FocusEffect` uygulama Evrensel Windows Platformu (UWP) projeleri için:
 
@@ -185,21 +185,21 @@ namespace EffectsDemo.UWP
 }
 ```
 
-`OnAttached` Yöntemi kümeleri `Background` mavi ve ayarlar denetiminin özelliği `BackgroundFocusBrush` beyaz özelliği. Bu işlev içinde kaydırılan bir `try` / `catch` etkisi eklendiği denetim bu özellikleri eksik durumda engelleyin. Hiçbir uygulama tarafından sağlanan `OnDetached` yöntemi temizleme gerekli olduğundan.
+`OnAttached` Yöntemi kümeleri `Background` Camgöbeği ve kümelerinin denetiminin özelliği `BackgroundFocusBrush` beyaz özelliği. Bu işlev içinde sarmalanmış bir `try` / `catch` etkisi eklendiği denetimi bu özellikleri eksik durumda engelleyin. Hiçbir uygulama tarafından sağlanan `OnDetached` yöntemi temizleme gerekli olduğundan.
 
 ## <a name="consuming-the-effect"></a>Etkisi kullanma
 
-Xamarin.Forms .NET standart kitaplığı veya paylaşılan kitaplığı projesinden efekt tüketimi için işlem aşağıdaki gibidir:
+Efekt bir Xamarin.Forms .NET Standard kitaplığı veya paylaşılan kitaplık projesi kullanma işlemi aşağıdaki gibidir:
 
 1. Efekti özelleştirilmiş bir denetimi bildirin.
-1. Denetimin ekleyerek etkisi denetimine ekleme [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) koleksiyonu.
+1. Denetimin ekleyerek etkisi denetimine ekleme [ `Effects` ](xref:Xamarin.Forms.Element.Effects) koleksiyonu.
 
 > [!NOTE]
-> Etkili örneği yalnızca tek bir denetim bağlanabilir. Bu nedenle, iki kez iki denetimleri kullanmak için bir etki çözülmelidir.
+> Bir efekti örneği yalnızca tek bir denetim eklenebilir. Bu nedenle, iki denetimlerinde iki kez kullanmak için bir efekti çözümlenmesi gerekir.
 
-## <a name="consuming-the-effect-in-xaml"></a>XAML'de etkisi kullanma
+## <a name="consuming-the-effect-in-xaml"></a>XAML etkisini kullanma
 
-Aşağıdaki XAML kodu örnekte gösterildiği bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) hangi denetimine `FocusEffect` eklenir:
+Aşağıdaki XAML kod örnekte gösterildiği bir [ `Entry` ](xref:Xamarin.Forms.Entry) denetim hangi `FocusEffect` eklenir:
 
 ```xaml
 <Entry Text="Effect attached to an Entry" ...>
@@ -210,7 +210,7 @@ Aşağıdaki XAML kodu örnekte gösterildiği bir [ `Entry` ](https://developer
 </Entry>
 ```
 
-`FocusEffect` .NET standart kitaplığı sınıfında etkisi tüketim XAML'de destekler ve aşağıdaki kod örneğinde gösterildiği:
+`FocusEffect` .NET Standard kitaplığı sınıfında etkisi tüketim XAML içinde destekler ve aşağıdaki kod örneğinde gösterilen:
 
 ```csharp
 public class FocusEffect : RoutingEffect
@@ -221,13 +221,13 @@ public class FocusEffect : RoutingEffect
 }
 ```
 
-`FocusEffect` Sınıf alt sınıfların [ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/) genellikle platforma özgü bir iç efekt sarmalar platformdan bağımsız etkisi temsil eden sınıf. `FocusEffect` Sınıfı çağırır çözümleme grup adı birleşimini oluşan bir parametre geçirme temel sınıf oluşturucusu (kullanarak belirtilen [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) etkisi sınıfı özniteliği), ve benzersiz kimliği kullanarak belirtilen [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) etkisi Sınıf özniteliği. Bu nedenle, [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) çalışma zamanında, yeni bir örneğini başlatılmış `MyCompany.FocusEffect` denetimin eklenen [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) koleksiyonu.
+`FocusEffect` Sınıfı kılabileceği [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) genellikle platforma özel efekt iç sarmalayan bir platformdan bağımsız etkisi temsil eden sınıf. `FocusEffect` Sınıfı çözümleme grup adının bir birleşimini içeren bir parametre geçirerek, bir temel sınıf oluşturucusunu çağırır (kullanarak belirtilen [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) etkisi sınıfı özniteliği), ve benzersiz kimliği kullanarak belirtilen [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) etkisi sınıfı özniteliği. Bu nedenle, [ `Entry` ](xref:Xamarin.Forms.Entry) çalışma zamanında, yeni bir örneğini başlatılır `MyCompany.FocusEffect` denetimin eklenen [ `Effects` ](xref:Xamarin.Forms.Element.Effects) koleksiyonu.
 
-Efektler bir davranış kullanarak denetimlere da eklenebilir ya da ekli özelliklerini kullanarak. Bir davranış kullanarak denetime efekt ekleme hakkında daha fazla bilgi için bkz: [yeniden kullanılabilir EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md). Ekli özellikler kullanarak denetime efekt ekleme hakkında daha fazla bilgi için bkz: [efekt parametreleri geçirme](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md).
+Efektleri bir davranış kullanarak denetimlere de eklenmesi veya iliştirilmiş özellikler kullanarak. Efekt denetime bir davranış kullanarak ekleme hakkında daha fazla bilgi için bkz. [yeniden kullanılabilir EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md). Ekli özellikler kullanarak, denetime efekt ekleme hakkında daha fazla bilgi için bkz. [efekt parametrelerini geçirme](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md).
 
-## <a name="consuming-the-effect-in-cnum"></a>C aslında kullanma&num;
+## <a name="consuming-the-effect-in-cnum"></a>C etkisini kullanma&num;
 
-Eşdeğer [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) C# ' de aşağıdaki kod örneğinde gösterilir:
+Eşdeğer [ `Entry` ](xref:Xamarin.Forms.Entry) C# ' de aşağıdaki kod örneğinde gösterilir:
 
 ```csharp
 var entry = new Entry {
@@ -236,7 +236,7 @@ var entry = new Entry {
 };
 ```
 
-`FocusEffect` Bağlı `Entry` denetimin etkisi ekleyerek örneği [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) koleksiyonu, aşağıdaki kod örneğinde gösterildiği gibi:
+`FocusEffect` İliştirildiği `Entry` denetimin etkisi ekleyerek örneği [ `Effects` ](xref:Xamarin.Forms.Element.Effects) aşağıdaki kod örneğinde gösterildiği gibi koleksiyon:
 
 ```csharp
 public HomePageCS ()
@@ -247,17 +247,17 @@ public HomePageCS ()
 }
 ```
 
-[ `Effect.Resolve` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.Resolve/p/System.String/) Döndüren bir [ `Effect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/) için belirtilen ad, olduğu çözümleme grup adı birleşimini (kullanarak belirtilen [ `ResolutionGroupName` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResolutionGroupNameAttribute/) etkisi sınıfı özniteliği) ve kullanarak belirtilen benzersiz bir kimlik [ `ExportEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ExportEffectAttribute/) etkisi Sınıf özniteliği. Bir platformda etkili sağlamıyorsa `Effect.Resolve` yöntemi döndürür olmayan bir`null` değeri.
+[ `Effect.Resolve` ](xref:Xamarin.Forms.Effect.Resolve(System.String)) Döndürür bir [ `Effect` ](xref:Xamarin.Forms.Effect) belirtilen ad için olan çözüm grubu adı (kullanarak belirtilen [ `ResolutionGroupName` ](xref:Xamarin.Forms.ResolutionGroupNameAttribute) etkisi sınıfı özniteliği) ve kullanarak belirtilen benzersiz kimliği [ `ExportEffect` ](xref:Xamarin.Forms.ExportEffectAttribute) etkisi sınıfı özniteliği. Bir platformda etkili sağlamıyorsa `Effect.Resolve` yöntemi döndürür olmayan bir`null` değeri.
 
 ## <a name="summary"></a>Özet
 
-Arka plan rengini değiştirir efekt oluşturma bu makalede gösterilen [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) zaman denetim odağı kazanır denetim.
+Bu makalede gösterilen arka plan rengini değiştirir. efekt oluşturma [ `Entry` ](xref:Xamarin.Forms.Entry) ne zaman denetim odağı kazanır denetim.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Özel Oluşturucular](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [Etkisi](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
-- [PlatformEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E/)
+- [Etkin](xref:Xamarin.Forms.Effect)
+- [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [Arka plan rengi efekti (örnek)](https://developer.xamarin.com/samples/xamarin-forms/effects/backgroundcoloreffect/)
-- [Odağı etkili (örnek)](https://developer.xamarin.com/samples/xamarin-forms/effects/focuseffect/)
+- [Odak etkisi (örnek)](https://developer.xamarin.com/samples/xamarin-forms/effects/focuseffect/)

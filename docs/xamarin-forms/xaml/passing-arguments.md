@@ -1,37 +1,37 @@
 ---
-title: XAML'de bağımsız değişkenleri geçirme
-description: Bu makalede, varsayılan olmayan kurucusuna, Fabrika yöntemlerini çağırmaya ve genel bir bağımsız değişken türünü belirtmek için bağımsız değişkenler geçirmek için kullanılan XAML öznitelikleri kullanma gösterilmektedir.
+title: XAML bağımsız değişkenleri geçirme
+description: Bu makalede, varsayılan olmayan Oluşturucular, Fabrika yöntemleri çağırmak için ve genel bir bağımsız değişken türünü belirtmek için bağımsız değişkenleri geçirmek için kullanılan XAML öznitelikleri kullanmayı gösterir.
 ms.prod: xamarin
 ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2016
-ms.openlocfilehash: c6ba3de9e50fd2ac452d9eeac169e4c1afd52ae0
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 51b72d9143895543715c519a65cf8c82aa4d12f7
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848440"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996554"
 ---
-# <a name="passing-arguments-in-xaml"></a>XAML'de bağımsız değişkenleri geçirme
+# <a name="passing-arguments-in-xaml"></a>XAML bağımsız değişkenleri geçirme
 
-_Bu makalede, varsayılan olmayan kurucusuna, Fabrika yöntemlerini çağırmaya ve genel bir bağımsız değişken türünü belirtmek için bağımsız değişkenler geçirmek için kullanılan XAML öznitelikleri kullanma gösterilmektedir._
+_Bu makalede, varsayılan olmayan Oluşturucular, Fabrika yöntemleri çağırmak için ve genel bir bağımsız değişken türünü belirtmek için bağımsız değişkenleri geçirmek için kullanılan XAML öznitelikleri kullanmayı gösterir._
 
 ## <a name="overview"></a>Genel Bakış
 
-Genellikle, nesneleri bağımsız değişken gerektirir oluşturucular ile ya da statik oluşturma yöntemini çağırarak örneği oluşturmak gereklidir. XAML'de bu sağlanabilir kullanarak `x:Arguments` ve `x:FactoryMethod` öznitelikleri:
+Genellikle, bağımsız değişken gerektirir oluşturuculara sahip ya da statik oluşturma yöntemini çağırarak nesneleri somutlaştırmak gereklidir. XAML içinde bu gerçekleştirilebilir kullanarak `x:Arguments` ve `x:FactoryMethod` öznitelikleri:
 
-- `x:Arguments` Özniteliği, varsayılan olmayan bir oluşturucu ya da bir fabrika yöntemi nesne bildirimi oluşturucu bağımsız değişkenlerini belirtmek için kullanılır. Daha fazla bilgi için bkz: [oluşturucu bağımsız değişkenleri geçirme](#constructor_arguments).
-- `x:FactoryMethod` Öznitelik, bir nesneyi başlatmak için kullanılan Üreteç yöntemi belirtmek için kullanılır. Daha fazla bilgi için bkz: [Fabrika yöntemleri çağırma](#factory_methods).
+- `x:Arguments` Özniteliği oluşturucu bağımsız varsayılan olmayan bir oluşturucu ya da bir fabrika yöntemi nesne bildirimi belirtmek için kullanılır. Daha fazla bilgi için [oluşturucu bağımsız değişkenleri geçirme](#constructor_arguments).
+- `x:FactoryMethod` Öznitelik, bir nesneyi başlatmak için kullanılan bir Üreteç yöntemi belirtmek için kullanılır. Daha fazla bilgi için [Fabrika yöntemleri çağırma](#factory_methods).
 
-Ayrıca, `x:TypeArguments` özniteliği, genel bir tür oluşturucuya genel tür bağımsız değişkenlerini belirtmek için kullanılabilir. Daha fazla bilgi için bkz: [genel tür bağımsız değişkeni belirterek](#generic_type_arguments).
+Ayrıca, `x:TypeArguments` öznitelik, oluşturucuya genel bir türün genel tür bağımsız değişkenlerini belirtmek için kullanılabilir. Daha fazla bilgi için [genel tür bağımsız değişkeni belirterek](#generic_type_arguments).
 
 <a name="constructor_arguments" />
 
 ## <a name="passing-constructor-arguments"></a>Oluşturucu bağımsız değişkenleri geçirme
 
-Bağımsız değişkenleri için varsayılan olmayan Oluşturucusu kullanılarak geçirilebilir `x:Arguments` özniteliği. Her oluşturucu bağımsız değişkenin türü ile temsil eden bir XML öğesi içinde ayrılmış gerekir. Xamarin.Forms aşağıdaki öğeleri için temel türlerini destekler:
+Bağımsız değişkenleri için varsayılan olmayan oluşturucu kullanılarak geçirilebilir `x:Arguments` özniteliği. Her oluşturucu bağımsız değişken bağımsız değişken türünü temsil eden bir XML öğesi içinde virgülle ayrılmış olmalıdır. Xamarin.Forms, temel türleri için şu öğeleri destekler:
 
 - `x:Object`
 - `x:Boolean`
@@ -48,7 +48,7 @@ Bağımsız değişkenleri için varsayılan olmayan Oluşturucusu kullanılarak
 - `x:Array`
 - `x:DateTime`
 
-Aşağıdaki kod örneğinde kullanımı gösterilir `x:Arguments` üç özniteliğiyle [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) oluşturucular:
+Aşağıdaki kod örneği kullanmayı gösterir `x:Arguments` üç özniteliğiyle [ `Color` ](xref:Xamarin.Forms.Color) oluşturucular:
 
 ```xaml
 <BoxView HeightRequest="150" WidthRequest="150" HorizontalOptions="Center">
@@ -85,19 +85,19 @@ Aşağıdaki kod örneğinde kullanımı gösterilir `x:Arguments` üç öznitel
 </BoxView>
 ```
 
-İçindeki öğe sayısını `x:Arguments` etiketi ve bu öğeleri türleri eşleşmelidir birini [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) oluşturucular. `Color` [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/) ile tek bir parametre 0 (siyah) bir gri tonlamalı değerini 1 (beyaz) gerektirir. `Color` [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/System.Double/System.Double/) ile üç parametre 0 ile 1 arasında değişen bir kırmızı, yeşil ve mavi değer gerektirir. `Color` [Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/System.Double/System.Double/System.Double/) dört parametrelerle bir alfa kanal dördüncü parametre olarak ekler.
+İçindeki öğe sayısını `x:Arguments` etiketi ve bu öğe türleri eşleşmelidir birini [ `Color` ](xref:Xamarin.Forms.Color) oluşturucular. `Color` [Oluşturucusu](xref:Xamarin.Forms.Color.%23ctor(System.Double)) gri tonlamalı değeri 0 (siyah) 1 (beyaz) ile tek bir parametre gerektirir. `Color` [Oluşturucusu](xref:Xamarin.Forms.Color.%23ctor(System.Double,System.Double,System.Double)) ile üç parametreyi bir kırmızı, yeşil ve mavi değeri 0 ile 1 arasında gerektirir. `Color` [Oluşturucusu](xref:Xamarin.Forms.Color.%23ctor(System.Double,System.Double,System.Double,System.Double)) dört parametrelerle bir alfa kanalı dördüncü parametre olarak ekler.
 
-Aşağıdaki ekran görüntüleri her çağırma sonucu göster [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) belirtilen bağımsız değişken değerlerle Oluşturucusu:
+Aşağıdaki ekran görüntüleri her çağırma sonucu göster [ `Color` ](xref:Xamarin.Forms.Color) Oluşturucusu ile belirtilen bağımsız değişken değerleri:
 
-![](passing-arguments-images/passing-arguments.png "X: Arguments ile belirtilen BoxView.Color")
+![](passing-arguments-images/passing-arguments.png "X: Arguments'ile belirtilen BoxView.Color")
 
 <a name="factory_methods" />
 
 ## <a name="calling-factory-methods"></a>Fabrika yöntemleri çağırma
 
-Fabrika yöntemleri çağırılabilir XAML'de yöntemin belirterek kullanarak ad `x:FactoryMethod` özniteliği ve kullanarak, bağımsız değişkenlerinin `x:Arguments` özniteliği. Fabrika yöntemi bir `public static` nesne veya sınıf ya da yöntemleri tanımlar yapısı olarak aynı türde değerler döndüren yöntemi.
+Fabrika yöntemleri çağrıldığında XAML yöntemin belirterek kullanarak ad `x:FactoryMethod` özniteliği ve bağımsız değişkenleri kullanarak `x:Arguments` özniteliği. Bir Üreteç yöntemi olan bir `public static` nesneler veya değerleri aynı türde bir sınıf ya da yöntemlerini yapı döndüren yöntem.
 
-[ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Yapısını tanımlayan çeşitli Fabrika yöntemler ve aşağıdaki kod örneğinde arama üç tanesi gösterilmektedir:
+[ `Color` ](xref:Xamarin.Forms.Color) Yapısını tanımlayan bir dizi Fabrika yöntemleri ve bunları çağırma üç aşağıdaki kod örneği gösterilmektedir:
 
 ```xaml
 <BoxView HeightRequest="150" WidthRequest="150" HorizontalOptions="Center">
@@ -135,17 +135,17 @@ Fabrika yöntemleri çağırılabilir XAML'de yöntemin belirterek kullanarak ad
 </BoxView>
 ```
 
-İçindeki öğe sayısını `x:Arguments` etiketini ve bu öğeleri türlerini çağrılan Üreteç yöntemi bağımsız değişkenleri aynı olmalıdır. [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Üreteç yöntemi gerektiren dört [ `Int32` ](https://docs.microsoft.com/dotnet/api/system.int32) sırasıyla 0 ile 255 arasında kırmızı, yeşil, mavi ve alfa değerleri temsil eden parametreleri. [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Üreteç yöntemi gerektiren dört [ `Double` ](https://docs.microsoft.com/dotnet/api/system.double) ton, Doygunluk, parlaklığını ve sırasıyla 0 ile 1 arasında alfa değerleri temsil eden parametreleri. [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Üreteç yöntemi gerektiren bir [ `String` ](https://docs.microsoft.com/dotnet/api/system.string) onaltılık temsil eden (A) RGB rengi.
+İçindeki öğe sayısını `x:Arguments` etiketi ve bu öğeleri türde bağımsız değişkenleri çağrılan Üreteç yöntemi eşleşmesi gerekir. [ `FromRgba` ](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32)) Üreteç yöntemi gerektiren dört [ `Int32` ](https://docs.microsoft.com/dotnet/api/system.int32) temsil eden 0 ile 255 sırasıyla arasında kırmızı, yeşil, mavi ve alfa değerleri, parametreleri. [ `FromHsla` ](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double)) Üreteç yöntemi gerektiren dört [ `Double` ](https://docs.microsoft.com/dotnet/api/system.double) ton, Doygunluk, parlaklık ve alfa değerleri, 0-1 olarak sırasıyla arasında temsil eden parametreleri. [ `FromHex` ](xref:Xamarin.Forms.Color.FromHex(System.String)) Üreteç yöntemi gerektiren bir [ `String` ](https://docs.microsoft.com/dotnet/api/system.string) temsil eden bir onaltılık RGB rengi (A).
 
-Aşağıdaki ekran görüntüleri her çağırma sonucu göster [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) belirtilen bağımsız değişken değerlerle Üreteç yöntemi:
+Aşağıdaki ekran görüntüleri her çağırma sonucu göster [ `Color` ](xref:Xamarin.Forms.Color) Üreteç yöntemi ile belirtilen bağımsız değişken değerleri:
 
-![](passing-arguments-images/factory-methods.png "X: FactoryMethod ve x: Arguments ile belirtilen BoxView.Color")
+![](passing-arguments-images/factory-methods.png "X: FactoryMethod ve x: Arguments'ile belirtilen BoxView.Color")
 
 <a name="generic_type_arguments" />
 
 ## <a name="specifying-a-generic-type-argument"></a>Genel tür bağımsız değişkeni belirtme
 
-Genel tür bağımsız değişkenleri için genel bir tür oluşturucu kullanılarak belirtilebilir `x:TypeArguments` aşağıdaki kod örneğinde gösterildiği gibi öznitelik:
+Genel tür bağımsız değişkenleri için genel bir türün oluşturucu kullanılarak belirtilebilir `x:TypeArguments` aşağıdaki kod örneğinde gösterildiği gibi öznitelik:
 
 ```xaml
 <ContentPage ...>
@@ -161,15 +161,15 @@ Genel tür bağımsız değişkenleri için genel bir tür oluşturucu kullanıl
 </ContentPage>
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Sınıfı genel bir sınıftır ve ile örneğinin oluşturulması bir `x:TypeArguments` hedef türüyle eşleşen özniteliği. İçinde [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) sınıfı, [ `Platform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.On.Platform/) özniteliği tek bir kabul edebileceği `string` değeri veya virgülle ayrılmış birden çok `string` değerleri. Bu örnekte, [ `StackLayout.Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) özelliği platforma özgü ayarlanmış [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/).
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) Sınıf bir genel sınıftır ve ile Değişkensiz bir `x:TypeArguments` hedef türüyle eşleşen öznitelik. İçinde [ `On` ](xref:Xamarin.Forms.On) sınıfı [ `Platform` ](xref:Xamarin.Forms.On.Platform) özniteliği tek bir kabul edebilir `string` değeri veya virgülle ayrılmış birden çok `string` değerleri. Bu örnekte, [ `StackLayout.Margin` ](xref:Xamarin.Forms.View.Margin) özelliği, platforma özgü ayarlandığında [ `Thickness` ](xref:Xamarin.Forms.Thickness).
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, varsayılan olmayan kurucusuna, Fabrika yöntemlerini çağırmaya ve genel bir bağımsız değişken türünü belirtmek için bağımsız değişkenler geçirmek için kullanılan XAML öznitelikleri kullanma gösterilmektedir.
+Bu makalede, varsayılan olmayan Oluşturucular, Fabrika yöntemleri çağırmak için ve genel bir bağımsız değişken türünü belirtmek için bağımsız değişkenleri geçirmek için kullanılan XAML öznitelikleri kullanarak gösterdik.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [XAML Ad Alanları](~/xamarin-forms/xaml/namespaces.md)
 - [Oluşturucu bağımsız değişkenleri (örnek) geçirme](https://developer.xamarin.com/samples/xamarin-forms/xaml/passingconstructorarguments/)
-- [Fabrika yöntemleri (örnek) çağırma](https://developer.xamarin.com/samples/xamarin-forms/xaml/callingfactorymethods/)
+- [Arama Fabrika yöntemleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/xaml/callingfactorymethods/)

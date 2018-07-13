@@ -1,61 +1,61 @@
 ---
 title: Kimlik doğrulama ve yetkilendirme
-description: Bu bölümde eShopOnContainers mobil uygulama kimlik doğrulama ve yetkilendirme kapsayıcılı mikro karşı nasıl gerçekleştireceğini açıklar.
+description: Bu bölümde, hizmetine mobil uygulama kimlik doğrulaması ve yetkilendirme kapsayıcılı mikro hizmetler karşı nasıl gerçekleştireceğini açıklar.
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 9e6cfa566ab455841b3f11e4a857dcf678083417
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: beb9e8f351a1cecc6017a08345f7cfc5e207ba35
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242434"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996223"
 ---
 # <a name="authentication-and-authorization"></a>Kimlik doğrulama ve yetkilendirme
 
-Kimlik doğrulaması bir kullanıcı adı ve parola gibi kimlik alma ve bu kimlik bilgilerini bir yetkilisi karşı doğrulama işlemidir. Kimlik bilgileri geçerli olduğunda, kimlik bilgilerini gönderen varlık kimlik doğrulaması olarak kabul edilir. Bir kimlik doğrulandıktan sonra bir yetkilendirme işlemine kimliğini belirli bir kaynağa erişim izni olup olmadığını belirler.
+Kimlik doğrulaması, bir kullanıcıdan kimlik adı ve parola gibi ve bu kimlik bilgilerini bir yetkilisi karşı doğrulama işlemini şeklindedir. Kimlik bilgilerinin geçerli olduğundan, kimlik bilgilerini gönderilen varlık kimliği doğrulanmış kimlik olarak kabul edilir. Kimlik doğrulandıktan sonra bir yetkilendirme işlemine kimliğe belirli bir kaynağa erişim izni olup olmadığını belirler.
 
-Microsoft, Google gibi dış kimlik doğrulama sağlayıcıları ASP.NET Core kimliği kullanımı dahil olmak üzere bir ASP.NET MVC web uygulaması ile iletişim kuran bir Xamarin.Forms uygulamada kimlik doğrulama ve yetkilendirme tümleştirmek için birçok yaklaşım vardır, Facebook, ya da Twitter ve kimlik doğrulaması ara yazılımı. EShopOnContainers mobil uygulama kimlik doğrulama ve yetkilendirme IdentityServer 4 kullanan bir kapsayıcılı kimlik mikro hizmet ile gerçekleştirir. Mobil uygulama bir kullanıcı kimlik doğrulaması için veya bir kaynağa erişim sağlamak için güvenlik belirteçleri IdentityServer istekleri. Bir kullanıcı adına sorunu belirteçleri için IdentityServer için kullanıcı oturumu için IdentityServer açma gerekir. Ancak, IdentityServer bir kullanıcı arabirimi veya veritabanı için kimlik doğrulaması sağlamaz. Bu nedenle, eShopOnContainers başvuru uygulaması ASP.NET Core kimliği bu amaç için kullanılır.
+Kimlik doğrulama ve yetkilendirme, ASP.NET Core kimliği, Microsoft, Google gibi dış kimlik doğrulama sağlayıcıları kullanma dahil olmak üzere bir ASP.NET MVC web uygulaması ile iletişim kuran bir Xamarin.Forms uygulamasına tümleştirmek için birçok yaklaşım vardır, Facebook veya Twitter ve kimlik doğrulaması ara yazılımı. Hizmetine mobil uygulama kimlik doğrulaması ve yetkilendirme IdentityServer 4 kullanan bir kimlik kapsayıcılı mikro hizmet ile gerçekleştirir. Mobil uygulama veya bir kullanıcı kimlik doğrulaması için bir kaynağa erişim sağlamak için güvenlik belirteçleri IdentityServer ister. Bir kullanıcı adına sorun belirteçleri IdentityServer için kullanıcı için IdentityServer oturum gerekir. Ancak, IdentityServer kullanıcı arabirimi veya veritabanı için kimlik doğrulaması sağlamaz. Bu nedenle, hizmetine başvuru uygulamada ASP.NET çekirdek kimliği bu amaç için kullanılır.
 
 ## <a name="authentication"></a>Kimlik doğrulaması
 
-Uygulamanın geçerli kullanıcının kimliğinin bilinmesi gerektiğinde kimlik doğrulaması gereklidir. Kullanıcıları tanımlamak için ASP.NET Core'nın birincil geliştirici tarafından yapılandırılan bir veri deposu kullanıcı bilgilerini depolar ASP.NET Core kimlik üyelik sistemi mekanizmadır. Genellikle, bu veri deposu Azure storage, Azure Cosmos DB veya başka konumlara kimlik bilgilerini depolamak için özel depoları veya üçüncü taraf paketleri kullanılabilmesine rağmen bir EntityFramework deposu olacaktır.
+Uygulamanın geçerli kullanıcının kimliğini bilmesi gereken kimlik doğrulaması gereklidir. Kullanıcıları tanımlamak için ASP.NET Core'nın birincil geliştirici tarafından yapılandırılmış bir veri deposunda kullanıcı bilgilerini depolayan ASP.NET Core kimliği üyelik sistemi mekanizmadır. Genellikle, Azure depolama, Azure Cosmos DB veya diğer konumlardan kimlik bilgilerini depolamak için özel depoları veya üçüncü taraf paketlerini kullanılabilmesine rağmen bu veri depolama alanını bir EntityFramework deposu olacaktır.
 
-Bir yerel kullanıcı veri deposunu olun kimlik doğrulama senaryoları kullanın ve kimlik bilgilerini (ASP.NET MVC web uygulamalarında tipik olarak) tanımlama bilgileri aracılığıyla istekler arasında kalıcı hale getirmek için ASP.NET Core kimliği uygun bir çözümdür. Ancak, tanımlama bilgileri her zaman kalıcı yapma ve veri aktarırken bir doğal değildir. Örneğin, mobil uygulamadan erişilen RESTful uç noktalarını kullanıma sunan bir ASP.NET Core web uygulaması genellikle tanımlama bilgilerini bu senaryoda kullanılamaz olduğundan taşıyıcı belirteci kimlik doğrulaması kullanmanız gerekir. Ancak, taşıyıcı belirteçlerini kolayca alınabilir ve mobil uygulama web isteklerini yetkilendirme üstbilgisinin dahildir.
+ASP.NET Core kimliği olun kimlik doğrulama senaryoları bir yerel kullanıcı veri deposunu kullanın ve isteği (tipik ASP.NET MVC web uygulamalarında olduğu gibi) tanımlama bilgileri aracılığıyla arasında kimlik bilgilerini kalıcı hale getirmek için uygun bir çözümdür. Ancak, tanımlama bilgileri her zaman kalıcı hale getirmeniz ve veri aktarımı doğal bir yol değildir. Örneğin, bir mobil uygulamasından erişilen RESTful uç noktayı kullanıma sokan bir ASP.NET Core web uygulaması genellikle tanımlama bilgileri, bu senaryoda kullanılamaz olduğundan taşıyıcı belirteci kimlik doğrulaması kullanmanız gerekir. Ancak, taşıyıcı belirteçleri kolayca alınabilir ve mobil uygulamadan web isteklerini yetkilendirme üst bilgisine dahil.
 
-### <a name="issuing-bearer-tokens-using-identityserver-4"></a>Taşıyıcı IdentityServer 4 kullanan belirteç
+### <a name="issuing-bearer-tokens-using-identityserver-4"></a>Sertifika veren taşıyıcı belirteçlerini kullanarak IdentityServer 4
 
-[IdentityServer 4](https://github.com/IdentityServer/IdentityServer4) yerel ASP.NET Core kimliği kullanıcılar için güvenlik belirteçleri verme dahil olmak üzere birçok kimlik doğrulama ve yetkilendirme senaryoları için kullanılan ASP.NET Core bir açık kaynak Openıd Connect ve OAuth 2.0 framework içindir.
+[IdentityServer 4](https://github.com/IdentityServer/IdentityServer4) yerel ASP.NET Core kimliği kullanıcılar için güvenlik belirteçleri verme dahil olmak üzere birçok kimlik doğrulama ve yetkilendirme senaryoları için kullanılan ASP.NET Core açık kaynak Openıd Connect ve OAuth 2.0 framework içindir.
 
 > [!NOTE]
-> Openıd Connect ve OAuth 2.0 farklı sorumlulukları yaparken çok benzer.
+> Openıd Connect ve OAuth 2.0 farklı sorumluluklara yaparken çok benzer.
 
-Openıd Connect bir OAuth 2.0 protokolünü üstünde kimlik doğrulaması katmanıdır. OAuth 2 uygulamaların bir güvenlik belirteci Hizmeti'nden erişim belirteçleri istemek ve bunları API'leri ile iletişim kurmanızı sağlayan bir protokoldür. Kimlik doğrulama ve yetkilendirme merkezi beri bu temsilci istemci uygulamalar ve API'ler karmaşıklığını azaltır.
+Openıd Connect, OAuth 2.0 protokolünü üzerine bir kimlik doğrulama katmanı olan. OAuth 2 bir güvenlik belirteci Hizmeti'nden erişim belirteçlerini istemek ve bunları iletişim kurmak için API'leri ile uygulamalar sağlayan bir protokoldür. Kimlik doğrulama ve yetkilendirme merkezi olduğundan bu temsilci hem istemci uygulamaları ve API'leri karmaşıklığını azaltır.
 
-Openıd Connect ve OAuth 2.0 birleşimi iki temel güvenlik sorunlarının kimlik doğrulama ve API erişimini birleştirmek ve IdentityServer 4 bu protokollerin bir uygulamasıdır.
+Openıd Connect ve OAuth 2.0 kimlik doğrulaması ve API erişimi iki temel güvenlik kaygıları birleştirebilir ve IdentityServer 4 bu protokolleri uygulamasıdır.
 
-EShopOnContainers başvuru uygulaması gibi doğrudan istemci mikro hizmet iletişimi kullanan uygulamalarda bir güvenlik belirteci hizmeti (STS) olarak davranan bir özel kimlik doğrulama mikro hizmet kullanıcıların kimliklerini doğrulamak için şekilde gösterildiği gibi kullanılabilir 9-1. Doğrudan istemci mikro hizmet iletişim hakkında daha fazla bilgi için bkz: [istemci arasında iletişim ve mikro Hizmetler](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices).
+Hizmetine başvuru uygulaması gibi doğrudan istemci-mikro hizmet iletişimi kullanan uygulamaları bir güvenlik belirteci hizmeti (STS) olarak davranan bir özel kimlik doğrulama mikro hizmet, kullanıcıların kimliklerini doğrulamak için gösterildiği gibi kullanılabilir 9-1. Doğrudan istemci-mikro hizmet iletişimi hakkında daha fazla bilgi için bkz. [arasındaki iletişimi istemci ve mikro Hizmetler](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices).
 
-![](authentication-and-authorization-images/authentication.png "Özel kimlik doğrulama mikro hizmet tarafından kimlik doğrulaması")
+![](authentication-and-authorization-images/authentication.png "Adanmış kimlik doğrulaması mikro hizmet olarak kimlik doğrulaması")
 
-**Şekil 9-1:** özel kimlik doğrulama mikro hizmet tarafından kimlik doğrulaması
+**Şekil 9-1:** adanmış kimlik doğrulaması mikro hizmet olarak kimlik doğrulaması
 
-EShopOnContainers mobil uygulama kimlik doğrulaması yapmak ve API'ler için erişim denetimini IdentityServer 4 kullanan kimlik mikro hizmet ile iletişim kurar. Bu nedenle, mobil uygulama belirteçleri IdentityServer bir kullanıcı kimlik doğrulaması için veya bir kaynağa erişim sağlamak için istek:
+Hizmetine mobil uygulama kimlik doğrulaması gerçekleştirmek ve API'ler için erişim denetimini IdentityServer 4 kullanan kimlik mikro hizmet ile iletişim kurar. Bu nedenle, mobil uygulama belirteçleri IdentityServer bir kullanıcı kimlik doğrulaması için veya bir kaynağa erişim sağlamak için istek:
 
--   Kullanıcıların IdentityServer ile kimlik doğrulaması gerçekleştirilir mobil uygulama isteyerek bir *kimlik* bir kimlik işleminin sonucunu temsil eden bir belirteç. Tam en azından kullanıcı ve nasıl ve ne zaman kullanıcı kimlik doğrulaması hakkında daha fazla bilgi için bir tanımlayıcı içerir. Ayrıca, ek kimlik verilerini de içerebilir.
--   IdentityServer sahip bir kaynak erişim elde edilir mobil uygulama isteyerek bir *erişim* bir API kaynağa erişim izni verir belirteci. İstemcilerin erişim belirteçleri isteyin ve API için iletin. Erişim belirteçleri, (varsa) istemci ve kullanıcı hakkındaki bilgileri içerir. API'leri daha sonra verilerine erişim yetkisi vermek için bu bilgileri kullanın.
+-   IdentityServer ile kullanıcıların kimliğini doğrulama gerçekleştirilir mobil uygulama isteyerek bir *kimlik* belirteci bir kimlik işleminin sonucunu temsil eder. Çıplak en azından, kullanıcı ve nasıl ve ne zaman kullanıcı kimlik doğrulaması hakkında bilgi için bir tanımlayıcı içerir. Ayrıca, ek kimlik verilerini de içerebilir.
+-   IdentityServer kaynakla erişim elde edilir mobil uygulama isteyerek bir *erişim* bir API kaynağına erişimi sağlayan bir belirteç. İstemciler, erişim belirteçlerini istemek ve bunları API'sine iletebilir. Erişim belirteçleri, (varsa) istemci ve kullanıcı hakkındaki bilgileri içerir. API'leri, ardından verilerine erişim yetkisi vermek için bu bilgileri kullanın.
 
 > [!NOTE]
 > Belirteçleri isteyebilmesi istemci IdentityServer ile kayıtlı olması gerekir.
 
 ### <a name="adding-identityserver-to-a-web-application"></a>Bir Web uygulamasına IdentityServer ekleme
 
-Sırayla IdentityServer 4 kullanmak bir ASP.NET Core web uygulaması için web uygulamasının Visual Studio çözümüne eklenmiş olması gerekir. Daha fazla bilgi için bkz: [Kurulum ve genel bakış](https://identityserver4.readthedocs.io/en/release/quickstarts/0_overview.html) IdentityServer belgelerinde.
+Sırayla IdentityServer 4 kullanmak bir ASP.NET Core web uygulaması için web uygulamasının Visual Studio çözümüne eklenmiş olması gerekir. Daha fazla bilgi için [Kurulum ve genel bakış](https://identityserver4.readthedocs.io/en/release/quickstarts/0_overview.html) IdentityServer belgelerinde.
 
-IdentityServer web uygulamasının Visual Studio çözümünde dahil sonra böylece Openıd Connect ve OAuth 2.0 uç noktaları isteklerine hizmet vermek için web uygulamasının HTTP istek ardışık işleme eklenmelidir. Bunu elde edilen `Configure` web uygulamasının yönteminde `Startup` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
+Web uygulamasının Visual Studio çözümünde IdentityServer dahildir sonra Openıd Connect ve OAuth 2.0 uç isteklerine hizmet verebilir böylece için web uygulamasının HTTP istek işlem hattı, işleme eklenmelidir. Bunu elde edilir `Configure` web uygulamasının yönteminde `Startup` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
 
 ```csharp
 public void Configure(  
@@ -67,11 +67,11 @@ public void Configure(
 }
 ```
 
-İçinde web uygulamasının HTTP istek ardışık düzen işleme sırası önemlidir. Bu nedenle, IdentityServer oturum açma ekranı uygulayan UI çerçevesi önce ardışık düzene eklenmelidir.
+Web uygulamasının HTTP isteği ardışık düzen işleme sırası önemlidir. Bu nedenle, IdentityServer oturum açma ekranından uygulayan UI çerçevesi önce ardışık düzene eklenmelidir.
 
 ### <a name="configuring-identityserver"></a>IdentityServer yapılandırma
 
-IdentityServer yapılandırılmalıdır `ConfigureServices` web uygulamasının yönteminde `Startup` çağırarak sınıfı `services.AddIdentityServer` eShopOnContainers başvuru uygulamasından aşağıdaki kod örneğinde gösterildiği şekilde yöntemi:
+IdentityServer yapılandırılmalıdır `ConfigureServices` web uygulamasının yönteminde `Startup` çağırarak sınıfı `services.AddIdentityServer` hizmetine başvuru uygulamadan alınan aşağıdaki kod örneğinde gösterildiği gibi yöntemi:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)  
@@ -90,20 +90,20 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Çağırdıktan sonra `services.AddIdentityServer` yöntemi, ek fluent API aşağıdakileri yapılandırmak için çağrılır:
+Arama sonra `services.AddIdentityServer` yöntemi, ek fluent API'ler çağrılır seçerek aşağıdakileri yapılandırın:
 
 -   İmzalama için kullanılan kimlik bilgileri.
--   Kullanıcıların isteyebilir API ve kimlik kaynaklara erişim sağlar.
--   Belirteç isteme bağlanan istemciler.
+-   Kullanıcılar isteyebilir API ve kimlik kaynaklara erişimi.
+-   İstek belirteçleri bağlanan istemciler.
 -   ASP.NET Core kimliği.
 
->💡 **İpucu**: IdentityServer 4 yapılandırmasını dinamik olarak yükleme. IdentityServer 4 API'leri yapılandırma nesneleri, bir bellek içi listesinden IdentityServer yapılandırılmasını destekler. EShopOnContainers başvuru uygulaması bu uygulamaya sabit kodlanmış bellek içi koleksiyonlarıdır. Ancak, üretim senaryolarında bunların dinamik olarak bir yapılandırma dosyası veya bir veritabanından yüklenebilir.
+>💡 **İpucu**: dinamik olarak IdentityServer 4 yapılandırma yüklenemiyor. IdentityServer 4'ün API'leri bir bellek içi yapılandırma nesnelerini listesinden IdentityServer yapılandırılmasını destekler. Hizmetine başvuru uygulamada, bu uygulamaya sabit kodlanmış bellek içi koleksiyonlarıdır. Ancak, üretim senaryolarında bunlar dinamik olarak yapılandırma dosyasından ya da bir veritabanından yüklenebilir.
 
-ASP.NET Core kimlik kullanmak üzere IdentityServer yapılandırma hakkında daha fazla bilgi için bkz: [kullanarak ASP.NET Core kimliği](https://identityserver4.readthedocs.io/en/release/quickstarts/6_aspnet_identity.html) IdentityServer belgelerinde.
+ASP.NET Core kimliği kullanılacak IdentityServer yapılandırma hakkında daha fazla bilgi için bkz: [kullanarak ASP.NET Core kimliği](https://identityserver4.readthedocs.io/en/release/quickstarts/6_aspnet_identity.html) IdentityServer belgelerinde.
 
 #### <a name="configuring-api-resources"></a>API kaynaklarını yapılandırma
 
-API kaynakları yapılandırırken `AddInMemoryApiResources` yönteminin beklediği bir `IEnumerable<ApiResource>` koleksiyonu. Aşağıdaki örnekte gösterildiği kod `GetApis` eShopOnContainers bu koleksiyonda sağlayan yöntemi başvuru uygulama:
+API kaynakları yapılandırırken `AddInMemoryApiResources` yöntemi bekliyor bir `IEnumerable<ApiResource>` koleksiyonu. Aşağıdaki örnekte gösterildiği kod `GetApis` bu koleksiyon hizmetine sağlayan yöntemi başvuru uygulaması:
 
 ```csharp
 public static IEnumerable<ApiResource> GetApis()  
@@ -116,11 +116,11 @@ public static IEnumerable<ApiResource> GetApis()
 }
 ```
 
-Bu yöntem IdentityServer Sepeti API'leri ve siparişleri korumalısınız belirtir. Bu nedenle, IdentityServer yönetilen erişim bu API'lerine çağrılar yapılırken belirteçleri gerekli olacaktır. Hakkında daha fazla bilgi için `ApiResource` yazın, bkz: [API kaynak](https://identityserver4.readthedocs.io/en/release/reference/api_resource.html#refapiresource) IdentityServer 4 belgelerinde.
+Bu yöntem, sepet API'leri ve siparişler IdentityServer korumalısınız belirtir. Bu nedenle, IdentityServer yönetilen erişim bu API'lere çağrı yaparken belirteçleri gerekli olacaktır. Hakkında daha fazla bilgi için `ApiResource` yazın, bkz: [API kaynak](https://identityserver4.readthedocs.io/en/release/reference/api_resource.html#refapiresource) IdentityServer 4 belgelerinde.
 
 #### <a name="configuring-identity-resources"></a>Kimlik kaynaklarını yapılandırma
 
-Identity kaynaklar yapılandırırken `AddInMemoryIdentityResources` yönteminin beklediği bir `IEnumerable<IdentityResource>` koleksiyonu. Kimlik, kullanıcı kimliği, ad veya e-posta adresi gibi veri kaynaklardır. Her kimlik kaynak benzersiz bir ada sahip ve rasgele talep türleri, hangi kullanıcı için kimlik belirteci sonra dahil edilecek atanabilir. Aşağıdaki örnekte gösterildiği kod `GetResources` eShopOnContainers bu koleksiyonda sağlayan yöntemi başvuru uygulama:
+Kimlik kaynakları yapılandırırken `AddInMemoryIdentityResources` yöntemi bekliyor bir `IEnumerable<IdentityResource>` koleksiyonu. Kimlik, kullanıcı kimliği, adı veya e-posta adresi gibi verileri kaynaklardır. Her bir kimlik kaynağın benzersiz bir ada sahip ve rasgele talep türleri, ardından kullanıcı için kimlik belirtecinde yer alacak atanabilir. Aşağıdaki örnekte gösterildiği kod `GetResources` bu koleksiyon hizmetine sağlayan yöntemi başvuru uygulaması:
 
 ```csharp
 public static IEnumerable<IdentityResource> GetResources()  
@@ -133,23 +133,23 @@ public static IEnumerable<IdentityResource> GetResources()
 }
 ```
 
-Openıd Connect belirtimi bazı belirtir [standart Identity kaynaklar](https://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims). Kullanıcılar için benzersiz bir kimliği yayma için destek sağlanan en düşük gereksinimdir. Bu göstererek sağlanır `IdentityResources.OpenId` kimlik kaynak.
+Openıd Connect belirtimi bazı belirtir [standart kimlik kaynakları](https://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims). Kullanıcılar için benzersiz bir kimliği yayma için destek sağlanır en düşük gereksinimdir. Bu göstererek sağlanır `IdentityResources.OpenId` kimlik kaynak.
 
 > [!NOTE]
-> `IdentityResources` Sınıfı, tüm Openıd Connect açıklamasında (openıd, e-posta, profil, telefon ve adresi) tanımlanan kapsamların destekler.
+> `IdentityResources` Sınıfı, tüm Openıd Connect belirtiminde (openıd, e-posta, profili, telefon ve adres) tanımladığınız kapsamların destekler.
 
-Özel kimlik kaynakları tanımlama IdentityServer de destekler. Daha fazla bilgi için bkz: [özel kimlik kaynakları tanımlama](https://identityserver4.readthedocs.io/en/release/topics/resources.html#defining-custom-identity-resources) IdentityServer belgelerinde. Hakkında daha fazla bilgi için `IdentityResource` yazın, bkz: [kimlik kaynak](https://identityserver4.readthedocs.io/en/release/reference/identity_resource.html) IdentityServer 4 belgelerinde.
+Özel kimlik kaynakları tanımlama IdentityServer da destekler. Daha fazla bilgi için [özel kimlik kaynakları tanımlama](https://identityserver4.readthedocs.io/en/release/topics/resources.html#defining-custom-identity-resources) IdentityServer belgelerinde. Hakkında daha fazla bilgi için `IdentityResource` yazın, bkz: [kimlik kaynak](https://identityserver4.readthedocs.io/en/release/reference/identity_resource.html) IdentityServer 4 belgelerinde.
 
 #### <a name="configuring-clients"></a>İstemcilerini yapılandırma
 
-İstemcileri belirteçleri IdentityServer isteyebileceği uygulamalardır. Genellikle, aşağıdaki ayarları her istemci için en az tanımlanmış olması gerekir:
+İstemciler IdentityServer belirteçleri isteyebileceği uygulamalardır. Genellikle, aşağıdaki ayarları her istemci için en az tanımlanması gerekir:
 
 -   Benzersiz istemci kimliği.
--   İzin verilen etkileşimler belirteci hizmetiyle (grant türü olarak da bilinir).
--   Burada kimlik ve erişim belirteçleri gönderilen konum (bir yeniden yönlendirme URI'si da bilinir).
--   İstemci erişim izni verilir kaynakların bir listesini (kapsamlar olarak da bilinir).
+-   Belirteci hizmeti (izin verme türü da bilinir) izin verilen etkileşim.
+-   Burada kimlik ve erişim belirteçleri gönderilen konumu (yeniden yönlendirme URI'si olarak bilinir).
+-   İstemci erişimine izin verilmesini kaynakların bir listesini (kapsamı olarak bilinir).
 
-İstemciler, yapılandırırken `AddInMemoryClients` yönteminin beklediği bir `IEnumerable<Client>` koleksiyonu. Aşağıdaki kod örneğinde eShopOnContainers mobil uygulama yapılandırması gösterilmektedir `GetClients` eShopOnContainers bu koleksiyonda sağlayan yöntemi başvuru uygulama:
+İstemciler, yapılandırırken `AddInMemoryClients` yöntemi bekliyor bir `IEnumerable<Client>` koleksiyonu. Aşağıdaki kod örneği hizmetine mobil uygulamada yapılandırmasını gösterir `GetClients` bu koleksiyon hizmetine sağlayan yöntemi başvuru uygulaması:
 
 ```csharp
 public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUrl)
@@ -189,56 +189,56 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUr
 
 Bu yapılandırma verilerini aşağıdaki özellikleri belirtir:
 
--   `ClientId`İstemci benzersiz kimliği.
--   `ClientName`: İstemci günlüğü ve onay ekran için kullanılan adını görüntüler.
--   `AllowedGrantTypes`: Bir istemci nasıl IdentityServer ile etkileşim kurmak istediği belirtir. Daha fazla bilgi için bkz: [kimlik doğrulaması akışı yapılandırma](#configuring_the_authentication_flow).
--   `ClientSecrets`: İsteyen belirteç uç noktasından belirteçler yükleyen kullanılan istemci gizli kimlik bilgilerini belirtir.
--   `RedirectUris`: Eklendiği belirteçler veya yetkilendirme kodları döndürmek izin verilen URI belirtir.
--   `RequireConsent`: Bir onay ekranı gerekip gerekmediğini belirtir.
--   `RequirePkce`: Bir kimlik doğrulama kodu kullanan istemciler kanıt anahtarı göndermesi gerekip gerekmediğini belirtir.
--   `PostLogoutRedirectUris`: Oturum kapatma yeniden yönlendirmek için izin verilen URI belirtir.
--   `AllowedCorsOrigins`: İstemci kaynak IdentityServer arası çağrı kaynaktan izin verebilir böylece belirtir.
--   `AllowedScopes`: İstemci erişimi kaynaklarını belirtir. Varsayılan olarak, bir istemci hiçbir herhangi bir kaynağa erişebilir.
--   `AllowOfflineAccess`: İstemci yenileme belirteçleri isteyip isteyemeyeceklerini belirtir.
+-   `ClientId`: Bir istemci için benzersiz kimliği.
+-   `ClientName`: Günlüğe kaydetme ve onay ekranında için kullanılır istemci görünen adı.
+-   `AllowedGrantTypes`: Nasıl IdentityServer ile etkileşim kurmak bir istemcinin istediği belirtir. Daha fazla bilgi için [kimlik doğrulaması akışı yapılandırma](#configuring_the_authentication_flow).
+-   `ClientSecrets`: Belirteç uç noktasından belirteç istenirken kullanılan istemci gizli kimlik bilgilerini belirtir.
+-   `RedirectUris`: İzin verilen bir URI'leri belirteçleri veya yetkilendirme kodları döndürülecek için belirtir.
+-   `RequireConsent`: Bir onay ekranında gerekli olup olmadığını belirtir.
+-   `RequirePkce`: Bir yetkilendirme kodunu kullanarak istemcileri kanıt anahtarı göndermesi gerekip gerekmediğini belirtir.
+-   `PostLogoutRedirectUris`: Oturum kapatma yönlendirmek için izin verilen bir URI'leri belirtir.
+-   `AllowedCorsOrigins`: Çıkış noktaları arası kaynak çağrılarından IdentityServer izin verebilir böylece istemci kaynağını belirtir.
+-   `AllowedScopes`: İstemci erişimi olan kaynakları belirtir. Varsayılan olarak, bir istemci herhangi bir kaynağa erişimi vardır.
+-   `AllowOfflineAccess`: İstemci yenileme belirteçleri isteme olanaklarının olup olmadığını belirtir.
 
 <a name="configuring_the_authentication_flow" />
 
 #### <a name="configuring-the-authentication-flow"></a>Kimlik doğrulaması akışı yapılandırma
 
-Kimlik doğrulaması akışı bir istemci arasında IdentityServer grant türlerinde belirterek yapılandırılabilir `Client.AllowedGrantTypes` özelliği. Openıd Connect ve OAuth 2.0 belirtimleri kimlik doğrulaması akışı dahil olmak üzere, çeşitli tanımlayın:
+Kimlik doğrulaması akışı bir istemci ve IdentityServer arasında verme türlerini belirterek yapılandırılabilir `Client.AllowedGrantTypes` özelliği. Openıd Connect ve OAuth 2.0 belirtimleri kimlik doğrulaması akışı dahil olmak üzere birkaç tanımlayın:
 
--   Örtük. Bu akış tarayıcı tabanlı uygulamalar için en iyi duruma getirilmiş ve kullanıcı yalnızca kimlik doğrulama veya yetkilendirme ve erişim belirteci istekleri için kullanılmalıdır. Tüm belirteçleri tarayıcı üzerinden aktarılan ve bu nedenle gelişmiş yenileme belirteçleri verilmeyen gibi özellikler.
--   Yetkilendirme kodu. Bu akış özelliği de istemci kimlik doğrulaması desteklerken tarayıcı ön kanal aksine arka kanal belirteçlerini almasını sağlar.
--   Karma. Bu akış örtük bileşimidir ve yetki kodu izin türleri. Kimlik belirtecinin tarayıcı kanal iletilen ve yetkilendirme kodu gibi diğer yapılarını birlikte imzalı protokolü yanıt içerir. Yanıtın doğrulama başarılı olduktan sonra arka kanal erişim almak ve belirteç yenilemek için kullanılması gerekir.
+-   Örtük. Bu akış, tarayıcı tabanlı uygulamalar için en iyi duruma getirilmiş ve yalnızca kimlik doğrulamasını bir kullanıcı veya kimlik doğrulaması ve erişim belirteci isteği için kullanılmalıdır. Tüm belirteçlerin tarayıcı üzerinden aktarılan ve bu nedenle yenileme belirteçleri verilmeyen gibi gelişmiş özellikleri.
+-   Yetkilendirme kodu. Bu akış ayrıca istemci kimlik doğrulaması desteklerken tarayıcı ön kanal aksine arka kanal belirteçleri alma olanağı sağlar.
+-   Karma. Bu akış örtük bir bileşimidir ve yetkilendirme kodu verme türleri. Kimlik belirteci tarayıcı kanal iletilir ve yetkilendirme kodu gibi diğer yapıları birlikte imzalı Protokolü yanıtı içerir. Yanıtın doğrulama başarılı olduktan sonra arka kanal erişimi almak ve belirteci yenilemek için kullanılmalıdır.
 
 > [!TIP]
-> Karma kimlik doğrulama akışı kullanın. Karma kimlik doğrulama akışı tarayıcı kanala Uygula saldırılarını sayısını azaltır ve erişim belirteçlerini almasını (ve muhtemelen yenileme belirteçlerini) istediğiniz yerel uygulamalar için önerilen akışıdır.
+> Karma kimlik doğrulaması akışı kullanın. Karma kimlik doğrulaması akışı tarayıcı kanala uygulamak saldırıları sayısını azaltır ve erişim belirteçlerini almak için (ve muhtemelen yenileme belirteçlerini) istediğiniz yerel uygulamalar için önerilen akışıdır.
 
-Kimlik doğrulama akışı hakkında daha fazla bilgi için bkz: [sağlama türleri](https://identityserver4.readthedocs.io/en/release/topics/grant_types.html) IdentityServer 4 belgelerinde.
+Kimlik doğrulama akışları hakkında daha fazla bilgi için bkz: [verme türleri](https://identityserver4.readthedocs.io/en/release/topics/grant_types.html) IdentityServer 4 belgelerinde.
 
 ### <a name="performing-authentication"></a>Kimlik doğrulaması gerçekleştirme
 
-Bir kullanıcı adına sorunu belirteçleri için IdentityServer için kullanıcı oturumu için IdentityServer açma gerekir. Ancak, IdentityServer bir kullanıcı arabirimi veya veritabanı için kimlik doğrulaması sağlamaz. Bu nedenle, eShopOnContainers başvuru uygulaması ASP.NET Core kimliği bu amaç için kullanılır.
+Bir kullanıcı adına sorun belirteçleri IdentityServer için kullanıcı için IdentityServer oturum gerekir. Ancak, IdentityServer kullanıcı arabirimi veya veritabanı için kimlik doğrulaması sağlamaz. Bu nedenle, hizmetine başvuru uygulamada ASP.NET çekirdek kimliği bu amaç için kullanılır.
 
-Şekil 9-2'de gösterilen karma kimlik doğrulama akışı ile IdentityServer ile eShopOnContainers mobil uygulama kimlik doğrulamasını yapar.
+Şekil 9-2'de gösterilen karma kimlik doğrulama akışı ile IdentityServer ile hizmetine mobil uygulama kimlik doğrulaması yapar.
 
-![](authentication-and-authorization-images/sign-in.png "Oturum açma işleminin üst düzey genel bakış")
+![](authentication-and-authorization-images/sign-in.png "Oturum açma işlemi üst düzey genel bakış")
 
-**Şekil 9-2:** oturum açma işleminin üst düzey genel bakış
+**Şekil 9-2:** oturum açma işlemi üst düzey genel bakış
 
-Bir oturum açma isteği yapılan `<base endpoint>:5105/connect/authorize`. Başarılı kimlik doğrulamasının, IdentityServer bir yetkilendirme kodu ve bir kimlik belirteci içeren bir kimlik doğrulama yanıtı döndürür. Yetkilendirme kodu sonra gönderilir `<base endpoint>:5105/connect/token`, erişim, kimlik ve yenileme belirteçleri ile yanıtlar.
+Oturum açma isteği yapılır `<base endpoint>:5105/connect/authorize`. Başarılı bir kimlik doğrulamasının IdentityServer bir yetkilendirme kodunu ve bir kimlik belirteci içeren bir kimlik doğrulaması yanıtını döndürür. Yetkilendirme kodu daha sonra gönderilen `<base endpoint>:5105/connect/token`, erişim, kimlik ve yenileme belirteçleri ile yanıtlar.
 
-EShopOnContainers mobil uygulama işaretlerini-bir istek göndererek dışı IdentityServer `<base endpoint>:5105/connect/endsession`, ek parametrelere sahip. Oturum kapatma gerçekleştikten sonra IdentityServer mobil uygulamasına bir post oturumu kapatıp yeniden yönlendirme URI'si göndererek yanıt verir. Şekil 9-3 Bu işlemi gösterilmektedir.
+Hizmetine mobil uygulama açtığında bir istek göndererek artırımına IdentityServer `<base endpoint>:5105/connect/endsession`, ek parametrelere sahip. Oturum kapatma gerçekleştikten sonra bir post oturumu kapatıp yeniden yönlendirme URI'si mobil uygulamaya geri göndererek IdentityServer yanıt verir. Şekil 9-3, bu işlemi göstermektedir.
 
 ![](authentication-and-authorization-images/sign-out.png "Oturum kapatma işlemini üst düzey genel bakış")
 
 **Şekil 9-3:** oturum kapatma işlemini üst düzey genel bakış
 
-Mobil uygulama eShopOnContainers IdentityServer ile iletişim tarafından gerçekleştirilen `IdentityService` sınıfı, hangi uygulayan `IIdentityService` arabirimi. Bu arabirimi uygulayan sınıfa sağlamalısınız belirtir `CreateAuthorizationRequest`, `CreateLogoutRequest`, ve `GetTokenAsync` yöntemleri.
+Mobil uygulama hizmetine IdentityServer ile iletişimi tarafından gerçekleştirilen `IdentityService` sınıfını `IIdentityService` arabirimi. Bu arabirimi uygulayan sınıfa sağlamalısınız belirtir `CreateAuthorizationRequest`, `CreateLogoutRequest`, ve `GetTokenAsync` yöntemleri.
 
 #### <a name="signing-in"></a>Oturum açma
 
-Kullanıcı ne zaman dokunur **oturum açma** düğmesini `LoginView`, `SignInCommand` içinde `LoginViewModel` sınıfı yürütüldüğünde, hangi sırayla yürütür `SignInAsync` yöntemi. Aşağıdaki kod örneği, bu yöntem gösterilmektedir:
+Kullanıcı ne zaman dokunduğunda **oturum açma** düğmesini `LoginView`, `SignInCommand` içinde `LoginViewModel` sınıfı yürütüldüğünde, sırayla yürütür `SignInAsync` yöntemi. Aşağıdaki kod örneği, bu yöntem gösterir:
 
 ```csharp
 private async Task SignInAsync()  
@@ -250,7 +250,7 @@ private async Task SignInAsync()
 }
 ```
 
-Bu yöntemi çağırır `CreateAuthorizationRequest` yönteminde `IdentityService` aşağıdaki kod örneğinde gösterildiği sınıfı:
+Bu metodu çağıran `CreateAuthorizationRequest` yönteminde `IdentityService` aşağıdaki kod örneğinde gösterilen sınıfı:
 
 ```csharp
 public string CreateAuthorizationRequest()
@@ -279,18 +279,18 @@ public string CreateAuthorizationRequest()
 
 ```
 
-Bu yöntem IdentityServer için ait URI oluşturur [yetkilendirme uç noktası](https://identityserver4.readthedocs.io/en/release/endpoints/authorize.html), gerekli parametrelere sahip. Yetkilendirme uç noktası altındadır `/connect/authorize` bağlantı noktası üzerindeki kullanıcı ayarı olarak sunulan temel uç noktasının 5105. Kullanıcı ayarları hakkında daha fazla bilgi için bkz: [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Bu yöntem IdentityServer için kullanıcının aldığı URI'yi oluşturur [yetkilendirme uç noktası](https://identityserver4.readthedocs.io/en/release/endpoints/authorize.html), gerekli parametrelere sahip. Yetkilendirme uç noktası altındadır `/connect/authorize` üzerinde 5105 bir kullanıcı ayarı olarak kullanıma sunulan temel uç nokta bağlantı noktası. Kullanıcı ayarları hakkında daha fazla bilgi için bkz. [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!NOTE]
-> EShopOnContainers mobil uygulama, saldırı yüzeyini OAuth kod Exchange (PKCE) uzantısı için kanıt anahtar uygulayarak azalır. PKCE müdahale varsa kullanılan yetkilendirme kodu korur. Bu bir karmasını yetkilendirme isteği geçirilir, gizli bir doğrulayıcı oluşturma istemci tarafından sağlanır ve hangi sunulan yetkilendirme kodu redeeming zaman doğrulayamaz. PKCE hakkında daha fazla bilgi için bkz: [kod Exchange OAuth ortak istemcileri tarafından kanıt anahtarı](https://tools.ietf.org/html/rfc7636) Internet Engineering Task Force web sitesinde.
+> Saldırı yüzeyini hizmetine mobil uygulamasının OAuth kod Exchange (PKCE) uzantısı için kavram anahtar uygulayarak azaltılır. PKCE, bunu engelledik, kullanılan yetkilendirme kodunu korur. Bu istemci yetkilendirme isteğinde bir karmasını iletilen bir gizli dizi Doğrulayıcı oluşturma tarafından sağlanır ve hangi sunulan yetkilendirme kodu kullanırken doğrulayamaz. PKCE hakkında daha fazla bilgi için bkz: [OAuth genel istemciler tarafından kod Exchange kavram anahtarı](https://tools.ietf.org/html/rfc7636) Internet Engineering Task Force web sitesinde.
 
-Döndürülen URI depolanan `LoginUrl` özelliği `LoginViewModel` sınıfı. Zaman `IsLogin` özellik olur `true`, [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) içinde `LoginView` görünür hale gelir. `WebView` Veri bağlamalar kendi [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.Source/) özelliğine `LoginUrl` özelliği `LoginViewModel` sınıfı ve bu nedenle bir oturum açma için IdentityServer istekte zaman `LoginUrl` özelliği ayarlanmış IdentityServer'ın yetkilendirme uç noktası. IdentityServer bu isteği alır ve kullanıcının doğrulandığında değil, `WebView` Şekil 9-4'te gösterilen yapılandırılmış oturum açma sayfasına yönlendirilir.
+Döndürülen URI depolanan `LoginUrl` özelliği `LoginViewModel` sınıfı. Zaman `IsLogin` özellik olur `true`, [ `WebView` ](xref:Xamarin.Forms.WebView) içinde `LoginView` görünür hale gelir. `WebView` Veri bağlar, [ `Source` ](xref:Xamarin.Forms.WebView.Source) özelliğini `LoginUrl` özelliği `LoginViewModel` sınıfı ve bu nedenle oturum açma için IdentityServer istekte olduğunda `LoginUrl` özelliği IdentityServer'ın yetkilendirme uç noktası. IdentityServer bu isteği alır ve kullanıcı kimliği doğrulanmış değil ve `WebView` Şekil 9-4'teki yapılandırılmış oturum açma sayfasına yönlendirilirsiniz.
 
-![](authentication-and-authorization-images/login.png "Web görünümü tarafından görüntülenen oturum açma sayfası")
+![](authentication-and-authorization-images/login.png "WebView tarafından görüntülenen oturum açma sayfası")
 
 **Şekil 9-4:** WebView tarafından görüntülenen oturum açma sayfası
 
-Oturum açma tamamlandıktan sonra [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) dönüş URI'yı yeniden yönlendirilir. Bu `WebView` Gezinti neden olacak `NavigateAsync` yönteminde `LoginViewModel` aşağıdaki kod örneğinde gösterildiği yürütülmek üzere sınıfı:
+Oturum açma tamamlandıktan sonra [ `WebView` ](xref:Xamarin.Forms.WebView) dönüş URI'yı yönlendirilir. Bu `WebView` Gezinti neden `NavigateAsync` yönteminde `LoginViewModel` aşağıdaki kod örneğinde gösterilen yürütülecek sınıfı:
 
 ```csharp
 private async Task NavigateAsync(string url)  
@@ -315,22 +315,22 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-Bu yöntemin dönüş URI'de bulunan kimlik doğrulama yanıtı ayrıştırır ve geçerli bir yetkilendirme kod mevcut olduğundan koşuluyla IdentityServer için kullanıcının istekte bulunan [belirteç uç noktası](https://identityserver4.readthedocs.io/en/release/endpoints/token.html), yetkilendirme kodu geçirme PKCE gizli Doğrulayıcı ve diğer parametreler gereklidir. Belirteç uç noktası altındadır `/connect/token` bağlantı noktası üzerindeki kullanıcı ayarı olarak sunulan temel uç noktasının 5105. Kullanıcı ayarları hakkında daha fazla bilgi için bkz: [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Bu yöntem dönüş URI'de yer alan kimlik doğrulaması yanıtını ayrıştırır ve mevcut geçerli bir yetkilendirme kodudur koşuluyla IdentityServer için ait bir talep gönderir [belirteç uç noktası](https://identityserver4.readthedocs.io/en/release/endpoints/token.html), yetkilendirme kodu geçirme PKCE gizli Doğrulayıcı ve diğer gerekli parametreler. Belirteç uç noktası altındadır `/connect/token` üzerinde 5105 bir kullanıcı ayarı olarak kullanıma sunulan temel uç nokta bağlantı noktası. Kullanıcı ayarları hakkında daha fazla bilgi için bkz. [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
->💡 **İpucu**: doğrulama URI'lar döndürür. EShopOnContainers mobil uygulama dönüş URI doğrulamak değil de, en iyi uygulama dönüş URI açma yeniden yönlendirme saldırılarını önlemek için bilinen bir konuma, başvuruyor doğrulamaktır.
+>💡 **İpucu**: doğrulama URI döndürür. Hizmetine mobil uygulama dönüş URI doğrulamaz olsa da, dönüş URI açık yeniden yönlendirme saldırılarını önlemek için bir bilinen konuma başvuran doğrulamak için en iyi yöntem olacaktır.
 
-Belirteç uç noktası geçerli bir yetkilendirme kodu ve PKCE gizli Doğrulayıcı alırsa, bir erişim belirteci, kimlik belirtecinin ve yenileme belirteci ile yanıt verir. Uygulama ayarları (API kaynaklara erişim sağlayan) erişim belirteci ve kimlik belirtecinin sonra depolanır ve sayfa gezintisi gerçekleştirilir. Bu nedenle, genel eShopOnContainers mobil uygulama bu etkilidir: kullanıcıların başarılı bir şekilde IdentityServer ile kimlik doğrulaması için olması koşuluyla, bunlar için gittiğinizde `MainView` olan sayfası, bir [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) görüntüleyen `CatalogView` seçili sekme olarak.
+Belirteç uç noktası geçerli bir yetkilendirme kodunu ve PKCE gizli Doğrulayıcı alırsa, bir erişim belirteci, kimlik belirteci ve yenileme belirteci ile yanıt verir. (Bu API kaynaklarına erişime izin verir) erişim belirteci ve kimlik belirteci daha sonra uygulama ayarları saklanır ve sayfa gezintisini gerçekleştirilir. Bu nedenle, genel etki hizmetine mobil uygulamasında budur: kullanıcıların IdentityServer ile kimlik doğrulamasını başarıyla yapabildiğinizi şartıyla, bunlar için gitme `MainView` olan sayfa bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) görüntüleyen `CatalogView` Seçili alt sekmesine olarak.
 
-Sayfa gezintisi hakkında daha fazla bilgi için bkz: [Gezinti](~/xamarin-forms/enterprise-application-patterns/navigation.md). Hakkında bilgi için [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) Gezinti neden olan bir görünüm modeli yöntemi yürütülmesi için bkz: [davranışları kullanarak gezinti çağırma](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Uygulama ayarları hakkında daha fazla bilgi için bkz: [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Sayfa gezintisi hakkında daha fazla bilgi için bkz: [Gezinti](~/xamarin-forms/enterprise-application-patterns/navigation.md). Hakkında bilgi için [ `WebView` ](xref:Xamarin.Forms.WebView) Gezinti neden olan bir görünüm modeli yöntemi yürütülmesi için bkz [davranışları Gezinti çağırma](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Uygulama ayarları hakkında daha fazla bilgi için bkz. [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!NOTE]
-> Uygulama sahte Hizmetleri'nde kullanmak üzere yapılandırıldığında eShopOnContainers ayrıca bir sahte oturum açma sağlar `SettingsView`. Bu modda uygulamanın yerine tüm kimlik bilgilerini kullanarak oturum açın kullanıcıya izin vererek IdentityServer ile iletişim değil.
+> Uygulama sahte Hizmetleri'nde kullanımı yapılandırıldığında hizmetine de bir sahte oturum açma sağlar `SettingsView`. Bu modda uygulamanın kullanıcı kimlik bilgilerini kullanarak oturum açmak yerine izin IdentityServer ile iletişim değil.
 
 #### <a name="signing-out"></a>İmzalama genişletme
 
-Kullanıcı ne zaman dokunur **LOG OUT** düğmesini `ProfileView`, `LogoutCommand` içinde `ProfileViewModel` sınıfı yürütüldüğünde, hangi sırayla yürütür `LogoutAsync` yöntemi. Bu yöntem için sayfa gezintisi gerçekleştirir `LoginView` geçirme sayfasında, bir `LogoutParameter` örneğini ayarlamak `true` bir parametre olarak. Sayfa gezintisi sırasında parametreleri geçirme hakkında daha fazla bilgi için bkz: [gezinti sırasında geçirme parametreleri](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation).
+Kullanıcı ne zaman dokunduğunda **LOG OUT** düğmesine `ProfileView`, `LogoutCommand` içinde `ProfileViewModel` sınıfı yürütüldüğünde, sırayla yürütür `LogoutAsync` yöntemi. Bu yöntem için sayfa gezintisi gerçekleştirir `LoginView` geçirme sayfasında, bir `LogoutParameter` kümesi örneği `true` bir parametre olarak. Sayfa gezintisi sırasında parametreleri geçirme hakkında daha fazla bilgi için bkz. [gezinti sırasında parametre geçirme](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation).
 
-Bir görünüm oluşturduğunuzda ve için gittiğinizde `InitializeAsync` görünümün ilişkili görünüm modeli yöntemi yürütüldüğünde, hangi ardından yürütür `Logout` yöntemi `LoginViewModel` aşağıdaki kod örneğinde gösterildiği sınıfı:
+Bir görünüm oluşturduğunuzda ve için çıkıldığında `InitializeAsync` görünümün ilişkili görünüm modeli yöntemi yürütüldüğünde, ardından yürütür `Logout` yöntemi `LoginViewModel` aşağıdaki kod örneğinde gösterilen sınıfı:
 
 ```csharp
 private void Logout()  
@@ -347,7 +347,7 @@ private void Logout()
 }
 ```
 
-Bu yöntemi çağırır `CreateLogoutRequest` yönteminde `IdentityService` kimlik belirtecinin geçirme sınıfı, bir parametre olarak uygulama ayarlarından alınır. Uygulama ayarları hakkında daha fazla bilgi için bkz: [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md). Aşağıdaki örnekte gösterildiği kod `CreateLogoutRequest` yöntemi:
+Bu metodu çağıran `CreateLogoutRequest` yönteminde `IdentityService` kimlik belirtece geçirerek sınıf, bir parametre olarak uygulama ayarlarından alınır. Uygulama ayarları hakkında daha fazla bilgi için bkz: [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md). Aşağıdaki örnekte gösterildiği kod `CreateLogoutRequest` yöntemi:
 
 ```csharp
 public string CreateLogoutRequest(string token)  
@@ -360,11 +360,11 @@ public string CreateLogoutRequest(string token)
 }
 ```
 
-Bu yöntem IdentityServer'ın için URI oluşturur [oturum uç noktası end](https://identityserver4.readthedocs.io/en/release/endpoints/endsession.html#refendsession), gerekli parametrelere sahip. En son oturumun uç noktadır `/connect/endsession` bağlantı noktası üzerindeki kullanıcı ayarı olarak sunulan temel uç noktasının 5105. Kullanıcı ayarları hakkında daha fazla bilgi için bkz: [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Bu yöntem IdentityServer'ın için URI oluşturur [oturumu uç noktası end](https://identityserver4.readthedocs.io/en/release/endpoints/endsession.html#refendsession), gerekli parametrelere sahip. En son oturum uç noktadır `/connect/endsession` üzerinde 5105 bir kullanıcı ayarı olarak kullanıma sunulan temel uç nokta bağlantı noktası. Kullanıcı ayarları hakkında daha fazla bilgi için bkz. [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
-Döndürülen URI depolanan `LoginUrl` özelliği `LoginViewModel` sınıfı. Sırada `IsLogin` özelliği `true`, [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) içinde `LoginView` görünür. `WebView` Veri bağlamalar kendi [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.Source/) özelliğine `LoginUrl` özelliği `LoginViewModel` sınıfı ve bu nedenle oturum kapatma için IdentityServer istekte zaman `LoginUrl` özelliği ayarlanmış IdentityServer'ın son oturum uç noktası. Kullanıcı oturum açmış koşuluyla IdentityServer bu isteği aldığında, oturum kapatma oluşur. Kimlik doğrulama tanımlama bilgisi kimlik doğrulaması Ara ASP.NET Core tarafından yönetilen bir tanımlama bilgisi ile izlenir. Bu nedenle, IdentityServer dışında imzalama kimlik doğrulama tanımlama bilgisini kaldırır ve post oturum kapatma yönlendirme URI istemciye geri gönderir.
+Döndürülen URI depolanan `LoginUrl` özelliği `LoginViewModel` sınıfı. Sırada `IsLogin` özelliği `true`, [ `WebView` ](xref:Xamarin.Forms.WebView) içinde `LoginView` görülebilir. `WebView` Veri bağlar, [ `Source` ](xref:Xamarin.Forms.WebView.Source) özelliğini `LoginUrl` özelliği `LoginViewModel` sınıfı ve bu nedenle oturum kapatma için IdentityServer istekte olduğunda `LoginUrl` özelliği IdentityServer'ın son oturum uç noktası. Kullanıcının oturum açmış olması şartıyla IdentityServer bu isteği aldığında, oturum kapatma gerçekleşir. Kimlik doğrulama tanımlama bilgisi kimlik doğrulaması ara yazılımı gelen ASP.NET Core tarafından yönetilen bir tanımlama bilgisi ile izlenir. Bu nedenle, IdentityServer dışında imzalama kimlik doğrulama tanımlama kaldırır ve bu URI'yi istemciye geri post oturum kapatma yeniden yönlendirme gönderir.
 
-Mobil uygulama [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) post oturumu kapatıp yeniden yönlendirme URI'si yönlendirilir. Bu `WebView` Gezinti neden olacak `NavigateAsync` yönteminde `LoginViewModel` aşağıdaki kod örneğinde gösterildiği yürütülmek üzere sınıfı:
+Mobil uygulamadaki [ `WebView` ](xref:Xamarin.Forms.WebView) post oturumu kapatıp yeniden yönlendirme URI'si yönlendirilir. Bu `WebView` Gezinti neden `NavigateAsync` yönteminde `LoginViewModel` aşağıdaki kod örneğinde gösterilen yürütülecek sınıfı:
 
 ```csharp
 private async Task NavigateAsync(string url)  
@@ -378,20 +378,20 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-Bu yöntem, kimlik belirtecinin ve uygulama ayarlarını erişim belirtecinden temizler ve ayarlar `IsLogin` özelliğine `false`, hangi nedenler [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) üzerinde `LoginView` görünmez olmasını sayfası . Son olarak, `LoginUrl` özelliği URI IdentityServer için kullanıcının ayarlanmış [yetkilendirme uç noktası](https://identityserver4.readthedocs.io/en/release/endpoints/authorize.html), gerekli parametreleri içeren sonraki hazırlığı kullanıcı bir oturum açma işlemini başlatır.
+Bu yöntem, kimlik belirteci hem uygulama ayarları erişim belirtecinden temizler ve ayarlar `IsLogin` özelliğini `false`, hangi neden [ `WebView` ](xref:Xamarin.Forms.WebView) üzerinde `LoginView` görünmez olmasını sayfası . Son olarak, `LoginUrl` URI'ın IdentityServer için 's özelliği ayarlandığında [yetkilendirme uç noktası](https://identityserver4.readthedocs.io/en/release/endpoints/authorize.html), gerekli parametreleri, sonraki açışınızda hazırlığında kullanıcı bir oturum açma başlatır.
 
-Sayfa gezintisi hakkında daha fazla bilgi için bkz: [Gezinti](~/xamarin-forms/enterprise-application-patterns/navigation.md). Hakkında bilgi için [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) Gezinti neden olan bir görünüm modeli yöntemi yürütülmesi için bkz: [davranışları kullanarak gezinti çağırma](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Uygulama ayarları hakkında daha fazla bilgi için bkz: [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
+Sayfa gezintisi hakkında daha fazla bilgi için bkz: [Gezinti](~/xamarin-forms/enterprise-application-patterns/navigation.md). Hakkında bilgi için [ `WebView` ](xref:Xamarin.Forms.WebView) Gezinti neden olan bir görünüm modeli yöntemi yürütülmesi için bkz [davranışları Gezinti çağırma](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors). Uygulama ayarları hakkında daha fazla bilgi için bkz. [yapılandırma yönetimi](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
 > [!NOTE]
-> Uygulama SettingsView sahte hizmetlerini kullanmak üzere yapılandırıldığı zaman eShopOnContainers de bir mock oturum kapatma sağlar. Bu modda, uygulama ile IdentityServer iletişim değil ve bunun yerine uygulama ayarlarından herhangi bir saklı belirtece temizler.
+> Uygulama içinde SettingsView sahte hizmetlerini kullanacak biçimde yapılandırıldığında hizmetine de bir sahte oturum kapatma sağlar. Bu modda uygulama IdentityServer ile iletişim kurmak değil ve bunun yerine uygulama ayarlarından saklı tarafından istenen belirteçleri temizler.
 
 <a name="authorization" />
 
 ## <a name="authorization"></a>Yetkilendirme
 
-Kimlik doğrulamasından sonra ASP.NET Core web API'leri, erişim yetkisi vermek için çoğunlukla gerekir, bazı kimliği doğrulanmış kullanıcılar için kullanılabilir, ancak değil tüm API'leri yapmak bir hizmet sağlar.
+Kimlik doğrulamasından sonra ASP.NET Core web API, erişim yetkisi vermek için genelde gerekir, bazı kimliği doğrulanmış kullanıcılar tarafından kullanılabilir, ancak çok tüm API'leri yapmak bir hizmet sağlar.
 
-Bir ASP.NET Core MVC rotaya erişimi kısıtlama bir denetleyiciye Authorize özniteliğin uygulayarak elde edilebilir veya denetleyicisine erişimi sınırlar eylem veya eylem için aşağıdaki kod örneğinde gösterildiği şekilde kimliği doğrulanmış kullanıcılar:
+Bir ASP.NET Core MVC yönlendirme için erişimi kısıtlamak için bir denetleyici Authorize özniteliği uygulayarak ulaşılabilecek veya denetleyici erişimi sınırlayan bir eylem veya eylem için aşağıdaki kod örneğinde gösterildiği şekilde kimliği doğrulanmış kullanıcılar:
 
 ```csharp
 [Authorize]  
@@ -401,22 +401,22 @@ public class BasketController : Controller
 }
 ```
 
-Yetkisiz bir kullanıcının bir denetleyici veya ile işaretlenen eylem erişmeyi denerse `Authorize` özniteliği, MVC çerçevesi bir 401 (yetkisiz) HTTP durum kodu döndürür.
+Yetkisiz bir kullanıcı bir denetleyici veya ile işaretlenen eylem erişmeyi denerse `Authorize` özniteliği, MVC çerçevesi bir 401 (yetkisiz) HTTP durum kodu döndürür.
 
 > [!NOTE]
-> Parametreleri belirtilebilir `Authorize` bir API belirli kullanıcılara kısıtlamak için özniteliği. Daha fazla bilgi için bkz: [yetkilendirme](/aspnet/core/security/authorization/introduction/).
+> Parametreleri belirtilebilir `Authorize` API belirli kullanıcılara kısıtlamak için özniteliği. Daha fazla bilgi için [yetkilendirme](/aspnet/core/security/authorization/introduction/).
 
-İsteğe bağlı olarak erişim belirteçleri denetim yetkilendirme sağlamasını IdentityServer yetkilendirme iş akışı ile tümleştirilebilir. Bu yaklaşım, Şekil 9-5'te gösterilir.
+İsteğe bağlı olarak erişim belirteçleri denetim yetkilendirme sağlar, böylece IdentityServer yetkilendirme iş akışına tümleştirilebilir. Şekil 9-5'te bu yaklaşım gösterilmektedir.
 
 ![](authentication-and-authorization-images/authorization.png "Erişim belirteci yetkilendirmesi")
 
 **Şekil 9-5:** erişim belirteci yetkilendirmesi
 
-EShopOnContainers mobil uygulama kimlik mikro hizmet ile iletişim kurar ve kimlik doğrulama işleminin bir parçası olarak bir erişim belirteci ister. Erişim belirteci sonra sıralama ve sepeti mikro hizmetler tarafından erişim isteklerini bir parçası olarak sunulan API'lerde iletilir. Erişim belirteçleri, istemci ve kullanıcı hakkındaki bilgileri içerir. API'leri daha sonra verilerine erişim yetkisi vermek için bu bilgileri kullanın. API'leri korumak için IdentityServer yapılandırma hakkında daha fazla bilgi için bkz: [yapılandırma API kaynakları](#configuring-api-resources).
+Hizmetine mobil uygulama kimlik mikro hizmet ile iletişim kurar ve kimlik doğrulama işleminin bir parçası olarak bir erişim belirteci ister. Erişim belirteci daha sonra erişim isteklerini bir parçası olarak sıralama ve sepet mikro hizmetler tarafından sunulan API'lerde iletilir. Erişim belirteçleri, istemci ve kullanıcı hakkındaki bilgileri içerir. API'leri, ardından verilerine erişim yetkisi vermek için bu bilgileri kullanın. API'ların korunması için IdentityServer yapılandırma hakkında daha fazla bilgi için bkz [yapılandırma API'si kaynaklarına](#configuring-api-resources).
 
-### <a name="configuring-identityserver-to-perform-authorization"></a>Yetkilendirme gerçekleştirmek üzere IdentityServer yapılandırma
+### <a name="configuring-identityserver-to-perform-authorization"></a>Yetkilendirme gerçekleştirmeye IdentityServer yapılandırma
 
-Yetkilendirme IdentityServer ile gerçekleştirmek için kendi yetkilendirme ara yazılımı web uygulamasının HTTP istek ardışık düzene eklenmelidir. Ara yazılım eklenir `ConfigureAuth` web uygulamasının yönteminde `Startup` öğesinden çağrılır sınıfı `Configure` yöntemi ve aşağıdaki kod örneğinde eShopOnContainers başvuru uygulamasından gösterilmiştir:
+Yetkilendirme IdentityServer ile gerçekleştirmek için kendi yetkilendirme ara yazılımı için web uygulamasının HTTP istek işlem hattı eklenmesi gerekir. Ara yazılım eklenir `ConfigureAuth` web uygulamasının yönteminde `Startup` çağrılır sınıfı `Configure` yöntemi ve hizmetine başvuru uygulamadan alınan aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 protected virtual void ConfigureAuth(IApplicationBuilder app)  
@@ -431,23 +431,23 @@ protected virtual void ConfigureAuth(IApplicationBuilder app)
 } 
 ```
 
-Bu yöntem, geçerli erişim belirteciyle API yalnızca erişilip sağlar. Ara yazılım bir güvenilen verenin gönderilir emin olmak için gelen belirteci doğrular ve belirteç aldığı API ile kullanılması için geçerli olduğunu doğrular. Bu nedenle, sıralama veya Sepeti denetleyiciye gözatma bir erişim belirteci gerekli olduğunu belirten bir 401 (yetkisiz) HTTP durum kodunu döndürür.
+Bu yöntem, geçerli erişim belirteciyle yalnızca erişilebilir bir API sağlar. Ara yazılım, güvenilen bir verenden gönderilir emin olmak için gelen belirteci doğrular ve belirteci aldıktan sonra API ile kullanılacak geçerli olduğunu doğrular. Bu nedenle, sıralama veya Sepeti denetleyicisi için gözatma, bir erişim belirteci gerekli olduğunu belirten bir 401 (yetkisiz) HTTP durum kodunu döndürür.
 
 > [!NOTE]
-> IdentityServer'ın yetkilendirme ara yazılımı eklenmelidir web uygulamasının HTTP istek ardışık düzenine sahip MVC eklemeden önce `app.UseMvc()` veya `app.UseMvcWithDefaultRoute()`.
+> IdentityServer'ın yetkilendirme ara yazılımı eklenmelidir için web uygulamasının HTTP istek işlem hattı ile MVC eklemeden önce `app.UseMvc()` veya `app.UseMvcWithDefaultRoute()`.
 
-### <a name="making-access-requests-to-apis"></a>API'lerine erişim isteklerini yapma
+### <a name="making-access-requests-to-apis"></a>API'lere erişim isteklerini yapma
 
-İstekleri sıralama ve sepeti mikro hizmetler için erişim IdentityServer kimlik doğrulama işlemi sırasında elde edilen belirteç, yaparken, aşağıdaki kod örneğinde gösterildiği gibi isteğine dahil gerekir:
+İstekleri sepet sıralama ve mikro hizmetler için erişim IdentityServer kimlik doğrulama işlemi sırasında elde edilen belirteç yaparken aşağıdaki kod örneğinde gösterildiği gibi istekte eklenmelidir:
 
 ```csharp
 var authToken = Settings.AuthAccessToken;  
 Order = await _ordersService.GetOrderAsync(Convert.ToInt32(order.OrderNumber), authToken);
 ```
 
-Erişim belirteci bir uygulama ayarı olarak depolanır ve platforma özgü depolama biriminden alınan ve çağrısında yer `GetOrderAsync` yönteminde `OrderService` sınıfı.
+Erişim belirteci bir uygulama ayarı olarak depolanır ve platforma özgü depolama alanından alınan ve çağrısında yer `GetOrderAsync` yönteminde `OrderService` sınıfı.
 
-API, korumalı bir IdentityServer verileri gönderme benzer şekilde, erişim belirteci aşağıdaki kod örneğinde gösterildiği gibi dahil edilmelidir:
+Bir IdentityServer için veri gönderen API, korumalı benzer şekilde, erişim belirteci aşağıdaki kod örneğinde gösterildiği gibi dahil edilmelidir:
 
 ```csharp
 var authToken = Settings.AuthAccessToken;  
@@ -458,26 +458,26 @@ await _basketService.UpdateBasketAsync(new CustomerBasket
 }, authToken);
 ```
 
-Erişim belirteci platforma özgü depolama biriminden alınan ve çağrısında dahil `UpdateBasketAsync` yönteminde `BasketService` sınıfı.
+Erişim belirteci platforma özgü depolama alanından alınan ve çağrıda bulunan `UpdateBasketAsync` yönteminde `BasketService` sınıfı.
 
-`RequestProvider` EShopOnContainers mobil uygulamasında sınıfı kullanır `HttpClient` eShopOnContainers başvuru uygulaması tarafından sunulan RESTful API'lerini istekleri yapmak için sınıf. Sıralama ve sepeti yetkilendirme gerektiren API'leri yapma istediğinde, geçerli erişim belirteci istekle dahil edilmelidir. Bu üst bilgilerinin için erişim belirteci ekleyerek sağlanır `HttpClient` , aşağıdaki kod örneğinde gösterildiği şekilde örneği:
+`RequestProvider` Hizmetine mobil uygulamada sınıfı kullanır `HttpClient` hizmetine başvuru uygulama tarafından kullanıma sunulan RESTful API'leri isteklerde bulunmak için sınıf. Sıralama ve sepet yetkilendirme gerektiren API'leri yapma istediğinde, geçerli bir erişim belirteciyle istekle dahil edilmelidir. Bu erişim belirteci için üst bilgilerini ekleyerek gerçekleştirilir `HttpClient` , aşağıdaki kod örneğinde gösterildiği gibi örnek:
 
 ```csharp
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 ```
 
-`DefaultRequestHeaders` Özelliği `HttpClient` sınıfı, her bir istekle gönderilen üstbilgileri sunar ve erişim belirteci eklenir `Authorization` dizesiyle önekli üstbilgi `Bearer`. İstek bir RESTful API'si değerini gönderilen zaman `Authorization` üstbilgi ayıklanan ve güvenilir bir verenden gönderdi ve kullanıcı API çağırma izni olup olmadığını belirlemek için kullanılan, aldığı emin olmak için doğrulandı.
+`DefaultRequestHeaders` Özelliği `HttpClient` sınıfı her istekle beraber gönderilen üst bilgiler sunar ve erişim belirteci eklendiğinden `Authorization` dizesiyle ön ekli üst bilgi `Bearer`. İstek değeri bir RESTful API'sine gönderilen zaman `Authorization` üstbilgi ayıklanır ve güvenilir bir verenden göndermiş olduğunu ve kullanıcının API'yi çağırmak için izni olup olmadığını belirlemek için kullanılan, aldığı doğrulanarak.
 
-EShopOnContainers mobil uygulama web istekleri nasıl kolaylaştırdığını hakkında daha fazla bilgi için bkz: [erişme uzak veri](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md).
+Nasıl hizmetine mobil uygulama web isteği yapan hakkında daha fazla bilgi için bkz. [uzak veri erişim](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md).
 
 ## <a name="summary"></a>Özet
 
-Bir ASP.NET MVC web uygulamasıyla iletişim kuran bir Xamarin.Forms uygulamada kimlik doğrulama ve yetkilendirme tümleştirmek için birçok yaklaşım vardır. EShopOnContainers mobil uygulama kimlik doğrulama ve yetkilendirme IdentityServer 4 kullanan bir kapsayıcılı kimlik mikro hizmet ile gerçekleştirir. IdentityServer, taşıyıcı belirteci kimlik doğrulaması gerçekleştirmek için ASP.NET Core kimliği ile tümleşir ASP.NET Core bir açık kaynak Openıd Connect ve OAuth 2.0 çerçevedir.
+Kimlik doğrulama ve yetkilendirme, bir ASP.NET MVC web uygulaması ile iletişim kuran bir Xamarin.Forms uygulamasına tümleştirmek için birçok yaklaşım vardır. Hizmetine mobil uygulama kimlik doğrulaması ve yetkilendirme IdentityServer 4 kullanan bir kimlik kapsayıcılı mikro hizmet ile gerçekleştirir. IdentityServer bir açık kaynak Openıd Connect ve OAuth 2.0 taşıyıcı belirteci kimlik doğrulaması gerçekleştirmek için ASP.NET Core kimliği ile tümleşen bir ASP.NET Core çerçevesidir.
 
-Mobil uygulama bir kullanıcı kimlik doğrulaması için veya bir kaynağa erişim sağlamak için güvenlik belirteçleri IdentityServer istekleri. Bir kaynağa erişilirken bir erişim belirteci yetkilendirme gerektiren API'leri isteğine dahil edilmesi gerekir. IdentityServer'ın ara yazılımı gelen erişim belirteçleri güvenilen verenden gönderilir ve bunları alan API ile kullanılması için geçerli olduğundan emin olun doğrular.
+Mobil uygulama veya bir kullanıcı kimlik doğrulaması için bir kaynağa erişim sağlamak için güvenlik belirteçleri IdentityServer ister. Bir kaynağa erişirken bir erişim belirteci isteğinde yetkilendirme gerektiren API'lerine eklenmesi gerekir. IdentityServer'ın Ara yazılım, güvenilen bir verenden gönderilir ve bunlar aldığı API ile kullanılacak geçerli olduğundan emin olmak için gelen erişim belirteçlerini doğrular.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [E-kitap (2 Mb PDF) indirin](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (örnek)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [(2 Mb PDF) e-kitabı indir](https://aka.ms/xamarinpatternsebook)
+- [Hizmetine (GitHub) (örnek)](https://github.com/dotnet-architecture/eShopOnContainers)

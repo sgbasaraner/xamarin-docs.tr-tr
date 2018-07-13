@@ -1,6 +1,6 @@
 ---
-title: 'Merhaba, Android: Derinlemesine bakış'
-description: Bu iki parçalı Kılavuzu'nda ilk Xamarin.Android uygulamanızı oluşturmak ve Xamarin ile Android uygulaması geliştirme ile ilgili temel bilgileri bir anlayış geliştirmek. Yol boyunca araçları, kavramlar ve oluşturmak ve bir Xamarin.Android uygulaması dağıtmak için gerekli adımları görülecektir.
+title: 'Hello, Android: Derinlemesine bakış'
+description: Bu iki bölümden Kılavuzu'nda, ilk Xamarin.Android uygulamanızı oluşturmak ve Xamarin ile Android uygulama geliştirme temelleri bir anlayış geliştirmek. Bu doğrultuda, Araçlar, kavramlar ve bir Xamarin.Android uygulaması derleme ve dağıtma için gerekli adımları sunulacaktır.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
@@ -8,71 +8,71 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: bae3e7323596cc88f2b76aceeb5a4d1df4ce2d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f62842c3b2aea93d28303b7f47c5d50df6381387
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774388"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998433"
 ---
-# <a name="hello-android-deep-dive"></a>Merhaba, Android: Derinlemesine bakış
+# <a name="hello-android-deep-dive"></a>Hello, Android: Derinlemesine bakış
 
-_Bu iki parçalı Kılavuzu'nda ilk Xamarin.Android uygulamanızı oluşturmak ve Xamarin ile Android uygulaması geliştirme ile ilgili temel bilgileri bir anlayış geliştirmek. Yol boyunca araçları, kavramlar ve oluşturmak ve bir Xamarin.Android uygulaması dağıtmak için gerekli adımları görülecektir._
+_Bu iki bölümden Kılavuzu'nda, ilk Xamarin.Android uygulamanızı oluşturmak ve Xamarin ile Android uygulama geliştirme temelleri bir anlayış geliştirmek. Bu doğrultuda, Araçlar, kavramlar ve bir Xamarin.Android uygulaması derleme ve dağıtma için gerekli adımları sunulacaktır._
 
-## <a name="hello-android-deep-dive"></a>Merhaba, Android derinlemesine bakış
+## <a name="hello-android-deep-dive"></a>Hello, Android derinlemesine bakış
 
-İçinde [Hello, Android Hızlı Başlangıç](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md), yerleşik ve ilk Xamarin.Android uygulamanız çalıştırılmıştır. Şimdi daha karmaşık programları oluşturabilmeleri nasıl Android uygulamaları iş daha derin bir anlayış geliştirmek için zaman yapılır. Bu kılavuz, böylece ne yaptığınız anlamak ve Android uygulaması geliştirme temel bir anlayış geliştirmeye başlamak Hello, Android izlenecek sürdü adımları gözden geçirir.
+İçinde [Hello, Android Hızlı Başlangıç](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md), oluşturulan ve ilk Xamarin.Android uygulamanız çalıştı. Artık daha karmaşık programlar oluşturabilmeleri nasıl Android uygulamaları iş daha derin bir anlayış geliştirmek için zamanı geldi. Bu kılavuz, böylece ne yaptığını anlamanıza ve Android uygulaması geliştirme temel bir anlayış geliştirmek başlamak Hello, Android izlenecek gerçekleştirdiğiniz adımları gözden geçirir.
 
-Bu kılavuzda aşağıdaki konular touch:
+Bu kılavuzda aşağıdaki konular dokunma:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
--   **Visual Studio giriş** &ndash; giriş Visual Studio ve yeni bir Xamarin.Android uygulaması oluşturma.
+-   **Visual Studio'ya giriş** &ndash; Visual Studio ve yeni bir Xamarin.Android uygulaması oluşturmaya giriş.
 
--   **Bir Xamarin.Android uygulaması anatomisi** -bir Xamarin.Android uygulaması temel bölümlerini turu.
+-   **Bir Xamarin.Android uygulaması anatomisi** -Xamarin.Android uygulamasının temel parçalarından turu.
 
--   **Uygulama temelleri ve mimari temel** &ndash; etkinlikleri, Android bildirim ve Android geliştirme genel örneğinizin giriş.
+-   **Uygulama temelleri ve mimarisi temellerini** &ndash; etkinlikleri, Android bildirim ve Android geliştirme genel örneğinizin giriş.
 
--   **Kullanıcı Arabirimi (UI)** &ndash; kullanıcı arabirimleri Android Tasarımcısı ile oluşturma.
+-   **Kullanıcı Arabirimi (UI)** &ndash; kullanıcı arabirimleri ile Android Designer oluşturma.
 
 -   **Etkinlikleri ve etkinlik yaşam döngüsü** &ndash; etkinlik yaşam döngüsü ve kablolama kodda kullanıcı arabiriminin bir giriş.
 
--   **Test, dağıtım ve son rötuşları** &ndash; sınama, dağıtım, oluşturma resmi ve daha fazla öneri uygulamanızla tamamlayın.
+-   **Test, dağıtım ve Son dokunuşları** &ndash; test, dağıtım, oluşturma resmi ve daha fazla öneri uygulamanızla tamamlayın.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
--   **Mac için Visual Studio giriş** &ndash; giriş Xamarin Studio ve yeni bir Xamarin.Android uygulaması oluşturma.
+-   **Mac için Visual Studio giriş** &ndash; Xamarin Studio ve yeni bir Xamarin.Android uygulaması oluşturmaya giriş.
 
--   **Bir Xamarin.Android uygulaması anatomisi** &ndash; bir Xamarin.Android uygulaması temel bölümlerini turu.
+-   **Bir Xamarin.Android uygulaması anatomisi** &ndash; Xamarin.Android uygulamasının temel parçalarından turu.
 
--   **Uygulama temelleri ve mimari temel** &ndash; etkinlikleri, Android bildirim ve Android geliştirme genel örneğinizin giriş.
+-   **Uygulama temelleri ve mimarisi temellerini** &ndash; etkinlikleri, Android bildirim ve Android geliştirme genel örneğinizin giriş.
 
--   **Kullanıcı Arabirimi (UI)** &ndash; kullanıcı arabirimleri Android Tasarımcısı ile oluşturma.
+-   **Kullanıcı Arabirimi (UI)** &ndash; kullanıcı arabirimleri ile Android Designer oluşturma.
 
 -   **Etkinlikleri ve etkinlik yaşam döngüsü** &ndash; etkinlik yaşam döngüsü ve kablolama kodda kullanıcı arabiriminin bir giriş.
 
--   **Test, dağıtım ve son rötuşları** &ndash; sınama, dağıtım, oluşturma resmi ve daha fazla öneri uygulamanızla tamamlayın.
+-   **Test, dağıtım ve Son dokunuşları** &ndash; test, dağıtım, oluşturma resmi ve daha fazla öneri uygulamanızla tamamlayın.
 
 -----
 
 
-Bu kılavuz becerileri ve bir tek ekran Android uygulaması oluşturmak için gerekli bilgileri geliştirmenize yardımcı olur. Üzerinden çalıştıktan sonra bir Xamarin.Android uygulaması ve onların birlikte nasıl uyduğunu farklı bölümlerini anlamanız gerekir.
+Bu kılavuz, bir tek ekranlı Android uygulaması oluşturmak için gereken bilgi ve becerilerinizi geliştirmenize yardımcı olur. Üzerinden çalıştıktan sonra farklı bölümlerini bir Xamarin.Android uygulaması ve bunların birlikte nasıl getireceğinizi anlamanız gerekir.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-## <a name="introduction-to-visual-studio"></a>Visual Studio giriş
+## <a name="introduction-to-visual-studio"></a>Visual Studio'ya giriş
 
-Visual Studio Microsoft güçlü bir IDE ' dir. Bir tam olarak tümleşik görsel tasarımcı yeniden düzenleme araçları, bir derleme tarayıcı, kaynak kodu tümleştirme ve daha fazla bilgi içeren bir metin Düzenleyicisi özellikleri. Bu kılavuzda eklenti Xamarin ile temel bazı Visual Studio özellikleri kullanmayı öğreneceksiniz.
+Visual Studio, Microsoft güçlü bir ıde'dir. Bu, tamamen tümleşik bir görsel tasarımcı, yeniden düzenleme araçları, bir bütünleştirilmiş kod tarayıcı, kaynak kodu tümleştirmesi ve daha fazlasını içeren bir metin düzenleyicisi sunar. Bu kılavuzda eklenti Xamarin ile bazı temel Visual Studio özellikleri kullanmayı öğreneceksiniz.
 
-Visual Studio düzenler koda _çözümleri_ ve _projeleri_. Bir çözümü bir veya daha fazla projeleri tutan bir kapsayıcıdır. Proje (iOS veya Android için olduğu gibi gibi) bir uygulama, bir destek kitaplığı, bir sınama uygulaması ve daha fazla olabilir. İçinde **Phoneword** uygulama, eklediğiniz yeni bir Android projesi kullanarak **Android uygulaması** şablonuna **Phoneword** oluşturulmuş çözümünü [Merhaba, Android](~/android/get-started/hello-android/hello-android-quickstart.md) Kılavuzu. 
+Visual Studio kod halinde düzenler _çözümleri_ ve _projeleri_. Bir çözüm bir veya daha fazla proje tutan bir kapsayıcıdır. Bir proje, bir uygulama (iOS veya Android olduğu gibi), destek kitaplığı, bir test uygulaması ve daha fazla olabilir. İçinde **Phoneword** uygulama, eklediğiniz yeni bir Android projesi kullanarak **Android uygulaması** şablona **Phoneword** oluşturulmuş çözümünü [Merhaba, Android](~/android/get-started/hello-android/hello-android-quickstart.md) Kılavuzu. 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-## <a name="introduction-to-visual-studio-for-mac"></a>Mac için Visual Studio giriş
+## <a name="introduction-to-visual-studio-for-mac"></a>Mac için Visual Studio'ya giriş
 
-Mac için Visual Studio bir ücretsiz, açık kaynaklı IDE Visual Studio'ya benzer ' dir. Tam olarak tümleşik bir görsel tasarımcı, yeniden düzenleme araçları ile tam bir metin düzenleyicisi, bir derleme tarayıcı, kaynak kodu tümleştirme ve daha fazla bilgi sunar. Bu kılavuzda, Mac özellikler için temel bazı Visual Studio kullanmayı öğreneceksiniz. Mac için Visual Studio yeniyseniz, daha kapsamlı denetlemek isteyebilirsiniz [Mac için Visual Studio giriş](https://docs.microsoft.com/visualstudio/mac/).
+Mac için Visual Studio bir ücretsiz, açık kaynaklı Visual Studio'ya benzer bir ıde'dir. Bu tam olarak tümleşik bir görsel tasarımcı, yeniden düzenleme araçları ile tam bir metin düzenleyicisi, bir bütünleştirilmiş kod tarayıcı, kaynak kodu tümleştirmesi ve diğer özellikleri. Bu kılavuzda, bazı temel Visual Studio Mac özelliklerini kullanmayı öğreneceksiniz. Mac için Visual Studio yeniyseniz, daha ayrıntılı denetlemek isteyebilirsiniz [Mac için Visual Studio giriş](https://docs.microsoft.com/visualstudio/mac/).
 
-Mac için Visual Studio aşağıdaki koda düzenleme Visual Studio uygulama _çözümleri_ ve _projeleri_. Bir çözümü bir veya daha fazla projeleri tutan bir kapsayıcıdır. Proje (iOS veya Android için olduğu gibi gibi) bir uygulama, bir destek kitaplığı, bir sınama uygulaması ve daha fazla olabilir. İçinde **Phoneword** uygulama, eklediğiniz yeni bir Android projesi kullanarak **Android uygulaması** şablonuna **Phoneword** oluşturulmuş çözümünü [Merhaba, Android](~/android/get-started/hello-android/hello-android-quickstart.md) Kılavuzu.
+Mac için Visual Studio aşağıdaki koda düzenleme Visual Studio uygulaması _çözümleri_ ve _projeleri_. Bir çözüm bir veya daha fazla proje tutan bir kapsayıcıdır. Bir proje, bir uygulama (iOS veya Android olduğu gibi), destek kitaplığı, bir test uygulaması ve daha fazla olabilir. İçinde **Phoneword** uygulama, eklediğiniz yeni bir Android projesi kullanarak **Android uygulaması** şablona **Phoneword** oluşturulmuş çözümünü [Merhaba, Android](~/android/get-started/hello-android/hello-android-quickstart.md) Kılavuzu.
 
 -----
 
@@ -82,84 +82,84 @@ Mac için Visual Studio aşağıdaki koda düzenleme Visual Studio uygulama _ç�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Aşağıdaki ekran görüntüsünde çözümün içeriği listeler. Bu dizin yapısını ve tüm Çözümle ilişkili dosyaları içeren Çözüm Gezgini oluşur:
+Aşağıdaki ekran görüntüsünde, çözümün içeriğini listeler. Bu dizin yapısını ve çözümle ilişkili dosyaların tümünü içeren Çözüm Gezgini.
 
 [![Çözüm Gezgini](hello-android-deepdive-images/vs/02-solution-structure-sml.png)](hello-android-deepdive-images/vs/02-solution-structure.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Aşağıdaki ekran görüntüsünde çözümün içeriği listeler. Bu çözüm, dizin yapısını ve tüm Çözümle ilişkili dosyaları içeren Pad'i oluşur:
+Aşağıdaki ekran görüntüsünde, çözümün içeriğini listeler. Bu dizin yapısını ve çözümle ilişkili dosyaların tümünü içeren çözüm bölmesi.
 
-[![Çözüm paneli](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png#lightbox)
+[![Çözüm bölmesi](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png#lightbox)
 
 -----
 
-Bir çözüm olarak adlandırılan **Phoneword** oluşturuldu ve Android projesi **Phoneword** bunun içinde yerleştirilir.
+Bir çözüm olarak **Phoneword** oluşturuldu ve Android proje **Phoneword** bunun içinde yerleştirilir.
 
-Öğeleri her klasör ve amacı görmek için proje içinde bakın:
+İçindeki her klasör ve amacını görmek için proje öğeleri bakın:
 
--   **Özellikler** &ndash; içerir [AndroidManifest.xml](~/android/platform/android-manifest.md) tüm ad, sürüm numarasını ve izinler de dahil olmak üzere Xamarin.Android uygulama gereksinimlerini açıklar dosya. **Özellikleri** klasörü de barındırıldığı [AssemblyInfo.cs](http://msdn.microsoft.com/en-us/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx), bir .NET derlemesi meta veri dosyası. Bu dosya, uygulamanız hakkında bazı temel bilgileri doldurmak için iyi bir uygulamadır.
+-   **Özellikleri** &ndash; içerir [AndroidManifest.xml](~/android/platform/android-manifest.md) tüm gereksinimleri için ad, sürüm numarasını ve izinleri de dahil olmak üzere, bir Xamarin.Android uygulaması tanımlayan dosyası. **Özellikleri** klasör de barındırıldığı [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo), bir .NET bütünleştirilmiş kod meta veri dosyası. Bu dosya uygulama ile ilgili bazı temel bilgileri doldurmak için iyi bir uygulamadır.
 
--   **Başvuruları** &ndash; oluşturmak ve uygulamayı çalıştırmak için gerekli olan derlemeleri içerir. Başvuruları dizin genişletirseniz, .NET derleme başvurularını gibi görürsünüz [sistem](http://msdn.microsoft.com/en-us/library/system%28v=vs.110%29.aspx), System.Core, ve [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml%28v=vs.110%29.aspx), Xamarin'ın Mono.Android derlemesine başvuru yanı sıra.
+-   **Başvuruları** &ndash; derlemek ve uygulamayı çalıştırmak için gerekli derlemelerini içerir. Başvuruları dizini genişletirseniz, .NET derlemesine ilişkin başvurular gibi görürsünüz [sistem](xref:System), System.Core, ve [System.Xml](xref:System.Xml), Xamarin'in Mono.Android derlemesine bir başvuru yanı sıra.
 
 
--   **Varlıklar** &ndash; uygulama yazı tiplerini, yerel veri dosyaları ve metin dosyaları dahil olmak üzere çalıştırmak için gereken dosyaları içerir. Burada bulunan dosyalar oluşturulan erişilebilir `Assets` sınıfı. Xamarin Android varlıklar hakkında daha fazla bilgi için bkz: [kullanarak Android varlıklar](~/android/app-fundamentals/resources-in-android/android-assets.md) Kılavuzu.
+-   **Varlıklar** &ndash; yazı tipleri, yerel veri dosyaları ve metin dosyaları gibi çalışması için uygulaması gereken dosyaları içerir. Buraya eklenen dosyaları oluşturulan erişilebilir `Assets` sınıfı. Xamarin Android varlıklar hakkında daha fazla bilgi için bkz. [kullanarak Android varlıklarını](~/android/app-fundamentals/resources-in-android/android-assets.md) Kılavuzu.
 
--   **Kaynakları** &ndash; dizeleri, görüntüler ve düzenleri gibi uygulama kaynakları içerir. Bu kaynaklar kodda oluşturulan erişebilirsiniz `Resource` sınıfı. [Android kaynakları](~/android/app-fundamentals/resources-in-android/index.md) Kılavuzu hakkında daha fazla ayrıntı sağlar **kaynakları** dizin. Uygulama şablonu Ayrıca kaynaklara kısa bir kılavuz içerir **AboutResources.txt** dosya.
+-   **Kaynakları** &ndash; dizeleri, resimler ve düzenleri gibi uygulama kaynakları içerir. Oluşturulan kod bu kaynaklara erişebilir `Resource` sınıfı. [Android kaynakları](~/android/app-fundamentals/resources-in-android/index.md) Kılavuzu hakkında daha fazla ayrıntı sağlar **kaynakları** dizin. Uygulama şablonu, ayrıca kaynaklara kısa bir kılavuz içerir **AboutResources.txt** dosya.
 
 ### <a name="resources"></a>Kaynaklar
 
-**Kaynakları** dizini içeren dört klasörleri **drawable**, **düzeni**, **mipmap** ve **değerleri**, adında bir dosya yanı sıra **Resource.designer.cs**.
+**Kaynakları** dizinini içeren dört klasörleri **drawable**, **Düzen**, **mipmap** ve **değerleri**, adlı bir dosya yanı sıra **Resource.designer.cs**.
 
-Öğeleri aşağıdaki tabloda özetlenmiştir:
+Öğeler, aşağıdaki tabloda özetlenmiştir:
 
--   **drawable** &ndash; drawable dizinleri ev [drawable kaynakları](http://developer.android.com/guide/topics/resources/drawable-resource.html) görüntüler ve bit eşlemler gibi.
+-   **drawable** &ndash; drawable dizinleri evi [drawable kaynakları](http://developer.android.com/guide/topics/resources/drawable-resource.html) görüntüler ve bit eşlemler gibi.
 
--   **Mipmap** &ndash; mipmap dizin simgesi densities farklı Başlatıcısı drawable dosyalarını içerir. Uygulama simgesi dosyası drawable dizini varsayılan şablonu barındırıldığı **Icon.png**.
-
-
--   **Düzen** &ndash; Düzen dizinini içeren _Android designer dosyaları_ (.axml) her ekranı veya etkinliği için kullanıcı arabirimi tanımlayın. Adlı bir varsayılan düzen şablonu oluşturur **Main.axml**.
-
--   **değerleri** &ndash; bu dizin dize, tamsayı ve renkleri gibi basit değerlerini depolayan XML dosyalarını barındırır. Şablon adlı dize değerlerini depolamak için bir dosya oluşturur **Strings.xml**.
-
--   **Resource.Designer.cs** &ndash; olarak da bilinen `Resource` sınıfı, bu dosya olduğu için her bir kaynağın atanan benzersiz kimlikler tutan bir parçalı sınıf. Xamarin.Android araçları tarafından otomatik olarak oluşturulur ve gerektiği gibi yeniden oluşturulur. Xamarin.Android için yapılan tüm el ile yapılan değişikliklerin üzerine yazar olarak bu dosyayı el ile düzenlenmemelidir.
+-   **Mipmap** &ndash; mipmap dizini drawable dosyaları için farklı bir Başlatıcısı simgesini densities tutar. Varsayılan şablonda uygulama simge dosyasını drawable dizini barındırır **Icon.png**.
 
 
-## <a name="app-fundamentals-and-architecture-basics"></a>Uygulama temelleri ve mimari temelleri
+-   **Düzen** &ndash; Düzen dizini içeren _Android designer dosyaları_ (.axml) her ekranı veya etkinliği için kullanıcı arabirimini tanımlar. Şablon, varsayılan olarak adlandırılan bir düzeni oluşturur. **Main.axml**.
 
-Android uygulamaları tek giriş noktası yoktur; diğer bir deyişle, hiçbir tek satırlık bir uygulamayı başlatmak için işletim sistemi çağırır uygulamasındaki kod yoktur. Bunun yerine, Android hangi sırada Android tüm uygulama işlemi belleğe sınıflarından biri başlattığında bir uygulamayı başlatır.
+-   **değerleri** &ndash; bu dizin, dizeler ve tamsayılar renkleri gibi basit değerler depolayan XML dosyalarını barındırır. Şablon olarak adlandırılan dize değerleri depolamak için bir dosya oluşturur **Strings.xml**.
 
-Android, bu benzersiz özellik son derece yararlı uygulamalar tasarlama karmaşık veya etkileşen Android işletim sistemine sahip olabilir. Ancak, bu seçenekler ayrıca Android gibi basit bir senaryoyla ilgilenirken karmaşık hale **Phoneword** uygulama. Bu nedenle, Keşif Android mimarisinin iki ayrılır. Bu kılavuz bir Android uygulaması için en yaygın giriş noktası kullanan bir uygulamayı dissects: ilk ekran. İçinde [Hello, Android Multiscreen](~/android/get-started/hello-android-multiscreen/index.md), uygulamayı başlatmak için farklı yollar açıklandığı gibi Android mimarisi tam karmaşıklığını incelediniz.
+-   **Resource.Designer.cs** &ndash; olarak da bilinen `Resource` sınıfı, bu dosya olduğu her kaynağa atanmış benzersiz kimlikler tutan bir parçalı sınıf. Xamarin.Android araçları tarafından otomatik olarak oluşturulur ve gerektiği gibi yeniden oluşturulur. Xamarin.Android için el ile yapılan değişiklikleri üzerine yazılacağından bu dosyayı el ile düzenlenmemelidir.
+
+
+## <a name="app-fundamentals-and-architecture-basics"></a>Uygulama temelleri ve mimarisinin temelleri
+
+Android uygulamaları tek giriş noktası yoktur; diğer bir deyişle, hiçbir tek satırlık bir kod uygulamayı başlatmak için işletim sistemini çağıran uygulamada yoktur. Android hangi sırada Android tüm uygulama işlemi belleğine yükler, kendi sınıfları başlattığında, bunun yerine, bir uygulamayı başlatır.
+
+Android benzersiz bu özellik, son derece yararlı uygulamalar tasarlama karmaşık veya Android işletim sistemi ile etkileşim kuran olabilir. Ancak, bu seçenekler ayrıca Android gibi basit bir senaryoyla ilgilenirken karmaşık hale **Phoneword** uygulama. Bu nedenle, Keşif Android mimarisinin iki ayrılır. Bu kılavuzda bir Android uygulaması için en yaygın giriş noktası kullanan bir uygulamayı dissects: ilk ekran. İçinde [Hello, Android çoklu ekranı](~/android/get-started/hello-android-multiscreen/index.md), uygulamayı başlatmak için farklı bir şekilde açıklandığı gibi Android mimari tam karmaşıklığını incelenmektedir.
 
 
 ### <a name="phoneword-scenario---starting-with-an-activity"></a>Phoneword senaryo - bir etkinlikle başlatılıyor
 
-Açtığınızda **Phoneword** uygulama ilk kez bir öykünücü veya cihaz işletim sistemi oluşturur ilk *etkinlik*. Tek bir uygulama ekranına karşılık gelen özel bir Android sınıfı bir etkinliktir ve çizim ve kullanıcı arabirimini destekleyen sorumludur. Android uygulamanın ilk etkinlik oluşturduğunda, tüm uygulama yükler:
+Açtığınızda **Phoneword** uygulama ilk kez bir öykünücü veya cihaz, işletim sistemi ilk oluşturur *etkinlik*. Tek bir uygulama ekrana karşılık gelen özel bir Android sınıf bir etkinliktir ve çizim ve kullanıcı arabirimini destekleyen sorumludur. Android uygulamanın ilk etkinliği oluşturduğunda, uygulamanın tamamını yükler:
 
-[![Etkinlik yükleme](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png#lightbox)
+[![Etkinlik yük](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png#lightbox)
 
-Hiçbir doğrusal progression (birkaç nokta uygulamasından başlatabilirsiniz) bir Android uygulaması olduğundan, Android uygulama ne sınıfları ve dosyaları sunun izlemek için benzersiz bir şekilde sahiptir. İçinde **Phoneword** örnek, uygulamayı oluşturan bölümleri adlı özel bir XML dosyası ile kaydedilen tüm **Android derleme bildirimi**. Rolü **Android derleme bildirimi** uygulama içeriği, özellikler ve izinleri izlemek ve Android işletim sistemine ifşa sağlamaktır. Düşünebilirsiniz **Phoneword** uygulama tek bir etkinlik (ekran) ve Android bildirim dosyası tarafından Aşağıdaki diyagramda gösterildiği gibi birbirine bağlı Yardımcısı ve kaynak dosyaları koleksiyonu olarak:
+Bir Android uygulaması (birkaç nokta uygulamadan başlatabilir) aracılığıyla hiçbir doğrusal ilerlemeyi olduğundan, Android uygulama sınıf ve dosyaları ne yapmak izlemek için benzersiz bir şekilde sahiptir. İçinde **Phoneword** örnek, uygulamayı oluşturan parçaları olarak adlandırılan özel bir XML dosyasıyla kaydedilen tüm **Android bildirim**. Rolü **Android bildirim** uygulamanın içeriği, özellikler ve izinleri izlemenize ve Android işletim sistemi için bunları ifşa etmek. Düşünebilirsiniz **Phoneword** uygulamayı tek bir etkinlik (ekran) ve birlikte Android bildirim dosyasında, aşağıdaki diyagramda gösterildiği gibi bağlı kaynak ve yardımcı dosyaları koleksiyonu olarak:
 
 [![Kaynak Yardımcıları](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png#lightbox)
 
-Sonraki birkaç bölümleri, çeşitli kısımlarını ilişkileri keşfetmek **Phoneword** uygulama; bu sağlayacağını, daha iyi yukarıdaki diyagramı anlamak ile. Bu keşif Android Tasarımcısı ve düzeni dosyaları anlatılmaktadır kullanıcı arabirimi ile başlar.
+Sonraki birkaç bölümler çeşitli bölümlerini ilişkileri keşfedin **Phoneword** uygulama; bu sağlamalıdır, daha iyi bir Yukarıdaki diyagramda'nın anlayış ile. Bu araştırma kullanıcı arabirimi ile başlar Android designer ve Düzen dosyalarını açıklar.
 
 
 ## <a name="user-interface"></a>Kullanıcı Arabirimi
 
-`Main.axml` kullanıcı arabirimi düzeni uygulamanın ilk ekranda dosyasıdır. .axml bu Android Tasarımcısı dosyasına gösterir (AXML anlamına gelir *Android XML*). Adı *ana* Android'ın açısından bakıldığında rastgeledir &ndash; düzeni dosyasını başka bir adlandırılmış. Açtığınızda **Main.axml** adlı Android düzeni dosyaları için görsel Düzenleyicisi yukarı getirir IDE içinde *Android Tasarımcısı*:
+`Main.axml` uygulamadaki ilk ekran için kullanıcı arabirimi Düzen dosyası olan. Bu Android bir tasarımcı dosyası olduğunu .axml gösterir (AXML anlamına gelen *Android XML*). Adı *ana* Android açısından bakıldığında rastgeledir &ndash; Düzen dosyası başka bir adlandırılmış. Açtığınızda **Main.axml** IDE'de, bunu visual düzenleyici olarak adlandırılan Android Düzen dosyalarını için getirir *Android Designer*:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Android Tasarımcısı](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Tasarımcısı")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
+[![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Tasarımcısı")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Android Tasarımcısı](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
+[![Android Designer](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
 
 -----
 
-İçinde **Phoneword** uygulama, **TranslateButton**kullanıcının kimliği ayarlanmış `@+id/TranslateButton`:
+İçinde **Phoneword** uygulamayı **TranslateButton**kişinin kimliği ayarlanır `@+id/TranslateButton`:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -171,40 +171,40 @@ Sonraki birkaç bölümleri, çeşitli kısımlarını ilişkileri keşfetmek **
 
 -----
 
-Ayarladığınızda `id` özelliği **TranslateButton**, Android Tasarımcısı eşlemeleri **TranslateButton** denetimini `Resource` sınıfı ve atar bir *kaynak Kimliği* , `TranslateButton`. Bu eşleme sınıfına visual denetiminin bulun ve kullanmanız mümkün kılar **TranslateButton** ve diğer denetimlerin uygulama kodu. Denetimleri'nın temelini oluşturan kodu parçalayın olduğunda bu daha ayrıntılı olarak ele alınacaktır. Tüm bilmeniz gereken şu an için olan bir denetim kodu gösterimini Tasarımcısı'nda denetiminin görsel gösterimi bağlantılıdır `id` özelliği.
+Ayarladığınızda `id` özelliği **TranslateButton**, Android Designer eşler **TranslateButton** denetimini `Resource` sınıfı ve atar bir *kaynak Kimliği* , `TranslateButton`. Bu eşleme visual denetiminin sınıfı bulun ve kullanmak mümkün kılar **TranslateButton** ve diğer denetimleri uygulama kodunda. Denetimleri güç katan kod parçalayın olduğunda bu daha ayrıntılı olarak ele alınacaktır. Bilmeniz gereken her şeyi şu an için olan kod gösterimini bir denetimin görsel temsilini tasarımcıda bir denetime bağlı olduğundan emin `id` özelliği.
 
 
 ### <a name="source-view"></a>Kaynak Görünümü
 
-Tasarım yüzeyine tanımlanan her şeyi kullanmak Xamarin.Android için XML veri dönüştürülür. Android Tasarımcısı visual Tasarımcısı'ndan oluşturulan XML içeren bir kaynak görünüm sağlar. Bu XML geçerek görüntüleyebileceğiniz **kaynak** aşağıdaki ekran görüntüsüne gösterildiği gibi sol alt tasarımcı görünümü içinde panel:
+Tasarım yüzeyinde tanımlanan her şey, XML için kullanılacak bir Xamarin.Android uygulamasına çevrilir. Android Designer görsel tasarımcıdan üretilen XML içeren kaynak görünümü sağlar. Bu XML geçerek görüntüleyebileceğiniz **kaynak** ekran aşağıda gösterildiği gibi sol alt tasarımcı görünümü içinde panel:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tasarımcı kaynağı görünümü](hello-android-deepdive-images/vs/05-source-view-sml.png "Tasarımcısı kaynağı görünümü")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
+[![Tasarımcı kaynağı görünümü](hello-android-deepdive-images/vs/05-source-view-sml.png "kaynağı görünümü Tasarımcısı")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Tasarımcı kaynağı görünümü](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png#lightbox)
+[![Tasarımcı kaynak görünümü](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png#lightbox)
 
 -----
 
-Bu XML kaynak kodunu içermelidir **metin (büyük)**, **düz metin**ve iki **düğmesini** öğeleri. Xamarin Android Android Tasarımcısı hakkında daha ayrıntılı gezinmek için bkz [Tasarımcısı genel bakış](~/android/user-interface/android-designer/index.md) Kılavuzu.
+Bu XML kaynak kodunu içermesi gereken **metin (büyük)**, **düz metin**, ve iki **düğmesi** öğeleri. Android Designer'ın daha ayrıntılı bir tur başvurmak için Xamarin Android [Tasarımcısı genel bakış](~/android/user-interface/android-designer/index.md) Kılavuzu.
 
-Kullanıcı arabirimini visual parçası kavramları ve araçları şimdi ele alınmış. Ardından, etkinlikleri ve etkinlik yaşam döngüsü incelediniz gibi kullanıcı arabirimini'nın temelini oluşturan koda atlama zamanı geldi.
+Görsel bölümü kullanıcı arabiriminin kavramları ve araçları artık ele alınmış. Ardından, etkinlikleri ve etkinlik yaşam döngüsü keşfedilmemiş olan kullanıcı arabirimi güç veren koda atlama zamanı gelmiş demektir.
 
 
 ## <a name="activities-and-the-activity-lifecycle"></a>Etkinlikleri ve etkinlik yaşam döngüsü
 
-`Activity` Sınıfı, kullanıcı arabirimini destekler kodunu içerir.
-Etkinlik için kullanıcı etkileşimi yanıt ve dinamik kullanıcı deneyimi oluşturma sorumludur.
-Bu bölüm tanıtır `Activity` sınıfı, etkinlik yaşam döngüsü açıklanır ve kullanıcı arabiriminde'nın temelini oluşturan kodu dissects **Phoneword** uygulama.
+`Activity` Sınıf kullanıcı arabirimi güç katan kodunu içerir.
+Etkinlik kullanıcı etkileşimine yanıt verme ve dinamik kullanıcı deneyimi oluşturmaya sorumludur.
+Bu bölüm tanıtır `Activity` sınıfı, etkinlik yaşam döngüsü ele alır ve kullanıcı arabiriminde güç katan kod dissects **Phoneword** uygulama.
 
 
 ### <a name="activity-class"></a>Etkinlik sınıfı
 
-**Phoneword** uygulama yalnızca bir ekran (etkinlik) sahiptir. Ekran'ın temelini oluşturan sınıfı adlı `MainActivity` ve yaşadığı **MainActivity.cs** dosya. Adı `MainActivity` Android özel bir önemi olan &ndash; kuralı uygulamanın ilk etkinliğin adını olsa `MainActivity`, Android değil dikkat edin, başka bir şey olarak adlandırılmışsa.
+**Phoneword** uygulama yalnızca bir ekran (etkinlik) sahiptir. Ekran güç katan bir sınıfa `MainActivity` ve kendini **MainActivity.cs** dosya. Adı `MainActivity` Android özel bir önemi yoktur &ndash; kuralı bir uygulamada ilk etkinliği ad olmasına rağmen `MainActivity`, Android değil dikkatli olun, başka bir şey ise.
 
-Açtığınızda **MainActivity.cs**, görebilirsiniz `MainActivity` sınıfı bir *alt* , `Activity` sınıf ve etkinlik'ın ile donatılan [etkinlik](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) özniteliği:
+Açtığınızda **MainActivity.cs**, gördüğünüz gibi `MainActivity` sınıfı bir *alt* , `Activity` sınıf ve etkinlik ile donatılmış [etkinliği](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) özniteliği:
 
 ```csharp
 [Activity (Label = "Phone Word", MainLauncher = true)]
@@ -214,35 +214,35 @@ public class MainActivity : Activity
 }
 ```
 
-`Activity` Özniteliği Android derleme bildirimi ile etkinliğini kaydeder; Bu, bu sınıfın bir parçası olduğunu biliyor Android sağlar **Phoneword** bu bildirimi tarafından yönetilen uygulama. `Label` Özelliği ayarlar ekranın üstünde görüntülenecek metin.
+`Activity` Özniteliği, Android bildirim ile etkinliğini kaydeder; bu Android Bu sınıf bir parçası olduğunu bilmesini sağlar **Phoneword** bu bildirimi tarafından yönetilen bir uygulama. `Label` Özelliğini ayarlar ekranının üstünde görüntülenecek metin.
 
-`MainLauncher` Özelliği, uygulama başlatıldığında bu etkinliği görüntülemek için Android söyler. Bu özellik daha fazla etkinlikleri (ekranları) içinde anlatıldığı gibi uygulama eklemek gibi önemli hale [Hello, Android Multiscreen](~/android/get-started/hello-android-multiscreen/index.md) Kılavuzu.
+`MainLauncher` Özelliği, uygulama başlatıldığında, bu etkinliği görüntülemek için Android söyler. Bu özellik daha fazla etkinlik (ekranları) açıklandığı gibi bir uygulamaya ekleme gibi önemli hale gelir [Hello, Android çoklu ekranı](~/android/get-started/hello-android-multiscreen/index.md) Kılavuzu.
 
-Artık temel bilgileri `MainActivity` silinmiş kapsamında, etkinlik koda daha derin Dalış için sunarak zamanı _etkinlik yaşam döngüsü_.
+Şimdi Temelleri `MainActivity` silinmiş Kapsandı, etkinlik koda daha derin Dalış için sunarak zamanı _etkinlik yaşam döngüsü_.
 
 ### <a name="activity-lifecycle"></a>Etkinlik yaşam döngüsü
 
-Android, etkinlikleri yaşam döngüsü kullanıcı ile etkileşimlerini bağlı olarak farklı aşamaları gidin. Başlatılan ve duraklatılmış, sürdürüldü ve yok etme ve vb. etkinlikleri oluşturulabilir. `Activity` Sınıfı ekranının yaşam döngüsü belirli noktalarında sistem çağırır yöntemlerini içerir. Aşağıdaki diyagram tipik bir aktivite ömrünü ve aynı zamanda ilgili yaşam döngüsü yöntemleri gösterir:
+Android'de, bir yaşam döngüsü, kullanıcının etkileşim bağlı olarak farklı aşamalarında etkinlikleri inceleyin. Başlatılan ve duraklatılmış, devam ettirildi ve yok ve vb. etkinlikleri oluşturulabilir. `Activity` Sınıfı, bazı noktalarda ekranın yaşam döngüsünde sistem çağırdığı yöntemleri içerir. Aşağıdaki diyagramda tipik geçerlilik etkinliğin yanı sıra ilgili yaşam döngüsü yöntemlerden bazıları gösterilmektedir:
 
 [![Etkinlik yaşam döngüsü](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png#lightbox)
 
-Geçersiz kılma tarafından `Activity` yaşam döngüsü yöntemleri nasıl etkinlik, kullanıcıya nasıl tepki verdiğini yükler denetlemek ve hatta aygıt ekranından kaybolur sonra ne olur. Örneğin, bazı önemli görevleri gerçekleştirmek için yukarıdaki diyagramda yaşam döngüsü yöntemleri geçersiz kılabilirsiniz:
+Geçersiz kılma tarafından `Activity` yaşam döngüsü yöntemleri nasıl etkinlik, kullanıcıya nasıl tepki verdiğini yükleyeceğini denetlemek ve hatta cihaz ekranından kaybolduktan sonra ne olur. Örneğin, bazı önemli görevleri gerçekleştirmek için yukarıdaki diyagramda yaşam döngüsü yöntemlerini geçersiz kılabilirsiniz:
 
--   **OnCreate** &ndash; görünümler oluşturur, değişkenleri başlatır ve kullanıcı etkinliğini görür önce yapılması gereken diğer hazırlığı çalışma gerçekleştirir. Yalnızca etkinliğin belleğe zaman yüklendikten sonra bu yöntem çağrılır. 
+-   **OnCreate** &ndash; görünümler oluşturur, değişkenleri başlatır ve kullanıcı etkinliğini görür önce yapılmalıdır hazırlık diğer işleri yapar. Bu yöntem, yalnızca zaman etkinlik belleğe yüklendiğinde çağrılır. 
 
--   **OnResume** &ndash; etkinlik her cihaz ekranı çıktığında, gerçekleştirilmesi gerekir görevleri gerçekleştirir. 
+-   **OnResume** &ndash; cihaz ekranı etkinlik tarafından döndürülen her zaman gerçekleştirilmesi gerekir herhangi bir görev gerçekleştirir. 
 
--   **OnPause** &ndash; etkinlik cihaz ekranı ayrıldığında her zaman gerçekleştirilmesi gerekir görevleri gerçekleştirir.
+-   **OnPause** &ndash; etkinlik cihaz ekranı ayrıldığında her zaman gerçekleştirilmesi gerekir herhangi bir görev gerçekleştirir.
 
 
-Özel kod yaşam döngüsü yönteminde eklediğinizde `Activity`, size *geçersiz kılma* bu yaşam döngüsü yöntemin *temel uygulamayı*. (Zaten kullanıma biraz kod olan) mevcut yaşam döngüsü yöntemiyle dokunun ve bu yöntem ile kendi kodunuzu genişletir. Özgün kod yeni kodunuz önce çalıştığından emin olmak için yönteminize içinde temel uygulamasından çağırın. Buna örnek olarak bir sonraki bölümde gösterilmiştir. 
+Bir yaşam döngüsü yöntemine özel kod eklediğinizde `Activity`, size *geçersiz kılma* yaşam döngüsü yöntemin *taban uygulamasını*. (Bazı kod zaten bağlı olan) varolan bir yaşam döngüsü yöntemi uygulamasına dokunun ve bu yöntem kendi kod ile genişletin. Özgün koda yeni kodunuz önce çalıştığından emin olmak için yöntemin içindeki temel uygulamasından çağırın. Buna örnek olarak, sonraki bölümde gösterilmiştir. 
 
-Etkinlik yaşam döngüsü Android önemli ve karmaşık parçasıdır. Bitirdikten sonra etkinlikleri hakkında daha fazla bilgi edinmek istiyorsanız _Başlarken_ serisi, okuma [etkinlik yaşam döngüsü](~/android/app-fundamentals/activity-lifecycle/index.md) Kılavuzu. Bu kılavuzda, sonraki odak etkinlik yaşam döngüsünün ilk aşamadır `OnCreate`.
+Etkinlik yaşam döngüsü Android önemli ve karmaşık bir parçasıdır. Bitirdikten sonra etkinlikleri hakkında daha fazla bilgi edinmek istiyorsanız, _Başlarken_ okuma serisi [etkinlik yaşam döngüsü](~/android/app-fundamentals/activity-lifecycle/index.md) Kılavuzu. Bu kılavuzda, sonraki odağı etkinlik yaşam döngüsünün ilk aşamasıdır `OnCreate`.
 
 
 ### <a name="oncreate"></a>OnCreate
 
-Android çağrıları `Activity`'s `OnCreate` (ekran kullanıcıya sunulan önce) etkinlik oluşturduğunda yöntemi. Geçersiz kılabilirsiniz `OnCreate` yaşam döngüsü yöntemi görünümleri oluşturma ve kullanıcı karşılamak üzere etkinliklerinizi hazırlamak için:
+Android çağrıları `Activity`'s `OnCreate` yöntemi (ekran kullanıcıya sunulan önce) etkinliği oluşturur. Geçersiz kılabilirsiniz `OnCreate` görünümler oluşturabilir ve kullanıcı karşılamak için etkinlik hazırlamak için yaşam döngüsü yöntemi:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -255,16 +255,16 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-İçinde **Phoneword** uygulama, yapılacağı ilk şey `OnCreate` Android Tasarımcısı'nda oluşturulan kullanıcı arabirimi yük değil. Kullanıcı arabirimini yüklemek için arama `SetContentView` ve bu geçirin *kaynak Düzen adı* Düzen dosyası için: `Main.axml`. Düzen konumundadır `Resource.Layout.Main`:
+İçinde **Phoneword** uygulama, yapılacak ilk şey `OnCreate` Android Tasarımcısı'nda oluşturulan kullanıcı arabirimi olan. Kullanıcı arabirimini yüklemek için çağrı `SetContentView` ve geçirin *kaynak Düzen adı* için Düzen dosyası: `Main.axml`. Düzen şu konumdadır `Resource.Layout.Main`:
 
 ```csharp
 SetContentView (Resource.Layout.Main);
 ```
 
-Zaman `MainActivity` başlatır yukarı içeriğini temel alarak bir görünüm oluşturur **Main.axml** dosya. Etkinlik adı düzeni dosya adı eşleştirildiği Not &ndash; *ana*.axml olan düzenini *ana*etkinlik. Bu Android'ın açısından bakıldığında gerekli değildir, ancak daha fazla ekranlar uygulama eklemek başladığınızda, bu adlandırma kuralını düzeni dosyasını kod dosyasına eşleşecek şekilde kolaylaştırır olduğunu bulabilirsiniz.
+Zaman `MainActivity` başladığında yukarı içeriklerine dayanan bir görünüm oluşturur **Main.axml** dosya. Düzen dosyası adı için etkinlik adı eşleştirilir unutmayın &ndash; *ana*.axml olan düzenini *ana*etkinlik. Bu Android açısından bakıldığında gerekli değildir, ancak uygulamaya daha fazla ekran ekleme başladığınızda, bu adlandırma kuralı, Düzen dosyası kod dosyasına eşleşen kolaylaştırır olduğunu göreceksiniz.
 
-Düzen dosyasını hazırladıktan sonra denetimleri arayan başlatabilirsiniz.
-Bir kontrolü aramak için arama `FindViewById` ve denetiminin kaynak Kimliğini geçirin:
+Düzen dosyası hazırladıktan sonra denetimleri bakarak başlayabilirsiniz.
+Bir denetimi aramak için arama `FindViewById` ve denetimin kaynak kimliği geçirin:
 
 ```csharp
 EditText phoneNumberText = FindViewById<EditText>(Resource.Id.PhoneNumberText);
@@ -272,12 +272,12 @@ Button translateButton = FindViewById<Button>(Resource.Id.TranslateButton);
 TextView translatedPhoneWord = FindViewById<TextView>(Resource.Id.TranslatedPhoneWord);
 ```
 
-Düzen dosyasında başvuruları denetimlerine sahip olduğunuza göre bunları kullanıcı etkileşimi yanıt programlama başlatabilirsiniz.
+Denetimlere yapılan başvuruları Düzen dosyasına sahip olduğunuza göre bunları kullanıcı etkileşimine yanıt vermek için programlama başlayabilirsiniz.
 
 
 ### <a name="responding-to-user-interaction"></a>Kullanıcı etkileşimine yanıt verme
 
-Android içinde `Click` olayı için kullanıcının dokunma dinler. Bu uygulamadaki `Click` olay ile bir lambda gerçekleştirilir, ancak bunun yerine bir temsilci veya bir adlandırılmış olay işleyicisi kullanılabilir. En son **TranslateButton** kod benzeyen aşağıdaki: 
+Android, `Click` olay için kullanıcının touch dinler. Bu uygulamada `Click` olay, bir lambda ile gerçekleştirilir, ancak bunun yerine bir temsilci veya bir adlandırılmış olayı işleyicisi kullanılabilir. En son **TranslateButton** kod aşağıdaki benzeyen: 
 
 ```csharp
 translateButton.Click += (sender, e) =>
@@ -295,48 +295,48 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-## <a name="testing-deployment-and-finishing-touches"></a>Test, dağıtım ve son rötuşları
+## <a name="testing-deployment-and-finishing-touches"></a>Test, dağıtım ve Son dokunuşları
 
-Mac için Visual Studio ve Visual Studio Test ve bir uygulamayı dağıtmak için birçok seçenek sağlar. Bu bölümde, hata ayıklama seçenekleri kapsamaktadır, bir cihazda test uygulamalar gösterir ve farklı ekran densities için özel uygulama simgeleri oluşturmak için araçlar sunar.
+Mac için Visual Studio hem de Visual Studio test etmek ve bir uygulamayı dağıtmak için pek çok seçenek sağlar. Bu bölümde, hata ayıklama seçeneklerini kapsar, bir cihaz üzerinde test uygulamaları gösterir ve özel uygulama simgeleri için farklı bir ekrana densities oluşturmaya yönelik araçlar sunar.
 
 
 ### <a name="debugging-tools"></a>Hata Ayıklama Araçları
 
-Uygulama kodundaki sorunları tanılamak zor olabilir. Karmaşık kod sorunları tanılamak için [bir kesme noktası belirleyerek](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [adım aracılığıyla kodu](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), veya [Günlük penceresine çıkış bilgileri](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
+Uygulama kodunda sorunları tanılamak zor olabilir. Karmaşık kod sorunlarının tanılanmasına yardımcı olmak için [bir kesme noktası ayarlamak](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [adım kod aracılığıyla](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), veya [günlük penceresini çıkış bilgileri](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
 
 
-### <a name="deploy-to-a-device"></a>Bir aygıta dağıtmak
+### <a name="deploy-to-a-device"></a>Bir cihaza dağıtın
 
-Öykünücü dağıtmak ve bir uygulamayı test etmek için iyi bir başlangıç olmakla birlikte, kullanıcıların bir öykünücü son uygulamada tüketir değil. Erken ve genellikle gerçek bir cihazdaki uygulamaları test etmek için iyi bir uygulamadır.
+Öykünücü dağıtmak ve bir uygulamayı test etmek için iyi bir başlangıç noktasıdır, ancak kullanıcılar, bir öykünücü son uygulamada tüketecektir değil. Erken ve sıkça gerçek bir cihaz uygulamaları test etmek için iyi bir uygulamadır.
 
-Bir Android cihaz uygulamaları test etmek için kullanılabilmesi için geliştirme yapılandırılması gerekiyor. [Ayarlamak yukarı geliştirme için cihazı](~/android/get-started/installation/set-up-device-for-development.md) Kılavuzu, bir cihaz geliştirme için hazır hale kapsamlı yönergeler sağlar.
+Bir Android cihaz uygulamaları test etmek için kullanılabilmesi için geliştirme yapılandırılması gerekiyor. [Cihaz geliştirme için ayarlanmış yukarı](~/android/get-started/installation/set-up-device-for-development.md) Kılavuzu, bir cihaz geliştirme sürecine hazır alma kapsamlı yönergeler sunar.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Cihaz yapılandırıldıktan sonra kendisine ondan seçerek, takarak dağıtabilirsiniz **aygıtı Seç** iletişim ve uygulama başlatma:
+Cihaz yapılandırdıktan sonra ona menüsünden seçim, takarak dağıtabileceğiniz **cihaz seçin** iletişim ve uygulama başlatılıyor:
 
-![Select hata ayıklama aygıt](hello-android-deepdive-images/vs/06-select-device.png "Select hata ayıklama cihaz")
+![Select hata ayıklama cihazı](hello-android-deepdive-images/vs/06-select-device.png "Select hata ayıklama cihazı")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Cihaz yapılandırıldıktan sonra kendisine tuşlarına basarak, takarak dağıtabilirsiniz **başlangıç (Çalıştır)**, ondan seçme **aygıtı Seç** iletişim ve tuşlarına basarak **Tamam**:
+Cihaz yapılandırdıktan sonra ona tuşlarına basarak, takarak dağıtabileceğiniz **başlangıç (Çalıştır)**, menüsünden seçim **cihaz seçin** iletişim ve tuşlarına basarak **Tamam**:
 
-[![Select hata ayıklama cihaz](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
+[![Select hata ayıklama cihazı](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
 
 -----
 
-Bu aygıttaki uygulama başlatır:
+Bu, uygulama cihaz üzerinde çalıştırır:
 
 [![Phoneword girin](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png#lightbox)
 
 
 ### <a name="set-icons-for-different-screen-densities"></a>Farklı ekran Densities için simgeler ayarlama
 
-Android aygıtlar farklı ekran boyutlarına ve çözümlemeleri gelir ve tüm görüntüleri tüm ekranlarda iyi bakın. Örneğin, bir ekran görüntüsünü yüksek yoğunluklu bir Nexus 5 düşük yoğunluklu simgesinde aşağıdadır. Nasıl bulanık onu çevresindeki simgeleri karşılaştırılır dikkat edin:
+Android cihazlar farklı ekran boyutları ve çözümleri gelir ve tüm görüntüleri tüm ekranlarda iyi görünür. Örneğin, ekran üzerindeki bir yüksek yoğunluklu Nexus 5 düşük yoğunluklu bir simge görüntüsü aşağıdadır. Nasıl bulanık, çevreleyen simgeleri karşılaştırılır dikkat edin:
 
 [![Bulanık simgesi](hello-android-deepdive-images/06-blurry-icon-sml.png)](hello-android-deepdive-images/06-blurry-icon.png#lightbox)
 
-Bu hesap için farklı çözümler simgeleri eklemek için iyi bir uygulamadır **kaynakları** klasör. Android sağlar farklı sürümlerini **mipmap** farklı densities Başlatıcısı simgeleri işlemek için klasör *mdpi* Orta, *hdpi* yüksek için ve  *xhdpi*, *xxhdpi*, *xxxhdpi* çok yüksek yoğunluk ekranlar için. Farklı boyutlarda simgeler uygun depolanır **mipmap -** klasörler:
+Bu hesap için farklı çözümler simgeleri eklemek için iyi bir uygulamadır **kaynakları** klasör. Android tarafından sağlanan farklı sürümlerini **mipmap** farklı densities Başlatıcısı simgeleri işlemek için klasör *mdpi* Orta, *hdpı* için yüksek ve  *xhdpi*, *xxhdpi*, *xxxhdpi* çok yüksek yoğunluk ekranlar için. Çeşitli boyutlardaki simgeler uygun depolanan **mipmap -** klasörler:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -348,65 +348,65 @@ Bu hesap için farklı çözümler simgeleri eklemek için iyi bir uygulamadır 
 
 -----
 
-Android uygun yoğunluğu simgesiyle seçer:
+Android uygun yoğunluklu içeren simge çeker:
 
-[![Uygun yoğunluğu simgeleri](hello-android-deepdive-images/07-appropriate-density-sml.png)](hello-android-deepdive-images/07-appropriate-density.png#lightbox)
+[![En uygun yoğunluklu simgeleri](hello-android-deepdive-images/07-appropriate-density-sml.png)](hello-android-deepdive-images/07-appropriate-density.png#lightbox)
 
-### <a name="generate-custom-icons"></a>Özel simge oluşturma
+### <a name="generate-custom-icons"></a>Özel simgeleri oluştur
 
-Herkes özel simge oluşturmak ve uygulama göze gerekiyor görüntüleri başlatmak için kullanılabilecek bir tasarımcı sahiptir. Özel uygulama resmi oluşturmak için birkaç alternatif yaklaşımlar şunlardır:
+Herkes özel simgeleri oluşturma ve başlatma görüntüleri Rekabetin gerektiren bir uygulama kullanılabilir bir tasarımcı sahiptir. Özel uygulama resmi oluşturmanın birkaç alternatif yaklaşımlar aşağıda verilmiştir:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
--   [Android varlık Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Android simgeler, diğer yararlı topluluk araçları için bağlantılar ile birlikte tüm türleri için web tabanlı, tarayıcı içi bir üreteci. Ayrıca Google Chrome en iyi şekilde çalışır.
+-   [Varlık Android Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; diğer yararlı topluluk araçları için bağlantılarla birlikte Android simgeler her tür için bir web tabanlı, tarayıcı içi Oluşturucu. Google Chrome'da en iyi şekilde çalışır.
 
--   Visual Studio &ndash; uygulamanızda doğrudan IDE için ayarlama basit bir simge oluşturmak için bunu kullanabilirsiniz.
+-   Visual Studio &ndash; doğrudan IDE'de uygulamanız için basit bir simge oluşturmak için bunu kullanabilirsiniz.
 
 -   [Glyphish](http://www.glyphish.com/) &ndash; yüksek kaliteli önceden oluşturulmuş simgesi ayarlar ücretsiz indirme ve satın alma.
 
--   [Fiverr](http://www.fiverr.com/) &ndash; , 5'Başlangıç için ayarlanmış bir simge oluşturulmaya tasarımcıları çeşitli seçin. Miss hit veya olabilir ancak simgeler gerekiyorsa iyi bir kaynak üzerinde kolay bir şekilde tasarlanmış.
+-   [Fiverr](http://www.fiverr.com/) &ndash; tasarımcılar, 5 Başlangıç için bir simge oluşturmak için çeşitli seçin. Miss hit veya olabilir ancak simgeler gerekiyorsa bir makaleden anında tasarlanmış.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
--   [Android varlık Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Android simgeler, diğer yararlı topluluk araçları için bağlantılar ile birlikte tüm türleri için web tabanlı, tarayıcı içi bir üreteci. Ayrıca Google Chrome en iyi şekilde çalışır.
+-   [Varlık Android Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; diğer yararlı topluluk araçları için bağlantılarla birlikte Android simgeler her tür için bir web tabanlı, tarayıcı içi Oluşturucu. Google Chrome'da en iyi şekilde çalışır.
 
--   [Taslak 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; taslak olan kullanıcı arabirimleri, simgeler ve daha fazlasını tasarlamak için bir Mac uygulaması. Bu, Xamarin uygulama simgeleri ve başlatma görüntüleri kümesi tasarlamak için kullanılan uygulamadır. Taslak 3 hakkında $80 maliyetleri ve App Store'da kullanılabilir. Ücretsiz deneyebilirsiniz [taslak aracı](http://bohemiancoding.com/sketch/tool/) de.
+-   [Taslak 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; taslak olan kullanıcı arabirimleri, simgeler ve diğer tasarlamak için bir Mac uygulaması. Bu, Xamarin uygulama simgeleri ve başlatma resimleri kümesi tasarlamak için kullanılan uygulamadır. Taslak 3 App Store üzerinde kullanılabilir ve yaklaşık 80 $ maliyetlerini. Ücretsiz deneyebilirsiniz [taslak aracı](http://bohemiancoding.com/sketch/tool/) de.
 
--   [Pixelmator](http://www.pixelmator.com/) &ndash; uygulama hakkında $30 maliyetleri Mac için düzenleme çok yönlü bir görüntü.
+-   [Pixelmator](http://www.pixelmator.com/) &ndash; uygulaması yaklaşık 30 ABD Doları değerindedir Mac için düzenleme, çok yönlü bir görüntüsü.
 
 -   [Glyphish](http://www.glyphish.com/) &ndash; yüksek kaliteli önceden oluşturulmuş simgesi ayarlar ücretsiz indirme ve satın alma.
 
--   [Fiverr](http://www.fiverr.com/) &ndash; , 5'Başlangıç için ayarlanmış bir simge oluşturulmaya tasarımcıları çeşitli seçin. Miss hit veya olabilir ancak simgeler gerekiyorsa iyi bir kaynak üzerinde kolay bir şekilde tasarlanmış.
+-   [Fiverr](http://www.fiverr.com/) &ndash; tasarımcılar, 5 Başlangıç için bir simge oluşturmak için çeşitli seçin. Miss hit veya olabilir ancak simgeler gerekiyorsa bir makaleden anında tasarlanmış.
 
 -----
 
-Simge boyutu ve gereksinimleri hakkında daha fazla bilgi için başvurmak [Android kaynakları](~/android/app-fundamentals/resources-in-android/index.md) Kılavuzu.
+Simge boyutunu ve gereksinimleri hakkında daha fazla bilgi için başvurmak [Android kaynakları](~/android/app-fundamentals/resources-in-android/index.md) Kılavuzu.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-### <a name="adding-google-play-services-packages"></a>Hizmet paketleri Google Play ekleme
+### <a name="adding-google-play-services-packages"></a>Ekleme Google Play Hizmetleri paketleri
 
-_Google Play Hizmetleri_ Google sayfası Google haritalar, Google Cloud Messaging ve uygulama içi faturalama gibi en son özellikleri avantajlarından yararlanmak Android geliştiricileri izin veren bir dizi eklenti kitaplıktır.
-Tüm Google Play Hizmetleri'nin kitaplıklarına bağlamaları tek bir paket biçiminde Xamarin tarafından daha önce sağlanan &ndash; Mac için Visual Studio ile başlayarak, yeni proje iletişim kutusu, dahil etmek için Google Play Hizmetleri'nin paketleri seçmek için kullanılabilir Uygulamanızı.
+_Google Play Hizmetleri_ google'dan Google haritalar, Google bulut Mesajlaşma ve uygulama içi faturalama gibi en son özelliklerden yararlanmak Android geliştiricileri izin veren bir eklenti kitaplığı kümesidir.
+Tüm Google Play Hizmetleri kitaplıkları bağlamaları tek bir paket biçiminde Xamarin tarafından daha önce sağlanan &ndash; Mac için Visual Studio ile başlayarak, yeni proje iletişim kutusu, dahil etmek için Google Play Hizmetleri paketleri seçmek için kullanılabilir Uygulamanızı.
 
-Bir veya daha fazla Google Play Hizmeti'ni kitaplıkları eklemek için sağ tıklatın **paketleri** tıklayın ve proje ağacı düğümünde **Google Play Hizmeti'ni Ekle...** :
+Bir veya daha fazla Google Play Hizmeti'ni kitaplıkları eklemek için sağ **paketleri** tıklayın ve proje ağacı düğümünde **Google Play hizmeti Ekle...** :
 
-[![Add Google Play Service](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
+[![Google Play hizmeti Ekle](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
 
-Zaman **Google Play Hizmetleri Ekle** iletişim sunulur, projenize eklemek istediğiniz paketleri (nugets) seçin:
+Zaman **Google Play Hizmetleri ekleme** iletişim sunulur, projenize eklemek istediğiniz paketleri (nuget'i) seçin:
 
 [![Paketleri seçin](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png#lightbox)
 
-Ne zaman bir hizmeti seçin ve tıklatın **Paketi Ekle**, Mac için Visual Studio indirir ve bunu gerektiren tüm bağımlı Google Play Hizmetleri'nin paketler yanı sıra seçtiğiniz paketi yükler. Bazı durumlarda, görebileceğiniz bir **lisans kabulünü** tıklatın gerektirir iletişim **kabul** paketler yüklenmeden önce:
+Ne zaman bir hizmeti seçin ve tıklayın **Paketi Ekle**, Mac için Visual Studio indirmeleri ve bunu gerektiren tüm bağımlı Google Play Hizmetleri paketleri yanı sıra seçtiğiniz paketi yükler. Bazı durumlarda, görebileceğiniz bir **lisans kabulü** tıklayın gerektiren iletişim **kabul** paketleri yüklemeden önce:
 
-[![Lisans Kabulünü](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png#lightbox)
+[![Lisans kabulü](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png#lightbox)
 
 -----
 
 ## <a name="summary"></a>Özet
 
-Tebrikler! Şimdi oluşturmak için gereken araçları yanı sıra, bir Xamarin.Android uygulaması bileşenlerinin düz bir anlayış olmalıdır.
+Tebrikler! Şimdi, düz bir anlayış oluşturmak için gereken araçları yanı sıra, bir Xamarin.Android uygulaması bileşenlerinin olmalıdır.
 
-Sonraki öğreticide _Başlarken_ serisi, daha gelişmiş Android mimarisi ve kavramları keşfetmenizde birden çok ekran işlemek için uygulamanızın genişletmek.
+Sonraki öğreticide _Başlarken_ serisi, uygulamanızın daha gelişmiş Android mimarisi ve kavramları keşfederken birden fazla ekran işlemesini genişletmek.

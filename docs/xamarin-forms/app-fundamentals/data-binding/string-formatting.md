@@ -1,28 +1,28 @@
 ---
-title: Xamarin.Forms biçimlendirme dizesi
-description: Bu makalede Xamarin.FOrms veri bağlamaları biçimlendirmek ve dize olarak nesneleri görüntülemek için nasıl kullanılacağı açıklanmaktadır. Bu, standart bir .NET biçimlendirme dize bir yer tutucu bağlama StringFormat ayarlanarak sağlanır.
+title: Xamarin.Forms dize biçimlendirmesi
+description: Bu makalede, biçimlendirmek ve dizeleri nesneleri görüntülemek için Xamarin.FOrms veri bağlamaları kullanmayı açıklar. StringFormat bağlamanın .NET standart bir biçimlendirme dizesi bir yer tutucu ayarlayarak elde edilir.
 ms.prod: xamarin
 ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: bdac74e4ec14797ec373f86b8a94c7af4d480951
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: a876e81c67b6ec61a2cb29143cb001a7d6160032
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240307"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998153"
 ---
-# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms biçimlendirme dizesi
+# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms dize biçimlendirmesi
 
-Bazen bir nesneye veya değeri dize gösterimini görüntülemek üzere veri bağlamaları kullanmak uygundur. Örneğin, kullanmak istediğiniz bir `Label` geçerli değerini görüntülemek için bir `Slider`. Bu veri bağlamada `Slider` kaynak ve hedef `Text` özelliği `Label`.
+Bazen bir nesnenin ya da değer dize gösterimini görüntülenecek veri bağlamaları kullanmak kullanışlıdır. Örneğin, kullanmak isteyebilirsiniz bir `Label` geçerli değerini görüntülemek için bir `Slider`. Bu veri bağlamada `Slider` kaynak ve hedef `Text` özelliği `Label`.
 
-Dizeleri kodda görüntülerken, statik en güçlü araçtır [ `String.Format` ](https://developer.xamarin.com/api/member/System.String.Format/p/System.String/System.Object/) yöntemi. Biçimlendirilen değerleri yanı sıra başka bir metin içerebilir ve biçimlendirme kodları çeşitli nesneleri belirli biçimlendirme dizesini içerir. Bkz: [.NET biçimlendirme türleri](/dotnet/standard/base-types/formatting-types/) biçimlendirme dizesi hakkında daha fazla bilgi için makalenin.
+Dizeleri kodda görüntülerken, statik en güçlü araçtır [ `String.Format` ](xref:System.String.Format(System.String,System.Object)) yöntemi. Biçimlendirilen değerleri yanı sıra diğer metin içerebilir ve biçimlendirme kodları nesnelerin çeşitli türleri için özel bir biçimlendirme dizesi içerir. Bkz: [NET'teki biçimlendirme türleri](/dotnet/standard/base-types/formatting-types/) makale biçimlendirme dizesi hakkında daha fazla bilgi.
 
 ## <a name="the-stringformat-property"></a>StringFormat özelliği
 
-Bu özellik veri bağlamaları devredilir: ayarladığınız [ `StringFormat` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.StringFormat/) özelliği `Binding` (veya [ `StringFormat` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.StringFormat/) özelliği `Binding` biçimlendirme uzantısı) için bir biçimlendirme dizesi bir yer tutucu ile standart .NET:
+Bu özellik veri bağlamaları ile gerçekleştirilen: ayarladığınız [ `StringFormat` ](xref:Xamarin.Forms.BindingBase.StringFormat) özelliği `Binding` (veya [ `StringFormat` ](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) özelliği `Binding` işaretleme uzantısı) için bir Standart .NET biçimlendirme dizesi ile bir yer tutucu:
 
 ```xaml
 <Slider x:Name="slider" />
@@ -31,13 +31,13 @@ Bu özellik veri bağlamaları devredilir: ayarladığınız [ `StringFormat` ](
                       StringFormat='The slider value is {0:F2}'}" />
 ```
 
-Biçimlendirme dizesi başka bir XAML biçimlendirme uzantısı olarak süslü ayraçlar değerlendirmesini kaçının XAML ayrıştırıcısı yardımcı olması için tek tırnaklı (kesme) karakter tarafından sınırlandırılır dikkat edin. Aksi takdirde, dize tek tırnak karakteri, çağrıda bir kayan nokta değerini görüntülemek için kullandığınız aynı dizedir olmadan `String.Format`. Biçimlendirme belirtimini `F2` değeri ile iki ondalık basamak görüntülenmesine neden olur.
+Biçimlendirme dizesi XAML ayrıştırıcı başka bir XAML işaretleme uzantısı ve küme ayraçlarının değerlendirmesini önlemek amacıyla tek tırnak işareti (kesme işareti) karakterleri tarafından ayrılmış dikkat edin. Aksi takdirde, dize bir çağrıda bir kayan nokta değerini görüntülemek için kullandığınız aynı dize tek tırnak işareti olmayan `String.Format`. Biçimlendirme belirtimini `F2` iki ondalık basamakla görüntülenecek değer neden olur.
 
-`StringFormat` Özelliği yalnızca anlamlı hedef özelliği türü olduğunda `string`, ve bağlama modu `OneWay` veya `TwoWay`. İki yönlü bağlamaları için `StringFormat` yalnızca kaynak sunucudan hedef geçirme değerleri için geçerli değil.
+`StringFormat` Özelliği yalnızca anlamlı hedef özelliği türü olduğunda `string`, ve bağlama modu `OneWay` veya `TwoWay`. İki yönlü bağlamaları için `StringFormat` kaynaktan hedefe geçirme değerleri için yalnızca geçerlidir.
 
-Sonraki makalede göreceğiniz gibi [bağlama yolu](binding-path.md), oldukça karmaşık ve karışık veri bağlamaları haline gelir. Bu veri bağlamaları hata ayıklama sırasında ekleyebileceğiniz bir `Label` ile XAML dosyasına bir `StringFormat` bazı Ara sonuçları görüntülemek için. Yalnızca bir nesnenin türü görüntülemek için kullandığınız olsa bile, yararlı olabilir.
+Sonraki makalede anlatıldığı [bağlama yolu](binding-path.md), veri bağlamaları oldukça karmaşık ve karışık gelebilir. Bu veri bağlamaları hata ayıklarken ekleyebileceğiniz bir `Label` ile XAML dosyasına bir `StringFormat` bazı Ara sonuçlar görüntülenecek. Yalnızca bir nesnenin türü görüntülemek için kullanıyor olsanız bile, bu yararlı olabilir.
 
-**Biçimlendirme dizesi** sayfa birkaç kullanımları gösterilmektedir `StringFormat` özelliği:
+**Biçimlendirme dizesi** sayfası gösterilmektedir çeşitli kullanımları `StringFormat` özelliği:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -101,33 +101,33 @@ Sonraki makalede göreceğiniz gibi [bağlama yolu](binding-path.md), oldukça k
 </ContentPage>
 ```
 
-Bağlantılarına `Slider` ve `TimePicker` biçim belirtimleri kullanımını göstermek için belirli `double` ve `TimeSpan` veri türleri. `StringFormat` Metinden görüntüler `Entry` görünümü gösterilmektedir kullanarak biçimlendirme dizesinde çift tırnak işaretleri belirleme konusunda `&quot;` HTML varlığı.
+Bağlamalar `Slider` ve `TimePicker` biçim belirtimleri kullanımı için belirli Göster `double` ve `TimeSpan` veri türleri. `StringFormat` Metni görüntüler `Entry` görünümü çift tırnak işareti kullanarak biçimlendirme dizesi belirtmek nasıl gösterir `&quot;` HTML varlık.
 
-XAML dosyası sonraki bölümünde bir `StackLayout` ile bir `BindingContext` kümesine bir `x:Static` statik başvuran biçimlendirme uzantısı `DateTime.Now` özelliği. İlk bağlama hiçbir özelliklere sahiptir:
+Sonraki bölüm XAML dosyasında bir `StackLayout` ile bir `BindingContext` kümesine bir `x:Static` statik başvuruları işaretleme uzantısı `DateTime.Now` özelliği. İlk bağlama özelliğe sahip değil:
 
 ```xaml
 <Label Text="{Binding}" />
 ```
 
-Bu basitçe görüntüler `DateTime` değerini `BindingContext` varsayılan biçimlendirmeye sahip. İkinci bağlama görüntüler `Ticks` özelliği `DateTime`, diğer iki bağlamaları görüntülemek `DateTime` belirli biçimlendirme kendisiyle. Bu bildirimde `StringFormat`:
+Bu basitçe görüntüler `DateTime` değerini `BindingContext` varsayılan biçimlendirme ile. İkinci bağlama görüntüler `Ticks` özelliği `DateTime`, diğer iki bağlamaları görüntüleme `DateTime` kendisi ile özel biçimlendirme. Bu bildirimde `StringFormat`:
 
 ```xaml
 <Label Text="{Binding StringFormat='The {{0:MMMM}} specifier produces {0:MMMM}'}" />
 ```
 
-Biçimlendirme dizesi içinde sola veya sağa süslü ayraçlar görüntülemek gerekiyorsa, yalnızca bir çiftinden kullanın.
+Sola veya sağa süslü ayraçlar, biçimlendirme dizesindeki görüntülenecek ihtiyacınız varsa, bunları bir çift kullanmanız yeterlidir.
 
-Son bölümü kümeleri `BindingContext` değerine `Math.PI` varsayılan biçimlendirme ve sayısal biçimlendirme iki farklı türleri ile görüntüler.
+Son bölümde kümeleri `BindingContext` değerine `Math.PI` ve varsayılan biçimlendirme ve sayısal biçimlendirme iki farklı tür ile görüntüler.
 
-Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
+Üç tüm platformlarda çalışan bir program şöyledir:
 
-[![Dize biçimlendirme](string-formatting-images/stringformatting-small.png "dize biçimlendirme")](string-formatting-images/stringformatting-large.png#lightbox "dize biçimlendirme")
+[![Dize biçimlendirmesi](string-formatting-images/stringformatting-small.png "dize biçimlendirme")](string-formatting-images/stringformatting-large.png#lightbox "dize biçimlendirmesi")
 
-## <a name="viewmodels-and-string-formatting"></a>ViewModels ve biçimlendirme dizesi
+## <a name="viewmodels-and-string-formatting"></a>Viewmodel'lar ve biçimlendirme dizesi
 
-Kullanırken `Label` ve `StringFormat` bir ViewModel hedef aynı zamanda bir görünüm değerini görüntülemek için ya da bağlama görünümünden tanımlayabilirsiniz `Label` veya ViewModel `Label`. ViewModel ve görünüm arasında bağlamaları çalıştığınız uyguladığından genel olarak, ikinci en iyi yaklaşımdır.
+Kullanırken `Label` ve `StringFormat` ayrıca bir ViewModel hedefi bir görünüm değerini görüntülemek için ya da bağlama görünümünden tanımlayabilirsiniz `Label` veya için ViewModel `Label`. Görünümü ViewModel arasındaki bağlamaları çalıştığını uyguladığından genel olarak, ikinci en iyi yaklaşımdır.
 
-Bu yaklaşım gösterilen **daha iyi renk seçici** olarak aynı ViewModel kullanan örnek **basit Renk Seçici** gösterilen program [ **bağlama modu** ](binding-mode.md) makale:
+Bu yaklaşım gösterilen **daha iyi renk seçici** olarak aynı ViewModel kullanan örnek **basit Renk Seçici** gösterilen programı [ **bağlama modu** ](binding-mode.md) makale:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -172,18 +172,18 @@ Bu yaklaşım gösterilen **daha iyi renk seçici** olarak aynı ViewModel kulla
 </ContentPage>    
 ```
 
-Artık üç çiftlerini olan `Slider` ve `Label` aynı bağlı öğeleri kaynak özelliğinde `HslColorViewModel` nesnesi. Tek fark `Label` sahip bir `StringFormat` her görüntülenecek özellik `Slider` değeri.
+Artık üç çift vardır `Slider` ve `Label` aynı bağlı öğeleri kaynak özelliğinde `HslColorViewModel` nesne. Tek fark `Label` sahip bir `StringFormat` her görüntülenecek özelliği `Slider` değeri.
 
 [![Daha iyi, seçici renk](string-formatting-images/bettercolorselector-small.png "daha iyi, seçici renk")](string-formatting-images/bettercolorselector-large.png#lightbox "daha iyi, seçici renk")
 
-Geleneksel iki basamaklı onaltılık biçimde RGB (kırmızı, yeşil, mavi) değerleri nasıl görüntüleneceğini merak ediyor olabilirsiniz. Bu tamsayı değerleri kullanılabilir doğrudan olmayan `Color` yapısı. Renk bileşenleri ViewModel içinde tamsayı değerleri hesaplamak ve özellikleri olarak göstermek için bir çözüm olacaktır. Ardından bunları biçimlendirebilirsiniz kullanarak `X2` belirtimi biçimlendirme.
+Geleneksel iki basamaklı onaltılık biçimde RGB (kırmızı, yeşil, mavi) değerleri nasıl görüntüleyebilir merak ediyor olabilirsiniz. Bu tamsayı değerleri doğrudan kullanılabilir olmayan `Color` yapısı. ViewModel içinde renk bileşenlerinin tamsayı değerleri hesaplamak ve bunları özellik olarak kullanıma sunmak için tek bir çözüm olacaktır. Bunları daha sonra biçimlendirebilirsiniz kullanarak `X2` belirtimi biçimlendirme.
 
-Başka bir yaklaşım daha genel: yazabileceğiniz bir *bağlama değer dönüştürücüsü* sonraki makalesinde ele alındığı gibi [ **bağlama değer dönüştürücüler**](converters.md).
+Başka bir yaklaşım daha geneldir: yazabileceğiniz bir *bağlama değer dönüştürücü* sonraki makalede anlatıldığı gibi [ **bağlama değeri dönüştürücüleri**](converters.md).
 
-Sonraki makalede ancak ele [ **bağlama yolu** ](binding-path.md) daha ayrıntılı ve alt özellikleri ve öğeleri koleksiyonlarda başvurmak için nasıl kullanabileceğinizi gösterir.
+Sonraki makalede, ancak keşfediyor [ **bağlama yolu** ](binding-path.md) daha fazla ayrıntı ve alt özellikleri ve öğeleri koleksiyonlardaki başvurmak için nasıl kullanabileceğinizi gösterir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Veri bağlama gösterileri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Veri bağlama bölüm Xamarin.Forms defterinden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Veri bağlama tanıtımları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Veri bağlama bölümden Xamarin.Forms kitabı](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

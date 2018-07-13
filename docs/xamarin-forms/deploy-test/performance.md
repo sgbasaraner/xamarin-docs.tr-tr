@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ae284cf90ccb2d2735b4fafa0c0e44f69533638f
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: d7719f231a6d70594985a1158340104d68367ffe
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935166"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998624"
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms performans
 
@@ -59,7 +59,7 @@ XAMLC geriye dönük uyumluluk sağlamak için varsayılan olarak devre dışıd
 
 ## <a name="choose-the-correct-layout"></a>Doğru bir düzen seçin
 
-Birden çok alt öğeleri görüntüleme yeteneğine sahip olan, ancak yalnızca tek bir alt olan bir düzen kısıp. Aşağıdaki örnekte gösterildiği gibi kod bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) tek bir alt ile:
+Birden çok alt öğeleri görüntüleme yeteneğine sahip olan, ancak yalnızca tek bir alt olan bir düzen kısıp. Aşağıdaki örnekte gösterildiği gibi kod bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) tek bir alt ile:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -73,7 +73,7 @@ Birden çok alt öğeleri görüntüleme yeteneğine sahip olan, ancak yalnızca
 </ContentPage>
 ```
 
-Kısıp budur ve [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) öğesi kaldırılmalıdır, aşağıdaki kod örneğinde gösterildiği gibi:
+Kısıp budur ve [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) öğesi kaldırılmalıdır, aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -85,7 +85,7 @@ Kısıp budur ve [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamari
 </ContentPage>
 ```
 
-Ayrıca, bu sonuçları gereksiz Düzen hesaplamalarında gerçekleştirilmekte olan diğer düzenleri birleşimlerini kullanarak belirli bir düzeni görünümünü oluşturmaya çalışmayın. Örneğin, oluşturmaya çalışmayın bir [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) bir birleşimini kullanarak Düzen [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) örnekleri. Aşağıdaki kod örneği, bu hatalı bir uygulama örneği gösterilmektedir:
+Ayrıca, bu sonuçları gereksiz Düzen hesaplamalarında gerçekleştirilmekte olan diğer düzenleri birleşimlerini kullanarak belirli bir düzeni görünümünü oluşturmaya çalışmayın. Örneğin, oluşturmaya çalışmayın bir [ `Grid` ](xref:Xamarin.Forms.Grid) bir birleşimini kullanarak Düzen [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) örnekleri. Aşağıdaki kod örneği, bu hatalı bir uygulama örneği gösterilmektedir:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -115,7 +115,7 @@ Ayrıca, bu sonuçları gereksiz Düzen hesaplamalarında gerçekleştirilmekte 
 </ContentPage>
 ```
 
-Gereksiz Düzen hesaplamaların kısıp olmasıdır. Bunun yerine, istediğiniz düzene daha iyi kullanarak gerçekleştirilebilir bir [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)aşağıdaki kod örneğinde gösterildiği gibi:
+Gereksiz Düzen hesaplamaların kısıp olmasıdır. Bunun yerine, istediğiniz düzene daha iyi kullanarak gerçekleştirilebilir bir [ `Grid` ](xref:Xamarin.Forms.Grid)aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -163,7 +163,7 @@ Hızlı oluşturucular tarafından oluşturulan yerel denetim hiyerarşisi düzl
 
 ## <a name="reduce-unnecessary-bindings"></a>Gereksiz bağlamaları azaltın
 
-Bağlama, statik olarak kolayca ayarlanabilen içeriği için kullanmayın. Bağlamaları maliyet etkin olmadığından, bağlanması için gereken değil veri bağlama hiçbir avantajı yoktur. Örneğin, ayarlamak `Button.Text = "Accept"` bağlama daha az yüke sahip [ `Button.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Text/) bir ViewModel için `string` özelliği "Kabul et" değerine sahip.
+Bağlama, statik olarak kolayca ayarlanabilen içeriği için kullanmayın. Bağlamaları maliyet etkin olmadığından, bağlanması için gereken değil veri bağlama hiçbir avantajı yoktur. Örneğin, ayarlamak `Button.Text = "Accept"` bağlama daha az yüke sahip [ `Button.Text` ](xref:Xamarin.Forms.Button.Text) bir ViewModel için `string` özelliği "Kabul et" değerine sahip.
 
 <a name="optimizelayout" />
 
@@ -171,36 +171,36 @@ Bağlama, statik olarak kolayca ayarlanabilen içeriği için kullanmayın. Bağ
 
 Xamarin.Forms 2 Düzen güncelleştirmeleri etkileyen bir en iyi duruma getirilmiş yerleşim altyapısı kullanıma sunuldu. Olası düzenini en iyi performansı elde etmek için aşağıdaki yönergeleri izleyin:
 
-- Belirterek Düzen hiyerarşi derinliğini azaltmak [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) özellik değerleri, daha az sarmalama görünüm düzenleri oluşturulmasını sağlar. Daha fazla bilgi için [kenar boşlukları ve doldurma](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
-- Kullanırken bir [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), olabildiğince az sayıda satır ve sütun mümkün olduğunca ayarlandığından emin olmak deneyin [ `Auto` ](https://developer.xamarin.com/api/property/Xamarin.Forms.GridLength.Auto/) boyutu. Her Otomatik Boyutlandır satır veya sütun ek Düzen hesaplamalar gerçekleştirmek yerleşim altyapısı neden olur. Bunun yerine, sabit boyutlu satırlar ve sütunlar mümkünse kullanın. Alternatif olarak, satır ve sütun kaplayan orantılı bir boşluk miktarını ayarlama [ `GridUnitType.Star` ](xref:Xamarin.Forms.GridUnitType.Star) numaralandırma değeri, sağlanan üst ağaç bu düzen yönergeleri izler.
-- Ayarlamamanız [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) ve [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) bir düzen özelliklerini gerekmedikçe. Varsayılan değerleri [ `LayoutOptions.Fill` ](xref:Xamarin.Forms.LayoutOptions.Fill) ve [ `LayoutOptions.FillAndExpand` ](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) izin vermek için en iyi Düzen iyileştirmesi. Bu özellikleri değiştirerek bir maliyeti vardır ve varsayılan değerlere ayarlandığında bile bunları bellek tüketir.
-- Kullanmaktan kaçının bir [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) mümkün olduğunda. Bu, önemli ölçüde daha fazla iş yapmak zorunda CPU neden olur.
-- Kullanırken bir [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/), kullanmaktan kaçının [ `AbsoluteLayout.AutoSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/) mümkün olduğunca özelliği.
-- Kullanırken bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), bu yalnızca bir alt ayarlandığından emin olun [ `LayoutOptions.Expands` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/). Bu özellik, belirtilen alt kaplayacağı sağlar en büyük alanı `StackLayout` kendisine verebilirsiniz; bu hesaplamalar birden çok kez kısıp.
-- Yöntemlerinin birini çağırmaz [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) bunlar gerçekleştirilmekte olan pahalı Düzen hesaplamalara neden gibi sınıf. Bunun yerine, istediğiniz düzene davranışı ayarlayarak alınabilir olma olasılığı yüksektir [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) ve [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) özellikleri. Alternatif olarak, alt [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) istediğiniz düzene davranışı elde etmek için sınıf.
-- Tüm güncelleştirme [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) etiketi boyutunu değiştirmek yeniden hesaplanan olan tüm ekran düzende oluşturacağından daha sık istenen sürümden örnekler.
-- Ayarlamamanız [ `Label.VerticalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) özelliği gerekmedikçe.
-- Ayarlama [ `LineBreakMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.LineBreakMode/) herhangi [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) için örnekler [ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode.NoWrap) mümkün olduğunda.
+- Belirterek Düzen hiyerarşi derinliğini azaltmak [ `Margin` ](xref:Xamarin.Forms.View.Margin) özellik değerleri, daha az sarmalama görünüm düzenleri oluşturulmasını sağlar. Daha fazla bilgi için [kenar boşlukları ve doldurma](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+- Kullanırken bir [ `Grid` ](xref:Xamarin.Forms.Grid), olabildiğince az sayıda satır ve sütun mümkün olduğunca ayarlandığından emin olmak deneyin [ `Auto` ](xref:Xamarin.Forms.GridLength.Auto) boyutu. Her Otomatik Boyutlandır satır veya sütun ek Düzen hesaplamalar gerçekleştirmek yerleşim altyapısı neden olur. Bunun yerine, sabit boyutlu satırlar ve sütunlar mümkünse kullanın. Alternatif olarak, satır ve sütun kaplayan orantılı bir boşluk miktarını ayarlama [ `GridUnitType.Star` ](xref:Xamarin.Forms.GridUnitType.Star) numaralandırma değeri, sağlanan üst ağaç bu düzen yönergeleri izler.
+- Ayarlamamanız [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) ve [ `HorizontalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) bir düzen özelliklerini gerekmedikçe. Varsayılan değerleri [ `LayoutOptions.Fill` ](xref:Xamarin.Forms.LayoutOptions.Fill) ve [ `LayoutOptions.FillAndExpand` ](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) izin vermek için en iyi Düzen iyileştirmesi. Bu özellikleri değiştirerek bir maliyeti vardır ve varsayılan değerlere ayarlandığında bile bunları bellek tüketir.
+- Kullanmaktan kaçının bir [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) mümkün olduğunda. Bu, önemli ölçüde daha fazla iş yapmak zorunda CPU neden olur.
+- Kullanırken bir [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout), kullanmaktan kaçının [ `AbsoluteLayout.AutoSize` ](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) mümkün olduğunca özelliği.
+- Kullanırken bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), bu yalnızca bir alt ayarlandığından emin olun [ `LayoutOptions.Expands` ](xref:Xamarin.Forms.LayoutOptions.Expands). Bu özellik, belirtilen alt kaplayacağı sağlar en büyük alanı `StackLayout` kendisine verebilirsiniz; bu hesaplamalar birden çok kez kısıp.
+- Yöntemlerinin birini çağırmaz [ `Layout` ](xref:Xamarin.Forms.Layout) bunlar gerçekleştirilmekte olan pahalı Düzen hesaplamalara neden gibi sınıf. Bunun yerine, istediğiniz düzene davranışı ayarlayarak alınabilir olma olasılığı yüksektir [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX) ve [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) özellikleri. Alternatif olarak, alt [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1) istediğiniz düzene davranışı elde etmek için sınıf.
+- Tüm güncelleştirme [ `Label` ](xref:Xamarin.Forms.Label) etiketi boyutunu değiştirmek yeniden hesaplanan olan tüm ekran düzende oluşturacağından daha sık istenen sürümden örnekler.
+- Ayarlamamanız [ `Label.VerticalTextAlignment` ](xref:Xamarin.Forms.Label.VerticalTextAlignment) özelliği gerekmedikçe.
+- Ayarlama [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode) herhangi [ `Label` ](xref:Xamarin.Forms.Label) için örnekler [ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode.NoWrap) mümkün olduğunda.
 
 <a name="optimizelistview" />
 
 ## <a name="optimize-listview-performance"></a>ListView performansını iyileştirme
 
-Kullanırken bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) denetim optimize edilmesini kullanıcı deneyimleri sayısı vardır:
+Kullanırken bir [ `ListView` ](xref:Xamarin.Forms.ListView) denetim optimize edilmesini kullanıcı deneyimleri sayısı vardır:
 
 - **Başlatma** – denetimi oluşturulduğunda, başlayıp öğeler ekranda göründüğü zaman aralığı.
 - **Kaydırma** – yeteneği listede gezinmek ve kullanıcı arabirimini lag değil emin olmak için dokunma hareketlerini.
 - **Etkileşim** ekleme, silme ve öğeleri seçme.
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Denetimi veri kaynağı ve şablonları hücre için bir uygulama gerektirir. Bu nasıl yapılır denetimin performans üzerinde büyük etkiye sahip olur. Daha fazla bilgi için [ListView performans](~/xamarin-forms/user-interface/listview/performance.md).
+[ `ListView` ](xref:Xamarin.Forms.ListView) Denetimi veri kaynağı ve şablonları hücre için bir uygulama gerektirir. Bu nasıl yapılır denetimin performans üzerinde büyük etkiye sahip olur. Daha fazla bilgi için [ListView performans](~/xamarin-forms/user-interface/listview/performance.md).
 
 <a name="optimizeimages" />
 
 ## <a name="optimize-image-resources"></a>Resim kaynakları en iyi duruma getirme
 
-Görüntü kaynakları görüntüleme, uygulamanın bellek Ayak izi önemli ölçüde artırabilirsiniz. Bu nedenle, bunlar yalnızca gerekli ve uygulama artık gerektirdiği hemen sonra serbest bırakılması oluşturulmalıdır. Örneğin, bir uygulamayı bir akıştan verilerini okuyarak bir görüntüyü görüntüleme, yalnızca gerekli olduğunda bu oluşturulduğundan emin olun ve tutun artık gerekli olmadığında, akış yayımlanan emin olun. Bu sayfa oluşturulduğunda ya da akış oluşturarak gerçekleştirilebilir [ `Page.Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) olay harekete geçirilir ve ardından akışını disposing olduğunda [ `Page.Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Disappearing/) olay harekete geçirilir.
+Görüntü kaynakları görüntüleme, uygulamanın bellek Ayak izi önemli ölçüde artırabilirsiniz. Bu nedenle, bunlar yalnızca gerekli ve uygulama artık gerektirdiği hemen sonra serbest bırakılması oluşturulmalıdır. Örneğin, bir uygulamayı bir akıştan verilerini okuyarak bir görüntüyü görüntüleme, yalnızca gerekli olduğunda bu oluşturulduğundan emin olun ve tutun artık gerekli olmadığında, akış yayımlanan emin olun. Bu sayfa oluşturulduğunda ya da akış oluşturarak gerçekleştirilebilir [ `Page.Appearing` ](xref:Xamarin.Forms.Page.Appearing) olay harekete geçirilir ve ardından akışını disposing olduğunda [ `Page.Disappearing` ](xref:Xamarin.Forms.Page.Disappearing) olay harekete geçirilir.
 
-Bir ekran için bir görüntü indirirken [ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) yöntemi sağlayarak, indirilmiş bir görüntü önbelleği [ `UriImageSource.CachingEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) özelliği `true`. Daha fazla bilgi için [görüntülerle çalışma](~/xamarin-forms/user-interface/images.md).
+Bir ekran için bir görüntü indirirken [ `ImageSource.FromUri` ](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) yöntemi sağlayarak, indirilmiş bir görüntü önbelleği [ `UriImageSource.CachingEnabled` ](xref:Xamarin.Forms.UriImageSource.CachingEnabled) özelliği `true`. Daha fazla bilgi için [görüntülerle çalışma](~/xamarin-forms/user-interface/images.md).
 
 Daha fazla bilgi için [resim kaynakları en iyi duruma getirme](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages).
 
@@ -208,9 +208,9 @@ Daha fazla bilgi için [resim kaynakları en iyi duruma getirme](~/cross-platfor
 
 ## <a name="reduce-the-visual-tree-size"></a>Görsel ağacı azaltın
 
-Sayfadaki öğelerin sayısını azaltmak daha hızlı işleme sayfası hale getirir. Bunu elde etmek için iki ana teknikler vardır. İlk görünmez öğelerini gizleme sağlamaktır. [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) Her öğenin özelliği, öğe veya görsel ağacın bir parçası olup olmayacağını belirler. Bu nedenle, bir öğe görünür değilse, diğer öğelerin gizlenmiş olduğundan öğesi kaldırmak veya ayarlamak kendi `IsVisible` özelliğini `false`.
+Sayfadaki öğelerin sayısını azaltmak daha hızlı işleme sayfası hale getirir. Bunu elde etmek için iki ana teknikler vardır. İlk görünmez öğelerini gizleme sağlamaktır. [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) Her öğenin özelliği, öğe veya görsel ağacın bir parçası olup olmayacağını belirler. Bu nedenle, bir öğe görünür değilse, diğer öğelerin gizlenmiş olduğundan öğesi kaldırmak veya ayarlamak kendi `IsVisible` özelliğini `false`.
 
-İkinci yöntem, gereksiz öğeler kaldırmaktır. Örneğin, aşağıdaki kod örneği, bir dizi görüntüleyen bir sayfa düzeni gösterir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) öğeleri:
+İkinci yöntem, gereksiz öğeler kaldırmaktır. Örneğin, aşağıdaki kod örneği, bir dizi görüntüleyen bir sayfa düzeni gösterir [ `Label` ](xref:Xamarin.Forms.Label) öğeleri:
 
 ```xaml
 <ContentPage.Content>
@@ -330,5 +330,5 @@ Bu makalede açıklanan ve Xamarin.Forms uygulamalarının performansını artı
 - [Hızlı Oluşturucular](~/xamarin-forms/internals/fast-renderers.md)
 - [Düzen Sıkıştırma](~/xamarin-forms/user-interface/layouts/layout-compression.md)
 - [Xamarin.Forms görüntü Boyutlandırıcı örnek](https://developer.xamarin.com/samples/xamarin-forms/XamFormsImageResize/)
-- [XamlCompilation](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilation/)
-- [XamlCompilationOptions](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationOptions/)
+- [XamlCompilation](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)
+- [XamlCompilationOptions](xref:Xamarin.Forms.Xaml.XamlCompilationOptions)

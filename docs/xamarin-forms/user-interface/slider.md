@@ -7,24 +7,24 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2018
-ms.openlocfilehash: 2ba4ffa1bcaee5f95fbd963cd48e694569ec7850
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: c0c433ab44c5b16fda6a01d520c41b31cb94bcc7
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986102"
+ms.locfileid: "38998252"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms kaydırıcı
 
 _Bir aralıktaki sürekli değerleri seçmek için kaydırıcıyı kullanın._
 
-Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) seçmek için kullanıcı tarafından işlenebilir yatay bir çubuk olan bir `double` sürekli bir aralıktan değeri.
+Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider) seçmek için kullanıcı tarafından işlenebilir yatay bir çubuk olan bir `double` sürekli bir aralıktan değeri.
 
 `Slider` Üç tür özelliklerini tanımlar `double`:
 
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) Varsayılan değer olan 0 ile aralığının en düşük gereksinimdir.
-- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) en büyük aralık, bu varsayılan değeri 1 ' dir.
-- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) Kaydırıcının değeri, arasında değişebilir `Minimum` ve `Maximum` ve 0 varsayılan değerine sahiptir.
+- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum) Varsayılan değer olan 0 ile aralığının en düşük gereksinimdir.
+- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum) en büyük aralık, bu varsayılan değeri 1 ' dir.
+- [`Value`](xref:Xamarin.Forms.Slider.Value) Kaydırıcının değeri, arasında değişebilir `Minimum` ve `Maximum` ve 0 varsayılan değerine sahiptir.
 
 Tarafından desteklenen tüm üç özellik `BindableProperty` nesneleri. `Value` Özelliğine sahip bir varsayılan bağlama modu `BindingMode.TwoWay`, yani bir bağlama kaynağı kullanan bir uygulama olarak uygun olduğunu [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) mimarisi.
 
@@ -33,9 +33,9 @@ Tarafından desteklenen tüm üç özellik `BindableProperty` nesneleri. `Value`
 
 `Slider` Olacak şekilde zorlar `Value` arasında olduğundan özelliğini `Minimum` ve `Maximum`(dahil). Varsa `Minimum` özelliği ayarlanmış bir değer için büyük `Value` özelliği `Slider` ayarlar `Value` özelliğini `Minimum`. Benzer şekilde, varsa `Maximum` bir değere ayarlanmış küçüktür `Value`, ardından `Slider` ayarlar `Value` özelliğini `Maximum`.
 
-`Slider` tanımlayan bir [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) olduğunda harekete geçirilen olay `Value` değişiklikler, kullanıcı işlenmesini aracılığıyla `Slider` veya programın ne zaman ayarlar `Value` özelliği doğrudan. A `ValueChanged` da harekete ne zaman `Value` özelliği'nın durumunda bırakılması önceki paragrafta açıklandığı gibi.
+`Slider` tanımlayan bir [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) olduğunda harekete geçirilen olay `Value` değişiklikler, kullanıcı işlenmesini aracılığıyla `Slider` veya programın ne zaman ayarlar `Value` özelliği doğrudan. A `ValueChanged` da harekete ne zaman `Value` özelliği'nın durumunda bırakılması önceki paragrafta açıklandığı gibi.
 
-[ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) Eşlik eden bir nesne `ValueChanged` olay sahip iki özellik türü her ikisi de `double`: [ `OldValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.OldValue/) ve [ `NewValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.NewValue/). Zaman olay tetiklenir, değerini `NewValue` aynı `Value` özelliği `Slider` nesne.
+[ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) Eşlik eden bir nesne `ValueChanged` olay sahip iki özellik türü her ikisi de `double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue) ve [ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). Zaman olay tetiklenir, değerini `NewValue` aynı `Value` özelliği `Slider` nesne.
 
 > [!WARNING]
 > Sınırlandırılmamış yatay düzen seçeneklerini kullanmayın `Center`, `Start`, veya `End` ile `Slider`. Android ve UWP `Slider` daraltır sıfır uzunluklu ve ios'ta çubuğu çubuğuna çok kısa. Varsayılan tutun `HorizontalOptions` ayarıyla `Fill`ve genişliği kullanmayın `Auto` koyarak olduğunda `Slider` içinde bir `Grid` düzeni.
@@ -508,4 +508,4 @@ Olarak `Slider` öğeler değiştirilebilir, `BoxView` ve `Label` öğeleri View
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Kaydırıcı tanıtımları örnek](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
-- [Kaydırıcı API](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)
+- [Kaydırıcı API](xref:Xamarin.Forms.Slider)

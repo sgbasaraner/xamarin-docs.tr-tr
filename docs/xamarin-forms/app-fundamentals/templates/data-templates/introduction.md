@@ -1,24 +1,24 @@
 ---
 title: Xamarin.Forms veri şablonları giriş
-description: Xamarin.Forms veri şablonları, desteklenen denetimlere veri sunumu tanımlama yeteneği sağlar. Bu makalede veri şablonları, gerekli neden inceleniyor tanıtılmaktadır.
+description: Xamarin.Forms veri şablonları desteklenen denetimlere verilerini sunumu tanımlama yeteneği sağlar. Bu makalede konakadı neden İnceleme veri şablonları, bir giriş sağlar.
 ms.prod: xamarin
 ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: e54c7d3ea01c59a20561b69c6e790747567d92f0
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 129ce7a04b93bfb3cb1b9a1639aee61cd56d09d5
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240183"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998927"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms veri şablonları giriş
 
-_Xamarin.Forms veri şablonları, desteklenen denetimlere veri sunumu tanımlama yeteneği sağlar. Bu makalede veri şablonları, gerekli neden inceleniyor tanıtılmaktadır._
+_Xamarin.Forms veri şablonları desteklenen denetimlere verilerini sunumu tanımlama yeteneği sağlar. Bu makalede konakadı neden İnceleme veri şablonları, bir giriş sağlar._
 
-Göz önünde bulundurun bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) koleksiyonunu görüntüleyen `Person` nesneleri. Aşağıdaki kod örneğinde tanımını gösterir `Person` sınıfı:
+Göz önünde bir [ `ListView` ](xref:Xamarin.Forms.ListView) koleksiyonunu görüntüleyen `Person` nesneleri. Aşağıdaki kod örneği tanımı gösterilmektedir `Person` sınıfı:
 
 ```csharp
 public class Person
@@ -29,7 +29,7 @@ public class Person
 }
 ```
 
-`Person` Sınıfı tanımlayan `Name`, `Age`, ve `Location` olduğunda ayarlanabilir özellikleri bir `Person` nesnesi oluşturulur. [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Koleksiyonunu görüntülemek için kullanılan `Person` aşağıdaki XAML kod örneğinde gösterildiği gibi nesneler:
+`Person` Sınıfı tanımlar `Name`, `Age`, ve `Location` olduğunda ayarlanabilir özellikleri bir `Person` nesnesi oluşturulur. [ `ListView` ](xref:Xamarin.Forms.ListView) Koleksiyonunu görüntülemek için kullanılan `Person` aşağıdaki XAML kod örneğinde gösterildiği gibi nesneler:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -54,12 +54,12 @@ public class Person
 </ContentPage>
 ```
 
-Öğeleri eklenir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) başlatma tarafından XAML'de [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemsSource/) bir dizi özelliğinden `Person` örnekleri.
+Öğeleri eklenir [ `ListView` ](xref:Xamarin.Forms.ListView) başlatma tarafından XAML içinde [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) bir dizi özellikten `Person` örnekleri.
 
 > [!NOTE]
-> Unutmayın `x:Array` öğesi gerektiriyor bir `Type` dizisindeki öğelerin türünü belirten özniteliği.
+> Unutmayın `x:Array` öğesi gerektiriyor bir `Type` dizideki öğelerin türünü belirten özniteliği.
 
-Eşdeğer C# sayfaya başlatır aşağıdaki kod örneğinde gösterildiği [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemsSource/) özelliğine bir `List` , `Person` örnekleri:
+Eşdeğer C# sayfaya başlatır aşağıdaki kod örneğinde gösterilen [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) özelliğini bir `List` , `Person` örnekleri:
 
 ```csharp
 public WithoutDataTemplatePageCS()
@@ -86,11 +86,11 @@ public WithoutDataTemplatePageCS()
 }
 ```
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Çağrıları `ToString` nesneleri koleksiyonda görüntülenirken. Olduğundan hiçbir `Person.ToString` geçersiz kılmak, `ToString` aşağıdaki ekran görüntülerinde gösterildiği gibi her nesne türü adını döndürür:
+[ `ListView` ](xref:Xamarin.Forms.ListView) Çağrıları `ToString` nesneleri koleksiyonda görüntülenirken. Olmadığından hiçbir `Person.ToString` geçersiz kılmak, `ToString` aşağıdaki ekran görüntülerinde gösterildiği gibi her bir nesnenin türü adı döndürür:
 
-![](introduction-images/no-data-template.png "ListView veri şablonu olmadan")
+![](introduction-images/no-data-template.png "ListView olmadan veri şablonu")
 
-`Person` Nesnesi geçersiz kılabilirsiniz `ToString` yöntemi aşağıdaki kod örneğinde gösterildiği gibi anlamlı verileri görüntülemek için:
+`Person` Nesnesi geçersiz kılma `ToString` yöntemini aşağıdaki kod örneğinde gösterildiği gibi anlamlı veri görüntülemek için:
 
 ```csharp
 public class Person
@@ -103,38 +103,38 @@ public class Person
 }
 ```
 
-Bu, sonuçlanır [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) görüntüleme `Person.Name` aşağıdaki ekran görüntülerinde gösterildiği gibi koleksiyondaki her nesne için özellik değeri:
+Sonuçlanır [ `ListView` ](xref:Xamarin.Forms.ListView) görüntüleme `Person.Name` aşağıdaki ekran görüntülerinde gösterildiği gibi koleksiyondaki her nesne için özellik değeri:
 
 ![](introduction-images/override-tostring.png "ListView veri şablonu ile")
 
-`Person.ToString` Geçersiz kılma oluşan biçimlendirilmiş bir dize döndürme olasılığından `Name`, `Age`, ve `Location` özellikleri. Ancak, bu yaklaşım sınırlı denetime her bir veri öğesi görünümünü sunar. Daha fazla esneklik için bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) oluşturulabilir, verilerin görünümünü tanımlar.
+`Person.ToString` Geçersiz kılma oluşan bir biçimlendirilmiş dize döndürebilir `Name`, `Age`, ve `Location` özellikleri. Ancak, bu yaklaşım yalnızca sınırlı bir denetime her bir veri öğesi görünümünü sunar. Daha fazla esneklik için bir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) oluşturulabilir, verilerin görünümünü tanımlar.
 
-## <a name="creating-a-datatemplate"></a>Bir DataTemplate oluşturma
+## <a name="creating-a-datatemplate"></a>Bir DataTemplate'ı oluşturma
 
-A [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) verilerin görünümünü belirtmek için kullanılır ve genellikle verileri görüntülemek için veri bağlama kullanır. Nesneleri topluluğu verileri görüntülerken, kendi ortak kullanım senaryosu olduğu bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Örneğin, bir `ListView` bir koleksiyona bağlı `Person` nesneleri `ListView.ItemTemplate` özellik ayarlanacak bir `DataTemplate` her görünümünü tanımlayan `Person` nesnesinde `ListView`. `DataTemplate` Her özellik değerlerine bağlama öğeleri içerecek olan `Person` nesnesi. Veri bağlama hakkında daha fazla bilgi için bkz: [veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) veri görünümünü belirtmek için kullanılır ve genellikle verileri görüntülemek için veri bağlama kullanır. Nesnelerin bir koleksiyondaki verileri görüntülerken, ortak kullanım senaryosuna olduğu bir [ `ListView` ](xref:Xamarin.Forms.ListView). Örneğin, bir `ListView` koleksiyonuna bağlı `Person` nesneleri `ListView.ItemTemplate` özellik ayarlanacak bir `DataTemplate` her görünümünü tanımlayan `Person` nesnesine `ListView`. `DataTemplate` Her özellik değerlerine bağlama öğeleri içerecek `Person` nesne. Veri bağlama hakkında daha fazla bilgi için bkz. [temel veri bağlama bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
-A [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) bir değer olarak aşağıdaki özellikler için kullanılabilir:
+A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) bir değer olarak, aşağıdakiler için kullanılabilir:
 
-- [`ListView.HeaderTemplate`](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.HeaderTemplate/)
-- [`ListView.FooterTemplate`](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.FooterTemplate/)
-- [`ListView.GroupHeaderTemplate`](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupHeaderTemplate/)
-- [`ItemsView.ItemTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/), tarafından devralınan [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/).
-- [`MultiPage.ItemTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.MultiPage%3CT%3E/), tarafından devralınan [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/), [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/), ve [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/).
+- [`ListView.HeaderTemplate`](xref:Xamarin.Forms.ListView.HeaderTemplate)
+- [`ListView.FooterTemplate`](xref:Xamarin.Forms.ListView.FooterTemplate)
+- [`ListView.GroupHeaderTemplate`](xref:Xamarin.Forms.ListView.GroupHeaderTemplate)
+- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1), tarafından devralınan [ `ListView` ](xref:Xamarin.Forms.ListView).
+- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1), tarafından devralınan [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage), [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage), ve [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage).
 
 > [!NOTE]
-> Rağmen unutmayın [ `TableView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/) kullanımlarını yapar [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) nesneleri, onu kullanmayan bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/). Veri bağlamaları her zaman doğrudan ayarlanan olmasıdır `Cell` nesneleri.
+> Olsa da unutmayın [ `TableView` ](xref:Xamarin.Forms.TableView) kullanımları yapar [ `Cell` ](xref:Xamarin.Forms.Cell) nesneleri, kullanmayan bir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Veri bağlamaları doğrudan her zaman ayarlanan olmasıdır `Cell` nesneleri.
 
-A [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) yukarıda listelenen özelliklerinin doğrudan alt öğesi olarak bilinen yerleştirilen bir *satır içi şablon*. Alternatif olarak, bir `DataTemplate` denetim düzeyi, sayfa düzeyinde veya uygulama düzeyinde bir kaynak olarak tanımlanabilir. Nerede tanımlamalı seçerek bir [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) nerede kullanılabilir etkiler:
+A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) yukarıda listelenen özellik öğesinin doğrudan alt öğesi olarak bilinen yerleştirilen bir *satır içi şablon*. Alternatif olarak, bir `DataTemplate` denetim düzeyi, sayfa düzeyinde veya uygulama düzeyinde bir kaynak olarak tanımlanabilir. Tanımlama yeri seçme bir [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) burada kullanılabileceği etkiler:
 
-- A [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) tanımlanan denetim düzeyi yalnızca denetime uygulanabilir.
-- A [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) tanımlanan sayfanın düzeyi sayfasında birden fazla geçerli denetimleri uygulanabilir.
-- A [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) uygulama düzeyinde tanımlanan uygulama boyunca uygulanan geçerli denetimler olabilir.
+- A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) tanımlı denetim düzeyi yalnızca denetime uygulanabilir.
+- A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) tanımlanan sayfa düzeyi sayfasında birden fazla geçerli denetimleri uygulanabilir.
+- A [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) uygulama düzeyinde tanımlanan uygulama boyunca uygulanan geçerli denetimler olabilir.
 
-Görünüm hiyerarşisinde daha düşük veri şablonları önceliklidir tanımlananlar paylaştıkları zaman daha yüksek yukarı `x:Key` öznitelikleri. Örneğin, bir uygulama düzeyi veri şablonu sayfa düzeyinde veri şablon tarafından geçersiz kılınır ve sayfa düzeyinde veri şablonu denetim düzeyi veri şablonu veya bir satır içi veri şablonu tarafından geçersiz kılınır.
+Veri şablonları görünümü hiyerarşide daha düşük önceliklidir tanımlanan bunlar paylaştığınızda daha yukarı `x:Key` öznitelikleri. Örneğin, bir uygulama düzeyinde veri şablonu bir sayfa düzeyinde veri şablonu tarafından geçersiz kılınır ve sayfa düzeyinde veri şablonu bir denetim düzeyi veri şablonu veya bir satır içi veri şablonu tarafından geçersiz kılınır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Hücre Görünümü](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
 - [Veri şablonları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
-- [DataTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)
+- [DataTemplate](xref:Xamarin.Forms.DataTemplate)

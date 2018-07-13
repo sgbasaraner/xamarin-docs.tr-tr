@@ -1,88 +1,88 @@
 ---
-title: Bölüm 1 özeti. Xamarin.Forms nasıl sığmayan?
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 1 özeti. Xamarin.Forms nasıl sığmayan?'
+title: Bölüm 1 özeti. Xamarin.Forms nasıl uygunluk sağlar?
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: Bölüm 1 özeti. Xamarin.Forms nasıl uygunluk sağlar?'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 2897229b0749b1a6ead805d6ad063603a77f8f0d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 58a8976b054ac7fad5c4e24f0561d1b4e468c1b2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240466"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995137"
 ---
-# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Bölüm 1 özeti. Xamarin.Forms nasıl sığmayan?
+# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Bölüm 1 özeti. Xamarin.Forms nasıl uygunluk sağlar?
 
-Özellikle, platform farklı bir programlama dilinde içeriyorsa programlamada en kötü işlerden biri diğerine platformdan diğerine temel bir kod taşımaktır. Yapıldığında bir buradaki eðilim de yeniden düzenlemeniz için kod bağlantı noktası oluşturma, ancak her iki platform paralel olarak korunmalıdır, ardından iki kod temelleri arasındaki farklar gelecek bakım daha zor hale getirir.
+Özellikle, platform farklı bir programlama dilinde içeriyorsa programlamada en kötü işlerden biri diğerine bir platformdan diğerine temel bir kod taşımaktır. Kodu yeniden düzenleme de taşırken bir dürtüsüne olduğu, ancak her iki platform paralel olarak tutulması gereken, ardından iki kod tabanlarında arasındaki farklar gelecek bakım daha zor hale getirir.
 
 ## <a name="cross-platform-mobile-development"></a>Platformlar arası mobil geliştirme
 
-Bu sorun, mobil platformu hedeflerken yaygındır. Şu anda iki önemli mobil platformlar, iPhone ve iOS işletim sistemi ve, çeşitli telefonlar ve tabletler üzerinde çalışan Android işletim sistemi çalıştıran iPad cihazları Apple ailesi var. Başka bir önemli Microsoft'un Evrensel Windows Platformu (Windows 10 ve Windows 10 Mobile hedeflemek tek bir program sağlayan UWP), bir platformdur.
+Bu sorun, mobil platformu hedeflerken yaygındır. Şu anda iki önemli mobil platformlara, iPhone ve iPad iOS işletim sistemi ve çeşitli telefonlar ve tabletler üzerinde çalışan Android işletim sistemi çalıştıran Apple ailesi var. Başka bir önemli Microsoft'un Evrensel Windows Platformu (Windows 10 ve Windows 10 Mobile hedeflemek tek bir programda sağlayan UWP), platformudur.
 
-Bu üç platformlar hedef istediği bir yazılım satıcısı ilgilenmeniz gerekir farklı kullanıcı arabirimi örneklerinde, üç farklı geliştirme ortamları, üç farklı programlama arabirimleri ve&mdash;belki de en awkwardly&mdash; üç farklı programlama dillerini: Objective-C iPhone ve iPad, Android için Java ve C# Windows için.
+Bu üç platformlarını hedeflemek isteyen bir yazılım satıcısı ilgilenmesi gerekir farklı kullanıcı arabirimi paradigmalarını, üç farklı geliştirme ortamlarında, üç farklı programlama arabirimleri ve&mdash;belki de en awkwardly&mdash; üç farklı programlama dilleri: Objective-C iPhone ve iPad, Android için Java ve Windows için C# için.
 
 ## <a name="the-c-and-net-solution"></a>C# ve .NET çözümü
 
-Objective-C, Java ve C# tüm C programlama dili türetilen rağmen çok farklı yollarla gelişim göstermiştir. C# bu diller en güncel olduğundan ve çok kullanışlı şekilde maturing. Ayrıca, C# matematik, hata ayıklama, yansıma, koleksiyonları, Genelleştirme, dosya g/ç, ağ, güvenlik, iş parçacığı oluşturma, web Hizmetleri, veri işleme ve XML için destek sağlayan .NET adlı tüm programlama altyapısına yakından ilişkilidir ve Okuma ve yazma JSON.
+Objective-C, Java ve C# tüm C programlama dilini türetilmiş olsa da, bunlar çok farklı yollarla göstermiştir. C# bu dillerden en yeni ve oldukça faydalı yollarla teknolojilerdeki. Ayrıca, C# matematik, hata ayıklama, yansıma, koleksiyonlar, Genelleştirme, dosya g/ç, ağ, güvenlik, iş parçacığı, web Hizmetleri, veri işleme ve XML için destek sağlayan .NET adlı tüm programlama altyapısı ile yakından ilişkilidir ve Okuma ve yazma JSON.
 
-Xamarin şu anda yerel Mac, iOS ve Android C# .NET ile API'leri hedeflemek için araçlar sağlar. Bu araçları Xamarin.Mac, Xamarin.iOS ve topluca Xamarin platform olarak bilinen Xamarin.Android denir. Kitaplıklar ve bu platformları .NET deyimleri ile yerel API'lerinin express bağlamaları bunlar.
+Xamarin, şu anda yerel Mac, iOS ve Android C# ve .NET kullanarak API'leri hedeflemek için araçlar sağlar. Bu araçlar, Xamarin.Mac, Xamarin.iOS ve Xamarin.Android, topluca Xamarin platformu olarak bilinen adı verilir. Bu, kitaplıkları ve .NET deyimleri ile Bu platformların yerel API express bağlamaları ücretlerdir.
 
-Geliştiriciler, uygulamaları C# ' ta, hedef Mac, iOS veya Android yazmak için Xamarin platform kullanabilir. Ancak, birden çok platformu hedeflerken çok bazı kodları Hedef platformlar arasında paylaşmak için algılama sağlar. Bu programın (genellikle kullanıcı arabirimi içeren) platforma bağımlı kod ve genellikle yalnızca temel .NET framework gerektirir platformdan bağımsız kodu ayıran içerir. Bu platformdan bağımsız kodu ya da taşınabilir sınıf kitaplığı (PCL) veya bir paylaşılan varlık proje veya SAP adlandırılırlar paylaşılan bir proje bulunabilir.
+Geliştiriciler, uygulamaları C# ', hedef Mac, iOS veya Android yazmak için Xamarin platformunu kullanabilir. Ancak, birden çok platformu hedeflerken bazı Hedef platformlar arasında kod paylaşmak için mantıklı hale getirir. Bu programın platforma bağımlı kod (genellikle kullanıcı arabirimi içeren) ve genel olarak yalnızca temel .NET framework gerektiren platformdan bağımsız kod ayırarak içerir. Bu bir platformdan bağımsız kod ya da taşınabilir sınıf kitaplığı (PCL) ya da genellikle paylaşılan varlık projesine veya SAP olarak adlandırılan bir paylaşılan proje içinde bulunabilir.
 
-## <a name="introducing-xamarinforms"></a>Xamarin.Forms Tanıtımı
+## <a name="introducing-xamarinforms"></a>Xamarin.Forms ile tanışın
 
-Birden çok mobil Platform hedeflerken Xamarin.Forms daha da fazla kod paylaşımını sağlar. Xamarin.Forms için yazılmış tek bir program beş farklı platformlar hedef alabilirsiniz:
+Birden çok mobil Platform hedefleme, daha fazla kod paylaşımı Xamarin.Forms sağlar. Xamarin.Forms için yazılmış tek bir programda beş farklı platformları hedefleyebilir:
 
-- iOS iPhone, iPad ve iPod touch çalışan programlar için
-- Android Android telefonlar ve tabletler çalışan programlar için
+- iPhone, iPad ve iPod touch çalışan programlar için iOS
+- Android telefonlar ve tabletlerde çalışan programlar için Android
 - Hedef Windows 10 ve Windows 10 Mobile için evrensel Windows platformu
 - Windows 8.1, Windows çalışma zamanı API
 - Windows Phone 8.1, Windows çalışma zamanı API
 
-Geçerli Xamarin.Forms çözümünü şablonları projeleri Şablonları Windows 8.1 ve Windows Phone 8.1 platformları içermez.
+Mevcut Xamarin.Forms çözüm şablonları, Windows 8.1 ve Windows Phone 8.1 platformları için proje şablonları içermez.
 
-Xamarin.Forms program toplu bir PCL veya bir SAP bulunmaktadır. Her platformları PCL çağıran küçük uygulama saplama oluşur. Xamarin.Forms API'ları eşleme her platformda yerel denetimlere böylece her platform özellik, görünüm korur:
+Bir Xamarin.Forms programın toplu bir PCL veya bir SAP bulunmaktadır. Her platformdaki PCL çağıran bir kısa uygulama saplama oluşur. Xamarin.Forms API'leri harita her platformda yerel denetimlere ve böylece her platform özellik, görünüm tutar:
 
-[![Üçlü ekran paylaşımı platform görselleri görüntüsü](images/ch01fg03-small.png "Xamarin.Forms denetimleri her platformda")](images/ch01fg03-large.png#lightbox "her platformda Xamarin.Forms denetimleri")
+[![Üç ekran paylaşımı platform görsellerin](images/ch01fg03-small.png "Xamarin.Forms denetimleri her platformda")](images/ch01fg03-large.png#lightbox "her platformda Xamarin.Forms denetimleri")
 
-Soldan sağa ekran bir iPhone, Android telefonla ve Windows 10 cep telefonu gösterir. Her ekranında, bir Xamarin.Forms sayfa içeriyor [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) metin görüntülemek için bir [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) Eylemler, başlatma için bir [ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) için bir açık/kapalı değer seçmesini ve [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) sürekli bir aralıkta bir değer belirtmek için. Bu görünüm tüm dört alt öğeleri olan bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) üzerinde bir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/).
+Ekran görüntüleri soldan sağa, iPhone, Android telefon ve Windows 10 Mobile telefon gösterir. Her ekranda bir Xamarin.Forms sayfayı içeren [ `Label` ](xref:Xamarin.Forms.Label) metni görüntülemek için bir [ `Button` ](xref:Xamarin.Forms.Button) eylemleri başlatmak için bir [ `Switch` ](xref:Xamarin.Forms.Switch) için bir açma/kapatma değer seçme ve [ `Slider` ](xref:Xamarin.Forms.Slider) sürekli bir aralıkta bir değer belirtmek için. Bu görünüm tüm dört alt öğesi olan bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) üzerinde bir [ `ContentPage` ](xref:Xamarin.Forms.ContentPage).
 
-Ayrıca sayfaya bağlı olan birkaç oluşan bir Xamarin.Forms araç [ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) nesneleri. Bu, iOS ve Android ekranlar üst kısmında ve Windows 10 Mobile ekranın simgeler olarak görünür.
+Ayrıca sayfaya bağlanmış olan birkaç oluşan bir Xamarin.Forms araç [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem) nesneleri. Bu, iOS ve Android ekranlar üst kısmında ve Windows 10 Mobile ekranın alt kısmındaki simgeler olarak görülebilir.
 
-Xamarin.Forms XAML de destekler, Genişletilebilir uygulama biçimlendirme dili Microsoft'taki birkaç uygulama platform için geliştirilmiştir. Yukarıda gösterilen programın tüm Görsellere örnekte gösterildiği gibi XAML içinde tanımlanan [ **PlatformVisuals** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals) örnek.
+Xamarin.Forms XAML de destekler, Extensible Application Markup Language Microsoft'ta birçok uygulama platformları için geliştirilmiştir. Yukarıda gösterilen programın tüm görseller gösterildiği şekilde XAML içinde tanımlanan [ **PlatformVisuals** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals) örnek.
 
-Bir Xamarin.Forms programın üzerinde çalıştırıldığı hangi platformu belirlemek ve farklı kod uygun şekilde yürütür. Daha güçlü bir şekilde geliştiriciler çeşitli platformlar için özel kod yazmanıza ve bu kodu bir platformdan bağımsız şekilde bir Xamarin.Forms programı çalıştır. Geliştiriciler, her platform için işleyiciler yazarak ek denetimler de oluşturabilirsiniz.
+Xamarin.Forms programın üzerinde çalıştırıldığı platformdan belirleyebilir ve farklı kod uygun şekilde yürütür. Daha güçlü bir şekilde geliştiriciler çeşitli platformlar için özel kod yazmak ve bu kodu bir Xamarin.Forms programından platformdan bağımsız bir biçimde çalıştırın. Geliştiriciler her platform için oluşturucu yazarak ek denetimler de oluşturabilirsiniz.
 
-Xamarin.Forms veya prototipi oluşturulurken veya hızlı bir kavram kanıtı tanıtım oluşturma--iş kolu uygulamaları için iyi bir çözüm olsa da, vektör grafikleri veya karmaşık dokunma etkileşimi gerektiren uygulamalar için daha az idealdir.
+Xamarin.Forms satır iş kolu uygulamaları için ya da prototip oluşturma ve hızlı bir kavram kanıtı sunum yapmak iyi bir çözüm olsa da, vektör grafik veya karmaşık bir dokunma etkileşimi gerektiren uygulamalar için daha az uygundur.
 
 ## <a name="your-development-environment"></a>Geliştirme ortamınızı
 
-Geliştirme ortamınızı ne hedeflemek istediğiniz platformları ve hangi makineleri kullanmak isteyip istememenize bağlıdır.
+Geliştirme ortamınızı ne hedeflemek istediğiniz platformları ve hangi makineleri kullanmak istediğinize bağlıdır.
 
-Hedef iOS istiyorsanız, Xcode ve Xamarin platform yüklü Mac gerekir. Android de destek, Java ve gerekli SDK'ları yüklenmesi gerekir. İOS ve Mac için Visual Studio kullanarak Android sonra hedef
+Hedef iOS istiyorsanız, Xcode ve Xamarin platformunu yüklü Mac gerekir. Android de destek, Java ve gerekli SDK'ları yüklenmesi gerekir. Hem iOS hem de Mac için Visual Studio kullanarak Android ardından hedef
 
-Visual Studio yükleme bilgisayarda, iOS, Android ve tüm Windows platformları hedef olanak sağlar. Ancak, iOS Visual Studio'dan hedefleme hala Xcode ve Xamarin platform yüklü Mac gerektirir.
+Visual Studio yükleme PC, iOS, Android ve Windows platformlarını hedeflemek sağlar. Ancak, Visual Studio içinden İos'u hedefleyen hala Xcode ve Xamarin platformunu yüklü Mac gerektirir.
 
-Programların bilgisayarına USB ile bağlı ya da gerçek bir cihazı veya bir simulator test edebilirsiniz.
+Programlar veya simülatör bilgisayara USB ile bağlı bir gerçek cihaz üzerinde test edebilirsiniz.
 
 ## <a name="installation"></a>Yükleme
 
-Oluşturma ve bir Xamarin.Forms uygulaması oluşturma önce ve ayrı ayrı bir iOS uygulaması, bir Android uygulaması ve hedef ve geliştirme ortamınızı istediğiniz platformları bağlı olarak bir UWP uygulaması oluşturmak denemelisiniz.
+Oluşturma ve bir Xamarin.Forms uygulaması oluşturmaya önce ve ayrı ayrı bir iOS uygulaması, bir Android uygulaması ve hedef ve geliştirme ortamınız için istediğiniz platformları bağlı olarak bir UWP uygulaması oluşturmayı denemelisiniz.
 
-Xamarin ve Microsoft web siteleri bunun nasıl yapılacağı hakkında bilgi içerir:
+Xamarin ve Microsoft web siteleri, bunun nasıl yapılacağı hakkında bilgi içerir:
 
-- [İOS ile çalışmaya başlama](~/ios/get-started/index.md)
-- [Android ile çalışmaya başlama](~/android/get-started/index.md)
-- [Windows Geliştirici Merkezi](http://dev.windows.com)
+- [İOS kullanmaya başlama](~/ios/get-started/index.md)
+- [Android'i kullanmaya Başlarken](~/android/get-started/index.md)
+- [Windows Geliştirme Merkezi](http://dev.windows.com)
 
-Bir kez oluşturabilir ve tek tek bu platformlar için projelerini çalıştırmak, oluşturma ve bir Xamarin.Forms uygulaması çalıştıran herhangi bir sorun olması gerekir.
+Bir kez oluşturun ve projeleri bu tek tek platformlarda çalıştırın, oluşturma ve bir Xamarin.Forms uygulaması çalıştıran sorun sahip olmalıdır.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Bölüm 1 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf)
-- [Bölüm 1 örnek](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
+- [Bölüm 1 örneği](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)

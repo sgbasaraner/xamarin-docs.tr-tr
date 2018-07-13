@@ -1,37 +1,37 @@
 ---
-title: Ekli davranışları
-description: Ekli davranışları, bir veya daha fazla ekli özellikler ile statik sınıflarıdır. Bu makalede, oluşturmasına ve ekli davranışları kullanmasına gösterilmiştir.
+title: Ekli davranışlar
+description: Ekli davranışlar, bir veya daha fazla ekli özellikler ile statik sınıflardır. Bu makalede, ekli davranışlar oluşturup gösterilmektedir.
 ms.prod: xamarin
 ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 32573ac3ed0dfecf8ddf1c731613c9a5f88fb1e7
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2c9bd9ad4e7572b9eae6f0073da8a2c8f1e7c9fc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34845999"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995352"
 ---
-# <a name="attached-behaviors"></a>Ekli davranışları
+# <a name="attached-behaviors"></a>Ekli davranışlar
 
-_Ekli davranışları, bir veya daha fazla ekli özellikler ile statik sınıflarıdır. Bu makalede, oluşturmasına ve ekli davranışları kullanmasına gösterilmiştir._
+_Ekli davranışlar, bir veya daha fazla ekli özellikler ile statik sınıflardır. Bu makalede, ekli davranışlar oluşturup gösterilmektedir._
 
 ## <a name="overview"></a>Genel Bakış
 
-Ekli özellik bağlanabilirse özelliği özel bir türde değil. Bir sınıf tarafından tanımlanan ancak diğer nesnelere bağlı ve bunlar sınıfı ve bir noktayla ayrılmış bir özellik adı içeren öznitelikler olarak XAML'de tanımlanabilir.
+Ekli özelliği, özel bir bağlanılabilir özellik türüdür. Bir sınıf içinde tanımlanan ancak diğer nesnelere bağlı ve bir sınıf ya da bir nokta ile ayrılmış bir özellik adını içeren öznitelikler olarak XAML içinde tanınan olduklarından.
 
-Ekli özellik tanımlayabilirsiniz bir `propertyChanged` özelliğinin değeri değiştiğinde özelliği bir denetimde ayarlandığında gibi yürütülecek temsilcisi. Zaman `propertyChanged` temsilcisini yürütür, üzerinde bağlı denetim ve özellik için eski ve yeni değerler içeren parametreleri başvuru geçti. Bu temsilci özelliği, şu şekilde geçirilir başvuru işleyerek bağlı denetlemek için yeni işlevler eklemek için kullanılabilir:
+Ekli özelliği tanımlayabilirsiniz bir `propertyChanged` özelliği denetimde ayarlandığında gibi özelliğinin değeri değiştiğinde çalıştırılacak temsilci. Zaman `propertyChanged` temsilcisini yürütür, başvuru üzerinde bağlı denetimi ve bir özellik için eski ve yeni değerleri içeren parametre geçti. Bu temsilci, özellik, şu şekilde geçirilir başvuru işleyerek iliştirildiği denetlemek için yeni işlevler eklemek için kullanılabilir:
 
-1. `propertyChanged` Temsilci olarak alınan denetim başvurusu bıraktığı bir [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/), geliştirmek için tasarlanmış davranış denetim türü.
-1. `propertyChanged` Temsilci denetim özelliklerini denetim veya kayıtları olay işleyicileri çekirdek davranışı işlevselliği uygulamak için denetim tarafından kullanıma sunulan olaylar için çağrı yöntemlerini değiştirir.
+1. `propertyChanged` Temsilci olarak alınan denetim başvurusu bıraktığı bir [ `BindableObject` ](xref:Xamarin.Forms.BindableObject), davranıştır denetim türü artırmak için tasarlanmıştır.
+1. `propertyChanged` Temsilci denetimin özelliklerini çekirdek davranışı işlevselliği uygulamak için denetim tarafından gösterilen olaylar için denetim ya da kayıtları olay işleyicisi yöntemleri değiştirir.
 
-Bunlar içinde tanımlanan ekli davranışları ile ilgili bir sorun olduğu bir `static` sınıfı ile `static` özellikleri ve yöntemleri. Bu duruma sahip ekli davranışları oluşturmak zorlaştırır. Ayrıca, Xamarin.Forms davranışları davranışı yapımı için tercih edilen yaklaşım olarak ekli davranışları yerini almıştır. Xamarin.Forms davranışları hakkında daha fazla bilgi için bkz: [Xamarin.Forms davranışları](~/xamarin-forms/app-fundamentals/behaviors/creating.md) ve [yeniden kullanılabilir davranışları](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
+Ekli davranışlar ile bunlar içinde tanımlanır çıkıştır bir `static` sınıfı ile `static` özellikleri ve yöntemleri. Bu duruma sahip ekli davranışlar oluşturma zorlaştırır. Buna ek olarak, Xamarin.Forms davranışları ekli davranışlar davranışı oluşturma için tercih edilen yaklaşım olarak değiştirdiniz. Xamarin.Forms davranışları hakkında daha fazla bilgi için bkz. [Xamarin.Forms davranışları](~/xamarin-forms/app-fundamentals/behaviors/creating.md) ve [yeniden kullanılabilir davranışlar](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
 
-## <a name="creating-an-attached-behavior"></a>Ekli davranışı oluşturma
+## <a name="creating-an-attached-behavior"></a>Ekli bir davranışı oluşturma
 
-Örnek uygulamayı gösteren bir `NumericValidationBehavior`, kullanıcı tarafından girilen değer vurgular bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) değilse kırmızı olarak kontrol bir `double`. Aşağıdaki kod örneğinde davranışı gösterilir:
+Örnek uygulamayı gösterir bir `NumericValidationBehavior`, kullanıcı tarafından girilen değer vurgular bir [ `Entry` ](xref:Xamarin.Forms.Entry) denetim kırmızı renkte değilse bir `double`. Davranışı aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public static class NumericValidationBehavior
@@ -78,11 +78,11 @@ public static class NumericValidationBehavior
 }
 ```
 
-`NumericValidationBehavior` Sınıfı içeren adlı bir ekli özellik `AttachBehavior` ile bir `static` alıcı ve ekleme veya kaldırma için bunu ekleneceği denetlemek için davranış denetimleri ayarlayıcı. Bu özellik yazmaçlar bağlı `OnAttachBehaviorChanged` özelliğinin değeri değiştiğinde, yürütülecek yöntemi. Bu yöntem kaydeder veya bir olay işleyicisi için XML'deki kaydeder [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) değerine göre olay `AttachBehavior` özelliği eklenmiş. Davranış çekirdek işlevselliğini tarafından sağlanan `OnEntryTextChanged` girilen değeri ayrıştırır yöntemi [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) kullanıcı ve kümeleri tarafından `TextColor` özelliğini değer değilse kırmızı bir `double`.
+`NumericValidationBehavior` Sınıfı içeren adlı ekli özelliği `AttachBehavior` ile bir `static` alıcı ve ayarlayıcı, ekleme veya kaldırma davranışı bağlı denetim denetleyen. İliştirilmiş özellik kayıtları `OnAttachBehaviorChanged` özelliğinin değeri değiştiğinde, yürütülecek yöntemi. Bu yöntem kaydeder veya devre dışı bırakmak için bir olay işleyicisi kaydeder [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) değerine göre olay `AttachBehavior` ekli özellik. Davranış temel işlevlerini tarafından sağlanan `OnEntryTextChanged` girilen değeri ayrıştırır yöntemi [ `Entry` ](xref:Xamarin.Forms.Entry) kümeleri ve kullanıcı tarafından `TextColor` özellik değeri değilse, kırmızı bir `double`.
 
 ## <a name="consuming-an-attached-behavior"></a>Ekli bir davranış kullanma
 
-`NumericValidationBehavior` Sınıfı ekleyerek nin tüketim `AttachBehavior` özelliğine bağlı bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) aşağıdaki XAML kod örneğinde gösterildiği gibi denetim:
+`NumericValidationBehavior` Sınıfı ekleyerek kullanılabilir `AttachBehavior` özelliğine bağlı bir [ `Entry` ](xref:Xamarin.Forms.Entry) denetimi aşağıdaki XAML kod örneğinde gösterildiği gibi:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:WorkingWithBehaviors;assembly=WorkingWithBehaviors" ...>
@@ -92,21 +92,21 @@ public static class NumericValidationBehavior
 </ContentPage>
 ```
 
-Eşdeğer [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) C# ' de aşağıdaki kod örneğinde gösterilir:
+Eşdeğer [ `Entry` ](xref:Xamarin.Forms.Entry) C# ' de aşağıdaki kod örneğinde gösterilir:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, true);
 ```
 
-Çalışma zamanında göre davranışı uygulama denetimi ile etkileşim için davranış yanıt. Aşağıdaki ekran görüntüleri için geçersiz giriş yanıt ekli davranış gösterir:
+Çalışma zamanında davranış göre davranışını uygulama denetimi ile etkileşim için yanıtlar. Aşağıdaki ekran görüntüleri geçersiz girişine yanıt ekli davranış gösterir:
 
-[![](attached-images/screenshots-sml.png "Örnek uygulama ekli davranışı")](attached-images/screenshots.png#lightbox "örnek uygulama ekli davranışı")
+[![](attached-images/screenshots-sml.png "Örnek uygulama ekli davranış")](attached-images/screenshots.png#lightbox "örnek uygulama ekli davranışı")
 
 > [!NOTE]
-> Ekli davranışları belirli bir denetim türünü (veya birçok denetimlere uygulayabileceğiniz bir üst sınıf) için yazılmıştır ve bunlar yalnızca uyumlu bir denetim eklenmesi gerekir. Uyumsuz bir denetim için bir davranış eklemeye çalışırken bilinmeyen davranışlara neden ve davranış mantığınız bağlıdır.
+> Ekli davranışlar belirli denetim türü (veya birçok denetim için uygulayabileceğiniz bir sınıf) yazılır ve uyumlu bir denetime yalnızca eklenmelidir. Uyumsuz bir denetime bir davranış ekleme girişimi bilinmeyen davranışlara neden ve davranışı uygulamasının bağlıdır.
 
-### <a name="removing-an-attached-behavior-from-a-control"></a>Ekli bir davranış denetimden kaldırma
+### <a name="removing-an-attached-behavior-from-a-control"></a>Ekli bir davranışı bir denetiminden kaldırma
 
 `NumericValidationBehavior` Sınıfı kaldırılabilir denetimden ayarlayarak `AttachBehavior` özelliğine bağlı `false`, aşağıdaki XAML kod örneğinde gösterildiği gibi:
 
@@ -114,20 +114,20 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 <Entry Placeholder="Enter a System.Double" local:NumericValidationBehavior.AttachBehavior="false" />
 ```
 
-Eşdeğer [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) C# ' de aşağıdaki kod örneğinde gösterilir:
+Eşdeğer [ `Entry` ](xref:Xamarin.Forms.Entry) C# ' de aşağıdaki kod örneğinde gösterilir:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-Çalışma zamanında `OnAttachBehaviorChanged` yöntemi olacaktır yürütülmesi değerini `AttachBehavior` ekli özellik ayarlanmış `false`. `OnAttachBehaviorChanged` Yöntemi ardından XML'deki kaydetmek için olay işleyicisini [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) olayı, kullanıcı denetimi ile etkileşim gibi davranış yürütülen değil sağlama.
+Çalışma zamanında, `OnAttachBehaviorChanged` yöntemi olacaktır yürütülmesi değerini `AttachBehavior` ekli özelliği `false`. `OnAttachBehaviorChanged` Yöntemi ardından kaldırması için olay işleyicisi [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) olayı, kullanıcı denetimle etkileşim kurdukça davranışı yürütülen olmadığından sağlama.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede nasıl oluşturulacağını ve ekli davranışları tüketen gösterilmektedir. Ekli davranışları olan `static` bir veya daha fazla ekli özellikler sınıflarıyla.
+Bu makalede ekli davranışlar oluşturup nasıl gösterilmiştir. Ekli davranışlar olan `static` sınıflarıyla bir veya daha fazla ekli özellikler.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Ekli davranışları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/attachednumericvalidationbehavior/)
+- [Ekli davranışlar (örnek)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/attachednumericvalidationbehavior/)

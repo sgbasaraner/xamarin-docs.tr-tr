@@ -1,99 +1,99 @@
 ---
-title: Bölüm 10 özeti. XAML işaretleme uzantıları
-description: 'Xamarin.Forms ile mobil uygulamaları oluşturma: Bölüm 10 özeti. XAML işaretleme uzantıları'
+title: Bölüm 10 özeti. XAML biçimlendirme uzantıları
+description: 'Xamarin.Forms ile mobil uygulamalar oluşturma: Bölüm 10 özeti. XAML biçimlendirme uzantıları'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: cc6c3154b7e6535fa7528032fb7a91ad90a0a7f8
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1ee19d96e39534ccce5238eca3a90ba5c8d9d451
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241106"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997522"
 ---
-# <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Bölüm 10 özeti. XAML işaretleme uzantıları
+# <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Bölüm 10 özeti. XAML biçimlendirme uzantıları
 
-Normalde, XAML ayrıştırıcı temel .NET veri türleri için standart dönüşümler göre özelliğinin türü için bir öznitelik değeri olarak ayarlamak herhangi bir dize dönüştürür veya [ `TypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TypeConverter/) türevi iliştirilmiş özellik veya türü ile bir [`TypeConverterAttribute`](https://developer.xamarin.com/api/type/Xamarin.Forms.TypeConverterAttribute/).
+Normalde, XAML ayrıştırıcı temel .NET veri türleri için standart dönüştürmeler göre özelliğinin türü için bir öznitelik değeri ayarlayın. herhangi bir dize dönüştürür veya [ `TypeConverter` ](xref:Xamarin.Forms.TypeConverter) Türev iliştirilmiş özellik veya türü ile bir [`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute).
 
-Ancak bazen, örneğin, bir öğeyi bir sözlük veya bir statik özellik veya alan değerinin farklı kaynak ya da bir hesaplama tür bir öznitelik ayarlamak uygun değil.
+Ancak, bir öznitelik bir öğe gibi bir sözlüğün veya bir statik özellik veya alan değerini başka bir kaynaktan veya bir hesaplama çeşit ayarlamak bazen kullanışlıdır.
 
-Bu iş, bir *XAML biçimlendirme uzantısı*. XAML biçimlendirme uzantıları adı rağmen olan *değil* XML uzantısı. XAML her zaman yasal XML'dir.
+Bu görevi, bir *XAML işaretleme uzantısı*. Adına rağmen XAML biçimlendirme uzantıları olan *değil* XML uzantısı. XAML her zaman yasal XML'dir.
 
 ## <a name="the-code-infrastructure"></a>Kod Altyapısı
 
-XAML biçimlendirme uzantısı uygulayan bir sınıftır [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) arabirimi. Böyle bir sınıfın genellikle sözcüğü bulunan `Extension` adının sonunda, ancak genellikle XAML'de soneki görünür.
+XAML işaretleme uzantısı uygulayan sınıftır [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension) arabirimi. Bu sınıf genellikle sözcüğü bulunan `Extension` adının sonunda, ancak genellikle XAML içinde soneki görüntülenir.
 
-Aşağıdaki XAML biçimlendirme uzantıları XAML tüm uygulamaları tarafından desteklenir:
+Aşağıdaki XAML biçimlendirme uzantıları tüm XAML uygulamaları tarafından desteklenir:
 
-- `x:Static` tarafından desteklenen [`StaticExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticExtension/)
-- `x:Reference` tarafından desteklenen [`ReferenceExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/)
-- `x:Type` tarafından desteklenen [`TypeExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TypeExtension/)
-- `x:Null` tarafından desteklenen [`NullExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.NullExtension/)
-- `x:Array` tarafından desteklenen [`ArrayExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ArrayExtension/)
+- `x:Static` tarafından desteklenen [`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension)
+- `x:Reference` tarafından desteklenen [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension)
+- `x:Type` tarafından desteklenen [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension)
+- `x:Null` tarafından desteklenen [`NullExtension`](xref:Xamarin.Forms.Xaml.NullExtension)
+- `x:Array` tarafından desteklenen [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension)
 
-Bu dört XAML biçimlendirme uzantıları XAML Xamarin.Forms dahil olmak üzere, birçok uygulamaları tarafından desteklenir:
+Bu dört XAML biçimlendirme uzantıları, XAML, Xamarin.Forms dahil olmak üzere birçok uygulamaları tarafından desteklenir:
 
-- `StaticResource` tarafından desteklenen [`StaticResourceExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticResourceExtension/)
-- `DynamicResource` tarafından desteklenen [`DynamicResourceExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.DynamicResourceExtension/)
-- `Binding` tarafından desteklenen [ `BindingExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/) &mdash;ele [Bölüm 16. Veri bağlama](#chapter16)
-- `TemplateBinding` tarafından desteklenen [ `TemplateBindingExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TemplateBindingExtension/) &mdash;Defteri'nde kapsanmayan
+- `StaticResource` tarafından desteklenen [`StaticResourceExtension`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)
+- `DynamicResource` tarafından desteklenen [`DynamicResourceExtension`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension)
+- `Binding` tarafından desteklenen [ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension) &mdash;ele [Bölüm 16. Veri bağlama](#chapter16)
+- `TemplateBinding` tarafından desteklenen [ `TemplateBindingExtension` ](xref:Xamarin.Forms.Xaml.TemplateBindingExtension) &mdash;kitap kapsamında olmayan
 
-Xamarin.Forms birlikte ek bir XAML biçimlendirme uzantısı dahil [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/):
+Xamarin.Forms ile ek bir XAML işaretleme uzantısı dahil [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout):
 
-- [`ConstraintExpression`](https://developer.xamarin.com/api/type/Xamarin.Forms.ConstraintExpression/)&mdash;Defteri'nde kapsanmayan
+- [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression)&mdash;Kitap kapsamında olmayan
 
-## <a name="accessing-static-members"></a>Statik üyeler erişme
+## <a name="accessing-static-members"></a>Statik üyelere erişme
 
-Kullanım [ `x:Static` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticExtension/) öğesi bir öznitelik ortak bir statik özellik, alan veya sabit listesi üye değerine ayarlayın. Ayarlama [ `Member` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.StaticExtension.Member/) statik üye özelliği. Belirtmek daha kolay `x:Static` ve süslü ayraçlar içindeki üye adı. Adını `Member` özelliği dahil edildiği gerekmez öğenin kendisini yalnızca. Bu ortak sözdizimi gösterilen [ **SharedStatics** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SharedStatics) örnek. Statik alanları tanımlanan [ `AppConstants` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter10/SharedStatics/SharedStatics/SharedStatics/AppConstants.cs) sınıfı. Bu teknik bir program aracılığıyla kullanılan sabitler kurmanızı sağlar.
+Kullanım [ `x:Static` ](xref:Xamarin.Forms.Xaml.StaticExtension) bir öznitelik değeri bir ortak statik özelliği, alan veya sabit listesi üye olarak ayarlamak için öğesi. Ayarlama [ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member) statik üye özelliği. Belirtmek daha kolay `x:Static` ve küme ayraçlarının içindeki üye adı. Adını `Member` özelliği dahil olması gerekmez üye bizzat yeterlidir. Bu sık kullanılan söz dizimi gösterilen [ **SharedStatics** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SharedStatics) örnek. Statik alanlar tanımlanan [ `AppConstants` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter10/SharedStatics/SharedStatics/SharedStatics/AppConstants.cs) sınıfı. Bu teknik, bir program aracılığıyla kullanılan sabit oluşturmanıza olanak tanır.
 
-Bir ek XML ad alanı bildirimi ile ortak statik özellikler, alanlar veya .NET framework, tanımlanan numaralandırma üyeleri şekilde başvurabileceğiniz [ **SystemStatics** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SystemStatics) örnek .
+Ek XML ad alanı bildirimi ile genel statik özellikler, alanlar veya .NET framework, tanımlanan numaralandırma üyelerini gösterildiği şekilde başvurabileceğiniz [ **SystemStatics** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SystemStatics) örnek .
 
 ## <a name="resource-dictionaries"></a>Kaynak sözlükleri
 
-`VisualElement` Sınıfı tanımlayan adlı bir özellik [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) türünde bir nesne için ayarlanan [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). XAML içinde bu sözlükteki maddeleri depolamak ve bunlarla tanımlamak `x:Key` özniteliği. Kaynak sözlükte depolanan öğeler öğesinin tüm başvurularını arasında paylaşılır.
+`VisualElement` Sınıfı tanımlar adlı bir özellik [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) türünde bir nesne için ayarlayabileceğiniz [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). XAML içinde öğeleri bu sözlükte depolamak ve bunları tanımlamak `x:Key` özniteliği. Kaynak sözlüğünde depolanan öğelerin öğesinin tüm başvurularını arasında paylaşılır.
 
-### <a name="staticresource-for-most-purposes"></a>Çoğu amaç için StaticResource
+### <a name="staticresource-for-most-purposes"></a>StaticResource birçok amaç için
 
-Çoğu durumda, kullanacağınız [ `StaticResource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticResourceExtension/) bir öğe tarafından gösterildiği gibi kaynak sözlüğünden başvurmak için işaretleme uzantısı [ **ResourceSharing** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceSharing) örnek . Kullanabileceğiniz bir `StaticResourceExtension` öğesi veya `StaticResource` süslü ayraçlar içinde:
+Çoğu durumda, kullanacağınız [ `StaticResource` ](xref:Xamarin.Forms.Xaml.StaticResourceExtension) tarafından gösterildiği gibi kaynak sözlüğünden bir öğe başvurusu için işaretleme uzantısı [ **ResourceSharing** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceSharing) örnek . Kullanabileceğiniz bir `StaticResourceExtension` öğesi veya `StaticResource` kaşlı ayraçlar içinde:
 
-[![Kaynak Paylaşımı Üçlü ekran](images/ch10fg03-small.png "kaynak paylaşımı")](images/ch10fg03-large.png#lightbox "kaynak paylaşma")
+[![Kaynak paylaşımını üç ekran görüntüsü](images/ch10fg03-small.png "kaynak paylaşımını")](images/ch10fg03-large.png#lightbox "kaynak paylaşma")
 
-Aynı şey `x:Static` biçimlendirme uzantısı ve `StaticResource` biçimlendirme uzantısı.
+Karıştırmayın `x:Static` işaretleme uzantısı ve `StaticResource` işaretleme uzantısı.
 
-### <a name="a-tree-of-dictionaries"></a>Sözlük ağacı
+### <a name="a-tree-of-dictionaries"></a>Sözlükler ağacı
 
-XAML ile karşılaştığında bir `StaticResource`, eşleşen bir anahtarı için görsel ağaç aramaya başlar ve ardından görünür `ResourceDictionary` uygulamanın içinde `App` sınıfı. Bu öğeleri görsel ağaçta daha yüksek bir kaynak sözlüğü geçersiz kılmak için görsel ağaç daha derin bir kaynak sözlüğü sağlar. Bu, gösterilmiştir [ **ResourceTrees** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceTrees) örnek.
+XAML ile karşılaştığında bir `StaticResource`, eşleşen bir anahtar için görsel ağacı aramaya başlar ve ardından görünen `ResourceDictionary` içinde uygulamanın `App` sınıfı. Bu öğeleri görsel ağacında daha yüksek bir kaynak sözlüğü geçersiz kılmak için görsel ağaç daha derin bir kaynak sözlüğü sağlar. Bu gösterilmiştir [ **ResourceTrees** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceTrees) örnek.
 
-### <a name="dynamicresource-for-special-purposes"></a>Özel amaçlı DynamicResource
+### <a name="dynamicresource-for-special-purposes"></a>DynamicResource özel amaçlı
 
-`StaticResource` Biçimlendirme uzantısı neden olan bir görsel ağaç sırasında yapılandırıldığında sözlükten alınması için bir öğe `InitializeComponent` çağırın. Alternatif `StaticResource` olan [ `DynamicResource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.DynamicResourceExtension/), sözlük anahtarı bağlantı korur ve öğe anahtarı değişiklikleri tarafından başvurulan hedef güncelleştirir.
+`StaticResource` İşaretleme uzantısı neden olur, öğeyi görsel ağacı sırasında yapılandırıldığında sözlükten alınacak `InitializeComponent` çağırın. Alternatif `StaticResource` olduğu [ `DynamicResource` ](xref:Xamarin.Forms.Xaml.DynamicResourceExtension), sözlük anahtarı bağlantısını korur ve hedef öğenin anahtarı değişiklikleri tarafından başvurulduğunda güncelleştirir.
 
-Arasındaki farkı `StaticResource` ve `DynamicResource` örneklerde gösterildiği [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) örnek.
+Arasındaki fark `StaticResource` ve `DynamicResource` gösterilmiştir [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) örnek.
 
-Bir özellik kümesi `DynamicResource` bağlanabilirse özelliği tarafından anlatıldığı gibi yedeklenmelidir [Bölüm 11, bağlanabilirse altyapı](chapter11.md).
+Bir özellik kümesi `DynamicResource` tarafından bir bağlanılabilir özellik anlatıldığı gibi yedeklenmelidir [Bölüm 11, bağlanabilir altyapı](chapter11.md).
 
 ## <a name="lesser-used-markup-extensions"></a>Daha az kullanılan biçimlendirme uzantıları
 
-Kullanım [ `x:Null` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.NullExtension/) bir özelliği ayarlamak için işaretleme uzantısı `null`.
+Kullanım [ `x:Null` ](xref:Xamarin.Forms.Xaml.NullExtension) bir özellik ayarlanacak işaretleme uzantısı `null`.
 
-Kullanım [ `x:Type` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TypeExtension/) bir özellik için bir .NET ayarlamak için işaretleme uzantısı `Type` nesnesi.
+Kullanım [ `x:Type` ](xref:Xamarin.Forms.Xaml.TypeExtension) özellik için bir .NET ayarlamak için işaretleme uzantısı `Type` nesne.
 
-Kullanım [ `x:Array` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ArrayExtension/) bir dizi tanımlamak için. Dizi üyeleri ayarlayarak türünü [`Type`] özelliği için bir `x:Type` biçimlendirme uzantısı.
+Kullanım [ `x:Array` ](xref:Xamarin.Forms.Xaml.ArrayExtension) dizi tanımlamak için. Dizi üyeleri türünü belirtmek [`Type`] özelliğini bir `x:Type` işaretleme uzantısı.
 
 ## <a name="a-custom-markup-extension"></a>Özel biçimlendirme uzantısı
 
-Kendi XAML işaretleme uzantılarına uygulayan bir sınıf yazarak oluşturabileceğiniz [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) ile arabirim bir [ `ProvideValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Xaml.IMarkupExtension.ProvideValue/p/System.IServiceProvider/) yöntemi.
+Uygulayan bir sınıf yazarak kendi XAML biçimlendirme uzantıları oluşturabilirsiniz [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension) ile arabirim bir [ `ProvideValue` ](xref:Xamarin.Forms.Xaml.IMarkupExtension.ProvideValue(System.IServiceProvider)) yöntemi.
 
-[ `HslColorExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs) Sınıfı bu gereksinimi karşılar. Türünde bir değer oluşturur `Color` adlı özelliklerinin değerlerine göre `H`, `S`, `L`, ve `A`. Bu sınıf adlı bir Xamarin.Forms Kitaplığı'nda ilk öğedir [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) yerleşik ve bu kitap boyunca kullanılan.
+[ `HslColorExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs) Sınıfı bu gereksinimini karşılar. Türünde bir değer oluşturur `Color` adlı özelliklerinin değerlerine göre `H`, `S`, `L`, ve `A`. Bu sınıf adlı bir Xamarin.Forms Kitaplığı'nda ilk öğedir [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) yerleşik ve bu kitap boyunca kullanılır.
 
-[ **CustomExtensionDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo) örneği, bu kitaplık başvurusu ve özel biçimlendirme uzantısı nasıl kullanılacağını gösterir.
+[ **CustomExtensionDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo) örnek nasıl özel biçimlendirme uzantısı bu kitaplık başvurusu ve nasıl kullanılacağını gösterir.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bölüm 10 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)
+- [Tam metin Bölüm 10 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)
 - [Bölüm 10 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)

@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms Multiscreen derinlemesine bakış
-description: Bu makalede sayfa gezintisi ve veri bağlamanın bir Xamarin.Forms uygulaması tanıtır ve bunların kullanılması çok ekran platformlar arası uygulamasında gösterir.
+title: Xamarin.Forms çoklu ekranı derinlemesine bakış
+description: Bu makalede, sayfa gezintisi ve bir Xamarin.Forms uygulaması içinde veri bağlamayı sunar ve çoklu ekran platformlar arası uygulama kullanımları gösterir.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: e4faa36c-6600-48c0-94c4-b4431103a4
@@ -8,22 +8,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 1c7edff3c71b9d7530b2acf21acaa06149156d43
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 355d050fea2516dfc8ad532675048c5c5293368a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35242241"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997562"
 ---
-# <a name="xamarinforms-multiscreen-deep-dive"></a>Xamarin.Forms Multiscreen derinlemesine bakış
+# <a name="xamarinforms-multiscreen-deep-dive"></a>Xamarin.Forms çoklu ekranı derinlemesine bakış
 
-İçinde [Xamarin.Forms Multiscreen Hızlı Başlangıç](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md), Phoneword uygulama, uygulama için arama geçmişini ve ikinci bir ekran içerecek şekilde genişletildi. Bu makalede, ne, sayfa gezintisi anlaşılması ve veri bağlamanın bir Xamarin.Forms uygulaması geliştirmek için oluşturulduğunu gözden geçirir.
+İçinde [Xamarin.Forms çoklu ekranı hızlı](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md), Phoneword uygulama, uygulama için arama geçmişine ve ikinci bir ekran içerecek şekilde genişletildi. Bu makalede, ne, sayfa gezintisi bir anlayış ve veri bağlama bir Xamarin.Forms uygulaması geliştirmek için oluşturulduğundan incelenir.
 
-## <a name="navigation"></a>Gezinme
+## <a name="navigation"></a>Gezinti
 
-Xamarin.Forms bir sayfa yığınını kullanıcı deneyimi ve gezinti yöneten bir yerleşik gezinti modeli sağlar. Bu model son giren ilk çıkar (LIFO) yığınını uygulayan `Page` nesneleri. Bir sayfadan diğerine taşımak için bir uygulama bu yığını yeni bir sayfaya gönderir. Önceki sayfaya dönmek için uygulamanın geçerli sayfa yığından pop.
+Xamarin.Forms gezinti ve kullanıcı deneyimi sayfaların yığının yöneten bir yerleşik bir gezinti modeli sağlar. Bu model son giren ilk çıkar (LIFO) yığınını uygulayan `Page` nesneleri. Bir sayfadan diğerine taşımak için bir uygulama bu yığını yeni bir sayfaya gönderir. Önceki sayfaya geri dönmek için uygulamanın geçerli sayfa yığından açılır pencere görürsünüz.
 
-Xamarin.Forms sahip bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) yığınını yöneten sınıf [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) nesneleri. `NavigationPage` Sınıfı bir gezinti çubuğu bir başlık ve platform uygun görüntüler sayfanın üstüne eklemek de <span class="uiitem">geri</span> önceki sayfaya döner düğmesi. Aşağıdaki kod örneğinde nasıl kaydırılacağını gösterir bir `NavigationPage` uygulamanın ilk sayfa geçici:
+Xamarin.Forms sahip bir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) yığınını yöneten sınıf [ `Page` ](xref:Xamarin.Forms.Page) nesneleri. `NavigationPage` Sınıfı bir gezinti çubuğunu da bir başlık ve platform uygun gösteren sayfa üst kısmına eklenir <span class="uiitem">geri</span> önceki sayfasına döndürür düğmesine. Aşağıdaki kod örneği nasıl kaydırılacağını gösteren bir `NavigationPage` uygulamanın ilk sayfa geçici olarak:
 
 ```csharp
 public App ()
@@ -33,7 +33,7 @@ public App ()
 }
 ```
 
-Tüm [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örneğe sahip bir [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) sayfa yığını değiştirmek için yöntemlerini gösterir özelliği. Uygulama içeriyorsa, bu yöntemleri yalnızca çağrılan bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/). Gitmek için `CallHistoryPage`, çağırmak gerekli olan [ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync/p/Xamarin.Forms.Page/) yöntemini aşağıdaki kod örneğinde gösterildiği gibi değiştirin:
+Tüm [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) örneğe sahip bir [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) sayfa yığın değiştirmek için yöntemlerini gösteren özellik. Uygulama içeriyorsa, bu yöntem yalnızca çağrılan bir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage). Gidilecek `CallHistoryPage`, çağırmak gerekli olan [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) yöntemini aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 async void OnCallHistory(object sender, EventArgs e)
@@ -42,21 +42,21 @@ async void OnCallHistory(object sender, EventArgs e)
 }
 ```
 
-Bu yeni neden `CallHistoryPage` Gezinti yığına edilmesini nesnesi. Program aracılığıyla özgün sayfasına geri dönmek için `CallHistoryPage` gerekir nesne çağırma [ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/) yöntemi, aşağıdaki kod örneğinde gösterildiği gibi:
+Bu yeni neden `CallHistoryPage` gezinme yığınına itilecek nesne. Program aracılığıyla geri geldikleri sayfaya geri dönmek için `CallHistoryPage` nesne çağırmalıdır [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) yöntemini aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 await Navigation.PopAsync();
 ```
 
-Phoneword uygulamada bu kodu olarak gerekli değildir ancak [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) sınıfı, sayfanın üst kısmındaki uygun bir platform içeren için gezinti çubuğu ekler <span class="uiitem">geri</span> döndürülecek düğmesi Önceki sayfaya.
+Phoneword uygulamada bu kod olarak gerekli değildir ancak [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) sınıfı uygun bir platform içeren sayfanın üst kısmına bir gezinti çubuğu ekler <span class="uiitem">geri</span> döndürür düğmesine Önceki sayfaya.
 
 ## <a name="data-binding"></a>Veri Bağlama
 
-Veri bağlama, nasıl bir Xamarin.Forms uygulaması görüntüler ve verileri ile etkileşim basitleştirmek için kullanılır. Kullanıcı arabirimi ve temel uygulama arasında bir bağlantı kurar. [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) Sınıfı, veri bağlamayı destekleyen altyapı çoğunu içerir.
+Veri bağlama, bir Xamarin.Forms uygulaması nasıl görüntüler ve kendi verilerle etkileşim kolaylaştırmak için kullanılır. Bu, kullanıcı arabirimi ve arka plandaki uygulama arasında bir bağlantı kurar. [ `BindableObject` ](xref:Xamarin.Forms.BindableObject) Sınıfı veri bağlamayı destekleyen bir altyapı çoğunu içerir.
 
-Veri bağlama iki nesne arasındaki ilişkiyi tanımlar. *Kaynak* nesne veri sağlayacaktır. *Hedef* nesne tüketebilir (ve çoğunlukla görüntüler) kaynak nesne verileri. Phoneword uygulamada bağlama hedeflediği [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) telefon numaraları, görüntüleyen denetim sırada `PhoneNumbers` bağlama kaynağı koleksiyonudur.
+Veri bağlama iki nesne arasındaki ilişkiyi tanımlar. *Kaynak* nesnesi veri sağlayın. *Hedef* nesne kullanma (ve çoğunlukla görüntüler) kaynak nesne verilerden. Bağlama hedefi Phoneword uygulamada olduğu [ `ListView` ](xref:Xamarin.Forms.ListView) telefon numaralarını gösteren Denetim sırasında `PhoneNumbers` bağlama kaynağı koleksiyonudur.
 
-`PhoneNumbers` Koleksiyonu bildirilir ve içinde başlatılan `App` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
+`PhoneNumbers` Koleksiyon bildirildi ve içinde başlatılan `App` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
 
 ```csharp
 public partial class App : Application
@@ -72,7 +72,7 @@ public partial class App : Application
 }
 ```
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Örneği bildirilir ve içinde başlatılan `CallHistoryPage` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
+[ `ListView` ](xref:Xamarin.Forms.ListView) Örneği bildirildi ve içinde başlatılan `CallHistoryPage` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -89,14 +89,14 @@ public partial class App : Application
 </ContentPage>
 ```
 
-Bu örnekte, [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) denetim görüntüler `IEnumerable` veri koleksiyonu, [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView.ItemsSource/) özelliği bağlanır. Veri koleksiyonunu nesneler herhangi bir türde, ancak varsayılan olarak, olabilir `ListView` kullanacağı `ToString` bu öğeyi görüntülemek için her öğenin yöntemi. [ `x:Static` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticExtension/) Biçimlendirme uzantısı belirtmek için kullanılan `ItemsSource` özelliği statik olarak bağlı `PhoneNumbers` özelliği `App` içinde bulunan sınıfı `local` ad alanı .
+Bu örnekte, [ `ListView` ](xref:Xamarin.Forms.ListView) denetim görüntüler `IEnumerable` veri koleksiyonu, [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) özelliği bağlanır. Veri koleksiyonu nesneleri varsayılan olarak, ancak herhangi bir türde olabilir `ListView` kullanacağı `ToString` her öğenin o öğe görüntülemek için yöntemi. [ `x:Static` ](xref:Xamarin.Forms.Xaml.StaticExtension) İşaretleme uzantısı belirtmek için kullanılan `ItemsSource` özelliğini statik olarak bağlı `PhoneNumbers` özelliği `App` içinde bulunan sınıf `local` ad alanı .
 
-Veri bağlama hakkında daha fazla bilgi için bkz: [veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md). XAML biçimlendirme uzantıları hakkında daha fazla bilgi için bkz: [XAML işaretleme uzantılarına](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md).
+Veri bağlama hakkında daha fazla bilgi için bkz. [temel veri bağlama bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md). XAML biçimlendirme uzantıları hakkında daha fazla bilgi için bkz: [XAML biçimlendirme uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md).
 
-## <a name="additional-concepts-introduced-in-phoneword"></a>Phoneword içinde sunulan ek kavramlar
+## <a name="additional-concepts-introduced-in-phoneword"></a>Phoneword içinde sunulan ek kavramları
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Öğeleri koleksiyonu ekranda görüntülemek için sorumludur. Her öğe `ListView` tek bir hücrede yer alır. Kullanma hakkında daha fazla bilgi için `ListView` denetlemek için bkz: [ListView](~/xamarin-forms/user-interface/listview/index.md).
+[ `ListView` ](xref:Xamarin.Forms.ListView) Ekranda bir öğe koleksiyonu görüntülemek için sorumludur. Her öğe `ListView` tek bir hücrede yer alır. Kullanma hakkında daha fazla bilgi için `ListView` denetlemek için bkz: [ListView](~/xamarin-forms/user-interface/listview/index.md).
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, sayfa gezintisi ve veri bağlamanın bir Xamarin.Forms uygulaması sunulur ve bunların kullanılması çok ekran platformlar arası uygulamada gösterilen.
+Bu makalede, sayfa gezintisi ve bir Xamarin.Forms uygulaması içinde veri bağlamayı ve çoklu ekran platformlar arası uygulama kullanımları gösterilmiştir.

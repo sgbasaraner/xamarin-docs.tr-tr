@@ -1,36 +1,36 @@
 ---
 title: Kurumsal uygulamaları doğrulama
-description: Bu bölümde, kullanıcı girişi doğrulanması eShopOnContainers mobil uygulamayı nasıl gerçekleştireceğini açıklar. Bu doğrulama kurallarını belirtme, doğrulama tetikleme ve doğrulama hataları görüntüleme içerir.
+description: Bu bölümde, kullanıcı girişini doğrulama hizmetine mobil uygulama performansını açıklanmaktadır. Bu, doğrulama kurallarını belirtme, doğrulama tetikleme ve doğrulama hatalarını gösterme içerir.
 ms.prod: xamarin
 ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 6a7f244b78d5b48dd219f59f1191993d62663bbf
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 2b4be17e3c96ee223433b435a7b1011eafa8e9db
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243183"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995833"
 ---
 # <a name="validation-in-enterprise-apps"></a>Kurumsal uygulamaları doğrulama
 
-Kullanıcı girişi kabul eden herhangi bir uygulama girişi geçerli olduğundan emin olmanız gerekir. Örneğin, bir uygulama için belirli bir aralıkta yalnızca karakterler içeriyor, belirli bir süre veya belirli bir biçimde eşleşen giriş denetleyebilirsiniz. Doğrulama olmadan bir kullanıcı uygulama başarısız olmasına neden olan veri sağlayabilir. Doğrulama iş kurallarını uygular ve bir saldırgan kötü amaçlı veriler injecting önler.
+Kullanıcıların girişi kabul eden herhangi bir uygulama, giriş geçerli olduğundan emin olmanız gerekir. Örneğin, bir uygulama için belirli bir aralıkta yalnızca karakterler içeriyor, belirli bir süre veya belirli bir biçimde eşleşen giriş denetleyebilirsiniz. Doğrulama, bir kullanıcı, uygulamanın başarısız olmasına neden olan veri sağlayabilirsiniz. Doğrulama, iş kuralları zorunlu kılar ve bir saldırgan kötü amaçlı veri ekleme öğesinden engeller.
 
-Bağlamında, Model ViewModel modeli (MVVM) deseni, bir görünüm modeli veya model genellikle veri doğrulaması yapmak ve böylece kullanıcı düzeltmenize görüntülemek için herhangi bir doğrulama hatası sinyal gerekecektir. EShopOnContainers mobil uygulama görünüm modeli özelliklerinin eşzamanlı istemci tarafı doğrulama gerçekleştirir ve tüm doğrulama hatalarını kullanıcı geçersiz veri içeren denetimi vurgulama ve kullanıcıyı bilgilendirmek hata iletilerini göstererek bildirir neden verileri geçersiz. Şekil 6-1 sınıfları eShopOnContainers mobil uygulamaya doğrulama gerçekleştirme katılan gösterir.
+Bağlam, Model ViewModel Model (MVVM) deseni, bir görünüm modeli veya model genellikle veri doğrulaması gerçekleştir ve böylece kullanıcı bunları düzeltmek için kullanabileceğiniz tüm doğrulama hatalarını görünümüne sinyal gerekecektir. Hizmetine mobil uygulaması, görünüm modeli özelliklerinin zaman uyumlu istemci tarafı doğrulama gerçekleştirir ve tüm doğrulama hatalarını kullanıcısı geçersiz veri içeren denetimi vurgulama ve kullanıcıyı bilgilendirmeniz hata iletilerini göstererek bildirir. neden verileri geçersiz. Şekil 6-1, hizmetine mobil uygulamada doğrulama gerçekleştiriliyor katılan sınıflarını göstermektedir.
 
-[![](validation-images/validation.png "EShopOnContainers mobil uygulama doğrulama sınıflarda")](validation-images/validation-large.png#lightbox "eShopOnContainers mobil uygulamadaki doğrulama sınıfları")
+[![](validation-images/validation.png "Hizmetine mobil uygulamadaki doğrulama sınıflarını")](validation-images/validation-large.png#lightbox "hizmetine mobil uygulamadaki doğrulama sınıfları")
 
-**Şekil 6-1**: eShopOnContainers mobil uygulamadaki doğrulama sınıfları
+**Şekil 6-1**: hizmetine mobil uygulamadaki doğrulama sınıfları
 
-Doğrulama gerektiren görünüm modeli özelliklerdir türü `ValidatableObject<T>`ve her `ValidatableObject<T>` örneği sahip eklenen doğrulama kuralları, `Validations` özelliği. Doğrulama çağrılır görünüm modelden çağırarak `Validate` yöntemi `ValidatableObject<T>` doğrulama alır örneği kuralları ve bunlara karşı yürütür `ValidatableObject<T>` `Value` özelliği. Tüm doğrulama hatalarını içine yerleştirilen `Errors` özelliği `ValidatableObject<T>` örneği ve `IsValid` özelliği `ValidatableObject<T>` örneği, doğrulama başarılı veya başarısız olup olmadığını belirtmek üzere güncelleştirilir.
+Doğrulama gerektiren bir görünüm modeli özellikleri, tür `ValidatableObject<T>`ve her `ValidatableObject<T>` örneğine sahip eklenen doğrulama kuralları, `Validations` özelliği. Doğrulama, görünüm modeli çağırarak çağrılır `Validate` yöntemi `ValidatableObject<T>` doğrulama alır. Örneğin, kurallar ve bunlara karşı yürütür `ValidatableObject<T>` `Value` özelliği. Tüm doğrulama hatalarını yerleştirilip `Errors` özelliği `ValidatableObject<T>` örneği ve `IsValid` özelliği `ValidatableObject<T>` örneği, doğrulama başarılı veya başarısız olduğunu göstermek için güncelleştirilir.
 
-Özellik değişikliği bildirimi tarafından sağlanan `ExtendedBindableObject` sınıfı ve bu nedenle bir [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetimi için bağlayabilirsiniz `IsValid` özelliği `ValidatableObject<T>` olsun veya olmasın bildirim almak için Görünüm model sınıfı örneği Girilen veriler geçerli değil.
+Özellik değişikliği bildirimi tarafından sağlanır `ExtendedBindableObject` sınıfı ve bu nedenle bir [ `Entry` ](xref:Xamarin.Forms.Entry) denetim bağlayabilirsiniz `IsValid` özelliği `ValidatableObject<T>` olsun veya olmasın bildirim almak için Görünüm modeli sınıfı örneği girilen verileri geçerli değil.
 
-## <a name="specifying-validation-rules"></a>Doğrulama kuralları belirtme
+## <a name="specifying-validation-rules"></a>Doğrulama kurallarını belirtme
 
-Doğrulama kuralları türeyen bir sınıf oluşturarak belirtilir `IValidationRule<T>` aşağıdaki kod örneğinde gösterildiği arabirimi:
+Doğrulama kuralları, türetilen bir sınıf oluşturarak belirtilir `IValidationRule<T>` aşağıdaki kod örneğinde gösterilen arabirimi:
 
 ```csharp
 public interface IValidationRule<T>  
@@ -40,9 +40,9 @@ public interface IValidationRule<T>
 }
 ```
 
-Bu arabirim bir doğrulama kuralı sınıfı sağlamalısınız belirtir bir `boolean` `Check` gerekli doğrulama gerçekleştirmek için kullanılan yöntem ve bir `ValidationMessage` özellik değeri olan görüntülenir doğrulama hata iletisi doğrulama başarısız olur.
+Bu arabirim, bir doğrulama kuralı sınıfı sağlamalısınız belirtir bir `boolean` `Check` gerekli doğrulama gerçekleştirmek için kullanılan yöntem ve bir `ValidationMessage` özellik değeri olan doğrulama hata iletisi görüntülenir doğrulama başarısız olur.
 
-Aşağıdaki örnekte gösterildiği kod `IsNotNullOrEmptyRule<T>` kullanıcı adı ve kullanıcı tarafından girilen parola doğrulaması yapmak için kullanılan doğrulama kuralı `LoginView` sahte hizmetlerini eShopOnContainers mobil uygulamaya kullanırken:
+Aşağıdaki örnekte gösterildiği kod `IsNotNullOrEmptyRule<T>` kullanıcı adı ve parola kullanıcı tarafından girilen doğrulama gerçekleştirmek için kullanılan doğrulama kuralı `LoginView` sahte services hizmetine mobil uygulamada kullanırken:
 
 ```csharp
 public class IsNotNullOrEmptyRule<T> : IValidationRule<T>  
@@ -62,9 +62,9 @@ public class IsNotNullOrEmptyRule<T> : IValidationRule<T>
 }
 ```
 
-`Check` Yöntemi döndürür bir `boolean` değer bağımsız değişkeninde olup olmadığını belirten `null`boş veya yalnızca boşluk karakterlerinden oluşur.
+`Check` Yöntemi döndürür bir `boolean` değer bağımsız değişkeninde olup olmadığını gösteren `null`boş veya yalnızca boşluk karakterlerinden oluşur.
 
-Aşağıdaki kod örneğinde eShopOnContainers mobil uygulama tarafından kullanılmıyor olsa da, e-posta adreslerini doğrulamak için bir doğrulama kuralı gösterir:
+Hizmetine mobil uygulama tarafından kullanılmıyor olsa da, aşağıdaki kod örneği, e-posta adreslerini doğrulamak için bir doğrulama kuralı gösterir:
 
 ```csharp
 public class EmailRule<T> : IValidationRule<T>  
@@ -87,14 +87,14 @@ public class EmailRule<T> : IValidationRule<T>
 }
 ```
 
-`Check` Yöntemi döndürür bir `boolean` değeri bağımsız değişkeni geçerli bir eposta adresi olup olmadığını belirten. Bu değer bağımsız değişkeninde belirtilen normal ifade deseni ilk geçtiği için arama yaparak sağlanır `Regex` Oluşturucusu. Normal ifade deseni giriş dizesi içinde olup olmadığını bulundu değerini denetleyerek belirlenebilir `Match` nesnenin `Success` özelliği.
+`Check` Yöntemi döndürür bir `boolean` değer bağımsız değişkeninde bir geçerli e-posta adresi olup olmadığını gösterir. Bu değer bağımsız değişkeninde belirtilen normal ifade deseni ilk oluşum için arama yaparak sağlanır `Regex` Oluşturucusu. Normal ifade deseni giriş dizesinde bulunamadı değerini denetleyerek belirlenebilir `Match` nesnenin `Success` özelliği.
 
 > [!NOTE]
-> Özellik doğrulama bazen bağımlı özellikler içerebilir. Özellik b ayarlanmış belirli değeri geçerli değerleri kümesi özelliği a bağlı olduğunda, bağımlı özellikleri örneğidir A özelliğinin değeri izin verilen değerlerden biri olduğunu denetlemek için b özelliğinin değeri alınırken içerir Ayrıca, B özelliğinin değeri değiştiğinde özelliği A yeniden doğrulanır gerekir.
+> Özellik doğrulamasını bazen bağımlı özellikler içerebilir. B. özelliğinde ayarlanmış belirli bir değeri özellik A için geçerli değerler kümesini bağlı olduğunda, bağımlı özellikleri örneğidir B. özelliğinin değeri alınırken içerir A özelliğinin değeri izin verilen değerlerden biri olduğunu denetlemek için Ayrıca, B özelliğinin değeri değiştiğinde, özellik A yeniden doğrulanır gerekir.
 
-## <a name="adding-validation-rules-to-a-property"></a>Bir özellik için doğrulama kuralları ekleme
+## <a name="adding-validation-rules-to-a-property"></a>Bir özelliğe doğrulama kuralları ekleme
 
-Türünde olmasını bildirilen eShopOnContainers mobil uygulama doğrulama gerektiren görünüm model özellikleri `ValidatableObject<T>`, burada `T` doğrulanacak veri türüdür. Aşağıdaki kod örneği iki gibi özellikleri örneği gösterilmektedir:
+Mobil uygulama hizmetine doğrulama gerektiren bir görünüm modeli özellikleri türünde olması bildirilir `ValidatableObject<T>`burada `T` doğrulanacak olan veri türü. Aşağıdaki kod örneği, iki özellik bir örneğini gösterir:
 
 ```csharp
 public ValidatableObject<string> UserName  
@@ -124,7 +124,7 @@ public ValidatableObject<string> Password
 }
 ```
 
-Doğrulama kuralları gerçekleşmesi doğrulama için eklenmesi gerekir `Validations` her koleksiyonunu `ValidatableObject<T>` , aşağıdaki kod örneğinde gösterildiği şekilde örneği:
+Doğrulama kuralları gerçekleşmesi doğrulama için eklenmesi gerekir `Validations` her koleksiyon `ValidatableObject<T>` , aşağıdaki kod örneğinde gösterildiği gibi örnek:
 
 ```csharp
 private void AddValidations()  
@@ -140,15 +140,15 @@ private void AddValidations()
 }
 ```
 
-Bu yöntem ekler `IsNotNullOrEmptyRule<T>` doğrulama kuralı için `Validations` her koleksiyonunu `ValidatableObject<T>` doğrulama kuralının değerleri belirtme örneği `ValidationMessage` görüntülenir doğrulama hata iletisini belirtir özelliği doğrulama başarısız olur.
+Bu yöntemi ekler `IsNotNullOrEmptyRule<T>` doğrulama kuralı `Validations` her koleksiyon `ValidatableObject<T>` doğrulama kuralının için değerler belirten örneği `ValidationMessage` özelliği görüntülenir doğrulama hatası iletisini belirtir doğrulama başarısız olur.
 
 ## <a name="triggering-validation"></a>Tetikleyici doğrulama
 
-Bir özelliği değiştiğinde eShopOnContainers mobil uygulamada kullanılan doğrulama yaklaşım bir özelliğin doğrulama ve otomatik olarak tetikleyici doğrulama el ile tetikleyebilirsiniz.
+Bir özellik değiştiğinde hizmetine mobil uygulamada kullanılan doğrulama yaklaşımı doğrulama özelliğinin ve otomatik olarak tetikleyici doğrulama el ile tetikleyebilirsiniz.
 
 ### <a name="triggering-validation-manually"></a>Doğrulama el ile tetikleme
 
-Doğrulama için bir görünüm modeli özellik el ile tetiklenebilir. Örneğin, kullanıcı dokunur geldiğinde eShopOnContainers mobil uygulamasında gerçekleşir **oturum açma** düğmesini `LoginView`, sahte hizmetlerini kullanırken. Komut temsilci çağrılarını `MockSignInAsync` yönteminde `LoginViewModel`, hangi çağırır doğrulama yürüterek `Validate` aşağıdaki kod örneğinde gösterildiği yöntemi:
+Doğrulama için bir görünüm modeli özelliği el ile tetiklenebilir. Örneğin, bu gerçekleşir hizmetine mobil uygulamada kullanıcı dokunduğunda **oturum açma** düğmesini `LoginView`, sahte hizmetlerini kullanırken. Komut temsilci çağrılarını `MockSignInAsync` yönteminde `LoginViewModel`, hangi çağırır doğrulama yürüterek `Validate` aşağıdaki kod örneğinde gösterilen yöntemi:
 
 ```csharp
 private bool Validate()  
@@ -169,7 +169,7 @@ private bool ValidatePassword()
 }
 ```
 
-`Validate` Yöntemi kullanıcı adı ve kullanıcı tarafından girilen parola doğrulaması gerçekleştirir `LoginView`, her doğrulama yöntemini çağıran tarafından `ValidatableObject<T>` örneği. Aşağıdaki kod örneğinde elde edilen doğrulama yöntemi gösterilir `ValidatableObject<T>` sınıfı:
+`Validate` Yöntemi kullanıcı adı ve kullanıcı tarafından girilen parola doğrulama gerçekleştirir `LoginView`, her doğrulama yöntemini çağırarak `ValidatableObject<T>` örneği. Aşağıdaki kod örneğinde elde edilen doğrulama yöntemi gösterir `ValidatableObject<T>` sınıfı:
 
 ```csharp
 public bool Validate()  
@@ -187,11 +187,11 @@ public bool Validate()
 }
 ```
 
-Bu yöntem temizler `Errors` toplama ve tüm doğrulama kuralları nesnenin eklendi alır `Validations` koleksiyonu. `Check` Her alınan doğrulama kuralı için yöntemi yürütüldüğünde ve `ValidationMessage` verileri doğrulamak için başarısız hiçbir doğrulama kuralı için özellik değeri eklenen `Errors` koleksiyonu `ValidatableObject<T>` örneği. Son olarak, `IsValid` özelliği ayarlanmış ve doğrulama başarılı veya başarısız olduğunu belirten arama yöntemi için bu değer döndürülür.
+Bu yöntem temizler `Errors` koleksiyonu ve tüm doğrulama kurallarını nesnenin eklendi alır `Validations` koleksiyonu. `Check` Yöntemi her alınan doğrulama kuralı için yürütülür ve `ValidationMessage` verileri doğrulamak için başarısız olan herhangi bir doğrulama kuralı için özellik değeri eklenir `Errors` koleksiyonunu `ValidatableObject<T>` örneği. Son olarak, `IsValid` özelliği ayarlanır ve doğrulama başarılı veya başarısız olduğunu belirten çağıran Metoda, bu değer döndürülür.
 
-### <a name="triggering-validation-when-properties-change"></a>Özelliklerini değiştirdiğinizde tetikleme doğrulama
+### <a name="triggering-validation-when-properties-change"></a>Doğrulama özelliklerini değiştirdiğinizde tetikleme
 
-Bağlı bir özellik değiştiğinde doğrulama da tetiklenebilir. Örneğin, iki yönlü bir bağlama zaman `LoginView` ayarlar `UserName` veya `Password` özelliği, doğrulama tetiklenir. Aşağıdaki kod örneği, bu nasıl gerçekleştiğini gösterir:
+Bağlı bir özellik değiştiğinde doğrulamayı da tetiklenebilir. Örneğin, iki yönlü bir bağlama olduğunda `LoginView` ayarlar `UserName` veya `Password` özelliği, doğrulama tetiklenir. Aşağıdaki kod örneği, nasıl gerçekleştirildiğini gösterir:
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
@@ -204,23 +204,23 @@ Bağlı bir özellik değiştiğinde doğrulama da tetiklenebilir. Örneğin, ik
 </Entry>
 ```
 
-[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Denetim bağlanır `UserName.Value` özelliği `ValidatableObject<T>` örneği ve denetimin `Behaviors` gruplandırmasında bir `EventToCommandBehavior` kendisine eklenmiş örneği. Bu davranış yürütür `ValidateUserNameCommand` yanıt olarak [`TextChanged`] üzerinde tetikleme olay `Entry`, hangi durumlarda tetiklenir metinde `Entry` değişiklikler. Buna karşılık, `ValidateUserNameCommand` temsilcisini yürütür `ValidateUserName` yürütür yöntemi `Validate` yöntemi `ValidatableObject<T>` örneği. Bu nedenle, her kullanıcının girdiği bir karakter `Entry` girilen veri doğrulaması kullanıcı adı için denetimi gerçekleştirilir.
+[ `Entry` ](xref:Xamarin.Forms.Entry) T:System.Windows.Forms.Binding için `UserName.Value` özelliği `ValidatableObject<T>` örneği ve denetimin `Behaviors` gruplandırmasında bir `EventToCommandBehavior` ona eklediğiniz örneği. Bu davranış yürütür `ValidateUserNameCommand` yanıt olarak [`TextChanged`] üzerinde tetikleme olay `Entry`, ne zaman tetiklenir metinde `Entry` değişiklikler. Buna karşılık, `ValidateUserNameCommand` temsilcisini yürütür `ValidateUserName` yürüten yöntemi `Validate` metodunda `ValidatableObject<T>` örneği. Bu nedenle, her seferinde kullanıcının girdiği karakter `Entry` kullanıcı adı olarak girilen veri doğrulama denetimi gerçekleştirilir.
 
-Davranışları hakkında daha fazla bilgi için bkz: [uygulama davranışları](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
+Davranışlar hakkında daha fazla bilgi için bkz. [uygulama davranışları](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
 
 <a name="displaying_validation_errors" />
 
 ## <a name="displaying-validation-errors"></a>Doğrulama hataları görüntüleme
 
-Kırmızı bir çizgi ile geçersiz veri içeren denetimi vurgulayarak eShopOnContainers mobil uygulama tüm doğrulama hatalarını kullanıcı bildirir ve kullanıcı neden bildiren bir hata iletisi görüntüleyerek veri denetimi içeren aşağıda geçersiz Geçersiz veri. Geçersiz veri düzeltildiğinde, satır siyah olarak değiştirir ve hata iletisi kaldırılır. Doğrulama hataları mevcut olduğunda Şekil 6-2 eShopOnContainers mobil uygulamaya (link) gösterir.
+Hizmetine mobil uygulama, kırmızı bir çizgi ile geçersiz veri içeren denetimi vurgulayarak tüm doğrulama hatalarını kullanıcı size bildirir ve kullanıcı neden bildiren bir hata iletisi görüntüleyerek veri denetimi içeren aşağıdaki geçersiz Geçersiz veri. Geçersiz veriler düzeltildiğinden, satır siyah olarak değiştirir ve hata iletisini kaldırılır. Doğrulama hataları mevcut olduğunda Şekil 6-2 LoginView hizmetine mobil uygulamada gösterir.
 
 ![](validation-images/validation-login.png "Oturum açma sırasında doğrulama hataları görüntüleme")
 
 **Şekil 6-2:** oturum açma sırasında doğrulama hataları görüntüleme
 
-### <a name="highlighting-a-control-that-contains-invalid-data"></a>Geçersiz veri içeren bir denetim vurgulama
+### <a name="highlighting-a-control-that-contains-invalid-data"></a>Geçersiz veri içeren bir denetimi vurgulama
 
-`LineColorBehavior` Ekli davranışı vurgulamak için kullanılan [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetimleri nerede doğrulama hataları oluştu. Aşağıdaki örnekte gösterildiği kod nasıl `LineColorBehavior` ekli davranışı eklendiği bir `Entry` denetimi:
+`LineColorBehavior` Ekli davranışı vurgulamak için kullanılan [ `Entry` ](xref:Xamarin.Forms.Entry) denetimleri nerede doğrulama hataları oluştu. Aşağıdaki kod örnekte gösterildiği nasıl `LineColorBehavior` bağlı davranışı için bağlı bir `Entry` denetimi:
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">
@@ -234,7 +234,7 @@ Kırmızı bir çizgi ile geçersiz veri içeren denetimi vurgulayarak eShopOnCo
 </Entry>
 ```
 
-[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Denetimi aşağıdaki kod örneğinde gösterildiği bir açık stili kullanır:
+[ `Entry` ](xref:Xamarin.Forms.Entry) Aşağıdaki kod örneğinde gösterilen açık bir stil denetimi kullanır:
 
 ```xaml
 <Style x:Key="EntryStyle"  
@@ -248,9 +248,9 @@ Kırmızı bir çizgi ile geçersiz veri içeren denetimi vurgulayarak eShopOnCo
 </Style>
 ```
 
-Bu stilini ayarlar `ApplyLineColor` ve `LineColor` özelliklerini bağlı `LineColorBehavior` davranışı üzerinde bağlı [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetim. Stilleri hakkında daha fazla bilgi için bkz: [stilleri](~/xamarin-forms/user-interface/styles/index.md).
+Bu stilini ayarlar `ApplyLineColor` ve `LineColor` özelliklerini bağlı `LineColorBehavior` davranışı üzerinde bağlı [ `Entry` ](xref:Xamarin.Forms.Entry) denetimi. Stilleri hakkında daha fazla bilgi için bkz. [stilleri](~/xamarin-forms/user-interface/styles/index.md).
 
-Zaman değeri `ApplyLineColor` iliştirilmiş bir özelliktir kümesi ya da değişiklikler, `LineColorBehavior` ekli davranışı yürütür `OnApplyLineColorChanged` aşağıdaki kod örneğinde gösterildiği yöntemi:
+Zaman değerini `ApplyLineColor` ekli özellik kümesi veya değişiklik olduğunu `LineColorBehavior` ekli davranışı yürütür `OnApplyLineColorChanged` aşağıdaki kod örneğinde gösterilen yöntemi:
 
 ```csharp
 public static class LineColorBehavior  
@@ -283,9 +283,9 @@ public static class LineColorBehavior
 }
 ```
 
-Bu yöntem parametrelerini davranışı iliştirildiği denetiminin örneği ve eski ve yeni değerleri sağlayın `ApplyLineColor` özelliği eklenmiş. `EntryLineColorEffect` Sınıfı denetimin eklenen [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) koleksiyonu, `ApplyLineColor` ekli özellik `true`, denetimin kaldırılmadan Aksi takdirde `Effects` koleksiyonu. Davranışları hakkında daha fazla bilgi için bkz: [uygulama davranışları](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
+Bu yöntem parametrelerini davranışı bağlı denetim örneği ve eski ve yeni değerleri sağlayın `ApplyLineColor` ekli özellik. `EntryLineColorEffect` Sınıfı eklendi denetimin [ `Effects` ](xref:Xamarin.Forms.Element.Effects) koleksiyonu, `ApplyLineColor` ekli özelliği `true`, aksi takdirde denetimin kaldırılır `Effects` koleksiyonu. Davranışlar hakkında daha fazla bilgi için bkz. [uygulama davranışları](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
 
-`EntryLineColorEffect` Alt sınıfların [ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/) sınıfı ve aşağıdaki kod örneğinde gösterilir:
+`EntryLineColorEffect` Kılabileceği [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) sınıfı ve aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public class EntryLineColorEffect : RoutingEffect  
@@ -296,7 +296,7 @@ public class EntryLineColorEffect : RoutingEffect
 }
 ```
 
-[ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/) Sınıfı, platforma özgü bir iç efekt sarmalar platformdan bağımsız etkisi temsil eder. Tür bilgisi için bir platforma özgü etkisi hiçbir derleme zamanı erişimi olduğundan etkisi kaldırma işlemi basitleştirir. `EntryLineColorEffect` Çözümleme grup adı ve her platforma özgü etkisi sınıf içinde belirtilmiş benzersiz kimliği birleşimini oluşan bir parametre olarak geçirme temel sınıf oluşturucu çağırır.
+[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) Sınıfı, platforma özel efekt iç sarmalayan bir platformdan bağımsız etkisi temsil eder. Tür bilgilerini bir platforma özel efekt için hiçbir derleme zamanı erişimi olduğundan bu etkili temizleme işlemini kolaylaştırır. `EntryLineColorEffect` Çözümleme grup adı ve her platforma özel efekt sınıfı belirtilen benzersiz kimliği bir birleşimini içeren bir parametre olarak geçirerek, bir temel sınıf oluşturucusunu çağırır.
 
 Aşağıdaki örnekte gösterildiği kod `eShopOnContainers.EntryLineColorEffect` iOS için uygulama:
 
@@ -374,15 +374,15 @@ namespace eShopOnContainers.iOS.Effects
 }
 ```
 
-`OnAttached` Yöntemi alır yerel denetimi için Xamarin.Forms [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetlemek ve çizgi rengini çağırarak güncelleştirmeleri `UpdateLineColor` yöntemi. `OnElementPropertyChanged` Geçersiz kılma üzerinde bağlanabilirse özellik değişikliklerini yanıt `Entry` varsa çizgi rengini güncelleştirerek denetim ekli `LineColor` özellik değişikliklerini veya [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) özelliği`Entry`değişiklikler. Etkileri hakkında daha fazla bilgi için bkz: [efektler](~/xamarin-forms/app-fundamentals/effects/index.md).
+`OnAttached` Xamarin.Forms için yöntemi alır yerel denetim [ `Entry` ](xref:Xamarin.Forms.Entry) denetlemek ve çizgi rengini çağırarak güncelleştirmeleri `UpdateLineColor` yöntemi. `OnElementPropertyChanged` Geçersiz kılma üzerinde bağlanılabilir özellik değişiklikleri yanıt `Entry` , çizgi rengini güncelleştirerek denetimi ekli `LineColor` özellik değişiklikleri veya [ `Height` ](xref:Xamarin.Forms.VisualElement.Height) özelliği`Entry`değişiklikler. Etkileri hakkında daha fazla bilgi için bkz: [etkileri](~/xamarin-forms/app-fundamentals/effects/index.md).
 
-Ne zaman geçerli veri girilen [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) denetimi, onu geçerli siyah bir çizgi hiçbir doğrulama hatası olduğunu belirtmek için bu denetimin altına. Şekil 6-3 bunun bir örneğini gösterir.
+Ne zaman geçerli veri girilen [ `Entry` ](xref:Xamarin.Forms.Entry) denetimi, geçerli siyah bir çizgi doğrulama hatası olduğunu göstermek için denetim altına. Şekil 6-3, bunun bir örneği gösterilmektedir.
 
-![](validation-images/validation-blackline.png "Doğrulama hatası olmaması gösteren siyah bir çizgi")
+![](validation-images/validation-blackline.png "Doğrulama hatası gösteren siyah çizgi")
 
-**Şekil 6-3**: doğrulama hatası olmaması gösteren siyah bir çizgi
+**Şekil 6-3**: siyah bir çizgi belirten hiçbir doğrulama hatası
 
-[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Denetimi de sahip bir [ `DataTrigger` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTrigger/) eklenen kendi [ `Triggers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Triggers/) koleksiyonu. Aşağıdaki örnekte gösterildiği kod `DataTrigger`:
+[ `Entry` ](xref:Xamarin.Forms.Entry) Denetimi de sahip bir [ `DataTrigger` ](xref:Xamarin.Forms.DataTrigger) eklenen kendi [ `Triggers` ](xref:Xamarin.Forms.VisualElement.Triggers) koleksiyonu. Aşağıdaki örnekte gösterildiği kod `DataTrigger`:
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
@@ -399,35 +399,35 @@ Ne zaman geçerli veri girilen [ `Entry` ](https://developer.xamarin.com/api/typ
 </Entry>
 ```
 
-Bu [ `DataTrigger` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTrigger/) izleyiciler `UserName.IsValid` özellik ve değer ise olur `false`, yürütülmeden [ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/), hangi değişikliklerin `LineColor` bağlı özelliği `LineColorBehavior` davranışı kırmızı bağlı. Şekil 6-4 bunun bir örneğini gösterir.
+Bu [ `DataTrigger` ](xref:Xamarin.Forms.DataTrigger) izleyiciler `UserName.IsValid` özellik ve değer ise olur `false`, yürütülmeden [ `Setter` ](xref:Xamarin.Forms.Setter), hangi değişikliklerin `LineColor` bağlı özelliği `LineColorBehavior` davranışı kırmızı bağlı. Şekil 6-4'te, bunun bir örneğini gösterir.
 
-![](validation-images/validation-redline.png "Doğrulama hatası belirten kırmızı çizgi")
+![](validation-images/validation-redline.png "Doğrulama hatası gösteren kırmızı çizgi")
 
-**Şekil 6-4**: doğrulama hatası belirten kırmızı çizgi
+**Şekil 6-4**: doğrulama hatası gösteren kırmızı çizgi
 
-Satırda [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) girilen veriler geçersiz durumdayken denetim kırmızı kalır, aksi takdirde girilen verilerin geçerli olduğunu belirtmek için siyah olarak değişir.
+Satırda [ `Entry` ](xref:Xamarin.Forms.Entry) girilen verileri geçersiz olduğu sürece denetim kırmızı kalır, aksi takdirde girilen verilerin geçerli olduğunu belirtmek için siyah olarak değiştirir.
 
-Tetikleyiciler hakkında daha fazla bilgi için bkz: [Tetikleyicileri](~/xamarin-forms/app-fundamentals/triggers.md).
+Tetikleyiciler hakkında daha fazla bilgi için bkz. [Tetikleyicileri](~/xamarin-forms/app-fundamentals/triggers.md).
 
 ### <a name="displaying-error-messages"></a>Hata iletilerini görüntüleme
 
-Kullanıcı arabirimini etiket denetimleri verisini doğrulanamadı her denetim altındaki bir doğrulama hata iletisi görüntüler. Aşağıdaki örnekte gösterildiği kod [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) görüntüleyen bir doğrulama hatası iletisini kullanıcı geçerli bir kullanıcı adı girilmezse:
+Kullanıcı arabirimini etiket denetimleri verisini doğrulanamadı. her denetimin altında bir doğrulama hata iletisi görüntüler. Aşağıdaki örnekte gösterildiği kod [ `Label` ](xref:Xamarin.Forms.Label) görüntüleyen bir doğrulama hata iletisi kullanıcının geçerli bir kullanıcı adı girilmezse:
 
 ```xaml
 <Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}"  
        Style="{StaticResource ValidationErrorLabelStyle}" />
 ```
 
-Her [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) bağlar `Errors` özelliği Doğrulanmakta olan Görünüm model nesnesi. `Errors` Özelliği tarafından sağlanan `ValidatableObject<T>` sınıfı ve türü `List<string>`. Çünkü `Errors` özelliği, birden çok doğrulama hataları içerebilir `FirstValidationErrorConverter` örnek koleksiyonundan görüntülenmesi için ilk hata almak için kullanılır.
+Her [ `Label` ](xref:Xamarin.Forms.Label) bağlar `Errors` özelliği Doğrulanmakta olan Görünüm model nesnesi. `Errors` Özelliği tarafından sağlanan `ValidatableObject<T>` sınıfı ve tür `List<string>`. Çünkü `Errors` özelliği, birden çok doğrulama hataları içerebilir `FirstValidationErrorConverter` örneği görüntülemek için koleksiyondaki ilk hata almak için kullanılır.
 
 ## <a name="summary"></a>Özet
 
-EShopOnContainers mobil uygulama görünüm modeli özelliklerinin eşzamanlı istemci tarafı doğrulama gerçekleştirir ve tüm doğrulama hatalarını kullanıcı geçersiz veri içeren denetimi vurgulama ve kullanıcıyı bilgilendirmek hata iletilerini göstererek bildirir neden verileri geçersiz.
+Hizmetine mobil uygulaması, görünüm modeli özelliklerinin zaman uyumlu istemci tarafı doğrulama gerçekleştirir ve tüm doğrulama hatalarını kullanıcısı geçersiz veri içeren denetimi vurgulama ve kullanıcıyı bilgilendirmeniz hata iletilerini göstererek bildirir. neden verileri geçersiz.
 
-Doğrulama gerektiren görünüm modeli özelliklerdir türü `ValidatableObject<T>`ve her `ValidatableObject<T>` örneği sahip eklenen doğrulama kuralları, `Validations` özelliği. Doğrulama çağrılır görünüm modelden çağırarak `Validate` yöntemi `ValidatableObject<T>` doğrulama alır örneği kuralları ve bunlara karşı yürütür `ValidatableObject<T>` `Value` özelliği. Tüm doğrulama hatalarını içine yerleştirilen `Errors` özelliği `ValidatableObject<T>`örneği ve `IsValid` özelliği `ValidatableObject<T>` örneği, doğrulama başarılı veya başarısız olup olmadığını belirtmek üzere güncelleştirilir.
+Doğrulama gerektiren bir görünüm modeli özellikleri, tür `ValidatableObject<T>`ve her `ValidatableObject<T>` örneğine sahip eklenen doğrulama kuralları, `Validations` özelliği. Doğrulama, görünüm modeli çağırarak çağrılır `Validate` yöntemi `ValidatableObject<T>` doğrulama alır. Örneğin, kurallar ve bunlara karşı yürütür `ValidatableObject<T>` `Value` özelliği. Tüm doğrulama hatalarını yerleştirilip `Errors` özelliği `ValidatableObject<T>`örneği ve `IsValid` özelliği `ValidatableObject<T>` örneği, doğrulama başarılı veya başarısız olduğunu göstermek için güncelleştirilir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [E-kitap (2 Mb PDF) indirin](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (örnek)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [(2 Mb PDF) e-kitabı indir](https://aka.ms/xamarinpatternsebook)
+- [Hizmetine (GitHub) (örnek)](https://github.com/dotnet-architecture/eShopOnContainers)

@@ -1,49 +1,49 @@
 ---
-title: C# yerel görünümleri
-description: İOS, Android ve UWP yerel görünümleri doğrudan C# kullanarak oluşturulan Xamarin.Forms sayfalarından başvurulabilir. Bu makalede, C# kullanılarak oluşturulan bir Xamarin.Forms düzene yerel görünümler ekleme ve bunların ölçüm API'si kullanımı düzeltmek için özel görünümler düzenini geçersiz kılmak nasıl gösterilmektedir.
+title: C# içindeki yerel görünümler
+description: İOS, Android ve UWP yerel görüntülerden oluşturulan C# kullanarak Xamarin.Forms sayfalarından doğrudan başvurulabilir. Bu makalede, C# kullanarak oluşturulan bir Xamarin.Forms düzenine yerel görünümler ekleme ve bunların ölçüm API'si kullanımı düzeltmek için özel görünüm düzenini geçersiz kılma gösterir.
 ms.prod: xamarin
 ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: ad633f49c1c448529fa4c2b50483ec233c1ee841
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34050058"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996200"
 ---
-# <a name="native-views-in-c"></a>C# yerel görünümleri
+# <a name="native-views-in-c"></a>C# içindeki yerel görünümler
 
-_İOS, Android ve UWP yerel görünümleri doğrudan C# kullanarak oluşturulan Xamarin.Forms sayfalarından başvurulabilir. Bu makalede, C# kullanılarak oluşturulan bir Xamarin.Forms düzene yerel görünümler ekleme ve bunların ölçüm API'si kullanımı düzeltmek için özel görünümler düzenini geçersiz kılmak nasıl gösterilmektedir._
+_İOS, Android ve UWP yerel görüntülerden oluşturulan C# kullanarak Xamarin.Forms sayfalarından doğrudan başvurulabilir. Bu makalede, C# kullanarak oluşturulan bir Xamarin.Forms düzenine yerel görünümler ekleme ve bunların ölçüm API'si kullanımı düzeltmek için özel görünüm düzenini geçersiz kılma gösterir._
 
 ## <a name="overview"></a>Genel Bakış
 
-Veren herhangi bir Xamarin.Forms denetimi `Content` çok ayarlamak için veya bir `Children` koleksiyonu, platforma özgü görünümler ekleyebilir. Örneğin, bir iOS `UILabel` doğrudan eklenebilir [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) özelliği veya [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) koleksiyonu. Ancak, bu işlev kullanımı gerektirdiğini unutmayın `#if` Xamarin.Forms paylaşılan proje çözümleri tanımlar ve Xamarin.Forms .NET standart kitaplığı çözümlerinden kullanılamaz.
+Veren herhangi bir Xamarin.Forms denetimi `Content` çok ayarlamak için veya bir `Children` koleksiyonu, platforma özgü görünümler ekleyebilir. Örneğin, bir iOS `UILabel` doğrudan eklenebilir [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) özelliği veya [ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children) koleksiyonu. Ancak bu işlevselliği kullanımı gerektirdiğini unutmayın `#if` Xamarin.Forms paylaşılan proje içeren çözümlerde tanımlar ve Xamarin.Forms .NET Standard kitaplığı çözümlerinden kullanılamaz.
 
-Aşağıdaki ekran görüntüleri platforma özgü görünümler Xamarin.Forms için eklenene göstermek [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
+Platforma özgü görünümler için bir Xamarin.Forms eklenmiş aşağıdaki ekran görüntüleri gösteren [ `StackLayout` ](xref:Xamarin.Forms.StackLayout):
 
-[![](code-images/screenshots-sml.png "Platforma özgü görünümler içeren StackLayout")](code-images/screenshots.png#lightbox "platforma özgü görünümler içeren StackLayout")
+[![](code-images/screenshots-sml.png "Platforma özgü görünümler içeren StackLayout")](code-images/screenshots.png#lightbox "platforma özel görünümleri içeren StackLayout")
 
-Xamarin.Forms düzene platforma özgü görünümler ekleme yeteneği her platformda iki genişletme yöntemleri tarafından etkinleştirilir:
+Platforma özgü görünümler bir Xamarin.Forms düzenine ekleme olanağı iki uzantı yöntemi her platformda etkinleştirilir:
 
-- `Add` – bir platforma özgü görünümüne ekler [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) bir düzen koleksiyonu.
-- `ToView` – bir platforma özgü görünümü alır ve bir Xamarin.Forms sarmalar [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) olarak ayarlanabilir `Content` denetiminin özelliği.
+- `Add` – bir platforma özgü görünümüne ekler [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) bir düzen koleksiyonu.
+- `ToView` – bir platforma özgü görünümü alır ve bir Xamarin.Forms sarmalar [ `View` ](xref:Xamarin.Forms.View) olarak ayarlanabilir `Content` denetimin özellik.
 
-Xamarin.Forms paylaşılan projede bu yöntemleri kullanarak uygun platforma özgü Xamarin.Forms ad almayı gerektirir:
+Bu yöntemleri kullanarak bir Xamarin.Forms paylaşılan projede uygun platforma özgü Xamarin.Forms ad alanı alma gerektirir:
 
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
 - **Evrensel Windows Platformu (UWP)** – Xamarin.Forms.Platform.UWP
 
-## <a name="adding-platform-specific-views-on-each-platform"></a>Her platformda platforma özgü görünümler ekleme
+## <a name="adding-platform-specific-views-on-each-platform"></a>Her platformda platforma özgü görünüm ekleme
 
-Aşağıdaki bölümlerde her platformda Xamarin.Forms Düzen platforma özgü görünümler nasıl ekleneceğini gösterir.
+Aşağıdaki bölümlerde her platformda bir Xamarin.Forms Düzen platforma özgü görünümler nasıl ekleneceğini gösterir.
 
 ### <a name="ios"></a>iOS
 
-Aşağıdaki kod örneğinde nasıl ekleneceğini gösterir bir `UILabel` için bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ve [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Aşağıdaki kod örneğinde nasıl ekleneceğini gösterir. bir `UILabel` için bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) ve [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var uiLabel = new UILabel {
@@ -56,11 +56,11 @@ stackLayout.Children.Add (uiLabel);
 contentView.Content = uiLabel.ToView();
 ```
 
-Örnek varsayar `stackLayout` ve `contentView` örnekleri, daha önce XAML veya C# içinde oluşturuldu.
+Örnek olduğunu varsayar `stackLayout` ve `contentView` örnekleri, daha önce XAML veya C# içinde oluşturuldu.
 
 ### <a name="android"></a>Android
 
-Aşağıdaki kod örneğinde nasıl ekleneceğini gösterir bir `TextView` için bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ve [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Aşağıdaki kod örneğinde nasıl ekleneceğini gösterir. bir `TextView` için bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) ve [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
@@ -68,11 +68,11 @@ stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
 
-Örnek varsayar `stackLayout` ve `contentView` örnekleri, daha önce XAML veya C# içinde oluşturuldu.
+Örnek olduğunu varsayar `stackLayout` ve `contentView` örnekleri, daha önce XAML veya C# içinde oluşturuldu.
 
 ### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
-Aşağıdaki kod örneğinde nasıl ekleneceğini gösterir bir `TextBlock` için bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ve [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Aşağıdaki kod örneğinde nasıl ekleneceğini gösterir. bir `TextBlock` için bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) ve [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textBlock = new TextBlock
@@ -86,17 +86,17 @@ stackLayout.Children.Add(textBlock);
 contentView.Content = textBlock.ToView();
 ```
 
-Örnek varsayar `stackLayout` ve `contentView` örnekleri, daha önce XAML veya C# içinde oluşturuldu.
+Örnek olduğunu varsayar `stackLayout` ve `contentView` örnekleri, daha önce XAML veya C# içinde oluşturuldu.
 
-## <a name="overriding-platform-measurements-for-custom-views"></a>Özel görünümler için platform ölçümleri geçersiz kılma
+## <a name="overriding-platform-measurements-for-custom-views"></a>Platform ölçümlerine özel görünümler için geçersiz kılma
 
-Her platformda özel görünümleri genellikle yalnızca doğru bunlar tasarlanmış düzen senaryosu için ölçüm uygulayın. Örneğin, özel bir görünüm yalnızca yarısı aygıt kullanılabilir genişliğini kaplayacak şekilde tasarlanmış olmasını. Ancak, diğer kullanıcılarla paylaşılmasını sonra özel görünüm aygıt tam kullanılabilir genişliğini kaplayacak gerekli olabilir. Bu nedenle, bir Xamarin.Forms düzeni yeniden kullanılıyor olduğunda özel görünümler ölçüm uygulama geçersiz kılmak gerekli olabilir. Bu nedenle, `Add` ve `ToView` genişletme yöntemleri sağlayan bir Xamarin.Forms düzene eklendiğinde, özel görünüm düzeni geçersiz kılabilirsiniz belirtilmesi ölçüm temsilciler izin geçersiz kılar.
+Özel görünümler her platformda, genellikle yalnızca doğru kullanıcılar için tasarlanmış düzen senaryo için ölçüm uygulayın. Örneğin, bir özel görünüm yalnızca cihaz kullanılabilir genişliğini yarısını kaplayacak şekilde tasarlanmış olmasını. Ancak, diğer kullanıcılarla paylaşılıyor sonra özel görünüm cihazın tam kullanılabilir genişlik kaplaması için gerekli olabilir. Bu nedenle, bir Xamarin.Forms düzende yeniden kullanılmasını, özel görünümler ölçüm uygulama geçersiz kılmak gerekli olabilir. Bu nedenle `Add` ve `ToView` Xamarin.Forms düzene eklendiğinde, özel görünüm yerleşimini kılabilirsiniz belirtilmesi ölçüm temsilciler izin geçersiz kılmaları genişletme yöntemleri sağlar.
 
 Aşağıdaki bölümlerde, ölçüm API'si kullanımı düzeltmek için özel görünümler düzenini geçersiz kılmak nasıl ekleyebileceğiniz gösterilmektedir.
 
 ### <a name="ios"></a>iOS
 
-Aşağıdaki örnekte gösterildiği kod `CustomControl` devraldığı sınıfı `UILabel`:
+Aşağıdaki örnekte gösterildiği kod `CustomControl` öğesinden devralan sınıf `UILabel`:
 
 ```csharp
 public class CustomControl : UILabel
@@ -113,7 +113,7 @@ public class CustomControl : UILabel
 }
 ```
 
-Bu görünüm örneği eklenen bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), aşağıdaki kod örneğinde gösterildiği gibi:
+Bu görünüm örneği eklenen bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 var customControl = new CustomControl {
@@ -125,11 +125,11 @@ var customControl = new CustomControl {
 stackLayout.Children.Add (customControl);
 ```
 
-Ancak, çünkü `CustomControl.SizeThatFits` geçersiz kılma her zaman 150 yüksekliğini döndürür, görünümü boş alanı üstüne ve altına, aşağıdaki ekran görüntüsünde gösterildiği gibi görüntülenir:
+Ancak, çünkü `CustomControl.SizeThatFits` geçersiz kılma her zaman 150 yüksekliğini döndürür, görünümün üstüne ve altına, boş alana sahip aşağıdaki ekran görüntüsünde gösterildiği gibi görüntülenir:
 
 ![](code-images/ios-bad-measurement.png "iOS özel denetim hatalı SizeThatFits uygulaması")
 
-Bu sorun için çözüm sağlamaktır bir `GetDesiredSizeDelegate` aşağıdaki kod örneğinde gösterildiği gibi uygulama:
+Bu soruna bir çözüm sağlamaktır bir `GetDesiredSizeDelegate` aşağıdaki kod örneğinde gösterildiği gibi uygulama:
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double height)
@@ -150,19 +150,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double h
 }
 ```
 
-Bu yöntem tarafından sağlanan genişliğini kullanır `CustomControl.SizeThatFits` yöntemi, ancak 70 yüksekliğini 150 yüksekliğini değiştirir. Zaman `CustomControl` örneği eklenen [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), `FixSize` yöntemi olarak belirtilebilir `GetDesiredSizeDelegate` tarafından sağlanan hatalı ölçüm düzeltmek için `CustomControl` sınıfı:
+Bu yöntem tarafından sağlanan genişliğini kullanan `CustomControl.SizeThatFits` yöntemi, ancak bir yükseklikte 70 150 yüksekliğini yerini alır. Zaman `CustomControl` örneği eklenir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), `FixSize` yöntemi olarak belirtilebilir `GetDesiredSizeDelegate` tarafından sağlanan bir bozuk ölçü düzeltileceğini `CustomControl` sınıfı:
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-Aşağıdaki ekran görüntüsünde gösterildiği gibi boş alanı üstüne ve altına, olmadan doğru görüntülenmesini özel görünümde bu sonuçları:
+Aşağıdaki ekran görüntüsünde gösterildiği gibi altındaki ve üstündeki boş boşluk olmadan düzgün şekilde görüntülenmesini özel görünümünde bu sonuçları:
 
 ![](code-images/ios-good-measurement.png "iOS özel denetim GetDesiredSize geçersiz kılma ile")
 
 ### <a name="android"></a>Android
 
-Aşağıdaki örnekte gösterildiği kod `CustomControl` devraldığı sınıfı `TextView`:
+Aşağıdaki örnekte gösterildiği kod `CustomControl` öğesinden devralan sınıf `TextView`:
 
 ```csharp
 public class CustomControl : TextView
@@ -184,7 +184,7 @@ public class CustomControl : TextView
 }
 ```
 
-Bu görünüm örneği eklenen bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), aşağıdaki kod örneğinde gösterildiği gibi:
+Bu görünüm örneği eklenen bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 var customControl = new CustomControl (MainActivity.Instance) {
@@ -194,11 +194,11 @@ var customControl = new CustomControl (MainActivity.Instance) {
 stackLayout.Children.Add (customControl);
 ```
 
-Ancak, çünkü `CustomControl.OnMeasure` geçersiz kılma her zaman döndürür istenen genişliği yarısı, görünüm yalnızca yarı kullanılabilir cihaz genişliğini kaplayan aşağıdaki ekran görüntüsünde gösterildiği gibi görüntülenir:
+Ancak, çünkü `CustomControl.OnMeasure` geçersiz kılma her zaman döndürür istenen genişliği yarısı, görünüm cihazın kullanılabilir yalnızca yarım genişlik yer alan aşağıdaki ekran görüntüsünde gösterildiği gibi görüntülenir:
 
-![](code-images/android-bad-measurement.png "Android özel denetim hatalı OnMeasure uygulaması")
+![](code-images/android-bad-measurement.png "Hatalı OnMeasure uygulama ile Android özel denetim")
 
-Bu sorun için çözüm sağlamaktır bir `GetDesiredSizeDelegate` aşağıdaki kod örneğinde gösterildiği gibi uygulama:
+Bu soruna bir çözüm sağlamaktır bir `GetDesiredSizeDelegate` aşağıdaki kod örneğinde gösterildiği gibi uygulama:
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, int heightConstraint)
@@ -217,19 +217,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, i
 }
 ```
 
-Bu yöntem tarafından sağlanan genişliğini kullanır `CustomControl.OnMeasure` yöntemi, ancak çarpar, iki tarafından. Zaman `CustomControl` örneği eklenen [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), `FixSize` yöntemi olarak belirtilebilir `GetDesiredSizeDelegate` tarafından sağlanan hatalı ölçüm düzeltmek için `CustomControl` sınıfı:
+Bu yöntem tarafından sağlanan genişliğini kullanan `CustomControl.OnMeasure` yöntemi, ancak çoğaltır, iki ile. Zaman `CustomControl` örneği eklenir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), `FixSize` yöntemi olarak belirtilebilir `GetDesiredSizeDelegate` tarafından sağlanan bir bozuk ölçü düzeltileceğini `CustomControl` sınıfı:
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-Bu olan özel görünüm düzgün görüntülenmeyebilir, aygıtı genişliğini kaplayan aşağıdaki ekran görüntüsünde gösterildiği gibi olur:
+Bu özel görünüm olduğu doğru görüntüleniyorsa, cihaz genişliği kaplayan aşağıdaki ekran görüntüsünde gösterildiği gibi olur:
 
-![](code-images/android-good-measurement.png "Android özel denetim özel GetDesiredSize temsilci ile")
+![](code-images/android-good-measurement.png "Özel GetDesiredSize temsilci ile Android özel denetim")
 
 ### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
 
-Aşağıdaki örnekte gösterildiği kod `CustomControl` devraldığı sınıfı `Panel`:
+Aşağıdaki örnekte gösterildiği kod `CustomControl` öğesinden devralan sınıf `Panel`:
 
 ```csharp
 public class CustomControl : Panel
@@ -282,7 +282,7 @@ public class CustomControl : Panel
 }
 ```
 
-Bu görünüm örneği eklenen bir [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), aşağıdaki kod örneğinde gösterildiği gibi:
+Bu görünüm örneği eklenen bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 var brokenControl = new CustomControl {
@@ -291,11 +291,11 @@ var brokenControl = new CustomControl {
 stackLayout.Children.Add(brokenControl);
 ```
 
-Ancak, çünkü `CustomControl.ArrangeOverride` geçersiz kılma her zaman döndürür istenen genişliği yarısı, aşağıdaki ekran görüntüsünde gösterildiği gibi cihaz yarım kullanılabilir genişliğini için görünümü kırpılacak:
+Ancak, çünkü `CustomControl.ArrangeOverride` geçersiz kılma her zaman döndürür istenen genişliği yarısı, aşağıdaki ekran görüntüsünde gösterildiği gibi cihaz yarım kullanılabilir genişliğini için Görünüm kırpılır:
 
-![](code-images/winrt-bad-measurement.png "UWP özel denetim hatalı ArrangeOverride uygulaması")
+![](code-images/winrt-bad-measurement.png "Hatalı ArrangeOverride uygulama ile UWP özel denetim")
 
-Bu sorun için çözüm sağlamaktır bir `ArrangeOverrideDelegate` görünümüne eklerken uygulama [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), aşağıdaki kod örneğinde gösterildiği gibi:
+Bu soruna bir çözüm sağlamaktır bir `ArrangeOverrideDelegate` görünüme eklerken uygulama [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, finalSize) =>
@@ -310,13 +310,13 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 });
 ```
 
-Bu yöntem tarafından sağlanan genişliğini kullanır `CustomControl.ArrangeOverride` yöntemi, ancak çarpar, iki tarafından. Bu olan özel görünüm düzgün görüntülenmeyebilir, aygıtı genişliğini kaplayan aşağıdaki ekran görüntüsünde gösterildiği gibi olur:
+Bu yöntem tarafından sağlanan genişliğini kullanan `CustomControl.ArrangeOverride` yöntemi, ancak çoğaltır, iki ile. Bu özel görünüm olduğu doğru görüntüleniyorsa, cihaz genişliği kaplayan aşağıdaki ekran görüntüsünde gösterildiği gibi olur:
 
-![](code-images/winrt-good-measurement.png "UWP özel denetim ArrangeOverride temsilci ile")
+![](code-images/winrt-good-measurement.png "ArrangeOverride temsilci ile UWP özel denetim")
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, C# kullanılarak oluşturulan bir Xamarin.Forms düzene yerel görünümler ekleme ve bunların ölçüm API'si kullanımı düzeltmek için özel görünümler düzenini geçersiz kılmak nasıl açıklanmıştır.
+Bu makalede, C# kullanarak oluşturulan bir Xamarin.Forms düzenine yerel görünümler ekleme ve bunların ölçüm API'si kullanımı düzeltmek için özel görünüm düzenini geçersiz kılma açıklaması.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

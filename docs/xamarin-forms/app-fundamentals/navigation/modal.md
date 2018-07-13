@@ -1,54 +1,54 @@
 ---
-title: Xamarin.Forms kalıcı sayfaları
-description: Xamarin.Forms kalıcı sayfalar için destek sağlar. Kalıcı bir sayfa, görev tamamlandı veya iptal kadar uzağa erişilemeyeceğini kendi içinde bulunan bir görevi tamamlamak için kullanıcıların önerir. Bu makalede, kalıcı sayfalara gösterilmiştir.
+title: Xamarin.Forms kalıcı sayfalar
+description: Xamarin.Forms kalıcı sayfalar için destek sağlar. Kalıcı bir sayfa, görev tamamlandı veya iptal kadar UZAĞINIZDA erişilemeyeceğini kendi içinde bir görevi tamamlamak için kullanıcıların önerir. Bu makalede, kalıcı sayfalara gösterilmiştir.
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 4540ac006993a46cb0ead9346c1cb960ac631926
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 44aee8500c7de2ae56b59049368d6025ec49cc5e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240144"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994834"
 ---
-# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms kalıcı sayfaları
+# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms kalıcı sayfalar
 
-_Xamarin.Forms kalıcı sayfalar için destek sağlar. Kalıcı bir sayfa, görev tamamlandı veya iptal kadar uzağa erişilemeyeceğini kendi içinde bulunan bir görevi tamamlamak için kullanıcıların önerir. Bu makalede, kalıcı sayfalara gösterilmiştir._
+_Xamarin.Forms kalıcı sayfalar için destek sağlar. Kalıcı bir sayfa, görev tamamlandı veya iptal kadar UZAĞINIZDA erişilemeyeceğini kendi içinde bir görevi tamamlamak için kullanıcıların önerir. Bu makalede, kalıcı sayfalara gösterilmiştir._
 
-Bu makalede aşağıdaki konular ele alınmıştır:
+Bu makalede, aşağıdaki konular ele alınmaktadır:
 
-- [Gezinti gerçekleştirme](#Performing_Navigation) – kalıcı yığını pencerelerinin sayfalarından kalıcı yığınına sayfaları Ftp'den geri düğmesini devre dışı bırakma ve sayfa geçişleri animasyon ekleme.
-- [Gezinirken veri geçirme](#Passing_Data_when_Navigating) – bir sayfa oluşturucu ve aracılığıyla veri geçirme bir `BindingContext`.
+- [Gezinti gerçekleştirme](#Performing_Navigation) – sayfaları kalıcı yığınına, yığından kaldırılıyor sayfalarından kalıcı yığın gönderme, geri düğmesini devre dışı bırakma ve sayfa geçişleri animasyon ekleme.
+- [Gezinirken veri geçirme](#Passing_Data_when_Navigating) – sayfa oluşturucusu ve aracılığıyla veri geçirme bir `BindingContext`.
 
 ## <a name="overview"></a>Genel Bakış
 
-Kalıcı bir sayfa herhangi biri olabilir [sayfa](~/xamarin-forms/user-interface/controls/pages.md) Xamarin.Forms tarafından desteklenen türleri. Kalıcı bir sayfasını görüntülemek için uygulama, kalıcı yığına Burada, active sayfasında, aşağıdaki çizimde gösterildiği gibi olacak gönderir:
+Kalıcı bir sayfa herhangi biri olabilir [sayfa](~/xamarin-forms/user-interface/controls/pages.md) Xamarin.Forms tarafından desteklenen türleri. Kalıcı bir sayfasını görüntülemek için uygulama bunu kalıcı yığınına, burada, etkin sayfa, aşağıdaki diyagramda gösterildiği gibi olacaktır gönderir:
 
-![](modal-images/pushing.png "Bir sayfa kalıcı yığına iletme")
+![](modal-images/pushing.png "Bir sayfa için kalıcı yığın gönderme")
 
-Aşağıdaki çizimde gösterildiği gibi önceki sayfaya uygulama kalıcı yığından geçerli sayfa pop ve yeni en üstteki sayfa etkin sayfa haline gelir döndürmek için:
+Önceki sayfaya uygulaması kalıcı yığından geçerli sayfa açılır ve yeni en üstte sayfa etkin sayfa olur Aşağıdaki diyagramda gösterildiği gibi döndürmek için:
 
-![](modal-images/popping.png "Kalıcı yığını sayfasından pencerelerinin")
+![](modal-images/popping.png "Bir sayfadan kalıcı yığın dosyasından alınıyor")
 
 <a name="Performing_Navigation" />
 
 ## <a name="performing-navigation"></a>Gezinti gerçekleştirme
 
-Kalıcı Gezinti yöntemleri tarafından açığa [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) herhangi bir özellikte [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) türetilmiş tür. Bu yöntemler yeteneği sağlamak [anında kalıcı sayfaları](#Pushing_Pages_to_the_Modal_Stack) kalıcı yığına ve [pop kalıcı sayfaları](#Popping_Pages_from_the_Modal_Stack) kalıcı yığından.
+Kalıcı Gezinti yöntemleri tarafından sunulur [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) herhangi bir özellikte [ `Page` ](xref:Xamarin.Forms.Page) türetilmiş türler. Bu yöntemler şu olanakları sağlar [itme kalıcı sayfalar](#Pushing_Pages_to_the_Modal_Stack) kalıcı yığına ve [pop kalıcı sayfalar](#Popping_Pages_from_the_Modal_Stack) kalıcı yığından.
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Özelliği de kullanıma sunan bir [ `ModalStack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INavigation.ModalStack/) özelliği kendisinden kalıcı yığını kalıcı sayfalarında elde edilebilir. Ancak, kalıcı yığını işleme gerçekleştirmek ya da kalıcı Gezinti kök sayfası pencerelerinin hiçbir kavramı yoktur. Bu işlemler temel platformlarda Evrensel desteklenmeyen olmasıdır.
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Özelliğini de sunan bir [ `ModalStack` ](xref:Xamarin.Forms.INavigation.ModalStack) özelliği kendisinden kalıcı yığınında kalıcı sayfalar elde edilebilir. Ancak, kalıcı yığın düzenleme gerçekleştirme ya da kalıcı Gezinti kök sayfasına pencerelerinin konsepti yoktur. Bu işlemler temel platformlarda Evrensel desteklenmeyen olmasıdır.
 
 > [!NOTE]
-> A [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) örneği kalıcı sayfa gezintisi gerçekleştirmek için gerekli değildir.
+> A [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) örneği kalıcı sayfa gezintisi gerçekleştirmek için gerekli değildir.
 
 <a name="Pushing_Pages_to_the_Modal_Stack" />
 
-### <a name="pushing-pages-to-the-modal-stack"></a>Kalıcı yığınına koymadan sayfaları
+### <a name="pushing-pages-to-the-modal-stack"></a>Sayfaları için kalıcı yığın gönderme
 
-Gitmek için `ModalPage` çağırmak gerekli olan [ `PushModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page)/) yöntemi [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) aşağıdaki kod örneğinde kanıtlanabilir olarak geçerli sayfanın özelliği:
+Gitmek için `ModalPage` çağırmak gerekli olan [ `PushModalAsync` ](xref:Xamarin.Forms.INavigation.PushModalAsync*) metodunda [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) geçerli sayfasında, aşağıdaki kod örneğinde kanıtlanabilir olarak özelliği:
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -61,28 +61,28 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-Bu neden `ModalPage` kalıcı yığına burada etkin sayfa haline gelir, edilmesini örneği sağlanan bir öğe içinde seçili [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) üzerinde `MainPage` örneği. `ModalPage` Örneğini aşağıdaki ekran görüntülerinde gösterilir:
+Bu neden `ModalPage` örneği kalıcı burada etkin sayfa olur, yığına için sağlanan bir öğe içinde seçili [ `ListView` ](xref:Xamarin.Forms.ListView) üzerinde `MainPage` örneği. `ModalPage` Örneğini aşağıdaki ekran görüntülerinde gösterilen:
 
 ![](modal-images/modalpage.png "Kalıcı sayfası örneği")
 
-Zaman [ `PushModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page)/) çağrılan, aşağıdakiler gerçekleşir:
+Zaman [ `PushModalAsync` ](xref:Xamarin.Forms.INavigation.PushModalAsync*) çağrılır, aşağıdaki olaylar gerçekleşir:
 
-- Sayfa arama `PushModalAsync` sahip kendi [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) geçersiz kılma çağrılan koşuluyla Android temel platform değil.
-- İçin ilk sayfasına sahip kendi [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) geçersiz kılma çağrılır.
-- `PushAsync` Görev tamamlar.
+- Sayfa arama `PushModalAsync` sahip kendi [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) geçersiz kılma koşuluyla Android temel platform değilse çağrılır.
+- Geçtiğiniz için sayfanın alt [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) geçersiz kılma çağrılır.
+- `PushAsync` Görev tamamlanır.
 
-Ancak, bu olayları kesin sırayla bağımlı platformudur. Daha fazla bilgi için bkz: [Bölüm 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold'un'ın Xamarin.Forms defteri.
+Ancak, bu olayları kesin sırayla bağımlı platformudur. Daha fazla bilgi için [Bölüm 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold'ın Xamarin.Forms rehberi.
 
 > [!NOTE]
-> Çağrılar [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) ve [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) geçersiz kılmaları sayfa gezintisi garantili belirtileri kabul edemez. Örneğin, ios'ta `OnDisappearing` geçersiz kılma uygulama sonlandırıldığında etkin sayfada çağrılır.
+> Çağrılar [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) ve [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) geçersiz kılmaları sayfa gezintisi garantili belirtileri kabul edemez. Örneğin, ios'ta `OnDisappearing` geçersiz kılma uygulama sonlandırıldığında etkin sayfa üzerinde çağrılır.
 
 <a name="Popping_Pages_from_the_Modal_Stack" />
 
-### <a name="popping-pages-from-the-modal-stack"></a>Kalıcı yığını pencerelerinin sayfalarından
+### <a name="popping-pages-from-the-modal-stack"></a>Kalıcı yığından yığından kaldırılıyor sayfaları
 
-Etkin sayfa kalıcı yığınından tuşlarına basarak Sil'i *geri* düğmesini cihazda bağımsız olarak, bu aygıttaki fiziksel bir düğme olup olmadığını veya bir ekran düğmesini.
+Etkin sayfa kalıcı yığından tuşlarına basarak POP *geri* cihazda düğme bağımsız olarak, bu cihaz üzerinde fiziksel bir düğme olup olmadığını veya bir ekrandaki bir düğme.
 
-Program aracılığıyla özgün sayfaya geri dönmek için `ModalPage` örneği gerekir çağırma [ `PopModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PopModalAsync()/) yöntemi, aşağıdaki kod örneğinde gösterildiği gibi:
+Program aracılığıyla geldikleri sayfaya geri dönmek için `ModalPage` örneği çağırmalıdır [ `PopModalAsync` ](xref:Xamarin.Forms.INavigation.PopModalAsync) yöntemini aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 async void OnDismissButtonClicked (object sender, EventArgs args)
@@ -91,21 +91,21 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 }
 ```
 
-Bu neden `ModalPage` etkin sayfa haline gelen yeni en üstteki sayfa kalıcı yığınından kaldırılacak örneği. Zaman [ `PopModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PopModalAsync()/) çağrılan, aşağıdakiler gerçekleşir:
+Bu neden `ModalPage` örneği kalıcı yığından etkin sayfa olma yeni en üst sayfaya kaldırılacak. Zaman [ `PopModalAsync` ](xref:Xamarin.Forms.INavigation.PopModalAsync) çağrılır, aşağıdaki olaylar gerçekleşir:
 
-- Sayfa arama `PopModalAsync` sahip kendi [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) geçersiz kılma çağrılır.
-- İçin döndürülen sayfasına sahip kendi [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) geçersiz kılma çağrılan koşuluyla Android temel platform değil.
-- `PopModalAsync` Görev döndürür.
+- Sayfa arama `PopModalAsync` sahip kendi [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) geçersiz kılma çağrılır.
+- İade edilen sayfanın kendi [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) geçersiz kılma koşuluyla Android temel platform değilse çağrılır.
+- `PopModalAsync` Görevi döndürür.
 
-Ancak, bu olayları kesin sırayla bağımlı platformudur. Daha fazla bilgi için bkz: [Bölüm 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold'un'ın Xamarin.Forms defteri.
+Ancak, bu olayları kesin sırayla bağımlı platformudur. Daha fazla bilgi için [Bölüm 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold'ın Xamarin.Forms rehberi.
 
 ### <a name="disabling-the-back-button"></a>Geri düğmesini devre dışı bırakma
 
-Android, kullanıcının her zaman önceki sayfaya standart tuşlarına basarak geri dönebilirsiniz *geri* cihazın düğmesini. Kalıcı sayfa sayfadan ayrılmadan önce kendi içinde bulunan bir görevi tamamlamak kullanıcının gerektiriyorsa, uygulamayı devre dışı bırakmalısınız *geri* düğmesi. Bu geçersiz kılma tarafından gerçekleştirilebilir [ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/) kalıcı sayfasında yöntemi. Daha fazla bilgi için bkz: [Bölüm 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold'un'ın Xamarin.Forms defteri.
+Android, kullanıcının her zaman önceki sayfaya standart tuşlarına basarak döndürebilir *geri* cihazda düğmesini. Kalıcı sayfa sayfadan ayrılmadan önce kendi içinde bir görevi tamamlamak kullanıcı gerektiriyorsa, uygulamayı devre dışı bırakmanız gerekir *geri* düğmesi. Bu geçersiz kılma tarafından gerçekleştirilebilir [ `Page.OnBackButtonPressed` ](xref:Xamarin.Forms.Page.OnBackButtonPressed) kalıcı sayfasında yöntemi. Daha fazla bilgi için [Bölüm 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold'ın Xamarin.Forms rehberi.
 
 ### <a name="animating-page-transitions"></a>Sayfa geçişleri animasyon ekleme
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Her sayfanın özelliği de sağlar geçersiz kılınan itme ve içeren pop yöntemleri bir `boolean` gezinme sırasında sayfa animasyon görüntülenip görüntülenmeyeceğini aşağıdaki kodda gösterildiği gibi denetimleri parametresi Örnek:
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Her sayfanın özelliği de sağlar geçersiz kılınan İtme hem de içeren pop yöntemleri bir `boolean` aşağıdaki kodda gösterildiği gibi denetleyen bir sayfa animasyon, gezinti sırasında görüntülenip görüntülenmeyeceğini parametresi Örnek:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -121,17 +121,17 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 }
 ```
 
-Ayarı `boolean` parametresi `false` parametre ayarı sırasında sayfa geçişi animasyon, devre dışı bırakır `true` koşuluyla temel alınan platformu tarafından desteklenen sayfa geçişi animasyon sağlar. Ancak, bu parametre yetersizliği nedeniyle anında iletme ve pop yöntemleri animasyonun varsayılan olarak etkinleştirir.
+Ayarı `boolean` parametresi `false` parametre ayarlanırken sayfa geçişi animasyon devre dışı bırakır `true` şartıyla temel alınan platformu tarafından desteklenen sayfa geçişi animasyon sağlar. Ancak, bu parametre eksik anında iletme ve pop yöntemleri animasyon varsayılan olarak etkinleştirir.
 
 <a name="Passing_Data_when_Navigating" />
 
 ## <a name="passing-data-when-navigating"></a>Gezinirken veri geçirme
 
-Bazen bir sayfa gezinti sırasında başka bir sayfaya veri iletmek gereklidir. Bu işlemi gerçekleştirmek için iki tekniklerdir sayfa Oluşturucusu geçirme verilerine ve yeni sayfa ayarlayarak [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) veriler. Her şimdi sırayla incelenecektir.
+Bazen bir sayfa gezinti sırasında başka bir sayfaya veri iletmek gereklidir. Bu işlemi gerçekleştirmek için iki teknik şunlardır: sayfa Oluşturucu üzerinden geçen veri ve yeni sayfa ayarlayarak [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) veriler. Her artık sırasıyla açıklanmıştır.
 
-### <a name="passing-data-through-a-page-constructor"></a>Bir sayfa oluşturucu aracılığıyla veri geçirme
+### <a name="passing-data-through-a-page-constructor"></a>Bir sayfa Oluşturucusu aracılığıyla veri geçirme
 
-Aşağıdaki kod örneğinde gösterildiği bir sayfa Oluşturucusu parametresi aracılığıyla başka bir sayfaya gezinti sırasında veri geçirme için basit tekniği olan:
+Gezinti sırasında başka bir sayfaya verileri geçirmek için en basit yöntem aşağıdaki kod örneğinde gösterilen bir sayfa Oluşturucu parametresi üzerinden verilmiştir:
 
 ```csharp
 public App ()
@@ -140,9 +140,9 @@ public App ()
 }
 ```
 
-Bu kod oluşturur bir `MainPage` örnek, geçerli tarih ve saat ISO8601 biçiminde geçirme.
+Bu kod oluşturur bir `MainPage` örneği, geçerli tarih ve saat ISO8601 biçiminde geçirme.
 
-`MainPage` Örneği aşağıdaki kod örneğinde gösterildiği gibi bir oluşturucu parametresini verilerine alır:
+`MainPage` Örneği aşağıdaki kod örneğinde gösterildiği gibi bir oluşturucu parametresi aracılığıyla verileri alır:
 
 ```csharp
 public MainPage (string date)
@@ -152,11 +152,11 @@ public MainPage (string date)
 }
 ```
 
-Veri ayarlayarak sayfada sonra görüntülenen [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) özelliği.
+Veriler daha sonra sayfada ayarlayarak görüntülenir [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) özelliği.
 
-### <a name="passing-data-through-a-bindingcontext"></a>Bir Bindingparameters'te aracılığıyla veri geçirme
+### <a name="passing-data-through-a-bindingcontext"></a>Bir BindingContext arasında veri geçirme
 
-Verileri başka bir sayfaya gezinti sırasında geçirme için alternatif bir yaklaşım yeni sayfanın ayarlanmasıdır [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) aşağıdaki kod örneğinde gösterildiği gibi verileri için:
+Yeni sayfa ayarlayarak verileri başka bir sayfaya gezinti sırasında geçirmek için alternatif bir yaklaşım olan [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) aşağıdaki kod örneğinde gösterildiği gibi verileri için:
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -170,9 +170,9 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-Bu kod ayarlar [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) , `DetailPage` için örnek `Contact` örneği ve ardından gider `DetailPage`.
+Bu kod ayarlar [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) , `DetailPage` için örnek `Contact` örneği ve ardından gider `DetailPage`.
 
-`DetailPage` Görüntülemek için veri bağlama kullanır `Contact` aşağıdaki XAML kod örneğinde gösterildiği gibi veri örneği:
+`DetailPage` Ardından görüntülemek için veri bağlama kullanır `Contact` aşağıdaki XAML kod örneğinde gösterildiği gibi veri örneği:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -196,7 +196,7 @@ Bu kod ayarlar [ `BindingContext` ](https://developer.xamarin.com/api/property/X
 </ContentPage>
 ```
 
-Aşağıdaki kod örneği, nasıl veri bağlama C# ' ta gerçekleştirilebilir gösterir:
+Aşağıdaki kod örneği, nasıl veri bağlama C# dilinde gerçekleştirilebilir gösterir:
 
 ```csharp
 public class DetailPageCS : ContentPage
@@ -248,13 +248,13 @@ public class DetailPageCS : ContentPage
 }
 ```
 
-Veriler sayfada bir dizi tarafından görüntülenir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) kontrol eder.
+Veriler bir dizi tarafından sonra sayfada görüntülenir [ `Label` ](xref:Xamarin.Forms.Label) kontrol eder.
 
-Veri bağlama hakkında daha fazla bilgi için bkz: [veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/index.md).
+Veri bağlama hakkında daha fazla bilgi için bkz. [temel veri bağlama bilgileri](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ## <a name="summary"></a>Özet
 
-Bu makalede kalıcı sayfalarında gezinmek nasıl gösterilmektedir. Kalıcı bir sayfa, görev tamamlandı veya iptal kadar uzağa erişilemeyeceğini kendi içinde bulunan bir görevi tamamlamak için kullanıcıların önerir.
+Bu makalede nasıl kalıcı sayfalara gösterilmiştir. Kalıcı bir sayfa, görev tamamlandı veya iptal kadar UZAĞINIZDA erişilemeyeceğini kendi içinde bir görevi tamamlamak için kullanıcıların önerir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

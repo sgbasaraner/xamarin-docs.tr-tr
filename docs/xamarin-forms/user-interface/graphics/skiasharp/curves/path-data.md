@@ -1,32 +1,32 @@
 ---
-title: SVG yol verileri SkiaSharp
-description: Bu makalede ölçeklenebilir vektör grafikleri biçiminde metin dizelerini kullanarak SkiaSharp yollarının nasıl tanımlanacağı açıklanmaktadır ve bu örnek kodu ile gösterir.
+title: SkiaSharp SVG yol verileri
+description: Bu makalede ölçeklenebilir vektör grafiği biçiminde metin dizeleriyle SkiaSharp yollarını nasıl tanımlanacağı açıklanmaktadır ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 0453374c59c3b12842b7fb1524cc150329d84b7f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 84b77313ec9cad4d0add3540fe4d26910e593ada
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243980"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996788"
 ---
-# <a name="svg-path-data-in-skiasharp"></a>SVG yol verileri SkiaSharp
+# <a name="svg-path-data-in-skiasharp"></a>SkiaSharp SVG yol verileri
 
-_Ölçeklenebilir vektör grafikleri biçiminde metin dizelerini kullanarak yolları tanımlayın_
+_Ölçeklenebilir Vektör Grafiği biçiminde metin dizeleriyle tanımlar_
 
-`SKPath` Sınıfı, ölçeklenebilir vektör grafikleri (SVG) belirtimi tarafından oluşturulan bir biçimde metin dizelerini yolun tamamını nesnelerden tanımını destekler. Bu makalenin sonraki bölümlerinde, bu bir metin dizesindeki gibi yolun tamamını nasıl gösterebilir görürsünüz:
+`SKPath` Sınıfı, ölçeklenebilir vektör grafiği (SVG) belirtimi tarafından oluşturulan bir biçimde metin dizelerinden tüm yol nesneleri tanımını destekler. Bu makalenin sonraki bölümlerinde, bu bir metin dizesindeki gibi yolun tamamını nasıl temsil görürsünüz:
 
 ![](path-data-images/pathdatasample.png "SVG yol verileri ile tanımlanan bir örnek yol")
 
-SVG programlama dili web sayfaları için bir XML tabanlı grafik uygundur. SVG bir dizi işlev çağrısı yerine biçimlendirme tanımlı yolları izin vermesi gerekir çünkü standart SVG bir tüm grafik yolu bir metin dizesi belirterek, son derece kısa bir yol içerir.
+SVG programlama dilinde web sayfaları için bir XML tabanlı grafik olur. SVG bir dizi işlev çağrısının yerine Biçimlendirme tanımlanacak yolları izin vermeniz gerekir çünkü standart SVG tüm grafik yolu belirten bir metin dizesi son derece kısa bir yol içerir.
 
-SkiaSharp içinde bu biçim için "SVG yol-veriler." denir Biçim da Windows Presentation Foundation ve burada bu bilinen olarak Evrensel Windows platformu dahil olmak üzere Windows XAML tabanlı programlama ortamlarının desteklenir [biçimlendirme sözdizimi yolu](https://msdn.microsoft.com/library/ms752293%28v=vs.110%29.aspx) veya [Taşı ve komutları sözdizimi çizin](/windows/uwp/xaml-platform/move-draw-commands-syntax/). Ayrıca, özellikle de metin tabanlı dosyalarda XML gibi vektör grafik görüntüleri için exchange biçimi olarak görebilir.
+İçinde SkiaSharp, bu biçim "SVG yol-veri." olarak adlandırılır Biçim da dahil olmak üzere Windows Presentation Foundation ve burada bilinen olarak Evrensel Windows platformu, Windows XAML tabanlı programlama ortamlarında desteklenir [yol işaretleme söz dizimi](https://msdn.microsoft.com/library/ms752293%28v=vs.110%29.aspx) veya [Taşı komut söz dizimi çizin](/windows/uwp/xaml-platform/move-draw-commands-syntax/). Ayrıca, özellikle de metin tabanlı dosyalarda XML gibi vektör grafik görüntüleri için bir exchange biçiminde görebilir.
 
-SkiaSharp tanımlar sözcükleri iki yöntemle `SvgPathData` adlarında:
+SkiaSharp sözcüklerini içeren iki yöntem tanımlar `SvgPathData` adlarında:
 
 ```csharp
 public static SKPath ParseSvgPathData(string svgPath)
@@ -34,21 +34,21 @@ public static SKPath ParseSvgPathData(string svgPath)
 public string ToSvgPathData()
 ```
 
-Statik [ `ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) yöntemi bir dizeye dönüştürür bir `SKPath` nesnesi sırada [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) dönüştürür bir `SKPath` bir dize nesnesi.
+Statik [ `ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) yöntemi bir dizeye dönüştürür bir `SKPath` nesnesi sırada [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) dönüştürür bir `SKPath` nesnesine bir dize.
 
-Bir noktasında 100 (0, 0) bir RADIUS ile ortalanmış beş işaret yıldız SVG dize şöyledir:
+SVG dizisi noktasında 100 (0, 0) ile bir RADIUS ortalanmış beş işaret eden bir yıldız şu şekildedir:
 
 ```csharp
 "M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z"
 ```
 
-Derleme komutları harf olan bir `SKPath` nesnesi. `M` gösterir bir `MoveTo` çağrısı, `L` olan `LineTo`, ve `Z` olan `Close` bir dağılım kapatın. Her numarası çifti bir noktasının X ve Y koordinatı sağlar. Dikkat `L` komutu virgülle ayırarak birden çok nokta ardında. Dizi koordinatları, noktaları, virgül ve boşluk özdeş olarak kabul edilir. Bazı programcıları X ve Y koordinatları arasında yerine noktaları arasında virgül koymak tercih ettiğiniz, ancak virgül veya boşluk yalnızca Karışıklığı önlemek için gereklidir. Mükemmel yasal şudur:
+Derleme komutları harflerdir bir `SKPath` nesne. `M` gösterir bir `MoveTo` çağrısı, `L` olduğu `LineTo`, ve `Z` olduğu `Close` bir dağılımı kapatın. Her numarası çiftini bir X ve Y koordinatını bir nokta sağlar. Dikkat `L` komut virgülle ayırarak birden çok nokta ardında. Dizi koordinatlar ve noktaları, virgül ve boşluk aynı kabul edilir. X ve Y koordinatları arasında yerine noktaları arasında virgül yerleştirmek bazı programcılar tercih et ancak virgül veya boşluklarla yalnızca belirsizlik önlemek için gereklidir. Bu mükemmel geçerlidir:
 
 ```csharp
 "M0-100L58.8 90.9-95.1-30.9 95.1-30.9-58.8 80.9Z"
 ```
 
-SVG yol verileri söz dizimi resmi olarak belgelenen [bölüm 8.3 SVG belirtimi](http://www.w3.org/TR/SVG11/paths.html#PathData). Bir özeti aşağıda verilmiştir:
+SVG yol verileri sözdizimi resmi olarak belgelenen [bölümü 8.3 SVG belirtiminin](http://www.w3.org/TR/SVG11/paths.html#PathData). Bir özeti aşağıda verilmiştir:
 
 ## <a name="moveto"></a>**MoveTo**
 
@@ -56,7 +56,7 @@ SVG yol verileri söz dizimi resmi olarak belgelenen [bölüm 8.3 SVG belirtimi]
 M x y
 ```
 
-Bu, yeni bir dağılım yolunda geçerli konumu ayarlayarak başlar. Yol verileri ile her zaman başlamalıdır bir `M` komutu.
+Bu, yeni bir yol dağılımını geçerli konumu ayarlayarak başlar. Yol verileri her zaman başlamalı bir `M` komutu.
 
 ## <a name="lineto"></a>**LineTo**
 
@@ -64,7 +64,7 @@ Bu, yeni bir dağılım yolunda geçerli konumu ayarlayarak başlar. Yol veriler
 L x y ...
 ```
 
-Bu komut bir çizgide (veya satırlar) yolunu ekler ve son satırın sonuna yeni geçerli konumunu ayarlar. İzleyebileceğiniz `L` birden çok çiftlerini komutunu *x* ve *y* koordinatları.
+Bu komut, düz bir çizgi (veya satırları) yolunu ekler ve son satırın sonuna kadar yeni geçerli konumunu ayarlar. İzleyebileceğiniz `L` birden çok çiftlerini komutunu *x* ve *y* koordinatları.
 
 ## <a name="horizontal-lineto"></a>**Yatay LineTo**
 
@@ -72,7 +72,7 @@ Bu komut bir çizgide (veya satırlar) yolunu ekler ve son satırın sonuna yeni
 H x ...
 ```
 
-Bu komut yolunu yatay çizgi ekler ve satırın sonuna yeni geçerli konumunu ayarlar. İzleyebileceğiniz `H` birden çok komutuyla *x* koordinatları, ancak daha anlamlı olun değil.
+Bu komut, yatay çizgi yolunu ekler ve yeni geçerli konumun satırın sonuna kadar ayarlar. İzleyebileceğiniz `H` birden çok komut *x* koordinatları, ancak pek olun değil.
 
 ## <a name="vertical-line"></a>**Dikey çizgi**
 
@@ -80,7 +80,7 @@ Bu komut yolunu yatay çizgi ekler ve satırın sonuna yeni geçerli konumunu ay
 V y ...
 ```
 
-Bu komut, dikey çizgi yolu ekler ve yeni geçerli konumu satırın sonuna ayarlar.
+Bu komut dikey çizgi yolunu ekler ve yeni geçerli konumun satırın sonuna kadar ayarlar.
 
 ## <a name="close"></a>**Kapat**
 
@@ -88,23 +88,23 @@ Bu komut, dikey çizgi yolu ekler ve yeni geçerli konumu satırın sonuna ayarl
 Z
 ```
 
-`C` Komutu bir çizgide geçerli konumundan dağılımı başlangıcına ekleyerek dağılımı kapatır.
+`C` Komutu, geçerli konumdan dağılımı başlangıcına düz bir çizgi ekleyerek dağılımı kapatır.
 
 ## <a name="arcto"></a>**ArcTo**
 
-Elips yay dağılımı eklemek için komutu kullanarak en karmaşık tüm SVG yol verileri belirtiminde komuttur. Sayı gösterebilir koordinat değerleri dışında bir şey yalnızca komut şöyledir:
+Elips yay için dağılımı eklemek için komutu şu ana kadar en karmaşık tüm SVG yol verileri belirtiminde komuttur. Bu sayı gösterebilir koordinat değerleri dışında bir şey yalnızca komut şöyledir:
 
 ```csharp
 A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 ```
 
-*Rx* ve *rında* yatay ve dikey elipsin yarıçaplarını parametreleridir. *Döndürme açısı* derece saat yönünde değil.
+*Rx* ve *rında* elipsin yarıçaplarını yatay ve dikey parametrelerdir. *Döndürme açısı* derece saat yönünde olduğu.
 
-Ayarlama *yay bayrağı büyük* için büyük Yayı 1 veya 0 küçük yay için.
+Ayarlama *yay bayrağı büyük* büyük yay için 1 veya 0 küçük yay için.
 
-Ayarlama *tarama bayrağı* için 1 saat yönünde ve için 0 yönünün.
+Ayarlama *Süpürme bayrağı* 1 saat yönünde ve 0 için yönünün.
 
-Yayı noktasına çizilir (*x*, *y*), geçerli konuma haline gelir.
+Yayı noktasına çizilir (*x*, *y*), yeni geçerli konum haline gelir.
 
 ## <a name="cubicto"></a>**CubicTo**
 
@@ -112,9 +112,9 @@ Yayı noktasına çizilir (*x*, *y*), geçerli konuma haline gelir.
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
-Bu komut için geçerli konumundan küp Bézier eğrisi ekler (*x3*, *y3*), geçerli konuma haline gelir. Noktaları (*x1*, *y1*) ve (*x2*, *y2*) denetim noktaları.
+Bu komut için geçerli konumdan üçüncü dereceden Bézier eğrisi ekler (*x3*, *y3*), yeni geçerli konum haline gelir. Noktaları (*x1*, *y1*) ve (*x2*, *y2*) denetim noktaları.
 
-Birden çok Bézier eğrileri tarafından tek bir belirtilebilir `C` komutu. Noktası sayısı 3 katı olmalıdır.
+Birden çok Bézier eğrileri tarafından tek bir belirtilebilir `C` komutu. Puan sayısı 3'ün katı olmalıdır.
 
 "Yumuşak" Bézier eğrisi komutu vardır:
 
@@ -122,7 +122,7 @@ Birden çok Bézier eğrileri tarafından tek bir belirtilebilir `C` komutu. Nok
 S x2 y2 x3 y3 ...
 ```
 
-Bu komut, (, kesinlikle olmadığında gerekli rağmen) normal bir Bézier komutu uygun olmalıdır. Kendi karşılıklı noktası etrafında önceki Bézier ikinci denetim noktası yansımasını olmasını kesintisiz Bézier komutu ilk denetim noktası hesaplar. Bu üç nokta bu nedenle colinear ve iki Bézier eğrileri arasındaki bağlantıyı çok kolaydır.
+(Gerektirmesidir zorunlu olsa da) Bu komutu normal bir Bézier komutu izlemelidir. İkinci denetim noktası karşılıklı kendi nokta etrafında önceki Bézier yansıması olmasını yumuşak Bézier komutu ilk denetim noktası hesaplar. Bu nedenle bu üç nokta colinear ve iki Bézier eğrileri arasındaki bağlantıyı çok kolaydır.
 
 ## <a name="quadto"></a>**QuadTo**
 
@@ -130,25 +130,25 @@ Bu komut, (, kesinlikle olmadığında gerekli rağmen) normal bir Bézier komut
 Q x1 y1 x2 y2 ...
 ```
 
-İkinci derece Bézier eğrileri noktası sayısı 2'ın katları olmalıdır. Denetim noktası (*x1*, *y1*) ve uç noktası (ve yeni geçerli konumu) (*x2*, *y2*)
+İkinci dereceden Bézier eğrileri noktalarının sayısı 2'in katı olmalıdır. Denetim noktası (*x1*, *y1*) uç noktası (ve yeni geçerli konumu) (*x2*, *y2*)
 
-Kesintisiz ikinci derece eğrisi komutu vardır:
+Ayrıca bir kesintisiz ikinci dereceden bir eğri komutu verilmiştir:
 
 ```csharp
 T x2 y2 ...
 ```
 
-Denetim noktası önceki ikinci dereceden eğrisi denetim noktası temel alınarak hesaplanır.
+Denetim noktası önceki ikinci dereceden bir eğri denetim noktasında temel alınarak hesaplanır.
 
-Bu komutlar de, koordinat noktaları geçerli konumuna göre nerede "göreli" sürümlerinde kullanılabilir. Bu göreli komutlar örneğin küçük harflerle başlayan `c` yerine `C` küp Bézier komutu göreli sürümü.
+Geçerli konumun göreli koordinat noktaları olduğu Bu komutlar "göreli" sürümlerinde de mevcuttur. Bu göreli komutları örneğin küçük harf ile başlayan `c` yerine `C` göreli sürümü üçüncü dereceden Bézier komutu.
 
-SVG yolu veri tanımı kapsamını budur. Yinelenen komutların gruplar için veya herhangi bir türde hesaplama gerçekleştirmek için hiçbir olanak yoktur. Komutları `ConicTo` veya yay belirtimleri diğer türleri kullanılabilir değil.
+SVG yol verileri tanımı kapsamını budur. Yinelenen komut gruplar için veya herhangi bir türde hesaplama gerçekleştirmek için hiçbir olanak yoktur. Komutları `ConicTo` veya diğer türleri yay özellikleri kullanılabilir değil.
 
-Statik [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) yöntemi SVG komutların geçerli bir dize bekliyor. Herhangi bir sözdizimi hatası algılandı, yöntem `null`. Yalnızca hata göstergesi olmasıdır.
+Statik [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) yöntemi bekliyor SVG komut geçerli bir dize. Herhangi bir söz dizimi hatası algılanmadı ise yöntem döndürür `null`. Yalnızca hata göstergesi olmasıdır.
 
-[ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Yöntemdir mevcut bir SVG yol verileri almak için kullanışlı `SKPath` nesne başka bir programa aktarmak veya XML gibi metin tabanlı bir dosya biçiminde depolamak için. ( `ToSvgPathData` Yöntemi bu makaledeki örnek kodda gösterildiği değil.) Yapmak *değil* beklediğiniz `ToSvgPathData` tam yolunu oluşturulan yöntem çağrıları için karşılık gelen bir dize döndürecek şekilde. Özellikle, birden çok yaylar dönüştürülür öğreneceksiniz `QuadTo` komutları ve nasıl döndürüldüğü yolu veri göründükleri `ToSvgPathData`.
+[ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Yöntemi mevcut bir SVG yol verileri almak için kullanışlı `SKPath` aktarmak için başka bir program veya XML gibi bir metin tabanlı dosya biçiminde depolamak için bir nesne. ( `ToSvgPathData` Yöntemi bu makaledeki örnek kodda gösterilmiştir değil.) Yapmak *değil* beklediğiniz `ToSvgPathData` tam yolun oluşturulan yöntem çağrıları için karşılık gelen bir dize döndürecek şekilde. Özellikle, yaylara birden çok dönüştürülür keşfedeceksiniz `QuadTo` komutları ve nasıl döndürüldüğü yol verileri görünürler `ToSvgPathData`.
 
-**Yolu veri Hello** sayfasında spells word çıkışı "MERHABA" SVG yol verileri kullanarak. Hem `SKPath` ve `SKPaint` nesneleri alanlar olarak tanımlanan [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) sınıfı:
+**Yolu veri Hello** sayfasında Word'ün kullanıma spells "HELLO" SVG yol verileri kullanarak. Hem `SKPath` ve `SKPaint` nesneleri alanlar olarak tanımlanan [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) sınıfı:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -172,21 +172,21 @@ public class PathDataHelloPage : ContentPage
 }
 ```
 
-Yolun metin dizesi tanımlama (0, 0) noktası sol üst köşede başlar. 50 birime geniş ve 100 birim uzun her harfi olduğu ve harf yolun tamamını 350 birimleri geniş olduğu anlamına gelir başka bir 25 birimler tarafından ayrılır.
+Yolun metin dizesi tanımlama, sol üst köşesinde bir noktada (0, 0) başlar. Her harfidir 50 Birim geniş ve 100 birimi uzun ve harf, yolun tamamını 350 birimleri geniş olduğu anlamına gelir. başka bir 25 birimleri tarafından ayrılır.
 
-İki bağlı küp Bézier eğrileri 'E' iken 'Hello"'Y' üç tek satır dağılımlarını oluşur. Dikkat `C` komutu altı noktaları tarafından izlendiği ve iki denetim noktalarının Y koordinatları –10 ve diğer harfler Y koordinatları aralığın dışında koyar 110 sahip. İki bağlı satırdan 'L' olduğu sırada ' O'ile işlenen elips olan bir `A` komutu.
+'Hello"'H', 'E', iki bağlı üçüncü dereceden Bézier eğri ederken üç satır dağılımlarını oluşur. Dikkat `C` komut altı noktaları tarafından izlendiği ve iki denetim noktaları –10 ve bunları diğer harfler Y koordinatları aralığı dışında koyar 110, Y koordinatları sahip. İki bağlı satırı, 'L' olduğu sırada ' O'ile işlenen elips olduğu bir `A` komutu.
 
-Dikkat `M` son dağılımı başlar komut Sol dikey merkezine olan noktasına (350, 50) konumunu ayarlar tarafında ' O'. İlk sayı aşağıdaki tarafından belirtildiği şekilde `A` komutunu elips yatay RADIUS 25 ve 50 dikey bir RADIUS sahiptir. Uç noktası numaraları son çiftinin belirtilir `A` (300, 49.9) noktasını temsil eder komutu. Başlangıç noktasından biraz kasıtlı olarak farklı olmasıdır. Uç nokta için başlangıç noktası eşit olarak ayarlanırsa, Yayı işlenmez. Tam bir Elips çizmek için uç nokta kapatmak için (ancak eşit değil) ayarlamanız gerekir başlangıç noktası için veya iki veya daha fazla kullanmalıdır `A` komutlar, her tam elips parçası için.
+Dikkat `M` son dağılımı başlayan komut dikey merkezine sol göre olan noktaya (350, 50) konumu ayarlar tarafında ' O'. İlk sayı aşağıdaki gösterildiği gibi `A` üç nokta işaretine sahip bir yatay yarıçapını 25 ve 50 dikey bir RADIUS komutu. Bitiş noktası tarafından son çift sayıların belirtilen `A` bir nokta (300, 49.9) komutu. Başlangıç noktasından kasıtlı olarak biraz farklı olmasıdır. Uç nokta için başlangıç noktası eşit olarak ayarlanırsa, Yayı işlenmez. Eksiksiz bir elips çizme için uç nokta kapatmak için (ancak eşit değildir) ayarlamanız gerekir veya başlangıç noktasının iki veya daha fazla kullanmanız gerekir `A` komutları, her biri için tam elips parçası.
 
-Aşağıdaki deyim sayfanın oluşturucuya ekleyin ve ardından sonuç dize incelemek için bir kesme noktası ayarlayın isteyebilirsiniz:
+Aşağıdaki deyim sayfanın oluşturucuyu ekleyin ve ardından sonuç dizesi incelemek için bir kesme noktası ayarlamak isteyebilirsiniz:
 
 ```csharp
 string str = helloPath.ToSvgPathData();
 ```
 
-Yayı uzun bir dizi ile değiştirilmiştir öğreneceksiniz `Q` parça parça yaklaşık ikinci derece Bézier eğrileri kullanarak yay olarak için komutları.
+Yayı uzun bir dizi ile değiştirilmiştir keşfedeceksiniz `Q` kullanarak ikinci dereceden Bézier eğrileri yay parçalı bir yaklaşığını komutları.
 
-`PaintSurface` İşleyicisi 'E' için denetim noktalarını içermez yolu sıkı sınırları alır ve ' O'Eğriler. Üç dönüşümler yolun Merkezi (0, 0) noktasına, tuvale (ancak aynı zamanda vuruşun genişliğini dikkate alarak) boyutunu yoluna ölçeklendirme ve sonra yolu merkezi Kanvasın ortasına taşır:
+`PaintSurface` İşleyicisi 'E' kontrol noktası içermez yolu sıkı sınırları alır ve ' O'eğrileri. Üç dönüşümleri nesnenin yolun merkezine noktası (0, 0), tuval (ancak aynı zamanda darbe genişliği hesaba katılarak) boyutunu yolunu ölçeklendirin ve sonra nesnenin yolun merkezine tuval merkezine taşır:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -215,11 +215,11 @@ public class PathDataHelloPage : ContentPage
 }
 ```
 
-Yolun yatay modunda görüntülendiğinde daha makul arar tuvale doldurur:
+Yolun yatay modda görüntülendiğinde daha makul görünen tuvali kaplar ve:
 
-[![](path-data-images/pathdatahello-small.png "Üçlü sayfasının ekran görüntüsü yolu veri Hello")](path-data-images/pathdatahello-large.png#lightbox "sayfasının yolu veri Hello Üçlü ekran görüntüsü")
+[![](path-data-images/pathdatahello-small.png "Üçlü sayfasının ekran görüntüsü yolu veri Hello")](path-data-images/pathdatahello-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yolu veri Merhaba")
 
-**Yolu veri kat** sayfa benzerdir. Yol ve boyama nesneleri her ikisi de alanlar olarak tanımlanan [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) sınıfı:
+**Yolu veri Cat** sayfa benzerdir. Yol ve bir boyama nesneleri hem alanlar olarak tanımlanan [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) sınıfı:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -253,11 +253,11 @@ public class PathDataCatPage : ContentPage
 }
 ```
 
-Bir kat head bir daire ve burada bu iki işlenen `A` komutları, her biri bir Yarım Daireli çizer. Her ikisi de `A` komutları, head 100 yatay ve dikey yarıçaplarını tanımlar. İlk Yayı başlar (240, 100) ve bitişi (240, 300) geri bitişi ikinci Yayı için başlangıç noktası olur (240, 100).
+Bir daire Başkanı bir cat olduğu ve burada iki oluşturulduğunda `A` komutları, her biri bir Yarım Daireli çizer. Her ikisi de `A` baş 100 yatay ve dikey yarıçaplarını tanımlar komutları. İlk yay başlar (240, 100) biter (240, 300) geriye doğru biten ikinci yay için başlangıç noktası olur (240, 100).
 
-İki gözler ikisinde de işlendiğini `A` komutları ile kedilerle ilgili head gibi ikinci `A` komut sonlandırır ilk başlangıcı aynı noktada `A` komutu. Ancak, bu çiftlerini `A` komutları elips tanımlamaz. İle her yay 40 birimleri ve RADIUS ayrıca 40 birimleri, bu yaylar tam semicircles anlamına gelir.
+İki yönünde de iki işlenen `A` komutları ile cat'ın head olduğu gibi ikinci `A` komut sonlandırır başlangıç ilk olarak aynı noktada `A` komutu. Ancak, bu çiftlerini `A` komutları elips tanımlamaz. İle her yay 40 birimleri ve RADIUS ayrıca 40 birimi, bu yay tam semicircles olmadığı anlamına gelir.
 
-`PaintSurface` İşleyici önceki örnek benzer dönüşümleri gerçekleştirir, ancak tek bir ayarlar `Scale` faktörü en boy oranını korumak ve çok az kenar boşluğu sağlar, böylece kedilerle ilgili yatay çizgilerinin ekran yanlarından touch yok:
+`PaintSurface` İşleyici önceki örnek benzer dönüşümleri gerçekleştirir, ancak tek bir ayarlar `Scale` en boy oranını korumak ve çok az bir kenar boşluğu sağlar, böylece cat'ın yatay çizgilerinin yüzde birlik ekran tarafında dokunmayın faktörü:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -286,13 +286,13 @@ public class PathDataCatPage : ContentPage
 }
 ```
 
-Aşağıda, tüm üç platformlarında çalışan program verilmiştir:
+Üç tüm platformlarda çalışan bir program şöyledir:
 
-[![](path-data-images/pathdatacat-small.png "Üçlü sayfasının ekran görüntüsü yolu veri kat")](path-data-images/pathdatacat-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yolu veri kat")
+[![](path-data-images/pathdatacat-small.png "Üçlü sayfasının ekran görüntüsü yolu veri Cat")](path-data-images/pathdatacat-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yolu veri kat")
 
-Normalde, bir `SKPath` nesnesi, bir alan olarak tanımlanır, yolun dağılımlarını oluşturucu veya başka bir yöntem içinde tanımlanması gerekir. Ancak, SVG yol verileri kullanırken yolu tamamen alan tanımında belirtilebilir gördünüz.
+Normalde, bir `SKPath` nesne bir alan olarak tanımlı, yolun dağılımlarını oluşturucu veya başka bir yöntem içinde tanımlanması gerekir. Ancak, SVG yol verileri kullanırken yolu tamamen alan tanımında belirtilebilir gördünüz.
 
-Önceki **çirkin Analog Saat** içinde örnek [ **döndürme dönüştürme** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) makale saatin ellerini basit satır olarak görüntülenir. **Oldukça Analog Saat** aşağıdaki program bu satırlarla değiştirir `SKPath` alanlar olarak tanımlı nesneler [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) ile birlikte sınıf `SKPaint` nesneler:
+Önceki **çirkin Analog saati** içinde örnek [ **döndürme dönüştürme** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) basit satırlar halinde makale görüntülenen saat kullanımına sunun. **Oldukça Analog saati** aşağıdaki program bu satırları ile değiştirir `SKPath` alanlar olarak tanımlanan nesneler [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) ile birlikte sınıfı `SKPaint` nesneler:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -330,9 +330,9 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Saat ve dakika ellerini şimdi bu nedenle bu ellerini birbirinden ayrı yapmak için alanları içine, hem bir siyah anahat ile Gri dolgu kullanarak çizilir `handStrokePaint` ve `handFillPaint` nesneleri.
+Saat ve dakika uygulamalı artık bu uygulamalı şekilde birbirinden ayrı yapmak için alanları içine, hem bir siyah ana hat ile Gri dolgu kullanılarak çizilir `handStrokePaint` ve `handFillPaint` nesneleri.
 
-Önceki içinde **çirkin Analog Saat** örnek, az saatleri işaretlenen daireler ve dakikada bir döngüde çizilmiş. Bu **oldukça Analog Saat** örnek, tamamen farklı bir yaklaşım kullanılır: saat ve dakika işaretleri noktalı ile çizilmiş çizgiler kalan `minuteMarkPaint` ve `hourMarkPaint` nesneler:
+Önceki **çirkin Analog saati** örnek, biraz saat işaretlenen daireler ve dakikada bir döngüde çizilmiş. Bu **oldukça Analog saati** örnek, tamamen farklı bir yaklaşım kullanılır: saat ve dakika işaretleri ile noktalı çizgileri olan `minuteMarkPaint` ve `hourMarkPaint` nesneler:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -359,11 +359,11 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-[ **Nokta ve kısa çizgilerden** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) Kılavuzu ele alınan nasıl kullanacağınızı `SKPathEffect.CreateDash` kesikli çizgi oluşturmak için yöntemi. İlk bağımsız değişken bir `float` genellikle iki öğeye sahip bir dizi: ilk öğe tireler uzunluğu ve tireler arasındaki boşluk ikinci öğedir. Zaman `StrokeCap` özelliği ayarlanmış `SKStrokeCap.Round`, yuvarlak çizgi uçlarından tire her iki tarafında vuruşun genişliğini tarafından tire uzunluğu etkili bir şekilde uzatmak sonra. Bu nedenle, ilk dizi öğesi 0 olarak ayarlanması noktalı çizgi oluşturur.
+[ **Nokta ve çizgi** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) kılavuzda ele alınan nasıl kullanabileceğinizi `SKPathEffect.CreateDash` kesik çizgi oluşturmak için yöntemi. İlk bağımsız değişken bir `float` genellikle iki öğelere sahip dizi: tireler uzunluğunu ilk öğedir ve tireler arasındaki boşluk ikinci öğedir. Zaman `StrokeCap` özelliği `SKStrokeCap.Round`, dash yuvarlatılmış ucunda dash her iki tarafında darbe genişliği ile dash uzunluğu etkili bir şekilde uzatın. sonra. Bu nedenle, ilk dizi öğesinin 0 olarak ayarlanması, noktalı çizgi oluşturur.
 
-Bu noktalar arasındaki uzaklığı ikinci bir dizi öğesi tarafından yönetilir. Kısa bir süre sonra bu iki göreceğiniz gibi `SKPaint` nesnesi ile bir RADIUS 90 birim daireler çizin için kullanılır. Bu daire çevresi bu nedenle 60 dakika işaretleri her 3π birimleri görünmelidir anlamına gelir, 180π olan ikinci değeri olduğu `float` içinde dizi `minuteMarkPaint`. İkincisi değer olan her 15π birimleri için on iki saat işaretleri görünmesi gerekir `float` dizi.
+Bu nokta arasındaki uzaklığı ikinci dizi öğesi tarafından yönetilir. Kısa bir süre sonra bu iki göreceğiniz üzere `SKPaint` nesnesi ile bir RADIUS 90 birim daireler çizme için kullanılır. Bu daire çevresi, bu nedenle 60 dakikalık işaretleri her 3π birimleri görünmelidir anlamına gelir, 180π olan ikinci değer olduğu `float` içindeki dizi `minuteMarkPaint`. On iki saat işaretlerinde her 15π birimi, ikinci değer olduğu görünmelidir `float` dizisi.
 
-`PrettyAnalogClockPage` Sınıfı, her 16 milisaniye yüzeyini geçersiz kılmak için bir zamanlayıcı ayarlar ve `PaintSurface` işleyicisi o oranda çağrılır. Önceki tanımlarını `SKPath` ve `SKPaint` nesneleri izin vermek için kod çizim çok temiz:
+`PrettyAnalogClockPage` Sınıfı her 16 milisaniye yüzey geçersiz kılmak için bir zamanlayıcı ayarlar ve `PaintSurface` hızı işleyicisi çağrılır. Önceki tanımlarını `SKPath` ve `SKPaint` nesneleri izin vermek için kod çizim çok temiz:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -423,9 +423,9 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Ancak özel bir şey ikinci el ile gerçekleştirilir. Saatin güncelleştirildiğinden her 16 milisaniye `Millisecond` özelliği `DateTime` değer büyük olasılıkla bir tarama ayrık atlar içinde taşınan bir yerine ikinci elle animasyon için kullanılabilir ikinci ikinci gelen. Ancak bu kodu kesintisiz olması için taşıma izin vermiyor. Bunun yerine, Xamarin.Forms kullanan [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) ve [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) animasyon işlevleri farklı türde bir taşıma için kolaylaştırma. Bu işlevler kolaylaştırma saniyeyi jerkier bir biçimde taşımanızı neden &mdash; biraz önce onu taşır ve ardından biraz efekt hedefine ne yazık ki bu aşırı çekim statik bu ekran görüntülerinde çoğaltılamayan geri çekme:
+Ancak özel bir şey ikinci el ile gerçekleştirilir. Saatin güncelleştirildiğinden her 16 milisaniye `Millisecond` özelliği `DateTime` potansiyel olarak kullanılabilir ayrık atlar taşıyan bir yerine bir gözden geçirme elle ikinci animasyon uygulamak için ikinci ikinci gelen. Ancak, bu kod kesintisiz olacak şekilde taşıma izin vermiyor. Bunun yerine, bir Xamarin.Forms kullanır [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) ve [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) animasyon kolaylaştırıcı işlevler için farklı türde bir taşıma. Kolaylaştırıcı işlevleri saniyeyi jerkier bir şekilde taşımak neden &mdash; biraz önce onu taşır ve ardından biraz efekt hedefine ne yazık ki bu aşırı atma statik bu ekran görüntülerinde üretilemeyen geri çekme:
 
-[![](path-data-images/prettyanalogclock-small.png "Üçlü sayfasının ekran görüntüsü oldukça Analog Saat")](path-data-images/prettyanalogclock-large.png#lightbox "Üçlü sayfasının ekran görüntüsü oldukça Analog Saat")
+[![](path-data-images/prettyanalogclock-small.png "Üçlü sayfasının ekran görüntüsü oldukça Analog saati")](path-data-images/prettyanalogclock-large.png#lightbox "Üçlü sayfasının ekran görüntüsü oldukça Analog saati")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

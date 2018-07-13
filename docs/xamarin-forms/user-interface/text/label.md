@@ -1,58 +1,58 @@
 ---
 title: Xamarin.Forms etiketi
-description: Bu makalede Xamarin.Forms etiket sınıfı tek ve birden çok satırlı metin uygulamaları görüntülemek için nasıl kullanılacağı açıklanmaktadır.
+description: Bu makalede, uygulamaların tek ve çok satırlı metni görüntülemek için Xamarin.Forms etiket sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: e9f99ace64e013dfa681e497b9d33376d79555ed
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ce602a84ea1024dc22298a3ec1567a9a34ad4a82
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245504"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995972"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms etiketi
 
-_Xamarin.Forms görüntüleme metni_
+_Xamarin.Forms içinde metin görüntüleme_
 
-`Label` Görünümü, hem tek hem de çok satırlı metin görüntülemek için kullanılır. Etiket (aileleri, boyutlar ve Seçenekler) özel yazı tipleri ve renkli metin olabilir. Bu makalede aşağıdaki konuları içerir:
+`Label` Görünümü, hem tek hem de çok satırlı bir metin görüntülemek için kullanılır. Etiket (aileleri, boyutlar ve Seçenekler) özel yazı tipleri ve renkli metin olabilir. Bu makalede, aşağıdaki konular ele alınmaktadır:
 
-- **[Kesme ve kaydırma](#Truncation_and_Wrapping)**  &ndash; kesilmesi ve kaydırma metin olamaz nerelerde tek bir satırda durumları işlemek için seçenekleri.
+- **[Kesme ve sarmalama](#Truncation_and_Wrapping)**  &ndash; kesme ve kaydırma metin olamaz nerelerde tek bir satırda durumları işlemek için seçenekleri.
 - **[Yazı tipi](#Font)**  &ndash; yazı tipi seçenekleri.
-- **[Renk](#Color)**  &ndash; renk seçeneklerini metin etiketi.
-- **[Biçimlendirilmiş metin](#Formatted_Text)**  &ndash; birden çok biçimleri/stilleri satır içi metni görüntülemek için Seçenekler.
+- **[Renk](#Color)**  &ndash; metin rengi seçeneklerini etiketleyin.
+- **[Biçimlendirilmiş metin](#Formatted_Text)**  &ndash; ile birden çok biçimleri/stilleri satır içi metin görüntüleme seçenekleri.
 
 ## <a name="styling-label"></a>Stil etiketi
 
-Aşağıdaki bölümlerde ayarı özelliklerini kapak `Label` örneği başına temelinde el ile. Bir veya daha çok görünümlerine sürekli olarak uygulanan bir stil özelliklerini ayarlar Not toplanabilir. Bu kod okunabilirliğini artırmak ve tasarım değişiklikleri uygulamak daha kolay hale getirebilirsiniz. Bkz: [stilleri](~/xamarin-forms/user-interface/text/styles.md) daha fazla bilgi için.
+Aşağıdaki bölümlerde ayarı özelliklerini kapsayan `Label` örneği başına temelinde el ile. Bir veya daha çok görünümleri için sürekli olarak uygulanan bir stil özelliklerini ayarlar Not toplanabilir. Bu kodun okunabilirliğini artırmak ve tasarım değişiklikleri uygulamak daha kolay hale getirebilirsiniz. Bkz: [stilleri](~/xamarin-forms/user-interface/text/styles.md) daha fazla bilgi için.
 
 <a name="Truncation_and_Wrapping" />
 
 ## <a name="truncation-and-wrapping"></a>Kesme ve kaydırma
 
-Etiketler, tarafından sunulan çeşitli yollardan içinde tek bir satırda sığamıyorsa metin işlemek üzere ayarlanabilir `LineBreakMode` özelliği. [`LineBreakMode`](https://developer.xamarin.com/api/type/Xamarin.Forms.LineBreakMode/) Aşağıdaki seçeneklerden bir listesi verilmiştir:
+Etiketler, tek satırda tarafından kullanıma sunulan birkaç yoldan biriyle sığamıyorsa metin işlemek için ayarlanabilir `LineBreakMode` özelliği. [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) Aşağıdaki seçeneklerden bir sabit listesi verilmiştir:
 
-- **HeadTruncation** &ndash; son gösteren metnin başındaki tamsayıya dönüştürür.
-- **CharacterWrap** &ndash; yeni bir satır metne karakter sınırında sarmalar.
-- **MiddleTruncation** &ndash; başlangıcını ve bitişini metni Orta Değiştir üç nokta ile görüntüler.
-- **NoWrap** &ndash; yalnızca görüntüleme metni kaydırılacak kadar metin can olarak tek bir satırda sığmayacak.
-- **TailTruncation** &ndash; son kesilmesiyle metnin başlangıcını gösterir.
-- **WordWrap** &ndash; metin word sınırında sarmalar.
+- **HeadTruncation** &ndash; sonunu gösteren metnin başındaki keser.
+- **CharacterWrap** &ndash; yeni bir satır metni bir karakter sınırında sarmalar.
+- **MiddleTruncation** &ndash; başlangıcını ve bitişini üç nokta orta değer ile metin görüntüler.
+- **NoWrap** &ndash; yalnızca görüntüleme metni kaydırılacak kadar metin kutusu olarak uygun bir satır.
+- **TailTruncation** &ndash; son kesiliyor metnin başlangıcını gösterir.
+- **Sözcük kaydırmayı** &ndash; metin sözcük sınırında sarmalar.
 
 ## <a name="font"></a>Yazı tipi
 
-Bkz: [yazı tipleriyle çalışma](~/xamarin-forms/user-interface/text/fonts.md) daha fazla bilgi için.
+Bkz: [yazı tipleri ile çalışma](~/xamarin-forms/user-interface/text/fonts.md) daha fazla bilgi için.
 
 ## <a name="color"></a>Renk
 
-`Label`Özel metin rengi bağlanabilirse aracılığıyla kullanmak için s ayarlanabilir `TextColor` özelliği.
+`Label`s bağlanabilir aracılığıyla bir özel metin rengi ayarlanabilir `TextColor` özelliği.
 
-Renkler her platformda kullanılabilir olacağından emin olmak özellikle dikkatli gereklidir. Her platform için metin ve arka plan renklerini farklı Varsayılanları olduğundan, her üzerinde çalıştığı bir varsayılan çekme dikkatli olun gerekir.
+Özel renkler her platformda kullanılabilir olmasını sağlamak gereklidir. Her platform için metin ve arkaplan renklerini varsayılan değerleri farklı olduğundan, her çalışan varsayılan seçmek dikkatli olmanız gerekir.
 
-Bir etiket metin rengini ayarlamak için aşağıdaki kodu kullanın:
+Bir etiketin metin rengini ayarlamak için aşağıdaki kodu kullanın:
 
 Kod:
 
@@ -70,7 +70,7 @@ public partial class LabelPage : ContentPage
 }
 ```
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -92,18 +92,18 @@ Title="Label Demo">
 
 ## <a name="formatted-text"></a>Biçimlendirilmiş metin
 
-Etiketleri kullanıma bir `FormattedText` metin ile birden çok yazı tipi sunmak sağlar ve aynı görünümünde renkleri özelliği.
+Etiketleri kullanıma bir `FormattedText` birden çok yazı tipi ile metin sunmanızı sağlar ve aynı görünümde renkleri özelliği.
 
-`FormattedText` Özelliği türüdür [ `FormattedString` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FormattedString/). Biçimlendirilmiş dizeler oluşan bir veya daha fazla `Span`s, her biri aşağıdaki özelliklere sahip:
+`FormattedText` Özelliği türüdür [ `FormattedString` ](xref:Xamarin.Forms.FormattedString). Biçimlendirilmiş dizeler oluşan bir veya daha fazla `Span`s, her biri aşağıdaki özelliklere sahip:
 
-- **BackgroundColor** &ndash; örneğin vurgulama efekti elde etmek bir arka plan rengini ayarlamak için kullanılabilir.
+- **BackgroundColor** &ndash; vurgulama etkiyi elde etmek örneğin bir arka plan rengini ayarlamak için kullanılabilir.
 - **FontAttributes** &ndash; kümesi kalın, italik veya hiçbiri olabilir.
-- **FontFamily** &ndash; kullanılacak yazı tipini belirler.
+- **FontFamily** &ndash; kullanılacak yazı tipini ayarlar.
 - **FontSize** &ndash; metin boyutunu ayarlar.
-- **ForegroundColor** &ndash; metin rengini belirler.
-- **Metin** &ndash; sunulacak metin.
+- **ForegroundColor** &ndash; metnin rengini ayarlar.
+- **Metin** &ndash; metin gösterilir.
 
-Aşağıdaki C# kod burada ilk word kalın ve son sözcük kırmızı bir etiket gösterir:
+Aşağıdaki C# kod burada ilk sözcük bold olarak belirlenmiştir ve son sözcüğü kırmızı bir etiket gösterilmektedir:
 
 ```csharp
 public partial class LabelPage : ContentPage
@@ -124,7 +124,7 @@ public partial class LabelPage : ContentPage
 }
 ```
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -153,6 +153,6 @@ Title="Label Demo">
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bölüm 3 Xamarin.Forms ile mobil uygulamaları oluşturma](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
+- [Bölüm 3 Xamarin.Forms ile mobil uygulamalar oluşturma](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [Metin (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [Etiket API](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)
+- [Etiket API](xref:Xamarin.Forms.Label)

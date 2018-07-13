@@ -1,31 +1,31 @@
 ---
-title: SkiaSharp temel animasyon
-description: Bu makalede SkiaSharp grafiklerinizi Xamarin.Forms uygulamalarında animasyon açıklanmaktadır ve bu örnek kodu ile gösterir.
+title: Temel SkiaSharp animasyonu
+description: Bu makalede Xamarin.Forms uygulamaları SkiaSharp grafiklerinizi animasyon açıklar ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 08583a62719927b900c6aeede1b3b4398ed803de
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 393716e17b042224f2b0bae8c526132489af26c6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243349"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994825"
 ---
-# <a name="basic-animation-in-skiasharp"></a>SkiaSharp temel animasyon
+# <a name="basic-animation-in-skiasharp"></a>Temel SkiaSharp animasyonu
 
-_SkiaSharp grafiklerinizi animasyon nasıl Bul_
+_SkiaSharp grafiklerinizi animasyon öğrenin_
 
-Neden olarak Xamarin.Forms SkiaSharp grafik animasyon uygulayabilirsiniz `PaintSurface` çok sık çağrılacak yöntem her zaman grafikleri biraz farklı çizim. Görünen Merkezi'nden genişletin eşmerkezli daireler ile bu makalenin sonraki bölümlerinde gösterilen bir animasyon şöyledir:
+Xamarin.Forms içinde SkiaSharp grafik neden olarak canlandırabilirsiniz `PaintSurface` çok sık çağrılması yöntemi her zaman biraz daha farklı grafik çizim. Animasyonun görünüşte Merkezi'nden genişletin Eşmerkezli daire ile bu makalenin sonraki bölümlerinde gösterilen şekildedir:
 
-![](animation-images/animationexample.png "Birkaç eşmerkezli daireler görünen Merkezi'nden genişletme")
+![](animation-images/animationexample.png "Görünüşte Merkezi'nden genişleterek çeşitli Eşmerkezli daire")
 
-**Pulsating elips** sayfasındaki [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program canlandırır elips iki eksenlerinin böylece pulsating olması için görünür ve hatta kontrol edebilirsiniz Bu pulsation oranı:
+**Pulsating elipsin** sayfasını [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program pulsating olması için görünmesi bir elipsin iki eksen canlandırır ve hatta denetleyebilirsiniz Bu pulsation oranı:
 
 
-[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) dosya başlatır bir Xamarin.Forms `Slider` ve `Label` kaydırıcıyı geçerli değerini görüntülemek için. Bu tümleştirmek için ortak bir yoludur bir `SKCanvasView` diğer Xamarin.Forms görünümlerle:
+[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) dosya örnekleyen bir Xamarin.Forms `Slider` ve `Label` slider'ın geçerli değerini görüntülemek için. Bu tümleştirmek için ortak bir yoludur bir `SKCanvasView` diğer Xamarin.Forms görünümler:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -60,7 +60,7 @@ Neden olarak Xamarin.Forms SkiaSharp grafik animasyon uygulayabilirsiniz `PaintS
 </ContentPage>
 ```
 
-Arka plan kod dosyasına başlatır bir `Stopwatch` Yüksek duyarlılık saat hizmet vermek için nesne. `OnAppearing` Kümeleri geçersiz kılma `pageIsActive` alanı `true` ve adında bir yöntemi çağırır `AnimationLoop`. `OnDisappearing` Geçersiz kılma ayarlar `pageIsActive` alanı `false`:
+Arka plan kod dosyası örnekleyen bir `Stopwatch` yüksek duyarlıklı saat görev yapacak bir nesne. `OnAppearing` Ayarlar geçersiz kılma `pageIsActive` alanı `true` ve adında bir yöntemi çağıran `AnimationLoop`. `OnDisappearing` Geçersiz kılma ayarlar `pageIsActive` alanı `false`:
 
 ```csharp
 Stopwatch stopwatch = new Stopwatch();
@@ -86,7 +86,7 @@ protected override void OnDisappearing()
 }
 ```
 
-`AnimationLoop` Yöntemi başlatır `Stopwatch` ve ardından while döngülerini `pageIsActive` olan `true`. Bu sayfa etkin, ancak programın çağrısıyla döngü sonucuna çünkü kilitlenmesine neden olmaz temelde "sonsuz bir döngüde" olan `Task.Delay` ile `await` program işlevi diğer bölümleri sağlayan işleci. Bağımsız değişkeni `Task.Delay` 1/30 saniye sonra tamamlamak için neden olur. Bu, animasyonun kare hızı tanımlar.
+`AnimationLoop` Yöntemi başlatıldıktan `Stopwatch` ve ardından while döngülerini `pageIsActive` olduğu `true`. Bu temelde "sonsuz bir döngü" sayfasında etkindir, ancak program çağrısı ile döngü sonucuna çünkü kilitlenmesine neden olmaz, `Task.Delay` ile `await` diğer bölümlerinde program işlevi sağlayan işleci. Bağımsız değişkeni `Task.Delay` 1/30 saniye sonra tamamlanmasına neden. Bu, animasyonun kare hızı tanımlar.
 
 ```csharp
 async Task AnimationLoop()
@@ -107,7 +107,7 @@ async Task AnimationLoop()
 
 ```
 
-`while` Döngüsü başlatan bir döngü süresi elde ederek `Slider`. Örneğin, 5 saniye cinsinden bir zaman budur. İkinci ifade değerini hesaplar `t` için *zaman*. İçin bir `cycleTime` 5, `t` artırır 0 ile 1 ile 5 saniyede. Bağımsız değişkeni `Math.Sin` ikinci deyimi 2π 5 saniyede ' 0'dan aralıkları. işlev. `Math.Sin` İşlevi 0 ile 1 arka 0 ve ardından arasında değişen bir değer döndürür &ndash;1 ve 0 5 saniyede ancak değeri 1 veya – 1 olduğunda daha yavaş değiştirmek değerlere sahip. 1 değeri, böylece her zaman pozitif değerler ve ardından değerleri aralıkları için ½ ½ 0 değeri yaklaşık 1 ve 0 olduğunda daha yavaş ancak ½-1, 2 ile ayrılmıştır eklenir. Bu depolanan `scale` alan ve `SKCanvasView` geçersiz.
+`while` Döngüsü başlatan bir döngü süreden elde ederek `Slider`. Bu örnek, 5 saniye cinsinden süredir. İkinci deyim değerini hesaplar `t` için *zaman*. İçin bir `cycleTime` 5, `t` artırır 0 ile 1-5 saniyede. Bağımsız değişkeni `Math.Sin` ikinci deyim 2π 5 saniyede ' 0'dan aralıklarında. işlevi. `Math.Sin` İşlevi, 0, 0 ve ardından 1 arka arasında değişen bir değer döndürür &ndash;1-0 5 saniyede bir, ancak değeri 1 veya – 1 yakın olduğunda daha yavaş değişen değerlere sahip. 1 değeri her zaman pozitif değerler ve daha sonra değerleri aralıkları için ½ ½ 0 değeri yaklaşık 1 ve 0 olduğunda daha yavaş ancak bir ½-1, 2 ile bölünür eklenir. Bu depolanan `scale` alan ve `SKCanvasView` geçersiz kılınır.
 
 `PaintSurface` Yöntemi kullanan bu `scale` elipsin iki eksen hesaplamak için değer:
 
@@ -140,17 +140,17 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Yöntemi, görüntü alanını boyutuna göre en çok bir RADIUS ve en fazla RADIUS üzerinde dayalı en az bir RADIUS hesaplar. `scale` Değeri animasyonlu 0 ile 1 arasında daha sonra tekrar 0, işlem için kullanan yöntemi bir `xRadius` ve `yRadius` , aralıkları arasında `minRadius` ve `maxRadius`. Bu değerler, çizme ve elips doldurmak için kullanılır:
+Yöntem ekran alanı boyutuna göre en fazla bir RADIUS ve en fazla RADIUS'u göre en az bir RADIUS hesaplar. `scale` Değeri animasyon 0 ile 1 arasındaki ve tekrar 0, yöntem, işlem kullanması için bir `xRadius` ve `yRadius` aralıkları arasında `minRadius` ve `maxRadius`. Bu değerler, çizme ve elips doldurmak için kullanılır:
 
-[![](animation-images/pulsatingellipse-small.png "Üçlü sayfasının ekran görüntüsü Titreşen elips")](animation-images/pulsatingellipse-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Titreşen elips")
+[![](animation-images/pulsatingellipse-small.png "Üçlü sayfasının ekran görüntüsü Titreşen elipsin")](animation-images/pulsatingellipse-large.png#lightbox "Titreşen elipsin sayfanın üç ekran görüntüsü")
 
-Dikkat `SKPaint` nesnesi oluşturulur bir `using` bloğu. Gibi birçok SkiaSharp sınıfları `SKPaint` türetilen `SKObject`, den türetilen `SKNativeObject`, hangi uygulayan [ `IDisposable` ](https://developer.xamarin.com/api/type/System.IDisposable/) arabirimi. `SKPaint` geçersiz kılmaları `Dispose` yönetilmeyen kaynakları serbest bırakmak yöntemi.
+Dikkat `SKPaint` nesnesi oluşturulur bir `using` blok. Gibi birçok SkiaSharp sınıfları `SKPaint` türetildiği `SKObject`, öğesinden türetildiğini `SKNativeObject`, uygulayan [ `IDisposable` ](xref:System.IDisposable) arabirimi. `SKPaint` geçersiz kılmalar `Dispose` yöntemi yönetilmeyen kaynaklar serbest bırakılacaksa.
 
- Koyma `SKPaint` içinde bir `using` blok sağlar `Dispose` bu yönetilmeyen kaynakları serbest bloğun sonunda çağrılır. Bu yine de tarafından kullanılan bellek ortaya çıkar `SKPaint` nesne serbest .NET Atık toplayıcısının; ancak animasyon kodda, biraz daha düzenli bir şekilde bellek boşaltma içindeki etkin olması en iyisidir.
+ Yerleştirme `SKPaint` içinde bir `using` blok sağlar `Dispose` bu yönetilmeyen kaynakları serbest bırakacak bloğunun sonunda çağrılır. Tarafından kullanılan bellek, yine de böyle `SKPaint` nesneyi serbest .NET atık toplayıcı tarafından ancak animasyon kod biraz daha düzenli bir şekilde bellek boşaltma proaktif en iyisidir.
 
- Bu örnekte daha iyi bir çözüm iki oluşturmak olacaktır `SKPaint` nesneleri alanlar olarak bir kez ve bunları kaydedin.
+ Bu örnekte daha iyi bir çözüm iki oluşturmak olacaktır `SKPaint` alanları olarak nesneleri, bir kez ve bunları kaydedin.
 
-Ne olduğunu **genişletme daireler** animasyon yapar. [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) Sınıfı başlar dahil olmak üzere çeşitli alanları tanımlayarak bir `SKPaint` nesnesi:
+Budur **genişletme daireler** animasyon yapar. [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) Sınıfı başlar dahil olmak üzere çeşitli alanları tanımlayarak bir `SKPaint` nesnesi:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -178,7 +178,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-Bu programın üzerinde Xamarin.Forms tabanlı animasyon için farklı bir yaklaşım kullandığı `Device.StartTimer`. `t` Alan 1 0'dan animasyonlu her `cycleTime` milisaniye:
+Bu programın üzerinde Xamarin.Forms bağlı animasyon için farklı bir yaklaşım kullanan `Device.StartTimer`. `t` Alan 1-0'dan animasyonlu her `cycleTime` milisaniye:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -212,7 +212,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-`PaintSurface` İşleyici animasyonlu yarıçaplarını 5 eşmerkezli daireler çizer. Varsa `baseRadius` değişkeni 100 ardından olarak hesaplanır `t` 0 ile 1, 0'dan beş daireler artış 100, 100 ile 200, 300 için 200, 300-400 ve 400 için 500 yarıçaplarını animasyonlu. Çoğu daireleri için `strokeWidth` 50 ancak ilk kez daire `strokeWidth` 0 ile 50'ye canlandırır. Çoğu daireleri için mavi renkte, ancak son daire için renk mavi saydam olarak animasyonlu:
+`PaintSurface` İşleyici animasyonlu yarıçaplarını 5 eşmerkezli daireler çizer. Varsa `baseRadius` değişkeni 100 ardından şöyle hesaplanır `t` 0 ile 1, 0'dan beş daireler artış 100, 100, 200, ila 200 300, 300-400 ve 500 400 köşelerinin yarıçaplarını animasyon görünür. Çoğu dairelerin `strokeWidth` ilk 50 ancak Circle `strokeWidth` 0 ile 50 canlandırın. Çoğu dairelerin rengini Mavi, ancak son dairenin rengi maviye için saydam bir animasyon görünür:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -243,7 +243,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-Görüntünün aynı arar sonucudur `t` ne zaman olarak 0'a eşit `t` 1'e eşittir ve sürekli genişleyen devam etmek için daireler gibi görünebilir:
+Sonuç görüntüsü aynı görünür, `t` olarak ne zaman 0'a eşit `t` eşittir 1 ve daireler görünüyor sonsuza kadar genişletmeye devam edin:
 
 [![](animation-images/expandingcircles-small.png "Üçlü sayfasının ekran görüntüsü genişletme daireler")](animation-images/expandingcircles-large.png#lightbox "Üçlü sayfasının ekran görüntüsü daireler genişletme")
 

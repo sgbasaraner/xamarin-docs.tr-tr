@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 4a97bec37c99209fa6de26a08f8bde44753d0f2d
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: 5ed11e4afb4c061eb7b9dd8f10c67090b4134888
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986206"
+ms.locfileid: "38996392"
 ---
 # <a name="android-platform-specifics"></a>Android Platform özellikleri
 
@@ -21,10 +21,10 @@ _Platform özellikleri, özel oluşturucu veya efekt uygulama olmadan yalnızca 
 Android'de Xamarin.Forms aşağıdaki platform özellikleri içerir:
 
 - Geçici klavye işletim modu ayarı. Daha fazla bilgi için [geçici klavye girişi modunu ayarlama](#soft_input_mode).
-- Hızlı kaydırma etkinleştirme bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) daha fazla bilgi için [bir ListView içinde hızlı kaydırma etkinleştirme](#fastscroll).
-- Sayfalar arasında çekerek etkinleştirme bir [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Daha fazla bilgi için [etkinleştirme çekerek arasında sayfalarında bir TabbedPage](#enable_swipe_paging).
+- Hızlı kaydırma etkinleştirme bir [ `ListView` ](xref:Xamarin.Forms.ListView) daha fazla bilgi için [bir ListView içinde hızlı kaydırma etkinleştirme](#fastscroll).
+- Sayfalar arasında çekerek etkinleştirme bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Daha fazla bilgi için [etkinleştirme çekerek arasında sayfalarında bir TabbedPage](#enable_swipe_paging).
 - Z-çizim sırasını belirlemek için görsel öğelerin sırasını denetleme. Daha fazla bilgi için [yükseltme görsel öğeleri denetleme](#elevation).
-- Devre dışı bırakma [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) ve [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) sayfa yaşam döngüsü olaylarını duraklatma ve sırasıyla AppCompat kullanan uygulamalar için sürdürebilirsiniz. Daha fazla bilgi için [Disappearing ve sayfa yaşam döngüsü olaylarını görüntülenmesini devre dışı bırakma](#disable_lifecycle_events).
+- Devre dışı bırakma [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) ve [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) sayfa yaşam döngüsü olaylarını duraklatma ve sırasıyla AppCompat kullanan uygulamalar için sürdürebilirsiniz. Daha fazla bilgi için [Disappearing ve sayfa yaşam döngüsü olaylarını görüntülenmesini devre dışı bırakma](#disable_lifecycle_events).
 - Denetleme olup olmadığını bir [ `WebView` ](xref:Xamarin.Forms.WebView) karışık içeriği görüntüleyebilir. Daha fazla bilgi için [etkinleştirme karışık içeriği bir WebView](#webview-mixed-content).
 - Giriş Yöntemi Düzenleyicisi ayarları için geçici klavye için bir [ `Entry` ](xref:Xamarin.Forms.Entry). Daha fazla bilgi için [ayarı Giriş Giriş Yöntemi Düzenleyicisi Seçenekleri](#entry-imeoptions).
 - Desteklenen bir eski renk modunu devre dışı bırakma [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Daha fazla bilgi için [eski renk modunu devre dışı bırakma](#legacy-color-mode).
@@ -35,7 +35,7 @@ Android'de Xamarin.Forms aşağıdaki platform özellikleri içerir:
 
 ## <a name="setting-the-soft-keyboard-input-mode"></a>Geçici klavye giriş modunu ayarlama
 
-Bu platforma özgü geçici klavye giriş alanı için işletim modu ayarlamak için kullanılır ve XAML içinde ayarlayarak tüketilen [ `Application.WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty/) ekli özellik değerine [ `WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) sabit listesi:
+Bu platforma özgü geçici klavye giriş alanı için işletim modu ayarlamak için kullanılır ve XAML içinde ayarlayarak tüketilen [ `Application.WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) ekli özellik değerine [ `WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) sabit listesi:
 
 ```xaml
 <Application ...
@@ -55,7 +55,7 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
 ```
 
-`Application.On<Android>` Yöntemi bu platforma özgü Android'de yalnızca çalışacağını belirtir. [ `Application.UseWindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.UseWindowSoftInputModeAdjust/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) ile geçici klavye giriş alanını işletim modu ayarlamak için kullanılan ad alanı, [ `WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) iki değer sağlayan bir sabit listesi: [ `Pan` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan/) ve [ `Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/). `Pan` Değeri kullanan [ `AdjustPan` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustPan/) giriş denetimi odağa sahip olduğunda penceresini yeniden boyutlandırdığınızda değil ayarlama seçeneği. Bunun yerine, böylece geçerli odak geçici klavye tarafından engellediği değil penceresinin içeriğini kaydırılan. `Resize` Değeri kullanan [ `AdjustResize` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustResize/) bir giriş denetimini yer açmak için geçici klavye odağı varken boyutlandırır ayarlama seçeneği.
+`Application.On<Android>` Yöntemi bu platforma özgü Android'de yalnızca çalışacağını belirtir. [ `Application.UseWindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.UseWindowSoftInputModeAdjust(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ile geçici klavye giriş alanını işletim modu ayarlamak için kullanılan ad alanı, [ `WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) iki değer sağlayan bir sabit listesi: [ `Pan` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan) ve [ `Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize). `Pan` Değeri kullanan [ `AdjustPan` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustPan/) giriş denetimi odağa sahip olduğunda penceresini yeniden boyutlandırdığınızda değil ayarlama seçeneği. Bunun yerine, böylece geçerli odak geçici klavye tarafından engellediği değil penceresinin içeriğini kaydırılan. `Resize` Değeri kullanan [ `AdjustResize` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustResize/) bir giriş denetimini yer açmak için geçici klavye odağı varken boyutlandırır ayarlama seçeneği.
 
 Geçici klavye alan bir giriş denetim odağa sahip olduğunda işletim modu ayarlanabilir giriş oluşur:
 
@@ -65,7 +65,7 @@ Geçici klavye alan bir giriş denetim odağa sahip olduğunda işletim modu aya
 
 ## <a name="enabling-fast-scrolling-in-a-listview"></a>Bir ListView içinde hızlı kaydırma etkinleştirme
 
-Bu platforma özgü verileri aracılığıyla hızlı kaydırma etkinleştirmek için kullanılan bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). XAML içinde ayarlayarak tüketilir `ListView.IsFastScrollEnabled` özelliğine bağlı bir `boolean` değeri:
+Bu platforma özgü verileri aracılığıyla hızlı kaydırma etkinleştirmek için kullanılan bir [ `ListView` ](xref:Xamarin.Forms.ListView). XAML içinde ayarlayarak tüketilir `ListView.IsFastScrollEnabled` özelliğine bağlı bir `boolean` değeri:
 
 ```xaml
 <ContentPage ...
@@ -95,13 +95,13 @@ listView.GroupDisplayBinding = new Binding("Key");
 listView.On<Android>().SetIsFastScrollEnabled(true);
 ```
 
-`ListView.On<Android>` Yöntemi bu platforma özgü Android'de yalnızca çalışacağını belirtir. `ListView.SetIsFastScrollEnabled` Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) ad alanı, veri aracılığıyla hızlı kaydırma etkinleştirmek için kullanılan bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Ayrıca, `SetIsFastScrollEnabled` yöntemi çağırarak hızlı kaydırma geçiş yapmak için kullanılabilir `IsFastScrollEnabled` hızlı kaydırma etkin olup olmadığını döndürülecek yöntemi:
+`ListView.On<Android>` Yöntemi bu platforma özgü Android'de yalnızca çalışacağını belirtir. `ListView.SetIsFastScrollEnabled` Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ad alanı, veri aracılığıyla hızlı kaydırma etkinleştirmek için kullanılan bir [ `ListView` ](xref:Xamarin.Forms.ListView). Ayrıca, `SetIsFastScrollEnabled` yöntemi çağırarak hızlı kaydırma geçiş yapmak için kullanılabilir `IsFastScrollEnabled` hızlı kaydırma etkin olup olmadığını döndürülecek yöntemi:
 
 ```csharp
 listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScrollEnabled());
 ```
 
-Bu hızlı veri aracılığıyla kaydırma sonucu olan bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) hangi kaydırma parmak boyutunu değişiklikleri etkinleştirilebilir:
+Bu hızlı veri aracılığıyla kaydırma sonucu olan bir [ `ListView` ](xref:Xamarin.Forms.ListView) hangi kaydırma parmak boyutunu değişiklikleri etkinleştirilebilir:
 
 [![](android-images/fastscroll.png "ListView FastScroll platforma özgü")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
 
@@ -109,7 +109,7 @@ Bu hızlı veri aracılığıyla kaydırma sonucu olan bir [ `ListView` ](https:
 
 ## <a name="enabling-swiping-between-pages-in-a-tabbedpage"></a>Bir TabbedPage sayfalar arasında çekerek etkinleştirme
 
-Bu platforma özgü bir yatay parmağınızı hareket sayfalar arasında ile geçirmeyi etkinleştirmek için kullanılan bir [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). XAML içinde ayarlayarak tüketilir [ `TabbedPage.IsSwipePagingEnabled` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty/) özelliğine bağlı bir `boolean` değeri:
+Bu platforma özgü bir yatay parmağınızı hareket sayfalar arasında ile geçirmeyi etkinleştirmek için kullanılan bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). XAML içinde ayarlayarak tüketilir [ `TabbedPage.IsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty) özelliğine bağlı bir `boolean` değeri:
 
 ```xaml
 <TabbedPage ...
@@ -131,9 +131,9 @@ On<Android>().SetOffscreenPageLimit(2)
              .SetIsSwipePagingEnabled(true);
 ```
 
-`TabbedPage.On<Android>` Yöntemi bu platforma özgü Android'de yalnızca çalışacağını belirtir. [ `TabbedPage.SetIsSwipePagingEnabled` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled/p/Xamarin.Forms.BindableObject/System.Boolean/) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) ad alanı, sayfalar arasında geçirmeyi etkinleştirmek için kullanılan bir [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Ayrıca, `TabbedPage` sınıfını `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` aynı zamanda ad alanına sahip bir [ `EnableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.EnableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/) yönteminin bu platforma tanıyan ve [ `DisableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.DisableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/) devre dışı bırakan yöntemi Bu platforma özel. [ `TabbedPage.OffscreenPageLimit` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.OffscreenPageLimitProperty/) Ekli özellik, ve [ `SetOffscreenPageLimit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetOffscreenPageLimit/p/Xamarin.Forms.BindableObject/System.Int32/) yöntemini, geçerli sayfa her iki tarafındaki boşta durumda tutulmalıdır sayfaların sayısını ayarlamak için kullanılır.
+`TabbedPage.On<Android>` Yöntemi bu platforma özgü Android'de yalnızca çalışacağını belirtir. [ `TabbedPage.SetIsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled(Xamarin.Forms.BindableObject,System.Boolean)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ad alanı, sayfalar arasında geçirmeyi etkinleştirmek için kullanılan bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Ayrıca, `TabbedPage` sınıfını `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` aynı zamanda ad alanına sahip bir [ `EnableSwipePaging` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.EnableSwipePaging(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) yönteminin bu platforma tanıyan ve [ `DisableSwipePaging` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.DisableSwipePaging(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) devre dışı bırakan yöntemi Bu platforma özel. [ `TabbedPage.OffscreenPageLimit` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.OffscreenPageLimitProperty) Ekli özellik, ve [ `SetOffscreenPageLimit` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetOffscreenPageLimit(Xamarin.Forms.BindableObject,System.Int32)) yöntemini, geçerli sayfa her iki tarafındaki boşta durumda tutulmalıdır sayfaların sayısını ayarlamak için kullanılır.
 
-Sonuç, manyetik sayfalama tarafından görüntülenen sayfaları aracılığıyla, bir [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) etkinleştirilir:
+Sonuç, manyetik sayfalama tarafından görüntülenen sayfaları aracılığıyla, bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) etkinleştirilir:
 
 ![](android-images/tabbedpage-swipe.png)
 
@@ -202,9 +202,9 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>` Yöntemi bu platforma özgü Android'de yalnızca çalışacağını belirtir. `VisualElement.SetElevation` Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) ad alanı, yükseltme, görsel öğe için bir boş değer atanabilir ayarlamak için kullanılan `float`. Ayrıca, `VisualElement.GetElevation` yöntemi, bir görsel öğe yükseltme değerini almak için kullanılabilir.
+`Button.On<Android>` Yöntemi bu platforma özgü Android'de yalnızca çalışacağını belirtir. `VisualElement.SetElevation` Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ad alanı, yükseltme, görsel öğe için bir boş değer atanabilir ayarlamak için kullanılan `float`. Ayrıca, `VisualElement.GetElevation` yöntemi, bir görsel öğe yükseltme değerini almak için kullanılabilir.
 
-Yükseltme görsel öğeler, böylece daha yüksek Z değerleri olan görsel öğelerin Z değerleri daha düşük ile görsel öğeleri occlude denetlenebilir sonucudur. Bu nedenle, bu örnekte ikinci [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) yukarıda işlenen [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) , daha yüksek bir ayrıcalık değer içerdiğinden:
+Yükseltme görsel öğeler, böylece daha yüksek Z değerleri olan görsel öğelerin Z değerleri daha düşük ile görsel öğeleri occlude denetlenebilir sonucudur. Bu nedenle, bu örnekte ikinci [ `Button` ](xref:Xamarin.Forms.Button) yukarıda işlenen [ `BoxView` ](xref:Xamarin.Forms.BoxView) , daha yüksek bir ayrıcalık değer içerdiğinden:
 
 ![](android-images/elevation.png)
 
@@ -212,12 +212,12 @@ Yükseltme görsel öğeler, böylece daha yüksek Z değerleri olan görsel ö�
 
 ## <a name="disabling-the-disappearing-and-appearing-page-lifecycle-events"></a>Sayfa yaşam döngüsü olayları kayboldu ve görüntülenmesini devre dışı bırakma
 
-Bu platforma özgü devre dışı bırakmak için kullanılan [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) ve [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) uygulama sayfası olaylarına duraklatıp sırasıyla AppCompat kullanan uygulamalar için. Buna ek olarak, denetleme olanağı içerir, geçici klavye işletim modu olarak ayarlanmış olması koşuluyla, duraklatma, zobrazilo geçici klavye devamında görüntülenip görüntülenmeyeceğini [ `WindowSoftInputModeAdjust.Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/).
+Bu platforma özgü devre dışı bırakmak için kullanılan [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) ve [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) uygulama sayfası olaylarına duraklatıp sırasıyla AppCompat kullanan uygulamalar için. Buna ek olarak, denetleme olanağı içerir, geçici klavye işletim modu olarak ayarlanmış olması koşuluyla, duraklatma, zobrazilo geçici klavye devamında görüntülenip görüntülenmeyeceğini [ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
 
 > [!NOTE]
 > Olayları kullanan uygulamalar için mevcut davranışı korumak için bu olayları varsayılan olarak etkin olan unutmayın. Bu olaylar devre dışı bırakma öncesi AppCompat olay döngünüzle uyuşması AppCompat olay döngüsü sağlar.
 
-Bu platforma özgü ayarlayarak XAML içinde kullanılabilen [ `Application.SendDisappearingEventOnPause` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty/), [ `Application.SendAppearingEventOnResume` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty/), ve [ `Application.ShouldPreserveKeyboardOnResume` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty/) içinekliözellikler`boolean` değerleri:
+Bu platforma özgü ayarlayarak XAML içinde kullanılabilen [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty), [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty), ve [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty) içinekliözellikler`boolean` değerleri:
 
 ```xaml
 <Application ...
@@ -245,9 +245,9 @@ Xamarin.Forms.Application.Current.On<Android>()
      .ShouldPreserveKeyboardOnResume(true);
 ```
 
-`Application.Current.On<Android>` Yöntemi bu platforma özgü Android'de yalnızca çalışacağını belirtir. [ `Application.SendDisappearingEventOnPause` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/) ad alanı, etkinleştirme veya devre dışı Açmadığınızda kullanılır [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) sayfası olayı, uygulama arka plan girer. [ `Application.SendAppearingEventOnResume` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Yöntemi, etkinleştirme veya devre dışı Açmadığınızda kullanılır [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) arka planından uygulama devam ettiğinde sayfası olayı. [ `Application.ShouldPreserveKeyboardOnResume` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Yöntemi kullanılır, duraklatma görüntüleniyorsa devam ederken geçici klavye görüntülenip görüntülenmeyeceğini sağlanan geçici klavye işletim modu ayarlamak denetim [ `WindowSoftInputModeAdjust.Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/).
+`Application.Current.On<Android>` Yöntemi bu platforma özgü Android'de yalnızca çalışacağını belirtir. [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) ad alanı, etkinleştirme veya devre dışı Açmadığınızda kullanılır [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) sayfası olayı, uygulama arka plan girer. [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Yöntemi, etkinleştirme veya devre dışı Açmadığınızda kullanılır [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) arka planından uygulama devam ettiğinde sayfası olayı. [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Yöntemi kullanılır, duraklatma görüntüleniyorsa devam ederken geçici klavye görüntülenip görüntülenmeyeceğini sağlanan geçici klavye işletim modu ayarlamak denetim [ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
 
-Sonuç [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) ve [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) sayfası olayları uygulama duraklatma harekete olmaz ve sırasıyla sürdürme ve geçici klavye olması durumunda olduğu zaman görüntülenen uygulama olan uygulama devam ettiğinde duraklatıldı, bu da görüntülenir:
+Sonuç [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) ve [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) sayfası olayları uygulama duraklatma harekete olmaz ve sırasıyla sürdürme ve geçici klavye olması durumunda olduğu zaman görüntülenen uygulama olan uygulama devam ettiğinde duraklatıldı, bu da görüntülenir:
 
 [![](android-images/keyboard-on-resume.png "Yaşam döngüsü olayları platforma özgü")](android-images/keyboard-on-resume-large.png#lightbox "yaşam döngüsü olayları platforma özgü")
 
@@ -435,7 +435,7 @@ On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
              .SetBarSelectedItemColor(Color.Red);
 ```
 
-`TabbedPage.On<Android>` Yöntemi bu platform özellikleri, Android'de yalnızca çalışacağını belirtir. [ `TabbedPage.SetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.settoolbarplacement?view=xamarin-forms) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) ad alanı, araç çubuğu yerleştirme ayarlamak için kullanılan bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), ile [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) aşağıdaki değerleri sağlayan bir sabit listesi:
+`TabbedPage.On<Android>` Yöntemi bu platform özellikleri, Android'de yalnızca çalışacağını belirtir. [ `TabbedPage.SetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.settoolbarplacement?view=xamarin-forms) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ad alanı, araç çubuğu yerleştirme ayarlamak için kullanılan bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), ile [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) aşağıdaki değerleri sağlayan bir sabit listesi:
 
 - [`Default`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Default) – araç sayfasında varsayılan konumda eklendiğini gösterir. Sayfanın üst kısmında telefonlarda ve diğer cihaz deyimleri sayfanın alt kısmındaki budur.
 - [`Top`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Top) – sayfanın en üstündeki araç eklendiğini gösterir.
@@ -446,7 +446,7 @@ Ayrıca, [ `TabbedPage.SetBarItemColor` ](https://docs.microsoft.com/dotnet/api/
 > [!NOTE]
 > [ `GetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.gettoolbarplacement?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetToolbarPlacement_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), [ `GetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), Ve [ `GetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__) yöntemleri, yerleştirme ve rengini almak için kullanılabilir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) araç çubuğu.
 
-Üzerinde araç çubuğu yerleştirme, araç çubuğu öğelerinin rengi ve seçili araç çubuğu öğesi rengi ayarlanabilir sonucu olan bir [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/):
+Üzerinde araç çubuğu yerleştirme, araç çubuğu öğelerinin rengi ve seçili araç çubuğu öğesi rengi ayarlanabilir sonucu olan bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage):
 
 ![](android-images/tabbedpage-toolbar-placement.png)
 
@@ -458,5 +458,5 @@ Bu makalede, Android platform Xamarin.Forms içinde oluşturulmuş özellikleri 
 
 - [Platform Özellikleri Oluşturma](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (örnek)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [AndroidSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)
-- [AndroidSpecific.AppCompat](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)
+- [AndroidSpecific](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [AndroidSpecific.AppCompat](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

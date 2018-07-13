@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 814b74ce04269d18b9a280ada74204c1c86621e1
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: f2bccc9140c4c1c9d5d543a4240178f9301852bb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38985984"
+ms.locfileid: "38997367"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
-[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) düzenleri içerir ve kaydırma ekran dışında etkinleştirir. `ScrollView` klavye göstermek için ekran görünür bölümünün otomatik olarak taşımak görünümler izin vermek için de kullanılır.
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) düzenleri içerir ve kaydırma ekran dışında etkinleştirir. `ScrollView` klavye göstermek için ekran görünür bölümünün otomatik olarak taşımak görünümler izin vermek için de kullanılır.
 
 [![](scroll-view-images/layouts-sml.png "Xamarin.Forms düzenleri")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms düzenleri")
 

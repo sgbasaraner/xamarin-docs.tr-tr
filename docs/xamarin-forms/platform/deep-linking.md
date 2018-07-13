@@ -1,6 +1,6 @@
 ---
-title: Uygulama dizin oluşturma ve derin bağlama
-description: Bu makalede, uygulama dizin kullanmayı ve Xamarin.Forms uygulaması içeriği iOS ve Android cihazlarda aranabilir yapmak için derin bağlama gösterilmektedir.
+title: Uygulama dizini oluşturma ve ayrıntılı bağlantı sağlama
+description: Bu makalede, uygulama dizini oluşturma, kullanma ve Xamarin.Forms uygulama içeriğinin iOS ve Android cihazlarda aranabilir hale getirmek için ayrıntılı bağlantı sağlama gösterir.
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
@@ -8,34 +8,34 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: 9cc5177a585af1569385840ab8c370993984ca2b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7a102765a3633b8abaf01b3f090d8253230bc16b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242498"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996102"
 ---
-# <a name="application-indexing-and-deep-linking"></a>Uygulama dizin oluşturma ve derin bağlama
+# <a name="application-indexing-and-deep-linking"></a>Uygulama dizini oluşturma ve ayrıntılı bağlantı sağlama
 
-_Uygulama dizin arama sonuçlarında görünmesini ilgili kalmak için birkaç kullandıktan sonra Aksi takdirde unutulursa uygulamaları sağlar. Derin bağlama uygulamaların uygulama verilerini içeren, genellikle derin bir bağlantıdan başvurulan sayfasına giderek arama sonucu yanıt izin verir. Bu makalede, uygulama dizin kullanmayı ve Xamarin.Forms uygulaması içeriği iOS ve Android cihazlarda aranabilir yapmak için derin bağlama gösterilmektedir._
+_Uygulama dizini oluşturma, arama sonuçlarında görünmesini tarafından kalmak için birkaç'ı kullandıktan sonra Aksi takdirde unutmuş uygulamalar sağlar. Ayrıntılı bağlantı sağlama uygulamalarının ayrıntılı bağlantı başvurulan sayfasına giderek uygulama verileri, genellikle içeren bir arama sonucunun yanıt olanak sağlar. Bu makalede, uygulama dizini oluşturma, kullanma ve Xamarin.Forms uygulama içeriğinin iOS ve Android cihazlarda aranabilir hale getirmek için ayrıntılı bağlantı sağlama gösterir._
 
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
-**Xamarin.Forms ve Azure ile derin göre bağlama [Xamarin Üniversitesi](https://university.xamarin.com/)**
+**Xamarin.Forms ve Azure ile ayrıntılı olarak bağlama [Xamarin University](https://university.xamarin.com/)**
 
 
-Xamarin.Forms uygulaması dizin oluşturma ve derin bağlama kullanıcılar uygulamaları aracılığıyla gidin gibi uygulama dizin oluşturma için meta veri yayımlama için bir API sağlar. Dizin oluşturulmuş içerik ardından için Spotlight arama, Google araması veya bir web araması aranabilir. Dokunma derin bir bağlantı içeren bir arama sonucu üzerinde bir uygulama tarafından yönetilebilir ve genellikle derin bağlantıdan başvurulan sayfasına gitmek için kullanılan bir olayı ateşlenir.
+Xamarin.Forms uygulaması dizin oluşturma ve ayrıntılı bağlantı sağlama kullanıcılar uygulamaları aracılığıyla gezinirken uygulama dizini oluşturma için meta veri yayımlama için bir API sağlar. Dizinlenmiş içeriği ardından için Spotlight arama, Google arama veya bir web araması aranabilir. Dokunma ayrıntılı bağlantısını içeren bir arama sonucunda bir uygulama tarafından işlenebilir ve genellikle derin bağlantıdan başvurulan sayfaya gitmek için kullanılan bir olay ateşlenir.
 
-Örnek uygulama, aşağıdaki ekran görüntülerinde gösterildiği gibi yerel bir SQLite veritabanı verilerinin depolandığı bir Yapılacaklar listesi uygulaması gösterir:
+Örnek uygulama, aşağıdaki ekran görüntülerinde gösterildiği gibi yerel bir SQLite veritabanından verilerin depolandığı bir Yapılacaklar listesi uygulamasını gösterir:
 
 ![](deep-linking-images/screenshots.png "Yapılacaklar listesi uygulaması")
 
-Her `TodoItem` kullanıcı tarafından oluşturulan örnek dizini. Platforma özgü arama sonra uygulamasından dizinlenmiş veri bulmak için de kullanılabilir. Uygulama için bir arama sonucu öğesinin kullanıcı dokunur, uygulama başlatıldığında, `TodoItemPage` için gittiğinizde ve `TodoItem` derin başvurulan bağlantı görüntülenir.
+Her `TodoItem` örneği kullanıcı tarafından oluşturulan tarihine. Platforma özgü arama ardından uygulamadan dizinlenmiş verileri bulmak için de kullanılabilir. Kullanıcı bir uygulama için arama sonucu öğesi üzerinde dokunduğunda uygulamanın açıldığında `TodoItemPage` için gittiğinizde ve `TodoItem` derin başvurulan bağlantı görüntülenir.
 
-Bir SQLite veritabanı kullanma hakkında daha fazla bilgi için bkz: [yerel bir veritabanı ile çalışan](~/xamarin-forms/app-fundamentals/databases.md).
+Bir SQLite veritabanı kullanma hakkında daha fazla bilgi için bkz. [yerel bir veritabanı ile çalışmaya](~/xamarin-forms/app-fundamentals/databases.md).
 
 > [!NOTE]
-> Xamarin.Forms uygulaması dizin oluşturma ve derin işlev bağlama yalnızca iOS ve Android platformları üzerinde kullanılabilir ve iOS 9 ve API 23 sırasıyla gerektirir.
+> Xamarin.Forms uygulaması dizin oluşturma ve bağlama işlevselliği derin yalnızca iOS ve Android platformları üzerinde kullanılabilir ve iOS 9 ve API 23 sırasıyla gerektirir.
 
 ## <a name="setup"></a>Kurulum
 
@@ -43,36 +43,36 @@ Aşağıdaki bölümler iOS ve Android platformları üzerinde bu özelliği kul
 
 ### <a name="ios"></a>iOS
 
-İOS platformunda bu işlevselliği kullanmak için gerekli ek kurulumu yok.
+İOS platformunda bu işlevselliği kullanmak için gerekli ek kurulum yoktur.
 
 ### <a name="android"></a>Android
 
-Android platformunda uygulama dizin oluşturma ve işlevsellik bağlama derin kullanmak için karşılanması gereken önkoşulları vardır:
+Android platformunda uygulama dizini oluşturma ve derin bağlama işlevselliği kullanmak için karşılanması gereken önkoşulları vardır:
 
-1. Uygulamanızın sürümünü Google Play'deki dinamik olması gerekir.
-1. Bir yardımcı Web uygulamasını Google Developer konsolunda karşı kayıtlı olması gerekir. Uygulama bir Web sitesi ile ilişkili olduğunda, URL'ler olabilir Web sitesi ve ardından arama sonuçlarında hizmet uygulaması için çalışma dizini. Daha fazla bilgi için bkz: [uygulama dizin Google arama üzerinde](https://support.google.com/googleplay/android-developer/answer/6041489) Google Web sitesinde.
-1. Uygulamanızın üzerinde HTTP URL'si hedefleri desteklemelidir `MainActivity` uygulamanın URL veri şemalarını ne tür dizin uygulamaya bildirmek sınıfı için yanıt verebilir. Daha fazla bilgi için bkz: [hedefi filtresi yapılandırma](~/android/platform/app-linking.md#configure-intent-filter).
+1. Uygulamanızın sürümünü Google Play'den dinamik olması gerekir.
+1. Google'nın Geliştirici Konsolu uygulamasında karşı Yardımcısı Web sitesi kayıtlı olması gerekir. Uygulama bir Web sitesi ile ilişkili olduğunda, URL'ler olabilir hem Web sitesi ve arama sonuçlarında sunulabilen uygulama için çalışma dizini. Daha fazla bilgi için [App Indexing Google aramada](https://support.google.com/googleplay/android-developer/answer/6041489) Google'nın Web sitesinde.
+1. Uygulamanızın HTTP URL'si hedefleri üzerinde desteklemelidir `MainActivity` sınıfını, ki bu uygulamanın URL veri şemalarını hangi türde dizin uygulamaya bildirmek için yanıt verebilir. Daha fazla bilgi için [hedefi filtresini yapılandırma](~/android/platform/app-linking.md#configure-intent-filter).
 
-Bu Önkoşullar sağlandığında, aşağıdaki ek kurulum Xamarin.Forms uygulaması dizin oluşturma ve derin Android platformunda bağlama kullanmak için gereklidir:
+Bu Önkoşullar sağlandığında, aşağıdaki ek kurulum Xamarin.Forms uygulaması dizin oluşturma ve ayrıntılı bağlantı sağlama Android platformunda kullanmak için gereklidir:
 
-1. Yükleme [Xamarin.Forms.AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/) Android uygulaması projesine NuGet paketi.
+1. Yükleme [Xamarin.Forms.AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/) Android uygulaması projenizin NuGet paketi.
 1. İçinde `MainActivity.cs` dosya, içeri aktarma `Xamarin.Forms.Platform.Android.AppLinks` ad alanı.
-1. İçinde `MainActivity.OnCreate` geçersiz kılma, kodun aşağıdaki satırı ekleyin `Forms.Init(this, bundle)`:
+1. İçinde `MainActivity.OnCreate` geçersiz kılmak, kodun aşağıdaki satırı ekleyin `Forms.Init(this, bundle)`:
 
 ```csharp
 AndroidAppLinks.Init (this);
 ```
 
-Daha fazla bilgi için bkz: [ayrıntılı bağlantı içerik Xamarin.Forms URL Gezinti ile](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) Xamarin blogunda.
+Daha fazla bilgi için [ayrıntılı bağlantı içerik Xamarin.Forms URL gezintisi ile](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) Xamarin blogundan.
 
-## <a name="indexing-a-page"></a>Bir sayfa dizin oluşturma
+## <a name="indexing-a-page"></a>Sayfa dizini oluşturma
 
-Bir sayfa dizin oluşturma ve Google ve Spotlight arama gösterme işlemi aşağıdaki gibidir:
+İçin Google ve Spotlight arama gösterme ve bir sayfa dizin oluşturma işlemi aşağıdaki gibidir:
 
-1. Oluşturma bir [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) kullanıcı arama sonuçlarında dizin oluşturulmuş içerik seçtiğinde sayfasına dönmek için ayrıntılı bağlantı birlikte sayfanın dizini oluşturmak için gerekli meta veriler içeriyor.
-1. Kayıt [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) arama için dizin örneği.
+1. Oluşturma bir [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) kullanıcı dizinlenmiş içeriği arama sonuçlarında seçtiğinde sayfasına dönmek için ayrıntılı bağlantı birlikte sayfanın dizini oluşturmak için gerekli meta veriler içerir.
+1. Kayıt [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) aramada dizine eklemek örneği.
 
-Aşağıdaki kod örneğinde nasıl oluşturulduğunu gösteren bir [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) örneği:
+Aşağıdaki kod örneğinde nasıl oluşturulacağını gösterir. bir [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) örneği:
 
 ```csharp
 AppLinkEntry GetAppLink (TodoItem item)
@@ -91,7 +91,7 @@ AppLinkEntry GetAppLink (TodoItem item)
 }
 ```
 
-[ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) Örneğini içeren bir dizi özellikleri değerleri, sayfa dizini oluşturmak ve ayrıntılı bir bağlantı oluşturmak için gereklidir. [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.Title/), [ `Description` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.Description/), Ve [ `Thumbnail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.Thumbnail/) özellikler arama sonuçlarında görüntülendiğinde dizin oluşturulmuş içerik tanımlamak için kullanılır. [ `IsLinkActive` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.IsLinkActive/) Özelliği ayarlanmış `true` dizin oluşturulmuş içerik şu anda görüntülenen olduğunu belirtmek için. [ `AppLinkUri` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.AppLinkUri/) Özelliği bir `Uri` geçerli sayfasına dönün ve geçerli görüntülemek için gereken bilgileri içeren `TodoItem`. Aşağıda bir örnek gösterilir `Uri` örnek uygulama için:
+[ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) Örneği içeren bir dizi özellik değerleri, sayfa dizini ve ayrıntılı bir bağlantı oluşturmak için gereklidir. [ `Title` ](xref:Xamarin.Forms.IAppLinkEntry.Title), [ `Description` ](xref:Xamarin.Forms.IAppLinkEntry.Description), Ve [ `Thumbnail` ](xref:Xamarin.Forms.IAppLinkEntry.Thumbnail) özellikleri dizinlenmiş içeriği arama sonuçlarında görüntülendiğinde tanımlamak için kullanılır. [ `IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) Özelliği `true` dizinlenmiş içeriği şu anda görüntülenen olduğunu belirtmek için. [ `AppLinkUri` ](xref:Xamarin.Forms.IAppLinkEntry.AppLinkUri) Özelliği bir `Uri` geçerli sayfaya geri dönün ve geçerli görüntülemek için gereken bilgileri içeren `TodoItem`. Aşağıdaki örnek, bir örnek gösterir `Uri` örnek uygulama için:
 
 ```csharp
 http://deeplinking/DeepLinking.TodoItemPage?id=ec38ebd1-811e-4809-8a55-0d028fce7819
@@ -99,41 +99,41 @@ http://deeplinking/DeepLinking.TodoItemPage?id=ec38ebd1-811e-4809-8a55-0d028fce7
 
 Bu `Uri` başlatmak için gerekli tüm bilgileri içeren `deeplinking` uygulamayı gidin `DeepLinking.TodoItemPage`ve görüntüleme `TodoItem` olan bir `ID` , `ec38ebd1-811e-4809-8a55-0d028fce7819`.
 
-## <a name="registering-content-for-indexing"></a>Dizin oluşturma işlemi için içerik kaydetme
+## <a name="registering-content-for-indexing"></a>İçerik dizinleme için kaydetme
 
-Bir kez bir [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) örneği oluşturulan, arama sonuçlarında görüntülenmesi için dizin oluşturma için kaydedilmelidir. Bu ile gerçekleştirilir [ `RegisterLink` ](https://developer.xamarin.com/api/member/Xamarin.Forms.IAppLinks.RegisterLink/p/Xamarin.Forms.IAppLinkEntry/) yöntemi, aşağıdaki kod örneğinde gösterildiği gibi:
+Bir kez bir [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) örneği oluşturulan, arama sonuçlarında görünmesini dizin oluşturma için kaydedilmelidir. Bu ile gerçekleştirilir [ `RegisterLink` ](xref:Xamarin.Forms.IAppLinks.RegisterLink(Xamarin.Forms.IAppLinkEntry)) yöntemini aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 Application.Current.AppLinks.RegisterLink (appLink);
 ```
 
-Bu ekler [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) uygulamanın örneğine [ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/) koleksiyonu.
+Bu ekler [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) uygulamanın örneğine [ `AppLinks` ](xref:Xamarin.Forms.Application.AppLinks) koleksiyonu.
 
 > [!NOTE]
-> `RegisterLink` Yöntemi de bir sayfa için dizinlenir içeriği güncelleştirmek için kullanılabilir.
+> `RegisterLink` Yöntemi ayrıca bir sayfa için dizine alınmaz içeriği güncelleştirmek için kullanılabilir.
 
-Bir kez bir [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) örneği kaydettirildi dizin oluşturma işlemi için arama sonuçlarında yer alabilir. Aşağıdaki ekran görüntüsünde, iOS platformunda arama sonuçlarında görünmesini dizin oluşturulmuş içerik gösterir:
+Bir kez bir [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) örneği kaydedilmedi dizin oluşturma işlemi için arama sonuçlarında görünebilir. Aşağıdaki ekran görüntüsünde, iOS platformunda arama sonuçlarında görünmesini dizinlenmiş içeriği gösterir:
 
-![](deep-linking-images/ios-search.png "İOS arama sonuçlarında dizin oluşturulmuş içerik")
+![](deep-linking-images/ios-search.png "Dizinlenmiş içeriği arama sonuçlarında iOS")
 
-## <a name="de-registering-indexed-content"></a>XML'deki kaydetme içerik dizini
+## <a name="de-registering-indexed-content"></a>Kaydını içerik dizini
 
-[ `DeregisterLink` ](https://developer.xamarin.com/api/member/Xamarin.Forms.IAppLinks.DeregisterLink/p/Xamarin.Forms.IAppLinkEntry/) Yöntemi kullanılır dizin oluşturulmuş içerik Arama sonuçlarından kaldırmak için aşağıdaki kod örneğinde gösterildiği gibi:
+[ `DeregisterLink` ](xref:Xamarin.Forms.IAppLinks.DeregisterLink(Xamarin.Forms.IAppLinkEntry)) Yöntemi kullanılır dizinlenmiş içeriği Arama sonuçlarından kaldırmak için aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 Application.Current.AppLinks.DeregisterLink (appLink);
 ```
 
-Bu kaldırır [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) uygulamanın örneğinden [ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/) koleksiyonu.
+Bu kaldırır [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) uygulama örneğinden [ `AppLinks` ](xref:Xamarin.Forms.Application.AppLinks) koleksiyonu.
 
 > [!NOTE]
-> Android dizin oluşturulmuş içerik Arama sonuçlarından kaldırmak mümkün değildir.
+> Android'de dizinlenmiş içeriği Arama sonuçlarından kaldırmak mümkün değildir.
 
 <a name="responding" />
 
-## <a name="responding-to-a-deep-link"></a>Yanıt için ayrıntılı bağlantı
+## <a name="responding-to-a-deep-link"></a>Ayrıntılı bağlantısını yanıt
 
-Dizin oluşturulmuş içerik arama sonuçlarında görünür ve bir kullanıcı tarafından seçildiğinde `App` uygulamayı işlemek için bir istek alacak için sınıf `Uri` dizinli içeriği yer. Bu isteğin işlenmesi [ `OnAppLinkRequestReceived` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.OnAppLinkRequestReceived/p/System.Uri/) , aşağıdaki kod örneğinde gösterildiği gibi geçersiz kıl:
+Dizinlenmiş içeriği arama sonuçlarında görünür ve bir kullanıcı tarafından seçildiğinde `App` bir isteği işlemek için uygulamanın alacağı için sınıf `Uri` dizinlenmiş içeriği içeriyor. Bu istek işlenebilir [ `OnAppLinkRequestReceived` ](xref:Xamarin.Forms.Application.OnAppLinkRequestReceived(System.Uri)) aşağıdaki kod örneğinde gösterildiği gibi geçersiz:
 
 ```csharp
 public class App : Application
@@ -165,13 +165,13 @@ public class App : Application
 }
 ```
 
-[ `OnAppLinkRequestReceived` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.OnAppLinkRequestReceived/p/System.Uri/) Yöntemi denetler alınan `Uri` ayrıştırma önce bir uygulama için amaçlanan `Uri` için ilk sayfasına ve sayfasına iletilecek parametre. Bir örneği oluşturulduğu için ilk sayfasına ve `TodoItem` temsil parametresi sayfa tarafından alınır. [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) İçin gittiğinizde sayfanın sonra ayarlanır `TodoItem`. Bu olduğunda sağlar `TodoItemPage` tarafından görüntülenen [ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushAsync/p/Xamarin.Forms.Page/) yöntemi, onu gösteren `TodoItem` , `ID` derin bağlantıya yer alır.
+[ `OnAppLinkRequestReceived` ](xref:Xamarin.Forms.Application.OnAppLinkRequestReceived(System.Uri)) Yöntemi denetler alınan `Uri` ayrıştırma önce uygulama için amaçlanan `Uri` için geçtiğiniz için sayfayı ve sayfaya geçirilecek parametre. Bir örneği oluşturulduğu için geçtiğiniz için sayfanın ve `TodoItem` temsil parametresi sayfa tarafından alınır. [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) İçin geçtiğiniz için sayfanın sonra ayarlanır `TodoItem`. Bu zaman sağlar `TodoItemPage` tarafından görüntülenen [ `PushAsync` ](xref:Xamarin.Forms.INavigation.PushAsync(Xamarin.Forms.Page)) yöntemi göstermeyi `TodoItem` olan `ID` ayrıntılı bağlantı içinde yer alır.
 
-## <a name="making-content-available-for-search-indexing"></a>İçerik arama dizin oluşturma için kullanılabilir hale getirme
+## <a name="making-content-available-for-search-indexing"></a>İçerik arama dizini oluşturma için kullanılabilir hale getirme
 
-Ayrıntılı bağlantı tarafından temsil edilen sayfası görüntülenirse, her zaman [ `AppLinkEntry.IsLinkActive` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.IsLinkActive/) özelliği ayarlanabilir `true`. Bu, iOS ve Android sağlar [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) ayrıca örneği yalnızca iOS ve arama dizini oluşturma için kullanılabilir kılar `AppLinkEntry` örneği iletimi için kullanılabilir. İletim hakkında daha fazla bilgi için bkz: [iletimi giriş](~/ios/platform/handoff.md).
+Ayrıntılı bağlantı tarafından temsil edilen sayfası görüntülenirse, her zaman [ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) özelliği ayarlanabilir `true`. İOS ve Android'de bu kılar [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) Ayrıca örnek arama dizini oluşturma için ve yalnızca ios'ta kullanılabilir kılar `AppLinkEntry` örneği iletim için kullanılabilir. İletim hakkında daha fazla bilgi için bkz: [giriş animasyonuna](~/ios/platform/handoff.md).
 
-Aşağıdaki kod örneğinde ayarı gösterilmektedir [ `AppLinkEntry.IsLinkActive` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.IsLinkActive/) özelliğine `true` içinde [ `Page.OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/) geçersiz kıl:
+Aşağıdaki kod örneği ayarı gösterir [ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) özelliğini `true` içinde [ `Page.OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) geçersiz kıl:
 
 ```csharp
 protected override void OnAppearing ()
@@ -183,7 +183,7 @@ protected override void OnAppearing ()
 }
 ```
 
-Benzer şekilde, ne zaman derin bir bağlantı tarafından temsil edilen sayfa gittiğinizde merkezden, [ `AppLinkEntry.IsLinkActive` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.IsLinkActive/) özelliği ayarlanabilir `false`. Bu, iOS ve Android cihazlarda durdurur [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) iOS yalnızca, BT ve arama dizini oluşturma için de tanıtılan örneği durdurur reklam `AppLinkEntry` iletimi için örneği. Bu, gerçekleştirilebilir [ `Page.OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing()/) , aşağıdaki kod örneğinde gösterildiği gibi geçersiz kıl:
+Benzer şekilde, ne zaman derin bir bağlantı tarafından temsil edilen sayfası çıkıldığında liste kutusundan, [ `AppLinkEntry.IsLinkActive` ](xref:Xamarin.Forms.IAppLinkEntry.IsLinkActive) özelliği ayarlanabilir `false`. Bu, iOS ve Android üzerinde durdurur [ `AppLinkEntry` ](xref:Xamarin.Forms.AppLinkEntry) arama dizini oluşturma ve iOS yalnızca BT de tanıtılan örneği durdurur reklam `AppLinkEntry` iletim için örneği. Bu, içinde gerçekleştirilebilir [ `Page.OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) aşağıdaki kod örneğinde gösterildiği gibi geçersiz:
 
 ```csharp
 protected override void OnDisappearing ()
@@ -194,9 +194,9 @@ protected override void OnDisappearing ()
 }
 ```
 
-## <a name="providing-data-to-handoff"></a>Veri iletimi için sağlama
+## <a name="providing-data-to-handoff"></a>İletim için veri sağlama
 
-İos'ta, uygulamaya özgü verileri sayfa dizin oluştururken depolanabilir. Bu veri ekleyerek sağlanır [ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/) olan koleksiyon, bir `Dictionary<string, string>` iletimi içinde kullanılan anahtar-değer çiftlerini depolamak için. İletim, bir etkinlik cihazlarını birini başlatın ve bu etkinliği başka cihazlarını (kullanıcının iCloud hesabıyla tanımlandığı gibi) devam etmek kullanıcı için bir yoldur. Aşağıdaki kod, uygulamaya özgü anahtar-değer çiftleri depolamanın bir örnektir:
+İOS, uygulamaya özgü veri sayfası dizin oluşturulurken depolanabilir. Bu verileri ekleyerek gerçekleştirilir [ `KeyValues` ](xref:Xamarin.Forms.IAppLinkEntry.KeyValues) olan koleksiyon bir `Dictionary<string, string>` iletim içinde kullanılan anahtar-değer çiftlerini depolamak için. İletim kullanıcı cihazlarını birinde bir etkinlik başlatmak ve bu etkinliği başka kullanıcıların cihazlarını (kullanıcının iCloud hesabıyla tarafından tanımlandığı gibi) devam etmek için bir yoldur. Aşağıdaki kod, uygulamaya özgü anahtar-değer çiftlerini depolamak için bir örnek göstermektedir:
 
 ```csharp
 var pageLink = new AppLinkEntry {
@@ -206,29 +206,29 @@ pageLink.KeyValues.Add("appName", App.AppName);
 pageLink.KeyValues.Add("companyName", "Xamarin");
 ```
 
-Depolanan değerleri [ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/) toplama dizini oluşturulmuş sayfa için olan meta verilerde depolanan ve ayrıntılı bir bağlantı içeren (veya başka bir içeriği görüntülemek için Handoff'a kullanıldığında arama sonucu üzerinde kullanıcı dokunur zaman geri yüklenecek oturum açmış aygıt).
+Depolanan değerler [ `KeyValues` ](xref:Xamarin.Forms.IAppLinkEntry.KeyValues) koleksiyon dizinli sayfası için meta veriler depolanır ve kullanıcı ayrıntılı bağlantısını içeren (veya başka içeriği görüntülemek için Handoff'a kullanıldığında bir arama sonucunda dokunduğunda geri yüklenecek cihaz) oturum açma.
 
-Ayrıca, aşağıdaki anahtarları için değerler belirtilebilir:
+Ayrıca şu anahtarlara yönelik değerler belirtilebilir:
 
-- `contentType` – bir `string` dizin oluşturulmuş içerik Tekdüzen türü tanımlayıcısını belirtir. Bu değer için kullanılacak önerilen kuralı dizinli içeriğin bulunduğu sayfa türü adıdır.
-- `associatedWebPage` – bir `string` dizin oluşturulmuş içerik Web'de de görüntülenebilir veya uygulama Safari'nin ayrıntılı bağlantılar destekliyorsa ziyaret etmek için bu web sayfasını temsil eder.
-- `shouldAddToPublicIndex` – bir `string` herhangi birinin `true` veya `false` sonra uygulama iOS cihazında yüklemediniz kullanıcılara sunulabilir Apple'nın genel bulut dizini oluşturulmuş içerik eklemek gerekip gerekmediğini denetler. Yalnızca içeriği ortak dizin oluşturma işlemi için sahip ayarlanmadığından, ancak bunu Apple'nın genel bulut dizini otomatik olarak eklenen gelmez. Daha fazla bilgi için bkz: [ortak arama dizini oluşturma](~/ios/platform/search/nsuseractivity.md). Bu anahtar için ayarlanmalıdır Not `false` kişisel veri eklerken [ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/) koleksiyonu.
+- `contentType` – bir `string` dizinlenmiş içeriği Tekdüzen tür tanımlayıcısını belirtir. Bu değer için kullanılacak önerilen kuralı dizinlenmiş içeriği içeren bir sayfa türü adıdır.
+- `associatedWebPage` – bir `string` dizinlenmiş içeriği web üzerinde de görüntülenebilir veya Safari'nin ayrıntılı bağlantılar uygulamanın desteklediği durumlarda ziyaret etmek için web sayfasını temsil eder.
+- `shouldAddToPublicIndex` – bir `string` herhangi birinin `true` veya `false` uygulama iOS cihazında yüklü olmayan kullanıcılara sunulabilir Apple'nın genel bulut dizini, dizinlenmiş içeriği eklemek gerekip gerekmediğini denetler. Yalnızca içerik genel dizin oluşturma için ayarlandı, ancak bunu Apple'nın genel bulut dizini otomatik olarak eklenmeden bırakılır gelmez. Daha fazla bilgi için [genel arama dizini oluşturma](~/ios/platform/search/nsuseractivity.md). Bu anahtar için ayarlanmalıdır Not `false` kişisel verileri eklerken [ `KeyValues` ](xref:Xamarin.Forms.IAppLinkEntry.KeyValues) koleksiyonu.
 
 > [!NOTE]
-> `KeyValues` Koleksiyonu Android platformunda kullanılan değil.
+> `KeyValues` Koleksiyon Android platformunda kullanılmaz.
 
-İletim hakkında daha fazla bilgi için bkz: [iletimi giriş](~/ios/platform/handoff.md).
+İletim hakkında daha fazla bilgi için bkz: [giriş animasyonuna](~/ios/platform/handoff.md).
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, uygulama dizin kullanmayı ve Xamarin.Forms uygulaması içeriği iOS ve Android cihazlarda aranabilir yapmak için derin bağlama gösterilmektedir. Uygulama dizin oluşturma işlemi birkaç kullandıktan sonra ilgili Aksi takdirde unutulursa arama sonuçlarında görünmesini tarafından ilgili kalmak uygulamaları sağlar.
+Bu makalede, uygulama dizini oluşturma, kullanma ve Xamarin.Forms uygulama içeriğinin iOS ve Android cihazlarda aranabilir hale getirmek için ayrıntılı bağlantı sağlama gösterilmiştir. Uygulama dizini oluşturma birkaç kullandıktan sonra ilgili unutmasına arama sonuçlarında görünmesini tarafından kalmak uygulamalar sağlar.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Derin bağlama (örnek)](https://developer.xamarin.com/samples/xamarin-forms/deeplinking/)
+- [Ayrıntılı bağlantı (örnek)](https://developer.xamarin.com/samples/xamarin-forms/deeplinking/)
 - [iOS arama API'leri](~/ios/platform/search/index.md)
-- [Android 6.0 uygulama olarak bağlama](~/android/platform/app-linking.md)
-- [AppLinkEntry](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/)
-- [IAppLinkEntry](https://developer.xamarin.com/api/type/Xamarin.Forms.IAppLinkEntry/)
-- [IAppLinks](https://developer.xamarin.com/api/type/Xamarin.Forms.IAppLinks/)
+- [Android 6.0 uygulama bağlama](~/android/platform/app-linking.md)
+- [AppLinkEntry](xref:Xamarin.Forms.AppLinkEntry)
+- [IAppLinkEntry](xref:Xamarin.Forms.IAppLinkEntry)
+- [IAppLinks](xref:Xamarin.Forms.IAppLinks)

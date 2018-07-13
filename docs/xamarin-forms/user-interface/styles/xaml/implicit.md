@@ -1,28 +1,28 @@
 ---
-title: Xamarin.Forms örtük stilleri
-description: Örtülü bir stil stili başvurmak için her denetim gerektirmeden aynı TargetType tüm denetimleri tarafından kullanılan biridir.
+title: Xamarin.Forms içinde örtük stilleri
+description: Örtülü bir stil stili başvurmak için her denetim gerektirmeden aynı TargetType tüm denetimler tarafından kullanılan biridir.
 ms.prod: xamarin
 ms.assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 9444d6d8d743fb63496de31e23291b24d9d09993
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 277be51c242521f52e9b1e162226ae8137e7b133
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245402"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995520"
 ---
-# <a name="implicit-styles-in-xamarinforms"></a>Xamarin.Forms örtük stilleri
+# <a name="implicit-styles-in-xamarinforms"></a>Xamarin.Forms içinde örtük stilleri
 
-_Örtülü bir stil stili başvurmak için her denetim gerektirmeden aynı TargetType tüm denetimleri tarafından kullanılan biridir._
+_Örtülü bir stil stili başvurmak için her denetim gerektirmeden aynı TargetType tüm denetimler tarafından kullanılan biridir._
 
-## <a name="creating-an-implicit-style-in-xaml"></a>XAML'de örtülü bir stil oluşturma
+## <a name="creating-an-implicit-style-in-xaml"></a>XAML içinde örtülü bir stil oluşturma
 
-Bildirmek için bir [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) sayfa düzeyinde bir [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) sayfa ve ardından bir veya daha fazla bilgi için eklenmelidir `Style` bildirimleri dahil edilebilir `ResourceDictionary`. A `Style` yapılır *örtük* değil belirterek bir `x:Key` özniteliği. Stil sonra eşleşen görsel öğelere uygulanır `TargetType` tam olarak, ancak türetilmiş öğelere `TargetType` değeri.
+Bildirmek için bir [ `Style` ](xref:Xamarin.Forms.Style) sayfa düzeyinde bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) sayfası ve ardından bir veya daha fazla bilgi için eklenmelidir `Style` bildirimleri dahil edilebilir `ResourceDictionary`. A `Style` yapılan *örtük* değil belirterek bir `x:Key` özniteliği. Stil ardından eşleşen görsel öğelere uygulanacak `TargetType` tam olarak, ancak olmayan türetilmiş öğeler `TargetType` değeri.
 
-Aşağıdaki örnekte gösterildiği kod bir *örtük* stili XAML'de bir sayfanın içinde bildirilen `ResourceDictionary`ve sayfanın uygulanan [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) örnekleri:
+Aşağıdaki kod örnekte gösterildiği bir *örtük* stili bir sayfanın içinde XAML içinde bildirilen `ResourceDictionary`ve sayfanın uygulanan [ `Entry` ](xref:Xamarin.Forms.Entry) örnekleri:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" Icon="xaml.png">
@@ -49,15 +49,15 @@ Aşağıdaki örnekte gösterildiği kod bir *örtük* stili XAML'de bir sayfan�
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Tek bir tanımlar *örtük* sayfanın uygulanan stil [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) örnekleri. `Style` Diğer görünüm seçenekleri de ayarlanırken sarı bir arka plan üzerinde mavi metne görüntülemek için kullanılır. `Style` Sayfanın eklenen [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) belirtmeden bir `x:Key` özniteliği. Bu nedenle, `Style` tümüne uygulanır `Entry` bunların eşleşmesi gibi örtük olarak örnekleri [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) özelliği `Style` tam olarak. Ancak, `Style` uygulanmaz `CustomEntry` bir altsınıflanmış olan örneği `Entry`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
+[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Tek bir tanımlar *örtük* sayfanın uygulanan stil [ `Entry` ](xref:Xamarin.Forms.Entry) örnekleri. `Style` Diğer görünüm seçenekleri de ayarlanırken sarı bir arka plan üzerinde mavi metin görüntülemek için kullanılır. `Style` Sayfanın eklenen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) belirtmeden bir `x:Key` özniteliği. Bu nedenle, `Style` tümüne uygulanan `Entry` eşleşecek şekilde örtük olarak örnekler [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) özelliği `Style` tam olarak. Ancak, `Style` uygulanmaz `CustomEntry` bir alt sınıflanan olan örneği `Entry`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünümünü sonuçlanır:
 
-[![](implicit-images/implicit-styles.png "Örtülü stiller örnek")](implicit-images/implicit-styles-large.png#lightbox "örtülü stiller örneği")
+[![](implicit-images/implicit-styles.png "Örtük stiller örnek")](implicit-images/implicit-styles-large.png#lightbox "örtük stilleri örneği")
 
-Ayrıca, dördüncü [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) geçersiz kılmaları [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) ve [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) farklı örtükstilözelliklerini`Color`değerleri.
+Ayrıca, dördüncü [ `Entry` ](xref:Xamarin.Forms.Entry) geçersiz kılmalar [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) ve [ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor) farklı örtükstilözellikleri`Color`değerleri.
 
 ### <a name="creating-an-implicit-style-at-the-control-level"></a>Denetim düzeyi örtülü bir stil oluşturma
 
-Oluşturma yanı sıra *örtük* stilleri sayfa düzeyinde, bunlar da oluşturulabilir denetim düzeyinde aşağıdaki kod örneğinde gösterildiği gibi:
+Oluşturmaya ek olarak *örtük* sayfa düzeyinde stilleri, bunlar da oluşturulabilir denetimi düzeyinde aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" Icon="xaml.png">
@@ -78,13 +78,13 @@ Oluşturma yanı sıra *örtük* stilleri sayfa düzeyinde, bunlar da oluşturul
 </ContentPage>
 ```
 
-Bu örnekte, *örtük* [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) atandığı [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) koleksiyonu [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)denetim. *Örtük* stili, ardından Denetim ve alt öğelerini uygulanabilir.
+Bu örnekte, *örtük* [ `Style` ](xref:Xamarin.Forms.Style) atandığı [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) koleksiyonunu [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)denetimi. *Örtük* stili, ardından Denetim ve alt öğeleri için uygulanabilir.
 
-Uygulamanın içinde stilleri oluşturma hakkında bilgi için [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), bkz: [genel stiller](~/xamarin-forms/user-interface/styles/application.md).
+Bir uygulamanın içinde stilleri oluşturma hakkında bilgi için [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), bkz: [genel stiller](~/xamarin-forms/user-interface/styles/application.md).
 
 ## <a name="creating-an-implicit-style-in-c35"></a>C'de örtülü bir stil oluşturma&#35;
 
-[`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) örnekleri bir sayfanın eklenebilir [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) yeni oluşturarak koleksiyonu C# [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)ve ardından ekleyerek `Style` için örnekler `ResourceDictionary`gösterildiği gibi Aşağıdaki kod örneği:
+[`Style`](xref:Xamarin.Forms.Style) bir sayfanın örnekleri eklenebilir [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) oluşturarak yeni bir C# koleksiyonu [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ve ardından ekleyerek `Style` için örnekler `ResourceDictionary`gösterildiği Aşağıdaki kod örneği:
 
 ```csharp
 public class ImplicitStylesPageCS : ContentPage
@@ -115,19 +115,19 @@ public class ImplicitStylesPageCS : ContentPage
 }
 ```
 
-Tek bir oluşturucu tanımlar *örtük* sayfanın uygulanan stil [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) örnekleri. `Style` Diğer görünüm seçenekleri de ayarlanırken sarı bir arka plan üzerinde mavi metne görüntülemek için kullanılır. `Style` Sayfanın eklenen [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) belirtmeden bir `key` dize. Bu nedenle, `Style` tümüne uygulanır `Entry` bunların eşleşmesi gibi örtük olarak örnekleri [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) özelliği `Style` tam olarak. Ancak, `Style` uygulanmaz `CustomEntry` bir altsınıflanmış olan örneği `Entry`.
+Tek bir oluşturucu tanımlar *örtük* sayfanın uygulanan stil [ `Entry` ](xref:Xamarin.Forms.Entry) örnekleri. `Style` Diğer görünüm seçenekleri de ayarlanırken sarı bir arka plan üzerinde mavi metin görüntülemek için kullanılır. `Style` Sayfanın eklenen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) belirtmeden bir `key` dize. Bu nedenle, `Style` tümüne uygulanan `Entry` eşleşecek şekilde örtük olarak örnekler [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) özelliği `Style` tam olarak. Ancak, `Style` uygulanmaz `CustomEntry` bir alt sınıflanan olan örneği `Entry`.
 
 ## <a name="summary"></a>Özet
 
-Bir *örtük* stili aynı tüm görsel öğeleri tarafından kullanılan bir olduğundan [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/), stil başvurmak için her denetim gerektirmeden. A `Style` yapılır *örtük* değil belirterek bir `x:Key` özniteliği. Bunun yerine, `x:Key` öznitelik değeri otomatik olarak olacak [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) özelliği.
+Bir *örtük* stili, aynı tüm görsel öğeleri tarafından kullanılan bir [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType), stili başvurmak için her denetim gerektirmeden. A `Style` yapılan *örtük* değil belirterek bir `x:Key` özniteliği. Bunun yerine, `x:Key` öznitelik değerini otomatik olarak olacak [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) özelliği.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Temel stilleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+- [Basit stiller (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Stilleri (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [stili](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Ayarlama](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Stil](xref:Xamarin.Forms.Style)
+- [Ayarlayıcı](xref:Xamarin.Forms.Setter)

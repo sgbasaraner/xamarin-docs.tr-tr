@@ -1,41 +1,41 @@
 ---
-title: Cihaz yönlendirmesini denetleniyor
-description: Bu makalede Xamarin.Forms DependencyService sınıfı cihaz yönlendirmesini paylaşılan koddan erişmek için nasıl kullanılacağı açıklanmaktadır.
+title: Cihaz yönünü denetleme
+description: Bu makalede, cihaz yönü paylaşılan koddan erişmek için Xamarin.Forms DependencyService sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 5F60975F-47DB-4361-B97C-2290D6F77D2F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: e21531b7f39d3876d91eea8fa6cb9e409a9deffa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 620404a217b2e8a31192ae6613dcec023ac366cd
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240062"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995647"
 ---
-# <a name="checking-device-orientation"></a>Cihaz yönlendirmesini denetleniyor
+# <a name="checking-device-orientation"></a>Cihaz yönünü denetleme
 
-Bu makalede kullanmak için size yol gösterecektir [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) her platformda yerel API'lerini kullanarak paylaşılan kodundan cihaz yönlendirmesini denetlemek için. Var olan bu kılavuz temel `DeviceOrientation` Ali Özgür göre eklenti. Bkz: [GitHub deposuna](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) daha fazla bilgi için.
+Bu makalede kullanmak için size yol gösterecek [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) cihaz yönü her platformda yerel API'lerini kullanarak paylaşılan koddan denetlemek için. Bu izlenecek yol var olan temel `DeviceOrientation` eklenti tarafından Ali Özgür. Bkz: [GitHub deposunu](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) daha fazla bilgi için.
 
-- **[Arabirimi oluşturma](#Creating_the_Interface)**  &ndash; anlamak arabirimi nasıl paylaşılan kod içinde oluşturulur.
-- **[iOS uygulaması](#iOS_Implementation)**  &ndash; iOS için yerel kodda arabirimini uygulayan öğrenin.
-- **[Android uygulaması](#Android_Implementation)**  &ndash; arabirimini yerel kodda Android için uygulama öğrenin.
-- **[UWP uygulaması](#WindowsImplementation)**  &ndash; arabirimini yerel kodda Evrensel Windows Platformu (UWP) uygulaması öğrenin.
-- **[Paylaşılan kod içinde uygulama](#Implementing_in_Shared_Code)**  &ndash; nasıl kullanacağınızı öğrenin `DependencyService` paylaşılan koddan yerel uygulama çağırmak için.
+- **[Arabirimi oluşturma](#Creating_the_Interface)**  &ndash; anlamak arabirimine nasıl paylaşılan kod oluşturulur.
+- **[iOS uygulaması](#iOS_Implementation)**  &ndash; iOS için yerel kod içinde arabirim uygulamak hakkında bilgi edinin.
+- **[Android uygulaması](#Android_Implementation)**  &ndash; arabirimi, Android için yerel koda uygulanması hakkında bilgi edinin.
+- **[UWP uygulaması](#WindowsImplementation)**  &ndash; arabirimi, Evrensel Windows Platformu (UWP) için yerel koda uygulanması hakkında bilgi edinin.
+- **[Paylaşılan kod içinde uygulama](#Implementing_in_Shared_Code)**  &ndash; nasıl kullanacağınızı öğrenin `DependencyService` paylaşılan kod yerel uygulamasından çağırmak için.
 
-Uygulamayı kullanarak `DependencyService` aşağıdaki yapı ayarlanmıştır:
+Uygulamayı kullanarak `DependencyService` aşağıdaki yapıya sahip:
 
 ![](device-orientation-images/orientation-diagram.png "DependencyService uygulama yapısı")
 
 > [!NOTE]
-> Cihaz dikey veya yatay yönde paylaşılan kodda gösterildiği gibi gerekmediğini mümkündür içinde [aygıt Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). Bu makalede açıklanan yöntemi yerel özellikleri cihazın ters olup olmadığı dahil olmak üzere yönlendirme hakkında daha fazla bilgi almak için kullanır.
+> Gösterildiği gibi cihaz dikey veya yatay yönde paylaşılan kod içinde olup olmadığını algılamak mümkündür içinde [cihaz Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). Bu makalede açıklanan yöntemi, cihaz tersyüz olup olmadığı dahil yönlendirme hakkında daha fazla bilgi almak için yerel özellikleri kullanır.
 
 <a name="Creating_the_Interface" />
 
 ## <a name="creating-the-interface"></a>Arabirimi oluşturma
 
-İlk olarak, bir arabirim uygulamak için planlama işlevselliği ifade paylaşılan kod içinde oluşturun. Bu örnekte, tek bir yöntem arabirimi içerir:
+İlk olarak bir arabirim uygulamak için planlama işlevselliğini ifade paylaşılan kodda oluşturun. Bu örnekte, tek bir yöntem arabirimi içerir:
 
 ```csharp
 namespace DependencyServiceSample.Abstractions
@@ -54,16 +54,16 @@ namespace DependencyServiceSample.Abstractions
 }
 ```
 
-Bu arabirim paylaşılan kodda karşı kodlama Xamarin.Forms uygulaması her platformda cihaz yönlendirmesini API'leri erişmesine izin verir.
+Paylaşılan kodun bu arabirimde karşı kodlama her platformda cihaz yönü API'leri erişmek Xamarin.Forms uygulaması izin verir.
 
 > [!NOTE]
-> Arabirimini uygulayan sınıflar çalışmak için parametresiz bir oluşturucusu olmalıdır `DependencyService`.
+> Arabirimini uygulayan sınıflar, çalışmak için parametresiz bir oluşturucusu olmalıdır `DependencyService`.
 
 <a name="iOS_Implementation" />
 
 ## <a name="ios-implementation"></a>iOS uygulaması
 
-Arabirim her platforma özgü uygulama projesinde uygulanmalıdır. Sınıf parametresiz bir oluşturucuya sahip Not böylece `DependencyService` yeni örnekleri oluşturabilirsiniz:
+Her platforma özgü uygulama projesinde arabirimi uygulanmalıdır. Sınıfı, parametresiz bir oluşturucu olduğuna dikkat edin böylece `DependencyService` yeni örnekleri oluşturabilirsiniz:
 
 ```csharp
 using UIKit;
@@ -87,7 +87,7 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-Son olarak, bu eklemek `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` deyimleri:
+Son olarak, bu ekleme `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış olan tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` ifadeleri:
 
 ```csharp
 using UIKit;
@@ -99,13 +99,13 @@ namespace DependencyServiceSample.iOS {
     ...
 ```
 
-Bu öznitelik sınıfı uygulaması kaydeder `IDeviceOrientation` anlamına arabirimi `DependencyService.Get<IDeviceOrientation>` paylaşılan kodda bir örneğini oluşturmak için kullanılabilir.
+Bu öznitelik sınıfı uygulaması kaydeder. `IDeviceOrientation` anlamına arabirimi `DependencyService.Get<IDeviceOrientation>` paylaşılan kodda bir örneğini oluşturmak için kullanılabilir.
 
 <a name="Android_Implementation" />
 
 ## <a name="android-implementation"></a>Android uygulaması
 
-Aşağıdaki kod uygulayan `IDeviceOrientation` android'de:
+Aşağıdaki kod uygulayan `IDeviceOrientation` Android:
 
 ```csharp
 using DependencyServiceSample.Droid;
@@ -131,7 +131,7 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-Bu ekleme `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` deyimleri:
+Bu ekleme `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış olan tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` ifadeleri:
 
 ```csharp
 using DependencyServiceSample.Droid; //enables registration outside of namespace
@@ -142,11 +142,11 @@ namespace DependencyServiceSample.Droid {
     ...
 ```
 
-Bu öznitelik sınıfı uygulaması kaydeder `IDeviceOrientaiton` anlamına arabirimi `DependencyService.Get<IDeviceOrientation>` kullanılabilir paylaşılan kod bir örneğini oluşturabilirsiniz.
+Bu öznitelik sınıfı uygulaması kaydeder. `IDeviceOrientaiton` anlamına arabirimi `DependencyService.Get<IDeviceOrientation>` kullanılabilir paylaşılan kodun bir örneğini oluşturabilirsiniz.
 
 <a name="WindowsImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>Evrensel Windows Platform uygulaması
+## <a name="universal-windows-platform-implementation"></a>Evrensel Windows platformu uygulaması
 
 Aşağıdaki kod uygulayan `IDeviceOrientation` Evrensel Windows platformu arabiriminde:
 
@@ -171,7 +171,7 @@ namespace DependencyServiceSample.WindowsPhone
 }
 ```
 
-Ekleme `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` deyimleri:
+Ekleme `[assembly]` öznitelik sınıfı yukarıda (ve tanımlanmış olan tüm ad alanlarını dışında) dahil olmak üzere tüm gerekli `using` ifadeleri:
 
 ```csharp
 using DependencyServiceSample.WindowsPhone; //enables registration outside of namespace
@@ -181,13 +181,13 @@ namespace DependencyServiceSample.WindowsPhone {
     ...
 ```
 
-Bu öznitelik sınıfı uygulaması kaydeder `DeviceOrientationImplementation` anlamına arabirimi `DependencyService.Get<IDeviceOrientation>` kullanılabilir paylaşılan kod bir örneğini oluşturabilirsiniz.
+Bu öznitelik sınıfı uygulaması kaydeder. `DeviceOrientationImplementation` anlamına arabirimi `DependencyService.Get<IDeviceOrientation>` kullanılabilir paylaşılan kodun bir örneğini oluşturabilirsiniz.
 
 <a name="Implementing_in_Shared_Code" />
 
 ## <a name="implementing-in-shared-code"></a>Paylaşılan kod içinde uygulama
 
-Biz yazma ve erişen paylaşılan kodu test artık `IDeviceOrientation` arabirimi. Bu basit sayfası üzerinde aygıt yönlendirme göre kendi metin güncelleştirmeleri bir düğme içerir. Kullandığı `DependencyService` örneğini almak için `IDeviceOrientation` arabirimi &ndash; çalışma zamanında bu örneği yerel SDK tam erişime sahip platforma özgü uygulaması olacaktır:
+Şimdi biz yazma ve test erişen paylaşılan kod `IDeviceOrientation` arabirimi. Bu basit sayfa cihaz yönlendirmeyi temel alarak kendi metni güncelleştiren bir düğme içerir. Kullandığı `DependencyService` örneğini almak için `IDeviceOrientation` arabirimi &ndash; çalışma zamanında bu örneği yerel SDK tam erişimi olan platforma özgü uygulama olacak:
 
 ```csharp
 public MainPage ()
@@ -215,9 +215,9 @@ public MainPage ()
 }
 ```
 
-Bu uygulamayı iOS, Android veya Windows platformları çalıştıran ve düğmesine basarak neden olur cihazın yönü güncelleştirme düğmenin metni.
+Bu uygulama iOS, Android veya Windows platformları üzerinde çalışan ve düğmesine basarak sonuçlanır cihazın yönle güncelleştirme düğmenin metni.
 
-![](device-orientation-images/orientation.png "Cihaz yönlendirmesini örnek")
+![](device-orientation-images/orientation.png "Cihaz yönü örneği")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

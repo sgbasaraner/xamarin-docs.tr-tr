@@ -1,53 +1,53 @@
 ---
 title: Xamarin.Forms giriş
-description: Bu makalede Xamarin.Forms girişi sınıfı tek satırlı metin veya parola giriş uygulamada kabul etmek için nasıl kullanılacağı açıklanmaktadır.
+description: Bu makalede, tek satırlı metin veya bir uygulamadaki parola girişi kabul edecek şekilde Xamarin.Forms giriş sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: b6188b986589a56229ad2e092d4100ff3f75dbe4
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 95afdfde878759d4a598e200d16fe6fb1fa2005e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245559"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998254"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms giriş
 
 _Tek satırlı metin veya parola giriş_
 
-Xamarin.Forms `Entry` tek satırlı metin girişi için kullanılır. `Entry`Gibi `Editor` görüntülemek için birden çok klavye türlerini destekler. Ayrıca, `Entry` parola alanı kullanılabilir.
+Xamarin.Forms `Entry` tek satırlı metin girişi için kullanılır. `Entry`Gibi `Editor` görüntüleme, birden fazla klavye türlerini destekler. Ayrıca, `Entry` parola alanı kullanılabilir.
 
 ## <a name="display-customization"></a>Görüntü özelleştirme
 
-### <a name="setting-and-reading-text"></a>Ve ayarlama ve metin okuma
+### <a name="setting-and-reading-text"></a>Metin okuma ve ayarlama
 
-`Entry`, Diğer metin sunan görünümleri gibi sunan `Text` özelliği. Bu özelliği ayarlamak ve tarafından sunulan metin okumak için kullanılan `Entry`. Aşağıdaki örnek, ayarı gösterir `Text` XAML özelliğinde:
+`Entry`, Metin sunma diğer görünümleri gibi sunan `Text` özelliği. Bu özellik tarafından sunulan metni okuyun ve ayarlamak için kullanılan `Entry`. Aşağıdaki örnek ayar gösterir `Text` XAML özelliği:
 
 ```xaml
 <Entry Text="I am an Entry" />
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var MyEntry = new Entry { Text = "I am an Entry" };
 ```
 
-Metin okuma erişimi `Text` özelliği, C#:
+Metin okuma erişimi `Text` C# özelliği:
 
 ```csharp
 var text = MyEntry.Text;
 ```
 
 > [!NOTE]
-> Genişliğini bir `Entry` ayarlayarak tanımlanabilir kendi `WidthRequest` özelliği. Genişliğini bağlı olmayan bir `Entry` tanımlanmakta değeri temel alarak kendi `Text` özelliği.
+> Genişliğini bir `Entry` ayarlayarak tanımlanabilir, `WidthRequest` özelliği. Genişliğini bağlı olmayan bir `Entry` tanımlanan değerini temel alarak kendi `Text` özelliği.
 
 ### <a name="limiting-input-length"></a>Giriş sınırlandırma
 
-[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Özelliği için izin verilen giriş uzunluğunu sınırlamak için kullanılabilir [ `Entry` ](xref:Xamarin.Forms.Entry). Bu özellik, pozitif bir tamsayı olarak ayarlamanız gerekir:
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Özelliği için izin verilen giriş uzunluğu sınırlamak için kullanılabilir [ `Entry` ](xref:Xamarin.Forms.Entry). Bu özellik, pozitif bir tamsayı olarak ayarlanmalıdır:
 
 ```xaml
 <Entry ... MaxLength="10" />
@@ -57,28 +57,28 @@ var text = MyEntry.Text;
 var entry = new Entry { ... MaxLength = 10 };
 ```
 
-A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) özelliği değerinin 0 gösterir herhangi bir giriş izin verilmeyeceğini ve değeri `int.MaxValue`, varsayılan değeri olduğu bir [ `Entry` ](xref:Xamarin.Forms.Entry), olduğunu gösterir yok etkili girilebilir karakter sayısı sınırı.
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) özellik değerinin 0 gösterir müdahalesi izin verilmeyeceğini, değerini `int.MaxValue`, varsayılan değeri olduğu bir [ `Entry` ](xref:Xamarin.Forms.Entry), olduğunu gösterir yok etkili girilebilir karakter sayısını sınırlama.
 
-### <a name="keyboards"></a>Klavyeler
+### <a name="keyboards"></a>Klavye
 
-Kullanıcıların etkileşimli olarak yükleyen sunulan klavye bir `Entry` aracılığıyla programlı olarak ayarlanabilir `Keyboard` özelliği.
+Kullanıcılar ile etkileşim kurduğunuzda, sunulan klavye bir `Entry` aracılığıyla programlı olarak ayarlanabilir `Keyboard` özelliği.
 
-Klavye türü için Seçenekler şunlardır:
+Klavye türü seçenekleri şunlardır:
 
 - **Varsayılan** &ndash; varsayılan klavye
-- **Sohbet** &ndash; metin & yerler için kullanılan emoji nerede yararlı
-- **E-posta** &ndash; e-posta adreslerini girerken kullanılan
-- **Sayısal** &ndash; numaralarını girerken kullanılan
-- **Telefon** &ndash; telefon numaralarını girerken kullanılan
+- **Sohbet** &ndash; telefonunuza mesaj & basamak için kullanılan emoji burada kullanışlıdır
+- **E-posta** &ndash; kullanılması için e-posta adresi girme
+- **Sayısal** &ndash; kullanılması için sayı girme
+- **Telefon** &ndash; telefon numaraları girerken kullanılan
 - **URL** &ndash; dosya yolları ve web adresleri girmek için kullanılan
 
-Var olan bir [her klavye örneği](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) bizim tarif bölümünde.
+Var olan bir [her klavye örneği](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) tarifler bölümümüzdeki.
 
-### <a name="enabling-and-disabling-spell-checking"></a>Etkinleştirme ve yazım denetimi devre dışı bırakma
+### <a name="enabling-and-disabling-spell-checking"></a>Yazım denetimi devre dışı bırakma ve etkinleştirme
 
-[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Özellik denetimleri olup yazım etkin olmadığı denetleniyor. Varsayılan olarak, özellik kümesine `true`. Metin kullanıcının girdiği gibi yazım hatalarını belirtilir.
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Özellik denetimleri olup yazım denetimi etkinleştirildi. Varsayılan olarak ayarlandığı `true`. Yazım hatası, kullanıcının girdiği metin olarak belirtilir.
 
-Ancak, bir kullanıcı adı girerek gibi bazı metin girişi senaryolar için yazım denetimi negatif bir deneyim ve bunu devre dışı bırakılmalıdır ayarlayarak sağlar [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliğine `false`:
+Ancak, bir kullanıcı adı girerek gibi bazı metin girişi senaryolar için yazım denetimi negatif bir deneyim ve bunu devre dışı bırakılmalıdır ayarlayarak sağlar [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliğini `false`:
 
 ```xaml
 <Entry ... IsSpellCheckEnabled="false" />
@@ -89,35 +89,35 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> Zaman [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliği ayarlanmış `false`ve özel bir klavye kullanılmadığından, yerel yazım denetimi devre dışı bırakılacak. Ancak, bir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sahip olan yazım devre dışı bırakır kümesi denetlemesi gibi [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` özelliği yoksayılır. Bu nedenle, özellik için yazım denetimi etkinleştirmek için kullanılamaz bir `Keyboard` , açıkça onu devre dışı bırakır.
+> Zaman [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliği `false`ve özel bir klavye kullanılmıyor, yerel yazım denetimi devre dışı bırakılır. Ancak, bir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sahip olan yazım devre dışı bırakan kümesi denetleniyor, gibi [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` özelliği yok sayılır. Bu nedenle, özellik için yazım denetimini etkinleştirme kullanılamaz bir `Keyboard` , açıkça bırakır.
 
 ### <a name="placeholders"></a>Yer tutucuları
 
-`Entry` kullanıcı girişi depolamayın yer tutucu metin göstermek için ayarlanabilir. Uygulamada, bu çok formlarında belirli bir alan için uygun olan içerik açıklamak için görülür. Yer tutucu metin rengi özelleştirilemez ve bakılmaksızın aynı olacak `TextColor` ayarı. Tasarımınız için özel bir yer tutucu renk çağırıyorsa, geri döner gerekir bir [özel Oluşturucu](). Aşağıdaki oluşturacak bir `Entry` XAML'de yer tutucu olarak "Username" ile:
+`Entry` kullanıcı girişi işlendiğinde değil yer tutucu metin göstermek için ayarlanabilir. Uygulamada, bu çok formlarında belirli bir alan için uygun olan içerik açıklamak için görülür. Yer tutucu metin rengi özelleştirilemiyor ve bakılmaksızın aynı olacak `TextColor` ayarı. Tasarımınızı için özel bir yer tutucu rengi çağırırsa, geri döner gerekecektir bir [özel Oluşturucu](). Aşağıdaki oluşturacak bir `Entry` XAML içinde yer tutucu olarak "Username" ile:
 
 ```xaml
 <Entry Placeholder="Username" />
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var MyEntry = new Entry { Placeholder = "Username" };
 ```
 
-![](entry-images/placeholder.png "Giriş yer tutucu örneği")
+![](entry-images/placeholder.png "Yer tutucu örnek giriş")
 
-### <a name="password-fields"></a>Parola alanları
+### <a name="password-fields"></a>Parola alanı
 
-`Entry` sağlar `IsPassword` özelliği. Zaman `IsPassword` olan `true`, alanın içeriği siyah daireler olarak sunulur:
+`Entry` sağlar `IsPassword` özelliği. Zaman `IsPassword` olduğu `true`, alanın içeriğini Siyah daire sunulur:
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <Entry IsPassword="true" />
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var MyEntry = new Entry { IsPassword = true };
@@ -125,15 +125,15 @@ var MyEntry = new Entry { IsPassword = true };
 
 ![](entry-images/password.png "Giriş IsPassword örneği")
 
-Yer tutucuları örnekleriyle kullanılan `Entry` parola alanlar olarak yapılandırılır:
+Yer tutucuları örnekleriyle kullanılan `Entry` parola alanları olarak yapılandırılır:
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <Entry IsPassword="true" Placeholder="Password" />
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
@@ -144,59 +144,59 @@ var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 
 ### <a name="colors"></a>Renkleri
 
-Giriş, özel bir arka plan ve metin renkleri bağlanabilirse aşağıdakiler aracılığıyla kullanmak üzere ayarlanabilir:
+Giriş, özel bir arka plan ve metin renklerini aşağıdaki bağlanabilir özellikler aracılığıyla ayarlanabilir:
 
-- **TextColor** &ndash; metin rengini belirler.
+- **TextColor** &ndash; metnin rengini ayarlar.
 - **BackgroundColor** &ndash; gösterilen metin rengini belirler.
 
-Renkler her platformda kullanılabilir olacağından emin olmak özellikle dikkatli gereklidir. Her platform için metin ve arka plan renklerini farklı Varsayılanları olduğundan, genellikle bir ayarlarsanız her ikisi de ayarlamanız gerekir.
+Özel renkler her platformda kullanılabilir olmasını sağlamak gereklidir. Her platform için metin ve arkaplan renklerini varsayılan değerleri farklı olduğundan, genellikle bir ayarlarsanız her ikisi de ayarlamanız gerekir.
 
-Bir giriş metin rengini ayarlamak için aşağıdaki kodu kullanın:
+Bir girdinin metin rengini ayarlamak için aşağıdaki kodu kullanın:
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <Entry TextColor="Green" />
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var entry = new Entry();
 entry.TextColor = Color.Green;
 ```
 
-![](entry-images/textcolor.png "Giriş TextColor örneği")
+![](entry-images/textcolor.png "TextColor örnek giriş")
 
 Yer tutucu olmadığına dikkat edin etkilenen tarafından belirtilen `TextColor`.
 
-XAML'de arka plan rengini ayarlamak için:
+XAML içinde arka plan rengini ayarlamak için:
 
 ```xaml
 <Entry BackgroundColor="#2c3e50" />
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var entry = new Entry();
 entry.BackgroundColor = Color.FromHex("#2c3e50");
 ```
 
-![](entry-images/textbackgroundcolor.png "Giriş BackgroundColor örneği")
+![](entry-images/textbackgroundcolor.png "BackgroundColor örnek giriş")
 
-Seçtiğiniz arka plan ve metin renklerini her platformda kullanılabilir ve herhangi bir yer tutucu metin soyutlamaması yok emin olmak dikkatli olun.
+Seçtiğiniz arka plan ve metin renklerini her platformda kullanılabilir ve herhangi bir yer tutucu metin gizlememeniz yoksa emin olmak dikkatli olun.
 
 ## <a name="events-and-interactivity"></a>Olaylar ve etkileşim
 
 Giriş iki olayları gösterir:
 
-- [TextChanged](http://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) &ndash; giriş metni değiştirir tetiklenir. Metin önce ve sonra değişiklik sağlar.
-- [Tamamlanan](http://developer.xamarin.com/api/event/Xamarin.Forms.Entry.Completed/) &ndash; klavyede return tuşuna basarak, kullanıcı giriş sona erdi tetiklenir.
+- [TextChanged](xref:Xamarin.Forms.Entry.TextChanged) &ndash; giriş metni değiştiğinde harekete geçirilen. Metin önce ve sonra değişiklik sağlar.
+- [Tamamlanan](xref:Xamarin.Forms.Entry.Completed) &ndash; kullanıcı girişi klavyede return tuşuna basarak sona erdiğinde oluşturulur.
 
 ### <a name="completed"></a>Tamamlandı
 
-`Completed` Olay tamamlanması için bir girişi ile etkileşim tepki göstermek için kullanılır. `Completed` kullanıcı girişi bir alanla klavyede return tuşuna girerek sona erdiğinde tetiklenir. Olayı için gönderen çıkarmadan bir genel olay işleyici işleyicisidir ve `EventArgs`:
+`Completed` Olay bir girişi ile etkileşim tamamlanması için tepki vermek için kullanılır. `Completed` kullanıcı girişi bir alanla klavyede return tuşuna girerek sona erdiğinde ortaya çıkar. Olay işleyicisi gönderen alma bir genel olay işleyicisidir ve `EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -205,7 +205,7 @@ void Entry_Completed (object sender, EventArgs e)
 }
 ```
 
-Tamamlanan Olay XAML'de abone:
+Tamamlanan Olay XAML içinde abone:
 
 ```xaml
 <Entry Completed="Entry_Completed" />
@@ -220,9 +220,9 @@ entry.Completed += Entry_Completed;
 
 ### <a name="textchanged"></a>TextChanged
 
-`TextChanged` Olay, bir alanın içeriği değişikliği tepki göstermek için kullanılır.
+`TextChanged` Olay, bir alanın içeriğini bir değişiklik için tepki vermek için kullanılır.
 
-`TextChanged` Her tetiklenir `Text` , `Entry` değişiklikler. Olay işleyicisi örneği alır `TextChangedEventArgs`. `TextChangedEventArgs` eski ve yeni değerlerine erişim sağlayan `Entry` `Text` aracılığıyla `OldTextValue` ve `NewTextValue` özellikleri:
+`TextChanged` ne zaman tetiklenir `Text` , `Entry` değişiklikler. Olay işleyicisi örneğini alır `TextChangedEventArgs`. `TextChangedEventArgs` eski ve yeni değerlerine erişim sağlayan `Entry` `Text` aracılığıyla `OldTextValue` ve `NewTextValue` özellikleri:
 
 ```csharp
 void Entry_TextChanged (object sender, TextChangedEventArgs e)
@@ -232,7 +232,7 @@ void Entry_TextChanged (object sender, TextChangedEventArgs e)
 }
 ```
 
-`TextChanged` Olay abone olmak için XAML içinde:
+`TextChanged` Olay abone olabilir XAML içinde:
 
 ```xaml
 <Entry TextChanged="Entry_TextChanged" />
@@ -249,4 +249,4 @@ entry.TextChanged += Entry_TextChanged;
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Metin (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [Giriş API](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)
+- [Giriş API'si](xref:Xamarin.Forms.Entry)

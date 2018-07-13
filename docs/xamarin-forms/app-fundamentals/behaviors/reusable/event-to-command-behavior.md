@@ -1,46 +1,46 @@
 ---
 title: Yeniden kullanılabilir EventToCommandBehavior
-description: Davranışları komutları ile etkileşim kurmak için tasarlanmamıştır denetimleri komutlarını ilişkilendirmek için kullanılabilir. Bu makalede, bir olay başlatıldığında bir komut çağrılacak Xamarin.Forms davranış kullanarak gösterilmektedir.
+description: Davranışlar, komutları ile etkileşim kurmak için tasarlanmamıştır denetimleri komutlarını ilişkilendirmek için kullanılabilir. Bu makalede, bir olay oluşturulduğunda çağırmak için bir Xamarin.Forms davranışı kullanmayı gösterir.
 ms.prod: xamarin
 ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: e89400c74c3d1afbf8954d0f88387c5967ebd534
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 3151179b6ff6d26b74a87ded747310646b304603
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848244"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996327"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Yeniden kullanılabilir EventToCommandBehavior
 
-_Davranışları komutları ile etkileşim kurmak için tasarlanmamıştır denetimleri komutlarını ilişkilendirmek için kullanılabilir. Bu makalede, bir olay başlatıldığında bir komut çağrılacak Xamarin.Forms davranış kullanarak gösterilmektedir._
+_Davranışlar, komutları ile etkileşim kurmak için tasarlanmamıştır denetimleri komutlarını ilişkilendirmek için kullanılabilir. Bu makalede, bir olay oluşturulduğunda çağırmak için bir Xamarin.Forms davranışı kullanmayı gösterir._
 
 ## <a name="overview"></a>Genel Bakış
 
-`EventToCommandBehavior` Sınıftır yanıt olarak bir komut yürüten yeniden kullanılabilir bir özel Xamarin.Forms davranışı *herhangi* olay tetikleme. Olay komutu geçirilir ve isteğe bağlı olarak olabilir varsayılan olarak, olay bağımsız dönüştürülen bir [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) uygulaması.
+`EventToCommandBehavior` Sınıfı, yanıt olarak bir komut yürüttüğünde bir yeniden kullanılabilir Xamarin.Forms özel davranış *herhangi* olay tetikleyicisinin tetikleme. Varsayılan olarak, olay bağımsız değişkenleri için olay komutuna geçirilir ve isteğe bağlı olarak olabilir tarafından dönüştürülür. bir [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) uygulaması.
 
-Aşağıdaki davranışı özellikleri davranışı kullanacak şekilde ayarlamanız gerekir:
+Davranışın kullanılabilmesi için aşağıdaki davranış özelliklerini ayarlamanız gerekir:
 
-- **EventName** – olayın adı davranışı dinler.
-- **Komut** – **ICommand** yürütülecek. Bulunacak davranışı bekliyor `ICommand` üzerinde örnek [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) bir üst öğesinden devralınan ekli denetimi.
+- **EventName** – davranışı dinleyen olayın adı.
+- **Komut** – **ICommand** yürütülecek. Davranış bulmayı beklediği `ICommand` üzerinde örnek [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) bir üst öğeden devralınan ekli denetimi.
 
-Aşağıdaki isteğe bağlı davranışı özellikler de ayarlayabilirsiniz:
+Aşağıdaki isteğe bağlı davranış özellikleri de ayarlayabilirsiniz:
 
-- **CommandParameter** – bir `object` Command'e geçilecek.
-- **Dönüştürücü** – bir [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) arasında geçirildiğinden, olay bağımsız değişken veri biçimi değişir uygulama *kaynak* ve *hedef*bağlama altyapısı tarafından.
+- **CommandParameter** – bir `object` komutuna geçirilir.
+- **Dönüştürücü** – bir [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) arasında geçirildiğinden, olay bağımsız değişkeni verilerin biçimini değiştirir uygulama *kaynak* ve *hedef*bağlama altyapısı tarafından.
 
 ## <a name="creating-the-behavior"></a>Davranışı oluşturma
 
-`EventToCommandBehavior` Sınıfı türer `BehaviorBase<T>` sırayla türeyen sınıf [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) sınıfı. Amacı `BehaviorBase<T>` sınıfı, bir taban sınıfı için gerektiren Xamarin.Forms davranışları sağlamak için [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) ekli denetimine ayarlanacak davranış. Bu davranış bağlamak ve yürütme sağlar `ICommand` tarafından belirtilen `Command` davranışı kullanıldığında özelliği.
+`EventToCommandBehavior` Sınıf türetilir `BehaviorBase<T>` sırayla türetilen sınıf [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) sınıfı. Amacı `BehaviorBase<T>` sınıfı, temel sınıf için gerekli Xamarin.Forms davranışları sağlamak için [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) ekli denetime ayarlamak için davranış. Bu davranışı bağlamak ve yürütme sağlar `ICommand` tarafından belirtilen `Command` davranışı kullanıldığında özelliği.
 
-`BehaviorBase<T>` SAX bir overridable [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) ayarlar yöntemi [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) davranışı ve bir overridable [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/)temizler yöntemi `BindingContext`. Ayrıca, ekli denetiminde başvuru sınıfı depolar `AssociatedObject` özelliği.
+`BehaviorBase<T>` Geçersiz kılınabilir bir sağlar sınıfını [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) ayarlar yönteminin [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) davranış ve geçersiz kılınabilir bir [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))temizler yöntemi `BindingContext`. Ayrıca, eklenen denetimi başvuru sınıfı depolar `AssociatedObject` özelliği.
 
-### <a name="implementing-bindable-properties"></a>Bağlanabilir özelliklerini uygulama
+### <a name="implementing-bindable-properties"></a>Bağlanabilir Özellikler uygulama
 
-`EventToCommandBehavior` Sınıfı tanımlayan dört [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) bir olay başlatıldığında kullanıcı yürütme örnekleri, tanımlanan komutu. Bu özellikler, aşağıdaki kod örneğinde gösterilir:
+`EventToCommandBehavior` Sınıfı tanımlar dört [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) bir olay oluşturulduğunda bir kullanıcının yürütme örnekleri, tanımlanan komutu. Bu özellikler aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -62,13 +62,13 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-Zaman `EventToCommandBehavior` sınıfı tüketilen, `Command` özelliği, bağlı veri olmalıdır bir `ICommand` yanıt olarak tanımlanan olay tetikleme yürütülecek `EventName` özelliği. Davranış bulmayı beklediğinize `ICommand` üzerinde [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) ekli denetimi.
+Zaman `EventToCommandBehavior` sınıfı kullanılır, `Command` özelliği, bağlı veri olmalıdır bir `ICommand` yanıt olarak tanımlanan olay tetikleyicisinin tetikleme yürütülecek `EventName` özelliği. Davranış bulmayı beklediğinize `ICommand` üzerinde [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) ekli denetimi.
 
-Varsayılan olarak, olayının olay değişkenlerini komutu geçirilir. Arasında geçirildiğinden, isteğe bağlı olarak bu verileri dönüştürülebilir *kaynak* ve *hedef* belirterek bağlama altyapısı tarafından bir [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) olarak uygulaması `Converter` özellik değeri. Alternatif olarak, bir parametre komutu belirterek geçirilebilir `CommandParameter` özellik değeri.
+Varsayılan olarak, olayının olay değişkenlerini komutuna geçirilir. Bu veriler arasında geçirilen olarak isteğe bağlı olarak dönüştürülebilir *kaynak* ve *hedef* belirterek bağlama altyapısı tarafından bir [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) olarak uygulama `Converter` özellik değeri. Alternatif olarak, bir parametre komutu belirterek geçirilebilir `CommandParameter` özellik değeri.
 
 ### <a name="implementing-the-overrides"></a>Geçersiz kılmaları uygulama
 
-`EventToCommandBehavior` Geçersiz kılmaları sınıf [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) ve [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) yöntemlerinin `BehaviorBase<T>` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
+`EventToCommandBehavior` Sınıf geçersiz kılmalarını [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) ve [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) yöntemlerinin `BehaviorBase<T>` aşağıdaki kod örneğinde gösterildiği gibi sınıfı:
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -89,11 +89,11 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-[ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Yöntemi çağrılarak kurulum gerçekleştirir `RegisterEvent` değerinde geçirerek yöntemini `EventName` bir parametre olarak özellik. [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Yöntemi çağrılarak temizleme gerçekleştirir `DeregisterEvent` değerinde geçirerek yöntemini `EventName` bir parametre olarak özellik.
+[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Yöntemi çağırarak kurulum gerçekleştirir `RegisterEvent` yöntemini değerinde `EventName` özelliği bir parametre olarak. [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Yöntemi çağırarak temizleme gerçekleştirir `DeregisterEvent` yöntemini değerinde `EventName` özelliği bir parametre olarak.
 
-### <a name="implementing-the-behavior-functionality"></a>Davranış işlevlerini uygulama
+### <a name="implementing-the-behavior-functionality"></a>Davranış işlevselliği uygulama
 
-Davranış amacı tarafından tanımlanan komutu yürütün etmektir `Command` tarafından tanımlanan olay tetikleme yanıta özelliğinde `EventName` özelliği. Çekirdek davranışı işlevselliği, aşağıdaki kod örneğinde gösterilir:
+Tarafından tanımlanan komutu yürütmek için davranış amacı olan `Command` özelliği tarafından tanımlanan olay tetikleyicisinin tetikleme yanıtta `EventName` özelliği. Çekirdek davranışı işlevselliği aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -137,21 +137,21 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-`RegisterEvent` Yanıt olarak yöntemi yürütüldüğünde `EventToCommandBehavior` değerini alan bir denetim ve bu iliştirilmekte `EventName` bir parametre olarak özellik. Yönteminin ardından tanımlanan olay bulmayı dener `EventName` ekli denetimi özelliği. Olay bulunabilir olması koşuluyla `OnEvent` yöntemi olay işleyicisi yöntemi olarak kaydedilir.
+`RegisterEvent` Yanıt olarak yöntemi yürütüldüğünde `EventToCommandBehavior` değerini alan bir denetim ve bu iliştirilmekte `EventName` özelliği bir parametre olarak. Yöntemi ardından tanımlanan olay bulmaya çalışır `EventName` ekli denetimi özelliği. Olay bulunabilir olması koşuluyla `OnEvent` yöntemi için olay işleyicisi yöntemi olarak kaydedilir.
 
-`OnEvent` Yanıt olarak tanımlanan olay tetikleme yöntemi yürütüldüğünde `EventName` özelliği. Koşuluyla `Command` özelliği geçerli bir başvurur `ICommand`, yöntemi bir parametre geçirilecek almaya çalışır `ICommand` gibi:
+`OnEvent` Yanıt olarak tanımlanan olay tetikleyicisinin tetikleme yöntemi yürütüldüğünde `EventName` özelliği. Koşuluyla `Command` özelliğine geçerli bir başvuruyor `ICommand`, yöntemin bir parametre geçirmek için almayı dener `ICommand` gibi:
 
-- Varsa `CommandParameter` özelliği tanımlayan bir parametre, onu alınır.
-- Aksi halde, eğer `Converter` özelliği tanımlayan bir [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) uygulama, dönüştürücü yürütülür ve olay bağımsız değişken veri arasında geçti olarak dönüştürür *kaynak* ve *hedef* bağlama altyapısı tarafından.
-- Aksi takdirde, olay bağımsız parametresi olarak kabul edilir.
+- Varsa `CommandParameter` özelliği tanımlayan bir parametre, elde edilir.
+- Aksi takdirde `Converter` özelliği tanımlayan bir [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) uygulama, dönüştürücü yürütülür ve arasında geçirilen olarak olay bağımsız değişkeni verileri dönüştürür *kaynak* ve *hedef* bağlama altyapısı tarafından.
+- Aksi takdirde, olay bağımsız değişkenleri parametre olarak kabul edilir.
 
-Veri bağlama `ICommand` , parametre, sağlanan komutuna geçirme yürütülür [ `CanExecute` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Command.CanExecute/p/System.Object/) yöntemi döndürür `true`.
+Veri bağlama `ICommand` , parametreyi koşuluyla komutuna geçirerek yürütülür [ `CanExecute` ](xref:Xamarin.Forms.Command.CanExecute(System.Object)) yöntemi döndürür `true`.
 
-Burada, gösterilmese `EventToCommandBehavior` de içeren bir `DeregisterEvent` tarafından yürütülen yöntemi [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) yöntemi. `DeregisterEvent` Yöntemi bulun ve içinde tanımlanan olay kaydını silmek için kullanılan `EventName` tüm olası bellek sızıntıları temizleme özelliği.
+Burada, gösterilmese `EventToCommandBehavior` de içeren bir `DeregisterEvent` tarafından yürütülen yöntemi [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) yöntemi. `DeregisterEvent` Bulun ve içinde tanımlanan olay kaydını silmek için kullanılan yöntemi `EventName` özelliğini, diğer olası bellek sızıntısı temizleme.
 
 ## <a name="consuming-the-behavior"></a>Davranış kullanma
 
-`EventToCommandBehavior` Sınıfı için eklenebilir [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) aşağıdaki XAML kod örneğinde gösterildiği gibi bir denetim koleksiyonu:
+`EventToCommandBehavior` Sınıfı için eklenebilir [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) aşağıdaki XAML kod örneğinde gösterildiği gibi bir denetim koleksiyonu:
 
 ```xaml
 <ListView ItemsSource="{Binding People}">
@@ -163,7 +163,7 @@ Burada, gösterilmese `EventToCommandBehavior` de içeren bir `DeregisterEvent` 
 <Label Text="{Binding SelectedItemText}" />
 ```
 
-Eşdeğer C# kodu aşağıdaki kod örneğinde gösterilir:
+Eşdeğer C# kodu aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 var listView = new ListView ();
@@ -178,21 +178,21 @@ var selectedItemLabel = new Label ();
 selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
 ```
 
-`Command` Davranışı özelliğidir bağlı veri `OutputAgeCommand` ilişkili ViewModel özelliğinin sırada `Converter` özelliği ayarlanmış `SelectedItemConverter` örneği, döndüren [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/), [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) gelen [ `SelectedItemChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SelectedItemChangedEventArgs/).
+`Command` Özelliğidir davranışı, bağlı veri `OutputAgeCommand` ilişkili ViewModel özelliği sırada `Converter` özelliği `SelectedItemConverter` örneğini döndüren [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem), [ `ListView` ](xref:Xamarin.Forms.ListView) gelen [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs).
 
-Çalışma zamanında denetimi ile etkileşim davranışı yanıtlar. İçinde bir öğe seçildiğinde [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/), [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) olay yangın, hangi yürütecek `OutputAgeCommand` ViewModel içinde. Sırayla bu ViewModel güncelleştirmeleri `SelectedItemText` özelliği, [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) için aşağıdaki ekran görüntülerinde gösterildiği gibi bağlar:
+Çalışma zamanında davranış etkileşim denetimi ile yanıt verecektir. İçinde bir öğe seçildiğinde [ `ListView` ](xref:Xamarin.Forms.ListView), [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) olay yangın, hangi yürütecek `OutputAgeCommand` ViewModel içinde. Sırayla bu ViewModel güncelleştirir `SelectedItemText` özelliği, [ `Label` ](xref:Xamarin.Forms.Label) için aşağıdaki ekran görüntülerinde gösterildiği gibi bağlanır:
 
-[![](event-to-command-behavior-images/screenshots-sml.png "Örnek uygulama EventToCommandBehavior ile")](event-to-command-behavior-images/screenshots.png#lightbox "örnek EventToCommandBehavior ile uygulama")
+[![](event-to-command-behavior-images/screenshots-sml.png "Örnek uygulama ile EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "örnek EventToCommandBehavior ile uygulama")
 
-Bir olay başlatıldığında, bir komut çalıştırmak için bu davranış kullanmanın avantajı olan komutları komutları ile etkileşim kurmak için tasarlanmış doğru denetimleri ile ilişkili olabilir. Ayrıca, bu kazan kalıbı olay işleme kodu arka plan kodu dosyalarından kaldırır.
+Bir olay oluşturulduğunda, bir komut çalıştırmak için bu davranışı kullanmanın avantajı olan komutları komutları ile etkileşime geçmek için tasarlanmış olmayan denetimleri ile ilişkili olabilir. Ayrıca, bu kazan blondan olay işleme kodu arka plan kod dosyaları kaldırır.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, bir olay başlatıldığında bir komut çağrılacak Xamarin.Forms davranış kullanarak gösterilmektedir. Davranışları komutları ile etkileşim kurmak için tasarlanmamıştır denetimleri komutlarını ilişkilendirmek için kullanılabilir.
+Bu makalede, bir olay oluşturulduğunda çağırmak için bir Xamarin.Forms davranışını kullanarak gösterdik. Davranışlar, komutları ile etkileşim kurmak için tasarlanmamıştır denetimleri komutlarını ilişkilendirmek için kullanılabilir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [EventToCommand davranışı (örnek)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
-- [Davranışı](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
-- [Davranışı<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)
+- [Davranışı](xref:Xamarin.Forms.Behavior)
+- [Davranışı<T>](xref:Xamarin.Forms.Behavior`1)

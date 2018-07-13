@@ -1,36 +1,36 @@
 ---
-title: SkiaSharp de bit eşlem temelleri
-description: Bu makalede, çeşitli kaynaklardan SkiaSharp, bit eşlemler yüklemek ve bunları Xamarin.Forms uygulamaları görüntülemek nasıl açıklar ve bu örnek kodu ile gösterir.
+title: Temel SkiaSharp, bit eşlem bilgileri
+description: Bu makalede, bit eşlemler SkiaSharp, çeşitli kaynaklardan veri yükleme ve bunları Xamarin.Forms uygulamalarında görüntüleme açıklar ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: 291f08afb95c70e9f9fccc02e1fd7353cf107213
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: dec6fa1534f14836ae98677ad33e280ff510fb97
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244392"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995196"
 ---
-# <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp de bit eşlem temelleri
+# <a name="bitmap-basics-in-skiasharp"></a>Temel SkiaSharp, bit eşlem bilgileri
 
-_Bit eşlemler çeşitli kaynaklardan yüklemek ve bunları görüntüler._
+_Bit eşlemler, çeşitli kaynaklardan veri yükleme ve bunları görüntüler._
 
-Bit eşlemler SkiaSharp içinde destek oldukça kapsamlıdır. Bu makalede yalnızca temel kavramları kapsar &mdash; bit eşlemler yükleme ve bunların nasıl görüntüleneceği:
+Oldukça geniş bit eşlem içinde SkiaSharp desteğidir. Bu makalede yalnızca temel kavramları kapsar &mdash; bit eşlemler yükleme ve bunları görüntülemek nasıl:
 
-![](bitmaps-images/bitmapssample.png "İki bit eşlemler görüntüleme")
+![](bitmaps-images/bitmapssample.png "İki bit eşlem görüntüleme")
 
-Türünde bir nesne bir SkiaSharp bit eşlem ise [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Bir bitmap oluşturmak için birçok yolu vardır, ancak bu makale kendisine kısıtlayan [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/) bit eşlem yükler yöntemi bir [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/) bir bit eşlem dosyası başvuran nesne. Kullanmak uygun olan [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/) öğesinden türetilen sınıf `SKStream` bir .NET kabul eden bir oluşturucuya sahip olduğundan [ `Stream` ](https://developer.xamarin.com/api/type/System.IO.Stream/) nesnesi.
+SkiaSharp bit eşlem türünde bir nesnedir [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Bir bit eşlem oluşturmak için birçok yolu vardır, ancak bu makalede kendisine sınırlar [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/) eşlemden yükleyen yöntemi bir [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/) nesnesini bir bit eşlem dosyasına başvurur. Kullanmak uygun olan [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/) türetilen sınıf `SKStream` .NET kabul eden bir oluşturucu olduğundan [ `Stream` ](xref:System.IO.Stream) nesne.
 
-**Temel bit eşlemler** sayfasındaki **SkiaSharpFormsDemos** program bit eşlemler üç farklı kaynaklardan yükleme gösterilmektedir:
+**Temel bit eşlemler** sayfasını **SkiaSharpFormsDemos** program üç farklı kaynaklardan gelen bit eşlemler yükleme işlemini gösterir:
 
-- Internet üzerinden
+- Örneklerimizde Internet
 - Yürütülebilir dosya katıştırılmış bir kaynaktan
 - Kullanıcının Fotoğraf Kitaplığı'ndan
 
-Üç `SKBitmap` bu üç kaynaklarının alanlar olarak tanımlanan için nesneleri [ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs) sınıfı:
+Üç `SKBitmap` için bu üç kaynağı alanlar olarak tanımlanan nesneleri [ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs) sınıfı:
 
 ```csharp
 public class BasicBitmapsPage : ContentPage
@@ -53,9 +53,9 @@ public class BasicBitmapsPage : ContentPage
 }
 ```
 
-## <a name="loading-a-bitmap-from-the-web"></a>Web sunucusundan bir bit eşlem yükleniyor
+## <a name="loading-a-bitmap-from-the-web"></a>Bir bit eşlem Web'den yükleme
 
-Bir URL temel alınarak bir bit eşlem'i yüklemek için kullanabileceğiniz [ `WebRequest` ](https://developer.xamarin.com/api/type/System.Net.WebRequest/) yürütülme aşağıdaki kodda gösterildiği gibi sınıfı `BasicBitmapsPage` Oluşturucusu. Bir alanı, bazı örnek bit Eşlemleriyle Xamarin web sitesinde URL'sini burada işaret ediyor. Bit eşlem belirli bir genişliğe yeniden boyutlandırma için belirtimi ekleyerek web sitesinde bir paket sağlar:
+Bir URL'sini temel alarak bir bit eşlem yüklemek için kullanabileceğiniz [ `WebRequest` ](xref:System.Net.WebRequest) yürütüldü aşağıdaki kodda gösterildiği gibi sınıf `BasicBitmapsPage` Oluşturucusu. URL'sini burada bazı örnek bit eşlemler ile Xamarin web sitesinden bir alana işaret eder. Bit eşlem belirli bir genişliğe yeniden boyutlandırma bir belirtim ekleyerek web sitesinde bir paket sağlar:
 
 ```csharp
 Uri uri = new Uri("http://developer.xamarin.com/demo/IMG_3256.JPG?width=480");
@@ -85,15 +85,15 @@ request.BeginGetResponse((IAsyncResult arg) =>
 }, null);
 ```
 
-Geri çağırma yöntemi bit eşlem başarıyla indirildi, geçirilen `BeginGetResponse` yöntemi çalışır. `EndGetResponse` Çağrısı olması gerekiyor bir `try` durumunda bir hata oluştu engelleyin. `Stream` Nesnesi elde `GetResponseStream` bit eşlem içeriği içine kopyalanır bazı platformlarda yeterli olmadığından bir `MemoryStream` nesnesi. Bu noktada, `SKManagedStream` nesne oluşturulabilir. Bu büyük olasılıkla bir JPEG veya PNG dosyası olan bit eşlem dosyası başvurur. `SKBitmap.Decode` Yöntemi bit eşlem dosyası kodunu çözer ve sonuçları bir iç SkiaSharp biçimde depolar.
+Bit eşlem başarıyla indirildi, geri çağırma yöntemi geçirilen `BeginGetResponse` yöntemi çalışır. `EndGetResponse` Çağrı olması gereken bir `try` durumda bir hata oluştu engelleyin. `Stream` Nesne öğesinden alınan `GetResponseStream` bit eşlem içeriğini kopyalanır bazı platformlarda, yeterli değil, bu nedenle bir `MemoryStream` nesne. Bu noktada, `SKManagedStream` nesne oluşturulabilir. Bunu şimdi, büyük olasılıkla bir JPEG veya PNG dosyası olan bit eşlem dosyası başvuruyor. `SKBitmap.Decode` Yöntemi bit eşlem dosyası kodunu çözer ve sonuçları bir iç SkiaSharp biçiminde depolar.
 
-Geri çağırma yöntemi geçirilen `BeginGetResponse` anlamına Oluşturucusu yürütme tamamlandıktan sonra çalışır `SKCanvasView` izin vermek için geçersiz kılınan gerekiyor `PaintSurface` ekranı güncelleştirmek için işleyici. Ancak, `BeginGetResponse` geri çağırma kullanmak gerekli olan bir ikincil yürütme, iş parçacığı içinde çalıştığından `Device.BeginInvokeOnMainThread` çalıştırmak için `InvalidateSurface` kullanıcı arabirimi iş parçacığı yöntemi.
+Geçirilen geri çağırma yöntemi `BeginGetResponse` anlamına Oluşturucusu yürütme tamamlandıktan sonra çalışır `SKCanvasView` izin vermek için geçersiz kılınabilir gerekiyor `PaintSurface` ekranı güncelleştirmek için işleyici. Ancak, `BeginGetResponse` geri çağırma kullanmak için gerekli olacak şekilde yürütme, ikincil bir dizi çalıştıran `Device.BeginInvokeOnMainThread` çalıştırılacak `InvalidateSurface` kullanıcı arabirimi iş parçacığında yöntem.
 
-## <a name="loading-a-bitmap-resource"></a>Bir bit eşlem kaynak yükleniyor
+## <a name="loading-a-bitmap-resource"></a>Bir bit eşlem kaynağı yükleniyor
 
-Bit eşlemler yüklenirken en kolay yaklaşım doğrudan uygulamanızda dahil bir bit eşlem kaynak kodu bakımından. **SkiaSharpFormsDemos** program adlı bir klasörü dahil **medya** adlı bir bit eşlem dosyası içeren **monkey.png**. İçinde **özellikleri** iletişim için bu dosya, böyle bir dosya vermelisiniz bir **yapı eylemi** , **katıştırılmış kaynak**!
+Bit eşlemler yükleme için en kolay yaklaşım, uygulamanızda doğrudan dahil bir bit eşlem kaynağındaki kod bakımından. **SkiaSharpFormsDemos** programı adlı bir klasör içerir **medya** adlı bir bit eşlem dosyası içeren **monkey.png**. İçinde **özellikleri** iletişim bu dosya için böyle bir dosya vermelisiniz bir **derleme eylemi** , **gömülü kaynak**!
 
-Her katıştırılmış kaynağın bir *kaynak kimliği* proje adı, klasör ve dosya adı, dönemlere göre tüm bağlı oluşur: **SkiaSharpFormsDemos.Media.monkey.png**. Bu kaynak belirterek bu kaynağa erişim sağlayabilmek için bağımsız değişken olarak kimliği [ `GetManifestResourceStream` ](https://developer.xamarin.com/api/member/System.Reflection.Assembly.GetManifestResourceStream/p/System.String/) yöntemi [ `Assembly` ](https://developer.xamarin.com/api/type/System.Reflection.Assembly/) sınıfı:
+Katıştırılmış her kaynağın bir *kaynak kimliği* proje adı, klasör ve dosya adı noktalarla tüm bağlı oluşur: **SkiaSharpFormsDemos.Media.monkey.png**. Bu kaynak belirterek bu kaynağa erişim sağlayabilmek için bağımsız değişken olarak kimliği [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) yöntemi [ `Assembly` ](xref:System.Reflection.Assembly) sınıfı:
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -106,15 +106,15 @@ using (SKManagedStream skStream = new SKManagedStream(stream))
 }
 ```
 
-Bu `Stream` nesne doğrudan dönüştürülebilir bir `SKManagedStream` nesnesi.
+Bu `Stream` nesne doğrudan dönüştürülebilir bir `SKManagedStream` nesne.
 
-## <a name="loading-a-bitmap-from-the-photo-library"></a>Fotoğraf Kitaplığı'ndan bir bit eşlem yükleniyor
+## <a name="loading-a-bitmap-from-the-photo-library"></a>Bir bit eşlem Fotoğraf Kitaplığı'ndan yükleme
 
-Ayrıca kullanıcının bir fotoğraf cihazın Resim Kitaplığı'ndan yüklemek mümkündür. Bu özellik Xamarin.Forms tarafından sağlanmadı. Makalede açıklanan gibi bir bağımlılık hizmeti iş gerektirir [Resim Kitaplığı'ndan bir fotoğraf çekme](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
+Kullanıcının cihazın Resim Kitaplığı'ndan bir fotoğraf yüklemek de mümkündür. Bu özellik, Xamarin.Forms tarafından sağlanmaz. Makalede açıklanan gibi bir bağımlılık hizmet iş gerektirir [Resim Kitaplığı'ndan bir fotoğraf çekme](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-**IPicturePicker.cs** dosya ve üç **PicturePickerImplementation.cs** bu makaledeki dosyaları için çeşitli projeleri kopyalanmış **SkiaSharpFormsDemos**çözümü ve yeni ad alanı adı verilir. Ayrıca, Android **MainActivity.cs** makalesinde açıklandığı gibi dosya değiştirildi ve iOS projesi en altına iki satır fotoğraf kitaplıkla erişmesine izin verilen **info.plist**  dosya.
+**IPicturePicker.cs** dosya ve üç **PicturePickerImplementation.cs** dosyalarından bu makalede çeşitli projeler için kopyalanmış **SkiaSharpFormsDemos**çözümü ve yeni ad alanı adı verilir. Ayrıca, Android **MainActivity.cs** makalesinde açıklandığı gibi dosya değiştirildi ve iOS projesine iki satır sonuna doğru fotoğraf kitaplığınıza erişmesine izin verilip verilmediğini **Info.plist**  dosya.
 
-`BasicBitmapsPage` Oluşturucusu ekler bir `TapGestureRecognizer` için `SKCanvasView` Tap'ları bildirim almak için. Bir dokunun girişinde `Tapped` işleyicisini alır resim Seçici bağımlılık hizmeti ve çağrıları erişim `GetImageStreamAsync`. Varsa bir `Stream` nesne döndürülür ve ardından içeriği içine kopyalanır bir `MemoryStream`, gerektirdiği gibi bazı platformlar. Kod kalan iki başka teknikler için benzer:
+`BasicBitmapsPage` Oluşturucu ekler bir `TapGestureRecognizer` için `SKCanvasView` Tap'ları bildirim almak için. Bir dokunun girişinde `Tapped` işleyicisini alır çağrıları ve resim Seçici bağımlılık hizmeti erişim `GetImageStreamAsync`. Varsa bir `Stream` nesne döndürülür ve ardından içeriği içine kopyalanır bir `MemoryStream`gerektirdiği gibi bazı platformlar. Kodun geri kalanını iki diğer teknikleri ile benzerdir:
 
 ```csharp
 // Add tap gesture recognizer
@@ -145,21 +145,21 @@ tapRecognizer.Tapped += async (sender, args) =>
 canvasView.GestureRecognizers.Add(tapRecognizer);
 ```
 
-Dikkat `Tapped` işleyicisi çağrılarını `InvalidateSurface` yöntemi `SKCanvasView` nesnesi. Bu yeni bir çağrı oluşturur `PaintSurface` işleyicisi.
+Dikkat `Tapped` işleyicisi çağrılarını `InvalidateSurface` yöntemi `SKCanvasView` nesne. Bu işlem için yeni bir çağrı oluşturur. `PaintSurface` işleyici.
 
 ## <a name="displaying-the-bitmaps"></a>Bit eşlemler görüntüleme
 
-`PaintSurface` İşleyici gereken üç bit eşlemler görüntülemek. İşleyici telefon dikey modundayken ve tuvale dikey olarak üç eşit bölüme ayırır varsayar.
+`PaintSurface` İşleyici gereken üç bit eşlemler görüntülenecek. İşleyici telefonun dikey modda ve tuval dikey üç eşit bölüme ayırır varsayar.
 
-İlk bit eşlem basit ile görüntülenen [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/System.Single/System.Single/SkiaSharp.SKPaint/) yöntemi. Tüm belirtmeniz gerekir, bit eşlem sol üst köşesindeki konumlandırılması olduğu X ve Y koordinatları şunlardır:
+İlk bit eşlem ile basit görüntülenen [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/System.Single/System.Single/SkiaSharp.SKPaint/) yöntemi. Tüm belirtmeniz gerekir, bit eşlem sol üst köşesinde konumlandırılan olduğu X ve Y koordinatları şunlardır:
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, Single x, Single y, SKPaint paint = null)
 ```
 
-Ancak bir `SKPaint` parametresi tanımlanır, varsayılan değerine sahip `null` ve onu yok sayabilirsiniz. Bit eşlem piksel yalnızca bire bir eşleme ile görüntü yüzeyini piksel aktarılır.
+Ancak bir `SKPaint` parametresi tanımlanır, varsayılan değeri olan `null` ve onu yok sayabilirsiniz. Bit eşlemin piksel yalnızca bire bir eşleme ile uzaklaştırabilir piksellerini aktarılır.
 
-Bir program bir bit eşlem piksel boyutları edinebilirsiniz [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Width/) ve [ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Height/) özellikleri. Bu özellikler, bit eşlem üst üçüncü Kanvasın ortasına yerleştirin koordinatları hesaplamak üzere program izin ver:
+Bir program olan bir bit eşlem piksel boyutunu edinebilirsiniz [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Width/) ve [ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Height/) özellikleri. Bu özellikler, bit eşlem tuvalin üst üçüncü Merkezi'nde konumlandırmak için koordinatları hesaplamasını izin ver:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -180,15 +180,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Diğer iki bit eşlemler bir sürümü ile görüntülenen [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKPaint/) ile bir `SKRect` parametre:
+Diğer iki bit eşlemler bir sürümü ile görüntülenen [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKPaint/) ile bir `SKRect` parametresi:
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, SKRect dest, SKPaint paint = null)
 ```
 
-Üçüncü bir sürümünü [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/) iki sahip `SKRect` bağımsız bit eşlem görüntüleme, ancak bu sürüm için dikdörtgen kümesini belirtmek için bu makalede kullanılan değil.
+Üçüncü bir sürümünü [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/) iki `SKRect` bağımsız değişkenlerini görüntüleme, ancak bu sürüm için bit eşlemin bir dikdörtgen alt belirtmek için bu makaledeki kullanılmaz.
 
-Bir kaynağı bit eşlem yüklenen bit eşlem görüntülemek için kod aşağıdaki gibidir:
+Yüklenen bir gömülü kaynak bit eşlem bit eşlem görüntülemek için kod aşağıdaki gibidir:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -203,11 +203,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Bit eşlem monkey yatay bu ekran görüntülerinde genişletilir neden olan dikdörtgenin boyutları için genişletilir:
+Bit eşlem monkey yatay olarak bu ekran görüntülerinde esnetilmiş neden olan dikdörtgenin boyutlarına genişletilir:
 
-[![](bitmaps-images/basicbitmaps-small.png "Bir Üçlü sayfasının ekran görüntüsü temel bit eşlemler")](bitmaps-images/basicbitmaps-large.png#lightbox "bir Üçlü sayfasının ekran görüntüsü temel bit eşlemler")
+[![](bitmaps-images/basicbitmaps-small.png "Üçlü sayfasının ekran görüntüsü temel bit eşlemler")](bitmaps-images/basicbitmaps-large.png#lightbox "Üçlü sayfasının ekran görüntüsü temel bit eşlemler")
 
-Üçüncü görüntü &mdash; programını çalıştırın ve bir fotoğraf kendi Resim Kitaplığı'ndan yük yalnızca görebileceğiniz &mdash; dikdörtgen ancak dikdörtgenin içinde de görüntülenir konum ve boyut bit eşlem'ın en boy oranını korumak için ayarlanır. Bir bit eşlem ve hedef dikdörtgen boyutuna göre faktörü ölçekleme ve dikdörtgenin alanındaki ortalama hesaplama gerektirdiğinden bu hesaplama biraz daha karmaşıktır:
+Üçüncü görüntü &mdash; yalnızca programı çalıştırın ve kendi Resim Kitaplığı'ndan bir fotoğraf yükle görebileceğiniz gibi &mdash; dikdörtgen, ancak dikdörtgenin birlikte yeniden görüntülenir konum ve boyut eşleşmemin en boy oranını korumak için ayarlanır. Bir Ölçeklendirme çarpanı bit eşlem ve hedef dikdörtgenin boyutuna göre ve dikdörtgenin alanındaki ortalama hesaplama gerektiğinden, bu hesaplama biraz daha karmaşıktır:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -242,7 +242,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Hiçbir bit eşlem Resim Kitaplığı'ndan henüz yüklendiyse sonra `else` blok ekrana dokunun kullanıcıdan istemek için bazı metinleri görüntüler.
+Hiçbir bit eşlem Resim Kitaplığı'ndan, henüz yüklenmemiş, ardından `else` blok ekran dokunun kullanıcıdan istemek için metin görüntüler.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

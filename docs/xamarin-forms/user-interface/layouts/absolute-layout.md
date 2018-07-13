@@ -1,41 +1,41 @@
 ---
 title: Xamarin.Forms AbsoluteLayout
-description: Bu makalede Xamarin.Forms AbsoluteLayout sınıfı piksel mükemmel Uı'lar oluşturmak için nasıl kullanılacağı açıklanmaktadır. Bu sınıf yerleştirir ve alt öğelerini kendi boyutunu ve konumunu veya mutlak değerler orantılı boyutları.
+description: Bu makalede, kusursuz kalitede kullanıcı arabirimleri oluşturmak için Xamarin.Forms AbsoluteLayout sınıfı kullanmayı açıklar. Bu sınıf, yerleştirir ve alt öğeleri kendi boyutunu ve konumunu veya mutlak değerlere göre orantılı boyutları.
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: f36334bca9e7401f35d4b6181b47c0f64923f652
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0d49b8c50db08ad07952425492591ee246de4f8b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244463"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998354"
 ---
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
-[`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) yerleştirir ve alt öğelerini kendi boyutunu ve konumunu veya mutlak değerler orantılı boyutları. Alt görünümleri konumlandırılmış ve boyutlu orantılı değerleri veya statik değerleri kullanarak ve orantılı olabilir ve statik değerler karışabilir.
+[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) yerleştirir ve alt öğeleri kendi boyutunu ve konumunu veya mutlak değerlere göre orantılı boyutları. Alt görünümleri konumlandırılmış ve boyutta orantılı değerleri ya da statik değerlerini kullanarak ve orantılı olabilir ve statik değerleri karma olabilir.
 
 [![](absolute-layout-images/layouts-sml.png "Xamarin.Forms düzenleri")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms düzenleri")
 
 Bu makalede ele alınacaktır:
 
-- **[Amaç](#Purpose)**  &ndash; yaygın kullanımları `AbsoluteLayout`.
+- **[Amaç](#Purpose)**  &ndash; yaygın kullanımları için `AbsoluteLayout`.
 - **[Kullanım](#Usage)**  &ndash; nasıl kullanılacağını `AbsoluteLayout` istenen tasarımınızı elde etmek için.
-  - **[Orantılı düzenleri](#Proportional_Layouts)**  &ndash; nasıl orantılı değerleri anlamak, iş bir `AbsoluteLayout`.
-  - **[Değerleri belirtme](#Specifying_Values)**  &ndash; orantılı ve mutlak değerler nasıl belirtilen anlayın.
+  - **[Orantılı düzenleri](#Proportional_Layouts)**  &ndash; nasıl orantılı değerleri anlamak dalda bir `AbsoluteLayout`.
+  - **[Değerleri belirtme](#Specifying_Values)**  &ndash; orantılı ve mutlak değerlerini nasıl belirtilen anlayın.
   - **[Orantılı değerleri](#Proportional_Values)**  &ndash; nasıl orantılı değerleri anlamak çalışır.
-    - **[Mutlak değerler](#Absolute_Values)**  &ndash; mutlak değerler nasıl çalıştığını anlayın.
+    - **[Mutlak değerler](#Absolute_Values)**  &ndash; mutlak değerlerini nasıl çalıştığını anlayın.
 
 <a name="Purpose" />
 
 ## <a name="purpose"></a>Amaç
 
-Konumlandırma modelini nedeniyle `AbsoluteLayout`, düzeni kenarlarından düzeninin ile temizleme ya da ortalanmış; böylece öğeleri konumlandırmak görece basit kolaylaştırır. Orantılı boyutları ve konumları, öğelerin bir `AbsoluteLayout` herhangi bir görünüm boyuta otomatik olarak ölçeklendirebilirsiniz. Burada yalnızca konumu ancak boyutu ölçeklendirmeniz gerekir öğeleri için mutlak ve orantılı değerleri karışabilir.
+Yerleştirme modelinin nedeniyle `AbsoluteLayout`, düzeni, böylece temizleme kenarlarından düzeni ile veya ortalanmış öğeleri konumlandırmak oldukça basit kolaylaştırır. Orantılı boyutları ve pozisyonları, öğeleri ile bir `AbsoluteLayout` herhangi bir görünüm boyuta otomatik olarak ölçeklendirebilirsiniz. Burada yalnızca konumu ancak boyutu ölçeklendirilmesi gereken öğeler için mutlak ve orantılı değerleri karma olabilir.
 
-`AbsoluteLayout` öğeleri bir görünüm içinde konumlandırılması gerekiyorsa ve öğeleri kenarlarına hizalama özellikle yararlıdır her yerden kullanılabilir.
+`AbsoluteLayout` öğeleri görünümü içinde konumlandırılan gerekir ve kenarlar öğelerine hizalarken özellikle yararlı olur. her yerde kullanılabilir.
 
 <a name="Usage" />
 
@@ -45,16 +45,16 @@ Konumlandırma modelini nedeniyle `AbsoluteLayout`, düzeni kenarlarından düze
 
 ### <a name="proportional-layouts"></a>Orantılı düzenleri
 
-`AbsoluteLayout` orantılı konumlandırma kullanıldığında öğesi düzeni göre yerleştirilmiş olarak öğesi bağlantı göre kendi öğesinin yapabildiği konumlandırılır benzersiz bağlantı modeli vardır. Mutlak konumlandırma kullanıldığında (0,0) görünümde bağlantıdır. Bu iki önemli sonuçları vardır:
+`AbsoluteLayout` orantılı konumlandırma kullanıldığında öğeyi düzene göre konumlandırılır gibi bağlantı öğesinin göreli alt öğe yapabildiği konumlandırılmış bir benzersiz bağlantı modeli vardır. Mutlak konumlandırma kullanıldığında (0,0) görünümü içinde bağlantıdır. Bu iki önemli sonuçları vardır:
 
-- Öğeler ekranı orantılı değerleri kullanarak konumlandırılmış olamaz.
-- Öğeleri kenarlarından düzeninin veya istediğiniz düzeni veya aygıt boyutunu bakılmaksızın Merkezi'ndeki boyunca güvenilir bir şekilde konumlandırılmış olabilir.
+- Öğeleri orantılı değerleri kullanarak ekranı yerleştirilmiş olamaz.
+- Öğeleri kenarlarından düzeni veya düzeni veya cihazın boyutundan bağımsız olarak Merkezi'ndeki boyunca güvenilir bir şekilde konumlandırılmalıdır.
 
-`AbsoluteLayout`, gibi `RelativeLayout`, böylece birbiriyle öğeleri konumlandırmak yapabiliyor.
+`AbsoluteLayout`, gibi `RelativeLayout`, öğeleri örtüşecek şekilde konumlandırın kuramıyor.
 
-Aşağıdaki ekran görüntüsü, bağlayıcı kutusunun Not beyaz bir noktadır. Düzen hareket ederken bağlantı ve kutunun arasındaki ilişkiyi dikkat edin:
+Aşağıdaki ekran görüntüsünde, bağlantı kutusunun Not beyaz bir noktadır. Düzeni arasında hareket ettikçe kutusunu ve bağlantı arasındaki ilişkiyi dikkat edin:
 
-![](absolute-layout-images/anchor-start.png "Başlangıç bağlantı")
+![](absolute-layout-images/anchor-start.png "Bağlayıcı başlangıçta")
 ![](absolute-layout-images/anchor-center.png "merkezinde yer işareti")
 ![](absolute-layout-images/anchor-end.png "sonunda yer işareti")
 
@@ -62,31 +62,31 @@ Aşağıdaki ekran görüntüsü, bağlayıcı kutusunun Not beyaz bir noktadır
 
 ### <a name="specifying-values"></a>Değerleri belirtme
 
-Görünümler içinde bir `AbsoluteLayout` dört değerleri kullanarak yerleştirilir:
+Görünümler içinde bir `AbsoluteLayout` dört değerleri kullanarak konumlandırılır:
 
-- **X** &ndash; görünümün yer işaretine x (yatay) konumu
-- **Y** &ndash; görünümün yer işaretine y (dikey) konumu
-- **Genişlik** &ndash; görünümünün genişliğini
-- **Yükseklik** &ndash; görünümün yüksekliğini
+- **X** &ndash; görünümün bağlantı x (yatay) konumu
+- **Y** &ndash; görünümün bağlantı y (dikey) konumu
+- **Genişlik** &ndash; görünümünün genişliği
+- **Yükseklik** &ndash; görünümü yüksekliği
 
-Bu değerlerin her birini olarak ayarlanabilir bir [orantılı](#Proportional_Values) değer veya bir [mutlak](#Absolute_Values) değeri.
+Bu değerlerin her birinin olarak ayarlanabilir bir [orantılı](#Proportional_Values) değer veya bir [mutlak](#Absolute_Values) değeri.
 
-Değerler birleşimi sınırları ve bir bayrak belirtilir. `LayoutBounds` olan bir [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/) dört değerden oluşan: `x`, `y`, `width`, `height`.
+Değerler sınırları ve bayrak birleşimini belirtilir. `LayoutBounds` olan bir [ `Rectangle` ](xref:Xamarin.Forms.Rectangle) dört değerden oluşan: `x`, `y`, `width`, `height`.
 
 ### <a name="absolutelayoutflags"></a>AbsoluteLayoutFlags
 
-[`AbsoluteLayoutFlags`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayoutFlags/) değerlerin nasıl yorumlanacak belirtir ve aşağıdaki önceden tanımlanmış seçenekler vardır:
+[`AbsoluteLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayoutFlags) değerleri nasıl yorumlanacaktır belirtir ve aşağıdaki önceden tanımlanmış seçenekler vardır:
 
-- **Hiçbiri** &ndash; tüm değerleri mutlak yorumlar. Düzen bayrak belirtilmezse, varsayılan değer budur.
+- **Hiçbiri** &ndash; tüm değerleri mutlak yorumlar. Düzen bayrak belirtilmezse varsayılan değer budur.
 - **Tüm** &ndash; tüm değerleri orantılı olarak yorumlar.
-- **WidthProportional** &ndash; yorumlar `Width` Oransal ve diğer tüm değerler olarak değeri mutlak olarak.
-- **HeightProportional** &ndash; yalnızca yükseklik değeriyle orantılı olarak diğer tüm değerler mutlak yorumlar.
-- **XProportional** &ndash; yorumlar `X` değer orantılı, diğer tüm değerler mutlak değerlendirmesini oluştu.
-- **YProportional** &ndash; yorumlar `Y` değer orantılı, diğer tüm değerler mutlak değerlendirmesini oluştu.
-- **PositionProportional** &ndash; yorumlar `X` ve `Y` değerleri orantılı olarak sırada boyutu değerleri mutlak yorumlanır.
-- **SizeProportional** &ndash; yorumlar `Width` ve `Height` değerleri orantılı olarak konum değerleri mutlak durumdayken.
+- **WidthProportional** &ndash; yorumlar `Width` mutlak olarak orantılı ve diğer tüm değerler olarak değeri.
+- **HeightProportional** &ndash; yalnızca yüksekliğini değeriyle orantılı olarak diğer tüm değerler mutlak yorumlar.
+- **XProportional** &ndash; yorumlar `X` değer orantılı, diğer tüm değerler mutlak davranılırken.
+- **YProportional** &ndash; yorumlar `Y` değer orantılı, diğer tüm değerler mutlak davranılırken.
+- **PositionProportional** &ndash; yorumlar `X` ve `Y` değerleri orantılı olarak, ancak boyut değerleri mutlak yorumlanır.
+- **SizeProportional** &ndash; yorumlar `Width` ve `Height` değerleri orantılı olarak konum değerleri mutlak olmasına rağmen.
 
-XAML'de, görünümler düzeni içinde tanımının bir parçası olarak ayarlanır sınırları ve bayrakları kullanarak `AbsoluteLayout.LayoutBounds` özelliği. Sınır değerleri, virgülle ayrılmış listesi olarak ayarlanmış `X`, `Y`, `Width`, ve `Height`bu sırası. Bayrakları düzenini kullanarak görünümlerinin bildiriminde belirtilen de `AbsoluteLayout.LayoutFlags` özelliği. Virgülle ayrılmış bir liste kullanarak XAML'de bayrakları birleştirilebilir unutmayın. Aşağıdaki örnek göz önünde bulundurun:
+XAML içinde düzen görünümleri tanımının bir parçası olarak ayarlanır sınırları ve bayrakları kullanılarak `AbsoluteLayout.LayoutBounds` özelliği. Sınırları, değerleri virgülle ayrılmış listesi olarak ayarlanmış `X`, `Y`, `Width`, ve `Height`bu sırası. Bayrakları düzenini kullanarak görünüm bildiriminde belirtilen ayrıca `AbsoluteLayout.LayoutFlags` özelliği. Bayrakları virgülle ayrılmış bir liste kullanarak XAML içinde birleştirilebilir unutmayın. Aşağıdaki örnek göz önünde bulundurun:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -116,11 +116,11 @@ Title="Absolute Layout Exploration">
 
 Şunlara dikkat edin:
 
-- Etiketin ortasında mutlak boyutunu ve konumunu değerleri kullanarak konumlandırıldı. Bu yüzden, iPhone 4S üzerinde ortalanmış ve alt ancak büyük cihazlarda ortalanmış görünür.
-- Metin düzenini altındaki orantılı boyutunu ve konumunu değerleri kullanarak konumlandırıldı. Düzen alt merkezinde her zaman görünür ancak boyutuna büyük düzeni boyutlarıyla büyüyecektir.
-- Üç renkli `BoxView`s orantılı konumu ve mutlak boyutu kullanarak ekranın üst, sol ve sağ kenarlarında konumlandırıldı.
+- Etiketin ortasında boyutunu ve konumunu mutlak değerlerini kullanarak konumlandırıldı. Bu nedenle bu iPhone 4S üzerinde ortalanmış ve daha düşük ancak daha büyük cihazlarda ortalanmış görünür.
+- Metin düzenini alt kısmındaki orantılı boyut ve konum değerleri kullanarak konumlandırıldı. Düzen alt merkezinde her zaman görünür, ancak boyutu daha büyük bir düzen boyutlarıyla büyüyecektir.
+- Üç renkli `BoxView`s orantılı konumunu ve mutlak boyutunu kullanarak ekranın üst, sol ve sağ kenarları konumlandırılmıştır.
 
-C# aynı düzeni uygular:
+C# ' de aynı düzeni sağlar:
 
 ```csharp
 public class AbsoluteLayoutExplorationCode : ContentPage
@@ -167,20 +167,20 @@ public class AbsoluteLayoutExplorationCode : ContentPage
 
 ### <a name="proportional-values"></a>Orantılı değerleri
 
-Bir düzen ve bir görünüm arasında bir ilişki orantılı değerleri tanımlayın. Bu ilişki bir alt görünümün konumu veya ölçek değeri üst düzeni karşılık gelen değeri bir kısmının tanımlar. Bu değerler olarak ifade edilir `double`değerleri 0 ile 1 arasında s.
+Orantılı değerleri bir düzen ve görünüm arasında bir ilişki tanımlayacağız. Bu ilişki, bir alt görünümün konumu veya ölçek değeri üst düzen karşılık gelen değeri tabanının oranı tanımlar. Bu değerler olarak ifade edilir `double`0 ile 1 arasındaki değerleri ile s.
 
-Orantılı değerler, konum ve boyut görünümler düzeni içinde için kullanılır. Bir görünümün genişlik oranı ayarlandığında, bu nedenle, sonuç genişliği ile çarpılır oranı değerdir `AbsoluteLayout`'s genişliği. Örneğin, bir `AbsoluteLayout` genişliğinin `500` ve.5 görünümünün işlenmiş genişliğini orantılı genişliğini olacak şekilde ayarlanmış bir görünüm 250 (500 x.5). olacaktır
+Konum ve boyut görünümlere Düzen dahilinde orantılı değerler kullanılır. Bu nedenle, bir görünümün genişlik bütünün ayarlandığında, sonuç genişlik değeri çarpılmasıyla oranı olan `AbsoluteLayout`'s genişliği. Örneğin, bir `AbsoluteLayout` genişliğinin `500` ve 250 (500 x.5)..5 işlenmiş görünümü genişliğini orantılı genişliği olacak şekilde ayarlanmış bir görünüm olacaktır
 
-Orantılı değerleri kullanmak üzere ayarlanmış `LayoutBounds` (x, y) kullanarak oranları ve orantılı boyutları, daha sonra ayarlamak `LayoutFlags` için `All`.
+Orantılı değerleri kullanmak için ayarlanmış `LayoutBounds` (x, y) kullanarak oranları ve orantılı boyutları ayarlayın `LayoutFlags` için `All`.
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <Label Text="I'm bottom center on every device."
   AbsoluteLayout.LayoutBounds=".5,1,.5,.1" AbsoluteLayout.LayoutFlags="All"  />
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var label = new Label {Text = "I'm bottom center on every device."};
@@ -192,29 +192,29 @@ AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.All);
 
 ### <a name="absolute-values"></a>Mutlak değerler
 
-Mutlak değerler açıkça görünümleri içinde yerleşim yeri konumlandırılmalıdır tanımlayın. Orantılı değerleri mutlak değerler konumlandırma ve düzeni sınırları içinde sığmayan bir görünüm boyutlandırma özelliğine sahiptir.
+Görünümler içinde düzenini nerede konumlandırılacağını mutlak değerler açıkça tanımlayın. Orantılı, mutlak değerler konumlandırma ve boyutlandırma düzenini sınırları içinde uymayan bir görünüm özellikli değerlerdir.
 
-Düzen boyutunu bilinmiyor konumlandırma için mutlak değerler kullanarak tehlikeli olabilir. Mutlak Konumlar kullanırken, bir boyut ekranında merkezi bir öğe başka bir boyutta uzaklık. Desteklenen aygıtlar çeşitli ekran boyutlarına arasında uygulamanızı test etmek önemlidir.
+Düzenini bilinmiyor konumlandırma için mutlak değerlerini kullanarak tehlikeli olabilir. Mutlak Konumlar kullanırken, diğer herhangi bir boyutta bir boyutta ekranın ortasında bir öğedeki uzaklığı. Desteklenen cihazlarınızın çeşitli ekran boyutları arasında uygulamanızı test etmek önemlidir.
 
-Mutlak düzeni değerleri kullanmak üzere ayarlanmış `LayoutBounds` (x, y) kullanarak koordinatları ve açık boyutları, daha sonra ayarlamak `LayoutFlags` için `None`.
+Mutlak Düzen değerleri kullanmak için ayarlanmış `LayoutBounds` (x, y) kullanarak koordinatları ve açık boyutların ayarlayın `LayoutFlags` için `None`.
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <Label Text="I'm centered on iPhone 4 but no other device."
   AbsoluteLayout.LayoutBounds="115,150,100,100"  />
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var label = new Label {Text = "I'm centered on iPhone 4 but no other device."};
 AbsoluteLayout.SetLayoutBounds(label, new Rectangle(115,150,100,100));
 ```
 
-## <a name="exploring-a-complex-layout"></a>Karmaşık bir düzen keşfetme
+## <a name="exploring-a-complex-layout"></a>Karmaşık Düzen keşfetme
 
-Her düzenleri güçlü ve belirli düzenler oluşturmak için zayıf sahip. Düzen makaleleri bu dizi aynı sayfa düzeni üç farklı düzenleri kullanılarak uygulanan bir örnek uygulaması oluşturuldu.
+Her düzene sahip güçlü ve zayıf özel düzenler oluşturmak için. Bu makale serisi, düzen, aynı sayfa düzeni üç farklı düzenleri kullanılarak uygulanan bir örnek uygulaması oluşturuldu.
 
 Aşağıdaki XAML göz önünde bulundurun:
 
@@ -279,15 +279,15 @@ Title="AbsoluteLayout">
 </ContentPage>
 ```
 
-Yukarıdaki kod aşağıdaki düzende sonuçları:
+Yukarıdaki kod, aşağıdaki düzende sonuçlanır:
 
 ![](absolute-layout-images/abs.png "Karmaşık AbsoluteLayout")
 
-Dikkat `AbsoluteLayout`s iç içe geçmiş, bazı durumlarda düzenleri iç içe geçme aynı düzen içindeki tüm öğeler sunma daha kolay olabilir çünkü.
+Dikkat `AbsoluteLayout`s iç içe, bazı durumlarda düzenleri iç içe tüm öğeler aynı düzeni içinde sunma daha kolay olabilir çünkü.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bölüm 14 Xamarin.Forms ile mobil uygulamaları oluşturma](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
-- [AbsoluteLayout](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/)
+- [Bölüm 14 Xamarin.Forms ile mobil uygulamalar oluşturma](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
+- [AbsoluteLayout](xref:Xamarin.Forms.AbsoluteLayout)
 - [Düzen (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble örneği (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

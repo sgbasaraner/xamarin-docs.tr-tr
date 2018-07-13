@@ -1,63 +1,63 @@
 ---
-title: Giriş etkileri
-description: Efektler izin yerel denetimlere özelleştirilmek üzere her platformda ve genellikle küçük stil değişiklikler için kullanılır. Bu makalede etkileri tanıtılmaktadır, etkiler ve özel Oluşturucu arasında sınır özetler ve PlatformEffect sınıfı tanımlar.
+title: Etkileri giriş
+description: Etkileri izin özelleştirilmek üzere her platformda yerel denetimleri ve genellikle küçük stil değişiklikler için kullanılır. Bu makalede etkileri tanıtılmaktadır, etkiler ve özel Oluşturucu arasındaki sınırı özetler ve PlatformEffect sınıfı tanımlar.
 ms.prod: xamarin
 ms.assetid: 30CB8615-8F39-4762-BDB7-333D2B57D112
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 38805c09136405a7a241cfaeb8fa8cb6fb1a5d5f
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: d3fa958e999a10832d5fa15e4190077955b0e6df
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732729"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997391"
 ---
-# <a name="introduction-to-effects"></a>Giriş etkileri
+# <a name="introduction-to-effects"></a>Etkileri giriş
 
-_Efektler izin yerel denetimlere özelleştirilmek üzere her platformda ve genellikle küçük stil değişiklikler için kullanılır. Bu makalede etkileri tanıtılmaktadır, etkiler ve özel Oluşturucu arasında sınır özetler ve PlatformEffect sınıfı tanımlar._
+_Etkileri izin özelleştirilmek üzere her platformda yerel denetimleri ve genellikle küçük stil değişiklikler için kullanılır. Bu makalede etkileri tanıtılmaktadır, etkiler ve özel Oluşturucu arasındaki sınırı özetler ve PlatformEffect sınıfı tanımlar._
 
-Xamarin.Forms [sayfalar, Düzen ve denetimlerin](~/xamarin-forms/user-interface/controls/index.md) platformlar arası mobil kullanıcı arabirimleri açıklamak için ortak bir API sunar. Her sayfaya, Düzen ve denetim farklı kullanarak her platformunda işlenen bir `Renderer` sırayla (Xamarin.Forms gösterimine karşılık gelen), yerel bir denetimi oluşturur sınıfı ekranda düzenler ve paylaşılan içinde belirtilen davranışı ekler kod.
+Xamarin.Forms [sayfaları, düzenler ve denetimleri](~/xamarin-forms/user-interface/controls/index.md) platformlar arası mobil kullanıcı arabirimlerini tanımlamak için ortak bir API sunar. Her sayfa, Düzen ve denetimi farklı kullanarak her platformunda işlenen bir `Renderer` sırayla (Xamarin.Forms gösterimi için karşılık gelen), yerel bir denetim oluşturan sınıf ekranda düzenler ve paylaşılan içinde belirtilen davranışı ekler kodu.
 
-Geliştiriciler kendi özel uygulayabilirsiniz `Renderer` görünümünü ve/veya Denetim davranışını özelleştirmek için sınıflar. Ancak, bir basit denetim özelleştirme gerçekleştirmek için özel Oluşturucu sınıfı uygulama ağır yanıt görülür. Efektler daha kolay özelleştirilmek üzere her platformda yerel denetimlere izin vererek, bu işlemi basitleştirir.
+Geliştiriciler, kendi özel uygulayabilirsiniz `Renderer` sınıflar görünümünü ve davranışını özelleştirin. Ancak, bir basit denetimi özelleştirme gerçekleştirmek için bir özel Oluşturucu sınıf uygulama genellikle ağır yanıt olur. Etkileri, yerel denetimleri daha kolay özelleştirilmek üzere her platformda izin vererek, bu işlemi basitleştireceksiniz.
 
-Etkileri platforma özgü projelerinde sınıflara tarafından oluşturulan `PlatformEffect` denetim ve etkileri tüketilen Xamarin.Forms .NET standart kitaplığı veya paylaşılan kitaplığı projesi uygun bir denetim için ekleyerek.
+Etkileri platforma özgü projelerinde sınıflara tarafından oluşturulan `PlatformEffect` denetimi ve etkileri tüketilen uygun bir denetime bir Xamarin.Forms .NET Standard kitaplığı veya paylaşılan kitaplık projesi ekleyerek.
 
-## <a name="why-use-an-effect-over-a-custom-renderer"></a>Neden bir efekt özel Oluşturucu kullanılsın mı?
+## <a name="why-use-an-effect-over-a-custom-renderer"></a>Neden bir efekti özel Oluşturucu kullanmalıyım?
 
-Efektler denetim özelleştirme basitleştirmek, yeniden kullanılabilir ve daha fazla yeniden artırmak için parametreli olabilir.
+Etkileri denetimi özelleştirme basitleştirin, yeniden kullanılabilir ve daha fazla yeniden artırmak için parametreli olabilir.
 
-Efekt ile elde edilebilir herhangi bir şey de özel Oluşturucu ile elde edilebilir. Ancak, daha fazla esneklik ve özelleştirme etkileri daha özel Oluşturucu sunar. Aşağıdaki yönergeler özel oluşturucu üzerinde bir etkisi seçebilirsiniz durumlarda listesi:
+Bir efekti ile sağlanabilir herhangi bir şey de özel Oluşturucu ile gerçekleştirilebilir. Özel oluşturucular, ancak daha fazla esneklik ve özelleştirme etkileri daha sunar. Aşağıdaki yönergeler özel bir oluşturucu efekt seçebileceğiniz durumlarda listeleyin:
 
-- Platforma özgü denetim özelliklerini değiştirme istenen sonucu elde edecek bir efekt önerilir.
-- Platforma özgü denetim yöntemleri geçersiz kılmak için ihtiyacı olduğunda özel Oluşturucu gereklidir.
-- Xamarin.Forms Denetim uygulayan platforma özgü denetimi Değiştir gerek olduğunda özel Oluşturucu gereklidir.
+- Ne zaman bir platforma özel denetimin özelliklerini değiştirmek istediğiniz sonucu elde edeceğini efekt önerilir.
+- Özel oluşturucu, platforma özel denetimin yöntemleri geçersiz kılmak için ihtiyaç olduğunda gereklidir.
+- Özel oluşturucu, bir Xamarin.Forms denetimi uygular platforma özel denetimi değiştirmek üzere ihtiyaç olduğunda gereklidir.
 
-## <a name="subclassing-the-platformeffect-class"></a>PlatformEffect sınıfı alt sınıf yapma
+## <a name="subclassing-the-platformeffect-class"></a>Sınıflara PlatformEffect sınıfı
 
-Ad alanı için aşağıdaki tabloda `PlatformEffect` her platformu ve özelliklerini türlerini sınıfı:
+Ad alanı için aşağıdaki tabloda `PlatformEffect` her platform ve türlerini özelliklerini sınıfı:
 
 |Platform|Ad Alanı|Kapsayıcı|Denetim|
 |--- |--- |--- |--- |
-|iOS|Xamarin.Forms.Platform.iOS|UIView|UIView|
+|iOS|Xamarin.Forms.Platform.iOS|Uıview|Uıview|
 |Android|Xamarin.Forms.Platform.Android|ViewGroup|Görüntüle|
 |Evrensel Windows Platformu (UWP)|Xamarin.Forms.Platform.UWP|FrameworkElement|FrameworkElement|
 
 Her platforma özgü `PlatformEffect` sınıfı aşağıdaki özellikleri sunar:
 
-- `Container` – düzenini uygulamak için kullanılan platforma özgü denetim başvuruyor.
-- `Control` – Xamarin.Forms denetimi için kullanılan platforma özgü denetim başvuruyor.
-- `Element` – işlenen Xamarin.Forms Denetim başvuruyor.
+- `Container` – düzenini uygulamak için kullanılan platforma özgü denetimine başvurur.
+- `Control` – Xamarin.Forms denetimi uygulamak için kullanılan platforma özgü denetimine başvurur.
+- `Element` – işlenen Xamarin.Forms denetimine başvurur.
 
-Kapsayıcı, denetim veya herhangi bir öğeye bağlı olduğundan bağlandıkları öğesi türü bilgilerini etkileri değil. Bu nedenle, bir efekt desteği olmayan bir öğe eklendiğinde, düzgün biçimde düşebilir veya bir özel durum. Ancak, `Container`, `Control`, ve `Element` özellikleri kendi uygulama türüne dönüştürülür. Bkz: bunlar hakkında daha fazla bilgi türleri için [Oluşturucu taban sınıfları ve yerel denetimlere](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Etkileri kapsayıcı, denetimi veya herhangi bir öğeye iliştirilmiş olduğundan bağlandıkları öğesi hakkında bilgi türü yok. Bu nedenle, efekt desteği olmayan bir öğe eklendiğinde, düzgün bir şekilde veya bir özel durum oluşturması gerekir. Ancak, `Container`, `Control`, ve `Element` özellikleri, uygulama türüne dönüştürülür. Bunlar hakkında daha fazla bilgi Bkz türleri için [oluşturucu temel sınıfları ve yerel denetimleri](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Her platforma özgü `PlatformEffect` sınıfı geçersiz kılınmalıdır efekt uygulamak için aşağıdaki yöntemleri sunar:
+Her platforma özgü `PlatformEffect` sınıfı geçersiz kılınmalıdır bir efekti uygulamak için aşağıdaki yöntemleri sunar:
 
-- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – bir efekt Xamarin.Forms denetime bağlı olduğunda çağrılır. Her platform özgü etkisi sınıfındaki bu yöntemi geçersiz kılınmış bir sürümünü etkisi belirtilen Xamarin.Forms denetimine uygulanamaz durumda özel durum işleme ile birlikte bu denetimin özelleştirme gerçekleştirmek için yerdir.
-- [`OnDetached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnDetached()/) – bir efekt Xamarin.Forms denetimden ayrılmış olduğunda çağrılır. Her platforma özgü etkisi sınıfındaki bu yöntemi geçersiz kılınmış bir sürümünü hiçbir etkisi temizlenmesini olay işleyicisi XML'deki kaydetme gibi yerdir.
+- [`OnAttached`](xref:Xamarin.Forms.Effect.OnAttached) – Efekt Xamarin.Forms denetime eklendiğinde çağırılır. Her platform özel efekt sınıfındaki bu yöntemi geçersiz kılınan bir sürümünü özelleştirme etkisi belirtilen Xamarin.Forms denetime uygulanamaz durumunda özel durum işleme ile birlikte denetiminin gerçekleştirmeyi yerdir.
+- [`OnDetached`](xref:Xamarin.Forms.Effect.OnDetached) – bir Xamarin.Forms denetiminden efekt ayrıldığında çağrılır. Her platforma özel efekt sınıfındaki bu yöntemi geçersiz kılınan bir sürümünü, bir olay işleyicisi XML'deki kaydetme gibi herhangi bir etkisi temizleme işlemini gerçekleştirmek için yerdir.
 
-Ayrıca, `PlatformEffect` sunan [ `OnElementPropertyChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E.OnElementPropertyChanged/p/System.ComponentModel.PropertyChangedEventArgs/) de kılınabilir yöntemi. Öğesinin bir özelliği değiştirildiğinde bu yöntem çağrılır. Her platforma özgü etkisi sınıfındaki bu yöntemi geçersiz kılınmış bir sürümünü Xamarin.Forms denetimindeki bağlanabilirse özellik değişikliklerine yanıt verme yerdir. Bu geçersiz kılma birçok kez çağrılabilir olarak değiştirildiğinde bir özellik için bir onay her zaman yapılmalıdır.
+Ayrıca, `PlatformEffect` sunan [ `OnElementPropertyChanged` ](xref:Xamarin.Forms.PlatformEffect`2.OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)) yöntemi de geçersiz kılınabilir. Bu yöntem, öğenin bir özellik değiştiğinde çağrılır. Her platforma özel efekt sınıfındaki bu yöntemi geçersiz kılınan bir sürümünü Xamarin.Forms denetimi bağlanılabilir özellik değişikliklerine yanıt verme yerdir. Bu geçersiz kılma birden çok kez çağrılabilir olarak değişen bir özellik için bir onay her zaman yapılmalıdır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

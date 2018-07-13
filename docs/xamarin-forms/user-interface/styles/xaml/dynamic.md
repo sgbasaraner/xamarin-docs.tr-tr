@@ -1,26 +1,26 @@
 ---
-title: Xamarin.Forms dinamik stilleri
-description: Bu makalede, nasıl bir Xamarin.Forms uygulaması stil değişiklikleri çalışma zamanında dinamik olarak dinamik kaynaklar kullanarak yanıt verebilir açıklanmaktadır.
+title: Xamarin.Forms içinde dinamik stiller
+description: Bu makalede, nasıl bir Xamarin.Forms uygulaması stil değişikliklerini zamanında dinamik olarak dinamik kaynaklarını kullanarak yanıt verebileceği açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 0f82e0cfde29921ea768000f17b93d04f8ad307e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cedf9e3daed9a2d5f8bfa0962bf66510748b592a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245227"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997152"
 ---
-# <a name="dynamic-styles-in-xamarinforms"></a>Xamarin.Forms dinamik stilleri
+# <a name="dynamic-styles-in-xamarinforms"></a>Xamarin.Forms içinde dinamik stiller
 
-_Stilleri değil özelliği değişikliklere yanıt verir ve bir uygulama süresi değişmeden kalır. Örneğin, bir stil ayarlayıcı örneklerden birini, kaldırılan değiştirilirse bir görsel öğe ya da eklenen yeni bir ayarlayıcı örnek atadıktan sonra değişiklikler görsel öğe için uygulanmaz. Ancak, uygulamalar çalışma zamanında dinamik olarak stil değişiklikleri dinamik kaynaklar kullanarak yanıt verebilir._
+_Stilleri değil özellik değişikliklerine yanıt ve bir uygulama süresi değişmeden kalır. Örneğin, bir stil ayarlayıcı örneklerinden birinde değiştirilen, kaldırılan, bir görsel öğe ya da eklenen yeni bir ayarlayıcı örneği atadıktan sonra değişiklikleri görsel öğe için uygulanmaz. Ancak, uygulamalar çalışma zamanında dinamik olarak stil değişikliklerini dinamik kaynakları kullanarak yanıt verebilirsiniz._
 
-`DynamicResource` Biçimlendirme uzantısı benzer `StaticResource` her ikisi arasında bir değer almak için bir sözlük anahtarı kullanmak biçimlendirme uzantısı'nda bir [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). Ancak, `StaticResource` tek sözlük araması gerçekleştirir `DynamicResource` sözlük anahtarı bağlantısını korur. Bu nedenle, anahtar ile ilişkili sözlük girdisi değiştirirse, değişiklik görsel öğe uygulanır. Bu uygulamada yapılması çalışma zamanı stil değişiklikleri sağlar.
+`DynamicResource` İşaretleme uzantısı benzer `StaticResource` hem de bir değer almak için bir sözlük anahtarı kullanmak işaretleme uzantısı'nda bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Ancak, `StaticResource` bir tek sözlük araması gerçekleştirir `DynamicResource` sözlük anahtarı bağlantısını korur. Bu nedenle, anahtarıyla ilişkilendirilmiş sözlük girişinin değiştirilirse Değiştir görsel öğe için uygulanır. Bu uygulamada yapılacak çalışma zamanı stil değişikliklerini sağlar.
 
-Aşağıdaki kod örneğinde gösterilmektedir *dinamik* XAML sayfası stillerde:
+Aşağıdaki kod örneğinde *dinamik* XAML sayfası stilleri:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesPage" Title="Dynamic" Icon="xaml.png">
@@ -51,9 +51,9 @@ Aşağıdaki kod örneğinde gösterilmektedir *dinamik* XAML sayfası stillerde
 </ContentPage>
 ```
 
-[ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Kullanım örnekleri `DynamicResource` başvurmak için işaretleme uzantısı bir [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) adlı `searchBarStyle`, XAML içinde tanımlanmamış. Ancak, çünkü [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) özelliklerini `SearchBar` örnekleri kullanılarak ayarlanır bir `DynamicResource`, eksik bir sözlük anahtar oluşturulan bir özel durum oluşturmaz.
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar) Kullanım örnekleri `DynamicResource` başvurmak için işaretleme uzantısı bir [ `Style` ](xref:Xamarin.Forms.Style) adlı `searchBarStyle`, XAML içinde tanımlanmamış. Ancak, çünkü [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) özelliklerini `SearchBar` örnekleri kullanılarak ayarlanır bir `DynamicResource`, eksik sözlük anahtarı oluşturulan bir özel durum oluşturmaz.
 
-Bunun yerine, arka plan kod dosyasına Oluşturucusu oluşturur bir [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) anahtarla girişi `searchBarStyle`, aşağıdaki kod örneğinde gösterildiği gibi:
+Bunun yerine arka plan kod dosyasında, oluşturucu oluşturur bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) anahtarla giriş `searchBarStyle`aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 public partial class DynamicStylesPage : ContentPage
@@ -79,12 +79,12 @@ public partial class DynamicStylesPage : ContentPage
 }
 ```
 
-Zaman `OnButtonClicked` olay işleyicisi yürütüldüğünde, `searchBarStyle` arasında geçiş yapar `blueSearchBarStyle` ve `greenSearchBarStyle`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
+Zaman `OnButtonClicked` olay işleyicisi yürütülür `searchBarStyle` arasında geçiş `blueSearchBarStyle` ve `greenSearchBarStyle`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünümünü sonuçlanır:
 
 [![](dynamic-images/dynamic-style-blue.png "Mavi dinamik stili örnek")](dynamic-images/dynamic-style-blue-large.png#lightbox "mavi dinamik stili örnek")
 [![](dynamic-images/dynamic-style-green.png "yeşil dinamik stili örnek") ] (dynamic-images/dynamic-style-green-large.png#lightbox "Yeşil dinamik stili örneği")
 
-Aşağıdaki kod örneği, C# eşdeğer sayfaya gösterir:
+Aşağıdaki kod örneği, C# ' de eşdeğer sayfaya gösterir:
 
 ```csharp
 public class DynamicStylesPageCS : ContentPage
@@ -120,15 +120,15 @@ public class DynamicStylesPageCS : ContentPage
 }
 ```
 
-C# ' ta, [ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) kullanım örnekleri [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/) başvurmak için yöntemi `searchBarStyle`. `OnButtonClicked` Olay işleyici kodu aynıdır ve XAML örneğe çalıştırıldığında, `searchBarStyle` arasında geçiş yapar `blueSearchBarStyle` ve `greenSearchBarStyle`.
+C# ' ta, [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) kullanım örnekleri [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*) başvurmak için yöntemi `searchBarStyle`. `OnButtonClicked` XAML örneğe ve yürütüldüğünde, aynı olay işleyicisini `searchBarStyle` arasında geçiş `blueSearchBarStyle` ve `greenSearchBarStyle`.
 
 <a name="dynamic-style-inheritance">
 
-## <a name="dynamic-style-inheritance"></a>Dinamik stili devralma
+## <a name="dynamic-style-inheritance"></a>Dinamik stil devralımı
 
-Stil'nden dinamik bir stil türetme yapamazsınız elde edilebilir kullanarak [ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/) özelliği. Bunun yerine, [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) sınıfı içerir [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/) bir sözlük anahtarı değeri ayarlanabilir özelliği dinamik olarak değişebilir.
+Bir style'nden dinamik bir stil türetme olamaz elde edilebilir kullanarak [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) özelliği. Bunun yerine, [ `Style` ](xref:Xamarin.Forms.Style) sınıfı içeren [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey) değeri bir sözlük anahtarı için ayarlanabilir özelliği dinamik olarak değişebilir.
 
-Aşağıdaki kod örneğinde gösterilmektedir *dinamik* stil devralma XAML sayfası içinde:
+Aşağıdaki kod örneğinde *dinamik* devralma de bir XAML sayfası stili:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesInheritancePage" Title="Dynamic Inheritance" Icon="xaml.png">
@@ -158,14 +158,14 @@ Aşağıdaki kod örneğinde gösterilmektedir *dinamik* stil devralma XAML sayf
 </ContentPage>
 ```
 
-[ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Kullanım örnekleri `StaticResource` başvurmak için işaretleme uzantısı bir [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) adlı `tealSearchBarStyle`. Bu `Style` kullanır ve bazı ek özellikler ayarlar [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/) başvurmak için özellik `searchBarStyle`. `DynamicResource` Biçimlendirme uzantısı gerekli değildir çünkü `tealSearchBarStyle` değiştirmez, dışında `Style` öğesinden türetilen. Bu nedenle, `tealSearchBarStyle` bağlantı tutar `searchBarStyle` ve temel stili değiştiğinde değiştirilemez.
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar) Kullanım örnekleri `StaticResource` başvurmak için işaretleme uzantısı bir [ `Style` ](xref:Xamarin.Forms.Style) adlı `tealSearchBarStyle`. Bu `Style` kullanır ve bazı ek özelliklerini ayarlar [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey) başvurmak için özellik `searchBarStyle`. `DynamicResource` İşaretleme uzantısı gerekli değildir çünkü `tealSearchBarStyle` değiştirmez, dışında `Style` türetildiği. Bu nedenle, `tealSearchBarStyle` bağlantısını korur `searchBarStyle` ve temel stili değiştiğinde değiştirilemez.
 
-Arka plan kod dosyasına Oluşturucusu oluşturur bir [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) anahtarla girişi `searchBarStyle`, dinamik stilleri gösterilen önceki örnekte olduğu gibi başına. Zaman `OnButtonClicked` olay işleyicisi yürütüldüğünde, `searchBarStyle` arasında geçiş yapar `blueSearchBarStyle` ve `greenSearchBarStyle`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
+Arka plan kod dosyasında, oluşturucu oluşturur bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) anahtarla giriş `searchBarStyle`, dinamik stiller gösterilen önceki örnekte olduğu gibi başına. Zaman `OnButtonClicked` olay işleyicisi yürütülür `searchBarStyle` arasında geçiş `blueSearchBarStyle` ve `greenSearchBarStyle`. Bu, aşağıdaki ekran görüntülerinde gösterilen görünümünü sonuçlanır:
 
 [![](dynamic-images/dynamic-style-inheritance-blue.png "Mavi dinamik stili devralma örnek")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "mavi dinamik stili devralma örnek")
 [![](dynamic-images/dynamic-style-inheritance-green.png "yeşil dinamik stili Devralma örnek")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "yeşil dinamik stili devralma örneği")
 
-Aşağıdaki kod örneği, C# eşdeğer sayfaya gösterir:
+Aşağıdaki kod örneği, C# ' de eşdeğer sayfaya gösterir:
 
 ```csharp
 public class DynamicStylesInheritancePageCS : ContentPage
@@ -205,19 +205,19 @@ public class DynamicStylesInheritancePageCS : ContentPage
 }
 ```
 
-`tealSearchBarStyle` Doğrudan atanan [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) özelliği [ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) örnekleri. Bu `Style` bazı ek özelliklerini ayarlar ve kullandığı [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/) başvurmak için özellik `searchBarStyle`. [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/) Yöntemi değil gerekli burada çünkü `tealSearchBarStyle` değiştirmez, dışında `Style` öğesinden türetilen. Bu nedenle, `tealSearchBarStyle` bağlantı tutar `searchBarStyle` ve temel stili değiştiğinde değiştirilemez.
+`tealSearchBarStyle` Doğrudan atanan [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) özelliği [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) örnekleri. Bu `Style` bazı ek özelliklerini ayarlar ve kullandığı [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey) başvurmak için özellik `searchBarStyle`. [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*) Yöntemi gerekli değildir burada çünkü `tealSearchBarStyle` değiştirmez, dışında `Style` türetildiği. Bu nedenle, `tealSearchBarStyle` bağlantısını korur `searchBarStyle` ve temel stili değiştiğinde değiştirilemez.
 
 ## <a name="summary"></a>Özet
 
-Stilleri değil özelliği değişikliklere yanıt verir ve bir uygulama süresi değişmeden kalır. Ancak, uygulamalar çalışma zamanında dinamik olarak stil değişiklikleri dinamik kaynaklar kullanarak yanıt verebilir. Ayrıca, *dinamik* stilleri türetilen ile [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/) özelliği.
+Stilleri değil özellik değişikliklerine yanıt ve bir uygulama süresi değişmeden kalır. Ancak, uygulamalar çalışma zamanında dinamik olarak stil değişikliklerini dinamik kaynakları kullanarak yanıt verebilirsiniz. Ayrıca, *dinamik* stilleri türetilen ile [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey) özelliği.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Dinamik stilleri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
+- [Dinamik stiller (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 - [Stilleri (örnek) ile çalışma](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [stili](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Ayarlama](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Stil](xref:Xamarin.Forms.Style)
+- [Ayarlayıcı](xref:Xamarin.Forms.Setter)

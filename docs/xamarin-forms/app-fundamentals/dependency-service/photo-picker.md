@@ -1,34 +1,34 @@
 ---
 title: Resim Kitaplığı'ndan bir fotoğraf çekme
-description: Bu makalede Xamarin.Forms DependencyService sınıfı telefonun Resim Kitaplığı'ndan bir fotoğraf seçmek için nasıl kullanılacağı açıklanmaktadır.
+description: Bu makalede, bir fotoğraf telefonun Resim Kitaplığı'ndan seçmek için Xamarin.Forms DependencyService sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 4F51B0E7-6A63-403C-B488-500CCBCE75DD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: af5f499687e1ef0b7c245ca524e33cd9d31683cb
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b593815df9ce942a98496806116bacfa63e2a2d9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242475"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999041"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Resim Kitaplığı'ndan bir fotoğraf çekme
 
-Bu makalede kullanıcıya, telefonunuzun Resim Kitaplığı'ndan bir fotoğraf çekme sağlayan bir uygulama oluşturulmasını adım adım anlatılmaktadır. Xamarin.Forms bu işlevselliği içermediğinden kullanmak gerekli olan [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) her platformda yerel API'leri erişmek için.  Bu makalede kullanmak için aşağıdaki adımları kapsar `DependencyService` bu görev için:
+Bu makale, kullanıcının telefonun Resim Kitaplığı'ndan bir fotoğraf sağlayan bir uygulama oluşturulmasını rehberlik yapacaktır. Xamarin.Forms bu işlevselliği içermediğinden kullanmak için gerekli [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) her platformda yerel API'lere erişmek için.  Bu makalede kullanmak için aşağıdaki adımları kapsar `DependencyService` bu görev için:
 
-- **[Arabirimi oluşturma](#Creating_the_Interface)**  &ndash; arabirimi paylaşılan kodda nasıl oluşturulduğunu anlayın.
-- **[iOS uygulaması](#iOS_Implementation)**  &ndash; iOS için yerel kodda arabirimini uygulayan öğrenin.
-- **[Android uygulaması](#Android_Implementation)**  &ndash; arabirimini yerel kodda Android için uygulama öğrenin.
-- **[Evrensel Windows Platform uygulaması](#UWP_Implementation)**  &ndash; arabirimini yerel kodda Evrensel Windows Platformu (UWP) uygulaması öğrenin.
-- **[Paylaşılan kod içinde uygulama](#Implementing_in_Shared_Code)**  &ndash; nasıl kullanacağınızı öğrenin `DependencyService` paylaşılan koddan yerel uygulama çağırmak için.
+- **[Arabirimi oluşturma](#Creating_the_Interface)**  &ndash; arabirimi paylaşılan kodda nasıl oluşturulduğunu anlamanız.
+- **[iOS uygulaması](#iOS_Implementation)**  &ndash; iOS için yerel kod içinde arabirim uygulamak hakkında bilgi edinin.
+- **[Android uygulaması](#Android_Implementation)**  &ndash; arabirimi, Android için yerel koda uygulanması hakkında bilgi edinin.
+- **[Evrensel Windows platformu uygulaması](#UWP_Implementation)**  &ndash; arabirimi, Evrensel Windows Platformu (UWP) için yerel koda uygulanması hakkında bilgi edinin.
+- **[Paylaşılan kod içinde uygulama](#Implementing_in_Shared_Code)**  &ndash; nasıl kullanacağınızı öğrenin `DependencyService` paylaşılan kod yerel uygulamasından çağırmak için.
 
 <a name="Creating_the_Interface" />
 
 ## <a name="creating-the-interface"></a>Arabirimi oluşturma
 
-İlk olarak, bir arabirim istenen işlevselliği ifade paylaşılan kod içinde oluşturun. Fotoğraf çekme uygulama söz konusu olduğunda, yalnızca bir yöntem gereklidir. Bu tanımlanan [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) örnek kod, .NET standart kitaplığı arabiriminde:
+İlk olarak bir arabirim istenen işlevselliği ifade paylaşılan kod içinde oluşturun. Fotoğraf çekme uygulama söz konusu olduğunda, yalnızca bir yöntem gereklidir. İçinde tanımlanmıştır [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) arabirimi örnek kod, .NET Standard Kitaplığı'nda:
 
 ```csharp
 namespace DependencyServiceSample
@@ -40,17 +40,17 @@ namespace DependencyServiceSample
 }
 ```
 
-`GetImageStreamAsync` Yöntemi hızla döndürmesi gerekir, ancak geri dönemezsiniz yöntemi zaman uyumsuz olarak tanımlanır bir `Stream` kullanıcı resim kitaplığı göz atıp bir seçili kadar Seçili fotoğraf için nesnesi.
+`GetImageStreamAsync` Yöntemin tanımlanmış olarak zaman uyumsuz yöntemin çabuk dönmesini gerekir, ancak iade edemezsiniz bir `Stream` seçili fotoğrafın kadar kullanıcı resim kitaplığı taranan ve seçili tek bir nesne.
 
-Bu arabirim, platforma özgü kodu kullanarak tüm platformlarda uygulanır.
+Bu arabirim, platforma özgü kod kullanarak tüm platformlarda uygulanır.
 
 <a name="iOS_Implementation" />
 
 ## <a name="ios-implementation"></a>iOS uygulaması
 
-İOS uygulaması `IPicturePicker` arabirim kullanımları [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) açıklandığı gibi [ **Galeriden bir fotoğraf seçin** ](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/) tarif ve [örnek koduna](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
+İOS uygulaması `IPicturePicker` arabirim kullanımları [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) açıklandığı [ **Galeriden bir fotoğraf seçin** ](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/) tarif ve [örnek kod](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
 
-İOS uygulaması bulunan [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) iOS projesi sınıfında örnek kod. Bu sınıf için görünür hale getirmek için `DependencyService` Yöneticisi, sınıf gereken ile tanımlanan bir [`assembly`] öznitelik türü `Dependency`, ve sınıfı ortak ve açıkça uygulama `IPicturePicker` arabirimi:
+İOS uygulaması bulunan [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) iOS projesi bir sınıfta örnek kod. Bu sınıf için görünür hale getirmek için `DependencyService` manager, sınıf gerekir ile tanımlanan bir [`assembly`] öznitelik türü `Dependency`, ve sınıfı genel olmalıdır ve açıkça uygulama `IPicturePicker` arabirimi:
 
 ```csharp
 [assembly: Dependency (typeof (PicturePickerImplementation))]
@@ -90,11 +90,11 @@ namespace DependencyServiceSample.iOS
 
 ```
 
-`GetImageStreamAsync` Yöntemi oluşturur bir `UIImagePickerController` ve Fotoğraf Kitaplığı'ndan görüntüleri seçmek için başlatır. İki olay işleyicileri gereklidir: kullanıcı bir fotoğraf ve ne zaman kullanıcı fotoğrafı kitaplığı görüntüsünü iptal diğer seçtiğinde için bir tane. `PresentModalViewController` Sonra Fotoğraf Kitaplığı kullanıcıya görüntüler.
+`GetImageStreamAsync` Yöntemi oluşturur bir `UIImagePickerController` ve Fotoğraf Kitaplığı'ndan görüntülerini seçmek için başlatır. İki olay işleyicileri gereklidir: bir kullanıcı bir fotoğraf ve diğer kullanıcı Fotoğraf Kitaplığı görüntüsünü iptal ettiğinde için seçtiğinde. `PresentModalViewController` Sonra kullanıcıya Fotoğraf Kitaplığı görüntüler.
 
-Bu noktada, `GetImageStreamAsync` yöntemi döndürmelidir bir `Task<Stream>` çağırma kodu nesnesi. Bu görevi yalnızca kullanıcı fotoğraf kitaplığı ile etkileşim sona erdi ve olay işleyicileri biri olarak adlandırılır, tamamlanır. Bunun gibi durumlar için [ `TaskCompletionSource` ](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) sınıfı önemlidir. Sınıf sağladığı bir `Task` döndürmek için uygun genel türde nesne `GetImageStreamAsync` yöntemi ve sınıfı daha sonra işaret görev tamamlandığında.
+Bu noktada, `GetImageStreamAsync` yöntemi döndürmelidir bir `Task<Stream>` onu çağıran kod nesnesi. Bu görevi yalnızca kullanıcı fotoğraf kitaplığı ile etkileşim sona erdi ve biri olay işleyicileri, tamamlanır. Bu gibi durumlarda [ `TaskCompletionSource` ](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) sınıfı önemlidir. Sağlar sınıfını bir `Task` döndürüleceğini uygun genel türde nesne `GetImageStreamAsync` metot ve sınıf daha sonra sinyal görev tamamlandığında.
 
-`FinishedPickingMedia` Olay işleyicisi, kullanıcının bir resim seçildiğinde çağrılır. Ancak, işleyici sağlar bir `UIImage` nesne ve `Task` bir .NET döndürmelidir `Stream` nesnesi. Bu iki adımda gerçekleştirilir: `UIImage` nesne bir JPEG dosyasına depolanmış bellekte ilk dönüştürülür bir `NSData` nesnesi ve ardından `NSData` nesne için bir .NET dönüştürülür `Stream` nesnesi. Çağrı `SetResult` yöntemi `TaskComkpletionSource` nesne sağlayarak görev tamamlandıktan `Stream` nesnesi:
+`FinishedPickingMedia` Olay işleyicisi, kullanıcı bir resim seçtiğinde çağrılır. Ancak, işleyici sağlar bir `UIImage` nesne ve `Task` .NET döndürmelidir `Stream` nesne. Bu iki adımda gerçekleştirilir: `UIImage` nesneyi bellek içinde depolanan bir JPEG dosyası için ilk dönüştürülür bir `NSData` nesnesi ve ardından `NSData` nesne için bir .NET dönüştürülür `Stream` nesne. Bir çağrı `SetResult` yöntemi `TaskCompletionSource` nesne sağlayarak görev tamamlandığında `Stream` nesnesi:
 
 ```csharp
 namespace DependencyServiceSample.iOS
@@ -134,7 +134,7 @@ namespace DependencyServiceSample.iOS
 
 ```
 
-Bir iOS uygulaması telefonun Fotoğraf Kitaplığı erişim izni kullanıcıdan gerektirir. Aşağıdakileri ekleyin `dict` Info.plist dosyasının bölümü:
+Bir iOS uygulamasına kullanıcıdan telefonun fotoğraf kitaplığınıza erişmesine izin gerektirir. Ekleyin `dict` Info.plist bölümünü:
 
 ```xml
 <key>NSPhotoLibraryUsageDescription</key>
@@ -146,10 +146,10 @@ Bir iOS uygulaması telefonun Fotoğraf Kitaplığı erişim izni kullanıcıdan
 
 ## <a name="android-implementation"></a>Android uygulaması
 
-Android uygulaması açıklanan teknikleri kullanan [ **bir görüntü seçin** ](https://developer.xamarin.com/recipes/android/other_ux/pick_image/) tarif ve [örnek koduna](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Ancak, kullanıcı Resim Kitaplığı'ndan bir görüntü seçtiğinde çağrılan yöntem budur bir `OnActivityResult` türetilen bir sınıfta geçersiz kılma `Activity`. Bu nedenle, normal [ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) Android projesi sınıfında takıma bir alan, bir özellik ve geçersiz kılma `OnActivityResult` yöntemi:
+Android uygulaması açıklanan tekniği kullanan [ **bir görüntü seçin** ](https://developer.xamarin.com/recipes/android/other_ux/pick_image/) tarif ve [örnek kod](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Ancak, kullanıcı bir resim Resim Kitaplığı'ndan seçtiğinde çağrılan yöntem olan bir `OnActivityResult` öğesinden türetilen bir sınıfta geçersiz kılma `Activity`. Bu nedenle, normal [ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) Android projesi sınıfında takıma bir alan, özellik ve geçersiz kılma `OnActivityResult` yöntemi:
 
 ```csharp
-public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+public class MainActivity : FormsAppCompatActivity
 {
     ...
     // Field, property, and method for Picture Picker
@@ -181,9 +181,9 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicat
 
 ```
 
-`OnActivityResult`Geçersiz kılma gösteren bir Android seçilen resim dosyasıyla `Uri` nesnesi, ancak bir .NET dönüştürülüp olabilir `Stream` çağırarak nesne `OpenInputStream` yöntemi `ContentResolver` uygulamasından edinilen nesnesi Etkinliğin `ContentResolver` özelliği.
+`OnActivityResult`Geçersiz kılma gösteren bir Android ile seçilen resim dosyası `Uri` nesne, ancak bir .NET Framework'e dönüştürülmesi bu can `Stream` çağırarak `OpenInputStream` yöntemi `ContentResolver` elde edildiği nesnesi Etkinliğin `ContentResolver` özelliği.
 
-İOS uygulaması gibi Android uygulaması kullanan bir `TaskCompletionSource` görev tamamlandığında sinyal. Bu `TaskCompletionSource` nesne ortak özelliği olarak tanımlanır `MainActivity` sınıfı. Bu, başvurulacak özelliği sağlar [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/PicturePickerImplementation.cs) Android projesi sınıfta. Bu sınıfı olan `GetImageStreamAsync` yöntemi:
+Android uygulaması iOS uygulaması gibi kullanan bir `TaskCompletionSource` görev tamamlandığında sinyal. Bu `TaskCompletionSource` ortak bir özellik olarak tanımlanan nesne `MainActivity` sınıfı. Bu özellik, başvurulabilmesi tanır [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/PicturePickerImplementation.cs) Android projesi sınıfta. Bu ile sınıftır `GetImageStreamAsync` yöntemi:
 
 ```csharp
 [assembly: Dependency(typeof(PicturePickerImplementation))]
@@ -214,13 +214,13 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-Bu yöntem erişir `MainActivity` çeşitli amaçlarla sınıfı: için `Instance` özelliği için `PickImageId` için alan `TaskCompletionSource` özelliği ve çağırmak için `StartActivityForResult`. Bu yöntem tarafından tanımlanan `FormsApplicationActivity` sınıf temel sınıfını `MainActivity`.
+Bu yöntem erişir `MainActivity` çeşitli amaçlar için sınıf: için `Instance` özelliği için `PickImageId` için alan `TaskCompletionSource` özelliği ve çağrılacak `StartActivityForResult`. Bu yöntem tarafından tanımlanan `FormsAppCompatActivity` temel sınıf olan sınıf, `MainActivity`.
 
 <a name="UWP_Implementation" />
 
 ## <a name="uwp-implementation"></a>UWP uygulaması
 
-İOS ve Android uygulamaları aksine, fotoğraf Seçici uygulama Evrensel Windows platformu için gerektirmez `TaskCompletionSource` sınıfı. [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/UWP/PicturePickerImplementation.cs) Sınıfını kullanan [ `FileOpenPicker` ](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) Fotoğraf Kitaplığı erişmek için sınıf. Çünkü `PickSingleFileAsync` yöntemi `FileOpenPicker` kendisi, uyumsuzdur `GetImageStreamAsync` yöntemi yalnızca kullanabilir `await` o yöntemi (ve diğer zaman uyumsuz yöntemleri) ve dönüş bir `Stream` nesnesi:
+İOS ve Android uygulamalarında farklı olarak, Evrensel Windows platformu fotoğraf Seçici uygulamasını gerektirmez `TaskCompletionSource` sınıfı. [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/UWP/PicturePickerImplementation.cs) Sınıfının kullandığı [ `FileOpenPicker` ](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) fotoğraf kitaplığına erişim elde etmek için sınıf. Çünkü `PickSingleFileAsync` yöntemi `FileOpenPicker` kendisi, zaman uyumsuzdur `GetImageStreamAsync` yöntemi yalnızca kullanabilir `await` bu yöntem (ve diğer zaman uyumsuz yöntemler) ve dönüş bir `Stream` nesnesi:
 
 
 ```csharp
@@ -262,7 +262,7 @@ namespace DependencyServiceSample.UWP
 
 ## <a name="implementing-in-shared-code"></a>Paylaşılan kod içinde uygulama
 
-Her platform için arabirimi uygulanmıştır, .NET standart kitaplığı uygulamada bunu yararlanabilir.
+Her platform için arabirim uygulanmıştır, .NET Standard Kitaplığı'nda uygulama bunu avantajlarından yararlanabilirsiniz.
 
 [ `App` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/DependencyServiceSample.cs) Sınıfı oluşturur bir `Button` fotoğraf seçmek için:
 
@@ -276,7 +276,7 @@ Button pickPictureButton = new Button
 stack.Children.Add(pickPictureButton);
 ```
 
-`Clicked` İşleyici kullanan `DependencyService` çağırmak için sınıf `GetImageStreamAsync`. Bu platform projesindeki çağrıda sonuçlanır. Yöntem döndürüyorsa bir `Stream` nesne işleyicisi oluşturur sonra bir `Image` öğesi bu resimle için bir `TabGestureRecognizer`ve değiştirir `StackLayout` alanıyla sayfasında `Image`:
+`Clicked` İşleyicisi kullanır `DependencyService` çağırmak için sınıf `GetImageStreamAsync`. Bu platform projesinde bir çağrı sonuçlanır. Yöntem döndürüyorsa bir `Stream` işleyicisi oluşturur. ardından, nesne bir `Image` öğesi ile bu resmin bir `TabGestureRecognizer`ve değiştirir `StackLayout` sayfasında, ile `Image`:
 
 ```csharp
 pickPictureButton.Clicked += async (sender, e) =>
@@ -314,6 +314,6 @@ Dokunarak `Image` öğesi sayfa normal olarak döndürür.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Fotoğraf Galerisi (iOS) seçin](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/)
+- [Fotoğraf galerisinden (iOS) seçin.](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/)
 - [Bir görüntü (Android) seçin](https://developer.xamarin.com/recipes/android/other_ux/pick_image/)
 - [DependencyService (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)

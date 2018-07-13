@@ -1,30 +1,30 @@
 ---
-title: Xamarin.Forms ControlTemplate bağlamasını
-description: Ortak özellikler için bir denetim şablonu verilere denetimler bağlama şablonu bağlamaları kolayca değiştirilecek denetim şablonu denetimlerinde özellik değerlerini etkinleştirme izin verin. Bu makalede, veri bağlama denetimi şablonundan gerçekleştirmek için şablonu bağlamalar kullanılarak gösterilmektedir.
+title: Xamarin.Forms ControlTemplate bağlama
+description: Şablon bağlamaları genel özellikleri için bir denetim şablonu verilere denetimler bağlama denetimleri kolayca değiştirilecek denetim şablonu içindeki özellik değerlerini etkinleştirme izin verin. Bu makalede, veri bağlama denetimi şablondan gerçekleştirmek için şablon bağlamaları kullanmayı gösterir.
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 99d798ce2c74da0cf7fa0d497128db628a12ead5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 86de2ad6009365b3debbe1a2310651002b023219
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241587"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995573"
 ---
-# <a name="binding-from-a-xamarinforms-controltemplate"></a>Xamarin.Forms ControlTemplate bağlamasını
+# <a name="binding-from-a-xamarinforms-controltemplate"></a>Xamarin.Forms ControlTemplate bağlama
 
-_Ortak özellikler için bir denetim şablonu verilere denetimler bağlama şablonu bağlamaları kolayca değiştirilecek denetim şablonu denetimlerinde özellik değerlerini etkinleştirme izin verin. Bu makalede, veri bağlama denetimi şablonundan gerçekleştirmek için şablonu bağlamalar kullanılarak gösterilmektedir._
+_Şablon bağlamaları genel özellikleri için bir denetim şablonu verilere denetimler bağlama denetimleri kolayca değiştirilecek denetim şablonu içindeki özellik değerlerini etkinleştirme izin verin. Bu makalede, veri bağlama denetimi şablondan gerçekleştirmek için şablon bağlamaları kullanmayı gösterir._
 
-A [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) üst bağlanabilir bir özellik için bir denetim şablonu bir denetimin özelliği bağlamak için kullanılan *hedef* denetim şablona sahip görünümü. Örneğin, tarafından görüntülenen metni tanımlama yerine [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) içinde örnekleri [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/), bağlamak için bir şablon bağlama kullanabilirsiniz [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) özellik için görüntülenecek metni tanımlayan bağlanabilir özellikleri.
+A [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) denetim özelliği Denetim şablonunda üst bağlanabilir bir özellikte bağlamak için kullanılan *hedef* denetim şablona sahip bir görünüm. Örneğin, tarafından görüntülenen metni tanımlamak yerine [ `Label` ](xref:Xamarin.Forms.Label) içinde örnekler [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate), bağlamak için bir şablon bağlamayı kullanabilirsiniz [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) özellik için görüntülenecek metni tanımlayan bağlanabilir özellikleri.
 
-A [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) mevcut bir benzer [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/)dışında *kaynak* , bir `TemplateBinding` üst öğesi için her zaman otomatik olarak ayarlanır *hedef* denetim şablona sahip görünümü. Ancak, bu not bir `TemplateBinding` dışında bir [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) desteklenmiyor.
+A [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) varolan benzer [ `Binding` ](xref:Xamarin.Forms.Binding)dışında *kaynak* , bir `TemplateBinding` üst öğesi için her zaman otomatik olarak ayarlanır *hedef* denetim şablona sahip bir görünüm. Ancak, bu not bir `TemplateBinding` dışında bir [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) desteklenmiyor.
 
-## <a name="creating-a-templatebinding-in-xaml"></a>XAML'de TemplateBinding oluşturma
+## <a name="creating-a-templatebinding-in-xaml"></a>XAML içinde bir TemplateBinding oluşturma
 
-XAML'de bir [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) kullanılarak oluşturulan [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TemplateBindingExtension/) biçimlendirme uzantısı, aşağıdaki kod örneğinde gösterildiği gibi:
+XAML içinde bir [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) kullanılarak oluşturulan [ `TemplateBinding` ](xref:Xamarin.Forms.Xaml.TemplateBindingExtension) işaretleme uzantısı, aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```xaml
 <ControlTemplate x:Key="TealTemplate">
@@ -37,7 +37,7 @@ XAML'de bir [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin
 </ControlTemplate>
 ```
 
-Yerine ayarlamak [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) özellikleri statik metne özellikleri kullanabilir şablon bağlamaları üst bağlanabilir özellikleri bağlamak için *hedef* sahibi Görünüm [ `ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/). Ancak, bu şablonu bağlamaları için bağlama unutmayın `Parent.HeaderText` ve `Parent.FooterText`, yerine `HeaderText` ve `FooterText`. Bu örnekte iki üst varlık bağlanabilir özellikleri tanımlanır ve bunun nedeni *hedef* , üst yerine aşağıdaki kod örneğinde gösterildiği gibi görüntüleyin:
+Yerine ayarlamak [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) statik metin özelliklerle özelliklerini kullanabilir şablon bağlamaları üst bağlanabilir özellikleri bağlamak için *hedef* sahip Görünüm [ `ControlTemplate`](xref:Xamarin.Forms.ControlTemplate). Ancak, şablon bağlamaları için bağlama unutmayın `Parent.HeaderText` ve `Parent.FooterText`, yerine `HeaderText` ve `FooterText`. Bu örnekte iki üst varlık bağlanabilir özellikler tanımlanan olmasıdır *hedef* , üst yerine aşağıdaki kod örneğinde gösterildiği gibi görüntüleyin:
 
 ```xaml
 <ContentPage ...>
@@ -47,7 +47,7 @@ Yerine ayarlamak [ `Label.Text` ](https://developer.xamarin.com/api/property/Xam
 </ContentPage>
 ```
 
-*Kaynak* şablonunu bağlamayı üst öğesi için her zaman otomatik olarak ayarlamak *hedef* burada denetim şablona sahip Görünüm [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) örneği. Bağlamanın kullandığı şablon [ `Parent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Parent/) özelliği üst öğenin geri dönmek için `ContentView` olan örneği [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) örneği. Bu nedenle, kullanarak bir [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) içinde [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) bağlamak için `Parent.HeaderText` ve `Parent.FooterText` üzerinde tanımlanan bağlanabilir özellikleri bulur `ContentPage`, olarak Aşağıdaki kod örneğinde gösterilmektedir:
+*Kaynak* şablonunu bağlama üst için her zaman otomatik olarak ayarlamaya *hedef* burada denetim şablonu sahip Görünüm [ `ContentView` ](xref:Xamarin.Forms.ContentView) örneği. Bağlamanın kullandığı şablon [ `Parent` ](xref:Xamarin.Forms.Element.Parent) üst öğesi döndürülecek özellik `ContentView` olan örneği [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) örneği. Bu nedenle, kullanarak bir [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) içinde [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) bağlamak için `Parent.HeaderText` ve `Parent.FooterText` üzerinde tanımlanan bağlanabilir özellikler bulur `ContentPage`, olarak Aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public static readonly BindableProperty HeaderTextProperty =
@@ -64,13 +64,13 @@ public string FooterText {
 }
 ```
 
-Bu, aşağıdaki ekran görüntülerinde gösterilen görünüm sonuçlanır:
+Bu, aşağıdaki ekran görüntülerinde gösterilen görünümünü sonuçlanır:
 
-![](template-binding-images/teal-theme.png "Deniz denetim şablonu bağlamalar kullanılarak şablonu")
+![](template-binding-images/teal-theme.png "Deniz Mavisi denetim şablonu şablon bağlamaları kullanma")
 
-## <a name="creating-a-templatebinding-in-c35"></a>C'de TemplateBinding oluşturma&#35;
+## <a name="creating-a-templatebinding-in-c35"></a>C dilinde bir TemplateBinding oluşturma&#35;
 
-C# ' ta, bir [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) kullanılarak oluşturulan `TemplateBinding` aşağıdaki kod örneğinde gösterildiği şekilde Oluşturucusu:
+C# ' ta, bir [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) kullanılarak oluşturulan `TemplateBinding` oluşturucusu, aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 class TealTemplate : Grid
@@ -88,7 +88,7 @@ class TealTemplate : Grid
 }
 ```
 
-Yerine ayarlamak [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) özellikleri statik metne özellikleri kullanabilir şablon bağlamaları üst bağlanabilir özellikleri bağlamak için *hedef* sahibi Görünüm [ `ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/). Şablon Bağlama kullanılarak oluşturulan [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) yöntemi, belirten bir [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) ikinci parametre olarak örneği. Şablon bağlamaları bağlamak Not `Parent.HeaderText` ve `Parent.FooterText`, bağlanabilir özellikleri iki üst varlık tanımlandığından *hedef* , üst yerine aşağıdaki kod örneğinde gösterildiği gibi görüntüleyin:
+Yerine ayarlamak [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) statik metin özelliklerle özelliklerini kullanabilir şablon bağlamaları üst bağlanabilir özellikleri bağlamak için *hedef* sahip Görünüm [ `ControlTemplate`](xref:Xamarin.Forms.ControlTemplate). Şablon bağlaması kullanılarak oluşturulan [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) yöntemini belirten bir [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) örneği ikinci parametre olarak. Şablon bağlamaları için bağlama Not `Parent.HeaderText` ve `Parent.FooterText`bağlanabilir özellikler dizinleriyle üzerinde tanımlanan çünkü *hedef* , üst yerine aşağıdaki kod örneğinde gösterildiği gibi görüntüleyin:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -108,13 +108,13 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Bağlanabilir özellikler üzerinde tanımlanan `ContentPage`, daha önce özetlendiği gibi.
+Bağlanabilir özellikler üzerinde tanımlanan `ContentPage`, daha önce belirtildiği gibi.
 
-### <a name="binding-a-bindableproperty-to-a-viewmodel-property"></a>Bir BindableProperty ViewModel özelliği için bağlama
+### <a name="binding-a-bindableproperty-to-a-viewmodel-property"></a>Bir BindableProperty ViewModel özelliğine bağlama
 
-Daha önce belirtildiği gibi bir [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) üst bağlanabilir bir özellik için bir denetim şablonu bir denetimin özelliği bağlar *hedef* denetim şablona sahip görünümü. Buna karşılık, bu bağlanabilir özellikleri ViewModels özelliklerinde bağlanabilir.
+Daha önce belirtildiği gibi bir [ `TemplateBinding` ](xref:Xamarin.Forms.TemplateBinding) denetim özelliği Denetim şablonunda üst bağlanabilir bir özelliğe bağlar. *hedef* denetim şablona sahip bir görünüm. Sırayla bu bağlanabilir özellikler Viewmodel'lar özelliklerinde bağlanabilir.
 
-Aşağıdaki kod örneği iki özellik ViewModel üzerinde tanımlar:
+Aşağıdaki kod örneği, iki özellik üzerinde bir ViewModel tanımlar:
 
 ```csharp
 public class HomePageViewModel
@@ -124,7 +124,7 @@ public class HomePageViewModel
 }
 ```
 
-`HeaderText` Ve `FooterText` ViewModel özellikler için aşağıdaki XAML kod örneğinde gösterildiği gibi bağlanabilir:
+`HeaderText` Ve `FooterText` ViewModel özellikleri için aşağıdaki XAML kod örneğinde gösterildiği gibi bağlanabilir:
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:SimpleTheme;assembly=SimpleTheme"
@@ -138,9 +138,9 @@ public class HomePageViewModel
 </ContentPage>
 ```
 
-`HeaderText` Ve `FooterText` bağlanabilir özellikleri bağlı `HomePageViewModel.HeaderText` ve `HomePageViewModel.FooterText` ayarı nedeniyle özellikleri [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) örneğine `HomePageViewModel` sınıfı. Genel olarak, bu denetim özelliklerini sonuçlanır [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) bağlanan [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) üzerinde örnekleri [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), hangi sırayla bağlamak için ViewModel özellikleri.
+`HeaderText` Ve `FooterText` bağlanabilir özellikler için bağlı `HomePageViewModel.HeaderText` ve `HomePageViewModel.FooterText` ayarı nedeniyle özellikleri [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) örneğine `HomePageViewModel` sınıfı. Genel olarak, bu denetim özelliklerini sonuçları [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) bağlanan [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) üzerinde örnekleri [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), hangi sırayla bağlanma ViewModel özellikleri.
 
-Eşdeğer C# kodu aşağıdaki kod örneğinde gösterilir:
+Eşdeğer C# kodu aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -156,20 +156,20 @@ public class HomePageCS : ContentPage
 }
 ```
 
-ViewModels veri bağlama hakkında daha fazla bilgi için bkz: [gelen veri bağlamalar MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
+Viewmodel'lar veri bağlama hakkında daha fazla bilgi için bkz. [gelen veri bağlamaları-MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
 ## <a name="summary"></a>Özet
 
-Bu makalede veri bağlama denetimi şablonundan gerçekleştirmek için şablonu bağlamalar kullanılarak gösterilmektedir. Ortak özellikler için bir denetim şablonu verilere denetimler bağlama şablonu bağlamaları kolayca değiştirilecek denetim şablonu denetimlerinde özellik değerlerini etkinleştirme izin verin.
+Bu makalede, şablon bağlamaları'ı kullanarak veri bağlama denetimi şablondan gerçekleştirmeyi gösterilmiştir. Şablon bağlamaları genel özellikleri için bir denetim şablonu verilere denetimler bağlama denetimleri kolayca değiştirilecek denetim şablonu içindeki özellik değerlerini etkinleştirme izin verin.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Veri bağlama temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [Veri bağlamaları MVVM için](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [Temel veri bağlama bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [Veri bağlamaları-MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
 - [Şablon Bağlama (örnek) ile basit tema](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
-- [Basit tema şablon bağlama ve ViewModel (örnek)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/)
-- [TemplateBinding](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/)
-- [ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
-- [ContentView](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)
+- [Şablon Bağlama ve ViewModel (örnek) ile basit tema](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/)
+- [TemplateBinding](xref:Xamarin.Forms.TemplateBinding)
+- [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
+- [ContentView](xref:Xamarin.Forms.ContentView)

@@ -1,44 +1,44 @@
 ---
 title: ListView görünümünü özelleştirme
-description: Bu makalede nasıl üstbilgileri, altbilgileri, grupları ve değişken yükseklikli hücreler kullanarak Xamarin.Forms uygulamalarda ListViews özelleştirileceği açıklanmaktadır.
+description: Bu makalede, üstbilgiler, altbilgiler, grupları ve değişken yükseklik hücreleri kullanarak Xamarin.Forms uygulamalarında ListViews özelleştirileceği açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: febf712848b81c09a4e25c824acc097e8b65e409
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1326a1326b4a88459e4e0a01ef590e770e3a88c0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245146"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997354"
 ---
 # <a name="customizing-listview-appearance"></a>ListView görünümünü özelleştirme
 
-`ListView` arka plandaki yanı sıra genel listesinin sunu denetleme seçenekleri sahip `ViewCell`s. Seçenekler şunlardır:
+`ListView` arka plandaki yanı sıra genel listenin sunu denetleme seçenekleri sahip `ViewCell`s. Seçenekler şunlardır:
 
-- [**Gruplandırma** ](#Grouping) &ndash; Grup ListView öğeleri daha kolay gezinme ve geliştirilmiş kuruluş için.
-- [**Üstbilgiler ve altbilgiler** ](#Headers_and_Footers) &ndash; başında ve diğer öğeleri ile birlikte kayar görünümü sonuna bilgileri görüntüler.
-- [**Satır ayırıcı** ](#Row_Separators) &ndash; öğeleri arasında ayırıcı çizgileri göstermek veya gizlemek.
-- [**Değişken yükseklik satırları** ](#Row_Heights) &ndash; varsayılan olarak tüm satırların aynı yükseklikte olsa da bu görüntülenecek farklı yükseklikte satırlarla izin verecek şekilde değiştirilebilir.
+- [**Gruplandırma** ](#Grouping) &ndash; daha kolay gezinme ve geliştirilmiş bir kuruluş için ListView içinde öğeleri gruplandırma.
+- [**Üstbilgiler ve altbilgiler** ](#Headers_and_Footers) &ndash; başlangıcına ve sonuna kadar diğer öğelerle kayan görünümünü bilgileri görüntüler.
+- [**Satır ayırıcı** ](#Row_Separators) &ndash; göster veya gizle öğeleri arasındaki ayırıcı satırlar.
+- [**Değişken yükseklik satırları** ](#Row_Heights) &ndash; varsayılan olarak tüm satırların aynı olan, ancak bu, görüntülenecek farklı yüksekliklerini satırlarla izin verecek şekilde değiştirilebilir.
 
 <a name="Grouping" />
 
 ## <a name="grouping"></a>Gruplandırma
-Genellikle, büyük veri kümelerine yönelik bir sürekli kaydırma listesinde sunulduğunda yönetilmeleri zorlaşabilir. Etkinleştirme gruplandırma bu durumda kullanıcı deneyimini daha iyi içeriği düzenleme ve gezinme veri kolaylaştırmak platforma özgü denetimleri etkinleştirme artırabilir.
+Genellikle, büyük veri kümelerine yönelik bir sürekli kaydırma listesinde yansıtılırken zahmetli hale gelebilir. Etkinleştirme gruplandırma, içeriği daha iyi düzenlemek ve gezinme veri kolaylaştırmak platforma özel denetimleri etkinleştirme bu gibi durumlarda kullanıcı deneyimini geliştirebilir.
 
-Ne zaman gruplandırma etkinleştirilirse için bir `ListView`, her grup için bir başlık satırı eklenir.
+Ne zaman gruplandırma etkin olduğu için bir `ListView`, her grup için bir üst bilgi satırı eklenir.
 
 Gruplandırma etkinleştirmek için:
 
-- Liste (gruplarının bir listesini, bir öğe listesi olan her bir grubu) listesini oluşturun.
+- Bir liste (gruplarının bir listesini, olan öğelerin listesini her bir grubu) listesini oluşturun.
 - Ayarlama `ListView`'s `ItemsSource` bu listeye.
 - Ayarlama `IsGroupingEnabled` true.
-- Ayarlama [ `GroupDisplayBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/) grup başlığı olarak kullanılan özellik gruplarının bağlamak için.
-- [İsteğe bağlı] Ayarlama [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) grubu için kısa bir ad olarak kullanılan özellik gruplarının bağlamak için. Kısa ad bağlantı listeleri (sağ taraftaki sütun iOS) için kullanılır.
+- Ayarlama [ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding) grup başlığı olarak kullanılan özellik gruplarının bağlamak için.
+- [İsteğe bağlı] Ayarlama [ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding) grubu için kısa ad olarak kullanılan özellik gruplarının bağlamak için. Kısa adı, bağlantı listeleri (iOS üzerinde sağ tarafında sütun) için kullanılır.
 
-Grupları için bir sınıf oluşturarak başlayın:
+Gruplar için bir sınıf oluşturarak başlayın:
 
 ```csharp
 public class PageTypeGroup : List<PageModel>
@@ -56,9 +56,9 @@ public class PageTypeGroup : List<PageModel>
     }
 ```
 
-Yukarıdaki kod `All` bizim ListView bağlama kaynağı olarak için verilen listesidir. `Title` ve `ShortName` Grup başlıkları için kullanılacak olan özelliklerdir.
+Yukarıdaki kodda, `All` bağlama kaynağı olarak bizim ListView için verilen listesidir. `Title` ve `ShortName` grup başlıklarını için kullanılacak olan özelliklerdir.
 
-Bu aşamada `All` boş bir listedir. Böylece listenin program başlangıcında doldurulur statik bir oluşturucu ekleyin:
+Bu aşamada, `All` boş bir listedir. Liste, program başlangıcında doldurulacak bir statik oluşturucu ekleyin:
 
 ```csharp
 static PageTypeGroup()
@@ -81,9 +81,9 @@ static PageTypeGroup()
 }
 ```
 
-Yukarıdaki kod biz de çağırabilirsiniz `Add` öğeleri üzerinde `groups`, türü örnekleri olan `PageTypeGroup`. Bu olasıdır çünkü `PageTypeGroup` devraldığı `List<PageModel>`. Bu, yukarıda belirtilen listelerinde desen listesi örneğidir.
+Yukarıdaki kodda biz de çağırabilirsiniz `Add` öğeleri üzerinde `groups`, türün örneklerinin olduğu `PageTypeGroup`. Bu mümkün olur çünkü `PageTypeGroup` devraldığı `List<PageModel>`. Bu, yukarıda belirtilen listeleri Desen listesinin bir örnektir.
 
-Gruplandırılmış listesini görüntülemek için XAML şöyledir:
+XAML gruplandırılmış listesini görüntülemek için şu şekildedir:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -110,18 +110,18 @@ Bu durum şunlara sebep olur:
 
 ![](customizing-list-appearance-images/grouping-depth.png "ListView gruplama örneği")
 
-Bizim Not:
+Sahip olduğumuz unutmayın:
 
-- Ayarlama `GroupShortNameBinding` için `ShortName` bizim Grup sınıfında tanımlanan özelliği
-- Ayarlama `GroupDisplayBinding` için `Title` bizim Grup sınıfında tanımlanan özelliği
+- Ayarlama `GroupShortNameBinding` için `ShortName` bizim Grup sınıfı içinde tanımlanan bir özellik
+- Ayarlama `GroupDisplayBinding` için `Title` bizim Grup sınıfı içinde tanımlanan bir özellik
 - Ayarlama `IsGroupingEnabled` true
 - Değiştirilen `ListView`'s `ItemsSource` gruplanmış listesi
 
 ### <a name="customizing-grouping"></a>Gruplandırma özelleştirme
 
-Listesinde gruplama etkinleştirilmişse grup üstbilgisi da özelleştirilebilir.
+Gruplandırma listesinde etkinleştirildiyse, Grup üstbilgisi da özelleştirilebilir.
 
-Benzer şekilde nasıl `ListView` sahip bir `ItemTemplate` satırları görüntülenme tanımlamak için `ListView` sahip bir `GroupHeaderTemplate`.
+Benzer şekilde nasıl `ListView` sahip bir `ItemTemplate` satırları görüntülenme tanımlama `ListView` sahip bir `GroupHeaderTemplate`.
 
 XAML Grup üstbilgisinde özelleştirilmesine bir örnek aşağıda gösterilmiştir:
 
@@ -161,12 +161,12 @@ x:Class="DemoListView.GroupingViewPage">
 <a name="Headers_and_Footers" />
 
 ## <a name="headers-and-footers"></a>Üstbilgiler ve Altbilgiler
-Bir kaydırma üstbilgi ve altbilgi listenin öğelerini sunmak ListView mümkündür. Üstbilgi ve altbilgi dizeler metin veya daha karmaşık bir düzen olabilir. Bu ayrı olduğuna dikkat edin [bölüm grupları](#Grouping).
+Bir ListView üstbilgi ve altbilgi, kaydırma listesi öğeleriyle sunmak mümkündür. Üstbilgi ve altbilgi dizeler metin veya daha karmaşık bir düzen olabilir. Bu ayrı olduğunu unutmayın [bölüm grupları](#Grouping).
 
-Ayarlayabileceğiniz `Header` ve/veya `Footer` basit bir dize değeri veya bunları daha karmaşık bir düzene ayarlayabilirsiniz.
-Ayrıca `HeaderTemplate` ve `FooterTemplate` olanak tanıyan özellikler bu destek veri bağlama üstbilgi ve altbilgi için daha karmaşık düzenleri oluşturma.
+Ayarlayabileceğiniz `Header` ve/veya `Footer` için basit bir dize değeri veya bunları daha karmaşık bir düzene ayarlayabilirsiniz.
+Ayrıca `HeaderTemplate` ve `FooterTemplate` olanak tanıyan özellikler üstbilgi ve altbilgi için daha karmaşık düzenler, destek veri bağlama oluşturun.
 
-Basit bir üstbilgi/altbilgi oluşturmak için yalnızca görüntülemek istediğiniz metin üstbilgisinde veya altbilgisinde özellikleri ayarlayın. Kod:
+Basit bir üstbilgi/altbilgi oluşturmak için üstbilgisi veya altbilgisi özelliklerini görüntülemek istediğiniz metni ayarlamanız yeterlidir. Kod:
 
 ```csharp
 ListView HeaderList = new ListView() {
@@ -175,7 +175,7 @@ ListView HeaderList = new ListView() {
     };
 ```
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <ListView  x:Name="HeaderList"  Header="Header" Footer="Footer"></ListView>
@@ -207,14 +207,14 @@ XAML'de:
 <a name="Row_Separators" />
 
 ## <a name="row-separators"></a>Satır ayırıcı
-Ayırıcı satırlar arasında görüntülenir `ListView` öğeleri varsayılan olarak iOS ve Android. İOS ve Android ayırıcı satırlarında gizlemek tercih ediyorsanız, ayarlamak `SeparatorVisibility` , ListView özelliği. Seçeneklerini `SeparatorVisibility` şunlardır:
+Ayırıcı satırlar arasında görüntülenir `ListView` öğeleri varsayılan olarak, iOS ve Android. İOS ve Android'de ayırıcı satırları gizle tercih verilirse `SeparatorVisibility` , ListView özelliği. Seçeneklerini `SeparatorVisibility` şunlardır:
 
-* **Varsayılan** -iOS ve Android cihazlarda bir ayırıcı satır gösterir.
+* **Varsayılan** -iOS ve Android üzerinde bir ayırıcı çizginin gösterir.
 * **Hiçbiri** -tüm platformlarda ayırıcı gizler.
 
-Varsayılan görünürlük:
+Varsayılan görünürlüğü:
 
-C# ' TA:
+C# İÇİN:
 
 ```csharp
 SepratorDemoListView.SeparatorVisibility = SeparatorVisibility.Default;
@@ -226,11 +226,11 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
 ```
 
-![](customizing-list-appearance-images/separator-default.png "Varsayılan satır Ayırıcılı ListView")
+![](customizing-list-appearance-images/separator-default.png "Varsayılan satır ayırıcı ile ListView")
 
-Yok:
+Hiçbiri:
 
-C# ' TA:
+C# İÇİN:
 
 ```csharp
 SepratorDemoListView.SeparatorVisibility = SeparatorVisibility.None;
@@ -244,9 +244,9 @@ XAML:
 
 ![](customizing-list-appearance-images/separator-none.png "ListView satır ayırıcı olmadan")
 
-Ayırıcı çizginin rengini de ayarlayabilirsiniz `SeparatorColor` özelliği:
+Bir ayırıcı çizginin rengini ayarlayabilirsiniz `SeparatorColor` özelliği:
 
-C# ' TA:
+C# İÇİN:
 
 ```csharp
 SepratorDemoListView.SeparatorColor = Color.Green;
@@ -258,24 +258,24 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorColor="Green" />
 ```
 
-![](customizing-list-appearance-images/separator-custom.png "ListView yeşil satır Ayırıcılı")
+![](customizing-list-appearance-images/separator-custom.png "ListView yeşil satır ayırıcı ile")
 
 > [!NOTE]
-> Bu özelliklerden herhangi birini yüklemeden sonra Android ayarı `ListView` büyük performans cezası doğurur.
+> Bu özelliklerin herhangi birini yüklemeden sonra Android'de ayarlama `ListView` büyük performans cezasına sebep olur.
 
 <a name="Row_Heights" />
 
-## <a name="row-heights"></a>Satır yükseklik
-ListView tüm satırlarda, varsayılan olarak aynı yüksekliğe sahip. ListView bu davranışı değiştirmek için kullanılan iki özelliklere sahiptir:
+## <a name="row-heights"></a>Satır yüksekliklerini
+Bir ListView tüm satırlarda, varsayılan olarak aynı yüksekliğe sahiptir. ListView bu davranışı değiştirmek için kullanılan iki özelliğe sahiptir:
 
-- `HasUnevenRows` &ndash; `true`/`false` değer, satır varsa değişen yükseklikte kümesine `true`. Varsayılan olarak `false`.
-- `RowHeight` &ndash; ayarlar her satır yüksekliğini ne zaman `HasUnevenRows` olan `false`.
+- `HasUnevenRows` &ndash; `true`/`false` değer, satır varsa değişen yüksekliklerini kümesine `true`. Varsayılan olarak `false`.
+- `RowHeight` &ndash; ayarlar her satır yüksekliğini ne zaman `HasUnevenRows` olduğu `false`.
 
-Tüm satırların yüksekliğini ayarlayarak ayarlayabileceğiniz `RowHeight` özelliği `ListView`.
+Tüm satırların yüksekliğini ayarlayarak ayarlayabileceğiniz `RowHeight` özellikte `ListView`.
 
 ### <a name="custom-fixed-row-height"></a>Özel sabit satır yüksekliği
 
-C# ' TA:
+C# İÇİN:
 
 ```csharp
 RowHeightDemoListView.RowHeight = 100;
@@ -290,13 +290,13 @@ XAML:
 ![](customizing-list-appearance-images/height-custom.png "ListView sabit satır yüksekliği ile")
 
 
-### <a name="uneven-rows"></a>Düzensiz Satırları
+### <a name="uneven-rows"></a>Düzensiz satırlar
 
-Tek tek satır farklı yükseklikte olmasını istiyorsanız, ayarlayabileceğiniz `HasUnevenRows` özelliğine `true`.
-Satır yükseklikte el ile ayarlanmasına sahip olmadığına dikkat edin `HasUnevenRows` ayarlandığından `true`, yükseklik Xamarin.Forms tarafından otomatik olarak hesaplanır.
+Ayrı satırlara farklı yüksekliklerini sahip olmasını isterseniz, ayarlayabileceğiniz `HasUnevenRows` özelliğini `true`.
+Satır yüksekliklerini elle ayarlanmasına yüklü olmadığını unutmayın `HasUnevenRows` ayarlanmış `true`, yüksekliklerini Xamarin.Forms tarafından otomatik olarak hesaplanır.
 
 
-C# ' TA:
+C# İÇİN:
 
 ```csharp
 RowHeightDemoListView.HasUnevenRows = true;
@@ -310,9 +310,9 @@ XAML:
 
 ![](customizing-list-appearance-images/height-uneven.png "ListView düzensiz satırlarla")
 
-### <a name="runtime-resizing-of-rows"></a>Çalışma zamanı satırları yeniden boyutlandırma
+### <a name="runtime-resizing-of-rows"></a>Çalışma zamanı satırlarını yeniden boyutlandırma
 
-Tek tek `ListView` satır, sağlanan çalışma zamanında program aracılığıyla yeniden boyutlandırılabilir `HasUnevenRows` özelliği ayarlanmış `true`. [ `Cell.ForceUpdateSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.ForceUpdateSize()/) Bile, aşağıdaki kod örneğinde gösterildiği gibi şu anda görünür değilse yöntemi güncelleştirmeleri bir hücrenin boyutu:
+Tek tek `ListView` satırları sağlanan, çalışma zamanında programlı bir şekilde yeniden boyutlandırılabilir `HasUnevenRows` özelliği `true`. [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) Yöntemi bile, aşağıdaki kod örneğinde gösterildiği gibi şu anda görünür olmadığı durumlarda bir hücrenin boyutu güncelleştirir:
 
 ```csharp
 void OnImageTapped (object sender, EventArgs args)
@@ -327,9 +327,9 @@ void OnImageTapped (object sender, EventArgs args)
 }
 ```
 
-`OnImageTapped` Olay işleyicisi yanıt olarak yürütüldüğünde bir [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) hücrede dokunduğunuz ve boyutu artar `Image` hücrede görüntülenmesi kolayca görüntülenebilir.
+`OnImageTapped` Olay işleyicisi, yanıt olarak yürütülür bir [ `Image` ](xref:Xamarin.Forms.Image) hücrede dokunulduğunda ve boyutunu artırır `Image` hücrede görüntülenmesi kolayca görüntülenebilir.
 
-![](customizing-list-appearance-images/dynamic-row-resizing.png "Çalışma zamanı satır yeniden boyutlandırma ile ListView")
+![](customizing-list-appearance-images/dynamic-row-resizing.png "Çalışma zamanı satır yeniden boyutlandırılarak ListView")
 
 Bu özellik aşırı kullanılmasına, güçlü bir performans düşüşü olasılığını olduğunu unutmayın.
 
@@ -338,7 +338,7 @@ Bu özellik aşırı kullanılmasına, güçlü bir performans düşüşü olas�
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Gruplandırma (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [Özel oluşturucu görünümü (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
+- [Özel oluşturucu Görünüm (örnek)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
 - [Dinamik yeniden boyutlandırma, satır (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/DynamicUnevenListCells/)
 - [1.4 sürüm notları](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [1.3 sürüm notları](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

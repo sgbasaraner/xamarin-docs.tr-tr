@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/30/2018
-ms.openlocfilehash: 1fc00d463ed28960135094d59b22bd33b46f68fa
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: 10adb46493a1cdbb6bc6a2fd67b5191633d7eeeb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38985937"
+ms.locfileid: "38997305"
 ---
 # <a name="platform-specifics"></a>Platform özellikleri
 
@@ -38,17 +38,17 @@ Aşağıdaki platforma özgü işlevi Xamarin.Forms içinde yerleşik olarak bul
 
 Bir platforma özgü API fluent kodu veya XAML aracılığıyla kullanma işlemi aşağıdaki gibidir:
 
-1. Ekleme bir `xmlns` bildirimi veya `using` yönergesi [ `Xamarin.Forms.PlatformConfiguration` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration/) ad alanı.
+1. Ekleme bir `xmlns` bildirimi veya `using` yönergesi [ `Xamarin.Forms.PlatformConfiguration` ](xref:Xamarin.Forms.PlatformConfiguration) ad alanı.
 1. Ekleme bir `xmlns` bildirimi veya `using` yönerge platforma özgü işlevlerini içeren ad uzayı için:
-    1. İos'ta Bu, [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) ad alanı.
-    1. Android'de budur [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) ad alanı. Android AppCompat için budur [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/) ad alanı.
-    1. Evrensel Windows platformu budur [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/) ad alanı.
-1. Platforma özgü kod ile veya XAML uygulama `On<T>` fluent API'si. Değerini `T` olabilir [ `iOS` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOS/), [ `Android` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.Android/), veya [ `Windows` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.Windows/) gelen türleri [ `Xamarin.Forms.PlatformConfiguration` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration/) ad alanı.
+    1. İos'ta Bu, [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) ad alanı.
+    1. Android'de budur [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ad alanı. Android AppCompat için budur [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) ad alanı.
+    1. Evrensel Windows platformu budur [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) ad alanı.
+1. Platforma özgü kod ile veya XAML uygulama `On<T>` fluent API'si. Değerini `T` olabilir [ `iOS` ](xref:Xamarin.Forms.PlatformConfiguration.iOS), [ `Android` ](xref:Xamarin.Forms.PlatformConfiguration.Android), veya [ `Windows` ](xref:Xamarin.Forms.PlatformConfiguration.Windows) gelen türleri [ `Xamarin.Forms.PlatformConfiguration` ](xref:Xamarin.Forms.PlatformConfiguration) ad alanı.
 
 > [!NOTE]
 > Platforma özgü kullanılamaz olduğu bir platformda tüketmeye çalışırken bir hatayla sonuçlanır değil olduğunu unutmayın. Bunun yerine, kodu platforma uygulanan özel yürütülür.
 
-Platform özellikleri tüketilen aracılığıyla `On<T>` fluent kod API dönüş [ `IPlatformElementConfiguration` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IPlatformElementConfiguration%3CTPlatform,TElement%3E/) nesneleri. Bu, birden çok platform yöntemi geçişli ile aynı nesne üzerinde çağrılacak özellikleri sağlar.
+Platform özellikleri tüketilen aracılığıyla `On<T>` fluent kod API dönüş [ `IPlatformElementConfiguration` ](xref:Xamarin.Forms.IPlatformElementConfiguration`2) nesneleri. Bu, birden çok platform yöntemi geçişli ile aynı nesne üzerinde çağrılacak özellikleri sağlar.
 
 Platform özellikleri hakkında daha fazla bilgi için bkz: [Platform özelliklerini kullanma](~/xamarin-forms/platform/platform-specifics/consuming/index.md) ve [Platform özellikleri oluşturma](~/xamarin-forms/platform/platform-specifics/creating.md).
 
@@ -58,4 +58,4 @@ Platform özellikleri hakkında daha fazla bilgi için bkz: [Platform özellikle
 - [Platform Özelliklerini Kullanma](~/xamarin-forms/platform/platform-specifics/consuming/index.md)
 - [Platform Özellikleri Oluşturma](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (örnek)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [PlatformConfiguration](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration/)
+- [PlatformConfiguration](xref:Xamarin.Forms.PlatformConfiguration)

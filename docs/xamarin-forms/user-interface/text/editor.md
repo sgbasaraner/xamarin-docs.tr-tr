@@ -1,45 +1,45 @@
 ---
 title: Xamarin.Forms Düzenleyicisi
-description: Bu makalede Xamarin.Forms düzenleyici denetimi uygulamanın çok satırlı metin girişi kabul etmek için nasıl kullanılacağı açıklanmaktadır.
+description: Bu makalede, bir uygulamada çok satırlı metin girişi kabul etmek için Xamarin.Forms düzenleyici denetimi kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: 7ad8c8aa77e23c5a8fb7649736ecb271f835d1a7
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 4879ff88d5bbdab5aa92024bee7f50239a141e3b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245530"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995873"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms Düzenleyicisi
 
 _Çok satırlı metin girişi_
 
-`Editor` Denetimi, çok satırlı girişi kabul etmek için kullanılır. Bu makalede ele alınacaktır:
+`Editor` Denetimi, çok satırlı giriş kabul etmek için kullanılır. Bu makalede ele alınacaktır:
 
-- **[Özelleştirme](#customization)**  &ndash; klavye ve renk seçeneklerini.
-- **[Etkileşim](#interactivity)**  &ndash; olayları için etkileşim sağlamak için kulak.
+- **[Özelleştirme](#customization)**  &ndash; klavye ve rengi seçeneklerini.
+- **[Etkileşim](#interactivity)**  &ndash; olayları için etkileşim sağlamak için Dinledik.
 
 ## <a name="customization"></a>Özelleştirme
 
-### <a name="setting-and-reading-text"></a>Ve ayarlama ve metin okuma
+### <a name="setting-and-reading-text"></a>Metin okuma ve ayarlama
 
-`Editor`, Diğer metin sunan görünümleri gibi sunan `Text` özelliği. Bu özelliği ayarlamak ve tarafından sunulan metin okumak için kullanılan `Editor`. Aşağıdaki örnek, ayarı gösterir `Text` XAML özelliğinde:
+`Editor`, Metin sunma diğer görünümleri gibi sunan `Text` özelliği. Bu özellik tarafından sunulan metni okuyun ve ayarlamak için kullanılan `Editor`. Aşağıdaki örnek ayar gösterir `Text` XAML özelliği:
 
 ```xaml
 <Editor Text="I am an Editor" />
 ```
 
-C# ' de:
+C# içinde:
 
 ```csharp
 var MyEditor = new Editor { Text = "I am an Editor" };
 ```
 
-Metin okuma erişimi `Text` özelliği, C#:
+Metin okuma erişimi `Text` C# özelliği:
 
 ```csharp
 var text = MyEditor.Text;
@@ -47,7 +47,7 @@ var text = MyEditor.Text;
 
 ### <a name="limiting-input-length"></a>Giriş sınırlandırma
 
-[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Özelliği için izin verilen giriş uzunluğunu sınırlamak için kullanılabilir [ `Editor` ](xref:Xamarin.Forms.Editor). Bu özellik, pozitif bir tamsayı olarak ayarlamanız gerekir:
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Özelliği için izin verilen giriş uzunluğu sınırlamak için kullanılabilir [ `Editor` ](xref:Xamarin.Forms.Editor). Bu özellik, pozitif bir tamsayı olarak ayarlanmalıdır:
 
 ```xaml
 <Editor ... MaxLength="10" />
@@ -57,28 +57,28 @@ var text = MyEditor.Text;
 var editor = new Editor { ... MaxLength = 10 };
 ```
 
-A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) özelliği değerinin 0 gösterir herhangi bir giriş izin verilmeyeceğini ve değeri `int.MaxValue`, varsayılan değeri olduğu bir [ `Editor` ](xref:Xamarin.Forms.Editor), olduğunu gösterir yok etkili girilebilir karakter sayısı sınırı.
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) özellik değerinin 0 gösterir müdahalesi izin verilmeyeceğini, değerini `int.MaxValue`, varsayılan değeri olduğu bir [ `Editor` ](xref:Xamarin.Forms.Editor), olduğunu gösterir yok etkili girilebilir karakter sayısını sınırlama.
 
-### <a name="keyboards"></a>Klavyeler
+### <a name="keyboards"></a>Klavye
 
-Kullanıcıların etkileşimli olarak yükleyen sunulan klavye bir `Editor` aracılığıyla programlı olarak ayarlanabilir [ ``Keyboard`` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/) özelliği.
+Kullanıcılar ile etkileşim kurduğunuzda, sunulan klavye bir `Editor` aracılığıyla programlı olarak ayarlanabilir [ ``Keyboard`` ](xref:Xamarin.Forms.Keyboard) özelliği.
 
-Klavye türü için Seçenekler şunlardır:
+Klavye türü seçenekleri şunlardır:
 
 - **Varsayılan** &ndash; varsayılan klavye
-- **Sohbet** &ndash; metin & yerler için kullanılan emoji nerede yararlı
-- **E-posta** &ndash; e-posta adreslerini girerken kullanılan
-- **Sayısal** &ndash; numaralarını girerken kullanılan
-- **Telefon** &ndash; telefon numaralarını girerken kullanılan
+- **Sohbet** &ndash; telefonunuza mesaj & basamak için kullanılan emoji burada kullanışlıdır
+- **E-posta** &ndash; kullanılması için e-posta adresi girme
+- **Sayısal** &ndash; kullanılması için sayı girme
+- **Telefon** &ndash; telefon numaraları girerken kullanılan
 - **URL** &ndash; dosya yolları & web adresleri girmek için kullanılan
 
-Var olan bir [her klavye örneği](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) bizim tarif bölümünde.
+Var olan bir [her klavye örneği](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) tarifler bölümümüzdeki.
 
-### <a name="enabling-and-disabling-spell-checking"></a>Etkinleştirme ve yazım denetimi devre dışı bırakma
+### <a name="enabling-and-disabling-spell-checking"></a>Yazım denetimi devre dışı bırakma ve etkinleştirme
 
-[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Özellik denetimleri olup yazım etkin olmadığı denetleniyor. Varsayılan olarak, özellik kümesine `true`. Metin kullanıcının girdiği gibi yazım hatalarını belirtilir.
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Özellik denetimleri olup yazım denetimi etkinleştirildi. Varsayılan olarak ayarlandığı `true`. Yazım hatası, kullanıcının girdiği metin olarak belirtilir.
 
-Ancak, bir kullanıcı adı girerek gibi bazı metin girişi senaryolar için yazım denetimi negatif bir deneyim ve bunu devre dışı bırakılmalıdır ayarlayarak sağlar [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliğine `false`:
+Ancak, bir kullanıcı adı girerek gibi bazı metin girişi senaryolar için yazım denetimi negatif bir deneyim ve bunu devre dışı bırakılmalıdır ayarlayarak sağlar [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliğini `false`:
 
 ```xaml
 <Editor ... IsSpellCheckEnabled="false" />
@@ -89,13 +89,13 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> Zaman [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliği ayarlanmış `false`ve özel bir klavye kullanılmadığından, yerel yazım denetimi devre dışı bırakılacak. Ancak, bir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sahip olan yazım devre dışı bırakır kümesi denetlemesi gibi [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` özelliği yoksayılır. Bu nedenle, özellik için yazım denetimi etkinleştirmek için kullanılamaz bir `Keyboard` , açıkça onu devre dışı bırakır.
+> Zaman [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliği `false`ve özel bir klavye kullanılmıyor, yerel yazım denetimi devre dışı bırakılır. Ancak, bir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sahip olan yazım devre dışı bırakan kümesi denetleniyor, gibi [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` özelliği yok sayılır. Bu nedenle, özellik için yazım denetimini etkinleştirme kullanılamaz bir `Keyboard` , açıkça bırakır.
 
 ### <a name="colors"></a>Renkleri
 
-`Editor` özel bir arka plan rengi aracılığıyla kullanacak şekilde ayarlanabilir `BackgroundColor` özelliği. Renkler her platformda kullanılabilir olacağından emin olmak özellikle dikkatli gereklidir. Her platform için metin rengi farklı varsayılan ayarlar olduğundan, her platform için bir özel bir arka plan rengi ayarlamanız gerekebilir. Bkz: [Platform Tweaks ile çalışma](~/xamarin-forms/platform/device.md) UI her platform için en iyi duruma getirme hakkında daha fazla bilgi.
+`Editor` Özel arka plan rengi ile kullanmak için ayarlanabilir `BackgroundColor` özelliği. Özel renkler her platformda kullanılabilir olmasını sağlamak gereklidir. Her platform text color için varsayılan değerleri farklı olduğundan, her platform için bir özel arka plan rengini ayarlamak gerekebilir. Bkz: [Platform ince ayarlar ile çalışan](~/xamarin-forms/platform/device.md) UI her platform için en iyi duruma getirme hakkında daha fazla bilgi.
 
-C# ' de:
+C# içinde:
 
 ```csharp
 public partial class EditorPage : ContentPage
@@ -112,7 +112,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -137,18 +137,18 @@ XAML'de:
 
 ![](editor-images/textbackgroundcolor.png "BackgroundColor örnekle Düzenleyicisi")
 
-Seçtiğiniz arka plan ve metin renklerini her platformda kullanılabilir ve herhangi bir yer tutucu metin soyutlamaması yok olduğundan emin olun.
+Seçtiğiniz arka plan ve metin renklerini her platformda kullanılabilir ve herhangi bir yer tutucu metin gizlememeniz yoksa emin olun.
 
 ## <a name="interactivity"></a>Etkileşim
 
-`Editor` iki olayları gösterir:
+`Editor` iki olay kullanıma sunar:
 
-- [TextChanged](http://developer.xamarin.com/api/event/Xamarin.Forms.Editor.TextChanged/) &ndash; metin düzenleyicide değiştiğinde oluşturulur. Metin önce ve sonra değişiklik sağlar.
-- [Tamamlanan](http://developer.xamarin.com/api/event/Xamarin.Forms.Editor.Completed/) &ndash; klavyede return tuşuna basarak, kullanıcı giriş sona erdi tetiklenir.
+- [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash; düzenleyicide metni değiştiğinde harekete geçirilen. Metin önce ve sonra değişiklik sağlar.
+- [Tamamlanan](xref:Xamarin.Forms.Editor.Completed) &ndash; kullanıcı girişi klavyede return tuşuna basarak sona erdiğinde oluşturulur.
 
 ### <a name="completed"></a>Tamamlandı
 
-`Completed` Olay tamamlanması ile etkileşim için tepki göstermek için kullanılan bir `Editor`. `Completed` kullanıcı girişi bir alanla klavyede return tuşuna girerek sona erdiğinde tetiklenir. Olayı için gönderen çıkarmadan bir genel olay işleyici işleyicisidir ve `EventArgs`:
+`Completed` Olay bir etkileşim tamamlanması için tepki vermek için kullanılan bir `Editor`. `Completed` kullanıcı girişi bir alanla klavyede return tuşuna girerek sona erdiğinde ortaya çıkar. Olay işleyicisi gönderen alma bir genel olay işleyicisidir ve `EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -159,7 +159,7 @@ void EditorCompleted (object sender, EventArgs e)
 
 Tamamlanan Olay kod ve XAML abone:
 
-C# ' de:
+C# içinde:
 
 ```csharp
 public partial class EditorPage : ContentPage
@@ -176,7 +176,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -194,9 +194,9 @@ Title="Editor Demo">
 
 ### <a name="textchanged"></a>TextChanged
 
-`TextChanged` Olay, bir alanın içeriği değişikliği tepki göstermek için kullanılır.
+`TextChanged` Olay, bir alanın içeriğini bir değişiklik için tepki vermek için kullanılır.
 
-`TextChanged` Her tetiklenir `Text` , `Editor` değişiklikler. Olay işleyicisi örneği alır `TextChangedEventArgs`. `TextChangedEventArgs` eski ve yeni değerlerine erişim sağlayan `Editor` `Text` aracılığıyla `OldTextValue` ve `NewTextValue` özellikleri:
+`TextChanged` ne zaman tetiklenir `Text` , `Editor` değişiklikler. Olay işleyicisi örneğini alır `TextChangedEventArgs`. `TextChangedEventArgs` eski ve yeni değerlerine erişim sağlayan `Editor` `Text` aracılığıyla `OldTextValue` ve `NewTextValue` özellikleri:
 
 ```csharp
 void EditorTextChanged (object sender, TextChangedEventArgs e)
@@ -225,7 +225,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-XAML'de:
+XAML içinde:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -245,4 +245,4 @@ Title="Editor Demo">
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Metin (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [Düzenleyici API](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/)
+- [API Düzenleyicisi](xref:Xamarin.Forms.Editor)

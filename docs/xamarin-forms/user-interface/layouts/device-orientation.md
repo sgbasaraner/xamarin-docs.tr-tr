@@ -1,65 +1,64 @@
 ---
-title: Cihaz yönlendirmesini
-description: Bu makalede açıklanır dikey ve yatay yönler görünümlü düzeni Xamarin.Forms uygulamaları nasıl.
+title: Cihaz yönü
+description: Bu makalede açıklanır dikey ve yatay yönler harika görünecek yerleşimi Xamarin.Forms uygulamaları nasıl.
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 9245a17423d97887d2032856b10427685b25c29b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f6ca8f0900c8bc325cc49a7484dabe5bf2534257
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244357"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999043"
 ---
-# <a name="device-orientation"></a>Cihaz yönlendirmesini
+# <a name="device-orientation"></a>Cihaz yönü
 
-Uygulamanızı nasıl kullanılacağını ve kullanıcı deneyimini geliştirmek için yatay yönlendirme nasıl birleştirilebilir dikkate almak önemlidir. Tek tek düzenleri birden çok yönler uyum sağlamak için tasarlanmış ve en iyi kullanılabilir alanı kullanın. Uygulama düzeyinde döndürme devre dışı veya etkinleştirilebilir.
+Uygulamanızı nasıl kullanılacağını ve nasıl yatay yönde kullanıcı deneyimini geliştirmek için birleştirilebilir göz önünde bulundurmanız önemlidir. Tek tek düzenleri birden çok yönleri uyum sağlamak için tasarlanan ve en iyi kullanılabilir alanı kullanın. Uygulama düzeyinde döndürmeyi devre dışı bırakabilir veya etkinleştirilebilir.
 
 <a name="Controlling_Orientation" />
 
-## <a name="controlling-orientation"></a>Yönlendirme denetleme
+## <a name="controlling-orientation"></a>Yönünü denetleme
 
-Xamarin.Forms kullanırken, cihaz yönlendirmesini denetlemek için desteklenen yöntem her proje için ayarları kullanmaktır.
+Xamarin.Forms kullanırken, cihaz yönünü denetleme için desteklenen yöntem her bir proje için ayarları kullanmaktır.
 
 ### <a name="ios"></a>iOS
 
-İos'ta, cihaz yönlendirmesini kullanan uygulamalar için yapılandırılmış **Info.plist** dosya. İsteğe bağlı olarak uygulama hedef olarak içeriyorsa, bu dosyayı iPhone & iPod yönlendirme ayarlarını yanı sıra, iPad için ayarları içerir. IDE'yi için özel yönergeler verilmiştir. IDE seçenekleri bu belgenin üst kısmında hangi yönergeleri görmek istediğiniz seçmek için kullanın:
+İOS, cihaz yönü kullanan uygulamalar için yapılandırılmış **Info.plist** dosya. İsteğe bağlı olarak uygulamayı hedef olarak içeriyorsa, bu dosyayı iPad için ayarları yanı sıra, iPhone ve iPod yönlendirme ayarlarını içerir. IDE'nizi için özel yönergeler verilmiştir. IDE seçenekleri, bu belgenin üst kısmında hangi yönergeleri görmek istediğiniz seçmek için kullanın:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Visual Studio'da iOS projesi açın ve açık **Info.plist**. Dosya, iPhone dağıtım bilgileri sekmesi ile başlayarak, bir yapılandırma paneline açılır:
+Visual Studio iOS projesini açın ve açık **Info.plist**. İPhone dağıtım bilgisi sekmesi ile başlayarak, bir yapılandırma paneline dosya açılır:
 
-![iPhone Visual Studio'da dağıtım bilgileri](device-orientation-images/orientation-vs-iphone.png)
+![iPhone dağıtım bilgisi Visual Studio'da](device-orientation-images/orientation-vs-iphone.png)
 
-İPad yönlendirmesini yapılandırmak için seçin **iPad dağıtım bilgileri** panelinde, ardından kullanılabilir yönler select sol üst sekmesini:
+İPad yönlendirmesini yapılandırmak için seçin **iPad dağıtım bilgisi** panelinde, ardından kullanılabilir yönlendirmeler select sol üstteki sekmesine:
 
-![Visual Studio'da desteklenen cihaz yönler](device-orientation-images/orientation-vs-ipad.png)
+![Visual Studio'da desteklenen cihaz yönleri](device-orientation-images/orientation-vs-ipad.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Visual Studio'da Mac için iOS projesi açın ve açık **Info.plist**. Altında **uygulama** sekmesinde bölümleri kullanılabilir yönlendirmesini ayarlamak:
+Mac için Visual Studio, bir iOS projesi açın ve açık **Info.plist**. Altında **uygulama** sekmesinde bölümleri yönlendirmesini ayarlamak kullanılabilir olacak:
 
-![iPhone Mac için Visual Studio'da dağıtım bilgileri](device-orientation-images/orientation-xam-ui.png)
+![iPhone dağıtım bilgisi Mac için Visual Studio](device-orientation-images/orientation-xam-ui.png)
 
-Select bir anahtar-değer Düzenleyici arabirimi kullanarak değerlerini düzenlemek tercih ederseniz **kaynak**> sekmesinde ekranın altındaki:
+Bir anahtar-değer Düzenleyicisi arabirimi, select değerlerini düzenlemek tercih ediyorsanız **kaynak**> sekmesinde ekranın alt kısmındaki:
 
-![Cihaz yönler Visual Studio'da Mac için desteklenir.](device-orientation-images/orientation-xam-source.png)
+![Cihaz yönleri, Mac için Visual Studio'da desteklendiğine](device-orientation-images/orientation-xam-source.png)
 
 -----
 
 ### <a name="android"></a>Android
 
-Android üzerinde yönlendirme denetlemek için açık **MainActivity.cs** ve öznitelik dekorasyon kullanarak yönlendirmesini ayarlamak `MainActivity` sınıfı:
+Android'de yönlendirmesini denetlemek için açık **MainActivity.cs** ve dekorasyon özniteliğini kullanarak yönlendirmeyi ayarlayın `MainActivity` sınıfı:
 
 ```csharp
 namespace MyRotatingApp.Droid
 {
-    [Activity (Label = "MyRotatingApp.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
-    ScreenOrientation = ScreenOrientation.Landscape)] //This is what controls orientation
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    [Activity (Label = "MyRotatingApp.Droid", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Landscape)] //This is what controls orientation
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate (Bundle bundle)
 ...
@@ -67,37 +66,37 @@ namespace MyRotatingApp.Droid
 
 Xamarin.Android yönünü belirtmek için çeşitli seçenekler destekler:
 
-- **Yatay** &ndash; algılayıcı verilerini bağımsız olarak yatay olarak uygulama yönlendirmesini zorlar.
-- **Dikey** &ndash; algılayıcı verilerini bağımsız olarak dikey olarak uygulama yönlendirmesini zorlar.
+- **Yatay** &ndash; uygulama yönünü yatay, sensör verilerini bağımsız olarak olmasını zorlar.
+- **Dikey** &ndash; sensör verilerini bağımsız olarak, dikey olarak uygulama yönlendirme zorlar.
 - **Kullanıcı** &ndash; kullanıcının tercih edilen yönlendirme kullanarak sunulacak uygulamanın neden olur.
-- **Arkasında** &ndash; yönünü aynı olacak şekilde uygulamanın yönlendirme neden [etkinlik](https://developer.xamarin.com/api/type/Android.App.Activity/) arkasındaki.
-- **Algılayıcı** &ndash; otomatik döndürme kullanıcı devre dışı olsa bile uygulamanın yönlendirme algılayıcı tarafından belirlenmesine neden olur.
-- **SensorLandscape** &ndash; (ters olarak ekranını değil böylece) ekran karşılıklı yönünü değiştirmek için algılayıcı verileri kullanırken yatay yönlendirme kullanmak için uygulamayı neden olur.
-- **SensorPortrait** &ndash; (ters olarak ekranını değil böylece) ekran karşılıklı yönünü değiştirmek için algılayıcı verileri kullanırken dikey yönde kullanmak için uygulamayı neden olur.
-- **ReverseLandscape** &ndash; "ters." görünen amacıyla normal karşıt yönünden karşılıklı yatay yönlendirme kullanmak için uygulamayı neden olur.
-- **ReversePortrait** &ndash; "ters." görünen amacıyla normal karşıt yönünden karşılıklı dikey yönlendirme kullanmak için uygulamayı neden olur.
-- **FullSensor** &ndash; doğru yönünü (dışında olası 4) seçmek için algılayıcı verilerini güvenemeyeceklerini uygulamanın neden olur.
-- **FullUser** &ndash; kullanıcının yönlendirmesini tercihlerini kullanmak için uygulamayı neden olur. Otomatik döndürme etkinleştirilirse, tüm 4 yönler kullanılabilir.
-- **UserLandscape** &ndash; _\[desteklenmiyor\]_ kullanıcı; bu durumda kullanmak etkinse, otomatik döndürme olmadıkça yatay yönlendirme kullanmak için uygulamayı neden olur. Yönlendirme belirlemek için algılayıcı. Bu seçenek derleme çalışmamasına neden olur.
-- **UserPortrait** &ndash; _\[desteklenmiyor\]_ kullanıcı; bu durumda kullanmak etkinse, otomatik döndürme olmadıkça dikey yönlendirme kullanmak için uygulamayı neden olur. Yönlendirme belirlemek için algılayıcı. Bu seçenek derleme çalışmamasına neden olur.
-- **Kilitli** &ndash; _\[desteklenmiyor\]_ ekran yönünü kullanmak için uygulamayı neden ne olursa olsun, başlatılırken aygıt değişikliklere yanıt olmadan olduğu fiziksel yönü. Bu seçenek derleme çalışmamasına neden olur.
+- **Arkasında** &ndash; yönünü aynı olması uygulamanın yönünü neden [etkinlik](https://developer.xamarin.com/api/type/Android.App.Activity/) arkasındaki.
+- **Algılayıcı** &ndash; kullanıcı Otomatik döndürmeyi devre dışı olsa bile algılayıcı tarafından belirlenecek uygulamanın yönünü neden olur.
+- **SensorLandscape** &ndash; (ters olarak ekranını değil böylece) ekran dönmüş olduğu Yön değiştirmek için sensör verilerini kullanırken yatay yönde kullanmak için uygulamayı neden olur.
+- **SensorPortrait** &ndash; dikey yönde olacak şekilde (ters olarak ekranını değil) ekran dönmüş olduğu Yön değiştirmek için sensör verilerini kullanırken kullanmak için uygulamayı neden olur.
+- **ReverseLandscape** &ndash; yatay yönlendirme kullanıldığında, normal "tersyüz." görünmesi için ters yönlerde karşılıklı kullanmak için uygulamayı neden olur
+- **ReversePortrait** &ndash; dikey yönlendirme kullanıldığında, normal "tersyüz." görünmesi için ters yönlerde karşılıklı kullanmak için uygulamayı neden olur
+- **FullSensor** &ndash; uygulamanın doğru yönlendirmeyi (dışı olası 4) seçmek için sensör verilerini kullanır.
+- **FullUser** &ndash; kullanıcının yönlendirme tercihlerini kullanmak için uygulamayı neden olur. Otomatik döndürme etkinleştirilirse, tüm 4 yönleri kullanılabilir.
+- **UserLandscape** &ndash; _\[desteklenmiyor\]_ , bu durumda kullanacağı otomatik döndürme etkin, kullanıcının sahip olduğu sürece yatay yöndeki kullanmak için uygulamayı neden olur. Yönlendirme saptamak için sensör. Bu seçenek, derleme çalışmamasına neden olur.
+- **UserPortrait** &ndash; _\[desteklenmiyor\]_ , bu durumda kullanacağı otomatik döndürme etkin, kullanıcının sahip olduğu sürece uygulamayı dikey yönlendirme kullanıldığında, kullanacak şekilde neden olur. Yönlendirme saptamak için sensör. Bu seçenek, derleme çalışmamasına neden olur.
+- **Kilitli** &ndash; _\[desteklenmiyor\]_ ekran yönünü kullanmak için uygulamayı neden olan her şeyi başlatma sırasında cihaz değişikliklere yanıt olmadan olduğu fiziksel yönü. Bu seçenek, derleme çalışmamasına neden olur.
 
-Yerel Android API çok sayıda yönlendirme nasıl yönetilir üzerinde denetim sağlar, kullanıcının açıkça çelişen seçenekleri de dahil olmak üzere Tercihler ifade dikkat edin.
+Yerel Android API birçok yönünü nasıl yönetilir denetim sağlamasına, kullanıcının açıkça çelişen seçenekleri dahil olmak üzere ifade tercihleri dikkat edin.
 
 ### <a name="universal-windows-platform"></a>Evrensel Windows platformu
 
-Evrensel Windows Platformu (UWP üzerinde), desteklenen yönler ayarlanmış **Package.appxmanifest** dosya. Bildirim açma desteklenen yönler burada seçilebilir yapılandırma Panosu gösterecek.
+Evrensel Windows Platformu (UWP üzerinde), desteklenen yönleri ayarlanmış **Package.appxmanifest** dosya. Bildirim açma desteklenen yönleri burada seçilebilir bir yapılandırma bölmesi ortaya çıkarır.
 
 <a name="Reacting_to_Changes_in_Orientation" />
 
-## <a name="reacting-to-changes-in-orientation"></a>Yönlendirme değişikliklere tepki
+## <a name="reacting-to-changes-in-orientation"></a>Yönlendirme değişikliklere tepki verme
 
-Xamarin.Forms uygulamanız paylaşılan kod yön değişimleri bilgilendirmek için yerel olay sağlamaz. Ancak, `SizeChanged` olayı `Page` tetiklenen genişliği veya yüksekliği `Page` değişiklikler. Zaman genişliğini `Page` yüksekliği büyük yatay modunda aygıttır. Daha fazla bilgi için bkz: [ekran yönünü dayalı bir görüntüyü](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
+Xamarin.Forms, uygulamanızı paylaşılan kod yönünü değişiklikleri bildiren tüm yerel olaylarını sunmaz. Ancak, `SizeChanged` olayı `Page` tetiklenen genişliği veya yüksekliği `Page` değişiklikler. Zaman genişliğini `Page` yüksekliği büyükse yatay modda cihazdır. Daha fazla bilgi için [ekran yönlendirmeyi temel alarak bir görüntüyü](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
 
 > [!NOTE]
-> Paylaşılan kodda yönlendirmesini değişikliklerin bildirimleri almak için bir var olan, ücretsiz NuGet paketi yoktur. Bkz: [GitHub deposuna](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) daha fazla bilgi için.
+> Paylaşılan kod yönlendirme değişikliklerin bildirimleri almak için bir var olan ve ücretsiz NuGet paketi yoktur. Bkz: [GitHub deposunu](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) daha fazla bilgi için.
 
-Alternatif olarak, geçersiz kılmak olası [ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/) yöntemi bir `Page`, herhangi bir düzeni eklemeden değiştirmek mantığı vardır. `OnSizeAllocated` Yöntemi çağrıldığında her bir `Page` aygıt Döndürülmüş whenver olur yeni boyutunu tahsis edilir. Unutmayın, temel uygulamayı `OnSizeAllocated` geçersiz kılmada temel uygulamayı çağırması önemlidir önemli düzeni işlevleri gerçekleştirir:
+Alternatif olarak, geçersiz kılmak olası [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*) metodunda bir `Page`, herhangi bir düzen ekleme mantık uyguladığımızı değiştirin. `OnSizeAllocated` Yöntemi çağrıldığında her bir `Page` cihaz Döndürülmüş whenver'olmuyor yeni bir boyut ayrılır. Unutmayın taban uygulamasını `OnSizeAllocated` geçersiz kılma seçeneğinde temel uygulamayı çağırması önemlidir önemli Düzen işlevleri gerçekleştirir:
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)
@@ -106,9 +105,9 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-Bu adımı çalışmayan bir sayfasında neden.
+Hata, bir aşamaya geçmeye işlevsiz bir sayfada neden olur.
 
-Unutmayın `OnSizeAllocated` yöntemi çağrılabilir birçok kez bir aygıtı döndürüldüğünde. Her zaman düzeninizi değiştirme kaynakları kayıp ve titremeyi için yol açabilir. Yönlendirmesini yatay veya dikey olup olmadığını izlemek için bir örnek değişkeni sayfanızın içinden kullanmayı düşünün ve yalnızca bir değişiklik olduğunda yeniden boyutlandırmaya:
+Unutmayın `OnSizeAllocated` yöntemi çağrılabilir birden çok kez bir cihaz döndürüldüğünde. Her zaman, Düzen değiştiriliyor kaynakları kısıp ve titremeyi için yol açabilir. Yatay veya dikey hizalama olup olmadığını izlemek için bir örnek değişkeni, sayfada kullanmayı göz önünde bulundurun ve yalnızca bir değişiklik olduğunda yeniden Çiz:
 
 ```csharp
 private double width = 0;
@@ -126,41 +125,41 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-Cihaz yönlendirmesini içinde bir değişiklik algıladı sonra eklemek veya grafikten kullanılabilir alanı değişikliği tepki vermek için kullanıcı arabiriminizi ek görünümler kaldırmak isteyebilirsiniz. Örneğin, dikey olarak her platformda yerleşik hesaplayıcı göz önünde bulundurun:
+Cihaz yönü değişikliği algıladığında eklemek veya ek görünümler kullanılabilir alanı değiştirmeyi tepki vermek için kullanıcı arabirimi öğesine/öğesinden kaldırmak isteyebilirsiniz. Örneğin, dikey durumda her platformda yerleşik hesap makinesi göz önünde bulundurun:
 
-![](device-orientation-images/calculator-portrait.png "Dikey hesaplayıcı uygulamada")
+![](device-orientation-images/calculator-portrait.png "Dikey durumda hesaplayıcısı uygulaması")
 
 Yatay ve dikey:
 
-![](device-orientation-images/calculator-landscape.png "Yatay hesaplayıcı uygulamada")
+![](device-orientation-images/calculator-landscape.png "Yatay durumda hesaplayıcısı uygulaması")
 
-Uygulamaları yatay olarak daha fazla işlevsellik ekleyerek kullanılabilir alan avantajlarından yararlanmak dikkat edin.
+Görünüme ilişkin daha fazla işlevsellik ekleyerek uygulamaları güvenilir kullanılabilir alanı avantajlarından yararlanmak dikkat edin.
 
 <a name="Responsive_Layout" />
 
-## <a name="responsive-layout"></a>Esnek düzeni
+## <a name="responsive-layout"></a>Esnek Düzen
 
-Böylece cihaz döndürüldüğünde, düzgün biçimde geçiş yerleşik düzenleri kullanarak tasarım arabirimlerine mümkündür. Yönlendirme değişikliklere yanıt verirken çekici olmaya devam edecek arabirimleri tasarlarken aşağıdaki genel kurallar göz önünde bulundurun:
+Böylece cihaz döndürüldüğünde, düzgün bir şekilde geçiş yerleşik düzenleri kullanarak tasarım arabirimlerine mümkündür. Yönlendirme değişikliklere yanıt verirken çekici olmaya devam edecek arabirimleri tasarlarken aşağıdaki genel kurallar göz önünde bulundurun:
 
-- **Oranları dikkat** &ndash; bazı varsayımlarda göre oranları yapıldığında, değişiklikleri yönde sorunlara neden olabilir. Örneğin, yeterince alan 1/3 dikey bir ekranda dikey alanının olması gereken bir görünüm 1/3 Yatay Dikey alanının içine sığması değil.
-- **Mutlak değerler ile dikkatli olun** &ndash; dikey anlamlı mutlak (piksel) değerler hale algılama yatay olarak. Mutlak değerler gerekli olduğunda, iç içe geçmiş düzenleri etkilerini ayırmak için kullanın. Örneğin, bunu mutlak değerleri kullanmak mantıklı bir `TableView` `ItemTemplate` öğe şablonu garantili Tekdüzen yüksekliği olduğunda.
+- **Oranları dikkat** &ndash; değişiklikleri yönde bazı varsayımlarda bakımından oranları yapıldığında sorunlara neden olabilir. Örneğin, 1/3. dikey boşluğu dikey bir ekran alanı bolca olması gereken bir görünüm 1/3 Dikey alanı yatay durumda içine çözüm karşılamayabilir.
+- **Mutlak değerlerle dikkatli olun** &ndash; dikey anlamlı (piksel) mutlak değerler mantıklı değildir yatay olarak. Mutlak değerler, gerekli olduğunda, bunların etkisini yalıtmak için iç içe geçmiş düzenleri kullanın. Örneğin, bunun mutlak değerler kullanılacak mantıklı bir `TableView` `ItemTemplate` öğe şablonu garantili Tekdüzen yüksekliğe sahip olduğunda.
 
-Arabirimler birden çok ekran boyutlarına ve uygulamaları için genellikle uygulama en iyi yöntem olarak düşünüldüğünde yukarıdaki kuralları da geçerlidir. Bu kılavuzda kalan her birincil düzenleri içinde Xamarin.Forms kullanarak esnek düzenleri belirli örnekleri açıklanmaktadır.
+Birden çok ekran boyutları ve olan arabirimler genellikle uygulama en iyi uygulama olarak düşünüldüğünde yukarıdaki kuralları da geçerlidir. Bu kılavuzun geri kalanını her birincil düzenleri kullanarak Xamarin.Forms içinde hızlı yanıt veren düzenleri belirli örnekleri açıklanmaktadır.
 
 > [!NOTE]
-> Daha anlaşılır olması için aşağıdaki bölümlerde tek türünü kullanan esnek düzenleri uygulamak göstermektedir `Layout` birer birer. Uygulamada, bu genellikle karışık kolaydır `Layout`daha basit ve en kolay anlaşılır kullanarak istenen bir düzen elde etmek için s `Layout` her bileşen için.
+> Daha anlaşılır olması için aşağıdaki bölümlerde yalnızca bir tür kullanarak hızlı yanıt veren düzenleri kullanılmasını göstermek `Layout` birer güncelleştirir. Uygulamada, bu genellikle karıştırmak kolaydır `Layout`daha basit ve kullanımı en kolay kullanarak istenen bir düzen elde etmek için s `Layout` her bileşeni için.
 
 ### <a name="stacklayout"></a>StackLayout
 
-Dikey görüntülenen aşağıdaki uygulama göz önünde bulundurun:
+Şu uygulama dikey görüntülenen göz önünde bulundurun:
 
-![](device-orientation-images/photo-stack-portrait.png "Dikey fotoğraf uygulamada")
+![](device-orientation-images/photo-stack-portrait.png "Fotoğraf uygulama dikey")
 
 Yatay ve dikey:
 
-![](device-orientation-images/photo-stack-landscape.png "Yatay fotoğraf uygulamada")
+![](device-orientation-images/photo-stack-landscape.png "Yatay fotoğraf uygulama")
 
-Aşağıdaki XAML ile gerçekleştirilir:
+Aşağıdaki XAML ile elde edilir:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -203,7 +202,7 @@ Title="Stack Photo Editor - XAML">
 </ContentPage>
 ```
 
-Bazı C# yönünü değiştirmek için kullanılan `outerStack` cihaz yönünü göre:
+Bazı C# ' ın yönünü değiştirmek için kullanılan `outerStack` cihazın yönlendirmeyi temel alarak:
 
 ```csharp
 protected override void OnSizeAllocated (double width, double height){
@@ -222,20 +221,20 @@ protected override void OnSizeAllocated (double width, double height){
 
 Şunlara dikkat edin:
 
-- `outerStack` görüntü denetimleri yatay veya dikey yığın kullanılabilir alanı en iyi şekilde yararlanmak için yönlendirme, bağlı olarak sunmak üzere ayarlanır.
+- `outerStack` yatay veya dikey yığını kullanılabilir alanı en iyi şekilde yararlanmak için yön, bağlı olarak görüntü ve denetimler sunmak için ayarlanır.
 
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
-Dikey görüntülenen aşağıdaki uygulama göz önünde bulundurun:
+Şu uygulama dikey görüntülenen göz önünde bulundurun:
 
-![](device-orientation-images/photo-abs-portrait.png "Dikey fotoğraf uygulamada")
+![](device-orientation-images/photo-abs-portrait.png "Fotoğraf uygulama dikey")
 
 Yatay ve dikey:
 
-![](device-orientation-images/photo-abs-landscape.png "Yatay fotoğraf uygulamada")
+![](device-orientation-images/photo-abs-landscape.png "Yatay fotoğraf uygulama")
 
-Aşağıdaki XAML ile gerçekleştirilir:
+Aşağıdaki XAML ile elde edilir:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -274,21 +273,21 @@ Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
 
 Şunlara dikkat edin:
 
-- Sayfa yerleştirilmiş giden yolu nedeniyle yanıtlama tanıtmak yordam kodu için gerek yoktur.
-- `ScrollView` Ekran yüksekliğini düğmeleri ve görüntünün sabit uzunluklarının toplamından daha az olduğunda bile görünmesi için etiket izin vermek için kullanılır.
+- Sayfa düzenlendiği şekli nedeniyle, yanıt verme hızını tanıtmak yordam kodu için gerek yoktur.
+- `ScrollView` Etiketi ekran yüksekliği sabit yüksekliklerini düğmeler ve resim toplamından daha az olduğunda bile görünür olması için izin vermek için kullanılır.
 
 
 ### <a name="relativelayout"></a>RelativeLayout
 
-Dikey görüntülenen aşağıdaki uygulama göz önünde bulundurun:
+Şu uygulama dikey görüntülenen göz önünde bulundurun:
 
-![](device-orientation-images/photo-rel-portrait.png "Dikey fotoğraf uygulamada")
+![](device-orientation-images/photo-rel-portrait.png "Fotoğraf uygulama dikey")
 
 Yatay ve dikey:
 
-![](device-orientation-images/photo-rel-landscape.png "Yatay fotoğraf uygulamada")
+![](device-orientation-images/photo-rel-landscape.png "Yatay fotoğraf uygulama")
 
-Aşağıdaki XAML ile gerçekleştirilir:
+Aşağıdaki XAML ile elde edilir:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -366,20 +365,20 @@ BackgroundImage="deer.jpg">
 
 Şunlara dikkat edin:
 
-- Sayfa yerleştirilmiş giden yolu nedeniyle yanıtlama tanıtmak yordam kodu için gerek yoktur.
-- `ScrollView` Ekran yüksekliğini düğmeleri ve görüntünün sabit uzunluklarının toplamından daha az olduğunda bile görünmesi için etiket izin vermek için kullanılır.
+- Sayfa düzenlendiği şekli nedeniyle, yanıt verme hızını tanıtmak yordam kodu için gerek yoktur.
+- `ScrollView` Etiketi ekran yüksekliği sabit yüksekliklerini düğmeler ve resim toplamından daha az olduğunda bile görünür olması için izin vermek için kullanılır.
 
 ### <a name="grid"></a>Kılavuz
 
-Dikey görüntülenen aşağıdaki uygulama göz önünde bulundurun:
+Şu uygulama dikey görüntülenen göz önünde bulundurun:
 
-![](device-orientation-images/photo-grid-portrait.png "Dikey fotoğraf uygulamada")
+![](device-orientation-images/photo-grid-portrait.png "Fotoğraf uygulama dikey")
 
 Yatay ve dikey:
 
-![](device-orientation-images/photo-grid-landscape.png "Yatay fotoğraf uygulamada")
+![](device-orientation-images/photo-grid-landscape.png "Yatay fotoğraf uygulama")
 
-Aşağıdaki XAML ile gerçekleştirilir:
+Aşağıdaki XAML ile elde edilir:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -435,7 +434,7 @@ Title="Grid - XAML">
 </ContentPage>
 ```
 
-Döndürme değişiklikleri işlemek için aşağıdaki yordam kod ile birlikte:
+Döndürme değişiklikleri işlemek için aşağıdaki yordam kodu ile birlikte:
 
 ```csharp
 private double width;
@@ -468,7 +467,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 Şunlara dikkat edin:
 
-- Sayfa yerleştirilmiş giden yolu nedeniyle denetimleri kılavuz yerleşimini değiştirmek için bir yöntem yoktur.
+- Sayfa düzenlendiği şekli nedeniyle, denetimleri kılavuz yerleşimini değiştirmek için bir yöntem yoktur.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
@@ -476,4 +475,4 @@ protected override void OnSizeAllocated (double width, double height){
 - [Düzen (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble örneği (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [Esnek Düzen (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [Ekran yönünü dayanan bir görüntü görüntüleme](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)
+- [Ekran yönünü üzerinde temel alan bir görüntü görüntüleme](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)

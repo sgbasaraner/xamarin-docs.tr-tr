@@ -1,29 +1,29 @@
 ---
 title: Xamarin.Forms Tablo görünümü
-description: Bu makalede Xamarin.Forms Tablo görünümü sınıfı kaydırma menüleri, ayarlar ve giriş forms uygulamalarında sunmak için nasıl kullanılacağı açıklanmaktadır.
+description: Bu makalede, kaydırma menüler, ayarlar ve giriş forms uygulamaları sunmak için Xamarin.Forms Tablo görünümü sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 5ad1db6a073b5a6d0199aa586230cb55a9d4a925
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 47cd79611cfeaf48c0422772d8f3e75eb57ba771
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244864"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996059"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms Tablo görünümü
 
-[Tablo görünümü](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/) veri ya da seçenek kaydırılabilir listesini görüntülemek için bir görünüm aynı şablonu paylaşmayın satırları olduğu. Farklı [ListView](~/xamarin-forms/user-interface/listview/index.md), tablo görünümü kavramı yok bir `ItemsSource`, öğeleri alt öğesi olarak el ile eklenmesi gerekir.
+[Tablo görünümü](xref:Xamarin.Forms.TableView) kaydırılabilir veri ya da seçenek listesini görüntülemek için bir görünüm olduğundan aynı şablonu paylaşmayın satırları olduğunda. Farklı [ListView](~/xamarin-forms/user-interface/listview/index.md), tablo görünümü kavramını yok bir `ItemsSource`, öğeleri alt öğesi olarak el ile eklenmesi gerekir.
 
 Bu kılavuz aşağıdaki bölümlerden oluşur:
 
-- **[Kullanım örnekleri](#Use_Cases)**  &ndash; ne zaman Tablo görünümü ListView veya özel bir görünüm yerine kullanılır.
-- **[Tablo görünümü yapısı](#TableView_Structure)**  &ndash; bir tablo görünümü içinde gerekli görünümleri hiyerarşisi.
+- **[Kullanım örnekleri](#Use_Cases)**  &ndash; ne zaman Tablo görünümü ListView ya da özel bir görünüm yerine kullanılır.
+- **[Tablo görünümü yapısı](#TableView_Structure)**  &ndash; bir tablo görünümü içinde gerekli hiyerarşi görünüm.
 - **[Tablo görünümü Görünüm](#TableView_Appearance)**  &ndash; Tablo görünümü özelleştirme seçenekleri.
-- **[Yerleşik hücreleri](#Built-In_Cells)**  &ndash; yerleşik hücre seçenekleri de dahil olmak üzere, [EntryCell](#EntryCell) ve [SwitchCell](#SwitchCell).
+- **[Yerleşik hücreleri](#Built-In_Cells)**  &ndash; dahil olmak üzere yerleşik hücre seçeneklerini [EntryCell](#EntryCell) ve [SwitchCell](#SwitchCell).
 - **[Özel hücreleri](#Custom_Cells)**  &ndash; kendi özel hücreleri yapma.
 
 ![](tableview-images/tableview-all-sml.png "Tablo görünümü örneği")
@@ -32,19 +32,19 @@ Bu kılavuz aşağıdaki bölümlerden oluşur:
 
 ## <a name="use-cases"></a>Kullanım örnekleri
 
-Tablo görünümü ne zaman yararlı olur:
+Tablo görünümü durumlarda yararlı olur:
 
-- ayarları listesi sunma,
-- Formda, veri toplama veya
-- satırdan satır (örn. sayılar, yüzdeleri ve görüntüleri) farklı şekilde sunulan veri gösteriliyor.
+- ayarlar listesi sunma,
+- bir formdaki verileri toplama veya
+- satırdan satır (örneğin, sayılar, yüzdeleri ve görüntüleri) farklı şekilde sunulan veriler gösteriliyor.
 
-Tablo görünümü kaydırma ve satır çekici bölümlerde Yukarıdaki senaryoların ortak gereksinimi düzenlemeyi işler. `TableView` Denetimini kullanan her platformun arka plandaki eşdeğer görünümü kullanılabilir olduğunda, her platform için yerel bir görünüm oluşturma.
+Tablo görünümü kaydırma ve satır çekici bölümlerde Yukarıdaki senaryoların ortak gereksinimi düzenlemeyi işler. `TableView` Denetimi, her platformun temel eşdeğer görünümü kullanılabilir olduğunda, her platform için yerel bir görünüm oluşturma kullanır.
 
 <a name="TableView_Structure" />
 
 ## <a name="tableview-structure"></a>Tablo görünümü yapısı
 
-Öğeleri bir `TableView` bölümlere düzenlenir. Kökündeki `TableView` olan `TableRoot`, bir veya daha üst olduğu `TableSections`:
+Öğeleri bir `TableView` bölümler halinde düzenlenmiştir. Kökünde `TableView` olduğu `TableRoot`, bir veya daha üst olduğu `TableSections`:
 
 ```csharp
 Content = new TableView {
@@ -55,7 +55,7 @@ Content = new TableView {
 };
 ```
 
-Her `TableSection` başlığı ve bir veya daha fazla ViewCells oluşur. Burada gösteriliyor `TableSection`'s `Title` özelliğini *"Halkası"* oluşturucuda:
+Her `TableSection` başlığı ve bir veya daha fazla ViewCells oluşur. Burada görürüz `TableSection`'s `Title` özelliğini *"Zil"* oluşturucu içinde:
 
 ```csharp
 var section = new TableSection ("Ring") { //TableSection constructor takes title as an optional parameter
@@ -79,71 +79,71 @@ Yukarıdaki gibi XAML aynı düzende gerçekleştirmek için:
 
 <a name="TableView_Appearance" />
 
-## <a name="tableview-appearance"></a>Tablo görünümü Görünüm
+## <a name="tableview-appearance"></a>Tablo görünümü görünümü
 
-Tablo görünümü sunan `Intent` bir numaralandırma aşağıdaki seçeneklerden birini özelliği:
+Tablo görünümü sunan `Intent` özelliği aşağıdaki seçeneklerden bir sabit listesidir:
 
-- **Veri** &ndash; veri girişi görüntülenirken kullanılacak. Unutmayın [ListView](~/xamarin-forms/user-interface/listview/index.md) veri listeleri kaydırma için daha iyi bir seçenek olabilir.
+- **Veri** &ndash; veri girişleri görüntülenirken kullanılacak. Unutmayın [ListView](~/xamarin-forms/user-interface/listview/index.md) veri listeleri kaydırma için daha iyi bir seçenek olabilir.
 - **Form** &ndash; Tablo görünümü Form olarak davrandığı zaman kullanmak için.
-- **Menü** &ndash; seçimleri menüsüne sunan olduğunda kullanılacak.
-- **Ayarları** &ndash; yapılandırma ayarlarının listesini görüntülenirken kullanılacak.
+- **Menü** &ndash; seçimleri menüsü sunarken kullanmak için.
+- **Ayarları** &ndash; yapılandırma ayarlarının listesi görüntülenirken kullanılacak.
 
-`TableIntent` Seçtiğiniz etkisi nasıl `TableView` her platformda görüntülenir. Olsa bile farklar NET değildir, bu seçmek için en iyi uygulamadır `TableIntent` tablo kullanmayı düşündüğünüz nasıl en yakından eşleşen.
+`TableIntent` Seçtiğiniz etkileyebilir nasıl `TableView` her platformda görünür. Olsa bile farklar NET değildir, seçmek için bir en iyi yöntemdir `TableIntent` nasıl tablosunu kullanmak istediğinize en yakından eşleşen.
 
 <a name="Built-In_Cells" />
 
 ## <a name="built-in-cells"></a>Yerleşik hücreleri
 
-Xamarin.Forms toplama ve bilgi görüntülemek için yerleşik hücreleri birlikte gönderilir. ListView ve Tablo görünümü aynı hücrelerin tümünü kullanabilmenize karşın, bir tablo görünümü senaryo için en uygun şunlardır:
+Xamarin.Forms, toplama ve bilgi görüntülemek için yerleşik hücre ile birlikte gelir. ListView ve Tablo görünümü aynı hücrelerin tümü kullanmanız mümkün olmakla birlikte, bir tablo görünümü senaryo için en uygun şunlardır:
 
-- **SwitchCell** &ndash; sunan ve bir metin etiketi ile birlikte bir doğru/yanlış durumunu yakalama için.
-- **EntryCell** &ndash; sunan ve metin yakalamak için.
+- **SwitchCell** &ndash; sunmak ve bir metin etiketi ile birlikte bir doğru/yanlış durumunu yakalama.
+- **EntryCell** &ndash; sunmak ve metin yakalama.
 
-Bkz: [ListView hücre Görünüm](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md) ayrıntılı bir açıklaması için [TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell) ve [ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell).
+Bkz: [ListView hücresi Görünüm](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md) ayrıntılı bir açıklaması için [TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell) ve [ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell).
 
 <a name="switchcell" />
 
 ### <a name="switchcell"></a>SwitchCell
-[`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) denetimi sunan ve yakalamak için kullanılacak bir açık/kapalı veya `true` / `false` durumu.
+[`SwitchCell`](xref:Xamarin.Forms.SwitchCell) Denetim sunmak ve yakalamak için kullanılacak bir açık/kapalı veya `true` / `false` durumu.
 
-SwitchCells düzenlemek için metin ve açık/kapalı özelliği bir satır var. Bu özelliklerin her ikisi de bağlanabilir.
+SwitchCells düzenlemek için metin ve açık/kapalı özelliği bir satır vardır. Bu özelliklerin her ikisi de bağlanabilir.
 
-- `Text` &ndash; anahtar gösterilecek metin.
-- `On` &ndash; anahtar olarak açık veya kapalı görüntülenip görüntülenmeyeceğini.
+- `Text` &ndash; anahtar görüntülenen metin.
+- `On` &ndash; olup açık veya kapalı anahtar görüntülenir.
 
-Unutmayın `SwitchCell` sunan `OnChanged` olay, hücrenin durumda değişikliklerine yanıt verme olanak sağlar.
+Unutmayın `SwitchCell` sunan `OnChanged` olay, hücrenin durumunda değişikliklerine yanıt verme etmenize imkan sağlar.
 
 ![](tableview-images/switch-cell.png "SwitchCell örneği")
 
 <a name="entrycell" />
 
 ### <a name="entrycell"></a>EntryCell
-[`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) Kullanıcı düzenleyebilir metin verileri görüntülemek gerektiğinde kullanışlıdır. `EntryCell`s özelleştirilebilir aşağıdaki özellikleri sunmaktadır:
+[`EntryCell`](xref:Xamarin.Forms.EntryCell) kullanıcının düzenleyebildiği metin verileri görüntülemek, ihtiyacınız olduğunda yararlıdır. `EntryCell`s özelleştirilebilir aşağıdaki özellikleri sunmaktadır:
 
-- `Keyboard` &ndash; Düzenlerken görüntülemek için klavye. Sayısal değerler, e-posta, telefon numaralarını vb. gibi şeyler için seçeneği vardır. [API belgelerine bakın](http://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/).
-- `Label` &ndash; Metin girişi alanı sağındaki görüntülenecek etiket metni.
-- `LabelColor` &ndash; Etiket metninin rengi.
-- `Placeholder` &ndash; Null veya boş olduğunda giriş alanını görüntülenecek metin. Metin girişi başladığında bu metin kaybolur.
+- `Keyboard` &ndash; Düzenleme sırasında görüntülemek için klavye. Sayısal değerleri, e-posta, telefon numaralarını vb. gibi şeyler için seçenekler vardır. [API belgeleri görmek](xref:Xamarin.Forms.Keyboard).
+- `Label` &ndash; Metin girişi alanı sağında görüntülenecek etiket metni.
+- `LabelColor` &ndash; Etiketin metin rengi.
+- `Placeholder` &ndash; Giriş alanı null veya boş olduğunda görüntülenen metin. Bu metin, metin girişi başladığında kaybolur.
 - `Text` &ndash; Metin girişi alanında.
-- `HorizontalTextAlignment` &ndash; Metnin yatay hizası. Center, sola veya sağa hizalı. [API belgelerine bakın](http://developer.xamarin.com/api/type/Xamarin.Forms.TextAlignment/).
+- `HorizontalTextAlignment` &ndash; Metnin yatay hizası. Sol veya sağ merkezi hizalanabilir. [API belgeleri görmek](xref:Xamarin.Forms.TextAlignment).
 
-Unutmayın `EntryCell` sunan `Completed` kullanıcı 'Tamamlandı' klavyede metin düzenlerken geldiğinde tetiklenir olayı.
+Unutmayın `EntryCell` sunan `Completed` kullanıcı 'Tamamlandı' klavyede metin düzenleme sırasında ulaştığında, harekete geçirilen olay.
 
 ![](tableview-images/entry-cell.png "EntryCell örneği")
 
 <a name="Custom_Cells" />
 
-## <a name="custom-cells"></a>Özel hücreler
-Yerleşik hücreleri yeterli olmadığı durumlarda özel hücreleri sunmak ve uygulamanız için anlamlı şekilde verilerini yakalamak için kullanılabilir. Örneğin, bir kullanıcının bir görüntü geçirgenliğini seçmesine izin ver kaydırıcıyı sunmak isteyebilirsiniz.
+## <a name="custom-cells"></a>Özel hücreleri
+Yerleşik hücreleri yeterli olmadığı durumlarda, özel hücreleri sunmak ve uygulamanız için anlamlı bir şekilde veri yakalamak için kullanılabilir. Örneğin, bir kullanıcının görüntünün opaklığına seçmesine izin vermek için bir kaydırıcı sunmak isteyebilirsiniz.
 
-Tüm özel hücreleri öğesinden türetilmelidir [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), tüm yerleşik hücrenin yazdığı kullanım aynı temel sınıfı.
+Tüm özel hücreleri öğesinden türetilmelidir [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), aynı temel sınıf tüm yerleşik hücresi türlerini kullanın.
 
 Bu, özel bir hücre örneğidir:
 
 ![](tableview-images/custom-cell.png "Özel hücre örneği")
 
 ### <a name="xaml"></a>XAML
-Yukarıdaki düzeni oluşturmak için XAML aşağıdadır:
+Yukarıdaki bir düzen oluşturmak için XAML aşağıda verilmiştir:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -170,17 +170,17 @@ Yukarıdaki düzeni oluşturmak için XAML aşağıdadır:
 
 ```
 
-Yukarıdaki XAML çok yapıyor. Şimdi onu Bölünme:
+Yukarıdaki XAML çok yapıyor. Bu konuyu biraz açalım:
 
-- Kök öğesi altında `TableView` olan `TableRoot`.
+- Kök öğe altında `TableView` olduğu `TableRoot`.
 - Var olan bir `TableSection` hemen altındaki `TableRoot`.
-- `ViewCell` Doğrudan TableSection altında tanımlanır. Farklı `ListView`, `TableView` bu özel (veya herhangi) gerektirmez hücreleri tanımlanmış bir `ItemTemplate`.
+- `ViewCell` Doğrudan altında TableSection tanımlanır. Farklı `ListView`, `TableView` bu özel (veya herhangi) gerektirmez hücreleri tanımlanmış bir `ItemTemplate`.
 - Bir StackLayout özel hücre düzenini yönetmek için kullanılır. Herhangi bir düzeni burada kullanılabilir.
 
 ### <a name="cnum"></a>C&num;
 
-Çünkü `TableView` çalışır statik verileri veya el ile değiştirilen verileri ile bir öğe şablonu kavramı yok. Bunun yerine, özel hücreleri el ile oluşturulabilir ve tabloya yerleştirin. Özel oluşturma teknik hücre Not devraldığı `ViewCell`, eklemeyi sonra `TableView` yerleşik bir hücre istiyorsunuz, ayrıca desteklenir.
-Yukarıdaki düzeni gerçekleştirmek için c# kod aşağıdaki gibidir:
+Çünkü `TableView` çalışır statik veri veya el ile değiştirilen veri ile bir öğe şablonunu kavramı yoktur. Bunun yerine, özel hücreleri el ile oluşturulabilir ve tabloya yerleştirin. Sınıfından devralan bir özel oluşturma tekniği hücre Not `ViewCell`, eklemeden sonra `TableView` yerleşik bir hücre istiyorsunuz, ayrıca desteklenir.
+Yukarıdaki düzenini gerçekleştirmek için c# kod aşağıdaki gibidir:
 
 ```csharp
 var table = new TableView();
@@ -207,14 +207,14 @@ table.Root = new TableRoot () {
 Content = table;
 ```
 
-C# üzerinde çok yapıyor. Şimdi onu Bölünme:
+C# üzerinde çok yapıyor. Bu konuyu biraz açalım:
 
-- Kök öğesi altında `TableView` olan `TableRoot`.
+- Kök öğe altında `TableView` olduğu `TableRoot`.
 - Var olan bir `TableSection` hemen altındaki `TableRoot`.
-- `ViewCell` Doğrudan TableSection altında tanımlanır. Farklı `ListView`, `TableView` bu özel (veya herhangi) gerektirmez hücreleri tanımlanmış bir `ItemTemplate`.
+- `ViewCell` Doğrudan altında TableSection tanımlanır. Farklı `ListView`, `TableView` bu özel (veya herhangi) gerektirmez hücreleri tanımlanmış bir `ItemTemplate`.
 - Bir StackLayout özel hücre düzenini yönetmek için kullanılır. Herhangi bir düzeni burada kullanılabilir.
 
-Özel hücre için bir sınıf hiçbir zaman tanımlanan unutmayın. Bunun yerine, `ViewCell`ait görünüm özelliği belirli bir örneği için ayarlanmış `ViewCell`.
+Bir sınıf özel hücre için hiçbir zaman tanımlandığını aklınızda bulundurun. Bunun yerine, `ViewCell`ait görünüm özelliği için belirli bir örneğine ayarlanmış `ViewCell`.
 
 
 

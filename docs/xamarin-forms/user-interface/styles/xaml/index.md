@@ -1,45 +1,45 @@
 ---
-title: Stil Xamarin.Forms XAML stilleri kullanan uygulamalar
-description: Bu kılavuz, XAML stilleri kullanarak bir Xamarin.Forms uygulaması görünümünü özelleştirmek açıklanmaktadır.
+title: XAML stilleri kullanarak Xamarin.Forms uygulamalarında stil oluşturma
+description: Bu kılavuz, XAML stilleri kullanarak Xamarin.Forms uygulaması özelleştirme açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: f439e3ba888b67ac1752eae95149adcf55055943
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 5145572b30302e58c36250fff40e8b637fcd221f
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245878"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995081"
 ---
-# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Stil Xamarin.Forms XAML stilleri kullanan uygulamalar
+# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>XAML stilleri kullanarak Xamarin.Forms uygulamalarında stil oluşturma
 
 ## <a name="introductionintroductionmd"></a>[Giriş](introduction.md)
 
-Xamarin.Forms uygulamalar genellikle özdeş bir görünüme sahip birden çok denetim içerir. Her denetim görünümünü ayarlama yinelenen olabilir ve hataya. Bunun yerine, stiller, denetimin görünümünü özelleştirme gruplandırma ve denetim türünde kullanılabilen ayarları özellikler tarafından oluşturulabilir.
+Xamarin.Forms uygulamaları genellikle özdeş bir görünüme sahip birden fazla denetim içerir. Tek tek her denetimin görünümünü ayarı yinelenen olabilir ve hataya açık alanlardır. Bunun yerine, stiller, denetimin görünümünü özelleştirme gruplandırma ve denetim türünde kullanılabilir ayarları özellikleri tarafından oluşturulabilir.
 
 ## <a name="explicit-stylesexplicitmd"></a>[Açık Stiller](explicit.md)
 
-Bir *açık* stili denetimleri ayarlayarak seçmeli olarak uygulanan bir olduğundan kendi [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) özellikleri.
+Bir *açık* stili denetimleri ayarlayarak seçmeli olarak uygulanan bir, kendi [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) özellikleri.
 
 ## <a name="implicit-stylesimplicitmd"></a>[Örtük Stiller](implicit.md)
 
-Bir *örtük* stili aynı tüm denetimleri tarafından kullanılan bir olduğundan [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/), stil başvurmak için her denetim gerektirmeden.
+Bir *örtük* stili, aynı tüm denetimler tarafından kullanılan bir [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType), stili başvurmak için her denetim gerektirmeden.
 
 ## <a name="global-stylesapplicationmd"></a>[Genel Stiller](application.md)
 
-Stilleri kullanılabilir hale getirebilir genel olarak uygulamanın ekleyerek [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). Bu sayfalar veya denetimleri boyunca stilleri yinelenmesini önlemek için yardımcı olur.
+Stilleri kullanılabilir hale genel olarak uygulamanın ekleyerek [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Bu çoğaltma stil sayfaları veya denetimler arasında kaçınmaya yardımcı olur.
 
 ## <a name="style-inheritanceinheritancemd"></a>[Stil Devralımı](inheritance.md)
 
-Stilleri çoğaltma azaltın ve yeniden etkinleştirmek için diğer stilleri devralabilirsiniz.
+Stilleri azaltmak ve yeniden etkinleştirmek için diğer stilleri devralabilir.
 
 ## <a name="dynamic-stylesdynamicmd"></a>[Dinamik Stiller](dynamic.md)
 
-Stilleri değil özelliği değişikliklere yanıt verir ve bir uygulama süresi değişmeden kalır. Ancak, uygulamalar çalışma zamanında dinamik olarak stil değişiklikleri dinamik kaynaklar kullanarak yanıt verebilir.
+Stilleri değil özellik değişikliklerine yanıt ve bir uygulama süresi değişmeden kalır. Ancak, uygulamalar çalışma zamanında dinamik olarak stil değişikliklerini dinamik kaynakları kullanarak yanıt verebilirsiniz.
 
 ## <a name="device-stylesdevicemd"></a>[Cihaz Stilleri](device.md)
 
-Xamarin.Forms içeren altı *dinamik* olarak bilinen stilleri *aygıt* stiller, buna [ `Devices.Styles` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/) sınıfı. Tüm altı stilleri uygulanabilir [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) yalnızca örnekleri.
+Xamarin.Forms içeren altı *dinamik* olarak bilinen stilleri *cihaz* stiller, buna [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles) sınıfı. Tüm altı stilleri uygulanabilir [ `Label` ](xref:Xamarin.Forms.Label) yalnızca örnekler.

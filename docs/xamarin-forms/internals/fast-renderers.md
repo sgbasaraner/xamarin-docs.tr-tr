@@ -1,48 +1,48 @@
 ---
 title: Xamarin.Forms hızlı Oluşturucu
-description: Bu makalede, sonuçta elde edilen yerel denetim hiyerarşisi düzleştirme tarafından Enflasyon ve Android Xamarin.Forms denetiminde işleme maliyetlerini azaltmak hızlı Oluşturucu tanıtılır.
+description: Bu makalede, sonuçta elde edilen yerel denetim hiyerarşisi düzleştirme tarafından Enflasyon ve bir Xamarin.Forms denetimi android'de işleme maliyetlerini azaltmak hızlı oluşturucular tanıtılmaktadır.
 ms.prod: xamarin
 ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 40cc095da41aaae5cb474987d8b03f7cf4a17322
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e4b060c703077e140e0f0d2f8c4c2b824c890e8d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243067"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997127"
 ---
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms hızlı Oluşturucu
 
-_Bu makalede, sonuçta elde edilen yerel denetim hiyerarşisi düzleştirme tarafından Enflasyon ve Android Xamarin.Forms denetiminde işleme maliyetlerini azaltmak hızlı Oluşturucu tanıtılır._
+_Bu makalede, sonuçta elde edilen yerel denetim hiyerarşisi düzleştirme tarafından Enflasyon ve bir Xamarin.Forms denetimi android'de işleme maliyetlerini azaltmak hızlı oluşturucular tanıtılmaktadır._
 
-Geleneksel olarak, özgün denetim Oluşturucu android'de çoğunu iki görünümde oluşur:
+Geleneksel olarak, android'de özgün denetim Oluşturucu çoğunu iki görünüm oluşur:
 
-- Yerel bir denetim, gibi bir `Button` veya `TextView`.
-- Bir kapsayıcı `ViewGroup` bazı Düzen iş, hareketi işleme ve diğer görevleri gerçekleştiren.
+- Gibi bir yerel denetleyen bir `Button` veya `TextView`.
+- Bir kapsayıcı `ViewGroup` , bazı Düzen iş, hareket işleme ve diğer görevleri işler.
 
-Ancak, daha fazla bellek ve daha fazlasını ekranda işlemek için işleme gerektiren daha karmaşık bir görsel ağaç sonuçları her mantıksal denetim için iki görünüm oluşturulur, bu yaklaşımın bir performans uygulanır vardır.
+Ancak, iki görünüm, daha fazla bellek ve daha fazlasını ekranda işlenecek işleme gerektiren daha karmaşık bir görsel ağaç sonuçları her mantıksal denetim için oluşturulur, bu yaklaşım bir performans olduğu çıkarımında sahiptir.
 
-Hızlı Oluşturucu, tek bir görünümde Enflasyon ve Xamarin.Forms Denetim işleme maliyetlerini azaltabilirsiniz. Bu nedenle, iki görünümü oluşturma ve bunları görünüm ağacına ekleyerek yerine tek bir oluşturulur. Bu sırayla daha az karmaşık bir görünüm ağacı anlamına gelir, daha az nesne oluşturarak ve (ve ayrıca daha az atık toplama duraklatır sonuçlanır) bellek kullanımını daha az performansı artırır.
+Hızlı oluşturucular tek bir görünümde Enflasyon ve Xamarin.Forms Denetim işleme maliyetlerini azaltın. Bu nedenle, iki görünüm oluşturma ve bunları görünümü ağacına ekleyerek yerine yalnızca bir tane oluşturulur. Sırayla daha az karmaşık bir görünüm ağaç anlamına gelir, daha az nesne oluşturarak ve (Bu da daha az çöp toplama duraklamaları sonuçlanır) bellek kullanımını daha az performansını artırır.
 
-Hızlı Oluşturucu aşağıdaki denetimleri Xamarin.Forms 2.4 için Android üzerinde kullanılabilir:
+Hızlı oluşturucular Xamarin.Forms 2.4 aşağıdaki denetimleri android'de kullanılabilir:
 
-- [`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)
-- [`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)
-- [`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)
+- [`Button`](xref:Xamarin.Forms.Button)
+- [`Image`](xref:Xamarin.Forms.Image)
+- [`Label`](xref:Xamarin.Forms.Label)
 
-İşlevsel olarak, bu hızlı Oluşturucu özgün oluşturuculara hiç farklı değildir. Ancak, bunlar şu anda Deneysel ve kod, aşağıdaki satırı ekleyerek yalnızca kullanılabilir, `MainActivity` çağırmadan önce sınıfın `Forms.Init`:
+İşlevsel olarak, bu hızlı oluşturucular özgün oluşturuculara farklı. Ancak, bunlar şu anda Deneysel ve yalnızca aşağıdaki kod satırını ekleyerek kullanılabilir, `MainActivity` sınıfı çağırmadan önce `Forms.Init`:
 
 ```csharp
 Forms.SetFlags("FastRenderers_Experimental");
 ```
 
 > [!NOTE]
-> Bu ayar öncesi uygulama uyumluluğu etkinliklerini göz ardı edilir şekilde hızlı Oluşturucu yalnızca uygulama uyumluluğu Android arka için geçerlidir.
+> Hızlı Oluşturucular, yalnızca öncesi uygulama compat etkinliklerde bu ayarı göz ardı edilir şekilde uygulama compat Android arka için geçerlidir.
 
-Performans iyileştirmeleri düzeni karmaşıklığına bağlı olarak, her bir uygulama için değişir. Örneğin, x2 performans geliştirmeleri ile kaydırma sırasında olası bir [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) burada her satır hücrelerde yapılan hızlı Oluşturucu kullanan denetimlerin, veri satırı binlerce içeren hangi sonuçlanıyor görünür şekilde daha yumuşak kaydırma.
+Performans iyileştirmeleri düzenini karmaşıklığına olarak, her bir uygulama için farklılık gösterir. Örneğin, performansı geliştirmelerinin x2 aracılığıyla kaydırdığınızda olası bir [ `ListView` ](xref:Xamarin.Forms.ListView) gösteren binlerce satır verileri, burada her bir satırdaki hücreleri hızlı oluşturucular kullanan denetimleri yapılır, içeren, sonuçlanıyor görünüşte daha yumuşak kaydırma.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

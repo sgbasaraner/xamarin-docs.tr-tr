@@ -1,53 +1,53 @@
 ---
-title: Platformlar arası performansı
-description: Bu belge, bir mobil uygulama performansını artırmak için kullanılabilecek çeşitli teknikleri açıklar. Profil Oluşturucu, IDisposable kaynak, zayıf başvurular, SGen atık toplayıcı, boyutunu azaltma teknikleri ve daha fazla açıklanır.
+title: Platformlar arası performans
+description: Bu belgede, mobil uygulama performansını artırmak için kullanılan çeşitli teknikler açıklanır. Profiler IDisposable kaynak, zayıf başvurular, SGen atık toplayıcı, boyutu azaltma teknikleri ve daha fazla ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 66234bb44bb0cae9580c119c6029603a528f882e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781988"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997445"
 ---
-# <a name="cross-platform-performance"></a>Platformlar arası performansı
+# <a name="cross-platform-performance"></a>Platformlar arası performans
 
-Zayıf uygulama performans kendisini birçok yolla gösterir. Bir uygulama yapabilirsiniz yanıt vermeyen gibi görünebilir, yavaş kaydırma neden olabilir ve pil ömrünün azaltabilir. Ancak, performansı en iyi duruma getirme daha fazlasını verimli kod uygulama içerir. Uygulama performansı kullanıcı deneyimi de dikkate alınmalıdır. Örneğin, diğer etkinlikler gerçekleştirmeyi kullanıcı engellenmeden işlemlerini yürütmek sağlayarak kullanıcı deneyimini geliştirmek için yardımcı olabilir.
+Kötü uygulama performansı kendisini birçok şekilde gösterir. Bir uygulamayı yapabilirsiniz yanıt vermiyor, yavaş kaydırma neden olabilir ve pil ömrü azaltabilir. Ancak, performansı en iyi duruma getirme verimli kod daha fazlasını uygulama içerir. Uygulama performansı kullanıcı deneyimi de dikkate alınmalıdır. Örneğin, kullanıcının diğer etkinliklerini gerçekleştirmesi engellemeden işlemleri yürütmek sağlayarak kullanıcı deneyimini geliştirmek için yardımcı olabilir.
 
 <a name="profiler" />
 
-## <a name="use-the-profiler"></a>Profil Oluşturucu kullanın
+## <a name="use-the-profiler"></a>Profiler'ı kullanın
 
-Bir uygulama geliştirirken, yalnızca bu profili sonra kodu en iyi duruma getirme girişimi önemlidir. Profil oluşturma, burada kodu en iyi duruma getirme performans sorunları azaltmak amacıyla, en yüksek etkisi belirlemek için bir tekniktir. Profil Oluşturucu uygulamanın bellek kullanımını izler ve uygulamada yöntemleri, çalışma süresini kaydeder. Böylece en iyi duruma getirme için en iyi fırsatları bulunan bu veriler uygulama yürütme yollarını ve kod yürütme maliyetini arasında gezinmek için yardımcı olur.
+Bir uygulama geliştirirken, yalnızca bu profili sonra kodu En İyileştir denemek önemlidir. Profil oluşturma, burada kod iyileştirmeleri performans sorunları azaltmak amacıyla, en büyük etkisi olmayacağını belirlemek için bir tekniktir. Profil Oluşturucu uygulamanın bellek kullanımı izler ve uygulama çalışma süresi yöntemleri kaydeder. Böylece en iyi duruma getirme için iyi fırsatlar bulunan uygulama yürütme yollarını ve kodu yürütme maliyeti gitmek için bu verileri yardımcı olur.
 
-Xamarin profil oluşturucu ölçmek, değerlendirmek ve uygulamada performans ile ilgili sorunları çözmeye yardımcı olmak. Profil Xamarin.iOS ve Xamarin.Android uygulamalar için kullanılabilir Mac veya Visual Studio için Visual Studio içinde. Xamarin profil oluşturucu hakkında daha fazla bilgi için bkz: [Xamarin profil oluşturucu giriş](~/tools/profiler/index.md).
+Xamarin Profiler ölçmesine, değerlendirin ve uygulamada performans ile ilgili sorunları çözmeye yardımcı olmak. Profili Xamarin.iOS ve Xamarin.Android uygulamaları için kullanılabilir Visual Studio veya Mac için Visual Studio içinde. Xamarin Profiler hakkında daha fazla bilgi için bkz: [Xamarin Profiler giriş](~/tools/profiler/index.md).
 
-Aşağıdaki en iyi yöntemler, bir uygulama profili oluşturma zaman önerilir:
+Aşağıdaki en iyi bir uygulama profili oluşturulurken önerilir:
 
-- Simulator uygulama performansı bozabilir gibi bir simulator uygulamada profil kaçının.
-- Bir cihazda performans ölçümleri alma diğer cihazların performans özellikleri her zaman göstermeyecektir gibi ideal olarak, profil çeşitli aygıtlardan gerçekleştirilmesi gerekir. Ancak, en azından, profil düşük beklenen belirtimi içeriyor bir aygıtta gerçekleştirilmesi gerekir.
-- Profili oluşturuluyor uygulama tam etkisini, diğer uygulamalar yerine ölçülecek emin olmak için tüm diğer uygulamaları kapatın.
+- Simülatör uygulamanın performansını bozabilir gibi bir uygulamada bir simülatör profil oluşturma kaçının.
+- Performans ölçümleri bir cihazda alan diğer cihazlar performans özellikleri her zaman gösterilmez gibi ideal olarak, profil oluşturma çeşitli cihazlar üzerinde gerçekleştirilmelidir. Ancak, en azından, profil oluşturma beklenen en düşük belirtimi var olan bir cihazda gerçekleştirilmelidir.
+- Tam profillenen uygulamanın etkisini, diğer uygulamaların yerine Ölçülmekte olan emin olmak için tüm diğer uygulamaları kapatın.
 
 <a name="idisposable" />
 
 ## <a name="release-idisposable-resources"></a>IDisposable kaynakları serbest bırakmak
 
-`IDisposable` Arabirimi kaynakları serbest bırakmak için bir mekanizma sağlar. Sağladığı bir `Dispose` açıkça kaynakları serbest bırakmak için uygulanması yöntemi. `IDisposable` bir yıkıcı değildir ve yalnızca aşağıdaki durumlarda uygulanması gerekir:
+`IDisposable` Arabirimi kaynakları serbest bırakmak için bir mekanizma sağlar. Sağladığı bir `Dispose` kaynakları açıkça serbest bırakmak için uygulanması gereken yöntemini. `IDisposable` bir yok edici değildir ve yalnızca aşağıdaki durumlarda uygulanması:
 
-- Ne zaman sınıf yönetilmeyen kaynakları sahip olur. Serbest bırakma gerektiren tipik yönetilmeyen kaynaklar dosyaları, akış ve ağ bağlantıları içerir.
+- Ne zaman sınıf, yönetilmeyen kaynakları sahip olur. Serbest gerektiren tipik yönetilmeyen kaynaklar, dosyalar, akışları ve ağ bağlantıları içerir.
 - Yönetilen sınıf sahip olduğunda `IDisposable` kaynakları.
 
-Türü tüketicileri sonra çağırabilir `IDisposable.Dispose` örneği artık gerekli olmadığında kaynakları serbest uygulama. Bunu elde etmek için iki yaklaşım vardır:
+Tür tüketicileri daha sonra çağırabilir `IDisposable.Dispose` örneği artık gerekli olmadığında kaynakları serbest bırakmak. Bunu elde etmek için iki yaklaşım vardır:
 
-- Kaydırma tarafından `IDisposable` nesnesinde bir `using` deyimi.
-- Çağrı kaydırma tarafından `IDisposable.Dispose` içinde bir `try` / `finally` bloğu.
+- Sarmalama tarafından `IDisposable` nesnesine bir `using` deyimi.
+- Sarmalama çağrısı tarafından `IDisposable.Dispose` içinde bir `try` / `finally` blok.
 
-### <a name="wrapping-the-idisposable-object-in-a-using-statement"></a>Kullanarak bir IDisposable nesne kaydırma deyimi
+### <a name="wrapping-the-idisposable-object-in-a-using-statement"></a>Kullanarak bir IDisposable nesnesi sarmalama deyimi
 
-Aşağıdaki kod örneğinde nasıl kaydırılacağını gösterir bir `IDisposable` nesnesinde bir `using` deyimi:
+Aşağıdaki kod örneği nasıl kaydırılacağını gösteren bir `IDisposable` nesnesine bir `using` deyimi:
 
 ```csharp
 public void ReadText (string filename)
@@ -61,11 +61,11 @@ public void ReadText (string filename)
 }
 ```
 
-`StreamReader` Uygulayan sınıf `IDisposable`ve `using` deyimi çağırır kullanışlı bir sözdizimi sağlar `StreamReader.Dispose` yöntemi `StreamReader` , kapsam dışındadır geçmeden önce nesne. İçinde `using` bloğu `StreamReader` nesnesi salt okunurdur ve atanamaz. `using` Deyimi, aynı zamanda sağlar, `Dispose` yöntemi çağrıldığında bir özel durum oluştuğunda dahi derleyici Ara dile (IL) uygulayan gibi için bir `try` / `finally` bloğu.
+`StreamReader` Sınıfının Implements `IDisposable`ve `using` deyimi çağıran bir sözdizimindeki sağlar `StreamReader.Dispose` metodunda `StreamReader` , kapsam dışına geçmeden önce nesne. İçinde `using` bloğu `StreamReader` nesne salt okunur ve yeniden atanamaz. `using` Bildirimi ayrıca sağlar `Dispose` yöntemi çağrıldığında bir özel durum oluşursa bile derleyici Ara dil (IL) uyguladığı için bir `try` / `finally` blok.
 
 ### <a name="wrapping-the-call-to-idisposabledispose-in-a-tryfinally-block"></a>Bir Try/Finally bloğu içinde IDisposable.Dispose çağrısı sarmalama
 
-Aşağıdaki kod örneğinde çağrısı sarmalama gösterir `IDisposable.Dispose` içinde bir `try` / `finally` engelle:
+Aşağıdaki kod örneği, çağrısını sarmalamak gösterilmektedir `IDisposable.Dispose` içinde bir `try` / `finally` engelle:
 
 ```csharp
 public void ReadText (string filename)
@@ -85,17 +85,17 @@ public void ReadText (string filename)
 }
 ```
 
-`StreamReader` Uygulayan sınıf `IDisposable`ve `finally` engelleme çağrıları `StreamReader.Dispose` kaynak yayımlamayı yöntemi.
+`StreamReader` Sınıfının Implements `IDisposable`ve `finally` block çağrıları `StreamReader.Dispose` kaynağı bırakmak için yöntemi.
 
-Daha fazla bilgi için bkz: [IDisposable arabirimi](https://developer.xamarin.com/api/type/System.IDisposable/).
+Daha fazla bilgi için [IDisposable arayüzünü](xref:System.IDisposable).
 
 <a name="events" />
 
-## <a name="unsubscribe-from-events"></a>Olay aboneliği
+## <a name="unsubscribe-from-events"></a>Olay aboneliği iptal et
 
-Abonelik nesnesinin elden önce bellek sızıntıları önlemek için olayları gelen aboneliği olmalıdır. Olay gelen aboneliği kaldırılan kadar yayımlama nesnesindeki olayı için temsilci abonenin olay işleyicisi yalıtır temsilci bir başvuru içeriyor. Bu başvuru yayımlama nesnesi tutar sürece, atık toplama, abone nesne belleği geri değil.
+Abonelik nesnesinin elden önce bellek sızıntılarını önlemek için olayları gelen aboneliği olmalıdır. Gelen olay aboneliğiniz kadar yayımlama nesnede bir olay için temsilci abonenin olay işleyicisi yalıtan temsilci bir başvuru içeriyor. Yayımlama nesne bu başvuru tutan sürece, atık toplama, abone nesne belleği geri değil.
 
-Aşağıdaki kod örneği, bir olay aboneliği gösterilmektedir:
+Aşağıdaki kod örneği, bir olayın aboneliğini kaldırmak gösterilmektedir:
 
 ```csharp
 public class Publisher
@@ -132,9 +132,9 @@ public class Subscriber : IDisposable
 }
 ```
 
-`Subscriber` Sınıfı işlemleri içinde olaydan kendi `Dispose` yöntemi.
+`Subscriber` Sınıfı abonelikten çıkma olay kendi `Dispose` yöntemi.
 
-Başvuru döngüleri da lambda ifadeleri başvuru ve nesneleri canlı olay işleyicileri ve lambda sözdizimi kullanılırken oluşabilir. Bu nedenle, bir başvuru anonim yöntemi bir alana depolanabilir ve aşağıdaki kod örneğinde gösterildiği gibi olayından aboneliği için kullanılan:
+Başvuru döngülerini, lambda ifadeleri, başvuru ve nesneleri canlı olarak olay işleyicileri ve lambda sözdizimi kullandığınızda da meydana gelebilir. Bu nedenle, anonim bir yönteme başvuru bir alanda depolanabilir ve olayın aboneliğini kaldırmak için aşağıdaki kod örneğinde gösterildiği gibi kullanılır:
 
 ```csharp
 public class Subscriber : IDisposable
@@ -158,28 +158,28 @@ public class Subscriber : IDisposable
 }
 ```
 
-`handler` Alan anonim yöntemi referansı korur ve olay aboneliği için kullanılır ve aboneliği.
+`handler` Alan anonim bir yönteme başvuru tutan ve olay aboneliği için kullanılır ve aboneliği kaldırma.
 
 <a name="weakreferences" />
 
 ## <a name="use-weak-references-to-prevent-immortal-objects"></a>Zayıf başvurular Immortal nesneleri engellemek için kullanın
 
 > [!NOTE]
-> iOS geliştiricileri gözden geçirmeniz gereken belge üzerinde [iOS içinde döngüsel başvurulara önleme](~/ios/deploy-test/performance.md#avoid-strong-circular-references) uygulamalarını kullanmak bellek verimli bir şekilde sağlamak için.
+> iOS geliştiricileri, şirket belgelerine incelemelidir [iOS bulunan döngüsel başvurular önleme](~/ios/deploy-test/performance.md#avoid-strong-circular-references) uygulamalarını kullanan bellek verimli bir şekilde sağlamak için.
 
 <a name="lazy" />
 
-## <a name="delay-the-cost-of-creating-objects"></a>Nesne oluşturma maliyetini gecikme
+## <a name="delay-the-cost-of-creating-objects"></a>Gecikme maliyeti nesneleri oluşturma
 
-Geç Başlatma ilk kullanılan kadar bir nesnesinin oluşturulmasını ertelemek için kullanılabilir. Bu teknik öncelikle performansı, hesaplama önlemek ve bellek gereksinimlerini azaltmak için kullanılır.
+Yavaş başlatma, ilk kez kullanılana kadar bir nesne oluşturma ertelemek için kullanılabilir. Bu teknik, öncelikle performansı, hesaplama önlemek ve bellek gereksinimlerini azaltmak için kullanılır.
 
 
-Bu iki senaryoda pahalıdır nesneler için geç başlatma kullanarak göz önünde bulundurun:
+Bu iki senaryoda oluşturması pahalıya nesnelerin geç başlatma kullanarak göz önünde bulundurun:
 
-- Uygulama nesnesi kullanamayabilir.
-- Nesne oluşturulmadan önce pahalı diğer işlemleri tamamlamanız gerekir.
+- Uygulama, nesne kullanamayabilir.
+- Nesne oluşturulmadan önce diğer pahalı işlemlerini tamamlamanız gerekir.
 
-`Lazy<T>` Sınıfı bir başlatılacağı yavaş türünü tanımlamak için kullanılan aşağıdaki kod örneğinde gösterildiği gibi:
+`Lazy<T>` Sınıfı geç başlatılan bir tür tanımlamak için kullanılır aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 void ProcessData(bool dataRequired = false)
@@ -206,17 +206,17 @@ double Compute(double x)
 }
 ```
 
-Geç Başlatma ilk kez oluşur `Lazy<T>.Value` özelliği erişilir. Sarmalanan türü oluşturulur ve ilk erişimde döndürülen ve gelecekteki tüm erişimi için depolanan.
+Yavaş başlatma gerçekleşir ilk kez `Lazy<T>.Value` özelliğine erişilirse. Kaydırılmış tür oluşturulur ve ilk erişimde döndürdü ve herhangi bir gelecek erişimi için depolanır.
 
-Geç başlatma hakkında daha fazla bilgi için bkz: [geç başlatma](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx).
+Yavaş başlatma hakkında daha fazla bilgi için bkz: [yavaş başlatma](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx).
 
 <a name="async" />
 
 ## <a name="implement-asynchronous-operations"></a>Zaman uyumsuz işlemleri uygulama
 
-.NET API'lerini çoğunu zaman uyumsuz sürümlerini sağlar. Zaman uyumlu API'ları farklı olarak, etkin yürütme iş parçacığı önemli miktarda zaman için hiçbir zaman çağıran iş parçacığı engeller zaman uyumsuz API'leri emin olun. Bu nedenle, kullanılabilir durumdaysa bir API kullanıcı Arabirimi iş parçacığından çağrılırken, zaman uyumsuz API kullanın. Bu uygulama ile kullanıcı deneyimini geliştirmek için yardımcı olacak engeli kaldırılmış, kullanıcı Arabirimi iş parçacığı tutar.
+.NET API'lerini çoğu zaman uyumsuz sürümlerini sağlar. Zaman uyumlu API'ları farklı olarak, zaman uyumsuz API'leri active yürütme iş parçacığı önemli bir süre için hiçbir zaman çağıran iş parçacığını engeller emin olun. Bu nedenle, varsa UI iş parçacığından bir API'nin çağrılması durumunda, zaman uyumsuz API kullanın. Bu uygulama ile kullanıcı deneyimini geliştirmeye yardımcı olan engeli kaldırılmış, UI iş parçacığı tutar.
 
-Ayrıca, uzun süre çalışan işlemleri kullanıcı Arabirimi iş parçacığı engelleme önlemek için bir arka plan iş parçacığında yürütülmelidir. .NET sağlar `async` ve `await` arka plan iş parçacığında uzun süre çalışan işlemlerini yürütür ve tamamlanma sonuçlarına eriştiğinde zaman uyumsuz kod yazmayı etkinleştirmek anahtar sözcükler. Ancak, uzun süreli işlemler yürütülebilir zaman uyumsuz olarak ile `await` anahtar sözcüğü, bu garanti etmez işlemi arka plan iş parçacığı üzerinde çalışır. Bunun yerine, bu uzun süre çalışan işlemin geçirerek gerçekleştirilebilir `Task.Run`aşağıdaki kod örneğinde gösterildiği gibi:
+Ayrıca, uzun süren işlemlere UI iş parçacığı engellenmesini önlemek için bir arka plan iş parçacığı üzerinde yapılmalıdır. .NET sağlar `async` ve `await` uzun süre çalışan işlemleri arka plan iş parçacığında çalışır ve tamamlandığında sonuçları eriştiğinde, zaman uyumsuz kod yazmayı sağlayan anahtar sözcükler. Ancak, uzun süren işlemlere yürütülebilir zaman uyumsuz olarak ile `await` anahtar sözcüğü, bu garanti etmez işlemi bir arka plan iş parçacığında çalışır. Bunun yerine, bu için uzun süre çalışan işlemin geçirerek gerçekleştirilebilir `Task.Run`aşağıdaki kod örneğinde gösterildiği gibi:
 
 ```csharp
 public class FaceDetection
@@ -235,69 +235,69 @@ public class FaceDetection
 }
 ```
 
-`RecognizeFace` Yöntemi ile bir arka plan iş parçacığında yürütür `RecognizeFaceButtonClick` kadar bekleyen yöntemi `RecognizeFace` yöntemi tamamlayan devam etmeden önce.
+`RecognizeFace` Yöntemi ile bir arka plan iş parçacığında yürütülür `RecognizeFaceButtonClick` kadar bekleyen yöntemi `RecognizeFace` yöntemi, devam etmeden önce tamamlanır.
 
-Uzun süreli işlemler iptal desteklemesi gerekir. Örneğin, uzun süren bir işlem devam kullanıcı uygulama içerisinden giderse gereksiz olabilir. İptal uygulamak için desen aşağıdaki gibidir:
+Uzun süren işlemlere iptal desteklemelidir. Örneğin, uzun süre çalışan bir işleme devam ederseniz uygulama içinde kullanıcı giderse gereksiz olabilir. İptal uygulamada Düzen aşağıdaki gibidir:
 
-- Oluşturma bir `CancellationTokenSource` örneği. Bu örnek, yönetme ve iptal bildirimleri göndermek.
-- Geçirmek `CancellationTokenSource.Token` iptal edilebilen olması gereken her görev için özellik değeri.
-- Her görev için İptali yanıt için bir mekanizma sağlar.
-- Çağrı `CancellationTokenSource.Cancel` iptal bildirim sağlamak için yöntem.
+- Oluşturma bir `CancellationTokenSource` örneği. Bu örnek, yönetmek ve iptal bildirimleri gönderin.
+- Geçirmek `CancellationTokenSource.Token` iptal edilebilir olması gereken her görev için özellik değeri.
+- Her görev, iptal için yanıt vermesi için bir mekanizma sağlar.
+- Çağrı `CancellationTokenSource.Cancel` iptal bildirimi sağlamak için yöntemi.
 
 > [!IMPORTANT]
-> `CancellationTokenSource` Sınıfını uygular `IDisposable` arabirimi ve bu nedenle `CancellationTokenSource.Dispose` yöntemi çağrılabilir kez `CancellationTokenSource` örneği ile tamamlandı.
+> `CancellationTokenSource` Sınıfının Implements `IDisposable` arabirimi ve bu nedenle `CancellationTokenSource.Dispose` yöntemi çağrılacak bir kez `CancellationTokenSource` örneği ile tamamlandı.
 
 
 
-Daha fazla bilgi için bkz: [zaman uyumsuz desteğine genel bakış](~/cross-platform/platform/async.md).
+Daha fazla bilgi için [zaman uyumsuz desteğe genel bakış](~/cross-platform/platform/async.md).
 
 <a name="sgen" />
 
-## <a name="use-the-sgen-garbage-collector"></a>SGen atık toplayıcısını kullanın
+## <a name="use-the-sgen-garbage-collector"></a>SGen atık toplayıcıyı kullanın
 
-Artık kullanımda olmayan nesneler için ayrılan bellek geri kazanmak için C# kullanın çöp toplama gibi dilleri yönetilen. Xamarin platform tarafından kullanılan iki atık toplayıcıları şunlardır:
+Artık kullanılmayan nesnelere ayrılan belleği geri kazanmak için C# kullanımı çöp toplama gibi dilleri yönetilen. Xamarin platformu tarafından kullanılan iki atık toplayıcıları şunlardır:
 
-- [**SGen** ](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – bu kişinin atık toplayıcısını ve Xamarin platformunda varsayılan atık toplayıcı.
-- [**Boehm** ](http://www.hboehm.info/gc/) – koruyucu, kişinin olmayan atık toplayıcı budur. Klasik API kullanan Xamarin.iOS uygulamaları için kullanılan varsayılan atık toplayıcı olur.
+- [**SGen** ](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – bu soy tabanlı atık Toplayıcıya ve varsayılan atık toplayıcı Xamarin platformu üzerinde.
+- [**Boehm** ](http://www.hboehm.info/gc/) – koruyucu, olmayan-soy tabanlı atık Toplayıcıya budur. Bu, Klasik API kullanan Xamarin.iOS uygulamaları için kullanılan varsayılan çöp toplayıcı olur.
 
-SGen nesneler için alan ayırmak için üç yığınlara birini kullanır:
+SGen nesneler için alan ayırmak için üç yığınlar birini kullanır:
 
--  **Çocuk odası** – yeni küçük nesneleri burada ayrılan budur. Çocuk odası alana çalıştığında, küçük çöp toplama meydana gelir. Herhangi bir dinamik Nesne ana yığın taşınır.
--  **Ana yığın** – uzun süre çalışan nesneleri saklandığı budur. Ana yığınında yeterli bellek yoksa, ana çöp toplama meydana gelir. Yeterli belleği boşaltmak ana çöp toplama başarısız olursa SGen için daha fazla bellek sistem sorar.
--  **Büyük nesne alanı** – 8000 bayttan fazla gerektiren nesnelerini saklandığı budur. Büyük nesneler çocuk odası başlatılmaz, ancak bunun yerine bu yığın ayrılır.
+-  **Çocuk odası** – küçük yeni nesnelerin ayrıldığı budur. Çocuk odası alan tükendiğinde küçük çöp toplama meydana gelir. Tüm Canlı nesnelerin büyük öbek için taşınır.
+-  **Büyük yığın** – uzun süre çalışan nesneleri saklandığı budur. Ana yığınında yeterli bellek yoksa, bir ana atık toplama meydana gelir. Yeterli bellek boşaltmak bir ana atık toplama işlemi başarısız olursa SGen sistem için daha fazla bellek sorar.
+-  **Büyük nesne alanı** – 8000 bayttan fazlasını gerektiren nesnelerini saklandığı budur. Büyük nesneler çocuk odası başlatılmaz, ancak bunun yerine bu yığında ayrılır.
 
-SGen avantajlarından biri, küçük çöp toplama gerçekleştirmek için gereken süreyi son küçük çöp toplamadan beri oluşturulan yeni dinamik nesneler sayısıyla orantılı olmasıdır. Bu ikincil çöp koleksiyonları büyük çöp toplama daha az zaman alır gibi bu atık toplama bir uygulama performans üzerindeki etkisini azaltır. Hala ana çöp koleksiyonları gerçekleşir, ancak daha az sıklıkta.
+SGen avantajlarından biri, bir küçük atık toplama işini gerçekleştirmek için gereken süreyi son küçük çöp toplama işleminden itibaren oluşturulan yeni Canlı nesne sayısını orantılı olmasıdır. Bu küçük çöp koleksiyonları ana atık toplama süreden daha kısa zamanda olacağından bu çöp toplama bir uygulama performansı üzerindeki etkisini azaltır. Ana atık toplamaları yine de gerçekleşir, ancak daha az sıklıkta.
 
 ### <a name="reducing-pressure-on-the-garbage-collector"></a>Çöp toplayıcı Basıncı azaltma
 
-SGen çöp toplama başladığında, bellek kaldırsa durumdayken uygulamanın iş parçacığı durdurur. Bellek iadesi olsa da, uygulama kısa bir duraklama deneyimi veya kullanıcı Arabiriminde titremesine. Bu Duraklat nasıl algılanabilir olan iki etkenlere bağlıdır:
+SGen atık toplama başladığında, belleği geri kazanır durumdayken uygulamanın iş parçacıkları durdurur. Bellek iadesi sırasında uygulama kısa duraklatma deneyimi veya kullanıcı Arabiriminde titremesine. Bu duraklatma nasıl algılanabilir olan iki etkenlere bağlıdır:
 
-1. **Sıklık** – ne sıklıkta çöp toplama oluşur. Daha fazla bellek koleksiyonları arasında ayrılmış olarak çöp koleksiyonları artacaktır.
-1. **Süre** – her bireysel çöp toplama ne kadar sürer. Bu kabaca toplanmakta olan dinamik Nesne sayısı için doğru orantılıdır.
+1. **Sıklık** – ne sıklıkta çöp toplama oluşur. Koleksiyonları arasında daha fazla bellek ayırma işlemi yapılırken atık Toplamaların sıklığını artacaktır.
+1. **Süre** – her ayrı bir çöp toplama ne kadar sürer. Bu kabaca toplanmakta olan Canlı nesneleri sayısı için doğru orantılıdır.
 
-Topluca bu anlamına birçok nesne ayrılan ancak Canlı kalmak değil, olacağını birçok kısa çöp koleksiyonu. Buna karşılık, yavaş ayrılmış yeni nesneleri ve nesnelerin Canlı kalır, olacaktır daha az ancak uzun çöp koleksiyonları.
+Topluca bu anlamına birçok nesne ayrılır, ancak Canlı kalmasını değil, olacağını çok kısa bir atık toplama. Buna karşılık, yeni nesneler yavaş ayrılır ve nesneleri canlı kalmasını olacaktır daha az sayıda ancak daha uzun bir atık toplama.
 
 Çöp toplayıcı Basıncı azaltmak için aşağıdaki yönergeleri izleyin:
 
-- Çöp toplama sıkı döngüler nesne havuzları kullanarak kaçının. Bu, özellikle nesnelerine çoğunluğu önceden oluşturmak için gereken oyunlar için geçerlidir.
-- Artık gerekli olmayan sonra açıkça akışlar, ağ bağlantıları, bellek ve dosyaları büyük bloklarını gibi kaynakları serbest bırakır. Daha fazla bilgi için bkz: [yayın IDisposable kaynakları](#idisposable).
-- Olay işleyicileri XML'deki artık nesneleri toplanabilir yapmak için gerekli olan sonra kaydedin. Daha fazla bilgi için bkz: [olaylardan abonelikten](#events).
+- Çöp toplama sıkı Döngülerde, nesne havuzlarını kullanarak kaçının. Bu, özellikle kendi nesnelerin çoğu önceden oluşturmak için gereken oyunlar için geçerlidir.
+- Artık gerekli olmayan akışlar, ağ bağlantıları, bellek ve dosyaları büyük blokları gibi kaynakları açıkça serbest bırakın. Daha fazla bilgi için [yayın IDisposable kaynakları](#idisposable).
+- Artık toplanabilir nesneler yapmak için gerekli olmayan olay işleyicileri sildirebilir. Daha fazla bilgi için [olaylardan Unsubscribe](#events).
 
 <a name="linker" />
 
-## <a name="reduce-the-size-of-the-application"></a>Uygulama boyutunu azaltın
+## <a name="reduce-the-size-of-the-application"></a>Uygulamanın boyutunu azaltın
 
-Bir uygulamanın yürütülebilir boyutu nereden geldiğini anlamak için her platformda derleme işlemi anlamak önemlidir:
+Bir uygulamanın yürütülebilir boyutu nereden geldiğini anlamak için her platformda derleme süreci anlamak önemlidir:
 
-- iOS, tamamlanan,-ARM derleme dili için derlenmiş zamanı (Uygulama Nesne AĞACI) uygulamalardır. .NET framework ile yalnızca uygun bağlayıcı seçeneği etkinse çıkarılır kullanılmayan sınıfları içerir.
-- Android uygulamaları Ara dile (IL) derlenir ve MonoVM ve tam zamanında (JIT) derleme paketlenir. Yalnızca uygun bağlayıcı seçeneği etkinse kullanılmayan framework sınıfları çıkarılır.
+- iOS, tamamlanan,-ARM için derleme dili derlenmiş zamanı (AOT) uygulamalardır. .NET framework yalnızca uygun bağlayıcı seçeneği etkinse çıkarılır kullanılmayan sınıflarıyla içindedir.
+- Android uygulamaları Ara dil (IL) derlenir ve MonoVM just-in-time (JIT) derleme ile paketlenir. Yalnızca uygun bağlayıcı seçeneği etkinse kullanılmayan framework sınıfları çıkarılır.
 - Windows Phone uygulamaları için IL derlenir ve yerleşik çalışma zamanı tarafından yürütülür.
 
-Ayrıca, yerel olarak içerecektir bu yana en son yürütülebilir boyutuna daha fazla artıracaktır sonra uygulamanın genel türler kapsamlı kullanımını yaparsa genel olasılıklar sürümleri derlenmiş.
+Ayrıca, bir uygulamanın yerel olarak içerecektir sonra son yürütülebilir boyutu daha fazla artırmak sonra genel türler kapsamlı kullanımını yaparsa sürümleri genel olasılık derlenmiş.
 
-Uygulamaları boyutunu azaltmak için Xamarin platform derleme araçları bir parçası olarak bir bağlayıcı içerir. Bağlayıcı, varsayılan olarak devre dışıdır ve proje seçenekleri uygulama için etkinleştirilmiş olması gerekir. Derleme zamanında hangi türleri ve üyeleri, uygulama tarafından gerçekten kullanılacağını belirlemek için uygulamanın statik çözümleme gerçekleştirir. Kullanılmayan türleri ve yöntemleri'nı, ardından uygulamadan kaldırır.
+Uygulamaları boyutunu azaltmak için derleme Araçları'nın bir parçası bir bağlayıcı Xamarin platformunu içerir. Bağlayıcı varsayılan olarak devre dışıdır ve uygulama için proje seçeneklerinde etkinleştirilmesi gerekir. Derleme sırasında uygulama tarafından hangi türler ve üyeler, gerçekte kullanıldığını belirlemek için uygulamanın statik çözümleme gerçekleştirir. Tüm kullanılmayan türlerin ve yöntemlerin'nı, ardından uygulamadan kaldırır.
 
-Aşağıdaki ekran görüntüsünde bağlayıcı seçenekleri Visual Studio'da Mac için bir Xamarin.iOS projesi için gösterir:
+Aşağıdaki ekran görüntüsünde bağlayıcı seçenekleri Visual Studio için Mac için bir Xamarin.iOS projesi gösterir:
 
 ![](memory-perf-best-practices-images/linker-options-ios.png)
 
@@ -305,79 +305,79 @@ Aşağıdaki ekran görüntüsünde bağlayıcı seçenekleri Visual Studio'da M
 
 ![](memory-perf-best-practices-images/linker-options-droid.png)
 
-Bağlayıcı davranışını denetlemek için üç farklı ayardan sağlar:
+Bağlayıcı davranışını denetlemek için üç farklı ayarları sağlar:
 
--  **Bağlantı** – bağlayıcı tarafından hiç kullanılmamış türleri ve yöntemleri kaldırılacak. Performans nedenleriyle hata ayıklama derlemeleri için varsayılan ayar budur.
--  **Bağlama çerçevesi SDK'lar/SDK derlemeleri yalnızca** – Bu ayar yalnızca Xamarin tarafından gönderilen bu derlemeler boyutunu azaltır. Kullanıcı kodu etkilenmeyecek.
--  **Bağlantı tüm derlemelerde** – SDK derlemeleri ve kullanıcı kodu hedeflediğini daha agresif bir iyileştirme budur. Bağlamaları için bu kullanılmayan yedekleme alanlarını kaldırın ve her örneği (veya bağımlı nesneler) yapar daha az bellek tükettikten açık.
+-  **Bağlama** – hiç kullanılmayan türlerin ve yöntemlerin bağlayıcı tarafından kaldırılır. Performansla ilgili nedenlerden dolayı hata ayıklama yapıları için varsayılan ayar budur.
+-  **Bağlantı yalnızca çerçeve SDK'ları / SDK derlemeleri** – Bu ayar yalnızca Xamarin tarafından gönderilir ve bu derlemeler boyutunu azaltır. Kullanıcı kodu etkilenmeyecektir.
+-  **Bağlantı tüm derlemelerin** – SDK bütünleştirilmiş kodları ve kullanıcı kodu hedeflediğini daha agresif bir iyileştirme budur. Bağlamalarda bu kullanılmayan destekleyen alanlar kaldırır ve her örneği (veya ilişkili nesneleri) yapmak daha açık, daha az bellek kullanma.
 
-*Bağlantı tüm derlemelerde* beklenmedik bir şekilde uygulama kesilebilir gibi dikkatli kullanılmalıdır. Bağlayıcı tarafından gerçekleştirilen statik çözümleme doğru derlenmiş uygulamadan kaldırılmakta olan çok fazla kod bunun sonucunda, gerekli olan tüm kodları tanımlayabilir değil. Uygulama kilitlendiğinde bu durum kendisi yalnızca çalışma zamanında bildirimi. Bu nedenle baştan sona bağlayıcı davranışı değiştirdikten sonra bir uygulamayı test etmek önemlidir.
+*Bağlantı tüm derlemelerin* beklenmedik bir şekilde uygulama çökebilir dikkatli kullanılmalıdır. Derlenmiş uygulamadan kaldırılmasını çok fazla kod bunun sonucunda, gerekli olan tüm kodları bağlayıcı tarafından gerçekleştirilen statik analiz doğru tanımlayamayabilir. Bu durum uygulama kilitlendiğinde kendisi yalnızca çalışma zamanında bildirilmez. Bu nedenle bağlayıcı davranışı değiştirdikten sonra bir uygulamayı sınamanız önemlidir.
 
-Sınama bağlayıcı yanlış olduğunu ortaya çıkıyorsa bir sınıf veya yöntemini türleri işaretlemek mümkündür veya statik olarak başvurulan değil, ancak aşağıdaki öznitelikler birini kullanarak uygulama tarafından gerekli yöntemlerini kaldırıldı:
+Test bağlayıcı yanlış olduğunu çıkıyorsa bir sınıf veya türleri işaretlemek mümkündür yöntemi veya statik olarak başvurulan değil, ancak aşağıdaki özniteliklerden birini kullanarak uygulama için gereken yöntemleri kaldırıldı:
 
--  `Xamarin.iOS.Foundation.PreserveAttribute` – Bu öznitelik Xamarin.iOS projelerde bağlıdır.
--  `Android.Runtime.PreserveAttribute` – Bu öznitelik Xamarin.Android projelerde bağlıdır.
+-  `Xamarin.iOS.Foundation.PreserveAttribute` – Xamarin.iOS projeleri için bu özniteliğidir.
+-  `Android.Runtime.PreserveAttribute` – Xamarin.Android projeleri için bu özniteliğidir.
 
-Örneğin, dinamik olarak örneği türlerinin varsayılan oluşturucular korumak gerekli olabilir. Ayrıca, XML serileştirme kullanımını türlerin özellikleri korunur gerektirebilir.
+Örneğin, dinamik olarak oluşturulan tür varsayılan oluşturucular korumak gerekli olabilir. Ayrıca, XML serileştirme kullanımını türlerin özelliklerine korunur gerektirebilir.
 
-Daha fazla bilgi için bkz: [iOS için bağlayıcı](~/ios/deploy-test/linker.md) ve [Android için bağlayıcı](~/android/deploy-test/linker.md).
+Daha fazla bilgi için [iOS için bağlayıcı](~/ios/deploy-test/linker.md) ve [Android için bağlayıcı](~/android/deploy-test/linker.md).
 
-### <a name="additional-size-reduction-techniques"></a>Ek boyutunu azaltma teknikleri
+### <a name="additional-size-reduction-techniques"></a>Ek boyutu azaltma teknikleri
 
-Bu güç mobil aygıtları çok çeşitli CPU mimarileri vardır. Bu nedenle, Xamarin.iOS ve Xamarin.Android üretmek *fat ikili dosyaları* uygulama her CPU mimarisi için derlenmiş bir sürümünü içerir. Bu, bir mobil uygulama bir cihazda CPU mimarisi bağımsız olarak çalıştırabilirsiniz sağlar.
+Güç Mobil cihazların çok çeşitli CPU mimarileri vardır. Bu nedenle, Xamarin.iOS ve Xamarin.Android üretmek *fat ikili dosyaları* uygulama her CPU mimarisi için derlenmiş bir sürümünü içerir. Bu, bir mobil uygulama bir cihazda CPU mimarisi ne olursa olsun çalışabilmesini sağlar.
 
-Daha fazla uygulama yürütülebilir boyutunu azaltmak için aşağıdaki adımları kullanılabilir:
+Aşağıdaki adımlar, daha fazla uygulama yürütülebilir boyutunu azaltmak için kullanılabilir:
 
-- Yayın derlemesi üretilen emin olun.
-- Üretilen FAT bir ikili önlemek için uygulamanın yerleşik mimarileri sayısını azaltın.
-- LLVM derleyici, daha fazla en iyi duruma getirilmiş bir yürütülebilir dosyayı oluşturmak için kullanıldığından emin olun.
-- Uygulamanın yönetilen kod boyutunu küçültün. Bu bağlayıcı her derleme üzerinde etkinleştirerek gerçekleştirilebilir (*bağlantı tüm* iOS projelerde ve *tüm derlemelerde bağlantı* Android projeleri için).
+- Yayın derlemesi üretilir emin olun.
+- Üretilen FAT bir ikili önlemek için uygulama yerleşik mimarileri sayısını azaltın.
+- LLVM derleyicisi, daha en iyi duruma getirilmiş bir yürütülebilir dosyayı oluşturmak için kullanıldığından emin olun.
+- Uygulamanın yönetilen kod boyutunu küçültün. Bu bağlayıcı her derleme üzerinde etkinleştirerek gerçekleştirilebilir (*bağlantı tüm* iOS projeleri için ve *tüm bütünleştirilmiş kodları Bağla* Android projeleri için).
 
-Android uygulamaları, her ABI ("mimari") ayrı APK da bölünebilir.
-Bu Web günlüğü gönderisinde daha fazla bilgi edinin: [nasıl için tutmak bilgisayarınızı Android uygulama boyutu aşağı](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down).
+Android uygulamaları, her ABI için ("mimari") ayrı bir APK da bölünebilir.
+Bu Web günlüğü gönderisinde daha fazla bilgi edinin: [nasıl için tutmak uygulamanızın Android uygulama boyutu aşağı](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down).
 
 <a name="optimizeimages" />
 
-## <a name="optimize-image-resources"></a>Görüntü kaynakları en iyi duruma getirme
+## <a name="optimize-image-resources"></a>Resim kaynakları en iyi duruma getirme
 
-Görüntüleri uygulamaları kullanan, en pahalı kaynakları bazıları verilmiştir ve genellikle yüksek çözünürlüklerde yakalanır. Bu Canlı görüntüleri ayrıntılarını tam oluştururken, bu tür görüntüleri genellikle göstermek uygulamalar görüntü kodunu çözmek için daha fazla CPU kullanımı ve kodu çözülmüş görüntüyü depolamak için daha fazla bellek gerektirir. Bu görüntü için daha küçük bir boyuta ölçeklendirilir olduğunda yüksek çözünürlüklü görüntü bellekte çözecek kayıp. Bunun yerine, yakın tahmin edilen görüntü boyutu depolanan görüntüleri birden fazla çözümleme sürümünü oluşturarak CPU kullanımı ve bellek alanını azaltır. Örneğin, bir liste görünümünde görüntülenen bir resimdir büyük olasılıkla tam ekranında görüntülenen bir resimdir'den daha düşük çözünürlüğü olmalıdır. Ayrıca, yüksek çözünürlüklü görüntülerinin sürümlerin ölçeklendirilmiş ile en az bellek etkisi bunları verimli bir şekilde görüntülenecek yüklenebilir. Daha fazla bilgi için bkz: [yük büyük bit eşlemler verimli bir şekilde](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently/).
+Görüntüleri olan bazı uygulamaları kullanan en pahalı kaynaklara ve genellikle yüksek çözünürlüklerde yakalanır. Bu benzerleriyle ayrıntılarını tam oluşturur, ancak böyle görüntüler genellikle uygulama görüntü kodunu çözmek için daha fazla CPU kullanımı ve kodu çözülmüş görüntünün depolanması için daha fazla bellek gerektirir. Bunu görüntülemek için daha küçük bir boyuta ölçeğinin azaltılıp azaltılmayacağını bellekte yüksek çözünürlüklü bir görüntü çözülecek kısıp. Bunun yerine, CPU kullanımı ve bellek Ayak izi versiyonlarını çözümleme yakın tahmin edilen görüntü boyutu depolanan görüntüler oluşturarak azaltın. Örneğin, bir liste görünümünde görüntülenen görüntünün büyük olasılıkla tam ekranında görüntülenen bir görüntü daha düşük bir çözünürlüğe olmalıdır. Ayrıca, yüksek çözünürlüklü görüntülerin sürümlerin ölçeği en az bellek etkileyerek görüntüler verimli bir şekilde yüklenebilir. Daha fazla bilgi için [yük büyük bit eşlemler verimli](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently/).
 
-Resim çözünürlüğü bağımsız olarak, görüntü kaynakları görüntüleme uygulamanın bellek alanını önemli ölçüde artırabilir. Bu nedenle, bunlar yalnızca gerekli ve uygulama artık gerektirmesi hemen serbest bırakılacak oluşturulmalıdır.
+Görüntü çözünürlüğü ne olursa olsun, resim kaynakları görüntüleme uygulamanın bellek Ayak izi önemli ölçüde artırabilirsiniz. Bu nedenle, bunlar yalnızca gerekli ve uygulama artık gerektirdiği hemen sonra serbest bırakılması oluşturulmalıdır.
 
 <a name="activationperiod" />
 
-## <a name="reduce-the-application-activation-period"></a>Uygulama etkinleştirme süresini azaltın
+## <a name="reduce-the-application-activation-period"></a>Uygulama etkinleştirme süresini kısaltmaya
 
-Tüm uygulamaların bir *etkinleştirme süresi*, uygulama başlatıldığında ve uygulama kullanıma hazır olduğunda arasındaki süreyi olduğu. Bu etkinleştirme süresi, uygulama kendi ilk izlenim kullanıcılara sağlar ve bu nedenle etkinleştirme süresi ve kullanıcının algısı, uygulamanın olumlu bir ilk izlenim elde etmesine sırayla azaltmak önemlidir.
+Tüm uygulamaların bir *etkinleştirme süresi*, uygulama başlatıldığında ve uygulama kullanıma hazır olduğunda arasındaki süreyi olduğu. Uygulamanın kendi ilk izlenim kullanıcılarla bu etkinleştirme süresi sağlar ve böylece etkinleştirme süresi ve uygulamanın olumlu bir ilk izlenim elde etmek bunları sırayla, bir kullanıcının algılamasını azaltmak önemlidir.
 
-İlk kullanıcı Arabiriminde bir uygulama görüntülemeden önce kullanıcıya uygulama başlayarak olduğunu belirtmek için bir giriş ekranı sağlamalıdır. Uygulama Hızlı Başlangıç kullanıcı Arabiriminde görüntüleyemiyor, giriş ekranı etkinleştirme süresi ilerlemeyi uygulama askıda kurmadı güvenceyi teklif kullanıcıya bildirmek için kullanılmalıdır. Bu güvenceyi bir ilerleme çubuğu veya benzer denetim olabilir.
+Uygulamanın ilk kullanıcı arabirimini görüntülemeden önce uygulamanın başlatıyor kullanıcıya göstermek için giriş ekranı sağlamanız gerekir. Uygulama Hızlı Başlangıç kullanıcı arabirimini görüntüleyemiyorsanız Karşılama ekranında uygulama askıda taşınmadığından güvenceyi sunmak için kullanıcı etkinleştirme süresi boyunca ilerleme bilgilendirmek için kullanılmalıdır. Bu güvenceyi bir ilerleme çubuğu veya benzer denetimi olabilir.
 
-Etkinleştirme süresi boyunca uygulamalar genellikle yükleme ve kaynakları işlenmesini içerir etkinleştirme mantığı yürütün. Etkinleştirme süresi, gerekli kaynakları uzaktan alınan yerine uygulama içinde paketlenir sağlayarak azaltılabilir. Örneğin, bazı durumlarda, yerel olarak depolanmış yer tutucu veri yüklemek için etkinleştirme süresi boyunca uygun olabilir. Sonra Başlangıçtaki kullanıcı Arabirimi görüntülenir ve kullanıcının uygulamayla etkileşemeyebilirsiniz sonra yer tutucu veri aşamalı olarak uzak kaynaktan değiştirilebilir. Ayrıca, uygulamanın etkinleştirme mantığı yalnızca uygulamayı kullanmaya başlayın kullanıcı izin vermek için gerekli olan iş gerçekleştirmeniz gerekir. Yükleme ek derlemeler gecikmeler varsa, derlemeler kullanıldıkları ilk kez yüklü olduğundan bu yardımcı olabilir.
+Etkinleştirme süresi boyunca, uygulamaları yükleme ve kaynakların işleme genellikle içeren etkinleştirme mantığını yürütün. Etkinleştirme süresi, gerekli kaynaklara uzaktan alınmasını yerine uygulama içinde paketlenir sağlayarak azaltılabilir. Örneğin, bazı durumlarda, yerel olarak saklanan bir yer tutucu verileri yüklemek için etkinleştirme süresi sırasında uygun olabilir. Ardından, ilk kullanıcı Arabirimi görüntülenir ve kullanıcının uygulamayla etkileşim kuramayacak sonra yer tutucu veriler aşamalı bir uzak kaynaktan değiştirilebilir. Ayrıca, uygulamanın etkinleştirme mantığının yalnızca uygulama kullanmaya izin vermek için gereken iş gerçekleştirmeniz gerekir. Ek derlemeler yüklenmesi gecikmeler varsa bu kullanıldıkları ilk kez yüklenen derlemeler gibi yardımcı olabilir.
 
 <a name="webservicecommunication" />
 
-## <a name="reduce-web-service-communication"></a>Web hizmeti iletişimi azaltmak için
+## <a name="reduce-web-service-communication"></a>Web hizmeti iletişimi azaltmak
 
-Bir uygulama bir web hizmetine bağlanma uygulama performansı üzerinde bir etkisi olabilir. Örneğin, ağ bant genişliği kullanımının yüksek bir cihazın pil artan kullanım neden olur. Ayrıca, kullanıcılar uygulama bant genişliği sınırlı bir ortamda kullanıyor olabilir. Bu nedenle, bir uygulama ile bir web hizmeti arasında bant genişliği kullanımını sınırlama duyarlı.
+Bir uygulamaya ait bir web hizmetine bağlanma, uygulama performansı üzerinde bir etkisi olabilir. Örneğin, ağ bant genişliği kullanımının yüksek artan bir cihazın pil kullanımını neden olur. Ayrıca, kullanıcılar uygulama bant genişliği sınırlı bir ortamda kullanıyor olabilir. Bu nedenle, bir uygulama ile bir web hizmeti arasında bant genişliği kullanımını sınırlamak mantıklı olur.
 
-Bir uygulamanın bant genişliği kullanımını azaltmak için tek bir ağ üzerinden aktarmadan önce verileri sıkıştırmak için yaklaşımdır. Ancak, ek CPU kullanımı sıkıştırma işlemi aynı zamanda bir artan pil kullanılmasına neden olabilir. Bu nedenle, bu kolaylığını dikkatle sıkıştırılmış verileri bir ağ üzerinden taşınıp taşınmayacağını karar vermeden önce değerlendirilmelidir.
+Bir uygulamanın bant genişliği kullanımını azaltmak için tek bir ağ üzerinden aktarılması önce verileri sıkıştırmak için bir yaklaşımdır. Ancak, ek CPU kullanımı sıkıştırma işlemi bir artan pil kullanımını da neden olabilir. Bu nedenle, bu bir tradeoff dikkatli bir şekilde bir ağ üzerinden sıkıştırılmış veri taşınıp taşınmayacağını karar vermeden önce değerlendirilmelidir.
 
-Dikkate alınması gereken başka bir sorun, bir uygulama ile bir web hizmeti arasında taşır veri biçimidir. İki birincil biçimler şunlardır: Genişletilebilir İşaretleme Dili (XML) ve JavaScript nesne gösterimi (JSON). Çok sayıda biçimlendirme karakterlerini içerdiğinden XML görece büyük veri yüklerini üreten bir metin tabanlı veri değişim biçimidir. JSON veri gönderilirken hangi sonuçlarında azaltılmış bant genişliği gereksinimlerini compact veri yüklerini üreten bir metin tabanlı veri değişim biçimi olan ve veri alma. Bu nedenle, JSON mobil uygulamalar için tercih edilen biçim görülür.
+Dikkate alınması gereken başka bir sorun, bir uygulama ve web hizmeti arasında hareket veri biçimidir. İki birincil biçimler şunlardır: Genişletilebilir Biçimlendirme Dili (XML) ve JavaScript nesne gösterimi (JSON). Çok sayıda biçimlendirme karakterleri içerdiğinden XML görece büyük veri yüklerini üreten bir metin tabanlı veri değişimi biçimidir. JSON biçimindedir kullanılmıştı azaltılmış bant genişliği gereksinimlerini veri gönderilirken sıkıştırılmış veri yüklerini üreten bir metin tabanlı veri değişimi ve veri alma. Bu nedenle, JSON, genellikle tercih edilen mobil uygulamaları biçimi değil.
 
-Bu uygulama ve bir web hizmeti arasında veri aktarımı yaparken veri aktarımı nesneleri (DTOs) kullanılması önerilir. Bir DTO ağ üzerinden aktarılması için veri kümesini içerir. DTOs yararlanarak daha fazla veri uygulama tarafından yapılan uzak çağrı sayısı azaltılmasına yardımcı olabilir tek bir uzak çağrıda iletilebilir. Genellikle, daha büyük bir veri yükünü taşıyan bir uzak çağrısı bir benzer süreyi yalnızca küçük veri yükünü taşıyan bir çağrı olarak alır.
+Bir uygulama ve web hizmeti arasında veri aktarımı sırasında veri aktarımı nesneleri (Dto) kullanmak için önerilir. Bir ağ üzerinden aktarılması veri kümesi bir DTO içerir. Dto'lar yararlanarak daha fazla veri uygulama tarafından yapılan uzak çağrıların sayısını azaltmaya yardımcı olabilir tek bir uzak çağrıda iletilebilir. Genellikle, bir büyük veri yükünü taşıyan bir uzak çağrı benzer bir miktar süre yalnızca küçük veri yükü yürüten bir çağrı olarak alır.
 
-Web hizmetinden alınan verileri kullanılan yerine sürekli web hizmetinden alınan önbellekteki veriler ile yerel olarak önbelleğe. Ancak, bu yaklaşım benimsenmesi zaman önbelleğe alma için uygun bir strateji de web hizmetinde değişirse yerel önbellekteki verileri güncelleştirmek için uygulanmalıdır.
+Web hizmetinden alınan verileri kullanılan yerine sürekli web hizmetinden alınan önbelleğe alınmış verileri yerel olarak önbelleğe alınmalıdır. Ancak, bu yaklaşımın benimsenmesi, uygun bir önbelleğe alma stratejisi Ayrıca web hizmetinde değişirse, yerel önbellekteki verileri güncelleştirmek için uygulanmalıdır.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede açıklanan ve Xamarin platformu kullanılarak oluşturulan uygulamaların performansını artırmak için teknikleri ele alınan. Topluca bu teknikler bir CPU ve bir uygulama tarafından kullanılan bellek miktarına tarafından gerçekleştirilen çalışma miktarını önemli ölçüde azaltabilir.
+Bu makalede açıklanan ve Xamarin platformu kullanılarak oluşturulan uygulamaların performansını artırmaya yönelik teknikleri ele alınan. Topluca bu tekniklerin bir CPU ve bir uygulama tarafından kullanılan bellek miktarı tarafından gerçekleştirilen iş miktarını önemli ölçüde azaltabilir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Xamarin.iOS performans](~/ios/deploy-test/performance.md)
 - [Xamarin.Android performans](~/android/deploy-test/performance.md)
-- [Xamarin profil oluşturucu giriş](~/tools/profiler/index.md)
+- [Xamarin Profiler giriş](~/tools/profiler/index.md)
 - [Xamarin.Forms performans](~/xamarin-forms/deploy-test/performance.md)
 - [Zaman Uyumsuz Desteğe Genel Bakış](~/cross-platform/platform/async.md)
-- [IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/)
-- [Xamarin uygulamaları (video) ortak Tuzaklar önleme](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)
+- [IDisposable](xref:System.IDisposable)
+- [Xamarin uygulamaları (video) planlarken düşebileceğiniz yaygın tuzaklardan kaçınma](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)

@@ -1,53 +1,53 @@
 ---
 title: Xamarin.Forms Seçici
-description: Xamarin.Forms Seçici öğeleri, kullanıcı bir öğe seçebileceği kısa listesini görüntüler. Bu makalede Seçici sınıfının veri listesinden bir metin öğesini seçmek için nasıl kullanılacağını açıklar.
+description: Xamarin.Forms Seçici öğeleri kullanıcı bir öğe seçebilir, kısa listesini görüntüler. Bu makalede, veri listesinden bir öğe seçmek için Seçici sınıfı kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 82ae36a7be139e2a93d0e5c43c4bad355c49f217
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: c852cd29197b000ed1ff53853d64cfa25fb699e7
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245045"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996603"
 ---
 # <a name="xamarinforms-picker"></a>Xamarin.Forms Seçici
 
-_Seçici görünüm veri listesinden bir öğe seçmek için bir denetimdir._
+_Veri listesinden bir öğe seçmek için bir denetim Seçici görünümüdür._
 
-Xamarin.Forms [ `Picker` ](xref:Xamarin.Forms.Picker) öğeleri, kullanıcı seçebileceği bir öğe kısa listesini görüntüler. `Picker` sekiz özelliklerini tanımlar:
+Xamarin.Forms [ `Picker` ](xref:Xamarin.Forms.Picker) öğeleri, kullanıcı bir öğe seçebilir, kısa bir listesini görüntüler. `Picker` sekiz özelliklerini tanımlar:
 
-- [`Title`](xref:Xamarin.Forms.Picker.Title) tür `string`, varsayılan olarak `null`.
-- [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) tür `IList`, varsayılan olarak görüntülemek için öğe kaynak listesinin `null`.
+- [`Title`](xref:Xamarin.Forms.Picker.Title) tür `string`, bunun varsayılan `null`.
+- [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) tür `IList`, varsayılan olarak görüntülemek için öğeleri kaynak listesinde `null`.
 - [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) tür `int`, -1 olarak varsayılan olarak seçilen öğenin dizini.
-- [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) tür `object`, varsayılan olarak seçilen öğeyi `null`.
-- [`TextColor`](xref:Xamarin.Forms.Picker.TextColor) tür [ `Color` ](xref:Xamarin.Forms.Color), varsayılan olarak metni görüntülemek için kullanılan renk [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
-- [`FontAttributes`](xref:Xamarin.Forms.Picker.FontAttributes) tür [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), varsayılan olarak [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
-- [`FontFamily`](xref:Xamarin.Forms.Picker.FontFamily) tür `string`, varsayılan olarak `null`.
+- [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) tür `object`, varsayılan olarak seçili öğe `null`.
+- [`TextColor`](xref:Xamarin.Forms.Picker.TextColor) tür [ `Color` ](xref:Xamarin.Forms.Color), varsayılan olarak metni görüntülemek için kullanılan rengi [ `Color.Default` ](xref:Xamarin.Forms.Color.Default).
+- [`FontAttributes`](xref:Xamarin.Forms.Picker.FontAttributes) tür [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), bunun varsayılan [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
+- [`FontFamily`](xref:Xamarin.Forms.Picker.FontFamily) tür `string`, bunun varsayılan `null`.
 - [`FontSize`](xref:Xamarin.Forms.Picker.FontSize) tür `double`, -1.0 için varsayılan olarak.
 
-Tüm sekiz özellikleri tarafından yedeklenen [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) nesneleri bunlar biçimlendirilebilir ve özellikler veri bağlamaların hedefleri olabilir anlamına gelir. [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) Ve [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) özelliklere sahip bir varsayılan bağlama modu [ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay), veri bağlamaların hedefleri olabileceği anlamına gelir kullanan bir uygulama içinde [Model View ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) mimarisi. Yazı tipi özelliklerini ayarlama hakkında daha fazla bilgi için bkz: [yazı tiplerini](~/xamarin-forms/user-interface/text/fonts.md).
+Tüm sekiz özellikleri tarafından yedeklenen [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) nesneleri, bunlar biçimlendirilebilir ve veri bağlama hedefleri özellikler olabilir. [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) Ve [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) özelliklere sahip bir varsayılan bağlama modu [ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay), veri bağlama hedefleri olabileceği anlamına gelir kullanan bir uygulamada [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) mimarisi. Yazı tipi özelliklerini ayarlama hakkında daha fazla bilgi için bkz. [yazı tipleri](~/xamarin-forms/user-interface/text/fonts.md).
 
-A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) ilk görüntülendiğinde, herhangi bir veri göstermez. Bunun yerine, değerini kendi [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/) özelliği, iOS ve Android platformları yer tutucu olarak gösterilir:
+A [ `Picker` ](xref:Xamarin.Forms.Picker) ilk görüntülendiğinde verileri göstermez. Bunun yerine, değerini kendi [ `Title` ](xref:Xamarin.Forms.Picker.Title) özelliği, iOS ve Android platformlarında bir yer tutucu olarak gösterilmiştir:
 
-[![](images/picker-initial.png "İlk Seçici görüntü")](images/picker-initial-large.png#lightbox "ilk Seçici görüntüleme")
+[![](images/picker-initial.png "İlk Seçici görünen")](images/picker-initial-large.png#lightbox "ilk Seçici görüntüleme")
 
-Zaman [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) kazancı odak, verileri görüntülenir ve kullanıcı bir öğeyi seçebilirsiniz:
+Zaman [ `Picker` ](xref:Xamarin.Forms.Picker) kazançlar odağı verilerini görüntülenir ve kullanıcı bir öğe seçebilir:
 
-[![](images/picker-selection.png "Bir öğeyi seçerek Seçici")](images/picker-selection-large.png#lightbox "öğeyi seçerek Seçici")
+[![](images/picker-selection.png "Bir öğenin seçilmesi Seçici")](images/picker-selection-large.png#lightbox "seçici bir öğe seçme")
 
-[ `Picker` ](xref:Xamarin.Forms.Picker) Ateşlenir bir [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) kullanıcı bir öğeyi seçtiğinde olay. Seçim seçili öğe olarak görüntülenir `Picker`:
+[ `Picker` ](xref:Xamarin.Forms.Picker) Ateşlenir bir [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) kullanıcı bir öğe seçtiğinde olay. Seçimi seçili öğe tarafından görüntülenir `Picker`:
 
-![](images/picker-after-selection.png "Seçici seçim sonra")
+![](images/picker-after-selection.png "Seçimi sonra Seçici")
 
-Doldurmak için iki tekniği vardır bir [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) verilerle:
+Doldurmak için iki teknik vardır bir [ `Picker` ](xref:Xamarin.Forms.Picker) verilerle:
 
-- Ayarı [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemsSource/) görüntülenecek verileri özelliğine. Xamarin.Forms 2.3.4 tanıtılan önerilen yöntem budur. Daha fazla bilgi için bkz: [bir seçici'nın ItemsSource özelliği ayarlama](populating-itemssource.md).
-- İçin görüntülenecek veri ekleme [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) koleksiyonu. Bu teknik doldurmak için özgün işlemi olan bir [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) verilerle. Daha fazla bilgi için bkz: [ekleme veri bir seçici 's öğeler koleksiyonuna](populating-items.md).
+- Ayarı [ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource) özelliği görüntülenecek veriler. Xamarin.Forms içinde 2.3.4 sunulmuştur önerilen yöntem budur. Daha fazla bilgi için [bir seçicinin ItemsSource özelliğini ayarlama](populating-itemssource.md).
+- Görüntülenmek üzere veri ekleme [ `Items` ](xref:Xamarin.Forms.Picker.Items) koleksiyonu. Özgün işlem doldurmak için bu tekniği olan bir [ `Picker` ](xref:Xamarin.Forms.Picker) verilerle. Daha fazla bilgi için [bir seçicinin öğe koleksiyonuna veri ekleme](populating-items.md).
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Seçici](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)
+- [Seçici](xref:Xamarin.Forms.Picker)

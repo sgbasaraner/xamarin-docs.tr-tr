@@ -7,16 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c10a3c1a0ed2755734fe351df39caadc88dd61c4
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: a02239906f5a30c068cb7eebd31308ad188696b3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935140"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998104"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Bölüm 28 özeti. Konum ve haritalar
 
-Xamarin.Forms destekleyen bir [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) türetilen öğesi `View`. Haritalar kullanan özel platform gereksinimleri nedeniyle ayrı bir derlemede uygulanmış **Xamarin.Forms.Maps**ve farklı bir ad alanı içerir: `Xamarin.Forms.Maps`.
+Xamarin.Forms destekleyen bir [ `Map` ](xref:Xamarin.Forms.Maps.Map) türetilen öğesi `View`. Haritalar kullanan özel platform gereksinimleri nedeniyle ayrı bir derlemede uygulanmış **Xamarin.Forms.Maps**ve farklı bir ad alanı içerir: `Xamarin.Forms.Maps`.
 
 ## <a name="the-geographic-coordinate-system"></a>Coğrafi koordinat sistemi
 
@@ -118,13 +118,13 @@ Bir Windows çalışma zamanı uygulaması, Bing Haritalar'ı kullanmak için ye
 
 [ **MapDemos** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28/MapDemos) örnek oluşur bir [MapsDemoHomePage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml) dosya ve [MapsDemoHomePage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml.cs) arka plan kod dosyası çeşitli tanıtım programlar gezinme sağlar.
 
-[BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml) dosyasını nasıl görüntüleneceğini gösterir [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) görünümü. Varsayılan olarak, city Roma gösterir, ancak harita kullanıcı tarafından yönetilebilir.
+[BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml) dosyasını nasıl görüntüleneceğini gösterir [ `Map` ](xref:Xamarin.Forms.Maps.Map) görünümü. Varsayılan olarak, city Roma gösterir, ancak harita kullanıcı tarafından yönetilebilir.
 
-Yatay ve dikey kaydırmayı devre dışı bırakmak için ayarlanmış [ `HasScrollEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.HasScrollEnabled/) özelliğini `false`. Yakınlaştırmayı devre dışı bırakmak için ayarlanmış [ `HasZoomEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.HasZoomEnabled/) için `false`. Bu özellikler, tüm platformlarda çalışmayabilir.
+Yatay ve dikey kaydırmayı devre dışı bırakmak için ayarlanmış [ `HasScrollEnabled` ](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled) özelliğini `false`. Yakınlaştırmayı devre dışı bırakmak için ayarlanmış [ `HasZoomEnabled` ](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled) için `false`. Bu özellikler, tüm platformlarda çalışmayabilir.
 
 ### <a name="streets-and-terrain"></a>Sokaklar ve Arazi
 
-Haritalar farklı türde ayarlayarak görüntüleyebilirsiniz `Map` özelliği [ `MapType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.MapType/) türü [ `MapType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapType/), üç üyesi olan bir sabit listesi:
+Haritalar farklı türde ayarlayarak görüntüleyebilirsiniz `Map` özelliği [ `MapType` ](xref:Xamarin.Forms.Maps.Map.MapType) türü [ `MapType` ](xref:Xamarin.Forms.Maps.MapType), üç üyesi olan bir sabit listesi:
 
 - [`Street`](xref:Xamarin.Forms.Maps.MapType.Street), varsayılan
 - [`Satellite`](xref:Xamarin.Forms.Maps.MapType.Satellite)
@@ -134,32 +134,32 @@ Haritalar farklı türde ayarlayarak görüntüleyebilirsiniz `Map` özelliği [
 
 ### <a name="map-coordinates"></a>Harita koordinatlarına göre
 
-Bir program, geçerli alan elde `Map` aracılığıyla görüntüleme [ `VisibleRegion` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.VisibleRegion/) özelliği. Bu özellik *değil* bağlanabilir bir özellik tarafından desteklenir ve ne zaman değişti, büyük olasılıkla bir zamanlayıcı özelliği izlemek istediği bir program bu amaç için kullanması gereken şekilde göstermek için bildirim mekanizması yoktur.
+Bir program, geçerli alan elde `Map` aracılığıyla görüntüleme [ `VisibleRegion` ](xref:Xamarin.Forms.Maps.Map.VisibleRegion) özelliği. Bu özellik *değil* bağlanabilir bir özellik tarafından desteklenir ve ne zaman değişti, büyük olasılıkla bir zamanlayıcı özelliği izlemek istediği bir program bu amaç için kullanması gereken şekilde göstermek için bildirim mekanizması yoktur.
 
-`VisibleRegion` tür [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/), dört salt okunur özelliklere sahip bir sınıfı:
+`VisibleRegion` tür [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan), dört salt okunur özelliklere sahip bir sınıfı:
 
-- [`Center`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.Center/) türü [`Position`](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/)
-- [`LatitudeDegrees`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.LatitudeDegrees/) tür `double`, harita görüntülenen alanının yüksekliğini belirten
-- [`LongitudeDegrees`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.LongitudeDegrees/) tür `double`, harita görüntülenen alan genişliğini belirten
-- [`Radius`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.Radius/) tür [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/), harita üzerinde görünür büyük döngüsel alanı boyutunu belirten
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) türü [`Position`](xref:Xamarin.Forms.Maps.Position)
+- [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) tür `double`, harita görüntülenen alanının yüksekliğini belirten
+- [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) tür `double`, harita görüntülenen alan genişliğini belirten
+- [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) tür [ `Distance` ](xref:Xamarin.Forms.Maps.Distance), harita üzerinde görünür büyük döngüsel alanı boyutunu belirten
 
-`Position` ve `Distance` hem yapılardır. `Position` aracılığıyla ayarlanan iki salt okunur özelliklerini tanımlar [ `Position` Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Position.Position/p/System.Double/System.Double/):
+`Position` ve `Distance` hem yapılardır. `Position` aracılığıyla ayarlanan iki salt okunur özelliklerini tanımlar [ `Position` Oluşturucusu](xref:Xamarin.Forms.Maps.Position.%23ctor(System.Double,System.Double)):
 
-- [`Latitude`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Position.Latitude/)
-- [`Longitude`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Position.Longitude/)
+- [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)
+- [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)
 
 `Distance` Ölçüm ve İngilizce birimleri arasında dönüştürerek bir birim bağımsız mesafe sağlamak amacını taşımaktadır. A `Distance` değeri çeşitli yollarla oluşturulabilir:
 
-- [`Distance` Oluşturucu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Distance.Distance/p/System.Double/) ölçümleri bir uzaklığı ile
-- [`Distance.FromMeters`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromMeters/p/System.Double/) statik yöntemi
-- [`Distance.FromKilometers`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromKilometers/p/System.Double/) statik yöntemi
-- [`Distance.FromMiles`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromMiles/p/System.Double/) statik yöntemi
+- [`Distance` Oluşturucu](xref:Xamarin.Forms.Maps.Distance.%23ctor(System.Double)) ölçümleri bir uzaklığı ile
+- [`Distance.FromMeters`](xref:Xamarin.Forms.Maps.Distance.FromMeters(System.Double)) statik yöntemi
+- [`Distance.FromKilometers`](xref:Xamarin.Forms.Maps.Distance.FromKilometers(System.Double)) statik yöntemi
+- [`Distance.FromMiles`](xref:Xamarin.Forms.Maps.Distance.FromMiles(System.Double)) statik yöntemi
 
 Değer, üç özelliklerinden kullanılabilir:
 
-- [`Meters`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Meters/) türü `double`
-- [`Kilometers`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Kilometers/) türü `double`
-- [`Miles`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Miles/) türü `double`
+- [`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters) türü `double`
+- [`Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers) türü `double`
+- [`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles) türü `double`
 
 [MapCoordinatesPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml) dosyasını içeren birkaç `Label` öğeleri görüntülemek için `MapSpan` bilgileri. [MapCoordinatesPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml.cs) arka plan kod dosyası bilgileri kullanıcı Haritası işleyen olarak güncel tutmak için bir zamanlayıcı kullanır.
 
@@ -169,16 +169,16 @@ Yeni bir kitaplık için adlı kitabın [ **Xamarin.FormsBook.Toolkit.Maps** ](h
 
 ### <a name="setting-an-initial-location"></a>Bir başlangıç konumu ayarlama
 
-Çağırabilirsiniz [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion/p/Xamarin.Forms.Maps.MapSpan/) yöntemi `Map` programlı olarak harita üzerinde bir konum ve yakınlaştırma düzeyi ayarlamak için. Bağımsız değişken türünde `MapSpan`. Oluşturabileceğiniz bir `MapSpan` aşağıdakilerden birini kullanarak:
+Çağırabilirsiniz [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)) yöntemi `Map` programlı olarak harita üzerinde bir konum ve yakınlaştırma düzeyi ayarlamak için. Bağımsız değişken türünde `MapSpan`. Oluşturabileceğiniz bir `MapSpan` aşağıdakilerden birini kullanarak:
 
-- [`MapSpan` Oluşturucu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.MapSpan.MapSpan/p/Xamarin.Forms.Maps.Position/System.Double/System.Double/) ile bir `Position`ve enlem ve boylam yayılma
-- [`MapSpan.FromCenterAndRadius`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius/p/Xamarin.Forms.Maps.Position/Xamarin.Forms.Maps.Distance/) ile bir `Position` ve RADIUS
+- [`MapSpan` Oluşturucu](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double)) ile bir `Position`ve enlem ve boylam yayılma
+- [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)) ile bir `Position` ve RADIUS
 
-Yeni bir mümkündür `MapSpan` yöntemleri kullanarak var olan bir gelen [ `ClampLatitude` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.ClampLatitude/p/System.Double/System.Double/) veya [ `WithZoom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.WithZoom/p/System.Double/).
+Yeni bir mümkündür `MapSpan` yöntemleri kullanarak var olan bir gelen [ `ClampLatitude` ](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double)) veya [ `WithZoom` ](xref:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double)).
 
 [WyomingPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml) dosya ve [WyomingPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml.cs) arka plan kod dosyası nasıl kullanılacağını gösterir `MoveToRegion` , durumu Wyoming görüntülemek için yöntemi.
 
-Alternatif olarak kullanabileceğiniz [ `Map` Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Map.Map/p/Xamarin.Forms.Maps.MapSpan/) ile bir `MapSpan` harita konumu başlatmak için nesne. [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml) dosyasını Xamarin'in headquarters San Francisco içinde görüntülemek için tamamen XAML içinde bunun nasıl yapılacağını gösterir.
+Alternatif olarak kullanabileceğiniz [ `Map` Oluşturucusu](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan)) ile bir `MapSpan` harita konumu başlatmak için nesne. [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml) dosyasını Xamarin'in headquarters San Francisco içinde görüntülemek için tamamen XAML içinde bunun nasıl yapılacağını gösterir.
 
 ### <a name="dynamic-zooming"></a>Dinamik Yakınlaştırma
 
@@ -188,7 +188,7 @@ Kullanabileceğiniz bir `Slider` dinamik olarak bir harita yakınlaştırma. [Ra
 
 ### <a name="the-phones-location"></a>Telefonun konumu
 
-[ `IsShowingUser` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.IsShowingUser/) Özelliği `Map` biraz farklı üç platformlarında çalışır [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml) dosyası gösterir:
+[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser) Özelliği `Map` biraz farklı üç platformlarında çalışır [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml) dosyası gösterir:
 
 - İOS, mavi bir nokta telefonun konumu gösterir. ancak, el ile var. gitmeniz gerekir
 - Android'de bir simge görüntülenir olduğunda gönderilen taşıma telefonun konumuna eşleme
@@ -200,12 +200,12 @@ Kullanabileceğiniz bir `Slider` dinamik olarak bir harita yakınlaştırma. [Ra
 
 ### <a name="pins-and-science-museums"></a>PIN ve Bilim müzelerin
 
-Son olarak, `Map` sınıfı tanımlayan bir [ `Pins` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.Pins/) türünün özelliği `IList<Pin>`. [ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/) Sınıf dört özellikleri tanımlar:
+Son olarak, `Map` sınıfı tanımlayan bir [ `Pins` ](xref:Xamarin.Forms.Maps.Map.Pins) türünün özelliği `IList<Pin>`. [ `Pin` ](xref:Xamarin.Forms.Maps.Pin) Sınıf dört özellikleri tanımlar:
 
-- [`Label`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Label/) tür `string`' gerekli özelliği
-- [`Address`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Address/) tür `string`, bir isteğe bağlı okunabilir adresi
-- [`Position`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Position/) tür `Position`, PIN haritada görüntülendiği belirten
-- [`Type`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Type/) tür [ `PinType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.PinType/), kullanılmayan bir sabit listesi
+- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label) tür `string`' gerekli özelliği
+- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address) tür `string`, bir isteğe bağlı okunabilir adresi
+- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) tür `Position`, PIN haritada görüntülendiği belirten
+- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) tür [ `PinType` ](xref:Xamarin.Forms.Maps.PinType), kullanılmayan bir sabit listesi
 
 **MapDemos** proje dosyasını içeren [ScienceMuseums.xml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml), Amerika Birleşik Devletleri'nde bilimi müzelerin listeler ve [ `Locations` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs) ve [ `Site` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs) bu verileri seri durumdan çıkarmak için sınıflar.
 
@@ -223,7 +223,7 @@ Program, ayrıca dinamik olarak harita konumunu temel alarak sayısını kısıt
 
 ## <a name="geocoding-and-back-again"></a>Coğrafi kodlama ve yeniden
 
-[ **Xamarin.Forms.Maps** ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) derlemeyi de içeren bir [ `Geocoder` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Geocoder/) sınıfıyla birlikte bir [ `GetPositionsForAddressAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync/p/System.String/) dönüştüren yöntemi sıfır veya daha olası coğrafi konumlar ve başka bir yöntem metin adresine [ `GetAddressesForPositionAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync/p/Xamarin.Forms.Maps.Position/) diğer yönde dönüştürür.
+[ **Xamarin.Forms.Maps** ](xref:Xamarin.Forms.Maps) derlemeyi de içeren bir [ `Geocoder` ](xref:Xamarin.Forms.Maps.Geocoder) sınıfıyla birlikte bir [ `GetPositionsForAddressAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String)) dönüştüren yöntemi sıfır veya daha olası coğrafi konumlar ve başka bir yöntem metin adresine [ `GetAddressesForPositionAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)) diğer yönde dönüştürür.
 
 [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml) dosya ve [GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs) arka plan kod dosyası, bu özelliği gösterir.
 

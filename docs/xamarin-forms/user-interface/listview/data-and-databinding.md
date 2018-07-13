@@ -1,28 +1,28 @@
 ---
 title: ListView veri kaynakları
-description: Bu makalede Xamarin.Forms ListView verilerle doldurmak nasıl ve veri bağlama ile ListView kullanma açıklanmaktadır.
+description: Bu makalede, bir Xamarin.Forms ListView verilerle doldurmak nasıl ve veri bağlama ile bir ListView kullanma açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: aa9c23266329c03b3b28c7795f67290bbc23c4bf
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 17c353844a7ddc808e5d9f0632434472913170a4
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245546"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995212"
 ---
 # <a name="listview-data-sources"></a>ListView veri kaynakları
 
-ListView veri listesini görüntülemek için kullanılır. ListView veriler ve nasıl biz seçilen öğeye bağlayabilirsiniz ile doldurma hakkında bilgi edineceksiniz.
+ListView veri listesini görüntülemek için kullanılır. Bir ListView veri ve nasıl biz seçili öğeye bağlayabilirsiniz doldurma hakkında bilgi edineceksiniz.
 
-- **[ItemsSource ayarı](#ItemsSource)**  &ndash; basit bir liste veya dizi kullanır.
-- **[Veri bağlama](#Data_Binding)**  &ndash; model ve ListView arasında bir ilişki kurar. Bağlama MVVM düzeni için idealdir.
+- **[ItemsSource ayarlama](#ItemsSource)**  &ndash; basit bir liste veya dizi kullanır.
+- **[Veri bağlama](#Data_Binding)**  &ndash; ListView ve bir modeli arasında bir ilişki kurar. Bağlama MVVM desen için idealdir.
 
 ## <a name="itemssource"></a>ItemsSource
-ListView verileri kullanarak ile doldurulur `ItemsSource` tüm koleksiyon uygulama kabul edebilir özelliği `IEnumerable`. En basit yolu doldurmak için bir `ListView` bir dizeler dizisi kullanmayı içerir:
+ListView, verileriniz ile doldurulur `ItemsSource` koleksiyon uygulama kabul edebilir özelliği `IEnumerable`. Doldurmak için en kolay yolu bir `ListView` dizelerden oluşan bir dizi kullanmayı içerir:
 
 ```csharp
 var listView = new ListView();
@@ -45,9 +45,9 @@ listView.ItemsSource.Add("monochrome");
 
 ![](data-and-databinding-images/itemssource-simple.png "ListView görüntüleme dize listesi")
 
-Yukarıdaki yaklaşım dolduracaktır `ListView` dizelerin bir listesi. Varsayılan olarak, `ListView` çağıracak `ToString` ve sonuçta görüntülemek bir `TextCell` her satır için. Verinin nasıl görüntüleneceğini özelleştirmek için bkz: [hücre Görünüm](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
+Yukarıdaki yaklaşım doldurur `ListView` içeren bir dize listesi. Varsayılan olarak, `ListView` çağıracak `ToString` ve sonucu görüntüler bir `TextCell` her satır için. Verilerin nasıl görüntüleneceğini özelleştirmek için bkz: [hücre görünümü](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
 
-Çünkü `ItemsSource` gönderildikten bir diziye, içeriği arka plandaki liste veya dizi değiştikçe güncelleştirmez. ListView öğeleri eklenmiş, kaldırılmış ve arka plandaki listesinde değiştirilen gibi otomatik olarak güncelleştirmek istiyorsanız kullanmanız gerekecektir bir `ObservableCollection`. [`ObservableCollection`](https://developer.xamarin.com/api/type/System.Collections.ObjectModel.ObservableCollection%3CT%3E/) tanımlanan `System.Collections.ObjectModel` ve tıpkı `List`, bildirimde bulunabilir ancak bu `ListView` değişiklikler:
+Çünkü `ItemsSource` gönderilmiştir diziye bir içerik, temel alınan liste veya dizi değiştikçe güncelleştirmez. Öğeleri eklenmiş, kaldırılmış ve alttaki listede değiştirilmiş uygulandıkça otomatik güncelleştirilecek şekilde ListView istiyorsanız, kullanılacak gerekir bir `ObservableCollection`. [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) tanımlanan `System.Collections.ObjectModel` ve tıpkı `List`bildirimde bulunabilir, ancak `ListView` değişiklikler:
 
 ```csharp
 ObservableCollection<Employees> employeeList = new ObservableCollection<Employess>();
@@ -60,14 +60,14 @@ employeeList.Add(new Employee(){ DisplayName="Mr. Mono"});
 <a name="Data_Binding" />
 
 ## <a name="data-binding"></a>Veri Bağlama
-Veri bağlama ", ViewModel sınıfında gibi bazı CLR nesnesinin özellikleri için bir kullanıcı arabirimi nesnenin özelliklerini bağlar Birleştirici" dir. Veri bağlama yararlı nedeni çok sayıda sıkıcı Demirbaş kod değiştirerek kullanıcı arabirimleri geliştirilmesini kolaylaştırır.
+Veri bağlama "bir sınıfta, ViewModel gibi bazı CLR nesnesinin özellikleri bir kullanıcı arabirimi nesnenin özelliklerini bağlar Yapıştırıcı" dir. Veri bağlama yararlıdır, çünkü çok sıkıcı Demirbaş kod değiştirerek kullanıcı arabirimlerinin geliştirilmesini kolaylaştırır.
 
-Veri bağlama, ilişkili değerlerini değiştirirken nesneleri eşitlenmiş tutarak çalışır. Bir denetimin değeri her değiştiğinde olay işleyicileri için yazmak zorunda kalmadan, bağlama kurmak ve bağlama, ViewModel etkinleştirin.
+Veri bağlama, ilişkili değerleri değiştikçe nesneleri eşitlenmiş durumda kalmasını sağlayarak çalışır. Bir denetimin değerini her değiştiğinde için olay işleyicileri yazmak zorunda kalmadan, bağlama kurmak ve bağlama, ViewModel içinde etkinleştir.
 
-Veri bağlama hakkında daha fazla bilgi için bkz: [veri bağlama Temelleri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) olduğu bölümü dört [Xamarin.Forms XAML temelleri makalesi serisi](~/xamarin-forms/xaml/xaml-basics/index.md).
+Veri bağlama hakkında daha fazla bilgi için bkz. [temel veri bağlama bilgileri](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md) olduğu bölümü dört [Xamarin.Forms XAML temelleri makale serisi](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ### <a name="binding-cells"></a>Hücreleri bağlama
-Hücreleri (ve alt hücre) özelliklerini, nesnelerin özelliklerini bağlanabilir `ItemsSource`. Örneğin, bir ListView görüntülerle çalışanların bir listesini sunmak için kullanılabilir.
+Hücreleri (ve alt öğeleri hücre) özelliklerini, nesnelerin özelliklerine bağlanabilir `ItemsSource`. Örneğin, bir ListView görüntülerle çalışanların bir listesini göstermek için kullanılabilir.
 
 Çalışan sınıfı:
 
@@ -104,7 +104,7 @@ public EmployeeListPage()
 }
 ```
 
-Aşağıdaki kod parçacığında gösteren bir `ListView` çalışanlar bir listeye bağlı:
+Aşağıdaki kod parçacığı gösteren bir `ListView` bağlı çalışanların listesi için:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -123,17 +123,17 @@ Title="Employee List">
 </ContentPage>
 ```
 
-XAML'de bağlı ancak bağlama kuruldu kod kolaylık unutmayın.
+Bu XAML içinde bağımlı ancak bağlama kod kolaylık olması için Kurulum olduğunu unutmayın.
 
-XAML önceki bit tanımlayan bir `ContentPage` içeren bir `ListView`. Veri kaynağı `ListView` aracılığıyla ayarlanır `ItemsSource` özniteliği. Her satırda düzenini `ItemsSource`içinde tanımlanan `ListView.ItemTemplate` öğesi.
+Önceki bit XAML birini tanımlayan bir `ContentPage` içeren bir `ListView`. Veri kaynağını `ListView` aracılığıyla ayarlanan `ItemsSource` özniteliği. Her bir satırın düzenini `ItemsSource`içinde tanımlanan `ListView.ItemTemplate` öğesi.
 
-Bu sonuç.
+Bu sonucu.
 
 ![](data-and-databinding-images/bound-data.png "Veri bağlama kullanarak ListView")
 
 ### <a name="binding-selecteditem"></a>SelectedItem bağlama
 
-Genellikle seçilen öğeye bağlamak istersiniz bir `ListView`, bunun yerine bir olay işleyicisi değişikliklere çıkabilir. XAML'de bunu bağlamak `SelectedItem` özelliği:
+Genellikle seçili öğeye bağlamak isteyeceksiniz bir `ListView`yerine yerine bir olay işleyicisi değişikliklerine yanıt verme kullanabilir. XAML içinde bunun için bağlama `SelectedItem` özelliği:
 
 ```xaml
 <ListView x:Name="listView"
@@ -143,7 +143,7 @@ Genellikle seçilen öğeye bağlamak istersiniz bir `ListView`, bunun yerine bi
 </ListView>
 ```
 
-Varsayılarak `listView`'s `ItemsSource` dizeleri listesidir `SomeLabel` bağlı kendi text özelliğine sahip `SelectedItem`.
+Varsayılarak `listView`'s `ItemsSource` dizeleri listesi `SomeLabel` ilişkili metin özelliğini olacaktır `SelectedItem`.
 
 
 

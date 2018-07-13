@@ -1,28 +1,28 @@
 ---
 title: Döndürme dönüşümü
-description: Bu makalede, etkiler ve animasyonları SkiaSharp döndürme dönüşümü ile olası inceler ve bu örnek kodu ile gösterir.
+description: Bu makalede efektler ve animasyon SkiaSharp döndürme dönüşümü ile olası keşfediyor ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 514ecd16fedd7d3fda39fe20641cf0ee9ecb119e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cbb34fb4887fc3fa086fa9912d25addebd9b13f2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244626"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995006"
 ---
 # <a name="the-rotate-transform"></a>Döndürme dönüşümü
 
-_Etkiler ve animasyonları SkiaSharp döndürme dönüşümü ile olası keşfedin_
+_Efektler ve animasyon SkiaSharp döndürme dönüşümü ile olası keşfedin_
 
-Döndürme dönüşümü ile SkiaSharp grafik nesneleri hizalama kısıtlaması, ücretsiz, yatay ve dikey ekseni olan Kes:
+Döndürme dönüşümü ile yatay ve dikey ekseni olan SkiaSharp grafik nesneleri hizalama kısıtlamasını ücretsiz sonu:
 
 ![](rotate-images/rotateexample.png "Bir merkezi etrafında döndürülen metin")
 
-Bir grafik nesnesi SkiaSharp destekler noktası (0, 0) etrafında döndürme için bir [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/) yöntemi ve [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/) yöntemi:
+Grafik nesnesini (0, 0) SkiaSharp destekler nokta etrafında döndürmek için bir [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/) yöntemi ve bir [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/) yöntemi:
 
 ```csharp
 public void RotateDegrees (Single degrees)
@@ -30,17 +30,17 @@ public void RotateDegrees (Single degrees)
 public Void RotateRadians (Single radians)
 ```
 
-İki birimleri arasında dönüştürme kolaydır bir daire 360 derece 2π radyan ile aynıdır. Uygun hangisi kullanın. Statik tüm trigonometrik işlevler [ `Math` ](https://developer.xamarin.com/api/type/System.Math/) sınıfı radyan birimleri kullanın.
+İki birim arasında dönüştürmek kolay, bu nedenle bir daire 360 derece 2π radyan aynıdır. Hangisi uygun kullanın. Statik tüm trigonometrik işlevler [ `Math` ](xref:System.Math) radyan ölçü sınıfını kullanın.
 
-Döndürme açısı artırmak için saat yönünde ' dir. (Döndürme Kartezyen koordinat sistemi üzerinde kurala göre yönünün olsa da, saat yönünde bir döndürme aşağıya giderek artan Y koordinatları ile tutarlıdır.) Açıları ve açıları 360 derece izin verilenden daha büyük negatif.
+Döndürme açısı artırmaya yönelik saat yönünde. (Kartezyen koordinat sisteminde döndürme kurala göre yönünün olsa da, saat yönünde bir döndürme aşağı giderek artan Y koordinatları ile uyumludur.) Açıları ve açıları 360 derece izin verilenden daha büyük negatif.
 
-Döndürme dönüştürme formüller Çevir ve ölçek olandan daha karmaşıktır. α açısı için dönüştürme formüller şunlardır:
+Döndürme dönüşümü formülleri çeviri ve ölçeklendirme için olandan daha karmaşıktır. α açısı için dönüştürme formülleri şunlardır:
 
 x' x•cos(α) – = y•sin(α)   
 
-y' = x•sin(α) + y•cos(α)
+y' x•sin(α) + y•cos(α) =
 
-**Temel döndürme** sayfasını gösteren `RotateDegrees` yöntemi. [ `BasicRotate.xaml.cs` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs) Dosya sayfasında ortalanmış kendi temeli ile bazı metni görüntüleyen ve onu göre döndürür bir `Slider` – 360 360 aralıklı. İlgili bölümü işte `PaintSurface` işleyici:
+**Temel döndürme** sayfasını gösterir `RotateDegrees` yöntemi. [ `BasicRotate.xaml.cs` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs) Dosya ortalanıp kendi temeli ile bazı metni görüntüler ve göre döndürür bir `Slider` 360 – 360 aralıklı. İlgili bölümü işte `PaintSurface` işleyicisi:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -56,11 +56,11 @@ using (SKPaint textPaint = new SKPaint
 }
 ```
 
-Döndürme tuval çoğu açıları bu programda ayarlamak için sol üst köşesindeki kalmaz çünkü metin ekranı döndürülür:
+Bu programda ayarlanmış çoğu açıları için tuvalin sol üst köşesinin etrafında döndürme ortalanır çünkü metin ekranı döndürülür:
 
 [![](rotate-images/basicrotate-small.png "Üçlü sayfasının ekran görüntüsü temel döndürme")](rotate-images/basicrotate-large.png#lightbox "Üçlü sayfasının ekran görüntüsü temel Döndür")
 
-Sıklıkla bir şey bu sürümlerini kullanan bir belirtilen pivot noktası ortalanmış döndürmek istersiniz [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/) ve [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/) yöntemleri:
+Çok sık bu sürümlerini kullanan bir belirtilen pivot noktası ortalanmış bir şey döndürmek isteyeceksiniz [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/) ve [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/) yöntemleri:
 
 ```csharp
 public void RotateDegrees (Single degrees, Single px, Single py)
@@ -68,7 +68,7 @@ public void RotateDegrees (Single degrees, Single px, Single py)
 public void RotateRadians (Single radians, Single px, Single py)
 ```
 
-**Ortalanmış döndürme** sayfasıdır tıpkı **temel döndürme** dışında genişletilmiş bir sürümü `RotateDegrees` metni konumlandırmak için kullanılan aynı noktasına döndürme merkezi ayarlamak için kullanılır:
+**Ortalanmış döndürme** sayfasıdır gibi **temel döndürme** dışında genişletilmiş bir sürümü `RotateDegrees` dönme merkezi metin konumlandırmak için kullanılan aynı noktaya ayarlamak için kullanılır:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -84,17 +84,17 @@ using (SKPaint textPaint = new SKPaint
 }
 ```
 
-Şimdi metni metnin temel yatay merkezi metni konumlandırmak için kullanılan nokta etrafında döndürür:
+Şimdi metin metnin temel yatay merkezi metin konumlandırmak için kullanılan noktası döndürür:
 
 [![](rotate-images/centeredrotate-small.png "Üçlü sayfasının ekran görüntüsü ortalanmış döndürme")](rotate-images/centeredrotate-large.png#lightbox "Üçlü sayfasının ekran görüntüsü ortalanmış Döndür")
 
-Yalnızca sürümüyle ortalanmış olarak `Scale` yöntemi, ortalanmış sürümü `RotateDegrees` çağrıdır bir kısayol:
+Yalnızca sürümüyle ortalanmış olarak `Scale` yöntemi, ortalanmış sürümü `RotateDegrees` çağrıdır kısayol:
 
 ```csharp
 RotateDegrees (degrees, px, py);
 ```
 
-Bu şuna eşdeğerdir:
+Bu aşağıdakine eşdeğerdir:
 
 ```csharp
 canvas.Translate(px, py);
@@ -102,14 +102,14 @@ canvas.RotateDegrees(degrees);
 canvas.Translate(-px, -py);
 ```
 
-Bazen birleştirebilirsiniz öğreneceksiniz `Translate` ile çağırır `Rotate` çağrıları. Örneğin, işte `RotateDegrees` ve `DrawText` çağrıları **ortalanmış döndürme** sayfa;
+Bazen birleştirebilirsiniz keşfedeceksiniz `Translate` ile çağırır `Rotate` çağırır. Örneğin, işte `RotateDegrees` ve `DrawText` çağrıları **ortalanmış döndürme** sayfasında;
 
 ```csharp
 canvas.RotateDegrees((float)rotateSlider.Value, info.Width / 2, info.Height / 2);
 canvas.DrawText(Title, info.Width / 2, info.Height / 2, textPaint);
 ```
 
-`RotateDegrees` Çağrıdır iki eşdeğer `Translate` çağrıları ve bir harici merkezli `RotateDegrees`:
+`RotateDegrees` Çağrıdır iki eşdeğer `Translate` çağırır ve bir olmayan merkezli `RotateDegrees`:
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -118,7 +118,7 @@ canvas.Translate(-info.Width / 2, -info.Height / 2);
 canvas.DrawText(Title, info.Width / 2, info.Height / 2, textPaint);
 ```
 
-`DrawText` Belirli bir konumda metin görüntülenecek çağrıdır eşdeğer bir `Translate` arayın ve ardından bu konum için `DrawText` bir noktada (0, 0):
+`DrawText` Belirli bir konumda metin görüntülenecek çağrısı eşdeğer bir `Translate` çağrı ardından o konuma `DrawText` bir noktada (0, 0):
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -136,13 +136,13 @@ canvas.RotateDegrees((float)rotateSlider.Value);
 canvas.DrawText(Title, 0, 0, textPaint);
 ```
 
-Kavramsal olarak, iki dönüşümler kodda görüntülenme tersi sırada uygulanır. `DrawText` Çağrısı tuvale sol üst köşesinde metin görüntüler. `RotateDegrees` Çağrısı metnin sol üst köşesindeki göre döndürür. Ardından `Translate` arama metni Kanvasın ortasına taşır.
+Kavramsal olarak, iki dönüştürmeler, kodda görüntülenme tersi sırada uygulanır. `DrawText` Çağrı tuvalin sol üst köşesinde bulunan metni görüntüler. `RotateDegrees` Çağrı metnin sol üst köşesine göre döndürür. Ardından `Translate` çağrı tuval merkezine metin taşır.
 
-Genellikle çevirme ve döndürme birleştirmek için birkaç yolu vardır. **Döndürülen metin** sayfası aşağıdaki görüntü oluşturur:
+Genellikle çevirme ve döndürme birleştirmek için birkaç yol vardır. **Döndürülmüş metin** sayfası aşağıdaki görüntü oluşturur:
 
-[![](rotate-images/rotatedtext-small.png "Üçlü sayfasının ekran görüntüsü döndürülen metin")](rotate-images/rotatedtext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü döndürülen metin")
+[![](rotate-images/rotatedtext-small.png "Üçlü sayfasının ekran görüntüsü döndürülmüş metin")](rotate-images/rotatedtext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü döndürülen metin")
 
-Burada `PaintSurface` işleyicisine [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) sınıfı:
+İşte `PaintSurface` işleyicisi [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) sınıfı:
 
 ```csharp
 static readonly string text = "    ROTATE";
@@ -180,9 +180,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-`xCenter` Ve `yCenter` değerleri Kanvasın ortasına gösterir. `yText` Değer biraz değerinden uzaklığı. Bu sayfada gerçekten dikey ortalanacak şekilde metin yerleştirmek için gereken Y koordinatını belirtir. `for` Döngü ardından tuvale Merkezi'nde ortalanmış döndürme ayarlar. Döndürme 30 derece artışları gösterir. Metin kullanılarak çizilip `yText` değeri. Word önce boşlukları sayısı "DÖNDÜRÜN" içinde `text` değer belirlendi empirically bir on iki Kenarlı göründüğü bağlantısı 12 metin dizelerinden arasında yapma.
+`xCenter` Ve `yCenter` değerler tuval merkezi gösterir. `yText` Değerdir, biraz uzaklığı. Bu sayfada gerçekten dikey ortalanacak şekilde metin yerleştirmek için gereken Y koordinatını belirtir. `for` Döngü, ardından tuval Merkezi'nde ortalanmış bir döndürme ayarlar. Döndürme 30 derece artışlarla ' dir. Metin kullanılarak çizilir `yText` değeri. Word önce boşluk sayısını "DÖNDÜRÜN" içinde `text` değer belirlendi türü bir on iki kenarlı olabilir görünmesine 12 metin dizelerinden arasında bağlantı kurmak için.
 
-Bu kodu basitleştirmek için bir yoldur sonra döngü her zaman 30 derece döndürme açısı artırılacağını `DrawText` çağırın. Bu çağrı gereksinimini ortadan kaldırır `Save` ve `Restore`. Dikkat `degrees` değişkeni gövdesi içinde artık kullanılmayan `for` engelle:
+Bu kodu basitleştirmek için bir yol olan 30 derece döndürme açısını sonra döngü her zaman artırmak için `DrawText` çağırın. Bu çağrılar için gereksinimini ortadan kaldırır `Save` ve `Restore`. Dikkat `degrees` değişkeni gövdesi içinde artık kullanılmamaktadır `for` engelle:
 
 ```csharp
 for (int degrees = 0; degrees < 360; degrees += 30)
@@ -193,7 +193,7 @@ for (int degrees = 0; degrees < 360; degrees += 30)
 
 ```
 
-Basit biçiminde kullanmak da mümkündür `RotateDegrees` çağrısıyla döngü Sunuş yapma tarafından `Translate` her şeyi Kanvasın ortasına taşımak için:
+Basit biçimini kullanmak da mümkündür `RotateDegrees` çağrısıyla döngü koyarak tarafından `Translate` her şeyi tuval merkezine taşımak için:
 
 ```csharp
 float yText = -textBounds.Height / 2 - textBounds.Top;
@@ -207,15 +207,15 @@ for (int degrees = 0; degrees < 360; degrees += 30)
 }
 ```
 
-Değiştirilen `yText` hesaplama artık içerir `yCenter`. Şimdi `DrawText` çağrı merkezleri tuvale üstünde dikey metin.
+Değiştirilmiş `yText` hesaplama artık içerir `yCenter`. Artık `DrawText` çağrı merkezi metin tuval üstünde dikey.
 
-Dönüşümler kavramsal kodda görüntülenme olmadığını ters yönde uygulandığından, genellikle daha fazla yerel dönüşümler tarafından izlenen olası başından itibaren daha genel dönüşümler olur. Bu genellikle çevirme ve döndürme birleştirmek için en kolay yoludur.
+Dönüşümler kavramsal olarak kodu nasıl görüneceklerini ters yönde uygulandığından, genellikle daha fazla yerel dönüştürmeler tarafından izlenen olası başlangıç daha genel dönüşümler olur. Bu genellikle çevirme ve döndürme birleştirmek için en kolay yoludur.
 
-Örneğin, kendi ekseninde döndürme planet çok gibi kendi merkezi çevresinde döndüğü grafik bir nesne çizmek istediğinizi varsayalım. Ancak çok sun uzayda bir planet gibi ekranın merkezi çevresinde döndürüleceğini bu nesne de istersiniz.
+Örneğin, çok bir dünya kendi ekseninde döndürme gibi merkezi çevresinde döndürür bir grafik nesnesi çizmek istediğinizi varsayalım. Ancak bu nesne, ekranın sun uzayda dünya çok gibi merkezi etrafındaki döndürüleceğini da istiyoruz.
 
-Nesne tuvale sol üst köşesindeki konumlandırma ve ardından bu köşe etrafında döndürmek için bir animasyon kullanarak bunu yapabilirsiniz. Ardından, bir nesne orbital RADIUS gibi Yatay Çevir. Şimdi de başlangıcı etrafında bir ikinci animasyonlu döndürme uygulayın. Bu, köşe etrafında Uzayda Döndür nesnesi haline getirir. Şimdi Kanvasın ortasına çevir.
+Nesne tuvalin sol üst köşesinde bulunan konumlandırma ve ardından bu köşe etrafında döndürmek için bir animasyon kullanarak bunu yapabilirsiniz. Ardından, bir nesne bir orbital RADIUS gibi yatay olarak çevir. Şimdi de kaynağı etrafında ikinci bir animasyonlu döndürme başvurun. Bu, köşe etrafında çalışmalarınızı nesnesi getirir. Artık tuval merkezine çevir.
 
-Burada `PaintSurface` bunlar içeren işleyici çağrıları ters sırada Dönüştür:
+İşte `PaintSurface` bunlar içeren işleyici çağrıları ters sırada dönüştürün:
 
 ```csharp
 float revolveDegrees, rotateDegrees;
@@ -253,7 +253,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`revolveDegrees` Ve `rotateDegrees` alanları animasyonlu. Bu program üzerinde Xamarin.Forms göre farklı animasyon tekniği kullanır `Animation` sınıfı. (Bu sınıf açıklanan [, Bölüm 22 *Xamarin.Forms ile Mobile Apps oluşturma*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) `OnAppearing` geçersiz kılma iki oluşturur `Animation` nesneleri geri çağırma yöntemleri ve çağırır`Commit` bunlara bir animasyon süresi için:
+`revolveDegrees` Ve `rotateDegrees` alanları bir animasyon görünür. Bu program Xamarin.Forms hakkında temel bir animasyon farklı teknik kullanır `Animation` sınıfı. (Bu sınıf açıklanan [Bölüm 22, *Xamarin.Forms ile Mobile Apps oluşturma*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) `OnAppearing` geçersiz kılma oluşturur iki `Animation` nesneleri geri çağırma yöntemleri ile ve ardından çağırır`Commit` bunlara bir animasyon süresi:
 
 ```csharp
 protected override void OnAppearing()
@@ -271,7 +271,7 @@ protected override void OnAppearing()
 }
 ```
 
-İlk `Animation` nesne canlandırır `revolveDegrees` 0-360 derece üzerinde 10 saniye. İkincisi canlandırır `rotateDegrees` 0-360 derece her 1 ikinci ve aynı zamanda başka bir çağrıyı oluşturmak için yüzeyini geçersiz kılar `PaintSurface` işleyicisi. `OnDisappearing` Geçersiz kılma iki animasyonlarına iptal eder:
+İlk `Animation` nesne canlandırır `revolveDegrees` 0-360 derece 10 saniyenin üzerindeki. İkincisi canlandırır `rotateDegrees` 0-360 derece her 1 saniye ve ayrıca surface başka bir çağrıyı oluşturmak için geçersiz kılar `PaintSurface` işleyici. `OnDisappearing` Geçersiz kılma iki animasyonlarına iptal eder:
 
 ```csharp
 protected override void OnDisappearing()
@@ -282,9 +282,9 @@ protected override void OnDisappearing()
 }
 ```
 
-**Çirkin Analog Saat** program (Bu nedenle bir sonraki makalede daha cazip bir analog saat açıklanacaktır çünkü denir), saat, dakika ve saat işaretler çizin ve ellerini döndürmek için döndürme kullanır. Program noktada 100 (0, 0) bir RADIUS ile ortalanmış bir daire göre rastgele bir koordinat sistemini kullanarak saat çizer. ' Nı genişletin ve bu daire sayfasında merkezi çeviri ve ölçeklendirme kullanır.
+**Çirkin Analog Saat** (Bu nedenle daha cazip bir analog saat, bir sonraki makalede açıklanan çünkü denir) programı döndürme saatin saat ve dakika işaretler çizin ve uygulamalı döndürmek için kullanır. Program saatin noktada 100 (0, 0) ile bir RADIUS Orta dairenin göre rastgele bir koordinat sistemini kullanarak çizer. Genişletin ve o daire sayfasında merkezi çeviri ve ölçeklendirme kullanır.
 
-`Translate` Ve `Scale` çağrıları uygulamak genel saati, bu, başlatılması çağrılacak ilk olanlardır şekilde `SKPaint` nesneler:
+`Translate` Ve `Scale` çağrıları genel olarak uygulanır saati, bu, başlatma çağrılacak ilk olanlardır şekilde `SKPaint` nesneler:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -330,7 +330,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Son olarak, `PaintSurface` işleyicisi geçerli saati alır ve saat, dakika ve ikinci ellerini döndürme derece hesaplar. Döndürme açısını göre böylece her el 12:00 konumda çizilmiştir:
+Son olarak, `PaintSurface` işleyicisi geçerli saati alır ve döndürme derece, saat, dakika ve ikinci uygulamalı hesaplar. Döndürme açısı göre böylece her el 12:00 konumu çizilmiştir:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -362,9 +362,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Ellerini yerine kaba olmasına rağmen kesinlikle işlevsel bir saattir:
+Bire çok kaba olsa saat tam işlevsel:
 
-[![](rotate-images/uglyanalogclock-small.png "Üçlü çirkin Analog Saat metin sayfasının ekran görüntüsü")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
+[![](rotate-images/uglyanalogclock-small.png "Üçlü çirkin Analog saati metin sayfasının ekran görüntüsü")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

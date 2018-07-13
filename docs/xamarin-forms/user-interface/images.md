@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: f55a7878be898cbae5681d628d07cbe8598c9509
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: 47fbe67561ea9150d0fdc0b41eb5c70edbeac75e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986128"
+ms.locfileid: "38996275"
 ---
 # <a name="images-in-xamarinforms"></a>Xamarin.Forms görüntüleri
 
@@ -31,19 +31,19 @@ Bu belge aşağıdaki konular ele alınmıştır:
 
 ## <a name="displaying-images"></a>Görüntüleri görüntüleme
 
-Xamarin.Forms kullanan [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) görüntüleri bir sayfada görüntülemek için görünümü. Bu iki önemli özelliklere sahiptir:
+Xamarin.Forms kullanan [ `Image` ](xref:Xamarin.Forms.Image) görüntüleri bir sayfada görüntülemek için görünümü. Bu iki önemli özelliklere sahiptir:
 
-- [`Source`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) -Bir [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) örneği, dosya, URI veya kaynak, görüntüyü ayarlar.
-- [`Aspect`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) -Nasıl (mi Genişlet, kırpma veya sinemaskop) içinde görüntülenmektedir sınırları içindeki görüntü boyutu.
+- [`Source`](xref:Xamarin.Forms.Image.Source) -Bir [ `ImageSource` ](xref:Xamarin.Forms.ImageSource) örneği, dosya, URI veya kaynak, görüntüyü ayarlar.
+- [`Aspect`](xref:Xamarin.Forms.Image.Aspect) -Nasıl (mi Genişlet, kırpma veya sinemaskop) içinde görüntülenmektedir sınırları içindeki görüntü boyutu.
 
-[`ImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) örnekleri her görüntü kaynağı türü için statik yöntemler kullanarak elde edilebilir:
+[`ImageSource`](xref:Xamarin.Forms.ImageSource) örnekleri her görüntü kaynağı türü için statik yöntemler kullanarak elde edilebilir:
 
-- [`FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) -Bir dosya adı veya her platformda çözülebilir filepath gerektirir.
-- [`FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) -Bir Uri nesnesinden örn gerektirir.  `new Uri("http://server.com/image.jpg")` .
-- [`FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) -Uygulama ya da .NET Standard kitaplığı projesi ile katıştırılmış bir resim dosyası için bir kaynak tanımlayıcısı gerektirir bir **derleme eylemi: EmbeddedResource**.
-- [`FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) -Görüntü veri sağlayan bir akış gerektirir.
+- [`FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String)) -Bir dosya adı veya her platformda çözülebilir filepath gerektirir.
+- [`FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) -Bir Uri nesnesinden örn gerektirir.  `new Uri("http://server.com/image.jpg")` .
+- [`FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) -Uygulama ya da .NET Standard kitaplığı projesi ile katıştırılmış bir resim dosyası için bir kaynak tanımlayıcısı gerektirir bir **derleme eylemi: EmbeddedResource**.
+- [`FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream})) -Görüntü veri sağlayan bir akış gerektirir.
 
-[ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) Özelliği nasıl görüntünün görüntü alana uyacak şekilde ayarlanacaktır belirler:
+[ `Aspect` ](xref:Xamarin.Forms.Image.Aspect) Özelliği nasıl görüntünün görüntü alana uyacak şekilde ayarlanacaktır belirler:
 
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -Resmi tamamen ve tam ekran alanı dolduracak şekilde uzatılır. Bu görüntünün bozuk neden olabilir.
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -Görüntünün en boy korurken ekran alanı doldurması küçük (IE. hiçbir bozulma).
@@ -109,13 +109,13 @@ UWP görüntü dosyası adları [ile olark `.scale-xxx` dosya uzantısı önce](
 
 Bazı denetimler gibi bir resim görüntüleyen özelliklere sahiptir:
 
-- [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) -Tüm türetilen tür sayfasında `Page` sahip [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) ve [ `BackgroundImage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.BackgroundImage/) özellikleri, yerel dosya başvurusu atanabilir. Ne zaman gibi belirli koşullar altında bir [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) görüntüleyen bir [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), platform tarafından destelenmesi koşuluyla simgesi görüntülenir.
+- [`Page`](xref:Xamarin.Forms.Page) -Tüm türetilen tür sayfasında `Page` sahip [ `Icon` ](xref:Xamarin.Forms.Page.Icon) ve [ `BackgroundImage` ](xref:Xamarin.Forms.Page.BackgroundImage) özellikleri, yerel dosya başvurusu atanabilir. Ne zaman gibi belirli koşullar altında bir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) görüntüleyen bir [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), platform tarafından destelenmesi koşuluyla simgesi görüntülenir.
 
   > [!IMPORTANT]
-  > İos'ta [ `Page.Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) özelliği, bir görüntüden bir varlık Kataloğu görüntü kümesi doldurulamaz. Simge görüntüleri için bunun yerine, yük `Page.Icon` özelliğinden **kaynakları** iOS projesi klasöründe.
+  > İos'ta [ `Page.Icon` ](xref:Xamarin.Forms.Page.Icon) özelliği, bir görüntüden bir varlık Kataloğu görüntü kümesi doldurulamaz. Simge görüntüleri için bunun yerine, yük `Page.Icon` özelliğinden **kaynakları** iOS projesi klasöründe.
 
-- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) -Sahip bir [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) yerel dosya başvurusu ayarlanabilir özelliği.
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) -Sahip bir [ `ImageSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ImageCell.ImageSource/) görüntüye ayarlanabilir özelliği alınan yerel bir dosyaya, bir gömülü kaynak ya da bir URI.
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) -Sahip bir [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon) yerel dosya başvurusu ayarlanabilir özelliği.
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) -Sahip bir [ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource) görüntüye ayarlanabilir özelliği alınan yerel bir dosyaya, bir gömülü kaynak ya da bir URI.
 
 <a name="embedded_images" />
 
@@ -150,7 +150,7 @@ Bu kimliği, içinde düzenlenebilir **özellikleri** paneli, ancak bu örnekler
 
 Projeniz klasörler halinde katıştırılmış görüntüler yerleştirirseniz, klasör adları da kaynak kodunda nokta (.) tarafından ayrılır Taşıma **beach.jpg** adlı bir klasör görüntüye **Myımages** kaynak Kimliğinde neden **WorkingWithImages.MyImages.beach.jpg**
 
-Gömülü görüntü yüklemek için kodu basitçe geçirir **kaynak kimliği** için [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) aşağıda gösterildiği gibi yöntemi:
+Gömülü görüntü yüklemek için kodu basitçe geçirir **kaynak kimliği** için [ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*) aşağıda gösterildiği gibi yöntemi:
 
 ```csharp
 var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
@@ -159,7 +159,7 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 > [!NOTE]
 > Evrensel Windows platformu yayın modunda katıştırılmış görüntüler görüntüleme desteklemek için bu aşırı yüklemesini kullanmanız gereklidir `ImageSource.FromResource` görüntüsü için aranacak kaynak derlemeyi belirtir.
 
-Şu anda kaynak tanımlayıcıları için örtük dönüştürme yoktur. Bunun yerine, kullanmalısınız [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) veya `new ResourceImageSource()` katıştırılmış görüntüler yüklenemedi.
+Şu anda kaynak tanımlayıcıları için örtük dönüştürme yoktur. Bunun yerine, kullanmalısınız [ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*) veya `new ResourceImageSource()` katıştırılmış görüntüler yüklenemedi.
 
 Aşağıdaki ekran görüntüleri her platformda bir katıştırılmış resim görüntüleme sonucu göster:
 
@@ -265,7 +265,7 @@ Eşdeğer C# kodu aşağıdaki gibidir:
 var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")) };
 ```
 
-[ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) Yöntemi gerektiren bir `Uri` nesne ve yeni bir [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) , okuyan `Uri`.
+[ `ImageSource.FromUri` ](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) Yöntemi gerektiren bir `Uri` nesne ve yeni bir [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource) , okuyan `Uri`.
 
 Aynı zamanda aşağıdaki örnekte de çalışacak şekilde de URI dizeler için örtük bir dönüştürme yoktur:
 
@@ -281,10 +281,10 @@ Aşağıdaki ekran görüntüleri, uzak bir görüntü her platformda görüntü
 
 ### <a name="downloaded-image-caching"></a>İndirilen görüntüsünü önbelleğe alma
 
-A [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) aşağıdaki özellikleri kullanılarak yapılandırılmış indirilen görüntülerinin önbelleğe almayı da destekler:
+A [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource) aşağıdaki özellikleri kullanılarak yapılandırılmış indirilen görüntülerinin önbelleğe almayı da destekler:
 
-- [`CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) -Etkin olup olmadığını önbelleğe alma (`true` varsayılan olarak).
-- [`CacheValidity`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CacheValidity/) -A `TimeSpan` ne kadar süreyle görüntünün yerel olarak depolanacak tanımlar.
+- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled) -Etkin olup olmadığını önbelleğe alma (`true` varsayılan olarak).
+- [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity) -A `TimeSpan` ne kadar süreyle görüntünün yerel olarak depolanacak tanımlar.
 
 Önbelleğe alma, varsayılan olarak etkindir ve görüntünün yerel olarak 24 saat boyunca saklar. Belirli bir görüntü için önbelleğe alma devre dışı bırakmak için görüntü kaynağı aşağıdaki şekilde örneği:
 
@@ -309,7 +309,7 @@ Yerleşik önbelleğe alma, çok görüntüler, burada ayarlayın (bağlama gör
 
 ## <a name="icons-and-splashscreens"></a>Simgeler ve splashscreens
 
-İlgili değildir ancak [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) görünümü, uygulama simgeleri ve splashscreens getirilmiştir Xamarin.Forms projelerinde görüntülerin önemli kullanın.
+İlgili değildir ancak [ `Image` ](xref:Xamarin.Forms.Image) görünümü, uygulama simgeleri ve splashscreens getirilmiştir Xamarin.Forms projelerinde görüntülerin önemli kullanın.
 
 Simgeler ve Xamarin.Forms uygulamaları için splashscreens ayarlama, her uygulama projeleri içinde yapılır. Bu, iOS, Android ve UWP için görüntüleri boyutlandırılmış doğru oluşturma anlamına gelir. Bu görüntüleri adlı ve her bir platform gereksinimlerine göre bulunur.
 

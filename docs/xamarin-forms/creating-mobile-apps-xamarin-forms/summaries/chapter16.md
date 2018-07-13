@@ -7,12 +7,12 @@ ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 92cf7f0163c4f074c718e86b06cf4830ff857c58
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: c4ad067778203759a54ed8141db0b82602e40f6c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935608"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997458"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>Bölüm 16 özeti. Veri bağlama
 
@@ -24,27 +24,27 @@ Programcıların genellikle kendilerini bir nesnenin bir özellik değiştiğind
 
 Veri bağlamasında, çeşitli özellikleri, yöntemleri ve sınıfları ilgilidir:
 
-- [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/) Sınıf türetilir [ `BindingBase` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingBase/) ve veri bağlama birçok özelliklerini kapsar
-- [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Özelliği tarafından tanımlanan [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) sınıfı
-- [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) Yöntemi tarafından tanımlanan ayrıca [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) sınıfı
-- [ `BindableObjectExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObjectExtensions/) Sınıfı tanımlayan üç ek `SetBinding` yöntemleri
+- [ `Binding` ](xref:Xamarin.Forms.Binding) Sınıf türetilir [ `BindingBase` ](xref:Xamarin.Forms.BindingBase) ve veri bağlama birçok özelliklerini kapsar
+- [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Özelliği tarafından tanımlanan [ `BindableObject` ](xref:Xamarin.Forms.BindableObject) sınıfı
+- [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) Yöntemi tarafından tanımlanan ayrıca [ `BindableObject` ](xref:Xamarin.Forms.BindableObject) sınıfı
+- [ `BindableObjectExtensions` ](xref:Xamarin.Forms.BindableObjectExtensions) Sınıfı tanımlayan üç ek `SetBinding` yöntemleri
 
 Aşağıdaki iki sınıf bağlamaları için XAML biçimlendirme uzantıları destekler:
 
-- [`BindingExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/) destekleyen `Binding` işaretleme uzantısı
-- [`ReferenceExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/) destekleyen `x:Reference` işaretleme uzantısı
+- [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) destekleyen `Binding` işaretleme uzantısı
+- [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) destekleyen `x:Reference` işaretleme uzantısı
 
 Veri bağlama iki arabirim ilgilidir:
 
-- [`INotifyPropertyChanged`](https://developer.xamarin.com/api/type/System.ComponentModel.INotifyPropertyChanged/) içinde `System.ComponentModel` ad alanı olan bir özellik değiştiğinde bildirim uygulamak için
-- [`IValueConverter`](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) değerleri veri bağlamaları alanındaki başka bir türden diğerine dönüştürme küçük sınıflarını tanımlamak için kullanılır
+- [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) içinde `System.ComponentModel` ad alanı olan bir özellik değiştiğinde bildirim uygulamak için
+- [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) değerleri veri bağlamaları alanındaki başka bir türden diğerine dönüştürme küçük sınıflarını tanımlamak için kullanılır
 
 Veri bağlama iki özellik aynı nesneye veya (daha sık) iki farklı nesne bağlanır. Bu iki özellik olarak ifade edilir *kaynak* ve *hedef*. Genel olarak, kaynak özellik değişikliği hedef özelliği gerçekleşmesi bir değişiklik neden olur, ancak bazen yönünü ters çevrilir. Bakılmaksızın:
 
-- *hedef* özelliği yedeklenen, tarafından bir [`BindableProperty`](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)
-- *kaynak* özelliği genellikle uygulayan bir sınıf üyesi. [`INotifyPropertyChanged`](https://developer.xamarin.com/api/type/System.ComponentModel.INotifyPropertyChanged/)
+- *hedef* özelliği yedeklenen, tarafından bir [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)
+- *kaynak* özelliği genellikle uygulayan bir sınıf üyesi. [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)
 
-Uygulayan bir sınıf `INotifyPropertyChanged` ateşlenir bir [ `PropertyChanged` ](https://developer.xamarin.com/api/event/System.ComponentModel.INotifyPropertyChanged.PropertyChanged/) bir özellik değeri değiştiğinde bir olay. `BindableObject` uygulayan `INotifyPropertyChanged` ve otomatik olarak tetiklenen bir `PropertyChanged` bir özellik tarafından yedeklendiğinde olay bir `BindableProperty` değişiklikleri değerler, ancak yazabilirsiniz, kendi sınıfları uygulayan `INotifyPropertyChanged` türetme olmadan `BindableObject`.
+Uygulayan bir sınıf `INotifyPropertyChanged` ateşlenir bir [ `PropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) bir özellik değeri değiştiğinde bir olay. `BindableObject` uygulayan `INotifyPropertyChanged` ve otomatik olarak tetiklenen bir `PropertyChanged` bir özellik tarafından yedeklendiğinde olay bir `BindableProperty` değişiklikleri değerler, ancak yazabilirsiniz, kendi sınıfları uygulayan `INotifyPropertyChanged` türetme olmadan `BindableObject`.
 
 ## <a name="code-and-xaml"></a>Kod ve XAML
 
@@ -53,19 +53,19 @@ Uygulayan bir sınıf `INotifyPropertyChanged` ateşlenir bir [ `PropertyChanged
 - Kaynak `Value` özelliği bir `Slider`
 - Hedef `Opacity` özelliği bir `Label`
 
-İki nesnenin ayarlayarak bağlı `BindingContext` , `Label` nesnesini `Slider` nesnesi. Çağırarak iki özelliğe bağlı bir [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObjectExtensions.SetBinding/p/Xamarin.Forms.BindableObject/Xamarin.Forms.BindableProperty/System.String/) genişletme yöntemini `Label` başvuran `OpacityProperty` bağlanılabilir özellik ve `Value` özelliği `Slider` olarak ifade edilen bir dize.
+İki nesnenin ayarlayarak bağlı `BindingContext` , `Label` nesnesini `Slider` nesnesi. Çağırarak iki özelliğe bağlı bir [ `SetBinding` ](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) genişletme yöntemini `Label` başvuran `OpacityProperty` bağlanılabilir özellik ve `Value` özelliği `Slider` olarak ifade edilen bir dize.
 
 Düzenleme `Slider` ardından neden `Label` soluklaştırılacak içine ve dışına görünümü.
 
-[ **OpacityBindingXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingXaml) XAML içinde ayarlanmış veri bağlama ile aynı bir programdır. `BindingContext` , `Label` Ayarlanmış bir `x:Reference` işaretleme uzantısı başvuran `Slider`ve `Opacity` özelliği `Label` ayarlanır `Binding` işaretleme uzantısı ile kendi [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) özelliğe başvurma `Value` özelliği `Slider`.
+[ **OpacityBindingXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingXaml) XAML içinde ayarlanmış veri bağlama ile aynı bir programdır. `BindingContext` , `Label` Ayarlanmış bir `x:Reference` işaretleme uzantısı başvuran `Slider`ve `Opacity` özelliği `Label` ayarlanır `Binding` işaretleme uzantısı ile kendi [ `Path` ](xref:Xamarin.Forms.Binding.Path) özelliğe başvurma `Value` özelliği `Slider`.
 
 ## <a name="source-and-bindingcontext"></a>Kaynak ve BindingContext
 
-[ **BindingSourceCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode) örnek kodda alternatif bir yaklaşım gösterilmektedir. A `Binding` ayarlayarak nesnesi oluşturulur [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Source/) özelliğini `Slider` nesne ve [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) özelliğini "Value". [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) Yöntemi `BindableObject` üzerinde çağrılır `Label` nesne.
+[ **BindingSourceCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode) örnek kodda alternatif bir yaklaşım gösterilmektedir. A `Binding` ayarlayarak nesnesi oluşturulur [ `Source` ](xref:Xamarin.Forms.Binding.Source) özelliğini `Slider` nesne ve [ `Path` ](xref:Xamarin.Forms.Binding.Path) özelliğini "Value". [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) Yöntemi `BindableObject` üzerinde çağrılır `Label` nesne.
 
-[ `Binding` Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Binding.Binding/p/System.String/Xamarin.Forms.BindingMode/Xamarin.Forms.IValueConverter/System.Object/System.String/System.Object/) ayrıca tanımlamak için kullanılmış `Binding` nesne.
+[ `Binding` Oluşturucusu](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object)) ayrıca tanımlamak için kullanılmış `Binding` nesne.
 
-[ **BindingSourceXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceXaml) örnek karşılaştırılabilir teknik XAML içinde gösterir. `Opacity` Özelliği `Label` ayarlanmış bir `Binding` işaretleme uzantısı ile [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) kümesine `Value` özelliği ve [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Source/) kümesine bir katıştırılmış `x:Reference` işaretleme uzantısı.
+[ **BindingSourceXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceXaml) örnek karşılaştırılabilir teknik XAML içinde gösterir. `Opacity` Özelliği `Label` ayarlanmış bir `Binding` işaretleme uzantısı ile [ `Path` ](xref:Xamarin.Forms.Binding.Path) kümesine `Value` özelliği ve [ `Source` ](xref:Xamarin.Forms.Binding.Source) kümesine bir katıştırılmış `x:Reference` işaretleme uzantısı.
 
 Özet olarak, bağlama kaynak nesneye başvurmak için iki yolu vardır:
 
@@ -74,11 +74,11 @@ Düzenleme `Slider` ardından neden `Label` soluklaştırılacak içine ve dış
 
 Her ikisi de belirtilirse, ikinci önceliklidir. Avantajı `BindingContext` olan görsel ağacı dağıtılır. Bu *çok* kullanışlı birden çok hedef özellikleri aynı kaynak nesnesine bağlıdır.
 
-[ **WebViewDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WebViewDemo) program bu teknikte gösterir [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) öğesi. İki `Button` öğeleri gezinme için İleri ve devralınan bir `BindingContext` başvuran üst öğesinden `WebView`. `IsEnabled` İki düğmenin özelliklerini ardından sahip basit `Binding` düğme hedef biçimlendirme uzantıları `IsEnabled` özelliklerine bağlı ayarlarını [ `CanGoBack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.CanGoBack/) ve [ `CanGoForward` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.CanGoForward/) salt okunur özelliklerini `WebView`.
+[ **WebViewDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WebViewDemo) program bu teknikte gösterir [ `WebView` ](xref:Xamarin.Forms.WebView) öğesi. İki `Button` öğeleri gezinme için İleri ve devralınan bir `BindingContext` başvuran üst öğesinden `WebView`. `IsEnabled` İki düğmenin özelliklerini ardından sahip basit `Binding` düğme hedef biçimlendirme uzantıları `IsEnabled` özelliklerine bağlı ayarlarını [ `CanGoBack` ](xref:Xamarin.Forms.WebView.CanGoBack) ve [ `CanGoForward` ](xref:Xamarin.Forms.WebView.CanGoForward) salt okunur özelliklerini `WebView`.
 
 ## <a name="the-binding-mode"></a>Bağlama modu
 
-Ayarlama [ `Mode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.Mode/) özelliği `Binding` üyesinin [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/) sabit listesi:
+Ayarlama [ `Mode` ](xref:Xamarin.Forms.BindingBase.Mode) özelliği `Binding` üyesinin [ `BindingMode` ](xref:Xamarin.Forms.BindingMode) sabit listesi:
 
 - [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay) Hedef kaynak özellik değişiklikleri etkilememesi
 - [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) hedef özelliği değişiklikleri kaynak etkilememesi
@@ -103,7 +103,7 @@ Bu bağlamaları içinde MVVM nasıl tanımlandığı için analojiktir ve bu t�
 
 ## <a name="string-formatting"></a>Dize biçimlendirmesi
 
-Hedef özelliği türünde olduğunda `string`, kullanabileceğiniz [ `StringFormat` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.StringFormat/) özelliği tarafından tanımlanan `BindingBase` kaynağına dönüştürmek için bir `string`. Ayarlama `StringFormat` biçimlendirme dizesi ile statik kullanacağı bir .NET özelliğini [ `String.Format` ](https://developer.xamarin.com/api/member/System.String.Format/p/System.String/System.Object/) nesne görüntülenecek biçimi. Küme ayraçları için bir katıştırılmış işaretleme uzantısı mistaken olmaz, dolayısıyla bu biçimlendirme dizesi içinde bir işaretleme uzantısı kullanırken, tek tırnak işaretleri ile çevreleyin.
+Hedef özelliği türünde olduğunda `string`, kullanabileceğiniz [ `StringFormat` ](xref:Xamarin.Forms.BindingBase.StringFormat) özelliği tarafından tanımlanan `BindingBase` kaynağına dönüştürmek için bir `string`. Ayarlama `StringFormat` biçimlendirme dizesi ile statik kullanacağı bir .NET özelliğini [ `String.Format` ](xref:System.String.Format(System.String,System.Object)) nesne görüntülenecek biçimi. Küme ayraçları için bir katıştırılmış işaretleme uzantısı mistaken olmaz, dolayısıyla bu biçimlendirme dizesi içinde bir işaretleme uzantısı kullanırken, tek tırnak işaretleri ile çevreleyin.
 
 [ **ShowViewValues** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ShowViewValues) örnek nasıl kullanılacağını gösterir `StringFormat` XAML içinde.
 
@@ -111,11 +111,11 @@ Hedef özelliği türünde olduğunda `string`, kullanabileceğiniz [ `StringFor
 
 ## <a name="why-is-it-called-path"></a>Neden "Path" adı verilir?
 
-[ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) Özelliği `Binding` özellikler ve dizin oluşturucular noktalarla ayrılmış bir dizi olabileceğinden şekilde çağrılır. [ **BindingPathDemos** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingPathDemos) örnek, çeşitli örnekleri gösterir.
+[ `Path` ](xref:Xamarin.Forms.Binding.Path) Özelliği `Binding` özellikler ve dizin oluşturucular noktalarla ayrılmış bir dizi olabileceğinden şekilde çağrılır. [ **BindingPathDemos** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingPathDemos) örnek, çeşitli örnekleri gösterir.
 
 ## <a name="binding-value-converters"></a>Bağlama değeri dönüştürücüleri
 
-Bir bağlamanın kaynak ve hedef özellikleri farklı olduğunda, bir bağlama dönüştürücü kullanarak türleri arasında dönüştürme yapabilirsiniz. Uygulayan bir sınıf budur [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) arabirim ve iki yöntem içerir: [ `Convert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.IValueConverter.Convert/p/System.Object/System.Type/System.Object/System.Globalization.CultureInfo/) hedef, kaynak dönüştürmek ve [ `ConvertBack` ](https://developer.xamarin.com/api/member/Xamarin.Forms.IValueConverter.ConvertBack/p/System.Object/System.Type/System.Object/System.Globalization.CultureInfo/) Hedef kaynak dönüştürmek için.
+Bir bağlamanın kaynak ve hedef özellikleri farklı olduğunda, bir bağlama dönüştürücü kullanarak türleri arasında dönüştürme yapabilirsiniz. Uygulayan bir sınıf budur [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) arabirim ve iki yöntem içerir: [ `Convert` ](xref:Xamarin.Forms.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)) hedef, kaynak dönüştürmek ve [ `ConvertBack` ](xref:Xamarin.Forms.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)) Hedef kaynak dönüştürmek için.
 
 [ `IntToBoolConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs) Sınıfını [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplıktır dönüştürmek için örnek bir `int` için bir `bool`. Tarafından gösterilen [ **ButtonEnabler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler) yalnızca sağlayan örnek `Button` en az bir karakter ile yazılan, bir `Entry`.
 

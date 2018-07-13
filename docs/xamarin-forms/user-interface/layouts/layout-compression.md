@@ -1,37 +1,37 @@
 ---
-title: Düzenini sıkıştırma
-description: Düzenini sıkıştırma belirtilen düzenleri sayfa işleme performansı girişimi görsel ağaç kaldırır. Bu makalede düzenini sıkıştırma ve kullanıma sunabilirsiniz avantajları etkinleştirme açıklanmaktadır.
+title: Düzen sıkıştırma
+description: Düzen sıkıştırma belirtilen düzenleri görsel ağaç'tan sayfa işleme performansını girişimi kaldırır. Bu makalede, Düzen sıkıştırma ve getirebilir miyim avantajları etkinleştirme açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: da9e1b26-9d31-4762-94c3-4039f306b7f2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 9c698d539ab671ee2a033ae5943a46e0cc870f76
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ba9be51daa32be1034e2bdfafafe80c45d00d83c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30791132"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995238"
 ---
-# <a name="layout-compression"></a>Düzenini sıkıştırma
+# <a name="layout-compression"></a>Düzen sıkıştırma
 
-_Düzenini sıkıştırma belirtilen düzenleri sayfa işleme performansı girişimi görsel ağaç kaldırır. Bu makalede düzenini sıkıştırma ve kullanıma sunabilirsiniz avantajları etkinleştirme açıklanmaktadır._
+_Düzen sıkıştırma belirtilen düzenleri görsel ağaç'tan sayfa işleme performansını girişimi kaldırır. Bu makalede, Düzen sıkıştırma ve getirebilir miyim avantajları etkinleştirme açıklanmaktadır._
 
 ## <a name="overview"></a>Genel Bakış
 
-Xamarin.Forms iki dizi özyinelemeli yöntemi çağrısı kullanarak Düzen gerçekleştirir:
+Xamarin.Forms özyinelemeli yöntem çağrılarının iki serinin kullanarak Düzen gerçekleştirir:
 
-- Bir sayfayla görsel ağaç üstündeki düzeni başlar ve her bir sayfasında görsel öğe kapsayacak şekilde visual ağacının tüm dalları aracılığıyla devam eder. Diğer öğeler için üst öğeleri boyutlandırma ve bunların alt öğeleri kendilerini göreli konumlandırma sorumludur.
-- Geçersiz kılma olarak öğe bir sayfa üzerinde değişiklik yeni düzen döngüsü tetikler işlemidir. Artık doğru boyutunu veya konumunu sahip olduğunuzda öğeleri geçersiz olarak kabul edilir. Alt öğelerinden boyutları değiştiğinde her öğenin alt öğesi yok görsel ağaç uyarı. Bu nedenle, bir değişiklik görsel ağaç bir öğenin boyutunu ağaca ripple değişiklikleri neden olabilir.
+- Üst kısmında bir sayfa ile görsel ağaç düzeni başlar ve tüm dallar sayfasında her görsel öğe kapsayacak şekilde görsel ağacı yoluyla ilerler. Üst öğeleri diğer öğelere olan öğeler, kendilerini göreli alt öğelerini konumlandırma ve boyutlandırma sorumludur.
+- Geçersiz kılma olarak yeni bir düzen döngüsü bir öğe bir sayfa üzerinde değişiklik tetikler işlemidir. Artık doğru boyut ve konum varsa, öğeleri geçersiz olarak kabul edilir. Alt öğelerinden birine boyutları değiştiğinde, her öğenin alt öğeleri olan görsel ağaç'uyarı almak. Bu nedenle, bir öğenin görsel ağaç boyutundaki bir değişikliği ağacın ripple değişiklikleri neden olabilir.
 
-Xamarin.Forms düzeni nasıl gerçekleştireceğini hakkında daha fazla bilgi için bkz: [özel düzen oluşturma](~/xamarin-forms/user-interface/layouts/custom.md).
+Xamarin.Forms düzeni nasıl gerçekleştireceğini hakkında daha fazla bilgi için bkz. [özel düzen oluşturma](~/xamarin-forms/user-interface/layouts/custom.md).
 
-Düzen işlemine yerel denetimlere hiyerarşisini sonucudur. Ancak, bu hiyerarşideki ek kapsayıcı oluşturucu ve sarmalayıcıları daha fazla iç içe geçme hiyerarşisini görüntüleme inflating platform Oluşturucu için içerir. Daha derin iç içe geçme düzeyi, bir sayfasını görüntülemek için gerçekleştirmek için Xamarin.Forms sahip iş büyük tutar. Karmaşık düzenleri için Görünüm hiyerarşisine derin ve birden çok iç içe geçme düzeyi ile geniş olabilir.
+Yerel denetimleri hiyerarşisini Düzen işleminin sonucudur. Ancak, bu hiyerarşi daha fazla iç içe hiyerarşisini görüntüle inflating platform oluşturucular için ek kapsayıcı oluşturucular ve sarmalayıcılar içerir. Xamarin.Forms bir sayfasını görüntülemek için gerçekleştirmesi gereken iş miktarı arttıkça daha derin iç içe geçme düzeyi; Karmaşık düzenler için hiyerarşisini görüntüle ayrıntılı ve geniş kapsamlı, birden çok iç içe geçen düzeye sahip olabilir.
 
-Örneğin, aşağıdaki örnek uygulama için Facebook içine günlük düğmesinden göz önünde bulundurun:
+Örneğin, aşağıdaki düğmeyi Facebook ile oturum açmak için örnek uygulamadaki göz önünde bulundurun:
 
-![](layout-compression-images/facebook-button.png "Facebook Button")
+![](layout-compression-images/facebook-button.png "Facebook düğmesi")
 
 Bu düğme, aşağıdaki XAML görünüm hiyerarşisine sahip özel bir denetim olarak belirtilir:
 
@@ -53,18 +53,18 @@ Bu düğme, aşağıdaki XAML görünüm hiyerarşisine sahip özel bir denetim 
 </ContentView>
 ```
 
-Sonuçta elde edilen hiyerarşisini iç içe geçmiş görüntüleme ile incelenebilir [Xamarin denetçisi](~/tools/inspector/index.md). Android, iç içe geçmiş görünüm hiyerarşisine 17 görünümleri içerir:
+Ortaya çıkan iç içe görünüm hiyerarşisi ile incelenebilir [Xamarin Inspector'ı](~/tools/inspector/index.md). Android, iç içe görünüm hiyerarşisi 17 görünümleri içerir:
 
-![](layout-compression-images/no-compression.png "Facebook düğmesi için hiyerarşisini görüntüleme")
+![](layout-compression-images/no-compression.png "Facebook düğmesi hiyerarşisini görüntüle")
 
-İOS ve Android platformları üzerinde Xamarin.Forms uygulamalar için kullanılabilir olan düzenini sıkıştırma görünüm sayfa işleme performansını visual ağacından belirtilen düzenleri kaldırarak iç içe geçme düzleştirmek amaçlar. Teslim performans avantajı bir sayfa, kullanılan işletim sistemi sürümü ve uygulamanın çalıştığı aygıt karmaşıklığına bağlı olarak değişir. Ancak, büyük performans artışı eski cihazlarda görülür.
+İOS ve Android platformlarında Xamarin.Forms uygulamaları için kullanılabilir olan düzen sıkıştırma düzleştirilecek belirtilen düzenleri sayfa işleme performansını iyileştirebilir sanal ağaçtan kaldırarak iç içe görünüm amaçlar. Teslim edilen performans avantajı, bir sayfa, kullanılan işletim sistemi sürümü ve uygulamanın üzerinde çalıştığı aygıtın karmaşıklığına bağlı olarak değişir. Ancak, en büyük gelen performans artışı eski cihazlarda görülür.
 
 > [!NOTE]
-> Bu makale düzenini sıkıştırma Android uygulama sonuçlarını odaklanır olsa da, iOS için eşit oranda geçerlidir.
+> Bu makalede, Android Düzen sıkıştırma uygulanması sonucu üzerinde odaklanmakla birlikte, iOS için eşit oranda geçerlidir.
 
-## <a name="layout-compression"></a>Düzenini sıkıştırma
+## <a name="layout-compression"></a>Düzen sıkıştırma
 
-XAML'de ayarlayarak düzenini sıkıştırma etkinleştirilebilir `CompressedLayout.IsHeadless` özelliğine bağlı `true` bir düzen sınıfını:
+XAML içinde düzen sıkıştırma ayarlayarak etkinleştirilebilir `CompressedLayout.IsHeadless` özelliğine bağlı `true` Düzen sınıfı hakkında:
 
 ```xaml
 <StackLayout CompressedLayout.IsHeadless="true">
@@ -72,16 +72,16 @@ XAML'de ayarlayarak düzenini sıkıştırma etkinleştirilebilir `CompressedLay
 </StackLayout>   
 ```
 
-Alternatif olarak, C# ' ilk bağımsız değişkeni olarak düzeni örneği belirterek etkinleştirilebilir `CompressedLayout.SetIsHeadless` yöntemi:
+Alternatif olarak, C# ' de ilk bağımsız değişkeni olarak bir düzen örneği belirterek etkinleştirilebilir `CompressedLayout.SetIsHeadless` yöntemi:
 
 ```csharp
 CompressedLayout.SetIsHeadless(stackLayout, true);
 ```
 
 > [!IMPORTANT]
-> Görsel ağaç bir düzen düzenini sıkıştırma kaldırır olduğundan, bir görsel görünümünü sahip veya dokunmatik giriş elde düzenleri için uygun değil. Bu nedenle, düzenleri kümesi [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) özellikleri (gibi [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/), [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/), [ `Rotation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Rotation/), [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) ve [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)) veya hareketleri kabul, yerleşim için aday değildir Sıkıştırma. Ancak, visual görünüm özelliklerini ayarlayan veya hareketleri, kabul eden bir düzende düzenini sıkıştırma etkinleştirme bir yapı veya çalışma zamanı hatası oluşturmayacaktır. Bunun yerine, düzenini sıkıştırma uygulanır ve görsel görünümünü özellikleri ve hareketi tanıma sessizce başarısız olur.
+> Düzen sıkıştırma görsel ağaç'tan bir düzen kaldırır olduğundan, görsel görünümüne sahip olan ya da, dokunma girişini elde düzenleri için uygun değil. Bu nedenle, düzeni kümesi [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) özellikleri (gibi [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor), [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible), [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation), [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale), [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX) ve [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) veya hareketlerini kabul edin, düzen için aday değildir Sıkıştırma. Ancak, Düzen sıkıştırma, görsel görünümünü özelliklerini ayarlar veya hareketleri, kabul eden bir düzende etkinleştirme bir derleme veya çalışma zamanı hatasına neden olmaz. Bunun yerine, Düzen sıkıştırma uygulanır ve görsel görünümünü özellikleri ve tanıma hareketi, sessizce başarısız olur.
 
-Facebook düğmesi için üç düzeni sınıflarında düzenini sıkıştırma etkinleştirilebilir:
+Facebook düğmesi için üç düzen sınıflarında Düzen sıkıştırma etkin hale getirilebilir:
 
 ```xaml
 <StackLayout CompressedLayout.IsHeadless="true">
@@ -94,27 +94,27 @@ Facebook düğmesi için üç düzeni sınıflarında düzenini sıkıştırma e
 </StackLayout>  
 ```
 
-Android, bu 14 görünümlerinin iç içe geçmiş görünümünü hiyerarşisinde sonuçlanır:
+Android'de bu 14 görünümleri iç içe görünüm hiyerarşisinde sonuçlanır:
 
-![](layout-compression-images/layout-compression.png "Facebook düğmesi düzenini sıkıştırma ile hiyerarşisini görüntüleme")
+![](layout-compression-images/layout-compression.png "Düzen sıkıştırma ile Facebook düğmesi hiyerarşisini görüntüle")
 
-17 görünümleri özgün iç içe geçmiş görünümünü hiyerarşi ile karşılaştırıldığında, bu görünüm %17 sayısını azalmasına temsil eder. Bu azaltma anlamsız görünebilir, ancak bir sayfanın tamamını üzerinden görünümü azaltma daha önemli olabilir.
+17 görünümler özgün iç içe görünüm hiyerarşisi karşılaştırıldığında, bu bir azalma %17 görüntüleme sayısını temsil eder. Hacmin anlamsız görünebilir, ancak bir sayfanın tamamını üzerinden görünümü azaltma daha önemli olabilir.
 
-### <a name="fast-renderers"></a>Hızlı Oluşturucu
+### <a name="fast-renderers"></a>Hızlı oluşturucular
 
-Hızlı Oluşturucu, sonuçta elde edilen hiyerarşisini yerel görüntüleme düzleştirme tarafından Enflasyon ve Android Xamarin.Forms denetimlere işleme maliyetlerini azaltabilirsiniz. Bu daha fazla performans daha az nesne oluşturarak hangi sırayla sonuçları en az karmaşık bir görsel ağaç ve daha az bellek kullanımını artırır. Hızlı Oluşturucu hakkında daha fazla bilgi için bkz: [hızlı Oluşturucu](~/xamarin-forms/internals/fast-renderers.md).
+Hızlı Oluşturucular, sonuçta elde edilen yerel görünüm hiyerarşisi düzleştirme tarafından Enflasyon ve Xamarin.Forms denetimleri android'de işleme maliyetlerini azaltın. Bu daha fazla performans hangi sırayla sonuçları daha az karmaşık bir görsel ağaç ve bellek kullanımını daha az daha az nesne oluşturarak artırır. Hızlı oluşturucular hakkında daha fazla bilgi için bkz: [hızlı oluşturucular](~/xamarin-forms/internals/fast-renderers.md).
 
-Facebook düğmesini için örnek uygulama düzenini sıkıştırma ve hızlı Oluşturucu birleştirme 8 görünümler iç içe geçmiş görünümünü hiyerarşisini üretir:
+Facebook düğmesi için örnek uygulamayı hızlı oluşturucular Düzen sıkıştırma birleştirmesiyle 8 görünümleri iç içe görünüm hiyerarşisi oluşturur:
 
-![](layout-compression-images/layout-compression-with-fast-renderers.png "Facebook düğmesi düzenini sıkıştırma ve hızlı Oluşturucu ile hiyerarşisini görüntüleme")
+![](layout-compression-images/layout-compression-with-fast-renderers.png "Düzen sıkıştırma ve hızlı oluşturucular ile Facebook düğmesi hiyerarşisini görüntüle")
 
-17 görünümleri özgün iç içe geçmiş görünümünü hiyerarşi ile karşılaştırıldığında, bu azaltma %52 temsil eder.
+17 görünümler özgün iç içe görünüm hiyerarşisi karşılaştırıldığında, bu bir indirim % 52'ye temsil eder.
 
-Örnek uygulamayı gerçek bir uygulamadan ayıklanan bir sayfa içerir. Düzenini sıkıştırma ve hızlı Oluşturucu sayfa Android 130 görünümleri iç içe geçmiş görünümünü hiyerarşisi oluşturur. Hızlı oluşturucu ve uygun düzeni sınıfları düzenini sıkıştırma etkinleştirme iç içe geçmiş görünüm hiyerarşisine 70 görünümlerine azaltma %46 azaltır.
+Örnek uygulama, gerçek bir uygulamadan ayıklanan bir sayfa içerir. Düzen sıkıştırma ve hızlı oluşturucular sayfa android'de 130 görünümleri iç içe görünüm hiyerarşisi oluşturur. Hızlı oluşturucular ve uygun Düzen sınıflarda Düzen sıkıştırma etkinleştirme iç içe görünüm hiyerarşisi 70 görünümlerine %46 azaltma azaltır.
 
 ## <a name="summary"></a>Özet
 
-Düzenini sıkıştırma belirtilen düzenleri sayfa işleme performansı girişimi görsel ağaç kaldırır. Bu teslim performans avantajı bir sayfa, kullanılan işletim sistemi sürümü ve uygulamanın çalıştığı aygıt karmaşıklığına bağlı olarak değişir. Ancak, büyük performans artışı eski cihazlarda görülür.
+Düzen sıkıştırma belirtilen düzenleri görsel ağaç'tan sayfa işleme performansını girişimi kaldırır. Bu teslim performans avantajı, bir sayfa, kullanılan işletim sistemi sürümü ve uygulamanın üzerinde çalıştığı aygıtın karmaşıklığına bağlı olarak değişir. Ancak, en büyük gelen performans artışı eski cihazlarda görülür.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

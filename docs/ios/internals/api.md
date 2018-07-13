@@ -1,24 +1,24 @@
 ---
-title: Xamarin.iOS API genel bakış
-description: Xamarin API başvuru belgeleri Xamarin.iOS API tasarım ve Xamarin geliştirme kullanılabilir bir derleme listesi açıklayan bir kılavuz bu belge bağlantılar.
+title: Xamarin.iOS API'sine genel bakış
+description: Xamarin.iOS API tasarımı ve Xamarin geliştirme kullanılabilir derlemeler listesi açıklayan kılavuz Xamarin API başvuru belgeleri bu belgeyi bağlar.
 ms.prod: xamarin
 ms.assetid: 4C1669A4-C12B-9C49-4A39-9046576D10DC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 81c30af4d7c95960344015ed6dcfd868deda06af
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c6e0e770e844bf186dfb936fb8136b20f2c81daf
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786141"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994916"
 ---
-# <a name="xamarinios-api-overview"></a>Xamarin.iOS API genel bakış
+# <a name="xamarinios-api-overview"></a>Xamarin.iOS API'sine genel bakış
 
-Xamarin.iOS kullanıma sunan bir C# / CIL CocoaTouch API için bağlama ve ECMA CIL API'ları ve diğer çeşitli .NET API'lerini de erişim sağlar.
+Xamarin.iOS sunan bir C# / CIL CocoaTouch API için bağlama ve ECMA CIL API'leri ve çeşitli diğer .NET API'lerini de erişim sağlar.
 
- **API Başvurusu**: API Başvurusu, şu adreste [ https://developer.xamarin.com/api/ ](https://developer.xamarin.com/api/), başlangıç [Xamarin.iOS Framework düğümü](https://developer.xamarin.com/api/root/ios-unified/) yerel iPhone API'leri veya Git için API bağlamaları için [ Taban sınıf kitaplıkları düğümü](https://developer.xamarin.com/api/root/classlib/) .NET API belgelerine için.
+ **API Başvurusu**: API Başvurusu kullanılabilir [ https://developer.xamarin.com/api/ ](https://docs.microsoft.com/dotnet/api/), başlangıç [Xamarin.iOS Framework düğüm](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8) gidin ve yerel iPhone API'leri için API bağlamaları için [ Temel sınıf kitaplıkları düğüm](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) .NET API ile ilgili belgeler için.
 
- **API tasarım**: CIL/Objective-C bağlama için API tasarım kapsanan [Xamarin.iOS API tasarım](~/ios/internals/api-design/index.md) belge ve onu nasıl biz Objective-C ve C API'lerini CocoaTouch bağlı ve bunlar için C# kullanıma açıklar / CIL world .
+ **API tasarımı**: API tasarımı için CIL/Objective-C bağlama alınmıştır [Xamarin.iOS API tasarımı](~/ios/internals/api-design/index.md) belge ve açıklar nasıl ki Objective-C ve C API'lerini CocoaTouch bağlı ve bu C# için sunulan / CIL world .
 
- **Derlemeleri**: denetleyin bizim [ilişkili derleme listesi](~/cross-platform/internals/available-assemblies.md) hangi API'lerden C# / CIL/ECMA çeken Xamarin.iOS kullanmak için erişilebilir ayrıntılı bir başvuru.
+ **Derlemeleri**: denetleyin bizim [bağımlı derlemelerin listesini](~/cross-platform/internals/available-assemblies.md) ayrıntılı başvuru hangi API C# / CIL / ', ECMA Xamarin.iOS kullanım için kullanılabilir.

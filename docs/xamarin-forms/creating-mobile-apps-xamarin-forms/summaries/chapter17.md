@@ -7,28 +7,28 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b71859d0848d7bf790b3cc4beddc67a5ea86d340
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 5f5b934b5f828bf6f5e8d4a0f0738c7db633aefb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935484"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995846"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Bölüm 17 özeti. Kılavuzda Uzmanlaşma
 
-[ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) Alt satırlar ve sütunlar hücre halinde düzenler güçlü Düzen mekanizmadır. Benzer HTML aksine `table` öğesi `Grid` yalnızca sunu yerine Düzen amaçlıdır.
+[ `Grid` ](xref:Xamarin.Forms.Grid) Alt satırlar ve sütunlar hücre halinde düzenler güçlü Düzen mekanizmadır. Benzer HTML aksine `table` öğesi `Grid` yalnızca sunu yerine Düzen amaçlıdır.
 
 ## <a name="the-basic-grid"></a>Temel kılavuz
 
-`Grid` öğesinden türetilen [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/), tanımlayan bir [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) özelliği, `Grid` devralır. Bu koleksiyonda XAML veya kod doldurabilirsiniz.
+`Grid` öğesinden türetilen [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1), tanımlayan bir [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) özelliği, `Grid` devralır. Bu koleksiyonda XAML veya kod doldurabilirsiniz.
 
 ### <a name="the-grid-in-xaml"></a>XAML kılavuz
 
-Tanımı bir `Grid` XAML içinde genellikle doldurma ile başlar [ `RowDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowDefinitions/) ve [ `ColumnDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnDefinitions/) koleksiyonları `Grid` ile [ `RowDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/) ve [ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/) nesneleri. Bu, satır sayısı ve sütunlarını kurmak nasıl `Grid`ve özellikleri.
+Tanımı bir `Grid` XAML içinde genellikle doldurma ile başlar [ `RowDefinitions` ](xref:Xamarin.Forms.Grid.RowDefinitions) ve [ `ColumnDefinitions` ](xref:Xamarin.Forms.Grid.ColumnDefinitions) koleksiyonları `Grid` ile [ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition) ve [ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition) nesneleri. Bu, satır sayısı ve sütunlarını kurmak nasıl `Grid`ve özellikleri.
 
-`RowDefinition` sahip bir [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.RowDefinition.Height/) özelliği ve `ColumnDefinition` sahip bir [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ColumnDefinition.Width/) özelliği, her iki tür [ `GridLength` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLength/), bir yapı.
+`RowDefinition` sahip bir [ `Height` ](xref:Xamarin.Forms.RowDefinition.Height) özelliği ve `ColumnDefinition` sahip bir [ `Width` ](xref:Xamarin.Forms.ColumnDefinition.Width) özelliği, her iki tür [ `GridLength` ](xref:Xamarin.Forms.GridLength), bir yapı.
 
-XAML içinde [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/) basit metin dizelerine dönüştürür `GridLength` değerleri. Planda, [ `GridLength` Oluşturucusu](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/) oluşturur `GridLength` değerine göre bir sayı ve bir değer türü [ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/), üç üyesi olan bir sabit listesi:
+XAML içinde [ `GridLengthTypeConverter` ](xref:Xamarin.Forms.GridLengthTypeConverter) basit metin dizelerine dönüştürür `GridLength` değerleri. Planda, [ `GridLength` Oluşturucusu](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType)) oluşturur `GridLength` değerine göre bir sayı ve bir değer türü [ `GridUnitType` ](xref:Xamarin.Forms.GridUnitType), üç üyesi olan bir sabit listesi:
 
 - [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; CİHAZDAN bağımsız birimler (XAML içinde bir sayı) genişliği veya yüksekliği belirtilen
 - [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; Genişlik ve yükseklik autosized hücre içeriğini (XAML içinde "Auto") dayalı olan
@@ -36,17 +36,17 @@ XAML içinde [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/typ
 
 Her alt `Grid` satır ve sütun (açıkça veya dolaylı olarak) atanmış olmalısınız. Yayılan satır ve sütun yayılma isteğe bağlıdır. Bu tüm ekli bağlanabilir özellikler kullanılarak belirtilir &mdash; tarafından tanımlanan özellikler `Grid` alt ayarlanmış ancak `Grid`. `Grid` dört adet statik ekli bağlanabilir özellikler tanımlar:
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; sıfır tabanlı satır; Varsayılan 0'dır
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; sıfır tabanlı sütunu; Varsayılan 0'dır
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; sayı satırlarını alt yayılır; Varsayılan 1'dir
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; sayı sütunlarının alt yayılır; Varsayılan 1'dir
+- [`RowProperty`](xref:Xamarin.Forms.Grid.RowProperty) &mdash; sıfır tabanlı satır; Varsayılan 0'dır
+- [`ColumnProperty`](xref:Xamarin.Forms.Grid.ColumnProperty) &mdash; sıfır tabanlı sütunu; Varsayılan 0'dır
+- [`RowSpanProperty`](xref:Xamarin.Forms.Grid.RowSpanProperty) &mdash; sayı satırlarını alt yayılır; Varsayılan 1'dir
+- [`ColumnSpanProperty`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) &mdash; sayı sütunlarının alt yayılır; Varsayılan 1'dir
 
 Kod içinde bir program ayarlamak ve bu değerleri almak için sekiz statik yöntemleri kullanın:
 
-- [`Grid.SetRow`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetRow/p/Xamarin.Forms.BindableObject/System.Int32/) ve [`Grid.GetRow`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetRow/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetColumn`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetColumn/p/Xamarin.Forms.BindableObject/System.Int32/) ve [`Grid.GetColumn`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetColumn/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetRowSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetRowSpan/p/Xamarin.Forms.BindableObject/System.Int32/) ve [`Grid.GetRowSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetRowSpan/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetColumnSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetColumnSpan/p/Xamarin.Forms.BindableObject/System.Int32/) ve [`Grid.GetColumnSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetColumnSpan/p/Xamarin.Forms.BindableObject/)
+- [`Grid.SetRow`](xref:Xamarin.Forms.Grid.SetRow(Xamarin.Forms.BindableObject,System.Int32)) ve [`Grid.GetRow`](xref:Xamarin.Forms.Grid.GetRow(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumn`](xref:Xamarin.Forms.Grid.SetColumn(Xamarin.Forms.BindableObject,System.Int32)) ve [`Grid.GetColumn`](xref:Xamarin.Forms.Grid.GetColumn(Xamarin.Forms.BindableObject))
+- [`Grid.SetRowSpan`](xref:Xamarin.Forms.Grid.SetRowSpan(Xamarin.Forms.BindableObject,System.Int32)) ve [`Grid.GetRowSpan`](xref:Xamarin.Forms.Grid.GetRowSpan(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumnSpan`](xref:Xamarin.Forms.Grid.SetColumnSpan(Xamarin.Forms.BindableObject,System.Int32)) ve [`Grid.GetColumnSpan`](xref:Xamarin.Forms.Grid.GetColumnSpan(Xamarin.Forms.BindableObject))
 
 XAML içinde şu öznitelikler, bu değerleri ayarlamak için kullanın:
 
@@ -57,10 +57,10 @@ XAML içinde şu öznitelikler, bu değerleri ayarlamak için kullanın:
 
 [ **SimpleGridDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo) oluşturma ve başlatma örneği gösterir bir `Grid` XAML içinde.
 
-`Grid` Devralan [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) özelliğinden `Layout` ve satırları ve sütunları arasındaki boşluğu sağlayan iki ek özelliklerini tanımlar:
+`Grid` Devralan [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) özelliğinden `Layout` ve satırları ve sütunları arasındaki boşluğu sağlayan iki ek özelliklerini tanımlar:
 
-- [`RowSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowSpacing/) 6'ın varsayılan bir değeri yok
-- [`ColumnSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnSpacing/) 6'ın varsayılan bir değeri yok
+- [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 6'ın varsayılan bir değeri yok
+- [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 6'ın varsayılan bir değeri yok
 
 `RowDefinitions` Ve `ColumnDefinitions` koleksiyonları kati şekilde gerekli değildir. Çalıştırıyorsa, `Grid` satırları ve sütunları oluşturur `Grid` alt öğeleri ve tüm bunları varsayılan verir `GridLength` , "\*" (star).
 
