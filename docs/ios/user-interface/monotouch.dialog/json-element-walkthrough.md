@@ -1,41 +1,45 @@
 ---
-title: Xamarin.iOS içinde bir kullanıcı arabirimi oluşturmak için JSON kullanma
-description: MonoTouch.Dialog (yüksekliğindeki D) JSON verilerini aracılığıyla dinamik kullanıcı Arabirimi oluşturma için destek içerir. Bu öğreticide, biz bir JSONElement ya da bir uygulamayla birlikte gelen veya uzak bir URL'den yüklenen JSON öğesinden bir kullanıcı arabirimi oluşturmak için nasıl kullanılacağını size rehberlik.
+title: Xamarin.iOS içinde bir kullanıcı arabirimi oluşturmak için JSON'ı kullanma
+description: MonoTouch.Dialog (Colorado D) JSON verileri ile dinamik kullanıcı Arabirimi oluşturma için destek içerir. Bu öğreticide, uzak bir URL'den yüklü veya bir uygulamaya dahil edilen JSON bir kullanıcı arabirimi oluşturmak için bir JSONElement kullanmayı gösterilecektir.
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f9ba2cce1650260aa889e8282c091012ef8bbddc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 94cef78bb7eedc03192071f17af765ebb702e260
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790659"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038501"
 ---
-# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Xamarin.iOS içinde bir kullanıcı arabirimi oluşturmak için JSON kullanma
+# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Xamarin.iOS içinde bir kullanıcı arabirimi oluşturmak için JSON'ı kullanma
 
-_MonoTouch.Dialog (yüksekliğindeki D) JSON verilerini aracılığıyla dinamik kullanıcı Arabirimi oluşturma için destek içerir. Bu öğreticide, biz bir JSONElement ya da bir uygulamayla birlikte gelen veya uzak bir URL'den yüklenen JSON öğesinden bir kullanıcı arabirimi oluşturmak için nasıl kullanılacağını size rehberlik._
+_MonoTouch.Dialog (Colorado D) JSON verileri ile dinamik kullanıcı Arabirimi oluşturma için destek içerir. Bu öğreticide, uzak bir URL'den yüklü veya bir uygulamaya dahil edilen JSON bir kullanıcı arabirimi oluşturmak için bir JSONElement kullanmayı gösterilecektir._
 
-YÜKSEKLİĞİNDEKİ D JSON içinde bildirilen oluşturma kullanıcı arabirimini destekler. JSON, yüksekliğindeki kullanarak öğeleri bildirilen olduğunda D ilişkilendirilen öğeleri sizin için otomatik olarak oluşturur. JSON bir ayrıştırılmış bir yerel dosyadan ya da yüklenebilir `JsonObject` örneği veya uzak bir Url.
+MT'NİN D JSON'da bildirilen oluşturma kullanıcı arabirimlerini destekler. JSON, MT'nin kullanarak bildirilen öğeler olduğunda D ilişkili öğeleri sizin için otomatik olarak oluşturur. JSON ya da bir ayrıştırılmış bir yerel dosyadan yüklenebilir `JsonObject` örneği veya uzak bir Url.
 
-YÜKSEKLİĞİNDEKİ D JSON kullanırken öğeleri API'SİNDE kullanılabilen özellikleri tam aralığını destekler. Örneğin, aşağıdaki ekran görüntüsünde uygulamada tamamen JSON kullanarak bildirilmiş:
+MT'NİN D JSON kullanırken öğeleri API'SİNDE kullanılabilir olan özelliklerin tam aralığını destekler. Örneğin, aşağıdaki ekran görüntüsünde uygulama tamamen JSON kullanarak bildirilmiştir:
 
-[![](json-element-walkthrough-images/01-load-from-file.png "Örneğin, JSON kullanarak tamamen bu ekran uygulamada bildirilmiş") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "Örneğin bu ekran uygulamada tamamen kullanarak bildirildi JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[![](json-element-walkthrough-images/01-load-from-file.png "Örneğin, bu ekran görüntüsünde uygulama tamamen JSON kullanarak bildirilen") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "Örneğin bu ekran görüntüsünde uygulama tamamen kullanarak bildirildi JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
-Şimdi örnekten yeniden ziyaret [öğeleri API izlenecek](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) kullanarak bir görev ayrıntı ekran eklemek nasıl gösteren öğretici.
+Şimdi örnekten yeniden ziyaret [öğeleri API Kılavuzu](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) JSON'ı kullanarak bir görev ayrıntı ekranı ekleme gösteren öğretici.
+
+## <a name="setting-up-mtd"></a>MT'nin ayarlama D
+
+MT'NİN D Xamarin.iOS ile dağıtılır. Bunu kullanmak için sağ **başvuruları** bir Xamarin.iOS düğümünün Mac için Visual Studio 2017 veya Visual Studio'da proje ve bir başvuru ekleyin **MonoTouch.Dialog 1** derleme. Ardından, ekleme `using MonoTouch.Dialog` kaynağınızın tablolarda kod gerektiğinde.
 
 ## <a name="json-walkthrough"></a>JSON gözden geçirme
 
-Bu kılavuzda örneğin oluşturulacak görevlerin olanak sağlar. Bir görev ilk ekranda seçildiğinde, ayrıntı ekranı gösterildiği gibi sunulur:
+Bu izlenecek yol için örnek oluşturulacak görevleri sağlar. Bir görev ilk ekranda seçildiğinde, gösterildiği gibi bir ayrıntı ekranı sunulur:
 
  [![](json-element-walkthrough-images/03-task-list.png "Bir görev ilk ekranda seçildiğinde, gösterildiği gibi bir ayrıntı ekranı sunulur")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
-## <a name="creating-the-json"></a>JSON oluşturma
+## <a name="creating-the-json"></a>JSON'ı oluşturma
 
-Bu örnekte, biz JSON adlı proje dosyasında yüklemek `task.json`. YÜKSEKLİĞİNDEKİ D JSON öğeleri API yansıtan bir sözdizimi için uygun olması için bekler. Koddan öğeleri API'yi kullanarak gibi JSON kullanırken, biz bölümleri bildirme ve bu bölümler içinde öğeleri ekleriz. Bölümler ve JSON öğelerinde bildirmek için dizeleri "Bölüm" ve "öğeleri" sırasıyla anahtarlar olarak kullanırız. Her öğe için ilişkili öğe türü kullanılarak ayarlanan `type` anahtarı. Her bir öğe özelliği ile özellik adı anahtar olarak ayarlanır.
+Bu örnekte, JSON adlı proje dosyasından yüklediğimiz `task.json`. MT'NİN D JSON öğeler API'sini yansıtan bir sözdizimine uygun olması için bekler. Koddan öğeler API'sini kullanarak, olduğu gibi JSON kullanırken, şu bölümler bildirme ve bu bölümler içinde öğeleri ekleriz. Bölümleri ve JSON öğelerini bildirmek için dizeleri "bölümler" ve "öğeleri" sırasıyla anahtarlar olarak kullanıyoruz. Her öğe için ilgili öğe türü kullanılarak ayarlanan `type` anahtarı. Her bir öğe özelliği özellik adı ile anahtar olarak ayarlanır.
 
-Örneğin, aşağıdaki JSON öğeler için görev ayrıntılarını ve bölümlerde açıklanmaktadır:
+Örneğin, aşağıdaki JSON, bölümler ve görev ayrıntılarını için öğeleri açıklanmaktadır:
 
 ```csharp
 {
@@ -60,20 +64,17 @@ Bu örnekte, biz JSON adlı proje dosyasında yüklemek `task.json`. YÜKSEKLİ�
   }
 ```
 
-Bildirim yukarıdaki JSON her öğe için bir kimlik içerir. Çalışma zamanında başvurmak için bir kimliği herhangi bir öğe içerebilir. Bu kod JSON yükleme zaman gösteriyoruz bir dakika içinde nasıl kullanıldığını göreceğiz.
+Bildirim yukarıdaki JSON, her öğe için bir kimlik içerir. Herhangi bir öğeyi çalışma zamanında başvurmak için bir kimlik içerebilir. Bu biraz zaman kod JSON'da yükleme göstereceğiz nasıl kullanıldığına göreceğiz.
 
- <a name="Loading_the_JSON_in_Code" />
+## <a name="loading-the-json-in-code"></a>JSON kod yükleniyor
 
-
-## <a name="loading-the-json-in-code"></a>Kodda JSON yükleniyor
-
-JSON tanımlandıktan sonra yüksekliğindeki yüklemek ihtiyacımız D kullanarak `JsonElement` sınıfı. Yukarıda oluşturduğumuz JSON dosyasıyla varsayılarak olduğundan proje adı sample.json ile eklenir ve yükleme içeriğinin bir yapı eylemi verilen `JsonElement` aşağıdaki kod satırını çağırma olarak kadar basit hale getirir:
+JSON tanımlandıktan sonra MT'nin yüklemek ihtiyacımız D kullanarak `JsonElement` sınıfı. Yukarıda oluşturduğumuz JSON dosyasıyla varsayılarak olduğundan adı sample.json projeyle eklenir ve yükleme içeriği, bir derleme eylemi verilen `JsonElement` olarak aşağıdaki kod satırını çağırmak kadar kolaydır:
 
 ```csharp
 var taskElement = JsonElement.FromFile ("task.json");
 ```
 
-Bu görev oluşturulan isteğe bağlı olarak her zaman ekliyoruz olduğundan, biz önceki öğeleri API örnekten gibi tıklanan düğme değiştirebilirsiniz:
+Bu her zaman isteğe bağlı bir görev oluşturulur ekliyoruz olduğundan, biz önceki öğeler API'sini örnekten gibi tıklanan düğme değiştirebilirsiniz:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
@@ -88,12 +89,9 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
- <a name="Accessing_Elements_at_Runtime" />
-
-
 ## <a name="accessing-elements-at-runtime"></a>Çalışma zamanında öğelere erişme
 
-Biz JSON dosyasında bildirirken bir kimliği hem öğelerine eklediğimiz geri çağırma. Kodda özellikleri değiştirmek için çalışma zamanında her bir öğesine erişmek için şu kimliği özelliğini kullanabilirsiniz. Örneğin, aşağıdaki kod görev nesneden değerleri ayarlamak için giriş ve tarih öğeleri başvuruyor:
+Biz JSON dosyasında bildirildiğinde bir kimliği için her iki öğeleri ekledik geri çağırma. Kod özelliklerini değiştirmek için çalışma zamanında her öğeye erişmek için kimlik özelliği kullanabiliriz. Örneğin, aşağıdaki kod, görev nesnesinden değerleri ayarlamak için giriş ve tarih öğeleri başvuruyor:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
@@ -122,12 +120,9 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
- <a name="Loading_JSON_from_a_Url" />
+## <a name="loading-json-from-a-url"></a>Bir URL'den JSON yükleniyor
 
-
-## <a name="loading-json-from-a-url"></a>JSON bir URL'den yükleniyor
-
-YÜKSEKLİĞİNDEKİ D de destekler URL'si basitçe oluşturucusuna geçirerek JSON bir dış Url dinamik olarak yükleme `JsonElement`. YÜKSEKLİĞİNDEKİ D ekranları arasında gezinmek gibi JSON'isteğe bağlı olarak bildirilen hiyerarşi genişletilir. Örneğin, aşağıdaki gibi bir JSON dosyası yerel web sunucusunun kök dizininde bulunan göz önünde bulundurun:
+MT'NİN D de destekler dinamik olarak bir dış Url yükleme URL'si basitçe oluşturucusuna geçirerek JSON `JsonElement`. MT'NİN D, ekranlar arasında gezinirken JSON'da isteğe bağlı olarak bildirilen hiyerarşi genişletilir. Örneğin, aşağıdaki gibi bir JSON dosyası yerel web sunucusunun kök dizininde bulunan göz önünde bulundurun:
 
 ```csharp
 {
@@ -153,7 +148,7 @@ YÜKSEKLİĞİNDEKİ D de destekler URL'si basitçe oluşturucusuna geçirerek J
 }
 ```
 
-Biz kullanarak yükleyebilirsiniz `JsonElement` aşağıdaki kodu olduğu gibi:
+Biz kullanarak yükleyebilirsiniz `JsonElement` şu kod gibi:
 
 ```csharp
 _rootElement = new RootElement ("Json Example"){
@@ -163,26 +158,22 @@ _rootElement = new RootElement ("Json Example"){
 };
 ```
 
-Çalışma zamanında dosyası alınır ve yüksekliğindeki tarafından ayrıştırılan Kullanıcı, aşağıdaki ekran görüntüsünde gösterildiği gibi ikinci görünümüne gittiğinde D:
+Çalışma zamanında dosyayı alınır ve MT'nin tarafından ayrıştırılan Kullanıcı, aşağıdaki ekran görüntüsünde gösterildiği gibi ikinci görünümüne gittiğinde D:
 
- [![](json-element-walkthrough-images/04-json-web-example.png "Dosya alınır ve yüksekliğindeki tarafından ayrıştırılan Kullanıcı ikinci görünümüne gittiğinde D")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
-
- <a name="Summary" />
-
+ [![](json-element-walkthrough-images/04-json-web-example.png "Dosya alınır ve MT'nin tarafından ayrıştırılan Kullanıcı ikinci görünümüne gittiğinde D")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
 ## <a name="summary"></a>Özet
 
-Bu makalede gösterilen kullanarak bir oluşturma yüksekliğindeki arabirimi JSON D. Bu uygulama ile bir uzak URL'den yanı sıra bir dosyasına dahil JSON yüklemek nasıl oluşturulacağını gösterir. Ayrıca çalışma zamanında JSON içinde açıklanan öğeleri erişmek nasıl oluşturulacağını gösterir.
-
+Bu makalede gösterilen bir kullanarak nasıl oluşturabileceğiniz MT'nin arabirimi JSON D. Bu, uygulama ile uzak bir URL'den yanı sıra bir dosyada bulunan JSON yük nasıl oluşturulacağını gösterir. Çalışma zamanında JSON'da açıklanan öğelere erişmek nasıl oluşturulacağını gösterir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MTDJsonDemo (örnek)](https://developer.xamarin.com/samples/MTDJsonDemo/)
-- [Ekran kaydı - Miguel de Icaza iOS oturum açma ekranı MonoTouch.Dialog ile oluşturur](http://youtu.be/3butqB1EG0c)
-- [Ekran kaydı - iOS kullanıcı arabirimleri MonoTouch.Dialog ile kolayca oluşturun](http://youtu.be/j7OC5r8ZkYg)
+- [Yayını - bir iOS oturum açma ekranı Miguel de Icaza, MonoTouch.Dialog ile oluşturur.](http://youtu.be/3butqB1EG0c)
+- [Yayını - iOS kullanıcı arabirimleri ile MonoTouch.Dialog kolayca oluşturun](http://youtu.be/j7OC5r8ZkYg)
 - [MonoTouch.Dialog giriş](~/ios/user-interface/monotouch.dialog/index.md)
 - [Öğeleri API gözden geçirme](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
-- [Yansıma API gözden geçirme](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
+- [Yansıma API'si gözden geçirme](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Github'da MonoTouch iletişim](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [TweetStation uygulama](https://github.com/migueldeicaza/TweetStation)
 - [UITableViewController sınıf başvurusu](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)

@@ -1,56 +1,56 @@
 ---
-title: Temel bir RecyclerView örneği
+title: Basit bir RecyclerView örneği
+description: RecyclerView kullanmayı gösteren bir örnek uygulama.
 ms.prod: xamarin
 ms.assetid: A50520D2-1214-40E1-9B27-B0891FE11584
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: d5be838dcb5530ece76c3701d8fce10403622e8d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/13/2018
+ms.openlocfilehash: abc21c3830126346ffb877639657c973da474812
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30770618"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038397"
 ---
-# <a name="a-basic-recyclerview-example"></a>Temel bir RecyclerView örneği
+# <a name="a-basic-recyclerview-example"></a>Basit bir RecyclerView örneği
 
+Anlamak için nasıl `RecyclerView` tipik bir uygulaması çalışır, bu konuda ele [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) örnek uygulama, kullanan bir basit kod örnek `RecyclerView` fotoğraf büyük koleksiyonunu görüntülemek için: 
 
-Anlamak için nasıl `RecyclerView` bir genel uygulama çalışır, bu konuda ele [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) örnek uygulaması, kullanan basit bir kod örneğidir `RecyclerView` fotoğraf büyük koleksiyonu görüntülemek için: 
+[![Fotoğrafları görüntülemek için CardViews kullanan RecyclerView uygulaması iki ekran görüntüleri](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
 
-[![Fotoğraf görüntülenecek CardViews kullanan RecyclerView uygulamasının iki ekran görüntüleri](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
-
-**RecyclerViewer** kullanan [kart görünümü](~/android/user-interface/controls/card-view.md) her fotoğraf öğesini uygulamak için `RecyclerView` düzeni. Nedeniyle `RecyclerView`'s performans avantajı, bu örnek uygulama hızla kaydırın ve belirgin gecikmeler olmadan büyük bir fotoğraf toplulukta mümkün.
+**RecyclerViewer** kullanan [CardView](~/android/user-interface/controls/card-view.md) her fotoğrafı öğesini uygulamak için `RecyclerView` düzeni. Nedeniyle `RecyclerView`ait performans avantajları, bu örnek uygulamayı hızla ve belirgin gecikmeler olmadan fotoğrafların büyük bir koleksiyonda gezinebilirsiniz.
 
 
 ### <a name="an-example-data-source"></a>Bir örnek veri kaynağı
 
-Bu örnek uygulamasında, bir "fotoğraf albümü" veri kaynağı (tarafından temsil edilen `PhotoAlbum` sınıfı) sağlayan `RecyclerView` öğesi içeriğe sahip.
-`PhotoAlbum` açıklamalı alt fotoğraf koleksiyonudur; Bu örneği, 32 fotoğraf hazır koleksiyonu alın:
+Bu örnek uygulamasında, bir "fotoğraf albümü" veri kaynağı (tarafından temsil edilen `PhotoAlbum` sınıfı) sağladığı `RecyclerView` öğesi içeriğe sahip.
+`PhotoAlbum` açıklamalı alt yazılar sahip fotoğraf koleksiyonudur; Bunu başlattığınızda, kullanıma hazır bir koleksiyon 32 fotoğrafların alın:
 
 ```csharp
 PhotoAlbum mPhotoAlbum = new PhotoAlbum ();
 ```
 
-Her fotoğraf örnek `PhotoAlbum` kendi görüntü kaynak kimliği okumasına olanak tanıyan özellikler sunar `PhotoID`ve kendi başlık dizesi `Caption`. Fotoğraf koleksiyonunu her fotoğraf bir dizin oluşturucu tarafından erişilebilecek şekilde düzenlenmiştir. Örneğin, aşağıdaki kod satırlarını görüntü kaynak kimliği ile onuncu fotoğraf koleksiyondaki için resim yazısı erişebilirsiniz:
+Her fotoğraf örneğinde `PhotoAlbum` görüntü kaynak Kimliğini okumak tanıyan özellikler sunan `PhotoID`ve kendi açıklamalı alt yazı dize `Caption`. Fotoğraf koleksiyonunu her resim bir dizin oluşturucu tarafından erişilebilir olacak şekilde düzenlenir. Örneğin, aşağıdaki kod satırlarını koleksiyondaki onuncu fotoğraf için resim yazısı ve görüntü kaynak kimliği erişin:
 
 ```csharp
 int imageId = mPhotoAlbum[9].ImageId;
 string caption = mPhotoAlbum[9].Caption;
 ```
 
-`PhotoAlbum` Ayrıca sağlayan bir `RandomSwap` koleksiyondaki ilk fotoğraf başka bir yerde koleksiyonundaki rastgele seçilmiş fotoğraf ile değiştirilecek çağırabilirsiniz yöntemi:
+`PhotoAlbum` Ayrıca sağlar bir `RandomSwap` koleksiyondaki ilk fotoğrafı koleksiyonu içindeki başka bir yerde rasgele seçilen fotoğraf ile takas için çağırabileceğiniz yöntemi:
 
 ```csharp
 mPhotoAlbum.RandomSwap ();
 ```
 
-Çünkü uygulama ayrıntılarını `PhotoAlbum` anlamak için ilgili olmayan `RecyclerView`, `PhotoAlbum` kaynak kodu değil sunulur burada. Kaynak koduna `PhotoAlbum` şu adresten edinilebilir [PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs) içinde [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) örnek uygulama.
+Çünkü uygulama ayrıntılarını `PhotoAlbum` anlamak için ilgili olmayan `RecyclerView`, `PhotoAlbum` kaynak kodu değil sunulur burada. Kaynak koduna `PhotoAlbum` kullanılabilir [PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs) içinde [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) örnek uygulaması.
 
 
 ### <a name="layout-and-initialization"></a>Düzen ve başlatma
 
-Düzen dosyasını **Main.axml**, bir tek oluşur `RecyclerView` içinde bir `LinearLayout`:
+Düzen dosyası **Main.axml**, bir tek oluşur `RecyclerView` içinde bir `LinearLayout`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -66,7 +66,7 @@ Düzen dosyasını **Main.axml**, bir tek oluşur `RecyclerView` içinde bir `Li
 </LinearLayout>
 ```
 
-Tam adı kullanmalıdır Not **android.support.v7.widget.RecyclerView** çünkü `RecyclerView` destek Kitaplığı'nda paketlenmiştir. `OnCreate` Yöntemi `MainActivity` bu düzeni başlatır, bağdaştırıcı oluşturur ve veri kaynağındaki hazırlar:
+Tam adı kullanmanız gerekir Not **android.support.v7.widget.RecyclerView** çünkü `RecyclerView` destek kitaplığa paketlenmiştir. `OnCreate` Yöntemi `MainActivity` bu düzen başlatır, bağdaştırıcı başlatır ve temel alınan veri kaynağı hazırlar:
 
 ```csharp
 public class MainActivity : Activity
@@ -100,36 +100,36 @@ Bu kod şunları yapar:
 
 1. Başlatır `PhotoAlbum` veri kaynağı.
 
-2. Fotoğraf albümü veri kaynağı bağdaştırıcısı oluşturucuya geçirir `PhotoAlbumAdapter` (tanımlanmış bu kılavuzda). 
-   Veri kaynağı bağdaştırıcısı oluşturucusu için parametre olarak geçirmek için en iyi yöntem kabul edilir unutmayın. 
+2. Oluşturucuya bağdaştırıcısının, fotoğraf albümü veri kaynağına geçirir `PhotoAlbumAdapter` (Bu kılavuzun devamında tanımlanmış). 
+   Bu veri kaynağı bağdaştırıcısı oluşturucusuna bir parametre olarak geçirmek için en iyi uygulama varsayılır unutmayın. 
 
 3. Alır `RecyclerView` düzeninden.
 
-4. Bağdaştırıcı takılan `RecyclerView` çağırarak örneği `RecyclerView` `SetAdapter` yukarıda gösterildiği gibi yöntemi.
+4. Bağdaştırıcı takılan `RecyclerView` çağırarak örneği `RecyclerView` `SetAdapter` yukarıda da gösterildiği gibi yöntemi.
 
 ### <a name="layout-manager"></a>Düzen Yöneticisi
 
-Her öğe `RecyclerView` oluşan bir `CardView` bir fotoğraf görüntü ve fotoğraf resim yazısını içeren (ayrıntıları ele alınmıştır [görünüm sahibi](#view-holder) bölümüne bakın). Önceden tanımlanmış `LinearLayoutManager` her düzenlemek için kullanılan `CardView` dikey bir kaydırma düzenleme içinde:
+Her öğe `RecyclerView` oluşan bir `CardView` bir fotoğraf resmini ve fotoğraf yazısı içeren (ayrıntıları içinde ele alınmıştır [görünümü sahibi](#view-holder) bölümüne bakın). Önceden tanımlanmış `LinearLayoutManager` her düzenlemek için kullanılan `CardView` içinde dikey bir kaydırma düzenleme:
 
 ```csharp
 mLayoutManager = new LinearLayoutManager (this);
 mRecyclerView.SetLayoutManager (mLayoutManager);
 ```
 
-Bu kod ana etkinliğin içinde bulunduğu `OnCreate` yöntemi. Düzen Yöneticisi oluşturucuya gerektiren bir *bağlamı*, böylece `MainActivity` kullanılarak gönderilir `this` yukarıda görülen.
+Bu kod ana etkinlik içinde bulunan `OnCreate` yöntemi. Düzen Yöneticisi oluşturucuya gerektiren bir *bağlam*, bu nedenle `MainActivity` kullanarak geçirilir `this` üstündeki görülenle.
 
-Yerine predefind `LinearLayoutManager`, iki görüntüleyen bir özel düzen Yöneticisi'nde takın `CardView` öğeleri fotoğraf toplulukta gezinmesine page-turning animasyon efekti uygulama yana,. Bu kılavuzda daha sonra farklı düzen Yöneticisi'nde takas tarafından düzenini değiştirmek nasıl bir örnek görürsünüz.
+Yerine predefind `LinearLayoutManager`, iki görüntüleyen bir özel düzen Manager'da takılabilir `CardView` -fotoğraf koleksiyonunu geçirmek için page-turning animasyon efekti uygulama yan, öğeleri. Bu kılavuzda daha sonra farklı bir düzen Yöneticisi'nde değiştirerek düzenini değiştirmeye ilişkin bir örnek görürsünüz.
 
 <a name="view-holder" />
 
 ### <a name="view-holder"></a>Görünüm sahibi
 
-Görünüm tutucu sınıfı adlı `PhotoViewHolder`. Her `PhotoViewHolder` örneğini tutan başvurular `ImageView` ve `TextView` içinde düzenlendiği ilgili satır öğenin bir `CardView` burada tasarımını olarak:
+Görünüm sahibi sınıfı olarak adlandırılan `PhotoViewHolder`. Her `PhotoViewHolder` örneği başvuru tutan `ImageView` ve `TextView` , düzenlendiğini ilişkili satır öğenin bir `CardView` burada tasarımını gibi:
 
-[![Bir ImageView ve kutusu TextView içeren kart görünümü diyagramı](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
+[![Bir ImageView ve TextView içeren CardView diyagramı](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
 
-`PhotoViewHolder` türetilen `RecyclerView.ViewHolder` ve başvurularını depolamak için Özellikler içeren `ImageView` ve `TextView` yukarıdaki düzende gösterilir.
-`PhotoViewHolder` iki özellikleri ve bir oluşturucu oluşur:
+`PhotoViewHolder` öğesinden türetilen `RecyclerView.ViewHolder` ve başvuruları depolamak için özellikleri içeren `ImageView` ve `TextView` yukarıdaki düzende gösterilir.
+`PhotoViewHolder` iki özellik ve bir oluşturucu oluşur:
 
 ```csharp
 public class PhotoViewHolder : RecyclerView.ViewHolder
@@ -145,16 +145,16 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
     }
 }
 ```
-Bu kod örneğinde, `PhotoViewHolder` Oluşturucusu üst öğesi görünümü başvuru geçirilen ( `CardView`), `PhotoViewHolder` sarmalar. Üst her zaman temel oluşturucuyu öğesi görünüme iletmek unutmayın. `PhotoViewHolder` Oluşturucu çağrıları `FindViewById` her biri kendi alt görünüm başvuruları bulmak için üst öğe görünümde `ImageView` ve `TextView`, sonuçları şurada depolayarak `Image` ve `Caption` özellikleri, sırasıyla. Bu güncelleştirmeleri bağdaştırıcısı görünüm başvuruları daha sonra bu özellikleri alır. `CardView`ait alt görünümleri yeni verilerle.
+Bu kod örneğinde `PhotoViewHolder` Oluşturucusu üst öğesi görünüme bir başvuru geçirilen ( `CardView`), `PhotoViewHolder` sarmalar. Üst her zaman temel oluşturucu öğesi görünüme iletmek unutmayın. `PhotoViewHolder` Oluşturucu çağrıları `FindViewById` her biri kendi alt görünüm başvurularını bulmak için üst öğe görünümünde `ImageView` ve `TextView`, sonuçları şurada depolayarak `Image` ve `Caption` özellikleri, sırasıyla. Bu güncelleştirmeleri bağdaştırıcısı görünümü başvuruları daha sonra bu özellikleri alır. `CardView`ait alt görünümleri yeni verilerle.
 
 Hakkında daha fazla bilgi için `RecyclerView.ViewHolder`, bkz: [RecyclerView.ViewHolder sınıf başvurusu](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
 
 
 ### <a name="adapter"></a>Bağdaştırıcı
 
-Her bağdaştırıcı yükler `RecyclerView` belirli bir fotoğraf için veri satırı. Belirli bir fotoğraf satır konumunda için *P*, örneğin, bağdaştırıcı konumunda ilişkili verileri bulur *P* kopyalar ve veri kaynağı içinde satır bu veri öğesi konumunda *P* içinde `RecyclerView` koleksiyonu. Başvurularını aramak için Görünüm sahibi bağdaştırıcısı kullanır `ImageView` ve `TextView` tekrar tekrar çağırmak yok şekilde bu konumda `FindViewById` olanlar görünümleri için kullanıcı fotoğrafı koleksiyonu ile birlikte kayar ve görünümleri yeniden kullanır.
+Her bağdaştırıcı yükler `RecyclerView` satır ile belirli bir fotoğraf verileri. Belirli bir fotoğraf satır konumunda için *P*, örneğin, bağdaştırıcı konumunda ilişkili verileri bulur *P* kopyalar ve veri kaynağı içinde bu verileri satır öğesi konumunda *P* içinde `RecyclerView` koleksiyonu. Bağdaştırıcı için başvurular aramak için görünümü sahibi kullanan `ImageView` ve `TextView` tekrar tekrar çağırmak zorunda değildir, bu nedenle, ilgili konumdaki `FindViewById` bu görünümleri için kullanıcı kaydırır fotoğraf toplulukta ve görünümleri yeniden kullanır.
 
-İçinde **RecyclerViewer**, bir bağdaştırıcı sınıfı türetilir `RecyclerView.Adapter` oluşturmak için `PhotoAlbumAdapter`:
+İçinde **RecyclerViewer**, bağdaştırıcı sınıfı türetilen `RecyclerView.Adapter` oluşturmak için `PhotoAlbumAdapter`:
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -169,22 +169,22 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 }
 ```
 
-`mPhotoAlbum` Üyeyi içeren oluşturucuya geçirilen veri kaynağı (fotoğraf albümü); Bu üye değişkenine fotoğraf albümü Oluşturucusu kopyalar. Aşağıdaki gerekli `RecyclerView.Adapter` yöntemleri uygulanır:
+`mPhotoAlbum` Üyeyi içeren oluşturucuya geçirilen veri kaynağı (fotoğraf albümü); Oluşturucu fotoğraf albümü bu üye değişkeni kopyalar. Aşağıdaki gerekli `RecyclerView.Adapter` yöntemleri uygulanır:
 
--   **`OnCreateViewHolder`** &ndash; Öğe düzeni dosya ve görünüm sahibi başlatır.
+-   **`OnCreateViewHolder`** &ndash; Dosya ve görünüm öğesi düzeni sahibi başlatır.
 
--   **`OnBindViewHolder`** &ndash; Belirli bir konumda veri içinde belirli görünüm sahibi olan başvurular depolanan görünümleri yükler.
+-   **`OnBindViewHolder`** &ndash; Belirli bir konumda veri içinde belirli görünüm sahibi olan başvuruları depolanan görünümleri yükler.
 
--   **`ItemCount`** &ndash; Veri kaynağında öğe sayısını döndürür.
+-   **`ItemCount`** &ndash; Veri kaynağındaki öğe sayısını döndürür.
 
-İçindeki öğeleri konumlandırma sırasında düzen Yöneticisi bu yöntemleri çağırır `RecyclerView`. Aşağıdaki bölümlerde bu yöntemleri uyarlamasını incelenir.
+Bu öğeleri konumlandırma sırasında düzen Yöneticisi bu yöntemleri çağıran `RecyclerView`. Aşağıdaki bölümlerde bu yöntemlerin uygulama incelenir.
 
 
 #### <a name="oncreateviewholder"></a>OnCreateViewHolder
 
-Düzen Yöneticisi çağrıları `OnCreateViewHolder` zaman `RecyclerView` bir öğeyi temsil edecek yeni bir görünüm sahibi gerekiyor. `OnCreateViewHolder` görünümün düzenini dosya öğesi görünümünden Şişir ve yeni bir görünümde sarmalar `PhotoViewHolder` örneği. `PhotoViewHolder` Oluşturucusu bulur ve daha önce açıklandığı gibi alt görünümleri başvurular düzende depolar [görünüm sahibi](#view-holder).
+Düzen manager çağrıları `OnCreateViewHolder` olduğunda `RecyclerView` bir öğeyi temsil etmek için yeni bir görünüm sahibi gerekir. `OnCreateViewHolder` görünümün Düzen dosyası öğesi görünümünden Şişir ve yeni bir görünüm sarmalar `PhotoViewHolder` örneği. `PhotoViewHolder` Oluşturucusu bulur ve daha önce açıklandığı gibi alt görünümleri başvuruları düzende depolar [görünümü sahibi](#view-holder).
 
-Her satır öğesi tarafından temsil edilen bir `CardView` içeren bir `ImageView` (için fotoğraf) ve bir `TextView` (için resim yazısı). Bu düzen dosyasında bulunan **PhotoCardView.axml**:
+Her satır öğesi tarafından temsil edilen bir `CardView` içeren bir `ImageView` (için fotoğrafı) ve bir `TextView` (için resim yazısı). Bu düzen dosyasında bulunan **PhotoCardView.axml**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -222,8 +222,8 @@ Her satır öğesi tarafından temsil edilen bir `CardView` içeren bir `ImageVi
 </FrameLayout>
 ```
 
-Bu düzen bir tek satır öğeyi temsil eden `RecyclerView`. `OnBindViewHolder` Yöntemi (aşağıda açıklanmıştır) veri kaynağından verileri kopyalar `ImageView` ve `TextView` bu düzeni.
-`OnCreateViewHolder` Bu düzeni verilen fotoğraf konumu Şişir `RecyclerView` ve yeni bir örneğini oluşturur `PhotoViewHolder` örneği (bulur ve başvurularını önbelleğe `ImageView` ve `TextView` ilişkili alt görünümlerde `CardView` düzeni):
+Bu düzen bir tek satır öğeyi temsil `RecyclerView`. `OnBindViewHolder` Yöntemi (aşağıda açıklanmıştır) veri kaynağından veri kopyalar `ImageView` ve `TextView` bu düzeni.
+`OnCreateViewHolder` Bu düzen verilen fotoğraf konumu Şişir `RecyclerView` ve yeni bir örneğini oluşturur `PhotoViewHolder` örneği (bulur ve başvurular önbelleğe `ImageView` ve `TextView` ilişkili alt görünümlerde `CardView` Düzen):
 
 ```csharp
 public override RecyclerView.ViewHolder
@@ -240,12 +240,12 @@ public override RecyclerView.ViewHolder
 
 ```
 
-Elde edilen görünüm sahibi örnek `vh`, geri çağıran (Düzen Yöneticisi) döndürülür.
+Sonuçta elde edilen görünümü sahibi örneği `vh`, tekrar çağırana (Düzen Yöneticisi) döndürülür.
 
 
 #### <a name="onbindviewholder"></a>OnBindViewHolder
 
-Düzen Yöneticisi olduğunda belirli bir görünümde görüntülemek için hazır `RecyclerView`'s görünür ekran alanının bağdaştırıcının çağırır `OnBindViewHolder` veri kaynağından alınan içerikle belirtilen satır konumunda öğe doldurmak için yöntem. `OnBindViewHolder` Belirtilen satır konumu (fotoğrafın görüntü kaynağı ve dize fotoğrafın resim yazısı) için fotoğraf bilgilerini alır ve bu verileri ilişkili görünümlerine kopyalar. Görünüm tutucu nesnesindeki başvuruları aracılığıyla görünümleri konumlandırıldığını (hangi geçirilir aracılığıyla `holder` parametresi):
+Düzen Yöneticisi olduğunda belirli bir görünümde görüntülenecek hazır `RecyclerView`'s görünür ekran alanı, bağdaştırıcının çağırır `OnBindViewHolder` veri kaynağından alınan içerikle belirtilen satır konumunda öğeyi doldurmak için yöntemi. `OnBindViewHolder` Belirtilen satır konumu (fotoğrafın görüntü kaynağı ve fotoğrafın resim yazısı için dize) fotoğraf bilgilerini alır ve bu verileri ilişkili görünümlerine kopyalar. Görünüm sahibi nesnesinde depolanan başvurular üzerinden görünümlerini yer (hangi geçirilir aracılığıyla `holder` parametresi):
 
 ```csharp
 public override void
@@ -261,15 +261,15 @@ public override void
 }
 ```
 
-Geçilen görünüm sahibi nesnesi ilk türetilmiş görünüm sahibi türe gerekir (Bu durumda, `PhotoViewHolder`), kullanılmadan önce.
-Görüntü kaynağı bağdaştırıcısı görünüm sahibinin tarafından başvurulan görünüm yükler `Image` özelliği ve görünüm sahibinin tarafından başvurulan görünümüne başlık metnini kopyalar `Caption` özelliği. Bu *bağlar* verileri ile ilişkili görünüm.
+Geçirilen görünümü tutucu nesnesindeki ilk türetilmiş görünüm sahibi türe dönüştürmeniz gerekir (Bu durumda, `PhotoViewHolder`), kullanılmadan önce.
+Görüntü kaynağı görünümü sahibinin tarafından başvurulan görünüm bağdaştırıcısı yükler `Image` özelliği ve görünüm sahibinin tarafından başvurulan bir görünümde açıklamalı alt yazı metni kopyalar `Caption` özelliği. Bu *bağlar* verilerini ile ilişkili görünüm.
 
-Dikkat `OnBindViewHolder` doğrudan veri yapısı ile ilgilenir kodudur. Bu durumda, `OnBindViewHolder` nasıl eşleneceğini anlar `RecyclerView` öğesi kendi ilişkili veri öğesi bir konuma veri kaynağındaki. Eşleme bu durumda, çünkü konumu bir dizi dizini fotoğraf albümü kullanılabilir açıktır; Ancak, daha karmaşık veri kaynakları gibi bir eşleme oluşturmak için ek kod gerektirebilir.
+Dikkat `OnBindViewHolder` doğrudan veri yapısı ile ilgilenen kodudur. Bu durumda, `OnBindViewHolder` nasıl eşleneceğini anlar `RecyclerView` öğesini kendi ilişkili veri öğesi için veri kaynağı konumu. Eşleme, bu durumda çünkü konumu bir dizi dizini fotoğraf albümü kullanılabilir basittir; Ancak, daha karmaşık veri kaynakları, böyle bir eşleme oluşturmak için ek bir kod gerektirebilir.
 
 
 #### <a name="itemcount"></a>ItemCount
 
-`ItemCount` Yöntemi, veri toplama öğe sayısını döndürür. Örnek Fotoğraf Görüntüleyicisi uygulamada öğe sayısı fotoğraf albümü fotoğraflardaki sayısıdır:
+`ItemCount` Yöntemi veri koleksiyondaki öğe sayısını döndürür. Örnek Fotoğraf Görüntüleyici uygulamasında öğe sayısı fotoğraf albümü fotoğraflardaki sayısıdır:
 
 ```csharp
 public override int ItemCount
@@ -283,7 +283,7 @@ Hakkında daha fazla bilgi için `RecyclerView.Adapter`, bkz: [RecyclerView.Adap
 
 ### <a name="putting-it-all-together"></a>Hepsini birleştirme
 
-Elde edilen `RecyclerView` örnek fotoğraf uygulaması için uygulama oluşur `MainActivity` veri kaynağı, Düzen Yöneticisi ve bağdaştırıcısı oluşturan kod. `MainActivity` oluşturur `mRecyclerView` örneği, veri kaynağı ve bağdaştırıcısı oluşturur ve Düzen Yöneticisi ve bağdaştırıcısı takılan:
+Ortaya çıkan `RecyclerView` örnek fotoğraf uygulaması için uygulama oluşur `MainActivity` veri kaynağını, düzeni Yöneticisi ve bağdaştırıcı oluşturan kodu. `MainActivity` oluşturur `mRecyclerView` örneği, veri kaynağı ve bağdaştırıcısı başlatır ve Düzen Yöneticisi ve bağdaştırıcısı yararlanmanıza imkan sağlar:
 
 ```csharp
 public class MainActivity : Activity
@@ -312,7 +312,7 @@ public class MainActivity : Activity
 
 ```
 
-`PhotoViewHolder` bulur ve görünüm başvurularını önbelleğe alır:
+`PhotoViewHolder` bulur ve görünüm başvuruları önbelleğe alır:
 
 ```csharp
 public class PhotoViewHolder : RecyclerView.ViewHolder
@@ -329,7 +329,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
 }
 ```
 
-`PhotoAlbumAdapter` üç gerekli yöntemi geçersiz kılmaları uygular:
+`PhotoAlbumAdapter` üç gereken yöntemini geçersiz kılmaları uygular:
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -364,29 +364,29 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 }
 ```
 
-Bu kod derlenmiş ve çalıştırmak, aşağıdaki ekran görüntülerinde gösterildiği gibi uygulama görüntüleme temel fotoğraf oluşturur:
+Bu kod derlenir ve çalıştırma, aşağıdaki ekran görüntülerinde gösterildiği uygulaması görüntülendiğinde temel fotoğraf oluşturur:
 
-[![Fotoğraf dikey fotoğraf kartları kaydırma ile uygulama görüntüleme iki ekran görüntüleri](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
+[![Fotoğraf fotoğraf kartları dikey kaydırma ile uygulama görüntüleme iki ekran görüntüleri](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
-Temel bu uygulama yalnızca Fotoğraf albümü gözatma destekler. Öğe dokunma olayları için yanıt vermez veya temel alınan verilerde yapılan değişiklikler işlemiyor. Bu işlev eklenir [RecyclerView örnek genişletme](~/android/user-interface/layouts/recycler-view/extending-the-example.md).
+Bu temel bir uygulama, fotoğraf albümü göz atma yalnızca destekler. Öğe dokunma olayları için yanıt vermez ve temel alınan verilerde yapılan değişiklikler işlemiyor. Bu işlev eklenir [RecyclerView örneği genişletme](~/android/user-interface/layouts/recycler-view/extending-the-example.md).
 
 
 ### <a name="changing-the-layoutmanager"></a>LayoutManager değiştirme
 
-Nedeniyle `RecyclerView`'s esneklik, onu farklı düzen manager kullanmak üzere uygulamayı değiştirmek kolay. Aşağıdaki örnekte, fotoğraf albümü yatay olarak kayar bir kılavuz düzeni yerine dikey doğrusal düzen ile görüntülenecek değiştirilir. Bunu yapmak için Düzen Yöneticisi oluşturmada kullanılacak değiştirilir `GridLayoutManager` gibi:
+Nedeniyle `RecyclerView`ın esneklik, onu farklı bir düzen Yöneticisi'ni kullanmak için uygulamayı değiştirilmesi kolay. Aşağıdaki örnekte, fotoğraf albümü yatay kaydırma bir kılavuz düzeni yerine dikey doğrusal bir düzen ile görüntülemek için değiştirilir. Bunu yapmak için Düzen manager oluşturmada kullanılacak değiştirilir `GridLayoutManager` gibi:
 
 ```csharp
 mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, false);
 ```
 
-Bu kod değişikliği dikey değiştirir `LinearLayoutManager` ile bir `GridLayoutManager` yatay yönde kaydırma iki satır oluşan bir kılavuz sunar. Derleme ve uygulamayı yeniden çalıştırın, fotoğraflar kılavuzda görüntülenir ve kaydırma yatay yerine dikey olduğunu görürsünüz:
+Bu kod değişikliği dikey değiştirir `LinearLayoutManager` ile bir `GridLayoutManager` yatay yönde kaydırma iki satır oluşan bir kılavuz gösterir. Derleme ve uygulamayı yeniden çalıştırın, fotoğraflar kılavuzda görüntülenir ve kaydırma yatay yerine dikey olduğunu görürsünüz:
 
-[![Yatay kaydırma fotoğraf kılavuzda uygulamayla örnek ekran görüntüsü](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
+[![Kılavuz yatay kaydırma fotoğraflarla uygulamasının örnek ekran görüntüsü](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
-Yalnızca bir kod satırı değiştirerek olan farklı bir düzen farklı davranışlar ile kullanmak için fotoğraf görüntüleme uygulamayı değiştirmek mümkündür.
-Düzen stilini değiştirmek için değiştirilmesi süredir bağdaştırıcısı kod ne XML düzeni olduğunu dikkat edin. 
+Tek satırlık bir kod değiştirerek olduğu fotoğraf görüntüleme uygulamayı farklı bir düzene farklı bir davranış kullanmak üzere değiştirmek mümkündür.
+Düzen stilini değiştirmek için değiştirilmesi süredir bağdaştırıcısı kod ne XML düzenini olduğunu dikkat edin. 
 
-Sonraki konusunda [RecyclerView örnek genişletme](~/android/user-interface/layouts/recycler-view/extending-the-example.md), öğeyi tıklatın olayları işlemek ve güncelleştirmek için bu temel örnek uygulaması Genişletilmiş `RecyclerView` zaman temel alınan veri kaynağı değişiklikleri.
+Bir sonraki konu başlığında [RecyclerView örneği genişletme](~/android/user-interface/layouts/recycler-view/extending-the-example.md), öğe tıklama olayları işlemek ve güncelleştirmek için bu basit örnek uygulama Genişletilmiş `RecyclerView` ne zaman temel alınan veri kaynağının değişiklikler.
 
 
 
@@ -395,5 +395,5 @@ Sonraki konusunda [RecyclerView örnek genişletme](~/android/user-interface/lay
 - [RecyclerViewer (örnek)](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)
 - [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)
 - [RecyclerView bölümleri ve İşlevler](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
-- [RecyclerView örnek genişletme](~/android/user-interface/layouts/recycler-view/extending-the-example.md)
+- [RecyclerView örneği genişletme](~/android/user-interface/layouts/recycler-view/extending-the-example.md)
 - [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)

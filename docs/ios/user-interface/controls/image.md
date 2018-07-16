@@ -1,90 +1,87 @@
 ---
 title: Xamarin.iOS ile görüntüleri görüntüleme
-description: Bu belge, içinde Xamarin.iOS görüntüleri göstermek açıklar. Program aracılığıyla veya iOS Tasarımcısı aracılığıyla bir uygulama ekleme görüntülerini kapsar.
+description: Bu belge, Xamarin.ios'ta görüntüler açıklar. Program aracılığıyla ya da iOS Designer üzerinden bir uygulamaya ekleme görüntüleri kapsar.
 ms.prod: xamarin
 ms.assetid: 67CA8DB6-769D-42BB-A137-3AF933789FE1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/21/2017
-ms.openlocfilehash: f42cc5e4ab26c4c53d96e96420cbbba8036d6b5d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/13/2018
+ms.openlocfilehash: 9777b4abf6e7f370178bcff2cb40666612888a9f
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789836"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038384"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Xamarin.iOS ile görüntüleri görüntüleme
 
-Uygulamanıza görüntüler ekleme, iki adımı gerektirir: önce görüntüler; projenize ekleyin. Ardından, denetimleri ve ekranda görüntülemek için kodu ekleyin. Başvurmak [görüntülerle çalışma](~/ios/app-fundamentals/images-icons/index.md) kapsamı içinde Xamarin.iOS işleme resminin ayrıntılı için makalesi.
+Görüntüleri uygulamanıza eklemek için iki adımı gerekir: ilk olarak, görüntüleri; projenize ekleyin Ardından, denetimleri ve bunları bir ekranda görüntülemek için kod ekleyin. Başvurmak [görüntülerle çalışma](~/ios/app-fundamentals/images-icons/index.md) kapsamı Xamarin.ios'ta işleme resminin ayrıntılı için makalesi.
 
-## <a name="adding-images-to-your-app"></a>Uygulamanıza görüntüler ekleme
+## <a name="adding-images-to-your-app"></a>Görüntüleri uygulamanıza ekleme
 
-Herhangi bir klasörde Mac çözüm için Visual Studio için görüntülerini eklenebilir ve **yapı eylemi** ayarlanır **içerik** dosya, uygulamanızı dahil edilir ve görüntülenebilir.
+Görüntüleri, çözüm Mac için Visual Studio içinde herhangi bir klasöre eklenebilir ve **derleme eylemi** ayarlanır **içerik** dosya uygulamanızla dahil edilir ve görüntülenebilir.
 
-Mac için Visual Studio görüntü dosyaları de içerebilir kaynakları adlı özel bir dizin de destekler. Kaynakları klasöründeki dosyaları olmalıdır **yapı eylemi** kümesine **BundleResource**.
+Mac için Visual Studio ayrıca adlı özel bir dizin destekler **kaynakları** , içerebilir görüntü dosyaları. Dosyalarını Resources klasöründeki olmalıdır **derleme eylemi** kümesine **BundleResource**.
 
-Bu ekran gösterir **yapı eylemi** bir dosya açıldığında görüntülenen seçenekleri sağ:
+Bu ekran görüntüsünde gösterilmiştir **derleme eylemi** bir dosya açıldığında görüntülenen seçenekleri görüntülemez:
 
  [![](image-images/image30a.png "Eylem menüsü oluşturma")](image-images/image30a.png#lightbox)
 
-Mac için Visual Studio genellikle seçin doğru **yapı eylemi** otomatik olarak, ancak özellikle dosyalarını projenizde taşırsanız, bu ayarlar dikkat etmeniz gerekir.
+Mac için Visual Studio genellikle seçim doğru **derleme eylemi** otomatik olarak ancak özellikle, dosyaları projenize yerleri değiştirilirse, bu ayarları bilmeniz gerekir.
 
 ### <a name="adding-an-image-file"></a>Bir görüntü dosyası ekleme
 
-Bir görüntü dosyası projenize eklemek için önce projeyi sağ tıklayın ve seçin **dosyaları Ekle...**
+Projenize bir görüntü dosyası eklemek için öncelikle projeye sağ tıklayıp seçin **Dosya Ekle...**
 
- [![](image-images/image31a.png "Dosyaları Ekle... menüsü")](image-images/image31a.png#lightbox)
+ [![](image-images/image31a.png "Dosya Ekle... menüsü")](image-images/image31a.png#lightbox)
 
-Görüntü (veya görüntü) seçin standart dosya iletişim kutusunda eklemek istediğiniz. Varsayılan yapı eylemi görüntüler için **BundleResource** – belirli bir nedeniniz yoksa bu değeri geçersiz kılmaz.
+Görüntü (veya görüntü) seçin, standart dosya iletişim kutusunda eklemek istediğiniz. Görüntüleri için varsayılan derleme eylemi **BundleResource** – belirli bir neden olmadığı sürece bu değeri geçersiz.
 
- [![](image-images/image32a.png "Dosyaları iletişim ekleyin")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "Dosya iletişim kutusu Ekle")](image-images/image32a.png#lightbox)
 
-Görüntü projenize ve yüklenen ve kodda görüntülenecek kullanılabilir eklenir. Bu ekran görüntüsü, bir iOS uygulaması projesine eklenen bir resim gösterir:
+Görüntü, projenize ve yüklenmesi ve kodda görüntülenen kullanımına eklenecektir. Bu ekran görüntüsünde, bir iOS uygulaması projesine eklenen bir resim göstermektedir:
 
- [![](image-images/image33a.png "Proje görüntüde")](image-images/image33a.png#lightbox)
+ [![](image-images/image33a.png "Projedeki görüntü")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>Kaynak dizini nedir?
 
-Kaynakları dizine yerleştirilen dosyalar farklı normal dosyalarından davranılır – kaynakları klasörünün içeriğini uygulama kök dizinine kopyalanır ve kodunuzda buradan başvurulabilir. Bu nedenlerle yararlı olabilir:
+Dosyalar yerleştirilir **kaynakları** dizin farklı normal dosyalarından – içeriğini kabul **kaynakları** klasörü uygulamanın kök dizinine kopyalanır ve buradan içinde başvurulabilir kodunuzu. Bu nedenlerle yararlı olabilir:
 
--  Uygulama simgeleri ve varsayılan başlangıç görüntüleri gibi uygulamanın özelliklerinde yapılandırılan görüntüleri saklamak.
--  Diğer görüntüleri ve kod dosyalarından ayrı olarak depolanması, bu nedenle bunlar daha kolay (alt dizinleri kaynakları dizin içeriği kopyalandığında korunur).
-
-
-Kod bu görüntüleri gerektiren görüntü, ses, video, XML veya diğer paylaşılan kodu kitaplıkları yazma kolaylaştırma kullanıcı uygulama kök kopyalanacak kabul edilebilir olduğundan kaynaklar dizin kitaplığı projesinde, özellikle yararlı olur dosyalar.
+-  Uygulama simgeleri ve varsayılan başlangıç görüntülerini gibi uygulamanın özellikleri yapılandırılmış görüntüleri depolama.
+-  Diğer görüntüleri ve ayrı ayrı kod dosyaların depolanması, bu nedenle bunlar daha kolay (alt dizin kaynakları dizin içeriğini kopyalandığında korunur).
 
 
+**Kaynakları** kodu, bu görüntüleri gerektiren yazma paylaşılan kod kitaplıkları kolaylaştıran, kullanıcı uygulama kökü içine kopyalanacak kabul edilebilir olduğundan dizin kitaplığı projesinde, özellikle kullanışlı Görüntü, ses, video, XML veya diğer dosyaları.
 
-Bu nedenle kaynaklar dizin adlı ve tüm dosyalar kümesine yapı eylemi sahip olmalıdır **BundleResource**
+**Kaynakları** dizin gerekir böylece adı ve tüm dosyaları derleme eylemi kümesine sahip olmalıdır **BundleResource**.
 
-## <a name="displaying-the-image"></a>Görüntü görüntüleme
+## <a name="displaying-the-image"></a>Görüntüyü görüntüleme
 
-Tasarımcı kullanarak bir görüntü görüntülemek için bir resim görünümü bir kapsayıcı olarak kullanılmalıdır ve tek bir görüntü veya animasyonun görüntülerinin görüntüleyebilirsiniz. **Resim görünümü** araç simgesinden aşağıda gösterilmektedir:
+İOS Tasarımcısı kullanma bir **resim görünümü** bir resim veya animasyonlu dizi görüntüsü görüntülenecek. **Resim görünümü** araç kutusundan simge aşağıda gösterilmektedir:
 
- [![](image-images/image35a.png "Araç çubuğundaki ImageView")](image-images/image35.png#lightbox)
+ [![](image-images/image35a.png "Araç çubuğunda ImageView")](image-images/image35.png#lightbox)
 
-Sürükleme **görüntü Görünüm** gelen **Toobox** görünüm denetleyicisine. Altında ** görüntü Görünüm > Görüntü ** aşağı açılan listeden projenizdeki tüm kullanılabilir görüntü dosyaların bir listesini sağlar. Bu görüntü görünümünüze eklemek için seçin.
+Sürükleme **resim görünümü** gelen **araç kutusu** görünüm denetleyicisine. Ardından, altında **görüntü Görünüm > Görüntü** açılır listede, projenizdeki tüm kullanılabilir görüntü dosyaları listesini sağlar. Bu, görüntü görünümüne eklemek için seçin.
 
- [![](image-images/image36a.png "Araç çubuğundaki ImageView")](image-images/image36.png#lightbox)
+ [![](image-images/image36a.png "Araç çubuğunda ImageView")](image-images/image36.png#lightbox)
 
-### <a name="displaying-the-image-programmatically"></a>Görüntü programlı olarak görüntüleme
+### <a name="displaying-the-image-programmatically"></a>Program aracılığıyla resim görüntüleme
 
-Blocks.jpg kaynakları dizin kökünde bulunan olduğundan çalışma zamanında uygulama paketin kök kullanılabilir olacaktır. Denetim bir ImageView bu görüntüyü görüntülemek için aşağıdaki kodu kullanın:
+Çünkü **SF Monkey.jpg** kök dizininde bulunan **kaynakları** kullanılabilir olacağı çalışma zamanında uygulama paketin kök dizini. Bu görüntüyü bir resim görünümü denetiminde görüntülemek için aşağıdaki kodu kullanın:
 
 ```csharp
-imageview1.Image = UIImage.FromBundle ("SF Monkey.png");
+imageview1.Image = UIImage.FromBundle("SF Monkey.png");
 ```
 
-Görüntüde yerleştirilmiş durumunda `/Resources/Pics/blocks.jpg` sonra kod yolunda PICS klasör içerir:
+Biz görüntüde yerleştirdiyseniz **PICS/kaynak/SF Monkey.jpg**, kod eklemeniz **PICS** yolundaki klasör:
 
 ```csharp
-imageview1.Image = UIImage.FromBundle ("Pics/SF Monkey.png");
+imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");
 ```
 
-Kaynak dosyası başvuran hiçbir zaman eklemenize gerek `Resources` klasör.
-
+Kaynak dosyasına başvuran hiçbir zaman eklemenize gerek **kaynakları** klasör.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Denetimleri (örnek)](https://developer.xamarin.com/samples/Controls/)
+- [Denetimler (örnek)](https://developer.xamarin.com/samples/Controls/)
