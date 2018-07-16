@@ -370,6 +370,7 @@
 #### [Menü (Force Touch)](watchos/user-interface/menu.md)
 #### [Metin Girişi](watchos/user-interface/text-input.md)
 ### [Platform Özellikleri](watchos/platform/index.md)
+#### [watchOS 5’e Giriş](watchos/platform/introduction-to-watchos5/index.md)
 #### [watchOS 4’e Giriş](watchos/platform/introduction-to-watchos4.md)
 #### [watchOS 3’e Giriş](watchos/platform/introduction-to-watchos3/index.md)
 ##### [Ek watchOS 3 Çerçeve Değişiklikleri](watchos/platform/introduction-to-watchos3/additional-framework-changes.md)
