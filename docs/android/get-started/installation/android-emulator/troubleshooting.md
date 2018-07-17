@@ -1,22 +1,22 @@
 ---
-title: Sorun giderme android öykünücüsü
-description: Bu makalede, tanılama ve Android öykünücüsünü kullanarak ortaya çıkabilecek sorunlar üzerinde çalışmayı açıklanmaktadır.
+title: Android öykünücüsü sorunlarını giderme
+description: Bu makalede, tanılayın ve Android öykünücüsü'nü kullanırken oluşabilecek sorunları çalışma şekli açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 4F053CC9-9378-47CB-8002-978A6558C4D0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 241f38cbfe013776b2e36b8102ae4b90cf610d80
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 1d13a3dae509fea4a2e955c4ad206a81a57e75ed
+ms.sourcegitcommit: 6433b424410a850f504e0f934bbb5baf8f093e49
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935288"
+ms.lasthandoff: 07/16/2018
+ms.locfileid: "39067340"
 ---
-# <a name="android-emulator-troubleshooting"></a>Sorun giderme android öykünücüsü
+# <a name="android-emulator-troubleshooting"></a>Android öykünücüsü sorunlarını giderme
 
-_Bu makalede, yapılandırma ve Android öykünücüsünde çalıştırma sırasında oluşabilecek sorunları ve en yaygın uyarı iletilerini, geçici çözümler ve ipuçları ile birlikte açıklanmaktadır._
+_Bu makalede, Android öykünücüsü'nü çalıştıran ve yapılandırma sırasında oluşabilecek sorunları ve en yaygın uyarı iletilerini, geçici çözümlere ve ipuçları ile birlikte açıklanmıştır._
 
 <a name="perfwarn" />
 
@@ -24,32 +24,32 @@ _Bu makalede, yapılandırma ve Android öykünücüsünde çalıştırma sıras
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Uygulamanızı Android öykünücüsü ilk kez dağıttığınızda Visual Studio 2017 sürüm 15.4 başlayarak, bir performans Uyarısı iletişim kutusu görüntülenebilir. Bu uyarı iletişim kutuları, aşağıda açıklanmıştır.
+Android öykünücüsü'nü ilk kez uygulama dağıttığınızda Visual Studio 2017 sürüm 15.4 ile başlayarak, bir performans Uyarısı iletişim kutusu görüntülenebilir. Bu uyarı iletişim kutuları, aşağıda açıklanmıştır.
 
 ### <a name="computer-does-not-contain-an-intel-procesor"></a>Bilgisayar bir Intel Procesor içermiyor
 
 ![Bilgisayar bir Intel işlemci içermiyor](troubleshooting-images/01-no-intel-processor.png)
 
-Bu iletişim kutusu görüntülendiğinde, bilgisayarınızı Android SDK öykünücüsü hızlandırması için gerekli olduğu bir Intel işlemci yok. Bilgisayarınızı bir Intel işlemci yoksa, fiziksel bir Android cihaz geliştirme için kullanmanızı öneririz.
+Bu iletişim kutusu görüntülendiğinde, bilgisayarınızı Android SDK öykünücüsü hızlandırması için gerekli olduğu bir Intel işlemci yok. Bilgisayarınızı bir Intel işlemci yoksa, geliştirme için fiziksel bir Android cihazı kullanmanızı öneririz.
 
-### <a name="hyper-v-is-installed-or-active"></a>Hyper-V yüklü veya etkin değil
+### <a name="hyper-v-is-installed-or-active"></a>Hyper-V yüklü veya etkin
 
-![Hyper-V yüklü veya etkin değil](troubleshooting-images/02-hyper-v-active.png)
+![Hyper-V yüklü veya etkin](troubleshooting-images/02-hyper-v-active.png)
 
-Bu iletişim kutusu görüntülendiğinde, Hyper-V yüklü veya etkin ve devre dışı bırakılması gerekir. [Hyper-V devre dışı bırakma](#disable-hyperv) bu sorunun nasıl çözüleceği açıklanmaktadır.
+Bu iletişim kutusu görüntülendiğinde, Hyper-V yüklü ya da etkin ve devre dışı bırakılmalıdır. [Hyper-V'yi devre dışı](#disable-hyperv) bu sorunun nasıl çözüleceği açıklanmaktadır.
 
-### <a name="haxm-is-not-installed"></a>HAXM yüklü değil
+### <a name="haxm-is-not-installed"></a>HAXM yüklü olduğu
 
 ![HAXM yüklü değil](troubleshooting-images/03-haxm-not-installed.png)
 
-Bilgisayarınızda Intel işlemci varsa, Hyper-V devre dışı ancak HAXM yüklenmemiş bu iletişim kutusunu gösterir.
-[HAXM yükleme](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm) HAXM yüklemek için gereken adımları açıklar.
+Bilgisayarınızda Intel işlemcisi varsa, Hyper-V devre dışı bırakıldı ancak HAXM yüklü değil, bu iletişim kutusunu gösterir.
+[HAXM Yükleniyor](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm) HAXM yüklemek için gereken adımlar açıklanmaktadır.
 
 ### <a name="haxm-process-not-running"></a>HAXM işlemi çalışmıyor
 
 ![HAXM işlemi çalışmıyor](troubleshooting-images/04-haxm-process-not-running.png)
 
-Bilgisayarınızda Intel işlemci varsa, Hyper-V devre dışıdır, Intel HAXM yüklü, ancak HAXM işlemi çalışmıyor bu iletişim kutusu görüntülenir. Bu sorunu çözmek için bir komut istemi penceresi açın ve aşağıdaki komutu girin:
+Bilgisayarınızda Intel işlemcisi varsa, Hyper-V devre dışı bırakıldı, Intel HAXM yüklü ancak HAXM işlemi çalışmıyor bu iletişim kutusu görüntülenir. Bu sorunu çözmek için bir komut istemi penceresi açın ve aşağıdaki komutu girin:
 
 ```cmd
 sc query intelhaxm
@@ -68,55 +68,55 @@ SERVICE_NAME: intelhaxm
     WAIT_HINT          : 0x0
 ```
 
-Varsa `STATE` ayarlanmazsa `RUNNING`, bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmaya nasıl](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) sorunu gidermek için.
+Varsa `STATE` ayarlı değil `RUNNING`, bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmayı](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) sorunu çözmek için.
 
 
 ### <a name="other-failures"></a>Diğer hatalar
 
 ![Diğer hatalar](troubleshooting-images/05-other-failure.png)
 
-Bilgisayarınızda Intel işlemci varsa, Hyper-V devre dışıdır, Intel HAXM yüklü, HAXM işlemin çalıştığı ancak bilinmeyen bir nedenden dolayı başlatmak öykünücü başarısız olursa bu iletişim kutusu görüntülenir.
-Bu hatayı gidermek için bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmaya nasıl](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator).
+Bilgisayarınızda Intel işlemcisi varsa, Hyper-V devre dışı bırakıldı, Intel HAXM yüklü, HAXM işlem çalışıyor ancak bilinmeyen bir nedenden dolayı başlatmak öykünücü başarısız olursa bu iletişim kutusu görüntülenir.
+Bu hatayı gidermek için bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmayı](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator).
 
 ### <a name="disabling-performance-warnings"></a>Performans uyarıları devre dışı bırakma
 
-Bunun yerine performans uyarıları görmek istemiyorsanız, bunları devre dışı bırakabilirsiniz. Visual Studio'da'ı tıklatın **Araçlar > Seçenekler > Xamarin > Android ayarları** ve devre dışı **AVD hızlandırma değilse uyar (HAXM) desteklenen** seçeneği:
+Bunun yerine performans uyarıları görmek istemiyorsanız, bunları devre dışı bırakabilirsiniz. Visual Studio'da **Araçlar > Seçenekler > Xamarin > Android ayarları** ve devre dışı bırakma **AVD hızlandırma değilse uyar (HAXM) desteklenen** seçeneği:
 
-[![AVD hızlandırma uyarılarını devre dışı bırakma](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
+[![AVD hızlandırma uyarıları devre dışı bırakma](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Uygulamanızı Android öykünücüsü ilk kez dağıttığınızda Mac yapı (559 yapı) 7.2 Visual Studio ile başlayarak, bir performans Uyarısı iletişim kutusu görüntülenebilir. Bu uyarı iletişim kutuları, aşağıda açıklanmıştır.
+Android öykünücüsü'nü ilk kez uygulama dağıttığınızda sürüm 7.2 (559 yapı) Mac için Visual Studio ile başlayarak, bir performans Uyarısı iletişim kutusu görüntülenebilir. Bu uyarı iletişim kutuları, aşağıda açıklanmıştır.
 
-### <a name="haxm-is-not-installed"></a>HAXM yüklü değil
+### <a name="haxm-is-not-installed"></a>HAXM yüklü olduğu
 
 ![HAXM yüklü değil](troubleshooting-images/03-haxm-not-installed.png)
 
-Bu iletişim kutusunu HAXM yüklü olmadığını gösterir.
-[HAXM yükleme](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm) HAXM yüklemek için gereken adımları açıklar.
+HAXM yüklü değil, bu iletişim kutusunu gösterir.
+[HAXM Yükleniyor](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm) HAXM yüklemek için gereken adımlar açıklanmaktadır.
 
 ### <a name="haxm-process-not-running"></a>HAXM işlemi çalışmıyor
 
 ![HAXM işlemi çalışmıyor](troubleshooting-images/04-haxm-process-not-running.png)
 
-HAXM işlem çalışmıyorsa, bu iletişim kutusu görüntülenir. Bu sorunu gidermenize yardımcı olmak ayrıntılı bilgi için bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmaya nasıl](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) sorunu gidermek için.
+HAXM işlem çalışır durumda değilse, bu iletişim kutusu görüntülenir. Bu sorunu gidermenize yardımcı olmak ayrıntılı bilgi için bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmayı](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) sorunu çözmek için.
 
 ### <a name="other-failures"></a>Diğer hatalar
 
 ![Diğer hatalar](troubleshooting-images/05-other-failure.png)
 
-Öykünücü bilinmeyen bir nedenden dolayı başlayamazsa bu iletişim kutusu görüntülenir. Bu hatayı gidermek için bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmaya nasıl](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) sorunu gidermek için.
+Öykünücü bilinmeyen bir nedenden dolayı başlatılamıyorsa bu iletişim kutusu görüntülenir. Bu hatayı gidermek için bkz: [Intel donanım hızlandırılmış yürütme Yöneticisi'ni kullanmayı](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) sorunu çözmek için.
 
 -----
 
 ## <a name="deployment-issues"></a>Dağıtım sorunları
 
-APK öykünücüsü üzerinde yükleme hatası veya Android hata ayıklama köprüsü çalıştırma hatası hakkında bir hata alırsanız (**adb**), Android SDK'sı, öykünücüsünü bağlanabildiğini doğrulayın. Bunu yapmak için aşağıdaki adımları kullanın:
+Emulator'da apk'yı yükleme hatası veya Android hata ayıklama köprüsü çalıştırma hatası hakkında bir hata alırsanız (**adb**), Android SDK'sı, öykünücüsü için bağlantı kurabildiğini doğrulayın. Bunu yapmak için aşağıdaki adımları kullanın:
 
-1. Öykünücüsünden başlatma **Android Aygıt Yöneticisi'ni** (sanal Cihazınızı seçin ve tıklatın **Başlat**).
+1. Öykünücüsünden başlatma **Android cihaz Yöneticisi** (sanal Cihazınızı seçin ve tıklayın **Başlat**).
 
-2. Bir komut istemi açın ve klasöre gidin nerede **adb** yüklenir. Örneğin, Windows, bu en olabilir: **C:\\Program Files (x86)\\Android\\android sdk\\platformu Araçları\\adb.exe**.
+2. Bir komut istemi açın ve klasöre gidin. burada **adb** yüklenir. Örneğin, Windows üzerinde bu en olabilir: **C:\\Program dosyaları (x86)\\Android\\android sdk\\platform Araçları\\adb.exe**.
 
 3. Şu komutu yazın:
 
@@ -124,97 +124,97 @@ APK öykünücüsü üzerinde yükleme hatası veya Android hata ayıklama köpr
    adb devices
    ```
 
-4. Android SDK öykünücüsü erişilebilen, öykünücü bağlı aygıtlar listesinde görünmesi gerekir. Örneğin:
+4. Android SDK'sından öykünücü erişilebiliyorsa, öykünücü takılı cihazlar listesinde görünmelidir. Örneğin:
 
    ```shell
    List of devices attached
    emulator-5554   device
    ```
 
-5. Öykünücü bu listede görünmüyorsa, başlangıç **Android SDK Manager**, tüm güncelleştirmeleri uygulamanızı ve ardından öykünücü yeniden başlatmayı deneyin.
+5. Öykünücü bu listede görünmüyorsa, başlangıç **Android SDK Yöneticisi**, tüm güncelleştirmeleri uygulayın ve ardından öykünücüyü yeniden başlatmayı deneyin.
 
 
 ## <a name="haxm-issues"></a>HAXM sorunları
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Android öykünücüsünde düzgün başlamazsa, bu genellikle HAXM sorunları kaynaklanır. HAXM sorunları genellikle diğer sanallaştırma teknolojilerini, ayarları yanlış veya eski bir HAXM sürücü çakışıyor sonucudur.
+Android öykünücüsü düzgün başlatılmazsa, bu genellikle HAXM ile ilgili sorunlar nedeniyle oluşur. HAXM sorunları genellikle diğer sanallaştırma teknolojilerini, ayarları yanlış veya süresi dolmuş bir HAXM sürücüsü ile çakışıyor sonucudur.
 
 <a name="virt-conflicts" />
 
 ### <a name="haxm-virtualization-conflicts"></a>HAXM sanallaştırma çakışmaları
 
-Hyper-V, Windows cihaz koruyucusu ve bazı virüsten koruma yazılımı gibi sanallaştırma kullanan diğer teknolojilerle HAXM çakışabilir:
+HAXM kullanan sanallaştırma, Hyper-V, Windows Device Guard ve bazı virüsten koruma yazılımı gibi diğer teknolojileri ile çakışabilir:
 
-- **Hyper-V** &ndash; önce Windows sürümünü kullanıyorsanız, **Windows 10 Nisan 2018 Güncelleştirmesi (yapı 1803)** ve Hyper-V etkin olduğunda, adımları [devre dışı bırakma Hyper-V](#disable-hyperv).
+- **Hyper-V** &ndash; önce Windows sürümünü kullanıyorsanız **Windows 10 Nisan 2018 Güncelleştirmesi (derleme 1803)** ve Hyper-V etkin, adımları [Hyper-V devre dışı bırakma](#disable-hyperv).
 
-- **Cihaz koruyucusu** &ndash; Device Guard ve kimlik bilgisi koruma engelleyebilir Hyper-V Windows makinelerde devre dışı. Cihaz koruyucusu ve kimlik bilgisi koruma devre dışı bırakmak için bkz: [devre dışı bırakma Device Guard](#disable-devguard).
+- **Cihaz koruma** &ndash; Device Guard ve Credential Guard engelleyebilir Hyper-V Windows makinelerde devre dışı. Device Guard ve Credential Guard devre dışı bırakmak için bkz: [devre dışı bırakma Device Guard](#disable-devguard).
 
-- **Virüsten koruma yazılımı** &ndash; donanım destekli sanallaştırma (örneğin, Avast) kullanan virüsten koruma yazılımı çalıştırıyorsanız, devre dışı bırakın veya bu yazılım, yeniden başlatma ve yeniden deneme Android SDK öykünücüsü kaldırın.
+- **Virüsten koruma yazılımı** &ndash; donanım Yardımlı sanallaştırma (örneğin, Avast) kullanan virüsten koruma yazılımı çalıştırıyorsanız, devre dışı bırakın veya bu yazılım yeniden başlatma ve yeniden deneme Android SDK öykünücüsü'nü kaldırın.
 
 
 ### <a name="incorrect-bios-settings"></a>Yanlış BIOS ayarları
 
-Bir Windows Bilgisayarına HAXM kullanıyorsanız, sanallaştırma teknolojisi (Intel VT-x) BIOS'ta etkin değilse HAXM çalışmaz. VT-x devre dışıysa, Android öykünücüsünde başlatın açmaya çalıştığında, hata aşağıdakine benzer alırsınız:
+Bir Windows PC'de HAXM kullanıyorsanız, BIOS'ta sanallaştırma teknolojisi (Intel VT-x) etkinleştirilmediği HAXM çalışmıyor. VT-x devre dışıysa, Android öykünücüsünde başlatmak denediğinizde bir hata aşağıdakine benzer erişmenizi sağlayacak:
 
-**Bu bilgisayar HAXM gereksinimlerini karşılayan ancak Intel Sanallaştırma Teknolojisi'ni (VT-x) açık değil.**
+**Bu bilgisayar için HAXM gereksinimlerini karşılıyor ancak Intel Sanallaştırma Teknolojisi'ni (VT-x) açık değil.**
 
-Bu hatayı düzeltmek için bilgisayarın BIOS içinde önyükleme, VT-x ve SLAT (ikinci düzey adres çevirisi) etkinleştirmek ve geri Windows bilgisayarı yeniden başlatın.
+Bu hatayı düzeltmek için bilgisayarın BIOS içinde önyükleme, birlikte VT-x hem SLAT (ikinci düzey adres çevirisi) etkinleştirin ve ardından geri ile Windows bilgisayarı yeniden başlatın.
 
 <a name="disable-hyperv" />
 
-### <a name="disabling-hyper-v"></a>Hyper-V devre dışı bırakma
+### <a name="disabling-hyper-v"></a>Hyper-V'yi devre dışı
 
-Daha önce Windows sürümünü kullanıyorsanız, **Windows 10 Nisan 2018 güncelleştirme (yapı 1803)** ve Hyper-V etkinleştirildiğinde, Hyper-V devre dışı bırakın ve yükleyip HAXM kullanabilmeniz için bilgisayarınızı yeniden başlatın. Kullanıyorsanız **Windows 10 Nisan 2018 güncelleştirme (yapı 1803)** veya sonraki, Android öykünücüsü sürümü 27.2.7 veya daha sonra Hyper-V devre dışı bırakmak gerekli değildir (yerine HAXM) Hyper-V donanım hızlandırmasını kullanabilirsiniz.
+Önce Windows sürümünü kullanıyorsanız **Windows 10 Nisan 2018 Güncelleştirmesi (derleme 1803)** ve Hyper-V etkin olduğunda, Hyper-V devre dışı bırakın ve HAXM yüklenir ve bilgisayarınızı yeniden başlatmanız gerekir. Kullanıyorsanız **Windows 10 Nisan 2018 Güncelleştirmesi (derleme 1803)** veya üzeri, Android öykünücüsü sürüm 27.2.7 veya Hyper-V devre dışı bırakmak gerekli değildir (HAXM) yerine Hyper-V için donanım hızlandırma, daha sonra kullanabilirsiniz.
 
-Aşağıdaki adımları izleyerek Hyper-V Denetim Masası'ndan devre dışı bırakabilirsiniz:
+Aşağıdaki adımları izleyerek Denetim Masası'ndan Hyper-V devre dışı bırakabilirsiniz:
 
 1. Windows Arama kutusuna **programları ve** ardından **programlar ve Özellikler** arama sonucu.
 
-2. Denetim Masası'nda **programlar ve Özellikler** iletişim kutusunda, tıklatın **kapatma Windows özelliklerini aç veya Kapat**:
+2. Denetim Masası'nda **programlar ve Özellikler** iletişim kutusunda, tıklayın **kapatma Windows özelliklerini aç veya Kapat**:
 
-    ![Windows özelliklerini aç veya kapat.](troubleshooting-images/win/07-turn-windows-features.png)
+    ![Windows özelliklerini aç veya kapat](troubleshooting-images/win/07-turn-windows-features.png)
 
-3. İşaretini **Hyper-V** ve bilgisayarı yeniden başlatın:
+3. Onay kutusunu temizleyin **Hyper-V** ve bilgisayarı yeniden başlatın:
 
-    ![Hyper-V Windows özellikleri iletişim kutusunda devre dışı bırakma](troubleshooting-images/win/08-uncheck-hyper-v.png)
+    ![Windows özellikleri iletişim kutusunda Hyper-V devre dışı bırakma](troubleshooting-images/win/08-uncheck-hyper-v.png)
 
-Alternatif olarak, Hyper-V: devre dışı bırakmak için aşağıdaki Powershell cmdlet'ini kullanabilirsiniz
+Alternatif olarak, Hyper-V'yi devre dışı bırakmak için aşağıdaki Powershell cmdlet'ini kullanabilirsiniz
 
 `Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
 
-Intel HAXM ve Microsoft Hyper-V her ikisi de aynı anda etkin olamaz. Ne yazık ki, arasında Hyper-V arasında HAXM, bilgisayarı yeniden başlatmadan geçiş yapmak için bir yolu yoktur. 
+Intel HAXM ve Microsoft Hyper-V her ikisi de aynı anda etkin olamaz. Ne yazık ki arasında Hyper-V arasında HAXM, bilgisayarı yeniden başlatmadan geçiş yapmak için hiçbir yolu yoktur. 
 
-Bazı durumlarda, yukarıdaki adımları kullanarak Hyper-V Device Guard ve kimlik bilgisi koruma etkinse, devre dışı bırakılırken başarısız olur. Hyper-V devre dışı bırakmak oluşturulamıyor (veya devre dışı görünüyor ancak HAXM yükleme yine başarısız olursa), Device Guard ve kimlik bilgisi koruma devre dışı bırakmak için sonraki bölümde adımları kullanın.
+Bazı durumlarda, yukarıdaki adımları kullanarak Hyper-V Device Guard ve Credential Guard etkinse devre dışı bırakılırken başarılı olmaz. Hyper-V devre dışı bırakmak oluşturulamıyor (veya devre dışı bırakılmış gibi görünüyor ancak HAXM yükleme yine başarısız olursa), Device Guard ve Credential Guard devre dışı bırakmak için sonraki bölümde adımları kullanın.
 
 <a name="disable-devguard" />
 
-### <a name="disabling-device-guard"></a>Cihaz koruyucusu devre dışı bırakma
+### <a name="disabling-device-guard"></a>Cihaz koruma devre dışı bırakma
 
-Cihaz koruyucusu ve kimlik bilgisi koruma Hyper-V Windows makinelerde devre dışı engelleyebilirsiniz. Bu genellikle bir yapılandırılan ve sahibi olan bir kuruluş tarafından denetlenen etki alanına katılan makineler için sorunudur.
-Windows 10'olmadığını görmek için aşağıdaki adımları kullanın. **Device Guard** çalışıyor:
+Device Guard ve Credential Guard Hyper-V Windows makinelerde devre dışı engelleyebilirsiniz. Bu genellikle yapılandırılan ve sahip olan bir kuruluş tarafından denetlenen etki alanına katılan makineler için bir sorundur.
+Windows 10'da, olmadığını görmek için aşağıdaki adımları kullanın. **Device Guard** çalışıyor:
 
-1. İçinde **Windows Search**, türü **sistem bilgisi** başlatmak için **sistem bilgisi** uygulama.
+1. İçinde **Windows Search**, türü **sistem bilgisi** başlatmak için **sistem bilgileri** uygulama.
 
-2. İçinde **Sistem Özeti**, olmadığını görmek için Görünüm **cihaz koruyucusu sanallaştırma tabanlı güvenlik** bulunduğundan ve yer **çalıştıran** durumu:
+2. İçinde **Sistem Özeti**, olmadığını görmek için Görünüm **cihaz koruyucusu sanallaştırma tabanlı güvenlik** varsa ve içinde **çalıştıran** durumu:
 
-   [![Cihaz koruyucusu mevcut ve çalışıyor](troubleshooting-images/win/09-device-guard-sml.png)](troubleshooting-images/win/09-device-guard.png#lightbox)
+   [![Cihaz koruma mevcut ve çalışıyor](troubleshooting-images/win/09-device-guard-sml.png)](troubleshooting-images/win/09-device-guard.png#lightbox)
 
-Cihaz koruyucusu etkinse, devre dışı bırakmak için aşağıdaki adımları kullanın:
+Device Guard etkinse devre dışı bırakmak için aşağıdaki adımları kullanın:
 
 1. Emin **Hyper-V** devre dışı bırakıldı (altında **Windows özelliklerini aç veya Kapat**) önceki bölümde açıklandığı gibi.
 
-2. Windows Arama kutusuna yazın **gpedit** seçip **Grup İlkesi düzenleme** arama sonucu. Bu başlatır **yerel Grup İlkesi Düzenleyicisi'ni**.
+2. Windows Search kutusuna **gpedit** seçip **Grup İlkesi düzenleme** arama sonucu. Böylece **yerel Grup İlkesi Düzenleyicisi**.
 
 3. İçinde **yerel Grup İlkesi Düzenleyicisi**, gitmek **bilgisayar yapılandırması > Yönetim Şablonları > Sistem > Device Guard**:
 
-   [![Cihaz koruyucusu yerel Grup İlkesi Düzenleyicisi'nde](troubleshooting-images/win/10-group-policy-editor-sml.png)](troubleshooting-images/win/10-group-policy-editor.png#lightbox)
+   [![Yerel Grup İlkesi Düzenleyicisi'nde cihaz koruma](troubleshooting-images/win/10-group-policy-editor-sml.png)](troubleshooting-images/win/10-group-policy-editor.png#lightbox)
 
-4. Değişiklik **kapatma üzerinde sanallaştırma tabanlı güvenlik** için **devre dışı** (yukarıda gösterildiği gibi) ve çıkış **yerel Grup İlkesi Düzenleyicisi'ni**.
+4. Değişiklik **kapatma üzerinde sanallaştırma tabanlı güvenlik** için **devre dışı bırakılmış** (yukarıda gösterildiği gibi) ve çıkış **yerel Grup İlkesi Düzenleyicisi**.
 
-5. Windows Arama kutusuna yazın **cmd**. Zaman **komut istemi** görünür arama sonuçlarında sağ **komut istemi** seçip **yönetici olarak çalıştır**.
+5. Windows Search kutusuna **cmd**. Zaman **komut istemi** görünür sağ tıklayın arama sonuçlarına **komut istemi** seçip **yönetici olarak çalıştır**.
 
-6. Aşağıdaki komutlar bir komut istemi penceresine yapıştırın (durumunda sürücü **Z:** olduğu kullanın, bunun yerine kullanmak için kullanılmayan bir sürücü harfi seçin):
+6. Aşağıdaki komutlar, komut istemi penceresine yapıştırın (durumunda sürücü **Z:** olan kullanın, bunun yerine kullanmak için kullanılmayan bir sürücü harfi seçin):
 
         mountvol Z: /s
         copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
@@ -225,19 +225,19 @@ Cihaz koruyucusu etkinse, devre dışı bırakmak için aşağıdaki adımları 
         bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
         mountvol Z: /d
 
-7. Bilgisayarınızı yeniden başlatın. Önyükleme ekranında, aşağıdakine benzer bir istem görmeniz gerekir:
+7. Bilgisayarınızı yeniden başlatın. Önyükleme ekranda bir komut istemi aşağıdaki gibi görmeniz gerekir:
 
-   **Kimlik bilgisi koruma devre dışı bırakmak istiyor musunuz?**
+   **Credential Guard ' ı devre dışı bırakmak istiyor musunuz?**
 
-   Kimlik bilgisi koruma istendiğinde devre dışı bırakmak için belirtilen tuşuna basın.
+   Credential Guard istendiği gibi devre dışı bırakmak için belirtilen tuşuna basın.
 
-8. Bilgisayar yeniden başlatıldıktan sonra Hyper-V (önceki adımlarda açıklandığı gibi) devre dışı bırakıldığından emin olmak için yeniden denetleyin.
+8. Bilgisayar yeniden başlatıldıktan sonra Hyper-V (önceki adımlarda açıklandığı gibi) devre dışı emin olmak için tekrar denetleyin.
 
-Hyper-V hala devre dışı değil ise, etki alanına katılmış bilgisayarınızın ilkeleri cihaz koruyucusu veya kimlik bilgisi koruma devre dışı engelleyebilir. Bu durumda, etki alanı yöneticiniz, kimlik bilgisi koruma dışında opt olanak sağlamak için bir muafiyet isteyebilir. Alternatif olarak, olmayan HAXM kullanmak için etki alanına katılmış bir bilgisayarı kullanabilirsiniz.
+Hyper-V yine de devre dışı değil ise, etki alanına katılmış bilgisayar ilkeleri Device Guard veya Credential Guard devre dışı engelleyebilir. Bu durumda, etki alanı yöneticiniz, Credential Guard dışında iyileştirilmiş olanak sağlamak için bir muafiyet isteyebilir. Alternatif olarak, etki alanı ile birleşik HAXM kullanmak için olmayan bir bilgisayarda kullanabilirsiniz.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Android öykünücüsünde düzgün başlamazsa, bu genellikle HAXM sorunları kaynaklanır. HAXM sorunları genellikle diğer sanallaştırma teknolojilerini, ayarları yanlış veya eski bir HAXM sürücü çakışıyor sonucudur. Ayrıntılı adımları kullanarak HAXM sürücüsünü yeniden yüklemeyi deneyin [yükleme HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm).
+Android öykünücüsü düzgün başlatılmazsa, bu genellikle HAXM ile ilgili sorunlar nedeniyle oluşur. HAXM sorunları genellikle diğer sanallaştırma teknolojilerini, ayarları yanlış veya süresi dolmuş bir HAXM sürücüsü ile çakışıyor sonucudur. Ayrıntılı adımları kullanarak HAXM sürücüsü yeniden yüklemeyi deneyin [yükleme HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm).
 
 -----
 
