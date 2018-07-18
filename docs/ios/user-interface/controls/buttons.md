@@ -1,72 +1,72 @@
 ---
 title: Xamarin.iOS düğmeleri
-description: UIButton sınıfı, çeşitli farklı stillerde iOS ekranlarda düğmesinin temsil etmek için kullanılır. Bu bölüm iOS düğmeleri ile çalışmak için farklı seçenekler sunar.
+description: UIButton sınıfı, çeşitli farklı türlerde iOS ekranları düğmesini temsil etmek için kullanılır. Bu kılavuz, iOS düğmeleri ile çalışmak için farklı seçenekler sunar.
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/21/2017
-ms.openlocfilehash: bf9a36c63e0c153ed950f4c3531e99e6baf77687
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/11/2018
+ms.openlocfilehash: 32f6330ad2fddc2e8386d6e574918a011f3bebad
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789485"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986010"
 ---
 # <a name="buttons-in-xamarinios"></a>Xamarin.iOS düğmeleri
 
-_UIButton sınıfı, çeşitli farklı stillerde iOS ekranlarda düğmesinin temsil etmek için kullanılır. Bu bölüm iOS düğmeleri ile çalışmak için farklı seçenekler sunar._
+İos'ta, `UIButton` sınıfı, bir düğme denetimini temsil eder.
 
-`UIButton`Sınıfı, bir iOS düğmesi denetiminde temsil eder. 
+Bir düğmenin özelliklerini programlama yoluyla veya ile değiştirilebilir **özellikler panelinde** iOS Designer'ın:
 
-Düğme Özellikleri düzenlenebilir `Properties Pad` iOS Designer:
+![İOS Designer, Özellikler panelinde](buttons-images/properties.png "iOS Designer, Özellikler panelinde")
 
+## <a name="creating-a-button-programmatically"></a>Program aracılığıyla bir düğme oluşturma
 
-![](buttons-images/properties.png "İOS Tasarımcısı özellikleri paneli")
+A `UIButton` yalnızca birkaç satır kod ile oluşturulabilir.
 
-## <a name="creating-a-button"></a>Bir düğme oluşturma
+- Bir düğme oluşturmak ve türünü belirtin:
 
-Bir UIButton yalnızca birkaç satır kod oluşturulabilir.
+  ```csharp
+  UIButton myButton = new UIButton(UIButtonType.System);
+  ```
 
-İlk olarak, yeni bir düğme örneği ve ihtiyacınız düğmesi türünü belirtin:
+  Düğmenin türü tarafından belirtilen bir `UIButtonType`:
 
-```csharp
-UIButton myButton = new UIButton(UIButtonType.System);
-```
+  - `UIButtonType.System` -Bir genel amaçlı düğmesi
+  - `UIButtonType.DetailDisclosure` -Genellikle, bir tablodaki belirli bir öğeyi hakkında ayrıntılı bilgi kullanılabilirliğini gösterir
+  - `UIButtonType.InfoDark` -Yapılandırma bilgilerini kullanılabilirliğini gösterir. koyu renkli
+  - `UIButtonType.InfoLight` -Yapılandırma bilgilerini kullanılabilirliğini gösterir. açık renkli
+  - `UIButtonType.AddContact` -Kişi eklenebilir gösterir
+  - `UIButtonType.Custom` -Özelleştirilebilir düğmesi
 
-UIButtonType aşağıdakilerden biri belirtilmelidir:
+  Düğme türleri hakkında daha fazla bilgi için göz atın:
+  
+  - [Özel düğme türlerini](#custom-button-types) bu belgenin bölüm
+  - [Düğme türleri](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/create_different_types_of_buttons) tarif
+  - Apple'nın [iOS İnsan Arabirimi yönergelerine](https://developer.apple.com/design/human-interface-guidelines/ios/controls/buttons/).
 
-- **Sistem** -bu iOS tarafından kullanılan standart düğme türü ve en sık kullanacağınız türüdür.
-- **DetailDisclosure** -ayrıntılı bilgi göstermek veya gizlemek için kullanılan düğmesi "azaltın" türünü gösterir.
-- **InfoDark** -bir koyu ayrıntılı düğmesine bir daire içinde bir "i" görüntülenen bilgileri.
-- **InfoLight** -ışık ayrıntılı düğmesine bir daire içinde bir "i" görüntülenen bilgileri.
-- **AddContact** -düğme bir kişi Ekle düğmesi olarak görüntüler.
-- **Özel** -düğmesinin birkaç nitelikler özelleştirmenizi sağlar.
+- Düğmenin boyutunu ve konumunu tanımlayın:
 
-Düğme türleri hakkında daha fazla bilgi bulunabilir [düğme türleri](https://developer.xamarin.com/recipes/ios/standard_controls/buttons/create_different_types_of_buttons/) tarif.
+  ```csharp
+  myButton.Frame = new CGRect(25, 25, 300, 150);
+  ```
 
-Ardından, ekranda boyut tanımlayın ve düğmesinin konumu. Örnek:
+- Düğmenin metni ayarlayın. Kullanım `SetTitle` metin gerektiren yöntemi ve bir `UIControlState` değeri:
 
-```csharp
-myButton.Frame = new CGRect (25, 25, 300, 150);
-```
+  ```csharp
+  myButton.SetTitle("Hello, World!", UIControlState.Normal);
+  ```
 
-Düğme metni değiştirmek için kullanın `SetTitle` özelliği bir metin dizesinin ayarlamanızı gerektiren düğmesine ve `UIControlStyle`. Örneğin:
+  Bir düğmeye stil oluşturma ve metin ayarlama hakkında daha fazla bilgi için bakın:
 
-```csharp
-myButton.SetTitle("Hello, World!", UIControlState.Normal);
-```
+  - [Bir düğmeye stil](#styling-a-button) bu belgenin bölüm
+  - [Ayarla düğmesi metni](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/set_button_text) tarif.
 
-Her durum için farklı özellikleri ayarlama (ör. kullanıcı için daha fazla bilgi iletişim kurmanıza olanak veren metin rengi devre dışı durumunu için gri olun). İOS Tasarımcısı kullanarak her durumunu arasında geçiş yapabilirsiniz veya program aracılığıyla yapabilirsiniz. Ayar düğme metni ve durumu hakkında daha fazla bilgi için başvurmak [düğme metni ayarlamak](https://developer.xamarin.com/recipes/ios/standard_controls/buttons/set_button_text/) tarif.
+## <a name="handling-a-button-tap"></a>Bir düğmeye dokunarak işleme
 
-## <a name="dealing-with-user-interactions"></a>Kullanıcı etkileşimleri postalarla
-
-
-Bunlar tıklatıldığında bir şeyler sürece düğmeleri çok kullanışlı değildir! 
-
-Kullanım temas tarafından kendi ekranında düğmesini ile etkileşime giren gibi iOS düğmeleri neredeyse her zaman dokunma olayları olaylardır. Tüm olası UI denetim olaylarının bir listesi listelenen [burada](https://developer.apple.com/documentation/uikit/uicontrolevents), ancak en yaygın kullanılan olay iOS `TouchUpInside`. Düğmeye basıldığında sonra bir şeyler için olay işleyicisi sonra oluşturabilirsiniz:
-
+Bir düğmeye dokunarak için yanıt vermek için bir işleyici düğmenin için sağlamak `TouchUpInside` olay:
 
 ```csharp
 button.TouchUpInside += (sender, e) => {
@@ -74,38 +74,44 @@ button.TouchUpInside += (sender, e) => {
 };
 ```
 
-### <a name="adding-events-in-the-ios-designer"></a>İOS Tasarımcısı olaylar ekleme
- 
-Olaylar sekmesi özelliği defterinde denetimlere olay eklemek için kullanın.
+> [!NOTE]
+> `TouchUpInside` yalnızca düğme olayı değil. `UIButton` bir alt sınıfıdır `UIControl`, tanımlayan [birçok farklı olay](https://developer.xamarin.com/api/type/UIKit.UIControlEvent/).
 
-Olayı seçin ve ya da yeni bir olay işleyicisi ya da listeden seçin bir ad yazın. Bunun yapılması, yeni bir kısmi yöntemi View Controller sınıfınızda oluşturur.
+### <a name="using-the-ios-designer-to-specify-button-event-handlers"></a>İOS Designer düğmesi olay işleyicileri belirtmek için kullanma
 
-![Olaylar sekmesi](buttons-images/image1.png)
+Kullanım **olayları** sekmesinde **özellikler panelinde** çeşitli olayları bir düğme kullanıcının olay işleyicileri belirtmek için.
 
-## <a name="styling-a-button"></a>Bir düğme stil oluşturma
+Uygun bir olay için yeni bir olay işleyicisi adı yazın veya listeden birini seçin. Bunu bir olay işleyicisi, düğmenin görünüm denetleyicisi için kod oluşturur.
 
-UIButtons başlık yalnızca yalnızca değiştirilememektedir bir duruma sahip oldukları, çoğu Uıkit denetimleri farklı, her biri için değiştirmek zorunda `UIControlState`. Başlık rengi ve gölge rengini ayarlama benzer bir şekilde gerçekleştirilir:
+![Özellikleri paneli olaylar sekmesinde](buttons-images/image1.png "olaylar sekmesinde özellikler paneli")
+
+## <a name="styling-a-button"></a>Bir düğmeye stil oluşturma
+
+`UIButton` denetimleri farklı durumları sayısında varolabilir, tarafından belirtilen her bir `UIControlState` değeri – `Normal`, `Disabled`, `Focused`, `Highlighted`vb. Her durum programlama yoluyla veya iOS Designer ile belirtilen benzersiz bir stili verilebilir.
+
+> [!NOTE]
+> Tüm tam bir listesi için `UIControlState` değerleri göz atın [ `UIKit.UIControlState enumeration` ](https://developer.xamarin.com/api/type/UIKit.UIControlState/) belgeleri.
+
+Örneğin, başlık rengi ve gölge rengini ayarlamak için `UIControlState.Normal`:
 
 ```csharp
-button.SetTitleColor (UIColor.White, UIControlState.Normal);
+button.SetTitleColor(UIColor.White, UIControlState.Normal);
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
-Ayrıca, öznitelikli metin düğmenin başlığı olarak kullanabilirsiniz. Örneğin:
+Aşağıdaki kodu için bir öznitelik (stilize) dizesi düğmesi başlığı ayarlar `UIControlState.Normal` ve `UIControlState.Highlighted`:
 
 ```csharp
-var normalAttributedTitle = new NSAttributedString (buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);
-myButton.SetAttributedTitle (normalAttributedTitle, UIControlState.Normal);
+var normalAttributedTitle = new NSAttributedString(buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);
+myButton.SetAttributedTitle(normalAttributedTitle, UIControlState.Normal);
 
-var highlightedAttributedTitle = new NSAttributedString (buttonTitle, foregroundColor: UIColor.Green, strikethroughStyle: NSUnderlineStyle.Thick);
-myButton.SetAttributedTitle (highlightedAttributedTitle, UIControlState.Highlighted);
+var highlightedAttributedTitle = new NSAttributedString(buttonTitle, foregroundColor: UIColor.Green, strikethroughStyle: NSUnderlineStyle.Thick);
+myButton.SetAttributedTitle(highlightedAttributedTitle, UIControlState.Highlighted);
 ```
 
 ## <a name="custom-button-types"></a>Özel düğme türleri
 
-
-Ayarladığınızda `Custom` düğmesi nesne türünde hiçbir varsayılan işleme. Düğmenin görünümünü farklı durumları için görüntü ayarlayarak yapılandırabilirsiniz. Örneğin, aşağıdaki kodu farklı görüntülerde ekleneceği gösterilmektedir `Normal`, `Highlighted` ve `Selected` durumları:
-
+İle düğmeleri bir `UIButtonType` , `Custom` varsayılan bir stili vardır. Ancak, farklı durumlara yönelik bir görüntü ayarlayarak bir düğmenin görünümünü yapılandırmak mümkündür:
 
 ```csharp
 button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand.png"), UIControlState.Normal);
@@ -113,16 +119,13 @@ button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_Highlight.png"), UICont
 button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlState.Selected);
 ```
 
+Olup kullanıcı düğmeyi veya oncollisionstay bağlı olarak, bunu aşağıdaki görüntülerden birini işlenir (`UIControlState.Normal`, `UIControlState.Highlighted` ve `UIControlState.Selected` durumları, sırasıyla):
 
-Olup kullanıcı düğmesini veya değecek bağlı olarak, bunu aşağıdaki görüntüleri biri olarak işlenir (`Normal`, `Highlighted` ve `Selected` sırasıyla durumları):
+![UIControlState.Normal](buttons-images/image22.png "UIControlState.Normal")
+![UIControlState.Highlighted](buttons-images/image23.png "UIControlState.Highlighted") 
+ ![UIControlState.Selected](buttons-images/image24.png "UIControlState.Selected")
 
-
-![](buttons-images/image22.png "UIButton durumu Normal")
-![](buttons-images/image23.png "UIButton vurgulanmış durumu")
-![](buttons-images/image24.png "UIButton seçili durumu")
-
-Özel düğmeler ile çalışma hakkında daha fazla bilgi için başvurmak [bir düğme için resim kullanmak](https://developer.xamarin.com/recipes/ios/standard_controls/buttons/use_an_image_for_a_button/).
-
+Özel düğmeler ile çalışma hakkında daha fazla bilgi için [bir görüntüyü kullanmak için bir düğme](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button) tarif.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
