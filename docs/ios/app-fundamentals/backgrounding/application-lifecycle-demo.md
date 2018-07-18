@@ -1,85 +1,80 @@
 ---
-title: Uygulama yaşam döngüsü gösteri Xamarin.iOS için
-description: Bu belgede, bu olayların ne zaman ve nasıl işleneceğini gösteren uygulama temsilcisi tarafından bir iOS uygulaması işlenmiş çeşitli yaşam döngüsü olayları inceler.
+title: Xamarin.iOS için uygulama yaşam döngüsü Tanıtımı
+description: Bu belgede, çeşitli yaşam döngüsü olaylarını bu olayların ne zaman ve nasıl işlenir gösteren bir iOS uygulamasına uygulama Temsilcide tarafından işlenen inceler.
 ms.prod: xamarin
 ms.assetid: 5C8AACA6-49F8-4C6D-99C3-5F443C01B230
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 64c695065012e4bf796c219c260324d9b6278ca5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/17/2018
+ms.openlocfilehash: 53ae6947cf1483fabe415d6f6521d9384bddb46f
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783590"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111179"
 ---
-# <a name="application-lifecycle-demo-for-xamarinios"></a>Uygulama yaşam döngüsü gösteri Xamarin.iOS için
+# <a name="application-lifecycle-demo-for-xamarinios"></a>Xamarin.iOS için uygulama yaşam döngüsü Tanıtımı
 
-Bu bölümde, şu dört uygulama durumları ve rolünü gösteren bir uygulama incelemek için kalacaklarını `AppDelegate` durumları değiştiği uygulama bildiren içinde yöntemleri. Uygulama durumu değiştiğinde uygulama güncelleştirmeleri konsola yazdırılır:
+Bu makalede ve [örnek kod](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/) ios'ta dört uygulama durumlarını ve rolü gösterir `AppDelegate` bildiren durumlarını ne zaman değiştirildiğini, uygulama içinde yöntemleri. Uygulama durumu değiştiğinde uygulama güncelleştirmeleri konsola yazdırır:
 
- [![](application-lifecycle-demo-images/image3.png "Örnek uygulaması")](application-lifecycle-demo-images/image3.png#lightbox)
+[![](application-lifecycle-demo-images/image3-sml.png "Örnek uygulama")](application-lifecycle-demo-images/image3.png#lightbox)
 
- [![](application-lifecycle-demo-images/image4.png "Uygulama durumu değiştiğinde uygulama güncelleştirmeleri konsola yazdırma")](application-lifecycle-demo-images/image4.png#lightbox)
+[![](application-lifecycle-demo-images/image4.png "Uygulama durumu değiştiğinde uygulama güncelleştirmeleri konsola yazdırır")](application-lifecycle-demo-images/image4.png#lightbox)
 
 ## <a name="walkthrough"></a>İzlenecek yol
 
+1. Açık **yaşam döngüsü** projesi **LifecycleDemo** çözüm.
+1. Açık yukarı `AppDelegate` sınıfı. Günlüğe kaydetme, uygulama durumu ne zaman değiştirildiğini göstermek için yaşam döngüsü yöntemler eklenmiştir:
 
-  1. Açık _yaşam döngüsü_ proje _LifecycleDemo_ çözümü.
-  1. Açık `AppDelegate` sınıfı. Günlüğe kaydetme bize ne zaman uygulama durumu değişti bildirin yaşam döngüsü yöntemleri ekledik olduğunu unutmayın:
+    ```csharp
+    public override void OnActivated(UIApplication application)
+    {
+        Console.WriteLine("OnActivated called, App is active.");
+    }
+    public override void WillEnterForeground(UIApplication application)
+    {
+        Console.WriteLine("App will enter foreground");
+    }
+    public override void OnResignActivation(UIApplication application)
+    {
+        Console.WriteLine("OnResignActivation called, App moving to inactive state.");
+    }
+    public override void DidEnterBackground(UIApplication application)
+    {
+        Console.WriteLine("App entering background state.");
+    }
+    // not guaranteed that this will run
+    public override void WillTerminate(UIApplication application)
+    {
+        Console.WriteLine("App is terminating.");
+    }
+    ```
 
-            ```chsarp
-                public override void OnActivated(UIApplication application)
-                {
-                    Console.WriteLine("OnActivated called, App is active.");
-                }
-                public override void WillEnterForeground(UIApplication application)
-                {
-                    Console.WriteLine("App will enter foreground");
-                }
-                public override void OnResignActivation(UIApplication application)
-                {
-                    Console.WriteLine("OnResignActivation called, App moving to inactive state.");
-                }
-                public override void DidEnterBackground(UIApplication application)
-                {
-                    Console.WriteLine("App entering background state.");
-                }
-                // not guaranteed that this will run
-                public override void WillTerminate(UIApplication application)
-                {
-                    Console.WriteLine("App is terminating.");
-                }
-            ```
+1. Cihaz veya simülatör uygulamasını başlatın. `OnActivated` uygulama başlatıldığında çağrılır. Uygulama artık bulunduğu _etkin_ durumu.
+1. Simülatör veya arka plan uygulamaya getirmek için cihaz giriş düğmesine basın. `OnResignActivation` ve `DidEnterBackground` uygulama geçişler olarak adlandırılan `Active` için `Inactive` ve `Backgrounded` durumu. Arka planda yürütülmesi için hiçbir uygulama kod kümesi olduğundan, bir uygulama olarak kabul edilir _askıya_ bellekte.
+1. Önplana geri getirmek için uygulamaya geri gidin. `WillEnterForeground` ve `OnActivated` hem de çağrılır:
 
-  1. Uygulamayı benzetici veya cihazı başlatın. `OnActivated` uygulama başlatıldığında çağrılır. Uygulama olduğunu _etkin_ durumu.
-  1. Simulator veya arka plan uygulamaya getirmek için cihaz giriş düğmesine basın. `OnResignActivation` ve `DidEnterBackground` uygulama geçişler olarak adlı `Active` için `Inactive` ve içine `Backgrounded` durumu. Biz uygulamamız arka planda yürütmek için herhangi bir kod verilmedi olduğundan, uygulama olarak kabul edilir _askıya_ bellekte.
-  1. Ön alana geri getirmek için uygulamasına geri gidin. `WillEnterForeground` ve `OnActivated` her ikisi de çağrılır:
+    ![](application-lifecycle-demo-images/image4.png "Konsola yazdırılmasını durum değişiklikleri")
 
-        ![](application-lifecycle-demo-images/image4.png "Konsola yazdırılır durum değişiklikleri")
+    Uygulama ön, arka planından geçtiğini ve ekranda görüntülenen metni değişiklikleri görünüm denetleyicisi kod aşağıdaki satırı çalıştırılır:
 
-    Aşağıdaki kod satırını uygulama arka planından ön girdiğini bize bildiren bizim görünüme denetleyiciye eklediğimiz olduğunu unutmayın:
+    ```csharp
+    UIApplication.Notifications.ObserveWillEnterForeground ((sender, args) => {
+        label.Text = "Welcome back!";
+    });
+    ```
 
-        ```csharp
-            UIApplication.Notifications.ObserveWillEnterForeground ((sender, args) => {
-                    label.Text = "Welcome back!";
-                });
-        ```
+1. Tuşuna **giriş** arka plan uygulamaya koymak düğmesi. Ardından, çift dokunmayla **giriş** düğmesini uygulama değiştirici taşıyın. İPhone X ekranının altındaki yukarı çekin:
 
-1. Tuşuna **giriş** arka uygulamasına yerleştirilecek düğmesi. Ardından, çift dokunmayla **giriş** düğmesi uygulama değiştirici getirmek için:
-    
-    ![](application-lifecycle-demo-images/app-switcher-.png "Uygulama değiştirici")
+    [![Uygulama değiştirici](application-lifecycle-demo-images/app-switcher-sml.png "uygulama değiştirici")](application-lifecycle-demo-images/app-switcher.png#lightbox)
   
-1. Uygulama değiştirici uygulamayı bulun ve yukarı doğru çekin kaldırmak için:
-    
-    ![](application-lifecycle-demo-images/app-switcher-swipe-.png "Yukarı doğru çekin çalışan bir uygulamanın kaldırmak için") 
-    
-iOS uygulama sonlandırılır. Aklınızda `WillTerminate` biz bir uygulama sonlandırma çünkü çağrılmaz _askıya_ arka planda.
+1. Uygulama uygulama değiştirici bulun ve yukarı doğru çekin (makinesinde köşesinde kırmızı görünmezse kadar iOS 11, uzun) kaldırmak için:
 
-Biz iOS uygulama durumları ve geçişleri anladığınıza göre biz iOS backgrounding için kullanılabilir farklı seçenekler göz atın.
+    [![Remove çalışan bir uygulamanın en çok kullanılan](application-lifecycle-demo-images/app-switcher-swipe-sml.png "Kaldır çalışan bir uygulamanın en fazla geçirme")](application-lifecycle-demo-images/app-switcher-swipe.png#lightbox)
 
-
+iOS uygulama sona erer. Unutmayın `WillTerminate` uygulama zaten olduğu için çağrılmaz _askıya_ arka planda.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [LifecycleDemo(Part2) (örnek)](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)
+- [LifecycleDemo (örnek)](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)

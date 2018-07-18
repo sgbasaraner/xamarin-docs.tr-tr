@@ -1,48 +1,48 @@
 ---
-title: 'F # ile programlama UrhoSharp'
-description: 'Bu belge, F # Mac için Visual Studio kullanarak basit Merhaba Dünya UrhoSharp uygulaması oluşturmak açıklar'
+title: 'F # ile UrhoSharp programlama'
+description: 'Bu belge F # Mac için Visual Studio kullanarak basit bir hello world UrhoSharp uygulamasının nasıl oluşturulacağını açıklar.'
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 64d69de70d6bc6f23b9907b498622b00c42b6f50
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a4e1a31a2591c799a153e1333e4a4a4a0719a107
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783278"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111205"
 ---
-# <a name="programming-urhosharp-with-f"></a>F # ile programlama UrhoSharp
+# <a name="programming-urhosharp-with-f"></a>F # ile UrhoSharp programlama
 
-F # aynı kitaplıkları ve C# programcıları tarafından kullanılan kavramları kullanarak ile UrhoSharp programlanabilir. [Kullanarak UrhoSharp](~/graphics-games/urhosharp/using.md) makale UrhoSharp altyapısı genel bir bakış sunar ve bu makalede önce okumanız gerekir.
+UrhoSharp ile F # aynı kitaplıkları ve C# programcıları tarafından kullanılan kavramları kullanarak programlanabilir. [UrhoSharp kullanma](~/graphics-games/urhosharp/using.md) makale UrhoSharp altyapısı genel bir bakış sağlar ve bu makalede önce okunmalıdır.
 
-C++ dünyada kaynaklanan birçok kitaplıklar gibi birçok UrhoSharp işlevler Boole değerlerini veya başarı veya başarısızlık gösteren tamsayı döndürür. Kullanmanız gereken `|> ignore` bu değerleri yoksaymak için.
+C++ dünyada kaynaklanan birçok kitaplıkları gibi birçok UrhoSharp İşlevler, Boole değerlerini veya başarısı veya başarısızlığı gösteren tamsayı döndürür. Kullanmanız gereken `|> ignore` bu değerleri yok sayılacak.
 
-[Örnek program](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) bir "Hello World" den F # UrhoSharp içindir.
+[Örnek program](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) UrhoSharp F #'dan bir "Merhaba Dünya" içindir.
 
 ## <a name="creating-an-empty-project"></a>Boş bir proje oluşturma
 
-Hiçbir F # şablonlar UrhoSharp için henüz kullanılabilir, böylece kendi UrhoSharp projesi oluşturmak her iki Başlarken yapabilecekleriniz [örnek](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) veya şu adımları izleyin:
+Hiçbir F # şablonlar UrhoSharp için henüz kullanılabilir, böylece kendi UrhoSharp projesi oluşturmak ya başlangıç ile yapabilecekleriniz [örnek](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) ya da şu adımları izleyin:
 
-1. Mac için Visual Studio'da yeni bir oluşturma **çözüm**. Seçin **iOS > Uygulama > Single View uygulaması** seçip **F #** uygulama dili olarak. 
-1. Silme **Main.storyboard** dosya. Açık **Info.plist** dosya ve **iPhone / iPod dağıtım bilgileri** bölmesinde, silmek `Main` içinde dize **ana arabirimi** açılır.
+1. Mac için Visual Studio'dan yeni bir oluşturma **çözüm**. Seçin **iOS > Uygulama > tek görünüm uygulaması** seçip **F #** uygulama dili olarak. 
+1. Silme **Main.storyboard** dosya. Açık **Info.plist** dosya ve **iPhone / iPod dağıtım bilgisi** bölmesinde Sil `Main` içinde dize **ana arabirimi** açılır.
 1. Silme **ViewController.fs** de dosya.
 
-## <a name="building-hello-world-in-urho"></a>Urho yapı Hello World
+## <a name="building-hello-world-in-urho"></a>Yapı Urho dilinde Merhaba Dünya
 
-Şimdi, oyunun sınıfları tanımlama başlamaya hazırsınız. En az bir alt sınıfı tanımlamanız gerekir `Urho.Application` ve geçersiz kılma kendi `Start` yöntemi. Bu dosyayı oluşturmak için F # projeye sağ tıklayın, seçin **yeni dosya Ekle...**  ve boş bir F # sınıfı projenize ekleyin. Yeni dosyayı projenize dosyaların listesini sonuna eklenir ancak göründüğü şekilde sürükleyin gerekir *önce* içinde kullanılan **AppDelegate.fs**.
+Artık, oyun sınıfları tanımlama başlamak hazırsınız. En az bir alt sınıfı tanımlamanız gerekir `Urho.Application` ve geçersiz kılma kendi `Start` yöntemi. Bu dosyayı oluşturmak için F # projenize sağ tıklayın, **yeni dosya Ekle...**  ve boş bir F # sınıfı projenize ekleyin. Yeni dosyayı projenize dosyaların listesinin sonuna eklenir, ancak bunu görünmesi sürüklemeniz gerekir *önce* kullanılır **AppDelegate.fs**.
 
-1. Urho NuGet paketine bir başvuru ekleyin.
-1. Varolan bir Urho projeden (büyük) dizinleri kopyalamak **CoreData /** ve **veri /** projenizin içine **kaynakları /** dizin. F # projenize, sağ tıklayın **kaynakları** klasörü ve kullanım **Ekle / varolan klasörü Ekle** tüm bu dosyaların projenize eklemek için.
+1. Urho NuGet paketine başvuru ekleyin.
+1. Mevcut bir Urho projeden (büyük) dizinleri kopyalama **CoreData /** ve **veri /** projenizin içine **kaynakları /** dizin. F # projenizde, sağ **kaynakları** klasörü ve kullanım **Ekle / mevcut klasörü Ekle** tüm bu dosyalar, projenize eklemek için.
 
 Proje yapısı gibi görünmelidir:
 
-![](fsharp-images/solutionpane.png "Proje yapısı gibi görünmelidir")
+![](fsharp-images/solutionpane.png "Proje yapısı şuna benzer görünmelidir")
 
-Bir alt türü, yeni oluşturulan sınıf tanımlama `Urho.Application` ve geçersiz kılma kendi `Start` yöntemi:
+Yeni oluşturulan sınıfınıza öğesinin alt öğesi tanımlamak `Urho.Application` ve geçersiz kılma kendi `Start` yöntemi:
 
-```csharp
+```fsharp
 namespace HelloWorldUrho1
 
 open Urho
@@ -69,13 +69,13 @@ override this.Start() =
             
 ```
 
-Kodu oldukça basittir. Kullandığı `Urho.Gui.Text` merkezi hizalı dize belirli bir yazı tipi ve renk boyutu ile görüntülenecek sınıf. 
+Kod çok basittir. Kullandığı `Urho.Gui.Text` belirli bir yazı tipi ve renk boyutu ile merkezi hizalanmış bir dize görüntülemek için sınıf. 
 
-Ancak, bu kod çalıştırmadan önce UrhoSharp başlatılmalıdır. 
+Ancak, bu kodu çalıştırmadan önce UrhoSharp başlatılmalıdır. 
 
-AppDelegate.fs dosyasını açın ve değiştirme `FinishedLaunching` yöntemini aşağıdaki şekilde:
+AppDelegate.fs dosya açıp değiştirdiğinizde `FinishedLaunching` yöntemini aşağıdaki şekilde:
 
-```csharp
+```fsharp
 namespace HelloWorldUrho1
 
 open System
@@ -97,9 +97,9 @@ type AppDelegate () =
         true
 ```
 
-`ApplicationOptions.Default` Yatay modu uygulama için varsayılan seçenekler sağlar. Bunlar geçirmek `ApplicationOptions` için varsayılan oluşturucu için `Application` bir alt kümesi (tanımladığınız unutmayın `HelloWorld` sınıfı, satır `inherit Application(o)` temel sınıf oluşturucuyu çağırır). 
+`ApplicationOptions.Default` Yatay modda çalışan bir uygulama için varsayılan seçenekleri sağlar. Bunlar geçirmek `ApplicationOptions` için varsayılan oluşturucu için `Application` alt (tanımladığınız unutmayın `HelloWorld` sınıfı, satır `inherit Application(o)` temel sınıf oluşturucusunu çağırır). 
 
-`Run` Yöntemi, `Application` program başlatır. Döndürme olarak tanımlanan bir `int`, hangi yöneltilen için `ignore`. 
+`Run` Yöntemi, `Application` program başlatır. Döndüren olarak tanımlanan bir `int`, hangi ayrıştırılabileceği `ignore`. 
 
 Sonuç programı gibi görünmelidir:
 
@@ -114,4 +114,4 @@ Sonuç programı gibi görünmelidir:
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Github'da (örnek) göz atın](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [(Örnek) Github'da göz atın](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)

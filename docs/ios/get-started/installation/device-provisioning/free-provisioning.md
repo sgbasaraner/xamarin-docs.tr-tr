@@ -1,100 +1,147 @@
 ---
-title: Ücretsiz Xamarin.iOS uygulamaları için sağlama
-description: Bu belgede, Apple'nın Ücretli Geliştirici programına kaydolun gerek kalmadan Xamarin.iOS geliştiriciler fiziksel cihazda kendi uygulama nasıl sınayabilirsiniz açıklanmaktadır.
+title: Ücretsiz xamarin iOS uygulamaları için hazırlama
+description: Bu belgede, Apple'nın Ücretli Geliştirici programına kaydolun gerek kalmadan Xamarin.iOS geliştiriciler uygulamalarını fiziksel bir cihazda nasıl sınayabilirsiniz açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 03/19/2017
-ms.openlocfilehash: 623f79f482170c6b1d8ecdb642afb2fc7acf061d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/16/2018
+ms.openlocfilehash: 22ac17e211562eccbc49cc213e06079e77dd08c0
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786028"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111163"
 ---
-# <a name="free-provisioning-for-xamarinios-apps"></a>Ücretsiz Xamarin.iOS uygulamaları için sağlama
+# <a name="free-provisioning-for-xamarinios-apps"></a>Ücretsiz xamarin iOS uygulamaları için hazırlama
 
-_Tüm iOS ve Mac geliştiricileri için önemli bir değişiklik Xcode 7 Apple'nın sürümü ile gelen: sağlama boş._
+Ücretsiz sağlanmasına olanak tanır dağıtma ve iOS cihazlarında uygulamalarını test etmek bir Xamarin.iOS geliştiriciler **olmadan** parçası **Apple Developer Program**.
+Simülatör test değerli ve kullanışlı olsa da, ayrıca bunlar gerçek bellek, depolama ve ağ bağlantısı kısıtlamaları altında düzgün olduğunu doğrulamak için fiziksel bir iOS cihazlarındaki uygulamaların test etmek için gereklidir.
 
-Ücretsiz sağlanmasına olanak tanır geliştiriciler için iOS cihazına Xamarin.iOS uygulamasına dağıtmak **olmadan** herhangi bir parçası olan **Apple Developer Program**. Bu geliştiriciler için oldukça avantajlıdır bir aygıtta test olarak birçok faydaları sağlar, ancak bunlarla sınırlı olmamak bellek, depolama, ağ bağlantısı diğerlerinin yanı sıra dahil olmak üzere simulator sınama üzerinden.
+Uygulama bir aygıta dağıtmak için ücretsiz sağlama kullanmak için:
 
-Oluşturan bir Apple Developer hesabı Xcode gerçekleştirilmelidir olmadan sağlama, bir *imzalama kimlik* (bir geliştirici sertifikası ve özel anahtarı içeren) ve bir *sağlama profili* () bir açık uygulama kimliği ve bağlı iOS Cihazınızı UDID içeren).
+- Xcode gerekli oluşturulacağı *imzalama kimliği* (Geliştirici sertifikasını ve özel anahtarı) ve *sağlama profili* (bir açık uygulama kimliği ve bağlı bir iOS cihazın UDID'si içeren).
+- İmzalama kimliğini ve sağlama profili Xcode Mac ya da Visual Studio 2017 için Visual Studio tarafından oluşturulan Xamarin.iOS uygulamanızı dağıtmak için kullanın.
+
+> [!IMPORTANT]
+> [Otomatik sağlama](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) Mac veya Geliştirici testleri için bir cihaz otomatik olarak ayarlamak için Visual Studio 2017 için Visual Studio sağlar. Ancak, otomatik sağlama ücretsiz sağlama ile uyumlu değil. Otomatik sağlamayı kullanmak için ücretli bir Apple Developer Program hesabınız olması gerekir.
 
 ## <a name="requirements"></a>Gereksinimler
 
-Xamarin.iOS dağıtma avantajlarından yararlanmak için ücretsiz sağlama ile bir cihaza uygulamaları Xcode 7'yi kullanarak veya üstü.
+Ücretsiz sağlama ile bir cihaz, Xamarin.iOS uygulama dağıtmak için:
 
-**Kullanılan Apple kimliği herhangi Apple Developer Program bağlı olmamalıdır.**
+- Kullanılan Apple Kimliğini Apple Geliştirici programına bağlı olmamalıdır.
+- Xamarin.iOS uygulamanızı açık uygulama kimliği, joker değil uygulama kimliğini kullanmanız gerekir
+- Xamarin.iOS uygulamanızda kullanılan paket grubu tanımlayıcısı, benzersiz olmalıdır ve başka bir uygulamada daha önce kullanılmış olamaz. Ücretsiz sağlama ile kullanılan herhangi bir paket grubu tanımlayıcısı **olamaz** yeniden kullanılabilir.
+- Zaten dağıtılmış bir uygulama, ücretsiz sağlama ile bu uygulama dağıtamazsınız.
+- Uygulama Hizmetleri uygulamanıza kullanıyorsa, bir sağlama profili içinde ayrıntılı olarak oluşturmanız gerekecektir [cihaz sağlama](~/ios/get-started/installation/device-provisioning/index.md#appservices) Kılavuzu. 
 
-Uygulamanızda kullanılan paket kimliği benzersiz olmalıdır ve başka bir uygulamada daha önce kullanılmış olamaz. Ücretsiz sağlama olabilir ile kullanılmayan tüm paket kimliği yeniden yeniden kullanılabilir. Bir uygulama zaten dağıtılmış, ücretsiz sağlama ile bu uygulama sağlayamazsınız. 
+Bir göz atın [sınırlamaları](#limitations) ilişkili sınırlamaları hakkında daha fazla bilgi için bu belgenin bölüm sağlama ücretsiz ve başvurduğu [uygulama dağıtım kılavuzları](~/ios/deploy-test/app-distribution/index.md) hakkında daha fazla bilgi iOS uygulamaları dağıtma.
 
-Başvurmak [uygulama dağıtım kılavuzları](~/ios/deploy-test/app-distribution/index.md) daha fazla bilgi için.
+## <a name="testing-on-device-with-free-provisioning"></a>Ücretsiz sağlama ile cihaz üzerinde test etme
 
-Uygulama Hizmetleri, uygulamanızın kullandığı sonra ayrıntılı biçimde açıklandığı gibi bir sağlama profili oluşturmanız gerekir [cihaz sağlamayı](~/ios/get-started/installation/device-provisioning/index.md#appservices) Kılavuzu. Daha fazla sınırlamalarını görebilirsiniz [ilgili bölümü](#limitations) aşağıda.
+Ücretsiz sağlama ile Xamarin.iOS uygulamanızı test etmek için aşağıdaki adımları izleyin.
 
+### <a name="use-xcode-to-create-a-signing-identity-and-provisioning-profile"></a>Xcode imzalama kimliğini ve sağlama profili oluşturmak için kullanın
 
-## <a name="a-namelaunching--launching-your-app"></a><a name="launching" /> Uygulamanızı başlatma
+1. Bir Apple kimliği yoksa [oluşturmak](https://appleid.apple.com).
+2. Xcode açın ve gidin **Xcode > Tercihler**.
+3. Altında **hesapları**, kullanın **+** mevcut Apple kimliğinizi eklemek için Aşağıdaki ekran görüntüsüne benzer görünmelidir:
 
-Mac veya Visual Studio için Visual Studio Xcode imzalama kimlik ve sağlama profilleri oluşturmak için kullanacağı ve ardından kullanacaktır cihazına bir uygulamayı dağıtmak için ücretsiz sağlama kullanmak için uygulamamıza ile imzalamak için doğru profili seçin. Bunu yapmak için aşağıdaki adım adım izleyin:
+    ![Xcode tercihleri – hesapları](free-provisioning-images/launchapp1.png "Xcode tercihleri – hesaplar")
 
-1. Bir Apple kimliği yoksa, tek tek oluşturun [appleid.apple.com](https://appleid.apple.com/account).
-2. Xcode açın ve **Xcode > Tercihler**.
-3. Altında **hesapları**, kullanın **+** var olan Apple kimliğinizi Ekle düğmesi Aşağıdaki ekran görüntüsüne benzer görünmelidir:
+4. Xcode tercihleri kapatın.
+5. Uygulamanızı dağıtmak istediğiniz iOS cihaz takın.
+6. Xcode'da, yeni bir proje oluşturun. Seçin **Dosya > Yeni > Proje** seçip **tek görünüm uygulaması**.
+7. Yeni Proje iletişim kutusunda ayarlamak **takım** eklediğiniz Apple kimliği. Aşağı açılan listeden, benzer şekilde görünmelidir **uygulamanızın adı (Kişisel ekibi)**:
 
-  [![](free-provisioning-images/launchapp1.png "Xcode Tercihler hesapları")](free-provisioning-images/launchapp1.png#lightbox)
+    ![Yeni Uygulama Oluştur](free-provisioning-images/launchapp2.png "yeni uygulama oluştur")
 
-4. Xcode'da yeni bir boş tek görünüm iOS projesi oluşturun ve dağıtmak istediğinizden iOS cihazını takın. Ayarlama **takım** eklemiş olduğunuz Apple kimliği açılır. Benzer bir biçimde olmalıdır `your name (Personal Team - your Apple ID)`:
+8. Yeni Proje oluşturulduktan sonra iOS Cihazınızı (bir benzetici yerine) hedefleyen bir Xcode derleme düzeni seçin.
 
-  [![](free-provisioning-images/launchapp2.png "İmzalama kimlik oluşturma")](free-provisioning-images/launchapp2.png#lightbox)
+    ![Bir Xcode derleme düzenini seçin](free-provisioning-images/xcodescheme.png "bir Xcode derleme düzeni seçin")
 
-5. Altında **genel > kimlik** bölümünde, paket tanımlayıcısı eşleştiğinden emin olun _tam olarak_ Xamarin.iOS uygulamanızı paket tanımlayıcısını ve dağıtım hedef eşleşen veya değerinden daha düşük emin olun bağlı iOS Cihazınızı. Xcode yalnızca bir açık uygulama kimliği ile bir sağlama profili oluşturacak şekilde bu adım çok önemlidir:
+9. Xcode'un içinde kendi üst düzey düğüm seçerek uygulamanızın proje ayarlarını açın **Proje Gezgini**.
+10. Altında **genel > kimlik**, emin **paket grubu tanımlayıcısı** _tam olarak eşleşen_ Xamarin.iOS uygulamanızın paket grubu tanımlayıcısı.
 
-  [![](free-provisioning-images/launchapp5.png "Bir açık uygulama kimliği ile bir sağlama profili oluşturun")](free-provisioning-images/launchapp5.png#lightbox)
+    ![Bir paket grubu tanımlayıcısı ayarlamak](free-provisioning-images/launchapp5.png "paket grubu tanımlayıcısı ayarlayın")
 
-6. İmzalama bölümünde **otomatik olarak yönetme imzalama** ve ekibinizin aşağı açılan listeden seçin:
+    > [!IMPORTANT]
+    > Xcode yalnızca bir açık uygulama kimliği için bir sağlama profili oluşturur ve Xamarin.iOS uygulama için uygulama kimliği aynı olmalıdır.
+    > Bunlar farklıysa, Xamarin.iOS uygulamanızı dağıtmak için ücretsiz sağlama kullanmanız mümkün olmayacaktır.
 
-  [![](free-provisioning-images/launchapp6.png "Otomatik olarak yönetme imzalama ve açılır listeden ekibinizin seçin")](free-provisioning-images/launchapp6.png#lightbox)
+11. Altında **dağıtım bilgisi**, dağıtım hedefi eşleşen veya iOS bağlı iOS Cihazınızda yüklü sürümden daha küçük olduğundan emin olun.
+12. Altında **imzalama**seçin **otomatik olarak imzalanmasını yönetmek** ve takımınızın aşağı açılan listeden seçin:
 
-7. Önceki adımda otomatik olarak bir sağlama profili ve imzalama kimliğinize sizin için oluşturur. Bu, sağlama profili yanındaki bilgi simgesine tıklayarak görüntüleyebilirsiniz:
+    ![Otomatik olarak imzalanmasını yönetmek](free-provisioning-images/launchapp6.png "otomatik olarak imzalanmasını yönetmek")
 
-  [![](free-provisioning-images/launchapp7.png "Sağlama profili görüntüleyin")](free-provisioning-images/launchapp7.png#lightbox)
+    Xcode otomatik imzalama kimliği ve sağlama profiliyle sizin için oluşturur. Bu, sağlama profili yanındaki bilgi simgesine tıklayarak görüntüleyebilirsiniz:
 
-8. Xcode'da test etmek için çalışma düğmesine tıklayarak Cihazınızı boş uygulamayı dağıtın.
+    ![Sağlama profilini görüntülemek](free-provisioning-images/launchapp7.png "sağlama profili görüntüle")
 
-9. Prize takılı aynı aygıt, IDE, dönün ve açmak için Xamarin.iOS proje adına sağ tıklayın **proje seçenekleri** iletişim. İOS paket imzalama bölümüne göz atın ve açıkça kimlik imzalama ve sağlama profili ayarlayın:
+    > [!TIP]
+    > Bir hata varsa bir sağlama profili oluşturmak Xcode girişiminde bulunduğunda bu Xcode'un seçili derleme düzeni simülatör yerine, bağlı iOS cihazına hedefleyen emin olun.
 
-  [![](free-provisioning-images/launchapp8.png "Kimlik imzalama ve sağlama profili Ayarla")](free-provisioning-images/launchapp8.png#lightbox)
+13. Xcode içindeki test etmek için çalıştırma düğmesine tıklayarak cihazınızın boş uygulamayı dağıtın.
 
-IDE içinde imzalama kimliğinizi veya doğru sağlama profili göremiyorsanız, onu yeniden başlatmanız gerekebilir.
+### <a name="deploy-your-xamarinios-app"></a>Xamarin.iOS uygulamanızı dağıtma
 
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-## <a name="a-namelimitations-limitations"></a><a name="limitations" />Sınırlamaları
+1. İOS Cihazınızı Mac derleme konağı USB aracılığıyla bağlayın veya [kablosuz](~/ios/deploy-test/wireless-deployment.md).
+2. Mac için Visual Studio **çözüm bölmesi**, çift tıklayarak **Info.plist**.
+3. İçinde **imzalama**seçin **el ile sağlama**.
+4. Tıklayın **iOS paket grubu imzalama...** düğmesi.
+5. İçin **yapılandırma**seçin **hata ayıklama**.
+6. İçin **Platform**seçin **iPhone**.
+7. Seçin **imzalama kimliği** Xcode tarafından oluşturuldu.
+8. Seçin **sağlama profili** Xcode tarafından oluşturuldu.
 
-Apple bir dizi sınırlama nasıl ve ne zaman, ücretsiz sağlama yalnızca dağıtabileceğiniz emin olduktan uygulamanız bir iOS cihazında çalıştırmak için kullanabileceğiniz uygulanan *,* aygıt. Bunlar bu bölümünde listelenmiştir.
+    ![İmzalama kimliği ve sağlama profili](free-provisioning-images/launchapp8.png "imzalama kimliğini ve sağlama profili Ayarla")
 
-Connect de sınırlıdır ve bu nedenle uygulama depolama ve TestFlight yayımlama gibi hizmetleri iTunes erişimi uygulamalarını serbestçe sağlama geliştiricileri için kullanılamaz. Geçici ve şirket içi bir yol dağıtmak için bir Apple Developer hesabı (Kurumsal veya kişisel) gereklidir.
+    > [!TIP]
+    > İmzalama kimliğinizi veya doğru sağlama profilini göremiyorsanız, Mac için Visual Studio'yu yeniden başlatmanız gerekebilir
 
-Bu yolla oluşturulan profiller sağlama imzalama kimlikleri bir yıl sonra bir hafta sonra süresi dolar. Ayrıca, sağlama profilleri yalnızca oluşturulacak açık uygulama kimlikleri ve bu nedenle, gerekecek yönergeleri izleyin [yukarıda](#launching) yüklemek istediğiniz her uygulama için.
+9. Tıklayın **Tamam** kaydedip kapatmak için **proje seçenekleri**.
+10. İOS Cihazınızı seçin ve uygulamayı çalıştırın.
 
-Çoğu uygulama hizmetleri için sağlama de serbest sağlama ile mümkün değildir. Şunları içerir:
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-- Apple Pay
-- Oyun Merkezi
-- iCloud
-- Uygulama içi satın alma
-- Anında iletme bildirimleri
-- Cüzdan (Passbook idi)
+1. Visual Studio 2017 aktarıldığından emin emin [eşleştirilmiş bir Mac derleme konağı](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. İOS Cihazınızı Mac derleme konağı USB aracılığıyla bağlayın veya [kablosuz](~/ios/deploy-test/wireless-deployment.md).
+3. Visual Studio 2017'de **Çözüm Gezgini**, Xamarin.iOS projenize sağ tıklayıp **özellikleri**.
+4. Gidin **iOS paket grubu imzalama**.
+5. İçin **yapılandırma**seçin **hata ayıklama**.
+6. İçin **Platform**seçin **iPhone**.
+7. Seçin **el ile sağlama**.
+8. Seçin **imzalama kimliği** Xcode tarafından oluşturuldu.
+9. Seçin **sağlama profili** Xcode tarafından oluşturuldu.
+    
+    ![İmzalama kimliği ve sağlama profili](free-provisioning-images/setprofile-w157.png "imzalama kimliğini ve sağlama profili Ayarla")
 
-Apple ' tam bir liste sağladığı kendi [desteklenen özelliklerine](https://developer.apple.com/library/prerelease/ios/documentation/IDEs/Conceptual/AppDistributionGuide/SupportedCapabilities/SupportedCapabilities.html#//apple_ref/doc/uid/TP40012582-CH38-SW1) Kılavuzu. Uygulama Hizmetleri ile kullanmak için uygulamanızı sağlamak için ziyaret [özellikleriyle çalışma](~/ios/deploy-test/provisioning/capabilities/index.md) kılavuzları.
+    > [!TIP]
+    > Xcode, bu imzalama kimliğini ve sağlama profili oluşturulur ve bunları, Mac derleme konağı üzerinde depolanır. Edildikten sonra Visual Studio 2017'ye erişilebilir olduklarını [eşleştirilmiş](~/ios/get-started/installation/windows/connecting-to-mac/index.md) Mac derleme konağı için. Bunlar listelenmiyorsa, Visual Studio 2017'yi yeniden başlatmanız gerekebilir.
 
+10. Kaydet ve Proje Özellikleri'ni kapatın.
+11. İOS Cihazınızı seçin ve uygulamayı çalıştırın.
+
+-----
+
+## <a name="limitations"></a>Sınırlamalar
+
+Apple, sınırlamalar, ne zaman ve nasıl ücretsiz sağlama yalnızca dağıtabileceğiniz olmasını sağlayarak bir iOS cihazında uygulamanızı çalıştırmak için kullanabileceğiniz bir dizi uygulanan *,* cihaz:
+
+- Geliştiricilerin uygulamalarına serbestçe sağlama erişim iTunes Connect sınırlıdır ve bu nedenle, App Store ve TestFlight yayımlama gibi hizmetler için kullanılamaz. Geçici ve şirket içi bir yol dağıtmak için bir Apple Geliştirici hesabı (Kurumsal veya kişisel) gereklidir.
+- Ücretsiz sağlama ile oluşturulan sağlama profilleri, bir hafta sonra sona erer ve imzalama kimlikleri, bir yıl sonra sona erecek. 
+- Xcode yalnızca açık uygulama kimlikleri için sağlama profillerini oluşturacak bu yana takip etmeleri gerekir [yukarıdaki yönergeleri](#testing-on-device-with-free-provisioning) yüklemek istediğiniz her uygulama için.
+- Çoğu uygulama hizmetleri için sağlama ücretsiz sağlamayı mümkün değildir. Bu, Apple Pay, Game Center, iCloud, uygulama içi satın alma, anında iletme bildirimleri ve Cüzdan içerir. Apple özelliklerin tam bir liste sağlar [desteklenen yetenekler (iOS)](https://help.apple.com/developer-account/#/dev21218dfd6) Kılavuzu. Uygulama Hizmetleri ile kullanmak için uygulamanızı sağlamak için ziyaret [özellikleriyle çalışma](~/ios/deploy-test/provisioning/capabilities/index.md) Kılavuzlar.
 
 ## <a name="summary"></a>Özet
 
-Bu kılavuz, avantajları ve bir iOS cihazında uygulamaları yüklemek için ücretsiz sağlama kullanma sınırlamaları incelediniz. Bu ayrıca, bir Xamarin.iOS uygulaması yüklemek için ücretsiz sağlama kullanarak adım adım geçti.
+Bu kılavuz, avantajları ve bir iOS cihazında uygulamaları yüklemek için ücretsiz sağlama kullanmanın sınırlamaları incelediniz. Bu ücretsiz sağlama bir Xamarin.iOS uygulaması yüklemek için nasıl kullanılacağını gösteren adım adım kılavuz sağlanır.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Cihaz sağlama](~/ios/get-started/installation/device-provisioning/index.md)
-- [Uygulama hizmetleri için sağlama](~/ios/get-started/installation/device-provisioning/index.md#appservices)
+- [Uygulama hizmetleri için hazırlama](~/ios/get-started/installation/device-provisioning/index.md#appservices)
