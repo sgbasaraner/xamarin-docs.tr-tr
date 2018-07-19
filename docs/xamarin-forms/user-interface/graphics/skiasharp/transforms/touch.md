@@ -1,33 +1,33 @@
 ---
 title: Dokunma işlemeleri
-description: Bu makalede, matris dönüşümleri dokunma sürükleyerek, çimdik ve döndürme uygulamak için nasıl kullanılacağını açıklar ve bu örnek kodu ile gösterir.
+description: Bu makalede, matris dönüşümleri touch sürükleyerek, hareketinden ve döndürme uygulamak için kullanmayı açıklar ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2018
-ms.openlocfilehash: a53fe287e74070adb22c2a7c67d4b7cc10b35d3e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 2de5b9a3a6bf0d36330212a52ba5c7278b970efc
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244292"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130913"
 ---
 # <a name="touch-manipulations"></a>Dokunma işlemeleri
 
-_Dokunma sürükleyerek, çimdik ve döndürme uygulamak için kullanım matris dönüşümleri_
+_Dokunma sürükleyerek, hareketinden ve döndürme uygulamak için kullanım matris dönüşümleri_
 
-Mobil cihazlarda olanlar gibi çok dokunma ortamlarda kullanıcıları genellikle kendi parmakları ekrandaki nesneleri yönetmek için kullanın. Bir parmak sürükleyin ve iki parmak tutarak gibi ortak hareketleri taşıyabilir ve nesneleri ölçeklemek veya bile bunları döndür. Bu hareketleri, genellikle Dönüştürme Matrislerini kullanma uygulanır ve bu makalede, bunun nasıl yapılacağını gösterir.
+Bu mobil cihazlardaki gibi çok noktalı dokunma ortamlarında kullanıcılar kendi parmağınızı ekrandaki nesnelere işlemek için genellikle kullanın. Bir parmak sürükleyin ve iki parmak tabletinizde gibi ortak hareketleri taşıma ve nesneleri ölçeklendirme veya bile bunları döndür. Bu hareket, genellikle dönüştürme matrislerde kullanılarak uygulanır ve bu makalede bunu nasıl yapacağınız gösterilmektedir.
 
-![](touch-images/touchmanipulationsexample.png "Çeviri, ölçeklendirme ve döndürme tabi bir bit eşlem")
+![](touch-images/touchmanipulationsexample.png "Çeviri, ölçeklendirme ve döndürme için tabi bir bit eşlem")
 
 ## <a name="manipulating-one-bitmap"></a>Bir bit eşlem düzenleme
 
-**Touch işleme** sayfasında tek bir bit eşlem üzerinde dokunma işlemeleri gösterir.
-Bu örnek makalesinde sunulan dokunma izleme etkisi kullanır [çağırma olayları etkileri](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
+**Düzenleme dokunma** sayfası üzerinde tek bir bit eşlem dokunma işlemeleri gösterir.
+Bu örnek kullanır makalesinde sunulan touch izleme etkisinin [etkileri olayları çağırma](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
 
-Diğer bazı dosyaları için destek sağlayan **Touch işleme** sayfası. İlk [ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) gördüğünüz kodu tarafından gerçekleştirilen dokunma işleme farklı türde gösteren numaralandırma:
+Birkaç diğer dosya için destek sağlayan **düzenleme dokunma** sayfası. İlk [ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) touch işleme gördüğünüz kodu tarafından gerçekleştirilen farklı türde belirten sabit listesi:
 
 ```csharp
 enum TouchManipulationMode
@@ -41,13 +41,13 @@ enum TouchManipulationMode
 }
 ```
 
-`PanOnly` Çeviri ile uygulanan bir parmak Sürükle olur. Sonraki tüm seçenekleri de kaydırma içerir, ancak iki parmakları içerir: `IsotropicScale` eşit yatay ve dikey yönde ölçeklendirme nesnesindeki sonuçları tutarak işlemdir. `AnisotropicScale` eşit olmayan ölçeklendirme sağlar.
+`PanOnly` Çeviri ile uygulanan bir parmak Sürükle olur. Sonraki tüm seçenekleri de kaydırma içerir ancak iki parmağınızı içerir: `IsotropicScale` eşit yatay ve dikey yönde ölçeklendirme nesne sonuçlanır tabletinizde işlemdir. `AnisotropicScale` eşit bir ölçeklendirme sağlar.
 
-`ScaleRotate` Seçenektir iki parmak ölçekleme ve döndürme için. Ölçeklendirme isotropic. Parmak hareketleri temelde aynı olduğundan Eşyönsüz ölçeklendirme iki parmak döndürme Uygulama sorunlu oluşturur.
+`ScaleRotate` Seçenektir iki parmak ölçeklendirme ve döndürme için. Ölçeklendirme isotropic. Parmak hareketleri temelde aynı olduğundan anizotropik ölçeklendirme iki parmak döndürme Uygulama sorunlu.
 
-`ScaleDualRotate` Seçeneği bir parmak döndürme ekler. Tek bir parmak nesne sürüklendiğinde, böylece sürükleme vektörü ile nesnenin merkezi hizalanacak sürüklenen nesnenin ilk kendi merkezi etrafında döndürülür.
+`ScaleDualRotate` Seçeneği bir parmak döndürme ekler. Böylece nesnenin merkezi sürükleyerek vektörü ile hizalanacak tek bir parmak nesneyi sürüklediğinde, sürüklenen nesnenin ilk merkezi geçici olarak döndürülmüştür.
 
-[ **TouchManipulationPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml) dosya içeren bir `Picker` üyeleriyle `TouchManipulationMode` numaralandırma:
+[ **TouchManipulationPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml) dosya içeren bir `Picker` üyeleriyle `TouchManipulationMode` sabit listesi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -92,9 +92,9 @@ enum TouchManipulationMode
 </ContentPage>
 ```
 
-Alt doğru bir `SKCanvasView` ve `TouchEffect` tek hücreye bağlı `Grid` , barındırır.
+Alt bir `SKCanvasView` ve `TouchEffect` tek hücresine bağlı `Grid` kendisini kapsayan.
 
-[ **TouchManipulationPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml.cs) arka plan kod dosyasına var. bir `bitmap` alan ancak değil türü `SKBitmap`. Tür `TouchManipulationBitmap` (kısa süre içinde göreceksiniz bir sınıf):
+[ **TouchManipulationPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml.cs) arka plan kod dosyasına sahip bir `bitmap` alan ancak değil türünü `SKBitmap`. Türü `TouchManipulationBitmap` (bir sınıf kısa bir süre içinde görürsünüz):
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -110,9 +110,8 @@ public partial class TouchManipulationPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            SKBitmap bitmap = SKBitmap.Decode(skStream);
+            SKBitmap bitmap = SKBitmap.Decode(stream);
             this.bitmap = new TouchManipulationBitmap(bitmap);
             this.bitmap.TouchManager.Mode = TouchManipulationMode.ScaleRotate;
         }
@@ -121,9 +120,9 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Oluşturucusu başlatır bir `TouchManipulationBitmap` nesnesinin oluşturucusuna geçirerek, bir `SKBitmap` katıştırılmış bir kaynaktan alınan. Ayarlayarak Oluşturucusu sonucuna `Mode` özelliği `TouchManager` özelliği `TouchManipulationBitmap` üyesi nesnesine `TouchManipulationMode` numaralandırması.
+Oluşturucu örnekleyen bir `TouchManipulationBitmap` nesnesinin oluşturucusuna bir `SKBitmap` katıştırılmış bir kaynaktan elde ettiğiniz. Oluşturucu ayarlayarak sonucuna `Mode` özelliği `TouchManager` özelliği `TouchManipulationBitmap` nesnenin bir üyesine `TouchManipulationMode` sabit listesi.
 
-`SelectedIndexChanged` İşleyicisi `Picker` de bu ayarlar `Mode` özelliği:
+`SelectedIndexChanged` İşleyicisi `Picker` Ayrıca bu ayarlar `Mode` özelliği:
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -143,7 +142,7 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-`TouchAction` İşleyicisine `TouchEffect` XAML dosyası çağrılarında öğesinde iki yöntem örneği `TouchManipulationBitmap` adlı `HitTest` ve `ProcessTouchEvent`:
+`TouchAction` İşleyicisi `TouchEffect` XAML dosyası çağrılarında iki metot örneği `TouchManipulationBitmap` adlı `HitTest` ve `ProcessTouchEvent`:
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -193,13 +192,13 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Varsa `HitTest` yöntemi döndürür `true` &mdash; ekran tarafından bit eşlem kapladığı alanı içinde bir parmak işlemdeki anlamına &mdash; sonra da touch ID eklenen `TouchIds` koleksiyonu. Parmak ekranından kaldırır kadar bu kimliği bu parmak için touch olayların sırası temsil eder. Birden çok parmakları bit eşlem touch, sonra `touchIds` koleksiyonu, her parmak için touch ID içerir.
+Varsa `HitTest` yöntemi döndürür `true` &mdash; nabzını bit eşlem tarafından kapladığı alanı ekranında dokunulan yani &mdash; touch ID eklemek `TouchIds` koleksiyonu. Parmak ekranından kaldırıncaya kadar bu kimliği bu parmak için dokunma olayların sırası temsil eder. Bit eşlem birden çok yola dokunma, ardından `touchIds` touch ID parmak her için koleksiyonu içerir.
 
-`TouchAction` İşleyici de çağırır `ProcessTouchEvent` sınıfını `TouchManipulationBitmap`. Bu yerdir bazı (ancak tüm) gerçek dokunarak işleme oluşur.
+`TouchAction` İşleyicisini de çağırır `ProcessTouchEvent` sınıfını `TouchManipulationBitmap`. Burada bazı (Tümü değil) gerçek dokunarak işleme gerçekleşir.
 
-[ `TouchManipulationBitmap` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationBitmap.cs) Sınıftır sarmalayıcı sınıfı için `SKBitmap` bit eşlem işlemek ve dokunma olayları işlemek için kod içerir. Daha fazla ile birlikte çalışır kodda genelleştirilmiş bir `TouchManipulationManager` (kısa süre içinde görürsünüz) sınıfı.
+[ `TouchManipulationBitmap` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationBitmap.cs) Sınıfı için bir sarmalayıcı sınıftır `SKBitmap` bit eşlem işlemek ve dokunma olayları işlemek için kod içerir. Daha fazla bilgi ile birlikte çalıştığını kodda genelleştirilmiş bir `TouchManipulationManager` (kısa bir süre içinde görürsünüz) sınıfı.
 
-`TouchManipulationBitmap` Oluşturucusu kaydeder `SKBitmap` ve iki özellik başlatır `TouchManager` türündeki özelliği `TouchManipulationManager` ve `Matrix` türünde özellik `SKMatrix`:
+`TouchManipulationBitmap` Oluşturucusu kaydeder `SKBitmap` ve iki özellik başlatır `TouchManager` türünün özelliği `TouchManipulationManager` ve `Matrix` türünün özelliği `SKMatrix`:
 
 ```csharp
 class TouchManipulationBitmap
@@ -225,9 +224,9 @@ class TouchManipulationBitmap
 }
 ```
 
-Bu `Matrix` tüm dokunma etkinliğinden kaynaklanan birikmiş dönüştürme bir özelliktir. Göreceğiniz gibi her dokunma olay sonra ile birleştirilmiş bir matris içine çözülene `SKMatrix` tarafından depolanan değer `Matrix` özelliği.
+Bu `Matrix` tüm touch etkinliğinden kaynaklanan birikmiş dönüştürme bir özelliktir. Gördüğünüz gibi her dokunma olay ardından ile birleştirilmiş bir matris içine çözülene `SKMatrix` tarafından depolanan değer `Matrix` özelliği.
 
-`TouchManipulationBitmap` Nesne kendisi çizer kendi `Paint` yöntemi. Bağımsız değişken bir `SKCanvas` nesnesi. Bu `SKCanvas` uygulanmış bir dönüşüm zaten sahip olabilir böylece `Paint` yöntemi art arda ekler `Matrix` özelliği mevcut dönüştürmeye bit eşlem ile ilişkili ve tamamlandığında tuvale geri yükler:
+`TouchManipulationBitmap` Nesne kendisi çizer kendi `Paint` yöntemi. Bağımsız değişken bir `SKCanvas` nesne. Bu `SKCanvas` zaten uygulanmış bir dönüştürme olabilir böylece `Paint` yöntemi art arda ekler `Matrix` özelliği mevcut dönüştürme için bit eşlem ile ilişkili ve tamamlandığında tuvaline geri yükler:
 
 ```csharp
 class TouchManipulationBitmap
@@ -245,11 +244,11 @@ class TouchManipulationBitmap
 }
 ```
 
-`HitTest` Yöntemi döndürür `true` bit eşlem sınırları içinde bir noktada ekran kullanıcı etki ediyorsa. Bit eşlem kullanıcı yönetir gibi bit eşlem Döndürülmüş veya hatta (birlikte Eşyönsüz ölçekleme ve döndürme) bir paralel kenarı şeklinde olmalıdır. Endişe `HitTest` yöntemi yerine karmaşık analitik geometri bu durumda uygulama gerekiyor.
+`HitTest` Yöntemi döndürür `true` kullanıcı ekrandaki bit eşlemin sınırları içinde bir noktadaki dokunursa. Bit eşlem kullanıcı yönetir gibi bit eşlem Döndürülmüş veya hatta (birleşimi anizotropik ölçeklendirme ve döndürme) bir eğdiğinizde Paralel Kenar şeklinde olabilir. Endişe `HitTest` yöntemi yerine karmaşık analitik geometri bu durumda uygulama gerekiyor.
 
-Ancak, kısayol kullanılabilir:
+Ancak, bir kısayol bulunur:
 
-Bir noktayı dönüştürülmüş dikdörtgen sınırlar içinde yer alıyorsa belirleme ters dönüştürülmüş noktanız dönüştürülmemiş dikdörtgen sınırlar içinde yer alıyorsa belirleme aynıdır. Çok daha kolay hesaplama ve uygun kullanabilirsiniz `Contains` yöntemi tarafından tanımlanan `SKRect`:
+Bir nokta dönüştürülen bir dikdörtgen sınırlar içinde yer alıyorsa belirleyen bir ters dönüştürülmüş noktası dönüştürülmemiş dikdörtgenin sınırlar içinde yer alıyorsa belirleme aynıdır. Bir çok daha kolay bir hesaplama ve kullanışlı kullanabilirsiniz `Contains` yöntemi tarafından tanımlanan `SKRect`:
 
 ```csharp
 class TouchManipulationBitmap
@@ -275,7 +274,7 @@ class TouchManipulationBitmap
 }
 ```
 
-İkinci genel yönteminde `TouchManipulationBitmap` olan `ProcessTouchEvent`. Bu yöntem çağrıldığında, zaten dokunma olay bu belirli bit eşlemi ait kuruldu. Sözlüğü yöntemi tutar [ `TouchManipulationInfo` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationInfo.cs) yalnızca önceki noktası ve her parmak yeni noktası nesneler:
+İkinci genel yöntem, `TouchManipulationBitmap` olduğu `ProcessTouchEvent`. Bu yöntem çağrıldığında, zaten touch olay bu belirli bit eşlemi ait kuruldu. Yöntem sözlüğü tutar [ `TouchManipulationInfo` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationInfo.cs) yalnızca önceki noktaya ve her dokunmasına yeni noktası olan nesneler:
 
 ```csharp
 class TouchManipulationInfo
@@ -286,7 +285,7 @@ class TouchManipulationInfo
 }
 ```
 
-Sözlük işte ve `ProcessTouchEvent` yöntemin kendisi:
+Sözlük işte ve `ProcessTouchEvent` yöntemi:
 
 ```csharp
 class TouchManipulationBitmap
@@ -329,11 +328,11 @@ class TouchManipulationBitmap
 }
 ```
 
-İçinde `Moved` ve `Released` olaylar, yöntem çağrılarını `Manipulate`. Şu zamanlarda `touchDictionary` birini veya birkaçını içeriyor `TouchManipulationInfo` nesneleri. Varsa `touchDictionary` içeriyor öğesi, bu büyük olasılıkla, `PreviousPoint` ve `NewPoint` değerleri eşit olmayan ve bir parmak hareketini temsil eder. Birden çok parmakları bit eşlem temas, sözlük birden fazla öğe içeriyor, ancak bu öğeler yalnızca biri farklı varsa `PreviousPoint` ve `NewPoint` değerleri. Geri kalan eşit olan `PreviousPoint` ve `NewPoint` değerleri.
+İçinde `Moved` ve `Released` olaylar, yöntem çağrılarını `Manipulate`. Bu saatler `touchDictionary` birini veya daha fazlasını içeren `TouchManipulationInfo` nesneleri. Varsa `touchDictionary` içerir öğesi, bu büyük olasılıkla, `PreviousPoint` ve `NewPoint` değerleri eşit ve böylece parmağınızı hareketini temsil eder. Birden çok yola bit eşlem bitişik, sözlük birden fazla öğe içeriyor, ancak bu öğeler yalnızca birine sahip farklı `PreviousPoint` ve `NewPoint` değerleri. Geri kalan eşit olan `PreviousPoint` ve `NewPoint` değerleri.
 
-Bu önemlidir: `Manipulate` yöntemi yalnızca bir parmak hareketini işliyor varsayabilirsiniz. Bu çağrı aynı anda diğer parmakları hiçbiri taşıma ve bunlar gerçekten (büyük olasılıkla olduğu gibi) taşıyorsanız, bu hareketleri gelecekteki çağrıları işlenecek `Manipulate`.
+Bu önemlidir: `Manipulate` yöntemi yalnızca bir parmak hareketini işliyor varsayabilirsiniz. Bu çağrının zaman diğer parmağınızı hiçbiri geçiş yapıyor ve bunlar gerçekten (büyük olasılıkla olduğu gibi) taşıyorsanız bu hareketleri gelecekteki çağrılar işlenir `Manipulate`.
 
-`Manipulate` Yöntemi ilk kopyalar sözlük kolaylık sağlamak için bir dizi. İlk iki girişleri dışında her şeyi yoksayar. Bit eşlem işlemek ikiden fazla parmakları çalışıyorsanız, diğerleri yoksayılır. `Manipulate` Son üyesi `TouchManipulationBitmap`:
+`Manipulate` Yöntemi ilk kopyalar sözlük kolaylık sağlamak için bir dizi. İlk iki girişe dışında her şeyi yoksayar. Bit eşlemi yönlendirmek üzere ikiden fazla parmağınızı çalışıyorsanız, diğerleri yoksayılır. `Manipulate` Son üyesi olan `TouchManipulationBitmap`:
 
 ```csharp
 class TouchManipulationBitmap
@@ -370,13 +369,13 @@ class TouchManipulationBitmap
 }
 ```
 
-Tek bir parmak bitmap düzenleme durumunda `Manipulate` çağrıları `OneFingerManipulate` yöntemi `TouchManipulationManager` nesnesi. İki parmakları için çağırır `TwoFingerManipulate`. Bu yöntemlerin bağımsız değişkenlerinden aynıdır: `prevPoint` ve `newPoint` bağımsız değişkenleri taşınırken parmak temsil eder. Ancak `pivotPoint` bağımsız değişkeni, iki çağrıları için farklıdır:
+Tek bir parmak, bit eşlem düzenleme, `Manipulate` çağrıları `OneFingerManipulate` yöntemi `TouchManipulationManager` nesne. İki parmağınızı için çağırdığı `TwoFingerManipulate`. Bu yöntemlerinin bağımsız değişkenleri aynıdır: `prevPoint` ve `newPoint` bağımsız değişkenleri taşınıyor parmak temsil eder. Ancak `pivotPoint` bağımsız değişkeni iki çağrıları için farklıdır:
 
-Bir parmak işleme için `pivotPoint` bit eşlem merkezidir. Bu bir parmak dönüş izin vermektir. İki parmak işleme için olay yalnızca tek bir parmak hareketini gösterir. böylece `pivotPoint` değil taşıma parmak değil.
+Bir parmak işleme için `pivotPoint` bit eşlem merkezidir. Bu bir parmak döndürme için izin vermektir. İki parmak işleme için olay yalnızca tek bir parmak hareketini gösterir. böylece `pivotPoint` değil taşıma parmak olduğu.
 
-Her iki durumda da `TouchManipulationManager` döndürür bir `SKMatrix` geçerli yöntemi art arda ekler değeri `Matrix` özelliği, `TouchManipulationPage` bit eşlem işlemek için kullanır.
+Her iki durumda da `TouchManipulationManager` döndürür bir `SKMatrix` yöntemi ile geçerli art arda ekler. değer, `Matrix` özelliği, `TouchManipulationPage` bit eşlem işlemek için kullanır.
 
-`TouchManipulationManager` Genelleştirilmiş ve dışındaki başka bir dosyaları kullanan `TouchManipulationMode`. Kendi uygulamalarında değişiklik olmadan bu sınıfı kullanmanız mümkün olabilir. Türü tek bir özelliğini tanımlar `TouchManipulationMode`:
+`TouchManipulationManager` Genelleştirilmiş olduğundan ve başka hiçbir dosya dışındaki kullanan `TouchManipulationMode`. Uygulamalarınızda değişiklik olmadan bu sınıfı kullanmanız mümkün olabilir. Tek bir özellik türü tanımlayan `TouchManipulationMode`:
 
 ```csharp
 class TouchManipulationManager
@@ -387,9 +386,9 @@ class TouchManipulationManager
 ```
 
 
-Ancak, büyük olasılıkla kaçının istersiniz `AnisotropicScale` seçeneği. Bit eşlem ölçeklendirme etkenlerden biri sıfır hale işlemek için bu seçeneği çok kolaydır. Hiçbir zaman döndürülecek görüş kayboluyor bit eşlem yapıyorsa. Eşyönsüz ölçeklendirme gerçekten ihtiyacınız varsa, istenmeyen sonuçları önlemek için mantığı geliştirmek istersiniz.
+Ancak, büyük olasılıkla önlemek isteyebilirsiniz `AnisotropicScale` seçeneği. Bir ölçekleme faktörü sıfır haline gelebilmesi bit eşlemi yönlendirmek için bu seçeneği ile oldukça kolaydır. Asla geri dönmemek üzere daha fazla görüş kayboluyor bit eşlem arar. Anizotropik ölçeklendirme gerçekten ihtiyacınız varsa, istenmeyen sonuçları önlemenize mantığını artırmak isteyebilirsiniz.
 
-`TouchManipulationManager` vektörler, ancak olduğundan kullanır hiçbir `SKVector` SkiaSharp, yapısında `SKPoint` onun yerine kullanılır. `SKPoint` çıkarma işleci ve sonucu bir vektör olarak değerlendirilmesi destekler. Eklenecek gerekli yalnızca vektör özgü mantık bir `Magnitude` hesaplama:
+`TouchManipulationManager` vektör ancak olduğundan kullanır hiçbir `SKVector` SkiaSharp, yapısında `SKPoint` yerine kullanılır. `SKPoint` çıkarma işleci ve sonucu bir vektörü davranılıp destekler. Eklenmesi gereken yalnızca vektör özgü mantık bir `Magnitude` hesaplama:
 
 ```csharp
 class TouchManipulationManager
@@ -402,9 +401,9 @@ class TouchManipulationManager
 }
 ```
 
-Döndürme seçili olduğunda, bir parmak ve iki parmak işleme yöntemlerin her ikisi de döndürme ilk işleyin. Herhangi bir döndürme algılanırsa, döndürme bileşen etkili bir şekilde kaldırılır. Nelerin kaydırma ve ölçeklendirme olarak yorumlanır.
+Döndürme seçili olduğunda, bir parmak ve iki parmak yöntemleri döndürme ilk işleyin. Herhangi bir döndürme algılanırsa, döndürme bileşen etkili bir şekilde kaldırılır. Nelerin kaydırma ve ölçeklendirme olarak yorumlanır.
 
-Burada `OneFingerManipulate` yöntemi. Bir parmak döndürme etkinleştirilmemiş sonra mantığı basittir &mdash; yalnızca yeni noktası ve önceki noktası adlı bir vektör oluşturmak için kullandığı `delta` tam olarak çeviri karşılık gelir. Etkin bir parmak döndürme ile yöntemi açıları pivot noktası (bit eşlem Merkezi) yeni noktası ve önceki noktası döndürme matrisi oluşturmak için kullanır:
+İşte `OneFingerManipulate` yöntemi. Bir parmak döndürme etkinleştirilmemiş sonra mantıksal basittir &mdash; yalnızca yeni noktası ve önceki noktaya adlı bir vektör oluşturmak için kullandığı `delta` çeviri için tam olarak karşılık gelir. Etkin bir parmak döndürme ile yöntemi açıları pivot noktası (bit eşlem Merkezi) yeni noktası ve önceki noktaya döndürme matrisi oluşturmak için kullanır:
 
 ```csharp
 class TouchManipulationManager
@@ -455,7 +454,7 @@ class TouchManipulationManager
 }
 ```
 
-İçinde `TwoFingerManipulate` pivot noktası yöntemidir bu belirli dokunma olay taşıma değil parmak konumu. Döndürme bir parmak döndürme çok benzer ve vektör adlı `oldVector` (önceki noktasında göre) döndürme için ayarlanır. Kalan taşıma ölçeklendirme olarak yorumlanır:
+İçinde `TwoFingerManipulate` yöntemi pivot noktası olduğundan bu belirli touch etkinliğinde taşıma değil parmak konumu. Döndürme bir parmak dönüşü çok benzer ve ardından vektör adlı `oldVector` (önceki noktasında göre) döndürme için ayarlanır. Kalan taşıma ölçeklendirme olarak yorumlanır:
 
 ```csharp
 class TouchManipulationManager
@@ -513,9 +512,9 @@ class TouchManipulationManager
 }
 ```
 
-Bu yöntemde açık çeviri var. fark edeceksiniz. Bununla birlikte, her iki `MakeRotation` ve `MakeScale` yöntemleri Özet noktasında temel ve örtük çevirisi içerir. Bit eşlem ve aynı yönde sürükleyerek iki parmakları kullanıyorsanız `TouchManipulation` dokunma olayları iki parmakları arasında değişen bir dizi alırsınız. Diğer ölçekleme veya dönüş sonuçları göre her parmak taşır, ancak diğer parmak 's taşıma tarafından tasarruflarını ve çeviri sonucudur.
+Bu yöntemde açıkça çeviri var. fark edeceksiniz. Bununla birlikte, her iki `MakeRotation` ve `MakeScale` yöntemleri pivot noktasında temel ve örtük çeviri dahildir. Bit eşlem ve aynı yönde sürükleyerek iki parmağınızı kullanıyorsanız `TouchManipulation` dokunma olayları iki parmağınızı arasında değişen bir dizi alırsınız. Diğer, ölçeklendirme veya döndürme sonuçları göre her parmak taşır ancak diğer parmak 's taşıma tarafından değilleme ve çeviri sonucudur.
 
-Yalnızca kalan kısmını **Touch işleme** sayfası `PaintSurface` işleyicisinde `TouchManipulationPage` arka plan kod dosyası. Bu çağrı `Paint` yöntemi `TouchManipulationBitmap`, birikmiş dokunma etkinliği temsil eden matris geçerlidir:
+Yalnızca kalan bölümü **düzenleme dokunma** sayfasıdır `PaintSurface` işleyicisinde `TouchManipulationPage` arka plan kod dosyası. Bu çağrı `Paint` yöntemi `TouchManipulationBitmap`, birikmiş touch etkinliği gösteren matris geçerlidir:
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -544,15 +543,15 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-`PaintSurface` İşleyici sonucuna görüntüleyerek bir `MatrixDisplay` birikmiş dokunma matris gösteren nesne:
+`PaintSurface` İşleyici sonucuna görüntüleyerek bir `MatrixDisplay` birikmiş touch matris gösteren nesne:
 
-[![](touch-images/touchmanipulation-small.png "Üçlü sayfasının ekran görüntüsü Touch işleme")](touch-images/touchmanipulation-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Touch düzenleme")
+[![](touch-images/touchmanipulation-small.png "Üçlü sayfasının ekran görüntüsü düzenleme dokunma")](touch-images/touchmanipulation-large.png#lightbox "Üçlü sayfasının ekran görüntüsü düzenleme dokunma")
 
 ## <a name="manipulating-multiple-bitmaps"></a>Birden çok bit eşlemler düzenleme
 
-Dokunma işleme kodunda sınıflardaki gibi yalıtma yararları birini `TouchManipulationBitmap` ve `TouchManipulationManager` Çoklu bit eşlemler işlemek kullanıcı sağlayan bir program bu sınıfları yeniden yeteneğidir.
+Sınıflardaki touch işleme kodu gibi yalıtma yararlarından biri `TouchManipulationBitmap` ve `TouchManipulationManager` birden çok bit eşlemler işlemek kullanıcıya izin veren bir program bu sınıfları yeniden yeteneğidir.
 
-**Bit eşlem dağılım Görünüm** sayfa bunun nasıl yapılacağı gösterilmektedir. Türünde bir alan tanımlama yerine `TouchManipulationBitmap`, [ `BitmapScatterPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BitmapScatterViewPage.xaml.cs) sınıfı tanımlayan bir `List` bit eşlem nesnelerin:
+**Bit eşlem dağılımı görünümü** sayfasını nasıl yapıldığını gösterir. Türünde bir alan tanımlama yerine `TouchManipulationBitmap`, [ `BitmapScatterPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BitmapScatterViewPage.xaml.cs) sınıfı tanımlayan bir `List` bit eşlem nesnelerin:
 
 ```csharp
 public partial class BitmapScatterViewPage : ContentPage
@@ -575,9 +574,8 @@ public partial class BitmapScatterViewPage : ContentPage
                 resourceID.EndsWith(".jpg"))
             {
                 using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-                using (SKManagedStream skStream = new SKManagedStream(stream))
                 {
-                    SKBitmap bitmap = SKBitmap.Decode(skStream);
+                    SKBitmap bitmap = SKBitmap.Decode(stream);
                     bitmapCollection.Add(new TouchManipulationBitmap(bitmap)
                     {
                         Matrix = SKMatrix.MakeTranslation(position.X, position.Y),
@@ -592,9 +590,9 @@ public partial class BitmapScatterViewPage : ContentPage
 }
 ```
 
-Oluşturucu yükler tüm katıştırılmış kaynaklar olarak kullanılabilir bit eşlemler ve eklenmektedir `bitmapCollection`. Dikkat `Matrix` özelliğinin başlatıldığı her `TouchManipulationBitmap` her bit eşlem sol üst köşesindeki 100 piksel kaydırmak için nesne.
+Oluşturucu tüm katıştırılmış kaynaklar olarak kullanılabilen bit eşlem yükler ve ekler `bitmapCollection`. Dikkat `Matrix` özelliğinin her başlatıldığı `TouchManipulationBitmap` her bit eşlem sol köşelerini 100 piksel kaydırılarak için nesne.
 
-`BitmapScatterView` Sayfa Çoklu bit eşlemler dokunma olayları işlemek de gerekir. Tanımlama yerine bir `List` dokunarak kimliklerini şu anda yönetilen `TouchManipulationBitmap` nesneler, bu program için bir sözlük gereklidir:
+`BitmapScatterView` Sayfası için birden çok bit eşlemler dokunma olayları işlemek de gerekir. Tanımlama yerine bir `List` dokunarak kimliklerini şu anda yönetilen `TouchManipulationBitmap` nesneler, bu program bir sözlük gerektirir:
 
 ```csharp
 public partial class BitmapScatterViewPage : ContentPage
@@ -658,11 +656,11 @@ public partial class BitmapScatterViewPage : ContentPage
 }
 ```
 
-Bildirim nasıl `Pressed` mantığı döngü `bitmapCollection` ters. Bit eşlemler genellikle birbirinin. Bit eşlemler daha sonra koleksiyonundaki görsel olarak bit eşlemler koleksiyondaki en üstünde yer. En üstteki bir ekranda bastığında parmak altında birden çok bit eşlemler varsa, bu parmak tarafından yönetilen bir olmalıdır.
+Bildirim nasıl `Pressed` mantıksal döngü `bitmapCollection` ters. Bit eşlemler genellikle birbirleriyle çakışmamalıdır. Daha sonra koleksiyondaki bit eşlemler, bit eşlemler koleksiyondaki üzerine görsel olarak yer. Ekrandaki tuşuna bastığında parmak altında birden çok bit eşlemler varsa, bu parmak tarafından yönetilen bir üstteki bir olmalıdır.
 
-Ayrıca, fark `Pressed` mantığı diğer bit eşlemler yığını dön görsel olarak hareket Bu, bit eşlem Topluluğun sonuna taşır.
+Ayrıca dikkat `Pressed` mantıksal görsel olarak diğer bir bit eşlem yığın üstüne hareket Bu, bit eşlem koleksiyonun sonuna taşır.
 
-İçinde `Moved` ve `Released` olayları `TouchAction` işleyicisi çağrılarını `ProcessingTouchEvent` yönteminde `TouchManipulationBitmap` önceki program'olduğu gibi.
+İçinde `Moved` ve `Released` olayları `TouchAction` işleyicisi çağrılarını `ProcessingTouchEvent` yönteminde `TouchManipulationBitmap` eski programın'olduğu gibi.
 
 Son olarak, `PaintSurface` işleyicisi çağrılarını `Paint` yöntemi her `TouchManipulationBitmap` nesnesi:
 
@@ -683,17 +681,17 @@ public partial class BitmapScatterViewPage : ContentPage
 }
 ```
 
-Kod koleksiyonunda döngü ve bit eşlemler koleksiyonunun başından sonuna yığını görüntüler:
+Kod, koleksiyonda döngüye girer ve bit eşlem koleksiyon başlangıcından sonuna yığını görüntüler:
 
-[![](touch-images/bitmapscatterview-small.png "Üçlü sayfasının ekran görüntüsü bit eşlem dağılım Görünüm")](touch-images/bitmapscatterview-large.png#lightbox "Üçlü sayfasının ekran görüntüsü bit eşlem dağılım görünümü")
+[![](touch-images/bitmapscatterview-small.png "Üçlü sayfasının ekran görüntüsü bit eşlem dağılımı görünümü")](touch-images/bitmapscatterview-large.png#lightbox "Üçlü sayfasının ekran görüntüsü bit eşlem dağılımı görünümü")
 
-## <a name="single-finger-scaling"></a>Tek parmak ölçeklendirme
+## <a name="single-finger-scaling"></a>Tek-parmak ölçeklendirme
 
-Bir ölçeklendirme işlemi genellikle iki parmakları kullanarak tutarak hareketi gerektirir. Ancak, bir bit eşlem köşelerinde taşıma parmak sağlayarak ile tek bir parmak ölçeklendirme uygulamak mümkündür.
+Bir ölçeklendirme işlemi, genellikle iki parmağınızı kullanarak tabletinizde hareket gerektirir. Ancak, bir bit eşlem köşelerini taşıma parmak sağlayarak tek Parmakla ölçeklendirme uygulamak mümkündür.
 
-Bu, gösterilmiştir **tek parmak köşe ölçek** sayfası. Bu örnek, uygulanan olduğunu ölçeklendirme bir biraz farklı tür kullandığından `TouchManipulationManager` sınıfı, o sınıfın kullanmaz veya `TouchManipulationBitmap` sınıfı. Bunun yerine, tüm dokunma mantığı arka plan kodu dosyasıdır. Aynı anda yalnızca tek bir parmak izler ve yalnızca ekran temas tüm ikincil parmakları yoksayar normalden biraz daha basit mantığı olmasıdır.
+Bu gösterilmiştir **tek parmak köşe ölçek** sayfası. Bu örnek uygulanan, ölçeklendirmenin biraz farklı bir tür kullandığından `TouchManipulationManager` sınıfı, bu sınıf kullanmıyorsa veya `TouchManipulationBitmap` sınıfı. Bunun yerine, tüm touch mantığı arka plan kod dosyasıdır. Bir kerede yalnızca bir parmak izler ve yalnızca ekran temas herhangi bir ikincil parmağınızı yoksayar normalden biraz daha basit mantıksal olmasıdır.
 
-[ **SingleFingerCornerScale.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml) sayfa başlatır `SKCanvasView` sınıfı ve oluşturan bir `TouchEffect` dokunma olayları izlemek için nesne:
+[ **SingleFingerCornerScale.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml) sayfa başlatır `SKCanvasView` oluşturur ve sınıfı bir `TouchEffect` dokunma olayları izleme nesnesi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -716,7 +714,7 @@ Bu, gösterilmiştir **tek parmak köşe ölçek** sayfası. Bu örnek, uygulana
 </ContentPage>
 ```
 
-[ **SingleFingerCornerScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs) dosyasını yükler bir bit eşlem kaynaktan **medya** dizin ve kullanarak görüntüler bir `SKMatrix` nesne olarak tanımlı bir alan:
+[ **SingleFingerCornerScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs) dosya yükleyen bir bit eşlem kaynaktan **medya** dizin ve kullanarak görüntüler bir `SKMatrix` nesne olarak tanımlanan bir alan:
 
 ```csharp
 public partial class SingleFingerCornerScalePage : ContentPage
@@ -733,9 +731,8 @@ public partial class SingleFingerCornerScalePage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -754,11 +751,11 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-Bu `SKMatrix` aşağıda gösterilen dokunma mantığı tarafından nesne değiştirdi.
+Bu `SKMatrix` aşağıda gösterilen touch mantığı tarafından değiştirilmişse nesne.
 
-Arka plan kod dosyasının kalan `TouchEffect` olay işleyicisi. Parmak geçerli konumunu dönüştürerek başlayan bir `SKPoint` değeri. İçin `Pressed` eylem türü işleyici denetler başka bir parmak ekran değecek ve parmak bit eşlem sınırları içinde olduğunu.
+Arka plan kod dosyasının kalan `TouchEffect` olay işleyicisi. Parmağınızı geçerli konumunu dönüştürerek başlayan bir `SKPoint` değeri. İçin `Pressed` eylem türü işleyicisi denetler başka bir parmak ekran temas ediyor ve parmak bit eşlem sınırları içinde olan.
 
-Kodun önemli bir parçası olan bir `if` iki çağrıları içeren deyimi `Math.Pow` yöntemi. Bu matematik parmak konumun bit eşlem doldurur elips dışında olup olmadığını denetler. Bu nedenle, bir ölçeklendirme işlemi ise. Parmak bit eşlem köşelerinde biridir ve bir pivot noktası karşı köşe olan belirlenir. Parmak bu elips içinde ise, normal bir kaydırma işlemi.:
+Kodun önemli bir parçası olan bir `if` iki çağrıları içeren deyimi `Math.Pow` yöntemi. Bu matematik parmak konumu bit eşlem dolduran bir elips dışında olup olmadığını denetler. Bu nedenle, bir ölçeklendirme işlemi ise. Parmağınızı, bit eşlem köşelerini biridir ve zıt köşe olan pivot noktası belirlenir. İçinde bu elips parmak normal bir kaydırma işlemi şekildedir:
 
 ```csharp
 public partial class SingleFingerCornerScalePage : ContentPage
@@ -851,9 +848,9 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-`Moved` Eylem türü parmak basılı bu zamana kadar ekran zamandan dokunma etkinlik karşılık gelen bir matris hesaplar. Bu matris ile bu Matris yürürlükte parmak ilk bit eşlem basılı aynı anda art arda ekler. Ölçeklendirme işlemi parmak işlemdeki bir ters yönde köşe her zaman görelidir.
+`Moved` Eylem türü parmak basıldığında bu zamana kadar ekranın zamandan touch etkinliği karşılık gelen bir matris hesaplar. Bu, matris sunulmakta geçerli parmak ilk bit eşlem basılı zaman art arda ekler. Ölçeklendirme işlemi her zaman parmak dokunulan tek ters yönde köşe göredir.
 
-Küçük veya dikdörtgen bit eşlemler iç elips ve bit eşlem çoğunu kaplar bit eşlem ölçeklendirmek için köşelerinde çok küçük alanları bırakın. Biraz farklı bir yaklaşım tercih edebilirsiniz, bu durumda, tüm değiştirebilirsiniz `if` ayarlar blok `isScaling` için `true` Bu kod:
+Küçük veya dikdörtgen bit eşlemler iç elips ve bit eşlem çoğunu kaplayan köşelere bit eşlem ölçeklendirmek için çok küçük alanları bırakın. Biraz farklı bir yaklaşım tercih edebilirsiniz, bu durumda, tüm değiştirebilirsiniz `if` ayarlar blok `isScaling` için `true` Bu kod ile:
 
 ```csharp
 float halfHeight = rect.Height / 2;
@@ -897,10 +894,10 @@ else
 }
 ```
 
-Bu kod bir iç baklava şekli içine bit eşlem alanını ve dört üçgenler köşelerinde etkili bir şekilde böler. Bu kadar büyük alanları alın ve bit eşlem ölçeklendirmek için köşelerinde sağlar.
+Bu kod, bir iç Karo şekli bit eşleme alanı ve köşelere dört üçgenler etkili bir şekilde böler. Bu, çok büyük alanları alıp bit eşlem ölçeklendirme köşelere sağlar.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [Olayları etkileri çağırma](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
+- [Etkileri olayları çağırma](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

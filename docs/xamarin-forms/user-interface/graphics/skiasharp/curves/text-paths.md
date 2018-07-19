@@ -1,36 +1,36 @@
 ---
-title: Yolları ve SkiaSharp metni
-description: Bu makalede SkiaSharp yolları ve metin kesişimi inceler ve bu örnek kodu ile gösterir.
+title: Yollar ve SkiaSharp metni
+description: Bu makalede SkiaSharp yollar ve metin keşfediyor ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e7ce6994541ae947fa714d3c67acbc5d5d816975
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243911"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130786"
 ---
-# <a name="paths-and-text-in-skiasharp"></a>Yolları ve SkiaSharp metni
+# <a name="paths-and-text-in-skiasharp"></a>Yollar ve SkiaSharp metni
 
-_Yollar ve metin kesişimi keşfedin_
+_Yollar ve metin keşfedin_
 
-Modern grafik sistemlerinde metin yazı tipi karakter anahatları, genelde ikinci derece Bézier eğrileri tarafından tanımlanan bir koleksiyonlarıdır. Sonuç olarak, birçok modern grafik sistemi bir grafik yola metin karakterlerinin dönüştürmek için bir özellik içerir.
+Modern grafikler sistemlerinde metin yazı tipleri genellikle ikinci dereceden Bézier eğrileri tarafından tanımlanan karakter ana hatlarını koleksiyonlarıdır. Sonuç olarak, birçok modern grafik sistemleri metin karakterleri grafik yola dönüştürmek için bir özellik içerir.
 
-Metin karakterlerinin anahatları vuruş yanı sıra, onları doldurmak gördünüz. Bu sayede açıklandığı gibi bu karakter anahatları belirli vuruşun genişliğini ve yol etkisi görüntülenecek [ **yolu etkileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) makale. Ancak bir karakter dizesine dönüştürmek mümkündür bir `SKPath` nesnesi. Bu metin anahatları bölümünde açıklanan teknikleri ile kırpma için kullanılabileceği anlamına gelir [ **yolları ve bölgeler kırpma** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) makalesi.
+Metin karakterleri anahatlarını vuruş yapabilir, bunları doldurun gördünüz. Bu sayede belirli darbe genişliği ve yol etkisi ile bu karakter anahat bölümünde anlatıldığı gibi görüntülenecek [ **yol etkileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) makalesi. Bir karakter dizisine dönüştürmek mümkündür, ancak bir `SKPath` nesne. Bu metin anahatlarını açıklanan tekniklerle kırpma için kullanılabileceği anlamına gelir [ **yollar ve bölgeler ile kırpma** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) makalesi.
 
-Karakter ana hattını vuruş yapmak için bir yol efekti kullanarak yanı sıra yollarına bağlı etkileri karakter dizeleri türetilen yol oluşturabilirsiniz ve iki etkileri bile birleştirebilirsiniz:
+Karakter anahat vuruş yapmak için bir yol efekt kullanarak yanı sıra bir yollarına bağlı etkileri karakter dizeleri türetilen yol oluşturabilirsiniz ve iki etkisi bile birleştirebilirsiniz:
 
 ![](text-paths-images/pathsandtextsample.png "Metin yolu efekti")
 
-İçinde [önceki makalede](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) gördüğünüz nasıl [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) yöntemi `SKPaint` konturlu bir yolu bir özetini elde edebilirsiniz. Bu yöntem karakter anahatları türetilen yollar ile de kullanabilirsiniz.
+İçinde [önceki makalede](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) gördüğünüz nasıl [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) yöntemi `SKPaint` konturlu yolu bir özetini elde edebilirsiniz. Bu yöntem, karakter anahatlarını türetilen yol ile de kullanabilirsiniz.
 
-Son olarak, bu makalede yolları ve metin başka bir kesişimi gösterilmektedir: [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) yöntemi `SKCanvas` metnin taban eğik bir yolu aşağıdaki metin dizesini görüntülemenizi sağlar.
+Son olarak, bu makalede, yollar ve metin başka bir kesişimi gösterilmektedir: [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) yöntemi `SKCanvas` eğik bir yolu düzleştirerek taban metni izleyen metin dizesi görüntülemenizi sağlar.
 
-## <a name="text-to-path-conversion"></a>Metin yolu dönüştürme
+## <a name="text-to-path-conversion"></a>Metin dönüştürme yolu
 
 [ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetTextPath/p/System.String/System.Single/System.Single/) Yöntemi `SKPaint` bir karakter dizesine dönüştürür bir `SKPath` nesnesi:
 
@@ -38,15 +38,15 @@ Son olarak, bu makalede yolları ve metin başka bir kesişimi gösterilmektedir
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-`x` Ve `y` bağımsız değişkenleri metnin sol tarafındaki temel başlangıç noktası belirtin. Aynı role burada olarak yürütmek `DrawText` yöntemi `SKCanvas`. Yol içinde metnin sol tarafındaki temel koordinatları (x, y) sahip olacaktır.
+`x` Ve `y` metnin sol tarafındaki taban başlangıç noktası bağımsız değişkenleri belirtin. Aynı role burada gibi oyun `DrawText` yöntemi `SKCanvas`. Yol, metnin sol tarafındaki taban koordinatları (x, y) sahip olacaktır.
 
-`GetTextPath` Yöntemdir gereğinden fazla yalnızca doldurun veya sonuç yolu vuruş yapmak istiyorsanız. Normal `DrawText` yöntemi, yapmanıza olanak sağlar. `GetTextPath` Yöntemdir yollarını içeren diğer görevler için daha kullanışlı.
+`GetTextPath` Yöntemdir düşünülecek yalnızca doldurun veya sonuçta elde edilen yolu vuruş yapmak istiyorsanız. Normal `DrawText` yöntemi bunun olanak tanır. `GetTextPath` Yöntemdir daha yollarını içeren diğer görevler için kullanışlı.
 
-Bu görevlerden birini kırpma. **Kırpma metin** sayfa kırpması yol "CODE" word karakter ana hatlarını temelli oluşturur Bu yolu bir görüntüsünü içeren bir bit eşlem küçük sayfa boyutunu genişletilir **kırpma metin** kaynak kodu:
+Bu görevlerden birini kırpma. **Kırpma metin** "CODE" sözcük karakteri ana hatlarını dayalı bir kırpma yolu sayfası oluşturur Bu yol, bir bit eşlem görüntüsünü içeren küçük sayfa boyutunu esnetilmiş **metin kırpmayı** kaynak kodu:
 
-[![](text-paths-images/clippingtext-small.png "Üçlü sayfasının ekran görüntüsü kırpma metin")](text-paths-images/clippingtext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü kırpma metin")
+[![](text-paths-images/clippingtext-small.png "Üçlü sayfasının ekran görüntüsü metin kırpmayı")](text-paths-images/clippingtext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü metni kırpma")
 
-[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Sınıfı oluşturucusu katıştırılmış bir kaynak olarak depolanan bit eşlemi yükleyen **medya** klasörü çözümün:
+[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Sınıf oluşturucusu bir gömülü kaynak olarak depolanan bir bit eşlem yükler **medya** Çözüm klasörü:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -65,18 +65,17 @@ public class ClippingTextPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
     ...
 }
 ```
 
-`PaintSurface` İşleyici başlar oluşturarak bir `SKPaint` nesnesi için metin uygun. `Typeface` Özelliği ayarlanmış yanı sıra `TextSize`, bu belirli bir uygulama olsa da `TextSize` tamamen arbirtrary bir özelliktir. Ayrıca fark hiçbir `Style` ayarı.
+`PaintSurface` İşleyici başlar oluşturarak bir `SKPaint` metin için uygun olan nesne. `Typeface` Özelliği yanı sıra `TextSize`, bu belirli bir uygulama olsa da `TextSize` tamamen arbirtrary özelliğidir. Ayrıca fark hiçbir `Style` ayarı.
 
-`TextSize` Ve `Style` özellik ayarları, gerekli değildir çünkü bu `SKPaint` nesnesi yalnızca için kullanılır `GetTextPath` "CODE" metin dizesini kullanarak çağırın. İşleyici sonra sonuç ölçer `SKPath` nesne ve onu merkezi ve sayfa boyutunu ölçeklendirmek için üç dönüşümler uygular. Yolun kırpma yolu olarak ayarlayabilirsiniz:
+`TextSize` Ve `Style` özelliği ayarlar gerekli değildir çünkü bu `SKPaint` nesnesi yalnızca için kullanılır `GetTextPath` "CODE" metin dizesi kullanarak çağırın. İşleyici ardından sonuç ölçer `SKPath` nesne ve onu merkezi ve sayfa boyutu için ölçeklendirmek için üç dönüşümleri uygular. Yolu kırpma yolu şekilde ayarlayabilirsiniz:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -121,13 +120,13 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-Kırpma yolunu ayarladıktan sonra bit eşlem görüntülenebilir ve karakter anahatları kırpılır. Kullanımına dikkat edin [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/) yöntemi `SKRect` en boy oranını koruyarak sayfayı doldurmak için bir dikdörtgen hesaplar.
+Kırpma yolunu ayarladıktan sonra bit eşlem görüntülenebilir ve için karakter anahatlarını kırpılır. Kullanımına dikkat edin [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/) yöntemi `SKRect` en boy oranını koruyarak sayfayı doldurmak için bir dikdörtgen hesaplar.
 
-**Metin yolu etkisini** sayfa 1 D yolu efekti oluşturmak için bir yol için tek bir karakterini dönüştürür. Bu yol etkiyi boyama nesnesiyle daha sonra aynı karakterin büyük bir sürümü anahat vuruş yapmak için kullanılır:
+**Metin yolu etkisini** sayfa 1 D yolu efektini oluşturmak için bir yol için tek bir karakterini dönüştürür. Bu yol etkisi olan bir boyama nesnesi daha sonra bu aynı karakterin büyük sürümünün anahat vuruş yapmak için kullanılır:
 
 [![](text-paths-images/textpatheffect-small.png "Üçlü sayfasının ekran görüntüsü metin yolu etkisini")](text-paths-images/textpatheffect-large.png#lightbox "Üçlü sayfasının ekran görüntüsü metin yolu efekti")
 
-İş kadar [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) sınıfı alanlarını ve Oluşturucusu oluşur. İki `SKPaint` nesneleri iki farklı amaçlar için kullanılan alanları olarak tanımlanmamış: ilk (adlı `textPathPaint`) simgesi ile dönüştürmek için kullanılan bir `TextSize` 1 D yolu etkisi yoluna 50. İkinci (`textPaint`) simgesi yolu etkileyen ile büyük sürümünü görüntülemek için kullanılır. Bu nedenle, `Style` nesnesi bu ikinci boyama kümesine `Stroke`, ancak `StrokeWidth` özelliği 1 D yolu etkisi kullanırken bu özellik gerekli değildir çünkü ayarlı değil:
+İş kadar [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) sınıfı oluşturucusu ve alanlar içinde gerçekleşir. İki `SKPaint` iki farklı amaçlar için kullanılan alanlar olarak tanımlanan nesneleri: ilk (adlı `textPathPaint`) işareti ile dönüştürmek için kullanılan bir `TextSize` 50 1b yolunu etkili bir yolu. İkinci (`textPaint`) önekine bu yolu etkisi olan daha büyük sürümünü görüntülemek için kullanılır. Bu nedenle `Style` nesne bu ikinci Boya kümesine `Stroke`, ancak `StrokeWidth` 1b yolu efektini kullanırken bu özelliğin gerekli olmadığı için özellik ayarlanmadı:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -172,9 +171,9 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-Oluşturucusu ilk kullanan `textPathPaint` simgesi ile ölçmek için nesne bir `TextSize` 50. Bu dikdörtgeni merkezi koordinatlarını negatif ardından geçirilen `GetTextPath` metni için bir yol dönüştürmek için yöntem. Sonuç yoluna sahip (0, 0) noktası için 1 D yolu efekti idealdir karakter Center'da.
+İlk Oluşturucu kullanan `textPathPaint` ampersan ile ölçmek için nesne bir `TextSize` 50. Bu dikdörtgenin merkezi koordinat negatif sonra geçirilen `GetTextPath` metni bir yola dönüştürmek için yöntemi. Sonuç yoluna sahip (0, 0) işaret merkezinde karakterinin 1 D yolu efekt için idealdir.
 
-Düşünebilirsiniz `SKPathEffect` Oluşturucusu sonunda oluşturulan nesne kümesine `PathEffect` özelliği `textPaint` yerine bir alan olarak kaydedilir. Ancak sonuçlarını bozuk olduğundan çok iyi çalışması için bu kullanıma açık değil `MeasureText` Çağır `PaintSurface` işleyici:
+Düşündüğünüzden `SKPathEffect` Oluşturucu sonunda oluşturulan nesne ayarlanabilir `PathEffect` özelliği `textPaint` yerine bir alan olarak kaydedilir. Ancak sonuçları bozuk olduğundan çok iyi çalışması için bu kullanıma açık değil `MeasureText` Çağır `PaintSurface` işleyicisi:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -206,17 +205,17 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-Olduğunu `MeasureText` çağrı, sayfa karakteri merkezi için kullanılır. Sorunları önlemek için `PathEffect` özelliğini metin ölçülen sonra ancak gösterilmeden önce Boyama nesnesine ayarlayın.
+Olduğunu `MeasureText` çağrı Merkezi sayfasında karakter için kullanılır. Sorunları önlemek için `PathEffect` metin ölçülen sonra ancak gösterilmeden önce özelliği Boyama nesnesine ayarlanır.
 
-## <a name="outlines-of-character-outlines"></a>Karakter anahatları ana hatlarını
+## <a name="outlines-of-character-outlines"></a>Karakter anahatlarını ana hatlarını
 
-Normalde [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) yöntemi `SKPaint` bir yol boyama özellikleri uygulayarak diğerine dönüştürür özellikle vuruşun genişliğini ve yol etkisi. Yol etkilerini kullanıldığında `GetFillPath` etkili bir şekilde başka bir yol özetlenmektedir bir yol oluşturur. Bu örnekte gösterildiği **yolu anahattına dokunun** sayfasındaki [ **yolu etkileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) makale.
+Normalde [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) yöntemi `SKPaint` Boya özellikleri uygulayarak bir yolu dönüştürür özellikle vuruş genişlik ve yol etkisi. Yol etkileri kullanıldığında `GetFillPath` etkili bir şekilde başka bir yol özetleyen bir yol oluşturur. Bu, devremenin **anahattına yolu dokunun** sayfasını [ **yol etkileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) makale.
 
-Ayrıca, çağırabilirsiniz `GetFillPath` döndürülen yolunda `GetTextPath` ancak ilk başta, hangi, görünüm ister tamamen emin olmayabilir.
+Ayrıca, çağırabilirsiniz `GetFillPath` döndürülen yolda `GetTextPath` ancak ilk olarak, aşağıdaki gibi görünür olduğundan emin olabilir değil.
 
-**Karakter ana hattını anahatları** sayfa tekniği gösterir. Tüm ilgili kod `PaintSurface` işleyicisine [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) sınıfı.
+**Karakter anahat anahatlarını** sayfa teknik gösterir. Tüm ilgili kodu `PaintSurface` işleyicisi [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) sınıfı.
 
-Oluşturucusu oluşturarak başlar bir `SKPaint` adlı nesne `textPaint` ile bir `TextSize` özellik sayfasının boyutuna bağlı. Bu yol kullanmaya dönüştürülür `GetTextPath` yöntemi. Koordinat değişkenleri `GetTextPath` etkili bir şekilde yolun ekranında Merkezi:
+Oluşturucu oluşturarak başlıyor bir `SKPaint` adlı nesne `textPaint` ile bir `TextSize` özellik sayfa boyutuna bağlı. Bu bir yol kullanarak dönüştürülür `GetTextPath` yöntemi. Koordinat bağımsız değişkenleri `GetTextPath` ekranında yolunu etkili bir şekilde Merkezi:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -268,27 +267,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`PaintSurface` İşleyicisi sonra adlı yeni bir yol oluşturur `outlinePath`. Bu çağrı hedef yolunda olur `GetFillPath`. `StrokeWidth` 25 nedenler özelliğinin `outlinePath` metin karakterlerinin vuruş yapması 25 piksel genişliğinde yol anahat açıklamak için. Bu yol ardından 5 vuruşun genişliğini kırmızı görüntülenir:
+`PaintSurface` İşleyicisi oluşturur sonra adlı yeni bir yol `outlinePath`. Bu çağrı için hedef yolda olur `GetFillPath`. `StrokeWidth` 25 neden özelliği `outlinePath` metin karakterleri konturlama 25-piksel genişliğinde yol ana hatlarını tanımlayacak. Bu yol, sonra bir vuruş genişliğiyle 5 kırmızı renkte görüntülenir:
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Üçlü sayfasının ekran görüntüsü karakter ana hattını anahatları")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Üçlü sayfasının ekran görüntüsü karakter ana hattını anahatları")
+[![](text-paths-images/characteroutlineoutlines-small.png "Üçlü sayfasının ekran görüntüsü karakter anahat anahatlarını")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Üçlü sayfasının ekran görüntüsü karakter anahat anahatlarını")
 
-Yakından arayın ve burada yol anahattı keskin köşe yapar çakışmalar görürsünüz. Bu işlemin normal yapılarını bunlar.
+Yakından bakın ve burada yolu anahat keskin köşe yapar çakışıyor görürsünüz. Bu işlemin normal yapıtları şunlardır.
 
-## <a name="text-along-a-path"></a>Yol boyunca metin
+## <a name="text-along-a-path"></a>Yol metin
 
-Metin üzerinde yatay bir taban çizgisi normal olarak görüntülenir. Metnin dikey veya çapraz olarak çalıştırmak için Döndürülmüş, ancak temel hala bir çizgide olur.
+Metin üzerinde yatay bir taban çizgisi normal olarak görüntülenir. Metin dikey veya çapraz olarak çalıştırmak için Döndürülmüş, ancak temel düz bir çizgi hala olduğunu.
 
-Bir eğri çalıştırmak için metin istediğinizde zamanlar vardır. Bu amacı [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) yöntemi `SKCanvas`:
+Eğri çalıştırmak için metin istediğinizde zamanlar vardır. Amacı budur [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) yöntemi `SKCanvas`:
 
 ```csharp
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
 ```
 
-İlk bağımsız değişkeninde belirtilen metin, ikinci bağımsız değişkeni olarak belirtilen yolda çalıştırmak için yapılır. Yolu başından uzaklık metni başlayabilirsiniz `hOffset` bağımsız değişkeni. Normalde yolu metnin taban formlar: metin Üst Çıkıntısı yolunun bir tarafta, ve metin harfin alt diğer bağlı. Ancak metin taban çizgisini ile yolundan aralıklandırabilirsiniz `vOffset` bağımsız değişkeni.
+İkinci bağımsız değişkeni belirtilen yol boyunca çalıştırmak için ilk bağımsız değişkeni olarak belirtilen metin yapılır. Metin yoluyla başından itibaren bir uzaklıkta başlayabilirsiniz `hOffset` bağımsız değişken. Normalde yol metninin temel forms: metin Üst Çıkıntısı olan yolun bir tarafında ve metin çıkıntılarını olan diğer bağlı. Ancak yoluyla metin taban çizgisinden aralıklandırabilirsiniz `vOffset` bağımsız değişken.
 
-Bu yöntem ayarda yönergeler sağlamak için hiçbir olanak sahip `TextSize` özelliği `SKPaint` yolu baştan sona çalıştırmak için mükemmel boyutta bir metin yapmak için. Bazen bu metin boyutu kendi anlayabilir. Bazen bir sonraki makalede açıklanan için yol ölçme işlevleri kullanmanız gerekir.
+Bu yöntem bulunmaz ayarda rehberlik sahip `TextSize` özelliği `SKPaint` yolu başından sonuna kadar çalıştırmak için mükemmel bir şekilde boyutlandırılmış metni yapmak için. Bazen, metin boyutu kendi anlayabilir. Bazen yolu ölçme işlevleri gelecek bir makalede açıklanan için kullanmanız gerekecektir.
 
-**Döngüsel metin** program daire metin sarmalar. Tam olarak sığması için metin boyutu kolaydır, dairenin çevresi belirlemek kolaydır. `PaintSurface` İşleyicisine [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) sınıfı bir RADIUS sayfa boyutuna göre dairenin hesaplar. Bu daireye dönüşür `circularPath`:
+**Döngüsel metin** program metin daire içine sarmalar. Tam olarak sığması için metin boyutu daha kolaydır, dairenin çevresi belirlemek kolay bir işlemdir. `PaintSurface` İşleyicisi [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) sınıfı bir sayfa boyutuna göre bir daire yarıçapını hesaplar. Bu daireye dönüşür `circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage
@@ -321,11 +320,11 @@ public class CircularTextPage : ContentPage
 }
 ```
 
-`TextSize` Özelliği `textPaint` böylece metin genişliği çevresini eşleşir sonra ayarlanır:
+`TextSize` Özelliği `textPaint` metin genişliğini çevresini eşleşmesi sonra ayarlanır:
 
 [![](text-paths-images/circulartext-small.png "Üçlü sayfasının ekran görüntüsü döngüsel metin")](text-paths-images/circulartext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü döngüsel metin")
 
-Metnin kendisi de biraz döngüsel olarak seçildi: "daire" tümcenin konu hem edat tümcecik nesnesinin sözcüğüdür.
+Metnin kendisi de biraz döngüsel olarak seçildi: "daire" cümlenin konu hem edat tümcecik nesnesinin sözcüktür.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

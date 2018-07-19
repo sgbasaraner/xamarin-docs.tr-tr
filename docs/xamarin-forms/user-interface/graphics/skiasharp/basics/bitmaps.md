@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
-ms.date: 04/03/2017
-ms.openlocfilehash: dec6fa1534f14836ae98677ad33e280ff510fb97
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995196"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130965"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Temel SkiaSharp, bit eşlem bilgileri
 
@@ -22,7 +22,7 @@ Oldukça geniş bit eşlem içinde SkiaSharp desteğidir. Bu makalede yalnızca 
 
 ![](bitmaps-images/bitmapssample.png "İki bit eşlem görüntüleme")
 
-SkiaSharp bit eşlem türünde bir nesnedir [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Bir bit eşlem oluşturmak için birçok yolu vardır, ancak bu makalede kendisine sınırlar [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/) eşlemden yükleyen yöntemi bir [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/) nesnesini bir bit eşlem dosyasına başvurur. Kullanmak uygun olan [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/) türetilen sınıf `SKStream` .NET kabul eden bir oluşturucu olduğundan [ `Stream` ](xref:System.IO.Stream) nesne.
+SkiaSharp bit eşlem türünde bir nesnedir [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Bir bit eşlem oluşturmak için birçok yolu vardır, ancak bu makalede kendisine sınırlar [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/) bit eşlemi yükleyen bir .NET yöntemi `Stream` nesne.
 
 **Temel bit eşlemler** sayfasını **SkiaSharpFormsDemos** program üç farklı kaynaklardan gelen bit eşlemler yükleme işlemini gösterir:
 
@@ -55,39 +55,46 @@ public class BasicBitmapsPage : ContentPage
 
 ## <a name="loading-a-bitmap-from-the-web"></a>Bir bit eşlem Web'den yükleme
 
-Bir URL'sini temel alarak bir bit eşlem yüklemek için kullanabileceğiniz [ `WebRequest` ](xref:System.Net.WebRequest) yürütüldü aşağıdaki kodda gösterildiği gibi sınıf `BasicBitmapsPage` Oluşturucusu. URL'sini burada bazı örnek bit eşlemler ile Xamarin web sitesinden bir alana işaret eder. Bit eşlem belirli bir genişliğe yeniden boyutlandırma bir belirtim ekleyerek web sitesinde bir paket sağlar:
+Bir URL'sini temel alarak bir bit eşlem yüklemek için kullanabileceğiniz [ `HttpClient` ](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0) sınıfı. Yalnızca bir örneğini örneğini oluşturmalıdır `HttpClient` ve yeniden, bu nedenle, bir alan olarak depolama:
 
 ```csharp
-Uri uri = new Uri("http://developer.xamarin.com/demo/IMG_3256.JPG?width=480");
-WebRequest request = WebRequest.Create(uri);
-request.BeginGetResponse((IAsyncResult arg) =>
+HttpClient httpClient = new HttpClient();
+```
+
+Kullanırken `HttpClient` iOS ve Android uygulamaları ile şirket belgelerinde açıklandığı gibi proje özelliklerini ayarlamak da istersiniz  **[Aktarım Katmanı Güvenliği (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**.
+
+Kullanmak en uygun olduğundan `await` işleciyle `HttpClient`, kod içinde yürütülemez `BasicBitmapsPage` Oluşturucusu. Bunun yerine, parçası olduğu `OnAppearing` geçersiz kılar. URL'sini burada bazı örnek bit eşlemler ile Xamarin web sitesinden bir alana işaret eder. Bit eşlem belirli bir genişliğe yeniden boyutlandırma bir belirtim ekleyerek web sitesinde bir paket sağlar:
+
+
+```csharp
+protected override async void OnAppearing()
 {
+    base.OnAppearing();
+
+    // Load web bitmap.
+    string url = "https://developer.xamarin.com/demo/IMG_3256.JPG?width=480";
+
     try
     {
-        using (Stream stream = request.EndGetResponse(arg).GetResponseStream())
+        using (Stream stream = await httpClient.GetStreamAsync(url))
         using (MemoryStream memStream = new MemoryStream())
         {
-            stream.CopyTo(memStream);
+            await stream.CopyToAsync(memStream);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            using (SKManagedStream skStream = new SKManagedStream(memStream))
-            {
-                webBitmap = SKBitmap.Decode(skStream);
-            }
-        }
+            webBitmap = SKBitmap.Decode(stream);
+            canvasView.InvalidateSurface();
+        };
     }
     catch
     {
     }
-
-    Device.BeginInvokeOnMainThread(() => canvasView.InvalidateSurface());
-
-}, null);
+}
 ```
 
-Bit eşlem başarıyla indirildi, geri çağırma yöntemi geçirilen `BeginGetResponse` yöntemi çalışır. `EndGetResponse` Çağrı olması gereken bir `try` durumda bir hata oluştu engelleyin. `Stream` Nesne öğesinden alınan `GetResponseStream` bit eşlem içeriğini kopyalanır bazı platformlarda, yeterli değil, bu nedenle bir `MemoryStream` nesne. Bu noktada, `SKManagedStream` nesne oluşturulabilir. Bunu şimdi, büyük olasılıkla bir JPEG veya PNG dosyası olan bit eşlem dosyası başvuruyor. `SKBitmap.Decode` Yöntemi bit eşlem dosyası kodunu çözer ve sonuçları bir iç SkiaSharp biçiminde depolar.
+Android kullanırken bir özel durum yükseltmek `Stream` döndürüldüğü `GetStreamAsync` içinde `SKBitmap.Decode` yöntemi bir ana iş parçacığı üzerinde uzun bir işlem yapmakta olduğundan. Bit eşlem dosyasının içeriğini kopyalanır bu nedenle, bir `MemoryStream` kullanarak nesne `CopyToAsync`.
 
-Geçirilen geri çağırma yöntemi `BeginGetResponse` anlamına Oluşturucusu yürütme tamamlandıktan sonra çalışır `SKCanvasView` izin vermek için geçersiz kılınabilir gerekiyor `PaintSurface` ekranı güncelleştirmek için işleyici. Ancak, `BeginGetResponse` geri çağırma kullanmak için gerekli olacak şekilde yürütme, ikincil bir dizi çalıştıran `Device.BeginInvokeOnMainThread` çalıştırılacak `InvalidateSurface` kullanıcı arabirimi iş parçacığında yöntem.
+Statik `SKBitmap.Decode` yöntemi, bit eşlem dosyaları kod çözme için sorumludur. JPEG, PNG, GIF ve diğer birkaç popüler bit eşlem biçimi ile çalışır ve sonuçları bir iç SkiaSharp biçiminde depolar. Bu noktada, `SKCanvasView` izin vermek için geçersiz kılınabilir gerekiyor `PaintSurface` ekranı güncelleştirmek için işleyici. 
 
 ## <a name="loading-a-bitmap-resource"></a>Bir bit eşlem kaynağı yükleniyor
 
@@ -100,19 +107,18 @@ string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
 Assembly assembly = GetType().GetTypeInfo().Assembly;
 
 using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-using (SKManagedStream skStream = new SKManagedStream(stream))
 {
-    resourceBitmap = SKBitmap.Decode(skStream);
+    resourceBitmap = SKBitmap.Decode(stream);
 }
 ```
 
-Bu `Stream` nesne doğrudan dönüştürülebilir bir `SKManagedStream` nesne.
+Bu `Stream` nesne doğrudan geçirilebilir `SKBitmap.Decode` yöntemi.
 
 ## <a name="loading-a-bitmap-from-the-photo-library"></a>Bir bit eşlem Fotoğraf Kitaplığı'ndan yükleme
 
 Kullanıcının cihazın Resim Kitaplığı'ndan bir fotoğraf yüklemek de mümkündür. Bu özellik, Xamarin.Forms tarafından sağlanmaz. Makalede açıklanan gibi bir bağımlılık hizmet iş gerektirir [Resim Kitaplığı'ndan bir fotoğraf çekme](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-**IPicturePicker.cs** dosya ve üç **PicturePickerImplementation.cs** dosyalarından bu makalede çeşitli projeler için kopyalanmış **SkiaSharpFormsDemos**çözümü ve yeni ad alanı adı verilir. Ayrıca, Android **MainActivity.cs** makalesinde açıklandığı gibi dosya değiştirildi ve iOS projesine iki satır sonuna doğru fotoğraf kitaplığınıza erişmesine izin verilip verilmediğini **Info.plist**  dosya.
+**IPhotoLibrary.cs** dosyası **SkiaSharpFormsDemos** proje ve üç **PhotoLibrary.cs** platformu projelerinde dosyalarında bu makaleden uyarlanmış olmuştur. Ayrıca, Android **MainActivity.cs** makalesinde açıklandığı gibi dosya değiştirildi ve iOS projesine iki satır sonuna doğru fotoğraf kitaplığınıza erişmesine izin verilip verilmediğini **Info.plist**  dosya.
 
 `BasicBitmapsPage` Oluşturucu ekler bir `TapGestureRecognizer` için `SKCanvasView` Tap'ları bildirim almak için. Bir dokunun girişinde `Tapped` işleyicisini alır çağrıları ve resim Seçici bağımlılık hizmeti erişim `GetImageStreamAsync`. Varsa bir `Stream` nesne döndürülür ve ardından içeriği içine kopyalanır bir `MemoryStream`gerektirdiği gibi bazı platformlar. Kodun geri kalanını iki diğer teknikleri ile benzerdir:
 
@@ -122,22 +128,13 @@ TapGestureRecognizer tapRecognizer = new TapGestureRecognizer();
 tapRecognizer.Tapped += async (sender, args) =>
 {
     // Load bitmap from photo library
-    IPicturePicker picturePicker = DependencyService.Get<IPicturePicker>();
+    IPhotoLibrary photoLibrary = DependencyService.Get<IPhotoLibrary>();
 
-    using (Stream stream = await picturePicker.GetImageStreamAsync())
+    using (Stream stream = await photoLibrary.PickPhotoAsync())
     {
         if (stream != null)
         {
-            using (MemoryStream memStream = new MemoryStream())
-            {
-                stream.CopyTo(memStream);
-                memStream.Seek(0, SeekOrigin.Begin);
-
-                using (SKManagedStream skStream = new SKManagedStream(memStream))
-                {
-                    libraryBitmap = SKBitmap.Decode(skStream);
-                }
-            }
+            libraryBitmap = SKBitmap.Decode(stream);
             canvasView.InvalidateSurface();
         }
     }

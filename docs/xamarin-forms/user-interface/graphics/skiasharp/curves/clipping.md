@@ -1,30 +1,30 @@
 ---
-title: Kırpma yolları ve bölgeler
-description: Bu makalede, belirli alanlara küçük grafik SkiaSharp yolları'nı kullanarak ve bölgeler oluşturmak için nasıl açıklar ve bu örnek kodu ile gösterir.
+title: Yollar ve bölgeler ile kırpma
+description: Bu makalede belirli alanlara küçük grafik SkiaSharp yollarını kullanın ve bölgeler oluşturmak için nasıl açıklar ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: 0d246dc4a5304b56560deb1095149e52c1f82335
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 52e426c8788ca017f36ba49b338b04a64dc0ef3d
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243895"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130823"
 ---
-# <a name="clipping-with-paths-and-regions"></a>Kırpma yolları ve bölgeler
+# <a name="clipping-with-paths-and-regions"></a>Yollar ve bölgeler ile kırpma
 
-_Küçük grafik yollara belirli alanları ve bölgeler oluşturmak için kullanın_
+_Küçük grafik yolları belirli alanları ve bölgeler oluşturmak için kullanın._
 
-Bazen, belirli bir alanın grafik işleme kısıtlamak gereklidir. Bu olarak bilinir *kırpma*. Bu bir anahtar deliği görülen monkey görüntüsü gibi özel efektler kırpma kullanabilirsiniz:
+Bazen, belirli bir alandaki grafik işlenmesini kısıtlamak gereklidir. Bu olarak bilinir *kırpma*. Bu bir anahtar deliği görülen bir monkey görüntüsü gibi özel efekt için kırpma kullanabilirsiniz:
 
 ![](clipping-images/clippingsample.png "Bir anahtar deliği aracılığıyla Monkey")
 
-*Kırpma alanı* grafik işlenir ekran alanıdır. Kırpma alanının dışında görüntülenen herhangi bir şey işlenmez. Kırpma alanı genellikle tarafından tanımlanan bir [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) nesne, ancak bunun yerine tanımlayabilirsiniz kırpma alanı kullanarak bir [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) nesnesi. Bir yolundan bir bölge oluşturmak için bu nesnede iki tür ilk ilgili gibi görünüyor. Ancak, bir bölgesinden bir yolunu oluşturamazsınız ve dahili olarak çok farklı: bir bölge yatay tarama satırları bir dizi tanımlı bir yol çizgiler ve eğrilerle, bir dizi oluşur.
+*Kırpma alan* grafik işlenir ekran alanıdır. Kırpma bölgesinin dışında görünür herhangi bir şey yazdırılmaz. Kırpma alanı genellikle tarafından tanımlanan bir [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) nesne, ancak bunun yerine tanımlayabilirsiniz kırpma alanı kullanarak bir [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) nesne. Bir yoldan oluşturabileceğiniz bir bölge olduğundan bu iki tür nesneler ilk ilgili gibi görünüyor. Ancak, bir bölgeden bir yol oluşturulamıyor ve dahili olarak çok farklı olan: bölge, bir dizi yatay tarama satırları tarafından tanımlı bir yol çizgiler ve eğrilerle, bir dizi oluşur.
 
-Yukarıdaki resimde tarafından oluşturulan **anahtar deliği aracılığıyla Monkey** sayfası. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Sınıfı SVG verileri kullanarak bir yolu tanımlar ve program kaynaklardan bir bit eşlem yük için Oluşturucusu kullanır:
+Yukarıdaki resimde tarafından oluşturulan **Monkey anahtar deliği aracılığıyla** sayfası. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Sınıfı SVG verileri kullanarak bir yolunu tanımlar ve bir bit eşlem program kaynaklardan yüklemeye Oluşturucusu kullanır:
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -45,16 +45,15 @@ public class MonkeyThroughKeyholePage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
     ...
 }
 ```
 
-Ancak `keyholePath` nesneyi tanımlayan bir anahtar deliği özetini, koordinatları tamamen rastgele ve yol verileri geliştirmiştir olduğunda ne kullanışlı yansıtır. Bu nedenle, `PaintSurface` işleyici alır bu yol ve çağrıları sınırlarına `Translate` ve `Scale` yolu ekran merkezine taşımanızı ve neredeyse yüksekliğinde ekran yapmak için:
+Ancak `keyholePath` nesneyi tanımlayan bir anahtar deliği özetini, koordinatlar tamamen isteğe bağlı ve yol verileri'nda olduğunda ne kullanışlı yansıtır. Bu nedenle, `PaintSurface` işleyici bu yol ve çağrıları sınırları alır `Translate` ve `Scale` yolu ekranın merkezine taşımanızı ve neredeyse yüksekliğinde ekran yapmak için:
 
 
 ```csharp
@@ -91,35 +90,35 @@ public class MonkeyThroughKeyholePage : ContentPage
 }
 ```
 
-Ancak yol değil işlenir. Bunun yerine, Dönüşümlerin yolu bu deyim kırpması alanıyla ayarlamak için kullanılır:
+Ancak, yolu olmayan işlenir. Bunun yerine, dönüşümler yol ile bu bildirimi bir kırpma alanı ayarlamak için kullanılır:
 
 ```csharp
 canvas.ClipPath(keyholePath);
 ```
 
-`PaintSurface` İşleyici sonra çağrısıyla dönüşümler sıfırlar `ResetMatrix` ve tam ekran yüksekliğine genişletmek için bit eşlem çizer. Bu kod bit eşlem bu belirli bit eşlemi olan kare, olduğunu varsayar. Bit eşlem yalnızca kırpma yolu tarafından tanımlanan alanda oluşturulur:
+`PaintSurface` İşleyici ardından bir çağrı dönüşümleriyle sıfırlar `ResetMatrix` ve tam ekran yüksekliği için genişletmek için bit eşlem çizer. Bu kod bir bit eşlem bu belirli bir bit eşlem olan kare, olduğunu varsayar. Bit eşlem, yalnızca kırpma yolu tarafından tanımlanan alan içinde işlenir:
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Üçlü ekran görüntüsü anahtar deliği sayfa aracılığıyla Monkey")](clipping-images/monkeythroughkeyhole-large.png#lightbox "anahtar deliği sayfa aracılığıyla Monkey Üçlü ekran görüntüsü")
+[![](clipping-images/monkeythroughkeyhole-small.png "Üç ekran görüntüsü anahtar deliği sayfası aracılığıyla Monkey")](clipping-images/monkeythroughkeyhole-large.png#lightbox "anahtar deliği sayfası aracılığıyla Monkey üç ekran görüntüsü")
 
-Kırpma yolunu yürürlükte dönüşümler konu olduğunda `ClipPath` yöntemi çağrılır ve değil dönüşümler etkin olduğunda (örneğin, bir bit eşlem) bir grafik nesnesi görüntülenir. Kırpma yolu ile kaydedilen tuvale durumu parçası olan `Save` yöntemi ve geri yüklenen ile `Restore` yöntemi.
+Kırpma yolunu geçerli dönüşümler konu olduğunda `ClipPath` yöntemi çağrılır ve olmayan dönüşümler etkin olduğunda grafik nesnesini (örneğin, bir bit eşlem) görüntülenir. Kırpma yolu ile kaydedilen tuval durumu parçasıdır `Save` yöntemi ve geri yüklenen ile `Restore` yöntemi.
 
 ## <a name="combining-clipping-paths"></a>Kırpma yolları birleştirme
 
-NET olarak söylemek kırpma alanı "ayarlanmadı" `ClipPath` yöntemi. Bunun yerine, bir dikdörtgen ekrana boyutları eşit olarak başlar varolan kırpma yolu ile birleştirilir. Kırpma alanı kullanmanın dikdörtgen sınırları edinebilirsiniz [ `ClipBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipBounds/) özelliği veya [ `ClipDeviceBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipDeviceBounds/) özelliği. `ClipBounds` Özelliği döndürür bir `SKRect` herhangi dönüştüren yansıtır değeri etkili olabilir. `ClipDeviceBounds` Özelliği döndürür bir `RectI` değeri. Bu tamsayı boyutlarla dikdörtgen şeklinde ve gerçek piksel boyutlarını kırpma alanında açıklar.
+NET olarak söylemek gerekirse, kırpma alan "ayarlanmadı" `ClipPath` yöntemi. Bunun yerine, ekrana boyutları eşit dikdörtgen başlar mevcut kırpma yolu ile birleştirilir. Kırpma alanı kullanarak dikdörtgen sınırları edinebilirsiniz [ `ClipBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipBounds/) özelliği veya [ `ClipDeviceBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipDeviceBounds/) özelliği. `ClipBounds` Özelliği döndürür bir `SKRect` herhangi dönüştüren yansıtan bir değer geçerli olabilir. `ClipDeviceBounds` Özelliği döndürür bir `RectI` değeri. Bu bir dikdörtgen ile tamsayı boyutları ve gerçek piksel boyutları kırpma alanında açıklar.
 
-Herhangi bir çağrıda için `ClipPath` yeni bir alan kırpma alanıyla birleştirerek kırpma alanı azaltır. Tam söz dizimi [ `ClipPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipPath/p/SkiaSharp.SKPath/SkiaSharp.SKClipOperation/System.Boolean/) yöntemi:
+Tüm çağrı `ClipPath` kırpma alan yeni bir alan birleştirerek kırpma alanını azaltır. Tam sözdizimini [ `ClipPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipPath/p/SkiaSharp.SKPath/SkiaSharp.SKClipOperation/System.Boolean/) yöntemdir:
 
 ```csharp
 public void ClipPath(SKPath path, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-Ayrıca bir [ `ClipRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRect/p/SkiaSharp.SKRect/SkiaSharp.SKClipOperation/System.Boolean/) kırpma alanı olan bir dikdörtgen birleştirir yöntemi:
+Ayrıca bir [ `ClipRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRect/p/SkiaSharp.SKRect/SkiaSharp.SKClipOperation/System.Boolean/) kırpma alan bir dikdörtgen ile birleştiren yöntemi:
 
 ```csharp
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-Varsayılan olarak, var olan kırpma alanı kesişimini sonuç kırpma alanıdır ve `SKPath` veya `SKRect` belirtilen `ClipPath` veya `ClipRect` yöntemi. Bu, gösterilmiştir **dört daireler kesiştiği küçük** sayfa. `PaintSurface` İşleyicisinde [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) sınıfı aynı yeniden kullanır `SKPath` kırpma alan art arda çağrılar yoluyla her biri azaltır, dört çakışan daire oluşturulacak nesne `ClipPath`:
+Varsayılan olarak, varolan kırpma alan kesişimini sonuç kırpma alanıdır ve `SKPath` veya `SKRect` içinde belirtilen `ClipPath` veya `ClipRect` yöntemi. Bu gösterilmiştir **dört daireler kesişen küçük** sayfası. `PaintSurface` İşleyicisinde [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) sınıfı kullanır aynı `SKPath` kırpma alan art arda çağrılar yoluyla her biri azaltır, dört çakışan daire oluşturmak için nesne `ClipPath`:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -164,27 +163,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Ne sol bu dört daire kesişimi şöyledir:
+Ne sol dört şu çevrelerdeki kesişimi şöyledir:
 
-[![](clipping-images//fourcircleintersectclip-small.png "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük")](clipping-images/fourcircleintersectclip-large.png#lightbox "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük")
+[![](clipping-images//fourcircleintersectclip-small.png "Üçlü sayfasının ekran görüntüsü dört daire kesişen küçük")](clipping-images/fourcircleintersectclip-large.png#lightbox "Üçlü sayfasının ekran görüntüsü dört daire kesişen küçük")
 
-[ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/) Numaralandırma yalnızca iki üye vardır:
+[ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/) Sabit listesi, yalnızca iki üyesi vardır:
 
-- [`Difference`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Difference/) Belirtilen yol veya dikdörtgen varolan kırpma alanından kaldırır
+- [`Difference`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Difference/) Belirtilen yol veya dikdörtgen var olan bir kırpma alanından kaldırır.
 
-- [`Intersect`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Intersect/) Belirtilen yol ya da varolan kırpma alan ile dikdörtgen kesiştiğinden
+- [`Intersect`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Intersect/) Belirtilen yol veya dikdörtgen mevcut kırpma alan ile kesişip
 
-Dört değiştirirseniz `SKClipOperation.Intersect` değişkenlerinde `FourCircleIntersectClipPage` ile sınıf `SKClipOperation.Difference`, aşağıdaki görürsünüz:
+Dört değiştirirseniz `SKClipOperation.Intersect` değişkenlerinde `FourCircleIntersectClipPage` sınıfıyla `SKClipOperation.Difference`, aşağıdaki görüntüyle karşılaşırsınız:
 
-[![](clipping-images//fourcircledifferenceclip-small.png "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük fark işlemi ile")](clipping-images/fourcircledifferenceclip-large.png#lightbox "Üçlü sayfasının ekran görüntüsü dört daire kesiştiği küçük fark işlemi ile")
+[![](clipping-images//fourcircledifferenceclip-small.png "Üçlü sayfasının ekran görüntüsü dört daire kesişen küçük fark alma işlemi")](clipping-images/fourcircledifferenceclip-large.png#lightbox "Üçlü sayfasının ekran görüntüsü dört daire kesişen küçük fark alma işlemi")
 
 Dört çakışan daire kırpma alanı'ndan kaldırıldı.
 
-**Küçük işlemleri** sayfası yalnızca daireler çifti ile bu iki işlem arasındaki farkı gösterir. Soldaki ilk daire varsayılan küçük işlemini kırpma alanıyla eklenen `Intersect`, sağdaki ikinci daire metin etiketi tarafından belirtilen küçük işlemi ile kırpma bölgesine eklenir:
+**Küçük Operations** sayfası yalnızca daireler çifti ile bu iki işlem arasındaki farkı gösterir. Sol taraftaki ilk daire varsayılan küçük işlemi ile kırpma alanı eklenir `Intersect`, ikinci daire sağdaki metin etiketi tarafından belirtilen küçük işlemi ile kırpma alanına eklenirken:
 
-[![](clipping-images//clipoperations-small.png "Üçlü sayfasının ekran görüntüsü küçük işlemleri")](clipping-images/clipoperations-large.png#lightbox "Üçlü sayfasının ekran görüntüsü küçük işlemleri")
+[![](clipping-images//clipoperations-small.png "Üçlü sayfasının ekran görüntüsü küçük Operations")](clipping-images/clipoperations-large.png#lightbox "Üçlü sayfasının ekran görüntüsü küçük işlemleri")
 
-[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Sınıfı tanımlayan iki `SKPaint` nesne alanları olarak ve ardından iki dikdörtgen alanlarına ekran böler. Bu alanlar telefon dikey veya yatay modunda olmasına bağlı olarak farklılık gösterir. `DisplayClipOp` Sınıfı ardından görüntüler çağrıları ve metin `ClipPath` her küçük işlemi göstermek için iki daire yollar ile:
+[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Sınıfı tanımlayan iki `SKPaint` nesneleri alanları olarak ve ardından iki dikdörtgen alanlarına ekran böler. Bu alanlar telefonun dikey veya yatay modda olduğuna bağlı olarak farklılık gösterir. `DisplayClipOp` Sınıfı ardından görüntüler aramaları ve metin `ClipPath` her küçük işlem göstermek için iki daire yollarla:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -245,11 +244,11 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKClipOperation clipOp)
 }
 ```
 
-Çağırma `DrawPaint` normalde ile doldurulacak Kanvasın tamamını neden `SKPaint` nesnesi, ancak bu durumda, yöntem yalnızca boyar kırpma alanı içinde.
+Çağırma `DrawPaint` normalde ile doldurulacak tuvalin tamamını neden `SKPaint` nesne, ancak bu durumda, yöntemi yalnızca boyar kırpma alanı içinde.
 
-## <a name="exploring-regions"></a>Bölgeler keşfetme
+## <a name="exploring-regions"></a>Bölgeleri keşfetme
 
-API belgelerine denedikten varsa `SKCanvas`, aşırı fark etmiş olabilirsiniz `ClipPath` ve `ClipRect` ancak bunun yerine, yukarıda açıklanan yöntemlere benzer yöntemlerine sahip adlı bir parametre [ `SKRegionOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegionOperation/) yerine `SKClipOperation`. `SKRegionOperation` form kırpma alanlara yolları birleştirme biraz daha fazla esneklik sağlayan altı üyeler içeriyor:
+API belgelerini denedikten varsa `SKCanvas`, aşırı fark etmiş olabilirsiniz `ClipPath` ve `ClipRect` ancak bunun yerine, yukarıda açıklanan yöntemlerden benzer şekilde yöntemlerine sahip adlı bir parametre [ `SKRegionOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegionOperation/) yerine `SKClipOperation`. `SKRegionOperation` form kırpma bölgeleri için yolları birleştirme biraz daha fazla esneklik, altı üyeleri içerir:
 
 - [`Difference`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.Difference/)
 
@@ -263,31 +262,31 @@ API belgelerine denedikten varsa `SKCanvas`, aşırı fark etmiş olabilirsiniz 
 
 - [`Replace`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.Replace/)
 
-Ancak, aşırı `ClipPath` ve `ClipRect` ile `SKRegionOperation` parametreleri artık kullanılmıyor ve bunlar kullanılamaz.
+Ancak, aşırı yüklemeleri `ClipPath` ve `ClipRect` ile `SKRegionOperation` parametreleri artık kullanılmıyor ve bunlar kullanılamaz.
 
-Kullanmaya devam edebilirsiniz `SKRegionOperation` numaralandırma ancak gerektirir kırpma alanı cinsinden tanımladığınız bir [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) nesnesi.
+Kullanmaya devam edebilirsiniz `SKRegionOperation` numaralandırma ancak gerektirir bir kırpma alanı açısından tanımladığınız bir [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) nesne.
 
-Yeni oluşturulan bir `SKRegion` nesnesi boş bir alana açıklar. Genellikle ilk nesne üzerinde çağrıdır [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) dikdörtgen bir bölgesi açıklamak böylece. Parametre `SetRect` olan bir bir `SKRectI` değeri &mdash; dikdörtgen değeri tamsayı özelliklere sahip. Ardından çağırabilirsiniz [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) ile bir `SKPath` nesnesi. Bu yolun iç ile aynıdır, ancak ilk dikdörtgen bölgesine kırpılmış bölge oluşturur.
+Yeni oluşturulan bir `SKRegion` nesnesi boş bir alan tanımlar. Nesne ilk çağrıda genellikle olan [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) dikdörtgen bir bölgesi açıklayan böylece. Parametre `SetRect` olduğu bir bir `SKRectI` değer &mdash; dikdörtgen değeri tamsayı özelliklere sahip. Ardından çağırabilirsiniz [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) ile bir `SKPath` nesne. Bu yolun iç aynıdır, ancak ilk dikdörtgen bölge için kırpılmış bir bölgesi oluşturur.
 
-`SKRegionOperation` Numaralandırma birini çağırdığınızda oyuna yalnızca gelir [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) bunun gibi yöntemi aşırı:
+`SKRegionOperation` Numaralandırma birini çağırdığınızda oyuna yalnızca gelen [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) gibi bu yöntem aşırı yüklemeleri:
 
 ```csharp
 public Boolean Op(SKRegion region, SKRegionOperation op)
 ```
 
-Değişiklik yapıyorsunuz bölge `Op` çağrıda bağlı bir parametre olarak belirtilen bölgeyi birlikte `SKRegionOperation` üyesi. Son olarak bir bölge kırpma için uygun aldığınızda, tuvalin kullanmanın kırpma alanı olarak ayarlayabilirsiniz [ `ClipRegion` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRegion/p/SkiaSharp.SKRegion/SkiaSharp.SKClipOperation/) yöntemi `SKCanvas`:
+Hale getirildiği bölge `Op` çağrıda bağlı bir parametre olarak belirtilen bölge ile birlikte `SKRegionOperation` üyesi. Son olarak bir bölge kırpma için uygun aldığınızda, tuval kullanarak kırpma alanı olarak ayarlayabilirsiniz [ `ClipRegion` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRegion/p/SkiaSharp.SKRegion/SkiaSharp.SKClipOperation/) yöntemi `SKCanvas`:
 
 ```csharp
 public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperation.Intersect)
 ```
 
-Aşağıdaki ekran görüntüsünde altı bölge işlemlerde dayalı kırpma alanlarını gösterir. Sol daire bölgedir, `Op` yöntemi çağrılır ve sağ daire geçirilen bölgedir `Op` yöntemi:
+Aşağıdaki ekran görüntüsünde, altı bölgede işlemleri temel kırpma alanlar gösterilmektedir. Sol daire bölgedir, `Op` yöntemi çağrıldığında ve doğru daire geçirilen bölgedir `Op` yöntemi:
 
-[![](clipping-images//regionoperations-small.png "Üçlü sayfasının ekran görüntüsü bölge işlemleri")](clipping-images/regionoperations-large.png#lightbox "Üçlü sayfasının ekran görüntüsü bölge işlemleri")
+[![](clipping-images//regionoperations-small.png "Üçlü sayfasının ekran görüntüsü bölge Operations")](clipping-images/regionoperations-large.png#lightbox "Üçlü sayfasının ekran görüntüsü bölge işlemleri")
 
-Bu iki daire birleştirmenin bu tüm olanakları misiniz? İçinde görülen, kendilerini tarafından bir bileşimidir üç bileşeni olarak sonuç görüntü göz önünde bulundurun `Difference`, `Intersect`, ve `ReverseDifference` işlemleri. Toplam bileşimleri üçüncü güç için iki veya sekiz sayısıdır. Eksik olan iki özgün bölge olan (değil çağırma sonuçları `Op` hiç) ve tamamen boş bir bölge.
+Bu iki daire birleştirme bu tüm olasılıkları misiniz? Sonuçta elde edilen görüntü içinde görülen, kendileri tarafından üç bileşeni birleşimi olarak düşünün `Difference`, `Intersect`, ve `ReverseDifference` operations. Toplam birleşimleri iki üçüncü veya sekiz sayısıdır. Eksik olan iki bölge özgün olan (değil çağırma sonuçları `Op` hiç) ve tamamen boş bir bölge.
 
-İlk olarak bu yolundan bir yol ve bir bölge oluşturmanız ve daha sonra birden çok bölgeye birleştirmeniz gerekir çünkü kırpma bölgeleri kullanmak için daha zor olduğu. Genel yapısı **bölge işlemleri** sayfasıdır çok benzer **küçük işlemleri** ancak [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) sınıfı ekran altı alanlarına böler ve Bu proje için bölgeleri kullanmak için gereken ek iş gösterir:
+İlk olarak bu yolu bir yol ve bir bölge oluşturmanız ve daha sonra birden çok bölgede birleştirmeniz gerekir çünkü kırpma için bölge kullanmaya daha zor olan. Genel yapısını **bölge Operations** sayfasıdır çok benzer **küçük Operations** ancak [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) divides sınıfı ekranı altı alanlarına ve Bu proje için bölgeleri kullanmak için gereken ek iş gösterir:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -358,20 +357,20 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 }
 ```
 
-Arasında büyük farklar işte `ClipPath` yöntemi ve `ClipRegion` yöntemi:
+İşte arasında büyük bir fark `ClipPath` yöntemi ve `ClipRegion` yöntemi:
 
 > [!IMPORTANT]
-> Farklı `ClipPath` yöntemi, `ClipRegion` yöntemi tarafından dönüşümler etkilenmez.
+> Farklı `ClipPath` yöntemi `ClipRegion` yöntemi dönüşümler tarafından etkilenmez.
 
-Bu farkı stratejinin anlamak için onu anlamak faydalıdır hangi bir bölgedir. Nasıl küçük işlemler veya bölge işlemleri dahili olarak uygulanabilir hakkında zorlayıcı, büyük olasılıkla çok karmaşık görünüyor. Birkaç olası çok karmaşık yolları birleştirilir ve sonuç yolu anahat olasılıkla algoritmik onarımı kabus olur.
+Bu fark için stratejinin anlamak için bunu anlamak faydalıdır hangi bir bölgedir. Nasıl küçük işlemlerini ya da bölge işlemleri dahili olarak uygulanabilir hakkında düşündüğünüz, büyük olasılıkla çok karmaşık hatırlıyorum. Potansiyel olarak çok karmaşık çeşitli yolları birleştirilir ve sonuçta elde edilen yolu özetini büyük olasılıkla bir algoritmik onarımı kabus olur.
 
-Ancak her bir yol yatay tarama satırları, eski moda vakum boru TV de gibi bir dizi azaltıldığında bu işi oldukça Basitleştirilmiş. Yalnızca yatay bir satırda bir başlangıç ve bitiş noktası ile her tarama satırıdır. Örneğin, bir daire RADIUS 10 ile 20 yatay tarama satırlarını her biri bir daire sol kısmından başlar ve doğru kısmından biter içine ayrılmış. Her çifti ilgili tarama satırlar, başlangıç ve bitiş koordinatlarını inceleyerek, basitçe kurabilirsiniz olduğundan iki daire herhangi bir bölge işlemi ile birleştirerek çok basit olur.
+Ancak, bir dizi yatay tarama satırları, eski moda elektrikli boru TV de gibi her bir yol küçültülürse bu işin önemli ölçüde basitleştirilmiştir. Yalnızca yatay bir çizgi bir başlangıç noktası ve bir uç noktası ile her tarama satırıdır. Örneğin, her biri dairenin sol kısmından başlar ve doğru kısmından sona erer 20 yatay tarama satır içine bir daire ile bir RADIUS 10 ayrıştırılmasını. Başlangıç ve bitiş koordinatları, karşılık gelen tarama satırları her çift inceleme, tek gereken bunların olduğu için iki daire herhangi bir bölge işlemi ile birleştirerek çok basit olur.
 
-Bu nedir bir bölgedir: alanını tanımlayan bir dizi yatay tarama satırları.
+Bunun ne olduğunu bir bölgedir: bir alan tanımlar yatay tarama satırları bir dizi.
 
-Ancak, bir alanı tarama bir dizi için ne zaman sınırlı satırlarını, bu tarama satırları bir belirli piksel boyutunda temel alır. NET olarak söylemek bölge vektör grafik nesnesi değil. Doğası gereği daha yakın bir sıkıştırılmış tek renkli bit eşlemi yol. Sonuç olarak, bölgeler ölçeklendirilmiş veya değiştirilemez uygunluğunu kaybetmeden ve bu nedenle bunlar kırpma alanları için kullanıldığında dönüştürülen değil döndürülebilir.
+Ancak, bir alan bir dizi tarama için zaman sınırlı satırları, bu tarama satırları belirli piksel boyuta göre temel alır. NET olarak söylemek gerekirse, bölge bir vektör grafik nesnesi değil. Doğası gereği bir sıkıştırılmış tek renkli bit eşlem bir yola yakın. Sonuç olarak, bölgeler ölçeği veya olamaz uygunluk kaybetmeden ve bu nedenle bunlar kırpma alanları için kullanıldığında dönüştürülür değil döndürülebilir.
 
-Ancak, boyama amaçları için bölgeler dönüşümler uygulayabilirsiniz. **Bölge boyama** program Canlı bölgeler iç yapısını gösterir. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Sınıfı oluşturur bir `SKRegion` nesne temel alarak bir `SKPath` 10 birim RADIUS dairenin. Bir dönüştürme sonra sayfayı doldurmak için bu daire genişletir:
+Ancak, boyama amacıyla bölgelere dönüşümler uygulayabilirsiniz. **Bölge Boya** program Canlı bölge iç yapısını gösterir. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Sınıfı oluşturur bir `SKRegion` nesnesini temel alan bir `SKPath` 10 birim RADIUS daire. Dönüşüm sonra sayfayı doldurmak için bu daire genişletir:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -422,13 +421,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`DrawRegion` Çağrısı doldurur turuncu, bölgede sırada `DrawPath` çağrısı mavi karşılaştırma için kullanılacak özgün yolu konturlar:
+`DrawRegion` Çağrı doldurur turuncu bölgede sırada `DrawPath` çağrı mavi karşılaştırma için orijinal yol konturlar:
 
-[![](clipping-images//regionpaint-small.png "Üçlü sayfasının ekran görüntüsü bölge boyama")](clipping-images/regionpaint-large.png#lightbox "Üçlü sayfasının ekran görüntüsü bölge boyama")
+[![](clipping-images//regionpaint-small.png "Üçlü sayfasının ekran görüntüsü bölge Boya")](clipping-images/regionpaint-large.png#lightbox "Üçlü sayfasının ekran görüntüsü bölge boyama")
 
-Bölge açıkça ayrık koordinatları dizisidir.
+Açıkça bir dizi ayrı koordinatları bölgedir.
 
-Dönüşümler kırpma alanlarınızı bağlantılı olarak kullanmanız gerekmez, bölgeler kırpma için olarak kullanabileceğiniz **dört – yaprak Yonca** sayfası gösterilmektedir. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) Sınıfı dört döngüsel bölgelerinden bileşik bir bölge oluşturur, o bileşik bölgeyle kırpma alanı olarak ayarlar ve bir dizi sayfa Merkezi'nden yayılan 360 düz çizgiler çizer:
+Kırpma alanlarınızı bağlantılı olarak dönüşümler kullanma gerekmiyorsa, bölgeler kırpma için olarak kullanabileceğiniz **dört – yaprak Yonca** sayfasını gösterir. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) Sınıf dört döngüsel bölgeleri bileşik bir bölgeden oluşturur, bu bileşik bölge kırpma alan olarak ayarlar ve ardından sayfanın Merkezi'nden yayılan 360 düz çizgiler bir dizi çizer:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -508,9 +507,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Gerçekten dört – yaprak Yonca gibi görünmüyor ancak Aksi halde olmadan kırpma işlemek sabit olabilecek bir görüntü değil:
+Gerçekten bir dört – yaprak Yonca gibi görünüyor, ancak bu görüntüyü aksi kırpma olmadan oluşturulacak zor olabilir:
 
-[![](clipping-images//fourleafclover-small.png "Üçlü sayfasının ekran görüntüsü dört – yaprak Yonca")](clipping-images/fourleafclover-large.png#lightbox "Üçlü sayfasının ekran görüntüsü dört – yaprak Yonca")
+[![](clipping-images//fourleafclover-small.png "Üçlü sayfasının ekran görüntüsü dört – yaprak Yonca")](clipping-images/fourleafclover-large.png#lightbox "dört – yaprak Yonca sayfanın üç ekran görüntüsü")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

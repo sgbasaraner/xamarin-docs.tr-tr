@@ -1,32 +1,32 @@
 ---
-title: Afin olmayan dönüşümler
-description: Bu makalede Perspektif ve Konik etkileri dönüştürme matrisi üçüncü sütun ile nasıl oluşturulacağını açıklar ve bu örnek kodu ile gösterir.
+title: İlişkili olmayan dönüşümler
+description: Bu makalede Perspektif ve Konik etkileri dönüştürme matris üçüncü sütun oluşturma açıklanır ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 03c5b0dcbb7870e38991d7e0f4c7ac4feebfcf4e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f4b1926fd21f7df4ea9231887032742fdc96f465
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244239"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130887"
 ---
-# <a name="non-affine-transforms"></a>Afin olmayan dönüşümler
+# <a name="non-affine-transforms"></a>İlişkili olmayan dönüşümler
 
-_Perspektif ve Konik etkileri dönüştürme matrisi üçüncü sütun ile oluşturma_
+_Perspektif ve Konik etkileri dönüştürme matris üçüncü sütun oluşturma_
 
-Çeviri, ölçekleme, döndürme ve eğriltme tüm olarak sınıflandırılan *afin* dönüştürür. Afin dönüşümler paralel çizgi korur. İki satır önce dönüştürme paralel varsa, sonra dönüştürme paralel kalırlar. Dikdörtgenler her zaman için parallelograms dönüştürülür.
+Çeviri, ölçeklendirme, döndürme ve eğriltme tüm olarak sınıflandırılan *afin* dönüştürür. Afin dönüşümler paralel satırları koru. İki satırdan önce dönüştürme paralel varsa, bunlar sonra dönüşüm paralel kalır. Dikdörtgenler parallelograms için her zaman dönüştürülür.
 
-Ancak, SkiaSharp de dikdörtgen dışbükey herhangi quadrilateral dönüştürme yeteneği olan afin olmayan dönüşümler yapabilir:
+Ancak, SkiaSharp ayrıca ulaşabileceği herhangi dışbükey quadrilateral bir dikdörtgen dönüştürme yeteneği olan ilişkili olmayan dönüşümler verilmiştir:
 
-![](non-affine-images/nonaffinetransformexample.png "Dışbükey quadrilateral dönüştürülen bir bit eşlem")
+![](non-affine-images/nonaffinetransformexample.png "Bir bit eşlem bir dışbükey quadrilateral dönüştürdü")
 
-Dışbükey quadrilateral dört taraflı bir şekilde iç açıları her zaman değerinden 180 derece ve birbirlerine arası yok tarafında ile gösterilmiştir.
+Dışbükey quadrilateral dört taraflı bir şekil ile her zaman değerinden 180 derece ve birbirlerine çapraz yoksa yüz iç açıları ' dir.
 
-Üçüncü satır dönüştürme matrisi değerleri 0, 0 ve 1 dışındaki ayarlandığında olmayan afin sonuç dönüştürür. Tam `SKMatrix` çarpma değil:
+Dönüştürme matrisi üçüncü satır 0, 0 ve 1 dışındaki değerlere ayarlandığında olmayan afin sonucu dönüştürür. Tam `SKMatrix` çarpma olan:
 
 <pre>
               │ ScaleX  SkewY   Persp0 │
@@ -34,39 +34,39 @@ Dışbükey quadrilateral dört taraflı bir şekilde iç açıları her zaman d
               │ TransX  TransY  Persp2 │
 </pre>
 
-Sonuç dönüştürme formüller şunlardır:
+Sonuç dönüştürme formülleri şunlardır:
 
-x' ScaleX·x, SkewX·y + TransX =
+x' ScaleX·x + SkewX·y TransX =
 
-y' SkewY·x, ScaleY·y + TransY =
+y' SkewY·x + ScaleY·y TransY =
 
-z' Persp0·x, Persp1·y + Persp2 =
+z' Persp0·x + Persp1·y Persp2 =
 
-İki boyutlu dönüşümler için 3 ile 3 matris kullanmanın temel her şeyi üzerinde düzlemi burada Z eşittir 1 kalır kuralıdır. Sürece `Persp0` ve `Persp1` 0, ve `Persp2` eşittir 1, dönüştürme, Düzlemi kapalı Z koordinatları taşınmıştır.
+3-x-3 matris için iki boyutlu dönüşümler kullanma, temel her şeyi burada Z eşittir 1 gezmeyi kalır kuralıdır. Sürece `Persp0` ve `Persp1` , 0 ve `Persp2` eşittir 1, dönüştürme, Düzlemi kapalı Z koordinatları taşındı.
 
-Bu iki boyutlu bir dönüştürme geri yüklemek için koordinatları bu düzlemi geri taşınması gerekir. Başka bir adım gereklidir. X', y', ve z 'değerleri z tarafından ayrılmalıdır':
+Bu iki boyutlu bir dönüştürme için geri yüklemek için koordinatları geri bu düzlemine taşınmalıdır. Başka bir adım gereklidir. X', y', ve z 'değerleri tarafından z ayrılmalıdır':
 
-x"= x' / z'
+'x = x' / z'
 
 y"y =' / z'
 
 z" = z' / z' = 1
 
-Bunlar olarak bilinir *homojen koordinatları* ve bunlar matematikçi Ağustos Ferdinand Möbius, çok daha iyi topolojik kendi oddity için bilinen tarafından Möbius Şerit geliştirilmiştir.
+Bunlar olarak bilinen *homojen koordinatları* ve bunlar tarafından matematikçi Ağustos Ferdinand Möbius, çok daha iyi kendi topolojik oddity için bilinen Möbius Şerit geliştirilmiştir.
 
-Varsa z' sonsuz koordinatları bölme sonuçlarında 0'dır. Aslında, homojen koordinatları geliştirmek için Möbius'ın sözleri birini sonsuz sonlu sayılar değerlerle temsil becerisidir.
+Z' sonsuz koordinatlarına göre bölme sonuçları 0'dır. Aslında, homojen koordinatları geliştirmek için Möbius'ın motivasyonlardan biri ile sonlu sayılar sonsuz değerlerini temsil edecek şekilde becerisidir.
 
-Ancak, grafik görüntülerken, sonsuz değerlerine dönüştürün koordinatları ile bir şey işleme önlemek istiyor. Bu koordinatları çizilir olmaz. Bu koordinatları kapsamına her şeyi çok büyük ve büyük olasılıkla görsel olarak tutarlı olur.
+Ancak, grafik görüntülerken, sonsuz değerlerine dönüştürün koordinatları ile bir şey işleme önlemek istersiniz. Bu koordinatları işlenmez. Bu koordinatları kapsamına her şey çok büyük ve görsel olarak tutarlı olmayabilir.
 
-Bu denklemi z değerini istemediğiniz ' sıfır olma:
+Bu denklemde z değeri istemediğiniz ' sıfır haline:
 
-z' Persp0·x, Persp1·y + Persp2 =
+z' Persp0·x + Persp1·y Persp2 =
 
-`Persp2` Hücre sıfır veya sıfır değil ya da olabilir. Varsa `Persp2` sıfır z olduğundan ' sıfır (0, 0) noktası için ve bu genellikle tercih o noktadan iki boyutlu grafik yaygın olduğundan değil. Varsa `Persp2` var. varsa sayılanların genel kaybı olmaksızın sıfır olarak eşit değil `Persp2` 1 sabit. Örneğin, karar verirseniz `Persp2` , yalnızca matris tüm hücreleri 5 tarafından kılan ayırabilirsiniz sonra 5, olmalıdır `Persp2` 1'e eşit ve sonucu aynı olacaktır.
+`Persp2` Hücre sıfır veya sıfır değil ya da olabilir. Varsa `Persp2` sıfır sonra z' sıfır (0, 0) noktasının ve olmayan genellikle tercih o noktadan iki boyutlu grafik yaygın olduğu için. Varsa `Persp2` var. varsa genellik kaybı olmadan sıfır olarak eşit değil `Persp2` 1 sabittir. Örneğin, karar verirseniz `Persp2` yalnızca matris tüm hücreleri 5 tarafından getiren bölebilirsiniz sonra 5 olmalıdır `Persp2` 1'e eşit ve sonuç aynı olacaktır.
 
-Bu nedenlerle, `Persp2` kimlik Matristeki aynı değer olan 1'den genellikle sabittir.
+Bu nedenlerle, `Persp2` kimlik matrisi aynı değeri olan 1'den sık sabittir.
 
-Genellikle, `Persp0` ve `Persp1` küçük numaralarıdır. Örneğin, bir kimlik matris ancak kümesi başlamadan varsayalım `Persp0` 0,01 için:
+Genellikle, `Persp0` ve `Persp1` küçük sayılardır. Örneğin, bir kimlik matrisi ancak kümesi ile başlayan varsayalım `Persp0` 0,01 için:
 
 <pre>
 | 1  0   0.01 |
@@ -74,13 +74,13 @@ Genellikle, `Persp0` ve `Persp1` küçük numaralarıdır. Örneğin, bir kimlik
 | 0  0    1   |
 </pre>
 
-Dönüştürme formüller şunlardır:
+Dönüştürme formülleri şunlardır:
 
 x' = x / (0.01·x + 1)
 
 y' y = / (0.01·x + 1)
 
-Şimdi bu dönüşüm sırasında kaynak konumlandırılmış 100 piksel kare kutu işlemek için kullanın. İşte dört köşe nasıl dönüştürülür:
+Artık kaynak konumlandırılmış 100 piksel bir kare kutu işlemek için bu dönüştürme kullanın. İşte farkına nasıl dönüştürülür:
 
 (0, 0) → (0, 0)
 
@@ -90,13 +90,13 @@ y' y = / (0.01·x + 1)
 
 (100, 100) → (50, 50)
 
-100 sonra z x olduğunda ' payda olan 2 x ve y koordinatları için etkili bir şekilde yarıya iner. Kutusunun sağ tarafında sol tarafındaki kısa olur:
+100, sonra da z x olduğunda ' ise, 2 x ve y koordinatları için etkili bir şekilde yarıya iner. Kutunun sağ tarafında sol tarafında kısa olur:
 
-![](non-affine-images/nonaffinetransform.png "Afin olmayan bir dönüşüm tabi bir kutusu")
+![](non-affine-images/nonaffinetransform.png "İlişkili olmayan bir dönüşüm tabi bir kutu")
 
-`Persp` Bu hücre adları parçası foreshortening kutunun sağ tarafında Görüntüleyici'dan daha ileride olan şimdi eğildiğini çünkü "perspektife" anlamına gelir.
+`Persp` Bu hücre adları parçası foreshortening Görüntüleyicisi dan sağ tarafı kutusu artık eğimlendirildiğinde çünkü "perspektifi için" ifade eder.
 
-**Test perspektifini** sayfası değerlerle denemeler sağlar `Persp0` ve `Pers1` nasıl çalıştıklarını için bir fikir almak için. Bu matris hücrelerin makul değerlerini kadar küçük, `Slider` Evrensel Windows platformu düzgün bunları işleyemiyor. UWP sorun, iki uyum sağlayacak şekilde `Slider` öğelerinde [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) aralığı 1 -1'den başlatılması gerekir:
+**Test perspektifini** sayfası verir değerleriyle denemenizi `Persp0` ve `Pers1` nasıl çalıştıkları için bir genel görünüm alınamıyor. Bu matris hücre makul değerler: küçük, `Slider` Evrensel Windows platformu bunları düzgün bir şekilde işleyemez. UWP sorunu iki uyum sağlayacak şekilde `Slider` öğelerinde [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) aralığı 1-1 başlatılması gerekir:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -150,7 +150,7 @@ y' y = / (0.01·x + 1)
 </ContentPage>
 ```
 
-Kaydırıcılar için olay işleyicileri [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) arka plan kod dosyasına –0.01 ve 0,01 aralığı böylece bu değerleri 100 ile ayırın. Ayrıca, bir bitmap Oluşturucusu yükler:
+Kaydırıcılar için olay işleyicileri [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) arka plan kod dosyası 0,01 –0.01 arasındaki aralığı, bu değerleri 100 ile bölün. Ayrıca, bir bit eşlem içinde Oluşturucu yükler:
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -165,9 +165,8 @@ public partial class TestPerspectivePage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -188,7 +187,7 @@ public partial class TestPerspectivePage : ContentPage
 }
 ```
 
-`PaintSurface` İşleyici hesaplar bir `SKMatrix` adlı değeri `perspectiveMatrix` 100'e bölünmüş bu iki kaydırıcılar değerlere göre. Bu ile birleştirilir iki bit eşlem Merkezi'nde bu dönüşüm merkezi put dönüşümler çevir:
+`PaintSurface` İşleyici hesaplar bir `SKMatrix` değeri `perspectiveMatrix` 100 ile bölünen bu iki kaydırıcıları değerlere göre. İle birlikte bu iki bit eşlem ortasında bu dönüşüm ortasına yerleştirin dönüşümler çevir:
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -225,27 +224,27 @@ public partial class TestPerspectivePage : ContentPage
 }
 ```
 
-Bazı örnek görüntüleri şunlardır:
+Bazı örnek görüntüleri aşağıda verilmiştir:
 
 [![](non-affine-images/testperspective-small.png "Üçlü sayfasının ekran görüntüsü Test perspektifini")](non-affine-images/testperspective-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Test perspektifi")
 
-Kaydırıcılar ile denerken değerleri 0.0066 ötesinde veya –0.0066 altında görüntünün aniden fractured ve tutarsız hale gelmesine neden bulabilirsiniz. Dönüştürülmekte olan bit eşlem 300 piksel kare olur. Bit eşlem koordinatları –150 150 için aralığı için kendi merkezi göre dönüştürülür. Sözcüğünün z değeri ' olan:
+Kaydırıcıları ile denerken 0.0066 ötesinde veya –0.0066 aşağıdaki değerleri resmi aniden fractured ve tutarsız duruma neden bulabilirsiniz. Dönüştürülmekte olan bit eşlem 300 piksel kare ' dir. Bit eşlem koordinatlarını –150 150 için aralığı. Bu nedenle, kendi merkezi göre dönüştürülür. Bu geri çağırma z değeri ' olan:
 
-z' = Persp0·x + Persp1·y + 1
+z' Persp0·x Persp1·y + 1 =
 
-Varsa `Persp0` veya `Persp1` 0.0066 büyük ya da –0.0066 sonra her zaman bir z sonuçları bit eşlem bazı koordinatı ' sıfır değeri. Sıfıra bölme neden ve işleme bir karmaşa haline gelir. Afin olmayan dönüşümler kullanırken, sıfıra bölme neden koordinatları ile herhangi bir şey işleme önlemek istiyor.
+Varsa `Persp0` veya `Persp1` 0.0066 büyükse veya –0.0066 sonra her zaman bir z sonuçları bit eşlem bazı koordinatını ' sıfır değeri. Sıfıra bölme neden ve işleme zorundaydık olur. İlişkili olmayan dönüşümler kullanırken, sıfıra bölme neden koordinatları ile her şeyi işleme engellemek istiyorsunuz.
 
-Genellikle, ayar olmaz `Persp0` ve `Persp1` haklarında. Bu ayrıca genellikle diğer hücrelere belirli türde bir afin olmayan dönüşümler elde etmek için matrisinde ayarlamak gereklidir.
+Genellikle, ayar gerekmez `Persp0` ve `Persp1` yalıtım halinde. Bu ayrıca genellikle matriste ilişkili olmayan dönüşümler belirli türlerdeki elde etmek için diğer hücreleri ayarlamak gereklidir.
 
-Bu tür afin olmayan bir dönüşüm olan bir *Konik dönüştürme*. Afin olmayan dönüştürme bu tür bir dikdörtgen genel boyutlarını korur ancak bir yan sivrileşen:
+Bu tür ilişkili olmayan bir dönüşüm olduğu bir *Konik dönüştürme*. Bu tür bir ilişkili olmayan bir dönüşüm genel boyutlarını dikdörtgeninin korur, ancak bir tarafı sivrileşen:
 
-![](non-affine-images/tapertransform.png "Konik Dönüştür tabi bir kutusu")
+![](non-affine-images/tapertransform.png "Bir kutu tabi Konik Dönüştür")
 
-[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Sınıfı bu parametrelere göre afin olmayan bir dönüşüm genelleştirilmiş bir hesaplama gerçekleştirir:
+[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Sınıfı bu parametrelere göre ilişkili olmayan bir dönüşüm genelleştirilmiş bir hesaplama gerçekleştirir:
 
-- dikdörtgen boyutu dönüştürülmekte olan görüntünün
-- sivrileşen dikdörtgen tarafında gösteren bir numaralandırma
-- nasıl sivrileşen gösteren başka bir numaralandırma ve
+- dönüştürülmekte olan görüntünün dikdörtgen boyutuna,
+- yan sivrileşen dikdörtgenin gösteren numaralandırmaya
+- nasıl sivrileşen gösteren başka bir sabit listesi ve
 - Kayan uzantı.
 
 Kod aşağıdaki gibidir:
@@ -350,7 +349,7 @@ static class TaperTransform
 }
 ```
 
-Bu sınıf kullanılır **Konik dönüştürme** sayfası. İki XAML dosyası başlatır `Picker` numaralandırma değerlerini seçmek için öğeleri ve `Slider` Konik kesir seçme. [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) İşleyici birleştirir iki Konik dönüştürme Çevir dönüşümler bit eşlem sol üst köşesindeki göre dönüştürme yapmak için:
+Bu sınıf kullanılan **Konik dönüştürme** sayfası. İki XAML dosyası başlatır `Picker` numaralandırma değerlerinin seçilecek öğeleri ve `Slider` Konik kesir seçme. [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) İşleyici birleştirir Konik dönüşüm ile iki bit eşlem sol üst köşesine göre dönüştürme yapmak için dönüşümleri çevir:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -393,13 +392,13 @@ Bazı örnekler şunlardır:
 
 [![](non-affine-images/tapertransform-small.png "Üçlü sayfasının ekran görüntüsü Konik dönüştürme")](non-affine-images/tapertransform-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Konik dönüştürme")
 
-Başka bir genelleştirilmiş afin olmayan dönüşümler sonraki makalede gösterilen, 3B bir döndürme türünde [3B Döndürme](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md).
+Sonraki makalede gösterilmiştir, 3B Döndürme genelleştirilmiş ilişkili olmayan dönüşümler başka bir türünde [3B Döndürme](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md).
 
-Afin olmayan dönüşüm dikdörtgen dışbükey herhangi quadrilateral dönüştürebilirsiniz. Bu tarafından gösterilen **olmayan afin Matrisi Göster** sayfası. Çok benzer **afin Matrisi Göster** gelen sayfa [matris dönüşümleri](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md) dördüncü sahiptir ancak bu makale `TouchPoint` bit eşlem dördüncü köşesindeki işlemek için nesnesi:
+İlişkili olmayan dönüştürme herhangi dışbükey quadrilateral bir dikdörtgen dönüştürebilirsiniz. Bu tarafından gösterilmiştir **olmayan afin Matrisi Göster** sayfası. Çok benzer **afin Matrisi Göster** gelen sayfasında [matris dönüşümleri](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md) dördüncü sahip dışında makale `TouchPoint` bit eşlemin dördüncü köşe işlemek için nesne:
 
 [![](non-affine-images/shownonaffinematrix-small.png "Üçlü sayfasının ekran görüntüsü olmayan afin Matrisi Göster")](non-affine-images/shownonaffinematrix-large.png#lightbox "Üçlü sayfasının ekran görüntüsü olmayan afin Matrisi Göster")
 
-Bit eşlem köşelerinde birinin iç açı 180 derece büyüktür yaptığınızda, veya birbiriyle arası iki kenara doğrulamaya çalışma sürece, program başarıyla bu yöntemi kullanarak dönüştürme hesaplar [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) sınıfı:
+Bir iç açısını bit eşlemin köşelerden birini 180 derece büyüktür olun veya birbirlerine çapraz iki kenara çalışmayın sürece, bu yöntemi kullanarak dönüştürme program başarıyla hesaplar. [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) sınıfı:
 
 ```csharp
 static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint ptLL, SKPoint ptLR)
@@ -448,23 +447,23 @@ static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint p
 }
 ```
 
-Hesaplama kolaylığı için bu yöntem bu dönüşümler bit eşlem dört köşelerinde nasıl değiştirileceği gösteren oklarla burada görüntülenir üç ayrı dönüşümler, bir ürün olarak toplam dönüştürme alır:
+Hesaplama kolaylığı için bu yöntem bir ürünü dönüşümleri dört bir yanından bit eşlemin nasıl değiştirileceği gösteren ok ile burada görüntülenir üç ayrı dönüşümleri toplam dönüşümü alır:
 
-(0, 0) → (0, 0) → (0, 0) → (sol üst) (x, 0, y0)
+(0, 0) → (0, 0) → (0, 0) → (x, 0, y0) (sol)
 
-(0, Y) (sol) → (0, 1) → (0, 1) → (x1, y1)
+(0, H) (sol alt) → (0, 1) → (0, 1) → (x1, y1)
 
-(W, 0) → (1, 0) → (1, 0) → (sağ üst köşede) (x 2, y2)
+(W, 0) (2, y2) x (1, 0) → → (1, 0) → (sağ üst köşede)
 
-(G, H) → (1, 1) → (a, b) → (sağ alt köşedeki) (x 3, y3)
+(G, H) (1, 1) → → (a, b) → (sağ alt köşedeki) (x, 3, y3)
 
-Son koordinatları sağdaki dört dokunma noktalarıyla ilişkili dört noktalarıdır. Bit eşlem köşelerinde son koordinatlarını bunlar.
+Son koordinatları sağdaki dört dokunma ile ilişkili dört noktalarıdır. Bit eşlem köşelerini son koordinatlarını şunlardır.
 
-G ve H bit eşlem yüksekliğini ve genişliğini temsil eder. İlk dönüştürme (`S`) yalnızca 1 piksel kare bit eşlem ölçeklendirir. Afin olmayan dönüşüm ikinci dönüşüm olan `N`, ve üçüncü afin dönüşüm `A`. Sahip, olduğu gibi daha önce afin afin dönüşüm üç noktalarında dayalı, bu yüzden [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) yöntemi ve dördüncü satırı içermeyen (a, b) noktası.
+G ve Y, genişlik ve yükseklik bit eşlemin temsil eder. İlk dönüşüm (`S`) yalnızca 1 piksel kare bit eşlem ölçeklendirir. İkinci dönüşüm ilişkili olmayan bir dönüşüm olduğu `N`, ve üçüncü afin dönüşüm `A`. Afin dönüşüm üç noktalarında dayalı olan, olduğu gibi yüzden daha önce afin [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) yöntemi ve dördüncü satırı içermeyen (a, b) noktası.
 
-`a` Ve `b` değerler hesaplanan üçüncü dönüştürme afin olmasını sağlayın. Kod afin dönüşüm tersini alır ve ardından, sağ alt köşedeki eşlemek için kullanır. (A, b) noktası olmasıdır.
+`a` Ve `b` değerleri üçüncü dönüştürme afin böylece hesaplanır. Kod afin dönüşüm tersini alır ve ardından, sağ alt köşedeki eşlemek için kullanır. (A, b) noktası olmasıdır.
 
-Başka bir afin olmayan dönüşümler üç boyutlu grafik taklit etmek üzere kullanılır. Sonraki makalede [3B Döndürme](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md) iki boyutlu bir grafik 3B uzaydaki döndürmek bkz.
+Başka bir ilişkili olmayan dönüşümler üç boyutlu grafik taklit etmek için kullanılır. Sonraki makalede, [3B Döndürme](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md) iki boyutlu grafik 3B alanda döndürme öğrenin.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
