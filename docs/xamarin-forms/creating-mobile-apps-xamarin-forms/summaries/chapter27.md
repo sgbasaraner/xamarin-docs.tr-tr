@@ -6,51 +6,54 @@ ms.technology: xamarin-forms
 ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 0497770909b33108eaac0fa5044e98febeb61763
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: c8b149cfeb814e2a1e0a0d1b38cca24ea096d112
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996314"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156531"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>Bölüm 27 özeti. Özel oluşturucular
 
-Bir Xamarin.Forms öğesi gibi `Button` kapsüllenmiş adlı bir sınıfta bir platforma özgü düğme ile işlenen `ButtonRenderer`.  İşte [iOS sürümü `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs), [Android sürümünü `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs)ve [Windows çalışma zamanı sürümünü `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.WinRT/ButtonRenderer.cs).
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
+
+Bir Xamarin.Forms öğesi gibi `Button` kapsüllenmiş adlı bir sınıfta bir platforma özgü düğme ile işlenen `ButtonRenderer`.  İşte [iOS sürümü `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs), [Android sürümünü `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs)ve [UWP sürümündeki `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ButtonRenderer.cs).
 
 Bu bölümde, kendi oluşturucular için platforma özgü nesnelerini eşleyen özel görünümler oluşturmak için nasıl yazılır açıklanır.
 
 ## <a name="the-complete-class-hierarchy"></a>Tam sınıf hiyerarşisi
 
-Xamarin.Forms platforma özgü kod içeren yedi derlemeler vardır.
+Xamarin.Forms platforma özgü kod içeren dört derlemeler vardır.
 Bu bağlantıları kullanarak GitHub üzerinde kaynak görüntüleyebilirsiniz:
 
 - [**Xamarin.Forms.Platform** ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform) (çok küçük)
 - [**Xamarin.Forms.Platform.iOS**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.iOS)
 - [**Xamarin.Forms.Platform.Android**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.Android)
-- [**Xamarin.Forms.Platform.WinRT** ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.WinRT) (sonraki üç büyük)
 - [**Xamarin.Forms.Platform.UAP**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.UAP)
-- [**Xamarin.Forms.Platform.WinRT.Tablet**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.WinRT.Tablet)
-- [**Xamarin.Forms.Platform.WinRT.Phone**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.WinRT.Phone)
+
+> [!NOTE]
+> `WinRT` Kitap belirtilen derlemeleri misiniz artık bu çözümün bir parçası. 
 
 [ **PlatformClassHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/PlatformClassHierarchy) örnek bir sınıf hiyerarşisi yürütülen platformu için geçerli olan derlemeler için görüntüler.
 
 Adlı bir önemli sınıf fark edeceksiniz `ViewRenderer`. Bu, platforma özel Oluşturucu oluştururken öğesinden türetilen sınıftır. Hedef platform görünümü sisteme bağlı olmadığından üç farklı sürümde var:
 
-İOS [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L26) genel bağımsız değişkenlere sahiptir:
+İOS [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L25) genel bağımsız değişkenlere sahiptir:
 
 - `TView` sınırlı [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
 - `TNativeView` sınırlı [`UIKit.UIView`](https://developer.xamarin.com/api/type/UIKit.UIView/)
 
-Android [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L14) genel bağımsız değişkenlere sahiptir:
+Android [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L17) genel bağımsız değişkenlere sahiptir:
 
 - `TView` sınırlı [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
 - `TNativeView` sınırlı [`Android.Views.View`](https://developer.xamarin.com/api/type/Android.Views.View/)
 
-Windows çalışma zamanı [ `ViewRenderer<TElement, TNativeElement>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.WinRT/ViewRenderer.cs#L12) genel bağımsız değişkenler farklı şekilde adlandırılmış:
+UWP [ `ViewRenderer<TElement, TNativeElement>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ViewRenderer.cs#L6) genel bağımsız değişkenler farklı şekilde adlandırılmış:
 
 - `TElement` sınırlı [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeElement` sınırlı [`Windows.UI.Xaml.FrameworkElement`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx)
+- `TNativeElement` sınırlı [`Windows.UI.Xaml.FrameworkElement`](/uwp/api/Windows.UI.Xaml.FrameworkElement)
 
 Bir oluşturucu yazılırken bir sınıftan türetme `View`ve ardından birden fazla yazma `ViewRenderer` sınıfları, desteklenen her platform için bir tane. Her platforma özgü uygulama olarak belirttiğiniz türünden türetilen bir yerel sınıf Bakacağınız `TNativeView` veya `TNativeElement` parametresi.
 
@@ -87,7 +90,7 @@ Bu özelliklerin türleri için genel parametreler tarafından belirlenir `ViewR
 
 - iOS: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/EllipseViewRenderer.cs), kullanan bir [ `EllipseUIView` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/EllipseUIView.cs) elipsin sınıfı.
 - Android: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/EllipseViewRenderer.cs), kullanan bir [ `EllipseDrawableView` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/EllipseDrawableView.cs) elipsin sınıfı.
-- Windows çalışma zamanı: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/EllipseViewRenderer.cs), yerel Windows kullanabileceğiniz [ `Ellipse` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.ellipse.aspx) sınıfı.
+- UWP: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/EllipseViewRenderer.cs), yerel Windows kullanabileceğiniz [ `Ellipse` ](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) sınıfı.
 
 [ **EllipseDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo) sınıfı bunlardan birkaç görüntüler `EllipseView` nesneler:
 
@@ -103,7 +106,7 @@ Ayrıca, dolaylı olarak olaylar oluşturmak Oluşturucu için de mümkündür. 
 
 - iOS: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/StepSliderRenderer.cs)
 - Android: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/StepSliderRenderer.cs)
-- Windows çalışma zamanı: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/StepSliderRenderer.cs)
+- UWP: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/StepSliderRenderer.cs)
 
 Oluşturucu yerel denetim değişikliklerini algılamak ve sonra çağrı `SetValueFromRenderer`, tanımlı bir bağlanılabilir özellik başvuran `StepSlider`, bir değişiklik neden olur `StepSlider` ateşlenmesine bir `ValueChanged` olay.
 

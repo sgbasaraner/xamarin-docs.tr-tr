@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 36d208f2326c7584bc03c351b4a5b05a3f3928c9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: c82e222fd47f3a3f13043c076c488b4769659352
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995459"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156502"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Bölüm 5 özeti. Boyutlarla ilgilenme
+
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
 
 Xamarin.Forms içinde çeşitli boyutlarda şimdiye karşılaşıldı:
 
@@ -36,7 +39,10 @@ Apple iPhone ve iPad cihazları hedefleyen programcılar birimleri cinsinden ça
 
 Android benzerdir. Programcıların iş birimleri cinsinden *yoğunluklu bağımsız piksel* yu (dps) ve dağıtım noktaları ve piksel arasında ilişki 160 dps inç için temel alır.
 
-Windows çalışma zamanı, 160 CİHAZDAN bağımsız birimler inç için yakın bir şeyler gelmez ölçekleme faktörü olarak da kurmuştur.
+Windows telefonlar ve mobil cihazları da inç 160 CİHAZDAN bağımsız birimler yakın bir şeyler gelmez ölçekleme faktörü oluşturulur.
+
+> [!NOTE]
+> Xamarin.Forms, artık Windows tabanlı bir telefon ya da mobil cihaz destekler.
 
 Özet olarak, bir Xamarin.Forms Programcı telefonlar ve tabletler hedefleyen tüm ölçü birimi aşağıdaki ölçütü temel alan kabul edilebilir:
 

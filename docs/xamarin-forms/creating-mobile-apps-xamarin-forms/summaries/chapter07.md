@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 02e4ea44d87360deed361d161759fa3a2808100f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: d04012d5d2ea6a7617d5c7559aa3e1532dad15d1
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995163"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156918"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Bölüm 7 özeti. XAML ve kod karşılaştırması
+
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
 
 Xamarin.Forms bir Extensible Application Markup Language adlı XML-tabanlı işaretleme dili veya XAML ("zammel" olarak okunur) destekler. XAML alternatif Düzen Xamarin.Forms uygulaması kullanıcı arabiriminin tanımlama ve kullanıcı arabirimi öğeleri arasındaki bağlantıları tanımlayarak ve temel alınan veriler için C# sağlar.
 
@@ -35,6 +38,9 @@ Bazen bir özellik basit bir dize olarak ifade edilen bir nesne için ayarlaman�
 ## <a name="adding-a-xaml-page-to-your-project"></a>Projenize bir XAML sayfası ekleme
 
 Taşınabilir sınıf kitaplığı Xamarin.Forms XAML sayfası, ilk oluşturulduğunda veya varolan bir projeye bir XAML sayfası ekleyebilirsiniz içerebilir. Yeni öğe ekleme iletişim kutusunda, bir XAML sayfasına başvuruyor öğesi seçin veya `ContentPage` ve XAML. (Değil bir `ContentView`.)
+
+> [!NOTE] 
+> Visual Studio seçenekleri, bu bölümde yazılmıştır sonra değişti.
 
 İki dosya oluşturulur: dosya adı uzantısı .xaml bir XAML dosyası ve bir C# dosya uzantısına sahip. xaml.cs. C# dosyası, genellikle olarak adlandırılır *arka plan kod* XAML dosyası. Arka plan kod dosyası, türetilen bir parçalı sınıf tanımı olduğunu `ContentPage`. Derleme zamanında XAML ayrıştırılır ve başka bir kısmi sınıf tanımı için aynı sınıf oluşturulur. Bu oluşturulan sınıf adlı bir yöntem içerir `InitializeComponent` arka plan kod dosyası oluşturucudan çağrılır.
 
@@ -72,10 +78,9 @@ Her sınıfın bir özelliği tanımlamak için izin verilen bir [ `ContentPrope
 
  [![Üç ekran paylaşımı metin çeşitleri](images/ch07fg03-small.png "biçimlendirilmiş metin çeşitlemeleri")](images/ch07fg03-large.png#lightbox "biçimlendirilmiş metin farklılıkları")
 
-
-
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Bölüm 7 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
 - [Bölüm 7 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
 - [Bölüm 7'de F # örnek](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [HTML Temelleri](~/xamarin-forms/xaml/xaml-basics/index.md)

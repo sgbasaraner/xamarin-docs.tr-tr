@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 8a035da3dec468df291a19849ca89964c6707589
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: e7b2eea22758155db7d79fa26f3376e16cf16a45
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994763"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39157022"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>Bölüm 9 özeti. Platforma özgü API çağrıları
+
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
 
 Bazen, platforma göre değişen bazı kodlar çalıştırmak gereklidir. Bu bölümde teknikleri inceler.
 
@@ -32,19 +35,20 @@ SAP'de, platforma özgü kod yürüten daha yapılandırılmış bir yaklaşım 
 
 ## <a name="dependencyservice-and-the-portable-class-library"></a>DependencyService ve taşınabilir sınıf kitaplığı
 
-Bir kitaplık, normalde uygulama projelerindeki sınıfların erişemez. Bu kısıtlama gösterilen teknik önlemek için gibi görünüyor **PlatInfoSap2** bir PCL'de kullanılmasını. Ancak, Xamarin.Forms adlı bir sınıf içeren [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) uygulama projesinde ortak sınıfların PCL erişim için .NET, yansıtma kullanan.
+> [!NOTE] 
+> Taşınabilir sınıf kitaplıkları, .NET standart kitaplıkları tarafından değiştirilmiştir. Kayıt defterinden tüm örnek kod, .NET standart kitaplıkları kullanmak için dönüştürüldü.
 
-PCL tanımlamalıdır bir `interface` platformlarının her birinde kullanmak için ihtiyaç duyduğu üyelere sahip. Ardından, her platform bu arabirimi uygulaması içerir. Arabirimini uygulayan sınıf ile tanımlanmalıdır bir [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute) derleme düzeyinde.
+Bir kitaplık, normalde uygulama projelerindeki sınıfların erişemez. Bu kısıtlama gösterilen teknik önlemek için gibi görünüyor **PlatInfoSap2** kitaplığa kullanılmasını. Ancak, Xamarin.Forms adlı bir sınıf içeren [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) uygulama projesinde ortak Sınıf Kitaplığı'ndan erişmek için .NET, yansıtma kullanan.
 
-PCL sonra genel kullanır [ `Get` ](xref:Xamarin.Forms.DependencyService.Get*) yöntemi `DependencyService` arabirimi uygulayan platform sınıfının bir örneği elde edilir.
+Kitaplık tanımlamalıdır bir `interface` platformlarının her birinde kullanmak için ihtiyaç duyduğu üyelere sahip. Ardından, her platform bu arabirimi uygulaması içerir. Arabirimini uygulayan sınıf ile tanımlanmalıdır bir [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute) derleme düzeyinde.
+
+Kitaplığı daha sonra genel kullanır [ `Get` ](xref:Xamarin.Forms.DependencyService.Get*) yöntemi `DependencyService` arabirimi uygulayan platform sınıfının bir örneği elde edilir.
 
 Bu gösterilmiştir [ **DisplayPlatformInfo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/DisplayPlatformInfo) örnek.
 
 ## <a name="platform-specific-sound-generation"></a>Platforma özel ses oluşturma
 
 [ **MonkeyTapWithSound** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound) örnek ekler bip sesi için **MonkeyTap** ses oluşturma özelliklerini her platformdaki erişerek program.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

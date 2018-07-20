@@ -6,21 +6,27 @@ ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 2ff54b65b1dca9798c91f147da7e8482649e40d2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d606432174807498fd458470647109de4fa0b6b4
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996288"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156736"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Bölüm 20 özeti. Zaman uyumsuz ve dosya g/ç
+
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
 
  Bir grafik kullanıcı arabirimi, kullanıcı girişini olayları sıralı olarak yanıt vermelidir. Bu kullanıcı girişi olaylarını tüm işlemler genellikle olarak adlandırılan bir tek iş parçacığı içinde gerçekleşmelidir gelir *ana iş parçacığı* veya *UI iş parçacığı*.
 
 Kullanıcılar, hızlı yanıt için grafik kullanıcı arabirimleri bekler. Başka bir deyişle, bir program kullanıcı girişi olayları hızlı bir şekilde işlemesi gerekir. Bu mümkün değilse, ardından işlem yürütme İkincil iş parçacıkları sahip olmalıdır.
 
 Bu kitap birkaç örnek programlarında kullanmış [ `WebRequest` ](xref:System.Net.WebRequest) sınıfı. Bu sınıftaki [ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) yöntemi tamamladıktan sonra bir geri çağırma işlevini çağırır bir çalışan iş parçacığı başlatılır. Program çağırmanız gerekir ancak bu geri çağırma işlevi çalışan iş parçacığında çalışır, böylece [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) kullanıcı arabirimine yöntemi.
+
+> [!NOTE]
+> Xamarin.Forms programlar kullanması gereken [ `HttpClient` ](xref:System.Net.Http.HttpClient) yerine [ `WebRequest` ](xref:System.Net.WebRequest) dosyaları internet üzerinden erişmek için. `HttpClient` zaman uyumsuz işlemleri destekler.
 
 Zaman uyumsuz işleme için daha modern bir yaklaşımı, .NET ve C# içinde kullanılabilir. Bu içerir [ `Task` ](xref:System.Threading.Tasks.Task) ve [ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1) sınıfları ve diğer türleri [ `System.Threading` ](xref:System.Threading) ve [ `System.Threading.Tasks` ](xref:System.Threading.Tasks) ad alanlarında, C# 5.0 yanı sıra `async` ve `await` anahtar sözcükleri. Bu bölümde odaklanır olmasıdır.
 
@@ -74,13 +80,16 @@ Ancak, bunlar için arama yaparsanız `System.IO` Xamarin.Forms PCL sınıflarda
 
 Kullanmanız gerekir yani [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (ilk ele [ **Bölüm 9. Platforma özgü API çağrıları** ](chapter09.md) dosya g/ç uygulamak için.
 
+> [!NOTE]
+> Taşınabilir sınıf kitaplıkları, .NET Standard 2.0 kitaplıklarıyla değiştirildi ve .NET Standard 2.0 destekler [ `System.IO` ](xref:System.IO) tüm Xamarin.Forms platformlar için türleri. Artık kullanmak için gerekli bir `DependencyService` çoğu dosya g/ç görevleri için. Bkz: [dosya işleme xamarin.Forms'taki](~/xamarin-forms/app-fundamentals/files.md) dosya g/ç daha modern bir yaklaşım için.
+
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>Platformlar arası dosya g/ç sırasında ilk bir görüntüsü
 
 [ **TextFileTryout** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileTryout) örnek tanımlayan bir [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/TextFileTryout/TextFileTryout/TextFileTryout/IFileHelper.cs) dosya g/ç ve tüm platformlarda bu arabirimin uygulamaları için arabirim. Ancak, Windows çalışma zamanı dosya g/ç yöntemleri zaman uyumsuz olduğundan bu arabirim yöntemleri ile Windows çalışma zamanı uygulamaları çalışmaz.
 
 ### <a name="accommodating-windows-runtime-file-io"></a>Windows çalışma zamanı dosya g/ç destekleme
 
-Windows çalışma zamanı altında çalışan programları kullanın sınıflarda [ `Windows.Storage` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) ve [ `Windows.Storage.Streams` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.aspx) ad alanları için dosya g/ç uygulama yerel depolama da dahil olmak üzere. Microsoft, karar 50'den fazla milisaniye UI iş parçacığı engellenmesini önlemek için zaman uyumsuz gerektiren herhangi bir işlem olduğundan, bu dosya g/ç yöntemler çoğunlukla zaman uyumsuz olması.
+Windows çalışma zamanı altında çalışan programları kullanın sınıflarda [ `Windows.Storage` ](/uwp/api/Windows.Storage) ve [ `Windows.Storage.Streams` ](/uwp/api/Windows.Storage.Streams) ad alanları için dosya g/ç uygulama yerel depolama da dahil olmak üzere. Microsoft, karar 50'den fazla milisaniye UI iş parçacığı engellenmesini önlemek için zaman uyumsuz gerektiren herhangi bir işlem olduğundan, bu dosya g/ç yöntemler çoğunlukla zaman uyumsuz olması.
 
 Böylece diğer uygulamalar tarafından kullanılabilir, bu yeni bir yaklaşım gösteren kod Kitaplığı'nda olacaktır.
 
@@ -94,8 +103,6 @@ Yeniden kullanılabilir kod kitaplıkları depolamak için avantajlıdır. Yenid
 - [**Xamarin.FormsBook.Platform.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS), bir iOS sınıf kitaplığı
 - [**Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android), an Android class library
 - [**Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP), a Universal Windows class library
-- [**Xamarin.FormsBook.Platform.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Windows), a PCL for Windows 8.1.
-- [**Xamarin.FormsBook.Platform.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinPhone), a PCL for Windows Phone 8.1
 - [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT), a shared project for code that is common to all the Windows platforms
 
 Tüm Bireysel platformu projelerinde (dışında **Xamarin.FormsBook.Platform.WinRT**) başvuru **Xamarin.FormsBook.Platform**. Üç Windows proje başvuru sahip **Xamarin.FormsBook.Platform.WinRT**.

@@ -6,26 +6,32 @@ ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: b27df7f63ac83206c50858175dc2945937142f78
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d863ce1c6195ddaef164c3a15817a4ff87a3c332
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995475"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156632"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>13. Bölüm özeti. Bit eşlemler
+
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
 
 Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) öğesi bir bit eşlem görüntüler. Tüm Xamarin.Forms platformlar JPEG, PNG, GIF ve BMP dosyası biçimleri için destek.
 
 Bit eşlemler Xamarin.Forms içinde dört yerlerden gelir:
 
 - Web üzerinden bir URL tarafından belirtilen
-- Katıştırılmış kaynak olarak ortak taşınabilir sınıf kitaplığı
+- Katıştırılmış kaynak olarak paylaşılan kitaplık
 - Platform uygulaması projelerinde kaynak olarak gömülü
 - .NET tarafından başvurulabilen bir yerden `Stream` dahil olmak üzere, nesne `MemoryStream`
 
-Platforma özgü olsa da bit eşlem kaynakları platformu projelerinde platformdan bağımsız, PCL bit eşlem kaynakları.
+Bit eşlem kaynakları platformu projelerinde platforma özgü olsa da bit eşlem paylaşılan Kitaplığı'nda platformdan bağımsız, kaynaklardır.
+
+> [!NOTE] 
+> Kitabın metin .NET standart kitaplıkları tarafından değiştirilmiştir taşınabilir sınıf kitaplıkları için başvuru yapar. Kayıt defterinden tüm örnek kod, .NET standart kitaplıkları kullanmak için dönüştürüldü.
 
 Bit eşlem ayarlanarak belirtilir [ `Source` ](xref:Xamarin.Forms.Image.Source) özelliği `Image` türünde bir nesne için [ `ImageSource` ](xref:Xamarin.Forms.ImageSource), üç türevleri bir Özet sınıf:
 
@@ -63,7 +69,7 @@ Bir PCL veya PCL bir klasörde bir bit eşlem dosyası ekleyebilirsiniz. Ona bir
 Program kümeleri `VerticalOptions` ve `HorizontalOptions` özelliklerini `Image` için `LayoutOptions.Center`, getiren `Image` sınırlandırılmamış öğesi. `Image` Ve bit eşlem aynı boyutta:
 
 - İOS ve Android üzerinde `Image` bit eşlemin piksel boyutudur. Bit eşlem piksel ve ekran piksel arasında bire bir eşleme yoktur.
-- Windows çalışma zamanı platformları üzerinde `Image` CİHAZDAN bağımsız birimler bit eşlemin piksel boyutudur. Çoğu cihazlarda, her bir bit eşlem piksel birden çok ekran piksel kaplar.
+- Evrensel Windows platformu üzerinde `Image` CİHAZDAN bağımsız birimler bit eşlemin piksel boyutudur. Çoğu cihazlarda, her bir bit eşlem piksel birden çok ekran piksel kaplar.
 
 [ **StackedBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap) örnek yerleştiren bir `Image` dikey olarak `StackLayout` XAML içinde. Adlı bir işaretleme uzantısı [ `ImageResourceExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs) XAML katıştırılmış kaynağa başvurması için yardımcı olur. Bu sınıf, BT derlemesinde kaynaklar yalnızca yükleyen bir kitaplıkta yerleştirilemez şekilde, makinenin bulunduğu.
 
@@ -82,7 +88,10 @@ CİHAZDAN bağımsız birimler telefon genişliği daha geniş bir bit eşlem il
 
 ### <a name="browsing-and-waiting"></a>Göz atma ve bekleniyor
 
-[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) örnek Xamarin web sitesinde depolanan stok görüntüleri göz atmak kullanıcının sağlar. .NET kullanan `WebRequest` bit eşlemler listesini içeren bir JSON dosyası indirmeniz sınıfı.
+[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) örnek Xamarin web sitesinde depolanan stok görüntüleri göz atmak kullanıcının sağlar. .NET kullanan [ `WebRequest` ](xref:System.Net.WebRequest) bit eşlemler listesini içeren bir JSON dosyası indirmeniz sınıfı.
+
+> [!NOTE]
+> Xamarin.Forms programlar kullanması gereken [ `HttpClient` ](xref:System.Net.Http.HttpClient) yerine [ `WebRequest` ](xref:System.Net.WebRequest) dosyaları internet üzerinden erişmek için. 
 
 Programın kullandığı bir [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator) sorun olup bittiğini olduğunu belirtmek için. Gibi her bir bit eşlem yükleniyor, salt okunur [ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading) özelliği `Image` olduğu `true`. `IsLoading` Yedeklendiği bağlanabilir bir özelliğe göre bu nedenle bir `PropertyChanged` bu özellik değiştiğinde olay harekete geçirilir. Program bu olaya bir işleyici ekler ve geçerli ayarını kullanan `IsLoaded` ayarlanacak [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) özelliği `ActivityIndicator`.
 
@@ -154,7 +163,7 @@ Bir kare inç işlenmesine yönelik bir bit eşlem bit eşlem çeşitli sürüml
 
 Bit eşlem 160 CİHAZDAN bağımsız birimler her zaman işlenir. (Standart Xamarin.Forms çözüm şablonu yalnızca hdpı xhdpi ve xxhdpi klasörleri içerir.)
 
-Windows çalışma zamanı projeleri bir bit eşlem adlandırma oluşan bir Ölçeklendirme çarpanı piksel CİHAZDAN bağımsız birim başına yüzde olarak örneğin düzenini destekler:
+UWP projesi bir Ölçeklendirme çarpanı piksel CİHAZDAN bağımsız birim başına yüzde olarak örneğin oluşan bir bit eşlem adlandırma şeması destekler:
 
 - MyImage.scale 200.jpg, 320 piksel kare
 
@@ -164,7 +173,7 @@ Bit eşlemler platform projelere eklerken **derleme eylemi** olmalıdır:
 
 - iOS: **BundleResource**
 - Android: **AndroidResource**
-- Windows çalışma zamanı: **içerik**
+- UWP: **içerik**
 
 [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap) örnek oluşan iki düğme benzeri nesneleri oluşturur `Image` öğeleri ile bir `TapGestureRecognizer` yüklü. Nesneleri bir inç kare olması amaçlanmıştır. `Source` Özelliği `Image` kullanılarak ayarlanan `OnPlatform` ve `On` platformlarda farklı olabilecek dosya adlarını başvurmak için nesne. Bit eşlem resimleri hangi boyutu bit eşlem alınır ve işlenen görebilmeniz için bunların piksel boyutunu belirten bir sayı içerir.
 
@@ -188,10 +197,12 @@ Hem iOS hem de Android araç çubuğunu görüntüleyen bir sayfa olmasını ger
 
 Ayarlamak için platforma özel bit eşlemler kullanabilirsiniz [ `Image` ](xref:Xamarin.Forms.Button.Image) özelliği `Button` 32 CİHAZDAN bağımsız birimler karenin tarafından gösterildiği gibi bir bit eşlemi [ **ButtonImage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) örnek.
 
-
+> [!NOTE]
+> Düğmeler görüntülerinde kullanımını geliştirilmiştir. Bkz: [düğmeleriyle bit eşlemler kullanarak](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons).
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [13. Bölüm tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
 - [13. Bölüm örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 - [Görüntülerle Çalışma](~/xamarin-forms/user-interface/images.md)
+- [Bit eşlemler düğmeleriyle kullanma](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)

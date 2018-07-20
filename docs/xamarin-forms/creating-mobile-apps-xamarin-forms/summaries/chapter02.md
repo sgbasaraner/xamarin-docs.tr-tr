@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: d1daceba29e45adf64947c89555cc4e75a850d32
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: fe6a8c3d17cf1fe6f489f6425bbdaa3cd30f390a
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995283"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156690"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Bölüm 2 özeti. Bir uygulamanın anatomisi
+
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
 
 Bir Xamarin.Forms uygulamasında ekran alanı kaplayan nesneleri olarak da bilinir *görsel öğeleri*, kapsüllenmiş tarafından [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) sınıfı. Görsel öğeler, bu sınıflar için karşılık gelen üç kategoriye ayrılabilir:
 
@@ -28,7 +31,12 @@ Bu bölümde odaklanarak bir uygulama oluşturma işlemini gösterir [ `Label` ]
 
 ## <a name="say-hello"></a>Merhaba deyin
 
-Xamarin platformu yüklü yeni bir Xamarin.Forms çözümü Visual Studio veya Visual Studio Mac için oluşturabileceğiniz [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) çözüm için ortak kodun bir taşınabilir sınıf kitaplığı kullanır. Bu, bir Xamarin.Forms çözümü Visual Studio'da oluşturulan herhangi bir değişiklik gösterir. Çözüm altı projeleri (ikisi geçerli Xamarin.Forms çözüm şablonları ile oluşturulmamış son) oluşur:
+Xamarin platformu yüklü yeni bir Xamarin.Forms çözümü Visual Studio veya Visual Studio Mac için oluşturabileceğiniz [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) çözüm için ortak kodun bir taşınabilir sınıf kitaplığı kullanır. 
+
+> [!NOTE] 
+> Taşınabilir sınıf kitaplıkları, .NET standart kitaplıkları tarafından değiştirilmiştir. Kayıt defterinden tüm örnek kod, .NET standart kitaplıkları kullanmak için dönüştürüldü.
+
+Bu örnek, bir Xamarin.Forms çözümü Visual Studio'da oluşturulan herhangi bir değişiklik gösterir. Çözüm altı projelerin oluşur:
 
 - [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello), taşınabilir sınıf kitaplığı (PCL), diğer projeleri tarafından paylaşılan
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid), Android için uygulama projesi
@@ -37,13 +45,19 @@ Xamarin platformu yüklü yeni bir Xamarin.Forms çözümü Visual Studio veya V
 - [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows), Windows 8.1 için bir uygulama projesi
 - [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone), Windows Phone 8.1 için bir uygulama projesi
 
+> [!NOTE] 
+> Windows 8.1, Windows Phone 8.1 veya Windows 10 Mobile artık Xamarin.Forms destekler, ancak Xamarin.Forms uygulamalarını Windows 10 Masaüstü üzerinde çalıştırın. 
+
 Bu uygulama projelerinden herhangi birinin başlangıç projesi olun ve ardından yapı ve bir cihaz veya simülatör programı çalıştırın.
 
-Çoğu Xamarin.Forms programlarınızın uygulama projeleri değiştirmekte gerekmez. Bu genellikle yalnızca programı başlatmak için küçük saptamalar kalır. Odağınızı çoğu uygulama için ortak taşınabilir sınıf kitaplığı olacaktır.
+Çoğu Xamarin.Forms programlarınızın uygulama projeleri değiştirmekte gerekmez. Bu genellikle yalnızca programı başlatmak için küçük saptamalar kalır. Odağınızı çoğu uygulama için ortak kitaplığı olacaktır.
 
 ## <a name="inside-the-files"></a>İçindeki dosyaları
 
 Tarafından görüntülenen görselleri **Hello** program oluşturucusunun içinde tanımlanmış [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) sınıfı. `App` Xamarin.Forms sınıfından türetilen [ `Application` ](xref:Xamarin.Forms.Application).
+
+> [!NOTE] 
+> Xamarin.Forms için Visual Studio çözüm şablonları, bir XAML dosyası bir sayfa oluşturun. XAML kadar kitapta kapsamında olmaması [Bölüm 7](chapter07.md).
 
 **Başvuruları** bölümünü **Hello** PCL projesine aşağıdaki Xamarin.Forms derlemeleri içerir:
 
@@ -60,21 +74,20 @@ Tarafından görüntülenen görselleri **Hello** program oluşturucusunun için
 - **Xamarin.Forms.Platform.WinRT.Tablet**
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
+> [!NOTE] 
+> **Başvuruları** bu projeleri bölümlerini artık derlemeleri listeler. Bunun yerine, proje dosyasını içeren bir **PackageReference** etiketleri Xamarin.Forms NuGet paketini başvuruyor. **Başvuruları** Visual Studio listeleri bölümünde **Xamarin.Forms** paketini yerine Xamarin.Forms derlemeler. 
+
 Her uygulama projeleri statik bir çağrı içerir `Forms.Init` yönteminde `Xamarin.Forms` ad alanı. Bu, bir Xamarin.Forms kitaplığı başlatır. Farklı bir sürümü `Forms.Init` her platform için tanımlanır. Bu yöntem çağrıları aşağıdaki sınıflarda bulunabilir:
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UWP: [ `App` sınıfı `OnLaunched` yöntemi](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- Windows 8.1: [ `App` sınıfı `OnLaunched` yöntemi](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/App.xaml.cs#L65)
-- Windows Phone 8.1: [ `App` sınıfı `OnLaunched` yöntemi](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WinPhone/App.xaml.cs#L67)
 
-Ayrıca, her platformun oluşturmalıdır `App` PCL konumda sınıfı. Böyle bir çağrıda `LoadApplication` aşağıdaki sınıflarda:
+Ayrıca, her platformun oluşturmalıdır `App` sınıfı ve paylaşılan kitaplığın konumu. Böyle bir çağrıda `LoadApplication` aşağıdaki sınıflarda:
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UWP: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
-- Windows 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
-- Windows Phone 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WindowsPhone/MainPage.xaml.cs)
 
 Aksi takdirde, bu uygulama projeleri normal "hiçbir şey yapma" programlardır.
 
@@ -82,30 +95,20 @@ Aksi takdirde, bu uygulama projeleri normal "hiçbir şey yapma" programlardır.
 
 Taşınabilir sınıf kitaplığı (PCL) ya da paylaşılan varlık projesi (SAP) ortak kodla bir Xamarin.Forms çözümü oluşturmak mümkündür. SAP çözüm oluşturmak için Visual Studio'da paylaşılan seçeneğini belirleyin. [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) çözüm, SAP şablonu herhangi bir değişiklik yapılmadıysa gösterir.
 
-Tüm ortak kod platform uygulaması projeleri tarafından başvurulan bir kitaplığı projesi, PCL yaklaşım paketleri. SAP yaklaşım ile ortak kodun etkili bir şekilde tüm platform uygulaması projelerinde var ve bunlar arasında paylaşılır.
+> [!NOTE] 
+> Taşınabilir sınıf kitaplıkları, .NET standart kitaplıkları tarafından değiştirilmiştir. Kayıt defterinden tüm örnek kod, .NET standart kitaplıkları kullanmak için dönüştürüldü. Aksi takdirde, PCL ve .NET standart kitaplıkları, kavramsal olarak benzer.
 
-Çoğu Xamarin.Forms geliştiricileri, PCL yaklaşımı tercih eder. Bu kitap, PCL çözümleri çoğu. SAP kullananlar dahil bir **Sap** proje adı soneki.
+Tüm ortak kod platform uygulaması projeleri tarafından başvurulan bir kitaplığı projesinde kitaplığı yaklaşım paketleri. SAP yaklaşım ile ortak kodun etkili bir şekilde tüm platform uygulaması projelerinde var ve bunlar arasında paylaşılır.
 
-Tüm Xamarin.Forms platformlar desteklemek için PCL tarafından kullanılan .NET sürümünü aşağıdaki platformlara uyum sağlamak gerekir:
-
-- .NET Framework 4.5
-- Windows 8
-- Windows Phone 8.1
-- Xamarin.Android
-- Xamarin.iOS
-- Xamarin.IOS (Klasik)
-
-Bu bilgisayar profili 111 bilinir.
+Xamarin.Forms geliştiricilerin çoğu kitaplık yaklaşımı tercih eder. Bu kitap çözümlerin çoğunu bir kitaplığını kullanın. SAP kullananlar dahil bir **Sap** proje adı soneki.
 
 SAP yaklaşımıyla paylaşılan proje kodu çeşitli platformlar için farklı kod C# önişlemci yönergeleri kullanarak çalıştırabilirsiniz (`#if`, #`elif`, ve `#endif`) önceden tanımlanmış bu ile tanımlayıcıları:
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
 - UWP: `WINDOWS_UWP`
-- Windows 8.1: `WINDOWS_APP`
-- Windows Phone 8.1: `WINDOWS_PHONE_APP`
 
-Bu bölümün sonraki kısımlarında anlatıldığı gibi bir PCL'de hangi platformu çalışma zamanında, kullanmakta olduğunuz belirleyebilirsiniz.
+Bu bölümde daha sonra göreceğiniz üzere, paylaşılan bir kitaplık çalışma zamanında, kullanmakta olduğunuz platformdan belirleyebilirsiniz.
 
 ## <a name="labels-for-text"></a>Metin etiketlerini
 
@@ -138,17 +141,13 @@ Xamarin.Forms kitabı için kullanılan sürümünde bir `Padding` kullanarak iO
 
 - [`iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)
 - [`Android`](xref:Xamarin.Forms.TargetPlatform.Android)
-- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) Windows 8.1, Windows Phone 8.1 ve tüm UWP cihazlar.
-- [`WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone), daha önce Windows Phone 8.0 tanımlamak için kullanılan ancak olup artık kullanılmayan
-- [`Other`](xref:Xamarin.Forms.TargetPlatform.Other) kullanılmıyor
+- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) UWP cihazlar için.
 
 `Device.OnPlatform` Yöntemleri `Device.OS` özelliği ve `TargetPlatform` kullanım dışı artık tüm sabit listesi. Bunun yerine, [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform) özelliği ve karşılaştırma `string` dönüş değeri ile aşağıdaki statik alanlar:
 
 - [`iOS`](xref:Xamarin.Forms.Device.iOS), "iOS" dizesi
 - [`Android`](xref:Xamarin.Forms.Device.Android), "Android" dizesi
-- [`UWP`](xref:Xamarin.Forms.Device.UWP), dize "UWP Windows çalışma zamanı platformuna başvuran",
-- `Windows`, Windows çalışma zamanı (Windows 8.1 ve Windows Phone 8.1, kullanım dışı) "Windows" dizesi
-- `WinPhone`, Windows Phone 8.0 (kullanım dışı) için "WinPhone" dizesi
+- [`UWP`](xref:Xamarin.Forms.Device.UWP), "UWP" için evrensel Windows platformu başvuran, dize
 
 [ `Device.Idiom` ](xref:Xamarin.Forms.Device.Idiom) Statik salt okunur özelliği ilgilidir. Bu bir üyesini döndürür [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom), bu üyeler vardır:
 
@@ -157,7 +156,7 @@ Xamarin.Forms kitabı için kullanılan sürümünde bir `Padding` kullanarak iO
 - [`Phone`](xref:Xamarin.Forms.TargetIdiom.Phone)
 - [`Unsupported`](xref:Xamarin.Forms.TargetIdiom.Unsupported) kullanılmıyor
 
-İOS ve Android, kesme arasında `Tablet` ve `Phone` 600 birim dikey genişliğidir. Windows platformuna yönelik `Desktop` gösteren Windows 10 altında çalışan bir UWP uygulaması `Tablet` bir Windows 8.1 programdır ve `Phone` Windows 10 veya Windows Phone 8.1 uygulaması altında çalışan bir UWP uygulaması gösterir.
+İOS ve Android, kesme arasında `Tablet` ve `Phone` 600 birim dikey genişliğidir. Windows platformuna yönelik `Desktop` Windows 10 altında çalışan bir UWP uygulaması gösterir ve `Phone` Windows 10 uygulaması altında çalışan bir UWP uygulaması gösterir.
 
 ## <a name="solution-3a-set-margin-on-the-label"></a>Çözüm 3a. Küme kenar boşluğu etiketi
 
@@ -199,8 +198,6 @@ Ayrıca merkezi metin (veya sayfasında sekiz başka konumlara yerleştirerek) o
 - [`End`](xref:Xamarin.Forms.TextAlignment.End), sağdaki veya alttaki (Yönlendirme) bağlı olarak anlamına gelir.
 
 Bu iki özellik yalnızca tanımlanan `Label`bilgileriyse `HorizontalAlignment` ve `VerticalAlignment` özellikleri tarafından tanımlanan `View` ve tüm tarafından devralınan `View` türevleri. Görsel sonuçlarla benzer görünebilir ancak bir sonraki bölümde gösterildiği gibi çok farklı olur.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

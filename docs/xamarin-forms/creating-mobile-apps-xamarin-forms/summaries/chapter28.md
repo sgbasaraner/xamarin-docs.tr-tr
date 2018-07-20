@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: a02239906f5a30c068cb7eebd31308ad188696b3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: da8ce02a0185364c2b833238ee04ebc29e8d3bb2
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998104"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156619"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Bölüm 28 özeti. Konum ve haritalar
+
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
 
 Xamarin.Forms destekleyen bir [ `Map` ](xref:Xamarin.Forms.Maps.Map) türetilen öğesi `View`. Haritalar kullanan özel platform gereksinimleri nedeniyle ayrı bir derlemede uygulanmış **Xamarin.Forms.Maps**ve farklı bir ad alanı içerir: `Xamarin.Forms.Maps`.
 
@@ -48,6 +51,9 @@ Harita kullanmanıza adlı Mercator izdüşümünü çeşitlemesi `Web Mercator`
 
 Xamarin.Forms `Map` sınıfları kullanıcının coğrafi konum elde etmek için bir özellik içermiyor, ancak haritaları ile bu nedenle bağımlı hizmet çalışma işlemesi gerekir, bu genellikle tercih edilir.
 
+> [!NOTE]
+> Xamarin.Forms uygulamalarını kullanma yerine [ `Geolocation` ](~/essentials/geolocation.md) Xamarin.Essentials dahil sınıfı.
+
 ### <a name="the-location-tracker-api"></a>API konumu İzleyicisi
 
 [ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) çözüm konumu İzleyicisi API kodunu içerir. [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs) Yapısı, enlem ve boylam kapsüller. [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs) Arabirimi başlatmak ve konumu İzleyicisi ve yeni bir konum kullanılabilir olduğunda bir olay duraklatmak için iki yöntem tanımlar.
@@ -60,9 +66,9 @@ Xamarin.Forms `Map` sınıfları kullanıcının coğrafi konum elde etmek için
 
 Android uygulaması `ILocationTracker` olduğu bir [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs) kullanır Android sınıfında [ `LocationManager` ](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/) sınıfı.
 
-#### <a name="the-windows-runtime-geo-locator"></a>Windows çalışma zamanı coğrafi Bulucu
+#### <a name="the-uwp-geo-locator"></a>UWP coğrafi Bulucu
 
-Windows çalışma zamanı uygulamasını `ILocationTracker` olduğu bir [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs) kullanır UWP sınıfı [ `Geolocator` ](https://msdn.microsoft.com/library/windows/apps/br225534).
+Evrensel Windows platformu uygulaması `ILocationTracker` olduğu bir [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs) kullanır UWP sınıfı [ `Geolocator` ](/uwp/api/Windows.Devices.Geolocation.Geolocator).
 
 ### <a name="display-the-phones-location"></a>Telefonun konumunu görüntülemek
 
@@ -82,9 +88,9 @@ Bazı ek platforma özgü yükünü yeri izinleri biçiminde gereklidir.
 
 Kullanıcının konumuna elde android uygulamaları AndroidManifest.xml dosyasında bir ACCESS_FILE_LOCATION iznine sahip olmalıdır.
 
-#### <a name="location-permissions-for-the-windows-runtime"></a>Windows çalışma zamanı için yeri izinleri
+#### <a name="location-permissions-for-the-uwp"></a>UWP için yeri izinleri
 
-Bir Windows veya Windows Phone Uygulama olmalıdır bir `location` cihaz yeteneği Package.appxmanifest dosyasını işaretlenmiş.
+Bir evrensel Windows platformu uygulaması olmalıdır bir `location` cihaz yeteneği Package.appxmanifest dosyasını işaretlenmiş.
 
 ## <a name="working-with-xamarinformsmaps"></a>Xamarin.Forms.Maps ile çalışma
 
@@ -110,9 +116,9 @@ Bir iOS uygulaması kullanarak `Map` Info.plist iki satırı gerekiyor.
 
 Yetkilendirme anahtarı, Google harita hizmetleri kullanmak için gereklidir. Bu anahtar eklenen **AndroidManifest.xml** dosya. Ayrıca, **AndroidManifest.xml** dosyası gerektirir `manifest` kullanıcının konumuna alınırken ilgili etiketler.
 
-#### <a name="enabling-windows-runtime-maps"></a>Windows çalışma zamanı etkinleştirme eşler.
+#### <a name="enabling-uwp-maps"></a>UWP etkinleştirme eşler.
 
-Bir Windows çalışma zamanı uygulaması, Bing Haritalar'ı kullanmak için yetkilendirme anahtarı gerektirir. Bu anahtar için bağımsız değişken olarak geçirilen `Xamarin.FormsMaps.Init` yöntemi. Uygulama için konum Hizmetleri etkinleştirilmiş olması da gerekir.
+Bir evrensel Windows platformu uygulaması, Bing Haritalar'ı kullanmak için yetkilendirme anahtarı gerektirir. Bu anahtar için bağımsız değişken olarak geçirilen `Xamarin.FormsMaps.Init` yöntemi. Uygulama için konum Hizmetleri etkinleştirilmiş olması da gerekir.
 
 ### <a name="the-unadorned-map"></a>Eksiz eşleme
 
@@ -233,4 +239,4 @@ Program, ayrıca dinamik olarak harita konumunu temel alarak sayısını kısıt
 
 - [Bölüm 28 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf)
 - [Bölüm 28 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
-- [Harita denetimi](~/xamarin-forms/user-interface/map.md)
+- [Xamarin.Forms eşleme](~/xamarin-forms/user-interface/map.md)

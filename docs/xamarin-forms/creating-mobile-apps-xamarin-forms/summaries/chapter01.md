@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 58a8976b054ac7fad5c4e24f0561d1b4e468c1b2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: abf30f2cd828d67ef6fb04f809fce6235e1add9b
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995137"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156489"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Bölüm 1 özeti. Xamarin.Forms nasıl uygunluk sağlar?
+
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
 
 Özellikle, platform farklı bir programlama dilinde içeriyorsa programlamada en kötü işlerden biri diğerine bir platformdan diğerine temel bir kod taşımaktır. Kodu yeniden düzenleme de taşırken bir dürtüsüne olduğu, ancak her iki platform paralel olarak tutulması gereken, ardından iki kod tabanlarında arasındaki farklar gelecek bakım daha zor hale getirir.
 
@@ -32,6 +35,9 @@ Xamarin, şu anda yerel Mac, iOS ve Android C# ve .NET kullanarak API'leri hedef
 
 Geliştiriciler, uygulamaları C# ', hedef Mac, iOS veya Android yazmak için Xamarin platformunu kullanabilir. Ancak, birden çok platformu hedeflerken bazı Hedef platformlar arasında kod paylaşmak için mantıklı hale getirir. Bu programın platforma bağımlı kod (genellikle kullanıcı arabirimi içeren) ve genel olarak yalnızca temel .NET framework gerektiren platformdan bağımsız kod ayırarak içerir. Bu bir platformdan bağımsız kod ya da taşınabilir sınıf kitaplığı (PCL) ya da genellikle paylaşılan varlık projesine veya SAP olarak adlandırılan bir paylaşılan proje içinde bulunabilir.
 
+> [!NOTE] 
+> Taşınabilir sınıf kitaplıkları, .NET standart kitaplıkları tarafından değiştirilmiştir. Kayıt defterinden tüm örnek kod, .NET standart kitaplıkları kullanmak için dönüştürüldü.
+
 ## <a name="introducing-xamarinforms"></a>Xamarin.Forms ile tanışın
 
 Birden çok mobil Platform hedefleme, daha fazla kod paylaşımı Xamarin.Forms sağlar. Xamarin.Forms için yazılmış tek bir programda beş farklı platformları hedefleyebilir:
@@ -42,13 +48,21 @@ Birden çok mobil Platform hedefleme, daha fazla kod paylaşımı Xamarin.Forms 
 - Windows 8.1, Windows çalışma zamanı API
 - Windows Phone 8.1, Windows çalışma zamanı API
 
-Mevcut Xamarin.Forms çözüm şablonları, Windows 8.1 ve Windows Phone 8.1 platformları için proje şablonları içermez.
+> [!NOTE] 
+> Windows 8.1, Windows Phone 8.1 veya Windows 10 Mobile artık Xamarin.Forms destekler, ancak Xamarin.Forms uygulamalarını Windows 10 Masaüstü üzerinde çalıştırın. Ayrıca Önizleme desteği yoktur [Mac](~/xamarin-forms/platform/mac.md), [WPF](~/xamarin-forms/platform/wpf.md), [GTK #](~/xamarin-forms/platform/gtk.md), ve [Tizen](/xamarin-forms/platform/tizen.md) platformlar.
 
-Bir Xamarin.Forms programın toplu bir PCL veya bir SAP bulunmaktadır. Her platformdaki PCL çağıran bir kısa uygulama saplama oluşur. Xamarin.Forms API'leri harita her platformda yerel denetimlere ve böylece her platform özellik, görünüm tutar:
+Bir Xamarin.Forms programın toplu bir kitaplığı veya bir SAP bulunmaktadır. Her platformdaki bu paylaşılan koda çağıran bir kısa uygulama saplama oluşur. 
+
+Xamarin.Forms API'leri harita her platformda yerel denetimlere ve böylece her platform özellik, görünüm tutar:
 
 [![Üç ekran paylaşımı platform görsellerin](images/ch01fg03-small.png "Xamarin.Forms denetimleri her platformda")](images/ch01fg03-large.png#lightbox "her platformda Xamarin.Forms denetimleri")
 
-Ekran görüntüleri soldan sağa, iPhone, Android telefon ve Windows 10 Mobile telefon gösterir. Her ekranda bir Xamarin.Forms sayfayı içeren [ `Label` ](xref:Xamarin.Forms.Label) metni görüntülemek için bir [ `Button` ](xref:Xamarin.Forms.Button) eylemleri başlatmak için bir [ `Switch` ](xref:Xamarin.Forms.Switch) için bir açma/kapatma değer seçme ve [ `Slider` ](xref:Xamarin.Forms.Slider) sürekli bir aralıkta bir değer belirtmek için. Bu görünüm tüm dört alt öğesi olan bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) üzerinde bir [ `ContentPage` ](xref:Xamarin.Forms.ContentPage).
+Ekran görüntüleri soldan sağa, iPhone, Android telefon ve Windows 10 Mobile telefon gösterir. 
+
+> [!NOTE] 
+> Xamarin.Forms, artık Windows 10 Mobile da destekler.
+
+Her ekranda bir Xamarin.Forms sayfayı içeren [ `Label` ](xref:Xamarin.Forms.Label) metni görüntülemek için bir [ `Button` ](xref:Xamarin.Forms.Button) eylemleri başlatmak için bir [ `Switch` ](xref:Xamarin.Forms.Switch) için bir açma/kapatma değer seçme ve [ `Slider` ](xref:Xamarin.Forms.Slider) sürekli bir aralıkta bir değer belirtmek için. Bu görünüm tüm dört alt öğesi olan bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) üzerinde bir [ `ContentPage` ](xref:Xamarin.Forms.ContentPage).
 
 Ayrıca sayfaya bağlanmış olan birkaç oluşan bir Xamarin.Forms araç [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem) nesneleri. Bu, iOS ve Android ekranlar üst kısmında ve Windows 10 Mobile ekranın alt kısmındaki simgeler olarak görülebilir.
 
@@ -79,8 +93,6 @@ Xamarin ve Microsoft web siteleri, bunun nasıl yapılacağı hakkında bilgi i�
 - [Windows Geliştirme Merkezi](http://dev.windows.com)
 
 Bir kez oluşturun ve projeleri bu tek tek platformlarda çalıştırın, oluşturma ve bir Xamarin.Forms uygulaması çalıştıran sorun sahip olmalıdır.
-
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

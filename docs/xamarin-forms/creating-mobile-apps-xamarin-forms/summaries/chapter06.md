@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: f06d0b312422889072be634768611ea1cc25088d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 464fbdb043ac35eba7a4cc2d9ec76b78cc91ac5b
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997178"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156518"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>Bölüm 6 özeti. Düğme tıklamaları
 
@@ -80,10 +80,12 @@ Bir çağrı `OnStart` program başlatma sırasında gerçekleşir. Erişim içi
 
 [ **PersistentKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad) örnek çok benzer **SimplestKeypad** program kullanması hariç, `OnSleep` geçerli tuş girişi kaydetmek için geçersiz kılın ve verileri geri yüklemek için sayfa Oluşturucusu.
 
-
+> [!NOTE]
+> Program ayarlarını kaydetme başka bir yaklaşım Xamarin.Essentials tarafından sağlanan [tercihleri](~/essentials/preferences.md) sınıfı.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Bölüm 6 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
 - [Bölüm 6 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
 - [Bölüm 6 F # örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
+- [Xamarin.Forms düğmesi](~/xamarin-forms/user-interface/button.md)

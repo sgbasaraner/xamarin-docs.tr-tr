@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: a04f72d0577c7b8bf467ee73df233e483f6aa401
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 01985cf253c0f33c52128386b36c11af50381ee1
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996431"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156697"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Bölüm 19 özeti. Koleksiyon görünümleri
+
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
 
 Xamarin.Forms koleksiyonları korumak ve öğeleri görüntüleyen üç görünüm tanımlar:
 
@@ -39,6 +42,9 @@ Ayrıca `SelectedIndex` seçilen öğe, ancak başlatma sonrasında ayarlanmalı
 ### <a name="data-binding-the-picker"></a>Veri bağlama Seçici
 
 `SelectedIndex` Özelliği, bir bağlanılabilir özellik tarafından desteklenir, ancak `Items` kullanarak veri bağlama ile değil, bir `Picker` zordur. Bir çözüm ise kullanılacak `Picker` birlikte bir [ `ObjectToIndexConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ObjectToIndexConverter.cs) gibi bir [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) kitaplığı. [ **PickerBinding** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerBinding) bunun nasıl çalıştığı gösterilmektedir.
+
+> [!NOTE] 
+> Xamarin.Forms `Picker` artık `ItemsSource` ve `SelectedItem` veri bağlamayı destekleyen özellikleri. Bkz: [Seçici](~/xamarin-forms/user-interface/picker/index.md).
 
 ## <a name="rendering-data-with-listview"></a>ListView ile veri işleme
 
@@ -224,5 +230,6 @@ Başka bir kullanımını bir `TableView` bir menü. [ **MenuCommands** ](https:
 
 - [Bölüm 19 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch19-Apr2016.pdf)
 - [Bölüm 19 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
+- [Seçici](~/xamarin-forms/user-interface/picker/index.md)
 - [ListView](~/xamarin-forms/user-interface/listview/index.md)
 - [TableView](~/xamarin-forms/user-interface/tableview.md)

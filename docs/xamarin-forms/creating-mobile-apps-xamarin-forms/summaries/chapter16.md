@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: c4ad067778203759a54ed8141db0b82602e40f6c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 083cb4ed57df989a55a26394cbf8440d53a9e769
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997458"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156671"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>Bölüm 16 özeti. Veri bağlama
+
+> [!NOTE] 
+> Bu sayfadaki notları kitapta tanıtılan malzeme gelen Xamarin.Forms nerede ayrıldığını alanları gösterir.
 
 Programcıların genellikle kendilerini bir nesnenin bir özellik değiştiğinde olan algılama olay işleyicileri yazarak bulun ve, başka bir nesneye bir özellik değerini değiştirmek için kullanın. Bu işlem teknik ile otomatik olarak *veri bağlama*. Veri bağlamaları, genellikle XAML içinde tanımlanır ve tanımı kullanıcı arabiriminin bir parçası haline gelir.
 
@@ -85,6 +88,9 @@ Ayarlama [ `Mode` ](xref:Xamarin.Forms.BindingBase.Mode) özelliği `Binding` ü
 - [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) böylece kaynak ve hedef değişiklikleri birbirlerini etkileyen
 - [`Default`](xref:Xamarin.Forms.BindingMode.Default) kullanılacak [ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) belirtilen hedef `BindableProperty` oluşturuldu. Hiçbiri belirtilmemişse, varsayılan değer `OneWay` normal bağlanabilir özellikler için ve `OneWayToSource` salt okunur bağlanabilir özellikler için.
 
+> [!NOTE]
+> `BindingMode` Artık sabit listesi de içeren `OnTime` bağlama yalnızca bağlama bağlamı değiştiğinde ve belirtilmediğinde uygulamak için kaynak özelliğini değiştirir.
+
 MVVM senaryolarda veri bağlamaları hedefleri genellikle olması olasılığı özelliklere sahip bir `DefaultBindingMode` , `TwoWay`. Bunlar:
 
 - `Value` özelliği `Slider` ve `Stepper`
@@ -137,3 +143,4 @@ Bunun yerine [ `NewCheckBox.cs.xaml` ](https://github.com/xamarin/xamarin-forms-
 
 - [Bölüm 16 tam metin (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
 - [Bölüm 16 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+- [Veri Bağlama](~/xamarin-forms/app-fundamentals/data-binding/index.md)

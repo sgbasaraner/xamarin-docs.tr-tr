@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 1ee19d96e39534ccce5238eca3a90ba5c8d9d451
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 74f7e2846a9e8d8390a8322c57db0845718bbba7
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997522"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39157009"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Bölüm 10 özeti. XAML biçimlendirme uzantıları
 
@@ -91,9 +91,8 @@ Uygulayan bir sınıf yazarak kendi XAML biçimlendirme uzantıları oluşturabi
 
 [ **CustomExtensionDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo) örnek nasıl özel biçimlendirme uzantısı bu kitaplık başvurusu ve nasıl kullanılacağını gösterir.
 
-
-
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Tam metin Bölüm 10 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)
 - [Bölüm 10 örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
+- [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/markup-extensions/index.md)

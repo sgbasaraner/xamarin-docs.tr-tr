@@ -6,19 +6,22 @@ ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 3571774ddec4182f35cac6f13d4582235e2ff31a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 49f2d96fb7f95ab880d5cfafa420afbbe933c1ad
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997432"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156723"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Bölüm 4 özeti. Yığını kaydırma
 
 Bu bölümde, öncelikli olarak kavramını tanıtımı için ayrılmıştır *Düzen*, sınıflar ve Xamarin.Forms birden çok görünüm sayfasında görünümünü düzenlemek için kullanılır teknikler için genel terim olduğu.
 
 Düzen öğesinden türetilen birkaç sınıfları içerir [ `Layout` ](xref:Xamarin.Forms.Layout) ve [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1). Bu bölümde odaklanır [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
+
+> [!NOTE]
+> [ `FlexLayout` ](~/xamarin-forms/user-interface/layouts/flex-layout.md) Sunulan Xamarin.Forms 3.0, benzer şekillerde kullanılabilir `StackLayout` ancak daha fazla esneklik.
 
 Ayrıca bu bölümde sunulan olan [ `ScrollView` ](xref:Xamarin.Forms.ScrollView), [ `Frame` ](xref:Xamarin.Forms.Frame), ve [ `BoxView` ](xref:Xamarin.Forms.BoxView) sınıfları.
 
@@ -104,7 +107,7 @@ Yerleştirme bir `StackLayout` içinde bir `ScrollView` ortak ancak koyarak bir 
 
 Hile vermektir `ScrollView` alt `StackLayout` bir `VerticalOptions` ayarıyla `FillAndExpand`. Bu gösterilmiştir [ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) örnek.
 
-**BlackCat** örnek nasıl tanımlanacağını ve taşınabilir sınıf kitaplığı (PCL) katıştırılmış program kaynaklara erişim de gösterir. Bu paylaşılan varlık projeleriyle (SAP) gerçekleştirilebilir ancak olarak biraz zor bir işlemdir [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) örnek gösterir.
+**BlackCat** örnek ayrıca, paylaşılan kitaplıkta katıştırılmış program kaynaklara nasıl gösterir. Bu paylaşılan varlık projeleriyle (SAP) gerçekleştirilebilir ancak olarak biraz zor bir işlemdir [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) örnek gösterir.
 
 
 
@@ -115,3 +118,4 @@ Hile vermektir `ScrollView` alt `StackLayout` bir `VerticalOptions` ayarıyla `F
 - [Bölüm 4 F # örnekleri](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [BoxView](~/xamarin-forms/user-interface/boxview.md)
