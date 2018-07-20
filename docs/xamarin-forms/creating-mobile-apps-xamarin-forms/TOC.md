@@ -1,5 +1,4 @@
 # [Xamarin.Forms Kitabı ile Mobil Uygulamalar Oluşturma](index.md)
-## [Bölüm Özetleri](summaries/index.md)
 ## [1. Xamarin.Forms nasıl uygunluk sağlar?](summaries/chapter01.md)
 ## [2. Bir uygulamanın anatomisi](summaries/chapter02.md)
 ## [3. Metnin ayrıntılı incelemesi](summaries/chapter03.md)
