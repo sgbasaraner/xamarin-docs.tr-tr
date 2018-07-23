@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 5ed11e4afb4c061eb7b9dd8f10c67090b4134888
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: faec35ec9eb579327972471e7747ad8a38504850
+ms.sourcegitcommit: 3697c2aa4208fe2ac954a8c0297394d3bcb53ede
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996392"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175183"
 ---
 # <a name="android-platform-specifics"></a>Android Platform özellikleri
 
@@ -411,7 +411,7 @@ Her yukarıdaki ekran görüntüsünde unutmayın [ `Button` ](xref:Xamarin.Form
 
 ## <a name="setting-tabbedpage-toolbar-placement-and-color"></a>TabbedPage araç çubuğu yerleştirme ve rengini ayarlama
 
-Bu platform özellikleri yerleştirme ve araç rengini ayarlamak için kullanılan bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Ayarlayarak XAML içinde tüketilir [ `TabbedPage.ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.toolbarplacementproperty?view=xamarin-forms) ekli özellik değerine [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) numaralandırma ve [ `TabbedPage.BarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.baritemcolorproperty?view=xamarin-forms) ve [ `TabbedPage.BarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.barselecteditemcolorproperty?view=xamarin-forms) iliştirilmiş özellikler için bir [ `Color` ](xref:Xamarin.Forms.Color):
+Bu platform özellikleri yerleştirme ve araç rengini ayarlamak için kullanılan bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Ayarlayarak XAML içinde tüketilir [ `TabbedPage.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.ToolbarPlacementProperty) ekli özellik değerine [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement) numaralandırma ve [ `TabbedPage.BarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarItemColorProperty) ve [ `TabbedPage.BarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.BarSelectedItemColorProperty) iliştirilmiş özellikler için bir [ `Color` ](xref:Xamarin.Forms.Color):
 
 ```xaml
 <TabbedPage ...
@@ -435,16 +435,16 @@ On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
              .SetBarSelectedItemColor(Color.Red);
 ```
 
-`TabbedPage.On<Android>` Yöntemi bu platform özellikleri, Android'de yalnızca çalışacağını belirtir. [ `TabbedPage.SetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.settoolbarplacement?view=xamarin-forms) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ad alanı, araç çubuğu yerleştirme ayarlamak için kullanılan bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), ile [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) aşağıdaki değerleri sağlayan bir sabit listesi:
+`TabbedPage.On<Android>` Yöntemi bu platform özellikleri, Android'de yalnızca çalışacağını belirtir. [ `TabbedPage.SetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ad alanı, araç çubuğu yerleştirme ayarlamak için kullanılan bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), ile [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement) aşağıdaki değerleri sağlayan bir sabit listesi:
 
-- [`Default`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Default) – araç sayfasında varsayılan konumda eklendiğini gösterir. Sayfanın üst kısmında telefonlarda ve diğer cihaz deyimleri sayfanın alt kısmındaki budur.
-- [`Top`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Top) – sayfanın en üstündeki araç eklendiğini gösterir.
-- [`Bottom`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Bottom) – araç sayfanın alt kısmında eklendiğini gösterir.
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Default) – araç sayfasında varsayılan konumda eklendiğini gösterir. Sayfanın üst kısmında telefonlarda ve diğer cihaz deyimleri sayfanın alt kısmındaki budur.
+- [`Top`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Top) – sayfanın en üstündeki araç eklendiğini gösterir.
+- [`Bottom`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Bottom) – araç sayfanın alt kısmında eklendiğini gösterir.
 
-Ayrıca, [ `TabbedPage.SetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.setbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_SetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__Xamarin_Forms_Color_) ve [ `TabbedPage.SetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.setbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_SetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__Xamarin_Forms_Color_) yöntemleri, rengi ve araç çubuğu öğelerinin seçili araç çubuğu öğeleri, sırasıyla ayarlamak için kullanılır.
+Ayrıca, [ `TabbedPage.SetBarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.Color)) ve [ `TabbedPage.SetBarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarSelectedItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage},Xamarin.Forms.Color)) yöntemleri, rengi ve araç çubuğu öğelerinin seçili araç çubuğu öğeleri, sırasıyla ayarlamak için kullanılır.
 
 > [!NOTE]
-> [ `GetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.gettoolbarplacement?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetToolbarPlacement_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), [ `GetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), Ve [ `GetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__) yöntemleri, yerleştirme ve rengini almak için kullanılabilir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) araç çubuğu.
+> [ `GetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})), [ `GetBarItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetBarItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})), Ve [ `GetBarSelectedItemColor` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.GetBarSelectedItemColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) yöntemleri, yerleştirme ve rengini almak için kullanılabilir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) araç çubuğu.
 
 Üzerinde araç çubuğu yerleştirme, araç çubuğu öğelerinin rengi ve seçili araç çubuğu öğesi rengi ayarlanabilir sonucu olan bir [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage):
 

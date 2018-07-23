@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 68a38fc43cd744e0382f35baa83643a9f0f7e53d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: ab810a2fdfc659e2f5f24d2646c044e9c8638258
+ms.sourcegitcommit: 3697c2aa4208fe2ac954a8c0297394d3bcb53ede
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998992"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175196"
 ---
-# <a name="ios-platform-specifics"></a>iOS Platform özellikleri
+# <a name="ios-platform-specifics"></a>iOS Platform özellikleri 
 
 _Platform özellikleri, özel oluşturucu veya efekt uygulama olmadan yalnızca belirli bir platformda mevcut işlevi kullanmasını sağlar. Bu makalede, iOS platform Xamarin.Forms içinde oluşturulmuş özellikleri kullanma gösterilmektedir._
 
@@ -620,7 +620,7 @@ Gölge üzerinde etkinleştirilebilir sonucu olan bir [ `VisualElement` ](xref:X
 
 Olduğunda bir [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) bir kaydırma görünümü, tüm hareketleri tarafından yakalanır pan görünüme iliştirilmiş `PanGestureRecognizer` ve kaydırma görünüme iletilen değildir. Bu nedenle, kaydırma görünümü artık kayar.
 
-Bu platforma özgü sağlayan bir `PanGestureRecognizer` kayan bir görünümündeki yakalamak ve kaydırma hareketi kaydırma görünümü ile paylaşmak için. XAML içinde ayarlayarak tüketilir [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms) özelliğine bağlı `true`:
+Bu platforma özgü sağlayan bir `PanGestureRecognizer` kayan bir görünümündeki yakalamak ve kaydırma hareketi kaydırma görünümü ile paylaşmak için. XAML içinde ayarlayarak tüketilir [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty) özelliğine bağlı `true`:
 
 ```xaml
 <Application ...
@@ -640,7 +640,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
 ```
 
-`Application.On<iOS>` Yöntemi bu platforma özgü yalnızca İos'ta çalıştırma belirtir. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) ad alanı, kayan bir görünümündeki bir yatay kaydırma hareket tanıyıcı kaydırma hareketi yakalamak veya yakalama ve pan paylaşma olup olmadığını denetlemek için kullanılır kaydırma görünümü ile hareket. Ayrıca, [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) yöntemi, kaydırma hareketi içerir kaydırma görünümü ile paylaşılan olmadığını döndürmek için kullanılabilir [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
+`Application.On<iOS>` Yöntemi bu platforma özgü yalnızca İos'ta çalıştırma belirtir. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.SetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application},System.Boolean)) Yöntemi, [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) ad alanı, kayan bir görünümündeki bir yatay kaydırma hareket tanıyıcı kaydırma hareketi yakalamak veya yakalama ve pan paylaşma olup olmadığını denetlemek için kullanılır kaydırma görünümü ile hareket. Ayrıca, [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.GetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application})) yöntemi, kaydırma hareketi içerir kaydırma görünümü ile paylaşılan olmadığını döndürmek için kullanılabilir [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
 
 Bu nedenle, etkin olduğunda bu platforma özel ile bir [ `ListView` ](xref:Xamarin.Forms.ListView) içeren bir [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)hem `ListView` ve `PanGestureRecognizer` kaydırma hareketi alırsınız ve işleyin. Bununla birlikte, ne zaman devre dışı bu platforma özel bir `ListView` içeren bir `PanGestureRecognizer`, `PanGestureRecognizer` ve kaydırma hareketi yakalama, işleme ve `ListView` kaydırma hareketi almazsınız.
 
