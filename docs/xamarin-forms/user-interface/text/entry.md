@@ -6,13 +6,13 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 95afdfde878759d4a598e200d16fe6fb1fa2005e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/16/2018
+ms.openlocfilehash: 57304f2f07a0834c31e32bb89a4742a2de7e861c
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998254"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203000"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms giriş
 
@@ -59,26 +59,98 @@ var entry = new Entry { ... MaxLength = 10 };
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) özellik değerinin 0 gösterir müdahalesi izin verilmeyeceğini, değerini `int.MaxValue`, varsayılan değeri olduğu bir [ `Entry` ](xref:Xamarin.Forms.Entry), olduğunu gösterir yok etkili girilebilir karakter sayısını sınırlama.
 
-### <a name="keyboards"></a>Klavye
+### <a name="customizing-the-keyboard"></a>Klavye özelleştirme
 
-Kullanıcılar ile etkileşim kurduğunuzda, sunulan klavye bir `Entry` aracılığıyla programlı olarak ayarlanabilir `Keyboard` özelliği.
+Kullanıcılar ile etkileşim kurduğunuzda, sunulan klavye bir [ `Entry` ](xref:Xamarin.Forms.Entry) aracılığıyla programlı olarak ayarlanabilir [ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard) özelliğini Aşağıdakiözelliklerindenbirine[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sınıfı:
 
-Klavye türü seçenekleri şunlardır:
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – metin için kullanılan ve emoji burada kullanışlıdır.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) – varsayılan klavye.
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – e-posta adreslerini girerek kullanılır.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – numaraları girerken kullanılır.
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – olmadan herhangi bir metin girerken kullanılan [ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags) belirtilen.
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – telefon numaraları girerken kullanılır.
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) – metin girerek kullanılır.
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – dosya yolları ve web adreslerini girerek için kullanılır.
 
-- **Varsayılan** &ndash; varsayılan klavye
-- **Sohbet** &ndash; telefonunuza mesaj & basamak için kullanılan emoji burada kullanışlıdır
-- **E-posta** &ndash; kullanılması için e-posta adresi girme
-- **Sayısal** &ndash; kullanılması için sayı girme
-- **Telefon** &ndash; telefon numaraları girerken kullanılan
-- **URL** &ndash; dosya yolları ve web adresleri girmek için kullanılan
+Bu gibi XAML içinde gerçekleştirilebilir:
 
-Var olan bir [her klavye örneği](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) tarifler bölümümüzdeki.
+```xaml
+<Entry Keyboard="Chat" />
+```
+
+Eşdeğer C# kodu verilmiştir:
+
+```csharp
+var entry = new Entry { Keyboard = Keyboard.Chat };
+```
+
+Her klavye örnekler bulunabilir bizim [tarifler](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) depo.
+
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Sınıfı de sahip bir [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) büyük/küçük harf, yazım denetimi ve öneri davranışı belirtilerek bir klavye özelleştirmek için kullanılan Üreteç yöntemi. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) sabit listesi değerleri ile özelleştirilmiş yöntemi için bağımsız değişkeni olarak belirtilen `Keyboard` döndürülen. `KeyboardFlags` Numaralandırma aşağıdaki değerleri içerir:
+
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – herhangi bir özellik için klavyeyi eklenir.
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – Girilen her cümlede ilk sözcüğün ilk harfini otomatik olarak büyük olduğunu gösterir.
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – Bu yazım denetimi, girilen metni gerçekleştirilecek gösterir.
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – Bu sözcük tamamlamaları sunulacak girilen metni gösterir.
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – Her sözcüğün ilk harfini otomatik olarak büyük olduğunu gösterir.
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) – her karakteri otomatik olarak büyük olduğunu gösterir.
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) – hiçbir otomatik büyük harfe çevirme oluşacağını belirtir.
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) -Yazım denetimi, sözcük tamamlamaları ve cümle büyük/küçük harf girilen metni oluşacağını belirtir.
+
+Aşağıdaki XAML kod örneği, varsayılan özelleştirmek gösterilmektedir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sözcük tamamlamaları sunar ve büyük harfe girilen her karakter için:
+
+```xaml
+<Entry Placeholder="Enter text here">
+    <Entry.Keyboard>
+        <Keyboard x:FactoryMethod="Create">
+            <x:Arguments>
+                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+            </x:Arguments>
+        </Keyboard>
+    </Entry.Keyboard>
+</Entry>
+```
+
+Eşdeğer C# kodu verilmiştir:
+
+```csharp
+var entry = new Entry { Placeholder = "Enter text here" };
+entry.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
+```
+
+#### <a name="customizing-the-return-key"></a>Return tuşuna özelleştirme
+
+Return tuşuna olduğundan geçici klavye görünümünü olduğunda görüntülenen bir [ `Entry` ](xref:Xamarin.Forms.Entry) odaklanmış, ayarlanarak özelleştirilebilir [ `ReturnType` ](xref:Xamarin.Forms.Entry.ReturnType) birdeğere[ `ReturnType` ](xref:Xamarin.Forms.ReturnType) sabit listesi:
+
+- [`Default`](xref:Xamarin.Forms.ReturnType.Default) – belirli dönüş anahtar gereklidir ve platform varsayılan kullanılacak gösterir.
+- [`Done`](xref:Xamarin.Forms.ReturnType.Done) – bir "Bitti" dönüş anahtar gösterir.
+- [`Go`](xref:Xamarin.Forms.ReturnType.Go) – "Git" dönüş anahtar belirtir.
+- [`Next`](xref:Xamarin.Forms.ReturnType.Next) – bir "İleri" dönüş anahtar gösterir.
+- [`Search`](xref:Xamarin.Forms.ReturnType.Search) – "Arama" dönüş anahtar belirtir.
+- [`Send`](xref:Xamarin.Forms.ReturnType.Send) – bir "Gönderme" dönüş anahtar gösterir.
+
+Aşağıdaki XAML örnek return tuşuna ayarlama işlemini gösterir:
+
+```xaml
+<Entry ReturnType="Send" />
+```
+
+Eşdeğer C# kodu verilmiştir:
+
+```csharp
+var entry = new Entry { ReturnType = ReturnType.Send };
+```
+
+> [!NOTE]
+> Return tuşuna tam görünümünü platformuna göre bağlıdır. İOS, dönüş anahtar metin tabanlı bir düğme bulunur. Ancak, Android ve evrensel Windows Platform dönüş anahtar simgesi tabanlı bir düğme bulunur.
+
+Return tuşuna basıldığında [ `Completed` ](xref:Xamarin.Forms.Entry.Completed) olay harekete geçirilir ve tüm `ICommand` tarafından belirtilen [ `ReturnCommand` ](xref:Xamarin.Forms.Entry.ReturnCommand) özelliği yürütülür. Ayrıca, tüm `object` tarafından belirtilen [ `ReturnCommandParameter` ](xref:Xamarin.Forms.Entry.ReturnCommandParameter) özelliği geçirilir `ICommand` bir parametre olarak. Komutlar hakkında daha fazla bilgi için bkz. [komut arabirimi](~/xamarin-forms/app-fundamentals/data-binding/commanding.md).
 
 ### <a name="enabling-and-disabling-spell-checking"></a>Yazım denetimi devre dışı bırakma ve etkinleştirme
 
 [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Özellik denetimleri olup yazım denetimi etkinleştirildi. Varsayılan olarak ayarlandığı `true`. Yazım hatası, kullanıcının girdiği metin olarak belirtilir.
 
-Ancak, bir kullanıcı adı girerek gibi bazı metin girişi senaryolar için yazım denetimi negatif bir deneyim ve bunu devre dışı bırakılmalıdır ayarlayarak sağlar [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliğini `false`:
+Ancak, bir kullanıcı adı girerek gibi bazı metin girişi senaryolar için yazım denetimi bir negatif deneyimi sağlar ve ayarı devre dışı bırakılmalıdır [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliğini `false`:
 
 ```xaml
 <Entry ... IsSpellCheckEnabled="false" />
@@ -90,6 +162,23 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 
 > [!NOTE]
 > Zaman [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliği `false`ve özel bir klavye kullanılmıyor, yerel yazım denetimi devre dışı bırakılır. Ancak, bir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sahip olan yazım devre dışı bırakan kümesi denetleniyor, gibi [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` özelliği yok sayılır. Bu nedenle, özellik için yazım denetimini etkinleştirme kullanılamaz bir `Keyboard` , açıkça bırakır.
+
+### <a name="enabling-and-disabling-text-prediction"></a>Metin tahmini devre dışı bırakma ve etkinleştirme
+
+[ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) Özellik denetimleri olmadığını metin tahminini ve otomatik metin düzeltme etkindir. Varsayılan olarak ayarlandığı `true`. Kullanıcının girdiği metin gibi sözcük Öngörüler sunulur.
+
+Ancak, bazı metin girişi senaryolar için bir kullanıcı adı, metin tahmini ve otomatik metin girerek gibi düzeltme negatif bir deneyim sağlar ve ayarı devre dışı bırakılmalıdır [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) özelliğini `false`:
+
+```xaml
+<Entry ... IsTextPredictionEnabled="false" />
+```
+
+```csharp
+var entry = new Entry { ... IsTextPredictionEnabled = false };
+```
+
+> [!NOTE]
+> Zaman [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) özelliği `false`, ve özel bir klavye değil kullanıldığında, metin tahmini ve otomatik metin düzeltme devre dışı bırakıldı. Ancak, bir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) devre dışı bırakır, metin tahmini ayarlandı `IsTextPredictionEnabled` özelliği yok sayılır. Bu nedenle, özellik için metin tahmininin etkinleştirmek için kullanılamaz bir `Keyboard` , açıkça bırakır.
 
 ### <a name="placeholders"></a>Yer tutucuları
 
@@ -141,7 +230,6 @@ var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 
 ![](entry-images/passwordplaceholder.png "Giriş IsPassword ve yer tutucu örneği")
 
-
 ### <a name="colors"></a>Renkleri
 
 Giriş, özel bir arka plan ve metin renklerini aşağıdaki bağlanabilir özellikler aracılığıyla ayarlanabilir:
@@ -191,12 +279,12 @@ Seçtiğiniz arka plan ve metin renklerini her platformda kullanılabilir ve her
 
 Giriş iki olayları gösterir:
 
-- [TextChanged](xref:Xamarin.Forms.Entry.TextChanged) &ndash; giriş metni değiştiğinde harekete geçirilen. Metin önce ve sonra değişiklik sağlar.
-- [Tamamlanan](xref:Xamarin.Forms.Entry.Completed) &ndash; kullanıcı girişi klavyede return tuşuna basarak sona erdiğinde oluşturulur.
+- [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) &ndash; metin girişi değiştiğinde oluşturulur. Metin önce ve sonra değişiklik sağlar.
+- [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; kullanıcı girişi klavyede return tuşuna basarak sona erdiğinde oluşturulur.
 
 ### <a name="completed"></a>Tamamlandı
 
-`Completed` Olay bir girişi ile etkileşim tamamlanması için tepki vermek için kullanılır. `Completed` kullanıcı girişi bir alanla klavyede return tuşuna girerek sona erdiğinde ortaya çıkar. Olay işleyicisi gönderen alma bir genel olay işleyicisidir ve `EventArgs`:
+`Completed` Olay bir girişi ile etkileşim tamamlanması için tepki vermek için kullanılır. `Completed` kullanıcı girişi bir alanla klavyede return tuşuna basarak sona erdiğinde ortaya çıkar. Olay işleyicisi gönderen alma bir genel olay işleyicisidir ve `EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -217,6 +305,8 @@ ve C#:
 var entry = new Entry ();
 entry.Completed += Entry_Completed;
 ```
+
+Sonra [ `Completed` ](xref:Xamarin.Forms.Entry.Completed) olayı tetikler, her `ICommand` tarafından belirtilen [ `ReturnCommand` ](xref:Xamarin.Forms.Entry.ReturnCommand) özelliği yürütüldüğünde, ile `object` tarafından belirtilen [ `ReturnCommandParameter` ](xref:Xamarin.Forms.Entry.ReturnCommandParameter) özelliği için geçirilen `ICommand`.
 
 ### <a name="textchanged"></a>TextChanged
 

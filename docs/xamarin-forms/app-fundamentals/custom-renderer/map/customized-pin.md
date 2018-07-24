@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4fee67f08e86c40709aa226c40c0f7721dc26800
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998324"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203091"
 ---
 # <a name="customizing-a-map-pin"></a>Bir harita Raptiyesini özelleştirme
 
@@ -240,7 +240,7 @@ namespace CustomRenderer.iOS
 `GetViewForAnnotation` Yöntemi kabul bir `IMKAnnotation` döndürür ve açıklamanın verileri içeren bir `MKAnnotationView` haritada görüntülemek için ve aşağıdaki kod örneğinde gösterilmiştir:
 
 ```csharp
-MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
+protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
 {
     MKAnnotationView annotationView = null;
 
@@ -273,12 +273,12 @@ Bu yöntem, ek açıklama, özel bir görüntü olarak görüntülenecek yerine,
 1. `GetCustomPin` Özel PIN veri ek açıklama için döndürülecek yöntemi çağrılır.
 1. Bellekten kazanacak şekilde açıklamanın görünümü çağrısı ile yeniden kullanım için bir havuzda toplanır [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
 1. `CustomMKAnnotationView` Sınıfını genişleten `MKAnnotationView` sınıfıyla `Id` ve `Url` aynı özelliklere karşılık gelen özelliklerle `CustomPin` örneği. Yeni bir örneğini `CustomMKAnnotationView` oluşturulur, ek açıklama olması şartıyla `null`:
-  - `CustomMKAnnotationView.Image` Harita üzerindeki ek açıklama temsil edecek görüntüye özelliğini ayarlayın.
-  - `CustomMKAnnotationView.CalloutOffset` Özelliği bir `CGPoint` ek açıklama belirtme çizgisi ortalanacağını belirtir.
-  - `CustomMKAnnotationView.LeftCalloutAccessoryView` Özelliği, açıklama başlığını ve adresini solunda görünecek bir monkey görüntüsü için ayarlanır.
-  - `CustomMKAnnotationView.RightCalloutAccessoryView` Özelliği bir *bilgi* ek açıklama başlığını ve adresini sağında görünen düğme.
-  - `CustomMKAnnotationView.Id` Özelliği `CustomPin.Id` özelliği tarafından döndürülen `GetCustomPin` yöntemi. Bu ek açıklama, sahip olacak şekilde tanımlanmasını sağlar [belirtme çizgisi ek özelleştirilebilir](#Selecting_the_Annotation), isterseniz.
-  - `CustomMKAnnotationView.Url` Özelliği `CustomPin.Url` özelliği tarafından döndürülen `GetCustomPin` yöntemi. URL ne zaman gidilecek kullanıcı [doğru açıklama balonu aksesuar Görünümü'nde görüntülenen düğmeye dokunduğunda](#Tapping_on_the_Right_Callout_Accessory_View).
+    - `CustomMKAnnotationView.Image` Harita üzerindeki ek açıklama temsil edecek görüntüye özelliğini ayarlayın.
+    - `CustomMKAnnotationView.CalloutOffset` Özelliği bir `CGPoint` ek açıklama belirtme çizgisi ortalanacağını belirtir.
+    - `CustomMKAnnotationView.LeftCalloutAccessoryView` Özelliği, açıklama başlığını ve adresini solunda görünecek bir monkey görüntüsü için ayarlanır.
+    - `CustomMKAnnotationView.RightCalloutAccessoryView` Özelliği bir *bilgi* ek açıklama başlığını ve adresini sağında görünen düğme.
+    - `CustomMKAnnotationView.Id` Özelliği `CustomPin.Id` özelliği tarafından döndürülen `GetCustomPin` yöntemi. Bu ek açıklama, sahip olacak şekilde tanımlanmasını sağlar [belirtme çizgisi ek özelleştirilebilir](#Selecting_the_Annotation), isterseniz.
+    - `CustomMKAnnotationView.Url` Özelliği `CustomPin.Url` özelliği tarafından döndürülen `GetCustomPin` yöntemi. URL ne zaman gidilecek kullanıcı [doğru açıklama balonu aksesuar Görünümü'nde görüntülenen düğmeye dokunduğunda](#Tapping_on_the_Right_Callout_Accessory_View).
 1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) Özelliği `true` belirtme çizgisi ek açıklama dokunduğunuzda görüntülenir.
 1. Ek açıklama, görüntüleme için harita üzerinde döndürülür.
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 538092c39fa7ca7bb5a1912e772fb2c670905812
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996239"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203104"
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms yakından
 
@@ -79,7 +79,7 @@ Proje, ayrıca dosyaların bir dizi oluşur:
 - **MainPage.xaml.cs** – için gerideki `MainPage` kullanıcı sayfası ile etkileşim kurduğunda çalıştırılan iş mantığı içeren sınıf.
 - **PhoneTranslator.cs** – çağrılır bir telefon numarasına bir telefon sözcük oluşturmaktan sorumludur iş mantığı **MainPage.xaml.cs**.
 
-Bir Xamarin.iOS uygulaması anatomisi hakkında daha fazla bilgi için bkz. [Xamarin.iOS uygulamasının anatomisi](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Bir Xamarin.Android uygulaması anatomisi hakkında daha fazla bilgi için bkz. [bir Xamarin.Android uygulaması anatomisi](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
+Bir Xamarin.iOS uygulaması anatomisi hakkında daha fazla bilgi için bkz. [Xamarin.iOS uygulamasının anatomisi](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy-of-a-xamarinios-application). Bir Xamarin.Android uygulaması anatomisi hakkında daha fazla bilgi için bkz. [bir Xamarin.Android uygulaması anatomisi](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
 
 ## <a name="architecture-and-application-fundamentals"></a>Mimari ve uygulama temelleri
 

@@ -6,19 +6,19 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 4879ff88d5bbdab5aa92024bee7f50239a141e3b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/13/2018
+ms.openlocfilehash: 2ec9ba6e39673b5a60911f9a9ae70474dbe2443b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995873"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203117"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms Düzenleyicisi
 
 _Çok satırlı metin girişi_
 
-`Editor` Denetimi, çok satırlı giriş kabul etmek için kullanılır. Bu makalede ele alınacaktır:
+[ `Editor` ](xref:Xamarin.Forms.Editor) Denetimi, çok satırlı giriş kabul etmek için kullanılır. Bu makalede ele alınmıştır:
 
 - **[Özelleştirme](#customization)**  &ndash; klavye ve rengi seçeneklerini.
 - **[Etkileşim](#interactivity)**  &ndash; olayları için etkileşim sağlamak için Dinledik.
@@ -27,7 +27,7 @@ _Çok satırlı metin girişi_
 
 ### <a name="setting-and-reading-text"></a>Metin okuma ve ayarlama
 
-`Editor`, Metin sunma diğer görünümleri gibi sunan `Text` özelliği. Bu özellik tarafından sunulan metni okuyun ve ayarlamak için kullanılan `Editor`. Aşağıdaki örnek ayar gösterir `Text` XAML özelliği:
+[ `Editor` ](xref:Xamarin.Forms.Editor), Metin sunma diğer görünümleri gibi sunan `Text` özelliği. Bu özellik tarafından sunulan metni okuyun ve ayarlamak için kullanılan `Editor`. Aşağıdaki örnek ayar gösterir `Text` XAML özelliği:
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -59,20 +59,86 @@ var editor = new Editor { ... MaxLength = 10 };
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) özellik değerinin 0 gösterir müdahalesi izin verilmeyeceğini, değerini `int.MaxValue`, varsayılan değeri olduğu bir [ `Editor` ](xref:Xamarin.Forms.Editor), olduğunu gösterir yok etkili girilebilir karakter sayısını sınırlama.
 
-### <a name="keyboards"></a>Klavye
+### <a name="auto-sizing-an-editor"></a>Bir düzenleyici otomatik boyutlandırma
 
-Kullanıcılar ile etkileşim kurduğunuzda, sunulan klavye bir `Editor` aracılığıyla programlı olarak ayarlanabilir [ ``Keyboard`` ](xref:Xamarin.Forms.Keyboard) özelliği.
+Bir [ `Editor` ](xref:Xamarin.Forms.Editor) otomatik boyuta içeriğine ayarını belirleyerek yapılabilir [ `Editor.AutoSize` ](xref:Xamarin.Forms.Editor.AutoSize) özelliğini [ `TextChanges` ](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges), değeriolduğu[ `EditoAutoSizeOption` ](xref:Xamarin.Forms.EditorAutoSizeOption) sabit listesi. Bu numaralandırma iki değere sahiptir:
 
-Klavye türü seçenekleri şunlardır:
+- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) otomatik yeniden boyutlandırma devre dışı bırakıldı ve varsayılan değer gösterir.
+- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) otomatik yeniden boyutlandırma etkin olduğunu gösterir.
 
-- **Varsayılan** &ndash; varsayılan klavye
-- **Sohbet** &ndash; telefonunuza mesaj & basamak için kullanılan emoji burada kullanışlıdır
-- **E-posta** &ndash; kullanılması için e-posta adresi girme
-- **Sayısal** &ndash; kullanılması için sayı girme
-- **Telefon** &ndash; telefon numaraları girerken kullanılan
-- **URL** &ndash; dosya yolları & web adresleri girmek için kullanılan
+Bu gibi kodda gerçekleştirilebilir:
 
-Var olan bir [her klavye örneği](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) tarifler bölümümüzdeki.
+```xaml
+<Editor Text="Enter text here" AutoSize="TextChanges" />
+```
+
+```csharp
+var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOption.TextChanges };
+```
+
+Yüksekliğini otomatik boyutlandırma etkinleştirildiğinde, [ `Editor` ](xref:Xamarin.Forms.Editor) isteğe bağlı olarak kullanıcı metniyle doldurur ve metin kullanıcı sildiği yüksekliği azalır artacaktır.
+
+> [!NOTE]
+> Bir [ `Editor` ](xref:Xamarin.Forms.Editor) olacak otomatik boyutlu if [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) özelliğini ayarlayın.
+
+### <a name="customizing-the-keyboard"></a>Klavye özelleştirme
+
+Kullanıcılar ile etkileşim kurduğunuzda, sunulan klavye bir [ `Editor` ](xref:Xamarin.Forms.Editor) aracılığıyla programlı olarak ayarlanabilir [ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard) özelliğini Aşağıdakiözelliklerindenbirine[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sınıfı:
+
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – metin için kullanılan ve emoji burada kullanışlıdır.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) – varsayılan klavye.
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – e-posta adreslerini girerek kullanılır.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – numaraları girerken kullanılır.
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – olmadan herhangi bir metin girerken kullanılan [ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags) belirtilen.
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – telefon numaraları girerken kullanılır.
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) – metin girerek kullanılır.
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – dosya yolları ve web adreslerini girerek için kullanılır.
+
+Bu gibi XAML içinde gerçekleştirilebilir:
+
+```xaml
+<Editor Keyboard="Chat" />
+```
+
+Eşdeğer C# kodu verilmiştir:
+
+```csharp
+var editor = new Editor { Keyboard = Keyboard.Chat };
+```
+
+Her klavye örnekler bulunabilir bizim [tarifler](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) depo.
+
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Sınıfı de sahip bir [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) büyük/küçük harf, yazım denetimi ve öneri davranışı belirtilerek bir klavye özelleştirmek için kullanılan Üreteç yöntemi. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) sabit listesi değerleri ile özelleştirilmiş yöntemi için bağımsız değişkeni olarak belirtilen `Keyboard` döndürülen. `KeyboardFlags` Numaralandırma aşağıdaki değerleri içerir:
+
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – herhangi bir özellik için klavyeyi eklenir.
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – Girilen her cümlede ilk sözcüğün ilk harfini otomatik olarak büyük olduğunu gösterir.
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – Bu yazım denetimi, girilen metni gerçekleştirilecek gösterir.
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – Bu sözcük tamamlamaları sunulacak girilen metni gösterir.
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – Her sözcüğün ilk harfini otomatik olarak büyük olduğunu gösterir.
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) – her karakteri otomatik olarak büyük olduğunu gösterir.
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) – hiçbir otomatik büyük harfe çevirme oluşacağını belirtir.
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) -Yazım denetimi, sözcük tamamlamaları ve cümle büyük/küçük harf girilen metni oluşacağını belirtir.
+
+Aşağıdaki XAML kod örneği, varsayılan özelleştirmek gösterilmektedir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sözcük tamamlamaları sunar ve büyük harfe girilen her karakter için:
+
+```xaml
+<Editor>
+    <Editor.Keyboard>
+        <Keyboard x:FactoryMethod="Create">
+            <x:Arguments>
+                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+            </x:Arguments>
+        </Keyboard>
+    </Editor.Keyboard>
+</Editor>
+```
+
+Eşdeğer C# kodu verilmiştir:
+
+```csharp
+var editor = new Editor();
+editor.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
+```
 
 ### <a name="enabling-and-disabling-spell-checking"></a>Yazım denetimi devre dışı bırakma ve etkinleştirme
 

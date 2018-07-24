@@ -1,35 +1,35 @@
 ---
-title: Xamarin.Forms yazı tipleri
-description: Bu makalede Xamarin.Forms uygulamalarda metni görüntüle denetimlerinde yazı tipi bilgilerini belirleme konusunda açıklanmaktadır.
+title: Yazı tipi xamarin.Forms'taki
+description: Bu makalede, yazı tipi bilgi Xamarin.Forms uygulamalarında metin görüntüleyen denetimler belirtmeniz açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 3d5fe936da9086dd7201b7ee7d91185b81eb65a1
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: e6635bc13214a5a4e728fa3e71db86a8ea1c39d6
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269037"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202961"
 ---
-# <a name="fonts-in-xamarinforms"></a>Xamarin.Forms yazı tipleri
+# <a name="fonts-in-xamarinforms"></a>Yazı tipi xamarin.Forms'taki
 
-Bu makalede nasıl Xamarin.Forms yazı tipi özniteliklerini (ağırlık ve boyuta dahil) belirtmenize olanak sağlar. metin görüntüleme denetimlere açıklanmaktadır. Yazı tipi bilgileri olabilir [kodunda belirtilen](#Setting_Font_in_Code) veya [XAML'de belirtilen](#Setting_Font_in_Xaml).
+Bu makalede nasıl Xamarin.Forms yazı tipi özniteliklerini (ağırlık ve boyutu dahil) belirtmenize olanak tanır, metin görüntüleyen denetimler açıklanır. Yazı tipi bilgiler [kodda belirtilen](#Setting_Font_in_Code) veya [XAML içinde belirtilen](#Setting_Font_in_Xaml).
 Kullanmak da mümkündür bir [özel yazı tipi](#Using_a_Custom_Font).
 
 <a name="Setting_Font_in_Code" />
 
 ## <a name="setting-font-in-code"></a>Yazı tipi kodda ayarlama
 
-Metin görüntüleme herhangi bir denetim yazı tipi ile ilgili üç özelliklerini kullanın:
+Metin görüntüleyen herhangi bir denetim yazı tipi ile ilgili üç özelliklerini kullanın:
 
 - **FontFamily** &ndash; `string` yazı tipi adı.
 - **FontSize** &ndash; olarak yazı tipi boyutu bir `double`.
-- **FontAttributes** &ndash; gibi stil bilgileri belirten bir dize *italik* ve **kalın** (kullanarak `FontAttributes` numaralandırma C#).
+- **FontAttributes** &ndash; gibi stil bilgilerini belirten bir dize *italik* ve **kalın** (kullanarak `FontAttributes` numaralandırmada C#).
 
-Bu kod, bir etiket oluşturmak ve yazı tipi boyutunu ve görüntülemek için ağırlığını belirlemek üzere gösterilmektedir:
+Bu kod, bir etiket oluşturun ve yazı tipi boyutu ve görüntülemek için ağırlık belirtin gösterilmektedir:
 
 ```csharp
 var about = new Label {
@@ -49,14 +49,14 @@ var about = new Label {
 label.FontSize = 24;
 ```
 
-Aynı zamanda `NamedSize` dört yerleşik seçenekleri; olan numaralandırması Xamarin.Forms her platform için en iyi boyutu seçer.
+Ayrıca `NamedSize` dört yerleşik seçenek; olan bir sabit listesi Xamarin.Forms her platform için en iyi boyut seçer.
 
 -  **Mikro**
 -  **Küçük**
 -  **Orta**
 -  **Büyük**
 
-`NamedSize` Numaralandırma olabilir yerde kullanılan bir `FontSize` kullanılarak belirtilebilir `Device.GetNamedSize` değerine dönüştürmek için yöntem bir `double`:
+`NamedSize` Numaralandırma olabilir yerde kullanılan bir `FontSize` kullanılarak belirtilebilir `Device.GetNamedSize` değerine dönüştürmek için yöntemi bir `double`:
 
 ```csharp
 label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
@@ -66,45 +66,21 @@ label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 
 ### <a name="font-attributes"></a>Yazı tipi özniteliklerini
 
-Yazı tipi stilleri gibi **kalın** ve *italik* ayarlanabilen `FontAttributes` özelliği. Aşağıdaki değerleri şu anda desteklenir:
+Yazı tipi stilleri gibi **kalın** ve *italik* ayarlanabilir `FontAttributes` özelliği. Şu anda, aşağıdaki değerleri desteklenir:
 
 -  **Yok**
 -  **Kalın**
 -  **İtalik**
 
-`FontAttribute` Numaralandırma gibi kullanılabilir (tek bir öznitelik belirtebilirsiniz veya `OR` birlikte bunları):
+`FontAttribute` Numaralandırma gibi kullanılabilir (tek bir öznitelik belirtebilirsiniz veya `OR` bunları birlikte):
 
 ```csharp
 label.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
 ```
 
-### <a name="formattedstring"></a>FormattedString
+### <a name="setting-font-info-per-platform"></a>Platform başına yazı tipi bilgilerini ayarlama
 
-Bazı Xamarin.Forms denetimler (gibi `Label`) kullanarak bir dize içindeki farklı yazı tipi özniteliklerini de destekler `FormattedString` sınıfı. A `FormattedString` bir-veya-daha fazla bilgi oluşur `Span`s, her biri kendi biçimlendirme öznitelikleri olabilir.
-
-`Span` Sınıfı aşağıdaki özniteliklere sahiptir:
-
-* **Metin** &ndash; görüntülenecek değer
-* **FontFamily** &ndash; yazı tipi adı
-* **FontSize** &ndash; yazı tipi boyutu
-* **FontAttributes** &ndash; stil bilgilerini ister *italik* ve **kalın**
-* **ForegroundColor** &ndash; metin rengi
-* **BackgroundColor** &ndash; arka plan rengi
-
-Oluşturma ve görüntüleme örneği bir `FormattedString` aşağıda gösterilen &ndash; etiketlerine atanan Not `FormattedText` özelliği ve `Text` özelliği.
-
-```csharp
-var labelFormatted = new Label ();
-var fs = new FormattedString ();
-fs.Spans.Add (new Span { Text="Red, ", ForegroundColor = Color.Red, FontSize = 20, FontAttributes = FontAttributes.Italic });
-fs.Spans.Add (new Span { Text=" blue, ", ForegroundColor = Color.Blue, FontSize = 32 });
-fs.Spans.Add (new Span { Text=" and green!", ForegroundColor = Color.Green, FontSize = 12 });
-labelFormatted.FormattedText = fs;
-```
-
-### <a name="setting-font-info-per-platform"></a>Her Platform yazı tipi bilgilerini ayarlama
-
-Alternatif olarak, `Device.RuntimePlatform` özelliği kullanılabilir her platformda farklı yazı tipi adlarını ayarlamak için bu kodda gösterildiği gibi:
+Alternatif olarak, `Device.RuntimePlatform` özelliği kullanılabilir her platformda farklı yazı tipi adları ayarlamak için bu kodda gösterildiği gibi:
 
 ```csharp
 label.FontFamily = Device.RuntimePlatform == Device.iOS ? "Lobster-Regular" :
@@ -113,20 +89,20 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
    Device.RuntimePlatform == Device.Android ? Device.GetNamedSize(NamedSize.Medium, label) : Device.GetNamedSize(NamedSize.Large, label);
 ```
 
-İOS için yazı tipi bilgileri iyi kaynağıdır [iosfonts.com](http://iosfonts.com).
+Yazı tipi bilgi iOS için iyi bir kaynaktır [iosfonts.com](http://iosfonts.com).
 
 <a name="Setting_Font_in_Xaml" />
 
-## <a name="setting-the-font-in-xaml"></a>XAML'de yazı tipini ayarlama
+## <a name="setting-the-font-in-xaml"></a>Yazı tipi XAML içinde ayarlama
 
-Xamarin.Forms denetimleri tüm görüntüleme metni bir `Font` XAML'de ayarlanabilir özelliği. XAML'de yazı tipini ayarlamak için en basit yolu adlandırılmış boyutu numaralandırma değerlerinin bu örnekte gösterildiği gibi kullanmaktır:
+Xamarin.Forms denetimleri tüm görünen metnin bir `Font` XAML içinde ayarlanabilir özelliği. XAML yazı tipini Ayarla en basit yolu adlandırılmış boyutu numaralandırma değerlerinin bu örnekte gösterildiği gibi kullanmaktır:
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-İçin yerleşik bir dönüştürücü yoktur `Font` tüm yazı tipi ayarlarını XAML'de bir dize değeri olarak ifade edilebilir imkan tanıyan özellik. Aşağıdaki örnek XAML'de nasıl yazı tipi özniteliklerini ve boyutları belirtebilirsiniz göster:
+İçin yerleşik bir dönüştürücü yok `Font` dize değer XAML olarak ifade edilen tüm yazı tipi ayarlarının özelliği. Aşağıdaki örnekler, XAML içinde nasıl yazı tipi özniteliklerini ve boyutları belirtebilirsiniz gösterir:
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -134,7 +110,7 @@ Xamarin.Forms denetimleri tüm görüntüleme metni bir `Font` XAML'de ayarlanab
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-Birden çok belirtmek için `Font` ayarları, gerekli ayarları tek bir birleştirme `Font` öznitelik dize. Yazı tipi öznitelik dize olarak biçimlendirilmiş olması `"[font-face],[attributes],[size]"`. Parametreler sırası önemlidir, tüm parametreler isteğe bağlıdır ve birden çok `attributes` , örneğin belirtilebilir:
+Birden çok belirtmek için `Font` ayarları, tek bir gerekli ayarları birleştirmeniz `Font` dize özniteliği. Yazı tipi öznitelik dize olarak biçimlendirilmelidir `"[font-face],[attributes],[size]"`. Parametreler sırası önemlidir, tüm parametreler isteğe bağlıdır ve birden çok `attributes` , örneğin belirtilebilir:
 
 ```xaml
 <Label Text="Small bold text" Font="Bold, Micro" />
@@ -142,23 +118,7 @@ Birden çok belirtmek için `Font` ayarları, gerekli ayarları tek bir birleşt
 <Label Text="Really big bold and italic text" Font="Bold, Italic, 72"  />
 ```
 
-`FormattedString` Sınıfı ayrıca kullanılabilir XAML'de, aşağıda gösterildiği gibi:
-
-```xaml
-<Label>
-    <Label.FormattedText>
-        <FormattedString>
-            <FormattedString.Spans>
-                <Span Text="Red, " ForegroundColor="Red" FontAttributes="Italic" FontSize="20" />
-                <Span Text=" blue, " ForegroundColor="Blue" FontSize="32" />
-                <Span Text=" and green! " ForegroundColor="Green" FontSize="12"/>
-            </FormattedString.Spans>
-        </FormattedString>
-    </Label.FormattedText>
-</Label>
-```
-
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) Ayrıca XAML'de farklı bir yazı tipi her platformda işlemek için kullanılabilir. Aşağıdaki örnek, iOS özel yazı tipi kullanır (<span style="font-family:MarkerFelt-Thin">MarkerFelt ince</span>) ve diğer platformlarda yalnızca boyut/özniteliklerini belirtir:
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) Ayrıca her platformda farklı bir yazı tipi işlemek için XAML içinde kullanılabilir. Aşağıdaki örnek bir özel yazı tipini İos'ta kullanır (<span style="font-family:MarkerFelt-Thin">MarkerFelt ince</span>) ve diğer platformlarda yalnızca boyut/özniteliklerini belirtir:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -172,26 +132,26 @@ Birden çok belirtmek için `Font` ayarları, gerekli ayarları tek bir birleşt
 </Label>
 ```
 
-Özel yazı tipi belirtirken, her zaman kullanmak için iyi bir fikirdir `OnPlatform`, tüm platformlarda kullanılabilir bir yazı tipi bulmak zor olduğu gibi.
+Özel yazı tipinin belirtirken onu her zaman kullanmak iyi bir fikirdir `OnPlatform`, tüm platformlarda kullanılabilir olan bir yazı tipi bulmak zor olduğu gibi.
 
 <a name="Using_a_Custom_Font" />
 
-## <a name="using-a-custom-font"></a>Özel yazı tipi kullanma
+## <a name="using-a-custom-font"></a>Özel yazı tipi kullanarak
 
-Yerleşik yazı dışında bir yazı tipi kullanarak bazı platforma özgü kodlama gerektirir. Bu ekran özel yazı tipi gösterir **Lobster** gelen [Google açık kaynak yazı tipleri](https://www.google.com/fonts) Xamarin.Forms kullanılarak işlenir.
+Yerleşik yazı dışındaki bir yazı tipi kullanarak bazı platforma özgü kodlama gerektirir. Özel yazı tipi bu ekran görüntüsünde gösterilmiştir **Lobster** gelen [Google'nın açık kaynak yazı tipleri](https://www.google.com/fonts) Xamarin.Forms kullanılarak işlenir.
 
  [![İOS ve Android özel yazı tipi](fonts-images/custom-sml.png "özel yazı tipleri örnek")](fonts-images/custom.png#lightbox "özel yazı tipi örneği")
 
-Her platform için gerekli adımlar aşağıda özetlenmiştir. Bir uygulama ile özel yazı tipi dosyalarını dahil ederken yazı tipinin lisans dağıtım için izin verdiğini doğrulamak emin olun.
+Her platform için gereken adımlar aşağıda özetlenmiştir. Bir uygulama ile özel yazı tipi dosyalarını dahil ederken yazıtipinin lisans dağıtımı için izin verdiğini doğrulayın emin olun.
 
 ### <a name="ios"></a>iOS
 
-Özel yazı tipi ilk yüklenen emin olduktan sonra Xamarin.Forms kullanarak adıyla başvuruda tarafından görüntü mümkündür `Font` yöntemleri.
-' Ndaki yönergeleri izleyin [bu blog gönderisine](http://blog.xamarin.com/custom-fonts-in-ios/):
+Özel yazı tipi, ilk yüklendiğinden emin olduktan sonra kullanarak Xamarin.Forms adıyla başvuran duyarlılığıyla görüntülemek mümkün `Font` yöntemleri.
+Bölümündeki yönergeleri [bu blog gönderisini](http://blog.xamarin.com/custom-fonts-in-ios/):
 
-1. Yazı tipi dosyasıyla eklemek **yapı eylemi: BundleResource**, ve
+1. Yazı tipi dosyasıyla ekleme **derleme eylemi: BundleResource**, ve
 2. Güncelleştirme **Info.plist** dosyası (**uygulama tarafından sağlanan yazı tipleri**, veya `UIAppFonts`, anahtar), ardından
-3. Xamarin.Forms içinde bir yazı tipi tanımladığınız yerlerde adıyla başvurduğu!
+3. Xamarin.Forms içinde bir yazı tipi tanımladığınız her yerde için ada göre başvurun!
 
 ```csharp
 new Label
@@ -203,7 +163,7 @@ new Label
 
 ### <a name="android"></a>Android
 
-Xamarin.Forms Android için belirli bir adlandırma standardı izleyerek projeye eklenmiş olan özel bir yazı tipi başvuruda bulunabilir. İlk yazı tipi dosyası ekleyin **varlıklar** uygulama projesi ve set klasöründe *yapı eylemi: AndroidAsset*. Tam yolu kullanın ve *yazı tipi adı* aşağıdaki kod parçacığında gösterdiği gibi Xamarin.Forms, yazı tipi adı olarak bir karma (#) ile ayrılmış:
+Android için Xamarin.Forms belirli bir adlandırma standardı takip ederek projeye eklenmiş olan özel bir yazı tipi başvurabilirsiniz. İlk yazı tipi dosyaya ekleyin **varlıklar** ayarlama ve uygulama proje klasöründe *derleme eylemi: AndroidAsset*. Daha sonra tam yolu kullanın ve *yazı tipi adı* aşağıdaki kod parçacığında gösterildiği gibi Xamarin.Forms, yazı tipi adı olarak bir karma (#) ayrılmış:
 
 ```csharp
 new Label
@@ -215,7 +175,7 @@ new Label
 
 ### <a name="windows"></a>Windows
 
-Xamarin.Forms Windows platformları için belirli bir adlandırma standardı izleyerek projeye eklenmiş olan özel bir yazı tipi başvuruda bulunabilir. İlk yazı tipi dosyası ekleyin **/Assets/yazı tipleri/** uygulama projesi ve set klasöründe <span class="UIItem">yapı eylemi: içerik</span>. Bir karma (#) ve ardından tam yolunu ve yazı tipi dosya adı kullanın ve <span class="UIItem">yazı tipi adı</span>, aşağıdaki kod parçacığında gösterir:
+Windows platformları için Xamarin.Forms belirli bir adlandırma standardı takip ederek projeye eklenmiş olan özel bir yazı tipi başvurabilirsiniz. İlk yazı tipi dosyaya ekleyin **/Assets/yazı tipleri/** ayarlama ve uygulama proje klasöründe <span class="UIItem">derleme eylemi: içerik</span>. Ardından bir karma (#) ve ardından tam yol ve yazı tipi dosya adı kullanın ve <span class="UIItem">yazı tipi adı</span>, aşağıdaki kod parçacığında gösterildiği gibi:
 
 ```csharp
 new Label
@@ -226,13 +186,13 @@ new Label
 ```
 
 > [!NOTE]
-> Yazı tipi dosya adı ve yazı tipi adı farklı olabileceğini unutmayın. Windows yazı tipi adı bulmak için .ttf dosyasını sağ tıklatın ve seçin **Önizleme**. Yazı tipi adı sonra aşağıdaki Önizleme penceresinden belirlenebilir.
+> Yazı tipi dosya adını ve yazı tipi adı farklı olabileceğini unutmayın. Windows üzerinde yazı tipi adı bulmak için .ttf dosyasını sağ tıklatın ve seçin **Önizleme**. Yazı tipi adı, ardından aşağıdaki Önizleme penceresinden belirlenebilir.
 
-Uygulama için ortak kodun tamamlanmıştır. Platforma özgü Telefon Çeviricisi kodu şimdi olarak gerçekleştirilen bir [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+Uygulama için ortak kodun tamamlanmıştır. Platforma özgü telefon çevirici kodu artık uygulanmasını olarak bir [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
 ### <a name="xaml"></a>XAML
 
-Aynı zamanda [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providing-platform-values) özel yazı tipi işlemek için XAML içinde:
+Ayrıca [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providing-platform-values) özel yazı tipi işlemek için XAML içinde:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -250,10 +210,9 @@ Aynı zamanda [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#pr
 
 ## <a name="summary"></a>Özet
 
-Xamarin.Forms izin verecek şekilde basit varsayılan ayarları sağlar kolayca desteklenen tüm platformlar için metin boyutu. Bu ayrıca yazı tipi ve boyutu belirtmenize olanak sağlar. &ndash; her platform için bile farklı &ndash; daha ayrıntılı denetim zaman gereklidir. `FormattedString` Sınıfı kullanarak farklı bir yazı tipi özellikleri içeren bir dize oluşturmak için kullanılabilir `Span` sınıfı.
+Xamarin.Forms izin verecek şekilde basit varsayılan ayarları sağlar kolayca desteklenen tüm platformlar için metin boyutu. Ayrıca yazı biçimini ve boyutunu belirtin sağlar &ndash; her platform için bile farklı &ndash; daha hassas bir denetim zaman gereklidir.
 
-Yazı tipi bilgileri doğru biçimlendirilmiş yazı tipi özniteliklerini kullanarak XAML'de de belirtilebilir veya `FormattedString` öğeyle `Span` alt.
-
+Yazı tipi bilgileri, doğru biçimlendirilmiş bir yazı tipi özniteliklerini kullanarak XAML içinde de belirtilebilir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
