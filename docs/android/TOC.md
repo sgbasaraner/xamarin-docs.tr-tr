@@ -113,6 +113,8 @@
 ## [Platform Özellikleri](platform/index.md)
 ### [Android Beam](platform/android-beam.md)
 ### [Android Manifest](platform/android-manifest.md)
+### [Xamarin.Android ile Dosya Erişimi](platform/files/index.md)
+#### [Harici Depolama](platform/files/external-storage.md)
 ### [Parmak İzi Kimlik Doğrulaması](platform/fingerprint-authentication/index.md)
 #### [Başlarken](platform/fingerprint-authentication/get-started.md)
 #### [Parmak İzini Tarama](platform/fingerprint-authentication/scanning.md)
