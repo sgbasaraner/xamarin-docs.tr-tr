@@ -310,6 +310,7 @@
 ## [Gelişmiş Kavramlar ve İç İşlevler](internals/index.md)
 ### [Hızlı Oluşturucular](internals/fast-renderers.md)
 ### [.NET Standard](internals/net-standard.md)
+### [Bağımlılık Çözümlemesi](internals/dependency-resolution.md)
 ## [Sorun giderme](troubleshooting/index.md)
 ### [Sık Sorulan Sorular](troubleshooting/questions/index.md)
 #### [Xamarin.Forms varsayılan şablonunu daha yeni bir NuGet paketine güncelleştirebilir miyim?](troubleshooting/questions/update-forms-template.md)
